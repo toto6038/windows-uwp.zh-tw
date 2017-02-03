@@ -4,8 +4,8 @@ Description: "執行 Desktop Converter App，將 Windows 傳統型應用程式 (
 Search.Product: eADQiWindows 10XVcnh
 title: Desktop App Converter
 translationtype: Human Translation
-ms.sourcegitcommit: a5ac8acdbb7480bb776cef6d1dffa303dab5a9e1
-ms.openlocfilehash: 4095cfbe96f239afb5f3173e0a7f84e01d63452c
+ms.sourcegitcommit: bf6da2f4d780774819fe7a4abf6367345304767c
+ms.openlocfilehash: 3ffd664892fe5ee589d3bf5704e2eeed178bf5f3
 
 ---
 
@@ -22,6 +22,12 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 ## <a name="whats-new"></a>新功能
 
 本節概述 Desktop App Converter 版本之間的變更。 
+
+### <a name="12142016-v104"></a>12/14/2016 (v1.0.4)
+
+* 改善基礎映像驗證來檢查是否有無效的 .wim 檔案。 
+* ```-Publisher``` 參數中特殊字元的錯誤修正。 
+* 已更新資產。
 
 ### <a name="1122016-v101"></a>11/2/2016 (v1.0.1)
 
@@ -96,34 +102,21 @@ Desktop App Converter 現在已可在 [Windows 市集](https://aka.ms/converter)
 
 ### <a name="required-resources"></a>所需的資源
 
-+ [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
++ [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)
 
 ## <a name="set-up-the-desktop-app-converter"></a>安裝 Desktop App Converter
 
-Desktop App Converter 依賴最新的 Windows 10 功能。 請確定您是執行 Windows 10 年度更新版 (14393.0) 或更新組建。
-
-### <a name="store-download"></a>市集下載
+Desktop App Converter 依賴最新的 Windows 10 功能。 請確定您執行的是 Windows 10 年度更新版 (14393.0) 或更新組建。
 
 1.  從 [Windows 市集下載 DesktopAppConverter](https://aka.ms/converter) 和[符合您組建的基礎映像 .wim 檔案](https://aka.ms/converterimages)。  
 2.  以系統管理員身分執行 DesktopAppConverter。 您可以從開始功能表以滑鼠右鍵按一下磚，然後選取 [更多] 之下的 [以系統管理員身分執行]，或是從工作列以滑鼠右鍵按一下磚，再以滑鼠右鍵按一下快顯顯示的應用程式名稱，然後選取 [以系統管理員身分執行]，來執行此動作。
-3.  從 App 主控台視窗中，執行 ```CMD PS C:\> Set-ExecutionPolicy bypass```。
-4.  從 App 主控台視窗執行 ```CMD PS C:\> DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 以安裝轉換器。
+3.  從 App 主控台視窗中，執行 ```Set-ExecutionPolicy bypass```。
+4.  從 App 主控台視窗執行 ```DesktopAppConverter.exe -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 以安裝轉換器。
 5.  如果系統在您執行前一個命令提示字元時提示您重新開機，請重新啟動您的電腦。
-
-### <a name="zip-file"></a>Zip 檔案 
-
-DAC 在[下載中心](https://aka.ms/converterimages)會繼續以 zip 檔案提供，以用來針對離線案例使用。 不過，所有未來的更新都只會以市集版本發佈。
-
-1.  下載 DAC zip 和[符合您組建的基礎映像 .wim 檔案](https://aka.ms/converterimages)。  
-2. 將 DesktopAppConverter.zip 解壓縮到本機資料夾。
-3. 從系統管理員 PowerShell 視窗執行 ```CMD PS C:\> Set-ExecutionPolicy bypass```。
-4. 從系統管理員 PowerShell 視窗執行 ```CMD PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose``` 以安裝轉換器。
-5. 如果系統在您執行前一個命令提示字元時提示您重新開機，請重新啟動您的電腦。
 
 ## <a name="run-the-desktop-app-converter"></a>執行 Desktop App Converter
 
 + **市集下載**︰使用 ```DesktopAppConverter.exe``` 以執行轉換器。
-+ **Zip 檔案**︰使用 ```DesktopAppConverter.ps1``` 以執行轉換器。 
 
 ### <a name="usage"></a>使用方式
 
@@ -149,7 +142,7 @@ DesktopAppConverter.exe
 
 ### <a name="example"></a>範例
 
-下列範例示範如何將名為 *MyApp* by *&lt;publisher_name&gt;* 的傳統型應用程式轉換為 UWP 套件 (AppX)。
+下列範例示範如何依 *&lt;publisher_name&gt;* 將名為 *MyApp* 的傳統型應用程式轉換為 UWP 套件 (AppX)。
 
 ```CMD
 DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe 
@@ -171,11 +164,22 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp.exe
 
 Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 ```-Sign``` 旗標做為轉換器命令列的一部分或 SignTool.exe (其隨附於 Microsoft Windows 10 SDK) 來簽署 .appx 套件。
 
-如需如何簽署.appx 套件的詳細資訊，請參閱[簽署已轉換的傳統型應用程式](desktop-to-uwp-signing.md)。 
+如需如何簽署 .appx 套件的詳細資訊，請參閱[簽署已轉換的傳統型應用程式](desktop-to-uwp-signing.md)。 
+
+注意：如果您嘗試使用自動產生的憑證來簽署套件，則需要使用預設密碼 "123456"。
+
+## <a name="modify-vfs-folder-and-registry-hive-optional"></a>修改 VFS 資料夾和登錄區 (選用)
+
+Desktop App Converter 採用極為保守的方式來篩選出容器中的檔案和系統雜訊。  這不是必要作業，但轉換之後您便可：
+
+1. 檢閱 VFS 資料夾，並刪除安裝程式不需要的任何檔案。
+2. 檢閱 Reg.dat 內容，並刪除應用程式未安裝/不需要的任何機碼。
+
+如果您對已轉換的應用程式進行任何變更 (包含上述項目)，則不需要再次執行轉換器；您可以使用 MakeAppx 工具以及 DAC 為您應用程式產生的 appxmanifest.xml 檔案，手動重新封裝應用程式。 如需說明，請參閱[使用傳統型橋接器將您的應用程式手動轉換為 UWP](desktop-to-uwp-manual-conversion.md)。
 
 ## <a name="caveats"></a>警告
 
-1. 主機電腦上的 Windows 10 組建必須符合您在傳統型應用程式轉換器下載中取得的基礎映像。  
+1. 主機電腦上的 Windows 10 組建必須符合您在 Desktop App Converter 下載中取得的基礎映像。  
 2. 確定桌面安裝程式是在獨立的目錄中，因為轉換器會將目錄的所有內容複製到隔離的 Windows 環境。  
 3. 傳統型應用程式轉換器目前只支援在 64 位元作業系統上執行轉換處理序。 您只能將已轉換的 .appx 套件部署到 64 位元 (x64) 作業系統。  
 4. 傳統型應用程式轉換器需要桌面安裝程式，以便在自動安裝模式下執行。 確保您會使用 *-InstallerArguments* 參數，將適用於安裝程式的無訊息旗標傳遞至轉換器。
@@ -185,14 +189,24 @@ Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽
 
 ## <a name="known-issues"></a>已知問題
 
-+ 如果您在先前已安裝 Desktop App Converter 的開發人員電腦上收到 Windows 測試人員正式發行前小眾測試版，則您在安裝新的基礎映像時可能會遇到錯誤 `New-ContainerNetwork: The object already exists`。 因應措施是從提升權限的命令提示字元執行 `Netsh int ipv4 reset` 命令，然後將電腦重新開機。 
-+ 使用 "AnyCPU" 組建選項編譯的 .NET 應用程式，若其主要的可執行檔或任何相依性是放在 "Program Files" 或 "Windows\System32" 底下，安裝將會失敗。 因應措施是使用您的架構專用的傳統型安裝程式 (32 位元或 64 位元) 來成功產生 AppX 套件。
+* 目前正在調查部分 OS 組建上發生的下列錯誤：
+    
+    * ```E_CREATTING_ISOLATED_ENV_FAILED```
+    * ```E_STARTING_ISOLATED_ENV_FAILED```
+    
+    如果您遇到其中任一項錯誤，請確定使用的是[下載中心](https://aka.ms/converterimages)內的有效基礎映像。 若您使用的 .wim 有效，請透過 converter@microsoft.com 將您的記錄檔傳送給我們，協助我們進行調查。 
 
-## <a name="telemetry-from-desktop-app-converter"></a>從傳統型應用程式轉換器進行遙測  
+* 如果您在先前已安裝 Desktop App Converter 的開發人員電腦上收到 Windows 測試人員正式發行前小眾測試版，則您在安裝新的基礎映像時可能會遇到錯誤 `New-ContainerNetwork: The object already exists`。 因應措施是從提升權限的命令提示字元執行 `Netsh int ipv4 reset` 命令，然後將電腦重新開機。 
+
+* 使用 "AnyCPU" 組建選項編譯的 .NET 應用程式，若其主要的可執行檔或任何相依性是放在 "Program Files" 或 "Windows\System32" 底下，安裝將會失敗。 因應措施是使用您的架構專用的傳統型安裝程式 (32 位元或 64 位元) 來成功產生 AppX 套件。
+
+## <a name="telemetry-from-desktop-app-converter"></a>從傳統型應用程式轉換器進行遙測
+
 傳統型應用程式轉換器可能會收集您及您軟體使用方式的相關資訊，並將這項資訊傳送給 Microsoft。 您可以在產品文件和 [Microsoft 隱私權聲明](http://go.microsoft.com/fwlink/?LinkId=521839)中深入了解 Microsoft 的資料收集及使用方式。 您同意遵守 Microsoft 隱私權聲明的所有適用條款。
 
 預設會針對傳統型應用程式轉換器啟用遙測。 新增下列登錄機碼來設定所需設定的遙測︰  
-```CMD
+
+```cmd
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\DesktopAppConverter
 ```
 + 使用設為 1 的 DWORD 來新增或編輯 *DisableTelemetry* 值。
@@ -275,9 +289,7 @@ Desktop App Converter 現在支援建立可讓您在 x86 和 amd64 電腦上安�
 
 ### <a name="running-the-peheadercertfixtool"></a>執行 PEHeaderCertFixTool
 
-轉換過程中，DesktopAppConverter 會自動執行 PEHeaderCertFixTool，以修正任何損毀的 PE 標頭。 不過，您也可以在 UWP appx、鬆散檔案或特定的二進位檔上執行 PEHeaderCertFixTool。 
-
-PEHeaderCertFixTool 隨附於 DesktopAppConverter.zip 中。 用法範例： 
+轉換過程中，DesktopAppConverter 會自動執行 PEHeaderCertFixTool，以修正任何損毀的 PE 標頭。 不過，您也可以在 UWP appx、鬆散檔案或特定的二進位檔上執行 PEHeaderCertFixTool。 使用範例： 
 
 ```CMD
 PEHeaderCertFixTool.exe <binary file>|<.appx package>|<folder> [/c] [/v]
@@ -298,6 +310,6 @@ Desktop App Converter 不支援 Unicode；因此，無法在工具上使用中�
 + [Project Centennial︰將現有的傳統型應用程式移至通用 Windows 平台](https://channel9.msdn.com/events/Build/2016/B829)  
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -5,44 +5,44 @@ title: "設計外部說明頁面的指導方針"
 label: External help
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 9da639dedf46068fb1f555f90b39ab979114ebf3
-ms.openlocfilehash: de371e39dc98049545b81329f240fbe94df78de5
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 9733608c7212ab1e26511c33034ad2b626cc5887
 
 ---
 
-# 外部說明頁面
+# <a name="external-help-pages"></a>外部說明頁面
 
-\[ 針對 Windows 10 上的通用 Windows 平台 (UWP) app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+
 
 如果您的應用程式需要複雜內容的詳細說明，請考慮將這些指示裝載在網頁。
 
-## <span id="when_to_use_external_help_pages"></span><span id="WHEN_TO_USE_EXTERNAL_HELP_PAGES"></span>何時使用外部說明頁面
+## <a name="when-to-use-external-help-pages"></a>何時使用外部說明頁面
 
-外部說明頁面對一般用途或快速參考來說較不方便，但適合用於本身太龐大而無法納入 app 的說明內容，以及 app 的一般對象不會使用的進階功能教學課程與指示。
+對於一般用途或快速參考，外部說明頁面較不方便。 它們適用於太大而無法納入應用程式本身的說明內容，以及其一般對象不會使用的應用程式進階函式的教學課程和指示。
 
-如果您的說明內容簡短或夠明確可顯示在應用程式內，則應該這樣做。 除非必要，否則避免將使用者導向至 app 外部尋求協助。
+如果您的說明內容簡短或夠明確可顯示在應用程式內，則應該這樣做。 除非必要，否則請不要指示使用者取得應用程式外部的說明。
 
-## <span id="navigating_external_help_pages"></span><span id="NAVIGATING_EXTERNAL_HELP_PAGES"></span>瀏覽外部說明頁面
+## <a name="navigating-external-help-pages"></a>瀏覽外部說明頁面
 
-當使用者導向至外部說明頁面時，體驗應該反映兩種情況：
+將使用者導向外部說明頁面時，請遵循兩個案例中的其中一個︰
 -   它們直接連結到對應已知問題的頁面。 這是內容說明，而且應該盡可能使用。
 -   它們會連結到一般說明頁面，可清楚顯示可從中選擇的類別和子類別。
 
 為使用者提供搜尋您說明的方法可能十分有用，但不要讓這個搜尋成為瀏覽您說明的唯一方式。 使用者有時很難描述其問題，這樣會讓搜尋變得困難。 使用者應該能夠快速找到與其問題相關的頁面，而不需要進行搜尋。
 
-## <span id="tutorials_and_detailed_walkthroughs"></span><span id="TUTORIALS_AND_DETAILED_WALKTHROUGHS"></span>教學課程和詳細逐步解說
+## <a name="tutorials-and-detailed-walkthroughs"></a>教學課程和詳細逐步解說
 
 外部說明頁面是為使用者提供教學課程和逐步解說的理想位置 (不論是視訊還是文字)。
 -   教學課程應著重在更複雜的概念和進階函式。 使用者應該不需要教學課程，就能使用您的應用程式。
 -   請確定這些教學課程的顯示方式與標準說明指示不同。 與想要其問題的直接解決方法的使用者比較起來，尋找進階指示的使用者會更想要進行搜尋。
 -   請考慮從目錄和對應到每個教學課程的個別說明頁面連結到教學課程。
 
-## <span id="related_topics"></span>相關文章
+## <a name="related-articles"></a>相關文章
 
 * [App 說明的指導方針](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

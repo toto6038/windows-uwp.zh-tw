@@ -6,16 +6,18 @@ title: "音效"
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 translationtype: Human Translation
-ms.sourcegitcommit: e240197b4cc233b9fc1ecaa4a1835c4a4dcd3bf8
-ms.openlocfilehash: 91021d76b180e2bc26c0d502098e0a0b21f0219f
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 5e4decdfdda0cad59d80395440f974d4ff3303a6
 
 ---
 
-# 音效
+# <a name="sound"></a>音效
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 有許多方式可以使用音效來增強您的 App。 您可以使用音效來補充其他 UI 元素，讓使用者能透過音效辨識事件。 針對視覺殘障人士而言，音效可以是有效的使用者介面元素。 您可以使用音效來建立一個讓使用者身歷其境的氛圍；例如，您可以在拼圖遊戲的背景中播放詭譎的音樂，或針對恐怖/求生遊戲使用具威脅性的音效。
 
-## 音效全域 API
+## <a name="sound-global-api"></a>音效全域 API
 
 UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，即可在整個應用程式體驗沈浸式音訊。
 
@@ -27,12 +29,12 @@ ElementSoundPlayer.State = ElementSoundPlayerState.On;
 
 如果設定為 [Off]****，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 [On]****，您的應用程式的音效將會在每個平台上播放。
 
-### 電視和 Xbox 的音效
+### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
 音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]****，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
 若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](http://go.microsoft.com/fwlink/?LinkId=760736)文章。
 
-## 音效音量覆寫
+## <a name="sound-volume-override"></a>音效音量覆寫
 
 應用程式內的所有音效都可以透過 **Volume** 控制項停用。 不過，應用程式內的音效不能「比系統音效大聲」**。
 
@@ -42,7 +44,7 @@ ElementSoundPlayer.Volume = 0.5f;
 ```
 其中最大音量 (相對於系統音量) 是 1.0，而最小音量是 0.0 (基本上是靜音)。
 
-## 控制項層級狀態
+## <a name="control-level-state"></a>控制項層級狀態
 
 如果不需要控制項的預設音效，可予以停用。 這可透過控制項上的 **ElementSoundMode** 來達成。
 
@@ -56,13 +58,13 @@ ElementSoundPlayer.Volume = 0.5f;
 ButtonName.ElementSoundState = ElementSoundMode.Off;
 ```
 
-## 這是正確的音效嗎？
+## <a name="is-this-the-right-sound"></a>這是正確的音效嗎？
 
 當建立自訂控制項，或變更現有控制項的音效時，請務必了解系統提供的所有音效的用法。
 
 每個音效會與某個基本使用者互動相關，雖然可以將音效自訂成在任何互動時播放，但本節主要說明應使用音效而讓所有 UWP 應用程式維持一致體驗的案例。
 
-### 叫用元素
+### <a name="invoking-an-element"></a>叫用元素
 
 我們的系統中目前最常見的控制項觸發音效為 **Invoke** 音效。 當使用者透過點選/按一下/Enter/空格或按遊戲台的 'A' 按鈕叫用控制項時，就會播放這個音效。
 
@@ -75,7 +77,7 @@ ButtonName.ElementSoundState = ElementSoundMode.Off;
 ElementSoundPlayer.Play(ElementSoundKind.Invoke);
 ```
 
-### 顯示及隱藏內容
+### <a name="showing--hiding-content"></a>顯示及隱藏內容
 
 XAML 中有許多飛出視窗、對話方塊及可解除的 UI，而任何觸發其中一個重疊的動作應該呼叫 **Show** 或 **Hide** 音效。
 
@@ -93,7 +95,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Show);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
-### 頁面內的瀏覽
+### <a name="navigation-within-a-page"></a>頁面內的瀏覽
 
 在應用程式頁面中的面板或檢視之間瀏覽時 (請參閱[中樞](../controls-and-patterns/hub.md)或[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md))，通常是雙向移動。 這表示您可以移至下一個或上一個檢視/面板，而不需離開您目前所在的應用程式頁面。
 
@@ -113,7 +115,7 @@ ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```
-### 向後巡覽
+### <a name="back-navigation"></a>向後巡覽
 
 從目前頁面瀏覽到應用程式中前一個頁面時，應呼叫 **GoBack** 音效︰
 
@@ -122,7 +124,7 @@ ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```
-### 將焦點放在某個元素
+### <a name="focusing-on-an-element"></a>將焦點放在某個元素
 
 **Focus** 音效我們的系統中唯一隱含的音效。 這表示使用者並未直接與任何項目互動，但仍會聽到音效。
 
@@ -135,18 +137,18 @@ ElementSoundPlayer.Play(ElementSoundKind.GoBack);
 ```C#
 ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ```
-### 循環播放焦點音效
+### <a name="cycling-focus-sounds"></a>循環播放焦點音效
 
 音效系統預設會在每個瀏覽觸發程序循環播放 4 個不同的音效，這是呼叫 **ElementSound.Focus** 的新增功能。 這表示任意兩個焦點音效不會彼此接連播放。
 
 此循環功能背後的目的是為了避免焦點音效變單調，以及避免無法引起使用者的注意；焦點音效將會最常播放，因此應該最為精緻。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [針對 Xbox 和電視進行設計](http://go.microsoft.com/fwlink/?LinkId=760736)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

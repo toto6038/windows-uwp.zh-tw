@@ -6,11 +6,11 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: f26b042bb7efb6599993b8fd7cee6ee35e1765fd
-ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 95ddb1ddd1dfd318a5c491504c95f7833f98115e
 
 ---
-# 選項按鈕
+# <a name="radio-buttons"></a>選項按鈕
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -23,20 +23,14 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br227544"><strong>RadioButton 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked 事件</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked 屬性</strong></a></li>
+<li>[**RadioButton 類別**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
+<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用選項按鈕將二或多個互斥選項呈現給使用者，如下所示。
 
@@ -60,22 +54,20 @@ ms.openlocfilehash: 0e9cd8db21577bdbfe4c53fc9a17fbcbf5c81f76
 
 如果可用的選項取決於應用程式目前的內容，或者可能會不斷地變化，請改用單選[清單方塊](lists.md)。
 
-## 範例
+## <a name="example"></a>範例
 Microsoft Edge 瀏覽器設定中的選項按鈕。
 
 ![Microsoft Edge 瀏覽器設定中的選項按鈕](images/control-examples/radio-buttons-edge.png)
 
-## 建立選項按鈕
+## <a name="create-a-radio-button"></a>建立選項按鈕
 
 選項按鈕以群組方式運作。 您可以用 2 種方式來將選項按鈕控制項方組︰
 - 將它們放入同一個父容器。
 - 將每個選項按鈕的 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 屬性設定為相同的值。
 
-> 
-            **注意**
-              透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
+> **注意**&nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
 
-在這個範例中，第一個選項按鈕群組位於相同的堆疊面板中，藉此以隱含方式群組化。 第二個群組分成 2 個堆疊面板，所以是依 GroupName 明確群組化。
+在這個範例中，第一個選項按鈕群組位於相同的堆疊面板中，藉此以隱含方式群組化。 第二個群組分成 2 個堆疊面板，所以是依 GroupName 明確分組。
 
 ```xaml
 <StackPanel>
@@ -157,13 +149,13 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-使用者選取藍色背景和綠色框線後，選項按鈕群組看起來會像這樣。
+選項按鈕群組看起來就像這樣。
 
 ![兩個群組中的選項按鈕](images/radio-button-groups.png)
 
-選項按鈕有兩個狀態：[已選取] 或 [已清除]。 已選取選項按鈕時，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
+選項按鈕有兩個狀態：*已選取* 或 *已清除*。 已選取選項按鈕時，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
 
-## 建議
+## <a name="recommendations"></a>建議
 
 -   確定一組選項按鈕的目的和目前狀態非常明確。
 -   一律在使用者點選選項按鈕時顯示視覺化回饋。
@@ -178,12 +170,12 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 -   不要在選項按鈕群組中放置超過 8 個選項。 當您需要呈現更多選項時，請改用[下拉式清單](lists.md)、[清單方塊](lists.md)或[清單檢視](lists.md)。
 -   不要並列兩個選項按鈕群組。 當兩個選項按鈕群組並列時，很難判斷哪個按鈕屬於哪個群組。 使用群組標籤加以區隔。
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
 下圖顯示放置選項按鈕及其間隔的正確方法。
 
 ![一組選項按鈕](images/radiobutton_layout1.png)
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 **適用於設計人員**
 - [按鈕的指導方針](buttons.md)
@@ -200,6 +192,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

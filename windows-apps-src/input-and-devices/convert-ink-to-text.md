@@ -5,21 +5,30 @@ title: "將 Windows Ink 筆劃辨識為文字"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
-keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, 手寫辨識"
+keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, 手寫辨識, 使用者互動, 輸入"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: c402843cce752a54d8ff7301d892ef8014350a07
+ms.sourcegitcommit: 76b012ab4cf737f00fc986c81c88fd48339867fc
+ms.openlocfilehash: c832c3c3626ac5f75eaac4317b6779c410693742
 
 ---
 
 # <a name="recognize-windows-ink-strokes-as-text"></a>將 Windows Ink 筆劃辨識為文字
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 使用 Windows Ink 中支援的手寫辨識功能，將筆墨筆劃轉換為文字。
 
-**重要 API**
-
--   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
--   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)</li>
+<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
+</ul>
+</div> 
 
 
 手寫辨識內建於 Windows Ink 平台，並支援一組廣泛的地區設定和語言。
@@ -221,7 +230,7 @@ Windows 支援的完整語言子集可用於手寫辨識。
 2.  選取 [新增語言]。
 3.  從清單中選取語言，然後選擇地區版本。 語言現在會列於 [地區及語言] 頁面上。
 4.  按一下語言，然後選取 [選項]。
-5.  在 [語言選項] 頁面上，下載 [手寫辨識引擎] (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
+5.  在 **[語言選項]** 頁面上，下載 **[手寫辨識引擎]** (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
 
  
 
@@ -457,7 +466,7 @@ string str = "Recognition result\n";
 
 1.  如同先前範例，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 已設定為會將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃 ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019))，而且會在 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上，使用指定的 [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) 來轉譯筆墨筆劃。
 
-    我們針對兩個 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 筆劃事件 ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) 和 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702))新增了接聽程式，並設定含有一秒 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) 間隔的基本計時器 ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250))，來取代初始辨識的按鈕。    
+    我們針對兩個 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 筆劃事件 ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) 和 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702))新增了接聽程式，並設定含有一秒 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244250) 間隔的基本計時器 ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244256))，來取代初始辨識的按鈕。    
 ```    CSharp
 public MainPage()
     {
@@ -559,7 +568,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會根據選取的手寫辨識器執行手寫辨識。 在這個範例中，我們使用 [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) 的 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) 事件處理常式來初始手寫辨識功能。
+3.  最後，會根據選取的手寫辨識器執行手寫辨識。 在這個範例中，我們使用 [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244256) 的 [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244250) 事件處理常式來初始手寫辨識功能。
 
     [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 會儲存 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 物件中的所有筆墨筆劃。 筆劃是透過 **InkPresenter** 的 [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) 屬性來公開，並使用 [**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) 方法來擷取。
 ```    CSharp
@@ -676,6 +685,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

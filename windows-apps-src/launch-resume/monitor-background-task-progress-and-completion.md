@@ -4,15 +4,15 @@ title: "監視背景工作進度和完成"
 description: "了解 app 如何辨識背景工作所報告的進度與完成。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
 
 ---
 
-# 監視背景工作進度和完成
+# <a name="monitor-background-task-progress-and-completion"></a>監視背景工作進度和完成
 
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -25,9 +25,9 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
  背景工作的進度和完成可以透過 App 程式碼監視。 若要執行這項作業，App 要訂閱已向系統註冊之背景工作的事件。
 
--   這個主題假設您有一個註冊背景工作的 App。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-an-outofproc-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
+-   這個主題假設您有一個註冊背景工作的 App。 若要快速開始建立背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。 如需條件與觸發程序的深入資訊，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-## 建立事件處理常式，以處理完成的背景工作。
+## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>建立事件處理常式，以處理完成的背景工作。
 
 1.  建立事件處理常式函式，以處理完成的背景工作。 這個程式碼需要遵循特定的配置，其中包括 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) 物件與 [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) 物件。
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## 建立事件處理常式函式，以處理背景工作進度。
+## <a name="create-an-event-handler-function-to-handle-background-task-progress"></a>建立事件處理常式函式，以處理背景工作進度。
 
 1.  建立事件處理常式函式，以處理完成的背景工作。 這個程式碼需要遵循特定的配置，其中包括 [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) 物件與 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 物件：
 
@@ -109,7 +109,7 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     };
     > ```
 
-## 使用新的和現有的背景工作來登錄事件處理函式
+## <a name="register-the-event-handler-functions-with-new-and-existing-background-tasks"></a>使用新的和現有的背景工作來登錄事件處理函式
 
 
 1.  當應用程式第一次登錄背景工作時，它應該登錄以接收其進度和完成更新，以防應用程式在前景仍然為使用中時執行工作。
@@ -195,10 +195,10 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
     >     }
     > ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
-* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
 * [登錄背景工作](register-a-background-task.md)
@@ -213,6 +213,6 @@ ms.openlocfilehash: c12c3184cf6f4dce3d3ee2a4cf49843c8b9828d3
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

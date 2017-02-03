@@ -6,16 +6,18 @@ ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: f8cb9c36b42936b8dfd24bbd5f88e2cf500e930f
 
 ---
 
-# 適用於 UWP 應用程式的圖示
+# <a name="icons-for-uwp-apps"></a>適用於 UWP 應用程式的圖示
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 理想的圖示達到印刷格式與其餘設計語言的平衡。 它們不會混合使用隱喻，而且只會盡可能快速並簡單地溝通所需的內容。 
 
-## 線性縮放大小手法 
+## <a name="linear-scaling-size-ramps"></a>線性縮放大小手法 
 
 <table>
     <tr> 
@@ -32,7 +34,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>
 </table>
 
-## 通用圖形
+## <a name="common-shapes"></a>通用圖形
 
 圖示通常應該最大化其指定空間，且具有最小邊框間距。 這些圖形提供可調整基本圖形大小的起點。 
 
@@ -40,7 +42,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 使用對應到圖示方向的圖形，並透過這些基本參數撰寫。 圖示不一定需要填滿或完全放入圖形的內部，而且可以視需要進行調整，確保最佳的平衡。 
 
-<table>
+<table class="uwpd-noborder">
     <tr>
         <td>圓形<td>
         <td>方形</td>
@@ -63,7 +65,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 
 </table>
 
-## 角度
+## <a name="angles"></a>角度
 
 除了使用相同的格線和線條粗細之外，還會使用常用的元素來建構圖示。 
 
@@ -98,7 +100,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>
 </table>
 
-## 曲線
+## <a name="curves"></a>曲線
 
 曲線是透過整個圓形的各個區段建構而成，而且除非需要貼齊像素格線，否則不應該扭曲。 
 
@@ -117,19 +119,19 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
     </tr>    
 </table>
 
-## 幾何建構
+## <a name="geometric-construction"></a>幾何建構
 
 建議在建構圖示時僅使用單純幾何形狀。
 
 ![具有幾何重疊的吉他圖示 ](images/icons-geometric-construction.png)
 
-## 填滿的形狀 
+## <a name="filled-shapes"></a>填滿的形狀 
 
 圖示可以視需要包含填滿的形狀，但在 32px × 32px 時不應該超過 4px。 填滿的圓形不應該大於 6px × 6px。 
 
 ![5px x 8px 填滿 ](images/icons-filled-shapes.png)
 
-## 徽章
+## <a name="badges"></a>徽章
 
 「徽章」是一個泛型詞彙，用來描述新增到圖示的元素，而圖示不是用來與基本圖示元素整合。 這些通常會傳達狀態或動作這類圖示的相關資訊的其他部分。 其他常見詞彙包括︰重疊、註釋或修飾詞。 
 
@@ -151,7 +153,7 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 </table>
 <p></p>
 
-### 徽章色彩 
+### <a name="badge-color"></a>徽章色彩 
 
 色彩徽章只應該用來傳達圖示的狀態。 狀態徽章中所使用的色彩可將特定感情訊息傳達給使用者。 
 
@@ -163,20 +165,20 @@ ms.openlocfilehash: 9d19107a29c471a811e87fc548656ff2d970754d
 </table>
 <p></p>
 
-### 徽章位置
+### <a name="badge-position"></a>徽章位置
 
 任何狀態或動作的預設位置都是右下方。 只有在設計不允許時，才使用其他位置。 
 
-### 徽章大小
+### <a name="badge-sizing"></a>徽章大小
 
 在 32 px × 32 px 格線上，徽章的大小應該為 10–18 px。 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [磚和圖示資產的指導方針](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

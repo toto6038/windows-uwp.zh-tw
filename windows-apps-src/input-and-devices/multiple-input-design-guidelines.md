@@ -6,12 +6,13 @@ ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
 
 ---
 
-# 多重輸入
+# <a name="multiple-inputs"></a>多重輸入
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。
 
@@ -24,12 +25,12 @@ ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 -   所有輸入法是否隨時受到支援？ 使用特定控制項？ 在特定時間或情況？
 -   某個輸入法的優先順序是否較高？
 
-## 單一 (或專屬) 模式互動
+## <a name="single-or-exclusive-mode-interactions"></a>單一 (或專屬) 模式互動
 
 
 使用單一模式互動，支援多個輸入類型，但是只有一個可以用於每個動作。 例如，命令的語音辨識及進行瀏覽的手勢；或根據鄰近性使用觸控或手勢的文字輸入。
 
-## 多樣式互動
+## <a name="multimodal-interactions"></a>多樣式互動
 
 
 使用多樣式互動，會使用序列中的多個輸入法完成一個動作。
@@ -45,6 +46,6 @@ ms.openlocfilehash: d4238e0d1becee719148b38acf5a91d74230601d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

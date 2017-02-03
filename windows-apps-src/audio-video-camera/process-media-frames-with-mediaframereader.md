@@ -4,8 +4,8 @@ ms.assetid:
 description: "本文章示範如何使用 MediaFrameReader 搭配 MediaCapture，從一或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。"
 title: "使用 MediaFrameReader 處理媒體畫面"
 translationtype: Human Translation
-ms.sourcegitcommit: 881f806a61d247c6c4f73aa770ba4c5dab91af00
-ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
+ms.sourcegitcommit: e6ab1fc16f150de2fed3797d89375a52b3965182
+ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
 
 ---
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 > 本文中所討論的功能只從 Windows 10 版本 1607 開始提供。
 
 > [!NOTE] 
-> 還有一個通用 Windows 應用程式範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)。
+> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)。
 
 ## <a name="setting-up-your-project"></a>設定您的專案
 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
@@ -40,11 +40,11 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-您也可以使用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) 和 [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector) 傳回的值建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)，以在裝置上可用的畫面來源群組變更時收到通知，例如當插入外部相機時。 如需詳細資訊，請參閱[**列舉裝置**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+您也可以使用 [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher) 和 [**MediaFrameSourceGroup.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/br225427) 傳回的值建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)，以在裝置上可用的畫面來源群組變更時收到通知，例如當插入外部相機時。 如需詳細資訊，請參閱[**列舉裝置**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 有一個 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的集合，可描述群組中包含的畫面來源。 在擷取裝置上可用的畫面來源群組之後，您可以選取公開您感興趣的畫面來源群組。
 
-下列範例示範選取畫面來源群組最簡單的方式。 這個程式碼僅重複查看所有可用的群組，然後重複查看 [**SourceInfos**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.SourceInfos) 集合中的每個項目。 每個 **MediaFrameSourceInfo** 都會被檢查，以查看是否支援我們要尋找的功能。 在這個案例中，會針對值 [**VideoPreview**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 檢查 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.MediaStreamType) 屬性，表示裝置提供一個視訊預覽資料流，以及針對值 [**Color**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceKind) 檢查 [**SourceKind**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.SourceKind) 屬性，指示來源提供色彩畫面。
+下列範例示範選取畫面來源群組最簡單的方式。 這個程式碼僅重複查看所有可用的群組，然後重複查看 [**SourceInfos**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.SourceInfos) 集合中的每個項目。 每個 **MediaFrameSourceInfo** 都會被檢查，以查看是否支援我們要尋找的功能。 在這個案例中，會針對值 [**VideoPreview**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.MediaStreamType) 檢查 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 屬性，表示裝置提供一個視訊預覽資料流，以及針對值 [**Color**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo.SourceKind) 檢查 [**SourceKind**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceKind) 屬性，指示來源提供色彩畫面。
 
 [!code-cs[SimpleSelect](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSimpleSelect)]
 
@@ -70,7 +70,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 藉由呼叫建構函式，建立 **MediaCapture** 物件的執行個體。 接下來，建立將用來初始化 **MediaCapture** 物件的 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings) 物件。 在這個範例中，會使用下列設定︰
 
 * [**SourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SourceGroup) - 這會告訴系統您將會使用哪一個來源群組取得畫面。 請記住，來源群組會定義一組可同時使用的媒體畫面來源。
-* [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) - 這會告訴系統您是否需要擷取來源裝置的專屬控制項。 如果您將此設定為 [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (例如裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
+* [**SharingMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.SharingMode) - 這會告訴系統您是否需要擷取來源裝置的專屬控制項。 如果您將此設定為 [**ExclusiveControl**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，就表示您可以變更擷取裝置的設定 (像是裝置所產生的畫面格式)，但是這表示如果其他 App 已經有專屬控制項，當您的 App 嘗試初始化媒體擷取裝置時將會失敗。 如果您將此設定為 [**SharedReadOnly**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSharingMode)，即使畫面來源正由其他 App 使用，您也可以接收來自畫面來源的畫面，但您無法變更裝置的設定。
 * [**MemoryPreference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.MemoryPreference) - 如果您指定 [**CPU**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統將會使用 CPU 記憶體確保當畫面抵達時，畫面可以做為 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap) 物件使用。 如果您指定 [**Auto**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureMemoryPreference)，系統會以動態方式選擇最佳的記憶體位置來儲存畫面。 如果系統選擇使用 GPU 記憶體，媒體畫面會以 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.DirectX.Direct3D11.IDirect3DSurface) 物件的方式抵達，而不是 **SoftwareBitmap**。
 * [**StreamingCaptureMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.StreamingCaptureMode) - 將它設定為 [**Video**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.StreamingCaptureMode) 以指示該音訊不需要串流處理。
 
@@ -117,7 +117,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 **Image** 控制項可以僅顯示預乘或無 Alpha 的 BRGA8 格式影像。 如果送達的畫面不是該格式，會使用靜態方法 [**Convert**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.SoftwareBitmap.Covert) 將軟體點陣圖轉換成正確的格式。
 
-接下來，[**Interlocked.Exchange**](https://msdn.microsoft.com/en-us/library/bb337971) 方法會用來交換送達點陣圖的參考與後端緩衝區點陣圖。 這個方法會在安全執行緒的不可部分完成作業中交換這些參考。 交換之後，會處置舊的後端緩衝區影像 (現在在 *softwareBitmap* 變數中) 以清除其資源。
+接下來，[**Interlocked.Exchange**](https://msdn.microsoft.com/library/bb337971) 方法會用來交換送達點陣圖的參考與後端緩衝區點陣圖。 這個方法會在安全執行緒的不可部分完成作業中交換這些參考。 交換之後，會處置舊的後端緩衝區影像 (現在在 *softwareBitmap* 變數中) 以清除其資源。
 
 接下來，會使用與 **Image** 元素相關聯的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher) 來建立將透過呼叫 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 在 UI 執行緒上執行的工作。 因為非同步工作將會在工作中執行，所以 lambda 運算式會傳遞到使用 *async* 關鍵字宣告的 **RunAsync**。
 
@@ -126,7 +126,7 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 最後，*_taskRunning* 變數會設定回 false，就可以在下一次呼叫處理常式時再次執行工作。
 
 > [!NOTE] 
-> 如果您要存取 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 的 [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) 屬性提供的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) 或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) 物件，則系統會建立這些物件的強式參考，這表示當您在包含的 **MediaFrameReference** 上呼叫 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) 時，他們不會被處置。 您必須針對要立即處置的物件明確地直接呼叫 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否則，記憶體回收行程最終會釋放這些物件的記憶體，但您無法得知何時會釋放，而且如果配置的點陣圖或表面的數量超過系統允許的數量上限，新畫面的資料流就會停止。
+> 如果您要存取 [**MediaFrameReference**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.SoftwareBitmap) 的 [**VideoMediaFrame**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.VideoMediaFrame.Direct3DSurface) 屬性提供的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.VideoMediaFrame) 或 [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference) 物件，則系統會建立這些物件的強式參考，這表示當您在包含的 **MediaFrameReference** 上呼叫 [**Dispose**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReference.Close) 時，他們不會被處置。 您必須針對要立即處置的物件明確地直接呼叫 **SoftwareBitmap** 或 **Direct3DSurface** 的 **Dispose** 方法。 否則，記憶體回收行程最終會釋放這些物件的記憶體，但您無法得知何時會釋放，而且如果配置的點陣圖或表面的數量超過系統允許的數量上限，新畫面的資料流就會停止。
 
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFrameArrived)]
@@ -167,6 +167,6 @@ ms.openlocfilehash: 648874a50dbe333f1bb6291de646d9088eec1528
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

@@ -2,11 +2,16 @@
 author: GrantMeStrength
 ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
 title: "接下來要做什麼？"
-description: "現在您已經建立了您的第一個 app，請查看開發人員中心的其他部分。 這裡提供所含不同章節的簡介。"
-keywords: "開發人員中心, 入門"
+description: "現在您已經建立了您的第一個應用程式，請查看開發人員中心的其他部分。 這裡提供所含不同章節的簡介。"
+keywords: "Dev Center, tour Dev Center, Getting started, 開發人員中心, 導覽開發人員中心, 開始使用"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7e76c9abd4157c22b38d79b178f5f07827d336ca
-ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 ---
 
@@ -14,22 +19,22 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 # <a name="whats-next"></a>接下來要做什麼？
 
-如此看來，您應該想要撰寫 app 並發佈到 Windows 市集︰該從何著手？ 如果您對 UWP 平台完全不了解，請嘗試一些 <a href="https://channel9.msdn.com/">Channel 9</a> 影片和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 課程。 如果您已經熟悉 XAML 和 C#，您可以開始瀏覽下列主題，或直接 [下載一些範例](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+如此看來，您應該想要撰寫應用程式並發佈到 Windows 市集︰該從何著手？ 如果您對 UWP 平台完全不了解，請嘗試一些 <a href="https://channel9.msdn.com/">Channel 9</a> 影片和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 課程。 如果您已經熟悉 XAML 和 C#，您可以開始瀏覽下列主題，或直接 [下載一些範例](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
 
-有許多工具和架構可用來協助您撰寫 app，而且有許多支援跨平台開發。 例如，如果您想要撰寫 2D 遊戲，您可能想要查看 <a href="http://www.monogame.net">Monogame</a>。 如果是 3D 遊戲，則有 <a href="http://www.unity3d.com">Unity</a>，如果您的焦點是行動裝置，就別忘了 <a href="http://www.xamarin.com">Xamarin</a>。
+有許多工具和架構可用來協助您撰寫應用程式，而且有許多支援跨平台開發。 例如，如果您想要撰寫 2D 遊戲，您可能想要查看 <a href="http://www.monogame.net">Monogame</a>。 如果是 3D 遊戲，則有 <a href="http://www.unity3d.com">Unity</a>，如果您的焦點是行動裝置，就別忘了 <a href="http://www.xamarin.com">Xamarin</a>。
 
-如果您剛開始使用，建議您仔細閱讀 UWP 主題來了解平台，然後研究如何使用 XAML 控制項再加以自訂，來建立您的使用者介面。 您將使用 XAML 來配置 app ([此處提供的教學課程](../layout/grid-tutorial.md)將帶領您逐步執行)，但是 XAML 的主要強大之處就在於使用「資料繫結」，這會將控制項與您 app 想要顯示的資訊結合︰如果您是 Windows 平台新手，這會是一個需要了解的重要概念。 
+如果您剛開始使用，建議您仔細閱讀 UWP 主題來了解平台，然後研究如何使用 XAML 控制項再加以自訂，來建立您的使用者介面。 您將使用 XAML 來配置應用程式 ([此處提供的教學課程](../layout/grid-tutorial.md)將帶領您逐步執行)，但是 XAML 的主要強大之處就在於使用「資料繫結」**，這會將控制項與您應用程式想要顯示的資訊結合︰如果您是 Windows 平台新手，這會是一個需要了解的重要概念。 
 <table class="wdg-noborder">
 <tr>
  <td width=60><img src="images/icon3.png" width=64></td>
-    <td><h2>UWP 與 UWP App 週期</h2><p>App 如何啟動、當您啟動另一個 App 時會發生什麼情況？ 以下是說明。</p> <ul>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) App 指南</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP app 週期</a></li>
+    <td><h2>UWP 與 UWP 應用程式週期</h2><p>應用程式如何啟動、當您啟動另一個應用程式時會發生什麼情況？ 以下是說明。</p> <ul>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide">通用 Windows 平台 (UWP) 應用程式指南</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle">UWP 應用程式週期</a></li>
     <li><a href="https://developer.microsoft.com/windows/windows-10-for-developers">Windows 10 中有哪些酷炫功能</a></ul></td>  
 </tr>
 <tr>
  <td width=60><img src="images/icon7.png" width=64></td>
-    <td><h2>UX 與 UI</h2><p>您有哪些可任您支配的控制項，以及如何使用它們？ 這些主題說明控制項和程式碼如何一起運作，以及您如何自訂它們來符合您 App 的外觀。</p> <ul>
+    <td><h2>UX 與 UI</h2><p>您有哪些可任您支配的控制項，以及如何使用它們？ 這些主題說明控制項和程式碼如何一起運作，以及您如何自訂它們來符合您應用程式的外觀。</p> <ul>
     <li><a href="https://developer.microsoft.com/windows/design">設計與 UI</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml">使用 XAML 定義頁面配置</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/controls-by-function">依功能分類的控制項</a></li>
@@ -41,7 +46,7 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 </tr>
 <tr>
  <td width=60><img src="images/icon6.png" width=64></td>
-    <td><h2>資料和服務</h2><p>了解資料繫結，資料繫結可讓您的程式碼自動填入清單和方格。 探索如何連結至外部資源以將資料匯入您的 App。</p> <ul>
+    <td><h2>資料和服務</h2><p>了解資料繫結，資料繫結可讓您的程式碼自動填入清單和方格。 探索如何連結至外部資源以將資料匯入您的應用程式。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/data-binding/index">資料繫結</a></li>
     <li><a href="https://msdn.microsoft.com/windows/uwp/controls-and-patterns/listview-and-gridview">ListView、GridView 及資料繫結</a></li>
      <li><a href="https://msdn.microsoft.com/windows/uwp/data-access/index">資料存取</a></li>
@@ -49,9 +54,9 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 </tr>
 <tr>
  <td width=60><img src="images/icon4.png" width=64></td>
-    <td><h2>發行</h2><p>與全世界分享您的作品、大發利市。 我們將引導您逐步完成將 App 在市集上架的程序。</p> <ul>
+    <td><h2>發行</h2><p>與全世界分享您的作品、大發利市。 我們將引導您逐步完成將應用程式在市集上架的程序。</p> <ul>
     <li><a href="https://msdn.microsoft.com/windows/uwp/publish/index">發行 Windows 應用程式</a></li>
-    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">封裝 App</a></li>
+    <li><a href="https://msdn.microsoft.com/windows/uwp/packaging/index">封裝應用程式</a></li>
     </ul></td>  
 </tr>
 <tr>
@@ -62,10 +67,10 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
     <li><a href="https://developer.microsoft.com/windows/samples">程式碼範例</a></li>
     <li><a href="https://msdn.microsoft.com/library/618ayhy6(VS.110).aspx">C# 參考資料</a></li>
     <li><a href="https://msdn.microsoft.com/library/windows/apps/bg124285.aspx">API 參考資料</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">撰寫適用於 Xbox One 的 App</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/xbox-apps/index">撰寫適用於 Xbox One 的應用程式</a></li>
      <li><a href="https://www.microsoft.com/microsoft-hololens/developers">為 HoloLens 進行開發</a></li>
-     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">將 App 移植到 Windows 10</a></li>
-      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">為企業撰寫 App</a></li>
+     <li><a href="https://msdn.microsoft.com/windows/uwp/porting/index">將應用程式移植到 Windows 10</a></li>
+      <li><a href="https://msdn.microsoft.com/windows/uwp/enterprise/index">為企業撰寫應用程式</a></li>
       <li><a href="https://blogs.windows.com/buildingapps/2016/08/17/introducing-the-uwp-community-toolkit/#D1IfVxCZMQGZqlc7.97">UWP 社群工具組</a></li>
     </ul>
     </td>  
@@ -81,8 +86,8 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 * [具有視覺層的動畫](https://blogs.windows.com/buildingapps/2016/09/16/animations-with-the-visual-layer/#JM2XkQcL7MRSXe3X.97)
 * [XAML 與視覺化層之間的互通性](https://blogs.windows.com/buildingapps/2016/08/26/interop-between-xaml-and-the-visual-layer/#ue6O7MWpqrVFE81K.97)
 * [建立適用於 UWP 的美觀效果](https://blogs.windows.com/buildingapps/2016/09/12/creating-beautiful-effects-for-uwp/#85jsfw6PFXX825rR.97)
-* [使用 Windows.UI 就能輕易製作美觀的 app](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
-* [使用動畫和音訊提示來潤飾您的 app](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
+* [使用 Windows.UI 就能輕易製作美觀的應用程式](https://blogs.windows.com/buildingapps/2016/08/23/beautiful-apps-made-possible-and-easy-with-windows-ui/#GBREkRSBwsRvi2uL.97)
+* [使用動畫和音訊提示來潤飾您的應用程式](https://blogs.windows.com/buildingapps/2016/08/09/polishing-your-app-with-animations-and-audio-cues/#hziKxt2xPwUE1oqU.97) 
 * [為您的設計增添色彩](https://blogs.windows.com/buildingapps/2016/07/28/adding-color-to-your-design/#HcPqMlfPsuKETOIo.97)
 
 <hr>
@@ -118,13 +123,13 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 <tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>設計</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">UWP app 的設計指導方針</a></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=533896">UWP 應用程式的設計指導方針</a></td>
 </tr>
 
 
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>開發</strong></td>
-<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">許多可供您 App 使用之功能的詳細資訊及程式碼範例。</a></td>
+<td align="left"><a href="http://go.microsoft.com/fwlink/p/?LinkId=529575">許多可供您應用程式使用之功能的詳細資訊及程式碼範例。</a></td>
 </tr>
 <tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>語言參考資料</strong></td>
@@ -140,15 +145,15 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>移植</strong></td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">利用您的 Android 與 iOS 技能迅速建立 UWP app。</a></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">利用您的 Android 與 iOS 技能迅速建立 UWP 應用程式。</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>Windows 橋接器</strong></td>
-<td align="left"><a href="https://developer.microsoft.com/windows/bridges">可將較舊的 App 和 iOS App 更新成 UWP 的工具。</a></td>
+<td align="left"><a href="https://developer.microsoft.com/windows/bridges">可將較舊的應用程式和 iOS 應用程式更新成 UWP 的工具。</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>Xamarin</strong></td>
-<td align="left"><a href="https://www.xamarin.com">使用 C# 來撰寫適用於 iOS、Android 及 Windows 10 的 App。</a></td>
+<td align="left"><a href="https://www.xamarin.com">使用 C# 來撰寫適用於 iOS、Android 及 Windows 10 的應用程式。</a></td>
 </tr>
 <tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>工作程式碼片段</strong></td>
@@ -168,6 +173,6 @@ ms.openlocfilehash: 087c298f59798010628aefc428eedf9933bb2686
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

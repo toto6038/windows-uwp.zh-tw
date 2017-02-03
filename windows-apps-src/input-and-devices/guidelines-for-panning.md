@@ -6,23 +6,26 @@ ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: d043555d0b467c6b27bc4f0a3b86ccb1404e16a3
 
 ---
 
-# 移動瀏覽的指導方針
+# <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 移動瀏覽或捲動可讓使用者在單一檢視內進行瀏覽，以顯示無法容納在檢視區中的檢視內容。 檢視範例包括電腦的資料夾結構、文件庫或相簿。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-
-
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 **移動瀏覽指標和捲軸**
@@ -31,7 +34,7 @@ ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
 -   顯示移動瀏覽指標和捲軸來提示位置及大小。 如果您提供自訂瀏覽功能，請隱藏它們。
 
-    **注意** 與標準捲軸不同，移動瀏覽指標僅用來提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
+    **備註**  與標準捲軸不同，移動瀏覽指標僅為提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
 
      
 
@@ -73,7 +76,7 @@ ms.openlocfilehash: 5d82af288d389c6eeb5373d1b1f4230fc992a441
 
     ![示範與其容器朝同方向捲動之內嵌可移動瀏覽區域的影像。](images/scrolling-embedded3.png)
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
 
 利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
@@ -110,7 +113,7 @@ Windows 8 支援三種移動瀏覽類型：
 -   觸控時為移動瀏覽指標。
 -   使用其他輸入裝置 (包括滑鼠、觸控板、鍵盤以及手寫筆) 時為捲軸。
 
-**注意** 只有當觸控接觸是在可移動瀏覽的區域內時，才會顯示移動瀏覽指標。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
+**備註**  移動瀏覽指標僅在觸控觸碰點位於可移動瀏覽的區域時，才會顯示。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
 
  
 
@@ -161,9 +164,9 @@ Windows 8 支援三種移動瀏覽類型：
 
 ![示範內嵌的可移動瀏覽區域邊框間距不足的影像。](images/ux-panning-embedded-wrong.png)
 
-對於在個別影像或地圖內支援無限制移動瀏覽，同時在相簿內 (上一個或下一個影像) 或詳細資料區域內支援單軸移動瀏覽的 app (如相簿或地圖 app)，這個指導方針也很實用。 在提供對應任意方向移動瀏覽影像或地圖之詳細資料或選項區域的 App 中，我們建議頁面配置應該先從詳細資料和選項區域開始，因為影像或地圖的無限制移動瀏覽區域可能會干擾針對詳細資料區域的移動瀏覽。
+對於在個別影像或地圖內支援無限制移動瀏覽，同時在相簿內 (上一個或下一個影像) 或詳細資料區域內支援單軸移動瀏覽的應用程式 (如相簿或地圖應用程式)，這個指導方針也很實用。 在提供對應任意方向移動瀏覽影像或地圖之詳細資料或選項區域的應用程式中，我們建議頁面配置應該先從詳細資料和選項區域開始，因為影像或地圖的無限制移動瀏覽區域可能會干擾針對詳細資料區域的移動瀏覽。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 * [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/mt185599)
@@ -195,6 +198,6 @@ Windows 8 支援三種移動瀏覽類型：
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

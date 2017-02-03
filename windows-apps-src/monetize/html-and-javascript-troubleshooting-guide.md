@@ -1,42 +1,32 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
-description: "閱讀有關在 JavaScript/HTML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
+description: "閱讀有關在 JavaScript/HTML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
 title: "HTML 和 JavaScript 疑難排解指南"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
-
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: 4bb959174ec158e7852cd447d9cd164ec2cd5bff
 
 ---
 
-# HTML 和 JavaScript 疑難排解指南
+# <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑難排解指南
 
+本主題包含在 JavaScript/HTML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
+* [HTML](#html)
+  * [沒有顯示 AdControl](#html-notappearing)
+  * [黑色方塊閃爍然後消失](#html-blackboxblinksdisappears)
+  * [廣告沒有重新整理](#html-adsnotrefreshing)
 
+* [JavaScript](#js)
+  * [沒有顯示 AdControl](#js-adcontrolnotappearing)
+  * [黑色方塊閃爍然後消失](#js-blackboxblinksdisappears)
+  * [廣告沒有重新整理](#js-adsnotrefreshing)
 
-本主題包含在 JavaScript/HTML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
-
--   [HTML](#html)
-
-    -   [沒有顯示 AdControl](#html-notappearing)
-
-    -   [黑色方塊閃爍然後消失](#html-blackboxblinksdisappears)
-
-    -   [廣告沒有重新整理](#html-adsnotrefreshing)
-
--   [JavaScript](#js)
-
-    -   [沒有顯示 AdControl](#js-adcontrolnotappearing)
-
-    -   [黑色方塊閃爍然後消失](#js-blackboxblinksdisappears)
-
-    -   [廣告沒有重新整理](#js-adsnotrefreshing)
-
-## HTML
+## <a name="html"></a>HTML
 
 <span id="html-notappearing"/>
-### 沒有顯示 AdControl
+### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
 1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
 
@@ -44,27 +34,30 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     Windows 10：
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <head>
-        …
+        ...
         <script src="//Microsoft.Advertising.JavaScript/ad.js"></script>
-        …
+        ...
     </head>
     ```
 
     Windows 8.x：
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <head>
-        …
+        ...
         <script src="//Microsoft.Advertising.JavaScript/ads/ad.js"></script>
-        …
+        ...
     </head>
     ```
 
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 50px; left: 0px;
                           width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -75,7 +68,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 4.  檢查 **height** 和 **width** 屬性。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 50px; left: 0px;
                           width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -88,7 +82,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 6.  檢查 **visibility** 屬性。 這個屬性不得設為 collapsed 或 hidden。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
                           left: 500px; width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -99,7 +94,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 7.  檢查 **position** 屬性。 position 屬性必須根據該元素的其他屬性 (例如，父元素的 margin 以及 z-index) 設定為適當的值。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
                           left: 500px; width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -110,7 +106,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 8.  檢查 **z-index** 屬性。 **z-index** 屬性必須設為足夠高，使 **AdControl** 一律會顯示在其他元素之上。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
                           left: 500px; width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -121,7 +118,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 9.  檢查外部樣式表。 如果屬性是透過外部樣式表來設定在 **AdControl** 元素上，請確認上述的所有屬性都設定正確。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="visibility: visible; position: absolute; top: 1025px;
                           left: 500px; width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -132,7 +130,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 10. 檢查 **AdControl** 的父項。 如果 **AdControl** 位於父元素中，則父元素的狀態必須是使用中且可見。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div style="position: absolute; width: 500px; height: 500px;">
         <div id="myAd" style="position: relative; top: 0px; left: 100px;
                               width: 250px; height: 250px; z-index: 1"
@@ -148,13 +147,14 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 12. 不應在模擬器中測試 [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
 <span id="html-blackboxblinksdisappears"/>
-### 黑色方塊閃爍然後消失
+### <a name="black-box-blinks-and-disappears"></a>黑色方塊閃爍然後消失
 
 1.  再次檢查前述[沒有顯示 AdControl](#html-notappearing) 一節中的所有步驟。
 
 2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
                           width: 728px; height: 90px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -162,7 +162,6 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
                             adUnitId: 'AdUnitID',
                             onErrorOccurred: errorLogger}">
     </div>
-
     <div style="position:absolute; width:100%; height:130px; top:300px; left:0px">
         <b>Ad Events</b><br />
         <div id="adEvents" style="width:100%; height:110px; overflow:auto"></div>
@@ -174,11 +173,12 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 3.  **AdControl** 運作正常。 根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
 
 <span id="html-adsnotrefreshing"/>
-### 廣告沒有重新整理
+### <a name="ads-not-refreshing"></a>廣告沒有重新整理
 
 1.  檢查 **isAutoRefreshEnabled** 屬性。 根據預設，這個選用的屬性會設為 true。 當設為 false 時，必須使用 **refresh** 方法來擷取另一個廣告。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
                           width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -193,7 +193,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     此範例示範如何使用 **refresh** 方法。 以下範例 HTML 程式碼範例示範當 **isAutoRefreshEnabled** 設為 false 時，如何具現化 **AdControl**。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
                           width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl"
@@ -206,7 +207,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     此範例示範如何使用 **refresh** 函式。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     args.setPromise(WinJS.UI.processAll()
         .then(function (args) {
             window.setInterval(function()
@@ -220,10 +222,10 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="js"/>
-## JavaScript
+## <a name="javascript"></a>JavaScript
 
 <span id="js-adcontrolnotappearing"/>
-### 沒有顯示 AdControl
+### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
 1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
 
@@ -231,7 +233,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     以下程式碼片段顯示具現化 **AdControl** 的範例。 此 HTML 程式碼顯示設定 **AdControl** 之 UI 的範例。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
                           width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl">
@@ -240,7 +243,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     以下 JavaScript 程式碼顯示具現化 **AdControl** 的範例。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !==
@@ -254,7 +258,7 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
                  });                
                  myAdControl.onErrorOccurred = myAdError;
             } else {
-                …
+                ...
             }
         }
     }
@@ -262,7 +266,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 3.  檢查父元素。 父項 **&lt;div&gt;** 元素必須正確指派、使用中，並且可見。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     var adDiv = document.getElementById("myAd");
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv, {
         applicationId: "{ApplicationID}",
@@ -270,9 +275,10 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
     });  
     ```
 
-4.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+4.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv, {
         applicationId: "{ApplicationID}",
         adUnitId: "{AdUnitID}"
@@ -284,7 +290,7 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 6.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
 <span id="js-blackboxblinksdisappears"/>
-### 黑色方塊閃爍然後消失
+### <a name="black-box-blinks-and-disappears"></a>黑色方塊閃爍然後消失
 
 1.  再次檢查[沒有顯示 AdControl](#js-adcontrolnotappearing) 一節中的所有步驟。
 
@@ -292,7 +298,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     此範例示範如何實作報告錯誤訊息的錯誤處理常式。 此 HTML 程式碼片段提供如何設定顯示錯誤訊息之 UI 的範例。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div style="position:absolute; width:100%; height:130px; top:300px">
         <b>Ad Events</b><br />
         <div id="adEvents" style="width:100%; height:110px; overflow:auto"></div>
@@ -301,7 +308,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     此範例示範如何具現化 **AdControl**。 此函式會插入 app.onactivated 檔案中。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
     {
         applicationId: "{ApplicationID}",
@@ -312,7 +320,8 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
     此範例示範如何報告錯誤。 此函式會插入到 default.js 檔案中自我執行函式的下方。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     WinJS.Utilities.markSupportedForProcessing
     (
         window.errorLogger = function (sender, evt)
@@ -329,42 +338,33 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="js-adsnotrefreshing"/>
-### 廣告沒有重新整理
+### <a name="ads-not-refreshing"></a>廣告沒有重新整理
 
-1.  檢查 **isAutoRefreshEnabled** 屬性。 根據預設，這個選用的屬性會設為 **true**。 當設為 **false** 時，必須使用 **refresh** 方法來擷取另一個廣告。
+1.  檢查 [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 屬性 (其屬於您的 **AdControl**) 是否設為 false。 根據預設，這個選用的屬性會設為 **true**。 當設為 **false** 時，必須使用 **Refresh** 方法來擷取另一個廣告。
 
-    此範例示範如何使用 **isAutoRefreshEnabled** 屬性。
-
-    ``` syntax
-    var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
-    {
-      applicationId: "{ApplicationID}",
-      adUnitId: "{AdUnitID}",
-      isAutoRefreshEnabled: true
-    });  
-    ```
-
-2.  檢查對 **refresh** 方法的呼叫。 當使用自動重新整理時，無法使用 **refresh** 來擷取另一個廣告。 使用手動重新整理時，**refresh** 應於最少 30 秒至 60 秒 (依裝置目前的數據連線而定) 之後才呼叫。
+2.  檢查對 [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的呼叫。 使用自動重新整理 (**IsAutoRefreshEnabled** 為 **true**) 時，**Refresh** 無法用來擷取其他廣告。 使用手動重新整理 (**IsAutoRefreshEnabled** 為 **false**) 時，僅應在至少 30 到 60 秒後 (取決於裝置的目前資料連線) 才呼叫 **Refresh**。
 
     此範例示範如何建立 **AdControl** 的 **div**。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` html
     <div id="myAd" style="position: absolute; top: 0px; left: 0px;
                           width: 250px; height: 250px; z-index: 1"
          data-win-control="MicrosoftNSJS.Advertising.AdControl">
     </div>
     ```
 
-    此範例顯示如何使用 **refresh** 函式。
+    此範例顯示如何使用 **Refresh** 函式。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` javascript
     var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
     {
       applicationId: "{ApplicationID}",
       adUnitId: "{AdUnitID}",
       isAutoRefreshEnabled: false
     });
-    …
+    ...
     args.setPromise(WinJS.UI.processAll()
         .then(function (args) {
             window.setInterval(function()
@@ -383,6 +383,6 @@ ms.openlocfilehash: 2b86d307dfbaf6d82e99a323762cfb5515f865da
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

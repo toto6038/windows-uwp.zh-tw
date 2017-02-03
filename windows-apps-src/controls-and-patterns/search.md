@@ -6,11 +6,11 @@ ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
 
 ---
-# 搜尋和在頁面中尋找
+# <a name="search-and-find-in-page"></a>搜尋和在頁面中尋找
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,20 +19,11 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn633874"><strong>AutoSuggestBox 類別 (XAML)</strong></a></li>
+<li>[**AutoSuggestBox 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-
-## 搜尋體驗的元素
+## <a name="elements-of-the-search-experience"></a>搜尋體驗的元素
 
 
 **輸入。**  文字是最常見的搜尋輸入模式，也是本指導方針的重點。 其他常見的輸入模式包括語音和相機，但它們通常需要與裝置硬體聯繫的能力，且可能要求 app 內額外的控制項或自訂 UI。
@@ -55,7 +46,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 結果集可以透過任何能有效傳達內容的方式來顯示。 [清單檢視](lists.md)提供良好的彈性，非常適合大部分的搜尋。 格線檢視適用於影像或其他媒體，而地圖可以用來傳達空間分布。
 
-## 搜尋範圍
+## <a name="search-scopes"></a>搜尋範圍
 
 
 搜尋是常見的功能，且使用者會在介面和許多應用程式中遇到搜尋 UI。 雖然搜尋進入點通常以類似的方式視覺化，他們提供搜尋結果的存取範圍卻從廣泛 (網頁或裝置搜尋) 到狹隘 (使用者的連絡人清單) 都有。 搜尋進入點應該與搜尋的內容並列。
@@ -86,7 +77,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 藉由有效傳達搜尋輸入點的範圍，您可以確保執行的搜尋功能會符合使用者的期望，並減少感到挫折的可能。
 
-## 實作
+## <a name="implementation"></a>實作
 
 
 對於大多數應用程式，最好的做法是以文字輸入欄位當作搜尋進入點，它會提供顯著的視覺記號。 此外，提示文字也有助於探索性和傳達搜尋範圍。 當搜尋為較次要的動作，或當空間有限時，搜尋圖示可以當作沒有伴隨輸入欄位的進入點。 以圖示來視覺化時，請確定有足夠空間給強制回應搜尋方塊，如下面範例所示。
@@ -113,7 +104,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 對於會根據使用者輸入即時篩選清單的內容相關/精簡搜尋，零輸入和查詢公式功能是選擇性的。 例外狀況包括能使用搜尋格式化建議的查詢，例如收件匣的篩選選項 (收件者：&lt;輸入字串&gt;、寄件者：&lt;輸入字串&gt;、主旨：&lt;輸入字串&gt; 等等)。
 
-## 範例
+## <a name="example"></a>範例
 
 
 本節中的範例說明放在內容中的搜尋。
@@ -141,12 +132,12 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 ![內嵌文字搜尋的範例](images/patterns-search-results-desktop.png)
 
 
-## 在頁面中尋找的指導方針
+## <a name="guidelines-for-find-in-page"></a>在頁面中尋找的指導方針
 
 
 「在頁面中尋找」可以讓使用者在目前的文字主體中尋找文字相符項目。 文件檢視器、閱讀程式和瀏覽器是提供「在頁面中尋找」的最典型應用程式。
 
-## 建議事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   在您的應用程式中放置具有「在頁面中尋找」功能的命令列，讓使用者可以搜尋頁面上的文字。 如需位置詳細資料，請參閱「範例」一節。
@@ -172,7 +163,7 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 -   包含相符項目計數器，讓使用者知道頁面上有多少文字相符項目。
 -   啟用鍵盤快速鍵 (CTRL+F)。
 
-## 範例
+## <a name="examples"></a>範例
 
 
 可供輕鬆存取「在頁面中尋找」功能。 在行動裝置 UI 的這個範例中，「在頁面上尋找」會出現在可展開的功能表中兩個 [新增至] 命令之後：
@@ -206,16 +197,28 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 
 
-## **實作在頁面中尋找**
+## **<a name="implementing-find-in-page"></a>實作在頁面中尋找**
 
 -   文件檢視器、閱讀程式和瀏覽器是最有可能提供「在頁面中尋找」的應用程式類型，可讓使用者擁有完整的全螢幕檢視/閱讀體驗。
 -   「在頁面中尋找」功能是次要的，因此應放在命令列中。
 
 如需如何替您的命令列新增命令的詳細資訊，請參閱[命令列](app-bars.md)。
 
+<div class="microsoft-internal-note">
+## 全球化和當地語系化檢查清單
+
+<table>
+<tr>
+<th>垂直間距</th><td>使用非拉丁字元的垂直間距，確保將適當地顯示非拉丁指令碼，包含數字。</td>
+</tr>
+<tr>
+<th>雙向考量</th><td>放大鏡圖示不應該顯示為雙向的鏡像形式。</td>
+</tr>
+</table>
+</div>
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [**自動建議方塊**](auto-suggest-box.md)
 
@@ -226,6 +229,6 @@ ms.openlocfilehash: f245db6c37b7c8257e4fe937417d981e49101b8c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

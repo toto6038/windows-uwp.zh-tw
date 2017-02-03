@@ -4,8 +4,8 @@ title: "登錄背景工作"
 description: "了解如何建立可重複用來安全登錄大多數背景工作的函式。"
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 translationtype: Human Translation
-ms.sourcegitcommit: 2f46f5cd26656b2d6b7d14c0d85aa7a0a6950fb8
-ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
+ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
+ms.openlocfilehash: d65b8d3312e49469bd99d458b45bf5a46f345e6a
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 了解如何建立可重複用來安全註冊大多數背景工作的函式。
 
-本主題同時適用於同處理序背景工作與跨處理序背景工作。 本主題假設您已經有一個需要註冊的背景工作。 (請參閱[建立及註冊在跨處理序中執行的背景工作](create-and-register-an-outofproc-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)了解如何撰寫背景工作的資訊)。
+本主題同時適用於同處理序背景工作與跨處理序背景工作。 本主題假設您已經有一個需要註冊的背景工作。 (請參閱[建立及註冊在跨處理序中執行的背景工作](create-and-register-a-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)了解如何撰寫背景工作的資訊)。
 
 本主題會逐步解說可註冊背景工作的公用程式函式。 這個公用程式函式會先檢查現有登錄，以避免多次登錄工作時可能產生的問題；也可以將系統條件套用到背景工作。 本逐步解說包括這個公用程式函式的完整工作範例。
 
@@ -71,7 +71,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性並逐一查看結果，以檢查現有登錄。 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。
 
-> **注意** 使用您 app 專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
+> **注意** 使用您應用程式專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
 
 下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
 
@@ -142,7 +142,7 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 檢查現有背景工作登錄清單中是否已有該工作。 如果有，則傳回工作的該執行個體。
 
-然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)。
+然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224786) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224772)。
 
 > **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 > **注意**：如果您要登錄與您 App 在相同處理程序中執行的背景工作，請針對 `taskEntryPoint` 參數傳送 `String.Empty` 或 `null`。
@@ -371,13 +371,13 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 > }
 > ```
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相關主題
 
 ****
 
-* [建立及註冊跨處理序的背景工作](create-and-register-an-outofproc-background-task.md)
+* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
 * [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
@@ -397,6 +397,6 @@ ms.openlocfilehash: 809cd0ea85d4dfc6ecf633d0ca9f16bbefee78ca
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

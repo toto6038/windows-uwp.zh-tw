@@ -6,11 +6,11 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
 
 ---
-# 翻轉檢視
+# <a name="flip-view"></a>翻轉檢視
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,25 +19,18 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx"><strong>FlipView 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx"><strong>ItemsSource 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate 屬性</strong></a></li>
+<li>[**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
+<li> [**ItemsSource 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
+<li>[**ItemTemplate 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 翻轉檢視最適合用來瀏覽小型到中型集合 (最高可達 25 個項目) 中的影像。 這類集合的範例包含產品詳細資料頁面中的項目，或是相簿中的相片。 雖然我們不建議針對大部分大型集合使用翻轉檢視，但該控制項一般會用來檢視相簿中的個別影像。
 
-## 範例
+## <a name="examples"></a>範例
 
 水平瀏覽 (從最左邊的項目開始，在右邊翻轉) 是翻轉檢視典型的配置。 此種配置可在所有裝置的直向或橫向方向使用：
 
@@ -47,13 +40,13 @@ ms.openlocfilehash: 7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac
 
 ![垂直翻轉檢視的範例](images/controls_flipview_vertical.jpg)
 
-## 建立翻轉檢視
+## <a name="create-a-flip-view"></a>建立翻轉檢視
 
 FlipView 是一種 [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx)，因此可以包含任何類型的項目集合。 若要填入檢視，請新增項目至 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合，或將 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 屬性設定至資料來源。
 
 根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 若要指定項目在翻轉檢視中的確切顯示方式，請建立 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) 以定義用來顯示個別項目的控制項配置。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 將 DataTemplate 指派給 FlipView 的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 屬性。
 
-### 新增項目到 Items 集合
+### <a name="add-items-to-the-items-collection"></a>新增項目到 Items 集合
 
 您可以使用 XAML 或程式碼，將項目新增到 [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) 集合。 如果您只有少量不會變更且很容易在 XAML 中定義的項目，或是如果您在執行階段於程式碼中產生項目，便通常會用這種方式新增項目。 以下的翻轉檢視含有以內嵌方式定義的項目。
 
@@ -80,7 +73,7 @@ stackPanel1.Children.Add(flipView1);
 
 在 XAML 中定義項目時，項目會自動新增到 Items 集合。
 
-### 設定項目來源
+### <a name="set-the-items-source"></a>設定項目來源
 
 您通常會使用翻轉檢視以顯示來自資料庫或網際網路等來源的資料。 若要從資料來源填入翻轉檢視，您要將它的 [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 屬性設定為資料項目的集合。
 
@@ -118,9 +111,9 @@ stackPanel1.Children.Add(flipView1);
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注意**  填入翻轉檢視有兩種方法，您可以將項目新增到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
+>**注意**&nbsp;&nbsp;填入翻轉檢視有兩種方法，您可以將項目新增到它的 Items 集合，或是設定它的 ItemsSource 屬性，但是不可以同時使用這兩種方式。 如果您設定 ItemsSource 屬性並在 XAML 中新增項目，新增的項目將會被略過。 如果您設定 ItemsSource 屬性並將項目新增到程式碼的 Items 集合，則會擲出例外狀況。
 
-### 指定項目的外觀
+### <a name="specify-the-look-of-the-items"></a>指定項目的外觀
 
 根據預設，資料項目會在 FlipView 中以字串方式顯示所繫結的資料物件。 您通常會想要以更多樣化的表示方式顯示資料。 為了明確指定項目在翻轉檢視內的顯示方式，您需要建立一個 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx)。 在 DataTemplate 中的 XAML 會定義用來顯示個別項目之控制項的配置和外觀。 配置中的控制項可以繫結至資料物件的屬性，或以內嵌方式定義內容。 DataTemplate 是指派給 FlipView 控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 屬性。
 
@@ -149,7 +142,7 @@ stackPanel1.Children.Add(flipView1);
 
 翻轉檢視資料範本。
 
-### 設定翻轉檢視的方向
+### <a name="set-the-orientation-of-the-flip-view"></a>設定翻轉檢視的方向
 
 根據預設，翻轉檢視是以水平翻轉。 若要讓它垂直翻轉，請以具有垂直方向的堆疊面板做為翻轉檢視的 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx)。
 
@@ -186,17 +179,19 @@ stackPanel1.Children.Add(flipView1);
 
 ![垂直翻轉檢視的範例](images/controls_flipview_vertical.jpg)
 
-## 新增內容指示器
+## <a name="adding-a-context-indicator"></a>新增內容指示器
 
 翻轉檢視中的內容指示器提供有用的參考點。 標準內容指示器中的點並非互動式。 如此範例所示，最佳擺放位置通常為圖庫下方的中心位置：
 
 ![頁面指示器的範例](images/controls_pageindicator.png)
 
-如果是較大型的集合 (10-25 個項目)，請考慮使用可提供更多內容的指示器 (例如縮圖影片)。 有別於使用簡易點的內容指示器，影片區域中的每個縮圖會顯示對應影像的小型版本，並且應該是可選的：
+如果是較大型的集合 (10-25 個項目)，請考慮使用可提供更多內容的指示器 (例如縮圖影片)。 有別於使用簡易點的內容指示器，影片區域中的每個縮圖會顯示對應影像的小型版本，且應為可選：
 
 ![內容指示器的範例](images/controls_contextindicator.jpg)
 
-## 可行與禁止事項
+如需示範如何將內容指示器新增至 FlipView 的範例程式碼，請參閱 [XAML FlipView 範例](http://go.microsoft.com/fwlink/p/?LinkID=311760)。
+
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   翻轉檢視最適合用於最多 25 個項目的集合。
 -   避免針對較大型集合使用翻轉檢視控制項，因為翻閱各個項目的重複動作可能會很煩人。 相簿則是一個例外，因為它通常有數百或數千個影像。 在格線檢視配置中選取相片之後，相簿幾乎一律會切換為翻轉檢視。 對於其他大型集合，請考量[清單檢視或格線檢視](lists.md)。
@@ -206,7 +201,7 @@ stackPanel1.Children.Add(flipView1);
     -   反白顯示的點表示目前的項目。 通常反白顯示的點是白色，其他點則是灰色。
     -   點數目可能會改變，但不會多到讓使用者可能必須努力尋找他或她的位置 - 10 個點通常是顯示的數目上限。
 
-## 全球化和當地語系化檢查清單
+## <a name="globalization-and-localization-checklist"></a>全球化和當地語系化檢查清單
 
 <table>
 <tr>
@@ -215,14 +210,17 @@ stackPanel1.Children.Add(flipView1);
 
 </table>
 
+## <a name="get-the-sample-code"></a>取得範例程式碼
+* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
-## 相關文章
+
+## <a name="related-articles"></a>相關文章
 
 - [清單的指導方針](lists.md)
 - [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -6,11 +6,11 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: ef57c6d1a00797e2a68291475b6a38778e5d73ad
 
 ---
-# 主要/詳細資料模式
+# <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
-## 這是正確的模式嗎？
+## <a name="is-this-the-right-pattern"></a>這是正確的模式嗎？
 
 在下列情況中，主要/詳細資料模式都能運作：
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 -   找出大量內容並排定優先順序。
 -   在內容之間往返工作時允許清單項目的快速新增和移除。
 
-## 選擇正確的樣式
+## <a name="choose-the-right-style"></a>選擇正確的樣式
 
 實作主要/詳細資料模式時，建議您根據可用的螢幕空間量，使用堆疊樣式或並排樣式。
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 | 720 epx 或更寬       | 並排      |
 
  
-## 堆疊樣式
+## <a name="stacked-style"></a>堆疊樣式
 
 在堆疊樣式中，一次只能看到一個檢視：主要或詳細資料檢視。
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 使用者開始於主要窗格，並透過選取主要清單中的項目，「向下探查」到詳細資料窗格。 對使用者而言，主要與詳細資料檢視似乎是存在於兩個個別頁面上。
 
-### 建立堆疊的主要/詳細資料模式
+### <a name="create-a-stacked-masterdetails-pattern"></a>建立堆疊的主要/詳細資料模式
 
 建立堆疊的主要/詳細資料模式的一種方式是針對主要窗格和詳細資料窗格使用不同的頁面。 將提供主要清單的清單檢視放在某一個頁面，然後將詳細窗格的內容元素放在另一個頁面。
 
@@ -54,7 +54,7 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 針對詳細資料窗格，請使用最適合的內容元素。 如果您有許多個別的欄位，請考慮使用格線配置來將元素排列成表單。
 
-## 並排樣式
+## <a name="side-by-side-style"></a>並排樣式
 
 在並排樣式中，可同時看見主要窗格和詳細資料窗格。
 
@@ -62,13 +62,13 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 主要窗格中的清單具有用來表示目前選取項目的視覺化選取。 在主要清單中選取新項目會更新詳細資料窗格。
 
-### 建立並排主要/詳細資料模式
+### <a name="create-a-side-by-side-masterdetails-pattern"></a>建立並排主要/詳細資料模式
 
 針對主要窗格，[清單檢視](lists.md)能夠用於呈現可以包含影像和文字的清單。
 
 針對詳細資料窗格，請使用最適合的內容元素。 如果您有許多個別的欄位，請考慮使用格線配置來將元素排列成表單。
 
-## 範例
+## <a name="examples"></a>範例
 
 這個用來追蹤股市的應用程式設計使用了主要/詳細資料模式。 在此顯示於手機上的應用程式範例中，主要窗格/清單會位於左邊，而詳細資料窗格會位於右邊。
 
@@ -76,11 +76,13 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 這個用來追蹤股市的應用程式設計使用了主要/詳細資料模式。 在此顯示於桌面上的應用程式範例中，可同時看見主要窗格/清單和詳細資料窗格，並以全螢幕顯示。 主要窗格頂端會有搜尋方塊，底部會有命令列。
 
-![桌面上使用主要/詳細資料模式的 app 範例](images/uap-finance-desktop700.png)
+![桌面上使用主要/詳細資料模式的應用程式範例](images/uap-finance-desktop700.png)
 
+如需顯示主要/詳細資料模式的範例程式碼，請參閱
+- [ListView 和 GridView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+- [RSS 閱讀程式範例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
-
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 - [清單](lists.md)
 - [搜尋](search.md)
@@ -89,6 +91,6 @@ ms.openlocfilehash: f0083e3c50e7e899e6caf62595a7ecbf0af22b3d
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

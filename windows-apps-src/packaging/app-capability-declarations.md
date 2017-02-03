@@ -4,11 +4,11 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "app 功能宣告"
 description: "功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。"
 translationtype: Human Translation
-ms.sourcegitcommit: a86efd3e50be6a5cbe0271c1024d3b405fc0d160
-ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
+ms.sourcegitcommit: ece16df809e7f030c3cbb7a6ab5e727ae77614e3
+ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
 
 ---
-# app 功能宣告
+# <a name="app-capability-declarations"></a>app 功能宣告
 
 \[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 
 -   只有 Microsoft 和其合作夥伴可以使用的受限制的功能。
 
-## 一般用途功能
+## <a name="general-use-capabilities"></a>一般用途功能
 
 一般用途功能適用於大部分常見的應用程式案例。
 
@@ -55,7 +55,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **背景媒體播放** | **backgroundMediaPlayback** 功能會變更媒體特定 API (例如 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 和 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx) 類別) 的行為，以便在您的 app 位於背景時啟用媒體播放。 所有作用中的音訊資料流將不再設為靜音，但在 app 轉換到背景時仍可繼續聽到聲音。 此外，進行播放時，將會自動延伸應用程式存留期。
 | **遠端系統** | **remoteSystem** 功能讓 app 能夠存取與使用者 Microsoft 帳戶相關聯的裝置清單。 需要存取裝置清單，才能執行任何保留在裝置上的操作。 需要具備這個功能，才能存取下列各項的所有成員。<br /><br />Windows.System.RemoteSystems 命名空間<br />Windows.System.RemoteLauncher 命名空間<br />AppServiceConnection.OpenRemoteAsync 方法
 
-## 裝置功能
+## <a name="device-capabilities"></a>裝置功能
 
 裝置功能可以讓您的 app 存取周邊和內部裝置。 裝置功能是使用 app 套件資訊清單中的 **DeviceCapability** 元素來指定。 這個元素可能需要其他子元素，而且您必須手動將一些裝置功能新增到套件資訊清單。 如需詳細資訊，請參閱[如何在套件資訊清單中指定裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)和 [**DeviceCapability 結構描述參考**](https://msdn.microsoft.com/library/windows/apps/BR211430)。
 
@@ -74,11 +74,11 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **光碟片** | **optical** 裝置功能讓 app 能夠存取光碟機 (例如 CD、DVD 及藍光) 上的功能。<br/>需要具備這個功能，才能使用 [**Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) 命名空間中的某些 API。 |
 | **動作活動** | **activity** 裝置功能讓 app 能夠偵測裝置目前的動作。<br/>需要具備這個功能，才能使用 [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 命名空間中的某些 API。 |
 
-## 特殊和受限制的功能
+## <a name="special-and-restricted-capabilities"></a>特殊和受限制的功能
 
 這類功能在某些情況下是必要且適當的，例如具備雙因素驗證的銀行系統，使用者需提供含數位憑證的智慧卡來確認身分識別。 其他應用程式主要可能是針對企業客戶所設計，而且可能需要存取公司資源，若使用者沒有網域認證，便無法存取這類公司資源。
 
-您必須使用公司帳戶，才能將套用特殊用途功能的應用程式提交到市集。 相反地，受限制的功能不需要市集的特殊公司帳戶，開發人員無法使用它們。 只有 Microsoft 和其合作夥伴開發的 app 才能使用受限制的功能。 如需有關公司帳戶的詳細資訊，請參閱[帳戶類型、位置和費用](https://msdn.microsoft.com/library/windows/apps/JJ863494)。
+您必須使用公司帳戶，才能將宣告特殊用途功能的應用程式提交到「市集」。 相反地，受限制的功能不需要「市集」的特殊公司帳戶。 開發人員可以在其應用程式中使用受限制的功能，但需要取得市集提交之核准。 如需公司帳戶的詳細資訊，請參閱[帳戶類型、位置和費用](https://msdn.microsoft.com/library/windows/apps/JJ863494)。 
 
 和其他功能不同的是，在您的 app 套件資訊清單中宣告受限制的功能時，所有受限制的功能必須包含 **rescap** 命名空間。 下列範例顯示如何宣告 **appCaptureSettings** 功能。
 
@@ -117,7 +117,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 | **裝置解除鎖定** | **deviceUnlock** 受限制的功能讓 app 能夠解除鎖定裝置，以供開發人員和企業側載案例使用。<br /><br /> 沒有人能夠要求存取這個功能以進行市集提交。
 | **雙 SIM 卡磚** | **dualSimTiles** 受限制的功能讓 app 能夠在配備多張 SIM 卡的裝置上建立其他 app 清單項目。<br /><br />需要具備這個功能，才能使用 [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) 命名空間中的某些 API。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **企業共用存放裝置** | **enterpriseDeviceLockdown** 受限制的功能讓 app 使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
-| **系統輸入導入** | **inputInjection** 受限制的功能讓 app 能夠以程式設計方式，將各種不同形式的輸入 (例如，HID、觸控、手寫筆、鍵盤或滑鼠) 導入系統中。 這個功能通常用於可控制系統的共同作業應用程式。<br /><br /><div class="alert">**注意** 針對電腦，從具備此功能的 app 導入的輸入源，只能透過位於相同應用程式容器的處理程序來接收。</div><br /><br />任何人都可能要求存取這個功能以進行市集提交。
+| **系統輸入導入** | **inputInjection** 受限制的功能讓 app 能夠以程式設計方式，將各種不同形式的輸入 (例如，HID、觸控、手寫筆、鍵盤或滑鼠) 導入系統中。 這個功能通常用於可控制系統的共同作業應用程式。<br /><br /><div class="alert">**注意**  針對電腦，從具備此功能的應用程式導入的輸入源，只能透過位於相同應用程式容器的處理程序來接收。</div><br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **觀察輸入**\* | **inputObservation** 受限制的功能讓 app 能夠觀察系統所接收到的各種不同形式的原始輸入 (例如，HID、觸控、手寫筆、鍵盤或滑鼠)，而不論其最終目的地為何。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **隱藏輸入** | **inputSuppression** 受限制的功能讓 app 能夠隱藏系統所接收到的各種不同形式的原始輸入 (例如，HID、觸控、手寫筆、鍵盤或滑鼠)。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **VPN 應用程式** | **networkingVpnProvider** 受限制的功能讓 app 能夠具備 VPN 功能的完整存取權，包括管理連線的能力，以及提供 VPN 外掛程式功能。<br /><br />需要具備這個功能，才能使用 [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040) 命名空間中的某些 API。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
@@ -168,7 +168,7 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 **注意**  
 此文章適用於撰寫 UWP app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)
 * [隱私權感知 app 的指導方針](https://msdn.microsoft.com/library/windows/apps/Hh768223)
@@ -178,6 +178,6 @@ ms.openlocfilehash: 100d1b94dec44cbf00d4a3cacd6aa74f94c20d9c
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

@@ -3,21 +3,26 @@ author: Xansky
 description: "在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。"
 title: "選取連絡人"
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: "連絡人, 選取特定欄位"
+keywords: "contacts, selecting select single contact select multiple contacts contacts, select multiple select specific contact data contact, selecting specific data contact, selecting specific fields, 連絡人, 選取, 選取單一連絡人, 選取多個連絡人, 連絡人, 選取多個, 選取特定連絡人, 資料連絡人, 選取特定資料連絡人, 選取特定欄位"
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
+ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
+ms.openlocfilehash: 7181a51a91997124b2c5c8ba184261de63de9caf
 
 ---
 
-# 選取連絡人
+# <a name="select-contacts"></a>選取連絡人
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 在整個 [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 命名空間中，有好幾種方法可以用來選取連絡人。 我們會在這裡示範如何選取單一連絡人或多位連絡人，也會示範如何設定連絡人選擇器，只抓取您 app 所需的連絡人資訊。
 
-## 設定連絡人選擇器
+## <a name="set-up-the-contact-picker"></a>設定連絡人選擇器
 
 建立一個 [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) 執行個體，並將它指派給一個變數。
 
@@ -25,7 +30,7 @@ ms.openlocfilehash: 70abebb53f96b7d9d818f3542c33ed477ff0c8a4
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## 設定選取模式 (選擇性)
+## <a name="set-the-selection-mode-optional"></a>設定選取模式 (選擇性)
 
 根據預設，連絡人選擇器會抓取使用者選取之連絡人的所有可用資料。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
 
@@ -41,7 +46,7 @@ contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelection
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## 啟動選擇器
+## <a name="launch-the-picker"></a>啟動選擇器
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
@@ -54,7 +59,7 @@ public IList<Contact> contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## 處理連絡人
+## <a name="process-the-contacts"></a>處理連絡人
 
 當選擇器傳回時，檢查使用者是否已經選取任何連絡人。 如果有的話，處理連絡人資訊。
 
@@ -83,7 +88,7 @@ if (contacts != null && contacts.Count > 0)
 }
 ```
 
-## 完整範例 (單一連絡人)
+## <a name="complete-example-single-contact"></a>完整範例 (單一連絡人)
 
 這個範例使用連絡人選擇器來抓取單一連絡人的姓名，以及電子郵件地址、位置或電話號碼。
 
@@ -163,7 +168,7 @@ private void AppendContactFieldValues<T>(TextBlock content, IList<T> fields)
 }
 ```
 
-## 完整範例 (多位連絡人)
+## <a name="complete-example-multiple-contacts"></a>完整範例 (多位連絡人)
 
 這個範例使用連絡人選擇器來抓取多位連絡人，然後將他們新增到名為 `OutputContacts` 的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 控制項。
 
@@ -226,12 +231,12 @@ public class ContactItemAdapter
 }
 ```
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 現在您已基本了解如何使用連絡人選擇器來抓取連絡人資訊。 請從 GitHub 下載[通用 Windows app 範例](http://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何使用連絡人和連絡人選擇器的範例。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -1,20 +1,23 @@
 ---
 author: mijacobs
-Description: "在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、 瀏覽元素和系統層級功能的彈性模型為基礎。"
-title: "通用 Windows 平台 (UWP) app 的瀏覽設計基本知識"
+Description: "在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。"
+title: "瀏覽歷程記錄和向後瀏覽 (Windows 應用程式)"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: 75e8c342775f7d6c564cb1014519f8e4707a0632
-ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: bfff3a4787a37156ef3232372a125db60678ebac
 
 ---
 
-#  瀏覽歷程記錄和向後瀏覽
+#  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
-在網際網路上，每個網站都提供自己的瀏覽系統，例如內容表格、按鈕、功能表、簡單的連結清單等。 不同網站之間的瀏覽體驗可能會有很大的差異。 不過，它們都有一項一致的瀏覽體驗：返回。 無論是何種網站，大部分瀏覽器都提供行為相同的返回按鈕。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+在網際網路上，每個網站都提供自己的瀏覽系統，例如目錄、按鈕、功能表、簡單的連結清單等。 不同網站之間的瀏覽體驗可能會有很大的差異。 不過，它們都有一項一致的瀏覽體驗：返回。 無論是何種網站，大部分瀏覽器都提供行為相同的返回按鈕。
 
 基於相同理由，通用 Windows 平台 (UWP) 提供一致的返回瀏覽系統，以周遊使用者在應用程式內及應用程式之間 (視裝置而定) 的瀏覽歷程記錄。
 
@@ -26,12 +29,12 @@ ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 <table>
     <tr>
         <td colspan="2">裝置</td>
-        <td>[上一頁] 按鈕行為</td>
+        <td style="vertical-align:top;">[上一頁] 按鈕行為</td>
      </tr>
     <tr>
-        <td>手機</td>
-        <td>![手機上的系統返回](images/back-systemback-phone.png)</td>
-        <td>
+        <td style="vertical-align:top;">手機</td>
+        <td style="vertical-align:top;">![手機上的系統返回](images/back-systemback-phone.png)</td>
+        <td style="vertical-align:top;">
         <ul>
 <li>一律顯示。</li>
 <li>裝置底部的軟體或硬體按鈕。</li>
@@ -40,41 +43,31 @@ ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 </td>
      </tr>
      <tr>
-        <td>平板電腦</td>
-        <td>![平板電腦上的系統返回 (平板電腦模式)](images/back-systemback-tablet.png)</td>
-        <td>
+        <td style="vertical-align:top;">平板電腦</td>
+        <td style="vertical-align:top;">![平板電腦上的系統返回 (平板電腦模式)](images/back-systemback-tablet.png)</td>
+        <td style="vertical-align:top;">
 <ul>
-<li>在平板電腦模式中一律顯示。
-
-    Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
-
-    Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
-
+<li>在平板電腦模式中一律顯示。 在桌面模式中無法使用。 可以改為啟用標題列返回按鈕。 請參閱[電腦、膝上型電腦、平板電腦](#PC)。
+使用者可以在平板電腦模式與桌面模式之間切換執行，其方式是移至 [設定]**** &gt; [系統] &gt; [平板電腦模式]，然後設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。</li>
 <li> 裝置底部瀏覽列中的軟體按鈕。</li>
 <li>在 app 內和 app 間提供全域返回瀏覽。</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>電腦、膝上型電腦、平板電腦</td>
-        <td>![電腦或膝上型電腦上的系統返回](images/back-systemback-pc.png)</td>
-        <td>
+        <td style="vertical-align:top;">電腦、膝上型電腦、平板電腦</td>
+        <td style="vertical-align:top;">![電腦或膝上型電腦上的系統返回](images/back-systemback-pc.png)</td>
+        <td style="vertical-align:top;">
 <ul>
-<li>在桌面模式中為選擇性。
-
-    Not available in Tablet mode. See [Tablet](#Tablet).
-
-    Disabled by default. Must opt in to enable it.
-
-    Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
-
-<li>App 標題列中的軟體按鈕。</li>
-<li>只在 app 內提供返回瀏覽。 不支援 app 間瀏覽。</li></ul>        
+<li>在桌面模式中為選擇性。 在平板電腦模式中無法使用。 請參閱[平板電腦](#Tablet)。 預設為停用。 必須選擇加入才能啟用。
+使用者可以在平板電腦模式與桌面模式之間切換執行，其方式是移至 [設定]**** &gt; [系統] &gt; [平板電腦模式]，然後設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。</li>
+<li>應用程式標題列中的軟體按鈕。</li>
+<li>只在應用程式內提供返回瀏覽。 不支援 app 間瀏覽。</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>Surface Hub</td>
-        <td>![Surface Hub 上的系統返回](images/nav/nav-back-surfacehub.png)</td>
-        <td>
+        <td style="vertical-align:top;">Surface Hub</td>
+        <td style="vertical-align:top;">![Surface Hub 上的系統返回](images/nav/nav-back-surfacehub.png)</td>
+        <td style="vertical-align:top;">
 <ul>
 <li>選用。</li>
 <li>預設為停用。 必須選擇加入才能啟用。</li>
@@ -90,15 +83,15 @@ ms.openlocfilehash: f18fc0806313cc1656860b0fd8b5ae692fa3d4c6
 
 <table>
 <tr><td colspan="3">輸入裝置</td></tr>
-<tr><td>鍵盤</td><td>![鍵盤](images/keyboard-wireframe.png)</td><td>Windows 鍵 + 退格鍵</td></tr>
-<tr><td>Cortana</td><td>![語音](images/speech-wireframe.png)</td><td>請說「嗨 Cortana，返回」</td></tr>
+<tr><td style="vertical-align:top;">鍵盤</td><td style="vertical-align:top;">![鍵盤](images/keyboard-wireframe.png)</td><td style="vertical-align:top;">Windows 鍵 + 退格鍵</td></tr>
+<tr><td style="vertical-align:top;">Cortana</td><td style="vertical-align:top;">![語音](images/speech-wireframe.png)</td><td style="vertical-align:top;">請說「嗨 Cortana，返回」</td></tr>
 </table>
  
 
 當您的 app 在手機、平板電腦或啟用系統返回的電腦或膝上型電腦上執行時，按下返回按鈕後，系統就會通知您的 app。 使用者預期返回按鈕會瀏覽到應用程式瀏覽歷程的前一個位置。 您可以決定加入瀏覽歷程的瀏覽動作，以及如何回應按下返回按鈕。
 
 
-## 如何啟用系統返回瀏覽支援
+## <a name="how-to-enable-system-back-navigation-support"></a>如何啟用系統返回瀏覽支援
 
 
 App 必須啟用所有的硬體和軟體系統返回按鈕的返回瀏覽。 執行方式是登錄 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件的接聽程式並定義對應的處理常式。
@@ -158,7 +151,7 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 >}
 ```
 
-## 如何啟用標題列返回按鈕
+## <a name="how-to-enable-the-title-bar-back-button"></a>如何啟用標題列返回按鈕
 
 
 支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 ([設定] &gt; [系統] &gt; [平板電腦模式]****) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
@@ -241,15 +234,11 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 >```
 
 
-### 自訂返回瀏覽行為的指導方針
+### <a name="guidelines-for-custom-back-navigation-behavior"></a>自訂返回瀏覽行為的指導方針
 
 如果您選擇提供自己的上一頁堆疊瀏覽，應該與其他 app 維持一致的使用體驗。 我們建議您遵循下列瀏覽動作模式：
 
 <table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">瀏覽動作</th>
@@ -258,38 +247,38 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>頁面之間、不同的對等群組</strong></p></td>
-<td align="left"><strong>是</strong>
+<td style="vertical-align:top;"><strong>頁面之間、不同的對等群組</strong></td>
+<td style="vertical-align:top;"><strong>是</strong>
 <p>在此圖例中，使用者從 app 的層級 1，跨對等群組瀏覽到層級 2，因此該瀏覽會新增至瀏覽歷程記錄。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>在下一個圖例中，使用者在相同層級的兩個對等群組之間瀏覽，同樣是跨對等群組，所以此瀏覽會新增至瀏覽歷程記錄。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>頁面之間、相同對等群組、沒有螢幕上的瀏覽元素</strong></p>
+<td style="vertical-align:top;"><strong>頁面之間、相同對等群組、沒有螢幕上的瀏覽元素</strong>
 <p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有提供直接瀏覽到兩頁面，且一律顯示的瀏覽元素 (如索引標籤/樞紐分析或停駐的瀏覽窗格)。</p></td>
-<td align="left"><strong>是</strong>
+<td style="vertical-align:top;"><strong>是</strong>
 <p>在以下圖例中，使用者在相同對等群組內的兩個頁面之間瀏覽。 頁面沒有使用索引標籤或停駐的瀏覽窗格，因此該瀏覽會新增至瀏覽歷程記錄。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>頁面之間、相同對等群組、有螢幕上的瀏覽元素</strong></p>
+<td style="vertical-align:top;"><strong>頁面之間、相同對等群組、有螢幕上的瀏覽元素</strong>
 <p>使用者從相同對等群組中的一個頁面瀏覽到另一個頁面。 兩個頁面都顯示在同一個瀏覽元素中。 例如，這兩個頁面使用相同的索引標籤/樞紐分析項目，或兩個頁面都顯示在停駐的瀏覽窗格中。</p></td>
-<td align="left"><strong>否</strong>
+<td style="vertical-align:top;"><strong>否</strong>
 <p>當使用者按下返回時，將返回使用者瀏覽到目前對等群組之前的最後一個頁面。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>顯示暫時性 UI</strong>
+<td style="vertical-align:top;"><strong>顯示暫時性 UI</strong>
 <p>應用程式顯示快顯或子視窗 (例如對話方塊)、啟動畫面、螢幕小鍵盤，或應用程式進入特殊模式 (例如多重選取模式)。</p></td>
-<td align="left"><strong>否</strong>
+<td style="vertical-align:top;"><strong>否</strong>
 <p>當使用者按下返回按鈕時，關閉暫時性 UI (隱藏螢幕小鍵盤、取消對話方塊等等) 並返回產生暫時性 UI 的頁面。</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>列舉項目</strong>
+<td style="vertical-align:top;"><strong>列舉項目</strong>
 <p>App 會顯示螢幕項目的內容，例如主要/詳細資料清單中所選項目的詳細資料。</p></td>
-<td align="left"><strong>否</strong>
+<td style="vertical-align:top;"><strong>否</strong>
 <p>列舉項目類似於在對等群組中瀏覽。 當使用者按下返回時，會返回目前頁面之前有項目列舉的頁面。</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
@@ -297,16 +286,16 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 </table>
 
 
-### 繼續
+### <a name="resuming"></a>繼續
 
 當使用者切換到其他 app，再回到您的 app 時，我們建議回到瀏覽歷程記錄中的最後一個頁面。
 
 
-## 取得範例
+## <a name="get-the-samples"></a>取得範例
 *   [返回按鈕範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackButton)<br/>
     說明如何設定返回按鈕事件的事件處理常式，以及如何針對處於視窗桌面模式的 app 啟用標題列返回按鈕。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 * [瀏覽基本知識](navigation-basics.md)
 
  
@@ -317,6 +306,6 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO4-->
 
 

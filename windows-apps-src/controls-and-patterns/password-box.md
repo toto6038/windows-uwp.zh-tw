@@ -7,11 +7,11 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 1addc6eee8ae4819fa388332998ac8a69e01cdf3
 
 ---
-# 密碼方塊
+# <a name="password-box"></a>密碼方塊
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -22,28 +22,21 @@ ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx"><strong>PasswordBox 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx"><strong>Password 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx"><strong>PasswordChar 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx"><strong>PasswordRevealMode 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx"><strong>PasswordChanged 事件</strong></a></li>
+<li>[**PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
+<li>[**Password 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)</li>
+<li>[**PasswordChar 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)</li>
+<li>[**PasswordRevealMode 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)</li>
+<li>[**PasswordChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用 **PasswordBox** 控制項，以收集密碼或其他私人資料，例如身分證號碼。
 
 如需如何選擇正確文字控制項的詳細資訊，請參閱[文字控制項](text-controls.md)文章。
 
-## 範例
+## <a name="examples"></a>範例
 
 密碼方塊有數個狀態，包括這些值得注意的狀態。
 
@@ -59,7 +52,7 @@ ms.openlocfilehash: 4f08195bcd70429f103c730c6c4a6d69dcf5b55e
 
 ![密碼方塊文字已顯示](images/passwordbox-text-reveal.png)
 
-## 建立密碼方塊
+## <a name="create-a-password-box"></a>建立密碼方塊
 
 使用 [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) 屬性來取得或設定 PasswordBox 的內容。 您可以在處理常式中針對 [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) 事件執行此動作，在使用者輸入密碼時執行驗證。 您可以使用另一個事件 (例如按鈕 [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx))，在使用者完成文字輸入之後執行驗證。
 
@@ -91,7 +84,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![含驗證訊息的密碼方塊](images/passwordbox-revealed-validation.png)
 
-### 密碼字元
+### <a name="password-character"></a>密碼字元
 
 您可以設定 [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) 屬性，來變更用來設定密碼遮罩的字元。 這裡會使用星號來取代預設的項目符號。
 
@@ -103,7 +96,7 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![含自訂字元的密碼方塊](images/passwordbox-custom-char.png)
 
-### 標頭與預留位置文字
+### <a name="headers-and-placeholder-text"></a>標頭與預留位置文字
 
 您可以使用 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) 和 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) 屬性來提供 PasswordBox 的內容。 當您有多個方塊時 (例如，在表單上變更密碼)，這特別有用。
 
@@ -113,25 +106,25 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
 
 ![處於靜止狀態的密碼方塊與提示文字](images/passwordbox-rest-hinttext.png)
 
-### 長度上限
+### <a name="maximum-length"></a>長度上限
 
 藉由設定 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) 屬性，來指定使用者可以輸入的字元數目上限。 沒有任何屬性可用來指定最小長度，但您可以在 app 程式碼中檢查密碼長度並執行任何其他驗證。
 
-## 密碼顯示模式
+## <a name="password-reveal-mode"></a>密碼顯示模式
 
 PasswordBox 有一個內建按鈕，使用者按下該按鈕就會顯示密碼文字。 以下是使用者動作的結果。 當使用者放開按鈕後，密碼就會自動再次隱藏。
 
 ![密碼方塊文字已顯示](images/passwordbox-text-reveal.png)
 
-### 預覽模式
+### <a name="peek-mode"></a>預覽模式
 
 預設會顯示密碼顯示按鈕 (或「預覽」按鈕)。 使用者必須持續按住該按鈕才能檢視密碼，如此便能維持高等級的安全性。
 
 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) 屬性的值並非決定是否要讓使用者看見密碼顯示按鈕的唯一因素。 其他因素包括控制項是否會以大於最小寬度的形式來顯示、PasswordBox 是否具有焦點，以及文字輸入欄位是否包含至少一個字元。 密碼顯示按鈕只有在 PasswordBox 第一次收到焦點且輸入字元時才會顯示。 如果 PasswordBox 失去焦點，然後重新取得焦點，除非將密碼清除並重新開始輸入字元，否則顯示按鈕將不會再次顯示。
 
-> **注意**  在 Windows 10 之前，預設不會顯示密碼顯示按鈕。 如果您 app 的安全性需要一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
+> **注意**&nbsp;&nbsp;在 Windows 10 之前，預設不會顯示密碼顯示按鈕。 如果您 app 的安全性需要一律隱藏密碼，請務必將 PasswordRevealMode 設為 Hidden。
 
-### 隱藏和顯示模式
+### <a name="hidden-and-visible-modes"></a>隱藏和顯示模式
 
 其他的 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) 列舉值 (**Hidden** 和 **Visible**) 會隱藏密碼顯示按鈕，並讓您能夠以程式設計的方式來管理是否要隱藏密碼。
 
@@ -169,13 +162,13 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 ![含自訂顯示按鈕的密碼方塊](images/passwordbox-custom-reveal.png)
 
-## 選擇文字控制項的正確鍵盤
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>選擇文字控制項的正確鍵盤
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 PasswordBox 只支援 **Password** 和 **NumericPin** 輸入範圍值。 會略過其他任何值。
 
 如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
-## 建議
+## <a name="recommendations"></a>建議
 
 -   如果密碼方塊的用途不清楚，請使用標籤或預留位置文字。 無論文字輸入方塊是否包含值，都會顯示標籤。 預留位置文字會顯示在文字輸入方塊內，只要輸入值就會消失。
 -   為密碼方塊指定一個適合可輸入的值範圍的寬度。 每個語言的單字長度都不相同，所以如果您希望您的應用程式能夠全球化，請考慮到當地語系化。
@@ -186,25 +179,19 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 [文字控制項](text-controls.md)
 
-**適用於設計人員**
 - [拼字檢查的指導方針](spell-checking-and-prediction.md)
 - [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文字輸入的指導方針](text-controls.md)
-
-**適用於開發人員 (XAML)**
 - [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**適用於開發人員 (其他)**
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

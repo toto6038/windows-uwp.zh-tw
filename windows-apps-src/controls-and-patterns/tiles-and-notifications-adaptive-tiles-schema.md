@@ -6,17 +6,17 @@ ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
 label: Adaptive tile schema and templates
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 70c06949ee9ac8f9a3f914fc4e020de0460124fa
 
 ---
-# 彈性磚範本：結構描述和指導方針
+# <a name="adaptive-tile-templates-schema-and-guidance"></a>彈性磚範本：結構描述和指導方針
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 以下是用來建立彈性磚的元素和屬性。 如需相關指示與範例，請參閱[建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)。
 
-## 磚元素
+## <a name="tile-element"></a>磚元素
 
 
 ``` xml
@@ -28,7 +28,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </tile>
 ```
 
-## 視覺元素
+## <a name="visual-element"></a>視覺元素
 
 
 ``` xml
@@ -47,7 +47,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </visual>
 ```
 
-## 正在繫結元素
+## <a name="binding-element"></a>正在繫結元素
 
 
 ``` xml
@@ -72,7 +72,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </binding>
 ```
 
-## 影像元素
+## <a name="image-element"></a>影像元素
 
 
 ``` xml
@@ -86,7 +86,7 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## 文字元素
+## <a name="text-element"></a>文字元素
 
 
 ``` xml
@@ -103,9 +103,9 @@ ms.openlocfilehash: 08bdb46dba6fc93ada20b3fc585d3e24e29023a0
 </text>
 ```
 
-textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle 字幕 subtitleSubtle 標題 titleSubtle titleNumeral 次標題 subheaderSubtle subheaderNumeral 標題 headerSubtle headerNumber
+textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle 字幕 subtitleSubtle 標題 titleSubtle titleNumeral 次標題 subheaderSubtle subheaderNumeral 標題 headerSubtle headerNumeral
 
-## 群組元素
+## <a name="group-element"></a>群組元素
 
 
 ``` xml
@@ -117,7 +117,7 @@ textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle �
 </group>
 ```
 
-## 子群組元素
+## <a name="subgroup-element"></a>子群組元素
 
 
 ``` xml
@@ -133,7 +133,7 @@ textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle �
 </subgroup>
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [建立彈性磚](tiles-and-notifications-create-adaptive-tiles.md)
@@ -147,6 +147,6 @@ textStyle 值：輔助字幕 captionSubtle 內文 bodySubtle 基底 baseSubtle �
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

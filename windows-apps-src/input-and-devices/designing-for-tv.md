@@ -1,20 +1,26 @@
 ---
 author: eliotcowley
-Description: "設計您的 app，讓它在電視上看起來很美觀而且運作良好。"
+Description: "設計您的應用程式，讓它在電視上看起來很美觀而且運作良好。"
 title: "針對 Xbox 和電視進行設計"
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
+keywords: "Xbox, 電視, 10 英呎體驗, 遊戲台, 遙控器, 輸入, 互動"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ee0a2f5a34cbbef198a9012d0425bb84e65f3b33
-ms.openlocfilehash: de76a3c6d4949b9203df79855e1748a81d76ca64
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: a138e0ba73da792a63f1c22ee4342a8157f2a136
 
 ---
 
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
-設計您的「通用 Windows 平台」(UWP) app，讓它在 Xbox One 及電視螢幕上看起來既美觀又能正常運作。
+設計您的通用 Windows 平台 (UWP) 應用程式，讓它在 Xbox One 及電視螢幕上看起來既美觀又能正常運作。
 
 ## <a name="overview"></a>概觀
 
@@ -86,8 +92,8 @@ _**螢幕擷取畫面中所顯示的所有電影都能在 Microsoft 電影與電
 | A/選取按鈕           | 是       | 是               |
 | B/返回按鈕             | 是       | 是               |
 | 方向鍵 (D 鍵)   | 是       | 是               |
-| 功能表按鈕               | 是       | 是               |
-| 檢視按鈕               | 是       | 是               |
+| 選項按鈕               | 是       | 是               |
+| 視圖按鈕               | 是       | 是               |
 | X 和 Y 按鈕           | 是       | 否                |
 | 左搖桿                | 是       | 否                |
 | 右搖桿               | 是       | 否                |
@@ -499,7 +505,7 @@ public App()
 
 ### <a name="light-dismiss-overlay"></a>消失關閉重疊
 
-若要讓使用者注意使用者目前使用遊戲控制器或遙控器操作的 UI 元素，在 Xbox One 上執行 app 時，UWP 會自動新增一個「煙霧」層，蓋住快顯 UI 以外的區域。 這不需要任何額外的工作，但是設計您的 UI 時要記住這一點。 您可以在任何 `FlyoutBase` 上設定 `LightDismissOverlayMode` 屬性以啟用或停用煙霧層；它預設為 `Auto`，表示在 Xbox 上會啟用，在其他地方則會停用。 如需詳細資訊，請參閱[強制回應與消失關閉](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss)。
+若要讓使用者注意使用者目前使用遊戲控制器或遙控器操作的 UI 元素，在 Xbox One 上執行 app 時，UWP 會自動新增一個「煙霧」層，蓋住快顯 UI 以外的區域。 這不需要任何額外的工作，但是設計您的 UI 時要記住這一點。 您可以在任何 `FlyoutBase` 上設定 `LightDismissOverlayMode` 屬性以啟用或停用煙霧層；它預設為 `Auto`，表示在 Xbox 上會啟用，在其他地方則會停用。 如需詳細資訊，請參閱[強制回應與消失關閉](../controls-and-patterns/menus.md)。
 
 ## <a name="focus-engagement"></a>焦點佔用
 
@@ -814,7 +820,7 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com
 ```
 
 > [!NOTE]
-> 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 屬性都設定為 `GridView`。
+> 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 屬性都設定為 `GridView`。
 
 ## <a name="colors"></a>色彩
 
@@ -1121,6 +1127,6 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

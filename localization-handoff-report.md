@@ -1,29 +1,51 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\ui-and-user-experience-guidelines.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/59b2ef72429b97c4d3bcf87a65bccf732bdd1ff4?path=windows-apps-src%2Fmonetize%2Fui-and-user-experience-guidelines.md&_a=contents) | HandedOffSuccess | [Details](#2ecfae0a10565b99428fc9f16ae9f3530375c3575486)
+ [windows-apps-src\audio-video-camera\audio-graphs.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/b8feab9a6c25a12ed0505d01f82ba636390f137a?path=windows-apps-src%2Faudio-video-camera%2Faudio-graphs.md&_a=contents) | HandedOffSuccess | [Details](#2f67bcff626b38015ac54dbcb2d82fdb1b260ce7160)
+ [windows-apps-src\whats-new\windows-10-sdk-preview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/eb9d10555f29c005a335d33b7a0c72b0bd1f6ce5?path=windows-apps-src%2Fwhats-new%2Fwindows-10-sdk-preview.md&_a=contents) | HandedOffSuccess | [Details](#8b011d2b9f125f5beaf0430ce023162bcdcd9cd27809)
 
 ## Item Details
-##### <a name='2ecfae0a10565b99428fc9f16ae9f3530375c3575486'></a> Source: [windows-apps-src\monetize\ui-and-user-experience-guidelines.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/59b2ef72429b97c4d3bcf87a65bccf732bdd1ff4?path=windows-apps-src%2Fmonetize%2Fui-and-user-experience-guidelines.md&_a=contents)
+##### <a name='2f67bcff626b38015ac54dbcb2d82fdb1b260ce7160'></a> Source: [windows-apps-src\audio-video-camera\audio-graphs.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/b8feab9a6c25a12ed0505d01f82ba636390f137a?path=windows-apps-src%2Faudio-video-camera%2Faudio-graphs.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [ui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/55e2671c402f0d9875f8f4a3f6bf6bc7ee3a0b1b?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2016-12-16 17:57:32
+* Handoff File: [audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/946a45ba921de8399c5b1e4e49bdf5d1143c7a0d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Faudio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-02-03 00:38:03
 * Handoff Reason: Include
+* Handoff Name: 
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\ui-and-user-experience-guidelines.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/c032c9bc4a52f7c11fb4edae8e05c80284caded2?path=windows-apps-src%2Fmonetize%2Fui-and-user-experience-guidelines.md&_a=contents)
-* Current Handback File: [ui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/41cb0c381f391709ed73f97552f7259049076c41?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-12-16 08:02:54
-* Bilingual File: [ui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/41cb0c381f391709ed73f97552f7259049076c41?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-16 08:09:27
+* Handback Name: 
+* Current Target File: [windows-apps-src\audio-video-camera\audio-graphs.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/58a8c1a341030de707600e29d7c5ae280746186f?path=windows-apps-src%2Faudio-video-camera%2Faudio-graphs.md&_a=contents)
+* Current Handback File: [audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Faudio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-21 16:58:30
+* Bilingual File: [audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Faudio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-21 17:12:21
+* [Back to Top](#report-top)
+
+##### <a name='8b011d2b9f125f5beaf0430ce023162bcdcd9cd27809'></a> Source: [windows-apps-src\whats-new\windows-10-sdk-preview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/eb9d10555f29c005a335d33b7a0c72b0bd1f6ce5?path=windows-apps-src%2Fwhats-new%2Fwindows-10-sdk-preview.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [windows-10-sdk-preview.b2aa4004d00fa9eed07ff82ed7580cf9707da2d3.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/946a45ba921de8399c5b1e4e49bdf5d1143c7a0d?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwindows-10-sdk-preview.b2aa4004d00fa9eed07ff82ed7580cf9707da2d3.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-02-03 00:38:03
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\whats-new\windows-10-sdk-preview.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/58a8c1a341030de707600e29d7c5ae280746186f?path=windows-apps-src%2Fwhats-new%2Fwindows-10-sdk-preview.md&_a=contents)
+* Current Handback File: [windows-10-sdk-preview.b2aa4004d00fa9eed07ff82ed7580cf9707da2d3.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwindows-10-sdk-preview.b2aa4004d00fa9eed07ff82ed7580cf9707da2d3.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-21 16:58:30
+* Bilingual File: [windows-10-sdk-preview.b2aa4004d00fa9eed07ff82ed7580cf9707da2d3.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwindows-10-sdk-preview.b2aa4004d00fa9eed07ff82ed7580cf9707da2d3.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-21 17:12:21
 * [Back to Top](#report-top)
 
 

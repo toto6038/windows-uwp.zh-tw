@@ -1,21 +1,28 @@
 ---
-description: "取得對您的 UWP app 新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的 App。"
+description: "取得對您的 UWP 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的應用程式。"
 title: "UWP 控制項和模式 - Windows 應用程式開發"
 author: mijacobs
-keywords: "uwp 控制項, 使用者介面, app 控制項"
+keywords: "uwp 控制項, 使用者介面,應用程式控制項"
+label: Controls & patterns
+template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2f9d2059399efd949fc8a1d90a5b6c8c106a478e
-ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 
 ---
-# 適用於 UWP app 的控制項和模式
+# <a name="controls-and-patterns-for-uwp-apps"></a>適用於 UWP 應用程式的控制項和模式
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-在 UWP app 開發中，「控制項」<i></i>是顯示內容或啟用互動的 UI 元素。 控制項是使用者介面的基本要素。 我們提供超過 45 種控制項供您使用，從簡單的按鈕到強大的資料控制項 (例如資料格檢視) 都有。 「模式」<i></i>是可結合數個控制項以創造新項目的配方。
+在 UWP 應用程式開發中，「控制項」<i></i>是顯示內容或啟用互動的 UI 元素。 控制項是使用者介面的基本要素。 我們提供超過 45 種控制項供您使用，從簡單的按鈕到強大的資料控制項 (例如資料格檢視) 都有。 「模式」<i></i>是可結合數個控制項以創造新項目的配方。
 
-本節中的文章提供對您的 UWP app 新增控制項和模式的設計指導方針與程式碼撰寫指示。 
+本節中的文章提供對您的 UWP 應用程式新增控制項和模式的設計指導方針與程式碼撰寫指示。 
 
-## 簡介
+## <a name="intro"></a>簡介
 
 以 XAML 和 C# 新增控制項並設定其樣式的一般指示。
 
@@ -23,18 +30,18 @@ ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>[新增控制項和處理事件](controls-and-events-intro.md)</b> <br/>
-將控制項新增到 App 有 3 個主要步驟︰將控制項新增到 App UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</li>
+將控制項新增到應用程式有 3 個主要步驟︰將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</li>
 </ul> 
 </p>
   </div>
   <div class="side-by-side-content-right">
    <p><b>[設定控制項的樣式](styling-controls.md)</b> <br/>
-您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
+您可以使用 XAML 架構，以許多方式自訂應用程式的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
   </div>
 </div>
 </div>
 
-## 依字母排序的索引 
+## <a name="alphabetical-index"></a>依字母排序的索引 
 
 特定控制項和模式的相關詳細資訊。
 
@@ -169,6 +176,6 @@ ms.openlocfilehash: ef383e46f2c610b57eec1c7767d5100e42075f6c
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO2-->
 
 

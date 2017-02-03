@@ -3,27 +3,27 @@ author: shawjohn
 Description: "了解如何從 Windows 開發人員中心傳送特定對象的推播通知到您的 app，以鼓勵客戶採取行動，例如為 app 評等或購買附加元件。"
 title: "傳送特定對象的推播通知給您的 app 客戶"
 translationtype: Human Translation
-ms.sourcegitcommit: 3e3c9737784c81f5eb882296a82a4dcd879363e1
-ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
+ms.sourcegitcommit: e9cbfec938ebc71da6f41df69defcac1bb902245
+ms.openlocfilehash: c4bdd398db570c4962325c2164651e9e8a1935ff
 
 ---
 
-# 傳送特定對象的推播通知給您的 app 客戶
+# <a name="send-targeted-push-notifications-to-your-apps-customers"></a>傳送特定對象的推播通知給您的 app 客戶
 
 在對的時間以適當的訊息和客戶互動，是您身為 app 開發人員的致勝關鍵。 Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳送推播通知給所有客戶，或只傳送給符合您在[客戶區隔](create-customer-segments.md)中定義之條件的 Windows 10 客戶子集。
 
 您可以使用特定對象的推播通知來鼓勵您的客戶採取行動，例如為 app 評等、購買附加元件、嘗試新功能或下載另一個 app。
 
-> **重要**特定對象的推播通知只能用於 UWP app。
+> **重要** 特定對象的推播通知只能用於 UWP 應用程式。
 
-## 開始使用推播通知
+## <a name="getting-started-with-push-notifications"></a>開始使用推播通知
 
 有三件重要的事必須執行，您才能使用推播通知和客戶互動。
-1. **登錄您的 app 以接收推播通知。** 您要在您的 app 中加入 Microsoft Store Services 的引用，然後再新增幾行於開發人員中心和您的 app 之間登錄通知通道的程式碼。 我們將使用該通道傳遞您的推播通知給您的客戶。 如需詳細資訊，請參閱[登錄通知通道](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.registernotificationchannelasync.aspx)。
-2. **建立做為特定對象的一或多個客戶區隔。** 您可以根據人口統計或收入條件，將客戶群組為不同的區隔。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
+1. **登錄您的 app 以接收推播通知。** 您要在您的 app 中加入 Microsoft Store Services 的引用，然後再新增幾行於開發人員中心和您的 app 之間登錄通知通道的程式碼。 我們將使用該管道傳遞您的推播通知給您的客戶。 如需詳細資訊，請參閱[設定您的應用程式以接收開發人員中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+2. **建立做為特定對象的一個或多個客戶區隔。** 您可以根據人口統計或收入條件，將客戶群組為不同的區隔。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
 3. **建立推播通知，並將它傳送到特定的客戶區隔。** 例如，傳送通知以鼓勵新客戶為您的 app 評等，或傳送以特殊優惠購買附加元件的通知。
 
-## 建立和傳送特定對象的推播通知
+## <a name="to-create-and-send-a-targeted-push-notification"></a>建立和傳送特定對象的推播通知
 
 1. 如果您還沒有這麼做，請安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)，並在您 app 的啟動程式碼中呼叫 [RegisterNotificationChannelAsync](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx) 方法來登錄 app 以接收通知。 如需如何呼叫這個方法的詳細資訊，請參閱[設定您的 app 以接收開發人員中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 2.  在 [Windows 開發人員中心儀表板](https://developer.microsoft.com/dashboard/overview)中，選取您的 app。
@@ -40,26 +40,22 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
    可用的選項會依據您使用的通知類型而不同。 部分選項包括：
    - **啟用類型** (互動式快顯通知類型)。 您可以選擇 \[前景\]、\[背景\] 或 \[通訊協定\]。
    - **啟動** (互動式快顯通知類型)。 您可以選擇讓通知開啟 app 或網站。
-   - **追蹤 app 啟動速率** (互動式快顯通知類型)。 如果您想要測量透過每個通知與客戶互動的狀況，請選取此核取方塊。 如需詳細資訊，請參閱[測量通知效能](#measure-notification-performance)。
+   - **追蹤應用程式啟動速率** (互動式快顯通知類型)。 如果您想要測量透過每個通知與客戶互動的狀況，請選取此核取方塊。 如需詳細資訊，請參閱[測量通知效能](#measure-notification-performance)。
    - **持續時間** (互動式快顯通知類型)。 您可以選擇 \[短期\] 或 \[長期\]。
    - **案例** (互動式快顯通知類型)。 您可以選擇 \[預設\]、\[警示]、\[提醒\] 或 \[來電\]。
    - **基底 URI** (互動式快顯通知類型)。 如需詳細資訊，請參閱 [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712)。
    - **新增影像查詢** (互動式快顯通知類型)。 如需詳細資訊，請參閱 [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847)。
-   - **視覺效果**。 影像、視訊或音效。 如需詳細資訊，請參閱[視覺效果](https://msdn.microsoft.com/library/windows/apps/br230847)。
-   - **輸入**
-            /
-            **動作**
-            /
-            **選取項目** (互動式快顯通知類型)。 可讓使用者與通知互動。 如需詳細資訊，請參閱[調適型和互動式快顯通知](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md#actions)。
+   - **視覺**。 影像、視訊或音效。 如需詳細資訊，請參閱[視覺效果](https://msdn.microsoft.com/library/windows/apps/br230847)。
+   - **輸入**/**動作**/**選取項目** (互動式快顯通知類型)。 可讓使用者與通知互動。 如需詳細資訊，請參閱[調適型和互動式快顯通知](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md#actions)。
    - **繫結** (互動式磚類型)。 快顯通知範本。 如需詳細資訊，請參閱[繫結](https://msdn.microsoft.com/en-us/library/windows/apps/br230843)。
 
-   > **提示**請嘗試使用[通知視覺化檢視](https://www.microsoft.com/store/apps/9nblggh5xsl1) app 來設計和測試您的調適型磚和互動式快顯通知。
+   > **提示** 請嘗試使用[通知視覺化檢視](https://www.microsoft.com/store/apps/9nblggh5xsl1) app 來設計和測試您的調適型磚和互動式快顯通知。
 
 11. 選取 \[儲存為草稿\] 以在稍後繼續處理通知，如果您已完成，請選取 \[傳送\]。
 
-> **注意**通知中的內容必須符合市集[內容原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)。
+> **注意** 通知中的內容必須符合市集[內容原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)。
 
-## 通知範本類型
+## <a name="notification-template-types"></a>通知範本類型
 
 您可以選擇各種不同的通知範本。
 
@@ -67,26 +63,26 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 -   **空白 (磚)。** 以可自訂的空白磚通知開始。 磚是 app 在 \[開始\] 畫面上的呈現方式。 磚可以「動態」呈現，表示磚所顯示的內容會隨著通知而變更。
 -   **要求評等 (快顯通知)。** 要求客戶為您的 app 評等的快顯通知。 當客戶選取通知時，會顯示 app 的市集評等頁面。
 -   **要求意見反應 (通知)。** 要求客戶為您的 app 提供意見的快顯通知。 當客戶選取通知時，會顯示 app 的 \[意見反應中樞\] 頁面。
-   > **注意**如果您選擇這個範本類型，在 \[啟動\] 方塊中，記得將 {PACKAGE_FAMILY_NAME} 預留位置值取代為您的 app 實際套件系列名稱 (PFN)。 您可以在 [App 身分識別](view-app-identity-details.md)頁面 (\[App 管理\]  >  \[App 身分識別\]) 上找到 app 的 PFN。
+   > **注意** 如果您選擇這個範本類型，在 [啟動]**** 方塊中，記得將 {PACKAGE_FAMILY_NAME} 預留位置值取代為您的應用程式實際套件系列名稱 (PFN)。 您可以在 [App 身分識別](view-app-identity-details.md)頁面 (\[App 管理\]  >  \[App 身分識別\]) 上找到 app 的 PFN。
 
    ![意見反應快顯通知 \[啟動\] 方塊](images/push-notifications-feedback-toast-launch-box.png)
 -   **交叉宣傳 (快顯通知)。** 宣傳您選擇的其他 app 的快顯通知。 當客戶選取通知時，會顯示其他 app 的市集清單。
-  > **注意**如果您選擇這個範本類型，在 \[啟動\] 方塊中，記得將 **{您想在此促銷的 ProductId}** 預留位置值取代為您想交叉宣傳之項目的實際市集識別碼。 您可以在 [App 身分識別](view-app-identity-details.md)頁面 (\[App 管理\]  >  \[App 身分識別\]) 上找到市集識別碼。
+  > **注意** 如果您選擇這個範本類型，在 [啟動]**** 方塊中，記得將 **{您想在此促銷的 ProductId}** 預留位置值取代為您想聯合促銷之項目的實際市集識別碼。 您可以在 [App 身分識別](view-app-identity-details.md)頁面 (\[App 管理\]  >  \[App 身分識別\]) 上找到市集識別碼。
 
   ![交叉宣傳快顯通知 \[啟動\] 方塊](images/push-notifications-promote-toast-launch-box.png)
 -   **宣傳銷售 (快顯通知)。** 可用來宣告 app 優惠的快顯通知。 當客戶選取通知時，會顯示您的 app 的市集清單。
 - **提示更新 (快顯通知)。** 鼓勵執行您的舊版 app 的客戶安裝最新版的快顯通知。 當客戶選取通知時，會顯示市集 app 中的 \[下載與更新\] 清單。 請注意，您不需要建立客戶區隔就能使用此範本。 我們會將這個通知排程在 24 小時內，並將對象鎖定為尚未執行您的 app 最新版的所有使用者。
 
-## 測量通知效能
+## <a name="measure-notification-performance"></a>測量通知效能
 
 您可以測量透過每個通知與客戶互動的狀況。
 
-###測量通知效能
+###<a name="to-measure-notification-performance"></a>測量通知效能
 
 1.  當您建立通知時，請在 \[通知內容\] 區段選取 \[追蹤 app 啟動速率\] 核取方塊。
 2.  在您的 app 中呼叫 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，即可通知開發人員中心您的 app 已啟動，以回應特定對象的通知。 這個方法由 Microsoft 市集 SDK 提供。 如需如何呼叫這個方法的詳細資訊，請參閱[設定您的 app 以接收開發人員中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
-###檢視通知效能
+###<a name="to-view-notification-performance"></a>檢視通知效能
 
 當您依上述方式設定通知和 app 以[測量通知效能](#to-measure-notification-performance)後，可以使用儀表板來查看通知執行狀況。
 
@@ -95,13 +91,13 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 3.  在 \[特定對象的推播通知\] 頁面上，選取 \[進行中\] 或 \[完成\]，再查看 \[傳遞速率\] 和 \[App 啟動速率\] 欄位以了解每個通知的整體效能。
 4.  若要查看更詳細的效能詳細資料，請選取通知名稱。 \[傳遞統計資料\] 區段就會顯示，並針對下列通知 \[狀態\] 類型顯示 \[計數\] 和 \[百分比\] 資訊︰
  - **失敗**︰通知因為某些原因未傳遞。 例如，如果 Windows 通知服務中發生問題，這個情況就會發生。
- - **通道到期失敗**︰無法傳遞通知，因為 app 與開發人員中心之間的通道已到期。 例如，如果客戶長時間未開啟您的 app，這個情況就會發生。
+ - **通道到期失敗**︰無法傳遞通知，因為應用程式與開發人員中心之間的通道已到期。 例如，如果客戶長時間未開啟您的 app，這個情況就會發生。
  - **傳送中**︰通知在待傳送的佇列中。
  - **已傳送**︰已傳送通知。
- - **啟動**︰通知已傳送、客戶按一下通知，因此開啟您的 app。 請注意，這只會追蹤 app 啟動。 這個狀態不包括邀請客戶採取其他行動 (例如啟動市集以留下評等) 的通知。
+ - **啟動**︰通知已傳送、客戶按一下通知，因此開啟您的應用程式。 請注意，這只會追蹤 app 啟動。 這個狀態不包括邀請客戶採取其他行動 (例如啟動市集以留下評等) 的通知。
  - **不明**︰我們無法判斷這個通知的狀態。
 
-## 翻譯您的通知
+## <a name="translate-your-notifications"></a>翻譯您的通知
 
 為使通知發揮最大的影響力，請考慮將它們翻譯成您客戶偏好的語言。 開發人員中心利用 [Microsoft Translator](https://msdn.microsoft.com/library/dd576287.aspx) 服務，讓您可以輕鬆地自動翻譯您的通知。
 
@@ -115,7 +111,7 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
  - 如果您在覆寫自動翻譯後新增另一個文字方塊到英文版的通知，新的文字方塊將不會新增至翻譯的通知。 在這種情況下，您必須手動將新的文字方塊新增到每個翻譯的通知。
  - 如果您在通知翻譯後變更英文的文字，我們將會自動更新翻譯的通知以符合變更。 不過，如果您先前選擇覆寫初始翻譯，就不會發生這個狀況。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 - [UWP app的磚、徽章及通知](../controls-and-patterns/tiles-badges-notifications.md)
 - [Windows 推播通知服務 (WNS) 概觀](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
 - [Windows 推播通知服務 (WNS) 概觀 (Windows 執行階段 app)](https://msdn.microsoft.com/en-us/library/windows/apps/hh913756.aspx)
@@ -125,6 +121,6 @@ ms.openlocfilehash: 817043579cfd068267c54f2eab9210ef303ca364
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 

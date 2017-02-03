@@ -5,11 +5,11 @@ title: "對話方塊和飛出視窗"
 label: Dialogs
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
-ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
 
 ---
-# 對話方塊和飛出視窗
+# <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -18,31 +18,11 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx">ContentDialog 類別</a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/dn279496">Flyout 類別</a></li>
+<li>[ContentDialog 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)</li>
+<li>[Flyout 類別](https://msdn.microsoft.com/library/windows/apps/dn279496)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-<!--
-<table>
-<tr>
-<th>Dialogs</th><th>Flyouts</th>
-</tr>
-<tr>
-<td>![Example of a full-button dialog](images/controls_dialog_twobutton.png)</td>
-<td>![Example of a flyout](images/flyout-example.png)</td>
-</tr>
-<tr>
-<td>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.  </td>
-<td>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a hidden control, show more detail about an item, or ask the user to confirm an action. Flyouts can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.
-</td>
-</tr>
-</table>
--->
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -64,7 +44,7 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 </div>
 </div>
 
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 * 使用對話方塊和飛出視窗來通知使用者重要的資訊，或是在完成動作之前要求確認或其他資訊。 
 * 不要使用飛出視窗來取代[工具提示](tooltips.md)或[操作功能表](menus.md)。 使用工具提示來顯示會在特定時間之後隱藏的簡短說明。 使用操作功能表來執行與 UI 元素相關聯的內容相關動作，例如複製和貼上。  
@@ -78,22 +58,9 @@ ms.openlocfilehash: 6b0b680cd85d6f57c3ca06758ab7dcaef3f7ffe5
 
 
 
-## 對話方塊與飛出視窗
+## <a name="dialogs-vs-flyouts"></a>對話方塊與飛出視窗
 
 在您決定要使用對話方塊或飛出視窗之後，您必須選擇要使用哪一個。 
-
-<!--
-Dialogs are modal, which means they block all interaction with the app until the user selects a dialog button. To visually reinforce their modal behavior, dialogs draw an overlay layer which partially obscures the temporarily unreachable app UI.
-
-A flyout is a light dismiss control, meaning that users can choose from a variety of actions to quickly dismiss it. These interactions are intended to be lightweight and non-blocking. Light dismiss actions include
-
-* Clicking or tap outside the transient UI
-* Pressing the Escape key
-* Pressing the Back button
-* Resizing the app window
-* Changing device orientation
-
--->
 
 由於對話方塊會阻止互動，而飛出視窗不會，您應該將對話方塊用在想讓使用者放下手上的工作，並將注意力放到特定資訊或是回答問題的情況。 相反地，飛出視窗適合在您想要引起使用者注意，但即使他們想要忽略它也無妨的情況下使用。 
 
@@ -122,16 +89,22 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 <li>用來在完成動作之前收集所需的其他資訊。</li>
 <li>顯示僅於些情況下相關的資訊。 例如，在影像中心 App 中，當使用者按一下影像縮圖時，您可以使用飛出視窗顯示該影像的大尺寸版本。</li>
 <li>警告和確認，包含與可能具有破壞性的動作相關的警告和確認。</li>
-<li>顯示詳細資訊，例如頁面上項目的相關詳細資料或較長的說明。</li>
+<li>顯示詳細資訊，例如頁面上項目的詳細資料或較長的描述。</li>
 </ul></p>
   </div>
 </div>
 </div>
 
+<div class="microsoft-internal-note">
+消失關閉控制項會將鍵盤和遊戲台焦點困在暫時性 UI 內，直到關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 此行為可以使用新的 `LightDismissOverlayMode` 屬性進行修改。 根據預設，暫時性 UI 將在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律 [開啟]**** 或一律 [關閉]****。
 
+```xaml
+<MenuFlyout LightDismissOverlayMode=\"Off\">
+```
+</div>
 
-## 對話方塊
-### 一般指導方針
+## <a name="dialogs"></a>對話方塊
+### <a name="general-guidelines"></a>一般指導方針
 
 -   在對話方塊文字的第一行中明確識別問題或使用者的目標。
 -   對話方塊標題是主要指示，而且是選擇性的。
@@ -144,10 +117,17 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 -   至少必須顯示一個對話方塊按鈕。
     -   按鈕都是唯一的機制，可讓使用者關閉對話方塊。
     -   將按鈕與可識別針對主要指示或內容做出明確回應的文字搭配使用。 例如，「是否允許 AppName 存取您的位置?」，後面接 [允許] 和 [封鎖] 按鈕。 明確的回應讓人更快速理解，可以更有效率地做出決定。
+    - 依下列順序呈現認可按鈕： 
+        -   確定/[執行]/是
+        -   [不執行]/否
+        -   取消
+        
+        (其中，[執行] 和 [不執行] 是主要指令的特定回應。)
+   
 -   錯誤對話方塊會在對話方塊中顯示錯誤訊息，以及任何相關資訊。 錯誤對話方塊中應該只使用 [關閉] 按鈕或執行類似動作的按鈕。
 -   針對頁面上特定位置的內容相關錯誤，例如 (密碼欄位中的) 驗證錯誤，請使用 App 本身的畫布顯示內嵌錯誤，而不要使用對話方塊。
 
-### 確認對話方塊 (確定/取消)
+### <a name="confirmation-dialogs-okcancel"></a>確認對話方塊 (確定/取消)
 確認對話方塊可讓使用者確認要執行的動作。 使用者可以確認動作或選擇取消。  
 典型的確認對話方塊有兩個按鈕︰確認 (確定) 按鈕和取消按鈕。  
 
@@ -163,7 +143,7 @@ A flyout is a light dismiss control, meaning that users can choose from a variet
 
 > 某些平台將確認按鈕放在右邊，而非左邊。 那麼，為什麼建議將它放在左邊？  如果您假設大部分使用者習慣使用右手，而且是以右手拿手機，那麼確認按鈕位於左邊時實際上會更好按，因為它更有可能在使用者的拇指弧形內。 按鈕位於螢幕右邊時，使用者就必須將其拇指向內拉到較不舒服的位置。
 
-### 建立對話方塊
+### <a name="create-a-dialog"></a>建立對話方塊
 若要建立對話方塊，請使用 [ContentDialog 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)。 您可以利用程式碼或標記建立對話方塊。 雖然在 XAML 中定義 UI 元素通常會比較容易，但針對簡單的對話方塊，單純使用程式碼會較為容易。 這個範例會建立一個對話方塊，以通知使用者沒有 WiFi 連線，然後使用 [ShowAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.contentdialog.showasync.aspx) 方法來加以顯示。
 
 ```csharp
@@ -206,10 +186,14 @@ private async void displayDeleteFileDialog()
 }
 ```
 
-## 飛出視窗
-###  建立飛出視窗
+## <a name="flyouts"></a>飛出視窗
+###  <a name="create-a-flyout"></a>建立飛出視窗
 
-飛出視窗為開放式容器，可顯示任意 UI 做為其內容。  
+飛出視窗為開放式容器，可顯示任意 UI 作為其內容。 
+
+<div class="microsoft-internal-note">
+這包含可巢狀於其他飛出視窗內的飛出視窗和操作功能表。
+</div>
 
 飛出視窗會附加至特定的控制項。 您可以使用 [Placement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.placement.aspx) 屬性，以指定飛出視窗的顯示位置︰Top、Left、Bottom、Right 或 Full。 如果您選取[「Full」位置模式](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutplacementmode.aspx)，App 會延展飛出視窗，並將它置於 App 視窗的中央。 顯示這些項目時應將它錨定至叫用的物件，並指定其慣用的相對物件位置：Top、Left、Bottom 或 Right。 飛出視窗亦具備「Full」位置模式，並會嘗試延展飛出視窗並將它置於 App 視窗的中央。 一些像 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的控制項會提供 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 屬性，讓您用來與飛出視窗相關聯。 
 
@@ -295,7 +279,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 }
 ````
 
-### 設定飛出視窗樣式
+### <a name="style-a-flyout"></a>設定飛出視窗樣式
 若要設定飛出視窗的樣式，請修改其 [FlyoutPresenterStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.flyoutpresenterstyle.aspx)。 這個範例會顯示一段換行的文字，並使文字區塊可供螢幕助讀程式存取。
 
 ````xaml
@@ -313,11 +297,11 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 </Flyout>
 ````
 
-## 取得範例
+## <a name="get-the-samples"></a>取得範例
 *   [XAML UI 基本知識](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     以互動式格式查看所有 XAML 控制項。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 - [工具提示](tooltips.md)
 - [功能表和操作功能表](menus.md)
 - [**Flyout 類別**](https://msdn.microsoft.com/library/windows/apps/dn279496)
@@ -325,6 +309,6 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

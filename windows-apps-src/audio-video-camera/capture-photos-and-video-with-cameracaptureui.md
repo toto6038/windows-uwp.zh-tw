@@ -4,12 +4,12 @@ ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "本文說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。"
 title: "使用 Windows 內建相機 UI 來擷取相片和視訊"
 translationtype: Human Translation
-ms.sourcegitcommit: b4bf4d74ae291186100a553a90fd93f890b8ece4
-ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
+ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
+ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
 
 ---
 
-# 使用 Windows 內建相機 UI 來擷取相片和視訊
+# <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -18,7 +18,11 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 如果您想提供自己的相機 UI 或您的案例需要更健全的擷取作業低階控制項，您應該使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
-## 使用 CameraCaptureUI 擷取相片
+> [!NOTE]
+> 如果您是使用 CameraCaptureUI，則不應該在應用程式資訊清單檔案中指定**網路攝影機**或**麥克風**功能。 因為如果您這麼做，將會以裝置的相機隱私性設定您的應用程式；但即使使用者拒絕相機對您應用程式的存取，還是不會防止 CameraCaptureUI 擷取媒體。 原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 如果您在使用 CameraCaptureUI 時指定網路攝影機或麥克風功能，則在提交給「市集」時，應用程式可能會讓 WACK (Windows 應用程式認證套件) 認證失敗。
+> 如果您是使用 MediaCapture 透過程式設計方式來擷取音訊、相片或視訊，則必須在應用程式資訊清單檔案中指定網路攝影機或麥克風功能。
+
+## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 擷取相片
 
 若要使用相機擷取 UI，您應該在專案中包含 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 命名空間。 若要使用傳回的影像檔案進行檔案作業，請包含 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346)。
 
@@ -59,7 +63,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 [!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
 
-## 使用 CameraCaptureUI 擷取視訊
+## <a name="capture-a-video-with-cameracaptureui"></a>使用 CameraCaptureUI 擷取視訊
 
 若要擷取視訊，請建立新的 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 物件。 使用物件的 [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) 屬性，可以指定所傳回視訊的屬性，例如視訊的影像格式。
 
@@ -86,7 +90,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 [!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
 
-利用從相機擷取 UI 傳回的視訊檔案，藉由呼叫 [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) 來建立新的 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596)。 將媒體剪輯新增至合成的 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 集合。
+利用從相機擷取 UI 傳回的視訊檔案，藉由呼叫 [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652596) 來建立新的 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652607)。 將媒體剪輯新增至合成的 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 集合。
 
 呼叫 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674)，從合成建立 **MediaStreamSource** 物件。
 
@@ -103,7 +107,7 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -118,6 +122,6 @@ ms.openlocfilehash: fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO1-->
 
 

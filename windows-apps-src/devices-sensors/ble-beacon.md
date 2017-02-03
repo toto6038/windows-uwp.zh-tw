@@ -3,8 +3,8 @@ author: msatranjr
 title: "藍牙廣告"
 description: "本節包含如何透過 AdvertisementWatcher 和 AdvertisementPublisher API 的使用者，將藍牙低功耗 (LE) 廣告整合到通用 Windows 平台 (UWP) 應用程式的文章。"
 translationtype: Human Translation
-ms.sourcegitcommit: b1493d3d0d61a5fc45ab563b56bffa43650bbed9
-ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
+ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
+ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
 
 ---
 
@@ -39,7 +39,7 @@ ms.openlocfilehash: feda9b20b4cbc265832bdb51f90546d9e1f668e8
 
 藍牙 LE 廣告可讓您的裝置持續發出特定承載的指標 (稱為「廣告」)。 附近任何支援藍牙 LE 功能的裝置，如果有設定為接聽此特定廣告，就都能看見此廣告。
 
-**注意：**基於使用者隱私權的理由，廣告的存留時間是與您 App 的存留時間繫結。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/index)。
+**注意：**基於使用者隱私權的理由，廣告的存留時間是與您 App 的存留時間繫結。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本發佈
 
@@ -155,6 +155,6 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 另一個用來判斷單純距離的方法是定義「值區」。 無線電波在非常接近的時候會回報 0 至 -50 DBm，在中等距離的時候為 -50 至 -90，很遠的時候則低於 -90。 若要決定適用於您 App 的值區，嘗試錯誤是最佳的方法。
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

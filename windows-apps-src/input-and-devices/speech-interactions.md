@@ -1,20 +1,26 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 app。"
+Description: "使用 Cortana 語音命令、語音辨識及語音合成，將語音加入您的應用程式。"
 title: "語音互動"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+keywords: "speech, voice, speech recognition, natural language, dictation, input, user interaction, 語音, 聲音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 5b52f6a8e944e4166c2f4c7e16e4a83ddff23dac
-ms.openlocfilehash: 5efb2d1fc6a63e372e91cfdc8ae5e8117ff047d5
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 5080fe9496b7a13336b42a83fd569e44f43ba2db
 
 ---
 
 # <a name="speech-interactions"></a>語音互動
 
 
-將語音辨識和文字轉換語音 (也稱為 TTS，或語音合成) 直接整合到 app 的使用者體驗。
+將語音辨識和文字轉換語音 (也稱為 TTS，或語音合成) 直接整合到應用程式的使用者體驗。
 
 
 **其他語音元件**
@@ -237,6 +243,6 @@ TTS 從純文字或 SSML 產生語音輸出。
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

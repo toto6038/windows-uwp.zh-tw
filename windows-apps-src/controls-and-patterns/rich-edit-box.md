@@ -6,11 +6,11 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: a8e8e42c87809eb08685fb137a242b1177b824b4
 
 ---
-# Rich Edit 方塊
+# <a name="rich-edit-box"></a>Rich Edit 方塊
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx"><strong>RichEditBox 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx"><strong>Document 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx"><strong>IsReadOnly 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx"><strong>IsSpellCheckEnabled 屬性</strong></a></li>
+<li>[**RichEditBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
+<li>[**Document 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)</li>
+<li>[**IsReadOnly 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)</li>
+<li>[**IsSpellCheckEnabled 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用 **RichEditBox** 顯示和編輯文字檔案。 您不會透過您使用其他標準文字輸入方塊的方式，使用 RichEditBox 取得針對您應用程式的使用者輸入內容。 但是，您會使用它來處理與您應用程式不同的文字檔案。 您通常會將輸入到 RichEditBox 的文字儲存為 .rtf 檔案。
 -   如果多行文字方塊的主要目的為建立文件 (例如部落格文章或電子郵件內容)，而且這些文件需要 RTF，則使用 RTF 方塊。
@@ -43,13 +36,13 @@ ms.openlocfilehash: f26bcc596417f607ee348e93009905ec4a3e27c8
 
 如需如何選擇正確文字控制項的詳細資訊，請參閱[文字控制項](text-controls.md)文章。
 
-## 範例
+## <a name="examples"></a>範例
 
 此 Rich Edit 方塊已在其中開啟一個 RTF 文件。 格式和檔案的按鈕不屬於 Rich Edit 方塊的一部分，但您應該至少提供最小一組樣式按鈕，並實作其動作。
 
 ![包含已開啟文件的 RTF 方塊](images/rich-edit-box.png)
 
-## 建立 Rich Edit 方塊
+## <a name="create-a-rich-edit-box"></a>建立 Rich Edit 方塊
 
 根據預設，RichEditBox 支援拼字檢查。 若要停用拼字檢查工具，請將 [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) 屬性設為 **false**。 如需詳細資訊，請參閱[拼字檢查的指導方針](spell-checking-and-prediction.md)文章。
 
@@ -194,13 +187,13 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 選擇文字控制項的正確鍵盤
+## <a name="choose-the-right-keyboard-for-your-text-control"></a>選擇文字控制項的正確鍵盤
 
 為協助使用者使用觸控式鍵盤或螢幕輸入面板 (SIP) 輸入資料，您可以設定文字控制項的輸入範圍，使其符合使用者要輸入的資料類型。 預設鍵盤配置通常適用於處理 RTF 文件。
 
 如需如何使用輸入範圍的詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
-## 建議
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   建立 RTF 方塊時，提供設定樣式按鈕並實作其動作。
 -   使用與您的應用程式樣式一致的字型。
@@ -210,24 +203,17 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 -   使用純文字控制項就足夠時，不要使用 RTF 控制項。
 
 
+## <a name="related-articles"></a>相關文章
 
-
-
-## 相關文章
-
-[文字控制項](text-controls.md)
-
-**適用於設計人員**
+* [文字控制項](text-controls.md)
 - [拼字檢查的指導方針](spell-checking-and-prediction.md)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
-
-**適用於開發人員 (XAML)**
 - [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

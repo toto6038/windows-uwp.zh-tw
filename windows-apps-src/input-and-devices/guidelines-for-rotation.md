@@ -6,32 +6,34 @@ ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 2fe8814d98dd5ce4471530c7367b8ad266cc6b05
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
 
 ---
 
-# 旋轉
+# <a name="rotation"></a>旋轉
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 本文描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
-## 可行與禁止事項
-
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   使用旋轉以協助使用者直接旋轉 UI 元素。
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
 
 **旋轉概觀**
 
-旋轉是 UWP app 所使用的一項觸控最佳化技術，可以讓使用者以圓形方向 (順時針或逆時針) 轉動物件。
+旋轉是 UWP 應用程式所使用的一項觸控最佳化技術，可以讓使用者以圓形方向 (順時針或逆時針) 轉動物件。
 
 根據輸入裝置，旋轉互動會透過以下方式執行：
 
@@ -89,7 +91,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 <td align="left">組合式旋轉</td>
 <td align="left"><p>組合式旋轉支援依區域 (類似於[移動瀏覽的指導方針](guidelines-for-panning.md)中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
 <div class="alert">
-<strong>注意</strong> 使用者介面柵欄是一種會讓目標周圍的區域限制朝某個特定值或位置移動，以影響其選取結果的功能。
+<strong>備註</strong>  使用者介面滑軌是項功能，其中目標周遭的區域會限制對部分特定值或位置的移動，以影響其選取範圍。
 </div>
 <div>
  
@@ -100,7 +102,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 **範例**
@@ -128,6 +130,6 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -1,54 +1,48 @@
 ---
 author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
-description: "深入了解在 XAML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
+description: "深入了解在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
 title: "XAML 和 C# 的疑難排解指南"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
 
 ---
 
-# XAML 和 C# 的疑難排解指南
+# <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 
+本主題包含在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
 
+* [XAML](#xaml)
+  * [沒有顯示 AdControl](#xaml-notappearing)
+  * [黑色方塊閃爍然後消失](#xaml-blackboxblinksdisappears)
+  * [廣告沒有重新整理](#xaml-adsnotrefreshing)
 
-本主題包含在 XAML App 中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
-
--   [XAML](#xaml)
-
-    -   [沒有顯示 AdControl](#xaml-notappearing)
-
-    -   [黑色方塊閃爍然後消失](#xaml-blackboxblinksdisappears)
-
-    -   [廣告沒有重新整理](#xaml-adsnotrefreshing)
-
--   [C#](#csharp)
-
-    -   [沒有顯示 AdControl](#csharp-adcontrolnotappearing)
-
-    -   [黑色方塊閃爍然後消失](#csharp-blackboxblinksdisappears)
-
-    -   [廣告沒有重新整理](#csharp-adsnotrefreshing)
+* [C#](#csharp)
+  * [沒有顯示 AdControl](#csharp-adcontrolnotappearing)
+  * [黑色方塊閃爍然後消失](#csharp-blackboxblinksdisappears)
+  * [廣告沒有重新整理](#csharp-adsnotrefreshing)
 
 <span id="xaml"/>
-## XAML
+## <a name="xaml"></a>XAML
 
 <span id="xaml-notappearing"/>
-### 沒有顯示 AdControl
+### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
 1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
 
-2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}" ApplicationId="{ApplicationID}"
                   Width="728" Height="90" />
     ```
 
 3.  檢查 **Height** 和 **Width** 屬性。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Width="728" Height="90" />
@@ -58,7 +52,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 5.  檢查 **Visibility** 屬性。 選擇性的 **Visibility** 屬性不得設為 collapsed 或 hidden。 可以在行內 (如下所示) 或外部樣式表中設定這個屬性。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Visibility="Visible"
@@ -67,7 +62,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 6.  檢查 **IsEnabled** 屬性。 選用的 `IsEnabled` 屬性必須設為 `True`。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   IsEnabled="True"
@@ -76,7 +72,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 7.  檢查 **AdControl** 的父項。 如果 **AdControl** 元素位於父元素中，則父元素的狀態必須是使用中且可見。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <StackPanel>
         <UI:AdControl AdUnitId="{AdUnitID}"
                       ApplicationId="{ApplicationID}"
@@ -89,7 +86,7 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 9.  不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
 <span id="xaml-blackboxblinksdisappears"/>
-### 黑色方塊閃爍然後消失
+### <a name="black-box-blinks-and-disappears"></a>黑色方塊閃爍然後消失
 
 1.  再次檢查前述[沒有顯示 AdControl](#xaml-notappearing) 一節中的所有步驟。
 
@@ -97,18 +94,19 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
     此範例示範 **ErrorOccurred** 事件處理常式。 第一個程式碼片段是 XAML UI 標記。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Width="728" Height="90"
                   ErrorOccurred="adControl_ErrorOccurred" />
-
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
-    此範例示範對應的程式碼。
+    此範例示範對應的 C# 程式碼。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     private void adControl_ErrorOccurred(object sender,               
         Microsoft.Advertising.WinRT.UI.AdErrorEventArgs e)
     {
@@ -123,11 +121,12 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
     根據預設，**AdControl** 會在無法顯示廣告時摺疊。 相同父元素中的其他子元素可能會移動，以填滿已摺疊之 **AdControl** 的空位，直到下一次發出要求時才會展開。
 
 <span id="xaml-adsnotrefreshing"/>
-### 廣告沒有重新整理
+### <a name="ads-not-refreshing"></a>廣告沒有重新整理
 
 1.  檢查 [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 屬性。 根據預設，這個選用的屬性會設為 **True**。 當設為 **False** 時，必須使用 [Refresh](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法來擷取另一個廣告。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl AdUnitId="{AdUnitID}"
                   ApplicationId="{ApplicationID}"
                   Width="728" Height="90"
@@ -138,7 +137,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
     下列程式碼片段顯示如何使用 **Refresh** 方法的範例。 第一個程式碼片段是 XAML UI 標記。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <UI:AdControl x:Name="adControl1"
                   AdUnitId="{AdUnit_ID}"
                   ApplicationId="{ApplicationID}"
@@ -148,8 +148,9 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
     這個程式碼片段顯示 UI 標記後置的 C# 程式碼範例。
 
-    ``` syntax
-    public Ads()
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
+    public RefreshAds()
     {
         var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(60) };
         timer.Tick += (s, e) => adControl1.Refresh();
@@ -160,43 +161,22 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="csharp"/>
-## C\# #
+## <a name="c"></a>C\# #
 
 <span id="csharp-adcontrolnotappearing"/>
-### 沒有顯示 AdControl
+### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
 1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 未具現化，將無法使用。
 
-    ``` syntax
-    using Microsoft.Advertising.WinRT.UI;
+    > [!div class="tabbedCodeSnippets"]
+    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-    namespace App1
-    {
-        public sealed partial class MainPage : Page
-        {
-            AdControl adControl;
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
-            public MainPage()
-            {
-                this.InitializeComponent();
-
-                adControl = new AdControl()
-                {
-                    ApplicationId = "{ApplicationID}",
-                    AdUnitId = "{AdUnitID}",
-                    Height = 90,
-                    Width = 728
-                };
-            }
-        }
-    }
-    ```
-
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
-
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";adControl.AdUnitId = "{AdUnitID}";
     adControl.Height = 90;
@@ -205,7 +185,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 4.  檢查 **Height** 和 **Width** 參數。 這兩個屬性必須設定為其中一個[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";
     adControl.AdUnitId = "{AdUnitID}";
@@ -214,7 +195,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 5.  確保 **AdControl** 新增至父元素。 若要顯示，**AdControl** 必須新增為父控制項的子項 (例如，**StackPanel** 或 **Grid**)。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     ContentPanel.Children.Add(adControl);
     ```
 
@@ -222,7 +204,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 7.  檢查 **Visibility** 屬性。 選用的 **Visibility** 屬性必須設為 **Visible**。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";
     adControl.AdUnitId = "{AdUnitID}";
@@ -233,7 +216,8 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 8.  檢查 **IsEnabled** 屬性。 選用的 **IsEnabled** 屬性必須設為 **True**。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` cs
     adControl = new AdControl();
     adControl.ApplicationId = "{ApplicationID}";
     adControl.AdUnitId = "{AdUnitID}";
@@ -247,7 +231,7 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 10. 不應在模擬器中測試 **ApplicationId** 和 **AdUnitId** 的實際值。 若要確定 **AdControl** 如預期般運作，請使用可在[測試模式值](test-mode-values.md)中找到的 **ApplicationId** 和 **AdUnitId** 的測試識別碼。
 
 <span id="csharp-blackboxblinksdisappears"/>
-### 黑色方塊閃爍然後消失
+### <a name="black-box-blinks-and-disappears"></a>黑色方塊閃爍然後消失
 
 1.  再次檢查上方[沒有顯示 AdControl](#csharp-adcontrolnotappearing) 一節中的所有步驟。
 
@@ -255,82 +239,31 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
     下列範例顯示實作錯誤呼叫所需的基本程式碼。 這個 XAML 程式碼會定義用來顯示錯誤訊息的 **TextBlock**。
 
-    ``` syntax
+    > [!div class="tabbedCodeSnippets"]
+    ``` xml
     <TextBlock x:Name="TextBlock1" TextWrapping="Wrap" Width="500" Height="250" />
     ```
 
     這個 C# 程式碼會擷取錯誤訊息並在 **TextBlock** 中顯示。
 
-    ``` syntax
-    using Microsoft.Advertising.WinRT.UI;
-
-    namespace App1
-    {
-        public partial class MainPage : Page
-        {
-            AdControl adControl;
-
-            public MainPage()
-            {
-                this.InitializeComponent();
-
-                adControl = new AdControl();
-                adControl.ApplicationId = "{ApplicationID}";
-                adControl.AdUnitId = "{AdUnitID}";
-                adControl.Height = 90;
-                adControl.Width = 728;
-                adControl.ErrorOccurred += (s,e) =>
-                {
-                    TextBlock1.Text = e.Error.Message;
-                };
-            }
-        }
-    }
-    ```
+    > [!div class="tabbedCodeSnippets"]
+    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet2)]
 
     造成黑色方塊的常見錯誤為「沒有可用的廣告」。 這個錯誤代表要求沒有傳回可用的廣告。
 
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
 <span id="csharp-adsnotrefreshing"/>
-### 廣告沒有重新整理
+### <a name="ads-not-refreshing"></a>廣告沒有重新整理
 
-1.  檢查 **IsAutoRefreshEnabled** 屬性。 根據預設，這個選用的屬性會設為 **True**。 當設為 **False** 時，必須使用 **Refresh** 方法來擷取另一個廣告。
+1.  檢查 [IsAutoRefreshEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isautorefreshenabled.aspx) 屬性 (其屬於您的 **AdControl**) 是否設為 false。 根據預設，這個選用的屬性會設為 **true**。 當設為 **false** 時，必須使用 **Refresh** 方法來擷取另一個廣告。
 
-    以下範例示範如何使用 **IsAutoRefreshEnabled** 屬性。
-
-    ``` syntax
-    adControl = new AdControl();
-    adControl.ApplicationId = "{ApplicationID}";
-    adControl.AdUnitId = "{AdUnitID}";
-    adControl.Height = 90;
-    adControl.Width = 728;
-    adControl.IsAutoRefreshEnabled = true;
-    ```
-
-2.  檢查對 **Refresh** 方法的呼叫。 當使用自動重新整理時，無法使用 **Refresh** 來擷取另一個廣告。 使用手動重新整理時，**Refresh** 應於最少 30 秒至 60 秒 (依裝置目前的數據連線而定) 之後才呼叫。
+2.  檢查對 [Refresh](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.refresh.aspx) 方法的呼叫。 使用自動重新整理 (**IsAutoRefreshEnabled** 為 **true**) 時，**Refresh** 無法用來擷取其他廣告。 使用手動重新整理 (**IsAutoRefreshEnabled** 為 **false**) 時，僅應在至少 30 到 60 秒後 (取決於裝置的目前資料連線) 才呼叫 **Refresh**。
 
     下列範例示範如何呼叫 **Refresh** 方法。
 
-    ``` syntax
-    public MainPage()
-    {
-        InitializeComponent();
-
-        adControl = new AdControl();
-        adControl.ApplicationId = "{ApplicationID}";
-        adControl.AdUnitId = "{AdUnitID}";
-        adControl.Height = 90;
-        adControl.Width = 728;
-        adControl.IsAutoRefreshEnabled = false;
-
-        ContentPanel.Children.Add(adControl);
-
-        var timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(60) };
-        timer.Tick += (s, e) => adControl.Refresh();
-        timer.Start();
-    }
-    ```
+    > [!div class="tabbedCodeSnippets"]
+    [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet3)]
 
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
@@ -340,6 +273,6 @@ ms.openlocfilehash: 0688ca6e0c88628803ad4e9a55b9285bd39351b4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

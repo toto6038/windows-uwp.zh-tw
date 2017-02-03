@@ -1,16 +1,16 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: "本文列出適用於 UWP app 支援的 HTTP 即時資料流 (HLS) 通訊協定標記。"
+description: "本文列出適用於 UWP 應用程式支援的 HTTP 即時資料流 (HLS) 通訊協定標記。"
 title: "HTTP 即時資料流 (HLS) 標記支援"
 translationtype: Human Translation
-ms.sourcegitcommit: 3d61f5272e4d11acfb7e0a85436ca60ba458dcae
-ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
+ms.sourcegitcommit: 61feba54418ad7ba8f089737ebf52d12c466b7a7
+ms.openlocfilehash: 5575a56838eae98c0d79dff61e1afaa8cf87ee86
 
 ---
 
-# HTTP 即時資料流 (HLS) 標記支援
-下表列出適用於 UWP app 支援的 HLS 標記。
+# <a name="http-live-streaming-hls-tag-support"></a>HTTP 即時資料流 (HLS) 標記支援
+下表列出適用於 UWP 應用程式支援的 HLS 標記。
 
 > [!NOTE] 
 > 以 "X-" 開頭的自訂標記可做為定時中繼資料來存取，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)文章中所述。
@@ -68,11 +68,15 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 | 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|選用|不支援|不支援|不支援|
 | 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|選用|不支援|不支援|不支援|
 | 4.3.4.5.  EXT-X-SESSION-KEY |7|17|選用|不支援|不支援|不支援|
+|4.3.5.  媒體或主要播放清單標記                  |             |                   |         |             |     |    |
+| 4.3.5.1.  EXT-X-INDEPENDENT-SEGMENTS |6|13|選用|不支援|支援|支援|
+| 4.3.5.2.  EXT-X-START  |6|12|選用|不支援|部分支援|部分支援|
+|&nbsp;&nbsp;&nbsp;  TIME-OFFSET|6|12|屬性|不支援|支援|支援|
+|&nbsp;&nbsp;&nbsp;  PRECISE|6|12|屬性|不支援|支援預設 "NO"|支援預設 "NO"|
 
 
 
-
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [媒體播放](media-playback.md)
 * [彈性資料流](adaptive-streaming.md)
@@ -86,6 +90,6 @@ ms.openlocfilehash: a561f11a1638d5fea21d1d3b3f8bc47f71271f3f
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO1-->
 
 
