@@ -1,20 +1,20 @@
 ---
 author: msatranjr
 title: "Windows 執行階段元件"
-description: "本文件討論 Windows10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
+description: "本文件討論 Windows 10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
 translationtype: Human Translation
-ms.sourcegitcommit: 700eeb0416ba73a761030e15df8c7c6d8d212785
-ms.openlocfilehash: f1d9c4f782ddd0933ee82d766bf9c70acde4dc19
+ms.sourcegitcommit: 019d3d256becb06ad88cc87962c86829fcfb80cf
+ms.openlocfilehash: 2ac22675f44fab8ff123c26151efc25aad01b3a0
 
 ---
 
-#側載 Windows 市集應用程式的代理 Windows 執行階段元件
+#<a name="brokered-windows-runtime-components-for-a-side-loaded-windows-store-app"></a>側載 Windows 市集應用程式的代理 Windows 執行階段元件
 
 本文章討論 Windows 10 所支援的企業導向功能，該功能允許方便觸控的 .NET 應用程式可使用負責重要業務關鍵作業的現有程式碼。
 
-##簡介
+##<a name="introduction"></a>簡介
 
->**注意** 這份白皮書隨附的範例程式碼可能會[從這個位置下載](http://go.microsoft.com/fwlink/p/?LinkID=393655)，而用來建置代理 Windows 執行階段元件的 Microsoft Visual Studio 範本可以於此處下載：[以適用於 Windows 10 的通用 Windows 應用程式為目標的 Visual Studio 2015 範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**注意**  這份白皮書隨附的範例程式碼可[從這個位置下載](http://go.microsoft.com/fwlink/p/?LinkID=393655)，而用來建置代理 Windows 執行階段元件的 Microsoft Visual Studio 範本可以於此處下載：[以適用於 Windows 10 的通用 Windows 應用程式為目標的 Visual Studio 2015 範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935) (英文)
 
 Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 Windows 執行階段元件*。 我們使用 IPC (處理程序間通訊) 一詞來說明在一個處理程序 (桌面元件) 執行現有桌面軟體資產，同時在 UWP App 中與此程式碼進行互動的能力。 這對企業開發人員來說是很熟悉的模型，因為資料庫應用程式和使用 Windows NT 服務的應用程式共用很類似的多個處理程序架構。
 
@@ -25,9 +25,9 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 
 最後，由於企業開發大量使用 .NET 執行階段和 C# 語言，這個功能的開發著重在 Windows 市集應用程式和桌面元件端使用 .NET。 雖然 Windows 市集應用程式可以使用其他語言和執行階段，隨附的範例只說明 C\#，而僅限於 .NET 執行階段。
 
-##應用程式元件
+##<a name="application-components"></a>應用程式元件
 
->**注意** 這項功能是專門針對 .NET 的使用。 用戶端應用程式和桌面元件都必須使用 .NET 撰寫。
+>**注意**  這項功能專用於 .NET。 用戶端應用程式和桌面元件都必須使用 .NET 撰寫。
 
 **應用程式模型**
 
@@ -41,7 +41,7 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 
 我們將針對 UWP 類型系統說明側載應用程式和桌面元件間的協定。 這包括宣告可代表 UWP 的一或多個 C\# 類別。 如需使用 C\# 建立 Windows 執行階段類別的特定需求，請參閱 MSDN 主題[以 C\# 和 Visual Basic 建立 Windows 執行階段元件](https://msdn.microsoft.com/library/br230301.aspx)。
 
->**注意** 目前在桌面元件和側載應用程式之間的 Windows 執行階段元件協定中不支援列舉。
+>**注意**  目前在桌面元件與側載應用程式之間的 Windows 執行階段元件協定中不支援列舉。
 
 **側載應用程式**
 
@@ -50,7 +50,7 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 >**注意** 側載可以在 [設定] -&gt; [更新與安全性] -&gt;
  [適用於開發人員] 中開啟。
 
-請特別注意，Windows10 更新隨附的應用程式代理人機制只有 32 位元版本。 桌面元件必須是 32 位元。
+請特別注意，Windows 10 更新隨附的應用程式代理人機制只有 32 位元版本。 桌面元件必須是 32 位元。
 側載應用程式可以是 64 位元 (前提是要同時登錄 64 位元和 32 位元 Proxy)，但這不常見。 建置使用 C\# 的側載應用程式時，使用一般「中性」設定和「建議使用 32 位元」預設值就能建立 32 位元的側載應用程式。
 
 **伺服器執行個體和 AppDomain**
@@ -59,7 +59,7 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 
 把多個應用程式指向相同的伺服器目錄，可以在多個應用程式代理人伺服器執行個體間共用伺服器程式碼實作。 雖然仍然有多個應用程式代理人伺服器執行個體，但會執行相同的程式碼。 在單一應用程式使用的所有實作元件都應該在相同的路徑中。
 
-##定義協定
+##<a name="defining-the-contract"></a>定義協定
 
 使用這個功能建立應用程式的第一個步驟是，建立側載應用程式和桌面元件間的協定。 這只能使用 Windows 執行階段類型來完成。
 幸好這些可以使用 C\# 類別來輕鬆宣告。 不過，定義這些交談時，需要考量一些重要的效能問題，這會在稍後的章節中討論。
@@ -104,9 +104,9 @@ namespace Fabrikam
 
 在開啟的檔案中，搜尋 <OutputType> 標記，並將其值變更為 "winmdobj"。
 
-**步驟 4：**建立建置規則，以建立 "reference" Windows 中繼資料檔案 (.winmd 檔案)。 也就是有沒有實作。
+**步驟 3：**建立建置規則，以建立 "reference" Windows 中繼資料檔案 (.winmd 檔案)。 也就是沒有實作。
 
-**步驟 5：**建立建置規則，以建立 "implementation" Windows 中繼資料檔案，也就是有相同的中繼資料資訊，但也包含實作。
+**步驟 4：**建立建置規則，以建立 "implementation" Windows 中繼資料檔案，也就是有相同的中繼資料資訊，但也包含實作。
 
 這會由下列指令碼完成。 在專案中的**Properties** > **Build Events**，將指令碼新增到建置後事件命令列
 
@@ -136,7 +136,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 參考 **winmd** 建立後 (在專案的 [目標] 資料夾底下的 [參考] 資料夾中)，會帶到 (複製到) 每個使用的側載應用程式專案並加以參考。 下節會有更詳盡的說明。 上述建置規則內含的專案結構可確保實作和參考 **winmd** 會位在建置階層完全不同的目錄中，以避免混淆。
 
-##側載應用程式詳細資料
+##<a name="side-loaded-applications-in-detail"></a>側載應用程式詳細資料
 如上所述，側載應用程式的建置方式與任何其他 UWP app 相同，但還有一個額外的細節：在側載應用程式資訊清單中宣告 RuntimeClass 的可用性。 這可讓應用程式只要寫新項目就能存取桌面元件中的功能。 <Extension> 區段中的新資訊清單項目說明桌面元件中實作的 RuntimeClass，以及其所在位置的資訊。 在應用程式資訊清單中的這些宣告內容與針對 Windows 10 的 App 是相同的。 例如：
 
 ```XML
@@ -160,7 +160,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 環境變數 (特別是 %ProgramFiles%) 僅能在 <ActivatableClassAttribute Value="path"> 中使用。如之前所述，應用程式代理人只支援 32 位元，因此若應用程式在 64 位元的作業系統上執行，%ProgramFiles% 會解析為 C:\Program Files (x86)。
 
-##桌面 IPC 伺服器詳細資料
+##<a name="desktop-ipc-server-detail"></a>桌面 IPC 伺服器詳細資料
 
 上面兩節說明類別宣告，以及將參考 **winmd** 傳輸到側載應用程式專案的機制。 剩下的大量桌面元件工作則牽涉到實作。 由於使用桌面元件的目的就是要能呼叫桌面程式碼 (通常用來重複使用現有的程式碼資產)，因此專案必須以特別的方式設定。
 一般而言，使用 .NET 的 Visual Studio 專案使用兩種「設定檔」的其中一種。
@@ -443,7 +443,7 @@ return Task<int>.Run(async () =>
 
 由於用戶端和伺服器通常都是由同一個組織所撰寫，因此可以採用一種程式設計做法，也就是從側載應用程式中的背景執行緒進行所有伺服器呼叫。 背景執行緒可以發出從伺服器收集一或多個資料批次的直接呼叫。 擷取全部結果後，應用程式處理程序記憶體中的資料批次通常可以直接從 UI 執行緒擷取。 C\# 物件可在背景執行緒和 UI 執行緒間靈活運作，所以對這種類型的呼叫模式特別有用。
 
-##建立和部署 Windows 執行階段 Proxy
+##<a name="creating-and-deploying-the-windows-runtime-proxy"></a>建立和部署 Windows 執行階段 Proxy
 
 由於 IPC 方法涉及在這兩個處理程序間封送處理 Windows 執行階段介面，因此必須使用全域登錄的 Windows 執行階段 Proxy 和虛設常式。
 
@@ -514,7 +514,7 @@ MyWinRTComponent.Proxies
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
-##模式和效能
+##<a name="patterns-and-performance"></a>模式和效能
 
 仔細監視跨處理程序傳輸的效能非常重要。 跨處理程序呼叫的成本至少是同處理程序呼叫的兩倍。 建立 "chatty" 交談跨處理程序或執行大型物件 (如點陣圖) 的重複傳輸會導致未預期和不佳的應用程式效能。
 
@@ -546,7 +546,7 @@ struct PersonStruct
 另一個技巧是可變載入測試。 您可以將效能測試攔截放入應用程式，將可變延遲載入引進伺服器處理來完成此作業。 這可以模擬各種載入，以及應用程式對不同伺服器效能的反應。
 此範例說明如何使用適當的非同步技術將時間延遲放入程式碼。 要插入的實際延遲時間及要放入該人工載入的隨機範圍會因應用程式設計和應用程式預期執行環境而有所不同。
 
-##開發處理序
+##<a name="development-process"></a>開發處理序
 
 當您變更伺服器時，必須確定所有先前執行中的執行個體已不再執行。 COM 最終將清除這個處理序，但是取消計時器的時間會比反覆開發的有效時間還長。 因此，刪除先前執行中的執行個體是開發期間的一個標準步驟。 這需要開發人員持續追蹤哪一個 dllhost 執行個體正在裝載伺服器。
 
@@ -561,7 +561,7 @@ struct PersonStruct
 
 代理人伺服器的模組清單應該會在其載入模組的清單中列出 *clrhost.dll*。
 
-##資源
+##<a name="resources"></a>資源
 
 -   [適用於 Windows 10 與 VS 2015 的代理 WinRT 元件專案範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
@@ -579,6 +579,6 @@ struct PersonStruct
 
 
 
-<!--HONumber=Sep16_HO2-->
+<!--HONumber=Dec16_HO3-->
 
 

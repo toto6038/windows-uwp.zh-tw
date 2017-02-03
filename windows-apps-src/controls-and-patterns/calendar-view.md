@@ -6,39 +6,34 @@ ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 86062f744efa487cc70adb9648ff3f3584226000
 
 ---
-# 行事曆檢視
+# <a name="calendar-view"></a>行事曆檢視
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 行事曆檢視可讓使用者檢視行事曆並與其互動，以便依月份、年份或 10 年瀏覽行事曆。 使用者可以選取單一日期或日期範圍。 它沒有選擇器介面，而且行事曆一律會顯示。 
 
+
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx"><strong>CalendarView 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx"><strong>SelectedDatesChanged 事件</strong></a></li>
+<li>[**CalendarView 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
+<li>[**SelectedDatesChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 您可以使用行事曆檢視，讓使用者從一律顯示的行事曆中選取單一日期或日期範圍。
 
 如果您需要讓使用者一次選取多個日期，則必須使用行事曆檢視。 如果您需要讓使用者只挑選單一日期，而且不需要一律顯示行事曆，請考慮使用[行事曆日期選擇器](calendar-date-picker.md)或[日期選擇器](date-picker.md)控制項。
 
 如需有關如何選擇正確控制項的詳細資訊，請參閱[日期和時間控制項](date-and-time.md)文章。
 
-## 範例
+## <a name="examples"></a>範例
 
 行事曆檢視是由 3 個個別檢視所組成：月份檢視、年份檢視和十年份檢視。 根據預設，開啟時會顯示月份檢視。 您可以設定 [**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) 屬性，以指定啟動檢視。
 
@@ -46,7 +41,7 @@ ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 使用者按一下月份檢視的標頭，即可開啟年份檢視；按一下年份檢視的標頭，即可開啟十年份檢視。 使用者在十年份檢視中挑選某一年，即可返回年份檢視；挑選年份檢視中的某個月份，即可返回月份檢視。 標頭兩側的箭頭可用來往前或往回瀏覽月份、年份或十年。 
 
-## 建立行事曆檢視
+## <a name="create-a-calendar-view"></a>建立行事曆檢視
 
 此範例顯示如何建立簡單的行事曆檢視。
 
@@ -58,7 +53,7 @@ ms.openlocfilehash: 4d67cf41bf44904e094476d6350ad68cc46ab52f
 
 ![行事曆檢視的範例](images/controls_calendar_monthview.png)
 
-### 選取日期
+### <a name="selecting-dates"></a>選取日期
 
 根據預設，[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) 屬性是設定為 **Single**。 這可讓使用者在行事曆中挑選單一日期。 將 SelectionMode 設定為 **None** 以停用日期選取功能。 
 
@@ -73,9 +68,10 @@ calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 
 您可以處理 [**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) 事件，以在 [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) 集合變更時接收通知。
 
-> **注意**  如需有關日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 與 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
+> [!NOTE]
+> 如需日期值的重要資訊，請參閱＜日期和時間控制項＞文章中的 [DateTime 和 Calendar 值](date-and-time.md#datetime-and-calendar-values)。
 
-### 自訂行事曆檢視的外觀
+### <a name="customizing-the-calendar-views-appearance"></a>自訂行事曆檢視的外觀
 
 行事曆檢視是由兩個部分所組成：ControlTemplate 中定義的 XAML 元素，以及控制項直接呈現的視覺元素。 
 - 控制項範本中定義的 XAML 元素包括控制項周圍的框線、標頭、[上一步] 和 [下一步] 按鈕以及 DayOfWeek 元素。 與任何 XAML 控制項一樣，您可以設定這些元素的樣式以及重新套用範本。 
@@ -116,7 +112,7 @@ calendarView1.MinDate = new DateTime(2000, 1, 1);
 calendarView1.MaxDate = new DateTime(2099, 12, 31);
 ```
 
-### 更新行事曆日期項目
+### <a name="updating-calendar-day-items"></a>更新行事曆日期項目
 
 行事曆中的每一天都是由 [**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) 物件來表示。 若要存取個別的日期項目，並使用它的屬性和方法，請處理 [**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) 事件並使用事件引數的 Item 屬性來存取 CalendarViewDayItem。
 
@@ -128,7 +124,7 @@ calendarView1.MaxDate = new DateTime(2099, 12, 31);
 
 ![含密度列的行事曆日期](images/calendar-view-density-bars.png)
 
-### 分階段的轉譯
+### <a name="phased-rendering"></a>分階段的轉譯
 
 行事曆檢視可以包含大量的 CalendarViewDayItem 物件。 為了讓 UI 保持回應，並允許順暢地瀏覽行事曆，行事曆檢視支援分階段的轉譯。 這樣可以讓您將日期項目分成數個階段來處理。 如果在所有階段都已完成之前，某一個日期移出檢視，則不會再花任何時間來處理及轉譯該項目。
 
@@ -198,7 +194,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 }
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 - [日期和時間控制項](date-and-time.md)
 - [行事曆日期選擇器](calendar-date-picker.md)
@@ -207,6 +203,6 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

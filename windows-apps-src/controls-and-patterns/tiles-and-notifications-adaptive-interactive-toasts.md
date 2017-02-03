@@ -6,8 +6,8 @@ ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 2ac3a4a1efa85a3422d8964ad4ee62db28bc975f
-ms.openlocfilehash: cfbbf110ed6df1b7e81e0505dcf55a63ba8739aa
+ms.sourcegitcommit: 76a7a6dd3f0e0026e54483fa0ee5f82376ca0c99
+ms.openlocfilehash: 4420ecac17c41858aac7379b4dfaaa43b853318d
 
 ---
 # <a name="adaptive-and-interactive-toast-notifications"></a>調適型和互動式快顯通知
@@ -22,7 +22,7 @@ ms.openlocfilehash: cfbbf110ed6df1b7e81e0505dcf55a63ba8739aa
 -   針對主要快顯通知和每項動作提供三種不同的啟用類型。
 -   針對特定案例 (包括警示、提醒及來電) 建立通知的選項。
 
-**注意：**若要看到來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
+**備註**  若要查看來自 Windows 8.1 和 Windows Phone 8.1 的舊版範本，請參閱[舊版快顯通知範本目錄](https://msdn.microsoft.com/library/windows/apps/hh761494)。
 
 
 ## <a name="getting-started"></a>開始使用
@@ -112,16 +112,30 @@ ToastContent content = new ToastContent()
 };
 ```
 
-接著您可以使用此程式碼來建立並傳送快顯通知：
+<<<<<<< HEAD 接著需要將快顯通知轉換為 [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) 物件。 若您在 XML 檔案中定義快顯通知 (在此稱作 "content.xml")，請使用此程式碼：
 
 ```CSharp
-ToastNotification notification = new ToastNotification(content.GetXml());
+string xmlText = File.ReadAllText("content.xml");
+XmlDocument xmlContent = new XmlDocument();
+xmlContent.LoadXml(xmlText);
+```
+
+或者，若您使用 C# 定義快顯通知範本，請使用此項：
+
+```CSharp
+XmlDocument xmlContent = content.GetXml();
+```
+
+無論您建立 XMLDocument 的方式為何，您都可使用此程式碼建立及傳送快顯通知：
+
+```CSharp
+ToastNotification notification = new ToastNotification(xmlContent);
 ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
 
-若要查看可顯示快顯通知的完整運作 App，請參閱[傳送本機快顯通知的快速入門](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)。
+若要查看可顯示快顯通知的完整應用程式，請參閱[傳送本機快顯通知的快速入門](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)。
 
-以及結構的視覺化呈現方式：
+此為結構的視覺化呈現方式：
 
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
@@ -129,14 +143,14 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 在視覺元素內部，必須有且只有一個包含快顯通知視覺內容的繫結元素。
 
-通用 Windows 平台 (UWP) App 中的通知依據不同的磚大小支援多種範本。 但是，快顯通知只有一個範本名稱：**ToastGeneric**。 只有一個範本名稱表示：
+通用 Windows 平台 (UWP) 應用程式中的通知依據不同的磚大小支援多種範本。 但是，快顯通知只有一個範本名稱：**ToastGeneric**。 只有一個範本名稱表示：
 
 -   您可以變更快顯內容，例如新增另一行文字、新增內嵌影像，或將應用程式圖示的縮圖影像變更為顯示其他項目，而且執行這些動作時不需要擔心會變更整個範本，或擔心因為範本名稱和內容不符而建立無效的承載。
 -   您可以使用相同的程式碼，針對要供不同類型 Microsoft Windows 裝置 (包括手機、平板電腦、電腦及 Xbox One) 使用的**快顯通知**建構相同的承載。 這些裝置每一個都將能夠接受通知，並依據其 UI 原則以適當的視覺能供性和互動模型方式向使用者顯示。
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
-您 App 的身分是透過 App 圖示來傳達。 不過，如果您使用 appLogoOverride，則會在您的文字行下方顯示 App 名稱。
+您應用程式的身分是透過應用程式圖示來傳達。 不過，如果您使用 appLogoOverride，則會在您的文字行下方顯示應用程式名稱。
 
 | 標準快顯通知                                                                              | 使用 appLogoOverride 的快顯通知                                                          |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
@@ -144,7 +158,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 ### <a name="actions"></a>動作
 
-在 UWP App 中，您可以在快顯通知中加入按鈕或其他輸入項目，讓使用者在 App 外部執行更多動作。 這些動作是在 &lt;actions&gt; 元素底下指定，有兩種類型可以指定：
+在 UWP 應用程式中，您可以在快顯通知中加入按鈕或其他輸入項目，讓使用者在應用程式外部執行更多動作。 這些動作是在 &lt;actions&gt; 元素底下指定，有兩種類型可以指定：
 
 -   &lt;action&gt; 這會在傳統型與行動裝置上顯示為按鈕。 您最多可以在快顯通知中指定五個自訂或系統動作。
 -   &lt;input&gt; 這可以允許使用者提供輸入，例如快速回覆訊息，或從下拉式功能表中選取選項。
@@ -153,16 +167,16 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 
 當使用者採取動作時，您可以指定 &lt;action&gt; 元素內部的 [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) 屬性來執行下列其中一項動作：
 
--   使用可用來瀏覽特定頁面/內容的動作特定引數在前景啟用 App。
--   在不影響使用者的情況下啟用 app 的背景工作。
--   透過通訊協定啟動來啟用另一個 app。
+-   使用可用來瀏覽特定頁面/內容的動作特定引數在前景啟用應用程式。
+-   在不影響使用者的情況下啟用應用程式的背景工作。
+-   透過通訊協定啟動來啟用另一個應用程式。
 -   指定要執行的系統動作。 目前可用的系統動作為延期及解除排定的鬧鐘/提醒，將在下面的小節中進一步說明。
 
 關於視覺區段和其子項目中支援的所有屬性，請參閱下面的＜結構描述＞一節。 如需更多範例，請參閱下面的＜XML 範例＞一節。
 
 ### <a name="audio"></a>音訊
 
-針對桌面平台開發的 UWP App 目前不支援自訂音效；您可以針對您為桌面平台開發的 app 從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP App 支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
+針對桌面平台開發的 UWP 應用程式目前不支援自訂音效；您可以針對您為桌面平台開發的應用程式從 ms-winsoundevents 的清單中選擇。 行動平台上的 UWP 應用程式支援這兩種 ms-winsoundevents，以及以下格式的自訂音效：
 
 -   ms-appx:///
 -   ms-appdata:///
@@ -181,7 +195,7 @@ ToastNotificationManager.CreateToastNotifier().Show(notification);
 ## <a name="xml-examples"></a>XML 範例
 
 
-**注意：**這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的 App。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
+**備註**  這些範例的快顯通知螢幕擷取畫面取自傳統型裝置上的應用程式。 在行動裝置上，快顯通知可能會以摺疊的方式顯示，並在快顯通知底部顯示擷取器以展開通知。
 
  
 
@@ -249,9 +263,9 @@ ToastContent content = new ToastContent()
 
  
 
-**包含動作的通知，範例 1**
+**包含動作的通知**
 
-這個範例顯示...
+這個範例使用兩種可能的回應動作建立通知。
 
 ```XML
 <toast launch="app-defined-string">
@@ -309,73 +323,11 @@ ToastContent content = new ToastContent()
 
 ![包含動作的通知，範例 1](images/adaptivetoasts-xmlsample02.jpg)
 
- 
 
-**包含動作的通知，範例 2**
-
-這個範例顯示...
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Restaurant suggestion...</text>
-      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
-    </binding>
-  </visual>
-  <actions>
-    <action activationType="foreground" content="Reviews" arguments="reviews" />
-    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
-  </actions>
-</toast>
-```
-
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Restaurant suggestion..."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("Reviews", "reviews"),
- 
-            new ToastButton("Show map", "bingmaps:?q=sushi")
-            {
-                ActivationType = ToastActivationType.Protocol
-            }
-        }
-    }
-};
-```
-
-![包含動作的通知，範例 2](images/adaptivetoasts-xmlsample03.jpg)
-
- 
 
 **包含文字輸入和動作的通知，範例 1**
 
-這個範例顯示...
+此範例建立會接受文字輸入連同兩個回應動作的通知。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -456,7 +408,7 @@ ToastContent content = new ToastContent()
 
 **包含文字輸入和動作的通知，範例 2**
 
-這個範例顯示...
+此範例建立會接受文字輸入及單一動作的通知。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -533,7 +485,7 @@ ToastContent content = new ToastContent()
 
 **包含選取項目輸入和動作的通知**
 
-這個範例顯示...
+此範例建立含有下拉式選取範圍功能表以及兩個可能動作的通知。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -617,7 +569,7 @@ ToastContent content = new ToastContent()
 
 **提醒通知**
 
-這個範例顯示...
+如同先前範例使用選取範圍功能表及兩個動作，我們便可建立提醒通知。
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">
@@ -810,9 +762,9 @@ launch?
 -   launch? = string
 -   這是選擇性屬性。
 -   快顯通知啟動應用程式時，傳遞給應用程式的字串。
--   視 activationType 的值而定，此值可由在前景的 app 於背景工作內部 app 接收，或由透過通訊協定從原始 app 啟動的其他 app 接收。
--   此字串的格式和內容是由 app 定義以供 app 自己使用。
--   當使用者點選或按一下快顯通知來啟動其相關聯 App 時，啟動字串會提供相關內容給 App，以允許 App 向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。
+-   視 activationType 的值而定，此值可由在前景的應用程式於背景工作內部應用程式接收，或由透過通訊協定從原始應用程式啟動的其他應用程式接收。
+-   此字串的格式和內容是由應用程式定義以供應用程式自己使用。
+-   當使用者點選或按一下快顯通知來啟動其相關聯應用程式時，啟動字串會提供相關內容給應用程式，以允許應用程式向使用者顯示與快顯通知內容有關的檢視，而非以其預設方式啟動。
 -   如果是因為使用者按下某個動作 (而非按一下快顯通知內文) 而啟用，開發人員會取回在該 &lt;action&gt; 標記中預先定義的 "arguments"，而非取回 &lt;toast&gt; 標記中預先定義的 "launch"。
 
 duration?
@@ -990,7 +942,7 @@ id
 
 -   id = string
 -   這是必要屬性。
--   id 是必要屬性，並且是由開發人員用來在 app 啟用之後抓取使用者輸入 (於前景或背景)。
+-   id 是必要屬性，並且是由開發人員用來在應用程式啟用之後抓取使用者輸入 (於前景或背景)。
 
 type
 
@@ -1021,7 +973,7 @@ defaultInput?
 
 id
 
--   這是必要屬性。 這個屬性是用來識別使用者選取項目。 會傳回 id 給您的 app。
+-   這是必要屬性。 這個屬性是用來識別使用者選取項目。 會傳回 id 給您的應用程式。
 
 content
 
@@ -1037,13 +989,13 @@ content
 arguments
 
 -   arguments = string
--   arguments 是必要屬性。 這個屬性描述使用者採取此動作以啟用 app 之後，app 可抓取之 app 定義的資料。
+-   arguments 是必要屬性。 這個屬性描述使用者採取此動作以啟用應用程式之後，應用程式可抓取之應用程式定義的資料。
 
 activationType?
 
 -   activationType? = "foreground | background | protocol | system"
 -   activationType 是選擇性屬性，且其預設值為 "foreground"。
--   這個屬性描述此動作將造成的啟動類型：前景、背景或透過通訊協定啟動來啟動其他 app，或叫用系統動作。
+-   這個屬性描述此動作將造成的啟動類型：前景、背景或透過通訊協定啟動來啟動其他應用程式，或叫用系統動作。
 
 imageUri?
 
@@ -1060,7 +1012,7 @@ hint-inputId
 ## <a name="attributes-for-system-handled-actions"></a>系統處理之動作的屬性
 
 
-如果您不想要由 app 以背景工作的方式處理通知的延期/重新排程工作，系統可以處理延期和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
+如果您不想要由應用程式以背景工作的方式處理通知的延期/重新排程工作，系統可以處理延期和關閉通知的動作。 系統處理的動作可以合併 (或個別指定)，但是我們不建議在沒有關閉動作的情況下實作延期動作。
 
 系統命令組合：SnoozeAndDismiss
 
@@ -1162,6 +1114,6 @@ ToastContent content = new ToastContent()
 * [GitHub 上的 Notifications 程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

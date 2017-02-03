@@ -6,16 +6,12 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d51aacb31f41cbd9c065b013ffb95b83a6edaaf4
-ms.openlocfilehash: fc01951adfb151f1c5952d9181492a1d1f88b0cc
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 813a9a5fe27f3c0874eab80223afd6b3ac7be07a
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="special-tile-templates"></a>特殊的磚範本
-
-
-
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 除了圖示磚範本 (針對 Windows 10 更新的傳統型特殊範本) 以外，每一個特殊的磚範本都是特別針對 Windows 10 建置的。 本文涵蓋三個特殊的磚範本: 圖示、相片和連絡人。
 
@@ -275,6 +271,6 @@ TileContent content = new TileContent()
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

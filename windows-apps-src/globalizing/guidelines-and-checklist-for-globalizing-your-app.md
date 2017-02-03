@@ -1,36 +1,36 @@
 ---
 author: DelfCo
-Description: "當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。"
+Description: "在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。"
 Search.Refinement.TopicID: 180
 title: "全球化與當地語系化的指導方針"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
 
 ---
 
-# 全球化和當地語系化的可行與禁止事項
+# <a name="globalization-and-localization-dos-and-donts"></a>全球化和當地語系化的可行與禁止事項
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
+在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。
+
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**全球化**](https://msdn.microsoft.com/library/windows/apps/br206813)</li>
+<li>[**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**資源**](https://msdn.microsoft.com/library/windows/apps/br206022)</li>
+<li>[**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)</li>
+</ul>
+</div>
 
 
 
-
-
-**重要 API**
-
--   [**全球化**](https://msdn.microsoft.com/library/windows/apps/br206813)
--   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**資源**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
-
-當您要將 App 全球化以適應更廣泛的使用對象，或是針對特定的市場將 App 當地語系化時，請遵循這些最佳做法。
-
-
-
-## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>全球化
+## <a name="globalization"></a>全球化
 
 為 UI 選擇全球適用的詞彙和影像、使用 [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) API 格式化應用程式資料，以及避免對位置或語言進行假設，讓您的應用程式為輕鬆地適應不同市場做好準備。
 
@@ -42,7 +42,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 <thead>
 <tr class="header">
 <th align="left">建議</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -73,12 +73,12 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 </tr>
 <tr class="odd">
 <td align="left"><p>不要使用語言來假設使用者的位置，也不要使用位置來假設使用者使用的語言。</p></td>
-<td align="left"><p>在 Windows 中，使用者的語言和位置是不同的概念。 使用者可以使用語言的特殊地區變體 (例如，en-gb 是英國使用的英文，但是使用者可能在完全不同的國家或地區)。 考量您的 app 是否需要關於使用者語言 (例如針對 UI 文字) 或位置 (例如針對授權問題) 的知識。</p>
+<td align="left"><p>在 Windows 中，使用者的語言和位置是不同的概念。 使用者可以使用語言的特殊地區變體 (例如，en-gb 是英國使用的英文，但是使用者可能在完全不同的國家或地區)。 考量您的應用程式是否需要關於使用者語言 (例如針對 UI 文字) 或位置 (例如針對授權問題) 的知識。</p>
 <p>如需更多資訊，請參閱[<strong>管理語言和地區</strong>](manage-language-and-region.md)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>請勿使用方言和隱喻。</p></td>
-<td align="left"><p>特定族群 (例如，文化特性和年齡) 使用的語言，由於只有該族群使用，所以很難了解或翻譯。 同樣地，不見得人人都能理解隱喻的深層含意。 例如，只有滑雪愛好者才知道 &quot;bluebird&quot; 的其中含意，但是非滑雪愛好者，就不明白其中的含意。 如果您計畫將 App 當地語系化，並使用非正式的聲音或語調，請務必向當地語系化人員仔細解釋您真正想表達的意思和語氣。</p></td>
+<td align="left"><p>請勿使用口語和隱喻。</p></td>
+<td align="left"><p>特定族群 (例如，文化特性和年齡) 使用的語言，由於只有該族群使用，所以很難了解或翻譯。 同樣地，不見得人人都能理解隱喻的深層含意。 例如，只有滑雪愛好者才知道 &quot;bluebird&quot; 的其中含意，但是非滑雪愛好者，就不明白其中的含意。 如果您計畫將應用程式當地語系化，並使用非正式的聲音或語調，請務必向當地語系化人員仔細解釋您真正想表達的意思和語氣。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>不要使用技術專業用語、縮寫或首字母縮略字。</p></td>
@@ -94,8 +94,8 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 </tr>
 <tr class="even">
 <td align="left"><p>不要單獨使用字串比較來比較語言標記。</p></td>
-<td align="left"><p>BCP-47 語言標記很複雜。 在比較語言標記時會產生許多問題，包括比對指令碼資訊、傳統標記及多個地區變體的問題。 Windows 中的資源管理系統會為您處理比對工作。 您可以使用任何語言指定一組資源，系統就會為使用者和 app 選擇適當的資源。</p>
-<p>如需資源管理得更多資訊，請參閱[<strong>定義 app 資源</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。</p></td>
+<td align="left"><p>BCP-47 語言標記很複雜。 在比較語言標記時會產生許多問題，包括比對指令碼資訊、傳統標記及多個地區變體的問題。 Windows 中的資源管理系統會為您處理比對工作。 您可以使用任何語言指定一組資源，系統就會為使用者和應用程式選擇適當的資源。</p>
+<p>如需資源管理得更多資訊，請參閱[<strong>定義應用程式資源</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>不要假設排序總是依字母順序。</p></td>
@@ -106,7 +106,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>當地語系化
+## <a name="localization"></a>當地語系化
 
 <table>
 <colgroup>
@@ -116,7 +116,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 <thead>
 <tr class="header">
 <th align="left">建議</th>
-<th align="left">描述</th>
+<th align="left">說明</th>
 </tr>
 </thead>
 <tbody>
@@ -132,10 +132,10 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 </tr>
 <tr class="odd">
 <td align="left"><p>設定預設語言，並標記所有資源，即使是預設語言中的資源也一樣。</p></td>
-<td align="left"><p>總是在應用程式資訊清單中為您的 app 設定適當的預設語言 (package.appxmanifest)。 預設語言決定當使用者無法使用 app 所支援的任何語言時要使用的語言。 利用他們的語言標記預設語言資源 (例如 en-us/Logo.png)，如此一來，系統便能分辨資源所使用的是哪種語言，以及該語言在特定情況中的使用情況。</p></td>
+<td align="left"><p>總是在應用程式資訊清單中為您的應用程式設定適當的預設語言 (package.appxmanifest)。 預設語言決定當使用者無法使用應用程式所支援的任何語言時要使用的語言。 利用他們的語言標記預設語言資源 (例如 en-us/Logo.png)，如此一來，系統便能分辨資源所使用的是哪種語言，以及該語言在特定情況中的使用情況。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>判斷需要當地語系化的 app 資源。</p></td>
+<td align="left"><p>判斷需要當地語系化的應用程式資源。</p></td>
 <td align="left"><p>如果您需要將應用程式當地語系化以適應其他市場，需要變更什麼？ 需要將文字字串翻譯為其他語言。 可能需要針對其他文化特性調整影像。 考量當地語系化會對應用程式使用的其他資源 (例如，音訊或視訊) 產生何種影響。</p></td>
 </tr>
 <tr class="odd">
@@ -178,7 +178,7 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
  
 
-## <span id="related_topics"></span>相關文章
+## <a name="related-articles"></a>相關文章
 
 
 **範例**
@@ -193,6 +193,6 @@ ms.openlocfilehash: 9d16e553eb38526b4ae1f5aa827132e130cd05c7
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

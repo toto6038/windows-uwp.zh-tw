@@ -4,12 +4,12 @@ title: "計劃 DirectX 移植"
 description: "計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案 -- 升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
+ms.sourcegitcommit: 115377ed3e5a13668481d1122f354610b3077763
+ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
 
 ---
 
-# 計劃 DirectX 移植
+# <a name="plan-your-directx-port"></a>計劃 DirectX 移植
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +23,7 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案：升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。
 
-## 計劃移植圖形程式碼
+## <a name="plan-to-port-graphics-code"></a>計劃移植圖形程式碼
 
 
 在您開始將遊戲移植到 UWP 之前，請務必確認您的遊戲不含任何來自 Direct3D 8 的保留功能。 請確定您的遊戲未殘留任何固定函式管線。 如需過時功能的完整清單 (包含固定管線功能)，請參閱[過時的功能](https://msdn.microsoft.com/library/windows/desktop/cc308047)。
@@ -40,7 +40,7 @@ ms.openlocfilehash: fbd582b2cc90ee763cb167c65dac88cee4e7a025
 
 熟悉不同的 [Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876)。 功能層級可以藉由定義已知的功能組合，將範圍廣泛的視訊硬體分類。 每一組大致上都會對應到 Direct3D 版本 (從 9.1 到 11.2)。 所有功能層級都使用 DirectX 11 API。
 
-## 計劃將 Win32 UI 程式碼移植到 CoreWindow
+## <a name="plan-to-port-win32-ui-code-to-corewindow"></a>計劃將 Win32 UI 程式碼移植到 CoreWindow
 
 
 UWP app 會在針對名稱為 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的 app 容器所建立的視窗中執行。 您的遊戲可以藉由從 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 繼承以控制視窗，這樣所需的實作細節會比桌面視窗來得少。 遊戲的主迴圈將位於 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法內。
@@ -55,7 +55,7 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 
 您通常會使用的概念有兩種：
 
--   Managed 參考 ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) 和 [**Managed 類別**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref 類別) 都是 Windows 執行階段的基本部分。 您需要為含有 Windows 執行階段元件的介面使用 Managed ref 類別，例如 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (逐步解說中將提供更多相關資訊)。
+-   Managed 參考 ([**^ 運算子**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) 和 [**Managed 類別**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref 類別) 都是 Windows 執行階段的基本部分。 您需要為含有 Windows 執行階段元件的介面使用 Managed ref 類別，例如 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (逐步解說中將提供更多相關資訊)。
 -   使用 Direct3D 11 COM 介面時，請使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 範本類型，讓 COM 指標更容易使用。
 
  
@@ -68,6 +68,6 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

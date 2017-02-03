@@ -1,12 +1,18 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的 App。"
+Description: "使用 Cortana 語音命令、語音辨識以及語音合成，將語音加入您的應用程式。"
 title: "Surface Dial 互動"
 label: Surface Dial interactions
 template: detail.hbs
+keywords: "Surface Dial、Windows 滾輪、RadialController、Radial 控制器、使用者互動、輸入"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: 08ac5d58f2650306b162e4dec7f4e606543ca80f
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
 
 ---
 
@@ -24,21 +30,21 @@ Windows Wheel 裝置，例如 Surface Dial，是一種新的輸入裝置，可�
 
 | 影片 |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe width="300" height="200" src="https://www.youtube.com/embed/2tajuOfs9p0" frameborder="0" allowfullscreen></iframe> |
-| *Surface Dial app 合作夥伴* | *適用於開發人員的 Surface Dial* |
+| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| *Surface Dial 應用程式合作夥伴* | *適用於開發人員的 Surface Dial* |
 
 Surface Dial 使用根據「旋轉」動作 (或手勢) 的形狀規格，做為次要、多重強制回應的輸入裝置，補充主要裝置的輸入。 在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 
 
-Surface Dial 也支援「長按」以及「按一下」兩個動作。 長按有單一的功能︰顯示命令的功能表。 如果功能表使用中，旋轉並按一下輸入是由功能表處理。 否則，輸入就會傳遞到您的 App 進行處理。 
+Surface Dial 也支援「長按」以及「按一下」兩個動作。 長按有單一的功能︰顯示命令的功能表。 如果功能表使用中，旋轉並按一下輸入是由功能表處理。 否則，輸入就會傳遞到您的應用程式進行處理。 
 
-**就像搭配所有 Windows 輸入裝置一樣，您可以自訂並量身打造 Surface Dial 的互動體驗，以符合您 App 中的功能。**
+**就像搭配所有 Windows 輸入裝置一樣，您可以自訂並量身打造 Surface Dial 的互動體驗，以符合您應用程式中的功能。**
 
 > [!TIP]
 > Surface Dial 與新的 Surface Studio 一起使用，可以提供更獨特的使用者體驗。  
 >
 >除了上述預設的長按功能表體驗之外，Surface Dial 也可以直接放置在 Surface Studio 的螢幕上。 這會產生特殊的「螢幕上」功能表。 
 >
->系統會偵測 Surface Dial 的接觸位置和界限，使用此資訊處理裝置的遮蔽範圍，並沿著 Dial 外圍迴旋顯示較大版本的功能表。 您的 App 也可以使用這個相同的資訊，針對裝置是否存在及其預期的使用方式 (例如使用者的手與手臂的放置位置) 打造 UI。
+>系統會偵測 Surface Dial 的接觸位置和界限，使用此資訊處理裝置的遮蔽範圍，並沿著 Dial 外圍迴旋顯示較大版本的功能表。 您的應用程式也可以使用這個相同的資訊，針對裝置是否存在及其預期的使用方式 (例如使用者的手與手臂的放置位置) 打造 UI。
 
 | Surface Dial 移開螢幕時的功能表 | | Surface Dial 位於螢幕上的功能表 |
 | --- | --- | --- |
@@ -84,10 +90,10 @@ Surface Dial 與 Windows 緊密整合，而且支援功能表上的一組內建�
 
 **確定您的工具對應到目前的情境** 如果工具的功能以及 Surface Dial 互動的運作方式清楚而直覺，就可以協助使用者快速了解並聚焦在自己的工作上。
 
-**盡可能減少 App 工具的數目**  
+**盡可能減少應用程式工具的數目**  
 Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的項目，使用者就必須旋轉 Dial 才能在溢出的飛出視窗中查看有哪些工具可用，如此一來功能表就很難瀏覽，工具就很難探索和選取。
 
-我們建議為您的 App 或 App 情境提供單一的自訂工具。 這樣您就可以根據使用者正在進行的動作設定該工具，使用者不需要啟用 Surface Dial 功能表並選取工具。 
+我們建議為您的應用程式或應用程式情境提供單一的自訂工具。 這樣您就可以根據使用者正在進行的動作設定該工具，使用者不需要啟用 Surface Dial 功能表並選取工具。 
 
 **動態更新工具集合**  
 因為 Surface Dial 功能表項目不支援停用的狀態，所以您應該根據使用者的情境 (目前的檢視或具有焦點的視窗) 動態新增和移除工具 (包括內建的預設工具)。 如果某個工具與目前的活動不相關或重複，就移除該工具。
@@ -96,10 +102,10 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 > 當您在功能表中新增項目時，請確定當中還沒有該項目。
 
 **不要移除內建的系統音量設定工具**  
-使用者通常都會需要音量控制。 使用者在使用您的 App 時可能會聆聽音樂，因此必須一律可從 Surface Dial 功能表存取音量和下一首工具。 (媒體播放時，下一首工具會自動新增到功能表中)。
+使用者通常都會需要音量控制。 使用者在使用您的應用程式時可能會聆聽音樂，因此必須一律可從 Surface Dial 功能表存取音量和下一首工具。 (媒體播放時，下一首工具會自動新增到功能表中)。
 
 **讓功能表的組織方式保持一致**  
-這可以協助使用者在使用您的 App 時探索和了解可以使用哪些工具，並且在切換工具時協助提昇效率。
+這可以協助使用者在使用您的應用程式時探索和了解可以使用哪些工具，並且在切換工具時協助提昇效率。
 
 **提供與內建圖示一致的高品質圖示**  
 圖示可以傳達專業及優點，並且獲得使用者的信任。
@@ -122,9 +128,9 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 ### <a name="developer-guidance"></a>開發人員指導方針
 
-您可以透過一組完整的 [Windows 執行階段 API](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 自訂 Surface Dial 體驗，補充您 App 的功能。 
+您可以透過一組完整的 [Windows 執行階段 API](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 自訂 Surface Dial 體驗，補充您應用程式的功能。 
 
-如先前所述，預設的 Surface Dial 功能表會預先填入一組內建工具，涵蓋廣泛的基本系統功能 (系統音量、系統亮度、捲動、縮放、復原，以及當系統偵測到播放音訊或視訊時的媒體控制項)。 不過，這些預設工具可能無法提供您的 App 所需的功能。 
+如先前所述，預設的 Surface Dial 功能表會預先填入一組內建工具，涵蓋廣泛的基本系統功能 (系統音量、系統亮度、捲動、縮放、復原，以及當系統偵測到播放音訊或視訊時的媒體控制項)。 不過，這些預設工具可能無法提供您的應用程式所需的功能。 
 
 在下列各節中，我們將說明如何在 Surface Dial 功能表中新增自訂工具，並指定要顯示哪些內建工具。
 
@@ -134,8 +140,8 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 1. 首先，我們在 XAML 中宣告我們的 UI (只有一個滑桿和切換按鈕)。
 
-   ![範例 App UI 的影像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
-   *範例 App UI*
+   ![範例應用程式 UI 的影像](images/windows-wheel/surface-dial-snippet-customtool1.png)  
+   *範例應用程式 UI*
 
     ```Xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -169,13 +175,13 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
 
 2. 然後，在程式碼後置中，我們將自訂工具新增到 Surface Dial 功能表，並宣告 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 輸入處理常式。 
 
-   我們呼叫 [**CreateForCurrentView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.CreateForCurrentView) 取得 Surface Dial (myController) 的 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 物件的參考。
+   我們呼叫 [**CreateForCurrentView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 取得 Surface Dial (myController) 的 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.CreateForCurrentView) 物件的參考。
 
-   接著我們呼叫 [**RadialControllerMenuItem.CreateFromIcon**](https://msdn.microsoft.com/library/windows/apps/mt759255) 建立 [**RadialControllerMenuItem**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) (myItem) 的執行個體。 
+   接著我們呼叫 [**RadialControllerMenuItem.CreateFromIcon**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerMenuItem) 建立 [**RadialControllerMenuItem**](https://msdn.microsoft.com/library/windows/apps/mt759255) (myItem) 的執行個體。 
 
    接下來，我們將該項目附加到功能表項目的集合。
 
-   我們宣告 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 物件的輸入事件處理常式 ([**ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 和 [**RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged))。
+   我們宣告 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 物件的輸入事件處理常式 ([**ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) 和 [**RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController))。
 
    最後，我們定義事件處理常式。
 
@@ -233,16 +239,16 @@ Surface Dial 功能表的空間可容納七個項目。 如果有八個以上的
     }
     ```
 
-當我們執行 App 時，我們使用 Surface Dial 與其進行互動。 首先，我們長按以開啟功能表，然後選取我們自訂的工具。 自訂工具啟用之後，可以旋轉 Dial 調整滑桿控制項，而且可以按一下 Dial 切換開關。
+當我們執行應用程式時，我們使用 Surface Dial 與其進行互動。 首先，我們長按以開啟功能表，然後選取我們自訂的工具。 自訂工具啟用之後，可以旋轉 Dial 調整滑桿控制項，而且可以按一下 Dial 切換開關。
 
-![啟用 Surface Dial 自訂工具的範例 App UI 影像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
-*啟用 Surface Dial 自訂工具的範例 App UI*
+![啟用 Surface Dial 自訂工具的範例應用程式 UI 影像](images/windows-wheel/surface-dial-snippet-customtool2.png)  
+*啟用 Surface Dial 自訂工具的範例應用程式 UI*
 
 **指定內建的工具**
 
-您可以使用 [**RadialControllerConfiguration**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 類別來自訂您 App 的內建功能表項目集合。
+您可以使用 [**RadialControllerConfiguration**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerConfiguration) 類別來自訂您應用程式的內建功能表項目集合。
 
-例如，如果您的 App 不會有任何捲動或縮放區域，而且不需要復原/重做功能，就可以從功能表移除這些工具。 這樣就能在功能表上騰出空間，新增您 App 的自訂工具。 
+例如，如果您的應用程式不會有任何捲動或縮放區域，而且不需要復原/重做功能，就可以從功能表移除這些工具。 這樣就能在功能表上騰出空間，新增您應用程式的自訂工具。 
 
 > [!IMPORTANT] 
 > Surface Dial 功能表必須至少要有一個功能表項目。 如果您在新增自訂工具之前移除了所有預設工具，預設工具會還原，您的工具則會附加到預設集合。
@@ -273,7 +279,7 @@ public MainPage()
 請確定根據這些手勢的任何自訂互動，對選取的動作或工具是有意義的。 
 
 > [!NOTE]
-> 互動體驗取決於 Surface Dial 功能表的狀態。 如果功能表使用中，就會處理輸入，否則您的 App 會接手。
+> 互動體驗取決於 Surface Dial 功能表的狀態。 如果功能表使用中，就會處理輸入，否則您的應用程式會接手。
 
 ### <a name="press-and-hold"></a>長按
 
@@ -322,7 +328,7 @@ Dial 功能表上的內建工具和命令遵循下列指導方針進行以旋轉
 
 #### <a name="developer-guidance"></a>開發人員指導方針
 
-當使用者旋轉裝置，會根據相對於旋轉方向的差異 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees)) 引發 [**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged) 事件。 使用 [**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) 屬性可以設定資料的靈敏度 (或解析度)。
+當使用者旋轉裝置，會根據相對於旋轉方向的差異 ([**RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationChanged)) 引發 [**RadialController.RotationChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerRotationChangedEventArgs.RotationDeltaInDegrees) 事件。 使用 [**RadialController.RotationResolutionInDegrees**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.RotationResolutionInDegrees) 屬性可以設定資料的靈敏度 (或解析度)。
 
 > [!NOTE]
 > 根據預設，裝置最少要旋轉 10 度，旋轉的輸入事件才會傳遞至 [**RadialController**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController) 物件。 每個輸入事件都會導致裝置震動。
@@ -367,13 +373,13 @@ private void MyController_ButtonClicked(RadialController sender,
 
 **如果使用者無法輕鬆地從結果恢復，請不要對應動作，或對這個手勢執行命令**
 
-您的 App 根據使用者按一下 Surface Dial 所採取的任何動作都必須是可以還原的。 請務必讓使用者可以輕鬆地將 App 周遊回堆疊，並還原先前的 App 狀態。
+您的應用程式根據使用者按一下 Surface Dial 所採取的任何動作都必須是可以還原的。 請務必讓使用者可以輕鬆地將應用程式周遊回堆疊，並還原先前的應用程式狀態。
 
 二進位操作 (例如靜音/取消靜音或顯示/隱藏) 使用按一下手勢可以提供良好的使用者體驗。
 
 **按一下 Surface Dial 不應啟用或停用強制回應工具**
 
-有些 App /工具模式可能會與依賴旋轉的互動發生衝突，或停用這類互動。 Windows Ink 工具列中尺規之類的工具，應該透過其他 UI 能供性開啟或關閉 (Ink 工具列提供內建的 [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控制項)。
+有些應用程式/工具模式可能會與依賴旋轉的互動發生衝突，或停用這類互動。 Windows Ink 工具列中尺規之類的工具，應該透過其他 UI 能供性開啟或關閉 (Ink 工具列提供內建的 [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Primitives.ToggleButton) 控制項)。
 
 對於強制回應工具，請將使用中的 Surface Dial 功能表項目對應到目標工具或先前選取的功能表項目。
 
@@ -387,7 +393,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 如先前所述，Surface Dial 可以搭配 Surface Studio 使用，在特殊的螢幕上模式顯示 Surface Dial 功能表。 
 
-處於這個模式時，可以與您的 App 更進一步整合並自訂您的 Dial 互動體驗。 同時使用 Surface Dial 與 Surface Studio 才能獲得的獨特體驗包括下列範例︰
+處於這個模式時，可以與您的應用程式更進一步整合並自訂您的 Dial 互動體驗。 同時使用 Surface Dial 與 Surface Studio 才能獲得的獨特體驗包括下列範例︰
 - 根據 Surface Dial 的位置顯示與內容相關的工具 (例如調色盤)，讓這些工具更容易尋找及使用
 - 根據 Surface Dial 放置的 UI 設定可使用的工具
 - 根據 Surface Dial 的位置放大螢幕區域
@@ -395,9 +401,9 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="ux-guidance"></a>UX 指導方針
 
-**在螢幕上偵測到 Surface Dial 時，App 應該要回應**
+**在螢幕上偵測到 Surface Dial 時，應用程式應該要回應**
 
-視覺化回饋有助於告訴使用者您的 App 已偵測到裝置放在 Surface Studio 的螢幕上。
+視覺化回饋有助於告訴使用者您的應用程式已偵測到裝置放在 Surface Studio 的螢幕上。
 
 **根據裝置的位置調整與 Surface Dial 相關的 UI**
 
@@ -419,18 +425,18 @@ private void MyController_ButtonClicked(RadialController sender,
 
 #### <a name="developer-guidance"></a>開發人員指導方針
 
-將 Surface Dial 放在 Surface Studio 的數位板表面時，會引發 [**RadialController.ScreenContactStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ScreenContactStarted) 事件並將接觸資訊 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs.Contact)) 提供給您的 App。
+將 Surface Dial 放在 Surface Studio 的數位板表面時，會引發 [**RadialController.ScreenContactStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ScreenContactStarted) 事件並將接觸資訊 ([**RadialControllerScreenContactStartedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs.Contact)) 提供給您的應用程式。
 
-同樣地，如果在接觸 Surface Studio 的數位板表面時按一下 Surface Dial，會引發 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件並將接觸資訊 ([**RadialControllerButtonClickedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact)) 提供給您的 App。 
+同樣地，如果在接觸 Surface Studio 的數位板表面時按一下 Surface Dial，會引發 [**RadialController.ButtonClicked**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController.ButtonClicked) 事件並將接觸資訊 ([**RadialControllerButtonClickedEventArgs.Contact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerButtonClickedEventArgs.Contact)) 提供給您的應用程式。 
 
-接觸資訊 ([**RadialControllerScreenContact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact)) 包含 Surface Dial 中心在 App 座標空間中的 X/Y 座標 ([**RadialControllerScreenContact.Position**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact.Position))，以及週框 ([**RadialControllerScreenContact.Bounds**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact.Bounds))，單位為裝置獨立畫素 (DIP)。 這項資訊對於提供情境給可使用工具，以及提供與裝置相關的視覺化回饋給使用者時很有用。
+接觸資訊 ([**RadialControllerScreenContact**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact)) 包含 Surface Dial 中心在應用程式座標空間中的 X/Y 座標 ([**RadialControllerScreenContact.Position**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact.Position))，以及週框 ([**RadialControllerScreenContact.Bounds**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialControllerScreenContact.Bounds))，單位為裝置獨立畫素 (DIP)。 這項資訊對於提供情境給可使用工具，以及提供與裝置相關的視覺化回饋給使用者時很有用。
 
-在下列範例中，我們建立了一個有四個不同區段的基本 App，每一個區段都包含一個滑桿和一個切換開關。 我們接著會使用 Surface Dial 在螢幕上的位置指定 Surface Dial 要控制哪一組滑桿和切換開關。
+在下列範例中，我們建立了一個有四個不同區段的基本應用程式，每一個區段都包含一個滑桿和一個切換開關。 我們接著會使用 Surface Dial 在螢幕上的位置指定 Surface Dial 要控制哪一組滑桿和切換開關。
 
 1. 首先，我們在 XAML 中宣告我們的 UI (四個區段，每個區段都有一個滑桿和切換按鈕)。
 
-   ![範例 App UI 的影像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
-   *範例 App UI*
+   ![範例應用程式 UI 的影像](images/windows-wheel/surface-dial-snippet-customtool3.png)  
+   *範例應用程式 UI*
 
    ```xaml 
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -627,10 +633,10 @@ private void ActivateGridAtLocation(Point Location)
 }
 ```
 
-當我們執行 App 時，我們使用 Surface Dial 與其進行互動。 首先，我們將裝置放在 Surface Studio 螢幕上，App 會偵測到並與右下角的區段關聯 (參閱影像)。 然後，我們長按 Surface Dial 以開啟功能表，然後選取我們自訂的工具。 自訂工具啟用之後，可以旋轉 Surface Dial 調整滑桿控制項，而且可以按一下 Surface Dial 切換開關。
+當我們執行應用程式時，我們使用 Surface Dial 與其進行互動。 首先，我們將裝置放在 Surface Studio 螢幕上，應用程式會偵測到並與右下角的區段關聯 (參閱影像)。 然後，我們長按 Surface Dial 以開啟功能表，然後選取我們自訂的工具。 自訂工具啟用之後，可以旋轉 Surface Dial 調整滑桿控制項，而且可以按一下 Surface Dial 切換開關。
 
-![啟用 Surface Dial 自訂工具的範例 App UI 影像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
-*啟用 Surface Dial 自訂工具的範例 App UI*
+![啟用 Surface Dial 自訂工具的範例應用程式 UI 影像](images/windows-wheel/surface-dial-snippet-customtool4.png)  
+*啟用 Surface Dial 自訂工具的範例應用程式 UI*
 
 ## <a name="summary"></a>摘要
 
@@ -664,6 +670,6 @@ private void ActivateGridAtLocation(Point Location)
 [Windows 傳統桌面範例](https://aka.ms/radialcontrollerclassicsample)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

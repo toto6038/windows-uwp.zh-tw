@@ -4,8 +4,8 @@ description: "這是一份完整逐步解說的第 1 部分，將說明如何建
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
+ms.sourcegitcommit: 126811b615117c0204e3ac4326d810c986a51e55
+ms.openlocfilehash: 27f06fe3031d391a03bc5f5b08723983b34308f0
 
 ---
 
@@ -624,9 +624,9 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 
 -   請建置並執行應用程式。 然後使用「sampleUsername」登入，並按一下 \[Login\] \(登入\)。 請輸入您的 PIN 碼；如果登入成功，您應該會看到歡迎畫面。 請嘗試按一下能忘記使用者的按鈕，然後監視輸出視窗，看看使用者是否遭到刪除。 請注意，當使用者遭到刪除時，您仍舊會在歡迎頁面上。 您必須建立 app 可以瀏覽的使用者選取頁面。
 
-    !passport 歡迎使用畫面](images/passport-login-9.png)
+    ![Passport 歡迎畫面](images/passport-login-9.png)
 
--   在 \[Views\] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
+-   在 [Views] 資料夾中，建立名為 "UserSelection.xaml" 的新空白頁，並加入下列 XAML 來定義使用者介面。 此頁面將包含會顯示本機帳戶清單中的所有使用者的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)，以及會瀏覽至登入頁面來讓使用者加入另一個帳戶的按鈕。
 
     ```xml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -973,6 +973,6 @@ ms.openlocfilehash: 04311e9c3242bdaf6588c8102a06ae658e6637e2
 * [Microsoft Passport 登入服務](microsoft-passport-login-auth-service.md)
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

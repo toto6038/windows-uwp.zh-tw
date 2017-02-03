@@ -1,34 +1,34 @@
 ---
 author: QuinnRadich
-Description: "設計一個指示性 UI，教導使用者如何使用您的 Windows 應用程式。"
+Description: "設計指示性使用者介面 (UI)，教導使用者如何使用您的 Windows 市集應用程式。"
 title: "設計指示性 UI 的指導方針"
 label: Instructional UI
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e
-ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 179f70a1c421d3d5a73813a9b9675353a8d5f8c2
 
 ---
 
-# 指示性 UI 指導方針
+# <a name="instructional-ui-guidelines"></a>指示性 UI 指導方針
 
-\[ 針對 Windows 10 上的通用 Windows 平台 (UWP) app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-有些時候，教導使用者有關 app 中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過 UI 對使用者顯示指示，讓他們可以探索和使用他們可能遺漏的功能。
 
-## <span id="when_to_use_instructional_ui"></span><span id="WHEN_TO_USE_INSTRUCTIONAL_UI"></span>何時使用指示性 UI
+在某些情況下，教導使用者有關應用程式中不明顯的功能 (例如特定觸控互動) 可能十分有用。 在這些情況下，您需要透過使用者介面 (UI) 向使用者呈現指示，讓他們可以使用可能沒有注意到的功能。
 
-指示性 UI 必須謹慎使用。 當過度使用時，使用者可能會容易將它忽略，或干擾使用者，讓它變得沒有效率。
+## <a name="when-to-use-instructional-ui"></a>何時使用指示性 UI
+
+指示性 UI 必須謹慎使用。 過度使用時，即可輕鬆地予以略過，也可能會惹惱使用者，使其無效。
 
 指示性 UI 應該用來協助使用者探索重要且不明顯的應用程式功能，例如使用者可能感興趣的觸控手勢或設定。 它也可以用來通知使用者有關應用程式中他們可能已忽略的新功能或變更。
 
-除非您的 App 依賴觸控手勢，否則不應該使用指示性 UI 向使用者教導您 App 的基本功能。
+除非您的應用程式依賴觸控手勢，否則不應該使用指示性 UI 向使用者教導您應用程式的基本功能。
 
-## <span id="writing_instructional_ui"></span><span id="WRITING_INSTRUCTIONAL_UI"></span>撰寫指示性 UI 的原則
+## <a name="principles-of-writing-instructional-ui"></a>撰寫指示性 UI 的原則
 
 良好的指示性 UI 是與使用者有關並且對使用者具有教育性，而且可以提升使用者體驗。 它應該是︰
 
--   **簡單：**使用者不想因複雜資訊而中斷他們的體驗。
+-   **簡單：**使用者不想因複雜資訊而中斷他們的體驗
 -   **可記憶：**使用者不想要每次嘗試工作時都看到相同的指示，因此指示必須是他們記得的事項。
 -   **立即相關︰**如果指示性 UI 未教導使用者有關他們立即要執行的作業，則他們沒有任何原因需要注意它。
 
@@ -36,7 +36,7 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
 -   **基礎功能︰**如果使用者需要您應用程式的使用指示，請考慮讓應用程式的設計更具直覺式。
 -   **明顯功能：**如果使用者可以在沒有指示的情況下自行找出功能，則指示性 UI 只是會礙事。
--   **複雜的功能：**指示性 UI 必須簡潔。 對複雜的功能有興趣的使用者，通常願意尋找指示。
+-   **複雜功能︰**指示性 UI 必須簡潔，而且對複雜功能感興趣的使用者通常都願意找出指示，並不需要提供給他們。
 
 請避免讓指示性 UI 造成使用者的不方便。 請勿執行下列動作：
 
@@ -44,11 +44,11 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 -   **強制使用者參與︰**使用者應該可以忽略指示性 UI，並且仍然繼續執行應用程式。
 -   **顯示重複資訊︰**不要使用指示性 UI 不斷騷擾使用者，即使是第一次忽略它時也一樣。 新增再次顯示指示性 UI 的設定是比較好的做法。
 
-## <span id="examples_of_instructional_ui"></span><span id="EXAMPLES_OF_INSTRUCTIONAL_UI"></span>指示性 UI 範例
+## <a name="examples-of-instructional-ui"></a>指示性 UI 範例
 
-以下是一些可協助您使用者的指示性 UI 範例：
+以下是指示性 UI 可協助使用者學習的一些實例：
 
--   **協助使用者探索觸控互動。** 下列螢幕擷取畫面顯示指示性 UI 如何教導玩家在 *Cut the Rope* 遊戲中使用觸控手勢。
+-   **協助使用者探索觸控互動。** 下列螢幕擷取畫面顯示指示性 UI 如何教導玩家在 Cut the Rope 遊戲中使用觸控手勢。
 
     ![遊戲的螢幕擷取畫面顯示指示性 UI 訊息 "slide acress to cut the rope"](images/in-game-controls-3.png)
 
@@ -56,22 +56,22 @@ ms.openlocfilehash: 6fc4840ce37d05bbaf0e423049d79b4e0c4febfc
 
     ![影片時刻應用程式的啟動畫面](images/instructional-ui-movie.png)
 
--   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件 App 中，收件匣底部的提示會引導使用者進入 [設定]**** 以存取較舊的郵件。
+-   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件應用程式中，收件匣底部的提示會引導使用者進入 [設定]**** 以存取較舊的郵件。
 
-    ![顯示指示性 UI 訊息的 Windows 郵件 app 的裁剪螢幕擷取畫面](images/instructional-ui-mail-inbox.png)
+    ![顯示指示性 UI 訊息的 Windows 郵件應用程式的裁剪螢幕擷取畫面](images/instructional-ui-mail-inbox.png)
 
-    使用者按一下訊息時，App 的 [設定]**** 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者選取指示性 UI 訊息之前與之後，郵件 app 的情況。
+    使用者按一下訊息時，應用程式的 [設定]**** 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
 
     | 之前                                                               | 之後                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-    | ![Windows 郵件 app 的螢幕擷取畫面](images/instructional-ui-mail.png) | ![具有延伸式設定飛出視窗的 Windows 郵件 App 螢幕擷取畫面](images/instructional-ui-mail-flyout.png) |
+    | ![Windows 郵件應用程式的螢幕擷取畫面](images/instructional-ui-mail.png) | ![具有延伸式設定飛出視窗的 Windows 郵件應用程式螢幕擷取畫面](images/instructional-ui-mail-flyout.png) |
 
-## <span id="related_topics"></span>相關文章
+## <a name="related-articles"></a>相關文章
 
-* [App 說明的指導方針](guidelines-for-app-help.md)
+* [應用程式說明的指導方針](guidelines-for-app-help.md)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

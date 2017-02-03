@@ -5,27 +5,38 @@ title: "定義自訂辨識限制式"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+keywords: "語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
+ms.sourcegitcommit: 482530931fe5764f65d2564107318c272c5c7b7f
+ms.openlocfilehash: c75ee725ce4bc9fc33d9ea13e4ab92ed60bfb04d
 
 ---
 
-# 定義自訂辨識限制式
+# <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 了解如何定義及使用自訂限制式來進行語音辨識。
 
-**重要 API**
-
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)</li>
+<li>[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)</li>
+<li>[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)</li>
+</ul>
+</div>
 
 
 語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的通用 Windows app 聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 
 
-## 新增限制式
+## <a name="add-constraints"></a>新增限制式
 
 
 使用 [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) 屬性可以為語音辨識器新增限制式。
@@ -41,9 +52,9 @@ ms.openlocfilehash: d619cd6b3c9f5d62ca7d68f555e4c051abaf9bad
 -   單一主題限制式或預先定義的文法 (口述或網頁搜尋)。 不允許其他限制式。
 -   清單限制式和/或文法檔限制式的組合。
 
-**請記住**：先呼叫 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法編譯限制式，再開始辨識程序。
+**請記住**：先呼叫 [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) 方法編譯限制式，再開始辨識處理程序。
 
-## 指定網頁搜尋文法 (SpeechRecognitionTopicConstraint)
+## <a name="specify-a-web-search-grammar-speechrecognitiontopicconstraint"></a>指定網頁搜尋文法 (SpeechRecognitionTopicConstraint)
 
 
 必須將主題限制式 (口述或網頁搜尋文法) 新增到語音辨識器的限制式集合。
@@ -80,7 +91,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 指定程式設計清單限制式 (SpeechRecognitionListConstraint)
+## <a name="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint"></a>指定程式設計清單限制式 (SpeechRecognitionListConstraint)
 
 
 必須將清單限制式新增到語音辨識器的限制式集合。
@@ -120,7 +131,7 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 指定 SRGS 文法限制式 (SpeechRecognitionGrammarFileConstraint)
+## <a name="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint"></a>指定 SRGS 文法限制式 (SpeechRecognitionGrammarFileConstraint)
 
 
 必須將 SRGS 文法檔新增到語音辨識器的限制式集合。
@@ -145,7 +156,7 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 -   您可以將多個文法檔限制式新增到限制式集合。
 -   針對符合 SRGS 規則的 XML 型文法文件，請使用 .grxml 副檔名。
 
-這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，[封裝動作]**** 是設定為 [內容]****，而 [複製到輸出目錄]**** 是設定為 [ 永遠複製 ]****：
+這個範例會使用名為 srgs.grxml (稍後會有說明) 的檔案中定義的 SRGS 文法。 在檔案屬性中，**[封裝動作]** 是設定為 **[內容]**，而 **[複製到輸出目錄]** 是設定為 **[ 永遠複製 ]**：
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -211,7 +222,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 </grammar>
 ```
 
-## 管理限制式
+## <a name="manage-constraints"></a>管理限制式
 
 
 載入限制集合以執行辨識後，透過將限制的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) 屬性設為 **true** 或 **false**，您的 app 可以管理要啟用哪些限制以執行辨識操作。 預設設定是 **true**。
@@ -224,7 +235,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 若要提示使用者可以說出什麼內容，請使用 [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) 與 [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) 屬性，這兩個屬性是藉由 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 屬性來設定。 在進行辨識操作時，幫使用者準備好可以說出的內容，可以讓使用者更可能說出符合使用中限制式的片語。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 * [語音互動](speech-interactions.md)
@@ -241,6 +252,6 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO3-->
 
 

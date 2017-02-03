@@ -6,16 +6,18 @@ ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 53b6108a472e021caa0d11327c1457b3f6ca8aac
 
 ---
 
-# 適用於 UWP app 的動作
+# <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 有意義且精心設計的動畫會讓 app 更有生氣和活力。 協助使用者了解內容變更，並將視覺轉換和使用者經驗緊密結合。
 
-## 動畫的優勢
+## <a name="benefits-of-animation"></a>動畫的優勢
 
 
 動畫不只是讓物品移動。 動畫是一個用來為使用者建立實體生態系統的工具，以讓使用者沈浸其中，並透過觸控方式進行操縱。 體驗的品質高低依 app 如何回應使用者及 UI 的通訊特質種類而定。
@@ -48,15 +50,13 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
     動畫可以用來讓使用者知道手機正在運作，而不是靜止不動，而且可以被動顯示使用者可能感興趣的新資訊。
 
-## 本節內容
+<h2>本節內容</h2>
+
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th align="left">動畫類型</th>
 <th align="left">說明</th>
 </tr>
-</thead>
-<tbody>
     <tr>
         <td>[新增和刪除](motion-list.md)
         </td>
@@ -99,8 +99,6 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
         <td>將元素移至新位置。
         </td>
     </tr>
-
-</tbody>
 </table>
 
  
@@ -111,6 +109,6 @@ ms.openlocfilehash: 1cdbb81c783d17af16743a4ff5f82dc1c92df6b4
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

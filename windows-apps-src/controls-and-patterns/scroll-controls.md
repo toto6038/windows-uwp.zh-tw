@@ -6,11 +6,11 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 8ead56e84e21aaf5005530ed0509efa9440bce59
 
 ---
-# 捲軸
+# <a name="scroll-bars"></a>捲軸
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -20,31 +20,28 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 
 **注意** Windows 有兩種捲動器視覺效果，並會根據使用者的輸入模式而定︰捲動指標適合在使用觸控板或控制器時使用，而使用滑鼠、鍵盤及手寫筆等其他輸入裝置時，則適合使用互動式捲軸。
 
-![標準捲軸和移動瀏覽指示器控制項外觀的範例](images/SCROLLBAR.png)
+![標準捲軸和移動瀏覽指標控制項外觀的範例](images/SCROLLBAR.png)
 
+<div class="microsoft-internal-note">
+請參閱 [Design Depot](http://designdepot/DesignDepot.FrontEnd/#/ML/Dashboard/1805) 中的完整紅線
+</div>
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209527"><strong>ScrollViewer 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx"><strong>ScrollBar 類別</strong></a></li>
+<li>[**ScrollViewer 類別**](https://msdn.microsoft.com/library/windows/apps/br209527)</li>
+<li>[**ScrollBar 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)</li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 範例
+## <a name="examples"></a>範例
 
 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) 可讓內容顯示在小於其實際大小的區域中。 無法完整看到捲動檢視器的內容時，捲動檢視器就會顯示使用者可以用來移動可見內容區域的捲軸。 包含所有捲動檢視器內容的區域是 *extent*。 內容的可見區域是 *viewport*。
 
 ![說明標準捲軸控制項的螢幕擷取畫面](images/ScrollBar_Standard.jpg)
 
-## 建立捲動檢視器
+## <a name="create-a-scroll-viewer"></a>建立捲動檢視器
 若要將垂直捲動功能新增至頁面，請將頁面內容包裝在捲動檢視器中。
 
 ```xaml
@@ -72,7 +69,7 @@ ms.openlocfilehash: 3dd5912bdd210751257bb9e495c5a95ce0be20a5
 </ScrollViewer>
 ```
 
-## 控制項範本中的 ScrollViewer
+## <a name="scrollviewer-in-a-control-template"></a>控制項範本中的 ScrollViewer
 
 對於 ScrollViewer 控制項而言，當做其他控制項的複合部分存在很獨特。 只有在主控制項的配置空間限制小於展開的內容大小時，ScrollViewer 組件以及用於支援的 [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) 類別才會將檢視區連同捲軸一起顯示。 這種情況通常發生在清單中，因此 [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 範本一律包含 ScrollViewer。 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 和 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 也在其範本中包含一個 ScrollViewer。
 
@@ -108,7 +105,7 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 對於 ScrollViewer 在 XAML 中是明確的情況下 (如範例程式碼中所示)，您不需要使用附加屬性語法。 只要使用屬性語法，例如 `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`。
 
 
-## 建議事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   可以的話，請採用垂直捲動的設計，而不是水平捲動。
 -   對延長超過一個檢視區界限 (垂直或水平) 的內容區域，使用單軸移動瀏覽。 對延長超過兩個檢視區界限 (垂直和水平) 的內容區域，使用雙軸移動瀏覽。
@@ -118,13 +115,13 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 -   使用捲動檢視器以只限包含一個物件。 請注意，這一個物件可以是配置面板，其本身可以包含數目不拘的物件。
 -   請不要將 [Pivot](tabs-pivot.md) 控制項放入捲動檢視器內，以避免與樞紐的捲動邏輯發生衝突。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 **適用於開發人員 (XAML)**
 * [**ScrollViewer 類別**](https://msdn.microsoft.com/library/windows/apps/br209527)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

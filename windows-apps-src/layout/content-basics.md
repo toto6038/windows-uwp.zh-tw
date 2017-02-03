@@ -5,19 +5,22 @@ title: "通用 Windows 平台 (UWP) 應用程式的內容設計基本知識"
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 7433fcabe455c0a0198cd23f883ed72b0b4558fc
 
 ---
 
-#  UWP app 的內容設計基本知識
+#  <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 任何一種 app 的主要用途都是讓使用者存取內容：在相片編輯 app 中，內容是相片；在旅遊 app 中，內容是地圖與旅遊地點的相關資訊；以此類推。 瀏覽元素提供內容的存取；命令元素可以讓使用者與內容互動；內容元素顯示實際的內容。
 
 本文提供針對三種內容案例的內容設計建議。
 
-## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>正確的內容案例設計
+## <a name="design-for-the-right-content-scenario"></a>正確的內容案例設計
 
 
 有三種主要的內容案例：
@@ -26,7 +29,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   **建立**：焦點為建立新內容，主要是單向的體驗。 建立可以分成從無到有的創作，例如拍攝相片或影片、在繪圖應用程式中建立新的影像或開啟新的文件。
 -   **互動式**：包含取用、建立及修改內容的雙向內容體驗。
 
-## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>以取用為主的 app
+## <a name="consumption-focused-apps"></a>以取用為主的 app
 
 
 內容元素在取用為主的app 中擁有最高的優先權，接著需要[瀏覽元素](navigation-basics.md)來協助使用者尋找想要的內容。 取用為主的應用程式範例包括影片播放程式、閱讀應用程式、音樂應用程式，以及相片檢視器等等。
@@ -38,7 +41,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   請考慮建立專用的[瀏覽](navigation-basics.md)頁面以及內容檢視頁面，如此當使用者尋找想要的內容時，可以在專用的頁面檢視，免去其餘的干擾。
 -   請考慮建立全螢幕檢視選項，它可以將內容展開到整個螢幕，並隱藏其他的 UI 元素。
 
-## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>建立為主的 app
+## <a name="creation-focused-apps"></a>建立為主的 app
 
 
 在建立為主的 app 中，內容和[命令](commanding-basics.md)元素是最重要的 UI 元素：命令元素讓使用者可以建立新內容。 範例包括繪圖應用程式、相片編輯應用程式、影片編輯應用程式，以及文書處理應用程式。
@@ -52,7 +55,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 -   最小化[瀏覽](navigation-basics.md)元素的使用。
 -   [命令](commanding-basics.md)元素在建立為主的應用程式中特別重要。 因為使用者會執行大量的命令，我們建議提供命令記錄/復原功能。
 
-## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>具有互動式內容的應用程式
+## <a name="apps-with-interactive-content"></a>具有互動式內容的應用程式
 
 
 在具有互動式內容的應用程式中，使用者可以建立、檢視和編輯內容；許多應用程式都屬於這個類別。 這類型的應用程式範例包括企業營運應用程式、庫存管理應用程式，可讓使用者建立和編輯食譜的烹飪應用程式等等。
@@ -68,7 +71,7 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 -   瀏覽、內容和命令元素，當它們三者都很重要時是難以平衡的。 可能的話，請考慮針對瀏覽、建立和編輯內容建立個別的視窗，或提供模式切換。
 
-## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>常用的內容元素
+## <a name="commonly-used-content-elements"></a>常用的內容元素
 
 
 以下是一些常用來顯示內容的 UI 元素。 (如需 UI 元素的完整清單，請參閱 [Controls and UI elements](https://msdn.microsoft.com/library/windows/apps/dn611856) (控制項與 UI 元素)。)
@@ -123,6 +126,6 @@ ms.openlocfilehash: 4ac800f9d2dd51ac074ec50cd1046e5a78c80710
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

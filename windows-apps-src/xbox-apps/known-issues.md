@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Xbox One 開發人員計畫上的 UWP 已知問題"
 description: 
 translationtype: Human Translation
-ms.sourcegitcommit: 20ac6fb738de1c8aaf10f46c359842f31714dbbf
-ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
+ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
+ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
 
 ---
 
@@ -16,35 +16,41 @@ ms.openlocfilehash: b6fe2f90e0aff4b8e77b4c20aec0d29f2a6a36f8
 
 下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
 
-**我們想要您的意見反應**，因此請在[開發通用 Windows 平台 App](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
+**我們想要您的意見反應**，因此請在[開發通用 Windows 平台應用程式](https://social.msdn.microsoft.com/forums/windowsapps/home?forum=wpdevelop) 論壇上報告您發現的任何問題。 
 
 如果您遇到困難，請閱讀本主題中的資訊、參閱[常見問題集](frequently-asked-questions.md)，並使用論壇以尋求協助。
 
 
 <!--## Developing games-->
+
+## <a name="issue-when-leaving-dev-mode"></a>離開開發人員模式時的問題
+此時，可能發生您無法使用 DevHome 或從 [開發人員設定] 離開開發人員模式的狀況。
+對此狀況有兩種可能的解決方式： 
+1. 離開開發人員模式時取消核取 [Delete side loaded games and apps] (刪除側載遊戲和應用程式)****
+2. 移至 [我的遊戲和應用程式]，解除安裝您安裝在主控台的開發人員應用程式
  
-## <a name="memory-limits-for-background-apps-are-partially-enforced"></a>部分強制執行背景 App 的記憶體限制
+<!--## Memory limits for background apps are partially enforced
  
-於背景執行之 App 的磁碟使用量上限為 128 MB。 在 Xbox One 上目前的 UWP 版本中，若您的 App 在移至背景時超過上述限制，便會被停用。 此限制目前在您的 App 在已處於背景的情況下超過限制時，並不會強制執行，這代表如果您的 App 在背景執行時超過 128 MB，它將能夠持續配置記憶體。
+The maximum memory footprint for apps running in the background is 128 megabytes. In the current version of UWP on Xbox One, your app will be suspended if it is above this limit when it is moved to the background. This limit is not currently enforced if your app exceeds the limit while it is already running in the background—this means that if your app exceeds 128 MB while running in the background, it will still be able to allocate memory.
  
-目前此問題還沒有解決方法。 App 應該適當地控管其記憶體使用量，並於背景執行時持續將該使用量保持低於 128 MB 的限制。
+There is currently no workaround for this issue. Apps should govern their memory usage accordingly and continue to stay under the 128 MB limit while running in the background.-->
  
 ## <a name="deploying-from-vs-fails-with-parental-controls-turned-on"></a>家長監護開啟時，從 VS 進行部署將會失敗
 
-若主機開啟 [設定] 中的 [家長監護] 功能，從 VS 啟用 app 將會失敗。
+若主機開啟 [設定] 中的 [家長監護] 功能，從 VS 啟用應用程式將會失敗。
 
 若要解決此問題，可以先暫時停用家長監護，或：
-1. 將 App 部署到已關閉家長監護的主機。
+1. 將應用程式部署到已關閉家長監護的主機。
 2. 開啟家長監護。
-3. 從主機啟動 App。
-4. 輸入 PIN 或密碼來允許啟動 App。
-5. App 將會啟動。
-6. 關閉 App。
-7. 使用 F5 從 VS 啟動，App 將會以無提示方式啟動。
+3. 從主機啟動應用程式。
+4. 輸入 PIN 或密碼來允許啟動應用程式。
+5. 應用程式將會啟動。
+6. 關閉應用程式。
+7. 使用 F5 從 VS 啟動，應用程式將會以無提示方式啟動。
 
-此時，直到您將使用者登出為止，該權限將會「持續生效」，即使您將 App 解除安裝並重新安裝也一樣。
+此時，直到您將使用者登出為止，該權限將會「持續生效」__，即使您將應用程式解除安裝並重新安裝也一樣。
  
-有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律] 允許子女啟動該 App。 該免除會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
+有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律]**** 允許子女啟動該應用程式。 該免除會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
 
 <!--### x86 vs. x64
 
@@ -93,7 +99,7 @@ Developers can still use HTTP and WebSockets.
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Xbox One 上的已封鎖網路連接埠
 
-Xbox One 裝置上的通用 Windows 平台 (UWP) App 具有無法繫結至 [49152, 65535] 範圍中之連接埠的限制。 雖然於執行階段期間繫結至這些連接埠時，看起來可能已成功，不過網路流量在抵達 App 之前可能便已無訊息地被捨棄。 您的 App 應該在可行的情況下繫結至連接埠 0，這將能允許系統選取本機連接埠。 如果您需要使用特定的連接埠，連接埠號碼必須位於 [1025, 49151] 的範圍內，而您也應該檢查並避免與 IANA 登錄發生衝突。 如需詳細資訊，請參閱[服務名稱與傳輸通訊協定連接埠號碼登錄 (英文)](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
+Xbox One 裝置上的通用 Windows 平台 (UWP) 應用程式具有無法繫結至 [57344, 65535] (包含此項) 範圍中之連接埠的限制。 雖然於執行階段期間繫結至這些連接埠時，看起來可能已成功，不過網路流量在抵達應用程式之前可能便已無訊息地被捨棄。 您的應用程式應該在可行的情況下繫結至連接埠 0，這將能允許系統選取本機連接埠。 如果您需要使用特定的連接埠，連接埠號碼必須位於 [1025, 49151] 的範圍內，而您也應該檢查並避免與 IANA 登錄發生衝突。 如需詳細資訊，請參閱[服務名稱與傳輸通訊協定連接埠號碼登錄 (英文)](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
 
 ## <a name="uwp-api-coverage"></a>UWP API 涵蓋範圍
 
@@ -162,7 +168,7 @@ Sometimes this is resolved by sorting a column on the table.-->
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告
 
-您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 [繼續瀏覽此網站]。
+您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 [繼續瀏覽此網站]****。
 
 ![網站安全性憑證警告](images/security_cert_warning.jpg)
 
@@ -177,6 +183,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Dec16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

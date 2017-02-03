@@ -5,20 +5,22 @@ title: "通用 Windows 平台 (UWP) app 的對齊、邊界及邊框間距"
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+op-migration-status: ready
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: f6c8665c935380078efd2e8ea9d225967cf45eba
 
 ---
-# 對齊、邊界及邊框間距
+# <a name="alignment-margin-and-padding"></a>對齊、邊界及邊框間距
 
-除了維度屬性 (寬度、高度及限制) 之外，元素還可以有對齊、邊界及邊框間距屬性，這些屬性會在元素進行版面配置階段並在 UI 中轉譯時，影響配置行為。 對齊、邊界、邊框間距及維度等屬性之間具有關係，這些關係在放置 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 物件時具有一種典型的邏輯流程，以致於會視情況有時使用這些值，有時忽略這些值。
+除了維度屬性 (寬度、高度及限制) 之外，元素還可以有對齊、邊界及邊框間距屬性，這些屬性會在元素進行版面配置階段並在 UI 中轉譯時影響配置行為。 對齊、邊界、邊框間距及維度等屬性之間具有關係，這些關係在放置 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 物件時具有一種典型的邏輯流程，以致於會視情況有時使用這些值，有時忽略這些值。
 
-## 對齊屬性
+## <a name="alignment-properties"></a>對齊屬性
 
-[**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 與 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) 屬性描述應該如何在父元素分配的配置空間內放置子元素。 同時使用這些屬性，容器的配置邏輯便能夠將子元素放在容器內 (面板或控制項)。 對齊屬性的用途是向調適型配置容器提示所需的配置，因此基本上是在 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 子系上設定，並由另一個 **FrameworkElement** 容器父系來解譯。 對齊值可以指定元素要與哪個方向的邊緣對齊，或是置中對齊。 不過，兩個對齊屬性的預設值都是 **Stretch**。 採用 **Stretch** 對齊，元素會填滿提供給它們的配置空間。 **Stretch** 是預設值，可在沒有明確度量值或配置的度量階段未提供任何 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值的情況下，較容易使用調適型配置技術。 使用此預設值時，不會有明確高度/寬度無法放進容器內而被裁剪 (除非調整每個容器大小) 的風險。
+[**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720) 與 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749) 屬性描述應該如何在父元素分配的配置空間內放置子元素。 同時使用這些屬性，容器的配置邏輯便能夠將子元素放在容器內 (面板或控制項)。 對齊屬性的用途是向調適型配置容器提示所需的配置，因此基本上是在 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 子系上設定，並由另一個 **FrameworkElement** 容器父系來解譯。 對齊值可以指定元素要與哪個方向的邊緣對齊，或是置中對齊。 不過，兩個對齊屬性的預設值都是 **Stretch**。 採用 **Stretch** 對齊，元素會填滿提供給它們的配置空間。 **Stretch** 是預設值，可在沒有明確度量值或配置的度量階段未提供任何 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值的情況下，較容易使用調適型配置技術。 使用此預設時，不會有明確高度/寬度無法放進容器內而被裁剪 (除非調整每個容器大小) 的風險。
 
-> **注意**  一般的配置原則是，最好只對特定主要元素套用度量值，並讓其他元素使用調適型配置行為。 這樣可隨時在使用者調整最上層應用程式視窗時，提供彈性的配置行為。
+> [!NOTE]
+> 一般的配置原則是，最好只對特定主要元素套用度量值，並讓其他元素使用調適型配置行為。 這樣可隨時在使用者調整最上層應用程式視窗時，提供彈性的配置行為。
 
  
 如果彈性容器內有 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 值或裁剪的情況，即使將 **Stretch** 設定為對齊值，配置仍是由其容器的行為控制。 在面板中，已經被 **Height** 與 **Width** 去除的 **Stretch** 值，即有如 **Center** 值。
@@ -33,7 +35,7 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 當上層配置容器的維度中有額外的可用空間時，對齊屬性才有相關。 如果配置容器已經裁剪內容，對齊只會影響將套用裁剪的元素區域。 例如，若您設定 `HorizontalAlignment="Left"`，會裁剪元素右邊的大小。
 
-## 邊界
+## <a name="margin"></a>邊界
 
 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) 屬性描述配置情況中某元素與其對等元素之間的距離，還有某元素與內含該元素的容器內容區域之間的距離。 如果您將元素視為週框方塊或矩形，而其維度為 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 與 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709)，**Margin** 配置適用於該矩形外部的區域，而且不會將像素新增到 **ActualHeight** 與 **ActualWidth**。 用於點擊測試與執行輸入事件時，同樣不會將邊界視為元素的一部分。
 
@@ -49,39 +51,34 @@ ms.openlocfilehash: ec16fa013e177529c517f91610b77ea22402a958
 
 [**Block**](https://msdn.microsoft.com/library/windows/apps/br244379) 類別是 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) 的基底類別，也有 [**Margin**](https://msdn.microsoft.com/library/windows/apps/jj191725) 屬性。 它在 **Paragraph** 的上層容器 (通常是 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 或 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) 物件) 內的放置方式，以及如何將多個段落放在與 [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) 集合的其他 **Block** 對等項目相關的位置，有類似效果。
 
-## 邊框間距
+## <a name="padding"></a>邊框間距
 
 **Padding** 屬性描述某元素與任何子元素或其中所含內容之間的距離。 如果元素允許有多個子系，則會將內容視為可加入所有內容的單一週框方塊。 例如，如果有一個包含兩個項目的 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803)，就會在包含這些項目的週框方塊周圍套用 [**Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)。 就該容器的度量與排列階段計算而言，**Padding** 會從可用的大小中進行扣除，並且當容器本身經歷其容器的版面配置階段時，會成為所需大小值的一部分。 和 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) 不同，**Padding** 不是 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的屬性，而且實際上，有數個類別都定義自己專屬的 **Padding** 屬性：
 
 -   [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)：繼承所有 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 衍生類別。 不是所有控制項都有內容，因此對於某些控制項而言 (例如 [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/dn279268))，沒有必要設定屬性。 如果控制項有邊框 (請參閱 [**Control.BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399))，將會在該邊框內套用邊框間距。
 -   [**Border.Padding**](https://msdn.microsoft.com/library/windows/apps/br209263)：定義 [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209256)/[**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209254) 所建立的矩形線條與 [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258) 元素之間的空間。
 -   [**ItemsPresenter.Padding**](https://msdn.microsoft.com/library/windows/apps/hh968021)：影響針對項目控制項中的項目產生的視覺化外觀，在每個項目周圍放上指定的邊框間距。
--   [**TextBlock.Padding**](https://msdn.microsoft.com/library/windows/apps/br209673) 與 [**RichTextBlock.Padding**](https://msdn.microsoft.com/library/windows/apps/br227596)：展開文字元素的文字周圍的週框方塊。 這些文字元素沒有 **Background**，所以與文字元素的容器所套用的其他配置行為相較之下，不容易看出文字的邊框間距。 因此很少使用文字元素邊框間距，而是較常在包含的 [**Block**](https://msdn.microsoft.com/library/windows/apps/br244379) 容器使用 [**Margin**](https://msdn.microsoft.com/library/windows/apps/jj191725) 設定 (對 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 來說)。
+-   [**TextBlock.Padding**](https://msdn.microsoft.com/library/windows/apps/br209673) 與 [**RichTextBlock.Padding**](https://msdn.microsoft.com/library/windows/apps/br227596)：展開文字元素的文字周圍的週框方塊。 這些文字元素沒有 **Background**，所以與文字元素的容器所套用的其他配置行為相較之下，不容易看出文字的邊框間距。 因此很少使用文字元素邊框間距，而是較常在包含的 [**Block**](https://msdn.microsoft.com/library/windows/apps/jj191725) 容器使用 [**Margin**](https://msdn.microsoft.com/library/windows/apps/br244379) 設定 (對 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 來說)。
 
 不論上述哪一種情況，相同的元素也具有 **Margin** 屬性。 若同時套用邊界與邊框間距，則是兩者相加，也就是說，外部容器與任何內部內容之間的外觀距離等於邊界加上邊框間距。 如果對內容、元素或容器套用不同的背景值，就有可能在轉譯中看到邊界結束與邊框間距開始的交界處。
 
-## 維度 (Height、Width)
+## <a name="dimensions-height-width"></a>維度 (Height、Width)
 
-[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 屬性通常會在進行版面配置階段時，影響對齊、邊界及邊框間距屬性的行為。 特別是，**Height** 與 **Width** 值的實際數字會取消 **Stretch** 對齊，還會升級成可能元件的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值，該值是在進行配置的度量階段時建立。 **Height** 與 **Width** 都有限制屬性：**Height** 值可以利用 [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) 與 [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) 來限制，而 **Width** 值可以利用 [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) 與 [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) 來限制。 此外，[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 都是經過計算的唯讀屬性，只在版面配置階段完成之後才會包含有效值。 如需有關維度與限制或經過計算的屬性如何相互關聯的詳細資訊，請參閱 [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 中的＜備註＞。
+[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208718) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208751) 與 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208706) 屬性通常會在進行版面配置階段時，影響對齊、邊界及邊框間距屬性的行為。 特別是，**Height** 與 **Width** 值的實際數字會取消 **Stretch** 對齊，還會升級成可能元件的 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 值，該值是在進行配置的度量階段時建立。 **Height** 與 **Width** 都有限制屬性：**Height** 值可以利用 [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) 與 [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) 來限制，而 **Width** 值可以利用 [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) 與 [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) 來限制。 此外，[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 與 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 都是經過計算的唯讀屬性，只在版面配置階段完成之後才會包含有效值。 如需有關維度與限制或經過計算的屬性如何相互關聯的詳細資訊，請參閱 [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 與 [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 中的＜備註＞。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 **參考**
 
-[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
-
-[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
-
-[**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
-
-[**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
-
-[**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
-
-[**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
+* [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
+* [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+* [**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
+* [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+* [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+* [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -5,30 +5,38 @@ title: "觸控互動"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+keywords: "觸控、指標、輸入、使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 526493614666424089199063013b5fc72d9bc5d8
-ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 26f80e2619ea7b80a49d54278507c83461fe2336
 
 ---
 
-# 觸控互動
+# <a name="touch-interactions"></a>觸控互動
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-
-在設計應用程式時，請先預期觸控會是使用者的主要輸入方法。 若您使用平台控制項，在觸控板、滑鼠和畫筆/手寫筆的支援方面則不需要額外的程式設計，因為 UWP app 對此提供免費支援。
+在設計應用程式時，請先預期觸控會是使用者的主要輸入方法。 若您使用平台控制項，在觸控板、滑鼠和畫筆/手寫筆的支援方面則不需要額外的程式設計，因為 UWP 應用程式對此提供免費支援。
 
 不過，請記住，針對觸控最佳化的 UI 未必優於傳統 UI。 兩者對技術和應用程式而言各有優缺點。 在設計觸控優先的 UI 之前，了解觸控 (包含觸控板)、畫筆/手寫筆、滑鼠以及鍵盤輸入之間的核心差異是很重要的。
 
-**重要 API**
-
--   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
--   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
-
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+<li>[**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)</li>
+<li>[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)</li>
+</ul>
+</div>
 
 
 許多裝置都配備多點觸控螢幕，支援使用一或多根手指 (或觸控點) 進行輸入。 觸控點及其移動方式都會解譯為觸控手勢與操作，以支援各種不同的使用者互動。
 
-通用 Windows 平台 (UWP) 包含一些處理觸控輸入的不同機制，讓您能夠建立使用者可自信探索的沈浸式體驗。 此處將說明在 UWP app 中使用觸控輸入的基本知識。
+通用 Windows 平台 (UWP) 包含一些處理觸控輸入的不同機制，讓您能夠建立使用者可自信探索的沈浸式體驗。 此處將說明在 UWP 應用程式中使用觸控輸入的基本知識。
 
 觸控互動需要具備三個要件：
 
@@ -44,17 +52,17 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 觸控輸入通常會與在螢幕上直接操作元素有關。 元素會立即回應其點擊測試區域內的任何觸控點，並適當地回應觸控點的任何後續動作 (包括移除)。
 
-請務必謹慎設計自訂的觸控手勢和互動。 它們應該是直覺式、具回應性且可供探索，而且應該能讓使用者自信地探索您的 app。
+請務必謹慎設計自訂的觸控手勢和互動。 它們應該是直覺式、具回應性且可供探索，而且應該能讓使用者自信地探索您的應用程式。
 
-確保 app 功能會在每個支援的輸入裝置類型上以一致的方式公開。 如有需要，請使用特定形式的間接輸入模式，例如，適用於鍵盤互動的文字輸入，或者適用於滑鼠或手寫筆的 UI 能供性。
+確保應用程式功能會在每個支援的輸入裝置類型上以一致的方式公開。 如有需要，請使用特定形式的間接輸入模式，例如，適用於鍵盤互動的文字輸入，或者適用於滑鼠或手寫筆的 UI 能供性。
 
 請記住，傳統的輸入裝置 (例如滑鼠和鍵盤) 對許多使用者來說都很熟悉且具吸引力。 它們可以提供觸控功能可能無法提供的速度、準確度以及觸感反應。
 
-針對所有輸入裝置提供獨特而鮮明的互動體驗，支援的功能和喜好設定越多越好、適用的對象越廣越好，這樣將能吸引更多的客戶使用您的 app。
+針對所有輸入裝置提供獨特而鮮明的互動體驗，支援的功能和喜好設定越多越好、適用的對象越廣越好，這樣將能吸引更多的客戶使用您的應用程式。
 
-## 比較觸控互動需求
+## <a name="compare-touch-interaction-requirements"></a>比較觸控互動需求
 
-下表顯示在設計觸控最佳化 UWP app 時應考慮存在於輸入裝置間的一些差異性。
+下表顯示在設計觸控最佳化 UWP 應用程式時應考慮存在於輸入裝置間的一些差異性。
 
 <table>
 <tbody><tr><th>因素</th><th>觸控互動</th><th>滑鼠、鍵盤、畫筆/手寫筆互動</th><th>觸控板</th></tr>
@@ -80,14 +88,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
  
 
-## 使用觸控回饋
+## <a name="use-touch-feedback"></a>使用觸控回饋
 
 與應用程式進行互動時的適當視覺化回饋，可以協助使用者辨識、學習及適應應用程式與 Windows 8 如何解譯他們的互動。 視覺化回饋可以指示互動成功、轉送系統狀態、改善控制感應、減少錯誤、協助使用者了解系統和輸入裝置，並能激發使用者互動意願。
 
 當使用者依賴觸控輸入進行要求正確與精確位置的活動時，視覺化回饋就顯得相當重要。 隨時隨地偵測到觸控輸入時便顯示回饋，可以協助使用者了解應用程式及其控制項所定義的任何自訂目標規則。
 
 
-## 目標預測
+## <a name="targeting"></a>目標預測
 
 目標預測透過以下各項進行最佳化：
 
@@ -107,14 +115,14 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
     對於密集封裝的項目 (例如超連結)，只要手指按下、不滑動並在項目上來回搖晃，即可輕易重新選定目標。 由於遮蔽的緣故，因此會透過工具提示或狀態列來識別目前的項目，並且會在放開手指時啟動。
 
-## 準確度
+## <a name="accuracy"></a>準確度
 
 使用下列功能針對隨性互動進行設計：
 
 -   貼齊點：在使用者與內容進行互動時，可以較容易停在想要的位置。
 -   指向性「柵欄」：可在即使手以稍微弧形的方式移動時，協助進行垂直或水平移動瀏覽。 如需詳細資訊，請參閱[移動瀏覽的指導方針](guidelines-for-panning.md)。
 
-## 遮蔽
+## <a name="occlusion"></a>遮蔽
 
 下列方式可以避免手指與手部遮蔽問題：
 
@@ -132,9 +140,9 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 
 -   精確度控點
 
-    在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段 app)](guidelines-for-textselection.md)。
+    在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段應用程式)](guidelines-for-textselection.md)。
 
-## 計時
+## <a name="timing"></a>計時
 
 避免計時模式的變更有利於直接操作。 直接操作可以模擬直接、即時的實體物件控制。 物件會隨著手指移動而回應。
 
@@ -153,30 +161,30 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 -   互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
 -   不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
 
-    **注意** 使用特定計時互動來協助學習和探索 (例如長按) 為例外的狀況。
+    **備註**  使用特定計時互動來協助學習和探索 (例如長按) 為例外的狀況。
 
      
 
 -   適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
 
 
-## App 檢視
+## <a name="app-views"></a>應用程式檢視
 
 
-透過 app 檢視的移動瀏覽/捲動和縮放設定，調整使用者互動方式。 應用程式檢視指示使用者如何存取並操作應用程式與其內容。 檢視也提供如慣性、內容界限彈回及貼齊點等行為。
+透過應用程式檢視的移動瀏覽/捲動和縮放設定，調整使用者互動方式。 應用程式檢視指示使用者如何存取並操作應用程式與其內容。 檢視也提供如慣性、內容界限彈回及貼齊點等行為。
 
 當檢視區無法容納整個檢視內容時， [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控制項的移動瀏覽和捲動設定可以規定使用者在單一檢視內的瀏覽方式。 例如，單一檢視可以是雜誌或書籍的其中一頁、電腦的資料夾結構、文件庫或者相簿。
 
 縮放設定可套用至視覺化縮放 (透過 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 控制項來支援) 和 [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項。 語意式縮放是一種觸控最佳化技術，適合在單一檢視中顯示及瀏覽大量的相關資料或內容。 它的運作方式是使用兩種不同的分類模式 (或縮放比例)。 這就類似在單一檢視內的移動瀏覽和捲動。 移動瀏覽和捲動可以和語意式縮放搭配使用。
 
-您可以使用 app 檢視與事件，來修改移動瀏覽/捲動和縮放行為。 與處理指標和手勢事件相比，它可以提供更順暢的互動體驗。
+您可以使用應用程式檢視與事件，來修改移動瀏覽/捲動和縮放行為。 與處理指標和手勢事件相比，它可以提供更順暢的互動體驗。
 
-如需有關 app 檢視的詳細資訊，請參閱[控制項、配置及文字](https://msdn.microsoft.com/library/windows/apps/mt228348)。
+如需有關應用程式檢視的詳細資訊，請參閱[控制項、配置及文字](https://msdn.microsoft.com/library/windows/apps/mt228348)。
 
-## 自訂觸控互動
+## <a name="custom-touch-interactions"></a>自訂觸控互動
 
 
-如果您實作自己的互動支援，請牢記使用者所期待的是與 App UI 元素直接互動的直覺式體驗。 建議您在平台控制項程式庫上將您的自訂互動模型化，以保持一致且可探索的 UI 體驗。 這些程式庫中的控制項提供完整的使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
+如果您實作自己的互動支援，請牢記使用者所期待的是與應用程式 UI 元素直接互動的直覺式體驗。 建議您在平台控制項程式庫上將您的自訂互動模型化，以保持一致且可探索的 UI 體驗。 這些程式庫中的控制項提供完整的使用者互動體驗，包含標準互動、動畫物理效果、視覺化回饋及協助工具。 只有在需求明確且定義清楚，而且沒有基本的互動可以支援您的情況時，才能建立自訂互動。
 
 若要提供自訂的觸控支援，您可以處理各種不同的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件。 這些事件會分成三個等級的抽象概念。
 
@@ -210,12 +218,12 @@ ms.openlocfilehash: db38bfecadb7568e602646222358e0a111c638bc
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## 手勢事件
+## <a name="gesture-events"></a>手勢事件
 
 
 如需個別控制項的詳細資訊，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-## 指標事件
+## <a name="pointer-events"></a>指標事件
 
 
 指標事件是透過各種不同的作用中輸入來源所引發，包括觸控、觸控板、手寫筆和滑鼠 (它們會取代傳統的滑鼠事件)。
@@ -303,7 +311,7 @@ Public Sub New()
 End Sub
 ```
 
-最後，當 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件處理常式會提高 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)。
+最後，當 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208718) 事件處理常式再次將 **Height** 和 **Width** 設定為它們的開始值時，[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208751) 事件處理常式會提高 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208972) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208969)。
 
 ```ManagedCPlusPlus
 // Handler for pointer exited event.
@@ -424,10 +432,10 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## 操作事件
+## <a name="manipulation-events"></a>操作事件
 
 
-如果您的 app 中需要支援多指互動或是使用速度資料的互動，請使用操作事件。
+如果您的應用程式中需要支援多指互動或是使用速度資料的互動，請使用操作事件。
 
 您可以使用操作事件來偵測互動 (例如拖曳、縮放及按住不放)。
 
@@ -453,13 +461,13 @@ End Sub
 
 接著觸發一或多個 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，當您觸碰螢幕，然後將手指劃過螢幕時。 最後，當互動完成時，就會引發 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
 
-**注意：**如果您沒有觸控式螢幕監視器，可以在使用滑鼠和滑鼠滾輪介面的模擬器中測試您的操作事件程式碼。
+**備註**  如果您沒有觸控式螢幕監視器，可以在使用滑鼠和滑鼠滾輪介面的模擬器中測試您的操作事件程式碼。
 
  
 
 下列範例示範如何使用 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件來處理 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 上的滑動互動，並在螢幕上移動它。
 
-首先，在 XAML 中建立了一個名為 `touchRectangle` 且 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) 為 200 的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371)。
+首先，在 XAML 中建立了一個名為 `touchRectangle` 且 [**Height**](https://msdn.microsoft.com/library/windows/apps/br243371) 和 [**Width**](https://msdn.microsoft.com/library/windows/apps/br208718) 為 200 的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br208751)。
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -556,7 +564,7 @@ Public Sub New()
 End Sub
 ```
 
-最後，在 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件處理常式中，使用 [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) 屬性上的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 來更新 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 的位置。
+最後，在 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件處理常式中，使用 [**Delta**](https://msdn.microsoft.com/library/windows/apps/br243371) 屬性上的 [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) 來更新 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/hh702058) 的位置。
 
 ```ManagedCPlusPlus
 // Handler for the ManipulationDelta event.
@@ -600,12 +608,12 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## 路由事件
+## <a name="routed-events"></a>路由事件
 
 
-本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」**來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或 app 的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
+本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」**來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或應用程式的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   設計以觸控互動做為主要預期輸入方法的應用程式。
@@ -617,7 +625,7 @@ End Sub
 -   如有可能，不要使用手指數目來辨別操作。
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
@@ -645,6 +653,6 @@ End Sub
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO3-->
 
 

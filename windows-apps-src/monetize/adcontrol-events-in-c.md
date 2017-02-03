@@ -4,43 +4,24 @@ ms.assetid: 2fba38c4-11be-4058-bfa3-5f979390791c
 description: "了解如何處理 AdControl 類別的事件。"
 title: "C 中的 AdControl 事件#"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 969d668c89b40e37245a8168879842159b4f5c14
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: e25e0f915c0b9b6ec2423d2a95386b45b4502253
 
 ---
 
-# C\ 中的 AdControl 事件# #  
+# <a name="adcontrol-events-in-c"></a>C\ 中的 AdControl 事件# #  
 
 
+下列範例示範下列 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 事件的基本事件處理常式：[ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.erroroccurred.aspx)、[AdRefreshed](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.adrefreshed.aspx) 及 [IsEngagedChanged](https://msdn.microsoft.com/library/windows/apps/xaml/microsoft.advertising.winrt.ui.adcontrol.isengagedchanged.aspx)。 這些範例假設您已將事件處理常式指派至您 XAML 程式碼中的事件。 如需如何執行這項操作的詳細資訊，請參閱 [XAML 屬性範例](xaml-properties-example.md)。
 
+如需處理 C# 中事件的詳細資訊，請參閱[事件與路由事件概觀 (使用 C#/VB/C++ 和 XAML 的通用 Windows 應用程式)](http://msdn.microsoft.com/library/windows/apps/hh758286)。
 
-以下範例示範如何處理 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別的事件。 這些範例假設您已經將事件處理器指派給 XAML 中的 **AdControl** 事件。 如需如何執行這項操作的詳細資訊，請參閱 [XAML 屬性範例](xaml-properties-example.md)。
+## <a name="examples"></a>範例
 
-如需處理 C# 中事件的詳細資訊，請參閱[事件與路由事件概觀 (使用 C#/VB/C++ 和 XAML 的通用 Windows app)](http://msdn.microsoft.com/library/windows/apps/hh758286)。
+> [!div class="tabbedCodeSnippets"]
+[!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MainPage.xaml.cs#EventHandlers)]
 
-## 範例
-
-
-``` syntax
-private void OnAdError(object sender, AdErrorEventArgs e) {
-  // place code here for when there is an error serving an ad
-  // e.g. you may opt to show a default experience, or reclaim the div for other purposes
-  return;
-}
-
-private void OnAdRefresh(object sender, RoutedEventArgs e) {
-  // place code here that you wish to execute when the ad refreshes.
- return;
-}
-
-private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
-  // place code here for when there is an error serving an ad
-  // e.g. you may opt to show a default experience, or reclaim the div for other purposes
-  return;
-}
-```
-
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 * [AdControl 錯誤處理](adcontrol-error-handling.md)
@@ -52,6 +33,6 @@ private void OnAdEngagedChanged(object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

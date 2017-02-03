@@ -6,35 +6,39 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 667228e10456ffbc64b7d0782d5a8bdc02f2f203
-ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 1226d097e911e79c800a16c33fcbb9bd524bd17a
 
 ---
 
-# 鍵盤互動
+# <a name="keyboard-interactions"></a>鍵盤互動
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-
-鍵盤輸入是 App 整體使用者互動體驗的一個重要部分。 對於某些行動不便或認為使用鍵盤與 App 互動較有效率的使用者來說，鍵盤是不可或缺的。 例如，使用者必須能夠使用 Tab 和方向鍵來瀏覽您的 app、使用空格鍵和 Enter 鍵來啟用 UI 元素，以及使用鍵盤快速鍵來存取命令。  
+鍵盤輸入是應用程式整體使用者互動體驗的一個重要部分。 對於某些行動不便或認為使用鍵盤與應用程式互動較有效率的使用者來說，鍵盤是不可或缺的。 例如，使用者必須能夠使用 Tab 和方向鍵來瀏覽您的應用程式、使用空格鍵和 Enter 鍵來啟用 UI 元素，以及使用鍵盤快速鍵來存取命令。  
 
 ![鍵盤主角影像](images/input-patterns/input-keyboard-small.jpg)
 
-**重要 API**
-
--   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)
--   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)
--   [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)</li>
+<li>[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)</li>
+<li>[**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072)</li>
+</ul>
+</div>
+ 
 
 
 設計良好的鍵盤 UI 是軟體協助工具的一個重要層面。 它讓視障使用者或受到某種程度運動神經傷害的使用者能夠瀏覽應用程式並與應用程式的功能互動。 這類使用者有可能無法使用滑鼠，因而必須仰賴像鍵盤增強功能工具、螢幕小鍵盤、螢幕放大機、螢幕助讀程式以及語音輸入公用程式這類協助技術。
 
-使用者與 Universal app 互動的方式，可以透過硬體鍵盤和兩種軟體鍵盤：螢幕小鍵盤 (OSK) 和觸控式鍵盤。
+使用者與 Universal 應用程式互動的方式，可以透過硬體鍵盤和兩種軟體鍵盤：螢幕小鍵盤 (OSK) 和觸控式鍵盤。
 
 螢幕小鍵盤  
 螢幕小鍵盤是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、滑鼠、畫筆/手寫筆或其他指標裝置 (不需要觸控式螢幕) 來輸入資料。 提供螢幕小鍵盤的用意是針對沒有實體鍵盤的系統，或者使用者因行動不便而無法使用傳統實體輸入裝置的情況。 螢幕小鍵盤會模擬絕大部分的硬體鍵盤功能。
 
 螢幕小鍵盤可以從 [設定] &gt; [輕鬆存取] 中的 [鍵盤] 頁面開啟。
 
-**注意** 螢幕小鍵盤的優先順序高於觸控式鍵盤，如果顯示螢幕小鍵盤，就不會顯示觸控式鍵盤。
+**注意**  螢幕小鍵盤的優先順序高於觸控式鍵盤，如果顯示螢幕小鍵盤，就不會顯示觸控式鍵盤。
 
  
 
@@ -49,11 +53,11 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 ![[通知中心] 的觸控式鍵盤圖示](images/input-patterns/touch-keyboard-notificationcenter.png)
 
-**注意** 使用者可能需要移至[設定] &gt; [系統] 中的 [**平板電腦模式**] 畫面，並開啟 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]，觸控式鍵盤才會自動出現。
+**注意**  使用者可能需要移至 [設定] &gt; [系統] 中的 [平板電腦模式]**** 畫面，並開啟 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]，觸控式鍵盤才會自動出現。
 
  
 
-如果您的 app 以程式設計方式將焦點設為文字輸入控制項，則不會叫用觸控式鍵盤。 這可消除不是由使用者直接進行的非預期行為。 不過，當焦點透過程式設計方式移至非文字輸入控制項時，鍵盤會自動隱藏。
+如果您的應用程式以程式設計方式將焦點設為文字輸入控制項，則不會叫用觸控式鍵盤。 這可消除不是由使用者直接進行的非預期行為。 不過，當焦點透過程式設計方式移至非文字輸入控制項時，鍵盤會自動隱藏。
 
 當使用者在表單中的控制項之間瀏覽時，觸控式鍵盤通常會保持可見。 這種行為可能會因表單內的其他控制項類型而有所不同。
 
@@ -95,11 +99,11 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 </table>
 
 
-成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的 app 操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
+成功的鍵盤互動讓使用者只利用鍵盤就可以完成基本的應用程式操作；也就是說，使用者可以使用所有的互動式元素以及啟動預設的功能。 有許多因素會影響成功的程度，包括鍵盤瀏覽、協助工具的便捷鍵，以及進階使用者的快速鍵。
 
-**注意** 觸控式鍵盤不支援切換和大多數的系統命令 (請參閱[模式](#keyboard_command_patterns))。
+**注意**  觸控式鍵盤不支援切換和大多數的系統命令 (請參閱[模式](#keyboard_command_patterns))。
 
-## 瀏覽
+## <a name="navigation"></a>瀏覽
 
 
 若要搭配使用控制項 (包括瀏覽元素) 與鍵盤，控制項必須有焦點。 控制項接受鍵盤焦點的其中一種方式就是透過 Tab 瀏覽進行存取。 設計良好的鍵盤瀏覽模型會提供有邏輯且可預期的定位順序，讓使用者得以快速而有效率地瀏覽和使用您的應用程式。
@@ -129,7 +133,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 在某些情況下，有些 UI 元素應該一直停留在畫面上。 設計 UI 以讓移動瀏覽區域中包含表單控制項，並讓重要的 UI 元素處於靜態。 例如：
 
 ![表單中包含應永久留在檢視中的區域](images/input-patterns/touch-keyboard-pan2.png)
-## 啟用
+## <a name="activation"></a>啟用
 
 
 不論控制項目前是否有焦點，都可以用許多不同的方式加以啟用。
@@ -137,9 +141,9 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 空格鍵、Enter 鍵和 Esc 鍵  
 空格鍵應啟用具有輸入焦點的控制項。 Enter 鍵應啟用預設控制項或具有輸入焦點的控制項。 預設控制項是具有起始焦點的控制項或是專門回應 Enter 鍵的控制項 (通常會隨著輸入焦點變更)。 此外，Esc 鍵應關閉或結束暫時性 UI，例如功能表和對話方塊。
 
-以下顯示的小算盤 app 使用空格鍵來啟用具有焦點的按鈕、將 Enter 鍵鎖定為 "=" 按鈕，以及將 Esc 鍵鎖定為 "C" 按鈕。
+以下顯示的小算盤應用程式使用空格鍵來啟用具有焦點的按鈕、將 Enter 鍵鎖定為 "=" 按鈕，以及將 Esc 鍵鎖定為 "C" 按鈕。
 
-![小算盤 app](images/input-patterns/calculator.png)
+![小算盤應用程式](images/input-patterns/calculator.png)
 
 鍵盤修飾詞  
 鍵盤修飾詞分成下列類別：
@@ -147,9 +151,9 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 | 類別 | 描述 |
 |----------|-------------|
-| 快速鍵 | 不使用 UI 執行常見動作，例如 "Ctrl-S" 表示 [**儲存**]。 實作主 app 功能的鍵盤快速鍵。 並非每個命令都有或需要快速鍵。 |   
+| 快速鍵 | 不使用 UI 執行常見動作，例如 "Ctrl-S" 表示 [**儲存**]。 實作主應用程式功能的鍵盤快速鍵。 並非每個命令都有或需要快速鍵。 |   
 | 便捷鍵/熱鍵 | 指派給每個可見的最上層控制項，例如 "Alt-F" 表示 [**檔案**] 功能表。 便捷鍵不會叫用或啟用命令。 |
-| 快速鍵 | 執行預設系統或 app 定義的命令，例如 "Alt-PrtScrn" 表示擷取螢幕畫面、"Alt-Tab" 切換 app，或 "F1" 取得說明。 與快速鍵相關聯的命令不需要是功能表項目。 |
+| 快速鍵 | 執行預設系統或應用程式定義的命令，例如 "Alt-PrtScrn" 表示擷取螢幕畫面、"Alt-Tab" 切換應用程式，或 "F1" 取得說明。 與快速鍵相關聯的命令不需要是功能表項目。 |
 | 應用程式鍵/功能表鍵 | 顯示操作功能表。 |
 | Window 鍵/Command 鍵 | 啟用系統命令，例如 [**系統功能表**]、[**鎖定畫面**] 或 [**顯示桌面**]。 |
 
@@ -165,7 +169,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 ![在輸入相關聯標籤中識別的便捷鍵後，會反白顯示 [左邊縮排] 文字欄位值。](images/input-patterns/accesskeys-entered.png)
 
-## 可用性和協助工具
+## <a name="usability-and-accessibility"></a>可用性和協助工具
 
 
 設計良好的鍵盤互動體驗是軟體協助工具的一個重要層面。 它讓視障使用者或受到某種程度運動神經傷害的使用者能夠瀏覽應用程式並與應用程式的功能互動。 這類使用者有可能無法使用滑鼠，因而必須仰賴各項協助技術 (包含鍵盤增強功能工具和螢幕小鍵盤，以及螢幕放大機、螢幕助讀程式和語音輸入公用程式)。 對於這些使用者而言，完整性是比一致性更重要。
@@ -214,7 +218,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 若要確保成功的鍵盤互動體驗，請務必使用鍵盤以獨佔方式徹底測試您的應用程式。
 
-## 文字輸入
+## <a name="text-input"></a>文字輸入
 
 
 仰賴鍵盤輸入時，一律查詢裝置功能。 在某些裝置 (例如手機) 上，觸控式鍵盤只能用於文字輸入，因為它不像硬體鍵盤會提供許多快速鍵或命令鍵 (例如 alt、功能鍵或 Windows 標誌鍵)。
@@ -238,15 +242,15 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 除了這些類別，還有第二種按鍵類別和按鍵組合可做為應用程式功能的快速鍵：
 
 -   便捷鍵：同時按 Alt 鍵與字元鍵可以公開控制項或功能表項目，其表示方式：在功能表中將便捷鍵字元指派加底線，或重疊顯示便捷鍵字元。
--   快速鍵：同時按功能鍵或 Ctrl 鍵與字元鍵可以公開應用程式命令。 您的 app 不一定會有與命令相對應的 UI。
+-   快速鍵：同時按功能鍵或 Ctrl 鍵與字元鍵可以公開應用程式命令。 您的應用程式不一定會有與命令相對應的 UI。
 
 應用程式無法攔截其他按鍵組合類別 (稱為 Secure Attention Sequence (SAS))。 這是一項安全性功能，用來在登入時保護使用者的系統，並且包括 Ctrl-Alt-Del 與 Win-L。
 
-以下顯示的記事本 app 有已展開的 [檔案] 功能表，其中同時包含便捷鍵和快速鍵。
+以下顯示的記事本應用程式有已展開的 [檔案] 功能表，其中同時包含便捷鍵和快速鍵。
 
-![記事本 app 有已展開的 [檔案] 功能表，其中同時包含便捷鍵和快速鍵。](images/input-patterns/notepad.png)
+![記事本應用程式有已展開的 [檔案] 功能表，其中同時包含便捷鍵和快速鍵。](images/input-patterns/notepad.png)
 
-## 鍵盤命令
+## <a name="keyboard-commands"></a>鍵盤命令
 
 
 以下是支援鍵盤輸入的各種裝置上提供的完整鍵盤互動清單。 有些裝置與平台需要原生按鍵輸入和互動。
@@ -308,7 +312,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
  
 
 注意：「播放/暫停」和「下一個項目」的媒體瀏覽按鍵命令分別與「列印」和「尋找」的按鍵命令相同。 常用命令應該優先於媒體瀏覽命令。 例如，如果應用程式同時支援播放媒體和列印，按 Ctrl+P 按鍵命令則會列印。
-## 視覺化回饋
+## <a name="visual-feedback"></a>視覺化回饋
 
 
 請只搭配鍵盤互動使用焦點矩形。 如果使用者初始化觸控互動，讓鍵盤 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
@@ -322,7 +326,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 如需視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
 
-## 鍵盤事件和焦點
+## <a name="keyboard-events-and-focus"></a>鍵盤事件和焦點
 
 
 硬體和觸控式鍵盤都有可能發生以下的鍵盤事件。
@@ -347,7 +351,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 根據預設，控制項的 Tab 順序即為它們在 Extensible Application Markup Language (XAML) 中出現的順序。 不過，使用 [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) 屬性就可以修改這個順序。 如需詳細資訊，請參閱[實作鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/hh868161)。
 
-## 鍵盤事件處理常式
+## <a name="keyboard-event-handlers"></a>鍵盤事件處理常式
 
 
 輸入事件處理常式實作一個提供下列資訊的委派：
@@ -356,7 +360,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 -   事件資料。 以鍵盤事件來說，該資料將會是 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) 的執行個體。 處理常式的委派是 [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904)。 對大多數處理常式案例來說，最相關的 **KeyRoutedEventArgs** 屬性是 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074)，也有可能是 [**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075)。
 -   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810)。 由於鍵盤事件是路由事件，因此事件資料會提供 **OriginalSource**。 如果您是刻意讓物件透過物件樹反昇，有時 **OriginalSource** (而不是發送者) 就會成為較為重要的物件。 不過這需要視您的設計而定。 如需如何使用 **OriginalSource** 而非發送者的相關資訊，請參閱這個主題的＜鍵盤路由事件＞一節，或參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)。
 
-### 附加鍵盤事件處理常式
+### <a name="attaching-a-keyboard-event-handler"></a>附加鍵盤事件處理常式
 
 您可以為任何物件附加鍵盤事件處理函式，只要該事件是該物件的成員即可。 這包含任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 衍生類別。 下列 XAML 範例示範如何為 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 附加 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式。
 
@@ -368,7 +372,7 @@ ms.openlocfilehash: 5ab84def6e73329f59d8ae6ef8be335d66ef4334
 
 您也可以在程式碼中附加事件處理常式。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584)。
 
-### 定義鍵盤事件處理常式
+### <a name="defining-a-keyboard-event-handler"></a>定義鍵盤事件處理常式
 
 下面的範例示範前面範例中附加的 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件處理常式的不完整事件處理常式定義。
 
@@ -394,7 +398,7 @@ void MyProject::MainPage::Grid_KeyUp(
   }
 ```
 
-### 使用 KeyRoutedEventArgs
+### <a name="using-keyroutedeventargs"></a>使用 KeyRoutedEventArgs
 
 所有鍵盤事件都是使用 [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) 代表事件資料，**KeyRoutedEventArgs** 包含下列屬性：
 
@@ -403,11 +407,11 @@ void MyProject::MainPage::Grid_KeyUp(
 -   [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)
 -   [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) (繼承自 [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809))
 
-### 按鍵
+### <a name="key"></a>按鍵
 
 如果按下按鍵，會引發 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 事件。 同樣的，如果放開按鍵，會引發 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 通常您接聽事件是為了處理特定的按鍵值。 若要判斷按下或放開的是哪一個按鍵，請檢查事件資料中的 [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) 值。 **Key** 會傳回 [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812) 值。 **VirtualKey** 列舉包括所有受支援的按鍵。
 
-### 輔助按鍵
+### <a name="modifier-keys"></a>輔助按鍵
 
 輔助按鍵是使用者通常會與其他按鍵一起按的按鍵，如 Ctrl 或 Shift。 您的應用程式可以使用這些按鍵組合當作鍵盤快速鍵來叫用應用程式命令。
 
@@ -418,12 +422,12 @@ void MyProject::MainPage::Grid_KeyUp(
 
  
 
-### 快速鍵範例
+### <a name="shortcut-keys-example"></a>快速鍵範例
 
 
-以下範例示範如何實作快速鍵。 在這個範例中，使用者可以使用「播放」、「暫停」以及「停止」按鈕或 Ctrl+P、Ctrl+A 以及 Ctrl+S 鍵盤快速鍵來控制媒體的播放。 按鈕 XAML 使用工具提示以及按鈕標籤中的 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) 屬性顯示捷徑。 這個自我說明文件對於提高 app 的可用性及協助性是很重要的。 如需詳細資訊，請參閱[鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)。
+以下範例示範如何實作快速鍵。 在這個範例中，使用者可以使用「播放」、「暫停」以及「停止」按鈕或 Ctrl+P、Ctrl+A 以及 Ctrl+S 鍵盤快速鍵來控制媒體的播放。 按鈕 XAML 使用工具提示以及按鈕標籤中的 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) 屬性顯示捷徑。 這個自我說明文件對於提高應用程式的可用性及協助性是很重要的。 如需詳細資訊，請參閱[鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)。
 
-另請注意，頁面載入時會將輸入焦點設給本身。 如果沒有這個步驟，就沒有控制項會取得初始輸入焦點，而且除非使用者手動設定輸入焦點 (例如，按 Tab 鍵或按一下控制項)，否則 app 將無法引發輸入事件。
+另請注意，頁面載入時會將輸入焦點設給本身。 如果沒有這個步驟，就沒有控制項會取得初始輸入焦點，而且除非使用者手動設定輸入焦點 (例如，按 Tab 鍵或按一下控制項)，否則應用程式將無法引發輸入事件。
 
 ```xaml
 <Grid KeyDown="Grid_KeyDown">
@@ -580,11 +584,11 @@ End Sub
 > [!NOTE]
 > 在 XAML 中設定 [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/hh759762) 或 [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/hh759763) 可提供字串資訊，其中記載用於叫用該特定動作的快速鍵。 Microsoft UI 自動化用戶端 (例如朗讀程式) 會擷取此資訊，通常直接提供給使用者。
 >
-> 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在 app 中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確的為助憶鍵中的特定鍵加上文字底線。
+> 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在應用程式中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確的為助憶鍵中的特定鍵加上文字底線。
 
  
 
-## 鍵盤路由事件
+## <a name="keyboard-routed-events"></a>鍵盤路由事件
 
 
 有一些特定事件是路由事件，包括 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 與 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)。 路由事件使用事件反昇路由策略。 反昇路由策略表示事件源自於子物件，並接著反昇路由到物件樹中相繼的父物件。 這是處理相同事件並與相同事件資料互動的機會。
@@ -612,19 +616,19 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 請注意，前面處理常式中有用到 [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) 屬性。 這裡的 **OriginalSource** 會回報引發事件的物件。 物件不可以是 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)，因為 **StackPanel** 不是控制項而且不可以取得焦點。 在 **StackPanel** 內的兩個按鈕中，只有一個可能引發事件，但是是哪一個呢？ 如果您是在處理父物件上的事件，可以使用 **OriginalSource** 來辨別實際的事件來源物件。
 
-### 事件資料中的 Handled 屬性
+### <a name="the-handled-property-in-event-data"></a>事件資料中的 Handled 屬性
 
 視您的事件處理策略而定，您可能會只想使用一個事件處理常式來應對反昇事件。 例如，如果您有附加到其中一個 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 控制項的特定 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 處理常式，該處理常式會先使用它來處理該事件。 在這個情況下，您可能不想讓父面板也同時處理事件。 這時，您可以在事件資料中使用 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 屬性。
 
 使用路由事件資料類別中的 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 屬性是為了報告先前在事件路由上登錄的另一個處理常式已經執行。 這會影響路由事件系統的行為。 將事件處理常式中的 **Handled** 設成 **true** 時，該事件會停止路由而不會傳送給相繼的父元素。
 
-### AddHandler 和已處理的鍵盤事件
+### <a name="addhandler-and-already-handled-keyboard-events"></a>AddHandler 和已處理的鍵盤事件
 
 您可以使用一項特別的技術，以附加可以在已標示為處理過的事件上作用的處理常式。 這項技術使用 [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) 方法來註冊處理常式，而不是使用 XAML 屬性或語言特定的語法新增處理常式 (例如 C# 中的 +=)。 
 
 這項技術的一般限制在於 **AddHandler** API 是採用一個 [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) 類型的參數來識別相關的路由事件。 並非所有路由事件都提供 **RoutedEvent** 識別項，因此這項考量也就影響到哪些路由事件仍然可以在 [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) 案例中處理。 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 與 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 上已有路由事件識別項 ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) 與 [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418))。 不過，其他事件 (例如 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706)) 並沒有路由事件識別項，因此也就不能與 **AddHandler** 技術搭配使用。
 
-### 覆寫鍵盤事件和行為
+### <a name="overriding-keyboard-events-and-behavior"></a>覆寫鍵盤事件和行為
 
 您可以覆寫特定控制項 (例如 [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) 的按鍵事件，為各種輸入裝置 (包括鍵盤與遊戲台) 提供一致的焦點瀏覽。
 
@@ -650,7 +654,7 @@ public class CustomGridView : GridView
 > [!NOTE]
 > 如果使用 GridView 只是為了版面配置，請考慮使用其他控制項，例如 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsControl) 與 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ItemsWrapGrid)。
 
-## 命令
+## <a name="commanding"></a>命令
 
 少數 UI 元素提供命令功能的內建支援。 命令功能在相關實作中使用輸入相關路由事件。 它會叫用單一命令處理常式來處理相關的 UI 輸入，例如特定指標動作或特定快速鍵。
 
@@ -658,7 +662,7 @@ public class CustomGridView : GridView
 
 您也可實作 [**ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) 來封裝從一般事件處理常式叫用的命令功能。 透過這種方式，即使沒有可用的 **Command** 屬性，您還是可以使用命令功能。
 
-## 文字輸入和控制項
+## <a name="text-input-and-controls"></a>文字輸入和控制項
 
 特定控制項會以它們自己的處理方式應對鍵盤事件。 例如，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 這個控制項的設計是擷取使用鍵盤輸入的文字，然後以視覺化方式呈現文字。 它在自己的邏輯中使用 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 與 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 來擷取按鍵輸入動作，然後如果文字真的變更了，就會引發它自己的 [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) 事件。
 
@@ -670,7 +674,7 @@ public class CustomGridView : GridView
 
 自訂控制項可以透過覆寫 [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983)，以實作它們自己類似的按鍵事件覆寫行為。 如果您的自訂控制項會處理特定的快速鍵，或具有類似於針對 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 所述之情況的控制項或焦點行為，就應該將這個邏輯放入您自己的 **OnKeyDown** / **OnKeyUp** 覆寫中。
 
-## 觸控式鍵盤
+## <a name="the-touch-keyboard"></a>觸控式鍵盤
 
 文字輸入控制項會自動支援觸控式鍵盤。 當使用者使用觸控輸入將輸入焦點設為文字控制項時，觸控式鍵盤會自動出現。 當輸入焦點不在文字控制項時，觸控式鍵盤就會隱藏起來。
 
@@ -680,10 +684,10 @@ public class CustomGridView : GridView
 
 按下觸控式鍵盤上的按鍵，就像按下硬體鍵盤上的按鍵一樣，都會引發 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 與 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件。 不過，觸控式鍵盤將不會引發 Ctrl+A、Ctrl+Z、Ctrl+X、Ctrl+C 以及 Ctrl+V 的輸入事件，因為它們是保留給輸入控制項的文字操作。
 
-您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的 app 中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 屬性設定為 [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028)。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。 如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
+您可以設定文字控制項的輸入範圍，使其符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 屬性設定為 [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028)。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。 如需詳細資訊，請參閱[使用輸入範圍來變更觸控式鍵盤](https://msdn.microsoft.com/library/windows/apps/mt280229)。
 
 
-## 本節中的其他文章
+## <a name="additional-articles-in-this-section"></a>本節中的其他文章
 
 <table>
 <colgroup>
@@ -693,18 +697,18 @@ public class CustomGridView : GridView
 <thead>
 <tr class="header">
 <th align="left">主題</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[回應觸控式鍵盤的出現](respond-to-the-presence-of-the-touch-keyboard.md)</p></td>
-<td align="left"><p>了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。</p></td>
+<td align="left"><p>了解如何量身打造顯示或隱藏觸控式鍵盤時應用程式的 UI。</p></td>
 </tr>
 </tbody>
 </table>
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 **開發人員**
 * [識別輸入裝置](identify-input-devices.md)
@@ -730,6 +734,6 @@ public class CustomGridView : GridView
 
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Dec16_HO2-->
 
 

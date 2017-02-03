@@ -6,11 +6,11 @@ ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
 label: Rich text block
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 82c7e80afde143d7d12bbf4fe49aa2c52f244f6f
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: a5a4c96723bd5c4cabdc7dd6dfc114b7af4d10f8
 
 ---
-# RTF 區塊
+# <a name="rich-text-block"></a>RTF 區塊
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,22 +19,14 @@ RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援�
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx"><strong>RichTextBlock 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx"><strong>RichTextBlockOverflow 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx"><strong>Paragraph 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx"><strong>Typography 類別</strong></a></li>
+<li>[**RichTextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
+<li>[**RichTextBlockOverflow 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)</li>
+<li>[**Paragraph 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)</li>
+<li> [**Typography 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 當您需要支援多個段落、多欄或其他複雜的文字配置，或內嵌的 UI 元素 (例如影像) 時，請使用 **RichTextBlock**。
 
@@ -42,10 +34,7 @@ RTF 區塊提供數個適用於進階文字配置的功能，當您需要支援�
 
 如需如何選擇正確文字控制項的詳細資訊，請參閱[文字控制項](text-controls.md)文章。
 
-## 範例
-
-
-## 建立 RTF 區塊
+## <a name="create-a-rich-text-block"></a>建立 RTF 區塊
 
 RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) 屬性，此屬性透過 [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素支援以段落為基礎的文字。 它沒有您可以用來輕鬆存取 app 中控制項文字內容的 **Text** 屬性。 不過，RichTextBlock 提供數種 TextBlock 不提供的獨特功能。 
 
@@ -54,7 +43,7 @@ RichTextBlock 支援：
 - 內嵌的 UI 元素。 使用 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 來顯示 UI 元素，例如內嵌文字的影像。
 - 溢出區的容器。 使用 [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素來建立多欄文字配置。
 
-### 段落
+### <a name="paragraphs"></a>段落
 
 您可以使用 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) 元素來定義要顯示在 RichTextBlock 控制項內的文字區塊。 每個 RichTextBlock 應該至少包含一個 Paragraph。 
 
@@ -68,7 +57,7 @@ RichTextBlock 支援：
 </RichTextBlock>
 ```
 
-### 內嵌的 UI 元素
+### <a name="inline-ui-elements"></a>內嵌的 UI 元素
 
 [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) 類別可讓您將任何 UIElement 內嵌於文字中。 常見的案例是將 Image 與您的文字內嵌在一起，但是您也可以使用互動式元素，例如 Button 或 CheckBox。
 
@@ -88,7 +77,7 @@ RichTextBlock 支援：
 </RichTextBlock>
 ```
 
-## 溢出區的容器
+## <a name="overflow-containers"></a>溢出區的容器
 
 您可以使用 RichTextBlock 搭配 [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) 元素來建立多欄或其他進階頁面配置。 RichTextBlockOverflow 元素的內容一律來自 RichTextBlock 元素。 您可以將 RichTextBlockOverflow 元素設定為 RichTextBlock 的 OverflowContentTarget 或另一個 RichTextBlockOverflow 來連結它們。
 
@@ -110,11 +99,11 @@ RichTextBlock 支援：
 </Grid>
 ```
 
-## 格式化文字
+## <a name="formatting-text"></a>格式化文字
 
 雖然 RichTextBlock 會儲存純文字，但是您可以套用不同的格式設定選項來自訂 app 中轉譯文字的方式。 您可以設定標準控制項屬性 (例如，FontFamily、FontSize、FontStyle、Foreground 及 CharacterSpacing) 來變更文字的外觀。 您也可以使用內嵌文字元素和 Typography 附加屬性來設定文字的格式。 這些選項只會影響 RichTextBlock 在本機顯示文字的方式，因此，舉例來說，如果您複製文字並貼到 RTF 控制項，就不會未套用任何格式設定。
 
-### 內嵌元素
+### <a name="inline-elements"></a>內嵌元素
 
 [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) 命名空間提供各種不同的內嵌文字元素，讓您可用來設定文字格式，例如 Bold、Italic、Run、Span 和 LineBreak。 將格式設定套用到區段的標準方法是將文字放置在 Run 或 Span 元素中，然後在該元素上設定屬性。
 
@@ -127,7 +116,7 @@ RichTextBlock 支援：
 </Paragraph>
 ```
 
-### 印刷樣式
+### <a name="typography"></a>印刷樣式
 
 [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) 類別的附加屬性提供一組 Microsoft OpenType 印刷樣式屬性的存取權。 您可以在 RichTextBlock 或個別的內嵌文字元素上設定這些附加屬性，如下所示。
 
@@ -140,13 +129,13 @@ RichTextBlock 支援：
 </RichTextBlock>
 ```
 
-## 建議
+## <a name="recommendations"></a>建議
 
 請參閱＜印刷樣式與字型的指導方針＞。
 
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 [文字控制項](text-controls.md)
 
@@ -165,6 +154,6 @@ RichTextBlock 支援：
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

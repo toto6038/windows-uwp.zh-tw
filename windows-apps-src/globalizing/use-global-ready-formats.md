@@ -1,34 +1,40 @@
 ---
 author: DelfCo
-Description: "藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，即可開發全球通用的 app。"
+Description: "藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，即可開發全球通用的應用程式。"
 title: "使用全球通用格式"
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 5255da14ccdd0aed3852c41fa662de63a7160fba
-ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
 
 ---
 
-# 使用全球通用格式
+# <a name="use-global-ready-formats"></a>使用全球通用格式
 
-**重要 API**
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
--   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
--   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)
+藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，即可開發全球通用的應用程式。 這可讓您的應用程式在將來因應全球市場中的其他文化特性、地區及語言。
 
-藉由為日期、時間、數字、電話號碼及貨幣進行適當的格式設定，即可開發全球通用的 app。 這可讓您的 app 在將來因應全球市場中的其他文化特性、地區及語言。
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)</li>
+<li>[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)</li>
+<li>[**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)</li>
+<li>[**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting)</li>
+</ul>
+</div>
 
-## 簡介
+
+## <a name="introduction"></a>簡介
 
 許多應用程式開發人員在建立應用程式時，都會自然而然地只顧慮到自己的語言和文化。 但是，當應用程式開始跨足其他市場時，調整應用程式以適應新語言和新區域就可能會遭遇意外的困難。 例如，日期、時間、數字、行事曆、貨幣、電話號碼、度量單位和紙張大小等項目，全部都可以根據不同的文化特性或語言以不同方式顯示。
 
 只要在開發應用程式時將幾個事項納入考量，就可以簡化適應新市場的程序。
 
-## 以適當方式格式化日期和時間
+## <a name="format-dates-and-times-appropriately"></a>以適當方式格式化日期和時間
 
 有許多方法可以正確顯示日期和時間。 不同的區域與文化會使用不同的慣例來排列日期的日、月順序、時間的小時和分鐘區隔方式，即使是做為分隔符號的標點符號也會有所不同。 此外，日期可能會因為不同文化而顯示為各種長格式 (「Wednesday, March 28, 2012」) 或短格式 (「3/28/12」)。 每種語言的星期幾與月份的名稱和縮寫當然也會有所不同。
 
@@ -56,7 +62,7 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
                   "Short Time: " + stime;
 ```
 
-## 以適當方式格式化數字及貨幣
+## <a name="format-numbers-and-currencies-appropriately"></a>以適當方式格式化數字及貨幣
 
 不同文化會以不同方式來格式化數字。 格式的差異可能是要顯示到小數第幾位、小數分隔符號要使用哪個字元，以及要使用哪個貨幣符號。 使用 [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) 來顯示小數點、百分比或千分比數字及貨幣。 在大部分情況下，您只要根據使用者目前的喜好設定來顯示數字或貨幣即可。 不過您也可以使用格式器來顯示特定區域或格式的貨幣。
 
@@ -94,14 +100,14 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
 ```
 
-## 使用符合當地文化的行事曆
+## <a name="use-a-culturally-appropriate-calendar"></a>使用符合當地文化的行事曆
 
 不同地區及語言的行事曆也有所不同。 公曆 (西曆) 不是每個地區的預設行事曆。 有些地區的使用者可能會選擇其他行事曆，像是日本年號年曆或阿拉伯陰曆。 不同的時區及日光節約時間也會對行事曆上的日期和時間有顯著影響。
 
 使用標準[日期和時間選擇器](https://msdn.microsoft.com/library/windows/apps/hh465466)控制項可讓使用者選擇日期，確保使用慣用的行事曆格式。 如果遇到更複雜的案例，需要在行事曆日期上直接使用操作，Windows.Globalization 可以提供 [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) 類別，針對特定文化、地區及行事曆類型，提供適當的行事曆表示法。
 
-## 以適當方式格式化電話號碼
-不同地區格式化電話號碼的方式也有所不同。 數字位數、數字分組方式及電話號碼特定部分的意義，都會隨每個國家/地區而有所不同。 從 Windows 10，版本 1607 開始，您可以使用 [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) 來針對目前地區適當地格式化電話號碼。
+## <a name="format-phone-numbers-appropriately"></a>以適當方式格式化電話號碼
+不同地區格式化電話號碼的方式也有所不同。 數字位數、數字分組方式及電話號碼特定部分的意義，都會隨每個國家/地區而有所不同。 從 Windows 10 版本 1607 開始，您可以使用 [**PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/Windows.Globalization.PhoneNumberFormatting) 來針對目前地區適當地格式化電話號碼。
 
 [**PhoneNumberInfo**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.phonenumberformatting.phonenumberinfo.aspx) 會剖析數字字串，並可讓您判斷數字是否為目前地區中的有效電話號碼、比較兩個號碼是否相等、並擷取電話號碼不同的功能部分，例如國碼 (地區碼)。
 
@@ -140,11 +146,11 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
     }
 ```    
 
-## 尊重使用者的語言及文化喜好設定
+## <a name="respect-the-users-language-and-cultural-preferences"></a>尊重使用者的語言及文化喜好設定
 
 如果要根據使用者的語言、地區或文化喜好設定提供不同功能，Windows 可以讓您透過 [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) 存取這些喜好設定。 如有需要，可以使用 **GlobalizationPreferences** 類別取得使用者目前地理區域、慣用語言、慣用貨幣等項目的值。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [針對全球市場進行規劃](https://msdn.microsoft.com/library/windows/apps/hh465405)
 * [日期和時間控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465466)
@@ -163,6 +169,6 @@ ms.openlocfilehash: 3615d1301a9d163390a2d709690c1e583c9b4f7e
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

@@ -1,41 +1,71 @@
 ---
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: "在 Windows 市集提交 API 中使用這些方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取資料。"
-title: "使用 Windows 市集提交 API 取得 App 資料"
+description: "在 Windows 市集提交 API 中使用這些方法，針對已登錄到您 Windows 開發人員中心帳戶的應用程式擷取資料。"
+title: "使用 Windows 市集提交 API 取得應用程式資料"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
+ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
+ms.openlocfilehash: 23839faca120976a07e666b9d6861aa8750898ad
 
 ---
 
-# 使用 Windows 市集提交 API 取得 App 資料
+# <a name="get-app-data-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式資料
 
-在 Windows 市集提交 API 中使用下列方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 取得資料。 如需 Windows 市集提交 API 的簡介，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+在 Windows 市集提交 API 中使用下列方法，取得您應用程式的資料。 如需 Windows 市集提交 API 的簡介，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**  這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 這些方法僅能用來取得 App 的資料。 若要為附加元件建立或管理提交，請參閱[管理 App 提交](manage-app-submissions.md)中的方法。
+>**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 這些方法僅能用來取得應用程式的資料。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
 
-| 方法        | URI    | 描述                                                                 |
-|---------------|--------|-----------------------------------------------------------------------------|
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` | 針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取資料。 如需詳細資訊，請參閱[取得所有 App](get-all-apps.md)。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}``` | 針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資料。 如需詳細資訊，請參閱[取得 App](get-an-app.md)。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts``` | 針對登錄到您 Windows 開發人員中心帳戶的 App 列出附加元件 (也稱為應用程式內產品或 IAP)。 如需詳細資訊，請參閱[取得 App 的附加元件](get-add-ons-for-an-app.md)。 |
-| GET | ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights``` | 針對已登錄到您 Windows 開發人員中心帳戶的 App 列出套件正式發行前小眾測試版。 如需詳細資訊，請參閱[取得 App 的套件正式發行前小眾測試版](get-flights-for-an-app.md)。 |
+<table>
+<colgroup>
+<col width="10%" />
+<col width="30%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">方法</th>
+<th align="left">URI</th>
+<th align="left">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications```</td>
+<td align="left">[取得您所有應用程式的資料](get-all-apps.md)</td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}```</td>
+<td align="left">[取得特定應用程式的資料](get-an-app.md)</td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts```</td>
+<td align="left">[取得應用程式的附加元件](get-add-ons-for-an-app.md)</td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights```</td>
+<td align="left">[取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md)</td>
+</tr>
+</tbody>
+</table>
 
 <span/>
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
 
-## 資源
+## <a name="data-resources"></a>資料資源
 
-這些方法會使用下列資源來格式化資料。
+Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用程式資料。
 
 <span id="application_object" />
-### 應用程式
+### <a name="application-resource"></a>應用程式資源
 
-此資源代表已登錄到您帳戶的應用程式。 下列範例示範此資源的格式。
+此資源代表已登錄到您帳戶的應用程式。
 
 ```json
 {
@@ -58,22 +88,22 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id            | 字串  | App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
-| primaryName   | 字串  | App 的主要名稱。                                                                                                                                                   |
-| packageFamilyName | 字串  | App 的套件系列名稱                                                                                                                                                                                                         |
-| packageIdentityName          | 字串  | App 的套件識別資料名稱。                                                                                                                                                              |
-| publisherName       | 字串  | 與 App 相關聯的 Windows 發行者識別碼。 這會對應到 Windows 開發人員中心儀表板中 App 的 [App 身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) 頁面上顯示的 **Package/Identity/Publisher** 值。                                                                                             |
-| firstPublishedDate      | 字串  | 第一次發佈 App 的日期 (格式為 ISO 8601)。                                                                                         |
-| lastPublishedApplicationSubmission       | object | 此物件可提供 App 最後一個發佈之提交的相關資訊。 如需詳細資訊，請參閱下方的[提交](#submission_object)一節。                                                                                                                                                          |
-| pendingApplicationSubmission        | object  |  此物件可提供 App 目前擱置中之提交的相關資訊。 如需詳細資訊，請參閱下方的[提交](#submission_object)一節。  |   |
+| 值           | 類型    | 說明       |
+|-----------------|---------|---------------------|
+| id            | 字串  | 應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
+| primaryName   | 字串  | 應用程式的主要名稱。      |
+| packageFamilyName | 字串  | 應用程式的套件系列名稱      |
+| packageIdentityName          | 字串  | 應用程式的套件識別資料名稱。                       |
+| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到 Windows 開發人員中心儀表板中應用程式的[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) 頁面上顯示的 **Package/Identity/Publisher** 值。       |
+| firstPublishedDate      | 字串  | 第一次發佈應用程式的日期 (格式為 ISO 8601)。   |
+| lastPublishedApplicationSubmission       | 物件 | [提交資源](#submission_object)，其提供應用程式最新發行提交的資訊。    |
+| pendingApplicationSubmission        | 物件  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   |
 
 
 <span id="add-on-object" />
-### 附加元件
+### <a name="add-on-resouce"></a>附加元件資源
 
-此資源提供附加元件的相關資訊。 下列範例示範此資源的格式。
+此資源提供附加元件的相關資訊。
 
 ```json
 {
@@ -83,15 +113,15 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 值           | 類型    | 說明         |
+|-----------------|---------|----------------------|
 | inAppProductId            | 字串  | 附加元件的市集識別碼。 此值由市集所提供。 市集識別碼範例為 9NBLGGH4TNMP。   |
 
 
 <span id="flight-object" />
-### 正式發行前小眾測試版
+### <a name="flight-resource"></a>正式發行前小眾測試版資源
 
-此資源提供 App 的套件正式發行前小眾測試版相關資訊。 下列範例示範此資源的格式。
+此資源提供應用程式的套件正式發行前小眾測試版相關資訊。
 
 ```json
 {
@@ -114,18 +144,18 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 值           | 類型    | 說明           |
+|-----------------|---------|------------------------|
 | flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 此值由開發人員中心提供。  |
 | friendlyName           | 字串  | 開發人員指定的套件正式發行前小眾測試版名稱。   |
-| lastPublishedFlightSubmission       | object | 此物件可提供套件正式發行前小眾測試版最後一個發佈之提交的相關資訊。 如需詳細資訊，請參閱下方的[提交](#submission_object)一節。  |
-| pendingFlightSubmission        | object  |  此物件可提供套件正式發行前小眾測試版目前擱置中之提交的相關資訊。 如需詳細資訊，請參閱下方的[提交](#submission_object)一節。  |    
+| lastPublishedFlightSubmission       | 物件 | [提交資源](#submission_object)，其提供套件正式發行前小眾測試版最新發行提交的資訊。   |
+| pendingFlightSubmission        | 物件  |  [提交資源](#submission_object)，其提供套件正式發行前小眾測試版目前擱置提交的資訊。  |    
 | groupIds           | 陣列  | 此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
 | rankHigherThan           | 字串  | 排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 
 <span id="submission_object" />
-### 提交
+### <a name="submission-resource"></a>提交資源
 
 此資源提供提交的相關資訊。 下列範例示範此資源的格式。
 
@@ -140,24 +170,24 @@ ms.openlocfilehash: 99d609decc8c38952961deac5bb8ec6926d91c88
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 值           | 類型    | 說明                 |
+|-----------------|---------|------------------------------|
 | id            | 字串  | 提交的識別碼。    |
-| resourceLocation   | 字串  | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。                                                                                                                                               |
+| resourceLocation   | 字串  | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。            |
  
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [使用 Windows 市集提交 API 管理 App 提交](manage-app-submissions.md)
-* [取得所有 App](get-all-apps.md)
-* [取得 App](get-an-app.md)
-* [取得 App 的附加元件](get-add-ons-for-an-app.md)
-* [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
+* [使用 Windows 市集提交 API 管理應用程式提交](manage-app-submissions.md)
+* [取得所有應用程式](get-all-apps.md)
+* [取得應用程式](get-an-app.md)
+* [取得應用程式的附加元件](get-add-ons-for-an-app.md)
+* [取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md)
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Dec16_HO3-->
 
 

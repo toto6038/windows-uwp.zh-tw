@@ -1,25 +1,29 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "這個主題描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。"
+Description: "這個主題描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。"
 title: "視覺化縮放和調整大小的指導方針"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 ---
 
-# 視覺化縮放和調整大小
+# <a name="optical-zoom-and-resizing"></a>視覺化縮放和調整大小
 
-這個文章描述 Windows 縮放和調整元素大小的方式，並提供在 App 中使用這些互動機制時的使用者經驗指導方針。
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-**重要 API**
+這個文章描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
 
--   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)</li>
+<li>[**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)</li>
+</ul>
+</div>
 
 視覺化縮放可以讓使用者將內容區域內的內容檢視放大 (執行對象是內容區域本身)，而調整大小則可以讓使用者變更一或多個物件的相對大小，卻不變更對該內容區域的檢視 (執行對象是內容區域內的物件)。
 
@@ -40,7 +44,7 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
  
 
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 對於支援調整大小或視覺化縮放的應用程式，請參考下列指導方針：
@@ -69,7 +73,7 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
      
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 **範例**
@@ -97,6 +101,6 @@ ms.openlocfilehash: 54c0dc3ffa9fd8716a8f147f408c1c8de5775783
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

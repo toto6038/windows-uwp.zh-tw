@@ -6,20 +6,23 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: 7db7c360c1e6e3cadf6423d888240bb2f0f4651a
 
 ---
 
-# 回應觸控式鍵盤出現
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤出現
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
 
-
-**重要 API**
-
--   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
--   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)</li>
+<li>[**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)</li>
+</ul>
+</div> 
 
 
 
@@ -48,7 +51,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
 如需有關設計的有用提示，並且讓 app 針對鍵盤輸入最佳化，請參閱[鍵盤設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh972345)。
 
-## 觸控式鍵盤和自訂 UI
+## <a name="touch-keyboard-and-a-custom-ui"></a>觸控式鍵盤和自訂 UI
 
 
 以下是自訂文字輸入控制項的一些基本建議。
@@ -63,7 +66,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
     因為觸控式鍵盤會遮住大部分的螢幕，所以 UWP 可確保當使用者瀏覽表單的控制項時 (包括目前不在檢視中的控制項)，輸入欄位是在捲動檢視的焦點。
 
-    自訂您的 UI 時，提供觸控式鍵盤外觀的類似行為，方法是處理 [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255) 物件公開的 [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件。
+    自訂您的 UI 時，提供觸控式鍵盤外觀的類似行為，方法是處理 [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242262) 物件公開的 [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242260) 和 [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242255) 事件。
 
     ![顯示和未顯示觸控式鍵盤的表單](images/touch-keyboard-pan1.png)
 
@@ -71,7 +74,7 @@ ms.openlocfilehash: 97a626aedff1b0915c845f151b16b3678e1cf977
 
     ![表單中包含應永久留在檢視中的區域](images/touch-keyboard-pan2.png)
 
-## 處理顯示和隱藏事件
+## <a name="handling-the-showing-and-hiding-events"></a>處理顯示和隱藏事件
 
 
 以下是對觸控式鍵盤 [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) 和 [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) 事件附加事件處理常式的範例。
@@ -124,7 +127,7 @@ public class MyApplication
 }
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 * [鍵盤互動](keyboard-interactions.md)
 * [鍵盤協助工具](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -146,6 +149,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

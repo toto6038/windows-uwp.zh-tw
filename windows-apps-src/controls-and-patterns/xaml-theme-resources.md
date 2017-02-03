@@ -9,13 +9,13 @@ ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 32b6685dfd04994d13dc8805c5205e87a20b10f1
-ms.openlocfilehash: 092b183ead828ae411ff64d37e581bbbb59a1f5b
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 9ee42532cb7f13d611e2365d7c9cf8f0532dd1c5
 
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+# <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
-# XAML 佈景主題資源
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主題套用不同的值。 XAML 架構支援的佈景主題有 3 個：Light、Dark 和 HighContrast。
 
@@ -23,22 +23,22 @@ XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主
 
 本主題假設您已閱讀 [ResourceDictionary 與 XAML 資源參考](resourcedictionary-and-xaml-resource-references.md)。
 
-## 佈景主題資源與靜態資源的不同之處
+## <a name="how-theme-resources-differ-from-static-resources"></a>佈景主題資源與靜態資源的不同之處
 
 有兩個 XAML 標記延伸可以參考現有 XAML 資源字典中的 XAML 資源：[{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)和 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)。
 
-在 app 載入時以及後續每次在執行階段變更佈景主題時，即會評估 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)。 這通常是因為使用者變更其裝置設定所導致，或者因為在 app 內以程式設計方式更改其目前佈景主題所導致。
+在應用程式載入時以及後續每次在執行階段變更佈景主題時，即會評估 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)。 這通常是因為使用者變更其裝置設定所導致，或者因為在應用程式內以程式設計方式更改其目前佈景主題所導致。
 
-相反地，只有在 app 第一次載入 XAML 時，才會評估 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。 它不會更新。 這類似於在 App 啟動時使用實際的執行階段值，在 XAML 中進行尋找並取代。
+相反地，只有在應用程式第一次載入 XAML 時，才會評估 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。 它不會更新。 這類似於在應用程式啟動時使用實際的執行階段值，在 XAML 中進行尋找並取代。
 
-## 佈景主題資源，以及它們符合資源字典結構的位置
+## <a name="theme-resources-and-where-they-fit-in-the-resource-dictionary-structure"></a>佈景主題資源，以及它們符合資源字典結構的位置
 
 
 每個佈景主題資源都是 XAML 檔案 themeresources.xaml 的一部分。 基於設計目的，Windows 軟體開發套件 (SDK) 安裝的 \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic 資料夾中會提供 themeresources.xaml。 themeresources.xaml 中的資源字典也會重現於相同目錄的 generic.xaml 中。
 
-> **注意**  Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 因此特別將它們放在 DesignTime 資料夾中，而且預設也不會複製到 app。 相反地，這些資源字典會保留在記憶體中成為 Windows 執行階段本身的一部分，而您 app 的 XAML 資源會參考在執行階段於記憶體中解析的佈景主題資源 (或系統資源)。
+> **注意**&nbsp;&nbsp;Windows 執行階段不會使用這些實體檔案進行執行階段查詢。 因此特別將它們放在 DesignTime 資料夾中，而且預設也不會複製到應用程式。 相反地，這些資源字典會保留在記憶體中成為 Windows 執行階段本身的一部分，而您應用程式的 XAML 資源會參考在執行階段於記憶體中解析的佈景主題資源 (或系統資源)。
 
- ## 使用佈景主題資源的指導方針
+ ## <a name="guidelines-for-using-theme-resources"></a>使用佈景主題資源的指導方針
 
 當您定義並取用自己的自訂佈景主題資源時，請遵循下列指導方針。
 
@@ -49,22 +49,22 @@ XAML 中的佈景主題資源是一組資源，可根據作用的系統佈景主
 
 請勿執行下列動作：
 
--   在 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 內的資源定義中使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)。 改用 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。
+-   在 [**ThemeDictionaries**](../xaml-platform/themeresource-markup-extension.md) 內的資源定義中使用 [{ThemeResource} 標記延伸](https://msdn.microsoft.com/library/windows/apps/br208807)。 改用 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。
 
-    例外狀況：可以使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)，來參考 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 中 app 佈景主題無從驗證的資源。 這些資源的範例為輔色資源 (例如 `SystemAccentColor`)，或系統色彩資源 (通常包含 "SystemColor" 前置碼，例如 `SystemColorButtonFaceColor`)。
+    例外狀況：可以使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)，來參考 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 中應用程式佈景主題無從驗證的資源。 這些資源的範例為輔色資源 (例如 `SystemAccentColor`)，或系統色彩資源 (通常包含 "SystemColor" 前置碼，例如 `SystemColorButtonFaceColor`)。
 
-**注意** 如果您未遵循這些指導方針，可能會看到與您的 app 中佈景主題相關的非預期行為。 如需詳細資訊，請參閱[疑難排解佈景主題資源](#troubleshooting_theme_resources)一節。
+**注意**  如果您未遵循這些指導方針，可能會看到與您的應用程式中佈景主題相關的非預期行為。 如需詳細資訊，請參閱[疑難排解佈景主題資源](#troubleshooting_theme_resources)一節。
  
 
-## XAML 色彩坡形和佈景主題相依的筆刷
+## <a name="the-xaml-color-ramp-and-theme-dependent-brushes"></a>XAML 色彩坡形和佈景主題相依的筆刷
 
 適用於 "Light"、"Dark" 及 "HighContrast" 佈景主題的色彩組合可在 XAML 中組成 [Windows 色彩坡度]**。 不論您是否想要修改系統佈景主題，或者將系統佈景主題套用到自己的 XAML 元素，都請務必了解色彩資源的結構。
 
-### Light 和 Dark 佈景主題色彩
+### <a name="light-and-dark-theme-colors"></a>Light 和 Dark 佈景主題色彩
 
 XAML 架構提供一組已命名的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 資源，其中包含針對 "Light" 和 "Dark" 佈景主題量身訂做的值。 您用來參考這些項目的索引鑰需遵循下列命名格式：`System[Simple Light/Dark Name]Color`。
 
-此表格會列出索引鍵、簡單名稱，以及代表色彩的字串 (使用 \#aarrggbb 格式)，適用於 XAML 架構提供的 "Light" 和 "Dark" 資源。 索引鑰可用來參考 app 中的資源。 「簡單的亮色調/暗色調名稱」是用來做為筆刷命名慣例的一部分 (稍後將會說明)。
+此表格會列出索引鍵、簡單名稱，以及代表色彩的字串 (使用 \#aarrggbb 格式)，適用於 XAML 架構提供的 "Light" 和 "Dark" 資源。 索引鑰可用來參考應用程式中的資源。 「簡單的亮色調/暗色調名稱」是用來做為筆刷命名慣例的一部分 (稍後將會說明)。
 
 | 索引鍵                             | 簡單的亮色調/暗色調名稱 | 亮色調      | 暗色調       |
 |---------------------------------|------------------------|------------|------------|
@@ -94,9 +94,9 @@ XAML 架構提供一組已命名的 [**Color**](https://msdn.microsoft.com/libra
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
 
-### Windows 系統的高對比色彩
+### <a name="windows-system-high-contrast-colors"></a>Windows 系統的高對比色彩
 
-除了由 XAML 架構提供的資源組，還有一組衍生自 Windows 系統調色盤的色彩值。 這些色彩並不是 Windows 執行階段或通用 Windows 平台 (UWP) app 專用的。 不過，當系統的運作 (和 app 的執行) 是使用 "HighContrast" 佈景主題時，有許多 XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 資源會取用這些色彩。 XAML 架構提供這些全系統的色彩做為已設定索引鍵的資源。 索引鍵需遵循下列命名格式：`SystemColor[name]Color`。
+除了由 XAML 架構提供的資源組，還有一組衍生自 Windows 系統調色盤的色彩值。 這些色彩並不是 Windows 執行階段或通用 Windows 平台 (UWP) 應用程式專用的。 不過，當系統的運作 (和應用程式的執行) 是使用 "HighContrast" 佈景主題時，有許多 XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 資源會取用這些色彩。 XAML 架構提供這些全系統的色彩做為已設定索引鍵的資源。 索引鍵需遵循下列命名格式：`SystemColor[name]Color`。
 
 此表格列出全系統的色彩，XAML 可提供來做為衍生自 Windows 系統調色盤的資源物件。 [輕鬆存取名稱] 欄顯示如何在 Windows 設定 UI 中標示色彩。 [簡單的高對比名稱] 欄是簡單的說明，描述色彩如何套用到 XAML 通用控制項的方式。 它是用來做為筆刷命名慣例的一部分 (稍後將會說明)。 [初始預設值] 欄顯示若系統完全不是以高對比執行時您會獲得的值。
 
@@ -118,15 +118,15 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 
 如需支援高對比佈景主題的詳細資訊，請參閱[高對比佈景主題](https://msdn.microsoft.com/library/windows/apps/mt244346)。
 
-### 系統輔色
+### <a name="system-accent-color"></a>系統輔色
 
 除了系統高對比佈景主題色彩以外，還使用索引鍵 `SystemAccentColor` 來提供系統輔色做為特殊的色彩資源。 在執行階段，這個資源會取得使用者已在 Windows 個人化設定中指定為輔色的色彩。
 
-> **注意**  您可以藉由建立具備相同名稱的資源來覆寫適用於高對比色彩和輔色的系統色彩資源，但是尊重使用者的色彩選擇仍然是最佳做法，特別是針對高對比設定。
+> **注意**&nbsp;&nbsp;您可以藉由建立具備相同名稱的資源來覆寫適用於高對比色彩和輔色的系統色彩資源，但是尊重使用者的色彩選擇仍然是最佳做法，特別是針對高對比設定。
 
-### 佈景主題相依筆刷
+### <a name="theme-dependent-brushes"></a>佈景主題相依筆刷
 
-前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 資源的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
+前述各節中顯示的色彩資源可用來設定系統佈景主題資源字典中 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242963) 資源的 [**Color**](https://msdn.microsoft.com/library/windows/apps/br242962) 屬性。 您可以使用筆刷資源，將色彩套用到 XAML 元素。 適用於筆刷資源的索引鍵會遵循下列命名格式：`SystemControl[Simple HighContrast name][Simple light/dark name]Brush`。 例如，`SystemControlBackroundAltHighBrush`。
 
 讓我們看看如何在執行階段決定此筆刷的色彩值。 在 "Light" 和 "Dark" 資源字典中，此筆刷的定義如下：
 
@@ -150,19 +150,19 @@ Windows 提供不同的高對比佈景主題，可讓使用者透過 [輕鬆存�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注意**  並非每個 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 組合都是提供來做為筆刷資源。
+> **注意**&nbsp;&nbsp;並非每個 \[*Simple HighContrast name*\]\[*Simple light/dark name*\] 組合都是提供來做為筆刷資源。
 
-## XAML 字體坡形
+## <a name="the-xaml-type-ramp"></a>XAML 字體坡形
 
 themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI 中文字容器的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)，特別是針對 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 或 [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)。 這些不是預設的隱含樣式。 提供這些資源是為了讓您更容易建立符合[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394)中所記載之 *Windows 字體坡形*的 XAML UI 定義。
 
-這些樣式是用於您想要套用到整個文字容器的文字屬性。 如果只想將樣式套用到文字的區段，請針對容器內的文字元素設定屬性，例如，[**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) 中的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) 或 [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) 中的 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)。
+這些樣式是用於您想要套用到整個文字容器的文字屬性。 如果只想將樣式套用到文字的區段，請針對容器內的文字元素設定屬性，例如，[**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209959) 中的 [**Run**](https://msdn.microsoft.com/library/windows/apps/br209668) 或 [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244503) 中的 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244347)。
 
 當套用至 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 時樣式看起來像這樣：
 
 ![文字區塊樣式](images/text-block-type-ramp.png)
 
-### BaseTextBlockStyle
+### <a name="basetextblockstyle"></a>BaseTextBlockStyle
 
 **TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
@@ -184,7 +184,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### HeaderTextBlockStyle
+### <a name="headertextblockstyle"></a>HeaderTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -199,7 +199,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### SubheaderTextBlockStyle
+### <a name="subheadertextblockstyle"></a>SubheaderTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -214,7 +214,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### TitleTextBlockStyle
+### <a name="titletextblockstyle"></a>TitleTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -229,7 +229,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### SubtitleTextBlockStyle
+### <a name="subtitletextblockstyle"></a>SubtitleTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -244,7 +244,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### BodyTextBlockStyle
+### <a name="bodytextblockstyle"></a>BodyTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -258,7 +258,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### CaptionTextBlockStyle
+### <a name="captiontextblockstyle"></a>CaptionTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -272,7 +272,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### BaseRichTextBlockStyle
+### <a name="baserichtextblockstyle"></a>BaseRichTextBlockStyle
 
 **TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
@@ -297,7 +297,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-### BodyRichTextBlockStyle
+### <a name="bodyrichtextblockstyle"></a>BodyRichTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -311,13 +311,13 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-> **注意**   [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
+> **備註**&nbsp;&nbsp;  [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
 
-## 其他具名樣式
+## <a name="miscellaneous-named-styles"></a>其他具名樣式
 
 其他還有一組已設定索引鍵的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義，您可套用來為 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 設定與其預設隱含樣式不同的樣式。
 
-### TextBlockButtonStyle
+### <a name="textblockbuttonstyle"></a>TextBlockButtonStyle
 
 **TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
@@ -336,11 +336,11 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ![已設定按鈕樣式，使其看起來就像文字](images/styles-textblock-button-style.png)
 
-### NavigationBackButtonNormalStyle
+### <a name="navigationbackbuttonnormalstyle"></a>NavigationBackButtonNormalStyle
 
 **TargetType**：[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-這個 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 提供可做為瀏覽 app 之向後瀏覽按鈕的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 完整範本。 其中包含佈景主題資源參考，讓此按鈕可使用 Segoe MDL2 Assets 符號字型，因此，您應該使用 [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) 值做為內容，而不是文字。 預設尺寸是 40 x 40 像素。 若要量身打造樣式，您可以在 **Button** 上明確設定 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) 及其他屬性，或者使用 [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) 建立衍生的樣式。
+這個 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 提供可做為瀏覽應用程式之向後瀏覽按鈕的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 完整範本。 其中包含佈景主題資源參考，讓此按鈕可使用 Segoe MDL2 Assets 符號字型，因此，您應該使用 [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) 值做為內容，而不是文字。 預設尺寸是 40 x 40 像素。 若要量身打造樣式，您可以在 **Button** 上明確設定 [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406) 及其他屬性，或者使用 [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) 建立衍生的樣式。
 
 以下是套用到它的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 與 **NavigationBackButtonNormalStyle** 資源。
 
@@ -353,11 +353,11 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ![將按鈕樣式設定為返回按鈕](images/styles-back-button-normal.png)
 
-### NavigationBackButtonSmallStyle
+### <a name="navigationbackbuttonsmallstyle"></a>NavigationBackButtonSmallStyle
 
 **TargetType**：[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-這個 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 提供可做為瀏覽 app 之向後瀏覽按鈕的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 完整範本。 與 **NavigationBackButtonNormalStyle** 類似，但尺寸是 30 x 30 像素。
+這個 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 提供可做為瀏覽應用程式之向後瀏覽按鈕的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 完整範本。 與 **NavigationBackButtonNormalStyle** 類似，但尺寸是 30 x 30 像素。
 
 以下是套用到它的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 與 **NavigationBackButtonSmallStyle** 資源。
 
@@ -366,14 +366,14 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
         Click="Button_Click"/>
 ```
 
-## 疑難排解佈景主題資源
+## <a name="troubleshooting-theme-resources"></a>疑難排解佈景主題資源
 
 
-如果您未遵循[使用佈景主題資源的指導方針](#guidelines_for_using_theme_resources)，可能會看到與您的 App 中佈景主題相關的非預期行為。
+如果您未遵循[使用佈景主題資源的指導方針](#guidelines_for_using_theme_resources)，可能會看到與您的應用程式中佈景主題相關的非預期行為。
 
-例如，當您開啟亮色調佈景主題的飛出視窗時，暗色調佈景主題 App 的部分也會變更，就像它們是處於亮色調佈景主題中。 或者，如果您瀏覽到亮色調佈景主題頁面，然後瀏覽回來，則原始的暗色調佈景主題頁面 (或它的某些部分) 現在看起來就像是在亮色調佈景主題中。
+例如，當您開啟亮色調佈景主題的飛出視窗時，暗色調佈景主題應用程式的部分也會變更，就像它們是處於亮色調佈景主題中。 或者，如果您瀏覽到亮色調佈景主題頁面，然後瀏覽回來，則原始的暗色調佈景主題頁面 (或它的某些部分) 現在看起來就像是在亮色調佈景主題中。
 
-通常這些類型的問題會在您提供 "Default" 佈景主題和 "HighContrast" 佈景主題以支援高對比案例，然後在 app 的不同部分使用 "Light" 和 "Dark" 佈景主題時發生。
+通常這些類型的問題會在您提供 "Default" 佈景主題和 "HighContrast" 佈景主題以支援高對比案例，然後在應用程式的不同部分使用 "Light" 和 "Dark" 佈景主題時發生。
 
 以這個佈景主題字典定義為例：
 
@@ -391,7 +391,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </ResourceDictionary>
 ```
 
-直覺看來這是正確的。 在處於高對比時，您想要變更 `myBrush` 所指向的色彩，但在非高對比時，您可以依賴 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)來確定 `myBrush` 會指向適用於佈景主題的正確色彩。 如果您的 app 絕對不會在其視覺化樹狀結構內的元素上設定 [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515)，這通常會以預期的方式運作。 不過，一旦您開始重新為視覺化樹狀結構的不同部分設定佈景主題，就會立即在 app 中遇到問題。
+直覺看來這是正確的。 在處於高對比時，您想要變更 `myBrush` 所指向的色彩，但在非高對比時，您可以依賴 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)來確定 `myBrush` 會指向適用於佈景主題的正確色彩。 如果您的應用程式絕對不會在其視覺化樹狀結構內的元素上設定 [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515)，這通常會以預期的方式運作。 不過，一旦您開始重新為視覺化樹狀結構的不同部分設定佈景主題，就會立即在應用程式中遇到問題。
 
 與大部分其他的 XAML 類型不同，由於筆刷是共用的資源，因此會發生此問題。 如果您在含有不同佈景主題的 XAML 樹狀子目錄中擁有 2 個參考同一個筆刷資源的元素，則當架構進行到每個樹狀子目錄來更新其 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)運算式時，對於共用筆刷資源的變更即會反映在其他樹狀子目錄中，而這並非您想要的結果。
 
@@ -420,7 +420,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 到目前為止，架構會顯示為已干擾了您的佈景主題字典，因為它現在擁有來自某一個字典的資源，而其色彩是從其他字典設定的。
 
-若要解決此問題，請不要使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)，改用 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。 套用指導方針之後，佈景主題字典看起來像這樣：
+若要解決此問題，請不要使用 [{ThemeResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)，改用 [{StaticResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)。 套用指導方針之後，佈景主題字典看起來像這樣：
 
 ```XAML
 <ResourceDictionary>
@@ -444,6 +444,6 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

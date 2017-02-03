@@ -6,9 +6,14 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen interactions and Windows Ink in UWP apps
 template: detail.hbs
 keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 0f7f54c5c5baccdedfe32bc7c71994e43a93f032
-ms.openlocfilehash: 49098df1bf7fb72264a633aae37f941951cee2cf
+ms.sourcegitcommit: c5e42f812cc0ed128ebb5c533ef72539baeef93d
+ms.openlocfilehash: f2de946ca7210cf3f4c170c73902c1a727067e7c
 
 ---
 
@@ -106,7 +111,7 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 除了提供其對應 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項的所有預設筆墨行為，[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 也會提供一組完整的 API 來進行額外的筆劃自訂。 這包括筆劃屬性、支援的輸入裝置類型，以及輸入是否是由物件所處理或者會傳遞到 app。
 
 > [!NOTE]
-> [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不會直接具現化。 而是透過 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 屬性來存取。 
+> [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 不會直接具現化。 而是透過 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn858535) 屬性來存取。 
 
 我們會在此處設定[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃。 我們也會設定一些初始筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 
@@ -256,11 +261,11 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 3.  接下來，我們會設定 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081)，將來自畫筆和滑鼠的輸入資料解譯為筆墨筆劃，並設定一些初始的筆墨筆劃屬性，以用來將筆劃轉譯到 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)。
 
-    最重要的是，我們會使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760) 的 **InputProcessingConfiguration.RightDragAction** 值來指定。
+    最重要的是，我們會使用 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn948764) 的 [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn899081) 屬性來表示 app 應該處理所有修改的輸入。 修改的輸入是藉由指派 [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760) 的 **InputProcessingConfiguration.RightDragAction** 值來指定。
 
     接著，會針對未處理的 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712) 、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) 事件指派接聽程式，這些事件是透過 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 來傳入。 所有的選取功能都是在這些事件的處理常式中實作的。
 
-    最後，會針對 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) 的 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) 和 [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) 事件指派接聽程式 。 如果開始新的筆劃或擦掉了現有的筆劃，我們就會使用這些事件的處理常式來清除 UI 選取項目。
+    最後，會針對 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn914702) 的 [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn948767) 和 [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn899081) 事件指派接聽程式 。 如果開始新的筆劃或擦掉了現有的筆劃，我們就會使用這些事件的處理常式來清除 UI 選取項目。
 
     ![含有預設黑色筆墨筆劃的 InkCanvas](images/ink-unprocessed-2-small.png)
 

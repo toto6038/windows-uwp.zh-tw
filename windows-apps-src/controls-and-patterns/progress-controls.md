@@ -6,11 +6,11 @@ ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 5679c2bb8e8b3fff205f8071fcf52a52e0c939cd
 
 ---
-# 進度控制項
+# <a name="progress-controls"></a>進度控制項
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -19,21 +19,14 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx"><strong>ProgressBar 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx"><strong>IsIndeterminate 屬性</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx"><strong>ProgressRing 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx"><strong>IsActive 屬性</strong></a></li>
+<li>[**ProgressBar 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</li>
+<li>[**IsIndeterminate 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)</li>
+<li>[**ProgressRing 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</li>
+<li>[**IsActive 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)</li>
 </ul>
-
-</div>
 </div>
 
-
-
-
-
-
-## 進度的類型
+## <a name="types-of-progress"></a>進度的類型
 
 有兩種控制項會向使用者顯示操作正在進行中：ProgressBar 或 ProgressRing。
 
@@ -51,11 +44,11 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
 *「不確定」的 ProgressRing*
 
-## 各控制項的使用時機
+## <a name="when-to-use-each-control"></a>各控制項的使用時機
 
 發生中的事要使用何種控制項或狀態來顯示不一定總是明確。 有時候工作本身已足夠明顯，因此完全不需要進度控制項 – 而有時候即使用了進度控制項，卻仍需要文字來向使用者說明進行中的作業。
 
-### ProgressBar
+### <a name="progressbar"></a>ProgressBar
 -   **控制項是否有已定義的持續時間或可預測的結束時間？**
 
     如果有，則使用「確定」的 ProgressBar，並據此更新其百分比或值。
@@ -72,7 +65,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
     - *正在抓取*
     - *處理中...*
 
-### ProgressRing
+### <a name="progressring"></a>ProgressRing
 
 -   **該作業是否會導致使用者必須等候才能繼續？**
 
@@ -90,7 +83,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
     - *正在登入...*
     - *連線中...*
 
-### 不需要進度指示
+### <a name="no-progress-indication-necessary"></a>不需要進度指示
 -   **使用者是否需要知道發生什麼事？**
 
     例如，如果 App 正在背景進行下載，而使用者並未起始下載，則使用者不需要知道這項下載作業。
@@ -103,7 +96,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
     有時最好只在作業完成時顯示通知，或在作業完成時立即提供視覺提示，並在背景完成最終作業。
 
-## 進度控制項的最佳做法
+## <a name="progress-controls-best-practices"></a>進度控制項的最佳做法
 
 有時看一些不同進度控制項的使用時機與方式的視覺化範例會比較清楚：
 
@@ -129,7 +122,7 @@ ms.openlocfilehash: de18267de982ef50913ed605e7a9272f7f8c476b
 
 當使用者與 App 間任何進一步的互動會被阻擋時，或 App 正在等候使用者輸入以繼續時，使用「不確定」的 ProgressRing。 「正在登入...」 上方的範例是絕佳的 ProgressRing 案例，使用者必須登到登入完成才能繼續使用 App。
 
-## 自訂進度控制項
+## <a name="customizing-a-progress-control"></a>自訂進度控制項
 
 這兩種進度控制項都較為簡易，但要自訂某些視覺化功能的方法則較不明顯。
 
@@ -171,7 +164,7 @@ progressRing.IsActive = true;
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 
 - [**ProgressBar 類別**](https://msdn.microsoft.com/library/windows/apps/br227529)
@@ -183,6 +176,6 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

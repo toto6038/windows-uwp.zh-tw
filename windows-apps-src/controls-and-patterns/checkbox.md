@@ -6,11 +6,11 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
+ms.openlocfilehash: 874d1a7200359ecc46b26b306b208946c7a6f273
 
 ---
-# 核取方塊
+# <a name="check-boxes"></a>核取方塊
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -21,20 +21,14 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 <div class="important-apis" >
 <b>重要 API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/br209316"><strong>CheckBox 類別</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx"><strong>Checked 事件</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx"><strong>IsChecked 屬性</strong></a> </li>
+<li>[**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
+<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
+<li>[**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
 </ul>
-
-</div>
 </div>
 
 
-
-
-
-
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 針對二元 (是/否) 選項 (例如用於 [記住我?]) 使用**單一核取方塊** 登入案例或是用於服務合約條款。
 
@@ -54,7 +48,7 @@ ms.openlocfilehash: f565acbebbee8b8fb88a72970c9dbe3202ba24df
 
 **核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
 
-## 範例
+## <a name="examples"></a>範例
 
 Microsoft Edge 瀏覽器中對話方塊上的核取方塊。
 
@@ -64,7 +58,7 @@ Windows 中 [鬧鐘與時鐘] app 上的核取方塊。
 
 ![Windows 中 [鬧鐘與時鐘] app 上的核取方塊](images/control-examples/check-box-alarm.png)
 
-## 建立核取方塊
+## <a name="create-a-checkbox"></a>建立核取方塊
 
 若要對核取方塊指派標籤，請使用 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性。 標籤會顯示在核取方塊旁邊。
 
@@ -82,13 +76,13 @@ CheckBox checkBox1 = new CheckBox();
 checkBox1.Content = "I agree to the terms of service.";
 ```
 
-### 繫結到 IsChecked
+### <a name="bind-to-ischecked"></a>繫結到 IsChecked
 
 使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
 
 在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
 
-> 請注意  我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
+> 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
 ```xaml
 ...
@@ -127,7 +121,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 }
 ```
 
-### 處理 Click 和 Checked 事件
+### <a name="handle-click-and-checked-events"></a>處理 Click 和 Checked 事件
 
 若要在核取方塊狀態變更時執行動作，您可以處理 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件，或者 [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
 
@@ -180,7 +174,7 @@ private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### 使用不確定狀態
+### <a name="use-the-indeterminate-state"></a>使用不確定狀態
 
 CheckBox 控制項是繼承自 [ToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.aspx)，且可以有三種狀態︰ 
 
@@ -276,7 +270,7 @@ private void SetCheckedState()
 }
 ```
 
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   確認核取方塊的目的和目前狀態非常明確。
 -   將核取方塊文字內容限制在兩行以內。
@@ -298,7 +292,7 @@ private void SetCheckedState()
     ![含有三個選項的選項按鈕群組：「不辣」、「辣」以及「非常辣」](images/spicyoptions.png)
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 -   [**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [選項按鈕](radio-button.md)
@@ -308,6 +302,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

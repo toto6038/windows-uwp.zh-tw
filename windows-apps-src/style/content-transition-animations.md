@@ -3,26 +3,27 @@ author: mijacobs
 Description: "內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。"
 title: "內容轉換動畫的指導方針"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
+template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: d7236006f2c620a4ff0de4e0f413f32a2eaf5687
-ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
 
 ---
 
-# 內容轉換動畫
+# <a name="content-transition-animations"></a>內容轉換動畫
 
-
-
-
-
-**重要 API**
-
--   [**ContentThemeTransition 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)
--   [**enterContent function (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh701582)
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。
 
-## 可行與禁止事項
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**ContentThemeTransition 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br243104)</li>
+</ul>
+</div>
+
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 -   如果要將一組新項目放入空的容器，可使用進入動畫。 例如，初次載入應用程式後，應用程式的內容部分可能無法立即顯示。 等到內容準備好可以顯示後，使用內容轉換動畫，將最新內容帶入檢視中。
@@ -35,7 +36,7 @@ ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 **適用於開發人員 (XAML)**
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
@@ -53,6 +54,6 @@ ms.openlocfilehash: 2b3e0196b573fb426c9cd71fc613819a2dd2d615
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

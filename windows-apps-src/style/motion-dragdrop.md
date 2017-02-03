@@ -6,24 +6,27 @@ ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
+ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.openlocfilehash: e71b936be1649f8ede394b019369176c7e3ca631
 
 ---
 
-# 拖曳動畫
+# <a name="drag-animations"></a>拖曳動畫
 
 
-
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 在使用者移動物件 (例如移動清單內的項目或將項目放到另一個清單的頂端) 時，使用拖放動畫。
 
-**重要 API**
+<div class="important-apis" >
+<b>重要 API</b><br/>
+<ul>
+<li>[**DragItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243174)</li>
+</ul>
+</div>
 
--   [**DragItemThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
-
-## 可行與禁止事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 
 **拖曳開始動畫**
@@ -52,9 +55,9 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 -   如果沒有先使用拖曳到物件之間進入動畫，則不要使用拖曳到物件之間離開動畫。
 
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
-**適用於開發人員 (XAML)**
+**適用於開發人員**
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
 * [讓拖放序列產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
@@ -71,6 +74,6 @@ ms.openlocfilehash: 58934982554aa3caf0060c84df113d483e62e1d2
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 

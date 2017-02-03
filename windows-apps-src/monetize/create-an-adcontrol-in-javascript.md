@@ -4,55 +4,46 @@ ms.assetid: 48a1ef86-8514-4af8-9c93-81e869d36de7
 description: "了解如何以程式設計方式，使用 JavaScript 建立 **AdControl**。"
 title: "使用 JavaScript 建立 AdControl"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 68bc124aea079bc60fa22e1e6a038caf95fe765c
+ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
+ms.openlocfilehash: d7ecb5205d9668f83d2619869baafd569b581078
 
 
 ---
 
-# 使用 JavaScript 建立 AdControl
+# <a name="create-an-adcontrol-in-javascript"></a>使用 JavaScript 建立 AdControl
 
 
 
 
-此範例說明如何以程式設計方式，使用 JavaScript 建立 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)。
+本文中的範例示範如何以程式設計方式，使用 JavaScript 建立 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)。 本文假設您已新增專案使用 **AdControl** 的必要參考。 如需詳細資訊 (包含在 HTML 標註而非 JavaScript 中建立和初始化 **AdControl** 的詳細逐步解說)，請參閱 [HTML 5 和 JavaScript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。
 
-## 適用於 AdControl 的 HTML div
+## <a name="html-div-for-an-adcontrol"></a>適用於 AdControl 的 HTML div
 
 在顯示廣告的 HTML 頁面上，**AdControl** 必須具有 **div**。 下列程式碼提供此類 **div** 的範例。
 
-``` syntax
+> [!div class="tabbedCodeSnippets"]
+``` html
 <div id="myAd" style="position: absolute; top: 50px; left: 0px; width: 300px; height: 250px; z-index: 1"
     data-win-control="MicrosoftNSJS.Advertising.AdControl">
 </div>
 ```
 
-## 適用於建立 AdControl 的 JavaScript
+## <a name="javascript-for-creating-an-adcontrol"></a>適用於建立 AdControl 的 JavaScript
 
 下列範例假設您透過識別碼 **myAd**，在 HTML 中使用現有的 **div**。
 
 在 **app.onactivated** 函式中，具現化 **AdControl**。
 
-``` syntax
-// TODO: This application has been newly launched. Initialize
-// your application here.
-var adDiv = document.getElementById("myAd");
-var myAdControl = new MicrosoftNSJS.Advertising.AdControl(adDiv,
-    {
-        applicationId: "3f83fe91-d6be-434d-a0ae-7351c5a997f1",
-        adUnitId: "10865270"
-    });
-myAdControl.isAutoRefreshEnabled = false;
-myAdControl.onErrorOccurred = myAdError;
-myAdControl.onAdRefreshed = myAdRefreshed;
-myAdControl.onEngagedChanged = myAdEngagedChanged;
-```
+> [!div class="tabbedCodeSnippets"]
+[!code-javascript[AdControl](./code/AdvertisingSamples/AdControlSamples/js/main.js#DeclareAdControl)]
 
-這些值為範例。 您會在您的程式碼中設定適合您 App 的這些函式和屬性的值。
+此範例假設您已宣告名為 **myAdError**、**myAdRefreshed** 和 **myAdEngagedChanged** 的事件處理常式方法。
+
+>**注意**&nbsp;&nbsp;此範例中所顯示的 *applicationId* 和 *adUnitId* 值是[測試模式值](test-mode-values.md)。 您必須先從 Windows 開發人員中心[將這些值取代為實際值](set-up-ad-units-in-your-app.md)，再提交應用程式以進行提交。
 
 若您使用此程式碼但未看到廣告，則可嘗試將 **position:relative** 的屬性，插入於包含 **AdControl** 的 **div**。 這將會覆寫 **IFrame** 的預設設定。 將會正確顯示廣告，除非由於此屬性的值致使未顯示這些廣告。 請注意，可能會有長達 30 分鐘的時間無法使用新廣告單位。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
@@ -62,6 +53,6 @@ myAdControl.onEngagedChanged = myAdEngagedChanged;
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Dec16_HO2-->
 
 
