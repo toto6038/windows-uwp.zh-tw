@@ -6,7 +6,7 @@ ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
 label: Put UI strings into resources
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
+ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
 ms.openlocfilehash: dff1e6df480a1ffc0e2441c78b942ccd0ee2126c
 
 ---
