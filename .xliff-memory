@@ -798,7 +798,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\dff1e6df480a1ffc0e2441c78b942ccd0ee2126c.bdd02cffeda4ae39a26cbae2054047471e591885.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\put-ui-strings-into-resources.89bd8b7b1f026196161eb9af87410dcedb962a0d.zh-tw.xlf",
-      "LocXliffCommit": "597ed7945dd67f8380f3755c7d475add6d3abdcf"
+      "LocXliffCommit": "3581bbae3f962fb46b439f0a5df014c97ad21d64"
     },
     "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md.15606b4067a349a33a99e05ff99968d6ac680178.HT": {
       "SourceFilename": "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md",
@@ -2198,7 +2198,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\6b24b5958dad95fe65975c23917922aef03f1366.a32ecb23aedbd11b7bfff0e8ac7b1cc396231d53.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\guidelines-for-visualfeedback.0afd6b483b6303fb4a59740a86b3d90dff4ef243.zh-tw.xlf",
-      "LocXliffCommit": "597ed7945dd67f8380f3755c7d475add6d3abdcf"
+      "LocXliffCommit": "3581bbae3f962fb46b439f0a5df014c97ad21d64"
     },
     "windows-apps-src\\input-and-devices\\touch-interactions.md.2e1071396c177cc1309d7567d57656dc8c7e6dd9.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\touch-interactions.md",
@@ -2258,7 +2258,7 @@
       "ArchivedDateTime": "0001-01-01T00:00:00",
       "SkeletonFile": "ol-xliffcache\\cpubwin\\windows-uwp.zh-tw\\master\\98922affa9b92512108c83a45759eea90489080c.ef8fd8700edbe202f9fe6392223ed36df406c50c.xml",
       "LocXliff": "ol-handback\\cpubwin\\windows-uwp.zh-tw\\master\\speech-recognition.c48c23a10074e14d9b7d1ab428f0dabc28108330.zh-tw.xlf",
-      "LocXliffCommit": "597ed7945dd67f8380f3755c7d475add6d3abdcf"
+      "LocXliffCommit": "3581bbae3f962fb46b439f0a5df014c97ad21d64"
     },
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md.504b18670169498053f466ccfe188c2c8132fda2.HT": {
       "SourceFilename": "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md",
