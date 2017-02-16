@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2f267c36b2c867396deb564c559100f8d2a0348f?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents) | HandedOffSuccess | [Details](#d9808feeabfa4ffce19d0e669352331804dfd7512263)
+ [windows-apps-src\enterprise\wip-dev-guide.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c4c00a8bf5c3dc6d3992cef81d7eb37266f3d8bb?path=windows-apps-src%2Fenterprise%2Fwip-dev-guide.md&_a=contents) | HandedOffSuccess | [Details](#7d555d4c8b9f749f1a924166176090efc291d4c22527)
+ [windows-apps-src\enterprise\wip-hub.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c4c00a8bf5c3dc6d3992cef81d7eb37266f3d8bb?path=windows-apps-src%2Fenterprise%2Fwip-hub.md&_a=contents) | HandedOffSuccess | [Details](#f624d20d33f560f151b40bd1a405711d697fd4cb2528)
 
 ## Item Details
-##### <a name='d9808feeabfa4ffce19d0e669352331804dfd7512263'></a> Source: [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/2f267c36b2c867396deb564c559100f8d2a0348f?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents)
+##### <a name='7d555d4c8b9f749f1a924166176090efc291d4c22527'></a> Source: [windows-apps-src\enterprise\wip-dev-guide.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c4c00a8bf5c3dc6d3992cef81d7eb37266f3d8bb?path=windows-apps-src%2Fenterprise%2Fwip-dev-guide.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/e97ce437eea0703af6f4fc86e34076afb7182258?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-02-16 19:30:10
+* Handoff File: [wip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/90d3f34d25e4958373e12729ae8e3916f8abddad?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-02-16 21:30:47
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,10 +22,29 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\controls-and-patterns\tiles-and-notifications-adaptive-interactive-toasts.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fcontrols-and-patterns%2Ftiles-and-notifications-adaptive-interactive-toasts.md&_a=contents)
-* Current Handback File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.zh-tw.xlf&_a=contents)
+* Current Target File: [windows-apps-src\enterprise\wip-dev-guide.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/58a8c1a341030de707600e29d7c5ae280746186f?path=windows-apps-src%2Fenterprise%2Fwip-dev-guide.md&_a=contents)
+* Current Handback File: [wip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-21 16:58:30
+* Bilingual File: [wip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwip-dev-guide.c2e2fe40c6255bd8f5df75ee81adcc2c3bdffc9b.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-21 17:12:21
+* [Back to Top](#report-top)
+
+##### <a name='f624d20d33f560f151b40bd1a405711d697fd4cb2528'></a> Source: [windows-apps-src\enterprise\wip-hub.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/c4c00a8bf5c3dc6d3992cef81d7eb37266f3d8bb?path=windows-apps-src%2Fenterprise%2Fwip-hub.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/90d3f34d25e4958373e12729ae8e3916f8abddad?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwip-hub.57e44e5c2209070d40ded980039a8622cea641ca.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-02-16 21:30:47
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\enterprise\wip-hub.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fenterprise%2Fwip-hub.md&_a=contents)
+* Current Handback File: [wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwip-hub.57e44e5c2209070d40ded980039a8622cea641ca.zh-tw.xlf&_a=contents)
 * Current Handback Datetime: 2017-02-01 18:38:50
-* Bilingual File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Ftiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.zh-tw.xlf&_a=contents)
+* Bilingual File: [wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwip-hub.57e44e5c2209070d40ded980039a8622cea641ca.zh-tw.xlf&_a=contents)
 * Bilingual Datetime: 2017-02-01 18:45:35
 * [Back to Top](#report-top)
 
