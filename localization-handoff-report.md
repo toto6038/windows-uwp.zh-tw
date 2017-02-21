@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\update-your-app-to-the-latest-advertising-libraries.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/86c26f13b93bb30d05bf90af5beb02e94725e4b8?path=windows-apps-src%2Fmonetize%2Fupdate-your-app-to-the-latest-advertising-libraries.md&_a=contents) | HandedOffSuccess | [Details](#25435ebf314327db7288ac853819c90ebba356694592)
+ [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/017addc68ab9bf49d1cbb400b6b62732837bb242?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-extensions.md&_a=contents) | HandedOffSuccess | [Details](#cc55f7041587f444abebbe9a062b2a9de6623a954655)
 
 ## Item Details
-##### <a name='25435ebf314327db7288ac853819c90ebba356694592'></a> Source: [windows-apps-src\monetize\update-your-app-to-the-latest-advertising-libraries.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/86c26f13b93bb30d05bf90af5beb02e94725e4b8?path=windows-apps-src%2Fmonetize%2Fupdate-your-app-to-the-latest-advertising-libraries.md&_a=contents)
+##### <a name='cc55f7041587f444abebbe9a062b2a9de6623a954655'></a> Source: [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/017addc68ab9bf49d1cbb400b6b62732837bb242?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-extensions.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [update-your-app-to-the-latest-advertising-libraries.d4a3672192c155143ab9e85e684b3256b7031e49.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/d730517c5bb56fb1b5cdc3e9ea28a7c14817bccd?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fupdate-your-app-to-the-latest-advertising-libraries.d4a3672192c155143ab9e85e684b3256b7031e49.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-02-18 01:28:59
+* Handoff File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/0e27d9413cc521b54c265237d8daae6bfcfccb98?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdesktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-02-21 19:29:29
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +21,11 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\monetize\update-your-app-to-the-latest-advertising-libraries.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fmonetize%2Fupdate-your-app-to-the-latest-advertising-libraries.md&_a=contents)
-* Current Handback File: [update-your-app-to-the-latest-advertising-libraries.d4a3672192c155143ab9e85e684b3256b7031e49.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fupdate-your-app-to-the-latest-advertising-libraries.d4a3672192c155143ab9e85e684b3256b7031e49.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2017-02-01 18:38:50
-* Bilingual File: [update-your-app-to-the-latest-advertising-libraries.d4a3672192c155143ab9e85e684b3256b7031e49.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fupdate-your-app-to-the-latest-advertising-libraries.d4a3672192c155143ab9e85e684b3256b7031e49.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2017-02-01 18:45:35
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-extensions.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/58a8c1a341030de707600e29d7c5ae280746186f?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-extensions.md&_a=contents)
+* Current Handback File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdesktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-21 16:58:30
+* Bilingual File: [desktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdesktop-to-uwp-extensions.b85d42a8c8cdbc820d413ec030cc4afe93550f53.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-21 17:12:21
 * [Back to Top](#report-top)
 
 
