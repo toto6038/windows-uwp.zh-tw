@@ -185,6 +185,9 @@
   "9f38c3bd26ef7b409d4c743abf25a5b0a6455f20": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
+  "72f5bd1c0483fba0c43e99626ee5d0451fedde3e": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
+  ],
   "63076319ad79a5345d529bb7d69c984279417817": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
@@ -2518,6 +2521,9 @@
   ],
   "bd1ae8ccdd81f319fc36ca04b8b839cb313b2854": [
     "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
+  ],
+  "c55e288b7fb8f3b93c76efb45573d2157a0e347d": [
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
   ],
   "d63e039e05a22b940ca0fdb9c6931fca5da3d25f": [
     "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
@@ -13357,6 +13363,9 @@
   ],
   "a85869bc3b05fd222209e04ca55033195cdedfbd": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
+  "94bc5b8b04fd4f4e1439fb014ef83f0e1f363874": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
   "8233128e9dc31e5a87222b02344e6777775ad312": [
     "windows-apps-src\\xbox-apps\\known-issues.md"

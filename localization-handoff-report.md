@@ -1,20 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-prepare.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0760d9decd10476defcef4ffa276245151a97cb7?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-prepare.md&_a=contents) | HandedOffSuccess | [Details](#c735555afce1cb9045b7ab0e0cfaa436aeff4d974663)
- [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4ee5c3d841b7e87e3e55c3cd5f18951422a37eb6?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents) | HandedOffSuccess | [Details](#e5e4f615ae66b3e551456258270f316df8f3c0d14989)
+ [windows-apps-src\accessibility\custom-automation-peers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/154dae5250aa14b0bd2fd452b4323d73950705f5?path=windows-apps-src%2Faccessibility%2Fcustom-automation-peers.md&_a=contents) | HandedOffSuccess | [Details](#72f5bd1c0483fba0c43e99626ee5d0451fedde3e21)
+ [windows-apps-src\debug-test-perf\device-portal-mobile.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/afb196bd60b1fd66206e0a111ef95cc774fae59f?path=windows-apps-src%2Fdebug-test-perf%2Fdevice-portal-mobile.md&_a=contents) | HandedOffSuccess | [Details](#c55e288b7fb8f3b93c76efb45573d2157a0e347d2315)
+ [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/916d386bc9f4101b68e4f676145aa5a23f65f341?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents) | HandedOffSuccess | [Details](#94bc5b8b04fd4f4e1439fb014ef83f0e1f3638747953)
 
 ## Item Details
-##### <a name='c735555afce1cb9045b7ab0e0cfaa436aeff4d974663'></a> Source: [windows-apps-src\porting\desktop-to-uwp-prepare.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/0760d9decd10476defcef4ffa276245151a97cb7?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-prepare.md&_a=contents)
+##### <a name='72f5bd1c0483fba0c43e99626ee5d0451fedde3e21'></a> Source: [windows-apps-src\accessibility\custom-automation-peers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/154dae5250aa14b0bd2fd452b4323d73950705f5?path=windows-apps-src%2Faccessibility%2Fcustom-automation-peers.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/814054b5bc99b5961eb10da9c92098e8f2b5e097?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdesktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-03-02 20:16:21
+* Handoff File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dac23da1fc76c7fa2995c4527918fbae7595df12?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-02 22:16:05
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -22,18 +23,18 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-prepare.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fporting%2Fdesktop-to-uwp-prepare.md&_a=contents)
-* Current Handback File: [desktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdesktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2017-02-01 18:38:50
-* Bilingual File: [desktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdesktop-to-uwp-prepare.a31bd12222af5bf05286bba552b84847905a06ca.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2017-02-01 18:45:35
+* Current Target File: [windows-apps-src\accessibility\custom-automation-peers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/58a8c1a341030de707600e29d7c5ae280746186f?path=windows-apps-src%2Faccessibility%2Fcustom-automation-peers.md&_a=contents)
+* Current Handback File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2016-11-21 16:58:30
+* Bilingual File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-11-21 17:12:21
 * [Back to Top](#report-top)
 
-##### <a name='e5e4f615ae66b3e551456258270f316df8f3c0d14989'></a> Source: [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/4ee5c3d841b7e87e3e55c3cd5f18951422a37eb6?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents)
+##### <a name='c55e288b7fb8f3b93c76efb45573d2157a0e347d2315'></a> Source: [windows-apps-src\debug-test-perf\device-portal-mobile.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/afb196bd60b1fd66206e0a111ef95cc774fae59f?path=windows-apps-src%2Fdebug-test-perf%2Fdevice-portal-mobile.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/814054b5bc99b5961eb10da9c92098e8f2b5e097?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-03-02 20:16:21
+* Handoff File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dac23da1fc76c7fa2995c4527918fbae7595df12?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdevice-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-02 22:16:05
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -41,10 +42,29 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\security\web-account-manager.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fsecurity%2Fweb-account-manager.md&_a=contents)
-* Current Handback File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-tw.xlf&_a=contents)
+* Current Target File: [windows-apps-src\debug-test-perf\device-portal-mobile.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/50bf6c418f58e2e70dca3786fefa69f949594820?path=windows-apps-src%2Fdebug-test-perf%2Fdevice-portal-mobile.md&_a=contents)
+* Current Handback File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/21fa14b96e134fd5157c779ba903d0d583957578?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdevice-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2016-12-13 14:17:34
+* Bilingual File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/21fa14b96e134fd5157c779ba903d0d583957578?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdevice-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2016-12-13 14:24:26
+* [Back to Top](#report-top)
+
+##### <a name='94bc5b8b04fd4f4e1439fb014ef83f0e1f3638747953'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/916d386bc9f4101b68e4f676145aa5a23f65f341?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dac23da1fc76c7fa2995c4527918fbae7595df12?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-02 22:16:05
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
+* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf&_a=contents)
 * Current Handback Datetime: 2017-02-01 18:38:50
-* Bilingual File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fweb-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.zh-tw.xlf&_a=contents)
+* Bilingual File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf&_a=contents)
 * Bilingual Datetime: 2017-02-01 18:45:35
 * [Back to Top](#report-top)
 
