@@ -1,21 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\custom-automation-peers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/154dae5250aa14b0bd2fd452b4323d73950705f5?path=windows-apps-src%2Faccessibility%2Fcustom-automation-peers.md&_a=contents) | HandedOffSuccess | [Details](#72f5bd1c0483fba0c43e99626ee5d0451fedde3e21)
- [windows-apps-src\debug-test-perf\device-portal-mobile.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/afb196bd60b1fd66206e0a111ef95cc774fae59f?path=windows-apps-src%2Fdebug-test-perf%2Fdevice-portal-mobile.md&_a=contents) | HandedOffSuccess | [Details](#c55e288b7fb8f3b93c76efb45573d2157a0e347d2315)
- [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/916d386bc9f4101b68e4f676145aa5a23f65f341?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents) | HandedOffSuccess | [Details](#94bc5b8b04fd4f4e1439fb014ef83f0e1f3638747953)
+ [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7f7d1fcf309d033cb11ad8b446851411a967a0ea?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents) | HandedOffSuccess | [Details](#936c0056827f1e0a3e76007906345391a4f0a7e84833)
+ [windows-apps-src\publish\mobile-operator-billing.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e9785085e76baddf25c4860b43f2e7588a5df929?path=windows-apps-src%2Fpublish%2Fmobile-operator-billing.md&_a=contents) | HandedOffSuccess | [Details](#608d381857c1dbb2ec659e7e901d911686cb89844868)
 
 ## Item Details
-##### <a name='72f5bd1c0483fba0c43e99626ee5d0451fedde3e21'></a> Source: [windows-apps-src\accessibility\custom-automation-peers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/154dae5250aa14b0bd2fd452b4323d73950705f5?path=windows-apps-src%2Faccessibility%2Fcustom-automation-peers.md&_a=contents)
+##### <a name='936c0056827f1e0a3e76007906345391a4f0a7e84833'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/7f7d1fcf309d033cb11ad8b446851411a967a0ea?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dac23da1fc76c7fa2995c4527918fbae7595df12?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-03-02 22:16:05
+* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/43e31544c1aa9a21473da342fb12b705ad10f535?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-03 00:15:56
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -23,48 +22,29 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\accessibility\custom-automation-peers.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/58a8c1a341030de707600e29d7c5ae280746186f?path=windows-apps-src%2Faccessibility%2Fcustom-automation-peers.md&_a=contents)
-* Current Handback File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-11-21 16:58:30
-* Bilingual File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/3358b2ba764625314bbdf531facddb287072492a?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcustom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-11-21 17:12:21
-* [Back to Top](#report-top)
-
-##### <a name='c55e288b7fb8f3b93c76efb45573d2157a0e347d2315'></a> Source: [windows-apps-src\debug-test-perf\device-portal-mobile.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/afb196bd60b1fd66206e0a111ef95cc774fae59f?path=windows-apps-src%2Fdebug-test-perf%2Fdevice-portal-mobile.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dac23da1fc76c7fa2995c4527918fbae7595df12?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdevice-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-03-02 22:16:05
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\debug-test-perf\device-portal-mobile.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/50bf6c418f58e2e70dca3786fefa69f949594820?path=windows-apps-src%2Fdebug-test-perf%2Fdevice-portal-mobile.md&_a=contents)
-* Current Handback File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/21fa14b96e134fd5157c779ba903d0d583957578?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdevice-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2016-12-13 14:17:34
-* Bilingual File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/21fa14b96e134fd5157c779ba903d0d583957578?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdevice-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2016-12-13 14:24:26
-* [Back to Top](#report-top)
-
-##### <a name='94bc5b8b04fd4f4e1439fb014ef83f0e1f3638747953'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/916d386bc9f4101b68e4f676145aa5a23f65f341?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/dac23da1fc76c7fa2995c4527918fbae7595df12?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-03-02 22:16:05
-* Handoff Reason: Include
-* Handoff Name: 
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Handback Name: 
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fxbox-apps%2Fknown-issues.md&_a=contents)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf&_a=contents)
+* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fpublish%2Fdev-center-insider-program.md&_a=contents)
+* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-tw.xlf&_a=contents)
 * Current Handback Datetime: 2017-02-01 18:38:50
-* Bilingual File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fknown-issues.83c75815621268c5c51534a658527cef71ffe8bd.zh-tw.xlf&_a=contents)
+* Bilingual File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fdev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2017-02-01 18:45:35
+* [Back to Top](#report-top)
+
+##### <a name='608d381857c1dbb2ec659e7e901d911686cb89844868'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/e9785085e76baddf25c4860b43f2e7588a5df929?path=windows-apps-src%2Fpublish%2Fmobile-operator-billing.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/43e31544c1aa9a21473da342fb12b705ad10f535?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fmobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-03 00:15:56
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
+* Current Target File: [windows-apps-src\publish\mobile-operator-billing.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Fpublish%2Fmobile-operator-billing.md&_a=contents)
+* Current Handback File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fmobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2017-02-01 18:38:50
+* Bilingual File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fmobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.zh-tw.xlf&_a=contents)
 * Bilingual Datetime: 2017-02-01 18:45:35
 * [Back to Top](#report-top)
 
