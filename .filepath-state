@@ -9698,6 +9698,9 @@
   "10ebdb0a534d8f2931d15481c1bee4705268b0bb": [
     "windows-apps-src\\porting\\setting-up-your-mac-with-windows-10.md"
   ],
+  "4527b3a3cf0aaae7ced5eaebcbc1ad023b24c379": [
+    "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
+  ],
   "95161b564ceb150cdab9d3320707a7e062be0778": [
     "windows-apps-src\\porting\\update-your-visual-studio-2015-rc-project-to-rtm.md"
   ],
@@ -9817,6 +9820,9 @@
   ],
   "ea8844925cc227d9f082595b039dd68164ad1228": [
     "windows-apps-src\\porting\\w8x-to-uwp-porting-xaml-and-ui.md"
+  ],
+  "37da1d6385bf18fcf44f6425b843715e1a462379": [
+    "windows-apps-src\\porting\\w8x-to-uwp-root.md"
   ],
   "81d8e5fd22cdc3f6cdd43cf3400307dd0ac13eaa": [
     "windows-apps-src\\porting\\w8x-to-uwp-root.md"
@@ -10600,6 +10606,9 @@
   ],
   "9a1d8b8fb57989091fe7b82ad34066240f62cb8b": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
+  "a342de58e3f204cc66f701dec644e976b05592c3": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
   "936c0056827f1e0a3e76007906345391a4f0a7e8": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
@@ -13399,6 +13408,9 @@
   ],
   "a85869bc3b05fd222209e04ca55033195cdedfbd": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
+  "203d1abede2607617e0175103f54bf3068d53ff4": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
   "94bc5b8b04fd4f4e1439fb014ef83f0e1f363874": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
