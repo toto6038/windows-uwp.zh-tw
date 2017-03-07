@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "了解如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 JavaScript/HTML 應用程式使用 AdControl 類別來顯示橫幅廣告。"
 title: "HTML 5 和 JavaScript 中的 AdControl"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 廣告, 做廣告, AdControl, JavaScript, HTML"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 509cfe00050c5b5b3997af0e2906676f946d9278
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cda74aaf6301f0cc04c5a9ae5c2aad5cf43d8b7e
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -27,15 +34,15 @@ ms.openlocfilehash: 509cfe00050c5b5b3997af0e2906676f946d9278
 
 1. 在 Visual Studio 中，開啟您的專案或建立新專案。
 
-2. 如果專案的目標是 [任何 CPU]****，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86]****)。 如果專案的目標是 [任何 CPU]****，您將無法於下列步驟中成功加入 Microsoft Advertising 程式庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 [任何 CPU]****，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86]****)。 如果專案的目標是 [任何 CPU]****，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
 3.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
 
-4.  在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
+4.  在 **\[參考管理員\]** 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   對於通用 Windows 平台 (UWP) 專案：展開 [通用 Windows]****，按一下 [擴充功能]****，然後選取 [適用於 JavaScript 的 Microsoft Advertising SDK (Version 10.0)]**** 旁邊的核取方塊。
+    -   通用 Windows 平台 (UWP) 專案：展開 [通用 Windows]****，按一下 [擴充功能]****，然後選取 [適用於 JavaScript 的 Microsoft Advertising SDK (Version 10.0)]**** 旁邊的核取方塊。
 
-    -   對於 Windows 8.1 專案：展開 [Windows 8.1]****，按一下 [擴充功能]****，然後選取 [適用於 Windows 8.1 Native 的 Microsoft Advertising SDK (JS)]**** 旁邊的核取方塊。
+    -   Windows 8.1 專案：展開 [Windows 8.1]****，按一下 [擴充功能]****，然後選取 [適用於 Windows 8.1 Native 的 Microsoft Advertising SDK (JS)]**** 旁邊的核取方塊。
 
     -   對於 Windows 8.1 專案：展開 [Windows Phone 8.1]****，按一下 [擴充功能]****，然後選取 [Microsoft Advertising SDK for Windows Phone 8.1 Native (JS)]**** 旁邊的核取方塊。
 
@@ -128,9 +135,4 @@ ms.openlocfilehash: 509cfe00050c5b5b3997af0e2906676f946d9278
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

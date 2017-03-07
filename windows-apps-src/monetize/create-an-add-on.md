@@ -1,33 +1,40 @@
 ---
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件。"
+description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的應用程式建立附加元件。"
 title: "使用 Windows 市集提交 API 建立附加元件"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 建立附加元件, 應用程式內產品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 市集提交 API 建立附加元件
+# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 建立附加元件
 
 
 
 
-使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件 (也稱為應用程式內產品或 IAP)。
+使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的應用程式建立附加元件 (也稱為應用程式內產品或 IAP)。
 
->**注意**  這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
+>**注意**&nbsp;&nbsp;這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -38,7 +45,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -46,7 +53,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 要求本文包含下列參數。
  
@@ -58,7 +65,7 @@ ms.openlocfilehash: 11cf25fbeacbe3145c9cc3f4a80bdcce3028bf55
 
 <span/>
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何為 App 建立新的消耗性附加元件。
 
@@ -73,7 +80,7 @@ Content-Type: application/json
 }
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。
 
@@ -94,7 +101,7 @@ Content-Type: application/json
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -105,16 +112,11 @@ Content-Type: application/json
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
 * [取得所有附加元件](get-all-add-ons.md)
 * [取得附加元件](get-an-add-on.md)
 * [刪除附加元件](delete-an-add-on.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

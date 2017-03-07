@@ -2,18 +2,26 @@
 author: awkoren
 Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 手動轉換為通用 Windows 平台 (UWP) 應用程式。"
 Search.Product: eADQiWindows 10XVcnh
-title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) App"
+title: "將 Windows 傳統型應用程式手動轉換為通用 Windows 平台 (UWP) 應用程式"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 translationtype: Human Translation
-ms.sourcegitcommit: b612b2c94de79f48a375ae3469c35dee6ce3939d
-ms.openlocfilehash: 73f30d564fcec1b748b4d59ff545e25b62b1c719
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 345296a3fa9faeb8daa8e03fbb633863380d2424
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>使用傳統型橋接器將您的 App 手動轉換為 UWP
+# <a name="manually-convert-your-app-to-uwp-using-the-desktop-bridge"></a>使用傳統型橋接器將您的應用程式手動轉換成 UWP
 
-使用 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定性，這相當有用。 但如果您的 app 是使用 xcopy 所安裝，或者您已熟悉 app 的安裝程式對於系統所做的變更，您可能想要手動建立應用程式套件和資訊清單。 本文包含開始使用的步驟。 其中也會說明如何將無背板資產新增至您的 app，而 DAC 並未涵蓋此項。 
+使用 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定性，這相當有用。 但如果您的 app 是使用 xcopy 所安裝，或者您已熟悉 app 的安裝程式對於系統所做的變更，您可能想要手動建立應用程式套件和資訊清單。 本文包含開始使用的步驟。 其中也會說明如何將無背板資產新增至您的應用程式，而 DAC 並未涵蓋此項。 
 
-以下是如何開始使用的方式：
+以下說明如何開始進行手動轉換。 或者，如果您有 .NET 應用程式，並使用 Visual Studio，請參閱文章[.NET 傳統型應用程式與 Visual Studio 的傳統型橋接器封裝指南](desktop-to-uwp-packaging-dot-net.md)。  
 
 ## <a name="create-a-manifest-by-hand"></a>手動建立資訊清單
 
@@ -92,7 +100,7 @@ C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -s
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
-當您執行 MakeCert.exe，且系統要求您輸入密碼時，請選取 \[無\]。 如需憑證和簽章的詳細資訊，請參閱下列各項︰ 
+當您執行 MakeCert.exe，且系統要求您輸入密碼時，請選取 \[無\]****。 如需憑證和簽章的詳細資訊，請參閱下列各項︰ 
 
 - [做法︰建立開發時要使用的暫時憑證](https://msdn.microsoft.com/library/ms733813.aspx)
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
@@ -107,17 +115,10 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 2. 針對每個 44x44 影像，在相同的資料夾中建立一個複本，然後將 *.targetsize-44_altform-unplated* 附加至檔案名稱。 每個圖示應該會有兩個複本，每個均以特定方式命名。 例如，完成處理程序之後，您的資產資料夾可能包含 *MYAPP_44x44.png* 和 *MYAPP_44x44.targetsize-44_altform-unplated.png* (注意︰前者是 VisualElements 屬性 *Square44x44Logo* 下方 appxmanifest 中所參考的圖示)。 
 
-3.  在 AppXManifest 中，針對您要修正的每個圖示，將 BackgroundColor 設為透明。 這個屬性可以在每個應用程式的 VisualElements 下方找到。
+3.    在 AppXManifest 中，針對您要修正的每個圖示，將 BackgroundColor 設為透明。 這個屬性可以在每個應用程式的 VisualElements 下方找到。
 
-4.  開啟 CMD、將目錄變更為套件的根資料夾，然後執行命令 ```makepri createconfig /cf priconfig.xml /dq en-US``` 來建立 priconfig.xml 檔案。
+4.    開啟 CMD、將目錄變更為套件的根資料夾，然後執行命令 ```makepri createconfig /cf priconfig.xml /dq en-US``` 來建立 priconfig.xml 檔案。
 
-5.  使用 CMD、留在套件的根資料夾中，然後使用命令 ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` 來建立 resources.pri 檔案。 例如，應用程式的命令可能看起來像這樣：```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```。 
+5.    使用 CMD、留在套件的根資料夾中，然後使用命令 ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` 來建立 resources.pri 檔案。 例如，應用程式的命令可能看起來像這樣：```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```。 
 
-6.  使用下一個步驟中的指示封裝您的 AppX，以查看結果。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
-
+6.    使用下一個步驟中的指示封裝您的 AppX，以查看結果。

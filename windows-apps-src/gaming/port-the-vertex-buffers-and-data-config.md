@@ -3,16 +3,23 @@ author: mtoepke
 title: "移植頂點緩衝區與資料"
 description: "在這個步驟中，您將定義包含網格的頂點緩衝區，以及允許著色器以特定順序周遊頂點的索引緩衝區。"
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, port, vertex buffers, data, direct3d, 遊戲, 連接埠, 頂點緩衝區, 資料, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ee8b3f693e40d9c0fba679a44ebcd4986d06d7ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 85e8a47da525c0f5de7e957a0048e245e374dedc
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植頂點緩衝區與資料
+# <a name="port-the-vertex-buffers-and-data"></a>移植頂點緩衝區與資料
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -107,9 +114,9 @@ unsigned short cubeIndices[] =
 
 假設已順利將立方體網格從右旋的 OpenGL ES 2.0 座標系統移至左旋的 Direct3D 座標系統，讓我們來查看如何載入立方體資料以便在這兩個模型中進行處理。
 
-## 指示
+## <a name="instructions"></a>指示
 
-### 步驟 1：建立輸入配置
+### <a name="step-1-create-an-input-layout"></a>步驟 1：建立輸入配置
 
 在 OpenGL ES 2.0 中，頂點資料是做為屬性提供，且將提供給著色器物件並由其讀取。 您通常會將包含屬性名稱 (用於著色器 GLSL) 的字串提供給著色器程式物件，並取回您可提供給著色器的記憶體位置。 在這個範例中，頂點緩衝區物件包含自訂頂點結構的清單，其定義與格式化方式如下：
 
@@ -172,7 +179,7 @@ m_d3dDevice->CreateInputLayout(
 
 我們已定義輸入配置。 現在來建立使用這個配置的緩衝區，並使用立方體網格資料載入它。
 
-### 步驟 2：建立和載入頂點緩衝區
+### <a name="step-2-create-and-load-the-vertex-buffers"></a>步驟 2：建立和載入頂點緩衝區
 
 在 OpenGL ES 2.0 中，您會建立一對緩衝區，一個用於位置資料，而另一個用於色彩資料 (您也可以建立一個包含這兩者的結構和一個單一緩衝區)。您繫結每一個緩衝區，並將位置與色彩資料寫入它們。 稍後您會在執行轉譯功能期間再次繫結緩衝區，然後使用緩衝區中的資料格式提供著色器，如此就能正確解譯它。
 
@@ -217,7 +224,7 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### 步驟 3：建立和載入索引緩衝區
+### <a name="step-3-create-and-load-the-index-buffer"></a>步驟 3：建立和載入索引緩衝區
 
 索引緩衝區是允許頂點著色器查詢個別頂點的有效方式。 儘管它們不是必要項目，但是我們會在這個範例轉譯器中使用它們。 就像 OpenGL ES 2.0 中的頂點緩衝區，我們會建立索引緩衝區並繫結為一般用途的緩衝區，並將您稍早建立的頂點索引複製到其中。
 
@@ -287,20 +294,20 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## 上一步
+## <a name="previous-step"></a>上一步
 
 
 [移植著色器物件](port-the-shader-config.md)
 
-## 下一步
+## <a name="next-step"></a>下一步
 
 [移植 GLSL](port-the-glsl.md)
 
-## 備註
+## <a name="remarks"></a>備註
 
 建構您的 Direct3D 時，請將呼叫 [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) 上方法的程式碼區分為每當需要重新建立裝置資源時所呼叫的方法 (在 Direct3D 專案範本中，這個程式碼位於轉譯器物件的 **CreateDeviceResource** 方法中)。 另一方面，更新裝置上下文的程式碼 ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) 會放置於 **Render** 方法中，因為這是您實際建構著色器階段和繫結資料的地方。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -314,10 +321,5 @@ m_d3dContext->DrawIndexed(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

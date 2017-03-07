@@ -14,8 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: caaa6228f2d5b2bb6566ccb285d90a396a1caf01
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -262,9 +263,4 @@ phoneNumberTextBox.InputScope = new InputScope()
 |------------------------------------------------------------|------------------------------------------------------------------|
 | ![預設 Windows 觸控式鍵盤](images/input-scopes/kbdpcdefault.png)<br>與 **Default** 的配置相同。| ![Windows Phone 名稱或電話號碼觸控式鍵盤](images/input-scopes/kbdwpnameorphonenumber.png)<br>包含 [;]**** 和 [@]**** 鍵。 [&amp;123]**** 鍵已取代為 [123]**** 鍵，會開啟電話鍵台 (請參閱**TelephoneNumber**)。|
 |功能可用性：<ul><li>拼字檢查：預設為開啟，可以停用</li><li>自動校正：一律停用</li><li>自動大寫：一律啟用</li><li>文字預測：一律停用</li></ul> | 功能可用性：<ul><li>拼字檢查：預設為關閉，可以啟用</li><li>自動校正：預設為關閉，可以啟用</li><li>自動大寫：預設為關閉，可以啟用。 每個字的第一個字母大寫。</li><li>文字預測：預設為關閉，可以啟用</li></ul> |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

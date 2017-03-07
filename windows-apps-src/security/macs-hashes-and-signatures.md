@@ -1,23 +1,30 @@
 ---
 title: "MAC、雜湊以及簽章"
-description: "本文討論如何在通用 Windows 平台 (UWP) app 中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。"
+description: "本文討論如何在通用 Windows 平台 (UWP) 應用程式中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。"
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2c43e8ea726827d263fd397ea28058c04d30a7aa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f29b77317e0b03aff7e56087aa3a882720170b29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MAC、雜湊以及簽章
+# <a name="macs-hashes-and-signatures"></a>MAC、雜湊以及簽章
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文討論如何在通用 Windows 平台 (UWP) app 中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。
 
-## 訊息驗證碼 (MAC)
+## <a name="message-authentication-codes-macs"></a>訊息驗證碼 (MAC)
 
 
 加密有助於防止未授權的人員讀取訊息，但加密無法防止該人員篡改訊息。 即使竄改不會產生任何不良影響且無意義，被竄改的訊息還是會產生實際成本。 訊息驗證碼 (MAC) 有助於防止訊息遭篡改。 例如，請考慮下列情況：
@@ -122,7 +129,7 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## 雜湊
+## <a name="hashes"></a>雜湊
 
 
 密碼編譯雜湊函數使用任意長度的資料區塊並傳回固定大小位元字串。 簽章資料時通常是使用雜湊函數。 由於大部分的公開金鑰簽章作業需要大量的運作，因此通常簽署 (加密) 郵件雜湊比簽署原始郵件更有效率。 下列程序代表雖然簡化但卻常用的案例：
@@ -179,7 +186,7 @@ public void SampleReusableHash()
 
 ```
 
-## 數位簽章
+## <a name="digital-signatures"></a>數位簽章
 
 
 數位簽章是等同於私密金鑰訊息驗證碼 (MAC) 的公開金鑰。 相對而言，MAC 使用私密金鑰讓郵件收件者驗證郵件在傳輸期間沒有被修改，而簽章則是使用私密/公開金鑰組。
@@ -189,8 +196,3 @@ public void SampleReusableHash()
 簽署僅確保原始郵件未經過修改，而且，使用寄件者的公開金鑰，郵件雜湊會由具有私密金鑰存取權的人來簽署。
 
 您可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 物件來列舉可用的簽章演算法及產生或匯入金鑰組。 您可以在 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 類別上使用靜態方法來簽署郵件或驗證簽章。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

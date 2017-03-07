@@ -3,13 +3,20 @@ author: mtoepke
 title: "適用於遊戲的觸控控制項"
 description: "了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。"
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 觸控, 控制項, directx, 輸入"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 適用於遊戲的觸控控制項
+# <a name="touch-controls-for-games"></a>適用於遊戲的觸控控制項
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,12 +29,12 @@ ms.openlocfilehash: 901b83b1c4a2e572e4fe41e1df59910432982687
 
  
 
-## 目標
+## <a name="objectives"></a>目標
 
 
 -   建立簡單的觸控拖曳控制項，以便在 DirectX 遊戲中移動瀏覽固定面相機。
 
-## 設定基本的觸控事件基礎結構
+## <a name="set-up-the-basic-touch-event-infrastructure"></a>設定基本的觸控事件基礎結構
 
 
 首先，我們要定義基本的控制器類型，在這個範例為 **CameraPanController**。 在這裡，我們將控制器定義為一個抽象的概念，也就是使用者可以執行的一組行為。
@@ -126,7 +133,7 @@ public:
 
 現在，我們將這些設定連繫起來。
 
-## 建立基本觸控事件
+## <a name="create-the-basic-touch-events"></a>建立基本觸控事件
 
 
 Windows 執行階段事件調派程式提供 3 個我們要應用程式處理的事件：
@@ -204,7 +211,7 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## 初始化觸控控制項以及控制器狀態
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a>初始化觸控控制項以及控制器狀態
 
 
 讓我們連結事件並初始化相機控制器的所有基本狀態欄位。
@@ -238,7 +245,7 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 
 **Initialize** 會將 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。
 
-## 取得和設定相機控制器的位置
+## <a name="getting-and-setting-the-position-of-the-camera-controller"></a>取得和設定相機控制器的位置
 
 
 讓我們定義一些方法，以取得和設定場景區域中相機控制項的位置。
@@ -272,7 +279,7 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 
 **get\_FixedLookPoint** 是公用屬性，在這個範例中，可用來取得與 x-y 平面垂直的視角點。 如果您想要為固定相機建立更多斜視角度，那麼計算 x、y 及 z 的座標值時，您可以變更這個方法來使用三角函數 sin 和 cos。
 
-## 更新相機控制器狀態資訊
+## <a name="updating-the-camera-controller-state-information"></a>更新相機控制器狀態資訊
 
 
 現在，我們要進行計算，將 **m\_panPointerPosition** 中追蹤到的指標座標轉換為與 3D 場景區域的新座標資訊。 應用程式會在我們每次重新整理主應用程式迴圈時，呼叫這個方法。 此時我們會計算要傳送給 app 的新位置 資訊，用於投影到檢視區前更新檢視矩陣。
@@ -320,7 +327,7 @@ void CameraPanController::Update( CoreWindow ^window )
 
 因為我們不希望觸控或滑鼠抖動而讓相機移動瀏覽不穩定，所以要在指標周圍建立一個靜止區域，直徑為 32 個像素。 我們也可以設定速度比，在這個範例是 1:1，在指標穿越靜止區域時追蹤像素。 您可以調整這個行動，減慢或加速移動速率。
 
-## 使用新相機位置來更新視圖矩陣
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>使用新相機位置來更新視圖矩陣
 
 
 我們現在可以取得相機聚焦的場景區域座標，而且可以指定 app 更新的時間 (例如，在主應用程式迴圈每 60 秒更新一次)。 這個虛擬程式碼會建議您可以實作的呼叫行為：
@@ -349,10 +356,5 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

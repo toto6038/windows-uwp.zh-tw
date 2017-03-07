@@ -3,13 +3,20 @@ author: jwmsft
 title: "xDeferLoadStrategy 屬性"
 description: "xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。 每個受影響的元素會增加約 600 個位元組的記憶體使用量。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4ccc18920a98b3c2258b4965e96fa063124d0546
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:DeferLoadStrategy 屬性
+# <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,13 +24,13 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 不過，處理延遲的作業會針對每個受影響的元素，增加大約 600 個位元組的記憶體使用量。 延遲的元素樹狀結構愈大，節省的啟動時間就愈多，但代價是記憶體使用量較大。 因此，過度使用此屬性可能導致效能降低。
 
-## XAML 屬性用法
+## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## 備註
+## <a name="remarks"></a>備註
 
 **x:DeferLoadStrategy** 的使用限制如下：
 
@@ -59,7 +66,7 @@ ms.openlocfilehash: c1a0515ea4298b6eb870bdf69e452f774962cdd8
 
 一般會建議您在之前或之後測量您的應用程式，以確保您得到想要的效能。
 
-## 範例
+## <a name="example"></a>範例
 
 ```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -86,10 +93,5 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
     this.FindName("DeferredGrid"); // This will realize the deferred grid
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

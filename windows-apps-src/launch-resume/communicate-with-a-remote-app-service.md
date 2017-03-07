@@ -1,21 +1,29 @@
 ---
 author: PatrickFarley
-title: "與遠端 App 服務通訊"
-description: Exchange messages with an app service running on a remote device using Project "Rome".
+title: "與遠端應用程式服務通訊"
+description: "使用專案 &quot;Rome&quot; 透過在遠端裝置上執行的應用程式服務交換訊息。"
+ms.assetid: a0261e7a-5706-4f9a-b79c-46a3c81b136f
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1e0b9d2b13cbfeff2ca7cb81a82a1fb2f5a1dd9b
-ms.openlocfilehash: c6a094c1939c3f34926f998a8206b0e2d7ea6aa0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0cac219625fbc7b6526c81cf11f010589d2bf000
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="communicate-with-a-remote-app-service"></a>與遠端 App 服務通訊
+# <a name="communicate-with-a-remote-app-service"></a>與遠端應用程式服務通訊
 
-除了使用 URI 啟動遠端裝置上的 app，您還可以在遠端裝置上執行「App 服務」並與之通訊。 任何 Windows 裝置都可用來做為用戶端或主機裝置。 這讓您不需將 app 帶到前景，就能以幾乎數目不拘的方式來與連接的裝置互動。
+除了使用 URI 啟動遠端裝置上的應用程式，您還可以在遠端裝置上執行「應用程式服務」**並與之通訊。 任何 Windows 裝置都可用來做為用戶端或主機裝置。 這讓您不需將 app 帶到前景，就能以幾乎數目不拘的方式來與連接的裝置互動。
 
 ## <a name="set-up-the-app-service-on-the-host-device"></a>設定主機裝置上的 App 服務
 您必須已經在遠端裝置上安裝 app 服務的提供者，才能在該裝置上執行該 app 服務。 本指南會使用可在 [Windows 通用範例儲存機制](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)上找到的隨機數字產生器 app 服務。 如需如何撰寫您自己的 app 服務的指示，請參閱[建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)。
 
-不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案，然後選取其 Package.appxmanifest 檔案。 以滑鼠右鍵按一下，然後選取 [檢視程式碼] 以檢視檔案的完整內容。 尋找將專案定義為應用程式服務的 **Extension** 元素，並命名其父專案。
+不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案，然後選取其 Package.appxmanifest 檔案。 以滑鼠右鍵按一下，然後選取 **\[檢視程式碼\]** 以檢視檔案的完整內容。 尋找將專案定義為應用程式服務的 **Extension** 元素，並命名其父專案。
 
 ``` xml
 ...
@@ -86,9 +94,4 @@ ms.openlocfilehash: c6a094c1939c3f34926f998a8206b0e2d7ea6aa0
 [建立和使用應用程式服務](how-to-create-and-consume-an-app-service.md)  
 [遠端系統 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

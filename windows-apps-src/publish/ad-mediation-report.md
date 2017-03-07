@@ -3,22 +3,29 @@ author: jnHs
 Description: "廣告流量分配報告讓您能夠查看有效的投放率，以及您所使用廣告網路的個別投放率。"
 title: "廣告流量分配報告"
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 07b4e34cc5e91ec70b88631560dd1429f11d2d6b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3f3f3dd3b594e174def693b7decd21a5753172b9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 廣告流量分配報告
+# <a name="ad-mediation-report"></a>廣告流量分配報告
 
 
-[廣告流量分配]**** 報告讓您能夠查看有效的投放率，以及您所使用廣告網路的個別投放率。 也會顯示每個流量分配所設定的採用率，以及提供由廣告網路與流量分配器所報告錯誤的能見度。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
+**[廣告流量分配]** 報告讓您能夠查看有效的投放率，以及您所使用廣告網路的個別投放率。 也會顯示每個流量分配所設定的採用率，以及提供由廣告網路與流量分配器所報告錯誤的能見度。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
 
-[重要](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) 只有當您於 app 中使用 **Windows 廣告流量分配** 時，[廣告流量分配]**** 報告才會提供相關資料。
+**重要**  只有當您於應用程式中使用 [Windows 廣告流量分配](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359)時，**[廣告流量分配]** 報告才會提供相關資料。
 
  
 
-## 頁面篩選
+## <a name="page-filters"></a>頁面篩選
 
 
 您可以在接近頁面頂端的地方，展開 [頁面篩選]****，依日期範圍和/或市場來篩選此頁面上的所有日期。
@@ -29,31 +36,31 @@ ms.openlocfilehash: 07b4e34cc5e91ec70b88631560dd1429f11d2d6b
 
 下列所有圖表中的資訊將反映 [頁面篩選]**** 中選取的時段。 除非您使用 [頁面篩選]**** 來指定特定的市場和/或平台，否則，根據預設，這將包含列出您 app 的所有市場與平台資訊。
 
-## 廣告流量分配效能
+## <a name="ad-mediation-performance"></a>廣告流量分配效能
 
 
 [廣告流量分配效能]**** 圖表會顯示選取時段內的平均總投放率。 不論您的流量分配設定為何，或者呼叫不同廣告網路的頻率為何，這是橫跨所有使用者工作階段的平均投放率。
 
 您可以按一下 [流量分配要求]**** 標題，來查看個別流量分配要求的平均數，或者按一下 [已送出廣告]**** 來查看已送出廣告的平均總數。
 
-## 廣告提供者投放率
+## <a name="ad-provider-fill-rates"></a>廣告提供者投放率
 
 
 [廣告提供者投放率]**** 圖表會顯示在選取時段內，您每個廣告網路的平均投放率。
 
 每個廣告網路的資訊會顯示在一起，協助您比較每個廣告網路的效能。
 
-## 每個流量分配設定中的單獨使用者數
+## <a name="unique-users-per-mediation-configuration"></a>每個流量分配設定中的單獨使用者數
 
 
 [每個流量分配設定中的單獨使用者數]**** 圖表會顯示在選取時段內，接收到您每個流量分配設定版本的單獨使用者總數。
 
-## 依廣告網路的錯誤數
+## <a name="errors-by-ad-network"></a>依廣告網路的錯誤數
 
 
 [依廣告網路的錯誤數]**** 圖表會顯示您每個廣告網路的要求與錯誤總數，以及發生錯誤佔要求數的百分比。
 
-## 依類型的錯誤數
+## <a name="errors-by-type"></a>依類型的錯誤數
 
 
 [依類型的錯誤數]**** 圖表會顯示每個廣告網路所遇到的特定錯誤數。 其中也會顯示該網路中特定錯誤佔總錯誤的百分比，因此，您可以了解每個廣告網路中經常發生哪些錯誤。
@@ -64,10 +71,5 @@ ms.openlocfilehash: 07b4e34cc5e91ec70b88631560dd1429f11d2d6b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

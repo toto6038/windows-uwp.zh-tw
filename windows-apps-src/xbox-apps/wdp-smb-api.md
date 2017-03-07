@@ -2,13 +2,21 @@
 author: payzer
 title: "裝置入口網站 SMB API 參考"
 description: "了解如何以程式設計方式存取 SMB API。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
 translationtype: Human Translation
-ms.sourcegitcommit: 3d76bf181baa9dfd973467d43241230fddf2daf7
-ms.openlocfilehash: d6a097c84e6b967c41507d9e60c266f0bacb93fe
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fc52bd3d326a20d0b561ad06b9f4245e7b557f82
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 開發人員資料夾 API 參考   
+# <a name="developer-folder-api-reference"></a>開發人員資料夾 API 參考   
 您可以使用標準的 &#91;檔案總管&#93; 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。
 
 **要求**
@@ -52,9 +60,4 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Xbox
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

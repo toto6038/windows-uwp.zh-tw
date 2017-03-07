@@ -1,13 +1,22 @@
 ---
+author: JordanEllis6809
 title: "將現有的遊戲移到 Xbox"
 description: "透過 UWP 將現有的遊戲移到 Xbox。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 translationtype: Human Translation
-ms.sourcegitcommit: eec992d19d63778a46f97b76f3c8dea252a6a87b
-ms.openlocfilehash: 383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e82eacae06141c873690cccde04c3d871ae9d0eb
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 將現有的遊戲移到 Xbox
+# <a name="bringing-existing-games-to-xbox"></a>將現有的遊戲移到 Xbox
 
 
 根據您的遊戲所使用的技術，以下是一些將您的遊戲移到 Xbox 上 UWP 的步驟。
@@ -21,12 +30,7 @@ ms.openlocfilehash: 383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae
 |[Unity](development-lanes-unity.md)| 協助將現有遊戲從 Unity 移到 Xbox 的教學課程。 |
 |[HTML / JS](development-lanes-html.md)| 在 Xbox 上進行 HTML 遊戲開發的相關資訊。 |
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

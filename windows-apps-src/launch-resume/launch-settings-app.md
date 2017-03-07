@@ -1,17 +1,24 @@
 ---
 author: TylerMSFT
 title: "啟動 Windows 設定 app"
-description: "了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置可將 Windows 設定 app 啟動到特定的設定頁面。"
+description: "了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1135feec72510e6cbe955161ac169158a71097b9
-ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定 app
+# <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: f762d7eb70a0e9119f32350a815691109f994c75
 
 ## <a name="how-to-launch-the-settings-app"></a>如何啟動設定 App
 
-若要啟動 [設定] App，請使用 `ms-settings:` URI 配置，如下列範例所示。
+若要啟動 **\[設定\]** App，請使用 `ms-settings:` URI 配置，如下列範例所示。
 
 在這個範例中，會使用「超連結 XAML」控制項與 `ms-settings:privacy-microphone` URI 來啟動麥克風的隱私權設定頁面。
 
@@ -376,9 +383,4 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

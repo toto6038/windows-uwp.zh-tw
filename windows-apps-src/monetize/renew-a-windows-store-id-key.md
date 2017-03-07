@@ -3,18 +3,25 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "請使用這個方法來更新 Windows 市集金鑰。"
 title: "更新 Windows 市集識別碼金鑰"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows Store collection API, Windows Store purchase API, Windows Store ID key, renew, Windows 市集集合 API, Windows 市集購買 API, Windows 市集識別碼金鑰, 更新"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 更新 Windows 市集識別碼金鑰
+# <a name="renew-a-windows-store-id-key"></a>更新 Windows 市集識別碼金鑰
 
 
 請使用這個方法來更新 Windows 市集金鑰。 當您[產生 Windows 市集識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)時，該金鑰的有效期為 90 天。 金鑰到期之後，您可以藉由這個方法，使用過期的金鑰來重新交涉以取得一個新的金鑰。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要使用這個方法，您將需要：
@@ -22,11 +29,11 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 * 一個利用 `https://onestore.microsoft.com` 對象 URI 建立的 Azure AD 存取權杖。
 * 一個[從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的過期「Windows 市集識別碼」金鑰。
 
-如需詳細資訊，請參閱[從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
+如需詳細資訊，請查看[管理服務的產品權利](view-and-grant-products-from-a-service.md)。
 
-## 要求
+## <a name="request"></a>要求
 
-### 要求的語法
+### <a name="request-syntax"></a>要求的語法
 
 | 金鑰類型    | 方法 | 要求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
@@ -35,7 +42,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭         | 類型   | 說明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求主體
 
 | 參數     | 類型   | 描述                       | 必要 |
 |---------------|--------|-----------------------------------|----------|
@@ -54,7 +61,7 @@ ms.openlocfilehash: 4e0ca6fe88218faef1f7c9192a5e19569e9c00b4
 
 <span/> 
 
-### 要求的範例
+### <a name="request-example"></a>要求的範例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -68,10 +75,10 @@ Host: collections.mp.microsoft.com
 }
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 
-### 回應主體
+### <a name="response-body"></a>回應主體
 
 | 參數 | 類型   | 描述                                                                                                            | 必要 |
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
@@ -79,7 +86,7 @@ Host: collections.mp.microsoft.com
 
 <span/>
 
-### 回應的範例
+### <a name="response-example"></a>回應的範例
 
 ```syntax
 HTTP/1.1 200 OK
@@ -96,7 +103,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 
 | 代碼 | 錯誤        | 內部錯誤碼           | 說明                                                                                                                                                                           |
@@ -106,16 +113,11 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
-* [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)
+* [管理服務的產品權利](view-and-grant-products-from-a-service.md)
 * [查詢產品](query-for-products.md)
 * [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
 * [授與免費產品](grant-free-products.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

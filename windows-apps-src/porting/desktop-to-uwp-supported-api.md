@@ -3,12 +3,20 @@ author: awkoren
 Description: "此文章說明如何簽署已轉換至通用 Windows 平台 (UWP) 的傳統型應用程式。"
 Search.Product: eADQiWindows 10XVcnh
 title: "已轉換的傳統型應用程式所支援的 UWP API"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 translationtype: Human Translation
-ms.sourcegitcommit: 3751b16837a1e12f68954b2dec7dfaf0fb8554b6
-ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
+ms.lasthandoff: 02/08/2017
 
 ---
-# 使用傳統型橋接器轉換之 App 所支援的 UWP API
+# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>使用傳統型橋接器轉換的應用程式支援的 UWP API
 
 已轉換的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出了您已轉換的應用程式可以使用的類別。 
 
@@ -38,14 +46,14 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 
 已轉換的 App 不支援某些完全傳統型應用程式可以使用的 UWP API。 如果您的傳統型應用程式在轉換之前是使用 UWP API，您應該確認那些 API 仍受支援。 如需詳細資訊，請參閱[適用於傳統型應用程式的 Windows 執行階段 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
 
-## API 清單
+## <a name="list-of-apis"></a>API 清單
 
 下列是已轉換應用程式中所支援 UWP API 的完整清單。 您可以檢視[已轉換的 App 中新支援的 API](#new) 或[已轉換的 App 與傳統型應用程式中支援的 API](#both)。 
 
-如需如何使用 WinRT API 的範例，請參閱 GitHub 上的[傳統型應用程式橋接轉 UWP 範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。
+如需如何使用 WinRT API 的範例，請參閱 GitHub 上的[傳統型應用程式橋接轉 UWP 範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)。 
 
 <span id="new" />
-### 新轉換的 App 中支援的 API
+### <a name="apis-supported-in-newly-converted-apps"></a>新轉換的應用程式中支援的 API
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -371,7 +379,7 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### 已轉換的應用程式與傳統型應用程式中支援的 API
+### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>已轉換的應用程式與傳統型應用程式中支援的 API
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -1037,9 +1045,4 @@ ms.openlocfilehash: c99d103fe5d613c5b654ba2b0bb83987a7fcb944
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

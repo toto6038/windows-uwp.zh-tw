@@ -1,11 +1,19 @@
 ---
 author: seksenov
 title: "託管的 Web 應用程式 - 使用 Visual Studio 將您的 Web 應用程式轉換為 Windows 應用程式"
-description: "使用 Visual Studio 將您的網站搖身一變，成為適用於 Windows 10 的通用 Windows 平台 (UWP) App。"
+description: "使用 Visual Studio 將您的網站搖身一變，成為適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。"
 kw: Hosted Web Apps tutorial, Porting to Windows 10 with Visual Studio, How to convert website to Windows, How to add website to Windows Store, Packaging web application for Microsoft Store, Test Windows 10 native features and runtime APIs with CodePen, How to use Windows Cortana Live Tiles Built-in Camera on my Website with remote JavaScript
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "託管的 Web 應用程式, 將 Web 應用程式移植到 Windows 10, 將網站轉換成 Windows, 封裝適用 Windows 市集的 Web 應用程式"
+ms.assetid: a58d2c67-77f8-4d01-bea3-a6ebce2d73b9
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b6781883a3e48d35a558798f369e91c4a7ea3bec
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,7 +22,7 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 了解如何只要透過網站 URL，即可快速建立適用於 Windows 10 的通用 Windows 平台 App。 
 
 > [!NOTE]
-> 下列指示適用於搭配使用 Windows 開發平台。 Mac 使用者請參閱[關於使用 Mac 開發平台的指示](/hwa-create-mac.md)。
+> 下列指示適用於搭配使用 Windows 開發平台。 Mac 使用者請參閱[關於使用 Mac 開發平台的指示](./hwa-create-mac.md)。
 
 ## <a name="what-you-need-to-develop-on-windows"></a>在 Windows 上開發所需的項目
 
@@ -29,9 +37,9 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 ## <a name="step-2-create-a-blank-javascript-app"></a>步驟 2：建立空白的 JavaScript App
 
 啟動 Visual Studio。
-1. 按一下 \[檔案\]。
-2. 按一下 \[新專案\]。
-3. 在 \[JavaScript\]、\[Windows 通用\] 的下方，按一下 \[空白應用程式 \(通用 Windows\)\]。
+1. 按一下 \[檔案\]****。
+2. 按一下 \[新專案\]****。
+3. 在 \[JavaScript\]****、\[Windows 通用\]**** 的下方，按一下 \[空白應用程式 \(通用 Windows\)\]****。
 
 ![步驟 #2：建立空白的 JavaScript App](images/hwa-to-uwp/windows_step2.png)
 
@@ -44,7 +52,7 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 ## <a name="step-4-set-the-start-page-url"></a>步驟 4︰設定開始頁面 URL
 
 1. 開啟 `package.appxmanifest` 檔案。
-2. 在 \[應用程式\] 索引標籤下方，尋找 \[開始頁面\] 文字欄位。
+2. 在 \[應用程式\]**** 索引標籤下方，尋找 \[開始頁面\]**** 文字欄位。
 3. 將 `default.html` 取代為您的網站 URL。
 
 ![步驟 #4︰設定開始頁面 URL](images/hwa-to-uwp/windows_step4.png)
@@ -53,7 +61,7 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 
 應用程式內容 URI 規則 (ACUR) 會指定允許存取您 App 與通用 Windows API 的遠端 URL。 您至少必須新增適用於開始頁面的 ACUR，以及該頁面使用的所有網路資源。 如需關於 ACUR 的詳細資訊，請[按一下這裡](./hwa-access-features.md)。
 1. 開啟 `package.appxmanifest` 檔案。
-2. 按一下 \[內容 URI\] 索引標籤。
+2. 按一下 \[內容 URI\]**** 索引標籤。
 3. 針對開始頁面新增所有必要的 URI。
 
 例如：
@@ -61,7 +69,7 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 1. http://codepen.io/seksenov/pen/wBbVyb/?editors=101
 2. http://*.codepen.io/
 ```
-4. 針對每個新增的 URI，將 \[WinRT 存取\] 設為 \[全部\]。
+4. 針對每個新增的 URI，將 \[WinRT 存取\]**** 設為 \[全部\]****。
 
 ![步驟 #5︰定義您的 Web 應用程式界限](images/hwa-to-uwp/windows_step5.png)
 
@@ -69,7 +77,7 @@ ms.openlocfilehash: 1cb4757896c9fecf05224a26949cd6e2ddffdb45
 
 現在您已擁有可存取通用 Windows API 的全功能 Windows 10 App！
 
-若您是依照我們的 Codepen 範例操作，請按一下 \[Toast Notification\] 按鈕以從託管指令碼呼叫 Windows API。
+若您是依照我們的 Codepen 範例操作，請按一下 \[快顯通知\]**** 按鈕以從託管指令碼呼叫 Windows API。
 
 ![步驟 #6：執行 App](images/hwa-to-uwp/windows_step6.png)
 
@@ -96,9 +104,4 @@ function cameraCapture() {
 - [存取通用 Windows 平台 (UWP) 功能以增強您的 Web 應用程式](hwa-access-features.md)
 - [通用 Windows 平台 (UWP) App 指南](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [下載 Windows 市集應用程式的設計資產](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

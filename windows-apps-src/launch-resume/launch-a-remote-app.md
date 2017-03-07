@@ -1,14 +1,22 @@
 ---
 author: TylerMSFT
-title: "啟動遠端裝置上的 App"
-description: Learn how to launch an app on a remote device using Project "Rome".
+title: "啟動遠端裝置上的應用程式"
+description: "了解如何使用專案 &quot;Rome&quot; 啟動遠端裝置上的應用程式。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 translationtype: Human Translation
-ms.sourcegitcommit: 4e94ee5b3c56f3ec20e3592b97348c291297a670
-ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e3ef31ed9a90122ae0634274ac5794e67017bc2f
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
+# <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的應用程式
 
 本文說明如何以啟動遠端裝置上的 Windows 應用程式。
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
 
 ## <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 [功能] 索引標籤上選取 [遠端系統] 來新增此功能，或手動將下列程式碼行新增至專案的 Package.appxmanifest 檔案。
+為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 **\[功能\]** 索引標籤上選取 **\[遠端系統\]** 來新增此功能，或手動將下列程式碼行新增至專案的 Package.appxmanifest 檔案。
 
 ``` xml
 <Capabilities>
@@ -59,13 +67,8 @@ ms.openlocfilehash: d429ea4a6f8d52445c99cb170bb41c3fc1515dde
 
 ## <a name="related-topics"></a>相關主題
 
-[遠端系統 API 參考](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)  
+[遠端系統 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
 [已連線的 App 與裝置 (專案 "Rome") 概觀](connected-apps-and-devices.md)  
 [探索遠端裝置](discover-remote-devices.md)  
 [遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)示範如何探索遠端系統、啟動遠端系統上的 app，以及使用 app 服務在兩個系統上執行的 app 之間傳送訊息。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

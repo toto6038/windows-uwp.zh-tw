@@ -1,18 +1,25 @@
 ---
 author: msatranjr
-Description: "這個主題說明需要存取使用者位置之 app 的效能指導方針。"
-title: "定位感知 app 的指導方針"
+Description: "這個主題說明需要存取使用者位置之應用程式的效能指導方針。"
+title: "定位感知應用程式的指導方針"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 位置, 地圖, 地理位置"
 translationtype: Human Translation
-ms.sourcegitcommit: 7159aea3feef96781575825d019a379e0eadc603
-ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f52f2f7a33edcbb0bd360c7b336cc3988abb80f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 定位感知 app 的指導方針
+# <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -22,7 +29,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 這個主題說明需要存取使用者位置之 app 的效能指導方針。
 
-## 建議事項
+## <a name="recommendations"></a>建議事項
 
 
 -   只在應用程式要求位置資料時開始使用位置物件。
@@ -72,7 +79,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
         提供位置資料的裝置可以追蹤不同應用程式要求的報告間隔，並以最小要求間隔提供資料報告。 這樣最需要精確度的應用程式就會收到符合需求的資料。 因此，如果另一個 app 要求更高頻率的更新時，定位提供者可能會以比您 app 所要求之頻率還要高的頻率產生更新。
 
-        **注意** 位置來源不保證接受指定報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
+        **注意**  位置來源不保證接受指定報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
 
     -   為了幫助節省電源，請設定 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 屬性，向定位平台指出您的應用程式是否需要高精確度的資料。 如果沒有 app 需要高精確度的資料，系統可以藉由不開啟 GPS 提供者以便節省電源。
 
@@ -100,13 +107,13 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
     Windows 執行階段 API 可存取上述所有感應器 (除了磁力儀之外)。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
-**連線待命** 
+**連線待命**
 - 當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
 
-### 偵測位置設定中的變更
+### <a name="detecting-changes-in-location-settings"></a>偵測位置設定中的變更
 
 使用者可以使用 [設定]**** 應用程式中的 [位置隱私權設定]**** 來關閉定位功能。
 
@@ -119,7 +126,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 請注意，定位服務會在資料變成可用時傳回該資料。 它可能會先以較大的錯誤半徑傳回一個位置，然後在較準確的資訊變成可用時，使用該資訊來更新位置。 顯示使用者位置的應用程式通常會希望在較準確的資訊變成可用時更新位置。
 
-### 位置圖形表示法
+### <a name="graphical-representations-of-location"></a>位置圖形表示法
 
 讓您的 app 使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526)，來在地圖上清楚表示使用者目前的位置。 準確度有三個主要波段 - 約 10 公尺的錯誤半徑、約 100 公尺的錯誤半徑，以及大於 1 公里的錯誤半徑。 藉由使用準確度資訊，您可以確保 app 能根據可用的資料內容，準確地顯示位置。 如需有關使用地圖控制項的一般資訊，請參閱[顯示地圖的 2D、3D 和 Streetside 檢視](https://msdn.microsoft.com/library/windows/apps/mt219695)。
 
@@ -140,7 +147,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 -   製作順暢的轉換動畫，並讓轉換過程快速且流暢。
 -   讓使用者等候幾個連續的報告，以確認準確度的變更，這有助於防止使用者執行不想要且太頻繁的縮放。
 
-### 位置文字表示法
+### <a name="textual-representations-of-location"></a>位置文字表示法
 
 某些類型的 app (例如，氣象 app 或當地資訊 app) 需要在不同準確度級區中使用文字來表示位置的方法。 請確定位置能清楚顯示，並且只顯示到資料中提供的準確度層級。
 
@@ -148,7 +155,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 -   若準確度約等於 100 公尺 (Wi-Fi 解析)，接收到的位置資料為適度準確的資料，因此我們建議您顯示達到城市名稱層級的資訊。 避免使用街區名稱。
 -   若準確度大於 1 公里 (IP 解析)，僅顯示州或省，或國家/地區名稱。
 
-### 隱私權考量
+### <a name="privacy-considerations"></a>隱私權考量
 
 使用者的地理位置是個人識別資訊 (PII)。 下列網站提供保護使用者隱私權的指導。
 
@@ -156,7 +163,7 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [設定地理柵欄](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [取得目前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
@@ -166,13 +173,4 @@ ms.openlocfilehash: 133add15e0e5681ec85a0800c52605262a82f8b4
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

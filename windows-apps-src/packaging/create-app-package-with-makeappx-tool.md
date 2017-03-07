@@ -2,9 +2,17 @@
 author: laurenhughes
 title: "使用 MakeAppx.exe 工具建立應用程式套件"
 description: "MakeAppx.exe 建立、加密、解密應用程式套件與套件組合，並從應用程式套件與套件組合中擷取檔案。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 translationtype: Human Translation
-ms.sourcegitcommit: 28cd2b2a922a20e0b9ffc4d1ca65f6a55e92aa8f
-ms.openlocfilehash: c99c76fac9303e174b5d804c2f1b99856be25006
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 616340bcc5159dce12d3b888697ac4f60d30f175
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -269,8 +277,3 @@ MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile
 - 應用程式不會針對此清單中禁止的通訊協定進行註冊︰SMB、FILE、MS-WWA-WEB、MS-WWA。 
 
 這不是完整的語意式驗證，只是設計來攔截常見的錯誤。 透過 **MakeAppx.exe** 建置的套件不保證能夠安裝。
-
-
-<!--HONumber=Dec16_HO1-->
-
-

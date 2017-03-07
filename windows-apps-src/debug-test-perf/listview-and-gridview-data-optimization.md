@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
 title: "ListView 和 GridView 資料虛擬化"
 description: "透過資料虛擬化改善 ListView 和 GridView 的效能和啟動時間。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e44dd5c2c3c9fb252062af3a6a9f409e1777a878
-ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# ListView 和 GridView 資料虛擬化
+# <a name="listview-and-gridview-data-virtualization"></a>ListView 和 GridView 資料虛擬化
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意** 如需詳細資訊，請參閱 //build/ 工作階段[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 以下是更多關於遞增和隨機存取資料虛擬化技術的詳細資訊。
 
-## 遞增資料虛擬化
+## <a name="incremental-data-virtualization"></a>遞增資料虛擬化
 
 遞增資料虛擬化會依序載入資料。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 使用遞增資料虛擬化，可能用來檢視數百萬個項目的集合，但最初只會載入 50 個項目。 當使用者移動瀏覽/捲動時，會載入接下來的 50 個項目。 載入項目時，捲軸的捲動方塊會減少大小。 針對這種資料虛擬化類型，您使用實作這些介面的資料來源類別。
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 當項目控制項接近現有資料的結尾時，它會呼叫 [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems)。 如果傳回 **true**，則它會呼叫 [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) 傳遞要載入的建議項目數。 根據您載入資料的來源位置 (本機磁碟機、網路或雲端)，您可以選擇載入與建議不同的項目數。 例如，如果您的服務支援 50 個項目的批次，但是項目控制項只要求 10 個，則您可以載入 50 個。 從後端載入資料、將它新增到您的清單，以及透過 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 或 [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 引發變更通知，項目控制項就能知道新的項目。 也會傳回您實際載入的項目計數。 如果載入比建議還少的項目，或項目控制項臨時被進一步移動瀏覽/捲動，您的資料來源會再次呼叫更多項目，且循環會繼續。 若要深入了解，您可以下載 Windows 8.1 的 [XAML 資料繫結範例](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)，並在 Windows 10 app 中重複使用其原始程式碼。
 
-## 隨機存取資料虛擬化
+## <a name="random-access-data-virtualization"></a>隨機存取資料虛擬化
 
 隨機存取資料虛擬化允許從資料集的任意點載入。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 使用隨機存取資料虛擬化，用來檢視數百萬個項目的集合，可以載入 100,000 – 100,050 個項目。 如果使用者接著移動到清單開頭，控制項就會載入項目 1 – 50。 捲軸的捲動方塊隨時會表示 **ListView** 包含數百萬個項目。 捲軸的捲動方塊位置是可見項目在集合內整個資料集中的相對位置。 這種類型的資料虛擬化可以大幅減少記憶體需求和集合的載入時間。 若要啟用，您必須撰寫可隨選擷取資料和管理本機快取及實作這些介面的資料來源類別。
 
@@ -79,10 +86,5 @@ ms.openlocfilehash: 0a16dc27db6fb1e04e1ab0c575077ca10b97f12d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO4-->
 
 

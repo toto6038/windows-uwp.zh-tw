@@ -3,16 +3,23 @@ author: mtoepke
 title: "適用於遊戲的移動視角控制項"
 description: "了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。"
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 移動視角, 控制項"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40af05538aa6a6fff6e159fe8aa8812090e8b44b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
+# <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。
 
@@ -22,13 +29,13 @@ ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
 
 這些控制項在遊戲中通稱為 WASD 控制項，您可以使用 W、A、S 及 D 按鍵來控制 x-z 立體固定相機的移動方向，滑鼠則是用來控制相機在 x 和 y 軸上的旋轉方式。
 
-## 目標
+## <a name="objectives"></a>目標
 
 
 -   將基本移動視角控制項加入使用滑鼠和鍵盤 (以及使用觸控式螢幕) 的 DirectX 遊戲中。
 -   實作用來瀏覽 3D 環境的第一人稱相機。
 
-## 觸控控制項實作的注意事項
+## <a name="a-note-on-touch-control-implementations"></a>觸控控制項實作的注意事項
 
 
 我們會針對觸控控制項實作兩個控制器：移動控制器 (處理與相機視點相對的 x-z 立體移動) 以及視角控制器 (瞄準相機的視點)。 我們的移動控制器會對應到鍵盤的 WASD 按鍵，而視角控制器則是對應到滑鼠。 但是在觸控控制項中，我們不但需要定義可輸入方向的螢幕區域或虛擬 WASD 按鍵，也需要定義作為視角控制項輸入區域的螢幕其他區域。
@@ -39,7 +46,7 @@ ms.openlocfilehash: d5bd0a43c1f261e6a12ed947e497d3e45d0ab6a7
 
 當您移動螢幕左下角的觸控指標 (不是滑鼠 ！) 時，任何向上的移動會讓相機向前移動。 任何向下的移動則會讓相機向後移動。 而在移動控制器的指標範圍內左右移動相機就會左右移動。 在這個範圍外 (就是視角控制器)，您只需觸碰或拖曳相機即可調整您要面對的方向。
 
-## 設定基本的輸入事件基礎結構
+## <a name="set-up-the-basic-input-event-infrastructure"></a>設定基本的輸入事件基礎結構
 
 
 首先，我們必須建立用來處理滑鼠和鍵盤輸入事件的控制項類別，並根據該輸入來更新相機視角。 因為我們要實作移動視角控制項，所以呼叫 **MoveLookController**。
@@ -184,7 +191,7 @@ internal:
 
 到目前為止，您已經有了實作移動視角控制項所需的全部元件了。 所以，讓我們將這些元件連結起來。
 
-## 建立基本輸入事件
+## <a name="create-the-basic-input-events"></a>建立基本輸入事件
 
 
 Windows 執行階段事件發送器提供了要讓 **MoveLookController** 類別執行個體處理的 5 個事件：
@@ -376,7 +383,7 @@ void MoveLookController::OnKeyUp(
 
 而放開按鍵時，這個處理常式就會將它設回 False。 當我們呼叫 **Update** 時，它會檢查這些方向移動狀態，並據此移動相機。 這比觸控實作稍稍簡單一點！
 
-## 初始化觸控控制項以及控制器狀態
+## <a name="initialize-the-touch-controls-and-the-controller-state"></a>初始化觸控控制項以及控制器狀態
 
 
 讓我們開始執行事件，並初始化所有的控制器狀態欄位。
@@ -423,7 +430,7 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 
 **Initialize** 會將 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體參考當作一個參數，並將我們已開發的事件處理常式登錄到該 **CoreWindow** 上的適當事件。 在應用程式啟動時，它會初始化移動和視角指標的識別碼，將觸控式螢幕移動控制器實作的命令向量設成零，並將相機視角設成正前方。
 
-## 取得和設定相機的位置和方向
+## <a name="getting-and-setting-the-position-and-orientation-of-the-camera"></a>取得和設定相機的位置和方向
 
 
 讓我們定義一些方法來取得和設定檢視區中的相機位置。
@@ -464,7 +471,7 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## 更新控制器狀態資訊
+## <a name="updating-the-controller-state-info"></a>更新控制器狀態資訊
 
 
 現在，我們要執行計算來將 **m\_movePointerPosition** 中追蹤到的指標座標資訊，轉換為使用世界座標系統的新座標資訊。 應用程式會在我們每次重新整理主應用程式迴圈時，呼叫這個方法。 所以此時我們會計算要傳送給 app 的新視點位置資訊，以便在投影到檢視區前更新檢視矩陣。
@@ -556,7 +563,7 @@ void MoveLookController::Update(CoreWindow ^window)
 
 玩家視點的最後位置會是最後位置加上計算的速度，而且當它呼叫 **get\_Position** 方法 (最可能發生在設定每個畫面時) 時轉譯器就會讀取這個資料。 之後，我們要將移動命令重設為零。
 
-## 使用新相機位置來更新視圖矩陣
+## <a name="updating-the-view-matrix-with-the-new-camera-position"></a>使用新相機位置來更新視圖矩陣
 
 
 我們可以取得相機聚焦的場景區域座標，只需通知應用程式就可以更新它 (例如，在主應用程式迴圈中每 60 秒一次)。 這個虛擬程式碼會建議您可以實作的呼叫行為：
@@ -585,10 +592,5 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

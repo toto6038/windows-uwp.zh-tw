@@ -2,16 +2,23 @@
 author: mcleanbyron
 ms.assetid: 9621641A-7462-425D-84CC-101877A738DA
 description: "了解如何從 UWP App 的 AdMediatorControl AdControl 中進行移轉。"
-title: "針對 UWP App 從 AdMediatorControl 移轉到 AdControl"
+title: "針對 UWP 應用程式從 AdMediatorControl 移轉到 AdControl"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 廣告, AdMediatorControl, AdControl, 移轉"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 6e7e833327dce4b49e44b7485908c8a507b217ef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="migrate-from-admediatorcontrol-to-adcontrol-for-uwp-apps"></a>針對 UWP App 從 AdMediatorControl 移轉到 AdControl
+# <a name="migrate-from-admediatorcontrol-to-adcontrol-for-uwp-apps"></a>針對 UWP 應用程式從 AdMediatorControl 移轉到 AdControl
 
-先前的 Advertising SDK 會從 Microsoft 啟用的通用 Windows 平台 (UWP) App 發行，以使用 **AdMediatorControl** 類別來顯示橫幅廣告，讓開發人員能夠藉由顯示來自我們合作夥伴網路 (AOL 和 AppNexus) 以及 AdDuplex 的橫幅廣告，以獲得最佳廣告收益。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 不再支援 **AdMediatorControl** 類別。 如果您現有的應用程式會使用來自舊版 SDK 的 **AdMediatorControl** 類別，而您想要將它移轉到使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP App，請遵循本文中的指示，更新您的程式碼來使用 **AdControl** 類別而不是 **AdMediatorControl** 類別。 您可以選擇性地使用加權或排名方法，設定 App 以利用 AdDuplex 傳達廣告。
+先前的 Advertising SDK 會從 Microsoft 啟用的通用 Windows 平台 (UWP) 應用程式發行，以使用 **AdMediatorControl** 類別來顯示橫幅廣告，讓開發人員能夠藉由顯示來自我們合作夥伴網路 (AOL 和 AppNexus) 以及 AdDuplex 的橫幅廣告，以獲得最佳廣告收益。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 不再支援 **AdMediatorControl** 類別。 如果您現有的應用程式會使用來自舊版 SDK 的 **AdMediatorControl** 類別，而您想要將它移轉到使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP App，請遵循本文中的指示，更新您的程式碼來使用 **AdControl** 類別而不是 **AdMediatorControl** 類別。 您可以選擇性地使用加權或排名方法，設定 App 以利用 AdDuplex 傳達廣告。
 
 >**注意**&nbsp;&nbsp;本文所提供的程式碼範例僅供說明之用。 您可能需要對程式碼範例進行調整，才能在 App 中使用。
 
@@ -158,9 +165,4 @@ ms.openlocfilehash: 6e7e833327dce4b49e44b7485908c8a507b217ef
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

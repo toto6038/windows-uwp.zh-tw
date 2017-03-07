@@ -3,15 +3,22 @@ author: DelfCo
 description: "您可以使用 Windows.Networking.Sockets 和 Winsock，以通用 Windows 平台 (UWP) 的 app 開發人員的身分與其他裝置通訊。"
 title: "通訊端"
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
-ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 通訊端
+# <a name="sockets"></a>通訊端
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: 49a9ae4d7d3994ad7fbb78fc9dc60cdd9dca07c3
 
 >**注意：**因為是[網路隔離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)的一部分，所以系統禁止在同一部電腦上執行的兩個 UWP app 之間建立通訊端連線 (Sockets 或 WinSock)，不論是透過本機迴路位址 (127.0.0.0) 或明確指定本機 IP 位址。 這表示您無法使用通訊來在 UWP app 之間通訊。 UWP 提供其他 app 間的通訊機制。 如需詳細資訊，請參閱 [App 間通訊](https://msdn.microsoft.com/windows/uwp/app-to-app/index)。
 
-## 基本 TCP 通訊端作業
+## <a name="basic-tcp-socket-operations"></a>基本 TCP 通訊端作業
 
 TCP 通訊端為長期連線提供雙向的低階網路資料傳輸。 TCP 通訊端是網際網路上大多數網路通訊協定所使用的基本功能。 本節說明如何透過使用 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 和 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 類別當作 [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間的一部分，讓 UWP app 以 TCP 資料流通訊端來傳送和接收資料。 在本節中，我們會建立一個非常簡單的 app 當作回應伺服器和用戶端，以示範基本 TCP 操作。
 
@@ -104,7 +111,7 @@ catch (Exception e)
 }
 ```
 
-## 基本 UDP 通訊端作業
+## <a name="basic-udp-socket-operations"></a>基本 UDP 通訊端作業
 
 UDP 提供雙向低階網路資料傳輸，可用於不需要建立連線的網路通訊。 因為 UDP 通訊端不會維持兩端點的連線，它們可提供遠端電腦之間網路功能快速又簡單的解決方案。 不過，UDP 通訊端不會確保網路封包的完整性，或確認封包是否到達遠端目的地。 使用 UDP 通訊端的 app 包括區域網路探索和區域聊天用戶端。 本節透過建立簡單的回應伺服器和用戶端，來示範使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 類別傳送和接收 UDP 訊息。
 
@@ -190,11 +197,11 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## 背景作業和通訊端代理程式
+## <a name="background-operations-and-the-socket-broker"></a>背景作業和通訊端代理程式
 
 如果您的 app 會在通訊端上接收連線或資料，則您必須做好準備，以便在您的 app 不在前景時適當執行這些作業。 若要這樣做，您可以使用通訊端代理程式。 如需如何使用通訊端代理程式的詳細資訊，請參閱[背景網路通訊](network-communications-in-the-background.md)。
 
-## 批次傳送
+## <a name="batched-sends"></a>批次傳送
 
 從 Windows 10 開始，Windows.Networking.Sockets 可支援批次傳送，此方式可讓您同時傳送多個資料緩衝區，且內容切換的額外負荷會比個別傳送每個緩衝區時低得多。 如果您的 app 正在進行 VoIP、VPN 或其他涉及盡可能有效移動大量資料的工作，這會特別有用。
 
@@ -264,11 +271,11 @@ await outputStream.FlushAsync();
 -   **FlushAsync** 模式只適用於 Windows 10 和後續版本。
 -   在其他情況下，請改用 **Task.WaitAll**，而不要使用 **FlushAsync** 模式。
 
-## DatagramSocket 的連接埠共用
+## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的連接埠共用
 
 Windows 10 導入了新的 [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) 屬性 ([**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368))，可讓您指定相關的 **DatagramSocket** 能夠與其他繫結至相同地址/連接埠的 Win32 或 WinRT 多點傳送通訊端並存。
 
-## 提供具有 StreamSocket 類別的用戶端憑證
+## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
 
 [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
 
@@ -281,7 +288,7 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Windows.Networking.Sockets 中的例外狀況
+## <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets 中的例外狀況
 
 如果傳送的字串不是有效的主機名稱 (包含不允許在主機名稱中使用的字元)，與通訊端一起使用的 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 類別的建構函式會發生例外狀況。 如果 app 取得使用者為 **HostName** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
@@ -293,14 +300,9 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
 
-## Winsock API
+## <a name="the-winsock-api"></a>Winsock API
 
 您也可以在您的 UWP app 中使用 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)。 支援的 Winsock API 以 Windows Phone 8.1Microsoft Silverlight 的 API 為基礎，且會繼續支援大部分的類型、屬性和方法 (已移除一些被視為過時的 API)。 您可以在[這裡](https://msdn.microsoft.com/library/windows/desktop/ms740673)找到更多關於 Winsock 程式設計的資訊。
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

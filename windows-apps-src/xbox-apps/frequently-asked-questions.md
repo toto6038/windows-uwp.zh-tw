@@ -2,15 +2,23 @@
 author: Mtoepke
 title: "常見問題集"
 description: "Xbox 上 UWP 的常見問題集。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 translationtype: Human Translation
-ms.sourcegitcommit: 1ee75d73cc42455677bc2c0df08b41f33fc4f7b0
-ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="frequently-asked-questions"></a>常見問題集
 
-項目未以您預期的方式運作？ 請閱讀這一頁的常見問題集。 也請參閱[已知問題](known-issues.md)主題和[開發通用 Windows 應用程式](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)論壇。 
+項目未以您預期的方式運作？ 請閱讀這一頁的常見問題集。 也請參閱[已知問題](known-issues.md)主題和[開發通用 Windows 應用程式](https://go.microsoft.com/fwlink/?linkid=839446)論壇。 
 
 ### <a name="why-are-my-games-and-apps-not-working"></a>我的遊戲和應用程式為何無法運作？
 
@@ -39,9 +47,12 @@ ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
 
 是，您可以從開發人員模式切換至零售模式 (您可以在此玩遊戲)。 如需詳細資訊，請參閱[啟用 Xbox One 開發人員模式](devkit-activation.md)。 
 
-### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>我是否會遺失我的遊戲和 App，或是已儲存的變更？
+### <a name="can-i-develop-and-publish-x86-apps-for-xbox"></a>我可以開發及發行適用於 Xbox 的 x86 應用程式嗎？
+Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至市集。 
 
-如果您決定離開開發人員計畫，您將不會遺失已安裝的遊戲和 App。 此外，只要您在執行它們時是在線上，您所有的遊戲存檔都會儲存在您的 Live 帳戶雲端設定檔上，因此將不會遺失。
+### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>我是否會遺失我的遊戲和應用程式，或是已儲存的變更？
+
+如果您決定離開開發人員計畫，您將不會遺失已安裝的遊戲和應用程式。 此外，只要您在執行它們時是在線上，您所有的遊戲存檔都會儲存在您的 Live 帳戶雲端設定檔上，因此將不會遺失。
 
 ### <a name="how-do-i-leave-the-developer-program"></a>如何離開開發人員計畫？
 
@@ -99,7 +110,7 @@ ms.openlocfilehash: a6d410e3a4873bb96fba46789b28185c392a7492
   > [!NOTE]
   > 為了取得最佳的部署效能，建議您使用有線連線方式連線主機。
 
-5. 請確定您是使用 [偵錯] 索引標籤的 [驗證] 下拉式清單中的 [通用 (未加密的通訊協定)]。 如需詳細資料，請參閱[開發環境設定](development-environment-setup.md)。
+5. 請確定您是使用 [偵錯]**** 索引標籤的 [驗證] 下拉式清單中的 [通用 (未加密的通訊協定)]。 如需詳細資料，請參閱[開發環境設定](development-environment-setup.md)。
 
 <!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
 
@@ -131,9 +142,4 @@ TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 
 ## <a name="see-also"></a>另請參閱
 - [Xbox One 上的 UWP 已知問題](known-issues.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

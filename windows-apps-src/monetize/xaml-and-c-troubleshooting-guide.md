@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "深入了解在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
 title: "XAML 和 C# 的疑難排解指南"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0d5ba07f3a77f360dcb45c7139a7301cdb623dbb
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -270,9 +277,4 @@ ms.openlocfilehash: 63db8e9899c3337f558fc0e60b1b81cbcf9b0d8d
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

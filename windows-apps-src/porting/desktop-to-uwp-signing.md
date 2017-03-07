@@ -2,22 +2,30 @@
 author: awkoren
 Description: "此文章說明如何簽署已轉換至通用 Windows 平台 (UWP) 的傳統型應用程式。"
 Search.Product: eADQiWindows 10XVcnh
-title: "簽署使用傳統型轉 UWP 橋接器轉換的 App。"
+title: "簽署使用傳統型轉 UWP 橋接器轉換的應用程式。"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 232c3012-71ff-4f76-a81e-b1758febb596
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: 2db978089a6334214c3b4c85dbde8d4a4e846092
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b5936030f09e52933053f2465659157083b9eec2
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 簽署使用傳統型橋接器轉換的 App
+# <a name="sign-an-app-converted-with-the-desktop-bridge"></a>針對使用傳統型橋接器轉換的應用程式進行簽署
 
 此文章說明如何簽署已轉換至通用 Windows 平台 (UWP) 的傳統型應用程式。 部署 .appx 套件之前，您必須以憑證簽署它。
 
-## 使用 Desktop App Converter (DAC) 自動簽署
+## <a name="automatically-sign-using-the-desktop-app-converter-dac"></a>使用 Desktop App Converter (DAC) 自動簽署
 
 執行 DAC 以自動簽署您的 .appx 套件時，請使用 ```-Sign``` 旗標。 如需詳細資訊，請參閱 [Desktop App Converter 預覽](desktop-to-uwp-run-desktop-app-converter.md)。
 
-## 使用 SignTool.exe 手動簽署
+## <a name="manually-sign-using-signtoolexe"></a>使用 SignTool.exe 手動簽署
 
 首先，使用 MakeCert.exe 建立憑證。 如果系統要求您輸入密碼，請選取「無」。 
 
@@ -38,11 +46,11 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 
 如需其他詳細資訊，請參閱[如何使用 SignTool 簽署應用程式套件](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)。 
 
-Microsoft Windows10 SDK 已包含上述三個工具。 若要直接呼叫它們，請從命令提示字元呼叫 ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` 指令碼。
+Microsoft Windows 10 SDK 已包含上述三個工具。 若要直接呼叫它們，請從命令提示字元呼叫 ```C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat``` 指令碼。
 
-## 常見錯誤
+## <a name="common-errors"></a>常見錯誤
 
-### 發行者和憑證不符會導致 Signtool 錯誤「錯誤：SignerSign() 失敗」(-2147024885/0x8007000b)
+### <a name="publisher-and-cert-mismatch-causes-signtool-error-error-signersign-failed--21470248850x8007000b"></a>發行者和憑證不符會導致 Signtool 錯誤「錯誤：SignerSign() 失敗」(-2147024885/0x8007000b)
 
 Appx 資訊清單中的發行者項目必須符合您用來簽署的憑證主體。  您可以使用下列任一種方法來檢視憑證的主體。 
 
@@ -56,17 +64,17 @@ Appx 資訊清單中的發行者項目必須符合您用來簽署的憑證主體
 
 **選項 2：檔案總管**
 
-按兩下 [檔案總管] 中的憑證、選取 [詳細資料] 索引標籤，然後選取清單中的 [主體] 欄位。 您接著可以複製內容。 
+按兩下 [檔案總管] 中的憑證、選取 [詳細資料]** 索引標籤，然後選取清單中的 [主體]** 欄位。 您接著可以複製內容。 
 
 **選項 3：CertUtil**
 
-從 PFX 檔案的命令列執行 **certutil**，然後從輸出複製 [主體] 欄位。 
+從 PFX 檔案的命令列執行 **certutil**，然後從輸出複製 [主體]** 欄位。 
 
 ```cmd
 certutil -dump <cert_file.pfx>
 ```
 
-### 毀損或格式錯誤的 Authenticode 簽章
+### <a name="corrupted-or-malformed-authenticode-signatures"></a>毀損或格式錯誤的 Authenticode 簽章
 
 本節中的詳細資訊包括如何識別 AppX 套件中可攜式執行 (PE) 檔的問題，且套件中可能包含損毀或格式錯誤的 Authenticode 簽章。 PE 檔 (exe、.dll、.chm 等任何二進位檔案格式) 上無效的 Authenticode 簽章，會導致無法正確簽署您的套件，進而造成無法從 AppX 套件部署它。 
 
@@ -87,13 +95,8 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
 
 若要修正這些格式錯誤的二進位檔，請確定它們符合上述需求。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 - [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
 - [SignTool.exe (簽署工具)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
 - [如何使用 SignTool 簽署應用程式套件](https://msdn.microsoft.com/library/windows/desktop/jj835835.aspx)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

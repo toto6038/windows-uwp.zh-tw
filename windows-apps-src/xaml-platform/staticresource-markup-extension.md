@@ -3,31 +3,38 @@ author: jwmsft
 description: "透過評估對某個已定義資源的參考，以提供任一 XAML 屬性的值。 資源是在 ResourceDictionary 中定義，而 StaticResource 用法會參考該資源在 ResourceDictionary 中的索引鍵。"
 title: "StaticResource 標記延伸"
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 48cdfd86705ff29e4ffc7e9f69de2f01e75f7f2a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 539bc6b0a43491c9ef75701bc574c7e31d2c02e7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {StaticResource} 標記延伸
+# <a name="staticresource-markup-extension"></a>{StaticResource} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 透過評估對某個已定義資源的參考，以提供任一 XAML 屬性的值。 資源是在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定義，而 **StaticResource** 用法會參考該資源在 **ResourceDictionary** 中的索引鍵。
 
-## XAML 屬性用法
+## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
 ``` syntax
 <object property="{StaticResource key}" .../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 詞彙 | 說明 |
 |------|-------------|
 | 索引鍵 | 要求的資源的索引鍵。 這個索引鍵最初是由 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 所指派。 資源索引鍵可以是定義在 XamlName 文法中的任何字串。 |
 
-## 備註
+## <a name="remarks"></a>備註
 
 **StaticResource** 是一項技術，可以為 XAML 屬性取得定義在 XAML 資源字典中其他位置的值。 由於這些值是要供多個屬性值共用，或由於 XAML 資源字典被當作一項 XAML 封裝或分解技術來使用，因此這些值可能會放在資源字典中。 其中一個 XAML 封裝技術範例就是控制項的佈景主題字典。 另一個範例是用於資源後援的合併資源字典。
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 48cdfd86705ff29e4ffc7e9f69de2f01e75f7f2a
 
 **StaticResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用 "\{" 和 "\}" 字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
-### {StaticResource} 用法範例
+### <a name="an-example-staticresource-usage"></a>{StaticResource} 用法範例
 
 這個 XAML 範例來自 [XAML 資料繫結範例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
 
@@ -71,22 +78,17 @@ ms.openlocfilehash: 48cdfd86705ff29e4ffc7e9f69de2f01e75f7f2a
 
 請注意 {StaticResource} 標記延伸用法如何設定另一個標記延伸 [{Binding} 標記延伸](binding-markup-extension.md)的屬性，因此這裡使用了兩個巢狀標記延伸。 內部的項目會先進行評估，因此可以先取得資源並做為值。 {Binding} 標記延伸中也顯示了這個相同的範例。
 
-## **{StaticResource}** 標記延伸的設計階段工具支援
+## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>**{StaticResource}** 標記延伸的設計階段工具支援
 
 當您在 XAML 頁面中使用 **{StaticResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入 "{StaticResource" 之後，任何來自目前查閱範圍的資源索引鍵就會立即顯示於 IntelliSense 下拉式清單中。 除了您在頁面層級 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和 app 層級 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上擁有的典型資源之外，您也會看到 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)，以及專案正在使用之任何延伸的資源。
 
 一旦資源索引鍵存在於任何 **{StaticResource}** 用法中，**移至定義** \(F12\) 功能就可以立即解析該資源，並為您顯示其定義所在的目錄。 針對佈景主題資源，這會在設計階段移至 generic.xaml。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 屬性](x-key-attribute.md)
 * [{ThemeResource} 標記延伸](themeresource-markup-extension.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

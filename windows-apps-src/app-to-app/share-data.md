@@ -3,19 +3,26 @@ description: "本文說明如何在通用 Windows 平台 (UWP) 應用程式中�
 title: "分享資料"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 554a2cd1db0f950b8a04a5d562f6a6ba43f1be23
-ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59039fbd2cc54c757acabba7f0c981059ef95c56
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 分享資料
+# <a name="share-data"></a>分享資料
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文說明如何在通用 Windows 平台 (UWP) 應用程式中支援分享協定。 分享協定是一種在 app 之間快速分享資料 (例如文字、連結，照片和影片) 的簡單方法。 舉例來說，使用者可能會想要使用社交網路 app 與朋友分享網頁，或是將連結儲存在筆記本 app 以供日後參考。
 
-## 設定事件處理常式
+## <a name="set-up-an-event-handler"></a>設定事件處理常式
 
 新增要在每次使用者叫用分享時呼叫的 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件處理常式。 這會在使用者點選 app 中的控制項 (例如按鈕或是應用程式列命令) 時發生，或是在特定的情況下 (例如使用者完成了關卡並取得高分) 自動發生。
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## 選擇資料
+## <a name="choose-data"></a>選擇資料
 
 您可以分享各種類型的資料，包括：
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## 設定屬性
+## <a name="set-properties"></a>設定屬性
 
 當您封裝資料進行分享時，可以提供各種屬性，為目前分享的內容提供更多資訊。 這些屬性可協助目標 app 提升使用者體驗。 例如，description 屬性可在使用者利用多個 app 分享內容時提供協助。 分享影像或網頁連結時，如果加上縮圖，就可以提供使用者視覺上的參考。 如需詳細資訊，請參閱 [**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)。
 
@@ -50,17 +57,17 @@ ms.openlocfilehash: 8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## 啟動分享 UI
+## <a name="launch-the-share-ui"></a>啟動分享 UI
 
 分享的 UI 是由系統所提供。 若要啟動它，請呼叫 [**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI) 方法。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## 處理錯誤
+## <a name="handle-errors"></a>處理錯誤
 
 在大部分情況下，內容的分享過程其實不複雜。 但是，還是有可能發生意外的狀況。 例如，App 要求使用者選取要分享的內容，但使用者沒有選取任何內容。 為了處理這些情況，請使用 [**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)) 方法在發生某些錯誤時向使用者顯示訊息。
 
-## 使用委派延遲分享
+## <a name="delay-share-with-delegates"></a>使用委派延遲分享
 
 有時候，立即準備使用者想要分享的資料並沒有什麼意義。 例如，如果 app 支援以幾種不同的可能格式傳送大型影像檔案，在使用者做出選擇之前建立所有的影像是沒有效率的。
 
@@ -91,7 +98,7 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## 另請參閱 
+## <a name="see-also"></a>另請參閱 
 
 * [App 間通訊](index.md)
 * [接收資料](receive-data.md)
@@ -102,10 +109,5 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
 * [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

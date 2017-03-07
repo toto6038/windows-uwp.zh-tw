@@ -4,9 +4,17 @@ Description: "使用反轉清單，在底部加入新項目。"
 title: "反轉清單"
 label: Inverted lists
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
 translationtype: Human Translation
-ms.sourcegitcommit: 5f50e490caa5d1d88c2f8315dc47e15b0ae22a05
-ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 0a33aaf71dbf23e991591f790f7327d812b060ef
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="inverted-lists"></a>反轉清單
@@ -55,9 +63,4 @@ ms.openlocfilehash: de90c49dfc961241c1da028c8f7278e370a810bd
 - 將來自傳送者/接收者的訊息對齊於相對的兩端，以便讓使用者清楚進行交談流程。
 - 如果使用者已經在交談結尾等待下一則訊息，請利用動畫方式顯示現有訊息以顯示最新訊息。
 - 如果使用者正在閱讀的並非交談結尾，就不要移動項目來干擾使用者的焦點。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

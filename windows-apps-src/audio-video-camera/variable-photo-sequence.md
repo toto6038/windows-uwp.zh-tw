@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: "本文章示範如何擷取可變相片序列，讓您以快速連續的方式拍攝多個影像畫面，並針對每個畫面使用不同焦點、閃光燈、ISO、曝光度及曝光補償設定進行設定。"
 title: "可變相片序列"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 780ee8a28f0c272b4cbf7e4fe770784aa4f11b9d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 可變相片序列
+# <a name="variable-photo-sequence"></a>可變相片序列
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 > [!NOTE] 
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
-## 將您的 app 設定為使用可變相片序列擷取
+## <a name="set-up-your-app-to-use-variable-photo-sequence-capture"></a>將您的 app 設定為使用可變相片序列擷取
 
 除了基本媒體擷取所需的命名空間之外，實作可變相片序列擷取還需要下列命名空間。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 [!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
-## 準備可變相片序列擷取
+## <a name="prepare-the-variable-photo-sequence-capture"></a>準備可變相片序列擷取
 
 初始化您的 [MediaCapture](capture-photos-and-video-with-mediacapture.md) 之後，請確定目前裝置上支援可變相片序列，方法是從媒體擷取的 [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) 取得 [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) 的執行個體，並檢查 [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) 屬性。
 
@@ -58,37 +65,37 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 [!code-cs[PrepareVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPrepareVPS)]
 
-## 開始可變相片序列擷取
+## <a name="start-the-variable-photo-sequence-capture"></a>開始可變相片序列擷取
 
 若要開始可變相片序列的擷取，請呼叫 [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577)。 請務必初始化陣列，以儲存擷取的影像和畫面控制值。並且將目前的索引設為 0。 設定您 App 的錄製狀態變數並且更新 UI，以防止在此擷取進行中時開始另一個擷取。
 
 [!code-cs[StartVPSCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
 
-## 接收擷取的畫面
+## <a name="receive-the-captured-frames"></a>接收擷取的畫面
 
 針對每個擷取的畫面引發 [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) 事件。 儲存畫面控制值和畫面的已擷取影像，然後增加目前畫面索引。 這個範例示範如何取得每個畫面的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表示法。 如需使用 **SoftwareBitmap** 的詳細資訊，請參閱[影像處理](imaging.md)。
 
 [!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
-## 處理完成可變相片序列擷取
+## <a name="handle-the-completion-of-the-variable-photo-sequence-capture"></a>處理完成可變相片序列擷取
 
 序列中的所有畫面都已擷取時，會引發 [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) 事件。 更新您的 app 的錄製狀態並更新 UI 以讓使用者初始化新的擷取。 此時，您可以將已擷取影像和畫面控制值傳遞到影像處理程式碼。
 
 [!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
-## 更新畫面控制器
+## <a name="update-frame-controllers"></a>更新畫面控制器
 
 如果您想要使用不同的每個畫面設定執行另一個可變相片序列擷取，您不需要完全重新初始化 **VariablePhotoSequenceCapture**。 您可以清除 [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) 集合，然後新增新畫面控制器或您可以修改現有的畫面控制器值。 下列範例會檢查 [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) 物件來確認目前的裝置針對可變相片序列畫面支援閃光燈或閃光燈電源。 若是如此，會更新每個畫面以啟用 100% 電源的閃光燈。 先前為每個畫面設定的曝光補償值仍在使用中。
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
-## 清除可變相片序列擷取
+## <a name="clean-up-the-variable-photo-sequence-capture"></a>清除可變相片序列擷取
 
 當您完成擷取可變相片序列或暫停您的 app 時，藉由呼叫 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/dn652569) 來清除可變相片序列物件。 取消註冊物件的事件處理常式並將它設定為 Null。
 
 [!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -98,10 +105,5 @@ ms.openlocfilehash: b4f9bc3ad0340a893474360a542f35315ef01712
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

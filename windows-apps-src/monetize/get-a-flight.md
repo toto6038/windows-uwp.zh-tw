@@ -3,29 +3,36 @@ author: mcleanbyron
 ms.assetid: 87708690-079A-443D-807E-D2BF9F614DDF
 description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 取得套件正式發行前小眾測試版資料。"
 title: "使用 Windows 市集提交 API 取得套件正式發行前小眾測試版"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版, 套件正式發行前小眾測試版"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: fb8328981a45e353987a62d7794158c2e1179087
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae8014dadfb838cfd14202a673654be3a012c8bf
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 市集提交 API 取得套件正式發行前小眾測試版
+# <a name="get-a-package-flight-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得套件正式發行前小眾測試版
 
 
 
 
 在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 取得套件正式發行前小眾測試版資料。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: fb8328981a45e353987a62d7794158c2e1179087
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: fb8328981a45e353987a62d7794158c2e1179087
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 
 | 名稱        | 類型   | 描述                                                                 |
@@ -54,13 +61,13 @@ ms.openlocfilehash: fb8328981a45e353987a62d7794158c2e1179087
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
 
 <span/>
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何針對市集識別碼值為 9WZDNCRD91MD 的 App 擷取識別碼為 43e448df-97c9-4a43-a0bc-2a445e736bcd 的套件正式發行前小眾測試版的相關資訊
 
@@ -69,7 +76,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fli
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
 
@@ -92,7 +99,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 回應本文
+### <a name="response-body"></a>回應本文
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -104,7 +111,7 @@ Authorization: Bearer <your access token>
 | rankHigherThan           | 字串  | 排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
 
 <span id="submission_object" />
-### 提交物件
+### <a name="submission-object"></a>提交物件
 
 回應內文中的 *lastPublishedFlightSubmission* 和 *pendingFlightSubmission* 值包含可提供套件正式發行前小眾測試版提交相關資源資訊的物件。 這些物件可以具有下列值：
 
@@ -115,7 +122,7 @@ Authorization: Bearer <your access token>
  
 <span/>
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -127,14 +134,9 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [建立套件正式發行前小眾測試版](create-a-flight.md)
 * [刪除套件正式發行前小眾測試版](delete-a-flight.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

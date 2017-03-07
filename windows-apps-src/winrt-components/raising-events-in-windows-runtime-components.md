@@ -3,16 +3,23 @@ author: msatranjr
 title: "在 Windows 執行階段元件中引發事件"
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: cd1d92e584616a642a20d3df3ec52f3609061021
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 56f4ccfcba0fd378f8cef65debce52341f92a2e1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在 Windows 執行階段元件中引發事件
+# <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義之委派類型的事件，而您希望 JavaScript 可以接收該事件，則可透過下列其中一種方式來實作和 (或) 引發此事件：
@@ -23,14 +30,14 @@ ms.openlocfilehash: cd1d92e584616a642a20d3df3ec52f3609061021
 
 如果您僅在背景執行緒上引發事件，卻沒有使用上述任何選項，JavaScript 用戶端就不會接收事件。
 
-## 背景
+## <a name="background"></a>背景
 
 
 所有 Windows 執行階段元件和 app 基本上都是 COM 物件，無論您使用哪種語言來建立它們都一樣。 在 Windows API 中，大部分元件都是敏捷式 COM 物件，這些元件與在背景執行緒上及 UI 執行緒上的物件通訊的能力都相同。 如果 COM 物件無法成為敏捷式物件，則它需要稱為 Proxy 和虛設常式的協助程式物件，協助跨越 UI 執行緒背景的執行緒界限，才能與其他 COM 物件通訊 (從 COM 方面來說，這稱為執行緒 Apartment 之間的通訊)。
 
 Windows API 中的大部分物件都是敏捷式物件或內建 Proxy 和虛設常式。 不過，您無法為泛型類型 (例如 Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx)) 建立 Proxy 和虛設常式，因為除非提供類型引數，否則它們都不是完整類型。 JavaScript 用戶端只有在缺少 Proxy 或虛設常式時才會有問題，但若您希望自己的元件在 JavaScript 以及 C++ 或 .NET 語言中都能使用，就必須使用下列其中一個選項。
 
-## (選項 1) 透過 CoreDispatcher 引發事件
+## <a name="option-1-raise-the-event-through-the-coredispatcher"></a>(選項 1) 透過 CoreDispatcher 引發事件
 
 
 您可以使用 [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx)，傳送具有任何使用者定義之委派類型的事件，如此 JavaScript 就可以接收這些事件。 如果不確定要使用哪個選項，請先嘗試這一個。 如果事件引發和事件處理之間的延遲情況造成問題，請嘗試其他兩個選項。
@@ -70,7 +77,7 @@ public void MakeToastWithDispatcher(string message)
 }
 ```
 
-## (選項 2) 使用 EventHandler&lt;Object&gt;，但會遺失類型資訊
+## <a name="option-2-use-eventhandlerltobjectgt-but-lose-type-information"></a>(選項 2) 使用 EventHandler&lt;Object&gt;，但會遺失類型資訊
 
 
 另一種從背景執行緒傳送事件的方式，是使用 [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; 做為事件的類型。 Windows 會提供這個泛型類型的具象安裝，並為其提供 Proxy 和虛設常式。 缺點是事件引數的類型資訊和傳送者都會遺失。 C++ 和 .NET 用戶端必須透過文件來得知收到事件時要轉換回的類型。 JavaScript 用戶端不需要原始類型資訊， 而是會根據其在中繼資料內的名稱來尋找 arg 屬性。
@@ -117,7 +124,7 @@ toastCompletedEventHandler: function (event) {
 }
 ```
 
-## (選項 3) 建立您自己的 Proxy 和虛設常式。
+## <a name="option-3-create-your-own-proxy-and-stub"></a>(選項 3) 建立您自己的 Proxy 和虛設常式。
 
 
 如需激發使用者定義之事件類型的潛在效能並完整保留類型資訊，您必須建立自己的 Proxy 和虛設常式物件，並將其內嵌於 app 封裝中。 通常，只有另外兩個選項不適用時才必須使用這個選項，但這是極少見的情況。 此外，這個選項也不保證能提供比其他兩個選項更佳的效能。 實際效能取決於諸多因素。 請使用 Visual Studio 分析工具或其他程式碼剖析工具來測量應用程式中的實際效能，並判斷事件是否確實為效能瓶頸。
@@ -132,7 +139,7 @@ toastCompletedEventHandler: function (event) {
 -   然後您會使用 IDL 檔案來產生 Proxy 和虛設常式的 C 原始程式碼。
 -   註冊 Proxy 虛設常式物件，讓 COM 執行階段能找到這些物件，並在 app 專案中參考 Proxy 虛設常式 DLL。
 
-## 建立 Windows 執行階段元件
+## <a name="to-create-the-windows-runtime-component"></a>建立 Windows 執行階段元件
 
 在 Visual Studio 的功能表列上，依序選擇 [檔案] &gt; [新增專案]****。 在 [新增專案]**** 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]****，然後選取 [空白應用程式]****。 將專案命名為 ToasterApplication，然後選擇 [確定]**** 按鈕。
 
@@ -426,9 +433,4 @@ The project should now build. Run the project and verify that you can make toast
 ## Related topics
 
 * [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

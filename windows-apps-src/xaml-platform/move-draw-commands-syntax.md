@@ -3,19 +3,26 @@ author: jwmsft
 description: "了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。"
 title: "移動與繪製命令語法"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 832e757c5bbdc10c2f0f10db127d3f21932313b3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移動與繪製命令語法
+# <a name="move-and-draw-commands-syntax"></a>移動與繪製命令語法
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。 許多可以輸出向量圖形或形狀 (以序列化或交換格式) 的設計與圖形工具都會使用移動與繪製命令。
 
-## 使用移動與繪製命令字串的屬性
+## <a name="properties-that-use-move-and-draw-command-strings"></a>使用移動與繪製命令字串的屬性
 
 移動與繪製命令語法受到 XAML 的內部類型轉換器支援，這個轉換器會剖析命令並產生執行階段圖形表示法。 這個表示法基本上是一組可供呈現的已完成向量。 向量本身並不會完成呈現詳細資料；您仍然需要設定元素的其他值。 以 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件來說，您還需要 [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378)、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383) 及其他屬性的值，然後該 **Path** 必須以某種方式連接到視覺化樹狀結構。 針對 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) 物件，請設定 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) 屬性。
 
@@ -28,11 +35,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 [**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 也可以使用移動與繪製命令。 您可以將使用移動與繪製命令的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) 物件與 [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) 物件中的其他 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 類型結合，然後用來做為 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 的值。 但是相較於將移動與繪製命令用於屬性定義的資料，這並不常見。
 
-## 使用移動與複製命令與使用 **PathGeometry** 比較
+## <a name="using-move-and-draw-commands-versus-using-a-pathgeometry"></a>使用移動與複製命令與使用 **PathGeometry** 比較
 
 對 Windows 執行階段 XAML 而言，移動與繪製命令會產生一個含有單一 [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) 物件搭配 [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) 屬性值的 [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168)。 每個繪製命令都會在該單一 **PathFigure** 的 [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) 集合中產生一個 [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) 衍生類別，移動命令會變更 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166)，如果有關閉命令，則會將 [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) 設定為 **true**。 如果您在執行階段檢查 **Data** 值，可以將這個結構當做物件模型來瀏覽。
 
-## 基本語法
+## <a name="the-basic-syntax"></a>基本語法
 
 移動和繪製命令的語法摘要說明如下：
 
@@ -56,7 +63,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 請勿使用逗號做為十進位數字的小數點；命令字串是由 XAML 解譯，而且不負責轉換與 **en-us** 地區設定中所用的不同文化特性數字格式。
 
-## 語法內容
+## <a name="syntax-specifics"></a>語法內容
 
 **填滿規則**
 
@@ -222,7 +229,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 您可以使用科學記號標記法代替使用小數或整數。 例如，`+1.e17` 是有效的值。
 
-## 產生移動與繪製命令的設計工具
+## <a name="design-tools-that-produce-move-and-draw-commands"></a>產生移動與繪製命令的設計工具
 
 使用 Blend for Microsoft Visual Studio 2015 中的 [畫筆]**** 工具及其他繪圖工具通常會產生含有移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。
 
@@ -230,16 +237,11 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 其他可將向量以 XAML 形式輸出的常用向量圖形設計工具有可用的匯出工具或外掛程式。 這些通常會在配置容器中建立含有 [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) 之移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。 XAML 中可能會有多個 **Path** 元素，以便可以套用不同的筆刷。 許多這類匯出工具或外掛程式原先是為 Windows Presentation Foundation (WPF) XAML 或 Silverlight 撰寫的，但是該 XAML 路徑語法與 Windows 執行階段 XAML 相同。 通常，您可以使用匯出工具的 XAML 區塊，將它們貼到 Windows 執行階段 XAML 頁面中。 (不過，如果 **RadialGradientBrush** 是已轉換之 XAML 的一部分，您就無法加以使用，因為 Windows 執行階段 XAML 不支援該筆刷)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [繪製形狀](https://msdn.microsoft.com/library/windows/apps/mt280380)
 * [使用筆刷](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

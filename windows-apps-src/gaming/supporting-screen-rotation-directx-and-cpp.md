@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "支援螢幕方向 (DirectX 和 C++)"
-description: "這裡將討論在 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便能夠有效率及有效地使用 Windows 10 裝置的圖形硬體。"
+description: "這裡將討論在 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便能夠有效率及有效地使用 Windows 10 裝置的圖形硬體。"
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 螢幕方向, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 101ee7a6d0760abfc40145b21478947c0563a346
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 606d32d16ad94e45cb63c73f1869735a9fbd7d25
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支援螢幕方向 (DirectX 和 C++)
+# <a name="supporting-screen-orientation-directx-and-c"></a>支援螢幕方向 (DirectX 和 C++)
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -37,7 +44,7 @@ Windows 10 定義了四種特定的顯示方向模式：
 2.  使用 [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) 通知 Windows 10 交換鏈結的方向。
 3.  變更轉譯程式碼以產生對齊裝置之使用者方向的影像。
 
-## 重新調整交換鏈結的大小並預先旋轉其內容
+## <a name="resizing-the-swap-chain-and-pre-rotating-its-contents"></a>重新調整交換鏈結的大小並預先旋轉其內容
 
 
 若要在 UWP DirectX app 中執行基本的調整顯示大小及預先旋轉其內容，可實作下列步驟：
@@ -344,7 +351,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
     系統會根據 Windows 10 提供的資料 (例如 [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) 的結果) 選取正確的矩陣來判斷顯示方向，並且該矩陣會乘以場景中每個像素 (Direct2D) 或頂點 (Direct3D) 的座標，有效地旋轉它們來對齊螢幕的方向。 (請注意，在 Direct2D 中，螢幕原點被定義為左上角，而在 Direct3D 中，原點則被定義為視窗的邏輯中心。)
 
-> [注意](#defining_matrices_2d) 如需有關用於旋轉的 2D 轉換及如何定義它們的詳細資訊，請參閱**定義螢幕旋轉的矩陣 (2D)**。 如需有關用於旋轉的 3D 轉換，請參閱[定義螢幕旋轉的矩陣 (3D)](#defining_matrices_3d)。
+> **注意**  如需有關用於旋轉的 2D 轉換及如何定義它們的詳細資訊，請參閱[定義螢幕旋轉的矩陣 (2D)](#appendix-a-applying-matrices-for-screen-rotation-2-d)。 如需有關用於旋轉的 3D 轉換，請參閱[定義螢幕旋轉的矩陣 (3D)](#appendix-b-applying-matrices-for-screen-rotation-3-d)。
 
  
 
@@ -360,7 +367,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 現在，呈現交換鏈結。
 
-## 使用 CoreWindowResizeManager 降低旋轉延遲
+## <a name="reduce-the-rotation-delay-by-using-corewindowresizemanager"></a>使用 CoreWindowResizeManager 降低旋轉延遲
 
 
 不論應用程式模型或語言為何，Windows 10 預設會為所有應用程式提供一個短暫但是可查覺的時間範圍來完成影像旋轉。 不過，可能的情況是，當您的應用程式使用這裡描述的其中一項技術執行旋轉運算時，會在這個時間範圍結束前完成運算。 您會想要取回那些時間並完成旋轉動畫，是嗎？ 這就是 [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) 派上用場的地方。
@@ -385,10 +392,10 @@ resizeManager->NotifyLayoutCompleted();
 
 如第三個項目符號中所指，當應用程式呼叫 [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) 時，Windows 10 會停止逾時時間範圍、完成旋轉動畫，然後將控制權交回給應用程式，應用程式此時便會以新的顯示方向繪製影像。 整體的影響就是您的應用程式現在感覺比較有彈性和有回應，並且運作起來較有效率。
 
-## 附錄 A：套用螢幕旋轉的矩陣 (2D)
+## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>附錄 A：套用螢幕旋轉的矩陣 (2D)
 
 
-在[旋轉處理程序最佳化](#rotation)的範例中 (以及 [DXGI 交換鏈結旋轉範例](http://go.microsoft.com/fwlink/p/?linkid=257600)中)，您可能已經注意到 Direct2D 輸出與 Direct3D 輸出有個別的旋轉矩陣。 讓我們先來看看 2D 矩陣。
+在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](http://go.microsoft.com/fwlink/p/?linkid=257600)) 的範例程式碼中，您可能已經注意到 Direct2D 輸出與 Direct3D 輸出有個別的旋轉矩陣。 讓我們先來看看 2D 矩陣。
 
 不能在 Direct2D 和 Direct3D 內容套用相同旋轉矩陣的理由有兩個：
 
@@ -446,7 +453,7 @@ default:
 
 在有了 2D 影像的正確旋轉矩陣和原點之後，請在您呼叫 [**ID2D1DeviceContext::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371768) 和 [**ID2D1DeviceContext::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371924) 之間以 [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) 呼叫來設定它。
 
-**警告** Direct2D 沒有轉換堆疊。 如果您應用程式的繪圖程式碼中也使用了 [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857)，則這個矩陣必須在後續乘以任何其他您已經套用的轉換。
+**警告**   Direct2D 沒有轉換堆疊。 如果您應用程式的繪圖程式碼中也使用了 [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857)，則這個矩陣必須在後續乘以任何其他您已經套用的轉換。
 
  
 
@@ -482,10 +489,10 @@ default:
 
 下次呈現交換鏈結時，就會將您的 2D 影像旋轉成符合新的顯示方向。
 
-## 附錄 B：套用螢幕旋轉的矩陣 (3D)
+## <a name="appendix-b-applying-matrices-for-screen-rotation-3-d"></a>附錄 B：套用螢幕旋轉的矩陣 (3D)
 
 
-在[旋轉處理程序最佳化](#rotation)的範例中 (以及 [DXGI 交換鏈結旋轉範例](http://go.microsoft.com/fwlink/p/?linkid=257600)中)，我們為每個可能的螢幕方向定義了特定的轉換矩陣。 現在，讓我們看看旋轉 3D 場景的矩陣。 如先前一樣，您需要為 4 個可能方向中的每個方向建立一組矩陣。 為了防止進位誤差以至於輕微的視覺不自然感，請在程式碼中明確宣告這些矩陣。
+在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](http://go.microsoft.com/fwlink/p/?linkid=257600)) 的範例程式碼中，我們為每個可能的螢幕方向定義了特定的轉換矩陣。 現在，讓我們看看旋轉 3D 場景的矩陣。 如先前一樣，您需要為 4 個可能方向中的每個方向建立一組矩陣。 為了防止進位誤差以至於輕微的視覺不自然感，請在程式碼中明確宣告這些矩陣。
 
 您需要按照下列方式設定這些 3D 旋轉矩陣。 下列程式碼範例中示範的矩陣是標準的旋轉矩陣，用於 0、90、180 及 270 度的頂點 (定義相機 3D 場景空間中的各點) 旋轉。 計算 2D 場景投影時，會將場景中每個頂點的 \[x, y, z\] 座標值乘以這個旋轉矩陣。
 
@@ -554,10 +561,5 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

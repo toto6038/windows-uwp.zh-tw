@@ -1,18 +1,25 @@
 ---
 author: TylerMSFT
 title: "啟動 app 以取得結果"
-description: "了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為啟動 app 以取得結果。"
+description: "了解如何從某個應用程式啟動另一個應用程式，以及在這兩者間交換資料的方式。 這稱為「啟動應用程式以取得結果」。"
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
-ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ec46f3287deefca67dab96fe12b3380c7dbd6ed9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 啟動 app 以取得結果
+# <a name="launch-an-app-for-results"></a>啟動應用程式以取得結果
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -26,7 +33,7 @@ ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 
 您將啟動以取得結果的 App 將稱為啟動的 App。 啟動該 App 的 App 將稱為呼叫的 App。 您將針對此範例撰寫呼叫的 app 和啟動的 app。
 
-## 步驟 1：在您將啟動以取得結果的 App 中，登錄要處理的通訊協定
+## <a name="step-1-register-the-protocol-to-be-handled-in-the-app-that-youll-launch-for-results"></a>步驟 1：在您將啟動以取得結果的 App 中，登錄要處理的通訊協定
 
 
 在已啟動 App 的 Package.appxmanifest 檔案中，將通訊協定延伸模組新增到 **&lt;Application&gt;** 區段。 下列範例會使用名為 **test-app2app** 的虛構通訊協定。
@@ -55,7 +62,7 @@ ms.openlocfilehash: d8d7f73e06d627eaa53deaf26f778c122113a9d6
 </Applications>
 ```
 
-## 步驟 2：在您將啟動以取得結果的 app 中覆寫 Application.OnActivated
+## <a name="step-2-override-applicationonactivated-in-the-app-that-youll-launch-for-results"></a>步驟 2：在您將啟動以取得結果的 app 中覆寫 Application.OnActivated
 
 
 如果這個方法尚未存在於啟動的 app 中，請在 App.xaml.cs 中定義的 `App` 類別內建立它。
@@ -87,7 +94,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 針對此 app，由於 Package.appxmanifest 檔案中的通訊協定延伸模組已將 **ReturnResults** 指定為 **always**，因此，上述程式碼可放心地將 `args` 直接轉換為 [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905)，只有 **ProtocolForResultsActivatedEventArgs** 會傳送到 **OnActivated**。 如果您的 app 是利用啟動以取得結果以外的方式來啟動，則您可以檢查 [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 屬性是否傳回 [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693)，以了解是否要啟動 app 來取得結果。
 
-## 步驟 3：在您啟動以取得結果的 app 中新增 ProtocolForResultsOperation 欄位
+## <a name="step-3-add-a-protocolforresultsoperation-field-to-the-app-you-launch-for-results"></a>步驟 3：在您啟動以取得結果的 app 中新增 ProtocolForResultsOperation 欄位
 
 
 ```cs
@@ -96,7 +103,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 
 您將使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 欄位，在啟動的 app 已準備好將結果傳回給呼叫的 app 時發出訊號。 在這個範例中，已將欄位新增到 **LaunchedForResultsPage** 類別，因為您將從該頁面完成「啟動以取得結果」作業，而且需要存取它。
 
-## 步驟 4：在您啟動以取得結果的 app 中覆寫 OnNavigatedTo()
+## <a name="step-4-override-onnavigatedto-in-the-app-you-launch-for-results"></a>步驟 4：在您啟動以取得結果的 app 中覆寫 OnNavigatedTo()
 
 
 在啟動 App 以取得結果時顯示的頁面上，覆寫 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法。 如果這個方法尚未存在，請在 &lt;pagename&gt;.xaml.cs 中定義的頁面類別內建立它。 確保下列 **using** 陳述式已包含於檔案頂端：
@@ -105,7 +112,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 using Windows.ApplicationModel.Activation
 ```
 
-[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的 app 所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
+[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的應用程式所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
 
 在下列範例程式碼中，啟動的 app 預期呼叫的 app 所傳送的資料會在名為 **TestData** 之機碼下方的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 中，而這就是撰寫呼叫的 app 範例程式碼來傳送的原因。
 
@@ -127,7 +134,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## 步驟 5：撰寫程式碼以將資料傳回呼叫的 app
+## <a name="step-5-write-code-to-return-data-to-the-calling-app"></a>步驟 5：撰寫程式碼以將資料傳回呼叫的 app
 
 
 在啟動的 app 中，使用 [**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) 來將資料傳回呼叫的 app。 下列範例程式碼會建立 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件，其中包含要傳回呼叫之 app 的值。 接著，使用 **ProtocolForResultsOperation** 欄位，將值傳送給呼叫的 app。
@@ -138,7 +145,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
     _operation.ReportCompleted(result);
 ```
 
-## 步驟 6：撰寫程式碼來啟動 app 以取得結果，並取得傳回的資料
+## <a name="step-6-write-code-to-launch-the-app-for-results-and-get-the-returned-data"></a>步驟 6：撰寫程式碼來啟動 app 以取得結果，並取得傳回的資料
 
 
 在呼叫之 app 中的非同步方法內啟動 app，如下列範例程式碼所示。 請注意 **using** 陳述式，這是程式碼編譯所需的陳述式：
@@ -180,7 +187,7 @@ async Task<string> LaunchAppForResults()
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ```
 
-## 備註
+## <a name="remarks"></a>備註
 
 
 此做法中的範例提供可用來啟動 app 以取得結果的 "hello world" 簡介。 要注意的重點是新的 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API 讓您能夠以非同步方式啟動 app，並透過 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 類別進行通訊。 透過 **ValueSet** 傳送的資料大小上限為 100KB。 如果需要傳送更大量的資料，可使用 [**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) 類別來共用檔案，以建立可在 app 之間傳送的檔案權杖。 例如，假設有一個名為 `inputData` 的 **ValueSet**，您可以將權杖儲存到想要與啟動的 app 共用的檔案中：
@@ -191,7 +198,7 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 然後透過 **LaunchUriForResultsAsync** 將它傳送給啟動的 app。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
@@ -201,9 +208,4 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

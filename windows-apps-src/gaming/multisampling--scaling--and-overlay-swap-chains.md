@@ -1,29 +1,36 @@
 ---
 author: mtoepke
 title: "交換鏈結縮放和覆疊"
-description: "了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。"
+description: "了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用重疊交換鏈結 (可供使用時) 來提高視覺品質。"
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 交換鏈縮放比例, 覆疊, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 1eea87b2175872e5a3bc7c41e82cda47bb555f82
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 02088fce03c88b4166d49cd36754ac956f254199
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 交換鏈結縮放和覆疊
+# <a name="swap-chain-scaling-and-overlays"></a>交換鏈結縮放和覆疊
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。
 
-## DirectX 11.2 中的交換鏈結
+## <a name="swap-chains-in-directx-112"></a>DirectX 11.2 中的交換鏈結
 
 
 Direct3D 11.2 讓您能夠使用交換鏈結來建立通用 Windows 平台 (UWP) app，從非原生 (降低的) 解析度加以放大，以加快填滿速率。 Direct3D 11.2 也包含適合使用硬碟覆疊進行轉譯的 API，如此，您便能在其他交換鏈結中以原生解析度來呈現 UI。 這讓您的遊戲能夠以完全原生的解析度顯示 UI，同時保有高畫面播放速率，因此能充分利用行動裝置和高 DPI 顯示器 (例如 3840 X 2160)。 本文說明如何使用覆疊交換鏈結。
 
 Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來減少延遲。 請參閱[透過 DXGI 1.3 交換鏈結減少延遲](reduce-latency-with-dxgi-1-3-swap-chains.md)。
 
-## 使用交換鏈結縮放
+## <a name="use-swap-chain-scaling"></a>使用交換鏈結縮放
 
 
 當您的遊戲在下層硬體 (或者已針對省電模式最佳化的硬體) 上執行時，比起顯示器原生解析度，以較低解析度來轉譯即時遊戲內容會更有助益。 若要執行這個動作，用於轉譯遊戲內容的交換鏈結必須比原生解析度還小，或者必須使用交換鏈結的子區域。
@@ -113,7 +120,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 4.  如果使用了 Direct2D，就需要調整旋轉轉換以適用來源區域。
 
-## 針對 UI 元素建立硬體重疊交換鏈結
+## <a name="create-a-hardware-overlay-swap-chain-for-ui-elements"></a>針對 UI 元素建立硬體重疊交換鏈結
 
 
 使用交換鏈結縮放時有一個繼承的缺點，便是 UI 也會縮小，因此可能使它變得模糊且難以使用。 在含有覆疊交換鏈結之硬體支援的裝置上，藉由從即時遊戲內容分離出來的交換鏈結中以原生解析度來轉譯 UI，即可完全解決這個問題。 請注意，此技術僅能套用到 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 交換鏈結 - 無法與 XAML Interop 搭配使用。
@@ -145,7 +152,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **請注意**如果 DXGI 介面卡支援覆疊，請繼續下一個步驟。 如果裝置不支援覆疊，使用多個交換鏈結進行轉譯將會失效。 可改為在和即時遊戲內容相同的交換鏈結中，以降低的解析度來轉譯 UI。
+    > **注意**如果 DXGI 介面卡支援覆疊，請繼續下一個步驟。 如果裝置不支援覆疊，使用多個交換鏈結進行轉譯將會失效。 可改為在和即時遊戲內容相同的交換鏈結中，以降低的解析度來轉譯 UI。
 
      
 
@@ -161,7 +168,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **請注意**每次調整交換鏈結的大小時，都會再次設定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076)。
+    > **注意**每次調整交換鏈結的大小時，都會再次設定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076)。
 
     ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -196,7 +203,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 4.  前景交換鏈結一律使用預乘的 Alpha。 呈現框架之前，您可以預期每個像素的色彩值都已經與 Alpha 值相乘。 例如，50% Alpha 的 100% 白色 BGRA 像素會設為 (0.5, 0.5, 0.5, 0.5)。
 
-    Alpha 預乘步驟是在輸出合併階段完成的，方法則是利用 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 結構中設為 **D3D11\_SRC\_ALPHA** 的 **SrcBlend** 欄位來套用 app 混色狀態 (請參閱 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349))。 含有預乘 Alpha 值的資產也可以使用。
+    Alpha 預乘步驟是在輸出合併階段完成的，方法則是利用 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 結構中設為 **D3D11\_SRC\_ALPHA 的** **SrcBlend** 欄位來套用 app 混色狀態 (請參閱 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349))。 含有預乘 Alpha 值的資產也可以使用。
 
     如果 Alpha 預乘步驟尚未完成，前景交換鏈結上的色彩將會較預期的明亮。
 
@@ -325,10 +332,5 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

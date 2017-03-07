@@ -3,13 +3,20 @@ title: "密碼編譯金鑰"
 description: "本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。"
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e7fba930c108744815f261e7d01d198626d7e7c9
-ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1396382c90b370aa9d610749a92dd256c92dedab
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 密碼編譯金鑰
+# <a name="cryptographic-keys"></a>密碼編譯金鑰
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。 
 
-## 對稱金鑰
+## <a name="symmetric-keys"></a>對稱金鑰
 
 
 對稱金鑰加密又稱為祕密金鑰加密，在加密和解密時需要使用同一個金鑰。 您可以使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 類別來指定對稱演算法以及建立或匯入金鑰。 您可以透過使用演算法和金鑰，在 [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) 類別上使用靜態方法來加密和解密資料。
@@ -42,7 +49,7 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 下列範例示範如何使用 [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) 類別來建立對稱金鑰，並使用它來加密和解密資料。
 
-## 非對稱金鑰
+## <a name="asymmetric-keys"></a>非對稱金鑰
 
 
 非對稱金鑰密碼編譯，也稱為公開金鑰密碼編譯，使用一個公開金鑰和一個私密金鑰來執行加密和解密。 兩個金鑰是不同的，但是使用相關的演算方式。 一般會保密私密金鑰，並用來解密資料，而公開金鑰則會發佈給相關的使用者並用來解密資料。 非對稱式密碼編譯對於簽署資料也很有用。
@@ -61,7 +68,7 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 
 您可以使用 [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) 物件指定非對稱式演算法或簽章演算法，以建立或匯入一個暫時金鑰組，或是匯入金鑰組的公開金鑰部分。
 
-## 衍生金鑰
+## <a name="deriving-keys"></a>衍生金鑰
 
 
 您通常需要從共用密碼來衍生其他金鑰。 您可以使用 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) 類別，以及 [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) 類別中下列專用方法的其中一種來衍生金鑰。
@@ -73,9 +80,4 @@ ms.openlocfilehash: 420c8daa47fb36e8b7cebbc7a18bc8eb666188d3
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 建立用於 SP800-56A 金鑰衍生函數的 KeyDerivationParameters 物件。                                                 |
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

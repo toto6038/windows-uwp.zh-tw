@@ -5,18 +5,25 @@ title: "磚"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37de1a413ac9b5e74c905c140899ec7577a6fae5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 11640527ffdb6883885345646310e5e4b786ad2b
+ms.lasthandoff: 02/07/2017
 
 ---
-# 適用於 UWP App 的磚
+# <a name="tiles-for-uwp-apps"></a>適用於 UWP app 的磚
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
+App 在 [開始] 功能表上以「磚」**的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
-## 設定預設磚
+## <a name="configure-the-default-tile"></a>設定預設磚
 
 
 在 Visual Studio 中建立新的專案時，它會建立一個顯示 app 名稱和標誌的簡單預設磚。
@@ -76,7 +83,7 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
       </Applications>
 ```
 
-## 使用通知來自訂磚
+## <a name="use-notifications-to-customize-your-tile"></a>使用通知來自訂磚
 
 
 安裝 App 後，您可以使用通知來自訂磚。 您可以在第一次啟動 App 或在回應某些事件 (例如推播通知) 時進行這個動作。
@@ -100,10 +107,5 @@ App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

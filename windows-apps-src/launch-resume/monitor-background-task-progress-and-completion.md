@@ -1,18 +1,25 @@
 ---
 author: TylerMSFT
 title: "監視背景工作進度和完成"
-description: "了解 app 如何辨識背景工作所報告的進度與完成。"
+description: "了解應用程式如何辨識背景工作所報告的進度與完成。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 709f3da69e95985512835994a9bb7cf5e0e91a7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="monitor-background-task-progress-and-completion"></a>監視背景工作進度和完成
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -209,10 +216,5 @@ ms.openlocfilehash: c7b6062a624b194b2806788c5f498d87aaa209a2
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
+* [如何在 Windows 市集應用程式觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 

@@ -3,16 +3,23 @@ author: mtoepke
 title: "遊戲的音訊"
 description: "了解如何開發音樂和聲音，並將它們納入您的 DirectX 遊戲，以及如何處理音訊訊號來建立動態和聲音定位。"
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 音訊, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2fd568b8424585106c83d128a55f85909f35f2b8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 遊戲的音訊
+# <a name="audio-for-games"></a>遊戲的音訊
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何開發音樂和聲音，並將它們納入您的 DirectX 遊戲，以及如何處理音訊訊號來建立動態和聲音定位。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
 
 您也可以使用 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)實作簡單的聲音和音樂播放。 Microsoft 媒體基礎是設計來播放音訊和視訊的媒體檔案和串流，但是也可以在遊戲中使用，而且對於遊戲中的電影場景或非互動式元件特別實用。
 
-## 概念簡介
+## <a name="concepts-at-a-glance"></a>概念簡介
 
 
 這裡是我們在本節中使用的一些音訊程式設計概念。
@@ -33,17 +40,17 @@ ms.openlocfilehash: 51e941becdaa55de3ec81757dddf01e6c04aed2d
 -   聲音發射器 (或來源)。 在 XAudio2 中，聲音發射器是發射聲音的位置，它可能只是出現一下子的背景雜音，或是遊戲內點唱機播放的震耳搖滾樂音軌。 您可以使用全局座標指定發射器。
 -   聲音接聽器。 聲音接聽器通常是播放器，或也許是更進階遊戲中的人工智慧 (AI) 實體，用來處理從接聽器接收到的聲音。 您可以將聲音以次混音的方式加入在播放器中播放的音訊串流，或者使用它來接受特定的遊戲內動作，像是將喚醒人工智慧防衛標示為接聽器。
 
-## 設計考量
+## <a name="design-considerations"></a>設計考量
 
 
 音訊是遊戲設計和開發中極為重要的部分。 許多遊戲玩家對於平庸的遊戲晉升為傳奇經典之作而感到記憶深刻，就只是因為遊戲有令人懷念的原聲帶，或絕佳的聲音處理以及混音，或動聽的音訊製作。 音樂和聲音可用來定位遊戲的特色，而且造就了主要引吸力，界定遊戲的特色，並讓它在其他類似的遊戲中脫穎而出。 您在設計和開發遊戲音訊設定檔上所花費的努力絕對是值得的。
 
 3D 音訊定位可以將 3D 圖形提供的擬真經驗提升到更高的層次。 如果您正在開發一個模擬真實世界的複雜遊戲，或者遊戲需要電影式的風格，請考慮使用 3D 音訊定位技術，才能真正吸引玩家。
 
-## DirectX 音訊開發藍圖
+## <a name="directx-audio-development-roadmap"></a>DirectX 音訊開發藍圖
 
 
-### XAudio2 概念性資源
+### <a name="xaudio2-conceptual-resources"></a>XAudio2 概念性資源
 
 XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊戲音訊引擎。 對於想在新型遊戲中增加音效和背景音樂的遊戲開發人員而言，XAudio2 可提供低延遲的音訊圖形和混合引擎，並且支援動態緩衝區、同步取樣精確播放，以及隱含的來源速率轉換。
 
@@ -104,7 +111,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
  
 
-### XAudio2「使用方法」資源
+### <a name="xaudio2-how-to-resources"></a>XAudio2「使用方法」資源
 
 <table>
 <colgroup>
@@ -191,7 +198,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
  
 
-### 媒體基礎資源
+### <a name="media-foundation-resources"></a>媒體基礎資源
 
 媒體基礎 (MF) 是串流處理音訊和視訊播放的媒體平台。 您可以使用媒體基礎 API 來串流處理以多種演算法編碼和壓縮的音訊及視訊。 它不是針對即時的遊戲案例而設計的；它的主要目的是提供強大的工具和廣泛的轉碼器支援以支援更多音訊和視訊元件的線性擷取和呈現。
 
@@ -252,7 +259,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
  
 
-### Windows 執行階段 XAML 媒體類型
+### <a name="windows-runtime-xaml-media-types"></a>Windows 執行階段 XAML 媒體類型
 
 如果您使用的是 [DirectX-XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871)，您可以在較簡單的遊戲案例使用 DirectX 搭配 C++，將 Windows 執行階段 XAML 媒體 API 合併到您的 Windows 市集應用程式。
 
@@ -293,7 +300,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
  
 
-## 參考資料
+## <a name="reference"></a>參考資料
 
 
 -   [XAudio2 簡介](https://msdn.microsoft.com/library/windows/desktop/ee415813)
@@ -305,7 +312,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 -   [XAudio2 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)
@@ -316,10 +323,5 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,15 +1,22 @@
 ---
 author: jnHs
 Description: "在 Windows 開發人員中心儀表板中使用 app 時，您可以檢視由 Windows 市集指派給 app 的唯一身分識別相關詳細資料，以及取得 app 市集清單的連結。"
-title: "檢視 app 身分識別詳細資料"
+title: "檢視應用程式身分識別詳細資料"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
-ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b9cbe976eb5aece26cac54f7ae8693aef5009ca3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 檢視 app 身分識別詳細資料
+# <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
 
 在 Windows 開發人員中心儀表板中使用 app 時，您可以檢視由 Windows 市集指派給 app 的唯一身分識別相關詳細資料，以及取得 app 市集清單的連結。
@@ -18,7 +25,7 @@ ms.openlocfilehash: dc61971865a05e1de17cdcf55ab495fee4917b74
 
 > **注意** 您必須有 app 的[保留名稱](create-your-app-by-reserving-a-name.md)，才能查看大多數身分識別詳細資料。
 
-## appx 資訊清單中包含的值
+## <a name="values-to-include-in-your-appx-manifest"></a>appx 資訊清單中包含的值
 
 
 appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual Studio 建立套件，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目。
@@ -30,7 +37,7 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 
 這些元素共同宣告您的 app 身分識別，建立所有其套件所屬的「套件系列」。 個別套件會有額外的詳細資料，例如架構和版本。
 
-## 套件系列的其他值
+## <a name="additional-values-for-package-family"></a>套件系列的其他值
 
 
 下列值為參考您 app 套件系列的其他值，但是沒有包含在資訊清單中。
@@ -38,7 +45,7 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 -   **套件系列名稱 (PFN)**：使用特定的 Windows API 時會使用這個值。
 -   **套件 SID**：您需要此值以傳送 WNS 通知到您的 app。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](https://msdn.microsoft.com/library/windows/apps/mt187203)。
 
-## App 清單連結
+## <a name="link-to-your-apps-listing"></a>App 清單連結
 
 您可以分享連至您 app 頁面的連結，以協助您的客戶在市集中找到該 app。 這個連結的格式為 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。
 
@@ -54,10 +61,5 @@ appx 資訊清單中必須包含下列值。 如果您使用 Microsoft Visual St
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
 description: "您可以使用 Windows.Media.Transcoding API，將視訊檔案從一種格式轉碼成另一種格式。"
 title: "轉碼媒體檔案"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7e96f12881e4f210a1bba57d2a9c298dbb1c32e3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bcf9532f65b9f0574942d1fb4dd23f5a63613ec9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 轉碼媒體檔案
+# <a name="transcode-media-files"></a>轉碼媒體檔案
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -18,19 +25,19 @@ ms.openlocfilehash: 7e96f12881e4f210a1bba57d2a9c298dbb1c32e3
 
 *轉碼*是數位媒體檔案 (例如視訊或音訊檔案) 的轉換，也就是從一種格式變成另一種格式。 通常先進行檔案的解碼，然後重新編碼，便產生新的格式。 例如，您可以將 Windows Media 檔案轉換成 MP4，以便在支援 MP4 格式的可攜式裝置上播放。 或者，您可以將高畫質影片檔案轉換成較低的解析度。 在這種情況下，重新編碼的檔案可以使用和原始檔案相同的轉碼器，但編碼設定檔不同。
 
-## 設定您的專案進行轉碼
+## <a name="set-up-your-project-for-transcoding"></a>設定您的專案進行轉碼
 
 除了預設專案範本所參考的命名空間之外，您需要參考這些命名空間，以使用本文中的程式碼轉碼媒體檔案。
 
 [!code-cs[Using](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## 選取來源和目的地檔案
+## <a name="select-source-and-destination-files"></a>選取來源和目的地檔案
 
 您的 app 判斷轉碼的來源和目的地檔案的方式取決於您的實作。 這個範例使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者挑選來源和目的地檔案。
 
 [!code-cs[TranscodeGetFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeGetFile)]
 
-## 建立媒體編碼設定檔
+## <a name="create-a-media-encoding-profile"></a>建立媒體編碼設定檔
 
 編碼設定檔包含決定目的地檔案編碼方式的各項設定。 當您進行檔案的轉碼時，您可以在這裡找到很多相當實用的選項。
 
@@ -54,13 +61,13 @@ ms.openlocfilehash: 7e96f12881e4f210a1bba57d2a9c298dbb1c32e3
 
 另一種方法是，您可以使用 [**MediaEncodingProfile.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701047) 方法來建立一個符合現有媒體檔案的設定檔。 或者，如果您知道自己需要的正確編碼設定，可以建立新的 [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 物件，並填入設定檔詳細資料。
 
-## 檔案轉碼
+## <a name="transcode-the-file"></a>檔案轉碼
 
 若要進行檔案的轉碼，請建立新的 [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) 物件並呼叫 [**MediaTranscoder.PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) 方法。 傳入來源檔案、目的地檔案，然後進行設定檔的編碼。 再呼叫 [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) 物件上的 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 方法，該物件是從非同步轉碼作業傳回的物件。
 
 [!code-cs[TranscodeTranscodeFile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetTranscodeTranscodeFile)]
 
-## 回應轉碼進度
+## <a name="respond-to-transcoding-progress"></a>回應轉碼進度
 
 您可以註冊事件在非同步進度 [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) 的進度變更時回應。 這些事件屬於通用 Windows 平台 (UWP) app 的非同步程式設計架構，而不是只屬於轉碼 API。
 
@@ -72,10 +79,5 @@ ms.openlocfilehash: 7e96f12881e4f210a1bba57d2a9c298dbb1c32e3
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
-ms.assetid: 
-description: "本文章示範如何使用 MediaFrameReader 搭配 MediaCapture，從一或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。"
+ms.assetid: a128edc8-8a80-4645-ac29-908ede2d1c72
+description: "本文示範如何使用 MediaFrameReader 搭配 MediaCapture，從一個或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。"
 title: "使用 MediaFrameReader 處理媒體畫面"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e6ab1fc16f150de2fed3797d89375a52b3965182
-ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7646cce8c8aafcb881e825be1ad134ad682c362a
+ms.lasthandoff: 02/08/2017
 
 ---
 
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
-本文章示範如何使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 搭配 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture)，從一或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。 此功能是針對要讓執行媒體畫面即時處理的 App 使用所設計，例如虛擬實境及深度感知相機 App。
+本文示範如何使用 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 搭配 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture)，從一個或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。 此功能是針對要讓執行媒體畫面即時處理的 App 使用所設計，例如虛擬實境及深度感知相機 App。
 
 如果您只對擷取視訊或相片感興趣，例如典型的相片應用程式，則您可能想要使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 支援的其他擷取技術的其中之一。 如需可用的媒體擷取技術和說明使用方式之文章的清單，請參閱[**相機**](camera.md)。
 
@@ -26,10 +33,10 @@ ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
 
 **將功能新增到應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 [功能] 索引標籤。
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 **\[功能\]** 索引標籤。
+3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
 
 除了預設專案範本所包含的 API 以外，這篇文章中的範例程式碼還會使用下列命名空間的 API。
 
@@ -163,10 +170,5 @@ ms.openlocfilehash: 11e09d9b447e9daa0498377a67ef235bdab168dd
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

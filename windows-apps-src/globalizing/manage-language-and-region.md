@@ -1,17 +1,24 @@
 ---
 author: DelfCo
 Description: "藉由使用 Windows 所提供的各種語言及地區設定，控制 Windows 如何選取 UI 資源，以及如何將應用程式的 UI 元素格式化。"
-title: "管理語言及地區"
+title: "管理語言和地區"
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 label: Manage language and region
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: f9c30e68d5cc94769c9304234db0276e34e1d945
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9d42dfd76c613c615e35aaa02e54037cd666b47
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="manage-language-and-region"></a>管理語言及地區
+# <a name="manage-language-and-region"></a>管理語言和地區
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -222,10 +229,5 @@ Windows 會以標準且眾所周知的方式來排列語言相符結果的優先
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

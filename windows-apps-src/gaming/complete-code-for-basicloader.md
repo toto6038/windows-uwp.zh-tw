@@ -3,13 +3,20 @@ author: mtoepke
 title: "BasicLoader 的完整程式碼"
 description: "轉換並載入一般圖形資源 (例如網格、紋理及多種著色器物件) 的類別與方法的完整程式碼。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, BasicLoader"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d6714030031a4986c8a5495fc02a5c68fb0aa4d8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BasicLoader 的完整程式碼
+# <a name="complete-code-for-basicloader"></a>BasicLoader 的完整程式碼
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,28 +27,28 @@ ms.openlocfilehash: ab16033c05273a0cd483fdc7a5302a3ff461e4b1
 
 -   [技術](#technologies)
 -   [需求](#requirements)
--   [檢視程式碼 (C++)](#view-the-code-c-)
+-   [檢視程式碼 (C++)](#view-the-code-c)
 
 <span id="download_locations"></span>
-## 下載位置
+## <a name="download-location"></a>下載位置
 
 
 此範例不提供下載。
 
-## 技術
+## <a name="technologies"></a>技術
 
 **程式設計語言** - C++  
 **程式設計模型** - Windows 執行階段
 
-## 需求
+## <a name="requirements"></a>需求
 
 **最低支援的用戶端** - Windows 10                              
 **最低支援的伺服器** - Windows Server 2016 Technical Preview 
 
 
-## 檢視程式碼 (C++)
+## <a name="view-the-code-c"></a>檢視程式碼 (C++)
 
-## BasicLoader.h
+## <a name="basicloaderh"></a>BasicLoader.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -222,7 +229,7 @@ private:
 };
 ```
 
-## BasicLoader.cpp
+## <a name="basicloadercpp"></a>BasicLoader.cpp
 
 
 ```cpp
@@ -1107,10 +1114,5 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

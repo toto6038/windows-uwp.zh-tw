@@ -3,25 +3,32 @@ author: mtoepke
 title: "新增控制項"
 description: "現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。"
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 控制項, 輸入"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d70e9ef8efffd2a78f6c49596e716770a9162b5c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 新增控制項
+# <a name="add-controls"></a>新增控制項
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   在使用 DirectX 的通用 Windows 平台 (UWP) 遊戲中實作滑鼠/鍵盤、觸控以及 Xbox 控制器控制項。
 
-## UWP 應用程式和控制項
+## <a name="uwp-game-apps-and-controls"></a>UWP 應用程式和控制項
 
 
 一個好的 UWP 遊戲必須可以支援多種介面。 潛在玩家使用的也許是沒有實體按鈕的 Windows 10 平板電腦，或是連接 Xbox 控制器的媒體電腦，或者是專為遊戲設計的最新傳統型電腦 (安裝有高效能滑鼠和遊戲鍵盤)。 如果遊戲設計允許，您的遊戲應該要支援所有這些裝置。
@@ -30,7 +37,7 @@ ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
 
 如需有關控制項 和移動視角控制項的明確詳細資訊， 請參閱[適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md) 和[適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)。
 
-## 通用控制項行為
+## <a name="common-control-behaviors"></a>通用控制項行為
 
 
 觸控控制項和滑鼠/鍵盤控制項具有非常相似的核心實作。 在 UWP 應用程式中，指標就是螢幕上的點。 您可以滑動滑鼠或在觸控式螢幕上滑動手指來移動指標。 因此您只需登錄一組事件，不用理會玩家在移動和按下指標時使用的是滑鼠或觸控式螢幕。
@@ -197,11 +204,11 @@ bool MoveLookController::IsFiring()
 
 如果玩家將指標移到遊戲主視窗外，或按下暫停按鈕 (P 按鍵或 Xbox 控制器開始按鈕)，遊戲就必須暫停。 **MoveLookController** 會登錄按鍵動作，並在呼叫 **IsPauseRequested** 方法時通知遊戲迴圈。 在這個時候，如果 **IsPauseRequested** 傳回 **true**，遊戲迴圈會在 **MoveLookController** 上呼叫 **WaitForPress**，讓控制器進入 **WaitForInput** 狀態。 然後，**MoveLookController** 會等待玩家選取其中一個功能表項目來載入、繼續或結束遊戲，並停止處理遊戲中的輸入事件，直到返回 **Active** 狀態為止。
 
-請參閱[這個章節的完整程式碼範例](#code_sample)。
+請參閱[這個章節的完整程式碼範例](#complete-sample-code-for-this-section)。
 
 現在，讓我們更仔細地實作這三種控制項類型。
 
-## 實作相對滑鼠控制項
+## <a name="implementing-relative-mouse-controls"></a>實作相對滑鼠控制項
 
 
 如果偵測到滑鼠的動作，我們要使用這個動作來決定相機的新上下移動和左右偏移。 我們執行的方式是透過實作相對滑鼠控制項，處理滑鼠已經移動的相對距離 (即移動開始與停止之間的差異值)，而不是記錄移動的絕對 x-y 像素座標。
@@ -250,7 +257,7 @@ void MoveLookController::OnMouseMoved(
 }
 ```
 
-## 實作觸控控制項
+## <a name="implementing-touch-controls"></a>實作觸控控制項
 
 
 觸控控制項是最難開發的控制項，因為它最複雜，而且需要最精細的微調才能生效。 在遊戲範例中，螢幕左下象限中的矩形是方向鍵，在這個區域中左右滑動拇指就可以讓相機左右滑動，而上下滑動拇指就可以讓相機前後移動。 而按一下螢幕右下象限中的矩形，就會射擊子彈。 在螢幕的移動和射擊區域以外的其他區域滑動手指，即可進行瞄準控制 (上下移動和左右偏移) ；移動手指時，含固定十字準星的相機就會隨著移動。
@@ -471,7 +478,7 @@ void MoveLookController::OnPointerReleased(
 
 這是遊戲範例中如何實作觸控式螢幕控制項的基本概念。 現在我們來看看滑鼠和鍵盤控制項。
 
-## 實作滑鼠和鍵盤控制項
+## <a name="implementing-mouse-and-keyboard-controls"></a>實作滑鼠和鍵盤控制項
 
 
 遊戲範例實作以下滑鼠和鍵盤控制項：
@@ -664,7 +671,7 @@ void MoveLookController::OnPointerReleased(
 
 現在，我們來看看最後一個控制器類型：Xbox 控制器。 它與觸控和滑鼠控制項的處理方式不同，因為它不使用指標物件。
 
-## 實作 Xbox 控制器控制項
+## <a name="implementing-xbox-controller-controls"></a>實作 Xbox 控制器控制項
 
 
 在遊戲範例中，呼叫 [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) API 即可支援 Xbox 控制器，這組 API 的設計是為了簡化遊戲控制器所需的程式設計。 在遊戲範例中，我們要使用 Xbox 控制器的左搖桿來控制玩家的移動， 而右搖桿用來控制視角，右發射鍵則用來射擊。 我們使用開始按鈕來暫停和繼續遊戲。
@@ -805,12 +812,12 @@ void MoveLookController::UpdateGameController()
 
 以上就是這個範例實作完整控制選項的方式。 請記住，好的 UWP 應用程式必須支援多種控制選項，進而讓使用不同尺寸和裝置的玩家可以根據自己的偏好進行遊戲！
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 我們已經了解所有的主要 UWP DirectX 遊戲元件，只除了一個：音訊！ 音樂和音效對所有遊戲都非常重要，讓我們接著討論[加入聲音](tutorial--adding-sound.md)吧！
 
-## 這個章節的完整範例程式碼
+## <a name="complete-sample-code-for-this-section"></a>這個章節的完整範例程式碼
 
 
 MoveLookController.h
@@ -1905,7 +1912,7 @@ void MoveLookController::UpdateGameController()
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1916,10 +1923,5 @@ void MoveLookController::UpdateGameController()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

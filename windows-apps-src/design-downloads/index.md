@@ -8,9 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 57c29414deadcf4f1ba5c462b8fe81faa0b38d49
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="design-downloads-for-uwp-apps"></a>UWP 應用程式的設計下載
@@ -78,7 +80,7 @@ ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
             <p><b>相片分享應用程式</b> <br/>
-這個範例應用程式示範使用實際的社交媒體分享相片。 其中示範回應式設計、應用程式內購買、Azure 服務、推播通知等等。 <br/>[下載 Photo sharing應用程式範本](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[深入了解 PhotoSharingApp (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
+這個範例應用程式示範使用實際的社交媒體分享相片。 其中示範回應式設計、在應用程式內購買、Azure 服務、推播通知等等。 <br/>[下載 Photo sharing應用程式範本](http://go.microsoft.com/fwlink/p/?LinkId=760402)<br/>[深入了解 PhotoSharingApp (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760401)</p>    
   </div>
   <div class="side-by-side-content-right">
 <a href="http://go.microsoft.com/fwlink/p/?LinkId=760402"><img src="images/photo-sharing.png" alt="Download the Photo sharing app sample" /></a>
@@ -98,8 +100,3 @@ ms.openlocfilehash: d18696de51451552aef14c55d2a1b62c6037fb59
 </div>
 </div>
 <b>想要更多程式碼嗎？</b> 瀏覽 Windows 範本頁面取得所有我們的 UWP 應用程式範本的清單。 [移至範本入口網站](https://developer.microsoft.com/samples)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

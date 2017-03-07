@@ -1,14 +1,21 @@
 ---
 author: mijacobs
-Description: "在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。"
+Description: "在通用 Windows 平台 (UWP) 應用程式中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。"
 title: "UWP app 的瀏覽基本知識 (Windows 應用程式)"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72596a2d902dff72af76c84115bc1eb0be8fa743
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -16,7 +23,7 @@ ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。 其相互搭配讓使用者在往來移動於 app、頁面和內容之間時享有直覺式的使用者體驗。
+在通用 Windows 平台 (UWP) 應用程式中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。 其相互搭配讓使用者在往來移動於 app、頁面和內容之間時享有直覺式的使用者體驗。
 
 在某些情況下，您或許能夠將 app 的所有內容與功能容納於單一頁面上，讓使用者不需執行任何平移以外的動作即可瀏覽完整內容。 不過，大部分的應用程式通常會有多個頁面的內容與功能需要探索和互動。 當應用程式有一個以上的頁面時，您需要提供的適當的瀏覽體驗。
 
@@ -250,10 +257,5 @@ ms.openlocfilehash: 25a84e7a72fb87faea47845d7d32a5c3071a78a7
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

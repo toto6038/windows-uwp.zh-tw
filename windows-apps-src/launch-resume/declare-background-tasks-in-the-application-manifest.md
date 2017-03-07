@@ -3,16 +3,23 @@ author: TylerMSFT
 title: "在應用程式資訊清單中宣告背景工作"
 description: "在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在應用程式資訊清單中宣告背景工作
+# <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -29,7 +36,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 
 這個主題假設您已建立了一或多個背景工作類別，而且您的 App 註冊要執行的每一項背景工作以回應至少一個觸發程序。
 
-## 手動新增延伸
+## <a name="add-extensions-manually"></a>手動新增延伸
 
 
 開啟 app 資訊清單 (Package.appxmanifest)，然後移至 Application 元素。 建立 Extensions 元素 (如果還不存在時)。
@@ -55,7 +62,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
  </Application>
 ```
 
-## 新增背景工作延伸
+## <a name="add-a-background-task-extension"></a>新增背景工作延伸
 
 
 宣告您的第一個背景工作。
@@ -88,7 +95,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 
 2.  變更 Task Type 屬性清單以表示使用這個背景工作的工作登錄類型。 如果使用多個觸發程序類型來登錄背景工作，請針對每一個觸發程序類型，新增其他 Task 元素與 Type 屬性。
 
-    **注意** 請確認列出您要使用的每一個觸發程序類型，否則背景工作將不會使用未宣告的觸發程序類型進行登錄 ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法將會失敗並擲回例外狀況)。
+    **注意**  請確認列出您要使用的每一個觸發程序類型，否則背景工作將不會使用未宣告的觸發程序類型進行登錄 ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法將會失敗並擲回例外狀況)。
 
     這個程式碼片段範例指出系統事件觸發程序和推播通知的用法：
 
@@ -102,7 +109,7 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 ```
 
 
-## 新增其他背景工作擴充功能
+## <a name="add-additional-background-task-extensions"></a>新增其他背景工作擴充功能
 
 針對每一個由應用程式登錄的額外背景工作類別，請重複步驟 2。
 
@@ -147,11 +154,11 @@ ms.openlocfilehash: b3518780600b9fe8f9be5af48eb5ee6022ec350f
 </Applications>
 ```
 
-## 宣告要在不同處理程序中執行的背景工作
+## <a name="declare-your-background-task-to-run-in-a-different-process"></a>宣告要在不同處理程序中執行的背景工作
 
-Windows10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背景工作預設在其中執行的處理程序) 不同的處理程序中執行背景工作。  有兩個選項︰在與您前景應用程式相同的處理程序中執行；在與其他來自相同應用程式之背景工作執行個體不同的 BackgroundTaskHost.exe 執行個體中執行。  
+Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背景工作預設在其中執行的處理程序) 不同的處理程序中執行背景工作。  有兩個選項︰在與您前景應用程式相同的處理程序中執行；在與其他來自相同應用程式之背景工作執行個體不同的 BackgroundTaskHost.exe 執行個體中執行。  
 
-### 在前景應用程式中執行
+### <a name="run-in-the-foreground-application"></a>在前景應用程式中執行
 
 以下是一個範例 XML，當中宣告與前景應用程式在相同處理程序中執行的背景工作。 請注意，`Executable` 屬性：
 
@@ -168,7 +175,7 @@ Windows10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背
 > [!Note]
 > 請只將 Executable 元素與需要它的背景工作 (例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)) 搭配使用。  
 
-### 在不同的背景主機處理程序中執行
+### <a name="run-in-a-different-background-host-process"></a>在不同的背景主機處理程序中執行
 
 以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 請注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會一起執行。
 
@@ -203,15 +210,10 @@ Windows10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背
 ```
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [偵錯背景工作](debug-a-background-task.md)
 * [登錄背景工作](register-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

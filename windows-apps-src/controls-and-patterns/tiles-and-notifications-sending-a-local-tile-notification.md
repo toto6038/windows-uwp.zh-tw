@@ -5,9 +5,16 @@ title: "傳送本機磚通知"
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bbc09a6638fd7c0798e49600bd74388d5bb4629d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 77f09a875ce5e5cbdf72644ef937048dd53a0116
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
@@ -295,10 +302,5 @@ var notification = new TileNotification(doc);
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

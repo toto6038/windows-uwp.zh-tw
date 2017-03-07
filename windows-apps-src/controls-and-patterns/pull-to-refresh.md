@@ -1,29 +1,37 @@
 ---
 author: Jwmsft
 Description: "搭配使用拖動重新整理模式和清單檢視。"
-title: "拖動重新整理"
+title: "拖動以重新整理"
 label: Pull-to-refresh
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 translationtype: Human Translation
-ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
-ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
+ms.lasthandoff: 02/08/2017
 
 ---
-# 拖動以重新整理
+# <a name="pull-to-refresh"></a>拖動以重新整理
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-拖動重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 拖動重新整理廣泛地用於行動裝置 App，且對任何配備觸控式螢幕的裝置都很實用。 您可以處理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)，以在 App 中實作拖動重新整理。
+拖動以重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 拖動重新整理廣泛地用於行動裝置 App，且對任何配備觸控式螢幕的裝置都很實用。 您可以處理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)，以在 App 中實作拖動重新整理。
 
 [拖動重新整理範例](http://go.microsoft.com/fwlink/p/?LinkId=620635) (英文) 示範如何延伸 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 控制項以支援此模式。 在本文中。我們使用這個範例說明實作拖動重新整理的要點。
 
 ![拖動重新整理範例](images/ptr-phone-1.png)
 
-## 這是正確的模式嗎？
+## <a name="is-this-the-right-pattern"></a>這是正確的模式嗎？
 
 當您有使用者會想經常重新整理的資料清單或方格，且您的 App 應是在觸控為主的行動裝置上執行時，請使用拖動重新整理模式。
 
-## 實作拖動重新整理
+## <a name="implement-pull-to-refresh"></a>實作拖動重新整理
 
 若要實作拖動重新整理，您需要處理操作事件，以偵測使用者向下拖動清單的時刻、提供視覺化回饋，並重新整理資料。 讓我們在[拖動重新整理範例](http://go.microsoft.com/fwlink/p/?LinkId=620635) (英文) 中看看如何實作。 我們沒有在這裡顯示所有的程式碼，所以您需要下載該範例，或在 GitHub 上檢視程式碼。
 
@@ -33,9 +41,9 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 - 關閉：只有在超過 `PullThreshold` 的時候放開清單，才會要求重新整理。 當使用者放開捲動器時，指示器會以動畫方式離開檢視。 (在手機上) 如果狀態列指示器可供使用，則會顯示。
 - 開啟：一超過 `PullThreshold` 就會重新整理，不論是否放開。 指示器會留在檢視中，直到已抓取新資料，然後才以動畫方式離開檢視。 當資料抓取完成時，會使用 **Deferral** 通知 App。
 
-> **注意**  範例中的程式碼也適用於 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，請自 GridView 衍生自訂類別，而不是 ListView，並修改預設的 GridView 範本。
+> **注意**&nbsp;&nbsp;範例中的程式碼也適用於 [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)。 若要修改 GridView，請自 GridView 衍生自訂類別，而不是 ListView，並修改預設的 GridView 範本。
 
-## 新增重新整理指示器
+## <a name="add-a-refresh-indicator"></a>新增重新整理指示器
 
 請務必提供視覺化回饋，讓使用者知道 App 支援拖動重新整理。 RefreshableListView 的 `RefreshIndicatorContent` 屬性可讓您在 XAML 中設定指示器的視覺效果。 如果您未設定 `RefreshIndicatorContent`，則會改為使用其中包含的預設文字指示器。
 
@@ -47,7 +55,7 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 
 在拖動重新整理範例中，`RefreshableListView` 控制項範本會透過新增重新整理指示器，來修改標準的 **ListView** 範本。 重新整理指示器是放在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) 中，且在 [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) (顯示清單項目的部分) 上方。
 
-> **注意**  只有未設定 `RefreshIndicatorContent` 屬性時，`DefaultRefreshIndicatorContent` 文字方塊才會提供後援文字指示器。
+> **注意**&nbsp;&nbsp;只有未設定 `RefreshIndicatorContent` 屬性時，`DefaultRefreshIndicatorContent` 文字方塊才會提供後援文字指示器。
 
 以下是由預設 ListView 範本修改的控制項範本之部分。
 
@@ -134,7 +142,7 @@ RefreshableListView 提供「自動重新整理」模式，可判斷要求重新
 </Storyboard>
 ```
 
-## 處理捲動檢視器操作事件
+## <a name="handle-scroll-viewer-manipulation-events"></a>處理捲動檢視器操作事件
 
 清單檢視控制項範本中包含內建的 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx)，可讓使用者捲動瀏覽清單項目。 若要實作拖動重新整理，您必須處理內建捲動檢視器上的操作事件，和數個相關事件。 如需操作事件的詳細資訊，請參閱[觸控互動](../input-and-devices/touch-interactions.md)。
 
@@ -192,7 +200,7 @@ if (this.RefreshRequested != null)
 
 只有當清單是以觸控操作向下拖動時，才會發生拖動重新整理。 在 PointerPressed 事件處理常式中，程式碼會檢查造成事件的是何種指標，並設定變數 (`m_pointerPressed`) 以指示是否為觸控指標。 這個變數用於 DirectManipulationStarted 處理常式。 如果指標不是觸控指標，則傳回的 DirectManipulationStarted 不會執行任何事。
 
-## 新增拖動和重新整理事件
+## <a name="add-pull-and-refresh-events"></a>新增拖動和重新整理事件
 
 'RefreshableListView' 會新增 2 個您可以在 App 中處理的事件，以重新整理資料及管理重新整理指示器。
 
@@ -224,21 +232,16 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 在範例中，重新整理指示器的內容是由 App 提供及控制。 當使用者拖動清單時，'PullProgressChanged' 事件會通知您的 App，讓您可以啟動、停止及重設重新整理指示器。 
 
-## 組合動畫
+## <a name="composition-animations"></a>組合動畫
 
 根據預設，捲動檢視器中的內容會在捲軸到達頂端時停止。 為了讓使用者繼續向下拖動清單，您需要存取視覺層，並以動畫方式顯示清單內容。 此範例是使用[組合動畫](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation)這麼做，更明確地說，是 [Expression 動畫](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)。
 
 在範例中，這項工作主要是在 `CompositionTarget_Rendering` 事件和 `UpdateCompositionAnimations` 方法中完成。
 
-## 相關文章
+## <a name="related-articles"></a>相關文章
 
 - [設定控制項的樣式](styling-controls.md)
 - [觸控互動](../input-and-devices/touch-interactions.md)
 - [清單檢視和方格檢視](listview-and-gridview.md)
 - [清單檢視項目範本](listview-item-templates.md)
 - [Expression 動畫](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

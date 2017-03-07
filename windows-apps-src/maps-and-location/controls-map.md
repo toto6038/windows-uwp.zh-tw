@@ -3,13 +3,20 @@ author: msatranjr
 Description: "地圖控制項可顯示道路地圖和空照圖檢視、方向、搜尋結果及交通路況。"
 title: "地圖的指導方針"
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地圖控制項, 地圖, 位置"
 translationtype: Human Translation
-ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ad6267e0294e4a62c1e586c066ce9d0489940d7d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 地圖控制項
+# <a name="map-control"></a>地圖控制項
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -19,14 +26,14 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 
 ![地圖基本檢視的範例](./images/win10fa/controls-maps-basic.jpg)
 
-## 這是正確的控制項嗎？
+## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 
 當您需要在 app 內有一份地圖時，使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
 
-**注意** 如果您不介意使用者離開您的 app，請考慮使用 Windows 地圖 app 來提供該資訊。 您的 app 可以啟動 Windows 地圖 app 來顯示特定的地圖、方向以及搜尋結果。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)。
+**注意**：如果您不介意使用者離開您的應用程式，請考慮使用 Windows 地圖應用程式來提供該資訊。 您的 app 可以啟動 Windows 地圖 app 來顯示特定的地圖、方向以及搜尋結果。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
-## 範例
+## <a name="examples"></a>範例
 
 
 這個範例會示範具有街景檢視的地圖：
@@ -46,7 +53,7 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 ![具有街景檢視的 3D 地圖檢視範例](./images/win10fa/controls-maps-3dstreetview.png)
 
 
-## 建議
+## <a name="recommendations"></a>建議
 
 
 -   使用充裕的螢幕空間 (或整個螢幕) 來顯示地圖，讓使用者不需要過度平移和縮放即可檢視地理資訊。
@@ -55,7 +62,7 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
 
 -   使用 [**map elements**](https://msdn.microsoft.com/library/windows/apps/dn637034) 在地圖場景中內嵌感興趣的地點；任何額外的資訊都可以透過與地圖場景重疊的暫時性 UI 方式顯示。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [顯示地圖的 2D、3D 和 Streetside 檢視](https://msdn.microsoft.com/library/windows/apps/mt219695)
@@ -67,13 +74,4 @@ ms.openlocfilehash: e094e29220a0f8fcae6ca2af36ab86ecd22b520d
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

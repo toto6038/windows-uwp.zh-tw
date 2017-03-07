@@ -1,21 +1,28 @@
 ---
 author: QuinnRadich
-title: "Windows10 中適合開發人員的新功能、工具與特色"
-description: "Windows10 版本 1607 與新的開發人員工具提供由新的通用 Windows 平台所提供的工具、功能及體驗。"
-keywords: "新功能, 新功能, 更新, 多項更新, 功能, 新, Windows10, 1607, 7 月, 最新"
+title: "適用於開發人員的 Windows 10 的新功能"
+description: "Windows 10 版本 1607 與新的開發人員工具提供由新的通用 Windows 平台所提供的工具、功能及體驗。"
+keywords: "新功能, 新功能, 更新, 多項更新, 功能, 新, Windows 10, 1607, 7 月, 最新"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 translationtype: Human Translation
-ms.sourcegitcommit: 860019e351f6fc6ce1ff00646413d3727e48de9c
-ms.openlocfilehash: d292d48489fa5001d3cd8af95aa72019107836c1
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fff2eb225bcadaefa6bead622d953dd8b8ed4a76
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 適用於開發人員的 Windows10 的新功能
+# <a name="whats-new-in-windows-version-1607"></a>Windows 版本 1607 中的新功能
 
-Windows10 版本 1607 與針對 Windows 開發人員工具的更新持續提供由通用 Windows 平台所提供的工具、功能及體驗。 在 Windows10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
+Windows 10 版本 1607 與針對 Windows 開發人員工具的更新持續提供由通用 Windows 平台所提供的工具、功能及體驗。 在 Windows 10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
 
-這是開發人員會感興趣的新功能和改良功能清單。 如需新增到 Windows SDK 之新命名空間的原始清單，請參閱 [Windows10 版本 1607 API 變更](windows-10-version-1607-api-diff.md)。 如需此更新之重點功能的詳細資訊，請參閱 [Windows10 中有哪些酷功能](http://go.microsoft.com/fwlink/?LinkId=823181)。
+這是開發人員會感興趣的新功能和改良功能清單。 如需新增到 Windows SDK 之新命名空間的原始清單，請參閱 [Windows 10 版本 1607 API 變更](windows-10-version-1607-api-diff.md)。 如需此更新之重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](http://go.microsoft.com/fwlink/?LinkId=823181)。
 
-## Windows10 版本 1607 - 2016 年 7 月
+## <a name="windows-10-version-1607---july-2016"></a>Windows 10 版本 1607 - 2016 年 7 月
 
 功能 | 描述
  :---- | :----
@@ -23,7 +30,7 @@ XAML 元素的便捷鍵 | 您可以使用新的 [**AccessKey**](https://msdn.mic
 動畫 GIF 支援 | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) 元素現已支援動畫 GIF。 您可以在 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.aspx) 上使用下列新成員來控制播放：[**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.autoplay.aspx)、[**IsAnimatedBitmap**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.isanimatedbitmap.aspx)、[**IsPlaying**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.isplaying.aspx)、[**Play**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.play.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.stop.aspx)。
 App 擴充性 | 為您的 UWP App 撰寫[擴充功能](http://aka.ms/appextensibility)。 讓您的 Windows 市集應用程式裝載由其他 Windows 市集應用程式所提供的內容。  探索、列舉並存取來自那些 App 的唯讀內容。
 評定測試 | 「[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10?f=255&MSPPError=-2147217396)」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 使用[進行測驗 API](../apps-for-education/take-a-test-api.md) 來防止學生在測驗期間使用其他電腦或網際網路資源。
-背景智慧型傳送服務 (BITS) | 現已可以在 PowerShell 遠端工作階段中使用 [BITS](https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx) COM API 和 PowerShell Cmdlet (若可用的話)。 這對於管理沒有本機登入功能的 WindowsServer 2016 Technical Preview 版本特別有用。 BITS 工作是透過在工作階段使用者帳戶內容中執行的 PowerShell 遠端工作階段啟動，並只會在至少有一個和該使用者帳戶關聯的作用中本機登入工作階段或 PowerShell 遠端工作階段時，才會呈現進度。 請參閱[管理 PowerShell 遠端工作階段](https://msdn.microsoft.com/library/windows/desktop/ee663885.aspx#manage_ps_remote_sessions)，以取得如何管理長時間執行傳輸工作階段的詳細資料。<br/><br/>在支援 [BITS Helper 權杖](https://msdn.microsoft.com/library/windows/desktop/dd904467.aspx)的舊版 Windows 中，工作擁有者必須擁有系統管理員權限才能設定 Helper 權杖。 在這個版本中，BITS 工作擁有者現已可以在不身為系統管理員的情況下設定 Helper 權杖，前提是該 Helper 權杖不能具有系統管理員功能。 這將能透過讓背景下載或更新工具在具有較低權限的 NetworkService 帳戶 (而非具有系統管理員權限的帳戶) 下執行，來降低背景下載或更新工具的弱點數量。
+背景智慧型傳送服務 (BITS) | 現已可以在 PowerShell 遠端工作階段中使用 [BITS](https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx) COM API 和 PowerShell Cmdlet (若可用的話)。 這對於管理沒有本機登入功能的 Windows Server 2016 Technical Preview 版本特別有用。 BITS 工作是透過在工作階段使用者帳戶內容中執行的 PowerShell 遠端工作階段啟動，並只會在至少有一個和該使用者帳戶關聯的作用中本機登入工作階段或 PowerShell 遠端工作階段時，才會呈現進度。 請參閱[管理 PowerShell 遠端工作階段](https://msdn.microsoft.com/library/windows/desktop/ee663885.aspx#manage_ps_remote_sessions)，以取得如何管理長時間執行傳輸工作階段的詳細資料。<br/><br/>在支援 [BITS Helper 權杖](https://msdn.microsoft.com/library/windows/desktop/dd904467.aspx)的舊版 Windows 中，工作擁有者必須擁有系統管理員權限才能設定 Helper 權杖。 在這個版本中，BITS 工作擁有者現已可以在不身為系統管理員的情況下設定 Helper 權杖，前提是該 Helper 權杖不能具有系統管理員功能。 這將能透過讓背景下載或更新工具在具有較低權限的 NetworkService 帳戶 (而非具有系統管理員權限的帳戶) 下執行，來降低背景下載或更新工具的弱點數量。
 改善的色彩字型支援 | Direct2D 現已支援轉譯更廣泛的色彩字型格式類型，讓開發人員可以在透過 Direct2D 運作的 App 中使用更多類型的字型。 這包括下列項目的支援： <br/>&bull; 'sbix' OpenType 表格，可在字型中啟用色彩點陣圖內容。<br/>&bull; 'SVG' OpenType 表格，可在字型中啟用 SVG 內容。<br/>&bull; 'CBDT' OpenType 表格，可在字型中啟用色彩點陣圖內容。 <br/><br/>當啟用 **D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** 旗標時，Direct2D 便會自動支援這些色彩字型格式。  如需相關資訊，請參閱下列主題： <br>&bull;[**ID2D1DeviceContext4**](http://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](http://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](http://go.microsoft.com/fwlink/?LinkId=822795)     
 CommandBar 動態溢位 | [**Commandbar**](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/app-bars) 中的主要命令現已會在沒有足夠空間可顯示所有命令時，自動移動到溢位功能表。
 組合互動 API| 新的 [**Windows.UI.Composition.Interactions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.aspx) 命名空間可讓您存取輸入以驅動動畫和效果。  這個視覺層中的新 API 系列可協助讓您的 App 變得更加具有回應性及流暢性，就算您的 UI 執行緒正處於遲緩且忙碌的狀態也一樣。  
@@ -31,13 +38,13 @@ Windows.UI.Composition | [**Windows.UI.Composition**](https://msdn.microsoft.com
 連接動畫 | [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) 讓您在使用者於場景或頁面間移動時執行動畫。 請參閱[連接動畫](https://channel9.msdn.com/Events/Build/2016/P485)影片以取得詳細資訊。
 連線的 App | 探索已連線到雲端或是位於附近的裝置，並建置能夠在它們之間順暢轉換的經驗。 請參閱[連線的 App 和裝置](http://aka.ms/Bttm1d)以取得詳細資料。
 傳統型應用程式轉換器 | 傳統型應用程式轉換器是一個可讓您將現有針對 .NET 4.6.1 或 Win32 撰寫的傳統型應用程式移至通用 Windows 平台 (UWP) 的工具。
-開發無障礙 App | 使用 [App 協助工具指導方針](https://developer.microsoft.com/windows/accessible-apps)來針對提升使用性和客戶滿意度設計包容性軟體。 從無障礙技術產品的故事獲得靈感。 在新的開發人員中樞上，尋找能讓所有人存取 App 的相關資訊。
-Direct3D | 許多新的主題已經新增到 Direct 3D 文件。 如需關於這些更新的詳細資訊，請參閱 [Direct3D 12 新版本頁面](https://msdn.microsoft.com/library/windows/desktop/mt748631(v=vs.85).aspx)中的 **Windows10 版本 1607**。
+開發無障礙 App | 使用 [App 協助工具指導方針](https://developer.microsoft.com/windows/accessible-apps)來針對提升使用性和客戶滿意度設計包容性軟體。 從無障礙技術產品的故事獲得靈感。 在新的開發人員中心上，尋找能讓所有人存取 App 的相關資訊。
+Direct3D | 許多新的主題已經新增到 Direct 3D 文件。 如需關於這些更新的詳細資訊，請參閱 [Direct3D 12 新版本頁面](https://msdn.microsoft.com/library/windows/desktop/mt748631(v=vs.85).aspx)中的 **Windows 10 版本 1607**。
 遊戲 - 電動搖桿和賽車方向盤支援 | [**Windows.Gaming.Input**](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.aspx) 支援兩個新的輸入裝置類別：電動搖桿和賽車方向盤。 這可讓遊戲以裝置類別的方式支援電動搖桿和賽車方向盤裝置，而不需要針對那些裝置的個別版本撰寫特定程式碼。 這支援那些類別的所有 Xbox 360 和 Xbox One 裝置，以及特定的電腦 (HID) 裝置。
 遊戲 - 力回饋支援 | [**Windows.Gaming.Input.ForceFeedback**](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.forcefeedback.aspx) API 能為控制電腦 (HID) 賽車方向盤的力回饋提供支援。
 遊戲 - 新輸入裝置自訂 WinRT 類別庫的 OEM 支援 | [**Windows.Gaming.Input.Custom**](https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.custom.aspx) API 能為第三方配件 OEM 提供支援，以為其 Xbox 360 和 Xbox One 配件撰寫自訂 WinRT 類別庫。     
 全球化 | 新的 [**Windows.Globalization.PhoneNumberFormatting**](https://msdn.microsoft.com/library/windows/apps/windows.globalization.phonenumberformatting.aspx) 命名空間中的類別能搭配廣泛的全球支援，支援電話號碼的格式、驗證及配對。 這個新類別支援許多當地標準格式，還支援在部分數字輸入時提供部分數字的遞增格式化。
-App 內購買和 App 授權 | [**System.Services.Store**](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間為針對 App 執行 App 內購買和存取市集授權提供新的 API。 如需詳細資訊，請參閱[啟用應用程式內產品購買](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)。
+App 內購買和 App 授權 | [**System.Services.Store**](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間為針對 App 執行在應用程式內購買和存取市集授權提供新的 API。 如需詳細資訊，請參閱[啟用應用程式內產品購買](https://msdn.microsoft.com/windows/uwp/monetize/enable-in-app-product-purchases)。
 InkToolbar | [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar.aspx) 是通用 Windows app 控制項，包含能在相關聯的 **InkCanvas** 中啟用筆跡相關功能的可自訂及擴充按鈕集合。<br/><br/>根據預設，工具列包含用於繪圖、清除、反白顯示，以及顯示尺規的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆觸寬度、清除所有項目) 將會在飛出視窗中提供。<br/><br/>**InkToolbar** 也可以搭配您自己的手寫筆、工具及其他筆跡功能進行自訂。
 已移除 MAX_PATH 限制 | MAX_PATH 限制已經自一般的 Win32 檔案和目錄 API 中移除。 該行為現為選擇加入。 如需詳細資料，請參閱[命名檔案、路徑及命名空間](https://msdn.microsoft.com/library/windows/desktop/aa365247.aspx)中的**最大路徑長度限制**一節。
 相機 - 媒體畫面讀取器 |新的 [**Windows.Media.Capture.Frames**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.media.capture.frames.aspx) 命名空間能提供從一或多個可用來源讀取媒體畫面的 API。來源包括色彩、深度及紅外線相機、音訊裝置，或甚至自訂畫面來源 (例如能產生骨骼追蹤畫面的來源)。 此功能是針對執行媒體畫面即時處理的 App 所設計，例如虛擬實境及深度感知相機 App。
@@ -56,11 +63,6 @@ Xbox One 上的 UWP | 這個更新包含 Xbox One 上通用 Windows 平台 (UWP)
 WebSocket | 已針對 [**MessageWebSockets**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx) 和 [**StreamWebSockets**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx) 新增支援以檢視伺服器憑證、檢視由伺服器在 SSL 交涉期間所傳送的中繼憑證、執行自訂伺服器憑證驗證，以及指定要忽略哪些特定的伺服器憑證錯誤。
 Windows 資訊保護 (WIP) API | [**WIP**](https://msdn.microsoft.com/windows/uwp/enterprise/wip-hub) 是桌上型電腦、膝上型電腦、平板電腦與手機上的一組行動裝置管理 (MDM) 功能。 WIP 能讓企業針對其資料在企業管理裝置上的處理方式取得更大的控制。 <br/><br/>您可以使用 WIP API 來建立能尊重資料原則，並同時使員工個人資料不受那些原則所影響的 App。 原則系統管理員將會信任並允許您的 App 使用他們組織的資料。 而員工則會很高興得知，就算他們從組織的行動裝置管理 (MDM) 取消註冊，或是完全離該組織，他們的個人資料也能在裝置上保持不變。
 Windows IoT 核心版 | Windows IoT 核心版現已完全支援 Raspberry Pi 3 及遠端顯示體驗，讓使用者可以從遠端檢視並控制在 IoT 核心版裝置上執行的 UWP 應用程式。
-使用隨附 (IoT) 裝置的 Windows 解除鎖定 | 隨附裝置是可與您的 Windows10 桌面搭配使用，以增強使用者驗證體驗的裝置。 透過[隨附裝置架構](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock)，即使在 Windows Hello 無法使用時 (例如，如果 Windows10 桌面缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。
+使用隨附 (IoT) 裝置的 Windows 解除鎖定 | 隨附裝置是可與您的 Windows 10 桌面搭配使用，以增強使用者驗證體驗的裝置。 透過[隨附裝置架構](https://msdn.microsoft.com/windows/uwp/security/companion-device-unlock)，即使在 Windows Hello 無法使用時 (例如，如果 Windows 10 桌面缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Microsoft Passport 體驗。
 Winsock | TCP 通訊端現已可以透過 [Winsock](https://tools.ietf.org/html/rfc7413) 進行設定，以透過設定 TCP_FASTOPEN 通訊端選項來使用 [RFC 7413](https://tools.ietf.org/html/rfc7413) TCP 快速開啟。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

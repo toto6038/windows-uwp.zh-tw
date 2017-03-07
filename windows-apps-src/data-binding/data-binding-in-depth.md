@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "深入了解資料繫結"
 description: "資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fa3a3cf6194f04a05301ae4dfb75a7a21ff22e73
-ms.openlocfilehash: fca2c9a795e38983f439d6df5c5a7394c29c1217
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d96565479d970bca724614768361ba390ab9d668
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -593,9 +600,9 @@ MainPage.xaml
 
 繫結標記包含屬性的名稱 (針對 C#，有時還有欄位和方法)。 因此，當您重新命名屬性時，也需要變更任何參考它的繫結。 忘記這樣做會造成常見的資料繫結錯誤，而且您的 app 將無法編譯或無法正確執行。
 
-由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 建立的繫結物件在功能上大致相同。 但是 {x:Bind} 有繫結來源的類型資訊，而且會在編譯階段產生原始程式碼。 使用 {x:Bind} 時，可以對其餘的程式碼進行同樣的問題偵測。 這包括編譯時驗證您的繫結運算式，以及在產生做為頁面部分類別的原始程式碼中設定中斷點來偵錯。 您可以在 `obj` 資料夾的檔案中找到這些類別，名稱類似 (適用於 C#) `<view name>.g.cs`)。 如果繫結發生問題，請在 Microsoft Visual Studio 偵錯工具中開啟 [發生未處理的例外狀況時中斷]。 偵錯工具會在那一刻中斷執行，讓您偵錯出了什麼問題。 對於繫結來源節點圖形的每個部分，{x:Bind} 產生的程式碼都採用相同的模式，您可以使用 **呼叫堆疊** 視窗中的資訊，協助您判斷導致問題的呼叫序列。
+由 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 建立的繫結物件在功能上大致相同。 但是 {x:Bind} 有繫結來源的類型資訊，而且會在編譯階段產生原始程式碼。 使用 {x:Bind} 時，可以對其餘的程式碼進行同樣的問題偵測。 這包括編譯時驗證您的繫結運算式，以及在產生做為頁面部分類別的原始程式碼中設定中斷點來偵錯。 您可以在 `obj` 資料夾的檔案中找到這些類別，名稱類似 (適用於 C#) `<view name>.g.cs`)。 如果繫結發生問題，請在 Microsoft Visual Studio 偵錯工具中開啟 [發生未處理的例外狀況時中斷]****。 偵錯工具會在那一刻中斷執行，讓您偵錯出了什麼問題。 對於繫結來源節點圖形的每個部分，{x:Bind} 產生的程式碼都採用相同的模式，您可以使用 **呼叫堆疊** 視窗中的資訊，協助您判斷導致問題的呼叫序列。
 
-[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 沒有繫結來源的類型資訊。 但在附加偵錯工具的情況下執行您的 app 時，所有繫結錯誤都會顯示在 Visual Studio 的 [輸出] 視窗中。
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 沒有繫結來源的類型資訊。 但在附加偵錯工具的情況下執行您的 app 時，所有繫結錯誤都會顯示在 Visual Studio 的 [輸出]**** 視窗中。
 
 ## <a name="creating-bindings-in-code"></a>在程式碼中建立繫結
 
@@ -661,10 +668,5 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode 可以是 OneTime、OneWay 或 TwoWay。 {x:Bind} 預設為 OneTime。{Binding} 預設為 OneWay。 | 
 | UpdateSourceTrigger | 不支援 | `<Binding UpdateSourceTrigger="Default [or] PropertyChanged [or] Explicit"/>` | {x:Bind} 一律使用 PropertyChanged 行為，但 TextBox.Text 除外，在此情況下會等候失去焦點以更新來源。 | 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

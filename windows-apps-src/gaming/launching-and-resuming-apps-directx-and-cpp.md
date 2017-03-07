@@ -3,16 +3,23 @@ author: mtoepke
 title: "啟動和繼續應用程式 (DirectX 和 C++)"
 description: "了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。"
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, directx, 啟動, 繼續"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 啟動和繼續 app (DirectX 和 C++)
+# <a name="launching-and-resuming-apps-directx-and-c"></a>啟動和繼續應用程式 (DirectX 和 C++)
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何啟動、暫停和繼續通用 Windows 平台 (UWP) DirectX app。
 
@@ -29,10 +36,5 @@ ms.openlocfilehash: 9a0a1314aa0b174bfb1c44e5280455ab668a42b7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

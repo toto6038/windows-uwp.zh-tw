@@ -3,15 +3,22 @@ author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "存取網路和 Web 服務的技術。"
 title: "網路和 Web 服務"
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 82edf9c3ee7f7303788b7a1272ecb261d3748c5a
-ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1bb0e25e9368a6e2f7568ac51620c7a064a01ce3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 網路和 Web 服務
+# <a name="networking-and-web-services"></a>網路和 Web 服務
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 下列網路和 Web 服務技術可供通用 Windows 平台 (UWP) 開發人員使用。
 
@@ -25,9 +32,4 @@ ms.openlocfilehash: 03a5ce2b8d5f501d4254cbe0ee3d47f575775f7a
 | [HttpClient](httpclient.md)                                                             | 使用 [Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。             |
 | [RSS/Atom 摘要](web-feeds.md)                                                          | 使用 [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。                   |
 | [背景傳輸](background-transfers.md)                                         | 使用背景傳輸 API 在網路上可靠地複製檔案。           |
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

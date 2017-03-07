@@ -6,9 +6,16 @@ ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: e6169f033a224c6ad9c3ba47ef1fd0a80e137dff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 90096443a0b67b816869e6c9e607ccfd43f0cea1
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -220,10 +227,5 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

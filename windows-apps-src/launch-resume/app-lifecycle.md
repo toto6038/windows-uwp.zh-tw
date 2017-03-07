@@ -4,33 +4,39 @@ title: "Windows 10 UWP App 週期"
 description: "本主題描述 Windows 10 通用 Windows 平台 (UWP) app 從啟用到關閉為止的整個週期。"
 keywords: "app 週期暫停繼續啟動啟用"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: df297d442a4c636fac886b113ada8a01aa37a015
-ms.openlocfilehash: 6e7b92e81aa0a00e579e0ca89234a90e68c253f1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 75b7dde9ba658cc427845cb1c1d2cab9c2117d17
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows 10 通用 Windows 平台 (UWP) app 週期
+# <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) app 週期
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主題描述通用 Windows 平台 (UWP) app 從啟動到關閉為止的整個週期。
 
-## 歷史概述
+## <a name="a-little-history"></a>歷史概述
 
 Windows 8 推出前，app 的週期很簡單。 Win32 與.NET app 不是在執行中，就是並未執行。 當使用者將它們縮至最小或切換到其他 app 時，它們會繼續執行。 這原本不成問題，直到可攜式裝置和電源管理變得越來越重要。
 
 Windows 8 引進的新應用程式模型提供 Windows 市集應用程式。 增加一種新的高階暫停狀態。 Windows 市集應用程式會在使用者將其縮至最小或切換到其他 app 時，立即暫停。 這表示 app 的執行緒會停止，而且除非作業系統需要回收資源，否則會將 app 保留在記憶體中。 當使用者切換回 app 時，它會快速還原到正在執行的狀態。
 
-當 app 在背景時，需要繼續執行的的 app 會有各種不同的形態，像是[背景工作](support-your-app-with-background-tasks.md)、[延伸執行](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.extendedexecution.aspx)及活動贊助執行 (例如，允許 app 繼續[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio) 的 **BackgroundMediaEnabled** 功能)。 此外，即使您的 app 已遭到暫停或甚至終止時，背景傳輸作業仍會繼續執行。 如需詳細資訊，請參閱[如何下載檔案](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)。
+當 app 在背景時，需要繼續執行的的 app 會有各種不同的形態，像是[背景工作](support-your-app-with-background-tasks.md)、[延伸執行](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.aspx)及活動贊助執行 (例如，允許 app 繼續[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio) 的 **BackgroundMediaEnabled** 功能)。 此外，即使您的 app 已遭到暫停或甚至終止時，背景傳輸作業仍會繼續執行。 如需詳細資訊，請參閱[如何下載檔案](https://msdn.microsoft.com/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)。
 
 根據預設，不在前景的 app 會暫停，藉以產生省電效果，並讓目前在前景 app 有更多的資源可用。
 
 對於身為開發人員的您而言，因為作業系統可能會選擇終止暫停的 app 以釋出資源，所以暫停的狀態會增加新的需求。 工具列中仍會顯示終止的 app。 因為使用者不會注意到系統已將 app 關閉，所以當使用者按一下 app 時，app 必須將其還原至終止之前的狀態。 他們會認為 app 始終在背景中等待使用者做別的事，並預期 app 會處於他們離開時的相同狀態。 在本主題中，我們將著眼於如何完成這個動作。
 
-Windows 10 (版本 1607) 另外引進兩個 app 模型狀態︰「在前景執行」和「在背景執行」。 我們也將在下面各節研究一下這些新狀態。
+Windows 10 (版本 1607) 另外引進兩個 app 模型狀態︰**「在前景執行」**和**「在背景執行」**。 我們也將在下面各節研究一下這些新狀態。
 
-## App 執行狀態
+## <a name="app-execution-state"></a>App 執行狀態
 
 這個圖例表示一開始在 Windows 10 (版本 1607) 中可能的 app 模型狀態。 讓我們逐步解說典型的 Windows 市集應用程式週期。
 
@@ -38,11 +44,11 @@ Windows 10 (版本 1607) 另外引進兩個 app 模型狀態︰「在前景執�
 
 App 會在啟動或啟用時，進入背景執行狀態時。 這些詞彙看起來很類似，但所指的是作業系統用以啟動 app 的不同方式。 讓我們先來看看啟動 app。
 
-## App 啟動
+## <a name="app-launch"></a>App 啟動
 
 App 啟動時，會呼叫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 傳遞所提供的 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 參數，一起傳遞到 app 的其他項目，還有引數、磚 (啟動該應用程式) 的識別碼，以及先前的 app 狀態。
 
-從會傳回 [ApplicationExecutionState](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.applicationexecutionstate.aspx) 的 [LaunchActivatedEventArgs.PreviousExecutionState](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate)，取得 app 先前的狀態。 其值和根據該狀態採取的適當動作，如下所示︰
+從會傳回 [ApplicationExecutionState](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.applicationexecutionstate.aspx) 的 [LaunchActivatedEventArgs.PreviousExecutionState](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.launchactivatedeventargs.previousexecutionstate)，取得 app 先前的狀態。 其值和根據該狀態採取的適當動作，如下所示︰
 
 | ApplicationExecutionState | 說明 | 要採取的動作 |
 |-------|-------------|----------------|
@@ -53,8 +59,7 @@ App 啟動時，會呼叫 [**OnLaunched**](https://msdn.microsoft.com/library/wi
 |**Running** | 當使用者嘗試再次啟動時，app 早已開啟。 | 無。 請注意，並不會啟動另一個 app 執行個體。 只會啟用已在執行中的執行個體。 |
 
 
-**注意：**
-            *目前的使用者工作階段*是以 Windows 登入為基礎。 只要目前的使用者沒有登出、關機，或重新啟動 Windows，目前的使用者工作階段就會跨事件 (例如鎖定畫面驗證、切換使用者等等) 持續存在。 
+**注意：***目前的使用者工作階段*是以 Windows 登入為基礎。 只要目前的使用者沒有登出、關機，或重新啟動 Windows，目前的使用者工作階段就會跨事件 (例如鎖定畫面驗證、切換使用者等等) 持續存在。 
 
 但有一個重要的情況需要注意，如果裝置有足夠的資源，作業系統會預先啟動經常使用且已選擇加入該行為的 app，以讓回應性達到最佳。 預先啟動的 app 會在背景啟動，隨後迅速暫停，以便使用者切換至該 app 時，以比啟動 app 更快的速度繼續。
 
@@ -66,16 +71,14 @@ Windows 會在 app 啟動時顯示啟動顯示畫面。 如果要設定啟動顯
 
 App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消失，並會清除所有啟動顯示畫面資源和物件。
 
-## App 啟用
+## <a name="app-activation"></a>App 啟用
 
 和由使用者啟動相反，app 也可以由系統啟用。 App 可由協定啟用，例如分享協定。 或加以啟用來處理自訂 URI 通訊協定，或已登錄要處理該類副檔名的檔案。 如需可用以啟用 app 的方式清單，請參閱[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)。
 
 [
               **Windows.UI.Xaml.Application**
             ](https://msdn.microsoft.com/library/windows/apps/br242324) 類別定義您可以覆寫以處理各種不同 app 啟用方式的方法。
-[
-              **OnActivated**
-            ](https://msdn.microsoft.com/library/windows/apps/br242330) 可以處理所有可能的啟用類型。 不過，我們更常使用特定的方法來處理最常見的啟用類型，並且對較不常用的啟用類型使用 **OnActivated** 做為後援方法。 以下是其他的特定啟用方法：
+[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 可以處理所有可能的啟用類型。 不過，我們更常使用特定的方法來處理最常見的啟用類型，並且對較不常用的啟用類型使用 **OnActivated** 做為後援方法。 以下是其他的特定啟用方法：
 
 [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)  
 [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)  
@@ -84,11 +87,11 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)  
 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806)
 
-這些方法的事件資料包括上面見到的相同 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 屬性，可讓您知道 app 啟用之前的狀態。 解譯狀態以及您同樣應採取的方式，如上面的 [App 啟動](#App launch)一節中所述。
+這些方法的事件資料包括上面見到的相同 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 屬性，可讓您知道應用程式啟用之前的狀態。 解譯狀態以及您同樣應採取的方式，如上面的 [App 啟動](#app-launch)一節中所述。
 
 **注意：**如果您使用電腦的 Administrator 帳戶登入，將無法啟用 UWP app。
 
-## 在背景執行 ##
+## <a name="running-in-the-background"></a>在背景執行 ##
 
 從 Windows 10 版本 1607 開始，app 可以在與 app 本身相同的處理序內執行背景工作。 如需深入瞭解，請參閱 [Background activity with the Single Process Model (單一處理序模型的背景活動)](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)。 我們將不會在本文中談及同處理序背景處理，但這對 app 週期的影響是新增兩個和 app 在背景時有關的新事件。 分別是︰[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。
 
@@ -96,7 +99,7 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 在背景執行是應用程式已啟動、啟用，或繼續執行的預設狀態。 處於這個狀態，尚無法看到您的應用程式 UI。
 
-## 在前景執行 ##
+## <a name="running-in-the-foreground"></a>在前景執行 ##
 
 在前景執行表示可以見到 app 的 UI。
 
@@ -108,19 +111,19 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 當使用者切換到其他應用程式時，您的 app 會重新進入在背景執行的狀態。
 
-## 重新進入背景狀態
+## <a name="reentering-the-background-state"></a>重新進入背景狀態
 
 **EnteredBackground** 事件指出 app 已不會再出現在前景。 桌面會在 app 縮到最小時觸發 **EnteredBackground**，而手機會在切換到主畫面或另一個應用程式時觸發。
 
-### 減少 app 的記憶體使用量
+### <a name="reduce-your-apps-memory-usage"></a>減少 app 的記憶體使用量
 
 由於使用者已看不見 app，最好於此停止 UI 轉譯工作和動畫。 您可以使用 **LeavingBackground**，再次啟動該工作。
 
-如果您要在背景執行工作，請在此處準備。 最好檢查 [MemoryManager.AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelevel.aspx)，並視需要減少 app 在背景中執行時的記憶體使用量，避免 app 遭到系統終止以釋出資源。
+如果您要在背景執行工作，請在此處準備。 最好檢查 [MemoryManager.AppMemoryUsageLevel](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelevel.aspx)，並視需要減少 app 在背景中執行時的記憶體使用量，避免 app 遭到系統終止以釋出資源。
 
 如需詳細資訊，請參閱[減少當 app 移至背景狀態時的記憶體使用量](reduce-memory-usage.md)。
 
-### 儲存您的狀態
+### <a name="save-your-state"></a>儲存您的狀態
 
 之前，暫停的事件處理常式會是儲存 app 狀態的最佳位置。 但如果您正在背景執行工作 (例如，播放音訊或使用延伸執行工作階段)，最好從從 **EnteredBackground** 事件處理常式以非同步方式儲存您的資料。 這是因為當 app 在背景時有可能會遭到終止。 此外，因為在上述情況中，app 並不會進入暫停狀態，而將使您的資料遺失。
 
@@ -130,43 +133,43 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 請注意，如果您的 app 有進行中的背景活動，其會不進入暫停狀態，直接從在背景執行的狀態變成在前景執行的狀態。
 
-### 非同步工作和延遲
+### <a name="asynchronous-work-and-deferrals"></a>非同步工作和延遲
 
-如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](http://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.deferral.aspx) 物件呼叫 [**Complete**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法之後。
+如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](http://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 物件呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法之後。
 
 延遲不會提高在應用程式終止之前所需執行的程式碼數量。 其只會延遲終止，直到呼叫延遲的 *Complete* 方法或期限到期 (*視何者先發生*) 為止。
 
-如果您需要更多時間來儲存狀態，請調查在 app 進入背景狀態之前的階段儲存狀態的做法，這樣要在 **EnteredBackground** 事件處理常式中儲存者會較少。 或者您可以要求 [ExtendedExecutionSession](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)，以取得更多的時間。 不過並不保證會准您所請，因此最好還是想辦法讓儲存狀態所需的時間量縮至最短。
+如果您需要更多時間來儲存狀態，請調查在 app 進入背景狀態之前的階段儲存狀態的做法，這樣要在 **EnteredBackground** 事件處理常式中儲存者會較少。 或者您可以要求 [ExtendedExecutionSession](https://msdn.microsoft.com/magazine/mt590969.aspx)，以取得更多的時間。 不過並不保證會准您所請，因此最好還是想辦法讓儲存狀態所需的時間量縮至最短。
 
-## App 暫停
+## <a name="app-suspend"></a>App 暫停
 
 當使用者將 app 縮至最小時，Windows 會先等候幾秒鐘，看使用者是否會切換回 app。 如果沒有在這個時間範圍內切換回來，也沒有任何延伸執行、背景工作或活動贊助執行在使用中，Windows 就會暫停該 app。 當鎖定畫面出現時，只要該 app 中沒有延伸執行工作階段等在使用中，也同樣會暫停 app。
 
 當 app 暫停時，其會叫用 [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) 事件。 Visual Studio 的 UWP 專案範本為此事件在 **App.xaml.cs** 中提供的處理常式稱為 **OnSuspending**。 在 Windows 10 (版本 1607) 之前，您會在此處放置儲存狀態的程式碼。 現在建議您在進入背景狀態之前儲存狀態，如上所述。
 
-您應該釋放獨占資源及檔案控制代碼，這樣當您的 app 暫停時，其他 app 仍然可以使用它們。 獨占資源的範例包括相機、I/O 裝置、外部裝置及網路資源。 明確釋放獨占資源及檔案控制代碼，有助於確保當您的 app 暫停時，其他 app 仍然可以使用它們。 當 app 繼續執行時，應要重新取得獨占資源和檔案控制代碼。
+您應該釋放獨占資源及檔案控制代碼，這樣當您的 app 暫停時，其他 app 仍然可以使用它們。 獨占資源的範例包括相機、I/O 裝置、外部裝置及網路資源。 明確釋放獨占資源及檔案控制代碼，有助於確保當您的 app 暫停時，其他 app 仍然可以使用它們。 當應用程式繼續執行時，應要重新取得獨占資源和檔案控制代碼。
 
-### 注意期限
+### <a name="be-aware-of-the-deadline"></a>注意期限
 
 為了確保裝置運作快速且有回應，因此在暫停事件處理常式中執行程式碼的時間長度會有限制。 每部裝置各有不同，您可以使用會呼叫期限的 [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) 物件屬性來找出。
 
 如同使用 **EnteredBackground** 事件處理常式，如果您從處理常式進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至暫停狀態。 針對 [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) 物件 (透過事件引數提供) 使用 [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) 方法，來延遲進入暫停狀態，直到您針對傳回的 [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) 物件呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) 方法為止。
 
-如果您需要更多時間，可以要求 [ExtendedExecutionSession](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)。 不過並不保證會准您所請，因此最好還是想辦法讓 **Suspended** 事件處理常式中所需的時間量縮至最短。
+如果您需要更多時間，可以要求 [ExtendedExecutionSession](https://msdn.microsoft.com/magazine/mt590969.aspx)。 不過並不保證會准您所請，因此最好還是想辦法讓 **Suspended** 事件處理常式中所需的時間量縮至最短。
 
-### App 終止
+### <a name="app-terminate"></a>App 終止
 
 當 app 暫停時，系統會嘗試讓 app 及其資料保留在記憶體中。 不過，如果系統沒有資源可將 app 保存在記憶體中，便會終止您的 app。 App 不會收到它們遭到終止的通知，因此，您唯一可以儲存 app 資料的機會是在 **OnSuspension** 事件處理常式中，或從 **EnteredBackground** 處理常式以非同步方式儲存。
 
 當 app 判斷它在遭到終止後又再度啟用時，應該會載入所儲存的應用程式資料，以讓 app 處於和終止之前相同的狀態。 當使用者切換回遭到終止的暫停 app 時，app 應該在其 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法中還原自己的 app 資料。 系統不會在 app 終止時提供通知，所以 app 必須在暫停之前儲存應用程式資料並釋放獨占資源及檔案控制代碼，並在終止狀態結束後再次啟用時還原這些項目。
 
-**有關使用 Visual Studio 進行偵錯的注意事項：**Visual Studio 會防止 Windows 暫停已連接至偵錯工具的 app。 這是為了讓使用者在 app 執行時可以檢視 Visual Studio 偵錯 UI。 當您正在對某個 app 偵錯時，您可以使用 Visual Studio 傳送一個暫停事件給該 app。 確定 \[偵錯位置\] 工具列已經顯示，然後按一下 \[暫停\] 圖示。
+**有關使用 Visual Studio 進行偵錯的注意事項：**Visual Studio 會防止 Windows 暫停已連接至偵錯工具的應用程式。 這是為了讓使用者在 app 執行時可以檢視 Visual Studio 偵錯 UI。 當您正在對某個 app 偵錯時，您可以使用 Visual Studio 傳送一個暫停事件給該 app。 確定 **\[偵錯位置\]** 工具列已經顯示，然後按一下 **\[暫停\]** 圖示。
 
-## app 繼續執行
+## <a name="app-resume"></a>app 繼續執行
 
 當使用者切換到暫停的 app，或當裝置脫離電源不足的狀態時，使用中的正好是該 app，暫停的 app 就可以繼續執行。
 
-當 app 從 **Suspended** 狀態繼續執行時，會進入「在背景執行」狀態，而系統會將 app 還原至先前使用者離開時的狀態，如此使用者會以為 app 一直在執行中。 儲存在記憶體中的 app 資料都不會遺失。 因此，大部分應用程式繼續執行時都不需要還原狀態，但是都應該重新取得在暫停時所釋出的任何檔案或裝置控制代碼，並將 app 暫停時明確釋出的任何狀態還原。
+當 app 從 **Suspended** 狀態繼續執行時，會進入**「在背景執行」**狀態，而系統會將 app 還原至先前使用者離開時的狀態，如此使用者會以為 app 一直在執行中。 儲存在記憶體中的 app 資料都不會遺失。 因此，大部分應用程式繼續執行時都不需要還原狀態，但是都應該重新取得在暫停時所釋出的任何檔案或裝置控制代碼，並將 app 暫停時明確釋出的任何狀態還原。
 
 您的 app 可能會暫停長達數小時或數天。 如果 app 的內容或網路連線已過時，應要在 app 繼續執行時重新整理。 如果 app 已登錄 [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的事件處理常式，當 app 從 **Suspended** 狀態繼續執行時，就會呼叫這個事件處理常式。 您可以在這個事件處理常式內重新整理 app 的內容和資料。
 
@@ -180,17 +183,17 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 如需一般指導方針，請參閱 [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
-## App 關閉
+## <a name="app-close"></a>App 關閉
 
 使用者通常不需要關閉 app，交由 Windows 管理即可。 不過，使用者可以在 Windows Phone 上，選擇使用關閉手勢，或按 Alt+F4 或使用工作切換器，來關閉 app。
 
 沒有事件可指出使用者已關閉 app。 由使用者關閉 app 時，會先予以暫停，讓您有機會儲存其狀態。 在 Windows 8.1 和更新版本中，使用者關閉 app 之後，只會從畫面和切換清單中移除該 app，但不會明確終止 app。
 
-**由使用者關閉的行為：**如果 app 在由使用者關閉時所需執行的動作，不同於由 Windows 關閉時執行的動作，您可以使用啟用事件處理常式，判斷 app 是由使用者或由 Windows 終止。 請參閱 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列舉參考資料中有關 **ClosedByUser** 與 **Terminated** 狀態的描述。
+**由使用者關閉的行為：**如果應用程式在由使用者關閉時所需執行的動作，不同於由 Windows 關閉時執行的動作，您可以使用啟用事件處理常式，判斷應用程式是由使用者或由 Windows 終止。 請參閱 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列舉參考資料中有關 **ClosedByUser** 與 **Terminated** 狀態的描述。
 
 建議您除非絕對有必要，否則不要讓 app 以程式設計的方式自行關閉。 例如，如果 app 偵測到記憶體流失，就可以自行關閉以保護使用者個人資料的安全。
 
-## App 毀損
+## <a name="app-crash"></a>App 毀損
 
 系統毀損經驗的設計旨在讓使用者儘快返回原先正在進行的作業。 您不應該提供警告對話方塊或其他通知，因為這會造成使用者的延遲。
 
@@ -198,36 +201,26 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 當使用者在 app 毀損之後再次啟用，其啟用事件處理常式會收到 **NotRunning** 的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 值，而且應該顯示其初始 UI 和資料。 損毀之後，請不要依照之前針對 **Resuming** 和 **Suspended** 的方式使用 app 資料，因為該資料可能已經損毀，請參閱 [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
-## App 移除
+## <a name="app-removal"></a>App 移除
 
 當使用者刪除 app 後，app 會連同所有本機資料一併移除。 移除 app 並不會影響儲存在常見位置中的使用者資料，例如文件庫或圖片庫。
 
-## App 週期與 Visual Studio 專案範本
+## <a name="app-lifecycle-and-the-visual-studio-project-templates"></a>App 週期與 Visual Studio 專案範本
 
 Visual Studio 專案範本中會提供與 app 週期相關的基本程式碼。 基本的 app 會處理啟動的啟用，提供一個讓您可以還原 app 資料的位置，甚至可在您新增自己的程式碼之前，顯示其主要的 UI。 如需詳細資訊，請參閱 [App 的 C#、VB 及 C++ 專案範本](https://msdn.microsoft.com/library/windows/apps/hh768232)。
 
-## 重要的應用程式週期 API
+## <a name="key-application-lifecycle-apis"></a>重要的應用程式週期 API
 
--   [
-              **Windows.ApplicationModel**
-            ](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空間
--   [
-              **Windows.ApplicationModel.Activation**
-            ](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空間
--   [
-              **Windows.ApplicationModel.Core**
-            ](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空間
--   [
-              **Windows.UI.Xaml.Application**
-            ](https://msdn.microsoft.com/library/windows/apps/br242324) 類別 (XAML)
--   [
-              **Windows.UI.Xaml.Window**
-            ](https://msdn.microsoft.com/library/windows/apps/br209041) 類別 (XAML)
+-   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 命名空間
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 命名空間
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 命名空間
+-   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 類別 (XAML)
+-   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 類別 (XAML)
 
 **注意**  
 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694)
 * [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465088)
@@ -236,14 +229,9 @@ Visual Studio 專案範本中會提供與 app 週期相關的基本程式碼。 
 * [處理 app 暫停](suspend-an-app.md)
 * [處理 app 繼續執行](resume-an-app.md)
 * [Background activity with the Single Process Model (單一處理序模型的背景活動)](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
-* [在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

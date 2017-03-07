@@ -1,12 +1,20 @@
 ---
 author: QuinnRadich
-Description: "設計指示性使用者介面 (UI)，教導使用者如何使用您的 Windows 市集應用程式。"
+Description: "設計說明使用者介面 (UI)，教導使用者如何使用您的 Windows 市集應用程式。"
 title: "設計指示性 UI 的指導方針"
 label: Instructional UI
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 179f70a1c421d3d5a73813a9b9675353a8d5f8c2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9734304b813794d615eca4d0c9d852dc8df31c1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -69,9 +77,4 @@ ms.openlocfilehash: 179f70a1c421d3d5a73813a9b9675353a8d5f8c2
 ## <a name="related-articles"></a>相關文章
 
 * [應用程式說明的指導方針](guidelines-for-app-help.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

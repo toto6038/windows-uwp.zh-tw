@@ -3,15 +3,22 @@ author: DelfCo
 description: "WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 HTTP(S) 的 Web 快速且安全地進行雙向通訊。"
 title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ff2429e1e9ea56c414978c126497551b1e1864b8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 203face64ddb925601d23274c4e9cf9ab6d7c6f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# WebSocket
+# <a name="websockets"></a>WebSocket
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -36,7 +43,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 若要為 WebSocket 連線加密，請使用 wss: URI 配置，例如，`wss://www.contoso.com/mywebservice`。
 
-## 使用 MessageWebSocket
+## <a name="using-messagewebsocket"></a>使用 MessageWebSocket
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 允許使用每個讀取作業來讀取訊息區段。 **MessageWebSocket** 通常用於訊息不是非常大的案例中。 同時支援 UTF-8 與二進位檔案。
 
@@ -114,7 +121,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 初始化 WebSocket 連線之後，您的程式碼必須執行下列活動，才能正常傳送和接收資料。
 
-### 實作 MessageWebSocket.MessageReceived 事件的回呼
+### <a name="implement-a-callback-for-the-messagewebsocketmessagereceived-event"></a>實作 MessageWebSocket.MessageReceived 事件的回呼
 
 在使用 WebSocket 建立連線和傳送資料之前，您的應用程式必須登錄事件回呼，以在接收資料時接收通知。 發生 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) 事件時，會呼叫登錄回呼並從 [**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) 接收資料。 此範例的撰寫假設是，訊息是以 UTF-8 格式傳送的。
 
@@ -145,7 +152,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 >}
 >```
 
-###  實作 MessageWebSocket.Closed 事件的回呼
+###  <a name="implement-a-callback-for-the-messagewebsocketclosed-event"></a>實作 MessageWebSocket.Closed 事件的回呼
 
 在使用 WebSocket 建立連線和傳送資料之前，您的應用程式必須登錄事件回呼，以在 WebSocket 伺服器關閉 WebSocket 時接收通知。 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) 事件發生時會呼叫已登錄的回呼，以指出 WebSocket 伺服器已關閉連線。
 
@@ -172,7 +179,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 >}
 >```
 
-###  在 WebSocket 上傳送訊息
+###  <a name="send-a-message-on-a-websocket"></a>在 WebSocket 上傳送訊息
 
 建立連線後，WebSocket 用戶端即可將資料傳送至伺服器。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) 方法會傳回對應到不帶正負號之整數的參數。 與建立連線的工作相較，這改變了我們定義傳送訊息之工作的方式。
 
@@ -224,7 +231,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 >}
 >```
 
-## 對 Websocket 使用進階控制項
+## <a name="using-advanced-controls-with-websockets"></a>對 Websocket 使用進階控制項
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 都遵循使用進階控制項的相同模型。 對應到上述每一個主要類別的是可以存取進階控制項的相關類別。
 
@@ -241,7 +248,7 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 -   對於 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 的所有進階控制項，應用程式都必須一律先設定屬性，再發出連線作業。 由於有此需求，因此最好在建立 **StreamWebSocket** 物件之後立即設定所有控制項屬性。 請不要嘗試在呼叫 [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) 方法之後設定控制項屬性。
 -   對於訊息類型以外的所有 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 進階控制項，您必須一律先設定屬性，再發出連線作業。 最好在建立 **MessageWebSocket** 物件之後立即設定所有控制項屬性。 除了訊息類型以外，請不要嘗試在呼叫 [**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) 之後變更控制項屬性。
 
-## WebSocket 資訊類別
+## <a name="websocket-information-classes"></a>WebSocket 資訊類別
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 和 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 分別有一個對應的類別，可提供關於 WebSocket 執行個體的其他資訊。
 
@@ -251,13 +258,13 @@ WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 
 
 請注意，這兩個資訊類別的所有屬性都是唯讀的，在 Web 通訊端物件的存留期間，您可以隨時擷取目前資訊。
 
-## 處理網路例外狀況
+## <a name="handling-network-exceptions"></a>處理網路例外狀況
 
 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 作業上發生的錯誤會傳回為 **HRESULT** 值。 使用 [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) 方法，將 WebSocket 作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值對應原始 HTTP 用戶端作業傳回的錯誤。 您的應用程式可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改應用程式行為。
 
-針對參數驗證錯誤，應用程式也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
+針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
 
-## 設定 WebSocket 作業的逾時
+## <a name="setting-timeouts-on-websocket-operations"></a>設定 WebSocket 作業的逾時
 
 MessageWebSocket 和 StreamWebSocket 類別會使用內部系統服務，來傳送 WebSocket 用戶端要求和接收來自伺服器的回應。 用於 WebSocket 連線作業的預設逾時值為 60 秒。 如果支援 WebSocket 的 HTTP 伺服器因網路中斷而暫時關閉或遭到封鎖，且伺服器沒有或無法回應 WebSocket 連線要求，內部系統服務會先等候預設的 60 秒，再傳回導致對 WebSocket ConnectAsync 方法擲回例外狀況的錯誤。 如果對 URI 中的 HTTP 伺服器名稱進行的名稱查詢針對該名稱傳回多個 IP 位址，內部系統服務會先針對該網站嘗試最多 5 個 IP 位址 (每個都使用預設的 60 秒逾時)，然後才會失敗。 提出 WebSocket 連線要求的應用程式可先等候數分鐘程式連接到多個 IP 位址，然後才會傳回錯誤並擲回例外狀況。 當應用程式停止運作時，使用者即會看見此行為。 建立 WebSocket 連線之後，傳送和接收作業所使用的預設逾時為 30 秒。
 
@@ -341,10 +348,5 @@ MessageWebSocket 和 StreamWebSocket 類別會使用內部系統服務，來傳�
         });
     }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

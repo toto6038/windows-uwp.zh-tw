@@ -3,14 +3,21 @@ author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
 title: "列印與掃描"
 description: "本節描述如何從您的通用 Windows app 列印與掃描。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e05d6278472af75fb97f33eb840f6ecf28d33670
+ms.lasthandoff: 02/07/2017
 
 ---
-# 列印與掃描
+# <a name="printing-and-scanning"></a>列印與掃描
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節描述如何從您的通用 Windows app 列印與掃描。
 
@@ -21,16 +28,11 @@ ms.openlocfilehash: 1e30bfb4f80d955d28799e6a6d5c22b82379a8fc
 | [自訂預覽列印 UI](customize-the-print-preview-ui.md) | 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 |
 | [從您的 app 掃描](scan-from-your-app.md) | 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。|
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

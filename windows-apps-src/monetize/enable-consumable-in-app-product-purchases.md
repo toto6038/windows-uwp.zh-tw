@@ -3,17 +3,23 @@ author: mcleanbyron
 Description: "您可以透過市集商業平台提供消費性的應用程式內產品，亦即可購買、使用然後再次購買的項目，為客戶提供既健全又可靠的購買體驗。"
 title: "啟用消費性應用程式內產品購買"
 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: "應用程式內的購買選項程式碼範例"
+keywords: "UWP, 消費性, 附加元件, 應用程式內購買, IAP, Windows.ApplicationModel.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7395cf28f96b2f7aa9bc6a1d4c461385d50fcbf6
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="enable-consumable-in-app-product-purchases"></a>啟用消費性應用程式內產品購買
 
 
->**注意**  本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+>**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
 您可以透過市集商業平台提供消費性的應用程式內產品 (亦即可購買、使用，然後再次購買的項目)，為客戶提供既健全又可靠的購買體驗。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
 
@@ -36,7 +42,7 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
 
 將消費性應用程式內產品的存取權授與客戶時，請務必追蹤哪些產品已履行 (*productId*)，以及該履行動作與哪個交易關聯 (*transactionId*)。
 
->**重要**  您的 App 必須將履行動作準確回報給市集。 若要為客戶維護公平可靠的購買體驗，這個步驟是不可或缺的。
+>**重要**&nbsp;&nbsp;您的 App 必須將履行動作準確回報給市集。 若要為客戶維護公平可靠的購買體驗，這個步驟是不可或缺的。
 
 下列範例示範如何使用上一個步驟之 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381) 呼叫中的 [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 屬性，來識別購買的產品是否已經履行。 此範例使用集合將產品資訊儲存在可供參照的位置，以便稍後確認是否已在本機順利履行。
 
@@ -45,7 +51,7 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
 
 下個範例說明將履行回報給市集後，如何使用上個範例的陣列來存取之後要使用的產品識別碼/交易識別碼。
 
->**重要**  無論您的 App 使用哪種方法來追蹤和確認履行，都必須提供審查評鑑，以確保不會針對客戶尚未收到的項目向客戶收費。
+>**重要**&nbsp;&nbsp;無論您的 App 使用哪種方法來追蹤和確認履行，都必須提供審查評鑑，以確保不會針對客戶尚未收到的項目向客戶收費。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#IsLocallyFulfilled)]
@@ -54,7 +60,7 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
 
 完成本機履行之後，您的 App 必須進行 [ReportConsumableFulfillmentAsync](https://msdn.microsoft.com/library/windows/apps/dn263380) 呼叫，此呼叫包含 *productId* 及含括該項產品購買的交易。
 
->**重要**  若未將已履行的消費性應用程式內產品報告給市集，將導致使用者無法再次購買該產品，必須等到回報已履行上次的購買後才能再購買。
+>**重要**&nbsp;&nbsp;若未將已履行的消費性應用程式內產品報告給市集，將導致使用者無法再次購買該產品，必須等到回報已履行上次的購買後才能再購買。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumablePurchases](./code/InAppPurchasesAndLicenses/cs/EnableConsumablePurchases.cs#ReportFulfillment)]
@@ -76,9 +82,4 @@ ms.openlocfilehash: acb7218bed287f430950d4f8d3621831b269ae18
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

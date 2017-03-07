@@ -2,13 +2,21 @@
 author: TylerMSFT
 Description: "Microsoft 進行測驗 app 的 JavaScript API 可讓您執行安全性評定。 「進行測驗」提供了安全的瀏覽器，可防止學生在測驗期間使用其他電腦或網際網路資源。"
 title: "進行測驗 JavaScript API。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
 translationtype: Human Translation
-ms.sourcegitcommit: 7f578d73a9a625b0ac7d9c10f6dc8118c36b07d0
-ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ac1a9b38a9857ae536025e682f98d01135850a19
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 進行測驗 JavaScript API
+# <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
 「[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 它支援 SBAC 瀏覽器 API 標準，以用於高度利害攸關常見核心測試，並且可讓您將焦點放在評估內容，而不是如何鎖定 Windows。
 
@@ -16,14 +24,14 @@ ms.openlocfilehash: c2e1832489d36f4ccbeae4e2f67e18caf941a68f
 
 API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf) 為基礎) 可提供文字轉換語音功能，以及提供查詢裝置是否已鎖定及正在執行的使用者和系統處理序等等事項的查詢功能。
 
-請參閱[進行測驗 app 技術參考](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)以了解 app 本身的相關資訊。
+請參閱[進行測驗 app 技術參考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical)以了解 app 本身的相關資訊。
 
 > [!Important]
 > 這些 API 無法在遠端工作階段中運作。  
 
 如需疑難排解協助，請參閱[使用事件檢視器對「Microsoft 進行測驗」進行疑難排解](troubleshooting.md)。
 
-## 參考文件
+## <a name="reference-documentation"></a>參考文件
 進行測驗 API 包含下列命名空間。 
 
 | 命名空間 | 描述 |
@@ -32,7 +40,7 @@ API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrows
 |[tts 命名空間](#tts-namespace)|文字轉換語音功能|
 
 
- ### 安全性命名空間
+ ### <a name="security-namespace"></a>安全性命名空間
 
 安全性命名空間可讓您鎖定裝置、檢查使用者與系統處理序清單、取得 MAC 和 IP 位址，以及清除快取的 Web 資源。
 
@@ -48,7 +56,7 @@ API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrows
 
 ---
 <span id="clearCache"/>
-### void clearCache()
+### <a name="void-clearcache"></a>void clearCache()
 清除快取的 Web 資源。
 
 **語法**  
@@ -61,12 +69,12 @@ API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrows
 `None`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="close"/>
-### close(boolean restart)
+### <a name="closeboolean-restart"></a>close(boolean restart)
 關閉瀏覽器並將裝置解除鎖定。
 
 **語法**  
@@ -79,30 +87,30 @@ Windows10 (版本 1607)
 `None`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="enableLockDown"/>
-### enableLockdown(boolean lockdown)
+### <a name="enablelockdownboolean-lockdown"></a>enableLockdown(boolean lockdown)
 鎖定裝置。 也可以用來將裝置解除鎖定。
 
 **語法**  
 `browser.security.enableLockDown(true|false);`
 
 **參數**  
-`lockdown` - `true` 在鎖定畫面上執行進行測驗 app 並套用此[文件](https://technet.microsoft.com/en-us/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中討論的原則。 `False` 在鎖定畫面上停止執行進行測驗並將它關閉 (除非 app 沒有被鎖定)；在這種情況下沒有任何作用。
+`lockdown` - `true` 在鎖定畫面上執行進行測驗 app 並套用此[文件](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)中討論的原則。 `False` 在鎖定畫面上停止執行進行測驗並將它關閉 (除非 app 沒有被鎖定)；在這種情況下沒有任何作用。
 
 **傳回值**  
 `None`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="getIPAddressList"/>
-### string[] getIPAddressList()
+### <a name="string-getipaddresslist"></a>string[] getIPAddressList()
 取得裝置 IP 位址的清單。
 
 **語法**  
@@ -117,7 +125,7 @@ Windows10 (版本 1607)
 ---
 
 <span id="getMACAddress" />
-### string[] getMACAddress()
+### <a name="string-getmacaddress"></a>string[] getMACAddress()
 取得裝置 MAC 位址的清單。
 
 **語法**  
@@ -130,12 +138,12 @@ Windows10 (版本 1607)
 `An array of MAC addresses.`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="getProcessList" />
-### string[] getProcessList()
+### <a name="string-getprocesslist"></a>string[] getProcessList()
 取得使用者正在執行的處理程序的清單。
 
 **語法**  
@@ -150,12 +158,12 @@ Windows10 (版本 1607)
 **備註** 清單中不包含系統處理程序。
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="isEnvironmentSecure" />
-### boolean isEnvironmentSecure()
+### <a name="boolean-isenvironmentsecure"></a>boolean isEnvironmentSecure()
 判斷鎖定內容是否仍已套用到裝置。
 
 **語法**  
@@ -168,11 +176,11 @@ Windows10 (版本 1607)
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
-### tts 命名空間
+### <a name="tts-namespace"></a>tts 命名空間
 
 tts 命名空間會處理 App 的文字轉換語音功能。
 
@@ -191,7 +199,7 @@ tts 命名空間會處理 App 的文字轉換語音功能。
 ---
 
 <span id="getStatus" />
-### string getStatus()
+### <a name="string-getstatus"></a>string getStatus()
 取得語音播放狀態。
 
 **語法**  
@@ -204,12 +212,12 @@ tts 命名空間會處理 App 的文字轉換語音功能。
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="getVoices" />
-### string[] getVoices()
+### <a name="string-getvoices"></a>string[] getVoices()
 取得可用語音套件的清單。
 
 **語法**  
@@ -222,12 +230,12 @@ Windows10 (版本 1607)
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="pause" />
-### void pause()
+### <a name="void-pause"></a>void pause()
 
 暫停語音合成。
 
@@ -243,12 +251,12 @@ Windows10 (版本 1607)
 `None`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="resume" />
-### void resume()
+### <a name="void-resume"></a>void resume()
 繼續暫停的語音合成。
 
 **語法**  
@@ -261,12 +269,12 @@ Windows10 (版本 1607)
 `None`
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="speak" />
-### void speak(string text, object options, function callback)
+### <a name="void-speakstring-text-object-options-function-callback"></a>void speak(string text, object options, function callback)
 啟動用戶端文字轉換語音合成。
 
 **語法**  
@@ -293,12 +301,12 @@ var options = {
 選項物件必須遵循上述範例中所示的順序、命名和大小寫規則。
 
 **需求**  
-Windows10 (版本 1607)
+Windows 10 (版本 1607)
 
 ---
 
 <span id="stop" />
-### void stop()
+### <a name="void-stop"></a>void stop()
 停止語音合成。
 
 **語法**  
@@ -311,10 +319,5 @@ Windows10 (版本 1607)
 `None`
 
 **需求**  
-Windows10 (版本 1607)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
+Windows 10 (版本 1607)
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
 description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的套件正式發行前小眾測試版提交。"
 title: "使用 Windows 市集提交 API 建立套件正式發行前小眾測試版提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 建立正式發行前小眾測試版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 2ca6824039077d5d3ceba2c643d52a62c77104e4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d3e3c74d8afcd3b9055b64a0d06f207b1e02d598
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -131,9 +138,4 @@ Authorization: Bearer <your access token>
 * [更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)
 * [刪除套件正式發行前小眾測試版提交](delete-a-flight-submission.md)
 * [取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

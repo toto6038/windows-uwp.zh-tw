@@ -2,23 +2,30 @@
 author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "App 啟動效能的最佳做法"
-description: "透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。"
+description: "透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) app。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
-ms.openlocfilehash: 2224c6c2ca0a606492d381af85e665170601f054
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b59a4eb056e36156b847c769778b2609863ec1fc
+ms.lasthandoff: 02/07/2017
 
 ---
-# App 啟動效能的最佳做法
+# <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) App。
 
-## App 啟動效能的最佳做法
+## <a name="best-practices-for-your-apps-startup-performance"></a>App 啟動效能的最佳做法
 
 使用者對您 App 回應速度快慢的感受，部分取決於 App 啟動時間的長短。 基於這個主題的目的，App 的啟動時間是從使用者啟動 App 時算起，到使用者可以用一些有意義的方式與 App 互動時為止。 本節提供有關如何在 App 啟動時獲得較佳效能的建議。
 
-### 評估您 App 的啟動時間
+### <a name="measuring-your-apps-startup-time"></a>評估您 App 的啟動時間
 
 請務必先啟動 App 幾次，再實際評估其啟動時間。 這將為您的評估提供一個基準，並確保您評估出的啟動時間儘可能在合理的範圍內。
 
@@ -48,11 +55,11 @@ Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應�
 
 當您重新編譯應用程式時，就不會再使用原生映像。 而是應用程式以 Just-In-Time 的方式編譯，這表示它會在應用程式執行時進行編譯。 您必須重新執行 Ngen.exe 以取得新的原生映像。
 
-### 盡可能將工作延長
+### <a name="defer-work-as-long-as-possible"></a>盡可能將工作延長
 
 若要增加應用程式的啟動時間，請只做絕對必須做的工作，讓使用者開始與應用程式互動。 如果您可以延遲載入其他組件，這將特別實用。 Common Language Runtime 會在第一次使用組件時載入它。 如果您可以將要載入的組件數目減至最少，就可能改善 App 的啟動時間及其記憶體的消耗量。
 
-### 讓長時間執行的工作獨立執行
+### <a name="do-long-running-work-independently"></a>讓長時間執行的工作獨立執行
 
 即使您的 App 有部分無法完整運作，它仍然可以與使用者互動。 例如，如果應用程式顯示資料時需要一些時間抓取，您可以在不考慮應用程式啟動程式碼的情況下，用非同步的方式抓取資料來執行程式碼。 等到資料可供使用時，再將該資料填入 App 的使用者介面。
 
@@ -60,13 +67,13 @@ Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應�
 
 如果 App 在載入其部分 UI 時花費的時間特別長，請考慮在該部分新增像是「正在取得最新資料」的字串，讓使用者知道應用程式仍然在進行處理。
 
-## 將啟動時間縮到最短
+## <a name="minimize-startup-time"></a>將啟動時間縮到最短
 
 除了最簡單的 App 之外，所有 App 在啟用時都需要花費一段時間來載入資源、剖析 XAML、設定資料結構，以及執行邏輯。 在這裡，我們將把啟用程序分成三個階段來加以分析。 此外，我們也會提供縮減每個階段所費時間的祕訣，以及一些可讓 App 的每個啟動階段對使用者來說更為輕鬆愉快的秘訣。
 
 啟用期間是從使用者啟動 App 到 App 正常運作所經歷的時間。 這段時間非常重要，因為這是使用者對您 App 的第一印象。 使用者會期待從系統和應用程式得到立即和持續的回應。 如果 App 無法快速啟動，使用者便會覺得系統和 App 已損毀或設計不良。 甚至更糟，如果 App 在啟用時花費太長的時間，「處理程序生命週期管理員」(PLM) 可能就會將它刪除，或使用者可能會將它解除安裝。
 
-### 啟動階段簡介
+### <a name="introduction-to-the-stages-of-startup"></a>啟動階段簡介
 
 啟動包含一些活動的片段，必須正確地協調所有這些片段，才能獲得最佳的使用者體驗。 從使用者按一下您的 App 磚到開始顯示應用程式內容之間，會發生下列步驟。
 
@@ -82,7 +89,7 @@ Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應�
 -   呼叫 Render 來建立所有視窗內容的視覺效果。
 -   對「桌面視窗管理員」(DWM) 呈現 Frame。
 
-### 精簡您啟動路徑中的動作
+### <a name="do-less-in-your-startup-path"></a>精簡您啟動路徑中的動作
 
 讓您的啟動程式碼路徑中不含第一個框架所不需的一切項目。
 
@@ -91,7 +98,7 @@ Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應�
 -   如果您的 UI 正在等待資料，請顯示進度 UI。
 -   請小心處理涉及許多組態檔剖析的 App 設計，或是由程式碼動態產生的 UI。
 
-### 縮減元素計數
+### <a name="reduce-element-count"></a>縮減元素計數
 
 XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相關。 建立的元素越少，您 App 啟動時所花費的時間將會越短。 做為概略的基準，請將建立每個元素所需花費的時間視為 1 毫秒。
 
@@ -111,7 +118,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 本主題討論來自動畫/電視的「第一個畫面」，並且做為要多久時間使用者才會看到內容的一種評估方式。
 
-### 改善啟動感受
+### <a name="improve-startup-perception"></a>改善啟動感受
 
 讓我們使用一個簡單的線上遊戲範例來認明每個啟動階段，並使用不同的技巧在整個過程中持續回應使用者。 就這個範例而言，第一個啟用階段是從使用者點選遊戲的磚到遊戲開始執行其程式碼為止。 在這段期間，系統沒有任何內容可向使用者顯示，甚至無法指出已啟動正確的遊戲。 但是提供啟動顯示畫面即可將該內容提供給系統。 遊戲接著會在開始執行程式碼時，以自己的 UI 取代靜態的啟動顯示畫面，藉此通知使用者第一個啟用階段已經完成。
 
@@ -123,7 +130,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 現在，我們已指出線上遊戲的三個啟用階段，讓我們將它們與實際程式碼連結在一起。
 
-### 階段 1
+### <a name="phase-1"></a>階段 1
 
 應用程式啟動前，它需要告知系統要做為啟動顯示畫面的項目。 若要這樣做，請在應用程式資訊清單的 SplashScreen 元素中提供影像和背景色彩，如範例所示。 Windows 會在 App 開始啟用程序後顯示這個畫面。
 
@@ -146,7 +153,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 請只使用 App 的建構函式來初始化對應用程式非常重要的資料結構。 只有第一次執行應用程式時需要呼叫建構函式，不需要在每次啟用應用程式時呼叫它。 例如，不會為已執行、置於背景然後透過搜尋協定啟用的應用程式呼叫建構函式。
 
-### 階段 2
+### <a name="phase-2"></a>階段 2
 
 啟用應用程式有數個原因，而處理每個原因的方法也不相同。 您可以覆寫 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336) 以及 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) 方法來處理啟用的每個原因。 應用程式必須在這些方法進行的其中一個動作是建立 UI，將它指派給 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051)，然後呼叫 [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046)。 此時，啟動顯示畫面會被 app 建立的 UI 所取代。 這個視覺畫面可能是載入畫面或應用程式實際的 UI (如果啟用時有足夠的資訊建立 UI 的話)。
 
@@ -321,7 +328,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
 
-### 階段 3
+### <a name="phase-3"></a>階段 3
 
 應用程式顯示 UI 時並不代表使用者已經可以使用完整的應用程式功能。 以我們的遊戲為例，UI 會與需要從網際網路取得資料的功能預留位置一起顯示。 此時，遊戲會下載讓應用程式可以完整運作所需的額外資料，並透過取得的資料逐漸啟用應用程式功能。
 
@@ -331,17 +338,17 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 app 對每個啟動階段的反應方式完全取決於您，但是請盡可能提供使用者更多回應 (資料載入時的啟動顯示畫面、載入畫面、UI)，這會讓使用者感覺 app 和整個系統執行起來是快速的。
 
-### 將啟動路徑中的 Managed 組件減到最少
+### <a name="minimize-managed-assemblies-in-the-startup-path"></a>將啟動路徑中的 Managed 組件減到最少
 
 可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。 因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。
 
 減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。
 
-### 聰明的 Web 要求
+### <a name="make-smart-web-requests"></a>聰明的 Web 要求
 
 您可以透過在本機封裝應用程式內容 (包括 XAML、影像，以及任何其他對應用程式很重要的檔案) 來大幅提升應用程式的載入時間。 磁碟操作的速度比網路操作快。 如果 App 在初始化時需要某個特定的檔案，您可以從磁碟載入 (而不是從遠端伺服器抓取) 該檔案，以減少整體的啟動時間。
 
-## 有效率地記錄日誌和快取頁面
+## <a name="journal-and-cache-pages-efficiently"></a>有效率地記錄日誌和快取頁面
 
 「框架」控制項可提供瀏覽功能。 它提供「頁面」瀏覽 (Navigate 方法)、瀏覽日誌 (BackStack/ForwardStack 屬性、GoForward/GoBack 方法)、「頁面」快取 (Page.NavigationCacheMode)，以及序列化支援 (GetNavigationState 方法)。
 
@@ -360,10 +367,5 @@ PageStackEntry 也包含傳遞給 Frame.Navigate() 方法的參數。 建議使�
 頁面快取可藉由避免具現化來協助改善效能，進而提升瀏覽效能。 頁面快取可能因過度快取，進而影響到工作集，而導致效能降低。
 
 因此，建議針對您的應用程式適當地使用頁面快取。 例如，假設您有一個會在「框架」中顯示項目清單的 App，而當您點選某個項目時，框架會瀏覽到該項目的詳細資料頁面。 清單頁面或許就應該設定為要快取。 如果所有項目的詳細資料頁面都相同，則或許也應該快取該頁面。 但是，如果詳細資料頁面是較異質的頁面，則將快取維持關閉可能較好。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

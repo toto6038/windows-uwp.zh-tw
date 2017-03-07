@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "建立深度緩衝區裝置資源"
-description: "了解如何建立必要的 Direct3D 裝置資源，以支援陰影體的深度測試。"
+description: "了解如何建立必要的 Direct3D 裝置資源，以支援陰影錐的深度測試。"
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, Direct3D, 深度緩衝區"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 建立深度緩衝區裝置資源
+# <a name="create-depth-buffer-device-resources"></a>建立深度緩衝區裝置資源
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
 
 了解如何建立必要的 Direct3D 裝置資源，以支援陰影體的深度測試。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)第一部分。
 
-## 所需資源
+## <a name="resources-youll-need"></a>所需資源
 
 
 轉譯陰影體的深度圖需要下列 Direct3D 裝置相關的資源：
@@ -32,7 +39,7 @@ ms.openlocfilehash: 85fb020e7d476d3b2095875376903c5e28f08d94
 
 請注意，建立這些資源必須包含在裝置相關的資源建立常式中，舉例來說，如果安裝新的裝置驅動程式時，或使用者將您的應用程式移至附加到不同圖形介面卡的監視器時，轉譯器才能重建這些資源。
 
-## 檢查功能支援
+## <a name="check-feature-support"></a>檢查功能支援
 
 
 建立深度圖之前，請先在 Direct3D 裝置上呼叫 [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 方法，要求 **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**，並提供 [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 結構。
@@ -54,7 +61,7 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 如果不支援此功能，請勿嘗試載入針對著色器模型 4 層級 9\_x 所編譯且會呼叫取樣比較函式的著色器。 在許多案例中，缺乏此功能的支援通常表示 GPU 是傳統裝置，其中的驅動程式未經更新，且無法支援 WDDM 1.2 或以上版本。 如果裝置至少支援功能層級 10\_0，您就可以改為載入針對著色器模型 4\_0 編譯的取樣比較著色器。
 
-## 建立深度緩衝區
+## <a name="create-depth-buffer"></a>建立深度緩衝區
 
 
 首先，嘗試使用較高精確度的深度格式來建立深度圖。 先設定相符的著色器資源檢視屬性。 如果資源建立失敗，例如因為裝置記憶體過低或硬體不支援該格式，請嘗試較低精確度的格式，並變更為符合的屬性。
@@ -107,7 +114,7 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## 建立比較狀態
+## <a name="create-comparison-state"></a>建立比較狀態
 
 
 現在要建立比較取樣器狀態物件。 功能層級 9\_1 只支援 D3D11\_COMPARISON\_LESS\_EQUAL。 [支援硬體範圍的陰影圖](target-a-range-of-hardware.md)中會深入說明篩選選項 - 或者您可直接挑選快速陰影圖的點篩選。
@@ -146,7 +153,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 建立轉譯狀態
+## <a name="create-render-states"></a>建立轉譯狀態
 
 
 現在要建立轉譯狀態，您可以用於啟用正面消除。 請注意，功能層級 9\_1 裝置要求將 **DepthClipEnable** 設為 **true**。
@@ -182,7 +189,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-## 建立常數緩衝區
+## <a name="create-constant-buffers"></a>建立常數緩衝區
 
 
 記得建立用於從光源視角轉譯的常數緩衝區。 您也可以使用此常數緩衝區來指定著色器的光源位置。 在點狀光源使用透視矩陣，並在方向光源 (如日光) 使用正交矩陣。
@@ -239,7 +246,7 @@ context->UpdateSubresource(
     );
 ```
 
-## 建立檢視區
+## <a name="create-a-viewport"></a>建立檢視區
 
 
 您需要個別的檢視區以轉譯為陰影圖。 檢視區不是裝置型的資源；您可在程式碼中的任意位置建立。 在建立陰影圖時一起建立檢視區，有利於將檢視區維度與陰影圖維度保持一致。
@@ -261,10 +268,5 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

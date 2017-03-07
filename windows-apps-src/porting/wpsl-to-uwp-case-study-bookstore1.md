@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: "本主題提供將一個非常簡單的 Windows Phone Silverlight App 移植到 Windows 10 通用 Windows 平台 (UWP) App 的案例研究。"
 title: "Windows Phone Silverlight 至 UWP 案例研究：Bookstore1"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 14003238ead3af2d796bab4f96dadfb050f7d595
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 本主題提供將一個非常簡單的 Windows Phone Silverlight app 移植到 Windows 10 通用 Windows 平台 (UWP) app 的案例研究。 您可以使用 Windows 10，來建立可供客戶安裝至各種類型裝置的單一 app 套件，而那就是我們將在這個案例研究中執行的工作。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 [建置動作] 是設定為 [內容]，而 [複製到輸出目錄] 是設定為 [不要複製]。
+我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 **\[建置動作\]** 是設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是設定為 **\[不要複製\]**。
 
 本節之前的主題說明平台之間的差異，並針對 app 各個方面 (從 XAML 標記、經過繫結到檢視模型，再到存取資料) 的移植程序，提供深入的詳細資料和指導方針。 案例研究旨在藉由真實範例中的運作示範，來為該指導方針提供補充。 這些案例研究是假設您已看過指導方針，因此不會重複其內容。
 
@@ -37,17 +44,17 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 這是一項非常快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore1WPSL8 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 將它命名為 Bookstore1Universal\_10。 這些是從 Bookstore1WPSL8 複製到 Bookstore1Universal\_10 的檔案。
 
--   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]**。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次當您複製檔案或資料夾時，請按一下 **\[方案總管\]** 中的 **\[重新整理\]**，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型來源檔案的資料夾 (此資料夾是 \\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
 我們可以保留 App.xaml，以及 Visual Studio 在 Windows 10 專案中為我們產生的 App.xaml.cs。
 
-編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore1WPSL8 命名空間的任何參考變更為參考 Bookstore1Universal\_10。 執行此作業的快速方法是使用 [檔案中取代] 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更：
+編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore1WPSL8 命名空間的任何參考變更為參考 Bookstore1Universal\_10。 執行此作業的快速方法是使用 **\[檔案中取代\]** 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更：
 
--   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 [解析] 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對 `ImageSource` 使用 [解析] 命令。
--   對 `BitmapImage` 使用 [解析] 命令。
+-   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 **\[解析\]** 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
+-   對 `ImageSource` 使用 **\[解析\]** 命令。
+-   對 `BitmapImage` 使用 **\[解析\]** 命令。
 -   刪除 using `System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
 -   將 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE1WPSL8" 變更為 "BOOKSTORE1UNIVERSAL"。
 
@@ -73,7 +80,7 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 
 ## <a name="paying-off-the-debt-items-and-some-initial-styling"></a>清償負債項目，以及一些初始樣式
 
-預設支援所有方向。 不過，由於 Windows Phone Silverlight app 明確限制本身只限直向，因此需藉由將負債項目 \#1 和 \#2 移到新專案的 app 套件資訊清單中，並核取 [支援的方向] 下的 [直向]，來清償這兩個負債項目。
+預設支援所有方向。 不過，由於 Windows Phone Silverlight app 明確限制本身只限直向，因此需藉由將負債項目 \#1 和 \#2 移到新專案的 app 套件資訊清單中，並核取 **\[支援的方向\]** 下的 **\[直向\]**，來清償這兩個負債項目。
 
 對這個 app 來說，項目 \#3 不是負債項目，因為預設會顯示狀態列 (之前稱為系統匣)。 針對項目 \#4 和 \#5，我們需要找出四個與我們所使用之 Windows Phone Silverlight 樣式對應的通用 Windows 平台 (UWP) **TextBlock** 樣式。 我可以在模擬器中執行 Windows Phone Silverlight app，並將它與[文字](wpsl-to-uwp-porting-xaml-and-ui.md)區段中的圖例互相比較。 那樣做並查看 Windows Phone Silverlight 系統樣式的屬性之後，我們便可製作出下表：
 
@@ -84,7 +91,7 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 | PhoneTextNormalStyle                | CaptionTextBlockStyle  |
 | PhoneTextTitle1Style                | HeaderTextBlockStyle   |
  
-若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，在 **TextBlock** 上按一下滑鼠右鍵，然後按一下 [編輯樣式] &gt; [套用資源]。 若要對項目範本中的 **TextBlock** 執行此動作，在 **ListBox** 上按一下滑鼠右鍵，然後按一下 [編輯其他範本] &gt; [編輯產生的項目 (ItemTemplate)]。
+若要設定這些樣式，您可以直接在標記編輯器中輸入它們，或是使用 Visual Studio XAML 工具並設定它們，而不需要輸入任何內容。 若要這樣做，在 **TextBlock** 上按一下滑鼠右鍵，然後按一下 **\[編輯樣式\]** &gt; **\[套用資源\]**。 若要對項目範本中的 **TextBlock** 執行此動作，在 **ListBox** 上按一下滑鼠右鍵，然後按一下 **\[編輯其他範本\]** &gt; **\[編輯產生的項目 (ItemTemplate)\]**。
 
 項目後方有 80% 不透明的白色背景，因為 **ListBox** 控制項的預設樣式將其背景設定為 `ListBoxBackgroundThemeBrush` 系統資源。 在 **ListBox** 上設定 `Background="Transparent"` 以清除該背景。 若要將項目範本中的 **TextBlock** 靠左對齊，請以上述方式再次編輯它，然後將兩個 **TextBlock** 上的 **Margin** 都設定為 `"9.6,0"`。
 
@@ -133,9 +140,4 @@ ms.openlocfilehash: 631dab52c1d8f5745179d79182d299688be05d05
 這個案例研究示範移植一個非常簡單之 app 的程序—可以說是相當不實際的簡單 app。 例如，清單控制項可用來進行選取或用來建立要瀏覽的內容；app 會瀏覽到含有所點選之項目的更多相關詳細資料的頁面。 這個特定的應用程式既不處理使用者的選項，也沒有任何瀏覽。 即使如此，提供此案例研究是為了介紹移植程序，並示範您能用於實際 UWP app 的重要程式碼共用技術。
 
 下一個案例研究是 [Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)，我們將在其中探討如何存取和顯示分組資料。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

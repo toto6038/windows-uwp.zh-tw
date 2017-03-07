@@ -1,23 +1,30 @@
 ---
 author: TylerMSFT
 title: "啟動連絡人 app"
-description: "本主題描述 ms-people URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。"
+description: "本主題描述 ms-people URI 配置。 您的應用程式可以使用此 URI 配置來啟動連絡人應用程式，以執行特定動作。"
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25abea87eaf374a1a8b5432c522d51bd7bbc1c1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 啟動連絡人 app
+# <a name="launch-the-people-app"></a>啟動連絡人應用程式
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題描述 **ms-people:** URI 配置。 您的 app 可以使用此 URI 配置來啟動連絡人 app，以執行特定動作。
 
-## ms-people: URI 配置參考
+## <a name="ms-people-uri-scheme-reference"></a>ms-people: URI 配置參考
 
 
 <table>
@@ -82,7 +89,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## ms-people:search: 參數參考
+## <a name="ms-peoplesearch-parameter-reference"></a>ms-people:search: 參數參考
 
 
 <table>
@@ -111,7 +118,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## ms-people:viewcontact: 參數參考
+## <a name="ms-peopleviewcontact-parameter-reference"></a>ms-people:viewcontact: 參數參考
 
 
 <table>
@@ -163,7 +170,7 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
 
  
 
-## ms-people:savetocontact: 參數參考
+## <a name="ms-peoplesavetocontact-parameter-reference"></a>ms-people:savetocontact: 參數參考
 
 
 <table>
@@ -206,9 +213,4 @@ ms.openlocfilehash: 3125ec2a73410f3d3f5b13e154ea30b1319a9a1e
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

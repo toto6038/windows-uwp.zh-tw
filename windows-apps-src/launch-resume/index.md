@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "啟動、繼續和背景工作"
 description: "本節描述通用 Windows 平台 (UWP) 應用程式在啟動、暫停、繼續及終止時的反應。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 32737991b31eaceb33fc2ecb5152def167c36fdd
-ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 40400b8b17da9b010c0f03e9976201a1def025f8
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節包含下列各項的相關資訊：
 
@@ -116,9 +123,4 @@ ms.openlocfilehash: 6b350ef65f381d18585c8b080c6259f7607c7bf9
 |-------|-------------|
 | [新增啟動顯示畫面](add-a-splash-screen.md) | 設定應用程式的啟動顯示畫面影像與背景色彩 |
 | [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

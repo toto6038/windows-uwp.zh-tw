@@ -1,15 +1,23 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "所述的筆跡工具"
-title: "手寫筆跡控制項"
+title: "筆跡控制項"
 label: Inking Controls
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 translationtype: Human Translation
-ms.sourcegitcommit: 8a040033f99d6e8cac04b44dcec58c6b306eda54
-ms.openlocfilehash: e2ffb7bfb7bb602fdc3462da84f60f4ae12d9da8
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 541f7e8c45190cfd597869ad1040801d368b77e8
+ms.lasthandoff: 02/08/2017
 
 ---
-# <a name="inking-controls"></a>手寫筆跡控制項
+# <a name="inking-controls"></a>筆跡控制項
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -162,9 +170,4 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 - [UWP 應用程式中的畫筆和手寫筆互動](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
 - [辨識筆墨筆劃](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
 - [儲存和擷取筆墨筆劃](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

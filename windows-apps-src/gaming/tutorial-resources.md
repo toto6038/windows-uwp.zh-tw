@@ -5,13 +5,19 @@ description: "恭喜！ 現在，您已經了解基本通用 Windows 平台 (UWP
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords:
 - DirectX, XAML
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e3f4abdb0a0f42d1b25a3adc1a78ab414affa77a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 延伸遊戲範例
+# <a name="extend-the-game-sample"></a>延伸遊戲範例
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -22,7 +28,7 @@ ms.openlocfilehash: 17d34f0edcbe6729fe63204123faf4b7393beea7
 -   [Direct3D 11 概觀](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 -   [Direct3D 11 參考資料](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
-## 延伸遊戲範例：使用重疊的 XAML
+## <a name="extending-the-game-sample-using-xaml-for-the-overlay"></a>延伸遊戲範例：使用重疊的 XAML
 
 
 有一個替代方法我們沒有深入討論，那就是在重疊使用 XAML，而不使用 Direct2D。 XAML 在繪製使用者介面元素上比 Direct2D 多出許多優點，而其中最重要的一點是它讓您可以更便利地將 Windows 10 的外觀及操作併入您的 DirectX 遊戲。 許多定義 UWP 應用程式的常用元素、樣式以及行為已緊密整合到 XAML 模型，讓遊戲開發人員需要的實作的工作變得更少。 如果您的遊戲設計具有很複雜的使用者介面，請考慮使用 XAML 而不要使用 Direct2D。
@@ -191,7 +197,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ /* args */)
 
 如需這個程序的詳細資訊，請參閱 [DirectX 與 XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871)。
 
-## XAML 遊戲範例 XAML 程式碼後置的完整程式碼
+## <a name="complete-code-for-the-xaml-game-sample-xaml-codebehinds"></a>XAML 遊戲範例 XAML 程式碼後置的完整程式碼
 
 
 這裡是在 Direct3D 11.1 射擊遊戲範例 XAML 版本中找到的程式碼後置的完整程式碼。
@@ -1517,10 +1523,5 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

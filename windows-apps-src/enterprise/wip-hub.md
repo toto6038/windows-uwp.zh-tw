@@ -1,13 +1,21 @@
 ---
 author: normesta
-Description: "這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。"
+Description: "這是一個中心主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。"
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 資訊保護 (WIP)"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式"
+ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 translationtype: Human Translation
-ms.sourcegitcommit: 8a0ce7282ffaf76bcea94eec5ec3e3ceb99aa5ac
-ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: b9bde047a70d31105680361d34cf71b33f708f93
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -16,6 +24,7 @@ ms.openlocfilehash: 81bd77d0153c17c80ccdce77332ed57fb751c8ec
 __備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
 
 WIP 會強制執行組織所定義的原則，以保護屬於組織的資料。 如果您的應用程式包含在這些原則中，則應用程式產生的所有資料都會受到原則限制。 本主題可協助您建置能順利強制執行這些原則的應用程式，且使用者的個人資料不會受到任何影響。
+<iframe src="https://channel9.msdn.com/Blogs/Windows-Development-for-the-Enterprise/Securing-Enterprise-Data-with-Windows-Information-Protection/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="first-what-is-wip"></a>首先，什麼是 WIP？
 
@@ -41,7 +50,7 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 如果您的應用程式在允許清單中，則應用程式產生的所有資料都會受到原則限制。 這表示如果系統管理員撤銷使用者的企業資料存取權，這些使用者就會失去應用程式產生的所有資料的存取權。
 
-如果您的應用程式只是設計成供企業使用就無所謂。 但如果您的應用程式建立的資料對使用者來說是個人資料，您會想要您的應用程式，以明智地分辨企業資料和個人資料。 我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
+如果您的應用程式只是設計成供企業使用就無所謂。 但如果您的應用程式建立的資料對使用者來說是個人資料，您會想要您的應用程式，以*明智地*分辨企業資料和個人資料。 我們稱這種類型的應用程式為*企業啟發式應用程式*，因為它可以順利地強制執行企業原則，又同時保留使用者個人資料的完整性。
 
 ## <a name="create-an-enterprise-enlightened-app"></a>建立企業啟發式應用程式
 
@@ -91,9 +100,4 @@ MDM 原則不需要旗標，但 MAM 原則需要。
 
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

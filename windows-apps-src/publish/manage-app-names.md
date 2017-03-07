@@ -1,30 +1,37 @@
 ---
 author: jnHs
 Description: "檢視已保留給您應用程式使用的名稱、保留其他名稱 (適用於其他語言或變更您的應用程式名稱)，以及刪除您不再需要使用的保留名稱。"
-title: "管理 app 名稱"
+title: "管理應用程式名稱"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
-ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b34723eb6d336eeacb7437a926cae7f1d3ca871
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 管理 app 名稱
+# <a name="manage-app-names"></a>管理應用程式名稱
 
 
 您可以檢視所有已保留給您應用程式使用的名稱、保留其他名稱 (適用於其他語言或變更您的應用程式名稱)，以及刪除您不需要的名稱。 若要執行此動作，您可以在 Windows 開發人員中心儀表板上 [管理應用程式名稱]**** 頁面的 [應用程式管理]**** 區段中，取得您的所有 app。
 
-## 保留您 app 的其他名稱
+## <a name="reserve-additional-names-for-your-app"></a>保留您 app 的其他名稱
 
 您可以保留多個 app 名稱以供同一個的 app 使用。 如果您要使用多種語言提供您的 app 且想要為不同語言使用不同名稱時，這個功能特別有用。 您也可以使用這個功能來變更您尚未發佈之 app 的名稱。
 
 在 [管理應用程式名稱]**** 頁面的 [保留更多名稱]**** 區段中，您將會看到一個文字方塊。 輸入您要保留的名稱，然後按一下 [檢查可用性]****。 如果可以使用該名稱，請按一下 [保留名稱]****。
 
-> **注意** 如需保留 app 名稱的詳細資訊，以及無法使用某個名稱的原因，請參閱[透過保留名稱建立您的 app](create-your-app-by-reserving-a-name.md)。
+> **注意** 如需保留應用程式名稱的詳細資訊，以及無法使用某個名稱的原因，請參閱[透過保留名稱建立您的應用程式](create-your-app-by-reserving-a-name.md)。
 
 如果需要，您可以在這裡繼續保留其他 app 名稱。
 
-## 刪除 app 名稱
+## <a name="delete-app-names"></a>刪除 app 名稱
 
 如果您不再使用先前所保留的名稱，可以在此處刪除該名稱並釋出。 這麼做之前，請務必確定您的決定，因為這表示該名稱將立即可供其他人保留並使用。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 請注意，您的 app 必須至少有一個保留的名稱。 若要從您的儀表板完全移除某個 app (這也會釋出您為該 app 保留的所有名稱)，您可以從其 [概觀]**** 頁面，按一下 [刪除此 app]****。
 
-## 重新命名已發佈的 app
+## <a name="rename-an-app-that-has-already-been-published"></a>重新命名已發佈的 app
 
 如果您的 app 已經在 Windows 市集中，而且您想要重新命名，可以先保留一個新名稱 (依照上述步驟進行)，然後再重新提交該 app。 請注意，您必須更新套件以包含新的名稱，讓市集可以使用新的名稱顯示該 app。 請務必在 app 資訊清單的 [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 元素中使用新的名稱，並更新包含 app 名稱的任何圖片或文字。 您也可以檢閱您 app 的描述，並在您提及該 app 之處，變更名稱。
 
@@ -44,10 +51,5 @@ ms.openlocfilehash: e5616be7c3f1b767e4a73af3c6fbc168333090cc
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

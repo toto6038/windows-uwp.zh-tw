@@ -3,13 +3,20 @@ author: mtoepke
 title: "從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)"
 description: "本節提供將 DirectX 9 傳統型遊戲移植到 DirectX 11 和通用 Windows 平台 (UWP) 的指導方針。"
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, directx 9, directx 11, port, 遊戲, 連接埠"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 875d638a6104cf91b707a2998c9d74e905c945da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 49b265ba3736af09f5dbb2d5812011385cdfc77d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)
+# <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -51,10 +58,5 @@ ms.openlocfilehash: 875d638a6104cf91b707a2998c9d74e905c945da
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

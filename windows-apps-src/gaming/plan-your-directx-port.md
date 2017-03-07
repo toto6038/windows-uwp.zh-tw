@@ -3,16 +3,23 @@ author: mtoepke
 title: "計劃 DirectX 移植"
 description: "計劃從 DirectX 9 到 DirectX 11 與通用 Windows 平台 (UWP) 的遊戲移植專案 -- 升級您的圖形程式碼，並將遊戲放置於 Windows 執行階段環境中。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, directx, port, 連接埠"
 translationtype: Human Translation
-ms.sourcegitcommit: 115377ed3e5a13668481d1122f354610b3077763
-ms.openlocfilehash: f5f66f5da79eb62e3a81f4fe0d7398fed689d378
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="plan-your-directx-port"></a>計劃 DirectX 移植
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -64,10 +71,5 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

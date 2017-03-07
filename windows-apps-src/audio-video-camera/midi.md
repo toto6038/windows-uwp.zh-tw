@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-description: "本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。"
+description: "本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows 應用程式傳送及接收 MIDI 訊息。"
 title: MIDI
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
-ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# MIDI
+# <a name="midi"></a>MIDI
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。
 
-## 列舉 MIDI 裝置
+## <a name="enumerate-midi-devices"></a>列舉 MIDI 裝置
 
 列舉和使用 MIDI 裝置之前，請將下列命名空間新增至您的專案。
 
@@ -34,7 +41,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[EnumerateMidiOutputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiOutputDevices)]
 
-## 建立裝置監控程式協助程式類別
+## <a name="create-a-device-watcher-helper-class"></a>建立裝置監控程式協助程式類別
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 命名空間提供 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446)，它可以在系統中新增或移除裝置時，或裝置的資訊更新時，通知您的 app。 因為已啟用 MIDI 的 app 通常會想要輸入和輸出裝置，這個範例會建立實作 **DeviceWatcher** 的協助程式類別，以便相同的程式碼可以用於 MIDI 輸入和 MIDI 輸出裝置，而不需要重複。
 
@@ -84,7 +91,7 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[WatcherDestructor](./code/MIDIWin10/cs/MyMidiDeviceWatcher.cs#SnippetWatcherDestructor)]
 
-## 建立 MIDI 連接埠以傳送和接收訊息
+## <a name="create-midi-ports-to-send-and-receive-messages"></a>建立 MIDI 連接埠以傳送和接收訊息
 
 在您的頁面背後的程式碼中，宣告成員變數來保存 **MyMidiDeviceWatcher** 協助程式類別的兩個執行個體，一個用於輸入裝置，另一個用於輸出裝置。
 
@@ -122,14 +129,14 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 [!code-cs[CleanUp](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetCleanUp)]
 
-## 使用內建的 Windows General MIDI 合成
+## <a name="using-the-built-in-windows-general-midi-synth"></a>使用內建的 Windows General MIDI 合成
 
 當您使用上述的技術列舉輸出 MIDI 裝置時，您的 app 將會探索名為「Microsoft GS Wavetable Synth」的 MIDI 裝置。 這是您可以用來從 app 播放的內建 General MIDI 合成器。 不過，除非您已經在專案中包含內建合成的 SDK 擴充功能，否則嘗試在此裝置建立 MIDI 輸出將會失敗。
 
 **在 app 專案中包含 General MIDI Synth SDK 擴充功能**
 
-1.  在 \[方案總管\] 中您的專案底下，以滑鼠右鍵按一下 \[參考\]，然後選取 \[加入參考\]。
-2.  展開 \[Universal Windows\] 節點。
+1.  在 **\[方案總管\]** 中您的專案底下，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考\]**。
+2.  展開 **\[Universal Windows\]** 節點。
 3.  選取 [**擴充功能**]。
 4.  從擴充功能清單選取 [Microsoft General MIDI DLS for Universal Windows Apps]****。
     > [!NOTE] 
@@ -141,10 +148,5 @@ ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

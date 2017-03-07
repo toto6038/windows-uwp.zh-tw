@@ -3,25 +3,32 @@ author: DBirtolo
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: "AEP 服務類別識別碼"
 description: "關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 61d8891a97403057fe34c66dbecc6962b05e087e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2259c82acf700d21f4c3f51a367180bb976f636
+ms.lasthandoff: 02/07/2017
 
 ---
-# AEP 服務類別識別碼
+# <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要 API</span>
+**重要 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。 這些協定可使用 **System.Devices.AepService.ServiceClassId** 屬性進行識別。 這個主題列出數個已知的 AEP 服務類別識別碼。 AEP 服務類別識別碼也適用於使用自訂類別識別碼的通訊協定。
 
 app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩選器，來將查詢限制在他們想要使用的 AEP 服務內。 這同時會將查詢結果限制在相關的服務中，這將會大幅提高裝置的效能、電池使用時間，以及服務品質。 例如，應用程式可以使用這些服務類別識別碼，來使用如 Miracast 同步或 DLNA 數位媒體轉譯器 (DMR) 的裝置。 如需裝置和服務如何彼此互動的詳細資訊，請參閱[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。
 
-## 藍芽和藍牙 LE 服務
+## <a name="bluetooth-and-bluetooth-le-services"></a>藍芽和藍牙 LE 服務
 
 藍芽服務會使用下列其中一個通訊協定：藍牙通訊協定或藍牙 LE 通訊協定。 這些通訊協定的識別碼是：
 
@@ -70,13 +77,13 @@ app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩
 
 如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571)API 來取得一些常見的 GATT 服務。
 
-## 自訂藍芽 LE 服務
+## <a name="custom-bluetooth-le-services"></a>自訂藍芽 LE 服務
 
 自訂藍牙 LE 服務會使用下列通訊協定識別碼：{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
 自訂設定檔會使用自己定義的 GUID 進行定義。 這個自訂 GUID 應該用於**System.Devices.AepService.ServiceClassId**。
 
-## UPnP 服務
+## <a name="upnp-services"></a>UPnP 服務
 
 UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba428607ccef64}
 
@@ -99,7 +106,7 @@ UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba428607
 
  
 
-## WSD 服務
+## <a name="wsd-services"></a>WSD 服務
 
 WSD 服務會使用下列通訊協定識別碼：{782232aa-a2f9-4993-971baedc551346b0}
 
@@ -112,25 +119,16 @@ WSD 服務會使用下列通訊協定識別碼：{782232aa-a2f9-4993-971baedc551
 
  
 
-## AQS 範例
+## <a name="aqs-sample"></a>AQS 範例
 
 這個 AQS 將會篩選所有支援撥號的 UPnP **AssociationEndpointService** 物件。 在此情況下，[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 會設定為 **AsssociationEndpointService**。
 
 ``` syntax
-System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
+System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}"
 ```
 
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

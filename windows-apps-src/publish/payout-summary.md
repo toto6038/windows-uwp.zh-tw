@@ -3,13 +3,20 @@ author: jnHs
 Description: "支付摘要說明您透過 App 和附加元件所賺取金額的相關詳細資料。 也可以讓您了解何時會收到付款與付款金額。"
 title: "支付摘要"
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6b3b4480395d361397d508c576e1128a3278440e
-ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ad3f2a584f9867e72e2d93df659990424e9ac611
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支付摘要
+# <a name="payout-summary"></a>支付摘要
 
 
 **支付摘要**說明您透過 App 和附加元件所賺取金額的相關詳細資料。 也可以讓您了解何時會收到付款與付款金額。
@@ -18,11 +25,11 @@ ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
 
 如果您在 Azure Marketplace 銷售產品，您也會在 [支付摘要]**** 中看到 2015 年 11 月 1 日後成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](http://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 您可以在[這裡](http://go.microsoft.com/fwlink/p/?LinkID=722439)檢視較早之前 Azure Marketplace 支付資訊的詳細資訊。
 
-> **注意** 為符合支付資格，您的收益必須達到適用的付款門檻。 如果收益少於付款門檻，將會維持在 [保留] 類別中，直到達到門檻為止。 如需 App 收益付款門檻的相關詳細資料，請參閱 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)。 Microsoft Advertising 收益的付款門檻是 50 美元 (或等值的當地貨幣)。 
+> **注意**  為符合支付資格，您的收益必須達到適用的付款門檻。 如果收益少於付款門檻，將會維持在 [保留] 類別中，直到達到門檻為止。 如需 App 收益付款門檻的相關詳細資料，請參閱 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)。 Microsoft Advertising 收益的付款門檻是 50 美元 (或等值的當地貨幣)。 
 >
 > 付款是每月進行一次 (假設已符合任何適用的付款門檻)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何應付款項。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。 如需詳細資訊，請參閱[付款門檻、方法和時間範圍](payment-thresholds-methods-and-timeframes.md)。
 
-## 目前的收益與付款
+## <a name="current-proceeds-and-payments"></a>目前的收益與付款
 
 
 在頁面頂端附近，您會發現您 [目前的收益與付款]****，其中包含三個區段：[保留]****、[近期付款]**** 與 [最近付款]****。
@@ -31,14 +38,14 @@ ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
 -   [近期付款]**** 顯示近期付款的數字、您下次付款的金額，以及付款建立日期。 如果符合資格的收益尚未達到付款門檻，此處就不會顯示任何近期付款。 您可以按一下 [檢視詳細資料]**** 以查看其他資訊，包括付款金額以及其個別的收入來源。 當金額顯示在 [即將支付]**** 區段中時，您將會看到一個 [下載交易]**** 的暫時連結。  如果您按一下該連結，您可以檢視組成您即將支付之所有交易的 .csv 檔案。  請注意︰當 [即將支付]**** 金額移到 [最近的付款]**** 時，[下載交易]**** 連結將不會再出現。
 -   [最近付款]**** 會顯示最後一次嘗試付款的金額。 如果付款成功，[檢視詳細資料]**** 連結會變成藍色，而您可以按一下連結以查看各個付款的詳細資料。 請注意，如果我們嘗試進行多個付款，而只有一個成功，則只有付款成功的金額會於此處顯示。 如果一或多個付款失敗，[檢視詳細資料]**** 連結會變成紅色，並顯示付款失敗的數目。 您可以按一下 [檢視詳細資料]****，以查看關於問題的詳細資料，以解決這種情況。
 
-## App 的收益與調整
+## <a name="proceeds-by-app-and-adjustments"></a>App 的收益與調整
 
 
 本節細分摘要資訊，讓您查看依 app 區分的詳細資訊。 如果您透過 Microsoft Advertising 賺取報酬，會在此處以單行項目的方式顯示您廣告收益的總金額。
 
 透過檢閱本節，您可以判斷那些 app 所賺取的金額目前仍在 [保留]**** 或 [最新付款]**** 類別中。 您也可以看到您針對每個 app 所收到的總金額。 如果有必要對您的帳戶餘額進行[調整](#proceeds-by-app-and-adjustments)，您也可以在此檢視。 (請注意 Microsoft Advertising 收益的調整目前不會顯示於此處)。
 
-## 付款對帳單
+## <a name="payment-statements"></a>付款對帳單
 
 
 在此區段中，您可以檢閱所有每月付款成功的對帳單，並查看您所支付的總金額。
@@ -53,7 +60,7 @@ ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
 
 請注意上述提及的區段只會顯示來自 app 銷售的收益 (及調整) 的相關資訊；如果您透過廣告來賺取報酬，則您會看到另一個不同的 Microsoft Advertising 區段，提供有關支付和貨幣轉換的詳細資料。
 
-## 調整
+## <a name="adjustments"></a>調整
 
 
 | 調整類別     | 描述                                                                                                |
@@ -64,7 +71,7 @@ ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
 
  
 
-## 下載付款交易
+## <a name="downloading-payment-transactions"></a>下載付款交易
 
 
 在每個對帳單上方，您會看見 [下載交易]**** 的連結。 按一下此連結，以取得包含付款中各交易相關詳細資訊的 .csv 檔案。
@@ -81,7 +88,7 @@ ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
 | 產品識別碼              | 唯一的產品識別碼。                                                                                                                |
 | 父系產品名稱     | 父系產品的名稱。 請注意：如果該交易沒有父系產品，則父系產品名稱 = 產品名稱。   |
 | 產品名稱            | 產品的名稱。                                                                                                                      |
-| 產品類型            | 產品類型 (例如 app、app 內、遊戲等等)                                                                                        |
+| 產品類型            | 產品類型 (例如應用程式、附加元件、遊戲等等)                                                                                        |
 | 數量                | 當收入來源為商務用 Windows 市集時，數量代表購買的授權數目。 針對所有其他的收入來源，數量永遠都會是 1。 注意︰即使單一交易分成兩個行項目，因為使用兩個不同的付款方式，每個行項目會顯示數量 1。                                                                     |
 | 交易類型        | 交易類型 (例如購買、退貨、作廢、退款等等)                                                               |
 | 付款方式          | 交易使用的客戶付款方式 (例如，卡片、行動裝置電信業者帳單、PayPal 等)。                                        |
@@ -110,10 +117,5 @@ ms.openlocfilehash: 145fac07ca3c83d5441c0f43c5ad286163c03a8b
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

@@ -1,27 +1,34 @@
 ---
 author: jnHs
-Description: "如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的 Qpp 包含在其映像中。"
+Description: "如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的應用程式包含在其映像中。"
 title: "針對 OEM 產生預先安裝套件"
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 962b6b7361da8b88d13b37219fab538e1510c961
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 針對 OEM 產生預先安裝套件
+# <a name="generate-preinstall-packages-for-oems"></a>針對 OEM 產生預先安裝套件
 
 
-如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的 app 包含在其映像中。 只有在 OEM 贊助的開發人員帳戶上才會啟用預先安裝權限。
+如果您的開發人員帳戶已被授與適當權限，您就可以產生並下載預先安裝套件，讓 OEM 能夠使用該預先安裝套件將您的應用程式包含在其映像中。 只有在 OEM 贊助的開發人員帳戶上才會啟用預先安裝權限。
 
-## 重要的預先安裝原則與限制
+## <a name="important-preinstall-policy--limitations"></a>重要的預先安裝原則與限制
 
 
 預先安裝 app 必須透過 Windows 開發人員中心認證，才能擁有最新的市集授權，app 才能連線到市集接收 app 更新。
 
 已經預先安裝的所有 app 在所有市場都必須維持免費。
 
-## 產生預先安裝套件
+## <a name="generating-preinstall-packages"></a>產生預先安裝套件
 
 
 在使用預先安裝權限啟用帳戶之後，請完成以下步驟：
@@ -31,12 +38,12 @@ ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
 3.  在 [索取作業系統預先安裝的套件]**** 區段中，按一下 [啟用可下載套件]****。
 4.  此時會出現一個確認對話方塊，告知在 Windows 10 之前作業系統上預先安裝的 app 必須是免費的。 選取 [啟用]****。
 5.  尋找您要下載的套件，然後按一下適當的 [**產生套件**] 連結。
-    > **注意** 預先安裝套件的產生時間將會隨著已選取套件的大小而有所不同。 您可以先離開此頁面並於稍後再回來，或是讓此頁面保持開啟狀態。
+    > **注意**  預先安裝套件的產生時間將會隨著已選取套件的大小而有所不同。 您可以先離開此頁面並於稍後再回來，或是讓此頁面保持開啟狀態。
 6.  套件產生之後，將會出現一個指向 [下載套件]**** 的連結。 按一下此連結可下載 .zip 檔案。
 
 接著，您可以將此 .zip 檔案提供給 OEM，以便包含在其作業系統映像中。
 
-## 支援
+## <a name="support"></a>支援
 
 
 如果您對於產生預先安裝套件有其他疑問，請寄送電子郵件到 <partnerops@microsoft.com>。
@@ -47,10 +54,5 @@ ms.openlocfilehash: 1c08ab2e29e70e198ee72798f29e7667254272fd
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

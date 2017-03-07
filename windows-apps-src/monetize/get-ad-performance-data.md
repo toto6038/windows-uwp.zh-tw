@@ -1,22 +1,29 @@
 ---
 author: mcleanbyron
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
-description: "使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告績效資料。"
-title: "取得廣告績效資料"
+description: "使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告效益資料。"
+title: "取得廣告效益資料"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 廣告, 效益"
 translationtype: Human Translation
-ms.sourcegitcommit: 67845c76448ed13fd458cb3ee9eb2b75430faade
-ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9d6226ebb06c1a9322ab44c3001a8b86aab1e5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 取得廣告績效資料
+# <a name="get-ad-performance-data"></a>取得廣告效益資料
 
 
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告績效資料。 這個方法會傳回 JSON 格式的資料。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告效益資料。 這個方法會傳回 JSON 格式的資料。
 
 這個方法所傳回的資料與「Windows 開發人員中心」儀表板上的[廣告績效報告](../publish/advertising-performance-report.md)所提供的資料相同。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要使用這個方法，您必須先進行下列動作：
@@ -26,10 +33,10 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 如需詳細資訊，請參閱[使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)。
 
-## 要求
+## <a name="request"></a>要求
 
 
-### 要求的語法
+### <a name="request-syntax"></a>要求的語法
 
 | 方法 | 要求 URI                                                              |
 |--------|--------------------------------------------------------------------------|
@@ -37,15 +44,15 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 描述           |
+| 標頭        | 類型   | 說明           |
 |---------------|--------|--------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 <span />
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 若要擷取特定 App 的廣告績效資料，請使用 *applicationId* 參數。 若要擷取與您開發人員帳戶關聯之所有 App 的廣告績效資料，請省略 *applicationId* 參數。
 
@@ -63,7 +70,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span />
  
-### 篩選欄位
+### <a name="filter-fields"></a>篩選欄位
 
 要求本體的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式都包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式之間可以使用 **and** 或 **or** 來結合。 以下是一個範例 *filter* 參數：
 
@@ -82,7 +89,7 @@ ms.openlocfilehash: 551416caf19e16b6d6ab95fcd98aa8fbbb1587f1
 
 <span /> 
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範數個取得廣告績效資料的要求。 請以您 App 的「市集識別碼」取代 *applicationId* 值。
 
@@ -94,10 +101,10 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/adsperformance?appl
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 
-### 回應主體
+### <a name="response-body"></a>回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -106,7 +113,7 @@ Authorization: Bearer <your access token>
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
 <span id="ad-performance-values" />
-### 廣告績效值
+### <a name="ad-performance-values"></a>廣告績效值
 
 *Value* 陣列中的元素包含下列值。
 
@@ -130,7 +137,7 @@ Authorization: Bearer <your access token>
 
 <span />
 
-### 回應範例
+### <a name="response-example"></a>回應範例
 
 下列範例針對此要求示範範例 JSON 回應主體。
 
@@ -172,13 +179,8 @@ Authorization: Bearer <your access token>
 
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [廣告績效報告](../publish/advertising-performance-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

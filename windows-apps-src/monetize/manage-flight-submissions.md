@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理套件正式發行前小眾測試版提交。"
 title: "使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 41203bffb65de3d4d6cc0fec2c7436e0b9d5821b
-ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: 9fc42f3abf1d876f271d18c1747ed7462dd20bd6
 
 Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件正式發行前小眾測試版，包括漸進式套件推出。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 套件正式發行前小眾測試版必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理套件正式發行前小眾測試版的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Windows 市集提交 API 方法，來建立套件正式發行前小眾測試版。
+>**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
+
+>**重要**&nbsp;&nbsp;如果您使用 Windows 市集提交 API 以建立套件正式發行前小眾測試版的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交的方法
 
-使用下列方法取得、建立、更新、認可或刪除套件正式發行前小眾測試版提交。
+使用下列方法取得、建立、更新、認可或刪除套件正式發行前小眾測試版提交。 使用這些方法之前，套件正式發行前小眾測試版必須已經存在於開發人員中心帳戶中。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Windows 市集提交 API 方法，來建立套件正式發行前小眾測試版。
 
 <table>
 <colgroup>
@@ -143,6 +152,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 * [C# 程式碼範例](csharp-code-examples-for-the-windows-store-submission-api.md)
 * [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
+
+>**注意**&nbsp;&nbsp;：除了列示於上方的程式碼範例，我們也提供在 Windows 市集中提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
 
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理套件正式發行前小眾測試版提交的漸進式套件推出
@@ -411,9 +422,4 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 * [認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)
 * [刪除套件正式發行前小眾測試版提交](delete-a-flight-submission.md)
 * [取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

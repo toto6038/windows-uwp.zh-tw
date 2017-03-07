@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 527660fb-8e32-41b4-89cb-d422ed48c69b
 description: "使用本節中的逐步解說，瞭解如何使用 Microsoft Advertising 程式庫將橫幅廣告與影片插入式廣告新增至 app。"
 title: "適用於 Microsoft Advertising 程式庫的開發人員逐步解說"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 廣告, 廣告, 逐步解說"
 translationtype: Human Translation
-ms.sourcegitcommit: 20baef9a06b6cdb4ca4f48f71a8e9e2a34192b0f
-ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb1d2e8ea3a5747523f77106b98d033b70df5a95
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 適用於 Microsoft Advertising 程式庫的開發人員逐步解說
+# <a name="developer-walkthroughs-for-the-microsoft-advertising-libraries"></a>適用於 Microsoft Advertising 程式庫的開發人員逐步解說
 
 
 
@@ -18,7 +25,7 @@ ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
 
 如需示範如何使用 C# 和 C++ 將橫幅及影片插入式廣告新增至 JavaScript/HTML App 以及XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
-## 本節內容
+## <a name="in-this-section"></a>本節內容
 
 |  主題    | 說明 |               
 |----------|-------|
@@ -33,9 +40,4 @@ ms.openlocfilehash: 40759b1ca7c9e62c985e1ae5844bc3032a2940a2
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

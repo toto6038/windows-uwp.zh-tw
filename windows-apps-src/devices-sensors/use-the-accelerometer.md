@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: "使用加速計"
 description: "了解如何使用加速計來回應使用者移動。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8f8236a68fd7628f1f53eebc13731a72414e3217
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用加速計
+# <a name="use-the-accelerometer"></a>使用加速計
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**加速計**](https://msdn.microsoft.com/library/windows/apps/BR225687)
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
 
 簡單的遊戲應用程式倚賴單一感應器 (也就是加速計) 做為輸入裝置。 這些應用程式通常只使用一或兩個軸做為輸入，但是它們也可以使用 shake 事件做為另一個輸入來源。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援加速計。
 
-## 建立簡單的加速計應用程式
+## <a name="create-a-simple-accelerometer-app"></a>建立簡單的加速計應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單加速計應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-### 指示
+### <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -67,7 +74,7 @@ ms.openlocfilehash: 8ce3baf2b030096ae5cfc56f31b97ec58e138a44
             // Sensor and dispatcher variables
             private Accelerometer _accelerometer;
 
-            // This event handler writes the current accelerometer reading to 
+            // This event handler writes the current accelerometer reading to
             // the three acceleration text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, AccelerometerReadingChangedEventArgs e)
@@ -136,7 +143,7 @@ App 開始執行之後，您就可以移動裝置或使用模擬器工具來變�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]**** &gt; [停止偵錯]**** 以停止應用程式。
 
-### 說明
+### <a name="explanation"></a>說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的加速計輸入。
 
@@ -157,7 +164,7 @@ _accelerometer.ReportInterval = reportInterval;
 會在 **ReadingChanged** 方法中擷取新的加速計資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
+_accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer,
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -168,13 +175,7 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [加速計範例](http://go.microsoft.com/fwlink/p/?linkid=241377)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

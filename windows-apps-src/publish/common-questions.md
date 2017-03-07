@@ -1,17 +1,24 @@
 ---
-author: jnHs
+author: shawjohn
 Description: "關於廣告活動的常見問題"
 title: "關於廣告活動的常見問題"
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
+ms.author: johnshaw
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 584407ea0e0fee4ec74dac0b656db59b7f694391
-ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
-## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>我的 app 廣告的執行成本是多少？
+## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>我的應用程式廣告的執行成本是多少？
 
 這取決於您，但請記住：您花費的越多，越多人會看見您的廣告。 越多人看見您的廣告，您就應該會得到越多點擊數與安裝數。 如需有關建立您 App 廣告活動的資訊，請查看[這篇文章](create-an-ad-campaign-for-your-app.md)。
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 ## <a name="where-will-my-ad-appear"></a>我的廣告會在哪裡顯示？
 
-您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Windows 市集中發行 app 時，您可以設定這些屬性。
+您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Windows 市集中發行應用程式時，您可以設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
 
 目前下列國家與地區支援廣告活動：
 
@@ -51,7 +58,7 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 
 如果距上次收費日期之後 30 天內，您帳戶的收費累積少於美金 50 元，將會在次月提早向您收取這些費用。 這可以確保您的帳戶不會有累計收費超過一個月的廣告活動餘款。
 
-如果您不希望等待付費，您可以選取 \[帳單摘要\] 頁面上的 \[立即付費\] (\[促銷活動\] > \[帳單記錄\])，立即支付您的帳單。 您的付款方式將會收取 \[未支付金額\] 下列出的金額。
+如果您不希望等待付費，您可以選取 **\[帳單摘要\]** 頁面上的 **\[立即付費\]** (**\[促銷活動\]** > **\[帳單記錄\]**)，立即支付您的帳單。 您的付款方式將會收取 **\[未支付金額\]** 下列出的金額。
 
 ## <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>我要如何刪除信用卡或編輯信用卡的詳細資料？
 
@@ -64,9 +71,4 @@ ms.openlocfilehash: ac18d3b036c1ec9290212097a0f9a0feb962d915
 * [關於自家廣告](about-house-ads.md)
 * [關於社群廣告](about-community-ads.md)
 * [App 安裝廣告報告](app-install-ads-reports.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: "檔案、資料夾和媒體櫃"
 description: "了解如何讀取和寫入應用程式設定、檔案和資料夾選擇器，以及特殊的沙箱式位置，例如影片/音樂媒體櫃。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 0baa58915bfac91d618a6da84f37174e41f7377f
+ms.lasthandoff: 01/19/2017
 
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您可以使用 [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346)、[Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791) 和 [Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間中的 API，以在檔案中讀取與寫入文字和其他資料格式，以及管理檔案和資料夾。 在本節中，您也將了解讀取和寫入 app 設定、檔案和資料夾選擇器，並了解特殊的沙箱式位置，例如影片/音樂媒體櫃。
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
 | [列舉和查詢檔案和資料夾](quickstart-listing-files-and-folders.md) | 存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。 |
 | [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件讀取和寫入檔案。 |
 | [取得檔案屬性](quickstart-getting-file-properties.md) | 取得由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。 |
-| [使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md) | 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。 |
+| [使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md) | 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 存取資料夾。 |
 | [使用選擇器儲存檔案](quickstart-save-a-file-with-a-picker.md) | 使用 [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者指定讓您的 app 儲存檔案的名稱和位置。 |
 | [存取 HomeGroup 內容](quickstart-accessing-homegroup-content.md) | 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。 |
 | [判斷 Microsoft OneDrive 檔案的可用性](quickstart-determining-availability-of-microsoft-onedrive-files.md) | 使用 [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。 |
@@ -37,9 +44,4 @@ ms.openlocfilehash: e248a0898772f1fde38e312b1cbd24da5b2946a7
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

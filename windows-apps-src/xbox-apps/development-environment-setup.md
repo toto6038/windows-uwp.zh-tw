@@ -2,13 +2,21 @@
 author: Mtoepke
 title: "在 Xbox 開發環境上設定 UWP"
 description: "在 Xbox 開發環境上設定並測試 UWP 的步驟。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 translationtype: Human Translation
-ms.sourcegitcommit: e273cc55935f961e0b5493c0648347cba399fa3d
-ms.openlocfilehash: 5ffe0ce35e4aabcfc74e9bfa9017248320925603
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 93319caaa16afe84a897dbc4bd6370a5cef3cdd1
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 在 Xbox 開發環境上設定 UWP
+# <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 開發環境上設定 UWP
 
 Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連線到 Xbox One 主機的開發電腦。
 開發主機需具備 Windows 10、Visual Studio 2015 Update 2、Windows 10 SDK Preview 組建 14295，以及一系列支援工具。
@@ -16,7 +24,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 本文涵蓋設定並測試開發環境的步驟。
 
-## Visual Studio 安裝
+## <a name="visual-studio-setup"></a>Visual Studio 安裝
 
 1. 安裝 Visual Studio 2015 Update 2 或更新版本。 如需詳細資訊及如何安裝，請參閱[適用於 Windows 10 的下載項目與工具](https://dev.windows.com/downloads)。
 
@@ -24,22 +32,22 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
   ![安裝 Visual Studio 2015 Update 2](images/vs_install_tools.png)
 
-## Windows 10 SDK 安裝
+## <a name="windows-10-sdk-setup"></a>Windows 10 SDK 安裝
 
 安裝最新的 Windows 10 SDK 預覽版。 如需安裝資訊，請參閱[下載開發人員適用的 Insider Preview 更新](http://go.microsoft.com/fwlink/p/?LinkId=780552)。
 
 > [!IMPORTANT]
 > 您必須安裝最新的 SDK，但您並「不」__需要安裝作業系統最新的 Windows Insider Preview 版本。
 
-## 啟用開發人員模式
+## <a name="enabling-developer-mode"></a>啟用開發人員模式
 
 在您可以從開發電腦上部署應用程式之前，您必須透過 Windows 功能表啟用開發人員模式：[設定 / 更新與安全性 / 開發人員專用 / 開發人員模式]。
 
-## 設定 Xbox One
+## <a name="setting-up-your-xbox-one"></a>設定 Xbox One
 
 在您可以將 App 部署到 Xbox One 之前，主機上必須已有使用者登入。 您可以使用現有的 Xbox Live 帳戶，或在開發人員模式中為主機建立一個新帳戶。 
 
-## 建立您的第一個應用程式
+## <a name="create-your-first-application"></a>建立您的第一個應用程式
 
 1. 請確保您的開發電腦位於和目標 Xbox One 主機相同的區域網路上。 這通常代表它們應該要使用相同的路由器，並位於相同的子網路上。 建議使用有線的網路連線。
 
@@ -49,7 +57,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 1. 在您的開發電腦上，選取 [新增專案]****，然後選取 [Windows / 通用 / 空白應用程式]****。
 
-### 開始 C# 專案
+### <a name="starting-a-c-project"></a>開始 C# 專案
 
   ![[新增專案] 對話方塊](images/vs_universal_blank.jpg)
 
@@ -58,13 +66,14 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 1. 針對遠端偵錯設定開發環境：
 
   1. 以滑鼠右鍵按一下專案，然後選取 [內容]****。
-  1. 在 [偵錯]**** 索引標籤上，將 [目標裝置]**** 變更為 [遠端電腦]****。
+  1. 在 [偵錯]**** 索引標籤上，將 [平台]**** 變更為 [使用中 (x64)]****。 (x86 已不再是 Xbox 上支援的平台。)   
+  1. 將 [目標裝置]**** 變更為 [遠端電腦]****。
   1. 在 [遠端電腦]**** 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
   1. 在 [驗證模式]**** 下拉式清單中，選取 [通用 (未加密通訊協定)]****。
 
     ![C++ BlankApp 屬性頁面](images/vs_remote.jpg)
 
-### 開始 C++ 專案
+### <a name="starting-a-c-project"></a>開始 C++ 專案
 
   ![C++ 專案](images/vs_universal_cpp_blank.jpg)
 
@@ -79,7 +88,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
     ![C++ BlankApp 屬性頁面](images/vs_remote_cpp.jpg)
 
-### 與 Visual Studio 以 PIN 配對您的裝置
+### <a name="pin-pair-your-device-with-visual-studio"></a>與 Visual Studio 以 PIN 配對您的裝置
 
 1. 儲存您的設定，並確保您的 Xbox One 處於開發人員模式。
 
@@ -102,7 +111,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [在 Xbox One 上啟用開發人員模式](devkit-activation.md)  
 - [適用於 Windows 10 的下載項目與工具](https://dev.windows.com/downloads)  
 - [下載開發人員適用的 Insider Preview 更新](http://go.microsoft.com/fwlink/?LinkId=780552)  
@@ -110,9 +119,4 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 - [Xbox One 上的 UWP](index.md)
 
 ----
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

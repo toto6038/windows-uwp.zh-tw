@@ -8,9 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 translationtype: Human Translation
-ms.sourcegitcommit: ffa6ad17ee865dda5349565094c38e09dc42e0e3
-ms.openlocfilehash: 524a0897b6b8a8d17bb7493dc4d9e4357d8c1456
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 225f0d2bd5d8a2434c3e548064960f44f1df530e
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -73,12 +75,12 @@ Windows 會讓 https 連線至您的網站，並會在網頁伺服器上尋找�
 | **\***       | 代表任何子字串      |
 | **?**        | 代表單一字元 |
 
-假設以上述範例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]` 為例，您的應用程式將支援所有以您網站的網址 (例如 msn.com) 為開頭的路徑，`/news/` 和 `/blog/` 下的那些「除外」。 將可支援 **msn.com/weather.html**，但不支援 ****msn.com/news/topnews.html****。
+假設以上述範例中的 `"excludePaths" : [ "/news/*", "/blog/*" ]` 為例，您的應用程式將支援所有以您網站的網址 (例如 msn.com) 為開頭的路徑，`/news/` 和 `/blog/` 下的那些**「除外」**。 將可支援 **msn.com/weather.html**，但不支援 ****msn.com/news/topnews.html****。
 
 
 ### <a name="multiple-apps"></a>多個應用程式
 
-如果您想要連結到網站的應用程式有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個應用程式。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 \[設定\] &gt; \[網站的應用程式\] 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
+如果您想要連結到網站的應用程式有兩個時，請在 **windows-app-web-link** JSON 檔案中，列出這兩個應用程式套件系列名稱。 即可支援這兩個應用程式。 如果兩者均已安裝，還會顯示選項讓使用者從中選擇預設連結。 如果他們稍後想要變更預設連結，可以在 **\[設定\] &gt; \[網站的應用程式\]** 變更。 開發人員也可以隨時變更 JSON 檔案並查看同一天的變更，但僅限更新後的八天內。
 
 ``` JSON
 [{
@@ -166,7 +168,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 關閉您的應用程式，驗證當您按一下連結時會啟用該應用程式。 接著在您的網站中，複製其中一個支援路徑的網址。 例如，如果您網站的網址是 “msn.com”，而其中一個支援路徑是 “path1”，您會使用： `http://msn.com/path1`
 
-確認您的應用程式已經關閉。 按下 Windows 鍵 + R 以開啟\[執行\] 對話方塊並在視窗中貼上連結。 您的應用程式應要啟動，而不是網頁瀏覽器。
+確認您的應用程式已經關閉。 按下 **Windows 鍵 + R** 以開啟 **\[執行\]** 對話方塊並在視窗中貼上連結。 您的應用程式應要啟動，而不是網頁瀏覽器。
 
 此外，您可以使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx) API，測試從另一個應用程式來啟動您的應用程式。 您同樣可以使用這個 API，在手機上測試。
 
@@ -197,9 +199,4 @@ protected override void OnActivated(IActivatedEventArgs e)
 [處理 URI 啟用](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

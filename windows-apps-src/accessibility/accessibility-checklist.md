@@ -5,17 +5,24 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: "協助工具檢查清單"
 label: Accessibility checklist
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1c569df0684506f703d3ca5707314a96b035fcf6
-ms.openlocfilehash: 5220255a29da9a42bb82df5f450961b5c1b34942
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c5db2b89c52f77cb92da06c246e07a215fd2d02d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 協助工具檢查清單
+# <a name="accessibility-checklist"></a>協助工具檢查清單
 
 
 
-提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) App 可提供無障礙功能。
+提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) app 可提供無障礙功能。
 
 我們在此提供一份檢查清單，讓您用來確定 App 可提供無障礙功能。
 
@@ -61,13 +68,8 @@ ms.openlocfilehash: 5220255a29da9a42bb82df5f450961b5c1b34942
     如需詳細資訊，請參閱[市集中的協助工具](accessibility-in-the-store.md)。
 
 <span id="related_topics"/>
-## 相關主題  
+## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [協助工具設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [應避免的做法](practices-to-avoid.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

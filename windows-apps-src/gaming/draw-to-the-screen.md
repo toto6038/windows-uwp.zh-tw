@@ -3,16 +3,23 @@ author: mtoepke
 title: "繪製到螢幕"
 description: "最後，我們要將繪製旋轉立方體的程式碼移植到螢幕。"
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX, 圖形"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e2039743ba45d577c08c0a6d9c17c7f923b2d86
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 繪製到螢幕
+# <a name="draw-to-the-screen"></a>繪製到螢幕
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -60,15 +67,15 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-Direct3D 執行階段會為 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)明確建立 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，將紋理表示為「背景緩衝區」，讓交換鏈結用於顯示。
+Direct3D 執行階段會為 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 明確建立 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，將紋理表示為「背景緩衝區」，讓交換鏈結用於顯示。
 
 您可以在 Direct3D 範本的自訂 **CreateDeviceResources** 與 **CreateWindowSizeDependentResources** 方法中，找到 Direct3D 裝置與裝置內容的初始化與設定以及轉譯目標。
 
 如需與 EGL 及 EGLContext 類型相關的 Direct3D 裝置內容的詳細資訊，請閱讀[將 EGL 程式碼移植到 DXGI 與 Direct3D](moving-from-egl-to-dxgi.md)。
 
-## 指示
+## <a name="instructions"></a>指示
 
-### 步驟 1：轉譯場景並顯示
+### <a name="step-1-rendering-the-scene-and-displaying-it"></a>步驟 1：轉譯場景並顯示
 
 更新立方體資料後 (在此案例中，是延著 Y 軸將它稍微旋轉)，Render 方法會將檢視區設為繪製內容 (EGLContext) 的維度。 此內容包含將會使用設定的顯示器 (EGLDisplay) 顯示於視窗表面 (EGLSurface) 的色彩緩衝區。 此時，範例會更新頂點資料屬性、重新繫結索引緩衝區、繪製立方體，並在著色管線繪製到顯示介面的色彩緩衝區內交換。
 
@@ -195,16 +202,16 @@ void RenderObject::Render()
 
 呼叫 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 後，您的框架就會輸出到設定的顯示器。
 
-## 上一步
+## <a name="previous-step"></a>上一步
 
 
 [移植 GLSL](port-the-glsl.md)
 
-## 備註
+## <a name="remarks"></a>備註
 
 此範例並未討論關於設定裝置資源的複雜性，尤其是通用 Windows 平台 (UWP) DirectX app。 建議您檢閱完整的範本程式碼，特別是執行視窗與裝置資源設定和管理的部分。 UWP app 除了支援暫停/繼續事件之外，也必須支援旋轉事件，而範本示範了處理介面遺失或顯示參數變更的最佳做法。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -218,10 +225,5 @@ void RenderObject::Render()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

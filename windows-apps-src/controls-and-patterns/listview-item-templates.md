@@ -4,9 +4,17 @@ Description: "使用範本來修改清單檢視或方格檢視控制項中的項
 title: "清單檢視項目範本"
 label: List view item templates
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: e64264dfa52706dd912dadb27d5109b35b5ba6b3
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 91827b88d7b8ce2a216f8c10b56905b925b6c1ce
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="item-containers-and-templates"></a>項目容器與範本
@@ -466,10 +474,5 @@ ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳�
 
 - [清單](lists.md)
 - [ListView 與 GridView](listview-and-gridview.md)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

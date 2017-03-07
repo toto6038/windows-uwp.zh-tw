@@ -1,15 +1,22 @@
 ---
 author: TylerMSFT
 title: "處理 app 啟用"
-description: "了解如何透過覆寫 OnLaunched 方法來處理 app 啟用。"
+description: "了解如何透過覆寫 OnLaunched 方法來處理應用程式啟用。"
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a1bb0d5d24291fad1acab41c149dd9d763610907
-ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b6d41cc48ccf43e343aba9c844c2d74b49b1496e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 處理 app 啟用
+# <a name="handle-app-activation"></a>處理應用程式啟用
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 了解如何透過覆寫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法來處理 App 啟用。
 
-## 覆寫啟動處理常式
+## <a name="override-the-launch-handler"></a>覆寫啟動處理常式
 
 當 app 啟用後，不論任何理由，系統都會傳送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件。 如需啟用類型的清單，請參閱 [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列舉。
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 覆寫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法。 不論使用者何時啟動 app 都會呼叫這個方法。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 參數包含 app 之前的狀態以及啟用引數。
 
-**注意** 就「Windows Phone 市集」app 而言，每次使用者從 [開始] 磚或 app 清單啟動 app 時，都會呼叫此方法，即使 app 目前在記憶體中被暫停也是如此。 在 Windows 上，從 [開始] 磚或 app 清單啟動暫停的 app 並不會呼叫此方法。
+**注意**：就 Windows Phone 市集應用程式而言，每次使用者從 [開始] 磚或應用程式清單啟動應用程式時，都會呼叫此方法，即使應用程式目前在記憶體中為暫止狀態停也是如此。 在 Windows 上，從 [開始] 磚或 app 清單啟動暫停的 app 並不會呼叫此方法。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -97,7 +104,7 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 > }
 > ```
 
-## 在 app 暫停然後終止時還原應用程式資料
+## <a name="restore-application-data-if-app-was-suspended-then-terminated"></a>在 app 暫停然後終止時還原應用程式資料
 
 
 當使用者切換到已終止的 app 時，系統會傳送 [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，並將 [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) 設定成 **Launch**，以及將 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 設定成 **Terminated** 或 **ClosedByUser**。 App 必須載入它已儲存的應用程式資料，並且重新整理已顯示的內容。
@@ -157,11 +164,11 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
 
 如果 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 的值是 **NotRunning**，app 將無法成功儲存它的應用程式資料，而且 app 必須從頭開始，如同它剛被初始啟動一般。
 
-## 備註
+## <a name="remarks"></a>備註
 
-> **注意**：就 Windows Phone 市集 App 而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在 App 目前已被暫停，而使用者從主要磚或 App 清單重新啟動 App 的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
+> **注意**：就 Windows Phone 市集應用程式而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在應用程式目前為暫止狀態，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [處理 app 暫停](suspend-an-app.md)
 * [處理 app 繼續執行](resume-an-app.md)
@@ -176,9 +183,4 @@ ms.openlocfilehash: e41a683026a4543545556e98f6b4e9194099b362
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 96b9a2e213c36b8f92664185e9cdcaea6d457368
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f64a2bf36786e1f7bb38755e1a6b8bbaa22862a7
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -33,9 +35,9 @@ Windows Wheel 裝置，例如 Surface Dial，是一種新的輸入裝置，可�
 | <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
 | *Surface Dial 應用程式合作夥伴* | *適用於開發人員的 Surface Dial* |
 
-Surface Dial 使用根據「旋轉」動作 (或手勢) 的形狀規格，做為次要、多重強制回應的輸入裝置，補充主要裝置的輸入。 在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 
+Surface Dial 使用根據*「旋轉」*動作 (或手勢) 的形狀規格，做為次要、多重強制回應的輸入裝置，補充主要裝置的輸入。 在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 
 
-Surface Dial 也支援「長按」以及「按一下」兩個動作。 長按有單一的功能︰顯示命令的功能表。 如果功能表使用中，旋轉並按一下輸入是由功能表處理。 否則，輸入就會傳遞到您的應用程式進行處理。 
+Surface Dial 也支援*「長按」*以及*「按一下」*兩個動作。 長按有單一的功能︰顯示命令的功能表。 如果功能表使用中，旋轉並按一下輸入是由功能表處理。 否則，輸入就會傳遞到您的應用程式進行處理。 
 
 **就像搭配所有 Windows 輸入裝置一樣，您可以自訂並量身打造 Surface Dial 的互動體驗，以符合您應用程式中的功能。**
 
@@ -78,7 +80,7 @@ Surface Dial 與 Windows 緊密整合，而且支援功能表上的一組內建�
 
 ## <a name="user-customization"></a>使用者自訂項目
 
-使用者可以透過 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\] 頁面自訂自己的 Dial 體驗的某些層面，包含預設工具、震動 (或觸覺回饋) 以及寫字的手 (或慣用手)。 
+使用者可以透過 **\[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\]** 頁面自訂自己的 Dial 體驗的某些層面，包含預設工具、震動 (或觸覺回饋) 以及寫字的手 (或慣用手)。 
 
 自訂 Surface Dial 使用者體驗時，一定要確定使用者可以使用並啟用特定的功能或行為。
 
@@ -297,7 +299,7 @@ Surface Dial 主要是設計來支援涉及順暢、增量調整類比值或控�
 裝置可以順時針方向和逆時針方向旋轉，也可以提供觸覺回饋以指出不連續的距離。
 
 > [!NOTE]
-> 使用者可以在 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\] 頁面中停用觸覺回饋。
+> 使用者可以在 **\[Windows 設定\] -&gt; \[裝置\] -&gt; \[滾輪\]** 頁面中停用觸覺回饋。
 
 #### <a name="ux-guidance"></a>UX 指導方針
 
@@ -307,7 +309,7 @@ Surface Dial 主要是設計來支援涉及順暢、增量調整類比值或控�
 
 **慣用手應該不會影響以旋轉為基礎的互動**
 
-Surface Dial 無法偵測到您正在使用哪隻手，但是使用者可以在 \[Windows 設定\] -&gt; \[裝置\] -&gt; \[手寫筆與 Windows Ink\] 中設定寫字的手 (或慣用手)。
+Surface Dial 無法偵測到您正在使用哪隻手，但是使用者可以在 **\[Windows 設定\] -&gt; \[裝置\] -&gt; \[手寫筆與 Windows Ink\]** 中設定寫字的手 (或慣用手)。
 
 **所有旋轉互動應考慮地區設定**
 
@@ -413,7 +415,7 @@ private void MyController_ButtonClicked(RadialController sender,
 
 除了硬體遮蔽，使用者在使用裝置時，手和手臂可能會遮蓋到部分螢幕。 
 
-被遮蔽的區域取決於正用哪隻手使用裝置。 由於裝置主要是搭配非慣用手使用而設計，所以應該針對使用者指定的相反手調整與 Surface Dial 相關的 UI (\[Windows 設定\] &gt; \[裝置\] &gt; \[手寫筆與 Windows Ink\] &gt; \[選擇您用來寫字的那隻手\] 設定)。
+被遮蔽的區域取決於正用哪隻手使用裝置。 由於裝置主要是搭配非慣用手使用而設計，所以應該針對使用者指定的相反手調整與 Surface Dial 相關的 UI (**\[Windows 設定\] &gt; \[裝置\] &gt; \[手寫筆與 Windows Ink\] &gt; \[選擇您用來寫字的那隻手\]** 設定)。
 
 **互動應該回應 Surface Dial 的位置而不是移動**
 
@@ -668,8 +670,3 @@ private void ActivateGridAtLocation(Point Location)
 [通用 Windows 平台範例 (C# 和 C++)](https://go.microsoft.com/fwlink/?linkid=832713)
 
 [Windows 傳統桌面範例](https://aka.ms/radialcontrollerclassicsample)
-
-
-<!--HONumber=Dec16_HO3-->
-
-

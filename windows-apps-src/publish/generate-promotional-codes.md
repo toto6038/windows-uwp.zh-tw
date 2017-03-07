@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "您可以為您在 Windows 市集中發佈的 App 或附加元件產生促銷碼。"
+Description: "您可以為您在 Windows 市集中發佈的應用程式或附加元件產生促銷碼。"
 title: "產生促銷碼"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a92f642b2d28eb801106388648455752c10e013a
-ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb97ccb1555e214871603861a3e5edeaaf3a55d7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 產生促銷碼
+# <a name="generate-promotional-codes"></a>產生促銷碼
 
 
-您可以為您在 Windows 市集中發佈的 App 或附加元件產生促銷碼。 促銷碼是讓具影響力的使用者能夠免費存取您 App 或附加元件的簡單方式。 您也可以使用促銷碼來處理客戶服務案例，方法是提供使用者免費存取您的 App 或附加元件，搭配 Windows 10 提供[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。
+您可以為您在 Windows 市集中發佈的應用程式或附加元件產生促銷碼。 促銷碼是讓具影響力的使用者能夠免費存取您 App 或附加元件的簡單方式。 您也可以使用促銷碼來處理客戶服務案例，方法是提供使用者免費存取您的 App 或附加元件，搭配 Windows 10 提供[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。
 
 每個促銷碼都有您可以散佈給單一使用者或使用者群組的對應獨特可兌換 URL。 使用者只要按一下 URL 即可兌換代碼，並從 Windows 市集安裝您的 App 或附加元件。
 
@@ -24,9 +31,9 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
     -   您所有 app 的促銷碼訂單的摘要 (在 [儀表板概觀]**** 頁面上) 和每個個別 app (在每個 app 的 [app 概觀]**** 頁面上)。
     -   每個 app 之促銷碼訂單的詳細摘要 (在每個 app 的 [**促銷碼**] 頁面上)。
 
-> **注意** 即使您在 app 的 [[定價和可用性](set-app-pricing-and-availability.md)] 儀表板頁面上，選取了 [**隱藏這個 app 並防止下載。具備促銷代碼的客戶仍能在 Windows 10 裝置上下載它**] 選項，還是可以產生促銷代碼。 您的 app 必須通過 [App 認證程序](the-app-certification-process.md)的最終發佈階段，使用者才能兌換促銷碼以安裝它。
+> **注意**  即使您在 app 的 [[定價和可用性](set-app-pricing-and-availability.md)] 儀表板頁面上，選取了 [**隱藏這個 app 並防止下載。具備促銷代碼的客戶仍能在 Windows 10 裝置上下載它**] 選項，還是可以產生促銷代碼。 您的 app 必須通過 [App 認證程序](the-app-certification-process.md)的最終發佈階段，使用者才能兌換促銷碼以安裝它。
 
-## 促銷碼原則
+## <a name="promotional-code-policies"></a>促銷碼原則
 
 
 請注意下列促銷碼原則：
@@ -36,7 +43,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 -   對於每個 App 或附加元件，您每 6 個月可以產生最多 500 個促銷碼。 6 個月期間是從提交第一個促銷碼訂單開始。
 -   您必須遵循 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)中定義的需求，包括小節 **3k。促銷碼**。
 
-## 訂購促銷碼
+## <a name="order-promotional-codes"></a>訂購促銷碼
 
 
 訂購您發佈到 Windows 市集的 App 或附加元件的促銷碼：
@@ -57,7 +64,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
 通常促銷碼會在下訂單的 60 分鐘內提供下載，但有些訂單的處理可能需要較長的時間。 完成您的訂單並且代碼可供下載後，訂單狀態會變更為**可用**。
 
-## 下載及發佈促銷碼
+## <a name="download-and-distribute-promotional-codes"></a>下載及發佈促銷碼
 
 
 若要下載完成的促銷碼訂單並發佈代碼給您的 app 的使用者：
@@ -91,7 +98,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
     -   代碼的可兌換的 URL。
     -   引導使用者瀏覽可兌換的 URL，使用他們的 Microsoft 帳戶登入並依照指示來下載並安裝您的 app 的指示。
 
-## 代碼兌換使用者經驗
+## <a name="code-redemption-user-experience"></a>代碼兌換使用者經驗
 
 
 在您發佈可兌換 URL 給使用者之後，下列步驟說明使用者將遵循以兌換您 app 的經驗。
@@ -104,7 +111,7 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
     瀏覽器會瀏覽至具有 [**取得*****&lt;您的 App 名稱&gt;***] 連結的 [感謝您]**** 頁面。
 
-    > **注意** 如果您的 App 尚未發佈，使用者會在此步驟收到錯誤。
+    > **注意**  如果您的應用程式尚未發佈，使用者會在此步驟收到錯誤。
 
 3.  使用者按一下 [**取得*****&lt;您的 App 名稱&gt;***]。
 
@@ -112,9 +119,9 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
     如果使用者是在未安裝 Windows 市集的電腦或裝置上，瀏覽器會開啟至 app 的 Windows 市集頁面。 使用者可以按一下 [安裝]**** 來免費安裝 app。
 
-    > **注意** 在某些情況下，app 頁面可能會顯示 [**購買**] 按鈕而不是 [**安裝**]，即使已順利透過促銷碼兑換 app。 使用者可以按一下 [購買]**** 來免費安裝 app。
+    > **注意**  在某些情況下，應用程式頁面可能會顯示 [購買]**** 按鈕而不是 [安裝]****，即使已順利透過促銷碼兑換應用程式。 使用者可以按一下 [購買]**** 來免費安裝 app。
 
-## 檢閱您的促銷碼
+## <a name="review-your-promotional-codes"></a>檢閱您的促銷碼
 
 
 有幾種不同方式可檢視您的促銷碼使用方式。
@@ -136,10 +143,5 @@ ms.openlocfilehash: cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO4-->
 
 

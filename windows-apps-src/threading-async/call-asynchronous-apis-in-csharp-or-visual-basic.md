@@ -2,13 +2,20 @@
 author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: "在 C# 或 Visual Basic 中呼叫非同步 API"
-description: "通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。"
+description: "通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使應用程式執行需要花一段時間才能完成的工作，還是能保持回應。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, C#, Visual Basic, 非同步"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bafeaf66ec95732d2444debcfdca7b9406ddc4e
+ms.lasthandoff: 02/07/2017
 
 ---
-# 在 C# 或 Visual Basic 中呼叫非同步 API
+# <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: da2c6eddcc842e176e31b1a1628c91994efb1969
 
 UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定自己了解如何在通用 Windows 平台 (UWP) app 中使用非同步 API 搭配 C# 或 Visual Basic。 以下示範如何呼叫 UWP 的非同步 API。
 
-## 使用非同步 API
+## <a name="using-asynchronous-apis"></a>使用非同步 API
 
 
 根據慣例，非同步方法的名稱會以 "Async" 結尾。 您通常會為了回應使用者動作 (例如當使用者按一下按鈕時) 而呼叫非同步 API。 在事件處理常式中呼叫非同步方法，是使用非同步 API 最簡單的方法之一。 我們在這裡以 **await** 運算子為例。
@@ -40,7 +47,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 使用 **await** 運算子的好處是，程式碼的撰寫方式與您使用虛構的 `RetrieveFeed` 方法時的程式碼撰寫方式並無太大差異。 有數種方法可以在 C# 或 Visual Basic 中撰寫不含 **await** 運算子的非同步程式碼，但產生的程式碼傾向強調以非同步方式執行的技巧。 這讓非同步程式碼不易撰寫、難以理解，而且不容易維護。 透過使用 **await** 運算子，既可以獲得非同步應用程式的好處，又不會使程式碼過於複雜。
 
-## 傳回非同步 API 的類型與結果
+## <a name="return-types-and-results-of-asynchronous-apis"></a>傳回非同步 API 的類型與結果
 
 
 如果您瀏覽連結 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)，可能會發現 **RetrieveFeedAsync** 的傳回類型不是 [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485)。 相反地，傳回類型是 `IAsyncOperationWithProgress<SyndicationFeed, RetrievalProgress>`。 從原始語法的角度而言，非同步 API 會傳回其中包含結果的物件。 將非同步方法想像成可以等待是很常見的想法 (有時很有用)，**await** 運算子實際上是在方法的傳回值 (而非方法) 上操作。 當您套用 **await** 運算子時，您得到的是針對方法傳回的物件呼叫 **GetResult** 的結果。 在這個範例中，**SyndicationFeed** 是 **RetrieveFeedAsync.GetResult()** 的結果。
@@ -68,7 +75,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 [**.NET for UWP app**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
 
-## 處理錯誤
+## <a name="handling-errors"></a>處理錯誤
 
 
 使用 **await** 運算子從非同步方法取得您的結果時，您可以使用 **try/catch** 區塊來處理發生在非同步方法中的錯誤，如同處理同步方法的錯誤一樣。 先前的範例將 **RetrieveFeedAsync** 方法與 **await** 操作包裝在 **try/catch** 區塊中，以處理例外狀況擲回時的錯誤。
@@ -77,7 +84,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 **提示：**從 Microsoft Visual Studio 2005 中的 C# 開始，您可以在 **catch** 區塊中使用 **await**。
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 這裡示範的非同步方法呼叫模式，是當您在事件處理常式中呼叫非同步 API 時最容易使用的一種呼叫模式。 當您在某個會在 Visual Basic 中傳回 **void** 或 **Sub** 的覆寫方法中呼叫非同步方法時，也可以使用這種模式。
 
@@ -109,9 +116,4 @@ Tech Tuesdays Live Twitter Chats: Photography Tips, Tricks and Essentials, 7/25/
 How to: Buy a Green PC, 7/22/2011 9:13:22 AM -07:00
 Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -07:00
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

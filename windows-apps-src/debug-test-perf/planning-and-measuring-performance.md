@@ -2,20 +2,27 @@
 author: mcleblanc
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: "規劃效能"
-description: "使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。"
+description: "使用者會期望其應用程式保持回應性，並可自在地使用，而不會耗盡電池。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f66617e3131399a1cfcac17f258cc3b42c6810d2
+ms.lasthandoff: 02/07/2017
 
 ---
-# 規劃效能
+# <a name="planning-for-performance"></a>規劃效能
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。
 
-## 指定目標
+## <a name="specifying-goals"></a>指定目標
 
 使用者經驗是定義良好效能的基本方法。 app 啟動時間可以影響使用者對其效能的認知。 使用者可能會將 app 啟動時間少於 1 秒視為有最佳效能，少於 5 秒視為效能良好，而大於 5 秒則視為效能不佳。
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 最好是設定初始目標，然後再做修改，而不是完全不設目標。 您的 app 效能目標應該是特定的而且可以評估，且它們應該分成三種類別：需要多久時間讓使用者或 app 完成工作 (時間)；app 重新繪製本身以回應使用者互動的等級和連續性 (流暢度)；以及 app 節省系統資源的程度，包括電池電力 (效率)。
 
-## 時間
+## <a name="time"></a>時間
 
 請考量使用者在您的 app 中完成其工作的可接受經過時間範圍 (*互動等級*)。 針對每個互動等級指派標籤、認知的使用者觀點，以及理想和最大持續時間。 以下是一些建議。
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 
 使用您指定的目標，您現在更容易測試、分析及最佳化您的 app。
 
-## 流暢度
+## <a name="fluidity"></a>流暢度
 
 您的 app 的特定可測量流暢度目標可能包含：
 
@@ -63,7 +70,7 @@ ms.openlocfilehash: a53434223585d2c36fe30f4c2a49f019c7552662
 -   每秒 60 格 (FPS) 的動畫轉譯。
 -   當使用者移動瀏覽/捲動時，app 每秒顯示 3 到 6 頁內容。
 
-## 效率
+## <a name="efficiency"></a>效率
 
 app 的特定可測量效率目標可能包含：
 
@@ -71,7 +78,7 @@ app 的特定可測量效率目標可能包含：
 -   當 app 為非使用中時，app 的程序的 *N* 和 *M* 皆為零。
 -   當 app 為使用中時，電池電力可以使用 *X* 小時；app 為非使用中時，裝置會保留其電力 *Y* 小時。
 
-## 針對效能設計 app
+## <a name="design-your-app-for-performance"></a>針對效能設計 app
 
 您現在可以使用您的效能目標，影響您 app 的設計。 使用範例飲食 app，在使用者瀏覽到食譜頁面之後，您可能會選擇[以遞增方式更新項目](optimize-gridview-and-listview.md#update-items-incrementally)，這樣會先轉譯食譜的名稱，遞延顯示食材，然後再顯示影像。 這樣會在移動瀏覽/捲動時維持回應性和流暢的 UI，在互動減緩步調讓 UI 執行緒跟上之後，可以不失真轉譯。 以下是一些也需要納入考慮的層面。
 
@@ -110,7 +117,7 @@ app 的特定可測量效率目標可能包含：
 
 有了與效能相關的設計，您就可以開始編寫 app 的程式碼。
 
-## 檢測效能
+## <a name="instrument-for-performance"></a>檢測效能
 
 編寫程式碼時，您可以加入 app 執行時在特定點記錄訊息和事件的程式碼。 之後，當您要測試 app 時，可以使用 Windows Performance Recorder 和 Windows Performance Analyzer (兩者皆隨附於 [Windows Performance Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/hh162945.aspx) 中) 之類的分析工具，建立及檢視關於您 app 效能的報告。 您可以在此報告中尋找這些訊息和事件，以協助您更輕鬆地分析報告的結果。
 
@@ -152,7 +159,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 檢測 app 之後，您可以測試及測量 app 的效能。
 
-## 根據效能目標測試及測量
+## <a name="test-and-measure-against-performance-goals"></a>根據效能目標測試及測量
 
 效能計劃的一部分是定義要在開發期間測量效能的所有點。 這有很多目的，在專案的打造設計原型、開發或部署期間測量所代表意義各有不同。 塑造設計原型初期階段期間測量效能是極為重要的，因此我們建議您在程式碼進行有意義的工作時馬上測量。 早期測量可讓您了解 app 耗用資源的部分，並藉此做出設計決策。 這會讓您的 app 成為可承受高負載的高效能 app。 越晚變更設計，通常越昂貴。 太晚在產品週期測量效能的結果是您可能無法完成專案或應用程式效能不佳。
 
@@ -177,7 +184,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   //build/ 演講 [XAML 效能](https://channel9.msdn.com/Events/Build/2015/3-698)
 -   //build/ 演講 [Visual Studio 2015 中新的 XAML 工具](https://channel9.msdn.com/Events/Build/2015/2-697)
 
-## 回應效能測試結果
+## <a name="respond-to-the-performance-test-results"></a>回應效能測試結果
 
 分析您的效能測試結果之後，判斷是否需要任何變更，例如：
 
@@ -187,13 +194,8 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 
 如果需要任何變更，進行變更然後返回檢測或測試並重複。
 
-## 最佳化
+## <a name="optimizing"></a>最佳化
 
 僅最佳化您的 app 中的效能關鍵程式碼路徑：花費大部分時間的項目。 分析會告訴您是哪些項目。 您通常必須在建立遵循最佳設計做法的軟體和編寫最佳化程式碼這兩者間做出取捨。 在效能較不重要的地方，您最好以開發人員生產力和良好的軟體設計為優先考量。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

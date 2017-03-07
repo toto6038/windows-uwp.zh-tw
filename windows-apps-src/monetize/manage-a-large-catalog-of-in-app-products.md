@@ -1,20 +1,27 @@
 ---
 author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
-description: "如果您的 app 提供大型的 app 內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。"
-title: "管理大型的 app 內產品型錄"
+description: "如果您的應用程式提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。"
+title: "管理大型的應用程式內產品型錄"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 在應用程式內購買, IAP, 附加元件, 目錄, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e8e4e55ab08900457e4f847ccea705838169c39c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的 App 內產品型錄
+# <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的應用程式內產品型錄
 
 
->**注意**  本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+>**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
-如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。 在 Windows 10 之前的版本中，市集將每個開發人員帳戶的產品清單數目限制為 200 個，而本主題中所描述的處理程序可用來解決該限制。 從 Windows 10 開始，市集不會限制每個開發人員帳戶的產品清單數目，也不再需要本文中所描述的程序。 
+如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。 在 Windows 10 之前的版本中，市集將每個開發人員帳戶的產品清單數目限制為 200 個，而本主題中所描述的處理程序可用來解決該限制。 從 Windows 10 開始，市集不會限制每個開發人員帳戶的產品清單數目，也不再需要本文中所描述的程序。
 
 若要啟用此功能，您將針對特定的價格區間建立一些產品項目，其中每個產品項目都能夠代表型錄中的數百個產品。 使用 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382) 方法多載指定 App 定義的選項 (與市集中所列的應用程式內產品相關聯)。 除了在呼叫期間指定購買選項和產品關聯，您的 App 也應該傳送包含大型型錄購買選項詳細資料的 [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384) 物件。 如果未提供這些詳細資料，即會改用所列出產品的詳細資料。
 
@@ -22,7 +29,7 @@ ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
 
 ## <a name="prerequisites"></a>先決條件
 
--   本主題涵蓋使用市集中列出的單一應用程式內產品呈現多個應用程式內的購買選項之市集支援。 如果您不熟悉 App 內購買，請檢閱[啟用應用程式內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出您的 App 內購買。
+-   本主題涵蓋使用市集中列出的單一應用程式內產品呈現多個應用程式內的購買選項之市集支援。 如果您不熟悉在應用程式內購買，請檢閱[啟用應用程式內產品購買](enable-in-app-product-purchases.md)，以了解授權資訊及如何在市集中正確列出您的在應用程式內購買。
 -   初次撰寫並測試新的應用程式內購買選項程式碼時，您必須使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 物件，而不是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765) 物件。 如此一來，您就可以利用對授權伺服器進行模擬呼叫來驗證授權邏輯，而不是呼叫使用中的伺服器。 若要這樣做，您必須自訂 %userprofile%\\AppData\\local\\packages\\&lt;套件名稱&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData 中名為 WindowsStoreProxy.xml 的檔案。 Microsoft Visual Studio 模擬器會在您第一次執行您的 App 時建立這個檔案，或者您也可以在執行階段載入自訂的檔案。 如需詳細資訊，請參閱[使用 WindowsStoreProxy.xml 檔案搭配 CurrentAppSimulator](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#proxy)。
 -   本主題也會參照[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)中提供的程式碼範例。 這個範例非常適合用來體驗實機操作針對通用 Windows 平台 (UWP) app 提供的不同貨幣選項。
 
@@ -48,12 +55,7 @@ ms.openlocfilehash: ccbf6f99820ebc9a9245066899b2bd3be69319e7
 
 * [啟用 app 內產品購買](enable-in-app-product-purchases.md)
 * [啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)
-* [市集範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
+* [市集範例 (示範試用版和在應用程式內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)
 * [ProductPurchaseDisplayProperties](https://msdn.microsoft.com/library/windows/apps/dn263384)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

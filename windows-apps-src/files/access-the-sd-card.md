@@ -3,14 +3,21 @@ author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "存取 SD 記憶卡"
 description: "您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: a13f351af3cba8d3d9e645a6f6040dff6e81e1ff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3fc8bbaa0b665b640974b5342b2b60c9b7f90143
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。
@@ -145,9 +152,4 @@ using Windows.Storage;
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

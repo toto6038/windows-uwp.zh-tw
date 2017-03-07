@@ -3,17 +3,24 @@ author: mcleblanc
 title: "選擇程式設計語言"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: "選擇程式設計語言"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 開始使用：選擇程式設計語言
+# <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 選擇程式設計語言
+## <a name="choosing-a-programming-language"></a>選擇程式設計語言
 
 在我們繼續進行之前，您必須知道開發通用 Windows 平台 (UWP) app 時可以選用的程式設計語言。 雖然本文中的逐步解說是使用 C#，但是您可以使用一或多種程式設計語言來開發 UWP app (請參閱[語言、工具及架構](https://msdn.microsoft.com/library/windows/apps/dn465799))。
 
@@ -27,13 +34,13 @@ ms.openlocfilehash: c7d99923a0deac61e289d3a2796b8dd1720430b4
 -   [使用 C# 或 Visual Basic 建立您的第一個 Windows Phone 市集應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397877)
 -   [Windows Phone 8.1 的 WinJS](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**注意** 針對使用 3D 圖形的 app 而言，OpenGL 和 OpenGL ES 標準對於 UWP app 並非原生可用。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
+**注意**  針對使用 3D 圖形的應用程式而言，OpenGL 和 OpenGL ES 標準對於 UWP 應用程式並非原生可用。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
 -   [角度](https://code.google.com/p/angleproject/)
 -   [使用 DirectX 建立您的第一個 Windows 市集 app](https://msdn.microsoft.com/library/windows/apps/br229580)
 -   [使用 DirectX 的 Windows 市集應用程式範例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 在哪裡？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## 試看看使用 C#
+## <a name="giving-c-a-go"></a>試看看使用 C#
 
 身為 iOS 開發人員，您習慣使用 Objective-C 和 Swift。 與兩者最接近的 Microsoft 程式設計語言是 C#。 對於大部分的開發人員及 app 而言，我們認為 C# 是最簡單且最快速學習和使用的語言，所以本文中的資訊及逐步解說會將焦點放在該語言。 若要深入了解 C#，請參閱下列主題：
 
@@ -139,12 +146,7 @@ int result = mySampleClass.AddTwoNumbers(1, 2);
 
 C# 是個很容易學會的語言，而且內建許多構成 .NET 的支援類別和架構。 不用多少時間，您將會快快樂樂地撰寫程式碼，再也看不到註解！
 
-## 下一步
+## <a name="next-step"></a>下一步
 
 [開始使用：使用 Visual Studio](getting-started-getting-around-in-visual-studio.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,31 +3,38 @@ author: jwmsft
 description: "透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。"
 title: "CustomResource 標記延伸"
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a0a4edc8d59219aea3a47a18ea991e4267782026
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1203987a3003c9f78bbed52b00a81cc3832a1abe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {CustomResource} 標記延伸
+# <a name="customresource-markup-extension"></a>{CustomResource} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別實作執行。
 
-## XAML 屬性用法
+## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 詞彙 | 說明 |
 |------|-------------|
 | 索引鍵 | 要求的資源的索引鍵。 最初指派索引鍵的方式取決於目前已登錄使用的 [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) 類別實作。 |
 
-## 備註
+## <a name="remarks"></a>備註
 
 **CustomResource** 是取得定義在自訂資源存放庫其他位置的值的一種方法。 這項技術相對來說較為先進，而大多數的 Windows 執行階段應用程式案例並未使用這項技術。
 
@@ -43,15 +50,10 @@ Windows 執行階段 XAML 剖析器只要在標記中遇到使用 `{CustomResour
 
 **CustomResource** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用 "\{" 和 "\}" 字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
 * [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
 * [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

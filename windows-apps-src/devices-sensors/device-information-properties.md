@@ -3,19 +3,26 @@ author: DBirtolo
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "裝置資訊屬性"
 description: "每個裝置都具有相關聯的 DeviceInformation 屬性，您可以在需要特定資訊或正在建置裝置選取器時使用。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dbe72dd476903083518dcf4b9d299b04e87f6e85
+ms.lasthandoff: 02/07/2017
 
 ---
-# 裝置資訊屬性
+# <a name="device-information-properties"></a>裝置資訊屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 每個裝置都具有相關聯的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 屬性，您可以在需要特定資訊或正在建置裝置選取器時使用。 這些屬性可以指定為 AQS 篩選器來限制您正在列舉的裝置，以便尋找具有指定特性的裝置。 您也可以使用這些屬性，來指定要針對每個裝置傳回的資訊。 這可讓您指定要傳回給應用程式的裝置資訊。
 
@@ -23,17 +30,17 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件是由一個身分識別 ([**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id))、一個類型 ([**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)) 及一個屬性包 ([**DeviceInformation.Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx)) 所組成。 **DeviceInformation** 物件的所有其他屬性均衍生自 **Properties** 屬性包。 例如，[**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) 是衍生自 **System.ItemNameDisplay**。 這表示屬性包一律包含判斷其他屬性所需的資訊。
 
-## 正在要求屬性
+## <a name="requesting-properties"></a>正在要求屬性
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件擁有一些基本屬性，例如 [**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)，但是大部分的屬性會儲存在 [**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) 底下的屬性包中。 因此，屬性包會包含用來從屬性包找出屬性的屬性。 例如，使用 [System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) 來找出 [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) 屬性。 這是具有使用者易記名稱的通用和已知屬性的案例。 Windows 提供數個使用者易記的名稱，讓查詢屬性更加容易。
 
 當您正在要求屬性時，並不會受限於具有使用者易記名稱的通用屬性。 您可以指定基本的 GUID 和屬性識別碼 (PID) 來要求任何可用的屬性，甚至是個別裝置或驅動程式所提供的自訂屬性。 指定自訂屬性的格式是 "`{GUID} PID`"。 例如："`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"
 
-某些屬性在所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) 物件中是通用的，但大部分都是特定類型獨有的。 下列區段會列出一些按個別 **DeviceInformationKind** 排序的通用屬性。 如需不同類型如何彼此關聯的詳細資訊，請參閱 **DeviceInformationKind**。
+某些屬性在所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 物件中是通用的，但大部分都是特定類型獨有的。 下列區段會列出一些按個別 **DeviceInformationKind** 排序的通用屬性。 如需不同類型如何彼此關聯的詳細資訊，請參閱 **DeviceInformationKind**。
 
-## DeviceInterface 屬性
+## <a name="deviceinterface-properties"></a>DeviceInterface 屬性
 
-**DeviceInterface** 是預設值，並且是 app 案例中最常使用的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/BR225393kind) 物件。 除非裝置 API 指出不同的特定 **DeviceInformationKind**，否則這是您應該使用的物件類型。
+**DeviceInterface** 是預設值，並且是 app 案例中最常使用的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 物件。 除非裝置 API 指出不同的特定 **DeviceInformationKind**，否則這是您應該使用的物件類型。
 
 | 名稱                                  | 類型    | 說明                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -48,7 +55,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## 裝置屬性
+## <a name="device-properties"></a>裝置屬性
 
 | 名稱                                  | 類型       | 說明                                                                                                                                                                                                                                                                              |
 |---------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -66,7 +73,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## DeviceContainer 屬性
+## <a name="devicecontainer-properties"></a>DeviceContainer 屬性
 
 | 名稱                              | 類型       | 說明                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +93,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## DeviceInterfaceClass 屬性
+## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass 屬性
 
 | 名稱                       | 類型   | 說明                            |
 |----------------------------|--------|----------------------------------------|
@@ -94,7 +101,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpoint 屬性
+## <a name="associationendpoint-properties"></a>AssociationEndpoint 屬性
 
 | 名稱                                  | 類型       | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,7 +122,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpointContainer 屬性
+## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer 屬性
 
 | 名稱                                                | 類型       | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |-----------------------------------------------------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -137,7 +144,7 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
 
  
 
-## AssociationEndpointService 屬性
+## <a name="associationendpointservice-properties"></a>AssociationEndpointService 屬性
 
 | 名稱                                            | 類型    | 說明                                                                                                      |
 |-------------------------------------------------|---------|------------------------------------------------------------------------------------------------------------------|
@@ -154,13 +161,4 @@ ms.openlocfilehash: 8f95a0898d0b65f4ed402b5f05e843ace2a18767
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: a6f6e4c04f608898d2871113f38fe647b62bf8a5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 780d2d9da10df7d5f4d3cfcbc9435bf6ef7dbb36
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -125,10 +126,5 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

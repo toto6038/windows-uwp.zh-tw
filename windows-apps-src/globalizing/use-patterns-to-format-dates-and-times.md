@@ -5,9 +5,16 @@ title: "使用模式來設定日期和時間的格式"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 564062173544ab368d8dd7fc8fe2c35e9d518444
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c28210a6fca27976a2a4428d8001da87951f1e87
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -190,10 +197,5 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

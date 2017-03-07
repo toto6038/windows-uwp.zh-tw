@@ -1,19 +1,26 @@
 ---
 author: Xansky
-Description: "瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。"
+Description: "瞭解如何開發無障礙的 Windows 10 UWP 應用程式，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: "開發通用 Windows 10 app"
+title: "開發全人 Windows 10 應用程式"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 47c28e0629150ccbdf532afc645fe973c3dc8804
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
-本文討論如何開發無障礙的通用 Windows 平台 (UWP) App。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
+本文討論如何開發無障礙的通用 Windows 平台 (UWP) 應用程式。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
 
 如果您還沒了解這部分的內容，請先閱讀[設計通用軟體](designing-inclusive-software.md)。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: 91f6a9d50b66064da7023599adbb058656fb1007
 * 控制項是如何在 UI 中進行配置或分組的？
 * 是否有幾個較為重要的控制項群組？
     * 如果是，那些群組是否包含另一個階層的群組？
-*   在對等的控制項中，瀏覽是否應該透過使用 Tab 鍵進行、透過特殊的瀏覽 (例如方向鍵) 進行，還是兩者皆是？
+*     在對等的控制項中，瀏覽是否應該透過使用 Tab 鍵進行、透過特殊的瀏覽 (例如方向鍵) 進行，還是兩者皆是？
 
 您的目標，是協助使用者了解 UI 配置的方式，並識別可執行動作的控制項。 如果您發現使用者在完成瀏覽迴圈之前，所需經歷的定位停駐點太多，請考慮將相關的控制項結合為相同的群組。 某些相關的控制項 (例如混合式控制項)，可能需要在初期的探索階段便進行處理。 當您開始開發產品時，重新處理鍵盤瀏覽將會變得困難，因此請務必仔細並提早計畫！  
 
@@ -83,9 +90,4 @@ XAML
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)
 * [協助工具](accessibility.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

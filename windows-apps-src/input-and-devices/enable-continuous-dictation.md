@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: f4353807c83cbf91c385b31acfd481abb6ea5aed
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 075748ffdb557fd32abb58d0497b78e8f57646f6
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -287,10 +288,5 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

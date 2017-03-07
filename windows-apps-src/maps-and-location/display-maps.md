@@ -1,18 +1,25 @@
 ---
 author: msatranjr
 title: "顯示 2D、3D 和 Streetside 檢視的地圖"
-description: "藉由使用 MapControl 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。"
+description: "藉由使用 MapControl 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和街景檢視。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地圖, 位置, 地圖控制項, 地圖檢視"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示 2D、3D 和 Streetside 檢視的地圖
+# <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示 2D、3D 和街景檢視的地圖
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 藉由使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。
@@ -26,7 +33,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
 
 藉由新增 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)，在 XAML 頁面上顯示地圖。 若要使用 **MapControl**，您必須在 XAML 頁面或您的程式碼中宣告 [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空間。 如果您從工具箱拖曳控制項，會自動新增此命名空間宣告。 如果您是手動將 **MapControl** 新增到 XAML 頁面，就必須在頁面頂端手動新增命名空間宣告。
 
-下列範例顯示基本的地圖控制項，並設定讓地圖在除了接受觸控輸入之外，還能顯示縮放和傾斜控制項。 如需有關自訂地圖外觀的詳細資訊，請參閱[設定地圖](#mapconfig)。
+下列範例顯示基本的地圖控制項，並設定讓地圖在除了接受觸控輸入之外，還能顯示縮放和傾斜控制項。 如需有關自訂地圖外觀的詳細資訊，請參閱[設定地圖](#configure-the-map)。
 
 ```xml
 <Page
@@ -46,7 +53,7 @@ ms.openlocfilehash: 09f87f66802e5143c8eac7fce8fc2118f3d31340
        ZoomInteractionMode="GestureAndControl"
        TiltInteractionMode="GestureAndControl"   
        MapServiceToken="EnterYourAuthenticationKeyHere"/>
-  
+
  </Grid>
 </Page>
 ```
@@ -137,7 +144,7 @@ switch (accessStatus)
 
 若要變更顯示於 2D 地圖的位置，您可以呼叫 [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) 方法的其中一個多載。 使用該方法來為 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)、[**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068)、[**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) 和 [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044) 指定新的值。 您也可以提供 [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列舉中的常數，以指定要在檢視變更時使用的選用動畫。
 
-若要變更 3D 地圖的位置，您可以改用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 如需詳細資訊，請參閱[顯示 3D 檢視](#display3d)。
+若要變更 3D 地圖的位置，您可以改用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 如需詳細資訊，請參閱[顯示 3D 檢視](#display-aerial-3d-views)。
 
 呼叫 [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) 方法，在地圖上顯示 [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) 的內容。 例如，您可以使用此方法在地圖上顯示一條路線或路線的一部分。 如需詳細資訊，請參閱[在地圖上顯示路線和路線指引](routes-and-directions.md)。
 
@@ -316,11 +323,4 @@ private async void display3DLocation()
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

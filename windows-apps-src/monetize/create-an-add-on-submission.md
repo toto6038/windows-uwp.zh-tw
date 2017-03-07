@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的附加元件提交。"
 title: "使用 Windows 市集提交 API 建立附加元件提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 建立附加元件提交, 應用程式內產品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: f824fe7d37a4a2db4e336fd43c335047e09aa323
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 Windows 市集提交 API 建立附加元件提交
+# <a name="create-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 建立附加元件提交
 
 
 
@@ -18,9 +25,9 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 
 如需這個方法如何在使用 Windows 市集提交 API 建立附加元件提交的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
->**注意**  這個方法會為現有的附加元件建立提交。 若要建立附加元件，請使用[建立附加元件](create-an-add-on.md)方法。
+>**注意**&nbsp;&nbsp;這個方法會為現有的附加元件建立提交。 若要建立附加元件，請使用[建立附加元件](create-an-add-on.md)方法。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -28,9 +35,9 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 在您的開發人員中心帳戶中為 App 建立附加元件。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件](create-an-add-on.md)方法進行。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -41,7 +48,7 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -49,7 +56,7 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -57,11 +64,11 @@ ms.openlocfilehash: b7de4b00fb4d48b9f4c542437c38e0282e155a29
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何為附加元件建立新的提交。
 
@@ -70,7 +77,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/s
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含新提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱[附加元件提交資源](manage-add-on-submissions.md#add-on-submission-object)。
 
@@ -116,7 +123,8 @@ Authorization: Bearer <your access token>
          }
       }
     ],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -146,7 +154,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -158,7 +166,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
@@ -167,9 +175,4 @@ Authorization: Bearer <your access token>
 * [更新附加元件提交](update-an-add-on-submission.md)
 * [刪除附加元件提交](delete-an-add-on-submission.md)
 * [取得附加元件提交的狀態](get-status-for-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

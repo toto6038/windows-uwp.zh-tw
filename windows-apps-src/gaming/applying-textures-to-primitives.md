@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "將紋理套用到基本型別"
-description: "以下我們將使用「在基本型別上使用深度和效果」中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 基本型別。"
+description: "以下我們將使用「在原始物件上使用深度和效果」中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 原始物件。"
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 紋理, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將紋理套用到基本型別
+# <a name="apply-textures-to-primitives"></a>將紋理套用到原始物件
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,7 +25,7 @@ ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
 
 **目標：**將紋理套用到基本型別。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
@@ -27,10 +34,10 @@ ms.openlocfilehash: 5533b086557be44b27e4e371c0d71bc8bc6310b0
 
 **完成所需的時間：**20 分鐘。
 
-指示
+<a name="instructions"></a>指示
 ------------
 
-### 1. 為紋理立方體定義變數
+### <a name="1-defining-variables-for-a-textured-cube"></a>1. 為紋理立方體定義變數
 
 首先，我們需要為紋理立方體定義 **BasicVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置、方向及紋理，以及檢視立方體的方式。 否則，我們就需要使用類似先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中的方式宣告變數。
 
@@ -63,7 +70,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. 使用表面和紋理元素建立頂點和像素著色器
+### <a name="2-creating-vertex-and-pixel-shaders-with-surface-and-texture-elements"></a>2. 使用表面和紋理元素建立頂點和像素著色器
 
 以下我們將建立比先前 [在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中還要複雜的頂點和像素著色器。 這個 app 的頂點著色器會將每個頂點位置轉換成投影空間，並將頂點紋理座標傳遞給像素著色器。
 
@@ -267,7 +274,7 @@ private:
        });
 ```
 
-### 3. 建立紋理和取樣器
+### <a name="3-creating-textures-and-samplers"></a>3. 建立紋理和取樣器
 
 以下我們會將紋理資料套用到立方體，而不是像在先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中那樣套用色彩。
 
@@ -391,7 +398,7 @@ private:
         float degree = 0.0f;
 ```
 
-### 4. 旋轉及繪製紋理立方體並呈現轉譯的影像
+### <a name="4-rotating-and-drawing-the-textured-cube-and-presenting-the-rendered-image"></a>4. 旋轉及繪製紋理立方體並呈現轉譯的影像
 
 如先前教學課程所示，我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 來更新常數緩衝區並旋轉立方體模型。 接著，我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 來指定轉譯目標和深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 來清除深度緩衝區。
 
@@ -512,7 +519,7 @@ private:
                 );
 ```
 
-## 摘要
+## <a name="summary"></a>摘要
 
 
 我們載入了原始紋理資料並將該資料套用到 3D 基本型別。
@@ -523,10 +530,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

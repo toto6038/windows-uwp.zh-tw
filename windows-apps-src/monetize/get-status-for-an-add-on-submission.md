@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: "在 Windows 市集提交 API 中使用這個方法，取得附加元件提交的狀態。"
 title: "使用 Windows 市集提交 API 取得附加元件提交的狀態"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件提交, 狀態"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 41fc9b5597b5331fc6221575e0601f2414f4c778
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 市集提交 API 取得附加元件提交的狀態
+# <a name="get-the-status-of-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得附加元件提交的狀態
 
 
 
 
 在 Windows 市集提交 API 中使用這個方法，取得現有附加元件 (也稱為應用程式內產品或 IAP) 提交的狀態。 如需使用 Windows 市集提交 API 建立附加元件提交的程序的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -24,9 +31,9 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,11 +61,11 @@ ms.openlocfilehash: e5be4ee466c204255a074adae4d150860286ba0a
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何取得附加元件提交狀態。
 
@@ -67,7 +74,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/su
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含指定提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
 
@@ -82,7 +89,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 回應本文
+### <a name="response-body"></a>回應本文
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -91,7 +98,7 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -103,7 +110,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [取得附加元件提交](get-an-add-on-submission.md)
@@ -111,9 +118,4 @@ Authorization: Bearer <your access token>
 * [認可附加元件提交](commit-an-add-on-submission.md)
 * [更新附加元件提交](update-an-add-on-submission.md)
 * [刪除附加元件提交](delete-an-add-on-submission.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

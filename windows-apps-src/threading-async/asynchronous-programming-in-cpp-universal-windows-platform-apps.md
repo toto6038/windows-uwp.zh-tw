@@ -3,23 +3,30 @@ author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。"
 title: "C++ 中的非同步程式設計"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 執行緒, 非同步, C++"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 12fdf79cbf3a79e4789131d0da8eee978b82cdf8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 112b5d58064ae6cd006d791a2c4534848baee259
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# C++ 中的非同步程式設計
+# <a name="asynchronous-programming-in-c"></a>C++ 中的非同步程式設計
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 的 `concurrency` 命名空間中所定義的 `task` 類別)。
 
-## 通用 Windows 平台 (UWP) 非同步類型
+## <a name="universal-windows-platform-uwp-asynchronous-types"></a>通用 Windows 平台 (UWP) 非同步類型
 
-通用 Windows 平台 (UWP) 功能是一種設計完善的模型，適用於呼叫非同步方法，並提供取用該方法所需的類型。 如果您不熟悉 UWP 非同步模型，請先閱讀[非同步程式設計][AsyncProgramming]，然後閱讀本文的其他部分。
+通用 Windows 平台 (UWP) 功能是一種設計完善的模型，適用於呼叫非同步方法，並提供取用該方法所需的類型。 如果您不熟悉 UWP 非同步模型，請先閱讀[非同步程式設計][AsyncProgramming] ，然後閱讀本文的其他部分。
 
-雖然您可以在 C++ 中直接取用非同步 UWP API，不過最好的方法是使用 [**task 類別**][task-class]及其相關類型和函式，這些都包含在 [**concurrency**][concurrencyNamespace] 命名空間並定義於 `<ppltasks.h>` 中。 **concurrency::task** 是一種通用的類型，但是當使用 **/ZW** 編譯器參數 (通用 Windows 平台 (UWP) app 和元件的必要參數) 時，task 類別會封裝 UWP 非同步類型，以便於：
+雖然您可以在 C++ 中直接取用非同步 UWP API，不過最好的方法是使用 [**task 類別**][task-class] 及其相關類型和函式，這些都包含在 [**concurrency**][concurrencyNamespace] 命名空間並定義於 `<ppltasks.h>` 中。 **concurrency::task** 是一種通用的類型，但是當使用 **/ZW** 編譯器參數 (通用 Windows 平台 (UWP) app 和元件的必要參數) 時，task 類別會封裝 UWP 非同步類型，以便於：
 
 -   鏈結多個非同步和同步作業
 
@@ -29,9 +36,9 @@ ms.openlocfilehash: 12fdf79cbf3a79e4789131d0da8eee978b82cdf8
 
 -   確定個別工作會在適當的執行緒內容或 Apartment 中執行
 
-本文提供有關如何使用 **task** 類別來搭配 UWP 非同步 API 的基本指導方針。 如需 **task** 以及其相關方法 (包括 [**create\_task**][createTask]) 的完整文件，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。 如需如何利用 JavaScript 或其他 UWP 相容語言建立非同步公用方法的詳細資訊，請參閱[使用 C++ 建立 Windows 執行階段 app 的非同步作業][createAsyncCpp]。
+本文提供有關如何使用 **task** 類別來搭配 UWP 非同步 API 的基本指導方針。 如需 **task** 以及其相關方法 (包括 [**create\_task**][createTask] 的完整文件，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。 如需如何利用 JavaScript 或其他 UWP 相容語言建立非同步公用方法的詳細資訊，請參閱[使用 C++ 建立 Windows 執行階段應用程式的非同步作業][createAsyncCpp]。
 
-## 使用工作取用非同步作業
+## <a name="consuming-an-async-operation-by-using-a-task"></a>使用工作取用非同步作業
 
 下列範例說明如何使用 task 類別取用傳回 [**IAsyncOperation**][IAsyncOperation] 介面並產生值的 **async** 方法。 這裡是基本步驟：
 
@@ -78,7 +85,7 @@ void App::TestAsync()
 
 雖然您在本機堆疊中宣告這個工作變數，不過它會管理自己的週期，只會在所有作業完成且其所有相關參照超出範圍後，才刪除這個工作變數 (即使作業完成前已經傳回該方法)。
 
-## 建立工作鏈結
+## <a name="creating-a-chain-of-tasks"></a>建立工作鏈結
 
 非同步程式設計中通常會定義一連串的作業 (稱為「工作鏈結」**)，只有上一個接續完成後才會繼續執行下一個。 有時上一個 (或「前項」**) 工作會產生接續要接受的輸入值。 使用 [**task::then**][taskThen] 方法可讓您以直接又簡單的方法建立工作鏈結，這個方法會傳回 **task<T>**，其中 **T** 是 Lambda 函式的傳回類型。 您可以將多個接續編寫成一個工作鏈結： `myTask.then(…).then(…).then(…);`
 
@@ -114,9 +121,9 @@ void App::DeleteWithTasks(String^ fileName)
 
 **注意：**建立工作鏈結只是使用 **task** 類別編寫非同步作業的其中一種方法。 您也可以使用 join 和 choice 運算子 **&&** 以及 **||** 來編寫作業。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。
 
-## Lambda 函式傳回類型和工作傳回類型
+## <a name="lambda-function-return-types-and-task-return-types"></a>Lambda 函式傳回類型和工作傳回類型
 
-在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為「非同步解除包裝」，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
+在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為*「非同步解除包裝」*，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。
 
 在上一個範例中，請注意工作傳回的是 **task<void>** 事件 (即使它的 Lambda 傳回 [**IAsyncInfo**][IAsyncInfo] 物件)。 下表摘要說明 Lambda 函式和封入工作之間的類型轉換：
 
@@ -131,7 +138,7 @@ void App::DeleteWithTasks(String^ fileName)
 | 工作<TResult>                                    |工作<TResult>  |
 
 
-## 取消工作
+## <a name="canceling-tasks"></a>取消工作
 
 讓使用者有機會取消非同步作業通常是不錯的做法。 而且有時您也可能必須從工作鏈結外，透過程式設計的方式取消作業。 雖然每個 \***Async** 傳回類型都有一個繼承自 [**IAsyncInfo**][IAsyncInfo] 的 [**Cancel**][IAsyncInfoCancel] 方法，不過將它公開給外部方法並不合適。 在工作鏈結中取消動作的最好方法，是利用 [**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) 建立一個 [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx)，然後將權杖傳送到初始工作的建構函式。 如果使用取消權杖建立非同步工作，然後呼叫 [**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx)，則這個工作會自動在 **IAsync\*** 作業上呼叫 **Cancel**，然後將取消要求傳送到它的接續鏈結中。 下列虛擬程式碼將示範一些基本的方法。
 
@@ -148,17 +155,17 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-取消作業時，會將 [**task\_canceled**][taskCanceled] 例外狀況往下傳送到工作鏈結。 數值型接續將不會執行，但工作型接續會在呼叫 [**task::get**][taskGet] 之後擲回例外狀況。 如果您有一個錯誤處理接續，請確定它會清楚地攔截 **task\_canceled** 例外狀況 (這個例外狀況不是從 [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx) 衍生的)。
+取消作業時，會將 [**task\_canceled**][taskCanceled] 例外狀況往下傳送到工作鏈結。 數值型接續將不會執行，但工作型接續會在呼叫 [**task::get**][taskGet] 之後擲回例外狀況。 如果您有一個錯誤處理接續，請確定它會清楚地攔截 **task\_canceled** 例外狀況。 (這個例外狀況不是從 [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx) 衍生的)。
 
-取消作業需要搭配其他作業來完成。 如果您的接續不僅僅叫用 UWP 方法，還執行其他長時間執行的工作，則您必須定期檢查取消權杖的狀態，如果已經取消，請停止執行。 清除接續內配置的所有資源後，呼叫 [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) 來取消這個工作，然後將取消往下傳送到任何後續的數值型接續。 這裡是另一個範例：您可以建立一個工作鏈結來表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 作業的結果。 如果使用者選擇 \[取消\] 按鈕，則不會呼叫 [IAsyncInfo::CancelI][AsyncInfoCancel] 方法。 而作業將成功，但傳回 **nullptr**。 接續可以測試輸入參數，如果輸入為 **nullptr**，則會呼叫 **cancel\_current\_task**。
+取消作業需要搭配其他作業來完成。 如果您的接續不僅僅叫用 UWP 方法，還執行其他長時間執行的工作，則您必須定期檢查取消權杖的狀態，如果已經取消，請停止執行。 清除接續內配置的所有資源後，呼叫 [**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) 來取消這個工作，然後將取消往下傳送到任何後續的數值型接續。 這裡是另一個範例：您可以建立一個工作鏈結來表示 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 作業的結果。 如果使用者選擇 **\[取消\]** 按鈕，則不會呼叫 [**IAsyncInfo::Cancel**][IAsyncInfoCancel] 方法。 而作業將成功，但傳回 **nullptr**。 接續可以測試輸入參數，如果輸入為 **nullptr**，則會呼叫 **cancel\_current\_task**。
 
 如需詳細資訊，請參閱 [PPL 中的取消](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)
 
-## 處理工作鏈結中的錯誤
+## <a name="handling-errors-in-a-task-chain"></a>處理工作鏈結中的錯誤
 
 如果您希望即使接續在前項已經取消或擲回例外狀況的情況下仍繼續執行，請將 Lambda 函式的輸入指定為 **task<TResult>** 來將接續變成工作型接續，或在前項工作的 Lambda 傳回 [**IAsyncAction^**][IAsyncAction] 時指定為 **task<void>**。
 
-若要處理工作鏈結中的錯誤和取消作業，您不需要將每個接續變成工作型接續，也不必在 `try…catch` 區塊置入每個可能擲回的作業。 您可以在工作鏈結的尾端加上工作型接續，然後在該處處理所有的錯誤。 任何例外狀況 (包含[**task\_canceled**][taskCanceled] 例外狀況) 都會往下傳送至工作鏈結，然後略過任何數值型接續，如此您就可以在錯誤處理的工作型接續中處理這些例外狀況。 我們可以重新改寫上一個範例，改用錯誤處理工作型接續：
+若要處理工作鏈結中的錯誤和取消作業，您不需要將每個接續變成工作型接續，也不必在 `try…catch` 區塊置入每個可能擲回的作業。 您可以在工作鏈結的尾端加上工作型接續，然後在該處處理所有的錯誤。 任何例外狀況 (包含 [**task\_canceled**][taskCanceled] 例外狀況) 都會往下傳送至工作鏈結，然後略過任何數值型接續，如此您就可以在錯誤處理的工作型接續中處理這些例外狀況。 我們可以重新改寫上一個範例，改用錯誤處理工作型接續：
 
 ``` cpp
 #include <ppltasks.h>
@@ -194,15 +201,15 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 }
 ```
 
-在工作型接續中，我們會呼叫成員函式 [**task::get**][taskGet] 來取得工作的結果。 即使作業是不會產生任何結果的 [**IAsyncAction**][IAsyncAction]，我們仍然必須呼叫 **task::get**，這是因為 **task::get** 也會取得任何已經往下傳送到工作的例外狀況。 如果輸入工作正在儲存例外狀況，就會在呼叫 **task::get** 時擲回例外狀況。 如果您不呼叫 **task::get**，或者未在鏈結的尾端使用工作型接續，或者未攔截擲回的例外類型，那麼當工作的所有參照全部被刪除時，就會擲回 **unobserved\_task\_exception**。
+在工作型接續中，我們會呼叫成員函式 [**task::get**][taskGet] 來取得工作的結果。 即使作業是不會產生任何結果的 [**IAsyncAction**][IAsyncAction]，我們仍然必須呼叫 **task::get**，這是因為 **task::get** 會取得任何已經往下傳送到工作的例外狀況。 如果輸入工作正在儲存例外狀況，就會在呼叫 **task::get** 時擲回例外狀況。 如果您不呼叫 **task::get**，或者未在鏈結的尾端使用工作型接續，或者未攔截擲回的例外類型，那麼當工作的所有參照全部被刪除時，就會擲回 **unobserved\_task\_exception**。
 
 只攔截您可以處理的例外狀況。 如果應用程式遇到您無法修復的錯誤，寧可讓應用程式當機，也不要在不明的狀況下繼續執行。 另外，一般情況下，不要試著攔截 **unobserved\_task\_exception** 本身。 這個例外狀況主要用於診斷。 擲回 **unobserved\_task\_exception** 通常表示程式碼中有錯誤。 大多數的原因是發生您必須處理的例外狀況，或者是程式碼的部分錯誤導致了無法修復的例外狀況。
 
-## 管理執行緒內容
+## <a name="managing-the-thread-context"></a>管理執行緒內容
 
-UWP app 的 UI 會在單一執行緒 Apartment (STA) 中執行。 工作的 Lambda 如果傳回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation]，就是 Apartment 感知工作。 如果在 STA 建立工作，則它的所有接續也會在 STA 中執行 (預設值)，除非您指定別的地方。 換言之，整個工作鏈結會繼承上層作業的 Apartment 感知。 這種行為有助於簡化與 UI 控制項的互動 (從 STA 才辦得到)。
+UWP app 的 UI 會在單一執行緒 Apartment (STA) 中執行。 工作的 Lambda 如果傳回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation] ，就是 Apartment 感知工作。 如果在 STA 建立工作，則它的所有接續也會在 STA 中執行 (預設)，除非您指定別的地方。 換言之，整個工作鏈結會繼承上層作業的 Apartment 感知。 這種行為有助於簡化與 UI 控制項的互動 (從 STA 才辦得到)。
 
-例如，在 UWP app 中，如果任何類別的成員函式代表 XAML 頁面，則您可以在 [**task::then**][taskThen] 方法中傳送 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控制項，不需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 物件。
+例如，在 UWP app 中，如果任何類別的成員函式代表 XAML 頁面，則您可以在  [**task::then**][taskThen] 方法中傳送 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控制項，不需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 物件。
 
 ``` cpp
 #include <ppltasks.h>
@@ -288,21 +295,21 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 巢狀工作是建立在接續內的新工作，不會繼承初始工作的 Apartment 感知。
 
-## 處理進度更新
+## <a name="handing-progress-updates"></a>處理進度更新
 
 支援 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 或 [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) 的方法可以在作業進行時 (完成前)，定期提供進度更新。 進度報告與工作和接續的概念無關。 您只是為物件的 [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) 屬性提供委派而已。 委派的典型用途是更新 UI 中的進度列。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 C++ 建立 Windows 市集應用程式的非同步作業][createAsyncCpp]
 * [Visual C++ 語言參考](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [非同步程式設計][AsyncProgramming]
 * [工作平行處理原則 (並行執行階段)][taskParallelism]
-* [task 類別][task-class]
+* [工作類別][task-class]
  
 <!-- LINKS -->
 [AsyncProgramming]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "Concurrency 命名空間"
+[concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "並行命名空間"
 [createTask]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
 [createAsyncCpp]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
 [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
@@ -311,14 +318,9 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 [IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
 [IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
 [taskCanceled]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "Task 類別"
+[task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "工作類別"
 [taskGet]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "工作平行處理原則"
+[taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "工作平行"
 [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

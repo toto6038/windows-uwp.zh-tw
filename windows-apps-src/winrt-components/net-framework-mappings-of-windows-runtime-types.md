@@ -3,20 +3,27 @@ author: msatranjr
 title: "Windows 執行階段類型的 .NET Framework 對應"
 description: "下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。"
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ab2c2307376f3fad8cd404f7ddf8056f1ef2e8d3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Windows 執行階段類型的 .NET Framework 對應
+# <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 執行階段類型的 .NET Framework 對應
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。 在使用 Managed 程式碼撰寫的通用 Windows app 中，IntelliSense 會顯示 .NET Framework 類型，而不會顯示 UWP 類型。 例如，如果 Windows 執行階段方法使用類型 IVector&lt;string&gt; 的參數，IntelliSense 即會顯示類型 IList&lt;string&gt; 的參數。 同樣地，在使用 Managed 程式碼撰寫的 Windows 執行階段元件中，您也會使用成員簽章中的 .NET Framework 類型。 當 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 產生您的 Windows 執行階段元件時，.NET Framework 類型會變成對應的 UWP 類型。
 
-## 對應表格
+## <a name="mapping-tables"></a>對應表格
 
 
 在 UWP 與 .NET Framework 中具有相同命名空間名稱與類型名稱的類型，大部分都是結構 (或是與結構相關聯的類型，例如列舉)。 在 UWP 中，結構沒有欄位以外的成員，而且必須有協助程式類型 (.NET Framework 會隱藏此類型)。 這些結構的 .NET Framework 版本具有相關屬性與方法，可提供隱藏的協助程式類型的功能。
@@ -80,12 +87,7 @@ ms.openlocfilehash: 1367664cc4278bb555764cbfdf13ce6653f94920
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

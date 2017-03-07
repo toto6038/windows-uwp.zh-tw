@@ -3,13 +3,20 @@ author: mtoepke
 title: "計劃從 OpenGL ES 2.0 移植到 Direct3D"
 description: "如果您是從 iOS 或 Android 平台移植遊戲，可能已經在 OpenGL ES 2.0 投入了大量的心力。"
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, OpenGL, Direct3D"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 84f13d6507d141c468fcfd6a2bcf75f5419d65da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d2642abbfbfc6030aa00f68f30d4a45eb0e86ee1
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 計劃從 OpenGL ES 2.0 移植到 Direct3D
+# <a name="plan-your-port-from-opengl-es-20-to-direct3d"></a>計劃從 OpenGL ES 2.0 移植到 Direct3D
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +33,7 @@ ms.openlocfilehash: 84f13d6507d141c468fcfd6a2bcf75f5419d65da
 
 從 OpenGL ES 2.0 將圖形移植到 Direct3D 11 時，有幾件事需要注意。
 
-## 關於特定 OpenGL ES 2.0 提供者的注意事項
+## <a name="notes-on-specific-opengl-es-20-providers"></a>關於特定 OpenGL ES 2.0 提供者的注意事項
 
 
 本節的移植主題參考 OpenGL ES 2.0 規格的 Windows 實作，由 Khronos Group 所建立。 所有 OpenGL ES 2.0 程式碼範例都是使用 Visual Studio 2012 與基本 Windows C 語法開發。 如果您使用 Objective-C (iOS) 或 Java (Android) 程式碼基底，請注意所提供的 OpenGL ES 2.0 程式碼範例可能不是使用類似的 API 呼叫語法或參數。 這個指引盡可能嘗試不要加入不同平台的因素。
@@ -35,19 +42,19 @@ ms.openlocfilehash: 84f13d6507d141c468fcfd6a2bcf75f5419d65da
 
 這些主題中的 Direct3D 11 範例使用 Microsoft Windows C++ 搭配元件延伸 (CX)。 如需此版本 C++ 語法的詳細資訊，請閱讀 [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)、[執行階段平台的元件延伸](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)與[快速參考 (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)。
 
-## 了解您的硬體需求與資源
+## <a name="understand-your-hardware-requirements-and-resources"></a>了解您的硬體需求與資源
 
 
 OpenGL ES 2.0 支援的圖形處理功能集大致上可對應至 Direct3D 9.1 提供的功能。 如果您想要利用 Direct3D 11 提供的進階功能，在規劃移植時請檢閱 [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) 文件， 或在完成一開始的工作時檢閱[從 DirectX 9 移植到通用 Windows 平台 (UWP)](porting-your-directx-9-game-to-windows-store.md)主題。
 
 若要簡化一開始的移植工作，請使用 Visual Studio Direct3D 範本。 該範本提供已經設定好的基本轉譯器，且支援 UWP app 功能， 例如重建視窗變更的資源與 Direct3D 功能層級。
 
-## 了解 Direct3D 功能層級
+## <a name="understand-direct3d-feature-levels"></a>了解 Direct3D 功能層級
 
 
 Direct3D 11 支援從 9\_1 (Direct3D 9.1) 到 11\_1 的硬體功能層級。 這些功能層級表示某些圖形功能與資源的可用性。 一般來說，多數 OpenGL ES 2.0 平台都支援 Direct3D 9.1 (功能層級 9\_1) 功能集。
 
-## 檢閱 DirectX 圖形功能與 API
+## <a name="review-directx-graphics-features-and-apis"></a>檢閱 DirectX 圖形功能與 API
 
 
 | API 系列                                                | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -61,7 +68,7 @@ Direct3D 11 支援從 9\_1 (Direct3D 9.1) 到 11\_1 的硬體功能層級。 這
 
  
 
-## 檢閱 Windows 執行階段 API 與範本庫
+## <a name="review-the-windows-runtime-apis-and-template-library"></a>檢閱 Windows 執行階段 API 與範本庫
 
 
 Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可以在[這裡](https://msdn.microsoft.com/library/windows/apps/br211377)檢閱。
@@ -75,7 +82,7 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
 此外，Windows 執行階段 C++ 範本庫 (WRL) 提供編寫與使用 Windows 執行階段元件的低階方式。 適用於 UWP app 的 Direct3D 11 API 最好搭配此程式庫中的介面與類型使用， 例如智慧型指標 ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx))。 如需 WRL 的詳細資訊，請閱讀 [Windows 執行階段 C++ 範本庫 (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx)。
 
-## 變更座標系統
+## <a name="change-your-coordinate-system"></a>變更座標系統
 
 
 在前期移植工作中，有一個可能造成混淆的不同點在於，從 OpenGL 的傳統右手座標系統變更為 Direct3D 的預設左手座標系統。 這項座標模型的變更影響遊戲的許多部分，從頂點緩衝區的設定和組態到許多矩陣數學函式。 要進行的兩項最重要變更為：
@@ -104,7 +111,7 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
  
 
-## OpenGL ES2.0 到 Direct3D 11 移植常見問題集
+## <a name="opengl-es20-to-direct3d-11-porting-frequently-asked-questions"></a>OpenGL ES2.0 到 Direct3D 11 移植常見問題集
 
 
 -   問題：「一般來說，我可以在 OpenGL 程式碼中搜尋某些字串或模式，並以 Direct3D 的同等項目取代嗎？」
@@ -116,10 +123,5 @@ Windows 執行階段 API 提供適用於 UWP app 的整體基礎結構。 您可
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,29 +3,36 @@ author: jwmsft
 description: "說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。"
 title: "自訂附加屬性"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 21ca5391fc4f29c33b3501d05d5ebed986188a3e
-ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 自訂附加屬性
+# <a name="custom-attached-properties"></a>自訂附加屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 「附加屬性」**是一種 XAML 概念。 附加屬性通常會定義為特殊格式的相依性屬性。 這個主題說明如何將附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 我們假設您了解現有相依性屬性使用者對相依性屬性的觀點，而且也已經閱讀了[相依性屬性概觀](dependency-properties-overview.md)。 您必須也要閱讀[附加屬性概觀](attached-properties-overview.md)。 為了遵循這個主題中的範例，您也必須了解 XAML 並知道如何使用 C++、C# 或 Visual Basic 撰寫基本的 Windows 執行階段應用程式。
 
-## 附加屬性的案例
+## <a name="scenarios-for-attached-properties"></a>附加屬性的案例
 
 當定義類別以外的類別需要屬性設定機制的時候，就可以建立附加屬性。 最常見的案例是配置和服務支援。 現有配置屬性的範例包括 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)。 在配置案例中，做為配置控制元素之子元素的元素，可以個別對它們的父元素表達配置需求，每個都會將父元素定義的屬性值設定為附加屬性。 Windows 執行階段 API 中服務支援案例的範例是一組 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的附加屬性，如 [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561)。
 
-**警告** Windows 執行階段 XAML 實作的現有限制是，您無法以動畫方式顯示自訂附加屬性。
+**警告**：Windows 執行階段 XAML 實作的現有限制是，您無法以動畫方式顯示自訂附加屬性。
 
-## 登錄自訂附加屬性
+## <a name="registering-a-custom-attached-property"></a>登錄自訂附加屬性
 
 如果定義的附加屬性純粹只是在其他類型上使用，登錄屬性的類別不一定要衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 不過，如果您遵循讓附加屬性也是相依性屬的典型模式，則存取子的 target 參數需要使用 **DependencyObject**，如此一來，您就可以使用支援屬性儲存區。
 
@@ -33,9 +40,9 @@ ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 定義自訂附加屬性與自訂相依性屬性的主要差異在於定義存取子或包裝函式的方式。 您不是使用[自訂相依性屬性](custom-dependency-properties.md)中所述的包裝函式技術，而是必須也提供靜態 **Get***PropertyName* 和 **Set***PropertyName* 方法做為附加屬性的存取子。 存取子主要是由 XAML 剖析器使用，不過任何其他呼叫者也可以使用它們在非 XAML 案例中設定值。
 
-**重要** 如果您沒有正確定義存取子，XAML 處理器就無法存取您的附加屬性，而且嘗試使用它的任何人將可能收到 XAML 剖析器錯誤。 此外，設計和程式碼編寫工具遇到參考組件中的自訂相依性屬性時，通常會使用命名識別碼的 "\*Property" 慣例。
+**重要**：如果您沒有正確定義存取子，XAML 處理器就無法存取您的附加屬性，而且嘗試使用它的任何人將可能收到 XAML 剖析器錯誤。 此外，設計和程式碼編寫工具遇到參考組件中的自訂相依性屬性時，通常會使用命名識別碼的 "\*Property" 慣例。
 
-## 存取子
+## <a name="accessors"></a>存取子
 
 **Get**_PropertyName_ 存取子的簽章必須是這個。
 
@@ -57,9 +64,9 @@ ms.openlocfilehash: 77858a864929c99425f9c008e8f6fb8dfbad0b44
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 物件及它的 *valueType* 可以是實作中的更具體類型。 請記住，這個方法的值是 XAML 處理器在標記中遇到附加屬性時，來自於 XAML 處理器的輸入。 您使用的類型必須取得類型轉換或現有標記延伸的支援，這樣才能從屬性值建立適當的類型 (最終只是字串)。 基本 **Object** 類型是可以接受的，但是通常您會想要更進一步的類型安全性。 若要這樣做，請將類型強制放到存取子中。
 
-**注意** 您也可以定義附加屬性的預定用法是透過屬性元素語法。 在該情況下，您不需要輸入值的轉換，但必須確保您想要的值可以在 XAML 中建構。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是現有附加屬性的一個範例，這個屬性僅支援屬性元素用法。
+**注意**：您也可以將附加屬性的預定用法定義為透過屬性元素語法。 在該情況下，您不需要輸入值的轉換，但必須確保您想要的值可以在 XAML 中建構。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是現有附加屬性的一個範例，這個屬性僅支援屬性元素用法。
 
-## 程式碼範例
+## <a name="code-example"></a>程式碼範例
 
 這個範例示範自訂附加屬性的相依性屬性登錄 (使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法) 以及 **Get** 和 **Set** 存取子。 在範例中，附加屬性名稱是 `IsMovable`。 所以，存取子必須命名為 `GetIsMovable` 和 `SetIsMovable`。 附加屬性的擁有者是名為 `GameService` 的服務類別，這個類別沒有自己的 UI；其用途只是在使用 **GameService.IsMovable** 附加屬性時提供附加屬性服務。
 
@@ -174,7 +181,7 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## 在 XAML 中使用您的自訂附加屬性
+## <a name="using-your-custom-attached-property-in-xaml"></a>在 XAML 中使用您的自訂附加屬性
 
 定義您的附加屬性並將它的支援成員包含為自訂類型的一部分之後，您接著必須讓 XAML 可以使用定義。 若要這樣做，您必須對應將要參考包含相關類別程式碼命名空間的 XAML 命名空間。 在已經將附加屬性定義為程式庫一部分的情況中，您必須包含這個程式庫，讓它成為應用程式之應用程式套件的一部分。
 
@@ -200,9 +207,9 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 <uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
 ```
 
-**注意** 如果您使用 C++ 來撰寫 XAML UI，只要 XAML 頁面使用定義附加屬性的自訂類型時，您都必須為這個類型包含標頭。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
+**注意**：如果您使用 C++ 來撰寫 XAML UI，只要 XAML 頁面使用定義附加屬性的自訂類型時，您都必須為這個類型包含標頭。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
 
-## 自訂附加屬性的值類型
+## <a name="value-type-of-a-custom-attached-property"></a>自訂附加屬性的值類型
 
 做為自訂附加屬性值類型的類型會影響使用方式、定義或同時影響兩者。 附加屬性的值類型會在數個位置宣告：在 **Get** 與 **Set** 存取子兩個方法的簽章中，以及做為 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 呼叫的 *propertyType* 參數。
 
@@ -211,7 +218,7 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 - 您可以讓附加屬性保持原狀，但是附加屬性只能支援附加屬性是屬性元素且值被宣告為物件元素的使用方法。 在這種情況下，屬性類型不一定要支援使用 XAML 作為物件元素。 若為現有的 Windows 執行階段參考類別，請檢查 XAML 語法來確保類型支援 XAML 物件元素使用方法。
 - 您可以讓附加屬性保持原狀，但是透過 XAML 參考技術 (如 **Binding** 或可以使用字串表示的 **StaticResource**) 僅在使用屬性時使用它。
 
-## 進一步了解 **Canvas.Left** 範例
+## <a name="more-about-the-canvasleft-example"></a>進一步了解 **Canvas.Left** 範例
 
 在前面的附加屬性用法範例中，我們示範了設定 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 附加屬性的不同方法。 但是，這對於 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 與您物件的互動方式有何改變，以及在何時發生？ 我們將進一步探討這個特定的範例，因為如果您實作附加屬性，看看當典型的附加屬性擁有者類別在其他物件上發現它的附加屬性值時，會對這些值做哪些其他處理，將是一件有趣的事。
 
@@ -235,18 +242,13 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
     }
 ```
 
-**注意** 如需面板運作方式的詳細資訊，請參閱 [XAML 自訂面板概觀](https://msdn.microsoft.com/library/windows/apps/mt228351)。
+**注意**：如需面板運作方式的詳細資訊，請參閱 [XAML 自訂面板概觀](https://msdn.microsoft.com/library/windows/apps/mt228351)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
 * [附加屬性概觀](attached-properties-overview.md)
 * [自訂相依性屬性](custom-dependency-properties.md)
 * [XAML 概觀](xaml-overview.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

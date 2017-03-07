@@ -3,23 +3,30 @@ author: Jwmsft
 title: "主要畫面格動畫和 Easing 函式動畫"
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "線性主要畫面格動畫、含 KeySpline 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7b4676e5c5a66450b321ab6f5f8670f9491b7a9d
-ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2eb40a8787479e6abd03ef2f0adb2d7462bfef16
+ms.lasthandoff: 02/07/2017
 
 ---
-# 主要畫面格動畫和 Easing 函式動畫
+# <a name="key-frame-animations-and-easing-function-animations"></a>主要畫面格動畫和 Easing 函式動畫
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 線性主要畫面格動畫、含 **KeySpline** 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術：建立腳本動畫比較複雜，要使用從開始狀態到結束狀態的非線性動畫行為。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 務必先閱讀＜[腳本動畫](storyboarded-animations.md)＞主題。 這個主題是以＜[腳本動畫](storyboarded-animations.md)＞中所說明的動畫概念為基礎，之後不會再重述這些概念。 例如，＜[腳本動畫](storyboarded-animations.md)＞會說明如何以動畫、腳本做為目標資源，[**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 屬性值，例如 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration)、[**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) 等等。
 
-## 使用主要畫面格動畫設定動畫效果
+## <a name="animating-using-key-frame-animations"></a>使用主要畫面格動畫設定動畫效果
 
 主要畫面格動畫允許多個目標值，這些值會在動畫時間軸的某個時間到達。 換句話說，每個主要畫面格都可以指定不同的中繼值，最後一個到達的主要畫面格就是最終的動畫值。 在動畫中指定多個值可以製作更複雜的動畫。 主要畫面格動畫也啟用不同的內插補點邏輯，每個邏輯依據動畫類型實作為不同的 **KeyFrame** 子類別。 具體而言，每個主要畫面格動畫類型具有其 **KeyFrame** 類別的 **Discrete**、**Linear**、**Spline** 和 **Easing** 變化，用於指定其主要畫面格。 例如，若要指定針對 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 且使用主要畫面格的動畫，您可以使用 [**DiscreteDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243130)、[**LinearDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210316)、[**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446) 和 [**EasingDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210269) 宣告主要畫面格。 您可以使用單一 **KeyFrames** 集合內的任一和所有這些類型，在每一次有新的主要畫面格到達時變更內插補點。
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
     -   如果設定為 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)，時間軸會重複到該時間到達為止。 如果它不是時間軸隱含持續時間的整數因素，這可能會在主要畫面格序列的中途截斷動畫。
 -   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (不常用)
 
-### 線性主要畫面格
+### <a name="linear-key-frames"></a>線性主要畫面格
 
 線性主要畫面格會產生值的簡單線性內插補點，直到畫面格的 **KeyTime** 到達為止。 這個內插補點行為和＜[腳本動畫](storyboarded-animations.md)＞主題中說明的較簡單 **From**/**To**/**By** 動畫最為類似。
 
@@ -62,19 +69,19 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 </StackPanel>
 ```
 
-### 離散主要畫面格
+### <a name="discrete-key-frames"></a>離散主要畫面格
 
 離散主要畫面格完全不使用任何內插補點。 當 **KeyTime** 到達時，就直接套用新的 **Value**。 視製作成動畫的 UI 屬性而定，這通常會產生看起來像在「跳躍」的動畫。 請確定這真的是您所想要的美學行為。 您可以增加宣告的主要畫面格數量以減少這種明顯的跳躍，但如果順暢的動畫才是您的目標，最好改用線性或曲線主要畫面格。
 
-**注意** 離散主要畫面格是將含有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) 的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 和 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型以外的值製作成動畫的唯一方式。 本主題稍後會更詳細的討論這個部分。
+**注意** 離散主要畫面格是將含有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)  的 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 和 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型以外的值製作成動畫的唯一方式。 本主題稍後會更詳細的討論這個部分。
 
  
 
-### 曲線主要畫面格
+### <a name="spline-key-frames"></a>曲線主要畫面格
 
 曲線主要畫面格會根據 **KeySpline** 屬性的值，在值之間建立可變動的轉換。 這個屬性會指定貝茲曲線的第一個和第二個控制點，以說明動畫的加速方式。 基本上，[**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) 會定義一段時間的函式關係，而此函式-時間圖形就是該貝茲曲線的形狀。 通常您會在 XAML shorthand 屬性字串中指定 **KeySpline** 值，共有四個 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值，以空格或逗號分隔。 這些值是貝茲曲線兩個控制點的 "X,Y" 組。 "X" 是時間，而 "Y" 是值的函式修飾詞。 每個值都應該介於 0 到 1 (含) 之間。 如果沒有對 **KeySpline** 進行控制點修改，則從 0,0 到 1,1 的直線就代表線性內插補點一段時間的函式。 您的控制點會變更該曲線的形狀，因此變更曲線動畫一段時間的函式行為。 這要以圖形來看最為清楚。 您可以在瀏覽器執行 [Silverlight 主要曲線視覺化檢視範例](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)，看看控制點如何修改曲線，以及用它當作 **KeySpline** 值時，範例動畫如何執行。
 
-下一個範例示範套用到動畫的三個不同主要畫面格，最後一個是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值 ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)) 的主要曲線動畫。 請注意 **KeySpline** 所套用的字串 "0.6,0.0 0.9,0.00"。 這會產生一個曲線，動畫一開始看起來執行得很慢，但會在 **KeyTime** 到達之前迅速到達該值。
+下一個範例示範套用到動畫的三個不同主要畫面格，最後一個是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值 ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)) 的主要曲線動畫。 請注意 **KeySpline** 所套用的字串 "0.6, 0.0 0.9, 0.00"。 這會產生一個曲線，動畫一開始看起來執行得很慢，但會在 **KeyTime** 到達之前迅速到達該值。
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -104,7 +111,7 @@ ms.openlocfilehash: 163109a8e87c0d270eeeed825958af7ec51ee336
 </Storyboard>
 ```
 
-### 加/減速主要畫面格
+### <a name="easing-key-frames"></a>加/減速主要畫面格
 
 Easing 主要畫面格是套用內插補點的主要畫面格，內插補點一段時間的函式是由一些預先定義的數學公式所控制。 事實上，使用曲線主要畫面格可以產生與使用某些 easing 函式類型很類似的結果，但還是有些 easing 函式 (例如 [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049)) 無法使用曲線重現。
 
@@ -139,7 +146,7 @@ Easing 主要畫面格是套用內插補點的主要畫面格，內插補點一�
 
 這只是一個 Easing 函式範例， 下一節會有更詳細的說明。
 
-## Easing 函式
+## <a name="easing-functions"></a>Easing 函式
 
 Easing 函式可讓您將自訂的數學公式套用至動畫。 對於製作以 2-D 座標系統模擬真實世界物理的動畫來說，數學運算操作通常很有用。 例如，您可以讓物件寫實地彈跳，或是表現得就像放在彈簧上面。 您可以使用主要畫面格或甚至是 **From**/**To**/**By** 動畫來模擬這些效果，但工作量會大幅增加，而且動畫無法像使用數學公式一樣精準。
 
@@ -191,7 +198,7 @@ Easing 函式可用三種方式套用到動畫：
 
 Easing 函式套用到 **From**/**To**/**By** 動畫時，它會變更如何在動畫之 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 上的 **From** 和 **To** 值之間插入值的 function- over-time 特性。 如果沒有 Easing 函式，這會是一個線性內插補點。
 
-## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>離散物件值動畫
+## <a name="span-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspanspan-iddiscreteobjectvalueanimationsspandiscrete-object-value-animations"></a><span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>離散物件值動畫
 
 這是值得特別提及的動畫，因為這是唯一的一種方式，讓您可以將動畫值套用到 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 或 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型以外的屬性。 這是主要畫面格動畫 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)。 使用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 值製作動畫有所不同，因為無法在畫面格之間插入值。 當畫面格的 [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) 到達時，動畫值會立即設定為主要畫面格的 **Value** 中指定的值。 因為沒有內插補點，所以在 **ObjectAnimationUsingKeyFrames** 主要畫面格集合中只使用一個主要畫面格：[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。
 
@@ -264,14 +271,9 @@ Easing 函式套用到 **From**/**To**/**By** 動畫時，它會變更如何在�
 
 一個 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) 畫面格組可以使用多個 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132)。 透過讓 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) 的值產生動畫效果來建立「投影片放映」動畫是個很有趣的方式，可用來舉例說明適用多個物件值的案例。
 
- ## 相關主題
+ ## <a name="related-topics"></a>相關主題
 
 * [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)
 * [相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)
 * [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
-
-
-<!--HONumber=Nov16_HO1-->
-
-

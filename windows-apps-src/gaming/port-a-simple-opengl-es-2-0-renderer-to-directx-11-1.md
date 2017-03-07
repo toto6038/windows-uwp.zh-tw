@@ -3,16 +3,23 @@ author: mtoepke
 title: "使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11"
 description: "針對首次移植練習，我們將從頭開始 -- 將適用於頂點已著色的旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, opengl, direct3d 11, port, 遊戲, 連接埠"
 translationtype: Human Translation
-ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
-ms.openlocfilehash: 307b611eece3de6288d67e1e340368763f26fa2e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 71b4b42d2665cbeb43cbdbe2dbab9119a8f68ce9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
+# <a name="how-to-port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 針對此移植練習，我們將從頭開始：將適用於頂點已著色旋轉立方體的簡單轉譯器從 OpenGL ES 2.0 帶入 Direct3D，如此讓它符合 Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本。 當我們逐步解說這個移植程序時，您將了解下列內容：
 
@@ -77,23 +84,23 @@ typedef struct
 
 這個結構含有一個執行個體，並包含所有用來轉譯非常簡單且頂點已著色的網格所需的元件。
 
-> **注意**：本主題中的任何 OpenGL ES 2.0 程式碼都是以 Khronos Group 所提供的 Windows API 實作為基礎，並使用 Windows C 程式設計語法。
+> **注意**  本主題中的任何 OpenGL ES 2.0 程式碼都是以 Khronos Group 所提供的 Windows API 實作為基礎，並使用 Windows C 程式設計語法。
 
  
 
-## 您需要知道的事項
+## <a name="what-you-need-to-know"></a>您需要知道的事項
 
 
-### 技術
+### <a name="technologies"></a>技術
 
 -   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### 先決條件
+### <a name="prerequisites"></a>先決條件
 
 -   選用。 檢閱[將 EGL 程式碼移植到 DXGI 和 Direct3D](moving-from-egl-to-dxgi.md)。 閱讀本主題以更加了解 DirectX 所提供的圖形介面。
 
-## <span id="keylinks_steps_heading"></span>步驟
+## <a name="span-idkeylinksstepsheadingspansteps"></a><span id="keylinks_steps_heading"></span>步驟
 
 
 <table>
@@ -129,7 +136,7 @@ typedef struct
 
  
 
-## <span id="additional_resources"></span>其他資源
+## <a name="span-idadditionalresourcesspanadditional-resources"></a><span id="additional_resources"></span>其他資源
 
 
 -   [為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
@@ -142,10 +149,5 @@ typedef struct
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

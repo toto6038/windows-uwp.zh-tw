@@ -1,17 +1,24 @@
 ---
 author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
-description: "本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) App。"
+description: "本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) 應用程式。"
 title: "硬體 DRM"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 56d79a93704021fc18d3e72d00738d0ce7acba91
-ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a6d2ea23cb0720d8fe6c7aa581c42db6e025d146
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 硬體 DRM
+# <a name="hardware-drm"></a>硬體 DRM
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主題概觀說明如何將以 PlayReady 硬體為基礎的數位版權管理 (DRM) 新增到通用 Windows 平台 (UWP) app。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 643b67c3975a8aea6791c834a9ca3178b9762257
 
 內容提供者正不斷地朝向針對授與權限以播放 App 中最高價值的內容，提供硬體式保護的方向努力。 健全的密碼編譯核心硬體實作支援已新增到 PlayReady，以符合此需求。 此支援能夠在多個裝置的平台上安全播放高畫質 (1080p) 和超高畫質 (UHD) 的內容。 金鑰內容 (包括私密金鑰、內容金鑰，以及其他用來衍生或解除鎖定上述金鑰的金鑰內容)，以及已解密的壓縮和未壓縮的視訊範例會利用硬體安全性來進行保護。
 
-## Windows TEE 實作
+## <a name="windows-tee-implementation"></a>Windows TEE 實作
 
 本主題提供 Windows 10 如何實作受信任的執行環境 (TEE) 的簡要概觀。
 
@@ -28,7 +35,7 @@ Windows TEE 實作的細節不在本文件的討論範圍內。 不過，對於�
 
 ![Windows TEE 元件圖表](images/windowsteecomponentdiagram720.jpg)
 
-## 使用硬體 DRM 的考量
+## <a name="considerations-for-using-hardware-drm"></a>使用硬體 DRM 的考量
 
 本主題提供一份簡短清單，其中包含開發設計來使用硬體 DRM 的 App 時應考慮的項目。 如同在 [PlayReady DRM](playready-client-sdk.md#output-protection) 中所述，透過適用於 Windows 10 的 PlayReady HWDRM 可在整個 Windows TEE 實作過程中強制執行所有輸出保護，因此會產生一些輸出保護行為：
 
@@ -54,7 +61,7 @@ Windows TEE 實作的細節不在本文件的討論範圍內。 不過，對於�
 
 為了防止播放因為硬體無法解密授權而失敗，PlayReady 會針對它遇到的每張圖形卡，使用不同的 HDS。 這將導致 PlayReady 嘗試針對 PlayReady 通常已具有授權的一部分內容取得授權 (也就是在軟體 DRM 案例或任何沒有硬體變更的案例中，PlayReady 不需要重新取得授權)。 因此，如果 App 在使用硬體 DRM 時取得永久性授權，則您的 App 必須能夠處理下列情況：如果使用者安裝 (或解除安裝) 圖形卡，授權便會有效地「遺失」。 因為這不是常見案例，所以，您可能決定當內容在硬體變更之後不再播放時再來處理支援請求，而不是想出如何在用戶端/伺服器程式碼中處理硬體變更的方式。
 
-## 覆寫硬體 DRM
+## <a name="override-hardware-drm"></a>覆寫硬體 DRM
 
 本節說明如果要播放的內容不支援硬體 DRM，則該如何覆寫硬體 DRM (HWDRM)。
 
@@ -82,7 +89,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 -   如果還有另一個 *.hds 檔案，表示您在使用硬體 DRM。
 -   您也可以刪除整個 PlayReady 資料夾，然後重試您的測試。
 
-## 偵測硬體 DRM 的類型
+## <a name="detect-the-type-of-hardware-drm"></a>偵測硬體 DRM 的類型
 
 本節說明如何偵測系統上支援何種類型的硬體 DRM。
 
@@ -96,11 +103,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 您也可以使用 [**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) 屬性來取得用戶端憑證的安全性層級，以判斷是否支援硬體 DRM。 除非傳回的憑證安全性層級大於或等於 3000，否則用戶端就不會進行個人化或佈建 (在此案例中，這個屬性會傳回 0)，或者硬體 DRM 不會處於使用狀態 (在此案例中，這個屬性會傳回小於 3000 的值)。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [PlayReady DRM](playready-client-sdk.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

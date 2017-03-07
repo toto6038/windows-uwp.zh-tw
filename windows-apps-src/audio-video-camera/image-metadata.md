@@ -3,20 +3,27 @@ author: laurenhughes
 ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
 description: "本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 GeotagHelper 公用程式類別以標記檔案的地理位置。"
 title: "影像中繼資料"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fd5b52a1d431b9396a4b162077d4f8d6246cd597
-ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: af9a4c243c939ddc04e5d0763b58df00e70d7017
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 影像中繼資料
+# <a name="image-metadata"></a>影像中繼資料
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) 公用程式類別以標記檔案的地理位置。
 
-## 影像屬性
+## <a name="image-properties"></a>影像屬性
 
 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性會傳回 [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) 物件，這個物件可以用來存取檔案的內容相關資訊。 呼叫 [**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) 取得影像特定的屬性。 傳回的 [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) 物件所公開的成員包含基本影像中繼資料欄位，例如影像標題和拍攝日期。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: 958033bc054da292c85f8df0a57cf964696c82bd
 
 -   因為擷取不支援的屬性時可能傳回 Null 值，在使用傳回的中繼資料值之前，一定要先檢查是否為 Null。
 
-## 地理位置標籤協助程式
+## <a name="geotag-helper"></a>地理位置標籤協助程式
 
 GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) API，輕鬆地以地理位置資料來標記影像，而不必手動剖析或建構中繼資料格式。
 
@@ -54,7 +61,7 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 [!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
 
-## 解碼和編碼影像中繼資料
+## <a name="decode-and-encode-image-metadata"></a>解碼和編碼影像中繼資料
 
 最先進的影像資料處理方式是使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 或 [BitmapEncoder](bitmapencoder-options-reference.md)，在資料流層級上讀取及寫入屬性。 對於這些作業，您可以使用 Windows 屬性來指定您要讀取或寫入的資料，但您也可以使用 Windows 影像處理元件 (WIC) 提供的中繼資料查詢語言，指定所要求屬性的路徑。
 
@@ -79,7 +86,7 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 -   如果編碼器相關的影像不支援其中一個要求的屬性，[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) 會失敗並傳回錯誤碼 0x88982F41。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [影像處理](imaging.md)
  
@@ -88,10 +95,5 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

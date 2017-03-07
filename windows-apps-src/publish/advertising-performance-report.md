@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "若要檢視 app 中廣告單位的績效資料，您可以在 Windows 開發人員中心儀表板上使用「應用程式層級」和「帳戶層級」的廣告績效報告："
-title: "廣告績效報告"
+Description: "若要檢視應用程式中廣告單位的效益資料，您可以在 Windows 開發人員中心儀表板上使用「應用程式層級」和「帳戶層級」的廣告效益報告："
+title: "廣告效益報告"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6b354b1b009bf9e4f2899f7ef97ef8791712f52b
-ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d53fe17f2d2452e66a6b4f9c1609112c621ede64
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 廣告績效報告
+# <a name="advertising-performance-report"></a>廣告效益報告
 
 
-若要檢視 app 中廣告單位的績效資料，您可以在 Windows 開發人員中心儀表板上使用下列報告：
+若要檢視應用程式中廣告單位的效益資料，您可以在 Windows 開發人員中心儀表板上使用下列報告：
 
 -   [App 層級的廣告績效報告](advertising-performance-report.md#app-level-advertising-performance-report)。 這份報告提供儀表板目前所選 app 中 Microsoft 廣告單位的績效資料。
 -   [帳戶層級的廣告績效報告](advertising-performance-report.md#account-level-advertising-performance-report)。 這份報告提供註冊到您開發人員帳戶之所有 App 的 Microsoft 廣告單位和社群廣告的詳細績效資料。
@@ -24,7 +31,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 下列各節提供更多有關這些報告的詳細資料。
 
-## App 層級的廣告績效報告
+## <a name="app-level-advertising-performance-report"></a>App 層級的廣告績效報告
 
 此頁面會在儀表板中以圖表、世界地圖和表格方式提供目前選取 App 中 Microsoft 廣告單位的績效資料。 若要檢視這份報告，請在儀表板中選取其中一個 App，然後在瀏覽窗格中按一下 [分析]**** &gt; [廣告績效]****。
 
@@ -46,13 +53,13 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 若要更深入分析您的資料，請選取 [下載報告]****，然後在 Microsoft Excel 或類似的程式中開啟該 CSV (逗號分隔值) 檔案。
 
-## 帳戶層級的廣告績效報告
+## <a name="account-level-advertising-performance-report"></a>帳戶層級的廣告績效報告
 
 此頁面提供您的開發人員帳戶註冊之所有 app 中使用的 Microsoft 廣告單位和社群廣告的績效資料。 若要檢視這份報告，請移至儀表板概觀頁面，在瀏覽窗格中按一下 [廣告績效]****。
 
 此頁面包含以下各節。
 
-### Microsoft Advertising
+### <a name="microsoft-advertising"></a>Microsoft Advertising
 
 此報告提供您應用程式中使用之所有 Microsoft 廣告單位的績效資料。 其中也提供未成功對應到您的開發人員中心 app 的任何 pubCenter 廣告單位其績效資料。
 
@@ -70,7 +77,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 若要更深入分析您的資料，請選取 [下載報告]****，然後在 Microsoft Excel 或類似的程式中開啟該 CSV (逗號分隔值) 檔案。
 
-### Microsoft 社群廣告
+### <a name="microsoft-community-ads"></a>Microsoft 社群廣告
 
 此區段以圖表和世界地圖形式提供儀表板中目前所選 app 中社群廣告的績效資料。 如需社群廣告的詳細資訊，請參閱[關於社群廣告](about-community-ads.md)。
 
@@ -85,7 +92,7 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
 
 若要分析圖形或世界地圖檢視中這些衡量指標中的一項資料，請按一下 [圖形]**** 或 [地圖]****。 按一下圖形或地圖上方的標題可以在不同的衡量指標間切換。 在地圖檢視中，比較深色的網底表示較高的值而比較淺色的網底表示較低的值。 您可以將游標暫留在地圖上特定的國家或地區上，以便分析所選取的衡量指標值。 您也可以放大地圖上的任何區域，以檢視較小國家/地區的資料。
 
-## 報告相關的注意事項
+## <a name="notes-about-the-reports"></a>報告相關的注意事項
 
 以下是幾點使用廣告績效報告時應留意的事項。
 
@@ -96,9 +103,4 @@ ms.openlocfilehash: b75d9310e577c77d1caed3e9f34762e925eb11ae
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

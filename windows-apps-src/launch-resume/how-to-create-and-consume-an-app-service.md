@@ -4,9 +4,15 @@ title: "建立和取用 App 服務"
 description: "了解如何撰寫可為其他通用 Windows 平台 (UWP) app 提供服務的 UWP app，以及如何取用這些服務。"
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: "app 間通訊, 處理序間通訊, IPC, 背景傳訊, 背景通訊, app 到 app"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fadfab2f03d5cfda46d5c9f29c28ad561e6ab2db
-ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3dcf6a8191553deac5821346718a202bc362c7ff
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -24,7 +30,7 @@ ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
 
 在此做法中，為了簡單起見，我們將在一個方案中建立所有項目。
 
--   在 Microsoft Visual Studio 2015 中，建立新的 UWP App 專案，並命名為 AppServiceProvider。 (在 [新增專案] 對話方塊中，選取 [範本] &gt; [其他語言] &gt; [Visual C#] &gt; [Windows] &gt; [Windows 通用] &gt; [空白 App (Windows 通用)])。 這會是提供 App 服務的 App。
+-   在 Microsoft Visual Studio 2015 中，建立新的 UWP App 專案，並命名為 AppServiceProvider。 (在 **\[新增專案\]** 對話方塊中，選取 **\[範本\] &gt; \[其他語言\] &gt; \[Visual C#\] &gt; \[Windows\] &gt; \[Windows 通用\] &gt; \[空白 App (Windows 通用)\]**)。 這會是提供 App 服務的 App。
 
 ## <a name="add-an-app-service-extension-to-packageappxmanifest"></a>將 App 服務延伸模組新增到 package.appxmanifest
 
@@ -52,7 +58,7 @@ ms.openlocfilehash: 81786f6bf76d1d3840d5cd8c6191550b98a248b2
 
 ## <a name="create-the-app-service"></a>建立 app 服務
 
-1.  App 服務將實作為背景工作。 這讓前景應用程式能夠叫用另一個應用程式中的 App 服務來執行背景的工作。 將新的 Windows 執行階段元件專案 (命名為 MyAppService) 新增到方案 ([檔案] &gt; [新增] &gt; [新增專案]) (在 [加入新的專案] 對話方塊中，選擇 [已安裝] &gt; [其他語言] &gt; [Visual C#] &gt; [Windows] &gt; [Windows 通用] &gt; [Windows 執行階段元件 (Windows 通用)])
+1.  App 服務將實作為背景工作。 這讓前景應用程式能夠叫用另一個應用程式中的 App 服務來執行背景的工作。 將新的 Windows 執行階段元件專案 (命名為 MyAppService) 新增到方案 (**\[檔案\] &gt; \[新增\] &gt; \[新增專案\]**) (在 **\[加入新的專案\]** 對話方塊中，選擇 **\[已安裝\] &gt; \[其他語言\] &gt; \[Visual C#\] &gt; \[Windows\] &gt; \[Windows 通用\] &gt; \[Windows 執行階段元件 (Windows 通用)\]**)
 2.  在 AppServiceProvider 專案中，新增 MyAppService 專案的參考。
 3.  在 MyappService 專案中，將下列 **using** 陳述式新增到 Class1.cs 頂端：
     ```cs
@@ -172,11 +178,11 @@ app 服務會使用[**ValueSet**](https://msdn.microsoft.com/library/windows/app
 您必須先部署 app 服務提供者 app，才能從用戶端呼叫它。 您也需要 app 服務 app 的套件系列名稱，才能呼叫它。
 
 -   取得 app 服務應用程式套件系列名稱的一種方式是從 **AppServiceProvider** 專案 (例如，從 App.xaml.cs 中的 `public App()`) 內呼叫 [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670)，並記錄結果。 若要在 Microsoft Visual Studio 中執行 AppServiceProvider，請在 [方案總管] 視窗中將它設定為啟始專案並執行專案。
--   取得套件系列名稱的另一種方法是部署方案 ([建置] &gt; [部署方案])，並記下輸出視窗中的完整套件名稱 ([檢視] &gt; [輸出])。 您必須在輸出視窗中移除字串的平台資訊，以衍生套件名稱。 例如，如果輸出視窗中報告的完整套件名稱為 "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra"，則您必須抽出 "1.0.0.0\_x86\_\_"，留下 "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra" 做為套件系列名稱。
+-   取得套件系列名稱的另一種方法是部署方案 (**\[建置\] &gt; \[部署方案\]**)，並記下輸出視窗中的完整套件名稱 (**\[檢視\] &gt; \[輸出\]**)。 您必須在輸出視窗中移除字串的平台資訊，以衍生套件名稱。 例如，如果輸出視窗中報告的完整套件名稱為 "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra"，則您必須抽出 "1.0.0.0\_x86\_\_"，留下 "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra" 做為套件系列名稱。
 
 ## <a name="write-a-client-to-call-the-app-service"></a>撰寫呼叫 App 服務的用戶端
 
-1.  將新的空白 Windows 通用 App 專案 (命名為 ClientApp) 新增到方案 ([檔案] &gt; [新增] &gt; [新增專案]) (在 [加入新的專案] 對話方塊中，選擇 [已安裝] &gt; [其他語言] &gt; [Visual C#] &gt; [Windows] &gt; [Windows 通用] &gt; [空白 App (Windows 通用)])。
+1.  將新的空白 Windows 通用 App 專案 (命名為 ClientApp) 新增到方案 (**\[檔案\] &gt; \[新增\] &gt; \[新增專案\]**) (在 **\[加入新的專案\]** 對話方塊中，選擇 **\[已安裝\] &gt; \[其他語言\] &gt; \[Visual C#\] &gt; \[Windows\] &gt; \[Windows 通用\] &gt; \[空白 App (Windows 通用)\]**)。
 2.  在 ClientApp 專案中，將下列 **using** 陳述式新增到 MainPage.xaml.cs 頂端：
     ```cs
     >using Windows.ApplicationModel.AppService;
@@ -260,13 +266,13 @@ app 服務會使用[**ValueSet**](https://msdn.microsoft.com/library/windows/app
 
 1.  確認指派給庫存服務連線的套件系列名稱符合 AppServiceProvider App 的套件系列名稱。 請參閱：**button\_Click()**`this.inventoryService.PackageFamilyName = "...";`)。
 2.  在 **button\_Click()** 中，確認指派給庫存服務連線的 App 服務名稱符合 AppServiceProvider 的 Package.appxmanifest 檔案中的 App 服務名稱。 請參閱：`this.inventoryService.AppServiceName = "com.microsoft.inventory";`。
-3.  確定已部署 AppServiceProvider App (在 [方案總管] 中，以滑鼠右鍵按一下方案，然後選擇 [部署])。
+3.  確定已部署 AppServiceProvider App (在 \[方案總管\] 中，以滑鼠右鍵按一下方案，然後選擇 **\[部署\]**)。
 
 ## <a name="debug-the-app-service"></a>偵錯 App 服務
 
 
-1.  偵錯之前，請確定已部署整個方案，因為在呼叫服務之前，必須先呼叫 App 服務提供者 App。 (在 Visual Studio 中，[建置] &gt; [部署方案])。
-2.  在 [方案總管] 中，以滑鼠右鍵按一下 AppServiceProvider 專案，然後選擇 [屬性]。 從 [偵錯] 索引標籤，將 [起始動作] 變更為 [不啟動，但在我的程式碼啟動時進行偵錯]。
+1.  偵錯之前，請確定已部署整個方案，因為在呼叫服務之前，必須先呼叫 App 服務提供者 App。 (在 Visual Studio 中，**\[建置\] &gt; \[部署方案\]**)。
+2.  在 \[方案總管\] 中，以滑鼠右鍵按一下 AppServiceProvider 專案，然後選擇 **\[屬性\]**。 從 **\[偵錯\]** 索引標籤，將 **\[起始動作\]** 變更為 **\[不啟動，但在我的程式碼啟動時進行偵錯\]**。
 3.  在 MyAppService 專案的 Class1.cs 檔案中，於 OnRequestReceived() 中設定中斷點。
 4.  將 AppServiceProvider 專案設定為啟始專案，然後按 F5。
 5.  從 [開始] 功能表 (而不是從 Visual Studio) 啟動 ClientApp。
@@ -276,7 +282,7 @@ app 服務會使用[**ValueSet**](https://msdn.microsoft.com/library/windows/app
 
 1.  依照前述步驟中的指示來偵錯 app 服務。
 2.  從 [開始] 功能表啟動 ClientApp。
-3.  將偵錯工具附加到 ClientApp.exe 處理序 (而不是 ApplicationFrameHost.exe 處理序)。 (在 Visual Studio 中，選擇 \[偵錯\] \[附加到處理序\])。
+3.  將偵錯工具附加到 ClientApp.exe 處理序 (而不是 ApplicationFrameHost.exe 處理序)。 (在 Visual Studio 中，選擇 **\[偵錯\] &gt; \[附加到處理序\]**)。
 4.  在 ClientApp 專案中，於 **button_Click()** 中設定中斷點。
 5.  現在，當您在 ClientApp 的文字方塊中輸入 1，並按下按鈕時，即會叫用用戶端與 App 服務中的中斷點。
 
@@ -377,9 +383,4 @@ namespace MyAppService
 
 * [轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md)
 * [使用背景工作支援 App](support-your-app-with-background-tasks.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

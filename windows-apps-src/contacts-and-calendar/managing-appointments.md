@@ -1,22 +1,29 @@
 ---
 author: Xansky
-description: "您可以透過 Windows.ApplicationModel.Appointments 命名空間，在使用者的行事曆 app 建立和管理約會。"
+description: "您可以透過 Windows.ApplicationModel.Appointments 命名空間，在使用者的行事曆應用程式建立和管理約會。"
 title: "管理約會"
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 約會, 行事曆"
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: ae7fe9075a4c49c99a572087bf4b7b176555caef
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8fe8c0172d50cfe65bc8e695ffeb6899a228bdd2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 管理約會
+# <a name="manage-appointments"></a>管理約會
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 您可以透過 [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空間，在使用者的行事曆 app 建立和管理約會。 這裡，我們將示範如何建立約會、將約會新增到行事曆 app、在行事曆 app 替換約會，以及從行事曆 app 移除約會。 同時還會示範如何顯示行事曆 app 的時間範圍，以及建立約會週期物件。
 
-## 建立約會並套用資料
+## <a name="create-an-appointment-and-apply-data-to-it"></a>建立約會並套用資料
 
 建立 [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) 物件，並將它指派給一個變數。 然後，在 **Appointment** 套用使用者透過 UI 提供的約會屬性。
 
@@ -250,7 +257,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 新增約會至使用者的行事曆
+## <a name="add-an-appointment-to-the-users-calendar"></a>新增約會至使用者的行事曆
 
 建立 [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) 物件，並將它指派給一個變數。 然後，呼叫 [**AppointmentManager.ShowAddAppointmentAsync(Appointment, Rect, Placement)**](https://msdn.microsoft.com/library/windows/apps/dn297261) 方法以顯示預設的約會提供者新增約會 UI，讓使用者新增約會。 如果使用者按一下 [**新增**]，範例會顯示 **ShowAddAppointmentAsync** 傳回的約會識別碼。
 
@@ -281,7 +288,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 
 **注意** 就 Windows Phone 市集 app 而言，[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 的功能就像 [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)，相同點在於為新增約會顯示的對話方塊都是可編輯的。
 
-## 在使用者的行事曆替換約會
+## <a name="replace-an-appointment-in-the-users-calendar"></a>在使用者的行事曆替換約會
 
 建立 [**Windows.ApplicationModel.Appointments.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn297221) 物件，並將它指派給一個變數。 然後，呼叫適當的 [**AppointmentManager.ShowReplaceAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showreplaceappointmentasync) 方法以顯示預設的約會提供者替換約會 UI，讓使用者替換約會。 使用者也會提供要替換的約會識別碼。 這個識別碼是從 [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 傳回的。 如果使用者按一下 [**替換**]，範例會顯示替換了該約會識別碼。
 
@@ -335,7 +342,7 @@ private async void Replace-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 從使用者的行事曆移除約會
+## <a name="remove-an-appointment-from-the-users-calendar"></a>從使用者的行事曆移除約會
 
 呼叫適當的 [**AppointmentManager.ShowRemoveAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showremoveappointmentasync) 方法以顯示預設的約會提供者移除約會 UI，讓使用者移除約會。 使用者也會提供要移除的約會識別碼。 這個識別碼是從 [**AppointmentManager.ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 傳回的。 如果使用者按一下 [**刪除**]，範例會顯示已移除該約會識別碼指定的約會。
 
@@ -385,7 +392,7 @@ private async void Remove-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 顯示約會提供者的時間範圍
+## <a name="show-a-time-span-for-the-appointments-provider"></a>顯示約會提供者的時間範圍
 
 如果使用者按一下 [顯示]****，會呼叫 [**AppointmentManager.ShowTimeFrameAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showtimeframeasync) 方法以顯示預設約會提供者主要 UI 的特定時間範圍。 此範例會顯示預設約會提供者顯示在畫面上。
 
@@ -399,7 +406,7 @@ private async void Show-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 建立約會週期物件並套用資料
+## <a name="create-an-appointment-recurrence-object-and-apply-data-to-it"></a>建立約會週期物件並套用資料
 
 建立 [**Windows.ApplicationModel.Appointments.AppointmentRecurrence**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentrecurrence) 物件，並將它指派給一個變數。 然後，在 **AppointmentRecurrence** 套用使用者透過 UI 提供的週期屬性。
 
@@ -502,7 +509,7 @@ private void Create-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 新增可編輯的約會
+## <a name="add-a-new-editable-appointment"></a>新增可編輯的約會
 
 [**ShowEditNewAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) 的作用與 [**ShowAddAppointmentAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 相同，唯一的差別在於用來新增約會的對話方塊可供編輯，讓使用者可以先修改約會資料再儲存。
 
@@ -537,7 +544,7 @@ private async void AddAndEdit-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## 顯示約會詳細資料
+## <a name="show-appointment-details"></a>顯示約會詳細資料
 
 [**ShowAppointmentDetailsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showappointmentdetailsasync) 會使系統顯示指定之約會的詳細資料。 您可以選擇啟用實作應用程式行事曆的應用程式，在行事曆中顯示它所擁有的約會詳細資料。 否則，系統將會顯示約會詳細資料。 有一個接受開始日期引數的方法多載，可顯示週期性約會的詳細資料。
 
@@ -560,19 +567,14 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 }
 ```
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 現在，您對於如何管理約會已經有基本的了解。 請從 GitHub 下載[通用 Windows app 範例](http://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何管理約會的範例。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [約會 API 範例](http://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "在基本型別上使用深度和效果"
 description: "在這裡，我們將示範如何在基本型別上使用深度、透視、色彩及其他效果。"
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 深度, 效果, 基本類型, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在基本型別上使用深度和效果
+# <a name="use-depth-and-effects-on-primitives"></a>在基本型別上使用深度和效果
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -18,7 +25,7 @@ ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
 
 **目標：**建立 3D 物件並將基本頂點光源和色彩套用到該物件。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
@@ -27,10 +34,10 @@ ms.openlocfilehash: 6c58e23a0831a0850a4e28887b4717abedbc7086
 
 **完成所需的時間：**20 分鐘。
 
-指示
+<a name="instructions"></a>指示
 ------------
 
-### 1. 定義立方體變數
+### <a name="1-defining-cube-variables"></a>1. 定義立方體變數
 
 首先，我們需要為立方體定義 **SimpleCubeVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置和色彩，以及檢視立方體的方式。 我們會使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來宣告 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351)，並宣告 **ConstantBuffer** 的執行個體。
 
@@ -62,7 +69,7 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### 2. 建立深度樣板檢視
+### <a name="2-creating-a-depth-stencil-view"></a>2. 建立深度樣板檢視
 
 除了建立轉譯目標檢視之外，我們也會建立深度樣板檢視。 深度樣板檢視可以讓 Direct3D 有效地將較靠近相機的物件轉譯在離相機較遠的物件前面。 我們必須先建立深度樣板緩衝區，才能建立深度樣板緩衝區的檢視。 我們會填入一個 [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 來描述深度樣板緩衝區，然後呼叫 [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) 來建立深度樣板緩衝區。 為了建立深度樣板檢視，我們會填入一個 [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) 來描述深度樣板檢視，並將深度樣板檢視描述和深度樣板緩衝區傳送給 [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507)。
 
@@ -109,7 +116,7 @@ private:
             );
 ```
 
-### 3. 更新視窗的透視
+### <a name="3-updating-perspective-with-the-window"></a>3. 更新視窗的透視
 
 我們會根據視窗大小來更新常數緩衝區的透視投影參數。 我們會將參數修正成 70 度視野搭配 0.01 到 100 的深度範圍。
 
@@ -142,7 +149,7 @@ private:
             );
 ```
 
-### 4. 使用色彩元素建立頂點和像素著色器
+### <a name="4-creating-vertex-and-pixel-shaders-with-color-elements"></a>4. 使用色彩元素建立頂點和像素著色器
 
 在這個 app 中，我們會建立比先前[建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)教學課程中所述還要複雜的頂點和像素著色器。 這個 app 的頂點著色器會將每個頂點位置轉換成投影空間，並將頂點色彩傳送給像素著色器。
 
@@ -332,7 +339,7 @@ private:
         
 ```
 
-### 5.旋轉及繪製立方體並呈現轉譯的影像
+### <a name="5-rotating-and-drawing-the-cube-and-presenting-the-rendered-image"></a>5.旋轉及繪製立方體並呈現轉譯的影像
 
 我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 **rotationY** 內嵌函式 (BasicMath.h) 搭配一個旋轉量，以設定將會把立方體的模型矩陣繞著 Y 軸旋轉的值。 然後我們會呼叫 [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) 來更新常數緩衝區並旋轉立方體模型。 我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，以將轉譯目標指定為輸出目標。 在這個 **OMSetRenderTargets** 呼叫中，我們會傳送深度樣板檢視。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 來將轉譯目標清除成純藍色，並且呼叫 [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) 來清除深度緩衝區。
 
@@ -439,7 +446,7 @@ private:
                 );
 ```
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 
 我們在基本型別上使用了深度、透視、色彩及其他效果。
@@ -454,10 +461,5 @@ private:
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -5,9 +5,16 @@ title: "捲軸的指導方針"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 8ead56e84e21aaf5005530ed0509efa9440bce59
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ffa13b2bfc89a94370beee7fa47372f948c3f700
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="scroll-bars"></a>捲軸
@@ -119,9 +126,4 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 
 **適用於開發人員 (XAML)**
 * [**ScrollViewer 類別**](https://msdn.microsoft.com/library/windows/apps/br209527)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

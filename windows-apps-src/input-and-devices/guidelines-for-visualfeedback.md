@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 00d05638de0080a6df2e5e0d971caaea424fd6ef
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -68,7 +69,7 @@ ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
 
 **框線屬性**
 
-高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線「外」**。 次要框線的粗細為 **1px**，圍繞在主要框線*「內」*。
+高可見度焦點視覺效果有兩個部分︰主要框線和次要框線。 主要框線的粗細為 **2px**，圍繞在次要框線*「外」*。 次要框線的粗細為 **1px**，圍繞在主要框線*「內」*。
 ![高可見度焦點視覺效果紅線](images/FocusRectRedlines.png)
 
 若要變更框線類型 (主要或次要) 的粗細，請分別使用 **FocusVisualPrimaryThickness** 或 **FocusVisualSecondaryThickness**︰
@@ -136,9 +137,4 @@ ms.openlocfilehash: ab7a6cfabb98eaf841849f5045e7ebce1ec86d65
  
 
  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

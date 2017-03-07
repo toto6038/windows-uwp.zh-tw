@@ -3,14 +3,21 @@ author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: "感應器"
 description: "感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9a7c1c5e4352f80aee65cd828f8113ac0bd35d49
+ms.lasthandoff: 02/07/2017
 
 ---
-# 感應器
+# <a name="sensors"></a>感應器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。 這些感應器提供獨特的輸入形式 (例如透過裝置的動作來排列螢幕上的字元，或模擬在駕駛艙中以及將裝置當成方向盤操縱)，有助您提高遊戲、擴增實境應用程式或公用應用程式的實用性與互動性。
@@ -32,7 +39,7 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 | [使用光感應器](use-the-light-sensor.md)             | 了解如何使用周遭環境光感應器來偵測光線的變化。 |
 | [使用方向感應器](use-the-orientation-sensor.md) | 了解如何使用方向感應器來判斷裝置方向。|
 
-## 感應器批次處理
+## <a name="sensor-batching"></a>感應器批次處理
 
 某些感應器支援批次處理的概念。 這取決於使用者所用的感應器。 當感應器執行批次處理時，會根據指定的時間間隔收集多個資料點，然後一次傳送所有的資料。 某些感應器開始讀取數據後，一有結果便會立即回報，這和此處介紹的感應器不同。 請參閱下圖，您可以了解資料的收集和傳送方式，一開始是常規的資料傳送，然後是批次方式的資料傳送。
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 感應器使用批次報告時，呼叫 [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) 即可清除目前的批次資料，然後開始新的延遲時間。
 
-## 加速計
+## <a name="accelerometer"></a>加速計
 
 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) 感應器可測量裝置沿著 X 軸、Y 軸及 Z 軸的重力值，很適合簡單動作應用程式。 請注意，所謂的重力值包括因重力而產生的加速度。 如果裝置在桌面上的 **FaceUp** 為 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)，加速計的 Z 軸讀數就是 -1 G。 因此，加速計不見得只會測量座標加速度 (速度的變動率)。 當使用加速計時，請務必區別重力向量與重力的區隔，以及線性加速向量與動作的區隔。 請注意，靜止裝置的重力向量應該正規化為 1。
 
@@ -60,19 +67,19 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 可使用加速計感應器的應用程式，包括以您傾斜裝置的方向 (重力向量) 讓彈珠在螢幕上滾動的遊戲。 這類功能會密切對應到 [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 的功能，且也可利用該感應器或結合使用俯仰與翻滾動作來完成。 使用加速計的重力向量，為裝置傾斜提供輕鬆以數學方式操控的向量，可稍微簡化此動作。 另一個範例是使用者在空中揮動裝置 (線性加速向量) 時，讓鞭子發出霹啪聲的 app。
 
-## 活動感應器
+## <a name="activity-sensor"></a>活動感應器
 
 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器會判斷連接至感應器的裝置目前的狀態。 此感應器通常用於健身 app，可在攜帶裝置的使用者跑步或步行時進行追蹤。 若想了解此感應器 API 可偵測到哪些可能的活動，請參閱 [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128)。
 
-## 高度表
+## <a name="altimeter"></a>高度表
 
 [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) 感應器會傳回一個值，指出感應器的高度。 這可讓您追蹤距離海平面的高度變化 (以公尺為單位)。 舉例來說，會在跑步期間追蹤高度變化以計算卡路里燃燒量的跑步 app，就是可能會使用此感應器的 app 之一。 在此案例中，這個感應器的資料可與 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器相結合，以提供更精確的追蹤資訊。
 
-## 氣壓計
+## <a name="barometer"></a>氣壓計
 
 [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) 感應器可讓 app 取得氣壓計讀數。 天氣 app 可使用這項資訊提供目前的氣壓。 這可以用來提供更詳細的資訊，並預測可能的天氣變化。
 
-## 指南針
+## <a name="compass"></a>指南針
 
 [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) 感應器可根據地球水平面傳回磁北的 2D 指向。 指南針感應器不應該用來判斷特定裝置指向，或用來代表 3D 空間中的任何事物。 地理功能會導致指向形成自然偏角，因此有些系統同時支援 [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) 與 [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx)。 請想想您的應用程式偏好哪一種；但請記住，並非所有系統都會回報真北值。 結合陀螺儀與磁力儀 (測量磁力強度的裝置) 感應器兩者的資料以產生指南針朝向，而其淨影響就是可穩定資料 (磁場強度會因電力系統設備而極不穩定)。
 
@@ -80,7 +87,7 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 想要顯示羅盤或巡覽地圖的 app，通常都會使用指南針感應器。
 
-## 陀螺儀
+## <a name="gyrometer"></a>陀螺儀
 
 [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) 感應器可測量沿著 X 軸、Y 軸及 Z 軸的角速度。 這在簡單動作應用程式中非常有用，因為這些應用程式不受裝置指向影響，但會受到裝置以不同速度旋轉所影響。 陀螺儀會因為資料中的雜訊或沿著一或多軸的常數偏差而受到影響。 您應該查詢加速計以確認裝置是否正在移動，以判斷陀螺儀是否受到偏差所影響，然後據此在應用程式中加以補償。
 
@@ -88,7 +95,7 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 使用陀螺儀感應器的 app 範例，就是將裝置猛然快速旋轉來旋轉輪盤的遊戲。
 
-## 傾角計
+## <a name="inclinometer"></a>傾角計
 
 [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 感應器可指定裝置的偏擺、俯仰及翻滾的值，最適合以裝置在空間之定位方式為基準的應用程式。 俯仰與翻滾是採用加速計的重力向量以及整合陀螺儀提供的資料所衍生。 偏擺則是以磁力儀與陀螺儀 (類似指南針朝向) 的資料建立。 傾角計以易於解讀和理解的方式提供高階指向資料。 當您需要裝置指向但不需要操控感應器資料時，可以使用傾角計。
 
@@ -96,11 +103,11 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 本身會變更檢視方式以符合裝置指向的應用程式，都可以使用傾角計感應器。 再者，本身會根據裝置偏擺、俯仰及翻滾而顯示飛機動作的 app，也可以使用傾角計讀數。
 
-## 光感應器
+## <a name="light-sensor"></a>光感應器
 
 [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) 感應器可判斷感應器周圍的周遭環境光線。 這可讓 app 判斷裝置周圍的光線設定何時有所變化。 例如，平板電腦的使用者可能會在晴天從室內移到室外去。 智慧型 app 可以使用此值，來提高背景與呈現的字型之間的對比。 如此，即使是在較亮的室外設定下也可閱讀內容。
 
-## 方向感應器
+## <a name="orientation-sensor"></a>方向感應器
 
 裝置指向可透過四元數與旋轉矩陣來表達。 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 提供的高精確度可用來判斷裝置在空間中相對於絕對指向的定位方式。 **OrientationSensor** 資料衍生自加速計、陀螺儀及磁力儀。 因此，傾角計感應器與指南針感應器都可以從四元數的值衍生。 四元數與旋轉矩陣對於高階數學操作很有助益，通常用於圖形程式設計。 因為許多轉換方式都是以四元數與旋轉矩陣為基礎，所以使用複雜操作的應用程式應該會偏好使用方向感應器。
 
@@ -108,27 +115,22 @@ ms.openlocfilehash: 73ee42a275d0c0f0a08ddf19ddde4eabd21a7191
 
 方向感應器通常用於高階擴增實境 app，這種 app 會根據裝置背面所指的方向，對您的周遭環境繪製覆疊。
 
-## 計步器
+## <a name="pedometer"></a>計步器
 
 [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) 感應器會追蹤攜帶連線裝置的使用者行走的步數。 感應器依設定會追蹤一段指定時間內的步數。 有些健身 app 會追蹤使用者的行走步數，以幫助他們設定並達到各種目標。 後續可以收集並儲存這項資訊，以顯示一段時間的進度。
 
-## 鄰近性感測器
+## <a name="proximity-sensor"></a>鄰近性感測器
 
 [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) 感應器可用來指出感應器是否偵測到物件。 除了可判斷物件是否在裝置的範圍內、鄰近性感測器也可判斷與偵測的物件之間相隔多少距離。 舉例來說，想要在使用者進入指定範圍時從睡眠狀態啟動的 app，就可能會使用此感應器。 在鄰近性感測器偵測到物件之前，裝置會處於低耗電的睡眠狀態，之後則可進入較活躍的狀態。
 
-## 簡單方向
+## <a name="simple-orientation"></a>簡單方向
 
 [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) 可偵測特定裝置目前的象限指向，以及它面朝上或朝下。 這有六種可能的 [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) 狀態 (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
 根據裝置是平行於地面或與地面成直角而變更其顯示方式的閱讀程式，都可以使用 SimpleOrientationSensor 的值來判斷裝置的手持姿勢。
 
-## 範例
+## <a name="samples"></a>範例
 
 如需示範使用其他幾個感應器的範例，請參閱 [Windows 感應器範例](http://go.microsoft.com/fwlink/?LinkID=616041)。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

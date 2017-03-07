@@ -3,13 +3,20 @@ author: mtoepke
 title: "用來進行遊戲程式設計的 Visual Studio 工具"
 description: "Visual Studio 中提供的 DirectX 特定工具概觀。"
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, visual studio, 工具, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5f5c1ef45dd476565d302ef10f8d47ab2b819993
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 用來進行遊戲程式設計的 Visual Studio 工具
+# <a name="visual-studio-tools-for-game-programming"></a>用來進行遊戲程式設計的 Visual Studio 工具
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -24,7 +31,7 @@ ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
 
 本主題將提供這些圖形工具的概觀。
 
-## 影像編輯器
+## <a name="image-editor"></a>影像編輯器
 
 
 使用影像編輯器來利用 DirectX 所使用的豐富紋理與影像格式。 影像編輯器支援下列格式：
@@ -38,18 +45,18 @@ ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
 -   .tif、.tiff
 -   .tga
 
-建立[組建自訂檔](#custom)，在建置期間將這些檔案新增到 .dds 檔案。
+建立[組建自訂檔](#build-customizations-for-3d-assets)，在建置期間將這些檔案新增到 .dds 檔案。
 
 如需詳細資訊，請參閱[使用紋理與影像](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)。
 
-> **注意** 影像編輯器並非用來取代功能完整的影像編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **注意**  影像編輯器並非用來取代功能完整的影像編輯 app，但適合用於許多簡單的檢視與編輯案例。
 
  
 
-## 模型編輯器
+## <a name="model-editor"></a>模型編輯器
 
 
-您可以使用模型編輯器，從頭開始建立基本的 3D 模型，或者從功能完整的 3D 模型工具中檢視和修改更複雜的 3D 模型。 模型編輯器支援數個在 DirectX 應用程式開發時使用的 3D 模型格式。 您可以建立[組建自訂檔](#custom)，在建置期間將這些檔案轉換成 .cmo 檔案。
+您可以使用模型編輯器，從頭開始建立基本的 3D 模型，或者從功能完整的 3D 模型工具中檢視和修改更複雜的 3D 模型。 模型編輯器支援數個在 DirectX 應用程式開發時使用的 3D 模型格式。 您可以建立[組建自訂檔](#build-customizations-for-3d-assets)，在建置期間將這些檔案轉換成 .cmo 檔案。
 
 -   .fbx
 -   .dae
@@ -61,11 +68,11 @@ ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
 
 如需詳細資訊，請參閱[使用 3D 模型](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)。
 
-> **注意** 模型編輯器並非用來取代功能完整的模型編輯 app，但適合用於許多簡單的檢視與編輯案例。
+> **注意**  模型編輯器並非用來取代功能完整的模型編輯 app，但適合用於許多簡單的檢視與編輯案例。
 
  
 
-## 著色器設計工具
+## <a name="shader-designer"></a>著色器設計工具
 
 
 即使您不了解 HLSL 程式設計，也可以使用著色器設計工具為您的遊戲或應用程式建立自訂的視覺效果。
@@ -80,7 +87,7 @@ ms.openlocfilehash: 59fe007601d16f6586ec52c0026e161ad6350a1e
 -   .cso (位元組程式碼)
 -   .h (HLSL 位元組程式碼陣列)
 
-建立[組建自訂檔](#custom)，以在建置期間將這其中的所有格式轉換成 .cso 檔案。
+建立[組建自訂檔](#build-customizations-for-3d-assets)，以在建置期間將這其中的所有格式轉換成 .cso 檔案。
 
 以下為著色器編輯器所匯出的部分 HLSL 程式碼。 這只是 Lambert 光源節點的程式碼。
 
@@ -108,12 +115,12 @@ float3 LambertLighting(
 
 如需相關資訊，請參閱[使用著色器](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx)。
 
-## 適用於 3D 資產的組建自訂
+## <a name="build-customizations-for-3d-assets"></a>適用於 3D 資產的組建自訂
 
 
 您可以將組建自訂新增到專案，如此一來，Visual Studio 便能將資源轉換成可使用的格式。 在此之後，您就可以將資產載入 App， 並藉由建立並填入 DirectX 資源 (就像您在任何其他 DirectX App 中所做的動作) 來使用它們。
 
-若要新增組建自訂，您可以在 \[方案總管\] 中以滑鼠右鍵按一下專案，然後選取 \[組建自訂\]。 您可以將下列組建自訂類型新增到專案。
+若要新增組建自訂，您可以在 **\[方案總管\]** 中以滑鼠右鍵按一下專案，然後選取 **\[組建自訂\]**。 您可以將下列組建自訂類型新增到專案。
 
 -   影像內容管線會取得影像檔做為輸入並輸出 DirectDraw 表面 (.dds) 檔案。
 -   網格內容管線會取得網格檔 (例如 .fbx) 並輸出 .cmo 網格檔。
@@ -121,7 +128,7 @@ float3 LambertLighting(
 
 如需詳細資訊，請參閱[在遊戲或應用程式中使用 3D 資產](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)。
 
-## 偵錯 DirectX 圖形
+## <a name="debugging-directx-graphics"></a>偵錯 DirectX 圖形
 
 
 Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸如下列項目的偵錯：
@@ -138,7 +145,7 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 
 如需詳細資訊，請參閱[偵錯 DirectX 圖形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -148,10 +155,5 @@ Visual Studio 提供圖形特定的偵錯工具。 使用這些工具進行諸�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

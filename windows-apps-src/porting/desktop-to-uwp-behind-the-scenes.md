@@ -2,13 +2,21 @@
 author: awkoren
 Description: "本文章提供傳統型至 UWP 橋接器背後運作方式的深入解析。"
 title: "傳統型橋接器的幕後作業"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 translationtype: Human Translation
-ms.sourcegitcommit: fe96945759739e9260d0cdfc501e3e59fb915b1e
-ms.openlocfilehash: c261f40734ab40475ca3a8e0b7c3bea7b64afacd
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e9a26e201d5059a0e5f7d41f6f11afbb41549596
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 傳統型橋接器的幕後作業
+# <a name="behind-the-scenes-of-the-desktop-bridge"></a>傳統型橋接器的幕後作業
 
 本文章提供傳統型至 UWP 橋接器背後運作方式的深入解析。
 
@@ -16,13 +24,13 @@ ms.openlocfilehash: c261f40734ab40475ca3a8e0b7c3bea7b64afacd
 
 已轉換的應用程式套件為桌面專用、完全信任的應用程式，並且無法虛擬化或沙箱化。 這可讓它們以和傳統桌面應用程式的相同方式與其他 App 互動。
 
-## 安裝 
+## <a name="installation"></a>安裝 
 
 應用程式套件會安裝於 *C:\Program Files\WindowsApps\package_name* 之下，可執行檔名為 *app_name.exe*。 每個套件資料夾都包含資訊清單 (名稱為 AppxManifest.xml)，其中包含已轉換 App 的特殊 XML 命名空間。 該資訊清單檔案內部是一個 ```<EntryPoint>``` 項目，它會參考完全信任的 App。 啟動該 App 時，它不會在應用程式容器內執行，而是改為以使用者身分執行，就如其平常所做的一樣。
 
 部署之後，套件檔案會由作業系統標示為唯讀並嚴密地鎖定。 如果這些檔案遭到竄改，Windows 會防止這些 App 啟動。 
 
-## 檔案系統
+## <a name="file-system"></a>檔案系統
 
 為了包含應用程式狀態，橋接器會嘗試擷取 App 對 AppData 所做的變更。 所有寫入到使用者 [AppData] 資料夾 (例如 *C:\Users\user_name\AppData*) 的動作 (包括建立、刪除和更新) 都會在寫入時複製到私人的各個使用者、各個 App 位置。 這會產生已轉換的 App 正在編輯實際 AppData 的錯覺，而該 App 實際上修改的是私人複本。 透過這種方式將寫入重新導向，系統就可以追蹤 App 執行的所有檔案修改。 這可讓系統在解除安裝 App 時清理那些檔案，減少系統「垃圾」，並提供使用者更好的 App 移除體驗。 
 
@@ -30,7 +38,7 @@ ms.openlocfilehash: c261f40734ab40475ca3a8e0b7c3bea7b64afacd
 
 不允許在已轉換的應用程式套件中對檔案/資料夾進行寫入。 只要使用者具有權限，橋接器就會略過並允許對不屬於套件的檔案和資料夾進行的寫入作業。
 
-### 常見作業
+### <a name="common-operations"></a>常見作業
 
 這個簡短的參考資料表說明了常見的檔案系統作業及橋接器處理作業的方式。 
 
@@ -41,7 +49,7 @@ ms.openlocfilehash: c261f40734ab40475ca3a8e0b7c3bea7b64afacd
 在套件內部寫入 | 不允許。 套件是唯讀的。 | 不允許在 *C:\Program Files\WindowsApps\package_name* 之下寫入。
 在套件外部寫入 | 橋接器會略過。 若使用者具有權限則會允許。 | 如果套件不包含 *C:\Program Files\WindowsApps\package_name\VFS\SystemX86\foo.dll* 且使用者具有權限，就會允許寫入到 *C:\Windows\System32\foo.dll*。
 
-### 已封裝的 VFS 位置
+### <a name="packaged-vfs-locations"></a>已封裝的 VFS 位置
 
 下表會顯示其中做為套件一部分傳送的檔案會在 App 適用的系統上重疊。 您的 App 會認為這些檔案位於列出的系統位置中，但事實上它們是在 *C:\Program Files\WindowsApps\package_name\VFS* 內部重新導向的位置中。 FOLDERID 位置是來自 [**KNOWNFOLDERID**](https://msdn.microsoft.com/library/windows/desktop/dd378457.aspx) 常數。
 
@@ -62,7 +70,7 @@ FOLDERID_System\driverstore | AppVSystem32Driverstore | x86、amd64
 FOLDERID_System\logfiles | AppVSystem32Logfiles | x86、amd64 
 FOLDERID_System\spool | AppVSystem32Spool | x86、amd64 
 
-## 登錄
+## <a name="registry"></a>登錄
 
 橋接器處理登錄的方式與檔案系統類似。 已轉換的應用程式套件包含 registry.dat 檔案，它會做為實際登錄中 *HKLM\Software* 的邏輯對等項目。 在執行階段，此虛擬登錄會將此登錄區的內容合併至原生系統登錄區，以提供兩者的單一檢視。 例如，如果 registry.dat 包含單一機碼 "Foo"，則執行階段的 *HKLM\Software* 讀取也會顯示包含 "Foo" (除了所有原生系統機碼之外)。 
 
@@ -72,7 +80,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86、amd64
 
 套件升級期間的所有寫入均會保留，並且只有在 App 完整移除時才會刪除。 
 
-### 常見作業
+### <a name="common-operations"></a>常見作業
 
 這個簡短的參考資料表說明了常見的登錄作業及橋接器處理作業的方式。 
 
@@ -83,12 +91,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86、amd64
 在套件內部寫入。 | 不允許。 套件是唯讀的。 | 若相對應的機碼/值存在於套件登錄區中，就不允許在 *HKLM\Software* 之下寫入。
 在套件外部寫入 | 橋接器會略過。 若使用者具有權限則會允許。 | 只要套件登錄區中沒有相對應的機碼/值存在，且使用者擁有正確的存取權限，就會允許在 *HKLM\Software* 之下寫入。
 
-## 解除安裝 
+## <a name="uninstallation"></a>解除安裝 
 
 當套件是由使用者解除安裝時，會移除所有位於 *C:\Program Files\WindowsApps\package_name* 之下的檔案與資料夾，以及橋接器所擷取對 AppData 或登錄所進行的任何重新導向寫入。 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

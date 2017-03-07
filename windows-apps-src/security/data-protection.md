@@ -1,18 +1,25 @@
 ---
 title: "資料保護"
-description: "本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP app 中的數位資料。"
+description: "本文說明如何使用 Windows.Security.Cryptography.DataProtection 命名空間中的 DataProtectionProvider 類別，來加密和解密 UWP 應用程式中的數位資料。"
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b023cdc0671195f7c32d2e65568d5f947ecf4144
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 資料保護
+# <a name="data-protection"></a>資料保護
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文說明如何使用 [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 命名空間中的 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 類別，來加密和解密 UWP 應用程式中的數位資料。
 
@@ -25,7 +32,7 @@ ms.openlocfilehash: 2a3be202f6754c452185aecbae3b259e09bd3fd3
 
 若要保護資料，當您建立 [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) 物件時，必須在呼叫 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 或 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 之前先指定保護描述元。 下列範例顯示可能的範例保護描述元。
 
-## 保護靜態資料
+## <a name="protecting-static-data"></a>保護靜態資料
 
 
 下列範例示範如何使用 [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) 和 [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) 方法，用非同步方式來保護目前使用者 SID 的靜態資料。
@@ -110,7 +117,7 @@ namespace SampleProtectAsync
 }
 ```
 
-## 保護串流資料
+## <a name="protecting-stream-data"></a>保護串流資料
 
 
 下列範例示範如何使用 [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) 和 [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) 方法，以非同步方式來保護目前使用者 SID 的串流資料。
@@ -262,8 +269,3 @@ namespace SampleProtectStreamAsync
     }
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

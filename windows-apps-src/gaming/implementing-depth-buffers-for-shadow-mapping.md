@@ -3,13 +3,20 @@ author: mtoepke
 title: "逐步解說 -- 使用 Direct3D 11 中的深度緩衝區實作陰影體"
 description: "此逐步解說示範如何在所有 Direct3D 功能層級的裝置上使用 Direct3D 11，轉譯使用深度圖的陰影體。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX, 陰影體, 深度緩衝區, DirectX 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體
+# <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -49,7 +56,7 @@ ms.openlocfilehash: a323c299d588cdcff7b83d538a705d64207c96b2
 
  
 
-## 從陰影貼圖應用程式移植到 Direct3D 9 傳統型應用程式
+## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>從陰影貼圖應用程式移植到 Direct3D 9 傳統型應用程式
 
 
 Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在，您可以將轉譯程式碼與陰影體移轉至 DirectX 11，而 Direct3D 11 轉譯器將降級以相容於功能層級 9 的裝置。 此逐步解說示範任何 Direct3D 11 應用程式或遊戲如何使用深度測試來實作傳統的陰影體。 程式碼包含下列程序：
@@ -62,12 +69,12 @@ Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在�
 
 完成此逐步解說後，您應該就會熟悉如何在與功能層級 9\_1 與更高版本相容的 Direct3D 11 中，實作基本的相容陰影體技術。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 您應該[為通用 Windows 平台 (UWP) DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要用到範本，但是需要 Microsoft Visual Studio 2015 來建置此逐步解說中的程式碼範例。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 **Direct3D**
@@ -86,10 +93,5 @@ Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

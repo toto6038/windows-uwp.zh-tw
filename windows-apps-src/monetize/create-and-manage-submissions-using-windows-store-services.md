@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 市集提交 API 以程式設計方式為登錄到您 Windows 開發人員中心帳戶的 App 建立和管理提交。"
 title: "使用 Windows 市集服務建立和管理提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -22,11 +29,13 @@ ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 
 <span id="not_supported" />
->**重要**
+>**重要事項**
 
-> * 這個 API 僅供已被授權使用 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 [意見反應]，選取意見反應區域的 [提交 API]，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
+> * 這個 API 僅供已被授權使用 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
 <br/><br/>
-> * 這個 API 無法用於使用 2016 年 8 月開發人員中心儀表板引入的某些功能的 App 或附加元件，包括 (但不限於) 強制性的 App 更新和市集管理的消耗性附加元件。 如果您將 Windows 市集提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用儀表板管理 App 或附加元件的提交。
+>* 如果您使用此 API 為應用程式、正式發行前小眾測試版或附加元件建立提交，請務必只使用 API 為提交進行其他變更，而不要使用開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+<br/><br/>
+> * 這個 API 無法用於使用 2016 年 8 月開發人員中心儀表板引入之某些功能的應用程式或附加元件，包括 (但不限於) 強制性的應用程式更新和市集管理的消耗性附加元件。 如果您將 Windows 市集提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用儀表板管理 App 或附加元件的提交。
 
 
 <span id="prerequisites" />
@@ -57,13 +66,13 @@ ms.openlocfilehash: 8467cddd5eec2348cd35f4f5dc1564b47813a6ca
 
 >**注意**&nbsp;&nbsp;您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
-1.  在開發人員中心，移至您的 [帳戶設定]，按一下 [管理使用者]，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在 [管理使用者] 頁面中，按一下 [新增 Azure AD 應用程式]，新增代表您要用來存取開發人員中心帳戶提交之 App 或服務的 Azure AD 應用程式，並指派 [管理員] 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 \[新增 Azure AD 應用程式\] 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 \[新增 Azure AD 應用程式\] 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來存取開發人員中心帳戶提交之 App 或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
-3.  返回 \[管理使用者\] 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 \[租用戶識別碼\] 和 \[用戶端識別碼\] 的值。
+3.  返回 **\[管理使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
-4. 按一下 \[加入新的金鑰\]。 在下列畫面中，複製 \[金鑰\] 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中管理金鑰的相關資訊。
+4. 按一下 **\[加入新的金鑰\]**。 在下列畫面中，複製 **\[金鑰\]** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中管理金鑰的相關資訊。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>步驟 2：取得 Azure AD 存取權杖
@@ -111,17 +120,19 @@ grant_type=client_credentials
 * [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注意**&nbsp;&nbsp;：除了列示於上方的程式碼範例，我們也提供在 Windows 市集中提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+
 ## <a name="troubleshooting"></a>疑難排解
 
 | 問題      | 解決方法                                          |
 |---------------|---------------------------------------------|
-| 從 PowerShell 呼叫 Windows 市集提交 API 之後，如果您使用 [ConvertFrom-Json](https://technet.microsoft.com/en-us/library/hh849898.aspx) Cmdlet 從 JSON 格式轉換為 PowerShell 物件，然後使用 [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) Cmdlet 轉換回 JSON 格式，API 的回應資料會損毀。 |  [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) Cmdlet 的 *-Depth* 參數預設是設為 2 層物件，這對於 Windows 市集提交 API 傳回的大部分 JSON 物件來說太淺。 當您呼叫 [ConvertTo-Json](https://technet.microsoft.com/en-us/library/hh849922.aspx) Cmdlet 時，請將 *-Depth* 參數設為較大的數字，例如 20。 |
+| 從 PowerShell 呼叫 Windows 市集提交 API 之後，如果您使用 [ConvertFrom-Json](https://technet.microsoft.com/library/hh849898.aspx) Cmdlet 從 JSON 格式轉換為 PowerShell 物件，然後使用 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) Cmdlet 轉換回 JSON 格式，API 的回應資料會損毀。 |  [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) Cmdlet 的 *-Depth* 參數預設是設為 2 層物件，這對於 Windows 市集提交 API 傳回的大部分 JSON 物件來說太淺。 當您呼叫 [ConvertTo-Json](https://technet.microsoft.com/library/hh849922.aspx) Cmdlet 時，請將 *-Depth* 參數設為較大的數字，例如 20。 |
 
 ## <a name="additional-help"></a>其他說明
 
 如果您有 Windows 市集提交 API 的相關問題，或需要使用這個 API 管理提交的協助，請使用下列資源︰
 
-* 在我們的[論壇](https://social.msdn.microsoft.com/Forums/windowsapps/en-us/home?forum=wpsubmit)發問。
+* 在我們的[論壇](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)發問。
 * 造訪我們的[支援頁面](https://developer.microsoft.com/windows/support)並提出開發人員中心儀表板其中一個協助支援選項。 如果系統提示您選擇問題類型以及類別，請分別選擇 **App 提交和認證**以及**提交 App**。  
 
 ## <a name="related-topics"></a>相關主題
@@ -133,9 +144,4 @@ grant_type=client_credentials
 * [管理套件正式發行前小眾測試版](manage-flights.md)
 * [管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
  
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

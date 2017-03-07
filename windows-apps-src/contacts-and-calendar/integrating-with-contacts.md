@@ -1,15 +1,23 @@
 ---
 author: normesta
-description: "說明如何在連絡人卡片中動作的旁邊新增您的 app"
+description: "說明如何在連絡人卡片中動作的旁邊新增您的應用程式"
 MSHAttr: PreferredLib:/library/windows/apps
-title: "將 App 連結到連絡人卡片上的動作"
+title: "將應用程式連結到連絡人卡片上的動作"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 連絡人, 連絡人卡片, 註解"
+ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 translationtype: Human Translation
-ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
-ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 將 App 連結到連絡人卡片上的動作
+# <a name="connect-your-app-to-actions-on-a-contact-card"></a>將應用程式連結到連絡人卡片上的動作
 
 您的 app 可以顯示在連絡人卡片或迷你連絡人卡片上的動作旁邊。 使用者可以選擇您的 app 來執行動作，例如開啟個人資料頁面、撥打電話，或傳送訊息。
 
@@ -19,11 +27,11 @@ ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
 
 如需更完整的範例，請參閱[連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)。
 
-## 尋找或建立連絡人
+## <a name="find-or-create-a-contact"></a>尋找或建立連絡人
 
 如果您的 app 可協助連絡人與其他人聯繫，請搜尋 Windows 以尋找連絡人，然後為他們加上註解。 如果您的 app 可管理連絡人，您可以將他們新增到 Windows 連絡人清單，然後為他們加上註解。
 
-### 尋找連絡人
+### <a name="find-a-contact"></a>尋找連絡人
 
 使用姓名、電子郵件地址或電話號碼來尋找連絡人。
 
@@ -37,7 +45,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### 建立連絡人
+### <a name="create-a-contact"></a>建立連絡人
 
 如果您的 app 比較像通訊錄，請建立連絡人，然後將他們新增到連絡人清單。
 
@@ -71,7 +79,7 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## 使用註解來標記每個連絡人
+## <a name="tag-each-contact-with-an-annotation"></a>使用註解來標記每個連絡人
 
 使用您的 app 可以執行 (例如：視訊通話與傳訊) 的動作 (作業) 清單來標記每個連絡人。
 
@@ -101,7 +109,7 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## 登錄每項作業
+## <a name="register-for-each-operation"></a>登錄每項作業
 
 在您的封裝資訊清單中，登錄您在註解中列出的每項作業。
 
@@ -135,7 +143,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 ![資訊清單設計工具的 [宣告] 索引標籤](images/manifest-designer-protocols.png)
 
-## 在連絡人卡片中動作的旁邊尋找您的 app
+## <a name="find-your-app-next-to-actions-in-a-contact-card"></a>在連絡人卡片中動作的旁邊尋找您的 app
 
 開啟連絡人 app。 您的 app 會顯示在您於註解和封裝資訊清單中指定的每個動作 (作業) 旁邊。
 
@@ -143,7 +151,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
 
 如果使用者針對某項動作選擇您的 app，它就會在使用者下次開啟連絡人卡片時顯示為該動作的預設 app。
 
-## 在迷你連絡人卡片中動作的旁邊尋找您的 app
+## <a name="find-your-app-next-to-actions-in-a-mini-contact-card"></a>在迷你連絡人卡片中動作的旁邊尋找您的 app
 
 在迷你連絡人卡片中，您的 app 會顯示在代表動作的索引標籤中。
 
@@ -174,9 +182,9 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 就像連絡人卡片一樣，每個索引標籤都會記住使用者上次使用的 app，以方便使用者繼續使用您的 app。
 
-## 在使用者於連絡人卡片中選取您的 app 時執行作業
+## <a name="perform-operations-when-users-select-your-app-in-a-contact-card"></a>在使用者於連絡人卡片中選取您的 app 時執行作業
 
-複寫您 **App.cs** 檔案中的 [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) 方法，並將使用者導覽至您 app 中的頁面。 [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)會說明這樣做的其中一種方法。
+覆寫您 **App.cs** 檔案中的 [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) 方法，並將使用者導覽至您應用程式中的頁面。 [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)會說明這樣做的其中一種方法。
 
 在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
 
@@ -209,9 +217,4 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 ```args.uri.scheme``` 屬性包含作業的名稱，```args.uri.Query``` 屬性則包含使用者的識別碼。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

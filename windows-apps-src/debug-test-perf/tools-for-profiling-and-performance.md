@@ -2,13 +2,20 @@
 author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: "分析和效能的工具"
-description: "Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) 應用程式的效能。"
+description: "Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) app 的效能。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5bbd14fb53cae67bbb827f94e695b2703e07fc34
-ms.openlocfilehash: 3d0cf5f983efdee116bcf8b87398fe376efca3c6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
+ms.lasthandoff: 02/07/2017
 
 ---
-# 分析和效能的工具
+# <a name="tools-for-profiling-and-performance"></a>分析和效能的工具
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -26,10 +33,5 @@ Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) App �
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows Performance Analyzer (WPA) 包含在 Windows 評定及部署套件 (Windows ADK) 中，這項工具會針對 Windows Performance Recorder (WPR)、Xperf 或在評定平台中執行的評定所記錄的「Windows 事件追蹤 (ETW)」事件，建立圖形和資料表格。 WPA 可以開啟任何事件追蹤記錄 (ETL) 檔案進行分析。 |
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

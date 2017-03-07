@@ -1,25 +1,32 @@
 ---
 author: TylerMSFT
-title: "啟動 Windows 地圖 app"
+title: "啟動 Windows 地圖應用程式"
 description: "了解如何從您的應用程式啟動 Windows 地圖應用程式。"
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: a2f09aa510c9c3db6b8eca25f4c8cee98fa0eb46
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c9c359fd424b4c9526ebfc610adc7097bb83cbda
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 啟動 Windows 地圖 app
+# <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題描述 **bingmaps:**、**ms-drive-to:**、**ms-walk-to:** 和 *ms-settings:* 統一資源識別項 (URI) 配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
+了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題描述 **bingmaps:、ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 統一資源識別項 (URI) 配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
 
 **提示** 若要深入了解如何從您的應用程式啟動 Windows 地圖應用程式，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
-## URI 簡介
+## <a name="introducing-uris"></a>URI 簡介
 
 URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開啟 app。 就像您可以使用 **mailto:** 建立新的電子郵件，或使用 **http:** 開啟網頁瀏覽器一樣，您可以使用 **bingmaps:**、**ms-drive-to:** 和 **ms-walk-to:** 來開啟 Windows 地圖 app。
 
@@ -43,9 +50,9 @@ URI 配置可讓您按一下超連結 (或在 app 中以程式設計方式) 開�
 
 **&amp;param1=value1&amp;param2=value2 …**
 
-如需完整的可用參數清單，請參閱 [bingmaps:](#bingmaps)、[ms-drive-to:](#msdriveto) 和 [ms-walk-to:](#mswalkto) 參數參考。 本主題稍後也提供相關範例。
+如需完整的可用參數清單，請參閱 [bingmaps:](#bingmaps-param-reference)、[ms-drive-to:](#ms-drive-to-param-reference) 和 [ms-walk-to:](#ms-walk-to-param-reference) 參數參考。 本主題稍後也提供相關範例。
 
-## 從您的 app 啟動 URI
+## <a name="launch-a-uri-from-your-app"></a>從您的 app 啟動 URI
 
 
 若要從您的 app 啟動 Windows 地圖 app，請使用 **bingmaps:**、**ms-drive-to:** 或 **ms-walk-to:** URI 呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 方法。 下列範例會啟動與前一個範例中相同的 URI。 如需關於透過 URI 啟動 app 的詳細資訊，請參閱[啟動 URI 的預設 app](launch-default-app.md)。
@@ -62,12 +69,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 在這個範例中，會使用 [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) 類別確保 Windows 地圖 app 可啟動。
 
-## 顯示已知位置
-
+## <a name="display-known-locations"></a>顯示已知位置
 
 有數種方式可控制地圖中心點和縮放比例。 使用 *cp* (中心點) 和 *lvl* (縮放比例) 參數是最簡單的方法，而且會產生可預料的結果。 使用 *bb* 參數 (指定以緯度和經度值為界的區域) 較難預料，因為它會考量螢幕解析度，並根據所提供的座標決定地圖中心點和縮放比例。 當三個參數 (*bb*、*cp* 和 *lvl*) 都存在時，會忽略 *bb* 參數。
 
-若要控制檢視類型，請使用 *ss* (街景) 和 *sty* (樣式) 與參數。 *ss* 參數會將地圖放入街景檢視中。 *sty* 參數可讓您在道路、空照圖與 3D 檢視之間切換。 使用 3D 樣式時，可使用 *hdg*、*pit* 和 *rad* 參數來指定 3D 檢視。 *hdg* 會指定檢視的朝向、*pit* 會指定檢視的上下移動，而 *rad* 會指定在檢視中顯示的與中心點之間的距離。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps)。
+若要控制檢視類型，請使用 *ss* (街景) 和 *sty* (樣式) 與參數。 *ss* 參數會將地圖放入街景檢視中。 *sty* 參數可讓您在道路、空照圖與 3D 檢視之間切換。 使用 3D 樣式時，可使用 *hdg*、*pit* 和 *rad* 參數來指定 3D 檢視。 *hdg* 會指定檢視的朝向、*pit* 會指定檢視的上下移動，而 *rad* 會指定在檢視中顯示的與中心點之間的距離。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
 
 | URI 範例                                                                 | 結果                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -85,11 +91,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | 顯示太空針塔的街景檢視。                                                                                                                                                           |
 
  
+## <a name="display-search-results"></a>顯示搜尋結果
 
-## 顯示搜尋結果
-
-
-建議在執行商店搜尋時使用 *q* 參數，請儘可能使用具體的字詞，並將它與 *cp* 或 *where* 參數搭配使用以指定位置。 如果使用者尚未將其位置的使用權限提供給地圖 app，而且您也未指定商店搜尋的位置，可能會導致在國家/地區層級執行搜尋，而不會傳回有意義的結果。 搜尋結果會顯示在最適當的地圖檢視中，因此，除非需要設定 *lvl* (縮放比例)，否則建議您讓地圖 app 自行決定。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps)。
+建議在執行商店搜尋時使用 *q* 參數，請儘可能使用具體的字詞，並將它與 *cp* 或 *where* 參數搭配使用以指定位置。 如果使用者尚未將其位置的使用權限提供給地圖 app，而且您也未指定商店搜尋的位置，可能會導致在國家/地區層級執行搜尋，而不會傳回有意義的結果。 搜尋結果會顯示在最適當的地圖檢視中，因此，除非需要設定 *lvl* (縮放比例)，否則建議您讓地圖 app 自行決定。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
 
 | URI 範例                                                    | 結果                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -100,13 +104,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?q=coffee&amp;where=Seattle                              | 搜尋西雅圖市的咖啡廳。                                                                                                                 |
 
  
+## <a name="display-multiple-points"></a>顯示多個點
 
-## 顯示多個點
 
+使用 *collection* 參數可在地圖上顯示一組自訂的點。 如果有多個點，則會顯示點清單。 一個集合可以有多達 25 個點，並會依提供的順序列出。 集合的優先順序高於搜尋與路線指引要求。 如需關於此參數與其他參數的詳細資訊，請參閱[bingmaps: 參數參考](#bingmaps-param-reference)。
 
-使用 *collection* 參數可在地圖上顯示一組自訂的點。 如果有多個點，則會顯示點清單。 一個集合可以有多達 25 個點，並會依提供的順序列出。 集合的優先順序高於搜尋與路線指引要求。 如需關於此參數與其他參數的詳細資訊，請參閱[bingmaps: 參數參考](#bingmaps)。
-
-| URI 範例                                                                                                                                                         | 結果                                                                                                                   |
+| URI 範例 | 結果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | 搜尋拉斯維加斯的 Caesar's Palace，然後以最佳的地圖檢視在地圖上顯示結果。                         |
 | bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16                                                                                         | 將縮放比例設定為 16 來顯示位於拉斯維加斯名為 Caesars Palace 的圖釘。                                               |
@@ -116,10 +119,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
  
 
-## 顯示路線指引和交通狀況
+## <a name="display-directions-and-traffic"></a>顯示路線指引和交通狀況
 
 
-您可以使用 *rtp* 參數顯示兩個點之間的路線；這些點可以是地址或緯度和經度座標。 使用 *trfc* 參數可顯示交通資訊。 若要指定路線類型 (開車、步行或運輸工具)，請使用 *mode* 參數。 若未指定 *mode*，則會以使用者的交通喜好設定模式提供路線指引。 如需這些參數與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps)。
+您可以使用 *rtp* 參數顯示兩個點之間的路線；這些點可以是地址或緯度和經度座標。 使用 *trfc* 參數可顯示交通資訊。 若要指定路線類型 (開車、步行或運輸工具)，請使用 *mode* 參數。 若未指定 *mode*，則會以使用者的交通喜好設定模式提供路線指引。 如需這些參數與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
 
 ![路線指引範例](images/windowsmapgcdirections.png)
 
@@ -136,12 +139,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
  
 
-## 顯示轉向建議導航路線指引
+## <a name="display-turn-by-turn-directions"></a>顯示轉向建議導航路線指引
 
 
-**ms-drive-to:** 和 **ms-walk-to:** URI 配置可讓您直接啟動至轉向建議導航路線檢視。 這些 URI 配置只能提供從使用者目前所在位置出發的路線指引。 如果您必須提供不包含使用者目前所在位置的兩點之間的路線指引，請使用上一節所說明的 **bingmaps:** URI 配置。 如需這些 URI 配置的詳細資訊，請參閱 [ms-drive-to:](#msdriveto) 和 [ms-walk-to:](#mswalkto) 參數參考。
+**ms-drive-to:** 和 **ms-walk-to:** URI 配置可讓您直接啟動至轉向建議導航路線檢視。 這些 URI 配置只能提供從使用者目前所在位置出發的路線指引。 如果您必須提供不包含使用者目前所在位置的兩點之間的路線指引，請使用上一節所說明的 **bingmaps:** URI 配置。 如需這些 URI 配置的詳細資訊，請參閱 [ms-drive-to:](#ms-drive-to-param-reference) 和 [ms-walk-to:](#ms-walk-to-param-reference) 參數參考。
 
-> **重要** 當 **ms-drive-to:** 或 **ms-walk-to:** URI 配置啟動時，地圖 app 會檢查裝置是否曾經修正 GPS 位置。 如果有，地圖 app 就會前往轉向建議導航路線指引。 如果還未修正，app 將會顯示路線概觀，如[顯示路線指引和交通狀況](#directions)中所述。
+> **重要** 當 **ms-drive-to:** 或 **ms-walk-to:** URI 配置啟動時，地圖應用程式會檢查裝置是否曾經修正 GPS 位置。 如果有，地圖 app 就會前往轉向建議導航路線指引。 如果還未修正，app 將會顯示路線概觀，如[顯示路線指引和交通狀況](#display-directions-and-traffic)中所述。
 
  
 
@@ -153,7 +156,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | ms-walk-to:?destination.latitude=47.680504&amp;destination.longitude=-122.328262&amp;destination.name=Green Lake  | 顯示一個地圖，內含從您目前的所在位置到 Green Lake 的詳細步行路線。 |
 
 
-## 下載離線地圖
+## <a name="download-offline-maps"></a>下載離線地圖
 
 
 **ms-settings:** URI 配置可讓您直接啟動到設定應用程式中的特定頁面。 雖然 **ms-settings:** URI 配置不會啟動到地圖應用程式，但是允許您直接啟動到設定應用程式中的 [離線地圖] 頁面，並且顯示確認對話方塊來下載地圖應用程式所使用的離線地圖。 URI 配置接受緯度和經度所指定的值，並自動判斷是否有包含該點之地區可用的離線地圖。  如果緯度和經度剛好落在多個下載地區內，確認對話方塊會讓使用者挑選要下載其中哪一個區域。 如果包含該點的地區沒有離線地圖，則設定應用程式中的 [離線地圖] 頁面會顯示錯誤對話方塊。
@@ -163,7 +166,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 將設定應用程式開啟到 [離線地圖] 頁面，並顯示確認對話方塊來下載包含所指定經緯度點之地區的地圖。 |
  
 
-## bingmaps: 參數參考
+<span id="bingmaps-param-reference"/>
+## <a name="bingmaps-parameter-reference"></a>bingmaps: 參數參考
 
 
 此表格中每個參數的語法是使用擴充巴克斯格式 (Augmented Backus–Naur Form, ABNF) 來示範的。
@@ -382,13 +386,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </table>
 
  
-
+<span id="ms-drive-to-param-reference"/>
 ## ms-drive-to: 參數參考
 
 
 啟動轉向建議駕駛路線要求的 URI 不需要進行編碼，並且具有下列格式。
 
-> **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#directions)。
+> **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#display-directions-and-traffic)。
 
  
 
@@ -399,13 +403,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.name** | 目的地的名稱 | 範例：destination.name=Redmond, WA | 目的地的名稱。 您不需要編碼 **destination.name** 值。 |
 
  
-
-## ms-walk-to: 參數參考
+<span id="ms-walk-to-param-reference"/>
+## <a name="ms-walk-to-parameter-reference"></a>ms-walk-to: 參數參考
 
 
 啟動轉向建議步行路線要求的 URI 不需要進行編碼，並且具有下列格式。
 
-> **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#directions)。
+> **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#display-directions-and-traffic)。
 
  
 
@@ -416,7 +420,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.name** | 目的地的名稱 | 範例：destination.name=Redmond, WA | 目的地的名稱。 您不需要編碼 **destination.name** 值。 |
 
  
-## ms-settings: 參數參考
+## <a name="ms-settings-parameter-reference"></a>ms-settings: 參數參考
 
 
 **ms-settings:** URI 配置的地圖應用程式特定參數的語法定義如下。 **maps-downloadmaps** 是與 **ms-settings:** URI 一起指定，格式為 **ms-settings:maps-downloadmaps?**，以指示離線地圖設定頁面。
@@ -429,9 +433,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

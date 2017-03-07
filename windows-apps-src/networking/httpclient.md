@@ -3,15 +3,22 @@ author: DelfCo
 description: "使用 HttpClient 和其餘 Windows.Web.Http 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。"
 title: HttpClient
 ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fad4c4c215c209971d2a76b4c1ac6f160f8ebced
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# HttpClient
+# <a name="httpclient"></a>HttpClient
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
 
 使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 和其餘 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間 API，透過 HTTP 2.0 與 HTTP 1.1 通訊協定傳送和接收資訊。
 
-## HttpClient 和 Windows.Web.Http 命名空間的概觀
+## <a name="overview-of-httpclient-and-the-windowswebhttp-namespace"></a>HttpClient 和 Windows.Web.Http 命名空間的概觀
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間和相關 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 與 [**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623)命名空間中的類別提供了適用於通用 Windows 平台 (UWP) app 的程式設計介面，可做為 HTTP 用戶端來執行基本的 GET 要求或實作下列更進階的 HTTP 功能。
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: a3d63f7bd090d9afe92813133503997b98502683
 
 [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 命名空間支援建立 HTTP 標頭與 Cookie，接著將它們當成屬性來與 [**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) 和 [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 物件產生關聯。
 
-## 透過 HTTP 傳送簡單 GET 要求
+## <a name="send-a-simple-get-request-over-http"></a>透過 HTTP 傳送簡單 GET 要求
 
 如本文先前所述，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何使用 [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別將 GET 要求傳送至 http://www.contoso.com，以及使用 [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) 類別讀取 GET 要求的回應。
 
@@ -97,11 +104,11 @@ catch (Exception ex)
 }
 ```
 
-## Windows.Web.Http 中的例外狀況
+## <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的例外狀況
 
 如果傳送到 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 類型在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 類別和其中一個 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法來測試接收自使用者的字串，以避免發生這個錯誤。
 
@@ -114,10 +121,5 @@ catch (Exception ex)
 在使用 Managed C++ 的 app 中，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表例外狀況發生時 app 執行期間的錯誤。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對部分不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

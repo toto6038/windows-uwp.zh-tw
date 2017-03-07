@@ -1,12 +1,19 @@
 ---
 author: mijacobs
-description: "作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
+description: "作為語言的視覺表示，印刷樣式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷樣式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
 title: "印刷樣式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: e13e9c8b559c16676628ab6e77ddad019a4c22e0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -14,7 +21,7 @@ ms.openlocfilehash: e13e9c8b559c16676628ab6e77ddad019a4c22e0
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
+作為語言的視覺表示，印刷樣式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷樣式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
 
 ## <a name="typeface"></a>字樣
 
@@ -211,9 +218,4 @@ Green shows where all caps should be used. Red shows where it should not.
 * [文字控制項](../controls-and-patterns/text-controls.md)
 * [字型](fonts.md)
 * [Segoe MDL2 圖示](segoe-ui-symbol-font.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

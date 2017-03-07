@@ -2,9 +2,17 @@
 author: Mtoepke
 title: "停用 Xbox One 開發人員模式"
 description: "停用開發人員模式的方法。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 translationtype: Human Translation
-ms.sourcegitcommit: 0eee645f068614d2368623859dec4e16f3190169
-ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 857b1529a933f416a1c61f3afd844f6cb820f3f3
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -20,8 +28,8 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 ## <a name="switch-to-retail-mode"></a>切換至零售模式
 首先，請將您的 Xbox One 主機切換回零售模式。
 
-1. 開啟 [開發人員首頁]。
-2. 按一下 [離開開發人員模式]。  您的主機將重新啟動為零售模式。  
+1. 開啟 [開發人員首頁]****。
+2. 按一下 [離開開發人員模式]****。  您的主機將重新啟動為零售模式。  
 
    ![離開開發人員模式](images/deactivation-leave-dev-mode.png)
 
@@ -31,12 +39,12 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 在您的主機上停用開發人員模式的偏好方式，是使用「啟用開發人員模式」app。 
 
-1. 瀏覽至 [我的遊戲與 app]  >  [App]。
+1. 瀏覽至 [我的遊戲與 app]****  > **** [App]。
   
    ![啟用步驟 3](images/activation-step-3.png)    
    
 2.  開啟「啟用開發人員模式」App。    
-3.  按一下 [停用]。
+3.  按一下 [停用]****。
   
 ![停用主機](images/deactivation-app.png)
 
@@ -49,18 +57,18 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 
 如需重設主機，請執行下列步驟：
 
-1.  移至 [我的遊戲與 app]。  
-2.  選取 [App]，然後選取 [設定]。  
-3.  移至左窗格中的 [系統]，然後選取右窗格中的 [主機資訊和更新]。  
-4.  移至 [主機資訊和更新]。  
+1.  移至 [我的遊戲與 app]****。  
+2.  選取 [App]****，然後選取 [設定]****。  
+3.  移至左窗格中的 [系統]****，然後選取右窗格中的 [主機資訊和更新]****。  
+4.  移至 [主機資訊和更新]****。  
    
     ![主機資訊和更新](images/deactivation-console-info-updates.png)  
     
-5.  按一下 [重設主機]。
+5.  按一下 [重設主機]****。
     
     ![重設主機](images/deactivation-reset-console.png)
     
-6.  接下來，按一下 [重設並移除所有項目]。 此選項會將主機重設為原始的零售狀態。  您所有的 App、遊戲及本機存檔資料都會被刪除。 請注意，若選擇另一個 [重設並保留我的遊戲與 app] 選項，會無法將您的主機從開發人員計畫中移除。  
+6.  接下來，按一下 [重設並移除所有項目]****。 此選項會將主機重設為原始的零售狀態。  您所有的 App、遊戲及本機存檔資料都會被刪除。 請注意，若選擇另一個 [重設並保留我的遊戲與 app]**** 選項，會無法將您的主機從開發人員計畫中移除。  
    
     ![重設並移除所有項目](images/deactivation-reset-remove.png)
 
@@ -71,23 +79,18 @@ ms.openlocfilehash: cccc263dcd0ed9ae843cf845438b30605e9b9d9d
 1. 移至 [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices)。    
 2. 以您的開發人員中心帳戶登入開發人員中心。    
 3. 在主機清單上，藉由比對序號、主機 ID 或裝置識別碼來尋找您想要停用的主機。  
-4. 按一下 [停用]。  
+4. 按一下 [停用]****。  
   
 ![使用開發人員中心進行停用](images/deactivation-devcenter.png)
 
 如果您之前並未將 Xbox One 主機切換回零售模式，請立即執行。
 
-1. 啟動 [開發人員首頁]。
-2. 按一下 [離開開發人員模式]。  您的主機將會重新啟動為零售模式。
+1. 啟動 [開發人員首頁]****。
+2. 按一下 [離開開發人員模式]****。  您的主機將會重新啟動為零售模式。
 
 ![啟用步驟 13](images/deactivation-leave-dev-mode.png)
 
 ## <a name="see-also"></a>另請參閱
 - [啟用 Xbox One 開發人員模式](devkit-activation.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

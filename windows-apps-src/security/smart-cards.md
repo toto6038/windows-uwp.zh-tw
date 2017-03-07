@@ -3,26 +3,33 @@ title: "智慧卡"
 description: "本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。"
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
-ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 智慧卡
+# <a name="smart-cards"></a>智慧卡
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。 
 
-## 設定 app 資訊清單
+## <a name="configure-the-app-manifest"></a>設定 app 資訊清單
 
 
 您必須先在專案的 Package.appxmanifest 檔案中設定「共用使用者憑證」****功能，您的 app 才能驗證使用智慧卡或虛擬智慧卡的使用者。
 
-## 存取連線的讀卡機與智慧卡
+## <a name="access-connected-card-readers-and-smart-cards"></a>存取連線的讀卡機與智慧卡
 
 
 您可以透過將裝置識別碼 (在 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) 中指定) 傳送至 [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) 方法，以查詢讀卡機和連接的智慧卡。 若要存取目前連接至傳回的讀卡機裝置的智慧卡，請呼叫 [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887)。
@@ -56,7 +63,7 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 
 接著，您可以將每個傳回的 [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) 物件傳送至 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801)，以存取讓您的應用程式存取和自訂其設定的方法。
 
-## 建立虛擬智慧卡
+## <a name="create-a-virtual-smart-card"></a>建立虛擬智慧卡
 
 
 若要使用 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 建立虛擬智慧卡，您的 app 首先需要提供一個易記的名稱、一個管理金鑰以及一個 [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)。 易記名稱通常會提供給 app，但您的 app 仍然需要提供管理金鑰並產生目前 **SmartCardPinPolicy** 的執行個體，才能將這三個值全部傳送至 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830)。
@@ -80,7 +87,7 @@ SmartCardProvisioning provisioning = await
 
 在 [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) 傳回關聯的 [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) 物件後，虛擬智慧卡便已佈建完成並可供使用。
 
-## 因應驗證挑戰
+## <a name="handle-authentication-challenges"></a>因應驗證挑戰
 
 
 若要使用智慧卡或虛擬智慧卡驗證，您的應用程式必須提供能在下列兩者之間完成挑戰的行為：智慧卡上儲存的管理金鑰資料，還有由驗證伺服器或管理工具維護的管理金鑰資料。
@@ -107,7 +114,7 @@ static class ChallengeResponseAlgorithm
 
 您會在本主題的其餘部分看到此程式碼，因為我們會複習如何完成驗證動作，以及如何套用變更至智慧卡和虛擬智慧卡資訊。
 
-## 驗證智慧卡或虛擬智慧卡驗證回應
+## <a name="verify-smart-card-or-virtual-smart-card-authentication-response"></a>驗證智慧卡或虛擬智慧卡驗證回應
 
 
 我們在定義完驗證挑戰的邏輯之後，便可和讀卡機通訊以存取智慧卡，或是改為存取虛擬智慧卡，以進行驗證。
@@ -135,7 +142,7 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## 變更或重設使用者 PIN
+## <a name="change-or-reset-a-user-pin"></a>變更或重設使用者 PIN
 
 
 變更與智慧卡關聯的 PIN：
@@ -184,7 +191,7 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## 移除智慧卡或虛擬智慧卡
+## <a name="remove-a-smart-card-or-virtual-smart-card"></a>移除智慧卡或虛擬智慧卡
 
 
 當實體智慧卡移除後，刪除智慧卡時便會觸發 [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) 事件。
@@ -202,8 +209,3 @@ reader.CardRemoved += HandleCardRemoved;
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

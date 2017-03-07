@@ -2,22 +2,29 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解關於在應用程式中廣告的 UI 和使用者體驗指導方針。"
-title: "在應用程式中廣告的 UI 和使用者體驗指導方針。"
+title: "在應用程式中廣告的 UI 和使用者體驗指導方針"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, 指導方針, 最佳做法"
 translationtype: Human Translation
-ms.sourcegitcommit: e44392a1dc69a98655ba7e576d2af102a608acaa
-ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>在應用程式中廣告的 UI 和使用者體驗指導方針。
+# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>在應用程式中廣告的 UI 和使用者體驗指導方針
 
-本文提供的指引可讓您在應用程式中提供絕佳的橫幅及插入式廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/design)。
+本文提供的指引可讓您在應用程式中提供絕佳的橫幅及插入式廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
 
->**重要**&nbsp;&nbsp;您應用程式中的任何廣告使用都必須符合 Windows 市集原則，包括但不限於[原則 10.10](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反 Windows 市集原則而未列於本文中。
+>**重要**&nbsp;&nbsp;您應用程式中的任何廣告使用都必須符合 Windows 市集原則，包括但不限於[原則 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反 Windows 市集原則而未列於本文中。
 
 ## <a name="guidelines-for-banner-ads"></a>橫幅廣告指南
 
-以下章節提供如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 在您的應用程式中實作橫幅廣告的建議，以及違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的實作範例。
+以下章節提供如何使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 在您的應用程式中實作橫幅廣告的建議，以及違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的實作範例。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -49,7 +56,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 <span />
 ### <a name="examples-of-policy-violations"></a>原則違反範例
 
-本章節提供會違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的橫幅廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
+本章節提供會違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的橫幅廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
 
 * 竭盡所能影響使用者檢視橫幅廣告的能力，例如變更 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的不透明度，或在  **AdControl** 上放置其他控制項 (而未先呼叫 [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx))。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 
 巧妙地使用插入式廣告可以大幅提高您應用程式的收益，而不會對使用者滿意的產生負面影響。 當使用不當時，這類廣告會有完全相反的效果。
 
-以下章節提供如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在您的應用程式中實作插入式廣告的建議，以及違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
+以下章節提供如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在您的應用程式中實作插入式廣告的建議，以及違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -132,7 +139,7 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
 <span />
 ### <a name="examples-of-policy-violations"></a>原則違反範例
 
-本章節提供會違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_10) 的插入式廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
+本章節提供會違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的插入式廣告案例範例。 這些範例僅用以提供指引所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反原則 10.10.1 而未列於此。
 
 * 將 UI 元素置於插入式廣告容器。
 
@@ -153,9 +160,4 @@ ms.openlocfilehash: ce39829cd6cd2dfb0c6a3aef930dd8fa82351b75
  
 
  
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

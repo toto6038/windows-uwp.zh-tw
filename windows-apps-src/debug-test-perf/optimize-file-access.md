@@ -2,15 +2,22 @@
 author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: "最佳化檔案存取"
-description: "建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。"
+description: "建立可有效存取檔案系統的通用 Windows 平台 (UWP) 應用程式，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 31869b116096052bed9e1c462de3f93e4d1335c2
+ms.lasthandoff: 02/07/2017
 
 ---
-# 最佳化檔案存取
+# <a name="optimize-file-access"></a>最佳化檔案存取
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 建立可有效存取檔案系統的通用 Windows 平台 (UWP) app，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。
 
@@ -125,9 +132,9 @@ ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 > ```
 如果您在 Windows.Storage 物件上執行多項操作 (例如 `Windows.Storage.ApplicationData.Current.LocalFolder`)，請建立一個區域變數以參照該存放裝置來源，如此您就不必在每次存取該存放裝置時，重新建立中繼物件。
 
-## C# 和 Visual Basic 中的資料流效能
+## <a name="stream-performance-in-c-and-visual-basic"></a>C# 和 Visual Basic 中的資料流效能
 
-### UWP 與 .NET 資料流之間的緩衝
+### <a name="buffering-between-uwp-and-net-streams"></a>UWP 與 .NET 資料流之間的緩衝
 
 在許多情況下，您可能想要將 UWP 資料流 (例如 [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) 或 [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) 轉換為 .NET 資料流 ([**System.IO.Stream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.stream.aspx))。 例如，當您在撰寫 UWP app 並希望使用 UWP 檔案系統搭配運行資料流的現有 .NET 程式碼時，這個做法很實用。 若要啟用這個功能，適用於 Windows 市集 app 的 .NET API 會提供延伸方法，讓您在 .NET 與 UWP 資料流類型之間進行轉換。 如需詳細資訊，請參閱 [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)。
 
@@ -188,11 +195,11 @@ ms.openlocfilehash: 53fd6f4c28eaa7d3976658a84dd0aefb4255ff91
 
 將 UWP 資料流轉換為 .NET 資料流的大多數情況中，都可以使用這個預設緩衝行為。 不過，在某些情況下，您可能需要調整緩衝行為以增加效能。
 
-### 使用大型資料集
+### <a name="working-with-large-data-sets"></a>使用大型資料集
 
 在轉譯或撰寫較大型資料集時，您可以在 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 及 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 延伸方法提供大型緩衝區大小，增加讀取或寫入傳送量。 這可以提供資料流配接器較大的內部緩衝區大小。 例如，將大型檔案的資料流傳送到 XML 剖析器時，剖析器可對資料流進行許多循序的小型讀取。 大型緩衝區可以減少對基礎 UWP 資料流的呼叫數，並提升效能。
 
-> **注意** 在設定大於約 80 KB 的緩衝區大小時，請務必謹慎，因為這可能導致記憶體回收行程堆積分散 (請參閱[改善記憶體回收效能](improve-garbage-collection-performance.md))。 下列程式碼範例會建立具有 81,920 位元組緩衝區的管理資料流配接器。
+> **注意**   在設定大於約 80 KB 的緩衝區大小時，請務必謹慎，因為這可能導致記憶體回收行程堆積分散 (請參閱[改善記憶體回收效能](improve-garbage-collection-performance.md))。 下列程式碼範例會建立具有 81,920 位元組緩衝區的管理資料流配接器。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -228,16 +235,11 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 當您同時使用大量資料流時，可能需要減少或消除緩衝區的記憶體負荷。 您可以指定較小的緩衝區，或將 *bufferSize* 參數設為 0，將該資料流配接器的緩衝完全關閉。 如果針對管理資料流執行大型讀取和寫入，仍可在沒有緩衝的情況下達到良好的傳送量效能。
 
-### 執行延遲敏感作業
+### <a name="performing-latency-sensitive-operations"></a>執行延遲敏感作業
 
 如果您需要低延遲的讀取和寫入，而且不希望在基礎 UWP 資料流讀取大型區塊時，也要避免緩衝。 例如，如果您使用網路通訊資料流，可能需要低延遲讀取和寫入。
 
 在聊天應用程式中，您可在網路介面上使用資料流來回傳送訊息。 在此情況下，您要在訊息完成後立即傳送出去，而不是等到緩衝區滿了才傳送。 呼叫 [**AsStreamForRead**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx)、[**AsStreamForWrite**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforwrite.aspx) 及 [**AsStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstream.aspx) 延伸方法時，如果將緩衝區大小設定為 0，則產生的配接器將不會配置緩衝區，所有呼叫都會直接操作基礎 UWP 資料流。
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

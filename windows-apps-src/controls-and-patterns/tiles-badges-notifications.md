@@ -1,20 +1,27 @@
 ---
 author: mijacobs
-Description: "了解如何使用磚、徽章、快顯通知以及通知提供您 App 的進入點，並將使用者維持在最新狀態。"
+Description: "了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。"
 title: "磚、徽章及通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: dbc178f5df541e482f4a2e86c6662ead1992a1ce
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f8b063f45afadda50fa9ea091bf6cba71a25e8c1
+ms.lasthandoff: 02/07/2017
 
 ---
-# UWP App 的磚、徽章及通知
+# <a name="tiles-badges-and-notifications-for-uwp-apps"></a>UWP app的磚、徽章及通知
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-了解如何使用磚、徽章、快顯通知以及通知提供 App 的進入點，並將使用者維持在最新狀態。
+了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
 
 <p><img style="float: left; margin: 0px 15px 15px 0px;" src="images/tile-and-live-tile.png" />
 App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有一個磚。 您可以啟用不同的磚大小 (小、中、寬及大)。</p>
@@ -27,7 +34,7 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有�
 <p><em>推播通知</em>或<em>原始通知</em>是從 Windows 推播通知服務 (WNS) 或從背景工作傳送到您 app 的通知。 您的應用程式可以通知使用者有趣事發生 (透過徽章更新、磚更新或快顯通知) 以回應這些通知，或是以您所選擇的任何方式來回應。</p>
 
  
-## 磚 
+## <a name="tiles"></a>磚 
 <table>
 <colgroup>
 <col width="50%" />
@@ -63,7 +70,7 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有�
 </tbody>
 </table>
 
-## 通知
+## <a name="notifications"></a>通知
 
 
 <table>
@@ -121,10 +128,5 @@ App 在 [開始] 功能表上以磚的形式顯示。 每個 UWP app 都會有�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

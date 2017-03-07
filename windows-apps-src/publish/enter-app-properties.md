@@ -1,33 +1,40 @@
 ---
 author: jnHs
-Description: "App 提交程序的 [應用程式屬性] 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。"
-title: "輸入 app 屬性"
+Description: "應用程式提交程序的 [應用程式屬性] 頁面可讓您定義應用程式的類別，並指出硬體喜好設定或其他宣告。"
+title: "輸入應用程式屬性"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 345350cea16b850e49f6f958e304654aba1299bb
-ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 008c073844332aadbc17def774aae16f3ae01513
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 輸入 app 屬性
+# <a name="enter-app-properties"></a>輸入應用程式屬性
 
-[App 提交程序](app-submissions.md)的 [應用程式屬性]**** 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
+[App 提交程序](app-submissions.md)的 [應用程式屬性]**** 頁面可讓您定義應用程式的類別，並指出硬體喜好設定或其他宣告。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
 
-> **注意：**年齡分級現為提交程序的一個獨立頁面。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
+> **注意**  年齡分級現為提交程序的一個獨立頁面。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
 
-## 類別與子類別
+## <a name="category-and-subcategory"></a>類別與子類別
 
 您可以在此區段中指示市集應用來將您的應用程式分類的類別 (與子類別 (如果適用))。 您必須指定類別才能送出應用程式。
 
 如需詳細資訊，請參閱[類別與子類別表格](category-and-subcategory-table.md)。
 
-## 產品宣告
+## <a name="product-declarations"></a>產品宣告
 
 您可以核取此區段中的方塊以指出是否有任何宣告適用於您的 App。 這可能會影響應用程式顯示的方式、應用程式是否會提供給某些客戶，或者客戶可以使用應用程式的方式。
 
 如需詳細資訊，請參閱 [App 宣告](app-declarations.md)。
 
-## 系統需求
+## <a name="system-requirements"></a>系統需求
 
 在此區段中，您可以選擇指定是否需要或建議特定硬體功能，才能讓您的 App 正常執行和互動。 您可以針對您要指定 [最低硬體] **** 和/或 [建議的硬體]**** 的每個硬體項目核取方塊 (或指出適當的選項)。
 
@@ -48,12 +55,7 @@ ms.openlocfilehash: d2eb9a62dcaadca599136f4505f85e3ba94c0189
 
 我們也建議您將指定硬體的執行階段檢查新增到您的 App 中，因為市集不一定能夠偵測到客戶的裝置缺少選取的功能，而且即使顯示警告，他們仍然能夠下載您的 App。
 
-> **提示：**如果您希望完全避免您的 UWP app 在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 StoreManifest XML 檔案中指定最低需求。 如需詳細資訊，請參閱 [StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
+> **提示**  如果您希望完全避免您的 UWP 應用遲是在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 StoreManifest XML 檔案中指定最低需求。 如需詳細資訊，請參閱 [StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

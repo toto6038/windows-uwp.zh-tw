@@ -3,21 +3,28 @@ author: mtoepke
 title: "使用深度測試轉譯場景"
 description: "將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。"
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows, 遊戲, 轉譯, 場景, 深度測試, 陰影"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6351cc9f6efe0d4bffb54961624a35b4a9f4136a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用深度測試轉譯場景
+# <a name="render-the-scene-with-depth-testing"></a>使用深度測試轉譯場景
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第三部分。
 
-## 包含光線範圍的轉換
+## <a name="include-transformation-for-light-frustum"></a>包含光線範圍的轉換
 
 
 您的頂點著色器需要針對每個頂點計算光線空間的轉換位置。 使用常數緩衝區來提供光線空間模型、檢視及投影矩陣 您也可以使用這個常數緩衝區提供光線位置與標準，以進行光線計算。 光線空間的轉換位置將會在深度測試期間使用。
@@ -61,7 +68,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 接著，像素著色器將使用頂點著色器提供的插補光線空間位置來測試像素是否位於陰影中。
 
-## 測試位置是否位於光線範圍中
+## <a name="test-whether-the-position-is-in-the-light-frustum"></a>測試位置是否位於光線範圍中
 
 
 首先，透過將 X 與 Y 座標標準化，以檢查像素是否位於光線的檢視範圍中。 如果它們均位於範圍 \[0, 1\] 內，則像素可能就位於陰影中。 否則，您可以略過深度測試。 著色器可以呼叫 [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) 並根據原始值來比較結果，藉以快速測試此項目。
@@ -83,7 +90,7 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## 根據陰影圖進行的深度測試
+## <a name="depth-test-against-the-shadow-map"></a>根據陰影圖進行的深度測試
 
 
 使用一個取樣比較函式 ([SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) 或 [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697))，根據深度圖來測試像素在光線空間中的深度。 計算標準化的光線空間深度值 (也就是 `z / w`)，並將值傳遞到比較函式。 因為我們針對取樣器使用 LessOrEqual 比較測試，因此內建函式會在通過比較測試時傳回零；這表示像素位於陰影中。
@@ -115,7 +122,7 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## 計算陰影的光源方向
+## <a name="compute-lighting-in-or-out-of-shadow"></a>計算陰影的光源方向
 
 
 如果像素並未位於陰影中，則像素著色器應該會計算直接光源，並將它新增到像素值。
@@ -161,10 +168,5 @@ return float4(input.color * ambient, 1.f);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

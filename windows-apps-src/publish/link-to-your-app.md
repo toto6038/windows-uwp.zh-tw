@@ -1,20 +1,27 @@
 ---
 author: jnHs
-Description: "您可以將客戶連結到您 app 的市集清單頁面來協助客戶發現該 app。"
-title: "連結至您的 app"
+Description: "您可以將客戶連結到您應用程式的市集清單頁面，協助客戶發現該應用程式。"
+title: "應用程式的連結"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
-ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 59f19dbf0cd66679805a9fcf3054427a22fb0e8f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 連結至您的 app
+# <a name="link-to-your-app"></a>應用程式的連結
 
 
 您可以將客戶連結到您 app 的市集清單頁面來協助客戶發現該 app。
 
-## 取得您的 app 市集清單的連結
+## <a name="getting-the-link-to-your-apps-store-listing"></a>取得您的 app 市集清單的連結
 
 
 您可以在儀表板中每個 app 的 [應用程式管理]**** 區段中 [[應用程式身分識別](view-app-identity-details.md)] 頁面上找到連至您 app 市集清單的連結。
@@ -27,18 +34,18 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
  
 
-## 使用 Windows 市集徽章連結到您的 app 市集清單
+## <a name="linking-to-your-apps-store-listing-with-the-windows-store-badge"></a>使用 Windows 市集徽章連結到您的 app 市集清單
 
 
 您可以使用自訂的徽章直接連結到您的 app 清單，讓客戶知道您的 app 位於 Windows 市集中。
 
 若要建立您的徽章，請瀏覽 [Windows 市集徽章](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面。 若要使用此表格，您需要有您 app 的市集識別碼，才能產生徽章與連結。 此識別碼是 [應用程式管理]**** 區段中 [[應用程式身分識別](view-app-identity-details.md)] 頁面上顯示的 **Windows 10 的 URL** 的最後 12 個字元。
 
-> **注意** 如需使用 Windows 市集徽章的詳細資訊，請參閱 [app 行銷指導方針](app-marketing-guidelines.md)。
+> **注意** 如需使用 Windows 市集徽章的詳細資訊，請參閱 [應用程式行銷指導方針](app-marketing-guidelines.md)。
 
  
 
-## 直接連結到 Windows 市集中您的 app
+## <a name="linking-directly-to-your-app-in-the-windows-store"></a>直接連結到 Windows 市集中您的 app
 
 
 您可以使用 **ms-windows-store:** URI 配置來建立連結，用來啟動 Windows 市集且不需要開啟瀏覽器就可以直接連到您的 app 清單頁面。
@@ -57,10 +64,5 @@ ms.openlocfilehash: 8e4756fa7cb7b808e543453e69b5bb3f09ffd5ce
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

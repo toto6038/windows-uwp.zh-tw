@@ -1,18 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: B356C442-998F-4B2C-B550-70070C5E4487
-description: "了解如何使用 Windows.Services.Store 命名空間來購買 App 或其附加元件。"
-title: "啟用 App 和附加元件的 App 內購買"
-keywords: "App 內的購買選項程式碼範例"
+description: "了解如何使用 Windows.Services.Store 命名空間來購買應用程式或其附加元件。"
+title: "啟用應用程式和附加元件的應用程式內購買"
+keywords: "Windows 10, UWP, 附加元件, 應用程式內購買, IAP, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b45d8b34bed361471c1fc95594ad6fd28e41fa6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>啟用 App 和附加元件的 App 內購買
+# <a name="enable-in-app-purchases-of-apps-and-add-ons"></a>啟用應用程式和附加元件的應用程式內購買
 
-目標為 Windows 10 版本 1607 或更新版本的 App，可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中的成員，讓使用者要求購買目前的 App 或其附加元件之一 (也稱為應用程式內產品或 IAP)。 例如，若使用者目前擁有的是試用版 App，您可以使用這個程序來讓該使用者購買完整版授權。 或者，您可以使用這個程序來購買附加元件，像是提供使用者新的遊戲關卡。
+目標為 Windows 10 版本 1607 或更新版本的應用程式，可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中的成員，讓使用者要求購買目前的應用程式或其附加元件之一 (也稱為應用程式內產品或 IAP)。 例如，若使用者目前擁有的是試用版 App，您可以使用這個程序來讓該使用者購買完整版授權。 或者，您可以使用這個程序來購買附加元件，像是提供使用者新的遊戲關卡。
 
 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 提供了幾個方法可要求購買 App 或附加元件：
 * 如果您知道 App 或附加元件的[市集識別碼](in-app-purchases-and-trials.md#store_ids)，則您可以使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [RequestPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.requestpurchaseasync.aspx) 方法。
@@ -20,7 +26,7 @@ ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
 
 每個方法會對使用者呈現一個標準購買 UI，並且會在交易完成之後以非同步的方式完成。 該方法會傳回指示交易是否成功的物件。
 
->**注意**   本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+>**注意**&nbsp;&nbsp;本文適用於目標為 Windows 10 版本 1607 或更新版本的應用程式。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -33,7 +39,7 @@ ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
 * 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
 * App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
 
->**注意**  如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增此範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
+>**注意**&nbsp;&nbsp;如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增此範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
 
 ## <a name="code-example"></a>程式碼範例
 
@@ -52,9 +58,4 @@ ms.openlocfilehash: 05a93f3124324d7308f5494ad14a15bfd6a4e698
 * [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
 * [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
 * [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

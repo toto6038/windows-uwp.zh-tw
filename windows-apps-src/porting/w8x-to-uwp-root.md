@@ -3,13 +3,20 @@ author: mcleblanc
 description: "如果您有通用 8.1 app&amp;\\#8212;無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計&amp;\\#8212;則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。"
 title: "從 Windows Runtime 8.x 移至 UWP"
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a4ee1fd29b276958ed6a18b4eadcd89d5ea914b6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 從 Windows Runtime 8.x 移至 UWP
+# <a name="move-from-windows-runtime-8x-to-uwp"></a>從 Windows Runtime 8.x 移至 UWP
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 
 在移植時，您將發現 Windows 10 會與先前的平台共用大部分的 API，以及 XAML 標記、UI 架構及工具，而且全都讓人非常熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
 
-## 如果您有通用 8.1 應用程式
+## <a name="if-you-have-a-universal-81-app"></a>如果您有通用 8.1 應用程式
 
 通用 8.1 app是從 8.1 通用 app 專案建置的。 假設專案的名稱是 AppName\_81。 它包含這些子專案。
 
@@ -34,19 +41,19 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 3.  將 Windows 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 WindowsPhone 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。
 4.  將 Windows 專案的內容移植到針對通用或傳統型裝置系列設計的應用程式，以及將 WindowsPhone 專案的內容移植到針對通用或行動裝置系列設計的應用程式。 您可以建立一個包含共用專案的解決方案，然後繼續在兩個專案之間共用原始程式碼、標記檔案及其他資產和資源。 或者您可以建立不同的解決方案，但仍然使用連結來共用相同的項目。
 
-## 如果您有 Windows 8.1 應用程式
+## <a name="if-you-have-a-windows-81-app"></a>如果您有 Windows 8.1 應用程式
 
 請將專案移植到針對通用或傳統型裝置系列設計的應用程式。 如果您選擇通用裝置系列，且您的應用程式會呼叫只在傳統型裝置系列中實作的 API，您就可以使用調適型程式碼來保護那些呼叫。
 
-## 如果您有 Windows Phone 8.1 應用程式
+## <a name="if-you-have-a-windows-phone-81-app"></a>如果您有 Windows Phone 8.1 應用程式
 
 請將專案移植到針對通用或行動裝置系列設計的應用程式。 如果您選擇通用裝置系列，且您的應用程式會呼叫只在行動裝置系列中實作的 API，您就可以使用調適型程式碼來保護那些呼叫。
 
-## 調整您的應用程式以適應多種尺寸
+## <a name="adapting-your-app-to-multiple-form-factors"></a>調整您的應用程式以適應多種尺寸
 
 您在前面小節中所做的選擇將決定用來執行應用程式的裝置範圍，而且此裝置範圍可能非常廣泛。 即使將您的應用程式限制只在行動裝置系列上執行，您還是必須支援非常多種不同的螢幕尺寸。 因此，如果您的應用程式將以之前未支援的尺寸執行，請用那些尺寸來測試 UI 並進行任何必要的變更，讓 UI 可針對各個尺寸適當地調適。 您可以將這個當成後續移植工作[Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 與 [QuizGame](w8x-to-uwp-case-study-quizgame.md) 案例研究中會有一些實際操作範例。
 
-## 逐層進行移植
+## <a name="approaching-porting-layer-by-layer"></a>逐層進行移植
 
 將通用 8.1 應用程式移植到 UWP 應用程式的模型時，您所有的知識和經驗，以及大部分您所使用的原始程式碼、標記及軟體模式，都會一併轉移過去。
 
@@ -56,7 +63,7 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 
 在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
 
-## 如果您有 Microsoft Visual Studio 2015 RC 專案
+## <a name="if-you-have-a-microsoft-visual-studio-2015-rc-project"></a>如果您有 Microsoft Visual Studio 2015 RC 專案
 
 如果您有使用 Visual Studio 2015 RC 建立的 Windows 10 專案， 請參閱[將您的 UWP Microsoft Visual Studio 2015 RC 專案更新為 RTM](update-your-visual-studio-2015-rc-project-to-rtm.md)。
  
@@ -70,16 +77,11 @@ ms.openlocfilehash: e1f0e9727a36536fe292902fa7313dcc851932f6
 | [案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | 這個案例研究是以 [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) 控制項中提供的資訊為基礎建置。 在檢視模型中，每個 Author 類別執行個體都代表該作者所著之書籍的群組，而在 SemanticZoom 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 |
 | [案例研究：QuizGame](w8x-to-uwp-case-study-quizgame.md) | 本主題提供的案例研究會將對等運作的測驗遊戲 WinRT 8.1 app 範例移植到 Windows 10 UWP app。 |
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 **文件**
 * [Windows 執行階段參考](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [建置適用於所有 Windows 裝置的通用 Windows 應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [設計 app 的 UX](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

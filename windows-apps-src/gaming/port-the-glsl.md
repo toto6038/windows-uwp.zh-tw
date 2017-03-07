@@ -3,16 +3,23 @@ author: mtoepke
 title: "移植 GLSL"
 description: "一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。"
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, glsl, port, 遊戲, 連接埠"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 883f4423f72f044435ffc0ee9eccdcd5b0d63bfa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植 GLSL
+# <a name="port-the-glsl"></a>移植 GLSL
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -53,10 +60,10 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 此處的常數緩衝區使用暫存器 b0 來保留封裝的緩衝區。 所有的暫存器都是以 b\# 形式來參考。 如需關於常數緩衝區、暫存器及資料封裝的 HLSL 實作的詳細資訊，請參閱[著色器常數 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)。
 
-指示
+<a name="instructions"></a>指示
 ------------
 
-### 步驟 1：移植頂點著色器
+### <a name="step-1-port-the-vertex-shader"></a>步驟 1：移植頂點著色器
 
 在我們的簡單 OpenGL ES 2.0 範例中，頂點著色器會有三個輸入：常數模型-檢視-投影 4x4 矩陣，以及兩個 4 座標的向量。 這兩個向量包含頂點位置及其色彩。 著色器會將位置向量轉換成透視座標，並將它指派給 gl\_Position 內建函式以進行點陣化。 同時也會將頂點色彩複製到一個變化變數，以便在點陣化期間進行插補。
 
@@ -115,7 +122,7 @@ PixelShaderInput main(VertexShaderInput input)
 
 輸出資料類型 PixelShaderInput 是在點陣化期間所填入，並提供給片段 (像素) 著色器。
 
-### 步驟 2：移植片段著色器
+### <a name="step-2-port-the-fragment-shader"></a>步驟 2：移植片段著色器
 
 我們在 GLSL 中的片段著色器範例相當簡單：使用插補的色彩值來提供 gl\_FragColor 內建函式。 OpenGL ES 2.0 會將它寫入預設的轉譯目標。
 
@@ -150,7 +157,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 系統會將位置的像素色彩寫入轉譯目標。 現在，讓我們來看看在[繪製到螢幕](draw-to-the-screen.md)中如何顯示該轉譯目標的內容！
 
-## 上一步
+## <a name="previous-step"></a>上一步
 
 
 [移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md) 下一步
@@ -168,7 +175,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 -   請確定您知道要將每個著色器目標設定為哪一個 Direct3D 功能層級。 功能層級 9\_\* 的語意與 11\_1 的語意不同。
 -   SV\_POSITION 語意可以將相關聯的插補後位置資料解析為座標值，其中 x 介於 0 與轉譯目標寬度之間、y 介於 0 與轉譯目標高度之間、z 會除以原始同質座標 w 值 (z/w)，而 w 是 1 除以原始 w 值 (1/w)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 [使用方法：將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
@@ -185,10 +192,5 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

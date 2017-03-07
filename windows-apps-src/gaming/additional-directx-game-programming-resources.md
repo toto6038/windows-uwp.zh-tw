@@ -3,13 +3,20 @@ author: mtoepke
 title: "遊戲程式設計資源"
 description: "如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。"
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 程式設計"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 736f5f5864edc9c7a976e8e0f062779ddd1f86c5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 遊戲程式設計資源
+# <a name="game-programming-resources"></a>遊戲程式設計資源
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,25 +24,25 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 
 如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。
 
-## 遊戲程式設計參考資料
+## <a name="game-programming-reference"></a>遊戲程式設計參考資料
 
 
 -   [圖形和遊戲](https://msdn.microsoft.com/library/windows/desktop/ee663279)
 -   [OpenGL 參考資料](http://go.microsoft.com/fwlink/p/?LinkID=288875)
 
-## 遊戲設計指引
+## <a name="game-design-guidance"></a>遊戲設計指引
 
 
 -   [適用於 Windows 市集 App 的 UX 指導方針索引](https://msdn.microsoft.com/library/windows/apps/hh465424)
 
-## 部落格
+## <a name="blogs"></a>部落格
 
 
 -   [適用於 Windows 與 DirectX SDK 的遊戲]( http://go.microsoft.com/fwlink/p/?LinkID=288873)
 -   [DirectX 開發人員部落格]( http://go.microsoft.com/fwlink/p/?LinkID=288874)
 -   [Shawn Hargreaves 部落格]( http://go.microsoft.com/fwlink/p/?LinkID=288872) (XNA 遊戲資訊)。
 
-## 工具組
+## <a name="toolkits"></a>工具組
 
 
 -   [DirectX 工具組](  http://go.microsoft.com/fwlink/p/?LinkID=248929)
@@ -44,7 +51,7 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 -   [Win2D](https://github.com/Microsoft/Win2D) - 方便使用的 Windows 執行階段 API，適用於搭配 GPU 加速的直接模式 2D 圖形轉譯。
 -   [適用於 Windows 市集的 ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387) - 透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。
 
-## GDC 2015 遊戲開發課程影片
+## <a name="gdc-2015-game-dev-session-videos"></a>GDC 2015 遊戲開發課程影片
 
 
 -   [Microsoft 生態圈遊戲的未來](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) – Phil Spencer
@@ -62,14 +69,14 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 -   [設計 Windows Core 世界的遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) – Todd Williams、Shai Hinitz
 -   [Windows 10 的電腦遊戲](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10) – Chuck Walbourn
 
-## //2015 建置會議影片
+## <a name="build-2015-session-videos"></a>//2015 建置會議影片
 
 
 -   [嶄新推出 Win2D：在 C# 中由 DirectX 提供的繪圖](https://channel9.msdn.com/Events/Build/2015/2-631) – Simon Tao
 -   [角度：在 Windows 上執行 OpenGL ES 2.0 圖形程式碼](https://channel9.msdn.com/Events/Build/2015/3-686) – Tony Balogh
 -   [進階 DirectX12 圖形與效能](https://channel9.msdn.com/Events/Build/2015/3-673) – Max McMullen
 
-## 其他資源
+## <a name="other-resources"></a>其他資源
 
 
 -   [CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=76627)
@@ -81,10 +88,5 @@ ms.openlocfilehash: 9d7e21a10686a22299e644600414c73f5b4991e7
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,25 +1,32 @@
 ---
 author: jnHs
-Description: "如果在提交您的 app 到市集後發生錯誤，您必須先解決這些問題才能繼續進行認證程序。"
+Description: "如果在提交您的應用程式到市集後發生錯誤，您必須先解決這些問題才能繼續進行認證程序。"
 title: "解決提交錯誤"
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e295011db20d151f54e2581f8c67014b30261eb6
-ms.openlocfilehash: 71f8ee9e2b8d1f892711ada30c58eefde250cca3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b97cb009078039582bfcff6cdaa678f1dd9b979
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 解決提交錯誤
+# <a name="resolve-submission-errors"></a>解決提交錯誤
 
-如果在提交您的 app 到市集後發生錯誤，您必須先解決這些問題才能繼續進行[認證程序](the-app-certification-process.md)。 錯誤訊息會指出問題是什麼，以及您為了修正這個問題可能需要執行的動作。 以下是一些可協助您解決這些錯誤的額外資訊。
+如果在提交您的應用程式到市集後發生錯誤，您必須先解決這些問題才能繼續進行[認證程序](the-app-certification-process.md)。 錯誤訊息會指出問題是什麼，以及您為了修正這個問題可能需要執行的動作。 以下是一些可協助您解決這些錯誤的額外資訊。
 
-## UWP app
+## <a name="uwp-apps"></a>UWP app
 
 如果您提交 UWP app 時，如果您的套件檔不是由 Visual Studio 針對市集所產生 .appxupload 檔案，則會在前置處理期間看到錯誤訊息。 當您建立 app 套件檔案時，請確定您遵循[封裝適用於 Windows 10 的通用 Windows app](../packaging/packaging-uwp-apps.md) 上的步驟，並且在提交的 [[套件](upload-app-packages.md)] 頁面上只上傳 .appxupload 檔案，而非 appx 或 .appxbundle。
 
 如果出現編譯錯誤，請確認您可以成功在釋出模式中建置您的應用程式。 如需詳細資訊，請參閱 [.NET 原生內部編譯器錯誤](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
-## Windows Phone app
+## <a name="windows-phone-apps"></a>Windows Phone app
 
 在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 [提交至市集]**** 前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
 
@@ -33,7 +40,7 @@ ms.openlocfilehash: 71f8ee9e2b8d1f892711ada30c58eefde250cca3
 
 提交您的 app 後可能看到的另一個錯誤是**錯誤 1300**。 這發生在一或多個組件 (或整個套件) 已先行編譯時。 若要修正此問題，請先在 Microsoft Visual Studio 中重建 App 套件，然後提交新產生的套件。
 
-## 名稱/身分識別錯誤
+## <a name="nameidentity-errors"></a>名稱/身分識別錯誤
 
 如果您看到「在套件中找到的名稱不是其中一個保留的應用程式名稱。請保留應用程式名稱和/或使用此語言的正確應用程式名稱更新您的套件」****錯誤，可能是因為您在套件中輸入的名稱不正確。 如果您在開發人員中心使用您尚未保留的應用程式名稱，也會發生這個錯誤。 您通常可以依照下列步驟解決這個錯誤：
 
@@ -48,10 +55,5 @@ ms.openlocfilehash: 71f8ee9e2b8d1f892711ada30c58eefde250cca3
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。"
+Description: "將您的應用程式列在正確的類別與子類別中，可協助客戶找到您的應用程式，並對應用程式有更深入的了解。"
 title: "類別與子類別表格"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b31e399d950a99f0cb6f1e912e391429b5463136
-ms.openlocfilehash: 40891ade1c3383f89eed99176b4e9cf979e1fb64
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a69521d9ff9adb682a370b421458269507e9befe
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 類別與子類別表格
+# <a name="category-and-subcategory-table"></a>類別與子類別表格
 
 
-將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。
+將您的應用程式列在正確的類別與子類別中，可協助客戶找到您的應用程式，並對應用程式有更深入的了解。
 
 選擇最能說明您 app 的類別。 然後選擇子類別 (如果有的話)。
 
@@ -59,11 +66,6 @@ Windows 市集可以組織 App，以分成下列類別與子類別。
 | 公用程式 + 工具           | 備份 + 管理 <br> 檔案管理工具                |
  
 
-> **注意** 如需適用於 Windows 8.1 和較舊版本的 Windows 市集及 Windows Phone 市集中所使用的類別，以及它們如何與上述類別產生關聯的相關資訊，請參閱 [App 如何顯示給 Windows 10 市集客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
+> **注意** 如需適用於 Windows 8.1 和較舊版本的 Windows 市集及 Windows Phone 市集中所使用的類別，以及它們如何與上述類別產生關聯的相關資訊，請參閱 [應用程式如何顯示給 Windows 10 市集客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
 
 

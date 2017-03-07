@@ -3,13 +3,20 @@ author: mtoepke
 title: "圖形診斷工具"
 description: "了解如何取得與使用圖形診斷功能，包括 Visual Studio 中的圖形偵錯、圖形畫面格分析，以及 GPU 使用量。"
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 圖形, 診斷工具, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 765cde8afe32cef6515ee6ca9750365aa35984a2
-ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 076020d88889a9cc8b417befa2dd54b41d688e5e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 圖形診斷工具
+# <a name="graphics-diagnostics-tools"></a>圖形診斷工具
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -26,7 +33,7 @@ ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
 -   Visual Studio 中的圖形畫面格分析會在圖形偵錯記錄上執行，並收集 Direct3D 繪製呼叫的基準計時。 然後它會透過修改各種圖形設定，來執行一連串的實驗，並產生計時結果表格。 您可以使用此資料了解您應用程式中的圖形效能問題並檢閱各項實驗的結果，以找出可能改善效能的環節。
 -   Visual Studio 中的 GPU 使用量可讓您即時監視 GPU 使用狀況。 它會收集並分析由 CPU 與 GPU 所處理的工作負載的計時資料， 讓您可以判斷瓶頸發生位置。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 [Visual Studio 中的圖形診斷概觀](http://go.microsoft.com/fwlink/p/?LinkID=526382)
@@ -37,10 +44,5 @@ ms.openlocfilehash: 5d8f7a8dbba2da76c6093d034c2ca8c2b4592c7e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

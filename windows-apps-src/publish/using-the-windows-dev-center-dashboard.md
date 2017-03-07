@@ -3,13 +3,20 @@ author: jnHs
 Description: "Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。"
 title: "使用 Windows 開發人員中心儀表板"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: 2ccec6e85666ef328f4aa0baa8ba6a705986a4c4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a4dfc6003c681bb0379f25d94bb144940467d15e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 開發人員中心儀表板
+# <a name="using-the-windows-dev-center-dashboard"></a>使用 Windows 開發人員中心儀表板
 
 
 Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 裝置開發的所有 app。
@@ -22,7 +29,7 @@ Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 
 
 開發人員中心儀表板也會提供適用於 [App 管理和設定服務](app-management-and-services.md)、[檢閱分析資料](analytics.md)、[支付報告](payout-summary.md)、[促銷和客戶參與](app-promotion-and-customer-engagement.md)、[測試版測試](beta-testing-and-targeted-distribution.md)、[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)及其他更多項目的功能。
 
-## 使用整合儀表板的秘訣
+## <a name="tips-for-using-the-unified-dashboard"></a>使用整合儀表板的秘訣
 
 如果您先前曾發佈適用於 Windows 8.1、Windows Phone 8.1 或較舊作業系統版本的 app，請查看 [App 如何在市集中顯示給 Windows 10 客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md)，以深入了解適用於 Windows 10 客戶的 app 清單中的變更，以及我們在新儀表板中分類您的 app 資訊的方式。
 
@@ -34,10 +41,5 @@ Windows 開發人員中心儀表板可讓您集中管理和提交您為 Windows 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO5-->
 
 

@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: F45E6F35-BC18-45C8-A8A5-193D528E2A4E
 description: "了解如何在 UWP 應用程式中啟用應用程式內購買和試用版。"
 title: "應用程式內購買和試用版"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 應用程式內購買, IAP, 附加元件, 試用版, 消費性, 耐久性"
 translationtype: Human Translation
-ms.sourcegitcommit: ebac7d8edf9787ad810b84f3855fe23ae3007dcf
-ms.openlocfilehash: 33004b5229167bedd4cbafe5279709f1225ed02c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ade314f79edf73527f29e937f8eab987c902802f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -218,9 +225,4 @@ UWP 應用程式可以提供下列類型的附加元件。
 * [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
 * [實作應用程式的試用版](implement-a-trial-version-of-your-app.md)
 * [使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

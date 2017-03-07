@@ -3,26 +3,33 @@ author: mtoepke
 title: "DirectX 與 XAML 互通性"
 description: "您可以在通用 Windows 平台 (UWP) 遊戲中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。"
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX, XAML 互通性"
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6934ac8bfbff487e57d0097cb129faf853a3eb9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX 與 XAML 互通性
+# <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您可以在通用 Windows 平台 (UWP) 遊戲或 App 中，同時使用 Extensible Application Markup Language (XAML) 與 Microsoft DirectX。 XAML 和 DirectX 的組合可讓您建置彈性的使用者介面架構，以便與 DirectX 轉譯的內容互通，而這對於具有大量圖形的 App 特別有用。 本主題說明使用 DirectX 的 UWP App 結構，並指出建置與 DirectX 搭配使用的 UWP App 時應使用的重要類型。
 
 如果您的 App 著重在 2D 轉譯，您可能想要使用 [**Win2D**](https://github.com/microsoft/win2d) Windows 執行階段程式庫。 此程式庫是由 Microsoft 維護，且採用 Direct2D 核心技術。 它能大幅簡化實作 2D 圖形的使用模式，且包含本文件中所提及之某些技術的實用抽象。 如需詳細資訊，請參閱專案頁面。 此文件涵蓋的指南適用於「沒有」**使用 Win2D 的 App 開發人員。
 
-> **注意** DirectX API 不是定義為 Windows 執行階段類型，因此您通常會使用 Visual C++ 元件延伸 (C++/CX) 來開發與 DirectX 互通的 XAMLUWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
+> **注意**  DirectX API 不是定義為 Windows 執行階段類型，因此您通常會使用 Visual C++ 元件延伸 (C++/CX) 來開發與 DirectX 互通的 XAMLUWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
 
  
 
-## XAML 和 DirectX
+## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
 DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 Microsoft Direct3D。 雖然 XAML 可支援基本的 2D 基本形狀和效果，但許多應用程式 (例如模型和遊戲) 需要更複雜的圖形支援。 對於這類的應用程式，您可以使用 Direct2D 和 Direct3D 呈現局部或所有圖形，然後使用 XAML 處理其他作業。
 
@@ -41,7 +48,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
 -   如果您使用 DirectX 來呈現即時更新的圖形，或處於必須在固定的低延遲間隔進行更新的情況下，請使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 類別，這樣您在重新整理圖形時就不必與 XAML 架構重新整理計時器同步。 這個類型可以讓您直接存取圖形裝置的交換鏈結 ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631))，並將 XAML 放在轉譯目標的最上層。 這個類型最適用於需要 XAML 使用者介面的遊戲和全螢幕 DirectX App。 您必須了解 DirectX 以使用此方法，包含 Microsoft DirectX Graphics Infrastructure (DXGI)、Direct2D 及 Direct3D 技術。 如需詳細資訊，請參閱 [Direct3D 11 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
 
-## SurfaceImageSource
+## <a name="surfaceimagesource"></a>SurfaceImageSource
 
 
 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 提供用來繪圖的 DirectX 共用表面，然後將位元組合成應用程式內容。
@@ -90,7 +97,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
 4.  將 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 物件的指標提供給 [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323)，然後使用 DirectX 在該表面上繪圖。 只會針對 *updateRect* 參數中指定要更新的區域進行繪圖。
 
-    > **注意** 每一 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) 一次只能有一個作用中的未處理 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作。
+    > **注意**   每一個 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) 一次只能有一個作用中的未處理 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作。
 
      
 
@@ -120,11 +127,11 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
     brush->ImageSource = surfaceImageSource;
     ```
 
-> **注意** 目前呼叫 [**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (繼承自 **IBitmapSource::SetSource**) 會擲回例外狀況。 不要從您的 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 物件呼叫它。
+> **注意**   目前呼叫 [**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (繼承自 **IBitmapSource::SetSource**) 會擲回例外狀況。 不要從您的 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) 物件呼叫它。
 
  
 
-## VirtualSurfaceImageSource
+## <a name="virtualsurfaceimagesource"></a>VirtualSurfaceImageSource
 
 
 當內容可能大於螢幕的可用空間時，[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) 會擴充 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)，因此必須虛擬化內容以達最佳呈現效果。
@@ -234,7 +241,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
         跟 [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 一樣，這個方法會傳回 *offset* 參數中更新之目標矩形的座標點 (x,y) 位移。 您使用這個位移判斷要在 [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 的什麼位置進行繪圖。
 
-        > **注意** 每一 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) 一次只能有一個作用中的未處理 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作。
+        > **注意**   每一個 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) 一次只能有一個作用中的未處理 [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作。
 
          
 
@@ -256,7 +263,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
     3.  呼叫 [**IVirtualSurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324)。 結果是一個點陣圖。
 
-## SwapChainPanel 和遊戲
+## <a name="swapchainpanel-and-gaming"></a>SwapChainPanel 和遊戲
 
 
 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 是 Windows 執行階段類型，專門用於支援高階圖形和遊戲，您可以在此直接管理交換鏈結。 在這個案例中，您會建立自己的 DirectX 交換鏈結並管理呈現內容的顯示。
@@ -274,7 +281,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 如果您的 **SwapChainPanel** 需要收到低延遲的指標輸入，請使用 [**SwapChainPanel::CreateCoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource)。 這個方法會傳回 [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coreindependentinputsource) 物件，能用於以最低延遲從背景執行序取得輸入事件。 請注意，一旦呼叫這個方法，一般 XAML 指標輸入事件將不會對 **SwapChainPanel** 引發，因為所有輸入都會重新導向到背景執行序。
 
 
-> **注意** 通常來說，您的 DirectX App 應該橫向建立交換鏈結，並與顯示視窗大小相等 (這通常是大部分 Windows 市集遊戲中的原生螢幕解析度)。 這確保您的應用程式會在沒有任何可見的 XAML 重疊時使用最佳化的交換鏈結。 如果應用程式會旋轉為直向模式，則您的應用程式應該在現有的交換鏈結上呼叫 [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)、視需要將轉換套用到內容，然後在相同的交換鏈結上再次呼叫 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 同樣地，每當透過呼叫 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 調整交換鏈結大小時，您的應用程式都應該在相同的交換鏈結上再次呼叫 **SetSwapChain**。
+> **注意**   通常來說，您的 DirectX 應用程式應該橫向建立交換鏈結，並與顯示視窗大小相等 (這通常是大部分 Windows 市集遊戲中的原生螢幕解析度)。 這確保您的應用程式會在沒有任何可見的 XAML 重疊時使用最佳化的交換鏈結。 如果應用程式會旋轉為直向模式，則您的應用程式應該在現有的交換鏈結上呼叫 [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801)、視需要將轉換套用到內容，然後在相同的交換鏈結上再次呼叫 [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 同樣地，每當透過呼叫 [**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 調整交換鏈結大小時，您的應用程式都應該在相同的交換鏈結上再次呼叫 **SetSwapChain**。
 
 
  
@@ -353,7 +360,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
     當 Windows 執行階段配置/轉譯邏輯發出更新時，就會重新整理 XAML 元素。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [**Win2D**](http://microsoft.github.io/Win2D/html/Introduction.htm)
 * [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
@@ -368,10 +375,5 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

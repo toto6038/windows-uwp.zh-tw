@@ -5,16 +5,23 @@ title: "旋轉"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 3217dd6bda6d9692ff450133af23002a7040347b
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="rotation"></a>旋轉
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-本文描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
+本文說明旋轉的新 Windows UI，並提供在 UWP 應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -126,10 +133,5 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

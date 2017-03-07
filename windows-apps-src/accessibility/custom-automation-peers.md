@@ -5,13 +5,20 @@ ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: "自訂自動化對等"
 label: Custom automation peers
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9e1a458fa7ec51d621156e3ec6ed97b0361a6217
-ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cd196547f78e896c25ee11c955146868cefd5f96
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 自訂自動化對等  
+# <a name="custom-automation-peers"></a>自訂自動化對等  
 
 說明 Microsoft 使用者介面自動化的自動化對等，以及如何提供自訂 UI 類別的自動化支援。
 
@@ -32,7 +39,7 @@ ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
 <span id="Determining_the_existing_state_of_UI_Automation_support_for_your_custom_UI_class"/>
 <span id="determining_the_existing_state_of_ui_automation_support_for_your_custom_ui_class"/>
 <span id="DETERMINING_THE_EXISTING_STATE_OF_UI_AUTOMATION_SUPPORT_FOR_YOUR_CUSTOM_UI_CLASS"/>
-## 判斷自訂 UI 類別之 UI 自動化支援的現有狀態。  
+## <a name="determining-the-existing-state-of-ui-automation-support-for-your-custom-ui-class"></a>判斷自訂 UI 類別之 UI 自動化支援的現有狀態。  
 開始嘗試為自訂控制項實作自動化對等前，您應該測試基礎類別和它的自動化對等是否已提供您需要的無障礙功能或自動化支援。 很多時候，組合使用 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 實作、特定對等以及它們實作的模式即可提供基本但令人滿意的無障礙功能體驗。 至於是否真的可以提供令人滿意的無障礙功能，則取決於您為那些公開給控制項與其基礎類別的物件模型做了多少的變更。 另外，這也取決於您在基礎類別新增的項目是否與範本協定中的新 UI 元素或控制項的視覺外觀相關。 有時候您的變更可能會產生需要額外協助工具支援的新操作功能。
 
 即使使用現有的基礎對等類別只能支援基本的無障礙功能，但對於自動化測試而言，最佳做法仍然是定義對等，讓您可以將準確的 **ClassName** 資訊報告給使用者介面自動化。 如果您要撰寫協力廠商專用的控制項，這項考慮尤其重要。
@@ -40,7 +47,7 @@ ms.openlocfilehash: be53632455fe2fa847cc77c82ed0c2e2edff6685
 <span id="Automation_peer_classes__"/>
 <span id="automation_peer_classes__"/>
 <span id="AUTOMATION_PEER_CLASSES__"/>
-## 自動化對等類別  
+## <a name="automation-peer-classes"></a>自動化對等類別  
 UWP 是利用現有 UI 自動化技術和舊版的 Managed 程式碼 UI 架構 (例如 Windows Forms、Windows Presentation Foundation (WPF) 以及 Microsoft Silverlight) 所使用的慣例建立而成的。 很多控制項類別以及它們的函式與用途都是源自於舊版的 UI 架構。
 
 按照慣例，對等類別名稱的開頭是控制項類別名稱，結尾則是 "AutomationPeer"。 例如，[**ButtonAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242458) 是 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 控制項類別的對等類別。
@@ -51,7 +58,7 @@ UWP 是利用現有 UI 自動化技術和舊版的 Managed 程式碼 UI 架構 (
 <span id="Peers__patterns_and_control_types"/>
 <span id="peers__patterns_and_control_types"/>
 <span id="PEERS__PATTERNS_AND_CONTROL_TYPES"/>
-## 對等、模式及控制項類型  
+## <a name="peers-patterns-and-control-types"></a>對等、模式及控制項類型  
 「控制項模式」**是一種介面實作，可以將控制項功能的特定層面公開給 UI 自動化用戶端。 UI 自動化用戶端使用透過控制項模式公開的屬性與方法來抓取控制項的功能資訊，或者在執行階段操縱控制項的行為。
 
 控制項模式會提供分類和公開控制項功能的方法，而這個方法與控制項類型或控制項外觀無關。 例如，顯示表格式介面的控制項會使用 **Grid** 控制項模式公開表格的欄數與列數，並讓使用者介面自動化用戶端可以從表格中抓取項目。 其他範例包括，使用者介面用戶端可以使用 **Invoke** 控制項模式來表示可以被叫用的控制項 (例如按鈕)，並使用 **Scroll** 控制項模式來表示有捲軸的控制項 (例如，清單方塊、清單檢視或下拉式方塊)。 每種控制項模式分別描述個別的功能類型，您可以結合不同的控制項模式來描述特定控制項所支援的完整功能。
@@ -76,7 +83,7 @@ UWP 是利用現有 UI 自動化技術和舊版的 Managed 程式碼 UI 架構 (
 <span id="Guidance_for_how_to_implement_control_patterns"/>
 <span id="guidance_for_how_to_implement_control_patterns"/>
 <span id="GUIDANCE_FOR_HOW_TO_IMPLEMENT_CONTROL_PATTERNS"/>
-### 如何實作控制項模式的指導方針  
+### <a name="guidance-for-how-to-implement-control-patterns"></a>如何實作控制項模式的指導方針  
 控制項模式及其用途屬於使用者介面自動化架構較廣泛定義的一部分，而不僅適用於 Windows 市集應用程式的協助工具支援。 當您實作控制項模式時，應確定您的實作方式與 MSDN 及使用者介面自動化規格所記載的指導方針相符。 如果您正在尋找指導方針，一般只要使用 MSDN 主題即可，不需要參考規格。 每個模式的指導方針都記載在：[實作 UI 自動化控制項模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)。 您會注意到這個領域下的每個主題都有＜實作指導方針與慣例＞小節和＜必要成員＞小節。 指導方針通常會參照[提供者的控制項模式介面](https://msdn.microsoft.com/library/windows/desktop/Ee671201)參考中相關控制項模式介面的特定 API。 這些介面是原生/COM 介面 (而它們的 API 使用 COM 樣式語法)。 但是您在該處看到的所有內容，在 [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) 命名空間中都有對等的項目。
 
 如果您使用的是預設自動化對等並針對其行為進行擴充，則這些對等是以符合使用者介面自動化指導方針的方式撰寫。 如果它們支援控制項模式，您就可以倚賴該項符合[實作使用者介面自動化控制項模式](https://msdn.microsoft.com/library/windows/desktop/Ee671292)指導方針的模式支援。 如果某個控制項對等回報它代表使用者介面自動化所定義的控制項類型，則表示該對等已經遵循[支援使用者介面自動化控制項類型](https://msdn.microsoft.com/library/windows/desktop/Ee671633)所記載的指導方針。
@@ -88,19 +95,19 @@ UWP 是利用現有 UI 自動化技術和舊版的 Managed 程式碼 UI 架構 (
 <span id="Built-in_automation_peer_classes"/>
 <span id="built-in_automation_peer_classes"/>
 <span id="BUILT-IN_AUTOMATION_PEER_CLASSES"/>
-## 內建的自動化對等類別  
+## <a name="built-in-automation-peer-classes"></a>內建的自動化對等類別  
 在一般情況下，如果元素接受來自使用者的 UI 活動，或者如果元素包含輔助技術 (用於呈現 App 的互動式或有意義的 UI) 使用者需要的資訊，則這些元素就會實作自動化對等類別。 並非所有 UWP 視覺元素都有自動化對等。 實作自動化對等的類別範例有 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)。 不實作自動化對等的類別範例有 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 和以 [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511) 為基礎的類別 (例如 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 和 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267))。 **Panel** 沒有對等，因為它提供一種純視覺的配置行為。 使用者沒有任何與協助工具相關的方式來與 **Panel** 互動。 不管 **Panel** 包含什麼子元素，都會向使用者介面自動化樹狀目錄報告為樹狀目錄中下一個可用且含對等或元素表示法之父項元素的子元素。
 
 <span id="UI_Automation_and_UWP_process_boundaries"/>
 <span id="ui_automation_and_uwp_process_boundaries"/>
 <span id="UI_AUTOMATION_AND_UWP_PROCESS_BOUNDARIES"/>
-## 使用者介面自動化與 UWP 處理程序界限  
+## <a name="ui-automation-and-uwp-process-boundaries"></a>使用者介面自動化與 UWP 處理程序界限  
 一般而言，存取 UWP App 的使用者介面自動化用戶端程式碼會執行跨處理序。 使用者介面自動化架構基礎結構能夠讓資訊跨越處理程序的界限。 這個概念在[使用者介面自動化基礎](https://msdn.microsoft.com/library/windows/desktop/Ee684007)中有更詳盡的說明。
 
 <span id="OnCreateAutomationPeer"/>
 <span id="oncreateautomationpeer"/>
 <span id="ONCREATEAUTOMATIONPEER"/>
-## OnCreateAutomationPeer  
+## <a name="oncreateautomationpeer"></a>OnCreateAutomationPeer  
 所有從 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 衍生的類別都包含受保護的虛擬方法 [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)。 自動化對等的物件初始化順序會呼叫 **OnCreateAutomationPeer**，以取得每一個控制項的自動化對等物件，然後建立一個使用者介面自動化樹狀目錄以用於執行階段。 使用者介面自動化程式碼可以使用對等來取得控制項特性與功能的相關資訊，並使用其控制項模式來模擬互動式功能。 支援自動化的自訂控制項必須覆寫 **OnCreateAutomationPeer**，然後傳回一個衍生自 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 的類別執行個體。 例如，如果自訂控制項是從 [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/BR227736) 類別衍生的，則 **OnCreateAutomationPeer** 傳回的物件應該是從 [**ButtonBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242460) 衍生的。
 
 如果您在撰寫自訂控制項類別並想要一併提供新的自動化對等，您應該覆寫自訂控制項的 [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer) 方法，如此一來，它才能傳回新的對等執行個體。 您的對等類別必須從 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 直接或間接衍生。
@@ -160,7 +167,7 @@ protected:
 <span id="Choosing_the_correct_peer_base_class"/>
 <span id="choosing_the_correct_peer_base_class"/>
 <span id="CHOOSING_THE_CORRECT_PEER_BASE_CLASS"/>
-### 選擇正確的對等基礎類別  
+### <a name="choosing-the-correct-peer-base-class"></a>選擇正確的對等基礎類別  
 確定您的 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 衍生自基礎類別，而該基礎類別與衍生來源的控制項類別有完全符合的現有對等邏輯。 在前面的範例中，因為 `NumericUpDown` 衍生自 [**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863)，所以有可用來做為對等項目基礎的 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 類別。 使用與衍生控制項本身的方法最接近的相符對等類別，至少可以避免覆寫部分的 [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 功能，因為基底對等類別已經實作它了。
 
 基礎 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 類別沒有對應的對等類別。 如果您需要與衍生自 **Control** 的自訂控制項對應的對等類別，請從 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 衍生自訂的對等類別。
@@ -173,7 +180,7 @@ protected:
 <span id="Initialization_of_a_custom_peer_class"/>
 <span id="initialization_of_a_custom_peer_class"/>
 <span id="INITIALIZATION_OF_A_CUSTOM_PEER_CLASS"/>
-## 初始化自訂對等類別  
+## <a name="initialization-of-a-custom-peer-class"></a>初始化自訂對等類別  
 自動化對等應該定義一個類型安全建構函式，而這個建構函式會使用擁有者控制項的執行個體來進行基本初始化。 在下一個範例中，實作會將 *owner* 值傳送至 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 基底，最後這個 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 會使用 *owner* 來設定 [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner)。
 
 C#
@@ -200,7 +207,7 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 <span id="Core_methods_of_AutomationPeer"/>
 <span id="core_methods_of_automationpeer"/>
 <span id="CORE_METHODS_OF_AUTOMATIONPEER"/>
-## AutomationPeer 的核心方法  
+## <a name="core-methods-of-automationpeer"></a>AutomationPeer 的核心方法  
 基於 UWP 基礎結構的理由，自動化對等的可覆寫方法是一組方法配對的一部分：使用者介面自動化提供者做為使用者介面自動化用戶端轉送點使用的公開存取方法，以及 UWP 類別可以覆寫以影響行為的受保護 "Core" 自訂方法。 方法配對預設會連接在一起，透過這種方式，呼叫存取方法時一定會叫用已經實作提供者的平行 "Core" 方法，或者當作從基礎類別叫用預設實作的後援機制。
 
 為自訂控制項實作對等時，請從想要公開自訂控制項獨特行為的基礎自動化對等類別來覆寫任何 "Core" 方法。 使用者介面自動化程式碼會呼叫對等類別的公用方法，以取得控制項的相關資訊。 若要提供控制項的相關資訊，當控制項實作與設計所建立的協助工具或其他使用者介面自動化案例不同於基礎自動化對等類別支援的使用者介面自動化案例時，請覆寫名稱以 "Core" 結束的每個方法。
@@ -240,7 +247,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 <span id="GetPattern_and_GetPatternCore"/>
 <span id="getpattern_and_getpatterncore"/>
 <span id="GETPATTERN_AND_GETPATTERNCORE"/>
-### GetPattern 和 GetPatternCore  
+### <a name="getpattern-and-getpatterncore"></a>GetPattern 和 GetPatternCore  
 對等的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 實作會傳回物件，這些物件支援輸入參數中要求的模式。 具體而言，使用者介面自動化用戶端會呼叫轉送到提供者 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 方法的方法，並指定表示要求模式的 [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 列舉值。 覆寫 **GetPatternCore** 之後應該會傳回一個可以實作指定模式的物件。 該物件也就是對等本身，因為對等在報告它支援模式時必須實作對應的模式介面。 如果您的對等沒有模式的自訂實作，但是您確信對等的基底實作了模式，則可以從您的 **GetPatternCore** 呼叫基礎類型的 **GetPatternCore** 實作。 如果對等不支援模式，對等的 **GetPatternCore** 應該要傳回 **null**。 不過，通常並不會直接從您的實作傳回 **null**，而是會倚賴呼叫基底實作來針對任何不支援的模式傳回 **null**。
 
 支援某個模式時，[**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 實作可以傳回 **this** 或 **Me**。 我們希望只要傳回的值不是 **null**，使用者介面自動化用戶端就會將 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 傳回值轉換成要求的模式介面。
@@ -288,7 +295,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Forwarding_patterns_from_sub-elements"/>
 <span id="forwarding_patterns_from_sub-elements"/>
 <span id="FORWARDING_PATTERNS_FROM_sub-elementS"/>
-### 來自子元素的轉送模式  
+### <a name="forwarding-patterns-from-sub-elements"></a>來自子元素的轉送模式  
 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 方法實作也可以指定某個子元素或組件做為其主機的模式提供者。 這個範例模擬 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 如何將捲動模式處理傳輸到它的內部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 控制項對等。 為了指定子元素來進行模式處理，這個程式碼會取得子元素物件、使用 [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) 方法來建立子元素的對等，然後傳回新的對等。
 
 C#
@@ -325,7 +332,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Other_Core_methods"/>
 <span id="other_core_methods"/>
 <span id="OTHER_CORE_METHODS"/>
-### 其他 Core 方法  
+### <a name="other-core-methods"></a>其他 Core 方法  
 在主要案例中，您的控制項可能需要支援鍵盤對等功能；如需為什麼必須這樣做的詳細資訊，請參閱[鍵盤協助工具](keyboard-accessibility.md)。 實作按鍵支援是控制項程式碼而非對等程式碼中的必要部分，因為它是控制項邏輯的一部分，但是對等類別應該覆寫 [**GetAcceleratorKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getacceleratorkeycore) 和 [**GetAccessKeyCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getaccesskeycore) 方法，以便向 UI 自動化用戶端報告所使用的按鍵。 報告按鍵資訊的字串可能需要當地語系化，因此應該來自資源，而不是硬式編碼字串。
 
 如果您替某個支援集合的類別提供對等，最好是衍生自已經提供這類集合支援的功能類別和對等類別。 如果您無法這樣做，維護子集合的控制項對等可能必須覆寫與集合相關的對等方法 [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore)，這樣才能正確向 UI 自動化樹狀目錄報告父系-子系關係。
@@ -343,7 +350,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Base_implementation_in_FrameworkElementAutomationPeer"/>
 <span id="base_implementation_in_frameworkelementautomationpeer"/>
 <span id="BASE_IMPLEMENTATION_IN_FRAMEWORKELEMENTAUTOMATIONPEER"/>
-### FrameworkElementAutomationPeer 中的基底實作  
+### <a name="base-implementation-in-frameworkelementautomationpeer"></a>FrameworkElementAutomationPeer 中的基底實作  
 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 的基底實作提供一些 UI 自動化資訊，這些資訊是從在架構層級定義的各種配置及行為屬性轉譯而來。
 
 * [**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getboundingrectanglecore)：根據已知的配置特性傳回 [**Rect**](https://msdn.microsoft.com/library/windows/apps/BR225994) 結構。 如果 [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.isoffscreen) 是 **true**，傳回 0 值的 **Rect**。
@@ -362,7 +369,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Peers_and_AutomationProperties"/>
 <span id="peers_and_automationproperties"/>
 <span id="PEERS_AND_AUTOMATIONPROPERTIES"/>
-## Peer 和 AutomationProperties  
+## <a name="peers-and-automationproperties"></a>Peer 和 AutomationProperties  
 自動化對等應該為控制項的協助工具相關資訊提供正確的預設值。 請注意，任何使用控制項的 App 程式碼都可以在控制項執行個體中包含 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加屬性以覆寫部分的行為。 呼叫者可以為預設控制項或者為自訂控制項執行上述動作。 例如，下列 XAML 會建立一個具有兩個自訂使用者介面自動化屬性的按鈕： `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
 
 如需 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 附加屬性的詳細資訊，請參閱 [基本的協助工具資訊](basic-accessibility-information.md)。
@@ -372,7 +379,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Implementing_patterns"/>
 <span id="implementing_patterns"/>
 <span id="IMPLEMENTING_PATTERNS"/>
-## 實作模式  
+## <a name="implementing-patterns"></a>實作模式  
 讓我們看看如何透過實作展開-摺疊的控制項模式介面，為控制項編寫一個可以實作展開-摺疊行為的對等。 只要呼叫 [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpattern) 時搭配 [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496) 值，這個對等就會為展開-摺疊行為提供協助工具。 然後，對等應該繼承模式 ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider)) 的提供者介面，並為該提供者介面的每一個成員提供實作。 在這種情況下，介面需要覆寫 3 個成員：[**Expand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expand)、[**Collapse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.collapse)、[**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.iexpandcollapseprovider.expandcollapsestate)。
 
 在類別本身的 API 設計中事先計劃協助工具對您有很大的幫助。 只要您的行為可能是透過在 UI 中進行一般互動的使用者要求所得到的結果，或者是可能透過自動化提供者模式要求，請提供 UI 可以回應或自動化模式可以呼叫的單一方法。 例如，如果您的控制項有一些按鈕組件，它們的連接事件處理常式會展開或摺疊控制項，而且有與這些動作對等的鍵盤功能，請讓這些事件處理常式呼叫您在對等內文 [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242) 中呼叫的 [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570) 或 [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569) 實作。 透過通用的邏輯方法同樣也可以確定控制項的視覺狀態會被更新，以便使用統一的方式來顯示邏輯狀態，無論行為的叫用方式為何。
@@ -395,7 +402,7 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 <span id="UI_Automation_events"/>
 <span id="ui_automation_events"/>
 <span id="UI_AUTOMATION_EVENTS"/>
-## UI 自動化事件  
+## <a name="ui-automation-events"></a>UI 自動化事件  
 
 UI 自動化事件分成下列類別。
 
@@ -409,13 +416,13 @@ UI 自動化事件分成下列類別。
 <span id="AutomationEvents_identifiers"/>
 <span id="automationevents_identifiers"/>
 <span id="AUTOMATIONEVENTS_IDENTIFIERS"/>
-### AutomationEvents 識別碼  
+### <a name="automationevents-identifiers"></a>AutomationEvents 識別碼  
 UI 自動化事件由 [**AutomationEvents**](https://msdn.microsoft.com/library/windows/apps/BR209183) 值加以識別。 列舉的值是唯一識別事件類型的值。
 
 <span id="Raising_events"/>
 <span id="raising_events"/>
 <span id="RAISING_EVENTS"/>
-### 引發事件  
+### <a name="raising-events"></a>引發事件  
 UI 自動化用戶端可以訂閱自動化事件。 在自動化對等模型中，自訂控制項的對等必須呼叫 [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raiseautomationevent) 方法，以報告與協助工具有關的控制項狀態變更。 同樣地，當主要的 UI 自動化屬性值變更時，自訂控制項對等應該呼叫 [**RaisePropertyChangedEvent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.raisepropertychangedevent) 方法。
 
 下一個程式碼範例示範如何從控制項定義程式碼中取得對等物件，然後呼叫方法從該對等觸發事件。 最佳的做法是，程式碼判斷這個事件類型是否有任何接聽程式。 有接聽程式時才觸發事件並建立對等物件，以避免不必要的額外負荷，並協助控制項保持回應狀態。
@@ -439,13 +446,13 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Peer_navigation"/>
 <span id="peer_navigation"/>
 <span id="PEER_NAVIGATION"/>
-## 對等瀏覽  
+## <a name="peer-navigation"></a>對等瀏覽  
 找到自動化對等之後，使用者介面自動化用戶端可以呼叫對等物件的 [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildren) 和 [**GetParent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getparent) 方法，以便瀏覽 app 的對等結構。 藉由對等的 [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getchildrencore) 方法實作，即可支援在控制項內的 UI 元素之間進行瀏覽。 「使用者介面自動化」系統會呼叫這個方法以建立控制項內包含的子元素樹狀目錄；例如，清單方塊中的清單項目。 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 中的預設 **GetChildrenCore** 方法會周遊元素的視覺化樹狀結構，以建立自動化對等的樹狀結構。 自訂控制項可以覆寫這個方法以將子元素的不同呈現方式公開給自動化用戶端，進而傳回可用以傳達資訊或允許使用者互動之元素的自動化對等。
 
 <span id="Native_automation_support_for_text_patterns"/>
 <span id="native_automation_support_for_text_patterns"/>
 <span id="NATIVE_AUTOMATION_SUPPORT_FOR_TEXT_PATTERNS"/>
-## 對文字模式的原生自動化支援  
+## <a name="native-automation-support-for-text-patterns"></a>對文字模式的原生自動化支援  
 有些預設的 UWP app 自動化對等可針對文字模式 ([**PatternInterface.Text**](https://msdn.microsoft.com/library/windows/apps/BR242496)) 提供控制項模式支援。 但是它們是透過原生方法提供這項支援，而相關的對等在 (受管理的) 繼承中並不會提及 [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) 介面。 儘管如此，在受管理的或非受管理的使用者介面自動化用戶端針對模式查詢對等時，它仍會回報對文字模式的支援，並在呼叫用戶端 API 時，針對部分模式提供行為。
 
 如果您打算從其中一個 UWP App 文字控制項衍生對等，並且也建立一個衍生自其中一個文字相關對等的自訂對等，請查看對等的＜備註＞小節，以了解有關模式的任何原生層級支援。 您只要從受管理的提供者介面實作呼叫基底實作，就可以存取自訂對等中的原生基礎行為，但是比較不容易修改基底實作的行為，因為對等及其擁有者控制項上的原生介面並未公開。 一般而言，您應該依原樣使用基底實作 (僅呼叫基底)，或是以您自己的 Managed 程式碼完全取代該功能，而不呼叫基底實作。 後者是一個進階案例，您需要非常熟悉控制項所使用的文字服務架構，以便在使用該架構時支援協助工具需求。
@@ -453,7 +460,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="AutomationProperties.AccessibilityView"/>
 <span id="automationproperties.accessibilityview"/>
 <span id="AUTOMATIONPROPERTIES.ACCESSIBILITYVIEW"/>
-## AutomationProperties.AccessibilityView  
+## <a name="automationpropertiesaccessibilityview"></a>AutomationProperties.AccessibilityView  
 除了提供自訂對等，您也可以在 XAML 中設定 [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.accessibilityview)，來調整任何控制項執行個體的樹狀結構檢視表示法。 這不會在對等類別中一併實作，但是我們將在此處提及它，因為它不論是與自訂控制項還是您所自訂之範本的整體協助工具支援，都有密切關係。
 
 **AutomationProperties.AccessibilityView** 的主要適用情況是要刻意將範本中的特定控制項從「使用者介面自動化」檢視中省略，因為它們對整個控制項的協助工具檢視並無任何有意義的貢獻。 為了避免發生這種情況，請將 **AutomationProperties.AccessibilityView** 設為 "Raw"。
@@ -461,7 +468,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Throwing_exceptions_from_automation_peers"/>
 <span id="throwing_exceptions_from_automation_peers"/>
 <span id="THROWING_EXCEPTIONS_FROM_AUTOMATION_PEERS"/>
-## 從自動化對等擲回例外狀況  
+## <a name="throwing-exceptions-from-automation-peers"></a>從自動化對等擲回例外狀況  
 您正在為您的自動化對等支援所實作的 API 可以擲回例外狀況。 預期任何負責接聽的使用者介面自動化用戶端都相當健全，足以在擲回大部分的例外狀況之後繼續執行。 該接聽程式極可能正在查看一個包含您自己應用程式以外之應用程式的全啟動自動化樹狀結構，因此，如果只因在用戶端呼叫其 API 時，樹狀結構的一個區域擲回對等型例外狀況，就將整個用戶端關閉，這樣的用戶端設計無法被接受。
 
 對於傳遞到對等中的參數，可接受驗證輸入，例如，如果傳遞的是 **null**，則擲回 [**ArgumentNullException**](https://msdn.microsoft.com/library/windows/apps/system.argumentnullexception)，但這對您的實作來說不是有效值。 不過，如果後續有對等所執行的操作，請記住，對等與裝載控制項的互動具有非同步特性。 對等所執行的任何操作不一定會封鎖控制項中的 UI 執行緒 (而且也不應該封鎖)。 因此，您可能會遇到一些情況，就是在建立對等或第一次呼叫自動化對等方法時，有某個物件可供使用或具有特定屬性，但是在同時，控制項狀態已經變更。 針對這些情況，有兩個專用的例外狀況可供提供者擲回：
@@ -472,16 +479,11 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 除此之外，就對等從它們的對等支援擲回的例外狀況來說，對等應該相當保守。 大多數用戶端無法處理來自對等的例外狀況，並將這些例外狀況轉換成使用者在與用戶端進行互動時的可動作選項。 因此，與每次對等嘗試執行操作無效時都擲回例外狀況相比，有時無作業和攔截例外狀況而不在對等實作中重新擲回，會是一個較佳的策略。 此外，也請考量大多數使用者介面自動化用戶端都不是以 Managed 程式碼撰寫。 大多數都是以 COM 撰寫，而且只會在每次呼叫使用者介面自動化用戶端方法時檢查 **HRESULT** 中是否有 **S\_OK**，以最終存取您的對等。
 
 <span id="related_topics"/>
-## 相關主題  
+## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)
 * [控制項模式和介面](control-patterns-and-interfaces.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

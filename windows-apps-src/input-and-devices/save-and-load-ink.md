@@ -5,15 +5,16 @@ title: "儲存和抓取 Windows Ink 筆劃資料"
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
-keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, ISF, 筆跡序列化格式"
+keywords: "Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, ISF, 筆跡序列化格式, 使用者互動, 輸入"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 11bd4c1d8c4f675fb1dad38e249d64324fa29ecf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7c4f0ac39decede933f10fc94ebeb09fa41415e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -93,7 +94,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [儲存] 按鈕的 click 事件處理常式中儲存筆劃。
+3.  最後，會在 **\[儲存\]** 按鈕的 click 事件處理常式中儲存筆劃。
 
     [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者能夠選取儲存筆劃資料的檔案和位置。
 
@@ -222,7 +223,7 @@ public MainPage()
     }
 ```
 
-3.  最後，會在 [載入] 按鈕的 click 事件處理常式中載入筆墨。
+3.  最後，會在 **\[載入\]** 按鈕的 click 事件處理常式中載入筆墨。
 
     [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 讓使用者能夠選取要從中抓取已儲存之筆墨資料的檔案和位置。
 
@@ -371,7 +372,7 @@ public MainPage()
     }
 ```
 
-3.  最後，在新增筆劃選取項目支援之後，我們會在 \[剪下\]、\[複製\] 和 \[貼上\] 按鈕的 click 事件處理常式中實作剪貼簿功能。
+3.  最後，在新增筆劃選取項目支援之後，我們會在 **\[剪下\]**、**\[複製\]** 和 **\[貼上\]** 按鈕的 click 事件處理常式中實作剪貼簿功能。
 
     針對剪下功能，我們會先在 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/br244232) 的 [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) 上呼叫 [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/dn922011)。
 
@@ -450,10 +451,5 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

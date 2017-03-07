@@ -3,21 +3,28 @@ author: TylerMSFT
 title: "使用背景工作支援 App"
 description: "本節中的主題將示範如何在背景中執行輕量型程式碼來回應觸發程序。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a9ac85483c3d7e252f24147088b928de6e781dc6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
+# <a name="support-your-app-with-background-tasks"></a>使用背景工作支援應用程式
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節中的主題將示範如何在背景中執行輕量型程式碼來回應觸發程序。 您可以使用背景工作，在 app 被暫停或未執行時提供功能。 您也可以將背景工作用於即時通訊 App，像是 VOIP、郵件和 IM。
 
 ## <a name="playing-media-in-the-background"></a>在背景播放媒體
 
-從 Windows 10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)。
+從 Windows 10 版本 1607 開始，在背景播放音訊變得更加容易。 如需詳細資訊，請參閱[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)。
 
 ## <a name="in-process-and-out-of-process-background-tasks"></a>同處理序與跨處理序背景工作
 
@@ -162,7 +169,7 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 
 **相關的背景工作指導方針**
 
-* [在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)
+* [在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 * [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
@@ -179,9 +186,4 @@ ms.openlocfilehash: 9f83717657fddf2df51589aae75a3aa21c6ef5da
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 * [Windows 市集裝置 app 的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

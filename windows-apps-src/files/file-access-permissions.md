@@ -2,15 +2,22 @@
 author: laurenhughes
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "檔案存取權限"
-description: "App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。"
+description: "App 預設可以存取特定的檔案系統位置。 應用程式也可以透過檔案選擇器或宣告功能，以存取其他位置。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: d6cb8bd32766157b1edf886621bdc605ca160db5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3a5069620fa665d4508af70df5543a2d42744210
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="file-access-permissions"></a>檔案存取權限
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案選擇器或宣告功能，以存取其他位置。
@@ -102,7 +109,7 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 
     當然，您也可以藉由呼叫檔案選擇器 (使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881))，並讓使用者為您的 app 挑選要存取的檔案和資料夾，以取得卸除式裝置上檔案和資料夾的存取權。 在[使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md)中，深入了解如何使用檔案選擇器。
 
-    **注意** 如需從行動 app 存取 SD 記憶卡的詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
+    **注意**  如需從行動應用程式存取 SD 記憶卡的詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
      
 
@@ -158,13 +165,8 @@ App 預設可以存取特定的檔案系統位置。 App 也可以透過檔案�
 | 音樂     | MusicLibrary <br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | 圖片  | PicturesLibrary<br> 另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
 | 影片    | VideosLibrary<br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
-| 卸除式裝置  | RemovableDevices <br><br>請注意，您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>另請參閱[存取 SD 記憶卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
+| 卸除式裝置  | RemovableDevices <br><br>注意  您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的應用程式可以在這個位置中存取的特定檔案類型。 <br><br>另請參閱[存取 SD 記憶卡](access-the-sd-card.md)。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
 | 家用群組媒體櫃  | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
 | 媒體伺服器裝置 (DLNA) | 至少需要下列其中一個功能。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) |
 | 通用命名慣例 (UNC) 資料夾 | 需要下列功能的組合。 <br><br>家用與工作場所網路功能： <br>- PrivateNetworkClientServer <br><br>同時至少要有一個網際網路和公用網路功能： <br>- InternetClient <br>- InternetClientServer <br><br>此外，如果適當，還要有網域認證功能：<br>- EnterpriseAuthentication <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 | 使用下列方式擷取資料夾： <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>使用下列方式擷取檔案： <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

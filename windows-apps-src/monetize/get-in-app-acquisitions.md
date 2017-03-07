@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得附加元件的彙總下載數資料。"
 title: "取得附加元件下載數"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 市集服務, Windows 市集分析 API, 附加元件下載數"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: be69a45586f4b7d66740d141dcc350eafd16bb53
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -14,7 +21,7 @@ ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
 
 
 
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得 App 附加元件 (也稱為應用程式內產品或 IAP) 的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式附加元件 (也稱為應用程式內產品或 IAP) 的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 描述          |
+| 標頭        | 類型   | 說明          |
 |---------------|--------|--------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -71,7 +78,7 @@ ms.openlocfilehash: a79cd324d57151318445df0dedd35a98d9c9f915
 
 如需支援欄位的清單，請參閱下列表格。 *filter* 參數中的字串值必須由單引號括住。
 
-| 欄位        |  描述        |
+| 欄位        |  說明        |
 |---------------|-----------------|
 | acquisitionType | 下列其中一個字串：<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>IAP</strong></li></ul> |
 | ageGroup | 下列其中一個字串：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
@@ -117,7 +124,7 @@ Authorization: Bearer <your access token>
 
 *Value* 陣列中的元素包含下列值。
 
-| 值               | 類型    | 描述        |
+| 值               | 類型    | 說明        |
 |---------------------|---------|---------------------|
 | 日期                | 字串  | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
 | inAppProductId      | 字串  | 您正在擷取下載數資料之附加元件的市集識別碼。                                                                                                                                                                 |
@@ -177,9 +184,4 @@ Authorization: Bearer <your access token>
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,9 +3,16 @@ author: jnHs
 Description: "Windows 市集提供「電信業者帳單」做為針對支援此功能之電信業者的付款方式。"
 title: "電信業者帳單"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 694c3223278c8666bfb47bf9898ac7c02ac981f4
-ms.openlocfilehash: 831e3fbd1524ce452a4346b6c52f3f1c76385d68
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cbf519d5755adb13f6a41845b4771ac459d880cc
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -26,6 +33,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 
 | 國家/地區  | 電信業者 |
 |-----------------|------------------|
+| 奧地利         | Hutchison 3G 奧地利 |
 | 芬蘭         | DNA、Elisa       |
 | 法國          | Orange           |
 | 德國         | O2               |
@@ -37,7 +45,7 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 | 瑞典          | Telenor          |
 | 瑞士     | Swisscom         |
 | 美國   | Sprint           |
-| 英國  | O2               |
+| 英國  | O2, 3 UK         |
 
  
 
@@ -55,11 +63,8 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 | 比利時              | BASE、Mobistar、Proximus                                           |
 | 巴西               | Claro                                                              |
 | 加拿大               | Fido、Rogers                                                       |
-| 中國                | 中國移動                                                       |
-| 哥倫比亞             | Movistar                                                           |
 | 捷克共和國       | T-Mobile、Vodafone、O2                                             |
-| 厄瓜多              | Claro                                                              |
-| 芬蘭              | Elisa、TeliaSonera、DNA                                            |
+| 芬蘭              | TeliaSonera, DNA                                            |
 | 法國               | Orange、SFR、Bouygues                                              |
 | 德國              | Telefonica、Telekom Deutschland、Vodafone                          |
 | 希臘               | Vodafone                                                           |
@@ -68,7 +73,6 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 | 印尼            | Indosat、Telkomsel、Hutchinson CP Telecommunications (HCPT)        |
 | 愛爾蘭              | O2、Vodafone、Three                                                |
 | 義大利                | Telecom Italia、Vodafone、Wind、3 Italia                           |
-| 約旦               | Umniah                                                             |
 | 墨西哥               | Iusacell、Telcel、Movistar                                         |
 | 荷蘭          | T-Mobile、Vodafone                                                 |
 | 波蘭               | T-Mobile、Orange、Polkomtel (Plus)、Play                           |
@@ -91,10 +95,5 @@ Windows 10 引進了「電信業者帳單」的新實作。 這個實作適用�
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

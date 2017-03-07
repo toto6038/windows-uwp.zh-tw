@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 42ddaea1de6dc4354e776b7d6db79486a6b3057e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 28a1af4079a943c61f547ecf57d802287a3f191f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -132,10 +133,5 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

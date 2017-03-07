@@ -1,11 +1,18 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
 description: "本文示範使用 MediaCapture 類別來擷取相片和視訊的最簡單方式。"
 title: "使用 MediaCapture 進行基本相片、視訊和音訊的擷取"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9cbe7948767ba45e8ef495a9349621969957ab04
-ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8918b120394def3ba12d5932dc66cb38279cc124
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,7 +20,7 @@ ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-本文示範使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 類別來擷取相片和視訊的最簡單方式。 **MediaCapture** 類別會公開一組健全的 API，可提供擷取管線的低階控制權，並啟用進階擷取案例，但本文的目的是協助您快速且輕鬆地新增對 app 的基本媒體擷取。 若要了解更多 **MediaCapture** 提供的功能，請參閱[**相機**](camera.md)。
+本文示範使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 類別來擷取相片和視訊的最簡單方式。 **MediaCapture** 類別會公開一組健全的 API，可提供擷取管線的低階控制權，並啟用進階擷取案例，但本文的目的是協助您快速且輕鬆地新增對 app 的基本媒體擷取。 如需深入了解 **MediaCapture** 提供的功能，請參閱[**相機**](camera.md)。
 
 如果您只想擷取相片或視訊，而不想新增任何其他媒體擷取功能，或者不想建立自己的相機 UI，您可能會想使用 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) 類別，此類別讓您只需啟動 Windows 內建的相機 app，即可接收已擷取的相片或視訊檔案。 如需詳細資訊，請參閱[**使用 Windows 內建相機 UI 來擷取相片和視訊**](capture-photos-and-video-with-cameracaptureui.md)
 
@@ -25,10 +32,10 @@ ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 **將功能新增到應用程式資訊清單**
 
-1.  在 Microsoft Visual Studio 中，按兩下 [方案總管] 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
-2.  選取 [功能] 索引標籤。
-3.  核取 [網路攝影機] 方塊和 [麥克風] 方塊。
-4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 [圖片媒體櫃] 方塊和 [視訊媒體櫃] 方塊。
+1.  在 Microsoft Visual Studio 中，按兩下 **\[方案總管\]** 中的 **package.appxmanifest** 項目，開啟應用程式資訊清單的設計工具。
+2.  選取 **\[功能\]** 索引標籤。
+3.  核取 **\[網路攝影機\]** 方塊和 **\[麥克風\]** 方塊。
+4.  如果要存取圖片媒體櫃和視訊媒體櫃，請選取 **\[圖片媒體櫃\]** 方塊和 **\[視訊媒體櫃\]** 方塊。
 
 
 ## <a name="initialize-the-mediacapture-object"></a>初始化 MediaCapture 物件
@@ -59,7 +66,7 @@ ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 
 建立 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream)，然後呼叫 [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync)，來將相片擷取到資料流，其會傳入資料流和 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties) 物件，以指定應使用的影像格式。 您可以自行初始化該物件來建立自訂的編碼屬性，但類別會針對常見的編碼格式提供靜態方法，例如 [**ImageEncodingProperties.CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.ImageEncodingProperties.CreateJpeg)。 接下來，呼叫 [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile.OpenAsync) 來建立輸出檔的檔案資料流。 建立 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder)，將影像從記憶體內部的資料流解碼，接著建立 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder)，藉由呼叫 [**CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.CreateForTranscodingAsync) 來將影像編碼為檔案。
 
-您可以選擇建立 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet) 物件，然後在影像編碼器上呼叫 [**SetPropertiesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br226252.aspx)，以便在影像檔中包含相片相關的中繼資料。 如需編碼屬性的詳細資訊，請參閱[**影像中繼資料**](image-metadata.md)。 對於大部分的攝影 app 來說，適當地處理裝置方向是不可或缺的。 如需詳細資訊，請參閱[**使用 MediaCapture 處理裝置方向**](handle-device-orientation-with-mediacapture.md)。
+您可以選擇建立 [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapPropertySet) 物件，然後在影像編碼器上呼叫 [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252.aspx)，以便在影像檔中包含相片相關的中繼資料。 如需編碼屬性的詳細資訊，請參閱[**影像中繼資料**](image-metadata.md)。 對於大部分的攝影 app 來說，適當地處理裝置方向是不可或缺的。 如需詳細資訊，請參閱[**使用 MediaCapture 處理裝置方向**](handle-device-orientation-with-mediacapture.md)。
 
 最後，在編碼器物件上呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync)，將相片從記憶體內部的資料流轉碼為檔案。
 
@@ -133,10 +140,5 @@ ms.openlocfilehash: 98f71104b5a95f9327a0b3f879e4dbb91b74b581
 * [使用 MediaCapture 處理裝置方向](handle-device-orientation-with-mediacapture.md)
 * [建立、編輯和儲存點陣圖影像](imaging.md)
 * [檔案、資料夾和媒體櫃](https://msdn.microsoft.com/windows/uwp/files/index)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

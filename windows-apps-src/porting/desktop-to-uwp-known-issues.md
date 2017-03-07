@@ -3,9 +3,17 @@ author: awkoren
 Description: "此文章包含傳統型轉 UWP 橋接器的已知問題。"
 Search.Product: eADQiWindows 10XVcnh
 title: "傳統型橋接器的已知問題"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 translationtype: Human Translation
-ms.sourcegitcommit: ec4c5f937e4fd133bfc4f7aa96d00cee03a13c26
-ms.openlocfilehash: d3ed0af32c9a44078d0f772d7fc130121f5d4970
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: d7f7cfef59c02c3a8930c1bbc2c87cc40675ca22
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="known-issues-with-the-desktop-bridge"></a>傳統型橋接器的已知問題
@@ -18,7 +26,7 @@ ms.openlocfilehash: d3ed0af32c9a44078d0f772d7fc130121f5d4970
 
 已知受影響的 App 包括 Kodi、JT2Go、Ear Trumpet、Teslagrad 和其他 App。
 
-2016 年 10 月 27 日已發佈一 個 [Windows 更新 (版本 14393.351 - KB3197954)](https://support.microsoft.com/kb/3197954)，其中包含可處理此問題的重要修正。 如果您發生此問題，請更新您的電腦。 如果您因為電腦在可以登入之前就重新開機而無法更新電腦，您應該使用系統還原將您的系統復原至安裝受影響 App 之前的時間點。 如需如何使用系統還原的資訊，請參閱 [Windows 10 中的復原選項](https://support.microsoft.com/en-us/help/12415/windows-10-recovery-options)。 
+2016 年 10 月 27 日已發佈一 個 [Windows 更新 (版本 14393.351 - KB3197954)](https://support.microsoft.com/kb/3197954)，其中包含可處理此問題的重要修正。 如果您發生此問題，請更新您的電腦。 如果您因為電腦在可以登入之前就重新開機而無法更新電腦，您應該使用系統還原將您的系統復原至安裝受影響 App 之前的時間點。 如需如何使用系統還原的資訊，請參閱 [Windows 10 中的復原選項](https://support.microsoft.com/help/12415/windows-10-recovery-options)。 
 
 如果更新無法修正問題，或您不確定如何復原電腦，請連絡 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。 
 
@@ -29,8 +37,3 @@ ms.openlocfilehash: d3ed0af32c9a44078d0f772d7fc130121f5d4970
 關於 Windows Update 的詳細資料，請參閱： 
 * https://support.microsoft.com/kb/3197954
 * https://support.microsoft.com/help/12387/windows-10-update-history
-
-
-<!--HONumber=Dec16_HO3-->
-
-

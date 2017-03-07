@@ -3,13 +3,20 @@ title: "Web 驗證代理人"
 description: "本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。"
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d9e7fbb560b7dc3e608c22494a44fce70621173b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Web 驗證代理人
+# <a name="web-authentication-broker"></a>Web 驗證代理人
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,12 +28,12 @@ ms.openlocfilehash: ea3d3e1df07c8cf9701e7bd39af006cd681ef1fe
 
  
 
-## 向線上提供者註冊 app
+## <a name="register-your-app-with-your-online-provider"></a>向線上提供者註冊 app
 
 
 您必須在要連線的線上身分識別提供者上登錄應用程式。 您會知道如何向身分識別提供者登錄 app 的方法。 註冊之後，線上提供者通常會提供您應用程式的識別碼或祕密金鑰。
 
-## 建立驗證要求 URI
+## <a name="build-the-authentication-request-uri"></a>建立驗證要求 URI
 
 
 要求 URI 包含傳送驗證要求時所用的線上提供者位址以及其他所需的資訊 (例如應用程式識別碼或密碼)、驗證完成後使用者前往的重新導向 URI，以及預期的回應類型。 您可以向提供者詢問所需的參數。
@@ -43,7 +50,7 @@ System.Uri startURI = new System.Uri(startURL);
 System.Uri endURI = new System.Uri(endURL);
 ```
 
-## 連線到線上提供者
+## <a name="connect-to-the-online-provider"></a>連線到線上提供者
 
 
 您呼叫 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法以連線到線上身分識別提供者並取得存取權杖。 這個方法使用上個步驟建構的 URI 做為 *requestUri* 參數，以及您要將使用者重新導向的 URI 做為 *callbackUri* 參數。
@@ -84,7 +91,7 @@ catch (Exception ex)
 
 除了 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 以外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空間還包含 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 請不要呼叫此方法。 它是針對以 Windows Phone 8.1 為目標的應用程式設計的，從 Windows 10 開始即過時。
 
-## 使用單一登入 (SSO) 連線。
+## <a name="connecting-with-single-sign-on-sso"></a>使用單一登入 (SSO) 連線。
 
 
 根據預設，Web 驗證代理人不允許保留 Cookie。 基於這個原因，即使 app 使用者指出他們想要保持登入 (例如，透過在提供者登入對話方塊選取核取方塊)，仍然需要在每次想要存取該提供者的資源時進行登入。 若要使用 SSO 登入，您的線上身分識別提供者必須啟用 Web 驗證代理人的 SSO，而且 app 必須呼叫不會使用 *callbackUri* 參數的 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) 超載。
@@ -124,12 +131,12 @@ catch (Exception ex)
 }
 ```
 
-## 偵錯
+## <a name="debugging"></a>偵錯
 
 
 有數種方法可以疑難排解 Web 驗證代理人 API 的問題，包括使用 Fiddler 檢閱作業日誌和檢閱 Web 要求與回應。
 
-### 作業記錄
+### <a name="operational-logs"></a>作業記錄
 
 通常您可以透過使用作業記錄來判斷哪裡出問題。 有一個專用的事件記錄檔通道 Microsoft-Windows-WebAuth\\Operational，可供網站開發人員了解 Web 驗證代理人如何處理他們的網頁。 如果要啟用作業記錄，請啟動 eventvwr.exe，然後啟用 [應用程式及服務\\Microsoft\\Windows\\WebAuth] 底下的 [作業] 記錄。 此外，Web 驗證代理人還會在使用者代理字串後面附加一個唯一字串，以便在網頁伺服器上識別自己。 這個字串是 "MSAuthHost/1.0"。 請注意，版本號碼在日後可能會有變更，因此在程式碼中不應該依據該版本號碼。 完整的使用者代理字串範例 (附有完整的偵錯步驟) 如下：
 
@@ -146,7 +153,7 @@ catch (Exception ex)
     -   瀏覽錯誤：AuthHost 在 URL 遇到瀏覽錯誤，包含 HttpStatusCode。
     -   瀏覽結束：遇到終止 URL。
 
-### Fiddler
+### <a name="fiddler"></a>Fiddler
 
 Fiddler Web 偵錯工具可以與 app 搭配使用。
 
@@ -176,8 +183,3 @@ Fiddler Web 偵錯工具可以與 app 搭配使用。
     ```
 
 3.  將連入流量防火牆規則新增到 Fiddler。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

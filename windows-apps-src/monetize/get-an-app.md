@@ -1,31 +1,38 @@
 ---
 author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資訊。"
-title: "使用 Windows 市集提交 API 取得 App"
+description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定應用程式擷取相關資訊。"
+title: "使用 Windows 市集提交 API 取得應用程式"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 176e3b584137e503c4adfe2eb612d9329226baac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 市集提交 API 取得 App
+# <a name="get-an-app-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式
 
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資訊。
+在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定應用程式擷取相關資訊。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -52,13 +59,13 @@ ms.openlocfilehash: ef0c9ff463b89854c9aaa7ee2c8307f4af30fadf
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
 
 <span/>
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何擷取市集識別碼值為 9WZDNCRD91MD 的 App 的相關資訊。
 
@@ -67,7 +74,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315 HTT
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱[應用程式資源](get-app-data.md#application_object)。
 
@@ -90,7 +97,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -101,15 +108,10 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [取得所有 App](get-all-apps.md)
 * [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
 * [取得 App 的附加元件](get-add-ons-for-an-app.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

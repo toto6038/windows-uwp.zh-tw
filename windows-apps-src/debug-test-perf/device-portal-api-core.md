@@ -3,9 +3,16 @@ author: dbirtolo
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 參考資料"
 description: "了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b4222774dc4b0f9cdcac871311f5ead69c1e70a9
-ms.openlocfilehash: 3bacb9ac42e157afaed5e9e0e6438654db03ff28
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 10d8799b73a941a4a0eb89fd369d67b2fc6a68c2
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -216,13 +223,13 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="device-manager"></a>裝置管理員
+## Device manager
 ---
 ### <a name="get-the-installed-devices-on-the-machine"></a>取得電腦上已安裝的裝置
 
@@ -277,17 +284,17 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 ---
-## <a name="dump-collection"></a>傾印集合
+## Dump collection
 ---
-### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得 App 的所有損毀傾印清單
+### <a name="get-the-list-of-all-crash-dumps-for-apps"></a>取得應用程式的所有損毀傾印清單
 
 **要求**
 
-您可以透過使用下列要求格式，以取得所有側載 App 的所有可用損毀傾印清單。
+您可以透過使用下列要求格式，以取得所有側載應用程式的所有可用損毀傾印清單。
  
 方法      | 要求 URI
 :------     | :-----
@@ -861,11 +868,11 @@ HTTP 狀態碼      | 描述
 <br />
 **可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 ---
-## <a name="etw"></a>ETW
+## ETW
 ---
 ### <a name="create-a-realtime-etw-session-over-a-websocket"></a>透過 WebSocket 建立即時 ETW 工作階段
 
@@ -925,7 +932,7 @@ provider *{guid}* disable | 停用標示為 *{guid}* (不含括號) 的提供者
     "Events":[
         {
             "Timestamp": int,
-            "Provider": string,
+            "ProviderName": string,
             "ID": int, 
             "TaskName": string,
             "Keyword": int,
@@ -1055,12 +1062,12 @@ GET | /api/etw/customproviders
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
 ---
-## <a name="os-information"></a>OS 資訊
+## OS information
 ---
 ### <a name="get-the-machine-name"></a>取得電腦名稱
 
@@ -1262,13 +1269,13 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="performance-data"></a>效能資料
+## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>取得執行中的處理程序清單
 
@@ -1404,13 +1411,13 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="power"></a>電源
+## Power
 ---
 ### <a name="get-the-current-battery-state"></a>取得目前的電池狀態
 
@@ -1523,7 +1530,7 @@ HTTP 狀態碼      | 描述
  
 方法      | 要求 URI
 :------     | :-----
-GET | /api/power/cfg/
+GET | /api/power/cfg/*<power scheme path>*
 <br />
 選項：
 - SCHEME_CURRENT
@@ -1658,7 +1665,7 @@ HTTP 狀態碼      | 描述
  
 方法      | 要求 URI
 :------     | :-----
-POST | /api/power/cfg/
+POST | /api/power/cfg/*<power scheme path>*
 <br />
 
 **URI 參數**
@@ -1827,11 +1834,11 @@ HTTP 狀態碼      | 描述
 <br />
 **可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * IoT
 
 ---
-## <a name="remote-control"></a>遠端控制
+## Remote control
 ---
 ### <a name="restart-the-target-computer"></a>重新啟動目標電腦
 
@@ -1913,19 +1920,19 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="task-manager"></a>工作管理員
+## Task manager
 ---
-### <a name="start-a-modern-app"></a>啟動現代化 App
+### <a name="start-a-modern-app"></a>啟動現代化應用程式
 
 **要求**
 
-您可以透過使用下列要求格式，以啟動現代化 App。
+您可以透過使用下列要求格式，以啟動現代化應用程式。
  
 方法      | 要求 URI
 :------     | :-----
@@ -2013,13 +2020,13 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="networking"></a>網路功能
+## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>取得目前的 IP 設定
 
@@ -2258,8 +2265,8 @@ URI 參數 | 描述
 :---          | :---
 interface   | (**必要**) 可用來連線到網路的網路介面 GUID。
 op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。
-ssid   | (如果 op == connect** 則為必要) 要連線的 SSID。
-索引鍵   | (如果 op == connect 且網路需要驗證**則為必要) 共用金鑰。
+ssid   | (**如果 *op* == connect** 則為必要) 要連線的 SSID。
+索引鍵   | (**如果 *op* == connect 且網路需要驗證**則為必要) 共用金鑰。
 createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 
 
 **要求標頭**
@@ -2330,13 +2337,13 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * Xbox
 * HoloLens
 * IoT
 
 ---
-## <a name="windows-error-reporting-wer"></a>Windows 錯誤報告 (WER)
+## Windows Error Reporting (WER)
 ---
 ### <a name="download-a-windows-error-reporting-wer-file"></a>下載 Windows 錯誤報告 (WER) 檔案
 
@@ -2497,12 +2504,12 @@ HTTP 狀態碼      | 描述
 <br />
 **可用裝置系列**
 
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
 ---
-## <a name="windows-performance-recorder-wpr"></a>Windows Performance Recorder (WPR) 
+## Windows Performance Recorder (WPR) 
 ---
 ### <a name="start-tracing-with-a-custom-profile"></a>使用自訂設定檔開始追蹤
 
@@ -2960,12 +2967,12 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Mobile
-* Windows 電腦
+* Windows 桌面
 * HoloLens
 * IoT
 
 ---
-## <a name="dns-sd-tags"></a>DNS-SD 標記 
+## DNS-SD Tags 
 ---
 ### <a name="view-tags"></a>檢視標記
 
@@ -3226,7 +3233,7 @@ GET | /api/filesystem/apps/files
 URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
-packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
 
 **要求標頭**
@@ -3286,7 +3293,7 @@ URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
 filename | (**必要**) 下載的檔案名稱。 
-packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData** 則為必要) 您感興趣的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3336,7 +3343,7 @@ URI 參數 | 描述
 knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 
 filename | (**必要**) 所要重新命名之檔案的原始名稱。 
 newfilename | (**必要**) 檔案的新名稱。
-packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
 
 **要求標頭**
@@ -3386,7 +3393,7 @@ URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
 filename | (**必要**) 刪除的檔案名稱。 
-packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3435,7 +3442,7 @@ POST | /api/filesystem/apps/file
 URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。
-packagefullname | (如果 knownfolderid == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData** 則為必要) 您感興趣之 App 的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3465,8 +3472,3 @@ HTTP 狀態碼      | 描述
 * HoloLens
 * Xbox
 * IoT
-
-
-<!--HONumber=Dec16_HO1-->
-
-

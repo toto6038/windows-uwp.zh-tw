@@ -3,25 +3,32 @@ author: mtoepke
 title: "新增使用者介面"
 description: "您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。"
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 使用者介面, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4f4ca9626e38ce7449b6476345205d136b3d9a2d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cb8cb8eae3328a9010553b7f3e041b8f2dbd8c02
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 新增使用者介面
+# <a name="add-a-user-interface"></a>新增使用者介面
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。 現在，讓我們看看範例遊戲如何對玩家回應遊戲的狀態。 在這裡，您會了解如何在 3D 圖形管線輸出上面加入簡單的功能表選項以及平視顯示器元件。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   將基本的使用者介面圖形和行為加入通用 Windows 平台 (UWP) DirectX 遊戲。
 
-## 使用者介面重疊
+## <a name="the-user-interface-overlay"></a>使用者介面重疊
 
 
 雖然有許多方式可以在 DirectX 遊戲中顯示文字和使用者介面元素，但是我們僅討論其中一種方式：[Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (搭配 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) 建立文字元素)。
@@ -34,7 +41,7 @@ Direct2D 是一組 2D 繪圖 API，可用來繪製像素基本類型及效果。
 
 在這個遊戲範例中，我們有兩個主要 UI 元件：平視顯示器，用來顯示分數和遊戲內控制項；重疊，用來顯示遊戲狀態文字和選項 (如暫停資訊及關卡開始選項)。
 
-### 為平視顯示器使用 Direct2D
+### <a name="using-direct2d-for-a-heads-up-display"></a>為平視顯示器使用 Direct2D
 
 這是沒有遊戲視覺效果的遊戲內平視顯示器範例。 它並不複雜，因此可讓玩家專注在瀏覽 3D 世界和射擊目標。 好的介面或平視顯示器不能混淆玩家處理和應對遊戲事件的能力。
 
@@ -177,7 +184,7 @@ void GameHud::Render(
 
  
 
-### 使用重疊顯示遊戲狀態資訊
+### <a name="displaying-game-state-information-with-an-overlay"></a>使用重疊顯示遊戲狀態資訊
 
 除了平視顯示器，遊戲範例還有一個表示 5 個遊戲狀態的重疊，這些所有會顯示為一個大型黑色矩形基本類型，且矩形中會顯示要讓玩家閱讀的文字。 (請注意，這裡不繪製移動視角控制器矩形，因為它們在這些狀態中沒有作用。) 這些重疊狀態為：
 
@@ -203,7 +210,7 @@ void GameHud::Render(
 
 讓我們看看如何為這 5 個狀態初始化和繪製重疊。
 
-### 初始化並繪製重疊
+### <a name="initializing-and-drawing-the-overlay"></a>初始化並繪製重疊
 
 這 5 個明確狀態有一些共同點：第一，它們都在螢幕中央使用黑色矩形當作背景；第二，顯示的文字不是標題文字就是內文文字；第三，文字使用 Segoe UI 字型，且繪製在黑色矩形的上方。 因此，它們所需的資源和實作方法會非常類似。
 
@@ -370,7 +377,7 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 現在，所有的重疊只需要文字即可顯示！
 
-### 在重疊中顯示遊戲狀態
+### <a name="representing-game-state-in-the-overlay"></a>在重疊中顯示遊戲狀態
 
 遊戲範例中的 5 個重疊狀態在 **GameInfoOverlay** 物件中都各自有一個對應的方法。 這些方法會繪製各種重疊，玩家可從此了解遊戲的明確資訊。 這些資訊會透過兩個字串顯示：標題字串以及內文字串。 因為範例已經在 **RecreateDeviceResources** 方法中設定了這個資訊的資源和配置，現在您只需要提供各個重疊狀態使用的字串。
 
@@ -502,11 +509,11 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 
 現在遊戲範例可根據遊戲的狀態，使用文字資訊來與玩家溝通。
 
-### 後續步驟
+### <a name="next-steps"></a>後續步驟
 
 在下一個主題[新增控制項](tutorial--adding-controls.md)中，我們會說明玩家如何與遊戲範例互動，以及輸入如何變更遊戲狀態。
 
-### 這個章節的完整範例程式碼
+### <a name="complete-sample-code-for-this-section"></a>這個章節的完整範例程式碼
 
 GameHud.h
 
@@ -1478,7 +1485,7 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
@@ -1489,10 +1496,5 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

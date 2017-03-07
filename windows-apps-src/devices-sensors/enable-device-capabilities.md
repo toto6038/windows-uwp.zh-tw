@@ -2,20 +2,27 @@
 author: DBirtolo
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: "啟用裝置功能"
-description: "本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。"
+description: "本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的應用程式使用相機、麥克風、定位感應器及其他裝置。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 15b12bfafea71705a9c18464461a73e3e2f05563
+ms.lasthandoff: 02/07/2017
 
 ---
-# 啟用裝置功能
+# <a name="enable-device-capabilities"></a>啟用裝置功能
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的 app 使用相機、麥克風、定位感應器及其他裝置。
 
-## 指定您 app 將要使用的裝置功能
+## <a name="specify-the-device-capabilities-your-app-will-use"></a>指定您 app 將要使用的裝置功能
 
 
 當您使用特定類型的裝置時，Windows app 需要您在 app 套件資訊清單中指定。 在 Visual Studio 中，您可以使用[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)宣告大多數的功能，或是如同[如何在套件資訊清單中指定裝置功能 (手動)](https://msdn.microsoft.com/library/windows/apps/Dn263092) 中所述的方式，手動新增它們。 本教學課程假設您使用的是資訊清單設計工具。
@@ -56,7 +63,7 @@ ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 | 藍牙 RFCOMM |  | 提供可支援基本速率/延伸資料速率 (BR/EDR) 傳輸之 API 的存取，也讓您的 Windows 市集應用程式存取可實作序列埠設定檔 (SPP) 的裝置。 此功能需要子元素。 如需詳細資訊，請參閱[如何指定藍牙的裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263090)。 |
 | pointOfService |  | 提供服務指標 (POS) 條碼掃描器和磁條讀取器的存取。 Windows Phone 不支援此功能。 | 
 
-## 使用 Windows 執行階段 API 與您的裝置進行通訊
+## <a name="use-the-windows-runtime-api-for-communicating-with-your-device"></a>使用 Windows 執行階段 API 與您的裝置進行通訊
 
 下表會將部份功能連線到 Windows 執行階段 API。
 
@@ -73,10 +80,5 @@ ms.openlocfilehash: b36dd4d77821a65b1f435d755f7bb415b2e386ee
 | 藍牙 GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
 | 藍牙 RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
 | 服務指標 (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

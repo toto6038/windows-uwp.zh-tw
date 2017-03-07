@@ -6,9 +6,16 @@ ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 155f1712beb70d2a1fc93809ddc254e8f6e6f4a2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2131b6db9d9d72b574a0d0bed7c07aef7fcc4f37
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="media-player"></a>媒體播放器
@@ -379,9 +386,4 @@ mp.MediaPlayer.RealTimePlayback = true;
 
 - [UWP app 的命令設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP app 的內容設計基本知識](https://msdn.microsoft.com/library/windows/apps/dn958434)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

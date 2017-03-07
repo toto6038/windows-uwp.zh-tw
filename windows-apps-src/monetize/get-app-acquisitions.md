@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。"
 title: "取得應用程式下載數"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 應用程式下載數"
 translationtype: Human Translation
-ms.sourcegitcommit: ce6535508136f8f7bfc8e0da599eea10a936908d
-ms.openlocfilehash: 2e35da3b3033ecbad8c48184d831ca9465142322
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -160,9 +167,4 @@ Authorization: Bearer <your access token>
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得應用程式評分](get-app-ratings.md)
 * [取得應用程式評論](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

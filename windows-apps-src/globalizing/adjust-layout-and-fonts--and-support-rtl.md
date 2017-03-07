@@ -1,13 +1,20 @@
 ---
 author: DelfCo
-Description: "開發您的 app 以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。"
+Description: "開發您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。"
 title: "調整配置和字型並支援 RTL"
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 05208607b148a48e8a680691de90161feeea7700
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b7d34aaf891497af80ed8c94609e6a8fbbd3bec
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -110,9 +117,4 @@ C++：
 
 ## <a name="related-topics"></a>相關主題
 [FlowDirection](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.flowdirection.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

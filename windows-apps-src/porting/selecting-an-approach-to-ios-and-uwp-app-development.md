@@ -1,25 +1,32 @@
 ---
 author: mcleblanc
 description: "開發跨平台 app 時有哪些選擇？"
-title: "選取 iOS 和 UWP app 開發的方式"
+title: "選取 iOS 和 UWP 應用程式開發的方式"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 53e6c50b7a1b4262f738cd798aa2bd02291512fe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9317ea8690d5696d4a9e55b3a88f1a2ff83d8bfd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 選取 iOS 和 UWP app 開發的方式
+# <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP 應用程式開發的方式
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 開發跨平台 app 時有哪些選擇？
 
-## 若要同時支援 iOS 與 Windows 最佳的方式為何？
+## <a name="whats-the-best-way-to-support-both-ios-and-windows"></a>若要同時支援 iOS 與 Windows 最佳的方式為何？
 
 Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩種平台 (也包括 Android) 的 app，有越來越多的工具和技術可大大地協助您。 最好的解決方案取決於您撰寫的 app 類型，以及您是從頭開始或移植現有的專案。
 
-## 撰寫新的 app
+## <a name="writing-a-new-app"></a>撰寫新的 app
 
 您可以使用全新的平板電腦，其中有許多選項供您任意使用，包括：
 
@@ -39,7 +46,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     XNA 的精神繼任者。 現在這是一個開放原始碼的跨平台架構，表示您可以使用 C# 為許多支援物理引擎以及 2D 和 3D 圖形的平台撰寫應用程式。
 
-## 調整現有的應用程式
+## <a name="adapting-an-existing-app"></a>調整現有的應用程式
 
 如果是針對現有的 iOS app，您的選擇就會稍微受到限制。 不過可以確定的是，絕對不會有任何遺失。
 
@@ -55,7 +62,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     移植 OpenGL ES 2.0 專案的中間步驟是使用 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。
 
-## 其他跨平台編寫工具
+## <a name="other-cross-platform-authoring-tools"></a>其他跨平台編寫工具
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
@@ -92,10 +99,5 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
     以 HTML 為基礎的遊戲開發工具。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

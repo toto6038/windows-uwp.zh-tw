@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。"
+Description: "說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為應用程式或應用程式套件之一部分的資源相關。"
 MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -8,16 +8,23 @@ title: "ResourceDictionary 與 XAML 資源參考"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 7af5c6635ae659ce033f377a9eed4b819287b384
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e24b411c5a966d48e4db07a4ddfce1248454e78d
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 與 XAML 資源參考
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-您可以使用 XAML 來定義您 app 的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源。
+您可以使用 XAML 來定義您應用程式的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源。
 
 您最常宣告為 XAML 資源的 XAML 元素包括 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)、動畫元件以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 子類別。 我們會在此處說明如何定義 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。 我們也會說明資源字典進階功能，例如 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 和 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807)。
 
@@ -491,10 +498,5 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

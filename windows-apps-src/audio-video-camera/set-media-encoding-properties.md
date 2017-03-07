@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
 description: "本文說明如何使用 IMediaEncodingProperties 介面來設定相機預覽資料流及所擷取之相片和視訊的解析度和畫面播放速率。"
 title: "設定 MediaCapture 的格式、解析度和畫面播放速率"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6c3ed4ab773fe821acaee7d5b8c70fdc8770de81
-ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c8defd41ea1b65ac78d159b52eea926c7252e9e
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>設定 MediaCapture 的格式、解析度和畫面播放速率
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 介面來設定相機預覽資料流及所擷取之相片和視訊的解析度和畫面播放速率。 它也會說明如何確保預覽資料流的外觀比例符合所擷取的媒體。
@@ -86,10 +93,5 @@ ms.openlocfilehash: 828cbddd9568bd4e9d0a571880a867afff293e34
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

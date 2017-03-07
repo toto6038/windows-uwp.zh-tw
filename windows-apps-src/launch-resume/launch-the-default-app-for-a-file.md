@@ -1,18 +1,25 @@
 ---
 author: TylerMSFT
-title: "啟動檔案的預設 app"
-description: "了解如何啟動檔案的預設 app。"
+title: "啟動檔案的預設應用程式"
+description: "了解如何啟動檔案的預設應用程式。"
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: c87f66a39e6ae7733ecc75006510b6aede699d4f
-ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ab65f210c5fd01460cbe9f63f8b94f6935a630e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 啟動檔案的預設 app
+# <a name="launch-the-default-app-for-a-file"></a>啟動檔案的預設應用程式
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -21,7 +28,7 @@ ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 了解如何啟動檔案的預設 app。 許多應用程式需要使用它們本身無法處理的檔案。 例如，電子郵件 app 會收到各種類型的檔案，因此它們需要可以使用這些檔案類型的預設處理常式啟動這些檔案的方法。 這些步驟示範如何使用 [**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API 來啟動您 app 本身無法處理之檔案的預設處理常式。
 
-## 取得檔案物件
+## <a name="get-the-file-object"></a>取得檔案物件
 
 
 首先，為檔案取得 [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
@@ -30,7 +37,7 @@ ms.openlocfilehash: 20cbd0ef20cc81c81f686100579059321e3c56fa
 
 如果檔案位於已知資料夾中，您可以使用 [**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) 類別的屬性來取得 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)，並使用 [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。
 
-## 啟動檔案
+## <a name="launch-the-file"></a>啟動檔案
 
 
 Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這些選項在這個圖表和接下來的小節中有更詳細的說明。
@@ -42,7 +49,7 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 | 使用建議的 app 備用選項啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 使用預設處理常式啟動指定的檔案。 如果系統上沒有安裝處理常式，則建議使用者使用市集中的應用程式。 |
 | 以所需的剩餘檢視啟動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (僅限 Windows) | 使用預設處理常式啟動指定的檔案。 指定啟動後停留在畫面上的喜好設定，並要求特定視窗大小。 行動裝置系列上不支援 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)。   |
  
-### 預設啟動
+### <a name="default-launch"></a>預設啟動
 
 呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) 方法來啟動預設 app。 這個範例使用 [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) 方法來啟動影像檔案 test.png，它包含於 app 套件內。
 
@@ -128,7 +135,7 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-### 開啟檔案啟動
+### <a name="open-with-launch"></a>開啟檔案啟動
 
 呼叫 [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法並將 [**LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) 設定為 **true**，以啟動使用者從 [**開啟檔案**] 對話方塊中選取的 app。
 
@@ -234,7 +241,7 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 
 在某些情況下，使用者可能尚未安裝處理您要啟動之檔案的 app。 依照預設，Windows 處理這些情況的方法是提供連結，讓使用者在市集上搜尋適當的應用程式。 如果您想提供使用者在此情況下應取得什麼應用程式的特定建議，您可以在啟動檔案時一併傳送該建議。 若要這樣做，請呼叫 [**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) 方法，並將 [**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) 設為您想建議使用者使用的市集 app 套件系列名稱。 然後將 [**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) 設為該應用程式的名稱。 Windows 將使用此資訊，以從市集取得建議 app 的特定選項，取代在市集中搜尋 app 的一般選項。
 
-> **注意** 您必須設定這兩個選項才能建議 app。 只設定其中一個將出現錯誤。
+> **注意** 您必須設定這兩個選項才能建議應用程式。 只設定其中一個將出現錯誤。
 
 ![啟動 .contoso 檔案的 [開啟檔案] 對話方塊。 因為 .contoso 未在電腦上安裝處理常式，所以對話方塊會包含一個選項，這個選項會包含市集圖示以及指示使用者市集中正確處理常式的文字。 對話方塊也包含 [更多選項] 連結。](images/howdoyouwanttoopen.png)
 
@@ -342,11 +349,11 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-### 以所需的剩餘檢視啟動 (僅限 Windows)
+### <a name="launch-with-a-desired-remaining-view-windows-only"></a>以所需的剩餘檢視啟動 (僅限 Windows)
 
 呼叫 [**LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) 的來源應用程式可要求在檔案啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理檔案的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 也可以使用 **DesiredRemainingView**，指出來源 app 在檔案啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-> **注意** Windows 在判斷來源 app 的最終視窗大小時，會考量多種不同因素，例如來源 app 的喜好設定、螢幕上的 app 數目、螢幕方向等。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
+> **注意** Windows 在判斷來源應用程式的最終視窗大小時，會考量多種不同因素，例如來源應用程式的喜好設定、螢幕上的應用程式數目、螢幕方向等。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 app 的特定視窗行為。
 
 **行動裝置系列：**行動裝置系列上不支援 [**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)。
 
@@ -418,7 +425,7 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 > }
 > ```
 
-## 備註
+## <a name="remarks"></a>備註
 
 您的 app 不能選取已啟動的 app。 使用者決定要啟動哪個 app。 使用者可選取通用 Windows 平台 (UWP) app 或 Windows 傳統型應用程式。
 
@@ -428,10 +435,10 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
 
 如果您嘗試啟動受限制的檔案類型，則啟動將會失敗，並會叫用您的錯誤回呼。 如果您的應用程式處理許多不同類型的檔案，而您預期會碰到這個錯誤，建議您為使用者提供遞補做法。 例如，您可以為使用者提供將檔案儲存到桌面的選項，讓他們從桌面開啟檔案。
 
-> **注意**：本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意**  本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 **工作**
@@ -451,9 +458,4 @@ Windows 提供數個不同的選項來啟動檔案的預設處理常式。 這�
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

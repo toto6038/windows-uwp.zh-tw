@@ -1,15 +1,23 @@
 ---
-title: "使用 Web 帳戶管理員連線到身分識別提供者"
-description: "本文章說明如何利用新的 Windows 10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) 應用程式連線到外部身份識別提供者 (例如 Microsoft 或 Facebook)。"
+title: "Web 帳戶管理員"
+description: "本文章說明如何利用新的 Windows 10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) 應用程式連線到外部身分識別提供者 (例如 Microsoft 或 Facebook)。"
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 translationtype: Human Translation
-ms.sourcegitcommit: 0aef3cc9a3312a647197d8b2a7b815ed42d54fa3
-ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c3d1cdab94fc8b4f693ef9294cbb12580a9e199b
+ms.lasthandoff: 02/08/2017
 
 ---
-# <a name="connect-to-identity-providers-with-web-account-manager"></a>使用 Web 帳戶管理員連線到身分識別提供者
+# <a name="web-account-manager"></a>Web 帳戶管理員
 
-本文章說明如何使用新的 Windows 10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) 應用程式連接到外部身份識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
+本文章說明如何使用新的 Windows 10 Web 帳戶管理員 API 顯示 AccountsSettingsPane，並將您的通用 Windows 平台 (UWP) 應用程式連接到外部身分識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
 
 > 注意：如需完整的程式碼範例，請參閱 [GitHub 上的 WebAccountManagement 範例](http://go.microsoft.com/fwlink/p/?LinkId=620621)。
 
@@ -17,7 +25,7 @@ ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 首先，在 Visual Studio 中建立新的空白應用程式。 
 
-其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 [市集] >  [將應用程式與市集建立關聯]，然後遵循精靈的指示進行。 
+其次，為了要連線到身分識別提供者，您必須將應用程式與市集建立關聯。 若要這麼做，請以滑鼠右鍵按一下專案，選擇 **\[市集\]** > **\[將應用程式與市集建立關聯\]**，然後遵循精靈的指示進行。 
 
 接下來，建立非常基本的 UI，並在其中包含一個簡單的 XAML 按鈕以及兩個文字方塊。
 
@@ -33,7 +41,7 @@ ms.openlocfilehash: 10851432b6e28934ab60041d23a5cf319671f704
 
 ```C#
 private void LoginButton_Click(object sender, RoutedEventArgs e)
-{   
+{    
 }
 ```
 
@@ -158,7 +166,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s,
 private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 {
     WebTokenRequest request = new WebTokenRequest(command.WebAccountProvider, "wl.basic");
-    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+    WebTokenRequestResult result = await WebAuthenticationCoreManager.RequestTokenAsync(request);
 }
 ```
 
@@ -177,7 +185,7 @@ private async void GetAadTokenAsync(WebAccountProviderCommand command)
     string clientId = "your_guid_here"; // Obtain your clientId from the Azure Portal
     WebTokenRequest request = new WebTokenRequest(provider, "User.Read", clientId);
     request.Properties.Add("resource", "https://graph.microsoft.com");
-    WebTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(request);
+    WebTokenRequestResult result = await WebAuthenticationCoreManager.RequestTokenAsync(request);
 }
 ```
 
@@ -328,7 +336,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
     var twitterProvider = new WebAccountProvider("twitter", "Twitter", new Uri(@"ms-appx:///Assets/twitter-auth-icon.png")); 
     var twitterCmd = new WebAccountProviderCommand(twitterProvider, GetTwitterTokenAsync);
-    e.WebAccountProviderCommands.Add(twitterCmd);   
+    e.WebAccountProviderCommands.Add(twitterCmd);    
     
     // other code here
 }
@@ -351,7 +359,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 {
     // other code here 
     
-    args.HeaderText = "MyAwesomeApp works best if you're signed in.";   
+    args.HeaderText = "MyAwesomeApp works best if you're signed in.";     
     
     // other code here
 }
@@ -398,9 +406,4 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [Web 驗證代理人](web-authentication-broker.md)
 
 [WebAccountManagement 範例](http://go.microsoft.com/fwlink/p/?LinkId=620621)
-
-
-
-<!--HONumber=Dec16_HO5-->
-
 

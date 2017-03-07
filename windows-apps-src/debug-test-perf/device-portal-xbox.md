@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: "Xbox 的 Device Portal"
 description: "了解如何啟用 Xbox One 的 Device Portal。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4321e799e8633dc31cc0d73889a0b0b6056f6d3b
+ms.lasthandoff: 02/07/2017
 
 ---
-# Xbox 的 Device Portal
+# <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
 
-## 在 Xbox 上設定 Device Portal
+## <a name="set-up-device-portal-on-xbox"></a>在 Xbox 上設定 Device Portal
 
-### 啟用 Device Portal
+### <a name="enable-device-portal"></a>啟用 Device Portal
 
 **啟用 Device Portal**
 
@@ -28,16 +35,11 @@ ms.openlocfilehash: 77f542b2fed80271082e97437790b33ea7b54172
 8. 您會收到關於已提供之憑證的警告，類似下圖所示。 您應該按一下 [繼續瀏覽此網頁]**** 以在預覽中存取 Windows Device Portal。
 ![Device Portal 憑證錯誤](images/device-portal/xbox-certificate-error.png)
 
-## Device Portal 頁面
+## <a name="device-portal-pages"></a>Device Portal 頁面
 
 Xbox 上的 Device Portal 提供標準頁面集。 如需詳細描述，請參閱 [Windows Device Portal 概觀](device-portal.md)。
 
 - App
 - 效能
 - 網路功能
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

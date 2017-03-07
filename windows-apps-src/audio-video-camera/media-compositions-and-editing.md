@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-description: "Windows.Media.Editing 命名空間中的 API 可讓您快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。"
+description: "Windows.Media.Editing 命名空間中的 API 可讓您快速開發應用程式，讓使用者從音訊和視訊來源檔案建立媒體組合。"
 title: "媒體組合和編輯"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 018d7c85aae007a1fd887de0daf6625ccce37a64
-ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d31cb88d1cea00bd291478b612b1759b1d6fd0b4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 媒體組合和編輯
+# <a name="media-compositions-and-editing"></a>媒體組合和編輯
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向您說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 架構的功能包括能夠以程式設計的方式一起新增多個視訊剪輯、新增視訊與影像重疊、新增背景音訊，以及套用音訊與視訊效果。 建立之後，媒體組合可以轉譯為一般媒體檔案來播放或共用，但是組合也可以序列化至磁碟和從磁碟還原序列化，允許使用者載入和修改他們之前建立的組合。 這項功能是以方便使用的 Windows 執行階段介面提供，相較於低階 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197) API時，大幅減少執行這些工作所需之程式碼的數量和複雜度。
 
-## 建立新的媒體組合
+## <a name="create-a-new-media-composition"></a>建立新的媒體組合
 
 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 類別是適用於所有媒體剪輯的容器，這些媒體剪輯組成組合，負責轉譯最終組合、將組合載入和儲存到光碟，以及提供組合的預覽串流，讓使用者可以在 UI 中檢視。 若要在您的 app 中使用 **MediaComposition**，請包含 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間以及 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間，該命名空間提供您需要的相關 API。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 [!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
 
-## 將媒體剪輯新增至組合
+## <a name="add-media-clips-to-a-composition"></a>將媒體剪輯新增至組合
 
 媒體組合通常包含一或多個視訊剪輯。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) 以允許使用者選取視訊檔案。 一旦選取檔案，建立新的 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 物件以包含視訊剪輯，方法是呼叫 [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607)。 接著您將剪輯新增至 **MediaComposition** 物件的 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 清單。
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   從 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 建立 **MediaClip**，方法是呼叫 [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) 以及指定表面和剪輯的持續時間。
 
-## 預覽 MediaElement 中的組合
+## <a name="preview-the-composition-in-a-mediaelement"></a>預覽 MediaElement 中的組合
 
 若要讓使用者檢視媒體組合，請將 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) 新增至定義您 UI 的 XAML 檔案。
 
@@ -77,7 +84,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 [!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-## 將組合轉譯為視訊檔案
+## <a name="render-the-composition-to-a-video-file"></a>將組合轉譯為視訊檔案
 
 若要將媒體組合轉譯為一般視訊檔案，以便共用及在其他裝置上檢視，您需要使用 [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) 命名空間的 API。 若要更新非同步作業進度的 UI，您也需要 [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) 命名空間的 API。
 
@@ -89,7 +96,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) 可讓您設定轉碼作業速度與修剪相鄰媒體剪輯的精確度的優先順序。 **Fast** 會讓轉碼速度較快而修剪精確度較低，**Precise** 會讓轉碼較慢而修剪精確度較高。
 
-## 修剪視訊剪輯
+## <a name="trim-a-video-clip"></a>修剪視訊剪輯
 
 修剪組合中視訊剪輯的持續時間，方法是設定 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 物件的 [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) 屬性、[**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) 屬性，或兩者同時設定。
 
@@ -100,7 +107,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 -   [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) 屬性可讓您知道套用修剪之後的媒體剪輯的持續時間。
 -   指定大於媒體剪輯原始持續時間的修剪值不會擲回錯誤。 不過，如果組合只包含單一剪輯，並且藉由指定大的修剪值而修剪為零長度，[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) 的後續呼叫會傳回 Null，如同組合沒有任何剪輯。
 
-## 將背景曲目新增至組合
+## <a name="add-a-background-audio-track-to-a-composition"></a>將背景曲目新增至組合
 
 若要將背景曲目新增至組合，載入音訊檔案然後建立 [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) 物件，方法是呼叫 Factory 方法 [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561)。 接著將 **BackgroundAudioTrack** 新增至組合的 [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) 屬性。
 
@@ -116,7 +123,7 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   根據預設，背景曲目會在組合的開頭開始播放。 如果有多個背景曲目存在，所有曲目都會在組合的開頭開始播放。 若要讓背景曲目在其他時間開始播放，請將 [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) 屬性設為想要的時間起始位移。
 
-## 將重疊新增至組合
+## <a name="add-an-overlay-to-a-composition"></a>將重疊新增至組合
 
 重疊可讓您在組合中每個視訊層上方堆疊多個視訊層。 組合可以包含多個重疊層，每一個可以包含多個重疊。 將 **MediaClip** 傳遞到其建構函式，以建立 [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) 物件。 設定重疊的位置和不透明度，然後建立新的 [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795)，並將 **MediaOverlay** 新增至其 [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) 清單。 最後，將 **MediaOverlayLayer** 新增至組合的 [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) 清單。
 
@@ -126,19 +133,19 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 -   因為重疊是堆疊在彼此上方，而不是順序播放，所以所有重疊預設會在組合的開頭開始播放。 若要讓重疊在其他時間開始播放，請將 [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) 屬性設為想要的時間起始位移。
 
-## 將效果新增至媒體剪輯
+## <a name="add-effects-to-a-media-clip"></a>將效果新增至媒體剪輯
 
 組合中的每個 **MediaClip** 都有一份可以加入多個效果的音訊與視訊效果清單。 效果必須分別實作 [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) 和 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047)。 下列範例會使用目前的 **MediaPlayerElement** 位置以選擇目前檢視的 **MediaClip**，然後建立 [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) 的新執行個體，並將它附加到媒體剪輯的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 清單。
 
 [!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
-## 將組合儲存至檔案
+## <a name="save-a-composition-to-a-file"></a>將組合儲存至檔案
 
 媒體組合稍後可以序列化至檔案以進行修改。 挑選輸出檔案，然後呼叫 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 方法 [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) 以儲存組合。
 
 [!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
 
-## 從檔案載入組合
+## <a name="load-a-composition-from-a-file"></a>從檔案載入組合
 
 可以從檔案還原序列化媒體組合，讓使用者檢視和修改組合。 挑選組合檔案，然後呼叫 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 方法 [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) 以載入組合。
 
@@ -152,10 +159,5 @@ ms.openlocfilehash: a317c0e1714cc782c951733cf65a4c02c4a0ad9c
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

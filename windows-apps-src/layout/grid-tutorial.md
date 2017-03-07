@@ -2,9 +2,17 @@
 author: mukin
 Description: "此教學課程式文章會逐步指引讀者，使其了解建立基本應用程式使用者介面的步驟。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。"
 title: "使用 Grid 和 StackPanel 建立簡單的天氣應用程式"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 translationtype: Human Translation
-ms.sourcegitcommit: c30aed9681d7c091e9831df3f53d8779dfacce38
-ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 87947b5bd1c1db008a21828c3940475c2b53fd6d
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,19 +22,19 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 
 ## <a name="prerequisites"></a>先決條件
 - Windows 10 和 Microsoft Visual Studio 2015。 [按一下這裡，以了解如何開始設定 Visual Studio](../get-started/get-set-up.md)。
-- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hellow World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
+- 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
 ## <a name="step-1-create-a-blank-app"></a>步驟 1：建立空白的應用程式
-1. 在 Visual Studio 功能表中，選取 \[檔案\] > \[新增專案\]。
-2. 在 \[新增專案\] 對話方塊的左窗格中，選取 \[Visual C#\] > \[Windows\] > \[通用\] 或 \[Visual C++\] > \[Windows\] > \[通用\]。
-3. 在中央窗格中，選取 \[空白應用程式\]。
-4. 在 \[名稱\] 方塊中，輸入 **WeatherPanel**，然後選取 \[確定\]。
-5. 若要執行程式，從功能表中選取 \[偵錯\] > \[開始偵錯\]，或選取 F5。
+1. 在 Visual Studio 功能表中，選取 \[檔案\]**** > ****\[新增專案\]。
+2. 在 \[新增專案\]**** 對話方塊的左窗格中，選取 \[Visual C#\]**** > **\[Windows\]** > **\[通用\]** 或 \[Visual C++\]**** > **\[Windows\]** > ****\[通用\]。
+3. 在中央窗格中，選取 \[空白應用程式\]****。
+4. 在 \[名稱\]**** 方塊中，輸入 **WeatherPanel**，然後選取 \[確定\]****。
+5. 若要執行程式，從功能表中選取 \[偵錯\]**** > ****\[開始偵錯\]，或選取 F5。
 
 ## <a name="step-2-define-a-grid"></a>步驟 2︰定義 Grid
 在 XAML 中，**Grid** 是由一系列的列和欄所組成。 透過在 **Grid** 內指定元素的列與欄，您便可在使用者介面內放置及隔開其他元素。 列與欄是使用 **RowDefinition** 和 **ColumnDefinition** 元素所定義。
 
-若要開始建立版面配置，請使用 \[方案總管\] 來開啟 **MainPage.xaml**，然後使用此程式碼來取代自動產生的 **Grid** 元素。
+若要開始建立版面配置，請使用 \[方案總管\]**** 來開啟 **MainPage.xaml**，然後使用此程式碼來取代自動產生的 **Grid** 元素。
 
 ```xml
 <Grid>
@@ -95,7 +103,7 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 
 ![有時多雲](images/partially-cloudy.PNG)
 
-在 \[方案總管\] 中，以滑鼠右鍵按一下 \[資產\] 資料夾，然後選取 \[新增\] -> \[現有項目...\]。在快顯的瀏覽器中尋找 partially-cloudy.png、選取它，然後按一下 [新增]。
+在 \[方案總管\]**** 中，以滑鼠右鍵按一下 \[資產\]**** 資料夾，然後選取 \[新增\]**** -> ****\[現有項目...\]。在快顯的瀏覽器中尋找 partially-cloudy.png、選取它，然後按一下 [新增]****。
 
 接著，在 **MainPage.xaml** 中，將下列 **Image** 元素新增到步驟 4 的 StackPanel 下方。
 
@@ -115,9 +123,4 @@ ms.openlocfilehash: 1990a3ad4e56fa039d024c53a04b021e60bed145
 如需如何設計 UWP 應用程式版面配置的簡介，請參閱 [UWP 應用程式設計簡介](https://msdn.microsoft.com/windows/uwp/layout/design-and-ui-intro)
 
 若要了解如何建立可適應不同螢幕大小的回應式版面配置，請參閱[使用 XAML 定義頁面版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

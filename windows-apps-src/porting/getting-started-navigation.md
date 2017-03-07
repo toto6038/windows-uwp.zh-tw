@@ -3,17 +3,24 @@ author: mcleblanc
 title: "瀏覽入門"
 description: "瀏覽入門"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: daf56299b3a5e81bb756bc9fcb8112da044b00f3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: febafd9a36f021bdbf06692a34c8691d1008018f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 開始使用：瀏覽
+# <a name="getting-started-navigation"></a>開始使用：瀏覽
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 新增瀏覽
+## <a name="adding-navigation"></a>新增瀏覽
 
 iOS 提供 **UINavigationController** 類別來協助 app 內瀏覽：您可以推入及彈出檢視控制項來建立 **UIViewControllers** 的階層以定義您的 app。
 
@@ -78,15 +85,10 @@ public BlankPage()
 
 如需瀏覽的詳細資訊，請參閱[瀏覽](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 個人特質動畫範例](http://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
-**注意** 如需針對 Windows 市集應用程式使用 JavaScript 和 HTML 之瀏覽的詳細資訊，請參閱[快速入門：使用單頁瀏覽](https://msdn.microsoft.com/library/windows/apps/hh452768)。
+**注意**  如需針對 Windows 市集應用程式使用 JavaScript 和 HTML 之瀏覽的詳細資訊，請參閱[快速入門：使用單頁瀏覽](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  
-### 下一步
+### <a name="next-step"></a>下一步
 
 [開始使用：動畫](getting-started-animation.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

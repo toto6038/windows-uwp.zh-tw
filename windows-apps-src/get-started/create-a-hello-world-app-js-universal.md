@@ -1,16 +1,23 @@
 ---
 author: GrantMeStrength
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
-description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; app。"
+title: "建立 &quot;Hello, world&quot; 應用程式 (JS)"
+description: "本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 &amp;\\#0034;Hello, world&amp;\\#0034; 應用程式。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 1a4aea3d31bad97fa0933e1274c037a4bb8d81bb
-ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 915f77e308d6384aa539f78cc307842dd51cd9f4
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="create-a-hello-world-app-js"></a>建立 Hello, world app (JS)
+# <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
 
 您將在此處了解如何：
 
@@ -24,32 +31,32 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 -   [通用 Windows app 是什麼](whats-a-uwp.md)？
 -   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2015。 [開始設定](get-set-up.md)。
--   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 \[視窗\] 功能表中的 \[重設視窗配置\] 命令來重設它。
+-   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 **\[視窗\]** 功能表中的 **\[重設視窗配置\]** 命令來重設它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案
 
 讓我們建立名為 `HelloWorld` 的新應用程式。 方法如下：
 1.  啟動 Visual Studio 2015。
 
-2.  從 \[檔案\] 功能表中，選取 \[新增\] &gt; \[專案\] 來開啟 \[新增專案\] 對話方塊。
+2.  從 **\[檔案\]** 功能表中，選取 **\[新增\] &gt; \[專案\]** 來開啟 *\[新增專案\]* 對話方塊。
 
-3.  從左邊的範本清單中，展開 \[已安裝\] &gt; \[範本\] &gt; \[JavaScript\] &gt; \[Windows\]，然後選擇 \[通用\] 來查看 UWP 專案範本的清單。 選擇 \[WinJS 應用程式 (通用 Windows)\]。
+3.  從左邊的範本清單中，展開 **\[已安裝\] &gt; \[範本\] &gt; \[JavaScript\] &gt; \[Windows\]**，然後選擇 **\[通用\]** 來查看 UWP 專案範本的清單。 選擇 **\[WinJS 應用程式 (通用 Windows)\]**。
 
     ![\[新增專案\] 視窗 ](images/winjs-tut-newproject.png)
 
-    在本教學課程中，我們使用 \[WinJS 應用程式\] 範本。 這個範本會建立能夠編譯和執行的最基本 UWP app，但不包含使用者介面控制項或資料。 在此教學課程系列中，您會將控制項和資料新增到 app。
+    在本教學課程中，我們使用 **\[WinJS 應用程式\]** 範本。 這個範本會建立能夠編譯和執行的最基本 UWP app，但不包含使用者介面控制項或資料。 在此教學課程系列中，您會將控制項和資料新增到 app。
 
    (如果您沒有看到這些選項，請確定您已經安裝「通用 Windows 應用程式開發工具」。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。)
 
-4.  在 \[名稱\] 文字方塊中，輸入 "HelloWorld"。
-5.  按一下 \[確定\] 來建立專案。
-6.  系統會要求您選取要支援的 Windows \[目標版本\] 和 \[最小版本\]。 使用預設設定即可，因此請按一下 \[確定\]。
+4.  在 **\[名稱\]** 文字方塊中，輸入 "HelloWorld"。
+5.  按一下 **\[確定\]** 來建立專案。
+6.  系統會要求您選取要支援的 Windows **\[目標版本\]** 和 **\[最小版本\]**。 使用預設設定即可，因此請按一下 **\[確定\]**。
 
-    Visual Studio 會建立您的專案，然後在 \[方案總管\] 中顯示。
+    Visual Studio 會建立您的專案，然後在 **\[方案總管\]** 中顯示。
 
     ![HelloWorld 專案的 Visual Studio 方案總管](images/winjs-tut-helloworld.png)
 
-雖然 \[WinJS 應用程式\] 是最基本的範本，但是仍然包含少數檔案：
+雖然 **\[WinJS 應用程式\]** 是最基本的範本，但是仍然包含少數檔案：
 
 -   一個資訊清單檔案 (package.appxmanifest)，說明 app 的名稱、描述、磚、起始頁、啟動顯示畫面等，以及列示其中包含的檔案。
 -   在 \[開始\] 功能表上顯示的一組標誌影像 (images/Square150x150Logo.scale-200.png、images/Square44x44Logo.scale-200.png 和 images/Wide310x150Logo.scale-200.png)。
@@ -57,7 +64,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 -   app 啟動時顯示的啟動顯示畫面 (images/SplashScreen.scale-200.png)。
 -   app 啟動時執行的起始頁 (index.html) 和伴隨的 JavaScript 檔案 (main.js)。
 
-若要檢視和編輯檔案，按兩下 \[方案總管\] 中的檔案。
+若要檢視和編輯檔案，按兩下 **\[方案總管\]** 中的檔案。
 
 這些檔案對於所有使用 JavaScript 的 UWP app 都是必要的。 您在 Visual Studio 中建立的任何專案都包含這些檔案。
 
@@ -70,7 +77,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ### <a name="start-the-app-on-a-desktop-device"></a>在傳統型裝置上啟動應用程式
 
-根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從傳統型裝置系列的裝置偵錯應用程式的數個選項。
+根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從電腦裝置系列的裝置偵錯應用程式的數個選項。
 
 -   **模擬器**
 -   **本機電腦 
@@ -79,12 +86,12 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 **在本機電腦上開始偵錯**
 
-1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 \[標準\] 工具列上，確定已選取 \[本機電腦\]。 (這是預設選項)。
-2.  按一下工具列上的 \[開始偵錯\] 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
+1.  在目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 的 **\[標準\]** 工具列上，確定已選取 **\[本機電腦\]**。 (這是預設選項)。
+2.  按一下工具列上的 **\[開始偵錯\]** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
 
    –或–
 
-   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
+   在 **\[偵錯\]** 功能表中，按一下 **\[開始偵錯\]**。
 
    –或–
 
@@ -96,17 +103,17 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 ![電腦上的 HelloWorld app](images/helloworld-1-winjs.png)
 
-按下 Windows 鍵以開啟 \[開始\] 功能表，然後顯示所有 app。 請注意，在本機部署 App 會在 \[開始\] 功能表上新增該 App 的磚。 若要再次執行應用程式 (不在偵錯模式)，請點選或按一下 \[開始\] 功能表中的磚。
+按下 Windows 鍵以開啟 **\[開始\]** 功能表，然後顯示所有 app。 請注意，在本機部署 App 會在 **\[開始\]** 功能表上新增該 App 的磚。 若要再次執行應用程式 (不在偵錯模式)，請點選或按一下 **\[開始\]** 功能表中的磚。
 
 應用程式還沒有太多功能，但是恭喜您，您已經建置您的第一個 UWP app 了！
 
 **停止偵錯**
 
--   按一下工具列中的 \[停止偵錯\] 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
+-   按一下工具列中的 **\[停止偵錯\]** 按鈕 (![停止偵錯按鈕](images/stopdebug.png))。
 
    –或–
 
-   在 \[偵錯\] 功能表中，按一下 \[停止偵錯\]。
+   在 **\[偵錯\]** 功能表中，按一下 **\[停止偵錯\]**。
 
    –或–
 
@@ -116,7 +123,7 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 您的應用程式會在所有 Windows 10 裝置上執行，因此，我們來看看它在 Windows Phone 上的外觀如何。
 
-除了在傳統型裝置上偵錯的選項外，Visual Studio 還提供在連接到電腦的實體行動裝置或在行動裝置模擬器上部署和偵錯應用程式的選項。 您可以為有不同記憶體和顯示器組態的裝置選擇不同的模擬器。
+除了在電腦裝置上偵錯的選項外，Visual Studio 還提供在連接到電腦的實體行動裝置或在行動裝置模擬器上部署和偵錯應用程式的選項。 您可以為有不同記憶體和顯示器組態的裝置選擇不同的模擬器。
 
 -   **裝置**
 -   **模擬器 <SDK version> WVGA 4 吋 512MB**
@@ -125,19 +132,19 @@ ms.openlocfilehash: ad34b1bc62abf6c93f5124e774ad374f5b767f2c
 
 (如果您沒有看到模擬器，請確定您已經安裝「通用 Windows 應用程式開發工具」。 如需詳細資訊，請參閱[開始設定](get-set-up.md)。)
 
-在小螢幕和記憶體有限的裝置上測試您的 app 是不錯的想法，因此，請使用 \[模擬器 10.0.14393.0 WVGA 4 inch 512MB\] 選項。
+在小螢幕和記憶體有限的裝置上測試您的 app 是不錯的想法，因此，請使用 **\[模擬器 10.0.14393.0 WVGA 4 inch 512MB\]** 選項。
 
 **在行動裝置模擬器上開始偵錯**
 
-1.  在 \[標準\] 工具列上的目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 中，選擇 \[模擬器 10.0.14393.0 WVGA 4 inch 512MB\]。
-2.  按一下工具列中的 \[開始偵錯\] 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
+1.  在 **\[標準\]** 工具列上的目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 中，選擇 **\[模擬器 10.0.14393.0 WVGA 4 inch 512MB\]**。
+2.  按一下工具列中的 **\[開始偵錯\]** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
 
    –或–
 
-   在 \[偵錯\] 功能表中，按一下 \[開始偵錯\]。
+   在 **\[偵錯\]** 功能表中，按一下 **\[開始偵錯\]**。
 
 
-Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 在初始啟動時，模擬器可能會需要一些時間來啟動。 您可能會看到關於 HyperV 的錯誤，按一下 \[重試\] 應該可以解決這個問題。 在行動裝置模擬器上，App 看起來會像這樣。
+Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 在初始啟動時，模擬器可能會需要一些時間來啟動。 您可能會看到關於 HyperV 的錯誤，按一下 **\[重試\]** 應該可以解決這個問題。 在行動裝置模擬器上，App 看起來會像這樣。
 
 ![行動裝置上最初的 App 畫面](images/helloworld-1-winjs-phone.png)
 
@@ -265,7 +272,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 在 UWP app 中，您不需要擔心觸控、滑鼠以及其他指標輸入形式之間的差異。 您可以只使用您知道的事件 (例如 [click](https://msdn.microsoft.com/library/windows/apps/Hh441312))，而這些事件適用於所有輸入形式。
 
-**提示** 您的 app 也可以使用新的 *MSPointer\** 和 *MSGesture\** 事件 (適用於觸控、滑鼠以及手寫筆輸入)，而且可以提供觸發事件之裝置的其他資訊。 如需詳細資訊，請參閱[回應使用者互動](https://msdn.microsoft.com/library/windows/apps/Hh700412)以及[手勢、操作以及互動](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
+**提示**：您的應用程式也可以使用新的 *MSPointer\** 和 *MSGesture\** 事件 (適用於觸控、滑鼠以及手寫筆輸入)，而且可以提供觸發事件之裝置的其他資訊。 如需詳細資訊，請參閱[回應使用者互動](https://msdn.microsoft.com/library/windows/apps/Hh700412)以及[手勢、操作以及互動](https://msdn.microsoft.com/library/windows/apps/Hh761498)。
 
 讓我們繼續建立事件處理常式。
 
@@ -297,9 +304,9 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 在 [onactivated](https://msdn.microsoft.com/library/windows/apps/BR212679) 處理常式中，程式碼會檢查發生了哪一種類型的啟用。 啟用有許多不同的類型。 例如，當使用者啟動您的應用程式以及當使用者想要開啟與您應用程式相關的檔案時，您的應用程式就會啟用。 (如需詳細資訊，請參閱[應用程式週期](https://msdn.microsoft.com/library/windows/apps/Mt243287)。)
 
-我們只針對 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 啟用。 只要 app 不在執行中，然後使用者啟用它，app 就被「啟動」了。 無論 app 是過去已經關閉或者是第一次啟動，都會呼叫 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中，可以確保在 app 頁面準備好前都不會關閉啟動顯示畫面。
+我們只針對 [launch](https://msdn.microsoft.com/library/windows/apps/BR224693) 啟用。 只要 app 不在執行中，然後使用者啟用它，app 就被*「啟動」*了。 無論 app 是過去已經關閉或者是第一次啟動，都會呼叫 [WinJS.UI.processAll](https://msdn.microsoft.com/library/windows/apps/Hh440975)。 **WinJS.UI.processAll** 包含在 [setPromise](https://msdn.microsoft.com/library/windows/apps/JJ215609) 方法的呼叫中，可以確保在 app 頁面準備好前都不會關閉啟動顯示畫面。
 
-**提示** **WinJS.UI.processAll** 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
+**提示**：**WinJS.UI.processAll** 函式會掃描您的 default.html 檔案，尋找 WinJS 控制項並初始化它們。 到目前為止，我們還沒有新增任何這些控制項，但是最好保留這個程式碼，萬一您之後想要新增就可以使用。
 
 如果要登錄非 WinJS 控制項的事件處理常式，最好緊接在呼叫 **WinJS.UI.processAll** 之後。
 
@@ -325,7 +332,7 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 執行 App。 在文字方塊中輸入您的名稱並按一下按鈕時，app 會顯示個人化問候語。
 
-**注意** 如果您想知道為什麼我們使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 在程式碼中登錄事件而不是在 HTML 中設定 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，請參閱[撰寫基本 app 的程式碼](https://msdn.microsoft.com/library/windows/apps/Hh780660)以取得詳細的說明。
+**注意**：如果您想知道為什麼我們使用 [addEventListener](https://msdn.microsoft.com/library/windows/apps/Hh441145) 在程式碼中登錄事件而不是在 HTML 中設定 [onclick](https://msdn.microsoft.com/library/windows/apps/Hh441312) 事件，請參閱[撰寫基本應用程式的程式碼](https://msdn.microsoft.com/library/windows/apps/Hh780660)以取得詳細的說明。
 
 ## <a name="step-6-add-a-windows-library-for-javascript-control"></a>步驟 6：新增適用於 JavaScript 的 Windows Library 控制項
 
@@ -494,10 +501,5 @@ Visual Studio 為您建立的其中一個檔案是 **index.html**，也就是您
 
 恭喜您！您已經使用 JavaScript 和 HTML 建立適用於 Windows 10 和 UWP 的第一個 app 了！
 
-接下來要做什麼？ [WinJS](https://developer.microsoft.com/en-us/windows/develop/winjs) 文件將可讓您使用適用於 JavaScript 的 Windows Library。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+接下來要做什麼？ [WinJS](https://developer.microsoft.com/windows/develop/winjs) 文件會繼續引導您使用適用於 JavaScript 的 Windows Library，或直接跳到[後續步驟](learn-more.md)。
 

@@ -1,17 +1,24 @@
 ---
 author: mcleblanc
-description: "開始使用適用於 iOS 開發人員的 UWP"
-title: "開始使用適用於 iOS 開發人員的 UWP"
+description: "適用於 iOS 開發人員的 UWP 入門"
+title: "適用於 iOS 開發人員的 UWP 入門"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 14f93a3cc8f5ada23f95a503acd2703044defe61
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 開始使用適用於 iOS 開發人員的 UWP
+# <a name="getting-started-with-uwp-for-ios-developers"></a>適用於 iOS 開發人員的 UWP 入門
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 文件中也會介紹在開始撰寫應用程式之前，您需要知道的部分概念，並涵蓋您如何在 Windows 市集上發佈您的作品。
 
@@ -21,7 +28,7 @@ Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、
 
 最重要的是：不要只是移植您的 app，而是**重新構想**您的 app，並充分利用這些新的功能和裝置。 不要僅將及格邊緣當成您的目標，並建立能運用 Windows 10 獨特功能的豐富體驗，例如動態磚、通知及與 Cortana 互動。
 
-為了開始進行這些逐步解說，您需要一部已安裝 Windows 10 與 Microsoft Visual Studio 的電腦。 您可以從[程式設計 Windows 市集應用程式的開發人員下載](http://go.microsoft.com/fwlink/p/?LinkId=302144)下載它們。 沒有 Windows 電腦嗎？ 不用擔心，您可以使用您的 Mac：請參閱[在 Mac 上安裝 Windows 和開發工具](setting-up-your-mac-with-windows-10.md)。
+為了開始進行這些逐步解說，您需要一部已安裝 Windows 10 與 Microsoft Visual Studio 的電腦。 您可以從[程式設計 Windows 市集應用程式的開發人員下載](https://developer.microsoft.com/en-us/windows/downloads)下載它們。 沒有 Windows 電腦嗎？ 不用擔心，您可以使用您的 Mac：請參閱[在 Mac 上安裝 Windows 和開發工具](setting-up-your-mac-with-windows-10.md)。
 
 | 主題 | 說明 |
 |-------|-------------|
@@ -39,9 +46,4 @@ Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

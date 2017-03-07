@@ -2,19 +2,27 @@
 author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來完成套件正式發行前小眾測試版提交的套件推出。"
 title: "使用 Windows 市集提交 API 來完成套件正式發行前小眾測試版提交的套件推出"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 套件推出, 正式發行前小眾測試版提交, 完成"
+ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 translationtype: Human Translation
-ms.sourcegitcommit: 9b76a11adfab838b21713cb384cdf31eada3286e
-ms.openlocfilehash: 7e08aa793ee0f889995e8ec80554c6b6e41bd8b6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 163ca2144f460a3ff992a19c366b3cf6d9654978
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 Windows 市集提交 API 來完成套件正式發行前小眾測試版提交的套件推出
+# <a name="finalize-the-package-rollout-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 來完成套件正式發行前小眾測試版提交的套件推出
 
 
 使用「Windows 市集提交 API」中的這個方法，來[完成](../publish/gradual-package-rollout.md#completing-the-rollout)套件正式發行前小眾測試版提交的套件推出。 如需有關使用「Windows 市集提交 API」來建立套件正式發行前小眾測試版提交的程序詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
 
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -23,9 +31,9 @@ ms.openlocfilehash: 7e08aa793ee0f889995e8ec80554c6b6e41bd8b6
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在「開發人員中心」儀表板中執行此操作，或是使用[建立 App 提交](create-an-app-submission.md)方法來執行此操作。
 * 啟用提交的漸進式套件推出。 您可以在[開發人員中心儀表板](../publish/gradual-package-rollout.md)中執行此操作，或是[使用 Windows 市集提交 API](manage-flight-submissions.md#manage-gradual-package-rollout) 來執行此操作。
 
->**注意**  這個方法僅供用於已被授權使用「Windows 市集提交 API」的「Windows 開發人員中心」帳戶。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供用於已被授權使用「Windows 市集提交 API」的「Windows 開發人員中心」帳戶。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 如需使用方式範例及標頭和要求參數的描述，請參閱下列各節。
 
@@ -36,7 +44,7 @@ ms.openlocfilehash: 7e08aa793ee0f889995e8ec80554c6b6e41bd8b6
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +52,7 @@ ms.openlocfilehash: 7e08aa793ee0f889995e8ec80554c6b6e41bd8b6
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -54,11 +62,11 @@ ms.openlocfilehash: 7e08aa793ee0f889995e8ec80554c6b6e41bd8b6
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何完成套件正式發行前小眾測試版提交的套件推出。
 
@@ -67,7 +75,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/fl
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫此方法時的 JSON 回應主體。 如需有關回應主體中各個值的詳細資訊，請參閱[套件推出資源](manage-flight-submissions.md#package-rollout-object)。
 
@@ -80,7 +88,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -92,14 +100,9 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [漸進式套件推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

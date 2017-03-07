@@ -1,17 +1,25 @@
 ---
 author: awkoren
-Description: "此文章列出使用傳統型轉 UWP 橋接器轉換 App 之前，您需要知道的事項。 您可能不需要針對 App 的轉換程序做太多準備。"
+Description: "此文章列出使用傳統型轉 UWP 橋接器轉換 App 之前，您需要知道的事項。 您可能不需要針對應用程式的轉換程序做太多準備。"
 Search.Product: eADQiWindows 10XVcnh
-title: "針對傳統型轉 UWP 橋接器準備 App"
+title: "針對傳統型轉 UWP 橋接器準備應用程式"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 translationtype: Human Translation
-ms.sourcegitcommit: d22d51d52c129534f8766ab76e043a12d140e8b7
-ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 238d3520bc4890a030327ad0bc799ab90b83ef40
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>準備 App 以使用傳統型橋接器來轉換
+# <a name="prepare-an-app-for-conversion-with-the-desktop-bridge"></a>準備應用程式以使用傳統型橋接器來轉換
 
-此文章列出使用傳統型轉 UWP 橋接器轉換 App 之前，您需要知道的事項。 您可能不需要針對 App 的轉換程序做太多準備，但如果以下任何項目適用於您的應用程式，您就需要先處理之後才能轉換。 請記住，Windows 市集會為您處理授權和自動更新，因此您可以從程式碼基底中移除那些功能。
+此文章列出使用傳統型轉 UWP 橋接器轉換應用程式之前，您需要知道的事項。 您可能不需要針對 App 的轉換程序做太多準備，但如果以下任何項目適用於您的應用程式，您就需要先處理之後才能轉換。 請記住，Windows 市集會為您處理授權和自動更新，因此您可以從程式碼基底中移除那些功能。
 
 + __您的 App 是使用 4.6.1 之前的 .NET 版本__。 僅支援 .NET 4.6.1。 您必須先將應用程式重新定位至 .NET 4.6.1 才能轉換。 
 
@@ -68,13 +76,14 @@ ms.openlocfilehash: a93d5ad1c1f429182c8df7d29df85dee70064e2f
 從 Windows 市集進行安裝期間，將會在安裝 app 之前，先安裝 VCLibs 11 架構的適當版本 (x86 或 x64)。  
 如果 app 是透過側載進行安裝，將不會安裝相依性。 若要在您的電腦上手動安裝相依性，您必須下載並安裝[適用於傳統型橋接器的 VC 11.0 架構套件](https://www.microsoft.com/download/details.aspx?id=53340&WT.mc_id=DX_MVP4025064)。 如需這些案例的詳細資訊，請參閱[在 Centennial 專案中使用 Visual C++ 執行階段](https://blogs.msdn.microsoft.com/vcblog/2016/07/07/using-visual-c-runtime-in-centennial-project/) (英文)。
 
-+ __您的應用程式會建立捷徑清單項目，並呼叫 [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) 或 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__。 請不要透過程式設計方式在程式碼中設定 AppID。 這樣做會造成捷徑清單項目不出現。 如果您的應用程式需要自訂識別碼，請使用資訊清單檔案加以指定。 請參閱[使用傳統型橋接器將您的應用程式手動轉換為 UWP](desktop-to-uwp-manual-conversion.md) 中之指示。 應用程式的 AppID 指定於 *YOUR_PRAID_HERE* 區段中。 
++ __您的應用程式包含自訂捷徑清單__。 使用捷徑清單時有幾個問題和注意事項。 
 
-+ __應用程式會新增參考套件中可執行檔的捷徑清單 Shell 連結__。 您不能從捷徑清單直接啟動套件中的可執行檔 (應用程式專屬 .exe 的絕對路徑例外)。 請改為註冊應用程式執行別名 (可讓您的已轉換應用程式透過關鍵字啟動，就形同其在 PATH 上)，並改為設定別名的連結目標路徑。 如需如何使用 appExecutionAlias 延伸模組的詳細資料，請參閱[傳統型橋接器應用程式延伸模組](desktop-to-uwp-extensions.md)。 請注意，如果您想讓捷徑清單中連結的資產符合原始 .exe，則需要使用 [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) 以及含 PKEY_Title 的顯示名稱來設定資產 (例如圖示)，就像其他自訂項目一樣。 
+    - __您應用程式的架構與作業系統不相符。__  捷徑清單目前無法正常運作，如果應用程式和作業系統架構不相符 (例如 x86 應用程式在 x64 Windows 上執行)。 目前還沒有其他因應措施，除了重新編譯應用程式以符合架構之外。
 
-+ __您的應用程式會新增可依絕對路徑參考應用程式套件中資產的捷徑清單項目__。 更新應用程式套件時，應用程式的安裝路徑可能會變更，也會變更資產位置 (例如圖示、文件、可執行檔等)。 如果捷徑清單項目依絕對路徑參考這類資產，則應用程式應該定期重新整理其捷徑清單 (例如應用程式啟動時)，確保路徑解析正確。 或是改成使用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，讓您可以使用套件相關 ms-resource URI 配置 (也可感知語言、DPI 和高對比) 來參考字串和影像資產。 
+    - __您的應用程式會建立捷徑清單項目，並呼叫 [ICustomDestinationList::SetAppID](https://msdn.microsoft.com/library/windows/desktop/dd378403(v=vs.85).aspx) 或 [SetCurrentProcessExplicitAppUserModelID](https://msdn.microsoft.com/library/windows/desktop/dd378422(v=vs.85).aspx)__。 請不要透過程式設計方式在程式碼中設定 AppID。 這樣做會造成捷徑清單項目不出現。 如果您的應用程式需要自訂識別碼，請使用資訊清單檔案加以指定。 請參閱[使用傳統型橋接器將您的應用程式手動轉換為 UWP](desktop-to-uwp-manual-conversion.md) 中之指示。 應用程式的 AppID 指定於 *YOUR_PRAID_HERE* 區段中。 
 
+    - __應用程式會新增參考套件中可執行檔的捷徑清單 Shell 連結__。 您不能從捷徑清單直接啟動套件中的可執行檔 (應用程式專屬 .exe 的絕對路徑例外)。 請改為註冊應用程式執行別名 (可讓您的已轉換應用程式透過關鍵字啟動，就形同其在 PATH 上)，並改為設定別名的連結目標路徑。 如需如何使用 appExecutionAlias 延伸模組的詳細資料，請參閱[傳統型橋接器應用程式延伸模組](desktop-to-uwp-extensions.md)。 請注意，如果您想讓捷徑清單中連結的資產符合原始 .exe，則需要使用 [**SetIconLocation**](https://msdn.microsoft.com/library/windows/desktop/bb761047(v=vs.85).aspx) 以及含 PKEY_Title 的顯示名稱來設定資產 (例如圖示)，就像其他自訂項目一樣。 
 
-<!--HONumber=Dec16_HO1-->
+    - __您的應用程式會新增可依絕對路徑參考應用程式套件中資產的捷徑清單項目__。 更新應用程式套件時，應用程式的安裝路徑可能會變更，也會變更資產位置 (例如圖示、文件、可執行檔等)。 如果捷徑清單項目依絕對路徑參考這類資產，則應用程式應該定期重新整理其捷徑清單 (例如應用程式啟動時)，確保路徑解析正確。 或是改成使用 UWP [**Windows.UI.StartScreen.JumpList**](https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.jumplist.aspx) API，讓您可以使用套件相關 ms-resource URI 配置 (也可感知語言、DPI 和高對比) 來參考字串和影像資產。
 
 

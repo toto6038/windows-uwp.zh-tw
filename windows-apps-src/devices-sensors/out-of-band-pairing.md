@@ -2,17 +2,24 @@
 author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: "頻外配對"
-description: "頻外配對可讓 app 連線到服務點周邊設備，而不需要探索。"
+description: "頻外配對可讓應用程式連線到服務點周邊設備，而不需要探索。"
+ms.author: ivorb
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc0bad7d8625817cfffcc84f89afeed96a07a21f
+ms.lasthandoff: 02/07/2017
 
 ---
-# 頻外配對
+# <a name="out-of-band-pairing"></a>頻外配對
 
-頻外配對可讓 app 連線到服務點周邊設備，而不需要探索。 應用程式必須使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空間，並將特別格式的字串 (頻外 Blob) 傳遞至所需周邊設備的適當 **FromIdAsync** 方法。 執行 **FromIdAsync** 時，主機裝置會在作業回到呼叫端前配對並連線到周邊設備。
+頻外配對可讓應用程式連線到服務點周邊設備，而不需要探索。 應用程式必須使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空間，並將特別格式的字串 (頻外 Blob) 傳遞至所需周邊設備的適當 **FromIdAsync** 方法。 執行 **FromIdAsync** 時，主機裝置會在作業回到呼叫端前配對並連線到周邊設備。
 
-## 頻外 Blob 格式
+## <a name="out-of-band-blob-format"></a>頻外 Blob 格式
 
 ```json
     "connectionKind":"Network",
@@ -60,7 +67,7 @@ ms.openlocfilehash: 283f0a0cfc7b3827e70ea79490818bc259d98ad1
 | 收銀機 | CashDrawerProtocolProvider.dll |
 | 掃描器 | BarcodeScannerProtocolProvider.dll |
 
-## 用法範例：網路印表機
+## <a name="usage-example-network-printer"></a>用法範例：網路印表機
 
 ```csharp
 String oobBlobNetworkPrinter =
@@ -74,7 +81,7 @@ String oobBlobNetworkPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobNetworkPrinter);
 ```
 
-## 用法範例：藍牙印表機
+## <a name="usage-example-bluetooth-printer"></a>用法範例：藍牙印表機
 
 ```csharp
 string oobBlobBTPrinter =
@@ -87,9 +94,4 @@ string oobBlobBTPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,14 +3,20 @@ author: mcleanbyron
 ms.assetid: 05b10814-4548-4dd4-bf71-72157a50986c
 description: "閱讀使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。"
 title: "疑難排解指南"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, 疑難排解"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 4a8b43ac0b6752b78e998ac16776b84e9ddda09f
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f81fba28ccbaa504d5c5674d3d04b2ab5b05f8f0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 疑難排解指南
+# <a name="troubleshooting-guides"></a>疑難排解指南
 
 
 
@@ -26,9 +32,4 @@ ms.openlocfilehash: 4a8b43ac0b6752b78e998ac16776b84e9ddda09f
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

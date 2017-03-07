@@ -1,17 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
-description: "本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。"
+description: "本節提供有關建立通用 Windows 平台 (UWP) 應用程式以擷取、播放或編輯相片、視訊或音訊的資訊。"
 title: "音訊、視訊和相機"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 77f47bce2a4be3f7c5ee3d320ff6c68e8c7ce6b0
-ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2d3b61b35307536bc54f19b5857acfe946a010ce
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="audio-video-and-camera"></a>音訊、視訊和相機
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節提供有關建立通用 Windows 平台 (UWP) app 以擷取、播放或編輯相片、視訊或音訊的資訊。
  
@@ -35,7 +42,7 @@ ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 
 ## <a name="see-also"></a>另請參閱
-- [開發 UWP app](https://developer.microsoft.com/en-us/windows/develop)
+- [開發 UWP app](https://developer.microsoft.com/windows/develop)
 
  
 
@@ -45,10 +52,5 @@ ms.openlocfilehash: d1aad0800bfe4982a316aa5da719db005b687fa1
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

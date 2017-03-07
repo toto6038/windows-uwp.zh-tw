@@ -9,9 +9,16 @@ ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview (Windows apps)
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: ff8d604be663b711bebf358f3256a5e6c55fb047
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1925d6b10eb23a6382bd63e812cade1311da178a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: ff8d604be663b711bebf358f3256a5e6c55fb047
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-「面板」**是一個物件，可在可延伸應用程式標記語言 (XAML) 配置系統執行和轉譯應用程式 UI 時，為其所含的子元素提供配置行為。 
+「面板」**是一個物件，可在 Extensible Application Markup Language (XAML) 配置系統執行和轉譯應用程式 UI 時，為其所含的子元素提供配置行為。 
 
 
 <div class="important-apis" >
@@ -203,9 +210,4 @@ protected override Size ArrangeOverride(Size finalSize)
 
 **概念**
 * [對齊、邊界及邊框間距](alignment-margin-padding.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

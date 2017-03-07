@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "使用本節的 Python 程式碼範例，深入了解如何使用 Windows 市集提交 API。"
 title: "適用於 Windows 市集提交 API 的 Python 程式碼範例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows Store submission API, code examples, Windows 市集提交 API, 程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f787fd042982e4e5a965c9bb77ef72a8dabb6ae9
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -88,9 +95,4 @@ ms.openlocfilehash: 1f8d415744d53120191f02a17aed4b7b04fa2f57
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

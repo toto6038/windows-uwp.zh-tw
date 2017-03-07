@@ -1,20 +1,28 @@
 ---
 author: TylerMSFT
-title: Connected apps and devices (Project "Rome")
-description: "本節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的 app，以及與遠端裝置上的 app 服務通訊。"
+title: "已連線的應用程式與裝置 (專案 &quot;Rome&quot;)"
+description: "本節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 translationtype: Human Translation
-ms.sourcegitcommit: 871599217e6da0eb0febd140323e99db7d1258cb
-ms.openlocfilehash: 2dbce34aeaf4933eee22e1e8ef40c48e633f6f7e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 357cf459fffc46e5d77f316af881e1a6e8bd8867
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="connected-apps-and-devices-project-rome"></a>已連線的 App 與裝置 (專案 Rome)
+# <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (專案 "Rome")
 
-本節說明如何使用專案 Rome 跨裝置與平台來和 app 連線。 了解如何探索遠端裝置、啟動遠端裝置上的 app，以及與遠端裝置上的 app 服務通訊。
+本節說明如何使用專案 Rome 跨裝置與平台來和應用程式連線。 了解如何探索遠端裝置、啟動遠端裝置上的 app，以及與遠端裝置上的 app 服務通訊。
 
 大部分的人擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，app 需要跨越裝置與平台。
 
-Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/en-us/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 app，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在使用最方便的裝置上執行工作。 例如，您可能會在車內聆聽手機上的收音機，但當您到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
+Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 app，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在使用最方便的裝置上執行工作。 例如，您可能會在車內聆聽手機上的收音機，但當您到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
 
 您也可以將專案 "Rome" 用於配對裝置或遠端控制案例。 使用 app 訊息傳送 API，在兩部裝置之間建立 app 通道，來傳送和接收自訂訊息。 例如，您可以為手機撰寫可控制電視播放的 app，或撰寫配對 app 來為您在另一個 app 上觀看的電視節目角色提供相關資訊。  
 
@@ -25,11 +33,6 @@ Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.c
 | 主題 | 說明 |
 |-------|-------------|
 | [探索遠端裝置](discover-remote-devices.md)  | 了解如何探索能夠連線的裝置。 |
-| [啟動遠端裝置上的 app](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的 app。  |
+| [啟動遠端裝置上的應用程式](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的應用程式。  |
 | [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上的 app 互動。 |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

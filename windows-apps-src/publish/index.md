@@ -1,16 +1,24 @@
 ---
 author: jnHs
 Description: "了解如何將您的 Windows 應用程式發佈到 Windows 市集。"
+title: "發行 Windows 應用程式"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 translationtype: Human Translation
-ms.sourcegitcommit: f894decad6a88ad3923e0bd5c54a6f4906555081
-ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
-
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 43cd6db99001974283175cb611d2e06c5da2221c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 發行 Windows 應用程式
+# <a name="publish-windows-apps"></a>發行 Windows 應用程式
 
-您可以使用 Windows 開發人員中心儀表板將您的 App 發佈到 Windows 市集。 
+您可以使用 Windows 開發人員中心儀表板，將您的應用程式發佈到 Windows 市集。 
 
 > **注意** 您必須具有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能存取 Windows 開發人員中心儀表板並提交 App。
 
@@ -29,9 +37,4 @@ ms.openlocfilehash: 6e2b6158a586fa82780664cd2ef2de0b425a1f1d
 | [獲得報酬](getting-paid-apps.md) | 取得有關從您的 App、附加元件，以及 Microsoft Advertising 獲利的詳細資料。 |
 | [市集原則與管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764939.aspx) | 本節包含適用於 Windows 應用程式和內容的[市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)和[應用程式品質](https://msdn.microsoft.com/library/windows/apps/mt652261.aspx)條件，以及開發人員應該遵循的[管理辦法](https://msdn.microsoft.com/library/windows/apps/dn764941.aspx)。 |
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -1,10 +1,18 @@
 ---
 author: msatranjr
 title: "藍牙廣告"
-description: "本節包含如何透過 AdvertisementWatcher 和 AdvertisementPublisher API 的使用者，將藍牙低功耗 (LE) 廣告整合到通用 Windows 平台 (UWP) 應用程式的文章。"
+description: "本節包含如何透過 AdvertisementWatcher 和 AdvertisementPublisher API 的使用者，將藍牙低功耗 (LE) 廣告整合到通用 Windows 平台 (UWP) app 的文章。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 translationtype: Human Translation
-ms.sourcegitcommit: b454e08015ea9bd6240c836563b1fec78e38dc2c
-ms.openlocfilehash: e21567bf2ffa5b05861cf96099290e1bb66dbf03
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bfdb1b218676503699674c97fc962ad8161769dd
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -85,7 +93,7 @@ publisher.Start();
 BluetoothLEAdvertisementWatcher watcher = new BluetoothLEAdvertisementWatcher();
 watcher.Received += OnAdvertisementReceived;
 watcher.Start();
-``` 
+```    
 
 ```csharp
 private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watcher, BluetoothLEAdvertisementReceivedEventArgs eventArgs)
@@ -153,8 +161,3 @@ private async void OnAdvertisementReceived(BluetoothLEAdvertisementWatcher watch
 這個值可以約略轉譯成距離，但不應該用來測量實際距離，因為每個獨立無線電波都不同。 不同的環境因素可能使距離難以測量 (如牆壁、無線電波周圍的外殼，或甚至是空氣濕度)。
 
 另一個用來判斷單純距離的方法是定義「值區」。 無線電波在非常接近的時候會回報 0 至 -50 DBm，在中等距離的時候為 -50 至 -90，很遠的時候則低於 -90。 若要決定適用於您 App 的值區，嘗試錯誤是最佳的方法。
-
-
-<!--HONumber=Dec16_HO3-->
-
-

@@ -1,15 +1,22 @@
 ---
 title: "認證保險箱"
-description: "本文說明通用 Windows 平台 (UWP) 應用程式可以如何使用認證保險箱，來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。"
+description: "本文說明通用 Windows 平台 (UWP) app 可以如何使用認證保險箱，安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d72432aa5f9ccc40d4f822f5d76c1e09b606e33a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 認證保險箱
+# <a name="credential-locker"></a>認證保險箱
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -21,7 +28,7 @@ ms.openlocfilehash: 2d5e1fada82e0c39ad0dce31c779ac80005aff17
 
 網域帳戶的認證保險箱運作方式有些不同。 如果有隨您的 Microsoft 帳戶儲存的認證，而您將該帳戶與網域帳戶 (例如您的工作帳戶) 關聯，則您的認證會漫遊至該網域帳戶。 但使用該網域帳戶登入時所新增的任何新認證則不會漫遊。 這樣可確保網域的私密認證不會暴露到網域外。
 
-## 儲存使用者認證
+## <a name="storing-user-credentials"></a>儲存使用者認證
 
 
 1.  使用 [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 命名空間中的 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 物件取得認證保險箱的參考。
@@ -33,7 +40,7 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## 擷取使用者認證
+## <a name="retrieving-user-credentials"></a>擷取使用者認證
 
 
 在具備 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 物件的參考後，您有幾個選項可從認證保險箱擷取使用者認證。
@@ -104,7 +111,7 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## 刪除使用者認證
+## <a name="deleting-user-credentials"></a>刪除使用者認證
 
 
 刪除儲存在認證保險箱的使用者認證也是一個快速的雙步驟程序。
@@ -119,7 +126,7 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## 最佳做法
+## <a name="best-practices"></a>最佳做法
 
 
 僅使用認證保險箱來儲存密碼，不要儲存較大的資料 blob。
@@ -130,8 +137,3 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
 -   使用者已選擇儲存密碼。
 
 請勿使用應用程式資料或漫遊設定儲存純文字形式的認證。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

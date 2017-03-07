@@ -3,22 +3,29 @@ author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Windows 應用程式認證套件測試"
 description: "Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
-ms.openlocfilehash: 78a1a2ad4aea11275aa3db1d13790c490a50c232
+ms.sourcegitcommit: e1a7b61d8f5dfe6ae3477f349d23674d700d002b
+ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
+ms.lasthandoff: 02/04/2017
 
 ---
-## Windows 應用程式認證套件測試
+## <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。
 
-## 部署和啟動測試
+## <a name="deployment-and-launch-tests"></a>部署和啟動測試
 
 在認證測試期間監視 app，記錄該 app 何時發生當機或停滯情形。
 
-### 背景
+### <a name="background"></a>背景
 
 停止回應或當機的應用程式會導致使用者遺失資料並產生不良的使用經驗。
 
@@ -26,13 +33,13 @@ Windows 應用程式認證套件包含一些測試，協助確認您的 app 已�
 
 app 不可以在 HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs 登錄機碼中列出要載入的 DLL。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 我們會透過認證測試來測試 app 的復原能力和穩定性。
 
 Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) 以啟動 app。 為了讓 **ActivateApplication** 啟動 app，必須啟用使用者帳戶控制 (UAC)，而且螢幕解析度至少必須為 1024 x 768 或 768 x 1024。 如果任一條件不符合，您的 app 就無法通過這個測試。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 確定測試電腦上的 UAC 已啟用。
 
@@ -46,65 +53,65 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 
 疑難排解有問題的檔案，並尋找和修正問題。 重新建置並重新測試應用程式。 您也可以檢查 Windows 應用程式認證套件記錄檔資料夾中是否已產生可用來偵錯應用程式的傾印檔案。
 
-## 平台版本啟動測試
+## <a name="platform-version-launch-test"></a>平台版本啟動測試
 
 檢查 Windows 應用程式是否能在未來版本的作業系統執行。 此測試過去只適用於「傳統型 app」工作流程，但現在也適用於「市集」和通用 Windows 平台 (UWP) 工作流程。
 
-### 背景
+### <a name="background"></a>背景
 
 作業系統版本資訊的用途限於 Windows 市集。 這常被 app 錯誤地用於檢查作業系統版本，使 app 可以提供使用者作業系統版本特定的功能。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如何檢查作業系統版本。 如果應用程式當機，就無法通過這項測試。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 應用程式應該使用「版本 API」協助程式函式進行檢查。 如需詳細資訊，請參閱[作業系統版本](https://msdn.microsoft.com/library/windows/desktop/ms724832)。
 
-## 背景工作取消處理常式驗證
+## <a name="background-tasks-cancellation-handler-validation"></a>背景工作取消處理常式驗證
 
 這會驗證 app 是否有已宣告之背景工作的取消處理常式。 必須有當工作取消時會呼叫的專用函式。 這項測試只適用於已部署的應用程式。
 
-### 背景
+### <a name="background"></a>背景
 
 市集應用程式可以登錄一個在背景執行的處理程序。 例如，電子郵件應用程式可能會不時對伺服器進行 Ping。 但如果作業系統需要這些資源，它將會取消背景工作，且應用程式應順利處理這項取消。 若應用程式沒有取消處理常式，當使用者嘗試關閉應用程式時，應用程式可能會當機或無法關閉。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 應用程式會啟動、暫停，然後應用程式的非背景部分會終止。 接著，與應用程式關聯的背景工作會被取消。 最後會檢查作業系統的狀態，如果應用程式仍在執行，它將無法通過此測試。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 新增取消處理常式到 app。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/library/windows/apps/Mt299103)。
 
-## 應用程式計數
+## <a name="app-count"></a>應用程式計數
 
 這會確認一個應用程式套件 (APPX、應用程式套件組合) 包含一個應用程式。 這在套件中變更為獨立的測試。
 
-### 背景
+### <a name="background"></a>背景
 
 這項測試是根據「市集原則」而實作。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 針對 Windows Phone 8.1 App，測試會確認套件組合中的 appx 套件總數為 &lt; 512、套件組合中只有一個主套件，以及套件組合中的主套件架構已標示為 ARM 或中性。
 
 針對 Windows 10 App，測試會驗證套件組合版本中的版本號碼已設定為 0。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 請確定應用程式套件和套件組合符合上述「測試詳細資料」中的需求。
 
-## 應用程式資訊清單規範測試
+## <a name="app-manifest-compliance-test"></a>應用程式資訊清單規範測試
 
 測試應用程式資訊清單的內容，確定內容正確無誤。
 
-### 背景
+### <a name="background"></a>背景
 
 應用程式必須包含格式正確的應用程式資訊清單。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 檢查 App 資訊清單，確認內容是正確的，如 [App 套件需求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述。
 
@@ -122,19 +129,19 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
     這個測試強制要求 Windows 市集應用程式不會在應用程式容器外部與桌面元件通訊。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 按照 [App 套件需求](https://msdn.microsoft.com/library/windows/apps/Mt148525)中所述的需求來檢閱 App 的資訊清單。
 
-## Windows 安全性功能測試
+## <a name="windows-security-features-test"></a>Windows 安全性功能測試
 
-### 背景
+### <a name="background"></a>背景
 
 變更預設的 Windows 安全性保護會讓客戶面臨較高的風險。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
-執行 [BinScope 二元分析器](#binscope)以測試 app 的安全性。
+執行 [BinScope 二元分析器](#binscope-binary-analyzer-tests)以測試 app 的安全性。
 
 BinScope 二元分析器測試會檢驗應用程式的二進位檔，檢查編碼和建置做法是否讓應用程式較不容易受到攻擊或是做為攻擊媒介。
 
@@ -143,9 +150,9 @@ BinScope 二元分析器測試會檢查是否正確使用下列安全性相關�
 -   BinScope 二元分析器測試
 -   私用程式碼簽署
 
-### BinScope 二元分析器測試
+### <a name="binscope-binary-analyzer-tests"></a>BinScope 二元分析器測試
 
-[BinScope 二元分析器](http://go.microsoft.com/fwlink/p/?linkid=257276)測試會檢驗 app 的二進位檔，檢查編碼和建置做法是否讓 app 較不容易受到攻擊或是做為攻擊媒介。
+[BinScope 二元分析器](https://www.microsoft.com/en-us/download/details.aspx?id=44995)測試會檢驗 app 的二進位檔，檢查編碼和建置做法是否讓 app 較不容易受到攻擊或是做為攻擊媒介。
 
 BinScope 二元分析器測試會檢查是否正確使用下列安全性相關的功能：
 
@@ -158,7 +165,7 @@ BinScope 二元分析器測試會檢查是否正確使用下列安全性相關�
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
-### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
+### <a name="span-idbinscope-1spanallowpartiallytrustedcallersattribute"></a><span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
 **Windows 應用程式認證套件錯誤訊息：**APTCACheck 測試失敗
 
@@ -172,7 +179,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 這個測試只會在 Managed 程式碼 (C#、.NET 等) 執行。
 
-### <span id="binscope-2"></span>/SafeSEH 例外狀況處理保護
+### <a name="span-idbinscope-2spansafeseh-exception-handling-protection"></a><span id="binscope-2"></span>/SafeSEH 例外狀況處理保護
 
 **Windows 應用程式認證套件錯誤訊息：**SafeSEHCheck 測試失敗
 
@@ -186,7 +193,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 測試不會在 64 位元的二進位檔或 ARM 晶片組二進位檔上執行，原因是兩者不會在堆疊上儲存例外處理常式位址。
 
-### <span id="binscope-3"></span>資料執行防止
+### <a name="span-idbinscope-3spandata-execution-prevention"></a><span id="binscope-3"></span>資料執行防止
 
 **Windows 應用程式認證套件錯誤訊息：**NXCheck 測試失敗
 
@@ -200,7 +207,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 建議您在支援 DEP 的 CPU 上測試應用程式，並修正由 DEP 所導致的任何失敗。
 
-### <span id="binscope-4"></span>位址空間配置隨機載入
+### <a name="span-idbinscope-4spanaddress-space-layout-randomization"></a><span id="binscope-4"></span>位址空間配置隨機載入
 
 **Windows 應用程式認證套件錯誤訊息：**DBCheck 測試失敗
 
@@ -216,7 +223,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 這個測試只能在以 Managed 程式碼 (如 C# 或 .NET Framework) 撰寫的 app 上執行。
 
-### <span id="binscope-5"></span>讀取/寫入共用的 PE 區段
+### <a name="span-idbinscope-5spanreadwrite-shared-pe-section"></a><span id="binscope-5"></span>讀取/寫入共用的 PE 區段
 
 **Windows 應用程式認證套件錯誤訊息：**SharedSectionsCheck 測試失敗。
 
@@ -230,7 +237,7 @@ AllowPartiallyTrustedCallersAttribute (APTCA) 屬性可從已簽署組件中部�
 
 這個測試只能在以 Unmanaged 語言 (如 C 或 C++) 撰寫的應用程式上執行。
 
-### AppContainerCheck
+### <a name="appcontainercheck"></a>AppContainerCheck
 
 **Windows 應用程式認證套件錯誤訊息：**AppContainerCheck 測試失敗。
 
@@ -246,7 +253,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 這個測試會在所有 .exe 檔案和 Unmanaged DLL 上執行。
 
-### <span id="binscope-7"></span>ExecutableImportsCheck
+### <a name="span-idbinscope-7spanexecutableimportscheck"></a><span id="binscope-7"></span>ExecutableImportsCheck
 
 **Windows 應用程式認證套件錯誤訊息：**ExecutableImportsCheck 測試失敗。
 
@@ -260,7 +267,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 這個測試會在完全 Managed 組件以外的所有二進位程式碼上執行。
 
-### <span id="binscope-8"></span>WXCheck
+### <a name="span-idbinscope-8spanwxcheck"></a><span id="binscope-8"></span>WXCheck
 
 **Windows 應用程式認證套件錯誤訊息：**WXCheck 測試失敗。
 
@@ -278,36 +285,36 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 可執行檔的 *SectionAlignment* 預設為 *PAGE\-SIZE*。
 
-### 私用程式碼簽署
+### <a name="private-code-signing"></a>私用程式碼簽署
 
 測試私用程式碼簽署二進位檔是否存在於應用程式套件。
 
-### 背景
+### <a name="background"></a>背景
 
 私用程式碼簽署檔案應該保持私用，因為若遭到洩露，可能會被用於惡意用途。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 測試應用程式套件內的檔案是否存在 .pfx 或.snk，以指出已包含私用簽署金鑰。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 從套件中移除任何私用程式碼簽署金鑰 (例如，.pfx 和 .snk 檔案)。
 
-## 支援的 API 測試
+## <a name="supported-api-test"></a>支援的 API 測試
 
 測試 app 是否使用不相容的 API。
 
-### 背景
+### <a name="background"></a>背景
 
 app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階段或受支援的 Win32 API) 進行 Windows 市集認證。 這個測試也會識別 Managed 二進位檔案相依於核准的設定檔外部函式的狀況。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 -   檢查二進位檔案的匯入位址表，確認 App 套件內的每個二進位檔案都相依於 Windows 市集 App 開發所支援的 Win32 API。
 -   確認 App 套件內的每個 Managed 二進位檔案不會相依於核准的設定檔外部的函式。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
@@ -317,21 +324,21 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 
 > **注意** 即使偵錯組態只使用來自適用於 Windows 市集 app 的 Windows SDK 的 API，該設定內建的 C++ app 也無法通過這個測試。 如需詳細資訊，請參閱 [Windows 市集 app 中 Windows API 的替代方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
-## 效能測試
+## <a name="performance-tests"></a>效能測試
 
 應用程式必須快速回應使用者的互動及系統命令，才能提供快速且流暢的使用者經驗。
 
 執行測試之電腦的特性會影響測試結果。 設定應用程式認證的效能測試閾值，讓低功率電腦能夠符合客戶預期的快速和流暢使用經驗。 若要判斷應用程式的效能，建議您在低功率電腦上進行測試，例如採用 Intel Atom 處理器且具備 1366x768 (或更高) 螢幕解析度與旋轉式硬碟 (而非固態硬碟) 的電腦。
 
-### 位元組程式碼產生
+### <a name="bytecode-generation"></a>位元組程式碼產生
 
 當效能最佳化加快 JavaScript 執行時間時，結尾為 .js 副檔名的 JavaScript 檔案會在部署應用程式時產生位元組程式碼。 這個最佳化作業會大幅改善 JavaScript 操作的啟動和持續執行時間。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 檢查應用程式部署，確認所有 .js 檔案都已轉換成位元組程式碼。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 如果這個測試失敗，解決問題時請考量下列各項：
 
@@ -340,29 +347,29 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 -   確認已解除安裝應用程式的所有先前版本。
 -   從應用程式套件中排除已識別的檔案。
 
-### 最佳化的繫結參考
+### <a name="optimized-binding-references"></a>最佳化的繫結參考
 
 使用繫結時，WinJS.Binding.optimizeBindingReferences 應設定為 true 以最佳化記憶體使用量。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 確認 WinJS.Binding.optimizeBindingReferences 的值。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 將 app JavaScript 中的 WinJS.Binding.optimizeBindingReferences 設為 **true**。
 
-## app 資訊清單資源測試
+## <a name="app-manifest-resources-test"></a>app 資訊清單資源測試
 
-### 應用程式資源驗證
+### <a name="app-resources-validation"></a>應用程式資源驗證
 
 如果應用程式資訊清單中宣告的字串或影像不正確，就無法安裝應用程式。 如果應用程式安裝時包含這些錯誤，就無法正確顯示應用程式的標誌或所使用的其他影像。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 檢查應用程式資訊清單中定義的資源，確定它們存在並且有效。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 使用下表做為指引。
 
@@ -475,97 +482,97 @@ app 必須使用適用於 Windows 市集應用程式的 API (Windows 執行階�
 
  
 
-### 商標驗證
+### <a name="branding-validation"></a>商標驗證
 
 Windows 市集應用程式應該要完整且功能正常。 使用預設影像 (來自範本或 SDK 範例) 的應用程式會呈現不佳的使用者經驗，而且在市集型錄中也不容易識別。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 這個測試會驗證應用程式所使用的影像不是來自 SDK 範例或 Visual Studio 的預設影像。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 以更特別且更能代表您應用程式的影像取代預設影像。
 
-## 偵錯設定測試
+## <a name="debug-configuration-test"></a>偵錯設定測試
 
 測試應用程式，確定它不是偵錯版。
 
-### 背景
+### <a name="background"></a>背景
 
 若要通過 Windows 市集的認證，應用程式不可以針對偵錯進行編譯，而且不可以參照可執行檔案的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 測試應用程式，確定不是偵錯組建，而且沒有連結到任何偵錯架構。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 -   將應用程式送出到 Windows 市集之前，將它建置為版本組建。
 -   確定您已安裝正確的 .NET Framework 版本。
 -   確認應用程式並未連結到偵錯版本的架構，且是利用發行版本所建置。 如果這個應用程式包含 .NET 元件，請確認您已安裝正確的 .NET Framework 版本。
 
-## 檔案編碼測試
+## <a name="file-encoding-test"></a>檔案編碼測試
 
-### UTF-8 檔案編碼
+### <a name="utf-8-file-encoding"></a>UTF-8 檔案編碼
 
-### 背景
+### <a name="background"></a>背景
 
 必須使用對應的位元順序標記 (BOM)，以 UTF-8 格式為 HTML、CSS 和 JavaScript 檔案編碼，如此即能從位元組程式碼快取中獲益，並可避免其他執行階段錯誤情況。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 測試應用程式套件的內容，確定它們使用正確的檔案編碼。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 開啟受影響的檔案，然後從 Visual Studio 的 \[**檔案**\] 功能表中選取 \[**另存新檔**\]。 選取 \[**儲存**\] 按鈕旁的下拉式控制項，然後選取 \[**以編碼方式儲存**\]。 從 \[**進階**\] 儲存選項對話方塊中選擇 \[Unicode (UTF-8 有簽章)\] 選項，然後按一下 \[**確定**\]。
 
-## Direct3D 功能層級測試
+## <a name="direct3d-feature-level-test"></a>Direct3D 功能層級測試
 
-### Direct3D 功能層級支援
+### <a name="direct3d-feature-level-support"></a>Direct3D 功能層級支援
 
 測試 Microsoft Direct3D app，以確定它們不會在具有較舊圖形硬體的裝置上當機。
 
-### 背景
+### <a name="background"></a>背景
 
 Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9\-1 圖形卡上正常顯示或者失敗但不嚴重。
 
 因為使用者可以在安裝 app 之後變更裝置中的圖形硬體，如果您選擇高於 9\-1 的最低功能層級，您的 app 必須在啟動時偵測目前的硬體是否符合最低需求。 若不符合最低需求，該 app 必須向使用者顯示訊息，以詳細說明 Direct3D 的需求。 此外，如果客戶在不相容的裝置上下載 app，該 app 必須在啟動時偵測執行環境，並顯示訊息給客戶，以詳細說明需求。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 這個測試會驗證 app 是否在功能層級 9\-1 上正確顯示。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 請確保您的 app 正確顯示在 Direct3D 功能層級 9\-1 上，即使您希望它在更高層級上執行。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](http://go.microsoft.com/fwlink/p/?LinkID=253575)。
 
-### 暫停後的 Direct3D 修剪
+### <a name="direct3d-trim-after-suspend"></a>暫停後的 Direct3D 修剪
 
 > **注意** 這個測試只適用於針對 Windows 8.1 和更新版本開發的 Windows 市集 app。
 
-### 背景
+### <a name="background"></a>背景
 
 如果 app 未在本身的 Direct3D 裝置上呼叫 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346)，該 app 就不會釋放它為較早的 3D 工作所配置的記憶體。 這會增加應用程式由於系統記憶體壓力而終止的風險。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 檢查 app 是否符合 d3d 需求，確保 app 在暫停回呼時，呼叫新的 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 每當 App 即將暫停時，都應該在它的 [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) 介面上呼叫 [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API。
 
-## App 功能測試
+## <a name="app-capabilities-test"></a>App 功能測試
 
-### 特殊用途功能
+### <a name="special-use-capabilities"></a>特殊用途功能
 
-### 背景
+### <a name="background"></a>背景
 
 特殊用途功能適用於非常特殊的情況。 僅限公司帳戶使用這些功能。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 驗證應用程式是否宣告下列任一功能：
 
@@ -575,22 +582,22 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
 
 如果宣告了這些功能的其中之一，測試就會顯示警告給使用者。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 請考慮移除 app 不需要的特殊用途功能。 此外，這類功能的使用方式需接受其他上架原則審查。
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Windows 執行階段中繼資料驗證
+## <a name="windows-runtime-metadata-validation"></a>Windows 執行階段中繼資料驗證
 
-### 背景
+### <a name="background"></a>背景
 
 確保 app 隨附的元件符合 UWP 類型系統。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 確認套件中的 **.winmd** 檔案符合 UWP 規則。
 
-### 修正動作
+### <a name="corrective-actions"></a>修正動作
 
 -   **ExclusiveTo 屬性測試：**確保 UWP 類別不會實作已標示為 ExclusiveTo 其他類別的介面。
 -   **類型位置測試：**確保所有 UWP 類型的中繼資料都位於 app 套件中命名空間相符名稱最長的 winmd 檔案中。
@@ -599,21 +606,21 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
 -   **一般中繼資料正確性測試：**確保您用來產生類型的編譯器符合最新的 UWP 規格。
 -   **屬性測試：**確保 UWP 類別的所有屬性都有 get 方法 (set 方法為選用)。 針對 UWP 類型的所有屬性，確保 get 方法傳回值的類型與 set 方法輸入參數的類型相符。
 
-## 套件例行性測試
+## <a name="package-sanity-tests"></a>套件例行性測試
 
-### 平台適用檔案測試
+### <a name="platform-appropriate-files-test"></a>平台適用檔案測試
 
 視使用者的處理器架構而定，安裝混合二進位檔案的 app 可能會損毀或無法正確執行。
 
-### 背景
+### <a name="background"></a>背景
 
 這個測試驗證應用程式套件中的二進位檔案是否會發生架構衝突。 應用程式套件不應包含無法在資訊清單中所指定的處理器架構上使用的二進位檔案。 包含不支援的二進位檔案會導致應用程式毀損，或是以非必要方式增加應用程式套件的大小。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 驗證每個檔案的 PE 標頭中的「位元」都適合與應用程式套件處理器架構宣告交叉參考
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 遵循這些指導方針，以確保您的應用程式套件只包含應用程式資訊清單中指定之架構所支援的檔案：
 
@@ -627,37 +634,37 @@ Windows 市集要求使用 Direct3D 的所有應用程式都能在功能層級 9
 
 -   如果應用程式的目標處理器架構是 ARM 處理器類型，則應用程式套件必須只能包含 ARM 二進位檔案或映像類型檔案。 如果套件包含 x64 或 x86 二進位檔案或映像類型檔案，這個測試將會失敗。
 
-### 支援的目錄結構測試
+### <a name="supported-directory-structure-test"></a>支援的目錄結構測試
 
 驗證應用程式在安裝期間建立的子目錄長度不超過 MAX\-PATH。
 
-### 背景 
+### <a name="background"></a>背景 
 
 OS 元件 (包括 Trident、WWAHost 等) 的檔案系統路徑在內部限制為 MAX\-PATH；若路徑較長，將無法正確運作。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 確認 App 安裝目錄內的路徑不超過 MAX\-PATH。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 使用較短的目錄結構或檔案名稱。
 
-## 資源使用狀況測試
+## <a name="resource-usage-test"></a>資源使用狀況測試
 
-### WinJS 背景工作測試
+### <a name="winjs-background-task-test"></a>WinJS 背景工作測試
 
 WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close 陳述式，以免應用程式耗用電池電力。
 
-### 背景 
+### <a name="background"></a>背景 
 
 具備 JavaScript 背景工作的應用程式必須呼叫 Close() 做為其背景工作的最後一個陳述式。 不執行此動作的應用程式可能會使系統無法返回連線待命模式，導致電池電力耗盡。
 
-### 測試詳細資料
+### <a name="test-details"></a>測試詳細資料
 
 如果應用程式沒有資訊清單中指定的背景工作檔案，將會通過測試。 否則，測試將會剖析應用程式套件中指定的 JavaScript 背景工作檔案，並尋找 Close() 陳述式。 如果找到，將會通過測試；否則測試就會失敗。
 
-### 修正動作
+### <a name="corrective-action"></a>修正動作
 
 更新背景 JavaScript 程式碼以正確呼叫 Close()。
 
@@ -668,9 +675,4 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

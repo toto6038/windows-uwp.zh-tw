@@ -3,17 +3,24 @@ author: DBirtolo
 ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
 title: "自訂預覽列印 UI"
 description: "本節說明如何在預覽列印 UI 中自訂列印選項和設定。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fa1a8c487d3fef2b0caa322d81c0ebdbdfe3865f
+ms.lasthandoff: 02/07/2017
 
 ---
-# 自訂預覽列印 UI
+# <a name="customize-the-print-preview-ui"></a>自訂預覽列印 UI
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
 -   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
@@ -25,7 +32,7 @@ ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
  
 
-## 自訂列印選項
+## <a name="customize-print-options"></a>自訂列印選項
 
 根據預設，預覽列印 UI 會顯示 [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478)、[**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479) 和 [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) 選項。 除了上述選項，還有數個其他常見的印表機選項，讓您可以新增到預覽列印 UI：
 
@@ -44,11 +51,11 @@ ms.openlocfilehash: dd64266c2015e1bb640cf159b0836b9819cf7845
 
 不過，您使用這個方法所做的修改只會影響預覽列印 UI。 只要點選預覽列印 UI 中的 [更多設定]**** 連結，使用者就可以存取印表機支援的所有選項。
 
-**注意** 雖然您的應用程式可以指定要顯示的任何列印選項，但是只有選定的印表機支援的選項才會在預覽列印 UI 中顯示。 列印 UI 不會顯示選定的印表機不支援的選項。
+**注意**：雖然您的應用程式可以指定要顯示的任何列印選項，但是只有選定的印表機支援的選項才會在預覽列印 UI 中顯示。 列印 UI 不會顯示選定的印表機不支援的選項。
 
  
 
-### 定義要顯示的選項
+### <a name="define-the-options-to-display"></a>定義要顯示的選項
 
 App 的畫面載入時，會登錄列印協定。 該登錄包含定義 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式。 自訂預覽列印 UI 中所顯示選項的程式碼會新增到 **PrintTaskRequested** 事件處理常式中。
 
@@ -92,9 +99,9 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要** 呼叫 [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() 會移除預覽列印 UI 中的所有列印選項，包括 [更多設定]**** 連結。 務必在預覽列印 UI 上附加要顯示的選項。
+**重要**：呼叫 [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() 會移除預覽列印 UI 中的所有列印選項，包括 **[更多設定]** 連結。 務必在預覽列印 UI 上附加要顯示的選項。
 
-### 指定預設選項
+### <a name="specify-default-options"></a>指定預設選項
 
 您也可以在預覽列印 UI 中設定選項的預設值。 下列這行程式碼來自上一個範例，會設定 [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483) 選項的預設值。
 
@@ -103,7 +110,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
          printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
 ```         
 
-## 新增列印選項
+## <a name="add-new-print-options"></a>新增列印選項
 
 本節顯示如何建立新的列印選項、定義選項支援的值清單，以及將選項新增至預覽列印。 如同上一節，在 [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) 事件處理常式中加入新的列印選項。
 
@@ -179,15 +186,9 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

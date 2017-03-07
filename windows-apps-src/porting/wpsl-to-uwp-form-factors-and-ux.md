@@ -3,9 +3,16 @@ author: mcleblanc
 description: "Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。"
 title: "針對尺寸與 UX 移植 Windows Phone Silverlight 到 UWP"
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 71e762410b1c7dbf416e3bb81310d74115938102
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 301f1b55644842225f1b8d040d5b02a035d1940b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,15 +26,15 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 ## <a name="different-form-factors-and-user-experience"></a>不同的尺寸與使用者體驗
 
-不同裝置有多種外觀比例不同的直向和橫向解析度。 UWP app 的介面、文字與資產的視覺比例會如何縮放？ 如何除了滑鼠與鍵盤輸入之外，也支援觸控輸入？ 而如果應用程式支援在各種不同大小、各有不同檢視距離的裝置上使用觸控，控制項要如何在不同的像素密度顯示成正確大小的觸控目標，「同時」其內容在不同的距離又能清楚可讀？ 下列各節將說明您需要知道的事項。
+不同裝置有多種外觀比例不同的直向和橫向解析度。 UWP app 的介面、文字與資產的視覺比例會如何縮放？ 如何除了滑鼠與鍵盤輸入之外，也支援觸控輸入？ 而如果應用程式支援在各種不同大小、各有不同檢視距離的裝置上使用觸控，控制項要如何在不同的像素密度顯示成正確大小的觸控目標，*「同時」*其內容在不同的距離又能清楚可讀？ 下列各節將說明您需要知道的事項。
 
 ## <a name="what-is-the-size-of-a-screen-really"></a>說實在的，什麼是螢幕大小？
 
 簡單說來，這是相當主觀的，因為它不只取決於顯示器的客觀大小，也取決於您與它的距離有多遠。 主觀意謂著我們必須以使用者的角度出發，而這就是優良應用程式的開發人員無論如何都會做到的。
 
-客觀來說，螢幕是以英吋與實體 (原始) 像素的單位來測量。 知道這兩個計量，您就可以知道一英吋能夠容納多少像素。 這就是像素密度，也稱為 DPI (每英吋點數) 或 PPI (每英吋像素數)。 而 DPI 的倒數就是像素的實體大小 (以英吋的分數表示)。 像素密度也稱為「解析度」，雖然此詞彙通常被寬鬆地用來表示像素計數。
+客觀來說，螢幕是以英吋與實體 (原始) 像素的單位來測量。 知道這兩個計量，您就可以知道一英吋能夠容納多少像素。 這就是像素密度，也稱為 DPI (每英吋點數) 或 PPI (每英吋像素數)。 而 DPI 的倒數就是像素的實體大小 (以英吋的分數表示)。 像素密度也稱為*「解析度」*，雖然此詞彙通常被寬鬆地用來表示像素計數。
 
-隨著檢視距離增加，所有這些客觀計量也就「看起來」變得較小，它們會解析成螢幕的「有效大小」與其「有效解析度」。 與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 而 Windows 10 會考慮 DPI 和對裝置的一般檢視距離，來計算 UI 元素的最適大小 (以實體像素表示)，以提供最佳檢視體驗。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
+隨著檢視距離增加，所有這些客觀計量也就*「看起來」*變得較小，它們會解析成螢幕的*「有效大小」*與其*「有效解析度」*。 與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 而 Windows 10 會考慮 DPI 和對裝置的一般檢視距離，來計算 UI 元素的最適大小 (以實體像素表示)，以提供最佳檢視體驗。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我們還是建議您使用多種不同的裝置測試您的 app，以親自確認各種體驗。
 
@@ -53,7 +60,7 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 ## <a name="input-modalities"></a>輸入形式
 
-Windows Phone Silverlight 介面是觸控專屬介面。 因此，所移植之應用程式的介面也應該理所當然地支援觸控，但是您可以選擇另外支援其他輸入形式，例如滑鼠與鍵盤。 在 UWP 中，滑鼠、手寫筆與觸控輸入已整合為「指標輸入」。 如需詳細資訊，請參閱[處理指標輸入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[鍵盤互動](https://msdn.microsoft.com/library/windows/apps/mt185607)。
+Windows Phone Silverlight 介面是觸控專屬介面。 因此，所移植之應用程式的介面也應該理所當然地支援觸控，但是您可以選擇另外支援其他輸入形式，例如滑鼠與鍵盤。 在 UWP 中，滑鼠、手寫筆與觸控輸入已整合為*「指標輸入」*。 如需詳細資訊，請參閱[處理指標輸入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[鍵盤互動](https://msdn.microsoft.com/library/windows/apps/mt185607)。
 
 ## <a name="maximizing-markup-and-code-re-use"></a>將標記和程式碼做最大幅的重複使用
 
@@ -68,10 +75,5 @@ Windows Phone Silverlight 介面是觸控專屬介面。 因此，所移植之�
 ## <a name="related-topics"></a>相關主題
 
 * [命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

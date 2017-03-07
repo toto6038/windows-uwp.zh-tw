@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: "了解如何在 Windows 10 (UWP)、Windows 8.1 或 Windows Phone 8.1 的 XAML 應用程式使用 AdControl 類別來顯示橫幅廣告。"
 title: "XAML 和 .NET 中的 AdControl"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10 , UWP, 廣告, AdControl, XAML, .NET 逐步解說"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -29,19 +36,19 @@ ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
 
 1.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
 
-2.  在 \[參考管理員\] 中，根據您的專案類型選取下列其中一項參考︰
+2.  在 **\[參考管理員\]** 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   對於通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]，按一下 \[擴充功能\]，然後選取 \[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\] 旁邊的核取方塊。
+    -   通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]****，按一下 \[擴充功能\]****，然後選取 \[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]**** 旁邊的核取方塊。
 
-    -   對於 Windows 8.1 專案：展開 \[Windows 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows 8.1 XAML 的 Ad Mediator SDK\] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   Windows 8.1 專案：展開 \[Windows 8.1\]****，按一下 \[擴充功能\]****，然後選取 \[適用於 Windows 8.1 XAML 的 Ad Mediator SDK\]**** 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
-    -   對於 Windows Phone 8.1 專案：展開 \[Windows Phone 8.1\]，按一下 \[擴充功能\]，然後選取 \[適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK\] 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   Windows Phone 8.1 專案：展開 \[Windows Phone 8.1\]****，按一下 \[擴充功能\]****，然後選取 \[適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK\]**** 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
     > **備註**&nbsp;&nbsp;此映像適用於為 Windows 10 建置 UWP 專案的 Visual Studio 2015。 如果您是使用 Visual Studio 2013 建置 Windows 8.1 或 Windows Phone 8.1 的應用程式，則畫面看起來會不同。
 
-3.  在 \[參考管理員\] 中，按一下 \[確定\]。
+3.  在 **\[參考管理員\]** 中，按一下 \[確定\]。
 4.  於內嵌 **Microsoft.Advertising.WinRT.UI** 命名空間的頁面修改 XAML。 例如，在 Visual Studio 產生的預設範例應用程式 (同此應用程式中的 MyAdFundedWindows10AppXAML)，該 XAML 頁面是 **MainPage.XAML**。
 
   Visual Studio 產生的 MainPage.xaml 中的 **Page** 區段會有下列程式碼。
@@ -148,9 +155,4 @@ ms.openlocfilehash: f68171524fc535c5c4b855305898d56b1731182d
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

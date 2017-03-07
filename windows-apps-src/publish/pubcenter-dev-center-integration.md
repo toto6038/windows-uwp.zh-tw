@@ -3,13 +3,20 @@ author: jnHs
 Description: "pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。"
 title: "pubCenter 開發人員中心整合"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 609d1dd2b154b8096871ef5fbf3e26245f46dc5c
-ms.openlocfilehash: 5a7fb36d22b4f30465602c96ddc252602e462207
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e29476296eb1fc8288cc37dd5ca71ef78476727a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# pubCenter 開發人員中心整合
+# <a name="pubcenter-dev-center-integration"></a>pubCenter 開發人員中心整合
 
 pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中心。 **截至 2016 年 10 月 1 日，您已無法再存取 pubCenter，您現在應在開發人員中心管理 Microsoft Advertising 收益的所有支付資訊。** 如需詳細資訊，請參閱下列常見問題集。
 
@@ -19,7 +26,7 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 **如何在開發人員中心建立廣告單位？**
 
-從開發人員中心的 App 頁面，按一下 [創造營收] &gt; [利用廣告獲利]。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
+從開發人員中心的 App 頁面，按一下 **\[創造營收\] &gt; \[利用廣告獲利\]**。 如需在開發人員中心建立廣告單位的詳細資訊，請參閱[利用廣告獲利](monetize-with-ads.md)。
 
 **如何在開發人員中心檢視廣告績效報告？**
 
@@ -31,7 +38,7 @@ pubCenter 上的 Microsoft Advertising 已經整合至 Windows 開發人員中�
 
 **在開發人員中心哪裡可以找到支付報告？**
 
-您可以在開發人員中心按一下 [支付] 以檢視或下載支付報告。 如需詳細資訊，請參閱[支付摘要](payout-summary.md)。
+您可以在開發人員中心按一下 **\[支付\]** 以檢視或下載支付報告。 如需詳細資訊，請參閱[支付摘要](payout-summary.md)。
 
 **需要多少收益金額才能收款，款項何時會匯入我的帳戶？**
 
@@ -39,7 +46,7 @@ Microsoft Advertising 的付款門檻是 $50 或等值的當地貨幣。 款項�
 
 **如何在開發人員中心建立促銷？**
 
-從開發人員中心的 App 頁面，按一下 [創造營收] &gt; [促銷您的 App]。 如需詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
+從開發人員中心的 App 頁面，按一下 **\[創造營收\] &gt; \[促銷您的 App\]**。 如需詳細資訊，請參閱[為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)。
 
 **我在使用廣告單位的 app 下看不到廣告單位。 哪裡可以找到這些廣告單位？**
 
@@ -54,9 +61,4 @@ Microsoft Advertising 的付款門檻是 $50 或等值的當地貨幣。 款項�
 
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

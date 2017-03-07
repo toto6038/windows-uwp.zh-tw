@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "偵錯背景工作"
 description: "了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
@@ -26,7 +33,7 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
 本主題假設您已經有需要對其背景工作偵錯的 App。 下列項目適用於在跨處理序中執行的背景工作，且不適用於同處理序背景工作。
 
 -   在 C# 與 C++ 中，確定主要專案參照背景工作專案。 如果此參照未就緒，背景工作將不會包含在應用程式套件中。
--   在 C\# 與 C++ 中，確定背景工作專案的 [輸出類型] 為「Windows 執行階段元件」。
+-   在 C\# 與 C++ 中，確定背景工作專案的 [輸出類型]**** 為「Windows 執行階段元件」。
 -   背景類別必須在套件資訊清單的進入點屬性中進行宣告。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>手動觸發背景工作以偵錯背景工作程式碼
@@ -37,12 +44,12 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
 
     在 C++ 中，請在背景類別的 Run 類別中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 來撰寫偵錯輸出。
 
-2.  在偵錯工具中執行您的應用程式，然後使用 [週期事件] 工具列來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
+2.  在偵錯工具中執行您的應用程式，然後使用 [週期事件]**** 工具列來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
 
     若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
 
 > [!Note]
-> 無法以這種方式將使用下列觸發程序的背景啟用：[**ApplicationTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、[**MediaProcessingTrigger**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)，以及觸發程序類型為 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的背景工作。  
+> 無法以這種方式將使用下列觸發程序的背景啟用：[**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.applicationtrigger.aspx)、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.mediaprocessingtrigger.aspx)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)，以及觸發程序類型為 [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) 使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 的背景工作。  
 > **ApplicationTrigger** 與 **MediaProcessingTrigger** 可以使用 `trigger.RequestAsync()` 在程式碼中手動發送訊號。     
 
     ![debugging background tasks](images/debugging-activation.png)
@@ -77,7 +84,7 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
     1.  移至 [開始] 畫面並搜尋 eventvwr.exe，開啟事件檢視器。
     2.  在事件檢視器中，移至 [應用程式及服務記錄檔]**** -&gt; [Microsoft]**** -&gt; [Windows]**** -&gt; [BackgroundTaskInfrastructure]****。
     3.  在動作窗格中，選取 [檢視]**** -&gt; [顯示分析與偵錯記錄檔]****，以啟用診斷記錄。
-    4.  選取 [診斷記錄檔]，然後按一下 [啟用記錄]。
+    4.  選取 [診斷記錄檔]****，然後按一下 [啟用記錄]****。
     5.  現在嘗試使用應用程式再次註冊並啟動背景工作。
     6.  檢視診斷記錄檔，以取得詳細的錯誤資訊。 當中包含為背景工作註冊的進入點。
 
@@ -113,9 +120,4 @@ ms.openlocfilehash: 6e1184729af929b771f21112083593e321cacc38
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

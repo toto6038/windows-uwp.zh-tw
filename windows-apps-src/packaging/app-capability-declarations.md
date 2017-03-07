@@ -3,14 +3,21 @@ author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: "app 功能宣告"
 description: "功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ece16df809e7f030c3cbb7a6ab5e727ae77614e3
-ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 29aa2aefda5eebfade2da6b3e2b1e8b71361889f
+ms.lasthandoff: 02/07/2017
 
 ---
-# <a name="app-capability-declarations"></a>app 功能宣告
+# <a name="app-capability-declarations"></a>應用程式功能宣告
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 功能必須在您的通用 Windows 平台 (UWP) app 的[套件資訊清單](https://msdn.microsoft.com/library/windows/apps/BR211474)中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。
 
@@ -175,9 +182,4 @@ ms.openlocfilehash: 5b1052c8b20908cef431a4d1d144d5e8fe1a0eac
 * [如何在套件資訊清單中指定功能](https://msdn.microsoft.com/library/windows/apps/BR211477)
 * [如何在套件資訊清單中指定裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

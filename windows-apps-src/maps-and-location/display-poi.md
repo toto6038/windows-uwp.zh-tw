@@ -3,16 +3,23 @@ author: msatranjr
 title: "在地圖上顯示感興趣的地點 (POI)"
 description: "藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地圖, 位置, 圖釘"
 translationtype: Human Translation
-ms.sourcegitcommit: d00ba80ac7d0f033a69ad070dc8ee681cbd0ed18
-ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
+ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
+ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="display-points-of-interest-poi-on-a-map"></a>在地圖上顯示興趣點 (POI)
+# <a name="display-points-of-interest-poi-on-a-map"></a>在地圖上顯示感興趣的地點 (POI)
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 POI 是地圖上代表感興趣項目的特定點。 例如，公司、城市或朋友的位置。
@@ -27,10 +34,10 @@ ms.openlocfilehash: 8afdb41d6790bb9647a6b89086c4b86872940c51
 
 總結來說：
 
--   [在地圖上新增 MapIcon](#mapicon) 可以顯示含有選擇性文字的影像，例如圖釘。
--   [在地圖上新增 MapPolygon](#mappolygon) 可以顯示多點圖形。
--   [在地圖上新增 MapPolyline](#mappolyline) 可以在地圖上顯示線條。
--   [在地圖上新增 XAML](#mapxaml) 可以顯示自訂 UI 元素。
+-   [在地圖上新增 MapIcon](#add-a-mapicon) 可以顯示含有選擇性文字的影像，例如圖釘。
+-   [在地圖上新增 MapPolygon](#add-a-mappolygon) 可以顯示多點圖形。
+-   [在地圖上新增 MapPolyline](#add-a-mappolyline) 可以在地圖上顯示線條。
+-   [在地圖上新增 XAML](#add-xaml) 可以顯示自訂 UI 元素。
 
 如果您大量的項目要放置在地圖上，請考慮[在地圖上重疊顯示並排影像](overlay-tiled-images.md)。 若要在地圖上顯示道路，請參閱[顯示路線和路線指引](routes-and-directions.md)。
 
@@ -104,7 +111,7 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
 
    });
-           
+
    mapPolygon.ZIndex = 1;
    mapPolygon.FillColor = Colors.Red;
    mapPolygon.StrokeColor = Colors.Blue;
@@ -129,7 +136,7 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
          new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
          new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
    });
-              
+
    mapPolyline.StrokeColor = Colors.Black;
    mapPolyline.StrokeThickness = 3;
    mapPolyline.StrokeDashed = true;
@@ -226,11 +233,4 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -3,23 +3,30 @@ author: mtoepke
 title: "遊戲的專案範本與工具"
 description: "說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。"
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, templates, tools, directx, 遊戲, 範本, 工具"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2991efd40862eb1cd8842432b3eed3bbe49c8eb2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 遊戲的專案範本與工具
+# <a name="project-templates-and-tools-for-games"></a>遊戲的專案範本與工具
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。
 
 首先，您需要 Visual Studio。
 
-## 取得 Visual Studio
+## <a name="get-visual-studio"></a>取得 Visual Studio
 
 
 [下載並安裝 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。
@@ -53,7 +60,7 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
  
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 如果您要移植現有的遊戲，請參閱以下主題。
@@ -77,10 +84,5 @@ ms.openlocfilehash: 360ffe86a6b2033510cb7d4b790477c80d5d1205
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

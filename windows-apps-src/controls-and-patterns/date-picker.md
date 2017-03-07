@@ -6,9 +6,16 @@ ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 76d5cd756f462ebaad5a200cf4bcf7f4076e4652
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="date-picker"></a>日期選擇器
@@ -65,9 +72,4 @@ birthDatePicker.Header = "Date of birth";
 - [行事曆日期選擇器](calendar-date-picker.md)
 - [行事曆檢視](calendar-view.md)
 - [時間選擇器](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 
