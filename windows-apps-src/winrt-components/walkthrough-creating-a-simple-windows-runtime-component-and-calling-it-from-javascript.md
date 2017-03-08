@@ -3,9 +3,16 @@ author: msatranjr
 title: "建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件"
 description: "本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#，建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows 應用程式呼叫此元件。"
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 56fbc32ee9b75688aa3dec498eb51e8bd533a4ee
-ms.openlocfilehash: 16502dbda2495333d512d9d7a3e0a7f8a8f98562
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6f1bfc96416febdf531dec52c14bcaee13de9f14
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -735,9 +742,4 @@ asyncCancel 函式只會呼叫 WinJS.Promise 物件的 cancel 方法。
 * [適用於 Windows 市集應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [適用於 UWP 應用程式的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Dec16_HO4-->
-
 

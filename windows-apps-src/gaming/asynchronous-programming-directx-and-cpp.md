@@ -3,20 +3,27 @@ author: mtoepke
 title: "非同步程式設計 (DirectX 和 C++)"
 description: "本主題包含搭配 DirectX 使用非同步程式設計與執行緒處理時應考量的各個重點。"
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 非同步程式設計, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe3798e475654d4d0ae7773ac26889906d40b3df
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 非同步程式設計 (DirectX 和 C++)
+# <a name="asynchronous-programming-directx-and-c"></a>非同步程式設計 (DirectX 和 C++)
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主題包含搭配 DirectX 使用非同步程式設計與執行緒處理時應考量的各個重點。
 
-## 非同步程式設計與 DirectX
+## <a name="async-programming-and-directx"></a>非同步程式設計與 DirectX
 
 
 如果您正在學習 DirectX，或者即使您已經有 DirectX 使用經驗，可以考慮將所有圖形處理管線放在一個執行緒中。 遊戲的任何指定場景中，都有常見的資源，例如點陣圖、著色器，以及需要獨佔存取的其他資產。 這些相同的資源需要您同步處理對平行執行緒間這些資源的任何存取。 轉譯很難在多個執行緒中平行處理。
@@ -37,7 +44,7 @@ ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
 
  
 
-## 使用 Direct3D 裝置的多執行緒
+## <a name="multithreading-with-direct3d-devices"></a>使用 Direct3D 裝置的多執行緒
 
 
 只有支援 Direct3D 功能層級 11\_0 或以上的圖形裝置才能使用裝置上下文的多執行緒。 不過，您可能希望在許多平台 (例如專用的遊戲平台) 上充分使用功能強大的 GPU。 在最簡單的情況下，您可能希望將抬頭顯示器 (HUD) 資訊圖表的轉譯與 3D 場景轉譯及投影區隔開來，而且讓兩個元件都使用個別平行的管線。 兩個執行緒都必須使用相同的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 來建立與管理資源物件 (紋理、網格、著色器及其他資產)，不過，它是單一執行緒的，且需要實作某種同步處理機制 (例如重要區段) 才能安全地加以存取。 此外，當您可以在不同執行緒上 (針對延遲轉譯) 為裝置上下文建立個別的命令清單時，無法在同一個 **ID3D11DeviceContext** 執行個體上同時播放那些命令清單。
@@ -46,14 +53,14 @@ ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
 
 如果您的 app 支援分別處理命令清單與處理顯示畫面的執行緒，您可能希望讓 GPU 保持使用中，在處理命令清單的同時，以未察覺不順暢或延遲的方式來即時顯示畫面。 在此情況下，您可以針對每個執行緒使用不同的 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)，並使用 D3D11_RESOURCE_MISC_SHARED 旗標來建立它們，以便共用資源 (例如紋理)。 在此案例中，必須在處理執行緒時呼叫 [**ID3D11DeviceContext::Flush**](https://msdn.microsoft.com/library/windows/desktop/ff476425)，以便在顯示執行緒中顯示資源物件處理結果之前，完成命令清單的執行。
 
-## 延遲轉譯
+## <a name="deferred-rendering"></a>延遲轉譯
 
 
 延遲轉譯會記錄命令清單中的圖形命令，因此，可以在某些其他時間中進行播放，而且延遲轉譯的設計目的是為了支援單一執行緒上的轉譯，同時記錄命令以便在其他執行緒上轉譯。 當這些命令完成之後，可以在產生最終顯示物件 (框架緩衝區、紋理或其他圖形輸出) 的執行緒上執行。
 
 使用 [**ID3D11Device::CreateDeferredContext**](https://msdn.microsoft.com/library/windows/desktop/ff476505) (而非 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 或 [**D3D11CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)，因為這兩者會建立即時內容) 來建立延遲內容。 如需詳細資訊，請參閱[即時與延遲轉譯](https://msdn.microsoft.com/library/windows/desktop/ff476892)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [Direct3D 11 中的多執行緒簡介](https://msdn.microsoft.com/library/windows/desktop/ff476891)
@@ -64,10 +71,5 @@ ms.openlocfilehash: 1faf25f7c7ad7cc96c8490149acf1c430478616c
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

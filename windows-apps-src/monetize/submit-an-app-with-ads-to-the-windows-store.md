@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: b307fc7d-0424-459d-8c20-e37e5cfec0d0
 description: "了解使用 Microsoft Advertising 廣告庫的 app 在能夠發佈到市集之前必須達到的要求。"
-title: "提交包含廣告的 App 到 Windows 市集"
+title: "提交包含廣告的應用程式到 Windows 市集"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, 提交應用程式"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: fd1610a2b0ad637f87bd0b7ee4ec0726d21d65d2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7e0c56b8e1c0ce335f4685c5872c1be5aabb1336
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="submit-an-app-with-ads-to-the-windows-store"></a>提交包含廣告的 App 到 Windows 市集
+# <a name="submit-an-app-with-ads-to-the-windows-store"></a>提交包含廣告的應用程式到 Windows 市集
 
 
 當您完成包含廣告之應用程式的開發之後，您可以將它發佈到 Windows 開發人員中心儀表板，讓它能夠在 Windows 市集取得。 如需這個程序的詳細資訊，請參閱 [應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
@@ -24,9 +31,4 @@ ms.openlocfilehash: fd1610a2b0ad637f87bd0b7ee4ec0726d21d65d2
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

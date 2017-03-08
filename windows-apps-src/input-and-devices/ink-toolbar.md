@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 5983209e7e107f8cf0a7d2fe9ce8ef734e3af7d4
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: bd6e209d670164bc017d5012199420420dc3eda0
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -304,8 +306,8 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 首先，我們換定義我們的自訂畫筆並在程式碼後置中指定繪圖屬性。 稍後我們會從 XAML 參考此自訂畫筆。
 
-1. 在 [方案總管] 中的專案上按一下滑鼠右鍵，然後選取 [加入] &gt; [新增項目]。
-2. 在 [Visual C#] -&gt; [程式碼] 底下，新增新的類別檔案，並命名為 CalligraphicPen.cs。
+1. 在 [方案總管] 中的專案上按一下滑鼠右鍵，然後選取 [加入] -> [新增項目]。
+2. 在 [Visual C#] -> [程式碼] 底下，新增新的類別檔案，並命名為 CalligraphicPen.cs。
 3. 在 Calligraphic.cs 中，使用下列項目取代預設 using 區塊：
 ```csharp
 using System.Numerics;
@@ -421,7 +423,7 @@ class CalligraphicPen : InkToolbarCustomPen
 > [!NOTE]
 > 請參閱[筆跡控制項](..\controls-and-patterns\inking-controls.md)了解 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) 與 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) 兩者的 UX 指導方針。 下列是與此範例相關的建議︰
 > - [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) (以及一般的手寫筆跡) 最能夠透過主動式手寫筆來體驗。 不過，如果您的應用程式要求，也可支援使用滑鼠與觸控的手寫筆跡。 
-> - 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 "Segoe MLD2 Assets" 字型的"ED5F" 圖示。 
+> - 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 "Segoe MLD2 Assets" 字型的 "ED5F" 圖示。 
 
 **XAML**
 
@@ -812,9 +814,4 @@ namespace Ink_Basic_InkToolbar
 * [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

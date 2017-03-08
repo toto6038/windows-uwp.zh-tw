@@ -10,8 +10,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 7181a51a91997124b2c5c8ba184261de63de9caf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5e53332ae3596341e4322bc16882cf678672083d
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -234,9 +235,4 @@ public class ContactItemAdapter
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 現在您已基本了解如何使用連絡人選擇器來抓取連絡人資訊。 請從 GitHub 下載[通用 Windows app 範例](http://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何使用連絡人和連絡人選擇器的範例。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

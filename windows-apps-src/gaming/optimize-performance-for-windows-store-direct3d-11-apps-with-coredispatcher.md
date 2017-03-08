@@ -3,20 +3,27 @@ author: mtoepke
 title: "最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲"
 description: "輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, directx, input latency, 遊戲, 輸入延遲"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c7cb4b72ed035e77a2054daffa9f105449f3b501
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
+#  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。 此外，適當的輸入事件最佳化可以增加電池使用時間。 了解如何選擇正確的 CoreDispatcher 輸入事件處理選項，可確保您的遊戲可以盡可能順暢地處理輸入。
 
-## 輸入延遲
+## <a name="input-latency"></a>輸入延遲
 
 
 輸入延遲是指系統回應使用者輸入所需的時間。 此回應通常是畫面上顯示內容的變更，或透過音訊回饋聽到的內容。
@@ -25,14 +32,14 @@ ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 
 您務必了解遊戲的輸入延遲需求，讓事件可以透過最適合該情況的方式處理。 沒有一個解決方案適用於所有遊戲。
 
-## 電源效率
+## <a name="power-efficiency"></a>電源效率
 
 
 在輸入延遲的內容中，「電源效率」指的是某個遊戲使用多少 GPU。 使用 GPU 資源越少的遊戲，其電源效率越好，而且電池使用時間越長。 對於 CPU 而言也是如此。
 
 如果某個遊戲可以用每秒少於 60 個畫面格 (目前在大多數顯示器上的最大轉譯速度) 繪製整個場景，而且不會降低使用者的體驗品質，繪製較少的場景通常會使電源更有效率。 有些遊戲更新畫面只為回應使用者輸入，因此，那些遊戲應該不會以每秒 60 個畫面格重複繪製相同的內容。
 
-## 選擇要最佳化的內容
+## <a name="choosing-what-to-optimize-for"></a>選擇要最佳化的內容
 
 
 設計 DirectX 應用程式時，您需要做一些選擇。 應用程式需要每秒轉譯 60 個畫面格才能呈現順暢的動畫？或者只需要轉譯以回應輸入？ 應用程式需要有最低的輸入延遲？或者能夠容忍些許延遲？ 我的使用者是否期望我的應用程式對於電池使用有最妥善的利用？
@@ -44,7 +51,7 @@ ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 3.  每秒轉譯 60 個畫面格。 在此案例中，遊戲會不斷更新畫面。 因為轉譯的畫面格數目達到顯示器可呈現的上限，所以電源效率不佳。 因為 DirectX 會在呈現內容時封鎖執行緒，所以輸入延遲很高。 這樣做可避免執行緒傳送的畫面格數目超過顯示器可向使用者顯示的數目。 第一人稱射擊的即時戰略遊戲與物理原理遊戲可歸到此類別的應用程式範例。
 4.  每秒轉譯 60 個畫面格並達到最低的輸入延遲。 與案例 3 類似，app 會不斷更新畫面，因此電源效率將變差。 差別在於遊戲是在個別的執行緒上回應輸入，因此輸入處理不會因為呈現圖形到顯示器而被封鎖。 線上的多人遊戲、格鬥遊戲或律動/計時遊戲可歸到此類別，因為它們支援在極密集的事件時段內輸入操作。
 
-## 實作
+## <a name="implementation"></a>實作
 
 
 大部分的 DirectX 遊戲都是透過所謂的遊戲迴圈所驅動。 基本的演算法就是執行這些步驟，直到使用者結束遊戲或應用程式為止：
@@ -57,7 +64,7 @@ ms.openlocfilehash: ae99f88126192866ed18df55497af6390bc38c26
 
 我們將會針對簡單的拼圖遊戲進行反覆處理，以便為稍早提到的每個案例顯示遊戲迴圈的實作。 與每個實作一起討論的決策點、優點以及取捨可以當做指南，協助您針對低延遲輸入以及電源效率最佳化您的 app。
 
-## 案例 1：視需求轉譯
+## <a name="scenario-1-render-on-demand"></a>案例 1：視需求轉譯
 
 
 拼圖遊戲的第一個反覆運算只會在使用者移動拼圖時更新畫面。 使用者可以選取一塊拼圖然後觸碰正確的目的地，將其拖曳到定位或貼齊定位。 在第二個情況下，這塊拼圖會在沒有動畫或效果的情況下跳到目的地。
@@ -88,7 +95,7 @@ void App::Run()
 }
 ```
 
-## 案例 2：包含暫時動畫的視需求轉譯
+## <a name="scenario-2-render-on-demand-with-transient-animations"></a>案例 2：包含暫時動畫的視需求轉譯
 
 
 在第二個反覆運算中，遊戲經過修改，所以使用者選取一塊拼圖然後觸碰這塊拼圖的正確目的地時，拼圖會以動畫形式越過畫面，直到到達其目的地為止。
@@ -136,7 +143,7 @@ void App::Run()
 
 為支援 **ProcessOneAndAllPending** 和 **ProcessAllIfPresent** 之間的轉換，app 必須追蹤狀態以了解是否有動畫效果。 在拼圖應用程式中，您可以在 GameState 類別，透過加入可在遊戲迴圈期間呼叫的新方法來完成。 遊戲迴圈的動畫分支透過呼叫 GameState 的新 Update 方法更新動畫的狀態。
 
-## 案例 3：每秒轉譯 60 個畫面格
+## <a name="scenario-3-render-60-frames-per-second"></a>案例 3：每秒轉譯 60 個畫面格
 
 
 在第三個反覆運算中，應用程式顯示一個計時器，這個計時器會向使用者顯示他們已經花在處理拼圖上的時間。 由於它所顯示的經過時間以毫秒為單位，因此每秒必須轉譯 60 個畫面格，才能將顯示維持在最新狀態。
@@ -174,7 +181,7 @@ void App::Run()
 
 不過，這個簡單的開發方式要付出代價。 每秒轉譯 60 個畫面格所使用的電源比視需求轉譯還多。 當遊戲要變更每個畫面所顯示的內容時，最好使用 **ProcessAllIfPresent**。 此方式也會增加 16.7 毫秒的輸入延遲，因為 app 現在會在顯示器的同步間隔而非 **ProcessEvents** 封鎖遊戲迴圈。 由於每個畫面只會處理一次佇列 (60 Hz)，因此可能會捨棄一些輸入事件。
 
-## 案例 4：每秒轉譯 60 個畫面格並達到最低的輸入延遲
+## <a name="scenario-4-render-60-frames-per-second-and-achieve-the-lowest-possible-input-latency"></a>案例 4：每秒轉譯 60 個畫面格並達到最低的輸入延遲
 
 
 有些遊戲或許能夠忽略或補償案例 3 中所看到的輸入延遲增加。 不過，如果輸入延遲低對於遊戲的體驗以及玩家意見反應來說非常重要，每秒轉譯 60 個畫面格的遊戲就必須針對個別的執行緒處理輸入。
@@ -232,10 +239,10 @@ void JigsawPuzzleMain::StartRenderThread()
 
 Microsoft Visual Studio 2015 中的 **DirectX 11 和 XAML App (通用 Windows)** 範本會以類似的方式，將遊戲迴圈分割成多個執行緒。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
-## 降低輸入延遲的其他方式
+## <a name="additional-ways-to-reduce-input-latency"></a>降低輸入延遲的其他方式
 
 
-### 使用可等候的交換鏈結
+### <a name="use-waitable-swap-chains"></a>使用可等候的交換鏈結
 
 DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用者輸入。 在 60 Hz 顯示器上，畫面每 16.7 毫秒 (1 秒/60 個畫面格) 會重新整理一次。 圖 1 顯示大約的生命週期以及對輸入事件的回應 (相對於每秒轉譯 60 個畫面格的應用程式 16.7 毫秒的重新整理訊號 (VBlank))：
 
@@ -257,10 +264,5 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

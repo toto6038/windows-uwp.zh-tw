@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: "Windows SDK、Microsoft Store Services SDK 及 Windows 市集提供許多功能，可讓您透過應用程式賺更多的錢，並讓客戶透過吸引您的使用者來獲利。"
 title: "營利、客戶參與和市集服務"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 營利, 參與, 升階, 市集服務"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: e8a4c40dbc715d82d6f41fef8a49df5bfdfa79ae
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5a3497d5aa1c8a4415b7b4fb9f7888448ae74f9f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -35,9 +42,4 @@ Windows SDK、Microsoft Store Services SDK 及 Windows 市集提供功能，可�
 * [建立客戶區隔](../publish/create-customer-segments.md)
 * [意見反應報告](../publish/feedback-report.md)
 * [使用方式報告](../publish/usage-report.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

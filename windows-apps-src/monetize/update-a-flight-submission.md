@@ -3,20 +3,27 @@ author: mcleanbyron
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: "使用 Windows 市集提交 API 中的這個方法，來更新現有的套件正式發行前小眾測試版提交。"
 title: "使用 Windows 市集提交 API 更新套件正式發行前小眾測試版提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交, 更新"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dbd8447808c1446805f179fd1181ae88dd847083
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 市集提交 API 更新套件正式發行前小眾測試版提交
+# <a name="update-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 更新套件正式發行前小眾測試版提交
 
 
 使用 Windows 市集提交 API 中的這個方法，來更新現有的套件正式發行前小眾測試版提交。 使用這個方法成功更新提交之後，您必須針對擷取和發佈[認可提交](commit-a-flight-submission.md)。
 
 如需這個方法如何在使用 Windows 市集提交 API 建立套件正式發行前小眾測試版提交的程序中進行的詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -24,9 +31,9 @@ ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立套件正式發行前小眾測試版提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)方法進行。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 <span/>
  
 
-### 要求標頭
+### <a name="request-header"></a>要求標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -45,7 +52,7 @@ ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -55,7 +62,7 @@ ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求主體
 
 要求主體包含下列參數。
 
@@ -69,7 +76,7 @@ ms.openlocfilehash: baf9f4a3b72ab439439be4f73ca7fc11d48a3c84
 
 <span/>
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何為 App 更新套件正式發行前小眾測試版提交。
 
@@ -102,7 +109,7 @@ Content-Type: application/json
 }
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應主體。 回應主體包含更新提交的相關資訊。 如需回應主體中各個值的詳細資訊，請參閱[套件正式發行前小眾測試版提交資源](manage-flight-submissions.md#flight-submission-object)。
 
@@ -145,7 +152,7 @@ Content-Type: application/json
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -157,7 +164,7 @@ Content-Type: application/json
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
@@ -166,9 +173,4 @@ Content-Type: application/json
 * [認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)
 * [刪除套件正式發行前小眾測試版提交](delete-a-flight-submission.md)
 * [取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

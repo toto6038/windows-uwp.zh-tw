@@ -1,21 +1,28 @@
 ---
 author: DelfCo
-Description: "在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。"
+Description: "當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。"
 Search.Refinement.TopicID: 180
 title: "全球化與當地語系化的指導方針"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="globalization-and-localization-dos-and-donts"></a>全球化和當地語系化的可行與禁止事項
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。
+當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -189,10 +196,5 @@ ms.openlocfilehash: 72849c304d2150fd7fe6768181a504f94ef98d5f
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

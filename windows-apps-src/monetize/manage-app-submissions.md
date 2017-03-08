@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理提交。"
 title: "使用 Windows 市集提交 API 管理應用程式提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 21a421b057a55120865c01cc3dffb80318ab38ed
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,12 +20,14 @@ ms.openlocfilehash: ef7727befa20606800fb9747f9402be9be5cc9e4
 
 Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交，包括漸進式套件推出。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
+
+>**重要**&nbsp;&nbsp;如果您使用 Windows 市集提交 API 以建立應用程式的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 <span id="methods-for-app-submissions" />
 ## <a name="methods-for-managing-app-submissions"></a>管理應用程式提交的方法
 
-使用下列方法取得、建立、更新、認可或刪除應用程式提交。
+使用下列方法取得、建立、更新、認可或刪除應用程式提交。 使用這些方法之前，應用程式必須存在於您的開發人員中心帳戶，而且您必須先在儀表板中建立一個應用程式提交。 如需詳細資訊，請參閱[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
 <table>
 <colgroup>
@@ -146,6 +155,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
 * [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注意**&nbsp;&nbsp;：除了列示於上方的程式碼範例，我們也提供在 Windows 市集中提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+
 <span id="manage-gradual-package-rollout">
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>管理漸進式套件推出的方法
 
@@ -212,7 +223,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -330,7 +342,7 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](#enterprise-licensing)，可指出應用程式適用的企業授權行為。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓應用程式可供未來的 Windows 10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
 | allowTargetFutureDeviceFamilies           | 物件   |  索引鍵/值組的字典，其中每個索引鍵都是一個 [Windows 10 裝置系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每個值都是一個布林值，可指出您的應用程式是否允許將目標設為指定的裝置系列。     |    
-| friendlyName           |   字串  |  基於顯示用途而使用的應用程式易記名稱。       |  
+| friendlyName           |   字串  |  提交的易記名稱，如開發人員中心儀表板所示。 當您建立提交時，也會為您產生此值。       |  
 
 
 <span id="listing-object" />
@@ -353,8 +365,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
 |  copyrightAndTrademarkInfo                |   字串      |  選擇性的[著作權及/或商標資訊](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
 |  keywords                |  陣列       |  [關鍵字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)陣列，可協助讓您的應用程式出現在搜尋結果中。    |
 |  licenseTerms                |    字串     | 適用於您應用程式的選擇性[授權條款](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms)。     |
-|  privacyPolicy                |   字串      |   適用於您應用程式的[隱私權原則](https://msdn.microsoft.com/windows/uwp/publish/privacy-policy) URL。    |
-|  supportContact                |   字串      |  適用於您應用程式的[支援連絡資訊](https://msdn.microsoft.com/windows/uwp/publish/support-contact-info)的 URL 或電子郵件地址。     |
+|  privacyPolicy                |   字串      |   適用於您應用程式的[隱私權原則](../publish/create-app-store-listings.md#privacy-policy) URL。    |
+|  supportContact                |   字串      |  適用於您應用程式的[支援連絡資訊](../publish/create-app-store-listings.md#support-contact-info)的 URL 或電子郵件地址。     |
 |  websiteUrl                |   字串      |  適用於您應用程式的[網頁](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#website) URL。    |    
 |  description               |    字串     |   應用程式清單的[描述](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)。   |     
 |  features               |    陣列     |  此陣列最多包含 20 個字串，可列出您應用程式的[功能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)。     |
@@ -387,7 +399,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
 |  trialPeriod               |    字串     |  可針對應用程式指定試用期的字串。 這可以是下列其中一個值： <ul><li>NoFreeTrial</li><li>OneDay</li><li>TrialNeverExpires</li><li>SevenDays</li><li>FifteenDays</li><li>ThirtyDays</li></ul>    |
 |  marketSpecificPricings               |    物件     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的應用程式在特定市場中的自訂價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。      |     
 |  sales               |   陣列      |  **過時**。 包含應用程式的銷售資訊的[銷售資源](#sale-object)陣列。   |     
-|  priceId               |   字串      |  指定應用程式[基本價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[價格區間](#price-tiers)。   |
+|  priceId               |   字串      |  指定應用程式[基本價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#base-price)的[價格區間](#price-tiers)。   |     
+|  isAdvancedPricingModel               |   布林值      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
 
 
 <span id="sale-object" />
@@ -547,14 +560,14 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
 <span id="price-tiers" />
 ### <a name="price-tiers"></a>價格區間
 
-下列值代表應用程式提交可用的價格區間。
+下列值代表應用程式提交的[價格資源](#pricing-object)資源的可用價格區間。
 
 | 值           | 描述        |
 |-----------------|------|
-|  Base               |   未設定價格區間；使用應用程式的基本價格。      |     
+|  基底               |   未設定價格區間；使用應用程式的基本價格。      |     
 |  NotAvailable              |   指定的區域中無法使用此應用程式。    |     
 |  Free              |   應用程式是免費的。    |    
-|  從 Tier2 到 Tier194               |   Tier2 代表 0.99 美元的價格區間。 每一個額外的層級代表額外的遞增 (1.29 美元、1.49 美元、1.99 美元等)。    |
+|  第 *xxx* 層               |   指定應用程式的價格區間的字串，格式為**第 <em>xxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整價格區表，包括與每一層相關聯的市場特定價格，請移至適用於開發人員中心儀表板中的應用程式提交的任何**價格與可用性**網頁，並按一下 \[市場和自訂價格\]****區段的**檢視表格**連結 (對於某些開發人員帳戶，此連結為**價格**區段)。    |
 
 
 <span id="enterprise-licensing" />
@@ -598,9 +611,4 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的提交�
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 市集提交 API 取得應用程式資料](get-app-data.md)
 * [開發人員中心儀表板中的應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

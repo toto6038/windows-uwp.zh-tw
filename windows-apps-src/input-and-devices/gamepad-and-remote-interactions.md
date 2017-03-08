@@ -6,13 +6,20 @@ ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c353d649529eef8361c982ff6451371a4cebc4eb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b1ee5409cfca253b3bb084b95365d22526c66920
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 遊戲台與遙控器的互動
+# <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
 通用 Windows 平台 (UWP) 應用程式現在支援遊戲台與遙控器輸入。 遊戲台與遙控器是 Xbox 和 TV 體驗的主要輸入裝置。 UWP 應用程式應該針對這些輸入裝置類型進行最佳化，就像針對電腦上的鍵盤與滑鼠輸入以及針對手機和平板電腦上的觸控輸入一樣。 確定您的應用程式可使用這些輸入裝置順暢運作，是最佳化 Xbox 和 TV的最重要步驟。
 您現在可以在電腦上插入並使用遊戲台與 UWP 應用程式，這樣可輕鬆地驗證工作。
@@ -27,9 +34,4 @@ XY 焦點瀏覽可讓使用者四處瀏覽您 app 的 UI。
 
 * [滑鼠模式](designing-for-tv.md#mouse-mode)  -
 滑鼠模式可讓您的 app 在 XY 焦點瀏覽不足時模擬滑鼠體驗。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

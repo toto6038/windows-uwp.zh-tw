@@ -3,20 +3,27 @@ author: mtoepke
 title: "適用於通用 Windows 平台 (UWP) app 的遊戲技術"
 description: "在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 技術, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f6ad043299efa2aae7abdb1f1e0a7e898d40836
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 適用於通用 Windows 平台 (UWP) app 的遊戲技術
+# <a name="game-technologies-for-universal-windows-platform-uwp-apps"></a>適用於通用 Windows 平台 (UWP) 應用程式的遊戲技術
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
 
-##  Windows 10 的遊戲開發優勢
+##  <a name="benefits-of-windows-10-for-game-development"></a>Windows 10 的遊戲開發優勢
 
 
 在 Windows 10 中引入 UWP，您的 Windows 10 標題將能夠橫跨所有的 Microsoft 平台。 經由從舊版 Windows 免費移轉，Windows 10 用戶端數目將會穩定增加。 組合上述兩項，表示您的 Windows 10 標題將可透過 Windows 市集吸引大量的客戶。
@@ -26,12 +33,12 @@ ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
 -   減少的記憶體分頁和減少的整體記憶體系統大小
 -   改進的圖形記憶體管理會主動為前景遊戲配置更多的記憶體並提供保護
 
-## 使用 C++ 和 DirectX 的 UWP 遊戲
+## <a name="uwp-games-with-c-and-directx"></a>使用 C++ 和 DirectX 的 UWP 遊戲
 
 
 需要高效能的即時遊戲應使用 DirectX API。 DirectX 是原生 API 集合，可供建立需要高效能的遊戲和多媒體 app (例如 3D 遊戲)。 因為 DirectX API 是原生的，所以 C++ 是唯一可搭配 DirectX 使用的支援語言。
 
-## 開發環境
+## <a name="development-environment"></a>開發環境
 
 
 若要建立 UWP 遊戲，您需要安裝一份 Visual Studio 2015 以便設定您的開發環境。 Visual Studio 2015 可讓您建立 UWP app 並提供遊戲開發的工具：
@@ -41,12 +48,12 @@ ms.openlocfilehash: 83c3fda490d7ab821e8e584291ded642c9c11dd1
 
 如需詳細資訊，請參閱＜準備通用 Windows 平台和 DirectX 遊戲程式設計環境＞。
 
-## 開始使用 DirectX 遊戲專案範本
+## <a name="getting-started-with-directx-game-project-templates"></a>開始使用 DirectX 遊戲專案範本
 
 
 設定開發環境之後，您可以使用其中一個 DirectX 相關專案範本來建立 UWP DirectX 遊戲。 Visual Studio 2015 有三個範本可用於建立新的 UWP DirectX 專案：**DirectX 11 App (通用 Windows)**、 **DirectX 12 App (通用 Windows)** 以及 **DirectX 11 和 XAML App (通用 Windows)**。 如需詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
-## Windows 10 API
+## <a name="windows-10-apis"></a>Windows 10 API
 
 
 Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包含所有遊戲可以使用的 API：2D 和 3D 圖形、音訊、輸入、文字資源、使用者介面和網路功能。
@@ -316,19 +323,19 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
      
 
-## Xbox Live 服務
+## <a name="xbox-live-services"></a>Xbox Live 服務
 
 
 Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 – 即將隨著 Windows 10 上市。 您很快就能夠使用 ID@Xbox 在您的 UWP 遊戲中包含動態服務！ 在未來，我們也將協助您在 Xbox One 上提供您的通用 app 平台遊戲。 如需詳細資訊，請參閱 [ID@Xbox](http://www.xbox.com/developers/id) 頁面。
 
-##  使用 DirectX 與 UWP 撰寫遊戲的替代方法
+##  <a name="alternatives-to-writing-games-with-directx-and-uwp"></a>使用 DirectX 與 UWP 撰寫遊戲的替代方法
 
 
-### 不使用 DirectX 的 UWP 遊戲
+### <a name="uwp-games-without-directx"></a>不使用 DirectX 的 UWP 遊戲
 
 不需 DirectX 即可撰寫最低效能需求的較簡單遊戲 (例如撲克牌遊戲或棋盤遊戲)，而不需使用 C++ 撰寫。 這幾種遊戲可使用 UWP 支援的任何語言，例如 C#、Visual Basic、C++ 和 HTML/JavaScript 。 如果您的遊戲不需要效能與大量的圖形，請參閱 [JavaScript 與 HTML5 觸控遊戲範例](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)做為參考。
 
-### 遊戲引擎
+### <a name="game-engines"></a>遊戲引擎
 
 除了使用 Windows 遊戲開發 API 撰寫自己的遊戲引擎以外，還有許多以 Windows 遊戲開發 API 為基礎的高品質遊戲引擎可供在 Windows 平台上 開發遊戲。 考慮遊戲引擎或程式庫時，您有多個選項：
 
@@ -339,7 +346,7 @@ Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 –
 -   人工智慧和路徑搜尋引擎 - AI 和路徑搜尋引擎提供的架構可用於控制您遊戲中的代理程式行為。
 -   特殊用途引擎 - 另外還有各種不同的引擎，幾乎可讓您處理可能遇到的任何遊戲開發相關工作，例如建立清查系統與對話方塊樹狀結構。
 
-## 將遊戲提交至市集
+## <a name="submitting-a-game-to-the-store"></a>將遊戲提交至市集
 
 
 一旦準備好發佈您的遊戲，您就需要建立開發人員帳戶並將遊戲提交至 Windows 市集。
@@ -352,10 +359,5 @@ Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 –
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

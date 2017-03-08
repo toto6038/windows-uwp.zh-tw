@@ -3,15 +3,22 @@ author: TylerMSFT
 title: "設定執行背景工作的條件"
 description: "了解如何設定條件以控制背景工作的執行時間。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea862ef33f58b33b70318ddfc1d09d9aca9b3517
-ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 486e0cd3938a09c663e8e805092377709672359f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="set-conditions-for-running-a-background-task"></a>設定執行背景工作的條件
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 
 有時，除了會觸發工作的事件之外，背景工作還需要在某些條件符合的情況下，才能順利執行。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的條件。 在引發觸發程序之後，會檢查條件，將背景工作排入佇列，但是必 須等到符合所有必要的條件之後才會執行它。
 
-將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和 CPU 執行階段。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 這樣可以藉由讓工作只有在計時器時間已經過「並且」網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。
+將條件放在背景工件可以避免執行不必要的工作，以延長電池壽命和 CPU 執行階段。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 這樣可以藉由讓工作只有在計時器時間已經過*「並且」*網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。
 
 您也可以藉由在相同的 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 上多次呼叫 AddCondition 來結合多個條件。 請小心，不要新增衝突的條件，例如 **UserPresent** 和 **UserNotPresent**。
 
@@ -79,7 +86,7 @@ ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 
 為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
-> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
+> **備註**  背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
 ## <a name="place-multiple-conditions-on-your-background-task"></a>在背景工作上放置多個條件
 
@@ -173,14 +180,9 @@ ms.openlocfilehash: c83f861f43209c42dff661e3277e1d8a1b67d37c
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 Windows 市集 app 觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 Windows 市集應用程式觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -1,36 +1,43 @@
 ---
 author: jnHs
-Description: "如果您先前在 Windows 或 Windows Phone 市集發行 App，Windows 10 裝置的客戶也可以取得這些 App。"
-title: "App 如何在市集中顯示給 Windows 10 客戶"
+Description: "如果您先前在 Windows 或 Windows Phone 市集發行應用程式，Windows 10 裝置的客戶也可以取得這些應用程式。"
+title: "應用程式如何在市集中顯示給 Windows 10 客戶"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: fc7b0d7dd85e661e1688f4df3f67280c16eb6742
-ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4a7c10d93a3145466007bfe4fac63422400a9830
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# App 如何在市集中顯示給 Windows 10 客戶
+# <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>應用程式如何在市集中顯示給 Windows 10 客戶
 
 
-如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
+如果您先前在 Windows 或 Windows Phone 市集發行應用程式，Windows 10 裝置的客戶也可以取得這些應用程式。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
 
-**注意** 如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
+**注意**  如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
 
  
 
-## 在 Windows 市集和 Windows Phone 市集中共用身分識別之 app 的注意事項
+## <a name="consideration-for-apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>在 Windows 市集和 Windows Phone 市集中共用身分識別之 app 的注意事項
 
 
 如果您已讓發佈到上述兩個市集的 app 使用相同的保留名稱 (通常稱為共用 app 的身分識別)，現在會將這些視為同一個 app，而不是兩個。 在儀表板中，您看到的會是含有 Windows 與 Windows Phone 套件的單一 App。
 
 大部分的開發人員都會將每一個市集中 App 與任何附加元件的價格與其他屬性設為相同，但是如果其中有一些值不同，請務必弄清楚哪些才是要顯示給 Windows 10 客戶的值。
 
-### 價格
+### <a name="pricing"></a>價格
 如果您在每一個市集中為 App (或附加元件) 選擇的底價都不同，則一律以 Windows 市集的底價為準。
 
-**注意** 如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格也將會顯示給您的 Windows 10 客戶。
+**注意**  如果您已經在 Windows Phone 市集中設定各個市場的價格，自訂價格也將會顯示給您的 Windows 10 客戶。
 
-### 免費試用
+### <a name="free-trials"></a>免費試用
 在之前的兩個市集中，試用選項是不一樣的，所以您可能會為每一個市集選擇不同的選項。 請查閱下表，了解提供給 Windows 10 客戶的選項。
 
 | Windows 8 應用程式       | Windows Phone 應用程式   | Windows 10 的試用設定                                                  |
@@ -42,32 +49,32 @@ ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 | 限時試用  | 永久試用 | Windows Phone 8.1 和更早版本沒有免費試用；要不然就是限時試用 |
 | 限時試用  | 沒有免費試用       | Windows Phone 8.1 和更早版本沒有免費試用；要不然就是限時試用 |
 
-### 市場
+### <a name="markets"></a>市場
 現在只要到每一個市場讓您的 app 上架，Windows 10 客戶就可以在每一個市場中看到上架的 app。 即使您在每一個市集選取不同的市場，也是一樣的情況。
 
-### 類別
+### <a name="categories"></a>類別
 如果您的 app 在兩個市集的不同類別中出現，我們會以 Windows 市集中的類別為準，判斷它的新類別。 請注意，在針對 Windows 10 客戶的市集中，某些類別是不一樣的，因此請務必仔細查閱下列[表格](#cat)。
 
-### 年齡分級
+### <a name="age-rating"></a>年齡分級
 如果您提供不同的年齡分級，就會使用更嚴格的 (較高年齡) 分級。
 
-### 隱私權原則
+### <a name="privacy-policy"></a>隱私權原則
 如果您的 app 有一個隱私權原則，也會向您的 Windows 10 客戶顯示當您送出 Windows 8 app 時所提供的隱私權原則。
 
-### 螢幕擷取畫面
+### <a name="screenshots"></a>螢幕擷取畫面
 我們會收集所有您提交的螢幕擷取畫面，然後根據 Windows 10 客戶使用的裝置類型，挑選正確的版本顯示給客戶。 在少數情況下，每一個市集支援的語言不同，部分客戶在購買 App 時看到的螢幕擷取畫面可能呈現另一種最適合客戶自身習慣的語言。
 
-### 市集清單
+### <a name="store-listings"></a>市集清單
 我們嘗試根據 Windows 10 客戶的語言提供最合適的市集清單。 當相同語言的市集清單有多個來源可用時，就會向您的 Windows 10 客戶顯示 Windows 市集 App 的清單。 在少數情況下，每一個市集支援的語言不同，如果只有您以客戶習慣的語言提供的 Windows Phone App 市集清單可用，部分客戶可能就會看到該市集清單。
 
 如果您想要更新 Windows 10 客戶看到的市集清單，讓他們知道在多個裝置上運作的體驗，您可以更新 [App 描述](create-app-store-listings.md)來達到這個目的。 Windows 10 的客戶將會看到您 App 的預設描述，但是如果您想要讓您的市集清單針對不同作業系統版本的客戶有不同的顯示，您也可以[建立平台專屬的市集清單](create-platform-specific-store-listings.md)。
 
-## 類別變更
+## <a name="category-changes"></a>類別變更
 
 
 在許多情況下，app 和遊戲的新[類別和子類別](category-and-subcategory-table.md)看起來與先前作業系統版本市集中看到的一樣。 不過，有一些變更。 請檢閱下表，了解如何根據之前的類別，在針對 Windows 10 客戶的市集中對 app 進行分類。
 
-**注意** 當檢視您的提交之 [[app 內容](enter-app-properties.md)] 頁面中的 [[app 類別](category-and-subcategory-table.md)] 時，您會看到新的類別列在儀表板中，檢視 Windows 10 裝置上的市集的客戶會在新類別中看到您的 app。 不過，檢視先前作業系統市集的客戶會繼續看到 app 列在其原始的類別中。
+**注意**  當檢視您的提交之 [[app 內容](enter-app-properties.md)] 頁面中的 [[app 類別](category-and-subcategory-table.md)] 時，您會看到新的類別列在儀表板中，檢視 Windows 10 裝置上的市集的客戶會在新類別中看到您的應用程式。 不過，檢視先前作業系統市集的客戶會繼續看到 app 列在其原始的類別中。
 
 
 **Windows Phone 應用程式的類別變更：**
@@ -119,9 +126,4 @@ ms.openlocfilehash: a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e
 | 遊戲 &gt; 家庭           | 遊戲 &gt; 家庭 + 兒童             |
 | 遊戲 &gt; 拼圖           | 遊戲 &gt; 拼圖 + 益智遊戲           |
 | 遊戲 &gt; 賽車           | 遊戲 &gt; 賽車 + 飛行           |
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

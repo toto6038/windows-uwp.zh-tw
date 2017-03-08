@@ -3,21 +3,28 @@ author: mtoepke
 title: "將陰影圖轉譯為深度緩衝區"
 description: "從光線的視角轉譯，以建立代表陰影體的二維深度圖。"
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d, 遊戲, 轉譯, 陰影圖, 深度緩衝區"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 337aa63ee30b05da51d5b224cb0013519e11504d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將陰影圖轉譯為深度緩衝區
+# <a name="render-the-shadow-map-to-the-depth-buffer"></a>將陰影圖轉譯為深度緩衝區
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第二部分。
 
-## 清除深度緩衝區
+## <a name="clear-the-depth-buffer"></a>清除深度緩衝區
 
 
 在轉譯為深度緩衝區之前，一律先行清除該緩衝區。
@@ -27,7 +34,7 @@ context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## 將陰影圖轉譯為深度緩衝區
+## <a name="render-the-shadow-map-to-the-depth-buffer"></a>將陰影圖轉譯為深度緩衝區
 
 
 針對陰影轉譯階段，請指定深度緩衝區，但是不要指定轉譯目標。
@@ -122,9 +129,9 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**最佳化檢視範圍：**確定您的實作會計算緊密的檢視範圍，讓您可以從深度緩衝區中取得最佳的精確度。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
+**最佳化檢視範圍：**  確定您的實作會運算緊密的檢視範圍，讓您可以從深度緩衝區中取得最佳的精確度。 如需更多關於陰影技術的提示，請參閱[改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)。
 
-## 適用於陰影階段的頂點著色器
+## <a name="vertex-shader-for-shadow-pass"></a>適用於陰影階段的頂點著色器
 
 
 使用簡化的頂點著色器版本，只轉譯光線空間中的頂點位置。 請勿包含任何光源法向量、次要轉換等。
@@ -153,10 +160,5 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

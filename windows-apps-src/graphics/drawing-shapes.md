@@ -3,14 +3,21 @@ author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: "繪製圖形"
 description: "了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 Path 類別是在 XAML UI 中將極複雜向量繪製語言視覺化的一種方法，例如，您可繪製貝茲曲線。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
-ms.openlocfilehash: 1d3c0f50487aa6204f758303e0e5b05b9087eae5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ed405a14f1059f374432a587a24611f16d042a9c
+ms.lasthandoff: 02/07/2017
 
 ---
-# 繪製圖形
+# <a name="draw-shapes"></a>繪製形狀
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -21,19 +28,19 @@ ms.openlocfilehash: 1d3c0f50487aa6204f758303e0e5b05b9087eae5
 
 了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 類別是在 XAML UI 中視覺化非常複雜之向量繪製語言的方法，例如，繪製貝茲曲線。
 
-## 簡介
+## <a name="introduction"></a>簡介
 
 有兩組類別可定義 XAML UI 的空間區域：[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 類別與 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 類別。 這兩組類別的主要差異，在於 **Shape** 有一個相關聯的筆刷，而且可以轉譯到螢幕上；**Geometry** 只定義空間區域，而且除非有助於提供資訊給其他 UI 屬性，否則並不會進行轉譯。 您可以將 **Shape** 想成是一個 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)，且由 **Geometry** 定義其界限。 本主題主要涵蓋 **Shape** 類別。
 
 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 類別有 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345)、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)、[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 以及 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)。 **Path** 很有趣，因為它可以定義任意幾何圖形，而且這裡還涉及 [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) 類別，因為這是定義 **Path** 組件的其中一種方法。
 
-## 圖形的填滿與筆觸
+## <a name="fill-and-stroke-for-shapes"></a>圖形的填滿與筆觸
 
 若要將 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 轉譯到應用程式畫布，您必須使其與 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 建立關聯。 將 **Shape** 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 屬性設成所需的 **Brush**。 如需關於筆刷的資訊，請參閱[使用筆刷](using-brushes.md)。
 
 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 也可以包含 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke)，這是在圖形周邊繪製的線條。 **Stroke** 也需要 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 來定義外觀，且 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 應為非零的值。 **StrokeThickness** 是定義圖形邊緣之周邊厚度的屬性。 如果您沒有為 **Stroke** 指定 **Brush** 值，或是將 **StrokeThickness** 設為 0，則不會繪製圖形周圍的框線。
 
-## 橢圓形
+## <a name="ellipse"></a>橢圓形
 
 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 是周邊為弧形的圖形。 若要建立基本的 **Ellipse**，請指定 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。
 
@@ -62,7 +69,7 @@ layoutRoot.Children.Add(ellipse1);
 
 一組 6 個 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 元素屬於 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) 控制項的控制項範本，而 2 個同心 **Ellipse** 元素則屬於 [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544)。
 
-## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>矩形
+## <a name="span-idrectanglespanspan-idrectanglespanspan-idrectanglespanrectangle"></a><span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>矩形
 
 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 是對應邊相等的四邊形。 若要建立基本的 **Rectangle**，請指定 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 以及 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)。
 
@@ -98,13 +105,13 @@ layoutRoot.Children.Add(rectangle1);
 
 ![經過轉譯的矩形。](images/shapes-rectangle.jpg)
 
-**提示** 在某些情況下，UI 定義使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 會比使用 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 更恰當。 如果您要在其他內容的周圍建立矩形，使用 **Border** 較合適，因為可以包含子內容，並且會自動沿著內容調整大小，不像 **Rectangle** 使用固定的高度與寬度。 如果設定 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 屬性，則 **Border** 也有包含圓角的選項。
+**提示**  在某些情況下，UI 定義使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 會比使用 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 更恰當。 如果您要在其他內容的周圍建立矩形，使用 **Border** 較合適，因為可以包含子內容，並且會自動沿著內容調整大小，不像 **Rectangle** 使用固定的高度與寬度。 如果設定 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 屬性，則 **Border** 也有包含圓角的選項。
 
  
 
 另一方面，[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 或許是控制項組合較佳的選擇。 **Rectangle** 形狀在很多控制項範本都看得到，因為它可以做為能取得焦點之控制項的 "FocusVisual" 組件。 只要控制項處於「取得焦點」的視覺狀態，這個矩形就會顯示，在其他狀態則會隱藏。
 
-## 多邊形
+## <a name="polygon"></a>多邊形
 
 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 是界限由任意數目的點所定義的形狀。 建立界限的方式是以直線連接一個點到下一個點，最後一個點再連回第一個點。 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polygon.points.aspx) 屬性定義形成界限的點集合。 在 XAML 中，您使用逗號分隔清單定義各個點。 在程式碼後置中，則是使用 [**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) 定義點，並將每個獨立的點當成 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值加入集合中。
 
@@ -135,9 +142,9 @@ layoutRoot.Children.Add(polygon1);
 
 ![經過轉譯的多邊形。](images/shapes-polygon.jpg)
 
-**提示**：在宣告圖形頂點以外的 XAML 中，[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值通常會用來做為類型。 例如，**Point** 屬於觸控事件的事件資料，因此您可以知道觸控動作在座標空間發生的確切位置。 如需有關 **Point** 以及如何將其使用於 XAML 或程式碼的詳細資訊，請參閱 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 參考主題。
+**提示**  在宣告圖形頂點以外的 XAML 中，[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值通常會用來做為類型。 例如，**Point** 屬於觸控事件的事件資料，因此您可以知道觸控動作在座標空間發生的確切位置。 如需有關 **Point** 以及如何將其使用於 XAML 或程式碼的詳細資訊，請參閱 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 參考主題。
 
-## 線條
+## <a name="line"></a>線條
 
 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 只是在座標空間中兩點之間繪製的線條。 **Line** 會忽略提供給 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) 的任何值，因為它沒有內部空間。 對於 **Line**，請務必指定 [**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) 的值與 [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) 屬性，否則 **Line** 無法轉譯。
 
@@ -156,11 +163,11 @@ layoutRoot.Children.Add(line1);
 
 ```
 
-## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> 聚合線條
+## <a name="span-idpolylinespanspan-idpolylinespanspan-idpolylinespan-polyline"></a><span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span>聚合線條
 
 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 與 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) 類似，都是由一組點定義圖形的界限，不過 **Polyline** 的最後一點並不會連接第一個點。
 
-**注意**：您可以在設定給 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中明確指定相同的起點與終點，但在該情況下，您大可改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
+**注意**   您可以在設定給 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中明確指定相同的起點與終點，但在該情況下，您大可改用 [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)。
 
 
 如果指定 [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，**Fill** 就會繪製圖形的內部空間，即使設定給 **Polyline** 之 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起點與終點未交叉也一樣。 如果未指定 **Fill**，**Polyline** 會與指定數個個別 [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 元素的轉譯結果一樣，即連續線條的起點與終點會交叉。
@@ -194,7 +201,7 @@ layoutRoot.Children.Add(polyline1);
 
 ![經過轉譯的聚合線條。](images/shapes-polyline.jpg)
 
-## 路徑
+## <a name="path"></a>路徑
 
 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 是最多功能的 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377)，因為它可以用來定義任意幾何圖形。 但是多功能性也意謂著複雜度較高。 我們來看一下如何在 XAML 中建立基本的 **Path**。
 
@@ -311,10 +318,5 @@ layoutRoot.Children.Add(path1);
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

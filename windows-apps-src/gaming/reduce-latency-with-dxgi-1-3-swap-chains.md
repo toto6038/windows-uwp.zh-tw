@@ -1,29 +1,36 @@
 ---
 author: mtoepke
 title: "透過 DXGI 1.3 交換鏈結減少延遲"
-description: "使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。"
+description: "使用 DXGI 1.3 可減少有效的畫面格延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。"
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, latency, dxgi, swap chains, directx, 遊戲, 延遲, 交換鏈結"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7eb0eab864c58b07e29803895423998dd647a87e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9f2babdac40e3baf27bec9b2e214e9350d1f2539
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 透過 DXGI 1.3 交換鏈結減少延遲
+# <a name="reduce-latency-with-dxgi-13-swap-chains"></a>透過 DXGI 1.3 交換鏈結減少延遲
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用 DXGI 1.3 可減少有效的框架延遲，方法是等候交換鏈結在適當時機發出訊號來開始轉譯新畫面。 遊戲通常需要提供最低的延遲量，範圍可能從接收到玩家輸入時，到遊戲藉由更新顯示器來回應該輸入時。 本主題說明在 Direct3D 11.2 中開始時提供的技術，您可以使用該技術來將遊戲中有效的框架延遲降至最低。
 
-## 在背景緩衝區上等候如何減少延遲？
+## <a name="how-does-waiting-on-the-back-buffer-reduce-latency"></a>在背景緩衝區上等候如何減少延遲？
 
 
 使用翻轉模型交換鏈結，背景緩衝區「翻轉」會在您的遊戲呼叫 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 時排入佇列。 當轉譯迴圈呼叫 Present() 時，系統會封鎖執行緒，直到它完成先前框架的顯示為止，在它實際顯示之前，清出空間以將新框架排入佇列。 這會導致遊戲繪製框架的時間和系統允許它顯示該框架的時間之間，產生額外的延遲。 在許多情況下，系統將會到達一個穩定的平衡，遊戲在它轉譯的時間和它呈現每個畫面的時間之間，一律會等候一個幾乎完全是額外存在的畫面。 最好是等到系統準備好接受新畫面，然後根據目前資料來轉譯該畫面，並立即將該畫面排入佇列。
 
 使用 [**DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 旗標建立可等候的交換鏈結。 使用此方法建立的交換鏈結，可以在系統真正準備好接受新框架時通知您的轉譯迴圈。 這讓您的遊戲可以根據目前的資料進行轉譯，然後立即在目前佇列中放置結果。
 
-## 步驟 1：建立可等候的交換鏈結
+## <a name="step-1-create-a-waitable-swap-chain"></a>步驟 1：建立可等候的交換鏈結
 
 
 當您呼叫 [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) 時，指定 [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) 旗標。
@@ -32,7 +39,7 @@ ms.openlocfilehash: 7eb0eab864c58b07e29803895423998dd647a87e
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **注意** 相較於其他旗標，您無法使用 [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 來新增或移除這個旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
+> **注意**   相較於其他旗標，您無法使用 [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 來新增或移除這個旗標。 如果這個旗標的設定與建立交換鏈結時的不同，則 DXGI 會傳回錯誤碼。
 
  
 
@@ -47,7 +54,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## 步驟 2：設定畫面延遲
+## <a name="step-2-set-the-frame-latency"></a>步驟 2：設定畫面延遲
 
 
 使用 [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313) API 來設定畫面延遲，而不是呼叫 [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334)。
@@ -65,7 +72,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 //    );
 ```
 
-## 步驟 3：從交換鏈結取得可等候的物件
+## <a name="step-3-get-the-waitable-object-from-the-swap-chain"></a>步驟 3：從交換鏈結取得可等候的物件
 
 
 呼叫 [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) 以擷取等候控制代碼。 等候控制代碼是指向可等候物件的指標。 儲存此控制代碼，以供您的轉譯迴圈使用。
@@ -77,7 +84,7 @@ HRESULT hr = m_swapChain->ResizeBuffers(
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## 步驟 4：轉譯每個框架之前先等候
+## <a name="step-4-wait-before-rendering-each-frame"></a>步驟 4：轉譯每個框架之前先等候
 
 
 您的轉譯迴圈在開始轉譯每個框架之前，應該先等候交換鏈結透過可等候的物件發出訊號。 這包含第一個使用交換鏈結轉譯的畫面。 使用 [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)，提供步驟 2 中抓取的等候控制代碼，為每個畫面的開始發出訊號。
@@ -128,7 +135,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 }
 ```
 
-## 當我的遊戲在等候交換鏈結出現時應該做些什麼？
+## <a name="what-should-my-game-do-while-it-waits-for-the-swap-chain-to-present"></a>當我的遊戲在等候交換鏈結出現時應該做些什麼？
 
 
 如果您的遊戲不含任何會在轉譯迴圈上封鎖的工作，讓它等候交換鏈結出現就非常有利，因為能夠節省電力，這在行動裝置上特別重要。 否則，當您的遊戲在等候交換鏈結出現時，您可以使用多執行緒處理來完成工作。 以下只是一些您的遊戲可以完成的工作：
@@ -141,7 +148,7 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 如需 Windows 中多執行緒程式設計的詳細資訊，請參閱下列相關主題。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [DirectXLatency 範例](http://go.microsoft.com/fwlink/p/?LinkID=317361)
@@ -159,10 +166,5 @@ void DX::DeviceResources::WaitOnSwapChain()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

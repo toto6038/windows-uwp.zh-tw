@@ -5,16 +5,23 @@ title: "日期和時間控制項的指導方針"
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bb881fb0120401047c77a2d1e64a1e1555a9ced0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 127bf79ebe17e6156a95d4aae168e42b7ff53aa1
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-日期和時間控制項為您提供一個標準、當地語系化的方式，讓使用者在您的 app 中檢視以及設定日期和時間值。 此文章提供設計指導方針，並協助您挑選適當的控制項。
+日期和時間控制項為您提供一個標準、當地語系化的方式，讓使用者在您的應用程式中檢視以及設定日期和時間值。 此文章提供設計指導方針，並協助您挑選適當的控制項。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -120,9 +127,4 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 - [**CalendarDatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn950083)
 - [**DatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn298584)
 - [**TimePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn299280)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

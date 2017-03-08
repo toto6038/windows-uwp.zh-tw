@@ -3,19 +3,27 @@ author: GrantMeStrength
 Description: "比較 iOS、Android 和 Windows 10 平台之間的功能。"
 Search.Product: eADQiWindows 10XVcnh
 title: "適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 translationtype: Human Translation
-ms.sourcegitcommit: a55e7d0945902ce44ebad481475e8324c9859054
-ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
+ms.lasthandoff: 02/08/2017
 
 ---
 
-#適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
 如果您是具備 Android 或 iOS 技巧和 (或) 程式碼的開發人員，而且您想要移到 Windows 10 和通用 Windows 平台 (UWP)，則此資源擁有您在三個平台之間對應平台功能 (和您的知識) 所需的資訊。
 
 另請參閱[從 iOS 移到 UWP](ios-to-uwp-root.md) 中的移植內容。 這份文件也可供[下載](https://www.microsoft.com/download/details.aspx?id=52041)。
 
-## 使用者介面 (UI)
+## <a name="user-interface-ui"></a>使用者介面 (UI)
 
 
 <table style="width:100%">
@@ -166,7 +174,7 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 <td align="left"><strong>語音。</strong> <br><br>語音輸入的語音辨識及其他語音功能。</td>
 <td align="left">實作 <strong>RecognizerIntent</strong> (例如 <strong>Google 語音搜尋</strong>) 的任何 app 都可提供語音輸入。 <strong>SpeechRecognizer</strong> 類別可以讓 app 使用 Google 的語音辨識 API。</td>
 <td align="left">沒有內建的語音辨識或語音輸入 API。</td>
-<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">語音辨識</a></strong> API，與 App 在前景進行互動。 您可以使用語音型 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 互動</a></strong>在前景或背景啟動 App，以及與背景應用程式互動。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">語音互動</a></td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">語音辨識</a></strong> API，與 App 在前景進行互動。 您可以使用語音型 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 互動</a></strong>在前景或背景啟動應用程式，以及與背景應用程式互動。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">語音互動</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>自訂使用者輸入。</strong> <br><br>處理鍵盤、滑鼠、手寫筆及其他輸入方式。</td>
@@ -375,24 +383,24 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 <td align="left"><strong>App 內購買。</strong> <br><br>允許使用者在您的 app 中進行購買的平台功能。</td>
 <td align="left"><strong>App 內帳單功能</strong>是由 Google 服務提供。 產品會新增至 <strong>Google Play 開發人員主控台</strong>。 App 內購買使用 <strong>Google Play Billing Library (Google Play 帳單功能程式庫)</strong> 實作。</td>
 <td align="left">產品已新增至 <strong>iTunes Connect</strong>。 App 內購買使用 <strong>StoreKit</strong> 架構實作。<br/><br/>產品的購買使用 <strong>SKMutablePayment</strong> 和 <strong>SKPaymentQueue</strong>。</td>
-<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
+<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義在應用程式內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>App 內購買消耗性物品。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
+<td align="left"><strong>在應用程式內購買消耗性物品。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
 <td align="left">消耗性物品購買是使用 <strong>consumePurchase</strong> 定期購買然後消耗，讓使用者能夠購買、使用並再次購買。</td>
 <td align="left">消耗性物品在 iTunes Connect 中是<strong>定義為消耗性物品</strong>。</td>
-<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">當您將產品類型定義為「消耗性物品」並提交到市集</a>時，即可支援消耗性物品。 接著，您可以在有人購買消耗性物品之後呼叫 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong>，以允許客戶存取它。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">啟用 App 內購買消耗性物品</a></td>
+<td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">當您將產品類型定義為「消耗性物品」並提交到市集</a>時，即可支援消耗性物品。 接著，您可以在有人購買消耗性物品之後呼叫 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong>，以允許客戶存取它。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">啟用在應用程式內購買消耗性物品</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>測試 App 內購買。</strong> <br><br>讓您無需將 app 放置在市集，即可測試 App 內購買的程式碼。</td>
+<td align="left"><strong>測試在應用程式內購買。</strong> <br><br>讓您無需將 app 放置在市集，即可測試在應用程式內購買的程式碼。</td>
 <td align="left"><strong>App 內帳單功能沙箱</strong>用於測試。</td>
 <td align="left"><strong>沙箱測試人員帳戶</strong>用於測試。</td>
-<td align="left">只要使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> 類別取代 CurrentApp，即可測試 App 內購買。<br/><br/></td>
+<td align="left">只要使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> 類別取代 CurrentApp，即可測試在應用程式內購買。<br/><br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>試用版。</strong> <br><br>讓您在 app 試用版上輕鬆地限制內容或移除廣告。</td>
-<td align="left">Google Play <strong>沒有正式支援 app 試用版</strong>。 試用版或移除廣告是透過建立 App 內購買和在確認購買成功時採取適當的程式碼路徑來達成的。</td>
-<td align="left">App Store <strong>沒有正式支援 app 試用版</strong>。 試用版或移除廣告是透過建立 App 內購買和在確認購買成功時採取適當的程式碼路徑來達成的。</td>
+<td align="left">Google Play <strong>沒有正式支援 app 試用版</strong>。 試用版或移除廣告是透過建立在應用程式內購買和在確認購買成功時採取適當的程式碼路徑來達成的。</td>
+<td align="left">App Store <strong>沒有正式支援 app 試用版</strong>。 試用版或移除廣告是透過建立在應用程式內購買和在確認購買成功時採取適當的程式碼路徑來達成的。</td>
 <td align="left">提交 app 到市集時，使用 [免費試用]<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt148548.aspx"></a></strong> 選項，即可提供 app 的免費試用版。 接著您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.istrial.aspx">LicenseInformation.IsTrial</a></strong> 檢查 app 的試用狀態，並據此提供不同的程式碼路徑。 您也可以登錄 <a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.licenseinformation.licensechanged">LicenseChanged 事件</a>，在使用者於 app 正在執行時變更試用狀態時接收通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219685.aspx">在試用版本中排除或限制某些功能</a></td>
 </tr>
 </tbody>
@@ -662,9 +670,4 @@ ms.openlocfilehash: 8acd22c44cf6423aba01083d1e32d282c87f44cb
 </tr>
 </tbody>
 </table>
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

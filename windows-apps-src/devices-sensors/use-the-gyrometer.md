@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: "使用陀螺儀"
 description: "了解如何使用陀螺儀來偵測使用者的移動變化。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
-ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c5e02bcd4912a5db5d691f4172baeff2378433e4
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用陀螺儀
+# <a name="use-the-gyrometer"></a>使用陀螺儀
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**陀螺儀**](https://msdn.microsoft.com/library/windows/apps/BR225718)
@@ -23,17 +30,17 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 
 陀螺儀與加速計可互補做為遊戲控制器。 加速計可測量線性動作，而陀螺儀可測量角速度或旋轉動作。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援陀螺儀。
 
-## 建立簡單的陀螺儀應用程式
+## <a name="create-a-simple-gyrometer-app"></a>建立簡單的陀螺儀應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單陀螺儀應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-###  指示
+###  <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -66,8 +73,8 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
         public sealed partial class MainPage : Page
         {
             private Gyrometer _gyrometer; // Our app' s gyrometer object
-     
-            // This event handler writes the current gyrometer reading to 
+
+            // This event handler writes the current gyrometer reading to
             // the three textblocks on the app' s main page.
 
             private async void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -85,7 +92,7 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
             {
                 this.InitializeComponent();
                 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
-                
+
                 if (_gyrometer != null)
                 {
                     // Establish the report interval for all scenarios
@@ -106,7 +113,7 @@ ms.openlocfilehash: f53ae8de70ddca0d8293283012bedb8a39ac7ac1
 
 -   開啟 MainPage.xaml 檔案，並以下列 XML 取代原始內容。
 
-```xml 
+```xml
         <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -136,7 +143,7 @@ App 開始執行之後，您就可以移動裝置或使用模擬器工具來變�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-###  說明
+###  <a name="explanation"></a>說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的陀螺儀輸入。
 
@@ -157,7 +164,7 @@ _gyrometer.ReportInterval = reportInterval;
 會在 **ReadingChanged** 方法中擷取新的陀螺儀資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, 
+_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer,
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -172,13 +179,7 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
 ```
 
- ## 相關主題
+ ## <a name="related-topics"></a>相關主題
 
 * [陀螺儀範例](http://go.microsoft.com/fwlink/p/?linkid=241379)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

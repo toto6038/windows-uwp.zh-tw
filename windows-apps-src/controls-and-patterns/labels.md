@@ -5,9 +5,16 @@ title: "標籤"
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 6757e612d5a04db52222cfb73c855a0a4f615bf6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 54610e29b0fcaa8b7e90cf00676098a2ea50b827
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="labels"></a>標籤
@@ -64,10 +71,5 @@ ms.openlocfilehash: 6757e612d5a04db52222cfb73c855a0a4f615bf6
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

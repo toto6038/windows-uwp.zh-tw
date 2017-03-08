@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: "這個案例研究根據 Bookstore1 中所提供的資訊來建置，是從在 SemanticZoom 控制項中顯示分組資料的通用 8.1 app 開始著手。"
 title: "Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 34762d74ba34ed3c5cee4da4809c2c509f3932e9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 401ab153ec737a0a82825dc3b2065156b50d4589
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -54,7 +61,7 @@ Bookstore2\_81 方案是 8.1 通用 App 專案。 Bookstore2\_81.Windows 專案�
 
 **從共用專案**
 
--   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 [加入至專案]。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 [方案總管] 中的 [重新整理]，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
+-   複製包含書籍封面影像的 PNG 檔案 (此資料夾為 \\Assets\\CoverImages)。 在複製資料夾之後，請在 [**方案總管**] 中，確定 [**顯示所有檔案**] 已切換成開啟。 在您複製的資料夾上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]**。 該命令就是我們所謂的在專案中「包含」檔案或資料夾。 每次您複製檔案或資料夾時，請在每次複製時，按一下 **\[方案總管\]** 中的 **\[重新整理\]**，然後在專案中加入檔案或資料夾。 不需要對目的地中您正在取代的檔案執行此動作。
 -   複製包含檢視模型來源檔案的資料夾 (此資料夾是 \\ViewModel)。
 -   複製 MainPage.xaml 並取代目的地中的檔案。
 
@@ -67,11 +74,11 @@ Bookstore2\_81 方案是 8.1 通用 App 專案。 Bookstore2\_81.Windows 專案�
 
 您可以立即建置並執行。 以下是新的 UWP app 在尚未執行任何工作以將其移植到 Windows 10 之後的外觀。
 
-![放大檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
+![放大檢視已變更初始原始程式碼且正在電腦裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
 
 放大檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式
 
-![縮小檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
+![縮小檢視已變更初始原始程式碼且正在電腦裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
 
 縮小檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式
 
@@ -150,11 +157,11 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 
 樣式作業的最後一個步驟會讓 app 看起來像這樣。
 
-![放大檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
+![放大檢視已移植完成且正在電腦裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
 放大檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小
 
-![縮小檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+![縮小檢視已移植完成且正在電腦裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 縮小檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小
 
@@ -171,9 +178,4 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 與前一個案例研究相比，這個案例研究涉及更酷炫的使用者介面。 如同前一個案例研究，這個特定的檢視模型完全不需進行任何工作，而且我們的努力重點主要是重構使用者介面。 某些變更是將兩個專案結合成一個，同時仍支援許多不同尺寸規格所產生的必要結果 (事實上，比之前多很多)。 有一些變更是利用已對平台所做的變更來進行。
 
 下一個案例研究是 [QuizGame](w8x-to-uwp-case-study-quizgame.md)，我們將在其中探討如何存取和顯示分組資料。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

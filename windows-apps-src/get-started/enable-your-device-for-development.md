@@ -10,37 +10,41 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc1bf476c93ef9843c20244f24a199c7888eb4a5
+ms.lasthandoff: 02/07/2017
 
 ---
+
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
-您必須先在您的開發電腦及任何您將測試程式碼的裝置上啟用 [開發人員模式]，才能撰寫應用程式。
+您必須先在您的開發電腦及任何您將測試程式碼的裝置上啟用 [開發人員模式]，才能撰寫應用程式。 
+
+![啟用您的裝置以進行開發](images/developer-poster.png)
 
 ## <a name="use-developer-features"></a>使用開發人員功能
 
-### <a name="develop-your-app-with-microsoft-visual-studio"></a>使用 Microsoft Visual Studio 開發您的 App
+### <a name="develop-your-app-with-microsoft-visual-studio"></a>使用 Microsoft Visual Studio 開發您的應用程式
 
-您必須先在您的電腦上啟用 [開發人員模式]，才能在 Visual Studio 中開啟 UWP app 專案。 如果您開啟 UWP 專案，但未啟用 [開發人員模式]，系統將會自動開啟 [開發人員專用] 設定頁面。 請依照下一節中的指示來啟用 [開發人員模式]。
+您必須先在您的電腦上啟用 [開發人員模式]，才能在 Visual Studio 中開啟 UWP 應用程式專案。 如果您開啟 UWP 專案，但未啟用 [開發人員模式]，系統將會自動開啟 [開發人員專用]**** 設定頁面。 請依照下一節中的指示來啟用 [開發人員模式]。
 
 當您在 Windows 10 版本 1511 上的 Visual Studio 中開啟 UWP app 專案時，您會在 Visual Studio 中看到以下對話方塊。 
 
 ![Visual Studio 中顯示的 [啟用開發人員模式] 對話方塊](images/latestenabledialog.png)
 
-當您看到這個對話方塊時，請按一下 [開發人員設定] 來開啟 [開發人員專用] 設定頁面，然後啟用 [開發人員模式]。
+當您看到這個對話方塊時，請按一下 [開發人員設定]**** 來開啟 [開發人員專用]**** 設定頁面，然後啟用 [開發人員模式]。
 
-> 您可以隨時移至 [開發人員專用] 頁面來啟用或停用 [開發人員模式]：只要在工作列中的 Cortana 搜尋方塊中輸入「開發人員設定」即可。
+> 您可以隨時移至 [開發人員專用]**** 頁面來啟用或停用 [開發人員模式]：只要在工作列中的 Cortana 搜尋方塊中輸入「開發人員設定」即可。
 
 ### <a name="enable-your-windows-10-devices"></a>啟用您的 Windows 10 裝置
 
 您可以啟用裝置來進行開發，或直接用於側載。
 
--   「側載」是安裝並執行或測試未經 Windows 市集認證的 app。 例如，僅供公司內部使用的 app。
--   「開發人員模式」可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。 
+-   「側載」**是安裝並執行或測試未經 Windows 市集認證的應用程式。 例如，僅供公司內部使用的 app。
+-   「開發人員模式」**可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。 
 
     當您啟用 [開發人員模式] 時，系統會安裝一套選項，包括︰
-    - 安裝 Windows Device Portal。 只有在已開啟 [啟用 Device Portal] 選項時，才會啟用 Device Portal 並為其設定防火牆規則。
+    - 安裝 Windows Device Portal。 只有在已開啟 [啟用 Device Portal]**** 選項時，才會啟用 Device Portal 並為其設定防火牆規則。
     - 為 SSH 服務安裝、啟用及設定允許遠端安裝 App 的防火牆規則。
     - (僅限傳統型裝置) 允許啟用適用於 Linux 的 Windows 子系統。 如需詳細資訊，請參閱[關於 Windows 上 Ubuntu 上的 Bash](https://msdn.microsoft.com/commandline/wsl/about)
 
@@ -48,9 +52,9 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 **使用開發人員功能**
 
-1.  在您要啟用的裝置上，移至 [設定]。 選擇 [更新與安全性]，然後選擇 [開發人員專用]。
-2.  選擇您需要的存取層級 - 若要開發 UWP app，請選擇 [開發人員模式]。 
-3.  閱讀您所選設定的免責聲明，然後按一下 [是] 來接受變更。
+1.  在您要啟用的裝置上，移至 [設定]****。 選擇 [更新與安全性]****，然後選擇 [開發人員專用]****。
+2.  選擇您需要的存取層級 - 若要開發 UWP 應用程式，請選擇 [開發人員模式]****。 
+3.  閱讀您所選設定的免責聲明，然後按一下 [是]**** 來接受變更。
 
 > [!NOTE]
 > 如果您的裝置是由組織所擁有，您組織可能會停用某些選項，如以下所示。
@@ -77,7 +81,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 如需裝置特定的安裝指示，請參閱︰
 - [傳統型裝置的 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
-- [HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [HoloLens 的 Device Portal](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [IoT 的 Device Portal](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
 - [行動裝置的 Device Portal](../debug-test-perf/device-portal-mobile.md)
 - [Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
@@ -109,7 +113,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>Windows Explorer、遠端桌面及 PowerShell 的最佳化 (僅限傳統型裝置)
 
- 在傳統型裝置系列上，[開發人員專用] 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 [套用]，或按一下 [顯示設定] 連結來開啟該選項的設定頁面。 
+ 在傳統型裝置系列上，[開發人員專用]**** 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 [套用]****，或按一下 [顯示設定]**** 連結來開啟該選項的設定頁面。 
 
 ## <a name="which-settings-should-i-choose-sideload-apps-or-developer-mode"></a>應該選擇哪一個設定：側載應用程式或開發人員模式？
 
@@ -117,7 +121,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 ### <a name="sideload-apps"></a>側載 app
 
-通常是需要在受管理裝置上安裝自訂應用程式而不透過「Windows 市集」的公司或學校，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用 [Windows 市集應用程式] 設定的原則相當常見，如先前 [設定] 頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
+通常是需要在受管理裝置上安裝自訂應用程式而不透過「Windows 市集」的公司或學校，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用 [Windows 市集應用程式]** 設定的原則相當常見，如先前 [設定] 頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
 
 裝置系列特定的資訊
 
@@ -125,7 +129,7 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 
 -   在行動裝置系列上：如果已經安裝所需的憑證，您便可以點選檔案來安裝任何透過電子郵件傳送給您或位於 SD 記憶卡上的 .appx。
 
-因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式] 會是比 [開發人員模式] 更安全的選項。
+因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 [側載應用程式]**** 會是比 [開發人員模式] 更安全的選項。
 
 > [!NOTE]
 > 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經「Windows 市集」認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; ＜Windows 市集＞小節。
@@ -215,9 +219,4 @@ ms.openlocfilehash: 3641fdd1f7eb74a11233115d9dfb809ea959926e
 在這之後，您需要啟用裝置來進行開發 (如本主題所述)，讓您能夠繼續在此裝置上進行開發。 如果您沒有這樣做，在偵錯您的 app 或嘗試為它建立套件時可能會收到錯誤。 以下是此錯誤的範例：
 
 錯誤：DEP0700：app 的註冊失敗。
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

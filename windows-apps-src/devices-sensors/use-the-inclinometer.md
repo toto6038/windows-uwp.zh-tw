@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: "使用傾角計"
 description: "了解如何使用傾角計來決定俯仰、翻滾及偏擺。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d403e78b775af0f842ba2172295a09e35015dcc8
-ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b8ebfaf4c294fccf61534203bce0326f9dbec977
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用傾角計
+# <a name="use-the-inclinometer"></a>使用傾角計
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**傾角計**](https://msdn.microsoft.com/library/windows/apps/BR225766)
@@ -21,17 +28,17 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
 
 有些 3D 遊戲需要以傾角計做為輸入裝置。 一個常見範例是飛行模擬器，它需將傾角計的三個軸 (X、Y 以及 Z) 對應至飛機的升降舵、補助翼以及方向舵輸入。
 
- ## 先決條件
+ ## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援傾角計。
 
- ## 建立簡單的傾角計應用程式
+ ## <a name="create-a-simple-inclinometer-app"></a>建立簡單的傾角計應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單傾角計應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-###  指示
+###  <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -65,7 +72,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
         {
             private Inclinometer _inclinometer;
 
-            // This event handler writes the current inclinometer reading to 
+            // This event handler writes the current inclinometer reading to
             // the three text blocks on the app' s main page.
 
             private async void ReadingChanged(object sender, InclinometerReadingChangedEventArgs e)
@@ -83,7 +90,7 @@ ms.openlocfilehash: 17828018f2c8db8a5a60d839e7f73904de7a1a24
             {
                 this.InitializeComponent();
                 _inclinometer = Inclinometer.GetDefault();
-     
+
 
                 if (_inclinometer != null)
                 {
@@ -134,7 +141,7 @@ App 開始執行之後，您就可以移動裝置或使用模擬器工具來變�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-###  說明
+###  <a name="explanation"></a>說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的傾角計輸入。
 
@@ -155,7 +162,7 @@ _inclinometer.ReportInterval = reportInterval;
 會在 **ReadingChanged** 方法中擷取新的傾角計資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
+_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -170,13 +177,7 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## 相關主題
+ ## <a name="related-topics"></a>相關主題
 
 * [傾角計範例](http://go.microsoft.com/fwlink/p/?linkid=241380)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,26 +3,32 @@ author: jwmsft
 description: "Binding 標記延伸會在 XAML 載入時間轉換成 Binding 類別的執行個體。"
 title: "Binding 標記延伸&quot;"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3ad7dd8261ceb549de6bd9a5ae513e6f6fdb8d49
-ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {Binding} 標記延伸
+# <a name="binding-markup-extension"></a>{Binding} 標記延伸
 
-\[ 針對 Windows10 上的 UWP App 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+**注意：**Windows 10 提供新的繫結機制，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
 
-  **注意：**Windows10 提供新的繫結機制，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
-
-**注意：**如需有關在 App 中搭配 **{Binding}** 使用資料繫結的一般資訊 (以及取得 **{x:Bind}** 和 **{Binding}** 的完整比較)，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意：**如需有關在應用程式中搭配 **{Binding}** 使用資料繫結的一般資訊 (以及取得 **{x:Bind}** 和 **{Binding}** 的完整比較)，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 **{Binding}** 標記延伸是用來將控制項上的屬性資料繫結至來自資料來源的值 (例如程式碼)。 **{Binding}** 標記延伸會在 XAML 載入時間轉換成 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別的執行個體。 這個繫結物件會取得資料來源上的屬性值，並推送至控制項上的屬性。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更對它做出更新。 您也可以選擇性地設定繫結物件，以便將控制項值中的變更推回到來源屬性。 做為資料繫結目標的屬性必須是相依性屬性。 如需詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
 **{Binding}** 具有與本機值相同的相依性屬性優先順序，並且在命令式程式碼中設定本機值將會移除標記中任何 **{Binding}** 設定的效果。
 
-## XAML 屬性用法
+## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
 
 ``` syntax
@@ -42,7 +48,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 物件上設定的屬性字串名稱。 例如，"Converter"。 |
 | *value* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-binding)一節的屬性。 |
 
-## 屬性路徑
+## <a name="property-path"></a>屬性路徑
 
 [**路徑**](https://msdn.microsoft.com/library/windows/apps/br209830)說明您繫結的屬性 (來源屬性)。 路徑是一個位置參數，表示您可以明確使用參數名稱 (`{Binding Path=EmployeeID}`)，或者您可以將它指定為第一個未命名參數 (`{Binding EmployeeID}`)。
 
@@ -58,7 +64,7 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 如需屬性路徑的字串語法、動畫功能區域中的屬性路徑以及建構 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 物件的詳細資訊，請參閱 [Property-path 語法](property-path-syntax.md)。
 
-## 可以使用 {Binding} 設定的繫結類別屬性
+## <a name="properties-of-the-binding-class-that-can-be-set-with-binding"></a>可以使用 {Binding} 設定的繫結類別屬性
 
 
 **{Binding}** 以 *bindingProperties* 預留位置語法進行說明，因為在標記延伸中可以設定 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的多個讀取/寫入屬性。 這些屬性能以任意順序設定 (以逗號分隔的 *propName*=*value* 組)。 某些屬性需要不具類型轉換的類型，因此這些屬性需要將自己的標記延伸巢狀在 **{Binding}** 內。
@@ -82,13 +88,13 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 與 **ConverterLanguage** 皆與來自繫結來源的值或類型轉換成和繫結目標屬性相容的類型或值的案例相關。 如需詳細資訊和範例，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)中的＜資料轉換＞一節。
 
 > [!NOTE]
-> 從 Windows10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 與 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可以指定繫結來源，因此彼此互斥。
 
 **提示：**如果您需要為值 (例如，[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)) 指定單一大括號，則請在它的前面加上一個反斜線：`\{`。 或者，將整個字串括起來，以包含需要在設定的第二個引號中逸出的括號，例如 `ConverterParameter='{Mix}'`。
 
-## 範例
+## <a name="examples"></a>範例
 
 ```XML
 <!-- binding a UI element to a view model -->    
@@ -119,14 +125,9 @@ ms.openlocfilehash: a6431aed9941079bd05c623229f4ae3236a1b327
 
 請注意 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) 屬性值如何使用另一個標記延伸 ([{StaticResource} 標記延伸](staticresource-markup-extension.md))，因此這裡使用了兩個巢狀標記延伸。 內部的標記延伸會先進行評估，因此一旦取得資源之後，就會有一個可供繫結使用的實用 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) (由資源中的 `local:S2Formatter` 元素所具現化的自訂類別)。
 
-## 工具支援
+## <a name="tools-support"></a>工具支援
 
 在 XAML 標記編輯器中撰寫 **{Binding}** 時，Microsoft Visual Studio 中的 Microsoft IntelliSense 會顯示資料內容的屬性。 在您輸入 "{Binding" 後，適用於 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的資料內容屬性即會顯示在下拉式清單中。 IntelliSense 也可協助 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他屬性。 若要讓此功能運作，您必須在標記頁面中設定資料內容或設計階段資料內容。 **移至定義** (F12) 也可以用於 **{Binding}**。 另一種方法是使用資料繫結對話方塊。
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

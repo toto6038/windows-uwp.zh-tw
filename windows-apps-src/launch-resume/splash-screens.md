@@ -2,9 +2,17 @@
 author: PatrickFarley
 title: "啟動顯示畫面"
 description: "本節說明如何設定 app 的啟動顯示畫面。"
+ms.assetid: 6b954bb3-e5b0-46d1-8afc-fb805536cf6d
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 023e37bb6f9b8d8d780bb0a536cb469c87a31ed4
-ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 51add4631b807940e051a8f4cbaca92063e41d4a
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -27,9 +35,4 @@ ms.openlocfilehash: bb0f3ff68b7dc15623e4f337e589989354e08b65
 | 主題 | 說明 |
 |-------|-------------|
 | [新增啟動顯示畫面](add-a-splash-screen.md) | 設定 app 的啟動顯示畫面影像與背景色彩 |
-| [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為 app 建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您 app 啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |
-
-
-<!--HONumber=Dec16_HO1-->
-
-
+| [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |

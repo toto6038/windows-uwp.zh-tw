@@ -3,30 +3,37 @@ author: mtoepke
 title: "GLSL-to-HLSL 參考"
 description: "當您將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。"
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, 著色器"
 translationtype: Human Translation
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 1be2c49dc88dcaecfa1d349f9dda7a9cc0619b92
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f2d5f5a363abf026e865ed07221ba9075a6a67e7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# GLSL-to-HLSL 參考
+# <a name="glsl-to-hlsl-reference"></a>GLSL-to-HLSL 參考
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 當您[將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。 這裡所指的 GLSL 是與 OpenGL ES 2.0 相容；HLSL 則與 Direct3D 11 相容。 如需 Direct3D 11 與舊版 Direct3D 之間差異的相關資訊，請參閱[功能對應](feature-mapping.md)。
 
--   [比較 OpenGL ES 2.0 與 Direct3D 11](#compare)
--   [將 GLSL 變數移植到 HLSL](#variables)
--   [將 GLSL 類型移植到 HLSL](#types)
--   [將 GLSL 預先定義的全域變數移植到 HLSL](#porting_glsl_pre-defined_global_variables_to_hlsl)
--   [將 GLSL 變數移植到 HLSL 的範例](#example1)
-    -   [GLSL 中的 uniform、attribute 與 varying](#uniform___attribute__and_varying_in_glsl)
-    -   [HLSL 中的常數緩衝區與資料傳輸](#constant_buffers_and_data_transfers_in_hlsl)
--   [將 OpenGL 轉譯程式碼移植到 Direct3D 的範例](#example2)
--   [相關主題](#related_topics)
+-   [比較 OpenGL ES 2.0 與 Direct3D 11](#comparing-opengl-es-20-with-direct3d-11)
+-   [將 GLSL 變數移植到 HLSL](#porting-glsl-variables-to-hlsl)
+-   [將 GLSL 類型移植到 HLSL](#porting-glsl-types-to-hlsl)
+-   [將 GLSL 預先定義的全域變數移植到 HLSL](#porting-glsl-pre-defined-global-variables-to-hlsl)
+-   [將 GLSL 變數移植到 HLSL 的範例](#examples-of-porting-glsl-variables-to-hlsl)
+    -   [GLSL 中的 uniform、attribute 與 varying](#uniform-attribute-and-varying-in-glsl)
+    -   [HLSL 中的常數緩衝區與資料傳輸](#constant-buffers-and-data-transfers-in-hlsl)
+-   [將 OpenGL 轉譯程式碼移植到 Direct3D 的範例](#examples-of-porting-opengl-rendering-code-to-direct3d)
+-   [相關主題](#related-topics)
 
-## 比較 OpenGL ES 2.0 與 Direct3D 11
+## <a name="comparing-opengl-es-20-with-direct3d-11"></a>比較 OpenGL ES 2.0 與 Direct3D 11
 
 
 OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯管線與圖形功能。 但 Direct3D 11 是轉譯實作與 API，並非規格；OpenGL ES 2.0 則是轉譯規格與 API，而非實作方式。 一般來說，Direct3D 11 與 OpenGL ES 2.0 的差異如下：
@@ -62,18 +69,18 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <td align="left">著色器編譯整合至圖形 API</td>
 <td align="left">在 Direct3D 將著色器傳遞到驅動程式之前，HLSL 編譯器會先將[著色器編譯](https://msdn.microsoft.com/library/windows/desktop/bb509633)至中繼的二進位表示法。
 <div class="alert">
-<strong>注意</strong> 此二進位表示法與硬體無關。 通常會在 app 建置時進行編譯，而不是在 app 執行時進行編譯。
+<strong>注意</strong>  此二進位表示法與硬體無關。 通常會在 app 建置時進行編譯，而不是在 app 執行時進行編譯。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[Variable](#variables) 儲存區修飾詞</td>
+<td align="left">[Variable](#porting-glsl-variables-to-hlsl) 儲存區修飾詞</td>
 <td align="left">透過輸入配置宣告傳輸常數緩衝區與資料</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[類型](#types)</p>
+<td align="left"><p>[類型](#porting-glsl-types-to-hlsl)</p>
 <p>典型的向量類型：vec2/3/4</p>
 <p>lowp、mediump、highp</p></td>
 <td align="left"><p>典型的向量類型：float2/3/4</p>
@@ -91,7 +98,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 <td align="left">以列為主的矩陣 (預設值)</td>
 <td align="left">以欄為主的矩陣 (預設值)
 <div class="alert">
-<strong>注意</strong> 請使用 <strong>row_major</strong> 型別修飾詞來變更單一變數的配置。 如需詳細資訊，請參閱[變數語法](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 您也可指定編譯器旗標或 pragma 來變更全域預設值。
+<strong>注意</strong>  請使用 <strong>row_major</strong> 型別修飾詞來變更單一變數的配置。 如需詳細資訊，請參閱[變數語法](https://msdn.microsoft.com/library/windows/desktop/bb509706)。 您也可指定編譯器旗標或 pragma 來變更全域預設值。
 </div>
 <div>
  
@@ -106,13 +113,13 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
  
 
-> **注意** HLSL 的紋理與取樣器為兩個不同的物件。 在 GLSL (如 Direct3D 9) 中，紋理繫結為取樣器狀態的一部分。
+> **注意**  HLSL 的紋理與取樣器為兩個不同的物件。 在 GLSL (如 Direct3D 9) 中，紋理繫結為取樣器狀態的一部分。
 
  
 
 在 GLSL 中，您將大部分的 OpenGL 狀態呈現為預先定義的全域變數。 例如，使用 GLSL 時，您使用 **gl\_Position** 變數指定頂點位置、使用 **gl\_FragColor** 變數指定片段色彩。 在 HLSL 中，您明確將 Direct3D 狀態從 app 程式碼傳遞至著色器。 例如，使用 Direct3D 與 HLSL 時，頂點著色器的輸入必須符合頂點緩衝區中的資料格式，而應用程式程式碼中的常數緩衝區結構必須符合著色器程式碼中的常數緩衝區 ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) 結構。
 
-## 將 GLSL 變數移植到 HLSL
+## <a name="porting-glsl-variables-to-hlsl"></a>將 GLSL 變數移植到 HLSL
 
 
 在 GLSL 中，您將修飾詞 (限定詞) 套用到全域著色器變數宣告，讓變數在您的著色器中擁有特定的行為。 在 HLSL 則不需要這些修飾詞，因為您使用傳遞至著色器並從著色器所傳回的引數來定義著色器流程。
@@ -161,7 +168,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
 當您將資料傳遞至紋理 (HLSL 中的 [Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)) 以及其關聯的取樣器 (HLSL 中的 [SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644)) 時，通常會將它們宣告為像素著色器中的全域變數。
 
-## 將 GLSL 類型移植到 HLSL
+## <a name="porting-glsl-types-to-hlsl"></a>將 GLSL 類型移植到 HLSL
 
 
 使用此表格將 GLSL 類型移植到 HLSL。
@@ -269,7 +276,7 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
  
 
-## 將 GLSL 預先定義的全域變數移植到 HLSL
+## <a name="porting-glsl-pre-defined-global-variables-to-hlsl"></a>將 GLSL 預先定義的全域變數移植到 HLSL
 
 
 使用此表格將 GLSL 預先定義的全域變數移植到 HLSL。
@@ -377,14 +384,14 @@ OpenGL ES 2.0 與 Direct3D 11 有許多相似處。 它們都有類似的轉譯�
 
  
 
-您可使用語意來指定頂點著色器輸入與像素著色器輸入的位置、色彩等等。 您必須使輸入配置中的語意值與頂點著色器輸入相符。 如需範例，請參閱[將 GLSL 變數移植到 HLSL 的範例](#example1)。 如需 HLSL 語意的詳細資訊，請參閱[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
+您可使用語意來指定頂點著色器輸入與像素著色器輸入的位置、色彩等等。 您必須使輸入配置中的語意值與頂點著色器輸入相符。 如需範例，請參閱[將 GLSL 變數移植到 HLSL 的範例](#examples-of-porting-glsl-variables-to-hlsl)。 如需 HLSL 語意的詳細資訊，請參閱[語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
 
-## 將 GLSL 變數移植到 HLSL 的範例
+## <a name="examples-of-porting-glsl-variables-to-hlsl"></a>將 GLSL 變數移植到 HLSL 的範例
 
 
 這裡我們示範在 OpenGL/GLSL 程式碼中使用 GLSL 變數的範例，以及在 Direct3D/HLSL 程式碼中的相等範例。
 
-### GLSL 中的 uniform、attribute 與 varying
+### <a name="uniform-attribute-and-varying-in-glsl"></a>GLSL 中的 uniform、attribute 與 varying
 
 OpenGL 應用程式程式碼
 
@@ -428,7 +435,7 @@ gl_FragColor = vec4(colorVarying, 1.0);
 }
 ```
 
-### HLSL 中的常數緩衝區與資料傳輸
+### <a name="constant-buffers-and-data-transfers-in-hlsl"></a>HLSL 中的常數緩衝區與資料傳輸
 
 以下範例說明如何將資料傳遞至 HLSL 頂點著色器，然後流向像素著色器。 在您的應用程式程式碼中，定義頂點與常數緩衝區。 然後，在頂點著色器程式碼中，將常數緩衝區定義為 [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)，並儲存每一頂點資料與像素著色器輸入資料。 這裡我們使用名為 **VertexShaderInput** 與 **PixelShaderInput** 的結構。
 
@@ -507,7 +514,7 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-## 將 OpenGL 轉譯程式碼移植到 Direct3D 的範例
+## <a name="examples-of-porting-opengl-rendering-code-to-direct3d"></a>將 OpenGL 轉譯程式碼移植到 Direct3D 的範例
 
 
 這裡我們示範在 OpenGL ES 2.0 程式碼中轉譯的範例，以及在 Direct3D 11 程式碼中的相等範例。
@@ -556,7 +563,7 @@ m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [從 OpenGL ES 2.0 移植到 Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)
@@ -567,10 +574,5 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

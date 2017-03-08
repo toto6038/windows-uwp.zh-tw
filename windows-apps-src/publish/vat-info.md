@@ -3,23 +3,30 @@ author: jnHs
 Description: "如果您被要求在開發人員中心註冊程序期間提供 VAT 識別碼，本文提供可幫助您開始的一些資訊。"
 title: "VAT 資訊"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9ff913999f0697b379df868277fb45597150aa6e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a26cb43d230cd7dbb050254cceb70d3158c3af5d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# VAT 資訊
+# <a name="vat-info"></a>VAT 資訊
 
 
 如果您被要求在開發人員中心註冊程序期間提供 VAT 識別碼，本文提供可幫助您開始的一些資訊。
 
-## 了解 VAT 編號
+## <a name="understanding-vat-numbers"></a>了解 VAT 編號
 
 
 增值稅 (VAT) 編號是歐盟國家或地區使用的一種識別碼。 如需詳細資訊，請參閱歐盟的官方 [VIES 網站](http://go.microsoft.com/fwlink/p/?LinkId=258372)。
 
-## VAT 編號接受的格式
+## <a name="accepted-formats-for-vat-numbers"></a>VAT 編號接受的格式
 
 
 請注意，Microsoft 不會提供任何稅務建議，下列資訊僅供參考。 如果這份指導方針的資訊不足以供您向 Microsoft 提供 VAT 編號，您應該諮詢當地的稅徵機關以查看是否有最新的變更。
@@ -247,10 +254,5 @@ ms.openlocfilehash: 9ff913999f0697b379df868277fb45597150aa6e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,25 +3,32 @@ author: mtoepke
 title: "組合轉譯架構"
 description: "現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 轉譯"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7b97a70094c953e9614a84979c9f98fc91a82451
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 組合轉譯架構
+# <a name="assemble-the-rendering-framework"></a>組合轉譯架構
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 到目前為止，您已經了解如何建立通用 Windows 平台 (UWP) 遊戲的結構與 Windows 執行階段搭配使用，以及如何定義狀態電腦來處理遊戲的流程。 現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。 我們在這裡要看看如何實作轉譯架構，先從使用圖形顯示物件初始化圖形裝置開始。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   了解如何設定基本轉譯架構，以顯示 UWP DirectX 遊戲的圖形輸出。
 
-> **注意** 本主題不會討論下列程式碼檔案，但是會提供本主題所述的類別和方法，並在[本主題的結尾提供其程式碼](#code_sample)：
+> **注意** 本主題不會討論下列程式碼檔案，但是會提供本主題所述的類別和方法，並在[本主題的結尾提供其程式碼](#complete-sample-code-for-this-section)：
 -   **Animate.h/.cpp**。
 -   **BasicLoader.h/.cpp**。 提供已同步和非同步方式載入網格、著色器和紋理的方法。 非常實用！
 -   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp** 以及 **WorldMesh.h/.cpp**。 包含遊戲中所使用物件基本類型的定義，例如子彈、圓柱型和圓錐體障礙物，以及射擊場的牆。 (本主題中簡要討論的 **GameObject.cpp** 包含轉譯這些基本類型的方法。)
@@ -32,7 +39,7 @@ ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
 
  
 
-本節涵蓋遊戲範例中的三個關鍵檔案 ([於本主題最後以程式碼提供](#code_sample))：
+本節涵蓋遊戲範例中的三個關鍵檔案 ([於本主題最後以程式碼提供](#complete-sample-code-for-this-section))：
 
 -   **Camera.h/.cpp**
 -   **GameRenderer.h/.cpp**
@@ -41,7 +48,7 @@ ms.openlocfilehash: c0c935af257fe52e22cadaffb6e008ddbf9629a8
 同樣地，我們假設您了解基本的 3D 程式設計概念，像是網格、頂點和紋理。 如需一般 Direct3D 11 程式設計的詳細資訊，請參閱 [Direct3D 11 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)。
 接下來，我們來看看將遊戲呈現到螢幕上必須完成的工作。
 
-## Windows 執行階段與 DirectX 概觀
+## <a name="an-overview-of-the-windows-runtime-and-directx"></a>Windows 執行階段與 DirectX 概觀
 
 
 DirectX 是 Windows 執行階段與 Windows 10 使用經驗的基本部分。 Windows 10 中所有的視覺物件都是採用 DirectX 建立的，而且您可以直接使用相同的低階圖形介面 [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)，為圖形硬體及驅動程式提供抽象層。 所有的 Direct3D 11 API 都能讓您用來與 DXGI 直接交談。 這可以為您的遊戲帶來快速且高效能的圖形，並讓您存取所有最新的圖形硬體功能。
@@ -50,7 +57,7 @@ DirectX 是 Windows 執行階段與 Windows 10 使用經驗的基本部分。 Wi
 
 在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)時，我們會先了解轉譯器在遊戲範例 app 架構中所扮演的角色。 現在，我們來看看遊戲轉譯器如何連接到檢視，並建立定義遊戲外觀的圖形。
 
-## 定義轉譯器
+## <a name="defining-the-renderer"></a>定義轉譯器
 
 
 **GameRenderer** 抽象類型繼承自 **DirectXBase** 轉譯器類型，加入了 Stereo 3D 的支援，並且為建立及定義圖形基本類型的著色器宣告常數緩衝區和資源。
@@ -143,7 +150,7 @@ protected private:
 
 現在，讓我們來看看如何建立這個物件！
 
-## 初始化轉譯器
+## <a name="initializing-the-renderer"></a>初始化轉譯器
 
 
 範例遊戲會呼叫這個 **Initialize** 方法作為 **App::SetWindow** 中 CoreApplication 初始化序列的一部分。
@@ -179,7 +186,7 @@ void GameRenderer::Initialize(
 
 當 DirectXBase 初始化完成時，會初始化 **GameInfoOverlay** 物件。 初始化完成後，現在來看看建立和載入遊戲圖形資源的方法。
 
-## 建立和載入 DirectX 圖形資源
+## <a name="creating-and-loading-directx-graphics-resources"></a>建立和載入 DirectX 圖形資源
 
 
 任何遊戲的第一個工作就是建立與圖形介面的連線、建立繪製圖形所需的資源，然後設定轉譯目標以繪製這些圖形。 在遊戲範例 (以及 Microsoft Visual Studio **DirectX 11 應用程式 (通用 Windows)** 範本) 中，這個程序是會以三種方法實作：
@@ -689,7 +696,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 遊戲具有在目前視窗中顯示圖形的資源，而且可以在視窗變更時重新建立這些資源。 現在，我們來看看用來定義該視窗中玩家場景視野的相機。
 
-## 實作相機物件
+## <a name="implementing-the-camera-object"></a>實作相機物件
 
 
 遊戲有現成的程式碼可以用自己的座標系統來更新世界 (有時候稱為世界空間或場景空間)。 所有物件 (包括相機) 都在這個空間設定放置及方向。 在範例遊戲中，會使用相機的位置以及視角向量 (「視線」向量是從相機直接看到場景，而「仰視」向量則是垂直向上看) 定義相機空間。 投影參數決定最終場景可實際看到的空間量；而視野範圍 (FoV)、外觀比例以及裁剪平面則可定義投影轉換。 頂點著色器則負責使用下列演算法 (其中 V 是向量而 M 是矩陣)，將模型座標轉換為裝置座標的繁重工作：
@@ -851,7 +858,7 @@ void Camera::SetProjParams(
 
 現在，我們來看看遊戲如何建立架構，以使用相機來繪製我們的遊戲圖形。 這包括定義組成遊戲世界及其元素的基本類型。
 
-## 定義基本類型
+## <a name="defining-the-primitives"></a>定義基本類型
 
 
 在遊戲範例程式碼中，我們定義和實作兩個基底類別中的基本類型，並為每個基本類型定義對應的專屬特性。
@@ -963,7 +970,7 @@ protected private:
 
 我們來看看遊戲範例中基本類型的基本轉譯。
 
-## 轉譯基本類型
+## <a name="rendering-the-primitives"></a>轉譯基本類型
 
 
 遊戲範例中的基本類型使用父系 **GameObject** 類別上實作的基底 **Render** 方法，如這裡所示：
@@ -1048,7 +1055,7 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 
 實際轉譯程序就是這樣！
 
-## 建立頂點著色器和像素著色器
+## <a name="creating-the-vertex-and-pixel-shaders"></a>建立頂點著色器和像素著色器
 
 
 此時，遊戲範例已定義了要繪製的基本類型，以及定義其轉譯的常數緩衝區。 這些常數緩衝區會做為在圖形裝置上執行的著色器的參數集。 這些著色器程式有兩種類型：
@@ -1181,7 +1188,7 @@ float4 main(PixelShaderInput input) : SV_Target
 
 現在，我們將這些概念 (基本類型、相機及著色器) 組合在一起，然後看看範例遊戲如何建立完整的轉譯程序。
 
-## 轉譯輸出畫面
+## <a name="rendering-the-frame-for-output"></a>轉譯輸出畫面
 
 
 我們在[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)中簡短討論了這個方法。 現在，我們再深入看看更多細節。
@@ -1348,12 +1355,12 @@ void GameRenderer::Render()
 
 而遊戲也已經更新了顯示畫面！ 上述的所有程序都實作遊戲圖形架構的基本程序。 當然，您的遊戲越大，就需要放入更多抽像物件來處理其複雜程度，例如物件類型的整個階層和動畫行為，以及更複雜的載入和管理資產 (網格及紋理) 的方法。
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 我們再繼續看看遊戲範例中之前簡略討論過的幾個重要部分：[使用者介面重疊](tutorial--adding-a-user-interface.md)、[輸入控制項](tutorial--adding-controls.md)以及[音效](tutorial--adding-sound.md)。
 
-## 這個章節的完整範例程式碼
+## <a name="complete-sample-code-for-this-section"></a>這個章節的完整範例程式碼
 
 
 Camera.h
@@ -6311,7 +6318,7 @@ void Material::RenderSetup(
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
@@ -6322,10 +6329,5 @@ void Material::RenderSetup(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

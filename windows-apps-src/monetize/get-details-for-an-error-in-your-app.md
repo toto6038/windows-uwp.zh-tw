@@ -1,17 +1,24 @@
 ---
 author: mcleanbyron
-ms.assetid: 
-description: "在 Windows 市集分析 API 中使用此方法，以取得 App 特定錯誤的詳細資料。"
-title: "取得 App 中錯誤的詳細資料"
+ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
+description: "在 Windows 市集分析 API 中使用此方法，以取得應用程式特定錯誤的詳細資料。"
+title: "取得應用程式中錯誤的詳細資料"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 錯誤, 詳細資料"
 translationtype: Human Translation
-ms.sourcegitcommit: 767097f068630e5ec171415c05d6dc395c8b26b3
-ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1aaf5b6864c678d26289270be6a9ad96f5b5e004
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="get-details-for-an-error-in-your-app"></a>取得 App 中錯誤的詳細資料
+# <a name="get-details-for-an-error-in-your-app"></a>取得應用程式中錯誤的詳細資料
 
-在 Windows 市集分析 API 中使用此方法，以取得 App 特定錯誤的 JSON 格式詳細資料。 這個方法只能擷取最近 30 天內發生的錯誤的詳細資料。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗] 區段也提供詳細的錯誤資料。
+在 Windows 市集分析 API 中使用此方法，以取得應用程式特定錯誤的 JSON 格式詳細資料。 這個方法只能擷取最近 30 天內發生的錯誤的詳細資料。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗]**** 區段也提供詳細的錯誤資料。
 
 使用這個方法之前，您必須先使用[取得錯誤報告資料](get-error-reporting-data.md)方法來擷取您要取得詳細資訊之錯誤的識別碼。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 描述                                                                 |
+| 標頭        | 類型   | 說明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -45,7 +52,7 @@ ms.openlocfilehash: cd72e58ec252c556cf0f2e5ce071744e8fac6c9e
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取詳細錯誤資料之 App 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | failureHash | 字串 | 您想要取得詳細資訊之錯誤的唯一識別碼。 若要取得您有興趣之錯誤的此值，請使用[取得錯誤報告資料](get-error-reporting-data.md)方法，並在該方法的回應主體中使用 **failureHash** 值。 |  是  |
@@ -112,7 +119,7 @@ Authorization: Bearer <your access token>
 |-----------------|---------|----------------------------|
 | 日期            | 字串  | 錯誤資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
 | applicationId   | 字串  | 您擷取的詳細錯誤資料之 App 的市集識別碼。      |
-| failureName     | 字串  | 錯誤的名稱。 此名稱與「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗] 區段中顯示的名稱相同。            |
+| failureName     | 字串  | 錯誤的名稱。 此名稱與「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗]**** 區段中顯示的名稱相同。            |
 | failureHash     | 字串  | 錯誤的唯一識別碼。     |
 | osVersion       | 字串  | 發生錯誤的 OS 版本。    |
 | market          | 字串  | 裝置市場的 ISO 3166 國家/地區碼。     |
@@ -160,9 +167,4 @@ Authorization: Bearer <your access token>
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

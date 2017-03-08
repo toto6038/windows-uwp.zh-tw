@@ -3,13 +3,20 @@ author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。"
 title: "搭配使用彈性資料流與 PlayReady"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8534598b1f3cf49b15a73d03f6f19e67877b25d0
-ms.openlocfilehash: 22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 861ec2823080192a5b2d9b557af14ca5e3ab43fb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 搭配使用彈性資料流與 PlayReady
+# <a name="adaptive-streaming-with-playready"></a>搭配使用彈性資料流與 PlayReady
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -58,7 +65,7 @@ private string playReadyChallengeCustomData = "";
 private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
-## 設定 MediaProtectionManager
+## <a name="setting-up-the-mediaprotectionmanager"></a>設定 MediaProtectionManager
 
 若要將 PlayReady 內容保護新增到您的 UWP app，您將需要設定 [MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) 物件。 您會在初始化 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 物件時設定。
 
@@ -136,7 +143,7 @@ private async void ProtectionManager_ServiceRequested(
 }
 ```
 
-## 個人化服務要求
+## <a name="individualization-service-requests"></a>個人化服務要求
 
 下列程式碼會被動發出 PlayReady 個人化服務要求。 我們將要求以參數方式傳遞給函式。 我們將呼叫以 try/catch 區塊括住，如果沒有出現例外狀況，要求便視為成功：
 
@@ -187,7 +194,7 @@ async void ProActiveIndivRequest()
 }
 ```
 
-## 授權取得服務要求
+## <a name="license-acquisition-service-requests"></a>授權取得服務要求
 
 如果要求是 [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285)，則我們將呼叫以下函式來要求並取得 PlayReady 授權。 我們向傳入的 **MediaProtectionServiceCompletion** 物件告知要求是否成功，然後完成該要求：
 
@@ -269,7 +276,7 @@ async void LicenseAcquisitionRequest(
 }
 ```
 
-## 初始化 AdaptiveMediaSource
+## <a name="initializing-the-adaptivemediasource"></a>初始化 AdaptiveMediaSource
 
 最後，您將需要一個函式來初始化 [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912)，可從已知的 [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 和 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) 來建立。 **Uri** 應為連結至媒體檔案 (HLS 或 DASH) 的連結；**MediaElement** 應在您的 XAML 中定義。
 
@@ -292,15 +299,10 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 您可以在任何處理啟動彈性資料流的事件中呼叫這個函式；例如，在按鈕點擊事件中。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [PlayReady DRM](playready-client-sdk.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

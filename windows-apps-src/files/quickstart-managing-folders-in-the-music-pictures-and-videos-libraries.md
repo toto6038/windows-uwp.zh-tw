@@ -3,9 +3,16 @@ author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: "音樂、圖片及影片媒體櫃中的檔案和資料夾"
 description: "將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 18acfda780211a008a3c5febdcbff2bf007ff379
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 
 -   **位置的存取權限**
 
-    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 [功能] 頁面上，選取您應用程式所管理的媒體櫃。
+    在 Visual Studio 中，於「資訊清單設計工具」中開啟 app 資訊清單檔案。 在 **\[功能\]** 頁面上，選取您應用程式所管理的媒體櫃。
 
     -   **音樂媒體櫃**
     -   **圖片媒體櫃**
@@ -39,7 +46,7 @@ ms.openlocfilehash: 4e2b7d10e1d24427aede21ccae176d7cd55f9de8
 ## <a name="get-a-reference-to-a-library"></a>取得對媒體櫃的參考
 
 
-**注意**：請記得宣告適當的功能。
+**注意**  請記得宣告適當的功能。
  
 
 若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 從 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列舉提供對應的值。
@@ -122,15 +129,15 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 這些位置包括：
 
--   [**圖片**] 資料夾。 包含圖片。
+-   [圖片]**** 資料夾。 包含圖片。
 
-    -   [**手機相簿**] 資料夾。 包含內建相機中的相片和視訊。
+    -   [手機相簿]**** 資料夾。 包含內建相機中的相片和視訊。
 
-    -   [**儲存的圖片**] 資料夾。 包含使用者從其他 app 儲存的圖片。
+    -   [儲存的圖片]**** 資料夾。 包含使用者從其他 app 儲存的圖片。
 
--   [**音樂**] 資料夾。 包含歌曲、播客和有聲書。
+-   [音樂]**** 資料夾。 包含歌曲、播客和有聲書。
 
--   [**影片**] 資料夾。 包含視訊。
+-   [影片]**** 資料夾。 包含視訊。
 
 使用者或應用程式也可以將媒體檔案儲存在媒體櫃資料夾以外的 SD 記憶卡上。 若要尋找確實在 SD 記憶卡上的媒體檔案，請掃描 SD 記憶卡的內容，或要求使用者使用檔案選擇器來找出檔案。 如需詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
@@ -245,9 +252,4 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

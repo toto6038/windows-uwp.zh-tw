@@ -3,21 +3,28 @@ author: joannaleecy
 title: "針對 UWP 遊戲使用雲端服務"
 description: "深入了解將雲端實作為 UWP 遊戲的後端。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
+ms.author: joanlee
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 雲端服務"
 translationtype: Human Translation
-ms.sourcegitcommit: 2584a08e0a869ab3c5f11c192f0a5a6eeb223d61
-ms.openlocfilehash: 598384993e0e2931773cdb30e0909af6b771590e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72f357cbf8e370512f9230978de546aa3d54c660
+ms.lasthandoff: 02/07/2017
 
 ---
-#  針對 UWP 遊戲使用雲端服務
+#  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
-Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Microsoft 裝置上開發遊戲。 開發跨平台與裝置的遊戲時，您可以利用雲端後端來協助根據需求調整遊戲。
+Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Microsoft 裝置上開發遊戲。 開發跨平台與裝置的遊戲時，您可以利用雲端後端來協助根據需求調整遊戲。
 
-##  什麼是雲端運算？
+##  <a name="what-is-cloud-computing"></a>什麼是雲端運算？
 
 雲端運算透過網際網路使用隨選 IT 資源和應用程式，來為您的裝置儲存和處理資料。 _雲端_一詞是一種隱喻，代表外面 (本機資源之外) 可供使用的大量資源，而您可以從非特定位置存取這些資源。
 雲端運算的原則，提供使用資源與軟體的新方式。 使用者不再需要預先支付整套完整的產品或資源，而能以服務的方式使用平台、軟體及資源。 雲端提供者通常會根據客戶的使用量或服務方案供應項目來計費。
 
-##  為什麼要使用雲端服務？
+##  <a name="why-use-cloud-services"></a>為什麼要使用雲端服務？
 
 使用適用於遊戲的雲端服務，其中一項優勢是您不需要預先投資實體硬體伺服器，而只要在稍後的階段根據使用量或服務方案支付費用即可。 這是開發新遊戲時，有助於管理所牽涉風險的一種方式。 
 
@@ -29,7 +36,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 
 此外，需要密集遊戲資料管理功能的遊戲 (例如具有非同步多人遊戲機制的社交遊戲) 可以使用雲端服務來實作。
 
-##  遊戲公司如何使用雲端技術？
+##  <a name="how-game-companies-use-the-cloud-technology"></a>遊戲公司如何使用雲端技術？
 
 了解其他開發人員如何在遊戲中實作雲端解決方案。
 
@@ -103,23 +110,23 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 </table>
 
     
-### 其他連結
+### <a name="other-links"></a>其他連結
 
 * [Azure 是 Hitcents、Game Troopers 及 InnoSpark 的幕後秘訣](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [使用 Azure 的 Bizspark 計畫遊戲新創公司](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
-## 如何設計雲端後台
+## <a name="how-to-design-your-cloud-backend"></a>如何設計雲端後台
 
 在製作人與遊戲設計師討論必須包含在遊戲內的特色及功能時，最好也開始考慮要如何設計遊戲的基礎結構。 當您想為不同裝置及不同的主要平台開發遊戲時，可以使用 Azure 做為遊戲的後端。
 
-### 逐步解說學習指南
+### <a name="step-by-step-learning-guides"></a>逐步解說學習指南
 
 * [Build 2016 Codelabs：使用 Microsoft Azure App Service 與 Microsoft SQL Azure 後端儲存遊戲分數](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
 * [設計遊戲的行動吸引力策略](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
 * [針對 Unity iOS 部署使用 Azure Mobile Engagement](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
 
-### 了解 IaaS、PaaS 或 SaaS
+### <a name="understanding-iaas-paas-or-saas"></a>了解 IaaS、PaaS 或 SaaS
 
 首先，您需要了解最適合您遊戲的服務層級。 了解以下三種服務的差異，有助於您決定建置後端所要採取的方法。
 
@@ -136,7 +143,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
     軟體即服務通常是已為您建置，並在現有雲端平台上託管的應用程式。 它的設計目的是讓您可以在他們的服務上，更輕鬆地開始執行您的遊戲。
 
 
-### 使用 Azure 設計遊戲基礎結構
+### <a name="design-your-game-infrastructure-using-azure"></a>使用 Azure 設計遊戲基礎結構
 
 以下是可以針對遊戲使用 Azure 雲端供應項目的一些方法。 Azure 可以搭配 Windows、Linux，以及 Ruby、Python、Java 和 PHP 等常見的開放原始碼技術使用。 如需詳細資訊，請參閱[用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)。
 
@@ -162,7 +169,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 | 建立行銷活動以增加使用量與留存率  | 根據資料分析傳送推播通知給目標玩家，以產生興趣並鼓勵特定遊戲活動 | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) |  增加所有主要平台 (iOS、Android、Windows、Windows Phone) 上的遊戲時間與使用者留存率 |
 
 
-##  新創公司與開發人員資源
+##  <a name="startup-and-developer-resources"></a>新創公司與開發人員資源
 
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 
@@ -170,9 +177,9 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    如果您想要將 Xbox Live 的功能，例如多人遊戲、跨平台配對、玩家分數、成就及排行榜加入到您的 Windows10 遊戲，請向 ID@Xbox 註冊以取得所需之工具和支援，以盡情發揮您的創意並取得最大的成功。 向 ID@Xbox 提出申請之前，請先在 [Windows 開發人員中心](https://developer.microsoft.com/windows/programs/join)註冊一個開發人員帳戶。
+    如果您想要將 Xbox Live 的功能，例如多人遊戲、跨平台配對、玩家分數、成就及排行榜加入到您的 Windows 10 遊戲，請向 ID@Xbox 註冊以取得所需之工具和支援，以盡情發揮您的創意並取得最大的成功。 向 ID@Xbox 提出申請之前，請先在 [Windows 開發人員中心](https://developer.microsoft.com/windows/programs/join)註冊一個開發人員帳戶。
 
-## 適用於遊戲後端的軟體即服務
+## <a name="software-as-a-service-for-game-backend"></a>適用於遊戲後端的軟體即服務
 
 以下公司能為基於主要雲端服務提供者的遊戲提供雲端後端，好讓您能夠將焦點放在開發您的遊戲上。
 
@@ -188,9 +195,9 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 
     Playfab 能夠簡單又快速地為您的行動裝置、電腦或主機遊戲帶來世界級的即時遊戲管理和後端技術。
 
-## 相關連結
+## <a name="related-links"></a>相關連結
 
-* [Windows10 遊戲開發指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows 10 遊戲開發指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
 * [用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
@@ -199,9 +206,4 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,19 +3,26 @@ author: jwmsft
 description: "我們將向 Windows 執行階段應用程式開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段應用程式。"
 title: "XAML 概觀"
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 57b406f8210a9de729deec1fd2003973ac91f9cd
-ms.openlocfilehash: b32ff4bd37a86b991a0bdfe16328304827eb01a0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 12cb0c8b911c0ddb3a45e49568c5846d4359eeba
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# XAML 概觀
+# <a name="xaml-overview"></a>XAML 概觀
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 我們將向 Windows 執行階段 app 開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段 app。
 
-## 什麼是 XAML？
+## <a name="what-is-xaml"></a>什麼是 XAML？
 
 Extensible Application Markup Language (XAML) 是一種宣告式語言。 更具體來說，XAML 可以使用顯示多個物件之間的階層關係的語言結構，以及支援類型擴充的支援類型慣例，以初始化物件與設定物件屬性。 您可以利用宣告式 XAML 標記建立視覺上可以看到的 UI 元素。 您可以接著關聯可以回應事件的每個 XAML 檔案的個別程式碼後置檔案，然後操縱您原先在 XAML 中宣告的物件。
 
@@ -23,15 +30,15 @@ XAML 語言可支援開發程序中不同工具和角色之間的原始碼交換
 
 當您看見它們成為您 Windows 執行階段應用程式專案的一部分時，XAML 檔案是副檔名為 .xaml 的 XML 檔案。
 
-## 基本 XAML 語法
+## <a name="basic-xaml-syntax"></a>基本 XAML 語法
 
 XAML 具備以 XML 為依據的基本語法。 根據定義，有效的 XAML 也必須是有效的 XML。 但是 XAML 也有一些指派不同且更完整意義的語法概念，根據 XML 1.0 規格，在 XML 仍然有效。 例如，XAML 支援「屬性元素語法」**，其中的屬性值可以在元素內 (而不是當成屬性中的字串值或內容) 來設定。 如果是一般 XML，XAML 屬性元素就是其名稱內有一個點的元素，如此一來，它對純 XML 就是有效的，但不會有相同的意義。
 
-## XAML 和 Microsoft Visual Studio
+## <a name="xaml-and-microsoft-visual-studio"></a>XAML 和 Microsoft Visual Studio
 
 Microsoft Visual Studio 可以在 XAML 文字編輯器與更多圖形導向的 XAML 設計介面中，協助您產生有效的 XAML 語法。 因此，當您使用 Visual Studio 來撰寫應用程式的 XAML 時，不需過度擔憂每個按鍵輸入的語法。 IDE 藉由提供自動完成提示、在 Microsoft IntelliSense 清單和下拉式清單顯示建議、在工具箱顯示 UI 元素庫，或透過其他技術，來提供有效的 XAML 語法。 如果您是第一次使用 XAML，熟悉語法規則可能還是很有用的，尤其是有時候當我們描述參考或其他主題中的 XAML 語法時，用來描述限制或選擇的詞彙。 我們將 XAML 語法的這些細節放在一個單獨的主題：[XAML 語法指南](xaml-syntax-guide.md)。
 
-## XAML 命名空間
+## <a name="xaml-namespaces"></a>XAML 命名空間
 
 在進行一般程式設計時，命名空間是一個組織的概念，可判斷如何解譯用於程式設計實體的識別碼。 透過使用命名空間，程式設計架構就可以區分使用者宣告的識別碼與架構宣告的識別碼、透過命名空間的限定性條件使識別碼意義清楚、強制執行範圍名稱的規則等等。 XAML 有自己的 XAML 命名空間概念，可達成 XAML 語言的這個目的。 這裡是 XAML 套用和延伸 XML 語言命名空間概念的方式：
 
@@ -53,7 +60,7 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 >
 ```
 
-## XAML 語言 XAML 命名空間
+## <a name="the-xaml-language-xaml-namespace"></a>XAML 語言 XAML 命名空間
 
 有一個幾乎會在每個 Windows 執行階段 XAML 檔案中宣告的特定 XAML 命名空間，就是 XAML 語言命名空間。 這個命名空間包含由 XAML 語言根據其語言規格所定義的元素和概念。 依照慣例，XAML 語言 XAML 命名空間會對應至前置詞 "x"。 Windows 執行階段應用程式專案的預設專案與檔案範本，永遠會將預設的 XAML 命名空間 (無前置詞，只有 `xmlns=`) 與 XAML 語言 XAML 命名空間 (前置詞 "x") 定義為根元素的一部分。
 
@@ -69,7 +76,7 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 
 XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比較少見。
 
-## 將自訂類型對應到 XAML 命名空間
+## <a name="mapping-custom-types-to-xaml-namespaces"></a>將自訂類型對應到 XAML 命名空間
 
 就語言方面來說，XAML 的一個最重要概念就是能夠輕易地擴充適用於 Windows 執行階段應用程式的 XAML 詞彙。 您可以在應用程式的程式設計語言中定義自己的自訂類型，然後在 XAML 標記中參考您的自訂類型。 透過自訂類型進行擴充的支援，基本上是內建於 XAML 語言的運作方式。 架構或應用程式開發人員會負責建立 XAML 參考的支援物件。 不論是架構或應用程式開發人員都不受到其詞彙中物件所代表內容的規格所限制，也不會嘗試超越基本的 XAML 語法規則 (雖然我們對於 XAML 語言 XAML 命名空間類型可執行的作業有一些特定的期望，但是 Windows 執行階段能夠提供所有必要的支援)。
 
@@ -83,11 +90,11 @@ XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比
 
 如需針對自訂類型對應 XAML 命名空間的詳細資訊，包含適用於 Visual C++ 元件延伸 (C++/CX) 的特殊考量，請參閱 [XAML 命名空間與命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
 
-## 其他 XAML 命名空間
+## <a name="other-xaml-namespaces"></a>其他 XAML 命名空間
 
 您經常會看到定義前置詞的 XAML 檔案 "d" (用於設計人員命名空間) 與 "mc" (用於標記相容性)。 這些通常用於基礎結構支援，或用於在設計階段工具中啟用案例。 如需詳細資訊，請參閱 [XAML 命名空間主題的＜其他 XAML 命名空間＞一節](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces)。
 
-## 標記延伸
+## <a name="markup-extensions"></a>標記延伸
 
 標記延伸是 Windows 執行階段 XAML 實作中經常用到的 XAML 語言概念。 標記延伸通常代表某種「捷徑」，可讓 XAML 檔案能夠存取某個值或行為，而不只是根據支援類型來宣告元素。 部分標記延伸若其目標為簡化語法或不同 XAML 檔案間的建構，就可以使用純字串或額外巢狀元素來設定屬性。
 
@@ -130,7 +137,7 @@ Windows 執行階段也支援 [{x:Null} 標記延伸](x-null-markup-extension.md
 
 由於使用標記延伸，因此針對屬性中的文字 "{" 值，您需要使用特殊語法。 如需詳細資訊，請參閱 [XAML 語法指南](xaml-syntax-guide.md)。
 
-## 事件
+## <a name="events"></a>事件
 
 XAML 是物件與物件屬性的宣告式語言，但也包含將事件處理常式附加到標記物件的語法。 XAML 事件語法可以接著透過 Windows 執行階段的程式撰寫模型，整合 XAML 宣告的事件。 您可以在處理事件的物件中指定事件名稱做為屬性名稱。 對於屬性值，您可以指定在程式碼定義的事件處理函式名稱。 XAML 處理器會使用這個名稱在載入的物件樹中建立委派表示法，並將指定的處理常式新增到內部處理常式清單。 幾乎所有的 Windows 執行階段應用程式都是由標記與程式碼後置來源所定義。
 
@@ -181,23 +188,23 @@ namespace App1
 
 **注意** 針對 C++/CX，有兩個程式碼後置檔案，一個是標頭 (.xaml.h)，另一個則是實作 (.xaml.cpp)。 實作會參考標頭，技術上來說，它是代表程式碼後置連線進入點的標頭。
 
-## 資源字典
+## <a name="resource-dictionaries"></a>資源字典
 
 建立 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 是一般的工作，通常透過將資源字典編寫為 XAML 頁面的區域或個別的 XAML 檔案來完成。 資源字典及其使用方式是一個大範圍的概念，不在本主題的討論範圍內。 如需詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-## XAML 與 XML
+## <a name="xaml-and-xml"></a>XAML 與 XML
 
 XAML 語言基本上是以 XML 語言為基礎。 但 XAML 大幅擴充了 XML。 具體來說，由於它與支援類型概念的關係，因此處理結構描述概念的方式相當不同，並且會新增語言元素，像是附加的成員與標記延伸。 **xml:lang** 在 XAML 中有效，但會影響執行階段而非剖析行為，並且通常會產生別名到架構層級屬性。 如需詳細資訊，請參閱 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)。 **xml:base** 在標記中有效，但剖析器會忽略它。 **xml:space** 有效，但只與 [XAML 與空格](xaml-and-whitespace.md)主題中描述的案例有關。 **encoding** 屬性在 XAML 中有效。 僅支援 UTF-8 與 UTF-16 編碼。 不支援 UTF-32 編碼。
 
-###  XAML 中的區分大小寫功能
+###  <a name="case-sensitivity-in-xaml"></a>XAML 中的區分大小寫功能
 
 XAML 會區分大小寫。 這是 XAML 以 XML 做為基礎的另一個結果，XML 會區分大小寫。 XAML 元素的名稱與屬性會區分大小寫。 屬性值可能會區分大小寫；這取決於特定屬性的屬性值如何處理。 例如，如果屬性值宣告列舉的某個成員名稱，轉換成員名稱字串類型以傳回列舉成員值的內建行為不會區分大小寫。 相反地，**Name** 屬性的值與用在以 **Name** 屬性宣告的名稱為基礎的物件的公用程式方法，會以區分大小寫的方式來處理名稱字串。
 
-## XAML 命名範圍
+## <a name="xaml-namescopes"></a>XAML 命名範圍
 
 XAML 語言定義 XAML 命名範圍的概念。 XAML 命名範圍概念會影響 XAML 處理器應如何處理套用到 XAML 元素的 **x:Name** 或 **Name** 的值，尤其是需要名稱做為唯一識別碼的範圍。 XAML 命名範圍在不同的主題中有更詳細的說明；請參閱 [XAML 命名範圍](xaml-namescopes.md)。
 
-## XAML 在開發程序中的角色
+## <a name="the-role-of-xaml-in-the-development-process"></a>XAML 在開發程序中的角色
 
 XAML 在應用程式開發程序中扮演了數個重要的角色。
 
@@ -211,7 +218,7 @@ XAML 在應用程式開發程序中扮演了數個重要的角色。
 
 視您在開發程序中的角色而定，您不一定會與 XAML 有很多的互動。 您與 XAML 檔案互動的程度也取決於您所使用的開發環境、是否使用互動式設計環境功能 (如工具箱和屬性編輯器)，以及您 Windows 執行階段應用程式的範圍和用途。 儘管如此，在應用程式的開發期間，您會使用文字或 XML 編輯器在元素層級編輯 XAML 檔案。 使用這項資訊，您可以在文字或 XML 表示法中放心編輯 XAML，並在您的 Windows 執行階段應用程式的工具、標記編譯作業或執行階段使用 XAML 時，維持該 XAML 檔案宣告的有效性。
 
-## 針對載入效能將您的 XAML 最佳化
+## <a name="optimize-your-xaml-for-load-performance"></a>針對載入效能將您的 XAML 最佳化
 
 以下是使用效能最佳做法定義 XAML 中 UI 元素的一些祕訣。 這些祕訣中有許多與使用 XAML 資源相關，但是基於方便性，所以在一般 XAML 概觀這裡列出。 如需有關 XAML 資源的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 如需更多有關效能的提示，包含特意示範一些您應該在 XAML 中避免的不良效能做法的 XAML，請參閱[最佳化您的 XAML 標記](https://msdn.microsoft.com/library/windows/apps/mt204779)。
 
@@ -223,7 +230,7 @@ XAML 在應用程式開發程序中扮演了數個重要的角色。
 -   使用容器 (例如，[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250))，而不要刻意過度使用 UI 元素。 基本上，請不要多次繪製同一個像素。 如需過度繪製及如何測試它的詳細資訊，請參閱 [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823)。
 -   針對 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 使用預設項目範本；這些範本具備特殊的 **Presenter** 邏輯，可解決在為大量清單項目建置視覺化樹狀結構時發生的效能問題。
 
-## 偵錯 XAML
+## <a name="debugging-xaml"></a>偵錯 XAML
 
 因為 XAML 是一種標記語言，所以在 Microsoft Visual Studio 內一些偵錯的典型策略就無法使用。 例如，您無法在 XAML 檔案內設定中斷點。 不過，仍處於開發應用程式階段時，還是有其他技術可以協助您偵錯 UI 定義或其他 XAML 標記的問題。
 
@@ -236,10 +243,5 @@ XAML 通常是在 IDE 內 (如 Visual Studio) 以及它的其中一個 XAML 設�
 **注意** 使用 C++/CX 程式碼的 app 不會取得特定的 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
 
 如需偵錯 Windows 執行階段 app 的詳細資訊，請參閱[啟動偵錯工作階段](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

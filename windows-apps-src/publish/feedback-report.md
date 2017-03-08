@@ -3,13 +3,20 @@ author: jnHs
 Description: "Windows 開發人員中心儀表板中的意見反應報告可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。"
 title: "意見反應報告"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 70020d3c6e0fb0fea321ce1951720803fd25f9c0
-ms.openlocfilehash: e6266ff7c45a49b3eece8ffaf3d0603d55a04761
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 意見反應報告
+# <a name="feedback-report"></a>意見反應報告
 
 Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。 您可以在儀表板中檢視此資料，或匯出資料以便離線檢視。
 
@@ -21,7 +28,7 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 
 > **提示** 如果您是使用[套件正式發行前小眾測試](package-flights.md)，則意見反應會變得特別有價值，因為意見反應報告將顯示每個客戶在留下意見反應時已安裝在其裝置的特定套件。
 
-## 檢視意見反應詳細資料
+## <a name="viewing-feedback-details"></a>檢視意見反應詳細資料
 
 在這份報告的 [**詳細資料**] 區段，您會發現您客戶留下的個人意見反應。 在意見反應文字的左邊，您會看到其他客戶在意見反應中樞中附議該意見反應的次數。 您可以使用三種方式來排序意見反應︰
 
@@ -32,7 +39,7 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場、客戶留下意見反應時所使用裝置上已安裝的您應用程式的特定套件、該裝置的類型，以及 **Windows 測試人員** (如果提交意見反應的客戶是 Windows 測試人員計畫的成員)。
 
 
-## 套用篩選
+## <a name="apply-filters"></a>套用篩選
 
 您可以在接近頁面頂端處，展開 [**套用篩選**]，來篩選此頁面上的所有資料。
 
@@ -45,18 +52,13 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 - **市場**：預設設定為 [**所有市場**]。 您可以選擇特定市場，僅顯示來自該市場中客戶的意見反應。
 - **群組**：預設設定為 [**全部**]。 您可以選擇僅檢視 [Windows 測試人員](http://insider.windows.com)所提交的意見反應。
 
-## 翻譯評論
+## <a name="translating-feedback"></a>翻譯評論
 
 根據預設，會幫您翻譯不是使用您慣用語言撰寫的評論。 您也可以取消核取意見反應清單右上角的 [**翻譯評論**] 核取方塊，停用意見反應翻譯的功能。
 
 請注意：意見反應是由系統自動翻譯，結果不一定正確。 我們也提供原文，供您與翻譯比較，或透過其他方式翻譯。
 
-## 從您的應用程式直接啟動意見反應中樞
+## <a name="launching-feedback-hub-directly-from-your-app"></a>從您的應用程式直接啟動意見反應中樞
 
 如前所述，建議直接在您的應用程式中納入意見反應中樞的連結，鼓勵客戶提供意見反應。 如需詳細資訊，請參閱[從您的應用程式啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

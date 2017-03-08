@@ -3,12 +3,19 @@ author: GrantMeStrength
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "建立您的第一個 App"
 description: "這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。"
+ms.author: jken
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b57a461cf9859be26ed69d12b08259d15201403a
-ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc003c4683445718de1f14ed3c659fb579482a0
+ms.lasthandoff: 02/07/2017
 
 ---
-# 建立您的第一個 App
+# <a name="create-your-first-app"></a>建立您的第一個 App
 
 歡迎：這些教學課程將協助您使用所選擇的語言來建立您的第一個 UWP app。 您將在此處了解如何：
 
@@ -46,7 +53,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 -->
 
 
-### C# 與 XAML 教學課程
+### <a name="c-and-xaml-tutorial"></a>C# 與 XAML 教學課程
 
 使用您的 .NET、WPF 或 Silverlight 技術，來建置使用 XAML 搭配 C# 的 App。
 
@@ -58,7 +65,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 * [適用於初學者的 VB 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
 * [Windows 10 開發人員指南](https://mva.microsoft.com/en-US/training-courses/a-developers-guide-to-windows-10-12618)
 
-### Visual C++ 元件延伸 (C++/CX) 和 XAML 教學課程
+### <a name="visual-c-component-extensions-ccx-and-xaml-tutorial"></a>Visual C++ 元件延伸 (C++/CX) 和 XAML 教學課程
 
 利用您的 C++ 程式設計專業知識，使用 Visual C++ 元件延伸 (C++/CX) 搭配 XAML 來建置 App。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 
 * [C++：一般用途語言和程式庫入門](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 
-### JavaScript 與 HTML 教學課程
+### <a name="javascript-and-html-tutorial"></a>JavaScript 與 HTML 教學課程
 
 利用您的 Web 技術，使用 HTML5、階層式樣式表層級 3 (CSS3) 及 JavaScript 來建置 App。
 
@@ -79,25 +86,24 @@ ms.openlocfilehash: 16adf9c9c8de2ca4596f0fcbe503f570971e74a1
 * [適用於初學者的 JavaScript 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
 * [適用於初學者的 HTML5 與 CSS3 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-### Objective-C
+### <a name="objective-c"></a>Objective-C
 
 您更像是 iOS 開發人員嗎？ 
 
-* 請使用[適用於 iOS 的 Windows 橋接器](https://developer.microsoft.com/windows/bridges/ios)將您現有的程式碼轉換成 UWP app，然後繼續以 Objective C 進行開發。
+* 請使用[適用於 iOS 的 Windows 橋接器](https://developer.microsoft.com/windows/bridges/ios)將您現有的程式碼轉換成 UWP app，然後繼續以 Objective-C 進行開發。
 
 
-## 相關主題
+### <a name="cross-platform-and-mobile-development"></a>跨平台和行動應用程式開發
 
-* [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/develop)
+* 需要以 Android 和 iOS 做為目標嗎？ 請查看 [Xamarin](https://www.xamarin.com)。
+
+## <a name="related-topics"></a>相關主題
+
+* [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [通用 Windows app 是什麼？](whats-a-uwp.md)
 * [開始設定](get-set-up.md)
 * [註冊](sign-up.md)
 
-
-
-
-
-<!--HONumber=Sep16_HO2-->
 
 

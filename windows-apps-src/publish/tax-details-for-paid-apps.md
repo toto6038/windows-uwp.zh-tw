@@ -3,9 +3,16 @@ author: jnHs
 Description: "若要了解您在價格選擇、支付關連及稅責等方面的稅務考量，請參閱下表您發行應用程式的國家/地區。"
 title: "付費應用程式的稅務詳細資料"
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 56421bc1ce426310189ddcb1c9893437469c075a
-ms.openlocfilehash: 69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: beaf73f0bf4709bcda2edda4afb97869eaccc27b
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -161,9 +168,9 @@ ms.openlocfilehash: 69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac
 | 菲律賓                      | 所選價格是最終銷售價格且包含所有相關稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countriesregions)                                                                  | 所選價格的 70%                 | 開發人員          |
 | 波蘭                           | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 23% 稅金後的 70% | Microsoft          |
 | 葡萄牙                         | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 23% 稅金後的 70% | Microsoft          |
-| 波多黎各                      | 所選價格已內含稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countries-regions)                                                                                                     | 所選價格的 70%                 | Microsoft          |
+| 波多黎各                      | 所選價格已內含稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countriesregions)                                                                                                     | 所選價格的 70%                 | Microsoft          |
 | 卡達                            | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
-| 羅馬尼亞                          | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 24% 稅金後的 70% | Microsoft          |
+| 羅馬尼亞                          | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 19% 稅金後的 70% | Microsoft          |
 | 俄羅斯                           | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 18% 稅金後的 70% | Microsoft          |
 | 盧安達                           | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 聖克里斯多福及尼維斯            | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
@@ -220,7 +227,7 @@ ms.openlocfilehash: 69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac
 ## <a name="mixed-remittance-countriesregions"></a>混合免稅國家/地區
 
 
-特定 Microsoft 帳單合作夥伴可能會在下列國家/地區，代收和代繳因為將您的應用程式或應用程式內產品透過市集提供給客戶使用，可能產生的銷售、使用、商品和服務、增值稅或類似稅金。 Microsoft 提供給　貴用戶的報告將可識別帳單合作夥伴已代收下列稅金的交易：將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 除了這類報告中所描述的交易外，Microsoft 與其帳單合作夥伴均不會代收和代繳將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 　貴用戶須負責檢閱提供給　貴用戶的報告，並且判斷和遵守義務 (如果有)，以註冊、收取和支付　貴用戶應用程式或應用程式內產品交易所產生的稅金。
+特定 Microsoft 帳單合作夥伴可能會在下列國家/地區，代收和代繳因為將您的應用程式或應用程式內產品透過市集提供給客戶使用，可能產生的銷售、使用、商品和服務、增值稅或類似稅金。 Microsoft 提供給　貴用戶的[報告](payout-summary.md#downloading-payment-transactions)將可識別帳單合作夥伴已代收下列稅金的交易：將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 除了這類報告中所描述的交易外，Microsoft 與其帳單合作夥伴均不會代收和代繳將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 　貴用戶須負責檢閱提供給　貴用戶的報告，並且判斷和遵守義務 (如果有)，以註冊、收取和支付　貴用戶應用程式或應用程式內產品交易所產生的稅金。
 
 | 混合免稅國家/地區 |
 |------------------------------------|
@@ -268,8 +275,8 @@ ms.openlocfilehash: 69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac
 1.  移至 [https://commerce.microsoft.com/PaymentHub/TaxReport](http://go.microsoft.com/fwlink/p/?LinkID=264239)。
 2.  以您用來存取開發人員中心開發人員帳戶的 Microsoft 帳戶登入。
 3.  選取適當的日期。
-4.  在 [銷售國家/地區] 中，選取 [印度]。
-5.  按一下 [搜尋]。
+4.  在 **\[銷售國家/地區\]** 中，選取 **\[印度\]**。
+5.  按一下 **\[搜尋\]**。
 
 報告的每一列都包含交易的日期和時間，以及發生該筆交易的印度省份 (如果有)。
 
@@ -279,10 +286,5 @@ ms.openlocfilehash: 69ae8d29df626f6a1e2ce1bb4a8a09e99353a0ac
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO5-->
 
 

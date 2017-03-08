@@ -2,10 +2,17 @@
 author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "組合效果"
-description: "效果 API 可讓開發人員自訂其 UI 的呈現方式。"
+description: "效果 API 可讓開發人員自訂其 UI 的轉譯方式。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7330af081021788a17bf6ec320267b4ea2fc3115
-ms.openlocfilehash: 197a4b32afc82724803fb93949b288b38de52cc4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ecf1c8a35838c1a05fabb5d76a2d0574c90a98db
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="composition-effects"></a>組合效果
@@ -244,10 +251,5 @@ brush.Surface = imageSource.Surface;
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

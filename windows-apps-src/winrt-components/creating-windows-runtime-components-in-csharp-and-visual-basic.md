@@ -3,13 +3,20 @@ author: msatranjr
 title: "在 C# 和 Visual Basic 中建立 Windows 執行階段元件"
 description: "從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
-ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 31fddae1c163f46a56fb78f5ac29e11a84e2ddd9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在 C# 和 Visual Basic 中建立 Windows 執行階段元件
+# <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,7 +27,7 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 本文包括下列章節：
 
-## 在 Windows 執行階段元件中宣告類型
+## <a name="declaring-types-in-windows-runtime-components"></a>在 Windows 執行階段元件中宣告類型
 
 
 您元件中的 Windows 執行階段類型可以在內部使用通用 Windows app 允許的任何 .NET Framework 功能 (如需詳細資訊，請參閱[適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx) 概觀)。您的類型成員在外部只能公開其參數和傳回值的 Windows 執行階段類型。 下列清單將說明從 Windows 執行階段元件公開的 .NET Framework 類型有何限制。
@@ -36,19 +43,19 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
     -   從不在 Windows 執行階段中的類型 (例如 System.Exception 與 System.EventArgs) 衍生。
 -   所有的公用類型都必須具有符合組件名稱的根命名空間，且組件名稱的開頭不可以是 "Windows"。
 
-    > **提示** 根據預設，Visual Studio 專案具有符合組件名稱的命名空間名稱。 在 Visual Basic 中，此預設命名空間的 Namespace 陳述式不會顯示在您的程式碼中。
+    > **提示**：根據預設，Visual Studio 專案具有符合組件名稱的命名空間名稱。 在 Visual Basic 中，此預設命名空間的 Namespace 陳述式不會顯示在您的程式碼中。
 
 -   公用結構不可以有公用欄位以外的任何成員，而且這些欄位必須是實值類型或字串。
 -   公用類別必須是 **sealed** (在 Visual Basic 中為 **NotInheritable**)。 如果您的程式設計模型需要使用多型，您可以建立公用介面，然後在必須是多型的類別上實作該介面。
 
-## 偵錯您的元件
+## <a name="debugging-your-component"></a>偵錯您的元件
 
 
 如果您的通用 Windows app 與元件都是使用 Managed 程式碼所建置，則可同時針對這兩者進行偵錯。
 
 當您使用 C++ 在通用 Windows app 中測試您的元件時，可以同時對 Managed 程式碼和機器碼進行偵錯。 預設值為僅限機器碼。
 
-## **同時對 C++ 機器碼與 Managed 程式碼進行偵錯**
+## **<a name="to-debug-both-native-c-code-and-managed-code"></a>同時對 C++ 機器碼與 Managed 程式碼進行偵錯**
 
 1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 [屬性]****。
 2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
@@ -57,14 +64,14 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 當您使用 JavaScript 在通用 Windows app 中測試元件時，方案依預設會處於 JavaScript 偵錯模式。 在 Visual Studio 中，您無法同時偵錯 JavaScript 和 Managed 程式碼。
 
-## **偵錯 Managed 程式碼，而不偵錯 JavaScript**
+## **<a name="to-debug-managed-code-instead-of-javascript"></a>偵錯 Managed 程式碼，而不偵錯 JavaScript**
 
 1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 [屬性]****。
 2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
 3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限指令碼]**** 變更為 [僅限 Managed]****。 選擇 [確定]****。
 4.  在 Managed 程式碼中設定中斷點，然後如常進行偵錯。
 
-## 將 Windows 執行階段類型傳遞至 Managed 程式碼
+## <a name="passing-windows-runtime-types-to-managed-code"></a>將 Windows 執行階段類型傳遞至 Managed 程式碼
 
 
 如先前在＜在 Windows 執行階段元件中宣告類型＞一節中所述，特定的 .NET Framework 類型可以出現在公用類別成員的簽章中。 這是 .NET Framework 為了方便您在 Managed 程式碼中使用 Windows 執行階段而提供的支援。 其中包括基本類型以及一些類別和介面。 從 JavaScript 或 C++ 程式碼使用您的元件時，請務必了解您的 .NET Framework 類型如何對呼叫端顯示的方式。 如需 JavaScript 的範例，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)。 本節將討論常用的類型。
@@ -100,18 +107,18 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 當某個類型實作多個介面時，您可以將它實作的任何介面當做成員的參數類型或傳回類型。 例如，您可以將 Dictionary&lt;int, string&gt; (在 Visual Basic 中為 Dictionary(Of Integer, String)) 傳遞或傳回為 IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt; 或 IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;。
 
-**重要** JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+**重要**：JavaScript 會使用 Managed 類型實作之介面清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
 在 Windows 執行階段中，IMap&lt;K, V&gt; 與 IMapView&lt;K, V&gt; 可透過 IKeyValuePair 反覆執行。 當您將其傳遞至 Managed 程式碼時，它們會顯示為 IDictionary&lt;TKey, TValue&gt; 與 IReadOnlyDictionary&lt;TKey, TValue&gt;，以便您使用 System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; 加以列舉。
 
 介面顯示於 Managed 程式碼中的方式會影響實作這些介面之類型的顯示方式。 例如，PropertySet 類別會實作 IMap&lt;K, V&gt;，而這在 Managed 程式碼中會顯示為 IDictionary&lt;TKey, TValue&gt;。 PropertySet 會以實作了 IDictionary&lt;TKey, TValue&gt; (而不是 IMap&lt;K, V&gt;) 的形態出現，因此在 Managed 程式碼中，其看似具有 Add 方法 (此方法的行為類似於 .NET Framework 字典上的 Add 方法)。 它看起來並沒有 Insert 方法。 您可以在[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，然後從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)一文中檢視此範例。
 
-## 將 Managed 類型傳遞至 Windows 執行階段
+## <a name="passing-managed-types-to-the-windows-runtime"></a>將 Managed 類型傳遞至 Windows 執行階段
 
 
 如上一節所討論，某些 Windows 執行階段類型在您元件成員的簽章中 (如果在 IDE 中使用這些類型，則是在 Windows 執行階段成員的簽章中) 會顯示為 .NET Framework 類型。 當您將 .NET Framework 類型傳遞給這些成員，或使用這些類型做為元件成員的傳回值時，它們在另一端的程式碼上便會顯示為對應的 Windows 執行階段類型。 若想透過範例了解這在從 JavaScript 呼叫您的元件時將有何效用，請參閱[逐步解說：在 C# 或 Visual Basic 中建立簡單的元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)中的＜從您的元件傳回 Managed 類型＞一節。
 
-## 多載方法
+## <a name="overloaded-methods"></a>多載方法
 
 
 在 Windows 執行階段中，方法可以是多載的。 不過，如果您宣告多個具有相同參數數量的多載，則只能將 [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) 屬性套用至其中一個多載。 這就是您唯一可從 JavaScript 呼叫的多載。 例如，在下列程式碼中，使用 **int** (在 Visual Basic 中為 **Integer**) 的多載是預設多載。
@@ -138,11 +145,11 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 > End Function
 > ```
 
- **警告** JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。 前述範例中的預設多載分別會傳回 0、42 和 42。
+ **警告**：JavaScript 可讓您將任何值傳遞至 OverloadExample，並將該值強制轉型為參數所需的類型。 您可以使用 "forty-two"、"42" 或 42.3 來呼叫 OverloadExample，但這些值全都會傳遞至預設多載。 前述範例中的預設多載分別會傳回 0、42 和 42。
 
 您無法將 DefaultOverloadAttribute 屬性套用至建構函式。 一個類別中的所有建構函式必須要有不同數量的參數。
 
-## 實作 IStringable
+## <a name="implementing-istringable"></a>實作 IStringable
 
 
 從 Windows 8.1 開始，Windows 執行階段會包含 IStringable 介面，此介面只有一個 IStringable.ToString 方法，可提供相當於 Object.ToString 的基本格式支援。 如果您選擇要在從 Windows 執行階段元件匯出的公用 Managed 類型中實作 IStringable，將會有下列限制：
@@ -178,7 +185,7 @@ ms.openlocfilehash: e7793cd27d996ce2adbfebfbad91541bdccf0d82
 
 請注意，在各種情況下，從機器碼傳送至實作 IStringable 或隱藏其 ToString 實作的 Managed 類型可能會導致非預期的行為。
 
-## 非同步作業
+## <a name="asynchronous-operations"></a>非同步作業
 
 
 若要在元件中實作非同步方法，請在方法名稱結尾處加上 "Async"，並傳回代表非同步動作或作業的 Windows 執行階段介面之一：IAsyncAction、IAsyncActionWithProgress&lt;TProgress&gt;、IAsyncOperation&lt;TResult&gt; 或 IAsyncOperationWithProgress&lt;TResult, TProgress&gt;。
@@ -253,7 +260,7 @@ function asyncExample(id) {
 
 如果您建立選擇性支援取消或進度報告的非同步方法，請考慮新增不具備取消語彙基元或 IProgress&lt;T&gt; 介面參數的多載。
 
-## 擲回例外狀況
+## <a name="throwing-exceptions"></a>擲回例外狀況
 
 
 您可以擲回適用於 Windows app 的 .NET 所包含的任何例外狀況類型。 您無法在 Windows 執行階段元件中宣告自己的公用例外狀況類型，但可宣告和擲回非公用類型。
@@ -262,16 +269,16 @@ function asyncExample(id) {
 
 -   在 JavaScript 中，例外狀況會顯示為物件，其中例外狀況訊息會由堆疊追蹤所取代。 當您在 Visual Studio 中偵錯 app 時，可以在偵錯工具的 [例外狀況] 對話方塊中看到標示為「WinRT 資訊」的原始訊息文字。 您無法從 JavaScript 程式碼存取原始訊息文字。
 
-    > **提示** 雖然堆疊追蹤目前包含 Managed 例外狀況類型，但不建議透過剖析追蹤的方式來辨識例外狀況類型， 而是改用 HRESULT 值 (本節稍後會加以說明)。
+    > **提示**：雖然堆疊追蹤目前包含 Managed 例外狀況類型，但不建議透過剖析追蹤的方式來辨識例外狀況類型， 而是改用 HRESULT 值 (本節稍後會加以說明)。
 
 -   在 C++ 中，例外狀況會顯示為平台例外狀況。 如果 Managed 例外狀況的 HResult 屬性可以對應至某個特定平台例外狀況的 HRESULT，就會使用該特定例外狀況，否則會擲回 [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外狀況。 C++ 程式碼無法使用 Managed 例外狀況的訊息文字。 如果是擲回特定平台例外狀況，則會顯示該例外狀況類型的預設訊息文字，否則不會顯示任何訊息文字。 請參閱[例外狀況 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)。
 -   在 C# 或 Visual Basic 中，例外狀況就是一般的 Managed 例外狀況。
 
 當您從自己的元件擲回例外狀況時，為了讓 JavaScript 或 C++ 呼叫端更容易處理此例外狀況，可以擲回非公開的例外狀況類型，並將其 HResult 屬性值設定為該元件專屬的值。 JavaScript 呼叫端可以透過例外狀況物件的 number 屬性來存取 HRESULT，而 C++ 呼叫端可透過 [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) 屬性來存取。
 
-> **注意** 請使用負值做為 HRESULT 的值。 正值會被解譯為成功，如此在 JavaScript 或 C++ 呼叫端中，就不會擲回任何例外狀況。
+> **注意**：請使用負值作為 HRESULT 的值。 正值會被解譯為成功，如此在 JavaScript 或 C++ 呼叫端中，就不會擲回任何例外狀況。
 
-## 宣告和引發事件
+## <a name="declaring-and-raising-events"></a>宣告和引發事件
 
 當您宣告某個類型包含事件的資料時，請從 Object 衍生，而不要從 EventArgs 衍生，因為 EventArgs 不是 Windows 執行階段類型。 使用 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) 做為事件的類型，並以您的事件引數類型做為泛型類型引數。 引發事件的方式與 .NET Framework 應用程式中的一樣。
 
@@ -279,21 +286,16 @@ function asyncExample(id) {
 
 如果您實作自訂事件存取子 (在 Visual Basic 中為使用 **Custom** 關鍵字宣告事件)，則您在實作時必須依循 Windows 執行階段事件模式。 請參閱 [Windows 執行階段元件中的自訂事件和事件存取子](custom-events-and-event-accessors-in-windows-runtime-components.md)。 請注意，當您處理來自 C# 或 Visual Basic 程式碼的事件時，該事件仍會顯示為一般的 .NET Framework 事件。
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 在您建立要供自己使用的 Windows 執行階段元件之後，可能會發現它封裝的功能對其他開發人員也很有用。 有兩種方式可供您選擇來包裝元件並發佈給其他開發人員。 請參閱[發佈 Managed Windows 執行階段元件](https://msdn.microsoft.com/library/jj614475.aspx)。
 
 如需 Visual Basic 和 C# 語言功能以及 Windows 執行階段之 .NET Framework 支援的詳細資訊，請參閱 [Visual Basic 和 C# 語言參考](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [適用於 Windows 市集 app 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

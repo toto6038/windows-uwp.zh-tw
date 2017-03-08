@@ -3,22 +3,29 @@ author: laurenhughes
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "列舉和查詢檔案和資料夾"
 description: "存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢，來查詢位置中的檔案和資料夾。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: def5e4e75f4208eb91f129160807728e57322064
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。
 
 如需如何儲存通用 Windows 平台 App 資料的詳細指導方針，請參閱 [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) 類別。
 
-**注意：**另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
+**注意**  另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
 
  
 ## <a name="prerequisites"></a>先決條件
@@ -33,7 +40,7 @@ ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 
 ## <a name="enumerate-files-and-folders-in-a-location"></a>列舉位置中的檔案和資料夾
 
-> **注意：**請記得宣告 **picturesLibrary** 功能。
+> **注意**  請記得宣告 **picturesLibrary** 功能。
 
 在這個範例中，我們會先使用 [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) 方法來取得 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根資料夾中 (不在子資料夾) 的所有檔案，並列出每個檔案的名稱。 接下來，我們會使用 [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) 方法來取得 **PicturesLibrary** 中的所有子資料夾，並列出每個子資料夾的名稱。
 
@@ -138,7 +145,7 @@ ms.openlocfilehash: 80c9a2f37b7744d983f3f742895e9ac2408850df
 > ```
 
 
-> **注意：**在 C# 或 Visual Basic 中，請務必在您使用 **await** 運算子的任何方法的方法宣告中放置 **async** 關鍵字。
+> **注意**  在 C# 或 Visual Basic 中，請務必在您使用 **await** 運算子的任何方法的方法宣告中放置 **async** 關鍵字。
  
 
 或者，您可以使用 [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) 方法取得特定位置中的所有項目 (檔案與子資料夾)。 下列範例使用 **GetItemsAsync** 方法取得 [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 的根資料夾中 (不在子資料夾) 的所有檔案與子資料夾。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
@@ -323,9 +330,4 @@ July ‎2015 (2)
    MyImage1.png
    MyImage2.png
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

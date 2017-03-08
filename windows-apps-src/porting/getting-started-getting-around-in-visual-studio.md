@@ -3,17 +3,24 @@ author: mcleblanc
 description: "使用 Visual Studio"
 title: "使用 Visual Studio"
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3f23745d161965d08a35abbef31b8e4342cf1ff6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 開始使用：使用 Visual Studio
+# <a name="getting-started-getting-around-in-visual-studio"></a>開始使用：使用 Visual Studio
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 使用 Microsoft Visual Studio
+## <a name="getting-around-in-microsoft-visual-studio"></a>使用 Microsoft Visual Studio
 
 現在讓我們回到先前建立的專案，並看看如何使用 Microsoft Visual Studio 整合式開發環境 (IDE)。
 
@@ -27,7 +34,7 @@ Microsoft Visual Studio 看起來非常類似，但預設檢視的控制項在 \
 
 如果您覺得有點怪怪的，您會很高興知道您可以在 Visual Studio 中重新排列這些窗格，您可以將來源檔案放在畫面左側，將工具箱放在右側。 事實上，您可以按一下並拖曳任何窗格的標題列來將它重新定位，在您放開滑鼠後，Visual Studio 將會顯示一個灰色方塊，告訴您窗格的停駐位置。 許多窗格在其標題列中也會有小型圖釘圖示。 這可讓您依現狀釘選面板，就地鎖定。 取消釘選窗格，而且您可以摺疊窗格以節省空間：這對小型監視器非常有用。 如果您將窗格弄亂 (別擔心，我們都有過這種經驗)，從 \[**視窗**\] 功能表中選取 \[**重設視窗配置**\] 以還原順序。
 
-## 新增控制項、設定其屬性以及回應事件
+## <a name="adding-controls-setting-their-properties-and-responding-to-events"></a>新增控制項、設定其屬性以及回應事件
 
 現在可將一些控制項新增到您的專案。 然後變更某些屬性，以及撰寫一些程式碼以回應其中一個控制項的事件。
 
@@ -119,13 +126,8 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 若要退出 app，請返回 Visual Studio，點選\ [**偵錯**\] 功能表，然後點選 **停止偵錯** \(或是直接按下 SHIFT + F5\)。 請注意，Visual Studio 可讓您在許多不同的裝置上試用 app，以查看它在每台裝置上的執行方式。
 
-## 下一步
+## <a name="next-step"></a>下一步
 
 [開始使用：常用控制項](getting-started-common-controls.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

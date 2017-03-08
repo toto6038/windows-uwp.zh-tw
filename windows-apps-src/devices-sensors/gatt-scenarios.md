@@ -2,15 +2,22 @@
 author: msatranjr
 ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
 title: "藍牙 GATT"
-description: "本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT)，並提供三個通用 GATT 案例的範例程式碼。"
+description: "本文將概略說明適用於通用 Windows 平台 (UWP) 應用程式的藍牙泛型屬性設定檔 (GATT)，並提供三個通用 GATT 案例的範例程式碼。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c6187f4bfe6f2940b8dbfea0e6441f2fa9ac2c66
+ms.lasthandoff: 02/07/2017
 
 ---
-# 藍牙 GATT
+# <a name="bluetooth-gatt"></a>藍牙 GATT
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要 API **
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 本文將概略說明適用於通用 Windows 平台 (UWP) app 的藍牙泛型屬性設定檔 (GATT)，並提供三個通用 GATT 案例的範例程式碼：擷取藍牙資料、控制藍牙 LE 溫度計裝置，以及控制藍牙 LE 裝置資料的呈現。
 
-## 概觀
+## <a name="overview"></a>概觀
 
 開發人員可以使用 [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 命名空間中的 API 來存取藍牙 LE 服務、描述元及特性。 藍牙 LE 裝置透過下列一組項目公開功能：
 
@@ -44,7 +51,7 @@ ms.openlocfilehash: 508acd449c156fa0f5b14298e4a7700748fc65bb
 
 為方便起見，藍牙 SIG 會保持一份可用的[公用設定檔清單](http://go.microsoft.com/fwlink/p/?LinkID=317977)。
 
-## 抓取藍牙資料
+## <a name="retrieve-bluetooth-data"></a>抓取藍牙資料
 
 在此範例中，App 會使用實作藍牙 LE Health Thermometer Service 的藍牙裝置中的溫度度量。 App 會指定要在有新的溫度度量時接收通知。 透過登錄「Thermometer Characteristic Value Changed」事件的事件處理常式，app 在前景執行時將會收到特性值已變更的事件通知。
 
@@ -165,7 +172,7 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## 控制藍牙 LE 溫度計裝置
+## <a name="control-a-bluetooth-le-thermometer-device"></a>控制藍牙 LE 溫度計裝置
 
 在此範例中，某個 UWP app 會做為虛擬藍牙 LE 溫度計裝置使用。 此裝置也會宣告格式特性，讓使用者能夠擷取除了 [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) 設定檔的標準特性以外的攝氏或華氏度數值。 App 會使用可靠的寫入交易，以確保格式與測量間隔設定為單一值。
 
@@ -285,7 +292,7 @@ void MainPage::Initialize()
 
 ```
 
-## 控制藍牙 LE 裝置資料的呈現
+## <a name="control-the-presentation-of-bluetooth-le-device-data"></a>控制藍牙 LE 裝置資料的呈現
 
 藍牙 LE 裝置會公開可提供當前電池電量給使用者的電池服務。 電池服務包含選擇性的 [**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) 描述元，這能為電池電量資料的轉譯增添些許彈性。 在這個案例提供的範例中，app 會與這類裝置搭配運作，並在對使用者呈現特性值之前，先使用 **PresentationFormats** 屬性設定其格式。
 
@@ -397,10 +404,5 @@ void MainPage::BatteryLevelChanged(
 ```
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

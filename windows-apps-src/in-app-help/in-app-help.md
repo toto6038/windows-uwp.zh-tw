@@ -4,9 +4,17 @@ Description: "設計有效說明，以在應用程式內反應性地顯示。"
 title: "設計應用程式內說明的指導方針。"
 label: In-app help
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: f649a43bed09a6aac2c94f4a24591730093dc297
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 19d4a4e00692bc983a56416951e82f71bf5f6be2
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -54,9 +62,4 @@ ms.openlocfilehash: f649a43bed09a6aac2c94f4a24591730093dc297
 ## <a name="related-articles"></a>相關文章
 
 * [應用程式說明的指導方針](guidelines-for-app-help.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

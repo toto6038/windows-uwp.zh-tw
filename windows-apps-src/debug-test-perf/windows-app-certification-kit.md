@@ -3,19 +3,26 @@ author: mcleblanc
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: "Windows 應用程式認證套件"
 description: "為了讓您的 App 能順利在 Windows 市集上發行或成為 Windows 認證，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 Windows 應用程式認證套件。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f30eaa7edf229872170a3f661c931787938acb2d
+ms.lasthandoff: 02/07/2017
 
 ---
-# Windows 應用程式認證套件
+# <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 為了讓您的 app 能順利[在 Windows 市集上發行](https://msdn.microsoft.com/library/windows/apps/Hh694062)或成為 [Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 [Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 測試通用 Windows app 的先決條件：
 
@@ -28,7 +35,7 @@ ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 安裝更新版本的 [Windows 應用程式認證套件]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，將會取代電腦上安裝的任何舊版套件。
 
-## 以互動方式使用 Windows 應用程式認證套件來驗證 Windows 應用程式
+## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>以互動方式使用 Windows 應用程式認證套件來驗證 Windows 應用程式
 
 1.  從 [開始]**** 功能表中，搜尋 [應用程式]****，找到 [Windows 套件]****，然後按一下 [Windows 應用程式認證套件]****。
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
  
 
-## 從命令列使用 Windows 應用程式認證套件來驗證 Windows app
+## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>從命令列使用 Windows 應用程式認證套件來驗證 Windows app
 
 **重要** Windows 應用程式認證套件必須在使用中的使用者工作階段內容中執行。
 
@@ -78,7 +85,7 @@ ms.openlocfilehash: 478ba4a24cff3c2df34d98157624c9c4339d432a
 
 **注意** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
 
-## 使用低功率電腦進行測試
+## <a name="testing-with-a-low-power-computer"></a>使用低功率電腦進行測試
 
 Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效能為基礎。
 
@@ -86,7 +93,7 @@ Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效
 
 隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並使用最新版的 Windows 應用程式認證套件來測試 app，以確保您的 app 符合最新的效能需求。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)
 * [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
@@ -96,10 +103,5 @@ Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

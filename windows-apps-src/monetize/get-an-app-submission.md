@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: "在 Windows 市集提交 API 中使用這個方法，取得現有 App 提交的資料。"
-title: "使用 Windows 市集提交 API 取得 App 提交"
+title: "使用 Windows 市集提交 API 取得應用程式提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10,UWP, Windows 市集提交 API, 應用程式提交"
 translationtype: Human Translation
-ms.sourcegitcommit: f52059a37194b78db2f9bb29a5e8959b2df435b4
-ms.openlocfilehash: b092658a22b76f044000fb6accc90382dc3bd360
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 1763ba9ebf95c37afbbb219244010f0d6e7cfee4
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="get-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得 App 提交
+# <a name="get-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式提交
 
 
 在 Windows 市集提交 API 中使用這個方法，取得現有 App 提交的資料。 如需使用 Windows 市集提交 API 建立 App 提交的程序的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
@@ -22,11 +29,11 @@ ms.openlocfilehash: b092658a22b76f044000fb6accc90382dc3bd360
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立 App 提交](create-an-app-submission.md)方法進行。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -52,9 +59,9 @@ ms.openlocfilehash: b092658a22b76f044000fb6accc90382dc3bd360
 
 <span/>
 
-### <a name="request-body"></a>要求主體
+### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
 ### <a name="request-example"></a>要求範例
 
@@ -77,7 +84,8 @@ Authorization: Bearer <your access token>
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -189,9 +197,4 @@ Authorization: Bearer <your access token>
 * [更新 App 提交](update-an-app-submission.md)
 * [刪除 App 提交](delete-an-app-submission.md)
 * [取得 App 提交的狀態](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

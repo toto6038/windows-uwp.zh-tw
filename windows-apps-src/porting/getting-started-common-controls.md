@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: E2B73380-D673-48C6-9026-96976D745017
 description: "開始使用常用控制項"
 title: "開始使用常用控制項"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2cd4b7344074c795f14a56cddbe7807c9ffefafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 開始使用：常用控制項
+# <a name="getting-started-common-controls"></a>開始使用：常用控制項
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 常用控制項清單
+## <a name="common-controls-list"></a>常用控制項清單
 
 在上一個小節中，您只使用了兩個控制項：按鈕和文字區塊。 當然，還有非常多的控制項可以使用。 以下是一些您會在 app 及其 iOS 對等項目中使用的常用控制項。 這裡依字母順序列出 iOS 控制項，旁邊是最相似的通用 Windows 平台 (UWP) 控制項。
 
@@ -22,8 +29,8 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 | iOS 控制項 (類別/通訊協定) | 對等的 Windows 市集應用程式控制項 |
 |------------------------------|--------------------------------------|
 | 活動指示器 (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 另請參閱[快速入門：新增進度控制項](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| 廣告橫幅檢視 (**ADBannerView**) 和廣告檢視委派 (**ADBannerViewDelegate**) | 請參閱 [Microsoft Advertising SDK](http://go.microsoft.com/fwlink/p/?LinkId=263494) |
-| 按鈕 (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另請參閱[快速入門：新增按鈕控制項](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
+| 廣告橫幅檢視 (**ADBannerView**) 和廣告檢視委派 (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 另請參閱[在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md) |
+| 按鈕 (UIButton) | [按鈕](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另請參閱[快速入門：新增按鈕控制項](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | 日期選擇器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 影像檢視 (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另請參閱 [Image 和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | 標籤 (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 另請參閱[快速入門：顯示文字](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
@@ -48,20 +55,15 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 
 如果想知道更多控制項，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/mt185406)。
 
-**注意** 如需適用於使用 JavaScript 和 HTML 之 Windows 市集應用程式的控制項清單，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/hh465453)。
+**注意**  如需適用於使用 JavaScript 和 HTML 之 Windows 市集應用程式的控制項清單，請參閱[控制項清單](https://msdn.microsoft.com/library/windows/apps/hh465453)。
 
-### 下一步
+### <a name="next-step"></a>下一步
 
 [開始使用：瀏覽](getting-started-navigation.md)
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Build 2014：XAML UI 和控制項呢？](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [Build 2014：使用通用的 XAML UI 架構開發應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [Build 2014：使用 Visual Studio 建置 XAML 交集的應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

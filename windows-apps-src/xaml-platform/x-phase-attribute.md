@@ -1,41 +1,48 @@
 ---
 author: jwmsft
 title: "x:Phase 屬性"
-description: "搭配使用 x:Phase 與 x:Bind 標記延伸，可用遞增方式轉譯 ListView 和 GridView項目，並改善移動瀏覽體驗。"
+description: "搭配使用 xPhase 與 xBind 標記延伸，可用遞增方式轉譯 ListView 和 GridView 項目，並改善移動瀏覽體驗。"
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 873da2adeea277e0f8f869703aac782c21b0419e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# x:Phase 屬性
+# <a name="xphase-attribute"></a>x:Phase 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 搭配使用 **x:Phase** 與 [{x:Bind} 標記延伸](x-bind-markup-extension.md)，可用遞增方式轉譯 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目，並改善移動瀏覽體驗。 **x:Phase** 可讓您以宣告方式，達成與使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手動控制清單項目的呈現相同的效果。 另請參閱[以遞增方式更新 ListView 與 GridView 項目](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
-## XAML 屬性用法
+## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 
 | 詞彙 | 說明 |
 |------|-------------|
 | PhaseValue | 一個數值，指出元素的處理階段。 預設是 0。 | 
 
-## 備註
+## <a name="remarks"></a>備註
 
 如果使用觸控或滑鼠滾輪時可以快速移動瀏覽清單，清單轉譯項目的速度有可能會跟不上捲動速度，視資料範本的複雜度而定。 特別是使用省電 CPU 的可攜式裝置 (例如手機或平板電腦)，更是如此。
 
 分段可以讓資料範本以遞增方式轉譯，以訂出內容的優先順序，讓最重要的元素最先轉譯。 如此，清單將可在移動瀏覽速度較快時顯示每個項目的部分內容，並在時間允許時轉譯各個範本的較多元素。
 
-## 範例
+## <a name="example"></a>範例
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -77,10 +84,5 @@ ms.openlocfilehash: c6100f59bb91bc3c6451fc2167d914b0a4a36ded
 分段只會對 [{x:Bind}](x-bind-markup-extension.md) 繫結造成影響，不會影響到 [{Binding}](binding-markup-extension.md) 繫結。
 
 只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 就 Windows 10 而言，這是指 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

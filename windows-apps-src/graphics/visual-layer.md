@@ -3,14 +3,21 @@ author: scottmill
 ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "視覺層"
 description: "Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖形層 (DirectX) 之間的組合層。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9ea05f7ba76c7813b200a4c8cd021613f980355d
-ms.openlocfilehash: de6fe0688bec196fc90433ab9274f2e4c4fd9b90
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d1c676808b8b63f42b89a22862eaab63ddc94141
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="visual-layer"></a>視覺層
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在 Windows 10 中，已完成重要的工作來為所有 Windows 應用程式 (不論是傳統型或行動式) 建立新的整合式撰寫器和轉譯引擎。 該工作的結果即是稱為 Windows.UI.Composition 的「組合 WinRT API」，此 API 可讓您存取新的輕量型 Composition 物件，連同新的 Compositor 導向 Animations 與 Effects。
 
@@ -30,7 +37,7 @@ API 可讓開發人員定義及建立一或多個 [**Visual**](https://msdn.micr
 -   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件。 大多數的屬性都在這裡，並且會被其他視覺物件繼承。
 -   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並且會新增插入子系視覺效果的能力。
 -   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，並且包含影像、效果及交換鏈結形式的內容。
--   [**LayerVisual**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.layervisual.aspx) - 是一個 ContainerVisual，其子系壓平合併成單一層。  
+-   [**LayerVisual**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.layervisual.aspx) - 是一個 ContainerVisual，其子系壓平合併成單一層。  
 -   [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) – 管理應用程式與系統撰寫器處理序之間關係的物件處理站。
 
 撰寫器除了是一組豐富的動畫和效果之外，也是一些其他用來裁剪或轉換樹狀結構中視覺效果之組合物件的處理站。
@@ -66,7 +73,7 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 -   閱讀 Kenny Kerr 針對這個 API 撰寫的 MSDN 文章：[圖形與動畫 - Windows 組合邁向 10](https://msdn.microsoft.com/magazine/mt590968) (英文)
 -   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) 有進階的 UI 和組合範例。
 -   [**API 的完整參考文件**](https://msdn.microsoft.com/library/windows/apps/Dn706878)。
--   [已知問題](http://go.microsoft.com/fwlink/?LinkId=823237)。
+
 
  
 
@@ -74,10 +81,5 @@ Windows.UI.Composition 包含一個豐富生動、與架構無關的動畫系統
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

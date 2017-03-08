@@ -1,20 +1,27 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。"
-title: "回應觸控式鍵盤出現"
+Description: "了解如何量身打造顯示或隱藏觸控式鍵盤時應用程式的 UI。"
+title: "回應觸控式鍵盤的出現"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
+keywords: "鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 7db7c360c1e6e3cadf6423d888240bb2f0f4651a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c08e33b95241ce95c7670e197e67496b774897cb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤出現
+# <a name="respond-to-the-presence-of-the-touch-keyboard"></a>回應觸控式鍵盤的出現
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-了解如何量身打造顯示或隱藏觸控式鍵盤時 app 的 UI。
+了解如何量身打造顯示或隱藏觸控式鍵盤時應用程式的 UI。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -145,10 +152,5 @@ public class MyApplication
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -1,22 +1,29 @@
 ---
 author: drewbatgit
-ms.assetid: 
-description: "本文示範如何建立、排程及管理媒體播放 app 的媒體中斷。"
+ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
+description: "本文示範如何建立、排程及管理媒體播放應用程式的媒體中斷。"
 title: "建立、排程與管理媒體中斷"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 2e969e53a29a98223f26353a5444ca9d9ebe2641
-ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8d4e9a87009b50538adac2357badc0a7dfe8f88c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 建立、排程與管理媒體中斷
+# <a name="create-schedule-and-manage-media-breaks"></a>建立、排程與管理媒體中斷
 
-本文示範如何建立、排程及管理媒體播放 app 的媒體中斷。 媒體中斷通常是用來將音訊或視訊廣告插入媒體內容。 從 Windows 10 版本 1607 開始，您可以使用 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 類別，快速且輕鬆地將媒體中斷新增至任何您用來播放 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem)。
+本文示範如何建立、排程及管理媒體播放應用程式的媒體中斷。 媒體中斷通常是用來將音訊或視訊廣告插入媒體內容。 從 Windows 10 版本 1607 開始，您可以使用 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 類別，快速且輕鬆地將媒體中斷新增至任何您用來播放 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 的 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer)。
 
 
 當您排程一或多個媒體中斷之後，系統就會自動在播放期間的指定時間播放您的媒體內容。 **MediaBreakManager** 提供事件，讓您的 app 可以在媒體中斷開始、結束，或當使用者略過它們時加以回應。 您也可以針對媒體中斷存取 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession)，以監視下載與緩衝處理進度更新等事件。
 
-## 排程媒體中斷
+## <a name="schedule-media-breaks"></a>排程媒體中斷
 每個 **MediaPlaybackItem** 物件都有自己的 [**MediaBreakSchedule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule)，您可以在播放項目時，用來設定將播放的媒體中斷。 在 app 中使用媒體中斷的第一個步驟是為您的主要播放內容建立 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem)。 
 
 [!code-cs[MoviePlaybackItem](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMoviePlaybackItem)]
@@ -51,12 +58,12 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[MidrollBreak2](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak2)]
 
-## 略過媒體中斷
+## <a name="skip-media-breaks"></a>略過媒體中斷
 如本文先前所述，您可以設定 **MediaPlaybackItem** 的 [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) 屬性，來防止使用者略過內建控制項的內容。 不過，您隨時都可以從程式碼中呼叫 [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak) 來略過目前的中斷。
 
 [!code-cs[SkipButtonClick](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetSkipButtonClick)]
 
-## 處理 MediaBreak 事件
+## <a name="handle-mediabreak-events"></a>處理 MediaBreak 事件
 
 有數個與媒體中斷相關的事件，您可加以登錄，以便根據媒體中斷的變更狀態來採取動作。
 
@@ -80,12 +87,12 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## 取得目前媒體中斷的相關資訊
+## <a name="get-information-about-the-current-media-break"></a>取得目前媒體中斷的相關資訊
 如本文先前所提及，[**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) 屬性可用來判斷目前正在播放媒體中斷內的哪一個媒體項目。 您可能希望定期檢查目前播放的項目，以更新您的 UI。 請務必先檢查 [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) 屬性是否為 null。 如果該屬性為 null，就表示目前並未播放任何媒體中斷。
 
 [!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
-## 存取目前的播放工作階段
+## <a name="access-the-current-playback-session"></a>存取目前的播放工作階段
 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 物件會使用 **MediaPlayer** 類別，來提供與目前播放的媒體內容相關的資料和事件。 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 也會有 **MediaPlaybackSession**，您可以用來取得與正在播放的媒體中斷內容明確相關的資料和事件。 您可以從播放工作階段取得的資訊包括目前的播放狀態 (播放或暫停)，以及內容中目前的播放位置。 如果媒體中斷內容的外觀比例與您的主要內容不同，您可以使用 [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) 和 [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) 屬性及 [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) 來調整視訊 UI。 您也可以接收像是 [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) 及 [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) 等事件，這些事件可以提供關於您 app 效能的重要遙測資料。
 
 下列範例會登錄適用於 **BufferingProgressChanged 事件**的處理常式；在事件處理常式中，它會更新 UI 以顯示目前的緩衝處理進度。
@@ -94,7 +101,7 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 [!code-cs[BufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBufferingProgressChanged)]
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
 * [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
 * [系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)
@@ -105,10 +112,5 @@ ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

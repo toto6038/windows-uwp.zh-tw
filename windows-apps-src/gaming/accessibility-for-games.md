@@ -3,18 +3,25 @@ author: joannaleecy
 title: "設計無障礙遊戲"
 description: "了解如何設計無障礙遊戲。 使用包容性遊戲設計原則來取得遊戲協助工具。"
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
+ms.author: joanlee
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 協助工具, 遊戲"
 translationtype: Human Translation
-ms.sourcegitcommit: d61b834adb50e71ba67ea32662069f257c33a676
-ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 74a3e3bf3b4f614a112bedd8a2777f8d641237a9
+ms.lasthandoff: 02/07/2017
 
 ---
-#  設計無障礙遊戲
+#  <a name="making-games-accessible"></a>設計無障礙遊戲
 
 協助工具可讓世界上的每個人與每個組織完成更多工作，這也適用於設計無障礙遊戲。 本文章專為遊戲開發人員撰寫，特別是針對遊戲設計人員、製作人及管理人員。 它提供遊戲協助工具指導方針的概觀，這些指導方針衍生自眾多組織 (於下方的參考區段中列出)，並簡介適用於建立更多無障礙遊戲的包容性遊戲設計原則。
 
-##  為什麼要設計無障礙遊戲？
+##  <a name="why-make-games-accessible"></a>為什麼要設計無障礙遊戲？
 
-### 更廣泛的玩家族群
+### <a name="increased-gamer-base"></a>更廣泛的玩家族群
 
 就最基本的層面來說，提供協助工具的商業理由很簡單：
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 如需更詳細的商業理由，請參閱[如何設計無障礙遊戲](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
 
-### 更棒的遊戲
+### <a name="better-games"></a>更棒的遊戲
 
 建立無障礙的遊戲，將能使最終的遊戲成品變得更好。 
 
@@ -34,11 +41,11 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 最終，設計無障礙遊戲的思考程序，通常都會使遊戲變得更好，因為您為玩家設計出一個更為友善且可以自訂的體驗，讓他們可以盡情享受遊戲。
 
-### 社交空間
+### <a name="a-social-space"></a>社交空間
 
 遊戲是一種娛樂，並可以提供數小時的樂趣。 不過對某些人而言，遊戲並不僅僅是娛樂，而也是他們從醫院病床、長期疼痛，或是令人疲憊的社交焦慮中暫時脫離的方式。 玩家將會被傳送到一個自己是主角的遊戲世界。 透過遊戲，他們可以為自己建立社交空間並參與其中，使自己能從因自身障礙所導致的日常掙扎中脫離，並有機會和平常可能無法與之互動的人們進行交流。
 
-##  您目前正在製作的是無障礙遊戲嗎？
+##  <a name="is-the-game-you-are-making-today-accessible"></a>您目前正在製作的是無障礙遊戲嗎？
 
 如果您正打算製作您的第一款無障礙遊戲，以下是一些您需要思考的問題：
 
@@ -51,39 +58,39 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 如果您針對上述問題的答案大部分都是否定，或是不知道答案，便應該開始思考如何將協助工具導入您的遊戲中。
 
-## 定義障礙
+## <a name="defining-disability"></a>定義障礙
 
 「障礙」的定義為「提供的服務、產品或環境不符合個人需求」。 ([包容性影片](https://www.microsoft.com/design/inclusive)，Microsoft.com)。這表示任何人都可能體驗到障礙，且該障礙可能是短期或情境的狀態。 請思考擁有這些狀態的玩家在進行您的遊戲時可能遭遇到的挑戰，並思考如何設計使遊戲的能更加適合他們。 以下是一些需要考量的障礙：
 
-### 視力
+### <a name="vision"></a>視力
 
 *   醫學性的長期症狀，例如青光眼、白內障、色盲、近視及糖尿病視網膜病變
 *   短期的情境狀態，例如小型監視器或螢幕大小、低解析度螢幕，或是因明亮光源照射在監視器上而產生的螢幕反光
         
-### 聽力
+### <a name="hearing"></a>聽力
 
 * 醫學性的長期症狀，例如因疾病或遺傳所造成的完全失聰或部分聽力損失
 * 短期的情境狀態，例如過多的背景噪音，或是為了避免干擾其他人而限制音量
         
-### 運動神經
+### <a name="motor"></a>運動神經
 
 * 醫學性的長期症狀，例如帕金森氏症、肌萎縮性脊髓側索硬化症 (ALS)、關節炎及肌肉萎縮症
 * 短期的情境狀態，例如手部受傷、拿著飲料，或是單手抱著孩子
   
-### 認知
+### <a name="cognitive"></a>認知
 
 * 醫學性的長期症狀，例如讀寫障礙、癲癇、注意力不足過動症 (ADHD)、失智症及失憶症
 * 短期的情境狀態，例如缺乏睡眠，或是暫時性的注意力分散 (例如來自從房子旁駛過救護車的鳴笛聲)
 
-### 說話能力
+### <a name="speech"></a>說話能力
 
 * 醫學性的長期症狀，例如聲帶損傷、構音障礙及失用症
 * 短期的情境狀態，例如牙齒手術，或是飲食
 
 
-## 如何設計無障礙遊戲？
+## <a name="how-to-make-games-more-accessible"></a>如何設計無障礙遊戲？
 
-### 設計轉換：包容性遊戲設計方法
+### <a name="design-shift-inclusive-game-design-approach"></a>設計轉換：包容性遊戲設計方法
 
 包容性設計著重於為更廣泛的消費者 (包括身心障礙人士) 建立更易使用的產品和服務。
 
@@ -93,19 +100,19 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 這個額外步驟可協助找出原始設計中的漏洞。 藉由找出漏洞，您便可以逐一查看原始設計概念，並做出改進。 當您在遊戲設計程序中花時間使之更具包容性，您最後的遊戲成品便會變得更加無障礙。
 
-### 給玩家力量：提供玩家選項
+### <a name="empower-gamers-give-gamers-options"></a>給玩家力量：提供玩家選項
 
 選項是協助工具的一切。 提供選項給您的玩家，讓他們自訂自己的遊戲體驗。 如果您已經有很大的粉絲族群，則很可能會有一大部分的對象不希望您對既有的體驗做出任何改變。 這沒有關係。 提供您的玩家開啟及關閉這些功能的能力，並讓玩家可以個別設定這些功能。
 
-### 創新：發揮創意
+### <a name="innovate-be-creative"></a>創新：發揮創意
 
 有許多有創意的方式可以改進遊戲的協助工具。 戴上您的創意帽，從現有的其他無障礙遊戲學習。 如果您已經擁有現有的遊戲，請在維持核心遊戲機制與體驗原有設計的前提下，學習找出可以改善的現有遊戲功能。 如上所述，遊戲中的協助工具，便是提供玩家選項以讓他們自訂遊戲體驗。
 
-### 核心觀念：使協助工具成為遊戲製作公司的優先事項
+### <a name="evangelize-make-accessibility-a-priority-in-your-game-studio"></a>核心觀念：使協助工具成為遊戲製作公司的優先事項
 
 遊戲開發的時間軸一直都相當緊迫，因此優先處理協助工具將有助於讓程序更容易。 一種方式是從一開始便在考慮協助工具的情況下進行設計。 與您的小組分享協助工具的知識及這麼做的商業理由。
 
-### 檢閱：持續評估遊戲
+### <a name="review-constantly-evaluate-your-game"></a>檢閱：持續評估遊戲
 
 在開發期間，您可以引入檢閱程序，以確保您在每一個步驟都有考量協助工具。 無論您是否正在建立無障礙遊戲，請建立一份如下的檢查清單，協助您的團隊持續評估。
 
@@ -118,19 +125,19 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 | 抬頭顯示器                                       | 可調整的畫面位置、可調整的字型大小、色盲能易於辨識的選項                                                  |        
 | 控制輸入                                     | 可對應到輸入裝置的控制項、自訂控制器支援、允許簡化遊戲輸入                               |        
 
-### 遊戲測試與逐一查看：取得玩家的意見反應
+### <a name="playtest-and-iterate-get-gamers-feedback"></a>遊戲測試與逐一查看：取得玩家的意見反應
 
 組織遊戲測試工作階段時，請邀請遊戲設計所針對的身心障礙人士擔任遊戲測試人員，讓他們進行您的遊戲。 觀察他們進行遊戲的方式，並取得他們的意見反應。 找出需要進行的變更，讓遊戲變得更好。
 
-### 廣為宣傳：讓世界知道您的遊戲是無障礙遊戲
+### <a name="shout-it-out-let-the-world-know-your-game-is-accessible"></a>廣為宣傳：讓世界知道您的遊戲是無障礙遊戲
 
 消費者會想知道您的遊戲是否可讓有障礙的玩家進行。 在遊戲網站和包裝上清楚描述遊戲的協助工具，以確保消費者在購買遊戲時能預期其中的內容。 同時，請記住將遊戲的網站與所有銷售通路以無障礙的方式設計。 最重要的是，請連絡協助工具遊戲社群，並將您的遊戲告知他們。
 
-## 遊戲協助工具功能
+## <a name="game-accessibility-features"></a>遊戲協助工具功能
 
 本節會概述一些可讓遊戲變得更容易存取的功能。 這些功能衍生自[遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)內的指導方針，這些指導方針源自由製作公司、專家及學術界人員組成的團隊所共同提出的研究結果。 如需詳細資訊，請參閱[遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)。 
 
-### 色盲能易於辨識的圖形和使用者介面
+### <a name="colorblind-friendly-graphics-and-user-interface"></a>色盲能易於辨識的圖形和使用者介面
 
 眼睛的視網膜有兩種感光細胞：視錐細胞感受光線位置，視杆細胞感受低光源的環境。 視錐細胞有三種類型 (紅、綠和藍)，讓我們可以正確地檢視色彩。 當這三種其中一種或多種光視錐無法正常運作時，便會產生色盲。 色盲的程度範圍，可從幾乎正常的色彩認知 (但對於紅、綠或藍光的敏感度降低)，到完全無法認知紅色、綠色或藍色。 因為對於藍光不敏感較為少見，針對色盲設計時，選取的色彩會傾向於紅色或綠色色盲：
  
@@ -141,7 +148,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
     
   + 請勿只仰賴色彩來區分遊戲物件 — 請同時使用形狀和圖案
   
-### 隱藏式輔助字幕與字幕
+### <a name="closed-captioning-and-subtitles"></a>隱藏式輔助字幕與字幕
 
 為遊戲設計隱藏式輔助字幕和字幕時，目的是提供可閱讀輔助字幕的選項，使玩家無需音訊也可以享受您的遊戲。 應該要可以將遊戲對話、遊戲音訊及音效等遊戲元件，以文字的方式顯示在畫面上。
 
@@ -154,7 +161,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 *   區別發出聲音或說話的對象。 (範例：「丹尼爾：嗨！」)
 *   提供開啟和關閉隱藏式輔助字幕和字幕的選項。 (其他功能：根據重要性選擇顯示多少聲音資訊的功能)。
 
-### 音訊回饋
+### <a name="sound-feedback"></a>音訊回饋
 
 除了視覺回饋之外，音訊也能提供回饋給玩家。 出色的遊戲音訊設計可以改進針對視覺障礙玩家的可存取性。 以下是一些需要納入考慮的事項：
 
@@ -163,7 +170,7 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 *   設計對玩家能提供有意義資訊的語音。 (範例：使用「敵人正在從後門進入」，而非「敵人正在接近」)。
 *   確保語音以合理的速率說出，並提供速率控制來提供更好的協助工具。
 
-### 完全可對應的控制項
+### <a name="fully-mappable-controls"></a>完全可對應的控制項
 
 有些公司和組織 (例如 [Special Effect](http://www.specialeffect.org.uk/)) 設計了可以用於不同遊戲系統 (例如 Windows 和 Xbox One) 的自訂遊戲控制器。 這個自訂項目可讓不同類型的身心障礙人士接觸本來可能無法進行遊戲。 如需透過自訂控制器而能夠獨立進行遊戲的身心障礙人士詳細資訊，請參閱[他們協助的對象](http://www.specialeffect.org.uk/who-we-helped)。
 
@@ -171,13 +178,13 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 
 標準的 Xbox One 和 Xbox Elite 控制器皆提供控制器自訂項目，以進行精確的遊戲。 如需詳細資訊，請參閱 [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
 
-### 更多的難度等級選項
+### <a name="wider-selection-of-difficulty-levels"></a>更多的難度等級選項
 
 電玩遊戲是用來提供娛樂的。 藉由調整難度等級來讓玩家體驗適當程度的挑戰，對遊戲開發人員是一項挑戰。 首先，並非所有玩家都有相同的技巧程度和能力，因此增加更多的難度選項選擇，可以提升使玩家獲得適當程度挑戰的機會。 同時，更多的選擇也能讓您的電玩遊戲更容易存取，因為這可能會使更多身心障礙人士得以進行您的遊戲。 請記住，玩家想要克服遊戲中的挑戰並獲得獎勵。 他們不想要進行一個自己無法獲勝的遊戲。
 
 調整遊戲的難度等級是一項纖細的工作。 如果太簡單，玩家可能會覺得無聊。 如果太困難，玩家可能會放棄，並再也不會繼續進行該遊戲。 這個拿捏平衡的程序既是門藝術，也是門科學。 有許多方式可讓遊戲等級具有適當程度的挑戰。 有些遊戲提供簡化的輸入，例如使遊戲具有單一按鍵的遊戲選項、透過倒轉和重玩選項使遊戲變得更容易，或是在玩家嘗試數次並失敗後減少敵人數量或削弱敵人，使遊戲更容易進行。
 
-### 光敏性癲癇症測試
+### <a name="photosensitivity-epilepsy-testing"></a>光敏性癲癇症測試
 
 光敏性癲癇症 (PSE) 是由視覺刺激 (例如閃爍的光線，或特定的活動式視覺形式與模式) 觸發而導致的症狀。 大約有三個百分比的人會發生這種症狀，並在兒童和青少年族群中較為常見。
 
@@ -189,34 +196,29 @@ ms.openlocfilehash: 185e79b96cdc64f3ead6c85d067659b9087ec082
 *   使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：由 Cambridge Research System Ltd 與 Graham Harding 教授開發的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/))。 
 *   在遊戲關卡間設計中斷點，鼓勵玩家休息以避免不停地進行遊戲。
 
-## 其他協助工具資源
+## <a name="other-accessibility-resources"></a>其他協助工具資源
 
 以下是一些提供遊戲協助工具其他資訊的外部網站。
 
-### 遊戲協助工具指導方針
+### <a name="game-accessibility-guidelines"></a>遊戲協助工具指導方針
 * [遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)
 * [AbleGamers Foundation 指導方針](http://www.includification.com/)
 * [設計通用無障礙 (UA) 遊戲](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
-### 自訂輸入控制器
+### <a name="custom-input-controllers"></a>自訂輸入控制器
 * [Special effect](http://www.specialeffect.org.uk/)
 * [War fighter engaged](http://www.warfighterengaged.org/)
 
-## 引用參考資料
+## <a name="references-used"></a>引用參考資料
 * [遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)
 * [AbleGamers Foundation 指導方針](http://www.includification.com/)
 * [Color Blind Awareness，一間以社群利益為重的公司](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [如何製作優質字幕 - 一篇由 Ian Hamilton 所撰寫的 Gamasutra 部落格文章](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
 * [適用所有程式的創新](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
 
-## 相關連結
+## <a name="related-links"></a>相關連結
 * [包容性設計](https://www.microsoft.com/design/inclusive)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發無障礙的 UWP App](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
 * [適用於協助工具電子書的工程軟體](https://www.microsoft.com/download/details.aspx?id=19262)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

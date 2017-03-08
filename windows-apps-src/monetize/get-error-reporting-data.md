@@ -3,15 +3,22 @@ author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。"
 title: "取得錯誤報告資料"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 錯誤"
 translationtype: Human Translation
-ms.sourcegitcommit: dcf4c263ff3fd8df846d1d5620ba31a9da7a5e6c
-ms.openlocfilehash: 800405bcac9b05af0e0295c88c27cbe3d2387947
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0d99318a2a8deba78503163c76a425c132e7de01
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="get-error-reporting-data"></a>取得錯誤報告資料
 
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您 App 的彙總錯誤報告資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗] 區段也提供此資訊。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式的彙總錯誤報告資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗]**** 區段也提供此資訊。
 
 您可以使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)與[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)方法，擷取其他錯誤資訊。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: 800405bcac9b05af0e0295c88c27cbe3d2387947
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 描述                                                                 |
+| 標頭        | 類型   | 說明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -44,7 +51,7 @@ ms.openlocfilehash: 800405bcac9b05af0e0295c88c27cbe3d2387947
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取錯誤報告資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -169,9 +176,4 @@ Authorization: Bearer <your access token>
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得 App 評分](get-app-ratings.md)
 * [取得 App 評論](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

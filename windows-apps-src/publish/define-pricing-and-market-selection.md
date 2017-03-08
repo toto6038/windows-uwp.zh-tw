@@ -3,54 +3,61 @@ author: jnHs
 Description: "Windows 市集可觸及全球 200 多個國家與地區的客戶。"
 title: "制定價格和選擇市場"
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 3fb8594748d303216a4437983604b5d78c993934
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: acf14f886f36d74941769954041325514a386e86
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 制定價格和選擇市場
+# <a name="define-pricing-and-market-selection"></a>制定價格和選擇市場
 
 
 Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選擇提供您 app 的市場，且利用根據各市場為基礎自訂價格的選項，決定向客戶收取費用的價格。
 
-**注意** 請務必參閱我們的[協助您全球化 app 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh969150)。
+**注意**  請務必參閱我們的[協助您全球化 app 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh969150)。
 
  
 
-## 基本價格
+## <a name="base-price"></a>基本價格
 
 
 當您選取您應用程式的**基本價格**時，會在每個販售您應用程式的市場中使用該價格，除非您為特定市場指定自訂價格。
 
-您可以將**基本價格**設定為**免費**，或者您可以選擇可用的價格區間。 價格區間會在您選擇散佈應用程式的所有國家/地區設定銷售價格。 價格區間從 .99 美元開始，逐額遞增 (1.29 美元、1.49 美元、1.99 美元等)。 遞增值會隨著價格變高而增加。
+您可以將**基本價格**設定為**免費**，或者您可以選擇可用的價格區間。 價格區間會在您選擇散佈應用程式的所有國家/地區設定銷售價格。 價格區間從 $0.99 美元開始，其餘區間依次遞增提供 ($1.10 美元、$1.29 美元，以此類推)。 遞增值一般會隨著價格變高而增加。
 
-> **注意** 這些價格區間也適用於[附加元件](add-on-submissions.md)。
+> **注意**  這些價格區間也適用於[附加元件](add-on-submissions.md)。
 
 每個價格區間對於市集所提供 60 種以上的貨幣都有對應值。 我們使用這些值協助您在全球以可資比較的價格帶來銷售應用程式。 不過，由於貨幣匯率隨時都在變化，因此確切的銷售金額可能會隨貨幣種類的不同而有些微差異。
 
 請記住，您選取的價格區間應該包含客戶必須支付的銷售或增值稅。 若要深入了解您的 app 在選取市場中的稅務關連相關資訊，請參閱[付費 app 的稅務詳細資料](tax-details-for-paid-apps.md)。 另請參閱下列[特定市場的定價考量](#price-considerations-for-specific-markets)。
 
-## 市場和自訂價格
+## <a name="markets-and-custom-prices"></a>市場和自訂價格
 
 
 您的應用程式預設會以其基本價格列在所有可能的市場中，包括任何我們未來可能會新增的市場。
 
 若要變更這些設定，請展開您 app 提交的**價格與可用性**頁面上的**市場和自訂價格**區段。 您可以取消選取個別市場以排除它們，或按一下 [取消全選]****，然後新增您選擇的個別市場。
 
-> **重要** 遵循當地的任何法規要求是您的責任，即使這裡或 Windows 開發人員中心儀表板並未列出這些要求。
+> **重要**   遵循當地的任何法規要求是您的責任，即使這裡或 Windows 開發人員中心儀表板並未列出這些要求。
 
 如果您想在特定市場中針對您的 App 設定自訂價格，您也可以在此處進行；否則根據預設，您的 App 將會依它的基本價格 (該市場的本地貨幣) 提供。
 
-> **注意** 您也可以在特定市場針對[附加元件提交](add-on-submissions.md)設定自訂價格。
+> **注意**  您也可以在特定市場針對[附加元件提交](add-on-submissions.md)設定自訂價格。
 
 請記住，即使您選取全部的市場，當地法律限制或其他因素都可能造成某些 App 無法在部分國家/地區中列出。 此外，某些市場可能會有與年齡分級相關的特定需求。 如果您的 app 不符合這些需求，我們將無法在該市場中提供您的 app。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
 
-> **注意** 對於目標為 Windows 8 或 Windows 8.1 的 app，某些個別市場會將其視為一個單獨的「世界其他地方」市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8-x)。 也請記住 Windows 8 或 Windows 8.1 上的客戶將只能看到 app 以基本價格列出，就算您在他們的市場變更價格也是如此。
+> **注意**  對於目標為 Windows 8 或 Windows 8.1 的 app，某些個別市場會將其視為一個單獨的「世界其他地方」市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8-x)。 也請記住 Windows 8 或 Windows 8.1 上的客戶將只能看到 app 以基本價格列出，就算您在他們的市場變更價格也是如此。
 
  
 
-## Windows 市集消費者市場
+## <a name="windows-store-consumer-markets"></a>Windows 市集消費者市場
 
 
 您可以選擇在下列一或多個市集中列出您的 App (或附加元件)。
@@ -298,7 +305,7 @@ Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選
 -   尚比亞
 -   辛巴威
 
-## 特定市場的定價考量
+## <a name="price-considerations-for-specific-markets"></a>特定市場的定價考量
 
 
 像是禮品卡和電信業者帳單等付款方式，有助於提高付費 app 和 app 內購買項目的銷售量。 由於使用這類付款方式的成本較高，因此在使用下表所列付款方式的國家/區域中，計算付費 app 與 app 內購買交易的應付「App 收益」時，「市集費用」會再從「淨收入」扣除「商業拓展調整」。 如果您 app 上市的國家/地區適用「商業拓展調整」，則您制定市場定價策略時，應將它納入考量因素。 您可在[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)中，找到「商業拓展調整」的詳細資料。
@@ -375,7 +382,7 @@ Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選
 
  
 
-## 針對 Windows 8.x 的「世界其他地方」市場
+## <a name="rest-of-world-markets-for-windows-8x"></a>針對 Windows 8.x 的「世界其他地方」市場
 
 
 如果您的 app (包括套件) 是以對 Windows 8.x 為目標，請特別注意：對於在 Windows 8.x 上使用「市集」的客戶，有許多市場都被視為單一的「世界其他地方」市場，就算這些市場目前在 Windows 開發人員中心儀表板中顯示為單獨的市場 (相對於較早版本的 Windows 市集儀表板，提供可選擇的「世界其他地方」市場選項)。
@@ -551,10 +558,5 @@ Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選
 -   尚比亞
 -   辛巴威
 
-> **注意** 如需您可以註冊開發人員帳戶的國家和地區清單，請參閱[帳戶類型、位置和費用](https://msdn.microsoft.com/library/windows/apps/jj863494)。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+> **注意**  如需您可以註冊開發人員帳戶的國家和地區清單，請參閱[帳戶類型、位置和費用](https://msdn.microsoft.com/library/windows/apps/jj863494)。
 

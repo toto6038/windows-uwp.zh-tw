@@ -3,13 +3,20 @@ author: mtoepke
 title: "BasicReaderWriter 的完整程式碼"
 description: "讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。"
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, BasicReaderWriter"
 translationtype: Human Translation
-ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
-ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1dc7ba0b25ceeb5b27bc718bed1db0e2db39b6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# BasicReaderWriter 的完整程式碼
+# <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter 的完整程式碼
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,29 +27,29 @@ ms.openlocfilehash: de6ab2687cfbe7b485e51bc90811b1988e29fb7e
 
 -   [技術](#technologies)
 -   [需求](#requirements)
--   [檢視程式碼 (C++)](#view-the-code-c-)
+-   [檢視程式碼 (C++)](#view-the-code-c)
 
 
-## 下載位置
+## <a name="download-location"></a>下載位置
 
 此範例不提供下載。
 
 
-## 技術
+## <a name="technologies"></a>技術
 
 **程式設計語言** - C++  
 **程式設計模型** - Windows 執行階段
 
 
-## 需求
+## <a name="requirements"></a>需求
 
  **最低支援的用戶端** - Windows 10       
  **最低支援的伺服器** - Windows Server 2016 Technical Preview 
 
-## 檢視程式碼 (C++)
+## <a name="view-the-code-c"></a>檢視程式碼 (C++)
 
 
-## BasicReaderWriter.h
+## <a name="basicreaderwriterh"></a>BasicReaderWriter.h
 
 
 ```cpp
@@ -91,7 +98,7 @@ internal:
 };
 ```
 
-## BasicReaderWriter.cpp
+## <a name="basicreaderwritercpp"></a>BasicReaderWriter.cpp
 
 
 ```cpp
@@ -262,10 +269,5 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

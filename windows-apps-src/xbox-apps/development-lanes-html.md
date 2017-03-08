@@ -2,13 +2,21 @@
 author: JordanEllis6809
 title: "在 Xbox 上進行 HTML 遊戲開發"
 description: "在 Xbox 上進行 HTML UWP 遊戲開發。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 translationtype: Human Translation
-ms.sourcegitcommit: c20aaad74acde12cdf2b7db342dac2c8c376560b
-ms.openlocfilehash: 992182f69fe65967771b8bf75b1cb9883da3633a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9f7a70bb726fc6eb6f7465068cf33acb7aa33a39
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 將 HTML 遊戲移到 Xbox 上的 UWP
+# <a name="bringing-html-games-to-uwp-on-xbox"></a>將 HTML 遊戲移到 Xbox 上的 UWP
 Xbox One 是 HTML 5 遊戲的絕佳平台。 HTML 5 遊戲是在 [Edge](https://developer.microsoft.com/microsoft-edge/) 瀏覽器引擎上執行。 Edge 非常快速，並且完全支援 HTML 5 和 CSS 3 功能，例如 WebGL 和畫布。
 
 受歡迎的引擎 (例如 [Construct 2](https://www.scirra.com/blog/176/announcing-xbox-one-export-beta)) 也支援 Xbox One。 我們尚未針對所有的 HTML 架構和引擎進行測試，但就目前來看，我們相信大部分的架構和引擎都可以在 Xbox One 上運作。
@@ -19,12 +27,7 @@ Xbox One 是在通用 Windows 平台上執行，因此它和其他 Microsoft 裝
 
 若要開始，請下載您偏好的引擎，並尋找 Windows 10 App 的指示。 另請務必閱讀[入門指南](getting-started.md)，以取得如何將主機變成開發套件的相關資訊，以及從 Visual Studio 進行部署的方式。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

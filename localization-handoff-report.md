@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1520636db8a39f4aee867db403a11a4244e63dc8?path=windows-apps-src%2Flaunch-resume%2Frun-a-background-task-on-a-timer-.md&_a=contents) | HandedOffSuccess | [Details](#6f834c91cd0c71f6d7687d9f69224ed747e45a6d3890)
+ [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents) | HandedOffSuccess | [Details](#2016d8ce3b3afe116ff44aeb17047d93257c17a24844)
+ [windows-apps-src\whats-new\windows-10-build-15021-api-diff.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fwhats-new%2Fwindows-10-build-15021-api-diff.md&_a=contents) | HandedOffSuccess | [Details](#aa9d4f0e3724e8490777d3e1893297d3c89bc2be7854)
 
 ## Item Details
-##### <a name='6f834c91cd0c71f6d7687d9f69224ed747e45a6d3890'></a> Source: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/1520636db8a39f4aee867db403a11a4244e63dc8?path=windows-apps-src%2Flaunch-resume%2Frun-a-background-task-on-a-timer-.md&_a=contents)
+##### <a name='2016d8ce3b3afe116ff44aeb17047d93257c17a24844'></a> Source: [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/1bb5805027b1bc7788bdc3a4b629089e8df12eed?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Frun-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-tw.xlf&_a=contents)
-* Handoff Datetime: 2017-02-22 01:28:32
+* Handoff File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/763453c37ddec651217467c5d52aae1d9f7905d4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-08 02:18:18
 * Handoff Reason: Include
 * Handoff Name: 
 * Archive File: 
@@ -21,11 +22,25 @@
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Handback Name: 
-* Current Target File: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/087b86fce1c3ddccfe5bc3b540353e6cffe5bc18?path=windows-apps-src%2Flaunch-resume%2Frun-a-background-task-on-a-timer-.md&_a=contents)
-* Current Handback File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Frun-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-tw.xlf&_a=contents)
-* Current Handback Datetime: 2017-02-01 18:38:50
-* Bilingual File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/56daa986b7393511e1969177fa46ad0d4900623e?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Frun-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.zh-tw.xlf&_a=contents)
-* Bilingual Datetime: 2017-02-01 18:45:35
+* Current Target File: [windows-apps-src\publish\create-a-custom-app-promotion-campaign.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp.zh-tw/commit/d2aa6a6f9d6521770daa43d329ee5f1a64c8a9c0?path=windows-apps-src%2Fpublish%2Fcreate-a-custom-app-promotion-campaign.md&_a=contents)
+* Current Handback File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/c506d526ed8e9833859711b0d0a3fd67fbd500b2?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.zh-tw.xlf&_a=contents)
+* Current Handback Datetime: 2017-03-07 16:20:17
+* Bilingual File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handback/commit/c506d526ed8e9833859711b0d0a3fd67fbd500b2?path=ol-handback%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fcreate-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.zh-tw.xlf&_a=contents)
+* Bilingual Datetime: 2017-03-07 16:26:38
+* [Back to Top](#report-top)
+
+##### <a name='aa9d4f0e3724e8490777d3e1893297d3c89bc2be7854'></a> Source: [windows-apps-src\whats-new\windows-10-build-15021-api-diff.md](https://cpubwin.visualstudio.com/windows-uwp/_git/windows-uwp/commit/caa9919fc0cb9779342a533541fc877071e2dc87?path=windows-apps-src%2Fwhats-new%2Fwindows-10-build-15021-api-diff.md&_a=contents)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [windows-10-build-15021-api-diff.37f72fc4bf8c828e205f3cc1c4c20ea6381e2883.zh-tw.xlf](https://cpubwin.visualstudio.com/windows-uwp/_git/WDCLib.handoff/commit/763453c37ddec651217467c5d52aae1d9f7905d4?path=ol-handoff%2Fcpubwin%2Fwindows-uwp.zh-tw%2Fmaster%2Fwindows-10-build-15021-api-diff.37f72fc4bf8c828e205f3cc1c4c20ea6381e2883.zh-tw.xlf&_a=contents)
+* Handoff Datetime: 2017-03-08 02:18:18
+* Handoff Reason: Include
+* Handoff Name: 
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Handback Name: 
 * [Back to Top](#report-top)
 
 

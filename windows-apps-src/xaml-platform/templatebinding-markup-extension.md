@@ -3,38 +3,45 @@ author: jwmsft
 description: "連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。"
 title: "TemplateBinding 標記延伸"
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7f279590cc1351efee2552e237ab095674768463
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# {TemplateBinding} 標記延伸
+# <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 **TemplateBinding** 只能在 XAML 的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義中使用。
 
-## XAML 屬性用法
+## <a name="xaml-attribute-usage"></a>XAML 屬性用法
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 屬性用法 (適用於範本或樣式中的 Setter 屬性)
+## <a name="xaml-attribute-usage-for-setter-property-in-template-or-style"></a>XAML 屬性用法 (適用於範本或樣式中的 Setter 屬性)
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML 值
+## <a name="xaml-values"></a>XAML 值
 
 | 詞彙 | 說明 |
 |------|-------------|
 | propertyName | 正在 setter 語法中設定的屬性的名稱。 必須是相依性屬性。 |
 | sourceProperty | 存在於範本化類型中其他相依性屬性的名稱。 |
 
-## 備註
+## <a name="remarks"></a>備註
 
 不論您是一個自訂控制項作者，還是要取代現有控制項的控制項範本，定義控制項範本的方法時，使用 **TemplateBinding** 是相當基礎的一個部分。 如需詳細資訊，請參閱[快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)。
 
@@ -50,9 +57,9 @@ ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 
 **TemplateBinding** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
-**注意：**在 Windows 執行階段 XAML 處理器實作中，沒有 **TemplateBinding** 的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
+**注意**  在 Windows 執行階段 XAML 處理器實作中，沒有 **TemplateBinding** 的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
@@ -60,10 +67,5 @@ ms.openlocfilehash: 4242bb606f29a6b70213dc8cde818ed86c3dda8d
 * [XAML 概觀](xaml-overview.md)
 * [相依性屬性概觀](dependency-properties-overview.md)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

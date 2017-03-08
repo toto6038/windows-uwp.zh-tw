@@ -4,18 +4,25 @@ Description: "本指南可協助您啟發應用程式，以處理 Windows 資訊
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "建置同時使用企業和個人資料的啟發式應用程式"
+ms.author: normesta
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, wip, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式"
+ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 translationtype: Human Translation
-ms.sourcegitcommit: bf1c47e9cca45b626a45ca664bf2bb4be9c529e0
-ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 建置同時使用企業和個人資料的啟發式應用程式
+# <a name="build-an-enlightened-app-that-consumes-both-enterprise-data-and-personal-data"></a>建置同時使用企業和個人資料的啟發式應用程式
 
+__備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
 
-            __注意__ Windows 資訊保護 (WIP) 原則可以套用至 Windows10 (版本 1607)。
-
-應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
+*開明的*應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
 
 在本指南中，我們將說明如何建置啟發式應用程式。 當您完成後，原則系統管理員將會信任並允許您的應用程式使用其組織資料。 而員工最愛的是，就算他們從組織的行動裝置管理 (MDM) 取消註冊或是完全離該組織，其裝置上的個人資料也能完好如初。
 
@@ -26,15 +33,15 @@ ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
 
 如果您已準備好進行每項工作，我們就開始吧。
 
-## 首先請備妥您需要的項目：
+## <a name="first-gather-what-you-need"></a>首先請備妥您需要的項目：
 
 您將需要：
 
-* 執行 Windows10 (版本 1607) 的測試虛擬機器 (VM)。 這個測試 VM 將用來對您的應用程式偵錯。
+* 執行 Windows 10 (版本 1607) 的測試虛擬機器 (VM)。 這個測試 VM 將用來對您的應用程式偵錯。
 
-* 執行 Windows10 (版本 1607) 的開發電腦。 這可能是您的測試 VM (如果您有在其中安裝 Visual Studio)。
+* 執行 Windows 10 (版本 1607) 的開發電腦。 這可能是您的測試 VM (如果您有在其中安裝 Visual Studio)。
 
-## 設定開發環境
+## <a name="setup-your-development-environment"></a>設定開發環境
 
 您將執行下列工作︰
 
@@ -74,8 +81,7 @@ ms.openlocfilehash: 82b674c72126c66aff34b0396a2c32f88023dd25
        <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
-   >
-            *選擇性閱讀*："rescap" 前置詞表示「受限制的功能」。 請參閱[特殊和受限制的功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+   >*選擇性閱讀*："rescap" 前置詞表示*「受限制的功能」*。 請參閱[特殊和受限制的功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 4. 將這個命名空間新增到您的封裝資訊清單檔案︰
 
@@ -113,7 +119,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
 ```
 
-## 判斷執行應用程式的作業系統是否支援 WIP
+## <a name="determine-whether-the-operating-system-that-runs-your-app-supports-wip"></a>判斷執行應用程式的作業系統是否支援 WIP
 
 請使用 [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) 函式來判定。
 
@@ -130,9 +136,9 @@ else
 }
 ```
 
-Windows10 (版本 1607) 支援 Windows 資訊保護。
+Windows 10 (版本 1607) 支援 Windows 資訊保護。
 
-## 讀取企業資料
+## <a name="read-enterprise-data"></a>讀取企業資料
 
 檔案、網路端點、剪貼簿資料和您透過分享協定接受的資料都有一個企業識別碼。
 
@@ -140,7 +146,7 @@ Windows10 (版本 1607) 支援 Windows 資訊保護。
 
 我們先從檔案開始。
 
-### 從檔案讀取資料
+### <a name="read-data-from-a-file"></a>從檔案讀取資料
 
 **步驟 1︰ 取得檔案控制代碼**
 
@@ -197,7 +203,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
 
-### 從網路端點讀取資料
+### <a name="read-data-from-a-network-endpoint"></a>從網路端點讀取資料
 
 建立要從企業端點讀取的受保護執行緒內容。
 
@@ -331,7 +337,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-### 從剪貼簿讀取資料
+### <a name="read-data-from-the-clipboard"></a>從剪貼簿讀取資料
 
 **取得使用剪貼簿資料的權限**
 
@@ -389,7 +395,7 @@ private bool IsClipboardAllowedAsync()
 
 **避免提示使用者同意對話方塊**
 
-有一份既不是「個人」也不是「企業」的新文件。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
+有一份既不是*「個人」*也不是*「企業」*的新文件。 它只是一份新文件。 如果使用者將企業資料貼入該文件，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。 這項工作與保護資料無關。 而是關於在應用程式建立全新項目時，避免讓使用者接收同意對話方塊。
 
 ```csharp
 private async void PasteText(bool isNewEmptyDocument)
@@ -428,11 +434,11 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
 
-### 從分享協定讀取資料
+### <a name="read-data-from-a-share-contract"></a>從分享協定讀取資料
 
 當員工選擇您的應用程式來分享資訊時，您的應用程式會開啟一個包含該內容的新項目。
 
-如先前所述，新項目不是「個人」或「企業」文件。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
+如先前所述，新項目不是*「個人」*或*「企業」*文件。 它只是一份新文件。 如果您的程式碼會將企業內容新增至該項目，Windows 會強制執行原則，並提示使用者同意對話方塊。 這個程式碼可避免此狀況。
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -482,13 +488,13 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-## 保護企業資料
+## <a name="protect-enterprise-data"></a>保護企業資料
 
 保護離開應用程式的企業資料。 當您在頁面中顯示資料、將資料儲存至檔案或網路端點或是透過分享協定時，資料會離開您的應用程式。
 
 ### <a id="display-data"></a>保護出現在頁面的資料
 
-當您在頁面中顯示資料時，請讓 Windows 知道是什麼類型的資料 (個人或企業)。 若要這樣做，請「標記」目前的應用程式檢視，或標記整個應用程式處理程序。
+當您在頁面中顯示資料時，請讓 Windows 知道是什麼類型的資料 (個人或企業)。 若要這樣做，請*「標記」*目前的應用程式檢視，或標記整個應用程式處理程序。
 
 當您標記檢視或處理程序時，Windows 會對它強制執行原則。 這有助於防止因為您的應用程式無法控制的動作所造成的資料遺漏。 例如在電腦上，使用者可以使用 CTRL-V 來複製檢視中的企業資訊，然後將該資訊貼到另一個應用程式。 Windows 會提供針對該動作的防護。 Windows 也可強制執行分享協定。
 
@@ -532,7 +538,7 @@ bool result =
 > **API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-### 保護寫入檔案的資料
+### <a name="protect-data-to-a-file"></a>保護寫入檔案的資料
 
 建立受保護的檔案，然後寫入資料。
 
@@ -603,7 +609,7 @@ FileProtectionInfo fileProtectionInfo =
 
 
 
-### 以背景處理程序保護寫入檔案的資料
+### <a name="protect-data-to-a-file-as-a-background-process"></a>以背景處理程序保護寫入檔案的資料
 
 當裝置的畫面被鎖定時，可以執行這個程式碼。 如果系統管理員已設定「鎖定時的資料保護」(DPL) 原則，Windows 會移除從裝置記憶體存取受保護資源所需的加密金鑰。 這可防止裝置遺失時的資料遺漏問題。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。
 
@@ -670,7 +676,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
-### 保護檔案的一部分
+### <a name="protect-part-of-a-file"></a>保護檔案的一部分
 
 在大部分情況下，個別儲存企業和個人資料會較為井然有序，但您也可以將它們儲存到同一個檔案。 例如，Microsoft Outlook 可以將企業郵件連同個人郵件儲存在單一封存檔案中。
 
@@ -746,7 +752,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     "'></EnterpriseDataMarker>");
 ```
 
-### 讀取檔案受保護的部分
+### <a name="read-the-protected-part-of-a-file"></a>讀取檔案受保護的部分
 
 以下是從該檔案讀取企業資料的方式。
 
@@ -826,7 +832,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
 
-### 保護寫入資料夾的資料
+### <a name="protect-data-to-a-folder"></a>保護寫入資料夾的資料
 
 您可以建立一個受保護的資料夾。 如此一來，您新增至該資料夾的任何項目都會自動受到保護。
 
@@ -861,7 +867,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
 
-### 保護寫入網路端點的資料
+### <a name="protect-data-to-a-network-end-point"></a>保護寫入網路端點的資料
 
 建立受保護的執行緒內容，將該資料傳送到企業端點。  
 
@@ -913,7 +919,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
-### 保護您的應用程式透過分享協定共用的資料
+### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>保護您的應用程式透過分享協定共用的資料
 
 如果您要讓使用者透過您的應用程式分享內容，您必須實作分享協定和處理 [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件。
 
@@ -945,7 +951,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
 
-### 保護您複製到其他位置的檔案
+### <a name="protect-files-that-you-copy-to-another-location"></a>保護您複製到其他位置的檔案
 
 ```csharp
 private async void CopyProtectionFromOneFileToAnother
@@ -967,7 +973,7 @@ private async void CopyProtectionFromOneFileToAnother
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
 
-### 於裝置畫面鎖定時保護企業資料
+### <a name="protect-enterprise-data-when-the-screen-of-the-device-is-locked"></a>於裝置畫面鎖定時保護企業資料
 
 當裝置鎖定時，移除記憶體中所有的敏感資料。 當使用者解除鎖定裝置後，您的應用程式可以安全地重新加回該資料。
 
@@ -975,7 +981,7 @@ private async void CopyProtectionFromOneFileToAnother
 
 處理 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx) 事件，使您的應用程式知道螢幕何時解除鎖定。 無論系統管理員是否根據鎖定原則設定安全的資料保護，都會引發這個事件。
 
-#### 當螢幕鎖定時，移除記憶體中的敏感資料
+#### <a name="remove-sensitive-data-in-memory-when-the-screen-is-locked"></a>當螢幕鎖定時，移除記憶體中的敏感資料
 
 保護敏感資料，並關閉您的應用程式在受保護的檔案上開啟的任何檔案資料流，以協助確保系統不會快取記憶體中的所有敏感資料。
 
@@ -1021,7 +1027,7 @@ private async void ProtectionPolicyManager_ProtectedAccessSuspending(object send
 [ProtectedAccessSuspendingEventArgs.GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedaccesssuspendingeventargs.getdeferral.aspx)<br>
 [Deferral.Complete](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx)<br>
 
-#### 當裝置解除鎖定後，將敏感資料重新加回
+#### <a name="add-back-sensitive-data-when-the-device-is-unlocked"></a>當裝置解除鎖定後，將敏感資料重新加回
 
 當裝置解除鎖定，而且裝置上的金鑰又再次可用時，就會引發 [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedaccessresumed.aspx)。
 
@@ -1056,7 +1062,7 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed(object sender,
 [DataProtectionManager.UnprotectAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.unprotectasync.aspx)<br>
 [BufferProtectUnprotectResult.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.bufferprotectunprotectresult.aspx)<br>
 
-## 在受保護的內容被撤銷時處理企業資料
+## <a name="handle-enterprise-data-when-protected-content-is-revoked"></a>在受保護的內容被撤銷時處理企業資料
 
 如果您想要您的應用程式在裝置從 MDM 取消註冊時收到通知，或是原則系統管理員明確撤銷企業資料的存取權時，請處理 [**ProtectionPolicyManager_ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx) 事件。
 
@@ -1087,15 +1093,10 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 > **API** <br>
 [ProtectionPolicyManager_ProtectedContentRevoked](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.protectedcontentrevoked.aspx)<br>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 [Windows 資訊保護 (WIP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
  
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

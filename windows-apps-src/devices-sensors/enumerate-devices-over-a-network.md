@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: "列舉網路上的裝置"
 description: "除了探索本機連線的裝置，您也可以使用 Windows.Devices.Enumeration API 來列舉無線及網路通訊協定上的裝置。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6eca7156c8f81a9a89e006c09a232a255f3a8725
-ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 70362ebd77f62aea3bba694b9f6592771d4ad273
+ms.lasthandoff: 02/07/2017
 
 ---
-# 列舉網路上的裝置
+# <a name="enumerate-devices-over-a-network"></a>列舉網路上的裝置
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 除了探索本機連線的裝置，您也可以使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 來列舉無線及網路通訊協定上的裝置。
 
-## 列舉網路及無線通訊協定上的裝置
+## <a name="enumerating-devices-over-networked-or-wireless-protocols"></a>列舉網路及無線通訊協定上的裝置
 
 有時您需要列舉未在本機連接且只能透過無線或網路通訊協定進行探索的裝置。 針對這種需求，[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 提供三種不同的裝置物件：**AssociationEndpoint** (AEP)、**AssociationEndpointContainer** (AEP 容器) 及 **AssociationEndpointService** (AEP 服務)。 上述物件被統稱為 AEP 或 AEP 物件。
 
@@ -45,7 +52,7 @@ ms.openlocfilehash: 5f62063a7b9c80b8c3715b539a9ebe2505dc9ae0
 
  
 
-## AQS 範例
+## <a name="aqs-examples"></a>AQS 範例
 
 每個 AEP 類型都有您可用來將列舉限制在特定通訊協定的屬性。 請記住，您可以在 AQS 篩選器中使用 OR 運算子來結合多個通訊協定。 以下是幾個 AQS 篩選字串的範例，可說明如何查詢 AEP 裝置。
 
@@ -58,7 +65,7 @@ System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 這個 AQS 會在將 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 設定為 **AsssociationEndpoint** 時查詢所有的 UPnP 和 WSD **AssociationEndpoint** 物件。
 
 ``` syntax
-System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR 
+System.Devices.Aep.ProtocolId:="{782232aa-a2f9-4993-971b-aedc551346b0}" OR
 System.Devices.Aep.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}"
 ```
 
@@ -77,13 +84,4 @@ System.Devices.AepContainer.ProtocolIds:~~"{0e261de4-12f0-46e6-91ba-428607ccef64
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

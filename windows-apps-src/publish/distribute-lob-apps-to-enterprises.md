@@ -1,38 +1,45 @@
 ---
 author: jnHs
-Description: "您可以透過商務用 Windows 市集，將企業營運 (LOB) app 直接發佈到企業來進行大量取得，而不需使 app 可在市集中廣泛取得。"
-title: "將 LOB app 發佈到企業"
+Description: "您可以透過商務用 Windows 市集，將企業營運 (LOB) 應用程式直接發佈到企業來進行大量取得，而不需使應用程式可在市集中廣泛取得。"
+title: "將 LOB 應用程式發佈到企業"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 44485b32a7c5580e1a7a0ca9ca7c642e0b9b29d2
-ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 94d12656a122f623240463886297c2378753924b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將 LOB app 發佈到企業
+# <a name="distribute-lob-apps-to-enterprises"></a>將 LOB 應用程式發佈到企業
 
 
-您可以透過商務用 Windows 市集，將企業營運 (LOB) app 直接發佈到企業來進行大量取得，而不需使 app 可在市集中廣泛取得。
+您可以透過商務用 Windows 市集，將企業營運 (LOB) 應用程式直接發佈到企業來進行大量取得，而不需使應用程式可在市集中廣泛取得。
 
-> **重要** 目前只有免費的 app 可透過商務用 Windows 市集，單獨發佈到企業。 若您提交付費 app 做為 LOB，則目前無法將其提供給企業使用。 
+> **重要**  目前只有免費的應用程式可透過商務用 Windows 市集，單獨發佈到企業。 若您提交付費 app 做為 LOB，則目前無法將其提供給企業使用。 
 
-## 設定企業關聯
+## <a name="setting-up-the-enterprise-association"></a>設定企業關聯
 
 
 單獨將 LOB app 發佈到企業的第一個步驟是在您的帳戶與企業的私人市集之間建立關聯。
 
-> **重要** 此關聯程序必須由企業初始化，且必須傳送至您帳戶之 [連絡資訊]**** 中的電子郵件地址。 如需詳細資訊，請參閱[使用企業營運 app](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
+> **重要**  此關聯程序必須由企業初始化，且必須傳送至您帳戶之 [連絡資訊]**** 中的電子郵件地址。 如需詳細資訊，請參閱[使用企業營運 app](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
 
 當企業選擇邀請您發佈 app 以供他們專用時，您將會收到一封電子郵件，其中包含確認關聯的連結。 您也可以移至 [帳戶設定]**** 的 [企業關聯]**** 區段來確認這些關聯。
 
 若要確認關聯，請按一下 [接受]****。 您的帳戶接著能夠發佈 app，以供該企業專用。
 
-## 提交 LOB App
+## <a name="submitting-an-lob-app"></a>提交 LOB App
 
 
 一旦準備好發佈 app 以供某個企業專用之後，程序就會類似 app 提交程序。 App 會執行相同的認證程序，而且必須遵守所有 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 程序只有一些部分不同。
 
-### 配送和可見性
+### <a name="distribution-and-visibility"></a>配送和可見性
 
 在您設定企業關聯之後，每當您提交 app 時，就會在提交的 [定價和可用性]**** 頁面之 [配送和可見性]**** 區段中看見一個下拉式方塊。 根據預設，這會設定為 [零售經銷]****。 若要使 app 供某家企業專用，您需要選擇 [企業營運 (LOB) 發佈]****。
 
@@ -40,9 +47,9 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 選取應該能夠取得該 app 的企業。 沒有其他任何人能夠存取它。
 
-> **注意：**至少必須選取一家企業，以便將 app 當成企業營運 app 來發佈。
+> **注意**  至少必須選取一家企業，以便將應用程式當成企業營運應用程式來發佈。
 
-### 組織授權
+### <a name="organizational-licensing"></a>組織授權
 
 根據預設，在您提交 app 時，會勾選 [市集管理 (線上) 大量授權]**** 的方塊。 發佈 LOB app 時，必須勾選此方塊，讓企業能夠大量取得您的 app。 這樣一來，您於 [配送和可見性]**** 區段中選取之企業外部的任何使用者都將無法使用該 app。
 
@@ -50,10 +57,10 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 如需詳細資訊，請參閱[組織授權選項](organizational-licensing.md)。
 
-### 年齡分級
+### <a name="age-ratings"></a>年齡分級
 針對 LOB app，提交程序的[年齡分級](age-ratings.md)步驟的運作方式與零售版 App 相同，但您也有其他選擇，可讓您手動指出您 App 的市集年齡分級，而不是完成問卷或是匯入現有的 IARC 分級識別碼。 此手動分級僅能搭配 LOB 散佈使用，因此，如果您曾經將 App 的 [配送和可見性]**** 設定變更為 [零售經銷]****，您將需要先接受年齡分級問卷調查，然後才可以發佈提交。
 
-### LOB App 的企業部署
+### <a name="enterprise-deployment-of-lob-apps"></a>LOB App 的企業部署
 
 按一下 [提交到市集]**** 之後，app 將進入認證程序。 一旦準備好之後，企業的系統管理員就必須在商務用 Windows 市集入口網站中將它新增到私人市集。 企業接著可將該 app 部署到它的使用者。
 
@@ -61,7 +68,7 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 如需詳細資訊，請參閱[使用企業營運 App](http://go.microsoft.com/fwlink/p/?LinkId=698846) 和[使用您的私人市集發佈 App](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
 
-### 更新 LOB App
+### <a name="updating-lob-apps"></a>更新 LOB App
 
 若要將更新發佈到您已經準備好發佈為 LOB 的 app，只需建立新的提交。 您可以上傳新的套件或進行任何其他變更，然後按一下 [提交到市集]****，讓更新的版本可供使用。 請確定會在 [配送和可見性]**** 中使企業選取項目保持不變 (除非您故意想要變更它們，例如，選取其他企業來取得該 app，或是移除您先前已發佈該 app 的其中一個企業)。
 
@@ -69,7 +76,7 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 > **注意** 將 App 變更為 [零售經銷]**** 時，如果您還未完成[年齡分級問卷](age-ratings.md)，則必須先完成該問卷 (即使 App 將不再供新的下載數使用)。
 
-### 透過側載發佈 LOB App
+### <a name="distributing-lob-apps-through-sideloading"></a>透過側載發佈 LOB App
 
 透過商務用市集使 app 可供使用，可確保該 app 已經過市集簽署，並且遵守標準的市集原則。
 
@@ -83,10 +90,5 @@ ms.openlocfilehash: 76fc4e5cfa70d06d6f378409ecd9f331f64c0803
 
 
 
-
-
-
-
-<!--HONumber=Sep16_HO1-->
 
 

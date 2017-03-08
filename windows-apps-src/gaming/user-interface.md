@@ -3,27 +3,34 @@ author: mtoepke
 title: "DirectX 遊戲專案範本"
 description: "了解建立通用 Windows 平台 (UWP) 和 DirectX 遊戲的範本。"
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, directx, 範本"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1e91814825a0944f9a70fdc7bbc6e8ef78215f29
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8b25dcd0de8d82e8bf8b6bf651ac6c264ade48c9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# DirectX 遊戲專案範本
+# <a name="directx-game-project-templates"></a>DirectX 遊戲專案範本
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 DirectX 與通用 Windows 平台 (UWP) 範本可讓您快速建立做為遊戲起點的專案。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要建立專案，您需要：
 
 -   [下載 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 具備圖形程式設計的工具，例如偵錯工具。 如需 DirectX 圖形與遊戲功能及工具的概觀，請參閱[適用於 DirectX 遊戲開發的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
 
-## 選擇範本
+## <a name="choosing-a-template"></a>選擇範本
 
 
 Visual Studio 2015 包含三個 DirectX 和 UWP 範本：
@@ -34,7 +41,7 @@ Visual Studio 2015 包含三個 DirectX 和 UWP 範本：
 
 您可以根據效能和想要使用的技術來選擇範本。
 
-## 範本結構
+## <a name="template-structure"></a>範本結構
 
 
 DirectX 通用 Windows 範本包含下列檔案：
@@ -60,7 +67,7 @@ DirectX 通用 Windows 範本包含下列檔案：
     -   d3dx12.h - 包含 D3DX12 公用程式庫。 此檔案只會出現在 DirectX 12 應用程式 (通用 Windows) 中。
 -   資產 - 應用程式所使用的標誌和 Splashscreen 影像。
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 現在您已經有了起點，可以將它納入您的遊戲開發知識及 Windows 市集遊戲開發技能。
@@ -86,10 +93,5 @@ DirectX 通用 Windows 範本包含下列檔案：
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "建立著色器及繪製基本型別"
-description: "以下我們將示範如何使用 HLSL 來源檔案，以編譯及建立您可以接著用來在顯示器上繪製基本型別的著色器。"
+description: "以下我們將示範如何使用 HLSL 來源檔案，以編譯及建立您可以接著用來在顯示器上繪製原始物件的著色器。"
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 著色器, 原始物件, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 62f4b9b641a3c365659e44893a8a7801f2c1f6c0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 建立著色器及繪製基本型別
+# <a name="create-shaders-and-drawing-primitives"></a>建立著色器及繪製原始物件
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,7 +27,7 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **目標：**建立著色器及繪製基本型別。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 我們假設您熟悉 C++。 您還需要圖形程式設計概念的基本經驗。
@@ -29,9 +36,9 @@ ms.openlocfilehash: 36ce1c3c0df0dd9dd4f5cf3d31282d5b15050f5c
 
 **完成所需的時間：**20 分鐘。
 
-## 指示
+## <a name="instructions"></a>指示
 
-### 1. 編譯 HLSL 來源檔案
+### <a name="1-compiling-hlsl-source-files"></a>1. 編譯 HLSL 來源檔案
 
 Microsoft Visual Studio 使用 [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL 程式碼編譯器，將 .hlsl 來源檔案 (SimpleVertexShader.hlsl 和 SimplePixelShader.hlsl) 編譯成 .cso 二進位著色器物件檔案 (SimpleVertexShader.cso 和 SimplePixelShader.cso)。 如需 HLSL 程式碼編譯器的詳細資訊，請參閱＜效果編譯器工具＞。 如需有關編譯著色器程式碼的詳細資訊，請參閱[編譯著色器](https://msdn.microsoft.com/library/windows/desktop/bb509633)。
 
@@ -74,11 +81,11 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. 從磁碟讀取資料
+### <a name="2-reading-data-from-disk"></a>2. 從磁碟讀取資料
 
 我們可以使用 DirectX 11 App (通用 Windows) 範本中 DirectXHelper.h 的 DX::ReadDataAsync 功能，以非同步方式讀取磁碟上的檔案資料。
 
-### 3. 建立頂點著色器和像素著色器
+### <a name="3-creating-vertex-and-pixel-shaders"></a>3. 建立頂點著色器和像素著色器
 
 我們會從 SimpleVertexShader.cso 檔案讀取資料，並將資料指派給 *vertexShaderBytecode* 位元組陣列。 我們會使用該位元組陣列呼叫 [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 來建立頂點著色器 ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641))。 我們會在 SimpleVertexShader.hlsl 來源中將頂點深度值設定為 0.5，以確保會繪製出三角形。 我們會填入一個 [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 結構的陣列來描述頂點著色器程式碼的配置，然後呼叫 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 來建立配置。 陣列有一個定義頂點位置的配置元素。 我們會從 SimplePixelShader.cso 檔案讀取資料，並將資料指派給 *pixelShaderBytecode* 位元組陣列。 我們會使用該位元組陣列呼叫 [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) 來建立像素著色器 ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576))。 我們會在 SimplePixelShader.hlsl 來源中將像素值設定為 (1,1,1,1)，以讓三角形呈黃色。 您可以變更這個值來變更色彩。
 
@@ -197,7 +204,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 我們會使用頂點和像素著色器、頂點著色器配置及頂點和索引緩衝區，以繪製黃色三角形。
 
-### 4. 繪製三角形並呈現轉譯的影像
+### <a name="4-drawing-the-triangle-and-presenting-the-rendered-image"></a>4. 繪製三角形並呈現轉譯的影像
 
 我們會進入一個無限迴圈來不斷轉譯並顯示場景。 我們會呼叫 [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)，以將轉譯目標指定為輸出目標。 我們會呼叫 [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) 搭配 { 0.071f, 0.04f, 0.561f, 1.0f }，以將轉譯目標清除成純藍色。
 
@@ -277,7 +284,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
                 );
 ```
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 
 我們使用頂點和像素著色器建立及繪製了一個黃色三角形。
@@ -292,10 +299,5 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

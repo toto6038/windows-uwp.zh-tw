@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: ea19592ea98eb7d9a1b47c1a8cf8f1990ca33797
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 058858be62a2d6bf3afc0c9461090d0211b39ebd
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -226,8 +227,3 @@ UI 考量
 
 一般裝置功能
 -   視裝置不同而可變
-
-
-<!--HONumber=Dec16_HO4-->
-
-

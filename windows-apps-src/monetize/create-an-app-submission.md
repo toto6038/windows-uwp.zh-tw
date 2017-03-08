@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "使用 Windows 市集提交 API 的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新提交。"
-title: "使用 Windows 市集提交 API 建立 App 提交"
+title: "使用 Windows 市集提交 API 建立應用程式提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 建立應用程式提交"
 translationtype: Human Translation
-ms.sourcegitcommit: 27d8385c7250feba89c6970033ad7ec170f0646c
-ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: ecc701016ff37e7cc7de0723793efdfe89118c48
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 使用 Windows 市集提交 API 建立 App 提交
+# <a name="create-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 建立應用程式提交
 
 
 
@@ -19,7 +26,7 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 如需這個方法如何在使用 Windows 市集提交 API 建立 App 提交的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -27,9 +34,9 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 請確定 App 至少有一個已完成[年齡分級](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)資訊的提交。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -48,7 +55,7 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -56,11 +63,11 @@ ms.openlocfilehash: dc5fcdd7a3181e07874b761c7183c6c539591704
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求本文
 
 不提供此方法的要求本文。
 
-### 要求範例
+### <a name="request-example"></a>要求範例
 
 下列範例示範如何為 App 建立新的提交。
 
@@ -69,7 +76,7 @@ POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/su
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例示範成功呼叫這個方法的 JSON 回應本文。 回應本文包含新提交的相關資訊。 如需回應本文中各個值的詳細資訊，請參閱 [App 提交資源](manage-app-submissions.md#app-submission-object)。
 
@@ -81,7 +88,8 @@ Authorization: Bearer <your access token>
     "trialPeriod": "FifteenDays",
     "marketSpecificPricings": {},
     "sales": [],
-    "priceId": "Tier2"
+    "priceId": "Tier2",
+    "isAdvancedPricingModel": "true"
   },
   "visibility": "Public",
   "targetPublishMode": "Manual",
@@ -173,7 +181,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -185,7 +193,7 @@ Authorization: Bearer <your access token>
 <span/>
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [取得 App 提交](get-an-app-submission.md)
@@ -193,9 +201,4 @@ Authorization: Bearer <your access token>
 * [更新 App 提交](update-an-app-submission.md)
 * [刪除 App 提交](delete-an-app-submission.md)
 * [取得 App 提交的狀態](get-status-for-an-app-submission.md)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -1,22 +1,28 @@
 ---
 author: mcleanbyron
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
-description: "了解如何使用 Windows.Services.Store 命名空間來實作 App 的試用版。"
-title: "實作 App 的試用版"
-keywords: "免費試用程式碼範例"
+description: "了解如何使用 Windows.Services.Store 命名空間來實作應用程式的試用版。"
+title: "實作應用程式的試用版"
+keywords: "Windows 10, UWP, 試用版, 應用程式內購買, IAP, Windows.Services.Store"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ea4c5637a970a63938da2b1bea9f11fd39de9cc8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc5e67823521db455e12fa4b16d8204c20bff621
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="implement-a-trial-version-of-your-app"></a>實作 App 的試用版
+# <a name="implement-a-trial-version-of-your-app"></a>實作應用程式的試用版
 
-如果您將 App [在 Windows 開發人員中心儀表板中設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶可在試用期間免費使用您的 App，您將可藉由在試用期間排除或限制某些功能，來吸引客戶升級成完整版的 App。 開始撰寫程式碼之前，請先決定哪些功能應受到限制，然後確定只有在客戶購買完整授權後，App 才會允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
+如果您將應用程式[在 Windows 開發人員中心儀表板中設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶可在試用期間免費使用您的應用程式，您將可藉由在試用期間排除或限制某些功能，來吸引客戶升級成完整版的應用程式。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
-目標為 Windows 10 版本 1607 或更新版本的 App，可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您 App 的試用授權，而且如果授權狀態在 App 執行期間變更，則會收到通知。
+目標為 Windows 10 1607 版或更新版本的應用程式，可以使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您應用程式的試用授權，而且如果授權狀態在應用程式執行期間變更，則會收到通知。
 
->**注意**  本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+>**注意**&nbsp;&nbsp;本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>實作試用版的指導方針
 
@@ -64,7 +70,7 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 * 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
 * App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
 
->**注意**  如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增此範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
+>**注意**&nbsp;&nbsp;如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增此範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
 
 ## <a name="code-example"></a>程式碼範例
 
@@ -81,13 +87,8 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 
 * [App 內購買和試用版](in-app-purchases-and-trials.md)
 * [取得 App 和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
 * [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
 * [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

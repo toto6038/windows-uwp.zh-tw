@@ -1,22 +1,29 @@
 ---
 author: DelfCo
-Description: "準備 app 以針對其他市場、語言或地區進行當地語系化。"
-title: "準備 app 以進行當地語系化"
+Description: "準備應用程式以針對其他市場、語言或地區進行當地語系化。"
+title: "準備應用程式以進行當地語系化"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a56e0940539928723f6fb3b906d1212f80676768
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="prepare-your-app-for-localization"></a>準備 app 以進行當地語系化
+# <a name="prepare-your-app-for-localization"></a>準備應用程式以進行當地語系化
 
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-準備 app 以針對其他市場、語言或地區進行當地語系化。 在您開始之前，請務必閱讀[可行與禁止事項](guidelines-and-checklist-for-globalizing-your-app.md)。
+準備應用程式以針對其他市場、語言或地區進行當地語系化。 在您開始之前，請務必閱讀[可行與禁止事項](guidelines-and-checklist-for-globalizing-your-app.md)。
 
 ## <a name="use-resource-files-and-qualifiers"></a>使用資源檔案和限定詞
 
@@ -170,10 +177,5 @@ ms.openlocfilehash: 4eb57a836cace6cc41ccd15b74ecc9f62f8b0f60
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

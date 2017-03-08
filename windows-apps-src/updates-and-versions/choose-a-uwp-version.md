@@ -2,9 +2,17 @@
 author: QuinnRadich
 title: "選擇 UWP 版本"
 description: "在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 了解不同 UWP 版本之間的差異，以及如何在新的及現有的專案中設定您的選項。"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 translationtype: Human Translation
-ms.sourcegitcommit: 7e59551f528e23e497122f822fbfc09ec3086cdc
-ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e2bc7b4a12aed40093985000486b9f3f78967524
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
 | 組建 10586 | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1511.md) |
 | 組建 10240 | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1507.md) |
 
-強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (14393)。 撰寫企業 app 的開發人員應強烈考慮支援較舊的 \[最小版本\]。
+強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (14393)。 撰寫企業 app 的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
 
 ## <a name="whats-different-in-each-uwp-version"></a>每個 UWP 版本有何差異？
 
@@ -28,19 +36,14 @@ ms.openlocfilehash: 58e58c212cb6efd76f4afb8d3b6c7a3c5ddf215e
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>選擇要針對您 App 使用的版本
 
-在 Visual Studio 中的 \[新增通用 Windows 專案\] 對話方塊中，您可以為 \[目標版本\] 和 \[最小版本\] 選擇版本。
+在 Visual Studio 中的 **\[新增通用 Windows 專案\]** 對話方塊中，您可以為 **\[目標版本\]** 和 **\[最小版本\]** 選擇版本。
 
 * **目標版本**。 這會設定您專案檔中的 *TargetPlatformVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MaxVersionTested* 屬性的值。 您選擇的值會指定您專案的目標 UWP 平台版本，也因此會決定您 App 可用的一組 API，所以我們建議您選擇可能的最新版本。 如需有關您應用程式套件資訊清單的詳細資訊，以及一些有關手動設定 TargetDeviceFamily 指導方針，請參閱 [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903)。
 * **最小版本**。 這會設定您專案檔中的 *TargetPlatformMinVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MinVersion* 屬性的值。 您選擇的值會指定您專案可搭配運作的 UWP 平台最小版本。
 
-請注意，您宣告的是您的 App 可以在從 \[最小版本\] 到 \[目標版本\] 範圍內的任何 Windows 版本上運作。 如果這兩者是相同版本，您就不需要採取任何特別的動作。 如果兩者不同，則以下是一些需要注意的事項。
+請注意，您宣告的是您的 App 可以在從 **\[最小版本\]** 到 **\[目標版本\]** 範圍內的任何 Windows 版本上運作。 如果這兩者是相同版本，您就不需要採取任何特別的動作。 如果兩者不同，則以下是一些需要注意的事項。
 
-* 在您的程式碼中，您可以自由地 (也就是沒有條件檢查) 呼叫存在於 \[最小版本\] 所指定版本中的任何 API。
-* 確定您是在執行 \[最小版本\] 的裝置上測試程式碼，以確保它無需僅在 \[目標版本\] 中提供的 API 也可正常運作。
-* \[目標版本\] 的值可用來識別所有用來編譯您專案的參考 (協定 winmds)。 但這些參考將可讓您在編譯您的程式碼時，使用不一定存在於您所宣告支援之裝置上的 API 呼叫 (透過 \[最小版本\]) 來進行編譯。 因此，呼叫在 \[最小版本\] 之後引進的 API 時，將需要透過調適型程式碼來呼叫。 如需有關調適型程式碼的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](../get-started/universal-application-platform-guide.md)。
-
-
-
-<!--HONumber=Dec16_HO1-->
-
+* 在您的程式碼中，您可以自由地 (也就是沒有條件檢查) 呼叫存在於 **\[最小版本\]** 所指定版本中的任何 API。
+* 確定您是在執行 **\[最小版本\]** 的裝置上測試程式碼，以確保它無需僅在 **\[目標版本\]** 中提供的 API 也可正常運作。
+* **\[目標版本\]** 的值可用來識別所有用來編譯您專案的參考 (協定 winmds)。 但這些參考將可讓您在編譯您的程式碼時，使用不一定存在於您所宣告支援之裝置上的 API 呼叫 (透過 **\[最小版本\]**) 來進行編譯。 因此，呼叫在 **\[最小版本\]** 之後引進的 API 時，將需要透過調適型程式碼來呼叫。 如需有關調適型程式碼的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](../get-started/universal-application-platform-guide.md)。
 

@@ -1,16 +1,23 @@
 ---
 author: TylerMSFT
 title: "保留檔案和 URI 配置名稱"
-description: "此主題列出並不適用於您的 app 的保留檔案和 URI 配置名稱。"
+description: "此主題列出您的應用程式無法使用的保留檔案和 URI 配置名稱。"
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6f46f5973b9c18ffd7c38bd27cee0a0a21be50e5
-ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a0c0b2cee4512bdd6dd888aceae53eec061dac72
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>保留檔案和 URI 配置名稱
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您可以使用 URI 關聯，在另一個 app 啟動特定 URI 配置時自動啟動您的 app。 但是有些 URI 關聯是您無法使用的，因為它們是保留的關聯。 如果您的 app 登錄為保留的關聯，該登錄將會被忽略。 此主題列出並不適用於您的 app 的保留檔案和 URI 配置名稱。
 
@@ -115,9 +122,4 @@ ms.openlocfilehash: c514ae4831f21b4c471b0445b3cf54a6a08ff92a
 <tr><td>inffile</td><td>ms-settings:network-dialup</td><td>scrfile</td><td></td></tr>
 <tr><td>insfile</td><td>ms-settings:network-ethernet</td><td>scriptletfile</td><td></td></tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

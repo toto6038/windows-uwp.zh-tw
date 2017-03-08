@@ -3,14 +3,21 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "使用筆刷"
 description: "Brush 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: f5934600cc185c952acc57ae38e0b190466e0dfa
-ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: bf3e4e169108f4cab98dcb460552daff8822c64c
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用筆刷
+# <a name="use-brushes"></a>使用筆刷
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -19,15 +26,15 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。 讓我們看看可用的筆刷以及筆刷的用法。
 
-## 筆刷介紹
+## <a name="introduction-to-brushes"></a>筆刷介紹
 
 若要繪製顯示在 app 畫布上的物件 (像是 [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) 或部分 [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390))，您需要使用 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。 例如，您要將 **Shape** 或 [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 屬性和 **Control** 的 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) 屬性設為 **Brush** 值，而 **Brush** 則決定 UI 元素如何繪製或在 UI 中轉譯的方式。 筆刷分成幾種不同的類型：[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108)、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 以及 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)。
 
-## 純色筆刷
+## <a name="solid-color-brushes"></a>純色筆刷
 
 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 會以單一 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) (如紅色或藍色) 繪製區域。 這是最基本的筆刷。 在 XAML 中，有三種方法可以定義 **SolidColorBrush** 及其指定的純色色彩：預先定義的色彩名稱、十六進位色彩值，或屬性 (Property) 元素語法。
 
-### 預先定義的色彩名稱
+### <a name="predefined-color-names"></a>預先定義的色彩名稱
 
 您可以使用預先定義的色彩名稱，像是 [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) 或 [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx)。 共有 256 個可用的命名色彩。 XAML 剖析器會將色彩名稱轉換成具有正確色板的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 結構。 這 256 個命名色彩是以階層式樣式表層級 3 (CSS3) 規格中的 *X11* 色彩名稱為基礎，因此如果您之前有 Web 開發或設計的經驗，您可能已經熟悉這個命名色彩的清單。
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 如果您使用程式碼定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 而不是使用 XAML，則每個命名色彩就是 [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) 類別的靜態屬性值。 例如，若要宣告 **SolidColorBrush** 的 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 值以代表命名色彩 "Orchid"，請將 **Color** 值設為靜態值 [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx)。
 
-### 十六進位色彩值
+### <a name="hexadecimal-color-values"></a>十六進位色彩值
 
 您可以使用十六進位格式字串，為 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 宣告精確的 24 位元色彩值與 8 位元 Alpha 色板。 範圍 0 到 F 之間的兩個字元定義每個元件值，十六進位字串的元件值順序為：Alpha 色板 (不透明度)、紅色色板、綠色色板以及藍色色板 (**ARGB**)。 例如，十六進位值 "\#FFFF0000" 定義完全不透明的紅色 (Alpha="FF"、紅色="FF"、綠色="00"，以及藍色="00")。
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>屬性 (Property) 元素語法
+### <a name="span-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanspan-idpropertyelementsyntaxspanproperty-element-syntax"></a><span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>屬性 (Property) 元素語法
 
 您可以使用屬性 (Property) 元素語法來定義 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)。 這個語法比之前的方法更複雜，但是您可以在元素中指定其他屬性值，例如 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx)。 如需 XAML 語法的詳細資訊 (包括屬性 (Property) 元素語法)，請參閱 [XAML 概觀](https://msdn.microsoft.com/library/windows/apps/Mt185595)和 [XAML 語法指南](https://msdn.microsoft.com/library/windows/apps/Mt185596)。
 
@@ -69,7 +76,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
+## <a name="span-idlineargradientbrushesspanspan-idlineargradientbrushesspanspan-idlineargradientbrushesspanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
 
 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為「漸層軸」**。 您可以沿著使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
 
@@ -99,7 +106,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 ![漸層停駐點](images/linear-gradients-stops.png) 您可以將 [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 與 [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) 屬性設為與起始預設值 `(0,0)` 與 `(1,1)` 不同的其他值，藉此變更漸層停駐點所在的線條位置。 變更 **StartPoint** 與 **EndPoint** 座標值，就能建立水平或垂直漸層、反轉漸層方向，或是壓縮漸層範圍以套用到比完整繪製區域小的範圍。 若要壓縮漸層，請將 **StartPoint** 和/或 **EndPoint** 的值設在 0 到 1 之間。 例如，如果想要水平漸層在筆刷的左半部漸層但在右半部使用上個 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 使用的純色，請將 **StartPoint** 指定為 `(0,0)`，**EndPoint** 指定為 `(0.5,0)`。
 
-### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具製作漸層
+### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具製作漸層
 
 在了解線性漸層的運作方式之後，現在您可以利用 Visual Studio 或 Blend，簡化這些漸層的建立作業。 若要建立漸層，請在設計表面或 XAML 檢視中選取要套用漸層的物件。 展開 [筆刷]****，然後選取 [線性漸層]**** 索引標籤 (請參閱下一個螢幕擷取畫面)。
 
@@ -109,7 +116,7 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 ![位於屬性視窗底部可控制漸層停駐點的列。](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>影像筆刷
+## <a name="span-idimagebrushesspanspan-idimagebrushesspanspan-idimagebrushesspanimage-brushes"></a><span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>影像筆刷
 
 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 使用影像繪製區域，而要用來繪製的影像則來自影像檔案來源。 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) 屬性應設定為要載入之影像的路徑。 影像來源通常來自 app 資源中的 **Content** 項目。
 
@@ -131,21 +138,21 @@ ms.openlocfilehash: dc415135a05a63226a6b2d0b828245fe2f713788
 
 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 與 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 會以統一資源識別元 (URI) 參照影像來源檔案，而該影像來源檔案使用數個可能的影像格式。 這些影像來源檔案是以 URI 來指定。 如需指定影像來源、可使用的影像格式，以及將影像來源封裝在應用程式中的相關資訊，請參閱[Image 和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)。
 
-## 筆刷與文字
+## <a name="brushes-and-text"></a>筆刷與文字
 
 您也可以使用筆刷將轉譯特性套用至文字元素。 例如，[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) 屬性可以接受 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)。 您可以將這裡描述的任何筆刷套用到文字。 將筆刷套用到文字時請務必小心，如果您使用的筆刷會與文字的背景混淆，或者會讓使用者無法分辨文字的外框，可能導致使用者無法閱讀文字。 在大多數的情況下使用 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 來維持可讀性，除非您的文字元素僅供裝飾使用。
 
 即使是使用純色，也請注意您選擇的任何文字色彩，都必須與文字配置容器的背景色彩有足夠的對比。 文字前景與文字容器背景之間的對比度是必須考量的協助工具設定。
 
-## WebViewBrush
+## <a name="webviewbrush"></a>WebViewBrush
 
 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) 是特殊的筆刷類型，可以存取一般在 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 控制項中檢視的內容。 **WebViewBrush** 並非在矩形的 **WebView** 控制項區域中轉譯內容，而是將該內容繪製到具有轉譯介面 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型屬性的另一個元素上。 **WebViewBrush** 並不適用於所有筆刷案例，但對轉換 **WebView** 則很有用。 如需詳細資訊，請參閱 **WebViewBrush**。
 
-## XAML 資源形式的筆刷
+## <a name="brushes-as-xaml-resources"></a>XAML 資源形式的筆刷
 
 您可以在 XAML 資源字典將任一筆刷宣告為索引 XAML 資源。 這樣就可以輕鬆將相同筆刷值複寫要套用 UI 的多項元素中。 然後就能在將筆刷資源參照為 [{StaticResource}](https://msdn.microsoft.com/library/windows/apps/Mt185588) 用法的 XAML 中共用和套用筆刷值。 這情況好比您擁有一個參照共用筆刷的 XAML 控制項範本，該控制項範本本身就是索引 XAML 資源。
 
-## 筆刷程式碼
+## <a name="brushes-in-code"></a>筆刷程式碼
 
 使用 XAML 指定筆刷比使用程式碼定義筆刷更常見。 這是因為筆刷通常定義為 XAML 資源，且因為筆刷值通常是設計工具的輸出，不然就是 XAML UI 定義的一部分。 儘管如此，如果您偶爾想要使用程式碼定義筆刷，所有 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型都可以用在程式碼具現化。
 
@@ -175,10 +182,5 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

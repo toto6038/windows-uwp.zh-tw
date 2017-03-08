@@ -3,16 +3,23 @@ author: mtoepke
 title: "將 DirectX 9 功能對應到 DirectX 11 API"
 description: "了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與通用 Windows 平台 (UWP)。"
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX 9, DirectX 11, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 58847adcb94f7e730bcdcd98767282811d555016
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將 DirectX 9 功能對應到 DirectX 11 API
+# <a name="map-directx-9-features-to-directx-11-apis"></a>將 DirectX 9 功能對應到 DirectX 11 API
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -23,7 +30,7 @@ ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與通用 Windows 平台 (UWP)。
 
-## 將 Direct3D 9 對應到 DirectX 11 API
+## <a name="mapping-direct3d-9-to-directx-11-apis"></a>將 Direct3D 9 對應到 DirectX 11 API
 
 
 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) 仍然是 DirectX 圖形的基礎，但從 DirectX 9 開始，API 已經有所變更：
@@ -34,7 +41,7 @@ ms.openlocfilehash: 6ab76921f1e8b613010f99eba6a141daca128ea5
 
 如需 Direct3D 11 功能的完整清單，請參閱 [Direct3D 11 功能](https://msdn.microsoft.com/library/windows/desktop/ff476342)與 [Direct3D 11 功能](https://msdn.microsoft.com/library/windows/desktop/hh404562)。
 
-## 從 Direct2D 9 移至 Direct2D 11
+## <a name="moving-from-direct2d-9-to-direct2d-11"></a>從 Direct2D 9 移至 Direct2D 11
 
 
 [Direct2D (Windows)](https://msdn.microsoft.com/library/windows/desktop/dd370990) 仍然是 DirectX 圖形與 Windows 的重要部分。 您還是可以使用 Direct2D 繪製 2D 遊戲，並在 Direct3D 上繪製重疊 (HUD)。
@@ -45,7 +52,7 @@ Direct2D 在 Direct3D 之上執行；可使用任一種 API 來實作 2D 遊戲�
 
 [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) API 透過 Direct2D 新增對於格式化文字的支援。 請參閱 [DirectWrite 簡介](https://msdn.microsoft.com/library/windows/desktop/dd371554)。
 
-## 取代過時的協助程式程式庫
+## <a name="replace-deprecated-helper-libraries"></a>取代過時的協助程式程式庫
 
 
 D3DX 與 DXUT 已過時，UWP 遊戲無法使用。 這些協助程式程式庫提供紋理載入與網格載入等工作的資源。
@@ -54,7 +61,7 @@ D3DX 與 DXUT 已過時，UWP 遊戲無法使用。 這些協助程式程式庫�
 -   [使用 DirectX 的簡易 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)逐步解說示範常見的遊戲程式設計工作，包含圖形、載入檔案、UI、控制項與音效。
 -   [DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)社群專案提供可搭配 Direct3D 11 與 UWP app 使用的協助程式類別。
 
-## 將著色器程式從 FX 移到 HLSL
+## <a name="move-shader-programs-from-fx-to-hlsl"></a>將著色器程式從 FX 移到 HLSL
 
 
 在 UWP，D3DX 公用程式庫 (D3DX 9、D3DX 10 與 D3DX 11)，包含 Effects 在內都已過時。 UWP 的所有 DirectX 遊戲都使用 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561) 來驅動圖形管線，而不使用 Effects。
@@ -65,21 +72,21 @@ Visual Studio 仍然使用 FXC 編譯著色器物件。 UWP 遊戲著色器會�
 
 Direct3D 11 引進了著色器模型 5，此模型需要 Direct3D 功能層級 11\_0 (或更高層級)。 請參閱 [Direct3D 11 的 HLSL 著色器模型 5 功能](https://msdn.microsoft.com/library/windows/desktop/ff471419)。
 
-## 取代 XNAMath 與 D3DXMath
+## <a name="replace-xnamath-and-d3dxmath"></a>取代 XNAMath 與 D3DXMath
 
 
 使用 XNAMath (或 D3DXMath) 的程式碼應該移轉至 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)。 DirectXMath 包含可在 x86、x64 與 ARM 上進行移植的類型。 請參閱[從 XNA Math 程式庫移轉程式碼](https://msdn.microsoft.com/library/windows/desktop/ee418730)。
 
 請注意，DirectXMath 浮點數類型方便搭配著色器使用。 例如，[**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) 與 [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) 便於對齊常數緩衝區的資料。
 
-## 將 DirectSound 取代為 XAudio2 (與背景音訊)
+## <a name="replace-directsound-with-xaudio2-and-background-audio"></a>將 DirectSound 取代為 XAudio2 (與背景音訊)
 
 
 UWP 不支援 DirectSound：
 
 -   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 將音效新增至您的遊戲。
 
-##  將 DirectInput 取代為 XInput 與 UWP API
+##  <a name="replace-directinput-with-xinput-and-uwp-apis"></a>將 DirectInput 取代為 XInput 與 UWP API
 
 
 UWP 不支援 DirectInput：
@@ -88,12 +95,12 @@ UWP 不支援 DirectInput：
 -   針對遊戲控制器支援 (與遊戲控制器耳機支援) 使用 [XInput](https://msdn.microsoft.com/library/windows/desktop/ee417001) 1.4。 若您在桌面與 UWP 使用共用的程式碼基底，請參閱 [XInput 版本](https://msdn.microsoft.com/library/windows/desktop/hh405051)，取得回溯相容性的詳細資訊。
 -   如果您的遊戲需要使用應用程式列，請登錄 [**EdgeGesture**](https://msdn.microsoft.com/library/windows/apps/hh701600) 事件。
 
-## 使用 Microsoft 媒體基礎代替 DirectShow
+## <a name="use-microsoft-media-foundation-instead-of-directshow"></a>使用 Microsoft 媒體基礎代替 DirectShow
 
 
 DirectShow 不再是 DirectX API (或 Windows API) 的一部分。 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)為使用共用表面的 Direct3D 提供視訊內容。 請參閱 [Direct3D 11 視訊 API](https://msdn.microsoft.com/library/windows/desktop/hh447677)。
 
-## 將 DirectPlay 取代為網路程式碼
+## <a name="replace-directplay-with-networking-code"></a>將 DirectPlay 取代為網路程式碼
 
 
 Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必須提供符合 UWP 需求的網路程式碼。 請使用下列 API：
@@ -113,7 +120,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
 請注意，所有 UWP App (包含遊戲) 都使用特定的背景工作類型，以維持 App 暫停時的連線功能。 如果您的遊戲需要在暫停時維持連線狀態，請參閱[網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)。
 
-## 函式對應
+## <a name="function-mapping"></a>函式對應
 
 
 使用下表協助將程式碼從 Direct3D 9 轉換至 Direct3D 11。 這也可幫助您區別裝置與裝置內容。
@@ -235,7 +242,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
  
 
-## 表面格式對應
+## <a name="surface-format-mapping"></a>表面格式對應
 
 
 使用下表將 Direct3D 9 格式轉換為 DXGI 格式。
@@ -339,7 +346,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用著色器中的 .r swizzle 將紅色複製到其他元件，以取得 Direct3D 9 行為。
+<strong>注意</strong>   使用著色器中的 .r swizzle 將紅色複製到其他元件，以取得 Direct3D 9 行為。
 </div>
 <div>
  
@@ -349,7 +356,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用著色器中的 swizzle .rrrg 將紅色複製到 alpha 元件並將綠色移至 alpha 元件，以取得 Direct3D 9 行為。
+<strong>注意</strong>   使用著色器中的 swizzle .rrrg 將紅色複製到 alpha 元件並將綠色移至 alpha 元件，以取得 Direct3D 9 行為。
 </div>
 <div>
  
@@ -395,7 +402,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 在 Direct3D 9 中，資料已放大為 255.0f，但這可在著色器中處理。
+<strong>注意</strong>   在 Direct3D 9 中，資料已放大為 255.0f，但這可在著色器中處理。
 </div>
 <div>
  
@@ -409,7 +416,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 在 Direct3D 9 中，資料已放大為 255.0f，但這可在著色器中處理。
+<strong>注意</strong>   在 Direct3D 9 中，資料已放大為 255.0f，但這可在著色器中處理。
 </div>
 <div>
  
@@ -423,7 +430,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM 與 DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong> 從 API/硬體的角度來說，DXT1 與 DXT2 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>注意</strong>   從 API/硬體的角度來說，DXT1 與 DXT2 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -437,7 +444,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM 與 DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong> 從 API/硬體的角度來說，DXT3 與 DXT4 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>注意</strong>   從 API/硬體的角度來說，DXT3 與 DXT4 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
  
@@ -503,7 +510,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 使用著色器中的 .r swizzle 將紅色複製到其他 元件，以取得 D3D9 行為。
+<strong>注意</strong>   使用著色器中的 .r swizzle 將紅色複製到其他 元件，以取得 D3D9 行為。
 </div>
 <div>
  
@@ -577,7 +584,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注意</strong> 著色器會取得 UINT 值，但如果需要 Direct3D 9 樣式整數浮點數 (0.0f、1.0f... 255.f)，在著色器中將 UINT 轉換為 float32 即可。
+<strong>注意</strong>   著色器會取得 UINT 值，但如果需要 Direct3D 9 樣式整數浮點數 (0.0f、1.0f... 255.f)，在著色器中將 UINT 轉換為 float32 即可。
 </div>
 <div>
  
@@ -587,7 +594,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注意</strong> 著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，在著色器中將 SINT 轉換為 float32 即可。
+<strong>注意</strong>   著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，在著色器中將 SINT 轉換為 float32 即可。
 </div>
 <div>
  
@@ -597,7 +604,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注意</strong> 著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，在著色器中將 SINT 轉換為 float32 即可。
+<strong>注意</strong>   著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，在著色器中將 SINT 轉換為 float32 即可。
 </div>
 <div>
  
@@ -643,7 +650,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 需要功能層級 10.0 或更高的層級
+<strong>注意</strong>   需要功能層級 10.0 或更高的層級
 </div>
 <div>
  
@@ -653,7 +660,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注意</strong> 需要功能層級 10.0 或更高的層級
+<strong>注意</strong>   需要功能層級 10.0 或更高的層級
 </div>
 <div>
  
@@ -670,10 +677,5 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

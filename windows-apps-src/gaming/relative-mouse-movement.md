@@ -1,15 +1,24 @@
 ---
 author: scottmill
 title: "相對滑鼠移動"
+description: "使用相對滑鼠控制項，這種控制項不使用系統游標，也不會傳回絕對螢幕座標，以追蹤遊戲中滑鼠移動間的像素差異。"
+ms.author: scotmi
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, mouse, input,遊戲, 滑鼠, 輸入"
+ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 translationtype: Human Translation
-ms.sourcegitcommit: 4a00847f0559d93eea199d7ddca0844b5ccaa5aa
-ms.openlocfilehash: b035e81776039fba60f239b18efef8fe5b43b2f6
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: f207c1b7de4fd4a885c05c6988ecf685359d1d8b
+ms.lasthandoff: 02/08/2017
 
 ---
 
-在遊戲中，滑鼠是很常用的控制選項，許多玩家都很熟悉，而且滑鼠對許多遊戲類型而言也都是最基本的，包括第一人稱與第三人稱射擊遊戲，以及即時策略遊戲。 在這裡我們會討論相對滑鼠控制項的實作，這種控制項不使用系統游標，也不會傳回絕對螢幕座標；而是會追蹤滑鼠移動之間的像素差異。
+# <a name="relative-mouse-movement-and-corewindow"></a>相對滑鼠移動和 CoreWindow
 
-# 相對滑鼠移動和 CoreWindow
+在遊戲中，滑鼠是很常用的控制選項，許多玩家都很熟悉，而且滑鼠對許多遊戲類型而言也都是最基本的，包括第一人稱與第三人稱射擊遊戲，以及即時策略遊戲。 在這裡我們會討論相對滑鼠控制項的實作，這種控制項不使用系統游標，也不會傳回絕對螢幕座標；而是會追蹤滑鼠移動之間的像素差異。
 
 有些應用程式 (例如遊戲) 會使用滑鼠做為更普遍的輸入裝置。 例如，3D 模組器可能使用滑鼠輸入模擬虛擬軌跡球，以設定 3D 物件的方向；或者，有的遊戲可能使用滑鼠，透過滑鼠外觀的控制項來變更檢視相機的方向。 
 
@@ -30,10 +39,10 @@ ms.openlocfilehash: b035e81776039fba60f239b18efef8fe5b43b2f6
 
  
 
-## 處理相對滑鼠移動
+## <a name="handling-relative-mouse-movement"></a>處理相對滑鼠移動
 
 
-若要存取相對滑鼠差異值，請登錄 [MouseDevice::MouseMoved](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx) 事件，如此處所示。
+若要存取相對滑鼠差異值，請登錄 [MouseDevice::MouseMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mousedevice.mousemoved.aspx) 事件，如此處所示。
 
 
 ```cpp
@@ -59,11 +68,11 @@ void MoveLookController::OnMouseMoved(
     pointerDelta.y = static_cast<float>(args->MouseDelta.Y);
 
     float2 rotationDelta;
-    rotationDelta = pointerDelta * ROTATION_GAIN;   // scale for control sensitivity
+    rotationDelta = pointerDelta * ROTATION_GAIN;    // scale for control sensitivity
 
     // update our orientation based on the command
-    m_pitch -= rotationDelta.y;                     // mouse y increases down, but pitch increases up
-    m_yaw   -= rotationDelta.x;                     // yaw defined as CCW around y-axis
+    m_pitch -= rotationDelta.y;                        // mouse y increases down, but pitch increases up
+    m_yaw   -= rotationDelta.x;                        // yaw defined as CCW around y-axis
 
     // limit pitch to straight up or straight down
     float limit = (float)(M_PI/2) - 0.01f;
@@ -79,23 +88,18 @@ void MoveLookController::OnMouseMoved(
 
 ```
 
-本程式碼範例中的事件處理常式 **OnMouseMoved** 會根據滑鼠的移動來轉譯檢視。 滑鼠指標的位置會傳送到處理常式，做為 [MouseEventArgs](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx) 物件。 
+本程式碼範例中的事件處理常式 **OnMouseMoved** 會根據滑鼠的移動來轉譯檢視。 滑鼠指標的位置會傳送到處理常式，做為 [MouseEventArgs](https://msdn.microsoft.com/library/windows/apps/xaml/windows.devices.input.mouseeventargs.aspx) 物件。 
 
-當您的應用程式變成處理相對滑鼠移動值時，會略過處理來自 [CoreWindow::PointerMoved](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx) 事件的絕對滑鼠資料。 不過，只有在滑鼠輸入的結果是 **CoreWindow::PointerMoved** 事件時 (相較於觸控輸入)，才會略過此輸入。 已將 [CoreWindow::PointerCursor](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) 設為 **nullptr** 來隱藏游標。 
+當您的應用程式變成處理相對滑鼠移動值時，會略過處理來自 [CoreWindow::PointerMoved](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointermoved.aspx) 事件的絕對滑鼠資料。 不過，只有在滑鼠輸入的結果是 **CoreWindow::PointerMoved** 事件時 (相較於觸控輸入)，才會略過此輸入。 已將 [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) 設為 **nullptr** 來隱藏游標。 
 
-## 返回絕對滑鼠移動
+## <a name="returning-to-absolute-mouse-movement"></a>返回絕對滑鼠移動
 
-當應用程式結束 3D 物件或場景操縱模式，且不再使用相對滑鼠移動時 (例如返回功能表畫面時)，則返回一般的絕對滑鼠移動處理。 此時，會停止讀取相對滑鼠資料，重新啟動標準滑鼠 (及指標) 事件的處理，並將 [CoreWindow::PointerCursor](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) 設為非 Null 值。 
+當應用程式結束 3D 物件或場景操縱模式，且不再使用相對滑鼠移動時 (例如返回功能表畫面時)，則返回一般的絕對滑鼠移動處理。 此時，會停止讀取相對滑鼠資料，重新啟動標準滑鼠 (及指標) 事件的處理，並將 [CoreWindow::PointerCursor](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.core.corewindow.pointercursor.aspx) 設為非 Null 值。 
 
 > **注意**  
 當您的應用程式處於 3D 物件/場景操縱模式時 (處理相對滑鼠移動，且游標關閉)，滑鼠無法叫用邊緣 UI，例如常用鍵、上一頁堆疊或應用程式列。 因此，提供一個結束此特殊模式的機制是很重要的，例如最常使用的 **Esc** 鍵。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md) 
 * [適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

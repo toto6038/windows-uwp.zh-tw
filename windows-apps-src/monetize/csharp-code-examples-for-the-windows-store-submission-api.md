@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "使用本節的 C# 程式碼範例，深入了解如何使用 Windows 市集提交 API。"
 title: "Windows 市集提交 API 的 C# 程式碼範例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例"
 translationtype: Human Translation
-ms.sourcegitcommit: ccc7cfea885cc9c8803cfc70d2e043192a7fee84
-ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c71555eb854e5dcf6cbccf89e9b0b8ffe35ab0e4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -120,9 +127,4 @@ ms.openlocfilehash: d2fc29f8f2fc6cc78c1cb04c68844215a3e3eafe
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

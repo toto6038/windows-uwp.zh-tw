@@ -1,15 +1,22 @@
 ---
 author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
-description: "本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。"
+description: "本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時串流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。"
 title: "彈性資料流"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: d0941887ebc17f3665302fae6c7b0a124dfb5a0b
-ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3afd0440d8e552ebc3459c5fe30dd766db3ae8b9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 彈性資料流
+# <a name="adaptive-streaming"></a>彈性資料流
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > 本文中的程式碼是採用 UWP [彈性資料流範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)的程式碼。
 
-## 使用 MediaPlayer 與 MediaPlayerElement 的簡易彈性資料流 
+## <a name="simple-adaptive-streaming-with-mediaplayer-and-mediaplayerelement"></a>使用 MediaPlayer 與 MediaPlayerElement 的簡易彈性資料流 
 
 若要在 UWP app 中播放彈性資料流媒體，請建立一個指向 DASH 或 HLS 資訊清單檔案的 **Uri** 物件。 建立 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 類別的執行個體。 呼叫 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以建立新的 **MediaSource** 物件，然後將它設定為 **MediaPlayer** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) 屬性。 呼叫 [**Play**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Play) 以開始播放媒體內容。
 
@@ -39,7 +46,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 > [!NOTE] 
 > 從 Windows 10 版本 1607 開始，建議您使用 **MediaPlayer** 類別來播放媒體項目。 **MediaPlayerElement** 是輕量型的 XAML 控制項，可用來轉譯 XAML 頁面中的 **MediaPlayer** 內容。 **MediaElement** 控制項仍持續受支援，以提供回溯相容性。 如需使用 **MediaPlayer** 與 **MediaPlayerElement** 播放媒體內容的詳細資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。 如需使用 **MediaSource** 和相關 API 來處理媒體內容的詳細資訊，請參閱[媒體項目、播放清單和曲目](media-playback-with-mediasource.md)。
 
-## 使用 AdaptiveMediaSource 的彈性資料流
+## <a name="adaptive-streaming-with-adaptivemediasource"></a>使用 AdaptiveMediaSource 的彈性資料流
 
 如果您的 app 需要更多進階彈性資料流功能 (例如提供自訂 HTTP 標頭、監視目前下載與播放位元速率，或調整判斷系統切換彈性資料流位元速率時機的比率)，請使用 [**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) 物件。
 
@@ -67,7 +74,7 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 
 [!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
 * [HLS 標記支援](hls-tag-support.md) 
 * [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
@@ -76,10 +83,5 @@ ms.openlocfilehash: 431fa345c0135a08c1da68904a8d58d969490a8d
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

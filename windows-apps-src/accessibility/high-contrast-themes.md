@@ -1,18 +1,25 @@
 ---
 author: Xansky
-description: "描述使用高對比佈景主題時，確保通用 Windows 平台 (UWP) App 可以正常運作所需的步驟。"
+description: "描述使用高對比佈景主題時，確保通用 Windows 平台 (UWP) 應用程式可以正常運作所需的步驟。"
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "高對比佈景主題"
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: f3da82cab8813653a6ee999976983937649b42b2
-ms.openlocfilehash: 30785998d11f09ef94f33789e3e74b0933d9c83e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b75d36d6a537f465545729cf90b36fdde1f552e0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 高對比佈景主題  
+# <a name="high-contrast-themes"></a>高對比佈景主題  
 
-Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主題。 高對比佈景主題使用色彩種類少的對比色，讓介面更容易分辨。
+Windows 支援使用者可選擇啟用的作業系統和應用程式高對比佈景主題。 高對比佈景主題使用色彩種類少的對比色，讓介面更容易分辨。
 
 **圖 1. 淺色佈景主題和「黑底白字」佈景主題中的「小算盤」。**
 
@@ -38,7 +45,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 在第二個範例中，[**{ThemeResource} 標記延伸**](../xaml-platform/themeresource-markup-extension.md)是用來參考 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx) 集合 ([**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 元素的專用屬性) 中的某個色彩。 ThemeDictionaries 讓 XAML 能根據使用者目前的佈景主題，自動為您切換色彩。
 
-## 佈景主題字典
+## <a name="theme-dictionaries"></a>佈景主題字典
 
 當您需要變更系統預設色彩時，請針對您的 App 建立 ThemeDictionaries 集合。
 
@@ -77,7 +84,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 > [!NOTE]
 > HighContrast 不是唯一可用的索引鍵名稱。 另外還有 HighContrastBlack、HighContrastWhite 以及 HighContrastCustom。 在大部分情況下，您只需要 HighContrast。
 
-## 高對比色彩
+## <a name="high-contrast-colors"></a>高對比色彩
 
 在 [設定] &gt; [輕鬆存取] &gt; [高對比]** 頁面中，有 4 個預設的高對比佈景主題。 
 
@@ -152,7 +159,7 @@ SystemColorWindowColor | 頁面、窗格、快顯視窗，以及列的背景
 
 請注意使用兩次 `{ThemeResource}` 的方式：一次是參考 `SystemColorWindowColor`，另一次是參考 `BrandedPageBackgroundBrush`。 兩次都是為了讓您的 App 在執行階段能正確設定佈景主題。 現在是測試您 App 內功能的好時機。 當您切換成高對比佈景主題時，格線的背景將會自動更新。 在不同的高對比佈景主題之間切換時，它也會更新。
 
-## 使用框線的時機
+## <a name="when-to-use-borders"></a>使用框線的時機
 
 在高對比佈景主題中，頁面、窗格、快顯視窗和列，都應使用 `SystemColorWindowColor` 做為其背景。 如需保留您 UI 中的重要框線，請新增高對比專用的框線。
 
@@ -160,7 +167,7 @@ SystemColorWindowColor | 頁面、窗格、快顯視窗，以及列的背景
 
 ![與頁面的其餘部分劃分的瀏覽窗格](images/high-contrast-actions-content.png)
 
-## 清單項目
+## <a name="list-items"></a>清單項目
 
 在高對比佈景主題中，當游標暫留、按下或選取 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 中的項目時，其背景會設為 `SystemColorHighlightColor`。 複雜的清單項目通常會有一種錯誤，就是當游標暫留、按下或選取清單項目時，沒有反轉其內容的色彩。 這會使該項目難以閱讀。
 
@@ -170,7 +177,7 @@ SystemColorWindowColor | 頁面、窗格、快顯視窗，以及列的背景
 
 
 
-### 包含文字色彩的清單項目
+### <a name="list-items-with-colored-text"></a>包含文字色彩的清單項目
 
 問題的其中一個癥結是在 ListView 的 [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) 中設定 TextBlock.Foreground。 這通常是用來建立視覺階層。 Foreground 屬性是在 [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) 上設定，而在游標暫留、按下或選取項目時，DataTemplate 中的 TextBlocks 會繼承正確的 Foreground 色彩。 不過，設定 Foreground 會中斷繼承。
 
@@ -221,7 +228,7 @@ SystemColorWindowColor | 頁面、窗格、快顯視窗，以及列的背景
 </DataTemplate>
 ```
 
-### 包含按鈕和連結的清單項目
+### <a name="list-items-with-buttons-and-links"></a>包含按鈕和連結的清單項目
 
 有時候清單項目中會包含更複雜的控制項，例如 [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.hyperlinkbutton.aspx) 或 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)。 這些控制項有各自的游標暫留、按下和選取 (不一定有) 狀態，而它們不會在清單項目之上運作。 「黑底白字」佈景主題中的超連結是黃色的，會使它們在滑鼠指標暫留、按下或選取項目清單時，變得難以閱讀。
 
@@ -284,22 +291,17 @@ SystemColorWindowColor | 頁面、窗格、快顯視窗，以及列的背景
 
 
 
-## 偵測高對比
+## <a name="detecting-high-contrast"></a>偵測高對比
 
 您可使用 [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) 類別的成員，以程式設計的方式檢查目前的佈景主題是否為高對比。
 
 > [!NOTE]
 > 請確定您是從 App 已經初始化且已經顯示內容的範圍內呼叫 **AccessibilitySettings** 建構函式。
 
-## 相關主題  
+## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [UI 對比和設定範例](http://go.microsoft.com/fwlink/p/?linkid=231539)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [XAML 高對比範例](http://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

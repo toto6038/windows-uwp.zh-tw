@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: "了解如何在目標為 Windows 10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
-title: "使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版"
+title: "使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "UWP, 應用程式內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store"
 translationtype: Human Translation
-ms.sourcegitcommit: ffda100344b1264c18b93f096d8061570dd8edee
-ms.openlocfilehash: ee2a52a54be8510b962f1ef5c40570f3836d28c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
+# <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版
 
 您可以使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間中的成員，將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利。 這些 API 也會提供對您 App 授權資訊的存取權。
 
@@ -50,7 +57,7 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 
 雖然您可以修改此檔案中的值，但我們還是建議您建立自己的 WindowsStoreProxy.xml 檔案 (在 Visual Studio 專案的資料資料夾) 來改用 **CurrentAppSimulator**。 模擬交易時，請呼叫 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 載入您的檔案。 如果您沒有呼叫 **ReloadSimulatorAsync** 載入自己的 WindowsStoreProxy.xml 檔案，**CurrentAppSimulator** 會建立/載入 (但不覆寫) 預設的 WindowsStoreProxy.xml 檔案。
 
->**注意**  請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Windows 市集安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個原因，請設計您的程式碼能在這兩種情況下非同步和同步運作。
+>**注意**&nbsp;&nbsp;請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Windows 市集安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個原因，請設計您的程式碼能在這兩種情況下非同步和同步運作。
 
 
 <span id="proxy-examples" />
@@ -146,11 +153,11 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 本節列出定義 WindowsStoreProxy.xml 檔案結構的 XSD 檔案。 若要在使用 WindowsStoreProxy.xml 檔案時將這個結構描述套用到 Visual Studio 中的 XML 編輯器，請執行下列動作︰
 
 1. 在 Visual Studio 中開啟 WindowsStoreProxy.xml 檔案。
-2. 在 [XML] 功能表中，按一下 [建立結構描述]。 這會根據 XML 檔案的內容建立一個暫時的 WindowsStoreProxy.xsd 檔案。
+2. 在 [XML]**** 功能表中，按一下 [建立結構描述]****。 這會根據 XML 檔案的內容建立一個暫時的 WindowsStoreProxy.xsd 檔案。
 3. 使用下面的結構描述取代該 .xsd 檔案的內容。
 4. 將檔案儲存到您可以將它套用到多個應用程式專案的位置。
 5. 在 Visual Studio 中切換到您的 WindowsStoreProxy.xml 檔案。
-6. 在 [XML] 功能表中，按一下 [結構描述]，然後在清單中找出 WindowsStoreProxy.xsd 檔案的那一列。 如果檔案的位置不是您想要的位置 (例如，如果仍然顯示暫存檔案)，請按一下 [加入]。 導覽到正確的檔案，然後按一下 [確定]。 現在，您應該會在清單中看到該檔案。 確認該結構描述的 [使用] 欄中出現核取記號。
+6. 在 [XML]**** 功能表中，按一下 [結構描述]****，然後在清單中找出 WindowsStoreProxy.xsd 檔案的那一列。 如果檔案的位置不是您想要的位置 (例如，如果仍然顯示暫存檔案)，請按一下 [加入]****。 導覽到正確的檔案，然後按一下 [確定]****。 現在，您應該會在清單中看到該檔案。 確認該結構描述的 [使用]**** 欄中出現核取記號。
 
 完成這個動作之後，您對 WindowsStoreProxy.xml 進行的編輯就會依照結構描述。 如需詳細資訊，請參閱[做法︰選取要使用的 XML 結構描述](http://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
@@ -537,9 +544,4 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 |  **TransactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |
 |  **Status**  |      是      |  包含 App 用來表示消費性產品之履行狀態的字串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
 |  **OfferId**  |     否       |    包含 App 用來識別消費性產品所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

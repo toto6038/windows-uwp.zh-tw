@@ -1,15 +1,22 @@
 ---
 author: mtoepke
 title: "適用於 DirectX 遊戲的 2D 圖形"
-description: "我們要討論 2D 點陣圖圖形和效果的使用，以及如何在遊戲中使用 2D 圖形。"
+description: "我們將討論 2D 點陣圖圖形和效果的用法，以及如何在遊戲中使用它們。"
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX, 2d, 圖形"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 702b47d4002e9a2d0d62cc67e71432bb630e21d4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 適用於 DirectX 遊戲的 2D 圖形
+# <a name="2d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的 2D 圖形
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -20,7 +27,7 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 您可以使用 Direct2D 或 Direct3D 或將兩者組合，在 DirectX 中開發 2D 遊戲圖形。 2D 遊戲開發中許多較為實用的類別是在 Direct3D 中，如 [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) 類別。 Direct2D 是一組 API，主要針對需要支援繪圖基本類型 (例如圓形、線條和平面多邊形等) 的使用者介面和應用程式。 雖然如此，它仍然提供一組強大和高效能的類別和方法，可用來建立遊戲圖形，特別是建立遊戲重疊、介面以及抬頭顯示器 (HUD)，或是用來建立從簡單到適度詳細的各種 2D 遊戲。 不過，建立 2D 遊戲最有效的方式，是使用這兩種類別庫中的元素，而這就是我們在這個主題中開發 2D 圖形的方式。
 
-## 概念簡介
+## <a name="concepts-at-a-glance"></a>概念簡介
 
 
 在現代 3D 圖形和支援這種圖形的硬體出現之前，遊戲主要都是 2D 的，而且它們的許多圖形技術都牽涉到移動記憶體區塊，通常是色彩資料陣列，以 1:1 的比例轉譯或轉換為螢幕上的像素。
@@ -39,7 +46,7 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 -   裁剪是將點陣圖或幾何沒有在顯示器上可檢視區域內的部分移除，或是將被具有更高檢視優先權的物件所隱藏的部分移除。
 -   框架緩衝區是記憶體中的區域，通常位於圖形硬體本身的記憶體中，它包含將要繪製到螢幕上的最後光柵對應。 交換鏈結是緩衝區的集合，您在背景緩衝區繪製而且當影像繪製好時，就把它「交換」到前面來顯示。
 
-## 設計考量
+## <a name="design-considerations"></a>設計考量
 
 
 2D 圖形開發是熟悉使用 Direct3D 進行開發的絕佳方式，而且可讓您將更多時間投入遊戲開發中的其他重要部分：音訊、控制項以及遊戲機制。
@@ -50,7 +57,7 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 出色的作品變成視覺化呈現時，是您最大的資產。 雖然您的點陣圖圖形在使用最新的著色器模型功能時不一定具有 3D 照相寫實視覺效果的震撼力，但是絕佳的高解析度作品，通常能夠表達更多風格和個性，而且不會耗用太多效能。
 
-## 參考資料
+## <a name="reference"></a>參考資料
 
 
 -   [Direct2D 概觀](https://msdn.microsoft.com/library/windows/desktop/dd370987)
@@ -68,10 +75,5 @@ ms.openlocfilehash: 7a4c41b24bc4f703f035bb0daf0f1bc280af1e68
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

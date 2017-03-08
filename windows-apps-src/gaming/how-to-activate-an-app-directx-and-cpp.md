@@ -1,22 +1,29 @@
 ---
 author: mtoepke
 title: "如何啟用應用程式 (DirectX 和 C++)"
-description: "這個主題示範如何定義通用 Windows 平台 (UWP) DirectX app 的啟用經驗。"
+description: "這個主題示範如何定義通用 Windows 平台 (UWP) DirectX 應用程式的啟用經驗。"
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX, 啟用"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0b13604d2b0349817881a5c1c56c311931c90759
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4d3585e28ca4a3665a881df4f16a3cc3f82fcc52
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 如何啟用 app (DirectX 和 C++)
+# <a name="how-to-activate-an-app-directx-and-c"></a>如何啟用應用程式 (DirectX 和 C++)
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 這個主題示範如何定義通用 Windows 平台 (UWP) DirectX app 的啟用經驗。
 
-## 登錄應用程式啟用事件處理常式
+## <a name="register-the-app-activation-event-handler"></a>登錄應用程式啟用事件處理常式
 
 
 首先，登錄以處理 [**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件，這個事件會在作業系統啟動並初始化您的 app 時引發。
@@ -36,7 +43,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## 啟用 app 的 CoreWindow 執行個體
+## <a name="activate-the-corewindow-instance-for-the-app"></a>啟用 app 的 CoreWindow 執行個體
 
 
 當您的 app 啟動時，您必須取得 app 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 參照。 **CoreWindow** 包含您的 app 用來處理視窗事件的視窗事件訊息發送器。 請呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 以在您 app 啟用事件的回呼中取得這項參照。 一旦取得這項參照之後，呼叫 [**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) 啟用主 app 視窗。
@@ -49,10 +56,10 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## 開始處理主 app 視窗的事件訊息
+## <a name="start-processing-event-message-for-the-main-app-window"></a>開始處理主 app 視窗的事件訊息
 
 
-您的回呼會以 app [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 所處理之事件訊息的形式發生。 如果您未從 app 的主迴圈 (實作於檢視提供者的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中) 呼叫 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，就不會叫用這個回呼。
+您的回呼會以應用程式 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 所處理之事件訊息的形式發生。 如果您未從應用程式的主迴圈 (實作於檢視提供者的 [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 方法中) 呼叫 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215)，就不會叫用這個回呼。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -79,7 +86,7 @@ void App::Run()
 }
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [如何暫停 app (DirectX 和 C++)](how-to-suspend-an-app-directx-and-cpp.md)
@@ -91,10 +98,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

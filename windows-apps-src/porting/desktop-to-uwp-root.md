@@ -3,9 +3,17 @@ author: awkoren
 Description: "開始使用傳統型轉 UWP 橋接器並將 Windows 傳統型應用程式 (例如 Win32、WPF 及 Windows Forms) 轉換為通用 Windows 平台 (UWP) App。"
 Search.Product: eADQiWindows 10XVcnh
 title: "使用傳統型橋接器將您的傳統型應用程式移轉通用 Windows 平台 (UWP)"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 translationtype: Human Translation
-ms.sourcegitcommit: 462d2b13cefc6abb4d7c6f814ec4ee659e4afde8
-ms.openlocfilehash: 1ef54c3c45113e434333058d0f039e213ea8eed2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: dd9f45b0ddcc201053ed8e35908da66443e47d72
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -87,14 +95,10 @@ ms.openlocfilehash: 1ef54c3c45113e434333058d0f039e213ea8eed2
 | [使用傳統型橋接器將您的 App 手動轉換為 UWP](desktop-to-uwp-manual-conversion.md) | 了解如何手動建立應用程式套件和資訊清單。 |
 | [傳統型橋接器應用程式擴充功能](desktop-to-uwp-extensions.md) | 使用擴充功能來增強已轉換的 App，以啟用像是啟動工作和檔案總管整合等功能。 |
 | [使用傳統型橋接器轉換之 App 所支援的 UWP API](desktop-to-uwp-supported-api.md) | 查看您可以針對已轉換的傳統型應用程式使用哪些 UWP API。 |
-| [針對使用傳統型橋接器轉換的 App 進行偵錯](desktop-to-uwp-debug.md) | 說明可用來偵錯已轉換之 App 的選項。 | 
+| [.NET 傳統型應用程式與 Visual Studio 的傳統型橋接器封裝指南](desktop-to-uwp-packaging-dot-net.md) | 設定 Visual Studio 方案，您就可以編輯、偵錯及封裝您的 .NET 應用程式。 | 
+| [針對使用傳統型橋接器轉換的應用程式進行偵錯](desktop-to-uwp-debug.md) | 說明可用來偵錯已轉換之應用程式的選項。 | 
 | [簽署使用傳統型橋接器轉換的 App](desktop-to-uwp-signing.md) | 了解如何使用憑證簽署已轉換的應用程式套件。 |
 | [散發使用傳統型橋接器轉換的 App](desktop-to-uwp-distribute.md) | 查看如何將已轉換的 App 散佈給使用者。  |
 | [傳統型橋接器的幕後作業](desktop-to-uwp-behind-the-scenes.md) | 深入了解傳統型轉 UWP 橋接器背後的運作方式。 | 
 | [傳統型橋接器的已知問題](desktop-to-uwp-known-issues.md) | 列出傳統型轉 UWP 橋接器的已知問題。 | 
 | [傳統型應用程式橋接轉 UWP 的程式碼範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples) | GitHub 上示範轉換 app 功能的程式碼範例。 |
-
-
-<!--HONumber=Dec16_HO3-->
-
-

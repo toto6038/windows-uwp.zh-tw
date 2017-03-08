@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "了解如何在 HTML 中指派 **AdControl** 屬性。"
 title: "AdControl HTML 屬性範例"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, AdControl, HTML, 屬性"
 translationtype: Human Translation
-ms.sourcegitcommit: f88a71491e185aec84a86248c44e1200a65ff179
-ms.openlocfilehash: 741cf19ee0310c84d1a85f4a1e82b353d88d1b9e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -37,9 +44,4 @@ ms.openlocfilehash: 741cf19ee0310c84d1a85f4a1e82b353d88d1b9e
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

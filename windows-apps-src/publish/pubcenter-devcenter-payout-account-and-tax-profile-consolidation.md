@@ -3,13 +3,20 @@ author: jnHs
 Description: "Microsoft Advertising 收益的所有款項，現在可透過您的開發人員中心支付帳戶收款。"
 title: "pubCenter 開發人員中心支付帳戶和稅金設定檔彙總"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: baf488ac70ea2937a8bfda8a47d679a23053578d
-ms.openlocfilehash: e71c038575f1779c0a8d14306b0e4b8fd8eaf959
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5b93669adff4acfe791a2f607e9d8475e6213a31
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# pubCenter 開發人員中心支付帳戶和稅金設定檔彙總
+# <a name="pubcenter-devcenter-payout-account-and-tax-profile-consolidation"></a>pubCenter 開發人員中心支付帳戶和稅金設定檔彙總
 
 截至 2016 年 4 月 1 日，Microsoft Advertising 收益的所有款項現在可透過您的開發人員中心支付帳戶收款。 請瀏覽您的 [Windows 開發人員中心儀表板](https://developer.microsoft.com/dashboard/apps/overview)，以了解所有廣告管理和支付報告功能。 
 
@@ -27,9 +34,4 @@ ms.openlocfilehash: e71c038575f1779c0a8d14306b0e4b8fd8eaf959
 如果您需要進一步協助，請開啟[支援票證](http://go.microsoft.com/fwlink/p/?LinkId=733342)。
 
  
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -3,13 +3,20 @@ title: "比較緩衝區"
 description: "這個範例程式碼說明如何比較通用 Windows 平台 (UWP) app 中的緩衝區。"
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 6c55e0dec2198110e0ddcbad743b04439cb3435e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 95996b4d25e6808b636b69998891c72975ac9ae2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 比較緩衝區
+# <a name="compare-buffers"></a>比較緩衝區
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -48,8 +55,3 @@ public void CompareBuffers()
     Boolean bVal_2 = CryptographicBuffer.Compare(buff1, buff3);
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

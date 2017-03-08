@@ -1,23 +1,30 @@
 ---
 author: TylerMSFT
 title: "新增啟動顯示畫面"
-description: "使用 Microsoft Visual Studio 2015 設定 app 的啟動顯示畫面影像與背景色彩。"
+description: "使用 Microsoft Visual Studio 2015 設定應用程式的啟動顯示畫面影像與背景色彩。"
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4b8d8b81b1807681d3aa3c5ed61359a5da64dfac
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 新增啟動顯示畫面
+# <a name="add-a-splash-screen"></a>新增啟動顯示畫面
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 使用 Microsoft Visual Studio 2015 設定 app 的啟動顯示畫面影像與背景色彩。
 
-## 在 Visual Studio 2015 中設定啟動顯示畫面影像與背景色彩
+## <a name="set-the-splash-screen-image-and-background-color-in-visual-studio-2015"></a>在 Visual Studio 2015 中設定啟動顯示畫面影像與背景色彩
 
 
 當您使用 Visual Studio 2015 範本建立 app 時，會將預設影像新增到您的專案，並設定為啟動顯示畫面影像。 啟動顯示畫面的背景色彩預設為淺灰。 如果您想變更 app 啟動顯示畫面的預設影像或色彩，請遵循以下步驟：
@@ -38,13 +45,13 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
 4.  若要為 UWP app 選取新的啟動顯示畫面影像，請按顯示在 [縮放的資產]**** 下方 [1240 x 600 px]**** 標籤旁含有省略符號的按鈕。 選擇要當作啟動顯示畫面影像的 1240 x 600 像素影像 (.png、.jpg 或 .jpeg)。
 
-    **重要** 您選擇的啟動顯示畫面影像必須使用 1x 縮放比例的 620 x 300 像素。 此外，設計您的啟動顯示畫面時，請注意它將小於螢幕，並且置中對齊。 它並不像 Windows Phone 市集應用程式的啟動顯示畫面會填滿螢幕。
+    **重要**：您選擇的啟動顯示畫面影像必須使用 1x 縮放比例的 620 x 300 像素。 此外，設計您的啟動顯示畫面時，請注意它將小於螢幕，並且置中對齊。 它並不像 Windows Phone 市集應用程式的啟動顯示畫面會填滿螢幕。
 
      
 
 5.  若要為 Windows Phone 市集應用程式選取新的啟動顯示畫面影像，請按 [縮放的資產]**** 下方顯示在 [1152 x 1920 px]**** 標籤旁具有省略符號的按鈕。 選擇要當作啟動顯示畫面影像的 1152 x 1920 像素影像 (.png、.jpg 或 .jpeg)。
 
-    **重要** 您所選擇的啟動顯示畫面影像必須是 1152 x 1920 像素，這是 2.4x 縮放比例的正確大小。 如果這是您所提供的唯一資產，它將會針對 1.4x 和 1x 的縮放比例縮小。
+    **重要**：您所選擇的啟動顯示畫面影像必須是 1152 x 1920 像素，這是 2.4x 縮放比例的正確大小。 如果這是您所提供的唯一資產，它將會針對 1.4x 和 1x 的縮放比例縮小。
 
      
 
@@ -52,7 +59,7 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
     您不一定要設定啟動顯示畫面的背景色彩。 如果您沒有為 UWP app 指定色彩，啟動顯示畫面背景色彩預設會是淺灰色 (十六進位值 \#464646)。 這個色彩與預設的 [磚]**** 背景色彩相同 (請參閱 [視覺資產]**** 索引標籤中 [磚影像和標誌]**** 區段的 [背景色彩]**** 欄位)。 如果您沒有為 Windows Phone 指定色彩，或是將它設定成「透明」，啟動顯示畫面背景色彩就會是透明的。
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 
 如果您的 app 需要一些時間載入，可考慮加入延長式啟動顯示畫面。 如需逐步指引，請參閱[建立自訂的啟動顯示畫面](create-a-customized-splash-screen.md)。
@@ -62,7 +69,7 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [建立自訂的啟動顯示畫面](create-a-customized-splash-screen.md)
 
@@ -74,9 +81,4 @@ ms.openlocfilehash: 4d8a00cf7bd151ab97e9abc10a09a3794a0e292f
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

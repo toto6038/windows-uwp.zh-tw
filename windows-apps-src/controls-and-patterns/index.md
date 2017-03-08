@@ -10,9 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
+ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
+ms.sourcegitcommit: 412a3f70861c6cd1bbf003fe0bd78c8547a5f3f8
+ms.openlocfilehash: 7b525267c8f4d24af95f6d41d46d33a3adf10f8f
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>適用於 UWP 應用程式的控制項和模式
@@ -174,8 +176,10 @@ ms.openlocfilehash: e530c8fab64c160737ccc06faf676d1d113896c4
 </ul>
 </div>
 
+## <a name="additional-controls-options"></a>其他控制選項
 
+公司提供的其他 UWP 開發適用的控制項，例如 [Telerik](http://www.telerik.com/)、[SyncFusion](https://www.syncfusion.com/products/uwp)、[DevExpress](https://www.devexpress.com/Products/NET/Controls/Win10Apps/)、[Infragistics](http://www.infragistics.com/products/universal-windows-platform)、[ComponentOne](https://www.componentone.com/Studio/Platform/UWP) 及 [ActiPro](http://www.actiprosoftware.com/products/controls/universal)。 這些控制項，透過擴大標準系統控制項與自訂控制和服務，為企業與 .NET 開發人員提供額外的支援。  
 
-<!--HONumber=Dec16_HO2-->
+如果您想要深入了解這些控制項，請查看 GitHub 上的[客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database)範例。 這個範例使用資料格和 Telerik 的資料項驗證，這是其 UWP 套件的部分 UI。 UWP 套件的 UI 是超過 20 個控制項的集合，透過 .NET Foundation 以開放原始碼專案形式提供。
 
-
+![客戶訂單資料庫影像](images/customerOrdersDataGrid.png)

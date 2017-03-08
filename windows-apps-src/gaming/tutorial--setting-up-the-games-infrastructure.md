@@ -3,30 +3,37 @@ author: mtoepke
 title: "設定遊戲專案"
 description: "組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。"
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 設定, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fd8e676e66c1df530aca41e05f2ea68d96d01a32
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3bf9e6f70f71dc0b70a2f8af148c44acc1a329fb
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 設定遊戲專案
+# <a name="set-up-the-game-project"></a>設定遊戲專案
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 使用正確的範本並設定專用於遊戲開發的專案，可以為您節省很多時間和麻煩。 我們會逐步引導您如何準備和設定簡單的遊戲專案。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   了解如何在 Visual Studio 中設定 Direct3D 遊戲專案。
 
-## 設定遊戲專案
+## <a name="setting-up-the-game-project"></a>設定遊戲專案
 
 
 您可以從頭開始撰寫遊戲，只需要一個好用的文字編輯器、幾個範例，以及足夠的腦力。 但是這恐怕不是利用您的時間最有效的方式。 如果您是通用 Windows 平台 (UWP) 開發的初學者，為什麼不讓 Visual Studio 為您減輕一些負擔呢？ 以下是讓您的專案熱烈展開所需要做的事。
 
-## 1. 挑選正確的範本
+## <a name="1-pick-the-right-template"></a>1. 挑選正確的範本
 
 
 Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2015 中，您將發現很多範本能夠讓遊戲和圖形應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
@@ -120,7 +127,7 @@ void App::Run()
 
 如果遊戲的視窗沒有關閉，它會分派所有事件、更新計時器以及轉譯和顯示圖形管線的結果。 我們會在[定義遊戲的 UWP 架構](tutorial--building-the-games-metro-style-app-framework.md)和[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)中詳細討論。 現在，您應該對 UWP DirectX 遊戲的基本程式碼結構有大致的了解。
 
-## 2. 檢視並更新 package.appxmanifest 檔案
+## <a name="2-review-and-update-the-packageappxmanifest-file"></a>2. 檢視並更新 package.appxmanifest 檔案
 
 
 範本不只有程式碼檔案。 **package.appxmanifest** 檔案包含有關您專案的中繼資料，可用來封裝和啟動您的遊戲，以及提交到 Windows 市集。 它也包含玩家系統的重要資訊，用來存取遊戲執行所需的系統資源。
@@ -137,7 +144,7 @@ void App::Run()
 
 現在，讓我們看看隨附於 **DirectX 11 應用程式 (通用 Windows)** 範本的其餘檔案。
 
-## 3. 檢視包含的類別庫和標頭
+## <a name="3-review-the-included-libraries-and-headers"></a>3. 檢視包含的類別庫和標頭
 
 
 有幾個檔案我們尚未討論。 這些檔案提供 Direct3D 遊戲開發案例中常用的其他工具和支援。
@@ -153,7 +160,7 @@ void App::Run()
 
  
 
-### 後續步驟
+### <a name="next-steps"></a>後續步驟
 
 現在，您已可建立使用 DirectX 的 UWP 遊戲專案，並識別 DirectX 11 應用程式 (通用 Windows) 範本提供的元件和檔案。
 
@@ -165,10 +172,5 @@ void App::Run()
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

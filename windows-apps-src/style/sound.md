@@ -5,9 +5,16 @@ label: Sound
 title: "音效"
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 5e4decdfdda0cad59d80395440f974d4ff3303a6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fe56db9f63461ad21173406289c18e6f704aa2a4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -146,9 +153,4 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ## <a name="related-articles"></a>相關文章
 
 * [針對 Xbox 和電視進行設計](http://go.microsoft.com/fwlink/?LinkId=760736)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -2,23 +2,30 @@
 author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
 title: "設計介面上適用於原型設計的範例資料"
-description: "針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。"
+description: "針對您的應用程式，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 53e807c0d9de8faf2d0b5dc0e1c8e9c380e42d86
-ms.openlocfilehash: 6f157688cba014ffc1f8d09c2a291d62c564c8c9
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 35df3de9b56b9539a559e161e80658c23a9d0480
+ms.lasthandoff: 01/19/2017
 
 ---
-設計介面上適用於原型設計的範例資料
+<a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**注意：**您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)或 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
+**注意**  您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)或 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
 
 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。 為了讓您的控制項能夠填入資料 (讓您能夠在 app 的配置、範本及其他視覺化屬性上運作)，系統提供了各種不同方式，讓您可以使用設計階段的範例資料。 如果您正在建置草圖 (或原型) app，則範例資料也可以是非常實用且省時的。 您可以在執行階段於草圖或原型中使用範例資料來說明您的想法，而不需連線到實際的即時資料。
 
-在標記中設定 DataContext
+<a name="setting-datacontext-in-markup"></a>在標記中設定 DataContext
 -----------------------------
 
 有一個相當常見的開發人員做法是，使用命令式程式碼 (在程式碼後置中) 來設定頁面或使用者控制項的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)，以檢視模型執行個體。
@@ -67,7 +74,7 @@ else
 
 如果您需要將參數傳遞到初始化程式碼，您可以使用檢視模型尋找程式。 檢視模型尋找程式是您可以放入 app 資源的類別。 它具有公開檢視模型的屬性，而您頁面的 **DataContext** 會繫結至該屬性。 尋找程式或檢視模型可使用的另一種模式是相依性插入，可在適當時建構設計階段或執行階段的資料提供者 (每個都會實作常見的介面)。
 
-「來自類別的範例資料」和設計階段屬性
+<a name="sample-data-from-class-and-design-time-attributes"></a>「來自類別的範例資料」和設計階段屬性
 ---------------------------------------------------------------------------------------
 
 如果基於任何因素而導致上節中的所有選項都不適合您的情況，則您仍然可透過 XAML 工具的功能和設計階段屬性來使用許多設計階段資料選項。 Blend for Visual Studio 中的 [從類別建立範例資料]**** 功能就是一個很好的選項。 您可以在 [資料]**** 面板頂端的其中一個按鈕中找到該命令。
@@ -132,7 +139,7 @@ else
 
 **IsDesignTimeCreatable** 屬性會指出設計工具應該實際建立類別的執行個體，表示這個類別具有公用的預設建構函式，以及它會在其本身中填入資料 (真實或範例)。 如果您沒有設定 **IsDesignTimeCreatable** (或將它設定為 **False**)，則將無法取得設計介面上顯示的範例資料。 在這個案例中，設計工具唯一要做的就是剖析適用於其可繫結屬性的類別，並在 [資料]**** 面板和 [建立資料繫結]**** 對話方塊中顯示它們。
 
-適用於原型設計的範例資料
+<a name="sample-data-for-prototyping"></a>適用於原型設計的範例資料
 --------------------------------------------------------
 
 針對原型設計，您會想要在設計階段和執行階段使用範例資料。 針對這個使用案例，Blend for Visual Studio 具備 [新增範例資料]**** 功能。 您可以在 [資料]**** 面板頂端的其中一個按鈕中找到該命令。
@@ -142,9 +149,4 @@ else
 [新增範例資料]**** 功能會使用 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 而非 **d:DataContext**，因此，當您執行草圖或原型時以及在設計期間就能使用範例資料。 此外，[資料]**** 面板確實能夠加速您的設計和繫結工作。 例如，只要將集合屬性從 [資料]**** 面板拖曳到設計介面，就能產生資料繫結項目控制項和必要的範本，來建置並執行所有就緒的項目。
 
 ![適用於原型設計的範例資料。](images/displaying-data-in-the-designer-04.png)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

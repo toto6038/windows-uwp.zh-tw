@@ -3,9 +3,16 @@ author: mcleblanc
 description: "以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從 Windows Phone Silverlight 轉譯至通用 Windows 平台 (UWP) app。"
 title: "將 Windows Phone Silverlight XAML 與 UI 移植到 UWP"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 3aa68943724c008e18df63d8b0ae20f448146303
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -91,7 +98,7 @@ UWP app 現在可以使用 UWP 動畫庫，做為主要畫面格動畫及 from/t
 
 ## <a name="back-button-handling"></a>[返回] 按鈕處理
 
-在 Windows 10 應用程式中，您可以使用單一方式來處理返回按鈕，且返回按鈕將可以在所有裝置上運作。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在傳統型裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
+在 Windows 10 應用程式中，您可以使用單一方式來處理返回按鈕，且返回按鈕將可以在所有裝置上運作。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在電腦裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
 下面的範例適用於所有裝置系列，且非常適合在可將相同處理套用至所有頁面以及您不需要確認瀏覽 (例如，提供未儲存變更的警告) 的情況下使用。
 
@@ -246,7 +253,7 @@ Windows Phone Silverlight 具有 **System.Windows.UIElement.OpacityMask** 屬性
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/>
 ```
 
-這裡的 winrt\_check.png 是點陣圖形式的 Alpha 遮罩 ，就像 wpsl\_check.png，而且很可能是相同的檔案。 不過，您可能會想要提供數個不同大小的 winrt\_check.png 以供不同的縮放比例使用。 如需有關該事項的詳細資訊，以及對 **Width** 和 **Height** 值所做之變更的說明，請參閱本主題中的[檢視/有效像素、檢視距離及縮放比例](#view-effective-pixels-viewing-distance-and-scale-factors)。
+這裡的 winrt\_check.png 是點陣圖形式的 Alpha 遮罩 ，就像 wpsl\_check.png，而且很可能是相同的檔案。 不過，您可能會想要提供數個不同大小的 winrt\_check.png 以供不同的縮放比例使用。 如需有關該事項的詳細資訊，以及對 **Width** 和 **Height** 值所做之變更的說明，請參閱本主題中的[檢視或有效像素、檢視距離及縮放比例](#view-or-effective-pixels-viewing-distance-and-scale-factors)。
 
 如果點陣圖的淺色和深色形式有差異，有一個適合此情況的更普遍方法，就是使用兩個影像資產：一個具有深色前景 (用於淺色佈景主題)，另一個具有淺色前景 (用於深色佈景主題)。 如需有關如何命名這組點陣圖資產的進一步詳細資料，請參閱[如何使用限定詞命名資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)。 正確命名一組影像檔之後，您便可以在摘要中使用它們的根名稱來參考它們，就像這樣：
 
@@ -363,7 +370,7 @@ UWP app 磚的行為與 Windows Phone Silverlight app 的「動態磚」類似�
 
 請參閱[使用磚、徽章以及快顯通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)。
 
-## <a name="vieweffective-pixels-viewing-distance-and-scale-factors"></a>檢視/有效像素、檢視距離及縮放比例
+## <a name="view-or-effective-pixels-viewing-distance-and-scale-factors"></a>檢視或有效像素、檢視距離及縮放比例
 
 Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的實際實體大小和解析度抽取 UI 元素的大小與配置時的方式上是不一樣的。 Windows Phone Silverlight 應用程式是使用檢視像素來執行此作業。 Windows 10 的檢視像素概念則已經精簡為有效向素。 以下是該字詞的說明、 它的意義，以及它所提供的額外值。
 
@@ -371,7 +378,7 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的
 
 對 Windows Phone Silverlight app 來說，不論手機螢幕實體像素是多少，也不論其像素密度或實體大小為何，所有手機螢幕寬度都正好是 480 檢視像素，無一例外。 這表示 **Image** 元素如果是 `Width="48"`，將正好是任何可執行 Windows Phone Silverlight app 之手機螢幕寬度的 1/10。
 
-對 Windows 10 app 來說，則「不是」所有裝置寬度都採用某個固定的有效像素數目這麼一回事。 這可能相當顯而易見，因為 UWP app 能夠在廣泛的各式裝置上執行。 不同的裝置有不同數量的有效像素範圍，範圍從適用於最小型裝置的 320 epx 到適用於中等大小之監視器的 1024 epx，還有遠遠超過此寬度的更高像素。 您只需一如往常繼續使用自動調整大小元素與動態配置面板。 在某些情況下，也會將 XAML 標記中的 UI 元素屬性設定為固定大小。 縮放比例會根據您的應用程式是在何種裝置上執行，以及使用者所做的顯示設定，自動套用到該應用程式。 此外，該縮放比例還可用來讓大小固定的任何 UI 元素持續在各種不同螢幕大小上，為使用者呈現大約是固定大小的觸控 (及讀取) 目標。 和動態配置一起使用，您的 UI 將不只會在不同裝置上進行光學縮放，還將改為執行必要的動作，以便將適當數量的內容放到可用空間中。
+對 Windows 10 app 來說，則*「不是」*所有裝置寬度都採用某個固定的有效像素數目這麼一回事。 這可能相當顯而易見，因為 UWP app 能夠在廣泛的各式裝置上執行。 不同的裝置有不同數量的有效像素範圍，範圍從適用於最小型裝置的 320 epx 到適用於中等大小之監視器的 1024 epx，還有遠遠超過此寬度的更高像素。 您只需一如往常繼續使用自動調整大小元素與動態配置面板。 在某些情況下，也會將 XAML 標記中的 UI 元素屬性設定為固定大小。 縮放比例會根據您的應用程式是在何種裝置上執行，以及使用者所做的顯示設定，自動套用到該應用程式。 此外，該縮放比例還可用來讓大小固定的任何 UI 元素持續在各種不同螢幕大小上，為使用者呈現大約是固定大小的觸控 (及讀取) 目標。 和動態配置一起使用，您的 UI 將不只會在不同裝置上進行光學縮放，還將改為執行必要的動作，以便將適當數量的內容放到可用空間中。
 
 因為 480 之前是手機尺寸螢幕之檢視像素中的固定寬度，而且該值現在在有效像素中通常較小，所以縮圖的規則是將您 Windows Phone Silverlight 應用程式標記中的任何維度乘以 0.8。
 
@@ -399,10 +406,5 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的
 ## <a name="related-topics"></a>相關主題
 
 * [命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

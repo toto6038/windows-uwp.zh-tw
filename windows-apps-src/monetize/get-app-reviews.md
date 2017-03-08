@@ -2,19 +2,28 @@
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器取得評論資料。"
-title: "取得 App 評論"
+title: "取得應用程式評論"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 評論"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="get-app-reviews"></a>取得 App 評論
+# <a name="get-app-reviews"></a>取得應用程式評論
 
 
 使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得評論資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[評論報告](../publish/reviews-report.md)也有提供這項資訊。
 
-## <a name="prerequisites"></a>先決條件
+在擷取評論之後，您可以使用 Windows 市集評論 API 中的[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)和[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法，以程式設計的方式回應評論。
+
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -33,7 +42,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 描述                                                                 |
+| 標頭        | 類型   | 說明                                                                 |
 |---------------|--------|---------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -41,7 +50,7 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取評論資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取評論資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -82,11 +91,11 @@ ms.openlocfilehash: 49d3f3cb608f3207306af443c67b684a0ae9f319
 | notHelpfulCount  | eq、ne  | 該評論被標記為「沒有幫助」的次數。  |
 | responseDate  | eq、ne  | 提交回應的日期。  |
 | responseText  | eq、ne、contains  | 回應的文字內容。  |
-
+| id  | eq、ne  | 評論的識別碼 (這是 GUID)。        |
 
 <span/> 
 
-### <a name="request-example"></a>要求範例
+### <a name="request-example"></a>要求的範例
 
 下列範例示範取得評論資料的數個要求。 將 *applicationId* 值以您 app 的市集識別碼取代。
 
@@ -139,12 +148,13 @@ Authorization: Bearer <your access token>
 | notHelpfulCount        | 數字  | 該評論被標記為「沒有幫助」的次數。               |
 | responseDate           | 字串  | 提交回應的日期。                 |
 | responseText           | 字串  | 回應的文字內容。        |
+| id                     | 字串  | 評論的識別碼 (這是 GUID)。 您可以在[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)和[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法中使用此識別碼。       |
 
 <span/> 
 
 ### <a name="response-example"></a>回應範例
 
-下列範例針對此要求示範範例 JSON 回應主體。
+下列範例示範這個要求的一個範例 JSON 回應主體。
 
 ```json
 {
@@ -171,7 +181,8 @@ Authorization: Bearer <your access token>
       "helpfulCount": 0,
       "notHelpfulCount": 0,
       "responseDate": "2015-08-07T01:50:22.9874488Z",
-      "responseText": "1"
+      "responseText": "1",
+      "id": "6be543ff-1c9c-4534-aced-af8b4fbe0316"
     }
   ],
   "@nextLink": null,
@@ -183,13 +194,10 @@ Authorization: Bearer <your access token>
 
 * [評論報告](../publish/reviews-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得 App 下載數](get-app-acquisitions.md)
+* [取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)
+* [提交應用程式評論的回應](submit-responses-to-app-reviews.md)
+* [取得應用程式下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 評分](get-app-ratings.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

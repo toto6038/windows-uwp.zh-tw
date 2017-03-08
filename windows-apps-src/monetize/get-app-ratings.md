@@ -2,14 +2,21 @@
 author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。"
-title: "取得 App 評分"
+title: "取得應用程式評分"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 評分"
 translationtype: Human Translation
-ms.sourcegitcommit: 7d05c8953f1f50be0b388a044fe996f345d45006
-ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="get-app-ratings"></a>取得 App 評分
+# <a name="get-app-ratings"></a>取得應用程式評分
 
 使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得彙總評分資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[評分報告](../publish/ratings-report.md)也有提供這項資訊。
 
@@ -35,7 +42,7 @@ ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 描述                                                                 |
+| 標頭        | 類型   | 說明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 86685984256459e0bb125340daa1616b09982429
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取評分資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取評分資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -91,7 +98,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
+| 值      | 類型   | 說明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 內含彙總評分資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[評分數值](#rating-values)＞一節。                                                                                                                           |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評分資料，就會傳回此值。 |
@@ -156,9 +163,4 @@ Authorization: Bearer <your access token>
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 評論](get-app-reviews.md)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

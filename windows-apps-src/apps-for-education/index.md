@@ -1,23 +1,34 @@
 ---
 author: TylerMSFT
 title: "開發教育用 App。"
-description: "本節說明可供您撰寫 Windows10 平台教育用 App 的通用 Windows App 資源。"
+description: "本節說明可供您撰寫 Windows 10 平台教育用應用程式的通用 Windows 應用程式資源。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 translationtype: Human Translation
-ms.sourcegitcommit: 48fcfe2b033614b445a1be6d757a8d208c7b1292
-ms.openlocfilehash: bb401b73432c072d551814dec9504a7d1742b7d4
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: abeadc4fe27858afcdddfeff08362fff69ce713b
+ms.lasthandoff: 02/08/2017
 
 ---
-# 開發教育用通用 Windows App
-下列資源會協助您撰寫教育用通用 Windows App。
 
-### 協助工具
+# <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows 應用程式
+![測試應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)
+
+下列資源會協助您撰寫教育用通用 Windows 應用程式。
+
+### <a name="accessibility"></a>協助工具
 教育用 App 必須為無障礙 App。 請參閱[開發無障礙 App](https://developer.microsoft.com/windows/accessible-apps) 瞭解詳細資訊。
 
 
-### 安全的評量
+### <a name="secure-assessments"></a>安全的評量
 評量/測驗 App 通常需要產生*鎖定*環境，以避免學生在測驗期間使用其他電腦或網際網路資源。 這項功能僅能透過[ API](take-a-test-api.md) 使用。 請參閱 Windows IT 中心中的[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10) Web App，來取得針對高度利害攸關測驗鎖定線上存取的測驗環境範例。
 
-### 使用者輸入
+### <a name="user-input"></a>使用者輸入
 使用者輸入是教育用 App 的重要部分；UI 控制項必須具備回應性且直覺化，才不會干擾使用者的注意力。 如需通用 Windows App 中可用輸入選項的一般概觀，請參閱＜設計與 UI＞一節中 [輸入基本資訊](https://msdn.microsoft.com/windows/uwp/input-and-devices/input-primer) 與其底下的主題。 此外，以下範例 App 也示範了通用 Windows 平台中基本 UI 的處理方式。
 - [基本輸入範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput) (英文) 示範如何在通用 Windows App 中處理輸入。
 - [使用者互動模式範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode) (英文) 示範如何偵測及回應使用者互動模式。
@@ -26,17 +37,12 @@ ms.openlocfilehash: bb401b73432c072d551814dec9504a7d1742b7d4
 Windows Ink 平台可以融入學生熟悉的輸入模式來讓教育用 App 更出色。 請參閱[手寫筆互動與 Windows Ink](https://msdn.microsoft.com/windows/uwp/input-and-devices/pen-and-stylus-interactions) 和其底下的主題，以瞭解在您的 App 中實作 Windows Ink 的完整指南。 以下範例 App 提供此 API 的使用範例。
 - [手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Ink) (英文) 示範如何使用 JavaScript 在通用 Windows App 中使用手寫功能 (例如，擷取、操縱和解譯筆墨筆劃)。
 - [簡易手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) (英文) 示範如何使用 C# 在通用 Windows App 中使用手寫功能 (例如，從使用者輸入擷取筆跡，以及對筆墨筆劃執行手寫辨識)。
-- [複雜手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) (英文) 示範如何使用進階的 InkPresenter 功能，讓筆跡與其他物件交錯、選取筆跡、複製/貼上，及處理事件。 範例是在通用 Windows 平台上以 C++ 建立，並且可在電腦版和行動裝置版 Windows10 SKU 上執行。
+- [複雜手寫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) (英文) 示範如何使用進階的 InkPresenter 功能，讓筆跡與其他物件交錯、選取筆跡、複製/貼上，及處理事件。 範例是在通用 Windows 平台上以 C++ 建立，並且可在電腦版和行動裝置版 Windows 10 SKU 上執行。
 
 
-### Windows 市集
+### <a name="windows-store"></a>Windows 市集
 教育用 App 通常是在特殊情況下向特定組織發行。 請參閱[向企業散發企業營運應用程式](https://msdn.microsoft.com/windows/uwp/publish/distribute-lob-apps-to-enterprises)以取得相關詳細資訊。
 
-## 相關主題
-- Windows IT 中心中的[教育用 Windows10](https://technet.microsoft.com/edu/windows/index)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
+## <a name="related-topics"></a>相關主題
+- Windows IT 中心中的[教育用 Windows 10](https://technet.microsoft.com/edu/windows/index)
 

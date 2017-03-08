@@ -5,9 +5,16 @@ title: "使用全球通用格式"
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: a733f3d87f2e6598e49d8926a7b10797e335c79c
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -166,9 +173,4 @@ ms.openlocfilehash: eb524ae7369874e8a2f81cd4a8cbb112829387c8
 * [日期和時間格式化範例](http://go.microsoft.com/fwlink/p/?linkid=231618)
 * [全球化喜好設定範例](http://go.microsoft.com/fwlink/p/?linkid=231608)
 * [數字格式化及剖析範例](http://go.microsoft.com/fwlink/p/?linkid=231620)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

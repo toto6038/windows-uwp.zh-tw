@@ -12,8 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 20230362a38d4541fbed25ac822c96032f7b6d8f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8131f56572c4266b5987669d4195ab94d1fd5206
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -201,10 +202,5 @@ private void GetPointerDevices()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

@@ -3,13 +3,20 @@ author: jwmsft
 description: "列出 Windows 執行階段的 XAML 中，針對 Common Language Runtime (CLR) 及其他程式設計語言 (例如 C++) 中特定資料類型的語言層級支援。"
 title: "XAML 內建資料類型"
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 60e328ca8652baeb226e78f5a9d99fbf8c4f5208
-ms.openlocfilehash: a204f1d000dd28a9159b4ca795107046ca4ef92e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f6a1ca4850ffbc19afc8defa6d2d373dbfbf2b2b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# XAML 內建資料類型
+# <a name="xaml-intrinsic-data-types"></a>XAML 內建資料類型
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -30,22 +37,17 @@ Windows 執行階段的 XAML 提供下列類型的語言層級支援。
 
 **注意** 根據慣例，會顯示 XAML 與其他所有 XAML 語言元素的語言基本類型，包含 "x:" 前置詞。 這就是 XAML 語言元素在真實世界標記中的一般用法。 XAML 的文件與 XAML 規格會依循這個慣例。
 
-## 其他 XAML 基本類型
+## <a name="other-xaml-primitives"></a>其他 XAML 基本類型
 
 XAML 2009 規格有提到其他 XAML 語言層級的基本類型，如 **x:Uri** 和 **x:Single**。 除非在本主題的表格中另行列出，否則 Windows 執行階段的 XAML 目前不支援由其他 XAML 詞彙或 XAML 2009 規格所定義的其他 XAML 語言基本類型。
 
 **注意** 使用 XAML 基本類型無法設定日期和時間 (使用 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 或 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) 或 [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) 的屬性)。 因為在 Windows 執行階段 XAML 剖析器中沒有適用於日期和時間的預設 from-string 轉換行為，所以這些屬性在 XAML 中通常完全無法設定。 若要初始化任何日期和時間屬性的值，您必須使用在頁面或元素載入時執行的程式碼後置。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [XAML 概觀](xaml-overview.md)
 * [XAML 語法指南](xaml-syntax-guide.md)
 * [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

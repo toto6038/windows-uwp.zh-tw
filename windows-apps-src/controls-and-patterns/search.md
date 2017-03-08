@@ -5,9 +5,16 @@ title: "搜尋和在頁面中尋找"
 ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
 label: Search
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0a92a3962a6e46f6086b07e548ea39887a780c21
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="search-and-find-in-page"></a>搜尋和在頁面中尋找
@@ -226,9 +233,4 @@ ms.openlocfilehash: af8ee5679fe9bb152718b57bd198238bf9a3f6cd
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

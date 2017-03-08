@@ -3,20 +3,27 @@ author: jnHs
 Description: "您可以用 100 種以上的語言將 app 提交到 Windows 市集。"
 title: "支援的語言"
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b9d0720ee56430320cfc4ca2725fb3e0ac8049e5
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支援的語言
+# <a name="supported-languages"></a>支援的語言
 
 
 您可以用 100 種以上的語言將 app 提交到 Windows 市集。
 
 若要深入了解在您 app 中設定語言的詳細資訊，請參閱[全球化與當地語系化](../globalizing/globalizing-portal.md)和[管理語言及地區](../globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370)，可以協助您撰寫支援多種語言的 app。
 
-## 支援的語言
+## <a name="supported-languages"></a>支援的語言
 
 
 以下是 Windows 市集支援的語言。 您的 app 必須支援以下至少一種語言，並且不得指定此處未包含的任何語言代碼。
@@ -135,10 +142,5 @@ ms.openlocfilehash: 3d14f1d11290942a90498f7aff4dc324daa3a84e
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

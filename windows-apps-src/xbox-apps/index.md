@@ -2,15 +2,23 @@
 author: Mtoepke
 title: "Xbox One 上的 UWP"
 description: "如何在 Xbox One 上建置通用 Windows 平台 (UWP) 的應用程式。"
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 translationtype: Human Translation
-ms.sourcegitcommit: 7a53a7a9e786ebe04963a827bdfbc5beb69819eb
-ms.openlocfilehash: d46add99bccd41b4d278e58f79b356714fa4a038
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 36d19f660bc3c03377f864b1d659a19396917130
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Xbox One 上的 UWP
+# <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
-在 Xbox One 上建置通用 Windows 平台 (UWP) App 的入門。
+開始在 Xbox One 上建置通用 Windows 平台 (UWP) 應用程式。
 
 Xbox One 上的 UWP 支援開發 App 和遊戲。 您不需要是 [ID@Xbox](http://www.xbox.com/Developers/id) 開發人員就能在 Xbox 上實驗、建立和測試遊戲或 App，但如果您想要在 Xbox One 上發行和銷售遊戲，或利用 Windows 10 上的 Xbox Live，便需要向 [ID@Xbox](http://www.xbox.com/Developers/id) 註冊。 若要加入我們的獨立開發人員和愛好者社群，請註冊 [ID@Xbox](http://www.xbox.com/Developers/id)。 
 
@@ -34,14 +42,9 @@ Xbox One 上的 UWP 支援開發 App 和遊戲。 您不需要是 [ID@Xbox](http
 |[在 Xbox One 上停用開發人員模式](devkit-deactivation.md)| 說明如何在 Xbox One 上停用開發人員模式。 |
 |[Xbox One 上尚未支援的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  描述 Xbox One 上尚未完全運作的 UWP 功能區域。|  
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Xbox One 上的 UWP App 概觀](http://go.microsoft.com/fwlink/p/?LinkId=780786) 
 - [自動化啟動 Windows 10 UWP App](automate-launching-uwp-apps.md)
 - [CPUSets 遊戲開發](cpusets-games.md)
   
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

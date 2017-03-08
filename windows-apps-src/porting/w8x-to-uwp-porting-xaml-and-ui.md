@@ -3,9 +3,16 @@ author: mcleblanc
 description: "以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至通用 Windows 平台 (UWP) app。"
 title: "將 Windows Runtime 8.x XAML 與 UI 移植到 UWP"
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 19a6ef29265c22d1bb02464a76ab20e487c67ce4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 ## <a name="back-button-handling"></a>[返回] 按鈕處理
 
-針對通用 8.1 應用程式，Windows 市集應用程式和 Windows Phone 市集應用程式對於您顯示的 UI，以及您為返回按鈕處理的事件有不同的方法。 但是，對於 Windows 10 應用程式，您可以在應用程式中使用單一方法。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在傳統型裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
+針對通用 8.1 應用程式，Windows 市集應用程式和 Windows Phone 市集應用程式對於您顯示的 UI，以及您為返回按鈕處理的事件有不同的方法。 但是，對於 Windows 10 應用程式，您可以在應用程式中使用單一方法。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在電腦裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
 下面的範例適用於所有裝置系列，且非常適合在可將相同處理套用至所有頁面以及您不需要確認瀏覽 (例如，提供未儲存變更的警告) 的情況下使用。
 
@@ -81,9 +88,9 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 您不需要變更任何與常用鍵整合的程式碼，但需要將一些 UI 新增到應用程式，以取代不屬於 Windows 10 殼層一部分的常用鍵列。 在 Windows 10 上執行的通用 8.1 應用程式，在應用程式的標題列中，會有由系統轉譯組件區塊所提供的取代 UI。
 
-## <a name="controls-and-control-stylestemplates"></a>控制項與控制項樣式/範本
+## <a name="controls-and-control-styles-and-templates"></a>控制項，以及控制項樣式和範本
 
-在 Windows 10 上執行的通用 8.1 應用程式將保留與控制項相關的 8.1 外觀和行為。 但是，當您將應用程式移植到 Windows 10 應用程式時，會在外觀和行為上產生一些需注意的差異。 適用於 Windows 10 應用程式的控制項架構和設計基本上不會變更，因此，變更大部分都會與[設計語言](#design-language)、簡化，以及可用性的改進有關。
+在 Windows 10 上執行的通用 8.1 應用程式將保留與控制項相關的 8.1 外觀和行為。 但是，當您將應用程式移植到 Windows 10 應用程式時，會在外觀和行為上產生一些需注意的差異。 適用於 Windows 10 應用程式的控制項架構和設計基本上不會變更，因此，變更大部分都會與[設計語言](#design-language-in-windows-10)、簡化，以及可用性的改進有關。
 
 **注意** PointerOver 視覺狀態在 Windows 10 應用程式和 Windows 市集應用程式的自訂樣式/範本中是相關的，但在 Windows Phone 市集應用程式中則不相關。 基於這個原因 (而且因為 Windows 10 app 支援的系統資源索引鍵的緣故)，我們建議您在將 app 移植到 Windows 10 時，重複使用 Windows 市集應用程式中的自訂樣式/範本。
 如果您想要確定您的自訂樣式/範本使用最新的一組視覺狀態，並且能夠從您對預設樣式/範本所進行的效能改進中獲益，請編輯新 Windows 10 預設範本的複本，然後在該複本中重新套用自訂項目。 效能改進的其中一個範例是，已移除先前括住 **ContentPresenter** 的任何 **Border** 或面板，而且子元素現在會呈現框線。
@@ -99,16 +106,16 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 | [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | 在 Windows 10 應用程式中，[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) 不會處理 [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) 事件，也不會處理 [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) 事件。 它不會回應點選也不會回應向上撥動。 您仍然可以選擇處理這些事件，並設定 [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939)。 |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 檢閱在視覺變更為 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 和 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 之後您應用程式的外觀。 針對在行動裝置上執行的 Windows 10 應用程式，這些控制項便不再瀏覽到選取頁面，而是改用會消失關閉的快顯視窗。 |
 | [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584)、[**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | 在 Windows 10 應用程式中，您無法將 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) 或 [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) 放在飛出視窗內。 如果您希望在快顯類型控制項中顯示這些控制項，則您可以使用 [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) 和 [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313)。 |
-| **GridView**、**ListView** | 針對 **GridView**/**ListView**，請參閱 [GridView/ListView 變更](#gridview)。 |
-| [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項會從最後一個區段迴繞到第一個區段。 在 Windows 市集應用程式和 Windows 10 應用程式中，中樞區段不會迴繞。 |
-| [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項的背景影像不會以相對於中樞區段的視差移動。 在 Windows 市集應用程式和 Windows 10 應用程式中，將不會使用視差。 |
-| [**中樞**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | 在通用 8.1 app 中，[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) 屬性會讓區段標頭—和旁邊呈現的 ＞ 形箭號字符—變成互動式。 在 Windows 10 應用程式中，標頭旁邊有一個互動式的 [查看更多] 預示性，但標頭本身不是互動式。 **IsHeaderInteractive** 仍然會決定互動是否會引發 [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) 事件。 |
+| **GridView**、**ListView** | 針對 **GridView**/**ListView**，請參閱 [GridView 和 ListView 變更](#gridview-and-listview-changes)。 |
+| [**中心**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項會從最後一個區段迴繞到第一個區段。 在 Windows 市集應用程式和 Windows 10 應用程式中，中心區段不會迴繞。 |
+| [**中心**](https://msdn.microsoft.com/library/windows/apps/dn251843) | 在 Windows Phone 市集應用程式中，[**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 控制項的背景影像不會以相對於中心區段的視差移動。 在 Windows 市集應用程式和 Windows 10 應用程式中，將不會使用視差。 |
+| [**中心**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | 在通用 8.1 app 中，[**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) 屬性會讓區段標頭—和旁邊呈現的 ＞ 形箭號字符—變成互動式。 在 Windows 10 應用程式中，標頭旁邊有一個互動式的 [查看更多] 預示性，但標頭本身不是互動式。 **IsHeaderInteractive** 仍然會決定互動是否會引發 [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) 事件。 |
 | **MessageDialog** | 如果您使用的是 **MessageDialog**，則請考慮改用更有彈性的 [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972)。 另請參閱 [XAML UI 基本知識](http://go.microsoft.com/fwlink/p/?linkid=619992)範例。 |
 | **ListPickerFlyout**、**PickerFlyout**  | **ListPickerFlyout** 和 **PickerFlyout** 對於 Windows 10 應用程式已過時。 如需單一選擇飛出視窗，請使用 [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030)；如需更複雜的體驗，請使用 [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496)。 |
 | [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) 屬性在 Windows 10 應用程式中已過時，因此設定該屬性沒有任何作用。 請改用預設為 **Peek** 的 [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) (其中會顯示一個眼睛字符，就像在 Windows 市集應用程式中一樣)。 另請參閱[密碼方塊的指導方針](https://msdn.microsoft.com/library/windows/apps/dn596103)。 |
 | [**樞紐分析**](https://msdn.microsoft.com/library/windows/apps/dn608241) | [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) 控制項現在是通用的，不再受限於只能在行動裝置上使用。 |
-| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | 雖然 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請參閱 [SearchBox 已取代為 AutoSuggestBox](#searchbox)。 |
-| **SemanticZoom** | 針對 **SemanticZoom**，請參閱 [SemanticZoom 變更](#semantic-zoom)。 |
+| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | 雖然 [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) 可在通用裝置系列中實作，但在行動裝置上無法使用所有功能。 請參閱 [SearchBox 已取代為 AutoSuggestBox](#searchbox-deprecated-in-favor-of-autosuggestbox)。 |
+| **SemanticZoom** | 針對 **SemanticZoom**，請參閱 [SemanticZoom 變更](#semanticzoom-changes)。 |
 | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的某些預設屬性已經變更。 [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) 為 **Auto**、[**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) 為 **Auto**，而 [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) 為 **Disabled**。 如果新的預設值不適用於您的 app，則您可以在樣式上進行變更，或當做控制項本身的本機值變更。  |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | 在 Windows 市集應用程式中，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 預設關閉拼字檢查。 在 Windows Phone 市集應用程式和 Windows 10 應用程式中，它預設為開啟。 |
 | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 的預設字型大小已從 11 變更為 15。 |
@@ -139,7 +146,7 @@ ms.openlocfilehash: ea8844925cc227d9f082595b039dd68164ad1228
 
 您可能會重複使用來自 Windows 市集應用程式的 XAML 標記，其中的常值維度值會在標記中使用 (可能用於圖形大小或其他元素，也可能用於印刷格式)。 但在某些情況下，較大的縮放比例會用於 Windows 10 應用程式適用的裝置，而非通用 8.1 應用程式適用的裝置 (例如，先前使用 140%，現在會使用 150%，而先前使用 180%，現在會使用 200%)。 因此，如果您發現這些常值目前在 Windows 10 上太大，則請嘗試將它們乘以 0.8。 如需詳細資訊，請參閱[適用於 UWP App 的回應式設計入門](https://msdn.microsoft.com/library/windows/apps/dn958435)。
 
-## <a name="gridviewlistview-changes"></a>GridView/ListView 變更
+## <a name="gridview-and-listview-changes"></a>GridView 和 ListView 變更
 
 已針對 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 的預設樣式 setter 進行數個變更，使控制項可垂直捲動 (而不是水平捲動，如同它先前預設的動作一樣)。 如果您曾編輯過專案中預設樣式的複本，則您的複本將不會擁有這些變更，因此您需要進行手動更新。 以下是變更的清單。
 
@@ -441,7 +448,7 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 -   瀏覽窗格。 設定應為選項瀏覽清單的最後一個項目，而且釘選到底部。
 -   Appbar/工具列 (在索引標籤檢視或樞紐分析配置內)。 設定應為 appbar 或工具列功能表飛出視窗中的最後一個項目。 不建議將設定做為瀏覽內的最上層項目的其中之一。
--   中樞。 設定應位於功能表飛出視窗內 (可位於應用程式列功能表或中樞配置內的工具列功能表中)。
+-   中心。 設定應位於功能表飛出視窗內 (可位於應用程式列功能表或中心配置內的工具列功能表中)。
 
 也不建議將設定隱藏在主控制項/詳細資料控制項窗格中。
 
@@ -457,7 +464,7 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 
 在 Windows 市集應用程式和 Windows Phone 市集應用程式中，文字的預設語言設定為組建的語言或 en-us。 在 Windows 10 應用程式中，預設語言設為常見的應用程式語言 (字型遞補)。 您可以明確地設定 [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)，但是如果您未設定該屬性的值，將盡情享受更好的字型遞補行為。
 
-如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](http://go.microsoft.com/fwlink/p/?LinkID=533896)。 另請參閱上述的[控制項](#controls)一節，以了解文字控制項的變更。
+如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](http://go.microsoft.com/fwlink/p/?LinkID=533896)。 另請參閱上述的[控制項](#controls-and-control-styles-and-templates)一節，以了解文字控制項的變更。
 
 ## <a name="theme-changes"></a>佈景主題變更
 
@@ -481,10 +488,5 @@ Windows 執行階段 8.x **SettingsPane** 類別不適用於 Windows 10。 除�
 ```
 
 下一個主題是 [I/O、裝置與 app 模型的移植](w8x-to-uwp-input-and-sensors.md)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

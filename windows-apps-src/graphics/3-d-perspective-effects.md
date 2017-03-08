@@ -3,12 +3,19 @@ author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
 title: "XAML UI 的 3D 透視效果"
 description: "您可以使用透視轉換將 3D 效果套用到 Windows 執行階段 App 中的內容。 例如，您可以建立物件轉近或轉離的動畫效果，如這裡所示。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 54bcd19419f31563f910b705fce8128bca33825b
-ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
+ms.lasthandoff: 02/07/2017
 
 ---
-# XAML UI 的 3D 透視效果
+# <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透視效果
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 [執行這個範例](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
-## PlaneProjection 類別
+## <a name="planeprojection-class"></a>PlaneProjection 類別
 
 使用 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 設定 UIElement 的 [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) 屬性，即可將 3D 效果套用至任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)。 **PlaneProjection** 定義如何在空間中呈現轉換。 以下範例顯示一個簡單情況。
 
@@ -141,7 +148,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 [執行這個滑桿範例](http://go.microsoft.com/fwlink/p/?linkid=236112)實驗物件繞著旋轉中心以外位置轉動的方式。
 
-## 放置物件
+## <a name="positioning-an-object"></a>放置物件
 
 目前為止，您已學會如何在空間中旋轉物件。 使用下列屬性可以將旋轉物件放在彼此之間的相對位置：
 
@@ -180,12 +187,7 @@ ms.openlocfilehash: 543dfb60b1fa70e2fceebbdd03da8a301eb9d08f
 
 請注意，此範例中的物件在旋轉時不會變更路徑。 因為物件是沿著螢幕的 x 軸移動，與其本身的旋轉無關。
 
-## 放置物件
+## <a name="positioning-an-object"></a>放置物件
 
 您可以使用 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 與 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 類型取得 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 無法達到的更複雜 semi-3D 效果。 **Matrix3DProjection** 提供一個可套用至任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完整 3D 轉換矩陣，讓您隨心所欲地將轉換矩陣與透視矩陣模型套用至元素。 請記住，這些 API 只含最基本的內容，如果您要使用它們，就必須寫入可正確建立 3D 轉換矩陣的程式碼。 因此，使用 **PlaneProjection** 創造簡單的 3D 效果會比較容易。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

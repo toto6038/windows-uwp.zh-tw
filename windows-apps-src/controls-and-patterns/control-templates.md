@@ -8,9 +8,16 @@ title: "控制項範本"
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3a8a2ccde21ba1e2b16545ae26ebe5e8908ec6b8
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="control-templates"></a>控制項範本
@@ -209,10 +216,5 @@ ms.openlocfilehash: 4c6ee696dff8d8e0ddc3a9b62d0309e999762dc6
  
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

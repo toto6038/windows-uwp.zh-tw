@@ -4,9 +4,17 @@ Description: "這些指導方針描述如何為應用程式設計有效的說明
 title: "應用程式說明的指導方針"
 label: Guidelines for app help
 template: detail.hbs
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: c978e805fa7d746baf299058c8d98fc04ad7c81b
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 64cb4871178ad712189e672bbde9f0ca9ffc6d26
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -14,7 +22,7 @@ ms.openlocfilehash: c978e805fa7d746baf299058c8d98fc04ad7c81b
 
 
 
-由於應用程式有可能會十分複雜，為使用者提供有效的說明將能大幅改善他們的體驗。 並非所有應用程式都需要為其使用者提供說明，而且根據應用程式，應該提供哪一種說明的差異也很大。
+應用程式可能十分複雜，並提供有效的說明，讓使用者可以大幅改善其體驗。 並非所有應用程式都需要為其使用者提供說明，而且根據應用程式，應該提供哪一種說明的差異也很大。
 
 如果您決定提供說明，請在建立它時遵循這些指導方針。 沒有什麼幫助的說明，比根本沒有說明還要糟。
 
@@ -62,10 +70,5 @@ ms.openlocfilehash: c978e805fa7d746baf299058c8d98fc04ad7c81b
 
 [請參閱外部說明的指導方針](external-help.md)
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

@@ -3,19 +3,26 @@ author: jwmsft
 description: "這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。"
 title: "相依性屬性概觀"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: bd08d102aa5de2d9dec89136caf683755db72391
-ms.openlocfilehash: 7a8c39494b69d36553db3a2df7526ba61e57a228
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: eaf52a930b5419f0c2a53aa14c9dc0fba5b404f6
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 相依性屬性概觀
+# <a name="dependency-properties-overview"></a>相依性屬性概觀
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。
 
-## 什麼是相依性屬性？
+## <a name="what-is-a-dependency-property"></a>什麼是相依性屬性？
 
 相依性屬性是特殊化的屬性類型。 更明確地說，這個屬性會追蹤屬性值，並受到專用屬性系統 (Windows 執行階段的一部分) 所影響。
 
@@ -37,7 +44,7 @@ ms.openlocfilehash: 7a8c39494b69d36553db3a2df7526ba61e57a228
 -   使用來自屬性中繼資料的預設值
 -   一般屬性系統公用程式，像是 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 與中繼資料查閱
 
-## 相依性屬性與 Windows 執行階段屬性
+## <a name="dependency-properties-and-windows-runtime-properties"></a>相依性屬性與 Windows 執行階段屬性
 
 相依性屬性會藉由提供全域內部屬性儲存區來擴充基本的 Windows 執行階段屬性功能，這個屬性儲存區會在執行階段支援應用程式中的所有相依性屬性。 這是以私用欄位支援屬性的標準模式替代方案，而私用欄位在屬性定義類別中為私用的。 您可以將這個內部屬性儲存區想像成是為任一特定物件而存在的一組屬性識別碼和值 (只要它是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 即可)。 儲存區中的每個屬性是由 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 執行個體來識別，而不是由名稱來識別。 但是，屬性系統常會隱藏這個實作詳細資料：您通常可以使用簡單名稱 (程式碼語言中使用的程式設計屬性名稱，或是撰寫 XAML 時使用的屬性名稱) 來存取相依性屬性。
 
@@ -71,15 +78,15 @@ public bool IsSpinning
 }
 ```
 
-**注意** 上述範例並非如何建立自訂相依性屬性的完整範例。 而是為了顯示相依性屬性概念，讓使用者藉由程式碼具體了解概念。 如需更完整的範例，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
+**注意**  上述範例並非如何建立自訂相依性屬性的完整範例。 而是為了顯示相依性屬性概念，讓使用者藉由程式碼具體了解概念。 如需更完整的範例，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
 
-## 相依性屬性值優先順序
+## <a name="dependency-property-value-precedence"></a>相依性屬性值優先順序
 
 當您取得相依性屬性的值時，您所取得的值是透過任一種參與 Windows 執行階段屬性系統的輸入，針對該屬性進行判斷的值。 因為有相依性屬性值的優先順序，使得 Windows 執行階段屬性系統可以透過可預期的方式來計算值，而且您也應該熟悉基本優先順序。 否則，您可能會發現自己處於下列情況中：您正嘗試在某一個優先順序層級上設定屬性，但其他作業 (系統、協力廠商呼叫者、您自己的部分程式碼) 正在其他層級上設定該屬性，而當您嘗試找出使用的是哪個屬性值以及該值是來自何處時感到沮喪。
 
 例如，樣式與範本是建立屬性值與控制項外觀的共用起點。 但在特定的控制項執行個體中，您可能想變更常見的範本值，例如，為該控制項提供不同的背景色彩或不同的文字字串做為內容。 Windows 執行階段屬性系統會考量優先順序高於樣式與範本所提供值的本機值。 這樣便能啟用讓應用程式特定的值覆寫範本的案例，因此，控制項對於您在應用程式 UI 中自行使用它們而言非常有用。
 
-### 相依性屬性優先順序清單
+### <a name="dependency-property-precedence-list"></a>相依性屬性優先順序清單
 
 下列是指派相依性屬性的執行階段值時，屬性系統使用的決定性順序。 優先順序最高的會優先列出。 您只需瀏覽這個清單，就能找到更詳細的說明。
 
@@ -89,7 +96,7 @@ public bool IsSpinning
 4.  **Style Setter：**頁面或應用程式資源樣式中的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 值。
 5.  **預設值：**相依性屬性可以有預設值做為其中繼資料的一部分。
 
-### 範本化屬性
+### <a name="templated-properties"></a>範本化屬性
 
 做為優先順序項目的範本化屬性不會套用到您直接在 XAML 頁面標記中宣告的任何元素屬性。 範本化屬性概念只存在 Windows 執行階段將 XAML 範本套用到 UI 元素，從而定義其視覺效果時建立的物件中。
 
@@ -98,13 +105,13 @@ public bool IsSpinning
 **注意**  
 在某些情況下，如果範本無法為應可在執行個體上設定的屬性公開 [{TemplateBinding} 標記延伸](templatebinding-markup-extension.md)參考，範本甚至可能覆寫本機值。 這通常只有在屬性確實不是要在執行個體上設定時才會完成，例如，如果它只與視覺效果和範本行為相關，但與使用範本之控制項所需的函式或執行階段邏輯無關。
 
-###  繫結與優先順序
+###  <a name="bindings-and-precedence"></a>繫結與優先順序
 
 繫結操作針對將它們用於任何範圍的情況都具有適當的優先順序。 例如，套用到本機值的 [{Binding}](binding-markup-extension.md) 會以本機值的方式運作，而屬性 setter 的 [{TemplateBinding} 標記延伸](templatebinding-markup-extension.md)的套用方式與樣式 setter 一樣。 由於繫結必須等到執行階段從資料來源取得值，因此，判斷任何屬性的屬性值優先順序的程序也會延伸到執行階段。
 
 繫結不只和本機值具有相同優先順序，它們實際上也是本機值，其中繫結是已延遲之值的預留位置。 如果您的屬性值含有繫結，且您在執行階段於其上設定了本機值，則它會完全取代繫結。 同理，如果您呼叫 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 來定義只存在執行階段的繫結，則您可以取代任何已在 XAML 中套用的本機值，或者使用先前執行的程式碼來取代。
 
-### 腳本動畫和基礎值
+### <a name="storyboarded-animations-and-base-value"></a>腳本動畫和基礎值
 
 腳本動畫是以「基礎值」**的概念來操作。 基礎值是屬性系統使用它的優先順序來判斷的值，但會省略尋找動畫的最後一個步驟。 例如，基礎值可能來自控制項的範本，也可能來自在控制項執行個體上設定本機值。 無論使用何種方法，只要您的動畫持續執行，套用動畫將覆寫這個基礎值並套用動畫值。
 
@@ -116,7 +123,7 @@ public bool IsSpinning
 
 如需詳細資訊，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。
 
-### 預設值
+### <a name="default-values"></a>預設值
 
 如需更多使用 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 值建立相依性屬性預設值的詳細資料，請參閱[自訂相依性屬性](custom-dependency-properties.md)主題。
 
@@ -129,9 +136,9 @@ public bool IsSpinning
 -   使用字串 (適用於 .NET 的 [**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)、適用於 C++/CX 的 [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)) 的屬性預設值為空字串 (**""**)。
 -   根據本主題中深入探討的因素，集合屬性通常不會實作為相依性屬性。 但是，如果您實作自訂集合屬性且想要讓它成為相依性屬性，請確定會避免「不想要的單一執行個體」**，如接近[自訂相依性屬性](custom-dependency-properties.md)結尾處所述。
 
-## 相依性屬性提供的屬性功能
+## <a name="property-functionality-provided-by-a-dependency-property"></a>相依性屬性提供的屬性功能
 
-### 資料繫結
+### <a name="data-binding"></a>資料繫結
 
 相依性屬性可以透過套用資料繫結來設定它的值。 資料繫結在 XAML 中使用 [{Binding} 標記延伸](binding-markup-extension.md)語法，在程式碼中使用 [{x:Bind} 標記延伸](x-bind-markup-extension.md)或 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別。 針對資料繫結屬性，最終的屬性值判斷會延遲到執行階段。 那時就會從資料來源中取得該值。 相依性屬性系統在此處扮演的角色是，讓預留位置行為能夠運作，例如，在尚未知道值時載入 XAML，然後透過與 Windows 執行階段資料繫結引擎互動，在執行階段提供值。
 
@@ -145,9 +152,9 @@ public bool IsSpinning
 
 您也可以使用程式碼建立繫結，而不要使用 XAML。 請參閱 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)。
 
-**注意** 基於相依性屬性值優先順序的緣故，像這樣的繫結會被視為本機值。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
+**注意**  基於相依性屬性值優先順序的緣故，像這樣的繫結會被視為本機值。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
 
-### 繫結來源、繫結目標、FrameworkElement 的角色
+### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>繫結來源、繫結目標、FrameworkElement 的角色
 
 若要做為繫結來源，屬性不需是相依性屬性；儘管這會根據您的程式設計語言而定且每個都擁有特定的邊緣案例，但是您通常可以使用任一屬性做為繫結來源。 不過，要成為 [{Binding} 標記延伸](binding-markup-extension.md)或 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的目標，該屬性必須是相依性屬性。 {x:Bind} 不需要這項需求，因為它是使用產生的程式碼來套用它的繫結值。
 
@@ -157,15 +164,15 @@ public bool IsSpinning
 
 建立繫結不是大多數資料繫結案例唯一需要做的事。 如果要讓單向或雙向繫結生效，來源屬性必須支援傳播到繫結系統 (因此就是目標) 的來源屬性。 針對自訂的繫結來源，這表示屬性必須是相依性屬性，或物件必須支援 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 集合應支援 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx)。 某些類別在它們的實作中支援這些介面，因此使用它們做為基底類別對資料繫結案例來說很有用；[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 是這種類別的範例之一。 如需有關資料繫結以及資料繫結如何與屬性系統建立關聯的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**注意** 此處列出的類型支援 Microsoft .NET 資料來源。 C++/CX 資料來源會針對變更通知或可觀察的行為使用不同的介面，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意**  此處列出的類型支援 Microsoft .NET 資料來源。 C++/CX 資料來源會針對變更通知或可觀察的行為使用不同的介面，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-### 樣式與範本
+### <a name="styles-and-templates"></a>樣式與範本
 
 樣式與範本是將屬性定義為相依性屬性的其中兩個案例。 樣式對於定義應用程式 UI 的屬性設定相當有用。 樣式在 XAML 中會定義為資源，是定義為 [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 集合中的項目，或是定義在個別的 XAML 檔案 (例如佈景主題資源字典) 中。 樣式會與屬性系統互動，因為它們包含屬性的 setter。 這裡最重要的屬性就是 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 屬性：它定義了 **Control** 的大部分視覺化外觀和視覺狀態。 如需樣式的詳細資訊，以及定義 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 和使用 setter 的一些 XAML 範例，請參閱[設定控制項的樣式](https://msdn.microsoft.com/library/windows/apps/mt210950)。
 
 來自樣式或範本的值是延遲的值，與繫結類似。 這是為了讓控制項使用者可以重新範本化控制項或重新定義樣式。 此外，這就是為什麼樣式中的屬性只能以相依性屬性來操作，而不能以一般屬性來操作。
 
-### 腳本動畫
+### <a name="storyboarded-animations"></a>腳本動畫
 
 您可以使用腳本動畫將相依性屬性的值製作成動畫。 Windows 執行階段中的腳本動畫不僅僅是視覺裝飾。 這在考慮將動畫做為狀態機器技術時更有用，這類技術可設定個別屬性的值或所有屬性的值以及控制項的視覺效果，並且在一段時間後變更這些值。
 
@@ -175,25 +182,25 @@ public bool IsSpinning
 
 狀態電腦原則的具體表現方式是使用腳本動畫做為控制項的 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 狀態模型的一部分。 如需腳本動畫的詳細資訊，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)。 如需 **VisualStateManager** 和定義控制項視覺狀態的詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)或[控制項範本](../controls-and-patterns/control-templates.md)。
 
-### 屬性變更的行為
+### <a name="property-changed-behavior"></a>屬性變更的行為
 
 屬性變更的行為是相依性屬性詞彙「相依性」部分的根源。 在許多架構中，當另一個屬性會影響第一個屬性的值時，要維持某個屬性的有效值是很棘手的開發問題。 在 Windows 執行階段屬性系統中，每個相依性屬性都可以指定一個回呼，該回呼會在它的屬性值變更時叫用。 使用這個回呼通常可以同時通知或變更相關屬性值。 許多現有的相依性屬性都包含一個屬性變更的行為。 您也可以新增類似的回呼行為到自訂相依性屬性，並實作您自己的屬性變更行為。 請參閱[自訂相依性屬性](custom-dependency-properties.md)中的範例。
 
 Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 這可讓應用程式程式碼在 [**DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 執行個體上的指定相依性屬性變更時登錄變更通知。
 
-### 預設值與 **ClearValue**
+### <a name="default-value-and-clearvalue"></a>預設值與 **ClearValue**
 
 相依性屬性可以在其屬性中繼資料中定義一個預設值。 針對相依性屬性，它的預設值不會在第一次設定屬性預設值之後變成無關的。 每當值優先順序中有一些其他行列式消失時，預設值可能會在執行階段再次套用。 (相依性屬性值的優先順序會在下一節中討論)。例如，您可能會刻意移除套用到屬性的樣式值或動畫，但卻希望這樣做之後，將該值設定為合理的預設值。 相依性屬性的預設值可以提供這個值，而不需要執行額外步驟來特別設定每個屬性的值。
 
 即使在您已經使用本機值來設定屬性之後，您還是能夠刻意將該屬性設為預設值。 若要再次將值重設為預設值，並且還要一併啟用可能覆寫預設值但不會覆寫本機值的優先順序中的其他參與者，可以呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 方法 (參考要清除的屬性以做為方法參數)。 您不一定想讓屬性照字面使用預設值，但是清除本機值並還原為預設值，可能會讓優先順序中您所需的另一個項目立即運作，例如，使用來自控制項範本中樣式 setter 的值。
 
-## **DependencyObject** 和執行緒處理
+## <a name="dependencyobject-and-threading"></a>**DependencyObject** 和執行緒處理
 
 所有的 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 執行個體都必須在 UI 執行緒上建立，而這個執行緒與 Windows 執行階段應用程式所顯示的目前 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 關聯。 雖然每個 **DependencyObject** 都必須在主 UI 執行緒上建立，但是只要存取 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) 屬性，即可使用其他緒行緒的發送器參考來存取物件。 接著，您可以在 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 物件上呼叫像是 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 的方法，並在 UI 執行緒上的執行緒限制規則內執行您的程式碼。
 
 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的執行緒層面都是相關的，因為它通常表示只有在 UI 執行緒上執行的程式碼才可以變更或甚至是讀取相依性屬性的值。 在一般的 UI 程式碼中通常可以避免緒行緒處理的問題，因為它能夠正確使用 **async** 模式及背景工作者執行緒。 通常您只會在定義自己的 **DependencyObject** 類型並且嘗試在 **DependencyObject** 不適用的資料來源或其他案例中使用這些類型時，才會遇到 **DependencyObject** 相關的執行緒處理問題。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 **概念資料**
 * [自訂相依性屬性](custom-dependency-properties.md)
@@ -205,10 +212,5 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 **與相依性屬性相關的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -3,13 +3,20 @@ author: mtoepke
 title: "初始化 Direct3D 11"
 description: "示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。"
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, direct3d 11, 初始設定, 移植, direct3d 9"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 初始化 Direct3D 11
+# <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: 723321983418a714ec375db99a0df7f8455c0464
 
 示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第一部分。
 
-## 初始化 Direct3D 裝置
+## <a name="initialize-the-direct3d-device"></a>初始化 Direct3D 裝置
 
 
 在 Direct3D 9 中，我們透過呼叫 [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313) 來建立 Direct3D 裝置的控制代碼。 我們一開始先取得 [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) 的指標，並指定一些參數來控制 Direct3D 裝置與交換鏈結的設定。 在這樣做之前，我們已呼叫 [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877)，確定我們沒有要求裝置執行某些它無法執行的動作。
@@ -70,7 +77,7 @@ m_pD3D->CreateDevice(
 
 建立 Direct3D 11 裝置與內容之後，我們可以利用 COM 指標功能來取得包含額外功能的最新介面版本 (一律建議您取得最新版本)。
 
-> **注意** D3D\_FEATURE\_LEVEL\_9\_1 (對應到著色器模型 2.0) 是 Windows 市集遊戲必須支援的最低層級 (如果您不支援 9_1，遊戲的 ARM 套件將無法通過認證)。如果您的遊戲也包含著色器模型 3 功能的轉譯路徑，則應該在陣列中包含 D3D\_FEATURE\_LEVEL\_9\_3。
+> **注意**   D3D\_FEATURE\_LEVEL\_9\_1 (對應到著色器模型 2.0) 是 Windows 市集遊戲必須支援的最低層級 (如果您不支援 9_1，遊戲的 ARM 套件將無法通過認證)。如果您的遊戲也包含著色器模型 3 功能的轉譯路徑，則應該在陣列中包含 D3D\_FEATURE\_LEVEL\_9\_3。
 
  
 
@@ -115,14 +122,14 @@ device.As(&m_d3dDevice);
 context.As(&m_d3dContext);
 ```
 
-## 建立交換鏈結
+## <a name="create-a-swap-chain"></a>建立交換鏈結
 
 
 Direct3D 11 包含稱為 DirectX Graphics Infrastructure (DXGI) 的裝置 API。 DXGI 介面讓我們能夠 (舉例來說) 控制如何設定交換鏈結和設定共用裝置。 在初始化 Direct3D 的這個步驟中，我們將使用 DXGI 來建立交換鏈結。 由於我們已建立裝置，因此可以遵循介面鏈結回到 DXGI 介面卡。
 
 Direct3D 裝置會實作 DXGI 的 COM 介面。 首先，我們需要取得該介面，並使用它來要求裝載裝置的 DXGI 介面卡。 接著，使用 DXGI 介面卡來建立 DXGI Factory。
 
-> **注意** 這些都是 COM 介面，因此，您的第一個回應應該是要使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 您應該改用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智慧型指標。 接著，只需呼叫 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，提供正確介面類型的空 COM 指標。
+> **注意**   這些都是 COM 介面，因此，您的第一個回應應該是要使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 您應該改用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智慧型指標。 接著，只需呼叫 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，提供正確介面類型的空 COM 指標。
 
  
 
@@ -146,7 +153,7 @@ dxgiAdapter->GetParent(
 
 現在，我們已經有 DXGI Factory，可以使用它來建立交換鏈結。 讓我們來定義交換鏈結參數。 我們需要指定表面格式；並且將選擇 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059)，因為它與 Direct2D 相容。 我們關閉顯示縮放比例、多重取樣及立體著色運算，因為這個範例中並未用到它們。 由於我們是直接在 CoreWindow 中執行，所以能夠讓寬度與高度保留為 0 的設定，並自動取得全螢幕值。
 
-> **注意** 針對 UWP app，一律將 *SDKVersion* 參數設為 D3D11\_SDK\_VERSION。
+> **注意**   針對 UWP app，一律將 *SDKVersion* 參數設為 D3D11\_SDK\_VERSION。
 
  
 
@@ -166,7 +173,7 @@ swapChain.As(&m_swapChain);
 
 為了確定我們轉譯的頻率不會高於螢幕實際顯示的頻率，所以將框架延遲設為 1 並使用 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077)。 這樣就能節省電源，而且這是一項市集憑證需求；我們將在這個逐步解說的第二部分中深入了解如何在螢幕上顯示。
 
-> **注意** 您可以使用多重取樣 (例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作項目)，在封鎖轉譯執行緒的同時繼續執行其他工作。
+> **注意**   您可以使用多執行緒 (例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作項目)，在封鎖轉譯執行緒的同時繼續執行其他工作。
 
  
 
@@ -178,7 +185,7 @@ dxgiDevice->SetMaximumFrameLatency(1);
 
 現在，我們可以設定背景緩衝區來進行轉譯。
 
-## 設定背景緩衝區做為轉譯目標。
+## <a name="configure-the-back-buffer-as-a-render-target"></a>設定背景緩衝區做為轉譯目標。
 
 
 首先，我們必須取得背景緩衝區的控制代碼 (請注意，背景緩衝區是由 DXGI 交換鏈結所擁有，而在 DirectX 9 中則是由 Direct3D 裝置所擁有)。接著，藉由使用背景緩衝區來建立轉譯目標*檢視*，告知 Direct3D 裝置使用它做為轉譯目標。
@@ -227,10 +234,5 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

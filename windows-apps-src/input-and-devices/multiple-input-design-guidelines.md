@@ -1,20 +1,27 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。"
+Description: "就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與應用程式互動時相當有用。"
 title: "多重輸入設計指導方針"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4311ab1c817beaac5a57b12a4426f26ac8710fdf
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="multiple-inputs"></a>多重輸入
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與 app 互動時相當有用。
+就如同人們彼此聯繫時會使用語音和手勢的組合一樣，多種類型與模式的輸入在與應用程式互動時相當有用。
 
 
 為了儘可能配合多個使用者和裝置，我們建議將 app 設計為可以使用各種輸入類型 (手勢、語音、觸控、觸控板、滑鼠與鍵盤)。 這樣會最大化彈性、可用性及可存取性。
@@ -42,10 +49,5 @@ ms.openlocfilehash: a433660665eeaa0caad3f380a587de89b8c74441
 使用者以長按的方式選取相片，然後說「傳送相片」。
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

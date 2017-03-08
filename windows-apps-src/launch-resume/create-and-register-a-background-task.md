@@ -1,17 +1,24 @@
 ---
 author: TylerMSFT
 title: "建立及註冊跨處理序的背景工作"
-description: "建立跨處理序背景工作類別並加以註冊，讓它在 App 不在前景時也能執行。"
+description: "建立跨處理序背景工作類別並加以註冊，讓它在應用程式不在前景時也能執行。"
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b052e84d284c173b21be1759e2645f4f99589c5e
-ms.openlocfilehash: 868fb7f1285ddd4f3e5120779ccf81a9ba55f8db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -348,9 +355,4 @@ ms.openlocfilehash: 868fb7f1285ddd4f3e5120779ccf81a9ba55f8db
 **背景工作 API 參考**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

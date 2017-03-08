@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: "使用指南針"
 description: "了解如何使用指南針來判斷目前朝向何方。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 07c6447a2f28c087c18e37e0036b43e7d7b312e5
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用指南針
+# <a name="use-the-compass"></a>使用指南針
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**指南針**](https://msdn.microsoft.com/library/windows/apps/BR225705)
@@ -23,17 +30,17 @@ ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
 
 應用程式可以根據磁極或正北方來擷取目前所朝向的方向。 導航應用程式會使用指南針來判斷裝置所朝向的方向，然後據此設定地圖方位。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援指南針。
 
-## 建立簡單的指南針應用程式
+## <a name="create-a-simple-compass-app"></a>建立簡單的指南針應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單指南針應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-### 指示
+### <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -66,8 +73,8 @@ ms.openlocfilehash: 05c13ff71e1c6dcfb84d46e37445c1699211951a
         public sealed partial class MainPage : Page
         {
             private Compass _compass; // Our app' s compass object
-     
-            // This event handler writes the current compass reading to 
+
+            // This event handler writes the current compass reading to
             // the textblocks on the app' s main page.
 
             private async void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -134,7 +141,7 @@ App 開始執行之後，您就可以移動裝置或使用模擬器工具來變�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-### 說明
+### <a name="explanation"></a>說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的指南針輸入。
 
@@ -155,7 +162,7 @@ _compass.ReportInterval = reportInterval;
 會在 **ReadingChanged** 方法中擷取新的指南針資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_compass.ReadingChanged += new TypedEventHandler<Compass, 
+_compass.ReadingChanged += new TypedEventHandler<Compass,
 CompassReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,23 +171,14 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 ```xml
  <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
  <TextBlock HorizontalAlignment="Left" Height="18" Margin="8,58,0,0" TextWrapping="Wrap" Text="True North Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFF3F3F3"/>
- <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/> 
+ <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [指南針範例](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

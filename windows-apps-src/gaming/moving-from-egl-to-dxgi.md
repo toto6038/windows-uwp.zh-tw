@@ -3,16 +3,23 @@ author: mtoepke
 title: "EGL 程式碼與 DXGI 和 Direct3D 的比較"
 description: "DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的角色。 本主題可以協助您從 EGL 的觀點來了解 DXGI 和 Direct3D 11。"
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, UWP, egl, dxgi, direct3d
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 599196300a393352540abf1154d1508af7b4caa1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# EGL 程式碼與 DXGI 和 Direct3D 的比較
+# <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL 程式碼與 DXGI 和 Direct3D 的比較
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -25,11 +32,11 @@ DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的
 
 DXGI 和 Direct3D 如同 EGL 都提供方法來設定圖形資源、取得著色器要繪製的轉譯內容，以及在視窗中顯示結果。 但是，DXGI 和 Direct3D 有更多的選項，而從 EGL 移植時需要投入更多心力才能正確設定。
 
-> **請注意**本指導方針是以 Khronos Group 針對 EGL 1.4 所提供的開放規格為根據，請見此處的文章：[Khronos 原生平台圖形介面 (EGL 1.4 版 - 2011 年 4 月 6 日) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
+> **注意**本指導方針是以 Khronos Group 針對 EGL 1.4 所提供的開放規格為根據，請見此處的文章：[Khronos 原生平台圖形介面 (EGL 1.4 版 - 2011 年 4 月 6 日) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
 
  
 
-## 與 DXGI 和 Direct3D 相比的結果如何？
+## <a name="how-does-dxgi-and-direct3d-compare"></a>與 DXGI 和 Direct3D 相比的結果如何？
 
 
 EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式開始繪製到視窗表面。 這是因為 OpenGL ES 2.0 — 以及 EGL — 是由多個平台提供者所實作的規格，而 DXGI 和 Direct3D 是硬體廠商驅動程式必須遵循的單一參考。 這表示 Microsoft 必須實作一組 API，盡可能啟用範圍最廣泛的廠商功能組合，而不是專注於特定廠商所提供的功能子集，或是藉由將廠商特定的設定命令組合成更簡單的 API 所提供的功能子集。 另一方面，Direct3D 提供單一 API 組合來涵蓋範圍非常廣泛的圖形硬體平台與功能層級，並為對該平台有使用經驗的開發人員提供更多彈性。
@@ -69,11 +76,11 @@ EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式
 6.  當管線已執行且框架繪製到背景緩衝區後，請使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 將它呈現到螢幕。
 
 如果要更詳細地檢驗此程序，請檢閱 [DirectX 圖形入門](https://msdn.microsoft.com/library/windows/desktop/hh309467)。 本文的其餘部分涵蓋許多基本圖形管線設定和管理的一般步驟。
-> **請注意**Windows 傳統型應用程式用來取得 Direct3D 交換鏈結 (例如 [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)) 的 API 並不相同，因此請勿使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+> **注意**Windows 傳統型應用程式用來取得 Direct3D 交換鏈結 (例如 [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)) 的 API 並不相同，因此請勿使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
 
  
 
-## 取得要顯示的視窗
+## <a name="obtaining-a-window-for-display"></a>取得要顯示的視窗
 
 
 在這個範例中，會針對 Microsoft Windows 平台特定的視窗資源，將 HWND 傳送給 eglGetDisplay。 其他像是 Apple 的 iOS (Cocoa) 與 Google 的 Android 的平台對於視窗資源都有不同的控制代碼或參照，而且可能有完全不同的呼叫語法。 取得顯示之後，您要將它初始化、設定慣用的設定，以及利用您可以繪製到其中的背景緩衝區來建立表面。
@@ -204,7 +211,7 @@ m_d3dContext->OMSetRenderTargets(
         nullptr);
 ```
 
-## 建立轉譯內容
+## <a name="creating-a-rendering-context"></a>建立轉譯內容
 
 
 在 EGL 1.4 中，所謂的「顯示」是代表一組視窗資源。 您通常可以藉由提供一組屬性給顯示物件並取得傳回的表面，以設定顯示的「表面」。 您可以透過建立該內容並將它繫結到表面和顯示，建立用來顯示表面內容的內容。
@@ -282,7 +289,7 @@ D3D11CreateDevice(
 );
 ```
 
-## 繪製到紋理或 Pixmap 資源
+## <a name="drawing-into-a-texture-or-pixmap-resource"></a>繪製到紋理或 Pixmap 資源
 
 
 若要使用 OpenGL ES 2.0 繪製到紋理，請設定像素緩衝區或 PBuffer。 當您成功為它設定並建立 EGLSurface 之後，可以為它提供轉譯內容，並執行著色器管線以繪製到紋理。
@@ -329,7 +336,7 @@ m_d3dContext->OMSetRenderTargets(
 
 如果這個紋理已與 [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628) 產生關聯，就能傳送到著色器。
 
-## 繪製到螢幕
+## <a name="drawing-to-the-screen"></a>繪製到螢幕
 
 
 一旦您已使用 EGLContext 來設定緩衝區並更新資料之後，就可以執行繫結到它的著色器，並使用 glDrawElements 將結果繪製到背景緩衝區。 您可以呼叫 eglSwapBuffers 來顯示背景緩衝區。
@@ -358,7 +365,7 @@ m_d3dContext->DrawIndexed(
 m_swapChainCoreWindow->Present1(1, 0, &parameters);
 ```
 
-## 釋放圖形資源
+## <a name="releasing-graphics-resources"></a>釋放圖形資源
 
 
 在 EGL 中，您可以藉由將 EGLDisplay 傳送到 eglTerminate 來釋放視窗資源。
@@ -371,7 +378,7 @@ EGLBoolean eglTerminate(eglDisplay);
 
 在 UWP app 中，您可以使用 [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 來關閉 CoreWindow，即使這只適用於次要的 UI 視窗也一樣。 您無法關閉主要的 UI 執行緒及其相關聯的 CoreWindow；而是透過作業系統讓它們到期。 然而，在關閉次要的 CoreWindow 時，會引發 [**CoreWindow::Closed**](https://msdn.microsoft.com/library/windows/apps/br208261) 事件。
 
-## EGL 與 Direct3D 11 的 API 參照對應
+## <a name="api-reference-mapping-for-egl-to-direct3d-11"></a>EGL 與 Direct3D 11 的 API 參照對應
 
 
 | EGL API                          | 類似 Direct3D 11 API 或行為                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -412,10 +419,5 @@ EGLBoolean eglTerminate(eglDisplay);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

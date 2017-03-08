@@ -2,9 +2,17 @@
 author: jnHs
 Description: "轉撥款項的預估時間、適用的付款門檻，以及您可以收到款項所在的 Microsoft 市場可能會依您的國家/地區以及支付帳戶類型而有所不同。"
 title: "付款門檻、方式和時間範圍"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 translationtype: Human Translation
-ms.sourcegitcommit: d5ec64bbd1e8b10c17ff5c43d89e6652eadb2367
-ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -24,7 +32,7 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
 
 | 付款方式 | 進入支付帳戶所需的天數 |
 |--------------------|--------------------------------------------|
-| PayPal | 1 個工作天 | 
+| PayPal | 1 個工作天 |    
 | ACH/SEPA |2-3 個工作天 |
 | 電匯 | 7-10 個工作天 |
 
@@ -4161,9 +4169,4 @@ ms.openlocfilehash: 4fd7a23f6d6c880e490f93dba248b6c1e43c7053
     <td>不適用</td>
   </tr>
 </table>
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

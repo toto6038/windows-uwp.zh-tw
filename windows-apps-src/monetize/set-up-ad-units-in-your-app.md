@@ -2,15 +2,21 @@
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "了解在提交 app 到市集之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。"
-title: "在您的 App 中設定廣告單元"
+title: "在您的應用程式中設定廣告單元"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, 廣告單位"
 translationtype: Human Translation
-ms.sourcegitcommit: c6e0cf98c6eb2cdc656d5b4555d794ff6a94d2bc
-ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
-
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 32a934f1d113d561c72ab3ac48a8ef3d0820c176
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在您的 App 中設定廣告單元
+# <a name="set-up-ad-units-in-your-app"></a>在您的應用程式中設定廣告單元
 
 
 
@@ -21,10 +27,10 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
 為您的實際 app 設定應用程式識別碼和廣告單元：
 
-1.  在 Windows 開發人員中心儀表板上，按一下 \[創造營收] &gt; \[利用廣告獲利\]。
-2.  在此頁面的 \[Microsoft Advertising 廣告單元\] 區段中，建立廣告單元。 對於廣告單元類型，如果使用 **AdControl** 請選取 \[橫幅\]，如果使用 **InterstitialAd** 則請選取 \[影片插入式\]。 如需此頁面的詳細資訊，請參閱[利用廣告賺取獲利](../publish/monetize-with-ads.md)。
+1.  在 Windows 開發人員中心儀表板上，按一下 **\[創造營收\] &gt; \[利用廣告獲利\]**。
+2.  在此頁面的 **\[Microsoft Advertising 廣告單元\]** 區段中，建立廣告單元。 對於廣告單元類型，如果使用 **AdControl** 請選取 **\[橫幅\]**，如果使用 **InterstitialAd** 則請選取 **\[影片插入式\]**。 如需此頁面的詳細資訊，請參閱[利用廣告賺取獲利](../publish/monetize-with-ads.md)。
 
-3.  您會看到每個已產生的廣告單元的「應用程式識別碼」和「廣告單元識別碼」。 若要在 app 中顯示廣告，您需要在 app 程式碼中使用這些值：
+3.  您會看到每個已產生的廣告單元的**「應用程式識別碼」**和**「廣告單元識別碼」**。 若要在 app 中顯示廣告，您需要在 app 程式碼中使用這些值：
 
     * 如果您的 app 顯示橫幅廣告，請將這些值指派給 **AdControl** 物件的 **ApplicationId** 和 **AdUnitId** 屬性。
 
@@ -32,7 +38,7 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 [測試模式值](test-mode-values.md)
 
@@ -40,9 +46,4 @@ ms.openlocfilehash: 705955faf7ddd67f80098f8c3ac7b2844553de95
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

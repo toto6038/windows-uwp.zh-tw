@@ -5,9 +5,16 @@ title: "切換開關控制項的指導方針"
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 685ef17e17fb17fa620eea84335ce6688a5cfb3e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3d98936788057d4bd16f1ef44841ef0d8fb0648b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="toggle-switches"></a>切換開關
@@ -161,8 +168,3 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [選項按鈕](radio-button.md)
 - [切換開關](toggles.md)
 - [核取方塊](checkbox.md)
-
-
-<!--HONumber=Dec16_HO2-->
-
-

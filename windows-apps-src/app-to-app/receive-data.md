@@ -3,20 +3,27 @@ description: "本文說明如何使用分享協定，在您的通用 Windows 平
 title: "接收資料"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b8d627da82da463b87ace2a2ef6e739b1caafaa2
-ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d15bfb6bfed16d1b71313fd5a5f29ceeef3bd3e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 接收資料
+# <a name="receive-data"></a>接收資料
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
 
-## 將您的 app 宣告為分享目標
+## <a name="declare-your-app-as-a-share-target"></a>將您的 app 宣告為分享目標
 
 當使用者叫用分享時，系統會顯示可能的目標 app 的清單。 為了要顯示在清單上，您的 app 必須宣告它支援分享協定。 這會讓系統知道您的 app 能夠接收內容。
 
@@ -24,7 +31,7 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 2.  開啟 [宣告]**** 索引標籤。
 3.  從 [可用宣告]**** 清單中選擇 [分享目標]****，然後選取 [新增]****。
 
-## 選擇檔案類型和格式
+## <a name="choose-file-types-and-formats"></a>選擇檔案類型和格式
 
 接下來，決定您要支援哪些檔案類型和資料格式。 分享 API 支援數種標準格式，例如文字、HTML 及點陣圖。 您也可以指定自訂的檔案類型和資料格式。 如果這樣做，請記住來源 app 必須知道這些類型和格式，否則它們就無法使用這些格式來分享資料。
 
@@ -42,7 +49,7 @@ ms.openlocfilehash: 0092fe2832eeafbc4e7cfa36a3444b9551a4f672
 2.  開啟 [宣告]**** 頁面的 [資料格式]**** 區段，然後選取 [加入新的]****。
 3.  輸入支援的資料格式名稱，例如 Text。
 
-## 處理分享啟用
+## <a name="handle-share-activation"></a>處理分享啟用
 
 當使用者選取您的 app 時 (通常是從分享 UI 中可用的目標 app 清單中選取)，會引發 [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) 事件。 您的 app 必須處理此事件，才能處理使用者想要分享的資料。
 
@@ -68,7 +75,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 } 
 ```
 
-## 報告分享狀態
+## <a name="report-sharing-status"></a>報告分享狀態
 
 在某些情形下，您的 app 需要時間來處理想要分享的資料。 範例包括使用者分享檔案或影像的集合。 這些項目比簡單文字字串更大，所以需要更長的處理時間。
 
@@ -98,7 +105,7 @@ shareOperation.ReportCompleted();
 
 當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者選取 [分享]**** 按鈕後才會呼叫 **ReportStarted**。
 
-## 如果分享成功，則傳回 QuickLink
+## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果分享成功，則傳回 QuickLink
 
 當使用者選取您的 app 來接收內容時，建議您建立一個 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 就像捷徑，可讓使用者方便與您的應用程式分享資訊。 例如，您可以建立一個 **QuickLink**，開啟已預先設定朋友電子郵件地址的新電子郵件訊息。
 
@@ -128,7 +135,7 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## 另請參閱 
+## <a name="see-also"></a>另請參閱 
 
 * [App 間通訊](index.md)
 * [分享資料](share-data.md)
@@ -140,9 +147,4 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

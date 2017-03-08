@@ -4,13 +4,19 @@ description: "示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用�
 title: "傳送電子郵件"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: "連絡人, 電子郵件, 傳送"
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 252e144b2436f047f7b0849bb6e5aee87b2e3464
-ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b14f1a0fc77a8b7df241afbb92f4db223545d81f
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 傳送電子郵件
+# <a name="send-email"></a>傳送電子郵件
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -23,7 +29,7 @@ ms.openlocfilehash: ff09393af072eb8aee8c3001e7323cc20201da70
 -   [摘要與後續步驟](#summary-and-next-steps)
 -   [相關主題](#related-topics)
 
-## 啟動 [撰寫電子郵件] 對話方塊
+## <a name="launch-the-compose-email-dialog"></a>啟動 [撰寫電子郵件] 對話方塊
 
 建立一個新的 [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) 物件，然後設定您要在 [撰寫電子郵件] 對話方塊中預先填入的資料。 呼叫 [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) 以顯示該對話方塊。
 
@@ -58,11 +64,11 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 }
 ```
 
-## 摘要與後續步驟
+## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
 本主題已經示範如何啟動 [撰寫電子郵件] 對話方塊。 如需有關如何選取連絡人做為電子郵件訊息收件者的資訊，請參閱[選取連絡人](selecting-contacts.md)。 請參閱 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) 來選取要做為電子郵件附件的檔案。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [選取連絡人](selecting-contacts.md)
 * [如何在呼叫檔案選擇器之後繼續執行您的 Windows Phone app](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
@@ -72,10 +78,5 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

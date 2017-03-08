@@ -2,13 +2,21 @@
 author: JordanEllis6809
 title: "將 Unity 遊戲移到 Xbox 上的 UWP"
 description: "在 Xbox 上進行 Unity UWP 開發。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
 translationtype: Human Translation
-ms.sourcegitcommit: ea3bea2e5d6de0e55615de701a69e90d81f0f553
-ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 6c01cc5afa3b3c1266464c9f04c79cea533c9741
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 將 Unity 遊戲移到 Xbox 上的 UWP
+# <a name="bringing-unity-games-to-uwp-on-xbox"></a>將 Unity 遊戲移到 Xbox 上的 UWP
 
 
 在這個逐步教學課程中，我們假設您已經有 Unity 的遊戲，並已準備好建置和部署。
@@ -17,13 +25,13 @@ ms.openlocfilehash: 73f701a2608c6ce8d10cab817683ada4e9eecc08
 
 想要管理您 Unity UWP 專案的版本嗎？ 請參閱[針對您的 UWP 專案進行版本控制](development-lanes-unity-versioning.md)。
 
-## 步驟 0：確定 Unity 已正確安裝
+## <a name="step-0-ensure-unity-is-installed-correctly"></a>步驟 0：確定 Unity 已正確安裝
 
 安裝 Unity 時，必須選取以下元件：
 
 ![Unity 安裝元件](images/unity-install-components.png)
 
-## 步驟 1︰建置 UWP 方案
+## <a name="step-1-building-the-uwp-solution"></a>步驟 1︰建置 UWP 方案
 
 在您的 Unity 遊戲專案中，開啟位於 [檔案] -&gt; [建置設定]**** 的 [建置設定]**** 視窗，然後移至 [Windows Store] 選項功能表。
 
@@ -37,7 +45,7 @@ Unity 現在已經建立了將用來部署 UWP 遊戲的新 Visual Studio 解決
 
 ![UWP VS 解決方案](images/uwp-vs-solution.png)
 
-## 步驟 2︰部署您的遊戲
+## <a name="step-2-deploying-your-game"></a>步驟 2︰部署您的遊戲
 
 開啟在 **UWP** 資料夾中新產生的解決方案，然後將目標平台變更為 [x64]****。
 
@@ -45,20 +53,15 @@ Unity 現在已經建立了將用來部署 UWP 遊戲的新 Visual Studio 解決
 
 現在您已經有遊戲的 UWP Visual Studio 解決方案，[遵循下列步驟](getting-started.md)將可讓您順利將遊戲部署到零售版 Xbox One！
 
-## 步驟 3︰修改並重新建置
+## <a name="step-3-modify-and-rebuild"></a>步驟 3︰修改並重新建置
 
 如果您對指令碼以外的項目做出變更，若要將這些變更套用到您遊戲的 UWP 建置中，專案必須在編輯器中重新建置 (以__步驟 1__ 中所述的方式)。
 
-## 管理 UWP 專案的版本
+## <a name="versioning-your-uwp-project"></a>管理 UWP 專案的版本
 
 在一些常見的情況下，將新產生之 UWP 目錄的一部份加入版本控制，是一項必要的動作。 例如，假如您正在新增新的相依性到 UWP 專案 (例如 Xbox Live SDK)。  我們會在[針對您的 UWP 專案進行版本控制](development-lanes-unity-versioning.md)中詳細討論此範例。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

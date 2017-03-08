@@ -5,9 +5,16 @@ title: "應用程式設定的指導方針"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ## <a name="should-i-include-a-settings-page-in-my-app"></a>我的應用程式應該包含設定頁面嗎？
 
-以下為應用程式選項範例，其屬於應用程式設定頁面： 
+以下為應用程式選項範例，其屬於應用程式設定頁面：
 
 -   可影響應用程式行為且不須經常重新調整的設定選項，範例包括將攝氏或華氏設為天氣應用程式中氣溫的預設單位、變更郵件應用程式的帳戶設定、通知的設定或協助工具選項。
 -   取決於使用者偏好的選項，例如音樂、音效或色彩佈景主題。
@@ -51,17 +58,17 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 **應用程式列**
 
-若您使用的是應用程式列或工具列 (其通常為中樞部分或索引標籤/樞紐巡覽式配置)，請將進入點置為 [其他] 飛出視窗功能表的最後一項。 如果更容易找到設定進入點對您的應用程式而言很重要，請將進入點直接放在應用程式列上，不要放在 [其他] 飛出視窗功能表中。
+如果您使用[應用程式列](../controls-and-patterns/app-bars.md)或工具列，將設定的進入點放在 [更多] 功能表中的最後一個項目。 如果更容易找到設定進入點對您的應用程式而言很重要，請將進入點直接放在應用程式列上，不要放在溢位內。
 
 ![應用程式列的應用程式設定進入點](images/appsettings-entrypoint-tabs.png)
 
 **中樞**
 
-如果您使用中樞配置，應用程式設定的進入點應放在應用程式列的「更多」飛出視窗功能表內。
+如果您使用中樞配置，應用程式設定的進入點應放在應用程式列的 [更多] 溢位功能表內。
 
 **索引標籤/樞紐**
 
-對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的「更多」飛出視窗功能表內。
+對於索引標籤或樞紐配置，我們不建議放置應用程式設定的進入點做為瀏覽的前幾個項目之一。 而是應將應用程式設定的進入點放在應用程式列的 [更多] 溢位功能表內。
 
 **主要/詳細資料**
 
@@ -70,7 +77,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 ## <a name="layout"></a>配置
 
 
-無論在桌面或行動裝置上，應用程式設定視窗都應開啟全螢幕並填滿整個視窗。 若您的應用程式設定功能表最多擁有四個頂層群組，則這些群組應會與一欄重疊顯示。
+無論在桌面或行動裝置上，應用程式設定視窗都應開啟全螢幕並填滿整個視窗。 如果您的應用程式設定功能表最多有四個最上層群組，這些群組應該重疊顯示下一欄。
 
 桌上型電腦：
 
@@ -79,6 +86,22 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 行動電話：
 
 ![手機上的應用程式設定頁面配置](images/appsettings-layout-navpane-mobile.png)
+
+## <a name="color-mode-settings"></a>[色彩模式] 設定
+
+
+如果您的應用程式可讓使用者選擇應用程式的色彩模式，請使用[選項按鈕](../controls-and-patterns/radio-button.md)或[下拉式方塊](../controls-and-patterns/lists.md#drop-down-lists)與「選擇模式」標題呈現這些選項。 選項看起來會像這樣
+- 亮
+- 暗
+- Windows 預設
+
+我們也建議您新增超連結至 [Windows 設定] 應用程式的 [色彩] 頁面，使用者可在其中查看 Windows 預設佈景主題。 使用字串「Windows 色彩設定」做為超連結的文字。
+
+![「選擇模式」區段](images/appsettings_mode.png)
+
+<div class=”microsoft-internal-note”>
+顯示「選擇模式」區段偏好的文字字串的詳細紅線，可在 [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2) 取得。
+</div>
 
 ## <a name="about-section-and-give-feedback-button"></a>「關於」區段和「提供意見反應」按鈕
 
@@ -89,10 +112,8 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 
 ![具有「提供意見反應」按鈕的「關於此應用程式」區段](images/appsettings-about.png)
 
-## <a name="recommendations"></a>建議
 
-
-## <a name="app-settings-page-content"></a>應用程式設定頁面內容
+## <a name="recommended-page-content"></a>建議的頁面內容
 
 
 當您有一系列項目想包含在應用程式設定頁面時，請將這些方針列入考量：
@@ -105,9 +126,7 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 -   將較少使用的設定結合成單一項目，讓較常用的設定能有專屬的項目。 將僅包含資訊的內容或連結放入「關於」設定。
 -   不要重複 [權限] 窗格中的功能。 Windows 預設會提供這個窗格，且您無法修改它。
 
-##  <a name="add-settings-content-to-settings-flyouts"></a>新增設定內容到 [設定] 飛出視窗
-
-
+-   新增設定內容到 [設定] 飛出視窗
 -   從頂端至底部以單欄呈現內容，如有必要，可讓它捲動。 捲動的上限設定為螢幕高度的兩倍。
 -   為應用程式設定使用下列控制項：
 
@@ -131,10 +150,4 @@ ms.openlocfilehash: dc2fb58250ed1cc032271adc4bae98872e6f612a
 * [進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [儲存和擷取應用程式資料](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

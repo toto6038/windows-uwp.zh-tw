@@ -3,9 +3,16 @@ author: mcleblanc
 description: "如果您是 Windows Phone Silverlight app 的開發人員，便可以在移到 Windows 10 時，充分利用您的技能組合與原始程式碼。"
 title: "從 Windows Phone Silverlight 移到 UWP"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: 05831f3e357086b338d32e83146d380ca9c78a74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 06409936f37368351f6c8ad47e50a7d980d522f4
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -43,7 +50,7 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 ## <a name="approaching-porting-layer-by-layer"></a>逐層進行移植
 
 -   **檢視**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的大部分 UI 標記和設計 (甚至是操作 UI 元素的命令式程式碼) 都會直接移植。
--   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型與資料模型程式碼也都會使用非視覺作業系統與 .NET API (包括用於資料存取的 API)。 其中大多數皆[可供 UWP app 使用](https://msdn.microsoft.com/library/windows/apps/br211369)，因此您應該能夠原封不動地移植此程式碼中的大部分。 不過，請記住：檢視模型是檢視的一種模型或「抽象概念」。 檢視模型提供 UI 的狀態與行為，而檢視本身則提供視覺效果。 基於這個原因，您為了配合 UWP 允許您在其上執行的不同尺寸而調整的任何 UI，可能都需要有對應的檢視模型變更。 對於網路功能與呼叫雲端服務，通常會有使用 .NET 或 UWP API 間的選項。 如需涉及做出決定的因素，請參閱[雲端服務、網路功能及資料庫](wpsl-to-uwp-business-and-data.md)。
+-   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型與資料模型程式碼也都會使用非視覺作業系統與 .NET API (包括用於資料存取的 API)。 其中大多數皆[可供 UWP app 使用](https://msdn.microsoft.com/library/windows/apps/br211369)，因此您應該能夠原封不動地移植此程式碼中的大部分。 不過，請記住：檢視模型是檢視的一種模型或*「抽象概念」*。 檢視模型提供 UI 的狀態與行為，而檢視本身則提供視覺效果。 基於這個原因，您為了配合 UWP 允許您在其上執行的不同尺寸而調整的任何 UI，可能都需要有對應的檢視模型變更。 對於網路功能與呼叫雲端服務，通常會有使用 .NET 或 UWP API 間的選項。 如需涉及做出決定的因素，請參閱[雲端服務、網路功能及資料庫](wpsl-to-uwp-business-and-data.md)。
 -   **雲端服務**。 您的應用程式某些部分 (也許佔相當大的部分) 可能是在雲端以服務的形式執行。 在用戶端裝置上執行的應用程式部分則會連線到那些服務。 這是分散式 app 中最有可能在移植用戶端部分時保持不變的部分。 如果您還沒有雲端服務，[Microsoft Azure 行動服務](http://azure.microsoft.com/services/mobile-services/)會是您 UWP app 的一個絕佳雲端服務選項，它提供強大的後端元件，可供通用 Windows 應用程式呼叫以取得服務，服務涵蓋範圍可從簡單的動態磚更新，到伺服器陣列可提供的那種高難度延展性。
 
 在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將 UWP app 分解為如上所述的分層，可讓您更容易更正 app、加以測試，並進行後續的閱讀與維護。 您可以讓功能更容易重複使用及避免平台之間的一些 UI API 差異問題，只要依照 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式即可。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
@@ -80,17 +87,12 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 * [通用 Windows 平台 (UWP) app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)
 * [使用 C# 或 Visual Basic 建立通用 Windows 平台 (UWP) App 的藍圖](https://msdn.microsoft.com/library/windows/apps/br229583)
 * [Windows Phone 8 開發人員的下一步](https://msdn.microsoft.com/library/windows/apps/xaml/dn655121.aspx)
-            
-            **雜誌文章**
-* [Visual Studio 雜誌：Windows Phone 8.1：聚合功能的一大躍進](http://go.microsoft.com/fwlink/p/?LinkID=398541)
-            
-            **簡報**
+
+**雜誌文章**
+* [Visual Studio 雜誌：Windows Phone 8.1：Convergence 的一大躍進](http://go.microsoft.com/fwlink/p/?LinkID=398541)
+
+**簡報**
 * [將 Nokia 音樂從 Windows Phone 移到 Windows 8 的案例](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

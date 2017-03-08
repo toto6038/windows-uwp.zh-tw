@@ -3,30 +3,37 @@ author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "資料繫結概觀"
 description: "本主題說明如何在通用 Windows 平台 (UWP) 應用程式中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目控制項繫結到項目集合。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: e89580ef62d5d6ae095aa27628181181aaac9666
-ms.openlocfilehash: d452751fd4ab0cc422c3eae94507923440ec45df
+ms.sourcegitcommit: 3c073879ab847a3e1af454e0c1550d8af0f78b3e
+ms.openlocfilehash: 3abf2b7e9ff59099dafaa753f3a8ccf257dbc19a
+ms.lasthandoff: 01/19/2017
 
 ---
-資料繫結概觀
+<a name="data-binding-overview"></a>資料繫結概觀
 =====================
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題說明如何在通用 Windows 平台 (UWP) 應用程式中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目控制項繫結到項目集合。 此外，我們還會說明如何控制項目的呈現、根據選擇來實作詳細資料檢視、以及轉換資料以供顯示。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
-先決條件
+<a name="prerequisites"></a>先決條件
 -------------------------------------------------------------------------------------------------------------
 
-這個主題假設您知道如何建立基本的 UWP app。 如需建立第一個 UWP 應用程式的指示，請參閱 [Windows 應用程式入門](https://developer.microsoft.com/en-us/windows/getstarted)。
+這個主題假設您知道如何建立基本的 UWP app。 如需建立第一個 UWP 應用程式的指示，請參閱 [Windows 應用程式入門](https://developer.microsoft.com/windows/getstarted)。
 
-建立專案
+<a name="create-the-project"></a>建立專案
 ---------------------------------------------------------------------------------------------------------------------------------
 
 建立新的 [空白應用程式 (Windows 通用)]**** 專案。 將它命名為「快速入門」。
 
-繫結到單一項目
+<a name="binding-to-a-single-item"></a>繫結到單一項目
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 每個繫結是由繫結目標和繫結來源所組成。 通常，目標是控制項或其他 UI 元素的屬性，來源是類別執行個體 (資料模型或檢視模型) 的屬性。 這個範例示範如何將控制項繫結到單一項目。 目標是 **TextBlock** 的 **Text** 屬性。 來源是一個簡單類別 **Recording** 的執行個體，代表音訊錄製。 讓我們先看一下這個類別。
@@ -181,7 +188,7 @@ namespace Quickstart
 
 ![繫結文字方塊](images/xaml-databinding0.png)
 
-繫結到項目集合
+<a name="binding-to-a-collection-of-items"></a>繫結到項目集合
 ------------------------------------------------------------------------------------------------------------------
 
 常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
@@ -301,7 +308,7 @@ namespace Quickstart
 
 如需 XAML 語法的詳細資訊，請參閱[使用 XAML 建立 UI](https://msdn.microsoft.com/library/windows/apps/Mt228349)。 如需控制項配置的詳細資訊，請參閱[使用 XAML 定義配置](https://msdn.microsoft.com/library/windows/apps/Mt228350)。
 
-新增詳細資料檢視
+<a name="adding-a-details-view"></a>新增詳細資料檢視
 -----------------------------------------------------------------------------------------------------
 
 您可以選擇在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 項目中顯示 **Recording** 物件的所有詳細資料。 但這會佔用大量空間。 相反地，您可以在項目中顯示剛好足夠識別它的資料，然後當使用者做出選擇時，您可以在另一個稱為詳細資料檢視的 UI 中，顯示選定項目的所有詳細資料。 這種安排也稱為主要/詳細資料檢視，或清單/詳細資料檢視。
@@ -375,7 +382,7 @@ namespace Quickstart
 
 ![繫結清單檢視](images/xaml-databinding4.png)
 
-格式化或轉換資料值以供顯示
+<a name="formatting-or-converting-data-values-for-display"></a>格式化或轉換資料值以供顯示
 --------------------------------------------------------------------------------------------------------------------------------------------
 
 以上呈現的結果有一個小問題。 **ReleaseDateTime** 屬性不只是日期，而且還是 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)，結果顯示多餘的精確度。 一種解決辦法是將字串屬性加入到 **Recording** 類別，以傳回 `this.ReleaseDateTime.ToString("d")`。 將該屬性命名為 **ReleaseDate** 表示只傳回日期，而不是日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
@@ -431,13 +438,8 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![顯示自訂格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [資料繫結](index.md)
-
-
-
-<!--HONumber=Sep16_HO1-->
-
 

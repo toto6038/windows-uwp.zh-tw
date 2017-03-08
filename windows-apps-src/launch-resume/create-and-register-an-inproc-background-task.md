@@ -1,10 +1,18 @@
 ---
 author: TylerMSFT
 title: "建立及註冊同處理序的背景工作"
-description: "建立及註冊與前景 App 在相同處理序中執行的同處理序工作。"
+description: "建立及註冊與前景應用程式在相同處理序中執行的同處理序工作。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 translationtype: Human Translation
-ms.sourcegitcommit: b9acb35645ee4f069f2ddb999865c3fd087fb792
-ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1955f4981f09c2632fe2236ebd6a772e7b0ed8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -18,7 +26,7 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 
 本主題示範如何建立和註冊與您的 App 在相同處理序中執行的背景工作。
 
-實作同處理序背景工作比實作跨處理序背景工作簡單。 不過，前者較不具彈性。 如果在同處理序背景工作中執行的程式碼損毀，將會關閉您的 App。 另請注意，[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 及 **IoTStartupTask** 無法與同處理序模型搭配使用。 此外，也不可能在應用程式內啟用 VoIP 背景工作。 使用跨處理序背景工作模型仍可支援這些觸發程序和工作。
+實作同處理序背景工作比實作跨處理序背景工作簡單。 不過，前者較不具彈性。 如果在同處理序背景工作中執行的程式碼損毀，將會關閉您的 App。 另請注意，[DeviceUseTrigger](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 及 **IoTStartupTask** 無法與同處理序模型搭配使用。 此外，也不可能在應用程式內啟用 VoIP 背景工作。 使用跨處理序背景工作模型仍可支援這些觸發程序和工作。
 
 請注意，如果背景活動在執行時超過執行時間限制，則即使它是在 App 的前景處理序內執行，也可能被終止。 就某些用途而言，將工作分散到在個別處理程序中執行的背景工作中仍然相當有用。 對於不需要與前景應用程式進行通訊的工作來說，將背景工作保持為與前景應用程式分開的工作可能是最佳選項。
 
@@ -107,9 +115,4 @@ ms.openlocfilehash: 2ab02b8edda9aeadc9962464a63e08f1fb407777
 **背景工作 API 參考**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-
-
-
-<!--HONumber=Jan17_HO1-->
-
 

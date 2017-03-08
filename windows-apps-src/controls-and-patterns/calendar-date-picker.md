@@ -5,9 +5,16 @@ title: "行事曆日期選擇器"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 0c565c036b8bcb7c26ad860231ee649b73c636c3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 801e9192f3da2f72803dcb95168b1f8dfded6695
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="calendar-date-picker"></a>行事曆日期選擇器
@@ -97,9 +104,4 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [行事曆檢視](calendar-view.md)
 - [日期選擇器](date-picker.md)
 - [時間選擇器](time-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

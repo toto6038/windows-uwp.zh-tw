@@ -3,23 +3,30 @@ author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: "建置裝置選取器"
 description: "建置裝置選取器可讓您在列舉裝置時限制要搜尋的裝置。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e4e3cecc0618d81554dbaae80c3bb4d907c79d31
+ms.lasthandoff: 02/07/2017
 
 ---
-# 建置裝置選取器
+# <a name="build-a-device-selector"></a>建置裝置選取器
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 建置裝置選取器可讓您在列舉裝置時限制要搜尋的裝置。 這讓您能夠只獲得相關結果，並提高系統的效能。 在大部分情況下，您可以從裝置堆疊中取得裝置選取器。 例如，您可以在透過 USB 找到的裝置中使用 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015)。 這些裝置選取器會傳回進階查詢語法 (AQS) 字串。 如果您不熟悉 AQS 格式，您可以在[透過程式設計方式使用進階查詢語法](https://msdn.microsoft.com/library/windows/desktop/Bb266512)中閱讀更多內容。
 
-## 建置篩選字串
+## <a name="building-the-filter-string"></a>建置篩選字串
 
 有一些情況是，您需要列舉裝置，但提供的裝置選取器不適用您的案例。 裝置選取器為 AQS 篩選字串，其中包含下列資訊。 在建立篩選字串之前，您需要知道您想要列舉之裝置相關資訊中的某些重要部分。
 
@@ -62,14 +69,14 @@ ms.openlocfilehash: 091767d6f223ce2b4538dafb1c81595015589013
 
 如果您無法建立單一 AQS 篩選字串以適當包含您的結果範圍，則可在收到結果之後進行篩選。 不過，如果您選擇這樣做，建議您在將初始 AQS 篩選字串提供給 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 時，盡可能限制該字串所產生的結果。 這將有助於改善應用程式的效能。
 
-## AQS 字串範例
+## <a name="aqs-string-examples"></a>AQS 字串範例
 
 下列範例說明如何使用 AQS 語法來限制您要列舉的裝置。 所有的這些篩選字串都會與 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配對，以建立完整篩選器。 如果未指定類型，請記住預設的類型是 **DeviceInterface**。
 
 當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含音訊擷取介面類別且目前已啟用的所有物件。 **=** 會轉譯為 **COP\_EQUALS**。
 
 ``` syntax
-System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
+System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
@@ -106,13 +113,4 @@ System.Devices.IpAddress:=[]
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -3,15 +3,22 @@ author: DelfCo
 description: "使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。"
 title: "RSS/Atom 摘要"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+ms.author: bobdel
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a30b58737befaae10a1dbb30416f338d8eb1cbb1
-ms.openlocfilehash: 623c11eba097a072b456738b84750eb4b2d888bb
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: da28caa7703a04b1d11254d9c894cf02b044ab64
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -230,9 +237,4 @@ function displayCurrentItem() {
     });
 }
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

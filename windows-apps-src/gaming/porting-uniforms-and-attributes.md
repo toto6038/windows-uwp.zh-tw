@@ -3,13 +3,20 @@ author: mtoepke
 title: "OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較"
 description: "在從 OpenGL ES 2.0 移植到 Direct3D 11 的程序期間，您必須變更用來在 app 與著色器程式之間傳送資料的語法與 API 行為。"
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes, 遊戲, 緩衝區, 統一, 頂點屬性"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 43b568b046246931e24ded5f40f56d3f24d1b05a
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
+# <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -37,7 +44,7 @@ ms.openlocfilehash: d3a1c0d3a37f24bdf4dfec1118aa206dfd6b9ac1
 
  
 
-## 移植緩衝區
+## <a name="port-buffers"></a>移植緩衝區
 
 
 在 OpenGL ES 2.0 中，建立並繫結任何種類的緩衝區程序通常會遵循這個模式。
@@ -119,7 +126,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## 將 Uniform 與 Uniform 緩衝區物件變更為 Direct3D 常數緩衝區
+## <a name="change-uniforms-and-uniform-buffer-objects-to-direct3d-constant-buffers"></a>將 Uniform 與 Uniform 緩衝區物件變更為 Direct3D 常數緩衝區
 
 
 在 Open GL ES 2.0 中，Uniform 是提供常數資料給個別著色器程式的機制。 著色器無法變更這個資料。
@@ -184,7 +191,7 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 請注意，暫存器必須針對每個常數緩衝區進行宣告。 不同的 Direct3D 功能層級會有不同的可用暫存器數目上限，因此請勿超過您設定為目標的最低功能層級的數目上限。
 
-## 將頂點屬性移植到 Direct3D 輸入配置與 HLSL 語意
+## <a name="port-vertex-attributes-to-a-direct3d-input-layouts-and-hlsl-semantics"></a>將頂點屬性移植到 Direct3D 輸入配置與 HLSL 語意
 
 
 由於著色器管線可以修改頂點資料，因此 OpenGL ES 2.0 要求您將它們指定為「屬性」而非 "Uniform" (這在較新版本的 OpenGL 與 GLSL 中已經變更)。頂點特定的資料 (例如，頂點位置、法向量、正切函數及色彩值) 都會當成屬性值來提供給著色器。 這些屬性值會對應到頂點資料中每個元素的特定位移；例如，第一個屬性可以指向個別頂點的位置元件，而第二個指向法向量，依此類推。
@@ -298,10 +305,5 @@ struct VertexShaderInput
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

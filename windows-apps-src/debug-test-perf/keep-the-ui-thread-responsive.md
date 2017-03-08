@@ -2,15 +2,22 @@
 author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "讓 UI 執行緒保持回應"
-description: "不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。"
+description: "不論使用何種電腦，使用者都希望應用程式在進行計算時仍然能夠回應。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
-ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: eae6c26979f3aa6b1c9fabf217f6a49ed89dd38b
+ms.lasthandoff: 02/07/2017
 
 ---
-# 讓 UI 執行緒保持回應
+# <a name="keep-the-ui-thread-responsive"></a>讓 UI 執行緒保持回應
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 不論使用何種電腦，使用者都希望 app 在進行計算時仍然能夠回應。 這對於不同的 app 有不同的意義。 對某些 app 而言，這表示提供更實際的物理性質、更快地從磁碟或網路載入資料、快速地呈現複雜的場景和在頁面之間瀏覽、立即找到方向，或是快速處理資料。 不論執行何種計算，使用者都會希望 app 可以回應輸入，不希望有看似在「思考」而停止回應的情況發生。
 
@@ -20,7 +27,7 @@ ms.openlocfilehash: 2a215264db018dfecff897b13b24ba535e7483ec
 
 > **注意** 例外的是另有一個轉譯執行緒可以套用 UI 變更，而不會影響輸入的處理方式或基本配置。 例如，許多不會影響版面配置的動畫和轉場效果可以在這個轉譯執行緒上執行。
 
-## 延遲元素具現化
+## <a name="delay-element-instantiation"></a>延遲元素具現化
 
 app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初看到的 UI 時不要太過花俏。 例如，不要建立那種逐漸展露 UI 和快顯內容的 UI。
 
@@ -29,11 +36,11 @@ app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初
 
 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 佇列適用於 UI 執行緒不忙碌時處理。
 
-## 使用非同步 API
+## <a name="use-asynchronous-apis"></a>使用非同步 API
 
 為了協助保持應用程式的回應性，平台為其許多 API 提供非同步的版本。 非同步 API 可確保使用中的執行緒不會被封鎖太長的時間。 當您從 UI 執行緒呼叫 API 時，請使用非同步版本 (如果提供的話)。 如需使用 **async** 模式進行設計程式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187335)或[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/Mt187337)。
 
-## 將工作卸載到背景執行緒
+## <a name="offload-work-to-background-threads"></a>將工作卸載到背景執行緒
 
 撰寫可快速返回的事件處理常式。 在需要執行不少的工作量時，排定給背景執行緒並返回。
 
@@ -99,13 +106,8 @@ public class AsyncExample
 
 > **注意** UWP 還有 [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) 和 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.aspx) API，可用於類似的案例。 如需詳細資訊，請參閱[執行緒和非同步程式設計](https://msdn.microsoft.com/library/windows/apps/Mt187340)。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

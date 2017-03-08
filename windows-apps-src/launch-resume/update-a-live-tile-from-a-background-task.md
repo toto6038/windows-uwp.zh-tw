@@ -4,14 +4,21 @@ title: "從背景工作更新動態磚"
 description: "使用背景工作來更新含有最新內容的 app 動態磚。"
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 76521772e4f93ee143ad698ad798f4b88ebcf3a7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 
-# 從背景工作更新動態磚
+# <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -28,7 +35,7 @@ ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">開發人員短片：從背景工作更新動態磚</iframe>
 
-## 建立背景工作專案
+## <a name="create-the-background-task-project"></a>建立背景工作專案
 
 
 若要啟用應用程式的動態磚，請將新的 Windows 執行階段元件專案新增至您的方案。 這是使用者安裝應用程式時，OS 在背景載入和執行的個別組件。
@@ -38,7 +45,7 @@ ms.openlocfilehash: d651a5dbf8478de238944cac36ea13429b0f1849
 3.  將專案命名為 BackgroundTasks，然後按一下或點選 [確定]****。 Microsoft Visual Studio 會將新專案新增至方案。
 4.  在主要專案中，將參考新增至 BackgroundTasks 專案。
 
-## 實作背景工作
+## <a name="implement-the-background-task"></a>實作背景工作
 
 
 實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面以建立更新應用程式動態磚的類別。 您的背景工作會在 Run 方法中執行。 在這種情況下，工作會取得 MSDN 部落格的同步發佈摘要。 為避免工作在非同步程式碼仍執行時提早關閉，請取得延遲。
@@ -141,7 +148,7 @@ namespace BackgroundTasks
 }
 ```
 
-## 設定套件資訊清單
+## <a name="set-up-the-package-manifest"></a>設定套件資訊清單
 
 
 若要設定套件資訊清單，請將它開啟然後新增背景工作宣告。 將工作的進入點設定為類別名稱，包括其命名空間。
@@ -158,7 +165,7 @@ namespace BackgroundTasks
 9.  在 [小標誌]**** 欄位中，設定 30x30 像素圖示的路徑。
 10. 在 [寬標誌]**** 欄位中，設定 310x150 像素圖示的路徑。
 
-## 登錄背景工作
+## <a name="register-the-background-task"></a>登錄背景工作
 
 
 建立 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以登錄您的工作。
@@ -240,7 +247,7 @@ namespace ContosoApp
 }
 ```
 
-## 偵錯背景工作
+## <a name="debug-the-background-task"></a>偵錯背景工作
 
 
 若要偵錯背景工作，請在工作的 Run 方法中設定中斷點。 在 [偵錯位置]**** 工具列中，選取您的背景工作。 這會讓系統立即呼叫 Run 方法。
@@ -255,7 +262,7 @@ namespace ContosoApp
 8.  按 Shift+F5 或點選 [偵錯] &gt; [停止偵錯]****，停止偵錯。
 9.  回到 [開始] 畫面上 App 的磚。 數秒之後，磚通知會顯示在應用程式磚上。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -267,9 +274,4 @@ namespace ContosoApp
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

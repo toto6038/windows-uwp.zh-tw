@@ -3,16 +3,23 @@ author: mtoepke
 title: "將 OpenGL ES 2.0 對應到 Direct3D 11"
 description: "當您第一次開始進行將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 的程序時，請務必熟悉這些 API 間的重要差異。"
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, opengl, direct3d, 移植"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1298f165444b31c75ca9d98f04eb82a58be46e5b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將 OpenGL ES 2.0 對應到 Direct3D 11
+# <a name="map-opengl-es-20-to-direct3d-11"></a>將 OpenGL ES 2.0 對應到 Direct3D 11
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 當您第一次開始進行將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 的程序時，請務必熟悉這些 API 間的重要差異。 本節中的主題可以協助您計劃移植策略，以及當您將圖形處理移至 Direct3D 時必須進行的 API 變更。
 ## 
@@ -49,7 +56,7 @@ ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
 
  
 
-## 關於特定 OpenGL ES 2.0 提供者的注意事項
+## <a name="notes-on-specific-opengl-es-20-providers"></a>關於特定 OpenGL ES 2.0 提供者的注意事項
 
 
 這些主題使用 Khronos OpenGL ES 2.0 規格與不限平台的 C。iOS 和 Android 也都是使用相同規格，儘管針對這些平台開發的 OpenGL ES 2.0 程式碼通常是當作物件導向 API 來公開，但是它們與我們將進行逐步解說的程式碼片段非常類似。 此外，由於每種平台的複雜性與語言差異，也會有些微不同，特別是在方法參數類型或一般語言語法方面。 例如，iOS 會使用 Objective-C。 Android 能夠使用 C++；但是，有一些開發人員可能依賴純 Java 實作。 請記住，這些主題仍然適合用來做為整體概念，OpenGL ES API 的結構與用法並無不同。
@@ -60,10 +67,5 @@ ms.openlocfilehash: d21bbf905797a7b0c14e666f1ec31a85203b30db
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

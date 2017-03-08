@@ -3,25 +3,32 @@ author: mtoepke
 title: "定義遊戲的通用 Windows 平台 (UWP) App 架構"
 description: "撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。"
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9dea19c87c4049c73a938b1cd5576644f7b0f8b9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 82a44a3499297b3988815ad10091cd351a194cbd
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  定義遊戲的通用 Windows 平台 (UWP) App 架構
+#  <a name="define-the-games-universal-windows-platform-uwp-app-framework"></a>定義遊戲的通用 Windows 平台 (UWP) App 架構
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 撰寫通用 Windows 平台 (UWP) DirectX 遊戲程式碼的第一部分，是建立讓遊戲物件與 Windows 互動的架構。 這包括下列 Windows 執行階段屬性：暫停/繼續事件處理、視窗焦點以及定格，還有使用者介面的事件、互動和轉換。 我們要看看如何架構範例遊戲，以及它如何為玩家及系統互動定義高階狀態電腦。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   設定 UWP DirectX 遊戲的架構，以及實作定義整體遊戲流程的狀態電腦。
 
-## 初始化並啟動檢視提供者
+## <a name="initializing-and-starting-the-view-provider"></a>初始化並啟動檢視提供者
 
 
 在任何 UWP DirectX 遊戲中，您都必須取得應用程式單例 (定義執行應用程式之執行個體的 Windows 執行階段物件) 的檢視提供者，以存取所需的圖形資源。 透過 Windows 執行階段，您的 app 可以直接與圖形介面連接，但是需要指定所需的資源及處理方式。
@@ -38,7 +45,7 @@ ms.openlocfilehash: 9dea19c87c4049c73a938b1cd5576644f7b0f8b9
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-在 DirectX 11 應用程式 (通用 Windows) 範本中，這 5 個方法定義在 [XApp.h](#code_sample) 的 **App** 物件中。 我們來看看它們在這個遊戲中的實作方式。
+在 DirectX 11 應用程式 (通用 Windows) 範本中，這 5 個方法定義在 [XApp.h](#complete-sample-code-for-this-section) 的 **App** 物件中。 我們來看看它們在這個遊戲中的實作方式。
 
 檢視提供者的 Initialize 方法
 
@@ -237,7 +244,7 @@ void App::Uninitialize()
 
 我們在這個教學課程中重新提到這 5 個方法，請牢記它們。 現在，我們來看看遊戲引擎的整體結構及定義它的狀態電腦。
 
-## 初始化遊戲引擎狀態
+## <a name="initializing-the-game-engine-state"></a>初始化遊戲引擎狀態
 
 
 由於使用者可以隨時從暫停狀態繼續 UWP 遊戲應用程式，因此應用程式可能會有任意數目的可能狀態。
@@ -289,12 +296,12 @@ void App::InitializeGameState()
 
 遊戲範例不會區分遊戲本身是冷啟動 (也就是初次啟動遊戲，沒有暫停事件)，或是從暫停狀態繼續。 這是任何 UWP app 的適當設計。
 
-## 處理事件
+## <a name="handling-events"></a>處理事件
 
 
 我們的範例程式碼在 **Initialize**、**SetWindow** 以及 **Load** 中登錄了數個特定事件的處理常式。 您可能猜到這些是重要事件，因為程式碼範例在進入任何遊戲機制或圖形開發前就先做好這項工作。 您猜得沒錯！ 這些事件是提供正確 UWP app 經驗的基礎，而且因為 UWP app 可以隨時啟動、停用、調整大小、定格、解除定格、暫停或繼續，因此遊戲必須儘速登錄這些特別的事件，並透過保持遊戲經驗順暢及使用者預期的方式來處理它們。
 
-以下是範例中的事件處理常式，以及它們處理的事件。 您可以在[這個章節的完整程式碼](#code_sample)中找到這些事件處理常式的完整程式碼。
+以下是範例中的事件處理常式，以及它們處理的事件。 您可以在[這個章節的完整程式碼](#complete-sample-code-for-this-section)中找到這些事件處理常式的完整程式碼。
 
 <table>
 <colgroup>
@@ -353,7 +360,7 @@ void App::InitializeGameState()
 
 您自己的遊戲必須處理這些事件，因為這些是 UWP 應用程式設計的一部分。
 
-## 更新遊戲引擎
+## <a name="updating-the-game-engine"></a>更新遊戲引擎
 
 
 在 **Run** 的遊戲迴圈內，範例已經實作基本狀態電腦，以處理玩家可以採取的所有主要動作。 這個狀態電腦的最高層級負責處理遊戲載入、進行特定關卡或在遊戲暫停後 (系統或玩家暫停) 繼續之前所玩的關卡。
@@ -364,7 +371,7 @@ void App::InitializeGameState()
 -   **Waiting for press**。 遊戲迴圈正在循環，等候特定使用者輸入。 這項輸入是玩家載入遊戲、開始關卡或繼續關卡的動作。 範例程式碼將這些子狀態稱為 PressResultState 列舉值。
 -   **Dynamics**。 遊戲迴圈正在執行且使用者正在玩遊戲。 使用者正在玩遊戲時，遊戲會檢查可能轉換的 3 種條件：關卡設定的時間到期、玩家完成關卡，或玩家完成所有關卡。
 
-以下是程式碼結構。 完整程式碼在[這個章節的完整程式碼](#code_sample)中。
+以下是程式碼結構。 完整程式碼在[這個章節的完整程式碼](#complete-sample-code-for-this-section)中。
 
 用來更新遊戲引擎的狀態電腦結構
 
@@ -473,7 +480,7 @@ void App::Update()
 
 當然，就像您之前看到的，狀態電腦內還有狀態電腦。 有一個是用於控制器，可以處理玩家產生的所有可接受輸入。 在圖表中，按下的動作就是某種形式的使用者輸入。 這個狀態電腦不在乎輸入是什麼，因為它在更高階工作；它假設控制器的狀態電腦會處理影響移動及射擊行為的任何轉換，以及相關的轉譯更新。 我們會在[新增控制項](tutorial--adding-controls.md)中討論輸入狀態的管理。
 
-## 更新使用者介面
+## <a name="updating-the-user-interface"></a>更新使用者介面
 
 
 我們需要持續通知玩家系統的狀態，允許使用者根據遊戲規則來變更高階狀態。 對於這個遊戲範例包含的大部分遊戲而言，會使用包含代表遊戲狀態和其他遊戲特定資訊 (如分數、子彈或還剩幾次機會) 的平視顯示器進行通知。 我們將這個稱為重疊，因為與主要圖形管線分開轉譯，而且放置在 3D 投影上層。 在範例遊戲中，我們使用 Direct2D API 建立這個重疊。 我們也可以使用 XAML 來建立這個重疊，如[延伸遊戲範例](tutorial-resources.md)中的討論。
@@ -525,14 +532,14 @@ void App::SetGameInfoOverlay(GameInfoOverlayState state)
 
 將您的使用者介面與遊戲圖形管線分開，可讓您不用依賴遊戲圖形轉譯引擎獨立使用使用者介面，並大幅降低遊戲程式碼的複雜程度。
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 這已經涵蓋遊戲範例的基本結構，並示範以 DirectX 開發 UWP 遊戲應用程式的最佳模型。 當然，還有更多內容。 我們僅逐步解說了遊戲的基本架構而已。 現在，我們要深入了解遊戲及其機制，以及如何實作這些機制以做為核心遊戲物件。 我們會在[定義主要遊戲物件](tutorial--defining-the-main-game-loop.md)中討論這個部分。
 
 同時也該更仔細的探討範例遊戲的圖形引擎。 這個部分涵蓋在[組合轉譯管線](tutorial--assembling-the-rendering-pipeline.md)的內容中。
 
-## 這個章節的完整範例程式碼
+## <a name="complete-sample-code-for-this-section"></a>這個章節的完整範例程式碼
 
 
 App.h
@@ -1423,10 +1430,5 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,10 +1,18 @@
 ---
 author: msatranjr
 title: "Windows 執行階段元件"
-description: "本文件討論 Windows 10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
+description: "本文件討論 Windows 10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
+ms.author: misatran
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 translationtype: Human Translation
-ms.sourcegitcommit: 019d3d256becb06ad88cc87962c86829fcfb80cf
-ms.openlocfilehash: 2ac22675f44fab8ff123c26151efc25aad01b3a0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 8844196503c45e9488d3fa2a543d588229d01cdd
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -575,10 +583,5 @@ struct PersonStruct
 
 -   [將 Windows 市集應用程式部署到企業](http://go.microsoft.com/fwlink/p/?LinkID=264770)
 
-
-
-
-
-<!--HONumber=Dec16_HO3-->
 
 

@@ -1,34 +1,41 @@
 ---
 author: TylerMSFT
-ms.assetid: 
+ms.assetid: 3a3ea86e-fa47-46ee-9e2e-f59644c0d1db
 description: "本文說明如何在 App 移至背景時減少記憶體使用量。"
-title: "當 App 移至背景狀態時減少記憶體使用量"
+title: "當應用程式移至背景狀態時減少記憶體使用量"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: bf0cb8f072a2a6974ab582329d8b482add37f1d9
-ms.openlocfilehash: 80e89e24236903ab90f7c4fe326782a0a7e5272f
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 當 App 移至背景時釋出記憶體
+# <a name="free-memory-when-your-app-moves-to-the-background"></a>當應用程式移至背景時釋出記憶體
 
-本文說明如何在 App 移至背景狀態時減少其記憶體使用量，讓它不會被暫停及可能被終止。
+本文說明如何在應用程式移至背景狀態時減少其記憶體使用量，讓它不會被暫停及可能被終止。
 
-## 新的背景事件
+## <a name="new-background-events"></a>新的背景事件
 
 Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)。 這些事件可讓您的 App 知道它何時進入和離開背景。
 
 當您的 App 移至背景時，系統所強制執行的記憶體限制可能會變更。 請使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以便維持低於限制的狀態，如此當您的 App 在背景中時，才不會被暫停及可能被終止。
 
-### 可控制您 App 記憶體使用量的事件
+### <a name="events-for-controlling-your-apps-memory-usage"></a>可控制您 App 記憶體使用量的事件
 
-引發 [MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) 的時機是在 App 所能使用的總記憶體限制正要變更之前。 例如，當 App 移至背景，而 Xbox 上的記憶體限制從 1024 MB 變更為 128 MB 時。  
+引發 [MemoryManager.AppMemoryUsageLimitChanging](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagelimitchanging.aspx) 的時機是在 App 所能使用的總記憶體限制正要變更之前。 例如，當 App 移至背景，而 Xbox 上的記憶體限制從 1024 MB 變更為 128 MB 時。  
 這是為了讓平台不暫停或終止 App，而需處理的最重要事件。
 
-引發 [MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) 的時機是在 App 的記憶體耗用量已增加到 [AppMemoryUsageLevel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.appmemoryusagelevel.aspx) 列舉中較高的值時。 例如，從 **Low** 到 **Medium**。 處理此事件是選擇性的，但建議處理，因為應用程式仍然要負責保持低於限制。
+引發 [MemoryManager.AppMemoryUsageIncreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusageincreased.aspx) 的時機是在 App 的記憶體耗用量已增加到 [AppMemoryUsageLevel](https://msdn.microsoft.com/library/windows/apps/windows.system.appmemoryusagelevel.aspx) 列舉中較高的值時。 例如，從 **Low** 到 **Medium**。 處理此事件是選擇性的，但建議處理，因為應用程式仍然要負責保持低於限制。
 
-引發 [MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) 的時機是在 App 的記憶體耗用量已降低到 **AppMemoryUsageLevel** 列舉中較低的值時。 例如，從 **High** 到 **Low**。 處理此事件是選擇性的，但這表示應用程式可能能夠視需要配置額外的記憶體。
+引發 [MemoryManager.AppMemoryUsageDecreased](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.appmemoryusagedecreased.aspx) 的時機是在 App 的記憶體耗用量已降低到 **AppMemoryUsageLevel** 列舉中較低的值時。 例如，從 **High** 到 **Low**。 處理此事件是選擇性的，但這表示應用程式可能能夠視需要配置額外的記憶體。
 
-## 處理前景與背景之間的轉換
+## <a name="handle-the-transition-between-foreground-and-background"></a>處理前景與背景之間的轉換
 
 當 App 從前景移至背景時，會引發 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件。 當您的 App 回到前景時，會引發 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件。 當已建立好您的 App 時，您可以為這些事件註冊處理常式。 在預設專案範本中，是在 App.xaml.cs 的 **App** 類別中執行此動作。
 
@@ -76,9 +83,9 @@ Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBa
 
 [!code-cs[CreateRootFrame](./code/ReduceMemory/cs/App.xaml.cs#SnippetCreateRootFrame)]
 
-## 指導方針
+## <a name="guidelines"></a>指導方針
 
-### 從前景移至背景
+### <a name="moving-from-the-foreground-to-the-background"></a>從前景移至背景
 
 當 App 從前景移至背景時，系統並不會代表 App 進行工作來釋出背景中不需要的資源。 例如，UI 架構會排清已快取的紋理，而視訊子系統會代表 App 釋出已配置的記憶體。 不過，App 仍然需要謹慎監視其記憶體使用量，才能避免被系統暫停或終止。
 
@@ -91,19 +98,14 @@ Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBa
 - 請**考慮**在 **AppMemoryUsageLimitChanging** 事件處理常式 (而不是 **EnteredBackground** 處理常式) 中釋出 UI 資源來進行效能最佳化。 使用 **EnteredBackground/LeavingBackground** 事件處理常式中設定的布林值，來追蹤應用程式是在背景中還是前景中。 然後，在 **AppMemoryUsageLimitChanging** 事件處理常式中，如果 **AppMemoryUsage** 超出限制，而 App 在背景中 (根據布林值判斷)，您便可以釋出 UI 資源。
 - 請**勿**在 **EnteredBackground** 事件中執行長時間執行的作業，因為這可能導致應用程式之間的轉換對使用者來說顯得緩慢。
 
-### 從背景移至前景
+### <a name="moving-from-the-background-to-the-foreground"></a>從背景移至前景
 
 當 App 從背景移至前景時，它會先取得 **AppMemoryUsageLimitChanging** 事件，然後取得 **LeavingBackground** 事件。
 
 - 請**務必**使用 **LeavingBackground** 事件來重新建立 App 在移至背景時已捨棄的 UI 資源。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [背景媒體播放範例](http://go.microsoft.com/fwlink/p/?LinkId=800141) - 說明如何在 App 移至背景狀態時釋出記憶體。
 * [診斷工具](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 使用診斷工具來觀察記憶體回收事件，並驗證您的 App 以您預期的方式釋出記憶體。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

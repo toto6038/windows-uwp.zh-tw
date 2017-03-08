@@ -4,12 +4,20 @@ Description: "使用巢狀 UI 在清單項目上啟用多個動作"
 title: "清單項目中的巢狀 UI"
 label: Nested UI in list items
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
 translationtype: Human Translation
-ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
-ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: cfda479d2a05dfac4125688d3666abfb23bc45a2
+ms.lasthandoff: 02/08/2017
 
 ---
-# 清單項目中的巢狀 UI
+# <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -26,9 +34,9 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 ![巢狀 UI 組件](images/nested-ui-example-1.png)
 
-> 注意   ListView 和 GridView 都是衍生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
+> 注意&nbsp;&nbsp; ListView 和 GridView 都是衍生自 [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) 類別，因此它們具有相同功能，但會以不同方式顯示資料。 在本文中，當我們討論清單時，其中的資訊將同時適用於 ListView 和 GridView 控制項。
 
-## 主要和次要動作
+## <a name="primary-and-secondary-actions"></a>主要和次要動作
 
 建立具有清單的 UI 時，請考慮使用者會針對那些清單項目所採取的動作。  
 
@@ -43,7 +51,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 「次要動作」**通常是與清單項目相關聯的加速器。 這些加速器可以是用於清單管理，或是與清單項目相關的動作。
 
-## 次要動作的選項
+## <a name="options-for-secondary-actions"></a>次要動作的選項
 
 建立清單 UI 時，請先確定您已考慮到所有 UWP 所支援的輸入方法。 如需不同輸入種類的詳細資訊，請參閱[輸入基本資訊](../input-and-devices/input-primer.md)。
 
@@ -53,13 +61,13 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 如果您決定不需要在主要清單 UI 中放置次要動作，還有數種其他方法可以將它們公開給使用者。 以下為一些可以考慮放置次要動作的位置選項。
 
-### 將次要動作放在詳細資料頁面上
+### <a name="put-secondary-actions-on-the-detail-page"></a>將次要動作放在詳細資料頁面上
 
 將次要動作放在按下清單項目後會瀏覽到的頁面上。 當您使用主要/詳細資料模式時，詳細資料頁面通常是個放置次要動作的好位置。
 
 如需詳細資訊，請參閱[主要/詳細資料模式](master-details.md)。
 
-### 將次要動作放在操作功能表中
+### <a name="put-secondary-actions-in-a-context-menu"></a>將次要動作放在操作功能表中
 
 將次要動作放在使用者能以滑鼠右鍵按一下或是長按來存取的操作功能表中。 這能在不需要載入詳細資料頁面的情況下，讓使用者可以執行動作 (例如刪除電子郵件)。 同時在詳細資料頁面上提供這些選項是一個良好的做法，因為操作功能表的目的是做為加速器，而非主要 UI。
 
@@ -67,7 +75,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 如需詳細資訊，請參閱[操作功能表和飛出視窗](menus.md)。
 
-### 將次要動作放在暫留 UI 中以針對游標輸入最佳化
+### <a name="put-secondary-actions-in-hover-ui-to-optimize-for-pointer-input"></a>將次要動作放在暫留 UI 中以針對游標輸入最佳化
 
 如果您預期 App 經常會搭配游標輸入 (例如滑鼠和手寫筆) 使用，並想要使次要動作可以方便提供那些輸入使用，您可以只在暫留上顯示次要動作。 此加速器只會在使用游標輸入時可見，因此請務必同時使用其他選項來支援其他輸入類型。
 
@@ -76,7 +84,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 如需詳細資訊，請參閱[互動](../input-and-devices/mouse-interactions.md)。
 
-## 主要和次要動作的 UI 放置
+## <a name="ui-placement-for-primary-and-secondary-actions"></a>主要和次要動作的 UI 放置
 
 如果您決定在主要清單 UI 中公開次要動作，我們建議您遵循下列指導方針。
 
@@ -84,15 +92,15 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 在這些範例中，我們所討論的清單 UI，其項目主要會以水平方向做為流向 (其寬度大於其高度)。 不過，您可能會有更加方正，或是高度大於寬度的清單項目。 通常這些項目會用於方格中。 針對這些項目，如果清單不會垂直捲動，您可以將次要動作放在清單項目的下方，而非清單項目的右方。
 
-## 請考慮到所有輸入
+## <a name="consider-all-inputs"></a>請考慮到所有輸入
 
 當您決定使用巢狀 UI 時，請同時評估所有輸入類型的使用者體驗。 如先前所述，巢狀 UI 很適合某些輸入類型。 不過它並不一定可以搭配其他類型使用。 鍵盤、控制器及遙控輸入特別可能在使用巢狀 UI 元素時遇到困難。 請務必遵循下列指導方針，以確保您的 UWP 能夠搭配所有輸入類型使用。
 
-## 巢狀 UI 處理
+## <a name="nested-ui-handling"></a>巢狀 UI 處理
 
 當您有超過一個動作巢狀於清單項目中時，我們建議使用本指導方針來處理使用鍵盤、控制器、遙控器或其他非游標輸入的瀏覽。
 
-### 清單項目會執行動作的巢狀 UI
+### <a name="nested-ui-where-list-items-perform-an-action"></a>清單項目會執行動作的巢狀 UI
 
 如果您具有巢狀元素的清單 UI 支援叫用、選取 (單一或多個) 或拖放作業等動作，我們建議使用下列方向鍵技巧來瀏覽您的巢狀 UI 元素。
 
@@ -130,7 +138,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 
 如需實作此項目的程式碼，請參閱本文的[範例](#example)一節。
 
-### 清單項目不會執行動作的巢狀 UI
+### <a name="nested-ui-where-list-items-do-not-perform-an-action"></a>清單項目不會執行動作的巢狀 UI
 
 您使用清單檢視的原因，可能是因為它能提供虛擬化並最佳化捲動行為，因此您不會將某個動作與清單項目做出關聯。 這類 UI 通常只會針對群組元素使用清單項目，並確保它們會以單一的集合進行捲動。
 
@@ -175,7 +183,7 @@ ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
 - 如果焦點位於其中一個巢狀 UI 項目上，按下 Tab 鍵將會以定位順序周遊巢狀 UI 項目。  當所有巢狀 UI 項目皆已周遊完畢，系統會將焦點放到 ListView 之後，定位順序中的下一個控制項。
 - Shift+Tab 所做出的行為會與 Tab 行為的方向相反。
 
-## 範例
+## <a name="example"></a>範例
 
 此範例示範如何實作[清單項目會執行動作的巢狀 UI](#nested-ui-where-list-items-perform-an-action)。
 
@@ -302,9 +310,4 @@ public static class DependencyObjectExtensions
     }
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

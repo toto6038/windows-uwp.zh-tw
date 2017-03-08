@@ -1,21 +1,28 @@
 ---
 author: drewbatgit
-ms.assetid: 
+ms.assetid: 25553c4d-fa4f-4130-af9b-97f993fefd43
 description: "本節提供建立播放音訊和視訊之通用 Windows 應用程式的詳細資訊。"
 title: "媒體播放"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 4349113e3503e0be4afede9bed70c71262435d09
-ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 58b41c9d0d8bd7cd07b5a1f4aecf5936422a4ee8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 媒體播放
+# <a name="media-playback"></a>媒體播放
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節提供建立播放音訊和視訊之通用 Windows 應用程式的詳細資訊。 
 
-## 媒體播放開發人員功能
+## <a name="media-playback-developer-features"></a>媒體播放開發人員功能
 
 下表列出操作說明文章，可提供將媒體播放功能新增至您 App 的詳細指導方針。
  
@@ -31,7 +38,7 @@ ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
 | [PlayReady DRM](playready-client-sdk.md)                                                          | 本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。                                                                                                                                                                                |
 | [PlayReady 加密媒體延伸](playready-encrypted-media-extension.md)                     | 本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。                                                                                                                                       |
 
-## 媒體播放 SDK 範例
+## <a name="media-playback-sdk-samples"></a>媒體播放 SDK 範例
 
 下列的 SDK 範例示範 Windows 10 上 UWP 應用程式可用的媒體播放功能。 使用這些範例查看內容中使用的媒體播放 API 或者做為您應用程式的起點。
 
@@ -42,10 +49,5 @@ ms.openlocfilehash: 4dd961d508ccbdfa13dd99946ed03bb2d6e8705a
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

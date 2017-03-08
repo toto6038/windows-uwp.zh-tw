@@ -3,17 +3,24 @@ author: laurenhughes
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: "取得檔案屬性"
 description: "取得由 StorageFile 物件所表示檔案的屬性 &amp;\\#8212;最上層、基本及延伸&amp;\\#8212;。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 89dee43da35e9a31bb7a795324119cb429d3734e
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="get-file-properties"></a>取得檔案屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
 -   [**StorageFile.GetBasicPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh701737)
 -   [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225)
@@ -21,7 +28,7 @@ ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 取得由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。
 
-**注意：**另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+**注意**  另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
  
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 464548664f8065e4dba45d23ccbb71a68d0b6b17
 
 許多最上層檔案屬性都可當成 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 類別的成員來存取。 這些屬性包含檔案屬性、內容類型、建立日期、顯示名稱及檔案類型等。
 
-**注意：**請記得宣告 **picturesLibrary** 功能。
+**注意**  請記得宣告 **picturesLibrary** 功能。
 
  
 
@@ -134,9 +141,4 @@ foreach (Windows.Storage.StorageFile file in files)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

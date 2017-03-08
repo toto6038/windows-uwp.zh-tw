@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。"
 title: "Microsoft Advertising 程式庫的錯誤處理"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript, XAML, C#"
 translationtype: Human Translation
-ms.sourcegitcommit: 2b5dbf872dd7aad48373f6a6df3dffbcbaee8090
-ms.openlocfilehash: 56df2b0f0a41d128f02aa5e2aa0ce11e6f6ca16a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f979a250872f19a54c6b638d44624ff2e1840c91
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -81,9 +88,4 @@ private void OnAdError(object sender, AdErrorEventArgs e)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

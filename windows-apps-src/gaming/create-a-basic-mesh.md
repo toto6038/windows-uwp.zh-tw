@@ -3,38 +3,45 @@ author: mtoepke
 title: "建立和顯示基本網格"
 description: "3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。"
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 網格, DirectX"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b8795438053adebfbd36cada86a8ef13afb3eef2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 建立和顯示基本網格
+# <a name="create-and-display-a-basic-mesh"></a>建立和顯示基本網格
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。 組成這些多邊形物件與表面結構的一系列頂點則稱為網格。 我們在此建立一個立方體物件的基本網格，並將它提供給著色器管線進行轉譯和顯示。
 
-> **重要** 這裡提供的範例程式碼會使用類型 (如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4) 及在 DirectXMath.h 中宣告的內嵌方法。 如果您是透過剪下並貼上的方式使用此程式碼，請在您的專案中\#包含 &lt;DirectXMath.h&gt;。
+> **重要**：這裡提供的範例程式碼會使用類型 (如 DirectX::XMFLOAT3 和 DirectX::XMFLOAT4X4) 及在 DirectXMath.h 中宣告的內嵌方法。 如果您是透過剪下並貼上的方式使用此程式碼，請在您的專案中\#包含 &lt;DirectXMath.h&gt;。
 
  
 
-## 您需要知道的事項
+## <a name="what-you-need-to-know"></a>您需要知道的事項
 
 
-### 技術
+### <a name="technologies"></a>技術
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### 先決條件
+### <a name="prerequisites"></a>先決條件
 
 -   線性代數與 3D 座標系統的基本知識
 -   Visual Studio 2015 Direct3D 範本
 
-## 指示
+## <a name="instructions"></a>指示
 
-### 步驟 1：建構模型的網格
+### <a name="step-1-construct-the-mesh-for-the-model"></a>步驟 1：建構模型的網格
 
 在大多數的遊戲中，遊戲物件的網格會從包含特定頂點資料的檔案中載入。 這些頂點的順序取決於應用程式，但通常會序列化為條形或扇形。 頂點資料可以來自任一軟體來源，也可以手動建立。 您的遊戲可以決定要使用哪種讓頂點著色器能夠有效處理資料的方式來解譯資料。
 
@@ -63,7 +70,7 @@ SimpleCubeVertex cubeVertices[] =
 
 因此，您有 8 個頂點，每個頂點各有一個指定的色彩。 在範例中，每個頂點/色彩配對就表示一個頂點的完整資料。 當您指定我們的頂點緩衝區時，必須記住這個特殊的配置。 我們會將此輸入配置提供給頂點著色器，讓它可以了解您的頂點資料。
 
-### 步驟 2：設定輸入配置
+### <a name="step-2-set-up-the-input-layout"></a>步驟 2：設定輸入配置
 
 現在您的記憶體中已經有頂點。 但是您的圖形裝置有自己的記憶體，而您使用 Direct3D 進行存取。 為了將頂點資料送入圖形裝置以進行處理，您必須想以往一樣執行一些前置作業：您必須宣告如何配置頂點資料，圖形裝置才能在從遊戲取得頂點資料時解譯這些資料。 若要這樣做，可以使用 [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)。
 
@@ -102,7 +109,7 @@ m_d3dDevice->CreateInputLayout(
 
 在 Direct3D 裝置上呼叫 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) 並建立輸入配置。 現在，您必須建立可以實際容納資料的緩衝區！
 
-### 步驟 3：填入頂點緩衝區
+### <a name="step-3-populate-the-vertex-buffers"></a>步驟 3：填入頂點緩衝區
 
 頂點緩衝區包含網格中每個三角形的頂點清單。 每個頂點在清單中必須是唯一的。 在範例中，立方體有 8 個頂點。 頂點著色器會在圖形裝置上執行並讀取頂點緩衝區的內容，而且會依據您在先前步驟中指定的輸入配置解譯資料。
 
@@ -135,7 +142,7 @@ m_d3dDevice->CreateBuffer(
 
 頂點已載入。 但處理這些頂點的順序為何？ 這會在您提供索引清單給頂點時處理—這些索引的順序便是頂點著色器處理它們的順序。
 
-### 步驟 4：填入索引緩衝區
+### <a name="step-4-populate-the-index-buffers"></a>步驟 4：填入索引緩衝區
 
 現在，您要提供包含每個頂點的索引清單。 這些索引會與頂點緩衝區中的頂點位置對應，由 0 開始。 為協助您視覺化呈現此概念，請想像網格中每個唯一頂點都被指派了唯一號碼，就像識別碼一樣。 此識別碼是頂點緩衝區中頂點的整數位置。
 
@@ -179,7 +186,7 @@ unsigned short cubeIndices[] =
 
 如需不同索引清單技巧的詳細資訊，請參閱[基本拓撲](https://msdn.microsoft.com/library/windows/desktop/bb205124)。
 
-### 步驟 5：為您的轉換矩陣建立常數緩衝區
+### <a name="step-5-create-a-constant-buffer-for-your-transformation-matrices"></a>步驟 5：為您的轉換矩陣建立常數緩衝區
 
 在開始處理頂點之前，您必須先提供執行時將套用 (相乘) 到每個頂點的轉換矩陣。 對於大多數的 3D 遊戲而言，它們共有三種：
 
@@ -193,7 +200,7 @@ HLSL 不會變更常數緩衝區。 您可以在遊戲更新特定資料時變�
 
 在此範例中，我們只使用未曾變更資料的類型：三個矩陣的 DirectX::XMFLOAT4X4 資料。
 
-> **注意** 此處提供的範例程式碼使用以行為主的矩陣。 若要改用以列為主的矩陣，您可以在 HLSL 中使用 **row\_major** 關鍵字，並確定您的原始矩陣資料也是以列為主。 DirectXMath 使用以列為主的矩陣，並且可以直接搭配以 **row\_major** 關鍵字定義的 HLSL 矩陣使用。
+> **注意**：此處提供的範例程式碼使用以行為主的矩陣。 若要改用以列為主的矩陣，您可以在 HLSL 中使用 **row\_major** 關鍵字，並確定您的原始矩陣資料也是以列為主。 DirectXMath 使用以列為主的矩陣，並且可以直接搭配以 **row\_major** 關鍵字定義的 HLSL 矩陣使用。
 
  
 
@@ -245,7 +252,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **注意** 當您設定裝置特定的資源時，您通常會宣告投影矩陣，因為與其相乘的結果必須符合目前的 2D 檢視區大小參數 (通常與顯示器的像素高度與寬度對應)。 如果變更了值，您也必須適當地調整 x 與 y 座標值。
+> **注意**：當您設定裝置特定的資源時，您通常會宣告投影矩陣，因為與其相乘的結果必須符合目前的 2D 檢視區大小參數 (通常與顯示器的像素高度與寬度對應)。 如果變更了值，您也必須適當地調整 x 與 y 座標值。
 
  
 
@@ -300,7 +307,7 @@ m_d3dDeviceContext->IASetIndexBuffer(
 
 好！ 輸入組件完成。 轉譯的一切準備工作都已就緒。 讓我們開始執行這個頂點著色器。
 
-### 步驟 6：使用頂點著色器處理網格
+### <a name="step-6-process-the-mesh-with-the-vertex-shader"></a>步驟 6：使用頂點著色器處理網格
 
 有了定義網格頂點的頂點緩衝區以及定義處理頂點之順序的索引緩衝區之後，您要將它們傳送給頂點著色器。 頂點著色器程式碼 (以編譯的高階著色器語言表示) 會針對頂點緩衝區中的每個頂點執行一次，讓您可以執行每一頂點的轉換。 最終的結果通常是 2D 投影。
 
@@ -369,7 +376,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 
 **PixelShaderInput** 會指定頂點著色器的主要函式所傳回的資料配置。 當處理完頂點時，將會傳回 2D 投影空間中的頂點位置，以及用於每一頂點光源的色彩。 圖形卡使用著色器輸出的資料來計算在管線的下一階段執行像素著色器時必須著色的「片段」(可能的像素)。
 
-### 步驟 7：透過像素著色器傳送網格
+### <a name="step-7-passing-the-mesh-through-the-pixel-shader"></a>步驟 7：透過像素著色器傳送網格
 
 通常在圖形管線的這個階段中，您要在物件可見的投影表面執行每一像素作業。 (大家都愛紋理)。但在這個範例中，您只要透過此階段傳送它。
 
@@ -398,7 +405,7 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 
 將此程式碼放在不同於頂點著色器 HLSL (如 SimplePixelShader.hlsl) 的 HLSL 檔案中。 此程式碼會針對檢視區 (您要繪製的畫面區域的記憶體內部表示法) 中的每個可見像素執行一次。在此例中，檢視區對應整個畫面。 現在，您的圖形管線已經完整定義了！
 
-### 步驟8：點陣化和顯示網格
+### <a name="step-8-rasterizing-and-displaying-the-mesh"></a>步驟8：點陣化和顯示網格
 
 我們來執行管線吧。 很簡單：呼叫 [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565)。
 
@@ -426,7 +433,7 @@ m_swapChain->Present(1, 0);
 
 大功告成！ 如需含大量模型的場景，請使用多個頂點和索引緩衝區，甚至可以在不同的模型類型使用不同的著色器。 請記住，每個模型都有自己的座標系統，您必須使用您在常數緩衝區中定義的矩陣，將它們轉換成共用的世界座標系統。
 
-## 備註
+## <a name="remarks"></a>備註
 
 本主題說明如何建立和顯示您自己建立的簡單幾何圖形。 如需從檔案載入更複雜的幾何圖形並將其轉換成範例特定的頂點緩衝區物件 (.vbo) 格式的詳細資訊，請參閱[如何在您的 DirectX 遊戲中載入資源](load-a-game-asset.md)。
 
@@ -435,7 +442,7 @@ m_swapChain->Present(1, 0);
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [如何在您的 DirectX 遊戲中載入資源](load-a-game-asset.md)
@@ -446,10 +453,5 @@ m_swapChain->Present(1, 0);
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

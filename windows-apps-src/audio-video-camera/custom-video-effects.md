@@ -1,38 +1,46 @@
 ---
 author: drewbatgit
-Description: "本文章明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。"
+Description: "本文章說明如何建立能實作 IBasicVideoEffect 介面以允許您為視訊串流建立自訂效果的 Windows 執行階段元件。"
 MS-HAID: dev\_audio\_vid\_camera.custom\_video\_effects
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "自訂視訊效果"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 translationtype: Human Translation
-ms.sourcegitcommit: 26ed53934ab9237731deda544b8830a26e5ad914
-ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 60ab406a5908b1a21c7a0f579664b7632722dd4e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 自訂視訊效果
+# <a name="custom-video-effects"></a>自訂視訊效果
 
 
-\[ 針對 Windows10 上的 UWP App 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文明如何建立能實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面以為視訊串流建立自訂效果的 Windows 執行階段元件。 自訂效果可以搭配數個不同的 Windows 執行階段 API 使用，其中包括能提供裝置相機存取的 [MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124)，以及能允許您由媒體剪輯建立複雜組合的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。
 
-## 將自訂效果新增到您的 App
+## <a name="add-a-custom-effect-to-your-app"></a>將自訂效果新增到您的 App
 
 
 自訂視訊效果是在實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面之類別中定義。 此類別不能直接包含在您 App 的專案中。 您必須改為使用 Windows 執行階段元件來裝載您的視訊效果類別。
 
 **為您的視訊效果新增 Windows 執行階段元件**
 
-1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 [檔案] 功能表，然後選取 [新增] -&gt; [新專案...]。
-2.  選取 [Windows 執行階段元件 (通用 Windows)] 專案類型。
-3.  針對此範例，請將專案命名為「VideoEffectComponent」。 此名稱將會由稍後的程式碼所參考。
-4.  按一下 [確定]。
-5.  專案範本會建立名為 Class1.cs 的類別。 在 [方案總管] 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 [重新命名]。
-6.  將檔案重新命名為「ExampleVideoEffect.cs」。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 [是]。
-7.  開啟「ExampleVideoEffect.cs」並更新類別定義以實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面。
+1.  在 Microsoft Visual Studio 中，將您的方案開啟，並移至 **\[檔案\]** 功能表，然後選取 **[新增] -&gt; [新專案...]**。
+2.  選取 **\[Windows 執行階段元件 (通用 Windows)\]** 專案類型。
+3.  針對此範例，請將專案命名為*「VideoEffectComponent」*。 此名稱將會由稍後的程式碼所參考。
+4.  按一下 **\[確定\]**。
+5.  專案範本會建立名為 Class1.cs 的類別。 在 **\[方案總管\]** 中，以滑鼠右鍵按一下 Class1.cs 圖示，然後選取 **\[重新命名\]**。
+6.  將檔案重新命名為*「ExampleVideoEffect.cs」*。 Visual Studio 將會顯示提示，詢問您是否要將所有參照更新為新的名稱。 按一下 **\[是\]**。
+7.  開啟**「ExampleVideoEffect.cs」**並更新類別定義以實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面。
 
 [!code-cs[ImplementIBasicVideoEffect](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetImplementIBasicVideoEffect)]
 
@@ -42,28 +50,28 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[EffectUsing](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetEffectUsing)]
 
 
-## 使用軟體處理實作 IBasicVideoEffect 介面
+## <a name="implement-the-ibasicvideoeffect-interface-using-software-processing"></a>使用軟體處理實作 IBasicVideoEffect 介面
 
 
 您的視訊效果必須實作 [**IBasicVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn764788) 介面的所有方法和屬性。 本節將引導您完成此介面使用軟體處理的簡單實作。
 
-### Close 方法
+### <a name="close-method"></a>Close 方法
 
 系統將會在效果應該關閉時，呼叫您類別上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 方法。 您應該使用此方法來處置您已建立的任何資源。 方法的引數為 [**MediaEffectClosedReason**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.MediaEffectClosedReason)，可讓您知道效果是否正常關閉、是否有發生錯誤，或是效果是否不支援所需的編碼格式。
 
 [!code-cs[Close](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetClose)]
 
 
-### DiscardQueuedFrames 方法
+### <a name="discardqueuedframes-method"></a>DiscardQueuedFrames 方法
 
-在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的畫面組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
+在您的效果應該重設時，便會呼叫 [**DiscardQueuedFrames**](https://msdn.microsoft.com/library/windows/apps/dn764790) 方法。 此情況的其中一個典型案例是您的效果會儲存先前已處理的畫面，以用於處理目前的畫面之上。 呼叫此方法時，您應該處置先前已儲存的框架組合。 除了針對累計的視訊畫面之外，此方法也可以用來重設任何與先前畫面相關的狀態。
 
 
 [!code-cs[DiscardQueuedFrames](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetDiscardQueuedFrames)]
 
 
 
-### IsReadOnly 屬性
+### <a name="isreadonly-property"></a>IsReadOnly 屬性
 
 
             [
@@ -76,14 +84,14 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[IsReadOnly](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetIsReadOnly)] 
 
 
-### SetEncodingProperties 方法
+### <a name="setencodingproperties-method"></a>SetEncodingProperties 方法
 
 系統會在您的效果上呼叫 [**SetEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn919884) 來讓您知道效果正在運作之視訊串流的編碼屬性。 此方法也能夠提供用於硬體轉譯之 Direct3D 裝置的參照。 此裝置的使用方式將會在本文章稍後的硬體處理範例中提供。
 
 [!code-cs[SetEncodingProperties](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetSetEncodingProperties)]
 
 
-### SupportedEncodingProperties 屬性
+### <a name="supportedencodingproperties-property"></a>SupportedEncodingProperties 屬性
 
 系統將會檢查 [**SupportedEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn764799) 屬性來判斷您效果所支援的編碼屬性。 請注意，如果您效果的取用者無法使用您所指定的屬性來編碼視訊，它將會在您的效果上呼叫 [**Close**](https://msdn.microsoft.com/library/windows/apps/dn764789) 並將您的效果從視訊管線中移除。
 
@@ -96,7 +104,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
  
 
-### SupportedMemoryTypes 屬性
+### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes 屬性
 
 系統會檢查 [**SupportedMemoryTypes**](https://msdn.microsoft.com/library/windows/apps/dn764801) 屬性以判斷您的效果會存取軟體記憶體中的視訊畫面格，或是硬體 (GPU) 記憶體中的視訊畫面格。 如果您回傳 [**MediaMemoryTypes.Cpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，您的效果將會被傳遞包含 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件中之影像資料的輸入和輸出畫面格。 如果您回傳 **MediaMemoryTypes.Gpu**，您的效果將會被傳遞包含 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 物件中之影像資料的輸入和輸出畫面格。
 
@@ -108,7 +116,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
  
 
-### TimeIndependent 屬性
+### <a name="timeindependent-property"></a>TimeIndependent 屬性
 
 
             [
@@ -117,7 +125,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 [!code-cs[TimeIndependent](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetTimeIndependent)]
 
-### SetProperties 方法
+### <a name="setproperties-method"></a>SetProperties 方法
 
 
             [
@@ -133,7 +141,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[FadeValue](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetFadeValue)]
 
 
-### ProcessFrame 方法
+### <a name="processframe-method"></a>ProcessFrame 方法
 
 
             [
@@ -154,9 +162,9 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 > [!NOTE]
 > 因為此技術會存取原生、未受管理的影像緩衝區，您必須將您的專案設定為允許不安全的程式碼。
-> 1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [屬性]。
-> 2.  選取 [建置] 索引標籤。
-> 3.  選取 [允許 unsafe 程式碼] 核取方塊。
+> 1.  在 \[方案總管\] 中，以滑鼠右鍵按一下 \[VideoEffectComponent\] 專案，然後選取 **\[屬性\]**。
+> 2.  選取 **\[建置\]** 索引標籤。
+> 3.  選取 **\[允許 unsafe 程式碼\]** 核取方塊。
 
  
 
@@ -167,20 +175,20 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[ProcessFrameSoftwareBitmap](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffect.cs#SnippetProcessFrameSoftwareBitmap)]
 
 
-## 使用硬體處理實作 IBasicVideoEffect 介面
+## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬體處理實作 IBasicVideoEffect 介面
 
 
 使用硬體 (GPU) 處理建立自訂視訊效果，與上述使用軟體處理的方式幾乎相同。 本節將說明使用硬體處理之效果的一些差異。 此範例使用 Win2D Windows 執行階段 API。 如需使用 Win2D 的詳細資訊，請參閱 [Win2D 文件](http://go.microsoft.com/fwlink/?LinkId=519078)。
 
-使用下列步驟，將 Win2D NuGet 套件新增到您依照本文開頭的[將自訂效果新增到您的 App](#addacustomeffect) 一節建立的專案。
+使用下列步驟，將 Win2D NuGet 套件新增到您依照本文開頭的**將自訂效果新增到您的 App** 一節建立的專案。
 
 **將 Win2D NuGet 套件新增到您的效果專案**
 
-1.  在 [方案總管] 中，以滑鼠右鍵按一下 [VideoEffectComponent] 專案，然後選取 [管理 NuGet 套件]。
-2.  在視窗頂端，選取 [瀏覽] 索引標籤。
+1.  在 **\[方案總管\]** 中，以滑鼠右鍵按一下 **\[VideoEffectComponent\]** 專案，然後選取 **\[管理 NuGet 套件\]**。
+2.  在視窗頂端，選取 **\[瀏覽\]** 索引標籤。
 3.  在搜尋方塊中輸入 **Win2D**。
-4.  選取 [Win2D.uwp]，然後選取右窗格中的 [安裝]。
-5.  [檢閱變更] 對話方塊會顯示要安裝的套件。 按一下 [確定]。
+4.  選取 **\[Win2D.uwp\]**，然後選取右窗格中的 **\[安裝\]**。
+5.  **\[檢閱變更\]** 對話方塊會顯示要安裝的套件。 按一下 **\[確定\]**。
 6.  接受套件授權。
 
 除了包含在基本專案設定中的命名空間之外，您將需要包含下列由 Win2D 提供的命名空間。
@@ -221,21 +229,20 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[ProcessFrameWin2D](./code/VideoEffect_Win10/cs/VideoEffectComponent/ExampleVideoEffectWin2D.cs#SnippetProcessFrameWin2D)]
 
 
-## 將您的自訂效果新增到您的 App
+## <a name="adding-your-custom-effect-to-your-app"></a>將您的自訂效果新增到您的 App
 
 
 如果要從您的 App 使用您的視訊效果，您必須將針對效果專案的參照新增到您的 App。
 
-1.  在 [方案總管] 中，於您的專案下方，以滑鼠右鍵按一下 [參考]，然後選取 [加入參考]。
-2.  展開 [專案] 索引標籤，選取 [方案]，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
-3.  按一下 [確定]。
+1.  在 \[方案總管\] 中，於您的專案下方，以滑鼠右鍵按一下 \[參考\]****，然後選取 \[加入參考\]****。
+2.  展開 **\[專案\]** 索引標籤，選取 **\[方案\]**，然後選取您效果專案名稱的核取方塊。 針對此範例，該名稱為 *VideoEffectComponent*。
+3.  按一下 **\[確定\]**。
 
-### 將您的自訂效果新增到相機視訊串流
+### <a name="add-your-custom-effect-to-a-camera-video-stream"></a>將您的自訂效果新增到相機視訊串流
 
 您可以遵循[簡單的相機預覽存取](simple-camera-preview-access.md)文章中的步驟，來從相機設定簡單的預覽串流。 遵循那些步驟將能提供您初始化的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件，該物件可以用來存取相機的視訊串流。
 
-如果要將您的自訂視訊效果新增到相機串流，請先建立新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 物件，並傳遞您效果的命名空間和類別名稱。 接著，請呼叫 **MediaCapture** 物件的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以將您的效果新增到指定的串流。 此範例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值來指定要將該效果新增到預覽串流。 如果您的 App 支援視訊擷取，您也應該使用 **MediaStreamType.VideoRecord** 來將該效果新增到擷取串流。 
-            **AddVideoEffect** 會傳回代表您自訂效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 物件。 您可以使用 SetProperties 方法來為您的效果設定組態。
+如果要將您的自訂視訊效果新增到相機串流，請先建立新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 物件，並傳遞您效果的命名空間和類別名稱。 接著，請呼叫 **MediaCapture** 物件的 [**AddVideoEffect**](https://msdn.microsoft.com/library/windows/apps/dn878035) 方法，以將您的效果新增到指定的串流。 此範例使用 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) 值來指定要將該效果新增到預覽串流。 如果您的 App 支援視訊擷取，您也應該使用 **MediaStreamType.VideoRecord** 來將該效果新增到擷取串流。 **AddVideoEffect** 會傳回代表您自訂效果的 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/br240985) 物件。 您可以使用 SetProperties 方法來為您的效果設定組態。
 
 新增效果之後，將會呼叫 [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) 以開始預覽串流。
 
@@ -243,7 +250,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 
 
 
-### 將您的自訂效果新增到 MediaComposition 中的短片
+### <a name="add-your-custom-effect-to-a-clip-in-a-mediacomposition"></a>將您的自訂效果新增到 MediaComposition 中的短片
 
 如需從視訊短片建立媒體組合的一般指導方針，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。 下列程式碼片段示範具有自訂視訊效果之簡單媒體組合的建立方式。 透過呼叫 [**CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) 來建立 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) 物件，傳遞使用者透過 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 所選取的視訊檔案，該短片則新增到新的 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646)。 接著將會建立新的 [**VideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608055) 物件，並將您效果的命名空間和類別名稱傳遞給建構函式。 最後，將效果定義新增到 **MediaClip** 物件的 [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) 集合。
 
@@ -251,7 +258,7 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
 [!code-cs[AddEffectToComposition](./code/VideoEffect_Win10/cs/VideoEffect_Win10/MainPage.xaml.cs#SnippetAddEffectToComposition)]
 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 * [簡單的相機預覽存取](simple-camera-preview-access.md)
 * [媒體組合和編輯](media-compositions-and-editing.md)
 * [Win2D 文件](http://go.microsoft.com/fwlink/p/?LinkId=519078)
@@ -260,10 +267,5 @@ ms.openlocfilehash: 5e8d8de1c4e4c5068603c60586859dfb3ab76a54
  
 
 
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

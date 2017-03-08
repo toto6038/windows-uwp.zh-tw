@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: "使用方向感應器"
 description: "了解如何使用方向感應器來判斷裝置方向。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 349a28f1980b863091cedd4515737a48de51b390
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用方向感應器
+# <a name="use-the-orientation-sensor"></a>使用方向感應器
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
@@ -33,17 +40,17 @@ ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
 | Portrait Down   | Rotated180DegreesCounterclockwise |
 | Landscape Right | Rotated270DegreesCounterclockwise |
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援方向感應器。
 
-## 建立 OrientationSensor 應用程式
+## <a name="create-an-orientationsensor-app"></a>建立 OrientationSensor 應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立方向應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-###  指示
+###  <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -107,7 +114,7 @@ ms.openlocfilehash: 1265697f03e0de74444fc936a3041d1e88147e77
             {
                 this.InitializeComponent();
                 _sensor = OrientationSensor.GetDefault();
-     
+
                 // Establish the report interval for all scenarios
                 uint minReportInterval = _sensor.MinimumReportInterval;
                 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
@@ -174,7 +181,7 @@ App 開始執行之後，您就可以移動裝置或使用模擬器工具來變�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-###  說明
+###  <a name="explanation"></a>說明
 
 前面範例示範了您只需撰寫少許的程式碼，即可在您的 app 中整合方向感應器輸入。
 
@@ -195,17 +202,17 @@ _sensor.ReportInterval = reportInterval;
 **ReadingChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
+_sensor.ReadingChanged += new TypedEventHandler<OrientationSensor,
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
 這些新的值會寫入專案 XAML 中的 TextBlock。
 
-## 建立 SimpleOrientation 應用程式
+## <a name="create-a-simpleorientation-app"></a>建立 SimpleOrientation 應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單方向應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-### 指示
+### <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -240,7 +247,7 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
             // Sensor and dispatcher variables
             private SimpleOrientationSensor _simpleorientation;
 
-            // This event handler writes the current sensor reading to 
+            // This event handler writes the current sensor reading to
             // a text block on the app' s main page.
 
             private async void OrientationChanged(object sender, SimpleOrientationSensorOrientationChangedEventArgs e)
@@ -320,7 +327,7 @@ App 開始執行之後，您就可以移動裝置或使用模擬器工具來變�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-### 說明
+### <a name="explanation"></a>說明
 
 前面範例示範了您只需撰寫少許的程式碼，即可在您的 app 中整合簡單方向感應器輸入。
 
@@ -333,7 +340,7 @@ _simpleorientation = SimpleOrientationSensor.GetDefault();
 **OrientationChanged** 方法會擷取新的感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 
+_simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor,
 SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 ```
 
@@ -344,15 +351,9 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [OrientationSensor 範例](http://go.microsoft.com/fwlink/p/?linkid=241382)
 * [SimpleOrientation 感應器範例](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

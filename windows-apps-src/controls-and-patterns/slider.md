@@ -5,9 +5,16 @@ title: "滑桿"
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 8be3dfed1e6fda1777905a73db4b0eae1e3368dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2f00c27ae2248ebe39ed1cf426af640ec9200e73
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="sliders"></a>滑桿
@@ -173,9 +180,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 ## <a name="related-topics"></a>相關主題
 - [切換開關](toggles.md)
 - [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/br209614)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

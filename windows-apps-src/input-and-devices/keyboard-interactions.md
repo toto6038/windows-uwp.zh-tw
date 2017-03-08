@@ -5,9 +5,16 @@ title: "鍵盤互動"
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+keywords: "鍵盤、協助工具、瀏覽、焦點、文字、輸入、使用者互動"
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: 1226d097e911e79c800a16c33fcbb9bd524bd17a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 53ee08b33bcbbd895d0c6ea6cd621eeec2af40f5
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -731,9 +738,4 @@ public class CustomGridView : GridView
  
 
  
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

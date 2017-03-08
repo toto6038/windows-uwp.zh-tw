@@ -3,17 +3,24 @@ author: mcleblanc
 title: "動畫入門"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: "在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: ae08bb25d8ac56ca6e03a5c200e8a0d4e05fbfe3
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 9dcf81c0c0aee42d6278a3e1eeccc6dd4da61010
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 開始使用：動畫
+# <a name="getting-started-animation"></a>開始使用：動畫
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## 新增動畫
+## <a name="adding-animations"></a>新增動畫
 
 在 iOS 中，您經常會以程式設計的方式來建立動畫效果。 例如，您可以使用區塊型 **UIView** 類別的 **animateWithDuration** 方法或舊版非區塊型方法所提供的動畫。 或者，您可以明確使用 **CALayer** 類別將圖層製作成動畫。 Windows 應用程式中的動畫也可以透過程式設計的方式建立，但是也可以透過 Extensible Application Markup Language (XAML) 以宣告的方式進行定義。 您可以使用 Microsoft Visual Studio 直接編輯 XAML 程式碼，但是 Visual Studio 另外隨附了一個稱為 **Blend** 的工具，當您在設計工具中處理動畫時，它可以為您建立 XAML 程式碼。 事實上，Blend 讓您能夠以圖形方式開啟、設計、建置以及執行完整的 Visual Studio 專案。 下列逐步解說可讓您嘗試一下。
 
@@ -123,14 +130,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**注意** 如需使用 JavaScript 和 HTML 之 Windows 市集應用程式中動畫的詳細資訊，請參閱[讓 UI 產生動畫效果 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**注意**  如需使用 JavaScript 和 HTML 之 Windows 市集應用程式中動畫的詳細資訊，請參閱[讓 UI 產生動畫效果 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
-### 下一步
+### <a name="next-step"></a>下一步
 
 [開始使用：後續動作？](getting-started-what-next.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

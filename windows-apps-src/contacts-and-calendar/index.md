@@ -1,17 +1,24 @@
 ---
 author: Xansky
-description: "如何在 UWP app 中使用連絡人和行事曆資訊。"
+description: "如何在 UWP 應用程式中使用連絡人和行事曆資訊。"
 title: "連絡人和行事曆"
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 連絡人, 行事曆, 約會, 電子郵件訊息"
 translationtype: Human Translation
-ms.sourcegitcommit: c21a5f0f859e3a80d01786caaf6941c3d0b11c18
-ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f0e61f5c586ccd1225fb9e4edf5ab93580cfd043
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 連絡人和行事曆
+# <a name="contacts-and-calendar"></a>連絡人和行事曆
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您可以讓使用者存取他們的連絡人和約會，以便彼此分享內容、電子郵件、行事曆資訊或訊息，或是共用您所設計的任何功能。
 
@@ -27,16 +34,11 @@ ms.openlocfilehash: 0b93ab3f5e0a622fb924a752ec581bbb9df32936
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [約會 API 範例](http://go.microsoft.com/fwlink/p/?linkid=309836)
 * [連絡人管理員 API 範例](http://go.microsoft.com/fwlink/p/?LinkID=310079)
 * [連絡人選擇器應用程式範例](http://go.microsoft.com/fwlink/p/?linkid=231575)
 * [處理連絡人動作範例](http://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

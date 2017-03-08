@@ -3,16 +3,20 @@ author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: "請在 Windows 市集集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。"
 title: "將消費性產品回報為已完成"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "windows 10, uwp, Windows Store collection API, fulfill, consumable, Windows 市集集合, 執行, 消費性產品"
 translationtype: Human Translation
-ms.sourcegitcommit: ac9c921c7f39a1bdc6dc9fc9283bc667f67cd820
-ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將消費性產品回報為已完成
-
-
-
+# <a name="report-consumable-products-as-fulfilled"></a>將消費性產品回報為已完成
 
 請在 Windows 市集集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。
 
@@ -21,20 +25,20 @@ ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 * 提供消費性產品的項目識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **itemId** 參數中)，以及您提供的唯一追蹤識別碼。 如果您使用相同的追蹤識別碼來嘗試多次，即使該項目已遭取用，仍會傳回相同的結果。 如果您不確定某個取用要求是否已成功，您的服務應該要利用相同的追蹤識別碼來重新提交取用要求。 該追蹤識別碼會永遠繫結到該取用要求，且可以無限期地重新提交。
 * 提供產品識別碼 (在[查詢產品](query-for-products.md)時所傳回的 **productId** 參數中)，以及從下方＜要求主體＞一節中 **transactionId** 參數的說明列出的某個來源所取得的交易識別碼。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要使用這個方法，您將需要：
 
 * 一個利用 `https://onestore.microsoft.com` 對象 URI 建立的 Azure AD 存取權杖。
-* 一個[從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。
+* Windows 市集識別碼金鑰，代表您要回報消費性產品已完成之使用者的身分。
 
-如需詳細資訊，請參閱[從服務檢視及授與產品](view-and-grant-products-from-a-service.md)。
+如需詳細資訊，請查看[管理服務的產品權利](view-and-grant-products-from-a-service.md)。
 
-## 要求
+## <a name="request"></a>要求
 
 
-### 要求的語法
+### <a name="request-syntax"></a>要求的語法
 
 | 方法 | 要求 URI                                                   |
 |--------|---------------------------------------------------------------|
@@ -42,7 +46,7 @@ ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 <span/> 
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
@@ -53,30 +57,30 @@ ms.openlocfilehash: 54095c7fd3c29fe7596be4c4b5a7148d078a7091
 
 <span/>
 
-### 要求主體
+### <a name="request-body"></a>要求主體
 
 | 參數     | 類型         | 描述         | 必要 |
 |---------------|--------------|---------------------|----------|
-| beneficiary   | UserIdentity | 取用此項目時所針對的使用者。                                                                                                                                                                                                                                                                 | 是      |
-| itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 itemId 值。 請搭配 trackingId 來使用這個參數。                                                                                                                                                                                                  | 否       |
-| trackingId    | GUID         | 開發人員所提供的唯一追蹤識別碼。 請搭配 itemId 來使用這個參數。                                                                                                                                                                                                                                     | 否       |
-| productId     | 字串       | [查詢產品](query-for-products.md)時所傳回的 productId 值。 請搭配 transactionId 來使用這個參數                                                                                                                                                                                            | 否       |
-| transactionId | Guid         | 從下列其中一個來源取得的交易識別碼值。 請搭配 productId 來使用這個參數。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 類別的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 屬性。</li><li>由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 所傳回的 app 或產品收據。</li><li>[查詢產品](query-for-products.md)時所傳回的 transactionId 參數。</li></ul>                                                                                                                                                                                                                                   | 否       |
+| beneficiary   | UserIdentity | 取用此項目時所針對的使用者。 如需詳細資訊，請參閱下表。        | 是      |
+| itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 *itemId* 值。 請搭配 *trackingId* 來使用這個參數      | 否       |
+| trackingId    | guid         | 開發人員所提供的唯一追蹤識別碼。 請搭配 *itemId* 來使用這個參數。         | 否       |
+| productId     | 字串       | [查詢產品](query-for-products.md)時所傳回的 *productId* 值。 請搭配 *transactionId* 來使用這個參數   | 否       |
+| transactionId | guid         | 從下列其中一個來源取得的交易識別碼值。 請搭配 *productId* 來使用這個參數。  <br/><br/><ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 類別的 [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) 屬性。</li><li>由 [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813) 或 [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) 所傳回的 app 或產品收據。</li><li>[查詢產品](query-for-products.md)時所傳回的 *transactionId* 參數。</li></ul>   | 否       |
 
  
 <span/>
 
 UserIdentity 物件包含下列參數。
 
-| 參數            | 類型   | 描述                                                                                                                                 | 必要 |
-|----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| identityType         | 字串 | 指定字串值 **b2b**。                                                                                                           | 是      |
-| identityValue        | 字串 | [從您 App 中用戶端程式碼產生](view-and-grant-products-from-a-service.md#step-4)的「Windows 市集識別碼」金鑰。                                                                                                   | 是      |
-| localTicketReference | 字串 | 所傳回回應的要求識別碼。 我們建議您使用與 Windows 市集識別碼金鑰中 *userId* 宣告相同的值。 | 是      |
+| 參數            | 類型   | 描述       | 必要 |
+|----------------------|--------|-------------------|----------|
+| identityType         | 字串 | 指定字串值 **b2b**。    | 是      |
+| identityValue        | 字串 | [Windows 市集識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要回報消費性產品已完成之使用者的身分。      | 是      |
+| localTicketReference | 字串 | 所傳回回應的要求識別碼。 建議您使用相同值做為在 Windows 市集識別碼索引鍵中[宣告](view-and-grant-products-from-a-service.md#claims-in-a-windows-store-id-key)的 *userId*。 | 是      |
 
 <span/> 
 
-### 要求範例
+### <a name="request-examples"></a>要求範例
 
 下列範例使用 *itemId* 和 *trackingId*。
 
@@ -118,12 +122,12 @@ Host: collections.md.mp.microsoft.com
 }
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 
 如果取用執行成功，就不會傳回任何內容。
 
-### 回應的範例
+### <a name="response-example"></a>回應的範例
 
 ```syntax
 HTTP/1.1 204 No Content
@@ -135,29 +139,21 @@ MS-ServerId: 030011326
 Date: Tue, 22 Sep 2015 20:40:55 GMT
 ```
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 
-| 代碼 | 錯誤        | 內部錯誤碼           | 說明                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 代碼 | 錯誤        | 內部錯誤碼           | 說明           |
+|------|--------------|----------------------------|-----------------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
 | 401  | Unauthorized | PartnerAadTicketRequired   | Azure AD 存取權杖沒有傳遞到 Authorization 標頭中的服務。                                                                                                   |
-| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼金鑰的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
+| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 市集識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 
 <span/> 
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
-* [從服務檢視及授與產品](view-and-grant-products-from-a-service.md)
+* [管理服務的產品權利](view-and-grant-products-from-a-service.md)
 * [查詢產品](query-for-products.md)
 * [授與免費產品](grant-free-products.md)
 * [更新 Windows 市集識別碼金鑰](renew-a-windows-store-id-key.md)
- 
-
- 
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

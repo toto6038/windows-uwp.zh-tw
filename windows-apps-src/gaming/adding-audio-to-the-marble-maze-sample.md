@@ -3,23 +3,30 @@ author: mtoepke
 title: "在 Marble Maze 範例中加入音訊"
 description: "本文件說明使用音訊時需要考量的重要做法，並指出 Marble Maze 如何運用這些做法。"
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 音訊, 遊戲, 範例"
 translationtype: Human Translation
-ms.sourcegitcommit: c663692e31a62fdf40df9d706070d0d2ce0e1cdd
-ms.openlocfilehash: 9c35ca4d475783e52ba68d611c7bea49a927a4e5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3530880da3bc74b146c6f6fbb9bb9220caaca0d0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在 Marble Maze 範例中加入音訊
+# <a name="adding-audio-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入音訊
 
 
-\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文件說明使用音訊時需要考量的重要做法，並指出 Marble Maze 如何運用這些做法。 Marble Maze 使用 Microsoft 媒體基礎從檔案載入音訊資源，並使用 XAudio2 來混合和播放音訊，以及將效果套用至音訊。
 
 Marble Maze 會播放背景音樂，也會使用遊戲音效來表示遊戲事件，例如當彈珠碰到圍牆時。 實作的一個重點是Marble Maze 使用殘響或回音效果來模擬彈珠彈跳的音效。 殘響效果實作會讓回音在小房間裡更快到達聽者的位置、更大聲，房間較大時則會比較小聲，且較慢到達聽者的位置。
 
-> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze game sample (DirectX Marble Maze 遊戲範例)](http://go.microsoft.com/fwlink/?LinkId=624011) 中找到。
+> **注意**：與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
 以下是本文件所討論在遊戲中使用音訊時的一些重點：
 
@@ -31,7 +38,7 @@ Marble Maze 會播放背景音樂，也會使用遊戲音效來表示遊戲事�
 -   透過釋放和重建所有音訊資源和介面，以處理裝置變更，包括耳機。
 -   當需要將磁碟空間最小化和串流處理成本降到最低時，應考慮是否壓縮音訊檔。 或者，您也可以維持不壓縮音訊，以加速載入音訊。
 
-## 介紹 XAudio2 和 Microsoft 媒體基礎
+## <a name="introducing-xaudio2-and-microsoft-media-foundation"></a>介紹 XAudio2 和 Microsoft 媒體基礎
 
 
 XAudio2 是專門支援遊戲音訊的 Windows 低階音訊程式庫。 這個程式庫提供遊戲的數位訊號處理 (DSP) 和音訊圖引擎。 XAudio2 支援運算趨勢，例如 SIMD 浮點架構和 HD 音訊，所以能超越其之前的產品 (DirectSound 和 XAudio)。 它也支援現在的遊戲中更複雜的音效處理需求。
@@ -44,7 +51,7 @@ XAudio2 是專門支援遊戲音訊的 Windows 低階音訊程式庫。 這個�
 -   「副混音」會處理音訊資料。 此處理可能包括變更音訊資料流，或將多個資料流合而為一。 Marble Maze 使用副混音來建立殘響效果。
 -   「主控音」會合併來源音和副混音的資料，然後將該資料傳送至音訊硬體。
 -   「音訊圖」包含每個主動音效的一個來源音、零或多個副混音，以及唯一的一個主控音。
--   「回呼」會告知用戶端程式碼，音效或引擎物件發生某些事件。 「回呼」可讓您在 XAudio2 結束使用緩衝區後重複使用記憶體、當音訊裝置變更時做出反應 (例如，插上耳機或拔除耳機時) 等等。 本文件稍後的[處理耳機和裝置變更](#phones)一節會說明 Marble Maze 如何使用此機制來處理裝置變更。
+-   「回呼」會告知用戶端程式碼，音效或引擎物件發生某些事件。 「回呼」可讓您在 XAudio2 結束使用緩衝區後重複使用記憶體、當音訊裝置變更時做出反應 (例如，插上耳機或拔除耳機時) 等等。 本文件稍後的[處理耳機和裝置變更](#handling-headphones-and-device-changes)一節會說明 Marble Maze 如何使用此機制來處理裝置變更。
 
 Marble Maze 使用兩個音訊引擎 (亦即兩個 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 物件) 來處理音訊。 一個引擎處理背景音樂，另一個引擎處理遊戲音效。
 
@@ -54,14 +61,14 @@ Marble Maze 也必須為每個引擎建立一個主控音。 前面說過，主�
 
 如需 XAudio2 的詳細資訊，請參閱[程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)。 如需媒體基礎的詳細資訊，請參閱 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197)。
 
-## 初始化音訊資源
+## <a name="initializing-audio-resources"></a>初始化音訊資源
 
 
 Marble Maze 使用 Windows Media 音訊 (.wma) 檔案儲存背景音樂，而使用 WAV (.wav) 檔案儲存遊戲音效。 媒體基礎支援這些格式。 雖然 XAudio2 原本就支援 .wav 檔案格式，但遊戲必須手動分析檔案格式，以填入適當的 XAudio2 資料結構。 Marble Maze 使用媒體基礎來更輕鬆地使用 .wav 檔案。 如需媒體基礎支援的完整媒體格式清單，請參閱[媒體基礎中支援的媒體格式](https://msdn.microsoft.com/library/windows/desktop/dd757927)。 Marble Maze 既不使用個別的設計階段和執行階段音訊格式，也不使用 XAudio2 ADPCM 壓縮支援。 如需 XAudio2 中 ADPCM 壓縮的詳細資訊，請參閱 [ADPCM 概觀](https://msdn.microsoft.com/library/windows/desktop/ee415711)。
 
 從 **MarbleMaze::CreateDeviceIndependentResources** 呼叫的 **Audio::CreateResources** 方法會從檔案載入音訊資料流、初始化 XAudio2 引擎物件，以及建立來源音、副混音和主控音。
 
-###  建立 XAudio2 引擎
+###  <a name="creating-the-xaudio2-engines"></a>建立 XAudio2 引擎
 
 前面說過，Marble Maze 會建立一個 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 物件來代表它所使用的每個音訊引擎。 若要建立音訊引擎，請呼叫 [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 函式。 下列範例顯示 Marble Maze 如何建立處理背景音樂的音訊引擎。
 
@@ -75,7 +82,7 @@ Marble Maze 會執行類似的步驟，建立可用來播放遊戲音效的音�
 
 在 UWP app 中使用 [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) 介面的方式，相較於在傳統型應用程式中有兩點不同。 首先，在呼叫 [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 之前，不需要呼叫 **CoInitializeEx**。 此外，**IXAudio2** 不再支援裝置列舉。 如需如何列舉音訊裝置的相關資訊，請參閱[列舉裝置](https://msdn.microsoft.com/library/windows/apps/hh464977)。
 
-###  建立主控音
+###  <a name="creating-the-mastering-voices"></a>建立主控音
 
 下列範例顯示 **Audio::CreateResources** 方法如何建立背景音樂的主控音。 對 [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048) 的呼叫可指定兩個輸入通道。 這可簡化殘響效果的邏輯。 **XAUDIO2\_DEFAULT\_SAMPLERATE** 規格會告訴音訊引擎採用音效控制台所指定的取樣率。 在此範例中，**m\_musicMasteringVoice** 是 [**IXAudio2MasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415912) 物件。
 
@@ -103,7 +110,7 @@ DX::ThrowIfFailed(
 
 **Audio::CreateResources** 方法會執行類似的步驟來建立遊戲音效的主控音，差別在於它會為 *StreamCategory* 參數指定 **AudioCategory\_GameEffects**，這是預設值。 Marble Maze 指定 **AudioCategory\_GameMedia** 來處理背景音樂，讓使用者可以一邊玩遊戲，一邊聆聽不同應用程式的音樂。 當音樂應用程式播放時，Windows 會將 **AudioCategory\_GameMedia** 選項所產生的任何聲音變成靜音。 使用者仍然可以聽見遊戲音效，因為遊戲音效是由 **AudioCategory\_GameEffects** 選項產生。 如需音訊分類的詳細資訊，請參閱 [**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 列舉。
 
-###  建立殘響效果
+###  <a name="creating-the-reverb-effect"></a>建立殘響效果
 
 對於每個音效，您可以使用 XAudio2 建立一序列的效果來處理音訊。 這類序列稱為「效果鏈」。 當您想要將一或多個效果套用至音效時，請使用效果鏈。 效果鏈可能有破壞性，也就是鏈結中的每個效果都可以覆寫音訊緩衝區。 這個屬性很重要，因為 XAudio2 不保證會以無聲方式初始化輸出緩衝區。 效果物件在 XAudio2 中是以跨平台音訊處理物件 (XAPO) 來代表。 如需 XAPO 的詳細資訊，請參閱 [XAPO 概觀](https://msdn.microsoft.com/library/windows/desktop/ee415735)。
 
@@ -147,7 +154,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-> **祕訣** 如果您想要將現有的效果鏈附加至現有的副混音，或想要取代目前的效果鏈，請使用 [**IXAudio2Voice::SetEffectChain**](https://msdn.microsoft.com/library/windows/desktop/ee418594) 方法。
+> **祕訣**：如果您想要將現有的效果鏈附加至現有的副混音，或想要取代目前的效果鏈，請使用 [**IXAudio2Voice::SetEffectChain**](https://msdn.microsoft.com/library/windows/desktop/ee418594) 方法。
 
  
 
@@ -230,7 +237,7 @@ CreateReverb(
 
 如需 XAudio2 適用效果來源的清單，請參閱 [XAudio2 音訊效果](https://msdn.microsoft.com/library/windows/desktop/ee415756)。
 
-### 從檔案載入音訊資料
+### <a name="loading-audio-data-from-file"></a>從檔案載入音訊資料
 
 Marble Maze 會定義 **MediaStreamer** 類別，以使用媒體基礎從檔案載入音訊資源。 Marble Maze 使用一個 **MediaStreamer** 物件來載入每個音訊檔。
 
@@ -300,7 +307,7 @@ CopyMemory(&m_waveFormat, waveFormat, sizeof(m_waveFormat));
 CoTaskMemFree(waveFormat);
 ```
 
-> **重要** [**MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 函式使用 **CoTaskMemAlloc** 來配置 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 物件。 因此，當此物件使用完畢時，請記得呼叫 **CoTaskMemFree**。
+> **重要**：[**MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 函式使用 **CoTaskMemAlloc** 來配置 [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 物件。 因此，當此物件使用完畢時，請記得呼叫 **CoTaskMemFree**。
 
  
 
@@ -322,7 +329,7 @@ m_maxStreamLengthInBytes =
 m_maxStreamLengthInBytes = (m_maxStreamLengthInBytes + 3) / 4 * 4;
 ```
 
-### 建立來源音
+### <a name="creating-the-source-voices"></a>建立來源音
 
 Marble Maze 會建立 XAudio2 來源音來播放每個遊戲音效和來源音中的音樂。 **Audio** 類別會定義 [**IXAudio2SourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415914) 物件來播放背景音樂，也會定義 **SoundEffectData** 物件陣列來保存遊戲音效。 **SoundEffectData** 結構會保存效果的 **IXAudio2SourceVoice** 物件，並且定義與效果相關的其他資料，例如音訊緩衝區。 Audio.h 會定義 **SoundEvent** 列舉。 Marble Maze 使用這個列舉來識別每個遊戲音效。 Audio 類別也會使用這個列舉來編製 **SoundEffectData** 物件陣列的索引。
 
@@ -393,7 +400,7 @@ else
 }
 ```
 
-## 播放背景音樂
+## <a name="playing-background-music"></a>播放背景音樂
 
 
 來源音最初建立時為停止狀態。 Marble Maze 會在遊戲迴圈中啟動背景音樂。 第一次呼叫 **MarbleMaze::Update** 時，會呼叫 **Audio::Start** 來啟動背景音樂。
@@ -429,13 +436,13 @@ void Audio::Start()
 
 來源音會將該音訊資料傳遞至音訊圖的下一個階段。 就 Marble Maze 而言，下一個階段包含將兩個殘響效果套用至音訊的兩個副混音。 一個副混音套用附近遠距離殘響，第二個則套用遠方遠距離殘響。 每個副混音在最終混音中所貢獻的量，取決於空間的大小和形狀。 當彈珠接近牆面或在較小空間時，近距離殘響貢獻較多，當彈珠在較大空間時，遠距離殘響貢獻較多。 這種技術可在彈珠穿越迷宮時產生更真實的回音效果。 若要進一步了解 Marble Maze 如何實作此效果，請參閱 Marble Maze 原始程式碼中的 **Audio::SetRoomSize** 和 **Physics::CalculateCurrentRoomSize**。
 
-> **注意** 在大多數空間大小幾乎相同的遊戲中，您可以使用更基本的殘響模式。 例如，您可以為所有空間使用一個殘響設定，也可以為每個空間建立預先定義的殘響設定。
+> **注意**：在大多數空間大小幾乎相同的遊戲中，您可以使用更基本的殘響模式。 例如，您可以為所有空間使用一個殘響設定，也可以為每個空間建立預先定義的殘響設定。
 
  
 
 **Audio::CreateResources** 方法會使用媒體基礎來載入背景音樂。 不過，來源音目前沒有要使用的音訊資料。 此外，因為背景音樂會循環播放，來源音必須定期更新資料，音樂才能繼續播放。 為了讓來源音持續填入資料，遊戲迴圈會隨每個畫面更新音訊緩衝區。 **MarbleMaze::Render** 方法會呼叫 **Audio::Render** 來處理背景音樂音訊緩衝區。 **Audio::Render** 定義由三個音訊緩衝區組成的陣列：**m\_audioBuffers**。 每個緩衝區保存 64 KB (65536 個位元組) 的資料。 迴圈會從媒體基礎物件讀取資料，並將該資料寫入來源音，直到來源音有三個排入佇列的緩衝區為止。
 
-> **警告** 雖然 Marble Maze 使用 64 KB 緩衝區保存音樂資料，但您可能需要使用更大或更小的緩衝區。 此數量視您遊戲的需求而定。
+> **警告**：雖然 Marble Maze 使用 64 KB 緩衝區保存音樂資料，但您可能需要使用更大或更小的緩衝區。 此數量視您遊戲的需求而定。
 
  
 
@@ -533,11 +540,11 @@ if(sound == RollingEvent)
 
 不過，在背景音樂方面，Marble Maze 會直接管理緩衝區，所以可以更準確地控制所使用的記憶體數量。 當音樂檔很大時，您可以將音樂資料串流處理至較小的緩衝區。 這樣做有助於平衡記憶體大小與遊戲處理和串流化音訊資料的次數。
 
-> **祕訣** 如果您遊戲的畫面撥放速度較低或有變化，則在主要執行緒處理音訊可能會造成音訊發生無法預期的中斷或突然播放，因為已緩衝處理的音訊資料不足以供音訊引擎使用。 如果遊戲容易受到此問題所影響，請考慮在不執行轉譯的獨立執行緒中處理音訊。 這個方法在具有多顆處理器的電腦上特別有用，因為遊戲可以使用閒置的處理器。
+> **祕訣**：如果您遊戲的畫面撥放速率較低或有變化，則在主要執行緒處理音訊可能會造成音訊發生無法預期的中斷或突然播放，因為已緩衝處理的音訊資料不足以供音訊引擎使用。 如果遊戲容易受到此問題所影響，請考慮在不執行轉譯的獨立執行緒中處理音訊。 這個方法在具有多顆處理器的電腦上特別有用，因為遊戲可以使用閒置的處理器。
 
  
 
-##  回應遊戲事件
+##  <a name="reacting-to-game-events"></a>回應遊戲事件
 
 
 **MarbleMaze** 類別提供 **PlaySoundEffect**、**IsSoundEffectStarted**、**StopSoundEffect**、**SetSoundEffectVolume**、**SetSoundEffectPitch** 和 **SetSoundEffectFilter** 等方法，讓遊戲控制何時播放和停止音效，以及控制音量和音調等音效屬性。 例如，如果彈珠從迷宮掉落，**MarbleMaze::Update**方法會呼叫 **Audio::PlaySoundEffect** 方法來播放 **FallingEvent** 音效。
@@ -633,7 +640,7 @@ else
 }
 ```
 
-## 回應暫停和繼續事件
+## <a name="reacting-to-suspend-and-resume-events"></a>回應暫停和繼續事件
 
 
 Marble Maze 應用程式結構文件描述 Marble Maze 如何支援暫停和繼續。 當遊戲暫停時，遊戲會暫停音訊。 當遊戲繼續時，遊戲會從先前暫停的地方繼續播放音訊。 我們這樣做是為了遵循「除非必要，否則絕不使用資源」的最佳做法。
@@ -688,7 +695,7 @@ void Audio::ResumeAudio()
 }
 ```
 
-## 處理耳機和裝置變更
+## <a name="handling-headphones-and-device-changes"></a>處理耳機和裝置變更
 
 
 Marble maze 使用引擎回呼來處理 XAudio2 引擎失敗情形，例如當音訊裝置變更時。 裝置變更的原因可能是因為玩家插上耳機或拔除耳機。 建議您實作引擎回呼來處理裝置變更。 否則，當使用者插入耳機或拔出耳機時，遊戲會停止播放音效，直到重新啟動為止。
@@ -765,11 +772,11 @@ if (m_engineExperiencedCriticalError)
 
 當沒有音訊裝置可用時，Marble Maze 也會使用 **m\_engineExperiencedCriticalError** 旗標，以避免呼叫 XAudio2。 例如，有設定此旗標時，**MarbleMaze::Update** 方法便不會處理滾動或碰撞事件的音訊。 如有需要，App 會嘗試隨每個畫面修復音訊引擎；不過，如果電腦上沒有音訊裝置或已拔下耳機，並且也沒有其他可用的音訊裝置，則 **m\_engineExperiencedCriticalError** 旗標可能會一直維持已設定狀態。
 
-> **警告** 請勿在引擎回呼的主體中執行封鎖操作。 這樣做可能會造成效能問題。 Marble Maze 會在 **OnCriticalError** 回呼中設定旗標，之後再於一般音訊處理階段中處理錯誤。 如需 XAudio2 回呼的詳細資訊，請參閱 [XAudio2 回呼](https://msdn.microsoft.com/library/windows/desktop/ee415745)。
+> **警告**：請勿在引擎回呼的主體中執行封鎖操作。 這樣做可能會造成效能問題。 Marble Maze 會在 **OnCriticalError** 回呼中設定旗標，之後再於一般音訊處理階段中處理錯誤。 如需 XAudio2 回呼的詳細資訊，請參閱 [XAudio2 回呼](https://msdn.microsoft.com/library/windows/desktop/ee415745)。
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [在 Marble Maze 範例中加入輸入和互動](adding-input-and-interactivity-to-the-marble-maze-sample.md)
@@ -781,10 +788,5 @@ if (m_engineExperiencedCriticalError)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

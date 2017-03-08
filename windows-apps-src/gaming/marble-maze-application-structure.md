@@ -3,9 +3,16 @@ author: mtoepke
 title: "Marble Maze 應用程式結構"
 description: "DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程式結構不同。"
 ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 樣本, directx, 結構"
 translationtype: Human Translation
-ms.sourcegitcommit: 931d790ea54ff9ff27202f6c92d415b17e2215ed
-ms.openlocfilehash: 696d4227bcd3ff4238d81e6f951a61e098fbc2f6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1045bed8d7e4e8f9ead1c144dda02f900d0eb996
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -374,10 +381,5 @@ void MarbleMaze::LoadState()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

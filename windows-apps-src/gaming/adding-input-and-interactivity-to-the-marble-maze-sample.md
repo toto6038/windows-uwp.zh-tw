@@ -3,13 +3,20 @@ author: mtoepke
 title: "在 Marble Maze 範例中加入輸入和互動"
 description: "通用 Windows 平台 (UWP) app 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10 , UWP, 遊戲, 輸入, 範例"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: dc667be326950151b08bbaded6d4e9a0b109523b
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在 Marble Maze 範例中加入輸入和互動
+# <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入輸入和互動
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
 
 通用 Windows 平台 (UWP) app 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。 裝置可以具備各種輸入和控制機制。 支援多種輸入裝置可讓您的遊戲兼顧客戶更廣泛的各種偏好和能力。 本文件說明使用輸入裝置時需要牢記的重要做法，並示範 Marble Maze 如何運用這些做法。
 
-> **注意** 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> **注意**：與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 以下是本文件所討論在遊戲中使用輸入時的一些重點：
@@ -29,20 +36,20 @@ ms.openlocfilehash: ddaa13c6bf7d1bcf5a01d7525389a893a077f4f4
 -   Xbox 360 控制器和加速計支援輪詢。 也就是說，您可以在需要時輪詢資料。 對於觸控，請將觸控事件記錄在可供輸入處理程式碼使用的資料結構中。
 -   考慮是否將輸入值正規化為一般格式。 這樣做可以簡化遊戲的其他元件解譯輸入的方式 (例如物理模擬)，也能更輕鬆地撰寫可在不同螢幕解析度下執行的遊戲。
 
-## Marble Maze 支援的輸入裝置
+## <a name="input-devices-supported-by-marble-maze"></a>Marble Maze 支援的輸入裝置
 
 
 Marble Maze 支援以 Xbox 360 一般控制器裝置、滑鼠及觸控來選取功能表項目，也支援以 Xbox 360 控制器、滑鼠、觸控和加速計來控制遊戲進行。 Marble Maze 使用 XInput API 來輪詢控制器的輸入。 觸控可讓應用程式追蹤並回應指尖輸入。 加速計是測量沿著 X 軸、Y 軸和 Z 軸所施加力量的感應器。 您可以使用 Windows 執行階段來輪詢加速計裝置的目前狀態，以及透過 Windows 執行階段事件處理機制來接收觸控事件。
 
-> **注意** 本文件使用「觸控」來表示觸控輸入和滑鼠輸入兩者，而使用「指標」來表示任何使用指標事件的裝置。 由於觸控和滑鼠會使用標準指標事件，因此，您可以使用任一裝置來選取功能表項目和控制遊戲進行。
+> **注意**：本文件使用「觸控」來表示觸控輸入和滑鼠輸入兩者，而使用「指標」來表示任何使用指標事件的裝置。 由於觸控和滑鼠會使用標準指標事件，因此，您可以使用任一裝置來選取功能表項目和控制遊戲進行。
 
  
 
-> **注意** 套件資訊清單將 Landscape 設為遊戲支援的旋轉方式，以防止當您旋轉裝置讓彈珠滾動時改變方向。
+> **注意**：套件資訊清單將 Landscape 設為遊戲支援的旋轉方式，以防止當您旋轉裝置讓彈珠滾動時改變方向。
 
  
 
-## 初始化輸入裝置
+## <a name="initializing-input-devices"></a>初始化輸入裝置
 
 
 Xbox 360 控制器不需要初始化。 若要初始化觸控，您必須登錄視窗事件，像是啟動 (例如使用者按下滑鼠按鈕或觸碰螢幕)、釋放和移動指標等事件。 若要初始化加速計，您必須在初始化應用程式時建立 [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) 物件。
@@ -79,10 +86,10 @@ Accelerometer 物件在 MarbleMaze::Initialize 方法中初始化，如下列範
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  瀏覽功能表
+##  <a name="navigating-the-menus"></a>瀏覽功能表
 
 
-###  追蹤 Xbox 360 控制器輸入
+###  <a name="tracking-xbox-360-controller-input"></a>追蹤 Xbox 360 控制器輸入
 
 您可以使用滑鼠、觸控或 Xbox 360 控制器來瀏覽功能表，如下所示：
 
@@ -91,7 +98,7 @@ m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 -   使用 [開始] 按鈕來讓遊戲暫停或繼續。
 -   以滑鼠按一下功能表項目來選擇該動作。
 
-###  追蹤觸控和滑鼠輸入
+###  <a name="tracking-touch-and-mouse-input"></a>追蹤觸控和滑鼠輸入
 
 為了追蹤 Xbox 360 控制器輸入，**MarbleMaze::Update** 方法會定義一組按鈕來定義輸入行為。 XInput 只提供控制器的目前狀態。 因此，**MarbleMaze::Update** 還會定義兩組陣列，以追蹤每個可能的 Xbox 360 控制器是否在前一個畫面期間按下按鈕，以及目前是否按下按鈕。
 
@@ -243,7 +250,7 @@ case GameState::InGamePaused:
 memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 ```
 
-### 追蹤觸控和滑鼠輸入
+### <a name="tracking-touch-and-mouse-input"></a>追蹤觸控和滑鼠輸入
 
 對於觸控和滑鼠輸入，當使用者觸碰或按一下功能表項目時，就會加以選擇。 下列範例顯示 **MarbleMaze::Update** 方法如何處理指標輸入來選取功能表項目。 **m\_pointQueue** 成員變數會追蹤使用者在螢幕上觸碰或按一下的位置。 本文件稍後的＜處理指標輸入＞一節會進一步說明 Marble Maze 收集指標輸入的方式。
 
@@ -277,7 +284,7 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### 更新遊戲狀態
+### <a name="updating-the-game-state"></a>更新遊戲狀態
 
 **MarbleMaze::Update** 方法在處理控制器和觸控輸入之後，如果有任何按鈕按下，便會更新遊戲狀態。
 
@@ -295,7 +302,7 @@ if (m_highScoreButton.IsPressed())
 }
 ```
 
-##  控制遊戲進行
+##  <a name="controlling-game-play"></a>控制遊戲進行
 
 
 遊戲迴圈和 **MarbleMaze::Update** 方法會共同合作來更新遊戲物件的狀態。 如果您的遊戲接受來自多個裝置的輸入，您可以將所有裝置的輸入累積在一組變數中，以便您撰寫更容易維護的程式碼。 **MarbleMaze::Update** 方法會定義一組變數來累積所有裝置的動作。
@@ -307,7 +314,7 @@ float combinedTiltY = 0.0f;
 
 輸入機制可隨不同輸入裝置而有所不同。 例如，指標輸入是使用 Windows 執行階段事件處理模型來處理。 相反地，您在需要時會輪詢 Xbox 360 控制器的輸入資料。 我們建議您一律遵循特定裝置所規定的輸入機制。 本節說明 Marble Maze 如何讀取每個裝置的輸入、如何更新合併的輸入值，以及如何使用合併的輸入值來更新遊戲的狀態。
 
-###  處理指標輸入
+###  <a name="processing-pointer-input"></a>處理指標輸入
 
 當您使用指標輸入時，請呼叫 [**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) 方法來處理視窗事件。 在更新或呈現場景之前，請在遊戲迴圈中呼叫此方法。 Marble Maze 會將 **CoreProcessEventsOption::ProcessAllIfPresent** 傳遞給這個方法，以處理所有已佇列的事件，然後立即返回。 在處理事件之後，Marble Maze 會呈現並顯示下一個畫面。
 
@@ -391,7 +398,7 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 }
 ```
 
-### 處理加速計輸入
+### <a name="processing-accelerometer-input"></a>處理加速計輸入
 
 若要處理加速計輸入，**MarbleMaze::Update** 方法會呼叫 [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) 方法。 這個方法會傳回代表加速計讀數的 [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) 物件。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** 和 **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** 屬性分別保有沿著 X 軸和 Y 軸的重力加速度。
 
@@ -415,7 +422,7 @@ if (m_accelerometer != nullptr)
 
 由於您無法確定使用者電腦上是否有加速計，因此在輪詢加速計之前，請一律要確定有一個有效的 Accelerometer 物件。
 
-### 處理 Xbox 360 控制器輸入
+### <a name="processing-xbox-360-controller-input"></a>處理 Xbox 360 控制器輸入
 
 下列範例顯示 **MarbleMaze::Update** 方法如何從 Xbox 360 控制器讀取並更新合併的輸入值。 **MarbleMaze::Update** 方法使用 for 迴圈，以接收來自任何已連接控制器的輸入。 **XInputGetState** 方法會將控制器的目前狀態填入 XINPUT\_STATE 物件。 **combinedTiltX** 和 **combinedTiltY** 值會根據左搖捍的 X 值和 Y 值而更新。
 
@@ -446,15 +453,15 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 
 XInput 定義左搖桿的 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** 常數。 這是適合大部分遊戲的靜止區域臨界值。
 
-> **重要** 當您使用 Xbox 360 控制器時，請總是考量靜止區域。 靜止區域是指不同遊戲台對於初始移動的敏感度差異。 在某些控制器中，細微的移動可能不會產生讀數，但在其他控制器中，卻可能產生可測出的讀數。 為了讓遊戲納入此一考量，請為初始搖捍移動建立非移動區域。 如需靜止區域的詳細資訊，請參閱 [XInput 入門](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
+> **重要**：當您使用 Xbox 360 控制器時，請一律將靜止區域列入考量。 靜止區域是指不同遊戲台對於初始移動的敏感度差異。 在某些控制器中，細微的移動可能不會產生讀數，但在其他控制器中，卻可能產生可測出的讀數。 為了讓遊戲納入此一考量，請為初始搖捍移動建立非移動區域。 如需靜止區域的詳細資訊，請參閱 [XInput 入門](https://msdn.microsoft.com/library/windows/desktop/ee417001)。
 
  
 
-###  將輸入套用至遊戲狀態
+###  <a name="applying-input-to-the-game-state"></a>將輸入套用至遊戲狀態
 
 裝置會以不同的方式報告輸入值。 例如，指標輸入可能以螢幕座標表示，而控制器輸入可能以完全不同的格式表示。 將多個裝置的輸入合併為一組輸入值的挑戰在於正規化，或將值轉換成一般格式。 Marble Maze 會將值縮放至範圍 \[-1.0, 1.0\] 來加以正規化。 為了將 Xbox 360 控制器輸入正規化，Marble Maze 會將輸入值除以 32768，因為搖桿輸入值一律介於 -32768 和 32767 之間。 本節稍早所述的 **PointToTouch** 函式會將螢幕座標轉換為介於大約 -1.0 和 +1.0 之間的正規化值，以得到類似的結果。
 
-> **祕訣** 即使您的應用程式只使用一個輸入方法，仍建議您一律將輸入值正規化。 這樣做可簡化遊戲的其他元件解譯輸入的方式 (例如物理模擬)，也能更輕鬆地撰寫可在不同螢幕解析度下執行的遊戲。
+> **祕訣**：即使您的應用程式只使用一個輸入方法，仍建議您一律將輸入值正規化。 這樣做可簡化遊戲的其他元件解譯輸入的方式 (例如物理模擬)，也能更輕鬆地撰寫可在不同螢幕解析度下執行的遊戲。
 
  
 
@@ -505,12 +512,12 @@ if (marblePosition.z >= resetDepth)
 
 本節不會說明物理模擬的運作方式。 如需詳細資訊，請參閱 Marble Maze 原始檔中的 Physics.h 和 Physics.cpp。
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 如需使用音訊時應該牢記的一些重要做法的相關資訊，請參閱[在 Marble Maze 範例中加入音訊](adding-audio-to-the-marble-maze-sample.md)。 該文件會討論 Marble Maze 如何使用 Microsoft 媒體基礎和 XAudio2 來載入、混合和播放音訊資源。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [在 Marble Maze 範例中加入音訊](adding-audio-to-the-marble-maze-sample.md)
@@ -523,10 +530,5 @@ if (marblePosition.z >= resetDepth)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

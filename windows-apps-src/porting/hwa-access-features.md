@@ -3,17 +3,25 @@ author: seksenov
 title: "託管的 Web 應用程式 - 存取通用 Windows 平台 (UWP) 功能與執行階段 API"
 description: "存取通用 Windows 平台 (UWP) 原生功能與 Windows 10 執行階段 API，包括 Cortona 語音命令、動態磚、安全性專屬 ACUR、OpenID 和 OAuth，皆是來自遠端 JavaScript。"
 kw: Hosted Web Apps, Accessing Windows 10 features from remote JavaScript, Building a Win10 Web Application, Windows JavaScript Apps, Microsoft Web Apps, HTML5 app for PC, ACUR URI Rules for Windows App, Call Live Tiles with web app, Use Cortana with web app, Access Cortana from website, msapplication-cortanavcd
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "託管的 Web 應用程式, 適用 JavaScript 的 WinRT API, Win10 Web 應用程式, Windows JavaScript 應用程式, ApplicationContentUriRules, ACURs, msapplication-cortanavcd, 適用 Web 應用程式的 Cortana"
+ms.assetid: 86ca4590-2675-4de2-b825-c586d9669b8e
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: fb74bfc40750941860dae0a8f811fde4a614e403
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ccb59581227db82b8566da11d6db731b362ec258
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 存取通用 Windows 平台 (UWP) 功能
+# <a name="accessing-universal-windows-platform-uwp-features"></a>存取通用 Windows 平台 (UWP) 功能
 
-您的 Web 應用程式可完整存取通用 Windows 平台 (UWP)、在 Windows 裝置上啟用原生功能、[享受 Windows 安全性](#keep-your-app-secure-setting-application-content-uri-rules-acurs)的各種優勢、直接從伺服器上託管的指令碼[呼叫 Windows 執行階段 API](#call-windows-runtime-apis)、運用 [Cortana 整合](#integrate-cortana-voice-commands)，以及使用[線上驗證提供者](#web-authentication-broker)。 此外亦支援[混合式應用程式](#create-hybrid-apps-packaged-web-apps-vs-hosted-web-apps)，因為您可將要從託管指令碼呼叫的本機程式碼包含在內，以及管理 App 在遠端和本機頁面之間的瀏覽。
+您的 Web 應用程式可完整存取通用 Windows 平台 (UWP)、在 Windows 裝置上啟用原生功能、[享受 Windows 安全性](#keep-your-app-secure--setting-application-content-uri-rules-acurs)的各種優勢、直接從伺服器上託管的指令碼[呼叫 Windows 執行階段 API](#call-windows-runtime-apis)、運用 [Cortana 整合](#integrate-cortana-voice-commands)，以及使用[線上驗證提供者](#web-authentication-broker)。 此外亦支援[混合式應用程式](#create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps)，因為您可將要從託管指令碼呼叫的本機程式碼包含在內，以及管理 App 在遠端和本機頁面之間的瀏覽。
 
-## 保護 App 安全 – 設定應用程式內容 URI 規則 (ACUR)
+## <a name="keep-your-app-secure--setting-application-content-uri-rules-acurs"></a>保護 App 安全 – 設定應用程式內容 URI 規則 (ACUR)
 
 您可透過 ACUR (另稱 URL 允許清單)，授與遠端 URL 權利直接從遠端 HTML、CSS 和 JavaScript 存取通用 Windows API。 系統已設定 Windows 作業系統層級的權利原則界限，允許您網頁伺服器上託管的程式碼直接呼叫平台 API。 當您在應用程式內容 URI 規則 (ACUR) 中放置一組構成託管 Web 應用程式的 URL，即可在應用程式套件資訊清單中定義這些界限。 您的規則應包含 App 的開始頁面，以及您想要納為 App 頁面的任何其他頁面。 您也可以選擇排除特定的 URL。
 
@@ -41,7 +49,7 @@ StartPage="http://contoso.com/home">
 </uap:ApplicationContentUriRules>
 ```
 
-## 呼叫 Windows 執行階段 API
+## <a name="call-windows-runtime-apis"></a>呼叫 Windows 執行階段 API
 
 若將 URL 定義於 App 的界限 (ACUR) 範圍內，則其可使用「WindowsRuntimeAccess」屬性呼叫具有 JavaScript 的 Windows 執行階段 API。 系統在主控處理程序中載入具適當存取權的 URL 時，Windows 命名空間將會插入並顯示於指令碼引擎。 這讓通用 Windows API 可供 App 的指令碼直接呼叫。 身為開發人員，您僅需針對要呼叫的 Windows API 進行功能偵測，若可供使用就會進一步啟動平台功能。
 
@@ -69,12 +77,12 @@ function updateTile(message, imgUrl, imgAlt) {
 
     if (typeof Windows !== 'undefined'&&
             typeof Windows.UI !== 'undefined' &&
-            typeof Windows.UI.Notifications !== 'undefined') {  
+            typeof Windows.UI.Notifications !== 'undefined') {    
         var notifications = Windows.UI.Notifications,
         tile = notifications.TileTemplateType.tileSquare150x150PeekImageAndText01,
         tileContent = notifications.TileUpdateManager.getTemplateContent(tile),
         tileText = tileContent.getElementsByTagName('text'),
-        tileImage = tileContent.getElementsByTagName('image');  
+        tileImage = tileContent.getElementsByTagName('image');    
         tileText[0].appendChild(tileContent.createTextNode(message || 'Demo Message'));
         tileImage[0].setAttribute('src', imgUrl || 'https://unsplash.it/150/150/?random');
         tileImage[0].setAttribute('alt', imgAlt || 'Random demo image');    
@@ -95,7 +103,7 @@ function updateTile(message, imgUrl, imgAlt) {
 
 透過任何您最熟悉的環境或技術呼叫 Windows 執行階段 API，而您可讓伺服器功能資源在呼叫 Windows 功能之前先加以偵測。 若平台功能無法使用，且是在另一部主機上執行 Web 應用程式，則您可為使用者提供支援瀏覽器運作的標準預設使用體驗。
 
-## 整合 Cortana 語音命令
+## <a name="integrate-cortana-voice-commands"></a>整合 Cortana 語音命令
 
 您可以透過在您的 HTML 頁面中指定語音命令定義 (VCD) 檔案來整合 Cortana。 VCD 檔案是一個可將命令對應至特定片語的 XML 檔案。 例如，使用者可以點選 [開始] 按鈕並說出「Contoso Books，顯示暢銷商品」來啟動「Contoso Books」App 並瀏覽至「暢銷商品」頁面。
 
@@ -109,11 +117,11 @@ function updateTile(message, imgUrl, imgAlt) {
 
 如需 Cortana 整合與 VCD 的詳細資訊，請參閱 Cortana 互動與語音命令定義 (VCD) 元素和屬性 v1.2。
 
-## 建立混合式應用程式 – 封裝的 Web 應用程式與託管的 Web 應用程式
+## <a name="create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps"></a>建立混合式應用程式 – 封裝的 Web 應用程式與託管的 Web 應用程式
 
 您有一些建立 UWP App 的選項。 您可以將 App 設計為從 Windows 市集下載，然後完全託管在本機用戶端，這通常稱為「封裝的 Web 應用程式」****。 這樣可讓您在任何相容的平台上離線執行您的 App。 或者，App 可以是一種在遠端 Web 伺服器上執行，完全託管的 Web 應用程式，這通常稱為「託管的 Web 應用程式」****。 但是也有第三種選項：App 可以部分裝載在本機用戶端上，部分裝載在遠端 Web 伺服器上。 我們稱這第三種選項為「混合式應用程式」****，其通常會使用 **WebView** 元件讓遠端內容看起來像本機內容。 混合式應用程式可以在本機應用程式用戶端內包含以套件方式執行的 HTML5、CSS 和 Javascript 程式碼，並且保留與遠端內容互動的能力。
 
-## Web 驗證代理人
+## <a name="web-authentication-broker"></a>Web 驗證代理人
 
 如果您有採用網際網路驗證與授權通訊協定 (例如 OpenID 或 OAuth) 的線上識別提供者，您就可以使用 Web 驗證代理人來處理使用者的登入流程。 您可以在您應用程式之 HTML 頁面上的 `<meta>` 標籤中，指定開始與結束 URL。 Windows 會偵測這些 URL 並將其傳遞給 Web 驗證代理人，以完成登入流程。 開始 URI 包含傳送驗證要求時所用的線上提供者位址以及其他所需的資訊 (例如應用程式識別碼)、驗證完成後使用者前往的重新導向 URI，以及預期的回應類型。 您可以向提供者詢問所需的參數。 以下是使用 `<meta>` 標籤的範例：
 
@@ -123,7 +131,7 @@ function updateTile(message, imgUrl, imgAlt) {
 
 如需詳細指導方針，請參閱[線上提供者的 Web 驗證代理人考量](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)。
 
-## 應用程式功能宣告
+## <a name="app-capability-declarations"></a>應用程式功能宣告
 
 若您的 App 需要以程式設計方式存取使用者資源 (例如圖片) 或裝置 (例如相機或麥克風)，則您必須宣告適當的功能。 有三種應用程式功能宣告類別： 
 
@@ -140,19 +148,14 @@ function updateTile(message, imgUrl, imgAlt) {
 
 部分功能提供 App 存取敏感資源的權限。 這些資源會視為敏感資源是因為其可以存取使用者的個人資料，或使用者必須付費才能使用。 受設定應用程式管理的隱私權設定，可讓使用者動態控制敏感資源的存取權。 因此，您的 App 不會假設敏感資源可隨時使用這點非常重要。 如需存取敏感資源的詳細資訊，請參閱[隱私權感知 App 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx)。
 
-## manifoldjs 和應用程式資訊清單
+## <a name="manifoldjs-and-the-app-manifest"></a>manifoldjs 和應用程式資訊清單
 
 可將您的網站轉變成 UWP app 的輕鬆方式，即是使用**應用程式資訊清單**和 **manifoldjs**。 應用程式資訊清單是包含 App 相關中繼資料的 xml 檔案。 其會指定如 App 的名稱、資源的連結、顯示模式、URL 和其他資料，描述如何部署和執行 App。 manifoldjs 能夠讓此程序變得非常簡單，即使在不支援 Web 應用程式的系統上亦同。 請至 [manifoldjs.com](http://www.manifoldjs.com/) 了解其運作方式的詳細資訊。 您也可以檢視此 [Windows 10 Web 應用程式簡報](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession)當中的 manifoldjs 示範。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 - [Windows 執行階段 API：JavaScript 程式碼範例](http://rjs.azurewebsites.net/)
 - [Codepen：用於呼叫 Windows 執行階段 API 的沙箱](http://codepen.io/seksenov/pen/wBbVyb/)
 - [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
 - [語音命令定義 (VCD) 元素和屬性 v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
 - [線上提供者的 Web 驗證代理人考量](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
 - [應用程式功能宣告](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -5,17 +5,24 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: "市集中的協助工具"
 label: Accessibility in the Store
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 137e8671655c0d20b0343ee7f87086d271fdc531
-ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1d3a2ce095b4250f5bdc1fdac8b1646184bc3e1e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 市集中的協助工具  
+# <a name="accessibility-in-the-store"></a>市集中的協助工具  
 
 
 
-描述在 Windows 市集中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
+說明在 Windows 市集中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
 
 將您的 App 送出到 Windows 市集進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Windows 市集時，可以使用 [無障礙]**** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 [無障礙]**** 標記。
 
@@ -42,11 +49,6 @@ ms.openlocfilehash: 8d987e9c1c9476625b8544ee95abc62e2b2c09f5
 請參閱[協助工具檢查清單](accessibility-checklist.md)，了解可協助您完成工作的相關程序和資源連結。
 
 <span id="related_topics"/>
-## 相關主題    
+## <a name="related-topics"></a>相關主題    
 * [協助工具](accessibility.md) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,22 +1,29 @@
 ---
 author: mijacobs
 Description: "在通用 Windows 平台 (UWP) app 中，命令元素是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。"
-title: "Universal Windows Platform (UWP) app 的命令設計基本知識"
+title: "通用 Windows 平台 (UWP) app 的命令設計基本知識"
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bc6ad505dff838204fcf1d0764ec075a382d56cd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ec6e7879faf3c33edc97b26b2d0721808a02dfdc
+ms.lasthandoff: 02/07/2017
 
 ---
 
-#  <a name="command-design-basics-for-uwp-apps"></a>UWP app 的命令設計基本知識
+#  <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-在通用 Windows 平台 (UWP) app 中，*命令元素*是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。 此文件說明命令元素，例如按鈕和核取方塊、它們支援的互動，以及裝載它們的命令表面 (例如命令列和操作功能表)。
+在通用 Windows 平台 (UWP) app 中，**「命令元素」是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。 此文件說明命令元素，例如按鈕和核取方塊、它們支援的互動，以及裝載它們的命令表面 (例如命令列和操作功能表)。
 
 ## <a name="provide-the-right-type-of-interactions"></a>提供正確的互動類型
 
@@ -156,10 +163,5 @@ ms.openlocfilehash: bc6ad505dff838204fcf1d0764ec075a382d56cd
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

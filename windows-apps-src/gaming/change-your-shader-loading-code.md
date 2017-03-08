@@ -3,13 +3,20 @@ author: mtoepke
 title: "OpenGL ES 2.0 著色器管線與 Direct3D 的比較"
 description: "在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。"
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, OpenGL, Direct3D, 著色器管線"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 20d02d9b9724c0cfd8120d4d38fa476b9efa3bb3
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# OpenGL ES 2.0 著色器管線與 Direct3D 的比較
+# <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -23,7 +30,7 @@ ms.openlocfilehash: 144e3374c16118418872f6c473c5f39101fbfce0
 
 在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。 不過在 API 設計方面，建立與管理著色器階段的主要元件則分為兩個主要的介面，[**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)。 本主題嘗試將常見的 OpenGL ES 2.0 著色器管線 API 模式對應到這些介面中的 Direct3D 11 對應項。
 
-## 檢閱 Direct3D 11 著色器管線
+## <a name="reviewing-the-direct3d-11-shader-pipeline"></a>檢閱 Direct3D 11 著色器管線
 
 
 著色器物件是使用 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 介面上的方法建立的，如 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。
@@ -39,7 +46,7 @@ Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.co
 
 (還有幾何著色器、輪廓著色器、鑲嵌與網域著色器，但因為在 OpenGL ES 2.0 中沒有類似項目，我們將不會在此討論。) 如需這些階段的方法的完整清單，請參閱 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 參考頁面。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。
 
-## 建立著色器
+## <a name="creating-a-shader"></a>建立著色器
 
 
 在 Direct3D 中，不會在編譯和載入著色器資源之前先建立著色器資源；而是在載入 HLSL 時建立資源。 因此，沒有正好與 glCreateShader 類似的函式，這個函式可建立特定類型的初始化著色器資源 (如 GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER)。 著色器是在以特定函式 (如 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) 載入 HLSL 後建立，並使用類型與編譯的 HLSL 做為參數。
@@ -50,7 +57,7 @@ Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.co
 
  
 
-## 編譯著色器
+## <a name="compiling-a-shader"></a>編譯著色器
 
 
 Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編譯的著色器物件 (.cso) 檔案，並使用其中一個 Windows 執行階段檔案 API 載入。 (傳統型 app 可在執行階段從文字檔或字串編譯著色器。) CSO 檔案是從您 Microsoft Visual Studio 專案中的任何 .hlsl 檔所建置，且可保留相同的名稱，只要有 .cso 副檔名即可。 出貨時，請確認它們包含在您的套件中！
@@ -62,7 +69,7 @@ Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編
 
  
 
-## 載入著色器
+## <a name="loading-a-shader"></a>載入著色器
 
 
 如同建立著色器一節所說明，當對應的 CSO 檔案載入緩衝區並傳遞至下表的其中一個方法時，Direct3D 11 便會建立著色器。
@@ -73,7 +80,7 @@ Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編
 
  
 
-## 設定管線
+## <a name="setting-up-the-pipeline"></a>設定管線
 
 
 OpenGL ES 2.0 擁有「著色器程式」物件，包含多個可執行的著色器。 個別著色器會附加至著色器程式物件。 不過，在 Direct3D 11 中，您會直接使用轉譯內容 ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) 並在其上建立著色器。
@@ -109,7 +116,7 @@ D3D11CreateDevice(
 );
 ```
 
-## 設定檢視區
+## <a name="setting-the-viewports"></a>設定檢視區
 
 
 在 Direct3D 11 設定檢視區的方法與在 OpenGL ES 2.0 設定檢視區的方法十分類似。 在 Direct3D 11，使用已設定的 [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722) 呼叫 [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480)。
@@ -132,7 +139,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
  
 
-## 設定頂點著色器
+## <a name="configuring-the-vertex-shaders"></a>設定頂點著色器
 
 
 在 Direct3D 11，是在載入著色器時設定頂點著色器。 Uniform 使用 [**ID3D11DeviceContext1::VSSetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446795) 做為常數緩衝區傳遞。
@@ -145,7 +152,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
  
 
-## 設定像素著色器
+## <a name="configuring-the-pixel-shaders"></a>設定像素著色器
 
 
 在 Direct3D 11，是在載入著色器時設定像素著色器。 Uniform 使用 [**ID3D11DeviceContext1::PSSetConstantBuffers1.**](https://msdn.microsoft.com/library/windows/desktop/hh404649) 做為常數緩衝區傳遞。
@@ -158,7 +165,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
  
 
-## 產生最終結果
+## <a name="generating-the-final-results"></a>產生最終結果
 
 
 管線完成時，即可將著色器階段的結果繪製到背景緩衝區。 在 Direct3D 11 的做法與在 Open GL ES 2.0 中相同，這個動作牽涉到呼叫繪製命令，在背景緩衝區中將結果輸出為色彩對應，然後傳送該背景緩衝區至顯示畫面。
@@ -170,7 +177,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
  
 
-## 將 GLSL 移植到 HLSL
+## <a name="porting-glsl-to-hlsl"></a>將 GLSL 移植到 HLSL
 
 
 除了複雜類型支援與部分整體語法之外，GLSL 與 HLSL 並沒有太大的不同。 許多開發人員發現，將共用 OpenGL ES 2.0 指示與定義更名為 HLSL 的對等項目，是在這兩者中進行移植最簡單的方法。 請注意，Direct3D 使用著色器模型版本來呈現圖形介面支援之 HLSL 的功能集；OpenGL 則有不同的 HLSL 版本規格。 下表嘗試提供一些約略的概念，讓您了解在其他版本方面針對 Direct3D 11 與 OpenGL ES 2.0 所定義的著色器語言功能集。
@@ -184,7 +191,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 如需這兩個著色器語言之差異與共用語法對應的詳細資訊，請閱讀 [GLSL-to-HLSL 參考](glsl-to-hlsl-reference.md)。
 
-## 將 OpenGL 內建移植到 HLSL 語意
+## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>將 OpenGL 內建移植到 HLSL 語意
 
 
 Direct3D 11 HLSL 語意是 Uniform 或屬性名稱這類字串，用來識別在應用程式與著色器程式間傳遞的值。 雖然它們可以是任何可能的字串，但最佳做法是使用可指出用法的字串，如 POSITION 或 COLOR。 您可在建構常數緩衝區或緩衝區輸入配置時，指派這些語意。 您也可以在語意後附加 0 到 7 的數字，在類似的值使用不同的登錄。 例如：COLOR0、COLOR1、COLOR2...
@@ -246,10 +253,5 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

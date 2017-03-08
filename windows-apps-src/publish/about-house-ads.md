@@ -3,13 +3,20 @@ author: jnHs
 Description: "您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為自家廣告。"
 title: "關於自家廣告"
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8c4f6597ecb262bf93efa02b695221606521a754
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 關於自家廣告
+# <a name="about-house-ads"></a>關於自家廣告
 
 
 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為*自家廣告*。
@@ -21,11 +28,11 @@ ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 
 當 App A 的自家廣告出現在 App B 時，您不需要支付廣告曝光的費用，也不會收到在 App B 廣告單元中顯示廣告的收益。 付費廣告會比自家廣告優先出現在您的廣告單位中。
 
-> **注意** 個別使用者每天最多將看到任何指定自家廣告 5 次。
+> **注意**：個別使用者每天最多將看到任何指定自家廣告 5 次。
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
@@ -33,10 +40,5 @@ ms.openlocfilehash: 6d0c9aa276a624966b6294db2be8e08a716d42c2
 * [App 安裝廣告報告](app-install-ads-reports.md)
 * [常見問題](common-questions.md)
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

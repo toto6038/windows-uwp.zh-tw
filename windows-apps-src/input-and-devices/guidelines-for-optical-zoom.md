@@ -5,9 +5,16 @@ title: "視覺化縮放和調整大小的指導方針"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 567c3bc66c78924bc33ec3a336db6e2ce8592d68
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -15,7 +22,7 @@ ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-這個文章描述 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
+本文說明 Windows 縮放和調整元素大小的方式，並提供在應用程式中使用這些互動機制時的使用者經驗指導方針。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -97,10 +104,5 @@ ms.openlocfilehash: 2776fe18d20286a3beaf8ba280976316e40119dd
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

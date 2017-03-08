@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "如果您在 app 提交過程中上傳 app 套件時發生錯誤，您必須先解決這些錯誤，然後才可以將 app 提交至市集。"
+Description: "如果您在應用程式提交過程中上傳應用程式套件時發生錯誤，您必須先解決這些錯誤，然後才可以將應用程式提交至市集。"
 title: "解決套件上傳錯誤"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 2ff09d43cd39967028b39b4f602f4dfdf2cbcdcc
-ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a46c556303b88f8d506f5315e23d4e2b2edf5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="resolve-package-upload-errors"></a>解決套件上傳錯誤
 
 
-如果您在 [app 提交](app-submissions.md)過程中[上傳 app 套件](upload-app-packages.md)時發生錯誤，您必須先解決這些錯誤，然後才可以將 app 提交至市集。 錯誤訊息會指出問題是什麼，以及您為了修正這個問題可能需要執行的動作。 以下是一些可協助您解決這些錯誤之額外資訊的指標。
+如果您在[應用程式提交](app-submissions.md)過程中[上傳應用程式套件](upload-app-packages.md)時發生錯誤，您必須先解決這些錯誤，然後才可以將應用程式提交至市集。 錯誤訊息會指出問題是什麼，以及您為了修正這個問題可能需要執行的動作。 以下是一些可協助您解決這些錯誤之額外資訊的指標。
 
 ## <a name="package-type-errors-for-windows-phone-81"></a>Windows Phone 8.1 的套件類型錯誤
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
 
 此外，請注意如果您的提交包含一個以上的 Windows Phone 8.1 XAP，它們必須包含相同的版本號碼。
 
-**注意** 關於與其他錯誤訊息相關的其他問題和解決這些問題的協助，請造訪我們的[論壇](http://go.microsoft.com/fwlink/p/?LinkId=224196)。
+**注意**  關於與其他錯誤訊息相關的其他問題和解決這些問題的協助，請造訪我們的[論壇](http://go.microsoft.com/fwlink/p/?LinkId=224196)。
 
  
 
@@ -37,10 +44,5 @@ ms.openlocfilehash: 4f7f9698d8b8b17654b6f2e0420c7cdc6031f018
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

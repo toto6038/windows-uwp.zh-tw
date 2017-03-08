@@ -2,15 +2,22 @@
 author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: "最佳化您的 XAML 版面配置"
-description: "版面配置可說是 XAML App 中高度耗費資源的一部分&amp;\\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。"
+description: "版面配置可說是 XAML App 中高度耗費資源的一部分&amp;\\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML 應用程式的版面配置效能。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: d4eae4379fb74d36a97db9be9a100408825682a7
+ms.lasthandoff: 02/07/2017
 
 ---
-# 最佳化您的 XAML 版面配置
+# <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 版面配置
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -18,19 +25,19 @@ ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 版面配置是為 UI 定義視覺化結構的程序。 用來說明 XAML 版面配置的主要機制是透過面板，這類面板是讓您能夠在其中放置與排列 UI 元素的容器物件。 在 CPU 使用量與記憶體負荷方面，版面配置可說是 XAML app 中高度耗費資源的一部分。 您可以採取下列一些簡單步驟來提升 XAML app 的版面配置效能。
 
-## 減少版面配置結構
+## <a name="reduce-layout-structure"></a>減少版面配置結構
 
 簡化 UI 元素樹狀結構的階層結構，就能獲得最大的版面配置效能。 面板存在於視覺化樹狀結構中，但它們是結構化元素，而不是像 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 或 a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 的「像素產生的元素」**。 藉由減少非像素產生的元素來簡化樹狀結構，通常可大幅提升效能。
 
 許多 UI 都是透過巢狀面板來實作，因而產生了既深且複雜的面板與元素樹狀結構。 巢串面板是非常簡便的，但在許多情況下，您可以利用更複雜的單一面板來達成相同的 UI。 使用單一面板可提供較佳的效能。
 
-### 減少版面配置結構的時機
+### <a name="when-to-reduce-layout-structure"></a>減少版面配置結構的時機
 
 使用簡單的方式來減少版面配置結構—例如，從最上層頁面減少一個巢狀面板—並不會有顯著的效果。
 
 最大的效能提升是來自減少 UI 中重複的版面配置結構，例如 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 或 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)。 這些 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 元素會使用 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 來定義 UI 元素的樹狀子目錄 (其已多次具現化)。 當同一個樹狀子目錄在您的 app 中多次重複出現時，任何對於該樹狀子目錄的效能提升，都會使對 app 整體效能所產生的影響倍增。
 
-### 範例
+### <a name="examples"></a>範例
 
 考量下列 UI。
 
@@ -126,13 +133,13 @@ ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 如下列範例所示，有許多方式可用來達成相同的 UI。 您應該謹慎地進行全面考量 (包括效能、可讀性和可維護性)，然後做出取捨。
 
-## 針對重疊的 UI 使用單一儲存格格線
+## <a name="use-single-cell-grids-for-overlapping-ui"></a>針對重疊的 UI 使用單一儲存格格線
 
 常見的 UI 需求是讓元素彼此重疊的版面配置。 通常會使用這種方式，利用邊框間距、邊界、對齊和轉換來放置元素。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控制項已最佳化，可改善重疊元素的版面配置效能。
 
-**重要** 若要查看改進功能，請使用單一儲存格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要**  若要查看改進功能，請使用單一儲存格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
-### 範例
+### <a name="examples"></a>範例
 
 ```xml
 <Grid>
@@ -154,13 +161,13 @@ ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 ![格線內的兩個文字區塊](images/layout-perf-ex3.png)
 
-## 使用面板內建的框線屬性
+## <a name="use-a-panels-built-in-border-properties"></a>使用面板內建的框線屬性
 
 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 及 [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) 控制項具有內建的框線屬性，可讓您沿著控制項繪製框線，而不需要在 XAML 中加入額外的 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素。 支援內建框線的新屬性如下：**BorderBrush**、**BorderThickness**、**CornerRadius** 及 **Padding**。 這其中每一個都是 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362)，因此您可以將它們與繫結和動畫搭配使用。 它們是設計來完全取代個別的 **Border** 元素。
 
 如果您的 UI 在這些面板周圍具有 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 元素，請改用內建的框線，以便在 app 的版面配置結構中省下額外的元素。 如先前所述，這樣能夠大幅節省，特別是在重複 UI 的情況下。
 
-### 範例
+### <a name="examples"></a>範例
 
 ```xml
 <RelativePanel BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="12">
@@ -169,7 +176,7 @@ ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 </RelativePanel>
 ```
 
-## 使用 **SizeChanged** 事件來回應版面配置變更
+## <a name="use-sizechanged-events-to-respond-to-layout-changes"></a>使用 **SizeChanged** 事件來回應版面配置變更
 
 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) 類別公開兩個可用以回應版面配置變更的類似事件：[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 和 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged)。 您可能會在進行版面配置期間調整元素大小時，使用這其中一個事件來接收通知。 這兩個事件的語意不同，而且在它們之間進行選擇時有一些重要的效能考量。
 
@@ -177,15 +184,10 @@ ms.openlocfilehash: ae6ad7a761737613c323eb80af993ab5dfcd7977
 
 [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) 也會在配置期間引發，但它具備全域語意—其會在更新任何元素時，於每個元素上引發。 通常只會在事件處理常式中進行本機處理，在此情況下，程式碼執行的頻率會比所需的更頻繁。 只有在您需要知道何時將重新放置元素而不會改變其大小 (這不常見) 時，才能使用 **LayoutUpdated**。
 
-## 選擇面板
+## <a name="choosing-between-panels"></a>選擇面板
 
 在選擇個別面板時，通常不會將效能納入考量。 通常是藉由考量哪一個面板可提供最接近您正在實作之 UI 的版面配置行為來選擇。 例如，如果您在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 和 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 之間進行選擇，則應該選擇最能對應到您在腦中實作之模型的面板。
 
 每個 XAML 面板都已針對良好的效能進行最佳化，而所有的面板都可為類似 UI 提供類似的效能。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

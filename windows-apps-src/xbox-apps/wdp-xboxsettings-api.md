@@ -2,16 +2,24 @@
 author: payzer
 title: "裝置入口網站 Xbox 開發人員設定 API 參考"
 description: "了解如何存取 Xbox 開發人員設定。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 translationtype: Human Translation
-ms.sourcegitcommit: c51eff41e63d815f6298b4fc46a9b11314bc8bc9
-ms.openlocfilehash: 5a983714cda9b5a5f45e555e2cb6f980f082a003
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: a17a489944fdc2d78831549c1afdc2bd87deabdf
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 開發人員設定 API 參考   
+# <a name="developer-settings-api-reference"></a>開發人員設定 API 參考   
 您可以使用這個 API 來存取適合用於開發的 Xbox One 設定。
 
-## 同時取得所有的開發人員設定
+## <a name="get-all-developer-settings-at-once"></a>同時取得所有的開發人員設定
 
 **要求**
 
@@ -51,7 +59,7 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-## 一次取得一個設定
+## <a name="get-settings-one-at-a-time"></a>一次取得一個設定
 設定也可以個別擷取。
 
 **要求**
@@ -92,7 +100,7 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-## 設定設定的值
+## <a name="set-the-value-of-a-setting"></a>設定設定的值
 您可以設定設定的值。
 
 **要求**
@@ -133,10 +141,5 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

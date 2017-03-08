@@ -2,27 +2,34 @@
 author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "追蹤最近使用的檔案和資料夾"
-description: "將使用者經常存取的檔案新增到您 app 的最近使用清單 (MRU) 中，以追蹤這些檔案。"
+description: "將使用者經常存取的檔案新增到您應用程式的最近使用清單 (MRU) 中，以追蹤這些檔案。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c8f8cd6681b4e00e8430d7ddfacdd8fad395365c
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="track-recently-used-files-and-folders"></a>追蹤最近使用的檔案和資料夾
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
 - [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
 - [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
 
 將使用者經常存取的檔案新增到您 app 的最近使用清單中 (MRU)，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。
 
-從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) 物件，所以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件 (代表檔案) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件 (代表資料夾) 都可以新增到 MRU。
+從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) 類別，代表您的應用程式的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) 物件，所以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件 (代表檔案) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件 (代表資料夾) 都可以新增到 MRU。
 
-**注意** 另請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+**注意**  另請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
  
 
@@ -55,7 +62,7 @@ ms.openlocfilehash: fc873da2d0b48cdc614fa319a294e67642440cdf
 
     [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) 是多載。 在這個範例中，我們使用 [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481)，以便將中繼資料與檔案建立關聯。 設定中繼資料可讓您記錄項目的用途，例如「個人檔案圖片」。 您也可以藉由呼叫 [**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480)，在沒有中繼資料的情況下，將檔案新增到 MRU 中。 當您將項目新增到 MRU 時，該方法會傳回唯一的識別字串 (稱為權杖)，可用來擷取該項目。
 
-    **提示** 您需要此權杖才能從 MRU 擷取項目，請保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)。
+    **提示**   您需要此權杖才能從 MRU 擷取項目，請保存在別處。 如需 app 資料的詳細資訊，請參閱[管理應用程式資料](https://msdn.microsoft.com/library/windows/apps/hh465109)。
 
      
 
@@ -93,7 +100,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 
 ## <a name="future-access-list"></a>未來存取清單
 
-如同 MRU 一樣，您的 app 也有一個未來存取清單。 您的使用者會挑選檔案和資料夾，以授權您的 app 存取原本可能無法存取的項目。 如果您將這些項目新增到未來存取清單，則可以保留該權限，讓您的 app 稍後再次存取這些項目。 從靜態 [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性取得的 [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) 類別，代表您 app 的未來存取清單。
+如同 MRU 一樣，您的 app 也有一個未來存取清單。 您的使用者會挑選檔案和資料夾，以授權您的 app 存取原本可能無法存取的項目。 如果您將這些項目新增到未來存取清單，則可以保留該權限，讓您的 app 稍後再次存取這些項目。 從靜態 [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性取得的 [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) 類別，代表您應用程式的未來存取清單。
 
 當使用者挑選項目時，請考慮將此項目新增到您的未來存取清單及 MRU。
 
@@ -103,9 +110,4 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

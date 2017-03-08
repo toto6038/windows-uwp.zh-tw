@@ -6,9 +6,16 @@ ms.assetid: 8D4E4162-1C9C-48F4-8A94-34976FB17079
 label: Page layouts with XAML
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: b8bb8a9468f8ac8eee9b94c5551246753016e3c1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c4c03e48c9957d78cfa8c4287c4e99b73b5609b0
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="define-page-layouts-with-xaml"></a>使用 XAML 定義頁面版面配置
@@ -444,8 +451,3 @@ else
 ## <a name="sample-code"></a>範例程式碼
 *   [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)<br/>
     以互動式格式查看所有 XAML 控制項。
-
-
-<!--HONumber=Dec16_HO2-->
-
-

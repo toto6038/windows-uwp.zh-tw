@@ -2,9 +2,17 @@
 author: jnHs
 Description: "了解 Microsoft 寄發的稅單，包括哪些人會接收到以及收到的時機。"
 title: "了解 Microsoft 寄發的 IRS 稅單"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 translationtype: Human Translation
-ms.sourcegitcommit: 684a76a503a0adefb1754059ffa6aa8d4d8d940b
-ms.openlocfilehash: 2927588bc096ef1ed9e8451cea73ba78efa9d7c0
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 5f51e1c5a44767e49b5c3dc5f578c2532da11008
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -43,7 +51,7 @@ EIN: \*\*\*\*\*4442<br>
 <br>
 **或**<br>
 <br>
-我在適用的納税年度從 Microsoft 收到 $600  美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
+我在適用的納税年度從 Microsoft 收到 $600 美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
     <td valign="top">**1099-MISC**：<br>
 付款者：Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
@@ -54,16 +62,16 @@ EIN: \*\*\*\*\*4442<br>
     <td valign="top">上述項目皆不適用。</td>
     <td valign="top">無</td>
   </tr>
-</table>
-
-
-<table>
+  <tr>
+    <td valign="top">&nbsp;</td>
+    <td valign="top">&nbsp;</td>
+  </tr>
   <tr>
      <th>若我是銷售付費應用程式的美國開發人員且... </th>
      <th> 我應收到此表單</th>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**至少 $600  美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**至少 $600 美元的款項**</td>
     <td valign="top">**1099-MISC**：<br>
 付款者：Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
@@ -71,7 +79,7 @@ EIN: \*\*\*\*\*0505<br>
 **重要：**部分商務實體不會收到 1099-MISC 表單，無論自 Microsoft 收到的款項額多少皆然。  如需進一步的資訊，請洽詢您的稅務專業人員。  </td>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**少於 $600  美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**少於 $600 美元的款項**</td>
      <td valign="top">無</td>
   </tr>
 </table>
@@ -119,9 +127,4 @@ EIN: \*\*\*\*\*0505<br>
 
 
 > **備註** 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](http://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

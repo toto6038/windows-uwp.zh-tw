@@ -2,13 +2,21 @@
 author: WilliamsJason
 title: "開發 UWP 時如何使用 Fiddler 搭配 Xbox One"
 description: "描述如何使用免費軟體 Fiddler 工具，在 UWP Xbox One 開發人員套件上查看網路流量。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 translationtype: Human Translation
-ms.sourcegitcommit: 11c6cffab7934937b6d89c30e4d03ae752f6b3b7
-ms.openlocfilehash: 241fa495c7277fe2bf4feafeb4062842f97e59b1
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: c7ebd56205db2674df5da6d64ecc9332aa96230e
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 開發 UWP 時如何使用 Fiddler 搭配 Xbox One
+# <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>如何在針對 UWP 進行開發時使用 Fiddler 搭配 Xbox One
 
 Fiddler 是 Web 偵錯 Proxy，它會記錄您的 Xbox One 開發人員套件與網際網路之間所有的 HTTP 與 HTTPS 流量。 您將使用它來記錄與調查 Xbox 服務與信賴憑證者 Web 服務的進出流量，以了解 Web 服務的呼叫並偵錯。 
 
@@ -18,7 +26,7 @@ Fiddler 是免費軟體，可以從 [Fiddler 網站](http://www.fiddler2.com/fid
 
 Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler 的電腦停用上游連線，直到主機的驗證到期之前，主機可能無法偵測到這個中斷連線。 如果您正在使用 Fiddler，請務必中斷主機與執行 Fiddler 電腦之間的連線，而不要使用 Fiddler 模擬中斷連線。
 
-### 在開發電腦上安裝並啟用 Fiddler
+### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>在開發電腦上安裝並啟用 Fiddler
 請依照以下步驟安裝並啟用 Fiddler 來監視您的開發人員套件流量：
 
 1. 依照 [Fiddler 網站](http://www.fiddler2.com/fiddler2/)上的指示，在您的開發電腦上安裝 Fiddler。 
@@ -52,7 +60,7 @@ Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler �
   4. 按一下 [Export Root Certificate to Desktop]**** (匯出根憑證到桌面)。
 7. 結束並重新啟動 Fiddler。
 
-### 設定開發人員套件使用 Fiddler 作為其網際網路的 Proxy
+### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a>設定開發人員套件使用 Fiddler 作為其網際網路的 Proxy
 
 1. 瀏覽至 Xbox 裝置入口網站 UI 中的 [網路]**** 工具。
 2. 瀏覽您匯出到桌面的 Fiddler 根憑證。 
@@ -60,7 +68,7 @@ Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler �
 4. 輸入 Fiddler 正在接聽的連接埠號碼 (根據預設，Fiddler 會使用連接埠 8888)。 
 5. 按一下 [啟用]****。 這會重新啟動您的開發人員套件。
 
-### 停止使用 Fiddler
+### <a name="to-stop-using-fiddler"></a>停止使用 Fiddler
 若要停止使用 Fiddler 作為網際網路的 Proxy (並停止 Fiddler 追蹤所有的開發人員套件網路流量)，請執行下列動作：
 
 1. 瀏覽至 Xbox 裝置入口網站 UI 中的 [網路]**** 工具。
@@ -69,16 +77,11 @@ Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler �
 > [!NOTE]
 > 每部安裝 Fiddler 的電腦都會使用不同的 Fiddler 根憑證。 如果您有多部可能用來提供 Fiddler Proxy 給開發人員套件的電腦，在它們之間切換時您必須選取新的根憑證。 如果您只使用一部電腦，則您只需要在第一次啟用 Fiddler 時選取根憑證即可。 您仍必須指定 IP 位址與連接埠。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Fiddler 設定 API 參考](wdp-fiddler-api.md)
 - [常見問題集](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

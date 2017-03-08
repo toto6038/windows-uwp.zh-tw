@@ -2,16 +2,24 @@
 author: payzer
 title: "如何關閉縮放比例"
 description: "關閉預設縮放比例的指示。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 6e68c1fc-a407-4c0b-b0f4-e445ccb72ff3
 translationtype: Human Translation
-ms.sourcegitcommit: 582f5677c15f7cd62c398103b48743ba4bea6c5b
-ms.openlocfilehash: 8079be9685558277565766fa8d0ebbfd4a555904
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 908620cd9f8bb3b1155b3e5d1fd777a91d254ef1
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 如何關閉縮放比例   
-根據預設，若為 XAML，應用程式會調整為 200%，若為 HTML app 則為 150%。 您可以關閉預設縮放比例。 這會導致應用程式使用裝置的實際像素尺寸 (1910 x 1080 像素)。   
+# <a name="how-to-turn-off-scaling"></a>如何關閉縮放比例   
+根據預設，若為 XAML，應用程式會調整為 200%，若為 HTML 應用程式則為 150%。 您可以關閉預設縮放比例。 這會導致應用程式使用裝置的實際像素尺寸 (1910 x 1080 像素)。   
    
-## HTML   
+## <a name="html"></a>HTML   
 您可以使用下列程式碼片段，選擇不使用縮放比例︰ 
    
 ```
@@ -28,22 +36,17 @@ var result = Windows.UI.ViewManagement.ApplicationViewScaling.trySetDisableLayou
 }   
 ```
 
-## XAML
+## <a name="xaml"></a>XAML
 您可以使用下列程式碼片段，選擇不使用縮放比例︰   
    
 ```
 bool result = Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
 ```
    
-## DirectX/C++   
+## <a name="directxc"></a>DirectX/C++   
 DirectX/C++ 應用程式不會進行縮放。 自動縮放僅適用於 HTML 與 XAML 應用程式。  
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Xbox 的最佳做法](tailoring-for-xbox.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

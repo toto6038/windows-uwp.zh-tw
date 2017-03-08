@@ -1,20 +1,27 @@
 ---
 author: jnHs
-Description: "讓您的 app 成為矚目的焦點！ 除了讓您的 app 達到最好的功能之外，還有一些您可以做到的事，就是讓 Windows 市集和其他網站更容易展現您的 app，讓更多人注意到它。"
-title: "讓您的 app 更容易促銷"
+Description: "讓您的 app 成為矚目的焦點！ 除了讓您的應用程式達到最好的功能之外，還有一些您可以做到的事，就是讓 Windows 市集和其他網站更容易展現您的應用程式，讓更多人注意到它。"
+title: "讓您的應用程式更容易促銷"
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: aa35a1e46c5fea9bb64602af3842735f1914b039
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 07cca18b97a50fe8ced8b76094d358b948d18535
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 讓您的 app 更容易促銷
+# <a name="make-your-app-easier-to-promote"></a>讓您的應用程式更容易促銷
 
 
 讓您的 app 成為矚目的焦點！ 除了讓您的應用程式達到最好的功能之外，還有一些您可以做到的事，就是讓 Windows 市集和其他網站更容易展現您的應用程式，讓更多人注意到它。
 
-## Windows 市集對於精選應用程式的需求
+## <a name="windows-store-requirements-for-featured-apps"></a>Windows 市集對於精選應用程式的需求
 
 
 Windows 市集會依類別或主題分組展示不同的應用程式。 因為有太多好的應用程式值得推薦，所以並不能保證您的應用程式一定能入選。 不過，您可以做幾件事情來確保您的應用程式符合市集考慮宣傳的條件。
@@ -27,7 +34,7 @@ Windows 市集會依類別或主題分組展示不同的應用程式。 因為�
 
 -   **只建置一個版本的 app，不要建置免費版本和另一個付費版本**
 
-    如果要分別發佈同一個 app 的免費和付費版本，不如提供付費 app 的免費試用版，或是提供免費 app，但可透過在 app 內購買新增加強的功能。 如此一來，您的 app 將會包含一個適用於所有使用者的清單：無論是只對免費下載有興趣的使用者，還是可能準備要購買產品的使用者。
+    如果要分別發佈同一個 app 的免費和付費版本，不如提供付費 app 的免費試用版，或是提供免費 app，但可透過在在應用程式內購買新增加強的功能。 如此一來，您的 app 將會包含一個適用於所有使用者的清單：無論是只對免費下載有興趣的使用者，還是可能準備要購買產品的使用者。
 
 -   **針對包含 16+ 和 18+ 內容的 app 啟用篩選**
 
@@ -45,10 +52,5 @@ Windows 市集會依類別或主題分組展示不同的應用程式。 因為�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

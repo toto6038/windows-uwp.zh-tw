@@ -3,15 +3,22 @@ author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: "本主題說明如何使用 FaceDetector 來偵測影像中的臉部。 FaceTracker 已進行最佳化，可在一連串視訊框架中用來追蹤隨著時間改變的臉部。"
 title: "偵測影像或影片中的臉部"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7526d5ddfbaa6f5128ef5775bc75cc48768f647d
-ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 72e5804ea592dc2a9478cba766decaadf611e88e
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 偵測影像或影片中的臉部
+# <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
@@ -22,7 +29,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 本文中的程式碼是採用[基本臉部偵測](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本臉部追蹤](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)範例的程式碼。 您可以下載這些範例來查看內容中使用的程式碼，或是使用此範例做為自己 app 的起點。
 
-## 偵測單一影像中的臉部
+## <a name="detect-faces-in-a-single-image"></a>偵測單一影像中的臉部
 
 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 類別可讓您偵測靜物影像中的一或多個臉部。
 
@@ -68,7 +75,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ShowDetectedFaces](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetShowDetectedFaces)]
 
-## 追蹤一系列畫面中的臉部
+## <a name="track-faces-in-a-sequence-of-frames"></a>追蹤一系列畫面中的臉部
 
 如果您想要偵測影片中的臉部，比起 [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) 類別，更有效率的方式是使用 [**FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) 類別 (儘管這兩者的實作步驟非常類似)。 **FaceTracker** 會使用先前處理過的畫面相關資訊來將偵測程序最佳化。
 
@@ -92,7 +99,7 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 
 [!code-cs[ProcessCurrentVideoFrame](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetProcessCurrentVideoFrame)]
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [媒體擷取的場景分析](scene-analysis-for-media-capture.md)
 * [基本臉部偵測範例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
@@ -100,9 +107,4 @@ ms.openlocfilehash: 4f0fa85639711302a2f6eb187cde8f7a94de70df
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒體播放](media-playback.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

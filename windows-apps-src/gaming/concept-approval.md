@@ -2,28 +2,30 @@
 author: eliotcowley
 title: "概念核准"
 description: "了解如何提交您的產品以進行概念核准，如果您的產品會在 Xbox 上執行或使用 Xbox Live，就需要進行概念核准。"
-ms.assetid: 
+ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 概念核准"
 translationtype: Human Translation
-ms.sourcegitcommit: 3f5ad2c90c836a685c43ad3a93f6abd10b86fbb8
-ms.openlocfilehash: 1f77ca4191de09361bae752ba72fd6239c44ad1b
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 43c4448e7a581dae69f44c64fd2068e79cb6c7ed
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 概念核准
+# <a name="concept-approval"></a>概念核准
 
-當您開始建置將在 Xbox 上執行的遊戲時，您需要先將遊戲相關的提案提交給 Microsoft 進行*概念核准*才能發行。 您與 Microsoft 都能從這份直接且高層級的提交獲得益處，因為它能在程序的初期就識別出整體遊戲計劃中可能的困難與缺點。 請盡量確認您的內容不會過度不雅、具冒犯性，或具爭議性，且其在目標平台上能順暢執行。 一旦提交您的提案之後，Microsoft 會檢閱提案並通知您結果。
+當您開始建置將在 Xbox 上執行的遊戲時，您需要先將遊戲相關的提案提交給 Microsoft 進行「概念核准」**才能發行。 您與 Microsoft 都能從這份直接且高層級的提交獲得益處，因為它能在程序的初期就識別出整體遊戲計劃中可能的困難與缺點。 請盡量確認您的內容不會過度不雅、具冒犯性，或具爭議性，且其在目標平台上能順暢執行。 一旦提交您的提案之後，Microsoft 會檢閱提案並通知您結果。
 
-如果您正在開發通用 Windows 平台 (UWP) 遊戲，則只有在您想要讓客戶在 Xbox 裝置上下載它，或要啟用 Xbox Live 功能的情況下才需要概念核准。 如果您只要讓您的 UWP 遊戲可在 Windows 電腦或行動裝置上使用 (或如果您是發行以任何裝置為目標的「非遊戲」UWP App) 且不使用 Xbox Live，您只需要一個[開發人員帳戶](https://go.microsoft.com/fwlink/?LinkId=817223)，就能透過儀表板自由設定並提交您的 App 到市集。
+如果您正在開發通用 Windows 平台 (UWP) 遊戲，則只有在您想要讓客戶在 Xbox 裝置上下載它，或要啟用 Xbox Live 功能的情況下才需要概念核准。 如果您只要讓您的 UWP 遊戲可在 Windows 電腦或行動裝置上使用 (或如果您是發行以任何裝置為目標的*「非遊戲」*UWP App) 且不使用 Xbox Live，您只需要一個[開發人員帳戶](https://go.microsoft.com/fwlink/?LinkId=817223)，就能透過儀表板自由設定並提交您的 App 到市集。
 
-## 提交您的概念進行核准
+## <a name="submit-your-concept-for-approval"></a>提交您的概念進行核准
 
-如果您是獨立的遊戲開發人員或發行者，您可以透過 ID@Xbox 計劃提交您的概念。 深入了解 ID@Xbox 並在[這裡](http://www.xbox.com/en-US/Developers/id)申請。
+如果您是獨立的遊戲開發人員或發行者，您可以透過 ID@Xbox 計劃提交您的概念。 深入了解 ID@Xbox 並在[這裡](http://www.xbox.com/Developers/id)申請。
 
 如果您已經是 ID@Xbox 開發人員，系統應該已經傳送「遊戲資訊表單」(GIF) 的連結給您，讓您提交遊戲概念。 如有疑問，請連絡 [id@xbox.com](mailto:id@xbox.com)。
 
 如您目前已經有和 Microsoft 簽訂授權合約，請連絡您的 Microsoft 帳戶小組以取得提交概念的資訊。
-
-
-<!--HONumber=Nov16_HO1-->
-
-

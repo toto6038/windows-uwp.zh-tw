@@ -1,18 +1,25 @@
 ---
 author: jnHs
-Description: "在您提交 app 時，可以選擇使用「認證注意事項」頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。"
+Description: "在您提交 app 時，可以選擇使用「認證注意事項」頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的應用程式。"
 title: "認證注意事項"
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 92a110879f6ff92b3e1e41964ff6acea6b7cb5ec
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 認證注意事項
+# <a name="notes-for-certification"></a>認證注意事項
 
 
-在您提交 app 時，可以選擇使用**認證注意事項**頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。
+在您提交應用程式時，可以選擇使用**認證注意事項**頁面，為認證測試人員提供額外的資訊。 這些資訊有助於確保正確測試您的 app。
 
 記得包含下列各項資料 (如果適用於您的應用程式)：
 
@@ -44,10 +51,5 @@ ms.openlocfilehash: 9f8bc1fc435c0ee25220c60d68a5adaa34ff6214
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -5,12 +5,19 @@ ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 title: "協助工具應避免的做法"
 label: Accessibility practices to avoid
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 014fb096817a25651188821fa59b202d260781d5
-ms.openlocfilehash: 382899f038e2ac2ad6e34e98b3ba4849e9685d10
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 27e91fad32818a920f393cba703773ea7fddcf0d
+ms.lasthandoff: 02/07/2017
 
 ---
-# 協助工具應避免的做法
+# <a name="accessibility-practices-to-avoid"></a>協助工具應避免的做法
 
 如果您想要建立無障礙的通用 Windows 平台 (UWP) App，請查看這份清單以了解應避免的做法： 
 
@@ -29,13 +36,8 @@ ms.openlocfilehash: 382899f038e2ac2ad6e34e98b3ba4849e9685d10
 * **勿自動變更使用者的上下文或自動啟動功能。** 應該只在使用者在焦點所在的 UI 元素上採取直接的動作之後，才變更上下文或啟動某項功能。 變更使用者上下文包括變更焦點、顯示新內容以及瀏覽其他頁面。 沒有使用者的介入而變更上下文，會造成殘障者的混亂。 此需求的例外情況包括顯示子功能表、查驗表單正確性、在其他控制項顯示說明內容，以及回應非同步事件。
 
 <span id="related_topics"/>
-## 相關主題  
+## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [市集中的協助工具](accessibility-in-the-store.md)
 * [協助工具檢查清單](accessibility-checklist.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

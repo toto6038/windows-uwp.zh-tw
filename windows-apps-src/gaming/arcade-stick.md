@@ -1,17 +1,24 @@
 ---
 author: mithom
 title: "電動搖桿"
-description: "使用 Windows.Gaming.Input 電動搖桿 API，偵測和讀取電動搖桿。"
+description: "使用 Windows.Gaming.Input 機台搖桿 API，偵測和讀取機台搖桿。"
 ms.assetid: 2E52232F-3014-4C8C-B39D-FAC478BA3E01
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, 機台搖桿, 輸入"
 translationtype: Human Translation
-ms.sourcegitcommit: 31dc2428175fc0afc84f30537898748300c7b242
-ms.openlocfilehash: 9fd90cbb8be3a0b2d234eff8a13a98b7f406aadf
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: b0411dcf1fd75ec7dc31d29a39e95f5c26073953
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="arcade-stick"></a>電動搖桿
+# <a name="arcade-stick"></a>機台搖桿
 
-此頁面說明使用 [Windows.Gaming.Input.ArcadeStick][arcadestick] 的 Xbox One 電動搖桿程式設計基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
+此頁面說明使用 [Windows.Gaming.Input.ArcadeStick][arcadestick] 的 Xbox One 機台搖桿程式設計基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
 
 閱讀此頁面，即可了解：
 * 如何收集所連接電動搖桿和其使用者的清單
@@ -160,9 +167,4 @@ if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 [getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestick.getcurrentreading.aspx
 [arcadestickreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestickreading.aspx
 [arcadestickbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestickbuttons.aspx
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

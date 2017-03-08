@@ -3,20 +3,27 @@ author: mtoepke
 title: "遊戲的網路功能"
 description: "了解如何在您的 DirectX 遊戲中開發與納入網路功能。"
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 網路功能, directx"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 2a9b42ab2cab6a1f4330759c0ff114e985eb3c20
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 遊戲的網路功能
+# <a name="networking-for-games"></a>遊戲的網路功能
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在您的 DirectX 遊戲中開發與納入網路功能。
 
-## 概念簡介
+## <a name="concepts-at-a-glance"></a>概念簡介
 
 
 不論您的 DirectX 遊戲是簡單的獨立遊戲或大型的多人遊戲，都可在遊戲中使用多種不同的網路功能。 最簡單的網路運用就是將使用者名稱與遊戲分數儲存在中央網路伺服器。
@@ -35,7 +42,7 @@ ms.openlocfilehash: 2a9b42ab2cab6a1f4330759c0ff114e985eb3c20
 
 網路隔離是 Windows 使用的應用程式安全性模型的一部分。 Windows 會主動探索網路界限並為網路隔離強制網路存取限制。 應用程式必須宣告網路隔離功能，才能定義網路存取的範圍。 若未宣告這些功能，應用程式將無法存取網路資源。 若要 深入了解 Windows 如何強制執行應用程式的網路隔離，請參閱[如何設定網路隔離功能](https://msdn.microsoft.com/library/windows/apps/hh770532)。
 
-## 設計考量
+## <a name="design-considerations"></a>設計考量
 
 
 DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API 是很重要的。 Windows 支援各種不同的網路 API，讓您的 應用程式可以透過網際網路或私人網路與其他電腦或裝置通訊。 您首先要做的是找出應用程式所需的網路功能。
@@ -47,7 +54,7 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 -   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 類別提供可用於 Windows 市集遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
 -   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別提供用於 Windows 市集遊戲的最新 HTTP 用戶端 API。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
 
-## 處理您的 DirectX 遊戲中的網路例外狀況
+## <a name="handling-network-exceptions-in-your-directx-game"></a>處理您的 DirectX 遊戲中的網路例外狀況
 
 
 當您的 DirectX 遊戲中發生網路例外狀況時，表示有嚴重的問題或失敗。 使用網路 API 時，有許多原因會導致例外狀況發生。 例外狀況通常是因為網路連線變更，或是遠端主機或伺服器發生其他網路問題。
@@ -74,7 +81,7 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 -   擷取導致例外狀況的錯誤 **HRESULT** 值的方法。 可能的 **HRESULT** 值的可能性清單過大且未指定。 使用任何網路 API 都可擷取 **HRESULT** 值。
 -   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 的通訊端類別可使用協助程式方法。
 
-### Windows.Networking.Sockets 中的例外狀況
+### <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets 中的例外狀況
 
 如果傳送的字串不是有效的主機名稱 (包含不允許在主機名稱中使用的字元)，與通訊端一起使用的 [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) 類別的建構函式會發生例外狀況。 如果 app 取得使用者在遊戲的對等連線為 **HostName** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的主機名稱。
 
@@ -217,7 +224,7 @@ using namespace Windows::Networking::Sockets;
 
 ```
 
-### Windows.Web.Http 中的例外狀況
+### <a name="exceptions-in-windowswebhttp"></a>Windows.Web.Http 中的例外狀況
 
 如果傳送的字串不是有效的 URI (包含不允許在 URI 中使用的字元)，與 [**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 一起使用的 [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 類別的建構函式會發生例外狀況。 在 C++ 中，沒有可以嘗試將字串剖析為 URI 的方法。 如果 app 取得使用者為 **Windows::Foundation::Uri** 輸入的值，則建構函式應在 try/catch 區塊中。 如果發生例外狀況，app 可通知使用者並要求新的 URI。
 
@@ -362,7 +369,7 @@ using namespace Windows::Web::Http;
 
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 **其他資源**
@@ -389,9 +396,4 @@ using namespace Windows::Web::Http;
 * [HttpClient 範例]( http://go.microsoft.com/fwlink/p/?linkid=242550)
 * [鄰近性範例](http://go.microsoft.com/fwlink/p/?linkid=245082)
 * [StreamSocket 範例](http://go.microsoft.com/fwlink/p/?linkid=243037)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

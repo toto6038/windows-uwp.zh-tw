@@ -1,17 +1,24 @@
 ---
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
 description: "本節說明如何在通用 Windows 平台 (UWP) 應用程式之間分享資料，包括如何使用分享協定、複製並貼上，以及拖放。"
-title: "App 間通訊"
+title: "應用程式間通訊"
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: ea67ae5b568d1c51af3bb951fe3a68a8def8a556
-ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e8c90996324e7481a7a4dab5a1ff3f30b139276
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="app-to-app-communication"></a>App 間通訊
+# <a name="app-to-app-communication"></a>應用程式間通訊
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節說明如何在通用 Windows 平台 (UWP) 應用程式之間分享資料，包括如何使用分享協定、複製並貼上，以及拖放。
 
@@ -20,6 +27,8 @@ ms.openlocfilehash: 951e2ea29a47e362d9fdee0f597d2e7c808212b6
 App 可以用兩種方式支援分享功能。 第一種，app 可以是「來源 app」，提供使用者要分享的內容。 第二種，app 可以是「目標 app」，使用者選取做為分享內容的目的地 App 可以既是來源 App 也是目標 App。 如果您希望將 App 當作來源 App 來分享內容，您需要決定 App 可以提供的資料格式。
 
 除了分享協定之外，App 也可以整合傳統的資料傳輸技術，例如拖放或複製並貼上。 除了 UWP app 之間的通訊之外，這些方法也支援分享至傳統型應用程式及從傳統型應用程式分享。
+
+
 
 ## <a name="in-this-section"></a>本節內容
 
@@ -32,9 +41,4 @@ App 可以用兩種方式支援分享功能。 第一種，app 可以是「來�
 
 ## <a name="see-also"></a>另請參閱
 - [開發 UWP app](https://developer.microsoft.com/windows/develop)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

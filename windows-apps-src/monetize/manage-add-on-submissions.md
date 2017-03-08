@@ -3,9 +3,16 @@ author: mcleanbyron
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理附加元件提交。"
 title: "使用 Windows 市集提交 API 管理附加元件提交"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件提 交, 應用程式內產品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 020c8b3f4d9785842bbe127dd391d92af0962117
-ms.openlocfilehash: 1a1ace9d456089d4bed2dd4ac4f39479dc8faa52
+ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
+ms.openlocfilehash: 589946e159202c3ed5d13057642c808d5df4f738
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -13,9 +20,14 @@ ms.openlocfilehash: 1a1ace9d456089d4bed2dd4ac4f39479dc8faa52
 
 Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱為應用程式內產品或 IAP) 提交的應用程式。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。 附加元件必須已經存在於您的開發人員中心帳戶，您才能使用這些方法來建立或管理附加元件的提交。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)或使用[管理附加元件](manage-add-ons.md)中所述的 Windows 市集提交 API 方法來建立附加元件。
+>**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
 
-使用下列方法取得、建立、更新、認可或刪除附加元件提交。
+>**重要**&nbsp;&nbsp;如果您使用 Windows 市集提交 API 以建立附加元件的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+
+<span id="methods-for-add-on-submissions" />
+## <a name="methods-for-managing-add-on-submissions"></a>管理附加元件提交的方法
+
+使用下列方法取得、建立、更新、認可或刪除附加元件提交。 使用這些方法之前，附加元件必須已經存在於開發人員中心帳戶中。 您可以在儀表板中藉由[定義其產品類型和產品識別碼](../publish/set-your-add-on-product-id.md)，或使用[管理附加元件](manage-add-ons.md)中所述的 Windows 市集提交 API 方法來建立附加元件。
 
 <table>
 <colgroup>
@@ -141,6 +153,8 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 * [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
 
+>**注意**&nbsp;&nbsp;：除了列示於上方的程式碼範例，我們也提供在 Windows 市集中提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+
 <span/>
 ## <a name="data-resources"></a>資料資源
 
@@ -183,7 +197,8 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
       "US": "Tier4",
     },
     "sales": [],
-    "priceId": "Free"
+    "priceId": "Free",
+    "isAdvancedPricingModel": "true"
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -230,7 +245,7 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 | status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
 | fileUploadUrl           | 字串  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立附加元件提交](#create-an-add-on-submission)。  |
-| friendlyName  | 字串  |  基於顯示用途而使用的附加元件易記名稱。  |
+| friendlyName  | 字串  |  提交的易記名稱，如開發人員中心儀表板所示。 當您建立提交時，也會為您產生此值。  |
 
 <span id="listing-object" />
 ### <a name="listing-resource"></a>清單資源
@@ -262,7 +277,8 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 |-----------------|---------|------|
 |  marketSpecificPricings               |    物件     |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[價格區間](#price-tiers)。 這些項目代表[您的附加元件在特定市場中的自訂價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#markets-and-custom-prices)。 這個字典中的任何項目都會覆寫特定市場的 *priceId* 值所指定的基本價格。     |     
 |  sales               |   陣列      |  **過時**。 包含附加元件的銷售資訊的[銷售資源](#sale-object)陣列。     |     
-|  priceId               |   字串      |  指定附加元件[基本價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[價格區間](#price-tiers)。    |
+|  priceId               |   字串      |  指定附加元件[基本價格](https://msdn.microsoft.com/windows/uwp/publish/set-iap-pricing-and-availability#base-price)的[價格區間](#price-tiers)。    |    
+|  isAdvancedPricingModel               |   布林值      |  若為 **true**，您的開發人員帳戶可以存取從 .99 美元到 1999.99 美元的展開價格區間。 若為 **false**，您的開發人員帳戶可以存取從 .99 美元到 999.99 美元的原始價格區間。 如需不同區間的詳細資訊，請參閱[價格區間](#price-tiers)。<br/><br/>**注意**&nbsp;&nbsp;此欄位為唯讀。   |
 
 
 <span id="sale-object" />
@@ -325,15 +341,14 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 <span id="price-tiers" />
 ### <a name="price-tiers"></a>價格區間
 
-下列值代表附加元件提交可用的價格區間。
+下列值代表附加元件提交的[價格資源](#pricing-object)資源的可用價格區間。
 
 | 值           | 描述       |
 |-----------------|------|
-|  Base               |   未設定價格區間；使用附加元件的基本價格。      |     
+|  基本               |   未設定價格區間；使用附加元件的基本價格。      |     
 |  NotAvailable              |   特定區域中無法使用此附加元件。    |     
 |  Free              |   附加元件是免費的。    |    
-|  從 Tier2 到 Tier194               |   Tier2 代表 0.99 美元的價格區間。 每一個額外的層級代表額外的遞增 (1.29 美元、1.49 美元、1.99 美元等)。    |
-
+|  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整價格區表，包括與每一層相關聯的市場特定價格，請移至適用於開發人員中心儀表板中的應用程式提交的任何**價格與可用性**網頁，並按一下 \[市場和自訂價格\]****區段的**檢視表格**連結 (對於某些開發人員帳戶，此連結為**價格**區段)。     |
 
 <span id="submission-status-code" />
 ### <a name="submission-status-code"></a>提交狀態碼
@@ -364,9 +379,4 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 市集提交 API 管理附加元件](manage-add-ons.md)
 * [開發人員中心儀表板中的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

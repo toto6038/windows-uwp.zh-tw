@@ -3,13 +3,20 @@ title: "密碼編譯"
 description: "本文提供通用 Windows 平台 (UWP) 應用程式所提供的密碼編譯功能概觀。 如需特定工作的詳細資訊，請參閱本文結尾的表格。"
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 3329a873b0e86a606d6e8899dcaca62c2e127c29
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 密碼編譯
+# <a name="cryptography"></a>密碼編譯
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -17,7 +24,7 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 
 本文提供通用 Windows 平台 (UWP) 應用程式所提供的密碼編譯功能概觀。 如需特定工作的詳細資訊，請參閱本文結尾的表格。
 
-## 詞彙
+## <a name="terminology"></a>詞彙
 
 
 下列為密碼編譯和公開金鑰基礎結構 (PKI) 中常用的詞彙。
@@ -40,11 +47,11 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 | X.509 憑證           | 一種數位文件，通常由憑證授權單位發出，用於向其他相關各方來驗證個人、系統或實體的身分。                                            |
 
  
-## 命名空間
+## <a name="namespaces"></a>命名空間
 
 下列是應用程式中可供使用的命名空間。
 
-### Windows.Security.Cryptography
+### <a name="windowssecuritycryptography"></a>Windows.Security.Cryptography
 
 包含 CryptographicBuffer 類別和靜態方法，讓您能夠：
 
@@ -53,7 +60,7 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 -   加密訊息以進行網路傳輸
 -   傳輸之後將訊息解密
 
-### Windows.Security.Cryptography.Certificates
+### <a name="windowssecuritycryptographycertificates"></a>Windows.Security.Cryptography.Certificates
 
 包含類別、介面及列舉類型，讓您能夠：
 
@@ -62,7 +69,7 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 -   匯入 PFX 檔案中的憑證
 -   指定和抓取憑證要求屬性
 
-### Windows.Security.Cryptography.Core
+### <a name="windowssecuritycryptographycore"></a>Windows.Security.Cryptography.Core
 
 包含類別和列舉類型，讓您能夠：
 
@@ -76,19 +83,19 @@ ms.openlocfilehash: c5feae97563277dc14a64d5c96cb6229b6cfb8b1
 -   使用電腦驗證代碼 (MAC) 演算法提供者
 -   使用金鑰衍生演算法提供者
 
-### Windows.Security.Cryptography.DataProtection
+### <a name="windowssecuritycryptographydataprotection"></a>Windows.Security.Cryptography.DataProtection
 
 包含類別，讓您能夠：
 
 -   非同步加密和解密靜態資料
 -   非同步加密和解密資料流
 
-## 密碼編譯與 PKI 應用程式功能
+## <a name="crypto-and-pki-application-capabilities"></a>密碼編譯與 PKI 應用程式功能
 
 
 適用於應用程式的簡化應用程式程式設計介面會啟用下列密碼編譯和公開金鑰基礎結構 (PKI) 功能：
 
-### 密碼編譯支援
+### <a name="cryptography-support"></a>密碼編譯支援
 
 您可以執行下列密碼編譯工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) 命名空間。
 
@@ -106,11 +113,11 @@ SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以
 -   靜態資料的非同步保護
 -   資料流的非同步保護
 
-### 編碼支援
+### <a name="encoding-support"></a>編碼支援
 
 應用程式可以編碼密碼編譯的資料，以便在網路上傳送，也可以解碼從網路來源收到的資料。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) 命名空間可用的靜態方法。
 
-### PKI 支援
+### <a name="pki-support"></a>PKI 支援
 
 應用程式可以執行下列 PKI 工作。 如需詳細資訊，請參閱 [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) 命名空間。
 
@@ -131,7 +138,7 @@ SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以
     -   透過一組指定簽發者鏈結的憑證
     -   從 app 存放區自動選取憑證
 
-## 詳細說明的文章
+## <a name="detailed-articles"></a>詳細說明的文章
 
 
 下列文章提供有關安全性案例的詳細資料：
@@ -146,8 +153,3 @@ SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以
 | [常見的密碼編譯工作](common-cryptography-tasks.md)                     | 下列文章提供常見的 UWP 密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。                                                                                                                                                                                                                                                                                    |
 
  
-
-
-<!--HONumber=Aug16_HO3-->
-
-

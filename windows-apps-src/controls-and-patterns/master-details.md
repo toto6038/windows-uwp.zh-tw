@@ -5,9 +5,16 @@ title: "主要/詳細資料"
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: ef57c6d1a00797e2a68291475b6a38778e5d73ad
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96f9f9855dba48203e4372cef88d1f6ab7d435f5
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
@@ -88,9 +95,4 @@ ms.openlocfilehash: ef57c6d1a00797e2a68291475b6a38778e5d73ad
 - [搜尋](search.md)
 - [應用程式列和命令列](app-bars.md)
 - [**ListView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

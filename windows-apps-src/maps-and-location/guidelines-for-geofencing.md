@@ -1,18 +1,25 @@
 ---
 author: PatrickFarley
-Description: "在 App 中遵循這些適用於地理柵欄的最佳做法。"
-title: "地理柵欄 App 的指導方針"
+Description: "在應用程式中遵循這些適用於地理柵欄的最佳做法。"
+title: "地理柵欄應用程式的指導方針"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地圖, 位置, 地理柵欄"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: e21b5b89c95a6b4988e1e95fc924ec3eefd46942
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 地理柵欄 App 的指導方針
+# <a name="guidelines-for-geofencing-apps"></a>地理柵欄應用程式的指導方針
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -22,13 +29,13 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 在應用程式中遵循這些適用於[**地理柵欄**](https://msdn.microsoft.com/library/windows/apps/dn263744)的最佳做法。
 
-## 建議
+## <a name="recommendations"></a>建議
 
 
 -   如果您的應用程式在發生 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 事件時需要網際網路存取，在建立地理柵欄之前請先檢查是否有網際網路存取。
     -   如果應用程式目前沒有網際網路存取，在設定地理柵欄之前，您可以提示使用者先連線到網際網路。
     -   如果無法使用網際網路存取，請避免耗用地理柵欄位置檢查所需的電源。
--   當地理柵欄事件指出 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 狀態的變更，請檢查時間戳記和目前的位置，確保地理柵欄通知的相關性。 如需詳細資訊，請參閱下方的[檢查時間戳記和目前位置](#timestamp)。
+-   當地理柵欄事件指出 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 狀態的變更，請檢查時間戳記和目前的位置，確保地理柵欄通知的相關性。 如需詳細資訊，請參閱下方的**檢查時間戳記和目前位置**。
 -   建立例外狀況，以管理裝置無法存取位置資訊的情況，並在必要時通知使用者。 位置資訊可能因為權限已關閉、裝置不包含 GPS 無線電、GPS 訊號被阻擋或 Wi-Fi 訊號不夠強而無法使用。
 -   通常不需要同時在前景和背景接聽地理柵欄事件。 不過，如果應用程式需要同時在前景和背景中接聽地理柵欄事件：
 
@@ -40,9 +47,9 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 -   每個應用程式不要使用 1000 個以上的地理柵欄。 實際上，系統在每個應用程式支援數千個地理柵欄，使用低於 1000 個地理柵欄，可協助降低應用程式的記憶體使用量，進而讓應用程式維持良好效能。
 -   不要建立半徑小於 50 公尺的地理柵欄。 如果您的 app 需要使用半徑較小的地理柵欄，請建議使用者在具有 GPS 無線電的裝置上使用您的 app，以確保最佳效能。
 
-## 其他用法指導方針
+## <a name="additional-usage-guidance"></a>其他用法指導方針
 
-### 檢查時間戳記和目前位置
+### <a name="checking-the-time-stamp-and-current-location"></a>檢查時間戳記和目前位置
 
 如果某個事件指出 [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exited** 狀態的變更，請檢查事件的時間戳記和您目前的位置。 系統沒有足夠的資源啟動背景工作、使用者沒有注意到通知，或裝置處於待機狀態 (在 Windows 上) 等因素，都可能影響使用者實際處理事件的時機。 例如，可能發生以下順序的情況：
 
@@ -54,7 +61,7 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 您可以從時間戳記看出之前有動作發生。 您可以從目前位置看出使用者現在已經離開地理柵欄。 視您應用程式的功能而定，您可能希望過濾掉此事件。
 
-### 背景與前景接聽程式
+### <a name="background-and-foreground-listeners"></a>背景與前景接聽程式
 
 一般而言，您的應用程式不需要同時接聽前景與背景工作中的 [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) 事件。 在碰到可能兩者都需要的狀況，最簡潔的處理方法是讓背景工作處理通知。 如果您同時設定了前景和背景地理柵欄接聽程式，則無法保證哪一個會先觸發，因此您必須一律呼叫 [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) 方法來查明是否有事件發生。
 
@@ -62,9 +69,9 @@ ms.openlocfilehash: 0a152fbc444e252ed8c2a822036e00b8869703ac
 
 ```csharp
     Windows.UI.Core.CoreWindow coreWindow;    
-    
+
     // This needs to be set before InitializeComponent sets up event registration for app visibility
-    coreWindow = CoreWindow.GetForCurrentThread(); 
+    coreWindow = CoreWindow.GetForCurrentThread();
     coreWindow.VisibilityChanged += OnVisibilityChanged;
 ```
 
@@ -114,13 +121,13 @@ function onVisibilityChanged() {
 }
 ```
 
-### 調整地理柵欄大小
+### <a name="sizing-your-geofences"></a>調整地理柵欄大小
 
 雖然 GPS 可以提供最準確的位置資訊，不過地理柵欄也可以使用 Wi-Fi 或其他定位感應器來判斷使用者的目前位置。 不過，使用那些其他方法可能會影響您可建立的地理柵欄大小。 如果正確性很低，建立小型地理柵欄不會有用處。 一般而言，建議您不要建立半徑小於 50 公尺的地理柵欄。 此外，Windows 上只會定期執行地理柵欄背景工作；如果您使用小型地理柵欄，您有可能會完全錯失 [**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) 或 **Exit** 事件。
 
 如果您的 app 需要使用半徑較小的地理柵欄，請建議使用者在具有 GPS 無線電的裝置上使用您的 app，以確保最佳效能。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 * [設定地理柵欄](https://msdn.microsoft.com/library/windows/apps/mt219702)
@@ -130,13 +137,4 @@ function onVisibilityChanged() {
  
 
  
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

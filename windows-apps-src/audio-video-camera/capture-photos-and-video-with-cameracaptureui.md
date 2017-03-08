@@ -3,9 +3,16 @@ author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "本文說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。"
 title: "使用 Windows 內建相機 UI 來擷取相片和視訊"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 65508d32995f57672f94dffa4866a86d57903d00
-ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7ddd659bc32eb8328f993fba4bfd4f137ea99d0f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -118,10 +125,5 @@ ms.openlocfilehash: 10ac3f53f0f8128985c39154f74a9348a40641b5
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

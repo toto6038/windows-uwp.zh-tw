@@ -1,14 +1,22 @@
 ---
 author: TylerMSFT
 title: "轉換 App 服務，以便與其主控 App 在相同處理序中執行"
-description: "將在不同背景處理序中執行的應用程式服務程式碼，轉換成與應用程式服務提供者在相同處理序內執行的程式碼。"
+description: "將在個別背景處理序中執行的應用程式服務程式碼，轉換成和您應用程式服務提供者在相同處理序內執行的程式碼。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 translationtype: Human Translation
-ms.sourcegitcommit: 7d1c160f8b725cd848bf8357325c6ca284b632ae
-ms.openlocfilehash: 80402d12a51ea970f5927dc50cae587be8809b87
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 1fea72237a9ac7d18fb415d5957f959542a833e8
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# 轉換 App 服務，以便與其主控 App 在相同處理序中執行
+# <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
 
 [AppServiceConnection](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceconnection.aspx) 可讓另一個應用程式喚醒您在背景中的 app，並開始與其直接通訊。
 
@@ -74,9 +82,4 @@ ms.openlocfilehash: 80402d12a51ea970f5927dc50cae587be8809b87
 當 app 收到要求，然後讀取提供的 [ValueSet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.valueset.aspx)，查看是否會出現 `Key` 和 `Value` 字串。 如果有的話，則應用程式服務會將一組 `Response` 和 `True` 字串值傳回 **AppServiceConnection** 另一端的 app。
 
 在[建立和取用 App 服務](https://msdn.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service?f=255&MSPPError=-2147217396)，深入了解連線並與其他 App 通訊。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

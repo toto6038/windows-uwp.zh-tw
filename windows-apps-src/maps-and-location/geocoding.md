@@ -3,16 +3,23 @@ author: PatrickFarley
 title: "執行地理編碼和反向地理編碼"
 description: "呼叫 Windows.Services.Maps 命名空間中 MapLocationFinder 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。"
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
+ms.author: pafarley
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 地理編碼, 地圖, 位置"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 16be7bcafaf286a71e79fb4bca01511ddc7a1ae0
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 執行地理編碼和反向地理編碼
+# <a name="perform-geocoding-and-reverse-geocoding"></a>執行地理編碼和反向地理編碼
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 呼叫 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。
@@ -28,11 +35,11 @@ ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
 -   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) 包含 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件的集合。 透過 **MapLocationFinderResult** 的 [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) 屬性存取這個集合。
 -   每個 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) 物件皆包含一個 [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) 物件。 請透過每個 **MapLocation** 的 [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) 屬性存取這個物件。
 
-**重要** 您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
+**重要**  您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
  
 
-## 取得位置 (地理編碼)
+## <a name="get-a-location-geocode"></a>取得位置 (地理編碼)
 
 
 藉由執行下列步驟，即可將地址或地點名稱轉換成地理位置 (地理編碼)。
@@ -81,7 +88,7 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## 取得地址 (反向地理編碼)
+## <a name="get-an-address-reverse-geocode"></a>取得地址 (反向地理編碼)
 
 
 藉由執行下列步驟，即可將地理位置轉換成地址 (反向地理編碼)。
@@ -123,7 +130,7 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 town = Redmond
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
 * [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
@@ -133,11 +140,4 @@ town = Redmond
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

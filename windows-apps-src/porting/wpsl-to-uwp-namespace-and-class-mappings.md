@@ -3,9 +3,16 @@ author: mcleblanc
 description: "本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。"
 title: "Windows Phone Silverlight 和 UWP 命名空間與類別對應"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 9dc441422637fe6984f0ab0f036b2dfba7d61ec7
-ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 751c0c0355e8f6c02248c6f6d61f8c62c709cd95
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -245,10 +252,5 @@ ms.openlocfilehash: dcdf17263dadd71572c942bff5e795928e855c03
  
 
 下一個主題是[移植專案](wpsl-to-uwp-porting-to-a-uwp-project.md)。
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

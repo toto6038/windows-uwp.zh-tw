@@ -1,13 +1,20 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: "處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。"
+Description: "處理用於觸控和手寫筆輸入的相同基本指標事件，即可在應用程式中回應滑鼠輸入。"
 title: "滑鼠互動"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: ed0c8e86d38865fad8bb784550b9b4fc61a8b40a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 94a92c184f4c695caf29cb7a185842ccd72e4c53
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -152,10 +159,5 @@ ms.openlocfilehash: ed0c8e86d38865fad8bb784550b9b4fc61a8b40a
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

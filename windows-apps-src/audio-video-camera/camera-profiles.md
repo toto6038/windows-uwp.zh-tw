@@ -3,13 +3,20 @@ author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
 description: "此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。 這其中包括如下的工作：選取支援特定解析度或畫面播放速率的設定檔、選取支援可同時存取多台相機的設定檔，以及選取支援 HDR 的設定檔。"
 title: "使用相機設定檔探索並選取相機功能"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 625cf715a88837cb920433fa34e47a1e1828a4c8
-ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 4e37c2e3bd2ed8738ebba88c55ceaf795e6ca084
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用相機設定檔探索並選取相機功能
+# <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>使用相機設定檔探索並選取相機功能
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -21,7 +28,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
  
 
-## 關於相機設定檔
+## <a name="about-camera-profiles"></a>關於相機設定檔
 
 不同裝置上的相機支援不同的功能，包括支援的擷取解析度、視訊擷取的畫面播放速率，以及是否支援 HDR 或可變畫面播放速率擷取。 通用 Windows 平台 (UWP) 媒體擷取架構將這組功能存放在 [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) 中。 以 [**MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) 物件表示的相機設定檔有三個媒體描述集合；一個用於相片擷取、一個用於視訊擷取，另一個用於視訊預覽。
 
@@ -31,7 +38,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 本文中的程式碼範例透過探索支援各種功能的相機設定檔來取代此最小初始化，然後會使用這些相機設定檔來初始化媒體擷取裝置。
 
-## 尋找可支援相機設定檔的視訊裝置
+## <a name="find-a-video-device-that-supports-camera-profiles"></a>尋找可支援相機設定檔的視訊裝置
 
 搜尋支援的相機設定檔之前，您應該尋找可支援使用相機設定檔的擷取裝置。 以下範例中定義的 **GetVideoProfileSupportedDeviceIdAsync** 協助程式方法使用 [**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) 方法，擷取所有可用的視訊擷取裝置清單。 它會循環顯示清單中的所有裝置，並對每個裝置呼叫靜態方法 ([**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714))，以查看是否支援視訊設定檔。 此外，每個裝置的 [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) 屬性可讓您指定您希望相機在裝置的正面或背面。
 
@@ -43,7 +50,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
 
-## 根據支援的解析度和畫面播放速率選取設定檔
+## <a name="select-a-profile-based-on-supported-resolution-and-frame-rate"></a>根據支援的解析度和畫面播放速率選取設定檔
 
 若要選取具有特定功能 (例如有達到特定解析度和畫面播放速率的能力) 的設定檔，您應該先呼叫上面定義的協助程式方法，以取得支援使用相機設定檔的擷取裝置識別碼。
 
@@ -57,7 +64,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## 選取支援並行處理的設定檔
+## <a name="select-a-profile-that-supports-concurrence"></a>選取支援並行處理的設定檔
 
 您可以使用相機設定檔來判斷裝置是否支援從多台相機可同時擷取視訊。 在這個案例中，您需要建立兩組擷取物件：一個適用於前置鏡頭，一個適用於後置鏡頭。 針對每台相機，建立 **MediaCapture**、**MediaCaptureInitializationSettings**，以及用來保存擷取裝置識別碼的字串。 此外，新增布林值變數，以追蹤是否支援並行處理。
 
@@ -71,7 +78,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
 
-## 使用已知的設定檔來尋找支援 HDR 視訊的設定檔
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>使用已知的設定檔來尋找支援 HDR 視訊的設定檔
 
 像其他案例一樣，開始選取支援 HDR 的設定檔。 建立 **MediaCaptureInitializationSettings**以及用來保存擷取裝置識別碼的字串。 新增布林值變數，以追蹤是否支援 HDR 視訊。
 
@@ -87,7 +94,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 [!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
 
-## 判斷裝置是否支援同時相片和視訊擷取
+## <a name="determine-if-a-device-supports-simultaneous-photo-and-video-capture"></a>判斷裝置是否支援同時相片和視訊擷取
 
 許多裝置都支援同時擷取相片和視訊。 若要判斷擷取裝置是否支援此功能，請呼叫 [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) 以取得裝置所支援的所有相機設定檔。 使用連結查詢來尋找至少有一個 [**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) 項目和一個 [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) 項目的設定檔，這表示此設定檔可支援同時擷取。
 
@@ -95,7 +102,7 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 您可以修改此查詢，以尋找支援特定解析度或其他功能 (同時視訊錄製除外) 的設定檔。 您也可以使用 [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) 並指定 [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) 值來擷取支援同時擷取的設定檔，但查詢所有設定檔會提供更完整的結果。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
@@ -105,10 +112,5 @@ ms.openlocfilehash: 09cb41f834de52d541addee4e44715c52f5e99dc
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

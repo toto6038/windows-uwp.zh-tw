@@ -3,17 +3,24 @@ author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: "繫結階層式資料並建立主要/詳細資料檢視"
 description: "您可以將項目控制項繫結到已繫結成一個鏈的 CollectionViewSource 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
 translationtype: Human Translation
-ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
-ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 107d4a9778b377370632b6e8d37ad3216858d251
+ms.lasthandoff: 02/07/2017
 
 ---
-# 繫結階層式資料並建立主要/詳細資料檢視
+# <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>繫結階層式資料並建立主要/詳細資料檢視
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> **注意** 另請參閱[主要/詳細資料範例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **注意**  另請參閱[主要/詳細資料範例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 您可以將項目控制項繫結到已繫結成一個鏈的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。 在本主題中，我們儘可能使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，必要時也使用更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
@@ -23,15 +30,15 @@ ms.openlocfilehash: 91786a785eece1448a36ebf48b8c8ef5c131e609
 
 ![運動階層的主要/詳細資料檢視](images/xaml-masterdetails.png)
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 這個主題假設您知道如何建立基本的 UWP app。 如需有關建立第一個 UWP app 的指示，請參閱[使用 C# 或 Visual Basic 建立您的第一個 UWP app](https://msdn.microsoft.com/library/windows/apps/Hh974581)。
 
-## 建立專案
+## <a name="create-the-project"></a>建立專案
 
 建立新的**空白應用程式 (Windows 通用)** 專案。 命名為 "MasterDetailsBinding"。
 
-## 建立資料模型
+## <a name="create-the-data-model"></a>建立資料模型
 
 將新的類別加入到專案，命名為 ViewModel.cs，然後在其中加入下列程式碼。 這將是您的繫結來源類別。
 
@@ -104,7 +111,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-## 建立檢視
+## <a name="create-the-view"></a>建立檢視
 
 接著，從代表標記頁面的類別中公開繫結來源類別。 作法是將 **LeagueList** 類型的屬性加入到 **MainPage**。
 
@@ -221,10 +228,5 @@ namespace MasterDetailsBinding
  
 
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

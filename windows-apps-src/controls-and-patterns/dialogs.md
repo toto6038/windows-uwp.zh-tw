@@ -4,9 +4,17 @@ Description: "對話方塊和飛出視窗會在使用者要求暫時性 UI 元�
 title: "對話方塊和飛出視窗"
 label: Dialogs
 template: detail.hbs
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: e76ae1e85f1512a939f2b7ee50ed205c0c55605b
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
@@ -69,7 +77,7 @@ ms.openlocfilehash: bc428b42324cd584dfaee1db3c9eb834d30cd69d
   <div class="side-by-side-content-left">
    <p><b>適合使用對話方塊的情況...</b> <br/>
 <ul>
-<li>表示使用者「必須」先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
+<li>表示使用者「必須」****先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
 <ul>
   <li>當使用者的安全性可能受到破壞時</li>
   <li>當使用者將要永久修改重要資產時</li>
@@ -306,9 +314,4 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 - [功能表和操作功能表](menus.md)
 - [**Flyout 類別**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**ContentDialog 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

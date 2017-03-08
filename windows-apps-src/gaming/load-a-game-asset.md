@@ -3,29 +3,36 @@ author: mtoepke
 title: "在 DirectX 遊戲中載入資源"
 description: "大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。"
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 遊戲, directx, 載入資源"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 09221cb853b3d327b5cb60cacec109032135eabc
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 032cde6294093a2c0a1c582312b9353a146e94da
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 在 DirectX 遊戲中載入資源
+# <a name="load-resources-in-your-directx-game"></a>在 DirectX 遊戲中載入資源
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。 本文會引導您了解在通用 Windows 平台 (UWP) 遊戲中載入這些檔案來使用時必須考量的整體事項。
 
 例如，您可能使用另一種工具建立遊戲中多邊形物件的網格，然後再以特定格式匯出。 紋理也是一樣 (甚至更是如此)：雖然通常可以使用大多數的工具來撰寫多數圖形 API 都能辨識的一般未壓縮點陣圖，但是用在遊戲中卻非常沒有效率。 本文說明載入下列三種不同類型的圖形資源以搭配 Direct3D 使用時的基本步驟：網格 (模型)、紋理 (點陣圖) 及編譯的著色器物件。
 
-## 您需要知道的事項
+## <a name="what-you-need-to-know"></a>您需要知道的事項
 
 
-### 技術
+### <a name="technologies"></a>技術
 
 -   平行模式程式庫 (ppltasks.h)
 
-### 先決條件
+### <a name="prerequisites"></a>先決條件
 
 -   了解基本 Windows 執行階段
 -   了解非同步工作
@@ -68,9 +75,9 @@ ms.openlocfilehash: 09221cb853b3d327b5cb60cacec109032135eabc
 
  
 
-## 指示
+## <a name="instructions"></a>指示
 
-### 非同步載入
+### <a name="asynchronous-loading"></a>非同步載入
 
 非同步載入使用平行模式程式庫 (PPL) 中的 **task** 範本進行處理。 **task** 包含一個後面跟著 Lambda 的方法呼叫，可以在完成後處理非同步呼叫的結果，格式通常如下：
 
@@ -194,7 +201,7 @@ void ResourceLoading::CreateDeviceResources()
 
 當然，不同的資源和資產類型通常必須先進行額外的處理或轉換，才能用在您的圖形管線中。 我們來看看三個特定類型的資源：網格、紋理及著色器。
 
-### 載入網格
+### <a name="loading-meshes"></a>載入網格
 
 網格是頂點資料，可以是由遊戲的程式碼產生，或是從另一個應用程式 (像是 3DStudio MAX 或 Alias WaveFront) 或工具匯出到檔案。 這些網格代表您遊戲中的模型，可能是像立方體和球體的簡單基本類型，或者是房子或人物。 依格式而定，它們通常也包含色彩與動畫資料。 我們將重點放在僅包含頂點資料的網格。
 
@@ -303,7 +310,7 @@ void BasicLoader::CreateMesh(
 
 接下來，讓我們來看看載入紋理。
 
-### 載入紋理
+### <a name="loading-textures"></a>載入紋理
 
 遊戲中最常見的資產 (和組成磁碟和記憶體中大多數檔案的資產) 就是紋理。 紋理和網格一樣也有多種格式，您會在載入它們時將它們轉換成 Direct3D 可以使用的格式。 紋理也有多種類型，並可用來建立不同的效果。 紋理的 MIP 層級可用來改善距離物件的外觀與效能；污漬貼圖和光照貼圖可用來層疊效果，而細節可放在基本紋理上層；一般貼圖則用於每一像素光源計算。 在新型的遊戲中，一個典型的場景可能有數千種個別的紋理，您的程式碼必須有效地管理所有的紋理！
 
@@ -514,7 +521,7 @@ void BasicLoader::CreateTexture(
 
 此外，個別的紋理或紋理「面板」可能會與特定的網格多邊形或表面對應。 此對應資料通常是由美術人員或設計師用來建立模型和紋理的工具所匯出的。 請確定在載入匯出的資料時也會擷取此資訊，因為當您執行片段著色時，將會使用它來對應正確的紋理和對應的表面。
 
-### 載入著色器
+### <a name="loading-shaders"></a>載入著色器
 
 著色器是編譯的高階著色器語言 (HLSL) 檔案，它會載入記憶體，並在圖形管線的特定階段叫用。 最常見和基本的著色器是頂點和像素著色器，它們分別會處理網格中的個別頂點和場景檢視區中的像素。 執行 HLSL 程式碼可轉換幾何、套用光源效果與紋理，以及對轉譯的場景執行後續處理。
 
@@ -689,11 +696,11 @@ task<void> BasicLoader::LoadShaderAsync(
 
 其他著色器類型 (例如輪廓和幾何著色器) 可能也需要進行特定的設定。 在 [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)和 [Direct3D 資源載入範例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)中，提供了多種著色器載入方法的完整程式碼。
 
-## 備註
+## <a name="remarks"></a>備註
 
 此時，您應該了解並能夠建立或修改非同步載入一般遊戲資源和資產 (如網格、紋理及編譯的著色器) 的方法。
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [Direct3D 資源載入範例]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
 * [BasicLoader 的完整程式碼](complete-code-for-basicloader.md)
@@ -706,10 +713,5 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

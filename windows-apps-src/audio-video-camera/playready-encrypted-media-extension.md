@@ -1,24 +1,31 @@
 ---
 author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: "本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。"
+description: "本節說明如何修改 PlayReady Web 應用程式，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。"
 title: "PlayReady 加密媒體延伸"
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 15b8c2cac08e59cfd9bd2c97c3a146cbc2be5548
-ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0698a01b1f846581422c5ecf4d47a45dd22762c4
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# PlayReady 加密媒體延伸
+# <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒體延伸
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本節說明如何修改 PlayReady Web app，以支援從舊版 Windows 8.1 到 Windows 10 版本所做的變更。
 
 使用 Internet Explorer 中的 PlayReady 媒體元素讓開發人員可以建立 Web App，能夠為使用者提供 PlayReady 內容，同時強制執行內容提供者所定義的存取規則。 本節說明如何只使用 HTML5 和 JavaScript，將 PlayReady 媒體元素新增到現有的 Web app。
 
-## PlayReady 加密媒體延伸的新功能
+## <a name="whats-new-in-playready-encrypted-media-extension"></a>PlayReady 加密媒體延伸的新功能
 
 本節提供對於 PlayReady 加密媒體延伸 (EME) 所做的變更清單，可用來在 Windows 10 上啟用 PlayReady 內容保護。
 
@@ -54,13 +61,13 @@ ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
 
     即使擁有功能更強的金鑰 (但非授權)，這項新功能仍限制以最高解析度來播放內容。 其支援使用單一金鑰編碼多個資料流大小的情況。
 
-## PlayReady 的加密媒體延伸支援
+## <a name="encrypted-media-extension-support-in-playready"></a>PlayReady 的加密媒體延伸支援
 
 本節說明 PlayReady 支援的 W3C 加密媒體延伸版本。
 
 適用於 Web apps 的 PlayReady 目前已繫結至 [2013 年 5 月 10 日的 W3C 加密媒體延伸 (EME) 草稿](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)。 在未來的 Windows 版本中，此支援將變更為更新的 EME 規格。
 
-## 使用硬體 DRM
+## <a name="use-hardware-drm"></a>使用硬體 DRM
 
 本節說明 Web app 如何使用 PlayReady 硬體 DRM，以及如果受保護的內容不支援硬體 DRM，該如何停用它。
 
@@ -71,7 +78,7 @@ ms.openlocfilehash: eb85d9ea29917788612e0aa755465dbd6d1b9ba9
 > [!NOTE]
 > 若要判斷是否支援 HEVC 內容，在具現化 `com.microsoft.playready` 之後，請使用 [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) 方法。
 
-## 在 Web app 中新增安全停止功能
+## <a name="add-secure-stop-to-your-web-app"></a>在 Web app 中新增安全停止功能
 
 本節說明如何將安全停止功能新增到您的 Web app。
 
@@ -261,7 +268,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 > [!NOTE]
 > 在上述範例中，安全停止資料的 `<SessionID>B64 encoded session ID</SessionID>` 可以是星號 (\*)，這是適用於所記錄之所有安全停止工作階段的萬用字元。 也就是說，**SessionID** 標記可以是特定的工作階段，或是用來選取所有安全停止工作階段的萬用字元 (\*)。
 
-## 適用於加密媒體延伸的程式設計考量
+## <a name="programming-considerations-for-encrypted-media-extension"></a>適用於加密媒體延伸的程式設計考量
 
 本節列出您在建立適用於 Windows 10 且已啟用 PlayReady 的 Web app 時應納入考慮的程式設計考量。
 
@@ -295,15 +302,10 @@ function foo() {
 
 如需詳細資訊，請參閱[範例應用程式](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [PlayReady DRM](playready-client-sdk.md)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

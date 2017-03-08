@@ -3,9 +3,16 @@ author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概觀"
 description: "了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: 6c697782683bca6671c01aa0941a78bc66fb052a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 8dfbdad7604e3aa7fad60ed777d16b4acd56b5ab
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
@@ -73,21 +80,21 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 **安裝 app**
 
-1.  [建立應用程式套件](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)之後，您可以從遠端將它安裝到您的裝置上。 在 Visual Studio 中建置後，會產生輸出資料夾。
+1.    [建立應用程式套件](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)之後，您可以從遠端將它安裝到您的裝置上。 在 Visual Studio 中建置後，會產生輸出資料夾。
 
     ![App 安裝](images/device-portal/iot-installapp0.png)
-2.  按一下 [瀏覽] 並尋找您的應用程式套件 (.appx)。
-3.  按一下 [瀏覽] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
-4.  新增相依性。 如果有一個以上的相依性，請個別新增每個相依性。     
-5.  在 [部署] 下，按一下 [執行]。 
-6.  若要安裝另一個 app，請按一下 [重設] 按鈕以清除欄位。
+2.    按一下 [瀏覽] 並尋找您的應用程式套件 (.appx)。
+3.    按一下 [瀏覽] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
+4.    新增相依性。 如果有一個以上的相依性，請個別新增每個相依性。     
+5.    在 [部署]**** 下，按一下 [執行]****。 
+6.    若要安裝另一個應用程式，請按一下 [重設]**** 按鈕以清除欄位。
 
 
 **解除安裝 app**
 
-1.  請確定您的應用程式不在執行中。 
-2.  若它正在執行，請移至 [執行中的 App] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
-3.  準備好之後，請按一下 [解除安裝]。
+1.    請確定您的應用程式不在執行中。 
+2.    若它正在執行，請移至 [執行中的 App] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
+3.    準備好之後，請按一下 [解除安裝]****。
 
 ### <a name="processes"></a>處理程序
 
@@ -116,7 +123,7 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-etw.png)
 
-選取 [隱藏提供者] 以只顯示 [事件] 清單。
+選取 [隱藏提供者]**** 以只顯示 [事件] 清單。
 - **已登錄的提供者**︰選取 ETW 提供者與追蹤等級。 追蹤等級是下列其中一個值 ︰
     1. 異常結束或終止
     2. 嚴重錯誤
@@ -124,11 +131,11 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
     4. 非錯誤警告
     5. 追蹤的詳細資料 (*)
 
-按一下或點選 [啟用] 以開始追蹤。 提供者已新增到 [啟用的提供者] 下拉式清單中。
+按一下或點選 [啟用]**** 以開始追蹤。 提供者已新增到 [啟用的提供者]**** 下拉式清單中。
 - **自訂提供者**︰選取自訂 ETW 提供者與追蹤等級。 依 GUID 識別提供者。 不要在 GUID 中包含括號。
-- **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用] 以停止追蹤。 按一下或點選 [全部停止] 以暫停所有追蹤。
-- **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 [啟用] 以啟用已停用的提供者。 按一下或點選 [清除] 以清除歷程記錄。
-- **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 [清除] 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [儲存到檔案]，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
+- **啟用的提供者**：列出已啟用的提供者。 從下拉式清單選取提供者，然後按一下或點選 [停用]**** 以停止追蹤。 按一下或點選 [全部停止]**** 以暫停所有追蹤。
+- **提供者歷程記錄**︰顯示目前工作階段期間已啟用的 ETW 提供者。 按一下或點選 [啟用]**** 以啟用已停用的提供者。 按一下或點選 [清除]**** 以清除歷程記錄。
+- **事件**︰以表格格式列出所選提供者的 ETW 事件。 此表格會即時更新。 在表格下方，按一下 [清除]**** 按鈕以刪除表格中的所有 ETW 事件。 這不會停用任何提供者。 您可以按一下 [儲存到檔案]****，將目前收集的 ETW 事件匯出到本機的 CSV 檔案。
 
 如需使用 ETW 追蹤的詳細資訊，請參閱有關使用它來收集您 App 即時記錄的[部落格文章](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)。 
 
@@ -138,10 +145,10 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-perf-tracing.png)
 
-- **可用的設定檔**︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 [開始] 以開始追蹤。
-- **自訂設定檔**︰按一下或點選 [瀏覽]，以從您的電腦選擇 WPR 設定檔。 按一下或點選 [上傳並開始] 以開始追蹤。
+- **可用的設定檔**︰從下拉式清單選取 WPR 設定檔，然後按一下或點選 [開始]**** 以開始追蹤。
+- **自訂設定檔**︰按一下或點選 [瀏覽]****，以從您的電腦選擇 WPR 設定檔。 按一下或點選 [上傳並開始]**** 以開始追蹤。
 
-若要停止追蹤，請按一下 [停止]。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
+若要停止追蹤，請按一下 [停止]****。 留在此頁面上，直到追蹤檔案 (.ETL) 下載完成。
 
 擷取的 ETL 檔案可以在 [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) 中開啟以進行分析。
 
@@ -161,7 +168,7 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 
 ### <a name="app-file-explorer"></a>App 檔案總管
 
-可讓您檢視和操作側載 App 所儲存的檔案。  這是 Windows Phone 8.1 [隔離的存放裝置總管](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)的全新、跨平台版本，請參閱[這篇部落格文章](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)，深入了解 App 檔案總管和其使用方法。 
+可讓您檢視和操作側載 App 所儲存的檔案。  這是 Windows Phone 8.1 [隔離的存放裝置總管](https://msdn.microsoft.com/library/windows/apps/hh286408(v=vs.105).aspx)的全新、跨平台版本，請參閱[這篇部落格文章](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/)，深入了解應用程式檔案總管和其使用方法。 
 
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-AppFileExplorer.png)
 
@@ -197,9 +204,4 @@ T | null 字元字串分隔清單 | 裝置的使用者套用標記。 請參閱�
 #### <a name="cross-site-websocket-hijacking-cswsh-protection"></a>跨網站 WebSocket 攔截 (CSWSH) 保護
 
 若要防止 [CSWSH 攻擊](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html)，開啟 WebSocket 連接到裝置入口網站的所有用戶端，必須也提供符合 Host 標頭的 Origin 標頭。  這可向裝置入口網站證明要求是來自裝置入口網站 UI 或有效的用戶端應用程式。  沒有 Origin 標頭您的要求將會被拒絕。 
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

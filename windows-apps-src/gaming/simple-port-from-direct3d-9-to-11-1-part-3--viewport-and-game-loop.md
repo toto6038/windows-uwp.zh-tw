@@ -3,16 +3,23 @@ author: mtoepke
 title: "移植遊戲迴圈"
 description: "說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 IFrameworkView 以控制全螢幕的 CoreWindow。"
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 移植, 遊戲迴圈, direct3d 9, directx 11"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 23631bf464095e1d2f2aab97740d89c6a82f4a70
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 移植遊戲迴圈
+# <a name="port-the-game-loop"></a>移植遊戲迴圈
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -23,14 +30,14 @@ ms.openlocfilehash: 8d843d8b22623dfbba3a76eb7ef19a82cc07f04f
 
 說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 以控制全螢幕的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)。 [將簡單的 Direct3D 9 app 移植到 DirectX 11 和 UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) 逐步解說的第三部分。
 
-## 建立視窗
+## <a name="create-a-window"></a>建立視窗
 
 
 若要使用 Direct3D 9 檢視區來設定桌面視窗，必須針對傳統型應用程式實作傳統視窗架構。 我們過去必須建立 HWND、設定視窗大小、提供視窗處理回呼、讓它變成可見，以及其他動作等等。
 
 UWP 環境現在提供一個更簡單的系統。 使用 DirectX 的 Windows 市集遊戲會實作 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)，而不是設定傳統視窗。 為了 DirectX app 與遊戲存在的這個介面，可直接在 app 容器內的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中執行。
 
-> **注意** Windows 會將受管理的指標提供給諸如來源應用程式物件與 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的資源。 See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **注意**  Windows 會將受管理的指標提供給諸如來源應用程式物件與 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的資源。 請參閱[**物件控制代碼運算子 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
 
  
 
@@ -69,7 +76,7 @@ public:
 };
 ```
 
-## 移植遊戲迴圈
+## <a name="port-the-game-loop"></a>移植遊戲迴圈
 
 
 讓我們看看來自 Direct3D 9 實作的遊戲迴圈。 這個程式碼存在於應用程式的 main 函式。 這個迴圈的每一個反覆項目都會處理視窗訊息或轉譯框架。
@@ -121,7 +128,7 @@ while (true)
 
 現在，我們的 UWP app 已設定與 DirectX 9 範例相同的基本圖形基礎架構，以及轉譯相同的彩色立方體。
 
-## 接下來該怎麼做
+## <a name="where-do-i-go-from-here"></a>接下來該怎麼做
 
 
 將[移植 DirectX 11 常見問題集](directx-porting-faq.md)設定為書籤。
@@ -140,10 +147,5 @@ DirectX UWP 範本包含可靠的 Direct3D 裝置基礎結構，且已準備好�
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

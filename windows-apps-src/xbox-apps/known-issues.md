@@ -2,9 +2,17 @@
 author: Mtoepke
 title: "Xbox One 開發人員計畫上的 UWP 已知問題"
 description: 
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 translationtype: Human Translation
-ms.sourcegitcommit: 3f0647bb76340ccbd538e9e4fefe173924d6baf4
-ms.openlocfilehash: 18c8d1fcd696f336601dc6c531424fe8bfb78304
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
+ms.lasthandoff: 02/08/2017
 
 ---
 
@@ -177,12 +185,52 @@ Sometimes this is resolved by sorting a column on the table.-->
 Occasionally, selecting the “Manage Windows Device Portal” option in Dev Home will cause Dev Home to silently exit to the Home screen. 
 This is caused by a failure in the WDP infrastructure on the console and can be resolved by restarting the console.-->
 
-## <a name="see-also"></a>另請參閱
+## <a name="knownfoldersmediaserverdevices-caveat-on-xbox"></a>在 Xbox 上 KnownFolders.MediaServerDevices 附加說明
+
+在桌面上，媒體伺服器與電腦「搭配」，而裝置關聯服務會不斷地追蹤哪些伺服器目前在線上，如此，初始檔案系統查詢便可立即傳回目前在線上的已配對伺服器清單。
+
+在 Xbox 上，沒有新增或移除伺服器的 UI，因此初始檔案系統查詢將永遠傳回空白。 您必須建立查詢，並訂閱至 ContentsChanged 事件，每當收到通知便重新整理查詢。 伺服器會魚貫而至，大部分在 3 秒鐘內即會被發現。
+
+簡單的範例程式碼︰
+
+```
+namespace TestDNLA {
+
+    public sealed partial class MainPage : Page {
+        public MainPage() {
+            this.InitializeComponent();
+        }
+
+        private async void FindFiles_Click(object sender, RoutedEventArgs e) {
+            try {
+                StorageFolder library = KnownFolders.MediaServerDevices;
+                var folderQuery = library.CreateFolderQuery();
+                folderQuery.ContentsChanged += FolderQuery_ContentsChanged;
+                IReadOnlyList<StorageFolder> rootFolders = await folderQuery.GetFoldersAsync();
+                if (rootFolders.Count == 0) {
+                    Debug.WriteLine("No Folders found");
+                } else {
+                    Debug.WriteLine("Folders found");
+                }
+            } catch (Exception ex) {
+                Debug.WriteLine("Error: " + ex.Message);
+            } finally {
+                Debug.WriteLine("Done");
+            }
+        }
+
+        private async void FolderQuery_ContentsChanged(Windows.Storage.Search.IStorageQueryResultBase sender, object args) {
+            Debug.WriteLine("Folder added " + sender.Folder.Name);
+            IReadOnlyList<StorageFolder> topLevelFolders = await sender.Folder.GetFoldersAsync();
+            foreach (StorageFolder topLevelFolder in topLevelFolders) {
+                Debug.WriteLine(topLevelFolder.Name);
+            }
+        }
+    }
+}
+```
+
+## <a name="see-also"></a>請參閱
 - [常見問題集](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Dec16_HO3-->
-
 

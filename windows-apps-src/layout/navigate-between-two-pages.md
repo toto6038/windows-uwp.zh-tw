@@ -1,14 +1,21 @@
 ---
 author: Jwmsft
-Description: "了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。"
+Description: "了解如何在通用 Windows 平台 (UWP) 應用程式的基本兩個對等頁面中瀏覽。"
 title: "兩個頁面之間的對等瀏覽"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 324bdcd8ae61826a2be765f6a6a93441036d6984
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -16,7 +23,7 @@ ms.openlocfilehash: 324bdcd8ae61826a2be765f6a6a93441036d6984
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
+了解如何在通用 Windows 平台 (UWP) 應用程式的基本兩個對等頁面中瀏覽。
 
 ![兩個頁面對等瀏覽範例](images/nav-peertopeer-2page.png)
 
@@ -367,10 +374,5 @@ Page1::Page1()
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

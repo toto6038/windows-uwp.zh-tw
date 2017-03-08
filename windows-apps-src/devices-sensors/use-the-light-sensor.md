@@ -3,16 +3,23 @@ author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "使用光感應器"
 description: "了解如何使用周遭環境光感應器來偵測光線的變化。"
+ms.author: dbirtolo
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
+ms.lasthandoff: 02/07/2017
 
 ---
-# 使用光感應器
+# <a name="use-the-light-sensor"></a>使用光感應器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**LightSensor**](https://msdn.microsoft.com/library/windows/apps/BR225790)
@@ -21,17 +28,17 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
 
 周遭環境光感應器是數種環境感應器的其中一種，可讓應用程式回應使用者環境中的變化。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
 
 您使用的裝置或模擬器必須支援周遭環境光感應器。
 
-## 建立簡單的光感應器應用程式
+## <a name="create-a-simple-light-sensor-app"></a>建立簡單的光感應器應用程式
 
 本節分為兩個子區段。 第一個子區段會引導您完成從頭開始建立簡單光感應器應用程式所需的步驟。 接下來的子區段會說明您剛建立的應用程式。
 
-###  指示
+###  <a name="instructions"></a>指示
 
 -   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
 
@@ -65,8 +72,8 @@ ms.openlocfilehash: fe1b9a508e3b540f202e187dbe1696423c7cd373
         public sealed partial class BlankPage : Page
         {
             private LightSensor _lightsensor; // Our app' s lightsensor object
-           
-            // This event handler writes the current light-sensor reading to 
+
+            // This event handler writes the current light-sensor reading to
             // the textbox named "txtLUX" on the app' s main page.
 
             private void ReadingChanged(object sender, LightSensorReadingChangedEventArgs e)
@@ -133,7 +140,7 @@ App 開始執行之後，您就可以改變感應器可用的光線或使用模�
 
 -   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
 
-###  說明
+###  <a name="explanation"></a>說明
 
 前面的範例示範了如何只需要撰寫簡短的程式碼，就可以整合 app 中的光感應器輸入。
 
@@ -153,7 +160,7 @@ _lightsensor.ReportInterval = reportInterval;
 會在 **ReadingChanged** 方法中擷取新的光感應器資料。 每次感應器驅動程式收到感應器的新資料時，都會使用這個事件處理常式將值傳送給 app。 應用程式會用下行程式碼登錄這個事件處理常式。
 
 ```csharp
-_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, 
+_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
 LightSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
@@ -164,14 +171,8 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [LightSensor 範例](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

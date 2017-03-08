@@ -1,21 +1,29 @@
 ---
 author: awkoren
-Description: "使用傳統型轉 UWP 橋接器，部署從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) App 及針對這些 App 進行偵錯。"
+Description: "使用傳統型轉 UWP 橋接器，部署從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) 應用程式及針對這些應用程式進行偵錯。"
 Search.Product: eADQiWindows 10XVcnh
-title: "針對使用傳統型橋接器轉換的 App 進行偵錯"
+title: "針對使用傳統型橋接器轉換的應用程式進行偵錯"
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 translationtype: Human Translation
-ms.sourcegitcommit: dba00371b29b3179a6dc3bdd96a092437331e61a
-ms.openlocfilehash: 537ac8e83d5f54bf83ec0e05b71be354651000f2
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 9660d14a1ca28929a213d4ed5a59cdcda73ccc39
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# <a name="debug-apps-converted-with-the-desktop-bridge"></a>針對使用傳統型橋接器轉換的 App 進行偵錯
+# <a name="debug-apps-converted-with-the-desktop-bridge"></a>針對使用傳統型橋接器轉換的應用程式進行偵錯
 
-本主題包含的資訊可協助您在使用傳統型轉 UWP 橋接器轉換 App 之後順利偵錯該 App。 您有數個選項可用來偵錯已轉換的 App。
+本主題包含的資訊可協助您在使用傳統型轉 UWP 橋接器轉換應用程式之後順利偵錯該應用程式。 您有數個選項可用來偵錯已轉換的 App。
 
 ## <a name="attach-to-process"></a>附加至處理序
 
-當您「以系統管理員身分」執行 Microsoft Visual Studio 時，將可針對已轉換的 App 專案使用「開始偵錯」和「啟動但不偵錯」命令，但是已啟動的 App 將會以[中度整合層級](https://msdn.microsoft.com/library/bb625963)來執行 (也就是將不會有提升的權限)。 若要為啟動的 App 授與系統管理員權限，首先您必須透過捷徑或磚「以系統管理員身分」來啟動。 當應用程式正在執行時，從「以系統管理員身分」執行的 Microsoft Visual Studio 執行個體中叫用__附加至處理序__，然後從對話方塊中選取應用程式的處理序。
+當您「以系統管理員身分」執行 Microsoft Visual Studio 時，將可針對已轉換的 App 專案使用「開始偵錯」**和「啟動但不偵錯」**命令，但是已啟動的 App 將會以[中度整合層級](https://msdn.microsoft.com/library/bb625963)來執行 (也就是將不會有提升的權限)。 若要為啟動的 App 授與系統管理員權限，首先您必須透過捷徑或磚「以系統管理員身分」來啟動。 當應用程式正在執行時，從「以系統管理員身分」執行的 Microsoft Visual Studio 執行個體中叫用__附加至處理序__，然後從對話方塊中選取應用程式的處理序。
 
 ## <a name="f5-debug"></a>F5 偵錯
 
@@ -53,7 +61,7 @@ Visual Studio 現在支援新的封裝專案。 新的專案可讓您將在建�
 
     將 PackageLayout 設定為由轉換器所建立之 AppX 的根位置 (上圖)。 然後選取要執行的磚。
 
-8.  開啟並編輯 AppXFileList.xml。 這個檔案會定義如何將 Win32 偵錯組建的輸出複製到轉換器建置的 AppX 配置。 根據預設，我們在檔案中有預留位置來使用範例標記與註解︰
+8.    開啟並編輯 AppXFileList.xml。 這個檔案會定義如何將 Win32 偵錯組建的輸出複製到轉換器建置的 AppX 配置。 根據預設，我們在檔案中有預留位置來使用範例標記與註解︰
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -118,9 +126,9 @@ Visual Studio 現在支援新的封裝專案。 新的專案可讓您將在建�
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10. 最後，您現在可以在 Win32 程式碼中設定中斷點，並按 F5 來啟動偵錯工具。 它會複製您在 AppX 套件中對 Win32 應用程式所做的任何更新，並可讓您直接從 Visual Studio 偵錯。
+10.    最後，您現在可以在 Win32 程式碼中設定中斷點，並按 F5 來啟動偵錯工具。 它會複製您在 AppX 套件中對 Win32 應用程式所做的任何更新，並可讓您直接從 Visual Studio 偵錯。
 
-11. 如果您更新應用程式，將需要使用 MakeAppX，再次重新封裝您的應用程式。 如需詳細資訊，請參閱[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
+11.    如果您更新應用程式，將需要使用 MakeAppX，再次重新封裝您的應用程式。 如需詳細資訊，請參閱[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。 
 
 如果您有多個組建組態 (例如針對發行和偵錯)，就可以將下列項目新增至 AppXFileList.xml 檔案，從不同位置複製 Win32 組建︰
 
@@ -134,7 +142,7 @@ Visual Studio 現在支援新的封裝專案。 新的專案可讓您將在建�
 
 如果您將應用程式更新到 UWP，但仍想要建置它以使其適用於 Win32，您也可以使用條件式編譯來啟用特定的程式碼路徑。 
 
-1.  在下列範例中，程式碼將只會針對 DesktopUWP 進行編譯，而且將使用 WinRT API 來顯示磚。 
+1.    在下列範例中，程式碼將只會針對 DesktopUWP 進行編譯，而且將使用 WinRT API 來顯示磚。 
 
     ```C#
     [Conditional("DesktopUWP")]
@@ -148,17 +156,17 @@ Visual Studio 現在支援新的封裝專案。 新的專案可讓您將在建�
     }
     ```
 
-2.  您可以使用 Configuration Manager 來新增新的組建組態︰
+2.    您可以使用 Configuration Manager 來新增新的組建組態︰
 
     ![alt](images/desktop-to-uwp/debug-6.png)
 
     ![alt](images/desktop-to-uwp/debug-7.png)
 
-3.  然後在專案屬性下方，新增對條件式編譯符號的支援︰
+3.    然後在專案屬性下方，新增對條件式編譯符號的支援︰
 
     ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.  如果您想要將建置目標設為您新增的 UWP API，您現在可以將組建目標切換為 DesktopUWP。
+4.    如果您想要將建置目標設為您新增的 UWP API，您現在可以將組建目標切換為 DesktopUWP。
 
 ## <a name="plmdebug"></a>PLMDebug 
 
@@ -174,9 +182,4 @@ PLMDebug 隨附於 Windows SDK。 如需詳細資訊，請參閱 [**PLMDebug**](
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

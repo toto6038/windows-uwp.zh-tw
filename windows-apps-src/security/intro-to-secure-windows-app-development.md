@@ -3,16 +3,23 @@ title: "安全開發 Windows app 的簡介"
 description: "這篇簡介文章將協助應用程式設計人員和開發人員，能更了解各種能快速建立安全的通用 Windows 平台 (UWP) 應用程式的 Windows 10 平台功能。"
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
+ms.author: alkoren
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: a70a59283fe664bef9ddab56df57a9fc46c91033
-ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 1faf53dc2f1d919af072cd52593292fc552317e9
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows app 的簡介
+# <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows 應用程式的簡介
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 這篇簡介文章將協助應用程式設計人員和開發人員，能更了解各種能快速建立安全的通用 Windows 平台 (UWP) 應用程式的 Windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
@@ -28,7 +35,7 @@ ms.openlocfilehash: 2ac9edf074ceb91d5cfea17228f0a39fef200b74
 -   如果您之前使用自訂的程式碼來處理這些安全性案例，現在您需要編寫、測試及維護的程式碼將會減少。
 -   您的應用程式會更加穩定、安全，原因是您將使用作業系統來控制應用程式存取自己的資源，以及本機或遠端系統資源的方式。
 
-在驗證期間，系統會驗證要求存取特定服務的使用者身分識別。 Microsoft Passport 和 Windows Hello 是 Windows 10 的元件，可協助您在 Windows 應用程式中建立更安全的驗證機制。 您可以藉由這兩個元件來使用個人識別碼 (PIN) 或生物特徵辨識技術 (例如使用者的指紋、臉部或虹膜)，以便為您的應用程式實行多重要素驗證。
+在驗證期間，系統會驗證要求存取特定服務的使用者身分識別。 Windows Hello 是 Windows 10 的元件，可協助您在 Windows 應用程式中建立更安全的驗證機制。 您可以藉由這個元件來使用個人識別碼 (PIN) 或生物特徵辨識技術 (例如使用者的指紋、臉部或虹膜)，以便為您的應用程式實行多重要素驗證。
 
 傳輸中資料就是指連線，以及透過該連線傳輸的訊息。 舉例來說，當您使用 Web 服務來擷取遠端伺服器上的資料時， 使用安全通訊端層 (SSL) 和安全超文字傳輸通訊協定 (HTTPS) 可確保連線的安全。 避免第三方存取這些訊息，或是避免未經授權的應用程式使用 Web 服務進行通訊，是保護傳輸中資料的重要關鍵。
 
@@ -155,24 +162,24 @@ Azure Active Directory (Azure AD) 是雲端式身分識別及存取管理服務�
 
 此外，Azure AD 可以做為 OAuth 提供者，為標準使用者提供跨多重平台之應用程式的驗證及授權機制。 如需深入了解，請參閱 [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) 和 [在 Azure 的多重要素驗證](https://azure.microsoft.com/services/multi-factor-authentication/)。
 
-## <a name="24-microsoft-passport-and-windows-hello"></a>2.4 Microsoft Passport 及 Windows Hello
+## <a name="24-windows-hello"></a>2.4 Windows Hello
 
 
-在 Windows 10 中，方便的多重要素驗證機制已經內建在作業系統中。 Microsoft Passport 及 Windows Hello 就是相關的兩個元件。 Windows Hello 就是 Windows 10 內建的新生物特徵辨識登入系統。 由於 Windows Hello 是直接內建在作業系統中，因此能夠讓使用者利用臉部或指紋辨識來解除使用者裝置的鎖定。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。
+在 Windows 10 中，方便的多重要素驗證機制已經內建在作業系統中。 Windows Hello 就是 Windows 10 內建的新生物特徵辨識登入系統。 由於 Windows Hello 是直接內建在作業系統中，因此能夠讓使用者利用臉部或指紋辨識來解除使用者裝置的鎖定。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。
 
-Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也就是使用者與所要求服務或資料項目之間路徑的第一個部分。 裝置在成功辨識使用者之後，仍然需要驗證使用者的身分，才能決定是否要授與所要求資源的存取權。 Microsoft Passport 提供與 Windows 完全整合的增強式雙因素驗證 (2FA)，利用特定裝置和生物特徵辨識技術或 PIN 的組合，來取代可重複使用的密碼。 PIN 是使用者在註冊 Microsoft Passport 時所指定的。
+Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也就是使用者與所要求服務或資料項目之間路徑的第一個部分。 裝置在成功辨識使用者之後，仍然需要驗證使用者的身分，才能決定是否要授與所要求資源的存取權。 Windows Hello 也會提供與 Windows 完全整合的增強式雙因素驗證 (2FA)，利用特定裝置和生物特徵辨識技術或 PIN 的組合，來取代可重複使用的密碼。 PIN 是使用者在註冊 Microsoft 帳戶時所指定的。
 
-不過，Microsoft Passport 並非只是傳統 2FA 系統的取代品而已。 這在概念上類似智慧卡：驗證是使用密碼編譯基本類型而不是字串比較來執行，而使用者的金鑰內容在防竄改的硬體內部是安全的。 Microsoft Passport 也不需要使用智慧卡所需的額外基礎結構元件。 特別的是，您並不需要公開金鑰基礎結構 (PKI) 來管理憑證 (如果您目前沒有 PKI)。 Microsoft Passport 結合了智慧卡的主要優點 (虛擬智慧卡的使用彈性，以及實體智慧卡的強大安全性)，但卻沒有這兩者的任何缺點。
+不過，Windows Hello 不只是用來取代傳統的 2FA 系統。 這在概念上類似智慧卡：驗證是使用密碼編譯基本類型而不是字串比較來執行，而使用者的金鑰內容在防竄改的硬體內部是安全的。 Microsoft Hello 也不需要智慧卡部署所需的額外基礎結構元件。 特別的是，您並不需要公開金鑰基礎結構 (PKI) 來管理憑證 (如果您目前沒有 PKI)。 Windows Hello 結合智慧卡的主要優點，有虛擬智慧卡的部署彈性及實體智慧卡的強大安全性，卻沒有兩者的任何缺點。
 
-使用者必須先讓裝置向 Microsoft Passport 註冊，才能使用該裝置進行驗證。 Microsoft Passport 會使用非對稱式 (公開/私密金鑰) 加密，讓其中一方使用公開金鑰來為資料加密，而另一方使用私密金鑰來解密。 就 Microsoft Passport 來說，它會建立公開/私密金鑰組，並將私密金鑰寫入裝置的信賴平台模組 (TPM) 晶片中。 裝置註冊之後，UWP app 就能呼叫系統 API 來擷取使用者的公開金鑰，讓系統能用來讓使用者在伺服器上註冊。
+使用者必須先讓裝置向 Windows Hello 註冊，才能使用該裝置進行驗證。 Windows Hello 會使用非對稱式 (公開/私密金鑰) 加密，讓其中一方使用公開金鑰來為資料加密，而另一方使用私密金鑰來解密。 就 Windows Hello 來說，它會建立公開/私密金鑰組，並將私密金鑰寫入裝置的信賴平台模組 (TPM) 晶片中。 裝置註冊之後，UWP app 就能呼叫系統 API 來擷取使用者的公開金鑰，讓系統能用來讓使用者在伺服器上註冊。
 
-app 的註冊工作流程可能如下：
+應用程式的註冊工作流程可能如下：
 
-![Microsoft Passport 註冊](images/secure-passport.png)
+![Windows Hello 註冊](images/secure-passport.png)
 
 您所收集註冊資訊中的身分辨識資訊，可能比這簡單案例中所收集的多出許多。 舉例來說，如果您的應用程式存取某個受保護的服務 (例如銀行服務)，您必須要求身分識別證明及其他項目，做為註冊程序的一部分。 當所有條件都符合之後，這位使用者的公開金鑰將會儲存在後端，讓該使用者下次使用服務時可用來進行驗證。
 
-如需 Microsoft Passport 及 Windows Hello 的詳細資訊，請參閱 [Microsoft Passport 指南](https://msdn.microsoft.com/library/mt589441) 和 [Microsoft Passport 開發人員指南](microsoft-passport.md)。
+如需 Windows Hello 的詳細資訊，請參閱 [Windows Hello 指南](https://msdn.microsoft.com/library/mt589441)和[Windows Hello 開發人員指南](microsoft-passport.md)。
 
 ## <a name="3-data-in-flight-security-methods"></a>3 傳輸中資料的安全性方法
 
@@ -447,7 +454,7 @@ public void SampleReusableHash()
 ## <a name="5-summary"></a>5 總結
 
 
-Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系統的功能來建立更安全的應用程式。 在不同的驗證案例中 (例如單一因素驗證、多重要素驗證，或利用 OAuth 識別提供者的代理驗證)，API 可用來減少在驗證方面最常見的挑戰。 Windows Hello 提供新的生物特徵識別登入系統來辨識使用者，以及主動防禦規避適當身分識別程序的攻擊。 Microsoft Passport 搭配 Windows Hello 使用時，能夠提供多層的金鑰和憑證保護，讓這些資料絕對不會在信賴平台模組以外的地方顯示或使用。 此外，透過選用的證明識別金鑰和憑證，能進一步提高安全性層級。
+Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系統的功能來建立更安全的應用程式。 在不同的驗證案例中 (例如單一因素驗證、多重要素驗證，或利用 OAuth 識別提供者的代理驗證)，API 可用來減少在驗證方面最常見的挑戰。 Windows Hello 提供新的生物特徵識別登入系統來辨識使用者，以及主動防禦規避適當身分識別程序的攻擊。 它也會提供多層按鍵及不可以洩露或在信賴平台模組外部使用的憑證。 此外，透過選用的證明識別金鑰和憑證，能進一步提高安全性層級。
 
 如要保護傳輸中的資料，可使用 API 來透過 SSL 與遠端系統安全地通訊，它還提供利用 SSL 關聯來驗證伺服器真確性的可能性。 Azure API Management 能協助您以受控制的方式安全地發佈 API，因為它使用能提供額外的 API 端點混淆的 Proxy，為在網路上公開 API 提供強大的設定選項。 您可以使用 API 金鑰來保護這些 API 的存取權，以及調整 API 呼叫來控制效能。
 
@@ -459,7 +466,7 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 ### <a name="61-how-to-articles"></a>6.1 操作說明文章
 
 -   [驗證和使用者識別](authentication-and-user-identity.md)
--   [Microsoft Passport](microsoft-passport.md)
+-   [Windows Hello](microsoft-passport.md)
 -   [認證保險箱](credential-locker.md)
 -   [Web 驗證代理人](web-authentication-broker.md)
 -   [指紋生物識別技術](fingerprint-biometrics.md)
@@ -499,8 +506,3 @@ Windows 10 的通用 Windows 平台提供數種方式，讓您能利用作業系
 -   [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585)
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
-
-
-<!--HONumber=Dec16_HO1-->
-
-

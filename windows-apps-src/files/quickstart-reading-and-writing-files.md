@@ -3,16 +3,23 @@ author: laurenhughes
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: "建立、寫入和讀取檔案"
 description: "使用 StorageFile 物件讀取和寫入檔案。"
+ms.author: lahugh
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 6822bb63ac99efdcdd0e71c4445883f4df5f471d
-ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ae2754f543a3bc799b3d5af4c5c3c46f654c1ed7
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="create-write-and-read-a-file"></a>建立、寫入和讀取檔案
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -23,7 +30,7 @@ ms.openlocfilehash: 0709d9c9126dc4523eae58d5db8d9037a2fb618e
 
 使用 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件讀取和寫入檔案。
 
-> **注意**：另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+> **注意**  另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -256,9 +263,4 @@ Dim dataReader As New DataReader(inputStream)
  
 
  
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

@@ -2,15 +2,22 @@
 author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: "執行緒和非同步程式設計"
-description: "執行緒和非同步程式設計可讓您的 app 在平行執行緒中以非同步方式完成工作。"
+description: "執行緒和非同步程式設計可讓您的應用程式在平行執行緒中以非同步方式完成工作。"
+ms.author: twhitney
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, 非同步, 執行緒, 執行緒"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: fb249a1c7a562cb4b1eb7ff8590e8525c00c64f2
+ms.lasthandoff: 02/07/2017
 
 ---
-# 執行緒和非同步程式設計
+# <a name="threading-and-async-programming"></a>執行緒和非同步程式設計
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 執行緒和非同步程式設計可讓您的 app 以非同步方式完成平行執行緒中的工作。
 
@@ -35,13 +42,4 @@ ms.openlocfilehash: 8962e24e393f0b7961f618f90cd38ead9e54dda4
 | [建立定期工作項目](create-a-periodic-work-item.md)                                                   | 了解如何建立定期重複執行的工作項目。 |
 | [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)                               | 了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。 |
 | [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)                                       | 了解如何建立在計時器過後執行的工作項目。 |
-
-
-
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

@@ -5,9 +5,16 @@ title: "時間選擇器"
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: cfe38564f54f61b2d48918f5dd5bf41e7c57b965
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5cd0b42f05ca246005b09faa0e926bc2e625d2c1
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="time-picker"></a>時間選擇器
@@ -62,9 +69,4 @@ arrivalTimePicker.Header = "Arrival time";
 - [行事曆日期選擇器](calendar-date-picker.md)
 - [行事曆檢視](calendar-view.md)
 - [日期選擇器](date-picker.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

@@ -3,22 +3,29 @@ author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "本文列出 UWP app 支援的音訊與視訊轉碼器和格式。"
 title: "支援的轉碼器"
+ms.author: drewbat
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 7bd0002d62519757cf582d6070a22890a0e1837e
-ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 支援的轉碼器
+# <a name="supported-codecs"></a>支援的轉碼器
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文列出 UWP App 支援的音訊、視訊及影像轉碼器和格式。
 
 在下列表格中，"D" 表示解碼器支援，"E" 則表示編碼器支援。
 
-## 音訊編碼器與支援的格式
+## <a name="audio-codec--format-support"></a>音訊編碼器與支援的格式
 
 下表顯示各裝置系列支援的音訊編碼器和格式。
 
@@ -27,7 +34,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 桌上型電腦
+### <a name="desktop"></a>桌上型電腦
 
 <table>
 <colgroup>
@@ -338,7 +345,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 行動裝置版
+### <a name="mobile"></a>行動裝置版
 
 <table>
 <colgroup>
@@ -649,7 +656,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT 核心版 (x86)
+### <a name="iot-core-x86"></a>IoT 核心版 (x86)
 
 <table>
 <colgroup>
@@ -960,7 +967,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT 核心版 (ARM)
+### <a name="iot-core-arm"></a>IoT 核心版 (ARM)
 
 <table>
 <colgroup>
@@ -1271,7 +1278,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Xbox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -1582,7 +1589,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-## 視訊轉碼器與支援的格式
+## <a name="video-codec--format-support"></a>視訊轉碼器與支援的格式
 
 下表顯示各裝置系列支援的視訊編碼器和格式。
 
@@ -1592,7 +1599,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 桌上型電腦
+### <a name="desktop"></a>桌上型電腦
 
 <table>
 <colgroup>
@@ -1811,7 +1818,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### 行動裝置版
+### <a name="mobile"></a>行動裝置版
 
 <table>
 <colgroup>
@@ -2030,7 +2037,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT 核心版 (x86)
+### <a name="iot-core-x86"></a>IoT 核心版 (x86)
 
 <table>
 <colgroup>
@@ -2249,7 +2256,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### IoT (ARM)
+### <a name="iot-arm"></a>IoT (ARM)
 
 <table>
 <colgroup>
@@ -2468,7 +2475,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 
  
 
-### Xbox
+### <a name="xbox"></a>Xbox
 
 <table>
 <colgroup>
@@ -2685,7 +2692,7 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 </tbody>
 </table>
 
-## 影像轉碼器與支援的格式 
+## <a name="image-codec--format-support"></a>影像轉碼器與支援的格式 
 
 <table>
 <colgroup>
@@ -2757,8 +2764,3 @@ ms.openlocfilehash: ec8ef39e3b1e014fb701e9d4bfa161faa8acbba8
 <sup>3</sup> 僅支援部分 Camera RAW 格式。  
 
 如需影像轉碼器的詳細資訊，請參閱[原生 WIC 轉碼器](https://msdn.microsoft.com/library/windows/desktop/gg430027.aspx)。
-
-
-<!--HONumber=Nov16_HO1-->
-
-

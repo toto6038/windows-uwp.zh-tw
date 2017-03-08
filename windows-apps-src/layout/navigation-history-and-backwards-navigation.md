@@ -1,15 +1,22 @@
 ---
 author: mijacobs
-Description: "在通用 Windows 平台 (UWP) app 中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。"
+Description: "在通用 Windows 平台 (UWP) 應用程式中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。"
 title: "瀏覽歷程記錄和向後瀏覽 (Windows 應用程式)"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
+ms.author: mijacobs
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: bfff3a4787a37156ef3232372a125db60678ebac
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: ea937ba237f4b0c58deff2b8d342337512e0de5f
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -302,10 +309,5 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO4-->
 
 

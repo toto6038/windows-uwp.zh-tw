@@ -10,8 +10,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 translationtype: Human Translation
-ms.sourcegitcommit: 7a6f0be15105bc70e580eaaf581152338c56bed7
-ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 0bf7959be6278577cc8fe93011591e4523bee623
+ms.lasthandoff: 02/07/2017
 
 ---
 
@@ -19,9 +20,9 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 # <a name="whats-next"></a>接下來要做什麼？
 
-如此看來，您應該想要撰寫應用程式並發佈到 Windows 市集︰該從何著手？ 如果您對 UWP 平台完全不了解，請嘗試一些 <a href="https://channel9.msdn.com/">Channel 9</a> 影片和 <a href="https://www.microsoftvirtualacademy.com">Microsoft Virtual Academy</a> 課程。 如果您已經熟悉 XAML 和 C#，您可以開始瀏覽下列主題，或直接 [下載一些範例](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
+如此看來，您應該想要撰寫應用程式並發佈到 Windows 市集︰該從何著手？ 如果您對 UWP 平台完全不了解，請嘗試一些 <a href="https://channel9.msdn.com/">Channel 9</a> 影片和 <a href="https://mva.microsoft.com">Microsoft Virtual Academy</a> 課程。 如果您已經熟悉 XAML 和 C#，您可以開始瀏覽下列主題，或直接 [下載一些範例](https://msdn.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
 
-有許多工具和架構可用來協助您撰寫應用程式，而且有許多支援跨平台開發。 例如，如果您想要撰寫 2D 遊戲，您可能想要查看 <a href="http://www.monogame.net">Monogame</a>。 如果是 3D 遊戲，則有 <a href="http://www.unity3d.com">Unity</a>，如果您的焦點是行動裝置，就別忘了 <a href="http://www.xamarin.com">Xamarin</a>。
+有許多工具和架構可用來協助您撰寫應用程式，而且有許多支援跨平台開發。 例如，如果您想要撰寫 2D 遊戲，可能會想要看看 <a href="http://www.monogame.net">Monogame</a>或許 [JavaScript/HTML 架構](https://html5gameengine.com/) 的一部分。 如果是 3D 遊戲，則有 <a href="http://www.unity3d.com">Unity</a>，如果您的焦點是行動裝置，就別忘了 <a href="http://www.xamarin.com">Xamarin</a>。
 
 如果您剛開始使用，建議您仔細閱讀 UWP 主題來了解平台，然後研究如何使用 XAML 控制項再加以自訂，來建立您的使用者介面。 您將使用 XAML 來配置應用程式 ([此處提供的教學課程](../layout/grid-tutorial.md)將帶領您逐步執行)，但是 XAML 的主要強大之處就在於使用「資料繫結」**，這會將控制項與您應用程式想要顯示的資訊結合︰如果您是 Windows 平台新手，這會是一個需要了解的重要概念。 
 <table class="wdg-noborder">
@@ -94,7 +95,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 ## <a name="finding-help-in-the-dev-center"></a>在開發人員中心尋找說明
 
-[Microsoft 開發人員中心](http://devcenter.microsoft.com)包含許多不同工具、架構及平台的大量文件。 當您在搜尋主題和範例時，應該確定您閱讀的是 UWP 特定的內容。 您要如何確定所閱讀的是正確內容？
+[Microsoft 開發人員中心](http://developer.microsoft.com)包含許多不同工具、架構及平台的大量文件。 當您在搜尋主題和範例時，應該確定您閱讀的是 UWP 特定的內容。 您要如何確定所閱讀的是正確內容？
 概念性內容 (也就是非 API 參考內容) 的主題 URL 中會有 UWP。 API 內容會有包含「Windows 執行階段」API 的路徑。 
 
 ![範例 UWP 概念性主題](images/devcenter-topic2.png)
@@ -147,7 +148,7 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 <td align="left"><strong>移植</strong></td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/Mt238321">利用您的 Android 與 iOS 技能迅速建立 UWP 應用程式。</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>Windows 橋接器</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/bridges">可將較舊的應用程式和 iOS 應用程式更新成 UWP 的工具。</a></td>
 </tr>
@@ -155,13 +156,17 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 <td align="left"><strong>Xamarin</strong></td>
 <td align="left"><a href="https://www.xamarin.com">使用 C# 來撰寫適用於 iOS、Android 及 Windows 10 的應用程式。</a></td>
 </tr>
-<tr class="odd" style="background-color: #ffffff">
+<tr class="even" style="background-color: #f2f2f2">
 <td align="left"><strong>工作程式碼片段</strong></td>
 <td align="left"><a href="https://github.com/Microsoft/Windows-task-snippets">可完成小型但實用之工作的現成程式碼。</a></td>
 </tr>
-<tr class="odd" style="background-color: #f2f2f2">
+<tr class="odd" style="background-color: #ffffff">
 <td align="left"><strong>操作說明主題</strong></td>
 <td align="left"><a href="https://developer.microsoft.com/windows/develop">涵蓋 UWP 功能的範例程式碼。</a></td>
+</tr>
+<tr class="even" style="background-color: #f2f2f2">
+<td align="left"><strong>硬體</strong></td>
+<td align="left"><a href="https://www.microsoftstore.com/store/msusa/en_US/cat/Developer/categoryID.69418300?icid=en_US_Store_UH_BusEd_Dev">來自 Microsoft 網上商店的開發人員的硬體。</a></td>
 </tr>
 </table>
 
@@ -169,10 +174,5 @@ ms.openlocfilehash: 7b1d2c1dc83bf0b6d24c1de134102f14542c907d
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

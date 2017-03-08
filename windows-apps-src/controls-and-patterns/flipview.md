@@ -5,9 +5,16 @@ title: "翻轉檢視控制項的指導方針"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 3ad89682248462efa5022467ceb330da03843de4
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 5266c1aaeeb2ecd009b8ee4dac6218fcb8b2f31b
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="flip-view"></a>翻轉檢視
@@ -218,9 +225,4 @@ stackPanel1.Children.Add(flipView1);
 
 - [清單的指導方針](lists.md)
 - [**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/br242678)
-
-
-
-<!--HONumber=Dec16_HO1-->
-
 

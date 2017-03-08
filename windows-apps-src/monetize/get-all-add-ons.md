@@ -1,31 +1,38 @@
 ---
 author: mcleanbyron
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取所有附加元件資料。"
+description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有應用程式擷取所有附加元件資料。"
 title: "使用 Windows 市集提交 API 取得所有附加元件"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 應用程式內產品, IAP"
 translationtype: Human Translation
-ms.sourcegitcommit: 5f975d0a99539292e1ce91ca09dbd5fac11c4a49
-ms.openlocfilehash: 64d40badaa4664e4f516900e82d290f60a499149
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 568dfb5dd47414a6ca4bb0c52ab36437bd119b73
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 使用 Windows 市集提交 API 取得所有附加元件
+# <a name="get-all-add-ons-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得所有附加元件
 
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取所有附加元件 (也稱為應用程式內產品或 IAP) 資料。
+在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有應用程式擷取所有附加元件 (也稱為應用程式內產品或 IAP) 資料。
 
-## 先決條件
+## <a name="prerequisites"></a>先決條件
 
 若要使用這個方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
->**注意**  這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
+>**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
-## 要求
+## <a name="request"></a>要求
 
 這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
@@ -36,7 +43,7 @@ ms.openlocfilehash: 64d40badaa4664e4f516900e82d290f60a499149
 <span/>
  
 
-### 要求的標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -44,7 +51,7 @@ ms.openlocfilehash: 64d40badaa4664e4f516900e82d290f60a499149
 
 <span/>
 
-### 要求參數
+### <a name="request-parameters"></a>要求參數
 
 對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含已登錄到您帳戶之所有 App 的所有附加元件的資料。
  
@@ -55,11 +62,11 @@ ms.openlocfilehash: 64d40badaa4664e4f516900e82d290f60a499149
 
 <span/>
 
-### 要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
-### 要求範例
+### <a name="request-examples"></a>要求範例
 
 下列範例示範如何擷取已登錄到您帳戶之所有 App 的所有附加元件資料。
 
@@ -75,7 +82,7 @@ GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-## 回應
+## <a name="response"></a>回應
 
 下列範例說明成功要求前 5 個附加元件 (已登錄到含有總共 1072 個附加元件的開發人員帳戶) 所傳回的 JSON 回應本文。 為求簡潔，這個範例僅會顯示由要求所傳回之前 2 個附加元件的資料。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
 
@@ -134,7 +141,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### 回應本文
+### <a name="response-body"></a>回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -144,7 +151,7 @@ Authorization: Bearer <your access token>
 
 
 
-## 錯誤碼
+## <a name="error-codes"></a>錯誤碼
 
 如果要求無法順利完成，則回應會包含下列其中一個 HTTP 錯誤碼。
 
@@ -155,16 +162,11 @@ Authorization: Bearer <your access token>
 
 <span/>
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
 * [取得附加元件](get-an-add-on.md)
 * [建立附加元件](create-an-add-on.md)
 * [刪除附加元件](delete-an-add-on.md)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

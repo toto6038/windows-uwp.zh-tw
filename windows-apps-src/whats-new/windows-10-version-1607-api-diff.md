@@ -1,17 +1,24 @@
 ---
 author: QuinnRadich
-title: "Windows10 版本 1607 API 變更"
-description: "開發人員可以使用以下清單識別 Windows10 版本 1607 中新增或變更的命名空間"
-keywords: "新功能, 新功能, 更新, 多項更新, 新, Windows10, 1607, api"
+title: "Windows 10 版本 1607 API 變更"
+description: "開發人員可以使用以下清單識別 Windows 10 版本 1607 中新增或變更的命名空間"
+keywords: "新功能, 新功能, 更新, 多項更新, 新, Windows 10, 1607, api"
+ms.author: quradic
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 translationtype: Human Translation
-ms.sourcegitcommit: 8d7ea8adcff944a9be58f164e88623861e4cf8ad
-ms.openlocfilehash: 7ab2c9f1054509f816ef9647f340e61b6a281d8a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: 18d4bac980592b41479e01b8644f9bb9bf291575
+ms.lasthandoff: 02/08/2017
 
 ---
 
-# Windows10 API 變更
+# <a name="windows-10-api-changes"></a>Windows 10 API 變更
 
-Windows10 版本 1607 中已經新增或變更了許多執行階段 API。 此表格列出此版本中已經新增或變更的命名空間。
+Windows 10 版本 1607 中已經新增或變更了許多執行階段 API。 此表格列出此版本中已經新增或變更的命名空間。
 
 
 **項目**
@@ -5153,10 +5160,5 @@ Windows.Services.Store.StoreSubscriptionInfo <br /> Windows.Services.Store.Store
 
 Windows.Services.Store.StoreVideo <br /> Windows.Services.Store.StoreVideo.Caption <br /> Windows.Services.Store.StoreVideo.Height <br /> Windows.Services.Store.StoreVideo.PreviewImage <br /> Windows.Services.Store.StoreVideo.Uri <br /> Windows.Services.Store.StoreVideo.VideoPurposeTag <br /> Windows.Services.Store.StoreVideo.Width
 <hr>
-
-
-
-
-<!--HONumber=Nov16_HO1-->
 
 

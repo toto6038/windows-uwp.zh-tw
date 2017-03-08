@@ -1,17 +1,24 @@
 ---
 author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
-description: "本節描述如何將您現有的 App 移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 App 套件，讓客戶安裝於各種不同裝置上。 您的 App 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。"
-title: "將 App 移植到 Windows 10"
+description: "本節描述如何將您現有的 App 移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 App 套件，讓客戶安裝於各種不同裝置上。 您的應用程式將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。"
+title: "將應用程式移植到 Windows 10"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 5b7b5f985eccf905698d7995d1574967bbec176f
-ms.openlocfilehash: 777542dd6a105b432e25db082cb0e1b7b87101f2
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: cbb3b501fcaf1e51ca313423e812a4119ffca49c
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 將 App 移植到 Windows 10
+# <a name="porting-apps-to-windows-10"></a>將應用程式移植到 Windows 10
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節描述如何將您現有的 app 移植到通用 Windows 平台 (UWP)，以便您在其中建立單一 Windows 10 app 套件，讓客戶安裝於各種不同裝置上。 您的 app 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。
 
@@ -29,14 +36,9 @@ Windows 執行階段 (WinRT) 是可讓您建置通用 Windows 平台 (UWP) app �
 | [從傳統型移動到 UWP](desktop-to-uwp-root.md) | 將您的 Win32 和 .NET 4.6.1 傳統型應用程式轉換為通用 Windows 平台 (UWP) App。 |
 | [將 Web 應用程式移至 UWP](hwa-to-uwp-root.md) | 將您的 Web 應用程式轉換為通用 Windows 平台 (UWP) App。 * 包含關於使用 Windows 或 Mac 做為開發平台的指示，以及關於轉換 Chrome App 支援搭配 UWP 運作的指示。 |
  
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 * [從 WPF 和 Silverlight 移到 WinRT](https://msdn.microsoft.com/library/windows/apps/dn263237)
 * [從 Android 移到 WinRT](https://msdn.microsoft.com/library/windows/apps/jj945421)
 * [從 Web 移到 WinRT](https://msdn.microsoft.com/library/windows/apps/hh465151)
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

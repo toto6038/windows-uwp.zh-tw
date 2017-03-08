@@ -1,26 +1,33 @@
 ---
 author: Xansky
-Description: "本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
+Description: "本主題說明應用程式中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "協助工具文字的需求"
 label: Accessible text requirements
 template: detail.hbs
+ms.author: mhopkins
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: f36c6a8c191f48c6fb04820c19a98891e46ecf9d
-ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 協助工具文字的需求  
+# <a name="accessible-text-requirements"></a>協助工具文字的需求  
 
 
 
 
-本主題描述 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
+本主題說明應用程式中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
-## 對比率  
+## <a name="contrast-ratios"></a>對比率  
 雖然使用者一直都可以選擇切換至高對比模式，但是您 App 對文字的設計應該將該選項視為最後的手段。 更好的做法是確定 App 文字符合專門為文字與背景間的對比層級所制定的指導方針。 對比層級的評估是根據各種不考慮色調的決定性技術。 例如，如果是綠色背景上的紅色文字，那麼患有色盲的使用者可能就看不清楚文字。 檢查並更正對比率可以防止這些類型的協助工具問題。
 
 此處記載的文字對比建議是以網頁協助工具標準為基礎，[G18：確定文字 (和文字的圖像) 和文字背景之間的對比率至少是 4.5:1](http://go.microsoft.com/fwlink/p/?linkid=221823)。 此指導方針位於 *WCAG 2.0 的 W3C 技術*規格中。
@@ -37,7 +44,7 @@ ms.openlocfilehash: a87e578ae9cfb3fd3104392028f6b7412d23d619
 <span id="Text_element_roles"/>
 <span id="text_element_roles"/>
 <span id="TEXT_ELEMENT_ROLES"/>
-## 文字元素角色  
+## <a name="text-element-roles"></a>文字元素角色  
 UWP App 可以使用這些預設元素 (一般稱為「文字元素」**或「文字編輯控制項」**)：
 
 * [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)：角色是 [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
@@ -52,7 +59,7 @@ UWP App 可以使用這些預設元素 (一般稱為「文字元素」**或「�
 <span id="Auto-suggest_accessibility"/>
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
-## 自動建議的協助工具  
+## <a name="auto-suggest-accessibility"></a>自動建議的協助工具  
 當使用者在輸入欄位輸入，且顯示可能建議的清單時，這類案例稱為自動建議。 這常見於電子郵件的「收件者」****欄位、Windows 中的 Cortana 搜尋方塊、Microsoft Edge 的 URL 輸入欄位、「天氣」App 的位置輸入欄位等位置。 如果您是使用 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) 或 HTML 內建控制項，則系統已經為您預設好這個體驗。 為了讓這個體驗無障礙，輸入欄位和清單必須相關聯。 在[實作自動建議](#implementing_auto-suggest)一節中有說明。
 
 朗讀程式已經更新，讓這個體驗能透過特殊的建議模式成為無障礙類型體驗。 整體來說，適當地連結編輯欄位與清單之後，使用者將能：
@@ -69,13 +76,13 @@ _建議清單的範例_
 <span id="Implementing_auto-suggest"/>
 <span id="implementing_auto-suggest"/>
 <span id="IMPLEMENTING_AUTO-SUGGEST"/>
-### 實作自動建議  
+### <a name="implementing-auto-suggest"></a>實作自動建議  
 為了讓這個體驗無障礙，輸入欄位和清單必須在 UIA 樹狀結構中相關聯。 在傳統型應用程式和 UWP App 中，此關聯分別是以 [UIA_ControllerForPropertyId](https://msdn.microsoft.com/windows/desktop/ee684017) 屬性和 [ControlledPeers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 屬性建立。
 
 自動建議體驗大致上有 2 種類型。
 
 **預設選取**  
-如果清單中有預設選取的項目，在傳統型應用程式中，朗讀程式會尋找 [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) 事件，在 UWP App 中則會尋找要引發的 [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件。 每當選取的項目變更 (使用者輸入其他字母而使建議項目更新，或使用者瀏覽清單)，就會引發 **ElementSelected** 事件。
+如果清單中有預設選取的項目，在傳統型應用程式中，朗讀程式會尋找 [**UIA_SelectionItem_ElementSelectedEventId**](https://msdn.microsoft.com/library/windows/desktop/ee671223) 事件，在 UWP app 中則會尋找要引發的 [**AutomationEvents.SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件。 每當選取的項目變更 (使用者輸入其他字母而使建議項目更新，或使用者瀏覽清單)，就會引發 **ElementSelected** 事件。
 
 ![包含預設選取項目的清單](images/autosuggest-default-selection.png)<br/>
 _有預設選取項目的範例_
@@ -86,10 +93,10 @@ _有預設選取項目的範例_
 ![不含預設選取項目的清單](images/autosuggest-no-default-selection.png)<br/>
 _沒有預設選取項目的範例_
 
-### XAML 實作  
+### <a name="xaml-implementation"></a>XAML 實作  
 如果您是使用預設的 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox)，則一切都已經為您設定好。 如果您是使用 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox) 和清單建立自己的自動建議體驗，則您需要在 **TextBox** 上將清單設為 [**AutomationProperties.ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers)。 每當新增或移除這個屬性時，您必須針對 [**ControlledPeers**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties.getcontrolledpeers) 屬性引發 **AutomationPropertyChanged** 事件，同時也要引發您自己的 [**SelectionItemPatternOnElementSelected**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件或 [**LayoutInvalidated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationevents) 事件，如本文稍早前所說明，這必須視您案例的類型而定。
 
-### HTML 實作  
+### <a name="html-implementation"></a>HTML 實作  
 如果您是使用 HTML 中的內建控制項，則已經為您對應 UIA實作。 以下是已經為您設定好的實作範例：
 
 ``` HTML
@@ -105,13 +112,13 @@ _沒有預設選取項目的範例_
 <span id="Text_in_graphics"/>
 <span id="text_in_graphics"/>
 <span id="TEXT_IN_GRAPHICS"/>
-## 圖形中的文字  
+## <a name="text-in-graphics"></a>圖形中的文字  
 請儘可能不要在圖形中加上文字。 例如，在影像來源檔案中包含的任何文字，會在 app 中顯示成 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 元素，那麼輔助技術就無法自動存取或判讀。 如果您必須在圖形中使用文字，請確定您提供的 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 值 (等同於「替代文字」)，包含文字或文字意義的摘要。 如果您從 [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) 的向量建立文字字元，或者利用 [**Glyphs**](https://msdn.microsoft.com/library/windows/apps/BR209921) 建立文字字元，也需要考慮類似的因素。
 
 <span id="Text_font_size"/>
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
-## 文字字型大小  
+## <a name="text-font-size"></a>文字字型大小  
 如果應用程式中的文字使用太小的字型，則會造成許多讀者難以閱讀這些文字。 您可以一開始就在應用程式的 UI 中將文字設定為合理的大小，以避免這個問題。 Windows 中還有其他輔助技術，而這些技術通常能夠讓使用者變更應用程式或顯示器的檢視大小。
 
 * 某些使用者會變更主要顯示器的 DPI 值來做為其無障礙輔助。 該選項可以在 [輕鬆存取]**** 的 [讓螢幕上的內容更大一些]**** 中變更，這會重新導向到 [外觀及個人化]**** / [顯示]**** 的 [控制台]**** UI。 確切有哪些大小設定選項可供使用，則會根據顯示裝置的功能而有所不同。
@@ -120,7 +127,7 @@ _沒有預設選取項目的範例_
 <span id="Text_scale_factor"/>
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
-## 文字縮放比例  
+## <a name="text-scale-factor"></a>文字縮放比例  
 各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 當其值為 **true** 時，手機上的一個名為 [文字大小調整]**** 的設定 ([設定] &gt; [輕鬆存取]****) 就會放大該元素中的文字。 這項調整對小型 **FontSize** 文字的影響程度，遠大於對大型 **FontSize** 文字的影響程度。 不過您可以將元素的 **IsTextScaleFactorEnabled** 屬性設為 **false**，以停用自動放大。 嘗試用這個標記來調整手機的 [文字大小]**** 設定，然後看看 **TextBlock** 會發生什麼狀況：
 
 XAML
@@ -163,15 +170,10 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) 和衍生類別
 
 <span id="related_topics"/>
-## 相關主題  
+## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [基本協助工具資訊](basic-accessibility-information.md)
 * [XAML 文字顯示範例](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?linkid=251417)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

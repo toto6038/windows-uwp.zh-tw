@@ -2,14 +2,22 @@
 author: JordanRh1
 title: "在 Windows 10 IoT 核心版上啟用使用者模式存取"
 description: "本教學課程描述如何在 Windows 10 IoT 核心版上以使用者模式存取 GPIO、I2C、SPI 及 UART。"
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 363e73101157e1c9cc233d87b3964736c260f665
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: ced83940fb49f5812343fee34cb11582683bd672
+ms.lasthandoff: 02/08/2017
 
 ---
-# 在 Windows 10 IoT 核心版上啟用使用者模式存取
+# <a name="enable-usermode-access-on-windows-10-iot-core"></a>在 Windows 10 IoT 核心版上啟用使用者模式存取
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Windows 10 IoT 核心版包含可透過使用者模式直接存取 GPIO、I2C、SPI 和 UART 的新 API。 諸如 Raspberry Pi 2 等開發板會公開這些連線的子集，讓使用者能夠使用自訂電路系統延伸基本運算模組，以處理特定應用程式。 這些低階匯流排通常會與其他重要的內建功能共用，包含一部分在排針上公開的 GPIO 針腳與匯流排。 若要保留系統穩定性，必須指定哪些針腳與匯流排可由使用者模式應用程式安全地修改。 
@@ -22,7 +30,7 @@ Windows 10 IoT 核心版包含可透過使用者模式直接存取 GPIO、I2C、
 透過現有的 `GpioClx` 與 `SpbCx` 架構，連接 Windows 上的低階匯流排使用者模式存取。 新驅動程式稱為 *RhProxy*，僅適用於 Windows 10 IoT 核心版，且會針對使用者模式公開 `GpioClx` 與 `SpbCx` 資源。 若要啟用 API，您必須在 ACPI 表格中宣告 rhproxy 的裝置節點，且應將所有 GPIO 與 SPB 資源對使用者模式公開。 本文件會逐步解說關於編寫與驗證 ASL 的資訊。 
 
 
-## 以 ASL 為例
+## <a name="asl-by-example"></a>以 ASL 為例
 
 讓我們逐步解說 Raspberry Pi 2 上的 rhproxy 裝置節點宣告。 首先，在 \\_SB scope 中建立 ACPI 裝置宣告。  
 
@@ -41,7 +49,7 @@ Device(RHPX)
 
 接下來我們會宣告應對使用者模式公開的所有 GPIO 與 SPB 資源。 資源宣告的順序非常重要，因為系統會使用資源索引將屬性與資源產生關聯。 若公開多個 I2C 或 SPI 匯流排，則系統會將第一個宣告的匯流排視為該類型的「預設」匯流排，且其將為 [Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) 與 [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) 之 `GetDefaultAsync()` 方法傳回的執行個體。 
 
-### SPI 
+### <a name="spi"></a>SPI 
 
 Raspberry Pi 具有兩個公開的 SPI 匯流排。 SPI0 具有兩個硬體晶片選擇線路，而 SPI1 具有一個硬體晶片選擇線路。 每個匯流排的每個晶片選擇線路，皆需要一個 SPISerialBus() 資源宣告。 下列兩個 SPISerialBus 資源宣告，適用於 SPI0 的兩個晶片選擇線路。 DeviceSelection 欄位包含唯一值，而驅動程式會將其解譯為硬體晶片選擇線路識別碼。 您放置於 DeviceSelection 欄位的精確值，取決於驅動程式如何解譯 ACPI 連線描述元的此欄位。  
 
@@ -152,7 +160,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 
 這會建立名為 “SPI1” 的匯流排，並將它與資源索引 2 建立關聯。  
 
-#### SPI 驅動程式需求 
+#### <a name="spi-driver-requirements"></a>SPI 驅動程式需求 
 
 * 必須使用 `SpbCx` 或具有 SpbCx 相容性 
 * 必須通過 [MITT SPI 測試](https://msdn.microsoft.com/library/windows/hardware/dn919873.aspx)
@@ -160,7 +168,7 @@ Package(2) { "bus-SPI-SPI1", Package() { 2 }},
 * 必須支援 8 位元資料長度 
 * 必須支援所有 SPI 模式︰0、1、2、3 
 
-### I2C 
+### <a name="i2c"></a>I2C 
 
 接下來我們會宣告 I2C 資源。 Raspberry Pi 會在針腳 3 和 5 上公開單一 I2C 匯流排。 
 
@@ -197,7 +205,7 @@ I2CSerialBus() 描述元的下列欄位會固定：
 * ConnectionSpeed 
 * AddressingMode 
 
-#### I2C 驅動程式需求 
+#### <a name="i2c-driver-requirements"></a>I2C 驅動程式需求 
 
 * 必須使用 SpbCx 或具有 SpbCx 相容性 
 * 必須通過 [MITT I2C 測試](https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx) 
@@ -205,7 +213,7 @@ I2CSerialBus() 描述元的下列欄位會固定：
 * 必須支援 100kHz 時脈速度 
 * 必須支援 400kHz 時脈速度 
 
-### GPIO 
+### <a name="gpio"></a>GPIO 
 
 接下來，我們會宣告對使用者模式公開的所有 GPIO 針腳。 我們提供下列指導方針，以協助您決定要公開的針腳： 
 
@@ -243,7 +251,7 @@ GpioInt(Edge, ActiveBoth, Shared, PullUp, 0, “\\_SB.GPI0”,) { 5 }
 
 若已公開的針腳具有多個替代功能，則韌體必須負責在正確的多工設定中初始化針腳，以供作業系統後續使用。 Windows 目前不支援動態變更針腳功能 (「多工處理」)。 
 
-#### 支援的驅動模式 
+#### <a name="supported-drive-modes"></a>支援的驅動模式 
 
 若 GPIO 控制器除了高阻抗輸入與 CMOS 輸出外還支援內建上拉與下拉電阻，則您必須透過選用的 SupportedDriveModes 屬性指定此項目。 
 
@@ -264,7 +272,7 @@ SupportedDriveModes 屬性會指出 GPIO 控制器支援的驅動模式。 在�
 
 若 GPIO 訊號在傳到已公開的排針前會通過電壓位準移位器，則即使無法在外部排針上觀察驅動模式，亦會宣告 SOC 支援驅動模式。 例如，若針腳通過雙向電壓位準移位器而將針腳顯示為具有上拉電阻的漏極開路，則即使針腳已設為高阻抗輸入，您也絕不會在已公開的排針上看到高阻抗狀態。 您仍應宣告針腳支援高阻抗輸入。 
 
-#### 針腳編號 
+#### <a name="pin-numbering"></a>針腳編號 
 
 Windows 支援兩種針腳編號配置︰ 
 
@@ -287,13 +295,13 @@ Package (2) { “GPIO-PinCount”, 54 },
 
 選擇與您電路板現有發佈文件最相容的編號配置。 例如 Raspberry Pi 會使用原生的針腳編號，這是因為許多現有的針腳輸出電路圖使用 BCM2835 針腳編號。 MinnowBoardMax 會使用序列式針腳編號，這是因為其中使用的現有針腳輸出電路圖極少，且由於在超過 200 個以上的針腳中僅會公開 10 個針腳，因此使用序列式針腳編號可精簡開發人員的使用體驗。 應以減輕開發人員工作負擔，做為決定使用序列式或原生針腳編號的關鍵。 
 
-#### GPIO 驅動程式需求 
+#### <a name="gpio-driver-requirements"></a>GPIO 驅動程式需求 
 
 * 必須使用 `GpioClx`
 * 必須為 SOC 記憶體對應 
 * 必須使用模擬的 ActiveBoth 中斷處理 
 
-### UART 
+### <a name="uart"></a>UART 
 
 撰寫本文時 Raspberry Pi 未支援 UART，因此下列的 UART 宣告係來自 MinnowBoardMax。 
 
@@ -326,7 +334,7 @@ Package(2) { "bus-UART-UART2", Package() { 2 }},
 
 這會為控制器指派易記名稱 “UART2”，這是使用者將從使用者模式用來存取匯流排的識別碼。  
 
-## 執行階段針腳多工處理 
+## <a name="runtime-pin-muxing"></a>執行階段針腳多工處理 
 
 針腳多工處理可針對不同功能使用相同的實體針腳。 數個不同的晶片上周邊裝置 (例如 I2C 控制器、SPI 控制器 和 GPIO 控制器) 可能會路由至 SOC 上相同的實體針腳。 多工區塊會控制任何指定時間位於針腳上的使用中功能。 就以往而言，韌體負責建立開機時的功能指派，而此指派作業在整個開機工作階段維持靜態。 執行階段針腳多工處理新增了可於執行階段重新設定針腳功能指派的功能。 這讓使用者可透過快速重新設定電路板針腳，在執行階段選擇針腳功能以加速開發工作，同時可讓硬體支援較靜態設定更為廣泛的應用程式。 
 
@@ -336,7 +344,7 @@ Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/har
 
 本文件會先說明關於針腳多工處理的基礎介面與通訊協定，接著再說明如何將針腳多工處理支援新增至 GpioClx、SpbCx 以及 SerCx 控制器驅動程式。 
 
-### 針腳多工處理架構 
+### <a name="pin-muxing-architecture"></a>針腳多工處理架構 
 
 本節說明關於針腳多工處理的基礎介面與通訊協定。 支援 GpioClx/SpbCx/SerCx 驅動程式針腳多工處理不一定必須具備基礎通訊協定知識。 如需如何支援 GpioCls/SpbCx/SerCx 驅動程式針腳多工處理的詳細資訊，請參閱[在 GpioClx 用戶端驅動程式中實作針腳多工處理支援](#supporting-muxing-support-in-GpioClx-client-drivers)與[在 SpbCx 與 SerCx 控制器驅動程式中使用多工處理支援](#supporting-muxing-in-SpbCx-and-SerCx-controller-drivers)。 
 
@@ -352,21 +360,21 @@ Windows 包含適用於 [GpioClx](https://msdn.microsoft.com/library/windows/har
 
 ![針腳多工處理用戶端伺服器互動](images/usermode-access-diagram-1.png)
 
-1.  用戶端在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回呼中，接收來自 ACPI 韌體的 MsftFunctionConfig 資源。
-2.  用戶端使用資源中樞協助程式函式 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 自資源識別碼建立路徑，然後開啟路徑控制代碼 (使用 [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx))。
-3.  伺服器使用資源中樞協助程式函式 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 從檔案路徑擷取資源中樞識別碼，然後查詢資源中樞以取得資源描述元。
-4.  伺服器針對描述元中的每個針腳執行共用仲裁，並完成 IRP_MJ_CREATE 要求。
-5.  用戶端針對接收的控制代碼發出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求。
-6.  為回應 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，伺服器會將每個針腳上的指定功能設為使用中，以執行硬體多工處理作業。
-7.  用戶端會繼續執行根據已要求針腳多工處理設定的作業。
-8.  用戶端不再需要多工處理針腳時，即會關閉控制代碼。
-9.  為回應關閉的控制代碼，伺服器會將針腳回復為其初始狀態。
+1.    用戶端在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 回呼中，接收來自 ACPI 韌體的 MsftFunctionConfig 資源。
+2.    用戶端使用資源中樞協助程式函式 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` 自資源識別碼建立路徑，然後開啟路徑控制代碼 (使用 [ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx) 或 [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx))。
+3.    伺服器使用資源中樞協助程式函式 `RESOURCE_HUB_ID_FROM_FILE_NAME()` 從檔案路徑擷取資源中樞識別碼，然後查詢資源中樞以取得資源描述元。
+4.    伺服器針對描述元中的每個針腳執行共用仲裁，並完成 IRP_MJ_CREATE 要求。
+5.    用戶端針對接收的控制代碼發出 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求。
+6.    為回應 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，伺服器會將每個針腳上的指定功能設為使用中，以執行硬體多工處理作業。
+7.    用戶端會繼續執行根據已要求針腳多工處理設定的作業。
+8.    用戶端不再需要多工處理針腳時，即會關閉控制代碼。
+9.    為回應關閉的控制代碼，伺服器會將針腳回復為其初始狀態。
 
-### 針腳多工處理用戶端的通訊協定描述
+###    <a name="protocol-description-for-pin-muxing-clients"></a>針腳多工處理用戶端的通訊協定描述
 
 本節說明用戶端如何使用針腳多工處理功能。 這不適用於 `SerCx` 和 `SpbCx` 控制器驅動程式，因為架構會代表控制器驅動程式實作此通訊協定。
 
-####    剖析資源
+####    <a name="parsing-resources"></a>剖析資源
 
 WDF 驅動程式在其 [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) 常式中接收 `MsftFunctionConfig()` 資源。 可透過下列欄位識別 MsftFunctionConfig 資源：
 
@@ -430,7 +438,7 @@ evtDevicePrepareHardware (
 }
 ```
 
-####    保留和認可資源
+####    <a name="reserving-and-committing-resources"></a>保留和認可資源
 
 若用戶端想要多工處理針腳，則會保留和認可 MsftFunctionConfig 資源。 下列範例說明用戶端如何保留並認可 MsftFunctionConfig 資源。
 
@@ -511,11 +519,11 @@ NTSTATUS AcquireFunctionConfigResource (
 
 用戶端關閉其資源控制代碼時，多工處理的針腳會回復初始狀態，以供其他用戶端立即取得。
 
-### 適用於針腳多工處理伺服器的通訊協定描述
+###    <a name="protocol-description-for-pin-muxing-servers"></a>適用於針腳多工處理伺服器的通訊協定描述
 
 本節說明針腳多工處理伺服器如何將其功能對用戶端公開。 這不適用於 `GpioClx` 迷你連接埠驅動程式，因為架構會代表用戶端驅動程式實作此通訊協定。 如需如何在 `GpioClx` 用戶端驅動程式中支援針腳多工處理的詳細資訊，請參閱[在 GpioClx 用戶端驅動程式中實作多工處理支援](#supporting-muxing-support-in-GpioClx-client-drivers)。
 
-####    處理 IRP_MJ_CREATE 要求
+####    <a name="handling-irpmjcreate-requests"></a>處理 IRP_MJ_CREATE 要求
 
 若用戶端想要保留針腳多工處理資源，則會開啟資源控制代碼。 針腳多工處理伺服器會透過來自資源中樞的重新剖析作業，接收 *IRP_MJ_CREATE* 要求。 *IRP_MJ_CREATE* 要求的結尾路徑元件會包含資源中樞識別碼，其為使用十六進位格式的 64 位元整數。 伺服器應會使用來自 reshub.h 的 `RESOURCE_HUB_ID_FROM_FILE_NAME()`，從檔名擷取資源中樞識別碼，並將 *IOCTL_RH_QUERY_CONNECTION_PROPERTIES* 傳送至資源中樞以取得 `MsftFunctionConfig()` 描述元。
 
@@ -523,22 +531,22 @@ NTSTATUS AcquireFunctionConfigResource (
 
 若針腳清單上的每個針腳皆順利執行共用仲裁，則整體共用仲裁作業亦會成功。 應仲裁處理每個針腳，如下所示 ︰
 
-*   若針腳已不保留，則會成功執行共用仲裁。
-*   若針腳已保留供專屬用途，則共用仲裁會失敗。
-*   若針腳已保留供共用，
-  * 且傳入的要求為共用，則會成功執行共用仲裁。
-  * 而傳入的要求為專屬用途，則共用仲裁作業會失敗。
+*    若針腳已不保留，則會成功執行共用仲裁。
+*    若針腳已保留供專屬用途，則共用仲裁會失敗。
+*    若針腳已保留供共用，
+  *    且傳入的要求為共用，則會成功執行共用仲裁。
+  *    而傳入的要求為專屬用途，則共用仲裁作業會失敗。
 
 若共用仲裁作業失敗，則應使用 *STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* 完成要求。 若共用仲裁作業成功，則應使用 *STATUS_SUCCESS* 完成要求。
 
 請注意，傳入要求的共用模式應取自 MsftFunctionConfig 描述元，而非 [IrpSp-&gt;Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx)。
 
-####    處理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求
+####    <a name="handling-ioctlgpiocommitfunctionconfigpins-requests"></a>處理 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求
 
 用戶端藉由開啟控制代碼成功保留 MsftFunctionConfig 資源後，可傳送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求伺服器執行實際硬體多工處理作業。 當伺服器收到 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 時，對於針腳清單中的每個針腳，它應該會 
 
-*   將 PNP_FUNCTION_CONFIG_DESCRIPTOR 架構之 PinConfiguration 成員中指定的提取模式設定到硬體。
-*   將針腳多工處理至由 PNP_FUNCTION_CONFIG_DESCRIPTOR 架構之 FunctionNumber 成員指定的功能。
+*    將 PNP_FUNCTION_CONFIG_DESCRIPTOR 架構之 PinConfiguration 成員中指定的提取模式設定到硬體。
+*    將針腳多工處理至由 PNP_FUNCTION_CONFIG_DESCRIPTOR 架構之 FunctionNumber 成員指定的功能。
 
 隨後伺服器應會以 *STATUS_SUCCESS* 完成要求。
 
@@ -546,11 +554,11 @@ FunctionNumber 的意義是由伺服器所定義，且 MsftFunctionConfig 描述
 
 請謹記，伺服器在關閉控制代碼時必須將針腳回復為接收 IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 時的原本設定，因此伺服器可能需要儲存針腳的狀態後再修改針腳。
 
-####    處理 IRP_MJ_CLOSE 要求
+####    <a name="handling-irpmjclose-requests"></a>處理 IRP_MJ_CLOSE 要求
 
 若用戶端不再需要多工處理資源，則會關閉其控制代碼。 伺服器收到 *IRP_MJ_CLOSE* 要求時，應會將針腳回復為接收 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 時的狀態。 若用戶端從未傳送 *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS*，則無須執行任何動作。 隨後伺服器應會將針腳標示為可供共用仲裁使用，並以 *STATUS_SUCCESS* 完成要求。 請務必正確同步 *IRP_MJ_CLOSE* 處理與 *IRP_MJ_CREATE* 處理。
 
-### 撰寫 ACPI 表格的指導方針
+###    <a name="authoring-guidelines-for-acpi-tables"></a>撰寫 ACPI 表格的指導方針
 
 本節說明如何提供多工處理資源至用戶端驅動程式。 請注意，您必須具有 Microsoft ASL 編譯器建置 14327 或更新版本，才能編譯包含 `MsftFunctionConfig()` 資源的表格。 `MsftFunctionConfig()` 資源會提供至針腳多工處理用戶端做為硬體資源。 `MsftFunctionConfig()` 資源應提供至需要執行針腳多工處理變更的驅動程式 (通常為 SPB 與序列控制器驅動程式)，但不應提供至 SPB 與序列周邊裝置驅動程式，這是因為控制器驅動程式會處理多工設定。
 `MsftFunctionConfig()` ACPI 巨集定義如下：
@@ -606,7 +614,7 @@ Device(I2C1)
 
 除了一般由控制器驅動程式取得的記憶體與插斷資源外，亦會指定 `MsftFunctionConfig()` 資源。 此資源可讓 I2C 控制器驅動程式將針腳 2 和 3 (由位於 \\_SB.GPIO0 的裝置節點管理) 放置於功能 4，且啟用上拉電阻。 
 
-### 在 GpioClx 用戶端驅動程式中提供多工處理支援 
+### <a name="supporting-muxing-support-in-gpioclx-client-drivers"></a>在 GpioClx 用戶端驅動程式中提供多工處理支援 
 
 `GpioClx` 具備適用於針腳多工處理的內建支援。 GpioClx 迷你連接埠驅動程式 (亦稱為「GpioClx 用戶端驅動程式」) 驅動 GPIO 控制器硬體。 自 Windows 10 組建 14327 開始，GpioClx 迷你連接埠驅動程式可透過實作兩個新 DDI，新增針腳多工處理支援： 
 
@@ -622,7 +630,7 @@ Device(I2C1)
 
 例如，假設針腳的預設多工處理設定為 UART，且針腳亦可用作 GPIO。 當呼叫 CLIENT_ConnectIoPins 以連線 GPIO 針腳時，它應會將針腳多工處理至 GPIO，且在 CLIENT_DisconnectIoPins 中應會將針腳多工回復為 UART。 一般而言，_Disconnect 常式應會復原 _Connect 常式完成的作業。 
 
-### 在 SpbCx 和 SerCx 控制器驅動程式中支援多工處理 
+### <a name="supporting-muxing-in-spbcx-and-sercx-controller-drivers"></a>在 SpbCx 和 SerCx 控制器驅動程式中支援多工處理 
 
 自 Windows 10 組建 14327 開始，`SpbCx` 與 `SerCx` 架構包含適用於針腳多工處理的內建支援，可將 `SpbCx` 與 `SerCx` 控制器驅動程式做為針腳多工處理用戶端，而無須針對控制器驅動程式進行任何程式碼變更。 透過擴充方式，可讓連線至啟用多工處理功能之 SpbCx/SerCx 控制器驅動程式的任何 SpbCx/SerCx 周邊裝置驅動程式，觸發針腳多工處理活動。 
 
@@ -645,11 +653,11 @@ Device(I2C1)
 * EvtDevicePrepareHardware/EvtDeviceReleaseHardware 
 * EvtDeviceD0Entry/EvtDeviceD0Exit 
 
-## 驗證 
+## <a name="verification"></a>驗證 
 
 完成撰寫 ASL 後，您應該執行 [Hardware Lab Kit (HLK)](https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx) 測試，確認所有資源皆已正確公開，且基礎匯流排符合 API 的功能協定。 下列章節說明如何載入 rhproxy 裝置節點進行測試而不須重新編譯韌體，以及如何執行 HLK 測試。 
 
-### 使用 ACPITABL.dat 編譯和載入 ASL 
+### <a name="compile-and-load-asl-with-acpitabldat"></a>使用 ACPITABL.dat 編譯和載入 ASL 
 
 第一步是在執行測試時，將 ASL 檔案編譯並載入至系統。 建議在開發與驗證期間使用 ACPITABL.dat，如此即無需使用完整的 UEFI 重建來測試 ASL 變更。 
 
@@ -666,24 +674,24 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     }
 }
 ```
-2.  下載 WDK 並取得 asl.exe
-3.  執行下列命令以產生 ACPITABL.dat：
+2.    下載 WDK 並取得 asl.exe
+3.    執行下列命令以產生 ACPITABL.dat：
 ```
 asl.exe yourboard.asl
 ```
-4.  在測試過程中，將產生的 ACPITABL.dat 檔案複製至系統上的 c:\windows\system32。
-5.  在測試過程中，開啟系統上的 testsigning：
+4.    在測試過程中，將產生的 ACPITABL.dat 檔案複製至系統上的 c:\windows\system32。
+5.    在測試過程中，開啟系統上的 testsigning：
 ```
 bcdedit /set testsigning on
 ```
-6.  在測試過程中將系統重新開機。 系統會將 ACPITABL.dat 中定義的 ACPI 表格，附加至系統韌體表格。 
-7.  確認 RHPX 裝置節點已新增至系統︰
+6.    在測試過程中將系統重新開機。 系統會將 ACPITABL.dat 中定義的 ACPI 表格，附加至系統韌體表格。 
+7.    確認 RHPX 裝置節點已新增至系統︰
 ```
 devcon status *msft8000
 ```
 如果在 ASL 中如果有必須解決的錯誤時，驅動程式可能會無法初始化，但 devcon 的輸出應會指出裝置存在。
 
-### 執行 HLK 測試
+### <a name="run-the-hlk-tests"></a>執行 HLK 測試
 
 當您在 HLK 管理員中選取 rhproxy 裝置節點時，會自動選取適用的測試。
 
@@ -697,41 +705,41 @@ devcon status *msft8000
 
 按一下 [執行選取的項目]。 如需每項測試的詳細說明文件，請以滑鼠右鍵按一下測試，然後再按一下 [測試描述]。
 
-### 更多測試資源
+###    <a name="more-testing-resources"></a>更多測試資源
 
 您可在 ms-iot GitHub 範例存放庫 (https://github.com/ms-iot/samples) 中，取得適用於 Gpio、I2c、Spi 和 Serial 的可用簡易命令列工具。 這些工具可協助您執行手動偵錯。
 
 | 工具 | 連結 |
 |------|------|
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (序列) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
-## 資源
+## <a name="resources"></a>資源
 
 | 目的地 | 連結 |
 |-------------|------|
 | ACPI 5.0 規格 | http://acpi.info/spec.htm |
 | Asl.exe (Microsoft ASL 編譯器) | https://msdn.microsoft.com/library/windows/hardware/dn551195.aspx |
-| Windows.Devices.Gpio  | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
+| Windows.Devices.Gpio    | https://msdn.microsoft.com/library/windows/apps/windows.devices.gpio.aspx | 
 | Windows.Devices.I2c | https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.aspx |
 | Windows.Devices.Spi | https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.aspx |
 | Windows.Devices.SerialCommunication | https://msdn.microsoft.com/library/windows/apps/windows.devices.serialcommunication.aspx |
 | 測試撰寫與執行架構 (TAEF) | https://msdn.microsoft.com/library/windows/hardware/hh439725.aspx |
 | SpbCx | https://msdn.microsoft.com/library/windows/hardware/hh450906.aspx |
-| GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
+| GpioClx    | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 測試 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
 | GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (序列) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
-## 附錄
+## <a name="apendix"></a>附錄
 
-### 附錄 A - Raspberry Pi ASL 清單
+### <a name="appendix-a---raspberry-pi-asl-listing"></a>附錄 A - Raspberry Pi ASL 清單
 
 排針針腳輸出：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
@@ -893,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ```
 
-### 附錄 B - MinnowBoardMax ASL 清單
+### <a name="appendix-b---minnowboardmax-asl-listing"></a>附錄 B - MinnowBoardMax ASL 清單
 
 排針針腳輸出：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
@@ -928,7 +936,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
     
                 // Index 1     
                 I2CSerialBus(            // Pin 13, 15 of JP1, for SIO_I2C5 (signal)
-                    0xFF,                  // SlaveAddress: bus address (TBD)
+                    0xFF,                  // SlaveAddress: bus address
                     ,                      // SlaveMode: default to ControllerInitiated
                     400000,                // ConnectionSpeed: in Hz
                     ,                      // Addressing Mode: default to 7 bit
@@ -1048,7 +1056,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### 附錄 C - 產生 GPIO 資源的範例 Powershell 指令碼
+### <a name="appendix-c---sample-powershell-script-to-generate-gpio-resources"></a>附錄 C - 產生 GPIO 資源的範例 Powershell 指令碼
 
 下列指令碼可用來產生 Raspberry Pi 的 GPIO 資源宣告︰
 
@@ -1083,9 +1091,4 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
     $resourceIndex += 2;
 }
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

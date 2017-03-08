@@ -4,9 +4,17 @@ Description: "使用清單檢視或方格檢視控制項，來顯示和操縱資
 title: "清單檢視和方格檢視"
 label: List view and grid view
 template: detail.hbs
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
+ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 translationtype: Human Translation
-ms.sourcegitcommit: b258771c887d4422433522344b11130b7e9ed1e6
-ms.openlocfilehash: 2887e2aed2c3b638343f2bd211c32f99b3c7da1a
+ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
+ms.openlocfilehash: fd8d538e6431bbff011c99ce8d17736d70f0c0ea
+ms.lasthandoff: 02/08/2017
 
 ---
 # <a name="listview-and-gridview"></a>ListView 與 GridView
@@ -514,9 +522,4 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 - [清單](lists.md)
 - [清單檢視項目範本](listview-item-templates.md)
 - [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
 

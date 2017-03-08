@@ -3,25 +3,32 @@ author: mtoepke
 title: "定義主要遊戲物件"
 description: "現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。"
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 遊戲, 主要物件"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8af939fee50540e5213e624703400d99cbb6785f
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: f81b3eaa9b896295386232f99b789dc3857b3bad
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 定義主要遊戲物件
+# <a name="define-the-main-game-object"></a>定義主要遊戲物件
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 到目前為止，我們已經舖設好範例遊戲的基本架構，也實作了處理高階使用者及系統行為的狀態電腦。 但是我們還沒有檢驗讓遊戲成為實際遊戲的部分：規則與機制，以及它們的實作方式！ 現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。
 
-## 目標
+## <a name="objective"></a>目標
 
 
 -   在實作簡單的使用 DirectX 的通用 Windows 平台 (UWP) 遊戲規則和機制時，套用基本的開發技術。
 
-## 考量遊戲的流程
+## <a name="considering-the-games-flow"></a>考量遊戲的流程
 
 
 遊戲基本架構主要定義在這些檔案中：
@@ -33,11 +40,11 @@ ms.openlocfilehash: 8af939fee50540e5213e624703400d99cbb6785f
 
 **Simple3DGame.cpp** 為 **Simple3DGame** 類別提供程式碼，這些程式碼會指定遊戲自己的實作。 之前，我們考慮了將範例遊戲處理為 UWP app。 現在，我們來看看讓它成為遊戲的程式碼。
 
-**Simple3DGame.h/.cpp** 的完整程式碼在[本章節的完整範例程式碼](#code_sample)中提供。
+**Simple3DGame.h/.cpp** 的完整程式碼在[本章節的完整範例程式碼](#complete-code-sample-for-this-section)中提供。
 
 我們來看看 **Simple3DGame** 類別的定義。
 
-## 定義核心遊戲物件
+## <a name="defining-the-core-game-object"></a>定義核心遊戲物件
 
 
 當應用程式單例啟動時，檢視提供者的 **Initialize** 方法會建立主要遊戲類別的執行個體 (**Simple3DGame** 物件)。 這個物件包含的方法可以將遊戲狀態中的變更傳送到 app 架構中定義的狀態電腦，或從 app 傳送到遊戲物件本身。 它同時也包含可以傳回更新遊戲重疊點陣圖和平視顯示器資訊的方法，以及更新遊戲的動畫和物理特性 (動態) 的方法。 用來取得遊戲所用之圖形狀態資源的程式碼可以在 GameRenderer.cpp 中找到，我們將在接下來的[組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md)中討論。
@@ -100,11 +107,11 @@ private:
 -   **LoadSavedState** 和 **SaveState**。 分別載入和儲存遊戲的目前狀態。
 -   **SaveHighScore** 和 **LoadHighScore**。 分別儲存和載入整個遊戲的高分記錄。
 -   **InitializeAmmo**。 為每一輪的開始，將做為子彈的每個球體物件狀態重設回它的原始狀態。
--   **UpdateDynamics**。 這是一個重要的方法，因為它會依據已經定義的動畫常式、物理特性和控制項輸入更新所有遊戲物件。 這是定義遊戲的互動核心。 我們會在[更新遊戲](#update_game)一節中進一步討論。
+-   **UpdateDynamics**。 這是一個重要的方法，因為它會依據已經定義的動畫常式、物理特性和控制項輸入更新所有遊戲物件。 這是定義遊戲的互動核心。 我們會在[更新遊戲](#updating-the-game-world)一節中進一步討論。
 
 其他公用方法則是 getter 屬性，它會將遊戲和重疊的特定資訊傳回到要顯示的 app 架構。
 
-## 定義遊戲狀態變數
+## <a name="defining-the-game-state-variables"></a>定義遊戲狀態變數
 
 
 遊戲物件的一個功能是當作資料的容器，這些資料會根據您在高階定義遊戲的方式來定義遊戲工作階段、關卡或存留期。 在這個情況下，這個遊戲狀態資料是用在遊戲的存留期，當使用者啟動遊戲時會初始化一次。
@@ -155,7 +162,7 @@ private:
 
 其餘的遊戲變數包含基本類型清單及其各自的遊戲內掛接點，以及遊戲特定資料和限制。 我們來看看遊戲初始化時範例是如何設定這些變數的。
 
-## 初始化和啟動遊戲
+## <a name="initializing-and-starting-the-game"></a>初始化和啟動遊戲
 
 
 當玩家啟動遊戲時，遊戲物件必須初始化它的狀態，建立和新增重疊，設定追蹤玩家表現的變數，以及具現化用來建立關卡的物件。
@@ -378,14 +385,14 @@ void Simple3DGame::Initialize(
 
 現在遊戲擁有所有關鍵元件的執行個體：世界、玩家、障礙物、目標以及子彈。 它也擁有關卡的執行個體，代表上述所有元件的設定，以及它們在每個特定關卡的行為。 現在來看看遊戲如何建立關卡。
 
-## 建立和載入遊戲關卡
+## <a name="building-and-loading-the-games-levels"></a>建立和載入遊戲關卡
 
 
 建構關卡時大部分的繁重工作都在 **Level.h/.cpp** 檔案中完成，我們不會深入研究這個檔案，因為它著重在非常特殊的實作。 重要的是每個關卡的程式碼都會做為個別 **LevelN** 物件來執行。 如果您想要擴充遊戲，可以建立 **Level** 物件，使用指派的數字做為參數，並隨機放置障礙物和目標。 或者，您可以從來源檔或者甚至是網際網路，載入關卡設定資料！
 
-**Level.h/.cpp** 的完整程式碼在[本章節的完整範例程式碼](#code_sample)中提供。
+**Level.h/.cpp** 的完整程式碼在[本章節的完整範例程式碼](#complete-code-sample-for-this-section)中提供。
 
-## 定義遊戲
+## <a name="defining-the-game-play"></a>定義遊戲
 
 
 到目前為止，我們已經具備組成遊戲所需的全部元件。 關卡已經從基本類型建構到記憶體中，而且也已準備就緒讓玩家可以特定的方式與關卡進行互動。
@@ -649,7 +656,7 @@ GameState Simple3DGame::RunGame()
 
 以下是主要呼叫：`UpdateDynamics()`。 這就是將遊戲世界帶到現實的呼叫。 我們來看看吧！
 
-## 更新遊戲世界
+## <a name="updating-the-game-world"></a>更新遊戲世界
 
 
 快速且流暢的遊戲經驗是讓世界感覺像「真實」**的地方，遊戲本身不需要玩家輸入即可產生任何活動。 風中搖擺的樹、拍擊海岸線的浪花、機械的濃煙與光澤，以及外星怪獸的伸展和唾液。 想像一下，如果遊戲世界的每件東西都靜止不動，且圖形只有在玩家提供輸入時才能移動，這會是什麼樣子。 這個畫面絕對是很怪異，且無法讓人身歷其境。 身歷其境就是讓玩家感覺身處一個真實、有生命的世界。
@@ -844,7 +851,7 @@ void Simple3DGame::UpdateDynamics()
 
 現在來看看轉譯方法。
 
-## 轉譯遊戲世界的圖形
+## <a name="rendering-the-game-worlds-graphics"></a>轉譯遊戲世界的圖形
 
 
 建議您盡可能更新遊戲中的圖形，最多可以在每次主要遊戲迴圈反覆執行時就進行更新。 在迴圈反覆執行時，無論玩家有沒有提供輸入，都會更新遊戲。 這樣可以讓計算過的動畫和行為能夠流暢地顯示。 想像一下，如果我們有一個關於水的簡單場景，但是玩家必須按下按鈕才能流動。 這會是一個很無聊的視覺效果。 優質的遊戲看起來要很平穩流暢。
@@ -1041,12 +1048,12 @@ void GameRenderer::Render()
 
 請注意，範例遊戲的 Direct2D 重疊有兩種狀態：一種是遊戲顯示包含暫停功能表點陣圖的遊戲重疊；一種是遊戲顯示十字準線，以及觸控式螢幕移動視角控制器的矩形。 分數文字會同時在這兩種狀態繪製。
 
-## 後續步驟
+## <a name="next-steps"></a>後續步驟
 
 
 現在，您可能對實際的轉譯引擎感到很好奇：更新基本類型上的 **Render** 方法呼叫是如何轉變成螢幕上的像素？ 我們會在[組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md)中詳細說明。 如果您對玩家控制項如何更新遊戲狀態感到更有興趣，請參閱[新增控制項](tutorial--adding-controls.md)。
 
-## 這個章節的完整範例程式碼
+## <a name="complete-code-sample-for-this-section"></a>這個章節的完整範例程式碼
 
 
 Simple3DGame.h
@@ -3610,7 +3617,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
  
 
-## 相關主題
+## <a name="related-topics"></a>相關主題
 
 
 [使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)
@@ -3621,10 +3628,5 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

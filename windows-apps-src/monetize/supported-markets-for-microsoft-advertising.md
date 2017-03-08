@@ -3,13 +3,20 @@ author: mcleanbyron
 ms.assetid: 4804e371-065e-4d5a-ab1a-9c5732f52a9e
 description: "了解插入式和橫幅廣告支援的國家和地區。"
 title: "Microsoft Advertising 支援的市場"
+ms.author: mcleans
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, uwp, 廣告, 市場"
 translationtype: Human Translation
-ms.sourcegitcommit: 5bf07d3001e92ed16931be516fe059ad33c08bb9
-ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 6150c885c4159911932bf8d7c3848b1e182b2f61
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# Microsoft Advertising 支援的市場
+# <a name="supported-markets-for-microsoft-advertising"></a>Microsoft Advertising 支援的市場
 
 
 
@@ -17,7 +24,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 下列國家和地區支援插入式廣告和橫幅廣告。
 
 <span id="interstitialads"/>
-## 插入式廣告
+## <a name="interstitial-ads"></a>插入式廣告
 
 -   澳大利亞
 
@@ -40,7 +47,7 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
 -   美國
 
 <span id="bannerads"/>
-## 橫幅廣告
+## <a name="banner-ads"></a>橫幅廣告
 
 
 -   阿富汗
@@ -312,9 +319,4 @@ ms.openlocfilehash: 297659aa33d37bd8da29b0cb4e0d43ce29e5e7c0
  
 
  
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

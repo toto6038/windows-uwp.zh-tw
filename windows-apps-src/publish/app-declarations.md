@@ -1,25 +1,32 @@
 ---
 author: jnHs
-Description: "您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於 app 的其他資訊。"
+Description: "您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於應用程式的其他資訊。"
 title: "應用程式宣告"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
+ms.author: wdg-dev-content
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3afdf00864e023d913b635beef0c506735881b23
-ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: feacd96ca2fa0cc4cd3d1087a982f61bc18d4604
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# 應用程式宣告
+# <a name="app-declarations"></a>應用程式宣告
 
-您可以在[提交程序](app-submissions.md)中，於 [應用程式內容]**** 頁面的 [應用程式宣告]**** 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
+您可以在[提交程序](app-submissions.md)中，於 **[應用程式內容]** 頁面的 **[應用程式宣告]** 區段中，提供關於應用程式的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
 
 下列各節說明每個宣告，以及您在決定每個宣告是否適合 app 時應考量的事項。
 
-## 此 App 允許使用者進行購買，但不使用 Windows 市集商務系統。
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-windows-store-commerce-system"></a>此 App 允許使用者進行購買，但不使用 Windows 市集商務系統。
 
-大部分 App 應該讓此方塊保留未選取，因為提供機會進行 App 內購買的 App 通常使用 Microsoft App 內購買 API 來建立和[提交附加元件](add-on-submissions.md)。 根據 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前建立並提交的 App 得以繼續提供 App 內購買功能，而不需使用 Microsoft 的商務引擎，前提是，購買功能符合 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+大部分 App 應該讓此方塊保留未選取，因為提供機會進行在應用程式內購買的 App 通常使用 Microsoft在應用程式內購買 API 來建立和[提交附加元件](add-on-submissions.md)。 根據 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前建立並提交的 App 得以繼續提供 App 內購買功能，而不需使用 Microsoft 的商務引擎，前提是，購買功能符合 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
-## 這個應用程式已經過測試，符合協助工具指導方針。
+## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 
 勾選此核取方塊，讓特地在市集中尋找無障礙應用程式的客戶能夠探索您的應用程式。
 
@@ -35,9 +42,9 @@ ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 如需詳細資訊，請參閱 [Windows 執行階段 app 的協助工具](https://msdn.microsoft.com/library/windows/apps/dn263101)、[協助工具測試](https://msdn.microsoft.com/library/windows/apps/mt297664)和[市集中的協助工具](https://msdn.microsoft.com/library/windows/apps/mt297663)。
 
-> **重要：**請勿將您的 app 列示為無障礙 app，除非您已經特別針對該用途為 app 進行了工程設計及測試。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> **重要：**請勿將您的應用程式列示為無障礙應用程式，除非您已經特別針對該用途為應用程式進行了工程設計及測試。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
-## 客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
+## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
 預設會勾選此方塊，讓客戶能夠將您的應用程式安裝至抽取式存放裝置媒體 (例如 SD 記憶卡)，或是安裝至非系統磁碟區磁碟機 (例如外部磁碟機)。
 
@@ -47,7 +54,7 @@ ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 > **注意：**針對 Windows Phone 8.1，已透過 StoreManifest.xml 來指定此選項。
 
-## Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
+## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
 
 預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。
 
@@ -63,10 +70,5 @@ ms.openlocfilehash: 419d41de3ba26f6470ad99b44826f2935aea4eff
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

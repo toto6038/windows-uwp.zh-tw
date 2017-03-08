@@ -3,14 +3,21 @@ author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: "ListView 與 GridView UI 最佳化"
 description: "透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。"
+ms.author: markl
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 8dee2c7bf5ec44f913e34f1150223c1172ba6c02
-ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 96902d7532aed1510d959b45528cc71e0e6dca70
+ms.lasthandoff: 02/07/2017
 
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 與 GridView UI 最佳化
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意**  
 如需詳細資訊，請參閱 //build/ 演講[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/events/build/2013/3-158)。
@@ -27,7 +34,7 @@ ms.openlocfilehash: dca6c9c2cde4240da4b2eff4f4786ec5b81051c6
 
 ## <a name="ui-virtualization"></a>UI 虛擬化
 
-UI 虛擬化是您可以執行的最重要改善。 這表示代表項目的 UI 元素是依需求建立。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (及其他標準 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 不會再次顯示項目時，架構會回收記憶體。
+UI 虛擬化是您可以執行的最重要改善。 這表示代表項目的 UI 元素是依需求建立。 對於繫結至 1000 個項目集合的項目控制項，同時針對所有項目建立 UI 是浪費資源，因為項目不會同時全部顯示。 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (及其他標準 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 衍生的控制項) 會為您執行 UI 虛擬化。 當項目即將被捲動到檢視中 (相差幾頁) 時，架構會產生項目的 UI 並且快取它們。 不會再次顯示項目時，架構會回收記憶體。
 
 如果您提供自訂項目面板範本 (請參閱 [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx))，則確定您使用虛擬面板，例如 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795)。 如果您使用 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717) 或 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)，則不會虛擬化。 此外，僅在使用 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) 或 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) 時會引發下列 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 事件：[**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) 和 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging)。
 
@@ -317,10 +324,5 @@ private void lst-ChoosingItemContainer
 如果使用不同項目範本的項目有不平坦的分佈，很可能需要在移動瀏覽時建立新的項目範本，這會讓虛擬化提供的許多好處無效。 此外，項目範本選取器在評估特定容器是否可供目前的資料項目重複使用時，只考量五個可能的候選項目。 因此您在 app 中使用項目範本選取器之前，應該仔細考量您的資料是否適合。 如果您的集合大部分是同質的，則選取器大部分 (可能幾乎所有) 時間都會傳回相同的類型。 需要注意的是您對該同質化的極少數例外狀況要付出的代價，並考量使用 [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (或兩個項目控制項) 是否會更好。
 
  
-
-
-
-
-<!--HONumber=Dec16_HO1-->
 
 

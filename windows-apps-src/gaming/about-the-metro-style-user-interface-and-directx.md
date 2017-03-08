@@ -3,20 +3,27 @@ author: mtoepke
 title: "App 物件和 DirectX"
 description: "使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。"
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+ms.author: mtoepke
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: "Windows 10, UWP, DirectX 應用程式物件"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
+ms.lasthandoff: 02/07/2017
 
 ---
 
-# App 物件和 DirectX
+# <a name="the-app-object-and-directx"></a>應用程式物件和 DirectX
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。 相反地，由於它們在 Windows 執行階段堆疊的較低層次執行，因此必須以更基礎的方法來與使用者介面架構進行互通： 方法為直接與 app 物件進行存取和互通。 了解這個互通發生的時間和方式，以及身為 DirectX 開發人員如何 在開發 UWP app 時有效使用這個模型。
 
-## 重要的核心使用者介面命名空間
+## <a name="the-important-core-user-interface-namespaces"></a>重要的核心使用者介面命名空間
 
 
 首先，請注意您必須加入 (利用 **using**) UWP app 中的 Windows 執行階段命名空間。 稍後我們會深入討論它。
@@ -27,11 +34,11 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **請注意**如果您不是開發 UWP app，請使用 JavaScript 或 XAML 專用程式庫和命名空間中提供的使用者介面元件，而不是使用這些命名空間中提供的類型。
+> **注意**：如果您不是開發 UWP app，請使用 JavaScript 或 XAML 專用程式庫和命名空間中提供的使用者介面元件，而不是使用這些命名空間中提供的類型。
 
  
 
-## Windows 執行階段 App 物件
+## <a name="the-windows-runtime-app-object"></a>Windows 執行階段 App 物件
 
 
 在您的 UWP app 中，您想取得一個視窗和一個檢視提供者，然後透過這個檢視提供者取得檢視，並將您的交換鏈結 (顯示緩衝區) 連接到這個檢視提供者。 您也可以將這個檢視與執行中 app 的視窗專屬事件連結。 若要取得應用程式物件的父視窗 (由 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 類型定義)，請建立實作 [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) 的類型 (和我們在上一個程式碼片段中做的一樣)。
@@ -58,7 +65,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 了解這些基本知識後，讓我們看看還有什麼其他選項可以擴充這個方法。
 
-## 核心使用者介面類型
+## <a name="core-user-interface-types"></a>核心使用者介面類型
 
 
 這裡是 Windows 執行階段中的其他核心使用者介面類型，可能對您有所幫助：
@@ -79,12 +86,12 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 總而言之，app 物件會提供一個檢視提供者 Factory。 它會建立一個檢視提供者，然後具現化應用程式的父視窗。 檢視提供者會定義應用程式父視窗的應用程式檢視。 現在，讓我們深入討論檢視和父視窗的細節。
 
-## CoreApplicationView 行為和屬性
+## <a name="coreapplicationview-behaviors-and-properties"></a>CoreApplicationView 行為和屬性
 
 
 [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 代表目前的應用程式檢視。 App 單例會在初始化時建立 App 檢視，但除非啟用檢視，否則這個檢視會維持休眠狀態。 您可以透過存取檢視上的 [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) 屬性來取得顯示檢視的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)，然後您可以將委派登錄到 [**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) 事件以處理啟用或停用事件。
 
-## CoreWindow 行為和屬性
+## <a name="corewindow-behaviors-and-properties"></a>CoreWindow 行為和屬性
 
 
 初始化應用程式物件時，會建立父視窗 ([**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體) 並將它傳送至檢視提供者。 如果應用程式有可以顯示的視窗，就會顯示該視窗；否則只會初始化檢視。
@@ -93,7 +100,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 您也可以存取 [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) 屬性 (提供 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 執行個體)，並藉此取得視窗的視窗事件發送器。
 
-## CoreDispatcher 行為和屬性
+## <a name="coredispatcher-behaviors-and-properties"></a>CoreDispatcher 行為和屬性
 
 
 您可以使用 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 類型，判斷針對視窗分派之事件的執行緒行為。 在這個類型上，只有一個特別重要的方法：[**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 方法，這個方法會啟動視窗事件處理程序。 使用錯誤的選項為 App 呼叫這個方法，會導致各種非預期的事件處理行為。
@@ -109,7 +116,7 @@ ms.openlocfilehash: 78e2bbcc4c9182b09138da457c839466b49ac31a
 
 使用 DirectX 的 UWP 應該使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) 選項來防止干擾圖形更新的封鎖行為。
 
-## DirectX 開發人員的 ASTA 考量
+## <a name="asta-considerations-for-directx-devs"></a>DirectX 開發人員的 ASTA 考量
 
 
 定義 UWP 和 DirectX app 之執行階段表示法的 app 物件，會使用稱為應用程式單一執行緒 Apartment (ASTA) 的執行緒模式 來裝載您 app 的 UI 檢視。 如果您要開發 UWP 和 DirectX app，您可能已經熟悉 ASTA 的屬性，因為您從 UWP 和 DirectX app 分派的任何執行緒，都必須使用 [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API， 或使用 [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)。 (您可以從 App 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)，以取得 ASTA 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件)。
@@ -152,10 +159,5 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

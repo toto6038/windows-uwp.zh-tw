@@ -1,17 +1,24 @@
 ---
 author: eliotcowley
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
-description: "本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。"
+description: "本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) 應用程式。"
 title: PlayReady DRM
+ms.author: elcowle
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: Windows 10, UWP
 translationtype: Human Translation
-ms.sourcegitcommit: 3c0b72b674ce02a1802a50c512e98b9aeba3bfe1
-ms.openlocfilehash: 97a3002c1e61d8f7d31b81a3a80d7473a5dc6077
+ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
+ms.openlocfilehash: 161a048a4bfa9479821aec542db17ded8243d231
+ms.lasthandoff: 02/07/2017
 
 ---
 
 # <a name="playready-drm"></a>PlayReady DRM
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。
@@ -35,7 +42,7 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 -   下列定義 PlayReady 錯誤碼的標頭現在是 Windows 軟體開發套件 (SDK) 的一部分：Windows.Media.Protection.PlayReadyErrors.h 和 Windows.Media.Protection.PlayReadyResults.h。
 -   提供主動取得非永久性授權。
 
-    舊版的 PlayReady DRM 不支援主動取得非永久性授權。 這個功能已新增到這個版本。 這可減少第一個畫面的時間。 如需詳細資訊，請參閱[播放之前主動取得非永久性授權](#proactively_acquire_a_non_persistent_license_before_playback)。
+    舊版的 PlayReady DRM 不支援主動取得非永久性授權。 這個功能已新增到這個版本。 這可減少第一個畫面的時間。 如需詳細資訊，請參閱[播放之前主動取得非永久性授權](#proactively-acquire-a-non-persistent-license-before-playback)。
 
 -   提供在一則訊息中取得多個授權的功能。
 
@@ -49,7 +56,7 @@ PlayReady DRM 讓開發人員可以建立 UWP app，能夠為使用者提供 Pla
 -   已在非永久性授權上新增以時間為基礎之限制 (包括到期、在第一次播放之後到期，以及即時到期) 的支援。
 -   已新增 HDCP 類型 1 (Windows 10 為版本 2.2) 原則的支援。
 
-    如需詳細資訊，請參閱[要考慮的事項](#things_to_consider)。
+    如需詳細資訊，請參閱[要考慮的事項](#things-to-consider)。
 
 -   現已內含 Miracast 做為輸出。
 -   已新增安全停止功能。
@@ -397,7 +404,8 @@ PlayReady DRM 可讓您在使用 HDCP 2.0 或更新版本時，立即透過 Mira
 -   Windows 10。
 -   如果您正在針對適用於 UWP app 的 PlayReady DRM 編譯任何範例，就必須使用 Microsoft Visual Studio 2015 或更新版本來編譯範例。 您仍然可以使用 Microsoft Visual Studio 2013，來編譯任何來自適用於 Windows 8.1 市集 app 的 PlayReady DRM 的範例。
 
-如果您計劃在 app 上播放 MPEG-2/H.262 內容，也必須下載並安裝 [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876)。
+<!--This is no longer available-->
+<!--If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).-->
 
 ## <a name="playready-windows-store-app-migration-guide"></a>PlayReady Windows 市集應用程式移轉指南
 
@@ -487,8 +495,8 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 當您收到授權之後，您必須將額外的 `<DeviceCapability>` 新增到應用程式資訊清單。 您必須手動新增這個項目，因為目前在應用程式資訊清單設計工具中無法使用此設定。 執行下列步驟以進行設定：
 
-1. 在 Visual Studio 中開啟專案，開啟 [方案總管]，以滑鼠右鍵按一下 [Package.appxmanifest]。
-2. 選取 [開啟方式]，選擇 [XML (文字) 編輯器]，然後按一下 [確定]。
+1. 在 Visual Studio 中開啟專案，開啟 **\[方案總管\]**，以滑鼠右鍵按一下 **\[Package.appxmanifest\]**。
+2. 選取 **\[開啟方式\]**，選擇 **\[XML (文字) 編輯器\]**，然後按一下 **\[確定\]**。
 3. 在 `<Capabilities>` 標記之間，新增下列 `<DeviceCapability>`：
 
     ```xml
@@ -509,10 +517,5 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 
 
 
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 
