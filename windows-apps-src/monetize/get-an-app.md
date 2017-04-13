@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
-description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定應用程式擷取相關資訊。"
-title: "使用 Windows 市集提交 API 取得應用程式"
+description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資訊。"
+title: "取得 App"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 176e3b584137e503c4adfe2eb612d9329226baac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6087bf65ac297b12f92a9082db4e6a12e93130ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-app-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式
-
+# <a name="get-an-app"></a>取得 App
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定應用程式擷取相關資訊。
+
+在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資訊。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -61,7 +58,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-body"></a>要求本文
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 <span/>
 
@@ -114,4 +111,3 @@ Authorization: Bearer <your access token>
 * [取得所有 App](get-all-apps.md)
 * [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
 * [取得 App 的附加元件](get-add-ons-for-an-app.md)
-

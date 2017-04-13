@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "您可以透過商務用 Windows 市集，在應用程式提交之 [定價和可用性] 頁面的 [組織授權] 區段中，指出您的應用程式是否可以大量購買及其方式。"
+Description: "您可以透過商務用 Windows 市集，在 app 提交之 [定價和可用性] 頁面的 [組織授權] 區段中，指出您的 app 是否可以大量購買及其方式。"
 title: "組織授權選項"
 ms.assetid: 1EB139B0-67E7-4F66-AAEF-491B1E52E96F
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fb906dc84085d3006be7f5f25d895e1150f9265
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3e942e649ce2c2e486f0326f10378124dd159c4c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="organizational-licensing-options"></a>組織授權選項
 
 
-您可以透過商務用 Windows 市集，在應用程式提交之 [[定價和可用性](set-app-pricing-and-availability.md#organizational-licensing)] 頁面的 [組織授權]**** 區段中，指出您的應用程式是否可以大量購買及其方式。
+您可以透過商務用 Windows 市集，在 app 提交之 [[定價和可用性](set-app-pricing-and-availability.md#organizational-licensing)] 頁面的 **\[組織授權\]** 區段中，指出您的 app 是否可以大量購買及其方式。
 
 透過這些設定，您可以選擇允許您的 app 讓組織使用，這些組織為其使用者取得和部署的多重授權，讓您有機會提升跨裝置類型 (包括電腦、平板電腦及電話) 之 Windows 10 組織的普及。 您也需要針對您直接發佈給企業的[企業營運 (LOB) app](distribute-lob-apps-to-enterprises.md) 允許組織授權。
 
@@ -27,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="allowing-your-app-to-be-offered-to-organizations"></a>允許將您的 App 提供給組織
 
-根據預設，已核取標示 [利用市集管理 (線上) 授權和散佈提供組織使用我的 App]**** 的方塊。 這表示您希望您的 App 能夠加入我們可以讓組織大量取得的 App 型錄中，具有透過市集的線上授權系統管理的 App 授權。
+根據預設，已核取標示 **\[利用市集管理 (線上) 授權和散佈提供組織使用我的 App\]** 的方塊。 這表示您希望您的 App 能夠加入我們可以讓組織大量取得的 App 型錄中，具有透過市集的線上授權系統管理的 App 授權。
 
 > **注意**  這並不保證您的應用程式可以讓所有組織使用。
 
@@ -38,7 +35,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="allowing-disconnected-offline-licensing"></a>允許中斷連線 (離線) 授權
 
 
-許多組織需要 app 啟用離線授權。 例如，某些組織需要將 App 部署到很少或永遠不會連線到網際網路的裝置。 如果您想要讓您的 App 可供這些客戶使用，請核取標示為 [允許組織管理 (離線) 授權並為組織散佈]**** 的方塊。
+許多組織需要 app 啟用離線授權。 例如，某些組織需要將 App 部署到很少或永遠不會連線到網際網路的裝置。 如果您想要讓您的 App 可供這些客戶使用，請核取標示為 **\[允許組織管理 (離線) 授權並為組織散佈\]** 的方塊。
 
 > **注意**  此方塊預設並未核取；您必須核取此方塊，讓您的應用程式可供已驗證的組織使用，這些組織會使用組織管理 (離線) 授權進行安裝。 組織必須通過其他驗證，才能以這種方式向使用者安裝付費 App。
 
@@ -92,4 +89,3 @@ ms.lasthandoff: 02/07/2017
 - 瑞士
 - 英國
 - 美國
-

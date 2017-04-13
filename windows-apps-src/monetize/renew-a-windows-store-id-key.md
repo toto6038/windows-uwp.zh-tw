@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows Store collection API, Windows Store purchase API, Windows Store ID key, renew, Windows 市集集合 API, Windows 市集購買 API, Windows 市集識別碼金鑰, 更新"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b740cf431607f1748a8513a02746a70560d09da2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 22db5f1ae693c26ecf727c94a9f6746225325f74
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="renew-a-windows-store-id-key"></a>更新 Windows 市集識別碼金鑰
 
 
@@ -120,4 +117,3 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 * [查詢產品](query-for-products.md)
 * [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
 * [授與免費產品](grant-free-products.md)
-

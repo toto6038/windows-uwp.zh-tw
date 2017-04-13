@@ -5,13 +5,11 @@ title: "交叉滑動的指導方針"
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 label: Cross-slide
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# 交叉滑動的指導方針
+# <a name="guidelines-for-cross-slide"></a>交叉滑動的指導方針
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -25,14 +23,14 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 使用交叉滑動以支援透過撥動手勢進行選取，以及透過滑動手勢進行拖曳 (移動) 互動。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
 -   針對朝單一方向捲動的清單或集合使用交叉滑動。
 -   當點選互動用於其他用途時，項目選取請使用交叉滑動。
 -   不要使用交叉滑動將項目新增到佇列。
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 選取和拖曳只適用於單一方向移動瀏覽 (垂直或水平) 的內容區域。 為了讓任一種互動可以作用，必須鎖定單一移動瀏覽方向，而且必須以與移動瀏覽方向垂直的方向操作手勢。
@@ -55,7 +53,7 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 針對朝單一方向捲動的清單或集合使用交叉滑動。 如需詳細資訊，請參閱[新增 ListView 控制項](https://msdn.microsoft.com/library/windows/apps/hh465382)。
 
-**注意** 如果內容區域可以雙向移動瀏覽 (例如網頁瀏覽器或電子書閱讀程式)，就應該使用長按計時互動來叫用物件 (例如影像和超連結) 的操作功能表。
+**注意**  如果內容區域可以雙向移動瀏覽 (例如網頁瀏覽器或電子書閱讀程式)，就應該使用長按計時互動來叫用物件 (例如影像和超連結) 的操作功能表。
 
  
 
@@ -128,7 +126,7 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
 
 如果需要移動的物件超過一個，請讓使用者選取多個項目，然後同時拖曳所有項目。
 
-## <span id="related_topics"></span>相關文章
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相關文章
 
 
 **範例**
@@ -150,11 +148,5 @@ ms.openlocfilehash: 6f89875b5ef14c029103155f4e3c333dbdad0cab
  
 
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

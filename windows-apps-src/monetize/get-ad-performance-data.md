@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
-description: "使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告效益資料。"
+description: "使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告績效資料。"
 title: "取得廣告效益資料"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 廣告, 效益"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a9d6226ebb06c1a9322ab44c3001a8b86aab1e5d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a4d907e60ddcd6a1ff093c9feccdefdda9551d09
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-ad-performance-data"></a>取得廣告效益資料
 
 
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告效益資料。 這個方法會傳回 JSON 格式的資料。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告績效資料。 這個方法會傳回 JSON 格式的資料。
 
 這個方法所傳回的資料與「Windows 開發人員中心」儀表板上的[廣告績效報告](../publish/advertising-performance-report.md)所提供的資料相同。
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明           |
+| 標頭        | 類型   | 描述           |
 |---------------|--------|--------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -183,4 +180,3 @@ Authorization: Bearer <your access token>
 
 * [廣告績效報告](../publish/advertising-performance-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-

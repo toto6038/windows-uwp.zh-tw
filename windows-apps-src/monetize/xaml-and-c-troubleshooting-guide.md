@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0d5ba07f3a77f360dcb45c7139a7301cdb623dbb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c48b265ded1ef5030a1e038806751f0f3379679b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 
 本主題包含在 XAML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 <span id="xaml-notappearing"/>
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md)。
 
@@ -173,7 +170,7 @@ ms.lasthandoff: 02/07/2017
 <span id="csharp-adcontrolnotappearing"/>
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 未具現化，將無法使用。
 
@@ -277,4 +274,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -2,21 +2,17 @@
 title: "著色器資源檢視 (SRV) 和未排序存取檢視 (UAV)"
 description: "著色器資源檢視通常會以著色器可存取的格式包裝紋理。 未排序存取檢視提供類似的功能，但啟用任何順序的紋理（或其他資源）讀取和寫入。"
 ms.assetid: 4505BCD2-0EDA-40F2-887C-EC081FE32E8F
-keywords:
-- "著色器資源檢視 (SRV)"
+keywords: "著色器資源檢視 (SRV)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4ce8e7a5d17656545cf047c2ab21cda5c5fbb4f0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2413c37dc7a19f110597a4e5664c6d4ac7b5508c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>著色器資源檢視 (SRV) 和未排序存取檢視 (UAV)
 
 
@@ -34,7 +30,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

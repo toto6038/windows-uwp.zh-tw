@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: "在 Windows 市集提交 API 中使用這個方法，取得現有附加元件提交的資料。"
-title: "使用 Windows 市集提交 API 取得附加元件提交"
+title: "取得附加元件提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件提交, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 2f6211c1ec399c5b6234ee4181dd319130c606b4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 21bed5bd2b0c3b4e1fb2224cce9f6e3c9a2fd6b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得附加元件提交
+# <a name="get-an-add-on-submission"></a>取得附加元件提交
 
 在 Windows 市集提交 API 中使用這個方法，取得現有附加元件 (也稱為應用程式內產品或 IAP) 提交的資料。 如需使用 Windows 市集提交 API 建立附加元件提交的程序的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
@@ -32,7 +29,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -58,9 +55,9 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -108,7 +105,7 @@ Authorization: Bearer <your access token>
     },
     "sales": [],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -159,4 +156,3 @@ Authorization: Bearer <your access token>
 * [更新附加元件提交](update-an-add-on-submission.md)
 * [刪除附加元件提交](delete-an-add-on-submission.md)
 * [取得附加元件提交的狀態](get-status-for-an-add-on-submission.md)
-

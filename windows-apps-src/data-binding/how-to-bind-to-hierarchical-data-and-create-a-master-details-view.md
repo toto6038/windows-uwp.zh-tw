@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 107d4a9778b377370632b6e8d37ad3216858d251
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>繫結階層式資料並建立主要/詳細資料檢視
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 > **注意**  另請參閱[主要/詳細資料範例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
@@ -228,5 +226,4 @@ namespace MasterDetailsBinding
  
 
  
-
 

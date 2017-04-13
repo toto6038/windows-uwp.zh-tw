@@ -2,21 +2,17 @@
 title: "資料流輸出 (SO) 階段"
 description: "資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段輸出（串流）到記憶體中的一或多個緩衝區。 串流輸出到記憶體的資料可重新循環回到管線做為輸入資料，或從 CPU 讀回。"
 ms.assetid: DE89E99F-39BC-4B34-B80F-A7D373AA7C0A
-keywords:
-- "資料流輸出 (SO) 階段"
+keywords: "資料流輸出 (SO) 階段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 52a5e886cb2e5ddd8f9bda459f7bd658fb3f7a1b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 07bc125426854bdd82c7cebaed6f3585197353db
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 
 
@@ -61,7 +57,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

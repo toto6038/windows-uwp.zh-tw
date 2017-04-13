@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 title: "回應式設計的螢幕大小與中斷點"
-description: "。"
+description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7c992aa651069f6876aa920da88ada659480132e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>回應式設計的螢幕大小與中斷點
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -107,4 +104,3 @@ ms.lasthandoff: 02/07/2017
 
 透過 [**Continuum 手機版**](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器、滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在小型類別中。
  
-

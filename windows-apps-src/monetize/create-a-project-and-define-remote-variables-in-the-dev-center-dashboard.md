@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: "您必須先在開發人員中心儀表板中建立專案並定義您的遠端變數，然後方可在通用 Windows 平台 (UWP) app 中運用 A/B 測試執行實驗。"
-title: "在開發人員中心儀表板中建立專案與定義遠端變數"
+title: "在儀表板中建立實驗專案"
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,14 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ad24e9a52458b826f3ce1bc7aba3dbdcf302f87d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bc38e5cc7438ff2dede5267b60bc925369defa51
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="create-a-project-and-define-remote-variables-in-the-dev-center-dashboard"></a>在開發人員中心儀表板中建立專案與定義遠端變數
+# <a name="create-an-experiment-project-in-the-dashboard"></a>在儀表板中建立實驗專案
 
 若要開始進行實驗，請在「開發人員中心」儀表板中為您的 App 建立實驗[專案](run-app-experiments-with-a-b-testing.md#terms)，並定義您 App 可以存取的遠端變數。
 
@@ -35,7 +32,8 @@ ms.lasthandoff: 02/07/2017
   3. 當您完成新增變數之後，按一下 **\[儲存\]**。
 3. 在 **\[SDK 整合\]** 區段中，記下[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)值。 當您[編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)時，必須在您的程式碼中參考此專案識別碼，讓您能夠接收變化資料，並向開發人員中心報告檢視和轉換事件。
 
->**注意**&nbsp;&nbsp;當專案中的實驗處為使用中時，您無法編輯、新增或移除遠端變數。 此限制可針對作用中的實驗協助保護控制群組資料的完整性。
+> [!NOTE]
+> 當專案中的實驗處為使用中時，您無法編輯、新增或移除遠端變數。 此限制可針對作用中的實驗協助保護控制群組資料的完整性。
 
 
 ## <a name="next-steps"></a>後續步驟
@@ -49,4 +47,3 @@ ms.lasthandoff: 02/07/2017
 * [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
 * [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
-

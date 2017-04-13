@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 評論"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 68ad995341d0d4bedbe566e8a491a80b9b0a8ed2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 79ba971e64958ab83e2674a91be37be754d2d9b6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-reviews"></a>取得應用程式評論
 
 
@@ -42,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|---------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -50,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取評論資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取評論資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -73,7 +70,7 @@ ms.lasthandoff: 02/07/2017
 | 欄位        | 支援的運算子   |  描述        |
 |---------------|--------|-----------------|
 | market | eq、ne | 內含裝置市場的 ISO 3166 國家/地區碼的字串。 |
-| osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
 | deviceType  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | isRevised  | eq、ne  | 指定 <strong>true</strong> 以篩選已修訂的評論，否則請指定 <strong>false</strong>。  |
 | packageVersion  | eq、ne  | 已評論的應用程式套件版本。  |
@@ -114,7 +111,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含評論資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[評論數值](#review-values)＞一節。                                                                                                                                      |
+| 值      | array  | 包含評論資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[評論數值](#review-values)一節。                                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評論資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
@@ -154,7 +151,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>回應範例
 
-下列範例示範這個要求的一個範例 JSON 回應主體。
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```json
 {
@@ -200,4 +197,3 @@ Authorization: Bearer <your access token>
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 評分](get-app-ratings.md)
-

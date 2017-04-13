@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "如果您的應用程式使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或影片插入式廣告，請使用 [創造營收] &gt; [利用廣告獲利] 頁面來管理廣告的使用方式。"
+Description: "如果您的應用程式使用廣告流量分配或顯示來自 Microsoft Advertising 的橫幅或插播式廣告，請使用 [創造營收] &gt; [利用廣告獲利] 頁面來管理廣告的使用方式。"
 title: "利用廣告獲利"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e82431c9b39999af9fe19ac147a6c031b9a3edc3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6418fe1b47ac89e8decb135aa9a2108b3b95ef82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="monetize-with-ads"></a>利用廣告獲利
 
 
-如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項顯示橫幅或影片插入式廣告，請使用 [創造營收]**** &gt; [利用廣告獲利]**** 頁面管理廣告的使用方式。
+如果您的應用程式使用 **AdMediatorControl**、**AdControl** 或 **InterstitialAd** 控制項顯示橫幅或插播式廣告，請使用 **\[創造營收\]** &gt; **\[利用廣告獲利\]** 頁面管理廣告的使用方式。
 
 ## <a name="windows-ad-mediation"></a>Windows 廣告流量分配
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="microsoft-affiliate-ads"></a>Microsoft 聯盟廣告
 
-如果您想要在應用程式中顯示 Microsoft 聯盟廣告，請勾選此區段中的方塊。 如果您勾選此方塊，沒有來自其他廣告網路的廣告可用時，將提供市集中產品的廣告 (包括音樂、遊戲、電影、應用程式、硬體和軟體) 給您的應用程式。 當使用者在指定的屬性視窗內按一下市集中的廣告和匯流排產品時，您就會獲得核可購買項目的佣金。
+如果您想要在應用程式中顯示 Microsoft 聯盟廣告，請勾選此區段中的方塊。 如果您勾選此方塊，沒有來自其他廣告網路的廣告可用時，將提供市集中產品的廣告 (包括音樂、遊戲、電影、應用程式、硬體和軟體) 給您的應用程式。 當使用者在指定的屬性視窗內按一下市集中的廣告並購買產品時，您就會獲得核可購買項目的佣金。
 
 如果您變更此選取項目，不需要重新發佈您的 app，變更就會生效。 如需 Microsoft 聯盟廣告的詳細資訊，請參閱[關於聯盟廣告](about-affiliate-ads.md)。
 
@@ -52,26 +49,25 @@ ms.lasthandoff: 02/07/2017
 
 使用本區段來建立 Microsoft Advertising 廣告單元。 您只需要在下列案例中建立廣告單元：
 
--   您的 app 會使用 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件顯示來自 Microsoft Advertising 的橫幅廣告。
--   您的 app 會使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件顯示來自 Microsoft Advertising 的影片插入式廣告。
+-   您的 App 會使用 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件來顯示橫幅廣告。
+-   您的 App 會使用 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件來顯示插播式廣告。
 
 若要為這些案例建立廣告單元：
 
 1.  為廣告單元命名。
-2.  選取廣告單元類型 ([橫幅]**** 或 [插入式影片]****)。
-3.  選取裝置類型 ([行動裝置]**** 或 [電腦/平板電腦]****)。
-4.  按一下 [建立廣告單元]****。
+2.  選取廣告單元類型 (**\[橫幅\]** 或 **\[插播式影片\]** 或 **\[插播式橫幅\]**)。
+3.  選取裝置類型 (**\[行動裝置\]** 或 **\[電腦/平板電腦\]**)。
+4.  按一下 **\[建立廣告單元\]**。
 
 您的廣告單元會出現在此區段底部的表格中。 您會看到每個廣告單元的**應用程式識別碼**和**廣告單元識別碼**。 若要在 app 中顯示廣告，您需要在程式碼中使用這些值：
 
--   如果您的 app 顯示橫幅廣告，請將這些值指派給 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 屬性。
--   如果您的 app 顯示影片插入式廣告，請將這些值傳遞到 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。
+-   如果您的 App 顯示橫幅廣告，請將這些值指派給 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 屬性。 如需詳細資訊，請參閱 [XAML 和 .NET 中的 AdControl](../monetize/adcontrol-in-xaml-and--net.md) 和 [HTML 5 和 JavaScript 中的 AdControl](../monetize/adcontrol-in-html-5-and-javascript.md)。
+-   如果您的 App 顯示插播式廣告，請將這些值傳遞給 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。 如需詳細資訊，請參閱[插播式廣告](../monetize/interstitial-ads.md)。
 
-> **注意：**如果您的應用程式使用廣告流量分配顯示來自 Microsoft Advertising 的橫幅廣告 (也就是，它會使用 **AdMediatorControl** 物件)，則您不需要求廣告單元。 在這個案例中，系統會自動產生 Microsoft Advertising 廣告單元。
-
- 
+> **注意**：如果您的 App 使用 **AdMediatorControl** 物件顯示來自 Microsoft Advertising 的橫幅廣告，則不需要求廣告單元。 在這個案例中，系統會自動產生 Microsoft Advertising 廣告單元。
 
  
 
  
 
+ 

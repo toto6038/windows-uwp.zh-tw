@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理套件正式發行前小眾測試版提交。"
-title: "使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交"
+title: "管理套件正式發行前小眾測試版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 71e759773beedef302a78a439b1a2a77a72dc85f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 98240f3a1f40f020474c62537d6b0444fe10bb99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-package-flight-submissions-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交
+# <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
 
 Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件正式發行前小眾測試版，包括漸進式套件推出。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -140,7 +137,7 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
   GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
   ```
 
-  若要確認提交狀態，請檢閱回應主體中的「狀態」**值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+  若要確認提交狀態，請檢閱回應主體中的*「狀態」*值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
 7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
 
@@ -240,7 +237,7 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -299,7 +296,7 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 
 | 值           | 類型    | 描述         |
 |-----------------|---------|------|
-|     date            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
+|     日期            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
 
 
@@ -352,7 +349,7 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -381,6 +378,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 | packageRolloutPercentage    | 浮點數    |  將接收漸進式推出中套件的使用者百分比。    |  
 | packageRolloutStatus    |  字串   |  下列其中一個字串，這些字串指出漸進式套件推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
+
+>**注意**&nbsp;&nbsp;*packageRolloutStatus* 和 *fallbackSubmissionId* 值是由開發人員中心指派，並不是供開發人員設定。 如果您將這些包含在要求主體中，將會忽略這些值。 
 
 <span/>
 
@@ -422,4 +421,3 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 * [認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)
 * [刪除套件正式發行前小眾測試版提交](delete-a-flight-submission.md)
 * [取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)
-

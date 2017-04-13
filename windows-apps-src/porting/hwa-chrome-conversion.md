@@ -10,14 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "適用於 Windows 的 Chrome 擴充功能, 適用於 Windows 的 Chrome 應用程式, hwa-cli, 將 .crx 轉換成 .AppX"
 ms.assetid: 04f37333-48ba-441b-875e-246fbc3e1a4d
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 84d8875cc7b1c8540f54fec78cd675bd96919fd2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b2168242d5464dbf41f12c777aa5672753a4ae6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="convert-your-existing-chrome-app-to-a-universal-windows-platform-app"></a>將您的現有 Chrome 應用程式轉換為通用 Windows 平台應用程式
+# <a name="convert-your-existing-chrome-app-to-a-uwp-app"></a>將您現有的 Chrome App 轉換為 UWP app
 
 您可輕鬆地將現有的 Chrome 託管應用程式，轉換為在通用 Windows 平台 (UWP) 上執行的 App。 您可使用兩種方式來轉換 Chrome 應用程式：
 
@@ -80,7 +77,7 @@ ms.lasthandoff: 02/08/2017
 
 Windows 10 App 不允許使用 Flash。 您必須確定您的 App 使用體驗不會因缺少 Flash 而受到影響。
 
-若為廣告，則您必須確定廣告提供者具有 HTML5 選項。 您可查看 [Bing 廣告](https://bingads.microsoft.com/)與 [App 中的廣告](http://adsinapps.microsoft.com/)。
+若為廣告，則必須確定廣告提供者具有 HTML5 選項。 您可以查看 [Bing 廣告](https://bingads.microsoft.com/)和 [Microsoft Advertising 程式庫](../monetize/display-ads-in-your-app.md)。 
 
 YouTube 影片現已[預設使用 HTML5`<video>`，](http://youtube-eng.blogspot.com/2015/01/youtube-now-defaults-to-html5_27.html)因此只要您使用[`<iframe>`內嵌方法](https://developers.google.com/youtube/iframe_api_reference)，其仍可正常運作。 若您的應用程式仍使用 Flash API，則您必須切換至先前述及的內嵌樣式。
 
@@ -107,4 +104,3 @@ Chrome 為 App 提供[特殊用途的 API](https://developer.chrome.com/apps/api
 - [存取通用 Windows 平台 (UWP) 功能以增強您的 Web 應用程式](./hwa-access-features.md)
 - [通用 Windows 平台 (UWP) App 指南](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 - [下載 Windows 市集應用程式的設計資產](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c114b7fa5c0e6a613a2c5485903d856592f0863e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: de99f73022987410ee95973542d9a80e9e130e39
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-affiliate-ads"></a>關於聯盟廣告
 
 如果您的 App 使用 **AdMediatorControl** 或 **AdControl** 來顯示橫幅廣告，您可以在您的應用程式中顯示市集中產品的 Microsoft 聯盟廣告，以提高您的營收和廣告投放率。 當使用者在指定的屬性視窗內按一下聯盟廣告並購買產品時，您就能從核可購買項目的營收中賺取利潤。
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
   若要符合傭金資格，聯盟廣告必須在「Windows 10 裝置的市集」或「網頁型市集」中產生合格的銷售；在「Windows 8.x 裝置的市集」中的銷售不符合傭金資格。 數位市集產品的聯盟廣告 (包含 App、遊戲及影片) 只於 Windows 10 裝置上提供。 網頁型市集 (包含裝置和軟體) 中產品的聯盟廣告會在 Windows 10 及 Windows 8.x 裝置上提供。
 
-    > **注意** 除了在您應用程式中推銷的產品之外，您也可以從使用者在屬性視窗中購買的*任何*產品賺取利潤。 對於在您的 App 中推銷的免費 App，您可以賺取使用者在屬性視窗中進行在應用程式內購買的部分營收。
+    > **注意** 除了在您應用程式中推銷的產品之外，您也可以從使用者在屬性視窗中購買的*任何*產品賺取利潤。 對於在您的 App 中推銷的免費 App，您可以賺取使用者在屬性視窗中進行 App 內購買的部分營收。
 
 * 您所累積之和 Microsoft 聯盟廣告計劃有關的任何營收，都將會透過您在[開發人員中心設定的支付帳戶](setting-up-your-payout-account-and-tax-forms.md)，和您的 Microsoft 廣告營收一起支付給您。
 * 若要追蹤您 App 中聯盟廣告的績效，請參閱[聯盟績效報告](affiliates-performance-report.md)。 您可以追蹤每天透過您 App 中的聯盟廣告所進行的購買，以及您賺取的部分營收。  
@@ -43,8 +40,8 @@ ms.lasthandoff: 02/07/2017
 
 選擇加入 Microsoft 聯盟廣告計劃：
 
-1. 移至 Windows 開發人員中心儀表板中的 [營利]**** &gt; [利用廣告營利]**** 頁面。
-2. 在 [Microsoft 聯盟廣告]**** 區段中，選取 [在我的應用程式中顯示 Microsoft 聯盟廣告]**** 核取方塊。
+1. 移至 Windows 開發人員中心儀表板中的 **\[營利\]** &gt; **\[利用廣告營利\]** 頁面。
+2. 在 **\[Microsoft 聯盟廣告\]** 區段中，選取 **\[在我的應用程式中顯示 Microsoft 聯盟廣告\]** 核取方塊。
 
 在您選取或取消選取此核取方塊之後，不需要重新發佈您的應用程式，變更就會生效。
 
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
 
 * [利用廣告獲利](monetize-with-ads.md)
 * [聯盟績效報告](affiliates-performance-report.md)
-

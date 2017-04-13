@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板的 下載數報告讓您能夠查看已取得您應用程式的對象、人數統計資料及平台詳細資訊。"
+Description: "Windows 開發人員中心儀表板的 下載數 報告讓您能夠查看已取得您 app 的對象、人數統計資料及平台詳細資訊。"
 title: "取得次數報告"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a668c3d03c11ac4c6c27cddeefafeb3c42caf1e3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3db02d5fc5324f281a8a725511066cfbe5de1e3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="acquisitions-report"></a>取得次數報告
 
 
-Windows 開發人員中心儀表板的**下載數**報告讓您能夠查看已取得您應用程式的對象、人數統計資料及平台詳細資訊。 您可以在儀表板中檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得應用程式下載數](../monetize/get-app-acquisitions.md)方法來擷取此資料。
+Windows 開發人員中心儀表板的 **下載數** 報告讓您能夠查看已取得您 app 的對象、人數統計資料及平台詳細資訊。 您可以在儀表板中檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得應用程式下載數](../monetize/get-app-acquisitions.md)方法來擷取此資料。
 
 在此報告中，一個下載數表示一位新客戶已取得您 app 的授權 (不論是付費或免費取得)。
 
@@ -30,7 +27,7 @@ Windows 開發人員中心儀表板的**下載數**報告讓您能夠查看已�
 ## <a name="apply-filters"></a>套用篩選
 
 
-您可以在接近頁面頂端的地方，展開 [\**套用篩選**\]，依日期範圍和/或裝置類型來篩選此頁面上的所有資料。
+您可以在接近頁面頂端的地方，展開 **\[套用篩選\]**，依日期範圍和/或裝置類型篩選此頁面上的所有資料。
 
 -   **日期**：預設篩選為 **[過去 30 天]**，但是您可以擴展此範圍，最多可達 **[過去 12 個月]**。
 -   **裝置類型**：預設設定為 [**所有裝置**]。 如果您只想要顯示來自特定裝置類型的下載數資料，您可以在此處選擇特定的類型。
@@ -73,4 +70,3 @@ Windows 開發人員中心儀表板的**下載數**報告讓您能夠查看已�
  
 
  
-

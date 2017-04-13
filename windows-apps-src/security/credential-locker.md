@@ -1,6 +1,6 @@
 ---
 title: "認證保險箱"
-description: "本文說明通用 Windows 平台 (UWP) app 可以如何使用認證保險箱，安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。"
+description: "本文說明通用 Windows 平台 (UWP) 應用程式可以如何使用認證保險箱，來安全地儲存和擷取使用者認證，並透過使用者的 Microsoft 帳戶在裝置之間進行漫遊。"
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
 ms.author: alkoren
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d72432aa5f9ccc40d4f822f5d76c1e09b606e33a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86862ae7eb630515f45ca2a5705c325e235e9bc0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="credential-locker"></a>認證保險箱
 
 

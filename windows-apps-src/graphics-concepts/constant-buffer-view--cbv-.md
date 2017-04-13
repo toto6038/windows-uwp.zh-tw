@@ -2,21 +2,17 @@
 title: "常數緩衝區檢視 (CBV)"
 description: "常數緩衝區包含著色器常數資料。 其價值在於資料會持續且可由任何 GPU 著色器存取，直到必須變更資料為止。"
 ms.assetid: 99AEC6B0-A43B-4B61-8C3A-ECC8DE1B69A7
-keywords:
-- "常數緩衝區檢視 (CBV)"
+keywords: "常數緩衝區檢視 (CBV)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84d97f1d03c396ba379ad0a83bb094c09b769924
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 755c80e895281b93e9e37144526ed1790c63199f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="constant-buffer-view-cbv"></a>常數緩衝區檢視 (CBV)
 
 
@@ -34,7 +30,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

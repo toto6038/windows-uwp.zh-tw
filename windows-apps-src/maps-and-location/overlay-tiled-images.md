@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊"
-translationtype: Human Translation
-ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
 ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
@@ -208,7 +205,7 @@ void MainPage::AddHttpMapTileSource()
 如果 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性或 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所提供的可置換參數不足以擷取您的磚，您就必須建立自訂 URI。 為 **UriRequested** 事件提供自訂處理常式以建立及傳回自訂 URI。 將會針對每個個別磚引發 **UriRequested** 事件。
 
 1.  在 **UriRequested** 事件的自訂處理常式中，將必要的自訂引數與 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743)、[**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744) 及 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) 屬性結合，以建立自訂 URI。
-2.  傳回 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173) (包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 屬性中) 之 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 屬性中的自訂 Uri。
+2.  傳回 [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173) (包含在 [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) 的 [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) 屬性中) 之 [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) 屬性中的自訂 URI。
 
 下列範例示範如何為 **UriRequested** 事件建立自訂處理常式來提供自訂 URI。 同時也示範當您需要以非同步方式執行工作來建立自訂 URI 時，要如何實作延遲模式。
 
@@ -372,4 +369,3 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 * [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

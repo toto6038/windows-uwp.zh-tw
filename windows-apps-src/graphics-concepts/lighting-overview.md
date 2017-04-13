@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cb5391dcd210b28b2971d39cfe8c9f2964889839
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7f4ca6fdbd93d42dbefd955f31bd514b93886d03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lighting-overview"></a>光源概觀
 
 當您使用 Direct3D 照明時，您可以允許 Direct3D 為您處理照明細節。 如有需要，進階使用者可以自行執行照明。
@@ -81,7 +78,6 @@ Direct3D 描述結合成最後色彩的四個元件 (紅色、綠色、藍色及
  
 
  
-
 
 
 

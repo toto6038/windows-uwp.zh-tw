@@ -2,32 +2,34 @@
 author: mcleanbyron
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: "在 Windows 市集促銷 API 中使用此方法，管理適用於廣告行銷活動的播送行。"
-title: "管理廣告行銷活動的廣告播送行"
+title: "管理廣告播送行"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集促銷 API, 廣告行銷活動"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5f9ede6a2e645a644e4650f3af7e5476bd52dd53
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 419dbc2ef8de66b0cb8cf51b483174f5c086a092
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-delivery-lines-for-ad-campaigns"></a>管理廣告行銷活動的廣告播送行
+# <a name="manage-delivery-lines"></a>管理廣告播送行
 
 在 Windows 市集促銷 API 使用這些方法，建立一個或多個*播送行*購買詳細目錄，並提供您的用於促銷活動的廣告。 對於每個廣告播送行，您可以設為目標，設定買方出價，以及設定預算和要使用之廣告素材的連結，決定要花多少費用。
 
 如需有關播送行和廣告行銷活動、目標設定檔及廣告素材之間關聯性的詳細資訊，請參閱[使用 Windows 市集服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
+
+>**注意**&nbsp;&nbsp;使用此 API 成功地建立廣告行銷活動的廣告播送行之前，您必須先[在開發人員中心儀表板中使用 **\[宣傳您的應用程式\]** 頁面建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且必須在此頁面上至少新增一個付款方式。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 使用此 API 所建立的廣告行銷活動將會自動向儀表板中 **\[宣傳您的應用程式\]** 頁面上所選擇預設付款方式收取費用。
 
 ## <a name="prerequisites"></a>必要條件
 
 若要使用這些方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+
+  >**注意**&nbsp;&nbsp;做為必要條件的一部分，請務必[在開發人員中心儀表板中至少建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且在儀表板中為此廣告行銷活動至少新增一個付款方式。 使用此 API 所建立的廣告播送行將會自動向儀表板中 **\[宣傳您的應用程式\] **頁面上所選擇預設付款方式收取費用。
+
+* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
 ## <a name="request"></a>要求
 
@@ -44,7 +46,7 @@ ms.lasthandoff: 02/08/2017
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 <span/>
@@ -160,4 +162,3 @@ Authorization: Bearer <your access token>
 * [管理廣告行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
 * [管理廣告行銷活動的廣告素材](manage-creatives-for-ad-campaigns.md)
 * [取得廣告行銷活動績效資料](get-ad-campaign-performance-data.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 401ab153ec737a0a82825dc3b2065156b50d4589
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f31d6da73c274fc4f14e0851cf956a43fa441b76
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore2"></a>Windows Runtime 8.x 至 UWP 的案例研究：Bookstore2
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -74,11 +71,11 @@ Bookstore2\_81 方案是 8.1 通用 App 專案。 Bookstore2\_81.Windows 專案�
 
 您可以立即建置並執行。 以下是新的 UWP app 在尚未執行任何工作以將其移植到 Windows 10 之後的外觀。
 
-![放大檢視已變更初始原始程式碼且正在電腦裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
+![放大檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-05-desk10-zi-initial-source-code-changes.png)
 
 放大檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式
 
-![縮小檢視已變更初始原始程式碼且正在電腦裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
+![縮小檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c02-06-desk10-zo-initial-source-code-changes.png)
 
 縮小檢視已變更初始原始程式碼且正在傳統型裝置上執行的 Windows 10 應用程式
 
@@ -157,11 +154,11 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 
 樣式作業的最後一個步驟會讓 app 看起來像這樣。
 
-![放大檢視已移植完成且正在電腦裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
+![放大檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
 放大檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小
 
-![縮小檢視已移植完成且正在電腦裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+![縮小檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 縮小檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小
 
@@ -178,4 +175,3 @@ Windows 10 中對於 [**SemanticZoom**](https://msdn.microsoft.com/library/windo
 與前一個案例研究相比，這個案例研究涉及更酷炫的使用者介面。 如同前一個案例研究，這個特定的檢視模型完全不需進行任何工作，而且我們的努力重點主要是重構使用者介面。 某些變更是將兩個專案結合成一個，同時仍支援許多不同尺寸規格所產生的必要結果 (事實上，比之前多很多)。 有一些變更是利用已對平台所做的變更來進行。
 
 下一個案例研究是 [QuizGame](w8x-to-uwp-case-study-quizgame.md)，我們將在其中探討如何存取和顯示分組資料。
-

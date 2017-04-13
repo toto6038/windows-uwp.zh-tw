@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取應用程式內購買相關資訊。"
-title: "使用 Windows 市集提交 API 取得應用程式的附加元件"
+title: "取得 App 的附加元件"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73ce08bfa72a8508d71811267f8cd8e2377a3613
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 198db630fbba8d4145454a6912f118225b13ac1c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-add-ons-for-an-app-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式的附加元件
+# <a name="get-add-ons-for-an-app"></a>取得 App 的附加元件
 
 
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -108,7 +105,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 10，但是 App 有 50 個附加元件，回應主體會包含 ```applications/{applicationid}/listinappproducts/?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 50 個附加元件，回應主體會包含 ```applications/{applicationid}/listinappproducts/?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationid}/listinappproducts/?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
 | value      | 陣列  | 列出指定 App 每個附加元件之市集識別碼的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[附加元件資源](get-app-data.md#add-on-object)。                                                                                                                           |
 | totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是指定 App 的附加元件總數目)。                                                                                                                                                                                                                             |
 
@@ -131,4 +128,3 @@ Authorization: Bearer <your access token>
 * [取得所有 App](get-all-apps.md)
 * [取得 App](get-an-app.md)
 * [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
-

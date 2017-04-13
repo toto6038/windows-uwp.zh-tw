@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "了解如何在通用 Windows 平台 (UWP) 應用程式的基本兩個對等頁面中瀏覽。"
+Description: "了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。"
 title: "兩個頁面之間的對等瀏覽"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
@@ -12,18 +12,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e144e612567a977a6c4e1502719dabbc488329
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="peer-to-peer-navigation-between-two-pages"></a>兩個頁面之間的對等瀏覽
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-了解如何在通用 Windows 平台 (UWP) 應用程式的基本兩個對等頁面中瀏覽。
+了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
 
 ![兩個頁面對等瀏覽範例](images/nav-peertopeer-2page.png)
 
@@ -41,14 +38,14 @@ ms.lasthandoff: 02/07/2017
 ## <a name="create-the-blank-app"></a>建立空白 App
 
 
-1.  在 Microsoft Visual Studio 功能表，選擇 [檔案] &gt; [新增專案]****。
-2.  在 [新增專案]**** 對話方塊的左窗格中，選擇 [Visual C#] -&gt; [Windows] -&gt; [通用]**** 或 [Visual C++] -&gt; [Windows] -&gt; [通用]**** 節點。
+1.  在 Microsoft Visual Studio 功能表，選擇 **\[檔案\] &gt; \[新增專案\]**。
+2.  在 **\[新增專案\]** 對話方塊的左窗格中，選擇 **\[Visual C#\] -&gt; \[Windows\] -&gt; \[通用\]** 或 **\[Visual C++\] -&gt; \[Windows\] -&gt; \[通用\]** 節點。
 3.  在中央窗格中，選擇**空白 app**。
-4.  在 [名稱]**** 方塊中輸入 **NavApp1**，然後選擇 [確定]**** 按鈕。
+4.  在 **\[名稱\]** 方塊中輸入 **NavApp1**，然後選擇 **\[確定\]** 按鈕。
 
-    隨即建立您的方案，而且專案檔案會出現在 [方案總管]**** 中。
+    隨即建立您的方案，而且專案檔案會出現在 **\[方案總管\]** 中。
 
-5.  若要執行程式，請從功能表依序選擇 [偵錯]**** &gt; [開始偵錯]****，或按 F5。
+5.  若要執行程式，請從功能表依序選擇 **\[偵錯\]** &gt; **\[開始偵錯\]**，或按 F5。
 
     隨即顯示空白頁面。
 
@@ -60,10 +57,10 @@ ms.lasthandoff: 02/07/2017
 
 執行下列步驟兩次，新增兩個要互相瀏覽的頁面。
 
-1.  在 [方案總管]**** 中，以滑鼠右鍵按一下 [BlankApp]**** 專案節點以開啟捷徑功能表。
-2.  從捷徑功能表選擇 [新增]**** &gt; [新增項目]****。
-3.  在 [加入新項目]**** 對話方塊中，選擇中間窗格的 [空白頁]****。
-4.  在 [名稱]**** 方塊中，輸入 **Page1** (或 **Page2**)，然後按 [新增]**** 按鈕。
+1.  在 **\[方案總管\]** 中，以滑鼠右鍵按一下 **\[BlankApp\]** 專案節點以開啟捷徑功能表。
+2.  從捷徑功能表選擇 **\[新增\]** &gt; **\[新增項目\]**。
+3.  在 **\[加入新項目\]** 對話方塊中，選擇中間窗格的 **\[空白頁\]**。
+4.  在 **\[名稱\]** 方塊中，輸入 **Page1** (或 **Page2**)，然後按 **\[新增\]** 按鈕。
 
 這些檔案現在應該會列在您的 NavApp1 專案中。
 
@@ -332,7 +329,7 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-執行 app，在文字方塊中輸入您的名稱，然後按一下 [按一下以移至頁面 2]**** 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br227737) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br242739) 事件中的 `this.Frame.Navigate(typeof(Page2), tb1.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
+執行 app，在文字方塊中輸入您的名稱，然後按一下 **\[按一下以移至頁面 2\]** 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br227737) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br242739) 事件中的 `this.Frame.Navigate(typeof(Page2), tb1.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
 
 ## <a name="cache-a-page"></a>快取頁面
 
@@ -371,7 +368,6 @@ Page1::Page1()
  
 
  
-
 
 
 

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: "使用 Windows 市集提交 API 以程式設計方式為登錄到您 Windows 開發人員中心帳戶的 App 建立和管理提交。"
-title: "使用 Windows 市集服務建立和管理提交"
+title: "建立及管理提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f73470c456bf59544bc702b137da64f57c6a6943
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ca8bb623d06da0001b1b0751a5ac1ccc310bbd84
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-# <a name="create-and-manage-submissions-using-windows-store-services"></a>使用 Windows 市集服務建立和管理提交
+# <a name="create-and-manage-submissions"></a>建立及管理提交
 
 
 使用 *Windows 市集提交 API* 以程式設計的方式查詢和建立您或您組織的 Windows 開發人員中心帳戶內 App、附加元件 (也稱為應用程式內產品或 IAP) 以及套件正式發行前小眾測試版的提交。 如果您的帳戶管理多個 App 或附加元件，而且您想要自動化與最佳化這些資產的提交程序，這個 API 非常有用。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您 App 或服務的呼叫。
@@ -35,7 +32,7 @@ ms.lasthandoff: 02/07/2017
 <br/><br/>
 >* 如果您使用此 API 為應用程式、正式發行前小眾測試版或附加元件建立提交，請務必只使用 API 為提交進行其他變更，而不要使用開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 <br/><br/>
-> * 這個 API 無法用於使用 2016 年 8 月開發人員中心儀表板引入之某些功能的應用程式或附加元件，包括 (但不限於) 強制性的應用程式更新和市集管理的消耗性附加元件。 如果您將 Windows 市集提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用儀表板管理 App 或附加元件的提交。
+> * 這個 API 無法用於使用 2016 年 8 月開發人員中心儀表板引入的某些功能的 App 或附加元件，包括 (但不限於) 強制性的 App 更新和市集管理的消耗性附加元件。 如果您將 Windows 市集提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用儀表板管理 App 或附加元件的提交。
 
 
 <span id="prerequisites" />
@@ -143,5 +140,3 @@ grant_type=client_credentials
 * [管理附加元件提交](manage-add-on-submissions.md)
 * [管理套件正式發行前小眾測試版](manage-flights.md)
 * [管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
- 
-

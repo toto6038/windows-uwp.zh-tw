@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "在 Windows 開發人員中心儀表板中，管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知、A/B 測試和地圖等服務。"
+Description: "在 Windows 開發人員中心儀表板中，管理和檢視與每個 App 相關的詳細資料，並設定像是推播通知、A/B 測試和地圖等服務。"
 title: "應用程式管理與服務"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.author: wdg-dev-content
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1aaab8d122968265ff17b352a53b69081e84f01e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 48e48d1a350b01777c1d7e5ed4ab1f82b1d66d26
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
 您可以在 Windows 開發人員中心儀表板中管理和檢視與每個應用程式相關的詳細資料，並設定像是推播通知、A/B 測試和地圖等服務。
@@ -87,4 +84,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

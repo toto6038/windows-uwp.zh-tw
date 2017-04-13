@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: "使用 Windows 市集提交 API 中的這個方法，刪除現有的套件正式發行前小眾測試版提交。"
-title: "使用 Windows 市集提交 API 刪除套件正式發行前小眾測試版提交"
+title: "刪除套件正式發行前小眾測試版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交, 刪除, 套件正式發行前小眾測試版"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e720b8551949335faa0407cbc159c217d4b91343
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1b69fb04742e30a80b258613385b40ce8999306c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 刪除套件正式發行前小眾測試版提交
+# <a name="delete-a-package-flight-submission"></a>刪除套件正式發行前小眾測試版提交
 
 
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -61,9 +58,9 @@ ms.lasthandoff: 02/07/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 <span/>
 
@@ -101,4 +98,3 @@ Authorization: Bearer <your access token>
 * [認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)
 * [更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)
 * [取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)
-

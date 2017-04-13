@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 廣告, AdControl, 疑難排解, HTML, JavaScript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe06749583dc42ec84dc4acd876ea96c70c916db
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 068ba245475aa03b0772e8f38017c93783fdb6ce
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑難排解指南
 
 本主題包含在 JavaScript/HTML 應用程式中使用 Microsoft Advertising 程式庫開發之常見問題的解決方案。
@@ -35,7 +32,7 @@ ms.lasthandoff: 02/07/2017
 <span id="html-notappearing"/>
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  確定 JavaScript 參考存在。 若 &lt;head&gt; 區段中沒有 ad.js 參考，**AdControl** 將無法顯示，且建置期間會發生錯誤。
 
@@ -234,7 +231,7 @@ ms.lasthandoff: 02/07/2017
 <span id="js-adcontrolnotappearing"/>
 ### <a name="adcontrol-not-appearing"></a>沒有顯示 AdControl
 
-1.  確定已在 Package.appxmanifest 中選取 [網際網路 (用戶端)]**** 功能。
+1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
 2.  確定 **AdControl** 已具現化。 如果 **AdControl** 尚未具現化。 它將無法供使用。
 
@@ -387,4 +384,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

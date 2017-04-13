@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, AdControl, HTML, 屬性"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a879944dc14ca161c3e52a49ffe4a8cebfa7d69f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: efc94b723b3bfe97b35484882ae784e9ef4d6807
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-html-properties-example"></a>AdControl HTML 屬性範例
 
 以下範例示範如何在 HTML 中指派 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 屬性。 **applicationId** 和 **adUnitId** 是必要的屬性。 其他屬性和事件是選擇性的。 如果您未提供選擇性屬性的值，該控制項將會使用預設值，這會建立與應用程式使用者體驗一致的廣告。
@@ -44,4 +41,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-

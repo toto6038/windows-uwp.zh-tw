@@ -9,20 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7349188a9b735ac887c1afbc09c572f598407471
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pair-devices"></a>配對裝置
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** 重要 API **
+**重要 API**
 
--   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+- [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
 有些裝置在使用之前需要先進行配對。 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間支援三種不同方式來配對裝置。
 
@@ -48,7 +46,7 @@ ms.lasthandoff: 02/07/2017
 
 若要嘗試基本配對，您需要先針對感興趣的裝置取得 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件。 一旦接收到該物件之後，您將會與 [**DeviceInformation.Pairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 屬性進行互動，也就是 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 物件。 若要嘗試進行配對，只需呼叫 [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800)。 您將需要 **await** 結果，才能讓 app 有時間嘗試完成配對動作。 隨即會傳回配對動作的結果，只要沒有傳回任何錯誤，裝置就會進行配對。
 
-如果使用的是基本配對，也可以存取其他有關裝置配對狀態的資訊。 例如，您了解配對狀態 ([**IsPaired**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.ispaired.aspx))，以及裝置是否可配對 ([**CanPair**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.canpair.aspx))。 這兩者均為 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 物件的屬性。 如果使用的是自動配對，除非取得相關的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件，否則可能無法存取此資訊。
+如果使用的是基本配對，也可以存取其他有關裝置配對狀態的資訊。 例如，您了解配對狀態 ([**IsPaired**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_IsPaired))，以及裝置是否可配對 ([**CanPair**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing#Windows_Devices_Enumeration_DeviceInformationPairing_CanPair))。 這兩者均為 [**DeviceInformationPairing**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) 物件的屬性。 如果使用的是自動配對，除非取得相關的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件，否則可能無法存取此資訊。
 
 ## <a name="custom-pairing"></a>自訂配對
 
@@ -76,8 +74,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
-
-
-
-

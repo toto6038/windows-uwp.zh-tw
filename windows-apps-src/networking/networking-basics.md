@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-description: "您對於任何具備網路功能的應用程式所需執行的動作。"
+description: "您對於任何具備網路功能的 app 所需執行的動作。"
 title: "網路功能基本知識"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.author: bobdel
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d24d1ff9408585246aae4c4849d3af5e8f4846be
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a2220b8c31877efdbef6a102efdb32158a709939
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-basics"></a>網路功能基本知識
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您對於任何具備網路功能的 app 所需執行的動作。
 
@@ -91,7 +88,7 @@ ms.lasthandoff: 02/07/2017
 與其中一個 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法搭配使用的一般順序是相同的。
 
 -   建立一個 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)。
--   如果需要通訊端上的進階選項，請使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 屬性取得與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件關聯的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226917) 執行個體。 設定 **StreamSocketControl** 上的屬性。
+-   如果需要通訊端上的進階選項，請使用 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) 屬性取得與 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 物件關聯的 [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) 執行個體。 設定 **StreamSocketControl** 上的屬性。
 -   呼叫上面其中一個 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 方法以啟動作業來連線至遠端目的地，並立即交涉以使用 SSL/TLS。
 -   順利完成非同步作業後，實際上使用 [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) 交涉的 SSL 強度可以透過取得 [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) 屬性來決定。
 
@@ -422,5 +419,4 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 * [Windows 10 中的網路 API 改進](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
-
 

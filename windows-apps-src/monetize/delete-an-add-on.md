@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: "使用 Windows 市集提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的應用程式刪除附加元件。"
-title: "使用 Windows 市集提交 API 刪除附加元件"
+description: "使用 Windows 市集提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的 App 刪除附加元件。"
+title: "刪除附加元件"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 刪除, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 56ae310a13401b733eadf08f2f1992bfe0130884
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 74149837e43b65998069c8724b5cd6c55df8703b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 刪除附加元件
-
+# <a name="delete-an-add-on"></a>刪除附加元件
 
 
 
-使用 Windows 市集提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的應用程式刪除附加元件 (也稱為應用程式內產品或 IAP)。
+
+使用 Windows 市集提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的 App 刪除附加元件 (也稱為應用程式內產品或 IAP)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -61,7 +58,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-body"></a>要求本文
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 <span/>
 
@@ -96,4 +93,3 @@ Authorization: Bearer <your access token>
 * [取得所有附加元件](get-all-add-ons.md)
 * [取得附加元件](get-an-add-on.md)
 * [建立附加元件](create-an-add-on.md)
-

@@ -2,22 +2,19 @@
 author: GrantMeStrength
 Description: "比較 iOS、Android 和 Windows 10 平台之間的功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: "適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應"
+title: "適用於 Android 與 iOS 開發人員的 Windows 概念"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e5cf0a75515458a558e94a9f8bb54913e7df4a14
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
+#<a name="windows-concepts-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 概念
 
 如果您是具備 Android 或 iOS 技巧和 (或) 程式碼的開發人員，而且您想要移到 Windows 10 和通用 Windows 平台 (UWP)，則此資源擁有您在三個平台之間對應平台功能 (和您的知識) 所需的資訊。
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/08/2017
 <td align="left"><strong>設計語言。</strong><br><br>一組擬定平台上 app 外觀和行為的慣例。</td>
 <td align="left"><strong>Android Material Design (Android 材料設計)</strong> 指導方針提供 Android 設計人員與開發人員需要遵循的視覺化語言。</td>
 <td align="left"><strong>Human Interface Guidelines (人性化介面指導方針)</strong> 為 iOS 設計人員與開發人員提供建議。</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上具有出色外觀的 app。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
+<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上具有出色外觀的 App。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>使用者介面標記語言。</strong> <br><br>轉譯和描述 UI 及其元件的標記語言。 每個平台都為視覺與標記編輯提供編輯器。<br/></td>
@@ -62,14 +59,14 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="even">
 <td align="left"><strong>控制項事件處理。</strong> <br><br>定義觸發 UI 控制項內事件時要執行的邏輯。</td>
-<td align="left"><strong>Event handlers (事件處理常式)</strong> 和 <strong>Event listeners (事件接聽程式)</strong>以 XML 或以程式設計方式新增。</td>
+<td align="left"><strong>Event handlers (事件處理常式)</strong> 和 <strong>Event listeners (事件接聽程式)</strong> 以 XML 或以程式設計方式新增。</td>
 <td align="left">控制項可將 <strong>action (動作)</strong> 訊息傳送到 <strong>targets (目標)</strong>。</td>
 <td align="left">您可以定義方法來處理附加到 XAML 頁面之<strong>程式碼後置檔案</strong>中 XAML 控制項的事件。 <strong>事件處理常式</strong>一律以程式碼撰寫。 但是您可以使用 XAML 標記或程式碼將這些處理常式勾連到事件。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt228345.aspx">新增控制項和處理事件</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185584.aspx">事件與路由事件概觀</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>資料繫結。</strong> <br><br>一種軟體設計模式，可讓 app UI 轉譯資料，而且可以選擇與該資料保持同步。</td>
 <td align="left">目前已提供 <strong>Data Binding Library (資料繫結程式庫)</strong>，不過仍是搶鮮版 (Beta)。</td>
-<td align="left">iOS 上沒有內建的繫結系統。 <strong>可透過使用第三方程式庫或撰寫額外的程式碼，以 Key-Value Observing (索引鍵值觀察)</strong> 為基礎進行建置，以執行資料繫結。 控制項使用委派/回呼方法來取得資料。</td>
+<td align="left">iOS 上沒有內建的繫結系統。 可透過使用第三方程式庫或撰寫額外的程式碼，以 <strong>Key-Value Observing (索引鍵值觀察)</strong> 為基礎進行建置，以執行資料繫結。 控制項使用委派/回呼方法來取得資料。</td>
 <td align="left">UWP 平台可為您處理<strong>資料繫結</strong>。 您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204783.aspx">{X:bind}</a></strong> 標記延伸來利用高效能繫結，或使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt204782.aspx">{Binding}</a></strong> 來利用更多的功能。 然後只需設定您的繫結，選擇平台要使用<strong>單向繫結</strong>在 UI 中顯示資料來源的值，或者使用<strong>雙向繫結</strong>一併觀察那些值並在值變更時更新您的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt210947.aspx">資料繫結</a></td>
 </tr>
 <tr class="even">
@@ -86,7 +83,7 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="even">
 <td align="left"><strong>可重複使用的視覺樣式。</strong> <br><br>將視覺變更套用到多個控制項 (以可重複使用的格式)。</td>
-<td align="left"><strong>XML 樣式</strong> 是套用到一或多個控制項的屬性 (property) 集。</td>
+<td align="left"><strong>XML</strong> 樣式 是套用到一或多個控制項的屬性 (property) 集。</td>
 <td align="left">iOS 原生不支援可重複使用的視覺樣式，但是 UIAppearance 通訊協定可讓多個控制項共用通用屬性 (attribute)。</td>
 <td align="left">您可以建立可重複使用的<strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx">樣式</a></strong>，它可以套用至多個控制項並儲存在 <strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx">ResourceDictionary</a></strong> 中，以便重複使用。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465381.aspx">快速入門：設定控制項的樣式</a></td>
 </tr>
@@ -129,13 +126,13 @@ ms.lasthandoff: 02/08/2017
 </tr>
 <tr class="even">
 <td align="left"><strong>對等瀏覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
-<td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong>提供<strong>橫式瀏覽</strong>。</td>
+<td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong> 提供<strong>橫式瀏覽</strong>。</td>
 <td align="left"><strong>Tab bar controller (索引標籤列控制器)</strong>、<strong>split view controller (分割檢視控制器)</strong> 和 <strong>page view controller (頁面檢視控制器)</strong> 允許相同階層的檢視之間的瀏覽。</td>
 <td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式瀏覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
-<td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供<strong>下階瀏覽</strong>以載入其他 <strong>activity (活動)</strong>。</td>
+<td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供 <strong>descendent navigation (下階瀏覽)</strong> 以載入其他 <strong>activity (活動)</strong>。</td>
 <td align="left"><strong>Navigation controller (瀏覽控制器)</strong> 可讓使用者在階層的層級之間瀏覽。</td>
 <td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">主要/詳細資料</a></strong>讓使用者從項目摘要清單中挑選，該項目摘要顯示在對應詳細資料區域的旁邊。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
@@ -301,14 +298,14 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>App 週期。</strong> <br><br>處理 app 啟動、暫停、繼續和關閉的事件，讓您可以儲存/還原應用程式狀態並執行其他工作。</td>
-<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼</strong> (例如 <strong>onResume</strong>) 是在 <strong>activity 類別</strong>中實作。</td>
+<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼 (例如 <strong>onResume</strong>)</strong> 是在 <strong>activity 類別</strong>中實作。</td>
 <td align="left"><strong>應用程式週期</strong>具有<strong>已暫停</strong>之類的狀態。 <strong>applicationDidEnterBackground:</strong> 之類的方法是在<strong>應用程式委派物件</strong>中實作，可在狀態變更時執行程式碼。</td>
 <td align="left">您的 app 具有 NotRunning、Activated、Running、Suspending、Suspended 及 Resuming 的 <strong>app 執行狀態</strong>。<br/><br/>您可以在 app 中實作 OnLaunched、OnActivated、Suspending 或 Resuming 等 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application 類別</a></strong>方法，以在狀態變更時執行程式碼。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App 週期</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>背景工作。</strong> <br><br>執行背景作業的工作以及當 app 不再在前景時繼續執行的工作。</td>
 <td align="left">當 app 不再在前景時，app 可以啟動執行背景作業的<strong>服務</strong>。 服務有自己<strong>週期</strong>，而且已登錄到資訊清單中。</td>
-<td align="left"><strong>只有特定工作類型才允許背景執行</strong>。<br/><br/>App 使用 <strong>UIBackgroundModes</strong> 在 Info.plist 檔案中宣告<strong>支援的背景工作</strong>。<br/><br/>系統會控制背景工作的執行時間和持續時間。</td>
+<td align="left">只有特定工作類型才允許<strong>背景執行</strong>。<br/><br/>App 使用 <strong>UIBackgroundModes</strong> 在 Info.plist 檔案中宣告<strong>支援的背景工作</strong>。<br/><br/>系統會控制背景工作的執行時間和持續時間。</td>
 <td align="left">實作 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx">IBackgroundTask</a></strong> 介面並在應用程式資訊清單中註冊工作，即可建立背景工作。 您可以使用<a href="https://msdn.microsoft.com/library/windows/apps/mt186458.aspx"><strong>計時器</strong></a>、<a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtriggertype.aspx"><strong>系統觸發程序</strong></a>及<a href="https://msdn.microsoft.com/library/windows/apps/mt185632.aspx"><strong>維護觸發程序</strong></a>來設定觸發工作。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299103.aspx">使用背景工作支援 app</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt299100.aspx">建立並註冊背景工作</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187310.aspx">背景工作的指導方針</a></td>
 </tr>
 </tbody>
@@ -381,21 +378,21 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>App 內購買。</strong> <br><br>允許使用者在您的 app 中進行購買的平台功能。</td>
-<td align="left"><strong>App 內帳單功能</strong>是由 Google 服務提供。 產品會新增至 <strong>Google Play 開發人員主控台</strong>。 App 內購買使用 <strong>Google Play Billing Library (Google Play 帳單功能程式庫)</strong> 實作。</td>
+<td align="left"><strong>應用程式內結帳</strong>是由 Google 服務提供。 產品會新增至 <strong>Google Play 開發人員主控台</strong>。 App 內購買使用 <strong>Google Play Billing Library (Google Play 帳單功能程式庫)</strong> 實作。</td>
 <td align="left">產品已新增至 <strong>iTunes Connect</strong>。 App 內購買使用 <strong>StoreKit</strong> 架構實作。<br/><br/>產品的購買使用 <strong>SKMutablePayment</strong> 和 <strong>SKPaymentQueue</strong>。</td>
-<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義在應用程式內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
+<td align="left">您<a href="https://msdn.microsoft.com/library/windows/apps/mt148551.aspx">將應用程式內產品購買新增到 app 並提交到市集</a>，即可為 app 建立它們。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx">CurrentApp 類別</a></strong>來定義 App 內購買。 <br/><br/>您使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.requestproductpurchaseasync.aspx">CurrentApp.RequestProductPurchaseAsync</a></strong> 顯示能讓客戶購買產品的 UI。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219684.aspx">啟用應用程式內產品購買</a></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>在應用程式內購買消耗性物品。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
+<td align="left"><strong>App 內購買消耗性物品。</strong> <br><br>可以購買、使用並再次購買的應用程式內產品。</td>
 <td align="left">消耗性物品購買是使用 <strong>consumePurchase</strong> 定期購買然後消耗，讓使用者能夠購買、使用並再次購買。</td>
 <td align="left">消耗性物品在 iTunes Connect 中是<strong>定義為消耗性物品</strong>。</td>
 <td align="left"><a href="https://msdn.microsoft.com/library/windows/apps/mt148534.aspx">當您將產品類型定義為「消耗性物品」並提交到市集</a>時，即可支援消耗性物品。 接著，您可以在有人購買消耗性物品之後呼叫 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.reportconsumablefulfillmentasync.aspx">CurrentApp.ReportConsumableFulfillmentAsync</a></strong>，以允許客戶存取它。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219683.aspx">啟用在應用程式內購買消耗性物品</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
-<td align="left"><strong>測試在應用程式內購買。</strong> <br><br>讓您無需將 app 放置在市集，即可測試在應用程式內購買的程式碼。</td>
+<td align="left"><strong>測試 App 內購買。</strong> <br><br>讓您無需將 app 放置在市集，即可測試在應用程式內購買的程式碼。</td>
 <td align="left"><strong>App 內帳單功能沙箱</strong>用於測試。</td>
 <td align="left"><strong>沙箱測試人員帳戶</strong>用於測試。</td>
-<td align="left">只要使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> 類別取代 CurrentApp，即可測試在應用程式內購買。<br/><br/></td>
+<td align="left">只要使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx">CurrentAppSimulator</a></strong> 類別取代 CurrentApp，即可測試 App 內購買。<br/><br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>試用版。</strong> <br><br>讓您在 app 試用版上輕鬆地限制內容或移除廣告。</td>
@@ -473,8 +470,8 @@ ms.lasthandoff: 02/08/2017
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>磚與徽章。</strong> <br><br>在主畫面上對使用者顯示更新。</td>
-<td align="left"><strong>App Widgets (小工具)</strong> 是應用程式上的檢視，可內嵌到主畫面，也可以接收定期更新。 <strong>Android 上沒有徽章系統</strong>。 此外，也沒有與磚完全一樣的系統。</td>
-<td align="left"><strong>iOS 上沒有磚或小工具</strong>。 您可以新增包含數字的<strong>徽章</strong>到圖示，這個數字會隨著本機或遠端通知的數目而變更。</td>
+<td align="left"><strong>App Widgets (小工具)</strong> 是應用程式上的檢視，可內嵌到主畫面，也可以接收定期更新。 Android 上<strong>沒有徽章系統</strong>。 此外，也沒有與磚完全一樣的系統。</td>
+<td align="left">iOS 上<strong>沒有磚或小工具</strong>。 您可以新增包含數字的<strong>徽章</strong>到圖示，這個數字會隨著本機或遠端通知的數目而變更。</td>
 <td align="left">您的 app 有可以釘選到開始畫面的<strong>磚</strong>，您用它來顯示您所選的文字、影像，以及包含字符和數字的<strong>徽章</strong>。 您可以從 app 更新磚的內容 (透過推播通知或根據預先定義的排程)。 磚可以具有彈性，根據顯示的位置來變更。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt185605.aspx">建立磚</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt590880.aspx">建立彈性磚</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt187193.aspx">選擇通知傳遞方法</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/hh465403.aspx">磚與徽章的指導方針</a></td>
 </tr>
 <tr class="even">
@@ -486,7 +483,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>排程本機通知。</strong> <br><br>由您的 app 在排定的時間傳送的本機通知。</td>
 <td align="left">通知與動作是使用 <strong>NotificationCompat.Buildr</strong> 來定義的，而且可以在 app 中使用 <strong>AlarmManager</strong> 和 <strong>BroadcastReceiver</strong> 來排程並處理。</td>
-<td align="left">本機通知是使用 <strong>UILocalNotification</strong> 來建立的，而且可以使用 ** UILocalNotification.scheduleLocalNotification:<strong> 來排程。 您可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> 排程快顯通知。 您可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification 類別</a><strong>從 app 傳送磚通知，或使用 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> 排程磚通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">調適型和互動式快顯通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">傳送本機磚通知</a> | | </strong>傳送推播通知。**從推播通知伺服器傳送，而且可選擇在 app 內處理的通知。</td>
+<td align="left">本機通知是使用 <strong>UILocalNotification</strong> 所建立，可以透過 ** UILocalNotification.scheduleLocalNotification:<strong> 進行排程。| 您可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtoastnotification.aspx">ScheduledToastNotification</a><strong> 排程快顯通知。您可以使用 </strong><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.tilenotification.aspx">TileNotification 類別</a><strong>從 App 傳送，或是透過 <a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.notifications.scheduledtilenotification.aspx">ScheduledTileNotification</a> 排程磚通知。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt631604.aspx">調適型和互動式快顯通知</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/xaml/mt593299.aspx">傳送本機磚通知</a> | | </strong>傳送推播通知。**從推播通知伺服器傳送，而且可選擇在 App 內處理的通知。</td>
 <td align="left"><strong>Google 雲端通訊</strong>為 Android 提供推播通知支援。</td>
 </tr>
 </tbody>
@@ -579,7 +576,7 @@ ms.lasthandoff: 02/08/2017
 <tr class="even">
 <td align="left"><strong>顯示地圖。</strong> <br><br>顯示<strong>互動式內建地圖</strong>及新增<strong>興趣點</strong>。</td>
 <td align="left"><strong>Google Maps Android API</strong> 內的 <strong>GoogleMap</strong>、<strong>MapFragment</strong> 和 <strong>MapView</strong> 類別可讓您將地圖內嵌到 app。 使用<strong>標記</strong>和可自訂的 <strong>Marker</strong> 類別可顯示興趣點。</td>
-<td align="left">使用 <strong>MapKit 架構</strong>中的 <strong>MKMapView</strong> 類別，可將地圖內嵌到 iOS app。 <strong>使用物件類別 (例如 <strong>MKPointAnnotation</strong>) 和檢視類別 (例如 <strong>MKPinAnnotationView</strong>)，可將註解</strong>新增到 app 以顯示興趣點。</td>
+<td align="left">使用 <strong>MapKit 架構</strong>中的 <strong>MKMapView</strong> 類別，可將地圖內嵌到 iOS app。 使用物件類別 (例如 <strong>MKPointAnnotation</strong>) 和檢視類別 (例如 <strong>MKPinAnnotationView</strong>)，可將<strong>註解</strong>新增到 App 以顯示興趣點。</td>
 <td align="left">您可以使用內建的 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML 控制項 (可提供 2D、3D 和 Streetside 檢視)，以將地圖內嵌到 app。 您可以使用 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong> 和 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong> 等類別，新增包含圖釘、影像或圖形的興趣點。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">顯示地圖的 2D、3D 和 Streetside 檢視</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">在地圖上顯示興趣點 (POI)</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -670,4 +667,3 @@ ms.lasthandoff: 02/08/2017
 </tr>
 </tbody>
 </table>
-

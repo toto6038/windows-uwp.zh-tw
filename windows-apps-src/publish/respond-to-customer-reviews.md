@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "您可以直接回應您應用程式的評論，讓客戶知道您正在聆聽其意見反應。"
+Description: "您可以直接回應您 app 的評論，讓客戶知道您正在聆聽其意見反應。"
 title: "回應客戶評論"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ms.author: wdg-dev-content
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 06be2dad7022a25e07a159bec7f1d007ff608ed3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7de4e53df32979d87a19b7d0556ef716b901687b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="respond-to-customer-reviews"></a>回應客戶評論
 
 
@@ -23,13 +20,13 @@ ms.lasthandoff: 02/07/2017
 
 > **重要**  若撰寫評論的客戶選擇不接收評論回應，您將無法直接回應該評論。 若評論的客戶使用 Windows Phone 8 裝置並位於美國境外，則您也無法回應該評論。
 
-若要檢視您 app 的評論並提供回應，請在 Windows 開發人員中心儀表板中尋找適當的 app。 在左方導覽功能表中，展開 [分析]****，然後按一下 [評論]**** 以顯示[評論報告](reviews-report.md)。
+若要檢視您 app 的評論並提供回應，請在 Windows 開發人員中心儀表板中尋找適當的 app。 在左方導覽功能表中，展開 **\[分析\]**，然後按一下 **\[評論\]** 以顯示[評論報告](reviews-report.md)。
 
 > **注意** 除了使用此方法回應評論外，您還可以[以程式設計方式](../monetize/submit-responses-to-app-reviews.md)或使用[開發人員中心應用程式](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)回應評論。 
 
 傳送評論回應時，客戶將會收到 Microsoft 寄出的電子郵件，讓他們能夠看見您的回應。 此電子郵件也包含您 app 的支援電子郵件地址，客戶可用來直接與您連絡。 如果您在提交過程中，沒有為您的 app 新增支援電子郵件，將會要求您包含一個支援電子郵件地址，然後您才可以回應。
 
-根據預設，只有您回應的對象客戶可以看到您的回應。 如果您想要讓其他客戶檢視您的回應，請核取 [將此回應公開]**** 方塊，讓我們在您的應用程式市集清單中直接於客戶的評論下方顯示您的回應。 在 Windows 10 裝置上檢視市集的所有客戶都會看到公開的回應。
+根據預設，只有您回應的對象客戶可以看到您的回應。 如果您想要讓其他客戶檢視您的回應，請核取 **\[將此回應公開\]** 方塊，讓我們在您的應用程式市集清單中直接於客戶的評論下方顯示您的回應。 在 Windows 10 裝置上檢視市集的所有客戶都會看到公開的回應。
 
 > **重要**  之後您將無法變更公開的回應 (除非客戶修訂原始的評論)，在您選擇要公開回應之前，務必審慎檢視您的回應。 如果客戶修訂原始的評論，則您的回應將會被移除。 如果您願意，可以針對修訂的評論提交新的回應。
 
@@ -54,4 +51,3 @@ Microsoft 保留出於任何原因而撤銷開發人員傳送回應之權限的�
 
 
 聆聽客戶意見並予以回應只是一個開始。 針對其意見反應採取行動也非常重要。 如果您進行顯著的改進，請[建立新的提交](app-submissions.md)以更新您的 app，就可以在市集中安心地展示該 app。
-

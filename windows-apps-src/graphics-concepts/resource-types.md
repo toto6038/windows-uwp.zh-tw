@@ -2,21 +2,17 @@
 title: "資源類型"
 description: "不同類型的資源會有不同的配置 (或記憶體使用量)。"
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
-keywords:
-- "資源類型"
+keywords: "資源類型"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1e21222b97f7a8711de93345623d2d82b3e8e4d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 77f1b408533d37ecf18bdc1c6c364e6d6c88b94d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resource-types"></a>資源類型
 
 
@@ -253,4 +249,3 @@ Mip 切片 (以白色矩形代表) 對於陣列中的每個紋理包含一個 Mi
 
 
 [資源](resources.md)
-

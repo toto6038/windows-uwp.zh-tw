@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6fbcf24984fde4b86e94481d6ad1104a827a8c31
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 5cbff0011a4a96c61d7f7bad7e57bd130e09c39b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 簽署應用程式套件
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **SignTool** 是使用憑證以數位方式簽署應用程式套件或套件組合的命令列工具。 憑證可以由使用者建立 (適用於測試目的) 或由公司發行 (適用於發佈)。 簽署應用程式套件，為使用者提供驗證：在簽署之後應用程式的資料尚未修改，同時也確認簽署使用者或公司的身分識別。 **SignTool** 可以簽署加密或未加密的應用程式套件和套件組合。
+
+> [!IMPORTANT] 
+> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
 如需有關程式碼簽署以及憑證的一般資訊，請參閱[程式碼簽署簡介](https://msdn.microsoft.com/library/windows/desktop/aa380259.aspx#introduction_to_code_signing)。
 

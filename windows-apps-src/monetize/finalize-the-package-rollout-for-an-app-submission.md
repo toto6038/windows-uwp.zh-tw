@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來完成 App 提交的套件推出。"
-title: "使用 Windows 市集提交 API 來完成應用程式提交的套件推出"
+title: "完成應用程式提交的推出"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,17 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 套件推出, 應用程式提交, 完成"
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6c7fa8fc509faf2c662732e7e6b998d355fcbd66
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 1f26b826595b439c20b1582265dbe690d314277e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="finalize-the-rollout-for-an-app-submission"></a>完成應用程式提交的推出
 
-# <a name="finalize-the-package-rollout-for-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 來完成應用程式提交的套件推出
 
-
-使用「Windows 市集提交 API」中的這個方法，來[完成](../publish/gradual-package-rollout.md#completing-the-rollout) App 提交的套件推出。 如需有關使用「Windows 市集提交 API」來建立 App 提交的程序詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
+使用「Windows 市集提交 API」中的這個方法，來[完成 App 提交的套件推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 如需有關使用「Windows 市集提交 API」來建立 App 提交的程序詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -60,9 +57,9 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -80,7 +77,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 100,
+    "packageRolloutPercentage": 100.0,
     "packageRolloutStatus": "PackageRolloutComplete",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +101,3 @@ Authorization: Bearer <your access token>
 * [漸進式套件推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 市集提交 API 管理 App 提交](manage-app-submissions.md)
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

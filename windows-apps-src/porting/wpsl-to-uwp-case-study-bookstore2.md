@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7fbe63cba4a825641ea96b39c39d5845758051cb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7a36649701187a795eb6e75df351af69110bee6b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-phone-silverlight-to-uwp-case-study-bookstore2"></a>Windows Phone Silverlight 至 UWP 案例研究：Bookstore2
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -255,10 +252,10 @@ ms.lasthandoff: 02/07/2017
 
 樣式作業的最後一個步驟會讓 app 看起來像這樣。
 
-![放大檢視已移植完成且正在電腦裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
+![放大檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-在電腦裝置上執行的已移植 Windows 10 app、放大檢視、兩種大小的視窗  
-![在電腦裝置上執行的已移植 Windows 10 app、縮小檢視、兩種大小的視窗](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+在傳統型裝置上執行的已移植 Windows 10 app、放大檢視、兩種大小的視窗  
+![在傳統型裝置上執行的已移植 Windows 10 app、縮小檢視、兩種大小的視窗](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 縮小檢視已移植完成且正在傳統型裝置上執行的 Windows 10 app，具備兩種視窗大小
 
@@ -272,7 +269,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="making-the-view-model-more-flexible"></a>讓檢視模型更具彈性
 
-本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 我們從 Windows Phone Silverlight app Bookstore2WPSL8 移植的檢視模型 (原始程式檔位於 ViewModel\\BookstoreViewModel.cs) 包含一個衍生自 **List&lt;T&gt;** (其中 **T** 是 BookSku) 且名為 Author 的類別。 這表示 Author 類別*「是一個」*BookSku 群組。
+本節包含因將 app 移轉成使用 UWP 而得以利用之功能的範例。 在這裡，我們將說明在透過 **CollectionViewSource** 存取檢視模型的情況下，您可依循以使檢視模型更具彈性的選擇性步驟。 我們從 Windows Phone Silverlight app Bookstore2WPSL8 移植的檢視模型 (原始程式檔位於 ViewModel\\BookstoreViewModel.cs) 包含一個衍生自 **List&lt;T&gt;** (其中 **T** 是 BookSku) 且名為 Author 的類別。 這表示 Author 類別*是一個* BookSku 群組。
 
 當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個*「某種東西」*的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠*「既是」*一個 BookSku 群組*「也是」*該作者居住過之地址的群組，該怎麼辦？ Author 無法同時*「是」*這兩個群組。 但是 Author 可以*「有」*任何數目的群組。 而這就是方案：使用*「有一個群組」*模式來取代或補充我們目前使用的*「是一個群組」*模式。 方法如下：
 
@@ -306,4 +303,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="conclusion"></a>總結
 
 與前一個案例研究相比，這個案例研究涉及更酷炫的使用者介面。 Windows Phone Silverlight 的所有功能和概念 **LongListSelector** 等等皆已被視為可藉由 **SemanticZoom**、**ListView**、**GridView** 和 **CollectionViewSource** 的形式供 UWP app 使用。 我們示範了如何同時重複使用 (或複製和編輯) UWP app 中的命令式程式碼和標記，以完成自訂符合最窄到最寬的 Windows 裝置尺寸和之間所有大小的功能、UI 和互動。
-

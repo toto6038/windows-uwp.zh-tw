@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dfa8191be375998021f233711ae433f8a5d4e44b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 00131a10892e80f3bd81384fa80fe39915b17ec8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="package-version-numbering"></a>套件版本編號
 
 
@@ -86,4 +83,3 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | 客戶電腦的架構為 v1.0.0.2。  | 對於執行為電腦特定架構建置的 v1.0.0.1 應用程式的客戶，v1.0.0.1 將更新為 v1.0.0.2。 |
  
 > **注意**  不同於 .appx 套件，在判斷要為特定客戶提供哪一個套件時，不會考慮任何 .xap 套件中的版本號碼。 若要將客戶從一個 .xap 套件更新為較新的套件，請務必在新的提交中移除較舊的 .xap。
-

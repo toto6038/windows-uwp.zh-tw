@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 路線, 地圖, 位置, 路線指引"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 11519df0c6655d663b31759e9064337a706bbc53
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 62f0f26cc9a78a29e6fab5a8f762e0b28b7df6a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="display-routes-and-directions-on-a-map"></a>在地圖上顯示路線和路線指引
 
 
@@ -198,4 +195,3 @@ private async void ShowRouteOnMap()
 * [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

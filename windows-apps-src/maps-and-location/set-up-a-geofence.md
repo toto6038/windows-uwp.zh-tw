@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 8a143359948e536d30efb425055969ae8ac0987f
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 在您的 app 中設定[**地理柵欄**](https://msdn.microsoft.com/library/windows/apps/dn263587)，並了解如何在前景和背景中處理通知。
@@ -475,4 +472,3 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 * [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理柵欄的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
-

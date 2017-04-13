@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理套件正式發行前小眾測試版。"
-title: "使用 Windows 市集提交 API 管理套件正式發行前小眾測試版"
+title: "管理套件正式發行前小眾測試版"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51d7481d0491c85bddcae906a846cb8773f33417
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b560c2c12dc2fd7984287d039d20c121698aef85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-package-flights-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 管理套件正式發行前小眾測試版
+# <a name="manage-package-flights"></a>管理套件正式發行前小眾測試版
 
 使用 Windows 市集提交 API 中的下列方法，管理應用程式的套件正式發行前小眾測試版。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -64,4 +61,3 @@ ms.lasthandoff: 02/07/2017
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
-

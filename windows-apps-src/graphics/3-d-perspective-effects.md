@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b0855392c9e9e3f18d08a16cf39cdfa5c0910701
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c16506ddb58043b5cba9af7989c34c7f453fe6e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="3-d-perspective-effects-for-xaml-ui"></a>XAML UI 的 3D 透視效果
 
@@ -190,4 +188,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="positioning-an-object"></a>放置物件
 
 您可以使用 [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 與 [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 類型取得 [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 無法達到的更複雜 semi-3D 效果。 **Matrix3DProjection** 提供一個可套用至任何 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 的完整 3D 轉換矩陣，讓您隨心所欲地將轉換矩陣與透視矩陣模型套用至元素。 請記住，這些 API 只含最基本的內容，如果您要使用它們，就必須寫入可正確建立 3D 轉換矩陣的程式碼。 因此，使用 **PlaneProjection** 創造簡單的 3D 效果會比較容易。
-

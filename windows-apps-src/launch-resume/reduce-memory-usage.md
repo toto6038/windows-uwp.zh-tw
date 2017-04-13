@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ef4527f72898c8c5a6ad9c56d975966402894b2c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7c8b8eb3ae3c097a346144c57d7899cb5e9584f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>當應用程式移至背景時釋出記憶體
 
-本文說明如何在應用程式移至背景狀態時減少其記憶體使用量，讓它不會被暫停及可能被終止。
+本文說明如何在 App 移至背景狀態時減少其記憶體使用量，讓它不會被暫停及可能被終止。
 
 ## <a name="new-background-events"></a>新的背景事件
 
@@ -108,4 +105,3 @@ Windows 10 版本 1607 導入兩個新的應用程式週期事件：[**EnteredBa
 
 * [背景媒體播放範例](http://go.microsoft.com/fwlink/p/?LinkId=800141) - 說明如何在 App 移至背景狀態時釋出記憶體。
 * [診斷工具](https://blogs.msdn.microsoft.com/visualstudioalm/2015/01/16/diagnostic-tools-debugger-window-in-visual-studio-2015/) - 使用診斷工具來觀察記憶體回收事件，並驗證您的 App 以您預期的方式釋出記憶體。
-

@@ -2,21 +2,17 @@
 title: "第 2 層"
 description: "串流資源的第 2 層支援新增第 1 層以外的功能，例如當大小至少是一個標準磚形狀時保證非壓縮紋理 Mipmap；鉗制詳細層級 (LOD) 以及取得著色器作業狀態的相關著色器指示；此外，讀取 NULL 對應磚，將取樣值視為零。"
 ms.assetid: 111A28EA-661A-4D29-921A-F2E376A46DC5
-keywords:
-- "第 2 層"
+keywords: "第 2 層"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0416d6751a002f51310fe609e862b52fd35623a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c8a1d1c830c201018c3384096d3eeae3b25962b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="tier-2"></a>第 2 層
 
 
@@ -72,7 +68,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

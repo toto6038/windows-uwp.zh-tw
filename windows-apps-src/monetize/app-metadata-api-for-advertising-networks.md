@@ -1,6 +1,6 @@
 ---
 author: mcleanbyron
-description: "了解如何使用 App 中繼資料 REST API 來存取 App 的特定類型中繼資料。 此 API 是要供廣告網路用來擷取「Windows 市集」中應用程式的相關資訊，讓它們能夠改進將廣告空間銷售給廣告商的方式。"
+description: "了解如何使用 App 中繼資料 REST API 來存取 App 的特定類型中繼資料。 此 API 是要供廣告網路用來擷取「Windows 市集」中 App 的相關資訊，讓它們能夠改進將廣告空間銷售給廣告商的方式。"
 title: "廣告網路的應用程式中繼資料 API"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告網路, 應用程式中繼資料"
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8ee555d335007a09c61247a929705aa2fff2469d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d377fe7e1eb71132ffa21dd1b11dddf9ca9bb084
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-metadata-api-for-advertising-networks"></a>廣告網路的應用程式中繼資料 API
 
-廣告網路可以使用「應用程式中繼資料 API」**來以程式設計方式擷取「Windows 市集」中 應用程式的相關中繼資料，包括詳細資料，例如應用程式之「市集」清單的描述和類別，以及應用程式的目標是否為 13 歲以下的兒童。 目前僅限已獲 Microsoft 授與此 API 權限的開發人員才能存取此 API。
+廣告網路可以使用*「App 中繼資料 API」*來以程式設計方式擷取「Windows 市集」中 App 的相關中繼資料，包括詳細資料，例如 App 之「市集」清單的描述和類別，以及 App 的目標是否為 13 歲以下的兒童。 目前僅限已獲 Microsoft 授與此 API 權限的開發人員才能存取此 API。
 
 本文提供的指示包括如何使用 [App 中繼資料 API 入口網站](https://admetadata.portal.azure-api.net/)來要求此 API 的存取權、如何取得您的訂用帳戶金鑰來存取此 API，以及如何呼叫此 API。
 
@@ -135,4 +132,3 @@ Ocp-Apim-Subscription-Key: <subscription key>
  
 
  
-

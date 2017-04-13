@@ -8,18 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp,在應用程式內購買, IAPs, 收據, Windows.ApplicationModel.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2ada9038f9bd355bb4ab9f81967ebb2d47701cd8
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store"
+ms.openlocfilehash: 4e167bf24f1f8362e7bd1e343ae34d9e0d2dde1c
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
 
->**注意**&nbsp;&nbsp;這篇文章說明如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來取得和驗證收到在應用程式內購買。 如果您為在應用程式內購買使用另一個 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (Windows 10 版本 1607 推出)，這個命名空間並未提供 API 來取得在應用程式內購買的購買收據。 不過，您可以在 Windows 市集收藏 API 中使用 REST 方法取得購買交易的資料。 如需詳細資訊，請參閱[在應用程式內購買的收據](in-app-purchases-and-trials.md#receipts)。
+> [!NOTE]
+> 這篇文章說明如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來取得和驗證收到 app 內購買。 如果您為 App 內購買使用另一個 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (Windows 10 版本 1607 推出)，這個命名空間並未提供 API 來取得 App 內購買的購買收據。 不過，您可以在 Windows 市集收藏 API 中使用 REST 方法取得購買交易的資料。 如需詳細資訊，請參閱 [App 內購買的收據](in-app-purchases-and-trials.md#receipts)。
 
 
 每個 Windows 市集交易只要結果為產品購買成功，都可依選擇傳回交易收據。 這個收據會為客戶提供所列產品和金錢花費的相關資訊。
@@ -99,12 +97,12 @@ App 收據看起來如下。
 
 ### <a name="receipt-element"></a>Receipt 元素
 
-此檔案的根元素是 **Receipt** 元素，其中包含 App 與在應用程式內購買的相關資訊。 此元素包含下列子項元素。
+此檔案的根元素是 **Receipt** 元素，其中包含 App 與 App 內購買的相關資訊。 此元素包含下列子項元素。
 
 |  元素  |  必要  |  數量  |  描述   |
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
-|  [ProductReceipt](#productreceipt)  |     否       |  0 或以上    |   包含目前 App 之在應用程式內購買的相關資訊。     |
+|  [ProductReceipt](#productreceipt)  |     否       |  0 或以上    |   包含目前 App 之 App 內購買的相關資訊。     |
 |  Signature  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](http://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
 
 **Receipt** 具有下列屬性。
@@ -133,7 +131,7 @@ App 收據看起來如下。
 <span id="productreceipt" />
 ### <a name="productreceipt-element"></a>ProductReceipt 元素
 
-此元素包含目前 App 之在應用程式內購買的相關資訊。
+此元素包含目前 App 之 App 內購買的相關資訊。
 
 **ProductReceipt** 具有下列屬性。
 
@@ -148,4 +146,3 @@ App 收據看起來如下。
  
 
  
-

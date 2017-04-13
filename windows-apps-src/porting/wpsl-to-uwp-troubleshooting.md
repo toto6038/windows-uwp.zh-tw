@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ae120cedbf0ab42fcb091ba5b01b58e8796d6a4a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 97b19021745c8a9e7200262ad7103bd890813d64
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="troubleshooting-porting-windows-phone-silverlight-to-uwp"></a>將 Windows Phone Silverlight 移植到 UWP 的疑難排解
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -50,12 +47,12 @@ XAML 剖析例外狀況可能難以診斷，特別是如果例外狀況中的錯
 
 | 問題 | 解決方式 |
 |---------|--------|
-| XAML 剖析器或編譯器發出下列錯誤：_名稱 "&lt;typename&gt;" 不存在於 […] 命名空間。_ | 如果 &lt;typename&gt; 是自訂類型，請在 XAML 標記內的命名空間前置詞宣告中，將 "clr-namespace" 變更為 "using"，然後移除任何組件語彙基元。 對於平台類型，這表示該類型不適用於通用 Windows 平台 (UWP)，因此請尋找對等的類型並更新您的標記。 您可能會立即遇到的範例為 `phone:PhoneApplicationPage` 與 `shell:SystemTray.IsVisible`。 | 
-| XAML 剖析器或編譯器發出錯誤_無法識別或無法存取成員 "&lt;membername&gt;"。_ 或_在類型 [...] 中找不到屬性 "&lt;propertyname&gt;"。_。 | 在您已經移植某些類型名稱 (例如根 **Page**) 之後，就會開始出現這些錯誤。 該成員或屬性不適用於 UWP，因此請尋找對等的成員或屬性並更新您的標記。 您可能會立即遇到的範例為 `SupportedOrientations` 與 `Orientation`。 |
-| XAML 剖析器或編譯器發出錯誤_找不到 [...] 可附加的屬性 [...]。_ 或_未知的可附加成員 [...]。_。 | 這可能是類型而非附加的屬性所造成，在此情況下，您將會先有類型錯誤，而此錯誤將在您修正它之後消失。 您可能會立即遇到的範例為 `phone:PhoneApplicationPage.Resources` 與 `phone:PhoneApplicationPage.DataContext`。 | 
-|XAML 剖析器或編譯器，或是執行階段例外狀況發出下列錯誤：_無法解析資源 "&lt;resourcekey&gt;"。_。 | 資源索引鍵不適用於通用 Windows 平台 (UWP) App。 找到正確的對等資源並更新您的標記。 您可能會立即遇到的範例為系統 **TextBlock** 樣式索引鍵，例如 `PhoneTextNormalStyle`。 |
-| C# 編譯器發出下列錯誤：_在 [...] 中找不到類型或命名空間名稱 '&lt;name&gt;'_、_命名空間 [...] 中沒有類型或命名空間名稱 '&lt;name&gt;'_或_類型或命名空間名稱 '&lt;name&gt;' 不存在於目前內容中_。 | 這可能表示編譯器還不知道類型的正確 UWP 命名空間。 請使用 Visual Studio 的 [**解析**] 命令來修正這個問題。 <br/>如果 API 不在稱為通用裝置系列的這組 API 中 (換句話說，在擴充功能 SDK 中實作 API)，然後使用[擴充功能 SDK](wpsl-to-uwp-porting-to-a-uwp-project.md)。<br/>可能會有其他移植比較沒那麼簡單的狀況。 您可能會立即遇到的範例為 `DesignerProperties` 與 `BitmapImage`。 | 
-|在裝置上執行時，應用程式終止運作，或從 Visual Studio 啟動時，您看到下列錯誤：「無法啟用 Windows 市集應用程式 […]。 啟用要求失敗，錯誤為「Windows 無法與目標應用程式通訊。 這通常表示目標應用程式的處理序已中止。 […]」。 | 問題可能出在初始化期間您自己「頁面」中或繫結屬性 (或其他類型) 中執行的命令式程式碼。 或者，也可能是在應用程式終止時，正在剖析即將顯示的 XAML 檔案 (如果是從 Visual Studio 啟動，那將會是啟動頁面) 的情況下發生。 尋找無效的資源索引鍵和 (或) 嘗試本主題[追蹤問題](#tracking-down-issues)一節中的一些指導方針。|
+| XAML 剖析器或編譯器發出下列錯誤：「_名稱 "&lt;typename&gt;" 不存在於 […] 命名空間。_」 | 如果 &lt;typename&gt; 是自訂類型，請在 XAML 標記內的命名空間前置詞宣告中，將 "clr-namespace" 變更為 "using"，然後移除任何組件語彙基元。 對於平台類型，這表示該類型不適用於通用 Windows 平台 (UWP)，因此請尋找對等的類型並更新您的標記。 您可能會立即遇到的範例為 `phone:PhoneApplicationPage` 與 `shell:SystemTray.IsVisible`。 | 
+| XAML 剖析器或編譯器發出錯誤「_無法識別或無法存取成員 "&lt;membername&gt;"。_」 或「_在類型 [...] 中找不到屬性 "&lt;propertyname&gt;"。_」。 | 在您已經移植某些類型名稱 (例如根 **Page**) 之後，就會開始出現這些錯誤。 該成員或屬性不適用於 UWP，因此請尋找對等的成員或屬性並更新您的標記。 您可能會立即遇到的範例為 `SupportedOrientations` 與 `Orientation`。 |
+| XAML 剖析器或編譯器發出錯誤「_找不到 [...] 可附加的屬性 [...]。_」 或「_未知的可附加成員 [...]。_」。 | 這可能是類型而非附加的屬性所造成，在此情況下，您將會先有類型錯誤，而此錯誤將在您修正它之後消失。 您可能會立即遇到的範例為 `phone:PhoneApplicationPage.Resources` 與 `phone:PhoneApplicationPage.DataContext`。 | 
+|XAML 剖析器或編譯器，或是執行階段例外狀況發出下列錯誤：「_無法解析資源 "&lt;resourcekey&gt;"。_」。 | 資源索引鍵不適用於通用 Windows 平台 (UWP) App。 找到正確的對等資源並更新您的標記。 您可能會立即遇到的範例為系統 **TextBlock** 樣式索引鍵，例如 `PhoneTextNormalStyle`。 |
+| C# 編譯器發出下列錯誤：「_在 [...] 中找不到類型或命名空間名稱 '&lt;name&gt;'_」、「_命名空間 [...] 中沒有類型或命名空間名稱 '&lt;name&gt;'_」或「_類型或命名空間名稱 '&lt;name&gt;' 不存在於目前內容中_」。 | 這可能表示編譯器還不知道類型的正確 UWP 命名空間。 請使用 Visual Studio 的 [**解析**] 命令來修正這個問題。 <br/>如果 API 不在稱為通用裝置系列的這組 API 中 (換句話說，在擴充功能 SDK 中實作 API)，然後使用[擴充功能 SDK](wpsl-to-uwp-porting-to-a-uwp-project.md)。<br/>可能會有其他移植比較沒那麼簡單的狀況。 您可能會立即遇到的範例為 `DesignerProperties` 與 `BitmapImage`。 | 
+|在裝置上執行時，應用程式終止運作，或從 Visual Studio 啟動時，您看到下列錯誤：「無法啟用 Windows 市集應用程式 […]。 啟用要求失敗，錯誤為「Windows 無法與目標應用程式通訊。 這通常表示目標應用程式的處理序已中止。 […]”. | 問題可能出在初始化期間您自己「頁面」中或繫結屬性 (或其他類型) 中執行的命令式程式碼。 或者，也可能是在應用程式終止時，正在剖析即將顯示的 XAML 檔案 (如果是從 Visual Studio 啟動，那將會是啟動頁面) 的情況下發生。 尋找無效的資源索引鍵和 (或) 嘗試本主題[追蹤問題](#tracking-down-issues)一節中的一些指導方針。|
 | _XamlCompiler 錯誤 WMC0055：無法將文字值 '&lt;your stream geometry&gt;' 指派給類型 'RectangleGeometry' 的屬性 'Clip'_ | 在 UWP 中，為 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 XAML C++ UWP App 的類型。 |
 | _XamlCompiler 錯誤 WMC0001：XML 命名空間 [...] 中的類型 'RadialGradientBrush' 不明_ | UWP 沒有 **RadialGradientBrush** 類型。 請從標記中移除 **RadialGradientBrush**，並使用一些其他類型的 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 XAML C++ UWP App。 |
 | _XamlCompiler 錯誤 WMC0011：元素 '&lt;UIElement 類型&gt;' 上的成員 'OpacityMask' 不明_ | UWP [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 和 XAML C++ UWP App。 |
@@ -65,5 +62,4 @@ XAML 剖析例外狀況可能難以診斷，特別是如果例外狀況中的錯
 | 在 xaml.cs 檔案中呼叫 InitializeComponent 時，會擲回 System.InvalidCastException。 | 當您有多個 xaml 檔案 (至少有一個是 MRT 限定的) 會共用同一個 xaml.cs 檔案，而且元素所包含的 x:Name 屬性在這兩個 xaml 檔案間並不一致時，就會發生此情況。 請嘗試為這兩個 xaml 檔案中的相同元素新增相同名稱，或是一併省略名稱。 | 
 
 下一個主題是[移植 XAML 與 UI](wpsl-to-uwp-porting-xaml-and-ui.md)。
-
 

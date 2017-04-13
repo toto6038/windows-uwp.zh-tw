@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 協助工具, 遊戲"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 74a3e3bf3b4f614a112bedd8a2777f8d641237a9
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 
@@ -64,8 +62,8 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="vision"></a>視力
 
-*   醫學性的長期症狀，例如青光眼、白內障、色盲、近視及糖尿病視網膜病變
-*   短期的情境狀態，例如小型監視器或螢幕大小、低解析度螢幕，或是因明亮光源照射在監視器上而產生的螢幕反光
+*    醫學性的長期症狀，例如青光眼、白內障、色盲、近視及糖尿病視網膜病變
+*    短期的情境狀態，例如小型監視器或螢幕大小、低解析度螢幕，或是因明亮光源照射在監視器上而產生的螢幕反光
         
 ### <a name="hearing"></a>聽力
 
@@ -154,21 +152,21 @@ ms.lasthandoff: 02/07/2017
 
 以下是設計隱藏式輔助字幕和字幕時，一些需要考量的基本指導方針：
 
-*   選取簡單易於閱讀的字型。
-*   選取夠大的字型大小，或考慮使用可調整字型大小選項以提供更多彈性。 (理想的字型大小取決於螢幕大小、和螢幕之間的檢視距離等等)。
-*   在背景與字型色彩之間建立高對比。 (如需詳細資訊，請參閱[對比率資訊](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements))。
+*    選取簡單易於閱讀的字型。
+*    選取夠大的字型大小，或考慮使用可調整字型大小選項以提供更多彈性。 (理想的字型大小取決於螢幕大小、和螢幕之間的檢視距離等等)。
+*    在背景與字型色彩之間建立高對比。 (如需詳細資訊，請參閱[對比率資訊](https://msdn.microsoft.com/windows/uwp/accessibility/accessible-text-requirements))。
 * 在螢幕上顯示簡短的句子。 (請記住不要在事件發生前顯示文字，以避免洩漏遊戲劇情)。
-*   區別發出聲音或說話的對象。 (範例：「丹尼爾：嗨！」)
-*   提供開啟和關閉隱藏式輔助字幕和字幕的選項。 (其他功能：根據重要性選擇顯示多少聲音資訊的功能)。
+*    區別發出聲音或說話的對象。 (範例：「丹尼爾：嗨！」)
+*    提供開啟和關閉隱藏式輔助字幕和字幕的選項。 (其他功能：根據重要性選擇顯示多少聲音資訊的功能)。
 
 ### <a name="sound-feedback"></a>音訊回饋
 
 除了視覺回饋之外，音訊也能提供回饋給玩家。 出色的遊戲音訊設計可以改進針對視覺障礙玩家的可存取性。 以下是一些需要納入考慮的事項：
 
-*   使用 3D 音訊提示來提供額外的空間資訊。
+*    使用 3D 音訊提示來提供額外的空間資訊。
 * 將音樂、語音和音效的音量控制分開。
-*   設計對玩家能提供有意義資訊的語音。 (範例：使用「敵人正在從後門進入」，而非「敵人正在接近」)。
-*   確保語音以合理的速率說出，並提供速率控制來提供更好的協助工具。
+*    設計對玩家能提供有意義資訊的語音。 (範例：使用「敵人正在從後門進入」，而非「敵人正在接近」)。
+*    確保語音以合理的速率說出，並提供速率控制來提供更好的協助工具。
 
 ### <a name="fully-mappable-controls"></a>完全可對應的控制項
 
@@ -192,9 +190,9 @@ ms.lasthandoff: 02/07/2017
 
 身為開發人員，以下是針對包含光敏性癲癇症傾向的玩家設計遊戲的一些提示：
 
-*   避免以每秒 5 到 30 次 (赫茲) 的頻率閃爍光線，因為該範圍內的閃爍光線最可能觸發症狀發作。
-*   使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：由 Cambridge Research System Ltd 與 Graham Harding 教授開發的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/))。 
-*   在遊戲關卡間設計中斷點，鼓勵玩家休息以避免不停地進行遊戲。
+*    避免以每秒 5 到 30 次 (赫茲) 的頻率閃爍光線，因為該範圍內的閃爍光線最可能觸發症狀發作。
+*    使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：由 Cambridge Research System Ltd 與 Graham Harding 教授開發的 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/))。 
+*    在遊戲關卡間設計中斷點，鼓勵玩家休息以避免不停地進行遊戲。
 
 ## <a name="other-accessibility-resources"></a>其他協助工具資源
 
@@ -221,4 +219,3 @@ ms.lasthandoff: 02/07/2017
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發無障礙的 UWP App](https://msdn.microsoft.com/windows/uwp/accessibility/accessibility)
 * [適用於協助工具電子書的工程軟體](https://www.microsoft.com/download/details.aspx?id=19262)
-

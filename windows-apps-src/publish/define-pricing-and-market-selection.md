@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: acf14f886f36d74941769954041325514a386e86
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b994d4c46a319f7f5714685666295f079c31d8df
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="define-pricing-and-market-selection"></a>制定價格和選擇市場
 
 
@@ -43,7 +40,7 @@ Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選
 
 您的應用程式預設會以其基本價格列在所有可能的市場中，包括任何我們未來可能會新增的市場。
 
-若要變更這些設定，請展開您 app 提交的**價格與可用性**頁面上的**市場和自訂價格**區段。 您可以取消選取個別市場以排除它們，或按一下 [取消全選]****，然後新增您選擇的個別市場。
+若要變更這些設定，請展開您 app 提交的**價格與可用性**頁面上的**市場和自訂價格**區段。 您可以取消選取個別市場以排除它們，或按一下 **\[取消全選\]**，然後新增您選擇的個別市場。
 
 > **重要**   遵循當地的任何法規要求是您的責任，即使這裡或 Windows 開發人員中心儀表板並未列出這些要求。
 
@@ -53,7 +50,7 @@ Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選
 
 請記住，即使您選取全部的市場，當地法律限制或其他因素都可能造成某些 App 無法在部分國家/地區中列出。 此外，某些市場可能會有與年齡分級相關的特定需求。 如果您的 app 不符合這些需求，我們將無法在該市場中提供您的 app。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
 
-> **注意**  對於目標為 Windows 8 或 Windows 8.1 的 app，某些個別市場會將其視為一個單獨的「世界其他地方」市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8-x)。 也請記住 Windows 8 或 Windows 8.1 上的客戶將只能看到 app 以基本價格列出，就算您在他們的市場變更價格也是如此。
+> **注意**  對於目標為 Windows 8 或 Windows 8.1 的 app，某些個別市場會將其視為一個單獨的「世界其他地方」市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8x)。 也請記住 Windows 8 或 Windows 8.1 上的客戶將只能看到 app 以基本價格列出，就算您在他們的市場變更價格也是如此。
 
  
 
@@ -559,4 +556,3 @@ Windows 市集可觸及全球 200 多個國家與地區的客戶。 您可以選
 -   辛巴威
 
 > **注意**  如需您可以註冊開發人員帳戶的國家和地區清單，請參閱[帳戶類型、位置和費用](https://msdn.microsoft.com/library/windows/apps/jj863494)。
-

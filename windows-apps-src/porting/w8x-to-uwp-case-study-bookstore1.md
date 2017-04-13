@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7299138cb45e9eb5e0e1b7eb349a68034e66ee3b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a1c39852e6521d2dc20711471196781aad7770d7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 執行階段 8.x 至 UWP 的案例研究：Bookstore1
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -133,4 +130,3 @@ Bookstore1\_81 app 使用兩個不同的資源字典 (BookstoreStyles.xaml)，�
 我們也有證據顯示移植檢視模型通常是可順暢進行的程序。 使用者介面和尺寸規格支援，很可能是我們在移植時需要注意的部分。
 
 下一個案例研究是 [Bookstore2](w8x-to-uwp-case-study-bookstore2.md)，我們將在其中探討如何存取和顯示分組資料。
-

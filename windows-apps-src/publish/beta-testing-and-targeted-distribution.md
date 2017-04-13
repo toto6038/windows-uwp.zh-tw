@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板會提供選項，讓您的應用程式僅供指定人員使用，這樣您就可以在公開提供之前，讓測試者試試看。"
+Description: "Windows 開發人員中心儀表板會提供選項，讓您的 app 僅供指定人員使用，這樣您就可以在公開提供之前，讓測試者試試看。"
 title: "搶鮮版 (Beta) 測試和特定對象的發佈"
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0fd6f16b019326b7deefa110c2f65b30ffd83d10
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 20178a8048cadb733bf1e34996ad46067a8660f3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
 
-無論您測試應用程式時多麼謹慎，都比不上讓他人實際使用來得真切。 Windows 開發人員中心儀表板會提供選項，讓您的 app 僅供指定人員使用，這樣您就可以在公開提供之前，讓測試者試試看。 測試者可能會發現您沒注意到的問題，例如拼字錯誤、令人混淆的 app 流程，或甚至是導致 app 當機的錯誤。 這樣您就有機會能夠在 app 正式發行之前修正問題，進而產生更完美的最終產品。
+無論您測試 app 時多麼謹慎，都比不上讓他人實際使用來得真切。 Windows 開發人員中心儀表板會提供選項，讓您的 app 僅供指定人員使用，這樣您就可以在公開提供之前，讓測試者試試看。 測試者可能會發現您沒注意到的問題，例如拼字錯誤、令人混淆的 app 流程，或甚至是導致 app 當機的錯誤。 這樣您就有機會能夠在 app 正式發行之前修正問題，進而產生更完美的最終產品。
 
 我們提供幾種方式來限制將 app 只發佈給您的測試人員，而不需要以不同的名稱及版本識別來建立個別的 app 版本。 (當然，如果您想要，可以建立個別的 App 僅供測試。 如果您這麼做，請務必使其名稱與您想做為最終公用 App 使用的名稱不同。)
 
@@ -80,7 +77,7 @@ ms.lasthandoff: 02/07/2017
 
 > **注意：**如果您使用此選項，您仍然可以透過[產生促銷碼](generate-promotional-codes.md) (如上所述) 讓應用程式供測試者在 Windows 10 裝置上使用。 擁有您的其中一個 app 促銷碼的任何人都可以在 Windows 10 裝置上下載它，即使您沒有在這裡輸入其電子郵件。
 
-若要使用此選項，在提交您的 app 時，請在 **\[定價和可用性\]** 頁面的 \[[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)\] 區段中，選取 **\[隱藏這個 app 並使其僅可供您在下方指定的人員使用，這些人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app\]**。
+若要使用此選項，在提交您的 app 時，請在 **\[定價和可用性\]** 頁面的 [[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)] 區段中，選取 **\[隱藏這個 app 並使其僅可供您在下方指定的人員使用，這些人員可以在 Windows Phone 8.x 裝置上下載這個 app。促銷碼可用來在 Windows 10 裝置上下載這個 app\]**。
 
 如果您選擇這個選項，請記住下列各項：
 
@@ -92,4 +89,3 @@ ms.lasthandoff: 02/07/2017
 -   電子郵件地址必須以分號分隔。
 -   您可以稍後新增其他地址，但需要建立新的送出才能執行此動作。
 -   在測試者下載 app 之後，您無法撤銷對 app 的存取。 一旦他們下載 app，便可以繼續使用，並將可取得您送出的更新。
-

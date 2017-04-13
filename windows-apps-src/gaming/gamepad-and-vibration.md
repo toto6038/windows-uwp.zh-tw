@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 遊戲台, 震動"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: b92ddbaadd7fd09b252d5c8842ed89daf53a6982
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="gamepad-and-vibration"></a>遊戲台與震動
 
 此頁面說明使用 [Windows.Gaming.Input.Gamepad][gamepad] 的 Xbox One 遊戲台程式設計基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
@@ -56,7 +53,7 @@ Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震�
 
 ### <a name="ui-navigation"></a>UI 瀏覽
 
-為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的不同「邏輯」__輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
+為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的「邏輯」__輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
 當成 UI 瀏覽控制器使用時，遊戲台會將瀏覽命令的[必要集](ui-navigation-controller.md#required-set)對應至左搖桿、方向鍵、**視圖**按鈕、**選項**按鈕、**A** 按鍵和 **B** 按鍵。
 
@@ -67,8 +64,8 @@ Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震�
 |               向左 | 左搖桿向左/方向鍵向左   |
 |              向右 | 左搖桿向右/方向鍵向右 |
 |               檢視 | 檢視按鈕                         |
-|               功能表 | 功能表按鈕                         |
-|             接受 | A 按鍵                            |
+|               Menu | 功能表按鈕                         |
+|             Accept | A 按鈕                            |
 |             取消 | B 按鍵                            |
 
 此外，遊戲台會將所有[選擇性集](ui-navigation-controller.md#optional-set)的瀏覽命令對應到其餘輸入。
@@ -321,4 +318,3 @@ gamepad.Vibration = vibration;
 [gamepadreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadreading.aspx
 [gamepadbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
 [gamepadvibration]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.gamepadvibration.aspx
-

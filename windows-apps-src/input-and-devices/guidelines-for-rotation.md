@@ -11,17 +11,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6b5d2e6a41c1566c7c03b61b91bf9c641f674cea
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 189358c20ce934a946e4f4c034dc058d904b05d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rotation"></a>旋轉
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-本文說明旋轉的新 Windows UI，並提供在 UWP 應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
+本文描述旋轉的新 Windows UI，並提供在 Windows 市集應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -98,7 +95,7 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 <td align="left">組合式旋轉</td>
 <td align="left"><p>組合式旋轉支援依區域 (類似於[移動瀏覽的指導方針](guidelines-for-panning.md)中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
 <div class="alert">
-<strong>備註</strong>  使用者介面滑軌是項功能，其中目標周遭的區域會限制對部分特定值或位置的移動，以影響其選取範圍。
+<strong>注意</strong>  使用者介面滑軌是項功能，其中目標周遭的區域會限制對部分特定值或位置的移動，以影響其選取範圍。
 </div>
 <div>
  
@@ -130,7 +127,6 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
  
 
  
-
 
 
 

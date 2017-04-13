@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: "了解關於在應用程式中廣告的 UI 和使用者體驗指導方針。"
-title: "在應用程式中廣告的 UI 和使用者體驗指導方針"
+title: "廣告的 UI 和使用者體驗指導方針"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, 指導方針, 最佳做法"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e1c3fef6e8cc7cc483b72b6ba142d323055c960c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 75a68977e5edb996a5e2fc1ae9265d11b7492ad9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
-# <a name="ui-and-user-experience-guidelines-for-ads-in-apps"></a>在應用程式中廣告的 UI 和使用者體驗指導方針
-
-本文提供的指引可讓您在應用程式中提供絕佳的橫幅及插入式廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
+本文提供的指引可讓您在應用程式中提供絕佳的橫幅及插播式廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
 
 >**重要**&nbsp;&nbsp;您應用程式中的任何廣告使用都必須符合 Windows 市集原則，包括但不限於[原則 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反 Windows 市集原則而未列於本文中。
 
@@ -75,7 +72,7 @@ ms.lasthandoff: 02/07/2017
 
 巧妙地使用插入式廣告可以大幅提高您應用程式的收益，而不會對使用者滿意的產生負面影響。 當使用不當時，這類廣告會有完全相反的效果。
 
-以下章節提供如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在您的應用程式中實作插入式廣告的建議，以及違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
+以下章節提供如何使用 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 在您的應用程式中實作插播式影片廣告及標準橫幅廣告的建議，以及違反 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 的實作範例。 由於您比任何人都了解您的應用程式，除非原則考量，我們會將它保留給您來做出最佳的最終決策。 請務必牢記，您應用程式的評分與收益緊密結合。
 
 ### <a name="best-practices"></a>最佳做法
 
@@ -89,9 +86,9 @@ ms.lasthandoff: 02/07/2017
 
     * 重試關卡的額外時間。
 
-    * 自訂虛擬人偶的功能，例如刺青或帽子。
+    * 自訂虛擬人偶的特色，例如刺青或帽子。
 
-* 如果您的應用程式必須看完影片廣告，請先提到這項規則，如此使用者才不會對按下關閉按鈕時所發生的錯誤訊息感到意外。
+* 如果您的應用程式必須看完插播式影片廣告，請先提到這項規則，如此使用者才不會對按下關閉按鈕時所發生的錯誤訊息感到意外。
 
 * 在您需要顯示廣告前，預先擷取廣告 (藉由呼叫 [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx))，理想的情況為 30 秒到 60 秒。
 
@@ -105,13 +102,13 @@ ms.lasthandoff: 02/07/2017
 
     * 如果您選擇根據 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 儲存使用者的頻寬時，在 **ConnectionProfile** 類別中有 API 可協助您。
 
-* 使用預設 (30 秒) 逾時，除非您有合理的理由設定其他值，在該情況下不低於 10 秒。 影片廣告比橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
+* 使用預設 (30 秒) 逾時，除非您有合理的理由設定其他值，在該情況下不低於 10 秒。 插播式影片廣告比標準橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
 
 <span/>
 
-* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 類別中有 API 可協助您。
+* 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供插播式影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://msdn.microsoft.com/library/windows/apps/windows.networking.connectivity.connectionprofile.aspx) 類別中有 API 可協助您。
 
-* 在初始提交後，請繼續改善您的應用程式。 查看[廣告報表](../publish/advertising-performance-report.md)，然後變更設計以改進覆蓋率與影片完成率。
+* 在初始提交後，請繼續改善您的應用程式。 查看[廣告報表](../publish/advertising-performance-report.md)，然後變更設計以改進覆蓋率與插播式影片廣告完成率。
 
 <span />
 ### <a name="practices-to-avoid"></a>應避免的做法
@@ -120,13 +117,13 @@ ms.lasthandoff: 02/07/2017
 
 * 請勿做過頭。 請勿強制廣告超過 5 分鐘，除非使用者明確地被遊戲外的選擇性好處吸引。
 
-* 請勿在應用程式啟動時插入影片，因為使用者可能會認為他們按到了錯誤的磚。
+* 請勿在應用程式啟動時顯示插播式廣告，因為使用者可能會認為他們按到了錯誤的磚。
 
-* 請勿在結束時顯示影片插入式廣告。 這是不好的編排，因為完成率會趨近於零。
+* 請勿在結束時顯示插播式廣告。 這是不好的編排，因為完成率會趨近於零。
 
 * 請勿連續顯示二或多個插入式廣告。 使用者對於廣告進度列重設到開始點會感到不愉快。 許多人會認為這是程式碼或廣告服務錯誤。
 
-* 在呼叫 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 前，請勿擷取超過 5 分鐘的影片廣告。 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
+* 在呼叫 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 前，請勿擷取超過 5 分鐘的插播式影片廣告。 良好的編排會最大化預先擷取的廣告至可計費曝光數的轉換。
 
 * 請勿對廣告服務失敗 (例如沒有可用廣告) 的使用者給予不利影響。 例如，如果您顯示 UI 選項 [觀看廣告以取得 *xxx*]，您應該在使用者這麼做之後提供 *xxx*。 要考慮的兩個選項︰
 
@@ -160,4 +157,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

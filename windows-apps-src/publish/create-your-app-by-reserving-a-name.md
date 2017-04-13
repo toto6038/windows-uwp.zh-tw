@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "在 Windows 開發人員中心儀表板中建立新 app 的第一步，即為保留應用程式名稱。 瞭解如何保留應用程式名稱，並尋找關於為您應用程式選擇最佳名稱的建議。"
+Description: "在 Windows 開發人員中心儀表板中建立新 app 的第一步，即為保留應用程式名稱。 瞭解如何保留應用程式名稱，並尋找關於為您 app 選擇最佳名稱的建議。"
 title: "透過保留名稱建立您的應用程式"
 keywords: Windows 10, UWP
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
@@ -9,29 +9,26 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c36f8296f65efcc107ade545c20ab7e3db32c824
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 957caca6fb71cb8cfe5a84e258c0679b0780e6a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-your-app-by-reserving-a-name"></a>透過保留名稱建立您的應用程式
 
 
-在 Windows 開發人員中心儀表板中建立新應用程式的第一步，即為保留應用程式名稱。 瞭解如何保留應用程式名稱，並尋找關於[為您 app 選擇最佳名稱的建議](#choosing-your-app-s-name)。 每個保留的名稱在整個市集中必須是唯一的。
+在 Windows 開發人員中心儀表板中建立新 app 的第一步，即為保留應用程式名稱。 瞭解如何保留應用程式名稱，並尋找關於[為您 app 選擇最佳名稱的建議](#choosing-your-apps-name)。 每個保留的名稱在整個市集中必須是唯一的。
 
 > **注意**：如果您先前已建立  	Windows Phone App 且不曾為其保留名稱，則您仍然可以管理和送出該 App。 不過，為了上傳 .appx 套件，或[檢視 app 的身分識別詳細資料](view-app-identity-details.md) (建立 .appx 套件專屬)，您將需要遵循下列步驟來保留唯一的名稱。 這也會防止任何人將該名稱保留給自己使用。
 
-[上傳應用程式套件](upload-app-packages.md)時，[**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 值必須符合您在 [儀表板]**** 中為應用程式保留的名稱。 如果您使用 Microsoft Visual Studio 建立應用程式套件，則系統將會幫您填入此屬性。
+[上傳應用程式套件](upload-app-packages.md)時，[**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 值必須符合您在 **\[儀表板\]** 中為應用程式保留的名稱。 如果您使用 Microsoft Visual Studio 建立應用程式套件，則系統將會幫您填入此屬性。
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>透過保留新名稱建立您的應用程式
 
 保留名稱是在儀表板中建立應用程式的第一個步驟。 即使您尚未開始建置應用程式，也能執行這個動作。 我們建議您儘速執行這個動作，好讓其他人無法使用該名稱。
 
-1.  從 [儀表板概觀]**** 或 [所有應用程式]**** 頁面，按一下 [建立新的應用程式]****。
-2.  在文字方塊中，輸入要使用的名稱，然後按一下 [檢查可用性]**** 連結。 如果名稱可供使用，您將會看見綠色勾號 (如果輸入的名稱已被其他開發人員保留或使用，您將看見一則訊息，指出無法使用該名稱)。
-3.  按一下 [保留應用程式名稱]****。
+1.  從 **\[儀表板概觀\]** 或 **\[所有應用程式\]** 頁面，按一下 **\[建立新的應用程式\]**。
+2.  在文字方塊中，輸入要使用的名稱，然後按一下 **\[檢查可用性\]** 連結。 如果名稱可供使用，您將會看見綠色勾號 (如果輸入的名稱已被其他開發人員保留或使用，您將看見一則訊息，指出無法使用該名稱)。
+3.  按一下 **\[保留應用程式名稱\]**。
 
 現在已為您保留該名稱，而您可以在準備好時，開始進行[提交](app-submissions.md)。
 
@@ -53,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="manage-additional-app-names"></a>管理其他的 app 名稱
 
-您可以在 [管理應用程式名稱]**** 頁面的 [應用程式管理]**** 區段中，為 Windows 開發人員中心儀表板中的每個 app 管理 app 的名稱。
+您可以在 **\[管理應用程式名稱\]** 頁面的 **\[應用程式管理\]** 區段中，為 Windows 開發人員中心儀表板中的每個 app 管理 app 的名稱。
 
 在某些情況下，您可能想要保留多個名稱用於相同的 app，例如，當您想以多個語言提供 app 並且想要使用不同的名稱時。 如果您想要完全變更 app 的名稱，您將需要保留其他名稱。
 
@@ -64,7 +61,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

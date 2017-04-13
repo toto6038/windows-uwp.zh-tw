@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 189b15728fd5013a1f976803ffb0e55f57e95142
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1c2001e93fd06cc93fa5cfe9d2a10a029e13c82d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 
 
@@ -34,7 +31,7 @@ Windows 開發人員中心儀表板的 **\[附加元件下載數\]** 報告讓�
 -   **附加元件**：預設篩選為 **\[所有附加元件\]**。 如果您只想要針對某一個附加元件顯示下載數資料，您可以在此處選擇特定的附加元件。
 -   **裝置類型**：預設設定為 **[所有裝置]**。 如果您只想要顯示來自特定裝置類型的附加元件下載數資料，您可以在此處選擇特定的類型。
 
-下列圖表中的資訊將反映在 \[**套用篩選**\] 中所選取的時段。
+下列圖表中的資訊將反映在 **\[套用篩選\]** 區段中所選取的時段。
 
 下列所有圖表中的資訊將反映 **\[套用篩選\]** 區段中選取的時段。 根據預設，除非您使用 **\[套用篩選\]** 只選擇一個裝置類型，否則這將包含所有裝置類型的資料。
 
@@ -70,4 +67,3 @@ Windows 開發人員中心儀表板的 **\[附加元件下載數\]** 報告讓�
  
 
  
-

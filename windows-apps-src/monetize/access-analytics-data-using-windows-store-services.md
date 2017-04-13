@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式分析資料。"
-title: "使用 Windows 市集服務存取分析資料"
+title: "使用市集服務存取分析資料"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 03/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10 , UWP, 市集服務, Windows 市集分析 API"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1538f06b09bd4143750c10a2774137f87359ebce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aa33af63a49d890b3c60ec1bee32528cfc78af93
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
+# <a name="access-analytics-data-using-store-services"></a>使用市集服務存取分析資料
 
-# <a name="access-analytics-data-using-windows-store-services"></a>使用 Windows 市集服務存取分析資料
-
-使用「Windows 市集分析 API」**，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式分析資料。 這個 API 可讓您擷取應用程式和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、應用程式評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
+使用*「Windows 市集分析 API」*，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式分析資料。 這個 API 可讓您擷取應用程式和附加元件 (也稱為應用程式內產品或 IAP) 下載數、錯誤、應用程式評分與評論的資料。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
@@ -74,12 +71,20 @@ grant_type=client_credentials
 
 有了 Azure AD 存取權杖之後，就可以呼叫 Windows 市集分析 API。 如需每個方法之語法的相關資訊，請參閱下列文章。 您必須將存取權杖傳送給每個方法的 **Authorization** 標頭。
 
+| 案例       | 方法      |
+|---------------|--------------------|
+| 下載和安裝 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得 App 安裝](get-app-installs.md)</li></ul> |
+| App 錯誤 | <ul><li>[取得錯誤報告資料](get-error-reporting-data.md)</li><li>[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
+| 評分與評論 | <ul><li>[取得 App 評分](get-app-ratings.md)</li><li>[取得 App 評論](get-app-reviews.md)</li></ul> |
+| 應用程式內廣告與廣告行銷活動 | <ul><li>[取得廣告效益資料](get-ad-performance-data.md)</li><li>[取得廣告行銷活動效益資料](get-ad-campaign-performance-data.md)</li></ul> |
+
+下列其他方法可供隸屬於 [Windows 硬體開發人員中心計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶使用。
+
 | 案例       | 描述      |
 |---------------|--------------------|
-| 下載數 |  取得您的應用程式和附加元件擷取的資料。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得應用程式下載數](get-app-acquisitions.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li></ul> |
-| 錯誤 | 取得您應用程式中錯誤的相關資料。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得錯誤報告資料](get-error-reporting-data.md)</li><li>[取得應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
-| 評分與評論 | 取得您應用程式的評分與評論資訊。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得應用程式評分](get-app-ratings.md)</li><li>[取得應用程式評論](get-app-reviews.md)</li></ul> |
-| 應用程式內廣告與行銷活動 | 取得您應用程式中廣告及廣告行銷活動的效益資料。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得廣告效益資料](get-ad-performance-data.md)</li><li>[取得行銷活動效益資料](get-ad-campaign-performance-data.md)</li></ul> |
+| Windows 10 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 10 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[取得 Windows 10 驅動程式錯誤的詳細資料](get-details-for-a-windows-10-driver-error.md)</li><li>[下載適用於 Windows 10 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Windows 7/Windows 8.x 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 7 和 Windows 8.x 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[取得 Windows 7 或 Windows 8.x 驅動程式錯誤的詳細資料](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下載適用於 Windows 7 或 Windows 8.x 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| 硬體錯誤 (適用於 OEM) |  <ul><li>[取得 OEM 硬體錯誤報告資料](get-oem-hardware-error-reporting-data.md)</li><li>[取得 OEM 硬體錯誤的詳細資料](get-details-for-an-oem-hardware-error.md)</li><li>[下載適用於 OEM 硬體錯誤的 CAB 檔案](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## <a name="code-example"></a>程式碼範例
 
@@ -110,16 +115,3 @@ Windows 市集分析 API 會以包含錯誤碼和訊息的 JSON 物件，傳回�
     "source":"AnalyticsAPI"
 }
 ```
-
-## <a name="related-topics"></a>相關主題
-
-* [取得應用程式下載數](get-app-acquisitions.md)
-* [取得附加元件下載數](get-in-app-acquisitions.md)
-* [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)
-* [取得應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)
-* [取得應用程式評分](get-app-ratings.md)
-* [取得應用程式評論](get-app-reviews.md)
-* [取得廣告效益資料](get-ad-performance-data.md)
-* [取得促銷活動效益資料](get-ad-campaign-performance-data.md)
-

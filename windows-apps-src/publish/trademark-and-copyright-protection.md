@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "了解如果您認為其他應用程式侵犯您的智慧財產權時，您可以採取的行動。"
+Description: "了解如果您認為其他應用程式侵犯您的智慧財產權您可以採取的行動。"
 title: "商標與著作權保護"
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a56c00384d494bbd38d394c464b68c0ff080fb8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f8a74261c6982ec89509579d3856bea743fd8743
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="trademark-and-copyright-protection"></a>商標與著作權保護
 
 
-了解如果您認為其他應用程式侵犯您的智慧財產權時，您可以採取的行動。
+了解如果您認為其他 app 侵犯您的智慧財產權您可以採取的行動。
 
 ## <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. 如何提報 Windows app 內有人侵犯到我的智慧財產權？
 
@@ -69,7 +66,6 @@ Microsoft 強烈建議您不要這樣做。 但是，如果有明確的商務需
  
 
  
-
 
 
 

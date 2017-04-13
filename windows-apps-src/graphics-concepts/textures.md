@@ -2,21 +2,17 @@
 title: "紋理"
 description: "紋理是在電腦產生 3D 影像中創造真實感的利器。 Direct3D 支援廣泛的紋理功能設定，提供開發人員輕鬆存取進階紋理技術的方式。"
 ms.assetid: B9E85C9E-B779-4852-9166-6FA2240B7046
-keywords:
-- "紋理"
+keywords: "紋理"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4c78099f6bd30956c45a907a960a595288e0eaf4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef5c72f3c667c63cb48c469349ae26c364050c19
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="textures"></a>紋理
 
 
@@ -69,11 +65,11 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[光線與紋理對應](light-mapping-with-textures.md)</p></td>
-<td align="left"><p>光線貼圖是一個紋理或一組紋理，其包含了 3D 場景中的光源相關資訊。 光線貼圖會將光線及陰影對應到原始物件上。 多階段及多重紋理混合可讓您的應用程式以比著色技術更逼真的外觀，對場景進行轉譯。</p></td>
+<td align="left"><p>光線貼圖是一個紋理或一組紋理，其包含了 3D 場景中的光源相關資訊。 光線對應將光線和陰影對應到基本類型。 多階段及多重紋理混合可讓您的應用程式以比著色技術更逼真的外觀，對場景進行轉譯。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[壓縮紋理資源](compressed-texture-resources.md)</p></td>
-<td align="left"><p>紋理貼圖為繪製在三維圖形上的數位化影像，用來增加更多視覺上的細節。 其在點陣化的過程中對應至這些圖形之上，並且整個過程可能會取用大量的系統匯流排及記憶體。 若要減少紋理所使用的記憶體，Direct3D 支援壓縮紋理表面。 某些 Direct3D 裝置原生支援壓縮紋理表面。</p></td>
+<td align="left"><p>紋理貼圖為繪製在三維圖形上的數位化影像，用來增加更多視覺上的細節。 他們在點陣化的過程中對應至這些圖形之上，並且整個過程可能會取用大量的系統匯流排及記憶體。 若要減少紋理所使用的記憶體，Direct3D 支援壓縮紋理表面。 某些 Direct3D 裝置原生支援壓縮紋理表面。</p></td>
 </tr>
 </tbody>
 </table>
@@ -88,7 +84,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

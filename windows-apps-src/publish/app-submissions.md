@@ -9,13 +9,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: df66981ae8355ea62128a881f02fd6fb891ffb30
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d6764051a6f3d9d5c6d851f0ba15353da5f9d5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-submissions"></a>App 提交
 
 
@@ -23,7 +20,7 @@ ms.lasthandoff: 02/07/2017
 
 您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 提交將儲存於儀表板中，如此一來，每當您準備好時，即可加以使用。
 
-發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為 App 建立新的提交，請按一下 App [概觀] 頁面上所顯示最新提交旁的 [更新]****。
+發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為 App 建立新的提交，請按一下 App [概觀] 頁面上所顯示最新提交旁的 **\[更新\]**。
 
 > **注意**&nbsp;&nbsp;本文件章節描述如何在開發人員中心儀表板上建立 App 提交。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將 App 提交自動化。
 
@@ -38,7 +35,7 @@ ms.lasthandoff: 02/07/2017
 | 欄位名稱                    | 注意事項                                       | 如需詳細資訊                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
 | **基本價格**                | 必要                                    | [基本價格](set-app-pricing-and-availability.md#base-price)              |
-| **免費試用**                | 預設值：沒有免費試用                      | [新增試用版和在在應用程式內購買](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
+| **免費試用**                | 預設值：沒有免費試用                      | [新增試用版和在 App 內購買](https://msdn.microsoft.com/library/windows/apps/jj193599)  |
 | **市場和自訂價格** | 預設值：所有可能的市場，無自訂價格 | [制定價格和選擇市場](define-pricing-and-market-selection.md)              |
 | **銷售定價**              | 選用                                    | [促銷 App 和附加元件](put-apps-and-add-ons-on-sale.md)                                       |
 | **配送和可見性** | 預設：在市集推出此應用程式 | [配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility) |
@@ -108,4 +105,3 @@ ms.lasthandoff: 02/07/2017
 <span/>
 
 **注意**&nbsp;&nbsp;如需直接將企業營運 (LOB) App 發佈到企業的相關資訊，請參閱[將 LOB App 發佈到企業](distribute-lob-apps-to-enterprises.md)。
-

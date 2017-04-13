@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: "使用「Windows 市集促銷 API」，以程式設計方式管理登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式促銷廣告行銷活動。"
-title: "使用 Windows 市集服務執行廣告行銷活動"
+title: "使用市集服務執行廣告行銷活動"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, Windows 市集促銷 API, 廣告行銷活動"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ec245f07098a662c80517de49ba5637a69b30f35
-ms.lasthandoff: 02/08/2017
-
+keywords: "Windows 10, UWP, Windows 市集促銷 API, 廣告行銷活動"
+ms.openlocfilehash: d1575c686080fb8c4c35c032cdc1beca587aeb37
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="run-ad-campaigns-using-windows-store-services"></a>使用 Windows 市集服務執行廣告行銷活動
+# <a name="run-ad-campaigns-using-store-services"></a>使用市集服務執行廣告行銷活動
 
 使用*「Windows 市集促銷 API」*，以程式設計方式管理登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式促銷廣告行銷活動。 這個 API 可讓您用來建立、更新及監視您的行銷活動，以及其他相關資產，例如目標和廣告素材。 這個 API 特別適用於建立大量行銷活動，而且想要在不使用 Windows 開發人員中心儀表板的情況下執行這項操作的開發人員。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
 
@@ -34,6 +31,8 @@ ms.lasthandoff: 02/08/2017
 ## <a name="step-1-complete-prerequisites-for-using-the-windows-store-promotions-api"></a>步驟 1︰完成使用 Windows 市集促銷 API 的先決條件
 
 開始撰寫程式碼以呼叫 Windows 市集促銷 API 之前，請先確定您已完成下列先決條件。
+
+* 使用此 API 成功建立並開始廣告行銷活動之前，您必須先[在開發人員中心儀表板中使用 **\[宣傳您的應用程式\]** 頁面建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且必須在此頁面上至少新增一個付款方式。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 使用此 API 所建立廣告行銷活動的廣告播送行將會自動向儀表板中 **\[宣傳您的應用程式\] **頁面上所選擇預設付款方式收取費用。
 
 * 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 如果沒有，可以免費[在開發人員中心建立新的 Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
@@ -112,4 +111,3 @@ grant_type=client_credentials
 
 
  
-

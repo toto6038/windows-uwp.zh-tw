@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a4ee1fd29b276958ed6a18b4eadcd89d5ea914b6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>從 Windows Runtime 8.x 移至 UWP
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -63,10 +60,6 @@ ms.lasthandoff: 02/07/2017
 
 在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
 
-## <a name="if-you-have-a-microsoft-visual-studio-2015-rc-project"></a>如果您有 Microsoft Visual Studio 2015 RC 專案
-
-如果您有使用 Visual Studio 2015 RC 建立的 Windows 10 專案， 請參閱[將您的 UWP Microsoft Visual Studio 2015 RC 專案更新為 RTM](update-your-visual-studio-2015-rc-project-to-rtm.md)。
- 
 | 主題 | 說明 |
 |-------|-------------|
 | [移植專案](w8x-to-uwp-porting-to-a-uwp-project.md) | 當您開始移植程序時，會有兩個選項。 其中一個是編輯現有專案檔案的複本，包括應用程式套件資訊清單 (若要了解該選項，請參閱[將 app 移轉至通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/mt148501.aspx) 中關於更新您專案檔案的資訊)。 另一個選項是在 Visual Studio 中建立新的 Windows 10 專案，並將檔案複製到其中。 |
@@ -83,5 +76,3 @@ ms.lasthandoff: 02/07/2017
 * [Windows 執行階段參考](https://msdn.microsoft.com/library/windows/apps/br211377)
 * [建置適用於所有 Windows 裝置的通用 Windows 應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [設計 app 的 UX](https://msdn.microsoft.com/library/windows/apps/hh767284)
-
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ca9a29609cd52db24ddddecf60307e808cc064
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e861ce5d7c34098616fdc57c884402df4e4b0a7f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="feedback-report"></a>意見反應報告
 
 Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。 您可以在儀表板中檢視此資料，或匯出資料以便離線檢視。
@@ -61,4 +58,3 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 ## <a name="launching-feedback-hub-directly-from-your-app"></a>從您的應用程式直接啟動意見反應中樞
 
 如前所述，建議直接在您的應用程式中納入意見反應中樞的連結，鼓勵客戶提供意見反應。 如需詳細資訊，請參閱[從您的應用程式啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。
-

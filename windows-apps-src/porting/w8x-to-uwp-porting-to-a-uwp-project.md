@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: d711d981a674d1516b12ee11c379e679c45dcb60
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="porting-a-windows-runtime-8x-project-to-a-uwp-project"></a>將 Windows 執行階段 8.x 專案移植到 UWP 專案
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 1.  啟動 Microsoft Visual Studio 2015，並建立新的空白應用程式 (Windows 通用) 專案。 如需詳細資訊，請參閱[使用範本快速建立您的 Windows 市集應用程式 (C#、C++、Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
 2.  在通用 8.1 應用程式專案中，找出您想要重複使用的所有原始程式碼檔案及視覺資產檔案。 使用 [檔案總管]，將資料模型、檢視模型、視覺資產、資源字典、資料夾結構，以及任何您想要重複使用的其他項目複製到新專案。 視需要在磁碟上複製或建立子資料夾。
 3.  將檢視 (例如 MainPage.xaml 和 MainPage.xaml.cs) 一併複製到新專案。 同樣地，請視需要建立新的子資料夾，然後從專案移除現有的檢視。 但是在您覆寫或移除 Visual Studio 產生的檢視之前，請保留一份複本，因為可能稍後可用來供參考。 移植通用 8.1 應用程式的第一個階段著重在美化外觀以及能在裝置系列上運作良好。 稍後，您會將重點放在確認檢視能隨所有尺寸規格適當調整，也可以新增任何調適型程式碼，以充分利用特定的裝置系列。
-4.  在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [加入至專案]****。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 **\[建置動作\]** 是否已設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是否已設定為 **\[不要複製\]**。
+4.  在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]**。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 **\[建置動作\]** 是否已設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是否已設定為 **\[不要複製\]**。
 5.  您在這個階段可能會看到一些建置錯誤。 但如果您知道需要變更什麼，就可以使用 Visual Studio 的 **Find and Replace** 命令針對原始碼進行大量變更；還可以在 Visual Studio 的命令式程式碼編輯器中使用內容功能表上的 **Resolve** 和 **Organize Usings** 命令，對更多目標項目做出變更。
 
 ## <a name="maximizing-markup-and-code-reuse"></a>儘可能重複使用標記與程式碼
@@ -180,5 +177,4 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 * [使用範本快速建立您的 Windows 市集應用程式 (C#、C++、Visual Basic)。](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [可攜式類別庫的跨平台開發](http://msdn.microsoft.com/library/gg597391.aspx)
-
 

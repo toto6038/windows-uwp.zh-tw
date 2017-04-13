@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e05d6278472af75fb97f33eb840f6ecf28d33670
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b3081680c0d2324585fa5550aa7c6e8548673219
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="printing-and-scanning"></a>列印與掃描
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節描述如何從您的通用 Windows app 列印與掃描。
 
@@ -34,5 +32,4 @@ ms.lasthandoff: 02/07/2017
 * [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
 * [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
-
 

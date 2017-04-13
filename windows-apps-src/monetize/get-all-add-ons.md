@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
-description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有應用程式擷取所有附加元件資料。"
-title: "使用 Windows 市集提交 API 取得所有附加元件"
+description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取所有附加元件資料。"
+title: "取得所有附加元件"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 568dfb5dd47414a6ca4bb0c52ab36437bd119b73
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bb31d8cbe60703aff179913648556f408ba65586
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-all-add-ons-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得所有附加元件
-
+# <a name="get-all-add-ons"></a>取得所有附加元件
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有應用程式擷取所有附加元件 (也稱為應用程式內產品或 IAP) 資料。
+
+在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取所有附加元件 (也稱為應用程式內產品或 IAP) 資料。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -145,7 +142,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 10，但是 App 有 100 個登錄到您帳戶的附加元件，回應本文會包含 ```inappproducts?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 100 個登錄到您帳戶的附加元件，回應本文會包含 ```inappproducts?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/inappproducts?skip=10&top=10``` 來要求接下來的 10 個附加元件。 |
 | value            | 陣列  |  包含提供每個附加元件相關資訊之物件的陣列。 如需詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。   |
 | totalCount   | 整數  | 回應內文的 *value* 陣列中的 App 物件數目。                                                                                                                                                 |
 
@@ -169,4 +166,3 @@ Authorization: Bearer <your access token>
 * [取得附加元件](get-an-add-on.md)
 * [建立附加元件](create-an-add-on.md)
 * [刪除附加元件](delete-an-add-on.md)
-

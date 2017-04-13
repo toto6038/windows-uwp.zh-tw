@@ -2,25 +2,22 @@
 author: mcleanbyron
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: "在 Windows 市集提交 API 中使用這些方法，針對已登錄到您 Windows 開發人員中心帳戶的應用程式擷取資料。"
-title: "使用 Windows 市集提交 API 取得應用程式資料"
+title: "取得 App 資料"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式資料"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 756f11cdc440a891658c2311cc61199dec3d6d1f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-app-data-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式資料
+# <a name="get-app-data"></a>取得 App 資料
 
 在 Windows 市集提交 API 中使用下列方法，取得您開發人員中心帳戶中現有應用程式的資料。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 [意見反應]****，選取意見反應區域的 [提交 API]****，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
+>**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
 
 使用這些方法之前，應用程式必須已經存在於開發人員中心帳戶中。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 <tr class="header">
 <th align="left">方法</th>
 <th align="left">URI</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 </tr>
 </thead>
 <tbody>
@@ -65,7 +62,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="prerequisites"></a>先決條件
 
-如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
+如果您尚未完成，請先完成 Windows 市集提交 API 的所有[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
 
 ## <a name="data-resources"></a>資料資源
 
@@ -97,7 +94,7 @@ Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明       |
+| 值           | 類型    | 描述       |
 |-----------------|---------|---------------------|
 | id            | 字串  | 應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
 | primaryName   | 字串  | 應用程式的主要名稱。      |
@@ -122,7 +119,7 @@ Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明         |
+| 值           | 類型    | 描述         |
 |-----------------|---------|----------------------|
 | inAppProductId            | 字串  | 附加元件的市集識別碼。 此值由市集所提供。 市集識別碼範例為 9NBLGGH4TNMP。   |
 
@@ -153,7 +150,7 @@ Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用�
 
 此資源具有下列值。
 
-| 值           | 類型    | 說明           |
+| 值           | 類型    | 描述           |
 |-----------------|---------|------------------------|
 | flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 此值由開發人員中心提供。  |
 | friendlyName           | 字串  | 開發人員指定的套件正式發行前小眾測試版名稱。   |
@@ -191,7 +188,6 @@ Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用�
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 市集提交 API 管理應用程式提交](manage-app-submissions.md)
 * [取得所有應用程式](get-all-apps.md)
-* [取得應用程式](get-an-app.md)
+* [取得 App](get-an-app.md)
 * [取得應用程式的附加元件](get-add-ons-for-an-app.md)
 * [取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md)
-

@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26329304df64689ea7938d4fc838bd730696e4a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6b7f11330c5849d0df4e54c10a71c2a70fc77a08
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
@@ -86,10 +84,9 @@ ms.lasthandoff: 02/07/2017
 
 當您關閉您的帳戶時，請務必了解您已在 Windows 市集中發行的任何 app 會發生什麼事：
 
--   您目前 app 的客戶仍然可以繼續使用 app。 但是，他們將無法使用在應用程式內購買功能。
+-   您目前 app 的客戶仍然可以繼續使用 app。 但是，他們將無法使用 App 內購買功能。
 -   即使先前取得應用程式的客戶仍能使用應用程式，但您的應用程式清單將自市集中移除。 新客戶將無法取得您的應用程式。
 -   您的應用程式名稱將釋出，而其他開發人員可以使用該名稱。
 -   如果您先前的 app 銷售額有到期的餘額，則即使到期金額未達一般付款門檻，您也能要求將餘額支付給您。
-
 
 

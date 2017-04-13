@@ -2,21 +2,17 @@
 title: "建立串流資源"
 description: "串流資源的建立方式是在建立資源時指定旗標，表示資源是串流資源。"
 ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
-keywords:
-- "建立串流資源"
+keywords: "建立串流資源"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 86f19b2afd580a16510fee8e97acfc2a388cad01
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0f42d34251ccd6d9add87808e502ab66dc830905
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="creating-streaming-resources"></a>建立串流資源
 
 
@@ -86,7 +82,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

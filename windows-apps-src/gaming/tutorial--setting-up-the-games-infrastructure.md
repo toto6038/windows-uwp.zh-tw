@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, 設定, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 3bf9e6f70f71dc0b70a2f8af148c44acc1a329fb
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
 
@@ -38,11 +35,11 @@ ms.lasthandoff: 02/07/2017
 
 Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2015 中，您將發現很多範本能夠讓遊戲和圖形應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
 
-這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 [檔案]**** &gt; [新增專案]**** 然後：
+這個教學課程的正確範本是名為「DirectX 11 應用程式 (通用 Windows)」的範本。 在 Visual Studio 2015 中，按一下 **\[檔案\] ** &gt; **\[新增專案\]** 然後：
 
-1.  從 [範本]**** 中，依序選取 [Visual C++]****、[Windows]****、[通用]****。
-2.  在中央窗格中，選取 [DirectX 11 應用程式 (通用 Windows)]****。
-3.  提供遊戲專案名稱，然後按一下 [確定]****。
+1.  從 **\[範本\]** 中，依序選取 **\[Visual C++\]**、**\[Windows\]**、**\[通用\]**。
+2.  在中央窗格中，選取 **\[DirectX 11 應用程式 (通用 Windows)\]**。
+3.  提供遊戲專案名稱，然後按一下 **\[確定\]**。
 
 ![選取 direct3d 應用程式範本](images/simple-dx-game-vs-new-proj.png)
 
@@ -132,15 +129,15 @@ void App::Run()
 
 範本不只有程式碼檔案。 **package.appxmanifest** 檔案包含有關您專案的中繼資料，可用來封裝和啟動您的遊戲，以及提交到 Windows 市集。 它也包含玩家系統的重要資訊，用來存取遊戲執行所需的系統資源。
 
-在 [方案總管]**** 中的 **package.appxmanifest** 檔案上按兩下，啟動 [資訊清單設計工具]****。 您會看到這個檢視：
+在 **\[方案總管\]** 中的 **package.appxmanifest** 檔案上按兩下，啟動 **\[資訊清單設計工具\]**。 您會看到這個檢視：
 
 ![package.appx 資訊清單編輯器。](images/simple-dx-game-vs-app-manifest.png)
 
-如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 現在，看看 [功能]**** 索引標籤，以及其中提供的選項。
+如需 **package.appxmanifest** 檔案和封裝的詳細資訊，請參閱[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)。 現在，看看 **\[功能\]** 索引標籤，以及其中提供的選項。
 
 ![direct3d 應用程式的預設功能。](images/simple-dx-game-vs-capabilities.png)
 
-如果您未選取遊戲所使用的功能 (例如透過 [網際網路]**** 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
+如果您未選取遊戲所使用的功能 (例如透過 **\[網際網路\]** 存取全球高分板)，就無法存取對應的資源或功能。 建立新遊戲時，記得選取遊戲執行所需的功能！
 
 現在，讓我們看看隨附於 **DirectX 11 應用程式 (通用 Windows)** 範本的其餘檔案。
 
@@ -169,7 +166,6 @@ void App::Run()
  
 
  
-
 
 
 

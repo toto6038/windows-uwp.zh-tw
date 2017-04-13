@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的應用程式建立附加元件。"
-title: "使用 Windows 市集提交 API 建立附加元件"
+description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件。"
+title: "建立附加元件"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 建立附加元件, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0492398872142aabd32d3a4d68d55b4e326f027e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 903bbaf0ad515dcf23c4248744b428876805082e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 建立附加元件
-
+# <a name="create-an-add-on"></a>建立附加元件
 
 
 
-使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的應用程式建立附加元件 (也稱為應用程式內產品或 IAP)。
+
+使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件 (也稱為應用程式內產品或 IAP)。
 
 >**注意**&nbsp;&nbsp;這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
 
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -119,4 +116,3 @@ Content-Type: application/json
 * [取得所有附加元件](get-all-add-ons.md)
 * [取得附加元件](get-an-add-on.md)
 * [刪除附加元件](delete-an-add-on.md)
-

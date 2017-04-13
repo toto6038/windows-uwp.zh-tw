@@ -3,20 +3,16 @@ author: mtoepke
 title: "延伸遊戲範例"
 description: "恭喜！ 現在，您已經了解基本通用 Windows 平台 (UWP) DirectX 3D 遊戲的關鍵元件。"
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
-keywords:
-- DirectX, XAML
+keywords: DirectX, XAML
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e3f4abdb0a0f42d1b25a3adc1a78ab414affa77a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2d36c8f8f4e3f51928f1c7707e0cb6f69386645d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="extend-the-game-sample"></a>延伸遊戲範例
 
 
@@ -1520,7 +1516,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
  
 
  
-
 
 
 

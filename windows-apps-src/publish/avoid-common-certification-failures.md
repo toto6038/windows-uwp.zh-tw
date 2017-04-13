@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "檢閱此清單有助於避免發生經常讓應用程式無法通過認證的問題，或是應用程式發行後可能在抽樣檢查中發現的問題。"
+Description: "檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。"
 title: "避免常見的認證失敗"
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f8b61d14b46614680b84da5aa7e4413159a0cfb1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ad5654c7d07f1f17ddfe733732dfc6a2c77b3bc2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
 
-檢閱此清單有助於避免發生經常讓應用程式無法通過認證的問題，或是應用程式發行後可能在抽樣檢查中發現的問題。
+檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 
 > **注意：**您也應該檢閱 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)，以確認您的應用程式符合此處所列的所有需求。
 
@@ -45,7 +42,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

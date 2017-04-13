@@ -9,22 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 資料, 資料庫, 關聯式, 表格, sqlite"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0f7aff1c9e7354fcf92d24ed8acb88b41a23d377
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9e5873e7c7c5af9b3d13dcd850e19ff3dfd91dc7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="data-access"></a>資料存取
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節討論在私人資料庫的裝置上儲存資料，以及在通用 Windows 平台 (UWP) app 中使用物件關聯對應。
 
-UWP SDK 中包含 SQLite。 Entity Framework 7 可搭配 UWP app 中的 SQLite 使用。 使用這些技術針對離線/間歇性的連線案例開發，以及保存 app 工作階段的資料。
+UWP SDK 中包含 SQLite。 Entity Framework Core 會在 UWP app 中使用 SQLite。 使用這些技術針對離線/間歇連線案例進行開發，以及跨 App 工作階段保存資料。
 
-| 主題 | 說明|
+| 主題 | 描述|
 |-------|------------|
-| [針對 C# app 搭配 SQLite 使用 Entity Framework 7](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) 是一種關聯對應程式，可讓您搭配使用網域特定物件的關聯資料使用。 本文說明如何在通用 Windows app 中使用 Entity Framework 7 搭配 SQLite 資料庫。 |
+| [Entity Framework Core 與 SQLite 搭配用於 C# App](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特定物件處理關聯式資料。 本文說明如何在通用 Windows 應用程式中搭配 SQLite 資料庫來使用 Entity Framework Core。 |
 | [SQLite 資料庫](sqlite-databases.md) | SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 程式庫、在通用 Windows app 中封裝您自己的 SQLite 程式庫，或是從來源建立 SQLite 程式庫。 |
-

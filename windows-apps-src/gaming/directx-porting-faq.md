@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, DirectX 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7dda21925e31785e0ce7c3dfc72ba173b8686743
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常見問題集
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 將遊戲移植到通用 Windows 平台 (UWP) 的常見問題集解答。
@@ -107,7 +104,7 @@ DirectX 10.x 與 11 傳統型遊戲能夠輕易地移植到 UWP。 請參閱 [�
 ## <a name="my-game-renders-using-multithreading-andor-deferred-rendering-what-do-i-need-to-know-for-direct3d-11"></a>我的遊戲使用多執行緒及/或延遲轉譯進行轉譯。 我需要知道的 Direct3D 11 事項有哪些？
 
 
-請造訪 [Direct3D 11 中的多執行緒簡介](https://msdn.microsoft.com/library/windows/desktop/ff476891)開始進行。 如需主要差異的清單，請參閱 [Direct3D 版本間的執行緒差異](https://msdn.microsoft.com/library/windows/desktop/ff476890)。 請注意，延遲的轉譯使用裝置「延遲的內容」**，而不使用「即時內容」**。
+請造訪 [Direct3D 11 中的多執行緒簡介](https://msdn.microsoft.com/library/windows/desktop/ff476891)開始進行。 如需主要差異的清單，請參閱 [Direct3D 版本間的執行緒差異](https://msdn.microsoft.com/library/windows/desktop/ff476890)。 請注意，延遲的轉譯使用裝置*「延遲的內容」*，而不使用*「即時內容」*。
 
 ## <a name="where-can-i-read-more-about-the-programmable-pipeline-since-direct3d-9"></a>哪裡可以閱讀更多有關 Direct3D 9 之後的可程式設計管線？
 
@@ -140,7 +137,6 @@ Microsoft Visual Studio 2015 包含 DirectX 圖形的診斷工具。 請參閱[�
  
 
  
-
 
 
 

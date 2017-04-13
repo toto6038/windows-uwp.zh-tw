@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: "如果您先前在 Windows 或 Windows Phone 市集發行應用程式，Windows 10 裝置的客戶也可以取得這些應用程式。"
-title: "應用程式如何在市集中顯示給 Windows 10 客戶"
+Description: "如果您先前在 Windows 或 Windows Phone 市集發行 App，Windows 10 裝置的客戶也可以取得這些 App。"
+title: "應用程式如何在市集中顯示給 Windows10 客戶"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
@@ -9,23 +9,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4a7c10d93a3145466007bfe4fac63422400a9830
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef76bf9a26336f89b1b1a93099dec56191823a2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>應用程式如何在市集中顯示給 Windows10 客戶
 
-# <a name="how-your-app-appears-in-the-store-for-windows-10-customers"></a>應用程式如何在市集中顯示給 Windows 10 客戶
 
+如果您先前在 Windows 或 Windows Phone 市集發行 app，Windows 10 裝置的客戶也可以取得這些 app。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
 
-如果您先前在 Windows 或 Windows Phone 市集發行應用程式，Windows 10 裝置的客戶也可以取得這些應用程式。 因為市集向 Windows 10 客戶提供以及分類 app 時，做了部分調整，所以請參閱本主題，了解更動的部分。
-
-**注意**  如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
+**注意**：如果您想要變更任何詳細資料，請[建立新的提交](app-submissions.md)並進行變更，然後提交更新到市集。
 
  
 
-## <a name="consideration-for-apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>在 Windows 市集和 Windows Phone 市集中共用身分識別之 app 的注意事項
+## <a name="apps-that-shared-identity-in-the-windows-store-and-windows-phone-store"></a>在 Windows 市集和 Windows Phone 市集中共用身分識別的 App
 
 
 如果您已讓發佈到上述兩個市集的 app 使用相同的保留名稱 (通常稱為共用 app 的身分識別)，現在會將這些視為同一個 app，而不是兩個。 在儀表板中，您看到的會是含有 Windows 與 Windows Phone 套件的單一 App。
@@ -53,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 現在只要到每一個市場讓您的 app 上架，Windows 10 客戶就可以在每一個市場中看到上架的 app。 即使您在每一個市集選取不同的市場，也是一樣的情況。
 
 ### <a name="categories"></a>類別
-如果您的 app 在兩個市集的不同類別中出現，我們會以 Windows 市集中的類別為準，判斷它的新類別。 請注意，在針對 Windows 10 客戶的市集中，某些類別是不一樣的，因此請務必仔細查閱下列[表格](#cat)。
+如果您的 app 在兩個市集的不同類別中出現，我們會以 Windows 市集中的類別為準，判斷它的新類別。 請注意，在針對 Windows 10 客戶的市集中，某些類別是不一樣的，因此請務必仔細查閱下列[表格](#category-changes)。
 
 ### <a name="age-rating"></a>年齡分級
 如果您提供不同的年齡分級，就會使用更嚴格的 (較高年齡) 分級。
@@ -126,4 +123,3 @@ ms.lasthandoff: 02/07/2017
 | 遊戲 &gt; 家庭           | 遊戲 &gt; 家庭 + 兒童             |
 | 遊戲 &gt; 拼圖           | 遊戲 &gt; 拼圖 + 益智遊戲           |
 | 遊戲 &gt; 賽車           | 遊戲 &gt; 賽車 + 飛行           |
-

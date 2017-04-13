@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-what-next"></a>開始使用：後續動作？
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="next-steps"></a>後續步驟
 
@@ -42,4 +39,3 @@ ms.lasthandoff: 02/07/2017
 * [適用於 iOS 開發人員的 Windows 控制項](https://msdn.microsoft.com/library/windows/apps/dn263255)
 * [適用於 iOS 開發人員的 Windows 手冊](https://msdn.microsoft.com/library/windows/apps/dn263256)
 * [建置適用於 Windows 的應用程式部落格](https://blogs.windows.com/buildingapps/2016/01/27/visual-studio-walkthrough-for-ios-developers/)
-

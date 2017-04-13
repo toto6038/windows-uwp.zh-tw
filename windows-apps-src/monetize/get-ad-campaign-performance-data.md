@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
-description: "使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得所指定應用程式的彙總廣告行銷活動效益資料。"
+description: "使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得所指定應用程式的彙總廣告行銷活動績效資料。"
 title: "取得廣告活動效益資料"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 廣告活動"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca7ba9ad8817a68c8dd5f74a8bf2674d76f9eadf
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2c0e696488af33731459bdef2c8dc24477755078
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-ad-campaign-performance-data"></a>取得廣告活動效益資料
 
 
@@ -45,7 +42,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明                |
+| 標頭        | 類型   | 描述                |
 |---------------|--------|---------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -102,13 +99,13 @@ Authorization: Bearer <your access token>
 | 值               | 類型   | 描述            |
 |---------------------|--------|------------------------|
 | 日期                | 字串 | 廣告行銷活動績效資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId       | 字串 | 您要擷取廣告行銷活動績效資料之應用程式的「市集識別碼」。                     |
+| applicationId       | 字串 | 您要擷取廣告行銷活動績效資料之 App 的「市集識別碼」。                     |
 | campaignId     | 字串 | 廣告行銷活動的識別碼。           |
 | lineId     | 字串 |    產生此效益資料的廣告活動[播送行](manage-delivery-lines-for-ad-campaigns.md)的識別碼。        |
 | currencyCode              | 字串 | 行銷活動預算的貨幣代碼。              |
 | spend          | 字串 |  已花費的廣告行銷活動預算總金額。     |
 | impressions           | 長整數 | 行銷活動的廣告曝光次數。        |
-| installs              | 長整數 | 與行銷活動相關的應用程式安裝次數。   |
+| installs              | 長整數 | 與行銷活動相關的 App 安裝次數。   |
 | clicks            | 長整數 | 行銷活動的廣告點按次數。      |
 | iapInstalls            | 長整數 | 與行銷活動相關的附加元件安裝數 (也稱為應用程式內購買或 IAP)。      |
 | activeUsers            | 長整數 | 按下行銷活動中廣告並返回應用程式的使用者人數。      |
@@ -117,7 +114,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-example"></a>回應範例
 
-下列範例示範這個要求的一個範例 JSON 回應主體。
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```json
 {
@@ -159,4 +156,3 @@ Authorization: Bearer <your access token>
 * [為您的應用程式建立廣告活動](https://msdn.microsoft.com/windows/uwp/publish/create-an-ad-campaign-for-your-app)
 * [使用 Windows 市集服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-

@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 011a6e50c22a1ef245a9be11e3a5d7f9e270d5bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="show-multiple-views-for-an-app"></a>顯示 app 的多重檢視
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -120,7 +117,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 ## <a name="the-main-view"></a>主要檢視
 
 
-您 app 啟動時建立的第一個檢視稱為「主要檢視」**。 這個檢視是儲存在 [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) 屬性中，並且其 [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) 屬性為 true。 您不需建立這個檢視；它是由 app 所建立。 主要檢視的執行緒會做為 app 的管理員，而所有的 app 啟用事件都會在這個執行緒上傳遞。
+您 app 啟動時建立的第一個檢視稱為*「主要檢視」*。 這個檢視是儲存在 [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) 屬性中，並且其 [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) 屬性為 true。 您不需建立這個檢視；它是由 app 所建立。 主要檢視的執行緒會做為 app 的管理員，而所有的 app 啟用事件都會在這個執行緒上傳遞。
 
 開啟次要檢視時，可以隱藏主要檢視的視窗 (例如按一下視窗標題列中的關閉 (x) 按鈕)，但是其執行緒會維持為使用中。 在主要檢視的 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209049) 上呼叫 [**Close**](https://msdn.microsoft.com/library/windows/apps/br209041) 會導致發生 **InvalidOperationException**。 (使用 [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327) 關閉您的 app)。如果將主要檢視的執行緒終止，app 就會關閉。
 
@@ -130,7 +127,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 其他檢視 (包括您在 app 程式碼中呼叫 [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) 來建立的所有檢視) 都是次要檢視。 主要檢視與次要檢視都是儲存在 [**CoreApplication.Views**](https://msdn.microsoft.com/library/windows/apps/br205861) 集合中。 通常您建立次要檢視是為了回應使用者動作。 在某些情況下，系統會為您的應用程式建立次要檢視。
 
 > [!NOTE]
-> 您可以使用 Windows「受指派的存取權」**功能，以 [kiosk 模式](https://technet.microsoft.com/library/mt219050.aspx)執行應用程式。 當您這樣做時，系統會建立次要檢視以在鎖定畫面上呈現您的 app UI。 系統並不允許有 app 建立的次要檢視，因此如果您嘗試以 kiosk 模式顯示您自己的次要檢視，將會擲回例外狀況。
+> 您可以使用 Windows*「受指派的存取權」*功能，以 [kiosk 模式](https://technet.microsoft.com/library/mt219050.aspx)執行應用程式。 當您這樣做時，系統會建立次要檢視以在鎖定畫面上呈現您的 app UI。 系統並不允許有 app 建立的次要檢視，因此如果您嘗試以 kiosk 模式顯示您自己的次要檢視，將會擲回例外狀況。
 
 ## <a name="switch-from-one-view-to-another"></a>從一個檢視切換到另一個檢視
 
@@ -145,7 +142,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
  
 
  
-
 
 
 

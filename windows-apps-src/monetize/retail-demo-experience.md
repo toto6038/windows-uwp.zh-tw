@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 零售示範應用程式"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 843f98782410559d47bdb8dc0b23b50fa96552d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2fa839c3a559ff0065c98712f73b9bb3ed81b276
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="create-a-retail-demo-experience-rdx-app"></a>建立零售示範體驗 (RDX) 應用程式
 
@@ -140,7 +138,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="how-to-store-data-across-user-sessions"></a>如何跨使用者工作階段儲存資料？
 
-如果您想要跨使用者工作階段儲存資料，您可以將資訊儲存在 __\[ApplicationData.Current.TemporaryFolder\]__ 中，因為預設清理程序不會自動刪除此資料夾中的資料。 請注意，在進行清理程序期間，會刪除使用 *LocalState* 來儲存的資訊。
+如果您想要跨使用者工作階段儲存資料，您可以將資訊儲存在 __ApplicationData.Current.TemporaryFolder__ 中，因為預設清理程序不會自動刪除此資料夾中的資料。 請注意，在進行清理程序期間，會刪除使用 *LocalState* 來儲存的資訊。
 
 ### <a name="how-to-customize-the-clean-up-process"></a>如何自訂清理程序？
 
@@ -264,4 +262,3 @@ namespace MyCompany.MyApp
  
 
  
-

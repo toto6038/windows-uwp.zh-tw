@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 20a05337052392446d733af7da180f9466fef05f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8171301a628e173128689765914faea622fd4837
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
-## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>我的應用程式廣告的執行成本是多少？
+## <a name="how-much-does-it-cost-to-run-an-ad-for-my-app"></a>我的 app 廣告的執行成本是多少？
 
 這取決於您，但請記住：您花費的越多，越多人會看見您的廣告。 越多人看見您的廣告，您就應該會得到越多點擊數與安裝數。 如需有關建立您 App 廣告活動的資訊，請查看[這篇文章](create-an-ad-campaign-for-your-app.md)。
 
@@ -71,4 +68,3 @@ ms.lasthandoff: 02/07/2017
 * [關於自家廣告](about-house-ads.md)
 * [關於社群廣告](about-community-ads.md)
 * [App 安裝廣告報告](app-install-ads-reports.md)
-

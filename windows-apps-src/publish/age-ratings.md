@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "應用程式提交程序的 [年齡分級] 頁面讓您能夠提供應用程式的相關資訊，因此，它可以接收到來自國際年齡分級聯盟 (IARC) 的適當年齡分級。"
+Description: "App 提交程序的 [年齡分級] 頁面讓您能夠提供 app 的相關資訊，因此，它可以接收到來自國際年齡分級聯盟 (IARC) 的適當年齡分級。"
 title: "年齡分級"
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6841355976d74a21429df1c91dced9b702a3af4a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2546ef6141095a0033f197e1e43e68276253aba3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="age-ratings"></a>年齡分級
 
-[應用程式提交程序](app-submissions.md) 的 **[年齡分級]** 頁面讓您能夠提供應用程式的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
+
+[App 提交程序](app-submissions.md) 的 **\[年齡分級\]** 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>回答年齡分級問卷
 
@@ -54,4 +52,3 @@ ms.lasthandoff: 02/07/2017
 | 12+ (適合 12 歲以上) | 此年齡分級的應用程式可包含數量較多與性無關的裸露、非現實角色的輕微繪圖暴力，或現實人類或動物角色的非繪圖暴力。 此年齡分級也可以包含與性無關的粗俗語言。 此外，具有此年齡分級或更高分級的 app 可能提供使用者不受控制的：(i) 線上社交網路存取權，或 (ii) 與第三方 (包括其他玩家或網友) 分享個人資訊。 (若要提供「受控制」的活動，您的 app 必須包含家長監護功能，並要求使用者先取得家長同意才能使用這類分享功能，且您必須在[認證注意事項](notes-for-certification.md)中註明並說明這些功能)。 |
 | 16+ (適合 16 歲以上) | 此年齡分級的應用程式可以描述寫實暴力與極少血腥內容，同時可以描述性行為。 也可以包含用藥或抽煙和犯罪活動，以及比 12+ 級應用程式更多的粗俗語言，但仍必須受市集原則中所述限制的規範。                                                                                                                           |
 | 18+ (適合成人)            | 這個年齡分級的遊戲可包含只適合成人之強烈、嚴重或特殊的暴力或血腥內容。 所有內容必須符合[內容原則](https://msdn.microsoft.com/library/windows/apps/dn764944)準則。                                                                                                                                                            |
-

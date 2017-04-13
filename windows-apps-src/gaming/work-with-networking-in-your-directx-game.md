@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, 網路功能, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="networking-for-games"></a>遊戲的網路功能
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在您的 DirectX 遊戲中開發與納入網路功能。
 
@@ -396,4 +393,3 @@ using namespace Windows::Web::Http;
 * [HttpClient 範例]( http://go.microsoft.com/fwlink/p/?linkid=242550)
 * [鄰近性範例](http://go.microsoft.com/fwlink/p/?linkid=245082)
 * [StreamSocket 範例](http://go.microsoft.com/fwlink/p/?linkid=243037)
-

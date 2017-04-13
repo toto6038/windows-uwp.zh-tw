@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: "在此逐步解說中，您將會使用 A/B 測試建立、執行和管理您的第一個實驗。"
-title: "使用 A/B 測試建立和執行您的第一個實驗"
+title: "建立和執行您的第一個實驗"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,14 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fb9e93747fa77031fe906d9ab7463fc41b73cdeb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8da21ae0968540cf43994673ceeeefa92cf56b18
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="create-and-run-your-first-experiment-with-ab-testing"></a>使用 A/B 測試建立和執行您的第一個實驗
+# <a name="create-and-run-your-first-experiment"></a>建立和執行您的第一個實驗
 
 在此逐步解說中，您將︰
 * 在開發人員中心儀表板上建立實驗[專案](run-app-experiments-with-a-b-testing.md#terms)，定義幾個遠端變數代表 App 按鈕的文字和色彩。
@@ -56,7 +53,6 @@ ms.lasthandoff: 02/07/2017
 7. 按兩下位於設計工具的按鈕，以開啟程式碼檔案並為**點選**事件新增事件處理常式。  
 8. 使用下列程式碼取代整個程式碼檔案內容。 將 ```projectId``` 變數指派至您在上一節中從開發人員中心儀表板取得的[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)值。
 
-  > [!div class="tabbedCodeSnippets"]
   [!code-cs[SampleExperiment](./code/StoreSDKSamples/cs/ExperimentPage.xaml.cs#SampleExperiment)]
 
 10. 儲存程式碼檔案，並建置專案。
@@ -79,7 +75,8 @@ ms.lasthandoff: 02/07/2017
   9. 再按一下下拉式清單控制項，選擇 **\[b\]**，然後按一下 **\[加入變數\]**。 字串 **128** 應該會自動出現在 **\[變化 A\]** 欄中。 在 **\[變化 B\]** 欄中，輸入 **255**。  
 10. 按一下 **\[儲存\]**，然後再按一下 **\[啟用\]**。
 
-> **重要**&nbsp;&nbsp;啟用實驗之後，您就無法再修改實驗參數，除非您在建立實驗時按下 **[Editable experiment]** (可編輯的實驗) 核取方塊。 我們通常會建議您在啟用實驗之前，先在您的 App 中編寫實驗程式碼。
+> [!IMPORTANT]
+> 啟用實驗之後，您就無法再修改實驗參數，除非您在建立實驗時按一下 **\[可編輯的實驗\]** 核取方塊。 我們通常會建議您在啟用實驗之前，先在您的 App 中編寫實驗程式碼。
 
 ## <a name="run-the-app-to-gather-experiment-data"></a>執行 App 以收集實驗資料
 
@@ -91,13 +88,15 @@ ms.lasthandoff: 02/07/2017
 
 完成上一節後，請至少等候幾個小時的時間，然後再遵循以下步驟檢閱您實驗的結果並完成實驗。
 
-> **注意**&nbsp;&nbsp;當您啟用實驗時，開發人員中心會立即開始從任何已檢測的 App 收集資料，以記錄您的實驗資料。 不過，可能需要幾個小時的時間，實驗資料才會出現在儀表板中。
+> [!NOTE]
+> 當您啟用實驗時，開發人員中心就會立即開始從任何已檢測的 App 收集資料，以記錄您的實驗資料。 不過，可能需要幾個小時的時間，實驗資料才會出現在儀表板中。
 
 1. 在開發人員中心，回到您 App 的 **\[實驗\]** 頁面。
 2. 在 **\[啟用實驗\]** 區段中，按一下 **\[最佳化按鈕點選次數\]** 以移至此實驗的頁面。
 3. 確認在 **\[結果摘要\]** 和 **\[結果詳細資料\]** 區段中顯示的結果符合您的預期。 如需關於這些區段的更多詳細資料，請參閱[在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md#review-the-results-of-your-experiment)。
+    > [!NOTE]
+    > 開發人員中心僅會回報 24 小時內每個使用者的第一個轉換事件。 如果使用者在 24 小時內觸發您 App 中多個轉換事件，則只會回報第一個轉換事件。 這是為了防止具有許多轉換事件的單一使用者扭曲一組範例使用者的實驗結果。
 
-  >**注意**&nbsp;&nbsp;開發人員中心僅會回報 24 小時內每個使用者的第一個轉換事件。 如果使用者在 24 小時內觸發您 App 中多個轉換事件，則只會回報第一個轉換事件。 這是為了防止具有許多轉換事件的單一使用者扭曲一組範例使用者的實驗結果。
 4. 您現已準備好結束實驗。 在 **\[結果摘要\]** 區段的 **\[變異 B\]** 欄中，按一下 **\[切換\]**。 這會將您 app 的所有使用者切換至藍色按鈕。
 5. 按一下 **\[確定\]**，確認您要結束實驗。
 6. 執行您在上一節中建立的 **SampleExperiment** app。
@@ -110,4 +109,3 @@ ms.lasthandoff: 02/07/2017
 * [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
 * [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
 * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)
-

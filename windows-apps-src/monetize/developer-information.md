@@ -2,24 +2,18 @@
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
 description: "取得關於 Microsoft Store Services SDK 中 Microsoft Advertising 程式庫的一般開發人員資訊。"
-title: "關於 Microsoft Advertising 程式庫的開發人員資訊"
+title: "開發人員資訊"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 廣告"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 44b5266a104b2f706537cea2167b395487f275d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bb272c5589c0734e04bdb591e766d4c6bd1b07a2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="developer-information-about-the-microsoft-advertising-libraries"></a>關於 Microsoft Advertising 程式庫的開發人員資訊
-
-
-
+# <a name="developer-information"></a>開發人員資訊
 
 本主題中的章節為開發人員提供有關 Microsoft Store Services SDK 中的 Microsoft Advertising 程式庫 (適用於 UWP App)，以及適用於 Windows 和 Windows Phone 8.x 之 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x 應用程式) 的實用資訊。
 
@@ -41,4 +35,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲"
+title: "建立 DirectX 通用 Windows 平台 (UWP) 遊戲"
 description: "在這組教學課程中，您會了解如何使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。"
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords:
@@ -12,13 +12,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ffce29c3ad7088dd24b848cb159b85a4db158e3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8518a350f0c999d6110305c51f46fe12e5b590f0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
 
 
@@ -70,14 +67,13 @@ ms.lasthandoff: 02/07/2017
 | [組合轉譯架構](tutorial--assembling-the-rendering-pipeline.md) | 現在，我們來了解範例遊戲如何使用該結構和狀態來顯示圖形。 我們在這裡要看看如何實作轉譯架構，先從使用圖形顯示物件初始化圖形裝置開始。 |
 | [新增使用者介面](tutorial--adding-a-user-interface.md) | 您已經了解範例遊戲如何實作主要遊戲物件以及基本的轉譯架構。 現在，讓我們看看範例遊戲如何對玩家回應遊戲的狀態。 在這裡，您會了解如何在 3D 圖形管線輸出上面加入簡單的功能表選項以及平視顯示器元件。 |
 | [新增控制項](tutorial--adding-controls.md) | 現在，我們看看遊戲範例如何在 3D 遊戲中實作移動視角控制項，以及如何開發基本的觸控控制項、滑鼠控制項以及遊戲控制器控制項。 |
-| [加入聲音](tutorial--adding-sound.md) | 在這個步驟中，我們會檢視射擊遊戲範例如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 來建立播放聲音的物件。 |
+| [加入聲音](tutorial--adding-sound.md) | 在這個步驟中，我們會檢視射擊遊戲範例如何使用[XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 來建立播放聲音的物件。 |
 | [延伸遊戲範例](tutorial-resources.md) | 恭喜！ 現在，您已經了解基本通用 UWP DirectX 3D 遊戲的關鍵元件。 您可以設定遊戲的架構，包含檢視提供者和轉譯管線，以及實作基本的遊戲迴圈。 您也可以建立基本的使用者介面重疊，並納入音效和控制項。 您現在正朝著建立自己的遊戲邁進，而這裡有一些資源，能夠擴展您對 DirectX 遊戲開發的知識。 |
  
 
  
 
  
-
 
 
 

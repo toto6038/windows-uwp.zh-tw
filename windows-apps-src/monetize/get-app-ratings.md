@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 評分"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 25f057eba5827be34b4fcf9d31a6e0ae71dc9893
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ccd3b8660f476ee6734b987c6652d91cf0cd42f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-ratings"></a>取得應用程式評分
 
 使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得彙總評分資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[評分報告](../publish/ratings-report.md)也有提供這項資訊。
@@ -42,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -50,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取評分資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取評分資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -75,7 +72,7 @@ ms.lasthandoff: 02/07/2017
 | 欄位        |  描述        |
 |---------------|-----------------|
 | market | 內含 App 所評分市場之 ISO 3166 國家/地區代碼的字串。 |
-| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | isRevised | 指定 <strong>true</strong> 以篩選已修訂的評分，否則請指定 <strong>false</strong>。 |
 
@@ -98,9 +95,9 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                                                                                                                                                                                                                                                                            |
+| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 內含彙總評分資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[評分數值](#rating-values)＞一節。                                                                                                                           |
+| 值      | array  | 內含彙總評分資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[評分數值](#rating-values)一節。                                                                                                                           |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評分資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
@@ -163,4 +160,3 @@ Authorization: Bearer <your access token>
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 評論](get-app-reviews.md)
-

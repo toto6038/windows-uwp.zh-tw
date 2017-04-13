@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: B0AD0B8E-867E-4403-9CF6-43C81F3C30CA
 description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取套件正式發行前小眾測試版資訊。"
-title: "使用 Windows 市集提交 API 取得應用程式的套件正式發行前小眾測試版"
+title: "取得 App 套件正式發行前小眾測試版"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版, 套件正式發行前小眾測試版"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ee49b494f3b0dd88229e3f40fd2c5cedb57ffe7c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c5cbedc868725bf1ad81179f59d7a2ac9a3a0818
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-package-flights-for-an-app-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得應用程式的套件正式發行前小眾測試版
+# <a name="get-package-flights-for-an-app"></a>取得 App 套件正式發行前小眾測試版
 
 
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -135,4 +132,3 @@ Authorization: Bearer <your access token>
 * [取得所有 App](get-all-apps.md)
 * [取得 App](get-an-app.md)
 * [取得 App 的附加元件](get-add-ons-for-an-app.md)
-

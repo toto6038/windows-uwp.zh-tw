@@ -2,21 +2,17 @@
 title: "帶狀線"
 description: "帶狀線是包含連接的帶狀線的基本類型。 您的應用程式可使用帶狀線建立未閉合之多邊形。 封閉的多邊形是用線段將其最後一個頂點連接到第一個頂點的多邊形。"
 ms.assetid: 6E8C58E1-B463-44FD-A69F-81CCBF25D856
-keywords:
-- "帶狀線"
+keywords: "帶狀線"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5fe51d8e07f064da6ef3ba1ad32060a014a31d97
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 316a036ca4460e9f1c9b8cafa7aa7a7f4dfe9174
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="line-strips"></a>帶狀線
 
 
@@ -66,7 +62,6 @@ d3dDevice->DrawPrimitive( D3DPT_LINESTRIP, 0, 5 );
  
 
  
-
 
 
 

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: "使用 Windows 市集提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的附加元件提交。"
-title: "使用 Windows 市集提交 API 建立附加元件提交"
+title: "建立附加元件提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 建立附加元件提交, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: f824fe7d37a4a2db4e336fd43c335047e09aa323
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3bf7379856a5011d5323351d7952091b0ff9d179
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="create-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 建立附加元件提交
+# <a name="create-an-add-on-submission"></a>建立附加元件提交
 
 
 
@@ -39,7 +36,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -66,7 +63,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="request-body"></a>要求本文
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -124,7 +121,7 @@ Authorization: Bearer <your access token>
       }
     ],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -175,4 +172,3 @@ Authorization: Bearer <your access token>
 * [更新附加元件提交](update-an-add-on-submission.md)
 * [刪除附加元件提交](delete-an-add-on-submission.md)
 * [取得附加元件提交的狀態](get-status-for-an-add-on-submission.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 26cf0e8330b9a57d082de7b7255a86ddde3b77d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="background-transfers"></a>背景傳輸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -300,10 +297,10 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 -   您使用與現有專案相同的名稱但不同的語言 (例如，從 C++ 變更為 C#) 建立新的專案。
 -   您變更現有專案中的目標架構 (例如，從 x86 變更為 x64)。
 -   您變更現有專案中的文化特性 (例如，從中性變更為 en-US)。
--   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 [企業驗證]****)。
+-   您在現有專案的套件資訊清單中新增或移除功能 (例如，新增 **\[企業驗證\]**)。
 
 一般應用程式服務，包括新增或移除功能的資訊清單更新，並不會在應用程式的一般使用者部署上引起這個問題。
-若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 [開始]**** 畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
+若要解決這個問題，請完整解除安裝應用程式的所有版本，然後使用新的語言、架構、文化特性或功能來重新部署。 這個操作可以透過 **\[開始\]** 畫面或使用 PowerShell 和 **Remove-AppxPackage** Cmdlet 來完成。
 
 ## <a name="exceptions-in-windowsnetworkingbackgroundtransfer"></a>Windows.Networking.BackgroundTransfer 中的例外狀況
 
@@ -320,5 +317,4 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 在 [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 命名空間中非同步方法內遇到的錯誤會以 **HRESULT** 值的形式傳回。 使用 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) 方法，將背景傳輸作業的網路錯誤轉換為 [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列舉值。 大多數 **WebErrorStatus** 列舉值都會對應到原始 HTTP 或 FTP 用戶端作業所傳回的錯誤。 app 可以篩選特定 **WebErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
 針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
-
 

@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0e9121dfc590a1a7f67be69b7dbce475e438dd08
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8933fb5c970203746fe1a00c71c0630fa264ebf6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sockets"></a>通訊端
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -303,6 +300,5 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ## <a name="the-winsock-api"></a>Winsock API
 
 您也可以在您的 UWP app 中使用 [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)。 支援的 Winsock API 以 Windows Phone 8.1Microsoft Silverlight 的 API 為基礎，且會繼續支援大部分的類型、屬性和方法 (已移除一些被視為過時的 API)。 您可以在[這裡](https://msdn.microsoft.com/library/windows/desktop/ms740673)找到更多關於 Winsock 程式設計的資訊。
-
 
 

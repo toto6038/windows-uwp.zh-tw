@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。"
-title: "取得錯誤報告資料"
+title: "取得 App 的錯誤報告資料"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 錯誤"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0d99318a2a8deba78503163c76a425c132e7de01
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dc5c4092368c0b395e42be122a9e0e7feec8f03e
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
+# <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 
-# <a name="get-error-reporting-data"></a>取得錯誤報告資料
-
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式的彙總錯誤報告資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗]**** 區段也提供此資訊。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您 App 的彙總錯誤報告資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 **\[失敗\]** 區段也提供此資訊。
 
 您可以使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)與[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)方法，擷取其他錯誤資訊。
 
@@ -43,7 +40,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -51,7 +48,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取錯誤報告資料之 app 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -79,7 +76,7 @@ ms.lasthandoff: 02/07/2017
 | failureName | 錯誤的名稱。 |
 | failureHash | 錯誤的唯一識別碼。 |
 | symbol | 指派給此錯誤的符號。 |
-| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | eventType | 下列其中一個字串：<ul><li><strong>crash</strong></li><li><strong>hang</strong></li><li><strong>memory</strong></li><li><strong>jse</strong></li></ul> |
 | market | 內含發生錯誤之市場的 ISO 3166 國家/地區代碼的字串。 |
 | deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
@@ -107,7 +104,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型    | 描述     |
 |------------|---------|--------------|
-| 值      | array   | 內含彙總錯誤報告資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[錯誤數值](#error-values)＞一節。     |
+| 值      | array   | 內含彙總錯誤報告資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[錯誤數值](#error-values)一節。     |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的錯誤，就會傳回此值。 |
 | TotalCount | inumber | 查詢之資料結果的資料列總數。     |
 
@@ -176,4 +173,3 @@ Authorization: Bearer <your access token>
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得 App 評分](get-app-ratings.md)
 * [取得 App 評論](get-app-reviews.md)
-

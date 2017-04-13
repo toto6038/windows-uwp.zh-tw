@@ -3,7 +3,7 @@ author: mijacobs
 Description: "在通用 Windows 平台 (UWP) 應用程式中的瀏覽是以瀏覽結構、瀏覽元素和系統層級功能的彈性模型為基礎。"
 title: "瀏覽歷程記錄和向後瀏覽 (Windows 應用程式)"
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
+isNew: True
 label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
@@ -13,13 +13,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea937ba237f4b0c58deff2b8d342337512e0de5f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c2037c4b313b45309162ea4c0874418fe9463d17
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -55,7 +52,7 @@ ms.lasthandoff: 02/07/2017
         <td style="vertical-align:top;">
 <ul>
 <li>在平板電腦模式中一律顯示。 在桌面模式中無法使用。 可以改為啟用標題列返回按鈕。 請參閱[電腦、膝上型電腦、平板電腦](#PC)。
-使用者可以在平板電腦模式與桌面模式之間切換執行，其方式是移至 [設定]**** &gt; [系統] &gt; [平板電腦模式]，然後設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。</li>
+使用者可以在平板電腦模式與桌面模式之間切換執行，其方式是移至 **\[設定\] &gt; \[系統\] &gt; \[平板電腦模式\]**，然後設定 **\[在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控\]**。</li>
 <li> 裝置底部瀏覽列中的軟體按鈕。</li>
 <li>在 app 內和 app 間提供全域返回瀏覽。</li></ul>        
         </td>
@@ -66,9 +63,9 @@ ms.lasthandoff: 02/07/2017
         <td style="vertical-align:top;">
 <ul>
 <li>在桌面模式中為選擇性。 在平板電腦模式中無法使用。 請參閱[平板電腦](#Tablet)。 預設為停用。 必須選擇加入才能啟用。
-使用者可以在平板電腦模式與桌面模式之間切換執行，其方式是移至 [設定]**** &gt; [系統] &gt; [平板電腦模式]，然後設定 [在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控]****。</li>
+使用者可以在平板電腦模式與桌面模式之間切換執行，其方式是移至 **\[設定\] &gt; \[系統\] &gt; \[平板電腦模式\]**，然後設定 **\[在將裝置做為平板電腦使用時，讓 Windows 可更容易使用觸控方式操控\]**。</li>
 <li>應用程式標題列中的軟體按鈕。</li>
-<li>只在應用程式內提供返回瀏覽。 不支援 app 間瀏覽。</li></ul>        
+<li>只在 app 內提供返回瀏覽。 不支援 app 間瀏覽。</li></ul>        
         </td>
      </tr>
     <tr>
@@ -161,7 +158,7 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 ## <a name="how-to-enable-the-title-bar-back-button"></a>如何啟用標題列返回按鈕
 
 
-支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 ([設定] &gt; [系統] &gt; [平板電腦模式]****) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
+支援桌面模式 (通常是電腦和膝上型電腦，但有些平板電腦也能) 和已啟用設定 (**\[設定\] &gt; \[系統\] &gt; \[平板電腦模式\]**) 的裝置，不會同時提供全域瀏覽列和系統返回按鈕。
 
 在桌面模式中，每個 app 都是在有標題列的視窗中執行。 您可以為 app 提供一個替代的返回按鈕，顯示在此標題列中。
 
@@ -306,7 +303,6 @@ Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
 * [瀏覽基本知識](navigation-basics.md)
 
  
-
 
 
 

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 0c17e4fb-7241-4da9-b457-d6d3a7aefccb
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bc3a34d16f8245ef2e932c46e76ce965ce8755b7
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 84cc1c7347b71a174b25635188ef2972c2bb39d9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="choose-and-save-tones-using-the-ms-tonepicker-uri-scheme"></a>使用 ms-tonepicker URI 配置來選擇及儲存音調
 
 本主題說明如何使用 **ms-tonepicker:** URI 配置。 此 URI 配置可用來：
@@ -57,7 +54,7 @@ if (status != LaunchQuerySupportStatus.Available)
 | 傳回值 | 類型 | 可能值 | 描述 |
 |--------------|------|-------|-------------|
 | Result | Int32 | 0 - 成功。 <br> 1 - 已取消。 <br> 7 - 無效的參數。 <br> 8 - 沒有任何音調符合篩選條件。 <br> 255 - 未實作指定的動作。 | 選擇器作業的結果。 |
-| ToneToken | 字串 | 所選音調的語彙基元。 <br> 如果使用者在選擇器中選取 [預設]****，則此字串為空白。 | 這個語彙基元可以用在快顯通知承載中，或是指派為連絡人的鈴聲或簡訊鈴聲。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
+| ToneToken | 字串 | 所選音調的語彙基元。 <br> 如果使用者在選擇器中選取 **\[預設\]**，則此字串為空白。 | 這個語彙基元可以用在快顯通知承載中，或是指派為連絡人的鈴聲或簡訊鈴聲。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 | DisplayName | 字串 | 所指定音調的易記名稱。 | 可對使用者顯示來代表所選的音調的字串。 只有當 **Result** 為 0 時，才會在 ValueSet 中傳回此參數。 |
 <br>
 **範例：開啟音調選擇器以便讓使用者選取音調**
@@ -202,4 +199,3 @@ using (var connection = new AppServiceConnection())
     }
 }
 ```
-

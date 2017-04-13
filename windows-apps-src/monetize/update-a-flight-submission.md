@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 24C5F796-5FB8-4B5D-B428-C3154B3098BD
 description: "使用 Windows 市集提交 API 中的這個方法，來更新現有的套件正式發行前小眾測試版提交。"
-title: "使用 Windows 市集提交 API 更新套件正式發行前小眾測試版提交"
+title: "更新套件正式發行前小眾測試版提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交, 更新"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbd8447808c1446805f179fd1181ae88dd847083
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 89ef86cdf3243322f3d8725e40ef13bf43f31a8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="update-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 更新套件正式發行前小眾測試版提交
+# <a name="update-a-package-flight-submission"></a>更新套件正式發行前小眾測試版提交
 
 
 使用 Windows 市集提交 API 中的這個方法，來更新現有的套件正式發行前小眾測試版提交。 使用這個方法成功更新提交之後，您必須針對擷取和發佈[認可提交](commit-a-flight-submission.md)。
@@ -96,7 +93,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -138,7 +135,7 @@ Content-Type: application/json
   "packageDeliveryOptions": {
     "packageRollout": {
         "isPackageRollout": false,
-        "packageRolloutPercentage": 0,
+        "packageRolloutPercentage": 0.0,
         "packageRolloutStatus": "PackageRolloutNotStarted",
         "fallbackSubmissionId": "0"
     },
@@ -173,4 +170,3 @@ Content-Type: application/json
 * [認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)
 * [刪除套件正式發行前小眾測試版提交](delete-a-flight-submission.md)
 * [取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)
-

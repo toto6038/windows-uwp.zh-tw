@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 55315F38-6EC5-4889-A14E-7D8EC282FE98
 description: "在 Windows 市集提交 API 中使用這個方法，取得附加元件提交的狀態。"
-title: "使用 Windows 市集提交 API 取得附加元件提交的狀態"
+title: "取得附加元件提交的狀態"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件提交, 狀態"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41fc9b5597b5331fc6221575e0601f2414f4c778
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 691e512c2a072748434d092286f0ab36a90f91f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-an-add-on-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得附加元件提交的狀態
+# <a name="get-the-status-of-an-add-on-submission"></a>取得附加元件提交的狀態
 
 
 
@@ -35,7 +32,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -61,9 +58,9 @@ ms.lasthandoff: 02/07/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -118,4 +115,3 @@ Authorization: Bearer <your access token>
 * [認可附加元件提交](commit-an-add-on-submission.md)
 * [更新附加元件提交](update-an-add-on-submission.md)
 * [刪除附加元件提交](delete-an-add-on-submission.md)
-

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, games, templates, tools, directx, 遊戲, 範本, 工具"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 2991efd40862eb1cd8842432b3eed3bbe49c8eb2
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="project-templates-and-tools-for-games"></a>遊戲的專案範本與工具
 
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題說明您需要哪些項目，才能開始進行通用 Windows 平台 (UWP) 的 DirectX 遊戲程式設計。
@@ -81,7 +78,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來更新套件正式發行前小眾測試版提交的套件推出百分比。"
-title: "使用 Windows 市集提交 API 來更新套件正式發行前小眾測試版提交的套件推出百分比"
+title: "更新正式發行前小眾測試版提交的推出百分比"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,17 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 市集提交 API, 套件推出, 正式發行前小眾測試版提交, 更新, 百分比"
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bb09e5ff3c60a56a69c5a52d47e3c791b206a84c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 55b9a67be032e3c2d3497bba0061afcb8218ce33
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-the-rollout-percentage-for-a-flight-submission"></a>更新正式發行前小眾測試版提交的推出百分比
 
-# <a name="update-the-package-rollout-percentage-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 來更新套件正式發行前小眾測試版提交的套件推出百分比
 
-
-使用「Windows 市集提交 API」中的這個方法，來[更新](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)套件正式發行前小眾測試版提交的推出百分比。 如需有關使用「Windows 市集提交 API」來建立套件正式發行前小眾測試版提交的程序詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
+使用「Windows 市集提交 API」中的這個方法，來[更新套件正式發行前小眾測試版提交的推出百分比](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)。 如需有關使用「Windows 市集提交 API」來建立套件正式發行前小眾測試版提交的程序詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -82,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -105,4 +102,3 @@ Authorization: Bearer <your access token>
 * [漸進式套件推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

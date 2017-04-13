@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: "在 Windows 市集促銷 API 中使用此方法，管理適用於廣告行銷活動的目標設定檔。"
-title: "管理廣告行銷活動的目標設定檔"
+title: "管理目標設定檔"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, Windows 市集促銷 API, 廣告行銷活動"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: c737e27df4a911d3fcbdcb3128ece865bda2b703
-ms.lasthandoff: 02/08/2017
-
+keywords: "Windows 10, UWP, Windows 市集促銷 API, 廣告行銷活動"
+ms.openlocfilehash: 30fb160e389edd18fb3782d332b5603fc6207757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-targeting-profiles-for-ad-campaigns"></a>管理廣告行銷活動的目標設定檔
+# <a name="manage-targeting-profiles"></a>管理目標設定檔
 
 
 在 Windows 市集促銷 API 使用這些方法，選取使用者、地區，以及您想要在廣告行銷活動中針對每個播送行設立目標的庫存廣告類型。 可以跨多個播送行建立並重複使用目標設定檔。
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/08/2017
 若要使用這些方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
 ## <a name="request"></a>要求
 
@@ -45,7 +42,7 @@ ms.lasthandoff: 02/08/2017
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -161,7 +158,7 @@ Authorization: Bearer <your access token>
 
 |  適用於*年齡*欄位的整數值  |  對應的年齡範圍  |  
 |---------------------------------|---------------------------|
-|     621     |            13 到 17 個             |
+|     651     |            13 到 17 個             |
 |     652     |           18 到 24 個             |
 |     653     |            25 到 34 個             |
 |     654     |            35 到 49 個             |
@@ -234,9 +231,9 @@ Authorization: Bearer <your access token>
 |     503     |           Windows Phone 7.8             |
 |     504     |           Windows Phone 8.0             |
 |     505     |           Windows Phone 8.1             |
-|     506     |           Windows 8.0             |
-|     507     |           Windows 8.1             |
-|     508     |           Windows 10             |
+|     506     |           Windows8.0             |
+|     507     |           Windows8.1             |
+|     508     |           Windows10             |
 |     509     |           Windows 10 行動裝置版             |
 
 若要以程式設計方式取得 *osVersion* 欄位中支援的值，您可以呼叫以下 GET 方法。  對於 ```Authorization``` 標頭，以 **Bearer** &lt;*token*&gt; 形式傳遞 Azure AD 存取權杖。
@@ -620,4 +617,3 @@ Authorization: Bearer <your access token>
 * [管理廣告行銷活動的廣告播送行](manage-delivery-lines-for-ad-campaigns.md)
 * [管理廣告行銷活動的廣告素材](manage-creatives-for-ad-campaigns.md)
 * [取得廣告行銷活動績效資料](get-ad-campaign-performance-data.md)
-

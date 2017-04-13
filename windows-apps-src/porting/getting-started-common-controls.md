@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 91ea875987d5e1659fff337f95f790ef59286d03
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4df9785b0d8ccea0561a780fa2b807201332cda8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-common-controls"></a>開始使用：常用控制項
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="common-controls-list"></a>常用控制項清單
 
@@ -30,7 +27,7 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 |------------------------------|--------------------------------------|
 | 活動指示器 (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 另請參閱[快速入門：新增進度控制項](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
 | 廣告橫幅檢視 (**ADBannerView**) 和廣告檢視委派 (**ADBannerViewDelegate**) | [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) <br/> 另請參閱[在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md) |
-| 按鈕 (UIButton) | [按鈕](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另請參閱[快速入門：新增按鈕控制項](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
+| 按鈕 (UIButton) | [Button](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 另請參閱[快速入門：新增按鈕控制項](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
 | 日期選擇器 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
 | 影像檢視 (UIImageView) | [Image](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 另請參閱 [Image 和 ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382) |
 | 標籤 (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 另請參閱[快速入門：顯示文字](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
@@ -66,4 +63,3 @@ UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，�
 * [Build 2014：XAML UI 和控制項呢？](http://go.microsoft.com/fwlink/p/?LinkID=397897)
 * [Build 2014：使用通用的 XAML UI 架構開發應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397898)
 * [Build 2014：使用 Visual Studio 建置 XAML 交集的應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397876)
-

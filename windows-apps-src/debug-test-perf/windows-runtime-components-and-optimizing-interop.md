@@ -2,22 +2,20 @@
 author: mcleblanc
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: "通用 Windows 平台元件和最佳化互通性"
-description: "建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) 應用程式。"
+description: "建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。"
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 722a14b7fbad2a8914888a6d6a135e88d1aa8095
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.openlocfilehash: a4296c7ba149abce2173e816aa99406a44f75618
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="universal-windows-platform-components-and-optimizing-interop"></a>通用 Windows 平台元件和最佳化互通性
+# <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已更新 Windows 10 上的 UWP app。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
 
@@ -93,5 +91,4 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 所有針對如何使應用程式獲得良好效能的建議，也適用於如何使元件獲得良好效能。 請評估您的元件以了解哪些 API 具有高流量模式，而且對於那些部分，請考慮提供可讓使用者以很少的呼叫執行工作的 API。 為了讓應用程式可以使用 UWP 而不需經常跨越互通性界限，在 UWP 的設計上花費了許多精力。
 
  
-
 

@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來更新 App 提交的套件推出百分比。"
-title: "使用 Windows 市集提交 API 來更新 App 提交的套件推出百分比"
+title: "更新 App 提交的推出百分比"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,17 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 市集提交 API, 套件推出, App 提交, 更新, 百分比"
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 18dee2374ad1daa33520438d348aa8ea0805c30a
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 506384c4ddff064e29a0a938f6ee97552a777ebb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-the-rollout-percentage-for-an-app-submission"></a>更新 App 提交的推出百分比
 
-# <a name="update-the-package-rollout-percentage-for-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 來更新 App 提交的套件推出百分比
 
-
-使用「Windows 市集提交 API」中的這個方法，來[更新](../publish/gradual-package-rollout.md#setting-the-rollout-percentage) App 提交的推出百分比。 如需有關使用「Windows 市集提交 API」來建立 App 提交的程序詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
+使用「Windows 市集提交 API」中的這個方法，來[更新 App 提交的推出百分比](../publish/gradual-package-rollout.md#setting-the-rollout-percentage)。 如需有關使用「Windows 市集提交 API」來建立 App 提交的程序詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
 
 ## <a name="prerequisites"></a>先決條件
@@ -82,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -105,4 +102,3 @@ Authorization: Bearer <your access token>
 * [漸進式套件推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 市集提交 API 管理 App 提交](manage-app-submissions.md)
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

@@ -12,13 +12,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 90096443a0b67b816869e6c9e607ccfd43f0cea1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4ca7e133f930ff4663de0cc1769ac26caa9f44ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介 
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -224,7 +221,6 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 - [什麼是 UWP app？](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 
  
-
 
 
 

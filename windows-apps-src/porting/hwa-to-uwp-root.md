@@ -8,13 +8,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "託管的 Web 應用程式, 將網站轉換成 Windows 應用程式, Windows 市集中的 Web 應用程式, 適用於 Windows 的 Chrome 應用程式"
-translationtype: Human Translation
-ms.sourcegitcommit: 2e230e95be01f0b14fa6346be9fa836c66a812cf
 ms.openlocfilehash: c9239f3a3c14bf9da99e60cfef8154eefb4305b4
-ms.lasthandoff: 01/20/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hosted-web-apps---access-windows-10-features-from-your-web-app"></a>託管的 Web 應用程式 - 從您的 Web 應用程式存取 Windows 10 功能
 
 您的 Web 應用程式可具備對通用 Windows 平台 (UWP) 的完整存取權，包括直接從伺服器上託管的指令碼呼叫 Windows 執行階段 API、利用 Cortana 整合，以及使用線上驗證提供者。 此外亦支援混合式應用程式，因為您可以將要從託管之指令碼呼叫的本機程式碼包含在內，以及管理遠端和本機頁面之間的應用程式導覽。
@@ -48,5 +45,4 @@ ms.lasthandoff: 01/20/2017
 ## <a name="demos"></a>示範
 
 - [Contoso Travel App](http://contosotravel.azurewebsites.net/)
-
 

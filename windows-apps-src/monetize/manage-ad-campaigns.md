@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, Windows 市集促銷 API, 廣告行銷活動"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bde9588176c1e52ccab169ad3f51ad15781e06ee
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: fe1eeb4e67917633997bdc4fbeabf87be497c3ad
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manage-ad-campaigns"></a>管理廣告行銷活動
 
 使用這些方法在 [Windows 市集促銷 API](run-ad-campaigns-using-windows-store-services.md)，為您的應用程式建立、編輯及取得促銷廣告活動。 您使用此方法建立的每個活動，只能和一個應用程式相關聯。
@@ -33,7 +30,10 @@ ms.lasthandoff: 02/08/2017
 若要使用這些方法，您必須先進行下列動作：
 
 * 如果您尚未完成，請先完成 Windows 市集促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
-* [取得 Azure AD 存取權杖](access-analytics-data-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
+
+  >**注意**&nbsp;&nbsp;做為必要條件的一部分，請務必[在開發人員中心儀表板中至少建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且在儀表板中為此廣告行銷活動至少新增一個付款方式。 使用此 API 所建立廣告行銷活動的廣告播送行將會自動向儀表板中 **\[宣傳您的應用程式\] **頁面上所選擇預設付款方式收取費用。
+
+* [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
 <span/> 
 ## <a name="request"></a>要求
@@ -62,11 +62,11 @@ ms.lasthandoff: 02/08/2017
 
 | 名稱        | 類型   |  描述      |    
 |-------------|--------|---------------|------|
-| skip  |  int   | 在查詢中要略過的資料列數目。 使用此參數來瀏覽資料集。 例如，fetch=10 且 skip=0 將擷取前 10 個資料列的資料，top=10 且 skip=10 將擷取下 10 個資料列的資料，以此類推。    |       
+| skip  |  整數   | 在查詢中要略過的資料列數目。 使用此參數來瀏覽資料集。 例如，fetch=10 且 skip=0 將擷取前 10 個資料列的資料，top=10 且 skip=10 將擷取下 10 個資料列的資料，以此類推。    |       
 | fetch  |  int   | 要在要求中傳回的資料列數目。    |       
 | campaignSetSortColumn  |  字串   | 回應主體中指定欄位的訂購[活動](#campaign)物件。 語法為 <em>CampaignSetSortColumn=field</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰</p><ul><li><strong>id</strong></li><li><strong>createdDateTime</strong></li></ul><p>預設值為 **createdDateTime**。     |     
 | isDescending  |  布林值   | 回應主體中以遞減或增遞順序排序[行銷活動](#campaign)物件。   |         
-| applicationId  |  字串   | 使用這個值只傳回廣告活動相關的應用程式，含指定的[市集識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品市集識別碼為 9nblggh42cfd。   |         
+| storeProductId  |  字串   | 使用這個值只傳回廣告活動相關的應用程式，含指定的[市集識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品市集識別碼為 9nblggh42cfd。   |         
 | 標籤  |  字串   | 使用這個值只傳回廣告活動，其在[行銷活動](#campaign)物件中包含指定的*標籤*。    |       |    
 
 <span/>
@@ -85,7 +85,7 @@ Authorization: Bearer <your access token>
 
 {
     "name": "Contoso App Campaign",
-    "applicationId": "9nblggh42cfd",
+    "storeProductId": "9nblggh42cfd",
     "configuredStatus": "Active",
     "objective": "DriveInstalls",
     "type": "Community"
@@ -102,7 +102,7 @@ Authorization: Bearer <your access token>
 以下範例示範如何呼叫 GET 方法查詢一組廣告行銷活動，以建立的日期排序。
 
 ```json
-GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign?applicationId=9nblggh42cfd&fetch=100&skip=0&campaignSetSortColumn=createdDateTime HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/promotion/campaign?storeProductId=9nblggh42cfd&fetch=100&skip=0&campaignSetSortColumn=createdDateTime HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -117,7 +117,7 @@ Authorization: Bearer <your access token>
         "id": 31043481,
         "name": "Contoso App Campaign",
         "createdDate": "2017-01-17T10:12:15Z",
-        "applicationId": "9nblggh42cfd",
+        "storeProductId": "9nblggh42cfd",
         "configuredStatus": "Active",
         "effectiveStatus": "Active",
         "effectiveStatusReasons": [
@@ -139,7 +139,7 @@ Authorization: Bearer <your access token>
 <span id="campaign"/>
 ## <a name="campaign-object"></a>行銷活動物件
 
-下列方法的要求和回應主體包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求主體所需的欄位。
+下列方法的要求和回應主體包含下列欄位。 下表顯示的欄位為唯讀 (亦即們無法在 PUT 方法中變更)，而且僅 POST 方法之要求本文所需的欄位。
 
 | 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
@@ -148,7 +148,7 @@ Authorization: Bearer <your access token>
 |  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li></ul>     |  否     |  作用中    |   是    |       
 |  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**Inactive**</li><li>**正在處理**</li></ul>    |    是   |      |   否      |       
 |  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效廣告行銷活動狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Failed**</li></ul>      |  是     |     |    否     |       
-|  applicationId   |  字串   |  此廣告行銷活動所關聯之應用程式的[市集識別碼](in-app-purchases-and-trials.md#store-ids) 。 例如產品市集識別碼為 9nblggh42cfd。     |   是    |      |  是     |       
+|  storeProductId   |  字串   |  此廣告行銷活動所關聯之應用程式的[市集識別碼](in-app-purchases-and-trials.md#store-ids) 。 例如產品市集識別碼為 9nblggh42cfd。     |   是    |      |  是     |       
 |  標籤   |  陣列   |   一或多個字串，表示自訂活動的標籤。 使用下列的標籤來搜尋及標記活動。    |   否    |  null    |    否     |       
 |  type   | 字串    |  下列其中一個值，指定活動類型︰ <ul><li>**付費**</li><li>**門牌**</li><li>**社群**</li></ul>      |   是    |      |   是    |       
 |  目標   |  字串   |  下列其中一個值，指定行銷活動的目標︰ <ul><li>**DriveInstall**</li><li>**DriveReengagement**</li><li>**DriveInAppPurchase**</li></ul>     |   否    |  DriveInstall    |   是    |       
@@ -162,4 +162,3 @@ Authorization: Bearer <your access token>
 * [管理廣告行銷活動的目標設定檔](manage-targeting-profiles-for-ad-campaigns.md)
 * [管理廣告行銷活動的廣告素材](manage-creatives-for-ad-campaigns.md)
 * [取得廣告行銷活動績效資料](get-ad-campaign-performance-data.md)
-

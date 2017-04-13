@@ -1,26 +1,24 @@
 ---
-author: awkoren
+author: normesta
 Description: "此文章說明如何簽署已轉換至通用 Windows 平台 (UWP) 的傳統型應用程式。"
 Search.Product: eADQiWindows 10XVcnh
-title: "已轉換的傳統型應用程式所支援的 UWP API"
-ms.author: alkoren
-ms.date: 02/08/2017
+title: "傳統型轉 UWP 橋接器支援的 UWP API"
+ms.author: normesta
+ms.date: 03/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f5ee6f103fa9a7e5f13dc68eb9c6060e6b66e227
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="supported-uwp-apis-for-apps-converted-with-the-desktop-bridge"></a>使用傳統型橋接器轉換的應用程式支援的 UWP API
+# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>傳統型轉 UWP 橋接器：支援的 UWP API
 
-已轉換的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出了您已轉換的應用程式可以使用的類別。 
+已轉換的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已轉換應用程式可以使用的類別。
 
-大部分的 UWP API 都可以在已轉換的傳統型應用程式上正確運作。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。 
+大部分的 UWP API 都可以在已轉換的傳統型應用程式上正確運作。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
 
 <table><tr><th>功能區域</th><th>詳細資料</th><tr>
 <tr><td>約會、連絡人和電子郵件</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
@@ -42,15 +40,15 @@ ms.lasthandoff: 02/08/2017
 </table>
 
 
-有時候，這些區域中的 API 可能會正常運作。 不過，如果 API 並未被明確列出為支援的 API，您應該避免使用，因為它可能會有非預期的副作用或行為。 未來版本中可能會支援這些 API。 在過渡期間，您的 App 應該改用相關的 Win32 或 .NET API。 
+有時候，這些區域中的 API 可能會正常運作。 不過，如果 API 並未被明確列出為支援的 API，您應該避免使用，因為它可能會有非預期的副作用或行為。 未來版本中可能會支援這些 API。 在過渡期間，您的 App 應該改用相關的 Win32 或 .NET API。
 
 已轉換的 App 不支援某些完全傳統型應用程式可以使用的 UWP API。 如果您的傳統型應用程式在轉換之前是使用 UWP API，您應該確認那些 API 仍受支援。 如需詳細資訊，請參閱[適用於傳統型應用程式的 Windows 執行階段 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
 
 ## <a name="list-of-apis"></a>API 清單
 
-下列是已轉換應用程式中所支援 UWP API 的完整清單。 您可以檢視[已轉換的 App 中新支援的 API](#new) 或[已轉換的 App 與傳統型應用程式中支援的 API](#both)。 
+下列是已轉換應用程式中所支援 UWP API 的完整清單。 您可以檢視[已轉換的 App 中新支援的 API](#new) 或[已轉換的 App 與傳統型應用程式中支援的 API](#both)。
 
-如需如何使用 WinRT API 的範例，請參閱 GitHub 上的[傳統型應用程式橋接轉 UWP 範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)。 
+如需如何使用 WinRT API 的範例，請參閱 GitHub 上的[傳統型應用程式橋接轉 UWP 範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)。
 
 <span id="new" />
 ### <a name="apis-supported-in-newly-converted-apps"></a>新轉換的應用程式中支援的 API
@@ -1045,4 +1043,3 @@ ms.lasthandoff: 02/08/2017
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
-

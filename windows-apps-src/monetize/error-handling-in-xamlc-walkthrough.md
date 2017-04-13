@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: "了解如何在您的應用程式中攔截 AdControl 錯誤。"
+description: "了解如何在您的 app 中抓取 AdControl 錯誤。"
 title: "XAML/C# 錯誤處理的逐步解說"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 廣告, 錯誤處理, XAML, C#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7bfb809f1b5511ba27faf1bdd664c24da109e2f3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d6c048397a5f7fd6c9a6cd625a7ff5ce0b6c29bf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 錯誤處理的逐步解說
 
-了解如何在您的應用程式中攔截 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
+了解如何在您的 App 中抓取 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
 
 這些範例假設您有包含 **AdControl** 的 XAML/C# app。 如需示範如何將 **AdControl** 新增到 app 的逐步指示，請參閱 [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)。 如需示範如何將橫幅廣告新增到使用 C# 和 C++ 的 XAML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -91,4 +88,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-

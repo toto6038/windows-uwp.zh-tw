@@ -1,6 +1,6 @@
 ---
 title: "使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定"
-description: "Windows Hello 隨附裝置是可與您的 Windows 10 電腦 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 電腦 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。"
+description: "Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。"
 author: awkoren
 ms.author: alkoren
 ms.date: 02/08/2017
@@ -9,15 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7a6935e61e6f62fce8335651e0cef261ed491507
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 050aa91e8d2a25fa80ec95d2fcdebf886430e37d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
-Windows Hello 隨附裝置是可與您的 Windows 10 電腦 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 電腦 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。
+Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。
 
 > **注意** Windows Hello 隨附裝置架構是無法供所有 app 開發人員使用的特殊功能。 若要使用這個架構，您的 app 必須由 Microsoft 特別佈建，並在其資訊清單中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要取得核准，請連絡 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
 
@@ -52,7 +50,7 @@ Windows Hello 隨附裝置架構會實作為在 Windows 上執行的服務 (本�
 
 - 適用於隨附裝置的[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide) Windows Hello 隨附裝置 app 可從 Windows app 市集下載。 
 - 能夠在 Windows Hello 隨附裝置上建立兩個 256 位元的 HMAC 金鑰，並使用它 (使用 SHA-256) 來產生 HMAC。
-- 正確設定 Windows 10 電腦 上的安全性設定。 隨附驗證服務需要先設定這個 PIN，才能將任何 Windows Hello 隨附裝置插入它。 使用者必須透過 [設定] &gt; [帳戶] &gt; [登入選項] 來設定 PIN。
+- 正確設定 Windows 10 Desktop 上的安全性設定。 隨附驗證服務需要先設定這個 PIN，才能將任何 Windows Hello 隨附裝置插入它。 使用者必須透過 [設定] &gt; [帳戶] &gt; [登入選項] 來設定 PIN。
 
 除了上述需求，Windows Hello 隨附裝置 app 還需負責︰
 
@@ -78,7 +76,7 @@ Windows Hello 隨附裝置架構會實作為在 Windows 上執行的服務 (本�
 
 Windows Hello 隨附裝置與 Windows 10 電腦 裝置間的關係可以是一對多的 (例如，一個隨附裝置可以供多個 Windows 10 電腦 裝置使用)。 不過，每個 Windows Hello 隨附裝置只能供每個 Windows 10 電腦 裝置上的一位使用者使用。   
 
-在 Windows Hello 隨附裝置可以與電腦通訊之前，他們必須同意使用傳輸。 這類選擇會保留到 Windows Hello 隨附裝置 app；Windows Hello 隨附裝置架構不會在 Windows Hello 隨附裝置和 Windows 10 電腦裝置端上的 Windows Hello 隨附裝置 app 間使用的傳輸類型 (USB、NFC、WiFi、BT、BLE 等) 或通訊協定上加諸任何限制。 但是建議針對傳輸層使用某些安全性考量，如本文件的＜安全性需求＞一節中所概述。 裝置提供者必須負責提供這些需求。 架構不會為您提供它們。
+在 Windows Hello 隨附裝置可以與電腦通訊之前，他們必須同意使用傳輸。 這類選擇會保留到 Windows Hello 隨附裝置 app；Windows Hello 隨附裝置架構不會在 Windows Hello 隨附裝置和 Windows 10 Desktop 裝置端上的 Windows Hello 隨附裝置 app 間使用的傳輸類型 (USB、NFC、WiFi、BT、BLE 等) 或通訊協定上加諸任何限制。 但是建議針對傳輸層使用某些安全性考量，如本文件的＜安全性需求＞一節中所概述。 裝置提供者必須負責提供這些需求。 架構不會為您提供它們。
 
 
 ## <a name="user-interaction-model"></a>使用者互動模型
@@ -87,12 +85,12 @@ Windows Hello 隨附裝置與 Windows 10 電腦 裝置間的關係可以是一�
 
 典型的使用者工作流程如下所示︰
 
-- 使用者會在她想要使用該 Windows Hello 隨附裝置解除鎖定的每個目標 Windows 10 電腦裝置上設定 PIN。
-- 使用者會在 Windows 10 電腦裝置上執行 Windows Hello 隨附裝置 app，以向 Windows 10 電腦 註冊她的 Windows Hello 隨附裝置。
+- 使用者會在她想要使用該 Windows Hello 隨附裝置解除鎖定的每個目標 Windows 10 Desktop 裝置上設定 PIN。
+- 使用者會在 Windows 10 Desktop 裝置上執行 Windows Hello 隨附裝置 app，以向 Windows 10 Desktop 註冊她的 Windows Hello 隨附裝置。
 
 注意：
 
-- 我們建議簡化和自動化 (如果可行) Windows Hello 隨附裝置 app 的探索、下載及啟動 (例如，可在 Windows 10 電腦裝置端點選 NFC 讀取器上的 Windows Hello 隨附裝置 app 來下載 app)。 不過，這是由 Windows Hello 隨附裝置和 Windows Hello 隨附裝置 app 負責執行。
+- 我們建議簡化和自動化 (如果可行) Windows Hello 隨附裝置 app 的探索、下載及啟動 (例如，可在 Windows 10 Desktop 裝置端點選 NFC 讀取器上的 Windows Hello 隨附裝置 app 來下載 app)。 不過，這是由 Windows Hello 隨附裝置和 Windows Hello 隨附裝置 app 負責執行。
 - 在企業環境中，可透過 MDM 部署 Windows Hello 隨附裝置 app。
 - Windows Hello 隨附裝置 app 負責向使用者顯示註冊過程中發生的任何錯誤訊息。
 
@@ -113,7 +111,7 @@ Windows Hello 隨附裝置與 Windows 10 電腦 裝置間的關係可以是一�
 
 ### <a name="starting-authentication-flows"></a>開始驗證流程
 
-使用者有兩種方式，可使用 Windows Hello 隨附裝置架構來開始 Windows 10 電腦 的登入流程 (例如提供意圖訊號)：
+使用者有兩種方式，可使用 Windows Hello 隨附裝置架構來開始 Windows 10 Desktop 的登入流程 (例如提供意圖訊號)：
 
 - 開啟膝上型電腦的上蓋，或者按電腦上的空格鍵或向上撥動。
 - 在 Windows Hello 隨附裝置端執行手勢或動作。
@@ -149,17 +147,17 @@ Windows Hello 隨附裝置架構將提供一組 (當地語系化的) 文字和�
 
 ### <a name="register-once-use-everywhere"></a>只需註冊一次，就能在任何地方使用
 
-如果沒有後端伺服器，使用者就必須向每個 Windows 10 電腦裝置個別註冊他們的 Windows Hello 隨附裝置。
+如果沒有後端伺服器，使用者就必須向每個 Windows 10 Desktop 裝置個別註冊他們的 Windows Hello 隨附裝置。
 
-隨附裝置廠商或 OEM 可以實作 Web 服務，以便在使用者 Windows 10 電腦 或行動裝置之間漫遊註冊狀態。 如需詳細資訊，請參閱＜漫遊、撤銷及篩選服務＞一節。
+隨附裝置廠商或 OEM 可以實作 Web 服務，以便在使用者 Windows 10 Desktop 或行動裝置之間漫遊註冊狀態。 如需詳細資訊，請參閱＜漫遊、撤銷及篩選服務＞一節。
 
 ### <a name="pin-management"></a>PIN 管理
 
-您必須先在 Windows 10 電腦裝置上設定 PIN，才能使用隨附裝置。 這可確保使用者在發生 Windows Hello 隨附裝置無法運作的情況下會有備份。 該 PIN 是 Windows 所管理且 app 絕對不會看見的項目。 若要變更它，使用者可瀏覽至 [設定] &gt; [帳戶] &gt; [登入選項]。
+您必須先在 Windows 10 Desktop 裝置上設定 PIN，才能使用隨附裝置。 這可確保使用者在發生 Windows Hello 隨附裝置無法運作的情況下會有備份。 該 PIN 是 Windows 所管理且 app 絕對不會看見的項目。 若要變更它，使用者可瀏覽至 [設定] &gt; [帳戶] &gt; [登入選項]。
 
 ### <a name="management-and-policy"></a>管理和原則
 
-使用者可以透過在 Windows 10 電腦裝置上執行 Windows Hello 隨附裝置 app，從該 電腦裝置移除 Windows Hello 隨附裝置。
+使用者可以透過在 Windows 10 Desktop 裝置上執行 Windows Hello 隨附裝置 app，從該 Desktop 裝置移除 Windows Hello 隨附裝置。
 
 企業有兩個選項可以控制 Windows Hello 隨附裝置架構：
 
@@ -170,7 +168,7 @@ Windows Hello 隨附裝置架構不支援任何集中式方法來持續清查可
 
 ### <a name="revocation"></a>撤銷
 
-Windows Hello 隨附裝置架構不支援從遠端移除特定 Windows 10 電腦裝置的隨附裝置。 使用者可以改為透過在 Windows 10 電腦 上執行的 Windows Hello 隨附裝置 app 來移除 Windows Hello 隨附裝置。
+Windows Hello 隨附裝置架構不支援從遠端移除特定 Windows 10 Desktop 裝置的隨附裝置。 使用者可以改為透過在 Windows 10 Desktop 上執行的 Windows Hello 隨附裝置 app 來移除 Windows Hello 隨附裝置。
 
 不過，隨附裝置廠商可以建置服務來提供遠端撤銷功能。 如需詳細資訊，請參閱＜漫遊、撤銷及篩選服務＞一節。
 
@@ -181,7 +179,7 @@ Windows Hello 隨附裝置架構不支援從遠端移除特定 Windows 10 電腦
 - 適用於企業的篩選服務︰企業可以將一組可在其環境中運作的 Windows Hello 隨附裝置，限制為由特定廠商所提供的極少數項目。 例如，Contoso 公司可向廠商 X 訂購 10,000 個型號 Y 的隨附裝置，並確定只有這些裝置能在 Contoso 網域中運作 (由廠商 X 提供的所有其他裝置型號都不行)。
 - 清查︰企業可以決定要在企業環境中使用的現有隨附裝置清單。
 - 即時撤銷︰如果員工報告他的隨附裝置已遺失或遭竊時，可以使用 Web 服務來撤銷該裝置。
-- 漫遊︰使用者只需註冊他的隨附裝置一次，就能在他的所有 Windows 10 電腦 和行動裝置上運作。
+- 漫遊︰使用者只需註冊他的隨附裝置一次，就能在他的所有 Windows 10 Desktop 和行動裝置上運作。
 
 實作這些功能會要求 Windows Hello 隨附裝置 app 在註冊和使用期間與 Web 服務聯繫。 Windows Hello 隨附裝置 app 可以針對快取登入案例最佳化，例如，一天只需要求與 Web 服務聯繫一次 (代價是最多可將撤銷時間延長為一天)。  
 
@@ -240,7 +238,7 @@ Windows Hello 隨附裝置 app 應該包含兩個元件︰具有 UI 的前景 ap
 
 Windows Hello 隨附裝置 app 可以呼叫 AbortRegisteringDeviceAsync 來取消註冊，然後傳入錯誤碼。 隨附驗證服務會將錯誤記錄於遙測資料中。 這個呼叫的最佳範例就是當 Windows Hello 隨附裝置發生錯誤且無法完成註冊 (例如，它無法儲存 HMAC 金鑰或 BT 連線中斷) 時。
 
-Windows Hello 隨附裝置 app 必須為使用者提供選項，從其 Windows 10 電腦 中取消註冊他們的 Windows Hello 隨附裝置 (例如，如果他們遺失了隨附裝置或購買了新版本)。 當使用者選取該選項時，則 Windows Hello 隨附裝置 app 必須呼叫 UnregisterDeviceAsync。 這個由 Windows Hello 隨附裝置 app 所做的呼叫將會觸發隨附裝置驗證服務，來刪除對應到電腦端上的特定裝置識別碼及呼叫者 app 的 AppId 的所有資料 (包括 HMAC 金鑰)。 此 API 呼叫不會嘗試從 Windows Hello 隨附裝置 app 或隨附裝置端刪除 HMAC 金鑰。 其會保留來讓 Windows Hello 隨附裝置 app 能夠進行實作。
+Windows Hello 隨附裝置 app 必須為使用者提供選項，從其 Windows 10 Desktop 中取消註冊他們的 Windows Hello 隨附裝置 (例如，如果他們遺失了隨附裝置或購買了新版本)。 當使用者選取該選項時，則 Windows Hello 隨附裝置 app 必須呼叫 UnregisterDeviceAsync。 這個由 Windows Hello 隨附裝置 app 所做的呼叫將會觸發隨附裝置驗證服務，來刪除對應到電腦端上的特定裝置識別碼及呼叫者 app 的 AppId 的所有資料 (包括 HMAC 金鑰)。 此 API 呼叫不會嘗試從 Windows Hello 隨附裝置 app 或隨附裝置端刪除 HMAC 金鑰。 其會保留來讓 Windows Hello 隨附裝置 app 能夠進行實作。
 
 Windows Hello 隨附裝置 app 會負責顯示在註冊和取消註冊階段所產生的任何錯誤訊息。
 
@@ -678,10 +676,10 @@ Windows Hello 隨附裝置 app 可以透過 FindAllRegisteredDeviceInfoAsync 呼
 
 隨附驗證服務會提供下列安全性防護。
 
-- Windows 10 電腦裝置上以中型使用者身分或 app 容器執行的惡意程式碼，無法使用 Windows Hello 隨附裝置自動存取電腦上的使用者認證金鑰 (已儲存為 Windows Hello 的一部分)。
-- Windows 10 電腦裝置上的惡意使用者無法使用該 Windows 10 電腦裝置上屬於其他使用者的 Windows Hello 隨附裝置，以無訊息方式存取他的使用者認證金鑰 (在同一個 Windows 10 電腦裝置上)。
-- Windows Hello 隨附裝置上的惡意程式碼無法以無訊息方式存取 Windows 10 電腦裝置上的使用者認證金鑰，包括利用特別針對 Windows Hello 隨附裝置架構開發的功能和程式碼。
-- 惡意的使用者無法透過擷取 Windows Hello 隨附裝置與 Windows 10 電腦裝置之間的流量並於稍後重新執行，來解除鎖定 Windows 10 電腦裝置 在我們的通訊協定中使用 nonce、authkey 及 HMAC 保證能提供保護，免於遭到重新執行攻擊。
+- Windows 10 Desktop 裝置上以中型使用者身分或 app 容器執行的惡意程式碼，無法使用 Windows Hello 隨附裝置自動存取電腦上的使用者認證金鑰 (已儲存為 Windows Hello 的一部分)。
+- Windows 10 Desktop 裝置上的惡意使用者無法使用該 Windows 10 Desktop 裝置上屬於其他使用者的 Windows Hello 隨附裝置，以無訊息方式存取他的使用者認證金鑰 (在同一個 Windows 10 Desktop 裝置上)。
+- Windows Hello 隨附裝置上的惡意程式碼無法以無訊息方式存取 Windows 10 Desktop 裝置上的使用者認證金鑰，包括利用特別針對 Windows Hello 隨附裝置架構開發的功能和程式碼。
+- 惡意的使用者無法透過擷取 Windows Hello 隨附裝置與 Windows 10 Desktop 裝置之間的流量並於稍後重新執行，來解除鎖定 Windows 10 Desktop 裝置 在我們的通訊協定中使用 nonce、authkey 及 HMAC 保證能提供保護，免於遭到重新執行攻擊。
 - Rogue 電腦上的惡意程式碼或惡意使用者無法使用 Windows Hello 隨附裝置來存取正當的使用者電腦。 這是透過隨附驗證服務和 Windows Hello 隨附裝置之間的相互驗證，藉由在我們的通訊協定中使用 authkey 和 HMAC 來達成。
 
 如果想要達到上述列舉的安全性保護，關鍵是保護 HMAC 金鑰免於受到未經驗證的存取，同時也要確認使用者存在。 更具體來說，它必須符合下列需求︰
@@ -689,4 +687,3 @@ Windows Hello 隨附裝置 app 可以透過 FindAllRegisteredDeviceInfoAsync 呼
 - 在複製 Windows Hello 隨附裝置期間提供保護
 - 提供保護，以防止註冊期間將 HMAC 金鑰傳送到電腦時遭到竊聽
 - 確認該使用者存在訊號可供使用
-

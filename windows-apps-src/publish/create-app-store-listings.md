@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "您可以在應用程式提交程序的 [市集清單] 區段中，提供客戶將在您應用程式的市集清單中看到的文字和影像。"
+Description: "您可以在 App 提交程序的 [市集清單] 區段中，提供客戶將在您 App 的市集清單中看到的文字和影像。"
 title: "建立應用程式市集清單"
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dcce4d53dd095c634f893d40f87eaf69cf546f1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84b00674e06433625010a976f7237b26ea062d7c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-app-store-listings"></a>建立應用程式市集清單
 
 
-您可以在 [應用程式提交程序](app-submissions.md)的 **[市集清單]** 區段中，提供客戶將在您應用程式的市集清單中看到的文字和[影像](app-screenshots-and-images.md)。
+您可以在 [App 提交程序](app-submissions.md)的 **\[市集清單\]** 區段中，提供客戶將在您 App 的市集清單中看到的文字和[影像](app-screenshots-and-images.md)。
 
 **\[市集清單\]** 中的許多欄位都是選填的，但我們建議盡可能地提供多個影像及更多資訊，讓您的清單更為出色。 完成**市集清單**步驟的最低需求是一段文字描述，以及至少一張[螢幕擷取畫面](app-screenshots-and-images.md)。
 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
 > **注意**：如果您提交的內容已經包含套件，我們會在提交概觀頁面顯示您套件支援的[語言](supported-languages.md) (除非您移除其中的任何語言)。
 
-若要為您的市集清單新增或移除語言，請在提交概觀頁面按一下 [管理市集清單語言]****。 若您已上傳套件，則會在**套件支援的語言**一節中看到列出這些套件的語言。 若要移除其中一或多個語言，請按一下 **\[移除\]** 。 如果您稍後決定包含您先前從此區段移除的語言，您可以按一下 **\[新增\]**。
+若要為您的市集清單新增或移除語言，請在提交概觀頁面按一下 **\[管理市集清單語言\]**。 若您已上傳套件，則會在**套件支援的語言**一節中看到列出這些套件的語言。 若要移除其中一或多個語言，請按一下 **\[移除\]**。 如果您稍後決定包含您先前從此區段移除的語言，您可以按一下 **\[新增\]**。
 
 在 **\[其他市集清單語言\]** 區段中，您可以按一下 **\[管理其他語言\]** 以新增或移除您套件*未*包含的語言。 針對您想要新增的語言核取其方塊，然後按一下 **\[更新\]**。 您已經選取的語言將會顯示在 **\[其他市集清單語言\]** 區段中。 若要移除其中一或多個語言，按一下 **\[移除\]** (或按一下 **\[管理其他語言\]**，然後針對想要移除的語言取消核取其方塊)。
 
@@ -120,4 +117,3 @@ ms.lasthandoff: 02/07/2017
 如果您的 app 具有隱私權原則，請在這裡輸入它的 URL。 您必須負責確定您的應用程式遵循隱私權的法律與法規，以及視需要提供隱私權原則。
 
 **重要**：Microsoft 不會為您的應用程式提供預設隱私權原則。 同樣地，所有的 Microsoft 隱私權原則都不會涵蓋您的應用程式。 若要判斷您的應用程式是否需要隱私權原則，請檢閱[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)和 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)。
-

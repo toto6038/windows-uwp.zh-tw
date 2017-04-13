@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 79e40abde2265a8e6f760bd00768a18b06f69116
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 49cd1e7ac0fceff7e39679f337ea4c029fa98806
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-recognition"></a>語音辨識
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -180,7 +177,7 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 
 ![以 SGRS 文法檔為基礎之限制的最終辨識畫面](images/speech-listening-complete.png)
 
-[正在聆聽]**** 畫面可以提供 app 能夠辨識的字詞或片語的範例。 以下示範如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 類別的屬性 (透過呼叫 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 屬性來取得) 來自訂 [正在聆聽]**** 畫面上的內容。
+**\[正在聆聽\]** 畫面可以提供 app 能夠辨識的字詞或片語的範例。 以下示範如何使用 [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) 類別的屬性 (透過呼叫 [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) 屬性來取得) 來自訂 **\[正在聆聽\]** 畫面上的內容。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -224,7 +221,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
  
 
  
-
 
 
 

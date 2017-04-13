@@ -1,6 +1,6 @@
 ---
 author: shawjohn
-Description: "您可以在 Windows 開發人員中心儀表板中，檢視應用程式的詳細分析。"
+Description: "您可以在 Windows 開發人員中心儀表板中，檢視 app 的詳細分析。"
 title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: johnshaw
@@ -9,23 +9,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 分析, 報表, 儀表板, 應用程式"
-translationtype: Human Translation
-ms.sourcegitcommit: b01924366a0bc2afabe2f381e72e45862f0dd682
 ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.lasthandoff: 02/08/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="analytics"></a>分析
 
-您可以在 Windows 開發人員中心儀表板中，檢視應用程式的詳細分析。 統計資料和圖表讓您能夠了解 App 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 App 的方式以及他們給該 App 的評價。 您也可以找到 App 健康情況、廣告使用量等等的相關資訊。 在儀表板中檢視報告，或者[下載所需的報告](download-analytic-reports.md)以便離線分析資料。 我們也提供數種讓您[不使用儀表板即可存取分析資料](#no-dashboard)的方法。
+您可以在 Windows 開發人員中心儀表板中，檢視 App 的詳細分析。 統計資料和圖表讓您能夠了解 App 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 App 的方式以及他們給該 App 的評價。 您也可以找到 App 健康情況、廣告使用量等等的相關資訊。 在儀表板中檢視報告，或者[下載所需的報告](download-analytic-reports.md)以便離線分析資料。 我們也提供數種讓您[不使用儀表板即可存取分析資料](#no-dashboard)的方法。
 
 > [!NOTE]
 > 除了儀表板的報告之外，您還可以透過 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)，以程式設計的方式存取部分的分析資料。
 
 ## <a name="analytics-for-all-your-apps"></a>您所有 App 的分析
 
-若要檢視您下載的多數 app 的關鍵分析，請選取頂端瀏覽功能表中的 **\[分析\]** > **\[概觀\]**。 根據預設，**\[分析概觀\]** 頁面會顯示生命週期內下載數最多的五個 app 的資訊。 若要選擇顯示不同的應用程式，請選取 **\[變更篩選\]**。
+若要檢視您下載的多數 app 的關鍵分析，請選取頂端瀏覽功能表中的 **\[分析\]** >  **\[概觀\]**。 根據預設，**\[分析概觀\]** 頁面會顯示生命週期內下載數最多的五個 app 的資訊。 若要選擇顯示不同的應用程式，請選取 **\[變更篩選\]**。
 
 ## <a name="available-reports-for-each-app"></a>每個 app 的可用報告
 
@@ -41,7 +38,7 @@ ms.lasthandoff: 02/08/2017
 -   [意見反應報告](feedback-report.md)
 -   [通道與轉換報告](channels-and-conversions-report.md)
 -   [廣告流量分配報告](ad-mediation-report.md)
--   [廣告效益報告](advertising-performance-report.md)
+-   [廣告績效報告](advertising-performance-report.md)
 -   [聯盟效益報告](affiliates-performance-report.md)
 -   [宣傳您的應用程式報告](promote-your-app-report.md)
 
@@ -80,8 +77,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="dev-center-app"></a>開發人員中心 App
 
-安裝[開發人員中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) App，以便在任何 Windows 10 裝置上快速檢視 App 的健康狀況與效能的詳細資料。
+安裝[開發人員中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) App，以便在任何 Windows10 裝置上快速檢視 App 的健康狀況與效能的詳細資料。
 
 ## <a name="related-topics"></a>相關主題
 - [發佈 Windows 應用程式](index.md)
-

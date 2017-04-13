@@ -2,21 +2,17 @@
 title: "座標系統"
 description: "3D 圖形應用程式通常會使用下列兩個笛卡兒座標系統中的其中一種︰左手系或右手系。 在這兩個座標系統中，正 x 軸指向右側，而正 y 軸指向上方。"
 ms.assetid: 138D9B81-146F-4E9F-B742-1EDED8FBF2AE
-keywords:
-- "座標系統"
+keywords: "座標系統"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 47096c67d97212a5090f1a9b9a14e6ca57aa8f18
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 64ee2dee2944af1d256b825fc08fb01c992d3218
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="coordinate-systems"></a>座標系統
 
 
@@ -58,7 +54,6 @@ Direct3D 使用左手系座標系統。 雖然左手系和右手系座標是最�
  
 
  
-
 
 
 

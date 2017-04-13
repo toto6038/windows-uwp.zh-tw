@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: "在 Windows 市集提交 API 中使用這個方法，針對登錄到您 Windows 開發人員中心帳戶的所有應用程式擷取相關資訊。"
-title: "使用 Windows 市集提交 API 取得所有應用程式"
+description: "在 Windows 市集提交 API 中使用這個方法，針對登錄到您 Windows 開發人員中心帳戶的所有 App 擷取相關資訊。"
+title: "取得所有 App"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 12466a50c6cabe5ceca907cdd2f0d600ec95121f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 93e973eb20835160e6b580bc932ce559b47e0ce1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-all-apps-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得所有應用程式
-
+# <a name="get-all-apps"></a>取得所有 App
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有應用程式擷取資料。
+
+在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取資料。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -120,12 +117,12 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### <a name="response-body"></a>回應本文
+### <a name="response-body"></a>回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | value      | 陣列  | 包含已登錄到您帳戶之每個 App 相關資訊的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[應用程式資源](get-app-data.md#application_object)。                                                                                                                           |
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求內文的 *top* 參數設為 10，但是 App 有 20 個登錄到您帳戶的 App，回應本文會包含 ```applications?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` 來要求接下來的 10 個 App。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 20 個登錄到您帳戶的 App，回應本文會包含 ```applications?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` 來要求接下來的 10 個 App。 |
 | totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是已登錄到您帳戶的 App 總數目)。                                                                                                                                                                                                                             |
 
 <span/>
@@ -147,4 +144,3 @@ Authorization: Bearer <your access token>
 * [取得 App](get-an-app.md)
 * [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)
 * [取得 App 的附加元件](get-add-ons-for-an-app.md)
-

@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dc0bad7d8625817cfffcc84f89afeed96a07a21f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ef9d4c390112be66035ab2ace6b6b799ee9d99ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="out-of-band-pairing"></a>頻外配對
 
-頻外配對可讓應用程式連線到服務點周邊設備，而不需要探索。 應用程式必須使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空間，並將特別格式的字串 (頻外 Blob) 傳遞至所需周邊設備的適當 **FromIdAsync** 方法。 執行 **FromIdAsync** 時，主機裝置會在作業回到呼叫端前配對並連線到周邊設備。
+頻外配對可讓 app 連線到服務點周邊設備，而不需要探索。 應用程式必須使用 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/windows.devices.pointofservice.aspx) 命名空間，並將特別格式的字串 (頻外 Blob) 傳遞至所需周邊設備的適當 **FromIdAsync** 方法。 執行 **FromIdAsync** 時，主機裝置會在作業回到呼叫端前配對並連線到周邊設備。
 
 ## <a name="out-of-band-blob-format"></a>頻外 Blob 格式
 
@@ -94,4 +92,3 @@ string oobBlobBTPrinter =
 printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 
 ```
-

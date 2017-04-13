@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: "使用 Windows 市集評論 API 中的此方法，針對您 app 的評論提交回應。"
-title: "針對 app 評論提交回應"
+title: "提交評論的回應"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 市集服務, Windows 市集評論 API, 附加元件下載數"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1531059831b4c20d11661eb87fceda7b8dcb7f02
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d418e64bf1608591e877da8339d1dda308611285
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="submit-responses-to-app-reviews"></a>針對 app 評論提交回應
+# <a name="submit-responses-to-reviews"></a>提交評論的回應
 
 
 使用 Windows 市集評論 API 中的此方法，以程式設計方式回應您 app 的評論。 當您呼叫這個方法時，您必須指定您想要回應的評論的識別碼。 評論識別碼是在 Windows 市集分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。
@@ -43,7 +40,7 @@ ms.lasthandoff: 02/08/2017
 
 <span/> 
 
-### <a name="request-header"></a>要求標頭
+### <a name="request-header"></a>要求的標頭
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
@@ -69,7 +66,7 @@ ms.lasthandoff: 02/08/2017
 
 | 值        | 類型   | 描述           |  必要  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字串 |  您想要回應評論之 App 的「市集識別碼」。 市集識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 市集識別碼範例為 9WZDNCRFJ3Q8。   |  是  |
+| ApplicationId | 字串 |  您想要回應評論之 App 的「市集識別碼」。 市集識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
 | ReviewId | 字串 |  您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Windows 市集分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字串 | 您想要提交的回應。 您的回應必須依照[這些指導方針](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字串 | 您 app 的支援電子郵件地址，客戶可以用來直接連絡您。 這必須是有效的電子郵件地址。     |  是  |
@@ -122,7 +119,7 @@ Content-Type: application/json
 
 ### <a name="response-example"></a>回應範例
 
-下列範例示範這個要求的 JSON 回應主體範例。
+下列範例針對此要求示範範例 JSON 回應主體。
 
 ```json
 {
@@ -149,4 +146,3 @@ Content-Type: application/json
 * [使用 Windows 市集服務回應評論](respond-to-reviews-using-windows-store-services.md)
 * [取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)
 * [取得應用程式評論](get-app-reviews.md)
-

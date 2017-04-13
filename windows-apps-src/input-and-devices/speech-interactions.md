@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9e9ba56fd9d9a3b33d6dc7eadb999d0fcf159d3e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0175a7ca7e2bbeb97f526dffb3c6fee7b8eb8819
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="speech-interactions"></a>語音互動
 
 
@@ -95,12 +92,12 @@ ms.lasthandoff: 02/07/2017
 -   預先定義的文法 (聽寫或網頁搜尋)
 
     -   **\[正在聆聽\]** 畫面。
-    -   **\[正在思考\]** 畫面。
+    -   **[正在思考]** 畫面。
     -   **\[聽到您說\]** 畫面或錯誤畫面。
 -   字詞或片語的清單或 SRGS 文法檔案
 
     -   **\[正在聆聽\]** 畫面。
-    -   **\[您說的是\]** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
+    -   **[您說的是]** 畫面 (如果使用者所說的內容可以解譯成多個可能的結果)。
     -   **\[聽到您說\]** 畫面或錯誤畫面。
 
 您可以在 **\[正在聆聽\]** 畫面上：
@@ -238,7 +235,6 @@ TTS 從純文字或 SSML 產生語音輸出。
  
 
  
-
 
 
 

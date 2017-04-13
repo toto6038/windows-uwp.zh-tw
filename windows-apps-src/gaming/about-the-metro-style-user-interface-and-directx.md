@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, DirectX 應用程式物件"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7d3290633ead698a6c42c3accdbd2012ccfd7065
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-app-object-and-directx"></a>應用程式物件和 DirectX
 
 
@@ -74,7 +71,7 @@ ms.lasthandoff: 02/07/2017
 -   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 -   [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
 
-您可以使用這些類型來存取 App 的檢視 (特別是繪製 App 父視窗內容的位元)，並處理該視窗所引發的事件。 應用程式視窗的處理程序是一個「應用程式單一執行緒 Apartment (ASTA)」**，它可以獨立運作並處理所有回呼。
+您可以使用這些類型來存取 App 的檢視 (特別是繪製 App 父視窗內容的位元)，並處理該視窗所引發的事件。 應用程式視窗的處理程序是一個*「應用程式單一執行緒 Apartment (ASTA)」*，它可以獨立運作並處理所有回呼。
 
 您的應用程式檢視是由應用程式視窗的檢視提供者所產生，在大部分情況下，都將由特定的架構套件或系統本身來實作，因此您不需要自己實作它。 針對 DirectX，您需要實作精簡型檢視提供者，如先前所討論。 下列元件和行為之間有特定的 1 對 1 關係：
 
@@ -156,7 +153,6 @@ int main(Platform::Array<Platform::String^>^)
  
 
  
-
 
 
 

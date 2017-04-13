@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 23d8c14bfdbfc05a1397fa67cb831d38ec092233
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2ce4ddc5240281618fefa16587067c4ad9382b2e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-custom-permissions-for-account-users"></a>設定帳戶使用者的自訂權限
 
 當您新增使用者到您的帳戶時，您可以提供他們[標準角色](manage-account-users.md#roles-and-permissions)，或是選擇自訂他們的權限，為使用者提供適當層級的存取權。 其中的某些權限適用於整個帳戶，某些權限的授與可針對所有產品或限制為特定產品。 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/08/2017
 - **無存取權**：使用者將不具有指示的權限。
 - **唯讀**：使用者有權檢視指示區域相關的功能，但無法進行變更。
 - **讀/寫**：使用者有權進行區域相關的變更和檢視。
-- **混合式**：您無法直接選取這個選項，但如果您允許該權限有存取權組合，則會顯示**混合式**指示器。 例如，如果您針對**所有產品**的**定價和可用性**授與**唯讀**存取權，然後針對特定產品授與**定價和可用性**的**讀/寫**存取權，則**所有產品**的**定價和可用性**指示器會顯示為「混合式」。 如果某些產品具有**無存取權** 的權限，但其他產品具有**讀/寫**和/或**唯讀**存取權，則情況一樣。
+- **混合式**︰您無法直接選取這個選項，但如果您允許該權限有存取權組合，則會顯示**混合式**指示器。 例如，如果您針對**所有產品**的**定價和可用性**授與**唯讀**存取權，然後針對特定產品授與**定價和可用性**的**讀/寫**存取權，則**所有產品**的**定價和可用性**指示器會顯示為「混合式」。 如果某些產品具有**無存取權** 的權限，但其他產品具有**讀/寫**和/或**唯讀**存取權，則情況一樣。
 
 針對某些權限 (例如和檢視分析資料相關的權限)，您只能授與**唯讀**存取權。 請注意，在目前的實作中，有些權限沒有區別**唯讀**和**讀/寫**存取權。 請檢閱每個權限的詳細資料，以了解**唯讀**和**讀/寫**存取權賦予的特定能力。
 
@@ -91,7 +88,7 @@ ms.lasthandoff: 02/08/2017
 
 若要為帳戶中的所有產品授與權限，請在標示 **\[所有產品\]** 的列中針對該權限做選擇 (切換方塊以指示**唯讀**、**讀/寫**或**無存取權**)。 
  
-> **提示** 對 **\[所有產品\]** 做的選擇將適用於目前帳戶中的每個產品，以及未來在帳戶建立的任何產品。
+> **提示**：對 **\[所有產品\]** 做的選擇將適用於目前帳戶中的每個產品，以及未來在帳戶建立的任何產品。
 
 在 **\[所有產品\]** 列下方，您會看到帳戶中的每個產品列在不同的列中。 若只要授與特定產品的權限，請在該產品的列中針對該權限做選擇。
 
@@ -107,7 +104,7 @@ ms.lasthandoff: 02/08/2017
     <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀 (附加元件) </th>
+    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
     <th align="left">讀寫&nbsp; (附加元件)</th>
     </tr>
     </thead>
@@ -129,7 +126,7 @@ ms.lasthandoff: 02/08/2017
     <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀 (附加元件) </th>
+    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
     <th align="left">讀寫&nbsp; (附加元件)</th>
     </tr>
     </thead>
@@ -148,7 +145,7 @@ ms.lasthandoff: 02/08/2017
     <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀 (附加元件) </th>
+    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
     <th align="left">讀寫&nbsp; (附加元件)</th>
     </tr>
     </thead>
@@ -173,7 +170,7 @@ ms.lasthandoff: 02/08/2017
     <th align="left">權限&nbsp;名稱</th>
     <th align="left">唯讀&nbsp;</th>
     <th align="left">讀/寫</th>
-    <th align="left">唯讀 (附加元件) </th>
+    <th align="left">唯讀&nbsp;&nbsp; (附加元件) </th>
     <th align="left">讀寫&nbsp; (附加元件)</th>
     </tr>
     </thead>
@@ -184,4 +181,3 @@ ms.lasthandoff: 02/08/2017
 </table>
 
 \ * 標示星號 (*) 的權限會授與並非適用所有帳戶之功能的存取權。 如果您的帳戶尚未啟用這些功能，您對於這些權限所做的選擇不會有任何影響。  
-

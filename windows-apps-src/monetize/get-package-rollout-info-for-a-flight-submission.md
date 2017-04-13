@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來取得套件正式發行前小眾測試版提交的套件推出資訊。"
-title: "使用 Windows 市集提交 API 來取得套件正式發行前小眾測試版提交的套件推出"
+title: "取得正式發行前小眾測試版提交的推出資訊"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,14 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 套件推出, 正式發行前小眾測試版提交"
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: d47bd0a5df654ba723c1c7650ea9779ee5962993
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: a1c12c7cb0e9a32502396bfa1da49351f63163e0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-package-rollout-info-for-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 來取得套件正式發行前小眾測試版提交的套件推出
+# <a name="get-rollout-info-for-a-flight-submission"></a>取得正式發行前小眾測試版提交的推出資訊
 
 
 使用「Windows 市集提交 API」中的這個方法，來取得套件正式發行前小眾測試版提交的[套件推出](../publish/gradual-package-rollout.md)資訊。 如需有關使用「Windows 市集提交 API」來建立套件正式發行前小眾測試版提交的程序詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
@@ -60,9 +57,9 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -80,7 +77,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 25,
+    "packageRolloutPercentage": 25.0,
     "packageRolloutStatus": "PackageRolloutInProgress",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -91,7 +88,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": false,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutNotStarted",
     "fallbackSubmissionId": "0"
 }
@@ -114,4 +111,3 @@ Authorization: Bearer <your access token>
 * [漸進式套件推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

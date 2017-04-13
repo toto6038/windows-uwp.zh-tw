@@ -2,21 +2,17 @@
 title: "光源的數學計算"
 description: "Direct3D 燈光模型涵蓋環境、擴散、反射及發光。 這個範圍足以因應大範圍的照明情況。 稱為全球照明的場景中的光線總量。"
 ms.assetid: D0521F56-050D-4EDF-9BD1-34748E94B873
-keywords:
-- "光源的數學計算"
+keywords: "光源的數學計算"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a7745e9a8c15398a3305d32e828e119832d8250c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd26d7253de1422f81ff4c0b9bf94d45cd02b2fc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="mathematics-of-lighting"></a>光源的數學計算
 
 
@@ -96,7 +92,6 @@ Global Illumination = Ambient Light + Diffuse Light + Specular Light + Emissive 
  
 
  
-
 
 
 

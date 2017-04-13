@@ -2,21 +2,17 @@
 title: "使用 Alpha 色板的紋理"
 description: "有兩種方式可以對呈現較複雜透明度的紋理貼圖進行編碼。"
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
-keywords:
-- "使用 Alpha 色板的紋理"
+keywords: "使用 Alpha 色板的紋理"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 708f6a7903df2ead18cf40e01675c3d244c7f9b0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1ea2282bb00f309f0dd2616898ce8d4a43215ff4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="textures-with-alpha-channels"></a>使用 Alpha 色板的紋理
 
 
@@ -150,7 +146,6 @@ Alpha 區塊的記憶體配置如下︰
  
 
  
-
 
 
 

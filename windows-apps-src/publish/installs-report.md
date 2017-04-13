@@ -9,32 +9,29 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 應用程式, 安裝, 安裝, 報告, 分析"
 ms.assetid: 46c08fd2-00bd-4be5-b29f-01a3b5fea4c2
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9e4dec61e275443db42b50ef9a231b5b3c46ffe4
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7912775e17a70c1d6fe9810c780017dcfa2db60e
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="installs-report"></a>安裝報告
 
-在 Windows 開發人員中心儀表板的**安裝**報告，可讓您查看客戶在 Windows 10 裝置上成功安裝您的應用程式的次數。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)以便離線檢視。
+在 Windows 開發人員中心儀表板的**安裝**報告，可讓您查看客戶在 Windows 10 裝置上成功安裝您的應用程式的次數。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得 App 安裝](../monetize/get-app-installs.md)方法來擷取此資料。
 
 
 ## <a name="apply-filters"></a>套用篩選
 
 
-您可以在接近頁面頂端的地方，展開 [\**套用篩選**\]，依日期、裝置類型和/或套件版本來篩選此頁面上的所有資料。
+您可以展開靠近頁面頂端的 **\[套用篩選\]**，依日期、裝置類型和/或套件版本來篩選此頁面上的所有資料。
 
--   **日期**：預設篩選為 [過去 30 天]****，但是您可以擴展此範圍，最多可達 [過去 12 個月]****。
+-   **日期**：預設篩選為 **\[過去 30 天\]**，但是您可以擴展此範圍，最多可達 **\[過去 12 個月\]**。
 -   **裝置類型**︰ 預設篩選是**所有裝置**，但您可以選取特定裝置類型 (**電腦**、**手機**、**平板電腦**、**虛擬機器**、**IoT**、**Holographic**、**主控台**、**其他**或**未知**)。
--   **套件版本**︰預設篩選是 \[所有版本\]****，但您可以選擇特定的套件版本。
+-   **套件版本**︰預設篩選是 **\[所有版本\]**，但您可以選擇特定的套件版本。
 
 
 ## <a name="installs-daily"></a>每日安裝
 
 
-[每日安裝]**** 圖表顯示在所選時段內每日安裝應用程式的總數。
+**\[每日安裝\]** 圖表顯示在所選時段內每日安裝應用程式的總數。
 
 安裝總數包括︰
 -   **在多部 Windows 10 裝置上安裝。** 例如，如果客戶在兩部 Windows 10 電腦和一支 Windows 10 手機上安裝您的應用程式，會算為三個安裝。
@@ -65,4 +62,3 @@ ms.lasthandoff: 02/08/2017
  
 
  
-

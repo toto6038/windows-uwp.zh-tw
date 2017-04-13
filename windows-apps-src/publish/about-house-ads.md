@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8c4f6597ecb262bf93efa02b695221606521a754
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 86ba2afa41c414ea9cb604637a40e34cd02cc7a4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="about-house-ads"></a>關於自家廣告
 
 
 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式！ 我們通稱為*自家廣告*。
 
-若要設定自家廣告，請在[建立廣告行銷活動](create-an-ad-campaign-for-your-app.md)時選取 [免費自家廣告]**** 做為 [行銷活動類型]****。 廣告會自動出現在符合下列條件的任何應用程式中：
+若要設定自家廣告，請在[建立廣告行銷活動](create-an-ad-campaign-for-your-app.md)時選取 **\[免費自家廣告\]** 做為 **\[行銷活動類型\]**。 廣告會自動出現在符合下列條件的任何應用程式中：
 
 -   應用程式必須與廣告應用程式屬於相同裝置類型。
 -   App 必須至少設定一個廣告單位。
@@ -39,6 +36,5 @@ ms.lasthandoff: 02/07/2017
 * [管理您的廣告活動](managing-your-ad-campaign.md)
 * [App 安裝廣告報告](app-install-ads-reports.md)
 * [常見問題](common-questions.md)
-
 
 

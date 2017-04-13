@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c78122e3bd1a860359cb482ff54fe7cfc673081e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3eee810f11d1d079da8436ba6d7eac6d0982cb3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="touch-interactions"></a>觸控互動
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -612,7 +609,7 @@ End Sub
 ## <a name="routed-events"></a>路由事件
 
 
-本文中所述的所有指標事件、手勢事件和操控事件都會做為「路由事件」**來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或應用程式的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
+本文中所述的所有指標事件、手勢事件和操控事件都會做為*「路由事件」*來實作。 這表示事件除了可由最初引發事件的物件處理外，還能由其他物件來處理。 即使原始元素未處理事件，物件樹狀目錄中的後續父項 (例如 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 的父容器或應用程式的根 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)) 也能選擇處理這些事件。 相反地，任何實際處理事件的物件可以將事件標示為已處理，如此一來就不會到達任何父元素。 如需有關路由事件概念以及這會如何影響您撰寫路由事件處理常式的詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/hh758286)。
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -647,7 +644,6 @@ End Sub
  
 
  
-
 
 
 

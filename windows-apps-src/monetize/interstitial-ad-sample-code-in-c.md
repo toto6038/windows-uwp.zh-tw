@@ -9,22 +9,21 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 廣告, 插播式, c#, 範例程式碼"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4c57cf4909028d5aa81c75d9e1b6f1bf28d41ad7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2c0020ff7d750a97380c351358ec6aafb996125f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interstitial-ad-sample-code-in-c"></a>使用 C 的插播式廣告範例程式碼\# #  
 
-本主題提供顯示插播式廣告的基本 C# 和 XAML 通用 Windows 平台 (UWP) 應用程式的完整範例程式碼。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插播式廣告](interstitial-ads.md)。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+本主題提供顯示插播式影片廣告的基本 C# 和 XAML 通用 Windows 平台 (UWP) 應用程式的完整範例程式碼。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插播式廣告](interstitial-ads.md)。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
 ## <a name="code-example"></a>程式碼範例
 
-本節顯示的內容為顯示插播式廣告的基本應用程式中的 MainPage.xaml 和 MainPage.xaml.cs 檔的內容。 若要使用這些範例，請將程式碼複製到 Visual Studio 2015 中 Visual C# 的「空白應用程式 (通用 Windows)」****專案中。
+本節顯示的內容為顯示插播式廣告的基本應用程式中的 MainPage.xaml 和 MainPage.xaml.cs 檔的內容。 若要使用這些範例，請將程式碼複製到 Visual Studio 2015 中 Visual C# 的**「空白應用程式 (通用 Windows)」**專案中。
 
-此範例應用程式使用兩個按鈕來要求然後啟動插播式廣告。 使用 Windows 開發人員中心的實際值取代 ```myAppId``` 和 ```myAdUnitId``` 欄位的值，再提交應用程式到市集。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md)。
+此範例應用程式使用兩個按鈕來要求然後啟動插播式廣告。 使用 Windows 開發人員中心的實際值取代 ```myAppId``` 和 ```myAdUnitId``` 欄位的值，再提交應用程式到市集。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
+
+>**注意**&nbsp;&nbsp;若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **AdType.Display** 傳遞到 [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) 方法的第一個參數，而不是**AdType.Video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
 
 ### <a name="mainpagexaml"></a>MainPage.xaml
 
@@ -41,4 +40,3 @@ ms.lasthandoff: 02/07/2017
 
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
  
-

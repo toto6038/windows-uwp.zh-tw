@@ -2,26 +2,23 @@
 author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "了解 Microsoft Store Services SDK 中 Microsoft Advertising 程式庫之目前版本的已知問題。"
-title: "Microsoft Advertising 程式庫的已知問題"
+title: "Advertising 程式庫的已知問題"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 通知, 已知問題"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54e3361ce9fdfc67495d41903b8b291931b7ee9f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33bf3c2db5db7e8ec07df3f4d13cc0ad074e99a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="known-issues-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising 程式庫的已知問題
-
+# <a name="known-issues-for-the-advertising-libraries"></a>Advertising 程式庫的已知問題
 
 
 
-本主題會列出 Microsoft Store Services SDK (適用於 UWP App)，以及適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x 應用程式) 中 Microsoft Advertising 程式庫之目前版本的已知問題。
+
+本主題會列出 Microsoft Store Services SDK (適用於 UWP App)，以及適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK (適用於 Windows 8.1 和 Windows Phone 8.x App) 中 Microsoft Advertising 程式庫之目前版本的已知問題。
 
 ## <a name="installation-of-microsoft-store-services-sdk-requires-visual-studio-tools-for-universal-windows-apps"></a>需要適用於通用 Windows App 的 Visual Studio Tools 才能安裝 Microsoft Store Services SDK
 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
 適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK 對於 Windows Phone 8.x Silverlight 專案的支援有限。 如需詳細資訊，請參閱[在您的 App 中顯示廣告](display-ads-in-your-app.md#silverlight_support)。
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]**** > [加入已連接服務]**** > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請從您的專案中移除 Ad Mediator 參考。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)，在 Visual Studio 中開啟您的專案，然後移至 **\[專案\]** > **\[加入已連接服務\]** > **\[Ad Mediator\]** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請從您的專案中移除 Ad Mediator 參考。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl 介面於 XAML 中為未知
 
@@ -43,7 +40,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="interstitial-ads-and-navigation-buttons-on-phones"></a>手機上的插入式廣告和瀏覽按鈕
 
-在具有軟體 [返回]****、[開始]**** 及 [搜尋]**** 按鈕的手機 (或模擬器) 上，插入式廣告影片的倒數計時器和點選按鈕可能會被遮住。
+在具有軟體 **\[返回\]**、**\[開始\]** 及 **\[搜尋\]** 按鈕的手機 (或模擬器) 上，插播式廣告的倒數計時器和點選按鈕可能會被遮住。
 
 ## <a name="recently-created-ads-are-not-being-served-to-your-app"></a>最近建立的廣告未被提供到您的 App
 
@@ -59,7 +56,7 @@ ms.lasthandoff: 02/07/2017
 
 * 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://go.microsoft.com/fwlink/p/?LinkId=331508)。 在該頁面上，請選擇 [App 內廣告]****。
+如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://go.microsoft.com/fwlink/p/?LinkId=331508)。 在該頁面上，請選擇 **\[App 內廣告\]**。
 
 您也可以在[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)中張貼問題。
 
@@ -71,7 +68,7 @@ ms.lasthandoff: 02/07/2017
 
 * 側載 App 或在模擬器中執行的 App 將不會顯示實際廣告。
 
-當實際廣告單位正在提供測試廣告時，廣告單位的狀態會在 Windows 開發人員中心中顯示 [作用中並正在提供測試廣告]****。 目前這並不適用於手機 App。
+當實際廣告單位正在提供測試廣告時，廣告單位的狀態會在 Windows 開發人員中心中顯示 **\[作用中並正在提供測試廣告\]**。 目前這並不適用於手機 App。
 
 ## <a name="obsolete-test-values-for-ad-unit-id-and-application-id-no-longer-working"></a>廣告單位識別碼和應用程式識別碼的過時測試值已無法運作
 
@@ -87,11 +84,11 @@ ms.lasthandoff: 02/07/2017
 <span id="reference_errors"/>
 ## <a name="reference-errors-caused-by-targeting-any-cpu-in-your-project"></a>專案中因目標為 [任何 CPU] 所造成的參考錯誤
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 [任何 CPU]**** 為目標。 如果您的專案以 [任何 CPU]**** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果您的專案以 **\[任何 CPU\]** 平台為目標，您在新增類似下列的參照之後可能會看見警告。
 
 ![referenceerror\-solutionexplorer](images/13-19629921-023c-42ec-b8f5-bc0b63d5a191.jpg)
 
-如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 [組態管理員]**** 來針對偵錯和發行組態設定平台目標。
+如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 使用 **\[組態管理員\]** 來針對偵錯和發行組態設定平台目標。
 
 ![configurationmanagerwin10](images/13-87074274-c10d-4dbd-9a06-453b7184f8de.png)
 
@@ -118,9 +115,8 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 ## <a name="support"></a>支援
 
 
-若要針對 Microsoft Advertising 程式庫的問題連絡產品支援，請造訪[支援頁面](https://go.microsoft.com/fwlink/p/?LinkId=331508)並選擇 [App 內廣告]****。
+若要針對 Microsoft Advertising 程式庫的問題連絡產品支援，請造訪[支援頁面](https://go.microsoft.com/fwlink/p/?LinkId=331508)並選擇 **\[App 內廣告\]**。
 
  
 
  
-

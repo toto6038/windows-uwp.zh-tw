@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地圖, 位置, 定位功能"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fec870534c7e028ea85e8aa5242f09569e082b96
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-the-users-location"></a>取得使用者的位置
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
@@ -60,7 +57,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
->附註：「免許可定位」功能可讓您的應用程式取得經過刻意模糊處理 (不精確) 的位置，而不需要使用者的明確權限 (但全系統的位置仍必須切換為 [開啟]****)。 若要了解如何在您的 app 中使用免許可定位，請參閱 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 類別中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
+>附註：「免許可定位」功能可讓您的應用程式取得經過刻意模糊處理 (不精確) 的位置，而不需要使用者的明確權限 (但全系統的位置仍必須切換為 **\[開啟\]**)。 若要了解如何在您的 app 中使用免許可定位，請參閱 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 類別中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步驟 2：取得使用者的位置並登錄位置權限的變更
 
@@ -274,4 +271,3 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 * [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理柵欄的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
-

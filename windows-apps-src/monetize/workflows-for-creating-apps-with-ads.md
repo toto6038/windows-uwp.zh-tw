@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, AdControl, InterstitialAd"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f01b69502d41a7128ac5f59589f6d014d92f52a3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 93b56259314c54a56cd8ebbef89694319a95e41c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="workflows-for-creating-apps-with-ads"></a>建立包含廣告之應用程式的工作流程
 
 
 
 
-若要在您的 App 中顯示廣告，您的 App 需要能從廣告網路接收廣告。 Microsoft 提供了一個 Web 服務，可讓 Windows 應用程式開發人員接收廣告。 當使用者按一下 App 中的廣告，您 (廣告的「發行者」**) 就可以從廣告的建立者 (「廣告客戶」**) 賺取金額。 從廣告客戶方面賺取的金額會使用您的帳戶支付給您。
+若要在您的 App 中顯示廣告，您的 App 需要能從廣告網路接收廣告。 Microsoft 提供了一個 Web 服務，可讓 Windows 應用程式開發人員接收廣告。 當使用者按一下 App 中的廣告，您 (廣告的*「發行者」*) 就可以從廣告的建立者 (*「廣告客戶」*) 賺取金額。 從廣告客戶方面賺取的金額會使用您的帳戶支付給您。
 
 下列高階步驟說明開發和發佈包含廣告之 App 的一般處理程序。
 
@@ -54,7 +51,7 @@ ms.lasthandoff: 02/07/2017
 
 當您使用 **AdControl** 或 **InterstitialAd** 在您的 App 中顯示廣告時，您必須在您的程式碼中指定應用程式識別碼與廣告單位識別碼，以將您的 App 連結至您的 Windows 開發人員中心帳戶並提供廣告。 當您開發您的 App 時，使用測試應用程式識別碼和廣告單位識別碼值，以查看您的 App 於測試期間呈現廣告的方式。 這可讓您看到 App 在測試期間接收及呈現廣告的方式。 如需詳細資訊，請參閱[測試模式值](test-mode-values.md)。
 
-如需示範如何使用 C# 和 C++ 將橫幅及影片插入式廣告新增至 JavaScript/HTML App 以及XAML App 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+如需示範如何使用 C# 和 C++ 將橫幅及插播式廣告新增至 JavaScript/HTML 應用程式以及 XAML 應用程式的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
 ## <a name="configure-your-app-to-receive-live-ads"></a>設定您的 App 接收即時廣告
 
@@ -69,4 +66,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

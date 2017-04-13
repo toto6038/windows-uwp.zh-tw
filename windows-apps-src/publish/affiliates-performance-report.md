@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "請在 Windows 開發人員中心儀表板上使用「應用程式層級」和「帳戶層級」的聯盟效益報告，來檢視您應用程式中聯盟廣告的效益資料。"
+Description: "請在 Windows 開發人員中心儀表板上使用「應用程式層級」和「帳戶層級」的聯盟績效報告，來檢視您 app 中聯盟廣告的績效資料。"
 title: "聯盟效益報告"
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 ms.author: wdg-dev-content
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3b85abb11049a1e52e9d6a9cc61aebab407207a4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5187a644e4a952a8d3b199c68c2266e6e7c634f1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="affiliates-performance-report"></a>聯盟效益報告
 
-如果您已經[選擇加入 Microsoft 聯盟廣告計劃](about-affiliate-ads.md)，您就可以在 Windows 開發人員中心儀表板上的下列報告中，檢視您應用程式中顯示之聯盟廣告的效益資料：
+如果您已經[選擇加入 Microsoft 聯盟廣告計劃](about-affiliate-ads.md)，您就可以在 Windows 開發人員中心儀表板上的下列報告中，檢視您 app 中顯示之聯盟廣告的績效資料：
 
 -   [應用程式層級的聯盟效益報告](#app-level-affiliate-ads-performance-report)。 這份報告提供儀表板目前所選 app 中聯盟廣告的績效資料。
 -   [儀表板層級的聯盟效益報告](#dashboard-level-affiliate-ads-performance-report)。 這份報告提供您以選擇加入 Microsoft 聯盟廣告計劃之所有 app 中的聯盟廣告的績效資料摘要。
@@ -33,7 +30,7 @@ ms.lasthandoff: 02/07/2017
 
 資料來自我們追蹤您 App 中廣告的下列七項績效衡量指標：
 
--   **估計營收 (已核准)**：您透過使用者按一下您應用程式的聯盟廣告並進行購買之後，以佣金方式從已核准購買中賺取之收益的估計金額。
+-   **估計營收 (已核准)**：您透過使用者按一下您 app 中的聯盟廣告並進行購買之後，以佣金方式從已核准購買中賺取之收益的估計金額。
 -   **估計營收 (等待核准)**：您能以傭金方式從待核准購買中賺取之收益的估計金額。
 -   **曝光數**：您應用程式中顯示聯盟廣告的次數。
 -   **點閱數**：使用者點閱您應用程式中的聯盟廣告的次數。
@@ -54,4 +51,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

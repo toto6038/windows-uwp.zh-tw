@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 426670f9b8d24a770f74aa0bdfaa5abb043c39ef
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ed2f7dc63e478d3dde2eb58b502d373db3181501
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 測試 Surface Hub 應用程式
 Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用 Windows 平台 (UWP) app (包括針對 Microsoft Surface Hub 建置的應用程式) 的環境。 此模擬器不會使用與 Surface Hub 相同的使用者介面，但很適合以 Surface Hub 的畫面大小與解析度測試您應用程式的外觀和行為。
 
@@ -66,7 +63,7 @@ Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用
 
    > **注意**&nbsp;&nbsp;必須要有系統管理權限，才能將檔案儲存到這個資料夾。
 
-4. 在 Visual Studio 模擬器中執行 App。 按一下調色盤上的 [變更解析度]**** 按鈕，然後從清單中選取 Surface Hub 設定。
+4. 在 Visual Studio 模擬器中執行 App。 按一下調色盤上的 **\[變更解析度\]** 按鈕，然後從清單中選取 Surface Hub 設定。
 
     ![Visual Studio 模擬器解析度](images/vs-simulator-resolutions.png)
 
@@ -80,30 +77,29 @@ Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用
 
 > **注意**&nbsp;&nbsp;啟用開發人員模式之後，您必須重設 Surface Hub 才能再次將它停用。 重設裝置會移除所有本機使用者檔案和設定，然後重新安裝 Windows。
 
-1. 從 Surface Hub 的 [開始]**** 功能表，開啟 [設定] 應用程式。
+1. 從 Surface Hub 的 **\[開始\]** 功能表，開啟 [設定] 應用程式。
 
    >  **注意**&nbsp;&nbsp;必須要有系統管理權限，才能存取 [設定] 應用程式。
 
-2. 瀏覽至 [更新與安全性] &gt; [開發人員專用]****。
+2. 瀏覽至 **\[更新與安全性\] &gt; \[開發人員專用\]**。
 
-3. 選擇 [開發人員模式]**** 並接受警告提示。
+3. 選擇 **\[開發人員模式\]** 並接受警告提示。
 
 ### <a name="deploy-your-app-from-visual-studio"></a>從 Visual Studio 部署您的應用程式。
 如需詳細資訊，請參閱[部署和偵錯通用 Windows 平台 (UWP) app](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)。
 
    > **注意**&nbsp;&nbsp;此功能至少需要 **Visual Studio 2015 Update 1**。
 
-1. 瀏覽至 [開始偵錯]**** 按鈕旁的偵錯目標下拉式清單，並選取 [遠端電腦]****。
+1. 瀏覽至 **\[開始偵錯\]** 按鈕旁的偵錯目標下拉式清單，並選取 **[遠端電腦\]**。
 
     <!--lcap: in your screenshot, you have local machine selected-->
 
    ![Visual Studio 偵錯目標下拉式清單](images/vs-debug-target.png)
 
-2. 輸入 Surface Hub 的 IP 位址。 確定已選取 [通用]**** 驗證模式。
+2. 輸入 Surface Hub 的 IP 位址。 確定已選取 **\[通用\]** 驗證模式。
 
    > **提示**&nbsp;&nbsp;啟用開發人員模式之後，即可在歡迎畫面上找到 Surface Hub 的 IP 位址。
 
-3. 選擇 [開始偵錯 (F5)]**** 以在 Surface Hub 上進行 App 部署和偵錯，或按 Ctrl+F5 只部署您的 App。
+3. 選擇 **\[開始偵錯 (F5)\]** 以在 Surface Hub 上進行 App 部署和偵錯，或按 Ctrl+F5 只部署您的 App。
 
    > **提示**&nbsp;&nbsp;如果 Surface Hub 顯示歡迎畫面，選擇任何按鈕即可將它關閉。
-

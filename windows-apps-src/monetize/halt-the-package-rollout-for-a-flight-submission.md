@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來停止套件正式發行前小眾測試版的套件推出。"
-title: "使用 Windows 市集提交 API 來停止套件正式發行前小眾測試版的套件推出"
+title: "停止正式發行前小眾測試版的推出"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,17 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 套件推出, 正式發行前小眾測試版提交, 停止"
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ad63a543027ca0a1927eb72c1a7a227788770998
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 804e447f5b650a986580752fcba2a29014560e98
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="halt-the-rollout-for-a-flight"></a>停止正式發行前小眾測試版的推出
 
-# <a name="halt-the-package-rollout-for-a-package-flight-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 來停止套件正式發行前小眾測試版的套件推出
+使用「Windows 市集提交 API」中的這個方法，來[停止套件正式發行前小眾測試版提交的推出](../publish/gradual-package-rollout.md#completing-the-rollout)。 如需有關使用「Windows 市集提交 API」來建立套件正式發行前小眾測試版提交的程序詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
 
-
-使用「Windows 市集提交 API」中的這個方法，來[停止](../publish/gradual-package-rollout.md#completing-the-rollout)套件正式發行前小眾測試版提交的套件推出。 如需有關使用「Windows 市集提交 API」來建立套件正式發行前小眾測試版提交的程序詳細資訊，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)。
+>**注意**&nbsp;&nbsp;如果您停止套件正式發行前小眾測試版提交的推出，然後[建立新的套件正式發行前小眾測試版提交](create-a-flight-submission.md)，新提交是暫止提交的複本。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -61,9 +59,9 @@ ms.lasthandoff: 02/08/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -81,7 +79,7 @@ Authorization: Bearer <your access token>
 ```json
 {
     "isPackageRollout": true,
-    "packageRolloutPercentage": 0,
+    "packageRolloutPercentage": 0.0,
     "packageRolloutStatus": "PackageRolloutStopped",
     "fallbackSubmissionId": "1212922684621243058"
 }
@@ -104,4 +102,3 @@ Authorization: Bearer <your access token>
 * [漸進式套件推出](../publish/gradual-package-rollout.md)
 * [使用 Windows 市集提交 API 管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

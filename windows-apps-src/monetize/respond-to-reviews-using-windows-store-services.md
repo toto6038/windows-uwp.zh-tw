@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: c92c0ea8-f742-4fc1-a3d7-e90aac11953e
 description: "使用 Windows 市集評論 API，以程式設計方式在市集中提交對於您的應用程式評論的回應。"
-title: "使用 Windows 市集服務回應評論"
+title: "使用市集服務回應評論"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows Store reviews API, respond to reviews, Windows 市集評論 API, 回應評論"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 657149304048a88bf85f0dd6f205e7db0497e591
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6a345fe3d8d5f8e9df7a01d94a8101d31aa312e5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="respond-to-reviews-using-store-services"></a>使用市集服務回應評論
 
-# <a name="respond-to-reviews-using-windows-store-services"></a>使用 Windows 市集服務回應評論
-
-使用 *Windows 市集評論 API*，以程式設計方式在市集中回應您的應用程式的評論。 對於想要大量回應許多評論，而不使用 Windows 開發人員中心儀表板的開發人員，此 API 特別有用。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
+使用 *Windows 市集評論 API*，以程式設計方式在市集中回應您 app 的評論。 對於想要大量回應許多評論，而不使用 Windows 開發人員中心儀表板的開發人員，此 API 特別有用。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
@@ -43,7 +40,7 @@ ms.lasthandoff: 02/08/2017
 
 1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
 
-2.  在 \[管理使用者\]**** 頁面中，按一下 \[新增 Azure AD 應用程式\]****，新增代表您要用來管理開發人員中心帳戶促銷廣告行銷活動之應用程式或服務的 Azure AD 應用程式，並指派 \[管理員\]**** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來管理開發人員中心帳戶促銷廣告行銷活動之應用程式或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
 
 3.  返回 **\[管理使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
@@ -90,4 +87,3 @@ Windows 市集評論 API 包含數種方法您可以用來判斷，是否允許�
 * [提交應用程式評論的回應](submit-responses-to-app-reviews.md)
 
  
-

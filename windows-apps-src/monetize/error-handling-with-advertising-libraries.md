@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。"
-title: "Microsoft Advertising 程式庫的錯誤處理"
+title: "Advertising 程式庫的錯誤處理"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript, XAML, C#"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f979a250872f19a54c6b638d44624ff2e1840c91
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7c65f424341517072b06aaba30929f17303dcf1f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="error-handling-with-the-microsoft-advertising-libraries"></a>Microsoft Advertising 程式庫的錯誤處理
+# <a name="error-handling-with-the-advertising-libraries"></a>Advertising 程式庫的錯誤處理
 
 本主題提供如何處理 Microsoft Advertising 程式庫中 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 類別所產生之錯誤的相關基本資訊。
 
@@ -88,4 +85,3 @@ private void OnAdError(object sender, AdErrorEventArgs e)
  
 
  
-

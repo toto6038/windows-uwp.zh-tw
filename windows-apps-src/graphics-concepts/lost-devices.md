@@ -2,21 +2,17 @@
 title: "遺失裝置"
 description: "Direct3D 裝置可能在操作狀態或遺失狀態。"
 ms.assetid: 1639CC02-8000-4208-AA95-91C1F0A3B08D
-keywords:
-- "遺失裝置"
+keywords: "遺失裝置"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c8f92ed1f8941147e3cb0f2555b01c26a708ed20
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 625fe26facb8903c36c4efbb38216005b0a4271b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="lost-devices"></a>遺失裝置
 
 
@@ -70,7 +66,6 @@ Direct3D 也可讓應用程式複製已產生或先前從視訊記憶體資源�
  
 
  
-
 
 
 

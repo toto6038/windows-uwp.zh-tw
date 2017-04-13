@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3ee88a22fe50fc3d782febafdc82c2a68c386dab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4cbb423d8fdddfc6cc158c1cbca2398b21dc205c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="which-networking-technology"></a>哪一種網路功能技術？
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -140,5 +137,4 @@ Windows 10 為廣泛的開發人員對象公開了一些先前僅公開給裝置
 ### <a name="sms"></a>SMS
 
 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) 命名空間會以低層級實體的形式處理 SMS 與相關訊息。 它提供給電信業者用於 app 導向的 SMS 用途，且受控於將不會核准給大多數 app 開發人員使用的功能。 如果您要撰寫用來處理訊息的應用程式，您應改用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API，因為它不只可用來處理 SMS 訊息，也可處理其他來源 (例如即時聊天應用程式) 的訊息，而帶來更豐富的聊天/傳訊使用體驗。
-
 

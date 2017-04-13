@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10 , UWP, 廣告, AdControl, XAML, .NET 逐步解說"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: db84e03d0cefb4692689ed901f25930a064f9a31
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9db232709d3aa4ca1b7a6c6672cb2d1c1dea5049
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
 
@@ -32,17 +29,17 @@ ms.lasthandoff: 02/07/2017
 
 1. 在 Visual Studio 中，開啟您的專案或建立新專案。
 
-2. 如果專案的目標是 [任何 CPU]****，請將您的專案更新成使用架構特定的建置輸出 (例如，[x86]****)。 如果專案的目標是 [任何 CPU]****，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
+2. 如果專案的目標是 **\[任何 CPU\]**，請將您的專案更新成使用架構特定的建置輸出 (例如，**\[x86\]**)。 如果專案的目標是 **\[任何 CPU\]**，您將無法於下列步驟中成功加入 Microsoft 廣告庫的參考。 如需詳細資訊，請參閱[專案中因目標為 [任何 CPU] 所造成的參考錯誤](known-issues-for-the-advertising-libraries.md#reference_errors)。
 
-1.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
+1.  在 **\[方案總管\]** 視窗中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]**。
 
 2.  在 **\[參考管理員\]** 中，根據您的專案類型選取下列其中一項參考︰
 
-    -   通用 Windows 平台 (UWP) 專案：展開 \[通用 Windows\]****，按一下 \[擴充功能\]****，然後選取 \[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]**** 旁邊的核取方塊。
+    -   對於通用 Windows 平台 (UWP) 專案：展開 **\[通用 Windows\]**，按一下 **\[擴充功能\]**，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
 
-    -   Windows 8.1 專案：展開 \[Windows 8.1\]****，按一下 \[擴充功能\]****，然後選取 \[適用於 Windows 8.1 XAML 的 Ad Mediator SDK\]**** 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   Windows 8.1 專案：展開 **\[Windows 8.1\]**，按一下 **\[擴充功能\]**，然後選取 **\[適用於 Windows 8.1 XAML 的 Ad Mediator SDK\]** 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
-    -   Windows Phone 8.1 專案：展開 \[Windows Phone 8.1\]****，按一下 \[擴充功能\]****，然後選取 \[適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK\]**** 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
+    -   對於 Windows Phone 8.1 專案：展開 **\[Windows Phone 8.1\]**，按一下 **\[擴充功能\]**，然後選取 **\[適用於 Windows Phone 8.1 XAML 的 Ad Mediator SDK\]** 旁邊的核取方塊。 這個選項會將 Microsoft Advertising 和 Ad Mediator 程式庫都新增到專案，但您可以忽略 Ad Mediator 程式庫。
 
   ![addreferences](images/13-a84c026e-b283-44f2-8816-f950a1ef89aa.png)
 
@@ -132,7 +129,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="release-your-app-with-live-ads-using-windows-dev-center"></a>使用 Windows 開發人員中心發行包含即時廣告的應用程式
 
-1.  在開發人員中心儀表板中，移至應用程式的 [營利]**** &gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至應用程式的 **\[創造營收\]** &gt; **\[利用廣告獲利\]** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 **\[橫幅\]**。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**ApplicationId** 和 **AdUnitId**)，用在開發人員中心產生的實際值取代。
 
@@ -155,4 +152,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-

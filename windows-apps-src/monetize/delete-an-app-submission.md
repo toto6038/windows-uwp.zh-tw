@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 96C090C1-88F8-42E7-AED1-AFA9031E952B
 description: "使用 Windows 市集提交 API 中的這個方法，刪除現有的 App 提交。"
-title: "使用 Windows 市集提交 API 刪除應用程式提交"
+title: "刪除 App 提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式提交, 刪除"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe85515d9baaaf0d36cdcdce12a0e81561bb6787
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 20ac77960c47e21daddec845abef73887ee93710
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="delete-an-app-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 刪除應用程式提交
+# <a name="delete-an-app-submission"></a>刪除 App 提交
 
 
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -60,9 +57,9 @@ ms.lasthandoff: 02/07/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 <span/>
 
@@ -100,4 +97,3 @@ Authorization: Bearer <your access token>
 * [認可 App 提交](commit-an-app-submission.md)
 * [更新 App 提交](update-an-app-submission.md)
 * [取得 App 提交的狀態](get-status-for-an-app-submission.md)
-

@@ -2,22 +2,20 @@
 author: laurenhughes
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: "封裝 UWP 應用程式"
-description: "若要銷售您的通用 Windows 平台 (UWP) 應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。"
+description: "若要銷售您的通用 Windows 平台 (UWP) app 或將其提供給其他使用者，您必須建立其 appxupload 套件。"
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ca57f50f4827ba5de7a140f1353ba864c5e2fb6c
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.openlocfilehash: 6c699b357a2c1271f6765514331eb2ca0a6ff0b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# <a name="packaging-uwp-apps"></a>封裝 UWP 應用程式
+# <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已更新 Windows10 上的 UWP app。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 若要銷售您的通用 Windows 平台應用程式或將其提供給其他使用者，您必須建立其 appxupload 套件。 當您建立 appxupload 時，將產生另一個 appx 套件以用於測試和側載。 您可以透過將 appx 套件側載到裝置以直接發佈您的應用程式。 本文描述設定、建立和測試 UWP 應用程式套件的程序。 如需側載的詳細資訊，請參閱[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx)。
 
@@ -36,9 +34,9 @@ ms.lasthandoff: 02/07/2017
 2.  最佳化您的應用程式。 您可以使用 Visual Studio 的分析與偵錯工具來最佳化您的 UWP 應用程式的效能。 例如，UI 回應性時間軸工具、記憶體使用量工具及 CPU 使用量工具等。 如需這些工具的詳細資訊，請參閱[執行診斷工具但不偵錯](https://msdn.microsoft.com/library/dn957936.aspx)。
 3.  檢查 .NET 原生的相容性 (適用於 VB 和 C# 應用程式)。 現在有新的原生編譯器可搭配 UWP 使用，將可改善您的應用程式的執行階段效能。 由於這項變更，強烈建議您在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 [此處](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)詳細說明一些使用 .NET 原生可能會發生的常見偵錯問題。
 
-## <a name="configure-an-app-package"></a>設定 app 套件
+## <a name="configure-an-app-package"></a>設定 App 套件
 
-應用程式資訊清單檔案 (package.appxmanifest.xml) 具有建立應用程式套件所需的屬性和設定。 例如，資訊清單檔案中的屬性描述做為您的應用程式磚的影像，以及當使用者旋轉裝置時您的應用程式支援的方向。
+應用程式資訊清單檔案 (package.appxmanifest) 具有建立應用程式套件所需的屬性和設定。 例如，資訊清單檔案中的屬性描述做為您的應用程式磚的影像，以及當使用者旋轉裝置時您的應用程式支援的方向。
 
 Visual Studio 有資訊清單設計工具，可讓您輕鬆更新資訊清單檔案而不需要編輯檔案的原始 XML。
 
@@ -64,7 +62,7 @@ Visual Studio 可以將您的套件與市集關聯。 當您這樣做時，會�
 **建立應用程式套件**
 
 1.  在 **\[方案總管\]** 中，開啟您的 UWP app 專案的方案。
-2.  在專案上按一下滑鼠右鍵，然後選擇 **\[市集\]**->**\[建立應用程式套件\]**。 如果此選項停用或未顯示，請確定專案是 UWP 專案。<br/>
+2.  在專案上按一下滑鼠右鍵，然後選擇 **\[市集\]** -> **\[建立應用程式套件\]**。 如果此選項停用或未顯示，請確定專案是 UWP 專案。<br/>
     ![導覽至 [建立應用程式套件] 的操作功能表](images/packaging-screen2.jpg)
 
     **\[建立應用程式套件\]** 精靈便會出現。
@@ -102,7 +100,7 @@ Visual Studio 可以將您的套件與市集關聯。 當您這樣做時，會�
 2.  下載和安裝 Visual Studio 遠端工具。 這些工具可用來以遠端方式執行 Windows 應用程式認證套件。 您可以瀏覽[在遠端電腦上執行 Windows 市集應用程式](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)，以取得關於這些工具的詳細資訊 (包括下載位置)。
 3.  下載必要的 [Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然後將它安裝在遠端的 Windows 10 裝置上。
 4.  在精靈的 **\[套件建立完成\]** 頁面上，選擇 **\[遠端電腦\]** 選項按鈕，然後選擇 **\[測試連線\]** 按鈕旁的省略符號按鈕。
-    **注意**  只有當您至少選取一個支援驗證的方案設定時，才可使用 [遠端電腦]**** 選項按鈕。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
+    **注意**：只有當您至少選取一個支援驗證的方案設定時，才可使用 **\[遠端電腦\]** 選項按鈕。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
 5.  指定您的子網路內的裝置種類，或提供子網路以外的裝置的網域名稱伺服器 (DNS) 名稱或 IP 位址。
 6.  如果您的裝置不需要您使用 Windows 認證登入，請在 **\[驗證模式\]** 清單中選擇 **\[無\]**。
 7.  選擇 **\[選取\]** 按鈕，然後再選擇 **\[啟動 Windows 應用程式認證套件\]** 按鈕。 如果遠端工具在該裝置上執行，Visual Studio 會與它連線，接著執行驗證測試。 請參閱 [Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/mt186450)。

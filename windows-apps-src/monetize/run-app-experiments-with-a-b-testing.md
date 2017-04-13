@@ -9,18 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 02e6ebbe6d3c02d08ae21ea71e7daa38b7e77255
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d95f42d7a57c191e371f06b21427d52c5c51773e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="run-app-experiments-with-ab-testing"></a>使用 A/B 測試執行應用程式實驗
 
-您可以使用 Windows 開發人員中心儀表板，定義於執行時要從通用 Windows 平台 (UWP) app 擷取的遠端變數，而且您可以與您的使用者測試這些值的變化，來找出針對推動所需使用者行為最有效的值。 您的 App 可以使用遠端變數來設定 App 體驗，例如在應用程式內購買、註冊流程、標題和廣告放置。
+您可以使用 Windows 開發人員中心儀表板，定義於執行時要從通用 Windows 平台 (UWP) app 擷取的遠端變數，而且您可以與您的使用者測試這些值的變化，來找出針對推動所需使用者行為最有效的值。 您的 App 可以使用遠端變數來設定 App 體驗，例如 App 內購買、註冊流程、標題和廣告放置。
 
-您的 A/B 測試目的應該是找出遠端變數值的變化，以透過提供更吸引人的 App 體驗為您取得改善的轉換率 (例如更多的在應用程式內購買)。 在您找出成功的變化後，您可以立即結束實驗，並從開發人員中心儀表板對整個使用者群啟用該變化，而不必重新發佈您的 App。
+您的 A/B 測試目的應該是找出遠端變數值的變化，以透過提供更吸引人的 App 體驗為您取得改善的轉換率 (例如更多的 App 內購買)。 在您找出成功的變化後，您可以立即結束實驗，並從開發人員中心儀表板對整個使用者群啟用該變化，而不必重新發佈您的 App。
 
 ## <a name="create-and-run-an-ab-test"></a>建立和執行 A/B 測試
 
@@ -69,4 +66,3 @@ ms.lasthandoff: 02/07/2017
 * [在開發人員中心儀表板中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
 * [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
 * [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
-

@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂市集清單的部分。"
+Description: "如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂哪些市集清單的部分。"
 title: "建立平台專屬的市集清單"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ms.author: wdg-dev-content
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: aaeedd655e5ae84dc4ee71683a9831412c8ef5ac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4a4aac5c5990807f2988be1ba818992b1bccbea3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-platform-specific-store-listings"></a>建立平台專屬的市集清單
 
 
-如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂市集清單的部分。 除非您已經上傳套件，並包含舊版作業系統 (Windows 8.x 或更舊版本和/或 Windows Phone 8.x 或更舊版本) 的套件，您將不會看到這個選項。
+如果您提供了目標為不同作業系統的套件，就可以選擇為不同的目標作業系統自訂哪些市集清單的部分。 除非您已經上傳套件，並包含舊版作業系統 (Windows 8.x 或更舊版本和/或 Windows Phone 8.x 或更舊版本) 的套件，您將不會看到這個選項。
 
 > **重要**：Windows 10 的客戶一律可以看到您的預設市集清單。
 
@@ -50,7 +47,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "串流資源的需求"
 description: "串流資源能讓 GPU 記憶體不浪費在儲存未存取的表面區域，並告訴硬體如何跨相鄰磚篩選。"
 ms.assetid: A88BE65B-104F-4176-9809-C12580A3684C
-keywords:
-- "串流資源的需求"
+keywords: "串流資源的需求"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdd98fcf0772cdcd1e2a75ecaf7d2e0b661e134b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5060d0076d93f8bca7e1547c4d9fb05ad4b1a3f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="the-need-for-streaming-resources"></a>串流資源的需求
 
 
@@ -25,9 +21,9 @@ ms.lasthandoff: 02/07/2017
 ## <a name="span-idstreamingresourcesorsparsetexturesspanspan-idstreamingresourcesorsparsetexturesspanspan-idstreamingresourcesorsparsetexturesspanstreaming-resources-or-sparse-textures"></a><span id="Streaming_resources_or_sparse_textures"></span><span id="streaming_resources_or_sparse_textures"></span><span id="STREAMING_RESOURCES_OR_SPARSE_TEXTURES"></span>串流資源或疏鬆紋理
 
 
-「串流資源」** (在 Direct3D 11 中稱為「並排資源」**)，為使用少量實體記憶體的大型邏輯資源。
+*「串流資源」* (在 Direct3D 11 中稱為*「並排資源」*)，為使用少量實體記憶體的大型邏輯資源。
 
-串流資源的另一個名稱為「疏鬆紋理」**。 「疏鬆」表達了並排資源的本質，以及並排它們的主要原因，也就是說這些資源並非會一次對應完畢。 事實上，可想而知應用程式可以刻意撰寫一種串流資源，其中沒有針對資源之所有區域和 Mip 撰寫的資料。 因此，內容本身應該為疏鬆的，而特定時間內圖形處理器 (GPU) 記憶體中的內容對應將會是該資源的子集 (更疏鬆)。
+串流資源的另一個名稱為*「疏鬆紋理」*。 「疏鬆」表達了並排資源的本質，以及並排它們的主要原因，也就是說這些資源並非會一次對應完畢。 事實上，可想而知應用程式可以刻意撰寫一種串流資源，其中沒有針對資源之所有區域和 Mip 撰寫的資料。 因此，內容本身應該為疏鬆的，而特定時間內圖形處理器 (GPU) 記憶體中的內容對應將會是該資源的子集 (更疏鬆)。
 
 ## <a name="span-idwithouttilingmemoryallocationsaremanagedatsubresourcegranularityspanspan-idwithouttilingmemoryallocationsaremanagedatsubresourcegranularityspanspan-idwithouttilingmemoryallocationsaremanagedatsubresourcegranularityspanwithout-tiling-memory-allocations-are-managed-at-subresource-granularity"></a><span id="Without_tiling__memory_allocations_are_managed_at_subresource_granularity"></span><span id="without_tiling__memory_allocations_are_managed_at_subresource_granularity"></span><span id="WITHOUT_TILING__MEMORY_ALLOCATIONS_ARE_MANAGED_AT_SUBRESOURCE_GRANULARITY"></span>在沒有並排的情況下，應該在子資源資料粒度上管理記憶體配置
 
@@ -83,7 +79,6 @@ Direct3D 支援在特定邊上使用最多 16384 像素的 [**Texture2D**](https
  
 
  
-
 
 
 

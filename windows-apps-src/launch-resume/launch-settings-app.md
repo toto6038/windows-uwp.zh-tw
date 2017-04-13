@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: "啟動 Windows 設定 app"
-description: "了解如何從您的 app 啟動 Windows 設定 app。 本主題描述 ms-settings URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。"
+description: "了解如何從您的應用程式啟動 Windows 設定應用程式。 本主題描述 ms-settings URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4cc17bf268ddb470c3c64dfe3e471053d8fca55
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e9d66feb6117fddfff62c217b55da813a63c4331
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -383,4 +380,3 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
         <td>ms-settings:developers</td>
     </tr>
 </table><br/>
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e2cdcf5d06fdbe6f510a416bd1da28e7cf6a51d5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 10333de456b913adf1c35a0df08f9b99ad4d4fa0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="setting-up-your-payout-account-and-tax-forms"></a>設定您的支付帳戶和納稅申報表
 
 
@@ -23,15 +20,15 @@ ms.lasthandoff: 02/07/2017
 
 > **注意** 自 2016 年 4 月 1 日起，您的 Microsoft Advertising 獲利將會支付到您在開發人員中心設定的相同支付帳戶。 如需詳細資訊，請參閱 [pubCenter 開發人員中心支付帳戶和稅金設定檔彙總](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)。
 
-如果您只打算列出免費 app (而不打算提供在應用程式內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果之後您改變想法，決定要銷售 App (或 App 內產品)，您可以到時候再設定支付帳戶或填寫納稅申報表。 您要先完成支付帳戶和稅金設定檔，才能提交任何付費 App 或附加內容。
+如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果之後您改變想法，決定要銷售 App (或 App 內產品)，您可以到時候再設定支付帳戶或填寫納稅申報表。 您要先完成支付帳戶和稅金設定檔，才能提交任何付費 App 或附加內容。
 
 > **注意**  在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 App。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
 
 
 [設定開發人員帳戶](opening-a-developer-account.md)後，您需要做兩件事，才能在 Windows 市集銷售 App (或附加內容)：
 
--   [設定您的支付帳戶](#setting_up_your_payout_account)
--   [填寫您的納稅申報表](#paying_taxes)
+-   [設定您的支付帳戶](#payout-account)
+-   [填寫您的納稅申報表](#tax-forms)
 
 > **注意**  如需深入了解取得 app 銷售款項的方法和時間，請參閱[獲得報酬](getting-paid-apps.md)。
 
@@ -42,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 
 支付帳戶是我們用來將銷售收益支付給您的銀行帳戶。 此銀行帳戶的所在國家/地區必須與您註冊開發人員帳戶的相同。
 
-> **注意**  在某些市場中，PayPal 可以用於支付帳戶。 請參閱[帳戶類型、位置和費用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)了解特定市場是否支援 PayPal，並且閱讀下面的 [PayPal 資訊](#paypal)了解詳細資訊。
+> **注意**  在某些市場中，PayPal 可以用於支付帳戶。 請參閱[帳戶類型、位置和費用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)了解特定市場是否支援 PayPal，並且閱讀下面的 [PayPal 資訊](#paypal-info)了解詳細資訊。
 
  
 **設定您的支付帳戶**
@@ -124,7 +121,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 ## <a name="tax-forms"></a>納稅申報表
 
 
-[註冊開發人員帳戶](opening-a-developer-account.md)並設定[支付帳戶](#receiving_payments)後，可以完成下列步驟來建立 Windows 市集的*稅金設定檔*：
+[註冊開發人員帳戶](opening-a-developer-account.md)並設定[支付帳戶](#payout-account)後，可以完成下列步驟來建立 Windows 市集的*稅金設定檔*：
 
 -   指定您的居住國家/地區和國籍。
 -   填寫適當的納稅申報表。
@@ -136,13 +133,13 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
  
 **完成您的稅金設定檔**
 
-1.  在 Windows 開發人員中心儀表板中，按一下左方導覽功能表中的 [帳戶設定]****。
-2.  在 [帳戶設定]**** 頁面的左方導覽功能表中，按一下 [稅金設定檔]****。
+1.  在 Windows 開發人員中心儀表板中，按一下左方導覽功能表中的 **\[帳戶設定\]**。
+2.  在 **\[帳戶設定\]** 頁面的左方導覽功能表中，按一下 **\[稅金設定檔\]**。
 
    > **注意**  這是機密資訊，所以會提示您再次登入。
 
-3.  檢閱您的稅金設定檔目前狀態，然後按一下 [編輯]**** 完成必要的表單。
-4.  回答美國公民與居住地相關問題，然後按 [下一步]****。
+3.  檢閱您的稅金設定檔目前狀態，然後按一下 **\[編輯\]** 完成必要的表單。
+4.  回答美國公民與居住地相關問題，然後按 **\[下一步\]**。
 5.  如果顯示您的姓名和地址資訊，請確認這些資訊以供報稅使用。
 
 接著，您會看到必須完成填寫的電子版本納稅申報表。 不論您的居住國家/地區和國籍為何，都必須填寫美國納稅申報表，才能透過 Windows 市集銷售任何 app 或 app 內產品。 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
@@ -160,7 +157,6 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
  
 
  
-
 
 
 

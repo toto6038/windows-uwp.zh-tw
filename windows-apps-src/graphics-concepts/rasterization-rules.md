@@ -2,21 +2,17 @@
 title: "點陣化規則"
 description: "點陣化規則定義向量資料對應至點陣資料的方式。"
 ms.assetid: B604725F-96A5-4DB6-B597-9EC57FBBC024
-keywords:
-- "點陣化規則"
+keywords: "點陣化規則"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9267cd0e9d01b8af6a697fbdf90c33cbca786df2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c7385f936f8e7bed23433e241aea3806a0d75bdf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rasterization-rules"></a>點陣化規則
 
 
@@ -138,7 +134,6 @@ API 透過幾個品質等級報告對於多重取樣的硬體支援。 例如，
  
 
  
-
 
 
 

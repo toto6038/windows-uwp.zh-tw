@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地圖, 位置, 地圖服務"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6ab167cb032cffba11e7e90e3aefe91bd1c21d74
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 33cf0a7a69ff40434ecb46977e4a6f67ca2a07e4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖 app 啟動到特定地圖、路線或一組轉向建議導航路線指引。
@@ -86,4 +83,3 @@ ms.lasthandoff: 02/07/2017
 * [隱私權感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-

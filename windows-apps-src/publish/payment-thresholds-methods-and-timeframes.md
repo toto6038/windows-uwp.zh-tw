@@ -9,14 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7da8727d3f901cfbab7c68d0b7f7362438d3fc65
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款門檻、方式和時間範圍
 
 轉撥款項的預估時間、適用的付款門檻，以及您可以收到款項所在的 Microsoft 市場可能會依您的國家/地區以及支付帳戶類型而有所不同。 本主題概述每個國家/地區支援的付款門檻和付款方式。
@@ -43,6 +39,11 @@ ms.lasthandoff: 02/08/2017
 ## <a name="payment-thresholds-and-methods"></a>付款門檻和方式
 
 > **注意** 付款門檻以美元列出。 在某些市場中，會使用當地貨幣對等項目。 
+
+- [Windows 市集](#windows-store)
+- [Microsoft Advertising](#microsoft-advertising)
+- [Azure Marketplace](#azure-marketplace)
+- [Office 市集](#office-store)
 
 ### <a name="windows-store"></a>Windows 市集 
 
@@ -4169,4 +4170,3 @@ ms.lasthandoff: 02/08/2017
     <td>不適用</td>
   </tr>
 </table>
-

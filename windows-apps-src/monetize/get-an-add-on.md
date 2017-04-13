@@ -1,27 +1,24 @@
 ---
 author: mcleanbyron
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的應用程式擷取附加元件相關資訊。"
-title: "使用 Windows 市集提交 API 取得附加元件"
+description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取附加元件相關資訊。"
+title: "取得附加元件"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e000c435b8a271085872bfb1ce42dd09352847c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a79c93c1ed7d38b4de1da2bbd05456fd0884692e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-an-add-on-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得附加元件
-
+# <a name="get-an-add-on"></a>取得附加元件
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的應用程式擷取附加元件 (也稱為應用程式內產品或 IAP) 相關資訊。
+
+在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取附加元件 (也稱為應用程式內產品或 IAP) 相關資訊。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -61,7 +58,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-body"></a>要求本文
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 <span/>
 
@@ -121,4 +118,3 @@ Authorization: Bearer <your access token>
 * [取得所有附加元件](get-all-add-ons.md)
 * [建立附加元件](create-an-add-on.md)
 * [刪除附加元件](delete-an-add-on.md)
-

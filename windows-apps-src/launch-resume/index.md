@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40400b8b17da9b010c0f03e9976201a1def025f8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節包含下列各項的相關資訊：
 
@@ -55,7 +52,7 @@ ms.lasthandoff: 02/07/2017
 | [使用 ms-tonepicker URI 配置來選擇及儲存音調](launch-ringtone-picker.md) | 本主題說明 ms-tonepicker URI 配置，以及如何使用它來顯示音調選擇器以選取音調、儲存音調，以及取得音調的易記名稱。 |
 | [啟動 Windows 設定應用程式](launch-settings-app.md) | 了解如何從您的應用程式啟動 Windows 設定應用程式。 本主題描述 ms-settings URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。 |
 | [啟動 Windows 市集應用程式](launch-store-app.md) | 本主題描述 ms-windows-store URI 配置。 您的應用程式可以使用此 URI 配置，將 Windows 市集應用程式啟動到市集中的特定頁面。 |
-| [啟動 Windows 地圖應用程式](launch-maps-app.md) | 了解如何從您的應用程式啟動 Windows 地圖應用程式。 |
+| [啟動 Windows 地圖 App](launch-maps-app.md) | 了解如何從您的應用程式啟動 Windows 地圖應用程式。 |
 | [啟動連絡人應用程式](launch-people-apps.md) | 本主題描述 ms-people URI 配置。 您的應用程式可以使用此 URI 配置來啟動連絡人應用程式，以執行特定動作。 |
 | [透過應用程式 URI 處理常式支援網站至應用程式連結](web-to-app-linking.md) | 使用應用程式 URI 處理常式，讓使用者持續使用您的應用程式。 |
 
@@ -71,7 +68,7 @@ ms.lasthandoff: 02/07/2017
 | 主題 | 描述 |
 |-------|-------------|
 | [保留檔案和 URI 配置名稱](reserved-uri-scheme-names.md) | 此主題列出您的應用程式無法使用的保留檔案和 URI 配置名稱。 |
-| [使用自動播放功能來自動啟動](auto-launching-with-autoplay.md) | 當使用者將裝置連接至電腦時，您可以使用「自動播放」，讓您的應用程式成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。 |
+| [使用自動播放功能來自動啟動](auto-launching-with-autoplay.md) | 當使用者將裝置連接至電腦時，您可以使用「自動播放」，讓您的 app 成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。 |
 
 ## <a name="app-services"></a>應用程式服務
 
@@ -79,8 +76,8 @@ ms.lasthandoff: 02/07/2017
 
 | 主題 | 描述 |
 |-------|-------------|
-| [建立和取用應用程式服務](how-to-create-and-consume-an-app-service.md) | 了解如何撰寫可為其他通用 Windows 平台 (UWP) 應用程式提供服務的 UWP 應用程式，以及如何取用這些服務。 |
-| [轉換應用程式服務，以便與其主控應用程式在相同處理序中執行](convert-app-service-in-process.md) | 將在個別背景處理序中執行的應用程式服務程式碼，轉換成和您應用程式服務提供者在相同處理序內執行的程式碼。 |
+| [建立和取用 App 服務](how-to-create-and-consume-an-app-service.md) | 了解如何撰寫可為其他通用 Windows 平台 (UWP) app 提供服務的 UWP app，以及如何取用這些服務。 |
+| [轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md) | 將在個別背景處理序中執行的應用程式服務程式碼，轉換成和您應用程式服務提供者在相同處理序內執行的程式碼。 |
 
 ## <a name="background-tasks"></a>背景工作
 
@@ -107,7 +104,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remote-systems"></a>遠端系統
 
-[已連線的應用程式和裝置 (專案 "Rome")](connected-apps-and-devices.md) 一節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。
+[已連線的應用程式和裝置 (專案 Rome)](connected-apps-and-devices.md) 一節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。
 
 | 主題 | 描述 |
 |-------|-------------|
@@ -121,6 +118,5 @@ ms.lasthandoff: 02/07/2017
 
 | 主題 | 描述 |
 |-------|-------------|
-| [新增啟動顯示畫面](add-a-splash-screen.md) | 設定應用程式的啟動顯示畫面影像與背景色彩 |
-| [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |
-
+| [新增啟動顯示畫面](add-a-splash-screen.md) | 設定 app 的啟動顯示畫面影像與背景色彩 |
+| [延長顯示啟動顯示畫面](create-a-customized-splash-screen.md) | 您可以為 app 建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您 app 啟動時所顯示的啟動顯示畫面，您可以自訂這個畫面。 |

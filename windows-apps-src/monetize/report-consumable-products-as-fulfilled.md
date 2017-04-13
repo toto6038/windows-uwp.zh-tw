@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows Store collection API, fulfill, consumable, Windows 市集集合, 執行, 消費性產品"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 201e4fedc5f36202cba4c495ae9344d5a7975d62
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="report-consumable-products-as-fulfilled"></a>將消費性產品回報為已完成
 
 請在 Windows 市集集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。
@@ -146,7 +143,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 |------|--------------|----------------------------|-----------------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
 | 401  | Unauthorized | PartnerAadTicketRequired   | Azure AD 存取權杖沒有傳遞到 Authorization 標頭中的服務。                                                                                                   |
-| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 市集識別碼索引鍵的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
+| 401  | Unauthorized | InconsistentClientId       | 要求主體中 Windows 識別碼金鑰的 *clientId* 宣告，與授權標頭中 Azure AD 存取權杖的 *appid* 宣告不相符。                     |
 
 <span/> 
 
@@ -156,4 +153,3 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 * [查詢產品](query-for-products.md)
 * [授與免費產品](grant-free-products.md)
 * [更新 Windows 市集識別碼金鑰](renew-a-windows-store-id-key.md)
-

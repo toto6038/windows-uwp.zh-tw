@@ -1,6 +1,6 @@
 ---
 author: DelfCo
-description: "當應用程式不在前景時，它們會使用背景工作和兩個主要機制來維持通訊。"
+description: "當 app 不在前景時，它們會使用背景工作和兩個主要機制來維持通訊。"
 title: "背景網路通訊"
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.author: bobdel
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3f0e52780788eafe9e53bba491b8d54208dcc761
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5cdb441ef2649322111a3f08e4396abef396f851
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="network-communications-in-the-background"></a>背景網路通訊
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -593,5 +590,4 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 -   App 需要先執行一個起始 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 要求來測試並正確地設定傳輸，然後再建立與 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 搭配使用的傳輸。 一旦 app 判斷傳輸已正確設定之後，就可以將 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 物件設定為與 **ControlChannelTrigger** 搭配使用的傳輸物件。 設計這個處理程序的目的是為了避免中斷透過傳輸所建立的連線。 使用 SSL 搭配憑證時，應用程式可能需要顯示一個對話方塊來輸入 PIN 或顯示可以從多個憑證進行選擇的選項。 可能需要 Proxy 驗證和伺服器驗證。 如果 Proxy 或伺服器驗證已到期，就可能會關閉連線。 應用程式因應這些驗證到期的其中一個方法是設定計時器。 需要使用 HTTP 重新導向時，無法保證能夠建立穩定的第二個連線。 起始測試要求將會確保 app 可以先使用最新的重新導向 URL，然後才使用 **IXMLHTTPRequest2** 物件當作傳輸與 **ControlChannelTrigger** 物件搭配使用。
 
 如需使用 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 的詳細資訊，請參閱 [ControlChannelTrigger 搭配 IXMLHTTPRequest2 範例](http://go.microsoft.com/fwlink/p/?linkid=258538)。
-
 

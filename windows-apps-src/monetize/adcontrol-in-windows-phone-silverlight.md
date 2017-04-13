@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, AdControl, Silverlight, Windows Phone"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f4606f5bb5446d8749f80e2bf4772a0b6db48b3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 743b9faccaa120f1904b592fc09a965dc7878e03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-in-windows-phone-silverlight"></a>Windows Phone Silverlight 中的 AdControl
 
 本文會逐步說明如何在 Windows Phone 8.1 或 Windows Phone 8.0 的 Silverlight 應用程式使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/hh524191.aspx) 類別來顯示橫幅廣告。
@@ -28,9 +25,9 @@ ms.lasthandoff: 02/07/2017
 
 1.  在 Visual Studio 中，開啟您的專案。
 
-2.  按一下 [工具]****，指向 [NuGet 套件管理員]****，然後按一下 [套件管理器主控台]****。
+2.  按一下 **\[工具\]**，指向 **\[NuGet 套件管理員\]**，然後按一下 **\[套件管理器主控台\]**。
 
-3.  在 [套件管理器主控台]**** 視窗中，輸入其中一個命令。
+3.  在 **\[套件管理器主控台\]** 視窗中，輸入其中一個命令。
 
   * 如果您的專案是針對 Windows Phone 8.0，請輸入這個命令。
 
@@ -76,15 +73,15 @@ ms.lasthandoff: 02/07/2017
   </Capabilities>
   ```
 
-2.  (選擇性) 儲存您的專案。 按一下 [檔案]**** 功能表底下的 [全部儲存]**** 圖示，按一下 [全部儲存]****。
+2.  (選擇性) 儲存您的專案。 按一下 **\[檔案\]** 功能表底下的 **\[全部儲存\]** 圖示，按一下 **\[全部儲存\]**。
 
-3.  將「網際網路 (用戶端與伺服器)」**** 功能新增到專案中的 Package.appxmanifest 檔案 在 [方案總管]**** 中，按兩下 [Package.appxmanifest]****。
+3.  將**「網際網路 (用戶端與伺服器)」**功能新增到專案中的 Package.appxmanifest 檔案 在 **\[方案總管\]** 中，按兩下 **\[Package.appxmanifest\]**。
 
     ![wp81silverlightmarkup\-solutionexplorer\-packageappxmanifest](images/13-b98c2a1a-69c3-4018-be0a-6ce010e703e7.jpg)
 
-    在 [編輯器]**** 中，按一下 [功能]**** 索引標籤。 選取 [網際網路 (用戶端與伺服器)]**** 方塊。
+    在 **\[編輯器\]** 中，按一下 **\[功能\]** 索引標籤。 選取 **\[網際網路 (用戶端與伺服器)\]** 方塊。
 
-4.  (選擇性) 儲存您的專案。 按一下 [檔案]**** 功能表底下的 [全部儲存]**** 圖示，按一下 [全部儲存]****。
+4.  (選擇性) 儲存您的專案。 按一下 **\[檔案\]** 功能表底下的 **\[全部儲存\]** 圖示，按一下 **\[全部儲存\]**。
 
 5.  修改 MainPage.xaml 檔案中的 Silverlight 標記，以包含 **Microsoft.Advertising.Mobile.UI** 命名空間。
 
@@ -125,7 +122,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="release-your-app-with-live-ads-using-dev-center"></a>使用開發人員中心發行包含即時廣告的應用程式
 
-1.  在開發人員中心儀表板中，移至應用程式的 [營利]**** &gt;[利用廣告營利]**** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 [橫幅]****。 記下廣告單位識別碼與應用程式識別碼。
+1.  在開發人員中心儀表板中，移至應用程式的 **\[創造營收\]** &gt; **\[利用廣告獲利\]** 頁面，並[建立獨立的 Microsoft Advertising 單位](../publish/monetize-with-ads.md)。 單位類型請指定 **\[橫幅\]**。 記下廣告單位識別碼與應用程式識別碼。
 
 2.  在您的程式碼中，將測試的廣告單位值 (**applicationId** 和 **adUnitId**)，用在開發人員中心產生的實際值取代。
 
@@ -135,4 +132,3 @@ ms.lasthandoff: 02/07/2017
 
 
  
-

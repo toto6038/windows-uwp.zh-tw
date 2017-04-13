@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
-description: "在 Windows 市集分析 API 中使用此方法，以取得應用程式中錯誤的堆疊追蹤。"
+description: "在 Windows 市集分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。"
 title: "取得應用程式中錯誤的堆疊追蹤"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 堆疊追蹤, 錯誤"
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8b10c7f9e2de962aca719055a26d8c3954ea052f
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: fb99c65e91e02e3e60b12258e30083183c213324
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 
-在 Windows 市集分析 API 中使用此方法，以取得應用程式中錯誤的堆疊追蹤。 這個方法只可以下載最近 30 天發生之 App 錯誤的堆疊追蹤。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 [失敗]**** 區段也提供堆疊追蹤。
+在 Windows 市集分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。 這個方法只可以下載最近 30 天發生之 App 錯誤的堆疊追蹤。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 **\[失敗\]** 區段也提供堆疊追蹤。
 
 使用這個方法之前，您必須先使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法來擷取與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼。
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -52,7 +49,7 @@ ms.lasthandoff: 02/08/2017
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  |
+| 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要取得堆疊追蹤之 App 的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | cabId | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |
@@ -132,4 +129,3 @@ Authorization: Bearer <your access token>
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)
-

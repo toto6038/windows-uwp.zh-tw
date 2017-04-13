@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 95cd7958979dd5c2a7955bb098c8b34fbf024b0f
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.openlocfilehash: 558bbe9947c32c98010bb658e3fd482224b272ed
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="porting-windows-phone-silverlight-projects-to-uwp-projects"></a>將 Windows Phone Silverlight 專案移植到 UWP 專案
 
-# <a name="porting-a-windows-phone-silverlight-project-to-a-uwp-project"></a>將 Windows Phone Silverlight 專案移植到 UWP 專案
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已更新 Windows10 上的 UWP app。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 前一個主題是[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)。
 
@@ -29,8 +26,8 @@ ms.lasthandoff: 02/07/2017
 1.  啟動 Microsoft Visual Studio 2015，並建立新的空白應用程式 (Windows 通用) 專案。 如需詳細資訊，請參閱[使用範本快速建立您的 Windows 市集應用程式 (C#、C++、Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
 2.  在 Windows Phone Silverlight 應用程式專案中，找出您想要重複使用的所有原始程式碼檔案及視覺資產檔案。 使用 [檔案總管]，將資料模型、檢視模型、視覺資產、資源字典、資料夾結構，以及任何您想要重複使用的其他項目複製到新專案。 視需要在磁碟上複製或建立子資料夾。
 3.  將檢視 (例如 MainPage.xaml 與 MainPage.xaml.cs) 一併複製到新專案節點。 同樣地，請視需要建立新的子資料夾，然後從專案移除現有的檢視。 但是在您覆寫或移除 Visual Studio 產生的檢視之前，請保留一份複本，因為可能稍後可用來供參考。 移植 Windows Phone Silverlight 應用程式的第一個階段著重在美化外觀以及能在裝置系列上運作良好。 稍後，您會將重點放在確認檢視能隨所有尺寸規格適當調整，也可以新增任何調適型程式碼，以充分利用特定的裝置系列。
-4.  在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 [加入至專案]****。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 **\[建置動作\]** 是否已設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是否已設定為 **\[不要複製\]**。
-5.  在這個階段，命名空間和類別名稱的差異將會產生大量的建置錯誤。 例如，如果您開啟 Visual Studio 產生的檢視，您會看到它們的類型為 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，而非 **PhoneApplicationPage**。 有許多 XAML 標記和命令式程式碼差異，在本移植指南接下來的主題中將會有詳細說明。 但是只要依照下列一般步驟，您也可以進展快速：在 XAML 標記中，將您命名空間前置詞宣告中的 "clr-namespace" 變更為 "using"；使用[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)主題和 Visual Studio 的 [**尋找和取代**] 命令來對您的原始程式碼進行大量變更 (例如以 "Windows.UI.Xaml" 取代 "System.Windows")；然後在 Visual Studio 的命令式程式碼編輯器中，使用內容功能表上的 **\[解析\]** 和 **\[組合管理 Using\]** 命令，進行更多目標性變更。
+4.  在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]**。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 **\[建置動作\]** 是否已設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是否已設定為 **\[不要複製\]**。
+5.  在這個階段，命名空間和類別名稱的差異將會產生大量的建置錯誤。 例如，如果您開啟 Visual Studio 產生的檢視，您會看到它們的類型為 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，而非 **PhoneApplicationPage**。 有許多 XAML 標記和命令式程式碼差異，在本移植指南接下來的主題中將會有詳細說明。 但是只要依照下列一般步驟，您也可以進展快速：在 XAML 標記中，將您命名空間前置詞宣告中的 "clr-namespace" 變更為 "using"；使用[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)主題和 Visual Studio 的 **\[尋找和取代\]** 命令來對您的原始程式碼進行大量變更 (例如以 "Windows.UI.Xaml" 取代 "System.Windows")；然後在 Visual Studio 的命令式程式碼編輯器中，使用內容功能表上的 **\[解析\]** 和 **\[組合管理 Using\]** 命令，進行更多目標性變更。
 
 ## <a name="extension-sdks"></a>擴充功能 SDK
 
@@ -152,5 +149,4 @@ ms.lasthandoff: 02/07/2017
 請參閱 [Windows 10 的套件資訊清單結構參考](https://msdn.microsoft.com/library/windows/apps/dn934820)。
 
 下一個主題是[疑難排解](wpsl-to-uwp-troubleshooting.md)。
-
 

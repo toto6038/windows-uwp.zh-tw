@@ -2,21 +2,17 @@
 title: "轉譯器 (RS) 階段"
 description: "轉譯器會裁剪不在檢視中的基本類型、為像素著色器 (PS) 階段準備基本類型，以及決定如何叫用像素著色器。"
 ms.assetid: 7E80724B-5696-4A99-91AF-49744B5CD3A9
-keywords:
-- "轉譯器 (RS) 階段"
+keywords: "轉譯器 (RS) 階段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6855529e13bee8c938e9f0663771b25c52ed097
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1226ad54c6af2f064badf2b1e00088e3b1c70a29
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rasterizer-rs-stage"></a>轉譯器 (RS) 階段
 
 
@@ -55,7 +51,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

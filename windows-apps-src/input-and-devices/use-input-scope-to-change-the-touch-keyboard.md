@@ -13,13 +13,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 43cbc8999d21d0534c4b6e557822345a69f66007
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 215cf54a5d6ed1b0c514768817cc11d1a85627e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="use-input-scope-to-change-the-touch-keyboard"></a>使用輸入範圍來變更觸控式鍵盤
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/07/2017
 </div>
 
 
-當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 或 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548)) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的「輸入範圍」**，使它符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
+當您的應用程式在具備觸控式螢幕的裝置上執行時，可以使用觸控式鍵盤輸入文字。 當使用者點選可編輯的輸入欄位 (例如 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 或 [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548)) 時，就會叫用觸控式鍵盤。 您可以設定文字控制項的*「輸入範圍」*，使它符合您預期使用者輸入的資料類型，讓使用者在您的應用程式中輸入資料時更加快速方便。 輸入範圍會提供控制項所預期之文字輸入類型的提示給系統，讓系統可以為該輸入類型提供專用的觸控式鍵盤配置。
 
 例如，如果文字方塊只用來輸入 4 位數 PIN，請將 [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 屬性設定為 **Number**。 這會告訴系統顯示數字鍵台配置，方便使用者輸入 PIN。
 
@@ -145,7 +142,7 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 > **注意**&nbsp;&nbsp;行動裝置上的 SIP 大小越小，就會讓您針對行動裝置應用程式設定正確的輸入範圍特別重要。 如這裡所示，Windows Phone 提供更多樣的專用鍵盤配置。 文字欄位如果在 Windows 市集應用程式中不需要設定輸入範圍，不過在 Windows Phone 市集應用程式中設定輸入範圍可能會有好處。
 
-> **秘訣**&nbsp;&nbsp;大部分觸控式鍵盤皆可供您在字母配置與數字和符號配置之間切換。 在 Windows 上，請切換 **&amp;123** 鍵。 在 Windows Phone 上，按 [&amp;123]**** 鍵以變更為數字和符號配置，然後按 [abcd]**** 鍵以變更為字母配置。
+> **秘訣**&nbsp;&nbsp;大部分觸控式鍵盤皆可供您在字母配置與數字和符號配置之間切換。 在 Windows 上，請切換 **&amp;123** 鍵。 在 Windows Phone 上，按 **&123** 鍵以變更為數字和符號配置，然後按 **abcd** 鍵以變更為字母配置。
 
 ### <a name="default"></a>預設值
 
@@ -179,22 +176,22 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 `<TextBox InputScope="Url"/>`
 
-包含 [.com]**** 和 [前往鍵]![](images/input-scopes/kbdgokey.png) (前往) 鍵。 長按 [.com]**** 鍵不放以顯示其他選項 ([.org]****、[.net]**** 和地區特定尾碼)。
+包含 **.com** 和![前往鍵](images/input-scopes/kbdgokey.png) (前往) 鍵。 長按 **.com** 鍵不放以顯示其他選項 (**.org**、**.net** 和地區特定尾碼)。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows URL 觸控式鍵盤](images/input-scopes/kbdpcurl.png)<br>也包含 [:]****、[-]**** 及 [/]**** 鍵。| ![Windows Phone URL 觸控式鍵盤](images/input-scopes/kbdwpurl.png)<br>長按句點鍵可顯示其他選項 ( - + &quot; / &amp; : , )。 |
+| ![Windows URL 觸控式鍵盤](images/input-scopes/kbdpcurl.png)<br>也包含 **:**、**-** 和 **/** 鍵。| ![Windows Phone URL 觸控式鍵盤](images/input-scopes/kbdwpurl.png)<br>長按句點鍵可顯示其他選項 ( - + &quot; / &amp; : , )。 |
 |功能可用性：<ul><li>拼字檢查：預設為開啟，可以停用</li><li>自動校正：預設為開啟，可以停用</li><li>自動大寫：一律停用</li><li>文字預測：一律停用</li></ul> | 功能可用性：<ul><li>拼字檢查：預設為關閉，可以啟用</li><li>自動校正：預設為關閉，可以啟用</li><li>自動大寫：預設為關閉，可以啟用</li><li>文字預測：預設為關閉，可以啟用</li></ul> |
 
 ### <a name="emailsmtpaddress"></a>EmailSmtpAddress
 
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
-包含 [@]**** 和 [.com]**** 鍵。 長按 [.com]**** 鍵不放以顯示其他選項 ([.org]****、[.net]**** 和地區特定尾碼)。
+包含 **@** 和 **.com** 鍵。 長按 **.com** 鍵不放以顯示其他選項 (**.org**、**.net** 和地區特定尾碼)。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows 電子郵件地址觸控式鍵盤](images/input-scopes/kbdpcemailsmtpaddress.png)<br>也包含 [_]**** 和 [-]**** 鍵。| ![Windows Phone 電子郵件地址觸控式鍵盤](images/input-scopes/kbdwpemailsmtpaddress.png)<br>按住句點鍵可顯示其他選項 ( - _ , ; )。 |
+| ![Windows 電子郵件地址觸控式鍵盤](images/input-scopes/kbdpcemailsmtpaddress.png)<br>也包含 **_** 和 **-** 鍵。| ![Windows Phone 電子郵件地址觸控式鍵盤](images/input-scopes/kbdwpemailsmtpaddress.png)<br>按住句點鍵可顯示其他選項 ( - _ , ; )。 |
 |功能可用性：<ul><li>拼字檢查：預設為開啟，可以停用</li><li>自動校正：預設為開啟，可以停用</li><li>自動大寫：一律停用</li><li>文字預測：一律停用</li></ul> | 功能可用性：<ul><li>拼字檢查：預設為關閉，可以啟用</li><li>自動校正：預設為關閉，可以啟用</li><li>自動大寫：預設為關閉，可以啟用</li><li>文字預測：預設為關閉，可以啟用</li></ul> |
 
 ### <a name="number"></a>Number
@@ -212,14 +209,14 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows 電話號碼觸控式鍵盤](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![Windows Phone 電話號碼觸控式鍵盤](images/input-scopes/kbdwptelephonenumber.png)<br>鍵盤會模擬電話數字鍵台。 按住句點鍵可顯示其他選項 ( , ( ) X . )。 按住 0 鍵可輸入 +。 |
+| ![Windows 電話號碼觸控式鍵盤](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![Windows Phone 電話號碼觸控式鍵盤](images/input-scopes/kbdwptelephonenumber.png)<br>鍵盤會模擬電話數字鍵台。 按住句點鍵可顯示其他選項 ( , ( ) X . ). 按住 0 鍵可輸入 +。 |
 |與 **CurrencyAmountAndSymbol** 和 **TelephoneNumber** 相同。 | 功能可用性：<ul><li>拼字檢查：一律停用</li><li>自動校正：一律停用</li><li>自動大寫：一律停用</li><li>文字預測：一律停用</li></ul> |
 
 ### <a name="search"></a>搜尋
 
 `<TextBox InputScope="Search"/>`
 
-包含 [搜尋]**** 鍵，而不是 [Enter]**** 鍵。
+包含 **\[搜尋\]** 鍵，而不是 **Enter** 鍵。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
@@ -239,11 +236,11 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 `<TextBox InputScope="Formula"/>`
 
-包含 [=]**** 鍵。
+包含 **=** 鍵。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows 電話公式觸控式鍵盤](images/input-scopes/kbdpcformula.png)<br>也包含 [%]****、[$]**** 及 [+]**** 鍵。| ![Windows Phone 公式觸控式鍵盤](images/input-scopes/kbdwpformula.png)<br>按住句點鍵可顯示其他選項 ( - ! ? , ). 按住 [=]**** 鍵可顯示其他選項 ( ( ) : &lt; &gt; )。 |
+| ![Windows 電話公式觸控式鍵盤](images/input-scopes/kbdpcformula.png)<br>也包含 **%**、**$** 和 **+** 鍵。| ![Windows Phone 公式觸控式鍵盤](images/input-scopes/kbdwpformula.png)<br>按住句點鍵可顯示其他選項 ( - ! ? , ). 按住 **=** 鍵可顯示其他選項 ( ( ) : &lt; &gt; )。 |
 |功能可用性：<ul><li>拼字檢查：預設為關閉，可以啟用</li><li>自動校正：一律停用</li><li>自動大寫：一律停用</li><li>文字預測：一律停用</li></ul> | 功能可用性：<ul><li>拼字檢查：預設為開啟，可以停用</li><li>自動校正：預設為開啟，可以停用</li><li>自動大寫：一律停用</li><li>文字預測：預設為開啟，可以停用</li></ul> |
 
 ### <a name="chat"></a>Chat
@@ -261,6 +258,5 @@ phoneNumberTextBox.InputScope = new InputScope()
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![預設 Windows 觸控式鍵盤](images/input-scopes/kbdpcdefault.png)<br>與 **Default** 的配置相同。| ![Windows Phone 名稱或電話號碼觸控式鍵盤](images/input-scopes/kbdwpnameorphonenumber.png)<br>包含 [;]**** 和 [@]**** 鍵。 [&amp;123]**** 鍵已取代為 [123]**** 鍵，會開啟電話鍵台 (請參閱**TelephoneNumber**)。|
+| ![預設 Windows 觸控式鍵盤](images/input-scopes/kbdpcdefault.png)<br>與 **Default** 的配置相同。| ![Windows Phone 名稱或電話號碼觸控式鍵盤](images/input-scopes/kbdwpnameorphonenumber.png)<br>包含 **;** 和 **@** 鍵。 **&amp;123** 鍵已取代為 **123** 鍵，會開啟電話鍵台 (請參閱 **TelephoneNumber**)。|
 |功能可用性：<ul><li>拼字檢查：預設為開啟，可以停用</li><li>自動校正：一律停用</li><li>自動大寫：一律啟用</li><li>文字預測：一律停用</li></ul> | 功能可用性：<ul><li>拼字檢查：預設為關閉，可以啟用</li><li>自動校正：預設為關閉，可以啟用</li><li>自動大寫：預設為關閉，可以啟用。 每個字的第一個字母大寫。</li><li>文字預測：預設為關閉，可以啟用</li></ul> |
-

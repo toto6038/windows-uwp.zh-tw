@@ -1,6 +1,6 @@
 ---
 author: PatrickFarley
-Description: "在應用程式中遵循這些適用於地理柵欄的最佳做法。"
+Description: "在 App 中遵循這些適用於地理柵欄的最佳做法。"
 title: "地理柵欄應用程式的指導方針"
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.author: pafarley
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地圖, 位置, 地理柵欄"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: e21b5b89c95a6b4988e1e95fc924ec3eefd46942
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-geofencing-apps"></a>地理柵欄應用程式的指導方針
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -137,4 +134,3 @@ function onVisibilityChanged() {
  
 
  
-

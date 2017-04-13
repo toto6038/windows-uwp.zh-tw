@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 06409936f37368351f6c8ad47e50a7d980d522f4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d055f576cfa56502da845e849c100f66dd0c7ccf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="move-from-windows-phone-silverlight-to-uwp"></a>從 Windows Phone Silverlight 移到 UWP
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -94,5 +91,4 @@ Windows Phone Silverlight 具有以 Silverlight 4.0 為基礎的 XAML UI 架構�
 **簡報**
 * [將 Nokia 音樂從 Windows Phone 移到 Windows 8 的案例](http://go.microsoft.com/fwlink/p/?LinkId=321521)
  
-
 

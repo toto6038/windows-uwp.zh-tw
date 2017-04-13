@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: "檢閱 Microsoft Store Services SDK 中 Microsoft Advertising 程式庫的版本資訊。"
-title: "Microsoft Advertising 程式庫的版本資訊"
+title: "Advertising 程式庫的版本資訊"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, ads, advertising, release notes, 廣告, 版本資訊"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 666071bccd562f2f95e8ae69f50797fdc464548b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f3d07df6e64c96e9070cb82bd7ac6e96b9cad1ee
+ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
+translationtype: HT
 ---
-
-# <a name="release-notes-for-the-microsoft-advertising-libraries"></a>Microsoft Advertising 程式庫的版本資訊
+# <a name="release-notes-for-the-advertising-libraries"></a>Advertising 程式庫的版本資訊
 
 
 
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/07/2017
 
 Microsoft Advertising 程式庫隨附於 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) (適用於 UWP app)，以及適用於 [Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x App) 中。 如需有關如何安裝 SDK 及其中所包含的程式庫詳細資訊，請參閱[安裝 Microsoft Advertising 程式庫](install-the-microsoft-advertising-libraries.md)。
 
-若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)，在 Visual Studio 中開啟您的專案，然後移至 [專案]**** > [加入已連接服務]**** > [Ad Mediator]**** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請從您的專案中移除 Ad Mediator 參考。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
+若要取得適用於 Windows Phone 8.x Silverlight 專案的 Microsoft Advertising 組件，請安裝[適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)，在 Visual Studio 中開啟您的專案，然後移至 **\[專案\]** > **\[加入已連接服務\]** > **\[Ad Mediator\]** 以自動下載組件。 完成後，若您不想使用廣告流量分配，請從您的專案中移除 Ad Mediator 參考。 如需詳細資訊，請參閱 [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)。
 
 
 ## <a name="uninstall-previous-versions"></a>解除安裝之前的版本
@@ -37,7 +34,7 @@ Microsoft Advertising 程式庫隨附於 [Microsoft Store Services SDK](http://a
 
 ## <a name="target-architecture-specific-build-outputs"></a>目標架構特定的建置輸出
 
-使用 Microsoft Advertising 程式庫時，您在專案中將無法以 [任何 CPU]**** 為目標。 如果專案的目標是 \[任何 CPU\]****，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
+使用 Microsoft Advertising 程式庫時，您在專案中將無法以 **\[任何 CPU\]** 為目標。 如果專案的目標是 **\[任何 CPU\]**，當您將參照新增到 Microsoft Advertising 程式庫之後，便可能會在專案中看到警告。 如果要移除這項警告，請將您的專案更新成使用架構特定的建置輸出 (例如 **x86**)。 如需詳細資訊，請參閱[已知問題](known-issues-for-the-advertising-libraries.md)。
 
 ## <a name="c-support"></a>C++ 支援
 
@@ -51,11 +48,7 @@ Microsoft Advertising 程式庫 (其中包括 **AdControl** 和 **InterstitialAd
 
 **AdControl** 類別不再有適用於 UWP app 的 **Latitude** 和 **Longitude** 屬性。 相反地，廣告控制項內建的程式碼會偵測，並代替 app 將這些值傳送至廣告伺服器。
 
-## <a name="important-notice"></a>重要須知：
-
-請務必完整閱讀使用者授權合約 (EULA)。 請參閱主題 [重要須知 - EULA](important-notice-eula.md)。
 
  
 
  
-

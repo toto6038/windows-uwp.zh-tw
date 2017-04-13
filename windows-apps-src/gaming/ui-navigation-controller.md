@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, ui, 瀏覽"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 5b5789b90cefb6ba22c2a3d8b5ebbb45be5b0dad
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ui-navigation-controller"></a>UI 瀏覽控制器
 
 此頁面說明使用 [Windows.Gaming.Input.UINavigationController][uinavigationcontroller] 進行 UI 瀏覽裝置程式設計的基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
@@ -86,13 +83,13 @@ Windows.Gaming.Input 命名空間支援的所有輸入裝置皆為 UI 瀏覽裝�
 | 瀏覽命令 | 遊戲台輸入                       | 機台搖桿輸入 | 競速方向盤輸入 |
 | ------------------:| ----------------------------------- | ------------------ | ------------------ |
 |                 Up | 左搖桿向上 / 方向鍵向上       | 搖桿向上           | 方向鍵向上           |
-|               Down | 左搖桿向下 / 方向鍵向下   | 搖桿向下         | 方向鍵向下         |
-|               Left | 左搖桿向左 / 方向鍵向左   | 搖桿向左         | 方向鍵向左         |
-|              Right | 左搖桿向右 / 方向鍵向右 | 搖桿向右        | 方向鍵向右        |
+|               向下 | 左搖桿向下 / 方向鍵向下   | 搖桿向下         | 方向鍵向下         |
+|               向左 | 左搖桿向左 / 方向鍵向左   | 搖桿向左         | 方向鍵向左         |
+|              向右 | 左搖桿向右 / 方向鍵向右 | 搖桿向右        | 方向鍵向右        |
 |               View | 檢視按鈕                         | 檢視按鈕        | 檢視按鈕        |
 |               Menu | 功能表按鈕                         | 功能表按鈕        | 功能表按鈕        |
 |             Accept | A 按鈕                            | 動作 1 按鈕    | A 按鈕           |
-|             Cancel | B 按鈕                            | 動作 2 按鈕    | B 按鈕           |
+|             取消 | B 按鈕                            | 動作 2 按鈕    | B 按鈕           |
 
 下表為瀏覽命令「選用集」__對應至各種輸入裝置的方式摘要。
 
@@ -236,4 +233,3 @@ if (OptionalUINavigationButtons::Context1 == (reading.OptionalButtons & Optional
 [uinavigationreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.uinavigationreading.aspx
 [requireduinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.requireduinavigationbuttons.aspx
 [optionaluinavigationbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.optionaluinavigationbuttons.aspx
-

@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "如果在提交您的應用程式到市集後發生錯誤，您必須先解決這些問題才能繼續進行認證程序。"
+Description: "如果在提交您的 app 到市集後發生錯誤，您必須先解決這些問題才能繼續進行認證程序。"
 title: "解決提交錯誤"
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4b97cb009078039582bfcff6cdaa678f1dd9b979
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b72b5593f4266a015b14e2b61a70c87ce199cdfd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
-如果在提交您的應用程式到市集後發生錯誤，您必須先解決這些問題才能繼續進行[認證程序](the-app-certification-process.md)。 錯誤訊息會指出問題是什麼，以及您為了修正這個問題可能需要執行的動作。 以下是一些可協助您解決這些錯誤的額外資訊。
+如果在提交您的 app 到市集後發生錯誤，您必須先解決這些問題才能繼續進行[認證程序](the-app-certification-process.md)。 錯誤訊息會指出問題是什麼，以及您為了修正這個問題可能需要執行的動作。 以下是一些可協助您解決這些錯誤的額外資訊。
 
 ## <a name="uwp-apps"></a>UWP app
 
@@ -28,7 +25,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="windows-phone-apps"></a>Windows Phone app
 
-在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 [提交至市集]**** 前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
+在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 **\[提交至市集\]** 前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
 
 造成此錯誤的問題有幾種。 請檢閱下列清單，判斷可能適用於您套件的問題。
 
@@ -42,17 +39,16 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="nameidentity-errors"></a>名稱/身分識別錯誤
 
-如果您看到「在套件中找到的名稱不是其中一個保留的應用程式名稱。請保留應用程式名稱和/或使用此語言的正確應用程式名稱更新您的套件」****錯誤，可能是因為您在套件中輸入的名稱不正確。 如果您在開發人員中心使用您尚未保留的應用程式名稱，也會發生這個錯誤。 您通常可以依照下列步驟解決這個錯誤：
+如果您看到**「在套件中找到的名稱不是其中一個保留的應用程式名稱。請保留應用程式名稱和/或使用此語言的正確應用程式名稱更新您的套件」**錯誤，可能是因為您在套件中輸入的名稱不正確。 如果您在開發人員中心使用您尚未保留的應用程式名稱，也會發生這個錯誤。 您通常可以依照下列步驟解決這個錯誤：
 
 - 移至您 App 的 [應用程式身分識別](view-app-identity-details.md) 頁面 (在 **應用程式管理** 下)，確認您的 App 是否有指派的身分識別。 如果沒有，您會看到建立選項。 您必須保留您的應用程式名稱，才能建立身分識別。 請確定這是您在您的套件中使用的名稱。
-- 如果您的 App 已經有身分識別，您可能仍需要保留您想在您的套件中使用的名稱。 在 **應用程式管理** 下，按一下 [管理應用程式名稱](manage-app-names.md)。 輸入您想要使用的名稱，然後按一下 [保留應用程式名稱]****。
+- 如果您的 App 已經有身分識別，您可能仍需要保留您想在您的套件中使用的名稱。 在 **應用程式管理** 下，按一下 [管理應用程式名稱](manage-app-names.md)。 輸入您想要使用的名稱，然後按一下 **\[保留應用程式名稱\]**。
 
 > **重要** 如果您想要使用的名稱無法使用，表示另一個 App 可能已經保留該名稱。 如果您的 App 已經使用該名稱發行，或如果您認為您有權使用該名稱，請連絡[支援服務](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  
 
  
 
  
-
 
 
 

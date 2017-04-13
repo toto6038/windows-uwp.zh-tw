@@ -5,27 +5,24 @@ title: "針對 Xbox 和電視進行設計"
 ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
-isNew: true
+isNew: True
 keywords: "Xbox, 電視, 10 英呎體驗, 遊戲台, 遙控器, 輸入, 互動"
 ms.author: elcowle
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 572073c2c577f3f6833b9cbee303875e378d6030
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
 設計您的通用 Windows 平台 (UWP) 應用程式，讓它在 Xbox One 及電視螢幕上看起來既美觀又能正常運作。
 
 ## <a name="overview"></a>概觀
 
-通用 Windows 平台可讓您創造跨多個 Windows 10 裝置的絕佳體驗。 UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的使用者介面 (UI)，無需進行額外的工作。 不過，如果要量身打造並提供最佳化的 app 以便在 Xbox One 和電視螢幕上運作良好，則需要特殊考量。
+通用 Windows 平台可讓您創造跨多個 Windows10 裝置的絕佳體驗。 UWP 架構提供的大部分功能可讓 app 在這些裝置上使用相同的使用者介面 (UI)，無需進行額外的工作。 不過，如果要量身打造並提供最佳化的 app 以便在 Xbox One 和電視螢幕上運作良好，則需要特殊考量。
 
 坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為**「10 英呎體驗」**。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或其他輸出至電視螢幕的裝置開發 app，並使用控制器做為輸入，您就必須記住這一點。
 
@@ -370,13 +367,13 @@ private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventAr
 
 #### <a name="solutions"></a>解決方案
 
-**重新排列 UI <a name="ui-rearrange"></a>**
+**重新排列 UI<a name="ui-rearrange"></a>**
 
 除非您最初的焦點是放在頁面底部，否則將 UI 元素放在長捲動清單上方比放在下方更容易存取。 如果這個新的配置適用於其他裝置，請針對所有裝置系列變更配置，而不要只是針對 Xbox One 進行特殊的 UI 配置，這是比較經濟的方法。 此外，垂直捲動方向放置 UI 元素 (也就是水平放在垂直捲動清單兩側，或垂直放在水平捲動清單上下) 可更方便存取。
 
 ![房地產 app︰放置按鈕在長捲動清單上方](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-**焦點佔用 <a name="engagement"></a>**
+**焦點佔用<a name="engagement"></a>**
 
 *「需要」*佔用時，整個 `ListView` 會變成單一的焦點目標。 使用者可以略過清單的內容，以取得下一個可設定焦點的元素。 請在[焦點佔用](#focus-engagement)中閱讀更多關於哪些控制項支援佔用，以及如何使用的內容。
 
@@ -480,7 +477,7 @@ public App()
 
 視覺焦點是目前有焦點的 UI 元素周圍的框線。 這可協助引導使用者輕鬆瀏覽您的 UI 而不會迷失。
 
-透過視覺更新，以及對視覺焦點新增的許多自訂選項，開發人員可以信任單一視覺焦點能在電腦和 Xbox One 上，以及在支援鍵盤和/或遊戲台/遙控器的任何其他 Windows 10 裝置上運作良好。
+透過視覺更新，以及對視覺焦點新增的許多自訂選項，開發人員可以信任單一視覺焦點能在電腦和 Xbox One 上，以及在支援鍵盤和/或遊戲台/遙控器的任何其他 Windows10 裝置上運作良好。
 
 雖然不同平台上可以使用相同的視覺焦點，但是使用者對於 10 英呎體驗遇到的狀況稍有不同。 您應該假設使用者不會完全注意到整個電視螢幕，因此目前聚焦的元素對使用者而言隨時都清晰可見非常重要，避免視覺搜尋遇到挫折。
 
@@ -1038,7 +1035,7 @@ if (IsTenFoot)
 
 如需深入了解將媒體加入 App，請參閱[媒體播放](../controls-and-patterns/media-playback.md)。
 
-> ![NOTE] `MediaPlayerElement` 只能在 Windows 10 版本 1607 及更新版本中取得。 如果您是針對先前版本的 Windows 10 開發 App，便必須改為使用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
+> ![NOTE] `MediaPlayerElement` 只能在 Windows10 版本 1607 及更新版本中取得。 如果您是針對先前版本的 Windows10 開發 App，便必須改為使用 [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926)。 上述建議也適用於 `MediaElement`，且 `TransportControls` 屬性也是以同樣的方式存取。
 
 ### <a name="search-experience"></a>搜尋體驗
 
@@ -1125,4 +1122,3 @@ bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily 
 - [通用 Windows 平台 (UWP) 應用程式的裝置基本資訊](device-primer.md)
 - [遊戲台與遙控器的互動](gamepad-and-remote-interactions.md)
 - [UWP app 中的音效](../style/sound.md)
-

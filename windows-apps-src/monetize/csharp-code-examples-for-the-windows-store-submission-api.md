@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "使用本節的 C# 程式碼範例，深入了解如何使用 Windows 市集提交 API。"
-title: "Windows 市集提交 API 的 C# 程式碼範例"
+title: "提交 API 的 C# 程式碼範例"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c71555eb854e5dcf6cbccf89e9b0b8ffe35ab0e4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 59b9c0b2cc503a56e0a1c9a75ce5ef471983c699
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="c-code-examples-for-the-submission-api"></a>提交 API 的 C\# 程式碼範例
 
-# <a name="c-code-examples-for-the-windows-store-submission-api"></a>Windows 市集提交 API 的 C\# 程式碼範例
-
-本文提供使用「Windows 市集提交 API」** 的 C# 程式碼範例。 如需此 API 的詳細資訊，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+本文提供使用*「Windows 市集提交 API」*的 C# 程式碼範例。 如需此 API 的詳細資訊，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 這些程式碼範例示範下列工作︰
 
@@ -127,4 +124,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, AdControl, XAML, 屬性"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: dbcc08b1373c7f73d5b9ebf541ec82bb01fd9df3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3c5dae93ab6ee58fac7d4593257d357f268c241a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="adcontrol-xaml-properties-example"></a>AdControl XAML 屬性範例
 
 下列 XAML 範例示範如何指派值的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 屬性。 如果未設定屬性，**AdControl** 會使用預設值來建立與應用程式的使用者經驗一致的廣告。
@@ -40,4 +37,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-

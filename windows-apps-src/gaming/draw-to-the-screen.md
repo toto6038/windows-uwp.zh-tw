@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, DirectX, 圖形"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 1fe28d17aa8c943de9a2bcf6c2230237e0c931d0
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="draw-to-the-screen"></a>繪製到螢幕
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -67,7 +64,7 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-Direct3D 執行階段會為 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) 明確建立 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，將紋理表示為「背景緩衝區」，讓交換鏈結用於顯示。
+Direct3D 執行階段會為 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)明確建立 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)，將紋理表示為「背景緩衝區」，讓交換鏈結用於顯示。
 
 您可以在 Direct3D 範本的自訂 **CreateDeviceResources** 與 **CreateWindowSizeDependentResources** 方法中，找到 Direct3D 裝置與裝置內容的初始化與設定以及轉譯目標。
 
@@ -222,7 +219,6 @@ void RenderObject::Render()
  
 
  
-
 
 
 

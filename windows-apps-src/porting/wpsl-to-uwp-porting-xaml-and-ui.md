@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1ec72aec1e94ff92ef30fcc206456c7614107c98
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 83e63d76e0fc1c1b0e8465ad5b5656779ac43f09
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-xaml-and-ui-to-uwp"></a>將 Windows Phone Silverlight XAML 與 UI 移植到 UWP
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -98,7 +95,7 @@ UWP app 現在可以使用 UWP 動畫庫，做為主要畫面格動畫及 from/t
 
 ## <a name="back-button-handling"></a>[返回] 按鈕處理
 
-在 Windows 10 應用程式中，您可以使用單一方式來處理返回按鈕，且返回按鈕將可以在所有裝置上運作。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在電腦裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
+在 Windows 10 應用程式中，您可以使用單一方式來處理返回按鈕，且返回按鈕將可以在所有裝置上運作。 在行動裝置上，按鈕會在裝置上以電容式按鈕的方式，或以殼層中的按鈕的方式提供您使用。 在傳統型裝置上，您可以在只要能夠於應用程式中進行反向瀏覽時，就在應用程式組建區塊中加入一個按鈕，而且這會顯示在視窗化應用程式的標題列中，或平板電腦模式的工作列中。 返回按鈕事件是所有裝置系列的一個通用概念，且以硬體或軟體方式實作的按鈕都可以引發相同的 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件。
 
 下面的範例適用於所有裝置系列，且非常適合在可將相同處理套用至所有頁面以及您不需要確認瀏覽 (例如，提供未儲存變更的警告) 的情況下使用。
 
@@ -321,7 +318,9 @@ URI 對應和片段瀏覽是 URI 瀏覽技術，因此不適用於並非以 URI 
 
 文字 (或印刷樣式) 是 UWP app 中的一個重要層面，在移植時，您可以重新檢閱檢視的視覺設計，以確保它們不會與新的設計語言產生違和感。 請使用這些插圖說明來找出可用的 UWP  **TextBlock** 系統樣式。 尋找與您使用的 Windows Phone Silverlight 樣式相對應的樣式。 您也可以選擇建立自己的通用樣式，然後從 Windows Phone Silverlight 系統樣式將屬性複製到這些通用樣式中。
 
-![適用於 Windows 10 app 的系統 TextBlock 樣式](images/label-uwp10stylegallery.png) 適用於 Windows 10 app 的系統 TextBlock 樣式
+![適用於 Windows 10 app 的系統 textblock 樣式](images/label-uwp10stylegallery.png)  
+
+適用於 Windows 10 應用程式的系統 TextBlock 樣式
 
 在 Windows Phone Silverlight 應用程式中，預設字型系列為 Segoe WP。 在 Windows 10 應用程式中，預設字型系列為 Segoe UI。 因此，您應用程式中的字型標準可能會看起來不一樣。 如果您想要重新產生 Windows Phone Silverlight 文字的外觀，您可以使用像是 [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) 和 [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) 這樣的屬性設定您自己的標準。 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](http://dev.windows.com/design)。
 
@@ -406,5 +405,4 @@ Windows Phone Silverlight 應用程式和 Windows 10 應用程式在從裝置的
 ## <a name="related-topics"></a>相關主題
 
 * [命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)
-
 

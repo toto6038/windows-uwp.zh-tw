@@ -1,6 +1,6 @@
 ---
 author: msatranjr
-Description: "這個主題說明需要存取使用者位置之應用程式的效能指導方針。"
+Description: "這個主題說明需要存取使用者位置之 app 的效能指導方針。"
 title: "定位感知應用程式的指導方針"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.author: misatran
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 位置, 地圖, 地理位置"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f52f2f7a33edcbb0bd360c7b336cc3988abb80f5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f2035762fe99e1692d8b8b5eea5260aeb39b8d2a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -115,7 +112,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="detecting-changes-in-location-settings"></a>偵測位置設定中的變更
 
-使用者可以使用 [設定]**** 應用程式中的 [位置隱私權設定]**** 來關閉定位功能。
+使用者可以使用 **\[設定\]** 應用程式中的 **\[位置隱私權設定\]** 來關閉定位功能。
 
 -   若要偵測使用者何時停用或重新啟用定位服務：
     -   處理 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件。 如果使用者關閉定位服務，**StatusChanged** 事件之引數的 [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) 屬性值就會是 **Disabled**。
@@ -173,4 +170,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

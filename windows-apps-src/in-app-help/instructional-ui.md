@@ -1,6 +1,6 @@
 ---
 author: QuinnRadich
-Description: "設計說明使用者介面 (UI)，教導使用者如何使用您的 Windows 市集應用程式。"
+Description: "設計指示性使用者介面 (UI)，教導使用者如何使用您的 Windows 市集應用程式。"
 title: "設計指示性 UI 的指導方針"
 label: Instructional UI
 template: detail.hbs
@@ -11,13 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b9734304b813794d615eca4d0c9d852dc8df31c1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3d1d1e139baf82800ca999c0ab931f7965882b0c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="instructional-ui-guidelines"></a>指示性 UI 指導方針
 
 
@@ -64,11 +61,11 @@ ms.lasthandoff: 02/08/2017
 
     ![影片時刻應用程式的啟動畫面](images/instructional-ui-movie.png)
 
--   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件應用程式中，收件匣底部的提示會引導使用者進入 [設定]**** 以存取較舊的郵件。
+-   **引導使用者執行複雜工作中的下一步。** 在 Windows 郵件應用程式中，收件匣底部的提示會引導使用者進入 **\[設定\]** 以存取較舊的郵件。
 
     ![顯示指示性 UI 訊息的 Windows 郵件應用程式的裁剪螢幕擷取畫面](images/instructional-ui-mail-inbox.png)
 
-    使用者按一下訊息時，應用程式的 [設定]**** 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
+    使用者按一下訊息時，應用程式的 **\[設定\]** 飛出視窗會顯示在畫面的右側，讓使用者完成工作。 這些螢幕擷取畫面會顯示使用者按一下指示性 UI 訊息之前與之後，郵件應用程式的情況。
 
     | 之前                                                               | 之後                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
@@ -77,4 +74,3 @@ ms.lasthandoff: 02/08/2017
 ## <a name="related-articles"></a>相關文章
 
 * [應用程式說明的指導方針](guidelines-for-app-help.md)
-

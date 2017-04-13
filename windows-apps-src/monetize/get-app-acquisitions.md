@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 應用程式下載數"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a716acb00b7a86429c444555c491b48cbc2c4b0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b6ffd8300871e06d8b93682bed8d42546d1b88fc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-app-acquisitions"></a>取得應用程式下載數
 
 
@@ -42,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明                                                                 |
+| 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -50,7 +47,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取下載數資料之應用程式的市集識別碼。 市集識別碼可在開發人員中心儀表板的 [應用程式身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，市集識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取下載數資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -73,14 +70,14 @@ ms.lasthandoff: 02/07/2017
 
 如需支援欄位的清單，請參閱下列表格。 *filter* 參數中的字串值必須由單引號括住。
 
-| 欄位        |  說明        |
+| 欄位        |  描述        |
 |---------------|-----------------|
 | acquisitionType | 下列其中一個字串：<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>IAP</strong></li></ul> |
 | ageGroup | 下列其中一個字串：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
 | storeClient | 下列其中一個字串：<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
 | gender | 下列其中一個字串：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | 內含發生下載之市場的 ISO 3166 國家/地區碼的字串。 |
-| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | orderName | 指定用來取得應用程式之促銷碼訂單名稱的字串 (這只適用於使用者透過兌換促銷碼來取得應用程式的情況)。 |
 
@@ -103,9 +100,9 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                  |
+| 值      | 類型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
-| 值      | array  | 內含彙總評分資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[下載數數值](#acquisition-values)＞一節。                                                                                                                      |
+| 值      | 陣列  | 物件陣列，內含應用程式的彙總下載數資料。 如需有關每個物件中資料的詳細資訊，請參閱下方的[下載數數值](#acquisition-values)一節。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                             |
 
@@ -115,11 +112,11 @@ Authorization: Bearer <your access token>
 
 *Value* 陣列中的元素包含下列值。
 
-| 值               | 類型   | 說明                           |
+| 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
 | 日期                | 字串 | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
 | applicationId       | 字串 | 您正在擷取下載數資料之應用程式的市集識別碼。                                                                                                                                                                 |
-| applicationName     | 字串 | 應用程式的顯示名稱。                                                                                                                                                                                                             |
+| applicationName     | 字串 | App 的顯示名稱。                                                                                                                                                                                                             |
 | deviceType          | 字串 | 完成下載的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                  |
 | orderName           | 字串 | 訂單的名稱。                                                                                                                                                                                                                   |
 | storeClient         | 字串 | 發生下載之市集的版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                            |
@@ -165,6 +162,5 @@ Authorization: Bearer <your access token>
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得應用程式評分](get-app-ratings.md)
-* [取得應用程式評論](get-app-reviews.md)
-
+* [取得 App 評分](get-app-ratings.md)
+* [取得 App 評論](get-app-reviews.md)

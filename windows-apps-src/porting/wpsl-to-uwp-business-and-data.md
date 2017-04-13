@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 40b3d2b5b4bafac25726e27fd19a2cd5d71c4fa3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 860b42ca05c95768ca694d13971da278e2129142
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="porting-windows-phone-silverlight-business-and-data-layers-to-uwp"></a>移植 Windows Phone Silverlight 商務與資料層至 UWP
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -52,9 +49,9 @@ UWP app 目前沒有內建處理大量資料案例 (如企業營運系統 (LOB) 
 
 Windows Phone Silverlight 應用程式可被置於休眠狀態，或甚至是被標記起來 (例如使用相片「選擇器」工作時)。 使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 類別的同時，UWP app 仍會保持使用中並且執行。
 
-## <a name="monetization-trial-mode-and-in-app-purchases"></a>賺錢 (試用模式和在在應用程式內購買)
+## <a name="monetization-trial-mode-and-in-app-purchases"></a>賺錢 (試用模式和在 app 內購買)
 
-Windows Phone Silverlight app 可以將 UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 類別用於其大部分的試用模式與在應用程式內購買功能，因此不需要移植該程式碼。 但是 Windows Phone Silverlight app 會呼叫 **MarketplaceDetailTask.Show** 來提供要供購買的 app：
+Windows Phone Silverlight app 可以將 UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) 類別用於其大部分的試用模式與 app 內購買功能，因此不需要移植該程式碼。 但是 Windows Phone Silverlight app 會呼叫 **MarketplaceDetailTask.Show** 來提供要供購買的 app：
 
 ```csharp
     private void Buy()
@@ -74,7 +71,7 @@ Windows Phone Silverlight app 可以將 UWP [**CurrentApp**](https://msdn.micr
     }
 ```
 
-如果您有模擬 app 購買和在在應用程式內購買功能的程式碼以供測試，則您可以移植該程式碼來改用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別。
+如果您有模擬 app 購買和在 app 內購買功能的程式碼以供測試，則您可以移植該程式碼來改用 [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別。
 
 ## <a name="notifications-for-tile-or-toast-updates"></a>磚或快顯通知更新的通知
 
@@ -145,5 +142,4 @@ Windows Phone Silverlight 應用程式對選用的 SD 記憶卡具有唯讀存�
 
 * [命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)
  
-
 

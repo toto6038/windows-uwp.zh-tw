@@ -2,23 +2,20 @@
 author: mcleanbyron
 ms.assetid: 9621641A-7462-425D-84CC-101877A738DA
 description: "了解如何從 UWP App 的 AdMediatorControl AdControl 中進行移轉。"
-title: "針對 UWP 應用程式從 AdMediatorControl 移轉到 AdControl"
+title: "從 AdMediatorControl 移轉到 AdControl"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, AdMediatorControl, AdControl, 移轉"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83235595a6a7f9e9b0b5d8de154d6e5d8a8db8ef
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 71928b67d3c2799b3d8d3711f6f7e5a3610e9c76
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="migrate-from-admediatorcontrol-to-adcontrol"></a>從 AdMediatorControl 移轉到 AdControl
 
-# <a name="migrate-from-admediatorcontrol-to-adcontrol-for-uwp-apps"></a>針對 UWP 應用程式從 AdMediatorControl 移轉到 AdControl
-
-先前的 Advertising SDK 會從 Microsoft 啟用的通用 Windows 平台 (UWP) 應用程式發行，以使用 **AdMediatorControl** 類別來顯示橫幅廣告，讓開發人員能夠藉由顯示來自我們合作夥伴網路 (AOL 和 AppNexus) 以及 AdDuplex 的橫幅廣告，以獲得最佳廣告收益。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 不再支援 **AdMediatorControl** 類別。 如果您現有的應用程式會使用來自舊版 SDK 的 **AdMediatorControl** 類別，而您想要將它移轉到使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP App，請遵循本文中的指示，更新您的程式碼來使用 **AdControl** 類別而不是 **AdMediatorControl** 類別。 您可以選擇性地使用加權或排名方法，設定 App 以利用 AdDuplex 傳達廣告。
+先前的 Advertising SDK 會從 Microsoft 啟用的通用 Windows 平台 (UWP) App 發行，以使用 **AdMediatorControl** 類別來顯示橫幅廣告，讓開發人員能夠藉由顯示來自我們合作夥伴網路 (AOL 和 AppNexus) 以及 AdDuplex 的橫幅廣告，以獲得最佳廣告收益。 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 不再支援 **AdMediatorControl** 類別。 如果您現有的應用程式會使用來自舊版 SDK 的 **AdMediatorControl** 類別，而您想要將它移轉到使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的 UWP App，請遵循本文中的指示，更新您的程式碼來使用 **AdControl** 類別而不是 **AdMediatorControl** 類別。 您可以選擇性地使用加權或排名方法，設定 App 以利用 AdDuplex 傳達廣告。
 
 >**注意**&nbsp;&nbsp;本文所提供的程式碼範例僅供說明之用。 您可能需要對程式碼範例進行調整，才能在 App 中使用。
 
@@ -28,15 +25,15 @@ ms.lasthandoff: 02/07/2017
 * 一部已安裝 Visual Studio 2015 和 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 的開發電腦。
 * 如果您想要利用 AdDuplex 傳達廣告，也必須要在開發電腦上安裝 [AdDuplex Windows 10 SDK](https://visualstudiogallery.msdn.microsoft.com/6930860a-e64b-4b46-9d72-62d7fddda077)。
 
-  >**注意**&nbsp;&nbsp;除了從上方連結執行 AdDuplex SDK 安裝程式之外，您也可以在 Visual Studio 2015 中安裝適用於您 UWP App 專案的 AdDuplex 程式庫。 在 Visual Studio 2015 中開啟您的 UWP App 專案，按一下 [專案]**** > [管理 NuGet 套件]****、搜尋名為 **AdDuplexWin10** 的 NuGet 套件，然後安裝該套件。
+  >**注意**&nbsp;&nbsp;除了從上方連結執行 AdDuplex SDK 安裝程式之外，您也可以在 Visual Studio 2015 中安裝適用於您 UWP App 專案的 AdDuplex 程式庫。 在 Visual Studio 2015 中開啟您的 UWP App 專案，按一下 **\[專案\]** > **\[管理 NuGet 套件\]**、搜尋名為 **AdDuplexWin10** 的 NuGet 套件，然後安裝該套件。
 
 ## <a name="step-1-retrieve-your-application-ids-and-ad-unit-ids"></a>步驟 1︰擷取您的應用程式識別碼和廣告單位識別碼
 
 當您移轉程式碼以使用 **AdControl** 類別時，您必須知道應用程式識別碼和廣告單位識別碼。 取得最新識別碼的最好方法是從您的流量分配設定檔中擷取它們。
 
 1. 登入 Windows 開發人員中心儀表板，然後按一下目前使用 **AdMediatorControl** 的 App。
-2. 依序按一下 [創造營收]**** 和 [利用廣告獲利]****。
-3. 在 [Windows 廣告流量分配]**** 區段中，按一下 [下載流量分配設定]**** 連結，並在文字編輯器 (例如 [記事本]) 中開啟 AdMediator.config 檔案。
+2. 依序按一下 **\[創造營收\]** 和 **\[利用廣告獲利\]**。
+3. 在 **\[Windows 廣告流量分配\]** 區段中，按一下 **\[下載流量分配設定\]** 連結，並在文字編輯器 (例如 [記事本]) 中開啟 AdMediator.config 檔案。
 4. 在檔案中，找出含有子元素 ```<Name>MicrosoftAdvertising</Name>``` 的 ```<AdAdapterInfo>``` 元素。 這個區段包含 Microsoft 付費廣告的設定。
 5. 在這個 ```<AdAdapterInfo>``` 元素中，找出包含 ```<Key>``` 元素且值為 **WApplicationId** 和 **WAdUnitId** 的 ```<Property>```。 在下列範例中，```<Value>``` 元素的值即為範例。
 
@@ -86,9 +83,9 @@ ms.lasthandoff: 02/07/2017
   >**注意**&nbsp;&nbsp;這些步驟假設您想要顯示廣告的 App 頁面包含名為 **myAdGrid** 的空方格，例如︰```<Grid x:Name="myAdGrid"/>```。 在這些步驟中，您將完全使用程式碼來建立並設定廣告控制項，而不使用 XAML。
 
 1. 在 Visual Studio 中，開啟您的 UWP App 專案。
-2.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考…]****。
-在 [參考管理員]**** 中，展開 [通用 Windows]****、按一下 [擴充功能]****，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)]**** 旁邊的核取方塊。
-3. 在 [參考管理員]**** 中，按一下 [確定]。
+2.  在 **\[方案總管\]** 視窗中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考…\]**。
+在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**、按一下 **\[擴充功能\]**，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
+3. 在 **\[參考管理員\]** 中，按一下 \[確定\]。
 4. 從您的 XAML 移除 **AdMediatorControl** 宣告，並移除任何使用這個 **AdMediatorControl** 物件的程式碼，包括任何相關的事件處理常式。
 5. 針對您想要顯示廣告的 App **Page**，開啟程式碼檔案。
 6. 請將下列陳述式新增到程式碼檔案頂端 (如果不存在)。
@@ -124,9 +121,9 @@ ms.lasthandoff: 02/07/2017
   >**注意**&nbsp;&nbsp;這些步驟假設您想要顯示廣告的 App 頁面包含名為 **myAdGrid** 的空方格，例如︰```<Grid x:Name="myAdGrid"/>```。 在這些步驟中，您將完全使用程式碼來建立並設定廣告控制項，而不使用 XAML。
 
 1. 在 Visual Studio 中，開啟您的 UWP App 專案。
-2.  在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考…]****。
-在 [參考管理員]**** 中，展開 [通用 Windows]****、按一下 [擴充功能]****，然後選取 [適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)]**** 旁邊的核取方塊。
-3. 在 [參考管理員]**** 中，按一下 [確定]。
+2.  在 **\[方案總管\]** 視窗中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考…\]**。
+在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**、按一下 **\[擴充功能\]**，然後選取 **\[適用於 XAML 的 Microsoft Advertising SDK (Version 10.0)\]** 旁邊的核取方塊。
+3. 在 **\[參考管理員\]** 中，按一下 \[確定\]。
 4. 從您的 XAML 移除 **AdMediatorControl** 宣告，並移除任何使用這個 **AdMediatorControl** 物件的程式碼，包括任何相關的事件處理常式。
 5. 針對您想要顯示廣告的 App **Page**，開啟程式碼檔案。
 6. 請將下列陳述式新增到程式碼檔案頂端 (如果它們尚未存在)。
@@ -165,4 +162,3 @@ ms.lasthandoff: 02/07/2017
 
   > [!div class="tabbedCodeSnippets"]
   [!code-cs[AdControl](./code/AdvertisingSamples/MigrateToAdControl/cs/ExamplePage1.xaml.cs#Snippet5)]
-

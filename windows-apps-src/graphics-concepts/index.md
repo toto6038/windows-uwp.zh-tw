@@ -2,21 +2,17 @@
 title: "Direct3D 圖形學習指南"
 description: "描述 Microsoft Direct3D 建置所依據的圖形概念。"
 ms.assetid: c3850a92-4d05-4f72-bf0f-6a0c79e841eb
-keywords:
-- "Direct3D 圖形學習指南"
+keywords: "Direct3D 圖形學習指南"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e62f9cfde35580dd384ef69fe6e5658d927ce3d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9d46a13844fafc5f517fce16c39e33257ff8e9a5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="direct3d-graphics-learning-guide"></a>Direct3D 圖形學習指南
 
 
@@ -43,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 </tr>
 <tr class="even">
 <td align="left"><p>[頂點和索引緩衝區](vertex-and-index-buffers.md)</p></td>
-<td align="left"><p><em>頂點緩衝區</em>是包含頂點資料的記憶體緩衝區。在頂點緩衝中處理頂點，以執行轉換、照明及裁剪。 <em>編製索引緩衝區</em>是包含索引資料的記憶體緩衝區，是置入頂點緩衝區的整數位移，用於呈現基本類型。</p></td>
+<td align="left"><p><em>頂點緩衝區</em>是包含頂點資料的記憶體緩衝區。在頂點緩衝中處理頂點，以執行轉換、照明及裁剪。 <em>索引緩衝區</em>是包含索引資料的記憶體緩衝區，是置入頂點緩衝區的整數位移，用於呈現基本類型。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[裝置](devices.md)</p></td>
@@ -93,4 +89,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

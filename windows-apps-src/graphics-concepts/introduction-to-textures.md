@@ -2,21 +2,17 @@
 title: "紋理簡介"
 description: "紋理資源是儲存紋素的資料結構，這是可讀取或寫入的最小紋理單位。 著色器讀取紋理時，可以由紋理樣本篩選。"
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
-keywords:
-- "紋理簡介"
+keywords: "紋理簡介"
 author: mtoepke
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ccdca1396673b0eed9ef74c5f0ce3a6f97e02b6d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d642668a9af1e62f232e13e411e51e6d850de7f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="introduction-to-textures"></a>紋理簡介
 
 
@@ -132,4 +128,3 @@ Texture2D 資源包含 2D 紋格。 每個紋素是由 u v 向量定位。 因�
 
 
 [紋理](textures.md)
-

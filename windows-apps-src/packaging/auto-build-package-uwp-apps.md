@@ -3,17 +3,15 @@ author: rmpablos
 title: "為您的 UWP app 設定自動化組建"
 description: "如何設定您的自動化組建以產生側載及/或儲存套件。"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 02/15/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 54dcebb0dc4b1a41acdae655b9caf14f72161f36
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -21,7 +19,7 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="select-the-right-type-of-build-agent"></a>選取正確的組建代理程式類型
 
-選擇您希望 VSTS 在執行建置處理序時使用的組建代理程式類型。 託管的組建代理程式是使用最常見的工具與 SDK 進行部署，且大部分情況下都可運作，請參閱[託管的組建伺服器上的軟體](https://www.visualstudio.com/en-us/docs/build/admin/agents/hosted-pool#software)一文。 不過，如果您需要對建置步驟有更多控制權，您可以建立自訂的組建代理程式。 您可以使用下表來協助您決定。
+選擇您希望 VSTS 在執行建置處理序時使用的組建代理程式類型。 託管的組建代理程式是使用最常見的工具與 SDK 進行部署，且大部分情況下都可運作，請參閱[託管的組建伺服器上的軟體](https://www.visualstudio.com/docs/build/admin/agents/hosted-pool#software)一文。 不過，如果您需要對建置步驟有更多控制權，您可以建立自訂的組建代理程式。 您可以使用下表來協助您決定。
 
 |**案例**|**自訂的代理程式**|**託管的組建代理程式**|
 -------------|----------------|----------------------|
@@ -34,13 +32,13 @@ ms.lasthandoff: 02/08/2017
 |使用累加建置|:white_check_mark:||
 
 >注意︰如果您計畫以 Windows 年度更新版 SDK (組建 14393) 為目標，您必須設定您的自訂組建代理程式，因為託管的組建集區只支援 SDK 10586 和 10240。 
-            [選擇 UWP 版本](https://msdn.microsoft.com/en-us/windows/uwp/updates-and-versions/choose-a-uwp-version)的詳細資訊
+            [選擇 UWP 版本](https://msdn.microsoft.com/windows/uwp/updates-and-versions/choose-a-uwp-version)的詳細資訊
 
 #### <a name="create-a-custom-build-agent-optional"></a>建立自訂的組建代理程式 (選用)
 
 如果您選擇建立自訂的組建代理程式，您將需要通用 Windows 平台工具。 這些工具是 Visual Studio 的一部分。 您可以使用 Visual Studio Community 版。
 
-若要深入了解，請參閱[在 Windows 上部署代理程式](https://www.visualstudio.com/en-us/docs/build/admin/agents/v2-windows)。 
+若要深入了解，請參閱[在 Windows 上部署代理程式](https://www.visualstudio.com/docs/build/admin/agents/v2-windows)。 
 
 若要執行 UWP 單元測試，您必須執行下列動作：• 部署和啟動您的應用程式。 • 在互動模式中執行 VSTS 代理程式。 • 將您的代理程式設定為在重新開機之後自動登入。
 
@@ -114,7 +112,7 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 因為我們已經將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，所以構件資料夾會包含您上傳到市集的套件 (appxupload) 以及啟用側載的套件 (appxbundle)。
 
 
->注意︰根據預設，VSTS 代理程式會維持所產生的最新 appx 套件。 如果您只想要儲存目前組建的構件，請設定組建以清除二進位檔目錄。 若要這樣做，請新增一個名為 `Build.Clean` 的變數，然後將它的值設定為 `all`。 若要深入了解，請參閱[指定儲存機制](https://www.visualstudio.com/en-us/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)。
+>注意︰根據預設，VSTS 代理程式會維持所產生的最新 appx 套件。 如果您只想要儲存目前組建的構件，請設定組建以清除二進位檔目錄。 若要這樣做，請新增一個名為 `Build.Clean` 的變數，然後將它的值設定為 `all`。 若要深入了解，請參閱[指定儲存機制](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)。
 
 #### <a name="the-types-of-automated-builds"></a>自動化組建類型
 接下來，您將使用您的組建定義建立自動化組建。 下表說明您可以建立的每一種自動化組建。 
@@ -309,8 +307,8 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 此指令碼會將憑證新增到本機電腦的 [信任的根憑證] 區段，然後將會安裝或更新 appx 檔案。
 
-#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows 10 年度更新版側載您的 App
-在 Windows 10 年度更新版中，您可以按兩下 appxbundle 檔案，並透過選擇對話方塊中的 [安裝] 按鈕來安裝您的 App。 
+#### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 年度更新版側載您的 App
+在 Windows10 年度更新版中，您可以按兩下 appxbundle 檔案，並透過選擇對話方塊中的 [安裝] 按鈕來安裝您的 App。 
 
 
 ![在 rs1 側載](images/building-screen18.png) 
@@ -321,11 +319,11 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>簽署憑證的最佳做法 
-Visual Studio 會產生每個專案的憑證。 這會讓您難以維護有效憑證的規劃清單。 如果您打算建立數個 App，您可以建立可簽署您所有 App 的單一憑證。 然後，信任您憑證的每部裝置都將能夠側載您任何的 App 而不需要安裝其他憑證。 若要深入了解，請參閱[如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)。
+Visual Studio 會產生每個專案的憑證。 這會讓您難以維護有效憑證的規劃清單。 如果您打算建立數個 App，您可以建立可簽署您所有 App 的單一憑證。 然後，信任您憑證的每部裝置都將能夠側載您任何的 App 而不需要安裝其他憑證。 若要深入了解，請參閱[如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)。
 
 
 #### <a name="create-a-signing-certificate"></a>建立簽署憑證
-使用 [MakeCert.exe](https://msdn.microsoft.com/en-us/library/windows/desktop/ff548309(%09v=vs.85).aspx) 工具來建立憑證。 以下範例是透過使用 MakeCert.exe 工具建立憑證。
+使用 [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/ff548309.aspx) 工具來建立憑證。 以下範例是透過使用 MakeCert.exe 工具建立憑證。
 
 ```
 MakeCert /n publisherName /r /h 0 /eku "1.3.6.1.5.5.7.3.3,1.3.6.1.4.1.311.10.3.13" /e expirationDate /sv MyKey.pvk MyKey.cer
@@ -361,8 +359,7 @@ Visual Studio 和 MSBuild 提供不同的選項來管理您用來簽署 App 的�
 註冊憑證最簡單的方式是按兩下 .cer 檔案，然後依照精靈中的步驟將憑證儲存在 [本機電腦] 與 [受信任的人] 存放區。
 
 ## <a name="related-topics"></a>相關主題
-* [建置適用於 Windows 的.NET App](https://www.visualstudio.com/en-us/docs/build/get-started/dot-net) 
+* [建置適用於 Windows 的.NET App](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-* [在 Windows 10 中側載 LOB App](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)
-
+* [在 Windows10 中側載 LOB App](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+* [如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)

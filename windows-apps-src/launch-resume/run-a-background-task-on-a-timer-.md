@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3708a9b7768d4fb7fbb6af0e55836471a2ba29ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6f834c91cd0c71f6d7687d9f69224ed747e45a6d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -46,13 +43,13 @@ ms.lasthandoff: 02/07/2017
 
     例如，這個觸發程序將導致背景工作一個小時執行一次：
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-    > ```
-    > ```cpp
-    > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
+> ```
+> ```cpp
+> TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
+> ```
 
 ## <a name="optional-add-a-condition"></a>(選用) 新增條件
 
@@ -60,25 +57,25 @@ ms.lasthandoff: 02/07/2017
 
     這個範例中，條件是設成 **UserPresent**，因此觸發後工作只有在使用者作用中時才會執行一次。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
-    > ```
-    > ```cpp
-    > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> SystemCondition userCondition = new SystemCondition(SystemConditionType.UserPresent);
+> ```
+> ```cpp
+> SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
+> ```
 
 ##  <a name="call-requestaccessasync"></a>呼叫 RequestAccessAsync()
 
 -   嘗試登錄 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 背景工作之前，請先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)。
 
-    > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > BackgroundExecutionManager.RequestAccessAsync();
-    > ```
-    > ```cpp
-    > BackgroundExecutionManager::RequestAccessAsync();
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> BackgroundExecutionManager.RequestAccessAsync();
+> ```
+> ```cpp
+> BackgroundExecutionManager::RequestAccessAsync();
+> ```
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
@@ -89,28 +86,28 @@ ms.lasthandoff: 02/07/2017
 
     The following code registers a background task that runs out-of-process:
 
-    > > [!div class="tabbedCodeSnippets"]
-    > ```cs
-    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > string taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
-    > ```cpp
-    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
-    > String ^ taskName   = "Example hourly background task";
-    >
-    > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
-    > ```
+> [!div class="tabbedCodeSnippets"]
+> ```cs
+> string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> string taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
+> ```cpp
+> String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+> String ^ taskName   = "Example hourly background task";
+>
+> BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
+> ```
 
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
 
 ## <a name="remarks"></a>備註
 
 > **注意** 從 Windows 10 開始，使用者不再需要將您的應用程式新增到鎖定畫面，就可以使用背景工作。 如需有關背景工作觸發程序類型的指引，請參閱[使用背景工作支援 app](support-your-app-with-background-tasks.md)。
 
-> **注意** 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **注意** 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -127,4 +124,3 @@ ms.lasthandoff: 02/07/2017
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
 * [如何在 Windows 市集應用程式觸發暫停、繼續以及背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-

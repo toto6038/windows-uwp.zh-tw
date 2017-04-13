@@ -2,21 +2,17 @@
 title: "矩形"
 description: "在整個 Direct3D 及 Windows 程式設計中，螢幕上的物件會以週框的形式參照。"
 ms.assetid: 3B78AE66-2C1A-4191-BDCA-D737E33460BA
-keywords:
-- "矩形"
+keywords: "矩形"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a532179df604a1b241564b0d134871e384c6b32d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2128dd8fa6ff22e20cd8a25dea0fd44431c1fae2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="rectangles"></a>矩形
 
 
@@ -52,7 +48,6 @@ typedef struct tagRECT {
  
 
  
-
 
 
 

@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows Store collection API, view products, Windows 市集集合, 檢視產品"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 29db10862533e7b15c7a676fc3aecd4ba58f9514
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="query-for-products"></a>查詢產品
 
 
-在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。
+請在 Windows 市集集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。
 
 這個方法是專門讓您的服務回應來自應用程式的訊息時所呼叫的方法。 您的服務不應該依排程定期輪詢所有的使用者。
 
@@ -88,7 +85,7 @@ ProductSkuId 物件包含下列參數。
 
 <span/>
 
-### <a name="request-example"></a>要求範例
+### <a name="request-example"></a>要求的範例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/query HTTP/1.1
@@ -123,7 +120,7 @@ Content-Type: application/json
 ## <a name="response"></a>回應
 
 
-### <a name="response-body"></a>回應本文
+### <a name="response-body"></a>回應主體
 
 | 參數         | 類型                     | 描述          | 必要 |
 |-------------------|--------------------------|-----------------------|----------|
@@ -141,16 +138,16 @@ CollectionItemContractV6 物件包含下列參數。
 | devOfferId           | 字串             | 來自 App 內購買的優惠識別碼。              | 否       |
 | endDate              | datetime           | 項目的結束日期。              | 是      |
 | fulfillmentData      | 字串             | 不適用         | 否       |
-| inAppOfferToken      | 字串             | 指派給 Windows 開發人員中心儀表板中項目的開發人員特定產品識別碼字串。 例如，產品識別碼是「product123」**。 | 否       |
+| inAppOfferToken      | 字串             | 指派給 Windows 開發人員中心儀表板中項目的開發人員特定產品識別碼字串。 例如，產品識別碼是*「product123」*。 | 否       |
 | itemId               | 字串             | 能將此集合項目與使用者擁有的其他項目區別的識別碼。 每個產品的此識別碼都是唯一的。   | 是      |
 | localTicketReference | 字串             | 要求本文中先前所提供 *localTicketReference* 的識別碼。                  | 是      |
 | modifiedDate         | datetime           | 此項目上次修改的日期。              | 是      |
 | orderId              | 字串             | 如果存在，則取得此項目的訂單識別碼。              | 否       |
 | orderLineItemId      | 字串             | 如果存在，則取得此項目之特定訂單的明細項目。              | 否       |
-| ownershipType        | 字串             | 字串為「OwnedByBeneficiary」**。   | 是      |
+| ownershipType        | 字串             | 字串為*「OwnedByBeneficiary」*。   | 是      |
 | productId            | 字串             | Windows 市集目錄中[產品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的[市集識別碼](in-app-purchases-and-trials.md#store-ids)。 例如，產品的市集識別碼是 9NBLGGH42CFD。          | 是      |
 | productType          | 字串             | 下列其中一個產品類型：**Application**、**Durable** 及 **UnmanagedConsumable**。        | 是      |
-| purchasedCountry     | 字串             | 無   | 否       |
+| purchasedCountry     | 字串             | 不適用   | 否       |
 | purchaser            | IdentityContractV6 | 如果存在，則代表項目購買者的身分識別。 請在下方參閱此物件的詳細資料。        | 否       |
 | quantity             | 數字             | 項目的數量。 目前此值永遠為 1。      | 否       |
 | skuId                | 字串             | Windows 市集目錄中[產品 SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities)的[市集識別碼](in-app-purchases-and-trials.md#store-ids)。 例如，SKU 的市集識別碼是 0010。     | 是      |
@@ -166,12 +163,12 @@ IdentityContractV6 物件包含下列參數。
 
 | 參數     | 類型   | 描述                                                                        | 必要 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| identityType  | 字串 | 包含「pub」**值。                                                      | 是      |
+| identityType  | 字串 | 包含*「pub」*值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Windows 市集識別碼金鑰之 *publisherUserId* 的字串值。 | 是      |
 
 <span/> 
 
-### <a name="response-example"></a>回應範例
+### <a name="response-example"></a>回應的範例
 
 ```syntax
 HTTP/1.1 200 OK
@@ -219,4 +216,3 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [將消費性產品回報為已完成](report-consumable-products-as-fulfilled.md)
 * [授與免費產品](grant-free-products.md)
 * [更新 Windows 市集識別碼金鑰](renew-a-windows-store-id-key.md)
-

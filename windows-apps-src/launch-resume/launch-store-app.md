@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d80055e8c8ca1e8586cb8f2a54612206301282a1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 48ca3f21a114c54146065e6ba971ccb30bd33351
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-store-app"></a>啟動 Windows 市集應用程式
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主題描述 **ms-windows-store:** URI 配置。 您的 app 可以使用此 URI 配置，將 Windows 市集 app 啟動到市集中的特定頁面。
 
@@ -136,4 +133,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

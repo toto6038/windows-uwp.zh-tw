@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: "啟動 Windows 地圖應用程式"
+title: "啟動 Windows 地圖 app"
 description: "了解如何從您的應用程式啟動 Windows 地圖應用程式。"
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.author: twhitney
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c9c359fd424b4c9526ebfc610adc7097bb83cbda
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cfaa7c96a3ec8bf50f19ee699ff74b037500a838
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題描述 **bingmaps:、ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 統一資源識別項 (URI) 配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
@@ -333,8 +330,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>定義要在地圖上繪製的路線起點和終點，以波狀符號 (**~**) 分隔。 每個導航點都是由使用緯度、經度和選擇性標題或地址識別碼的位置來定義。</p>
 <p>完整的路線會正好包含兩個導航點。 例如，<code>rtp="A"~"B"</code> 會定義具有兩個導航點的路線。</p>
-<p>也可以接受指定不完整的路線。 例如，您可以使用 <code>rtp="A"~</code> 僅定義路線的起點。 在此情況下，顯示路線指引輸入時，[從]**** 欄位中會有所提供的導航點，而 [到]**** 欄位則為焦點所在。</p>
-<p>如果只指定路線的終點，如同<code>rtp=~"B"</code>，則在顯示路線指引面板時，[到]**** 欄位中會有提供的導航點。 如果有正確的目前位置，將會在具有焦點的 [從]**** 欄位中預先填入目前所在位置。</p>
+<p>也可以接受指定不完整的路線。 例如，您可以使用 <code>rtp="A"~</code> 僅定義路線的起點。 在此情況下，顯示路線指引輸入時，**\[從\]** 欄位中會有所提供的導航點，而 **\[到\]** 欄位則為焦點所在。</p>
+<p>如果只指定路線的終點，如同<code>rtp=~"B"</code>，則在顯示路線指引面板時，**\[到\]** 欄位中會有提供的導航點。 如果有正確的目前位置，將會在具有焦點的 **\[從\]** 欄位中預先填入目前所在位置。</p>
 <p>提供的路線不完整時，不會繪製任何路線圖。</p>
 <p>與 **mode** 參數搭配使用可指定交通模式 (開車、運輸工具或步行)。 若未指定 **mode**，則會以使用者的交通喜好設定模式提供路線指引。</p>
 <div class="alert">
@@ -433,4 +430,3 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
  
 
  
-

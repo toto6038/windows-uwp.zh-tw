@@ -1,17 +1,9 @@
 ---
 redirect_url: https://msdn.microsoft.com/windows/uwp/publish/set-your-add-on-product-id
-translationtype: Human Translation
-ms.sourcegitcommit: 0edf45e997f36a82a8bfcb92c1d8fd2c79242461
-ms.openlocfilehash: 1552dc14937c704e1db710cf5226d8b698ce890f
-
+ms.openlocfilehash: ac52ca6a8ea28e665b8ede4ceeb6a79deb25d544
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# 設定您的 IAP 產品類型和產品識別碼
+# <a name="set-your-iap-product-type-and-product-id"></a>設定您的 IAP 產品類型和產品識別碼
 
 此頁面重新導向至︰ 設定您的附加內容產品類型和產品識別碼
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

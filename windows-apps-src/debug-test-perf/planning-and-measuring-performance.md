@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f66617e3131399a1cfcac17f258cc3b42c6810d2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="planning-for-performance"></a>規劃效能
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。
@@ -168,9 +166,9 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 -   針對各種硬體設定進行測試，包含全方位電腦和桌上型電腦、膝上型電腦、輕量級筆記型電腦、平板電腦及其他行動裝置。
 -   針對各種螢幕大小進行測試。 雖然較寬的螢幕大小可以顯示更多內容，但是顯示這些額外內容可能對效能產生負面影響。
 -   盡可能排除測試變數。
-    -   關閉測試裝置上的背景 App。 若要這樣做，請在 Windows 中，從 [開始] 功能表選取 [設定]**** &gt; [個人化]**** &gt; [鎖定畫面]****。 選取每個使用中的 App，然後選取 [無]****。
+    -   關閉測試裝置上的背景 App。 若要這樣做，請在 Windows 中，從 [開始] 功能表選取 **\[設定\]** &gt; **\[個人化\]** &gt; **\[鎖定畫面\]**。 選取每個使用中的 App，然後選取 **\[無\]**。
     -   將 app 編譯為原生程式碼，方法是在發行組態中建置，然後再將它部署到測試裝置。
-    -   若要確保自動維護不會影響測試裝置的效能，請手動觸發程序並等候它完成。 在 Windows 中，於 [開始] 功能表中搜尋 [安全性與維護]****。 在 [維護]**** 區域的 [自動維護]**** 底下，選取 [開始維護]**** 並且等待狀態從 [正在進行維護]**** 變更。
+    -   若要確保自動維護不會影響測試裝置的效能，請手動觸發程序並等候它完成。 在 Windows 中，於 [開始] 功能表中搜尋 **\[安全性與維護\]**。 在 **\[維護\]** 區域的 **\[自動維護\]** 底下，選取 **\[開始維護\]** 並且等待狀態從 **\[正在進行維護\]** 變更。
     -   執行 app 多次有助於排除隨機測試變數，並確保測量結果一致。
 -   降低的電源可用性測試。 使用者裝置的電源可能遠遠小於您開發電腦的電源。 Windows 是針對低電源裝置 (例如行動裝置) 所設計。 在平台上執行的 app 應該確定可以順利在這些裝置上執行。 我們發現低電源裝置的運作速度大約是桌上型電腦的四分之一，您必須據此設定您的目標。
 -   使用工具的組合 (例如 Microsoft Visual Studio 和 Windows Performance Analyzer) 測量 app 效能。 Visual Studio 的設計是提供以 app 為主的分析，例如原始程式碼連結。 Windows Performance Analyzer 的設計則是提供以系統為主的分析，例如提供系統資訊、觸控操作事件的相關資訊，以及磁碟輸入/輸出 (I/O) 和圖形處理器 (GPU) 成本的相關資訊。 兩個工具都提供追蹤擷取和匯出，而且可以重新開啟共用追蹤和事後追蹤。
@@ -197,5 +195,4 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 ## <a name="optimizing"></a>最佳化
 
 僅最佳化您的 app 中的效能關鍵程式碼路徑：花費大部分時間的項目。 分析會告訴您是哪些項目。 您通常必須在建立遵循最佳設計做法的軟體和編寫最佳化程式碼這兩者間做出取捨。 在效能較不重要的地方，您最好以開發人員生產力和良好的軟體設計為優先考量。
-
 

@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 57341e52ad51e446e6828e5b4ba6228094152d7f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 30849b23e9fbdca38f8401afe0f6f7df4b498121
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-getting-around-in-visual-studio"></a>開始使用：使用 Visual Studio
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="getting-around-in-microsoft-visual-studio"></a>使用 Microsoft Visual Studio
 
@@ -52,7 +49,7 @@ Visual Studio 與 Xcode 不一樣，後者會將配置及繫結資訊隱藏在 .
 
 讓我們來變更按鈕的詳細資料。 稍後您將會了解，若要在 Xcode 中變更按鈕的名稱，您會在其屬性面板中，變更 \[**標題**\] 欄位中的值。
 
-使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 [名稱]**** 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
+使用 Visual Studio 時，您會執行非常類似的動作。 在 \[**設計**\] 窗格中，點選按鈕讓它成為焦點。 接著，在 \[**屬性**\] 窗格中，將 \[**內容**\] 方塊的值從「Button」變更為「Press Me」。 接下來，藉由將 **\[名稱\]** 值從 [&lt;No Name&gt;] 變更為 [myButton] 來更新按鈕控制項的名稱，如下所示：
 
 ![Visual Studio 中的按鈕屬性視窗](images/ios-to-uwp/vs-button-properties.png)
 
@@ -98,7 +95,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 1.  點選 MainPage.xaml 檔案索引標籤。
 2.  在 \[**設計**\] 窗格中，點選 \[**TextBlock**\] 控制項。
 3.  在 \[**屬性**\] 窗格中，點選扳手按鈕以顯示其屬性。
-4.  在 [名稱]**** 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
+4.  在 **\[名稱\]** 方塊中，將 &lt;No Name&gt; 變更為 myLabel。
 
 ![Visual Studio 中的標籤屬性視窗](images/ios-to-uwp/vs-label-properties.png)
 
@@ -129,5 +126,4 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 ## <a name="next-step"></a>下一步
 
 [開始使用：常用控制項](getting-started-common-controls.md)
-
 

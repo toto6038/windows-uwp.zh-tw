@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 058858be62a2d6bf3afc0c9461090d0211b39ebd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 66afc2412323817f15594bb25e8f86475fc6f73f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -95,7 +92,7 @@ UI 考量
 
 ## <a name="xbox-and-tv"></a>Xbox 和電視
 
-坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為「10 英呎體驗」****。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
+坐在房間一端的沙發上，使用遊戲台或遙控器與電視互動的體驗，稱為**「10 英呎體驗」**。 這個名稱的由來是因為使用者通常坐在離螢幕大約 10 英呎遠的位置。 這是一個獨特的挑戰，因為我們不會稱與電腦互動是 *2 英呎*體驗。 如果您為 Xbox One 或任何其他連接至電視螢幕的裝置開發應用程式，並且可能使用遊戲台或遙控器作為輸入，您就必須記住這一點。
 
 為 10 英呎體驗設計 UWP 應用程式，與為這裡所列出的任何其他裝置類別設計 UWP 應用程式十分不同。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](designing-for-tv.md)。
 

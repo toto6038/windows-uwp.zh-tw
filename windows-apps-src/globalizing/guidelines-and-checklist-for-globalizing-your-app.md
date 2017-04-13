@@ -1,7 +1,7 @@
 ---
 author: DelfCo
-Description: "當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。"
-Search.Refinement.TopicID: 180
+Description: "在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。"
+Search.Refinement.TopicID: "180"
 title: "全球化與當地語系化的指導方針"
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
@@ -12,17 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5b3945f67ec1aa52b588b6364dbd04533968d24
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 84d502b9fd10e82be428cd775cc1225d849b68e1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="globalization-and-localization-dos-and-donts"></a>全球化和當地語系化的可行與禁止事項
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。
+在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -102,7 +99,7 @@ ms.lasthandoff: 02/07/2017
 <tr class="even">
 <td align="left"><p>不要單獨使用字串比較來比較語言標記。</p></td>
 <td align="left"><p>BCP-47 語言標記很複雜。 在比較語言標記時會產生許多問題，包括比對指令碼資訊、傳統標記及多個地區變體的問題。 Windows 中的資源管理系統會為您處理比對工作。 您可以使用任何語言指定一組資源，系統就會為使用者和應用程式選擇適當的資源。</p>
-<p>如需資源管理得更多資訊，請參閱[<strong>定義應用程式資源</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。</p></td>
+<p>如需資源管理得更多資訊，請參閱[<strong>定義 app 資源</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>不要假設排序總是依字母順序。</p></td>
@@ -194,7 +191,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -2,21 +2,17 @@
 title: "複製和存取資源資料"
 description: "使用方式旗幟表示了應用程式將會如何使用資源資料，並在可能的情況下將資源放置於記憶體中效能最佳的區域。 資源資料在所有資源中都會被複製，以便 CPU 或 GPU 可以在不影響效能的情況下進行存取。"
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
-keywords:
-- "複製和存取資源資料"
+keywords: "複製和存取資源資料"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1dc6853a5675b6e22300650a5c44519436c391d0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e26e6abf4b15584f8c04a837dcc6bd23aad0f1d0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="copying-and-accessing-resource-data"></a>複製和存取資源資料
 
 
@@ -62,7 +58,7 @@ GPU/CPU 平行處理原則中最糟的情況，就是強制一個處理器等候
 
 其優點在於應用程式不需要在 CPU 存取資料時才付出效能降低的成本，即呼叫 Map 方法時。 若 Map 方法在資料確實複製後才被呼叫，便不會造成任何效能上的損失。 另一方面，若 Map 方法在資料複製之前就被呼叫，便會發生管線停頓。
 
-Direct3D 中的非同步呼叫 (大部分的方法都是非同步的，尤其是轉譯呼叫) 會儲存在所謂的「命令緩衝區」**中。 這個緩衝區位於圖形驅動程式的內部，並用來對基礎硬體進行批次呼叫，使 Microsoft Windows 從使用者模式切換至核心模式這種極為耗費成本狀況的發生能夠盡量減少。
+Direct3D 中的非同步呼叫 (大部分的方法都是非同步的，尤其是轉譯呼叫) 會儲存在所謂的*「命令緩衝區」*中。 這個緩衝區位於圖形驅動程式的內部，並用來對基礎硬體進行批次呼叫，使 Microsoft Windows 從使用者模式切換至核心模式這種極為耗費成本狀況的發生能夠盡量減少。
 
 命令緩衝區在下列四種情況下會被排清，並造成使用者/核心模式的切換。
 
@@ -139,7 +135,6 @@ Direct3D 中的非同步呼叫 (大部分的方法都是非同步的，尤其是
  
 
  
-
 
 
 

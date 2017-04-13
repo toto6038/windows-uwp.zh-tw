@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "了解如何在 Windows 市集中促銷您的 app 和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您應用程式的建議。"
+Description: "了解如何在 Windows 市集中促銷您的 app 和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。"
 title: "Windows 市集應用程式行銷指導方針"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 518631e791746259dc4ee6f23184c8fc01ace427
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e7d327cbe8d99b6b10ae4ccdeb8c7a6f0ee2ac5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-store-app-marketing-guidelines"></a>Windows 市集應用程式行銷指導方針
 
-了解如何在 Windows 市集中促銷您的應用程式和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
+了解如何在 Windows 市集中促銷您的 app 和內容。 這些指導方針涵蓋如何使用您可以取得的資源，以及使用印刷品、電視、社交媒體與數位廣告促銷您 app 的建議。
 
 ## <a name="store-badges"></a>市集徽章
 
@@ -55,7 +52,6 @@ Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使�
  
 
  
-
 
 
 

@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: "在 Windows 市集提交 API 中使用這個方法，取得套件正式發行前小眾測試版提交的狀態。"
-title: "使用 Windows 市集提交 API 取得套件正式發行前小眾測試版提交的狀態"
+title: "取得套件正式發行前小眾測試版提交的狀態"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交, 狀態"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5bc88cd8c7cdf2e56ac719d33cc2abf228b0803b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06367fd2110b66fc36babf137a12b482df4f7d40
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="get-the-status-of-a-package-flight-submission-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 取得套件正式發行前小眾測試版提交的狀態
+# <a name="get-the-status-of-a-package-flight-submission"></a>取得套件正式發行前小眾測試版提交的狀態
 
 
 
@@ -35,7 +32,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -62,9 +59,9 @@ ms.lasthandoff: 02/07/2017
 
 <span/>
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
-不提供此方法的要求本文。
+不提供此方法的要求主體。
 
 ### <a name="request-example"></a>要求範例
 
@@ -90,7 +87,7 @@ Authorization: Bearer <your access token>
 }
 ```
 
-### <a name="response-body"></a>回應本文
+### <a name="response-body"></a>回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -121,4 +118,3 @@ Authorization: Bearer <your access token>
 * [認可 App 提交](commit-an-app-submission.md)
 * [更新 App 提交](update-an-app-submission.md)
 * [刪除 App 提交](delete-an-app-submission.md)
-

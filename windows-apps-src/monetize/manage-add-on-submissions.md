@@ -2,21 +2,18 @@
 author: mcleanbyron
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理附加元件提交。"
-title: "使用 Windows 市集提交 API 管理附加元件提交"
+title: "管理附加元件提交"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件提 交, 應用程式內產品, IAP"
-translationtype: Human Translation
-ms.sourcegitcommit: e5d9d3e08aaae7e349f7aaf23f6683e2ce9a4f88
-ms.openlocfilehash: 589946e159202c3ed5d13057642c808d5df4f738
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7743faa9e2fda84d85468193ff46c87bab267a6c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# <a name="manage-add-on-submissions-using-the-windows-store-submission-api"></a>使用 Windows 市集提交 API 管理附加元件提交
+# <a name="manage-add-on-submissions"></a>管理附加元件提交
 
 Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱為應用程式內產品或 IAP) 提交的應用程式。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
@@ -140,7 +137,7 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
   GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
   ```
 
-  若要確認提交狀態，請檢閱回應主體中的「狀態」**值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+  若要確認提交狀態，請檢閱回應主體中的*「狀態」*值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
 7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
 
@@ -198,7 +195,7 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
     },
     "sales": [],
     "priceId": "Free",
-    "isAdvancedPricingModel": "true"
+    "isAdvancedPricingModel": true
   },
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
@@ -234,13 +231,13 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 |------------|--------|----------------------|
 | id            | 字串  | 提交的識別碼。  |
 | contentType           | 字串  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
-| keywords           | 陣列  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的應用程式可以使用這些關鍵字查詢附加元件。   |
+| keywords           | array  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
 | lifetime           | 字串  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | 物件  |  索引鍵/值組的字典，其中每個索引鍵都是兩個字母的 ISO 3166-1 alpha-2 國家/地區代碼，而每個值都是[清單資源](#listing-object)，其中包含附加元件的清單資訊。  |
 | pricing           | 物件  | [定價資源](#pricing-object)包含附加元件的定價資訊。   |
 | targetPublishMode           | 字串  | 提交的發佈模式。 這可以是下列其中一個值： <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | 字串  | 如果將 *targetPublishMode* 設為 SpecificDate，則為 ISO 8601 格式的提交發佈日期。  |
-| tag           | 字串  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為「標記」**)。   |
+| tag           | 字串  |  附加元件的[自訂開發人員資料](../publish/enter-add-on-properties.md#custom-developer-data) (此資訊以前稱為*「標記」*)。   |
 | visibility  | 字串  |  附加元件的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>  |
 | status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
@@ -286,7 +283,7 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 
 此資源包含附加元件的銷售資訊。
 
->**重要**&nbsp;&nbsp;「銷售」****資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料︰
+>**重要**&nbsp;&nbsp;**「銷售」**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料︰
 
    > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的銷售資料。
    > * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的銷售資料。
@@ -331,7 +328,7 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 
 | 值           | 類型    | 描述               |
 |-----------------|---------|------|
-|     date            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
+|     日期            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
 
 ## <a name="enums"></a>列舉
@@ -345,10 +342,10 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 
 | 值           | 描述       |
 |-----------------|------|
-|  基本               |   未設定價格區間；使用附加元件的基本價格。      |     
+|  Base               |   未設定價格區間；使用附加元件的基本價格。      |     
 |  NotAvailable              |   特定區域中無法使用此附加元件。    |     
 |  Free              |   附加元件是免費的。    |    
-|  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整價格區表，包括與每一層相關聯的市場特定價格，請移至適用於開發人員中心儀表板中的應用程式提交的任何**價格與可用性**網頁，並按一下 \[市場和自訂價格\]****區段的**檢視表格**連結 (對於某些開發人員帳戶，此連結為**價格**區段)。     |
+|  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整價格區表，包括與每一層相關聯的市場特定價格，請移至適用於開發人員中心儀表板中的應用程式提交的任何**價格與可用性**網頁，並按一下 **\[市場和自訂價格\]** 區段的**檢視表格**連結 (對於某些開發人員帳戶，此連結為**價格**區段)。     |
 
 <span id="submission-status-code" />
 ### <a name="submission-status-code"></a>提交狀態碼
@@ -379,4 +376,3 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 * [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Windows 市集提交 API 管理附加元件](manage-add-ons.md)
 * [開發人員中心儀表板中的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
-

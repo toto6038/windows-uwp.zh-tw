@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 113f0ce8e59bab716443c0a74ca39649a1bb83ac
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1bfd2c4a6f9dc2cb01241b2ee9899ff7edd46ae2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-app-resume"></a>處理應用程式繼續執行
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -100,13 +97,12 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remarks"></a>備註
 
-當您的 App 連接至 Visual Studio 偵錯工具時，系統將不會暫停它。 不過，您可以從偵錯工具暫停它，然後將 **Resume** 事件傳送給它，以便對您的程式碼進行偵錯。 請確定可看見 [偵錯位置工具列]****，然後按一下 [暫停]**** 圖示旁邊的下拉式清單。 然後選擇 [繼續]****。
+當您的 App 連接至 Visual Studio 偵錯工具時，系統將不會暫停它。 不過，您可以從偵錯工具暫停它，然後將 **Resume** 事件傳送給它，以便對您的程式碼進行偵錯。 請確定可看見 **\[偵錯位置工具列\]**，然後按一下 **\[暫停\]** 圖示旁邊的下拉式清單。 然後選擇 **\[繼續\]**。
 
-就「Windows Phone 市集」應用程式而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在應用程式目前已被暫停，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，app 可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
+就「Windows Phone 市集」應用程式而言，[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件的後面一律跟著 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)，即使在應用程式目前已被暫停，而使用者從主要磚或應用程式清單重新啟動應用程式的情況下，也是如此。 如果目前的視窗中已有設定的內容，App 便可以略過初始化程序。 您可以檢查 [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) 屬性，以判斷 app 是從主要磚還是次要磚啟動，然後根據該資訊，決定您是要呈現全新的 app 體驗，還是繼續 app 體驗。
 
 ## <a name="related-topics"></a>相關主題
 
 * [App 週期](app-lifecycle.md)
 * [處理 app 啟用](activate-an-app.md)
 * [處理 app 暫停](suspend-an-app.md)
-

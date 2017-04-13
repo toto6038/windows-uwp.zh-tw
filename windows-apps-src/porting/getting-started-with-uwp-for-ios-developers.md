@@ -1,6 +1,6 @@
 ---
 author: mcleblanc
-description: "適用於 iOS 開發人員的 UWP 入門"
+description: "開始使用適用於 iOS 開發人員的 UWP"
 title: "適用於 iOS 開發人員的 UWP 入門"
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 ms.author: markl
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-with-uwp-for-ios-developers"></a>適用於 iOS 開發人員的 UWP 入門
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 文件中也會介紹在開始撰寫應用程式之前，您需要知道的部分概念，並涵蓋您如何在 Windows 市集上發佈您的作品。
 
@@ -46,4 +43,3 @@ Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、
  
 
  
-

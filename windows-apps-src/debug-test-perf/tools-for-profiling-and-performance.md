@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51304d873261466afc9014224b918b82603f00e8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0a1a955d464fe875afdeef74d3ffa23a43e1406b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="tools-for-profiling-and-performance"></a>分析和效能的工具
 
@@ -33,5 +31,4 @@ Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) App �
 | [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows Performance Analyzer (WPA) 包含在 Windows 評定及部署套件 (Windows ADK) 中，這項工具會針對 Windows Performance Recorder (WPR)、Xperf 或在評定平台中執行的評定所記錄的「Windows 事件追蹤 (ETW)」事件，建立圖形和資料表格。 WPA 可以開啟任何事件追蹤記錄 (ETL) 檔案進行分析。 |
 
  
-
 

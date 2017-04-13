@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 description: "了解如何將您的應用程式更新成使用最新支援的 Microsoft Advertising 程式庫，並確定您的應用程式會繼續接收橫幅廣告。"
-title: "將您的應用程式更新到最新的 Microsoft Advertising 程式庫"
+title: "將您的 App 更新到最新的 Advertising 程式庫"
 ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,33 +9,34 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉"
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 3cdb1f41fda7bd4e4af1ce9e5f8fb4396da53f63
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 25435ebf314327db7288ac853819c90ebba35669
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="update-your-app-to-the-latest-advertising-libraries"></a>將您的 App 更新到最新的 Advertising 程式庫
 
-# <a name="update-your-app-to-the-latest-microsoft-advertising-libraries"></a>將您的應用程式更新到最新的 Microsoft Advertising 程式庫
+顯示來自 Microsoft Advertising 之橫幅廣告的 App，必須使用下列其中一個 SDK 的 **AdControl** 或 **AdMediatorControl** 以便在 2017 年 4 月 1 日之後繼續接收橫幅廣告：
 
-僅支援下列 SDK 從 app 使用 **AdControl** 或 **AdMediatorControl** 顯示來自 Microsoft Advertising 的橫幅廣告：
+  * [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (適用於 UWP app)
+  * [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x App)
 
-* [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (適用於 UWP app)
-* [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 和 Windows Phone 8.x App)
+這些 SDK 可供使用之前，我們先前在數個適用於 Windows 和 Windows Phone app 的舊版廣告 SDK 中發行這些控制項。 不再支援這些舊版的廣告 SDK。 2017 年 4 月 1 之後，Microsoft 可能隨時停止提供橫幅廣告給使用舊版廣告 SDK 的 App，而無進一步警告。
 
-這些 SDK 可供使用之前，我們先前發行數個適用於 Windows 和 Windows Phone app 的舊版廣告 SDK。 不再支援這些舊版的廣告 SDK。 未來，我們打算停止提供橫幅廣告至使用這些舊版 SDK 的 app。
+如果您的現有 app（已經在市集中，或仍在開發）顯示使用 **AdControl** 或 **AdMediatorControl** 的橫幅廣告，請依照本文中的指示，判斷您的 app 是否會受到這項變更影響，以了解如何在必要時更新您的 app。
 
-如果您現有的應用程式 (已經在「市集」中或仍在開發中) 使用 **AdControl** 或 **AdMediatorControl** 來顯示橫幅廣告，您可能需要將您的應用程式更新成使用最新的廣告 SDK (適用於目標平台)，您的應用程式未來才能繼續接收橫幅廣告。 請依照本文中的指示來判斷您的應用程式是否受到這項變更影響，以及了解如何更新您的應用程式 (如有必要)。
+>**注意**&nbsp;&nbsp;另外，在 2017 年 4 月 1 之後，我們也將會停止提供橫幅廣告給多個 app 中使用的任何廣告單元。 若要準備這項變更，請確定您的每個廣告單元只在單一 app 中使用。
 
-如果此變更會影響您的 app，而您未更新您的 app 使用最新的廣告 SDK，如果我們停止提供橫幅廣告至使用未受支援的廣告 SDK 版本，您會看到以下行為：
+## <a name="more-details-about-this-change"></a>關於這項變更的詳細資料
+
+為了提供有關這項變更的一些額外內容，我們將針對不支援一組最基本功能 (包括透過來自美國互動廣告局 (Interactive Advertising Bureau, IAB) 的[行動多媒體廣告介面定義 (Mobile Rich-media Ad Interface Definitions, MRAID) 1.0 規格](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 多媒體的功能) 的舊版廣告 SDK 版本移除支援。 許多我們的廣告商都尋求這些功能，而我們正在進行這項變更來協助讓我們的應用程式生態體系對廣告商更具吸引力，並最終為您賺取更多收入。
+
+如果此變更會影響您的 app，而您未更新您的 app 使用適用於目標平台的最新廣告 SDK，當我們停止提供橫幅廣告至使用未受支援的廣告 SDK 版本，您會看到以下行為：
 
 * 將不會再為您應用程式中的任何 **AdControl** 或 **AdMediatorControl** 控制項提供橫幅廣告，您將無法再從這些控制項賺取廣告收入。
 
 * 當您應用程式中的 **AdControl** 或 **AdMediatorControl** 要求新的廣告時，將會引發控制項的 **ErrorOccurred** 事件，而事件引數的 **ErrorCode** 屬性值將會是 **NoAdAvailable**。
 
-為了提供有關這項變更的一些額外內容，我們不再支援不支援一組最基本功能 (包括透過來自美國互動廣告局 (Interactive Advertising Bureau, IAB) 的[行動多媒體廣告介面定義 (Mobile Rich-media Ad Interface Definitions, MRAID) 1.0 規格](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 多媒體的功能) 的舊版廣告 SDK 版本。 許多我們的廣告商都尋求這些功能，而我們正在進行這項變更來協助讓我們的應用程式生態體系對廣告商更具吸引力，並最終為您賺取更多收入。
-
-如果您遭遇任何問題或需要協助，請[聯絡支援服務](http://go.microsoft.com/fwlink/?LinkId=393643)。
+如果您遭遇任何問題或需要協助，請[連絡客戶支援](http://go.microsoft.com/fwlink/?LinkId=393643)。
 
 >**備註**&nbsp;&nbsp;若您的應用程式已使用 [Microsoft Store Services SDK](http://aka.ms/store-services-sdk) (適用於 UWP app) 或 [適用於 Windows 及 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk) (適用於 Windows 8.1 及 Windows Phone 8.x 應用程式)，或者先前已將應用程式更新為使用其中一個 SDK，則您的應用程式已在使用最新的可用廣告 SDK，且您無須對應用程式作更進一步的變更。
 
@@ -259,4 +260,3 @@ ms.lasthandoff: 02/08/2017
 
 
  
-

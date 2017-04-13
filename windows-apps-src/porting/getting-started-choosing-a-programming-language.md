@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 440fb76aac128490366677278254a5f5b2e095ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b20066ffbd32984d20fdbdcc0915ef10332c6f12
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="choosing-a-programming-language"></a>選擇程式設計語言
 
@@ -149,4 +146,3 @@ C# 是個很容易學會的語言，而且內建許多構成 .NET 的支援類�
 ## <a name="next-step"></a>下一步
 
 [開始使用：使用 Visual Studio](getting-started-getting-around-in-visual-studio.md)
-

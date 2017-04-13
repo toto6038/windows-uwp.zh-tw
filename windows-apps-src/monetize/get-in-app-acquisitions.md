@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 市集服務, Windows 市集分析 API, 附加元件下載數"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: be69a45586f4b7d66740d141dcc350eafd16bb53
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cdd43c6e5df73ec1983593eb6198eba77c9df6e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="get-add-on-acquisitions"></a>取得附加元件下載數
 
 
 
 
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式附加元件 (也稱為應用程式內產品或 IAP) 的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得 App 附加元件 (也稱為應用程式內產品或 IAP) 的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭        | 類型   | 說明          |
+| 標頭        | 類型   | 描述          |
 |---------------|--------|--------------|
 | Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
@@ -78,14 +75,14 @@ ms.lasthandoff: 02/07/2017
 
 如需支援欄位的清單，請參閱下列表格。 *filter* 參數中的字串值必須由單引號括住。
 
-| 欄位        |  說明        |
+| 欄位        |  描述        |
 |---------------|-----------------|
 | acquisitionType | 下列其中一個字串：<ul><li><strong>free</strong></li><li><strong>trial</strong></li><li><strong>paid</strong></li><li><strong>promotional code</strong></li><li><strong>IAP</strong></li></ul> |
 | ageGroup | 下列其中一個字串：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul> |
 | storeClient | 下列其中一個字串：<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Windows Store (client)</strong></li><li><strong>Windows Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
 | gender | 下列其中一個字串：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | 內含發生下載之市場的 ISO 3166 國家/地區碼的字串。 |
-| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows 8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | orderName | 指定用來取得附加元件之促銷碼訂單名稱的字串 (這只適用於使用者透過兌換促銷碼來取得附加元件的情況)。 |
 
@@ -113,7 +110,7 @@ Authorization: Bearer <your access token>
 
 | 值      | 類型   | 描述         |
 |------------|--------|------------------|
-| 值      | 陣列  | 內含彙總附加元件下載數資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[＜附加元件下載數數值＞](#add-on-acquisition-values)一節。                                                                                                              |
+| 值      | 陣列  | 內含彙總附加元件下載數資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[附加元件下載數數值](#add-on-acquisition-values)一節。                                                                                                              |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的附加元件下載數資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                                                                                                                                                                                 |
 
@@ -124,7 +121,7 @@ Authorization: Bearer <your access token>
 
 *Value* 陣列中的元素包含下列值。
 
-| 值               | 類型    | 說明        |
+| 值               | 類型    | 描述        |
 |---------------------|---------|---------------------|
 | 日期                | 字串  | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
 | inAppProductId      | 字串  | 您正在擷取下載數資料之附加元件的市集識別碼。                                                                                                                                                                 |
@@ -184,4 +181,3 @@ Authorization: Bearer <your access token>
  
 
  
-

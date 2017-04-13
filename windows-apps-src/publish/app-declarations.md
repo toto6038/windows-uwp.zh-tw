@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: "您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於應用程式的其他資訊。"
+Description: "您可以在提交程序中，於 [應用程式內容] 頁面的 [應用程式宣告] 區段中，提供關於 app 的其他資訊。"
 title: "應用程式宣告"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
@@ -9,22 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: feacd96ca2fa0cc4cd3d1087a982f61bc18d4604
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d17fd77759911e11c2efeaf84058526d8819781f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-declarations"></a>應用程式宣告
 
-您可以在[提交程序](app-submissions.md)中，於 **[應用程式內容]** 頁面的 **[應用程式宣告]** 區段中，提供關於應用程式的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
+您可以在[提交程序](app-submissions.md)中，於 **\[應用程式內容\]** 頁面的 **\[應用程式宣告\]** 區段中，提供關於 app 的其他資訊。 這些宣告可協助確認您的 app 已適當顯示並提供給正確的客戶群使用，或者可以指出客戶能夠如何使用您的 app。
 
 下列各節說明每個宣告，以及您在決定每個宣告是否適合 app 時應考量的事項。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-windows-store-commerce-system"></a>此 App 允許使用者進行購買，但不使用 Windows 市集商務系統。
 
-大部分 App 應該讓此方塊保留未選取，因為提供機會進行在應用程式內購買的 App 通常使用 Microsoft在應用程式內購買 API 來建立和[提交附加元件](add-on-submissions.md)。 根據 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前建立並提交的 App 得以繼續提供 App 內購買功能，而不需使用 Microsoft 的商務引擎，前提是，購買功能符合 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+大部分 App 應該讓此方塊保留未選取，因為提供機會進行 App 內購買的 App 通常使用 Microsoft App 內購買 API 來建立和[提交附加元件](add-on-submissions.md)。 根據 [App 開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)，在 2015 年 6 月 29 日之前建立並提交的 App 得以繼續提供 App 內購買功能，而不需使用 Microsoft 的商務引擎，前提是，購買功能符合 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 
@@ -67,7 +64,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

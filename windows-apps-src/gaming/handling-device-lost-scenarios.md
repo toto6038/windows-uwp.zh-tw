@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, DirectX 11, 裝置遺失"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2202d8ea4584f7755464fd3035829d348cfbff8d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3d7a93ed0b1ce78cba278232eb5325e463c12789
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddevgaminghandlingdevice-lostscenariosspanhandle-device-removed-scenarios-in-direct3d-11"></a><span id="dev_gaming.handling_device-lost_scenarios"></span>處理 Direct3D 11 中的裝置已移除案例
 
 
@@ -32,7 +29,7 @@ ms.lasthandoff: 02/07/2017
 
 當這類情況發生時，DXGI 會傳回錯誤碼，表示必須重新初始化 Direct3D 裝置，而且必須重建裝置資源。 此逐步解說說明 Direct3D 11 app 與遊戲如何能偵測和回應圖形卡重設、移除或變更的情況。 程式碼範例是從隨附於 Microsoft Visual Studio 2015 的 DirectX 11 App (通用 Windows) 範本中提供的。
 
-# <a name="instructions"></a>指示
+## <a name="instructions"></a>指示
 
 ### <a name="spanspanstep-1"></a><span></span>步驟 1：
 
@@ -170,15 +167,4 @@ if (m_deviceNotify != nullptr)
 
 Visual Studio 的「開發人員命令提示字元」支援針對與 Visual Studio 圖形診斷相關之 Direct3D 事件擷取及播放的命令列工具「dxcap」。 您可以在您的 app 執行時使用命令列選項「-forcetdr」，這會強制執行「GPU 逾時偵錯與復原」事件，藉以觸發 DXGI\_ERROR\_DEVICE\_REMOVED，並讓您可以測試您的錯誤處理程式碼。
 
-> **注意**  DXCap 和其支援的 DLL 會做為「Windows 10 圖形工具」的一部分安裝到 system32/syswow64。「Windows 10 圖形工具」已不再透過 Windows SDK 的方式散佈。 它們是改為以選用 OS 元件的方式，透過「圖形工具」功能隨選安裝提供，且必須安裝才能啟用並使用「Windows 10 圖形工具」。 如何安裝 Windows 10 圖形工具的詳細資訊可以在這裡找到： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>
-
- 
-
- 
-
- 
-
-
-
-
-
+> **注意** DXCap 和其支援的 DLL 會做為「Windows 10 圖形工具」的一部分安裝到 system32/syswow64。「Windows 10 圖形工具」已不再透過 Windows SDK 的方式散佈。 它們是改為以選用 OS 元件的方式，透過「圖形工具」功能隨選安裝提供，且必須安裝才能啟用並使用「Windows 10 圖形工具」。 如何安裝 Windows 10 圖形工具的詳細資訊可以在這裡找到： <https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools>

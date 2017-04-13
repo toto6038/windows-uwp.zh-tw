@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 18acfda780211a008a3c5febdcbff2bf007ff379
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9c5c63cb7c0f9dda33c66283806bfd2624ca0b3c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
 
 
@@ -129,15 +126,15 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 
 這些位置包括：
 
--   [圖片]**** 資料夾。 包含圖片。
+-   **\[圖片\]** 資料夾。 包含圖片。
 
-    -   [手機相簿]**** 資料夾。 包含內建相機中的相片和視訊。
+    -   **\[手機相簿\]** 資料夾。 包含內建相機中的相片和視訊。
 
-    -   [儲存的圖片]**** 資料夾。 包含使用者從其他 app 儲存的圖片。
+    -   **\[儲存的圖片\]** 資料夾。 包含使用者從其他 app 儲存的圖片。
 
--   [音樂]**** 資料夾。 包含歌曲、播客和有聲書。
+-   **\[音樂\]** 資料夾。 包含歌曲、播客和有聲書。
 
--   [影片]**** 資料夾。 包含視訊。
+-   **\[影片\]** 資料夾。 包含視訊。
 
 使用者或應用程式也可以將媒體檔案儲存在媒體櫃資料夾以外的 SD 記憶卡上。 若要尋找確實在 SD 記憶卡上的媒體檔案，請掃描 SD 記憶卡的內容，或要求使用者使用檔案選擇器來找出檔案。 如需詳細資訊，請參閱[存取 SD 記憶卡](access-the-sd-card.md)。
 
@@ -252,4 +249,3 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
  
 
  
-

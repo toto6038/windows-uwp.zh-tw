@@ -9,23 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 7bc2006f-fc5a-4ff6-b573-60933882caf8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 2332abe43732299dfb0f4bc265bf1b12877a17aa
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 47bd2d7db1517c7cb54b018ee014e3714e71cf3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-certificate-for-package-signing"></a>建立套件簽署的憑證
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文章將說明如何使用 PowerShell 工具，以建立和匯出應用程式套件簽署的憑證。 建議您使用適用於[封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps) 的 Visual Studio，但如果您未使用 Visual Studio 開發應用程式，仍然可以手動封裝可在市集上架的應用程式。
 
+> [!IMPORTANT] 
+> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈匯入憑證並簽署應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+
 ## <a name="prerequisites"></a>必要條件
 
-- **一個經過封裝或未封裝的應用程式**  
-一個包含 AppxManifest.xml 檔案的應用程式。 在建立用來簽署最終應用程式套件的憑證時，您會需要參考資訊清單檔。 如需如何手動封裝應用程式的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
+- **已封裝或未封裝的應用程式**  
+包含 AppxManifest.xml 檔案的應用程式。 在建立用來簽署最終應用程式套件的憑證時，您會需要參考資訊清單檔。 如需如何手動封裝應用程式的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://msdn.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。
 
 - **公開金鑰基礎結構 (PKI) Cmdlet**  
 您需要 PKI cmdlet 來建立和匯出您的簽署憑證。 如需詳細資訊，請參閱 [Public Key Infrastructure Cmdlets](https://technet.microsoft.com/library/hh848636.aspx)。

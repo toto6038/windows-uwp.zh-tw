@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 186088f249c2e6fe116c970bd1969fcb59863ba6
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
 
-提交附加元件時，[屬性]**** 頁面上的選項有助於決定提供給客戶時附加元件的行為。
+提交附加元件時，**\[屬性\]** 頁面上的選項有助於決定提供給客戶時附加元件的行為。
 
 ## <a name="product-type"></a>產品類型
 
@@ -30,14 +27,14 @@ ms.lasthandoff: 02/07/2017
 根據您選取的產品類型而定，您可能會看到下列其中一個欄位︰
 
 ### <a name="product-lifetime"></a>產品存留期
-如果您選取的產品類型是 [耐久品]****，則此處會顯示 [產品存留期]****。 耐久型附加元件的預設 [產品存留期]**** 為 [永久]****，這表示附加元件永久有效。 若有需要，您可以設定 [產品存留期]****，讓附加元件在設定的期間後到期 (可選擇 1-365 天)。 
+如果您選取的產品類型是 **\[耐久品\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]**，這表示附加元件永久有效。 若有需要，您可以設定 **\[產品存留期\]**，讓附加元件在設定的期間後到期 (可選擇 1-365 天)。 
 
 ### <a name="quantity"></a>數量
-如果您選取的產品類型是 [市集管理的消費性產品]****，則此處會顯示 [數量]****。 您將需要輸入 1 到 1000000 之間的數字。 當客戶取得您的附加元件時，會將此數量授與客戶，而且當 App 報告客戶取用的附加元件時，市集將會追蹤餘額。
+如果您選取的產品類型是 **\[市集管理的消費性產品\]**，則此處會顯示 **\[數量\]**。 您將需要輸入 1 到 1000000 之間的數字。 當客戶取得您的附加元件時，會將此數量授與客戶，而且當 App 報告客戶取用的附加元件時，市集將會追蹤餘額。
 
 ## <a name="content-type"></a>內容類型
 
-不論您的附加元件是哪種產品類型，您還需要表明您所提供的內容類型。 對大部分的附加元件而言，內容類型應為 [電子軟體下載]****。 如果清單中的其他選項更適用於您的附加元件 (例如，如果您提供音樂下載或電子書)，請改為選取該選項。 
+不論您的附加元件是哪種產品類型，您還需要表明您所提供的內容類型。 對大部分的附加元件而言，內容類型應為 **\[電子軟體下載\]**。 如果清單中的其他選項更適用於您的附加元件 (例如，如果您提供音樂下載或電子書)，請改為選取該選項。 
 
 以下是可能的附加元件內容類型選項：
 
@@ -60,20 +57,19 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="custom-developer-data"></a>自訂開發人員資料
 
-您最多可輸入 3000 個字元在 [自訂開發人員資料]**** 欄位中 (舊稱為「標記」****)，提供應用程式內產品的額外內容。 更常見的狀況是使用 XML 字串形式，但您可以在此欄位中輸入任何內容。
+您最多可輸入 3000 個字元在 **\[自訂開發人員資料\]** 欄位中 (舊稱為**「標記」**)，提供應用程式內產品的額外內容。 更常見的狀況是使用 XML 字串形式，但您可以在此欄位中輸入任何內容。
 
 若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)中的 [StoreSku.CustomDeveloperData](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.storesku.customdeveloperdata.aspx) 屬性。 (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)，則使用 [ProductListing.Tag](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.productlisting.tag.aspx) 屬性)。
 
-例如，假設您有一個遊戲，而您要以附加元件形式賣出一袋金幣。 使用 [自訂開發人員資料]**** 欄位，App 就能夠查詢這袋金幣。 您可以隨時更新附加元件的 [自訂開發人員資料]**** 欄位中的資訊，藉以調整此值 (在此案例中為袋子中的金幣數)，而不必變更 App 中的程式碼或重新提交 App。
+例如，假設您有一個遊戲，而您要以附加元件形式賣出一袋金幣。 使用 **\[自訂開發人員資料\]** 欄位，App 就能夠查詢這袋金幣。 您可以隨時更新附加元件的 **\[自訂開發人員資料\]** 欄位中的資訊，藉以調整此值 (在此案例中為袋子中的金幣數)，而不必變更 App 中的程式碼或重新提交 App。
 
-> **注意**  [自訂開發人員資料]**** 欄位不適合用於 Windows 8 和 Windows 8.1 為目標的套件。
-
- 
+> **注意**：**\[自訂開發人員資料\]** 欄位不適合用於 Windows 8 和 Windows 8.1 為目標的套件。
 
  
 
  
 
+ 
 
 
 

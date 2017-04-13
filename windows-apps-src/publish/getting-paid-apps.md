@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: af5c30aae3927f901bb93fd2c79bfee202754a1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c27e06491b66fea4f451b70309a9a8c3802aff18
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="getting-paid"></a>獲得報酬
 此處提供一些您需要用來確認收到應用程式、附加元件及 Microsoft Advertising 營收之付款的重要資訊。
 
@@ -61,7 +58,6 @@ Windows 市集費用適用於 Windows 市集收取的所有 App 銷售金額，�
  
 
  
-
 
 
 

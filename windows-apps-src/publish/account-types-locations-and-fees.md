@@ -4,25 +4,22 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: "帳戶類型、位置和費用"
 description: "我們在許多國家與地區提供個人開發人員帳戶及公司開發人員帳戶。"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 03/07/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0e59913e18bdc521eb37b874f90a2ce0442373ce
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f6cdace7d619ede77956fb081756e0bc5682e16
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
 我們提供兩種開發人員帳戶類型：個人帳戶和公司帳戶。 許多[國家和地區](#developer-account-and-app-submission-markets)都提供開發人員帳戶。 任一種類型的帳戶都會為您提供存取權來將 App 發佈到市集，以及參與其他的 Microsoft 開發人員計劃。
 
 > **注意**：無論您建立的是公司或個人帳戶，這個開發人員帳戶只能與一個 Microsoft 帳戶產生關聯。 註冊帳戶時，請務必使用要用於開發人員帳戶的 Microsoft 帳戶登入。
 
-當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 個人帳戶適用於獨立作業的單一開發人員。 公司帳戶則適用於組織與企業。 公司帳戶能提供您一些其他 App 功能的存取權。 在您註冊公司帳戶之後，我們也會要求較高的驗證，以確認您已獲授權為您的公司設定帳戶。 驗證可能需要花費數天至數個星期，且通常會電話連絡您的公司。 兩種帳戶類型都允許您將 App、增益集與服務提交至市集。
+當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、增益集與服務。 個人帳戶適用於獨立作業的單一開發人員。 公司帳戶適用於組織和企業，可讓您存取一些額外的應用程式功能。 對於公司帳戶，我們會要求較高的[驗證](#account-verification)，以確認您已獲授權進行公司的帳戶設定。 
 
 > **重要事項**：選擇帳戶類型之後無法變更，所以務必選擇正確的類型。
 
@@ -32,9 +29,7 @@ ms.lasthandoff: 02/07/2017
 |--------------------|-----------------|
 | <ul><li>使用某些應用程式功能的限制</li><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> | <ul><li>需要透過賽門鐵克 (Symantec) 或鄧白氏 (Dun &amp; Bradstreet) 認證</li><li>存取更多應用程式功能</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> |
 
-> **重要事項**  如果您決定建立公司帳戶，請務必檢閱[公司帳戶的指導方針](opening-a-developer-account.md#additional-guidelines-for-company-accounts)。
-
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 擁有公司帳戶的主要優點之一是，能夠送出宣告其他 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)的 App。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 公司帳戶還可讓您提交宣告其他 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)的應用程式。
 
 具體來說，您必須擁有公司帳戶，才能發佈使用下列三種功能的 App：
 
@@ -46,7 +41,11 @@ ms.lasthandoff: 02/07/2017
 
 擁有公司帳戶並不保證使用這些功能的 App 會通過認證。 這些功能是應用於非常特定的案例，大多數應用程式不應宣告這些功能。 如需詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
 
-針對公司帳戶，我們使用賽門鐵克或鄧白氏來驗證您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時所提供的連絡資訊是最新的)。 公司帳戶必須通過驗證才能送出 App，等待期間可以[保留 App 名稱](https://msdn.microsoft.com/library/windows/apps/JJ657967)、存取 Windows 開發人員中心儀表板，以及持續建置和測試 App。
+## <a name="account-verification"></a>帳戶驗證
+
+完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們使用賽門鐵克或鄧白氏來驗證您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 公司帳戶必須通過驗證才能送出 App，等待期間可以[保留 App 名稱](create-your-app-by-reserving-a-name.md)、存取 Windows 開發人員中心儀表板，以及持續建置和測試 App。
+
+您可以在 **\[帳戶設定\]** 頁面檢查您的驗證狀態。 
 
 ## <a name="developer-account-and-app-submission-markets"></a>開發人員帳戶與 App 提交市場
 
@@ -56,11 +55,11 @@ ms.lasthandoff: 02/07/2017
 
 > **注意**：我們將在您註冊時，對註冊費用加上任何相關稅賦與費用。 此外，當我們支付款項給您時，您的銀行可能會收取收款手續費。
 
-**\[支付\]** 欄說明我們如何支付您的 App 獲利。 您可以選擇要供我們存入這筆款項的[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)。
+**\[支付\]** 欄說明我們如何[支付您](getting-paid-apps.md)的 App 獲利。 您可以選擇要供我們存入這筆款項的[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)。
 
 > **注意**：有些市場不支援付費應用程式 (**款項**)。 在這些市場中，只能提交免費 App。
 
-**\[PayPal\]** 欄指出 PayPal 是否為可適用於您[支付帳戶](https://msdn.microsoft.com/library/windows/apps/Bg124529)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。
+**\[PayPal\]** 欄指出 PayPal 是否為可適用於您[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。
 
 | 國家/地區 | 個人註冊 費用 | 公司註冊 費用 | 支付 | PayPal |
 |----------------|---------------------|------------------|--------|--------|
@@ -135,7 +134,7 @@ ms.lasthandoff: 02/07/2017
 |  瓜地馬拉 | 145 瓜地馬拉格查爾 | 750 瓜地馬拉格查爾 | 瓜地馬拉格查爾 (已支付給銀行) | 否 | 
 |  幾內亞 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  幾內亞比索 | 19 美元 | 99 美元 | 不支付 | 否 | 
-|  蓋亞那 | 19 美元 | 99 美元 | 不支付 | 否 | 
+|  蓋亞納 | 19 美元 | 99 美元 | 不支付 | 否 | 
 |  海地 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  宏都拉斯 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  香港特別行政區 | 147 港幣 | 760 港幣 | 港幣 (已支付給銀行) | 是 | 
@@ -215,7 +214,7 @@ ms.lasthandoff: 02/07/2017
 |  聖多美普林西比 | 19 美元 | 99 美元 | 不支付 | 否 | 
 |  沙烏地阿拉伯 | 71 SAR (沙烏地阿拉伯里亞爾) | 380 SAR (沙烏地阿拉伯里亞爾) | 沙烏地阿拉伯里亞爾 (已支付給銀行) | 否 | 
 |  塞內加爾 | 19 美元 | 99 美元 | 非洲金融共同體法郎 (已支付給銀行) | 否 | 
-|  塞爾維亞 | 1619 RSD (賽爾維亞第納爾) | 7000 RSD (賽爾維亞第納爾) | 美元 (已支付給銀行) | 否 | 
+|  賽爾維亞 | 1619 RSD (賽爾維亞第納爾) | 7000 RSD (賽爾維亞第納爾) | 美元 (已支付給銀行) | 否 | 
 |  塞席爾 | 19 美元 | 99 美元 | 不支付 | 否 | 
 |  獅子山 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  新加坡 | 24 新加坡幣 | 120 新加坡幣 | 新加坡幣 (已支付給銀行) | 是 | 
@@ -257,11 +256,4 @@ ms.lasthandoff: 02/07/2017
 |  辛巴威 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 |
 
 \* 在此市場中 PayPal 可做為支付帳戶的付款方式，但無法用於支付開發人員帳戶註冊費用。
-
-## <a name="related-topics"></a>相關主題
-
-* [開立開發人員帳戶](opening-a-developer-account.md)
-* [設定您的支付帳戶和納稅申報表](setting-up-your-payout-account-and-tax-forms.md)
-* [獲得報酬](getting-paid-apps.md)
- 
 

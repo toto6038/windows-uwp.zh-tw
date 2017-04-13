@@ -2,21 +2,17 @@
 title: "線清單"
 description: "線清單是隔離、直線段的清單。 在 3D 場景中加入冰雹或暴雨的這類工作適合使用線清單。 應用程式藉由填入頂點陣列來建立線清單。"
 ms.assetid: 42BF32A1-3535-42A3-82C5-3945CB309F2C
-keywords:
-- "線清單"
+keywords: "線清單"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 64ab9106986cd3fe5109b47710a7057ad6869c8d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8ebe6c67bd6b68023f59599cdcbd1f8f44f80e84
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="line-lists"></a>線清單
 
 
@@ -71,7 +67,6 @@ d3dDevice->DrawPrimitive( D3DPT_LINELIST, 0, 3 );
  
 
  
-
 
 
 

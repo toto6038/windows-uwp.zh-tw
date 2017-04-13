@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
-description: "了解如何在您的應用程式中攔截 AdControl 錯誤。"
+description: "了解如何在您的 app 中抓取 AdControl 錯誤。"
 title: "JavaScript 錯誤處理的逐步解說"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 935ce9ca17d2b9d4a63496ab0b254960bd68e23d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5b3e9b66ea0b52e9a44b6c71c3d7107a86b038df
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 錯誤處理的逐步解說
 
 
 
 
-了解如何在您的應用程式中攔截 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
+了解如何在您的 App 中抓取 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 錯誤。
 
 這些範例假設您有包含 **AdControl** 的 JavaScript/HTML app。 如需示範如何將 **AdControl** 新增到 app 的逐步指示，請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
@@ -86,4 +83,3 @@ ms.lasthandoff: 02/07/2017
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
  
-

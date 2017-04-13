@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e866c3afc551cf9604809cf7fec36efd7bfa439c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8d62135680e13f866654c168364bb3393651bd2d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="access-keys"></a>便捷鍵
 
 不方便使用滑鼠的使用者 (例如受到某種程度運動神經傷害的使用者) 通常依賴鍵盤來瀏覽應用程式並與之互動。  XAML 架構可讓您透過 Tab 瀏覽和便捷鍵，提供對 UI 元素的鍵盤存取。
@@ -143,7 +140,7 @@ _圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相�
 如果找不到控制項模式，便捷鍵叫用會顯示為 no-op，並且會記錄偵錯訊息以協助您偵錯此情況：「找不到此元件的自動化模式。 請在 AccessKeyInvoked 的事件處理常式中實作所需的行為。 將事件處理常式中的 Handled 設定為 true 將會隱藏此訊息。」
 
 > [!NOTE]
-> Visual Studio 的 [偵錯設定] 中的偵錯程式 [應用程式處理類型] 必須為 _混合 (Managed 和原生)_ 或 _原生_ 才能看到此訊息。
+> Visual Studio 的 \[偵錯設定\] 中的偵錯程式 \[應用程式處理類型\] 必須為_混合 (Managed 和原生)_ 或_原生_才能看到此訊息。
 
 如果您不想要讓便捷鍵執行其預設控制項模式，或元素不具有控制項模式，則您應該處理 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件，並實作所需的行為。
 ```csharp
@@ -388,4 +385,3 @@ public sealed partial class ScopedAccessKeys : Page
         }
     }
 ```
-
