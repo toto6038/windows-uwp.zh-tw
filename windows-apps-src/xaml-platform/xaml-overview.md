@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 12cb0c8b911c0ddb3a45e49568c5846d4359eeba
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 60b47a2c2c072efbf3ccedfcc48b9cba1611a370
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-overview"></a>XAML 概觀
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 我們將向 Windows 執行階段 app 開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段 app。
 
@@ -72,7 +69,7 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 | [x:Class](x-class-attribute.md) | 指定類別的程式碼命名空間和程式碼類別名稱，該類別提供 XAML 頁面的程式碼後置。 這會在您建置應用程式時，為組建動作所建立或加入的類別命名。 這些組建動作支援 XAML 標記編譯器，並且可以在編譯應用程式時組合您的標記和程式碼後置。 您必須擁有這類類別，才能支援 XAML 頁面的程式碼後置。 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051) (位於預設 Windows 執行階段啟用模型中)。 |
 | [x:Name](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是架構中的類似屬性，但並非所有的元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
 | [x:Uid](x-uid-directive.md) | 識別應該為某些屬性值使用當地語系化資源的元素。 如需如何使用 **x:Uid** 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
-| [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 腳本視覺狀態中使用的 **true** 布林值。 針對 XAML 中的這個值，您可以使用 **x:Boolean** 內建類型當成物件元素，就像這樣： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 腳本視覺狀態中使用的 **true** 布林值。 針對 XAML 中的這個值，您可以使用 **x:Boolean** 內建類型當成物件元素，就像這樣：<code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比較少見。
 
@@ -243,5 +240,4 @@ XAML 通常是在 IDE 內 (如 Visual Studio) 以及它的其中一個 XAML 設�
 **注意** 使用 C++/CX 程式碼的 app 不會取得特定的 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
 
 如需偵錯 Windows 執行階段 app 的詳細資訊，請參閱[啟動偵錯工作階段](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。
-
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c1bf910303f0c26761a3c63c3e1159dd2d0c6bb
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cad84be24836bc6a33a4ab08f1ca4fa2d9e97512
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -41,5 +38,4 @@ ms.lasthandoff: 02/07/2017
 **x:FieldModifier** 只與具有 [x:Name 屬性](x-name-attribute.md)的元素相關，因為該名稱會在欄位是公用時用來參考該欄位。
 
 **注意** Windows 執行階段 XAML 不支援 **x:ClassModifier** 或 **x:Subclass**。
-
 

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 0cfa8e22-7345-47b7-b132-880bbc050d44
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: a66e94ca26a089ffd08b0ba7a4ffb42aa5d8685c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: c7bf5db6eb7a624766438c60067c311b9e137138
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 根據預設，所有 UWP App 都可在 Xbox One 上執行，而不需要您進行任何額外的工作。 不過，如果您希望使 App 受到注目、讓您的顧客滿意，並和 Xbox 上最佳的 App 體驗進行競爭，您應該遵循下列做法。
   > [!NOTE]
@@ -57,5 +54,4 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 
 ## <a name="see-also"></a>另請參閱
 - [Xbox One 上的 UWP](index.md)
-
 

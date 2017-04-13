@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c2d6590d21607cec7718617a0657e28ba56c072e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0358443abbfb753ace9276f1cca8dfa0a4745508
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="binding-markup-extension"></a>{Binding} 標記延伸
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP App 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意：**Windows 10 提供新的繫結機制，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 | *propertyPath* | 指定繫結屬性路徑的字串。 如需詳細資訊，請參閱下面[屬性路徑](#property-path)一節。 |
 | *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>使用名稱/值對語法指定的一或多個繫結屬性。 |
 | *propName* | 要在 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 物件上設定的屬性字串名稱。 例如，"Converter"。 |
-| *value* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-binding)一節的屬性。 |
+| *value* | 設定屬性使用的值。 引數的語法取決於下面[可以使用 {Binding} 設定的繫結類別屬性](#properties-of-the-binding-class-that-can-be-set-with-binding)一節的屬性。 |
 
 ## <a name="property-path"></a>屬性路徑
 
@@ -88,7 +85,7 @@ ms.lasthandoff: 02/07/2017
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 與 **ConverterLanguage** 皆與來自繫結來源的值或類型轉換成和繫結目標屬性相容的類型或值的案例相關。 如需詳細資訊和範例，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)中的＜資料轉換＞一節。
 
 > [!NOTE]
-> 從 Windows 10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows 10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows10 版本 1607 開始，XAML 架構針對可見度轉換器提供了內建布林值。 轉換器會將 **true** 對應至 **Visible** 列舉值，並將 **false** 對應至 **Collapsed**，這樣您就可以將 Visibility 屬性繫結至布林值而不用建立轉換器。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 與 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可以指定繫結來源，因此彼此互斥。
 
@@ -130,4 +127,3 @@ ms.lasthandoff: 02/07/2017
 在 XAML 標記編輯器中撰寫 **{Binding}** 時，Microsoft Visual Studio 中的 Microsoft IntelliSense 會顯示資料內容的屬性。 在您輸入 "{Binding" 後，適用於 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的資料內容屬性即會顯示在下拉式清單中。 IntelliSense 也可協助 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他屬性。 若要讓此功能運作，您必須在標記頁面中設定資料內容或設計階段資料內容。 **移至定義** (F12) 也可以用於 **{Binding}**。 另一種方法是使用資料繫結對話方塊。
 
  
-

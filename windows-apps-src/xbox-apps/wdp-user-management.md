@@ -1,14 +1,19 @@
----  
+---
 author: WilliamsJason
 title: "Xbox Live 測試使用者管理 API 參考"
 description: "了解如何以程式設計方式存取使用者管理 API。"
-translationtype: Human Translation
-ms.sourcegitcommit: 67f158b1d3d5ece14c36483a2513a2db2f478660
-ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
-
----  
-
-#Xbox Live 使用者管理#
+ms.author: jaswill
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.assetid: 70876ab6-8222-4940-b4fb-65b581a77d6a
+ms.openlocfilehash: c1a2517aa8716cff9201351a12a3c391110aafab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
+---
+#<a name="xbox-live-user-management"></a>Xbox Live 使用者管理#
 
 **要求**
 
@@ -41,7 +46,7 @@ ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
   * SponsoredUser (選擇性)：指定是否要新增贊助使用者的布林值。
   * Delete (選擇性)：指定從主機刪除此使用者的布林值。
 
-###回應###
+###<a name="response"></a>回應###
 
 **回應主體**
 
@@ -67,11 +72,5 @@ ms.openlocfilehash: 66fe038fdb54ac5cb9086bf9225d0a5d573b39c8
 | 4XX                | 無效的要求資料或格式的各種錯誤 |
 | 5XX                | 未預期失敗的錯誤代碼 |
 <br>
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

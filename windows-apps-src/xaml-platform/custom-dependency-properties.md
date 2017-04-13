@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: "說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段應用程式定義及實作自訂相依性屬性。"
+description: "說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段 app 定義及實作自訂相依性屬性。"
 title: "自訂相依性屬性"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.author: jimwalk
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6f928e9d3ad67773f36a0ae8c110df3e17ad88c5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b26ee59be9c309326eeb93546d3702bc161513f3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-dependency-properties"></a>自訂相依性屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -62,7 +59,7 @@ Windows 執行階段中相依性屬性的範例包括：[**Control.Background**]
 定義相依性屬性可以想成是一組概念。 這些概念不一定是依序執行的步驟，因為數個概念可以放置在實作的單行程式碼中。 這個清單只提供簡略概觀。 我們稍後會在這個主題中詳細說明每個概念，並為您示範不同語言的範例程式碼。
 
 -   在屬性系統中登錄屬性名稱 (呼叫 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829))，指定擁有者類型及屬性值的類型。 
-    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一個必要參數需要使用屬性中繼資料。 為此指定 **null**，或者如果您想要屬性變更行為，或可以透過呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 還原的中繼資料預設值，請指定 [**PropertyMetadata**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.propertymetadata) 執行個體。
+    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一個必要參數需要使用屬性中繼資料。 為此指定 **null**，或者如果您想要屬性變更行為，或可以透過呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 還原的中繼資料預設值，請指定 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata) 執行個體。
 -   在擁有者類型上將 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼定義為 **public static readonly** 屬性成員。
 -   定義包裝函式屬性，遵循您實作的語言中所使用的屬性存取子模型。 包裝函式屬性名稱必須符合 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 中使用的 *name* 字串。 實作 **get** 和 **set** 存取子，將包裝函式連接到它所包裝的相依性屬性，方法是呼叫 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 並將您自己的屬性識別碼當作參數傳遞。
 -   (選用) 將 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 之類的屬性放置到包裝函式中。
@@ -381,5 +378,4 @@ Windows 執行階段不提供將自訂相依性屬性登錄為唯讀的方法。
 * [相依性屬性概觀](dependency-properties-overview.md)
 * [XAML 使用者和自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
-
 

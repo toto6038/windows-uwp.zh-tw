@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 983158dfa258eeac6305a7aa000afba7311500d3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="template-settings-classes"></a>範本設定類別
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -105,5 +102,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相關主題
 
 * [快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-
 

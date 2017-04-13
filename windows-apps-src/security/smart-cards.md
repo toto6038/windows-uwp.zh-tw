@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 42062dc9dcc11e3db6ddbb761e158d75e1259950
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9eb45cd5e8f30e530cd88e05c7e7ed5f3d5ac1cd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="smart-cards"></a>智慧卡
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。 
@@ -27,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="configure-the-app-manifest"></a>設定 app 資訊清單
 
 
-您必須先在專案的 Package.appxmanifest 檔案中設定「共用使用者憑證」****功能，您的 app 才能驗證使用智慧卡或虛擬智慧卡的使用者。
+您必須先在專案的 Package.appxmanifest 檔案中設定 **\[共用使用者憑證\]** 功能，您的 app 才能驗證使用智慧卡或虛擬智慧卡的使用者。
 
 ## <a name="access-connected-card-readers-and-smart-cards"></a>存取連線的讀卡機與智慧卡
 

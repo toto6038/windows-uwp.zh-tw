@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 059fac41c0c0557dbc3d4739c1da78f794505839
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ac4a09180a678e8da197bfb030e27fa001eb74f0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="frequently-asked-questions"></a>常見問題集
 
 項目未以您預期的方式運作？ 請閱讀這一頁的常見問題集。 也請參閱[已知問題](known-issues.md)主題和[開發通用 Windows 應用程式](https://go.microsoft.com/fwlink/?linkid=839446)論壇。 
@@ -52,7 +49,7 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至市集。
 
 ### <a name="will-i-lose-my-games-and-apps-or-saved-changes"></a>我是否會遺失我的遊戲和應用程式，或是已儲存的變更？
 
-如果您決定離開開發人員計畫，您將不會遺失已安裝的遊戲和應用程式。 此外，只要您在執行它們時是在線上，您所有的遊戲存檔都會儲存在您的 Live 帳戶雲端設定檔上，因此將不會遺失。
+如果您決定離開開發人員計畫，您將不會遺失已安裝的遊戲和 App。 此外，只要您在執行它們時是在線上，您所有的遊戲存檔都會儲存在您的 Live 帳戶雲端設定檔上，因此將不會遺失。
 
 ### <a name="how-do-i-leave-the-developer-program"></a>如何離開開發人員計畫？
 
@@ -72,9 +69,7 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至市集。
 
 ### <a name="can-i-publish-my-game"></a>我是否可以發佈我的遊戲？
 
-您可以使用 UWP 和開發人員模式的 Xbox One，以在 Xbox One 上建置並測試您的遊戲。 若要發佈 UWP 遊戲，您必須登錄 [ID@XBOX](http://www.xbox.com/Developers/id)。 
-[ID@XBOX](http://www.xbox.com/Developers/id) 為開發人員提供其遊戲的 Xbox Live API (包括 遊戲分數與成就) 的完整存取權，以及利用裝置、雲端儲存以及 Xbox One 上的所有 Xbox Live 功能之間的多玩家功能。 
-[ID@XBOX](http://www.xbox.com/Developers/id) 也可以存取遊戲的 Xbox One 開發套件，而遊戲可能需要存取最大部分的 Xbox One 硬體。
+您可以使用 UWP 和開發人員模式的 Xbox One，以在 Xbox One 上建置並測試您的遊戲。 若要發行 UWP 遊戲，您必須向 [ID@XBOX](http://www.xbox.com/Developers/id) 註冊，或是加入 [Xbox Live Creators 計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)。 如需詳細資訊，請參閱[開發人員計劃概觀](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
 
 ### <a name="will-the-standard-game-engines-work"></a>標準遊戲引擎是否可以運作？
 
@@ -110,7 +105,7 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至市集。
   > [!NOTE]
   > 為了取得最佳的部署效能，建議您使用有線連線方式連線主機。
 
-5. 請確定您是使用 [偵錯]**** 索引標籤的 [驗證] 下拉式清單中的 [通用 (未加密的通訊協定)]。 如需詳細資料，請參閱[開發環境設定](development-environment-setup.md)。
+5. 請確定您是使用 **\[偵錯\]** 索引標籤的 [驗證] 下拉式清單中的 [通用 (未加密的通訊協定)]。 如需詳細資料，請參閱[開發環境設定](development-environment-setup.md)。
 
 <!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
 
@@ -142,4 +137,3 @@ TVHelpers 是一組 JavaScript 和 XAML/C# 範例和程式庫，可協助您以 
 ## <a name="see-also"></a>另請參閱
 - [Xbox One 上的 UWP 已知問題](known-issues.md)
 - [Xbox One 上的 UWP](index.md)
-

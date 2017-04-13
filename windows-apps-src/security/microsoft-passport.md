@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f77de7b7a3c89a57855afba59028f55d8e8bb39c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e22176049652717af5ad222f7e6c8a30d447ce1b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-hello"></a>Windows Hello
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文章說明隨附在 Windows 10 作業系統中的新 Windows Hello 技術，然後討論開發人員可如何使用這項技術，來保護自己的通用 Windows 平台 (UWP) 應用程式和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
@@ -65,9 +62,9 @@ Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗
 ## <a name="2-what-is-windows-hello"></a>2 什麼是 Windows Hello？
 
 
-Windows Hello 是 Microsoft 提供給 Windows 10 內建的新生物特徵辨識登入系統的名稱。 因為此功能是直接內建於作業系統，所以 Windows Hello 讓使用者能夠使用臉部或指紋辨識來解除鎖定使用者的裝置。 當使用者提供了自己的唯一生物特徵辨識識別碼來存取裝置特定的認證時即會進行驗證，這表示除非竊取裝置的攻擊者具備 PIN，否則該攻擊者無法登入裝置。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。 使用 Windows Hello 解除鎖定裝置之後，授權的使用者就能取得自己的所有 Windows 體驗、App、資料、網站及服務的存取權。
+Windows Hello 是 Microsoft 提供給 Windows10 內建的新生物特徵辨識登入系統的名稱。 因為此功能是直接內建於作業系統，所以 Windows Hello 讓使用者能夠使用臉部或指紋辨識來解除鎖定使用者的裝置。 當使用者提供了自己的唯一生物特徵辨識識別碼來存取裝置特定的認證時即會進行驗證，這表示除非竊取裝置的攻擊者具備 PIN，否則該攻擊者無法登入裝置。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。 使用 Windows Hello 解除鎖定裝置之後，授權的使用者就能取得自己的所有 Windows 體驗、App、資料、網站及服務的存取權。
 
-Windows Hello 驗證稱為 Hello。 Hello 對於單一裝置與特定使用者的組合來說是唯一的， 它不會在裝置之間漫遊、不會與伺服器或呼叫中的應用程式分享，也無法輕易從裝置中取出。 如果有多位使用者共用一個裝置，每位使用者都需要設定自己的帳戶， 而每個帳戶都會取得該裝置專有的唯一 Hello。 您可以把 Hello 想像成可用來解除鎖定 (或釋放) 已儲存認證的權杖。 Hello 本身不會對應用程式或服務驗證您的身分，但它釋放認證可以這麼做。 換句話說，Hello 不是使用者認證，但它是驗證程序可使用的第二因素。
+Windows Hello 的驗證器被稱為 Hello。 Hello 對於單一裝置與特定使用者的組合來說是唯一的， 它不會在裝置之間漫遊、不會與伺服器或呼叫中的應用程式分享，也無法輕易從裝置中取出。 如果有多位使用者共用一個裝置，每位使用者都需要設定自己的帳戶， 而每個帳戶都會取得該裝置專有的唯一 Hello。 您可以把 Hello 想像成可用來解除鎖定 (或釋放) 已儲存認證的權杖。 Hello 本身不會對應用程式或服務驗證您的身分，但它釋放認證可以這麼做。 換句話說，Hello 不是使用者認證，但它是驗證程序可使用的第二因素。
 
 ## <a name="21-windows-hello-authentication"></a>2.1 Windows Hello 驗證
 

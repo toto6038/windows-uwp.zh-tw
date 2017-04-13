@@ -2,19 +2,17 @@
 title: "CPUSets 遊戲開發"
 description: "本文章提供通用 Windows 平台 (UWP) 新功能 CPUSets API 的概觀，並涵蓋遊戲與應用程式開發的相關核心資訊。"
 author: hammondsp
-translationtype: Human Translation
-ms.sourcegitcommit: 9f15d551715d9ccf23e4eb397637f4fafacec350
 ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="cpusets-for-game-development"></a>CPUSets 遊戲開發
 
-# CPUSets 遊戲開發
-
-## 簡介
+## <a name="introduction"></a>簡介
 
 通用 Windows 平台 (UWP) 是許多消費者電子裝置的核心。 因此，它需要一般用途的 API 以處理所有應用程式類型的需求，從遊戲到內嵌的應用程式，以及在伺服器上執行的企業軟體。 利用 API 提供的正確資訊，您可以確保遊戲在任何硬體上都能發揮最佳效能。
 
-## CPUSets API
+## <a name="cpusets-api"></a>CPUSets API
 
 CPUSets API 可讓您控制要提供哪些 CPU 集合以供在上面排程執行緒。 有兩個函式可用來控制排程執行緒的所在位置：
 - **SetProcessDefaultCpuSets** – 若新的執行緒未指派給特定的 CPU 集合，這個函式可用來指定新的執行緒可在哪些 CPU 集合上執行。
@@ -22,7 +20,7 @@ CPUSets API 可讓您控制要提供哪些 CPU 集合以供在上面排程執行
 
 若從未使用 **SetProcessDefaultCpuSets** 函式，則新建立的執行緒可能會排程到可供處理程序使用的任何 CPU 集合。 本節將詳細說明 CPUSets API 的基本知識。
 
-### GetSystemCpuSetInformation
+### <a name="getsystemcpusetinformation"></a>GetSystemCpuSetInformation
 
 用來收集資訊的第一個 API 是 **GetSystemCpuSetInformation** 函式。 這個函式會填入標題程式碼所提供之 **SYSTEM_CPU_SET_INFORMATION** 物件陣列的資訊。 目的地記憶體必須由遊戲程式碼配置，其大小是由呼叫 **GetSystemCpuSetInformation** 本身來決定。 這需要呼叫 **GetSystemCpuSetInformation** 兩次，如下列範例所示。
 
@@ -40,7 +38,7 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
 每個傳回的 **SYSTEM_CPU_SET_INFORMATION** 執行個體會包含一個唯一的處理單元資訊，又稱為 CPU 集合。 這不一定表示它代表唯一的實際硬體。 利用超執行緒的 CPU 會有多個邏輯核心在單一實體處理核心上執行。 將多個執行緒排程在位於相同實體核心上的不同邏輯核心，可讓硬體層級資源最佳化，否則會需要在核心層級完成額外工作。 排程在相同實體核心上不同邏輯核心的兩個執行緒必須共用 CPU 時間，但比起將它們排程到同一個邏輯核心，執行起來會更有效率。
 
-### SYSTEM_CPU_SET_INFORMATION
+### <a name="systemcpusetinformation"></a>SYSTEM_CPU_SET_INFORMATION
 
 此資料結構每個執行個體內的資訊 (由 **GetSystemCpuSetInformation** 傳回) 包含可能在上面排程執行緒的唯一處理單元資訊。 基於目標裝置的可能範圍，**SYSTEM_CPU_SET_INFORMATION** 資料結構中的許多資訊可能不適用於遊戲開發。 表 1 提供適用於遊戲開發的資料成員說明。
 
@@ -73,7 +71,7 @@ GetSystemCpuSetInformation(cpuSets, size, &size, curProc, 0);
 
   ![表 4](images/cpusets-table4.png)
 
-### SetThreadSelectedCpuSets
+### <a name="setthreadselectedcpusets"></a>SetThreadSelectedCpuSets
 
 現在與 CPU 集合有關的資訊已可使用，可用來組織執行緒。 利用 **CreateThread** 建立的執行緒控制代碼，會與可在上面排程執行緒之 CPU 集合的識別碼陣列一起傳遞到此函式中。 其使用方式的其中一個範例如以下程式碼所示。
 
@@ -84,15 +82,15 @@ SetThreadSelectedCpuSets(audioHandle, cores, 2);
 ```
 在此範例中，根據函式所建立的執行緒是宣告為 **AudioThread**。 然後，此執行緒可排程到兩個 CPU 集合的其中之一。 CPU 集合的執行緒擁有權不是專屬的。 在未鎖定到特定 CPU 集合的情況下所建立的執行緒，可能會佔用 **AudioThread** 的時間。 同樣地，其他已建立的執行緒也可能會在稍後鎖定到這些 CPU 集合的其中之一或兩者。
 
-### SetProcessDefaultCpuSets
+### <a name="setprocessdefaultcpusets"></a>SetProcessDefaultCpuSets
 
 與 **SetThreadSelectedCpuSets** 相反的是 **SetProcessDefaultCpuSets**。 當執行緒建立後，它們就不需要鎖定到特定的 CPU 集合。 如果您不想要這些執行緒在特定 CPU 集合 (例如轉譯執行緒或音訊執行緒所使用的 CPU 集合) 上執行，您可以使用此函式指定允許在哪些核心上面排程這些執行緒。
 
-## 遊戲開發的考量
+## <a name="considerations-for-game-development"></a>遊戲開發的考量
 
 如我們所了解，在使用 CPUSets API 排程執行緒時，它可以提供許多資訊與彈性。 相較於透過由下而上的方法來嘗試尋找此資料的用法，以由上到下的方式尋找如何配合一般案例使用資料會比較有效率。
 
-### 使用時效性執行緒與超執行緒
+### <a name="working-with-time-critical-threads-and-hyperthreading"></a>使用時效性執行緒與超執行緒
 
 若您的遊戲有幾個執行緒必須即時和其他需要相對較少 CPU 時間的背景工作執行緒搭配執行，這個方法很有效。 某些工作 (例如連續的背景音樂) 必須不間斷執行，以最佳化遊戲體驗。 即使有任一畫面格發生音訊執行緒耗盡，都可能會導致跳動或不順的情況，因此每個畫面格都接收到必要的 CPU 時間量是非常重要的。
 
@@ -131,7 +129,7 @@ bool hyperthreaded = processors.size() != cores.size();
 
 根據實體核心所組織之執行緒的範例，可在[額外資源](#additional-resources)區段中連結之 GitHub 儲存機制上的 CPUSets 範例中找到。
 
-### 利用末級快取降低快取一致性成本
+### <a name="reducing-the-cost-of-cache-coherence-with-last-level-cache"></a>利用末級快取降低快取一致性成本
 
 快取一致性是一項概念，代表橫跨多種硬體資源，在相同資料上動作的快取記憶體相同。 如果在不同核心上排程執行緒，但使用相同資料，它們可能會在不同的快取中使用個別的資料複本。 為了取得正確的結果，這些快取必須保持彼此間的一致性。 維護多個快取之間的一致性相當耗費資源，但對於任何多核心系統的運作而言是必要的。 此外，它完全不受用戶端程式碼控制；基礎系統會存取核心之間的共用記憶體資源，獨立運作以維持快取的最新狀態。
 
@@ -183,18 +181,12 @@ for (size_t i = 0; i < count; ++i)
 
 ![Lumia 950 快取](images/cpusets-lumia950cache.png)
 
-## 摘要
+## <a name="summary"></a>摘要
 
 適用於 UWP 開發的 CPUSets API 提供大量的資訊和控制多執行緒處理的選項。 相較於之前適用於 Windows 開發的多執行緒 API，新增的彈性具有一些學習曲線，但增加的彈性最終可在各種消費者電腦和其他硬體目標上有更佳的效能。
 
-## 其他資源
+## <a name="additional-resources"></a>其他資源
 - [CPU 集合 (MSDN)](https://msdn.microsoft.com/library/windows/desktop/mt186420(v=vs.85).aspx)
 - [ATG 提供的 CPUSets 範例](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/CPUSets)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

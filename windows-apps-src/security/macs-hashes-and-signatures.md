@@ -1,6 +1,6 @@
 ---
 title: "MAC、雜湊以及簽章"
-description: "本文討論如何在通用 Windows 平台 (UWP) 應用程式中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。"
+description: "本文討論如何在通用 Windows 平台 (UWP) app 中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。"
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
 ms.author: alkoren
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f29b77317e0b03aff7e56087aa3a882720170b29
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4de3b93cb6f86f409d6f915386b9d763056e89fa
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="macs-hashes-and-signatures"></a>MAC、雜湊以及簽章
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文討論如何在通用 Windows 平台 (UWP) app 中使用訊息驗證碼 (MAC)、雜湊及簽章來偵測訊息是否遭竄改。

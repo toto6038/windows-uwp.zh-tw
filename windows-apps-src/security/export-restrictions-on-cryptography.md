@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 265f0f0d9db1a8ae53a8d6561e289f8e303e08b1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a2d2582150146ed8f7eb416e9d6e2c8f990ff818
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="export-restrictions-on-cryptography"></a>密碼編譯的出口限制
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用這項資訊判斷您的應用程式使用密碼編譯的方式，是否會使它無法被刊登於 Windows 市集中。
 
@@ -64,4 +61,3 @@ ms.lasthandoff: 02/07/2017
 如果您的 app 會呼叫、支援、包含或使用密碼編譯或加密來進行未列在此清單中的任何工作，則必須提供出口管制分類號碼 (ECCN)。
 
 如果您沒有 ECCN，請參閱 [ECCN 問答集](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
-

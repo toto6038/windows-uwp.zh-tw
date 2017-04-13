@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 835d5393-427f-4155-a737-d509ea1de99f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 51076aed4ae55956164efaf3a3c01461e4b7338b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7e37846e7696213093e84d7409c6900e0aad5ed5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="whats-new-in-windows"></a>Windows 的新功能
 
 Windows 10 版本 1607 預覽與針對 Windows 開發人員工具的更新持續提供由通用 Windows 平台所提供的工具、功能及體驗。 在 Windows 10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288)，或是探索[如何在 Windows 上使用現有的 App 程式碼](https://msdn.microsoft.com/library/windows/apps/mt238321)。
@@ -34,4 +31,3 @@ Windows 10 版本 1607 預覽與針對 Windows 開發人員工具的更新持續
 Windows IoT | Windows 10 IoT 核心版可讓您以 Windows 的熟悉感來建立 IoT 應用程式，而且目前可用於 Raspberry Pi 3，這是最新的 Raspberry Pi 機板。
 媒體 API | Windows.Media.Playback 命名空間中新的 MediaBreak API 可讓您在使用 MediaSource 與 MediaPlaybackItem 播放媒體時，輕鬆排定與管理媒體中斷。 Windows.Media.Audio 命名空間中新的 AudioGraph API 新增了空間音訊處理，讓您為音訊圖節點指派 3D 定位的發射與接收。
 地圖 API | [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx#_blank) 已經過改善，讓開發人員在非常傾斜的視角，可以取得接近攝影機的可見區域，而排除遠處與接近地平線的區域。 [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx#_blank) 類別已擴充，可以讓開發人員指定正確度，以便在反向地理編碼時最佳化網路流量。 開發人員現在可以使用 [LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx#_blank) 方法與指定經緯度，以善用下載離線地圖。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-maps-app#_blank)。
-

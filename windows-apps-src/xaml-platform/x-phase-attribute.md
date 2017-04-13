@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 873da2adeea277e0f8f869703aac782c21b0419e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a629fb07bfa2e3f8bb3d070e9fe4994baba4336b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xphase-attribute"></a>x:Phase 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 搭配使用 **x:Phase** 與 [{x:Bind} 標記延伸](x-bind-markup-extension.md)，可用遞增方式轉譯 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目，並改善移動瀏覽體驗。 **x:Phase** 可讓您以宣告方式，達成與使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手動控制清單項目的呈現相同的效果。 另請參閱[以遞增方式更新 ListView 與 GridView 項目](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
@@ -84,5 +81,4 @@ ms.lasthandoff: 02/07/2017
 分段只會對 [{x:Bind}](x-bind-markup-extension.md) 繫結造成影響，不會影響到 [{Binding}](binding-markup-extension.md) 繫結。
 
 只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 就 Windows 10 而言，這是指 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
-
 

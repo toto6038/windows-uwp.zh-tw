@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9ae92b196015fb958e90409f947c1e42184ec0d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 07df77f295e6454376b2fd8bcc7f12c9b2956bbc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="icons-for-uwp-apps"></a>適用於 UWP 應用程式的圖示
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -183,4 +180,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-articles"></a>相關文章
 
 * [磚和圖示資產的指導方針](../controls-and-patterns/tiles-and-notifications-app-assets.md)
-

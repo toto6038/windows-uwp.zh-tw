@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 非同步"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1f157db0dc9124ce839f608e5f1a2325c1ce922f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06eceae9c7736ce59bc0ab1b842425c3dc56d299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="asynchronous-programming"></a>非同步程式設計
 
@@ -84,4 +82,3 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 * [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [使用 Async 和 Await 進行非同步程式設計 (C# 和 Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [黑白棋範例功能案例：非同步程式碼](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
-

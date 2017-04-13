@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 1aea4f2da584124050665d159b1d83f34368b819
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 38bafd7c63b101e495748c169a1b566115c2a1e6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xbox-dev-mode-companion"></a>Xbox 開發人員模式小幫手
 
 Xbox 開發人員模式小幫手可讓您從遠端連線 Xbox One 主機並控制它。 此工具是針對使用 Xbox 開發人員模式的開發人員所建立。
@@ -27,7 +24,7 @@ Xbox 開發人員模式小幫手可讓您從遠端連線 Xbox One 主機並控�
 連線到您的主機︰
 
 1. 啟動 App。   
-2. 如果您沒有在 [連線] 對話方塊中看到您的主機，請在對話方塊底部的文字方塊中輸入您主機的 IP 位址，然後選取 [連線]****。
+2. 如果您沒有在 [連線] 對話方塊中看到您的主機，請在對話方塊底部的文字方塊中輸入您主機的 IP 位址，然後選取 **\[連線\]**。
 
 ## <a name="streaming-controls"></a>串流處理控制項
 在您連線之後，您可以使用您的滑鼠在串流處理區域上暫留，來存取串流處理控制項。 這些控制項可讓您︰
@@ -48,4 +45,3 @@ Xbox 開發人員模式小幫手可讓您從遠端連線 Xbox One 主機並控�
 
 ## <a name="see-also"></a>另請參閱
 - [Xbox One 上的 UWP](index.md)
-

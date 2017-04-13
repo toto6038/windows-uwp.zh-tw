@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: dcd97e72520b4e814c665dc72b36c895cd8fe2b2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: cce852d20dfce74740163009d72c02cfb58cc523
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="uwp-style-guide"></a>UWP 樣式指南
 
@@ -75,9 +73,8 @@ ms.lasthandoff: 02/08/2017
   
   <div class="side-by-side-content-right">
    <p><b>[設定控制項的樣式](../controls-and-patterns/styling-controls.md)</b><br/>
-您可以使用 XAML 架構，以許多方式自訂應用程式的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
+您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
   </div>
 </div>
 </div>
-
 

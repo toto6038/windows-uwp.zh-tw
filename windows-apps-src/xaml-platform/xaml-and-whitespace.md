@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 260aa6c4bae2f7e9d051e172f83563f430e4e6c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-and-whitespace"></a>XAML 與空格
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解 XAML 使用的空格處理規則。
 
@@ -57,5 +54,4 @@ ms.lasthandoff: 02/07/2017
 `xml:space="preserve"`：在需要保留空格的元素層級指定此屬性。 請注意，它會保留所有空格，包括由程式碼編輯器或設計表面新增的空格，這是為了對齊標記元素以便在視覺上呈現直觀的巢狀結構。 這些空格的轉譯與包含元素的內容模型相關。 我們不建議您在根層級指定 `xml:space="preserve"`，因為大部分的物件模型不認為空格很重要。 較佳的做法是只在字串內部會呈現空格或需要空格的集合的元素層級具體設定該屬性。
 
 實體與不分行空格：XAML 支援在文字物件模型內放置任何 Unicode 實體。 您可以使用專用實體，像是不分行空格 (UTF-8 編碼方式)。 您也可以使用支援不分行空格字元的 Rich Text 控制項。 如果您使用實體來模擬配置特性 (像是縮排)，由於實體的執行階段輸出將依據比一般的配置設施 (像是適當使用面板與邊界) 更多的因素而變更，因此應該謹慎使用。
-
 

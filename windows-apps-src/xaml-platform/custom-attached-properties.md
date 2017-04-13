@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e05c1b2e8c8391901c28c12b57415ec0e599859d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9b9ec40eb3411252c46286e44744a8ab7ef9c431
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-attached-properties"></a>自訂附加屬性
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -250,5 +247,4 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 * [附加屬性概觀](attached-properties-overview.md)
 * [自訂相依性屬性](custom-dependency-properties.md)
 * [XAML 概觀](xaml-overview.md)
-
 

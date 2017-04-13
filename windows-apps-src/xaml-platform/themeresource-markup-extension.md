@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: "透過評估對資源的參考，搭配會依據目前使用中佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。"
+description: "透過評估對資源的參考，搭配會依據目前使用中的佈景主題抓取不同資源的額外系統邏輯，為所有 XAML 屬性提供一個值。"
 title: "ThemeResource 標記延伸"
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ms.author: jimwalk
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9175c998aa0dffb861697c2206c4202193b9bd9f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3d770bba434a065e5589311e34000006051ab672
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="themeresource-markup-extension"></a>{ThemeResource} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -159,5 +156,4 @@ Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開�
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 屬性](x-key-attribute.md)
  
-
 

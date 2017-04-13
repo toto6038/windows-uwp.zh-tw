@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ea01f8191190db0a9b13b8081bc6fef687369c13
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e360869cd8406fac057046412fc135a42b3e0ccd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="move-and-draw-commands-syntax"></a>移動與繪製命令語法
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解可用來指定路徑幾何做為 XAML 屬性值的移動與繪製命令 (一種迷你程式語言)。 許多可以輸出向量圖形或形狀 (以序列化或交換格式) 的設計與圖形工具都會使用移動與繪製命令。
 
@@ -231,7 +228,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>產生移動與繪製命令的設計工具
 
-使用 Blend for Microsoft Visual Studio 2015 中的 [畫筆]**** 工具及其他繪圖工具通常會產生含有移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。
+使用 Blend for Microsoft Visual Studio 2015 中的 **\[畫筆\]** 工具及其他繪圖工具通常會產生含有移動與繪製命令的 [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) 物件。
 
 您會在 Windows 執行階段 XAML 控制項預設範本所定義的一些控制項組件中，看到現有的移動與繪製命令資料。 例如，有些控制項使用將資料定義為移動與繪製命令的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)。
 
@@ -243,5 +240,4 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 * [使用筆刷](https://msdn.microsoft.com/library/windows/apps/mt280383)
 * [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
 * [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
-
 

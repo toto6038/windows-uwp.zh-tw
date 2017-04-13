@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: "色彩可透過應用程式的各種資訊層級提供直覺式尋找路徑方法，並作為強化互動模型的重要工具。"
+description: "色彩可提供 app 的各種資訊層級提供直覺式尋找路徑方法，並做為強化互動模型的重要工具。"
 title: "色彩"
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 template: detail.hbs
@@ -11,18 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 98158e8dc1531c1d4059b5462a6839d775fb6336
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="color"></a>色彩
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-色彩不僅提供一種可尋找應用程式各種不同層級資訊的直覺方式，也作為一種強化互動模型的重要工具。
+色彩不僅提供一種可尋找 App 各種不同層級資訊的直覺方式，也作為一種強化互動模型的重要工具。
 
 在 Windows 中，色彩也是個人化的。 使用者可以選擇在他們的體驗中要反映的色彩和淺色或深色的佈景主題。
 
@@ -150,10 +147,30 @@ ms.lasthandoff: 02/07/2017
 根據預設，超連結會使用使用者的輔色。 如果頁面背景是類似的色彩，您可以選擇為超連結指派較淺的 (或較深的) 輔色色調，以獲得較佳的對比。
 
 
-<div class="uwpd-image-with-caption">
-    <img src="images/shades.png" alt="A single accent color with its 6 shades" />
-    <div>各種預設淺/深輔色色調。</div>
-</div>
+<table class="uwpd-color-table" style="border: solid 4px white; width: 30pc">
+   <caption>預設輔色的各種淺色/深色色調。</caption>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #A6D8FF; color: black">3 個色調較淺</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #76B9ED; color: black">2 個色調較淺</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #429CE3; color: black">1 個色調較淺</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #0078D7; color: white">範例輔色</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #005A9E; color: white">1 個色調較深</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #004275; color: white">2 個色調較深</td>
+    </tr>
+    <tr>
+        <td class="uwpd-color-table" style="background-color: #002642; color: white">3 個色調較深</td>
+    </tr>
+</table>
 
 <div class="uwpd-image-with-caption">
     <img src="images/action_center_redline_zoom.png" alt="Redlines for Colored Action Center" />
@@ -223,4 +240,3 @@ ms.lasthandoff: 02/07/2017
 
 * [XAML 樣式](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
 * [XAML 佈景主題資源](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)
-

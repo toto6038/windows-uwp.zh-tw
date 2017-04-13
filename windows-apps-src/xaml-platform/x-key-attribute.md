@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 67b2b3b60ab6faba5ca30bb585205aba007597ca
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xkey-attribute"></a>x:Key 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一識別建立和參照為資源的元素，存在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
 
@@ -73,5 +70,4 @@ CombiningCharacter::= none
 等同於指定 **x:Key** 的程式碼，是使用含有基礎 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的索引鍵的任何作業。 例如，當您新增資源到 **ResourceDictionary** 時，在資源的標記中套用的 **x:Key** 等同於 **Insert** 的 *key* 參數值。
 
 如果資源字典中的項目為目標的 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 或 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)，則可以忽略 **x:Key** 的值；不管是哪一種情況，資源項目的隱含索引鍵都是會解譯為字串的 **TargetType** 值。 如需詳細資訊，請參閱[快速入門：設定控制項的樣式](https://msdn.microsoft.com/library/windows/apps/hh465498)和 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
-
 

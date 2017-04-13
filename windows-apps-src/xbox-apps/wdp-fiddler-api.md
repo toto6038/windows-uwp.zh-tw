@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 24e966f953928d238f9197359e0b539b8a3e5c3c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 02b1a056cd7e711b1fc4533c353570209153f9e8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
 
@@ -105,5 +102,4 @@ HTTP 狀態碼      | 描述
 
 ## <a name="see-also"></a>另請參閱
 - [在 Xbox 上針對 UWP 設定 Fiddler](uwp-fiddler.md)
-
 

@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5185eb704f94e33031684aef761c701398c0dbd7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e3e4ba56438746c257ac917f61d9f1703f20ecdd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="attached-properties-overview"></a>附加屬性概觀
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -124,5 +121,4 @@ Windows 執行階段的附加屬性會實作為相依性屬性，這樣一來值
 * [快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/hh943060)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
 * [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
-
 

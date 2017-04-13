@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 11a99a1a68a37b8c60974193c8cab51247a25711
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5a3a0350a7a28cc31a1207abd4590a0fa3cbbc3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空間與命名空間對應
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -118,5 +115,4 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 * [Windows 執行階段應用程式的 C#、VB 及 C++ 專案範本](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [將 Silverlight 或 WPF XAML/程式碼移轉到 Windows 執行階段應用程式](https://msdn.microsoft.com/library/windows/apps/br229571)
  
-
 

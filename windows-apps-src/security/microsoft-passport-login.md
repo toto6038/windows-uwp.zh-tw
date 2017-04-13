@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2ffec3d72ab0b3ca87a5cc0ec9325fe805ae9b6f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 336bb3b58e9f6cfeb3c173a8bb1c9e72bc7929b7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
@@ -36,7 +33,7 @@ ms.lasthandoff: 02/07/2017
 為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要使用安裝在 Windows 10 電腦上的 Visual Studio 2015 (Community 版或更新版本)。
 
 -   開啟 Visual Studio 2015，然後選取 \[檔案\] &gt; \[新增\] &gt; \[專案\]。
--   這將會開啟 \[新增專案\] 視窗。 瀏覽至 \[範本\] > \[Visual C#\]。
+-   這將會開啟 \[新增專案\] 視窗。 瀏覽至 \[範本\] &gt; \[Visual C#\]。
 -   選擇 \[空白應用程式 (通用 Windows)\]，然後把您的應用程式命名為「PassportLogin」。
 -   建置並執行新的應用程式 (F5)，您應該會看到畫面出現空白的視窗。 關閉應用程式。
 
@@ -167,11 +164,11 @@ ms.lasthandoff: 02/07/2017
     }
     ```
 
--   如要建立 MicrosoftPassportHelper 類別，請用滑鼠右鍵按一下解決方案 \[PassportLogin (通用 Windows)\]，然後按一下 \[加入\] > \[新增資料夾\]， 將這個資料夾命名為 Utils。
+-   如要建立 MicrosoftPassportHelper 類別，請用滑鼠右鍵按一下解決方案 \[PassportLogin (通用 Windows)\]，然後按一下 \[加入\] &gt; \[新增資料夾\]， 將這個資料夾命名為 Utils。
 
     ![passport 建立協助程式類別](images/passport-login-5.png)
 
--   用滑鼠右鍵按一下 \[Utils\] 資料夾，並按一下 \[加入\] > \[類別\]。 然後把這個類別命名為「MicrosoftPassportHelper.cs」。
+-   用滑鼠右鍵按一下 \[Utils\] 資料夾，並按一下 \[加入\] &gt; \[類別\]。 然後把這個類別命名為「MicrosoftPassportHelper.cs」。
 -   請將 MicrosoftPassportHelper 的類別定義變更為 Public Static，然後加入下列方法，以便讓使用者知道是否已準備好使用 Windows Hello。 您將需要新增必要的命名空間。
 
     ```cs

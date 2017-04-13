@@ -9,20 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9ce20fbfc1289eb02faf8868415feda054d6f691
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 70ef1ab7bc31fde2f0d4744394c1ae69c8caf7fd
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="distributing-a-managed-windows-runtime-component"></a>發佈 Managed Windows 執行階段元件
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-您可以透過檔案複製來發佈自己的 Windows 執行階段元件。 不過，如果元件包含許多檔案，使用者就必須等待冗長的安裝過程。 此外，放置檔案時發生的錯誤或參考設定失敗都可能會造成他們的問題。 您可以將複雜元件封裝成 Visual Studio 擴充功能 SDK，方便安裝與使用。 使用者只需為整個封裝設定一個參考。 如 MSDN Library 中的[尋找及使用 Visual Studio 擴充功能](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)所述，使用者可以透過 [擴充功能和更新]**** 對話方塊輕鬆地尋找並安裝您的元件。
+您可以透過檔案複製來發佈自己的 Windows 執行階段元件。 不過，如果元件包含許多檔案，使用者就必須等待冗長的安裝過程。 此外，放置檔案時發生的錯誤或參考設定失敗都可能會造成他們的問題。 您可以將複雜元件封裝成 Visual Studio 擴充功能 SDK，方便安裝與使用。 使用者只需為整個封裝設定一個參考。 如 MSDN Library 中的[尋找及使用 Visual Studio 擴充功能](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)所述，使用者可以透過 **\[擴充功能和更新\]** 對話方塊輕鬆地尋找並安裝您的元件。
 
 ## <a name="planning-a-distributable-windows-runtime-component"></a>規劃可發佈的 Windows 執行階段元件
 
@@ -48,7 +44,7 @@ For example: Microsoft.Cpp.Build.dll
 
 ## <a name="distribution-by-file-copy"></a>藉由檔案複製發佈
 
-如果元件是由單一 .winmd 檔案組成，或是由 .winmd 檔案和資源索引 (.pri) 檔案組成，您只需讓使用者複製 .winmd 檔案即可。 使用者可以將檔案放在專案中的任何地方、使用 [加入現有項目]**** 對話方塊來將 .winmd 檔案加入專案，然後使用 [參考管理員] 對話方塊來建立參考。 如果您包含 .pri 檔案或 .xml 檔案，請告知使用者將這些檔案與 .winmd 檔案放在一起。
+如果元件是由單一 .winmd 檔案組成，或是由 .winmd 檔案和資源索引 (.pri) 檔案組成，您只需讓使用者複製 .winmd 檔案即可。 使用者可以將檔案放在專案中的任何地方、使用 **\[加入現有項目\]** 對話方塊來將 .winmd 檔案加入專案，然後使用 [參考管理員] 對話方塊來建立參考。 如果您包含 .pri 檔案或 .xml 檔案，請告知使用者將這些檔案與 .winmd 檔案放在一起。
 
 > **注意**  當您建置 Windows 執行階段元件時，Visual Studio 一律會產生 .pri 檔案，即使專案不含任何資源也一樣。 如果您有適用於元件的測試 app，則可在 bin\debug\AppX 資料夾中檢查 app 封裝的內容，以判斷是否使用了 .pri 檔案。 如果來自元件的 .pri 檔案並未出現在其中，則您就不需發佈該元件。 或者，您也可以使用 [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) 工具，傾印來自於 Windows 執行階段元件專案的資源檔。 例如，您可以在 Visual Studio 命令提示字元視窗中輸入： makepri dump /if MyComponent.pri /of MyComponent.pri.xml 如需 .pri 檔案的詳細資訊，請參閱[資源管理系統 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)。
 
@@ -80,4 +76,3 @@ For example: Microsoft.Cpp.Build.dll
 * [資源管理系統 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)
 * [尋找及使用 Visual Studio 擴充功能](https://msdn.microsoft.com/library/dd293638.aspx)
 * [MakePRI.exe 命令選項](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx)
-

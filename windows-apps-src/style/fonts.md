@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "為 UWP 應用程式選取字型及指定字型大小與色彩時，請遵循這些指導方針。"
+Description: "為 UWP app 選取字型及指定字型大小與色彩時，請遵循這些指導方針。"
 title: "適用於 UWP 應用程式的字型"
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
@@ -11,19 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9e09569eaad194c6b945444579dc37dec0fdc76c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7d72d5251000e16349efa8d4f7716e12d22764d6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="fonts-for-uwp-apps"></a>適用於 UWP 應用程式的字型
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-本文列出針對 UWP 應用程式建議的字型。 在所有支援 UWP app 的 Windows 10 版本中保證都有提供這些字型。
+本文列出針對 UWP app 建議的字型。 在所有支援 UWP app 的 Windows 10 版本中保證都有提供這些字型。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -315,7 +311,6 @@ Serif 字型適合呈現大量的文字。
  
 
  
-
 
 
 

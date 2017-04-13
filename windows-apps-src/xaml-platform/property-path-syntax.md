@@ -8,17 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 301f411f1911e12163ba123b93f99f5f15b5e479
-ms.lasthandoff: 02/07/2017
-
+keywords: windows 10, uwp
+ms.openlocfilehash: 3209028f151608c83e69d6750e978132a6c8b83c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="property-path-syntax"></a>Property-path 語法
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您可以使用 [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) 類別和字串語法，具現化 XAML 或程式碼中的 **PropertyPath** 值。 資料繫結會使用 **PropertyPath** 值。 而目標腳本動畫也會使用類似的語法。 在這兩個案例中，屬性路徑描述了一或多個物件-屬性關係的周遊，這些關係最後會解析為單一屬性。
 
@@ -90,7 +87,7 @@ ms.lasthandoff: 02/07/2017
 
 若要指定集合屬性中的子項目，可以使用數值索引子。 請將整數索引值括在方括號 "\[\]" 字元內。 您只可以參考已排序的清單，不可以參考字典。 因為集合不是可以產生動畫效果的值，所以屬性路徑的結尾屬性永遠不可以使用索引子。
 
-例如，若要在套用到控制項 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 屬性的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) 中指定第一個色彩停止點的顏色動畫，則屬性路徑如下："(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)"。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 屬性，以便套用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫值。
+例如，若要在套用到控制項[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) 屬性的 [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) 中指定第一個色彩停止點的顏色動畫，則屬性路徑如下："(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)"。 您應該注意到索引子不是路徑的最後一段，而最後一段必須明確地參考集合中項目 0 的 [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) 屬性，以便套用 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 動畫值。
 
 ## <a name="animating-an-attached-property"></a>讓附加屬性產生動畫效果
 
@@ -122,5 +119,4 @@ ms.lasthandoff: 02/07/2017
 * [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**Binding 建構函式**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
-
 

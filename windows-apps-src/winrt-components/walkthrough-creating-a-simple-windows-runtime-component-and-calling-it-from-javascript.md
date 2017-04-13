@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6f1bfc96416febdf531dec52c14bcaee13de9f14
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 381e1d264e27d2b68e644895d0b795128540a5d7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
 
 
@@ -40,8 +37,8 @@ Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 
 
 本節會建立使用 JavaScript 為 Windows 建置的通用 Windows 應用程式，以及加入 Visual Basic 或 C# Windows 執行階段元件專案。 它將示範如何定義 Managed Windows 執行階段類型、從 JavaScript 建立類型的執行個體，以及呼叫靜態和執行個體成員。 範例應用程式的視覺顯示會刻意保持單調，以便將焦點保留在元件上。 請自行將它美化。
 
-1.  在 Visual Studio 中，建立新的 JavaScript 專案：在功能表列上，依序選擇 [檔案]、[新增] 及 [專案]****。 在 [新增專案]**** 對話方塊的 [已安裝的範本]**** 區段中，選擇 **JavaScript**，然後依序選擇 [Windows]**** 和 [通用]****。 (如果無法使用 Windows，請確定您使用的是 Windows 8 或更新版本)。選擇 [空白的應用程式]**** 範本，並輸入 SampleApp 做為專案名稱。
-2.  建立元件專案：在 [方案總管] 中，開啟 SampleApp 方案的捷徑功能表，然後依序選擇 [新增]**** 和 [新增專案]****，將新的 C# 或 Visual Basic 專案新增至方案。 在 [新增專案]**** 對話方塊的 [已安裝的範本]**** 區段中，選擇 [Visual Basic]**** 或 [Visual C#]****，然後依序選擇 [Windows]**** 和 [通用]****。 選擇 [Windows 執行階段元件]**** 範本，然後輸入 **SampleComponent** 做為專案名稱。
+1.  在 Visual Studio 中，建立新的 JavaScript 專案：在功能表列上，依序選擇 **\[檔案\]、\[新增\] 及 \[專案\]**。 在 **\[新增專案\]** 對話方塊的 **\[已安裝的範本\]** 區段中，選擇 **\[JavaScript\]**，然後依序選擇 **\[Windows\]** 和 **\[通用\]**。 (如果無法使用 Windows，請確定您使用的是 Windows 8 或更新版本)。選擇 **\[空白的應用程式\]** 範本，並輸入 SampleApp 做為專案名稱。
+2.  建立元件專案：在 [方案總管] 中，開啟 SampleApp 方案的捷徑功能表，然後依序選擇 **\[新增\]** 和 **\[新增專案\]**，將新的 C# 或 Visual Basic 專案新增至方案。 在 **\[新增專案\]** 對話方塊的 **\[已安裝的範本\]** 區段中，選擇 **\[Visual Basic\]** 或 **\[Visual C#\]**，然後依序選擇 **\[Windows\]** 和 **\[通用\]**。 選擇 **\[Windows 執行階段元件\]** 範本，然後輸入 **SampleComponent** 做為專案名稱。
 3.  將類別的名稱變更為 **Example**。 請注意，根據預設，類別會標記為 **public sealed** (在 Visual Basic 中為 **Public NotInheritable**)。 從您的元件公開的所有 Windows 執行階段類別都必須密封。
 4.  將兩個簡單成員加入至類別、**static** 方法 (在 Visual Basic 中為 **Shared**) 和執行個體屬性：
 
@@ -70,8 +67,8 @@ Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 
     > End Class
     > ```
 
-5.  選擇性：若要啟用新加入成員的 IntelliSense，請在 [方案總管] 中開啟 SampleComponent 專案的捷徑功能表，然後選擇 [建置]****。
-6.  在 [方案總管] 的 JavaScript 專案中，開啟 [參考]**** 的捷徑功能表，然後選擇 [加入參考]**** 以開啟 [參考管理員]****。 選擇 [專案]****，然後選擇 [方案]****。 選取 SampleComponent 專案的核取方塊，然後選擇 [確定]**** 以加入參考。
+5.  選擇性：若要啟用新加入成員的 IntelliSense，請在 [方案總管] 中開啟 SampleComponent 專案的捷徑功能表，然後選擇 **\[建置\]**。
+6.  在 [方案總管] 的 JavaScript 專案中，開啟 **\[參考\]** 的捷徑功能表，然後選擇 **\[加入參考\]** 以開啟 **\[參考管理員\]**。 選擇 **\[專案]\**，然後選擇 **\[方案\]**。 選取 SampleComponent 專案的核取方塊，然後選擇 **\[確定\]** 以加入參考。
 
 ## <a name="call-the-component-from-javascript"></a>從 JavaScript 呼叫元件
 
@@ -328,7 +325,7 @@ function onMapChanged(change) {
 
 若要執行應用程式，請選擇 F5 鍵。 如果類別並未密封，您就會收到錯誤訊息：「目前不支援匯出未密封的類型 'SampleComponent.Example'。 請將它標記為已密封」。
 
-選擇 [Runtime 1]**** 按鈕。 事件處理常式會在加入或變更元素時顯示變更，最後呼叫 DisplayStats 方法來產生計數摘要。 若要停止偵錯並關閉應用程式，請切換回 Visual Studio，然後選擇 SHIFT+F5。
+選擇 **\[Runtime 1\]** 按鈕。 事件處理常式會在加入或變更元素時顯示變更，最後呼叫 DisplayStats 方法來產生計數摘要。 若要停止偵錯並關閉應用程式，請切換回 Visual Studio，然後選擇 SHIFT+F5。
 
 若要從 Managed 程式碼加入另外兩個項目至 PropertySet 集合，請將下列程式碼加入至 PropertySetStats 類別：
 
@@ -375,7 +372,7 @@ var runtimeButton2 = document.getElementById("runtimeButton2");
 runtimeButton2.addEventListener("click", runtime2, false);
 ```
 
-若要執行應用程式，請選擇 F5 鍵。 依序選擇 [Runtime 1]**** 和 [Runtime 2]****。 JavaScript 事件處理常式會將第一個變更回報至集合。 不過，第二個變更具有重複的索引鍵。 .NET Framework 字典的使用者預期 Add 方法會擲回例外狀況，而實際情況就是如此。 JavaScript 會處理 .NET Framework 例外狀況。
+若要執行應用程式，請選擇 F5 鍵。 依序選擇 **\[Runtime 1\]** 和 **\[Runtime 2\]**。 JavaScript 事件處理常式會將第一個變更回報至集合。 不過，第二個變更具有重複的索引鍵。 .NET Framework 字典的使用者預期 Add 方法會擲回例外狀況，而實際情況就是如此。 JavaScript 會處理 .NET Framework 例外狀況。
 
 > **備註**  您無法從 JavaScript 程式碼顯示例外狀況的訊息， 因為訊息文字會由堆疊追蹤所取代。 如需詳細資訊，請參閱＜在 C# 和 Visual Basic 中建立 Windows 執行階段元件＞中的「擲回例外狀況」一節。
 
@@ -468,9 +465,9 @@ returnsButton2.addEventListener("click", returns2, false);
 
 如先前範例所示，在 returns2 函式中，JavaScript 會呼叫 Insert 方法 (在 JavaScript 中為 insert)，將項目加入至字典。
 
-若要執行應用程式，請選擇 F5 鍵。 若要建立和顯示字典的初始內容，請選擇 [Returns 1]**** 按鈕。 若要將其他兩個項目加入至字典，請選擇 [Returns 2]**** 按鈕。 請注意，項目會依插入的順序顯示，如同您對 Dictionary&lt;TKey, TValue&gt; 的預期一般。 若要將它們排序，您可以從 GetMapOfNames 傳回 SortedDictionary&lt;int, string&gt; (先前範例中使用的 PropertySet 類別與 Dictionary&lt;TKey, TValue&gt; 具有不同的內部組織)。
+若要執行應用程式，請選擇 F5 鍵。 若要建立和顯示字典的初始內容，請選擇 **\[Returns 1\]** 按鈕。 若要將其他兩個項目加入至字典，請選擇 **\[Returns 2\]** 按鈕。 請注意，項目會依插入的順序顯示，如同您對 Dictionary&lt;TKey, TValue&gt; 的預期一般。 若要將它們排序，您可以從 GetMapOfNames 傳回 SortedDictionary&lt;int, string&gt; (先前範例中使用的 PropertySet 類別與 Dictionary&lt;TKey, TValue&gt; 具有不同的內部組織)。
 
-當然，JavaScript 不是強類型語言，所以使用強類型的泛型集合可能會導致一些意外的結果。 再次選擇 [Returns 2]**** 按鈕。 JavaScript 會將 "7" 強制轉型為數值 7，而將儲存在 ct 中的數值 7 強制轉型為字串。 而且，還會將字串 "forty" 強制轉型為零。 但是，這只是個開頭。 請多選擇幾次 [Returns 2]**** 按鈕。 在 Managed 程式碼中，即使值已轉型為正確的類型，Add 方法仍會產生重複索引鍵例外狀況。 相反地，Insert 方法會更新與現有索引鍵相關聯的值，並傳回 Boolean 值，表示是否已將新的索引鍵加入至字典。 這就是為何與索引鍵 7 相關聯的值會持續變更的緣故。
+當然，JavaScript 不是強類型語言，所以使用強類型的泛型集合可能會導致一些意外的結果。 再次選擇 **\[Returns 2\]** 按鈕。 JavaScript 會將 "7" 強制轉型為數值 7，而將儲存在 ct 中的數值 7 強制轉型為字串。 而且，還會將字串 "forty" 強制轉型為零。 但是，這只是個開頭。 請多選擇幾次 **\[Returns 2\]** 按鈕。 在 Managed 程式碼中，即使值已轉型為正確的類型，Add 方法仍會產生重複索引鍵例外狀況。 相反地，Insert 方法會更新與現有索引鍵相關聯的值，並傳回 Boolean 值，表示是否已將新的索引鍵加入至字典。 這就是為何與索引鍵 7 相關聯的值會持續變更的緣故。
 
 另一個非預期的行為：如果您將未指派的 JavaScript 變數當做字串引數傳遞，就會取得字串 "undefined"。 總之，當您將 .NET Framework 集合類型傳遞至 JavaScript 程式碼時，請格外小心。
 
@@ -735,11 +732,10 @@ btnCancel.addEventListener("click", asyncCancel, false);
 
 asyncCancel 函式只會呼叫 WinJS.Promise 物件的 cancel 方法。
 
-若要執行應用程式，請選擇 F5 鍵。 若要啟動非同步作業，請選擇 [非同步]**** 按鈕。 接下來發生的狀況取決於您的電腦速度有多快。 如果進度列在一瞬間就迅速完成，請以十或十的倍數增加起始數字大小，該數字會傳遞至 GetPrimesInRangeAsync。 您可以藉由增加或減少要測試的數字計數來微調作業的持續時間，但在起始數字中間加入零將造成較大的影響。 若要取消作業，請選擇 [取消非同步]**** 按鈕。
+若要執行應用程式，請選擇 F5 鍵。 若要啟動非同步作業，請選擇 **\[非同步\]** 按鈕。 接下來發生的狀況取決於您的電腦速度有多快。 如果進度列在一瞬間就迅速完成，請以十或十的倍數增加起始數字大小，該數字會傳遞至 GetPrimesInRangeAsync。 您可以藉由增加或減少要測試的數字計數來微調作業的持續時間，但在起始數字中間加入零將造成較大的影響。 若要取消作業，請選擇 **\[取消非同步\]** 按鈕。
 
 ## <a name="related-topics"></a>相關主題
 
 * [適用於 Windows 市集應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [適用於 UWP 應用程式的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-

@@ -1,7 +1,7 @@
 ---
 author: msatranjr
 title: "Windows 執行階段元件"
-description: "本文件討論 Windows 10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
+description: "本文件討論 Windows10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。"
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8844196503c45e9488d3fa2a543d588229d01cdd
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e3acc609e5db083bda023643ef4dae4c5d9d0248
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="brokered-windows-runtime-components-for-a-side-loaded-windows-store-app"></a>側載 Windows 市集應用程式的代理 Windows 執行階段元件
 
 本文章討論 Windows 10 所支援的企業導向功能，該功能允許方便觸控的 .NET 應用程式可使用負責重要業務關鍵作業的現有程式碼。
@@ -58,7 +55,7 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 >**注意** 側載可以在 [設定] -&gt; [更新與安全性] -&gt;
  [適用於開發人員] 中開啟。
 
-請特別注意，Windows 10 更新隨附的應用程式代理人機制只有 32 位元版本。 桌面元件必須是 32 位元。
+請特別注意，Windows10 更新隨附的應用程式代理人機制只有 32 位元版本。 桌面元件必須是 32 位元。
 側載應用程式可以是 64 位元 (前提是要同時登錄 64 位元和 32 位元 Proxy)，但這不常見。 建置使用 C\# 的側載應用程式時，使用一般「中性」設定和「建議使用 32 位元」預設值就能建立 32 位元的側載應用程式。
 
 **伺服器執行個體和 AppDomain**
@@ -162,7 +159,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 <ActivatableClass> 區段會和應用程式套件中 Windows 執行階段元件偏好的真正同處理序 RuntimeClass 相同。 <ActivatableClassAttribute> 是新的元素，且屬性 Name="DesktopApplicationPath" 和 Type="string" 是強制且不變的。 值屬性指向桌面元件實作 winmd 所在的位置 (下節會有更詳盡的資訊)。 桌面元件偏好的每個 RuntimeClass 都應該有自己的 <ActivatableClass> 元素樹狀結構。 ActivatableClassId 必須符合 RuntimeClass 的完整命名空間名稱。
 
-如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 [瀏覽..]**** 按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
+如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 **\[瀏覽..\]** 按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
 
 >**注意** 在側載應用程式中使用 **reference winmd** 非常重要。 如果您不小心將 **implementation winmd** 帶到側載應用程式目錄並參考它，很可能會收到與「找不到 IStringable」相關的錯誤。 這是參考錯誤 **winmd** 的明顯指標。 IPC 伺服器應用程式的建置後規則 (下節會有詳細說明) 很謹慎地將這兩個 **winmd** 隔離在兩個獨立的目錄中。
 
@@ -400,7 +397,7 @@ mdmerge -n 1 -i "$(TargetDir)\impl" -o "$(TargetDir)reference" -metadata_dir "%W
 
 **安裝**
 
-若要安裝應用程式，請將實作 **winmd** 複製到相關側載應用程式資訊清單指定的正確目錄：<ActivatableClassAttribute> 值="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 如果沒有將實作 winmd**** 複製到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的，且 RuntimeClass 會擲回「類別未登錄」錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常與****可見例外狀況無關。
+若要安裝應用程式，請將實作 **winmd** 複製到相關側載應用程式資訊清單指定的正確目錄：<ActivatableClassAttribute> 值="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 如果沒有將實作 **winmd** 複製到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的，且 RuntimeClass 會擲回「類別未登錄」錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常與可見例外狀況**無關**。
 如果因這個設定錯誤發生例外狀況，可能會以「無效的轉型」表示。
 
 **伺服器實作考量**
@@ -582,6 +579,5 @@ struct PersonStruct
 -   [如何在 Windows 10 上側載應用程式](https://msdn.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#GroupPolicy)
 
 -   [將 Windows 市集應用程式部署到企業](http://go.microsoft.com/fwlink/p/?LinkID=264770)
-
 
 

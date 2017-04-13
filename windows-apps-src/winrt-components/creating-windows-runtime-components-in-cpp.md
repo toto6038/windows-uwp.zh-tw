@@ -1,7 +1,7 @@
 ---
 author: msatranjr
 title: "在 C++ 中建立 Windows 執行階段元件"
-description: "本文說明如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。"
+description: "本文示範如何使用 C++ 來建立 Windows 執行階段元件，此元件是可從通用 Windows app 呼叫的 DLL，這類 app 是使用 JavaScript、C#、Visual Basic 或 C++ 所建置。"
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.author: misatran
 ms.date: 02/08/2017
@@ -9,14 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 28d03486f6fb2f7a249af82d2c3be6006c9d80ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2adebf94f016baf014788062f82d7fe933b7fb10
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="creating-windows-runtime-components-in-c"></a>在 C++ 中建立 Windows 執行階段元件
 
 
@@ -602,4 +598,3 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 ## <a name="related-topics"></a>相關主題
 
 * [逐步解說：在 C++ 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C 呼叫該元件#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-

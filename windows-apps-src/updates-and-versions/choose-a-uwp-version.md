@@ -9,20 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e2bc7b4a12aed40093985000486b9f3f78967524
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 2fe7d9017919166992b13a5cc5f058591fecda3e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
 在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 目前，只有三種可能的版本。
 
 | 版本 | 描述 |
 | --- | --- |
-| 組建 14393 (年度更新版) | 這是發行於 2016 年 7 月的最新 Windows 10 版本。 此版本的一些重點功能包括： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：**使用新的 Cortana 動作來將 Cortana 支援與您 app 的特定功能整合。 </br> \* **Windows Hello：**Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows 10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1607.md)頁面。  |
+| 組建 14393 (年度更新版) | 這是發行於 2016 年 7 月的最新 Windows 10 版本。 此版本的一些重點功能包括： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：**使用新的 Cortana 動作來將 Cortana 支援與您 app 的特定功能整合。 </br> \* **Windows Hello：**Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1607.md)頁面。  |
 | 組建 10586 | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1511.md) |
 | 組建 10240 | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1507.md) |
 
@@ -46,4 +43,3 @@ ms.lasthandoff: 02/08/2017
 * 在您的程式碼中，您可以自由地 (也就是沒有條件檢查) 呼叫存在於 **\[最小版本\]** 所指定版本中的任何 API。
 * 確定您是在執行 **\[最小版本\]** 的裝置上測試程式碼，以確保它無需僅在 **\[目標版本\]** 中提供的 API 也可正常運作。
 * **\[目標版本\]** 的值可用來識別所有用來編譯您專案的參考 (協定 winmds)。 但這些參考將可讓您在編譯您的程式碼時，使用不一定存在於您所宣告支援之裝置上的 API 呼叫 (透過 **\[最小版本\]**) 來進行編譯。 因此，呼叫在 **\[最小版本\]** 之後引進的 API 時，將需要透過調適型程式碼來呼叫。 如需有關調適型程式碼的詳細資訊，請參閱[通用 Windows 平台 (UWP) app 指南](../get-started/universal-application-platform-guide.md)。
-

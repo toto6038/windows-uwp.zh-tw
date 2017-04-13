@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 執行緒, 非同步, C++"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 112b5d58064ae6cd006d791a2c4534848baee259
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c74a2d18a0852d28cf33715a540356a61438ff48
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="asynchronous-programming-in-c"></a>C++ 中的非同步程式設計
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 的 `concurrency` 命名空間中所定義的 `task` 類別)。
 
@@ -207,7 +204,7 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 
 ## <a name="managing-the-thread-context"></a>管理執行緒內容
 
-UWP app 的 UI 會在單一執行緒 Apartment (STA) 中執行。 工作的 Lambda 如果傳回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation] ，就是 Apartment 感知工作。 如果在 STA 建立工作，則它的所有接續也會在 STA 中執行 (預設)，除非您指定別的地方。 換言之，整個工作鏈結會繼承上層作業的 Apartment 感知。 這種行為有助於簡化與 UI 控制項的互動 (從 STA 才辦得到)。
+UWP app 的 UI 會在單一執行緒 Apartment (STA) 中執行。 工作的 Lambda 如果傳回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation] ，就是 Apartment 感知工作。 如果在 STA 建立工作，則它的所有接續也會在 STA 中執行 (預設值)，除非您指定別的地方。 換言之，整個工作鏈結會繼承上層作業的 Apartment 感知。 這種行為有助於簡化與 UI 控制項的互動 (從 STA 才辦得到)。
 
 例如，在 UWP app 中，如果任何類別的成員函式代表 XAML 頁面，則您可以在  [**task::then**][taskThen] 方法中傳送 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控制項，不需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 物件。
 
@@ -323,4 +320,3 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 [taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "工作平行"
 [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
 [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
-

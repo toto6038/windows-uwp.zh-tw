@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 56f4ccfcba0fd378f8cef65debce52341f92a2e1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: abd46f788c8947da4c8704baf0f0ea802fff38ef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義之委派類型的事件，而您希望 JavaScript 可以接收該事件，則可透過下列其中一種方式來實作和 (或) 引發此事件：
@@ -141,11 +138,11 @@ toastCompletedEventHandler: function (event) {
 
 ## <a name="to-create-the-windows-runtime-component"></a>建立 Windows 執行階段元件
 
-在 Visual Studio 的功能表列上，依序選擇 [檔案] &gt; [新增專案]****。 在 [新增專案]**** 對話方塊中，展開 [JavaScript] &gt; [通用 Windows]****，然後選取 [空白應用程式]****。 將專案命名為 ToasterApplication，然後選擇 [確定]**** 按鈕。
+在 Visual Studio 的功能表列上，依序選擇 **\[檔案\] &gt; \[新增專案\]**。 在 **\[新增專案\]** 對話方塊中，展開 **\[JavaScript\] &gt; \[通用 Windows\]**，然後選取 **\[空白應用程式\]**。 將專案命名為 ToasterApplication，然後選擇 **\[確定\]** 按鈕。
 
-將 C# Windows 執行階段元件加入至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 [加入] &gt; [新增專案]****。 展開 [Visual C#] &gt; [Windows 市集]****，然後選取 [Windows 執行階段元件]****。 將專案命名為 ToasterComponent，然後選擇 [確定]**** 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
+將 C# Windows 執行階段元件加入至方案：在 [方案總管] 中開啟方案的捷徑功能表，然後選擇 **\[加入\] &gt; \[新增專案\]**。 展開 **\[Visual C#\] &gt; \[Windows 市集\]**，然後選取 **\[Windows 執行階段元件\]**。 將專案命名為 ToasterComponent，然後選擇 **\[確定\]** 按鈕。 ToasterComponent 將是您在後續步驟中建立之元件的根命名空間。
 
-在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 [屬性]****。 在 [屬性頁]**** 對話方塊的左窗格中選取 [組態屬性]****，然後將對話方塊頂端的 [組態]**** 設定為 [偵錯]****，並將 [平台]**** 設定為 [x86]、[x64] 或 [ARM]。 選擇 [確定]**** 按鈕。
+在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 **\[屬性\]**。 在 **\[屬性頁\]** 對話方塊的左窗格中選取 **\[組態屬性\]**，然後將對話方塊頂端的 **\[組態\]** 設定為 **\[偵錯\]**，並將 **\[平台\]** 設定為 [x86]、[x64] 或 [ARM]。 選擇 **\[確定\]** 按鈕。
 
 **注意：**將 [平台] 設定為 [任何 CPU] 將無法運作，因為它並不適用於您稍後加入至方案的機器碼架構 Win32 DLL。
 
@@ -155,7 +152,7 @@ toastCompletedEventHandler: function (event) {
 
 需要 Proxy 和虛設常式時，您的元件必須使用介面來公開它的公用成員。 在 ToasterComponent.cs 中，分別為快顯通知程式及其產生的 Toast 定義介面。
 
-**注意：**在 C# 中，您可以略過此步驟， 改為先建立類別，然後開啟其捷徑功能表並選擇 [重構] &gt; [擷取介面]****。 在產生的程式碼中，手動為介面提供公用存取範圍。
+**注意：**在 C# 中，您可以略過此步驟， 改為先建立類別，然後開啟其捷徑功能表並選擇 **\[重構\] &gt; \[擷取介面\]**。 在產生的程式碼中，手動為介面提供公用存取範圍。
 
 ```csharp
     public interface IToaster
@@ -433,4 +430,3 @@ The project should now build. Run the project and verify that you can make toast
 ## Related topics
 
 * [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
-

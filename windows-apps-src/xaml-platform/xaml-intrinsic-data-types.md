@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f6a1ca4850ffbc19afc8defa6d2d373dbfbf2b2b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9f6c8ebe6285981e0af74448b88e0290de3a66ee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-intrinsic-data-types"></a>XAML 內建資料類型
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -49,5 +46,4 @@ XAML 2009 規格有提到其他 XAML 語言層級的基本類型，如 **x:Uri**
 * [XAML 語法指南](xaml-syntax-guide.md)
 * [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
-
 

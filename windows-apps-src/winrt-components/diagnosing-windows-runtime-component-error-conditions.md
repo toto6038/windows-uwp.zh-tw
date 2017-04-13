@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: da02ed10336ea2381213fd5fada153db4cc06ab1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 55baba42a011197814a01d476fcb062fe6bf2ebf
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>診斷 Windows 執行階段元件錯誤狀況
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文提供以 Managed 程式碼撰寫的 Windows 執行階段元件有何限制的其他資訊。 其中詳述 [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx) 中錯誤訊息所提供的資訊，並補充[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中提供的限制相關資訊。
@@ -256,4 +253,3 @@ JavaScript 程式碼可依名稱存取方法的輸出參數，包括傳回值在
 
 * [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 * [Winmdexp.exe (Windows 執行階段中繼資料匯出工具)](https://msdn.microsoft.com/library/hh925576.aspx)
-

@@ -9,19 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 31866c400683c61b432c3fe620487f93a9187771
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b150b50c1072a96ae0017bae848eeff94bb07ce0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="introduction-to-multi-user-applications"></a>多使用者應用程式的簡介
 
 本主題是 Xbox 多使用者模型的簡單高階簡介。
-
-> [!NOTE]
-> 多使用者應用程式目前尚未啟用。 
 
 Xbox One 使用者模型已針對支援多個使用者在單一裝置上合作進行遊戲的遊戲主機需求進行調整。 它可讓多個使用者 (每個使用者都有自己的控制器) 在單一互動式工作階段中同時登入並且使用主機。 這與其他 Windows 裝置不同。 例如：
 * **Windows 桌上型電腦**允許多個使用者使用相同的裝置，但是每個使用者有自己的互動工作階段，而且每個工作階段與裝置上的其他工作階段完全獨立。
@@ -39,7 +33,7 @@ UWP 遊戲可以選擇加入 Xbox One 多使用者模型。 這些「多使用�
 若要選擇加入多使用者模型：   
 1. 在 Visual Studio 中，開啟您的專案。   
 2. 選取 package.appxmanifest.xml 檔案。   
-3. 以滑鼠右鍵按一下，並選取 [檢視程式碼]****。   
+3. 以滑鼠右鍵按一下，並選取 **\[檢視程式碼\]**。   
 4. 在 `<Properties></Properties>` 區段中加入以下這一行：
 
 ```
@@ -58,4 +52,3 @@ UWP 遊戲可以選擇加入 Xbox One 多使用者模型。 這些「多使用�
 
 ## <a name="see-also"></a>另請參閱
 - [Xbox One 上的 UWP](index.md)
-

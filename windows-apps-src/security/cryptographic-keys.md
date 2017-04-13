@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1396382c90b370aa9d610749a92dd256c92dedab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4026f1fa95261d9b05c8d1e8c7ace12b11503a17
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="cryptographic-keys"></a>密碼編譯金鑰
 
 
@@ -80,4 +77,3 @@ ms.lasthandoff: 02/07/2017
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 建立用於 SP800-56A 金鑰衍生函數的 KeyDerivationParameters 物件。                                                 |
 
  
-

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: e6bb3464-dd8e-402c-9c56-dd9e51002a49
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f76bdf6052228e5588ea7e34d95360f698525eb2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d05db2899fe2ad26eaf5e200ae2673b8efafddd0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="usability-for-uwp-apps"></a>UWP 應用程式的可用性
 
@@ -117,7 +115,7 @@ ms.lasthandoff: 02/08/2017
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[可行與禁止事項](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>當您要將應用程式全球化以適應更廣泛的使用對象，或是針對特定的市場將應用程式當地語系化時，請遵循這些最佳做法。</p>
+<p><b>[可行與禁止事項](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md)</b><br/>在將您的應用程式推廣至全球更廣泛的受眾，以及對特定市場將應用程式當地語系化時，請遵循這些最佳做法。</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b>[使用全球通用格式](../globalizing/use-global-ready-formats.md)</b><br/>藉由為日期、時間、數字及貨幣進行適當的格式設定，即可開發全球通用的應用程式。</p>
@@ -128,7 +126,7 @@ ms.lasthandoff: 02/08/2017
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
-<p><b>[管理語言及地區](../globalizing/manage-language-and-region.md)</b><br/>藉由使用 Windows 所提供的各種語言及地區設定，控制 Windows 如何選取 UI 資源，以及如何將應用程式的 UI 元素格式化。</p>
+<p><b>[管理語言及地區](../globalizing/manage-language-and-region.md)</b><br/>藉由使用 Windows 所提供的各種語言及地區設定，來控制 Windows 如何選取 UI 資源，以及如何將應用程式的 UI 元素格式化。</p>
   </div>
   <div class="side-by-side-content-right">
 <p><b>[使用模式來設定日期和時間的格式](../globalizing/use-patterns-to-format-dates-and-times.md)</b><br/>使用 [<strong>DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API 搭配自訂模式，以您想要的格式來顯示日期和時間。</p>
@@ -200,4 +198,3 @@ ms.lasthandoff: 02/08/2017
   </div>
 </div>
 </div>
-

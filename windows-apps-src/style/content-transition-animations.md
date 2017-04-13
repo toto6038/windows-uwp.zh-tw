@@ -4,12 +4,10 @@ Description: "內容轉換動畫可讓您變更畫面中區域的內容，同時
 title: "內容轉換動畫的指導方針"
 ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="content-transition-animations"></a>內容轉換動畫
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -49,11 +47,5 @@ ms.openlocfilehash: ed2d580568b73e787ad7b980981e025652232a83
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

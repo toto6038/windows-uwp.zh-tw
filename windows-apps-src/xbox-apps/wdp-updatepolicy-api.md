@@ -2,22 +2,20 @@
 author: payzer
 title: "裝置入口網站 Xbox 開發人員開發套件更新原則 API 參考"
 description: "深入了解如何以程式設計方式設定您主機的更新原則。"
-translationtype: Human Translation
-ms.sourcegitcommit: 8f02e0c2f6fa30a3ac56945347c5bec253189bd8
 ms.openlocfilehash: f9313d3c8b93ba13074c547f1f63c9f3204f0f58
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 注意：此 API 會隨附在下一個開發人員預覽中。
 
-# 系統更新原則 API 參考   
+# <a name="system-update-policy-api-reference"></a>系統更新原則 API 參考   
 您可以使用這個 API 查看哪個更新原則已套用至您的主機，並將更新原則變更為新的原則。
 
 重要︰嘗試呼叫這個 API 時，大多數的主機都會收到「拒絕存取」回應。 這是因為不是所有開發主機都具備變更其更新原則的能力。
 
 這個 API 會影響處於開發人員模式之主機的更新原則，而非零售主機。
 
-## 取得主機更新原則
+## <a name="get-the-console-update-policy"></a>取得主機更新原則
 
 **要求**
 
@@ -58,7 +56,7 @@ HTTP 狀態碼      | 描述
 4XX | 錯誤碼
 5XX | 錯誤碼
 
-## 設定主機的系統更新原則
+## <a name="set-a-consoles-system-update-policy"></a>設定主機的系統更新原則
 您可以使用此 API 切換主機的系統更新群組成員資格。
 
 注意：主機一次只能位於一個系統更新群組中。
@@ -109,10 +107,4 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Xbox
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: fca3267a-0c0f-4872-8017-90384fb34215
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6c01cc5afa3b3c1266464c9f04c79cea533c9741
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ec26b5533e378cd10517ef8cf766171bc8ef717f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bringing-unity-games-to-uwp-on-xbox"></a>將 Unity 遊戲移到 Xbox 上的 UWP
 
 
@@ -33,11 +30,11 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="step-1-building-the-uwp-solution"></a>步驟 1︰建置 UWP 方案
 
-在您的 Unity 遊戲專案中，開啟位於 [檔案] -&gt; [建置設定]**** 的 [建置設定]**** 視窗，然後移至 [Windows Store] 選項功能表。
+在您的 Unity 遊戲專案中，開啟位於 **\[檔案\]** -&gt; **\[建置設定\]** 的 [建置設定] 視窗，然後移至 [Windows Store] 選項功能表。
 
 ![建置設定視窗](images/build-settings.png)
 
-請確定 [SDK]**** 設定已設定為 [Universal 10]****，然後選取 [建置]**** 按鈕，這將會啟動檔案總管視窗並詢問目的地資料夾。 在專案的 [資產]**** 目錄旁邊建立名為 **UWP** 的資料夾，然後選擇此資料夾做為建置的目的地資料夾。
+請確定 **\[SDK\]** 設定已設定為 **\[Universal 10\]**，然後選取 **\[建置\]** 按鈕，這將會啟動檔案總管視窗並詢問目的地資料夾。 在專案的 **\[資產\]** 目錄旁邊建立名為 **UWP** 的資料夾，然後選擇此資料夾做為建置的目的地資料夾。
 
 ![建置目的地資料夾](images/build-destination.png)
 
@@ -47,7 +44,7 @@ Unity 現在已經建立了將用來部署 UWP 遊戲的新 Visual Studio 解決
 
 ## <a name="step-2-deploying-your-game"></a>步驟 2︰部署您的遊戲
 
-開啟在 **UWP** 資料夾中新產生的解決方案，然後將目標平台變更為 [x64]****。
+開啟在 **UWP** 資料夾中新產生的解決方案，然後將目標平台變更為 **\[x64\]**。
 
 ![x64 建置平台](images/x64-build-platform.png)
 
@@ -64,4 +61,3 @@ Unity 現在已經建立了將用來部署 UWP 遊戲的新 Visual Studio 解決
 ## <a name="see-also"></a>另請參閱
 - [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)
-

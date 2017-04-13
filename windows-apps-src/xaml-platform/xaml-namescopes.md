@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9734690f4446d9d5f44013fb370d5a31625473f9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 973207d480327ced18b6136796ef92d5d5b81dd5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-namescopes"></a>XAML 命名範圍
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 「XAML 命名範圍」**會儲存 XAML 定義的物件名稱與它們的執行個體對應項之間的關係。 這個概念與其他程式設計語言和技術中較廣義的「命名範圍」 **一詞類似。
 
@@ -90,5 +87,4 @@ XAML 中的範本可以讓您直接重新使用和重新套用內容，但範本
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
  
-
 

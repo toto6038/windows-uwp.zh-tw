@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 04ecb16faf39e5dfc2f8ad8c5049c696615a449a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e9f0a148238b8f91c4643954c7f575e742f69d5e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>將陣列傳遞到 Windows 執行階段元件
 
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可能兩者皆是。 這表示傳遞到方法以及陣列本身的陣列內容也會分成輸入或輸出。 如果陣列的內容是用於輸入，方法就會從陣列讀取，而不會寫入陣列。 如果陣列的內容是用於輸出，方法就會寫入陣列，而不會從陣列讀取。 這會衍生出一個有關陣列參數的問題，因為 .NET Framework 中的陣列屬於參考類型，即便是依值傳遞陣列參考 (在 Visual Basic 中為 **ByVal**)，陣列的內容都是可變動的。 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 會在無法從內容判斷陣列的預定用法時，要求您對參數套用 ReadOnlyArrayAttribute 屬性或 WriteOnlyArrayAttribute 屬性，以指定其用法。 陣列用法的判斷方式如下：
@@ -69,4 +66,3 @@ Windows 通用平台 (UWP) 中的參數分成輸入和輸出兩種，但不可�
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
 * [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-

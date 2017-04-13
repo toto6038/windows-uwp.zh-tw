@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93319caaa16afe84a897dbc4bd6370a5cef3cdd1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dcceab233f19696f11075fdc4e46fe4a3aa7e5b9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 開發環境上設定 UWP
 
 Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連線到 Xbox One 主機的開發電腦。
@@ -28,7 +25,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 1. 安裝 Visual Studio 2015 Update 2 或更新版本。 如需詳細資訊及如何安裝，請參閱[適用於 Windows 10 的下載項目與工具](https://dev.windows.com/downloads)。
 
-1. 安裝 Visual Studio 2015 Update 2 時，請確保您已選取 [通用 Windows 應用程式開發工具]**** 核取方塊。
+1. 安裝 Visual Studio 2015 Update 2 時，請確保您已選取 **\[通用 Windows 應用程式開發工具\]** 核取方塊。
 
   ![安裝 Visual Studio 2015 Update 2](images/vs_install_tools.png)
 
@@ -55,21 +52,21 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 1. 決定您的 UWP App 要使用的程式語言。
 
-1. 在您的開發電腦上，選取 [新增專案]****，然後選取 [Windows / 通用 / 空白應用程式]****。
+1. 在您的開發電腦上，選取 **\[新增專案\]**，然後選取 **\[Windows / 通用 / 空白應用程式\]**。
 
 ### <a name="starting-a-c-project"></a>開始 C# 專案
 
   ![[新增專案] 對話方塊](images/vs_universal_blank.jpg)
 
-1. 選取 [新增通用 Windows 專案]**** 對話方塊中的預設選項。 如果出現 [開發人員模式]**** 對話方塊，按一下 [確定]****。 這將會建立新的空白應用程式。
+1. 選取 **\[新增通用 Windows 專案\]** 對話方塊中的預設選項。 如果出現 **\[開發人員模式\]** 對話方塊，按一下 **\[確定\]**。 這將會建立新的空白應用程式。
 
 1. 針對遠端偵錯設定開發環境：
 
-  1. 以滑鼠右鍵按一下專案，然後選取 [內容]****。
-  1. 在 [偵錯]**** 索引標籤上，將 [平台]**** 變更為 [使用中 (x64)]****。 (x86 已不再是 Xbox 上支援的平台。)   
-  1. 將 [目標裝置]**** 變更為 [遠端電腦]****。
-  1. 在 [遠端電腦]**** 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
-  1. 在 [驗證模式]**** 下拉式清單中，選取 [通用 (未加密通訊協定)]****。
+  1. 以滑鼠右鍵按一下專案，然後選取 **\[內容\]**。
+  1. 在 **\[偵錯\]** 索引標籤上，將 **\[平台\]** 變更為 **\[使用中 (x64)\]**。 (x86 已不再是 Xbox 上支援的平台。)   
+  1. 將 **\[目標裝置\]** 變更為 **\[遠端電腦\]**。
+  1. 在 **\[遠端電腦\]** 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
+  1. 在 **\[驗證模式\]** 下拉式清單中，選取 **\[通用 (未加密通訊協定)\]**。
 
     ![C++ BlankApp 屬性頁面](images/vs_remote.jpg)
 
@@ -77,14 +74,14 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
   ![C++ 專案](images/vs_universal_cpp_blank.jpg)
 
-1. 選取 [新增通用 Windows 專案]**** 對話方塊中的預設選項。 如果出現 [開發人員模式]**** 對話方塊，按一下 [確定]****。 這將會建立新的空白應用程式。
+1. 選取 **\[新增通用 Windows 專案\]** 對話方塊中的預設選項。 如果出現 **\[開發人員模式\]** 對話方塊，按一下 **\[確定\]**。 這將會建立新的空白應用程式。
 
 1. 針對遠端偵錯設定開發環境：
 
-   1. 以滑鼠右鍵按一下專案，然後選取 [內容]****。
-   1. 在 [偵錯]**** 索引標籤上，將 [要啟動的偵錯工具]**** 變更為 [遠端電腦]****。
-   1. 在 [電腦名稱]**** 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
-   1. 在 [驗證類型]**** 下拉式清單中，選取 [通用 (未加密通訊協定)]****。
+   1. 以滑鼠右鍵按一下專案，然後選取 **\[內容\]**。
+   1. 在 **\[偵錯\]** 索引標籤上，將 **\[要啟動的偵錯工具\]** 變更為 **\[遠端電腦\]**。
+   1. 在 **\[電腦名稱\]** 中，輸入 Xbox One 主機的系統 IP 位址或主機名稱。 如需取得 IP 位址或主機名稱的資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
+   1. 在 **\[驗證類型\]** 下拉式清單中，選取 **\[通用 (未加密通訊協定)\]**。
 
     ![C++ BlankApp 屬性頁面](images/vs_remote_cpp.jpg)
 
@@ -96,16 +93,16 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 1. 如果這是您第一次部署，您將會收到來自 Visual Studio 的對話方塊，要求以 PIN 配對您的裝置。
 
-  1. 若要取得 PIN，請從 Xbox One 主機上的主畫面開啟 [開發人員首頁]****。
-  1. 選取 [與 Visual Studio 配對]****。
+  1. 若要取得 PIN，請從 Xbox One 主機上的主畫面開啟 **\[開發人員首頁\]**。
+  1. 選取 **\[與 Visual Studio 配對\]**。
 
     ![[與 Visual Studio 配對] 對話方塊](images/devhome_visualstudio.png)
 
-  1. 將您的 PIN 輸入 [與 Visual Studio 配對]**** 對話方塊。 下列的 PIN 只是個範例，您的 PIN 將會是不一樣的。
+  1. 將您的 PIN 輸入 **\[與 Visual Studio 配對\]** 對話方塊。 下列的 PIN 只是個範例，您的 PIN 將會是不一樣的。
 
     ![[與 Visual Studio PIN 配對] 對話方塊](images/devhome_pin.png)
 
-  1. 如果有部署錯誤，錯誤將會出現在 [輸出]**** 視窗中。
+  1. 如果有部署錯誤，錯誤將會出現在 **\[輸出\]** 視窗中。
 
 恭喜，您已成功在 Xbox 上建立並部署您的第一個 UWP App！
 
@@ -119,4 +116,3 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 - [Xbox One 上的 UWP](index.md)
 
 ----
-

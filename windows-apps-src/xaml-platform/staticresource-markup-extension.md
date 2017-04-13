@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 539bc6b0a43491c9ef75701bc574c7e31d2c02e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="staticresource-markup-extension"></a>{StaticResource} 標記延伸
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -90,5 +87,4 @@ ms.lasthandoff: 02/07/2017
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 屬性](x-key-attribute.md)
 * [{ThemeResource} 標記延伸](themeresource-markup-extension.md)
-
 

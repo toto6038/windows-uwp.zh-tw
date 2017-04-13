@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: "我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段應用程式中之事件的程式設計概念。"
+description: "我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。"
 title: "事件與路由事件概觀"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3bb487619d7ab1a800224f40ce5eb63ae5d915b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d01cabe3b92e3a1e4df0062334a6c7a1d54beaac
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="events-and-routed-events-overview"></a>事件與路由事件概觀
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -74,7 +71,7 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 在此範例中，`showUpdatesButton_Click` 方法是以 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委派為基礎。 您會知道這就是要使用的委派，因為 MSDN 參考頁面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的語法中將會提及該委派。
 
-**提示**  Visual Studio 在您編輯 XAML 時，會提供一個命名事件處理常式並定義處理常式方法的便利方式。 當您在 XAML 文字編輯器中提供事件的屬性名稱時，請稍候片刻，讓 Microsoft IntelliSense 清單顯示。 如果您按一下清單中的 [&lt;新事件處理常式&gt;]****，Microsoft Visual Studio 會根據元素的 **x:Name** (或類型名稱)、事件名稱以及數值尾碼來建議方法名稱。 然後，您可以在選取的事件處理常式名稱上按一下滑鼠右鍵，再按一下 [**巡覽至事件處理常式**]。 這會直接瀏覽到新插入的事件處理常式定義，如您在 XAML 頁面程式碼後置檔案的程式碼編輯器檢視中所見。 事件處理常式已經有正確的簽章，其中包含事件使用的 *sender* 參數及事件資料類別。 此外，如果您的程式碼後置中已經有正確簽章的處理常式方法，這個方法的名稱會顯示在自動完成下拉式清單中，連同顯示 [&lt;新事件處理常式&gt;]**** 選項。 您也可以按下 Tab 鍵做為快速鍵，以取代按一下 IntelliSense 清單項目。
+**提示**  Visual Studio 在您編輯 XAML 時，會提供一個命名事件處理常式並定義處理常式方法的便利方式。 當您在 XAML 文字編輯器中提供事件的屬性名稱時，請稍候片刻，讓 Microsoft IntelliSense 清單顯示。 如果您按一下清單中的 **\[&lt;新事件處理常式&gt;\]**，Microsoft Visual Studio 會根據元素的 **x:Name** (或類型名稱)、事件名稱以及數值尾碼來建議方法名稱。 然後，您可以在選取的事件處理常式名稱上按一下滑鼠右鍵，再按一下 [**巡覽至事件處理常式**]。 這會直接瀏覽到新插入的事件處理常式定義，如您在 XAML 頁面程式碼後置檔案的程式碼編輯器檢視中所見。 事件處理常式已經有正確的簽章，其中包含事件使用的 *sender* 參數及事件資料類別。 此外，如果您的程式碼後置中已經有正確簽章的處理常式方法，這個方法的名稱會顯示在自動完成下拉式清單中，連同顯示 **\[&lt;新事件處理常式&gt;\]** 選項。 您也可以按下 Tab 鍵做為快速鍵，以取代按一下 IntelliSense 清單項目。
 
 ## <a name="defining-an-event-handler"></a>定義事件處理常式
 
@@ -295,5 +292,4 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 * [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
  
-
 

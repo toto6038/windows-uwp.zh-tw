@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 31fddae1c163f46a56fb78f5ac29e11a84e2ddd9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a5fd89757817c06be55020d74e677369725af5a2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 
 
@@ -57,18 +54,18 @@ ms.lasthandoff: 02/07/2017
 
 ## **<a name="to-debug-both-native-c-code-and-managed-code"></a>同時對 C++ 機器碼與 Managed 程式碼進行偵錯**
 
-1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 [屬性]****。
-2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
-3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限機器碼]**** 變更為 [混合 (Managed 和機器碼)]****。 選擇 [確定]****。
+1.  為您的 Visual C++ 專案開啟捷徑功能表，然後選擇 **\[屬性\]**。
+2.  在屬性頁中的 **\[組態屬性\]** 下方，選擇 **\[偵錯\]**。
+3.  選擇 **\[偵錯工具類型\]**，然後在下拉式清單方塊中，將 **\[僅限機器碼\]** 變更為 **\[混合 (Managed 和機器碼)\]**。 選擇 **\[確定\]**。
 4.  在機器碼與 Managed 程式碼中設定中斷點。
 
 當您使用 JavaScript 在通用 Windows app 中測試元件時，方案依預設會處於 JavaScript 偵錯模式。 在 Visual Studio 中，您無法同時偵錯 JavaScript 和 Managed 程式碼。
 
 ## **<a name="to-debug-managed-code-instead-of-javascript"></a>偵錯 Managed 程式碼，而不偵錯 JavaScript**
 
-1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 [屬性]****。
-2.  在屬性頁中的 [組態屬性]**** 下方，選擇 [偵錯]****。
-3.  選擇 [偵錯工具類型]****，然後在下拉式清單方塊中，將 [僅限指令碼]**** 變更為 [僅限 Managed]****。 選擇 [確定]****。
+1.  為您的 JavaScript 專案開啟捷徑功能表，然後選擇 **\[屬性\]**。
+2.  在屬性頁中的 **\[組態屬性\]** 下方，選擇 **\[偵錯\]**。
+3.  選擇 **\[偵錯工具類型\]**，然後在下拉式清單方塊中，將 **\[僅限指令碼\]** 變更為 **\[僅限 Managed\]**。 選擇 **\[確定\]**。
 4.  在 Managed 程式碼中設定中斷點，然後如常進行偵錯。
 
 ## <a name="passing-windows-runtime-types-to-managed-code"></a>將 Windows 執行階段類型傳遞至 Managed 程式碼
@@ -295,7 +292,6 @@ function asyncExample(id) {
 
 ## <a name="related-topics"></a>相關主題
 
-* [適用於 Windows 市集 app 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [適用於 Windows 市集應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-

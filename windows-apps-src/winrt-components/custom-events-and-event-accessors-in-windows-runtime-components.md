@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6bac2575b3855357076d4272a423c9c689118b2b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8b759684d07c1fa8265ed958ac9c736aa12a488c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="custom-events-and-event-accessors-in-windows-runtime-components"></a>Windows 執行階段元件中的自訂事件和事件存取子
 
 
@@ -131,4 +128,3 @@ Visual Basic 使用者：在 .NET Framework 中，事件只是表示所有已註
 * [適用於 Windows 市集 App 的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-

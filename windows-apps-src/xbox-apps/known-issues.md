@@ -1,21 +1,18 @@
 ---
 author: Mtoepke
-title: "Xbox One 開發人員計畫上的 UWP 已知問題"
-description: 
+title: "Xbox 開發人員計畫上的 UWP 已知問題"
+description: "列出 UWP 在 Xbox 開發人員計畫上的已知問題。"
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4b13b9bbbc75de47ed69112680894d5e3f34d8a1
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 203d1abede2607617e0175103f54bf3068d53ff4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
 本主題說明 Xbox One 開發人員計畫上的 UWP 已知問題。 如需此計畫的詳細資訊，請參閱 [Xbox 上的 UWP](index.md)。 
@@ -34,7 +31,7 @@ ms.lasthandoff: 02/08/2017
 ## <a name="issue-when-leaving-dev-mode"></a>離開開發人員模式時的問題
 此時，可能發生您無法使用 DevHome 或從 [開發人員設定] 離開開發人員模式的狀況。
 對此狀況有兩種可能的解決方式： 
-1. 離開開發人員模式時取消核取 [Delete side loaded games and apps] (刪除側載遊戲和應用程式)****
+1. 離開開發人員模式時取消核取 **\[刪除側載遊戲和應用程式\]**
 2. 移至 [我的遊戲和應用程式]，解除安裝您安裝在主控台的開發人員應用程式
  
 <!--## Memory limits for background apps are partially enforced
@@ -58,7 +55,17 @@ There is currently no workaround for this issue. Apps should govern their memory
 
 此時，直到您將使用者登出為止，該權限將會「持續生效」__，即使您將應用程式解除安裝並重新安裝也一樣。
  
-有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 [一律]**** 允許子女啟動該應用程式。 該免除會儲存於雲端，且即使在子女登出再重新登入之後也會保留。   
+有另外一種免除類型，僅適用於子女帳戶。 子女帳戶需要家長登入以授與權限，但當他們這樣做時，家者可以選擇 **\[一律\]** 允許子女啟動該應用程式。 該免除項目儲存於雲端，即使子女登出後又重新登入，也會保留。
+
+## <a name="storagefilecopyasync-fails-to-copy-encrypted-files-to-unencrypted-destination"></a>StorageFile.CopyAsync 無法將加密的檔案複製到未加密的目的地 
+
+使用 StorageFile.CopyAsync 將已加密檔案複製到沒有加密的目的地時，這個呼叫會失敗並發生下列例外狀況：
+
+```
+System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070005)
+```
+
+這可能會影響想要將部署為應用程式套件一部分之檔案複製到其他位置的 Xbox 開發人員。 之所以如此的原因是，Xbox 加密套件內容時所用的是零售模式，而不是開發人員模式。 因此，App 或許在開發和測試期間看起來會依預期正常運作，但是發佈並安裝至零售 Xbox 後，就會失敗。
 
 <!--### x86 vs. x64
 
@@ -85,7 +92,7 @@ Please use the forum to report any issues you see.-->
 
 Xbox One 上的 UWP 支援 DirectX 11 功能層級 10。 此時不支援 DirectX 12。 
 
-Xbox One (與所有傳統遊戲主機類似) 是一個特殊的硬體，需要有特定 SDK 才能充分發揮其潛力。 如果您正在處理需要存取 Xbox One 硬體之最大潛力的遊戲，請向 [ID@XBOX](http://www.xbox.com/Developers/id) 計畫註冊來存取該 SDK (內含 DirectX 12 支援)。
+Xbox One (與所有傳統遊戲主機類似) 是一個特殊的硬體，需要有特定 SDK 才能充分發揮其潛力。 如果您正在處理需要充分存取 Xbox One 硬體資源的遊戲，請向 [ID@XBOX](http://www.xbox.com/Developers/id) 計畫註冊，即可存取這個內含 DirectX 12 支援的 SDK。
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -176,7 +183,7 @@ Sometimes this is resolved by sorting a column on the table.-->
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告
 
-您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 [繼續瀏覽此網站]****。
+您將收到有關所提供憑證的警告 (與下列螢幕擷取畫面類似)，因為 Xbox One 主機所簽署的安全性憑證並不被視為已知的受信任發行者。 若要存取 Windows Device Portal，請按一下 **\[繼續瀏覽此網站\]**。
 
 ![網站安全性憑證警告](images/security_cert_warning.jpg)
 
@@ -233,4 +240,3 @@ namespace TestDNLA {
 ## <a name="see-also"></a>請參閱
 - [常見問題集](frequently-asked-questions.md)
 - [Xbox One 上的 UWP](index.md)
-

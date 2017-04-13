@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5f51e1c5a44767e49b5c3dc5f578c2532da11008
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 068a940a54048b10e8f66bd3267b3a22c42beb50
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
 取決於您的位置和銷售量及 (或) 您收到的款項，您可能每年會自 Microsoft 收到一或多份稅單。 根據美國國稅局 (IRS)，Microsoft 必須寄發這些表單並進行報稅。
@@ -26,8 +23,8 @@ ms.lasthandoff: 02/08/2017
 
 | IRS 稅單 | 說明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本表單將於 **1 月 31 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 ([儀表板] > [帳戶設定] > [稅務設定檔]****) 取得。 |
-|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制)。 | 紙本表單將於 **3 月 15 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 ([儀表板] > [帳戶設定] > [稅務設定檔]****) 取得。 |
+|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本表單將於 **1 月 31 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
+|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制)。 | 紙本表單將於 **3 月 15 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
 
 > **備註** IRS 稅單上所列的地址來自於您[稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
 
@@ -51,7 +48,7 @@ EIN: \*\*\*\*\*4442<br>
 <br>
 **或**<br>
 <br>
-我在適用的納税年度從 Microsoft 收到 $600 美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
+我在適用的納税年度從 Microsoft 收到 $600  美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
     <td valign="top">**1099-MISC**：<br>
 付款者：Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
@@ -71,7 +68,7 @@ EIN: \*\*\*\*\*4442<br>
      <th> 我應收到此表單</th>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**至少 $600 美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**至少 $600  美元的款項**</td>
     <td valign="top">**1099-MISC**：<br>
 付款者：Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
@@ -79,7 +76,7 @@ EIN: \*\*\*\*\*0505<br>
 **重要：**部分商務實體不會收到 1099-MISC 表單，無論自 Microsoft 收到的款項額多少皆然。  如需進一步的資訊，請洽詢您的稅務專業人員。  </td>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**少於 $600 美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**少於 $600  美元的款項**</td>
      <td valign="top">無</td>
   </tr>
 </table>
@@ -127,4 +124,3 @@ EIN: \*\*\*\*\*0505<br>
 
 
 > **備註** 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](http://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
-

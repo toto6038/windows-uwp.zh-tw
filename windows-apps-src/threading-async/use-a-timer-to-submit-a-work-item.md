@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 計時器, 執行緒"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 984571c0b059a989477d99c4f823ed839dd8bff4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7148e14734f54c24275c4127801b487e5862bba9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
@@ -236,4 +234,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

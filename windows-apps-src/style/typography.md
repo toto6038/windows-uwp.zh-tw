@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: "作為語言的視覺表示，印刷樣式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷樣式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
+description: "作為語言的視覺表示，印刷格式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。"
 title: "印刷樣式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
@@ -10,18 +10,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a10d1b164513f9abce48c51bdfe5f6e4c3bdf79d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="typography"></a>印刷樣式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-作為語言的視覺表示，印刷樣式的主要工作是清楚傳達。 其樣式絕對不能阻礙這項目標。 但是，印刷樣式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
+如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。
 
 ## <a name="typeface"></a>字樣
 
@@ -99,7 +96,7 @@ Segoe 是很人性化的字樣，具有柔和、易讀的外觀，並且採用�
 
 
 >[!NOTE]
->在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) to control kerning and [FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) 控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
+>在 XAML 文字控制項中使用 [Typogrphy.Kerning](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) to control kerning and [FontStretch](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_FontStretch) 控制追蹤。 根據預設，Typography.Kerning 會設定為 “true” 而 FontStretch 會設定為 “Normal”，這些是建議的值。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -218,4 +215,3 @@ Green shows where all caps should be used. Red shows where it should not.
 * [文字控制項](../controls-and-patterns/text-controls.md)
 * [字型](fonts.md)
 * [Segoe MDL2 圖示](segoe-ui-symbol-font.md)
-

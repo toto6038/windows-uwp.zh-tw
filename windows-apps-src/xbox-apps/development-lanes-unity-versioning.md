@@ -2,13 +2,11 @@
 author: JordanEllis6809
 title: "Unity：針對您的 UWP 專案進行版本控制"
 description: "管理您 Unity UWP 專案的版本。"
-translationtype: Human Translation
-ms.sourcegitcommit: a1b759b00e35092323b8c4634907dd5c0fffa68c
 ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# Unity：針對您的 UWP 專案進行版本控制
+# <a name="unity-version-control-your-uwp-project"></a>Unity：針對您的 UWP 專案進行版本控制
 
 尚未使用通用 Windows 平台 (UWP) 針對 Xbox 建置您的 Unity 遊戲嗎？  請先參閱[將 Unity 遊戲移到 Xbox 上的 UWP](development-lanes-unity.md)。
 
@@ -46,7 +44,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 ![UWP 建置目錄](images/uwp-build-directory.png)  
 
-## 資料夾  
+## <a name="folders"></a>資料夾  
 
 `Assets` | ***包含*** | 包含 Windows 市集影像  
 `Data`   | ***忽略*** | Unity 編譯您專案的目標位置 (場景、著色器、指令碼、Prefabs 等等)  
@@ -54,7 +52,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 `Properties` | ***包含*** | 包含可由開發人員修改的進階設定  
 `Unprocessed` | ***忽略*** | 包含 Unity `.dll` 和 `.pdb` 檔案  
 
-## 檔案  
+## <a name="files"></a>檔案  
 
 `App.cs` | ***包含*** | 您 UWP 應用程式的進入點。此檔案可以透過其他來源檔案進行修改和擴充  
 `Package.appxmanifest` | ***包含*** | 您 AppX 的套件資訊清單  
@@ -62,7 +60,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 `ScrapyardPhoenix.csproj` | ***包含*** | 描述您的 UWP 建置目標。如果您將其他相依性新增到 UWP 專案，此 `*.csproj` 檔案將會包含該資訊  
 `ScrapyardPhoenix.csproj.user` | ***忽略*** | 此檔案包含本機使用者資訊
 
-## 產生的 .gitignore
+## <a name="resulting-gitignore"></a>產生的 .gitignore
 
     ##################################################################
     # The original .gitignore file can be found at
@@ -88,7 +86,7 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 如需更多針對 UWP 資料夾進行版本管理的範例，可在[這些範例](https://bitbucket.org/Unity-Technologies/windowsstoreappssamples/overview)中找到。
 
-## 將相依性新增到 UWP App
+## <a name="adding-dependencies-to-your-uwp-app"></a>將相依性新增到 UWP App
 
 若要將相依性新增到 DLL 和 WINMD，請將它們放到您 **Unity Assets** 資料夾中的 **Plugins** 資料夾內，然後在檢查程式中選取它們並做出適當的目標平台設定。
 
@@ -96,12 +94,6 @@ ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
 
 ***ScrapyardPhoenix (通用 Windows)*** 是您會將參考新增至如 Xbox Live SDK 等的專案。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [將現有的遊戲移到 Xbox](development-lanes-landing.md)
 - [Xbox One 上的 UWP](index.md)
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

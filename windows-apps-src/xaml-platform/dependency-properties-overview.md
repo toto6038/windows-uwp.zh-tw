@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: eaf52a930b5419f0c2a53aa14c9dc0fba5b404f6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e46a092298ce183212384155492ea73a79ebe86f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="dependency-properties-overview"></a>相依性屬性概觀
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。
 
@@ -56,7 +53,7 @@ ms.lasthandoff: 02/07/2017
 |------|-------------|
 | 相依性屬性 | 存在於 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼的屬性 (如下所示)。 這個識別碼通常是以負責定義 **DependencyObject** 衍生類別的靜態成員方式來提供。 |
 | 相依性屬性識別碼 | 用來識別屬性的常數值，通常是公用和唯讀的。 |
-| 屬性包裝函式 | Windows 執行階段屬性的可呼叫 **get** 與 **set** 實作。 或者是原始定義的語言特定投影。 **get** 屬性包裝函式實作會呼叫 [**GetValue**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx)，傳遞相關的相依性屬性識別碼。 | 
+| 屬性包裝函式 | Windows 執行階段屬性的可呼叫 **get** 與 **set** 實作。 或者是原始定義的語言特定投影。 **get** 屬性包裝函式實作會呼叫 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.getvalue.aspx)，傳遞相關的相依性屬性識別碼。 | 
 
 屬性包裝函式不只對呼叫者方便，也可以向使用 Windows 執行階段屬性定義的任何程序、工具或投影公開相依性屬性。
 
@@ -186,7 +183,7 @@ public bool IsSpinning
 
 屬性變更的行為是相依性屬性詞彙「相依性」部分的根源。 在許多架構中，當另一個屬性會影響第一個屬性的值時，要維持某個屬性的有效值是很棘手的開發問題。 在 Windows 執行階段屬性系統中，每個相依性屬性都可以指定一個回呼，該回呼會在它的屬性值變更時叫用。 使用這個回呼通常可以同時通知或變更相關屬性值。 許多現有的相依性屬性都包含一個屬性變更的行為。 您也可以新增類似的回呼行為到自訂相依性屬性，並實作您自己的屬性變更行為。 請參閱[自訂相依性屬性](custom-dependency-properties.md)中的範例。
 
-Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 這可讓應用程式程式碼在 [**DependencyObject**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 執行個體上的指定相依性屬性變更時登錄變更通知。
+Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 方法。 這可讓應用程式程式碼在 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.aspx) 執行個體上的指定相依性屬性變更時登錄變更通知。
 
 ### <a name="default-value-and-clearvalue"></a>預設值與 **ClearValue**
 
@@ -212,5 +209,4 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 **與相依性屬性相關的 API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
-
 

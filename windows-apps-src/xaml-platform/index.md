@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: "本節所包含的主題說明通用於您撰寫的任何應用程式的程式設計概念。"
+description: "本節所包含的主題說明通用於您撰寫的任何 app 的程式設計概念。"
 title: "XAML 平台"
 ms.author: jimwalk
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1930f3a215b7bc0980b1fb4a8c83b6cfadd1e373
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3a5a638a2b8caf63cc3353d7bd6a43068ec61119
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xaml-platform"></a>XAML 平台
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節包含說明程式設計概念的主題，如果您是使用 C#、Microsoft Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為您的程式設計語言，並且使用 XAML 定義 UI，則這些概念一般適用於您撰寫的所有 app。 這包含基本的程式設計概念，例如使用屬性和事件，以及如何將它們套用到通用 Windows 平台 (UWP) 應用程式的程式設計。 通用 Windows 平台 (UWP) 會藉由新增相依性屬性系統，來延伸屬性及其值的 C#、Visual Basic 或 C++/CX 概念。 本節中的主題也會在 UWP 使用 XAML 語言時記錄該語言，並且涵蓋基本案例和進階主題，以說明如何使用 XAML 來定義適用於 UWP app 的 UI。
  
@@ -29,7 +26,6 @@ ms.lasthandoff: 02/07/2017
 | [自訂相依性屬性](custom-dependency-properties.md) | 說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段 app 定義及實作自訂相依性屬性。 |
 | [附加屬性概觀](attached-properties-overview.md) | 說明 XAML 中附加屬性的概念並提供一些範例。 |
 | [自訂附加屬性](custom-attached-properties.md) | 說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。 |
-| [事件與路由事件概觀](events-and-routed-events-overview.md) | 我們將描述使用 C#、Visual Basic 或 C++/CX 做為程式設計語言並使用 XAML 定義 UI 時，Windows 執行階段 app 中事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援「路由事件」****：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或版面配置容器時，路由事件非常實用。 |
+| [事件與路由事件概觀](events-and-routed-events-overview.md) | 我們將描述使用 C#、Visual Basic 或 C++/CX 做為程式設計語言並使用 XAML 定義 UI 時，Windows 執行階段 app 中事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援**「路由事件」**：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或版面配置容器時，路由事件非常實用。 |
 
  
-

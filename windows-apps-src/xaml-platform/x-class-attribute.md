@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d44b9fafa0687bdd9f5e507fc7444313eff4ca3b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d3105e8ac345e1eb6f0d974f8ea29e741dae9f58
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xclass-attribute"></a>x:Class 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
 
@@ -40,7 +37,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="remarks"></a>備註
 
-**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根目錄的屬性。 在任何情況下，為未使用 [頁面]**** 建置動作編譯的 XAML 檔案在根節點外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
+**x:Class** 可以宣告為建置動作正在編譯的 XAML 檔案/物件樹根目錄的任一元素的屬性，或宣告為已編譯應用程式的應用程式定義中的 [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) 根目錄的屬性。 在任何情況下，為未使用 **\[頁面\]** 建置動作編譯的 XAML 檔案在根節點外的任何元素中宣告 **x:Class**，會導致編譯時期錯誤。
 
 做為 **x:Class** 的類別不可以是巢狀類別。
 
@@ -49,5 +46,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="clr-language-rules"></a>CLR 語言規則
 
 雖然您的程式碼後置檔案可能是 C++ 檔案，但某些慣例仍舊依循 CLR 語言格式，因此，在 XAML 語法上並無差異。 特別的是，任何 **x:Class** 值的命名空間與類別名稱元件之間的分隔符號永遠都是點 (".")，雖然在與 XAML 關聯的 C++ 程式碼檔案中，命名空間與類別名稱之間的分隔符號是 "::"。 如果您使用 C++ 宣告巢狀命名空間，則當您指定 **x:Class** 值的 *namespace* 部分時，後續巢狀命名空間字串之間的分隔符號也應該是 "." 而不是 "::"。
-
 

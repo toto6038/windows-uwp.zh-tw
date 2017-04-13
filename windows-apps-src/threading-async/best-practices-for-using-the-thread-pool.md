@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 執行緒, 執行緒集區"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d3b45da6a11bab926812682c209207bbbb436bf1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: db5231c925575bef21b3d412feda367cd89fe7f4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用執行緒集區的最佳做法
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本主題描述使用執行緒集區的最佳做法。
@@ -60,4 +58,3 @@ ms.lasthandoff: 02/07/2017
 * [建立定期工作項目](create-a-periodic-work-item.md)
 * [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
 * [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
-

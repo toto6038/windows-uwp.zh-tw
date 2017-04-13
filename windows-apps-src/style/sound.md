@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fe56db9f63461ad21173406289c18e6f704aa2a4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6c7745b5702d22bc201dbc173af3765097685514
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="sound"></a>音效
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -32,13 +29,13 @@ UWP 提供一個可輕鬆存取的音效系統，您只要「撥動開關」，�
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
-**ElementSoundPlayer** 有三種不同的狀態︰[On]****、[Off]**** 和 [Auto]****。
+**ElementSoundPlayer** 有三種不同的狀態︰**\[On\]**、**\[Off\]** 和 **\[Auto\]**。
 
-如果設定為 [Off]****，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 [On]****，您的應用程式的音效將會在每個平台上播放。
+如果設定為 **\[Off\]**，不論您的 App 在何處執行，一律不會播放音效。 如果設定為 **\[On\]**，您的應用程式的音效將會在每個平台上播放。
 
 ### <a name="sound-for-tv-and-xbox"></a>電視和 Xbox 的音效
 
-音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 [Auto]****，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
+音效是 10 英呎體驗的重要部分，而 **ElementSoundPlayer** 的狀態會預設為 **\[Auto\]**，這表示您的應用程式在 Xbox 上執行時，您才會聽到音效。
 若要深入了解電視和 Xbox 的音效運作方式，請參閱 [Xbox 和電視設計](http://go.microsoft.com/fwlink/?LinkId=760736)文章。
 
 ## <a name="sound-volume-override"></a>音效音量覆寫
@@ -55,7 +52,7 @@ ElementSoundPlayer.Volume = 0.5f;
 
 如果不需要控制項的預設音效，可予以停用。 這可透過控制項上的 **ElementSoundMode** 來達成。
 
-**ElementSoundMode** 有兩種狀態︰[Off]**** 和 [Default]****。 未設定時，則為 [Default]****。 如果設定為 [Off]****，則控制項所播放的每個音效都會是靜音，但「焦點除外」**。
+**ElementSoundMode** 有兩種狀態︰**\[Off\]** 和 **\[Default\]**。 未設定時，則為 **\[Default\]**。 如果設定為 **\[Off\]**，則控制項所播放的每個音效都會是靜音，但*「焦點除外」*。
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
@@ -153,4 +150,3 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 ## <a name="related-articles"></a>相關文章
 
 * [針對 Xbox 和電視進行設計](http://go.microsoft.com/fwlink/?LinkId=760736)
-

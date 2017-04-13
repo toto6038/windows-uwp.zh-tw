@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fa6cf80bf569703a7fbbc532c9114bee89c7403
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 21d73b60ba3856f81a6d93331982135e188e122e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="xuid-directive"></a>x:Uid 指示詞
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 提供標記元素的唯一識別碼。 對通用 Windows 平台 (UWP) XAML 來說，XAML 當地語系化處理程序和工具會使用這個唯一識別碼，像是使用來自 .resw 資源檔的資源。
 
@@ -53,5 +50,4 @@ UWP XAML 的 **x:Uid** 唯一性，和之前使用的 XAML-utilizing 技術有�
 在某些情況下，您將會使用資源路徑，而不是封裝資源索引 (PRI) 系統的內建功能。 任何做為 **x:Uid** 值的字串都會定義一個開頭是 ms-resource:///Resources/ 並且包含 **x:Uid** 字串的資源路徑。 這個路徑結尾會是您在資源檔中指定的屬性的名稱，或是做為目標的屬性的名稱。
 
 請勿將 **x:Uid** 放在屬性元素上，在 Windows 執行階段 XAML 中並不允許這樣做。
-
 

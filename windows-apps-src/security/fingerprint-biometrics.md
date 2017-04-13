@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 84e191df23f10f81a3588662f9ba1505cee12e21
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f9168184e360661dd2e6e2808b193f1e4026c0f5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="fingerprint-biometrics"></a>指紋生物識別技術
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文將說明如何將指紋生物識別技術新增到您的通用 Windows 平台 (UWP) 應用程式。 包括使用者必須同意特定動作時的指紋驗證要求，以增強 app 的安全性。 例如，您可以在授權 app 內購買之前或授與限制資源的存取權之前要求指紋驗證。 指紋驗證是使用 [**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 命名空間中的 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 類別所管理。

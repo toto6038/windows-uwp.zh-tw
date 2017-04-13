@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: efdf4214-9738-4df6-bf1f-ed7141696ef6
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5d1926655f44fb54b07e7222911c94ef0e526cd0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 59ecdb1994ffe1fe80da9301cea5d91c7e4e3a8d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="register-an-app-in-a-loose-folder"></a>登錄鬆散資料夾中的 App  
 
 **要求**
@@ -66,5 +63,4 @@ HTTP 狀態碼      | 描述
 第二種方法是針對 /api/filesystem/apps/file 執行 POST (其中 knownfolderid 是 DevelopmentFiles、packagefullname 是空的，且已適當提供檔案名稱和路徑 (路徑開頭應為 LooseApps))，來將個別檔案複製到正確的位置。
 
 第三種方法是透過 [/api/app/packagemanager/upload](wdp-folder-upload.md) (其中 destinationFolder 是要放置於 d:\developmentfiles\looseapps 底下資料夾的名稱，且裝載是目錄內容的多部分合格 http 本文)，同時複製整個資料夾。
-
 
