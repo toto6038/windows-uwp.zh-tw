@@ -1,7 +1,7 @@
 ---
 author: mtoepke
 title: "支援螢幕方向 (DirectX 和 C++)"
-description: "這裡將討論在 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便能夠有效率及有效地使用 Windows 10 裝置的圖形硬體。"
+description: "這裡將討論在 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便能夠有效率及有效地使用 Windows 10 裝置的圖形硬體。"
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ms.author: mtoepke
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, 螢幕方向, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 606d32d16ad94e45cb63c73f1869735a9fbd7d25
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="supporting-screen-orientation-directx-and-c"></a>支援螢幕方向 (DirectX 和 C++)
 
 
@@ -25,7 +22,7 @@ ms.lasthandoff: 02/07/2017
 
 在您開始之前，請記住不論裝置的方向為何，圖形硬體一律會以相同的方式輸出像素資料。 Windows 10 裝置可以判斷其目前的顯示方向 (使用某種感應器或軟體切換) 並讓使用者變更顯示設定。 因此，Windows 10 本身會處理影像的旋轉，確保根據裝置的方向直立顯示影像。 根據預設，您的應用程式會收到某個東西的方向已經變更的通知，例如視窗大小。 發生這樣的情況時，Windows 10 會立即旋轉影像以供最終顯示。 對於四個特定螢幕方向中的三個 (稍後討論)，Windows 10 會使用額外的圖形資源和運算來顯示最終影像。
 
-對於UWP DirectX app，[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) 物件會提供您的應用程式可以查詢的基本顯示方向資料。 預設方向是「橫向」**，其中顯示器的像素寬度大於高度；另一個方向是「直向」**，其中顯示器以任一方向旋轉 90 度，而寬度變成小於高度。
+對於UWP DirectX app，[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) 物件會提供您的應用程式可以查詢的基本顯示方向資料。 預設方向是*「橫向」*，其中顯示器的像素寬度大於高度；另一個方向是*「直向」*，其中顯示器以任一方向旋轉 90 度，而寬度變成小於高度。
 
 Windows 10 定義了四種特定的顯示方向模式：
 
@@ -558,7 +555,6 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
  
 
  
-
 
 
 

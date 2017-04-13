@@ -2,25 +2,21 @@
 title: "雙線性紋理篩選"
 description: "線性篩選會計算最接近取樣點之 4 項材質的加權平均值。"
 ms.assetid: 0851AD28-8246-4547-A663-47884DDDFC3E
-keywords:
-- "雙線性紋理篩選"
+keywords: "雙線性紋理篩選"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 635ca5b2e09c32c8d9644b1f3196ef888ef5ebc2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f2b23fc0665695663875125f4e226e233c3ef7e2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bilinear-texture-filtering"></a>雙線性紋理篩選
 
 
-「線性篩選」**會計算最接近取樣點的 4 項材質之加權平均值。 此篩選的方式比最近點篩選更準確和常見。 因為這種方式在現代化圖形硬體內實作，所以很有效率。
+*「線性篩選」*會計算最接近取樣點的 4 項材質之加權平均值。 此篩選的方式比最近點篩選更準確和常見。 因為這種方式在現代化圖形硬體內實作，所以很有效率。
 
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
@@ -38,7 +34,7 @@ ms.lasthandoff: 02/07/2017
 
 最簡單的配置是讓取樣工具傳回最近的材質色彩；這稱為點篩選 (請參閱[最近點取樣](nearest-point-sampling.md))，但通常會造成粒狀或塊狀的色彩，所以結果不盡理想。 如果為我們在 UV (0.25, 0.25) 的紋理進行點取樣，會顯示出其他細微的最近點篩選問題︰有四種材質和取樣點等距，因此沒有最接近的材質。 這四項材質中的其中一個會被選為傳回的色彩，但選擇取決於座標進位的方式，這可能會造成卸除成品 (請參閱 SDK 中的最近點取樣文章)。
 
-有一項較為準確及常見的篩選配置，該配置計算最接近取樣點的 4 項材質之加權平均值，這稱為「線性篩選」**。 線性篩選的額外計算效能花費通常可忽略不計，因為此常式實作於現代化圖形硬體內。 以下是我們使用線性篩選，在幾個不同的範例點上取得的色彩︰
+有一項較為準確及常見的篩選配置，該配置計算最接近取樣點的 4 項材質之加權平均值，這稱為*「線性篩選」*。 線性篩選的額外計算效能花費通常可忽略不計，因為此常式實作於現代化圖形硬體內。 以下是我們使用線性篩選，在幾個不同的範例點上取得的色彩︰
 
 ```
 UV: (0.5, 0.5)
@@ -97,7 +93,6 @@ UV: (0.375, 0.375)
  
 
  
-
 
 
 

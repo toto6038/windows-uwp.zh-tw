@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "您可以藉由 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。"
+Description: "您可以透過使用 Visual Studio 中的精靈，從利用 Azure 行動服務建立的行動服務產生推播通知。"
 title: "由推播通知精靈產生的程式碼"
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96086cb73a091964b2108c64dcc5ce6b32891629
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3aadc2c4d7e40b2d5df6bc32c5c040c5f5cc1e56
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -252,7 +249,6 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
  
 
  
-
 
 
 

@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-description: "本文說明如何使用 SceneAnalysisEffect 和 FaceDetectionEffect 分析媒體擷取預覽串流的內容。"
+description: "本文說明如何使用 SceneAnalysisEffect 和FaceDetectionEffect 分析媒體擷取預覽串流的內容。"
 title: "分析相機畫面的效果"
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7f46130feac43211bccf57191d940acb8198965
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 3fc55919942c1edc82f7c2e5da2608b5f1b1445b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="effects-for-analyzing-camera-frames"></a>分析相機畫面的效果
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -124,7 +121,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

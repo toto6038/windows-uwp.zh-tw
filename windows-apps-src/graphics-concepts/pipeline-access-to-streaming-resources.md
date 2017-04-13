@@ -2,21 +2,17 @@
 title: "串流資源的存取管線"
 description: "串流資源可用於著色器資源檢視(SRV)、轉譯目標檢視 (RTV)、深度樣板檢視 (DSV) 和未排序存取檢視 (UAV)，以及一些未使用檢視的繫結點，例如頂點緩衝區繫結。"
 ms.assetid: 18DA5D61-930D-4466-8EFE-0CED566EA4A6
-keywords:
-- "串流資源的存取管線"
+keywords: "串流資源的存取管線"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5f4fd92e1519579f15b3c3d452ce80e944f0942b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b730a8c15f4327397e945b616c6c1edc2e1ad5a9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="pipeline-access-to-streaming-resources"></a>串流資源的存取管線
 
 
@@ -78,7 +74,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

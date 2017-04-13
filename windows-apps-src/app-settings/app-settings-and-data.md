@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "本節包含用於可呈現應用程式設定，並將那些設定儲存為應用程式資料的使用者體驗指導方針。"
+Description: "本節包含用於可呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。"
 title: "應用程式設定和資料"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
@@ -11,19 +11,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdb1035d3d035c92c29e84bdd04ca7692c7e19de
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: aa505ae4b58fe583f3303ee005deddae48ee3c8e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="app-settings-and-data"></a>應用程式設定和資料
 
 
 
 
-本節包含用於可呈現應用程式設定，並將那些設定儲存為應用程式資料的使用者體驗指導方針。
+本節包含用於呈現 app 設定並將那些設定儲存為 app 資料的使用者體驗指導方針。
 
 App 設定是通用 Windows 平台 (UWP) app 的使用者可自訂部分。 例如，新聞閱讀程式 app 可讓使用者指定要顯示的新聞來源，或螢幕上要顯示的欄數。
 
@@ -51,7 +48,6 @@ App 資料是 app 自身建立和管理的資料。 其中包含了執行階段�
 </tr>
 </tbody>
 </table>
-
 
 
 

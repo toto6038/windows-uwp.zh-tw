@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: adc09ec19572d190bc756dee63d3e735d512f4f1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 35268ea199c139680c4a11c30744ecf54867e592
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
@@ -40,7 +37,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>註冊您的應用程式與接收雲端服務認證
 
 
-您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，請移至 [Windows 開發人員中心](http://go.microsoft.com/fwlink/p/?linkid=511146)，並選取 [儀表板]****。
+您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，請移至 [Windows 開發人員中心](http://go.microsoft.com/fwlink/p/?linkid=511146)，並選取 **\[儀表板\]**。
 
 每個應用程式都有自己雲端服務的一組認證。 這些認證無法用於傳送通知給任何其他應用程式。
 
@@ -164,7 +161,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 ## <a name="push-notifications-and-battery-saver"></a>推播通知和省電模式
 
 
-省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 [設定]****應用程式中找到) 可讓您的應用程式即使在省電模式開啟時，也會接收到推播通知。
+省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 Windows 10 省電模式設定 (可在 **\[設定\]**應用程式中找到) 可讓您的應用程式即使在省電模式開啟時，也會接收到推播通知。
 
 -   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定僅適用於傳統型版本的 Windows 10 (家用版、專業版、企業版及教育版)。
 -   **一律允許**：此設定可讓特定應用程式在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
@@ -245,7 +242,7 @@ async public void CheckForEnergySaving()
 ```
 
 > [!NOTE]
-> 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> 本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 
@@ -264,7 +261,6 @@ async public void CheckForEnergySaving()
  
 
  
-
 
 
 

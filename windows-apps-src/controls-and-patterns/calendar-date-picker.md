@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 801e9192f3da2f72803dcb95168b1f8dfded6695
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6d8e45d39c3781eefa9081971c51c001e95799df
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="calendar-date-picker"></a>行事曆日期選擇器
 
@@ -104,4 +102,3 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 - [行事曆檢視](calendar-view.md)
 - [日期選擇器](date-picker.md)
 - [時間選擇器](time-picker.md)
-

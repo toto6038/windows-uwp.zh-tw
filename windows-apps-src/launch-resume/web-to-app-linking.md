@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 225f0d2bd5d8a2434c3e548064960f44f1df530e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: df5d232cc997c0c888b3a2f092efeb937e991a85
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="support-web-to-app-linking-with-app-uri-handlers"></a>透過應用程式 URI 處理常式支援網站至應用程式連結
 
 了解如何藉由支援網站至應用程式連結讓使用者持續使用您的應用程式。 網站至應用程式連結可讓您將應用程式與網站關聯。 當使用者開啟網站的 http 或 https 連結時，會啟動您的應用程式，而不是開啟瀏覽器。 如果未安裝您的應用程式，則會提供可在瀏覽器中開啟您網站的連結。 因為只有經過驗證的內容擁有者可以登錄連結，所以使用者可以信任這個使用經驗。
@@ -199,4 +196,3 @@ protected override void OnActivated(IActivatedEventArgs e)
 [處理 URI 啟用](https://msdn.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 
 [關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)會示範如何使用 LaunchUriAsync() API。
-

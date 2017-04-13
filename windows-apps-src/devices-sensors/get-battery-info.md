@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f78c828faded1d7efbd82bc41245052ce95862c7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b136c53cd39028c15ff55be803ae314c773a9be6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="get-battery-information"></a>取得電池資訊
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ** 重要 API **
 
@@ -135,7 +133,7 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 
 ## <a name="example-basic-battery-app"></a>範例：基本電池 app
 
-在 Microsoft Visual Studio 中建立下列基本電池 app 來測試這些 API。 從 Visual Studio 起始頁，按一下 [新增專案]****，然後在 [Visual C# &gt; Windows &gt; 通用]**** 範本下，使用 [空白應用程式]**** 範本建立新的 app。
+在 Microsoft Visual Studio 中建立下列基本電池 app 來測試這些 API。 從 Visual Studio 起始頁，按一下 **\[新增專案\]**，然後在 **\[Visual C# &gt; Windows &gt; 通用\]** 範本下，使用 **\[空白應用程式\]** 範本建立新的 app。
 
 接下來，開啟 **MainPage.xaml** 檔案，然後將以下的 XML 複製到這個檔案中 (取代原來的內容)。
 
@@ -342,5 +340,4 @@ namespace App1
 **提示**  若要從 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件接收數值，請在**本機電腦**或外部**裝置** (例如 Windows Phone) 偵錯您的應用程式。 在裝置模擬器上偵錯時，**BatteryReport** 物件會傳回 **Null** 到容量和速率屬性。
 
  
-
 

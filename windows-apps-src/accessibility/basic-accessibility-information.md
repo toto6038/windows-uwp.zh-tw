@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "基本協助工具資訊通常分類為名稱、角色以及值。 本主題說明的程式碼可協助您的應用程式公開輔助技術所需的基本資訊。"
+Description: "基本協助工具資訊通常分類為名稱、角色以及值。 本主題描述的程式碼可協助您的 app 公開輔助技術所需的基本資訊。"
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: "公開基本的協助工具資訊"
 label: Expose basic accessibility information
@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 123776d100b0308248e6d715d8253b69f700f1d8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fd873b6d1abd4187f1b8ff1d9040da3242c0ee65
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
 
@@ -45,7 +42,7 @@ ms.lasthandoff: 02/07/2017
 ## <a name="role-and-value"></a>角色和值  
 屬於 XAML 詞彙的控制項和其他 UI 元素會實作使用者介面自動化支援，進而將角色和值報告為定義的一部分。 您可以使用使用者介面自動化工具檢查控制項的角色和值資訊，或者是閱讀每個控制項 [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 實作的說明文件。 UI 自動化架構可用的角色定義在 [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 列舉中。 使用者介面自動化用戶端 (例如輔助技術) 能夠呼叫使用者介面自動化架構使用控制項的 **AutomationPeer** 來公開的方法，以取得角色資訊。
 
-並不是所有控制項都有值。 沒有值的控制項會透過支援的對等和模式，向 UI 自動化報告此資訊。 例如，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 表單元素有值。 輔助技術可以是使用者介面自動化用戶端，因此能夠找到一個值並知道值是什麼。 在這個特殊案例中，**TextBox** 可透過 [**TextBoxAutomationPeer **](https://msdn.microsoft.com/library/windows/apps/BR242550)義來支援 [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) 模式。
+並不是所有控制項都有值。 沒有值的控制項會透過支援的對等和模式，向 UI 自動化報告此資訊。 例如，[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 表單元素有值。 輔助技術可以是使用者介面自動化用戶端，因此能夠找到一個值並知道值是什麼。 在這個特殊案例中，**TextBox** 可透過 [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) 定義來支援 [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) 模式。
 
 > [!NOTE]
 > 如果您是使用 [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 或其他技術明確提供無障礙名稱，則不要在無障礙名稱中包含控制項角色或類型資訊所使用的文字。 例如，名稱中不要有像是 "button" 或 "list" 此類字串。 角色和類型資訊來自不同的使用者介面自動化屬性 (**LocalizedControlType**) 而這些屬性是由使用者介面自動化支援的預設控制項所提供。 許多輔助技術會將 **LocalizedControlType** 附加到無障礙名稱，因此無障礙名稱中的角色如果重複，就會造成單字不必要的重複。 例如，如果您為 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 控制項提供的無障礙名稱為 "button"，或者在名稱的最後一部分包含 "button"，則螢幕助讀程式可能會將這個控制項讀做 "button button"。 您應該使用朗讀程式來測試這個層面的協助工具資訊。
@@ -150,4 +147,3 @@ Windows 支援許多控制項，而這些控制項可以透過名為「資料繫
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具測試](accessibility-testing.md)
-

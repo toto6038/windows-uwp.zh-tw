@@ -2,21 +2,17 @@
 title: "幾何著色器 (GS) 階段"
 description: "幾何著色器 (GS) 階段會處理整個基本類型三角形、線條和點，以及它們相鄰的頂點。"
 ms.assetid: 8A1350DD-B006-488F-9DAF-14CD2483BA4E
-keywords:
-- "幾何著色器 (GS) 階段"
+keywords: "幾何著色器 (GS) 階段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1a4c6ab45f53eb2156ae82f562d775682c1b79ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 05ef26d8ad596a89cb1e9f2bb44d0e1b062097ee
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="geometry-shader-gs-stage"></a>幾何著色器 (GS) 階段
 
 
@@ -75,7 +71,7 @@ ms.lasthandoff: 02/07/2017
 
 有三種類型的資料流物件：**TriangleStream**、**LineStream** 和 **PointStream**，這些是所有樣板化物件。 輸出的拓撲是由各自的物件類型決定，而附加至資料流的頂點的格式是由範本類型決定。
 
-當幾何著色器輸出視為系統解譯值時 (例如 **SV\_RenderTargetArrayIndex**或**SV\_Position**)，硬體會查看這項資料，並且執行某種取決於該值的行為，除了能夠傳遞資料本身至著色器的下一個階段進行輸入之外。 當幾何著色器的這類資料輸出在每個基本類型的基礎上 (例如 **SV\_RenderTargetArrayIndex** 或 **SV\_ViewportArrayIndex**) 對硬體有意義，而不是在每個頂點的基礎上 (如 **SV\_ClipDistance\ [n\]** 或 **SV\_Position**) 時，每個基本類型資料會從針對基本類型發出的前置頂點取得。
+當幾何著色器輸出視為系統解譯值時 (例如 **SV\_RenderTargetArrayIndex**或**SV\_Position**)，硬體會查看這項資料，並且執行某種取決於該值的行為，除了能夠傳遞資料本身至著色器的下一個階段進行輸入之外。 當幾何著色器的這類資料輸出在每個基本類型的基礎上 (例如 **SV\_RenderTargetArrayIndex** 或 **SV\_ViewportArrayIndex**) 對硬體有意義，而不是在每個頂點的基礎上 (如 **SV\_ClipDistance\[n\]** 或 **SV\_Position**) 時，每個基本類型資料會從針對基本類型發出的前置頂點取得。
 
 部分完成的基本類型可能是由幾合著色器產生，如果幾何著色器結束且基本類型未完成。 未完成的基本類型會捨棄且無訊息。 這類似 IA 處理部分未完成基本類型的方式。
 
@@ -89,7 +85,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

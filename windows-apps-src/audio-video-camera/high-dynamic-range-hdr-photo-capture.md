@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e4ed8175e0f35733972474bbcc01cce9830f1e5b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 32badfb6cc2a069370623357ba96800cebd11c03
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高動態範圍 (HDR) 和弱光相片擷取
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文示範如何使用 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 類別，來擷取高動態範圍 (HDR) 相片。 這個 API 也可讓您在最終影像處理完成之前，從 HDR 擷取中取得參照畫面。
@@ -109,7 +106,7 @@ HDR 相片擷取有兩個步驟。 首先，擷取多個框架，然後框架經
 
 ### <a name="clean-up-the-advancedphotocapture-object"></a>清除 AdvancedPhotoCapture 物件
 
-當應用程式完成擷取時，在處置 **MediaCapture** 物件之前，您應該呼叫 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/mt181391) 並將成員變數設定為 Null，以關閉 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 物件。
+當 app 完成擷取時，在處置 **MediaCapture** 物件之前，您應該呼叫 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/mt181391) 並將成員變數設定為 Null，以關閉 [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) 物件。
 
 [!code-cs[CleanUpAdvancedPhotoCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpAdvancedPhotoCapture)]
 
@@ -173,4 +170,3 @@ HDR 相片擷取有兩個步驟。 首先，擷取多個框架，然後框架經
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-

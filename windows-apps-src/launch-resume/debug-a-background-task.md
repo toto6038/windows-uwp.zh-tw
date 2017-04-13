@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6200a8363c8a638f2ee44bdad6902748fb9adf45
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 46b60f180642e509eca76a68d78b1099008746eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
@@ -26,14 +23,14 @@ ms.lasthandoff: 02/07/2017
 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。
 
 ## <a name="debugging-out-of-process-vs-in-process-background-tasks"></a>對跨處理序與同處理序背景工作進行偵錯
-本主題主要用來說明在與主控 App 不同處理序中執行的背景工作。 如果您正在對同處理序背景進行偵錯，您將不會有個別的背景工作專案，並可以在 **OnBackgroundActivated()** (同處理序背景程式碼執行所在的位置) 設定中斷點，請參閱下方位於[手動觸發背景工作以偵錯背景工作程式碼](#Trigger-background-tasks-manually-to-debug-background-task-code)中的步驟 2，以取得如何觸發背景程式碼執行的指示。
+本主題主要用來說明在與主控 App 不同處理序中執行的背景工作。 如果您正在對同處理序背景進行偵錯，您將不會有個別的背景工作專案，並可以在 **OnBackgroundActivated()** (同處理序背景程式碼執行所在的位置) 設定中斷點，請參閱下方位於[手動觸發背景工作以偵錯背景工作程式碼](#trigger-background-tasks-manually-to-debug-background-task-code)中的步驟 2，以取得如何觸發背景程式碼執行的指示。
 
 ## <a name="make-sure-the-background-task-project-is-set-up-correctly"></a>請確定已正確設定背景工作專案
 
 本主題假設您已經有需要對其背景工作偵錯的 App。 下列項目適用於在跨處理序中執行的背景工作，且不適用於同處理序背景工作。
 
 -   在 C# 與 C++ 中，確定主要專案參照背景工作專案。 如果此參照未就緒，背景工作將不會包含在應用程式套件中。
--   在 C\# 與 C++ 中，確定背景工作專案的 [輸出類型]**** 為「Windows 執行階段元件」。
+-   在 C\# 與 C++ 中，確定背景工作專案的 **\[輸出類型\]** 為「Windows 執行階段元件」。
 -   背景類別必須在套件資訊清單的進入點屬性中進行宣告。
 
 ## <a name="trigger-background-tasks-manually-to-debug-background-task-code"></a>手動觸發背景工作以偵錯背景工作程式碼
@@ -44,7 +41,7 @@ ms.lasthandoff: 02/07/2017
 
     在 C++ 中，請在背景類別的 Run 類別中設置中斷點 (若為同處理序背景工作，請在 App.OnBackgroundActivated() 設置中斷點)，和/或使用 [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) 來撰寫偵錯輸出。
 
-2.  在偵錯工具中執行您的應用程式，然後使用 [週期事件]**** 工具列來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
+2.  在偵錯工具中執行您的應用程式，然後使用 **\[週期事件\]** 工具列來觸發背景工作。 這個下拉式清單會顯示可由 Visual Studio 啟用的背景工作名稱。
 
     若要能夠運作，背景工作必須已經註冊且必須仍在等候觸發程序。 例如，如果背景工作是以一次性的 TimeTrigger 註冊，且該觸發程序已經引發，則透過 Visual Studio 啟動工作將不會有作用。
 
@@ -82,9 +79,9 @@ ms.lasthandoff: 02/07/2017
     如果您遵照此程序但事件日誌顯示背景工作發生錯誤進入點或觸發程序，表示您的 app 未正確註冊背景工作。 如需此工作的協助，請參閱[註冊背景工作](register-a-background-task.md)。
 
     1.  移至 [開始] 畫面並搜尋 eventvwr.exe，開啟事件檢視器。
-    2.  在事件檢視器中，移至 [應用程式及服務記錄檔]**** -&gt; [Microsoft]**** -&gt; [Windows]**** -&gt; [BackgroundTaskInfrastructure]****。
-    3.  在動作窗格中，選取 [檢視]**** -&gt; [顯示分析與偵錯記錄檔]****，以啟用診斷記錄。
-    4.  選取 [診斷記錄檔]****，然後按一下 [啟用記錄]****。
+    2.  在事件檢視器中，移至 **\[應用程式及服務記錄檔\]** -&gt; **\[Microsoft\]** -&gt; **\[Windows\]** -&gt; **\[BackgroundTaskInfrastructure\]**。
+    3.  在動作窗格中，選取 **\[檢視\]** -&gt; **\[顯示分析與偵錯記錄檔\]**，以啟用診斷記錄。
+    4.  選取 **\[診斷記錄檔\]**，然後按一下 **\[啟用記錄\]**。
     5.  現在嘗試使用應用程式再次註冊並啟動背景工作。
     6.  檢視診斷記錄檔，以取得詳細的錯誤資訊。 當中包含為背景工作註冊的進入點。
 
@@ -120,4 +117,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

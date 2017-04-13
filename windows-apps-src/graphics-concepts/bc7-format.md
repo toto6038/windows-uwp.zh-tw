@@ -2,21 +2,17 @@
 title: "BC7 格式"
 description: "BC7 格式是用於高品質 RGB 和 RGBA 資料壓縮的紋理壓縮格式。"
 ms.assetid: 788B6E8C-9A1F-45F9-BE49-742285E8D8A6
-keywords:
-- "BC7 格式"
+keywords: "BC7 格式"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 73b6700a902c33c0af0c9314d2869f98f3f53d21
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ae67966d6f49c9cb97621b4613d61e321c9fdba0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bc7-format"></a>BC7 格式
 
 
@@ -358,7 +354,6 @@ BC7 模式 7 的特性如下︰
  
 
  
-
 
 
 

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: "此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) 應用程式的重要企業功能。"
+description: "此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) app 的重要企業功能。"
 title: "企業"
 author: awkoren
 ms.author: alkoren
@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ffbccf88cd00331b622c158a7e46773ae62197e2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 28d005d76fa8d412eb283e409ea7f5d673bfd857
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="enterprise"></a>企業
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 此藍圖概述適用於 Windows 10 通用 Windows 平台 (UWP) app 的重要企業功能。 Windows 10 可讓您只需要撰寫一次，就能部署到所有裝置，方法是建立一個可調整成適合任何裝置的 app。 這可讓您建置使用者期待的絕佳經驗，並針對組織所需的安全性、管理以及設定等提供控制功能。
 
@@ -117,4 +114,3 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
  
 
  
-

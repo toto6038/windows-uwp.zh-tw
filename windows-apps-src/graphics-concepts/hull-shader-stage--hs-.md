@@ -2,21 +2,17 @@
 title: "輪廓著色器 (HS) 階段"
 description: "輪廓著色器 (HS) 階段是其中一個鑲嵌階段，有效率地將模型的單一表面分成多個三角形。"
 ms.assetid: C62F6F15-CAD7-4C72-9735-00762E346C4C
-keywords:
-- "輪廓著色器 (HS) 階段"
+keywords: "輪廓著色器 (HS) 階段"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 17608ac181b8cd9af2e518cc32461441bff616da
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ea1aaea93e585259eba141c5d23c7a7dcb0dd4c3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hull-shader-hs-stage"></a>輪廓著色器 (HS) 階段
 
 
@@ -81,7 +77,6 @@ MyOutPoint main(uint Id : SV_ControlPointID,
  
 
  
-
 
 
 

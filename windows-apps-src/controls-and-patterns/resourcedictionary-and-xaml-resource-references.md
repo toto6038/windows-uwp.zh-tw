@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為應用程式或應用程式套件之一部分的資源相關。"
+Description: "說明如何定義 ResourceDictionary 元素和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。"
 MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -14,17 +14,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e24b411c5a966d48e4db07a4ddfce1248454e78d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 40f1bdad88ebcbd226dc935730766449d40d4595
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 與 XAML 資源參考
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-您可以使用 XAML 來定義您應用程式的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源。
+您可以使用 XAML 來定義您 app 的 UI 或資源。 資源通常是一些您預期會多次使用之物件的定義。 若稍後要參考 XAML 資源，您可以為資源指定像做為名稱來使用的索引鍵。 您可以在整個應用程式或從其中的任一個 XAML 頁面，參考某個資源。 您可以使用來自「Windows 執行階段 XAML」的 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 元素來定義您的資源。 接著，您可以使用 [StaticResource 標記延伸](../xaml-platform/staticresource-markup-extension.md)或 [ThemeResource 標記延伸](../xaml-platform/themeresource-markup-extension.md)來參考資源。
 
 您最常宣告為 XAML 資源的 XAML 元素包括 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)、動畫元件以及 [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 子類別。 我們會在此處說明如何定義 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 和索引資源，以及 XAML 資源如何與其他定義為 app 或 app 套件之一部分的資源相關。 我們也會說明資源字典進階功能，例如 [**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801) 和 [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807)。
 
@@ -57,7 +55,7 @@ XAML 資源是從標記參考多次的物件。 資源是在 [**ResourceDictiona
 -   `<x:String>` - 使用 "greeting" 索引鍵來定義資源。
 -   `{StaticResource greeting}` - 查詢具有 "greeting" 索引鍵的資源，此索引鍵會指派給 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209676) 的 [**Text**](https://msdn.microsoft.com/library/windows/apps/br209652) 屬性。
 
-> **注意**&nbsp;&nbsp;請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 [資源]**** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
+> **注意**&nbsp;&nbsp;請不要將 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 的相關概念，與在產生應用程式套件的程式碼專案結構形成內容中所討論的 **\[資源\]** 建置動作、資源 (.resw) 檔案或其他「資源」混為一談。
 
 資源不一定要是字串；它們可以是任何可共用的物件，例如樣式、範本、筆刷和色彩。 不過，控制項、形狀和其他 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 無法共用，因此無法宣告為可重複使用的資源。 如需有關共用的詳細資訊，請參閱本主題稍後的 [XAML 資源必須是可共用的](#xaml_resources_must_be_sharable)一節。
 
@@ -261,7 +259,7 @@ sealed partial class App : Application
 
 「合併的資源字典」**是將某個資源字典結合到另一個資源字典中，通常是在另一個檔案中。
 
-> **提示**&nbsp;&nbsp;您可以使用 [專案]**** 功能表的 [新增] &gt; [新增項目] &gt; [資源字典]**** 選項，在 Microsoft Visual Studio 中建立資源字典檔案。
+> **提示**&nbsp;&nbsp;您可以使用 **\[專案\]** 功能表的 **\[新增\] &gt; \[新增項目\] &gt; \[資源字典\]** 選項，在 Microsoft Visual Studio 中建立資源字典檔案。
 
 在這裡，您會在另一個名為 Dictionary1.xaml 的 XAML 檔案中，定義資源字典。
 
@@ -496,7 +494,6 @@ XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br
  
 
  
-
 
 
 

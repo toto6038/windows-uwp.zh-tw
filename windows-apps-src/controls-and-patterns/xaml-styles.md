@@ -8,12 +8,11 @@ title: "XAML 樣式"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: 86f28a0509ead0632c942c6746fea19acac54931
 ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# XAML 樣式
+# <a name="xaml-styles"></a>XAML 樣式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -21,7 +20,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
 
-## 樣式基本知識
+## <a name="style-basics"></a>樣式基本知識
 
 使用樣式擷取視覺屬性設定，再放入可重複使用的資源中。 以下是一個顯示 3 個按鈕的範例，其中使用一個設定 [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397)、[**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) 及 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 屬性的樣式。 透過套用樣式，您可以讓控制項擁有相同的外觀，而不需在每個控制項上個別設定這些屬性。
 
@@ -60,7 +59,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 </StackPanel>
 ```
 
-## 套用隱含或明確的樣式
+## <a name="apply-an-implicit-or-explicit-style"></a>套用隱含或明確的樣式
 
 如果您將樣式定義成資源，則將它套用至控制項的方式有兩種：
 
@@ -105,7 +104,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 </Grid>
 ```
 
-## 使用根據樣式
+## <a name="use-based-on-styles"></a>使用根據樣式
 
 為了更容易維持樣式，並將樣式重複使用率提升到最高，您可以建立會從其他樣式繼承的樣式。 您可以使用 [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) 屬性建立繼承樣式。 繼承自其他樣式的樣式必須用在相同類型的控制項，或是基礎樣式之目標類型所衍生的控制項。 例如，如果基礎樣式的目標是 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365)，則以此樣式為基礎樣式的目標可以是 **ContentControl**，或是 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 與 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 這類衍生自 **ContentControl** 的類型。 如果根據樣式中沒有設定某個值，則該值就會繼承自基礎樣式。 若是變更基礎樣式的值，則根據樣式會覆寫該值。 在下一個範例中，**Button** 與 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 的樣式是繼承自同一個基礎樣式。
 
@@ -141,11 +140,11 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 </StackPanel>
 ```
 
-## 使用工具輕鬆處理樣式
+## <a name="use-tools-to-work-with-styles-easily"></a>使用工具輕鬆處理樣式
 
-快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 [編輯樣式]或 [編輯範本] \(依按右鍵的控制項而定\)。 接著，您可以選取 \[套用資源\] 來套用現有的樣式，或選取 \[建立空白\] 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
+快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 **\[編輯樣式\]**或 **\[編輯範本\]** \(依按右鍵的控制項而定\)。 接著，您可以選取 **\[套用資源\]** 來套用現有的樣式，或選取 **\[建立空白\]** 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
 
-## 輕量型樣式設定
+## <a name="lightweight-styling"></a>輕量型樣式設定
 
 覆寫系統筆刷一般是在應用程式或頁面層級完成，而且在任一情況下，色彩覆寫都會影響參考該筆刷的所有控制項，而在 XAML 中，多個控制項可以參考相同的系統筆刷。
 
@@ -169,7 +168,7 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 將這些筆刷覆寫放在 **App.Resources** 層級會變更整個應用程式 (而非單一頁面) 內的所有按鈕。
 
-### 個別控制項樣式設定
+### <a name="per-control-styling"></a>個別控制項樣式設定
 
 有時為了以某種方式查看，會需要變更單一頁面上的單一控制項，但不變更該控制項的任何其他版本︰
 
@@ -202,16 +201,10 @@ ms.openlocfilehash: d12358e6fcab2afa039426532d47616d74b22ef4
 
 這只會影響該控制項所在頁面上的那個「特殊核取方塊」。
 
-## 修改預設系統樣式
+## <a name="modify-the-default-system-styles"></a>修改預設系統樣式
 
 您應該儘可能使用來自 Windows 執行階段預設 XAML 資源的樣式。 當您必須定義自己的樣式時，如果可能，請嘗試讓您的樣式以預設樣式為基礎 (使用先前所述的基準樣式，或者從編輯原始預設樣式的複本開始)。
 
-## Template (範本) 屬性
+## <a name="the-template-property"></a>Template (範本) 屬性
 
 Style Setter 可以用於 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 屬性，事實上，大多數的典型 XAML 樣式和應用程式 XAML 資源都是由此組成。 這部分內容將在[控制項範本](control-templates.md)主題中深入討論。
-
-
-
-<!--HONumber=Nov16_HO1-->
-
-

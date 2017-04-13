@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 24a5696a6e835a40b9b4e800677596514b56d53b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 9728eced6de3d246dc1ec9950b90d77fea0d576d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-markup"></a>最佳化您的 XAML 標記
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 剖析 XAML 標記以在記憶體建構物件，對複雜 UI 而言很耗費時間。 以下是一些您可以執行的動作，以針對您的 app 改善 XAML 標記剖析和載入時間及記憶體效率。
 
@@ -249,7 +247,7 @@ XAML 平台會嘗試快取常用的物件，這樣就可以盡可能地重複使
 
 ## <a name="cache-static-content"></a>快取靜態內容
 
-另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 上將 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 設為 **BitmapCache**，該元素包含組合圖形，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
+另一個過度繪製的來源是來自許多重疊元素的圖形。 如果您在 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911)上將 [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) 設為 **BitmapCache**，該元素包含組合圖形，則平台會將元素轉譯為點陣圖一次，然後在每個框架使用該點陣圖，而不會過度繪製。
 
 **沒有效率。**
 
@@ -294,5 +292,4 @@ XBF2 是 XAML 標記的二進位表示法，可避免在執行階段產生的所
 XAML 內建控制項和架構提供的字典已經完全啟用 XBF2。 針對您自己的應用程式，請確定您專案檔宣告的是 TargetPlatformVersion 8.2 或更新版本。
 
 若要檢查您是否有 XBF2，請在二進位編輯器中開啟您的應用程式；如果您有 XBF2，則第 12 和第 13 個位元組會是 00 02。
-
 

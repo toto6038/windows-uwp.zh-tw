@@ -2,21 +2,17 @@
 title: "頂點緩衝區檢視 (VBV) 和索引緩衝區檢視 (IBV)"
 description: "頂點緩衝區保留頂點清單的資料。"
 ms.assetid: 695115D2-9DA0-41F2-9416-33BFAB698129
-keywords:
-- "頂點緩衝區檢視 (VBV)"
+keywords: "頂點緩衝區檢視 (VBV)"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f32684b167b7582a646a7cfd47c606a9f382a4c4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 502b0e4816e31ebace93d3250f7da335d2540272
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vertex-buffer-view-vbv-and-index-buffer-view-ibv"></a>頂點緩衝區檢視 (VBV) 和索引緩衝區檢視 (IBV)
 
 
@@ -43,7 +39,6 @@ CUSTOMVERTEX 的定義接著會在建立頂點緩衝區時傳遞至圖形驅動�
  
 
  
-
 
 
 

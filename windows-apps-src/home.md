@@ -3,14 +3,11 @@ Description: "以下是您建立可在任何 Windows 10 裝置 (包括手機、�
 title: "Windows 10 應用程式使用方法指南 - Windows 應用程式開發"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/windows/develop
-translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
 ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
-# Windows 10 應用程式使用方法指南
+# <a name="how-to-guides-for-windows-10-apps"></a>Windows 10 應用程式使用方法指南
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -45,9 +42,3 @@ ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
 | [執行緒和非同步程式設計](threading-async/index.md) | 使用非同步程式設計，來協助您的 app 在完成其他可能較為耗時的工作時，仍能繼續執行並回應 UI 並保有回應能力。 |
 | [Windows 執行階段元件](winrt-components/index.md) | 深入了解這些可讓您初始化並從任何語言使用 (包括 C#、Visual Basic、JavaScript 和 C++) 的獨立物件。 例如，您可以用使用協力廠商程式庫的 C++ 建立 Windows 執行階段元件來執行高計算成本的作業，或在您的通用 Windows app 中直接重複使用某些 Visual Basic 或 C# 程式碼。 
 | [XAML 平台](xaml-platform/index.md) | 開始認識 XAML 程式設計語言的基本概念。 或者，如果您已熟悉 XAML，您可以直接了解如何使用 Visual Studio 在 XAML 中實作 Windows 執行階段功能，以建立通用 Windows app。 |
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

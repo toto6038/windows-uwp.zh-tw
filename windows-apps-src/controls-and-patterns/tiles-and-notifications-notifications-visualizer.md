@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "通知視覺化工具是市集中新的通用 Windows 平台 (UWP) app，可協助開發人員設計適用於 Windows 10 的彈性動態磚。"
+Description: "通知視覺化工具是市集中新的通用 Windows 平台 (UWP) App，可協助開發人員設計適用於 Windows 10 的彈性動態磚。"
 title: "通知視覺化工具"
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f7269e3fde1f5dbca278b2b9047b392049ee452c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d3594936942a8504d88f33bafccd77d66d9bd299
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="notifications-visualizer"></a>通知視覺化工具
 

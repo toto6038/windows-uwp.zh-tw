@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 29c80f1120a503968e426325aad818dd7a62e87c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c5a34805941d72981f84a5d515e01d404fb30650
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -202,7 +200,6 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 - [瀏覽設計基本知識](../layout/navigation-basics.md)
 - [清單檢視和方格檢視](listview-and-gridview.md)
 - [清單檢視項目範本](listview-item-templates.md)
-
 
 
 

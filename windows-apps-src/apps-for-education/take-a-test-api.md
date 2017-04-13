@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ac1a9b38a9857ae536025e682f98d01135850a19
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e308280fcecf825061ddf503ce91f8607fcece72
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
 「[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 它支援 SBAC 瀏覽器 API 標準，以用於高度利害攸關常見核心測試，並且可讓您將焦點放在評估內容，而不是如何鎖定 Windows。
@@ -69,7 +66,7 @@ API (以 [常見核心 SBAC API](http://www.smarterapp.org/documents/SecureBrows
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -87,7 +84,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -105,7 +102,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -138,7 +135,7 @@ Windows 10 (版本 1607)
 `An array of MAC addresses.`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -158,7 +155,7 @@ Windows 10 (版本 1607)
 **備註** 清單中不包含系統處理程序。
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -176,7 +173,7 @@ Windows 10 (版本 1607)
 `True indicates that the lockdown context is applied to the device; otherwise false.`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -212,7 +209,7 @@ tts 命名空間會處理 App 的文字轉換語音功能。
 `The speech playback status. Possible values are: “available”, “idle”, “paused”, and “speaking”.`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -230,7 +227,7 @@ Windows 10 (版本 1607)
 `The available voice packs. For example: “Microsoft Zira Mobile”, “Microsoft Mark Mobile”`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -251,7 +248,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -269,7 +266,7 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -301,7 +298,7 @@ var options = {
 選項物件必須遵循上述範例中所示的順序、命名和大小寫規則。
 
 **需求**  
-Windows 10 (版本 1607)
+Windows10 (版本 1607)
 
 ---
 
@@ -319,5 +316,4 @@ Windows 10 (版本 1607)
 `None`
 
 **需求**  
-Windows 10 (版本 1607)
-
+Windows10 (版本 1607)

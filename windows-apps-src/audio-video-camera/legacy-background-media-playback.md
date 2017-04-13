@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: 3848cd72-eccd-400e-93ff-13649cd81b6c
-description: "本文提供針對使用舊版背景媒體模型進行播放之應用程式的支援，以及移轉至新的模型的指導方針。"
+description: "本文提供針對使用舊版背景媒體模型進行播放之 app 的支援，以及移轉至新的模型的指導方針。"
 title: "舊版背景媒體播放"
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 9c66df378534825d191740d5eea4beb0f560687e
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 68695125c2056adca8186120db7875cb3a68baf8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="legacy-background-media-playback"></a>舊版背景媒體播放
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文說明用來新增 UWP app 背景音訊支援的舊版雙處理序模型。 從 Windows 10 版本 1607 開始，背景音訊的單一處理程序模型變得更容易實作。 如需有關背景音訊目前建議的詳細資訊，請參閱[在背景播放媒體](background-audio.md)。 本文用來提供已使用舊版雙處理序模型開發之 app 的支援。
 
@@ -125,7 +122,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

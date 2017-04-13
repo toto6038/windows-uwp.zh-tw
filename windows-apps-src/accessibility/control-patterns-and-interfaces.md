@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及提供者用來實作控制項模式的介面。"
+Description: "本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。"
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
 title: "控制項模式和介面"
 label: Control patterns and interfaces
@@ -11,18 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bec52abfca19634948e3ad2a1959b51b1df3eced
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0dd135fb0ece7d78c985188c50639472aa038ad4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="control-patterns-and-interfaces"></a>控制項模式和介面  
 
 
 
-本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及提供者用來實作控制項模式的介面。
+本文列出 Microsoft UI 自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。
 
 這個主題中的表格說明 Microsoft UI 自動化控制項模式。 表格也列出使用者介面自動化用戶端用來存取控制項模式的類別，以及使用者介面自動化提供者用來實作控制項模式的介面。 **控制項模式**欄顯示從使用者介面自動化用戶端觀點的模式名稱，如同 [**Control Pattern Availability Property Identifiers**](https://msdn.microsoft.com/library/windows/desktop/Ee671199) 中所列的常數值。 從使用者介面自動化提供者觀點來看，這其中每一個模式都是一個 [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 常數名稱。 **類別提供者介面**欄顯示介面的名稱，提供者會實作該介面來為自訂的 XAML 控制項提供此模式。
 
@@ -74,4 +71,3 @@ ms.lasthandoff: 02/07/2017
 ## <a name="related-topics"></a>相關主題  
 * [自訂自動化對等](custom-automation-peers.md)
 * [協助工具](accessibility.md) 
-

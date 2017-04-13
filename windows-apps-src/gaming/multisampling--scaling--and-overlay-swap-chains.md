@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 交換鏈縮放比例, 覆疊, directx"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 02088fce03c88b4166d49cd36754ac956f254199
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="swap-chain-scaling-and-overlays"></a>交換鏈結縮放和覆疊
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用覆疊交換鏈結 (可供使用時) 來提高視覺品質。
 
@@ -203,7 +200,7 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
 
 4.  前景交換鏈結一律使用預乘的 Alpha。 呈現框架之前，您可以預期每個像素的色彩值都已經與 Alpha 值相乘。 例如，50% Alpha 的 100% 白色 BGRA 像素會設為 (0.5, 0.5, 0.5, 0.5)。
 
-    Alpha 預乘步驟是在輸出合併階段完成的，方法則是利用 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 結構中設為 **D3D11\_SRC\_ALPHA 的** **SrcBlend** 欄位來套用 app 混色狀態 (請參閱 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349))。 含有預乘 Alpha 值的資產也可以使用。
+    Alpha 預乘步驟是在輸出合併階段完成的，方法則是利用 [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) 結構中設為 **D3D11\_SRC\_ALPHA** 的 **SrcBlend** 欄位來套用 app 混色狀態 (請參閱 [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349))。 含有預乘 Alpha 值的資產也可以使用。
 
     如果 Alpha 預乘步驟尚未完成，前景交換鏈結上的色彩將會較預期的明亮。
 
@@ -329,7 +326,6 @@ Direct3D 11.2 也導入了一些新功能，可透過翻轉模型交換鏈結來
  
 
  
-
 
 
 

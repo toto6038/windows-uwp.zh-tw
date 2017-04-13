@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 831a29950d8f8658e1a584d8a33256ff4121c706
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: ad8a5823d48e2e92ac0e65bbfa73fbc1229e00f2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="debugging-testing-and-performance"></a>偵錯、測試及效能
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用 Microsoft Visual Studio 偵錯並測試您的 app。 若要準備您的應用程式來進行 Windows 市集認證程序，請使用「Windows 應用程式認證套件」。
 
@@ -31,5 +29,4 @@ ms.lasthandoff: 02/07/2017
 | [Windows Device Portal](device-portal.md) | Windows Device Portal 能讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。 |
 | [Windows 應用程式認證套件](windows-app-certification-kit.md) | 為了讓您的 app 順利通過認證，可以使用 [Windows App 認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)進行驗證。 |
 | [效能](performance-and-xaml-ui.md) | 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。 |
-
 

@@ -3,28 +3,25 @@ author: normesta
 Description: "本指南可協助您啟發應用程式，以處理 Windows 資訊保護 (WIP) 原則管理的企業資料和個人資料。"
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "建置同時使用企業和個人資料的啟發式應用程式"
+title: "Windows 資訊保護 (WIP) 開發人員指南"
 ms.author: normesta
-ms.date: 02/08/2017
+ms.date: 02/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, wip, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式"
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 5bad765ff182fcd2fb573c3aa766fdaaaef1e2a3
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: a2888b804e66e2630e4ae93b0be31974740d9f99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
+# <a name="windows-information-protection-wip-developer-guide"></a>Windows 資訊保護 (WIP) 開發人員指南
 
-# <a name="build-an-enlightened-app-that-consumes-both-enterprise-data-and-personal-data"></a>建置同時使用企業和個人資料的啟發式應用程式
-
-__備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1607)。
-
-*開明的*應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
+*啟發式*應用程式可區別公司和個人資料，並根據系統管理員定義的 Windows 資訊保護 (WIP) 原則判斷應保護的資料。
 
 在本指南中，我們將說明如何建置啟發式應用程式。 當您完成後，原則系統管理員將會信任並允許您的應用程式使用其組織資料。 而員工最愛的是，就算他們從組織的行動裝置管理 (MDM) 取消註冊或是完全離該組織，其裝置上的個人資料也能完好如初。
+
+__注意__：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Windows 傳統型應用程式，請參閱 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
 
 如需 WIP 與啟發式應用程式的詳細資訊，請參閱︰[Windows 資訊保護 (WIP)](wip-hub.md)。
 
@@ -37,37 +34,38 @@ __備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1
 
 您將需要：
 
-* 執行 Windows 10 (版本 1607) 的測試虛擬機器 (VM)。 這個測試 VM 將用來對您的應用程式偵錯。
+* 執行 Windows 10 (1607 版或更新版本) 的測試虛擬機器 (VM)。 這個測試 VM 將用來對您的應用程式偵錯。
 
-* 執行 Windows 10 (版本 1607) 的開發電腦。 這可能是您的測試 VM (如果您有在其中安裝 Visual Studio)。
+* 執行 Windows10 (1607 版或更新版本) 的開發電腦。 這可能是您的測試 VM (如果您有在其中安裝 Visual Studio)。
 
 ## <a name="setup-your-development-environment"></a>設定開發環境
 
 您將執行下列工作︰
 
-* 在測試 VM 上安裝「WIP 設定開發人員小幫手」。
+* [在測試 VM 上安裝「WIP 設定開發人員小幫手」](#install-assistant)
 
-* 使用「WIP 設定開發人員小幫手」建立保護原則。
+* [使用「WIP 設定開發人員小幫手」建立保護原則](#create-protection-policy)
 
-* 設定 Visual Studio 專案。
+* [設定 Visual Studio 專案](#setup-vs-project)
 
-* 設定遠端偵錯。
+* [設定遠端偵錯](#setup-remote-debugging)
 
-* 將命名空間新增到程式碼檔案
+* [將命名空間新增到程式碼檔案](#add-namespaces)
 
-**在測試 VM 上安裝「WIP 設定開發人員小幫手」**
+<span id="install-assistant" />
+### <a name="install-the-wip-setup-developer-assistant-onto-your-test-vm"></a>在測試 VM 上安裝「WIP 設定開發人員小幫手」
 
  使用此工具在您的測試 VM 上設定 Windows 資訊保護原則。
 
  請在此下載工具︰[WIP 設定開發人員小幫手](https://www.microsoft.com/store/p/wip-setup-developer-assistant/9nblggh526jf)。
-
-**建立保護原則**
+<span id="create-protection-policy" />
+### <a name="create-a-protection-policy"></a>建立保護原則
 
 藉由將資訊新增到 WIP 設定開發人員小幫手的每個區段以定義您的原則。 選擇任一設定旁的 [說明] 圖示，以了解如何使用它 。
 
 如需更多如何使用此工具的一般指導方針，請參閱應用程式下載頁面上的＜版本資訊＞一節。
-
-**設定 Visual Studio 專案**
+<span id="setup-vs-project" />
+### <a name="setup-a-visual-studio-project"></a>設定 Visual Studio 專案
 
 1. 在開發電腦上開啟您的專案。
 
@@ -95,57 +93,71 @@ __備註__ Windows 資訊保護 (WIP) 原則可以套用至 Windows 10 (版本 1
     ```
 
     如此一來，如果您的應用程式在不支援受限制功能的 Windows 作業系統版本上執行，Windows 將會忽略 ``enterpriseDataPolicy`` 功能。
-
-**設定遠端偵錯**
+<span id="setup-remote-debugging" />
+### <a name="setup-remote-debugging"></a>設定遠端偵錯
 
 只有當您在 VM 以外的電腦上開發應用程式時，才需在您的測試 VM 上安裝 Visual Studio 遠端工具。 然後，在開發電腦上啟動遠端偵錯工具，並查看您的應用程式是否在測試 VM 上執行。
 
 請參閱[遠端電腦指示](https://msdn.microsoft.com/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps#remote-pc-instructions)。
-
-**將這些命名空間新增到程式碼檔案**
+<span id="add-namespaces" />
+### <a name="add-these-namespaces-to-your-code-files"></a>將這些命名空間新增到程式碼檔案
 
 將這些 using 陳述式新增到程式碼檔案的上方 (本指南中的程式碼片段會使用它們)：
 
 ```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Windows.Security.EnterpriseData;
-using Windows.ApplicationModel.DataTransfer;
 using Windows.Web.Http;
 using Windows.Storage.Streams;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using Windows.ApplicationModel.Activation;
 using Windows.Web.Http.Filters;
 using Windows.Storage;
-using Windows.Foundation.Metadata;
-using Windows.UI.Xaml.Controls;
 using Windows.Data.Xml.Dom;
+using Windows.Foundation.Metadata;
+using Windows.Web.Http.Headers;
 ```
 
-## <a name="determine-whether-the-operating-system-that-runs-your-app-supports-wip"></a>判斷執行應用程式的作業系統是否支援 WIP
+## <a name="determine-whether-to-use-wip-apis-in-your-app"></a>判斷是否要在 App 中使用 WIP API
 
-請使用 [**IsApiContractPresent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.metadata.apiinformation.isapicontractpresent.aspx) 函式來判定。
+確定執行您的 App 的作業系統支援 WIP 且裝置上的 WIP 已啟用。
 
 ```csharp
-bool wipSupported = ApiInformation.IsApiContractPresent("Windows.Security.EnterpriseData.EnterpriseDataContract", 3);
+bool use_WIP_APIs = false;
 
-if (wipSupported)
+if ((ApiInformation.IsApiContractPresent
+    ("Windows.Security.EnterpriseData.EnterpriseDataContract", 3)
+    && ProtectionPolicyManager.IsProtectionEnabled))
 {
-    // WIP is supported on the platform
+    use_WIP_APIs = true;
 }
 else
 {
-    // WIP is not supported on the platform
+    use_WIP_APIs = false;
 }
 ```
-
-Windows 10 (版本 1607) 支援 Windows 資訊保護。
+如果作業系統不支援 WIP 且裝置上的 WIP 未啟用，請勿呼叫 WIP API。
 
 ## <a name="read-enterprise-data"></a>讀取企業資料
 
-檔案、網路端點、剪貼簿資料和您透過分享協定接受的資料都有一個企業識別碼。
+若要讀取受保護的檔案、網路端點、剪貼簿資料以及接受的分享協定資料，您的 App 必須要求存取權。
 
-若要讀取上述任一來源中的資料，您的應用程式必須驗證企業識別碼是否受原則管理。
+如果您的 App 列於保護原則的允許清單中，Windows 資訊保護就會授與您的 App 權限。
 
-我們先從檔案開始。
+**本節內容：**
 
+* [從檔案讀取資料](#read-file)
+* [從網路端點讀取資料](#read-network)
+* [從剪貼簿讀取資料](#read-clipboard)
+* [從分享協定讀取資料](#read-contract)
+
+<span id="read-file" />
 ### <a name="read-data-from-a-file"></a>從檔案讀取資料
 
 **步驟 1︰ 取得檔案控制代碼**
@@ -160,22 +172,15 @@ Windows 10 (版本 1607) 支援 Windows 資訊保護。
 
 **步驟 2︰ 判斷您的應用程式是否可以開啟檔案**
 
-判斷檔案是否受到保護。 如果是，當下列兩個條件為 true 時，您的應用程式就可以開啟該檔案：
-
-* 檔案的身分識別由原則管理。
-* 您的應用程式包含在該原則的允許清單上。
-
-如果其中一個條件不為 true，則 [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.isidentitymanaged.aspx) 會傳回 **false**，且無法開啟該檔案。
+呼叫 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx) 以判斷您的 App 是否可以開啟檔案。
 
 ```csharp
 FileProtectionInfo protectionInfo = await FileProtectionManager.GetProtectionInfoAsync(file);
 
-if (protectionInfo.Status == FileProtectionStatus.Protected)
+if ((protectionInfo.Status != FileProtectionStatus.Protected &&
+    protectionInfo.Status != FileProtectionStatus.Unprotected))
 {
-    if (!ProtectionPolicyManager.IsIdentityManaged(protectionInfo.Identity))
-    {
-        return false;
-    }
+    return false;
 }
 else if (protectionInfo.Status == FileProtectionStatus.Revoked)
 {
@@ -183,6 +188,11 @@ else if (protectionInfo.Status == FileProtectionStatus.Revoked)
     // saying that the user's data has been revoked.
 }
 ```
+
+[FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) 值為 **Protected**，即表示檔案已受保護，而且您的 App 可以開啟該檔案，因為 App 列在原則的允許清單上。
+
+[FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx) 值為 **UnProtected**，即表示檔案未受保護，縱使您的 App 不在原則的允許清單上，App 也能開啟該檔案。
+
 > **API** <br>
 [FileProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.getprotectioninfoasync.aspx)<br>
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
@@ -202,7 +212,7 @@ var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```csharp
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(file);
 ```
-
+<span id="read-network" />
 ### <a name="read-data-from-a-network-endpoint"></a>從網路端點讀取資料
 
 建立要從企業端點讀取的受保護執行緒內容。
@@ -232,17 +242,17 @@ string identity = await ProtectionPolicyManager.
 它也可以讓您存取該原則所管理的企業網路資源。
 
 ```csharp
-HttpClient client = null;
-
 if (!string.IsNullOrEmpty(identity))
 {
     using (ThreadNetworkContext threadNetworkContext =
             ProtectionPolicyManager.CreateCurrentThreadNetworkContext(identity))
     {
-        client = new HttpClient();
-
-        // Add code here to get data from the endpoint.
+        return await GetDataFromNetworkRedirectHelperMethod(resourceURI);
     }
+}
+else
+{
+    return await GetDataFromNetworkRedirectHelperMethod(resourceURI);
 }
 ```
 這個範例將通訊端呼叫括在 ``using`` 區塊中。 如果您不要這樣做，請務必在您擷取資源之後結束執行緒內容。 請參閱 [ThreadNetworkContext.Close](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.threadnetworkcontext.close.aspx)。
@@ -259,9 +269,57 @@ if (!string.IsNullOrEmpty(identity))
 **步驟 3︰將資源讀到緩衝區**
 
 ```csharp
-IBuffer data = await client.GetBufferAsync(resourceURI);
+private static async Task<IBuffer> GetDataFromNetworkHelperMethod(Uri resourceURI)
+{
+    HttpClient client;
+
+    client = new HttpClient();
+
+    try { return await client.GetBufferAsync(resourceURI); }
+
+    catch (Exception) { return null; }
+}
 ```
 
+**(選擇性) 使用標頭語彙基元，而不建立受保護的執行緒內容**
+
+```csharp
+public static async Task<IBuffer> GetDataFromNetworkbyUsingHeader(Uri resourceURI)
+{
+    HttpClient client;
+
+    Windows.Networking.HostName hostName =
+        new Windows.Networking.HostName(resourceURI.Host);
+
+    string identity = await ProtectionPolicyManager.
+        GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
+
+    if (!string.IsNullOrEmpty(identity))
+    {
+        client = new HttpClient();
+
+        HttpRequestHeaderCollection headerCollection = client.DefaultRequestHeaders;
+
+        headerCollection.Add("X-MS-Windows-HttpClient-EnterpriseId", identity);
+
+        return await GetDataFromNetworkbyUsingHeaderHelperMethod(client, resourceURI);
+    }
+    else
+    {
+        client = new HttpClient();
+        return await GetDataFromNetworkbyUsingHeaderHelperMethod(client, resourceURI);
+    }
+
+}
+
+private static async Task<IBuffer> GetDataFromNetworkbyUsingHeaderHelperMethod(HttpClient client, Uri resourceURI)
+{
+
+    try { return await client.GetBufferAsync(resourceURI); }
+
+    catch (Exception) { return null; }
+}
+```
 
 **處理頁面重新導向**
 
@@ -272,63 +330,44 @@ IBuffer data = await client.GetBufferAsync(resourceURI);
 接著再使用該回應的 URI 來取得端點的身分識別。 以下是其中一種做法：
 
 ```csharp
-public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
+private static async Task<IBuffer> GetDataFromNetworkRedirectHelperMethod(Uri resourceURI)
 {
-    bool finalURL = false;
+    HttpClient client = null;
+
+    HttpBaseProtocolFilter filter = new HttpBaseProtocolFilter();
+    filter.AllowAutoRedirect = false;
+
+    client = new HttpClient(filter);
 
     HttpResponseMessage response = null;
 
-    while (!finalURL)
-    {
-
-        Windows.Networking.HostName hostName =
-            new Windows.Networking.HostName(resourceURI.Host);
-
-        string identity = await ProtectionPolicyManager.
-            GetPrimaryManagedIdentityForNetworkEndpointAsync(hostName);
-
-        HttpClient client = null;
-
-        HttpBaseProtocolFilter filter = new HttpBaseProtocolFilter();
-        filter.AllowAutoRedirect = false;
-
-        if (!string.IsNullOrEmpty(m_EnterpriseId))
-        {
-            using (ThreadNetworkContext threadNetworkContext =
-                    ProtectionPolicyManager.CreateCurrentThreadNetworkContext(identity))
-            {
-                client = new HttpClient(filter);
-            }
-        }
-        else
-        {
-            client = new HttpClient(filter);
-        }
         HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Get, resourceURI);
         response = await client.SendRequestAsync(message);
 
-        if (response.StatusCode == HttpStatusCode.MultipleChoices &&
-            response.StatusCode == HttpStatusCode.MovedPermanently &&
-            response.StatusCode == HttpStatusCode.Found &&
-            response.StatusCode == HttpStatusCode.SeeOther &&
-            response.StatusCode == HttpStatusCode.NotModified &&
-            response.StatusCode == HttpStatusCode.UseProxy &&
-            response.StatusCode == HttpStatusCode.TemporaryRedirect &&
-            response.StatusCode == HttpStatusCode.PermanentRedirect)
-        {
-            resourceURI = message.RequestUri;
-        }
-        else
-        {
-            finalURL = true;
-        }
+    if (response.StatusCode == HttpStatusCode.MultipleChoices ||
+        response.StatusCode == HttpStatusCode.MovedPermanently ||
+        response.StatusCode == HttpStatusCode.Found ||
+        response.StatusCode == HttpStatusCode.SeeOther ||
+        response.StatusCode == HttpStatusCode.NotModified ||
+        response.StatusCode == HttpStatusCode.UseProxy ||
+        response.StatusCode == HttpStatusCode.TemporaryRedirect ||
+        response.StatusCode == HttpStatusCode.PermanentRedirect)
+    {
+        message = new HttpRequestMessage(HttpMethod.Get, message.RequestUri);
+        response = await client.SendRequestAsync(message);
+
+        try { return await response.Content.ReadAsBufferAsync(); }
+
+        catch (Exception) { return null; }
     }
+    else
+    {
+        try { return await response.Content.ReadAsBufferAsync(); }
 
-    IBuffer data = await response.Content.ReadAsBufferAsync();
-
-    return data;
-
+        catch (Exception) { return null; }
+    }
 }
+
 ```
 
 > **API** <br>
@@ -337,6 +376,7 @@ public static async Task<IBuffer> getDataFromNetworkResource(Uri resourceURI)
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
+<span id="read-clipboard" />
 ### <a name="read-data-from-the-clipboard"></a>從剪貼簿讀取資料
 
 **取得使用剪貼簿資料的權限**
@@ -433,7 +473,7 @@ private async void PasteText(bool isNewEmptyDocument)
 [ProtectionPolicyEvaluationResult](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicyevaluationresult.aspx)<br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
-
+<span id="read-share" />
 ### <a name="read-data-from-a-share-contract"></a>從分享協定讀取資料
 
 當員工選擇您的應用程式來分享資訊時，您的應用程式會開啟一個包含該內容的新項目。
@@ -492,7 +532,20 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 保護離開應用程式的企業資料。 當您在頁面中顯示資料、將資料儲存至檔案或網路端點或是透過分享協定時，資料會離開您的應用程式。
 
-### <a id="display-data"></a>保護出現在頁面的資料
+**本節內容：**
+
+* [保護頁面中出現的資料](#protect-pages)
+* [以背景處理程序保護寫入檔案的資料](#protect-background)
+* [保護檔案的一部分](#protect-part-file)
+* [讀取檔案受保護的部分](#read-protected)
+* [保護寫入資料夾的資料](#protect-folder)
+* [保護寫入網路端點的資料](#protect-network)
+* [保護您的應用程式透過分享協定共用的資料](#protect-share)
+* [保護您複製到其他位置的檔案](#protect-other-location)
+* [於裝置畫面鎖定時保護企業資料](#protect-locked)
+
+<span id="protect-pages" />
+### <a name="protect-data-that-appears-in-pages"></a>保護頁面中出現的資料
 
 當您在頁面中顯示資料時，請讓 Windows 知道是什麼類型的資料 (個人或企業)。 若要這樣做，請*「標記」*目前的應用程式檢視，或標記整個應用程式處理程序。
 
@@ -538,6 +591,7 @@ bool result =
 > **API** <br>
 [ProtectionPolicyManager.TryApplyProcessUIPolicy](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.tryapplyprocessuipolicy.aspx)
 
+<span id="protect-file" />
 ### <a name="protect-data-to-a-file"></a>保護寫入檔案的資料
 
 建立受保護的檔案，然後寫入資料。
@@ -573,8 +627,7 @@ FileProtectionInfo fileProtectionInfo =
 *寫入資料流*
 
 ```csharp
-    if (fileProtectionInfo.Identity == identity &&
-        fileProtectionInfo.Status == FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
     {
         var stream = await storageFile.OpenAsync(FileAccessMode.ReadWrite);
 
@@ -592,8 +645,7 @@ FileProtectionInfo fileProtectionInfo =
 *寫入緩衝區*
 
 ```csharp
-     if (fileProtectionInfo.Identity == identity &&
-         fileProtectionInfo.Status == FileProtectionStatus.Protected)
+     if (fileProtectionInfo.Status == FileProtectionStatus.Protected)
      {
          var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
              enterpriseData, Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
@@ -607,8 +659,7 @@ FileProtectionInfo fileProtectionInfo =
 [FileProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.aspx)<br>
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 
-
-
+<span id="protect-background" />
 ### <a name="protect-data-to-a-file-as-a-background-process"></a>以背景處理程序保護寫入檔案的資料
 
 當裝置的畫面被鎖定時，可以執行這個程式碼。 如果系統管理員已設定「鎖定時的資料保護」(DPL) 原則，Windows 會移除從裝置記憶體存取受保護資源所需的加密金鑰。 這可防止裝置遺失時的資料遺漏問題。 這個功能也會在受保護檔案的控制代碼被關閉時，移除與受保護檔案關聯的金鑰。
@@ -649,8 +700,7 @@ ProtectedFileCreateResult protectedFileCreateResult =
 這個範例會將資料流寫入檔案。
 
 ```csharp
-if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
-    protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
+if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
 {
     IOutputStream outputStream =
         protectedFileCreateResult.Stream.GetOutputStreamAt(0);
@@ -676,6 +726,7 @@ else if (protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus
 [FileProtectionStatus](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionstatus.aspx)<br>
 [ProtectedFileCreateResult.Stream](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectedfilecreateresult.stream.aspx)<br>
 
+<span id="protect-part-file" />
 ### <a name="protect-part-of-a-file"></a>保護檔案的一部分
 
 在大部分情況下，個別儲存企業和個人資料會較為井然有序，但您也可以將它們儲存到同一個檔案。 例如，Microsoft Outlook 可以將企業郵件連同個人郵件儲存在單一封存檔案中。
@@ -751,7 +802,7 @@ await Windows.Storage.FileIO.WriteTextAsync
     (metaDataFile, "<EnterpriseDataMarker start='0' end='" + enterpriseData.Length.ToString() +
     "'></EnterpriseDataMarker>");
 ```
-
+<span id="read-protected" />
 ### <a name="read-the-protected-part-of-a-file"></a>讀取檔案受保護的部分
 
 以下是從該檔案讀取企業資料的方式。
@@ -831,7 +882,7 @@ else if (dataProtectionInfo.Status == DataProtectionStatus.Revoked)
 [DataProtectionInfo](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectioninfo.aspx)<br>
 [DataProtectionManager.GetProtectionInfoAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.dataprotectionmanager.getstreamprotectioninfoasync.aspx)<br>
 
-
+<span id="protect-folder" />
 ### <a name="protect-data-to-a-folder"></a>保護寫入資料夾的資料
 
 您可以建立一個受保護的資料夾。 如此一來，您新增至該資料夾的任何項目都會自動受到保護。
@@ -848,8 +899,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
     FileProtectionInfo fileProtectionInfo =
         await FileProtectionManager.ProtectAsync(newStorageFolder, identity);
 
-    if (fileProtectionInfo.Identity != identity ||
-        fileProtectionInfo.Status != FileProtectionStatus.Protected)
+    if (fileProtectionInfo.Status != FileProtectionStatus.Protected)
     {
         // Protection failed.
         return false;
@@ -866,7 +916,7 @@ private async Task<bool> CreateANewFolderAndProtectItAsync(string folderName, st
 [FileProtectionInfo.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.identity.aspx)<br>
 [FileProtectionInfo.Status](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectioninfo.status.aspx)
 
-
+<span id="protect-network" />
 ### <a name="protect-data-to-a-network-end-point"></a>保護寫入網路端點的資料
 
 建立受保護的執行緒內容，將該資料傳送到企業端點。  
@@ -919,6 +969,7 @@ else
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)<br>
 [ProtectionPolicyManager.CreateCurrentThreadNetworkContext](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.createcurrentthreadnetworkcontext.aspx)
 
+<span id="protect-share" />
 ### <a name="protect-data-that-your-app-shares-through-a-share-contract"></a>保護您的應用程式透過分享協定共用的資料
 
 如果您要讓使用者透過您的應用程式分享內容，您必須實作分享協定和處理 [**DataTransferManager.DataRequested**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested) 事件。
@@ -950,7 +1001,7 @@ private void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs 
 [ProtectionPolicyManager.GetForCurrentView](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.getforcurrentview.aspx)<br>
 [ProtectionPolicyManager.Identity](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.protectionpolicymanager.aspx)
 
-
+<span id="protect-other-location" />
 ### <a name="protect-files-that-you-copy-to-another-location"></a>保護您複製到其他位置的檔案
 
 ```csharp
@@ -972,7 +1023,7 @@ private async void CopyProtectionFromOneFileToAnother
 > **API** <br>
 [FileProtectionManager.CopyProtectionAsync](https://msdn.microsoft.com/library/windows/apps/windows.security.enterprisedata.fileprotectionmanager.copyprotectionasync.aspx)<br>
 
-
+<span id="protect-locked" />
 ### <a name="protect-enterprise-data-when-the-screen-of-the-device-is-locked"></a>於裝置畫面鎖定時保護企業資料
 
 當裝置鎖定時，移除記憶體中所有的敏感資料。 當使用者解除鎖定裝置後，您的應用程式可以安全地重新加回該資料。
@@ -1096,7 +1147,3 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 ## <a name="related-topics"></a>相關主題
 
 [Windows 資訊保護 (WIP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
- 
-
- 
-

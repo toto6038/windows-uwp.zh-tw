@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54251b965f94da70614bcd81f70b9af53cb6168d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="camera-independent-flashlight"></a>相機獨立閃光燈
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -81,7 +78,6 @@ ms.lasthandoff: 02/07/2017
 - [媒體播放](media-playback.md)
 
  
-
 
 
 

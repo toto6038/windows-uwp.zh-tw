@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 53b130c3f97440bd381adda5c40532d46823ce02
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 27d3de280201d92ee98f6e8a17afd85f76acd7d5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-adaptive-tiles"></a>建立彈性磚
 
@@ -36,7 +34,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="how-to-send-a-tile-notification"></a>如何傳送磚通知
 
-請閱讀我們的[傳送本機磚通知的快速入門](tiles-and-notifications-create-adaptive-tiles.md)。 此頁面上的文件說明彈性磚可使用之所有視覺 UI 的可能性。
+請閱讀我們的[傳送本機磚通知的快速入門](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)。 此頁面上的文件說明彈性磚可使用之所有視覺 UI 的可能性。
 
 
 ## <a name="usage-guidance"></a>用法指導方針
@@ -1397,13 +1395,12 @@ TileWide = new TileBinding()
 
 
 * [彈性磚結構描述](tiles-and-notifications-adaptive-tiles-schema.md)
-* [快速入門︰傳送本機磚通知](tiles-and-notifications-create-adaptive-tiles.md)
+* [快速入門︰傳送本機磚通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2015/10/05/quickstart-sending-a-local-tile-notification-in-windows-10/)
 * [GitHub 上的 Notifications 程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
 * [特殊磚範本目錄](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
-
 
 
 

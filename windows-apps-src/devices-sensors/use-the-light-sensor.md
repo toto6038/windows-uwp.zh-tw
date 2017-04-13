@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3ebf555d943e302ed5f505a91659bf1d9489e17
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4bfe0e3904695edd848ef4c9a7b960d8cc01d4c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-light-sensor"></a>使用光感應器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -40,7 +38,7 @@ ms.lasthandoff: 02/07/2017
 
 ###  <a name="instructions"></a>指示
 
--   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
+-   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
 -   開啟專案的 BlankPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -134,11 +132,11 @@ ms.lasthandoff: 02/07/2017
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **LightingCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="LightingCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:LightingCS"`。
 
--   按 F5 或選取 [偵錯]****  >  [開始偵錯]**** 以建置、部署及執行 App。
+-   按 F5 或選取 **\[偵錯\]** >  **\[開始偵錯\]** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以改變感應器可用的光線或使用模擬器工具來變更光感器值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]****  >  [停止偵錯]**** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** >  **\[停止偵錯\]** 以停止 App。
 
 ###  <a name="explanation"></a>說明
 
@@ -175,4 +173,3 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 * [LightSensor 範例](http://go.microsoft.com/fwlink/p/?linkid=241381)
  
-

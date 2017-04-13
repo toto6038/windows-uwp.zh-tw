@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 4dc1cd837b7ac7849125e0a1737873fec4a15cd3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 34c3aab3e9a04eb535014182c0dbc8c140670b89
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -269,7 +267,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 MediaTransportControls 的 "seek" 控制項是由 [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 元素所提供。 您可以自訂它的其中一種方法是變更搜尋行為的細微性。
 
-預設搜尋滑桿會分割成 100 個部分，因此，搜尋行為會以該區段個數為限。 您可以變更搜尋滑桿的細微性，方法是從 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 上 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 事件處理常式的 XAML 視覺化樹狀結構中取得 Slider。 這個範例示範如何使用 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) 來取得 Slider 的參考，如果媒體超過 120 分鐘，則將滑桿的預設分段從 1% 變更為 0.1% (1000 段)。 MediaPlayerElement 的名稱為 `MediaPlayerElement1`。
+預設搜尋滑桿會分割成 100 個部分，因此，搜尋行為會以該區段個數為限。 您可以變更搜尋滑桿的細微性，方法是從 [**MediaPlayerElement.MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.mediaopened.aspx) 上 [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 事件處理常式的 XAML 視覺化樹狀結構中取得 Slider。 這個範例示範如何使用 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) 來取得 Slider 的參考，如果媒體超過 120 分鐘，則將滑桿的預設分段從 1% 變更為 0.1% (1000 段)。 MediaPlayerElement 的名稱為 `MediaPlayerElement1`。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -292,4 +290,3 @@ private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEve
 ## <a name="related-articles"></a>相關文章
 
 - [媒體播放](media-playback.md)
-

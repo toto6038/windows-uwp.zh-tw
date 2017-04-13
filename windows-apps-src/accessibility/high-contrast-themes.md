@@ -1,6 +1,6 @@
 ---
 author: Xansky
-description: "描述使用高對比佈景主題時，確保通用 Windows 平台 (UWP) 應用程式可以正常運作所需的步驟。"
+description: "描述使用高對比佈景主題時，確保通用 Windows 平台 (UWP) App 可以正常運作所需的步驟。"
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "高對比佈景主題"
 template: detail.hbs
@@ -10,16 +10,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b75d36d6a537f465545729cf90b36fdde1f552e0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 61e2c95ee67247360082b948bdfb532f84772b12
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
-Windows 支援使用者可選擇啟用的作業系統和應用程式高對比佈景主題。 高對比佈景主題使用色彩種類少的對比色，讓介面更容易分辨。
+Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主題。 高對比佈景主題使用色彩種類少的對比色，讓介面更容易分辨。
 
 **圖 1. 淺色佈景主題和「黑底白字」佈景主題中的「小算盤」。**
 
@@ -304,4 +301,3 @@ SystemColorWindowColor | 頁面、窗格、快顯視窗，以及列的背景
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [XAML 高對比範例](http://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)
-

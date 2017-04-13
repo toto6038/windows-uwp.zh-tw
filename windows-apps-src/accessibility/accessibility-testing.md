@@ -11,16 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bf56b564b383ee90e276416bf1dda29f55bb771c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-testing"></a>協助工具測試  
 
-確定通用 Windows 平台 (UWP) app 可以提供無障礙功能的測試程序。
+確定通用 Windows 平台 (UWP) App 可以提供無障礙功能的測試程序。
 
 <span id="run_accessibility_testing_tools"/>
 <span id="RUN_ACCESSIBILITY_TESTING_TOOLS"/>
@@ -42,19 +39,19 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 
 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 可以讓您選取任何 UI 元素以及查看它的協助工具資料。 您可以檢視 Microsoft 使用者介面自動化屬性和控制項模式，以及為使用者介面自動化樹狀目錄的自動化元素測試瀏覽結構。 當您開發 UI 時，請使用 **Inspect** 確認協助工具屬性如何在使用者介面自動化中公開。 在某些情況下，屬性來自已經為預設 XAML 控制項實作的使用者介面自動化支援。 在其他情況下，屬性來自已經在 XAML 標記中設定的特定值，如 [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.automationproperties) 附加屬性。
 
-以下影像顯示 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具正在查詢「記事本」中 [編輯]**** 功能表元素的使用者介面自動化屬性。
+以下影像顯示 [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 工具正在查詢「記事本」中 **\[編輯\]** 功能表元素的使用者介面自動化屬性。
 
 ![Inspect 工具螢幕擷取畫面。](./images/inspect.png)
 
 <span id="ui_accessibility_checker"/>
 <span id="UI_ACCESSIBILITY_CHECKER"/>
 ### **<a name="ui-accessibility-checker"></a>UI 協助工具檢查程式**  
-**UI 協助工具檢查程式 (AccChecker)** 可協助您找出在執行階段的協助工具問題。 當 UI 設計完成而且功能正常後，請使用 **AccChecker** 測試不同的案例、確認執行階段協助工具資訊是否正確，以及發現執行階段發生的問題。 您可以在 UI 或命令列模式中執行 **AccChecker**。 若要執行 UI 模式工具，請開啟 Windows SDK bin 目錄中的 **AccChecker** 目錄，執行 acccheckui.exe，然後按一下 [說明]**** 功能表。
+**UI 協助工具檢查程式 (AccChecker)** 可協助您找出在執行階段的協助工具問題。 當 UI 設計完成而且功能正常後，請使用 **AccChecker** 測試不同的案例、確認執行階段協助工具資訊是否正確，以及發現執行階段發生的問題。 您可以在 UI 或命令列模式中執行 **AccChecker**。 若要執行 UI 模式工具，請開啟 Windows SDK bin 目錄中的 **AccChecker** 目錄，執行 acccheckui.exe，然後按一下 **\[說明\]** 功能表。
 
 <span id="ui_automation_verify"/>
 <span id="UI_AUTOMATION_VERIFY"/>
 ### **<a name="ui-automation-verify"></a>使用者介面自動化確認**  
-「使用者介面自動化驗證 (UIA 驗證)」**** 是一種使用者介面自動化實作的自動測試和驗證架構。 「UIA 驗證」****可以整合到測試程式碼中，並執行使用者介面自動化案例的一般自動測試或抽樣檢查。 若要執行「UIA 驗證」****，請從 [UIAVerify] 子目錄執行 VisualUIAVerifyNative.exe。
+**「使用者介面自動化驗證 (UIA 驗證)」**是一種使用者介面自動化實作的自動測試和驗證架構。 **「UIA 驗證」**可以整合到測試程式碼中，並執行使用者介面自動化案例的一般自動測試或抽樣檢查。 若要執行**「UIA 驗證」**，請從 [UIAVerify] 子目錄執行 VisualUIAVerifyNative.exe。
 
 <span id="accessible_event_watcher"/>
 <span id="ACCESSIBLE_EVENT_WATCHER"/>
@@ -85,7 +82,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## <a name="verify-your-app-with-display-settings"></a>使用顯示設定驗證應用程式  
-使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，app UI 能夠正確縮放。 (某些使用者會變更 DPI 值來做為其無障礙輔助，您可以在 [輕鬆存取]**** 中變更該選項，以及顯示屬性)。如果發現任何問題，請按照[配置縮放指導方針](https://msdn.microsoft.com/library/windows/apps/Dn611863)的做法，同時為不同的縮放比例提供額外的資源。
+使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，app UI 能夠正確縮放。 (某些使用者會變更 DPI 值來做為其無障礙輔助，您可以在 **\[輕鬆存取\]** 中變更該選項，以及顯示屬性)。如果發現任何問題，請按照[配置縮放指導方針](https://msdn.microsoft.com/library/windows/apps/Dn611863)的做法，同時為不同的縮放比例提供額外的資源。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
@@ -149,4 +146,3 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 * [應避免的做法](practices-to-avoid.md)
 * [UI 自動化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
 * [Windows 中的協助工具](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
-

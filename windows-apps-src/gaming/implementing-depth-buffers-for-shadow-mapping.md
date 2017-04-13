@@ -1,6 +1,6 @@
 ---
 author: mtoepke
-title: "逐步解說 -- 使用 Direct3D 11 中的深度緩衝區實作陰影體"
+title: "逐步解說 - Direct3D 11 陰影體深度緩衝區"
 description: "此逐步解說示範如何在所有 Direct3D 功能層級的裝置上使用 Direct3D 11，轉譯使用深度圖的陰影體。"
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ms.author: mtoepke
@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, DirectX, 陰影體, 深度緩衝區, DirectX 11"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 00e823b667a4622f6fa2dd213c3277bec9d616a2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e68f0d559e6dbd7791104310a985ca99e0131c99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體
 
 
@@ -90,7 +87,6 @@ Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在�
  
 
  
-
 
 
 

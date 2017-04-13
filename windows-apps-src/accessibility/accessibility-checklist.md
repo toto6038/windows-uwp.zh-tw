@@ -11,18 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c5db2b89c52f77cb92da06c246e07a215fd2d02d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bbdff40a10e61be6be498af65701a026a53a8cf0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-checklist"></a>協助工具檢查清單
 
 
 
-提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) app 可提供無障礙功能。
+提供一份檢查清單，以協助確定您的通用 Windows 平台 (UWP) App 可提供無障礙功能。
 
 我們在此提供一份檢查清單，讓您用來確定 App 可提供無障礙功能。
 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 
 3.  用肉眼檢查 UI，確定文字有適當的對比、元素可在高對比佈景主題中正確顯示以及使用正確的色彩。
 
-    * 使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者會從協助工具選項中變更 DPI 值，您可以在 [輕鬆存取]**** 中使用這個選項)。
+    * 使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，您的 app UI 能夠正確縮放。 (某些使用者會從協助工具選項中變更 DPI 值，您可以在 **\[輕鬆存取\]** 中使用這個選項)。
     * 使用色彩分析工具，確定視覺文字對比率至少是 4.5:1。
     * 切換到高對比佈景主題，確定應用程式的 UI 可清楚閱讀並可操作。
     * 確定 UI 不將顏色作為傳達資訊的唯一方式。
@@ -72,4 +69,3 @@ ms.lasthandoff: 02/07/2017
 * [協助工具](accessibility.md)
 * [協助工具設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [應避免的做法](practices-to-avoid.md) 
-

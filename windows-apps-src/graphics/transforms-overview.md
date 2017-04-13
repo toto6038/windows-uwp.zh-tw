@@ -9,23 +9,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 30f73484bde4948e4b0bac5609197f08be5968a0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2643606fa3dcbf1c95669bb09bef0aae49f86529
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="transforms-overview"></a>轉換概觀
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何藉由變更 UI 中元素的相對座標系統，在 Windows 執行階段 API 中使用轉換。 這可以用來調整個別 XAML 元素的外觀，例如在 x-y 空間中縮放、旋轉或轉換位置。
 
 ## <a name="span-idwhatisatransformspanspan-idwhatisatransformspanspan-idwhatisatransformspanwhat-is-a-transform"></a><span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>什麼是轉換？
 
-「轉換」**定義了如何將點從一個座標空間對應或轉換到另一個座標空間。 將轉換套用到 UI 元素時，會變更該 UI 元素轉譯為螢幕上 UI 一部分的方式。
+*「轉換」*定義了如何將點從一個座標空間對應或轉換到另一個座標空間。 將轉換套用到 UI 元素時，會變更該 UI 元素轉譯為螢幕上 UI 一部分的方式。
 
 轉換可分為四大類：轉譯、旋轉、縮放及扭曲 (傾斜)。 為了使用圖形 API 來變更 UI 元素的外觀，通常最簡單的方式就是建立一次只定義一個操作的轉換。 因此，Windows 執行階段為這些轉換分類中的每一個都定義了個別的類別：
 
@@ -138,7 +135,6 @@ void StartAnimation (object sender, RoutedEventArgs e) {
  
 
  
-
 
 
 

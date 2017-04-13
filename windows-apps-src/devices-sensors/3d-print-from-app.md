@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 89ab7a65df0a8415d508e5831a22b2c522308f95
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 73423d32dc4e3d78d4281a5d86dcbdb4e33a741b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="3d-printing-from-your-app"></a>從應用程式進行 3D 列印
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP App 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -100,7 +97,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)]
 
-這個方法的核心目的是使用 *args* 參數來將 **Printing3D3MFPackage** 向下傳送到管線。 **Print3DTaskRequestedEventArgs** 類型有一個屬性︰[**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx)。 它是 [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) 類型，並代表一個列印工作要求。 它的方法 [CreateTask](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) 可讓程式為列印工作送出正確資訊，而且它會傳回向下傳遞到 3D 列印管線之 ****Print3DTask**** 物件的參考。
+這個方法的核心目的是使用 *args* 參數來將 **Printing3D3MFPackage** 向下傳送到管線。 **Print3DTaskRequestedEventArgs** 類型有一個屬性︰[**Request**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequestedeventargs.request.aspx)。 它是 [**Print3DTaskRequest**](https://msdn.microsoft.com/library/windows/apps/dn998050) 類型，並代表一個列印工作要求。 它的方法 [**CreateTask**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtaskrequest.createtask.aspx) 可讓程式為列印工作送出正確資訊，而且它會傳回向下傳遞到 3D 列印管線之 **Print3DTask** 物件的參考。
 
 **CreateTask** 具有下列輸入參數：列印工作名稱的**字串**、要使用之印表機的識別碼**字串**，及 [**Print3DTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.print3dtasksourcerequestedhandler.aspx) 委派。 當引發 **3DTaskSourceRequested** 事件時，會自動叫用委派 (這會由 API 本身完成)。 要注意的重點是，這個委派在列印工作初始化時即已叫用，它會負責提供正確的 3D 列印封包。
 
@@ -143,4 +140,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

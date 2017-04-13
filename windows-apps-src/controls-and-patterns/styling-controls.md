@@ -14,18 +14,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60eb44ab45873b638181bb4b3194e443d21356bc
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b9bc1e68e26830a283ed49b753f63a8f7ae63637
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="styling-controls"></a>設定控制項的樣式
 
 
 
-您可以使用 XAML 架構，以許多方式自訂應用程式的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
+您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。
 
 ## <a name="style-basics"></a>樣式基本知識
 
@@ -36,7 +33,9 @@ ms.lasthandoff: 02/07/2017
 
 您可以在 XAML 中定義控制項的樣式內崁，或當作可重複使用的資源。 在個別頁面的 XAML 檔案、在 App.xaml 檔案或在另一個資源字典 XAML 檔案中定義資源。 資源字典 XAML 檔案可以跨應用程式共用，而且一個以上的資源字典可以合併成一個應用程式。 定義資源的位置會決定資源可使用的範圍。 只有定義這些資源的頁面才可以使用頁面層級資源。 如果將包含相同索引鍵的資源定義在 App.xaml 和頁面中，則頁面中的資源會覆寫 App.xaml 中的資源。 如果資源是在不同的資源字典檔案中定義，則其範圍由資源字典的參照位置決定。
 
-在 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義中，您需要一個 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 屬性以及包含一或多個 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素的集合。 **TargetType** 屬性是一個字串，會指定要套用樣式的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 類型。 **TargetType** 值必須指定 Windows 執行階段定義的 **FrameworkElement** 衍生類型，或是可在參考組件中取得的自訂類型。 如果您嘗試將樣式套用到控制項，但控制項的類型不符合您嘗試套用之樣式的 **TargetType** 屬性，就會發生例外狀況。
+在 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義中，您需要一個 [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 屬性以及包含一或多個 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素的集合。 
+            **TargetType** 屬性是一個字串，會指定要套用樣式的 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 類型。 
+            **TargetType** 值必須指定 Windows 執行階段定義的 **FrameworkElement** 衍生類型，或是可在參考組件中取得的自訂類型。 如果您嘗試將樣式套用到控制項，但控制項的類型不符合您嘗試套用之樣式的 **TargetType** 屬性，就會發生例外狀況。
 
 每個 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 元素都需要 [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) 與 [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838)。 這些屬性設定會指出該設定套用了什麼控制項屬性，以及為該屬性設定的值。 您可以利用屬性 (Attribute) 或屬性 (Property) 元素語法來設定 **Setter.Value**。 這裡的 XAML 說明套用至先前所示的按鈕的樣式。 這個 XAML 的前兩個 **Setter** 元素使用屬性 (Attribute) 語法，而最後一個用於 [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) 屬性的 **Setter** 則是使用屬性 (Property) 元素語法。 此範例並未使用 [x:Key](../xaml-platform/x-key-attribute.md) 屬性，因此樣式會以隱含方式套用至按鈕。 下一節將說明如何以隱含或明確方式套用樣式。
 
@@ -148,7 +147,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="use-tools-to-work-with-styles-easily"></a>使用工具輕鬆處理樣式
 
-快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 [編輯樣式]****或 [編輯範本]**** \(依按右鍵的控制項而定\)。 接著，您可以選取 \[套用資源\]**** 來套用現有的樣式，或選取 \[建立空白\]**** 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
+快速將樣式套用到控制項的方法，就是在 Microsoft Visual Studio XAML 設計介面的控制項上按一下滑鼠右鍵，然後選取 **\[編輯樣式\]** 或 **\[編輯範本\]** \(依按右鍵的控制項而定\)。 接著，您可以選取 **\[套用資源\]** 來套用現有的樣式，或選取 **\[建立空白\]** 來定義新的樣式。 如果您建立空白樣式，則可以選擇在頁面中、在 App.xaml 檔案中，或者在個別資源字典中定義該樣式。
 
 ## <a name="modify-the-default-system-styles"></a>修改預設系統樣式
 
@@ -157,5 +156,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="the-template-property"></a>Template 屬性
 
 Style Setter 可以用於 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 的 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 屬性，事實上，大多數的典型 XAML 樣式和應用程式 XAML 資源都是由此組成。 這部分內容將在[控制項範本](control-templates.md)主題中深入討論。
-
 

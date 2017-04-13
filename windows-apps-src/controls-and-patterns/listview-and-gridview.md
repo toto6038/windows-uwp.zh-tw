@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: fd8d538e6431bbff011c99ce8d17736d70f0c0ea
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 57fd59c54b7dfe3a8c12519bbac1dcd47d8c0854
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview"></a>ListView 與 GridView
 
@@ -455,7 +453,7 @@ private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
 
 ### <a name="select-a-range-of-items-programmatically"></a>以程式設計的方式選取某個範圍的項目
 
-您有時需要以程式設計方式操縱清單檢視的項目選取。 例如，您可能會提供 [全選]**** 按鈕，讓使用者選取清單中的所有項目。 在此情況下，從 SelectedItems 集合逐一新增和移除項目通常是不太有效率的。 每個項目變更都會導致 SelectionChanged 事件的發生，當您直接使用項目而不是使用索引值時，即會取消項目的虛擬化。
+您有時需要以程式設計方式操縱清單檢視的項目選取。 例如，您可能會提供 **\[全選\]** 按鈕，讓使用者選取清單中的所有項目。 在此情況下，從 SelectedItems 集合逐一新增和移除項目通常是不太有效率的。 每個項目變更都會導致 SelectionChanged 事件的發生，當您直接使用項目而不是使用索引值時，即會取消項目的虛擬化。
 
 [**SelectAll**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectall.aspx)、[**SelectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectrange.aspx) 與 [**DeselectRange**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.deselectrange.aspx) 方法提供比使用 SelectedItems 屬性更有效率的方式來修改選取項目。 這些方法會使用項目索引的範圍來選取或取消選取。 由於只使用索引，因此，已虛擬化的項目仍會維持虛擬化狀態。 指定範圍中的所有項目都會選取 (或取消選取)，而無論其原始選取狀態為何。 針對這些方法的每一個呼叫，SelectionChanged 事件只會發生一次。
 
@@ -522,4 +520,3 @@ ListView 和 GridView 控制項支援在項目本身內部，以及在本身和�
 - [清單](lists.md)
 - [清單檢視項目範本](listview-item-templates.md)
 - [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
-

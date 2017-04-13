@@ -12,16 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f3c05105dc1415ccb2a7c1671f9021b84c997e91
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="activate-a-background-app-with-voice-commands-through-cortana"></a>透過 Cortana 語音命令啟用背景應用程式
 
 本主題已移到 https&#58;//msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-background-app-with-voice-commands-in-cortana。
 
 Github：https&#58;//github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/launch-a-background-app-with-voice-commands-in-cortana.md
-

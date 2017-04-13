@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, games, racing wheel, force feedback, 遊戲, 賽車方向盤, 動力回饋"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: ca8413a857fd4d8925a6767280a32a8336eeba19
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="racing-wheel-and-force-feedback"></a>賽車方向盤與動力回饋
 
 此頁面說明使用 [Windows.Gaming.Input.RacingWheel][racingwheel] 進行 Xbox One 賽車方向盤程式設計的基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
@@ -60,9 +57,9 @@ Xbox One 賽車方向盤會有多種價位，通常隨著價位越高，輸入�
 |               向下 | 方向鍵向下         |
 |               向左 | 方向鍵向左         |
 |              向右 | 方向鍵向右        |
-|               檢視 | 檢視按鈕        |
-|               功能表 | 功能表按鈕        |
-|             接受 | A 按鈕           |
+|               View | 檢視按鈕        |
+|               Menu | 功能表按鈕        |
+|             Accept | A 按鈕           |
 |             取消 | B 按鈕           |
 
 此外，部分賽車方向盤可能會將瀏覽命令的一些[選用集](ui-navigation-controller.md#optional-set)對應到它們所支援的其他輸入，但是命令對應可能會因裝置而異。 您也可考慮支援這些命令，但是請確定這些不是瀏覽您遊戲介面的必要命令。
@@ -387,4 +384,3 @@ else
 [wheelmotor]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheel.wheelmotor.aspx
 [racingwheelreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelreading.aspx
 [racingwheelbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.racingwheelbuttons.aspx
-

@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善通用設計。  在設計和建置全人軟體時，隨時考量提供無障礙功能。"
+Description: "了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善通用設計。  在設計和建置通用軟體時考量提供無障礙功能。"
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: "設計適用於 Windows 10 的全人軟體"
 label: Designing inclusive software
@@ -11,16 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 23d5f86377dd88877987a9d149377aaee8a4ac48
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 124c0eb2d8640559c2573c532c8dc6089f75d0e7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的全人軟體  
 
-了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善全人設計。  在設計和建置通用軟體時考量提供無障礙功能。
+了解如何透過適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式來改善通用設計。  在設計和建置通用軟體時考量提供無障礙功能。
 
 在 Microsoft，我們一直不斷發展我們的設計原則和做法。 這些可以說明我們的體驗如何呈現、操作、運作和表現。 我們的觀點一直不斷在進化。
 
@@ -112,4 +109,3 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) 
 * [協助工具](accessibility.md)
-

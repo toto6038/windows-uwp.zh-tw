@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-Description: "以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比通用 Windows 平台 (UWP) app 的名片。"
+Description: "以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。"
 title: "磚和圖示資產"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
@@ -11,18 +11,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fa195ab35b0d6b1825adb8ce18ae1666d0bf1581
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>磚和圖示資產的指導方針
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 
-以各種形式出現在整個 Windows 10 作業系統的應用程式圖示資產，好比通用 Windows 平台 (UWP) app 的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。
+以各種形式出現在整個 Windows 10 作業系統的 App 圖示資產，好比通用 Windows 平台 (UWP) App 的名片。 這些指導方針詳細說明應用程式圖示資產出現在系統的何處，並提供如何建立最優美圖示的深入設計祕訣。
 
 ![Windows 10 開始畫面和磚](images/assetguidance01.jpg)
 
@@ -387,7 +385,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

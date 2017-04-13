@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ab74d720369bd95c10c8804836be1cc747d57931
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="camera-ui-features-for-mobile-devices"></a>適用於行動裝置的相機 UI 功能
 
 本文示範如何利用只會出現在行動裝置上的特殊相機 UI 功能。 
@@ -26,11 +23,11 @@ ms.lasthandoff: 02/08/2017
 
 **新增硬體相機按鈕支援的行動擴充功能 SDK 的參照**
 
-1.  在 [方案總管]**** 中的 [參照]**** 上按一下滑鼠右鍵，然後選取 [加入參照]****。
+1.  在 **\[方案總管\]** 中的 **\[參照\]** 上按一下滑鼠右鍵，然後選取 **\[加入參照\]**。
 
-2.  展開 [Windows 通用]**** 節點，然後選取 [擴充功能]****。
+2.  展開 **\[Windows 通用\]** 節點，然後選取 **\[擴充功能\]**。
 
-3.  選取 [Microsoft Mobile Extension SDK for Universal App Platform]**** 核取方塊。
+3.  選取 **\[Microsoft Mobile Extension SDK for Universal App Platform\]** 核取方塊。
 
 ## <a name="hide-the-status-bar"></a>隱藏狀態列
 
@@ -65,7 +62,6 @@ ms.lasthandoff: 02/08/2017
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-
 
 
 

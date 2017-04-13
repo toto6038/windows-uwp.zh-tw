@@ -11,15 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b1962e58d3513ddff908a0d556731d83cce20af4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d9808feeabfa4ffce19d0e669352331804dfd751
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="adaptive-and-interactive-toast-notifications"></a>調適型和互動式快顯通知
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 調適型和互動式快顯通知可讓您建立包含更多內容、選擇性內嵌影像，及選擇性使用者互動的彈性快顯通知。
 
@@ -46,7 +44,7 @@ ms.lasthandoff: 02/07/2017
 
 -   &lt;visual&gt; 涵蓋可供使用者目視檢視的內容，包括文字和影像
 -   &lt;actions&gt; 包含開發人員要在通知中加入的按鈕/輸入項目
--   &lt;音訊&gt;會指定通知快顯出現時播放的音效
+-   &lt;audio&gt; 會指定通知快顯時播放的音效
 
 以下是程式碼範例：
 
@@ -119,7 +117,30 @@ ToastContent content = new ToastContent()
 };
 ```
 
-以及結構的視覺化呈現方式：
+接著需要將快顯通知轉換為 [XmlDocument](https://msdn.microsoft.com/en-us/library/windows/apps/windows.data.xml.dom.xmldocument.aspx) 物件。 若您在 XML 檔案中定義快顯通知 (在此稱作 "content.xml")，請使用此程式碼：
+
+```CSharp
+string xmlText = File.ReadAllText("content.xml");
+XmlDocument xmlContent = new XmlDocument();
+xmlContent.LoadXml(xmlText);
+```
+
+或者，若您使用 C# 定義快顯通知範本，請使用此項：
+
+```CSharp
+XmlDocument xmlContent = content.GetXml();
+```
+
+無論您建立 XMLDocument 的方式為何，您都可使用此程式碼建立及傳送快顯通知：
+
+```CSharp
+ToastNotification notification = new ToastNotification(xmlContent);
+ToastNotificationManager.CreateToastNotifier().Show(notification);
+```
+
+若要查看可顯示快顯通知的完整應用程式，請參閱[傳送本機快顯通知的快速入門](https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10)。
+
+此為結構的視覺化呈現方式：
 
 ![快顯通知結構](images/adaptivetoasts-structure.jpg)
 
@@ -249,9 +270,9 @@ ToastContent content = new ToastContent()
 
  
 
-**包含動作的通知，範例 1**
+**包含動作的通知**
 
-這個範例顯示...
+這個範例使用兩種可能的回應動作建立通知。
 
 ```XML
 <toast launch="app-defined-string">
@@ -309,73 +330,11 @@ ToastContent content = new ToastContent()
 
 ![包含動作的通知，範例 1](images/adaptivetoasts-xmlsample02.jpg)
 
- 
 
-**包含動作的通知，範例 2**
-
-這個範例顯示...
-
-```XML
-<toast launch="app-defined-string">
-  <visual>
-    <binding template="ToastGeneric">
-      <text>Restaurant suggestion...</text>
-      <text>We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?</text>
-    </binding>
-  </visual>
-  <actions>
-    <action activationType="foreground" content="Reviews" arguments="reviews" />
-    <action activationType="protocol" content="Show map" arguments="bingmaps:?q=sushi" />
-  </actions>
-</toast>
-```
-
-```CSharp
-ToastContent content = new ToastContent()
-{
-    Launch = "app-defined-string",
- 
-    Visual = new ToastVisual()
-    {
-        BindingGeneric = new ToastBindingGeneric()
-        {
-            Children =
-            {
-                new AdaptiveText()
-                {
-                    Text = "Restaurant suggestion..."
-                },
- 
-                new AdaptiveText()
-                {
-                    Text = "We noticed that you are near Wasaki. Thomas left a 5 star rating after his last visit, do you want to try it?"
-                }
-            }
-        }
-    },
- 
-    Actions = new ToastActionsCustom()
-    {
-        Buttons =
-        {
-            new ToastButton("Reviews", "reviews"),
- 
-            new ToastButton("Show map", "bingmaps:?q=sushi")
-            {
-                ActivationType = ToastActivationType.Protocol
-            }
-        }
-    }
-};
-```
-
-![包含動作的通知，範例 2](images/adaptivetoasts-xmlsample03.jpg)
-
- 
 
 **包含文字輸入和動作的通知，範例 1**
 
-這個範例顯示...
+此範例建立會接受文字輸入連同兩個回應動作的通知。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -456,7 +415,7 @@ ToastContent content = new ToastContent()
 
 **包含文字輸入和動作的通知，範例 2**
 
-這個範例顯示...
+此範例建立會接受文字輸入及單一動作的通知。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -533,7 +492,7 @@ ToastContent content = new ToastContent()
 
 **包含選取項目輸入和動作的通知**
 
-這個範例顯示...
+此範例建立含有下拉式選取範圍功能表以及兩個可能動作的通知。
 
 ```XML
 <toast launch="developer-defined-string">
@@ -617,7 +576,7 @@ ToastContent content = new ToastContent()
 
 **提醒通知**
 
-這個範例顯示...
+如同先前範例使用選取範圍功能表及兩個動作，我們便可建立提醒通知。
 
 ```XML
 <toast scenario="reminder" launch="action=viewEvent&amp;eventId=1983">

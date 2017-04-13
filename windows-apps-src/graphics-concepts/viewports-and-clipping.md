@@ -2,25 +2,21 @@
 title: "檢視區和裁剪"
 description: "檢視區是 3D 場景投影到此的二維 (2D) 矩形。"
 ms.assetid: D0DD646E-13AE-452A-AD22-8C35000D0BA9
-keywords:
-- "檢視區和裁剪"
+keywords: "檢視區和裁剪"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7bbd0c2f2254cb5c65f7ae211124c4b3b1e523ed
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b392f267c370bd075d5c0d1ac953ee76a9cff0af
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="viewports-and-clipping"></a>檢視區和裁剪
 
 
-*檢視區*是 3D 場景投影到此的二維 (2D) 矩形。 在 Direct3D，矩形在 Direct3D 表面中系統使用為轉譯目標的座標。 投影轉換將頂點轉換至座標系統，用於檢視區。 檢視區也用於指定轉譯目標表面 (場景轉譯目標) 上深度值的範圍 (通常是 0.0 到 1.0)。
+*檢視區*是 3D 場景投影到此的二維 (2D) 矩形。 在 Direct3D 中，矩形在 Direct3D 表面中以座標的形式存在，系統會使用矩形作為轉譯目標。 投影轉換將頂點轉換至用於檢視區的座標系統。 檢視區也用於指定轉譯目標表面 (場景轉譯目標) 上深度值的範圍 (通常是 0.0 到 1.0)。
 
 ## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>檢視範圍
 
@@ -90,7 +86,6 @@ Direct3D 使用檢視區位置和維度來縮放頂點，讓轉譯的場景放�
  
 
  
-
 
 
 

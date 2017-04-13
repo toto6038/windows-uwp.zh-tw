@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fafb0e013e1eef5fba2c5ec24b235df5c3c8429a
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4248f2ac1f8058f78b9bcdad56bdcff3668df61a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="graphics-and-animation"></a>圖形和動畫
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本節中的主題會引導您開始在市集應用程式中使用圖形和動畫。
 
@@ -39,7 +37,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5e03fbb7971e5526d542d409bccb1c7fee6fd3ee
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c9bf682e6818f7c9854604448e52aa0111605a05
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP 應用程式更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 確保您的應用程式符合執行背景工作的需求。
 
@@ -26,10 +23,10 @@ ms.lasthandoff: 02/07/2017
 
 在開發背景工作時，以及在發佈應用程式之前，請考慮下列指引。
 
-如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
+如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
 
-  **同處理序與跨處理序背景工作︰**Windows 10 (版本 1607) 引進的[同處理序背景工作](create-and-register-an-inproc-background-task.md)可讓您在與前景應用程式相同的處理序中執行背景程式碼。 決定要使用同處理序或跨處理序的背景工作時，請考慮下列因素︰
+  **同處理序與跨處理序背景工作︰**Windows10 (版本 1607) 引進的[同處理序背景工作](create-and-register-an-inproc-background-task.md)可讓您在與前景應用程式相同的處理序中執行背景程式碼。 決定要使用同處理序或跨處理序的背景工作時，請考慮下列因素︰
 
 |考量 | 影響 |
 |--------------|--------|
@@ -94,7 +91,7 @@ ms.lasthandoff: 02/07/2017
 -   納入已向 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 登錄的背景工作，並在應用程式資訊清單中宣告它。 確認進入點與觸發程序類型是否正確。 這是認證的必要步驟，而且可以讓使用者在鎖定畫面上放置應用程式。
 
 **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -116,4 +113,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

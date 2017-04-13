@@ -2,21 +2,17 @@
 title: "不透明和 1 位元 alpha 紋理"
 description: "紋理格式 BC1 主要針對不透明或只有單一透明色彩的紋理。"
 ms.assetid: 8C53ACDD-72ED-4307-B4F3-2FCF9A9F53EC
-keywords:
-- "不透明和 1 位元 alpha 紋理"
+keywords: "不透明和 1 位元 alpha 紋理"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: f3718785527cd3d686fd81c3706f3f9284b96fba
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 56a63e5536523eaf290465bba73a436008bee2f7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位元 alpha 紋理
 
 
@@ -171,7 +167,6 @@ Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
  
 
  
-
 
 
 

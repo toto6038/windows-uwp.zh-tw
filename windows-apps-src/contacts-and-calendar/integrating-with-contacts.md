@@ -1,6 +1,6 @@
 ---
 author: normesta
-description: "說明如何在連絡人卡片中動作的旁邊新增您的應用程式"
+description: "說明如何在連絡人卡片中動作的旁邊新增您的 app"
 MSHAttr: PreferredLib:/library/windows/apps
 title: "將應用程式連結到連絡人卡片上的動作"
 ms.author: normesta
@@ -10,13 +10,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 連絡人, 連絡人卡片, 註解"
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: da64e23714035b6763104d48430371469272a939
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e882566fcc81941669dd4844235bcbd899ea3079
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>將應用程式連結到連絡人卡片上的動作
 
 您的 app 可以顯示在連絡人卡片或迷你連絡人卡片上的動作旁邊。 使用者可以選擇您的 app 來執行動作，例如開啟個人資料頁面、撥打電話，或傳送訊息。
@@ -139,7 +136,7 @@ await annotationList.TrySaveAnnotationAsync(annotation);
   </uap:Extension>
 </Extensions>
 ```
-您也可以在 Visual Studio 中資訊清單設計工具的 [宣告]**** 索引標籤中新增這些處理常式。
+您也可以在 Visual Studio 中資訊清單設計工具的 **\[宣告\]** 索引標籤中新增這些處理常式。
 
 ![資訊清單設計工具的 [宣告] 索引標籤](images/manifest-designer-protocols.png)
 
@@ -186,11 +183,11 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 
 覆寫您 **App.cs** 檔案中的 [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) 方法，並將使用者導覽至您應用程式中的頁面。 [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)會說明這樣做的其中一種方法。
 
-在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
+在頁面後端檔案的程式碼中，複寫 [Page.OnNavigatedTo](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) 方法。 連絡人卡片會透過此方法傳遞作業名稱與連絡人識別碼。
 
 若要開始視訊或語音通話，請參閱此範例：[VoIP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)。 您將會在 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 命名空間中發現完整的 API。
 
-若要加快傳訊速度，請參閱 [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) 命名空間。
+若要加快傳訊速度，請參閱 [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.aspx) 命名空間。
 
 您也可以啟動另一個 app。 這就是此程式碼所執行的動作。
 
@@ -217,4 +214,3 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```
 
 ```args.uri.scheme``` 屬性包含作業的名稱，```args.uri.Query``` 屬性則包含使用者的識別碼。
-

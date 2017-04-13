@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 4deda6efa9b9b9ea03bee76855e30c8e9a290480
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 588367c1e4c1676641d57bbd33df6bdaf0c854da
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="import-media-from-a-device"></a>從裝置匯入媒體
 
 本文描述從裝置匯入媒體的方式，包括搜尋可用媒體來源、匯入如影片、相片和側車檔案的檔案，以及從來源裝置上刪除已匯入的檔案。
@@ -25,12 +22,12 @@ ms.lasthandoff: 02/08/2017
 
 ## <a name="create-a-simple-media-import-ui"></a>建立簡單的媒體匯入 UI
 本文中的範例會使用精簡的 UI 來啟用核心媒體匯入案例。 如果要查看如何建立更加健全的媒體匯入 App UI，請參閱 [**MediaImport 範例**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport)。 下列 XAML 能建立具有下列控制項的堆疊面板：
-* 一個用來初始化搜尋媒體匯入來源的「[按鈕****](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Button)」。
+* 一個用來初始化搜尋媒體匯入來源的「[**按鈕**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.Button)」。
 * 一個用來列出找到的媒體匯入來源，並從中進行選取的 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ComboBox)。
 * 一個用來顯示來自選取匯入來源的媒體項目，並從中進行選取的 [**ListView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.ListView) 控制項。
-* 一個用來初始化從選取來源匯入媒體項目的「按鈕」****。
-* 一個用來初始化從選取來源刪除已匯入項目的「按鈕」****。
-* 一個用來取消非同步媒體匯入作業的的「按鈕」****。
+* 一個用來初始化從選取來源匯入媒體項目的**「按鈕」**。
+* 一個用來初始化從選取來源刪除已匯入項目的**「按鈕」**。
+* 一個用來取消非同步媒體匯入作業的的**「按鈕」**。
 
 [!code-xml[ImportXAML](./code/PhotoImport_Win10/cs/MainPage.xaml#SnippetImportXAML)]
 
@@ -62,7 +59,7 @@ ms.lasthandoff: 02/08/2017
 [!code-cs[GeneratorIncrementalLoadingClass](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetGeneratorIncrementalLoadingClass)]
 
 
-# <a name="find-available-sources-from-which-media-can-be-imported"></a>尋找可匯入媒體的可用來源
+## <a name="find-available-sources-from-which-media-can-be-imported"></a>尋找可匯入媒體的可用來源
 
 在尋找來源按鈕的 click 處理常式中，呼叫靜態方法 [**PhotoImportManager.FindAllSourcesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportManager.FindAllSourcesAsync) 來讓系統開始搜尋可以匯入媒體的來源裝置。 等候作業完成之後，請循環顯示傳回清單中的每個 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 物件並新增項目到 **ComboBox**，將 **Tag** 屬性設定到來源物件本身，來在使用者做出選取時可以輕易擷取它。
 
@@ -76,13 +73,13 @@ ms.lasthandoff: 02/08/2017
 
 [!code-cs[SourcesSelectionChanged](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetSourcesSelectionChanged)]
 
-# <a name="find-items-to-import"></a>尋找可匯入的項目
+## <a name="find-items-to-import"></a>尋找可匯入的項目
 
 新增類型 [**PhotoImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession) 和 [**PhotoImportFindItemsResult**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportFindItemsResult) 的類別成員變數，這將會在後續步驟中使用。
 
 [!code-cs[DeclareImport](./code/PhotoImport_Win10/cs/MainPage.xaml.cs#SnippetDeclareImport)]
 
-在 FindItems 方法中，初始化 **CancellationTokenSource** 變數，來使它可以在必要的情況下用於取消尋找作業。 在 **try** 區塊內，透過在由使用者選取的 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 物件上呼叫 [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) 來建立新的匯入工作階段。 建立新的 [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) 物件來提供回呼以顯示尋找作業的進度。 接下來，請呼叫 [**FindItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSession.FindItemsAsync(Windows.Media.Import.PhotoImportContentTypeFilter,Windows.Media.Import.PhotoImportItemSelectionMode) 以開始尋找作業。 提供 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) 值以指定是否應該傳回相片或影片，或是兩者皆應該傳回。 提供 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) 值以指定應該要將哪些媒體項目的 [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) 屬性設定為 true 並回傳 (所有媒體項目、沒有媒體項目，或是僅新的媒體項目)。 此屬性在我們的 ListBox 項目範本中已繫結至每個媒體項目的核取方塊上。
+在 FindItems 方法中，初始化 **CancellationTokenSource** 變數，來使它可以在必要的情況下用於取消尋找作業。 在 **try** 區塊內，透過在由使用者選取的 [**PhotoImportSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource) 物件上呼叫 [**CreateImportSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportSource.CreateImportSession) 來建立新的匯入工作階段。 建立新的 [**Progress**](https://msdn.microsoft.com/library/hh193692.aspx) 物件來提供回撥以顯示尋找作業的進度。 接下來，呼叫 [**FindItemsAsync**](https://docs.microsoft.com/uwp/api/windows.media.import.photoimportsession#Windows_Media_Import_PhotoImportSession_FindItemsAsync_Windows_Media_Import_PhotoImportContentTypeFilter_Windows_Media_Import_PhotoImportItemSelectionMode_) 以開始尋找作業。 提供 [**PhotoImportContentTypeFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportContentTypeFilter) 值以指定要傳回相片、影片，還是兩者皆傳回。 提供 [**PhotoImportItemSelectionMode**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItemSelectionMode) 值以指定應該要將哪些媒體項目的 [**IsSelected**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Import.PhotoImportItem.IsSelected) 屬性設定為 true 並回傳 (所有媒體項目、沒有媒體項目，或是僅新的媒體項目)。 此屬性在我們的 ListBox 項目範本中已繫結至每個媒體項目的核取方塊上。
 
 **FindItemsAsync** 會傳回 [**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)。 延伸方法 [**AsTask**](https://msdn.microsoft.com/library/hh779750.aspx) 是用來建立可等候、可透過取消權杖取消，以及可使用提供的 **Progress** 物件報告進度的工作。
 
@@ -121,6 +118,5 @@ ms.lasthandoff: 02/08/2017
 
 
  
-
 
 

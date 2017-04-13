@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
-description: "本文說明當您的應用程式在背景執行時如何播放媒體。"
+description: "本文說明當您的 app 在背景執行時如何播放媒體。"
 title: "在背景播放媒體"
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,21 +9,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6251ff13e6cc751ad370a43950cfdbb9dca0ecc8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="play-media-in-the-background"></a>在背景播放媒體
-本文說明如何設定您的應用程式，當 應用程式從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
+本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
 
 背景音訊播放的案例包含：
 
--   **長時間執行的播放清單：**使用者會短暫叫用前景應用程式來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
+-   
+            **長時間執行的播放清單：**使用者會短暫叫用前景 app 來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
 
--   **使用工作切換器：**使用者會短暫叫用前景應用程式來開始播放音訊，然後使用工作切換器，切換到另一個開啟的應用程式。 使用者預期音訊會在背景持續播放。
+-   
+            **使用工作切換器：**使用者會短暫叫用前景 app 來開始播放音訊，然後使用工作切換器，切換到另一個開啟的 app。 使用者預期音訊會在背景持續播放。
 
 本文中描述的背景音訊實作可讓您的 app 在所有 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
 
@@ -31,7 +30,7 @@ ms.lasthandoff: 02/08/2017
 > 本文中的程式碼是從 UWP [背景音訊範例](http://go.microsoft.com/fwlink/p/?LinkId=800141)改編而來。
 
 ## <a name="explanation-of-one-process-model"></a>單處理序模型的說明
-從 Windows 10 版本 1607 開始，引進了新的單一處理序模型，可大幅簡化啟用背景音訊的處理序。 之前，除了前景 app 之外還要求您的 app 能夠管理背景處理程序，然後在這兩個處理程序之間手動傳遞狀態變更。 在新模型中，您只需將背景音訊功能新增到您的應用程式資訊清單，而您的 app 將會在移至背景時自動繼續播放音訊。 有兩個新的應用程式週期事件 ([**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)) 可讓您的 app 知道它進入和離開背景的時機。 當您的 app 移到轉換為背景或轉換為前景的處理程序時，系統強制執行的記憶體限制可能會變更，讓您能夠使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以維持在限制之下。
+從 Windows10 版本 1607 開始，引進了新的單一處理序模型，可大幅簡化啟用背景音訊的處理序。 之前，除了前景 app 之外還要求您的 app 能夠管理背景處理程序，然後在這兩個處理程序之間手動傳遞狀態變更。 在新模型中，您只需將背景音訊功能新增到您的應用程式資訊清單，而您的 app 將會在移至背景時自動繼續播放音訊。 有兩個新的應用程式週期事件 ([**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)) 可讓您的 app 知道它進入和離開背景的時機。 當您的 app 移到轉換為背景或轉換為前景的處理程序時，系統強制執行的記憶體限制可能會變更，讓您能夠使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以維持在限制之下。
 
 藉由消除複雜的跨處理程序通訊與狀態管理，新模型可讓您藉由大幅減少程式碼，更快速地實作背景音訊。 不過，目前的回溯相容性版本仍然支援兩個處理程序的模型。 如需詳細資訊，請參閱[舊版的背景音效模型](legacy-background-media-playback.md)。
 
@@ -91,7 +90,7 @@ ms.lasthandoff: 02/08/2017
 ## <a name="network-availability-for-background-media-apps"></a>背景媒體 App 的網路可用性
 所有網路感知的媒體來源 (不是從資料流或檔案建立的媒體來源) 會在擷取遠端內容時，讓網路連線保持使用中狀態，並且在不需擷取遠端內容時釋放網路連線。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) 特別依賴應用程式使用 [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762)，正確地向平台報告正確的緩衝範圍。 針對整個內容完整進行緩衝處理之後，就不會再代替 app 保留網路了。
 
-如果您需要在無法下載媒體時，於背景中進行網路呼叫，則必須將它們包裝於適當的工作中，例如 [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger)。 如需詳細資訊，請參閱[使用背景工作支援應用程式](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+如果您需要在無法下載媒體時，於背景中進行網路呼叫，則必須將它們包裝於適當的工作中，例如 [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger)。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)
@@ -102,7 +101,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 41c5b771440a3ad88b3c1fcc2aec57b2e080741b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="text-controls"></a>文字控制項
 
@@ -197,4 +195,3 @@ TextBox 和 RichEditBox 控制項預設會開啟拼字檢查。 您可以將 **I
 - [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
-

@@ -2,21 +2,17 @@
 title: "頂點和索引緩衝區"
 description: "頂點緩衝區是包含頂點資料的記憶體緩衝區。在頂點緩衝中處理頂點，以執行轉換、照明及裁剪。"
 ms.assetid: 8A39CD23-85FB-4424-9AC3-37919704CD68
-keywords:
-- "頂點和索引緩衝區"
+keywords: "頂點和索引緩衝區"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cdf65da6504114029c4937ee7db531a1339ed4c2
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f06ee013f5c09522df387d69afa0096f7a3f7044
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vertex-and-index-buffers"></a>頂點和索引緩衝區
 
 
@@ -62,7 +58,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

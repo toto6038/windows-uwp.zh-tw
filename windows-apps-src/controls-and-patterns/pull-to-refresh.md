@@ -11,17 +11,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e062ed2910e20ba187b8a0726a0061f0dd4b07f8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 0d10a0c7f269cc6c7d0b2e9476a926226fe94f82
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="pull-to-refresh"></a>拖動以重新整理
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-拖動以重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 拖動重新整理廣泛地用於行動裝置 App，且對任何配備觸控式螢幕的裝置都很實用。 您可以處理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)，以在 App 中實作拖動重新整理。
+拖動重新整理模式可讓使用者以觸控的方式將資料清單向下拖動以抓取更多資料。 拖動重新整理廣泛地用於行動裝置 App，且對任何配備觸控式螢幕的裝置都很實用。 您可以處理[操作事件](../input-and-devices/touch-interactions.md#manipulation-events)，以在 App 中實作拖動重新整理。
 
 [拖動重新整理範例](http://go.microsoft.com/fwlink/p/?LinkId=620635) (英文) 示範如何延伸 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 控制項以支援此模式。 在本文中。我們使用這個範例說明實作拖動重新整理的要點。
 

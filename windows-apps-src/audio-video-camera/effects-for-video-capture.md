@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 60b3d3874ea90b7d626ff1a78c104348ff80dc09
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7e8d65576347308eea7dd2f445961ba366557fa3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="effects-for-video-capture"></a>視訊擷取的效果
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主題說明如何將效果套用到相機預覽和錄製中的視訊串流，並示範如何使用影像防震效果。
 
@@ -26,7 +23,7 @@ ms.lasthandoff: 02/07/2017
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 App 已有正確初始化的 MediaCapture 執行個體。
 
 ## <a name="adding-and-removing-effects-from-the-camera-video-stream"></a>針對相機視訊串流新增和移除效果
-若要從裝置的相機擷取或預覽視訊，您必須使用在使用 [MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) 進行基本相片、視訊和音訊的擷取中所描述的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 物件。 在您初始化 **MediaCapture** 物件之後，若要將一或多個視訊效果新增到預覽或擷取串流，您可以呼叫 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)，傳遞代表要新增之效果的 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition) 物件，以及指出效果應該新增到相機的預覽串流或錄製串流的 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 列舉成員。
+若要從裝置的相機擷取或預覽視訊，您必須使用在[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中所描述的 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 物件。 在您初始化 **MediaCapture** 物件之後，若要將一或多個視訊效果新增到預覽或擷取串流，您可以呼叫 [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035)，傳遞代表要新增之效果的 [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Effects.IVideoEffectDefinition) 物件，以及指出效果應該新增到相機的預覽串流或錄製串流的 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaStreamType) 列舉成員。
 
 > [!NOTE]
 > 在某些裝置上，預覽串流和擷取串流是相同的，這表示當您呼叫 **AddVideoEffectAsync** 時，若您指定 **MediaStreamType.VideoPreview** 或 **MediaStreamType.VideoRecord**，該效果將會同時套用到預覽和錄製串流。 您可以透過檢查針對 **MediaCapture** 物件之 [**MediaCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.MediaCaptureSettings) 的 [**VideoDeviceCharacteristic**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureSettings.VideoDeviceCharacteristic) 屬性，來判斷目前裝置上的預覽和錄製串流是否是相同的。 如果此屬性的值為 **VideoDeviceCharacteristic.AllStreamsIdentical** 或 **VideoDeviceCharacteristic.PreviewRecordStreamsIdentical**，便代表這兩個串流是相同的，而您針對任何一個串流所套用的效果，也將會套用到另外一個串流。
@@ -37,7 +34,7 @@ ms.lasthandoff: 02/07/2017
 
 請注意，**AddVideoEffectAsync** 會傳回實作代表已新增視訊效果之 [**IMediaExtension**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.IMediaExtension) 的物件。 某些效果能讓您透過將 [**PropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet) 傳遞到 [**SetProperties**](https://msdn.microsoft.com/library/windows/apps/br240986) 方法中，來變更效果設定。
 
-從 Windows 10 版本 1607 開始，您也可以將由 **AddVideoEffectAsync** 傳回的物件傳遞到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957)，來從視訊管線移除效果。 **RemoveEffectAsync** 會自動判斷效果物件參數是否已新增到預覽或錄製串流，使您不需在進行呼叫時指定串流類型。
+從 Windows10 版本 1607 開始，您也可以將由 **AddVideoEffectAsync** 傳回的物件傳遞到 [**RemoveEffectAsync**](https://msdn.microsoft.com/library/windows/apps/mt667957)，來從視訊管線移除效果。 **RemoveEffectAsync** 會自動判斷效果物件參數是否已新增到預覽或錄製串流，使您不需在進行呼叫時指定串流類型。
 
 [!code-cs[RemoveOneEffect](./code/SimpleCameraPreview_Win10/cs/MainPage.Effects.xaml.cs#SnippetRemoveOneEffect)]
 
@@ -110,7 +107,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

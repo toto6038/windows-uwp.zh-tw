@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "使用者鍵入時提供建議的文字輸入方塊。"
+Description: "使用者輸入時提供建議的文字輸入方塊。"
 title: "自動建議方塊的指導方針"
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
@@ -12,16 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3700751db4b00405d3f2b5b41f6e487a32b56f38
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 85c23206d421d061b81f46645b6e6820fb079df3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="auto-suggest-box"></a>自動建議方塊
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-使用 AutoSuggestBox 提供讓使用者在鍵入時可從中選取建議的清單。
+使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
 ![自動建議方塊](images/controls/auto-suggest-box-open.png)
 
@@ -180,4 +178,3 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
-

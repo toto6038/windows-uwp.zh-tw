@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "瞭解如何開發無障礙的 Windows 10 UWP 應用程式，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。"
+Description: "瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: "開發全人 Windows 10 應用程式"
 label: Developing inclusive Windows 10 apps
@@ -11,16 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 47c28e0629150ccbdf532afc645fe973c3dc8804
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 5e4668a185e003150cf9d72aeb5c55c2e092d549
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
-本文討論如何開發無障礙的通用 Windows 平台 (UWP) 應用程式。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
+本文討論如何開發無障礙的通用 Windows 平台 (UWP) App。 具體而言，本文章將假設您已了解設計 App 邏輯階層的方法。 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
 
 如果您還沒了解這部分的內容，請先閱讀[設計通用軟體](designing-inclusive-software.md)。
 
@@ -90,4 +87,3 @@ XAML
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)
 * [協助工具](accessibility.md)
-

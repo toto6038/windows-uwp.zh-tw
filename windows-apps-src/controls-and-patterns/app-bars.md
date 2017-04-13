@@ -12,17 +12,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: b14f83d9e834fcefbb3f9d1f9870f81686b44084
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6dc3c9d15ebbda67dd055adb4b9d5548b6ac81e3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="app-bar-and-command-bar"></a>應用程式列與命令列
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-命令列 (亦稱為「應用程式列」) 可讓使用者輕鬆存取應用程式的最常見工作，也可以用來顯示使用者內容特定的命令或選項，如相片選取或繪圖模式。 它們也可以用來在 app 頁面或 app 區段之間瀏覽。 命令列可用於任何瀏覽模式。
+命令列 (亦稱為「應用程式列」) 可讓使用者輕鬆存取 app 的最常見工作，也可以用來顯示使用者內容特定的命令或選項，如相片選取或繪圖模式。 它們也可以用來在 app 頁面或 app 區段之間瀏覽。 命令列可用於任何瀏覽模式。
 
 ![具有圖示之命令列的範例](images/controls_appbar_icons.png)
 
@@ -308,4 +306,3 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 
 * [UWP 應用程式的命令設計基本知識](../layout/commanding-basics.md)
 * [**CommandBar 類別**](https://msdn.microsoft.com/library/windows/apps/dn279427)
-

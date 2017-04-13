@@ -14,17 +14,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 67883baddbd19398018c4df358185b9f8977f0ba
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c003e78b192aa85440219be739fc2fec6eba3c20
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-addressing-modes"></a>紋理定址模式
 
 
-Direct3D 應用程式可為任何原始物件的任何頂點指派紋理座標。 通常您指派給頂點的 u 及 v 紋理座標，都會位於 0.0 到 1.0 (含) 之間。 不過，藉由指派在該範圍之外的紋理座標，您可以建立特殊的紋理效果。 。
+Direct3D 應用程式可為任何原始物件的任何頂點指派紋理座標。 通常您指派給頂點的 u 及 v 紋理座標，都會位於 0.0 到 1.0 (含) 之間。 不過，藉由指派在該範圍之外的紋理座標，您可以建立特殊的紋理效果。 .
 
 您可以透過設定紋理定址模式，控制 Direct3D 處理位於 \[0.0, 1.0\] 範圍之外紋理座標的方式。 例如：您可以為您的應用程式設定紋理定址模式，讓紋理並排在原始物件之上。
 
@@ -103,7 +100,6 @@ Direct3D 允許應用程式執行紋理包裹。 請參閱[紋理包裹](texture
  
 
  
-
 
 
 

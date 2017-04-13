@@ -3,15 +3,12 @@ Description: "以下是您建立可在任何 Windows 10 裝置 (包括手機、�
 title: "Windows 10 應用程式使用方法指南 - Windows 應用程式開發"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
-redirect_url: https://developer.microsoft.com/en-us/windows/develop
-translationtype: Human Translation
-ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
-ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
-
+redirect_url: https://developer.microsoft.com/en-us/windows/apps
+ms.openlocfilehash: 84a4aebb5c41e713c0038cd203b320ff607fa25a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
-# Windows 10 上的 UWP 應用程式使用方法指南
+# <a name="how-to-guides-for-uwp-apps-on-windows-10"></a>Windows 10 上的 UWP 應用程式使用方法指南
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -22,10 +19,4 @@ ms.openlocfilehash: 2b4bae1606f9b51e2d4901218ebd2d616e4c5edc
 -   [建立您的第一個通用 Windows 平台 app](get-started/create-a-hello-world-app-xaml-universal.md)
 -   [通用 Windows 平台 (UWP) app 指南](get-started/universal-application-platform-guide.md)
 -   [何謂通用 Windows 平台應用程式？](get-started/whats-a-uwp.md)
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

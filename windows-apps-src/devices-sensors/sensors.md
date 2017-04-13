@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9a7c1c5e4352f80aee65cd828f8113ac0bd35d49
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="sensors"></a>感應器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。 這些感應器提供獨特的輸入形式 (例如透過裝置的動作來排列螢幕上的字元，或模擬在駕駛艙中以及將裝置當成方向盤操縱)，有助您提高遊戲、擴增實境應用程式或公用應用程式的實用性與互動性。
@@ -132,5 +130,4 @@ ms.lasthandoff: 02/07/2017
 ## <a name="samples"></a>範例
 
 如需示範使用其他幾個感應器的範例，請參閱 [Windows 感應器範例](http://go.microsoft.com/fwlink/?LinkID=616041)。
-
 

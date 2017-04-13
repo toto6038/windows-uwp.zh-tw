@@ -11,20 +11,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1d3a2ce095b4250f5bdc1fdac8b1646184bc3e1e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c6b9a1d8cec20b75aeb90775471461e7811fecb4
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility-in-the-store"></a>市集中的協助工具  
 
 
 
-說明在 Windows 市集中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
+描述在 Windows 市集中，宣告您的通用 Windows 平台 (UWP) app 可提供無障礙功能的要求條件。
 
-將您的 App 送出到 Windows 市集進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Windows 市集時，可以使用 [無障礙]**** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 [無障礙]**** 標記。
+將您的 App 送出到 Windows 市集進行認證時，您可以宣告 App 可提供無障礙功能。 將您的應用程式宣告為無障礙應用程式，可以讓需要使用無障礙應用程式的使用者 (例如視覺障礙者) 比較容易找到這些程式。 使用者搜尋 Windows 市集時，可以使用 **\[無障礙\]** 篩選器尋找無障礙 app。 宣告您的 App 可提供無障礙功能時，也會在您的 App 介紹加上 **\[無障礙\]** 標記。
 
 將 app 宣告為無障礙 app，說明該 app 具有符合使用者主要案例所需的[基本協助工具資訊](basic-accessibility-information.md)，可使用下列一或多個項目：
 
@@ -51,4 +48,3 @@ ms.lasthandoff: 02/07/2017
 <span id="related_topics"/>
 ## <a name="related-topics"></a>相關主題    
 * [協助工具](accessibility.md) 
-

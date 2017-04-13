@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 91827b88d7b8ce2a216f8c10b56905b925b6c1ce
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: b63b3a67db3b07cbfef6a89bdffb436605ab91ed
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="item-containers-and-templates"></a>項目容器與範本
 
@@ -338,9 +336,9 @@ ListView 和 GridView 控制項已最佳化，可減少針對每個項目所建�
 
 **在 Visual Studio 中建立預設範本的複本**
  
-1. 開啟 [文件大綱] 窗格 ([檢視] &gt; [其他視窗] &gt; [文件大綱]****)。
+1. 開啟 [文件大綱] 窗格 (**\[檢視\] &gt; \[其他視窗\] &gt; \[文件大綱\]**)。
 2. 選取要修改的清單或方格元素。 在這個範例中，您可以修改 `colorsGridView` 元素。
-3. 以滑鼠右鍵按一下，然後選取 [編輯其他範本] &gt; [編輯產生的項目容器 (ItemContainerStyle)] &gt; [編輯複本]****。
+3. 以滑鼠右鍵按一下，然後選取 **\[編輯其他範本\] &gt; \[編輯產生的項目容器 (ItemContainerStyle)\] &gt; \[編輯複本\]**。
     ![Visual Studio 編輯器](images/listview-itemcontainerstyle-vs.png)
 4. 在 [建立樣式資源] 對話方塊中，輸入樣式的名稱。 在此範例中，您使用 `colorsGridViewItemStyle`。
     ![Visual Studio 的 [建立樣式資源] 對話方塊(images/listview-style-resource-vs.png)
@@ -462,7 +460,7 @@ ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳�
     ```
 2. 在 Visual Studio 的 [屬性] 窗格中，展開 [其他] 區段並尋找 ItemContainerStyle 屬性 (請確定已選取 ListView 或 GridView)。
 3. 按一下 ItemContainerStyle 屬性的屬性標記 (它是 TextBox 旁邊的小型方塊。 它的色彩會設定為綠色，以顯示已將它設為 StaticResource)。屬性功能表隨即開啟。
-4. 在屬性功能表中，按一下 [轉換成新資源]****。 
+4. 在屬性功能表中，按一下 **\[轉換成新資源\]**。 
     
     ![Visual Studio 屬性功能表](images/listview-convert-resource-vs.png)
 5. 在 [建立樣式資源] 對話方塊中，輸入樣式的名稱，然後按一下 [確定]。
@@ -474,5 +472,4 @@ ListViewItemPresenter 有其他筆刷屬性適用於資料預留位置和拖曳�
 
 - [清單](lists.md)
 - [ListView 與 GridView](listview-and-gridview.md)
-
 

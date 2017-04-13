@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 雲端服務"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 72f357cbf8e370512f9230978de546aa3d54c660
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
-Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Microsoft 裝置上開發遊戲。 開發跨平台與裝置的遊戲時，您可以利用雲端後端來協助根據需求調整遊戲。
+Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Microsoft 裝置上開發遊戲。 開發跨平台與裝置的遊戲時，您可以利用雲端後端來協助根據需求調整遊戲。
 
 ##  <a name="what-is-cloud-computing"></a>什麼是雲端運算？
 
@@ -149,7 +147,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 | 需求                 | 活動案例                            | 產品供應項目                      | 產品功能                               |
 |-----------------------------------|-----------------------------------------------|---------------------------------------|----------------------------------------------------|
-| 在雲端託管您的網域     | 有效率地回應 DNS 查詢            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 以具有高效能和可用性的方式託管您的網域  |
+| 在雲端託管您的網域     | 有效率地回應 DNS 查詢            | [Azure DNS](https://azure.microsoft.com/services/dns/) | 以具有高效能和可用性的方式託管您的網域    |
 | 登入、身分識別驗證      | 已驗證玩家登入和玩家身分識別  | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) | 使用多重要素驗證來單一登入至任何雲端與內部部署 Web 應用程式            |
 | 使用基礎結構即服務 (IaaS) 模型的遊戲      | 遊戲託管於雲端的虛擬機器上       | [Azure VM](https://azure.microsoft.com/services/virtual-machines/) | 做為具有內建虛擬網路和負載平衡的遊戲伺服器，在 1 部到數千部虛擬機器執行個體之間進行調整。搭配混合式一致性的內部部署系統           |
 | 使用平台即服務 (PaaS) 模型的網路或行動裝置遊戲            | 遊戲託管於受管理的平台上                | [Azure App Service](https://azure.microsoft.com/services/app-service/) | 適用於網站或行動裝置遊戲的 PaaS (代表具有中介軟體/開發工具/BI/DB 管理的 Azure VM)   |
@@ -159,14 +157,14 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 | 可調整的關聯式遊戲資料庫| 結構化的關聯式資料儲存體，例如傳輸到資料庫中的遊戲內交易 | [Azure SQL Database](https://azure.microsoft.com/services/sql-database/)| SQL 資料庫即服務 ([與 VM 上的 SQL 比較](https://azure.microsoft.com/documentation/articles/data-management-azure-sql-database-and-sql-server-iaas/))  |
 | 可調整的分散式低延遲遊戲資料庫| 使用彈性結構描述快速讀取、寫入及查詢遊戲與玩家資料 | [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/)| 低延遲 NoSQL 文件資料庫即服務   |
 | 使用自己的資料中心搭配 Azure 服務 | 遊戲將擷取自您的資料中心並傳送到用戶端裝置 | [Azure Stack](https://azure.microsoft.com/overview/azure-stack/) | 可讓您的組織從自己的資料中心傳遞 Azure 服務，以協助完成更多工作  |
-| 大型資料區塊傳輸| 大型檔案 (例如遊戲影像、音訊及視訊) 可以透過 Azure CDN 從最近的內容傳遞網路 (CDN) pop 位置傳送給使用者    | [Azure 內容傳遞網路](https://azure.microsoft.com/services/cdn/) | Azure CDN 建置在大型集中式節點的現代化網路拓樸上，能夠處理突發的流量尖峰和大量負載以大幅增加速度與可用性，並產生顯著的使用者體驗改善  |
+| 大型資料區塊傳輸| 大型檔案 (例如遊戲影像、音訊及視訊) 可以透過 Azure CDN 從最近的內容傳遞網路 (CDN) pop 位置傳送給使用者     | [Azure 內容傳遞網路](https://azure.microsoft.com/services/cdn/) | Azure CDN 建置在大型集中式節點的現代化網路拓樸上，能夠處理突發的流量尖峰和大量負載以大幅增加速度與可用性，並產生顯著的使用者體驗改善  |
 | 低延遲               | 執行快取以建置快速、可調整的遊戲，並針對隔離資料取得更多的控制和保證，也可以用於改善遊戲的配對功能。 | [Azure Redis Cache](https://azure.microsoft.com/services/cache/) | 高輸送量、穩定的低延遲資料存取，可提供快速、可調整的 Azure 應用程式  |
 | 高延展性、低延遲 | 以低延遲的讀取和寫入來處理遊戲使用者數量的波動 | [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) | 可以提供最複雜、低延遲、密集資料的案例及可靠的調整，以同時處理更多的使用者。 針對無狀態 App 的需求，Service Fabric 可讓您在不需要個別建立儲存區或快取的情況下建置遊戲 |
 | 能夠每秒從裝置收集數以百萬計事件的能力                         | 能夠每秒從裝置記錄數以百萬計的事件 | [Azure 事件中樞](https://azure.microsoft.com/services/event-hubs/) | 來自遊戲、網站、App 及裝置的雲端級別遙測擷取  |
 | 即時處理遊戲資料  | 執行玩家資料的即時分析以改善遊戲| [Azure 串流分析](https://azure.microsoft.com/services/stream-analytics/) | 在雲端即時串流處理  |
-| 開發預測式遊戲方式         | 根據玩家資料建立自訂的動態遊戲方式  | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | 完全受管理的雲端服務，可讓您輕鬆地建置、部署及共用預測式分析解決方案  |
+| 開發預測式遊戲方式          | 根據玩家資料建立自訂的動態遊戲方式    | [Azure Machine Learning](https://azure.microsoft.com/services/machine-learning/) | 完全受管理的雲端服務，可讓您輕鬆地建置、部署及共用預測式分析解決方案  |
 | 收集與分析遊戲資料| 大量平行處理來自關聯式與非關聯式資料庫的資料 | [Azure 資料倉儲](https://azure.microsoft.com/services/sql-data-warehouse/)| 彈性資料倉儲即服務與企業級功能   |
-| 建立行銷活動以增加使用量與留存率  | 根據資料分析傳送推播通知給目標玩家，以產生興趣並鼓勵特定遊戲活動 | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) |  增加所有主要平台 (iOS、Android、Windows、Windows Phone) 上的遊戲時間與使用者留存率 |
+| 建立行銷活動以增加使用量與留存率  |    根據資料分析傳送推播通知給目標玩家，以產生興趣並鼓勵特定遊戲活動 | [Mobile Engagement](https://azure.microsoft.com/services/mobile-engagement/) |  增加所有主要平台 (iOS、Android、Windows、Windows Phone) 上的遊戲時間與使用者留存率 |
 
 
 ##  <a name="startup-and-developer-resources"></a>新創公司與開發人員資源
@@ -177,7 +175,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
     
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
-    如果您想要將 Xbox Live 的功能，例如多人遊戲、跨平台配對、玩家分數、成就及排行榜加入到您的 Windows 10 遊戲，請向 ID@Xbox 註冊以取得所需之工具和支援，以盡情發揮您的創意並取得最大的成功。 向 ID@Xbox 提出申請之前，請先在 [Windows 開發人員中心](https://developer.microsoft.com/windows/programs/join)註冊一個開發人員帳戶。
+    如果您想要將 Xbox Live 的功能，例如多人遊戲、跨平台配對、玩家分數、成就及排行榜加入到您的 Windows 10 遊戲，請向 ID@Xbox 註冊以取得所需之工具和支援，以盡情發揮您的創意並取得最大的成功。 向 ID@Xbox 提出申請之前，請先在 [Windows 開發人員中心](https://developer.microsoft.com/windows/programs/join)註冊一個開發人員帳戶。
 
 ## <a name="software-as-a-service-for-game-backend"></a>適用於遊戲後端的軟體即服務
 
@@ -197,7 +195,7 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
 
 ## <a name="related-links"></a>相關連結
 
-* [Windows 10 遊戲開發指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
+* [Windows10 遊戲開發指南](https://msdn.microsoft.com/windows/uwp/gaming/e2e)
 * [用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Microsoft BizSpark](https://www.microsoft.com/bizspark/)
 * [ID@Xbox](http://www.xbox.com/Developers/id)
@@ -206,4 +204,3 @@ Windows 10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Mic
  
 
  
-

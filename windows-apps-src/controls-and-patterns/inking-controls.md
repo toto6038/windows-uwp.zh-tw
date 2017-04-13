@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 541f7e8c45190cfd597869ad1040801d368b77e8
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 50c18f0ef72ad990971323921eae282c76c70be3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inking-controls"></a>筆跡控制項
 
@@ -144,7 +142,7 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 再次選取作用中工具的按鈕時，會顯示飛出視窗。 色彩或大小變更時，飛出視窗會自動關閉並且可以繼續使用手寫筆跡。 自訂畫筆和工具可以使用預設飛出視窗，或指定自訂飛出視窗。
 
-橡皮擦也有飛出視窗，可提供 [清除所有筆跡]**** 命令。  
+橡皮擦也有飛出視窗，可提供 **\[清除所有筆跡\]** 命令。  
 ![叫用橡皮擦飛出視窗的 InkToolbar](images/ink-tools-erase-all-ink.png)
 
  如需自訂項目及擴充功能的資訊，請查看 [SimpleInk 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk)。
@@ -170,4 +168,3 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 - [UWP 應用程式中的畫筆和手寫筆互動](http://windowsstyleguide/input-and-devices/pen-and-stylus-interactions/)
 - [辨識筆墨筆劃](http://windowsstyleguide/input-and-devices/convert-ink-to-text/)
 - [儲存和擷取筆墨筆劃](http://windowsstyleguide/input-and-devices/save-and-load-ink/)
-

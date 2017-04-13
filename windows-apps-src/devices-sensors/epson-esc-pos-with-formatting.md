@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 70b737625f5301d3147f4570b4e6f7216c2212c7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 6d3251e9e67f7a49b51493bf13216bfd72826d62
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="epson-escpos-with-formatting"></a>用來設定格式的 Epson ESC/POS
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -63,4 +61,3 @@ printJob.ExecuteAsync();
 ```
 
 如需 ESC/POS (包括可用的命令) 的詳細資訊，請查閱 [Epson ESC/POS 常見問題集](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf)。 如需 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 和所有可用功能的詳細資訊，請參閱 MSDN 上的 [PointofService 印表機](https://msdn.microsoft.com/library/windows/apps/Mt426652)。
-

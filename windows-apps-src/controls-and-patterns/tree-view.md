@@ -4,10 +4,9 @@ Description: "使用樹狀檢視範例程式碼建立可展開的樹狀結構。
 title: "樹狀檢視"
 label: Tree view
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
 ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="hierarchical-layout-with-treeview"></a>含有樹狀檢視的階層式版面配置
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -187,9 +186,3 @@ ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
 - [樹狀檢視範例](http://go.microsoft.com/fwlink/?LinkId=785018)
 - [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)
 - [ListView 與 GridView](listview-and-gridview.md)
-
-
-
-<!--HONumber=Dec16_HO2-->
-
-

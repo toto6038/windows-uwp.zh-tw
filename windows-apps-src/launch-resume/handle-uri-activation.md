@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 233044095bc8e994ef1a425ec7069fc7fdc93b86
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b655bea614f1c395959a12e9c3b8a5b1af61d694
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-uri-activation"></a>處理 URI 啟用
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -40,14 +37,14 @@ ms.lasthandoff: 02/07/2017
 
 App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件。 以下是如何指示 app 處理 `alsdk`URI 配置名稱的方法。
 
-1.  在 [方案總管]**** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 [宣告]**** 索引標籤，然後在 [可用宣告] ****下拉式清單中選取 [通訊協定]****，然後按一下 [新增]****。
+1.  在 **\[方案總管\]** 中按兩下 package.appxmanifest，以開啟資訊清單設計工具。 選取 **\[宣告\]** 索引標籤，然後在 **\[可用宣告\]** 下拉式清單中選取 **\[通訊協定\]**，然後按一下 **\[新增\]**。
 
     以下簡短說明可在資訊清單設計工具中為通訊協定填寫的每個欄位 (如需詳細資訊請參閱 [**AppX 封裝資訊清單**](https://msdn.microsoft.com/library/windows/apps/dn934791))：
 
 | 欄位 | 說明 |
 |-------|-------------|
-| **標誌** | 在 [控制台]**** 的 設定[預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的標誌。 如果沒有指定標誌，則會使用 app 的小標誌。 |
-| **顯示名稱** | 在 [控制台]**** 的 設定[預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的顯示名稱。 |
+| **標誌** | 在 **\[控制台\]** 的[設定預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的標誌。 如果沒有指定標誌，則會使用 app 的小標誌。 |
+| **顯示名稱** | 在 **\[控制台\]** 的[設定預設程式](https://msdn.microsoft.com/library/windows/desktop/cc144154)中指定用來識別 URI 配置名稱的顯示名稱。 |
 | **名稱** | 選擇 URI 配置的名稱。 |
 |  | **注意**  [名稱] 必須全都是小寫字母。 |
 |  | **保留和禁止的檔案類型** 請參閱[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)，以取得因為已經被保留或禁止使用，而無法為 UWP app 登錄之 URI 配置的字母排序清單。 |
@@ -55,10 +52,10 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 | **進入點** | 指定處理通訊協定延伸的工作。 這必須符合 Windows 執行階段類型的完整命名空間名稱。 如果沒有指定，則會使用 app 的進入點。 |
 | **開始頁面** | 處理擴充點的網頁 |
 | **資源群組** | 您可以用來基於資源管理目的、將延伸啟用群組在一起的標記。 |
-| **所需的檢視** (僅限 Windows) | 指定 [所需的檢視]**** 欄位，指示當針對 URI 配置名稱啟動 app 時，app 視窗所需的空間大小。 [所需的檢視]**** 的可能值為 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意**  Windows 在判斷目標應用程式的最終視窗大小時會考量多種不同因素，例如來源應用程式的喜好設定、螢幕上的應用程式數目以及螢幕方向等。 設定 [所需的檢視]**** 並無法保證目標 app 的特定視窗行為。<br/> 行動裝置系列上不支援**行動裝置系列：所需的檢視**。 |
-2.  輸入 `images\Icon.png` 做為 [標誌]****。
-3.  輸入 `SDK Sample URI Scheme` 做為 [顯示名稱]****
-4.  輸入 `alsdk` 做為 [名稱]****。
+| **所需的檢視** (僅限 Windows) | 指定 **\[所需的檢視\]** 欄位，指示當針對 URI 配置名稱啟動 app 時，app 視窗所需的空間大小。 **\[所需的檢視\]** 的可能值為 **Default**、**UseLess**、**UseHalf**、**UseMore** 或 **UseMinimum**。 <br/>**注意**  Windows 在判斷目標應用程式的最終視窗大小時會考量多種不同因素，例如來源應用程式的喜好設定、螢幕上的應用程式數目以及螢幕方向等。 設定 **\[所需的檢視\]** 並無法保證目標 app 的特定視窗行為。<br/> 行動裝置系列上不支援**行動裝置系列：所需的檢視**。 |
+2.  輸入 `images\Icon.png` 做為 **\[標誌\]**。
+3.  輸入 `SDK Sample URI Scheme` 做為 **\[顯示名稱\]**
+4.  輸入 `alsdk` 做為 **\[名稱\]**。
 5.  按下 Ctrl+S 以將變更儲存至 package.appxmanifest。
 
     這樣會將和這個一樣的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素新增至封裝資訊清單。 **windows.protocol** 類別指示 app 處理 `alsdk` URI 配置名稱。
@@ -180,4 +177,3 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
  
 
  
-

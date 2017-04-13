@@ -2,21 +2,17 @@
 title: "向量、頂點和四元數"
 description: "在整個 Direct3D 中，頂點描述位置及方向。 基本類型中的每個頂點都由給予它位置、色彩、紋理座標的向量所述，以及給予它方向的標準向量所述。"
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
-keywords:
-- "向量、頂點和四元數"
+keywords: "向量、頂點和四元數"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 61017fd2f0d91fb953543857741146bb607a36f3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7b0fa178db12c421f5964f0dec2b8c6391ee1973
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="vectors-vertices-and-quaternions"></a>向量、頂點和四元數
 
 
@@ -42,7 +38,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

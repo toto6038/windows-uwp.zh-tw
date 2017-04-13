@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d4eae4379fb74d36a97db9be9a100408825682a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 版面配置
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -189,5 +187,4 @@ ms.lasthandoff: 02/07/2017
 在選擇個別面板時，通常不會將效能納入考量。 通常是藉由考量哪一個面板可提供最接近您正在實作之 UI 的版面配置行為來選擇。 例如，如果您在 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 和 [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) 之間進行選擇，則應該選擇最能對應到您在腦中實作之模型的面板。
 
 每個 XAML 面板都已針對良好的效能進行最佳化，而所有的面板都可為類似 UI 提供類似的效能。
-
 

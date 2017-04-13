@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3a8a2ccde21ba1e2b16545ae26ebe5e8908ec6b8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 825b6a8b2689143b5a68b9e7e1862ac2e6e92d28
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="control-templates"></a>控制項範本
 
@@ -203,7 +201,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="learn-more-about-a-controls-default-template"></a>深入了解控制項的預設範本
 
-記載 XAML 控制項樣式和範本的主題顯示了一些 XAML 摘錄，這些摘錄與您使用先前說明的「編輯佈景主題」****或「編輯樣式」****技術時會看到的起始 XAML 摘錄相同。 每一個主題都會列出視覺狀態的名稱、所使用的佈景主題資源，以及包含範本之完整樣式的 XAML。 如果您已經開始修改範本而且想要看看原始範本的樣子，或想確認您的新範本是否具備所有必要的指定視覺狀態，這些主題可做為有用的指引。
+記載 XAML 控制項樣式和範本的主題顯示了一些 XAML 摘錄，這些摘錄與您使用先前說明的**「編輯佈景主題」**或**「編輯樣式」**技術時會看到的起始 XAML 摘錄相同。 每一個主題都會列出視覺狀態的名稱、所使用的佈景主題資源，以及包含範本之完整樣式的 XAML。 如果您已經開始修改範本而且想要看看原始範本的樣子，或想確認您的新範本是否具備所有必要的指定視覺狀態，這些主題可做為有用的指引。
 
 ## <a name="theme-resources-in-control-templates"></a>控制項範本中的佈景主題資源
 
@@ -214,7 +212,6 @@ ms.lasthandoff: 02/07/2017
 * [自訂文字編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
  
-
 
 
 

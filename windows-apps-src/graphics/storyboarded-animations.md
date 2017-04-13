@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5de5007327b86b401b2f85d6f80adbc2bed820a8
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 99b07dd5c19cf16b4337e5af1c46b7285333e474
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="storyboarded-animations"></a>腳本動畫
 
@@ -30,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
 -   腳本動畫不是以視覺化方式讓 UI 產生動畫效果的唯一方式，也不是應用程式開發人員執行這項工作最簡單的方式。 通常，比較好的設計方式是使用主題動畫和轉換動畫，而不是使用腳本動畫。 這些動畫可以快速建立建議的 UI 動畫，並不需要熟悉動畫屬性目標的複雜做法。 如需詳細資訊，請參閱[動畫概念](animations-overview.md)。
 -   在 Windows 執行階段中，有許多 XAML 控制項包含主題動畫和轉換動畫做為它們內建行為的一部分。 在大部分的情況下，WPF 和 Silverlight 控制項並沒有預設動畫行為。
--   並非您建立的所有自訂動畫預設都可以在 Windows 執行階段應用程式中執行，如果動畫系統判斷動畫可能對您的 UI 造成不良的效能，就不會執行。 系統判斷可能影響效能的動畫稱為「相依式動畫」**。 它是相依式的，因為計時動畫會直接針對 UI 執行緒來運作，而作用中的使用者輸入及其他更新也會嘗試將執行階段變更套用到 UI。 在 UI 執行緒上耗用大量系統資源的相依式動畫，在特定情況下會使應用程式沒有回應。 如果您的動畫會導致配置變更，或者可能影響 UI 執行緒上的效能，您通常需要明確啟用動畫讓它執行。 這就是特定動畫類別上 **EnableDependentAnimation** 屬性的作用。 如需詳細資訊，請參閱[相依式和獨立式動畫](./storyboarded-animations.md#dependent-and-independent-animations)。
+-   並非您建立的所有自訂動畫預設都可以在 Windows 執行階段應用程式中執行，如果動畫系統判斷動畫可能對您的 UI 造成不良的效能，就不會執行。 系統判斷可能影響效能的動畫稱為*「相依式動畫」*。 它是相依式的，因為計時動畫會直接針對 UI 執行緒來運作，而作用中的使用者輸入及其他更新也會嘗試將執行階段變更套用到 UI。 在 UI 執行緒上耗用大量系統資源的相依式動畫，在特定情況下會使應用程式沒有回應。 如果您的動畫會導致配置變更，或者可能影響 UI 執行緒上的效能，您通常需要明確啟用動畫讓它執行。 這就是特定動畫類別上 **EnableDependentAnimation** 屬性的作用。 如需詳細資訊，請參閱[相依式和獨立式動畫](./storyboarded-animations.md#dependent-and-independent-animations)。
 -   Windows 執行階段目前不支援自訂的 Easing 函式。
 
 ## <a name="defining-storyboarded-animations"></a>定義腳本動畫
@@ -41,7 +39,7 @@ ms.lasthandoff: 02/07/2017
 
 無論您是為應用程式定義視覺狀態或自訂動畫，本主題中所說明的腳本動畫概念和 API 大部分都適用於兩者。
 
-為了建立動畫效果，腳本動畫的目標屬性必須是「相依性屬性」**。 相依性屬性是 Windows 執行階段 XAML 實作的主要特色。 大部分常用 UI 元素的可編寫屬性通常是當做相依性屬性來實作的，因此您可以為它們建立動畫效果、套用資料繫結值，或是套用 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 並以 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 將屬性做為目標。 如需相依性屬性運作方式的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
+為了建立動畫效果，腳本動畫的目標屬性必須是*「相依性屬性」*。 相依性屬性是 Windows 執行階段 XAML 實作的主要特色。 大部分常用 UI 元素的可編寫屬性通常是當做相依性屬性來實作的，因此您可以為它們建立動畫效果、套用資料繫結值，或是套用 [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) 並以 [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) 將屬性做為目標。 如需相依性屬性運作方式的詳細資訊，請參閱[相依性屬性概觀](https://msdn.microsoft.com/library/windows/apps/Mt185583)。
 
 通常是以編寫 XAML 的方式定義腳本動畫。 如果您使用像是 Microsoft Visual Studio 這類工具，工具會為您產生 XAML。 您也可以使用程式碼定義腳本動畫，但較不常見。
 
@@ -70,7 +68,7 @@ ms.lasthandoff: 02/07/2017
 
 您在動畫中設定 [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824) 的值。 這會決定要針對哪一個目標物件的特定屬性設定動畫效果。
 
-有時您需要將不是目標物件之直接屬性的屬性設成目標，該目標屬性巢狀於物件屬性關係的較深處。 您通常需要這麼做才能向下切入到一組參與物件和屬性值，直到可以參考可設定動畫效果的屬性類型 ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723))。 這個概念稱為「間接目標」**，而使用這種方式設定目標屬性的語法稱為「屬性路徑」**。
+有時您需要將不是目標物件之直接屬性的屬性設成目標，該目標屬性巢狀於物件屬性關係的較深處。 您通常需要這麼做才能向下切入到一組參與物件和屬性值，直到可以參考可設定動畫效果的屬性類型 ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723))。 這個概念稱為*「間接目標」*，而使用這種方式設定目標屬性的語法稱為*「屬性路徑」*。
 
 這裡提供一個範例。 在腳本動畫最常做的一件事就是變更部分應用程式 UI 或控制項的色彩，以便表示該控制項處於特定的狀態。 假設您要為 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 的 [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) 設定動畫效果，讓它從紅色變成綠色。 您預期和 [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) 有關，這是正確的。 不過，影響物件色彩的 UI 元素上沒有任何屬性真正是 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 類型， 而是 [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 類型。 所以，動畫真正需要針對的是 [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) 類別的 [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) 屬性，這是 **Brush** 衍生的類型，通常用於這些與色彩相關的 UI 屬性。 以下是為動畫的屬性目標產生屬性路徑的樣子：
 
@@ -333,7 +331,6 @@ myStoryBoard.Begin()
  
 
  
-
 
 
 

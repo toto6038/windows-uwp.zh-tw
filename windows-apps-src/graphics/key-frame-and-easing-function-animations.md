@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2eb40a8787479e6abd03ef2f0adb2d7462bfef16
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7b0eca20b947a69d1e5f2125de8a376594a40320
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>主要畫面格動畫和 Easing 函式動畫
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 線性主要畫面格動畫、含 **KeySpline** 值的主要畫面格動畫或 Easing 函式是用於類似情況的三種不同技術：建立腳本動畫比較複雜，要使用從開始狀態到結束狀態的非線性動畫行為。
@@ -81,7 +79,7 @@ ms.lasthandoff: 02/07/2017
 
 曲線主要畫面格會根據 **KeySpline** 屬性的值，在值之間建立可變動的轉換。 這個屬性會指定貝茲曲線的第一個和第二個控制點，以說明動畫的加速方式。 基本上，[**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) 會定義一段時間的函式關係，而此函式-時間圖形就是該貝茲曲線的形狀。 通常您會在 XAML shorthand 屬性字串中指定 **KeySpline** 值，共有四個 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值，以空格或逗號分隔。 這些值是貝茲曲線兩個控制點的 "X,Y" 組。 "X" 是時間，而 "Y" 是值的函式修飾詞。 每個值都應該介於 0 到 1 (含) 之間。 如果沒有對 **KeySpline** 進行控制點修改，則從 0,0 到 1,1 的直線就代表線性內插補點一段時間的函式。 您的控制點會變更該曲線的形狀，因此變更曲線動畫一段時間的函式行為。 這要以圖形來看最為清楚。 您可以在瀏覽器執行 [Silverlight 主要曲線視覺化檢視範例](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)，看看控制點如何修改曲線，以及用它當作 **KeySpline** 值時，範例動畫如何執行。
 
-下一個範例示範套用到動畫的三個不同主要畫面格，最後一個是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值 ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)) 的主要曲線動畫。 請注意 **KeySpline** 所套用的字串 "0.6, 0.0 0.9, 0.00"。 這會產生一個曲線，動畫一開始看起來執行得很慢，但會在 **KeyTime** 到達之前迅速到達該值。
+下一個範例示範套用到動畫的三個不同主要畫面格，最後一個是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 值 ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)) 的主要曲線動畫。 請注意 **KeySpline** 所套用的字串 "0.6,0.0 0.9,0.00"。 這會產生一個曲線，動畫一開始看起來執行得很慢，但會在 **KeyTime** 到達之前迅速到達該值。
 
 ```xml
 <Storyboard x:Name="myStoryboard">

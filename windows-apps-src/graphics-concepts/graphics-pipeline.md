@@ -11,13 +11,10 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 72e4985481f464cd45c13fd390d27c4ba0e7c618
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: af583deb51b93bffc05c4371466fa8412bb0476d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="graphics-pipeline"></a>圖形管線
 
 
@@ -414,4 +411,3 @@ Direct3D 圖形管線專為即時遊戲應用程式產生圖形而設計。 透�
  
 
  
-

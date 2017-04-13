@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c29c05e7397e87851ebb0fa5fa29df3b9b58907b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: adfd360c22fd6737d9e95e6e3153f4e2767a4c99
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder 選項參考
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文列出可搭配 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 使用的編碼選項。 編碼選項是由它的名稱和值所定義，其中的名稱是一個字串，而值則是特定資料類型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871))。 如需使用影像的資訊，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。
 
@@ -44,7 +41,6 @@ ms.lasthandoff: 02/07/2017
 * [支援的轉碼器](supported-codecs.md)
 
  
-
 
 
 

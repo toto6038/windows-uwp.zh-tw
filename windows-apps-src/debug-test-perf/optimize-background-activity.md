@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 045dfeb4696a4854b114d88da2a2cbb75d621a58
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="optimize-background-activity"></a>最佳化背景活動
 
 通用 Windows app 應該以一致的方式在所有裝置系列上正常執行。 在電池供電的裝置上，耗用電力是影響使用者對您 app 整體體驗的重要因素。 全天候的電池使用時間對每位使用者而言是令人滿意的功能，但還是需要裝置上安裝的所有軟體 (包括您自己的軟體) 所提供的效率。 
@@ -46,7 +43,7 @@ ms.lasthandoff: 02/07/2017
 
 使用維護觸發程序。 不使用 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.systemtrigger.aspx) 物件，改用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.maintenancetrigger.aspx) 物件來判斷背景工作啟動時機。 使用維護觸發程序的工作只有在裝置連接上 AC 電源時才能執行，並且能讓它們執行更長的時間。 如需指示，請參閱[使用維護觸發程序](https://msdn.microsoft.com/windows/uwp/launch-resume/use-a-maintenance-trigger)。
 
-使用 **BackgroundWorkCostNotHigh** 系統條件類型。 必須符合系統條件，才能執行背景工作 (如需詳細資訊，請參閱[設定執行背景工作的條件](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task))。 背景工作成本是一種度量單位，可代表執行背景工作的*「相對」*能源影響。 將裝置接上 AC 電源時正在執行的工作會標示為**低** (對電腦有一些/沒有影響)。 當裝置是以電池電力執行且螢幕為關閉狀態時正在執行的工作會標示為**高**，因為想必當時在裝置上執行的程式活動應該很少，所以背景工作會有更大的相對成本。 當裝置是以電池電力執行且螢幕為*「開啟」*狀態時正在執行的工作會標示為**中**，因為想必當時已經有一些程式活動正在執行，而背景工作會多增加一些能源成本。 **BackgroundWorkCostNotHigh** 系統條件只會延遲您工作的執行功能，直到螢幕開啟或裝置已連接上 AC 電源為止。
+使用 **BackgroundWorkCostNotHigh** 系統條件類型。 必須符合系統條件，才能執行背景工作 (如需詳細資訊，請參閱[設定執行背景工作的條件](https://msdn.microsoft.com/windows/uwp/launch-resume/set-conditions-for-running-a-background-task))。 背景工作成本是一種度量單位，可代表執行背景工作的*相對*能源影響。 將裝置接上 AC 電源時正在執行的工作會標示為**低** (對電腦有一些/沒有影響)。 當裝置是以電池電力執行且螢幕為關閉狀態時正在執行的工作會標示為**高**，因為想必當時在裝置上執行的程式活動應該很少，所以背景工作會有更大的相對成本。 當裝置是以電池電力執行且螢幕為*「開啟」*狀態時正在執行的工作會標示為**中**，因為想必當時已經有一些程式活動正在執行，而背景工作會多增加一些能源成本。 **BackgroundWorkCostNotHigh** 系統條件只會延遲您工作的執行功能，直到螢幕開啟或裝置已連接上 AC 電源為止。
 
 ## <a name="test-battery-efficiency"></a>測試電池效率
 
@@ -56,5 +53,4 @@ ms.lasthandoff: 02/07/2017
 
 * [建立及註冊跨處理序的背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)  
 * [規劃效能](https://msdn.microsoft.com/windows/uwp/debug-test-perf/planning-and-measuring-performance)  
-
 

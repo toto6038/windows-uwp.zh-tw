@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: 0309c7a1-8e4c-4326-813a-cbd9f8b8300d
-description: "本文示範如何建立、排程及管理媒體播放應用程式的媒體中斷。"
+description: "本文示範如何建立、排程及管理媒體播放 app 的媒體中斷。"
 title: "建立、排程與管理媒體中斷"
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 8d4e9a87009b50538adac2357badc0a7dfe8f88c
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 439d39dab1b628ff484de587f47a3cf9129d639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-schedule-and-manage-media-breaks"></a>建立、排程與管理媒體中斷
 
-本文示範如何建立、排程及管理媒體播放應用程式的媒體中斷。 媒體中斷通常是用來將音訊或視訊廣告插入媒體內容。 從 Windows 10 版本 1607 開始，您可以使用 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 類別，快速且輕鬆地將媒體中斷新增至任何您用來播放 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) 的 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer)。
+本文示範如何建立、排程及管理媒體播放 app 的媒體中斷。 媒體中斷通常是用來將音訊或視訊廣告插入媒體內容。 從 Windows 10 版本 1607 開始，您可以使用 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 類別，快速且輕鬆地將媒體中斷新增至任何您用來播放 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) 的 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem)。
 
 
 當您排程一或多個媒體中斷之後，系統就會自動在播放期間的指定時間播放您的媒體內容。 **MediaBreakManager** 提供事件，讓您的 app 可以在媒體中斷開始、結束，或當使用者略過它們時加以回應。 您也可以針對媒體中斷存取 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession)，以監視下載與緩衝處理進度更新等事件。
@@ -109,7 +106,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

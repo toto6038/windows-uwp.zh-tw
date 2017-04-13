@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 1d15bfb6bfed16d1b71313fd5a5f29ceeef3bd3e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b460a20dd88da1745008ea84fe252137df8a82d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="receive-data"></a>接收資料
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
@@ -28,8 +25,8 @@ ms.lasthandoff: 02/07/2017
 當使用者叫用分享時，系統會顯示可能的目標 app 的清單。 為了要顯示在清單上，您的 app 必須宣告它支援分享協定。 這會讓系統知道您的 app 能夠接收內容。
 
 1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  開啟 [宣告]**** 索引標籤。
-3.  從 [可用宣告]**** 清單中選擇 [分享目標]****，然後選取 [新增]****。
+2.  開啟 **\[宣告\]** 索引標籤。
+3.  從 **\[可用宣告\]** 清單中選擇 **\[分享目標\]**，然後選取 **\[新增\]**。
 
 ## <a name="choose-file-types-and-formats"></a>選擇檔案類型和格式
 
@@ -40,13 +37,13 @@ ms.lasthandoff: 02/07/2017
 設定檔案類型：
 
 1.  開啟資訊清單檔案。 這個檔案的命名格式應該像這樣 **package.appxmanifest**。
-2.  在 [宣告]**** 頁面的 [支援的檔案類型]**** 區段中，選取 [加入新的]****。
-3.  輸入想要支援的副檔名，例如 .docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 [SupportsAnyFileType]**** 核取方塊。
+2.  在 **\[宣告\]** 頁面的 **\[支援的檔案類型\]** 區段中，選取 **\[加入新的\]**。
+3.  輸入想要支援的副檔名，例如 .docx。 您必須加上句點 (.)。 如果想要支援所有檔案類型，請選取 **\[SupportsAnyFileType\]** 核取方塊。
 
 設定資料格式：
 
 1.  開啟資訊清單檔案。
-2.  開啟 [宣告]**** 頁面的 [資料格式]**** 區段，然後選取 [加入新的]****。
+2.  開啟 **\[宣告\]** 頁面的 **\[資料格式\]** 區段，然後選取 **\[加入新的\]**。
 3.  輸入支援的資料格式名稱，例如 Text。
 
 ## <a name="handle-share-activation"></a>處理分享啟用
@@ -103,7 +100,7 @@ shareOperation.ReportError("Could not reach the server! Try again later.");
 shareOperation.ReportCompleted();
 ```
 
-當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者選取 [分享]**** 按鈕後才會呼叫 **ReportStarted**。
+當使用這些方法時，您通常會依照上述順序呼叫這些方法，而且不要呼叫它們超過一次。 不過，有時目標應用程式可能會先呼叫 [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved)，之後才呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted)。 例如，應用程式可能會在啟用處理常式的工作期間抓取資料，但直到使用者選取 **\[分享\]** 按鈕後才會呼叫 **ReportStarted**。
 
 ## <a name="return-a-quicklink-if-sharing-was-successful"></a>如果分享成功，則傳回 QuickLink
 
@@ -147,4 +144,3 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
 * [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
-

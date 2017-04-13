@@ -2,21 +2,17 @@
 title: "串流資源紋理取樣功能"
 description: "串流資源紋理取樣功能包含取得有關對應區域的著色器狀態回饋、檢查存取的所有資料是否都在資源中對應、鉗制以協助著色器避免 mipmap 串流資源中已知為非對應的區域，以及探索整個紋理篩選足跡的完全對應最低 LOD。"
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
-keywords:
-- "串流資源紋理取樣功能"
+keywords: "串流資源紋理取樣功能"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8bcd4ec264dce2962b9057e1f04309d54f3bf3d6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resources-texture-sampling-features"></a>串流資源紋理取樣功能
 
 
@@ -81,7 +77,6 @@ LOD 追蹤的最小/最大篩選公用程式可能對其他用途有用，例如
  
 
  
-
 
 
 

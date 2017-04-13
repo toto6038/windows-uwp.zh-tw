@@ -2,21 +2,17 @@
 title: "磚集區可用的作業"
 description: "磚集區的作業包括調整磚集區的大小、提供資源 (為整個磚集區暫時將記憶體讓給系統使用) 以及回收資源。"
 ms.assetid: 90347F7F-C991-4287-BD70-494533ECDC8A
-keywords:
-- "磚集區可用的作業"
+keywords: "磚集區可用的作業"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 414e6a2f224d7c171b2268fba58954f7ebcbea6f
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: e144b42782f8479bc55dc22f8505c7cfa4455713
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="operations-available-on-tile-pools"></a>磚集區可用的作業
 
 
@@ -37,7 +33,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

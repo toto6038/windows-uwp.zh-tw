@@ -2,21 +2,17 @@
 title: "紋理篩選"
 description: "當一個原始物件透過將 3D 原始物件對應到 2D 畫面上進行轉譯時，紋理篩選會為原始物件的 2D 轉譯影像中的每個像素產生色彩。"
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
-keywords:
-- "紋理篩選"
+keywords: "紋理篩選"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 97b2dc04c518bfec4b09a50707c08767932f05c6
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-filtering"></a>紋理篩選
 
 
@@ -56,11 +52,11 @@ Direct3D 支援以下紋理篩選方法。
 </tr>
 <tr class="even">
 <td align="left"><p>[雙線性紋理篩選](bilinear-texture-filtering.md)</p></td>
-<td align="left"><p><em>「雙線性篩選」</em>會計算最接近取樣點的 4 個材質之加權平均值。 此種篩選的方式比最近點篩選更加準確及常見。 由於這種方式已在現代的圖形硬體內實作，因此很有效率。</p></td>
+<td align="left"><p>「線性篩選」<em></em>會計算最接近取樣點的 4 項材質之加權平均值。 此篩選的方式比最近點篩選更準確和常見。 由於這種方式已在現代的圖形硬體內實作，因此很有效率。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[非等向性紋理篩選](anisotropic-texture-filtering.md)</p></td>
-<td align="left"><p><em>非等向性</em>是在以相對於螢幕平面的角度，定向其表面的 3D 物件中的材質可見到的一種失真。 當非等向性原始物件中的像素對應到材質時，其形狀即會扭曲。</p></td>
+<td align="left"><p><em>非等向性</em>是材質中可見的失真，屬於角度以螢幕平面為方向的 3D 物件表面。 當非等向性原始物件中的像素對應到材質時，其形狀即會扭曲。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[使用 Mipmap 進行紋理篩選](texture-filtering-with-mipmaps.md)</p></td>
@@ -79,7 +75,6 @@ Direct3D 支援以下紋理篩選方法。
  
 
  
-
 
 
 

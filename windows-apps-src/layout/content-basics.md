@@ -12,18 +12,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9bb39b117fe4c4e95616c06921b05199e153cddd
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0086078b2ca25f3c69c7a6e3034d99479f6d5602
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-任何一種應用程式的主要用途都是讓使用者存取內容：在相片編輯應用程式中，內容是相片；在旅遊應用程式中，內容是地圖與旅遊地點的相關資訊；以此類推。 瀏覽元素提供內容的存取；命令元素可以讓使用者與內容互動；內容元素顯示實際的內容。
+任何一種 app 的主要用途都是讓使用者存取內容：在相片編輯 app 中，內容是相片；在旅遊 app 中，內容是地圖與旅遊地點的相關資訊；以此類推。 瀏覽元素提供內容的存取；命令元素可以讓使用者與內容互動；內容元素顯示實際的內容。
 
 本文提供針對三種內容案例的內容設計建議。
 
@@ -126,7 +123,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

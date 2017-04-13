@@ -9,20 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 34bac5b7332bcc258c76f15a6005f82f545eef4d
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 7bf47b166dfd05b906b37deded909d5a3b26ac6e
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="http-live-streaming-hls-tag-support"></a>HTTP 即時資料流 (HLS) 標記支援
 下表列出適用於 UWP 應用程式支援的 HLS 標記。
 
 > [!NOTE] 
 > 以 "X-" 開頭的自訂標記可做為定時中繼資料來存取，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)文章中所述。
 
-|標記 |HLS 通訊協定版本所引進|HLS 通訊協定文件草稿版本|用戶端上的必要項|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1606 |
+|標記 |HLS 通訊協定版本所引進|HLS 通訊協定文件草稿版本|用戶端上的必要項|7 月發行的 Windows 10|Windows 10，版本 1511|Windows 10，版本 1607 |
 |---------------------|-----------|--------------|---------|--------------|-----|-----|
 |4.3.1.  基本標記                 |             |                   |         |             |     |    |
 | 4.3.1.1.  EXTM3U |1|0|必要|支援|支援|支援|
@@ -90,7 +87,6 @@ ms.lasthandoff: 02/08/2017
  
 
  
-
 
 
 

@@ -3,7 +3,7 @@ author: Jwmsft
 Description: "日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。"
 title: "日期選擇器"
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
-isNew: true
+isNew: True
 label: Date picker
 template: detail.hbs
 ms.author: jimwalk
@@ -12,11 +12,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 19551174cebd33785ac21910b52adf31e354373b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 114e91276ee4f080ead825b655fc05fcf460bacb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="date-picker"></a>日期選擇器
 
@@ -72,4 +70,3 @@ birthDatePicker.Header = "Date of birth";
 - [行事曆日期選擇器](calendar-date-picker.md)
 - [行事曆檢視](calendar-view.md)
 - [時間選擇器](time-picker.md)
-

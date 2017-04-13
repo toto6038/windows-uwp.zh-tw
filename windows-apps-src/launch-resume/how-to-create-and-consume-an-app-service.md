@@ -9,22 +9,21 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3dcf6a8191553deac5821346718a202bc362c7ff
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: fe6d70394af430e34e26b3fdbce2da61ca0572b0
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-consume-an-app-service"></a>建立和取用 App 服務
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何撰寫可為其他通用 Windows 平台 (UWP) app 提供服務的 UWP app，以及如何取用這些服務。
 
-從 Windows 10 版本 1607 開始，您便可以建立與主控 App 在相同處理程序中執行的應用程式服務。 本文重點為建立在個別處理序中執行的應用程式服務。 如需有關與提供者在相同處理序中執行之應用程式服務的詳細資訊，請參閱[轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md)。
+從 Windows10 版本 1607 開始，您便可以建立與主控 App 在相同處理程序中執行的應用程式服務。 本文重點為建立在個別處理序中執行的應用程式服務。 如需有關與提供者在相同處理序中執行之應用程式服務的詳細資訊，請參閱[轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md)。
+
+如需更多 App 服務的範例，請參閱[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)。
 
 ## <a name="create-a-new-app-service-provider-project"></a>建立新的應用程式服務提供者專案
 
@@ -382,5 +381,5 @@ namespace MyAppService
 ## <a name="related-topics"></a>相關主題
 
 * [轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md)
-* [使用背景工作支援 App](support-your-app-with-background-tasks.md)
-
+* [使用背景工作支援 app](support-your-app-with-background-tasks.md)
+* [通用 Windows 平台 (UWP) app 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

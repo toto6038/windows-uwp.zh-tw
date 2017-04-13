@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: b771d452-c3ac-4d97-8482-eaf81bf34306
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 6be02f9ec4163df510827552e04be78fffe1a8a5
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 6bcc81d80bb3e2167b6d6e5ee078279bd830f04c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="inputs-and-devices"></a>輸入和裝置
 
@@ -71,7 +69,7 @@ UWP 應用程式可自動處理各種輸入並在各種不同的裝置上執行 
 <div class="side-by-side-content-right">
 <p>
 <b>[鍵盤](keyboard-interactions.md)</b><br/>
-鍵盤輸入是 App 整體使用者互動體驗的一個重要部分。 對於某些行動不便或認為使用鍵盤與 App 互動較有效率的使用者來說，鍵盤是不可或缺的。
+鍵盤輸入是應用程式整體使用者互動體驗的一個重要部分。 對於某些行動不便或認為使用鍵盤與應用程式互動較有效率的使用者來說，鍵盤是不可或缺的。
 </p>
 </div>
 </div>
@@ -105,7 +103,7 @@ UWP 包含一些可處理觸控輸入的不同機制，所有這些機制都可�
 <div class="side-by-side-content-right">
 <p>
 <b>[遊戲台與遙控器](gamepad-and-remote-interactions.md)</b><br/>
-UWP app 現在支援遊戲台與遙控器輸入。 遊戲台與遙控器是 Xbox 和 TV 體驗的主要輸入裝置。
+UWP 應用程式現在支援遊戲台與遙控器輸入。 遊戲台與遙控器是 Xbox 和 TV 體驗的主要輸入裝置。
 </p>
 </div>
 </div>
@@ -115,7 +113,7 @@ UWP app 現在支援遊戲台與遙控器輸入。 遊戲台與遙控器是 Xbox
 <div class="side-by-side-content">
 <p>
 <b>[多重輸入](multiple-input-design-guidelines.md)</b><br/>
-為了儘可能配合較多的使用者和裝置，建議您將 App 設計成可以與越多的輸入類型 (手勢、語音、觸控、觸控板、滑鼠及鍵盤) 搭配使用越好。 這樣會最大化彈性、可用性及可存取性。
+為了儘可能配合較多的使用者和裝置，建議您將應用程式設計成可以與越多的輸入類型 (手勢、語音、觸控、觸控板、滑鼠及鍵盤) 搭配使用越好。 這樣會最大化彈性、可用性及可存取性。
 </p>
 </div>
 </div>
@@ -141,13 +139,13 @@ UWP app 現在支援遊戲台與遙控器輸入。 遊戲台與遙控器是 Xbox
 <div class="side-by-side-content">
 <div class="side-by-side-content-left">
 <p><b>[自訂文字輸入](custom-text-input.md)</b><br/>
-Windows.UI.Text.Core 命名空間中的核心文字 API 可讓 UWP app 接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這會讓 App 能夠接收採用任何語言及來自任何輸入類型 (例如鍵盤、語音或手寫筆) 的文字。
+Windows.UI.Text.Core 命名空間中的核心文字 API 可讓 UWP 應用程式接收來自 Windows 裝置上所支援之任何文字服務的文字輸入。 這會讓 App 能夠接收採用任何語言及來自任何輸入類型 (例如鍵盤、語音或手寫筆) 的文字。
 </p>
 </div>
 <div class="side-by-side-content-right">
 <p>
 <b>[選取文字和影像](guidelines-for-textselection.md)</b><br/>
-本文描述如何選取及操作文字、影像以及控制項，並提供在 App 中使用這些機制時，所應考慮的使用者經驗指導方針。
+本文說明如何選取及操作文字、影像以及控制項，並提供在應用程式中使用這些機制時，所應考慮的使用者經驗指導方針。
 </p>
 </div>
 </div>
@@ -173,7 +171,7 @@ Windows.UI.Text.Core 命名空間中的核心文字 API 可讓 UWP app 接收來
 <div class="side-by-side-content-right">
 <p>
 <b>[旋轉](guidelines-for-rotation.md)</b><br/>
-本文描述新的 Windows 旋轉 UI，並提供在 UWP app 中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
+本文說明旋轉的新 Windows UI，並提供在 UWP 應用程式中使用這項新的互動機制時，所應考慮的使用者經驗指導方針。
 </p>
 </div>
 </div>
@@ -183,7 +181,7 @@ Windows.UI.Text.Core 命名空間中的核心文字 API 可讓 UWP app 接收來
 <div class="side-by-side-content">
 <div class="side-by-side-content-left">
 <p><b>[目標預測](guidelines-for-targeting.md)</b><br/>
-Windows 中的觸控目標預測使用觸控數位板所偵測到之每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的一組輸入資料可用來提高判斷使用者意向 (或最有可能的) 目標時的準確度。
+Windows 中的觸控目標預測，使用觸控數位板所偵測到每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的一組輸入資料可用來提高判斷使用者意向 (或最有可能的) 目標時的準確度。
 </p>
 </div>
 <div class="side-by-side-content-right">
@@ -196,7 +194,7 @@ Windows 中的觸控目標預測使用觸控數位板所偵測到之每一根手
 
 ## <a name="devices"></a>裝置
 
-認識支援 UWP app 的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 針對特定裝置進行設計時，主要的考量包括應用程式在該裝置上將如何顯示、將在該裝置上的何處使用應用程式、何時使用和如何使用，以及使用者將如何與該裝置互動。
+認識支援 UWP 應用程式的裝置，可協助您針對各種尺寸提供最佳的使用者體驗。 針對特定裝置進行設計時，主要的考量包括應用程式在該裝置上將如何顯示、將在該裝置上的何處使用應用程式、何時使用和如何使用，以及使用者將如何與該裝置互動。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
@@ -210,4 +208,3 @@ Windows 中的觸控目標預測使用觸控數位板所偵測到之每一根手
   </div>
 </div>
 </div>
-

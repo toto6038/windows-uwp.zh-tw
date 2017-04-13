@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 0b1dfaeb098ac4b73c89f4d1a51ec658312aee4e
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 722389a7440110eaffa5458e8ef5e85fccb39671
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="listview-and-gridview-data-virtualization"></a>ListView 和 GridView 資料虛擬化
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **注意** 如需詳細資訊，請參閱 //build/ 工作階段[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/Events/Build/2013/3-158)。
 
@@ -83,7 +81,6 @@ ms.lasthandoff: 02/07/2017
 -   當查詢結果變更時，服務會提供哪種通知？ 如果項目插入索引 33，您是否會知道？ 如果您的服務根據金鑰加位移支援查詢，可能比只使用索引更好。
 -   您想要在預先擷取項目中擁有什麼樣的智慧？ 您是否要嘗試和追蹤捲動的方向和速度，以預測所需的項目？
 -   您對於清除快取的積極程度？ 這是記憶體與體驗之間的取捨問題。
-
 
 
 

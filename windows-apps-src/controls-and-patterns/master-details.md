@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 96f9f9855dba48203e4372cef88d1f6ab7d435f5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -95,4 +93,3 @@ ms.lasthandoff: 02/07/2017
 - [搜尋](search.md)
 - [應用程式列和命令列](app-bars.md)
 - [**ListView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
-

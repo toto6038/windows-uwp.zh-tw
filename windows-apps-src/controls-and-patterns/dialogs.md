@@ -11,11 +11,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: e76ae1e85f1512a939f2b7ee50ed205c0c55605b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: ba29bd309b3fdaeeee5bfa143a0f74a58b8bd1c5
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
@@ -77,7 +75,7 @@ ms.lasthandoff: 02/08/2017
   <div class="side-by-side-content-left">
    <p><b>適合使用對話方塊的情況...</b> <br/>
 <ul>
-<li>表示使用者「必須」****先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
+<li>表示使用者**必須**先閱讀並確認才能繼續執行工作的重要資訊。 範例包含：
 <ul>
   <li>當使用者的安全性可能受到破壞時</li>
   <li>當使用者將要永久修改重要資產時</li>
@@ -104,7 +102,7 @@ ms.lasthandoff: 02/08/2017
 </div>
 
 <div class="microsoft-internal-note">
-消失關閉控制項會將鍵盤和遊戲台焦點困在暫時性 UI 內，直到關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 此行為可以使用新的 `LightDismissOverlayMode` 屬性進行修改。 根據預設，暫時性 UI 將在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律 [開啟]**** 或一律 [關閉]****。
+消失關閉控制項會將鍵盤和遊戲台焦點困在暫時性 UI 內，直到關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 此行為可以使用新的 `LightDismissOverlayMode` 屬性進行修改。 根據預設，暫時性 UI 將在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇將重疊強制為一律 **\[開啟\]** 或一律 **\[關閉\]**。
 
 ```xaml
 <MenuFlyout LightDismissOverlayMode=\"Off\">
@@ -314,4 +312,3 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 - [功能表和操作功能表](menus.md)
 - [**Flyout 類別**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 - [**ContentDialog 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
-

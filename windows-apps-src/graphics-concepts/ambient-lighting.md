@@ -2,21 +2,17 @@
 title: "環境光線"
 description: "環境光線為場景提供定值光線。"
 ms.assetid: C34FA65A-3634-4A4B-B183-4CDA89F4DC95
-keywords:
-- "環境光線"
+keywords: "環境光線"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 77865a483f226fba912c03e2f9abe17eaa7fbee0
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: c03e3a67af7da1326e254a687c77c9c0fd1d5403
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="ambient-lighting"></a>環境光線
 
 
@@ -73,7 +69,7 @@ Ambient.a = 0.0f;
 
 根據方程式，為物件端點產生的色彩是材料色彩和淺色的組合。
 
-下方兩個圖例顯示材料色彩 (灰色)，以及淺色 (鮮紅)。
+下方兩個圖例顯示材質色彩 (灰色)，以及淺色 (鮮紅)。
 
 ![灰球體圖例](images/amb1.jpg)![紅色球體圖例](images/lightred.jpg)
 
@@ -91,7 +87,6 @@ Ambient.a = 0.0f;
  
 
  
-
 
 
 

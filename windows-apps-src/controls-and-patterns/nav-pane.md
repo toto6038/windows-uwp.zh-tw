@@ -11,32 +11,20 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a5f15129c424c92ac537116458c8433f6c96fa87
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
+ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
+translationtype: HT
 ---
 # <a name="nav-panes"></a>瀏覽窗格
-
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 瀏覽窗格是一種瀏覽模式，它可以有多個最上層瀏覽項目，同時節省螢幕空間。 瀏覽窗格廣泛使用於行動裝置應用程式，但也適用於較大的螢幕。 以重疊模式使用時，窗格會維持摺疊直到使用者按下按鈕，這適用於較小的螢幕。 以停駐模式使用時，窗格會維持開啟，如果有足夠的螢幕實際可用空間時，這可以提高使用效率。
 
 ![瀏覽窗格的範例](images/navHero.png)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**SplitView 類別**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-<li> </li>
-</ul>
-</div>
 
+**重要 API**
+
+* [**SplitView 類別**](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>這是正確的模式嗎？
 
@@ -54,9 +42,6 @@ ms.lasthandoff: 02/07/2017
 
 若要嘗試實作此模式的程式碼，請從 GitHub 下載 [XAML 瀏覽解決方案](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlNavigation)。
 
-<div class="microsoft-internal-note">
-瀏覽窗格和「漢堡」的紅線在可在 [UNI](http://uni/DesignDepot.FrontEnd/#/Search?c=t&t=Windows%2BRS1%2BControls&f=NavPane_Hamburger) 上取得。
-</div>
 
 ### <a name="pane"></a>窗格
 
@@ -132,4 +117,3 @@ ms.lasthandoff: 02/07/2017
  
 
  
-

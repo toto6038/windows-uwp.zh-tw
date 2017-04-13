@@ -1,7 +1,7 @@
 ---
 author: joannaleecy
 title: "遊戲的獲利"
-description: "在 Windows 10 上針對通用 Windows 平台 (UWP) 遊戲實作橫幅廣告、插入式影片廣告，及在應用程式內購買。"
+description: "在 Windows10 上針對通用 Windows 平台 (UWP) 遊戲實作橫幅廣告、插入式影片廣告，及在應用程式內購買。"
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 獲利"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: eccff6f037890fdd375eb150520db99a67aa718d
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -48,18 +46,18 @@ Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下�
 
 ## <a name="in-game-purchases"></a>遊戲內購買
 
-遊戲內購買是在遊戲中購買的產品。 它們一般通稱為_在應用程式內購買_。 在 Windows 市集中，這些產品稱為_附加元件_。 您可以透過 Windows 開發人員中心儀表板[發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 您也會需要在遊戲的程式碼中啟用附加元件。
+遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Windows 市集中，這些產品稱為_附加元件_。 您可以透過 Windows 開發人員中心儀表板[發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 您也會需要在遊戲的程式碼中啟用附加元件。
 
 ### <a name="types-of-add-ons"></a>附加元件的類型
 
 您在市集中可建立的附加元件有兩種：_耐久品_或_消費性產品_。 耐久品是可以持續一段指定時間的項目，且在它到期之前只能購買一次。 消費性產品是可以不斷重複購買的項目。
 
-在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows 10 版本 1607 開始可供使用)。 對於開發人員管理的消費性產品，您有責任為玩家追蹤項目的餘額；對於市集管理的消費性產品，Windows 市集會為您追蹤項目的餘額。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows10 版本 1607 開始可供使用)。 對於開發人員管理的消費性產品，您有責任為玩家追蹤項目的餘額；對於市集管理的消費性產品，Windows 市集會為您追蹤項目的餘額。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>建立遊戲內購買
 
-最新的在應用程式內購買和授權資訊 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的一部分 (自 Windows 10 版本 1607 開始)。 如果您正在開發的新遊戲其目標是 1607 或更新版本，則我們建議您使用 __Windows.Services.Store__ 命名空間，因為它支援最新的附加元件類型且效能更好。
-它也被設計成與未來的 Windows 開發人員中心和市集所支援的產品類型及功能相容。 當針對舊版的 Windows 10 開發時，請改為使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間。
+最新的 App 內購買和授權資訊 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的一部分 (自 Windows10 版本 1607 開始)。 如果您正在開發的新遊戲其目標是 1607 或更新版本，則我們建議您使用 __Windows.Services.Store__ 命名空間，因為它支援最新的附加元件類型且效能更好。
+它也被設計成與未來的 Windows 開發人員中心和市集所支援的產品類型及功能相容。 當針對舊版的 Windows10 開發時，請改為使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間。
 
 如需詳細資訊，請移至 [App 內購買和試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 
@@ -85,7 +83,7 @@ Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下�
 
 #### <a name="create-a-package"></a>建立套件
 
-對於任何將要發佈的遊戲，都必須符合「Windows 應用程式認證」的最低要求。 您可以使用 [Windows 應用程式認證套件](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit) (是 Windows 10 SDK 的一部分)，針對遊戲執行測試以確認它隨時可發佈到市集。 如果您還沒下載包含 Windows 應用程式認證套件的 Windows 10 SDK，請移至 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
+對於任何將要發佈的遊戲，都必須符合「Windows 應用程式認證」的最低要求。 您可以使用 [Windows 應用程式認證套件](https://msdn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit) (是 Windows10 SDK 的一部分)，針對遊戲執行測試以確認它隨時可發佈到市集。 如果您還沒下載包含 Windows 應用程式認證套件的 Windows10 SDK，請移至 [Windows10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 
 建立可上傳到市集的檔案：
 
@@ -180,7 +178,7 @@ Microsoft Store Services SDK 中的 [AdControl](https://msdn.microsoft.com/libra
 |AdType             | AdUnitId  | AppId                              |
 |-------------------|-----------|------------------------------------|
 |橫幅廣告         |10865270   |3f83fe91-d6be-434d-a0ae-7351c5a997f1|
-|插入式廣告   |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
+|插入式廣告    |11389925   |d25517cb-12d4-4699-8bdc-52040c712cab|
 
 以下是一些在設計與實作程序中有助於您的最佳做法。
 
@@ -210,11 +208,11 @@ Smaato 可讓您將橫幅廣告整合到 UWP App 和遊戲。 下載 [SDK](https
 
 您可以使用 AdDuplex 在遊戲中實作橫幅廣告或插入式廣告。
 
-如需直接將 AdDuplex 整合到 Windows 10 XAML 專案的詳細資訊，請移至 AdDuplex 網站：
-* 橫幅廣告：[適用於 XAML 的 Windows 10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) (英文) 
-* 插入式廣告：[Windows 10 XAML AdDuplex 插入式廣告的安裝與用法](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage) (英文)
+如需直接將 AdDuplex 整合到 Windows10 XAML 專案的詳細資訊，請移至 AdDuplex 網站：
+* 橫幅廣告：[適用於 XAML 的 Windows10 SDK](https://adduplex.zendesk.com/hc/en-us/articles/204849031-Windows-10-SDK-for-XAML-apps-installation-and-usage) (英文) 
+* 插入式廣告：[Windows10 XAML AdDuplex 插入式廣告的安裝與用法](https://adduplex.zendesk.com/hc/en-us/articles/204849091-Windows-10-XAML-AdDuplex-Interstitial-Ad-Installation-and-Usage) (英文)
 
-如需將 AdDuplex SDK 整合到使用 Unity 建立的 Windows 10 UWP 遊戲中的詳細資訊，請參閱 [適用於 Unity App 之 Windows 10 SDK 的安裝與用法](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage) (英文)。
+如需將 AdDuplex SDK 整合到使用 Unity 建立的 Windows10 UWP 遊戲中的詳細資訊，請參閱 [適用於 Unity App 之 Windows10 SDK 的安裝與用法](https://adduplex.zendesk.com/hc/en-us/articles/207279435-Windows-10-SDK-for-Unity-apps-installation-and-usage) (英文)。
 
 ## <a name="maximize-your-games-potential-through-ad-campaigns"></a>透過廣告活動將遊戲的潛力最大化
 
@@ -225,8 +223,8 @@ Smaato 可讓您將橫幅廣告整合到 UWP App 和遊戲。 下載 [SDK](https
 |活動類型             | 您遊戲的廣告出現在...                                                                                                                                                                   |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |付費                      |符合您遊戲的裝置或類別的 App。                                                                                                                                                   |
-|免費社群            |其他同為加入社群廣告活動的開發人員所發佈的 App。 如需詳細資訊，請參閱[關於社群廣告](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)。|
-|自家免費                |僅限您已經發佈的 App。 如需詳細資訊，請參閱[關於自家廣告](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
+|免費社群               |其他同為加入社群廣告活動的開發人員所發佈的 App。 如需詳細資訊，請參閱[關於社群廣告](https://msdn.microsoft.com/windows/uwp/publish/about-community-ads)。|
+|自家免費                   |僅限您已經發佈的 App。 如需詳細資訊，請參閱[關於自家廣告](https://msdn.microsoft.com/windows/uwp/publish/about-house-ads)。                                                            |
 
 ## <a name="related-links"></a>相關連結
 

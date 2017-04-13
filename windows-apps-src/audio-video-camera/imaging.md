@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8aa20d434b4ea89d972712e48131e9a965476d1d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-edit-and-save-bitmap-images"></a>建立、編輯和儲存點陣圖影像
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 和 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 來載入及儲存影像檔，以及如何使用 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 物件來代表點陣圖影像。
@@ -101,7 +98,7 @@ ms.lasthandoff: 02/07/2017
 
 [!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
-因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
+因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 **\[屬性\]** 頁面、按一下 **\[建置\]** 屬性頁，然後選取 **\[容許 Unsafe 程式碼\]** 核取方塊。
 
 ## <a name="create-a-softwarebitmap-from-a-direct3d-surface"></a>從 Direct3D 外觀建立 SoftwareBitmap
 
@@ -132,7 +129,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

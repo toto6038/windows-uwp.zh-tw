@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5cd0b42f05ca246005b09faa0e926bc2e625d2c1
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 83ef423ce4e6fd57726879dd83a704c47cc43744
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="time-picker"></a>時間選擇器
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -69,4 +67,3 @@ arrivalTimePicker.Header = "Arrival time";
 - [行事曆日期選擇器](calendar-date-picker.md)
 - [行事曆檢視](calendar-view.md)
 - [日期選擇器](date-picker.md)
-

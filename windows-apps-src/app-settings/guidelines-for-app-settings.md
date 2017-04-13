@@ -11,15 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: e995023cd8a4216c60d5691f9f87be3aff9d8498
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 493e491bd16b7346046394d66587788caf06db4f
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
-
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
+
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 應用程式設定是應用程式中使用者可自訂的部分，存在於應用程式設定頁面中。 例如，新聞閱讀程式應用程式中的應用程式設定可讓使用者指定要顯示的新聞來源或畫面上顯示的欄數，而天氣應用程式設定可讓使用者選擇攝氏與華氏做為預設的度量單位。 本文說明建立和顯示應用程式設定的最佳做法。
 
@@ -142,7 +140,7 @@ ms.lasthandoff: 02/07/2017
 -   如果載入控制項或網頁內容需要時間，請使用不確定的進度控制項，向使用者指出資訊正在載入。 如需詳細資訊，請參閱[進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)。
 -   不要使用按鈕瀏覽或認可變更。 使用超連結瀏覽到其他頁面。與其使用按鈕來確認變更，不如在使用者關閉 [設定] 飛出視窗時，自動儲存對應用程式設定所做的變更。
 
-\[本文包含的部分資訊僅適用於通用 Windows 平台 (UWP) 應用程式及 Windows�10。 如需 Windows�8.1 指南，請下載 [Windows�8.1 指南 PDF](https://go.microsoft.com/fwlink/p/?linkid=258743)。\]
+
 
 ## <a name="related-articles"></a>相關文章
 
@@ -150,4 +148,3 @@ ms.lasthandoff: 02/07/2017
 * [進度控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465469)
 * [儲存和擷取應用程式資料](https://msdn.microsoft.com/library/windows/apps/mt299098)
 * [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-

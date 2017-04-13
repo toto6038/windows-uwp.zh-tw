@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d11efb262dfbdd604dc249f19ae35e4110369654
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4092969ce730e74ad2359dd0fd7ada9c9ef4c00a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="interaction-primer"></a>互動基本資訊
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -31,7 +28,7 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 
 ## <a name="surface-dial"></a>Surface Dial
 
-在 Windows 10 年度更新版中，我們引進了新的輸入裝置類別，稱為 Windows Wheel。 Surface Dial 是第一個這類裝置。 
+在 Windows10 年度更新版中，我們引進了新的輸入裝置類別，稱為 Windows Wheel。 Surface Dial 是第一個這類裝置。 
 
 ### <a name="device-support"></a>裝置支援
 
@@ -49,7 +46,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 ## <a name="cortana"></a>Cortana
 
-在 Windows 10 中，**Cortana** 擴充性可讓您處理使用者的語音命令，並啟動您的應用程式來執行單一動作。
+在 Windows10 中，**Cortana** 擴充性可讓您處理使用者的語音命令，並啟動您的應用程式來執行單一動作。
 
 ### <a name="device-support"></a>裝置支援
 
@@ -219,7 +216,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 
 鍵盤是文字的主要輸入裝置，對於某些行動不便的使用者，或是認為鍵盤是與應用程式互動更快速且更有效率之方式的使用者來說，通常是不可或缺。
 
-透過 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
+透過 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows10 行動裝置的新體驗)，使用者可將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
 
 ### <a name="device-support"></a>裝置支援
 
@@ -354,4 +351,3 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
  
 
  
-

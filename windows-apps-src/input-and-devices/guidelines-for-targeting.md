@@ -11,17 +11,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: fd4ba842a1d6f9eec6012a930a5dda5d7ff7c249
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: dbd5d649dbb9efd95b61f1cffa8266143c5bf2d9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="guidelines-for-targeting"></a>目標預測的指導方針
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-Windows 中的觸控目標預測，使用觸控數位板所偵測到每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
+Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指的完整接觸區域。 數位板所回報之較大、較複雜的輸入資料，可用於提高判斷使用者意向 (或最有可能的) 目標時的準確度。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -177,7 +174,6 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
  
 
  
-
 
 
 

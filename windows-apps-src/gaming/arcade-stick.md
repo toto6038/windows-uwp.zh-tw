@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 機台搖桿, 輸入"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: b0411dcf1fd75ec7dc31d29a39e95f5c26073953
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="arcade-stick"></a>機台搖桿
 
-此頁面說明使用 [Windows.Gaming.Input.ArcadeStick][arcadestick] 的 Xbox One 機台搖桿程式設計基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
+此頁面說明使用 [Windows.Gaming.Input.ArcadeStick][arcadestick] 的 Xbox One 電動搖桿程式設計基本知識，以及通用 Windows 平台 (UWP) 的相關 API。
 
 閱讀此頁面，即可了解：
 * 如何收集所連接電動搖桿和其使用者的清單
@@ -31,13 +28,13 @@ ms.lasthandoff: 02/07/2017
 
 電動搖桿為輸入裝置，價值在於重新產生直立式機台風格和其高精確度數位控制項。 電動搖桿是面對面格鬥和其他機台樣式遊戲的絕佳輸入裝置，並且適用於與全數位控制項搭配良好的任何遊戲。 在 Windows 10 和 Xbox One UWP 應用程式中，電動搖桿是由 [Windows.Gaming.Input][] 命名空間所支援。
 
-Xbox One 電動搖桿配備 8 向數位搖桿、六個 [動作]**** 按鈕，以及兩個 [特殊]**** 按鈕；其為全數位輸入裝置，且不支援類比控制項或震動。 Xbox One 電動搖桿也配備用來支援 UI 瀏覽的 [檢視]**** 和 [功能表]**** 按鈕，但不支援遊戲命令，也無法以搖桿按鈕輕鬆地進行存取。
+Xbox One 電動搖桿配備 8 向數位搖桿、六個**動作**按鈕，以及兩個**特殊**按鈕；其為全數位輸入裝置，且不支援類比控制項或震動。 Xbox One 電動搖桿也配備用來支援 UI 瀏覽的 **\[檢視\]** 和 **\[功能表\]** 按鈕，但不支援遊戲命令，也無法以搖桿按鈕輕鬆地進行存取。
 
 ### <a name="ui-navigation"></a>UI 瀏覽
 
 為了減輕支援不同輸入裝置進行使用者介面瀏覽的負擔，以及鼓勵遊戲與裝置之間的一致性，大部分「實體」__輸入裝置同時會當成稱為 [UI 瀏覽控制器](ui-navigation-controller.md)的不同「邏輯」__輸入裝置使用。 UI 瀏覽控制器提供跨輸入裝置之 UI 瀏覽命令的通用詞彙。
 
-當成 UI 瀏覽控制器使用時，電動搖桿會將瀏覽命令的[必要集](ui-navigation-controller.md#required-set)對應至搖桿以及 [檢視]****、[功能表]****、[動作 1]**** 和 [動作 2]**** 按鈕。
+當成 UI 瀏覽控制器使用時，電動搖桿會將瀏覽命令的[必要集](ui-navigation-controller.md#required-set)對應至搖桿以及 **\[檢視\]**、**\[功能表\]**、**\[動作 1\]** 和 **\[動作 2\]** 按鈕。
 
 | 瀏覽命令 | 電動搖桿輸入  |
 | ------------------:| ------------------- |
@@ -46,7 +43,7 @@ Xbox One 電動搖桿配備 8 向數位搖桿、六個 [動作]**** 按鈕，以
 |               向左 | 搖桿向左          |
 |              向右 | 搖桿向右         |
 |               檢視 | 檢視按鈕         |
-|               功能表 | 功能表按鈕         |
+|               Menu | 功能表按鈕         |
 |             接受 | 動作 1 按鈕     |
 |             取消 | 動作 2 按鈕     |
 
@@ -124,9 +121,9 @@ ArcadeStickReading reading = arcadestick->GetCurrentReading();
 
 ### <a name="reading-the-buttons"></a>讀取按鈕
 
-每個電動搖桿按鈕 (四向搖桿、六個 [動作]**** 按鈕和兩個 [特殊]**** 按鈕) 都會提供數位讀取來指出按下 ('向下) 或放開 (向上)。 為了更有效率，按鈕讀取並非作為個別布林值呈現，而是壓縮成由 [ArcadeStickButtons][] 列舉所呈現的單一位元欄位。
+每個電動搖桿按鈕 (四向搖桿、六個**動作**按鈕和兩個**特殊**按鈕) 都會提供數位讀取來指出按下 (向下) 或放開 (向上)。 為了更有效率，按鈕讀取並非作為個別布林值呈現，而是壓縮成由 [ArcadeStickButtons][] 列舉所呈現的單一位元欄位。
 
-> **注意**    電動搖桿配備用於 UI 瀏覽的其他按鈕，例如 [檢視]**** 和 [功能表]**** 按鈕。 這些按鈕不是 `ArcadeStickButtons` 列舉的一部分，而且只能將電動搖桿當成 UI 瀏覽裝置存取來進行讀取。 如需詳細資訊，請參閱 [UI 瀏覽裝置](ui-navigation-controller.md)。
+> **注意**    電動搖桿配備用於 UI 瀏覽的其他按鈕，例如 **\[檢視\]** 和 **\[功能表\]** 按鈕。 這些按鈕不是 `ArcadeStickButtons` 列舉的一部分，而且只能將電動搖桿當成 UI 瀏覽裝置存取來進行讀取。 如需詳細資訊，請參閱 [UI 瀏覽裝置](ui-navigation-controller.md)。
 
 按鈕值讀取自 [ArcadeStickReading][] 結構的 `Buttons` 屬性。 因為此屬性是位元欄位，所以使用位元遮罩來隔離感興趣按鈕的值。 設定對應位元時，即按下 (向下) 按鈕；否則為放開 (向上)。
 
@@ -167,4 +164,3 @@ if (ArcadeStickButtons::None == (reading.Buttons & ArcadeStickButtons::Action1))
 [getcurrentreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestick.getcurrentreading.aspx
 [arcadestickreading]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestickreading.aspx
 [arcadestickbuttons]: https://msdn.microsoft.com/library/windows/apps/windows.gaming.input.arcadestickbuttons.aspx
-

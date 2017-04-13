@@ -11,13 +11,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 6208b71b-37a7-40f5-91b0-19b665e7458a
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 19d4a4e00692bc983a56416951e82f71bf5f6be2
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 659a2871e540398d34b93c288d34fb80699c36c9
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="in-app-help-pages"></a>應用程式內說明頁面
 
 在大部分的情況下，說明最好是在應用程式內，於使用者選擇檢視它時顯示。
@@ -57,9 +54,8 @@ ms.lasthandoff: 02/08/2017
 
 -   **不教導基本知識︰**假設使用者已經知道如何使用所描述項目的基本概念。 釐清或提供更進一步的資訊十分有用。 但不告訴他們已經知道的資訊。
 -   **描述有趣的互動：**描述的一種最佳使用方式是教育使用者有關他們已知道的功能如何進行互動。 這可協助使用者深入了解他們已經想要使用的項目。
--   **不造成干擾：**描述與指示性 UI 一樣，需要避免干擾使用者使用應用程式的體驗。
+-   **不造成干擾：**描述與指示性 UI 一樣，需要避免干擾使用者使用 App 的體驗。
 
 ## <a name="related-articles"></a>相關文章
 
 * [應用程式說明的指導方針](guidelines-for-app-help.md)
-

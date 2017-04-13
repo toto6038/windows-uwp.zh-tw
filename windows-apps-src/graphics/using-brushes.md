@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bf3e4e169108f4cab98dcb460552daff8822c64c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 71bac3ed2c62df9b47bf16881acbc5e401697a5f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-brushes"></a>使用筆刷
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -78,7 +76,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="span-idlineargradientbrushesspanspan-idlineargradientbrushesspanspan-idlineargradientbrushesspanlinear-gradient-brushes"></a><span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線性漸層筆刷
 
-[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為「漸層軸」**。 您可以沿著使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
+[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) 繪製區域時所用的漸層是沿著一條線定義的。 這條線稱為*「漸層軸」*。 您可以沿著使用 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 物件的漸層軸來指定色彩及其位置。 根據預設，漸層軸從筆刷繪製區域的左上角延伸至右下角，形成一個對角陰影。
 
 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) 是漸層筆刷的基本建置組塊。 漸層停駐點會指定筆刷套用到繪製的區域時，漸層軸上的 [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 使用什麼 [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) 的筆刷。
 
@@ -108,7 +106,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="span-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanspan-idusetoolstomakegradientsspanuse-tools-to-make-gradients"></a><span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>使用工具製作漸層
 
-在了解線性漸層的運作方式之後，現在您可以利用 Visual Studio 或 Blend，簡化這些漸層的建立作業。 若要建立漸層，請在設計表面或 XAML 檢視中選取要套用漸層的物件。 展開 [筆刷]****，然後選取 [線性漸層]**** 索引標籤 (請參閱下一個螢幕擷取畫面)。
+在了解線性漸層的運作方式之後，現在您可以利用 Visual Studio 或 Blend，簡化這些漸層的建立作業。 若要建立漸層，請在設計表面或 XAML 檢視中選取要套用漸層的物件。 展開 **\[筆刷\]**，然後選取 **\[線性漸層\]** 索引標籤 (請參閱下一個螢幕擷取畫面)。
 
 ![使用 Visual Studio 建立線性漸層。](images/tool-gradient-brush-1.png)
 
@@ -179,7 +177,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
  
 
  
-
 
 
 

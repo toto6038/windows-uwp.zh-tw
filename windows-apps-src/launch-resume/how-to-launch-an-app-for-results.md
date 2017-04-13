@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ec46f3287deefca67dab96fe12b3380c7dbd6ed9
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8aa2070606f7ef077dfa4392d576f212b2f8ea84
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="launch-an-app-for-results"></a>啟動應用程式以取得結果
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -27,7 +24,7 @@ ms.lasthandoff: 02/07/2017
 -   [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 -   [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
-了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為「啟動 App 以取得結果」**。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 來啟動 App 以取得結果。
+了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為*「啟動 App 以取得結果」*。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 來啟動 App 以取得結果。
 
 在 Windows 10 中，新的 App 間通訊 API 讓 Windows App (以及 Windows Web App) 能夠使用它，來啟動某個 App 並交換資料與檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
 
@@ -112,7 +109,7 @@ private Windows.System.ProtocolForResultsOperation _operation = null;
 using Windows.ApplicationModel.Activation
 ```
 
-[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的應用程式所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
+[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 方法中的 [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) 物件包含呼叫的 app 所傳送的資料。 資料不能超過 100 KB 並儲存於 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 物件中。
 
 在下列範例程式碼中，啟動的 app 預期呼叫的 app 所傳送的資料會在名為 **TestData** 之機碼下方的 [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) 中，而這就是撰寫呼叫的 app 範例程式碼來傳送的原因。
 
@@ -208,4 +205,3 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
  
 
  
-

@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c7275475e245d8fd68eb2979c16d0afe6ddc4a4c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d8240af0a610541cea5352ed841a08eb7093db96
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessibility"></a>協助工具  
 
 
@@ -31,7 +28,7 @@ ms.lasthandoff: 02/07/2017
 
 | 文章 | 說明 |
 |---------|-------------|
-| [協助工具概觀](accessibility-overview.md) | 這篇文章提供 UWP app 協助工具案例相關概念和技術的概觀。 |
+| [協助工具概觀](accessibility-overview.md) | 這篇文章提供 UWP 應用程式協助工具案例相關概念和技術的概觀。 |
 | [設計通用軟體](designing-inclusive-software.md) | 了解如何透過適用於 Windows 10 的 UWP App 來改善通用設計。  在設計和建置通用軟體時請隨時考量提供無障礙功能。 |
 | [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) | 此文章是適用於開發無障礙 UWP 應用程式的藍圖。 |
 | [協助工具測試](accessibility-testing.md) | 確認 UWP 應用程式可提供無障礙功能的測試程序。 |
@@ -45,7 +42,6 @@ ms.lasthandoff: 02/07/2017
 | [自訂自動化對等](custom-automation-peers.md) | 說明使用者介面自動化的自動化對等觀念，以及如何提供自訂 UI 類別的自動化支援。 |
 | [控制項模式和介面](control-patterns-and-interfaces.md) | 本文列出 Microsoft 使用者介面自動化控制項模式、用戶端用來存取控制項模式的類別，以及介面提供者用來實作控制項模式的類別。 |
 
-<span id="related_topics"/>
 ## <a name="related-topics"></a>相關主題  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-
+* [開始使用朗讀器](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)

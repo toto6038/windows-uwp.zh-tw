@@ -2,21 +2,17 @@
 title: "擴散光源對應"
 description: "霧面表面有擴散光線反映。"
 ms.assetid: D02E76DB-1DA8-4B51-86EF-4DDB07C02541
-keywords:
-- "擴散光源對應"
+keywords: "擴散光源對應"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8084e603e979d54dace2f3f60aa43f48e8f1df05
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 8defe6c73c9e9d809d10a75ee6208ef6781f1162
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="diffuse-light-maps"></a>擴散光源對應
 
 
@@ -32,7 +28,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

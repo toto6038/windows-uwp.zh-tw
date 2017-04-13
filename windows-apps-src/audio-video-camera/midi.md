@@ -1,7 +1,7 @@
 ---
 author: drewbatgit
 ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
-description: "本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows 應用程式傳送及接收 MIDI 訊息。"
+description: "本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。"
 title: MIDI
 ms.author: drewbat
 ms.date: 02/08/2017
@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: bd494a814155d72642bb721a939fcc8c50668a2d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: bccc087b561699ec72bb99cd160d532b95c49530
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="midi"></a>MIDI
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文章示範如何列舉 MIDI (樂器數位介面) 裝置，並且從通用 Windows app 傳送及接收 MIDI 訊息。
@@ -138,14 +135,13 @@ ms.lasthandoff: 02/07/2017
 1.  在 **\[方案總管\]** 中您的專案底下，以滑鼠右鍵按一下 **\[參考\]**，然後選取 **\[加入參考\]**。
 2.  展開 **\[Universal Windows\]** 節點。
 3.  選取 [**擴充功能**]。
-4.  從擴充功能清單選取 [Microsoft General MIDI DLS for Universal Windows Apps]****。
+4.  從擴充功能清單選取 **\[Microsoft General MIDI DLS for Universal Windows Apps\]**。
     > [!NOTE] 
-    > 如果擴充功能有多個版本，請務必選取符合您 app 之目標的版本。 您可以在專案的 [屬性]、[應用程式]**** 索引標籤上查看設為 app 目標的 SDK 版本。
+    > 如果擴充功能有多個版本，請務必選取符合您 app 之目標的版本。 您可以在專案的 [屬性]、**\[應用程式\]** 索引標籤上查看設為 app 目標的 SDK 版本。
 
  
 
  
-
 
 
 

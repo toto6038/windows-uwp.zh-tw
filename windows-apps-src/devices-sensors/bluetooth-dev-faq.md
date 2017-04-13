@@ -9,11 +9,9 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 7394d211b580ad82689a79e7cbe4eb4dbf545f46
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 3dabc5ad2833eecfec1f397bdd5bf7f2b807a48d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 
@@ -47,5 +45,4 @@ ms.lasthandoff: 02/08/2017
 若為藍牙 RFCOMM (傳統) 裝置則不需要。 從 Windows 10 版本 1607 開始，您可以直接查詢附近的裝置並和它們連接。 已更新的 [RFCOMM 聊天範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BluetoothRfcommChat) (英文) 說明這個功能。 
 
 藍牙低功耗 (GATT 用戶端) 不適用這項功能，因此您還是需要透過「設定」頁面，或使用 [Windows.Devices.Enumeration](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.aspx) API 來配對，才能存取這類裝置。
-
 

@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "如果應用程式未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用應用程式，或者根本無法使用。"
+Description: "如果 app 未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用 app，或者根本無法使用。"
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "鍵盤協助工具"
 label: Keyboard accessibility
@@ -11,18 +11,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 9b1261de60bf0a45940fe9a284d8a5276b42e0a3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b41e7a03d3ca2ac6d146ed706421699dc66066a3
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="keyboard-accessibility"></a>鍵盤協助工具  
 
 
 
-如果應用程式未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用應用程式，或者根本無法使用。
+如果 app 未能提供適切的鍵盤功能操作，盲眼或行動不便的使用者將難以使用 app，或者根本無法使用。
 
 <span id="keyboard_navigation_among_UI_elements"/>
 <span id="keyboard_navigation_among_ui_elements"/>
@@ -234,7 +231,7 @@ XAML
 <span id="keyboard_accessibility_and_windows_phone"/>
 <span id="KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"/>
 ## <a name="keyboard-accessibility-and-windows-phone"></a>鍵盤協助工具和 Windows Phone
-Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸入面板 (SIP) 可以支援數個鍵盤協助工具案例。 螢幕助讀程式可以讀出來自 [文字]**** SIP 的文字輸入，包含宣告刪除。 使用者能探索他們的手指所在位置，這是因為螢幕助讀程式可以偵測到使用者正在掃描按鍵，而它會大聲讀出掃描到的按鍵名稱。 此外，部分鍵盤導向的協助工具概念也可以對應到完全不使用鍵盤的相關輔助技術。 例如，即使 SIP 未配置 Tab 鍵，朗讀程式仍然支援相當於按 Tab 鍵的觸控手勢，因此，在 UI 中透過控制項提供有用的 Tab 順序仍是一個重要的協助工具原則。 用來瀏覽複雜控制項內組件的方向鍵也可透過朗讀程式觸控手勢加以支援。 一旦焦點到達不適合用於文字輸入的控制項時，朗讀程式便支援可叫用該控制項動作的手勢。
+Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸入面板 (SIP) 可以支援數個鍵盤協助工具案例。 螢幕助讀程式可以讀出來自 **\[文字\]** SIP 的文字輸入，包含宣告刪除。 使用者能探索他們的手指所在位置，這是因為螢幕助讀程式可以偵測到使用者正在掃描按鍵，而它會大聲讀出掃描到的按鍵名稱。 此外，部分鍵盤導向的協助工具概念也可以對應到完全不使用鍵盤的相關輔助技術。 例如，即使 SIP 未配置 Tab 鍵，朗讀程式仍然支援相當於按 Tab 鍵的觸控手勢，因此，在 UI 中透過控制項提供有用的 Tab 順序仍是一個重要的協助工具原則。 用來瀏覽複雜控制項內組件的方向鍵也可透過朗讀程式觸控手勢加以支援。 一旦焦點到達不適合用於文字輸入的控制項時，朗讀程式便支援可叫用該控制項動作的手勢。
 
 鍵盤快速鍵通常與 Windows Phone app 無關，因為 SIP 不會包含 Ctrl 鍵或 Alt 鍵。
 
@@ -245,5 +242,4 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 * [輸入：觸控式鍵盤範例](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [回應螢幕小鍵盤外觀的範例](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
-
 

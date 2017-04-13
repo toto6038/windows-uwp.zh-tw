@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-Description: "您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的應用程式。"
+Description: "您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。 以下說明如何將控制項新增到您的 app。"
 title: "控制項和模式的簡介"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 93297899c341366788f1d7dfa06507c1f3003884
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 14186f0623f16426a98b5184020736bd4321857d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
@@ -150,4 +148,3 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -     [配置](../layout/index.md)
 -     [樣式](../style/index.md)
 -     [可用性](../usability/index.md)
-

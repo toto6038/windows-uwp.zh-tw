@@ -11,11 +11,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b8d695dbf3aa662a760f162b6fcb818d90f45c38
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0ea40ff57bf6923b8fea05de6d07863e13e5ad9c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 # <a name="raw-notification-overview"></a>原始通知概觀
@@ -40,7 +38,7 @@ ms.lasthandoff: 02/07/2017
 所有原始通知都是推播通知。 因此，傳送和接收推播通知所需的設定也適用於原始通知：
 
 -   您必須具備有效的 WNS 通道才能傳送原始通知。 如需取得推播通知通道的詳細資訊，請參閱[如何要求、建立以及儲存通知通道](https://msdn.microsoft.com/library/windows/apps/hh465412)。
--   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 [功能]**** 索引標籤下找到此 [網際網路 (用戶端)]**** 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)。
+-   您必須在應用程式資訊清單中包含 **Internet** 功能。 在 Microsoft Visual Studio 資訊清單編輯器中，您會在 **\[功能\]** 索引標籤下找到此 **\[網際網路 (用戶端)\]** 選項。 如需詳細資訊，請參閱 [**Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)。
 
 通知的本文是採用應用程式定義的格式。 用戶端會以 null 結尾字串 (**HSTRING**) 的形式接收資料，該字串只需要讓應用程式了解。
 
@@ -129,7 +127,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

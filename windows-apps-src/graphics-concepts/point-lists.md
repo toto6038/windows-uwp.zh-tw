@@ -2,21 +2,17 @@
 title: "點清單"
 description: "點清單是轉譯為隔離點的頂點集合。 應用程式可以在 3D 場景中使用點清單，在多邊形的表面上有星星欄位或點線。"
 ms.assetid: 332954AE-019F-4A91-B773-E3A7C92F3297
-keywords:
-- "點清單"
+keywords: "點清單"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: da7fd4dfd4835e39a76daddfa8855415f0e3234b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d5f2ee1c9a42a0d2f380f4f9a98c204088b1379a
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="point-lists"></a>點清單
 
 
@@ -68,7 +64,6 @@ d3dDevice->DrawPrimitive( D3DPT_POINTLIST, 0, 6 );
  
 
  
-
 
 
 

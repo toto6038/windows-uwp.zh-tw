@@ -2,21 +2,17 @@
 title: "串流資源功能層級"
 description: "Direct3D 在三個功能層級中支援串流資源。"
 ms.assetid: 6AE7EA72-3929-4BB4-8780-F0CF26192D87
-keywords:
-- "串流資源功能層級"
+keywords: "串流資源功能層級"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ba1ec47e389f8de4bfd2ab190f1dfe078724deab
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 671c679938860057a5fe8f083eebfe47dc518e05
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="streaming-resources-features-tiers"></a>串流資源功能層級
 
 
@@ -70,7 +66,6 @@ Direct3D 各版本提供查詢功能，以驗證串流資源的硬體及驅動�
  
 
  
-
 
 
 

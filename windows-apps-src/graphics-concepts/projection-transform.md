@@ -2,21 +2,17 @@
 title: "投影轉換"
 description: "投影轉換控制相機內部，例如選擇相機的鏡頭。 這是三種轉換類型中最複雜的轉換。"
 ms.assetid: 378F205D-3800-4477-9820-5EBE6528B14A
-keywords:
-- "投影轉換"
+keywords: "投影轉換"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 83679e9a41adcad68f1341328de4c03b10db08e5
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cb6704383bafe9ee3e5785701c78f92e84b90b3d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="projection-transform"></a>投影轉換
 
 
@@ -79,7 +75,6 @@ Direct3D 使用目前以 w 型深度計算的投影矩陣。 如此一來，應�
  
 
  
-
 
 
 

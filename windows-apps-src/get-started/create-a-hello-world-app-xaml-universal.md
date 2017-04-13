@@ -2,61 +2,68 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "建立 Hello, world 應用程式 (XAML)"
-description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
+description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
 ms.author: jken
-ms.date: 02/08/2017
+ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 16622dbd9914907f75c8392f8e4de6e1c10b049c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 
-本教學課程會教您如何使用 XAML 和 C#，為 Windows 10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world 應用程式。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows 10 裝置上執行的 App。
+本教學課程會教您如何使用 XAML 和 C#，為 Windows10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows10 裝置上執行的 App。
 
 您將在此處了解如何：
 
--   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2015** 專案。
+-   建立目標是 **Windows10** 和 **UWP** 的新 **Visual Studio 2017** 專案。
 -   撰寫 XAML 以變更您開始頁面上的 UI。
--   在本機桌面上和 Visual Studio 中的手機模擬器上執行專案。
+-   在本機桌面上使用 Visual Studio 執行專案。
 -   使用 SpeechSynthesizer 讓應用程式在您按下按鈕時說話。
+
 
 ## <a name="before-you-start"></a>開始之前...
 
 -   [通用 Windows app 是什麼](whats-a-uwp.md)？
--   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2015。 [開始設定](get-set-up.md)。
+-   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2017。 [開始設定](get-set-up.md)。
 -   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 **\[視窗\]** 功能表中的 **\[重設視窗配置\]** 命令來重設它。
 
+> [!NOTE]
+> 本教學課程使用 Visual Studio Community 2017。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
 
-## <a name="if-you-would-rather-watch-a-video"></a>如果您比較偏好觀賞影片...
+## <a name="video-summary"></a>影片摘要
 
 <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Writing-Your-First-Windows-10-App/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
-如果相較於逐步指南，您更偏好使用視覺方法，這部影片涵蓋了相同的內容但提供精彩的原聲帶。
+
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案
 
-1.  啟動 Visual Studio 2015。
+1.  啟動 Visual Studio 2017。
 
 2.  從 **\[檔案\]** 功能表中，選取 **\[新增\] > \[專案\]** 來開啟 *\[新增專案\]* 對話方塊。
 
-3.  從左邊的範本清單中，開啟 **\[已安裝\] > \[範本\] > \[Visual C#\] > \[Windows\]**，然後選擇 **\[通用\]** 來查看 UWP 專案範本的清單。
+3.  從左邊的範本清單中，開啟 **\[已安裝\] &gt; \[範本\] &gt; \[Visual C#\] &gt; \[Windows\]**，然後選擇 **\[通用\]** 來查看 UWP 專案範本的清單。
 
-    (如果您沒有看到任何「通用」範本，表示您可能沒有 Visual Studio 2015，或是可能遺失用於建立 UWP app 的元件。 若要修復您的工具，請參閱[開始設定](get-set-up.md))。
+    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP app 的元件。 您可以重複安裝程序並新增 UWP 支援，方法是按一下 **\[新增專案\]** 對話方塊上的 *\[開啟 Visual Studio 安裝程式\]*。 請參閱[開始設定](get-set-up.md)
+
+    ![如何重複安裝程序](images/win10-cs-install.png)
 
 4.  選擇 **\[空白應用程式 (通用 Windows)\]** 範本，然後輸入 "HelloWorld" 作為 **\[名稱\]**。 選取 **\[確定\]**。
 
-    ![[新增專案] 視窗](images/win10-cs-01.png)
+    ![\[新增專案\] 視窗](images/win10-cs-01.png)
 
-5.  [目標版本/最小版本] 對話方塊隨即出現。 使用預設設定即可，因此請選取 **\[確定\]** 來建立專案。
+> [!NOTE]
+> 如果這是您第一次使用 Visual Studio，您可能會看到 \[設定\] 對話方塊要求您啟用 **\[開發人員模式\]**。 開發人員模式是啟用某些功能的特殊設定，例如直接執行 app 的權限，而非只執行來自於市集。 如需詳細資訊，請閱讀[啟用您的裝置以進行開發](enable-your-device-for-development.md)。 若要繼續使用此指南，請選取 **\[開發人員模式\]**，按一下 **\[是\]**，並關閉對話方塊。
 
-    ![[方案總管] 視窗](images/win10-cs-02.png)
+ ![啟用開發人員模式對話方塊](images/win10-cs-00.png)
+
+5.  \[目標版本\]/\[最小版本\] 對話方塊隨即出現。 在這個教學課程，使用預設設定即可，因此請選取 **\[確定\]** 來建立專案。
+
+    ![\[方案總管\] 視窗](images/win10-cs-02.png)
 
 6.  當您的新專案開啟時，其檔案會顯示在右邊的 **\[方案總管\]** 窗格中。 您可能需要選擇 **\[方案總管\]** 索引標籤 (而不是 **\[屬性\]** 索引標籤)，才能看到您的檔案。
 
@@ -99,7 +106,7 @@ ms.lasthandoff: 02/07/2017
 
 讓我們將按鈕新增到我們的頁面中。 在本教學課程中，您僅會使用上述所列的一些檔案：App.xaml、MainPage.xaml 以及 MainPage.xaml.cs。
 
-1.  按兩下 **\[MainPage.xaml\]** 以在 [設計] 檢視中開啟它。
+1.  按兩下 **\[MainPage.xaml\]** 以在 \[設計\] 檢視中開啟它。
 
     您會注意到畫面上半部有一個圖形檢視，而 XAML 程式碼檢視則在下方。 您可以對任一檢視進行變更，但目前我們會使用圖形檢視。
 
@@ -140,7 +147,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="start-the-app-on-a-desktop-device"></a>在傳統型裝置上啟動應用程式
 
-根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從電腦裝置系列的裝置偵錯應用程式的數個選項。
+根據預設，應用程式會在本機電腦上執行。 目標裝置功能表提供從傳統型裝置系列的裝置偵錯應用程式的數個選項。
 
 -   **模擬器**
 -   **本機電腦 
@@ -182,40 +189,6 @@ ms.lasthandoff: 02/07/2017
 
    關閉應用程式視窗。
 
-### <a name="start-the-app-on-a-mobile-device-emulator"></a>在行動裝置模擬器上啟動 app
-
-您的應用程式會在所有 Windows 10 裝置上執行，因此，我們來看看它在 Windows Phone 上的外觀如何。
-
-除了在電腦裝置上偵錯的選項外，Visual Studio 還提供在連接到電腦的實體行動裝置或在行動裝置模擬器上部署和偵錯應用程式的選項。 您可以為有不同記憶體和顯示器組態的裝置選擇不同的模擬器。
-
--   **裝置**
--   **模擬器 <SDK version> WVGA 4 吋 512MB**
--   **模擬器 <SDK version> WVGA 4 吋 1GB**
--   等等... (其他組態中的各種模擬器)
-
-(沒有看到模擬器？ 請參閱[開始設定](get-set-up.md)，以確定您已安裝「通用 Windows 應用程式開發工具」。
-
-**在行動裝置模擬器上開始偵錯**
-
-1.  在小螢幕且記憶體有限的裝置上測試 App 是一個不錯的做法，因此，請從 **\[標準\]** 工具列上的目標裝置功能表 (![開始偵錯功能表](images/startdebug-full.png)) 中，選擇 **\[模擬器 10.0.14393.0 WVGA 4 英吋 512MB\]**。
-
-2.  按一下工具列中的 **\[開始偵錯\]** 按鈕 (![開始偵錯按鈕](images/startdebug-sm.png))。
-
-   –或–
-
-   在 **\[偵錯\]** 功能表中，按一下 **\[開始偵錯\]**。
-
-   –或–
-
-   按 F5。
-
-Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 第一次啟動時可能需要一些時間。 在行動裝置模擬器上，App 看起來會像這樣。
-
-![行動裝置上最初的 App 畫面](images/win10-cs-09.png)
-
-如果您有執行 Windows 10 的 Windows Phone，您也可以將它連接到電腦，然後在該手機上直接部署和執行 App (但是您必須先[啟用開發人員模式](enable-your-device-for-development.md))。
-
-
 ## <a name="step-3-event-handlers"></a>步驟 3：事件處理常式
 
 「事件處理常式」聽起來很複雜，但它只是事件發生時 (例如使用者按一下按鈕) 所呼叫程式碼的另一個名稱。
@@ -229,7 +202,7 @@ Visual Studio 會啟動選取的模擬器，然後部署和啟動您的 App。 �
 3.  編輯 *MainPage.xaml.cs* 程式碼後置頁面中的事件處理常式程式碼。 這是開始有趣的地方。 預設的事件處理常式看起來就像這樣：
 
 ```C#
-private void button_Click(object sender, RouteEventArgs e)
+private void Button_Click(object sender, RouteEventArgs e)
 {
 
 }
@@ -238,7 +211,7 @@ private void button_Click(object sender, RouteEventArgs e)
   讓我們來變更它，讓它看起來像這樣：
 
 ```C#
-private async void button_Click(object sender, RoutedEventArgs e)
+private async void Button_Click(object sender, RoutedEventArgs e)
         {
             MediaElement mediaElement = new MediaElement();
             var synth = new Windows.Media.SpeechSynthesis.SpeechSynthesizer();
@@ -264,3 +237,12 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 若要了解如何使用 XAML 來配置您的應用程式將使用的控制項，請嘗試進行[格線教學課程](../layout/grid-tutorial.md)，或直接進行[下一步](learn-more.md)？
 
+
+## <a name="see-also"></a>另請參閱
+
+* [您的第一個應用程式](your-first-app.md)
+* [發行您的 Windows 市集應用程式](https://developer.microsoft.com/store/publish-apps)。
+* [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
+* [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
+* [通用 Windows app 是什麼？](whats-a-uwp.md)
+* [註冊 Windows 帳戶](sign-up.md)

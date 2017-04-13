@@ -2,21 +2,17 @@
 title: "使用 Mipmap 進行紋理篩選"
 description: "Mipmap 是一組紋理序列，序列中的每個影像都是相同影像漸進式降低解析度的結果。 每個影像的高度、寬度，或是層級，都是前一層級以 2 的乘冪縮小的結果。"
 ms.assetid: 28E863A2-C776-40E4-8551-9851DF7EC93E
-keywords:
-- "使用 Mipmap 進行紋理篩選"
+keywords: "使用 Mipmap 進行紋理篩選"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: d5644fb4e57962de06874d15f7c9e97ed74106b4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 65c775a265f7c5a0b15f76d867a9403308fc7128
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="texture-filtering-with-mipmaps"></a>使用 Mipmap 進行紋理篩選
 
 
@@ -64,7 +60,6 @@ Direct3D 可以自動執行 Mipmap 紋理篩選。 應用程式也可以手動�
  
 
  
-
 
 
 

@@ -3,32 +3,31 @@ author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: "HoloLens 的 Device Portal"
 description: "了解 HoloLens 的 Windows Device Portal 如何讓您從遠端設定並管理 HoloLens 裝置。"
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# HoloLens 的 Device Portal
+# <a name="device-portal-for-hololens"></a>HoloLens 的 Device Portal
 
 
-## 在 HoloLens 上設定裝置入口網站
+## <a name="set-up-device-portal-on-hololens"></a>在 HoloLens 上設定裝置入口網站
 
-### 啟用 Device Portal
+### <a name="enable-device-portal"></a>啟用 Device Portal
 
 **啟用 Device Portal**
 
 1. 開啟您的 HoloLens 並將裝置戴上。
 2. 做出[盛開](https://dev.windows.com/holographic/Gestures.html#Bloom)手勢來啟動主功能表。
-3. 凝視 [設定]**** 磚，並做出[空中點選](https://dev.windows.com/holographic/Gestures.html#Press_and_release)手勢。 做出第二次的空中點選，來將 App 放置於您的環境中。 當您放置 [設定] App 之後，該 App 便會啟動。
-4. 選取 [更新]**** 功能表項目。
-5. 選取 [適用於開發人員]**** 功能表項目。
-6. 啟用 [開發人員模式]****。
+3. 凝視 **\[設定\]** 磚，並做出[空中點選](https://dev.windows.com/holographic/Gestures.html#Press_and_release)手勢。 做出第二次的空中點選，來將 App 放置於您的環境中。 當您放置 [設定] App 之後，該 App 便會啟動。
+4. 選取 **\[更新\]** 功能表項目。
+5. 選取 **\[適用於開發人員\]** 功能表項目。
+6. 啟用 **\[開發人員模式\]**。
 7. [向下捲動](https://dev.windows.com/holographic/Gestures.html#Navigation)並啟用 Device Portal。
 
 
-### 配對您的裝置
+### <a name="pair-your-device"></a>配對您的裝置
 
-### 透過 Wi-Fi 連線 
+### <a name="connect-over-wi-fi"></a>透過 Wi-Fi 連線 
 
 1. 將您的 HoloLens 連線到 Wi-Fi。
 2. 尋找裝置的 IP 位址。在裝置上的 [設定] &gt; [網路和網際網路] &gt; [Wi-Fi] &gt; [進階選項] 之下尋找 IP 位址。
@@ -37,18 +36,18 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 3. 從您電腦上的網頁瀏覽器，移至 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - 瀏覽器將會顯示下列訊息：「此網站的安全性憑證有問題」。 這是因為核發給 Device Portal 的憑證是測試憑證。 您可以暫時略過這個憑證錯誤並繼續。
 
-### 透過 USB 連線 
+### <a name="connect-over-usb"></a>透過 USB 連線 
 
 1. 安裝工具以確保您擁有 Visual Studio Update 1，並在電腦上安裝 Windows 10 開發人員工具。 這將能啟用 USB 連線能力。
 2. 透過 Micro-USB 纜線將您的 HoloLens 與電腦連接。
 3. 從您電腦上的網頁瀏覽器，移至 `http://127.0.0.1:10080`。
 
-### 連線到模擬器 
+### <a name="connect-to-an-emulator"></a>連線到模擬器 
 
 您也可以透過模擬器使用 Device Portal。 若要連線到 Device Portal，請使用工具列。 按一下這個圖示：
 - 開啟 Device Portal：在模擬器中開啟 HoloLens OS 的 Windows Device Portal。
 
-### 建立使用者名稱和密碼。 
+### <a name="create-a-username-and-password"></a>建立使用者名稱和密碼。 
 
 首次在 HoloLens 上連線到 Device Portal 時，您必須建立使用者名稱和密碼。
 1. 在您電腦上的網頁瀏覽器中，輸入 HoloLens 的 IP 位址。 [設定存取] 頁面將會開啟。
@@ -60,7 +59,7 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 
 如果您想在任何時候變更此使用者名稱或密碼，您可以造訪裝置安全性頁面來重複此程序，方法是按一下位於右上方的 [安全性] 連結，或是瀏覽到：`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
 
-### 安全性憑證 
+### <a name="security-certificate"></a>安全性憑證 
 
 如果您在瀏覽器中看見「憑證錯誤」，您可以透過和裝置建立信任關係來修正它。
 
@@ -77,9 +76,9 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 4. 重新啟動瀏覽器。
 
 
-## Device Portal 頁面 
+## <a name="device-portal-pages"></a>Device Portal 頁面 
 
-### 首頁 
+### <a name="home"></a>首頁 
 
 您的 Device Portal 工作階段從首頁開始。 從首頁左側的瀏覽列中存取其他頁面。
 
@@ -95,12 +94,12 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 首頁將顯示下列資訊：
 - **裝置**狀態：監視裝置的健康狀況並報告嚴重錯誤。
 - **Windows 資訊**：顯示 HoloLens 的名稱，以及目前安裝的 Windows 版本。
-- [喜好設定]**** 區段包含下列設定：
+- **\[喜好設定\]** 區段包含下列設定：
     - **IPD**：設定瞳孔間距 (IPD)，這是使用者雙眼注視前方時，兩個瞳孔中心點之間的距離 (以公釐為單位)。 此設定會立即生效。 預設值會在您設定裝置時自動計算。
     - **裝置名稱**：為 HoloLens 指派名稱。 在變更此值之後，必須重新啟動裝置才能生效。 按一下 [儲存] 之後，將會有對話方塊詢問您是否要立即重新啟動裝置，或稍後再重新啟動。
     - **睡眠設定**：設定裝置在接上電源及使用電池的情況下，在進入睡眠之前所需等待的時間長度。
 
-### 3D 檢視 
+### <a name="3d-view"></a>3D 檢視 
 
 使用 [3D 檢視] 頁面來查看 HoloLens 解譯您周遭環境的方式。 使用滑鼠來瀏覽檢視：
 - **旋轉**：按下滑鼠左鍵 + 移動滑鼠；
@@ -117,7 +116,7 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 
 - 表面重建：按一下或點選 [更新] 以顯示來自裝置的最新空間對應網格。 可能需要花費一些時間 (最多幾秒鐘) 才能完成完整作業。 網格並不會在 3D 檢視中自動更新，您必須手動按一下 [更新] 以取得來自裝置的最新網格。 按一下 [儲存] 以將目前的空間對應網格在您的電腦上儲存為 obj 檔案。
 
-### 混合實境擷取 
+### <a name="mixed-reality-capture"></a>混合實境擷取 
 
 使用 [混合實境擷取] 頁面來儲存來自 HoloLens 的媒體串流。
 - 設定：選取下列設定來控制擷取的媒體串流：- 全像投影：擷取視訊串流中的全像內容。 全像投影是以單聲道進行轉譯，而非立體聲。
@@ -133,7 +132,7 @@ ms.openlocfilehash: 00dec1110ba8cc27f759f05bc4a6f352a235d18d
 
 請注意，HoloLens App 無法在您正在從 Device Portal 錄製或串流即時預覽時，擷取 MRC 相片或視訊。
 
-### 系統效能 
+### <a name="system-performance"></a>系統效能 
 
 HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。 
 
@@ -142,11 +141,11 @@ HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。
 - **系統電源**：系統電源瞬間使用率 (一分鐘內的平均值)
 - **畫面播放速率**：每秒的畫面格數、每秒遺失的 VBlanks 數，以及連續遺失的 VBlanks 數。
 
-### App 損毀傾印頁面 
+### <a name="app-crash-dumps-page"></a>App 損毀傾印頁面 
 
 此頁面可讓您收集側載 App 的損毀傾印。 請針對您想要收集損毀傾印的 App，選取它們 [啟用的損毀傾印] 核取方塊。 返回此頁面以收集損毀傾印。 傾印檔案可以在 Visual Studio 中開啟以進行偵錯。
 
-### Kiosk 模式 
+### <a name="kiosk-mode"></a>Kiosk 模式 
 
 啟用 Kiosk 模式將能限制使用者啟動新 App 或變更執行中 App 的能力。 啟用 Kiosk 模式時，將會停用「盛開」手勢和 Cortana，而已放置的 App 將不會在使用者的周遭環境中顯示。
 
@@ -154,7 +153,7 @@ HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。
 
 請注意，該 App 將會在啟動時執行，就算沒有啟用 Kiosk 模式也一樣。 選取 [無] 以在啟動時不執行任何 App。
 
-### 模擬 
+### <a name="simulation"></a>模擬 
 
 允許您記錄並播放輸入資料以進行測試。
 - **擷取房間**：用來下載模擬的房間檔案，其中包含針對使用者周遭環境的空間對應網格。 為房間命名，然後按一下 [擷取] 來將資料在您的電腦上儲存為 .xef 檔案。 此房間檔案可以載入 HoloLens 模擬器。
@@ -163,14 +162,8 @@ HoloLens 上的 [系統效能] 工具有額外 3 個可記錄的衡量標準。
 - **控制模式**：從下拉式清單中選取 [預設] 或 [模擬]，然後按一下或點選 [設定] 按鈕來選取 HoloLens 上的模式。 選擇 [模擬] 將會停用 HoloLens 上實際的感應器，並改為使用已上傳的模擬資料。 如果您切換到 [模擬]，您的 HoloLens 將不會對真實使用者做出回應，直到您切換回 [預設] 為止。
 
 
-### 虛擬輸入 
+### <a name="virtual-input"></a>虛擬輸入 
 
 從遠端電腦傳送鍵盤輸入到 HoloLens。
 
 按一下或點選 [虛擬鍵盤] 下方的區域，來啟用傳送按鍵輸入到 HoloLens。 在 [輸入文字] 文字方塊中輸入，然後按一下或點選 [傳送] 來將按鍵輸入傳送到使用中的 App。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

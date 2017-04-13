@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8f8236a68fd7628f1f53eebc13731a72414e3217
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: f0665bf071b4c75ee6a3ea8bcc11cefb357c6825
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="use-the-accelerometer"></a>使用加速計
 
@@ -42,7 +40,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="instructions"></a>指示
 
--   從 [Visual C#]**** 專案範本中選擇 [空白應用程式 (通用 Windows)]**** 來建立一個新專案。
+-   從 **\[Visual C#\]** 專案範本中選擇 **\[空白應用程式 (通用 Windows)\]** 來建立一個新專案。
 
 -   開啟專案的 MainPage.xaml.cs 檔案，然後以下列程式碼取代現有的程式碼。
 
@@ -137,11 +135,11 @@ ms.lasthandoff: 02/07/2017
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **AccelerometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="AccelerometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:AccelerometerCS"`。
 
--   按 F5 或選取 [偵錯]**** &gt; [開始偵錯]**** 以建置、部署及執行 app。
+-   按 F5 或選取 **\[偵錯\]** &gt; **\[開始偵錯\]** 以建置、部署及執行 app。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更加速器值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 [偵錯]**** &gt; [停止偵錯]**** 以停止應用程式。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** &gt; **\[停止偵錯\]** 以停止應用程式。
 
 ### <a name="explanation"></a>說明
 
@@ -178,4 +176,3 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ## <a name="related-topics"></a>相關主題
 
 * [加速計範例](http://go.microsoft.com/fwlink/p/?linkid=241377)
-

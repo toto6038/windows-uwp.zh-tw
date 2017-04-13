@@ -9,17 +9,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 樣本, directx, 基礎"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: cc155d7a454cabe5c0d820f5d74313dfeaf01830
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="marble-maze-sample-fundamentals"></a>Marble Maze 範例基礎觀念
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文件描述 Marble Maze 專案的基本特性，例如，它在 Windows 執行階段環境中如何使用 Visual C++、如何建立和建構它，以及如何建置它。 本文件也描述程式碼中採用的幾種慣例。
@@ -30,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 ## 
 以下是本文件所討論在規劃和開發通用 Windows 平台 (UWP) 遊戲時的一些重點。
 
--   在 C++ 應用程式中使用 [DirectX 11 App (通用 Windows)]**** 範本來建立 DirectX UWP 遊戲。 使用 Visual Studio 建置 UWP App 專案，就像建立標準專案一樣。
+-   在 C++ 應用程式中使用 **\[DirectX 11 App (通用 Windows)\]** 範本來建立 DirectX UWP 遊戲。 使用 Visual Studio 建置 UWP App 專案，就像建立標準專案一樣。
 -   Windows 執行階段提供類別和介面，讓您以更現代的物件導向方式來開發 UWP app。
 -   使用物件參考搭配 ^ 符號來管理 Windows 執行階段變數的存留期、搭配 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來管理 COM 物件的存留期，以及搭配 [**std::shared\_ptr**](https://msdn.microsoft.com/library/windows/apps/bb982026.aspx) 或 [**std::unique\_ptr**](https://msdn.microsoft.com/library/windows/apps/ee410601.aspx) 來管理其他所有堆積配置的 C++ 物件的存留期。
 -   在大多數情況下，使用例外狀況處理 (而不是結果程式碼) 來處理意外的錯誤。
@@ -39,13 +36,13 @@ ms.lasthandoff: 02/07/2017
 ## <a name="creating-the-visual-studio-project"></a>建立 Visual Studio 專案
 
 
-如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 MarbleMaze.sln 方案檔，程式碼會隨即顯示出來。 您也可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN 範例庫頁面中選取 [瀏覽程式碼]**** 索引標籤來檢視原始檔。
+如果您已經下載並解壓縮範例，則可以在 Visual Studio 中開啟 MarbleMaze.sln 方案檔，程式碼會隨即顯示出來。 您也可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011) MSDN 範例庫頁面中選取 **\[瀏覽程式碼\]** 索引標籤來檢視原始檔。
 
-我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您目前沒有專案可提供 Direct UWP 遊戲所需的基本功能，建議您根據 Visual Studio [DirectX 11 App (通用 Windows)]**** 範本來建立專案，因為它提供一個可執行的基本 3D 應用程式。
+我們建立 Marble Maze 的 Visual Studio 專案時，是以現有的專案為基礎。 不過，如果您目前沒有專案可提供 DirectX UWP 遊戲所需的基本功能，建議您根據 Visual Studio **\[DirectX 11 App (通用 Windows)\]** 範本來建立專案，因為它提供一個可執行的基本 3D 應用程式。
 
-[DirectX 11 App (通用 Windows)]**** 範本中的一個重要專案設定是 **/ZW** 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
+**\[DirectX 11 App (通用 Windows)\]** 範本中的一個重要專案設定是 **/ZW** 選項，它可讓程式使用 Windows 執行階段語言擴充功能。 當您使用 Visual Studio 範本時，這個選項預設為啟用。
 
-> **注意****/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
+> **注意**   **/ZW** 選項與某些選項不相容，例如 **/clr**。如果使用 **/clr**，這表示您無法在同一個 Visual C++ 專案中，同時以 .NET Framework 與 Windows 執行階段為目標。
 
  
 
@@ -54,11 +51,11 @@ ms.lasthandoff: 02/07/2017
 ##  <a name="building-deploying-and-running-the-game"></a>建置、部署及執行遊戲
 
 
-依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
+依照建置標準專案的方式建置 UWP app 專案 (在功能表列上，依序選擇 **\[建置\] 和 \[建置方案\]**)。建置步驟會編譯程式碼，也會封裝程式碼做為 UWP app 使用。
 
-建置專案之後，就必須部署它 (在功能表列上，依序選擇 [建置] 和 [建置方案]****)。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
+建置專案之後，就必須部署它 (在功能表列上，依序選擇 **\[建置\] 和 \[建置方案\]**)。當您從偵錯工具執行遊戲時，Visual Studio 也會部署專案。
 
-在您部署專案之後，請挑選 [Marble Maze] 磚來執行遊戲。 或者，從 Visual Studio 的功能表列，選擇 [偵錯]、[開始偵錯]****。
+在您部署專案之後，請挑選 [Marble Maze] 磚來執行遊戲。 或者，從 Visual Studio 的功能表列，選擇 **\[偵錯\]、\[開始偵錯\]**。
 
 ###  <a name="controlling-the-game"></a>控制遊戲
 
@@ -129,7 +126,7 @@ void LoadMesh(
     );
 ```
 
-若要對 app 執行程式碼分析，請在功能表列上依序選擇 [建置] 和 [針對方案執行程式碼分析]****。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
+若要對 app 執行程式碼分析，請在功能表列上依序選擇 **\[建置\] 和 \[針對方案執行程式碼分析\]**。 如需程式碼分析的詳細資訊，請參閱[使用程式碼分析進行 C/C++ 程式碼品質分析](https://msdn.microsoft.com/library/windows/apps/ms182025.aspx)。
 
 可用註釋的完整清單定義在 sal.h 中。 如需詳細資訊，請參閱 [SAL 註釋](https://msdn.microsoft.com/library/windows/apps/ms235402.aspx)。
 
@@ -147,7 +144,6 @@ void LoadMesh(
  
 
  
-
 
 
 

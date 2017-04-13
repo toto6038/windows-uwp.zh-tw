@@ -9,11 +9,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="device-portal-for-desktop"></a>傳統型裝置的 Device Portal
 
@@ -34,11 +32,11 @@ Device Portal 可讓您檢視診斷資訊，並透過 HTTP 從您的瀏覽器與
 
 ### <a name="turn-on-device-portal"></a>開啟 Device Portal
 
-在 [開發人員設定]**** 功能表中 (啟用 [開發人員模式])，您可啟用 Device Portal。  
+在 **\[開發人員設定\]** 功能表中 (啟用 [開發人員模式])，您可啟用 Device Portal。  
 
 啟用 Device Portal 時，您也必須為 Device Portal 建立使用者名稱與密碼。 請勿使用您的 Microsoft 帳戶或其他 Windows 認證。  
 
-啟用 Device Portal 之後，您會在 [設定]**** 區段的底端看見其連結。 記下套用至 URL 結尾的連接埠號碼：啟用 Device Portal 時會隨機產生此連接埠號碼，但其應與桌面重新開機時保持一致。 若您想要手動設定永久連接埠號碼，請參閱[設定連接埠號碼](device-portal-desktop.md#setting-port-numbers)。
+啟用 Device Portal 之後，您會在 **\[設定\]** 區段的底端看見其連結。 記下套用至 URL 結尾的連接埠號碼：啟用 Device Portal 時會隨機產生此連接埠號碼，但其應與桌面重新開機時保持一致。 若您想要手動設定永久連接埠號碼，請參閱[設定連接埠號碼](device-portal-desktop.md#setting-port-numbers)。
 
 您可以從兩種連線至 Device Portal 的方式中進行選擇：本機主機以及透過區域網路 (包括 VPN)。
 
@@ -78,11 +76,11 @@ HTTPS 需要進行驗證和安全通訊。
 
 - 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service 下
     - UseDynamicPorts：所需的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
-    - HttpPort：所需的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。  
+    - HttpPort：所需的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。    
     - HttpsPort：所需的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
 
 ## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>無法安裝開發人員模式套件或啟動 Device Portal
-有時會因網路或相容性問題，致使「開發人員模式」無法正確安裝。 「遠端」****部署 (Device Portal 和 SSH) 必須使用「開發人員模式」套件，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 來部署您的應用程式。 
+有時會因網路或相容性問題，致使「開發人員模式」無法正確安裝。 **「遠端」**部署 (Device Portal 和 SSH) 必須使用「開發人員模式」套件，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 來部署您的應用程式。 
 
 若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。 
 
@@ -112,4 +110,3 @@ HTTPS 需要進行驗證和安全通訊。
 
 1. 在 [設定] &gt; [更新與安全性] &gt; Windows Updates 中，檢查 Windows 更新。
 2. 重新啟動電腦，以確保套用所有的更新。
-

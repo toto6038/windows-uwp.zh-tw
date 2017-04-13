@@ -9,13 +9,10 @@ ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, games, mouse, input,遊戲, 滑鼠, 輸入"
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: f207c1b7de4fd4a885c05c6988ecf685359d1d8b
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dff08052af7f005366f9cb5154b307c13a316953
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="relative-mouse-movement-and-corewindow"></a>相對滑鼠移動和 CoreWindow
 
 在遊戲中，滑鼠是很常用的控制選項，許多玩家都很熟悉，而且滑鼠對許多遊戲類型而言也都是最基本的，包括第一人稱與第三人稱射擊遊戲，以及即時策略遊戲。 在這裡我們會討論相對滑鼠控制項的實作，這種控制項不使用系統游標，也不會傳回絕對螢幕座標；而是會追蹤滑鼠移動之間的像素差異。

@@ -2,21 +2,17 @@
 title: "檢視"
 description: "詞彙「檢視」用來表示「所需格式的資料」。 例如，常數緩衝區檢視 (CBV) 是格式正確的常數緩衝區資料。 本節描述最常見且實用的檢視。"
 ms.assetid: 0C7FB99F-7391-472F-BA53-576888DFC171
-keywords:
-- "檢視"
+keywords: "檢視"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: beaed3bbaf6cab56c826788d0361b1200c73a003
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0091afb549c778f367e12726054cb908eb0c3eba
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="views"></a>檢視
 
 
@@ -82,7 +78,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 

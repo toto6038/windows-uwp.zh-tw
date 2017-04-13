@@ -4,30 +4,26 @@ ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: "存取 SD 記憶卡"
 description: "您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。"
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 3fc8bbaa0b665b640974b5342b2b60c9b7f90143
-ms.lasthandoff: 02/07/2017
-
+keywords: "Windows 10, uwp, sd 記憶卡, 儲存空間"
+ms.openlocfilehash: 89dfed0cbd8a4a87f432a747e4155cdef3bbc757
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。
+您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限且具備 SD 記憶卡插槽的低價行動裝置。
 
 在大部分情況下，您必須先在應用程式資訊清單檔案中指定 **removableStorage** 功能，App 才能儲存和存取 SD 記憶卡上的檔案。 通常您還必須登錄 App 所儲存和存取的檔案類型，以便處理這些檔案類型。
 
 您可以藉由使用下列方法，在選用的 SD 記憶卡上儲存和存取檔案：
-
 - 檔案選擇器。
-
 - [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API。
 
 ## <a name="what-you-can-and-cant-access-on-the-sd-card"></a>SD 記憶卡上可存取和不可存取的項目
@@ -35,15 +31,12 @@ ms.lasthandoff: 02/07/2017
 ### <a name="what-you-can-access"></a>可以存取的項目
 
 - 您的應用程式只能讀寫已在應用程式資訊清單檔案中登錄為可處理的檔案類型。
-
 - 您的應用程式也可以建立和管理資料夾。
 
 ### <a name="what-you-cant-access"></a>不可以存取的項目
 
 - 您的應用程式看不到也不能存取系統資料夾以及其中包含的檔案。
-
 - 您的應用程式看不到已標記隱藏屬性的檔案。 隱藏屬性一般用來降低意外刪除資料的風險。
-
 - 您的應用程式無法使用 [**KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) 來查看或存取 [文件] 媒體櫃。 不過，您可以藉由周遊檔案系統來存取 SD 記憶卡上的 [文件] 媒體櫃。
 
 ## <a name="security-and-privacy-considerations"></a>安全性和隱私權考量
@@ -51,7 +44,6 @@ ms.lasthandoff: 02/07/2017
 當 app 將檔案儲存在 SD 記憶卡上的通用位置時，並不會加密這些檔案，因此其他 app 通常可以存取它們。
 
 - 裝置中有 SD 記憶卡時，已登錄可處理相同檔案類型的其他 app 可以存取您的檔案。
-
 - 從裝置移除 SD 記憶卡並從電腦開啟時，可以在檔案總管中看到您的檔案，其他應用程式也可以存取它們。
 
 不過，當安裝在 SD 記憶卡上的應用程式將檔案儲存在其 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) 中時，這些檔案會受到加密，而無法供其他應用程式存取。
@@ -73,28 +65,29 @@ ms.lasthandoff: 02/07/2017
 
 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 資料夾是目前與裝置連接之一組卸除式裝置的邏輯根 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。 如果有 SD 記憶卡，**KnownFolders.RemovableDevices** 資料夾下的第一個 (也是唯一一個) **StorageFolder** 代表 SD 記憶卡。
 
-使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得它的參照當做 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
+使用與下面類似的程式碼，判斷是否有 SD 記憶卡，並取得其參照做為 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230)。
 
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
-
-            if (sdCard != null)
-            {
-                // An SD card is present and the sdCard variable now contains a reference to it.
-            }
-            else
-            {
-                // No SD card is present.
-            }
+if (sdCard != null)
+{
+    // An SD card is present and the sdCard variable now contains a reference to it.
+}
+else
+{
+    // No SD card is present.
+}
 ```
+
+> [!NOTE]
+> 如果 SD 記憶卡讀卡機是內嵌讀卡機 (例如，膝上型電腦或個人電腦本身的插槽)，可能就無法透過 KnownFolders.RemovableDevices 加以存取。
 
 ### <a name="querying-the-contents-of-the-sd-card"></a>查詢 SD 記憶卡的內容
 
@@ -107,7 +100,6 @@ SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使�
 當您使用衍生自 [**KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) 的路徑來存取 SD 記憶卡上的檔案系統時，下列方法會以下列方式運作。
 
 -   [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) 方法會傳回一個聯集，這個聯集是由您登錄為可處理的副檔名以及與您已指定之任何媒體櫃功能關聯的副檔名所組成。
-
 -   如果您尚未將您嘗試存取之檔案的副檔名登錄為可處理，[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) 方法將會失敗。
 
 ## <a name="identifying-the-individual-sd-card"></a>識別個別的 SD 記憶卡
@@ -121,35 +113,32 @@ SD 記憶卡可能包含許多無法被辨識為已知資料夾，也無法使�
 ```csharp
 using Windows.Storage;
 
-...
+// Get the logical root folder for all external storage devices.
+StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
 
-            // Get the logical root folder for all external storage devices.
-            StorageFolder externalDevices = Windows.Storage.KnownFolders.RemovableDevices;
+// Get the first child folder, which represents the SD card.
+StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
 
-            // Get the first child folder, which represents the SD card.
-            StorageFolder sdCard = (await externalDevices.GetFoldersAsync()).FirstOrDefault();
+if (sdCard != null)
+{
+    var allProperties = sdCard.Properties;
+    IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
 
-            if (sdCard != null)
-            {
-                var allProperties = sdCard.Properties;
-                IEnumerable<string> propertiesToRetrieve = new List<string> { "WindowsPhone.ExternalStorageId" };
+    var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
 
-                var storageIdProperties = await allProperties.RetrievePropertiesAsync(propertiesToRetrieve);
+    string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
 
-                string cardId = (string)storageIdProperties["WindowsPhone.ExternalStorageId"];
-
-                if (...) // If cardID matches the cached ID of a recognized card.
-                {
-                    // Card is recognized. Index contents opportunistically.
-                }
-                else
-                {
-                    // Card is not recognized. Index contents immediately.
-                }
-            }
+    if (...) // If cardID matches the cached ID of a recognized card.
+    {
+        // Card is recognized. Index contents opportunistically.
+    }
+    else
+    {
+        // Card is not recognized. Index contents immediately.
+    }
+}
 ```
 
  
 
  
-

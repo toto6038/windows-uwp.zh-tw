@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: cd6326ebad94c33fd03bf39f2dfd11f1c27e9b37
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: cd2adcffa233b76563e47f93f298cf954154adef
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="manual-camera-controls-for-video-capture"></a>視訊擷取的手動相機控制項
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
@@ -59,7 +56,6 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
  
 
  
-
 
 
 

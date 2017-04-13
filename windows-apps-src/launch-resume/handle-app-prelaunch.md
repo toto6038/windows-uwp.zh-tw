@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 6107fe07fc8e98db7d197354246784a31a9c902c
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: b8200f3dd345d2da63a9fa127db53201afefc92d
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="handle-app-prelaunch"></a>處理應用程式預先啟動
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何透過覆寫 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法來處理 App 預先啟動。
 
@@ -154,10 +151,9 @@ void ViewProvider::OnActivated(CoreApplicationView^ appView,IActivatedEventArgs^
     -   效能影響舉例：您可以等到使用者切換到 App 才擷取當前的天氣資訊，而不是在預先啟動 App 時就載入該資訊，然後在 App 變成可見時，需要再次載入該資訊以確保該資訊是當前的。
 -   如果您的 App 會在啟動時清除其動態磚，請將此操作延遲到可見度變更事件發生之後才進行。
 -   您 App 的遙測應該要能區分一般磚啟用和預先啟動啟用，以便讓您能夠在問題發生時縮小狀況範圍。
--   如果您有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，您可以在 Visual Studio 2015 中選擇 [偵錯]**** &gt; [其他偵錯目標]**** &gt; [偵錯 Windows 通用應用程式預先啟動]****，來模擬 App 的預先啟動。
+-   如果您有 Microsoft Visual Studio 2015 Update 1 和 Windows 10 版本 1511，您可以在 Visual Studio 2015 中選擇 **\[偵錯\]** &gt; **\[其他偵錯目標\]** &gt; **\[偵錯 Windows 通用應用程式預先啟動\]**，來模擬 App 的預先啟動。
 
 ## <a name="related-topics"></a>相關主題
 
 * [App 週期](app-lifecycle.md)
 * [CoreApplication.EnablePrelaunch](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.core.coreapplication.enableprelaunch.aspx)
-

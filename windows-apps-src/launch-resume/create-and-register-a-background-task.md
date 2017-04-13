@@ -9,16 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: ba9c5c1a59452295a07efd371ccfd632f290c837
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -26,10 +23,10 @@ ms.lasthandoff: 02/07/2017
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-建立背景工作類別並加以登錄，讓它在 App 不在前景時也能執行。 本主題示範如何建立及註冊與 App 處理序不同處理序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
+建立背景工作類別並加以註冊，讓它在 App 不在前景時也能執行。 本主題示範如何建立及註冊與 App 處理序不同處理序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
 > [!Note]
-> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows 10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
+> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
 ## <a name="create-the-background-task-class"></a>建立背景工作類別
 
@@ -37,14 +34,17 @@ ms.lasthandoff: 02/07/2017
 
 下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 開始之前，請先在您的方案中為背景工作建立一個新專案。 請為您的背景工作新增一個空的類別，然後匯入 [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空間。
 
-1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這麼做，請以滑鼠右鍵按一下您在 [方案總管]**** 中的方案節點，然後選取 [新增] -&gt; [新增專案]。 接著，選取 [Windows 執行階段元件 (通用 Windows)]**** 專案類型、為專案命名，然後按一下 [確定]。
+1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這麼做，請以滑鼠右鍵按一下您在 **\[方案總管\]** 中的方案節點，然後選取 \[新增\] -&gt; \[新增專案\]。 接著，選取 **\[Windows 執行階段元件 (通用 Windows)\]** 專案類型、為專案命名，然後按一下 \[確定\]。
 2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。
 
-    如果是 C++ 應用程式，請在您的應用程式專案上按一下滑鼠右鍵，然後選取 [屬性]****。 接著，移至 [通用屬性]**** 並按一下 [加入新參考]****，核取您背景工作專案旁邊的方塊，然後在兩個對話方塊中都按一下 [確定]****。
+    如果是 C++ 應用程式，請在您的應用程式專案上按一下滑鼠右鍵，然後選取 **\[屬性\]**。 接著，移至 **\[通用屬性\]** 並按一下 **\[加入新參考\]**，核取您背景工作專案旁邊的方塊，然後在兩個對話方塊中都按一下 **\[確定\]**。
 
-    如果是 C# 應用程式，請在您的應用程式專案中，於 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入新參考]****。 在 [方案]**** 下選取 [專案]****，然後選取您背景工作專案的名稱並按一下 [確定]****。
+    如果是 C# 應用程式，請在您的應用程式專案中，於 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入新參考\]**。 在 **\[方案\]** 下選取 **\[專案\]**，然後選取您背景工作專案的名稱並按一下 **\[確定\]**。
 
-3.  建立一個實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一個在觸發指定事件時將會呼叫的必要進入點；這是每個背景工作都需要的方法。
+3.  建立一個實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。 
+            [
+              **Run**
+            ](https://msdn.microsoft.com/library/windows/apps/br224811) 方法是一個在觸發指定事件時將會呼叫的必要進入點；這是每個背景工作都需要的方法。
 
     > [!NOTE]
     > 背景工作類別本身及背景工作專案中的所有其他類別都必須是 **sealed** 的 **public** 類別。
@@ -222,7 +222,7 @@ ms.lasthandoff: 02/07/2017
     >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
     > ```
 
-3.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您希望在使用者上線時執行工作，則可使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+3.  您可以新增條件，以控制觸發程序事件發生後何時執行工作 (選用)。 例如，如果您希望等到使用者在場時才執行工作，可以使用 **UserPresent** 條件。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
     下列範例程式碼會指派條件，要求必須要有使用者：
 
@@ -302,10 +302,10 @@ ms.lasthandoff: 02/07/2017
 在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的 app 嘗試使用未列在資訊清單中的觸發程序來註冊背景工作，註冊將會失敗。
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
-2.  開啟 [宣告]**** 索引標籤。
-3.  從 [可用宣告]**** 下拉式清單中選擇 [背景工作]****，然後按一下 [新增]****。
-4.  選取 [系統事件]**** 核取方塊。
-5.  在 [進入點:]**** 文字方塊中，輸入您背景類別的命名空間與名稱，在這個範例中會是 RuntimeComponent1.ExampleBackgroundTask。
+2.  開啟 **\[宣告\]** 索引標籤。
+3.  從 **\[可用宣告\]** 下拉式清單中選擇 **\[背景工作\]**，然後按一下 **\[新增\]**。
+4.  選取 **\[系統事件\]** 核取方塊。
+5.  在 **\[進入點:\]** 文字方塊中，輸入您背景類別的命名空間與名稱，在這個範例中會是 RuntimeComponent1.ExampleBackgroundTask。
 6.  關閉資訊清單設計工具。
 
     下列 Extensions 元素會新增至您的 Package.appxmanifest 檔案中以註冊背景工作：
@@ -334,7 +334,7 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="related-topics"></a>相關主題
 
-**詳細的背景工作說明主題**
+**詳細的背景工作教學主題**
 
 * [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [登錄背景工作](register-a-background-task.md)
@@ -355,4 +355,3 @@ ms.lasthandoff: 02/07/2017
 **背景工作 API 參考**
 
 * [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
-

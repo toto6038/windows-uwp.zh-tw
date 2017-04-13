@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 647a0228299e90026307fdd516ac71da2473ff0d
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0992c0fc3c6fe9d70b7867275d28e6bba78171ab
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="audio-device-information-properties"></a>音訊裝置資訊屬性
 
 本文列出與音訊裝置有關的裝置資訊屬性 在 Windows 中，每個硬體裝置都有提供裝置相關詳細資訊的相關聯 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 屬性，您可以在需要裝置相關特定資訊或建置裝置選取器時使用。 如需有關在 Windows 上列舉裝置的一般資訊，請參閱[列舉裝置](../devices-sensors/enumerate-devices.md)和[裝置資訊屬性](../devices-sensors/device-information-properties.md)。
@@ -35,7 +32,6 @@ ms.lasthandoff: 02/07/2017
 * [裝置資訊屬性](../devices-sensors/device-information-properties.md)
 * [建置裝置選取器](../devices-sensors/build-a-device-selector.md)
 * [媒體播放](media-playback.md)
-
 
 
 

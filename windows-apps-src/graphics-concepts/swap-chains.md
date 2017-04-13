@@ -2,21 +2,17 @@
 title: "交換鏈結"
 description: "交換鏈結是用來向使用者顯示畫面的緩衝區集合。"
 ms.assetid: A38E8BB7-1E77-4D93-B321-D3572A80D5DD
-keywords:
-- "交換鏈結"
+keywords: "交換鏈結"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 8028c67e2ffb8f1b021ec486691251850de5fa8b
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1598811ce05536c3396ef72bb9d1b06ddbba0fdc
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="swap-chains"></a>交換鏈結
 
 
@@ -56,7 +52,6 @@ Direct3D 實作兩個選項來避免撕裂：
  
 
  
-
 
 
 

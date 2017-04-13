@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7eeb8b79b3c50593470f62c3eddd29a9f218d528
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="optimize-animations-media-and-images"></a>最佳化動畫、媒體及影像
 
-\[ 已針對 Windows 10 上的 UWP 應用程式進行更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 建立具有流暢的動畫、高畫面播放速率和高效能媒體擷取和播放功能的通用 Windows 平台 (UWP) app。
 
@@ -107,11 +105,13 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 ### <a name="put-other-elements-to-the-side-of-embedded-video"></a>將其他元素放到內嵌視訊的旁邊
 
-App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 不是頁面大小，再加上其他繪製的 XAML 物件，您很明顯地無法使用全螢幕播放。 請注意不要在 **** 周圍繪製框線，以避免不慎進入這個模式。
+App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 不是頁面大小，再加上其他繪製的 XAML 物件，您很明顯地無法使用全螢幕播放。 請注意不要在 **MediaPlayerElement** 周圍繪製框線，以避免不慎進入這個模式。
 
 當視訊是內嵌模式時，請勿在視訊上繪製 XAML 元素。 如果您這樣做，架構會強制執行一些額外工作來建構場景。 將傳輸控制項放在內嵌媒體元素下方 (而非視訊上)，是這個狀況最佳化的最佳範例。 在這個影像中，紅色列代表一組傳輸控制項 (播放、暫停及停止等)。
 
-![含有重疊元素的 MediaPlayerElement](images/videowithoverlay.png) 請勿在非全螢幕的媒體上方放置這些控制項。 反之，將這些傳輸控制項放在媒體轉譯區域外部的位置。 在下一個影像中，控制項放在媒體下方。
+![含有重疊元素的 MediaPlayerElement](images/videowithoverlay.png)
+
+請勿在非全螢幕的媒體上方放置這些控制項。 反之，將這些傳輸控制項放在媒體轉譯區域外部的位置。 在下一個影像中，控制項放在媒體下方。
 
 ![含有相鄰元素的 MediaPlayerElement](images/videowithneighbors.png)
 
@@ -154,7 +154,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 不要這樣做：
 
 ```xaml
-<Image Source="ms-appx:///Assets/highresCar.jpg" 
+<Image Source="ms-appx:///Assets/highresCar.jpg"
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
@@ -163,7 +163,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 ```xaml
 <Image>
     <Image.Source>
-    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg" 
+    <BitmapImage UriSource="ms-appx:///Assets/highresCar.jpg"
                  DecodePixelWidth="300" DecodePixelHeight="200"/>
     </Image.Source>
 </Image>
@@ -177,7 +177,7 @@ App 通常會提供在頁面中播放視訊的內嵌檢視。 由於 [**MediaPla
 
 在無法預先決定適當解碼大小的某些情況下，您應該遵從 XAML 的自動以正確大小解碼，它會在未指定明確的 DecodePixelWidth/DecodePixelHeight 時，盡可能嘗試以適當大小將影像解碼。
 
-如果您預先知道影像內容的大小，就應該設定明確的解碼大小。 如果提供的解碼大小是相對其他 XAML 元素的大小，您也應該一併將 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 設定為 **Logical**。 例如，如果您明確使用 Image.Width 和 Image.Height 設定內容的大小，可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 控制影像的大小來節省大量記憶體。
+如果您預先知道影像內容的大小，就要設定明確的解碼大小。 如果提供的解碼大小與其他 XAML 元素的大小成比例，您也應該同時將 [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) 設定為 **Logical**。 例如，如果您明確使用 Image.Width 和 Image.Height 設定內容的大小，可以將 DecodePixelType 設定為 DecodePixelType.Logical 以使用與 Image 控制項相同的邏輯像素維度，然後明確使用 BitmapImage.DecodePixelWidth 和/或 BitmapImage.DecodePixelHeight 控制影像的大小來節省大量記憶體。
 
 請注意，決定解碼內容的大小時，應考量 Image.Stretch。
 
@@ -273,14 +273,14 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 > picker.FileTypeFilter.Add(".jpeg");
 > picker.FileTypeFilter.Add(".png");
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-> 
+>
 > StorageFile file = await picker.PickSingleFileAsync();
-> 
+>
 > StorageItemThumbnail fileThumbnail = await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64);
-> 
+>
 > BitmapImage bmp = new BitmapImage();
 > bmp.SetSource(fileThumbnail);
-> 
+>
 > Image img = new Image();
 > img.Source = bmp;
 > ```
@@ -291,14 +291,14 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 > picker.FileTypeFilter.Add(".jpeg")
 > picker.FileTypeFilter.Add(".png")
 > picker.SuggestedStartLocation = PickerLocationId.PicturesLibrary
-> 
+>
 > Dim file As StorageFile = Await picker.PickSingleFileAsync()
-> 
+>
 > Dim fileThumbnail As StorageItemThumbnail = Await file.GetThumbnailAsync(ThumbnailMode.SingleItem, 64)
-> 
+>
 > Dim bmp As New BitmapImage()
 > bmp.SetSource(fileThumbnail)
-> 
+>
 > Dim img As New Image()
 > img.Source = bmp
 > ```
@@ -306,5 +306,3 @@ XAML 具備內部最佳化的功能，允許以非同步方式將影像的內容
 ### <a name="decode-images-once"></a>解碼影像一次
 
 為避免影像解碼超過一次，請從 URI 指派 [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) 屬性，而非使用記憶體串流。 XAML 架構可以將多個位置中的同一個 URI 與一個解碼的影像建立關聯，但無法為包含相同資料的多個記憶體串流執行相同動作，而是會為每個記憶體串流建立一個不同的解碼影像。
-
-

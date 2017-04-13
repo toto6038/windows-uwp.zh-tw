@@ -9,15 +9,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ced83940fb49f5812343fee34cb11582683bd672
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: d96d01216a37c4e8dbcd0fcd0eb83ccb4859b288
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="enable-usermode-access-on-windows-10-iot-core"></a>在 Windows 10 IoT 核心版上啟用使用者模式存取
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 Windows 10 IoT 核心版包含可透過使用者模式直接存取 GPIO、I2C、SPI 和 UART 的新 API。 諸如 Raspberry Pi 2 等開發板會公開這些連線的子集，讓使用者能夠使用自訂電路系統延伸基本運算模組，以處理特定應用程式。 這些低階匯流排通常會與其他重要的內建功能共用，包含一部分在排針上公開的 GPIO 針腳與匯流排。 若要保留系統穩定性，必須指定哪些針腳與匯流排可由使用者模式應用程式安全地修改。 
@@ -711,9 +709,9 @@ devcon status *msft8000
 
 | 工具 | 連結 |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/gpiotesttool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (序列) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## <a name="resources"></a>資源
@@ -731,9 +729,9 @@ devcon status *msft8000
 | GpioClx    | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C 測試 | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool    | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool |    https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/samples/GPIOTestTool |
+| I2cTestTool    | https://developer.microsoft.com/windows/iot/samples/I2cTestTool | 
+| SpiTestTool |    https://developer.microsoft.com/windows/iot/samples/spitesttool |
 | MinComm (序列) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | Hardware Lab Kit (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -741,7 +739,7 @@ devcon status *msft8000
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>附錄 A - Raspberry Pi ASL 清單
 
-排針針腳輸出：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
+排針針腳輸出：https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -903,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>附錄 B - MinnowBoardMax ASL 清單
 
-排針針腳輸出：https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
+排針針腳輸出：https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1091,4 +1089,3 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
     $resourceIndex += 2;
 }
 ```
-

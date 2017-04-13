@@ -10,14 +10,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 76521772e4f93ee143ad698ad798f4b88ebcf3a7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 00cbeca54b67f0f9112fe1a85f5e31faf9fb8560
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
 
@@ -40,9 +36,9 @@ ms.lasthandoff: 02/07/2017
 
 若要啟用應用程式的動態磚，請將新的 Windows 執行階段元件專案新增至您的方案。 這是使用者安裝應用程式時，OS 在背景載入和執行的個別組件。
 
-1.  在 [方案總管] 中，以滑鼠右鍵按一下方案，指向 [新增]****，然後按一下或點選 [新增專案]****。
-2.  在 [加入新的專案]**** 對話方塊中，選取 [Visual C#] &gt; [Windows 市集]**** 區段中的 [Windows 執行階段元件]**** 範本。
-3.  將專案命名為 BackgroundTasks，然後按一下或點選 [確定]****。 Microsoft Visual Studio 會將新專案新增至方案。
+1.  在 \[方案總管\] 中，以滑鼠右鍵按一下方案，指向 **\[新增\]**，然後按一下或點選 **\[新增專案\]**。
+2.  在 **\[加入新的專案\]** 對話方塊中，選取 **\[Visual C#\] &gt; \[Windows 市集\]** 區段中的 **\[Windows 執行階段元件\]** 範本。
+3.  將專案命名為 BackgroundTasks，然後按一下或點選 **\[確定\]**。 Microsoft Visual Studio 會將新專案新增至方案。
 4.  在主要專案中，將參考新增至 BackgroundTasks 專案。
 
 ## <a name="implement-the-background-task"></a>實作背景工作
@@ -154,16 +150,16 @@ namespace BackgroundTasks
 若要設定套件資訊清單，請將它開啟然後新增背景工作宣告。 將工作的進入點設定為類別名稱，包括其命名空間。
 
 1.  在 [方案總管] 中，開啟 Package.appxmanifest。
-2.  按一下或點選 [宣告]**** 索引標籤。
-3.  在 [可用宣告]**** 下，選取 [BackgroundTasks]****，然後按一下 [加入]****。 Visual Studio 會在 [支援的宣告]**** 下新增 [BackgroundTasks]****。
-4.  在 [支援的工作類型]**** 下，確定已選取 [計時器]****。
-5.  在 [應用程式設定]**** 下，將進入點設定成 [BackgroundTasks.BlogFeedBackgroundTask]****。
-6.  按一下或點選 [應用程式 UI]**** 索引標籤。
-7.  將 [鎖定畫面通知]**** 設定成 [徽章與文字並排]****。
-8.  在 [徽章標誌]**** 欄位中，設定 24x24 像素圖示的路徑。
+2.  按一下或點選 **\[宣告\]** 索引標籤。
+3.  在 **\[可用宣告\]** 下，選取 **\[BackgroundTasks\]**，然後按一下 **\[加入\]**。 Visual Studio 會在 **\[支援的宣告\]** 下新增 **\[BackgroundTasks\]**。
+4.  在 **\[支援的工作類型\]** 下，確定已選取 **\[計時器\]**。
+5.  在 **\[應用程式設定\]** 下，將進入點設定成 **\[BackgroundTasks.BlogFeedBackgroundTask\]**。
+6.  按一下或點選 **\[應用程式 UI\]** 索引標籤。
+7.  將 **\[鎖定畫面通知\]** 設定成 **\[徽章與文字並排\]**。
+8.  在 **\[徽章標誌\]** 欄位中，設定 24x24 像素圖示的路徑。
     **重要** 此圖示只能使用單色和透明像素。
-9.  在 [小標誌]**** 欄位中，設定 30x30 像素圖示的路徑。
-10. 在 [寬標誌]**** 欄位中，設定 310x150 像素圖示的路徑。
+9.  在 **\[小標誌\]** 欄位中，設定 30x30 像素圖示的路徑。
+10. 在 **\[寬標誌\]** 欄位中，設定 310x150 像素圖示的路徑。
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
@@ -250,16 +246,16 @@ namespace ContosoApp
 ## <a name="debug-the-background-task"></a>偵錯背景工作
 
 
-若要偵錯背景工作，請在工作的 Run 方法中設定中斷點。 在 [偵錯位置]**** 工具列中，選取您的背景工作。 這會讓系統立即呼叫 Run 方法。
+若要偵錯背景工作，請在工作的 Run 方法中設定中斷點。 在 **\[偵錯位置\]** 工具列中，選取您的背景工作。 這會讓系統立即呼叫 Run 方法。
 
 1.  在工作的 Run 方法中設定中斷點。
-2.  按 F5 或點選 [偵錯] &gt; [開始偵錯]****，部署和執行 App。
+2.  按 F5 或點選 **\[偵錯\] &gt; \[開始偵錯\]**，部署和執行 App。
 3.  App 啟動後，切換回 Visual Studio。
-4.  確定可看到 [偵錯位置]**** 工具列。 此工具列位於 [檢視] &gt; [工具列]**** 功能表。
-5.  在 [偵錯位置]**** 工具列，按一下 [暫停]**** 下拉式清單，然後選取 [BlogFeedBackgroundTask]****。
+4.  確定可看到 **\[偵錯位置\]** 工具列。 此工具列位於 **\[檢視\] &gt; \[工具列\]** 功能表。
+5.  在 **\[偵錯位置\]** 工具列，按一下 **\[暫停\]** 下拉式清單，然後選取 **\[BlogFeedBackgroundTask\]**。
 6.  Visual Studio 會在中斷點暫停執行。
-7.  按 F5 或點選 [偵錯] &gt; [繼續]****，繼續執行 App。
-8.  按 Shift+F5 或點選 [偵錯] &gt; [停止偵錯]****，停止偵錯。
+7.  按 F5 或點選 **\[偵錯\] &gt; \[繼續\]**，繼續執行 App。
+8.  按 Shift+F5 或點選 **\[偵錯\] &gt; \[停止偵錯\]**，停止偵錯。
 9.  回到 [開始] 畫面上 App 的磚。 數秒之後，磚通知會顯示在應用程式磚上。
 
 ## <a name="related-topics"></a>相關主題
@@ -274,4 +270,3 @@ namespace ContosoApp
  
 
  
-

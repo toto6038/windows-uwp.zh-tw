@@ -14,11 +14,9 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 51e5a3dac6ab8682cd9d10efafb7e1e38f9d53d4
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a591600ac31b1582d4ce133a6539884d4616639f
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -446,6 +444,5 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 ```
 
 請注意，仍會在 "HighContrast" 字典中使用 [{ThemeResource} 標記延伸](../xaml-platform/themeresource-markup-extension.md)，而不是使用 [{StaticResource} 標記延伸](../xaml-platform/staticresource-markup-extension.md)。 這種情況屬於指導方針中稍早指定的例外狀況。 大多數用於 "HighContrast" 佈景主題的筆刷值都是使用由系統全域控制但對 XAML 顯示為特別命名之資源的色彩選擇 (這些項目的名稱都是以 ‘SystemColor’ 做為首碼)。 系統可讓使用者透過 [輕鬆存取中心]，來設定其高對比設定應使用的特定色彩。 這些色彩選擇會套用到特別命名的資源。 XAML 架構會使用相同的佈景主題變更事件，當其在系統層級上偵測到這些筆刷已變更時，也會更新它們。 這就是為什麼要在此處使用 {ThemeResource} 標記延伸的原因。
-
 
 

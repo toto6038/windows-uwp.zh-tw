@@ -6,13 +6,11 @@ ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
 redirect_url: https://msdn.microsoft.com/windows/uwp/input-and-devices/touch-interactions
-translationtype: Human Translation
-ms.sourcegitcommit: 2db7aaccfd56b1bdfda099b197a695bad8a9cba1
 ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
-# 觸控設計指導方針
+# <a name="touch-design-guidelines"></a>觸控設計指導方針
 
 
 
@@ -20,7 +18,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 使用針對觸控最佳化，但在功能上與所有輸入裝置一致之直覺且特殊的使用者互動體驗，來建立通用 Windows 平台 (UWP) App。
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
 
 
 -   設計以觸控互動做為主要預期輸入方法的應用程式。
@@ -31,7 +29,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 -   如有可能，不要使用計時互動 (適當用法範例：觸碰並按住)。
 -   如有可能，不要使用手指數目來辨別操作。
 
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
 
 
 首先，在設計應用程式時，請先預期觸控會是使用者的主要輸入方法。 如果您使用平台控制項，在觸控板、滑鼠和畫筆/手寫筆的支援方面，則不需要額外的程式設計，因為 Windows 8 對此提供免費支援。
@@ -136,7 +134,7 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 
 -   精確度控點
 
-    在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段 app)](guidelines-for-textselection.md)。
+    在要求精確度 (例如文字選取) 的情況下，請提供位移的選取控點以提高精確度。 如需詳細資訊，請參閱[選取文字和影像的指導方針 (Windows 執行階段應用程式)](guidelines-for-textselection.md)。
 
 **計時**
 
@@ -157,13 +155,13 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
 -   互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
 -   不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
 
-    **注意** 使用特定計時互動來協助學習和探索 (例如長按) 為例外的狀況。
+    **備註**  使用特定計時互動來協助學習和探索 (例如長按) 為例外的狀況。
 
      
 
 -   適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
 
-## <span id="related_topics"></span>相關文章
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相關文章
 
 **適用於開發人員 (XAML)**
 * [觸控互動](https://msdn.microsoft.com/library/windows/apps/mt185617)
@@ -173,11 +171,5 @@ ms.openlocfilehash: 28dfadf6010aed3fb2ed0d03b73f92631c17fcf4
  
 
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

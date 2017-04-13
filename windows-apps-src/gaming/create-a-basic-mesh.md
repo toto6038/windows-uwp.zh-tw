@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 網格, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="create-and-display-a-basic-mesh"></a>建立和顯示基本網格
 
 
@@ -194,7 +191,7 @@ unsigned short cubeIndices[] =
 -   從世界座標系統轉換成相機 (視圖) 座標系統的 4x4 矩陣。
 -   從相機座標系統轉換成 2D 檢視投影座標系統的 4x4 矩陣。
 
-這些矩陣會傳送到「常數緩衝區」**中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
+這些矩陣會傳送到*「常數緩衝區」*中的著色器。 常數緩衝區是會在著色器管線下一階段的執行期間維持一致的記憶體區域，著色器可從您的 HLSL 程式碼直接存取它。 您要為每個常數緩衝區定義兩次：第一次是在遊戲的 C++ 程式碼中，而 (至少) 一次是在您著色器程式碼的類 C 程式語言的 HLSL 語法中。 兩種宣告在類型和資料對齊方面都必須直接對應。 當著色器使用 HLSL 宣告來解譯以 C++ 宣告的資料，但類型不符或資料對齊不一致時，這種錯誤很容易出現，但又不容易被發現。
 
 HLSL 不會變更常數緩衝區。 您可以在遊戲更新特定資料時變更它們。 遊戲開發人員通常會建立 4 種類別的常數緩衝區：一種用於依畫面更新；一種用於依模型/物件更新；一種用於依遊戲狀態重新整理更新；還有一種用於遊戲生命週期內均未曾變更的資料。
 
@@ -450,7 +447,6 @@ m_swapChain->Present(1, 0);
  
 
  
-
 
 
 

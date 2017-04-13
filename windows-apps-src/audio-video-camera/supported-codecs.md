@@ -9,19 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 2c477e9dc0cc86534a179edb8e3a9415f4872d93
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 0973195b8777a0154b733ba2625327bb9296bd6b
+ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+translationtype: HT
 ---
-
 # <a name="supported-codecs"></a>支援的轉碼器
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本文列出 UWP App 支援的音訊、視訊及影像轉碼器和格式。
+本文依照預設針對每個裝置系列來列出 UWP app 音訊、視訊及影像的轉碼器與格式可用性。 請注意，這些表格列出隨附於指定之裝置系列的 Windows 10 安裝的轉碼器。 使用者和 App 可以安裝其他或許可供使用的轉碼器。 您可以在執行階段查詢特定裝置目前可用的一組轉碼器。 如需詳細資訊，請參閱[查詢裝置已安裝的轉碼器](codec-query.md)。
 
 在下列表格中，"D" 表示解碼器支援，"E" 則表示編碼器支援。
 

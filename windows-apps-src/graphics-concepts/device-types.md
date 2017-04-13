@@ -2,21 +2,17 @@
 title: "裝置類型"
 description: "Direct3D 裝置類型包括硬體抽象層 (hal) 裝置和軟體模擬轉譯器。"
 ms.assetid: 64084B23-10C0-4541-8E93-FB323385D2F0
-keywords:
-- "裝置類型"
+keywords: "裝置類型"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 883e40145b4d9667eee4fe2b945f555ccddc9895
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d863c3f45269c448f1f6fc1055ee765f323dbcd7
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="device-types"></a>裝置類型
 
 
@@ -54,7 +50,6 @@ HAL (硬體抽象層) 裝置和 REF (軟體模擬轉譯器) 裝置是 Direct3D �
  
 
  
-
 
 
 

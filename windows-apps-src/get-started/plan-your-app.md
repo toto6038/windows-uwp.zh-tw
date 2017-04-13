@@ -9,13 +9,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
 ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.lasthandoff: 02/07/2017
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>規劃您的通用 Windows 平台 (UWP) app
 
 在 Microsoft 設計團隊中，我們建立 app 的程序包含五個不同階段：概念、結構、動態、視覺化以及原型。 我們鼓勵您採用類似的程序，享受開發的樂趣，為全球使用者打造前所未有的全新體驗。
@@ -242,4 +239,3 @@ ms.lasthandoff: 02/07/2017
 在開發應用程式之前，請先確認您的設計或原型是否符合指導方針、使用者印象與需求，以免日後必須重做。 每個功能都有一組 UX 指導方針，協助您讓應用程式更臻完美；還有一組市集需求，必須符合這些需求才能在 Windows 市集中銷售您的應用程式。 您可以使用 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)測試是否符合市集技術需求。 您也可以使用 Microsoft Visual Studio 中的效能工具，確認您在每個案例中都為使用者提供了絕佳的經驗。
 
 使用 [UWP app 的詳細 UX 指導方針](https://msdn.microsoft.com/library/windows/apps/hh465424)，讓您持續專注在重要的功能。 使用 [Visual Studio 效能工具](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)，分析您每個 app 案例的效能。
-

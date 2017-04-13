@@ -3,18 +3,17 @@ author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: "HoloLens 的 Device Portal API 參考"
 description: "了解 HoloLens 的 Windows Device Portal REST API，您可以用來存取資料，並以程式設計方式控制您的裝置。"
-translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 638ebca167b2ca56f00a83aab13b15c57b2dca2a
-
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-# HoloLens 的 Device Portal API 參考
+# <a name="device-portal-api-reference-for-hololens"></a>HoloLens 的 Device Portal API 參考
 
 Windows Device Portal 中的所有項目都是以 REST API (可讓您用來存取資料並以程式設計方式控制裝置) 為基礎所建置。
 
-## 全像攝影版 OS
+## <a name="holographic-os"></a>全像攝影版 OS
 ---
-### 取得 Device Portal 的 HTTPS 需求
+### <a name="get-https-requirements-for-the-device-portal"></a>取得 Device Portal 的 HTTPS 需求
 
 **要求**
 
@@ -46,7 +45,7 @@ GET | /api/holographic/os/webmanagement/settings/https
 - 標準狀態碼。
 
 ---
-### 取得儲存的瞳孔距離 (IPD)
+### <a name="get-the-stored-interpupillary-distance-ipd"></a>取得儲存的瞳孔距離 (IPD)
 
 **要求**
 
@@ -78,7 +77,7 @@ GET | /api/holographic/os/settings/ipd
 - 標準狀態碼。
 
 ---
-### 取得 HoloLens 特定 ETW 提供者的清單
+### <a name="get-a-list-of-hololens-specific-etw-providers"></a>取得 HoloLens 特定 ETW 提供者的清單
 
 **要求**
 
@@ -110,7 +109,7 @@ GET | /api/holographic/os/etw/customproviders
 - 標準狀態碼。
 
 ---
-### 傳回所有作用中服務的狀態
+### <a name="return-the-state-for-all-active-services"></a>傳回所有作用中服務的狀態
 
 **要求**
 
@@ -142,7 +141,7 @@ GET | /api/holographic/os/services
 - 標準狀態碼。
 
 ---
-### 設定 Device Portal 的 HTTPS 需求。
+### <a name="set-the-https-requirement-for-the-device-portal"></a>設定 Device Portal 的 HTTPS 需求。
 
 **要求**
 
@@ -178,7 +177,7 @@ required   | (**required**) 決定 Device Portal 是否需要 HTTPS。 可能的
 - 標準狀態碼。
 
 ---
-### 設定瞳孔距離 (IPD)
+### <a name="set-the-interpupillary-distance-ipd"></a>設定瞳孔距離 (IPD)
 
 **要求**
 
@@ -214,9 +213,9 @@ ipd   | (**required**) 要儲存的新 IPD 值。 此值應該以公釐表示。
 - 標準狀態碼。
 
 ---
-## 全息影像感知
+## Holographic perception
 ---
-### 接受 WebSocket 升級並執行傳送更新的 Mirage 用戶端
+### <a name="accept-websocket-upgrades-and-run-a-mirage-client-that-sends-updates"></a>接受 WebSocket 升級並執行傳送更新的 Mirage 用戶端
 
 **要求**
 
@@ -252,9 +251,9 @@ clientmode   | (**必要**) 決定追蹤模式。 **active** 的值會在無法�
 - 標準狀態碼。
 
 ---
-## 全息影像熱溫
+## Holographic thermal
 ---
-### 取得裝置的熱溫階段
+### <a name="get-the-thermal-stage-of-the-device"></a>取得裝置的熱溫階段
 
 **要求**
 
@@ -291,9 +290,9 @@ GET | /api/holographic/
 - 標準狀態碼。
 
 ---
-## HSimulation 控制項
+## HSimulation control
 ---
-### 建立控制項的串流，或將資料張貼到已建立的串流
+### <a name="create-a-control-stream-or-post-data-to-a-created-stream"></a>建立控制項的串流，或將資料張貼到已建立的串流
 
 **要求**
 
@@ -330,7 +329,7 @@ streamid   | (**張貼到已建立的串流時為必要**) 要張貼到之串流
 - 標準狀態碼。
 
 ---
-### 刪除控制項串流
+### <a name="delete-a-control-stream"></a>刪除控制項串流
 
 **要求**
 
@@ -362,7 +361,7 @@ DELETE | /api/holographic/simulation/control/stream
 - 標準狀態碼。
 
 ---
-### 取得控制項串流
+### <a name="get-a-control-stream"></a>取得控制項串流
 
 **要求**
 
@@ -394,7 +393,7 @@ GET/WebSocket | /api/holographic/simulation/control/stream
 - 標準狀態碼。
 
 ---
-### 取得模擬模式
+### <a name="get-the-simluation-mode"></a>取得模擬模式
 
 **要求**
 
@@ -426,7 +425,7 @@ GET | /api/holographic/simulation/control/mode
 - 標準狀態碼。
 
 ---
-### 設定模擬模式
+### <a name="set-the-simluation-mode"></a>設定模擬模式
 
 **要求**
 
@@ -462,9 +461,9 @@ mode   | (**必要**) 指出模擬模式。 可能的值包括 **default**、**s
 - 標準狀態碼。
 
 ---
-## HSimulation 播放
+## HSimulation playback
 ---
-### 刪除錄製
+### <a name="delete-a-recording"></a>刪除錄製
 
 **要求**
 
@@ -500,7 +499,7 @@ recording   | (**必要**) 要刪除之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 取得所有錄製
+### <a name="get-all-recordings"></a>取得所有錄製
 
 **要求**
 
@@ -532,7 +531,7 @@ GET | /api/holographic/simulation/playback/files
 - 標準狀態碼。
 
 ---
-### 取得已載入之錄製中的資料類型
+### <a name="get-the-types-of-data-in-a-loaded-recording"></a>取得已載入之錄製中的資料類型
 
 **要求**
 
@@ -568,7 +567,7 @@ recording   | (**必要**) 要取得之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 取得所有已載入的錄製
+### <a name="get-all-the-loaded-recordings"></a>取得所有已載入的錄製
 
 **要求**
 
@@ -600,7 +599,7 @@ GET | /api/holographic/simulation/playback/session/files
 - 標準狀態碼。
 
 ---
-### 取得錄製的目前播放狀態 
+### <a name="get-the-current-playback-state-of-a-recording"></a>取得錄製的目前播放狀態 
 
 **要求**
 
@@ -636,7 +635,7 @@ recording   | (**必要**) 要取得之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 載入錄製
+### <a name="load-a-recording"></a>載入錄製
 
 **要求**
 
@@ -672,7 +671,7 @@ recording   | (**必要**) 要載入之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 暫停錄製
+### <a name="pause-a-recording"></a>暫停錄製
 
 **要求**
 
@@ -708,7 +707,7 @@ recording   | (**必要**) 要暫停之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 播放錄製
+### <a name="play-a-recording"></a>播放錄製
 
 **要求**
 
@@ -744,7 +743,7 @@ recording   | (**必要**) 要播放之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 停止錄製
+### <a name="stop-a-recording"></a>停止錄製
 
 **要求**
 
@@ -780,7 +779,7 @@ recording   | (**必要**) 要停止之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 卸載錄製
+### <a name="unload-a-recording"></a>卸載錄製
 
 **要求**
 
@@ -816,7 +815,7 @@ recording   | (**必要**) 要卸載之錄製的名稱。
 - 標準狀態碼。
 
 ---
-### 上傳錄製
+### <a name="upload-a-recording"></a>上傳錄製
 
 **要求**
 
@@ -848,9 +847,9 @@ POST | /api/holographic/simulation/playback/file
 - 標準狀態碼。
 
 ---
-## HSimulation 錄製
+## HSimulation recording
 ---
-### 取得錄製狀態
+### <a name="get-the-recording-state"></a>取得錄製狀態
 
 **要求**
 
@@ -882,7 +881,7 @@ GET | /api/holographic/simulation/recording/status
 - 標準狀態碼。
 
 ---
-### 開始錄製
+### <a name="start-a-recording"></a>開始錄製
 
 **要求**
 
@@ -925,7 +924,7 @@ singleSpatialMappingFrame   | (**選用**) 將此值設定為 1 來指出應該�
 - 標準狀態碼。
 
 ---
-### 停止目前的錄製
+### <a name="stop-the-current-recording"></a>停止目前的錄製
 
 **要求**
 
@@ -957,9 +956,9 @@ POST | /api/holographic/simulation/recording/stop
 - 標準狀態碼。
 
 ---
-## 混合實境擷取
+## Mixed reality capture
 ---
-### 從裝置刪除混合實境擷取 (MRC) 錄製
+### <a name="delete-a-mixed-reality-capture-mrc-recording-from-the-device"></a>從裝置刪除混合實境擷取 (MRC) 錄製
 
 **要求**
 
@@ -995,7 +994,7 @@ filename   | (**必要**) 要刪除的影片檔名稱。 名稱應該是 hex64 �
 - 標準狀態碼。
 
 ---
-### 下載混合實境擷取 (MRC) 檔案
+### <a name="download-a-mixed-reality-capture-mrc-file"></a>下載混合實境擷取 (MRC) 檔案
 
 **要求**
 
@@ -1032,7 +1031,7 @@ op   | (**選用**) 若要下載串流，請將此值設定為 **stream**。
 - 標準狀態碼。
 
 ---
-### 取得混合實境擷取 (MRC) 設定
+### <a name="get-the-mixed-reality-capture-mrc-settings"></a>取得混合實境擷取 (MRC) 設定
 
 **要求**
 
@@ -1064,7 +1063,7 @@ GET | /api/holographic/mrc/settings
 - 標準狀態碼。
 
 ---
-### 取得混合實境擷取 (MRC) 錄製的狀態
+### <a name="get-the-status-of-the-mixed-reality-capture-mrc-recording"></a>取得混合實境擷取 (MRC) 錄製的狀態
 
 **要求**
 
@@ -1096,7 +1095,7 @@ GET | /api/holographic/mrc/status
 - 標準狀態碼。
 
 ---
-### 取得混合實境擷取 (MRC) 檔案的清單
+### <a name="get-the-list-of-mixed-reality-capture-mrc-files"></a>取得混合實境擷取 (MRC) 檔案的清單
 
 **要求**
 
@@ -1128,7 +1127,7 @@ GET | /api/holographic/mrc/files
 - 標準狀態碼。
 
 ---
-### 設定混合實境擷取 (MRC) 設定
+### <a name="set-the-mixed-reality-capture-mrc-settings"></a>設定混合實境擷取 (MRC) 設定
 
 **要求**
 
@@ -1160,7 +1159,7 @@ POST | /api/holographic/mrc/settings
 - 標準狀態碼。
 
 ---
-### 開始混合實境擷取 (MRC) 錄製
+### <a name="starts-a-mixed-reality-capture-mrc-recording"></a>開始混合實境擷取 (MRC) 錄製
 
 **要求**
 
@@ -1192,7 +1191,7 @@ POST | /api/holographic/mrc/video/control/start
 - 標準狀態碼。
 
 ---
-### 停止目前的混合實境擷取 (MRC) 錄製
+### <a name="stop-the-current-mixed-reality-capture-mrc-recording"></a>停止目前的混合實境擷取 (MRC) 錄製
 
 **要求**
 
@@ -1224,7 +1223,7 @@ POST | /api/holographic/mrc/video/control/stop
 - 標準狀態碼。
 
 ---
-### 拍攝混合實境擷取 (MRC) 相片
+### <a name="take-a-mixed-reality-capture-mrc-photo"></a>拍攝混合實境擷取 (MRC) 相片
 
 **要求**
 
@@ -1256,9 +1255,9 @@ GET | /api/holographic/mrc/photo
 - 標準狀態碼。
 
 ---
-## 混合實境串流
+## Mixed reality streaming
 ---
-### 起始分段下載 mp4 片段
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>起始分段下載 mp4 片段
 
 **要求**
 
@@ -1297,7 +1296,7 @@ loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **tr
 - 標準狀態碼。
 
 ---
-### 起始分段下載 mp4 片段
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>起始分段下載 mp4 片段
 
 **要求**
 
@@ -1336,7 +1335,7 @@ loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **tr
 - 標準狀態碼。
 
 ---
-### 起始分段下載 mp4 片段
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>起始分段下載 mp4 片段
 
 **要求**
 
@@ -1375,7 +1374,7 @@ loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **tr
 - 標準狀態碼。
 
 ---
-### 起始分段下載 mp4 片段
+### <a name="initiates-a-chunked-download-of-a-fragmented-mp4"></a>起始分段下載 mp4 片段
 
 **要求**
 
@@ -1412,9 +1411,3 @@ loopback   | (**選用**) 指出是否擷取應用程式音訊。 應該是 **tr
 **狀態碼**
 
 - 標準狀態碼。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

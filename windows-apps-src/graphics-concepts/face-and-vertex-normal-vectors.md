@@ -2,21 +2,17 @@
 title: "面和頂點法向量"
 description: "每個網格中的平面都有一個垂直單位法向量。 向量的方向是由定義頂點的順序，和座標系統是否為右手系或左手系而決定的。"
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
-keywords:
-- "面和頂點法向量"
+keywords: "面和頂點法向量"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 48a87cc9766d7fb6d0e3ac42e7956b27264af0db
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 04725508694370c1fff20ae34736fbd05948328c
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="face-and-vertex-normal-vectors"></a>面和頂點法向量
 
 
@@ -96,7 +92,6 @@ Direct3D 使用頂點單位法向量呈現 Gouraud Shading、光源及紋理效�
  
 
  
-
 
 
 

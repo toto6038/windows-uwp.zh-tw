@@ -9,19 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: 93dde6fe68275987c16562370ba277072e5467a9
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: e576150cd06000405fa4754e147fbc1546cdf703
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 #<a name="get-the-universal-windows-platform-uwp-samples-from-github"></a>取得 GitHub 中的通用 Windows 平台 (UWP) 範例
 UWP app 範例都可透過 GitHub 上的存放庫取得。 如果這是您第一次使用 UWP，您可以先從 [Microsoft/Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples "Universal Windows Platform app samples GitHub repository") 存放庫開始，其中包含示範所有 UWP 功能及其 API 使用模式的範例。  
 ![GitHub UWP 範例存放庫](images/GitHubUWPSamplesPage.png) 使用開發人員中心的[範例](https://developer.microsoft.com/windows/samples "Dev Center samples")區段可以找到額外的範例。  
 
 ##<a name="download-the-code"></a>下載程式碼
-若要下載範例，請移至[存放庫](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫")並選取 [複製或下載]****，然後是 [下載 ZIP]****。 或者，只要按一下[這裡](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "通用 Windows 平台應用程式範例壓縮檔下載")。
+若要下載範例，請移至[存放庫](https://github.com/Microsoft/Windows-universal-samples "通用 Windows 平台應用程式範例 GitHub 存放庫")並選取 **\[Clone or download\]** (複製或下載)，然後是 **\[下載 ZIP\]**。 或者，只要按一下[這裡](https://github.com/Microsoft/Windows-universal-samples/archive/master.zip "通用 Windows 平台應用程式範例壓縮檔下載")。
 
 壓縮檔一定會有最新的範例。 您不需要 GitHub 帳戶就可以下載。 當 SDK 更新發行時或如果您想要挑選任何最近的變更/新增項目，只要查看最新的 zip 檔案即可。
 
@@ -54,4 +51,3 @@ UWP app 範例都可透過 GitHub 上的存放庫取得。 如果這是您第一
 如果您有問題，只要使用存放庫的 \[Issues\] 索引標籤即可建立新的問題，我們將會盡可能提供幫助。
 
 ![意見反應影像](images/GitHubUWPSamplesFeedback.png)
-

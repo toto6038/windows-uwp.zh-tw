@@ -11,13 +11,10 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: bd6e209d670164bc017d5012199420420dc3eda0
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: dd307bd6d7551c1e95de29360a8601484b37e742
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>將 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
@@ -306,8 +303,8 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 首先，我們換定義我們的自訂畫筆並在程式碼後置中指定繪圖屬性。 稍後我們會從 XAML 參考此自訂畫筆。
 
-1. 在 [方案總管] 中的專案上按一下滑鼠右鍵，然後選取 [加入] -> [新增項目]。
-2. 在 [Visual C#] -> [程式碼] 底下，新增新的類別檔案，並命名為 CalligraphicPen.cs。
+1. 在 [方案總管] 中的專案上按一下滑鼠右鍵，然後選取 [加入] &gt; [新增項目]。
+2. 在 [Visual C#] -&gt; [程式碼] 底下，新增新的類別檔案，並命名為 CalligraphicPen.cs。
 3. 在 Calligraphic.cs 中，使用下列項目取代預設 using 區塊：
 ```csharp
 using System.Numerics;
@@ -423,7 +420,7 @@ class CalligraphicPen : InkToolbarCustomPen
 > [!NOTE]
 > 請參閱[筆跡控制項](..\controls-and-patterns\inking-controls.md)了解 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkCanvas) 與 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) 兩者的 UX 指導方針。 下列是與此範例相關的建議︰
 > - [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.InkToolbar) (以及一般的手寫筆跡) 最能夠透過主動式手寫筆來體驗。 不過，如果您的應用程式要求，也可支援使用滑鼠與觸控的手寫筆跡。 
-> - 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 "Segoe MLD2 Assets" 字型的 "ED5F" 圖示。 
+> - 如果支援使用觸控輸入的手寫筆跡，建議您針對切換按鈕 (包含「觸控書寫」工具提示) 使用 "Segoe MLD2 Assets" 字型的"ED5F" 圖示。 
 
 **XAML**
 
@@ -804,7 +801,7 @@ namespace Ink_Basic_InkToolbar
 
 > [!NOTE]
 > 自訂乾燥與 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)  
-> 如果您的應用程式使用自訂的乾燥實作覆寫 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的預設筆跡轉譯行為，InkToolbar 就不會再有轉譯的筆墨筆觸，InkToolbar 的內建清除命令也無法如預期般運作。 若要提供清除功能，就必須處理所有指標事件、對每一個筆劃執行點擊測試，並且覆寫內建的「清除所有筆跡」命令。
+> 如果您的 app 使用自訂的乾燥實作覆寫 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) 的預設筆跡轉譯行為，InkToolbar 就不會再有轉譯的筆墨筆觸，InkToolbar 的內建清除命令也無法如預期般運作。 若要提供清除功能，就必須處理所有指標事件、對每一個筆劃執行點擊測試，並且覆寫內建的「清除所有筆跡」命令。
 
 ## <a name="related-articles"></a>相關文章
 
@@ -814,4 +811,3 @@ namespace Ink_Basic_InkToolbar
 * [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
 * [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-

@@ -1,6 +1,6 @@
 ---
 author: Xansky
-Description: "本主題說明應用程式中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
+Description: "本主題說明 app 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: "協助工具文字的需求"
 label: Accessible text requirements
@@ -11,19 +11,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: c1decefe507ccebbaee1055426fbde06eb9670e7
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4f3bb71d1aef8917e14514521393ef1ba7c782d1
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="accessible-text-requirements"></a>協助工具文字的需求  
 
 
 
 
-本主題說明應用程式中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
+本主題描述 App 中文字的協助工具最佳做法，方法是確保色彩和背景能夠滿足必要的對比率。 本主題也討論在通用 Windows 平台 (UWP) App 中文字元素可以擁有的 Microsoft 使用者介面自動化角色，以及圖形中文字的最佳做法。
 
 <span id="contrast_rations"/>
 <span id="CONTRAST_RATIONS"/>
@@ -60,7 +57,7 @@ UWP App 可以使用這些預設元素 (一般稱為「文字元素」**或「�
 <span id="auto-suggest_accessibility"/>
 <span id="AUTO-SUGGEST_ACCESSIBILITY"/>
 ## <a name="auto-suggest-accessibility"></a>自動建議的協助工具  
-當使用者在輸入欄位輸入，且顯示可能建議的清單時，這類案例稱為自動建議。 這常見於電子郵件的「收件者」****欄位、Windows 中的 Cortana 搜尋方塊、Microsoft Edge 的 URL 輸入欄位、「天氣」App 的位置輸入欄位等位置。 如果您是使用 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) 或 HTML 內建控制項，則系統已經為您預設好這個體驗。 為了讓這個體驗無障礙，輸入欄位和清單必須相關聯。 在[實作自動建議](#implementing_auto-suggest)一節中有說明。
+當使用者在輸入欄位輸入，且顯示可能建議的清單時，這類案例稱為自動建議。 這常見於電子郵件的 **\[收件者\]** 欄位、Windows 中的 Cortana 搜尋方塊、Microsoft Edge 的 URL 輸入欄位、「天氣」App 的位置輸入欄位等位置。 如果您是使用 XAML [**AutosuggestBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.autosuggestbox) 或 HTML 內建控制項，則系統已經為您預設好這個體驗。 為了讓這個體驗無障礙，輸入欄位和清單必須相關聯。 在[實作自動建議](#implementing_auto-suggest)一節中有說明。
 
 朗讀程式已經更新，讓這個體驗能透過特殊的建議模式成為無障礙類型體驗。 整體來說，適當地連結編輯欄位與清單之後，使用者將能：
 
@@ -121,14 +118,14 @@ _沒有預設選取項目的範例_
 ## <a name="text-font-size"></a>文字字型大小  
 如果應用程式中的文字使用太小的字型，則會造成許多讀者難以閱讀這些文字。 您可以一開始就在應用程式的 UI 中將文字設定為合理的大小，以避免這個問題。 Windows 中還有其他輔助技術，而這些技術通常能夠讓使用者變更應用程式或顯示器的檢視大小。
 
-* 某些使用者會變更主要顯示器的 DPI 值來做為其無障礙輔助。 該選項可以在 [輕鬆存取]**** 的 [讓螢幕上的內容更大一些]**** 中變更，這會重新導向到 [外觀及個人化]**** / [顯示]**** 的 [控制台]**** UI。 確切有哪些大小設定選項可供使用，則會根據顯示裝置的功能而有所不同。
+* 某些使用者會變更主要顯示器的 DPI 值來做為其無障礙輔助。 該選項可以在 **\[輕鬆存取\]** 的 **\[讓螢幕上的內容更大一些\]** 中變更，這會重新導向到 **\[外觀及個人化\]** / **\[顯示\]** 的 **\[控制台\]** UI。 確切有哪些大小設定選項可供使用，則會根據顯示裝置的功能而有所不同。
 * 放大鏡工具可以放大 UI 的選取區域。 不過，很難使用放大鏡工具來閱讀文字。
 
 <span id="Text_scale_factor"/>
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## <a name="text-scale-factor"></a>文字縮放比例  
-各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 當其值為 **true** 時，手機上的一個名為 [文字大小調整]**** 的設定 ([設定] &gt; [輕鬆存取]****) 就會放大該元素中的文字。 這項調整對小型 **FontSize** 文字的影響程度，遠大於對大型 **FontSize** 文字的影響程度。 不過您可以將元素的 **IsTextScaleFactorEnabled** 屬性設為 **false**，以停用自動放大。 嘗試用這個標記來調整手機的 [文字大小]**** 設定，然後看看 **TextBlock** 會發生什麼狀況：
+各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 當其值為 **true** 時，手機上的一個名為 **\[文字大小調整\]** 的設定 (**\[設定\] &gt; \[輕鬆存取\]**) 就會放大該元素中的文字。 這項調整對小型 **FontSize** 文字的影響程度，遠大於對大型 **FontSize** 文字的影響程度。 不過您可以將元素的 **IsTextScaleFactorEnabled** 屬性設為 **false**，以停用自動放大。 嘗試用這個標記來調整手機的 **\[文字大小\]** 設定，然後看看 **TextBlock** 會發生什麼狀況：
 
 XAML
 ```xml
@@ -141,7 +138,7 @@ XAML
 
 不過，請勿經常停用自動放大，因為在所有 app 上全域縮放 UI 文字，對於使用者而言是一個重要的無障礙體驗，他們將預期這個體驗也可以在您的 app 中運作。
 
-您也可以使用 [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) 事件與 [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) 屬性，了解手機上 [文字大小]**** 設定的變更相關資訊。 方法如下：
+您也可以使用 [**TextScaleFactorChanged**](https://msdn.microsoft.com/library/windows/apps/Dn633867) 事件與 [**TextScaleFactor**](https://msdn.microsoft.com/library/windows/apps/Dn633866) 屬性，了解手機上 **\[文字大小\]** 設定的變更相關資訊。 方法如下：
 
 C#
 ```csharp
@@ -176,4 +173,3 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [XAML 文字顯示範例](http://go.microsoft.com/fwlink/p/?linkid=238579)
 * [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?linkid=251417)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
-

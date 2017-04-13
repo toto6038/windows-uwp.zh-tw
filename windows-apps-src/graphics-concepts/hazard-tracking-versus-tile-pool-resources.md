@@ -2,21 +2,17 @@
 title: "危險追蹤與磚集區資源"
 description: "對於非串流資源，轉譯期間 Direct3D 可防止特定危險條件，但因為危險追蹤是在串流資源的磚層級，串流資源轉譯期間的追蹤危險條件可能會太昂貴。"
 ms.assetid: 8B0C73D3-3F77-41E8-B17D-C595DEE39E49
-keywords:
-- "危險追蹤與磚集區資源"
+keywords: "危險追蹤與磚集區資源"
 author: PeterTurcan
 ms.author: pettur
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 5321da19c4c168b48d7e2ba2f3edb7da7880e944
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 2bdec458e13e3f2df54555716d59aefcc946ef7b
+ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+translationtype: HT
 ---
-
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>危險追蹤與磚集區資源
 
 
@@ -36,7 +32,6 @@ ms.lasthandoff: 02/07/2017
  
 
  
-
 
 
 
