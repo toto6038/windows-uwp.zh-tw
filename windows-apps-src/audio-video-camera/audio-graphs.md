@@ -9,8 +9,8 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5d98b5366160ca52c02330a05e8b8d749e2296bd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.openlocfilehash: 1b286a9fcfd71bb2dc219fb3c03a363a41d24346
+ms.sourcegitcommit: bccf9bcc39f0c4ee8801d90e2d7fcae3ad6e3b3e
 translationtype: HT
 ---
 # <a name="audio-graphs"></a>音訊圖
@@ -144,7 +144,7 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 **\[屬性\]** 頁面、按一下 **\[建置\]** 屬性頁，然後選取 **\[容許 Unsafe 程式碼\]** 核取方塊。
+-   因為此方法會存取底層 Windows 執行階段類型的原始緩衝區，所以必須使用 **unsafe** 關鍵字來宣告它。 您也必須在 Microsoft Visual Studio 中設定您的專案，以允許不安全的程式碼編譯，其做法是開啟專案的 [屬性]**** 頁面、按一下 [建置]**** 屬性頁，然後選取 [容許 Unsafe 程式碼]**** 核取方塊。
 -   將所需的緩衝區大小傳入至建構函式，以在 **Windows.Media** 命名空間中初始化 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 的新執行個體。 緩衝區大小是樣本數目乘以每個樣本的大小。
 -   透過呼叫 [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878)，以取得音訊框架的 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454)。
 -   呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457)，從音訊緩衝區取得 [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM 介面的執行個體。
@@ -159,9 +159,12 @@ Windows 執行階段音訊圖 API：
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-當音訊圖已完成音訊資料的配量處理時，會引發 [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) 事件。 您可以在此事件的處理常式中存取音訊資料。
+當音訊圖開始處理音訊資料的配量時，會引發 [**AudioGraph.QuantumStarted**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Audio.AudioGraph#Windows_Media_Audio_AudioGraph_QuantumStarted) 事件。 您可以在此事件的處理常式中存取音訊資料。 
 
-[!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
+> [!NOTE]  
+> 如果要在與音訊圖同步的規律節奏中擷取音訊框架，請在同步的 **QuantumStarted** 事件處理常式中呼叫 [AudioFrameOutputNode.GetFrame](https://docs.microsoft.com/en-us/uwp/api/windows.media.audio.audioframeoutputnode#Windows_Media_Audio_AudioFrameOutputNode_GetFrame)。 在音訊引擎完成音訊處理之後，會非同步引發 **QuantumProcessed** 事件，這表示其節奏可能是不規則的。 因此，您不應使用 **QuantumProcessed** 事件來同步處理音訊框架資料。
+
+[!code-cs[SnippetQuantumStartedFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStartedFrameOutput)]
 
 -   呼叫 [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171)，以取得填滿圖形中音訊資料的 [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) 物件。
 -   **ProcessFrameOutput** 協助程式方法的範例實作如下所示。
