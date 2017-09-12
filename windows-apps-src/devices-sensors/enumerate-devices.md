@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4311D293-94F0-4BBD-A22D-F007382B4DB8
 title: "列舉裝置"
 description: "列舉命名空間可讓您尋找內部連接到系統、外部連接，或者可透過無線或網路通訊協定偵測到的裝置。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 1bf6b8fc87061625b8bc206faf43da99a6b11bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: afd98ed5f522c4227ab199f2405c7976210478c3
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="enumerate-devices"></a>列舉裝置
 
@@ -154,7 +156,7 @@ async void enumerateSnapshot(){
 ## <a name="save-a-device-for-later-use"></a>儲存裝置以供稍後使用
 
 
-任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，在遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
+任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，當遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
 
 
  

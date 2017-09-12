@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: "裝置、感應器及電源"
 description: "為提供使用者豐富的使用經驗，您可能會發現有必要將外部裝置或感應器與您的應用程式整合。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7915f626d5e86aed0c47f4d2f1efc61348385ba8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a15ed83ccb7571b772ce77669646e58894e71842
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="devices-sensors-and-power"></a>裝置、感應器及電源
 
@@ -34,6 +36,6 @@ translationtype: HT
 | [藍牙](bluetooth.md) | 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) 應用程式的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。 | 
 | [列印與掃描](printing-and-scanning.md) | 本節描述如何從您的通用 Windows 應用程式列印與掃描。 | 
 | [3D 列印](3d-printing.md) | 本節描述如何利用通用 Windows 應用程式中的 3D 列印功能。 |
-| [建立 NFC 智慧卡應用程式](host-card-emulation.md) | Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬應用程式，但該模型需要安全的付款應用程式才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 Windows 10 行動裝置版中，我們已導入新的卡片模擬技術，稱為主機卡模擬 (HCE)。 HCE 技術可讓您的應用程式直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 Windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE app，讓您的客戶可以透過他們的手機而不是實體卡片存取您的服務，而不需要使用 MNO 共同作業。 |
+| [建立 NFC 智慧卡應用程式](host-card-emulation.md) | Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬應用程式，但該模型需要安全的付款應用程式才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 Windows 10 行動裝置版中，我們已導入新的卡片模擬技術，稱為主機卡模擬 (HCE)。 HCE 技術可讓您的應用程式直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 Windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE 應用程式，讓您的客戶可以透過他們的手機而不是實體卡片存取您的服務，而不需要使用 MNO 共同作業。 |
 | [取得電池資訊](get-battery-info.md) | 了解如何使用 [<strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) 命名空間中的 API 取得詳細的電池資訊。 |
 

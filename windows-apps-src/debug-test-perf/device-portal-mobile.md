@@ -1,19 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "行動裝置的 Device Portal"
 description: "了解 Windows Device Portal 如何讓您從遠端設定並管理行動裝置。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 54660777706fbfdc54b08da025c2f280f194c010
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: d0a85a780bf71bd43a0482494a1de939582a4b56
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="device-portal-for-mobile"></a>行動裝置的 Device Portal
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/07/2017
 
 ### <a name="turn-on-device-discovery-and-pairing"></a>開啟裝置探索和配對
 
-若要連線到 Device Portal，您必須啟用裝置探索和 Device Portal。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
+若要連線到 Device Portal，您必須在手機的設定中啟用裝置探索和 Device Portal。 這可讓您將手機與電腦或其他 Windows 10 裝置配對。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。
 
 第一次連線到 Device Portal 時，系統會要求您提供 6 個字元且區分大小寫的安全性驗證碼。 這可確保您具備手機的存取權，並讓您保持安全免於受到攻擊者入侵。 按下手機上的 [配對] 按鈕，即會產生並顯示驗證碼，接著請在瀏覽器的文字方塊中輸入這 6 個字元。
 

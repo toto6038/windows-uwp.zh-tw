@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。"
 title: "C++ 中的非同步程式設計"
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 執行緒, 非同步, C++"
-ms.openlocfilehash: c74a2d18a0852d28cf33715a540356a61438ff48
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 180d660fedc58a49bd956d4e4eeda56093c0025e
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="asynchronous-programming-in-c"></a>C++ 中的非同步程式設計
 
@@ -206,7 +208,7 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 
 UWP app 的 UI 會在單一執行緒 Apartment (STA) 中執行。 工作的 Lambda 如果傳回 [**IAsyncAction**][IAsyncAction] 或 [**IAsyncOperation**][IAsyncOperation] ，就是 Apartment 感知工作。 如果在 STA 建立工作，則它的所有接續也會在 STA 中執行 (預設值)，除非您指定別的地方。 換言之，整個工作鏈結會繼承上層作業的 Apartment 感知。 這種行為有助於簡化與 UI 控制項的互動 (從 STA 才辦得到)。
 
-例如，在 UWP app 中，如果任何類別的成員函式代表 XAML 頁面，則您可以在  [**task::then**][taskThen] 方法中傳送 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控制項，不需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 物件。
+例如，在 UWP app 中，如果任何類別的成員函式代表 XAML 頁面，則您可以在 [**task::then**][taskThen] 方法中傳送 [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) 控制項，不需使用 [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) 物件。
 
 ``` cpp
 #include <ppltasks.h>

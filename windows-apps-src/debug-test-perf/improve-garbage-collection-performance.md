@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: F912161D-3767-4F35-88C0-E1ECDED692A2
 title: "改善記憶體回收效能"
 description: "使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP 應用程式中的 .NET 記憶體回收行程的行為和效能最佳做法。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: fd469f2a037871b04e67227ad132261711a17511
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3b7dfb274c5a6d55204a467fc894bac5fd044048
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="improve-garbage-collection-performance"></a>改善記憶體回收效能
 

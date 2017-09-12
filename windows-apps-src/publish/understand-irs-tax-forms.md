@@ -3,15 +3,17 @@ author: jnHs
 Description: "了解 Microsoft 寄發的稅單，包括哪些人會接收到以及收到的時機。"
 title: "了解 Microsoft 寄發的 IRS 稅單"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: 068a940a54048b10e8f66bd3267b3a22c42beb50
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -26,7 +28,8 @@ translationtype: HT
 |1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本表單將於 **1 月 31 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
 |1042-S | 與您收到的款項相關 (受美國扣繳稅款限制)。 | 紙本表單將於 **3 月 15 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
 
-> **備註** IRS 稅單上所列的地址來自於您[稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
+> [!NOTE]
+> IRS 稅單上所列的地址來自於您[稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
 
 ## <a name="for-developers-located-in-the-united-states"></a>適用於位於美國的開發人員
 
@@ -68,7 +71,7 @@ EIN: \*\*\*\*\*4442<br>
      <th> 我應收到此表單</th>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**至少 $600  美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告收到**至少 $600 美元的款項**</td>
     <td valign="top">**1099-MISC**：<br>
 付款者：Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
@@ -76,7 +79,7 @@ EIN: \*\*\*\*\*0505<br>
 **重要：**部分商務實體不會收到 1099-MISC 表單，無論自 Microsoft 收到的款項額多少皆然。  如需進一步的資訊，請洽詢您的稅務專業人員。  </td>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告 (Microsoft Advertising) 收到**少於 $600  美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告收到**少於 $600 美元的款項**</td>
      <td valign="top">無</td>
   </tr>
 </table>
@@ -123,4 +126,5 @@ EIN: \*\*\*\*\*0505<br>
 </table>
 
 
-> **備註** 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](http://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
+> [!NOTE]
+> 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](http://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。

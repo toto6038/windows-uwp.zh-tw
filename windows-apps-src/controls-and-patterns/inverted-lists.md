@@ -5,39 +5,36 @@ title: "反轉清單"
 label: Inverted lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
-ms.openlocfilehash: 332271894b5e11657bd2b0b1ca40f0bd7620889d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: 41ebfd366238bce894bca6f21a2b1967112c135f
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="inverted-lists"></a>反轉清單
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 您可以在聊天體驗中，使用清單檢視來呈現交談，並利用視覺上有明顯區別的項目來代表傳送者/接收者。  使用不同的色彩和水平對齊來區分傳送者/接收者的訊息，可協助使用者在交談中快速定位。
+
+> **重要 API**：[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[ItemsStackPanel 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)、[ItemsUpdatingScrollMode 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)
  
 您通常需要以由下而上 (不是由上而下) 的顯示方式來呈現清單。  當新訊息送達並新增至結尾時，先前的訊息會向上滑動，以便挪出空間讓使用者注意到最新送達的訊息。  不過，如果使用者已經往上捲動來檢視先前的回覆，則新訊息的送達不應造成視覺轉變來干擾他們的焦點。
 
-![聊天應用程式的反轉清單](images/listview-inverted.png)
-
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)</li>
-<li>[**ItemsStackPanel 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx)</li>
-<li>[**ItemsUpdatingScrollMode 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx)</li>
-</ul>
-</div>
-
+![聊天 App 的反轉清單](images/listview-inverted.png)
 
 ## <a name="create-an-inverted-list"></a>建立反轉清單
 
-若要建立反轉清單，使用清單檢視搭配 [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 做為其項目面板。 在 ItemsStackPanel 上，將 [**ItemsUpdatingScrollMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) 設為 [**KeepLastItemInView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx)。
+若要建立反轉清單，使用清單檢視搭配 [ItemsStackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) 做為其項目面板。 在 ItemsStackPanel 上，將 [ItemsUpdatingScrollMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode.aspx) 設為 [KeepLastItemInView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsupdatingscrollmode.aspx)。
 
 > [!IMPORTANT]
 > 從 Windows 10 版本 1607 開始，已有 **KeepLastItemInView** 列舉值可供使用。 在舊版 Windows 10 上執行您的應用程式時，您無法使用這個值。

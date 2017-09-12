@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地圖, 位置, 定位功能"
-ms.openlocfilehash: 05fa3330f5346f69061cb60cf8b54de451845e06
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="get-the-users-location"></a>取得使用者的位置
 
@@ -29,7 +31,7 @@ translationtype: HT
 
 
 1.  在 \[**方案總管**\] 中按兩下 **package.appxmanifest**，然後選取 \[**功能**\] 索引標籤。
-2.  在 \[**功能**\] 清單中，選取 \[**功能**\] 索引標籤。 這會將 `Location` 裝置功能新增至封裝資訊清單檔案中。
+2.  在 **\[功能\]** 清單中，選取 **\[位置\]** 的方塊。 這會將 `location` 裝置功能新增至封裝資訊清單檔案中。
 
 ```XML
   <Capabilities>

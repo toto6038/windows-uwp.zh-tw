@@ -1,23 +1,23 @@
 ---
-author: scottmill
+author: jwmsft
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: "組合效果"
 description: "效果 API 可讓開發人員自訂其 UI 的轉譯方式。"
-ms.author: scotmi
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 769727c8e128046cac44767dcd05b1b952af51ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3ee0d4c66dedfb0309a8426c779af3d71c8d1afc
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="composition-effects"></a>組合效果
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
+[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
 為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
 
@@ -25,13 +25,15 @@ translationtype: HT
 
 筆刷效果用於視覺化組合樹狀結構，這種效果的內容來自效果圖形的輸出。 效果可以參考現有表面/紋理，但沒有其他組合樹狀結構的輸出。
 
+搭配使用效果筆刷與 [**XamlCompositionBrushBase**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)，也可以將效果套用到 XAML UIElement。
+
 ## <a name="effect-features"></a>效果功能
 
--   [效果程式庫](./composition-effects.md#effect-library)
--   [鏈結效果](./composition-effects.md#chaining-effects)
--   [動畫支援](./composition-effects.md#animation-support)
--   [常數與動畫效果屬性](./composition-effects.md#constant-vs-animated-effect-properties)
--   [使用獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [效果程式庫](./composition-effects.md#effect-library)
+- [鏈結效果](./composition-effects.md#chaining-effects)
+- [動畫支援](./composition-effects.md#animation-support)
+- [常數與動畫效果屬性](./composition-effects.md#constant-vs-animated-effect-properties)
+- [使用獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>效果程式庫
 
@@ -54,8 +56,6 @@ translationtype: HT
 | 懷舊                | 將影像轉換成懷舊色調。                                                                                                                                                                                          |
 | 色溫和色調 | 調整影像的色溫和/或色調。                                                                                                                                                                           |
 
- 
-
 如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
 
 ### <a name="chaining-effects"></a>鏈結效果
@@ -75,9 +75,8 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
   MultiplyAmount = 0,
   Source1Amount = 0.5f,
   Source2Amount = 0.5f,
-  Offset = 0    
+  Offset = 0
 }
-  
 ```
 
 上述範例說明一個有二項輸入的算數複合效果。 第二個輸入包含飽和度屬性為 0.5 的效果。
@@ -86,7 +85,7 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 
 效果屬性支援動畫，您可以在效果編譯期間指定用動畫顯示，且「一律」做為常數的效果屬性。 可展示動畫的屬性是透過表單 "effect name.property name" 的字串來指定。 這些屬性可以透過多個效果的具現化，獨立產生動畫效果。
 
-### <a name="constant-vs-animated-effect-properties"></a>常數與動畫效果屬性 
+### <a name="constant-vs-animated-effect-properties"></a>常數與動畫效果屬性
 
 您可以在效果編譯期間，將效果屬性指定為動態或「一律」做為常數的屬性。 動態屬性是透過「<effect name>.<property name>」格式的字串來指定。 動態屬性可以設為特定值，或者也可以使用組合動畫系統來以動畫效果顯示。
 
@@ -95,13 +94,13 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 編譯固定飽和度的效果：
 
 ```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);              
+var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 ```
 
 編譯動態飽和度的效果：
 
 ```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{SaturationEffect.Saturation});
+var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{"SaturationEffect.Saturation"});
 _catEffect = effectFactory.CreateBrush();
 _catEffect.SetSourceParameter("mySource", surfaceBrush);
 _catEffect.Properties.InsertScalar("saturationEffect.Saturation", 0f);
@@ -136,24 +135,24 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 這個快速入門教學課程會示範如何使用效果的一些基本功能。
 
--   [安裝 Visual Studio](./composition-effects.md#installing-visual-studio)
--   [建立新的專案](./composition-effects.md#creating-a-new-project)
--   [安裝 Win2D](./composition-effects.md#installing-win2d)
--   [設定您的組合基本知識](./composition-effects.md#setting-your-composition-basics)
--   [建立 CompositionSurface 筆刷](./composition-effects.md#creating-a-compositionsurface-brush)
--   [建立、編譯以及套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
+- [安裝 Visual Studio](./composition-effects.md#installing-visual-studio)
+- [建立新的專案](./composition-effects.md#creating-a-new-project)
+- [安裝 Win2D](./composition-effects.md#installing-win2d)
+- [設定您的組合基本知識](./composition-effects.md#setting-your-composition-basics)
+- [建立 CompositionSurface 筆刷](./composition-effects.md#creating-a-compositionsurface-brush)
+- [建立、編譯以及套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>安裝 Visual Studio
 
--   如果您沒有安裝支援的 Visual Studio 版本，請移至[這裡](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)的 Visual Studio 下載頁面。
+- 如果您沒有安裝支援的 Visual Studio 版本，請移至[這裡](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)的 Visual Studio 下載頁面。
 
 ### <a name="creating-a-new-project"></a>建立新的專案
 
--   移至 [檔案] -&gt; [新增] -&gt; [專案]...
--   選取 [Visual C#]
--   建立 [空白的應用程式 \(Windows 通用\)] \(Visual Studio 2015\)
--   輸入您選擇的專案名稱
--   按一下 [確定]
+- 移至 [檔案] -&gt; [新增] -&gt; [專案]...
+- 選取 [Visual C#]
+- 建立 [空白的應用程式 \(Windows 通用\)] \(Visual Studio 2015\)
+- 輸入您選擇的專案名稱
+- 按一下 [確定]
 
 ### <a name="installing-win2d"></a>安裝 Win2D
 
@@ -161,10 +160,10 @@ Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 
 有兩種版本的套件，其中一個適用於 Windows 10，另一個適用於 Windows 8.1。 若是組合效果，則您必須使用 Windows 10 版本。
 
--   移至 [工具] → [NuGet 套件管理員] → [管理方案的 NuGet 套件] 啟動 NuGet 套件管理員。
--   搜尋 "Win2D"，然後針對您的 Windows 目標版本選取適當的套件。 因為 Windows.UI。 組合支援 Windows 10 (不支援 8.1)，選取 Win2D.uwp。
--   接受授權合約
--   按一下 [關閉]
+- 移至 [工具] → [NuGet 套件管理員] → [管理方案的 NuGet 套件] 啟動 NuGet 套件管理員。
+- 搜尋 "Win2D"，然後針對您的 Windows 目標版本選取適當的套件。 因為 Windows.UI。 組合支援 Windows 10 (不支援 8.1)，選取 Win2D.uwp。
+- 接受授權合約
+- 按一下 [關閉]
 
 在接下來的幾個步驟中，我們會使用組合 API，把移除所有飽和度的飽和度效果套用至這個貓咪影像。 在這個模型中，效果會在建立後套用至影像。
 
@@ -186,67 +185,66 @@ Desaturate();
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
-LoadImage(surfaceBrush); 
+LoadImage(surfaceBrush);
 ```
 
 ### <a name="creating-compiling-and-applying-effects"></a>建立、編譯以及套用效果
 
-1.) 建立圖形效果
-```cs
-var graphicsEffect = new SaturationEffect
-{
-  Saturation = 0.0f,
-  Source = new CompositionEffectSourceParameter("mySource")
-};
-```
+1. 建立圖形效果
 
-2.) 編譯效果及建立筆刷效果
-```cs
-var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
+    ```cs
+    var graphicsEffect = new SaturationEffect
+    {
+      Saturation = 0.0f,
+      Source = new CompositionEffectSourceParameter("mySource")
+    };
+    ```
 
-var catEffect = effectFactory.CreateBrush();
-catEffect.SetSourceParameter("mySource", surfaceBrush);
-```
+1. 編譯效果及建立筆刷效果
 
-3.) 在組合樹狀結構中建立 SpriteVIsual 並套用效果
-```cs
-var catVisual = _compositor.CreateSpriteVisual();
-  catVisual.Brush = catEffect;
-  catVisual.Size = new Vector2(219, 300);
-  _root.Children.InsertAtBottom(catVisual);
-}
-```
+    ```cs
+    var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
-4.) 建立您要載入的影像來源。
-```cs
-CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
-CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
-if (result.Status == CompositionImageLoadStatus.Success)
-```
+    var catEffect = effectFactory.CreateBrush();
+    catEffect.SetSourceParameter("mySource", surfaceBrush);
+    ```
 
-5.) 在 SpriteVisual 上調整大小並粉刷表面
-```cs
-brush.Surface = imageSource.Surface;
-```
+1. 在組合樹狀結構中建立 SpriteVisual 並套用效果
 
-6.) 執行您的應用程式 – 您的結果應該是一隻去除飽和度的貓：
+    ```cs
+    var catVisual = _compositor.CreateSpriteVisual();
+      catVisual.Brush = catEffect;
+      catVisual.Size = new Vector2(219, 300);
+      _root.Children.InsertAtBottom(catVisual);
+    }
+    ```
+
+1. 建立您要載入的影像來源。
+
+    ```cs
+    CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
+    CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
+    if (result.Status == CompositionImageLoadStatus.Success)
+    ```
+
+1. 在 SpriteVisual 上調整大小並粉刷表面
+
+    ```cs
+    brush.Surface = imageSource.Surface;
+    ```
+
+1. 執行您的應用程式 – 您的結果應該是一隻去除飽和度的貓：
 
 ![去除飽和度的影像](images/composition-cat-desaturated.png)
+
 ## <a name="more-information"></a>其他資訊
 
--   [Microsoft – 組合 GitHub](https://github.com/Microsoft/composition)
--   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
--   [Twitter 上的 Windows 組合小組](https://twitter.com/wincomposition)
--   [組合概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
--   [視覺化樹狀結構基本知識](composition-visual-tree.md)
--   [組合筆刷](composition-brushes.md)
--   [動畫概觀](composition-animation.md)
--   [組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作](composition-native-interop.md)
-
- 
-
- 
-
-
-
-
+- [Microsoft – 組合 GitHub](https://github.com/Microsoft/composition)
+- [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+- [Twitter 上的 Windows 組合小組](https://twitter.com/wincomposition)
+- [組合概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [視覺化樹狀結構基本知識](composition-visual-tree.md)
+- [組合筆刷](composition-brushes.md)
+- [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
+- [動畫概觀](composition-animation.md)
+- [組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作](composition-native-interop.md)

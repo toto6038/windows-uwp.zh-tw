@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f74a93714b32613b6bee606a3916961b861b2d08
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0fe93670739a89c9416fdbfc28117a794a6a345d
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -77,11 +79,11 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-在某些情況下，作業系統會提示使用者確認是否真的要切換 app。
+在某些情況下，作業系統會提示使用者確認是否真的要切換應用程式。
 
 ![警告對話方塊會顯示在 app 變暗的背景上。 對話方塊會詢問使用者是否想要切換 app，並在右下方顯示 [是] 和 [否] 按鈕。 [否] 按鈕會醒目顯示。](images/warningdialog.png)
 
-如果您一律要顯示此提示，請使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) 屬性來指示作業系統顯示警告。
+如果您一律要顯示此提示，請使用 [**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) 屬性來告知作業系統顯示警告。
 
 ```cs
 // The URI to launch

@@ -3,15 +3,17 @@ author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來停止套件正式發行前小眾測試版的套件推出。"
 title: "停止正式發行前小眾測試版的推出"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 套件推出, 正式發行前小眾測試版提交, 停止"
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
-ms.openlocfilehash: 804e447f5b650a986580752fcba2a29014560e98
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5a05b33a96e5f4b19fdfdf8d6cad04e247a46c8
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>停止正式發行前小眾測試版的推出
 
@@ -27,8 +29,6 @@ translationtype: HT
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在「開發人員中心」儀表板中執行此操作，或是使用[建立 App 提交](create-an-app-submission.md)方法來執行此操作。
 * 啟用提交的漸進式套件推出。 您可以在[開發人員中心儀表板](../publish/gradual-package-rollout.md)中執行此操作，或是[使用 Windows 市集提交 API](manage-flight-submissions.md#manage-gradual-package-rollout) 來執行此操作。
-
->**注意**&nbsp;&nbsp;這個方法僅供用於已被授權使用「Windows 市集提交 API」的「Windows 開發人員中心」帳戶。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -54,7 +54,7 @@ translationtype: HT
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 App 的「市集識別碼」，此 App 包含您想要停止其套件推出的套件正式發行前小眾測試版提交。 如需有關「市集識別碼」的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字串 | 必要。 套件正式發行前小眾測試版的識別碼，此正式發行前小眾測試版包含您想要停止其套件推出的提交。 此識別碼可從「開發人員中心」儀表板中取得，而且包含在[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 的套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中。  |
+| flightId | 字串 | 必要。 套件正式發行前小眾測試版的識別碼，此正式發行前小眾測試版包含您想要停止其套件推出的提交。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。  |
 | submissionId | 字串 | 必要。 要停止套件推出之提交的識別碼。 此識別碼可從「開發人員中心」儀表板中取得，並且包含在[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)要求的回應資料中。  |
 
 <span/>

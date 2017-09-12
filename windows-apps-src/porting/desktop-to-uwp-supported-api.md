@@ -1,57 +1,59 @@
 ---
 author: normesta
-Description: "此文章說明如何簽署已轉換至通用 Windows 平台 (UWP) 的傳統型應用程式。"
+Description: "已封裝的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已封裝應用程式可以使用的類別。"
 Search.Product: eADQiWindows 10XVcnh
-title: "傳統型轉 UWP 橋接器支援的 UWP API"
+title: "UWP API 適用於已封裝的傳統型應用程式 (傳統型橋接器)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
-ms.openlocfilehash: 34b29f8e68c77acdb19a1b0005f039097c8d2cbb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 796e47167c8462357764c78223dca34a11888aaf
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/26/2017
 ---
-# <a name="desktop-to-uwp-bridge-supported-uwp-apis"></a>傳統型轉 UWP 橋接器：支援的 UWP API
+# <a name="uwp-apis-available-to-a-packaged-desktop-app-desktop-bridge"></a>UWP API 適用於已封裝的傳統型應用程式 (傳統型橋接器)
 
-已轉換的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已轉換應用程式可以使用的類別。
+已封裝的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已封裝應用程式可以使用的類別。
 
-大部分的 UWP API 都可以在已轉換的傳統型應用程式上正確運作。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
+大部分的 UWP API 都可以在已封裝的傳統型應用程式上正確運作。 不過，部分功能區域尚未經過完整測試或目前未如預期般運作。
 
 <table><tr><th>功能區域</th><th>詳細資料</th><tr>
-<tr><td>約會、連絡人和電子郵件</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>驗證和使用者識別</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>背景工作</td><td>雖然已轉換的應用程式可以登錄背景工作，但只有完整的 UWP app 可以*做為*背景工作執行。 如需詳細資訊，請參閱 [GitHub 上的背景工作範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。</td></tr>
-<tr><td>藍牙</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>聊天和通話</td><td>已轉換的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
+<tr><td>約會、連絡人和電子郵件</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>驗證和使用者識別</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>背景工作</td><td>雖然已封裝的應用程式可以登錄背景工作，但只有完整的 UWP app 可以*做為*背景工作執行。 如需詳細資訊，請參閱 [GitHub 上的背景工作範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)。</td></tr>
+<tr><td>藍牙</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>聊天和通話</td><td>已封裝的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
 <tr><td>協定啟用</td><td>只有完整的 UWP 應用程式可以透過協定啟用。</td></tr>
-<tr><td>密碼編譯</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>地理位置</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>檔案和資料夾選擇器</td><td>已轉換的應用程式具有完整的檔案系統存取權，因此不需要 UWP 選擇器。</td></tr>
-<tr><td>媒體</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>服務點</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>智慧卡</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>PlayReady</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>VPN</td><td>已轉換的應用程式目前並未支援所有的 API。</td></tr>
-<tr><td>電子錢包</td><td>已轉換的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
+<tr><td>密碼編譯</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>地理位置</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>檔案和資料夾選擇器</td><td>已封裝的應用程式具有完整的檔案系統存取權，因此不需要 UWP 選擇器。</td></tr>
+<tr><td>媒體</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>服務點</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>智慧卡</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>PlayReady</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>VPN</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
+<tr><td>電子錢包</td><td>已封裝的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
 <tr><td>XAML UI</td><td>您不能將 XAML UI 新增至 Win32 app 處理程序。</td></tr>
 </table>
 
 
 有時候，這些區域中的 API 可能會正常運作。 不過，如果 API 並未被明確列出為支援的 API，您應該避免使用，因為它可能會有非預期的副作用或行為。 未來版本中可能會支援這些 API。 在過渡期間，您的 App 應該改用相關的 Win32 或 .NET API。
 
-已轉換的 App 不支援某些完全傳統型應用程式可以使用的 UWP API。 如果您的傳統型應用程式在轉換之前是使用 UWP API，您應該確認那些 API 仍受支援。 如需詳細資訊，請參閱[適用於傳統型應用程式的 Windows 執行階段 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
+已封裝的應用程式不支援某些完全傳統型應用程式可以使用的 UWP API。 如果您的傳統型應用程式在轉換之前是使用 UWP API，您應該確認那些 API 仍受支援。 如需詳細資訊，請參閱[適用於傳統型應用程式的 Windows 執行階段 API](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)。
 
 ## <a name="list-of-apis"></a>API 清單
 
-下列是已轉換應用程式中所支援 UWP API 的完整清單。 您可以檢視[已轉換的 App 中新支援的 API](#new) 或[已轉換的 App 與傳統型應用程式中支援的 API](#both)。
+下列是已封裝應用程式中所支援 UWP API 的完整清單。 您可以檢視[已封裝應用程式中新支援的 API](#new) 或[已封裝應用程式與傳統型應用程式都支援的 API](#both)。
 
-如需如何使用 WinRT API 的範例，請參閱 GitHub 上的[傳統型應用程式橋接轉 UWP 範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)。
+如需如何使用 WinRT API 的範例，請參閱 GitHub 上的[傳統型橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)和[通用 Windows 平台 (UWP) App 範例](https://github.com/Microsoft/Windows-universal-samples)。 您也可以參考建置適用於 Windows 的應用程式部落格文章[從傳統型應用程式呼叫 Windows 10 API](https://blogs.windows.com/buildingapps/2017/01/25/calling-windows-10-apis-desktop-application)。
 
 <span id="new" />
-### <a name="apis-supported-in-newly-converted-apps"></a>新轉換的應用程式中支援的 API
+### <a name="apis-supported-in-newly-packaged-apps"></a>新的已封裝應用程式中支援的 API
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -134,7 +136,7 @@ translationtype: HT
 * [Windows.Foundation.AsyncActionProgressHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionProgressHandler<TProgress>)
 * [Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncActionWithProgressCompletedHandler<TProgress>)
 * [Windows.Foundation.AsyncOperationCompletedHandler<TResult>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationCompletedHandler<TResult>)
-* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.VectorChangedEventHandler<T>)
+* [Windows.Foundation.Collections.VectorChangedEventHandler<T>](https://msdn.microsoft.com/library/windows/apps/br206656.aspx)
 * [Windows.Foundation.DeferralCompletedHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.DeferralCompletedHandler)
 * [Windows.Foundation.Diagnostics.FileLoggingSession](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.FileLoggingSession)
 * [Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs)
@@ -302,7 +304,6 @@ translationtype: HT
 * [Windows.Services.Store.StoreRequestHelper](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreRequestHelper)
 * [Windows.Services.Store.StoreSendRequestResult](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSendRequestResult)
 * [Windows.Services.Store.StoreSku](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSku)
-* [Windows.Services.Store.StoreSubscriptionData](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreSubscriptionData)
 * [Windows.Services.Store.StoreVideo](https://msdn.microsoft.com/library/windows/apps/Windows.Services.Store.StoreVideo)
 * [Windows.Storage.ApplicationDataSetVersionHandler](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.ApplicationDataSetVersionHandler)
 * [Windows.Storage.CachedFileManager](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.CachedFileManager)
@@ -377,7 +378,7 @@ translationtype: HT
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### <a name="apis-supported-in-both-converted-apps-and-desktop-applications"></a>已轉換的應用程式與傳統型應用程式中支援的 API
+### <a name="apis-supported-in-both-packaged-apps-and-desktop-applications"></a>已封裝應用程式與傳統型應用程式都支援的 API
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -632,15 +633,15 @@ translationtype: HT
 * [Windows.Devices.WiFiDirect.WiFiDirectDevice](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectDevice)
 * [Windows.Devices.WiFiDirect.WiFiDirectInformationElement](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectInformationElement)
 * [Windows.Devices.WiFiDirect.WiFiDirectLegacySettings](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.WiFiDirect.WiFiDirectLegacySettings)
-* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationProgressHandler<Tresult,.TProgress>)
+* [Windows.Foundation.AsyncOperationProgressHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206573.aspx(d=robot))
 * [Windows.Foundation.AsyncOperationWithProgressCompletedHandler&lt;Tresult,.TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.AsyncOperationWithProgressCompletedHandler<Tresult,.TProgress>)
-* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.MapChangedEventHandler<K,.V>)
+* [Windows.Foundation.Collections.MapChangedEventHandler&lt;K,.V&gt;](https://msdn.microsoft.com/library/windows/apps/br206644.aspx)
 * [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.PropertySet)
 * [Windows.Foundation.Collections.StringMap](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.StringMap)
 * [Windows.Foundation.Collections.ValueSet](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Collections.ValueSet)
 * [Windows.Foundation.Deferral](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Deferral)
 * [Windows.Foundation.PropertyValue](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.PropertyValue)
-* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TypedEventHandler<Tsender,.TResult>)
+* [Windows.Foundation.TypedEventHandler&lt;Tsender,.TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx(d=robot))
 * [Windows.Foundation.Uri](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.Uri)
 * [Windows.Foundation.WwwFormUrlDecoder](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoder)
 * [Windows.Foundation.WwwFormUrlDecoderEntry](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.WwwFormUrlDecoderEntry)
@@ -947,7 +948,7 @@ translationtype: HT
 * [Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkDrawingAttributesPencilProperties)
 * [Windows.UI.Input.Inking.InkInputProcessingConfiguration](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkInputProcessingConfiguration)
 * [Windows.UI.Input.Inking.InkManager](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkManager)
-* [Windows.UI.Input.Inking.InkPoint](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPoint)
+* [Windows.UI.Input.Inking.InkPoint](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPoint)
 * [Windows.UI.Input.Inking.InkPresenter](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenter)
 * [Windows.UI.Input.Inking.InkPresenterRuler](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkPresenterRuler)
 * [Windows.UI.Input.Inking.InkRecognitionResult](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.Inking.InkRecognitionResult)

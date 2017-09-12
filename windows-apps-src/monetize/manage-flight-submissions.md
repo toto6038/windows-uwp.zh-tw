@@ -4,22 +4,23 @@ ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理套件正式發行前小眾測試版提交。"
 title: "管理套件正式發行前小眾測試版提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交"
-ms.openlocfilehash: 98240f3a1f40f020474c62537d6b0444fe10bb99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 046eba917d66f28567a9e58a8fc29b3313816fbb
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
 
 Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件正式發行前小眾測試版，包括漸進式套件推出。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
-
->**重要**&nbsp;&nbsp;如果您使用 Windows 市集提交 API 以建立套件正式發行前小眾測試版的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> [!IMPORTANT]
+> 如果您使用 Windows 市集提交 API 以建立套件正式發行前小眾測試版的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交的方法
@@ -84,38 +85,32 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 
 3. 在 Windows 市集提交 API 中執行下列方法來[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/applications{applicationId}/flights/{flightId}/submissions
+    ```
 
-  回應主體包含三個項目︰新提交的識別碼、新提交的資料 (包含所有清單和定價資訊)，以及用於上傳提交至 Azure Blob 儲存體的任何套件的共用存取簽章 (SAS) URI。
-
-  >**注意**&nbsp;&nbsp;SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS URI 及使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分︰了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+    回應主體包含[正式發行前小眾測試版提交](#flight-submission-object)資源，其中包括新提交的識別碼、用於上傳提交至 Azure Blob 儲存體的任何套件的共用存取簽章 (SAS) URI，以及新提交的資料 (包含所有清單和定價資訊)。
+        > [!NOTE]
+        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. 如果您要為提交新增新的套件，請[準備套件](https://msdn.microsoft.com/windows/uwp/publish/app-package-requirements)並將它們新增到 ZIP 封存。
 
-5. 以新提交的任何所需變更來修訂提交資料，然後執行下列方法來[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)。
+5. 以新提交的任何所需變更來修訂[正式發行前小眾測試版提交](#flight-submission-object)資料，然後執行下列方法來[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
-  ```
-
-  <span/>
-  >**注意**&nbsp;&nbsp;如果您要為提交新增新的套件，請確定將提交資料更新成參考 ZIP 封存中這些檔案的名稱和相對路徑。
+    ```
+    PUT https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}
+    ```
+      > [!NOTE]
+      > 如果您要新增提交的新套件，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
 4. 如果您要新增提交的新套件，請使用您稍早呼叫之 POST 方法回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
 
-  * [.NET 適用的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-  * [Java 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-  * [Python 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
-
-  <span/>
+    * [.NET 適用的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Java 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Python 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
   下列 C# 程式碼範例示範如何在適用於 .NET 的 Azure 儲存體用戶端程式庫中，使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 類別上傳 ZIP 封存。 此範例假設已將 ZIP 封存寫入串流物件。
 
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
@@ -125,19 +120,17 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 
 5. 執行下列方法來[認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)。 這會向「開發人員中心」發出警示，指出您已完成提交，而現在應該將更新套用至您的帳戶。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
+    ```
 
 6. 執行下列方法來[取得套件正式發行前小眾測試版提交的狀態](get-status-for-a-flight-submission.md)，以檢查認可狀態。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
-  ```
+    ```
+    GET https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/status
+    ```
 
-  若要確認提交狀態，請檢閱回應主體中的*「狀態」*值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+    若要確認提交狀態，請檢閱回應主體中的*「狀態」*值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
 7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
 
@@ -150,7 +143,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 * [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
 
->**注意**&nbsp;&nbsp;：除了列示於上方的程式碼範例，我們也提供在 Windows 市集中提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+> [!NOTE]
+> 除了列示於上的程式碼範例，我們也提供在 Windows 市集提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
 
 <span id="manage-gradual-package-rollout">
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理套件正式發行前小眾測試版提交的漸進式套件推出
@@ -324,7 +318,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 
 此資源具有下列值。
 
->**注意**&nbsp;&nbsp;在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
+> [!NOTE]
+> 在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
 
 | 值           | 類型    | 描述              |
 |-----------------|---------|------|
@@ -379,7 +374,8 @@ Windows 市集提交 API 提供方法讓您使用於管理應用程式的套件�
 | packageRolloutStatus    |  字串   |  下列其中一個字串，這些字串指出漸進式套件推出的狀態： <ul><li>PackageRolloutNotStarted</li><li>PackageRolloutInProgress</li><li>PackageRolloutComplete</li><li>PackageRolloutStopped</li></ul>  |  
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
 
->**注意**&nbsp;&nbsp;*packageRolloutStatus* 和 *fallbackSubmissionId* 值是由開發人員中心指派，並不是供開發人員設定。 如果您將這些包含在要求主體中，將會忽略這些值。 
+> [!NOTE]
+> *packageRolloutStatus* 和 *fallbackSubmissionId* 值是由開發人員中心指派，並不是供開發人員設定。 如果您將這些包含在要求主體中，將會忽略這些值。
 
 <span/>
 

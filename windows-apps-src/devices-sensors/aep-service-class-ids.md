@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
 title: "AEP 服務類別識別碼"
 description: "關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服務的程式設計協定。 其中幾個服務已建立參考他們時應使用的識別碼。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 354ed6c8d2a58bff68c798e66bfde0be03c5b140
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 055bc11143c6d93e5019021abfc72988f34ddf90
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 

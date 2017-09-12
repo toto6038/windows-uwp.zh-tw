@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
-description: "了解如何在目標為 Windows 10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
+description: "了解如何在目標為 Windows10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。"
 title: "使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版"
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -9,13 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "UWP, 應用程式內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 787007b870675749d96afa59a6e9cb5f3be68991
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 06ee6eba5e4dc2f13b1ca8f8555b0e29770d1ec8
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
-
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的應用程式內購買和試用版
 
 您可以使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間中的成員，將 App 內購買和試用版功能新增到通用 Windows 平台 (UWP) App，以協助您的 App 獲利。 這些 API 也會提供對您 App 授權資訊的存取權。
@@ -24,15 +23,15 @@ ms.lasthandoff: 02/07/2017
 
 如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間來實作試用版和 App 內購買的完整範例，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
->**注意事項**&nbsp;&nbsp;
->
-> * 如果您 App 的目標是 Windows 10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (而不是 **Windows.ApplicationModel.Store** 命名空間) 的成員。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，並且設計成與「Windows 開發人員中心」和「市集」所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間的設計也具有較佳的效能。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
-<br/><br/>
-> * 在使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式中並不支援 **Windows.ApplicationModel.Store** 命名空間。 這些應用程式必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
+> [!NOTE]
+> 如果您 App 的目標是 Windows10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (而不是 **Windows.ApplicationModel.Store** 命名空間) 的成員。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如市集管理的消費性附加元件)，並且設計成與「Windows 開發人員中心」和「市集」所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間的設計也具有較佳的效能。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+
+> [!NOTE]
+> 在使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式中並不支援 **Windows.ApplicationModel.Store** 命名空間。 這些應用程式必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>開始使用 CurrentApp 和 CurrentAppSimulator 類別
 
-**Windows.ApplicationModel.Store** 命名空間的主要進入點是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 類別。 這個類別會提供一些靜態屬性和方法，可供您用來取得目前 App 及其可用附加元件 (也稱為 App 內購買或 IAP) 的資訊、取得目前 App 或其附加元件的授權資訊、為目前的使用者購買 App 或附加元件，以及執行其他工作。
+**Windows.ApplicationModel.Store** 命名空間的主要進入點是 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 類別。 這個類別提供靜態屬性和一些方法，可供您用來取得目前應用程式及其可用附加元件的資訊、取得目前應用程式或其附加元件的授權資訊、為目前的使用者購買應用程式或附加元件，以及執行其他工作。
 
 [CurrentApp](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentapp.aspx) 類別會從 Windows 市集取得其資料，因此您必須有開發人員帳戶，而且必須先在市集中發行您的 App，才能順利在 App 中使用這個類別。 將 App 提交到市集之前，可以使用這個類別的模擬版本 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.aspx) 測試您的程式碼。 測試 App 後，在將它提交到 Windows 市集之前，您必須將所有 **CurrentAppSimulator** 取代為 **CurrentApp**。 如果您的 App 使用 **CurrentAppSimulator**，將無法通過認證。
 
@@ -45,7 +44,7 @@ ms.lasthandoff: 02/07/2017
 | [在試用版本中排除或限制某些功能](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | 如果您讓客戶在試用期間免費使用 App，您可以在試用期間排除或限制某些功能，吸引客戶升級成完整版的 App。 |
 | [啟用應用程式內產品購買](enable-in-app-product-purchases.md)      |  無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 App 中啟用這些產品。  |
 | [啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)      | 您可以透過市集商業平台提供消費性的應用程式內產品 (亦即可購買、使用，然後再次購買的項目)，為客戶提供既健全又可靠的購買體驗。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。 |
-| [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)      |   如果您的 App 提供大型的 App 內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。    |
+| [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)      |   如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。    |
 | [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)      |   成功購買產品時所產生的每個 Windows 市集交易可以選擇性地傳回交易收據，以便提供所列出產品的相關資訊與客戶的貨幣成本。 如果您的 App 需要確認使用者已購買 App，或是已從 Windows 市集進行應用程式內產品購買，這項資訊的存取將可支援這些情況。 |
 
 <span id="proxy" />
@@ -57,7 +56,8 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 
 雖然您可以修改此檔案中的值，但我們還是建議您建立自己的 WindowsStoreProxy.xml 檔案 (在 Visual Studio 專案的資料資料夾) 來改用 **CurrentAppSimulator**。 模擬交易時，請呼叫 [ReloadSimulatorAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.currentappsimulator.reloadsimulatorasync.aspx) 載入您的檔案。 如果您沒有呼叫 **ReloadSimulatorAsync** 載入自己的 WindowsStoreProxy.xml 檔案，**CurrentAppSimulator** 會建立/載入 (但不覆寫) 預設的 WindowsStoreProxy.xml 檔案。
 
->**注意**&nbsp;&nbsp;請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Windows 市集安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個原因，請設計您的程式碼能在這兩種情況下非同步和同步運作。
+> [!NOTE]
+> 請注意 **CurrentAppSimulator** 必須要到 **ReloadSimulatorAsync** 完成之後才會完全初始化。 而且由於 **ReloadSimulatorAsync** 是非同步方法，所以必須小心避免發生在一個執行緒上查詢 **CurrentAppSimulator** 時，同時在另一個執行緒上進行初始化的競爭情形。 有一個技巧是使用旗標，指出初始化已完成。 從 Windows 市集安裝的 App 必須使用 **CurrentApp** 而不是 **CurrentAppSimulator**，此時不會呼叫 **ReloadSimulatorAsync**，因此不會發生剛才所提到的競爭情形。 基於這個原因，請設計您的程式碼能在這兩種情況下非同步和同步運作。
 
 
 <span id="proxy-examples" />
@@ -153,11 +153,11 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 本節列出定義 WindowsStoreProxy.xml 檔案結構的 XSD 檔案。 若要在使用 WindowsStoreProxy.xml 檔案時將這個結構描述套用到 Visual Studio 中的 XML 編輯器，請執行下列動作︰
 
 1. 在 Visual Studio 中開啟 WindowsStoreProxy.xml 檔案。
-2. 在 [XML]**** 功能表中，按一下 [建立結構描述]****。 這會根據 XML 檔案的內容建立一個暫時的 WindowsStoreProxy.xsd 檔案。
+2. 在 **\[XML\]** 功能表中，按一下 **\[建立結構描述\]**。 這會根據 XML 檔案的內容建立一個暫時的 WindowsStoreProxy.xsd 檔案。
 3. 使用下面的結構描述取代該 .xsd 檔案的內容。
 4. 將檔案儲存到您可以將它套用到多個應用程式專案的位置。
 5. 在 Visual Studio 中切換到您的 WindowsStoreProxy.xml 檔案。
-6. 在 [XML]**** 功能表中，按一下 [結構描述]****，然後在清單中找出 WindowsStoreProxy.xsd 檔案的那一列。 如果檔案的位置不是您想要的位置 (例如，如果仍然顯示暫存檔案)，請按一下 [加入]****。 導覽到正確的檔案，然後按一下 [確定]****。 現在，您應該會在清單中看到該檔案。 確認該結構描述的 [使用]**** 欄中出現核取記號。
+6. 在 **\[XML\]** 功能表中，按一下 **\[結構描述\]**，然後在清單中找出 WindowsStoreProxy.xsd 檔案的那一列。 如果檔案的位置不是您想要的位置 (例如，如果仍然顯示暫存檔案)，請按一下 **\[加入\]**。 導覽到正確的檔案，然後按一下 **\[確定\]**。 現在，您應該會在清單中看到該檔案。 確認該結構描述的 **\[使用\]** 欄中出現核取記號。
 
 完成這個動作之後，您對 WindowsStoreProxy.xml 進行的編輯就會依照結構描述。 如需詳細資訊，請參閱[做法︰選取要使用的 XML 結構描述](http://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
@@ -544,4 +544,3 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 |  **TransactionId**  |     是       |   包含 App 用來追蹤整個履行程序之消費性產品的購買交易的 GUID (做為字串)。 請參閱[啟用消費性應用程式內產品購買](enable-consumable-in-app-product-purchases.md)。            |
 |  **Status**  |      是      |  包含 App 用來表示消費性產品之履行狀態的字串。 值可以是 **Active**、**PurchaseReverted**、**PurchasePending** 或 **ServerError**。             |
 |  **OfferId**  |     否       |    包含 App 用來識別消費性產品所屬類別的字串。 這可以對大型的項目型錄提供支援，如[管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)中所述。           |
-

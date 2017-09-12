@@ -3,15 +3,17 @@ author: GrantMeStrength
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: "何謂通用 Windows 平台 (UWP) app？"
 description: "了解通用 Windows app 有哪些不同類型：Windows 市集 app、Windows Phone 市集 app，以及 Windows 執行階段 app。"
-ms.author: susanw
+ms.author: jken
 ms.date: 03/22/2017
 ms.topic: article
 pms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 2afb5cbc74b381e85fa861562e7de57d877b0c7f
-ms.sourcegitcommit: 253ed634522773e15199084a6f74a3a465c2b218
-translationtype: HT
+ms.openlocfilehash: 3bbced2db33210952b6c8a45f98e36582330d7d9
+ms.sourcegitcommit: 214a1dcb24e0811811bd7a4a07bfe707ecd93b18
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/15/2017
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) app？
 
@@ -29,7 +31,7 @@ UWP app 有什麼特別？ 以下是一些讓 Windows 10 上的 UWP 應用程式
 
 -   **有一個跨所有裝置的通用 API 表面。**
 
-    通用 Windows 平台 (UWP) 核心 API 對於所有 Windows 裝置類別均相同。 如果您的 app 只使用核心 APIs，它會在任何 Windows 10 裝置上執行，無論您是以桌上型電腦、Xbox 或混合實境耳機為目標。
+    通用 Windows 平台 (UWP) 核心 API 對於所有 Windows 裝置類別均相同。 如果您的應用程式只使用核心 API，它會在任何 Windows 10 裝置上執行，無論您是以桌上型電腦、Xbox 或混合實境耳機為目標。
 
 -   **擴充功能 SDK 可讓您的 app 在特定裝置類型上做出酷炫的產品。**
 
@@ -103,4 +105,4 @@ Microsoft Visual Studio 2017 為每種語言提供 UWP 應用程式範本，可�
 
 * [.NET Native - 它對「通用 Windows 平台」(UWP) 開發人員有何意義](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
 * [.NET 中的通用 Windows app](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)
-* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/en-us/library/mt185501.aspx)
+* [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/mt185501.aspx)

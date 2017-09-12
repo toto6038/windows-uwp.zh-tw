@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
 title: "MVVM 和語言效能祕訣"
 description: "本主題討論與您的軟體設計模式及程式設計語言選擇相關的一些效能考量。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2c803083a9f7a279a6cfb70087c5cd1f0c3def1e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d308fd8b8ded0ac737fc39c4760bc52d8414b3cb
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="mvvm-and-language-performance-tips"></a>MVVM 和語言效能祕訣
 
@@ -31,7 +33,7 @@ MVVM 模式有多個具體的定義，以及協助實作此模式的協力廠商
 
 -   XAML 資料繫結 ({Binding} 標記延伸) 的部分設計目的是為了啟用模型/檢視模式。 但是 {Binding} 帶來不小的工作集和 CPU 額外負荷。 建立 {Binding} 會造成一系列的配置，而更新繫結目標則可能造成反射和 Boxing。 這些問題目前正藉由 {x:bind} 標記延伸來解決，它會在建置階段編譯繫結。 **建議：**使用 {x:Bind}。
 -   在 MVVM 中，使用 ICommand (例如常見的 DelegateCommand 或 RelayCommand 協助程式) 將 Button.Click 連接到檢視模型是常見的做法。 這些命令是額外的配置，不過，包括 CanExecuteChanged 事件接聽程式、新增到工作集，以及新增到頁面的啟動/瀏覽時間。 **建議：**做為便利的 ICommand 介面的替代方案，請考慮將事件處理常式放在您的程式碼後置中並將它們連結到檢視事件，然後在這些事件被引發時，在您的檢視模型上呼叫命令。 您還需要新增額外的程式碼，以在無法使用命令時停用「按鈕」。
--   在 MVVM 中，建立一個含有所有可能的 UI 設定的「頁面」，然後藉由將 Visibility 屬性繫結到 VM 中的屬性來摺疊樹狀結構的組件，是相當常見的做法。 這會使得啟動時間產生不必要的增加，並且也可能導致工作集變大 (因為樹狀結構的某些組件可能永遠不會顯示)。 **建議：**使用 x:DeferLoadStrategy 功能來延遲樹狀結構的非必要部分，使其不參與啟動。 此外，請為頁面的不同模式建立個別的使用者控制項，然後使用程式碼後置以只載入必要控制項。
+-   在 MVVM 中，建立一個含有所有可能的 UI 設定的「頁面」，然後藉由將 Visibility 屬性繫結到 VM 中的屬性來摺疊樹狀結構的組件，是相當常見的做法。 這會使得啟動時間產生不必要的增加，並且也可能導致工作集變大 (因為樹狀結構的某些組件可能永遠不會顯示)。 **建議：**使用 [x:Load 屬性](../xaml-platform/x-load-attribute.md)或 [x:DeferLoadStrategy 屬性](../xaml-platform/x-deferloadstrategy-attribute.md)功能來延遲樹狀結構的非必要部分，使其不參與啟動。 此外，請為頁面的不同模式建立個別的使用者控制項，然後使用程式碼後置以只載入必要控制項。
 
 ## <a name="ccx-recommendations"></a>C++/CX 建議
 
@@ -39,11 +41,3 @@ MVVM 模式有多個具體的定義，以及協助實作此模式的協力廠商
 -   **停用 RTTI (/GR-)**。 編譯器中預設為開啟 RTTI，因此，除非您的建置環境將它關閉，否則您可能已經在使用它。 RTTI 會帶來明顯的額外負荷，除非您的程式碼對其有相當深度的倚賴，否則應該將它關閉。 XAML 架構完全不要求您的程式碼要使用 RTTI。
 -   **避免大量使用 ppltasks**。 呼叫非同步 WinRT API 時，Ppltasks 非常便利，但是它們會帶來明顯的程式碼大小額外負荷。 C++/CX 小組正在設想一個將可提供更佳效能的語言功能 – await。 在此同時，請針對您程式碼最忙碌路徑中的 ppltasks 使用取得平衡。
 -   **避免在應用程式的「商務邏輯」中使用 C++/CX**。 C++/CX 的設計目的是要做為一個從 C++ 應用程式存取 WinRT API 的便利方式。 它會利用具有額外負荷的包裝函式。 您應該避免在類別的商務邏輯/模型內使用 C++/CX，而將其保留以供在您的程式碼與 WinRT 之間的界限使用。
-
- 
-
- 
-
-
-
-

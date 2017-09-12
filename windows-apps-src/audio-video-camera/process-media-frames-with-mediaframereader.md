@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8c41f85c7d49d9019a2dc3a94242271a6fa9eb9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bc0cfc468613429d7989c9c0d93bd98246c0195b
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -155,6 +157,47 @@ translationtype: HT
 > 為了在 **SoftwareBitmap** 影像上執行像素操作，您必須存取原生記憶體緩衝區。 若要這樣做，您必須使用包含於下面所列程式碼中的 IMemoryBufferByteAccess COM 介面，且您必須更新您的專案屬性，以允許編譯不安全的程式碼。 如需詳細資訊，請參閱[建立、編輯及儲存點陣圖影像](imaging.md)。
 
 [!code-cs[FrameArrived](./code/Frames_Win10/Frames_Win10/FrameRenderer.cs#SnippetFrameRenderer)]
+
+## <a name="use-multisourcemediaframereader-to-get-time-corellated-frames-from-multiple-sources"></a>使用 MultiSourceMediaFrameReader 從多個來源取得與時間相互關聯的畫面
+從 Windows 10 版本 1607 開始，您可以使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader)，從多個來源接收與時間相互關聯的畫面。 此 API 可讓您更容易進行需要來自多個拍攝時間相近來源之畫面的處理，例如使用 [**DepthCorrelatedCoordinateMapper**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.core.depthcorrelatedcoordinatemapper) 類別。 使用這個新方法有一項限制，就是只能以最慢擷取來源的速率來引發畫面已到達事件。 將會捨棄較快速來源的額外畫面。 此外，由於系統預期畫面以不同的速率從不同的來源抵達，因此也無法自動辨識來源是否已完全停止產生畫面。 本節的範例程式碼示範如何使用事件建立您自己的逾時邏輯，只要相互關聯的畫面未在應用程式定義的時間限制內抵達，就會叫用此邏輯。
+
+使用 [**MultiSourceMediaFrameReader**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.frames.multisourcemediaframereader) 的步驟和使用本文之前所述 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 的步驟相似。 此範例將會使用色彩來源和深度來源。 宣告一些字串變數來儲存媒體畫面來源識別碼，這些識別碼將用來選取每個來源的畫面。 接下來，宣告用於實作範例逾時邏輯的 [**ManualResetEventSlim**](https://docs.microsoft.com/dotnet/api/system.threading.manualreseteventslim?view=netframework-4.7)、[**CancellationTokenSource**](https://msdn.microsoft.com/library/system.threading.cancellationtokensource.aspx) 和 [**EventHandler**](https://msdn.microsoft.com/library/system.eventhandler.aspx)。 
+
+[!code-cs[MultiFrameDeclarations](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameDeclarations)]
+
+使用本文先前所述的技術，查詢包含此範例案例所需色彩及深度來源的 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup)。 選取所要的畫面來源群組之後，取得每個畫面來源的 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo)。
+
+[!code-cs[SelectColorAndDepth](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetSelectColorAndDepth)]
+
+將選取的畫面來源群組傳入初始化設定，建立和初始化 **MediaCapture** 物件。
+
+[!code-cs[MultiFrameInitMediaCapture](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameInitMediaCapture)]
+
+初始化 **MediaCapture** 物件後，擷取彩色攝影機和景深相機的 [**MediaFrameSource**](https://docs.microsoft.com/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) 物件。 儲存每個來源的識別碼，這樣您就可以選取對應來源的到達畫面。
+
+[!code-cs[GetColorAndDepthSource](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetGetColorAndDepthSource)]
+
+呼叫 [**CreateMultiSourceFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture#Windows_Media_Capture_MediaCapture_CreateMultiSourceFrameReaderAsync_Windows_Foundation_Collections_IIterable_Windows_Media_Capture_Frames_MediaFrameSource__) 並傳遞讀取器使用的畫面來源陣列，以建立和初始化 **MultiSourceMediaFrameReader**。 註冊 [**FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_FrameArrived) 事件的事件處理常式。 此範例會建立本文之前所述 **FrameRenderer** 協助程式類別的執行個體，將畫面呈現至 **Image** 控制項。 呼叫 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_StartAsync) 以啟動畫面讀取器。
+
+註冊範例先前宣告之 **CorellationFailed** 事件的事件處理常式。 我們會通知這個事件，正在使用的其中一個畫面來源是否停止產生畫面。 最後，呼叫 [**Task.Run**](https://msdn.microsoft.com/en-us/library/hh195051.aspx) 以呼叫不同執行緒上的逾時協助程式方法 **NotifyAboutCorrelationFailure**。 本文稍後會示範此方法的實作。
+
+[!code-cs[InitMultiFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetInitMultiFrameReader)]
+
+每當所有由 **MultiSourceMediaFrameReader** 管理的媒體畫面來源有新的畫面時，都會引發 **FrameArrived** 事件。 這表示將會按照最慢媒體來源的頻率引發事件。 如果某個來源在較慢來源產生一個畫面的同時產生多個畫面，將會捨棄該快速來源的額外畫面。 
+
+呼叫 [**TryAcquireLatestFrame**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereader#Windows_Media_Capture_Frames_MultiSourceMediaFrameReader_TryAcquireLatestFrame) 以取得與事件相關聯的 [**MultiSourceMediaFrameReference**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference)。 呼叫 [**TryGetFrameReferenceBySourceId**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.multisourcemediaframereference#Windows_Media_Capture_Frames_MultiSourceMediaFrameReference_TryGetFrameReferenceBySourceId_System_String_) 並傳入初始化畫面讀取器時所儲存的識別碼字串，以取得與每個媒體畫面來源相關聯的 **MediaFrameReference**。
+
+呼叫 **ManualResetEventSlim** 物件的 [**Set**](https://msdn.microsoft.com/library/system.threading.manualreseteventslim.set.aspx) 方法以發出畫面已到達的通知訊號。 我們將會在執行於不同執行緒的 **NotifyCorrelationFailure** 方法中檢查這個事件。 
+
+最後，在與時間相互關聯的媒體畫面上執行任何處理。 此範例只是顯示來自深度來源的畫面。
+
+[!code-cs[MultiFrameArrived](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetMultiFrameArrived)]
+
+啟動畫面讀取器後，**NotifyCorrelationFailure** 協助程式方法已在不同的執行緒中執行。 在此方法中，檢查是否發出了畫面已收到事件的通知訊號。 請記住，在 **FrameArrived** 處理常式中，只要有一組相互關聯的畫面到達，我們就設定此事件。 如果事件有一段應用程式定義的時間 (5 秒為合理值) 沒有收到通知訊號，而且使用 **CancellationToken** 並未取消工作，那麼很可能其中一個媒體畫面來源已停止讀取畫面。 在這種情況下，您通常需要關閉畫面讀取器，以便引發應用程式定義的 **CorrelationFailed** 事件。 在此事件的處理常式中，您可以依照本文先前所述的方式，停止畫面讀取器並清理其相關聯的資源。
+
+[!code-cs[NotifyCorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetNotifyCorrelationFailure)]
+
+[!code-cs[CorrelationFailure](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCorrelationFailure)]
 
 ## <a name="related-topics"></a>相關主題
 

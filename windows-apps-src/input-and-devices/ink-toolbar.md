@@ -1,8 +1,8 @@
 ---
 author: Karl-Bridge-Microsoft
 Description: "將預設 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式、將自訂的畫筆按鈕新增至 InkToolbar，以及將自訂的畫筆按鈕繫結到自訂的畫筆定義。"
-title: "將 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式"
-label: Add an InkToolbar to a Universal Windows Platform (UWP) inking app
+title: "將 InkToolbar 新增至通用 Windows 平台 (UWP) 應用程式"
+label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
 keywords: "Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, InkToolbar, Universal Windows Platform, UWP, user interaction, input, Windows 筆跡, 通用 Windows 平台, 使用者互動, 輸入"
 ms.author: kbridge
@@ -11,11 +11,13 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
-ms.openlocfilehash: dd307bd6d7551c1e95de29360a8601484b37e742
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a4bff46c2ab0f0f1f9a689f2744c9a77ac90630d
+ms.sourcegitcommit: c519e3d34bef37f87bb44f02b295187849bb5eea
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/25/2017
 ---
-# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-inking-app"></a>將 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式
+# <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>將 InkToolbar 新增至通用 Windows 平台 (UWP) 應用程式
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 
@@ -31,7 +33,7 @@ translationtype: HT
 
   InkPresenter API 支援大量的手寫筆跡體驗自訂項目。 如需更多詳細資料，請參閱 [UWP 應用程式中的畫筆和手寫筆互動](pen-and-stylus-interactions.md)。
 
-- 將 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) 繫結至 InkCanvas。 根據預設，InkToolbar 會提供啟用筆跡功能與設定筆跡屬性 (例如筆觸大小、筆跡色彩及筆尖形狀) 的基本 UI。
+- 將 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) 繫結至 InkCanvas。 根據預設，InkToolbar 會提供可自訂並可擴充的按鈕集合，以用於啟用與筆墨相關的功能 (例如筆觸大小、筆跡色彩及筆尖形狀)。
 
   我們會在本主題中討論 InkToolbar。
 
@@ -47,16 +49,18 @@ translationtype: HT
 
 ## <a name="default-inktoolbar"></a>預設 InkToolbar
 
-根據預設，InkToolbar 包含用於繪圖、清除、反白顯示，以及顯示尺規的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆劃粗細、清除所有筆跡) 將會在飛出視窗中提供。
+根據預設，[**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 包含可用於繪圖、清除、反白顯示，以及顯示樣板 (尺規或量角器) 的按鈕。 根據功能而定，其他設定和命令 (例如筆跡色彩、筆劃粗細、清除所有筆跡) 將會在飛出視窗中提供。
 
 ![InkToolbar](.\images\ink\ink-tools-invoked-toolbar-small.png)  
 *預設 Windows Ink 工具列*
 
-若要新增基本的預設 InkToolbar：
+若要新增預設的 [**InkToolbar**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar) 到手寫筆跡應用程式，只要將它放在與 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 同一個頁面上並關聯兩個控制項即可。
+
 1. 在 MainPage.xaml 中，針對手寫筆跡表面宣告容器物件 (如這個範例中，我們使用 [格線] 控制項)。
 2. 將 InkCanvas 物件宣告為容器的子系。 (InkCanvas 大小是繼承自容器。)
 3. 宣告 InkToolbar 並使用 TargetInkCanvas 屬性將它繫結至 InkCanvas。
-  請確定 InkToolbar 是在 InkCanvas 之後宣告。 如果不是，InkCanvas 重疊會將 InkToolbar 轉譯為無法存取。
+    > [!NOTE]  
+    > 請確定 InkToolbar 是在 InkCanvas 之後宣告。 如果不是，InkCanvas 重疊會將 InkToolbar 轉譯為無法存取。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -808,6 +812,10 @@ namespace Ink_Basic_InkToolbar
 * [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
 **範例**
-* [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [簡單的筆跡範例 (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雜的筆跡範例 (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [筆跡範例 (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [入門教學課程：UWP 應用程式中的支援筆跡](https://aka.ms/appsample-ink)
+* [著色本範例](https://aka.ms/cpubsample-coloringbook)
+* [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)
+

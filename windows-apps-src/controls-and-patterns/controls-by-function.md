@@ -6,14 +6,16 @@ ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7082b8f81f45d5035cbe2d9b4bf482d0c985bb8f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 32e2ba7bc3aebf2d1fae80632f0ea663a203d73c
+ms.sourcegitcommit: 00c3f5a1208bd0125f5b275f972cf2a82d8eb9b6
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/13/2017
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -21,7 +23,7 @@ translationtype: HT
 
 Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式庫。 部分控制項以視覺方式呈現；其餘控制項則當做其他控制項或內容 (例如影像與媒體) 的容器。 
 
-您可以下載 [**XAML UI 基本知識範例**](http://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。 
+您可以下載 [XAML UI 基本知識範例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。 
 
 以下是可用於 App 的常用 XAML 控制項清單 (依功能分類)。 
 
@@ -140,7 +142,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 設計和作法︰[翻轉檢視控制項指南](flipview.md) 
 
 ### <a name="grid-view"></a>格線檢視
-在可以水平捲動的列和欄中顯示項目集合的控制項。
+在可以垂直捲動的列和欄中顯示項目集合的控制項。
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -354,7 +356,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
         Height="108" Width="64" 
         Padding="8" CornerRadius="4">
     <Canvas>
-        <Rectangle Fill="Yellow"/>
+        <Rectangle Fill="Orange"/>
         <Rectangle Fill="Green" Margin="0,44"/>
     </Canvas>
 </Border>
@@ -372,7 +374,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue" Canvas.Left="20" Canvas.Top="20"/>
     <Rectangle Fill="Green" Canvas.Left="40" Canvas.Top="40"/>
-    <Rectangle Fill="Yellow" Canvas.Left="60" Canvas.Top="60"/>
+    <Rectangle Fill="Orange" Canvas.Left="60" Canvas.Top="60"/>
 </Canvas>
 ```
 
@@ -396,7 +398,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue" Grid.Row="1"/>
     <Rectangle Fill="Green" Grid.Column="1"/>
-    <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
+    <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
 </Grid>
 ```
 
@@ -452,7 +454,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
     <Rectangle Fill="Red"/>
     <Rectangle Fill="Blue"/>
     <Rectangle Fill="Green"/>
-    <Rectangle Fill="Yellow"/>
+    <Rectangle Fill="Orange"/>
 </StackPanel>
 ```
 
@@ -470,7 +472,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
                VariableSizedWrapGrid.RowSpan="2"/>
     <Rectangle Fill="Green" Width="80" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
-    <Rectangle Fill="Yellow" Height="80" Width="80" 
+    <Rectangle Fill="Orange" Height="80" Width="80" 
                VariableSizedWrapGrid.RowSpan="2" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
 </VariableSizedWrapGrid>

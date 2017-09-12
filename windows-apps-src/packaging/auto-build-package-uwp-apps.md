@@ -1,17 +1,19 @@
 ---
-author: rmpablos
+author: laurenhughes
 title: "為您的 UWP app 設定自動化組建"
 description: "如何設定您的自動化組建以產生側載及/或儲存套件。"
-ms.author: wdg-dev-content
-ms.date: 02/15/2017
+ms.author: lahugh
+ms.date: 08/09/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
-ms.openlocfilehash: f4c68af97e5d5b11a0c5320c9fa6040b9ab94e5a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c8c1765e2983484ddc57e47a995867aa3b401ad4
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -40,7 +42,7 @@ translationtype: HT
 
 若要深入了解，請參閱[在 Windows 上部署代理程式](https://www.visualstudio.com/docs/build/admin/agents/v2-windows)。 
 
-若要執行 UWP 單元測試，您必須執行下列動作：• 部署和啟動您的應用程式。 • 在互動模式中執行 VSTS 代理程式。 • 將您的代理程式設定為在重新開機之後自動登入。
+若要執行 UWP 單元測試，您必須執行下列動作：• 部署和啟動您的 App。 • 在互動模式中執行 VSTS 代理程式。 • 將您的代理程式設定為在重新開機之後自動登入。
 
 現在我們將討論如何設定自動化組建。
 
@@ -105,11 +107,11 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 若要檢視所有預先定義的變數，請參閱[使用建置變數](https://www.visualstudio.com/docs/build/define/variables)。
 
 #### <a name="configure-the-publish-artifact-build-task"></a>設定發行構件建置工作 
-這個工作會將已產生構件儲存在 VSTS 中。 您可以在建置結果頁面的 [構件] 索引標籤中看到它們。 VSTS 會使用我們之前已定義的 `$Build.ArtifactStagingDirectory)\AppxPackages` 資料夾。
+這個工作會將已產生構件儲存在 VSTS 中。 您可以在建置結果頁面的 [構件] 索引標籤中看到它們。 VSTS 會使用我們之前已定義的 `$(Build.ArtifactStagingDirectory)\AppxPackages` 資料夾。
 
 ![構件](images/building-screen6.png)
 
-因為我們已經將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，所以構件資料夾會包含您上傳到市集的套件 (appxupload) 以及啟用側載的套件 (appxbundle)。
+因為我們已將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，構件資料夾包含建議提交至市集的套件 (.appxupload)。 請注意，您也可以提交一般應用程式套件 (.appx) 或應用程式套件組合 (.appxbundle) 至市集。 根據本文的用途，我們將使用 .appxupload 檔案。
 
 
 >注意︰根據預設，VSTS 代理程式會維持所產生的最新 appx 套件。 如果您只想要儲存目前組建的構件，請設定組建以清除二進位檔目錄。 若要這樣做，請新增一個名為 `Build.Clean` 的變數，然後將它的值設定為 `all`。 若要深入了解，請參閱[指定儲存機制](https://www.visualstudio.com/docs/build/define/repository#how-can-i-clean-the-repository-in-a-different-way)。
@@ -173,10 +175,10 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp.UnitTest\x86\MyUWPApp.Un
 如果您僅想使用 CI 組建來監視您的簽入品質，您可以減少建置次數。
 
 #### <a name="to-improve-the-speed-of-a-ci-build"></a>改善 CI 組建的速度
-1.    僅適用單一平台的組建
-2.    編輯 BuildPlatform 變數，以僅使用 x86。 ![設定 ci](images/building-screen10.png) 
-3.    在建置步驟中，將 /p:AppxBundle=Never 新增到 MSBuild 引數屬性中，然後設定 [平台] 屬性。. ![設定平台](images/building-screen11.png)
-4.    在單元測試專案中，停用 .NET 原生項目。 
+1.  僅適用單一平台的組建
+2.  編輯 BuildPlatform 變數，以僅使用 x86。 ![設定 ci](images/building-screen10.png) 
+3.  在建置步驟中，將 /p:AppxBundle=Never 新增到 MSBuild 引數屬性中，然後設定 [平台] 屬性。. ![設定平台](images/building-screen11.png)
+4.  在單元測試專案中，停用 .NET 原生項目。 
 
 若要這樣做，請開啟專案檔案，然後在專案屬性中將 `UseDotNetNativeToolchain` 屬性設定為 `false`。
 
@@ -276,16 +278,16 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-這將會產生可提交至市集的 appxupload 檔案。
+這將會產生可提交至市集的 .appxupload 檔案。
 
 
 #### <a name="configure-automatic-store-submission"></a>設定自動市集提交
 
-使用適用於 Windows 市集的 Visual Studio Team Services 擴充功能來整合市集 API，並將 appxupload 套件傳送到市集。
+使用適用於 Windows 市集的 Visual Studio Team Services 擴充功能來整合市集 API，並將應用程式套件傳送到市集。
 
 您需要將開發人員中心帳戶與 Azure Active Directory (AD) 連接，然後在您的 AD 中建立 App 以驗證要求。 您可以依照 [擴充功能] 頁面中的指示來完成該作業。 
 
-一旦您設定好擴充功能，就可以新增建置工作，並使用您的應用程式識別碼以及 appxupload 檔案的位置進行設定。
+一旦您設定好擴充功能，就可以新增建置工作，並使用您的應用程式識別碼以及 .appxupload 檔案的位置進行設定。
 
 ![設定開發人員中心](images/building-screen17.png) 
 
@@ -319,7 +321,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 <span id="certificates-best-practices"/>
 ### <a name="best-practices-for-signing-certificates"></a>簽署憑證的最佳做法 
-Visual Studio 會產生每個專案的憑證。 這會讓您難以維護有效憑證的規劃清單。 如果您打算建立數個 App，您可以建立可簽署您所有 App 的單一憑證。 然後，信任您憑證的每部裝置都將能夠側載您任何的 App 而不需要安裝其他憑證。 若要深入了解，請參閱[如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)。
+Visual Studio 會產生每個專案的憑證。 這會讓您難以維護有效憑證的規劃清單。 如果您打算建立數個 App，您可以建立可簽署您所有 App 的單一憑證。 然後，信任您憑證的每部裝置都將能夠側載您任何的 App 而不需要安裝其他憑證。 若要深入了解，請參閱[建立套件簽署的憑證](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)。
 
 
 #### <a name="create-a-signing-certificate"></a>建立簽署憑證
@@ -361,5 +363,5 @@ Visual Studio 和 MSBuild 提供不同的選項來管理您用來簽署 App 的�
 ## <a name="related-topics"></a>相關主題
 * [建置適用於 Windows 的.NET App](https://www.visualstudio.com/docs/build/get-started/dot-net) 
 * [封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)
-* [在 Windows10 中側載 LOB App](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
-* [如何建立應用程式套件簽署憑證](https://msdn.microsoft.com/library/windows/desktop/jj835832(v=vs.85).aspx)
+* [在 Windows 10 中側載 LOB 應用程式](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)
+* [建立套件簽署的憑證](https://docs.microsoft.com/windows/uwp/packaging/create-certificate-package-signing)

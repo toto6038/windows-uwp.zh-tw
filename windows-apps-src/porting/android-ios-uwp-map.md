@@ -2,7 +2,7 @@
 author: GrantMeStrength
 Description: "比較 iOS、Android 和 Windows 10 平台之間的功能。"
 Search.Product: eADQiWindows 10XVcnh
-title: "適用於 Android 與 iOS 開發人員的 Windows 概念"
+title: "適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應"
 ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
@@ -10,11 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
-ms.openlocfilehash: ce32bd7ebaca20827a637c456b2dbe82811817cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 72bb41939b0676dab7c212770cc9eddaef538c3f
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/28/2017
 ---
-#<a name="windows-concepts-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 概念
+#<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
 如果您是具備 Android 或 iOS 技巧和 (或) 程式碼的開發人員，而且您想要移到 Windows 10 和通用 Windows 平台 (UWP)，則此資源擁有您在三個平台之間對應平台功能 (和您的知識) 所需的資訊。
 
@@ -128,13 +130,13 @@ translationtype: HT
 <td align="left"><strong>對等瀏覽。</strong> <br><br>向使用者顯示在階層同等重要的頁面之間瀏覽的方法。</td>
 <td align="left"><strong>Tab (索引標籤)</strong>、<strong>swipe view (撥動檢視)</strong> 和 <strong>navigation drawer (瀏覽選單)</strong> 提供<strong>橫式瀏覽</strong>。</td>
 <td align="left"><strong>Tab bar controller (索引標籤列控制器)</strong>、<strong>split view controller (分割檢視控制器)</strong> 和 <strong>page view controller (頁面檢視控制器)</strong> 允許相同階層的檢視之間的瀏覽。</td>
-<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
+<td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997788.aspx">索引標籤/樞紐</a></strong>，在內容上方顯示常設的連結/索引標籤清單。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997787.aspx">瀏覽窗格/分割檢視</a></strong>可讓您在內容旁顯示連結的清單。<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>階層式瀏覽。</strong> <br><br>在階層的父項與子項頁面之間瀏覽。</td>
 <td align="left"><strong>List (清單)</strong> 和 <strong>grid list (格線清單)</strong>、<strong>button (按鈕)</strong> 及其他控制項，搭配 <strong>intent (意圖)</strong> 使用時可提供 <strong>descendent navigation (下階瀏覽)</strong> 以載入其他 <strong>activity (活動)</strong>。</td>
 <td align="left"><strong>Navigation controller (瀏覽控制器)</strong> 可讓使用者在階層的層級之間瀏覽。</td>
-<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">主要/詳細資料</a></strong>讓使用者從項目摘要清單中挑選，該項目摘要顯示在對應詳細資料區域的旁邊。<br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/en-us/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
+<td align="left"><strong><a href="https://msdn.microsoft.com/library/windows/apps/dn449149.aspx">中樞</a></strong>讓您為使用者顯示內容的預覽，使用者可以選取以瀏覽到子頁面。 <strong><a href="https://msdn.microsoft.com/library/windows/apps/dn997765.aspx">主要/詳細資料</a></strong>讓使用者從項目摘要清單中挑選，該項目摘要顯示在對應詳細資料區域的旁邊。<br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigation-basics">瀏覽</a><br/><br/><a href="https://msdn.microsoft.com/windows/uwp/layout/navigate-between-two-pages">在兩個頁面之間瀏覽</a></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>返回按鈕瀏覽。</strong> <br><br>在應用程式內往回瀏覽。</td>
@@ -170,7 +172,7 @@ translationtype: HT
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>語音。</strong> <br><br>語音輸入的語音辨識及其他語音功能。</td>
 <td align="left">實作 <strong>RecognizerIntent</strong> (例如 <strong>Google 語音搜尋</strong>) 的任何 app 都可提供語音輸入。 <strong>SpeechRecognizer</strong> 類別可以讓 app 使用 Google 的語音辨識 API。</td>
-<td align="left">沒有內建的語音辨識或語音輸入 API。</td>
+<td align="left">應用程式可以使用 <strong>SFSpeechRecognizer</strong> 類別來實作語音輸入以及語音辨識。</td>
 <td align="left">您可以使用<strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185615.aspx">語音辨識</a></strong> API，與 App 在前景進行互動。 您可以使用語音型 <strong><a href="https://msdn.microsoft.com/library/windows/apps/mt185598.aspx">Cortana 互動</a></strong>在前景或背景啟動應用程式，以及與背景應用程式互動。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt185614.aspx">語音互動</a></td>
 </tr>
 <tr class="even">

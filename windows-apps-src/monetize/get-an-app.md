@@ -4,18 +4,18 @@ ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: "在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資訊。"
 title: "取得 App"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式"
-ms.openlocfilehash: 6087bf65ac297b12f92a9082db4e6a12e93130ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 71081cd4a42ecb085c82432d1a24a5cd2dd92715
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="get-an-app"></a>取得 App
-
-
 
 
 在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的特定 App 擷取相關資訊。
@@ -26,8 +26,6 @@ translationtype: HT
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
-
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -90,7 +88,8 @@ Authorization: Bearer <your access token>
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 

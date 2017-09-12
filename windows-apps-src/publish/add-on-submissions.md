@@ -4,14 +4,16 @@ Description: "您要透過 Windows 開發人員中心儀表板發佈附加元件
 title: "附加元件提交"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7de8b6db65bb9ec58f16643dc8b477c274513c9a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 85ad5e297eed8daa5205aedc1253191fcff5fd49
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="add-on-submissions"></a>附加元件提交
 
@@ -21,7 +23,8 @@ translationtype: HT
 
 附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您就可以建立提交作業，讓您的附加元件可透過 Windows 市集購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到市集之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
 
-> **注意**&nbsp;&nbsp;本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
+> [!NOTE]
+> 本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
 
 ## <a name="checklist-for-submitting-an-add-on"></a>提交附加元件的檢查清單
 
@@ -49,16 +52,17 @@ translationtype: HT
 ### <a name="pricing-and-availability-page"></a>定價和可用性頁面
 | 欄位名稱                    | 注意事項                                       |
 |-------------------------------|---------------------------------------------|
-| [**基本價格**](set-add-on-pricing-and-availability.md#base-price)                | 必要                                    |
-| [**市場和自訂價格**](set-add-on-pricing-and-availability.md#markets-and-custom-prices)  | 預設：所有可能的市場都能取得 |
-| [**銷售定價**](put-apps-and-add-ons-on-sale.md)               | 選用                             |
-| [**配送和可見性**](set-add-on-pricing-and-availability.md#distribution-and-visibility)   | 預設：客戶瀏覽或搜尋市集可找到附加元件 |
-| [**發佈日期**](set-add-on-pricing-and-availability.md#publish-date)                | 預設：附加元件通過認證之後立即發佈 |
+| [**市場**](set-add-on-pricing-and-availability.md#markets)  | 預設：所有可能的市場 |
+| [**可見度**](set-add-on-pricing-and-availability.md#visibility)   | 預設：可供購買。 可在應用程式清單中顯示。 |
+| [**排程**](set-add-on-pricing-and-availability.md#schedule)    | 預設：儘速發行
+| [**定價**](set-add-on-pricing-and-availability.md#pricing)                | 必要                                    |
+| [**銷售定價**](put-apps-and-add-ons-on-sale.md)               | 選擇性                             |
+| [**發佈日期**](set-add-on-pricing-and-availability.md#publish-date)                | 預設：盡快發行 |
 
 <span/>
 
 ### <a name="store-listings"></a>市集清單
-需要一個市集清單。 我們建議針對 App 支援的每個[語言](create-add-on-store-listings.md#languages)提供市集清單。
+需要一個市集清單。 我們建議針對 App 支援的每個[語言](create-add-on-store-listings.md#store-listing-languages)提供市集清單。
 
 | 欄位名稱                    | 注意事項                                       |
 |-------------------------------|---------------------------------------------|
@@ -70,14 +74,16 @@ translationtype: HT
 
 當您輸入完此資訊，請按一下 **\[送出到市集\]**。 在大多數情況下，認證程序大概需要一個小時。 之後，您的附加元件就會發佈到市集，供客戶購買。
 
->**注意**&nbsp;&nbsp;：您也必須在您的應用程式程式碼中實作附加元件。 如需詳細資訊，請參閱 [App 內購買和試用版](../monetize/in-app-purchases-and-trials.md)。
+> [!NOTE]
+> 您也必須在您的應用程式程式碼中實作附加元件。 如需詳細資訊，請參閱 [App 內購買和試用版](../monetize/in-app-purchases-and-trials.md)。
 
 
 ## <a name="updating-an-add-on-after-publication"></a>發佈之後更新附加元件
 
 您可以隨時對已發佈的附加元件進行變更。 附加元件變更的提交與發佈獨立於您的 App 之外，因此您通常不需要更新整個 App，就可以對附加元件進行變更，例如更新 App 的價格或描述。
 
-> **重要**&nbsp;&nbsp;：如果您的應用程式可供 Windows 8.x 的客戶使用，您必須建立並發佈新的應用程式提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
+> [!IMPORTANT]
+> 如果您的應用程式可供 Windows 8.x 的客戶使用，您必須建立並發佈新的應用程式提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
 
 若要提交更新，請移至儀表板的附加元件頁面，然後按一下 **\[更新\]**。 這會使用您前一個提交作業的資訊做為起點，建立一個新的附加元件提交作業。 視需要變更資訊，然後按一下 **\[提交至市集\]**。
 

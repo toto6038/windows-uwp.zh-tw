@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 493e491bd16b7346046394d66587788caf06db4f
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: 67714d0b7a95e1034486d39853c91c9a7590bfa5
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="guidelines-for-app-settings"></a>應用程式設定的指導方針
 
@@ -97,9 +99,11 @@ translationtype: HT
 
 ![「選擇模式」區段](images/appsettings_mode.png)
 
-<div class=”microsoft-internal-note”>
-顯示「選擇模式」區段偏好的文字字串的詳細紅線，可在 [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2) 取得。
+<!--
+<div class="microsoft-internal-note">
+Detailed redlines showing preferred text strings for the "Choose a mode" section are available on [UNI](http://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
 </div>
+-->
 
 ## <a name="about-section-and-give-feedback-button"></a>「關於」區段和「提供意見反應」按鈕
 

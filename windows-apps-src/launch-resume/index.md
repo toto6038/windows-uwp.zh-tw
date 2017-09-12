@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: "啟動、繼續和背景工作"
-description: "本節描述通用 Windows 平台 (UWP) 應用程式在啟動、暫停、繼續及終止時的反應。"
+description: "本節描述通用 Windows 平台 (UWP) app 在啟動、暫停、繼續及終止時的反應。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 412876d0b05b2e703482f8cc79a1f07268ac200f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6eed2ecb5766edea8678ea2af10c02332d5a5928
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
@@ -24,6 +26,7 @@ translationtype: HT
 - 如何使用應用程式服務，這可讓您的通用 Windows 平台 (UWP) 應用程式與其他應用程式共用資料和功能。
 - 如何使用背景工作，讓 UWP 應用程式即使本身不在前景中仍能執行。
 - 如何探索連線的裝置、啟動另一部裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊，讓您能夠建立在裝置間橫向流動的使用者經驗。
+- 如何選擇適當的技術來延伸和組件化您的 App。
 - 如何新增和設定應用程式的啟動顯示畫面。
 
 ## <a name="the-app-lifecycle"></a>應用程式週期
@@ -77,7 +80,8 @@ translationtype: HT
 | 主題 | 描述 |
 |-------|-------------|
 | [建立和取用 App 服務](how-to-create-and-consume-an-app-service.md) | 了解如何撰寫可為其他通用 Windows 平台 (UWP) app 提供服務的 UWP app，以及如何取用這些服務。 |
-| [轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md) | 將在個別背景處理序中執行的應用程式服務程式碼，轉換成和您應用程式服務提供者在相同處理序內執行的程式碼。 |
+| [轉換 App 服務，以便與其主控 App 在相同處理序中執行](convert-app-service-in-process.md) | 將在個別背景處理序中執行的 app 服務程式碼，轉換成和您 app 服務提供者在相同處理序內執行的程式碼。 |
+| [透過應用程式服務、擴充功能和套件延伸您的 App](extend-your-app-with-services-extensions-packages.md) | Windows 10 中有各種協助您延伸和組件化 App 的不同技術。 本主題可協助您判斷其中最適用的技術，並提供各項技術的簡要概觀。 |
 
 ## <a name="background-tasks"></a>背景工作
 
@@ -85,28 +89,32 @@ translationtype: HT
 
 | 主題 | 描述 |
 |-------|-------------|
-| [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景應用程式已暫停也一樣。 |
-| [背景工作的指導方針](guidelines-for-background-tasks.md)                                           | 確保您的應用程式符合執行背景工作的需求。                                                                                                                          |
-| [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)                               | 建立及註冊在與應用程式不同處理序中執行的背景工作，以便在應用程式不在前景時也能執行。                                                                                                 |
-| [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)                               | 建立及註冊與前景應用程式在相同處理序中執行的背景工作。                                                                                                 |
-| [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md)                               | 了解如何將跨處理序背景工作轉換成在與前景應用程式相同處理序中執行的同處理序背景工作。
-| [偵錯背景工作](debug-a-background-task.md)                                                           | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。                                                                        |
-| [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。                                                                                                       |
-| [處理已取消的背景工作](handle-a-cancelled-background-task.md)                                     | 了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向應用程式回報取消。                                     |
-| [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)           | 了解應用程式如何辨識背景工作的進度與完成度。                                                                                                                     |
-| [登錄背景工作](register-a-background-task.md)                                                     | 了解如何建立可重複用來安全登錄大多數背景工作的函式。                                                                                                  |
-| [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)             | 了解如何建立回應 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的背景工作。                                                                         |
-| [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)                                        | 了解如何排程一次性的背景工作，或執行定期的背景工作。                                                                                                          |
-| [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)                 | 了解如何設定條件以控制背景工作的執行時間。                                                                                                                  |
-| [在背景傳輸資料](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | 使用背景傳輸 API 在背景中複製檔案。                                                                                                                              |
-| [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)                       | 使用背景工作來更新含有最新內容的應用程式動態磚。                                                                                                                      |
-| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                       | 了解如何在裝置使用 AC 電源時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。                             |
+| [背景工作的指導方針](guidelines-for-background-tasks.md)                                       | 確保您的應用程式符合執行背景工作的需求。 |
+| [建立和註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)       | 建立和註冊與前景應用程式在相同處理序中執行的背景工作。 |
+| [建立和註冊跨處理序背景工作](create-and-register-a-background-task.md)           | 建立及註冊在與應用程式不同處理序中執行的背景工作，以便在應用程式不在前景時也能執行。 |
+| [將跨處理序背景工作轉換成同處理序背景工作](convert-out-of-process-background-task.md) | 了解如何將跨處理序背景工作轉換成在與前景應用程式相同處理序中執行的同處理序背景工作。|
+| [偵錯背景工作](debug-a-background-task.md)                                                       | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。 |
+| [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在 App 資訊清單中宣告背景工作為擴充功能，以允許使用背景工作。 |
+| [群組背景工作註冊](group-background-tasks.md)                                             | 使用群組隔離背景工作註冊。 |
+| [處理已取消的背景工作](handle-a-cancelled-background-task.md)                                 | 了解如何讓可辨識取消要求並停止工作的背景工作，使用永續性儲存體向應用程式回報取消。 |
+| [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)       | 了解應用程式如何辨識背景工作的進度與完成度。 |
+| [登錄背景工作](register-a-background-task.md)                                                 | 了解如何建立可重複用來安全登錄大多數背景工作的函式。 |
+| [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)         | 了解如何建立回應 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) 事件的背景工作。 |
+| [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)                                    | 了解如何排程一次性的背景工作，或執行定期的背景工作。 |
+| [從您的 App 觸發背景工作](trigger-background-task-from-app.md) | 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 從您的 App 中啟動背景工作。|
+| [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 App 已暫停也一樣。 |
+| [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)             | 了解如何設定條件以控制背景工作的執行時間。 |
+| [在背景傳輸資料](https://msdn.microsoft.com/library/windows/apps/mt280377)                 | 使用背景傳輸 API 在背景中複製檔案。 |
+| [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)                   | 使用背景工作來更新含有最新內容的應用程式動態磚。 |
+| [使用維護觸發程序](use-a-maintenance-trigger.md)                                                   | 了解如何在裝置插上電源時，使用 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 類別於背景中執行輕量型程式碼。 |
+### <a name="see-also"></a>請參閱
+* [最佳化的背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)-了解如何以減少使用背景能源與互動的背景活動的使用者設定。
 
 ## <a name="remote-systems"></a>遠端系統
 
 [已連線的應用程式和裝置 (專案 Rome)](connected-apps-and-devices.md) 一節說明如何使用遠端系統平台來探索遠端裝置、啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [探索遠端裝置](discover-remote-devices.md)  | 了解如何探索能夠連線的裝置。 |
 | [啟動遠端裝置上的應用程式](launch-a-remote-app.md) | 了解如何啟動遠端裝置上的應用程式。  |

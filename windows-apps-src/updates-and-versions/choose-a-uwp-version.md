@@ -3,37 +3,42 @@ author: QuinnRadich
 title: "選擇 UWP 版本"
 description: "在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 了解不同 UWP 版本之間的差異，以及如何在新的及現有的專案中設定您的選項。"
 ms.author: quradic
-ms.date: 02/08/2017
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
-ms.openlocfilehash: 2fe7d9017919166992b13a5cc5f058591fecda3e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 141560d379efab8f0bf8f745ec9e77972d847eec
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
-在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 目前，只有三種可能的版本。
+每一版的 Windows 10 都為 UWP 平台帶來了全新與改進的功能。 在 Microsoft Visual Studio 中建立 UWP 應用程式時，您可以選擇要以哪個版本為目標。
+
+下表說明可用的 Windows 10 版本。 請注意，此表格僅適用於建置只有 Windows 10 支援的 UWP 應用程式。 您無法為舊版 Windows 開發 UWP 應用程式，且必須已[安裝適當的 SDK 組建](http://go.microsoft.com/fwlink/?LinkId=821431)，才能以該版本為目標。 
 
 | 版本 | 描述 |
 | --- | --- |
-| 組建 14393 (年度更新版) | 這是發行於 2016 年 7 月的最新 Windows 10 版本。 此版本的一些重點功能包括： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：**使用新的 Cortana 動作來將 Cortana 支援與您 app 的特定功能整合。 </br> \* **Windows Hello：**Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1607.md)頁面。  |
+| 組建 15063 (Creators Update) | 這是發行於 2017 年 3 月的最新 Windows 10 版本。 **請注意，您_必須_使用 Visual Studio 2017，才能以這個版本的 Windows 為目標**。 此版本的一些重點功能包括：  </br> \* **筆跡分析：**Windows Ink 現在可以將筆墨筆劃分類為書寫或繪圖筆劃，並辨識文字、形狀和基本配置結構。 </br> \* **Windows.Ui.Composition API：**輕鬆地在整個應用程式中結合與套用動畫。 </br> \* **即時編輯：**在應用程式執行時同時編輯 XAML，並即時看見所套用的變更。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1703.md)頁面。  |
+| 組建 14393 (年度更新版) | 此版本的 Windows 10 發行於 2016 年 7 月。 此版本的一些重點功能包括： </br> \* **Windows Ink：**新的 InkCanvas 和 InkToolbar 控制項。 </br> \* **Cortana API：**使用新的 Cortana 動作來將 Cortana 支援與您 app 的特定功能整合。 </br> \* **Windows Hello：**Microsoft Edge 現在支援 Windows Hello，提供網頁開發人員存取生物識別驗證。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows10 中適用於開發人員的新增功能](../whats-new/windows-10-version-1607.md)頁面。  |
 | 組建 10586 | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1511.md) |
 | 組建 10240 | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-version-1507.md) |
 
-強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (14393)。 撰寫企業 app 的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
+強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (15063)。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
 
 ## <a name="whats-different-in-each-uwp-version"></a>每個 UWP 版本有何差異？
 
-每個 Windows 10 後繼版本都可使用適用於 UWP 的新 API 和已變更的 API。 如需有關哪個版本中新增了哪些功能的特定資訊，請參閱 [Windows 10 提供給開發人員的新功能](../whats-new/windows-10-version-1607.md)。
+每個 Windows 10 後繼版本都可使用適用於 UWP 的新 API 和已變更的 API。 如需有關哪個版本中新增了哪些功能的特定資訊，請參閱 [Windows 10 提供給開發人員的新功能](../whats-new/windows-10-version-1703.md)。
 
 如需列舉出所有裝置系列及其版本和所有 API 協定及其版本的參考主題，請參閱[裝置系列](https://msdn.microsoft.com/library/windows/apps/dn706137.aspx)和 [API 協定](https://msdn.microsoft.com/library/windows/apps/dn706135.aspx)。
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>選擇要針對您 App 使用的版本
 
-在 Visual Studio 中的 **\[新增通用 Windows 專案\]** 對話方塊中，您可以為 **\[目標版本\]** 和 **\[最小版本\]** 選擇版本。
+在 Visual Studio 中的 **\[新增通用 Windows 專案\]** 對話方塊中，您可以為 **\[目標版本\]** 和 **\[最小版本\]** 選擇版本。 此外，您可以在應用程式其 **\[屬性\]** 的 *\[應用程式\]* 區段中，變更 UWP 應用程式的 **\[目標版本\]** 和 **\[最小版本\]**。
 
 * **目標版本**。 這會設定您專案檔中的 *TargetPlatformVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MaxVersionTested* 屬性的值。 您選擇的值會指定您專案的目標 UWP 平台版本，也因此會決定您 App 可用的一組 API，所以我們建議您選擇可能的最新版本。 如需有關您應用程式套件資訊清單的詳細資訊，以及一些有關手動設定 TargetDeviceFamily 指導方針，請參閱 [TargetDeviceFamily](https://msdn.microsoft.com/library/windows/apps/dn986903)。
 * **最小版本**。 這會設定您專案檔中的 *TargetPlatformMinVersion* 設定。 它也會決定您應用程式套件資訊清單中 *TargetDeviceFamily@MinVersion* 屬性的值。 您選擇的值會指定您專案可搭配運作的 UWP 平台最小版本。

@@ -6,14 +6,19 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 6ea53de0e200b3e60b55adf3f69bc745bfa01e82
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: c3ed48377d5a2290834df2e73179f3860a3d8e7d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="flip-view"></a>翻轉檢視
 
@@ -21,15 +26,8 @@ translationtype: HT
 
 針對瀏覽集合中的影像或其他項目 (一次一個項目) 使用翻轉檢視，例如相簿中的相片或是產品詳細資料頁面中的項目。 如果是觸控式裝置，可撥動項目以在集合中移動。 如果是滑鼠，在滑鼠暫留時會顯示瀏覽按鈕。 如果是鍵盤，可使用方向鍵在集合中移動。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**FlipView 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)</li>
-<li> [**ItemsSource 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)</li>
-<li>[**ItemTemplate 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)</li>
+> **重要 API**：[FlipView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)、[ItemsSource 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)、[ItemTemplate 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
-</ul>
-</div>
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

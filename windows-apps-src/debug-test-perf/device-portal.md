@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: "Windows Device Portal 概觀"
 description: "了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e729236ae7d506eb59af1a38506931865eff4f14
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f22600f2bbd5dc43996550c853c6defd04565ad4
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -41,7 +43,7 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 \* 情況並非總是如此，因為電腦上的 Device Portal 會宣告位於暫時性範圍內的連接埠 (&gt;50000)，以避免與裝置上現有的連接埠宣告相衝突。  若要深入了解，請參閱適用於電腦的[連接埠設定](device-portal-desktop.md#setting-port-numbers)一節。  
 
 如需裝置特定的安裝指示，請參閱︰
-- [HoloLens 的 Device Portal](https://dev.windows.com/holographic/using_the_windows_device_portal)
+- [HoloLens 的 Device Portal](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-hololens)
 - [IoT 的 Device Portal](https://go.microsoft.com/fwlink/?LinkID=616499)
 - [行動裝置的 Device Portal](device-portal-mobile.md)
 - [Xbox 的 Device Portal](device-portal-xbox.md)
@@ -71,28 +73,28 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 ![行動裝置的 Device Portal](images/device-portal/mob-device-portal-apps.png)
 
 - **已安裝的 App**︰移除及啟動 App。
-- **執行中 App**︰列出目前的執行中 App。
+- **執行應用程式**︰列出目前正在執行的應用程式，並提供關閉它們的選項。
 - **安裝 App**︰從電腦或網路上的資料夾，選取安裝的應用程式套件。
 - **相依性**︰新增將要安裝之 app 的相依性。
 - **部署**︰將所選取的 app 與相依性部署到您的裝置。
 
 **安裝 app**
 
-1.    [建立應用程式套件](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)之後，您可以從遠端將它安裝到您的裝置上。 在 Visual Studio 中建置後，會產生輸出資料夾。
+1.  [建立應用程式套件](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx)之後，您可以從遠端將它安裝到您的裝置上。 在 Visual Studio 中建置後，會產生輸出資料夾。
 
     ![App 安裝](images/device-portal/iot-installapp0.png)
-2.    按一下 [瀏覽] 並尋找您的應用程式套件 (.appx)。
-3.    按一下 [瀏覽] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
-4.    新增相依性。 如果有一個以上的相依性，請個別新增每個相依性。     
-5.    在 **\[部署\]** 下，按一下 **\[執行\]**。 
-6.    若要安裝另一個 app，請按一下 **\[重設\]** 按鈕以清除欄位。
+2.  按一下 [瀏覽] 並尋找您的應用程式套件 (.appx)。
+3.  按一下 [瀏覽] 並尋找憑證檔案 (.cer) (並非所有裝置都需要)。
+4.  新增相依性。 如果有一個以上的相依性，請個別新增每個相依性。     
+5.  在 **\[部署\]** 下，按一下 **\[執行\]**。 
+6.  若要安裝另一個 app，請按一下 **\[重設\]** 按鈕以清除欄位。
 
 
 **解除安裝 app**
 
-1.    請確定您的應用程式不在執行中。 
-2.    若它正在執行，請移至 [執行中的 App] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
-3.    準備好之後，請按一下 **\[解除安裝\]**。
+1.  請確定您的應用程式不在執行中。 
+2.  若它正在執行，請移至 [執行中的 App] 並將它關閉。 若您在 app 仍在執行時將它解除安裝，那麼重新安裝 app 時會造成問題。 
+3.  準備好之後，請按一下 **\[解除安裝\]**。
 
 ### <a name="processes"></a>處理程序
 

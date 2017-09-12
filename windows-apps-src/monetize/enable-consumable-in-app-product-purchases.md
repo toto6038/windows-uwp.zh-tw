@@ -9,15 +9,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e2ecaf364c581e82406c76831dd3e33c82594601
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 9190000a2c5a35a0b7125429a19e4743b388d503
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>啟用消費性應用程式內產品購買
 
 
 > [!NOTE]
-> 本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+> 本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標是 Windows10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件，而非使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱[這篇文章](enable-consumable-add-on-purchases.md)。
 
 您可以透過市集商業平台提供消費性的應用程式內產品 (亦即可購買、使用，然後再次購買的項目)，為客戶提供既健全又可靠的購買體驗。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
 

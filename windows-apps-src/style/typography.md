@@ -5,14 +5,16 @@ title: "印刷樣式"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 92fd3ee66768fcf1c98d9760ecb44811c9b0f9b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0609622053d0ae25b5039766137db1b195c0d69d
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="typography"></a>印刷樣式
 
@@ -38,7 +40,7 @@ translationtype: HT
 
 行距應以字型大小的 125% 計算，必要時四捨五入至最接近的四的倍數。 以 15px Segoe UI 為例，15px 的 125% 為 18.75px。 建議採用四捨五入，並將行高設定為 20px，以維持 4px 格線。 這可確保良好的閱讀經驗，並確保變音符號有足夠的空間。 如需特定範例，請參閱下面的「字體坡形」一節。
 
-在較小的字體上堆疊較大的字體，從較大字體的最後一個基準線到較小字體的第一個基準線的距離，應等於較大字體的行高。
+在較小的字體上堆疊較大的字體，從較大字體的最後一個基準線到較小字體的第一個基準線的距離，必須等於較大字體的行高。
 
 ![說明大型字體堆疊在小型字體上的方式](images/line-height-stacking.png)
 
@@ -50,7 +52,7 @@ translationtype: HT
          puts the baseline of the body text exactly 24px
          below the baseline of the header. 24px is the
          recommended line height for a 20px font size,
-         which is what's set in SubtitleTextBlockStyle.
+         which is what’s set in SubtitleTextBlockStyle.
          The bottom margin will be different for
          different font size pairings. -->
     <TextBlock
@@ -150,7 +152,7 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 ![顯示數個圖示和文字配對](images/hanging-text-alignment.png)
 
 >[!NOTE]
->XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx)屬性提供端點高度及基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
+>XAML 的 [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) 屬性提供端點高度及基準字型計量的存取權。 它可以用來以視覺方式垂直置中或頂端對齊類型。
 
 ## <a name="clipping-and-ellipses"></a>裁剪和省略符號
 
@@ -172,9 +174,11 @@ Segoe 提供各種字元，且依設計可讓不同的大小以及高與低的�
 >多數坡形層級可作為 XAML [靜態資源](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)取得，其依照 `*TextBlockStyle` 命名規範 (例如：`HeaderTextBlockStyle`)。
 
 
+<!--
 <div class="microsoft-internal-note">
-目前不包含 SubtitleAlt、BaseAlt 及 CaptionAlt。 您可以在自己專屬的應用程式中建立樣式，方法是依照上方連結中的程式碼片段。 另請注意 XAML 目前並不恰好符合行高。
+SubtitleAlt, BaseAlt, and CaptionAlt are not currently included. You can create the styles in your own app following the code snippets in the above link. Also note that XAML does not currently match the line height exactly.
 </div>
+-->
 
 
 ## <a name="primary-and-secondary-text"></a>主要和次要文字
@@ -201,13 +205,13 @@ Recommended use of CaptionAlt.
 Green shows where all caps should be used. Red shows where it should not.
 -->
 
-## <a name="dos-and-donts"></a>可行與禁止事項
+## <a name="dos-and-donts"></a>應做與不應做事項
 * 讓大部分文字使用 Body
 * 標題在空間有限使用基準
 * 納入 SubtitleAlt，以藉由強調最上層內容來建立對比和階層
-* 對於長字串或任何主要動作，請不要使用 Caption
-* 如果文字需要自動換行，請不要使用標題或副標題
-* 請不要在同一頁面上結合 Subtitle 和 SubtitleAlt
+* 對於長字串或任何主要動作，不要使用 Caption
+* 如果文字需要自動換行，不要使用標題或副標題
+* 請勿在同一頁面上結合 Subtitle 和 SubtitleAlt
 
 
 ## <a name="related-articles"></a>相關文章

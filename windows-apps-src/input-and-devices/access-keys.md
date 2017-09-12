@@ -1,387 +1,328 @@
 ---
-author: Karl-Bridge-Microsoft
-Description: "啟用鍵盤存取以使用 Tab 瀏覽和便捷鍵，讓使用者可以利用鍵盤瀏覽整個 UI 元素。"
-title: "便捷鍵"
-ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
-label: Access keys
+author: kbridge
+Description: "了解如何提供直覺的方式，讓使用者透過鍵盤而不是指標裝置（例如觸控式或滑鼠），快速瀏覽 app 的可見 UI 及互動，改善 UWP app 可用性和協助工具。"
+title: "便捷鍵設計指導方針"
+label: Access keys design guidelines
+keywords: "鍵盤, 便捷鍵, keytip, 按鍵提示, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動"
 template: detail.hbs
-keywords: "便捷鍵、鍵盤、協助工具、使用者互動、輸入"
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 8d62135680e13f866654c168364bb3393651bd2d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: kimsea
+dev-contact: niallm
+doc-status: Published
+ms.openlocfilehash: ae8bd60311bc7ead44ee3c9a137a233888be55f3
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="access-keys"></a>便捷鍵
 
-不方便使用滑鼠的使用者 (例如受到某種程度運動神經傷害的使用者) 通常依賴鍵盤來瀏覽應用程式並與之互動。  XAML 架構可讓您透過 Tab 瀏覽和便捷鍵，提供對 UI 元素的鍵盤存取。
-
-- Tab 瀏覽是基本的鍵盤協助工具能供性 (預設為啟用)，可讓使用者利用鍵盤上的 Tab 鍵和方向鍵，在 UI 元素之間移動焦點。
-- 便捷鍵是補充性質的協助工具能供性 (您要在應用程式中實作)，可以使用鍵盤功能鍵 (Alt 鍵) 與一或多個英數字元鍵 (通常是與命令相關聯的字母) 的組合來快速存取應用程式命令。 常用的便捷鍵包括 _Alt+F_ 以開啟 [檔案] 功能表，和 _Alt +AL_ 以靠左對齊。  
-
-如需鍵盤瀏覽與協助工具的詳細資訊，請參閱[鍵盤互動](https://msdn.microsoft.com/windows/uwp/input-and-devices/keyboard-interactions)與[鍵盤協助工具](https://msdn.microsoft.com/windows/uwp/accessibility/keyboard-accessibility)。 本文假設您了解這些文章中討論的概念。
-
-## <a name="access-key-overview"></a>便捷鍵概觀
-
-便捷鍵可讓使用者利用鍵盤直接叫用按鈕或設定焦點，而不需要重複地按方向鍵或 Tab。 便捷鍵的用意在於能輕鬆地被搜尋，因此您應該將它們直接記載在 UI 中；例如，在控制項上含有便捷鍵的浮動徽章。
-
-![Microsoft Word 中便捷鍵的範例與相關聯的按鍵提示](images/keyboard/accesskeys-keytips.png)
-
-_圖 1：Microsoft Word 中便捷鍵的範例與相關聯的按鍵提示。_
-
-便捷鍵是與 UI 元素相關聯的一或多個英數字元。 例如，Microsoft Word 針對 [常用] 索引標籤使用 _H_，針對 [復原] 按鈕使用 _2_，或是針對 [繪製] 索引標籤使用 _JI_。
-
-**便捷鍵範圍**
-
-便捷鍵屬於特定的範圍。 例如，在圖 1 中，_F_、_H_、_N_ 和 _JI_ 屬於頁面的範圍。  當使用者按下 _H_ 時，範圍會變更為 [常用] 索引標籤的範圍，而其便捷鍵會如圖 2 所示。 便捷鍵 _V_、_FP_、_FF_ 和 _FS_ 屬於 [常用] 索引標籤的範圍。
-
-![Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相關聯的按鍵提示](images/keyboard/accesskeys-keytips-hometab.png)
-
-_圖 2：Microsoft Word 中 [常用] 索引標籤範圍的便捷鍵範例與相關聯的按鍵提示。_
-
-如果兩個元素屬於不同的範圍，則元素可以使用相同的便捷鍵。 例如，_2_ 是頁面範圍的 [復原] 便捷鍵 (圖 1)，同使也是 [常用] 索引標籤範圍中的 [斜體]&nbsp;(圖 2)。 所有的便捷鍵都屬於預設的範圍，除非另有指定另一個範圍。
-
-**便捷鍵組合**
-
-便捷鍵組合通常是一次按一個按鍵來達成動作，而不是同時按下多個按鍵。 (但其中有例外，我們將在下一節討論。) 達成動作所需的按鍵輸入順序就是_便捷鍵組合_。 使用者按下 Alt 鍵以起始便捷鍵組合。 當使用者按下便捷鍵組合中的最後一個按鍵時，就會叫用便捷鍵。 例如，若要在 Word 中開啟 [檢視] 索引標籤，使用者會按下 _Alt、W_ 便捷鍵組合。
-
-使用者可以在一個便捷鍵組合中叫用數個便捷鍵。 例如，若要在 Word 文件中開啟 [複製格式]，使用者會按下 Alt 以起始組合，然後按下 _H_ 來瀏覽 [常用] 區段並變更便捷鍵範圍，然後按下 _F_，最後是 _P_。_H_ 和 _FP_ 分別為 [常用] 索引標籤和 [複製格式] 的便捷鍵。
-
-有些項目在叫用之後會完成便捷鍵組合 (例如 [複製格式] 按鈕) 而某些則不會 (例如 [常用] 索引標籤)。 叫用便捷鍵會產生執行命令、移動焦點、變更便捷鍵範圍，或某些其他相關聯的動作。
-
-## <a name="access-key-user-interaction"></a>便捷鍵使用者互動
-
-若要了解便捷鍵 API，則必須先了解使用者互動模型。 您可以在下面找到便捷鍵使用者互動模型的摘要：
-
-- 當使用者按下 Alt 鍵時，就會啟動便捷鍵組合，即使焦點位在輸入控制項時亦同。 然後，使用者可以按便捷鍵來叫用相關聯的動作。 這種使用者互動需要您在 UI 中搭配一些視覺能供性，記載可用的便捷鍵，例如當按下 Alt 鍵時會顯示的浮動徽章
-- 當使用者同時按下 Alt 鍵加上便捷鍵時，會立即叫用便捷鍵。 這類似於使用 Alt+_便捷鍵_定義的鍵盤快速鍵。 在此情況下，不會顯示便捷鍵視覺能供性。 不過，叫用便捷鍵可能導致變更便捷鍵範圍。 在此情況下，會起始便捷鍵組合，並且顯示新範圍的視覺能供性。
-    > [!NOTE]
-    > 只有使用單一字元的便捷鍵可以利用這種使用者互動。 Alt+_便捷鍵_組合不支援使用多個字元的便捷鍵。    
-- 當多字元便捷鍵共用某些字元時，在使用者按下共用的字元時，便會篩選便捷鍵。 例如，假設有顯示三個便捷鍵：_A1_、_A2_ 和 _C_。如果使用者按下 _A_，則只會顯示 _A1_ 和 _A2_ 便捷鍵，並隱藏 C 的視覺能供性。
-- Esc 鍵會移除一層篩選。 例如，如果有便捷鍵為 _B_、_ABC_、_ACD_ 和 _ABD_，而使用者按下 _A_，則只會顯示 _ABC_、_ACD_ 和 _ABD_。 如果使用者接著按下 _B_、則只會顯示 _ABC_ 與 _ABD_。 如果使用者按下 Esc，則會移除一層篩選，並顯示 _ABC_、_ACD_ 和 _ABD_ 便捷鍵。 若使用者再次按下 Esc again，即會移除另一層篩選及所有便捷鍵 -   _B_、_ABC_、_ACD_ 及 _ABD_ 皆會啟用並顯示其視覺能供性。
-- Esc 鍵瀏覽回先前的範圍。 便捷鍵可能屬於不同的範圍，以便在有許多命令的應用程式中能更輕鬆地瀏覽。 便捷鍵組合一律在主要範圍開始。 所有的便捷鍵都屬於主要範圍，除了那些指定為範圍擁有者的特定 UI 元素。 當使用者叫用其為範圍擁有者元素的便捷鍵時，XAML 架構會自動將範圍移動到該元素，並將它加入內部便捷鍵瀏覽堆疊。 Esc 鍵可在各便捷鍵瀏覽堆疊之間向後移動。
-- 有數種方式可以關閉便捷鍵組合：
-    - 使用者可以按 Alt 來關閉進行中的便捷鍵組合。 請記住，按 Alt 也可以起始便捷鍵組合。
-    - 如果便捷鍵在主要範圍中且未經篩選，則 Esc 鍵會關閉便捷鍵組合。
-        > [!NOTE]
-        > Esc 按鍵輸入也會傳遞至要在該處處理的的 UI 層。
-    - Tab 鍵會關閉便捷鍵組合，並返回 Tab 瀏覽。
-    - Enter 鍵會關閉便捷鍵組合，並傳送按鍵輸入到具有焦點的元素。
-    - 方向鍵會關閉便捷鍵組合，並傳送按鍵輸入到具有焦點的元素。
-    - 指標向下事件 (例如按一下滑鼠或觸碰) 會關閉便捷鍵組合。
-    - 根據預設，當叫用便捷鍵之後，會關閉便捷鍵組合。  不過，您可以藉由將 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 屬性設定為 **false** 來覆寫這個行為。
-- 當決定性的有限自動化無法進行時，便會會發生便捷鍵衝突。 便捷鍵衝突令人困擾，但仍可能因為大量的命令、當地語系化問題或便捷鍵的執行階段世代而產生。
-
- 有兩種情況會發生衝突：
- - 當兩個 UI 元素具有相同的便捷鍵值，並屬於相同便捷鍵範圍時。 例如，`button1` 的便捷鍵 _A1_ 和 `button2` 的便捷鍵 _A1_ 均屬於預設範圍。 在此情況下，系統會處理第一個加入到視覺化樹狀結構中的便捷鍵來解決衝突。 其餘的部分將會忽略。
- - 當相同的便捷鍵範圍中有多個計算選項。 例如，_A_ 和 _A1_。 當使用者按下 _A_，系統有兩種選項：叫用 _A_ 便捷鍵，或是繼續並使用 _A1_ 便捷鍵的 A 字元。 在此情況下，系統只會處理自動機制中第一個到達的便捷鍵叫用。 例如，_A_ 和 _A1_，系統只會叫用 _A_ 便捷鍵。
--     當使用者在便捷鍵組合中按下無效的便捷鍵值時，則沒有作用。 在便捷鍵組合中，有兩種類別的按鍵可視為有效便捷鍵：
- - 可結束便捷鍵組合的特殊按鍵：Esc、Alt、方向鍵、Enter 和 Tab。
- - 指派給便捷鍵的英數字元。
-
-## <a name="access-key-apis"></a>便捷鍵 API
-
-為了支援便捷鍵使用者互動，XAML 架構提供 API，如下所述。
-
-**AccessKeyManager**
-
-[AccessKeyManager](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) 是一種協助程式類別，當顯示或是隱藏便捷鍵時，可用來管理 UI。 [IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) 事件每當應用程式輸入和結束便捷鍵組合時便會引發。 您可以查詢 [IsDisplayModeEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabled.aspx) 屬性來判斷視覺能供性是否為顯示或隱藏。  您也可以呼叫 [ExitDisplayMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.exitdisplaymode.aspx) 來強制關閉便捷鍵組合。
+便捷鍵透過提供直覺的方式，讓使用者透過鍵盤而不是指標裝置（例如觸控式或滑鼠），快速瀏覽 app 的可見 UI 及互動，改善 Windows 應用程式可用性和協助工具。
 
 > [!NOTE]
-> 便捷鍵的視覺項目沒有任何內建的實作；您必須提供實作。  
+> 鍵盤對身障使用者而言是不可或缺的工具 (請參閱[鍵盤協助工具](https://docs.microsoft.com/windows/uwp/accessibility/keyboard-accessibility))，對於希望透過它而能更有效率地與應用程式互動的使用者而言，也是重要工具。
 
-**AccessKey**
+通用 Windows 平台 (UWP) 針對以鍵盤為基礎的便捷鍵，以及透過視覺提示 (稱為按鍵提示) 的相關 UI 回饋，提供內建支援的跨平台控制項。
 
-[AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 屬性可讓您指定 UIElement 或 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.accesskey.aspx) 上的便捷鍵。 如果兩個元素有相同的便捷鍵和範圍，則只會處理第一個加入到視覺化樹狀結構的元素。
+## <a name="overview"></a>概觀
 
-若要確保 XAML 架構會處理便捷鍵，UI 元素必須要能在視覺化樹狀結構中辨識。 如果視覺化樹狀結構中沒有任何元素含有便捷鍵，則不會引發任何便捷鍵事件。
+便捷鍵是 Alt 鍵與一或多個英數字元鍵 (有時稱為「*助憶鍵*」) 的組合，通常是循序，而不是同時按下。
 
-便捷鍵 API 不支援需要兩個按鍵輸入才能產生的字元。 個別的字元必須對應到特定語言原生鍵盤配置上的按鍵。  
-
-**AccessKeyDisplayRequested/Dismissed**
-
-[AccessKeyDisplayRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplayrequested.aspx) 和 [AccessKeyDisplayDismissed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeydisplaydismissed.aspx) 事件會在便捷鍵視覺能供性應該顯示或關閉時引發。 當元素的 [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) 屬性設定為 **Collapsed** 時，不會引發這些事件。 每次使用者按下便捷鍵所使用的字元時，在便捷鍵組合期間會引發 AccessKeyDisplayRequested 事件。 例如，如果有一設定為 _AB_ 的便捷鍵，在使用者按下 Alt 就會引發此事件，並在使用者按下 _A_ 時再次引發。當使用者按下 _B_ 時，會引發 AccessKeyDisplayDismissed 事件
-
-**AccessKeyInvoked**
-
-[AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件會在使用者到達便捷鍵的最後一個字元時引發。 便捷鍵可以有一或數個字元。 例如，對於便捷鍵 _A_ 及 _BC_，在使用者按下 _Alt, A_ 或 _Alt, B, C_ 時即會引發事件，但在使用者僅按下 _Alt, B_ 時則不會。此事件會在按下便捷鍵時引發，而非在發行時引發。
-
-**IsAccessKeyScope**
-
-[IsAccessKeyScope](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.isaccesskeyscope.aspx) 屬性可讓您指定其為便捷鍵範圍根項目的 UIElement。 對於此元素會引發 AccessKeyDisplayRequested 事件，但其子項不會。 當使用者叫用此元素時，XAML 架構會自動變更範圍，並在其子項上引發 AccessKeyDisplayRequested 事件，以及在其他 UI 元素上 (包括父項) 引發 AccessKeyDisplayDismissed 事件。  當範圍變更後，不會結束便捷鍵組合。
-
-**AccessKeyScopeOwner**
-
-若要讓元素參與另一個元素 (來源) 的範圍，而另一個元素在視覺化樹狀結構中並非該元素的父項，您可以設定 [AccessKeyScopeOwner](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyscopeowner.aspx) 屬性。 繫結到 AccessKeyScopeOwner 屬性的元素必須將 IsAccessKeyScope 設定為 **true**。 否則，會擲回例外狀況。
-
-**ExitDisplayModeOnAccessKeyInvoked**
-
-根據預設，當叫用便捷鍵且元素不是範圍擁有者時，就會完成便捷鍵組合，並引發 [AccessKeyManager.IsDisplayModeEnabledChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.isdisplaymodeenabledchanged.aspx) 事件。 您可以將 [ExitDisplayModeOnAccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 屬性設定為 **false** 來覆寫此行為，並防止便捷鍵組合在叫用後結束。 ([UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.exitdisplaymodeonaccesskeyinvoked.aspx) 和 [TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.exitdisplaymodeonaccesskeyinvoked.aspx) 都有這項屬性)。
+按鍵提示是當使用者按 Alt 鍵時控制項旁邊顯示的徽章。 每個按鍵提示包含啟動相關聯控制項的英數字元按鍵。
 
 > [!NOTE]
-> 如果元素是範圍擁有者 (`IsAccessKeyScope="True"`)，應用程式進入新的便捷鍵範圍時不會引發 IsDisplayModeEnabledChanged 事件。
+> 對於只有單一英數字元的便捷鍵，會自動支援鍵盤快速鍵。 例如，同時在 Word 中按 Alt + F，會開啟[檔案] 功能表，而不會顯示按鍵提示。
 
-**當地語系化**
+按 Alt 鍵會初始化便捷鍵功能，並顯示按鍵提示中所有目前使用的按鍵組合。 後續按鍵動作是由便捷鍵架構所處理，會拒絕無效的按鍵，直到按下有效的便捷鍵，或按下 Enter 鍵、Esc 鍵、Tab 鍵或方向鍵來停用便捷鍵，並將按鍵處理傳回到 app。
 
-便捷鍵可以使用多種語言當地語系化，並使用 [ResourceLoader](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.resources.resourceloader.aspx) API 在執行階段載入。
+Microsoft Office 應用程式為便捷鍵提供廣泛的支援。 下圖顯示 Word 中已啟動便捷鍵的 [常用] 索引標籤（請注意，針對數字和多個按鍵動作的支援）。
 
-## <a name="control-patterns-used-when-an-access-key-is-invoked"></a>叫用便捷鍵時使用的控制項模式
+![在 Microsoft Word 便捷鍵 KeyTip 徽章](images/accesskeys/keytip-badges-word.png)
 
-控制項模式是公開常用控制項功能的介面實作；例如，按鈕會實作 **Invoke** 控制項模式，而這會引發 **Click** 事件。 當叫用便捷鍵時，XAML 架構會查詢叫用的元素是否實作控制項模式，並在有實作時執行控制項模式。 如果元素有一個以上的控制項模式，則只會叫用其中一個，其餘的部分將會忽略。 控制項模式會以下列順序來搜尋：
+_在 Microsoft Word 便捷鍵 KeyTip 徽章_
 
-1.    叫用。 例如 Button。
-2.    切換。 例如 Checkbox。
-3.    選項。 例如 RadioButton。
-4.    展開/摺疊。 例如 ComboBox。
+若要新增便捷鍵到控制項，請使用 **AccessKey 屬性**。 這個屬性指定便捷鍵順序、捷徑（如果是一個英數字元）和按鍵提示。
 
-如果找不到控制項模式，便捷鍵叫用會顯示為 no-op，並且會記錄偵錯訊息以協助您偵錯此情況：「找不到此元件的自動化模式。 請在 AccessKeyInvoked 的事件處理常式中實作所需的行為。 將事件處理常式中的 Handled 設定為 true 將會隱藏此訊息。」
+``` xaml
+<Button Content="Accept" AccessKey="A" Click="AcceptButtonClick" />
+```
 
-> [!NOTE]
-> Visual Studio 的 \[偵錯設定\] 中的偵錯程式 \[應用程式處理類型\] 必須為_混合 (Managed 和原生)_ 或_原生_才能看到此訊息。
+## <a name="when-to-use-access-keys"></a>便捷鍵使用時機
 
-如果您不想要讓便捷鍵執行其預設控制項模式，或元素不具有控制項模式，則您應該處理 [AccessKeyInvoked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskeyinvoked.aspx) 事件，並實作所需的行為。
-```csharp
-private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+我們建議您在 UI 任何適當的地方指定便捷鍵，並在所有自訂控制項中支援便捷鍵。
+
+1.  **便捷鍵讓您的 app 更容易存取**，適用於運動功能障礙的使用者，包括一次只能按一個按鍵或使用滑鼠有困難的使用者。
+
+    設計良好的鍵盤 UI 是軟體協助工具的一個重要層面。 它讓視障使用者或受到某種程度運動神經傷害的使用者能夠瀏覽應用程式並與應用程式的功能互動。 這類使用者有可能無法使用滑鼠，因而必須仰賴像鍵盤增強功能工具、螢幕小鍵盤、螢幕放大機、螢幕助讀程式以及語音輸入公用程式這類協助技術。 對於這些使用者，完整命令涵蓋範圍很重要。
+
+2.  **便捷鍵讓您的 app 更有用**，適用於偏好使用鍵盤進行互動的進階使用者。
+
+    經驗豐富的使用者通常極度偏好使用鍵盤，因為鍵盤式命令的輸入更快速，而且不需要從鍵盤移開其雙手。 對於這些使用者而言，效率與一致性非常重要；完整性只對最常用的命令很重要。
+
+## <a name="set-access-key-scope"></a>設定便捷鍵範圍
+
+當畫面上有多個支援便捷鍵的項目時，我們建議設定便捷鍵範圍以減輕**認知負擔**。 這會最小化在畫面上的便捷鍵數目，讓它們更輕鬆地找到，增加效率和生產力。
+
+例如，Microsoft Word 提供兩個便捷鍵範圍：功能區索引標籤的主要範圍和所選索引標籤上命令的次要領域。
+
+下列影像示範 Word 中的兩個便捷鍵範圍。 第一個影像顯示主要便捷鍵，讓使用者選取索引標籤和其他最上層命令，而第二個影像顯示 [首頁] 索引標籤的次要便捷鍵。
+
+![Microsoft Word 中的主要便捷鍵](images/accesskeys/primary-access-keys-word.png)
+
+_Microsoft Word 中的主要便捷鍵_
+
+![Microsoft Word 中的次要便捷鍵](images/accesskeys/secondary-access-keys-word.png)
+
+Microsoft Word 中的次要便捷鍵
+
+對於不同範圍中的項目，便捷鍵可以複製。 在先前的範例，“2”是主要範圍中 [復原] 的便捷鍵，也是次要範圍中 [斜體] 的便捷鍵。
+
+一些控制項 (例如 CommandBar) 不支援內建便捷鍵範圍，因此您需要自行實作。 以下範例示範如何在叫用父命令（類似 Word 的功能區）時，以可用的便捷鍵支援 CommandBar 的 SecondaryCommands。
+
+``` C#
+public class CommandBarHack : CommandBar
 {
-    args.Handled = true;
-    //Do something
+    CommandBarOverflowPresenter secondaryItemsControl;
+    Popup overflowPopup;
+
+    public CommandBarHack()
+    {
+        this.ExitDisplayModeOnAccessKeyInvoked = false;
+        AccessKeyInvoked += OnAccessKeyInvoked;
+    }
+
+    protected override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        Button moreButton = GetTemplateChild("MoreButton") as Button;
+        moreButton.SetValue(Control.IsTemplateKeyTipTargetProperty, true);
+        moreButton.IsAccessKeyScope = true;
+
+        // SecondaryItemsControl changes
+        secondaryItemsControl = GetTemplateChild("SecondaryItemsControl") as CommandBarOverflowPresenter;
+        secondaryItemsControl.AccessKeyScopeOwner = moreButton;
+
+        overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
+
+    }
+    private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+    {
+
+        if (overflowPopup != null)
+        {
+            overflowPopup.Opened += SecondaryMenuOpened;
+        }
+    }
+
+    private void SecondaryMenuOpened(object sender, object e)
+    {
+        //This is not neccesay given we are automatically pushing the scope.
+        var item = secondaryItemsControl.Items.First();
+        if (item != null && item is Control)
+        {
+            (item as Control).Focus(FocusState.Keyboard);
+        }
+        overflowPopup.Opened -= SecondaryMenuOpened;
+    }
 }
 ```
 
-如需控制項模式的詳細資訊，請參閱[使用者介面自動化控制項模式概觀](https://msdn.microsoft.com/library/windows/desktop/ee671194.aspx)。
+
+``` xaml
+<local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
+    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
+    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
+    <AppBarSeparator/>
+    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
+        <AppBarButton.Flyout>
+            <MenuFlyout>
+                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
+                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
+                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
+                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
+            </MenuFlyout>
+        </AppBarButton.Flyout>
+    </AppBarButton>
+    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
+    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
+    <AppBarSeparator/>
+    <AppBarToggleButton AccessKey="V" Icon="Favorite" Label="Favorite"/>
+    <CommandBar.SecondaryCommands>
+        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
+        <AppBarButton Icon="Setting" AccessKey="T" Label="Settings" />
+    </CommandBar.SecondaryCommands>
+</local:CommandBarHack>
+```
+
+![CommandBar 的主要便捷鍵](images/accesskeys/primary-access-keys-commandbar.png)
+
+_CommandBar 主要範圍和支援的便捷鍵_
+
+![CommandBar 的次要便捷鍵](images/accesskeys/secondary-access-keys-commandbar.png)
+
+_CommandBar 次要範圍和支援的便捷鍵_
+
+## <a name="avoid-access-key-collisions"></a>避免便捷鍵衝突
+
+當相同範圍中兩個或多個項目有重複的便捷鍵，或以相同的英數字元開始時，會發生便捷鍵衝突。
+
+系統處理第一個新增到視覺化樹狀結構之項目的，並忽略所有其他便捷鍵，解決重複的便捷鍵問題。
+
+當多個便捷鍵以相同的字元開始（，例如「A」、「A1」和「AB」）時，系統處理單一字元便捷鍵，並會忽略其他所有便捷鍵。
+
+使用唯一便捷鍵或範圍命令，避免衝突。
+
+## <a name="choose-access-keys"></a>選擇便捷鍵
+
+選擇便捷鍵時，請考慮下列事項：
+
+-   使用一個字元，將按鍵動作最小化，並預設支援快速鍵 (Alt+AccessKey)
+-   避免使用兩個以上的字元
+-   避免便捷鍵衝突
+-   避免難以區分的字元，例如字母「I」和數字「1」或字母「O」和數字「0」
+-   使用其他常用 app (例如 Word) 的已知先例 (「F」用於 [檔案]，「H」用於 [常用] 以此類推)
+-   使用命令名稱的第一個字元，或是與命令有密切關聯、有助於回憶的字元
+    -   如果已經指派第一個字母，使用命令名稱中盡可能接近第一個字元的字母 (「N」用於 [插入])
+    -   使用命令名稱的獨特子音 (「W」用於 [檢視])
+    -   使用命令名稱的母音。
+
+## <a name="localize-access-keys"></a>當地語系化便捷鍵
+
+如果您的 app 將要以多種語言當地語系化，您也應該**考慮當地語系化便捷鍵**。 例如，在 en-US，“H” 用於 “Home”，在 es-ES，“I” 用於 “Incio”。
+
+在標記中使用 x:Uid 延伸，套用當地語系化的資源，如下所示：
+
+``` xaml
+<Button Content="Home" AccessKey="H" x:Uid="HomeButton" />
+```
+每一種語言的資源加入至專案中相對應的 String 資料夾：
+
+![英文和西班牙文資源 string 資料夾](images/accesskeys/resource-string-folders.png)
+
+_英文和西班牙文資源 string 資料夾_
+
+在專案的 resources.resw 檔案中，指定當地語系化的便捷鍵：
+
+![在 resources.resw 檔案中指定 AccessKey 屬性](images/accesskeys/resource-resw-file.png)
+
+_在 resources.resw 檔案中指定 AccessKey 屬性_
+
+如需詳細資訊，請參閱[翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965329(v=win.10).aspx)
+
+## <a name="position-key-tips"></a>放置按鍵提示
+
+按鍵提示會顯示為浮動徽章，相對於其相對應的 UI 項目，並考慮其他 UI 項目、其他按鍵提示和螢幕邊緣。
+
+通常預設按鍵提示的位置已經足夠，並提供調適型 UI 的內建支援。
+
+![自動按鍵提示位置的範例](images/accesskeys/auto-keytip-position.png)
+
+_自動按鍵提示位置的範例_
+
+但是，如果您需要對按鍵提示放置位置有更多的控制，我們建議下列方式：
+
+1.  **明顯關聯原則**：使用者可以輕鬆地關聯控制項與按鍵提示。
+
+    a.  KeyTip 應該**接近**擁有便捷鍵的項目（擁有者）。  
+    b.  KeyTip 應該**避免遮蔽具有便捷鍵的已啟用元素**。   
+    c.  如果 KeyTip 無法接近擁有者放置，它應該與擁有者重疊。 
+
+2.  **可搜尋性**：使用者可以快速探索具有按鍵提示的控制項。
+
+    a.  KeyTip 絕不與其他按鍵提示**重疊**。  
+
+3.  **輕鬆掃描：**使用者可以輕鬆地瀏覽按鍵提示。
+
+    a.  KeyTip 應該彼此**對齊**並與 UI 項目彼此。
+    b.  KeyTip 應該盡可能**分組**。 
+
+### <a name="relative-position"></a>相對位置
+
+使用 **KeyTipPlacementMode** 屬性以每個項目或每個群組的方式，自訂按鍵提示的位置。
+
+位置模式是：Top、Bottom、Right、Left、Hidden、Center 和 Auto。
+
+![按鍵提示位置模式](images/accesskeys/keytip-postion-modes.png)
+
+_按鍵提示位置模式_
+
+控制項的中心線用於計算 KeyTip 的垂直及水平對齊。
+
+以下範例示範如何使用 StackPanel 容器的 KeyTipPlacementMode 屬性，設定控制項群組的按鍵提示位置。
+
+``` xaml
+<StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" KeyTipPlacementMode="Top">
+  <Button Content="File" AccessKey="F" />
+  <Button Content="Home" AccessKey="H" />
+  <Button Content="Insert" AccessKey="N" />
+</StackPanel>
+```
+
+### <a name="offsets"></a>位移
+
+使用項目的 KeyTipHorizontalOffset 和 KeyTipVerticalOffset 屬性，提供對按鍵提示位置更細微的控制。
+
+> [!NOTE]
+> KeyTipPlacementMode 設定為 Auto 時無法設定位移。
+
+KeyTipHorizontalOffset 屬性指示將按鍵提示向左或向右移動多遠。 範例示範如何設定按鈕的按鍵提示位移。
+
+![按鍵提示位置模式](images/accesskeys/keytip-offsets.png)
+
+_設定按鍵提示的垂直及水平位移_
+
+``` xaml
+<Button
+  Content="File"
+  AccessKey="F"
+  KeyTipPlacementMode="Bottom"
+  KeyTipHorizontalOffset="20"
+  KeyTipVerticalOffset="-8" />
+```
+
+### <a name="screen-edge-alignment-screen-edge-alignment-listparagraph"></a>螢幕邊緣對齊 {#screen-edge-alignment .ListParagraph}
+
+按鍵提示位置會根據螢幕邊緣自動調整，來確保完全顯示按鍵提示。 發生這種情形時，控制項和按鍵提示對齊點之間的距離可能會不同於水平和垂直位移的指定值。
+
+![按鍵提示位置模式](images/accesskeys/keytips-screen-edge.png)
+
+_螢幕邊緣會造成按鍵提示自動重新定位_
+
+## <a name="style-key-tips"></a>按鍵提示樣式
+
+我們建議使用平台佈景主題 (包括高對比) 的內建按鍵提示支援。
+
+如果您需要指定自己的按鍵提示樣式，請使用應用程式資源例如 KeyTipFontSize（字型大小）、KeyTipFontFamily（字型系列）、KeyTipBackground（背景）、KeyTipForeground（前景）、KeyTipPadding（填補）、KeyTipBorderBrush (框線色彩)，以及 KeyTipBorderThemeThickness（框線粗細）。
+
+![按鍵提示位置模式](images/accesskeys/keytip-customization.png)
+
+_按鍵提示自訂選項_
+
+這個範例示範如何變更這些應用程式資源：
+
+ ```xaml  
+<Application.Resources>
+  <SolidColorBrush Color="DarkGray" x:Key="MyBackgroundColor" />
+  <SolidColorBrush Color="White" x:Key="MyForegroundColor" />
+  <SolidColorBrush Color="Black" x:Key="MyBorderColor" />
+  <StaticResource x:Key="KeyTipBackground" ResourceKey="MyBackgroundColor" />
+  <StaticResource x:Key="KeyTipForeground" ResourceKey="MyForegroundColor" />
+  <StaticResource x:Key="KeyTipBorderBrush" ResourceKey="MyBorderColor"/>
+  <FontFamily x:Key="KeyTipFontFamily">Consolas</FontFamily>
+  <x:Double x:Key="KeyTipContentThemeFontSize">18</x:Double>
+  <Thickness x:Key="KeyTipBorderThemeThickness">2</Thickness>
+  <Thickness x:Key="KeyTipThemePadding">4,4,4,4</Thickness>
+</Application.Resources>
+```
 
 ## <a name="access-keys-and-narrator"></a>便捷鍵和朗讀程式
 
-Windows 執行階段具有使用者介面自動化提供者，它會公開 Microsoft UI 自動化元素上的屬性。 這些屬性可讓使用者介面自動化用戶端應用程式探索關於使用者介面部分的相關資訊。 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 屬性可讓用戶端 (例如朗讀程式) 探索與元素相關聯的便捷鍵。 每當元素取得焦點時，朗讀程式將會讀取此屬性。 如果 AutomationProperties.AccessKey 不具有值，則 XAML 架構會從 UIElement 或 TextElement 傳回 [AccessKey](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 屬性值。 如果 AccessKey 屬性已經有值，您就不需要設定 AutomationProperties.AccessKey。
+XAML 架構公開自動化屬性，可讓 UI 自動化用戶端探索使用者介面項目的相關資訊。
 
-## <a name="example-access-key-for-button"></a>範例：按鈕的便捷鍵
-
-本範例說明如何為按鈕建立便捷鍵。 範例使用 Tooltip 做為視覺能供性，以實作包含便捷鍵的浮動徽章。
-
-> [!NOTE]
-> Tooltip 是為了簡單起見而使用，但建議您使用如 [Popup](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.popup.aspx) 類別建立您自己的控制項來顯示它。
-
-XAML 架構會自動呼叫 Click 事件的處理常式，因此您不需要處理 AccessKeyInvoked 事件。 範例使用 [AccessKeyDisplayRequestedEventArgs.PressedKeys](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeydisplayrequestedeventargs.pressedkeys.aspx) 屬性，只針對叫用便捷鍵剩餘的字元提供視覺能供性。 例如，如果有顯示三個便捷鍵：_A1_、_A2_ 和 _C_，而使用者按下 _A_，則只會有 _A1_ 和 _A2_ 便捷鍵未經篩選，並且會顯示為 _1_ 和 _2_，而非 _A1_ 和 _A2_。
-
-```xaml
-<StackPanel
-        VerticalAlignment="Center"
-        HorizontalAlignment="Center"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Content="Press"
-                AccessKey="PB"
-                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                Click="DoSomething" />
-        <TextBlock Text="" x:Name="textBlock" />
-    </StackPanel>
-```
-
-```csharp
- public sealed partial class ButtonSample : Page
-    {
-        public ButtonSample()
-        {
-            this.InitializeComponent();
-        }
-
-        private void DoSomething(object sender, RoutedEventArgs args)
-        {
-            textBlock.Text = "Access Key is working!";
-        }
-
-        private void OnAccessKeyDisplayRequested(UIElement sender, AccessKeyDisplayRequestedEventArgs args)
-        {
-            var tooltip = ToolTipService.GetToolTip(sender) as ToolTip;
-
-            if (tooltip == null)
-            {
-                tooltip = new ToolTip();
-                tooltip.Background = new SolidColorBrush(Windows.UI.Colors.Black);
-                tooltip.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                tooltip.Padding = new Thickness(4, 4, 4, 4);
-                tooltip.VerticalOffset = -20;
-                tooltip.Placement = PlacementMode.Bottom;
-                ToolTipService.SetToolTip(sender, tooltip);
-            }
-
-            if (string.IsNullOrEmpty(args.PressedKeys))
-            {
-                tooltip.Content = sender.AccessKey;
-            }
-            else
-            {
-                tooltip.Content = sender.AccessKey.Remove(0, args.PressedKeys.Length);
-            }
-
-            tooltip.IsOpen = true;
-        }
-        private void OnAccessKeyDisplayDismissed(UIElement sender, AccessKeyDisplayDismissedEventArgs args)
-        {
-            var tooltip = ToolTipService.GetToolTip(sender) as ToolTip;
-            if (tooltip != null)
-            {
-                tooltip.IsOpen = false;
-                //Fix to avoid show tooltip with mouse
-                ToolTipService.SetToolTip(sender, null);
-            }
-        }
-    }
-```
-
-## <a name="example-scoped-access-keys"></a>範例：限定範圍的便捷鍵
-
-本範例說明如何建立限定範圍的便捷鍵。 PivotItem 的 IsAccessKeyScope 屬性可在使用者按下 Alt 時，避免顯示 PivotItem 子元素的便捷鍵。 這些便捷鍵只有在使用者叫用 PivotItem 時才會顯示，因為 XAML 架構會自動切換範圍。 架構也會隱藏其他範圍的便捷鍵。
-
-本範例也會示範如何處理 AccessKeyInvoked 事件。 PivotItem 不會實作任何控制項模式，因此 XAML 架構預設不會叫用任何動作。 這個實作會示範如何使用便捷鍵選取已叫用的 PivotItem。
-
-最後，範例會示範 IsDisplayModeChanged 事件，當顯示模式變更時，您可以在其中執行一些動作。 在本範例中，Pivot 控制項已摺疊，直到使用者按下 Alt 為止。 當使用者完成與 Pivot 的互動之後，它會再次摺疊。 您可以使用 IsDisplayModeEnabled 來檢查便捷鍵顯示模式為啟用或停用。
-
-```xaml   
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot x:Name="MyPivot" VerticalAlignment="Center" HorizontalAlignment="Center" >
-            <Pivot.Items>
-                <PivotItem
-                    x:Name="PivotItem1"
-                    AccessKey="A"
-                    AccessKeyInvoked="OnAccessKeyInvoked"
-                    AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                    AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                    IsAccessKeyScope="True">
-                    <PivotItem.Header>
-                        <TextBlock Text="A Options"/>
-                    </PivotItem.Header>
-                    <StackPanel Orientation="Horizontal" >
-                        <Button Content="ButtonAA" AccessKey="A"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested" />
-                        <Button Content="ButtonAD1" AccessKey="D1"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button Content="ButtonAD2" AccessKey="D2"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"/>
-                    </StackPanel>
-                </PivotItem>
-                <PivotItem
-                    x:Name="PivotItem2"
-                    AccessKeyInvoked="OnAccessKeyInvoked"
-                    AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                    AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"
-                    AccessKey="B"
-                    IsAccessKeyScope="true">
-                    <PivotItem.Header>
-                        <TextBlock Text="B Options"/>
-                    </PivotItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Button AccessKey="B" Content="ButtonBB"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button AccessKey="F1" Content="ButtonBF1"
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"  />
-                        <Button AccessKey="F2" Content="ButtonBF2"  
-                                AccessKeyDisplayDismissed="OnAccessKeyDisplayDismissed"
-                                AccessKeyDisplayRequested="OnAccessKeyDisplayRequested"/>
-                    </StackPanel>
-                </PivotItem>
-            </Pivot.Items>
-        </Pivot>
-    </Grid>
-```
-
-```csharp
-public sealed partial class ScopedAccessKeys : Page
-    {
-        public ScopedAccessKeys()
-        {
-            this.InitializeComponent();
-            AccessKeyManager.IsDisplayModeEnabledChanged += OnDisplayModeEnabledChanged;
-            this.Loaded += OnLoaded;
-        }
-
-        void OnLoaded(object sender, object e)
-        {
-            //To let the framework discover the access keys, the elements should be realized
-            //on the visual tree. If there are no elements in the visual
-            //tree with access key, the framework won't raise the events.
-            //In this sample, if you define the Pivot as collapsed on the constructor, the Pivot
-            //will have a lazy loading and the access keys won't be enabled.
-            //For this reason, we make it visible when creating the object
-            //and we collapse it when we load the page.
-            MyPivot.Visibility = Visibility.Collapsed;
-        }
-
-        void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
-        {
-            args.Handled = true;
-            MyPivot.SelectedItem = sender as PivotItem;
-        }
-        void OnDisplayModeEnabledChanged(object sender, object e)
-        {
-            if (AccessKeyManager.IsDisplayModeEnabled)
-            {
-                MyPivot.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                MyPivot.Visibility = Visibility.Collapsed;
-
-            }
-        }
-
-        DependencyObject AdjustTarget(UIElement sender)
-        {
-            DependencyObject target = sender;
-            if (sender is PivotItem)
-            {
-                PivotItem pivotItem = target as PivotItem;
-                target = (sender as PivotItem).Header as TextBlock;
-            }
-            return target;
-        }
-
-        void OnAccessKeyDisplayRequested(UIElement sender, AccessKeyDisplayRequestedEventArgs args)
-        {
-            DependencyObject target = AdjustTarget(sender);
-            var tooltip = ToolTipService.GetToolTip(target) as ToolTip;
-
-            if (tooltip == null)
-            {
-                tooltip = new ToolTip();
-                tooltip.Background = new SolidColorBrush(Windows.UI.Colors.Black);
-                tooltip.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
-                tooltip.Padding = new Thickness(4, 4, 4, 4);
-                tooltip.VerticalOffset = -20;
-                tooltip.Placement = PlacementMode.Bottom;
-                ToolTipService.SetToolTip(target, tooltip);
-            }
-
-            if (string.IsNullOrEmpty(args.PressedKeys))
-            {
-                tooltip.Content = sender.AccessKey;
-            }
-            else
-            {
-                tooltip.Content = sender.AccessKey.Remove(0, args.PressedKeys.Length);
-            }
-
-            tooltip.IsOpen = true;
-        }
-        void OnAccessKeyDisplayDismissed(UIElement sender, AccessKeyDisplayDismissedEventArgs args)
-        {
-            DependencyObject target = AdjustTarget(sender);
-
-            var tooltip = ToolTipService.GetToolTip(target) as ToolTip;
-            if (tooltip != null)
-            {
-                tooltip.IsOpen = false;
-                //Fix to avoid show tooltip with mouse
-                ToolTipService.SetToolTip(target, null);
-            }
-        }
-    }
-```
+如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。

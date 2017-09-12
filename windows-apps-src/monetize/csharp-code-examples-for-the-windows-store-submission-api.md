@@ -2,27 +2,27 @@
 author: mcleanbyron
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: "使用本節的 C# 程式碼範例，深入了解如何使用 Windows 市集提交 API。"
-title: "提交 API 的 C# 程式碼範例"
+title: "C# 範例 - 提交應用程式、附加元件與正式發行前小眾測試版"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例"
-ms.openlocfilehash: 59b9c0b2cc503a56e0a1c9a75ce5ef471983c699
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例, C#"
+ms.openlocfilehash: 77c0f2ddbe0e76ede2580129d7d0a0ae118b3554
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="c-code-examples-for-the-submission-api"></a>提交 API 的 C\# 程式碼範例
+# <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
-本文提供使用*「Windows 市集提交 API」*的 C# 程式碼範例。 如需此 API 的詳細資訊，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+本文提供 C# 程式碼範例，示範如何使用 [Windows 市集提交 API](create-and-manage-submissions-using-windows-store-services.md)來執行這些任務：
 
-這些程式碼範例示範下列工作︰
-
-* [更新應用程式提交](#update-app-submission)
-* [建立新的附加元件提交](#create-add-on-submission)
+* [建立 App 提交](#create-app-submission)
+* [建立附加元件提交](#create-add-on-submission)
 * [更新附加元件提交](#update-add-on-submission)
-* [更新套件正式發行前小眾測試版提交](#update-flight-submission)
+* [建立套件正式發行前小眾測試版提交](#create-flight-submission)
 
 您可以檢閱每個範例以深入了解示範的工作，或者您可以將本篇文章中的所有程式碼範例建置到主控台應用程式。 若要建置範例，請在 Visual Studio 中建立名為 **DeveloperApiCSharpSample** 的 C# 主控台應用程式，分別將每個範例複製到專案中單獨的程式碼檔案，然後建置專案。
 
@@ -31,13 +31,13 @@ translationtype: HT
 這些範例使用下列程式庫：
 
 * Microsoft.WindowsAzure.Storage.dll。 此程式庫位於[適用於 .NET 的 Azure SDK](https://azure.microsoft.com/downloads/) 中，或者您也可以安裝 [WindowsAzure.Storage NuGet 套件](https://www.nuget.org/packages/WindowsAzure.Storage)來取得。
-* Newtonsoft 的 [Json.NET](http://www.newtonsoft.com/json)。
+* 來自 Newtonsoft 的 [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet 套件。
 
 ## <a name="main-program"></a>主要程式
 
 下列範例實作的命令列程式會呼叫本文中的其他範例方法，示範使用 Windows 市集提交 API 的不同方式。 若要自行調整這個程式：
 
-* 將 ```ApplicationId```、```InAppProductId``` 和 ```FlightId``` 屬性指派給您想要管理之應用程式、附加元件 (附加元件也稱為應用程式內產品或 IAP) 和套件正式發行前小眾測試版的識別碼。 這些識別碼可在 [開發人員中心] 儀表板中取得。
+* 將 ```ApplicationId```、```InAppProductId``` 和 ```FlightId``` 屬性指派給您想要管理之應用程式、附加元件和套件正式發行前小眾測試版的識別碼。
 * 將 ```ClientId``` 和 ```ClientSecret``` 屬性指派給應用程式的用戶端識別碼和金鑰，並使用應用程式的租用戶識別碼來取代 ```TokenEndpoint``` URL 中的 *tenantid* 字串。 如需詳細資訊，請參閱[如何將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)。
 
 > [!div class="tabbedCodeSnippets"]
@@ -51,8 +51,8 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/ClientConfiguration.cs#ClientConfiguration)]
 
-<span id="update-app-submission" />
-## <a name="update-an-app-submission"></a>更新應用程式提交
+<span id="create-app-submission" />
+## <a name="create-an-app-submission"></a>建立 App 提交
 
 下列範例所實作的類別使用 Windows 市集提交 API 中的幾個方法來更新應用程式提交。 類別中的 ```RunAppSubmissionUpdateSample``` 方法會建立新的提交作為最後一個已發佈提交的複製，然後更新所複製的提交，並將其認可至 Windows 開發人員中心。 具體來說，```RunAppSubmissionUpdateSample``` 方法會執行以下工作：
 
@@ -67,7 +67,7 @@ translationtype: HT
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/AppSubmissionUpdateSample.cs#AppSubmissionUpdateSample)]
 
 <span id="create-add-on-submission" />
-## <a name="create-a-new-add-on-submission"></a>建立新的附加元件提交
+## <a name="create-an-add-on-submission"></a>建立附加元件提交
 
 下列範例所實作的類別使用 Windows 市集提交 API 中的幾個方法來建立新的附加元件提交。 類別中的 ```RunInAppProductSubmissionCreateSample``` 方法會執行以下工作：
 
@@ -94,8 +94,8 @@ translationtype: HT
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[SubmissionApi](./code/StoreServicesExamples_Submission/cs/InAppProductSubmissionUpdateSample.cs#InAppProductSubmissionUpdateSample)]
 
-<span id="update-flight-submission" />
-## <a name="update-a-package-flight-submission"></a>更新套件正式發行前小眾測試版提交
+<span id="create-flight-submission" />
+## <a name="create-a-package-flight-submission"></a>建立套件正式發行前小眾測試版提交
 
 下列範例所實作的類別使用 Windows 市集提交 API 中的幾個方法來更新套件正式發行前小眾測試版提交。 類別中的 ```RunFlightSubmissionUpdateSample``` 方法會建立新的提交當做最後一個已發佈提交的複製，然後更新所複製的提交，並將其認可至 Windows 開發人員中心。 具體來說，```RunFlightSubmissionUpdateSample``` 方法會執行以下工作：
 

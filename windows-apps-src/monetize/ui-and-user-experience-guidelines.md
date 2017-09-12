@@ -9,15 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, 指導方針, 最佳做法"
-ms.openlocfilehash: 75a68977e5edb996a5e2fc1ae9265d11b7492ad9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8dc9c00bdeb47b5f07af0b9b27ef843e2afd4456
+ms.sourcegitcommit: 9d1ca16a7edcbbcae03fad50a4a10183a319c63a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/09/2017
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
 本文提供的指引可讓您在應用程式中提供絕佳的橫幅及插播式廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
 
->**重要**&nbsp;&nbsp;您應用程式中的任何廣告使用都必須符合 Windows 市集原則，包括但不限於[原則 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反 Windows 市集原則而未列於本文中。
+> [!IMPORTANT]
+> 您應用程式中的任何廣告使用都必須符合 Windows 市集原則，包括但不限於[原則 10.10](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Windows 市集原則[原則 10.10.1](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_10) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反 Windows 市集原則而未列於本文中。
 
 ## <a name="guidelines-for-banner-ads"></a>橫幅廣告指南
 

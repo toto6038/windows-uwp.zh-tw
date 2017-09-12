@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: cfaa7c96a3ec8bf50f19ee699ff74b037500a838
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3d36708b5b11a089ffa126b760f0990f2da39e38
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
 
@@ -19,7 +21,7 @@ translationtype: HT
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題描述 **bingmaps:、ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 統一資源識別項 (URI) 配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
+了解如何從您的應用程式啟動 Windows 地圖應用程式。 本主題說明 **bingmaps:、*ms-drive-to:、ms-walk-to:** 和 **ms-settings:** 統一資源識別項 (URI) 配置。 使用這些 URI 配置，可針對特定的地圖、方向和搜尋結果啟動 Windows 地圖應用程式，或者從設定應用程式下載 Windows 地圖離線地圖。
 
 **提示** 若要深入了解如何從您的應用程式啟動 Windows 地圖應用程式，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
@@ -68,37 +70,37 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="display-known-locations"></a>顯示已知位置
 
-有數種方式可控制地圖中心點和縮放比例。 使用 *cp* (中心點) 和 *lvl* (縮放比例) 參數是最簡單的方法，而且會產生可預料的結果。 使用 *bb* 參數 (指定以緯度和經度值為界的區域) 較難預料，因為它會考量螢幕解析度，並根據所提供的座標決定地圖中心點和縮放比例。 當三個參數 (*bb*、*cp* 和 *lvl*) 都存在時，會忽略 *bb* 參數。
+有許多選項，可控制要顯示的對應的部分。 您可以將 *cp* (中心點) 參數搭配 *rad* (半徑) 或 *lvl* (縮放層級) 參數使用以顯示位置，並選擇為放大所要靠近的距離。 當您使用 *cp* 參數時，也可以指定 *hdg* (方向) 與 *pit* (上下移動) 來控制要往哪一個方向看。 另一個方法就是使用 *bb* (週框方塊) 參數提供所要顯示區域的最東、西、南、北方座標。
 
-若要控制檢視類型，請使用 *ss* (街景) 和 *sty* (樣式) 與參數。 *ss* 參數會將地圖放入街景檢視中。 *sty* 參數可讓您在道路、空照圖與 3D 檢視之間切換。 使用 3D 樣式時，可使用 *hdg*、*pit* 和 *rad* 參數來指定 3D 檢視。 *hdg* 會指定檢視的朝向、*pit* 會指定檢視的上下移動，而 *rad* 會指定在檢視中顯示的與中心點之間的距離。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
+若要控制檢視類型，請使用 *sty* (樣式) 與 *ss* (街景) 參數。 *sty* 參數可讓您在道路與空照圖檢視之間切換。 *ss* 參數會將地圖放入街景檢視中。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
 
-| URI 範例                                                                 | 結果                                                                                                                                                                                                   |
-|----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?                                                                 | 開啟地圖 app。                                                                                                                                                                                       |
-| bingmaps:?cp=40.726966~-74.006076                                          | 顯示以紐約市為中心的地圖。                                                                                                                                                               |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 顯示縮放比例 10 以紐約市為中心的地圖。                                                                                                                                       |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 以螢幕大小當成週框方塊顯示紐約市地圖。                                                                                                                          |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122                        | 顯示紐約市地圖，這是週框方塊引數中指定的區域。 會略過以 **cp** 引數指定的西雅圖中心點。                                      |
-| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&amp;cp=47~-122&amp;lvl=8                  | 顯示紐約的地圖，這是 **bb** 引數中指定的區域。 **cp** 引數 (指定西雅圖) 會被略過，因為在已指定 **bb** 的情況下，會忽略 **cp** 和 **lvl**。 |
-| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&amp;lvl=16 | 將縮放比例設定為 16 來顯示含有 Caesar Palace (拉斯維加斯) 地點名稱的地圖。                                                                                                            |
-| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | 顯示含有 Some\_Business (拉斯維加斯) 地點名稱的地圖。                                                                                                                                          |
-| bingmaps:?cp=40.726966~-74.006076&amp;trfc=1&amp;sty=a                             | 顯示具有「交通」資訊和「空照圖」地圖樣式的紐約市地圖。                                                                                                                                               |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d                                      | 顯示太空針塔的 3D 檢視。                                                                                                                                                                   |
-| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 顯示半徑為 200 公尺、上下移動為 75 度、朝向為 165 度的太空針塔 3D 檢視。                                                                                        |
-| bingmaps:?cp=47.6204~-122.3491&amp;ss=1                                        | 顯示太空針塔的街景檢視。                                                                                                                                                           |
 
- 
+| URI 範例                                                                 | 結果                                                                                                                                                                                        |
+|----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| bingmaps:?                                                                 | 開啟地圖 app。                                                                                                                                                                            |
+| bingmaps:?cp=40.726966~-74.006076                                          | 顯示以紐約市為中心的地圖。                                                                                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10                                   | 顯示縮放比例 10 以紐約市為中心的地圖。                                                                                                                            |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 顯示紐約市的地圖，這是 **bb** 引數中指定的區域。                                                                                                           |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | 顯示紐約市地圖，這是週框方塊引數中指定的區域。 會略過以 **cp** 引數指定的西雅圖中心點，因為指定了 *bb*。 |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | 將縮放比例設定為 16 來顯示含有 Caesar Palace (拉斯維加斯) 地點名稱的地圖。                                                                                                 |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | 顯示含有 Some\_Business (拉斯維加斯) 地點名稱的地圖。                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | 顯示具有「交通」資訊和「空照圖」地圖樣式的紐約市地圖。                                                                                                                          |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | 顯示太空針塔的 3D 檢視。                                                                                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&amp;sty=3d&amp;rad=200&amp;pit=75&amp;hdg=165               | 顯示半徑為 200 公尺、上下移動為 75 度、朝向為 165 度的太空針塔 3D 檢視。                                                                             |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | 顯示太空針塔的街景檢視。                                                                                                                                                |
+
+
 ## <a name="display-search-results"></a>顯示搜尋結果
 
-建議在執行商店搜尋時使用 *q* 參數，請儘可能使用具體的字詞，並將它與 *cp* 或 *where* 參數搭配使用以指定位置。 如果使用者尚未將其位置的使用權限提供給地圖 app，而且您也未指定商店搜尋的位置，可能會導致在國家/地區層級執行搜尋，而不會傳回有意義的結果。 搜尋結果會顯示在最適當的地圖檢視中，因此，除非需要設定 *lvl* (縮放比例)，否則建議您讓地圖 app 自行決定。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
+當使用 *q* 參數搜尋位置時，我們建議儘可能使用具體的字詞，並使用 *cp*、*bb* 或 *where* 參數來指定搜尋位置。 如果您未指定搜尋位置，且使用者目前的位置無法使用，則搜尋不會傳回有意義的結果。 搜尋結果會顯示在最適合的地圖檢視中。 如需這些與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
 
-| URI 範例                                                    | 結果                                                                                                                                         |
-|---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | 顯示地圖，並搜尋華盛頓特區白宮的地址。                                                              |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=10&amp;where=New%20York     | 搜尋靠近指定中心點的紐約，在地圖上顯示結果並將縮放比例設定為 10。                            |
-| bingmaps:?lvl=10&amp;where=New%20York                             | 搜尋紐約，並將縮放比例設定為 10 來顯示結果。                                                                                    |
-| bingmaps:?cp=40.726966~-74.006076&amp;lvl=14.5&amp;q=pizza            | 搜尋靠近指定中心點 (在紐約) 的披薩店，在地圖上顯示結果並將縮放比例設定為 14.5。 |
-| bingmaps:?q=coffee&amp;where=Seattle                              | 搜尋西雅圖市的咖啡廳。                                                                                                                 |
+
+| URI 範例                                                    | 結果                                                                            |
+|---------------------------------------------------------------|------------------------------------------------------------------------------------|
+| bingmaps:?q=1600%20Pennsylvania%20Ave,%20Washington,%20DC     | 顯示地圖，並搜尋華盛頓特區白宮的地址。 |
+| bingmaps:?q=coffee&where=Seattle                              | 搜尋西雅圖市的咖啡廳。                                                    |
+| bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 搜尋靠近指定中心點的紐約。                             |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | 搜尋指定週框方塊 (亦即紐約市) 中的比薩店。      |
 
  
 ## <a name="display-multiple-points"></a>顯示多個點
@@ -119,7 +121,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## <a name="display-directions-and-traffic"></a>顯示路線指引和交通狀況
 
 
-您可以使用 *rtp* 參數顯示兩個點之間的路線；這些點可以是地址或緯度和經度座標。 使用 *trfc* 參數可顯示交通資訊。 若要指定路線類型 (開車、步行或運輸工具)，請使用 *mode* 參數。 若未指定 *mode*，則會以使用者的交通喜好設定模式提供路線指引。 如需這些參數與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
+您可以使用 *rtp* 參數顯示兩個點之間的路線；這些點可以是地址或緯度和經度座標。 使用 *trfc* 參數可顯示交通資訊。 若要指定路線類型 (開車、步行或運輸工具)，請使用 *mode* 參數。 若未指定 *mode*，則會以使用者偏好的交通模式提供路線指引。 如需這些參數與其他參數的詳細資訊，請參閱 [bingmaps: 參數參考](#bingmaps-param-reference)。
 
 ![路線指引範例](images/windowsmapgcdirections.png)
 
@@ -292,7 +294,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指出當 <code>ss=1</code> 時就顯示街景圖。 省略 **ss** 參數會產生與 <code>ss=0</code> 相同的結果。 與 **cp** 參數搭配使用來指定街景檢視的位置。</p>
 <div class="alert">
-> **注意** 並非所有地區都能使用街景圖。
+**注意** 並非所有地區都能使用街景圖。
 </div>
 <div>
  
@@ -306,7 +308,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定是否要在地圖上包含交通資訊。 省略 trfc 參數會產生與 <code>trfc=0</code> 相同的結果。</p>
 <div class="alert">
-> **注意** 並非所有地區都有提供交通資料。
+**注意** 並非所有地區都有提供交通資料。
 </div>
 <div>
  
@@ -375,14 +377,12 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>使用波狀符號 (**~**) 區隔名稱與多個點。</p>
 <p>如果您指定的項目包含波狀符號，請務必要將波狀符號以 <code>%7E</code> 編碼。 如果沒有與「中心點」與「縮放比例」參數搭配使用，集合將會提供最適當的地圖檢視。</p>
 
-<p>**重要** 如果您所指定的項目包含底線，請確定將底線以 %255F 雙重編碼。</p>
-
-<p>如果您所指定的項目包含底線，請確定將底線以 %255F 雙重編碼。</p></td>
+<p>**重要** 如果您所指定的項目包含底線，請確定將底線以 %255F 雙重編碼。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+  
 <span id="ms-drive-to-param-reference"/>
 ## ms-drive-to: 參數參考
 
@@ -407,7 +407,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 啟動轉向建議步行路線要求的 URI 不需要進行編碼，並且具有下列格式。
 
 > **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#display-directions-and-traffic)。
-
  
 
 | 參數 | 定義 | 範例 | 詳細資料 |

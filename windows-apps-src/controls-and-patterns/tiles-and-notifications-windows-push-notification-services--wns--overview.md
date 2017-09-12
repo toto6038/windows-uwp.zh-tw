@@ -6,14 +6,16 @@ ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 35268ea199c139680c4a11c30744ecf54867e592
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 16c5092c8eb3c6d7460dd94c61c85522ef68a2fb
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -154,7 +156,7 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 根據預設，磚和徽章通知會在下載後的三天到期。 當通知到期的時候，會從磚或佇列中移除內容，不再對使用者顯示。 最佳作法是在所有的磚和徽章通知上設定到期時間 (使用一個對您的應用程式有意義的時間)，如此您的磚內容就不會超過內容的時效性。 明確的到期時間對於已定義存留時間的內容而言很重要。 如果您的雲端服務停止傳送通知或使用者從網路中斷連線一段期間時，這也可以確保會移除過時內容。
 
-您的雲端服務可以藉由設定 X-WNS-Expires HTTP 標頭，指定在傳送通知之後該通知將維持有效狀態的時間 (秒)，以便設定每個通知的到期時間。 如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)。
+您的雲端服務可以藉由設定 X-WNS-TTL HTTP 標頭，指定在傳送通知之後該通知將維持有效狀態的時間 (秒)，以便設定每個通知的到期時間。 如需詳細資訊，請參閱[推播通知服務要求和回應標頭](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)。
 
 例如，在股市交易日，您可以將股價更新到期時間設定為傳送間隔時間的兩倍 (例如，如果是每半小時傳送通知一次，則是接收後的一小時)。 另一個範例是新聞應用程式可能決定每日新聞磚更新的適當到期時間為一天。
 
@@ -200,9 +202,9 @@ async public void CheckForEnergySaving()
       dontAskAgain = Convert.ToBoolean(dontAskSetting);
    }
    
-   // Check if battery saver is on and that it&#39;s okay to raise dialog
+   // Check if battery saver is on and that it's okay to raise dialog
    if ((PowerManager.EnergySaverStatus == EnergySaverStatus.On)
-         &amp;&amp; (dontAskAgain == false))
+         && (dontAskAgain == false))
    {
       // Check dialog results
       ContentDialogResult dialogResult = await saveEnergyDialog.ShowAsync();
@@ -214,7 +216,7 @@ async public void CheckForEnergySaving()
 
       // Save reminder preference
       if (dontAskAgainBox.IsChecked == true)
-      {  // Don&#39;t raise dialog again
+      {  // Don't raise dialog again
          localSettings.Values["dontAskAgainSetting"] = "true";
       }
    }

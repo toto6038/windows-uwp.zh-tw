@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9f4ebe843b30d5bc408a705cfc9dda5d6731d4d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a3e224fc51245a5f91c29da2d745a3740029cda9
+ms.sourcegitcommit: 11664964e548a2af30d6e176c515cdbf330934ac
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/28/2017
 ---
 # <a name="put-ui-strings-into-resources"></a>將 UI 字串放入資源
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -65,10 +67,10 @@ translationtype: HT
 
 對於資源名稱，您必須提供 **Uid** 屬性值並指定哪個屬性要取得翻譯字串 (在此例中為 Text 屬性)。 您可以為不同的語言指定其他屬性/值，例如 Greeting.Width，但是請小心這類的配置相關屬性。 您應該努力讓控制項根據裝置的螢幕來動態配置。
 
-請注意，附加屬性在 resw 檔案 (例如 AutomationPeer.Name) 中以不同的方式來處理。 您需要明確寫出命名空間，如下所示：
+請注意，附加屬性在 resw 檔案 (例如 AutomationProperties.Name) 中以不同的方式來處理。 您需要明確寫出命名空間，如下所示：
 
 ```XML
-MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
+MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
 ## <a name="add-string-resource-identifiers-to-code-and-markup"></a>將字串資源識別碼新增到程式碼和標記。
@@ -101,7 +103,9 @@ auto str = loader->GetString("Farewell");
 
 3.  再建立一個名為 "fr-FR" 的資料夾，用以代表法文 (法國)。 建立新的資源檔案，然後新增下列內容：
 
-    strings/fr-FR/Resources.resw ![新增資源，法文](images/addresource-fr-fr.png)
+    strings/fr-FR/Resources.resw
+    
+    ![新增資源，法文](images/addresource-fr-fr.png)
 
 ## <a name="build-and-run-the-app"></a>建置並執行應用程式。
 

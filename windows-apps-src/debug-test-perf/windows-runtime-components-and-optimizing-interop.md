@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: "通用 Windows 平台元件和最佳化互通性"
 description: "建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: a4296c7ba149abce2173e816aa99406a44f75618
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8562454b976362ebc65884203775b3891216d8b7
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 

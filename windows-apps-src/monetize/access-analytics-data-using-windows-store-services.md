@@ -4,14 +4,16 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: "使用「Windows 市集分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式分析資料。"
 title: "使用市集服務存取分析資料"
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10 , UWP, 市集服務, Windows 市集分析 API"
-ms.openlocfilehash: aa33af63a49d890b3c60ec1bee32528cfc78af93
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: f739676d02ae5af4c3960fdde6461779c1533885
+ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用市集服務存取分析資料
 
@@ -28,21 +30,21 @@ translationtype: HT
 
 開始撰寫程式碼以呼叫 Windows 市集分析 API 之前，請先確定您已完成下列先決條件。
 
-* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 如果沒有，可以免費[在開發人員中心建立新的 Azure AD](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 如果沒有，可以免費[在開發人員中心建立新的 Azure AD](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)。
 
 * 您必須將 Azure AD 應用程式與開發人員中心帳戶相關聯、擷取應用程式的租用戶識別碼和用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Windows 市集分析 API 的應用程式或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
-
-  >**注意**&nbsp;&nbsp;您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
+    > [!NOTE]
+    > 您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯並擷取需要的值：
 
-1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯。 如需詳細指示，請參閱[管理帳戶使用者](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users)。
+1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，[將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來存取開發人員中心帳戶分析資料之應用程式或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)。
+2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來存取開發人員中心帳戶分析資料之應用程式或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增 Azure AD 應用程式至開發人員中心帳戶](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
 
 3.  返回 **\[管理使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
-4. 按一下 **\[加入新的金鑰\]**。 在下列畫面中，複製 **\[金鑰\]** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[新增和管理 Azure AD 應用程式](https://msdn.microsoft.com/windows/uwp/publish/manage-account-users#add-and-manage-azure-ad-applications)中管理金鑰的相關資訊。
+4. 按一下 **\[加入新的金鑰\]**。 在下列畫面中，複製 **\[金鑰\]** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
 <span id="obtain-an-azure-ad-access-token" />
 ## <a name="step-2-obtain-an-azure-ad-access-token"></a>步驟 2：取得 Azure AD 存取權杖
@@ -73,14 +75,14 @@ grant_type=client_credentials
 
 | 案例       | 方法      |
 |---------------|--------------------|
-| 下載和安裝 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得 App 安裝](get-app-installs.md)</li></ul> |
+| 下載、轉換和安裝 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得 App 安裝](get-app-installs.md)</li></ul> |
 | App 錯誤 | <ul><li>[取得錯誤報告資料](get-error-reporting-data.md)</li><li>[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li></ul> |
 | 評分與評論 | <ul><li>[取得 App 評分](get-app-ratings.md)</li><li>[取得 App 評論](get-app-reviews.md)</li></ul> |
 | 應用程式內廣告與廣告行銷活動 | <ul><li>[取得廣告效益資料](get-ad-performance-data.md)</li><li>[取得廣告行銷活動效益資料](get-ad-campaign-performance-data.md)</li></ul> |
 
 下列其他方法可供隸屬於 [Windows 硬體開發人員中心計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶使用。
 
-| 案例       | 描述      |
+| 案例       | 方法      |
 |---------------|--------------------|
 | Windows 10 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 10 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[取得 Windows 10 驅動程式錯誤的詳細資料](get-details-for-a-windows-10-driver-error.md)</li><li>[下載適用於 Windows 10 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
 | Windows 7/Windows 8.x 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 7 和 Windows 8.x 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[取得 Windows 7 或 Windows 8.x 驅動程式錯誤的詳細資料](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下載適用於 Windows 7 或 Windows 8.x 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |

@@ -2,22 +2,22 @@
 author: mcleanbyron
 ms.assetid: 4920D262-B810-409E-BA3A-F68AADF1B1BC
 description: "使用本節的 Java 程式碼範例，深入了解如何使用 Windows 市集提交 API。"
-title: "提交 API 的 Java 程式碼範例"
+title: "Java 範例 - 提交應用程式、附加元件與正式發行前小眾測試版"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例"
-ms.openlocfilehash: ff5e857e0f5ce110ab7afc64bd2faa28f7bea517
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例, java"
+ms.openlocfilehash: daa91b5354abc070b1ba538f7d818125e4bc94a9
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="java-code-examples-for-the-submission-api"></a>提交 API 的 Java 程式碼範例
+# <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
-本文提供使用*「Windows 市集提交 API」*的 Java 程式碼範例。 如需此 API 的詳細資訊，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
-
-這些程式碼範例示範下列工作︰
+本文提供 java 程式碼範例，示範如何使用 [Windows 市集提交 API](create-and-manage-submissions-using-windows-store-services.md)來執行這些任務：
 
 * [取得 Azure AD 存取權杖](#token)
 * [建立附加元件](#create-add-on)
@@ -52,7 +52,7 @@ translationtype: HT
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>建立附加元件
 
-下列範例示範如何[建立](create-an-add-on.md)然後[刪除](delete-an-add-on.md)附加元件 (附加元件也稱為應用程式內產品或 IAP)。
+下列範例示範如何[建立](create-an-add-on.md)然後[刪除](delete-an-add-on.md)套件正式發行前小眾測試版和附加元件。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/java/CompleteExample.java#L310-L345)]
 

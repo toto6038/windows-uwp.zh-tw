@@ -6,14 +6,19 @@ ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8be1dac30047a647d7f80464b53fe2fc3527d2c3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 16b019678e94e131ba1105bb92d7ea3ab301828c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-controls"></a>文字控制項
 
@@ -24,17 +29,8 @@ translationtype: HT
 - 顯示唯讀文字的控制項是 [TextBlock](text-block.md) 與 [RichTextBlock](rich-text-block.md)。
 - 輸入和編輯文字的控制項是：[TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md) 和 [RichEditBox](rich-edit-box.md)。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**AutoSuggestBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**RichEditBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**RichTextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)</li>
-<li> [**TextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)</li>
-<li>[**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
+
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -73,7 +69,7 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 -   **有效率地列舉所有有效的值是否實際？** 如果是，請考慮使用其中一個選取控制項，如[核取方塊](checkbox.md)、[下拉式清單](lists.md)、清單方塊、[選項按鈕](radio-button.md)、[滑桿](slider.md)、[切換開關](toggles.md)、[日期選擇器](date-and-time.md)或時間選擇器。
 -   **是否有一組相對小的有效值？** 如果是，請考慮使用[下拉式清單](lists.md)或清單方塊，特別是如果這些值大於幾個字元的長度。
 -   **有效資料是否完全不受限制？ 或有效資料是否只有格式上的限制 (內容長度或字元類型)？** 如果是，請使用文字輸入控制項。 您可以限制能輸入的字元數，此外還可在應用程式程式碼中驗證格式。
--   **該值代表的資料類型是否已經有特殊的通用控制項？** 如果是，請使用適當的控制項而不是文字輸入控制項。 例如，使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) 接受日期輸入，不要使用文字輸入控制項。
+-   **該值代表的資料類型是否已經有特殊的通用控制項？** 如果是，請使用適當的控制項而不是文字輸入控制項。 例如，使用 [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) 接受日期輸入，不要使用文字輸入控制項。
 -   如果資料只能是數值：
     -   **輸入的值是否為近似和 (或) 相對於相同頁面上的其他數量？** 如果是，請使用[滑桿](slider.md)。
     -   **在變更設定時，獲得即時回應的效果是否為使用者帶來益處？** 如果是，請使用[滑桿](slider.md)，以及可能伴隨的控制項。
@@ -97,18 +93,18 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 
 如需每個文字控制項的特定資訊與範例，請參閱以下文章。
 
--   [**AutoSuggestBox**](auto-suggest-box.md)
--   [**PasswordBox**](password-box.md)
--   [**RichEditBox**](rich-edit-box.md)
--   [**RichTextBlock**](rich-text-block.md)
--   [**TextBlock**](text-block.md)
--   [**TextBox**](text-box.md)
+-   [AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## <a name="font-and-style-guidelines"></a>字型和樣式指導方針
 如需字型指導方針，請參閱以下文章：
 
-- [**字型指導方針**](fonts.md)
-- [**Segoe MDL2 圖示清單與指導方針**](segoe-ui-symbol-font.md)
+- [字型指導方針](fonts.md)
+- [Segoe MDL2 圖示清單與指導方針](segoe-ui-symbol-font.md)
 
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>選擇文字控制項的正確鍵盤
@@ -144,7 +140,7 @@ Windows 可讓字型針對每個字符包含多重色層。 例如，Segoe UI Em
 
 ![使用色彩字型的文字區塊](images/text-block-color-fonts.png)
 
-如需詳細資訊，請參閱 [**IsColorFontEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) 屬性。
+如需詳細資訊，請參閱 [IsColorFontEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.iscolorfontenabled.aspx) 屬性。
 
 ## <a name="guidelines-for-line-and-paragraph-separators"></a>行與段落分隔字元的指導方針
 
@@ -187,11 +183,11 @@ TextBox 和 RichEditBox 控制項預設會開啟拼字檢查。 您可以將 **I
 ## <a name="related-articles"></a>相關文章
 
 **適用於設計人員**
-- [**字型指導方針**](fonts.md)
-- [**Segoe MDL2 圖示清單與指導方針**](segoe-ui-symbol-font.md)
+- [字型指導方針](fonts.md)
+- [Segoe MDL2 圖示清單與指導方針](segoe-ui-symbol-font.md)
 - [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
 
 **適用於開發人員 (XAML)**
-- [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)

@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
 title: "配對裝置"
 description: "有些裝置在使用之前需要先進行配對。 Windows.Devices.Enumeration 命名空間支援三種不同方式來配對裝置。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8bde7d6b65ae6fd96c38e2748a4e7ea0f9821aa2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 84af6a080e843a201b94c69d726c1c8567b72813
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="pair-devices"></a>配對裝置
 

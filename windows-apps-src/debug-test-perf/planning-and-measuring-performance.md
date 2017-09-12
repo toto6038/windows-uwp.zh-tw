@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: "規劃效能"
 description: "使用者會期望其應用程式保持回應性，並可自在地使用，而不會耗盡電池。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d80ff77c380d8c4f03cb2ef415126cba46d77062
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="planning-for-performance"></a>規劃效能
 
@@ -85,7 +87,7 @@ app 的特定可測量效率目標可能包含：
 -   最大化您的 app UI 之每個頁面的剖析和載入時間與記憶體效率 (特別是初始頁面)，方法是[最佳化您的 XAML 標記](optimize-xaml-loading.md)。 簡而言之，延遲載入 UI 和程式碼直到需要的時候。
 -   對於 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)，讓所有項目大小相同和盡量使用 [ListView 和 GridView 最佳化技術](optimize-gridview-and-listview.md)。
 -   以標記形式宣告 UI，架構可以載入區塊中並重複使用，而不是必須在程式碼中建構。
--   摺疊 UI 元素直到使用者需要時才展開。 請參閱 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) 屬性。
+-   延遲建立 UI 元素直到使用者需要時。 請參閱[**x:Load**](../xaml-platform/x-load-attribute.md)屬性。
 -   偏好佈景主題轉場和腳本動畫。 如需詳細資訊，請參閱[動畫概念](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 請記住，腳本動畫需要在畫面不斷更新，並讓 CPU 與圖形管線維持使用中狀態。 若要節省電池電力，如果使用者未與 app 互動，則不要讓動畫執行。
 -   載入的影像應該以適合您要使用 [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) 方法呈現之檢視的大小載入。
 
@@ -195,4 +197,3 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 ## <a name="optimizing"></a>最佳化
 
 僅最佳化您的 app 中的效能關鍵程式碼路徑：花費大部分時間的項目。 分析會告訴您是哪些項目。 您通常必須在建立遵循最佳設計做法的軟體和編寫最佳化程式碼這兩者間做出取捨。 在效能較不重要的地方，您最好以開發人員生產力和良好的軟體設計為優先考量。
-

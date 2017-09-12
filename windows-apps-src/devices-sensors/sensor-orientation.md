@@ -1,28 +1,30 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: "感應器方向"
 description: "取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 05/24/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 78a155aecdf7cb98f8742380dae62a0a9025149a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a91e38aa11f7fa25804d6d6f11cc030ee1613311
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="sensor-orientation"></a>感應器方向
 
 \[ 針對 Windows10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** 重要 API **
+**重要 API**
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-取自 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 以及 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
+取自 [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 以及 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的參照畫面定義，並在使用者轉動裝置時隨著旋轉。 如果您的 app 支援自動旋轉，而會隨著使用者旋轉時調整自己的方向來適應裝置，您就必須在使用前先行針對旋轉調整感應器資料。
 
 ## <a name="display-orientation-vs-device-orientation"></a>顯示方向和裝置方向
 
@@ -48,7 +50,7 @@ translationtype: HT
 |-------------|-----------------|----------------|
 | **橫向** | ![方向為 Landscape 的橫向優先裝置](images/sensor-orientation-0.PNG) | ![方向為 Landscape 的直向優先裝置](images/sensor-orientation-1.PNG) |
 | **直向** | ![方向為 Portrait 的橫向優先裝置](images/sensor-orientation-2.PNG) | ![方向為 Portrait 的直向優先裝置](images/sensor-orientation-3.PNG) |
-| **LandscapeFlipped ** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4.PNG) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5.PNG) | 
+| **LandscapeFlipped** | ![方向為 LandscapeFlipped 的橫向優先裝置](images/sensor-orientation-4.PNG) | ![方向為 LandscapeFlipped 的直向優先裝置](images/sensor-orientation-5.PNG) | 
 | **PortraitFlipped** | ![方向為 PortraitFlipped 的橫向優先裝置](images/sensor-orientation-6.PNG)| ![方向為 PortraitFlipped 的直向優先裝置](images/sensor-orientation-7.PNG) |
 
 ## <a name="devices-broadcasting-display-and-headless-devices"></a>廣播顯示畫面和無周邊裝置的裝置
@@ -162,9 +164,14 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) 資料必須以不同方式變更。 想像這些不同的方向，如逆時針旋轉到 Z 軸，所以我們需要讓旋轉反轉以回到使用者的方向。 對於四元數資料，我們可以使用尤拉公式來定義參考四元數旋轉，也可以使用參考旋轉矩陣。
 
-![尤拉公式](images/eulers-formula.png) 若要取得您想要的相對方向，請將參考物件比對絕對物件相乘。 請注意，這個數學公式不可以交換。
+![尤拉公式](images/eulers-formula.png)
 
-![將參考物件比對絕對物件相乘](images/orientation-formula.png) 在前面的運算式中，絕對物件由感應器資料傳回。
+若要取得您想要的相對方向，請將參考物件比對絕對物件相乘。 請注意，這個數學公式不可以交換。
+
+![將參考物件比對絕對物件相乘](images/orientation-formula.png)
+
+在前面的運算式中，絕對物件是由感應器資料傳回。
+
 
 | 顯示方向  | 延著 Z 軸逆時針旋轉 | 參考四元數 (反向旋轉) | 參考旋轉矩陣 (反向旋轉) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|

@@ -5,15 +5,20 @@ title: "清單項目中的巢狀 UI"
 label: Nested UI in list items
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
-ms.openlocfilehash: b3b41e81f48f790c85377208816668ba302d3738
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: chigy
+design-contact: kimsea
+doc-status: Published
+ms.openlocfilehash: a8d7ac9ad5cad6d88c0fac0c1e7bba53eaf0045d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nested-ui-in-list-items"></a>清單項目中的巢狀 UI
 
@@ -22,6 +27,8 @@ translationtype: HT
 巢狀 UI 是一種使用者介面 (UI)，能夠公開包含在可同時接受獨立焦點之容器內的巢狀可動作控制項。
 
 您可以使用巢狀 UI 來向使用者顯示其他可協助加快執行重要動作的選項。 不過公開越多動作，將會使 UI 變得越加複雜。 請務必在選擇使用此 UI 模式時額外注意此狀況。 本文提供可協助您針對您特定的 UI 判斷最佳動作的指導方針。
+
+> **重要 API**：[ListView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、[GridView 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx)
 
 在本文中，我們將會針對在 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 和 [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目中建立巢狀 UI 進行討論。 雖然本節不會討論其他的巢狀 UI 情況，但這些概念都是共通的。 在您開始前，請先熟悉在 UI 中使用 ListView 或 GridView 控制項的一般指導方針，這些指導方針可以在[清單](lists.md)和[清單檢視和方格檢視](listview-and-gridview.md)文章中找到。
 

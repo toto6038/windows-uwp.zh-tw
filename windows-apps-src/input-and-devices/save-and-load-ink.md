@@ -11,14 +11,19 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 81d3a37103f1dcea6b68850d163fa5cc9aded5bc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 52a8a309758a02db072de5f8050b4e7183ff629d
+ms.sourcegitcommit: c519e3d34bef37f87bb44f02b295187849bb5eea
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/25/2017
 ---
 # <a name="store-and-retrieve-windows-ink-stroke-data"></a>儲存和抓取 Windows Ink 筆劃資料
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 支援 Windows Ink 的 UWP app 可以將筆跡筆觸序列化和還原序列化至筆跡序列化格式 (ISF) 檔案。 ISF 檔案是包含所有筆跡筆觸屬性和行為的其他中繼資料的 GIF 映像。 未啟用筆墨功能的 app 可以檢視靜態的 GIF 影像，包括 Alpha 色板背景透明度。
+
+> [!NOTE]
+> ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二進位文件格式中 (例如 GIF 檔案)，或直接放置到剪貼簿上。
 
 <div class="important-apis" >
 <b>重要 API</b><br/>
@@ -28,9 +33,6 @@ translationtype: HT
 </ul>
 </div>
 
-
-> [!NOTE]
-> ISF 是最簡單且易於保留格式的筆跡表示法。 它可以內嵌到二進位文件格式中 (例如 GIF 檔案)，或直接放置到剪貼簿上。
 
  
 
@@ -149,7 +151,7 @@ public MainPage()
                 }
                 else
                 {
-                    // File couldn&#39;t be saved.
+                    // File couldn't be saved.
                 }
             }
             // User selects Cancel and picker returns null.
@@ -437,15 +439,12 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 * [畫筆和手寫筆互動](pen-and-stylus-interactions.md)
 
 **範例**
-* [筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [簡單的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [簡單的筆跡範例 (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雜的筆跡範例 (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [筆跡範例 (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [入門教學課程：UWP 應用程式中的支援筆跡](https://aka.ms/appsample-ink)
 * [著色本範例](https://aka.ms/cpubsample-coloringbook)
 * [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)
-
-
- 
-
 
 
 

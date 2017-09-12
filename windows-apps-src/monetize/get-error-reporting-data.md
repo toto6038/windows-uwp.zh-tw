@@ -4,20 +4,22 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "在 Windows 市集分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。"
 title: "取得 App 的錯誤報告資料"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 錯誤"
-ms.openlocfilehash: dc5c4092368c0b395e42be122a9e0e7feec8f03e
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: 68e54c955d865669907c68d7cf1ef5a0f8986d8d
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 
 使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您 App 的彙總錯誤報告資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 **\[失敗\]** 區段也提供此資訊。
 
-您可以使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)與[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)方法，擷取其他錯誤資訊。
+您可以使用[取得錯誤詳細資料](get-details-for-an-error-in-your-app.md)、[取得堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)和[下載 CAB 檔](download-the-cab-file-for-an-error-in-your-app.md)案方法，擷取其他錯誤資訊。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -168,6 +170,7 @@ Authorization: Bearer <your access token>
 * [健康情況報告](../publish/health-report.md)
 * [取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)
 * [取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)
+* [下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得 App 下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)

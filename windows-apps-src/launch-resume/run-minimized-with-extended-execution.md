@@ -1,27 +1,29 @@
 ---
 author: TylerMSFT
 description: "了解如何使用延伸執行使應用程式在最小化時仍繼續執行"
-title: "使用延伸執行，在最小化時執行"
+title: "透過延長執行延後應用程式暫停"
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: "windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen, 延伸執行, 最小化, ExtendedExecutionSession, 背景工作, 應用程式週期, 鎖定畫面"
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
-ms.openlocfilehash: bd9ccaa4cb87a24906c531996d4fc3f88875b060
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f82fa37ade38d6a92fa1fec427079f75057a1a4a
+ms.sourcegitcommit: e7e8de39e963b73ba95cb34d8049e35e8d5eca61
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/16/2017
 ---
-# <a name="run-while-minimized-with-extended-execution"></a>使用延伸執行，在最小化時執行
+# <a name="postpone-app-suspension-with-extended-execution"></a>透過延長執行延後應用程式暫停
 
-本文章將示範如何在您的應用程式暫止時使用延伸執行來延期，以便使應用程式在最小化時仍繼續執行。
+本文章將示範如何在您的應用程式暫止時使用延伸執行來延期，以便使應用程式在最小化或在鎖定畫面的情況下仍繼續執行。
 
 當使用者最小化或離開應用程式時，它會進入暫止狀態。  它的記憶體會保留，但是不會執行程式碼。 擁有視覺化使用者介面的所有作業系統版本都是這種狀況。 如需有關您的應用程式何時暫止的詳細資訊，請參閱[應用程式生命週期](app-lifecycle.md)。
 
-但有許多情況必須讓應用程式在最小化時繼續執行，而不是將它暫止。 如果應用程式必須繼續執行，則作業系統必須讓應用程式繼續執行，或者應用程式可以要求繼續執行。 例如在背景播放音訊時，您可以依照[背景媒體播放](../audio-video-camera/background-audio.md)的步驟進行，作業系統就可以讓應用程式執行久一點。 否則，您就必須手動要求更多執行時間。
+但有許多情況必須讓應用程式在最小化時繼續執行，而不是將它暫止。 如果應用程式必須繼續執行，則作業系統必須讓應用程式繼續執行，或者應用程式可以要求繼續執行。 例如在背景播放音訊時，您可以依照[背景媒體播放](../audio-video-camera/background-audio.md)的步驟進行，作業系統就可以讓應用程式執行久一點。 否則，您就必須手動要求更多執行時間。 您可取得用來執行背景執行的時間長度可能會有幾分鐘，但是您必須做好準備，才能隨時處理撤銷中的工作階段。
 
-建立 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 來要求更多時間，以便在背景完成作業。 您建立的 **ExtendedExecutionSession** 類型是由您建立它時提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 所決定。 有三個 **ExtendedExecutionReason** 列舉值：**Unspecified、LocationTracking** 和 **SavingData**。
+建立 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 來要求更多時間，以便在背景完成作業。 您建立的 **ExtendedExecutionSession** 類型是由您建立它時提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 所決定。 有三個 **ExtendedExecutionReason** 列舉值：**Unspecified、LocationTracking** 和 **SavingData**。 任何時候只能要求一個 **ExtendedExecutionSession**；在某個工作階段目前為作用中時嘗試建立另一個工作階段，將造成  **ExtendedExecutionSession** 建構函式擲回例外狀況。 請勿使用 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) 和 [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx)；這些列舉值需要的功能受限，不適合在市集應用程式中使用。
 
 ## <a name="run-while-minimized"></a>在最小化時執行
 
@@ -35,7 +37,7 @@ translationtype: HT
 
 當您建立 **ExtendedExecutionSession** 時，如果您的應用程式必須定期從 [GeoLocator](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 記錄位置，請指定 **ExtendedExecutionReason.LocationTracking**。 由於健身追蹤與導航用應用程式必須定期監控使用者位置，因此應使用這個功能。
 
-位置追蹤的延伸執行工作階段可視需要持續執行。 但是，每個裝置上只能執行一個這樣的工作階段。 位置追蹤的延伸執行工作階段只能在前景中要求，而且應用程式必須處於**執行中**狀態。 如此可確保使用者會察覺此應用程式已開始延伸位置追蹤工作階段。 當應用程式在背景時，依然可以透過背景工作或應用程式服務來使用 GeoLocator，而不必要求位置追蹤的延伸執行工作階段。
+只要需要，位置追蹤延伸的執行工作階段便會執行，包括當行動裝置的螢幕鎖定時。 但是，每個裝置上只能執行一個這樣的工作階段。 位置追蹤的延伸執行工作階段只能在前景中要求，而且應用程式必須處於**執行中**狀態。 如此可確保使用者會察覺此應用程式已開始延伸位置追蹤工作階段。 當應用程式在背景時，依然可以透過背景工作或應用程式服務來使用 GeoLocator，而不必要求位置追蹤的延伸執行工作階段。
 
 ## <a name="save-critical-data-locally"></a>在本機儲存重要資料
 
@@ -43,7 +45,7 @@ translationtype: HT
 
 請勿使用這種工作階段來延長應用程式上傳或下載資料的時間。 如果您必須上傳資料，請要求[背景傳輸](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)或是登錄 **MaintenanceTrigger**，在有 AC 電源時處理傳輸。 當應用程式在前景執行並處於**執行中**狀態，或是在背景執行並處於**暫止中**狀態時，可以要求 **ExtendedExecutionReason.SavingData** 延伸執行工作階段。
 
-**暫止中**狀態是應用程式生命週期中，應用程式在終止之前可以執行工作的最後機會。 請注意，當應用程式處於**暫止中**狀態時要求 **ExtendedExecutionReason.SavingData** 延伸執行工作階段可能會產生下列問題。 如果在處於**暫止中**狀態時要求延伸執行工作階段，而且使用者要求應用程式重新啟動，則可能需要很長的時間才能啟動。 這是因為延伸執行工作階段期間必須先完成，然後舊的應用程式執行個體才可以關閉，而新的應用程式執行個體才可以啟動。 為確保使用者狀態不會遺失，因此必須犧牲啟動效能時間。
+**暫止中**狀態是應用程式生命週期中，應用程式在終止之前可以執行工作的最後機會。 **ExtendedExecutionReason.SavingData** 是 **ExtendedExecutionSession** 的唯一類型，可在 **Suspending** 狀態中要求該類型。 請注意，當應用程式處於**暫止中**狀態時要求 **ExtendedExecutionReason.SavingData** 延伸執行工作階段可能會產生下列問題。 如果在處於**暫止中**狀態時要求延伸執行工作階段，而且使用者要求應用程式重新啟動，則可能需要很長的時間才能啟動。 這是因為延伸執行工作階段期間必須先完成，然後舊的應用程式執行個體才可以關閉，而新的應用程式執行個體才可以啟動。 為確保使用者狀態不會遺失，因此必須犧牲啟動效能時間。
 
 ## <a name="request-disposal-and-revocation"></a>要求、處置和撤銷
 
@@ -54,7 +56,6 @@ translationtype: HT
 ```csharp
 var newSession = new ExtendedExecutionSession();
 newSession.Reason = ExtendedExecutionReason.Unspecified;
-newSession.Description = "Raising periodic toasts";
 newSession.Revoked += SessionRevoked;
 ExtendedExecutionResult result = await newSession.RequestExtensionAsync();
 
@@ -163,7 +164,6 @@ static class ExtendedExecutionHelper
 
         var newSession = new ExtendedExecutionSession();
         newSession.Reason = ExtendedExecutionReason.Unspecified;
-        newSession.Description = "Running multiple tasks";
         newSession.Revoked += SessionRevoked;
 
         if(revoked != null)

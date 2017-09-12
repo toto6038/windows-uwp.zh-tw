@@ -9,14 +9,16 @@ ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 825b6a8b2689143b5a68b9e7e1862ac2e6e92d28
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 44f272f3c93ab56623897e5d9c801256a12f0a18
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="control-templates"></a>控制項範本
 
@@ -24,13 +26,8 @@ translationtype: HT
 
 您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項的外觀。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**ControlTemplate 類別**](https://msdn.microsoft.com/library/windows/apps/br209391)</li>
-<li>[**Control.Template 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[**ControlTemplate 類別**](https://msdn.microsoft.com/library/windows/apps/br209391)、[**Control.Template 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+
 
 ## <a name="custom-control-template-example"></a>自訂控制項範本的範例
 

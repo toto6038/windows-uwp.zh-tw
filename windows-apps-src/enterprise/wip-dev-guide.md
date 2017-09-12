@@ -5,15 +5,17 @@ MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows 資訊保護 (WIP) 開發人員指南"
 ms.author: normesta
-ms.date: 02/24/2017
+ms.date: 06/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, wip, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式"
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
-ms.openlocfilehash: a2888b804e66e2630e4ae93b0be31974740d9f99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 23604e4ca549bbb11885e681500f4f41531c2b6f
+ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/22/2017
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 資訊保護 (WIP) 開發人員指南
 
@@ -73,10 +75,9 @@ __注意__：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Wi
 
     ![新增 UWP 延伸模組](images/extensions.png)
 
-3. 將這些功能新增至封裝資訊清單檔案︰
+3. 將這個功能新增到您的封裝資訊清單檔案︰
 
     ```xml
-       <Capability Name="privateNetworkClientServer" />
        <rescap:Capability Name="enterpriseDataPolicy"/>
     ```
    >*選擇性閱讀*："rescap" 前置詞表示*「受限制的功能」*。 請參閱[特殊和受限制的功能](https://msdn.microsoft.com/windows/uwp/packaging/app-capability-declarations)。

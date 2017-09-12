@@ -1,3 +1,19 @@
+---
+author: jwmsft
+title: "應用程式分析"
+description: "分析應用程式的效能問題。"
+ms.author: jimwalk
+ms.date: 02/08/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.openlocfilehash: bedd4ce683622935488f9cc210d71f568a167f51
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/10/2017
+---
 # <a name="app-analysis-overview"></a>應用程式分析概觀
 
 「應用程式分析」是一個工具，可為開發人員提供效能問題的提醒通知。 「應用程式分析」會依據一組效能指導方針和最佳做法執行您的應用程式程式碼。
@@ -105,7 +121,7 @@ myImage.Source = bitmapImage;
 
 ## <a name="collapsed-elements-at-load-time"></a>載入時摺疊的元素
 
-App 中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才顯示。 在大多數情況下，應該使用 x:DeferLoadStrategy 來延遲這些元素，以避免支付在載入時建立元素的費用。
+應用程式中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才顯示。 在大多數情況下，應該使用 x:Load 或 x:DeferLoadStrategy 來延遲這些元素，以避免支付在載入時建立元素的費用。
 
 這包括使用可見度轉換器的布林值來隱藏項目直到稍後才顯示的情況。
 
@@ -119,9 +135,9 @@ App 中一種常見的模式就是一開始隱藏 UI 中的元素，在稍後才
 
 ### <a name="solution"></a>解決方案
 
-使用 x:DeferLoadStrategy，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在第一個畫面不顯示的 UI。 您可以選擇在需要時載入元素，或是隨著一組延遲邏輯一起載入。 若要觸發載入，請針對您希望載入的元素呼叫 findName。
+使用 [x:Load attribute](../xaml-platform/x-load-attribute.md) 或 [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785)，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在第一個畫面不顯示的 UI。 您可以選擇在需要時載入元素，或是隨著一組延遲邏輯一起載入。 若要觸發載入，請針對您希望載入的元素呼叫 findName。 x:Load 擴充可解除載入元素的 x:DeferLoadStrategy 功能，以及透過 x:Bind 控制載入狀態。
 
-在某些情況下，使用 findName 來顯示某個 UI 可能無法作為解答。 如果您預期在按一下按鈕且延遲很低的情況下實現某個重要的 UI，便會是這種情況。 在此情況下，您應該使用 x:DeferLoadStrategy，並針對您希望實現的元素將 Visibility 設定為 Collapsed。 在載入頁面且 UI 執行緒可用之後，您可以在必要時呼叫 findName 來載入元素。 使用者將無法看見元素，直到您將元素的 Visibility 設定為 Visible 為止。
+在某些情況下，使用 findName 來顯示某個 UI 可能無法作為解答。 如果您預期在按一下按鈕且延遲很低的情況下實現某個重要的 UI，便會是這種情況。 在此情況下，您可能會想要使用更多的記憶體來降低 UI 延遲，若是如此，您應該使用 x:DeferLoadStrategy，並針對您希望實現的元素將 Visibility 設定為 Collapsed。 在載入頁面且 UI 執行緒可用之後，您可以在必要時呼叫 findName 來載入元素。 使用者將無法看見元素，直到您將元素的 Visibility 設定為 Visible 為止。
 
 ## <a name="listview-is-not-virtualized"></a>ListView 未虛擬化
 

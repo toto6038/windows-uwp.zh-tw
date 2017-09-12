@@ -1,17 +1,19 @@
 ---
-author: mtoepke
+author: eliotcowley
 title: "使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)"
 description: "本節說明如何使用 DirectX 和 Visual C++ 來建立 3D 通用 Windows 平台 (UWP) 遊戲。"
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
-ms.author: mtoepke
-ms.date: 02/08/2017
+ms.author: elcowle
+ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 範例, DirectX, 3D"
-ms.openlocfilehash: 738be6a129158fbd6058ff7407aca0b8ece7ea3e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: dbfd6e6ef249ed8e0f3793068728db359d199a7b
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)
 
@@ -19,13 +21,13 @@ translationtype: HT
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-本節說明如何使用 DirectX 和 Visual C++ 來建立 3D 通用 Windows 平台 (UWP) 遊戲。 本文件示範如何建立名為 Marble Maze 的 3D 遊戲，此遊戲支援新的電腦規格 (例如平板電腦)，也可以在傳統的桌上型和膝上型電腦上執行。
+本主題說明如何使用 DirectX 和 Visual C++ 來建立 3D 通用 Windows 平台 (UWP) 遊戲。 名為 Marble Maze 的遊戲適用於多種裝置，例如平板電腦及傳統的桌上型電腦與筆記型電腦。
 
-> **注意**   若要下載 Marble Maze 原始程式碼，請參閱 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)。
+> [!NOTE]
+> 若要下載 Marble Maze 原始程式碼。請參閱[GitHub 上的範例](http://go.microsoft.com/fwlink/?LinkId=624011) (英文)。
 
- 
-
-> **重要**  Marble Maze 說明的設計模式是我們認為建立 UWP 遊戲的最佳做法。 您可以調整許多實作細節，以符合您自己的做法和您所開發的遊戲的獨特需求。 請自行選擇使用最符合需求的各種技術或程式庫。 (不過，一定要確定您的程式碼通過 Windows 應用程式認證套件)。當我們認為某個 Marble Maze 實作是成功開發遊戲的關鍵時，我們會在此文件中強調。
+> [!IMPORTANT]
+> Marble Maze 說明的設計模式是我們認為建立 UWP 遊戲的最佳做法。 您可以調整許多實作細節，以符合您自己的做法和您所開發的遊戲的獨特需求。 請自行選擇使用最符合需求的各種技術或程式庫。 (不過，一定要確定您的程式碼通過 [Windows 應用程式認證套件](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit))。當我們認為某個實作是成功開發遊戲的關鍵時，我們會在此文件中強調。
 
  
 
@@ -36,15 +38,15 @@ translationtype: HT
 
 Marble Maze 類似桌面迷宮遊戲，這種遊戲通常是用盒子做成，盒子上有球洞及鋼珠或玻璃珠。 Marble Maze 的目標與桌面迷宮遊戲相同：藉由傾斜迷宮，讓彈珠在最短時間內從迷宮入口滾到出口，但不能讓彈珠掉到任何洞裡。 Marble Maze 增加了關卡的概念。 如果彈珠掉進洞裡，遊戲會從彈珠上次通過的關卡位置重新開始。
 
-Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸控功能或加速計功能的裝置，則可以利用這些裝置來移動遊戲板。 您也可以使用 Xbox 360 控制器或滑鼠來控制遊戲玩法。
+Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸控功能或加速計功能的裝置，則可以利用這些裝置來移動遊戲板。 您也可以使用 Xbox One 控制器或滑鼠來控制遊戲玩法。
 
-![Marble Maze 遊戲的螢幕擷取畫面。](images/marblemaze.png)
+![Marble Maze 遊戲的螢幕擷取畫面。](images/marblemaze-2.png)
 
 ## <a name="prerequisites"></a>先決條件
 
 
--   Windows 10
--   Microsoft Visual Studio 2015
+-   Windows 10 Creators Update
+-   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
 -   C++ 程式設計知識
 -   認識 DirectX 和 DirectX 詞彙
 -   COM 基本知識
@@ -63,7 +65,7 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 
 -   使用 Windows 執行階段 API 和 DirectX 來建立 UWP 遊戲。
 -   使用 [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080) 和 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) 來處理視覺化內容，例如模型、紋理、頂點和像素著色器，以及 2D 重疊。
--   整合輸入機制，例如觸控、加速計及 Xbox 360 控制器。
+-   整合輸入機制，例如觸控、加速計及 Xbox One 控制器。
 -   使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) 納入音樂和音效。
 
 ## <a name="what-this-documentation-does-not-cover"></a>本文件未涵蓋的內容
@@ -78,16 +80,16 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 -   如何讓遊戲可在全球其他區域使用。
 -   如何讓遊戲通過認證並發佈到 Windows 市集。
 
-Marble Maze 也會使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 程式庫來處理 3D 幾何和執行物理運算，例如碰撞。 本節不深入探討 DirectXMath。 如需 DirectXMath 的詳細資訊，請參閱 [DirectXMath 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/hh437833)。 如需 Marble Maze 如何使用 DirectXMath 的詳細資訊，請參閱原始程式碼。
+Marble Maze 也會使用 [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 程式庫來處理 3D 幾何和執行物理運算，例如碰撞。 本節不深入探討 DirectXMath。 如需 Marble Maze 如何使用 DirectXMath 的詳細資訊，請參閱原始程式碼。
 
 雖然 Marble Maze 提供許多可重複使用的元件，但這並非完整的遊戲開發架構。 當我們認為某個 Marble Maze 元件可在遊戲中重複使用時，會在文件中加以強調。
 
 ## <a name="next-steps"></a>後續步驟
 
 
-建議您從 Marble Maze 範例基礎觀念入門，以了解 Marble Maze 結構，以及 Marble Maze 原始程式碼所遵循的一些編碼和樣式指導方針。 下表概述本節提及的文件，方便您參考。
+建議您從 [Marble Maze 範例基礎觀念](marble-maze-sample-fundamentals.md)入門，以了解 Marble Maze 結構，以及 Marble Maze 原始程式碼所遵循的一些編碼和樣式指導方針。 下表概述本節提及的文件，方便您參考。
 
-## <a name="related-topics"></a>相關主題
+## <a name="in-this-section"></a>本節內容
 
 
 | 標題                                                                                                                    | 說明                                                                                                                                                                                                                                        |
@@ -95,7 +97,7 @@ Marble Maze 也會使用 [DirectXMath](https://msdn.microsoft.com/library/window
 | [Marble Maze 範例基礎觀念](marble-maze-sample-fundamentals.md)                                                   | 提供遊戲結構的概觀，以及原始程式碼所遵循的一些編碼和樣式指導方針。                                                                                                                                 |
 | [Marble Maze 應用程式結構](marble-maze-application-structure.md)                                               | 說明如何建構 Marble Maze 應用程式的程式碼，以及 DirectX UWP App 的結構與傳統型應用程式的結構有何不同。                                                                                    |
 | [在 Marble Maze 範例中加入視覺化內容](adding-visual-content-to-the-marble-maze-sample.md)                   | 說明您在使用 Direct3D 和 Direct2D 時應該牢記的一些重要做法。 另外，說明 Marble Maze 如何在視覺化內容上運用這些做法。                                                                           |
-| [在 Marble Maze 範例中加入輸入和互動](adding-input-and-interactivity-to-the-marble-maze-sample.md) | 說明 Marble Maze 如何使用加速計、觸控及 Xbox 360 控制器裝置，讓使用者能夠瀏覽功能表並與遊戲板互動。 另外，描述您在處理輸入時應該牢記的一些最佳做法。 |
+| [在 Marble Maze 範例中加入輸入和互動](adding-input-and-interactivity-to-the-marble-maze-sample.md) | 說明 Marble Maze 如何使用加速計、觸控及 Xbox One 控制器輸入，讓使用者能夠瀏覽功能表並與遊戲板互動。 另外，描述您在處理輸入時應該牢記的一些最佳做法。 |
 | [在 Marble Maze 範例中加入音訊](adding-audio-to-the-marble-maze-sample.md)                                     | 說明 Marble Maze 如何利用音訊將音樂和音效加到遊戲體驗中。                                                                                                                                                  |
 
  

@@ -9,17 +9,19 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 廣告, 測試"
-ms.openlocfilehash: ec5b1c1723a7f58b20234d703fc786647268a3b3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0c3e713d9a2bb7c10bda0d9517f5cb882d5e2e57
+ms.sourcegitcommit: 6b772d2a224f8a9c557dc517c6ec0592545e9a43
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/02/2017
 ---
 # <a name="test-mode-values"></a>測試模式值
 
-當您在應用程式中使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 來顯示廣告時，您必須指定應用程式識別碼和廣告單元識別碼。 當您開發您的應用程式時，使用本文中的測試應用程式識別碼和廣告單元識別碼值，以查看您的應用程式於測試期間呈現廣告的方式。
+當您在應用程式中使用 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 或 [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) 來顯示廣告時，您必須在 **AdUnitId** 和 **ApplicationId** 屬性中指定廣告單元識別碼和應用程式識別碼。 當您開發您的應用程式時，使用本文中的測試應用程式識別碼和廣告單元識別碼值，以查看您的應用程式於測試期間呈現廣告的方式。
 
 如果您嘗試在應用程式發佈後使用測試值，您的實際應用程式將不會收到廣告。 若要再已發佈的應用程式中收到廣告，您必須更新您的程式碼，使用 Windows 開發人員中心儀表板所提供的應用程式識別碼和廣告單元識別碼。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
  
-以下是插播式廣告和橫幅廣告的測試值。
+以下是用於不同廣告類型的測試值。
 
 * 插播式廣告：
 
@@ -33,7 +35,7 @@ translationtype: HT
     <tr class="header">
     <th align="left">目標 OS</th>
     <th align="left">AdUnitId</th>
-    <th align="left">AppId</th>
+    <th align="left">ApplicationId</th>
     </tr>
     </thead>
     <tbody>
@@ -63,7 +65,7 @@ translationtype: HT
     <tr class="header">
     <th align="left">目標 OS</th>
     <th align="left">AdUnitId</th>
-    <th align="left">AppId</th>
+    <th align="left">ApplicationId</th>
     </tr>
     </thead>
     <tbody>
@@ -80,8 +82,30 @@ translationtype: HT
     </tbody>
     </table>
 
+* 對於原生廣告：
 
-> **重要**&nbsp;&nbsp;**AdControl** 即時廣告的大小是由 **Width** 和 **Height** 屬性定義。 為獲得最佳結果，請確定程式碼中的 **Width** 和 **Height** 屬性是[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)其中之一。 **Width** 和 **Height** 屬性不會隨即時廣告的大小變更。
+    <table>
+    <col width="33%" />
+    <col width="33%" />
+    <col width="33%" />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th align="left">目標 OS</th>
+    <th align="left">AdUnitId</th>
+    <th align="left">ApplicationId</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td align="left"><p>UWP (Windows 10)</p></td>
+    <td align="left"><p>test</p></td>
+    <td align="left"><p>d25517cb-12d4-4699-8bdc-52040c712cab</p></td>
+    </tbody>
+    </table>
+
+> [!IMPORTANT]
+> **AdControl** 即時廣告的大小是由 **Width** 和 **Height** 屬性定義。 為獲得最佳結果，請確定程式碼中的 **Width** 和 **Height** 屬性是[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)其中之一。 **Width** 和 **Height** 屬性不會隨即時廣告的大小變更。
 
 
  

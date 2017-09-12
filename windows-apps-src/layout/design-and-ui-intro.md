@@ -7,36 +7,48 @@ label: Intro to UWP app design
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4ca7e133f930ff4663de0cc1769ac26caa9f44ad
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8db6dbe00c20b6371ae7007f07e628d16467ea9d
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
-#  <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介 
+#  <a name="introduction-to-uwp-app-design"></a>UWP 應用程式設計簡介
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-通用 Windows 平台 (UWP) 應用程式可以在任何執行 Windows 的裝置上執行，包括手機、平板電腦或電腦。
+通用 Windows 平台 (UWP) 應用程式可以在任何執行 Windows 的裝置上執行，包括手機、平板電腦或電腦。 
 
-![執行 Windows 的裝置](images/1894834-hig-device-primer-01-500.png)
+要設計一款在各種裝置上都能有好看外觀的應用程式是一個很大的挑戰。 幸好，通用 Windows 平台 (UWP) 提供一組內建功能與通用建置組塊，來幫助您建立適用於各種裝置、螢幕及輸入法的 UX。 本文章描述 UWP 應用程式的 UI 功能與優點，並提供一些建立您第一個 UWP 應用程式的高階設計指導方針。 
 
-要設計一款在各種裝置上都能有好看外觀的應用程式是一個很大的挑戰。 您該如何設計一款可以在螢幕大小差異極大，又使用不同輸入方法的幾種裝置上提供絕佳 UX 的應用程式呢？ 幸運的是，通用 Windows 平台 (UWP) 提供一組內建的功能和通用建置組塊，可協助您進行這項工作。 
+## <a name="video-summary"></a>影片摘要
 
-![在 Windows Phone、平板電腦與電腦上執行之應用程式的設計](images/food-truck-finder/uap-foodtruck--md-detail.png)
+> [!VIDEO https://channel9.msdn.com/Blogs/One-Dev-Minute/Designing-Universal-Windows-Platform-apps/player]
 
-本文章描述 UWP app 的 UI 功能與優點，並提供一些建立您第一個 UWP app 的高階設計指導方針。 我們先來看看，當您建立 UWP app 時可取得的一些功能。 
 
-## <a name="uwp-app-features"></a>UWP app 功能
+<!--
+![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
+-->
+
+<!--
+![A design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
+-->
+
+
+## <a name="uwp-features"></a>UWP 功能
+
+我們先來看看，當您建立 UWP 應用程式時可取得的一些功能。
 
 ### <a name="effective-pixels-and-scaling"></a>有效像素與縮放
 
-UWP app 會自動調整控制項的大小、字型和其他 UI 元素，使其可在所有裝置上清晰可讀。
+UWP 應用程式會自動調整控制項的大小、字型和其他 UI 元素，使其可在所有裝置上清晰可讀並可輕鬆地與其互動。
 
-當您在裝置上執行應用程式 時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24px 字型一樣清晰。
+當您在裝置上執行應用程式時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
 
 ![不同裝置的檢視距離](images/1910808-hig-uap-toolkit-03.png)
 
@@ -44,18 +56,14 @@ UWP app 會自動調整控制項的大小、字型和其他 UI 元素，使其�
 
 -   在設計的時候，您可以忽略像素密度和實際螢幕解析度。 相反地，針對大小類別設計實際解析度 (有效像素解析度) (如需詳細資訊，請參閱[螢幕大小與中斷點文章](screen-sizes-and-breakpoints-for-responsive-design.md))。
 
--   系統調整您的 UI 時，會以 4 的倍數進行。 如果要確保外觀清晰，請將您的設計貼齊 4x4 像素格線：讓 UI 元素的邊界、大小和位置，以及文字位置 (但不是大小—文字可以是任意大小) 為 4 有效像素的倍數。
+-   系統調整您的 UI 時，會以 4 的倍數進行。 若要確保外觀清晰，請將您的設計貼齊 4x4 像素格線：讓 UI 元素的邊界、大小和位置為 4 有效像素的倍數。 請注意，文字並不具有此需求；文字可以有任何大小和位置。 
 
 下圖顯示對應 4x4 像素格線的設計元素。 設計元素的邊緣一定清晰銳利。
 
 ![貼齊至 4x4 像素格線](images/rsp-design/epx-4pixelgood.png)
 
-下圖顯示沒有對應 4x4 格線的設計元素。 在某些裝置上，這些設計元素的邊緣會變得模糊柔化。
-
-![沒有對齊 4x4 像素格線的設計元素](images/rsp-design/offthegridillustration.png)
-
 > [!TIP]
-> 在影像編輯程式中建立螢幕圖樣時，請將 DPI 設定為 72，並針對您的目標大小類別，將影像尺寸設定為有效解析度。 (如需大小類別和有效解析度的清單，請參閱本文章的[特定大小類別的建議](#sizeclasses)一節)。
+> 在影像編輯程式中建立螢幕圖樣時，請將 DPI 設定為 72，並針對您的目標大小類別，將影像尺寸設定為有效解析度。 如需大小類別和有效解析度的清單，請參閱[螢幕的大小與中斷點文章](screen-sizes-and-breakpoints-for-responsive-design.md)。
 
 
 ### <a name="universal-input-and-smart-interactions"></a>通用輸入和智慧型互動
@@ -91,10 +99,22 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 
     ![具有唯一視覺化樣式的天氣應用程式](images/weather/uwp-weather-tab-phone-700.png)
 
-我們已經說明了 UWP app 的建置組塊，讓我們來看看如何將它們放在一起來建立 UI。 
-    
-## <a name="the-anatomy-of-a-typical-uwp-app"></a>典型 UWP app 的結構
+## <a name="uwp-and-the-fluent-design-system"></a>UWP 和 Fluent 設計系統
 
+ Fluent 設計系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化嶄新 UI。 Fluent 設計會套用到 Windows 10 裝置與應用程式，以建立美觀、吸引人及直覺式的體驗。 
+ 
+ 如何將 Fluent 設計納入您的應用程式中？ 我們會持續新增新的控制項與功能，讓您能更容易納入設計。 以下是 UWP 目前的 Fluent 設計功能清單：  
+
+* [壓克力](../style/acrylic.md)是一種筆刷，可建立半透明的表面。
+* [視差](../style/parallax.md)會將立體透視、深淺和動態感受新增至捲動的內容，例如清單。
+* [顯示](../style/reveal.md)使用燈號建立暫留效果，以照亮互動 UI 元素。 
+* [連接動畫](../style/connected-animation.md)提供自然流暢、前後呼應且保有連續性的轉場效果，進而提升可用性。 
+
+我們也更新了[設計指導方針](https://developer.microsoft.com/windows/apps/design) (亦即您目前正在閱讀的方針)，讓這些方針採用 Fluent 設計原則。
+
+## <a name="the-anatomy-of-a-typical-uwp-app"></a>典型 UWP 應用程式的結構
+
+我們已經說明了 UWP app 的建置組塊，讓我們來看看如何將它們放在一起來建立 UI。
 
 現代使用者介面很複雜，是由文字、形狀、色彩和動畫所組成，這最終組成您所使用之裝置畫面的個別像素。 當您開始設計使用者介面時，純粹的選項數目會非常驚人。
 
@@ -112,7 +132,7 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
 <td align="left"><strong>瀏覽元素</strong>
-<p>瀏覽元素協助使用者選擇他們想要顯示的內容。 瀏覽元素的範例包括[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)、[超連結](../controls-and-patterns/hyperlinks.md)，以及[瀏覽窗格](../controls-and-patterns/nav-pane.md)。</p>
+<p>瀏覽元素協助使用者選擇他們想要顯示的內容。 瀏覽元素的範例包括[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)、[超連結](../controls-and-patterns/hyperlinks.md)，以及[瀏覽窗格](../controls-and-patterns/navigationview.md)。</p>
 <p>瀏覽元素的詳細內容涵蓋在[瀏覽設計基本知識](navigation-basics.md)一文中。</p>
 <strong>命令元素</strong>
 <p>命令元素會起始動作，例如操作、儲存或分享內容。 命令元素的範例包括[按鈕](../controls-and-patterns/buttons.md)和[命令列](../controls-and-patterns/app-bars.md)。 命令元素也可以包括實際在畫面上看不到的鍵盤快速鍵。</p>
@@ -131,7 +151,6 @@ UWP 也提供一些有用的建置組塊，可以更容易設計多種裝置系�
 決定應用程式適合哪些 UI 元素時，也可以考慮要執行應用程式的裝置和螢幕大小。
 
 ## <a name="tailoring-your-app-for-specific-devices-and-screen-sizes"></a>針對特定裝置和螢幕大小量身打造您的 app
-
 
 UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 的裝置上都能有效使用。 那麼，為什麼您還是希望針對特定裝置系列自訂您的應用程式 UI？
 
@@ -183,9 +202,9 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 ![自動重排設計元素](images/rsp-design/rspd-reflow.png)
 
-###  <a name="reveal"></a>顯示
+### <a name="showhide"></a>顯示/隱藏
 
-您可以根據螢幕空間顯示 UI，或者當裝置支援其他功能、特定情況或適合的螢幕方向時顯示。
+您可以根據螢幕空間顯示或隱藏 UI 元素，或者當裝置支援其他功能、特定情況或適合的螢幕方向時顯示。
 
 在這個包含索引標籤的範例中，中間有相機圖示的索引標籤特定使用於手機或平板手機上的該應用程式，而不適用於較大的裝置，這也是它在右側的裝置中顯示的原因。 顯示或隱藏 UI 的另一個常見範例適用於媒體播放程式控制項，其中按鈕集在較小的裝置上會減少，在較大的裝置上則會展開。 例如，電腦上的媒體播放程式可以處理比手機上來得更多顯示在螢幕上的功能。
 
@@ -215,13 +234,15 @@ UWP app 使用有效像素，來保證您的設計元素在所有運作 Windows 
 
 ![使用重新架構回應式設計技術的設計範例](images/rsp-design/rspd-rearchitect-type1.png)
 
+## <a name="tools-and-design-toolkits"></a>工具與設計工具組
+
+我們提供各式各樣的工具，來協助您設計 UWP 應用程式。 請參閱我們的[設計工具組頁面](../design-downloads/index.md)，以取得 XD、Illustrator、Photoshop、Framer 和 Sketch 工具組，及其他的設計工具與字型下載。 
+
+若要讓您的電腦設定為實際地編碼 UWP 應用程式，請參閱我們的[開始 &gt; 設定](../get-started/get-set-up.md)文章。 
 
 ## <a name="related-articles"></a>相關文章
 
-- [什麼是 UWP app？](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+- [什麼是 UWP 應用程式？](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+- [設計工具組](../design-downloads/index.md)
 
  
-
-
-
-

@@ -4,19 +4,20 @@ Description: "當您建立完應用程式的提交作業並且按一下 [提交�
 title: "應用程式認證程序"
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 04/13/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 87fc6e35a2a9818478aca4119850ae20165d2a64
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f075dc6e112a526d7aee71f0f9aa7d4da570d649
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
-
-當您建立完 App 的提交作業並且按一下 **\[提交至市集\]** 時，App 就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 當您的提交通過驗證之後，最多可能需要 16 小時，客戶才會在市集中看到 App 的清單 (或先前發行之 App 的更新)。 當您的提交已發行且可供客戶取得時，您會看到通知，且 app 在儀表板中的狀態會是 **\[在市集內\]**。
+當您建立完 App 的提交作業並且按一下 **\[提交至市集\]** 時，App 就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 當您的提交通過驗證之後，最多可能需要 24 小時，客戶才會在市集中看到 App 的清單 (或先前發行之 App 的更新)。 當您的提交已發行且可供客戶取得時，您會看到通知，且 app 在儀表板中的狀態會是 **\[在市集內\]**。
 
 ## <a name="preprocessing"></a>前置處理
 
@@ -40,13 +41,13 @@ translationtype: HT
 
 應用程式發行之後，系統會對應用程式的套件加上數位簽章，以保護這些套件使其不受竄改。 此階段開始後，您就無法取消提交或變更發行日期。
 
-當您的應用程式處於發佈階段時，應用程式提交之 [狀態] 欄位中的 **\[顯示詳細資料\]** 連結，會在您的新套件和市集清單詳細資料可供您每個支援 OS 版本的客戶使用時，讓您得知。 在新套件和清單詳細資料可供您所有的 app 潛在客戶使用之前，您的 app 將處於發行階段，最多可能需要 16 小時。 
+當您的應用程式處於發佈階段時，應用程式提交之 [狀態] 欄位中的 **\[顯示詳細資料\]** 連結，會在您的新套件和市集清單詳細資料可供您每個支援 OS 版本的客戶使用時，讓您得知。 在新套件和清單詳細資料可供您所有的 app 潛在客戶使用之前，您的 app 將處於發行階段，最多可能需要 24 小時。 
 
 ## <a name="in-the-store"></a>在市集中 
 
-成功進行上述步驟之後，提交的狀態會從 **\[發行中\]** 變成 **\[在市集內\]**。 客戶就能在 Windows 市集下載您的提交項目。(除非您選擇了其他[配送和可見性](set-app-pricing-and-availability.md#distribution-and-visibility)選項。) 
+成功進行上述步驟之後，提交的狀態會從 **\[發行中\]** 變成 **\[在市集內\]**。 客戶就能在 Windows 市集下載您的提交項目 (除非您選擇了其他[可見度](set-app-pricing-and-availability.md#visibility)選項)。 
 
-**注意：**我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
+**注意**  我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
 
  
 

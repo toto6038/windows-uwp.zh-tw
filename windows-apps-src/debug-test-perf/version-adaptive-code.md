@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 title: "版本調適型程式碼"
-description: "了解如何利用新的 API 並維持與先前版本的相容性"
+description: "使用 ApiInformation 類別以利用新的 API 並維持與先前版本的相容性"
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
@@ -9,55 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 3293e91e-6888-4cc3-bad3-61e5a7a7ab4e
-ms.openlocfilehash: 4076bd9edf26108e896e3a7734c2108a00577cd0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5b9a3b02c5acbb2ad7bcd00b9af4f7d6edd91de
+ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/27/2017
 ---
-# <a name="version-adaptive-code-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型程式碼：使用新的 API 並同時維持與先前版本的相容性
+# <a name="version-adaptive-code"></a>版本調適型程式碼
 
-每個版本的 Windows 10 SDK 都新增了令人興奮、讓您想要使用的新功能。 不過，並非您所有的客戶都會同時將他們的裝置更新至最新版 Windows 10，且您會想盡可能讓您的 App 可以適用廣泛的裝置類型。 在這裡，我們會說明如何設計您的 App，讓它可以在較早版本的 Windows 10 上執行，同時讓 App 在安裝最新更新的裝置上執行時也會利用新功能。
+您可以考慮撰寫調適型程式碼，就像您對[建立調適型 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 進行的考量一樣。 您可以將基底 UI 設計為在最小的螢幕上執行，然後在偵測到 App 正在較大的螢幕上執行時移動或新增元素。 使用調適型程式碼，您只要撰寫在最低 OS 版本上執行的基底程式碼，並在偵測到 App 正在具有新功能的較新版本上執行時，新增選取功能。
 
-若要確保您的 App 能支援廣泛的 Windows 10 裝置，需進行 2 個步驟。 首先，請將您的 Visual Studio 專案設定為以最新的 API 為目標。 這會影響當您編譯 App 時的情況。 接著，請執行執行階段檢查，以確保您僅呼叫正在執行您 App 之裝置上的 API。
-
-## <a name="configure-your-visual-studio-project"></a>設定您的 Visual Studio 專案
-
-支援多個 Windows 10 版本的第一個步驟，是在您的 Visual Studio 專案中指定「目標」**與「最低」**支援的 OS/SDK 版本。
-- 目標**：Visual Studio 編譯 App 程式碼並執行所有工具的目標 SDK 版本。 於編譯期間，此 SDK 版本中所有的 API 與資源，都會在您的 App 程式碼中提供使用。
-- 最低**：支援可執行您 App (且會由市集部署至) 之最早 OS 版本的 SDK 版本，以及 Visual Studio 編譯您 App 標記程式碼的目標版本。 
-
-在執行階段期間，您的 App 將針對它所部署至的 OS 版本執行，因此如果您使用或呼叫該版本中沒有提供使用的資源或 API，您的 App 便會擲回例外狀況。 我們稍後於本文章中會示範如何使用執行階段檢查，以呼叫正確的 API。
-
-[目標] 和 [最低] 設定指定了 OS/SDK 版本範圍的兩端。 不過，如果您在最低版本上測試您的 App，便可以確定它將可以在「最低」和「目標」之間的任何版本上執行。
-
-> [!TIP]
-> Visual Studio 不會針對 API 的相容性向您提出警告。 進行測試是您的責任，以確保您的 App 可如預期地在「最低」和「目標」的 OS 版本，以及它們之間的所有 OS 版本上執行。
-
-當您在 Visual Studio 2015 (Update 2 或更新版本) 中建立新的專案，系統會提示您設定 App 支援的「目標」和「最低」版本。 根據預設，「目標」版本是已安裝的最高 SDK 版本，而「最低」版本是已安裝的最低 SDK 版本。 您只能從已安裝在您電腦上的 SDK 版本中挑選「目標」和「最低」版本。 
-
-![在 Visual Studio 中設定目標 SDK](images/vs-target-sdk-1.png)
-
-我們通常會建議您保留預設值。 不過，如果您已安裝 SDK 的預覽版本，且您正在撰寫實際執行程式碼，您應該將 Preview SDK 的「目標」版本變更為最新的正式 SDK 版本。 
-
-若要變更 Visual Studio 中已經建立專案的「最低」和「目標」版本，請移至 [專案] -&gt; [屬性] -&gt; [應用程式] 索引標籤 -&gt; [目標預測]。
-
-![在 Visual Studio 中變更目標 SDK](images/vs-target-sdk-2.png) 
-
-如需參考，以下是各個 SDK 的組建編號：
-- Windows 10 版本 1506：SDK 版本 10240
-- Windows 10 版本 1511 (11 月更新)：SDK 版本 10586
-- Windows 10 版本 1607 (年度更新版)：SDK 版本 14393
-
-您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/downloads/sdk-archive)下載任何已發行版本的 SDK 。 您可以從 [Windows 測試人員](https://insider.windows.com/)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
-
-## <a name="write-adaptive-code"></a>撰寫調適型程式碼
-
-您可以考慮撰寫調適型程式碼 (和您針對[建立調適型 UI](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml) 所進行的考量類似)。 您可以將基底 UI 設計為在最小的螢幕上執行，然後在偵測到 App 正在較大的螢幕上執行時移動或新增元素。 使用調適型程式碼，您只要撰寫在最低 OS 版本上執行的基底程式碼，並在偵測到 App 正在具有新功能的較新版本上執行時，新增選取功能。
+如需有關 ApiInformation、API 協定以及設定 Visual Studio 的重要背景資訊，請參閱[版本調適型應用程式](version-adaptive-apps.md)。
 
 ### <a name="runtime-api-checks"></a>執行階段 API 檢查
 
-使用程式碼條件中的 [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) 類別，以測試您要呼叫的 API 是否存在。 此條件會在您的 App 每次執行時受到評估，但它只會在存在該 API (因而可供呼叫) 的裝置上被評估為 **true**。 這可讓您撰寫版本調適型程式碼，以建立使用特定 OS 版本提供之 API 的 App。
+使用程式碼條件中的 [Windows.Foundation.Metadata.ApiInformation](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.apiinformation.aspx) 類別，以測試您要呼叫的 API 是否存在。 此條件會在您的 App 每次執行時受到評估，但它只會在存在該 API (因而可供呼叫) 的裝置上被評估為 **true**。 這可讓您撰寫版本調適型程式碼，以便建立使用僅在特定 OS 版本提供之 API 的 App。
 
-這裡我們要看看以 Windows Insider Preview 中的新功能為目標的特定範例。 如需使用 **ApiInformation** 的一般概觀，請參閱 [UWP App 指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)，以及 [Dynamically detecting features with API contracts (利用 API 協定動態偵測功能)](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/) 這篇部落格文章。
+我們在這裡看一下針對 Windows Insider Preview 中的新功能示範的特定範例。 如需使用 **ApiInformation** 的一般概觀，請參閱 [UWP App 指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)，以及 [Dynamically detecting features with API contracts (利用 API 協定動態偵測功能)](https://blogs.windows.com/buildingapps/2015/09/15/dynamically-detecting-features-with-api-contracts-10-by-10/) 這篇部落格文章。
 
 > [!TIP]
 > 過多執行階段 API 檢查可能會影響您 App 的效能。 我們會在這些範例中示範這些內嵌檢查。 在實際執行程式碼中，您應該執行檢查一次，並且快取結果，然後在整個 App 中使用快取的結果。 
@@ -303,7 +271,7 @@ namespace MediaApp
 
 **根據 IsTypePresent 初始化控制項**
 
-在執行階段，呼叫 **ApiInformation.IsTypePresent** 來檢查是否有 MediaPlayerElement。 如果存在，將載入 `MediaPlayerUserControl`，如果沒有，則會載入 `MediaElementUserControl`。
+在執行階段，呼叫 **ApiInformation.IsTypePresent** 來檢查是否有 MediaPlayerElement。 如果有，您就載入 `MediaPlayerUserControl`，否則載入 `MediaElementUserControl`。
 
 **C#**
 ```csharp
@@ -329,7 +297,7 @@ public MainPage()
 ```
 
 > [!IMPORTANT]
-> 請記住，這項檢查只會將 `mediaControl` 物件設為 `MediaPlayerUserControl` 或 `MediaElementUserControl`。 您必須在程式碼中需要判斷使用 MediaPlayerElement 或 MediaElement API 的所有位置上執行這些條件式檢查。 您應該執行檢查一次並且快取結果，然後在整個 App 中使用快取的結果。
+> 請記住，這項檢查只會將 `mediaControl` 物件設定為 `MediaPlayerUserControl` 或 `MediaElementUserControl`。 您必須在程式碼中需要判斷使用 MediaPlayerElement 或 MediaElement API 的所有位置上執行這些條件式檢查。 您應該執行檢查一次並且快取結果，然後在整個 App 中使用快取的結果。
 
 ## <a name="state-trigger-examples"></a>狀態觸發程序範例
 
@@ -476,6 +444,7 @@ class IsEnumPresentTrigger : StateTriggerBase
     </VisualStateManager.VisualStateGroups>
 </Grid>
 ```
+
 ## <a name="related-articles"></a>相關文章
 
 - [UWP App 指南](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide)

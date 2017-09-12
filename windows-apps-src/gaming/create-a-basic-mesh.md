@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 網格, DirectX"
-ms.openlocfilehash: f7dc55c0a7653616a86f1cca41521c7b25c070f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 264563d2db7d48ab6a18bb15c53b00e75fbd5943
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="create-and-display-a-basic-mesh"></a>建立和顯示基本網格
 
@@ -37,6 +39,15 @@ translationtype: HT
 -   Visual Studio 2015 Direct3D 範本
 
 ## <a name="instructions"></a>指示
+
+下列步驟將示範如何建立基本的網格立方體。 
+
+
+如果您想要這些概念的談話式說明，請觀賞此影片。
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Series/Introduction-to-C-and-DirectX-Game-Development/03/player#time=7m39s:paused" width="600" height="338" allowFullScreen frameBorder="0"></iframe>
+
 
 ### <a name="step-1-construct-the-mesh-for-the-model"></a>步驟 1：建構模型的網格
 

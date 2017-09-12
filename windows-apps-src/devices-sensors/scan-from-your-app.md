@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: PatrickFarley
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
 title: "從您的 app 掃描"
 description: "在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。"
-ms.author: dbirtolo
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5233437bf1676cd63b4beebaf6b7004df2a8f0c6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c1db020b242c43808d356076641e375cb1581ed3
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="scan-from-your-app"></a>從您的 app 掃描
 

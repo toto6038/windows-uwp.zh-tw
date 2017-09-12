@@ -8,15 +8,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.assetid: 0cfa8e22-7345-47b7-b132-880bbc050d44
-ms.openlocfilehash: c7bf5db6eb7a624766438c60067c311b9e137138
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fb896ed67b79e97b504be0253081a4c29ee5fcc9
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 根據預設，所有 UWP App 都可在 Xbox One 上執行，而不需要您進行任何額外的工作。 不過，如果您希望使 App 受到注目、讓您的顧客滿意，並和 Xbox 上最佳的 App 體驗進行競爭，您應該遵循下列做法。
   > [!NOTE]
   > 開始之前，請先查看[針對 Xbox 和電視進行設計](../input-and-devices/designing-for-tv.md)中的設計指導方針。   
+
 
 ## <a name="to-build-the-best-experiences-for-xbox-one"></a>建置 Xbox One 的最佳體驗
 
@@ -26,7 +28,7 @@ Xbox 使用者喜愛他們的控制器。 若要最佳化控制器輸入，請[�
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*請務必：*繪製一個適合 10 英呎體驗的焦點矩形
 大多數 Xbox 使用者會坐在客廳電視的另一端，因此請留意標準的焦點矩形很難在 10 英呎的距離外看清楚。 若要確保具有輸入焦點的 UI 元素可以一直清楚地顯示給使用者，請遵循[焦點視覺](../input-and-devices/designing-for-tv.md#focus-visual)指導方針。 在 XAML 中，您會在您的 App 於 Xbox 上執行時免費獲得這項行為，但是 HTML App 將需要使用自訂 CSS 樣式。
 
-###    <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*請務必：*整合 SystemMediaTransportControls 類別 
+### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*請務必：*整合 SystemMediaTransportControls 類別 
 Xbox 使用者希望透過 Xbox Media Remote、Cortana (特別是「播放」和「暫停」語音命令) 及 Xbox SmartGlass 控制媒體 App。 若要免費取得這些功能，您的 App 應該使用 [SystemMediaTransportControls](https://msdn.microsoft.com/en-us/library/windows/apps/windows.media.systemmediatransportcontrols.aspx) 類別，這個類別會自動包含在 Xbox 媒體控制項中。 如果您的 App 有自訂的媒體控制項，請務必整合 **SystemMediaTransportControls** 類別以將這些功能提供給您的使用者。 如果您正在建立背景音樂 App，請整合 **SystemMediaTransportControls** 類別以確保背景音樂控制項在 Xbox 多工處理索引標籤中能正常運作。
 
 ### <a name="do-use-adaptive-ui-to-account-for-snapped-apps"></a>*請務必：*針對次應用程式使用調適型 UI
@@ -37,11 +39,18 @@ Xbox One 其中一個最獨特的功能就是使用者可以將像是 Cortana �
 > [!IMPORTANT]
   > 如果您停用溢出掃描，您必須負責確保互動式元素和文字都能維持在電視安全區域內。 
 
-###    <a name="consider-use-tv-safe-colors"></a>*請考慮︰*使用電視安全色彩 
+### <a name="consider-use-tv-safe-colors"></a>*請考慮︰*使用電視安全色彩 
 電視無法像電腦監視器一樣處理極端的色調。 請避免在您的 App 中使用高濃度色彩，這樣使用者才不會看到奇怪的條狀效果或褪色的影像。 此外請注意，由於電視之間的差異，在*您的*電視上看起來很棒的色彩，在使用者的電視上看起來可能會非常不同。 請閱讀[電視色彩](../input-and-devices/designing-for-tv.md#colors)，以了解如何讓您的 App 對每個人來說都很美觀！
 
 ### <a name="remember-you-can-disable-scaling"></a>*請記住：*您可以停用縮放比例
 UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在所有裝置上辨識。 使用 XAML 的 App 會放大 200%，而使用 HTML 的 App 則會放大 150%。 如果您想要取得更多 Xbox 上的 App 外觀控制項，請停用預設縮放比例以使用 HDTV 的實際像素維度 (1920x1080)。 如需有關自訂 App 以在 Xbox 上看起來更美觀的詳細資訊，請查看[如何關閉縮放比例](disable-scaling.md)及[有效像素與縮放](../layout/design-and-ui-intro.md#effective-pixels-and-scaling)。
+
+
+如果您想要了解一下這些適用於 UWP app 的做法，請觀查這段影片！
+</br>
+</br>
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Tailoring-your-UWP-app-for-Xbox/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
 
 ## <a name="channel-9"></a>Channel 9
 下列在 [Channel 9](https://channel9.msdn.com/) 上的討論，是在 Xbox 上建置優秀 App 的絕佳資訊來源：

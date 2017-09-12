@@ -3,15 +3,17 @@ author: mcleanbyron
 description: "使用「Windows 市集提交 API」中的這個方法，來更新套件正式發行前小眾測試版提交的套件推出百分比。"
 title: "更新正式發行前小眾測試版提交的推出百分比"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, Windows 市集提交 API, 套件推出, 正式發行前小眾測試版提交, 更新, 百分比"
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
-ms.openlocfilehash: 55b9a67be032e3c2d3497bba0061afcb8218ce33
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 62a1439c923c48aa163f992bac811138205f77d8
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>更新正式發行前小眾測試版提交的推出百分比
 
@@ -26,8 +28,6 @@ translationtype: HT
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在「開發人員中心」儀表板中執行此操作，或是使用[建立 App 提交](create-an-app-submission.md)方法來執行此操作。
 * 啟用提交的漸進式套件推出。 您可以在[開發人員中心儀表板](../publish/gradual-package-rollout.md)中執行此操作，或是[使用 Windows 市集提交 API](manage-flight-submissions.md#manage-gradual-package-rollout) 來執行此操作。
-
->**注意**&nbsp;&nbsp;這個方法僅供用於已被授權使用「Windows 市集提交 API」的「Windows 開發人員中心」帳戶。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -53,7 +53,7 @@ translationtype: HT
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 App 的「市集識別碼」，此 App 包含您想要更新其套件推出百分比的套件正式發行前小眾測試版提交。 如需有關「市集識別碼」的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字串 | 必要。 套件正式發行前小眾測試版的識別碼，此正式發行前小眾測試版包含您想要更新其套件推出百分比的提交。 此識別碼可從「開發人員中心」儀表板中取得，而且包含在[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 的套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中。  |
+| flightId | 字串 | 必要。 套件正式發行前小眾測試版的識別碼，此正式發行前小眾測試版包含您想要更新其套件推出百分比的提交。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。  |
 | submissionId | 字串 | 必要。 您想要更新其套件推出百分比之提交的識別碼。 此識別碼可從「開發人員中心」儀表板中取得，並且包含在[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)要求的回應資料中。  |
 | percentage  |  浮點數  |  必要。 將接收漸進式推出套件的使用者百分比。  |
 

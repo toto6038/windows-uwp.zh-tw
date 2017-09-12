@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: "App 啟動效能的最佳做法"
 description: "透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) app。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9ab3eeeffbab26f5d26d28160a750c50d53b7e96
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e36103953ad3fb04ee5beef7e263fc326f817c0b
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
@@ -55,7 +57,7 @@ Ngen.exe 會預先編譯電腦上所有已經使用且沒有原生映像的應�
 
 ### <a name="defer-work-as-long-as-possible"></a>盡可能將工作延長
 
-若要增加應用程式的啟動時間，請只做絕對必須做的工作，讓使用者開始與應用程式互動。 如果您可以延遲載入其他組件，這將特別實用。 Common Language Runtime 會在第一次使用組件時載入它。 如果您可以將要載入的組件數目減至最少，就可能改善 App 的啟動時間及其記憶體的消耗量。
+為了改善應用程式的啟動時間，請只做絕對必須做的工作，讓使用者開始與應用程式互動。 如果您可以延遲載入其他組件，這將特別實用。 Common Language Runtime 會在第一次使用組件時載入它。 如果您可以將要載入的組件數目減至最少，就可能改善 App 的啟動時間及其記憶體的消耗量。
 
 ### <a name="do-long-running-work-independently"></a>讓長時間執行的工作獨立執行
 
@@ -108,7 +110,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 
 ![即時視覺化樹狀結構。](images/live-visual-tree.png)
 
-**使用 x:DeferLoadStrategy**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:DeferLoadStrategy，您便可延遲載入某個 UI 片段，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例或詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
+**使用延遲**。 將元素摺疊或將其不透明度設定為 0 並不會防止建立該元素。 使用 x:Load 或 x:DeferLoadStrategy，您便可延遲載入某個 UI，而在需要時才載入它。 這是一個相當好的方式，可延遲處理在啟動畫面期間不顯示的 UI，讓您在需要時才載入該 UI，或是隨著延遲邏輯一起載入。 若要觸發載入，您只需要針對該元素呼叫 FindName。 如需範例和詳細資訊，請參閱 [x:Load 屬性](../xaml-platform/x-load-attribute.md)和 [x:DeferLoadStrategy 屬性](https://msdn.microsoft.com/library/windows/apps/Mt204785)。
 
 **虛擬化**。 如果您的 UI 中有清單或重複器內容，則強烈建議您使用 UI 虛擬化。 如果不將清單 UI 虛擬化，代價就是會在最前面建立所有元素，而這會導致啟動變慢。 請參閱 [ListView 與 GridView UI 最佳化](optimize-gridview-and-listview.md)。
 
@@ -365,4 +367,3 @@ PageStackEntry 也包含傳遞給 Frame.Navigate() 方法的參數。 建議使�
 頁面快取可藉由避免具現化來協助改善效能，進而提升瀏覽效能。 頁面快取可能因過度快取，進而影響到工作集，而導致效能降低。
 
 因此，建議針對您的應用程式適當地使用頁面快取。 例如，假設您有一個會在「框架」中顯示項目清單的 App，而當您點選某個項目時，框架會瀏覽到該項目的詳細資料頁面。 清單頁面或許就應該設定為要快取。 如果所有項目的詳細資料頁面都相同，則或許也應該快取該頁面。 但是，如果詳細資料頁面是較異質的頁面，則將快取維持關閉可能較好。
-

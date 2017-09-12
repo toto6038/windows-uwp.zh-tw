@@ -4,20 +4,20 @@ Description: "App 提交程序的 [應用程式屬性] 頁面可讓您定義 app
 title: "輸入應用程式屬性"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 31385fe3edb9d9f38a4f444c84ef189faed49985
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
+ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="enter-app-properties"></a>輸入應用程式屬性
 
-[App 提交程序](app-submissions.md)的 **\[應用程式屬性\]** 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
-
-> **注意**  年齡分級現為提交程序的一個獨立頁面。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
+[應用程式提交程序](app-submissions.md)的 [**屬性**] 頁面可讓您定義應用程式的類別，並指出硬體喜好設定或其他宣告。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
 
 ## <a name="category-and-subcategory"></a>類別與子類別
 
@@ -25,11 +25,20 @@ translationtype: HT
 
 如需詳細資訊，請參閱[類別與子類別表格](category-and-subcategory-table.md)。
 
+## <a name="game-settings"></a>遊戲設定
+
+您選取 [**遊戲**] 做為產品類別時，此區段才會出現。 您可在此指定遊戲支援的功能。 您在此區段中提供的所有資訊，都將在產品的市集清單中顯示。
+
+如果您的遊戲支援任何多人遊戲選項，請務必指出一場遊戲可參與的玩家人數下限和上限。 您無法輸入超過 1,000 名玩家下限或上限。
+
+**跨平台多人遊戲**表示，遊戲支援在 Windows 10 電腦和 Xbox 之間的多人工作階段。
+
+
 ## <a name="product-declarations"></a>產品宣告
 
 您可以核取此區段中的方塊以指出是否有任何宣告適用於您的 App。 這可能會影響應用程式顯示的方式、應用程式是否會提供給某些客戶，或者客戶可以使用應用程式的方式。
 
-如需詳細資訊，請參閱 [App 宣告](app-declarations.md)。
+如需詳細資訊，請參閱 [產品宣告](app-declarations.md)。
 
 ## <a name="system-requirements"></a>系統需求
 
@@ -52,6 +61,7 @@ translationtype: HT
 
 我們也建議您將指定硬體的執行階段檢查新增到您的 App 中，因為市集不一定能夠偵測到客戶的裝置缺少選取的功能，而且即使顯示警告，他們仍然能夠下載您的 App。
 
-> **提示**  如果您希望完全避免您的 UWP 應用遲是在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 StoreManifest XML 檔案中指定最低需求。 如需詳細資訊，請參閱 [StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
+> [!TIP]
+> 如果您希望完全避免您的 UWP 應用遲是在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 StoreManifest XML 檔案中指定最低需求。 如需詳細資訊，請參閱 [StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
 
 

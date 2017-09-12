@@ -6,14 +6,19 @@ ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b14c775896984095f580aed8cf41d010f408f67e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 2a3f3d6795276df6e3436c5ae6eff42551d03478
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="labels"></a>標籤
 
@@ -21,20 +26,9 @@ translationtype: HT
 
 標籤是控制項或一組相關控制項的名稱或標題。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>Header 屬性</li>
-<li>[**TextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/br209652)</li>
-</ul>
-</div>
+> **重要 API**：Header 屬性、[TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-
-在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)。
-
-
-## <a name="example"></a>範例
-
+在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
 ![說明標準標籤控制項的螢幕擷取畫面](images/label-standard.png)
 
@@ -51,17 +45,15 @@ translationtype: HT
 
 ## <a name="related-topics"></a>相關主題
 * [文字控制項](text-controls.md)
-
-**適用於開發人員**
-* [**TextBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**PasswordBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**ToggleSwitch.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**DatePicker.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**TimePicker.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Slider.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**ComboBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**RichEditBox.Header 屬性**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**TextBlock 類別**](https://msdn.microsoft.com/library/windows/apps/br209652)
+* [TextBox.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [PasswordBox.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [ToggleSwitch.Header 屬性](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [DatePicker.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [TimePicker.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [Slider.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [ComboBox.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [RichEditBox.Header 屬性](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 

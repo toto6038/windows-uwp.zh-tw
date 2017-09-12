@@ -6,20 +6,24 @@ ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: Master/details
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d5933eec7b2f34b2c5939bb083113dfd3a1f965d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 49a586aac0c846cdad02f8448532238bd3eb8551
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 主要/詳細資料模式具有一個主要窗格 (通常會有一個[清單檢視](lists.md)) 和內容的詳細資料窗格。 當選取主要清單中的項目時，會更新詳細資料窗格。 這個模式經常用於電子郵件和通訊錄。
+
+> **重要 API**：[ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)、[SplitView 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.splitview)
 
 ![主要/詳細資料模式的範例](images/HIGSecOne_MasterDetail.png)
 
@@ -73,17 +77,11 @@ translationtype: HT
 
 針對詳細資料窗格，請使用最適合的內容元素。 如果您有許多個別的欄位，請考慮使用格線配置來將元素排列成表單。
 
-## <a name="examples"></a>範例
+## <a name="get-the-code-samples"></a>取得程式碼範例
 
-這個用來追蹤股市的應用程式設計使用了主要/詳細資料模式。 在此顯示於手機上的應用程式範例中，主要窗格/清單會位於左邊，而詳細資料窗格會位於右邊。
+如需顯示主要/詳細資料模式的範例程式碼，請參閱下列範例： 
 
-![手機上使用主要/詳細資料模式的應用程式範例](images/uap-finance-phone-masterdetails-600.png)
-
-這個用來追蹤股市的應用程式設計使用了主要/詳細資料模式。 在此顯示於桌面上的應用程式範例中，可同時看見主要窗格/清單和詳細資料窗格，並以全螢幕顯示。 主要窗格頂端會有搜尋方塊，底部會有命令列。
-
-![桌面上使用主要/詳細資料模式的應用程式範例](images/uap-finance-desktop700.png)
-
-如需顯示主要/詳細資料模式的範例程式碼，請參閱
+- [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database) 
 - [ListView 和 GridView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 - [RSS 閱讀程式範例](https://github.com/Microsoft/Windows-appsample-rssreader)
 
@@ -92,4 +90,4 @@ translationtype: HT
 - [清單](lists.md)
 - [搜尋](search.md)
 - [應用程式列和命令列](app-bars.md)
-- [**ListView 類別 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [ListView 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.ListView)

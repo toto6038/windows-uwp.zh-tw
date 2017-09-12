@@ -1,17 +1,19 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: "本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。"
 title: "搭配使用彈性資料流與 PlayReady"
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f7bd47c4c8ae7ce5515e3c53571655fd32d36e1a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: aebd2e2de0b1c4991b69b02f1f215ab58feef4a9
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="adaptive-streaming-with-playready"></a>搭配使用彈性資料流與 PlayReady
 

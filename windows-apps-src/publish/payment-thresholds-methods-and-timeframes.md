@@ -3,15 +3,17 @@ author: jnHs
 Description: "轉撥款項的預估時間、適用的付款門檻，以及您可以收到款項所在的 Microsoft 市場可能會依您的國家/地區以及支付帳戶類型而有所不同。"
 title: "付款門檻、方式和時間範圍"
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
-ms.openlocfilehash: 2d2f586a1125f12c1034e002e2245e0fe155c1b4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0d0e421108de5daecb552c606b3f2c00b722fb89
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款門檻、方式和時間範圍
 
@@ -23,22 +25,24 @@ translationtype: HT
 
 我們通常會在某個指定月份，於該月份的 15 日之前發送任何應付款項，但是還需要一天的時間，款項才會進入您的帳戶。 天數將取決於我們針對您的帳戶所使用的付款方式，如下所述。 
 
-> **注意** 以下所示的是大概的天數；任何指定的支付可能需要較長或較短的時間。
+> [!NOTE]
+> 以下所示的是大概的天數；任何指定的支付可能需要較長或較短的時間。
 
 
-| 付款方式 | 進入支付帳戶所需的天數 |
+| 付款方式     | 進入支付帳戶所需的天數     |
 |--------------------|--------------------------------------------|
-| PayPal | 1 個工作天 |    
-| ACH/SEPA |2-3 個工作天 |
-| 電匯 | 7-10 個工作天 |
+| PayPal             | 1 個工作天                             | 
+| ACH/SEPA           | 2-3 個工作天                          |
+| 電匯      | 7-10 個工作天                         |
 
 &nbsp;
 
-若要查看每個市場所使用的這些付款方式所在的國家/地區，請參閱下表。
+若要查看每個市場所使用的這些付款方式所在的國家/地區，請檢閱下表。
 
 ## <a name="payment-thresholds-and-methods"></a>付款門檻和方式
 
-> **注意** 付款門檻以美元列出。 在某些市場中，會使用當地貨幣對等項目。 
+> [!NOTE]
+> 付款門檻在此以美元列出。 在某些市場中，會使用當地貨幣對等項目。 
 
 - [Windows 市集](#windows-store)
 - [Microsoft Advertising](#microsoft-advertising)

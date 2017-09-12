@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: "讓 UI 執行緒保持回應"
 description: "不論使用何種電腦，使用者都希望應用程式在進行計算時仍然能夠回應。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 921af1b7f408bed5f846af631592755d48a37dd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d5be2a8ea14f35d048b4402f2cfb1018d5998c3d
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="keep-the-ui-thread-responsive"></a>讓 UI 執行緒保持回應
 
@@ -29,7 +31,7 @@ translationtype: HT
 
 app 中最慢的一些階段包括啟動和切換檢視。 顯示使用者最初看到的 UI 時不要太過花俏。 例如，不要建立那種逐漸展露 UI 和快顯內容的 UI。
 
--   使用 [x: DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) 延遲具現化元素。
+-   使用[x:Load 屬性](../xaml-platform/x-load-attribute.md)或[x: DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785)延遲具現化元素。
 -   以程式設計方式隨需將元素插入樹狀目錄。
 
 [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) 佇列適用於 UI 執行緒不忙碌時處理。
@@ -107,4 +109,3 @@ public class AsyncExample
 ## <a name="related-topics"></a>相關主題
 
 * [自訂使用者互動](https://msdn.microsoft.com/library/windows/apps/Mt185599)
-

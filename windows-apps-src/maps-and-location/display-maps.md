@@ -1,39 +1,46 @@
 ---
-author: msatranjr
+author: normesta
 title: "顯示 2D、3D 和 Streetside 檢視的地圖"
 description: "藉由使用 MapControl 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和街景檢視。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.author: misatran
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 07/31/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地圖, 位置, 地圖控制項, 地圖檢視"
-translationtype: Human Translation
-ms.sourcegitcommit: 32b5230d62f23430393fc51c73f80fa46bd525fa
-ms.openlocfilehash: 7a1687ceb188fdd28943f807b877b28e93ae6937
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: a926188912cf0cd36e1bc787e7c0cbc32f8ae95b
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/08/2017
 ---
-
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>顯示 2D、3D 和街景檢視的地圖
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
+藉由使用 [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。
 
-藉由使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 類別，即可在您的 app 中顯示可自訂的地圖。 本主題也會介紹空照圖 3D 和 Streetside 檢視。
+> [!NOTE]
+> 若要深入了解如何在應用程式中使用地圖，請下載[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+<span id="map-control" />
+## <a name="the-map-control"></a>地圖控制項
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+地圖控制項可顯示地圖、空照圖、3D 圖、檢視、方向、搜尋結果及交通路況。 您可以在地圖上顯示使用者的位置、方向，以及感興趣的地點。 地圖也可以顯示空照圖 3D 檢視、Streetside 檢視、交通路況、大眾運輸和當地企業。
+
+當您想要 app 內有地圖時，請使用地圖控制項讓使用者能夠檢視 app 專屬或一般地理資訊。 在 app 中擁有地圖控制項，表示使用者不需要離開您的 app 便可取得該資訊。
+
+> [!NOTE]
+>如果您不介意使用者離開您的應用程式，請考慮使用 Windows 地圖 app 來提供該資訊。 您的 app 可以啟動 Windows 地圖 app 來顯示特定的地圖、方向以及搜尋結果。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
 ## <a name="add-the-map-control-to-your-app"></a>將地圖控制項新增至您的 app
 
 
 藉由新增 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)，在 XAML 頁面上顯示地圖。 若要使用 **MapControl**，您必須在 XAML 頁面或您的程式碼中宣告 [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 命名空間。 如果您從工具箱拖曳控制項，會自動新增此命名空間宣告。 如果您是手動將 **MapControl** 新增到 XAML 頁面，就必須在頁面頂端手動新增命名空間宣告。
 
-下列範例顯示基本的地圖控制項，並設定讓地圖在除了接受觸控輸入之外，還能顯示縮放和傾斜控制項。 如需有關自訂地圖外觀的詳細資訊，請參閱[設定地圖](#configure-the-map)。
+下列範例顯示基本的地圖控制項，並設定讓地圖在除了接受觸控輸入之外，還能顯示縮放和傾斜控制項。 如需有關自訂地圖外觀的詳細資訊，請參閱[設定地圖](#mapconfig)。
 
 ```xml
 <Page
@@ -82,10 +89,10 @@ pageGrid.Children.Add(MapControl2);
 
 藉由在您的程式碼中指定 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637005) 的 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性，或在您的 XAML 標記中繫結該屬性，即可設定要在地圖上顯示的位置。 下列範例會顯示以西雅圖市為中心的地圖。
 
-**提示**  由於字串無法轉換成 [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675)，因此您無法在 XAML 標記中指定 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) 屬性的值，除非您使用資料繫結。 (這項限制也適用於 [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) 附加屬性。)
+> [!NOTE]
+> 由於字串無法轉換成[**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675)，因此您無法在 XAML 標記中指定[**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)屬性的值，除非您使用資料繫結。 (這項限制也適用於 [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) 附加屬性。)
 
  
-
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -103,7 +110,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ![地圖控制項的範例。](images/displaymapsexample1.png)
 
 ## <a name="set-the-current-location-of-the-map"></a>設定地圖的目前位置
-
 
 您的 app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法，才能存取使用者的位置。 此時，您的 app 必須在前景，且 **RequestAccessAsync** 必須是從 UI 執行緒呼叫。 在使用者授與您的 app 存取其位置的權限之前，您的 app 將無法存取位置資料。
 
@@ -141,31 +147,92 @@ switch (accessStatus)
 
 ## <a name="change-the-location-of-the-map"></a>變更地圖的位置。
 
-
 若要變更顯示於 2D 地圖的位置，您可以呼叫 [**TrySetViewAsync**](https://msdn.microsoft.com/library/windows/apps/dn637060) 方法的其中一個多載。 使用該方法來為 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)、[**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068)、[**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) 和 [**Pitch**](https://msdn.microsoft.com/library/windows/apps/dn637044) 指定新的值。 您也可以提供 [**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列舉中的常數，以指定要在檢視變更時使用的選用動畫。
 
-若要變更 3D 地圖的位置，您可以改用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 如需詳細資訊，請參閱[顯示 3D 檢視](#display-aerial-3d-views)。
+若要變更 3D 地圖的位置，您可以改用 [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) 方法。 如需詳細資訊，請參閱[顯示 3D 檢視](#display3d)。
 
 呼叫 [**TrySetViewBoundsAsync**](https://msdn.microsoft.com/library/windows/apps/dn637065) 方法，在地圖上顯示 [**GeoboundingBox**](https://msdn.microsoft.com/library/windows/apps/dn607949) 的內容。 例如，您可以使用此方法在地圖上顯示一條路線或路線的一部分。 如需詳細資訊，請參閱[在地圖上顯示路線和路線指引](routes-and-directions.md)。
 
-## <a name="configure-the-map"></a>設定地圖
+## <a name="customize-the-appearance-of-the-map"></a>自訂地圖的外觀。
 
+若要自訂地圖的外觀及操作，請將地圖控制項的 [**StyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_StyleSheet) 屬性設定為任何現有的 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) 物件。
 
-設定下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，以設定地圖與其外觀。
+```csharp
+myMap.StyleSheet = MapStyleSheet.RoadDark();
+```
 
-**地圖設定**
+![深色樣式地圖](images/style-dark.png)
+
+您也可以使用 JSON 來定義自訂樣式，接著使用該 JSON 來建立 [**MapStyleSheet**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) 物件。
+
+```csharp
+myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
+    {
+        ""version"": ""1.0"",
+        ""settings"": {
+            ""landColor"": ""#FFFFFF"",
+            ""spaceColor"": ""#000000""
+        },
+        ""elements"": {
+            ""mapElement"": {
+                ""labelColor"": ""#000000"",
+                ""labelOutlineColor"": ""#FFFFFF""
+            },
+            ""water"": {
+                ""fillColor"": ""#DDDDDD""
+            },
+            ""area"": {
+                ""fillColor"": ""#EEEEEE""
+            },
+            ""political"": {
+                ""borderStrokeColor"": ""#CCCCCC"",
+                ""borderOutlineColor"": ""#00000000""
+            }
+        }
+    }
+");
+```
+
+![自訂樣式地圖](images/style-custom.png)
+
+如需完整的 JSON 項目參考，請參閱[地圖樣式表參考](elements-of-map-style-sheet.md)。
+
+您可以從現有樣式表開始，然後使用 JSON 覆寫您想要的任何項目。 此範例從現有的樣式開始，並使用 JSON 變更水域的色彩。
+
+```csharp
+MapStyleSheet customSheet = MapStyleSheet.ParseFromJson(@"
+    {
+        ""version"": ""1.0"",
+        ""elements"": {
+            ""water"": {
+                ""fillColor"": ""#DDDDDD""
+            }
+        }
+    }
+");
+
+MapStyleSheet builtInSheet = MapStyleSheet.RoadDark();
+
+myMap.StyleSheet = MapStyleSheet.Combine(new List<MapStyleSheet> { builtInSheet, customSheet });
+```
+
+![結合樣式地圖](images/style-combined.png)
+
+>[!NOTE]
+>您在第二個樣式表中定義的樣式會覆寫第一個表中的樣式。
+
+## <a name="change-the-orientation-and-perspective-of-the-map"></a>變更地圖的角度和方向
+
+放大、縮小、旋轉及傾斜地圖的鏡頭以取得您想要的正確效果角度。 請試試這些屬性。
 
 -   設定 [**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) 屬性，將地圖的**中心**設定為某個地理點。
 -   將 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 屬性設定為 1 到 20 之間的值，以設定地圖的**縮放層級**。
 -   設定 [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) 屬性以設定地圖的**旋轉**，其中 0 或 360 度 = 北、90 = 東、180 = 南、270 = 西。
 -   將 [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) 屬性設定為 0 到 65 度之間的值，以設定地圖的**傾斜**。
 
-**地圖外觀**
+## <a name="show-and-hide-map-features"></a>顯示或隱藏地圖功能
 
--   利用其中一個 [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637051) 常數設定 [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637127) 屬性，以指定地圖的**類型** (例如，路面地圖或空照圖地圖)。
--   利用其中一個 [**MapColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637010) 常數設定 [**ColorScheme**](https://msdn.microsoft.com/library/windows/apps/dn637003) 屬性，將地圖的**色彩配置**設定為淺色或深色。
-
-設定下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，顯示地圖上的資訊。
+設定下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性的值，以顯示或隱藏地圖功能，例如道路和地標。
 
 -   啟用或停用 [**LandmarksVisible**](https://msdn.microsoft.com/library/windows/apps/dn637023) 屬性，在地圖上顯示**建築物與地標**。
 -   啟用或停用 [**PedestrianFeaturesVisible**](https://msdn.microsoft.com/library/windows/apps/dn637042) 屬性，在地圖上顯示**行人功能**，例如公共樓梯。
@@ -260,7 +327,7 @@ private async void display3DLocation()
       MapControl1.Style = MapStyle.Aerial3DWithRoads;
 
       // Specify the location.
-      BasicGeoposition hwGeoposition = new BasicGeoposition() { Latitude = 34.134, Longitude = -118.3216};
+      BasicGeoposition hwGeoposition = new BasicGeoposition() { Latitude = 43.773251, Longitude = 11.255474};
       Geopoint hwPoint = new Geopoint(hwGeoposition);
 
       // Create the map scene.
@@ -313,6 +380,14 @@ private async void display3DLocation()
 -   [**PitchChanged**](https://msdn.microsoft.com/library/windows/apps/dn637045)
 -   [**ZoomLevelChanged**](https://msdn.microsoft.com/library/windows/apps/dn637069)
 
+## <a name="best-practice-recommendations"></a>最佳做法推薦
+
+-   使用充裕的螢幕空間 (或整個螢幕) 來顯示地圖，讓使用者不需要過度平移和縮放即可檢視地理資訊。
+
+-   如果地圖只用來呈現靜態的參考檢視，使用較小的地圖可能更適合。 如果您使用較小的靜態地圖，請根據可用性設定尺寸—設為較小的尺寸以保留足夠的螢幕實際可用空間，但尺寸也要夠大以保持清晰易讀。
+
+-   使用 [**map elements**](https://msdn.microsoft.com/library/windows/apps/dn637034) 在地圖場景中內嵌感興趣的地點；任何額外的資訊都可以透過與地圖場景重疊的暫時性 UI 方式顯示。
+
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
@@ -323,4 +398,3 @@ private async void display3DLocation()
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
 * [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)
-

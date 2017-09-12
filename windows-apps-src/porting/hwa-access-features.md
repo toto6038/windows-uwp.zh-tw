@@ -9,17 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "託管的 Web 應用程式, 適用 JavaScript 的 WinRT API, Win10 Web 應用程式, Windows JavaScript 應用程式, ApplicationContentUriRules, ACURs, msapplication-cortanavcd, 適用 Web 應用程式的 Cortana"
-ms.assetid: 86ca4590-2675-4de2-b825-c586d9669b8e
-translationtype: Human Translation
-ms.sourcegitcommit: 5645eee3dc2ef67b5263b08800b0f96eb8a0a7da
-ms.openlocfilehash: ccb59581227db82b8566da11d6db731b362ec258
-ms.lasthandoff: 02/08/2017
-
+ms.openlocfilehash: 86661353916e64cb2ed4d7f0ca7b8830bfe95685
+ms.sourcegitcommit: a704e3c259400fc6fbfa5c756c54c12c30692a31
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
+# <a name="accessing-uwp-features"></a>存取 UWP 功能
 
-# <a name="accessing-universal-windows-platform-uwp-features"></a>存取通用 Windows 平台 (UWP) 功能
-
-您的 Web 應用程式可完整存取通用 Windows 平台 (UWP)、在 Windows 裝置上啟用原生功能、[享受 Windows 安全性](#keep-your-app-secure--setting-application-content-uri-rules-acurs)的各種優勢、直接從伺服器上託管的指令碼[呼叫 Windows 執行階段 API](#call-windows-runtime-apis)、運用 [Cortana 整合](#integrate-cortana-voice-commands)，以及使用[線上驗證提供者](#web-authentication-broker)。 此外亦支援[混合式應用程式](#create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps)，因為您可將要從託管指令碼呼叫的本機程式碼包含在內，以及管理 App 在遠端和本機頁面之間的瀏覽。
+您的 Web 應用程式可完整存取通用 Windows 平台 (UWP)、在 Windows 裝置上啟用原生功能、[享受 Windows 安全性](#keep-your-app-secure--setting-application-content-uri-rules-acurs)的各種優勢、直接從伺服器上託管的指令碼[呼叫 Windows 執行階段 API](#call-windows-runtime-apis)、運用 [Cortana 整合](#integrate-cortana-voice-commands)，以及使用[線上驗證提供者](#web-authentication-broker)。 此外亦支援[混合式應用程式](##create-hybrid-apps--packaged-web-apps-vs-hosted-web-apps)，因為您可將要從託管指令碼呼叫的本機程式碼包含在內，以及管理 App 在遠端和本機頁面之間的瀏覽。
 
 ## <a name="keep-your-app-secure--setting-application-content-uri-rules-acurs"></a>保護 App 安全 – 設定應用程式內容 URI 規則 (ACUR)
 
@@ -41,7 +39,7 @@ ms.lasthandoff: 02/08/2017
 ```HTML
 <Application
 Id="App"
-StartPage="http://contoso.com/home">
+StartPage="https://contoso.com/home">
 <uap:ApplicationContentUriRules>
     <uap:Rule Type="include" Match="https://contoso.com/" WindowsRuntimeAccess="all" />
     <uap:Rule Type="include" Match="https://*.contoso.com/" WindowsRuntimeAccess="all" />
@@ -67,7 +65,7 @@ StartPage="http://contoso.com/home">
 </uap:ApplicationContentUriRules>
 ```
 
-這可以讓正在 http://contoso.com/ 執行的指令碼，存取 Windows 執行階段命名空間與套件中的自訂封裝元件。 對於快顯通知，請參閱 GitHub 上的 [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) 範例。
+這可以讓正在 https://contoso.com/ 執行的指令碼，存取 Windows 執行階段命名空間與套件中的自訂封裝元件。 對於快顯通知，請參閱 GitHub 上的 [Windows.UI.Notifications.js](https://gist.github.com/Gr8Gatsby/3d471150e5b317eb1813#file-windows-ui-notifications-js) 範例。
 
 以下是關於如何實作動態磚並透過遠端 JavaScript 進行更新的範例︰
 
@@ -77,12 +75,12 @@ function updateTile(message, imgUrl, imgAlt) {
 
     if (typeof Windows !== 'undefined'&&
             typeof Windows.UI !== 'undefined' &&
-            typeof Windows.UI.Notifications !== 'undefined') {    
+            typeof Windows.UI.Notifications !== 'undefined') {  
         var notifications = Windows.UI.Notifications,
         tile = notifications.TileTemplateType.tileSquare150x150PeekImageAndText01,
         tileContent = notifications.TileUpdateManager.getTemplateContent(tile),
         tileText = tileContent.getElementsByTagName('text'),
-        tileImage = tileContent.getElementsByTagName('image');    
+        tileImage = tileContent.getElementsByTagName('image');  
         tileText[0].appendChild(tileContent.createTextNode(message || 'Demo Message'));
         tileImage[0].setAttribute('src', imgUrl || 'https://unsplash.it/150/150/?random');
         tileImage[0].setAttribute('alt', imgAlt || 'Random demo image');    
@@ -112,7 +110,7 @@ function updateTile(message, imgUrl, imgAlt) {
 以下範例是在託管的 Web 應用程式的 HTML 頁面中使用該標籤：
 
 ```HTML
-<meta name="msapplication-cortanavcd" content="http:// contoso.com/vcd.xml"/>
+<meta name="msapplication-cortanavcd" content="https:// contoso.com/vcd.xml"/>
 ```
 
 如需 Cortana 整合與 VCD 的詳細資訊，請參閱 Cortana 互動與語音命令定義 (VCD) 元素和屬性 v1.2。
@@ -129,33 +127,33 @@ function updateTile(message, imgUrl, imgAlt) {
 <meta name="ms-webauth-uris" content="https://<providerstartpoint>?client_id=<clientid>&response_type=token, https://<appendpoint>"/>
 ```
 
-如需詳細指導方針，請參閱[線上提供者的 Web 驗證代理人考量](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)。
+如需詳細指導方針，請參閱[線上提供者的 Web 驗證代理人考量](../security/web-authentication-broker.md)。
 
 ## <a name="app-capability-declarations"></a>應用程式功能宣告
 
 若您的 App 需要以程式設計方式存取使用者資源 (例如圖片) 或裝置 (例如相機或麥克風)，則您必須宣告適當的功能。 有三種應用程式功能宣告類別： 
 
-- 適用於大部分通用 App 案例的[一般用途功能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#General-use_capabilities)。 
-- 可讓您的應用程式存取周邊和內部裝置的[裝置功能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Device_capabilities)。 
-- 需要特殊公司帳戶以送出到「市集」來使用它們的[特殊用途功能](https://msdn.microsoft.com/library/windows/apps/Mt270968.aspx#Special_and_restricted_capabilities)。 
+- 適用於大部分通用 App 案例的[一般用途功能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#general-use-capabilities)。 
+- 可讓您的應用程式存取周邊和內部裝置的[裝置功能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#device-capabilities)。 
+- 需要特殊公司帳戶以送出到「市集」來使用它們的[特殊用途功能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#special-and-restricted-capabilities)。 
 
-如需有關公司帳戶的詳細資訊，請參閱[帳戶類型、位置和費用](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx)。
+如需有關公司帳戶的詳細資訊，請參閱[帳戶類型、位置和費用](https://docs.microsoft.com/en-us/windows/uwp/publish/account-types-locations-and-fees)。
 
 > [!NOTE]
 > 請務必了解，當客戶從 Windows 市集取得您的應用程式時，會得知該應用程式宣告的所有功能。 因此，請勿使用您 App 不需要的功能。
 
-您可藉由在 App 的[套件資訊清單](https://msdn.microsoft.com/library/windows/apps/br211474.aspx)中宣告功能，以要求存取權。 您可以使用 Microsoft Visual Studio 中的[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/xaml/hh454036(v=vs.140).aspx#Configure)來宣告一般功能，也可選擇以手動方式新增 - 請參閱[如何在套件資訊清單中指定功能](https://msdn.microsoft.com/library/windows/apps/br211477.aspx)。
+您可藉由在應用程式的[封裝資訊清單](https://docs.microsoft.com/en-us/uwp/schemas/appxpackage/appx-package-manifest)中宣告功能，以要求存取權。 如需詳細資訊，請在[封裝通用 Windows 平台 (UWP) 應用程式](https://docs.microsoft.com/en-us/windows/uwp/packaging/index)上參閱這些文章。
 
-部分功能提供 App 存取敏感資源的權限。 這些資源會視為敏感資源是因為其可以存取使用者的個人資料，或使用者必須付費才能使用。 受設定應用程式管理的隱私權設定，可讓使用者動態控制敏感資源的存取權。 因此，您的 App 不會假設敏感資源可隨時使用這點非常重要。 如需存取敏感資源的詳細資訊，請參閱[隱私權感知 App 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx)。
+部分功能提供應用程式存取敏感資源的權限。 這些資源會視為敏感資源是因為其可以存取使用者的個人資料，或使用者必須付費才能使用。 受設定應用程式管理的隱私權設定，可讓使用者動態控制敏感資源的存取權。 因此，您的 App 不會假設敏感資源可隨時使用這點非常重要。 如需存取敏感資源的詳細資訊，請參閱[隱私權感知 App 的指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223.aspx)。
 
 ## <a name="manifoldjs-and-the-app-manifest"></a>manifoldjs 和應用程式資訊清單
 
 可將您的網站轉變成 UWP app 的輕鬆方式，即是使用**應用程式資訊清單**和 **manifoldjs**。 應用程式資訊清單是包含 App 相關中繼資料的 xml 檔案。 其會指定如 App 的名稱、資源的連結、顯示模式、URL 和其他資料，描述如何部署和執行 App。 manifoldjs 能夠讓此程序變得非常簡單，即使在不支援 Web 應用程式的系統上亦同。 請至 [manifoldjs.com](http://www.manifoldjs.com/) 了解其運作方式的詳細資訊。 您也可以檢視此 [Windows 10 Web 應用程式簡報](http://channel9.msdn.com/Events/WebPlatformSummit/2015/Hosted-web-apps-and-web-platform-innovations?wt.mc_id=relatedsession)當中的 manifoldjs 示範。
 
 ## <a name="related-topics"></a>相關主題
-- [Windows 執行階段 API：JavaScript 程式碼範例](http://rjs.azurewebsites.net/)
+- [Windows 執行階段 API：JavaScript 程式碼範例](https://microsoft.github.io/WindowsRuntimeAPIs_Javascript_snippets/)
 - [Codepen：用於呼叫 Windows 執行階段 API 的沙箱](http://codepen.io/seksenov/pen/wBbVyb/)
-- [Cortana 互動](https://msdn.microsoft.com/library/windows/apps/dn974231.aspx)
+- [Cortana 互動](https://developer.microsoft.com/en-us/cortana)
 - [語音命令定義 (VCD) 元素和屬性 v1.2](https://msdn.microsoft.com/library/windows/apps/dn954977.aspx)
-- [線上提供者的 Web 驗證代理人考量](https://msdn.microsoft.com/library/windows/apps/dn448956.aspx)
-- [應用程式功能宣告](https://msdn.microsoft.com/ibrary/windows/apps/hh464936.aspx)
+- [線上提供者的 Web 驗證代理人考量](https://docs.microsoft.com/en-us/windows/uwp/security/web-authentication-broker)
+- [應用程式功能宣告](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations)

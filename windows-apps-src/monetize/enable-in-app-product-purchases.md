@@ -1,28 +1,29 @@
 ---
 author: mcleanbyron
-Description: "無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在應用程式中啟用這些產品。"
+Description: "無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 app 中啟用這些產品。"
 title: "啟用應用程式內產品購買"
 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
-keywords: "UWP, 附加元件, 應用程式內購買, IAP, Windows.ApplicationModel.Store"
+keywords: "UWP, 附加元件, app 內購買, IAP, Windows.ApplicationModel.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: b7cd3f5d2c566958aaf83b8f633418ce444a2eaa
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 1f7d4c60d077e3c556f0d369cc41d2e50ab9092b
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
-
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 
->**注意**&nbsp;&nbsp;本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+> [!NOTE]
+> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來啟用在應用程式內產品購買。 如果您 App 的目標是 Windows10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間 (而不是 **Windows.ApplicationModel.Store** 命名空間) 的成員。 如需詳細資訊，請參閱[這篇文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
 無論您的 App 是否免費，都可以直接從 App 內銷售內容、其他 App，或新的 App 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 App 中啟用這些產品。
 
-> **注意**&nbsp;&nbsp;試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
+> [!NOTE]
+> 試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -41,17 +42,19 @@ ms.lasthandoff: 02/07/2017
 
 針對您想要透過應用程式內產品提供的每項功能，建立一個購買選項，然後新增至您的 App。
 
-> **重要**&nbsp;&nbsp;在將您的 App 送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至 App。 如果您想要稍後再新增應用程式內產品，您就必須更新 App，然後重新送出新版本。
+> [!IMPORTANT]
+> 在將您的 App 送出至市集之前，您必須先把要呈現給客戶的所有應用程式內產品新增至 App。 如果您想要稍後再新增應用程式內產品，您就必須更新 App，然後重新送出新版本。
 
 1.  **建立應用程式內的購買選項權杖**
 
     您可以依權杖識別您應用程式中的每個應用程式內產品。 這個權杖是您定義的字串，並在應用程式和市集中用來識別特定的應用程式內產品。 請指定一個既唯一 (對您的應用程式來說) 又有意義的名稱，以便在撰寫程式碼時，可以快速地識別其正確功能。 以下是一些名稱的範例：
 
-    -   "SpaceMissionLevel4"
+    * "SpaceMissionLevel4"
+    * "ContosoCloudSave"
+    * "RainbowThemePack"
 
-    -   "ContosoCloudSave"
-
-    -   "RainbowThemePack"
+  > [!NOTE]
+  > 您在程式碼中使用的應用程式內購買選項權杖，必須符合當您[在應用程式開發人員中心儀表板中為應用程式定義對應的附加元件](../publish/add-on-submissions.md)時指定的[產品識別碼](../publish/set-your-add-on-product-id.md#product-id)值。
 
 2.  **以條件性區塊來撰寫功能的程式碼**
 
@@ -77,7 +80,10 @@ ms.lasthandoff: 02/07/2017
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>步驟 4：在市集中設定應用程式內產品購買選項
 
-在開發人員中心儀表板中，定義應用程式內產品的產品識別碼、類型、價格，以及其他屬性。 請確定在測試時，將它設定為與 WindowsStoreProxy.xml 相同的設定。 如需詳細資訊，請參閱 [IAP 提交](https://msdn.microsoft.com/library/windows/apps/mt148551)。
+在開發人員中心儀表板中，瀏覽到您的應用程式並建立符合應用程式內產品購買選項的[附加元件](../publish/add-on-submissions.md)。 定義產品識別碼、類型、價格與附加元件的其他屬性。 請確定在測試時，將它設定為與 WindowsStoreProxy.xml 相同的設定。
+
+  > [!NOTE]
+  > 您在程式碼中使用的應用程式內購買選項權杖，必須符合當您在應用程式開發人員中心儀表板中為應用程式定義對應的附加元件時指定的[產品識別碼](../publish/set-your-add-on-product-id.md#product-id)值。
 
 ## <a name="remarks"></a>備註
 
@@ -92,4 +98,3 @@ ms.lasthandoff: 02/07/2017
 * [管理大型的應用程式內產品型錄](manage-a-large-catalog-of-in-app-products.md)
 * [使用收據來驗證產品購買](use-receipts-to-verify-product-purchases.md)
 * [市集範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
-

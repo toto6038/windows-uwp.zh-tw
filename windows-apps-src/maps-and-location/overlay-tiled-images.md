@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "在地圖上重疊顯示並排影像"
 description: "藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。"
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊"
-ms.openlocfilehash: dd52df5f95b25e26ddb0fb8db50c9faf27df02ee
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: d6def6405c8a5d731259b4522dff10cb996d178c
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
@@ -97,13 +99,12 @@ Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成�
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Web 服務必須支援包含可置換參數 {x}、{y} 及 {zoomlevel} 的 URI。 大部分 Web 服務 (例如 Nokia、Bing 及 Google) 都支援此格式的 URI。 如果 Web 服務需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#provide-a-custom-uri) 一節。
+    Web 服務必須支援包含可置換參數 {x}、{y} 及 {zoomlevel} 的 URI。 大部分 Web 服務 (例如 Nokia、Bing 及 Google) 都支援此格式的 URI。 如果 Web 服務需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
 
-3.  然後，依照先前[並排影像概觀](#tiled-image-overview)中所述的其餘步驟進行。
+3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
 下列範例會在北美地圖上重疊顯示來自一個虛構 Web 服務的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 的值是在 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的建構函式中指定。 在這個範例中，只有在選擇性 [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) 屬性所指定的地理界限內，才會顯示磚。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
         private void AddHttpMapTileSource()
         {
@@ -129,6 +130,7 @@ Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成�
             MapControl1.TileSources.Add(tileSource);
         }
 ```
+
 ```cpp
 void MainPage::AddHttpMapTileSource()
 {
@@ -160,9 +162,9 @@ void MainPage::AddHttpMapTileSource()
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    如果檔案名稱格式需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#provide-a-custom-uri) 一節。
+    如果檔案名稱格式需要 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 屬性所無法提供的額外引數，您就必須建立自訂 URI。 您可以處理 [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) 事件來建立和傳回自訂 URI。 如需詳細資訊，請參閱本主題中稍後的[提供自訂 URI](#customuri) 一節。
 
-3.  然後，依照先前[並排影像概觀](#tiled-image-overview)中所述的其餘步驟進行。
+3.  然後，依照先前[並排影像概觀](#tileintro)中所述的其餘步驟進行。
 
 您可以使用下列通訊協定和位置以從本機存放區載入磚：
 

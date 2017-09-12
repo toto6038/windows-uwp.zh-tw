@@ -1,22 +1,24 @@
 ---
 author: jnHs
-Description: "若要管理您 app 的廣告活動，請在 Windows 開發人員中心儀表板上按一下您 app 頁面的 [創造營收] &gt; [促銷您的應用程式]。"
+Description: "在 Windows 開發人員中心儀表板中管理應用程式的廣告活動。"
 title: "管理您的廣告活動"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 642049a5356ec276b5cf629a7ca1c431e5c00476
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40d82d9b3ed1b450972d69e04df511496de31f67
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/21/2017
 ---
-# <a name="managing-your-ad-campaign"></a>管理您的廣告活動
+# <a name="manage-your-ad-campaign"></a>管理您的廣告活動
 
 
-若要管理您 App 的廣告活動，請在 Windows 開發人員中心儀表板上按一下您 App 頁面的 **\[創造營收\]** &gt; **\[促銷您的 App\]**。 **\[促銷您的 App\]** 頁面會列出所有與您的 App 相關聯的廣告活動，並顯示每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱 [App 安裝廣告報告](app-install-ads-reports.md)中這些詞彙的定義。
+若要管理您的應用程式的廣告活動，請展開儀表板左側導覽功能表的 **\[吸引\]**，然後選取 **\[廣告活動\]**。 您會看到所有與您的 App 相關聯的廣告活動，以及每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)中這些詞彙的定義。
 
 若要篩選廣告活動的清單，請按一下 [**區段篩選器**] 下拉式清單，然後從下列篩選器中進行選擇：
 
@@ -28,15 +30,16 @@ translationtype: HT
     -   **\[需要注意\]** 表示廣告活動發生需要您注意的問題，例如，帳務失敗或驗證失敗的自訂廣告活動。 若要修正問題，請按一下廣告活動表格上 **\[動作\]** 欄中的文字。
 -   **行銷活動類型**：這會指定是否要顯示已支付或[自家](about-house-ads.md)的廣告活動。
 
-## <a name="report"></a>報告
+## <a name="reporting"></a>報告
 
 
-若要查看廣告活動的執行方式，請在儀表板的瀏覽窗格中按一下 **\[分析\]** &gt; **\[App 安裝廣告\]**。 如需此報告的詳細資訊，請參閱 [App 安裝廣告報告](app-install-ads-reports.md)。
+在此頁面上會顯示報告的詳細資料。 如需詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)。
+
 
 ## <a name="edit-an-ad-campaign"></a>編輯廣告活動
 
-
 若要對廣告活動進行變更，請按一下它的名稱以前往該廣告活動的詳細資料頁面。 進行變更之後，按一下 **\[檢閱\]** 檢閱詳細資料，然後按一下 **\[確認\]**。
+
 
 ## <a name="related-topics"></a>相關主題
 

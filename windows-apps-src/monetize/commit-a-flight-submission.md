@@ -4,14 +4,16 @@ ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: "使用 Windows 市集提交 API 中的這個方法，將新的或或更新的套件正式發行前小眾測試版提交認可到 Windows 開發人員中心。"
 title: "認可套件正式發行前小眾測試版提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 認可正式發行前小眾測試版提交"
-ms.openlocfilehash: 5171fb89b9485ed314a8c7f0322db89019e9d512
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e0fd115dc5e394abe6c0353ba41ebc35fde086c4
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="commit-a-package-flight-submission"></a>認可套件正式發行前小眾測試版提交
 
@@ -29,8 +31,6 @@ translationtype: HT
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * [建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)，然後[更新提交](update-a-flight-submission.md)，對提交資料進行任何必要的變更。
-
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -56,7 +56,7 @@ translationtype: HT
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 包含您想要認可套件正式發行前小眾測試版提交之 App 的市集識別碼。 App 的市集識別碼可在開發人員中心儀表板上取得。  |
-| flightId | 字串 | 必要。 包含要認可提交之套件正式發行前小眾測試版的識別碼。 識別碼可在開發人員中心儀表板上取得，並且包含在[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中。  |
+| flightId | 字串 | 必要。 包含要認可提交之套件正式發行前小眾測試版的識別碼。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。  |
 | submissionId | 字串 | 必要。 要認可之提交的識別碼。 識別碼可在開發人員中心儀表板上取得，並且包含在[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)要求的回應資料中。  |
 
 <span/>

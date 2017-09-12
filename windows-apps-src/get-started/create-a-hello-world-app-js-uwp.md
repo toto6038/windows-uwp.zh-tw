@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1556cd049de767966e6beead50941ebfff443736
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bf63108a7afd5558b57a03ffcdd251c2460d3a9a
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
 
@@ -155,7 +157,7 @@ function sayHello() {
 ## <a name="summary"></a>摘要
 
 
-恭喜！您已經建立適用於 Windows 10 和 UWP 的 JavaScript App！ 這是非常簡單的範例，但是，您現在可以開始加入您最愛的 JavaScript 程式庫和架構來建立您自己的 App。 因為它是 UWP app，您可以將其發佈至市集。 如需如何新增協力廠商架構的範例，請參閱這些專案：
+恭喜！您已經建立適用於 Windows 10 和 UWP 的 JavaScript App！ 這是非常簡單的範例，但是，您現在可以開始加入您最愛的 JavaScript 程式庫和架構來建立您自己的應用程式。 因為它是 UWP app，您可以將其發佈至市集。 如需如何新增協力廠商架構的範例，請參閱這些專案：
 
 * [以 JavaScript 和 CreateJS 撰寫的適用於 Windows 市集的簡單 2D UWP 遊戲](get-started-tutorial-game-js2d.md)
 * [以 JavaScript 和 threeJS 撰寫的適用於 Windows 市集的 3D UWP 遊戲](get-started-tutorial-game-js3d.md)

@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 4A4C2802-E674-4C04-8A6D-D7C1BBF1BD20
 title: "裝置資訊屬性"
 description: "每個裝置都具有相關聯的 DeviceInformation 屬性，您可以在需要特定資訊或正在建置裝置選取器時使用。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 68e427a4d94b7c599e1fec375f0f66b5ff2704e0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 37b88b501c3bdb0f38b04f2f7b6d936cb0d201b4
+ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/31/2017
 ---
 # <a name="device-information-properties"></a>裝置資訊屬性
 
@@ -77,7 +79,7 @@ translationtype: HT
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Category**       | String\[\] | 裝置所屬類別的說明清單。 這份清單會以單數類別的形式提供。 例如，「顯示器」、「電話」或「音訊裝置」。  |
 | **System.Devices.CategoryIds**    | String\[\] | 包含此裝置所屬類別的清單。 例如，**Audio.Headphone**、**Display.Monitor** 或 **Input.Gaming**。                                  |
-| **System.Devices.CateogryPlural** | String\[\] | 裝置所屬類別的說明清單。 這份清單會以複數類別的形式提供。 例如，「顯示器」、「電話」或「音訊裝置」。 |
+| **System.Devices.CategoryPlural** | String\[\] | 裝置所屬類別的說明清單。 這份清單會以複數類別的形式提供。 例如，「顯示器」、「電話」或「音訊裝置」。 |
 | **System.Devices.CompatibleIds**  | String\[\] | 所有子項 **DeviceInformationKind.Device** 物件的相容識別碼集合。                                                                       |
 | **System.Devices.Connected**      | 布林值    | 表示裝置目前是否與系統連線。                                                                                          |
 | **System.Devices.GlyphIcon**      | 字串     | 字符的圖示路徑。                                                                                                                                           |

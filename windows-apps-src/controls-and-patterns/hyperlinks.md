@@ -6,14 +6,20 @@ ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e2c04ea39eee88c225bfef277037363c084e8eff
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: stpete
+doc-status: Published
+ms.openlocfilehash: 5079d1782188b6d2e49fc14741a23a5651995c67
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="hyperlinks"></a>超連結
 
@@ -21,15 +27,9 @@ translationtype: HT
 
 超連結會讓使用者瀏覽到應用程式的其他部分、到其他應用程式，或使用不同的瀏覽器應用程式啟動特定的統一資源識別項 (URI)。 有兩種方式可以將超連結新增至 XAML 應用程式：**Hyperlink** 文字元素和 **HyperlinkButton** 控制項。
 
-![超連結按鈕](images/controls/hyperlink-button.png)
+> **重要 API**：[Hyperlink text element](https://msdn.microsoft.com/library/windows/apps/dn279356)、[HyperlinkButton control](https://msdn.microsoft.com/library/windows/apps/br242739)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**Hyperlink 文字元素**](https://msdn.microsoft.com/library/windows/apps/dn279356)</li>
-<li>[**HyperlinkButton 控制項**](https://msdn.microsoft.com/library/windows/apps/br242739)</li>
-</ul>
-</div>
+![超連結按鈕](images/controls/hyperlink-button.png)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -41,12 +41,6 @@ translationtype: HT
 -   使用文字控制項內的內嵌 **Hyperlink** 文字元素。 Hyperlink 元素會與其他文字元素一起流動，而且您可以在任何 InlineCollection 中使用它。 若您希望超連結會自動換行，且不需要大的點擊目標，請使用文字超連結。 超連結文字通常比較小且不易對準，特別是使用觸控時。
 -   如果是獨立超連結，請使用 **HyperlinkButton**。 HyperlinkButton 是一個特殊 Button 控制項，可在要使用 Button 的任何位置使用。
 -   使用具有 [Image](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) 的 **HyperlinkButton** 做為其內容，以設為可點選的影像。
-
-## <a name="examples"></a>範例
-
-小算盤應用程式中的超連結。
-
-![小算盤應用程式中的超連結範例。](images/control-examples/hyperlinks-calculator.png)
 
 ## <a name="create-a-hyperlink-text-element"></a>建立 Hyperlink 文字元素
 
@@ -150,7 +144,7 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 ## <a name="recommendations"></a>建議
 
 -   只使用超連結來瀏覽；不要用於其他動作。
--   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[**字型和 Windows 10 字體坡形**](fonts.md)。
+-   針對文字型超連結，請使用字體坡形中的本文樣式。 深入了解[字型和 Windows 10 字體坡形](fonts.md)。
 -   在各個超連結之間保持足夠距離，讓使用者能分辨它們，並容易選取每個超連結。
 -   在超連結新增工具提示，以指示使用者將被導向的位置。 如果使用者將被導向至外部網站，請在工具提示包含最上層網域名稱，並將文字樣式設為次要字型色彩。
 
@@ -160,5 +154,5 @@ Hyperlink 不是繼承自 [Control](https://msdn.microsoft.com/library/windows/a
 - [工具提示的指導方針](tooltips.md)
 
 **適用於開發人員 (XAML)**
-- [**Windows.UI.Xaml.Documents.Hyperlink 類別**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Windows.UI.Xaml.Controls.HyperlinkButton 類別**](https://msdn.microsoft.com/library/windows/apps/br242739)
+- [Windows.UI.Xaml.Documents.Hyperlink 類別](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [Windows.UI.Xaml.Controls.HyperlinkButton 類別](https://msdn.microsoft.com/library/windows/apps/br242739)

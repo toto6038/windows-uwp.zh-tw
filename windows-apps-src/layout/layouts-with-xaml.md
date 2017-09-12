@@ -7,14 +7,16 @@ label: Page layouts with XAML
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3862b008afece61648357c84a218ba210703727c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a491a13264a19c50affdbacded69c7ff73e99afa
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="define-page-layouts-with-xaml"></a>使用 XAML 定義頁面版面配置
 
@@ -25,7 +27,7 @@ XAML 提供彈性的版面配置系統，讓您能夠使用自動調整大小、
 我們將在此處討論如何使用 XAML 屬性和版面配置面板，讓您的應用程式具有回應性及調適性。 您可以在 [UWP 應用程式設計簡介](../layout/design-and-ui-intro.md)中找到我們建置所依據的回應式 UI 設計與技術重要資訊。 您應該了解什麼是有效像素，以及了解每一種回應式設計技術：重新置放、調整大小、自動重排、顯示、取代及重新架構。
 
 > [!NOTE]
-> 您的應用程式版面配置是從您選擇的瀏覽模型開始，例如，是否使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 搭配[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)模型，或是 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 搭配[瀏覽窗格](../controls-and-patterns/nav-pane.md)模型。 如需詳細資訊，請參閱 [UWP 應用程式的瀏覽設計基本知識](../layout/navigation-basics.md)。 我們將在此處討論如何讓單一頁面或元素群組的版面配置具備回應性的技術。 無論您為應用程式選擇的是哪一個瀏覽模型，此資訊都適用。
+> 您的應用程式版面配置是從您選擇的瀏覽模型開始，例如，是否使用 [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 搭配[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)模型，或是 [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 搭配[瀏覽窗格](../controls-and-patterns/navigationview.md)模型。 如需詳細資訊，請參閱 [UWP 應用程式的瀏覽設計基本知識](../layout/navigation-basics.md)。 我們將在此處討論如何讓單一頁面或元素群組的版面配置具備回應性的技術。 無論您為應用程式選擇的是哪一個瀏覽模型，此資訊都適用。
 
 XAML 架構提供數個可用來建立回應式 UI 的最佳化層級。
 - **流暢版面配置**
@@ -78,7 +80,7 @@ XAML 版面配置系統支援靜態與流暢版面配置。 在靜態配置中�
 > [!NOTE]
 > 元素是否會調整大小以符合其內容或容器，取決於它的 [**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 屬性值，以及父容器如何處理調整其子系大小的方式。 如需詳細資訊，請參閱本文後續內容中的[對齊方式]()和[版面配置面板]()。
 
-您使用等比例調整大小 (亦稱為*「星號調整」*)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值的表示方法為 \* (加權星號調整則為 *n*\*)。 例如，若要在 2 欄的版面配置中，將某一欄的寬度設定為第二欄的 5 倍，請使用 "5\*" 和 "\*" 來表示 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 元素中的 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) 屬性。
+您使用等比例調整大小 (亦稱為*「星號調整」*)，按照權重比例，將可用的空間分配給方格的列和欄。 在 XAML 中，星號值的表示方法為 \* (或加權星號調整則為 *n*\*)。 例如，若要在 2 欄的版面配置中，將某一欄的寬度設定為第二欄的 5 倍，請使用 "5\*" 和 "\*" 來表示 [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 元素中的 [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) 屬性。
 
 這個範例會在具有 4 欄的 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) 中結合固定、自動和等比例調整大小。
 

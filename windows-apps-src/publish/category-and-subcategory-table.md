@@ -4,29 +4,30 @@ Description: "將您的 app 列在正確的類別與子類別中，可協助客�
 title: "類別與子類別表格"
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 1234a1209f7cc32901b093a44c2b71fc90a6f3b5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 88971766290288f6badb611e6b27c58641020005
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="category-and-subcategory-table"></a>類別與子類別表格
 
 
 將您的 app 列在正確的類別與子類別中，可協助客戶找到您的 app，並對 app 有更深入的了解。
 
-選擇最能說明您 app 的類別。 然後選擇子類別 (如果有的話)。
+您需要選擇最能說明您 app 的類別。 您可以選擇子類別 (如果有的話)  (如果您選擇的類別是 **\[遊戲\]**，則子類別 (內容類型) 為必要項)。
 
-> **注意** 如果您選擇的類別是 [**遊戲**]，則子類別為必要項。
+一個 app 只能列在一個類別 (以及一個子類別，如果有的話)。如果您不確定要使用哪個類別或子類別，或找不到完全符合的類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
 
-一個 app 只能列在一個類別 (以及一個子類別，如果有的話)。如果您不確定要使用哪個類別或子類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
+若要變更已經在市集上架之 App 的類別或子類別，[請建立新的提交](app-submissions.md)，並選取新類別或子類別。
 
-如果您想要變更已經在市集上架之 App 的類別或子類別，您可以[建立新的提交](app-submissions.md)並選取新類別來執行此動作。
-
-> **重要**：如果您發佈 **\[遊戲\]** 類別的 App，您將無法在新的提交中挑選不同的類別。 您也無法在您先前以不同類別發佈之 App 的更新中，選擇 **\[遊戲\]** 類別。
+> [!IMPORTANT] 
+> 如果您發佈 **\[遊戲\]** 類別的 App，您將無法在新的提交中挑選不同的類別。 您也無法在您先前以不同類別發佈之 App 的更新中，選擇 **\[遊戲\]** 類別。
 
 Windows 市集可以組織 App，以分成下列類別與子類別。
 
@@ -55,7 +56,7 @@ Windows 市集可以組織 App，以分成下列類別與子類別。
 | 個人化             | 鈴聲 + 音效 <br> 佈景主題 <br> 桌布 + 鎖定畫面 |
 | 相片 + 影片               | (無)                                            |
 | 生產力                | (無)                                            |
-| 安全性                    | 電腦保護 <br> 個人安全性 <br>         |
+| 安全性                    | 電腦保護 <br> 個人安全性              |
 | 購物                    | (無)                                            |
 | 社交活動                      | (無)                                            |
 | 運動                      | (無)                                            |
@@ -63,5 +64,6 @@ Windows 市集可以組織 App，以分成下列類別與子類別。
 | 公用程式 + 工具           | 備份 + 管理 <br> 檔案管理工具                |
  
 
-> **注意** 如需適用於 Windows 8.1 和較舊版本的 Windows 市集及 Windows Phone 市集中所使用的類別，以及它們如何與上述類別產生關聯的相關資訊，請參閱 [應用程式如何顯示給 Windows 10 市集客戶](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)。
+> [!NOTE] 
+> 適用於 Windows 8.1 和較舊版本的 Windows 市集，以及 Windows Phone 市集中使用的類別和子類別，可能會不同於上面所列的類別。 
 

@@ -1,18 +1,10 @@
 ---
-author: shawjohn
-title: "應用程式安裝廣告報告 - 開發 UWP app"
-ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
-description: "Windows 開發人員中心儀表板中的「應用程式安裝廣告」報告可讓您看到應用程式促銷廣告活動的表現情況。"
-ms.author: johnshaw
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: "Windows 10, UWP, 促銷, 應用程式, 行銷活動, 報告, 安裝"
 redirect_url: https://msdn.microsoft.com/windows/uwp/publish/promote-your-app-report
-ms.openlocfilehash: f40b6a6e7bfb2748d53c5c4472cf05b63e617703
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 43048bd3570697745d73909b215fe2d7f8f0fa21
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="app-install-ads-report"></a>應用程式安裝廣告報告
  

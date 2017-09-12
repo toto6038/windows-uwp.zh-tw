@@ -1,57 +1,45 @@
 ---
-author: shawjohn
-Description: "您可以在 Windows 開發人員中心儀表板中，檢視 app 的詳細分析。"
-title: "分析"
+author: JnHs
+Description: "在 Windows 開發人員中心儀表板中或透過其他方法，取得您 Windows 應用程式的詳細分析。"
+title: "分析應用程式效能"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-ms.author: johnshaw
-ms.date: 02/08/2017
+ms.author: wdg-dev-content
+ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 分析, 報表, 儀表板, 應用程式"
-ms.openlocfilehash: 13a37a4ae2cea67fdce843ed4e6189797d85b93e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 57e4a30258fa25411bb461cac56aa18d2f74981d
+ms.sourcegitcommit: a93b1da07b386a682435de58a8129d7b4ee90c14
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/29/2017
 ---
-# <a name="analytics"></a>分析
+# <a name="analyze-app-performance"></a>分析應用程式效能
 
-您可以在 Windows 開發人員中心儀表板中，檢視 App 的詳細分析。 統計資料和圖表讓您能夠了解 App 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 App 的方式以及他們給該 App 的評價。 您也可以找到 App 健康情況、廣告使用量等等的相關資訊。 在儀表板中檢視報告，或者[下載所需的報告](download-analytic-reports.md)以便離線分析資料。 我們也提供數種讓您[不使用儀表板即可存取分析資料](#no-dashboard)的方法。
+您可以在 Windows 開發人員中心儀表板中，檢視 App 的詳細分析。 統計資料和圖表讓您能夠了解 App 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 App 的方式以及他們給該 App 的評價。 您也可以找到應用程式健康情況、廣告使用量等的計量。
 
-> [!NOTE]
-> 除了儀表板的報告之外，您還可以透過 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)，以程式設計的方式存取部分的分析資料。
+您可以在儀表板中檢視分析報告，或者[下載所需的報告](download-analytic-reports.md)以便離線分析資料。 我們也提供數種讓您[不使用儀表板即可存取分析資料](#no-dashboard)的方法。
 
-## <a name="analytics-for-all-your-apps"></a>您所有 App 的分析
+## <a name="view-key-analytics-for-all-your-apps"></a>檢視您所有 App 的關鍵分析
 
-若要檢視您下載的多數 app 的關鍵分析，請選取頂端瀏覽功能表中的 **\[分析\]** >  **\[概觀\]**。 根據預設，**\[分析概觀\]** 頁面會顯示生命週期內下載數最多的五個 app 的資訊。 若要選擇顯示不同的應用程式，請選取 **\[變更篩選\]**。
+若要檢視您最多下載的 app 的關鍵分析，請展開 **\[分析\]** 並選取 **\[概觀\]**。 根據預設，**\[分析概觀\]** 頁面會顯示生命週期內下載數最多的五個 app 的資訊。 若要選擇顯示不同發行的應用程式，請選取 **\[篩選條件\]**。
 
-## <a name="available-reports-for-each-app"></a>每個 app 的可用報告
+## <a name="view-individual-reports-for-each-app"></a>檢視每個 app 的個別報告
 
 在本節中，您將會找到下列每個報告所顯示的相關詳細資訊：
 
 -   [取得次數報告](acquisitions-report.md)
 -   [附加元件下載數報告](add-on-acquisitions-report.md)
--   [安裝報告](installs-report.md)
 -   [使用量報告](usage-report.md)
 -   [健康情況報告](health-report.md)
--   [評分報告](ratings-report.md)
 -   [評論報告](reviews-report.md)
 -   [意見反應報告](feedback-report.md)
--   [通道與轉換報告](channels-and-conversions-report.md)
--   [廣告流量分配報告](ad-mediation-report.md)
--   [廣告績效報告](advertising-performance-report.md)
--   [聯盟效益報告](affiliates-performance-report.md)
--   [宣傳您的應用程式報告](promote-your-app-report.md)
+-   [廣告效益報告](advertising-performance-report.md)
+-   [廣告活動報告](promote-your-app-report.md)
 
 > [!NOTE]
 > 您可能無法在所有報告中都能夠看到資料，這會依據您應用程式的特定功能和實作而定。
-
-## <a name="page-and-section-filters"></a>頁面與區段篩選
-
-每個報告都會包含您可用來深入探索資料的篩選。 您在接近頁面頂端的地方會看到 **\[套用篩選\]**。 您可以使用這類篩選來限制或擴展所有圖表的範圍以及頁面上的資訊。
-
-在每個特定圖表內，您也可能會看見個別的 [區段篩選]。 這些可以限制資料，僅顯示符合該特定圖表的資料。
-
-特定篩選會依報告而有所不同。 本節中的主題將說明可以使用的篩選，以及每個報告頁面上的其他資料。
 
 <span id="no-dashboard"/>
 ## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>不使用開發人員中心儀表板存取分析資料
@@ -79,5 +67,3 @@ translationtype: HT
 
 安裝[開發人員中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) App，以便在任何 Windows10 裝置上快速檢視 App 的健康狀況與效能的詳細資料。
 
-## <a name="related-topics"></a>相關主題
-- [發佈 Windows 應用程式](index.md)

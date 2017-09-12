@@ -9,15 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 應用程式內產品, IAP"
-ms.openlocfilehash: b442f48b7d03f0f972882ec240dbc1f37f018fd9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4e85c7506ed9a8f420d13075dc0023bdef2c786f
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="manage-add-ons"></a>管理附加元件
 
-在 Windows 市集提交 API 中使用下列方法，管理您的應用程式的附加元件 (亦稱為應用程式內產品或 IAP)。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
-
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
+使用 Windows 市集提交 API 中的下列方法，管理應用程式的附加元件。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 這些方法只可用來取得、建立或刪除附加元件。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
 

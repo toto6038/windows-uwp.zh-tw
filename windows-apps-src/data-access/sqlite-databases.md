@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
 title: "SQLite 資料庫"
 description: "SQLite 是無伺服器的內嵌資料庫引擎。 本文說明如何使用包含在 SDK 中的 SQLite 程式庫、在通用 Windows app 中封裝您自己的 SQLite 程式庫，或是從來源建立 SQLite 程式庫。"
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, SQLite, 資料庫"
-ms.openlocfilehash: 70f0ae8d4f67e0b24199d7dd56ddebe5a643fae5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3b075a6c55373e91e9f12fb5359f5aa4a985f602
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="sqlite-databases"></a>SQLite 資料庫
 

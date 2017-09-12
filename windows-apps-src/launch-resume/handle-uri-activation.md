@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b655bea614f1c395959a12e9c3b8a5b1af61d694
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40c70770028853d5912ef63f84259245252ce881
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-uri-activation"></a>處理 URI 啟用
 
@@ -73,12 +75,7 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 
 ## <a name="step-2-add-the-proper-icons"></a>步驟 2：新增適當圖示
 
-
-成為 URI 配置名稱預設程式的 app，會在系統的各個地方顯示它們的圖示，例如 [預設程式] 控制台。
-
-建議您使用適當圖示來代表專案，這樣能讓標誌在所有位置上看起來都很美觀。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 如需範例圖示，請參閱[關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
-
-![方案總管及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
+成為 URI 配置名稱預設程式的應用程式，會在系統的各個地方顯示它們的圖示，例如 [預設程式] 控制台。 針對此用途，會連同您的專案包含 44x44 圖示。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 請參閱[磚和圖示資產的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)，以取得圖示的詳細資訊。
 
 ## <a name="step-3-handle-the-activated-event"></a>步驟 3：處理啟用的事件
 

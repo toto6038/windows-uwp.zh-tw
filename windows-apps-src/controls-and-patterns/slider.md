@@ -6,14 +6,20 @@ ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 392b0b0acf1443b2260a33bbf389d505f8cc7d0e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: c705c2fc4d53c77391236604f8edb86e164a1177
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="sliders"></a>滑桿
 
@@ -21,16 +27,9 @@ translationtype: HT
 
 滑桿是一個控制項，透過讓使用者沿著軌跡移動 Thumb 控制項，從一定範圍內選取值。
 
-![滑桿控制項](images/controls/slider.png)
+> **重要 API**：[Slider 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)、[Value 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)、[ValueChanged 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)</li>
-<li>[**Value 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)</li>
-<li>[**ValueChanged 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)</li>
-</ul>
-</div>
+![滑桿控制項](images/controls/slider.png)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -89,7 +88,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-您要從 [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 屬性取得並設定滑桿的值。 若要回應值變更，您可以使用資料繫結來繫結 Value 屬性，或處理 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
+您要從 [Value](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) 屬性取得並設定滑桿的值。 若要回應值變更，您可以使用資料繫結來繫結 Value 屬性，或處理 [ValueChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) 事件。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -177,4 +176,4 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## <a name="related-topics"></a>相關主題
 - [切換開關](toggles.md)
-- [**Slider 類別**](https://msdn.microsoft.com/library/windows/apps/br209614)
+- [Slider 類別](https://msdn.microsoft.com/library/windows/apps/br209614)

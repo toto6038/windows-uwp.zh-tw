@@ -1,147 +1,162 @@
 ---
 author: normesta
-Description: "使用傳統型轉 UWP 橋接器，部署從 Windows 傳統型應用程式 (Win32、WPF 及 Windows Forms) 轉換而來的通用 Windows 平台 (UWP) App 及針對這些 App 進行偵錯。"
+Description: "執行您的已封裝應用程式來查看外觀，而不需要簽署。 然後，設定中斷點和逐步執行程式碼。 當您準備好在生產環境測試您的應用程式時，請簽署您的應用程式，然後再安裝它。"
 Search.Product: eADQiWindows 10XVcnh
-title: "傳統型轉 UWP 橋接器偵錯"
+title: "執行、偵錯以及測試封裝的傳統型橋接器應用程式 (傳統型橋接器)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 06/20/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
-ms.openlocfilehash: d1ce3054df19b0b51c8203e7fa7296efde848c41
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c160fecc530a6366de48f4f2ecc24df2463c0469
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/11/2017
 ---
-# <a name="desktop-to-uwp-bridge-debug"></a>傳統型轉 UWP 橋接器：偵錯
+# <a name="run-debug-and-test-a-packaged-desktop-app-desktop-bridge"></a>執行、偵錯以及測試封裝的傳統型橋接器應用程式 (傳統型橋接器)
 
-本主題包含的資訊可協助您在使用傳統型轉 UWP 橋接器轉換應用程式之後順利偵錯該應用程式。 您有數個選項可用來偵錯已轉換的 App。
+執行您的已封裝應用程式來查看外觀，而不需要簽署。 然後，設定中斷點和逐步執行程式碼。 當您準備好在生產環境測試您的應用程式時，請簽署您的應用程式，然後再安裝它。 此主題將會告訴您如何執行每個項目。
 
-## <a name="attach-to-process"></a>附加至處理序
+<span id="run-app" />
+## <a name="run-your-app"></a>執行您的應用程式
 
-當您「以系統管理員身分」執行 Microsoft Visual Studio 時，將可針對已轉換的 App 專案使用 *\[開始偵錯\]* 和 *\[啟動但不偵錯\]* 命令，但是已啟動的 App 將會以[中度整合層級](https://msdn.microsoft.com/library/bb625963)來執行 (也就是將不會有提升的權限)。 若要為啟動的 App 授與系統管理員權限，首先您必須透過捷徑或磚「以系統管理員身分」來啟動。 當應用程式正在執行時，從「以系統管理員身分」執行的 Microsoft Visual Studio 執行個體中叫用__附加至處理序__，然後從對話方塊中選取應用程式的處理序。
+您可以在本機執行您的應用程式並進行測試，而不需要取得憑證和進行簽署。
 
-## <a name="f5-debug"></a>F5 偵錯
+若您是使用 UWP 專案中 Visual Studio 建立套件，您只需將封裝專案設定為啟始專案，然後按下 CTRL+F5 即可啟動您的應用程式。
 
-Visual Studio 現在支援新的封裝專案。 新的專案可讓您將在建置應用程式時所做的任何更新，自動複製到應用程式安裝程式上轉換器所建立的 Windows 應用程式套件。 在設定封裝專案之後，您現在也可以使用 F5，直接對 Windows 應用程式套件進行偵錯。
+若您是使用 Desktop App Converter 或手動封裝您的應用程式，請開啟 Windows PowerShell 命令提示字元，並從您輸出資料夾的 **PacakgeFiles** 子資料夾中執行此 Cmdlet︰
 
->注意︰您也可以使用選項來對現有的 Windows 應用程式套件進行偵錯，方法是使用選項 [偵錯] -> [其他偵錯目標] -> [偵錯已安裝的應用程式套件]。
+```
+Add-AppxPackage –Register AppxManifest.xml
+```
+若要啟動您的應用程式，請在 Windows \[開始\] 功能表中找到您的應用程式。
 
-以下是如何開始使用的方式：
+![在 \[開始\] 功能表中的已封裝應用程式](images/desktop-to-uwp/converted-app-installed.png)
 
-1. 首先，確認您已設定為使用 Desktop App Converter。 如需相關指示，請參閱 [Desktop App Converter 預覽](desktop-to-uwp-run-desktop-app-converter.md)。
+> [!NOTE]
+> 封裝的應用程式總是會以互動使用者的身分執行，您安裝已封裝應用程式的任何磁碟機都必須格式化為 NTFS 格式。
 
-2. 針對您的 Win32 應用程式依序執行轉換器和安裝程式。 轉換器會擷取配置以及對登錄所做的任何變更，並輸出含有資訊清單與 registery.dat 的 Windows 應用程式套件來將登錄虛擬化︰
+## <a name="debug-your-app"></a>偵錯您的應用程式
 
-![alt](images/desktop-to-uwp/debug-1.png)
+每次偵錯您的應用程式時在對話方塊中選取您的套件，或是安裝擴充功能，就不需要在偵錯應用程式時每次啟動工作階段時都需要選取套件。
 
-3. 安裝和啟動 [Visual Studio 2017 RC](https://www.visualstudio.com/downloads/#visual-studio-community-2017-rc)。
+### <a name="debug-your-app-by-selecting-the-package"></a>透過選取套件來偵錯您的應用程式
 
-4. 從 [Visual Studio 組件庫](http://go.microsoft.com/fwlink/?LinkId=797871)安裝 Desktop to UWP Packaging VSIX 專案。
+此選項僅需最短的安裝時間，但您必須在每次開始偵錯工作階段時執行一道額外的步驟。
 
-5. 開啟已在 Visual Studio 中轉換的對應 Win32 方案。
 
-6. 在方案上按一下滑鼠右鍵，然後選擇 [加入新的專案]，將新的封裝專案加入至您的方案。 接著在 [安裝和部署] 下方選取 [Desktop to UWP Packaging Project]：
+1. 請務必至少啟動您的已封裝應用程式一次，讓它安裝在您的本機電腦上。
+
+   請參閱上述[執行您的應用程式](#run-app)一節。
+
+2. 啟動 Visual Studio。
+
+   若您想要以提升權限偵錯您的應用程式，您可以利用**以系統管理員身分執行**選項來啟動 Visual Studio。
+
+3. 在 Visual Studio 中，選擇 **\[偵錯\]**->**\[其他偵錯目標\]**->**\[偵錯已安裝的應用程式套件\]**。
+
+4. 在 **\[已安裝的應用程式套件\]** 清單中，選取您的應用程式套件，然後選擇 **\[附加\]** 按鈕。
+
+
+### <a name="debug-your-app-without-having-to-select-the-package"></a>在不需要選取套件的情況下偵錯您的應用程式
+
+此選項需要花費最多的安裝時間，但您不需要在每次啟動應用程式時選取已安裝的套件。 您需要先安裝 [Visual Studio 2017](https://www.visualstudio.com/vs/whatsnew/) 才能使用這種方式。
+
+1. 首先，安裝[傳統型橋接器偵錯專案](http://go.microsoft.com/fwlink/?LinkId=797871)。
+
+2. 啟動 Visual Studio，並開啟傳統型應用程式專案。
+
+6. 將 **\[傳統型橋接器偵錯\]** 專案新增至您的方案。
+
+   您可以在已安裝的範本內的 **\[其他專案類型\]** 群組中找到專案範本。
 
     ![alt](images/desktop-to-uwp/debug-2.png)
 
-    產生的專案將加入至您的方案︰
+    **\[傳統型橋接器偵錯\]** 專案將會出現在您的方案中。
 
     ![alt](images/desktop-to-uwp/debug-3.png)
 
-    在封裝專案中，AppXFileList 會在 Windows 應用程式套件配置中提供檔案對應。 參考一開始是空的，但是應該手動設定為 .exe 專案，以做為建置順序。
+7. 開啟 **\[傳統型橋接器偵錯\]** 專案的屬性頁面。
 
-7. DesktopToUWPPackaging 專案有一個屬性頁面，可讓您設定 Windows 應用程式套件根目錄以及要執行哪些磚︰
+8. 將 **\[套件配置\]** 欄位設定為您套件資訊清單檔案 (AppxManifest.xml) 所在的位置，然後從 **\[開始磚\]** 下拉式清單中選擇您應用程式的可執行檔。
 
-    ![alt](images/desktop-to-uwp/debug-4.png)
+     ![alt](images/desktop-to-uwp/debug-4.png)
 
-    將 PackageLayout 設定為由轉換器所建立之 Windows 應用程式套件的根位置 (上圖)。 然後選取要執行的磚。
+8. 在程式碼編輯器中開啟 AppXPackageFileList.xml 檔案。
 
-8.    開啟並編輯 AppXFileList.xml。 這個檔案會定義如何將 Win32 偵錯組建的輸出複製到轉換器建置的 Windows 應用程式套件配置。 根據預設，我們在檔案中有預留位置來使用範例標記與註解︰
+9. 取消註解 XML 區塊並為這些元素新增數值︰
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-      <ItemGroup>
-    <!— Use the following syntax to copy debug output to the AppX layout
-       <AppxPackagedFile Include="$(outdir)\App.exe">
-          <PackagePath>App.exe</PackagePath>
-        </AppxPackagedFile>
-        See http://etc...
-    -->
-      </ItemGroup>
-    </Project>
-    ```
+   **MyProjectOutputPath**︰您傳統型應用程式之偵錯資料夾的相對路徑。
 
-    以下是建立對應的範例。 在此案例中，我們會將 .exe 和 .dll 從 Win32 組建位置複製到套件配置位置。
+   **LayoutFile**︰位於您傳統型應用程式之偵錯資料夾中的可執行檔。
+
+   **PackagePath**︰在轉換過程中複製到您 Windows 應用程式套件資料夾，您傳統型應用程式之可執行檔的完整名稱。
+
+    這裡提供一個範例：
 
     ```XML
-    <?xml version="1.0" encoding=utf-8"?>
-    <Project ToolsVersion=14.0" xmlns="http://scehmas.microsoft.com/developer/msbuild/2003">
-        <PropertyGroup>
-            <MyProjectOutputPath>{relativepath}</MyProjectOutputPath>
-        </PropertyGroup>
-        <ItemGroup>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.exe</PackagePath>
-            </LayoutFile>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.Models.dll">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.Models.dll</PackagePath>
-            </LayoutFile>
-        </ItemGroup>
-    </Project>
+  <?xml version="1.0" encoding="utf-8"?>
+  <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+     <MyProjectOutputPath>..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.exe">
+        <PackagePath>$(PackageLayout)\MyDesktopApp.exe</PackagePath>
+      </LayoutFile>
+    </ItemGroup>
+  </Project>
     ```
 
-    檔案的定義如下：
+  若您的應用程式會消耗您方案中別的專案所產生的 dll 檔案，而您想要逐步執行這些 dll 中所含的程式碼，您可以針對這些 dll 檔案個別建立一個 **LayoutFile** 元素。
 
-    首先，我們定義 *MyProjectOutputPath* 指向建置 Win32 專案的位置︰
+  ```XML
+  ...
+      <LayoutFile Include="$(MyProjectOutputPath)\MyDesktopApp.Models.dll">
+      <PackagePath>$(PackageLayout)\MyDesktopApp.Models.dll</PackagePath>
+      </LayoutFile>
+  ...
+  ```
 
-    ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-        <PropertyGroup>
-            <MyProjectOutputPath>..\ProjectTracker\bin\DesktopUWP</MyProjectOutputPath>
-        </PropertyGroup>
-    ```
-
-    接著，每個 *LayoutFile* 會指定要從 Win32 組建位置複製到 Windows 應用程式套件配置的檔案。 在這個案例中，會依序複製 .exe 和 .dll。
-
-    ```XML
-        <ItemGroup>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.exe">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.exe</PackagePath>
-            </LayoutFile>
-            <LayoutFile Include="$(MyProjectOutputPath)\ProjectTracker.Models.dll">
-                <PackagePath>$(PackageLayout)\VFS\Program Files (x86)\Contoso Software\Project Tracker\ProjectTracker.Models.dll</PackagePath>
-            </LayoutFile>
-        </ItemGroup>
-    </Project>
-    ```
-
-9. 將封裝專案設定為啟始專案。 這會將 Win32 檔案複製到 Windows 應用程式套件，然後在建置並執行專案時啟動偵錯工具。  
+10. 將封裝專案設定為啟始專案。  
 
     ![alt](images/desktop-to-uwp/debug-5.png)
 
-10.    最後，您現在可以在 Win32 程式碼中設定中斷點，並按 F5 來啟動偵錯工具。 它會複製您在 Windows 應用程式套件中對 Win32 應用程式所做的任何更新，並可讓您直接從 Visual Studio 偵錯。
+11. 在您的傳統型應用程式程式碼中設定中斷點，然後啟動偵錯工具。
 
-11.    如果您更新應用程式，將需要使用 MakeAppX，再次重新封裝您的應用程式。 如需詳細資訊，請參閱[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)。
+  ![偵錯按鈕](images/desktop-to-uwp/debugger-button.png)
 
-如果您有多個組建組態 (例如針對發行和偵錯)，就可以將下列項目新增至 AppXFileList.xml 檔案，從不同位置複製 Win32 組建︰
+  Visual Studio 會將您在 XML 檔案中指定的可執行檔和 dll 檔案複製到您的 Windows 應用程式套件，並啟動偵錯工具。
+
+#### <a name="handle-multiple-build-configurations"></a>處理多個組建設定
+
+若您已經定義多個組建設定 (例如︰發行版本和偵錯版本)，您可以修改 AppXPackageFileList.xml 檔案以只複製那些您在啟動偵錯工具時，於 Visual Studio 中選擇之組建設定所需要的檔案。
+
+這裡提供一個範例。
 
 ```XML
 <PropertyGroup>
-    <MyProjectOutputPath Condition="$(Configuration) == 'DesktopUWP'">C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\DesktopUWP>
-    </MyProjectOutputPath>
-    <MyProjectOutputPath Condition="$(Configuration) == 'ReleaseDesktopUWP'"> C:\Users\peterfar\Desktop\ProjectTracker\ProjectTracker\bin\ReleaseDesktopUWP</MyProjectOutputPath>
+    <MyProjectOutputPath Condition="$(Configuration) == 'Debug'">..\MyDesktopApp\bin\Debug</MyProjectOutputPath>
+    <MyProjectOutputPath Condition="$(Configuration) == 'Release'"> ..\MyDesktopApp\bin\Release</MyProjectOutputPath>
 </PropertyGroup>
 ```
 
-如果您將應用程式更新到 UWP，但仍想要建置它以使其適用於 Win32，您也可以使用條件式編譯來啟用特定的程式碼路徑。
+#### <a name="debug-uwp-enhancements-to-your-app"></a>偵錯針對您應用程式所做的 UWP 美化
 
-1.    在下列範例中，程式碼將只會針對 DesktopUWP 進行編譯，而且將使用 WinRT API 來顯示磚。
+您可能會想要使用一些現代化體驗 (例如動態磚等) 來美化您的應用程式。 若您想要進行這項工作，您可以使用條件式編譯，以針對特定組建設定啟用程式碼路徑。
 
-    ```C#
+1. 首先，在 Visual Studio 中，定義一個組建設定，並將其命名為例如「DesktopUWP」。
+
+2. 在您專案之專案屬性內的 **\[組建\]** 索引標籤，將該名稱新增至 **\[條件式編譯符號\]** 欄位。
+
+     ![alt](images/desktop-to-uwp/debug-8.png)
+
+3. 新增條件式程式碼區塊。 這段程式碼只會為 **DesktopUWP** 組建設定進行編譯。
+
+    ```csharp
     [Conditional("DesktopUWP")]
     private void showtile()
     {
@@ -153,25 +168,50 @@ Visual Studio 現在支援新的封裝專案。 新的專案可讓您將在建�
     }
     ```
 
-2.    您可以使用 Configuration Manager 來新增新的組建組態︰
+### <a name="debug-the-entire-app-lifecycle"></a>偵錯整個應用程式的生命週期
 
-    ![alt](images/desktop-to-uwp/debug-6.png)
+在某些情況下，您可能會想對偵錯處理程序進行更細微的控制，包括能夠在啟動應用程式之前進行偵錯。
 
-    ![alt](images/desktop-to-uwp/debug-7.png)
+您可以使用 [PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 取得對應用程式生命週期的完整掌控權，包括暫止、繼續，與終止。
 
-3.    然後在專案屬性下方，新增對條件式編譯符號的支援︰
+[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx) 隨附於 Windows SDK。
 
-    ![alt](images/desktop-to-uwp/debug-8.png)
 
-4.    如果您想要將建置目標設為您新增的 UWP API，您現在可以將組建目標切換為 DesktopUWP。
+### <a name="modify-your-app-in-between-debug-sessions"></a>在偵錯工作階段之間修改您的應用程式
 
-## <a name="plmdebug"></a>PLMDebug
+若您變更您的應用程式以修正問題，請使用 MakeAppx 工具重新封裝。 請參閱[執行 MakeAppx 工具](desktop-to-uwp-manual-conversion.md#make-appx)。
 
-如果您要在 app 執行時對其進行偵錯，Visual Studio F5 和附加至處理序相當實用。 不過，在某些情況下，您可能想對偵錯處理序進行更細微的控制，包括能夠在啟動 app 之前偵錯。 針對這些更進階的情況，請使用 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)。 此工具可讓您使用 Windows 偵錯工具對已轉換的應用程式進行偵錯，並提供應用程式生命週期的完全控制權，包括暫停、繼續及終止。
+## <a name="test-your-app"></a>測試您的應用程式
 
-PLMDebug 隨附於 Windows SDK。 如需詳細資訊，請參閱 [**PLMDebug**](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)。
+當您準備好在逼真的設定下測試您的應用程式以準備散布時，我們建議您簽署您的應用程式並安裝它。
 
-## <a name="run-another-process-inside-the-full-trust-container"></a>在完全信任的容器內執行另一個處理序
+若您是使用 Visual Studio 來封裝應用程式，您可以執行指令碼來簽署您的應用程式，然後再安裝它。 請參閱[側載您的套件](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
+
+如果您是使用 Desktop App Converter 封裝您的應用程式，您可以使用 ``sign`` 參數來自動使用產生的憑證簽署應用程式。 您必須先安裝該憑證，然後再安裝應用程式。 請參閱[執行封裝後的應用程式](desktop-to-uwp-run-desktop-app-converter.md#run-app)。   
+
+您也可以手動簽署您的應用程式。 作法如下
+
+1. 建立憑證。 請參閱[建立憑證](../packaging/create-certificate-package-signing.md)。
+
+2. 將該憑證安裝到您系統上的**「受信任的根」**或**「受信任的人」**憑證存放區。
+
+3. 使用該憑證來簽署您的應用程式，請參閱[使用 SignTool 簽署應用程式套件](../packaging/sign-app-package-using-signtool.md)。
+
+  > [!IMPORTANT]
+  > 請確定您憑證的發行者名稱符合您應用程式的發行者名稱。
+
+### <a name="related-sample"></a>相關範例
+
+[SigningCerts](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SigningCerts)
+
+
+### <a name="test-your-app-for-windows-10-s"></a>針對 Windows 10 S 測試您的應用程式
+
+在發行您的應用程式之前，請確保它可在執行 Windows 10 S 的裝置上正常運作。事實上，如果您計畫在 Windows 市集發行應用程式，則必須執行此步驟，因為這是市集需求。 無法在執行 Windows 10 S 的裝置上正確運作的應用程式，無法獲得認證。 
+
+請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)。
+
+### <a name="run-another-process-inside-the-full-trust-container"></a>在完全信任的容器內執行另一個處理程序
 
 您可以在指定應用程式套件的容器內叫用自訂處理序。 這對於測試案例非常有用 (例如，如果您擁有自訂的測試載入器，而且想要測試 app 的輸出)。 若要這樣做，請使用 ```Invoke-CommandInDesktopPackage``` PowerShell Cmdlet：
 
@@ -179,3 +219,13 @@ PLMDebug 隨附於 Windows SDK。 如需詳細資訊，請參閱 [**PLMDebug**](
 Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [-Command] <string> [[-Args]
     <string>]  [<CommonParameters>]
 ```
+
+## <a name="next-steps"></a>後續步驟
+
+**尋找特定問題的解答**
+
+我們的團隊會監視這些 [StackOverflow 標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。
+
+**提供有關本文的意見反應**
+
+使用下方的留言區塊。

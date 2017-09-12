@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: bf0abd41262704ccf634350ae53e8f428d412bf5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 288cca64cc93438c8f8c0000cfeba1fdda918733
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -82,8 +84,13 @@ translationtype: HT
 
 ## <a name="additional-usage-guidance"></a>其他用法指導方針
 
-
 利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">發行前版本。</span> 秋季版 Creators Update (Windows 10 Insider Preview 組建 16215 及更新版本) - 行為變更</strong>
+> </div>
+> 根據預設，主動式手寫筆現在可在 UWP 應用程式中捲動/移動瀏覽 (例如觸控、觸控板和被動式手寫筆)，而不用選取文字。  
+> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 請參閱 [ScrollViewer 類別] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) (英文) API 參照主題，以取得詳細資訊。
 
 根據輸入裝置，使用者會透過下列其中一種方式，在可移動瀏覽的區域內移動瀏覽：
 

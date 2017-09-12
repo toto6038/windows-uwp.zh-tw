@@ -4,22 +4,23 @@ ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: "在 Windows 市集提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理附加元件提交。"
 title: "管理附加元件提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件提 交, 應用程式內產品, IAP"
-ms.openlocfilehash: 7743faa9e2fda84d85468193ff46c87bab267a6c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: a69857f6df3b23e9cf31fb1c7cc3ec52e95da7ae
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
 Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱為應用程式內產品或 IAP) 提交的應用程式。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
-
->**重要**&nbsp;&nbsp;如果您使用 Windows 市集提交 API 以建立附加元件的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> [!IMPORTANT]
+> 如果您使用 Windows 市集提交 API 以建立附加元件的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 <span id="methods-for-add-on-submissions" />
 ## <a name="methods-for-managing-add-on-submissions"></a>管理附加元件提交的方法
@@ -84,60 +85,52 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 
 3. 在 Windows 市集提交 API 中執行下列方法。 這個方法會建立新的處理中提交，這是最後一個已發佈提交的複本。 如需詳細資訊，請參閱[建立附加元件提交](create-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions
+    ```
 
-  回應主體包含三個項目︰新提交的識別碼、新提交的資料 (包含所有清單和定價資訊)，以及用於上傳提交至 Azure Blob 儲存體的任何附加元件圖示的共用存取簽章 (SAS) URI。
-
-  >**注意**&nbsp;&nbsp;SAS URI 提供 Azure 儲存體中安全資源的存取權，完全不需要帳戶金鑰。 如需有關 SAS URI 及使用 Azure Blob 儲存體的背景資訊，請參閱[共用存取簽章，第 1 部分︰了解 SAS 模型](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1)和[共用存取簽章，第 2 部分︰透過 Blob 儲存體來建立與使用 SAS](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/)。
+    回應主體包含[附加元件提交](#add-on-submission-object)資源，其中包括新提交的識別碼、用於上傳提交至 Azure Blob 儲存體的任何附加元件圖示的共用存取簽章 (SAS) URI，以及新提交的所有資料 (例如清單和定價資訊)。
+        > [!NOTE]
+        > A SAS URI provides access to a secure resource in Azure storage without requiring account keys. For background information about SAS URIs and their use with Azure Blob storage, see [Shared Access Signatures, Part 1: Understanding the SAS model](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1) and [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-2/).
 
 4. 如果您要新增提交的新圖示，請[準備圖示](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)並將它們新增到 ZIP 封存。
 
-5. 藉由對新的提交進行任何必要變更來更新提交資料，然後執行下列方法來更新提交。 如需詳細資訊，請參閱[更新附加元件提交](update-an-add-on-submission.md)。
+5. 藉由對新的提交進行任何必要變更來更新[附加元件提交](#add-on-submission-object)資料，然後執行下列方法來更新提交。 如需詳細資訊，請參閱[更新附加元件提交](update-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
-  ```
-
-  <span/>
-  >**注意**&nbsp;&nbsp;如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
+    ```
+    PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}
+    ```
+      > [!NOTE]
+      > 如果您要新增提交的新圖示，確定您會更新提交資料，以參考 ZIP 封存中的名稱和這些檔案的相對路徑。
 
 4. 如果您要新增提交的新圖示，請使用您稍早呼叫之 POST 方法回應主體中提供的 SAS URI，將 ZIP 封存上傳至 [Azure Blob 儲存體](https://docs.microsoft.com/azure/storage/storage-introduction#blob-storage)。 您可在各種不同的平台上使用不同的 Azure Libraries 來執行，包括：
 
-  * [.NET 適用的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
-  * [Java 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
-  * [Python 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
-
-  <span/>
+    * [.NET 適用的 Azure 儲存體用戶端程式庫](https://docs.microsoft.com/azure/storage/storage-dotnet-how-to-use-blobs)
+    * [Java 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-java-how-to-use-blob-storage)
+    * [Python 適用的 Azure 儲存體 SDK](https://docs.microsoft.com/azure/storage/storage-python-how-to-use-blob-storage)
 
   下列 C# 程式碼範例示範如何在適用於 .NET 的 Azure 儲存體用戶端程式庫中，使用 [CloudBlockBlob](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.blob.cloudblockblob.aspx) 類別上傳 ZIP 封存。 此範例假設已將 ZIP 封存寫入串流物件。
 
-  > [!div class="tabbedCodeSnippets"]
   ```csharp
   string sasUrl = "https://productingestionbin1.blob.core.windows.net/ingestion/26920f66-b592-4439-9a9d-fb0f014902ec?sv=2014-02-14&sr=b&sig=usAN0kNFNnYE2tGQBI%2BARQWejX1Guiz7hdFtRhyK%2Bog%3D&se=2016-06-17T20:45:51Z&sp=rwl";
   Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob blockBob =
-      new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
+    new Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob(new System.Uri(sasUrl));
   await blockBob.UploadFromStreamAsync(stream);
   ```
 
 5. 執行下列方法來認可提交。 這將警示開發人員中心，您已經完成提交，而現在應該將更新套用至您的帳戶。 如需詳細資訊，請參閱[認可附加元件提交](commit-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
-  ```
+    ```
+    POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
+    ```
 
 6. 執行下列方法來檢查認可狀態。 如需詳細資訊，請參閱[取得附加元件提交的狀態](get-status-for-an-add-on-submission.md)。
 
-  > [!div class="tabbedCodeSnippets"]
-  ``` syntax
-  GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
-  ```
+    ```
+    GET https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/status
+    ```
 
-  若要確認提交狀態，請檢閱回應主體中的*「狀態」*值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
+    若要確認提交狀態，請檢閱回應主體中的*「狀態」*值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
 7. 順利完成提交之後，即會將提交傳送到市集以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
 
@@ -150,7 +143,8 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 * [Java 程式碼範例](java-code-examples-for-the-windows-store-submission-api.md)
 * [Python 程式碼範例](python-code-examples-for-the-windows-store-submission-api.md)
 
->**注意**&nbsp;&nbsp;：除了列示於上方的程式碼範例，我們也提供在 Windows 市集中提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+> [!NOTE]
+> 除了列示於上的程式碼範例，我們也提供在 Windows 市集提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
 
 <span/>
 ## <a name="data-resources"></a>資料資源
@@ -283,12 +277,10 @@ Windows 市集提交 API 提供方法讓您使用於管理附加元件 (也稱�
 
 此資源包含附加元件的銷售資訊。
 
->**重要**&nbsp;&nbsp;**「銷售」**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料︰
-
-   > * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的銷售資料。
-   > * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的銷售資料。
-
-> 我們將來會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。
+> [!IMPORTANT]
+> **「銷售」**資源不再支援，目前您無法使用 Windows 市集提交 API 取得或修改附加元件提交的銷售資料。 我們將來會更新「Windows 市集提交 API」來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。
+>    * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的銷售資料。
+>    * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的銷售資料。
 
 此資源具有下列值。
 

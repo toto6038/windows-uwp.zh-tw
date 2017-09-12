@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 21e08e22e6c6ebada4445a05f32d2bd37244758f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f9e14be4ef0e92378d4b6f1e4f5c1066c56fbdd8
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/11/2017
 ---
 #  <a name="plan-your-universal-windows-platform-uwp-app"></a>規劃您的通用 Windows 平台 (UWP) app
 
@@ -220,7 +222,7 @@ translationtype: HT
 
 ![應用程式的電腦與行動裝置設計](images/ux-budgettracker1-md-notablet.png)
 
-如需針對不同螢幕大小來設計的詳細資訊，請參閱 <!--[Responsive design 101](designing-in-effective-pixels.md)-->。
+如需針對不同螢幕大小進行設計的詳細資訊，請參閱[回應式設計的螢幕大小與中斷點](https://docs.microsoft.com/en-us/windows/uwp/layout/screen-sizes-and-breakpoints-for-responsive-design) (英文)。
 
 ## <a name="make-a-good-first-impression"></a>塑造良好的第一印象。
 

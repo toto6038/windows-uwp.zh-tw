@@ -6,14 +6,16 @@ ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7d72d5251000e16349efa8d4f7716e12d22764d6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 08f6a712d73c58d3719c0555cda6688b5aa138ab
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="fonts-for-uwp-apps"></a>適用於 UWP 應用程式的字型
 
@@ -279,12 +281,12 @@ Serif 字型適合呈現大量的文字。
 </tr>
 <tr class="odd">
 <td align="left" style="font-family: Yu Gothic;">Yu Gothic</td>
-<td align="left">中</td>
-<td align="left"></td>
+<td align="left">細體、標準、適中、粗體</td>
+<td align="left">為內文文字與類似的內容使用適中的 Yu Gothic 字體。</td>
 </tr>
 <tr class="even">
 <td align="left" style="font-family: Yu Gothic UI;">Yu Gothic UI</td>
-<td align="left">標準</td>
+<td align="left">細體、半細體、標準、半粗體、粗體</td>
 <td align="left">日文的使用者介面字型。</td>
 </tr>
 </tbody>

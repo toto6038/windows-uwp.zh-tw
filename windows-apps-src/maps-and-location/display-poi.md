@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "在地圖上顯示感興趣的地點 (POI)"
 description: "藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。"
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
-ms.author: misatran
-ms.date: 02/08/2017
+ms.author: normesta
+ms.date: 08/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 地圖, 位置, 圖釘"
-ms.openlocfilehash: c8fdc16b99a9d2d57f71e32e008fa668c3404835
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 280a651df949018dc9cf490e14d72d167fee0858
+ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="display-points-of-interest-poi-on-a-map"></a>在地圖上顯示感興趣的地點 (POI)
 
@@ -31,10 +33,10 @@ translationtype: HT
 
 總結來說：
 
--   [在地圖上新增 MapIcon](#add-a-mapicon) 可以顯示含有選擇性文字的影像，例如圖釘。
--   [在地圖上新增 MapPolygon](#add-a-mappolygon) 可以顯示多點圖形。
--   [在地圖上新增 MapPolyline](#add-a-mappolyline) 可以在地圖上顯示線條。
--   [在地圖上新增 XAML](#add-xaml) 可以顯示自訂 UI 元素。
+-   [在地圖上新增 MapIcon](#mapicon) 可以顯示含有選擇性文字的影像，例如圖釘。
+-   [在地圖上新增 MapPolygon](#mappolygon) 可以顯示多點圖形。
+-   [在地圖上新增 MapPolyline](#mappolyline) 可以在地圖上顯示線條。
+-   [在地圖上新增 XAML](#mapxaml) 可以顯示自訂 UI 元素。
 
 如果您大量的項目要放置在地圖上，請考慮[在地圖上重疊顯示並排影像](overlay-tiled-images.md)。 若要在地圖上顯示道路，請參閱[顯示路線和路線指引](routes-and-directions.md)。
 
@@ -55,18 +57,20 @@ translationtype: HT
          Geopoint snPoint = new Geopoint(snPosition);
 
          // Create a MapIcon.
-         MapIcon mapIcon1 = new MapIcon();
-         mapIcon1.Location = snPoint;
-         mapIcon1.NormalizedAnchorPoint = new Point(0.5, 1.0);
-         mapIcon1.Title = "Space Needle";
-         mapIcon1.ZIndex = 0;
+         var mapIcon1 = new MapIcon
+         {
+             Location = snPoint,
+             NormalizedAnchorPoint = new Point(0.5, 1.0),
+             Title = "Space Needle",
+             ZIndex = 0,
+         };
 
          // Add the MapIcon to the map.
-         MapControl1.MapElements.Add(mapIcon1);
+         myMap.MapElements.Add(mapIcon1);
 
          // Center the map over the POI.
-         MapControl1.Center = snPoint;
-         MapControl1.ZoomLevel = 14;
+         myMap.Center = snPoint;
+         myMap.ZoomLevel = 14;
       }
 ```
 
@@ -90,31 +94,77 @@ translationtype: HT
 -   並不保證會顯示 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637088) 的選擇性 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637077)。 如果您看不到文字，請降低 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637068) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性值來縮小。
 -   當您在地圖上顯示指向某特定位置的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 影像 (例如圖釘或箭頭) 時，請考慮將 [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) 屬性的值設定為影像上概略的指標位置。 如果您讓 **NormalizedAnchorPoint** 的值保留其預設值 (0, 0)，該值代表影像的左上角，變更地圖的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 可能會讓影像指向不同的位置。
 
-## <a name="add-a-mappolygon"></a>新增 MapPolygon
+## <a name="add-a-mapbillboard"></a>新增 MapBillboard
 
+顯示與地圖位置相關的大型影像，例如餐廳的圖片或地標。 當使用者縮小時，影像會等比例縮小，讓使用者可以檢視地圖的更多部分。 這與 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 有點不同，後者標示特定位置，通常很小，且當使用者縮放地圖時仍維持相同的大小。
+
+![MapBillboard 影像](images/map-billboard.png)
+
+下列程式碼顯示上圖呈現的 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)。
+
+```csharp
+private void mapBillboardAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+{
+    RandomAccessStreamReference mapBillboardStreamReference =
+        RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/billboard.jpg"));
+
+        var mapBillboard = new MapBillboard(myMap.ActualCamera)
+        {
+            Location = myMap.Center,
+            NormalizedAnchorPoint = new Point(0.5, 1.0),
+            Image = mapBillboardStreamReference
+        };
+
+        myMap.MapElements.Add(mapBillboard);
+}
+```
+此程式碼有三個部分值得進一步研究：影像、參考相機，以及 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) 屬性。
+
+### <a name="image"></a>影像
+
+此範例顯示專案的 **\[資產\]** 資料夾中儲存的自訂影像。 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Image) 屬性預期的值類型為 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813)。 這種類型會要求針對 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 命名空間**使用** using 陳述式。
+
+>[!NOTE]
+>如果您在多個地圖圖示都使用相同的影像，請在頁面或應用程式層級宣告 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 以獲得最佳效能。
+
+### <a name="reference-camera"></a>參考相機
+
+ 因為 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的影像隨著地圖的 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ZoomLevel) 變更而縮小放大，因此請務必定義 [**ZoomLevel**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ZoomLevel) 中影像顯示為正常比例 1 倍的位置。 此位置定義在 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的參考相機中，若要設定，您必須傳遞 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 物件給 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的建構函式。
+
+ 您可以在 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 中定義您想要的位置，然後使用 [**Geopoint**](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint) 建立 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 物件。  不過，在此範例中，我們只使用地圖控制項的 [**ActualCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol#Windows_UI_Xaml_Controls_Maps_MapControl_ActualCamera)屬性傳回的 [**MapCamera**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcamera) 物件。 這是地圖的內部相機。 該相機的目前位置將成為參考相機位置；亦即 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 影像顯示為 1 倍縮放比例的位置。
+
+ 如果您的應用程式可讓使用者在地圖上縮小，則因為地圖內部相機的高度上升而使得影像的大小降低，而當影像位於參考相機位置時則固定為 1 倍縮放比例。
+
+### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
+
+[**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_NormalizedAnchorPoint) 是錨定至 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) 屬性的影像點。 0.5,1 點是影像的底部中央。 因為我們已將 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard#Windows_UI_Xaml_Controls_Maps_MapBillboard_Location) 屬性設定為地圖控制項的中央，所以影像的底部中央將錨定至地圖控制項的中央。
+
+## <a name="add-a-mappolygon"></a>新增 MapPolygon
 
 藉由使用 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 類別，即可在地圖上顯示多點圖形。 下列範例 (取自 [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)) 會在地圖上顯示帶有藍色邊框的紅色方塊。
 
 ```csharp
 private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 {
-   double centerLatitude = myMap.Center.Position.Latitude;
-   double centerLongitude = myMap.Center.Position.Longitude;
-   MapPolygon mapPolygon = new MapPolygon();
-   mapPolygon.Path = new Geopath(new List<BasicGeoposition>() {
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+    double centerLatitude = myMap.Center.Position.Latitude;
+    double centerLongitude = myMap.Center.Position.Longitude;
 
-   });
+    var mapPolygon = new MapPolygon()
+    {
+        Path = new Geopath(new List<BasicGeoposition>() {
+        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude-0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude+0.001 },
+        new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+        }),
+        ZIndex = 1,
+        FillColor = Colors.Red,
+        StrokeColor = Colors.Blue,
+        StrokeThickness = 3,
+        StrokeDashed = false,
+    };
 
-   mapPolygon.ZIndex = 1;
-   mapPolygon.FillColor = Colors.Red;
-   mapPolygon.StrokeColor = Colors.Blue;
-   mapPolygon.StrokeThickness = 3;
-   mapPolygon.StrokeDashed = false;
-   myMap.MapElements.Add(mapPolygon);
+    myMap.MapElements.Add(mapPolygon);
 }
 ```
 
@@ -126,23 +176,24 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 ```csharp
 private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
 {
-   double centerLatitude = myMap.Center.Position.Latitude;
-   double centerLongitude = myMap.Center.Position.Longitude;
-   MapPolyline mapPolyline = new MapPolyline();
-   mapPolyline.Path = new Geopath(new List<BasicGeoposition>() {                
-         new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },                
-         new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
-   });
+    double centerLatitude = myMap.Center.Position.Latitude;
+    double centerLongitude = myMap.Center.Position.Longitude;
+    var mapPolyline = new MapPolyline
+    {
+        Path = new Geopath(new List<BasicGeoposition>() {
+            new BasicGeoposition() {Latitude=centerLatitude-0.0005, Longitude=centerLongitude-0.001 },
+            new BasicGeoposition() {Latitude=centerLatitude+0.0005, Longitude=centerLongitude+0.001 },
+        }),
+        StrokeColor = Colors.Black,
+        StrokeThickness = 3,
+        StrokeDashed = true,
+    };
 
-   mapPolyline.StrokeColor = Colors.Black;
-   mapPolyline.StrokeThickness = 3;
-   mapPolyline.StrokeDashed = true;
-   myMap.MapElements.Add(mapPolyline);
+    myMap.MapElements.Add(mapPolyline);
 }
 ```
 
 ## <a name="add-xaml"></a>新增 XAML
-
 
 藉由使用 XAML，即可在地圖上顯示自訂的 UI 元素。 藉由指定 XAML 的位置和正規化錨點，則可決定 XAML 在地圖上的位置。
 

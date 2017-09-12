@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: "最佳化您的 XAML 版面配置"
 description: "版面配置可說是 XAML App 中高度耗費資源的一部分&amp;\\#8212;在 CPU 使用量與記憶體負荷方面。 您可以採取下列一些簡單步驟來提升 XAML 應用程式的版面配置效能。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 226b2fd19777deb5135d1e1f059596883f95d3d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 40afd15da7e225ea82814ab2fa680a3c95e00488
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 版面配置
 

@@ -7,14 +7,16 @@ label: Screen sizes and break points
 template: detail.hbs
 op-migration-status: ready
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: cd6ba1378aeddb44aa66c53088f32286aff8d29f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b56cdeeb9a3c3d3ca89e19d8057e3d93241e6c3c
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 #  <a name="screen-sizes-and-break-points-for-responsive-design"></a>回應式設計的螢幕大小與中斷點
 
@@ -78,7 +80,7 @@ translationtype: HT
 <li>將[應用程式列](../controls-and-patterns/app-bars.md)固定在視窗底部以改善存取性</li>
 <li>一次使用 1 個欄位/區域</li>
 <li>使用圖示來表示搜尋 (不顯示搜尋方塊)。</li>
-<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以重疊模式放置，以節省螢幕空間。</li>
+<li>將[瀏覽窗格](../controls-and-patterns/navigationview.md)以重疊模式放置，以節省螢幕空間。</li>
 <li>如果您使用[主要詳細資料模式](../controls-and-patterns/master-details.md)，請使用堆疊展示模式，以節省螢幕空間。</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -87,7 +89,7 @@ translationtype: HT
 <li>將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
 <li>最多 2 個欄位/區域</li>
 <li>顯示搜尋方塊。</li>
-<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。</li>
+<li>將[瀏覽窗格](../controls-and-patterns/navigationview.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。</li>
 <li>請考慮進一步自訂[電視體驗](http://go.microsoft.com/fwlink/?LinkId=760736)。</li>
 </ul></td>
 <td style="vertical-align:top;"><ul>
@@ -96,7 +98,7 @@ translationtype: HT
 <li>將[應用程式列](../controls-and-patterns/app-bars.md)之類的命令元素放置在應用程式視窗的頂端。</li>
 <li>最多 3 個欄位/區域</li>
 <li>顯示搜尋方塊。</li>
-<li>將[瀏覽窗格](../controls-and-patterns/nav-pane.md)以停駐模式放置，以便讓它永遠顯示。</li>
+<li>將[瀏覽窗格](../controls-and-patterns/navigationview.md)以停駐模式放置，以便讓它永遠顯示。</li>
 </ul></td>
 </tr>
 </tbody>

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: f0cf9d2928c8d6a0494092643daa19d9b437d3eb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8679dfd073a3b756e37059a5b0bf35cc6b000e6a
+ms.sourcegitcommit: bfa61aae632cca0c68dbfb0168424d38fd607f84
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>建立、編輯和儲存點陣圖影像
 
@@ -118,7 +120,7 @@ translationtype: HT
 
 ## <a name="transcode-an-image-file"></a>對影像檔進行轉碼
 
-您可以將影像檔直接從 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 轉碼成 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206)。 從要轉碼的檔案建立 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 從輸入資料流建立新的 **BitmapDecoder**。 建立新的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 供編碼器寫入，然後呼叫 [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214)，並傳入記憶體內部資料流和解碼器物件。 設定您想要的編碼屬性。 輸入影像檔中未明確設定於編碼器的任何屬性，將會原封不動寫入輸出檔。 呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216)，使編碼器將記憶體內部資料流編碼。 最後，移至檔案資料流和記憶體內部資料流的開頭，並呼叫 [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) 將記憶體內部資料流寫出至檔案資料流。
+您可以將影像檔直接從 [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) 轉碼成 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206)。 從要轉碼的檔案建立 [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731)。 從輸入資料流建立新的 **BitmapDecoder**。 建立新的 [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) 供編碼器寫入，然後呼叫 [**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214)，並傳入記憶體內部資料流和解碼器物件。 轉碼時不支援編碼選項；您應該改用 [**CreateAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.graphics.imaging.bitmapencoder#Windows_Graphics_Imaging_BitmapEncoder_CreateAsync_System_Guid_Windows_Storage_Streams_IRandomAccessStream_Windows_Foundation_Collections_IIterable_Windows_Foundation_Collections_IKeyValuePair_System_String_Windows_Graphics_Imaging_BitmapTypedValue___)。 輸入影像檔中未明確設定於編碼器的任何屬性，將會原封不動寫入輸出檔。 呼叫 [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216)，使編碼器將記憶體內部資料流編碼。 最後，移至檔案資料流和記憶體內部資料流的開頭，並呼叫 [**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) 將記憶體內部資料流寫出至檔案資料流。
 
 [!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 

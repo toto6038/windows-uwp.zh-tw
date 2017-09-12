@@ -6,14 +6,20 @@ ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7e00ac2aa08033292ba8d3ce1cebe836fdc3808c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 13ca87313835541abffe6190d8a3bc07e67b40f8
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="check-boxes"></a>核取方塊
 
@@ -21,16 +27,9 @@ translationtype: HT
 
 核取方塊可用於選取或取消選取動作項目。 它可以用於單一項目或使用者可從中選擇的多個項目清單。 這個控制項有三個選項狀態：未選取、已選取，以及不確定。 當子選項集合同時含有未選取和已選取狀態時，請使用不確定狀態。
 
-![核取方塊狀態範例](images/templates-checkbox-states-default.png)
+> **重要 API**：[CheckBox 類別](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316)</li>
-<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) </li>
-</ul>
-</div>
+![核取方塊狀態範例](images/templates-checkbox-states-default.png)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -39,7 +38,7 @@ translationtype: HT
 
 ![針對個別選項使用單一核取方塊](images/checkbox1.png)
 
-對於二元選項，將主要之間的差異 **核取方塊** 和 [**切換開關**](toggles.md) 核取方塊針對狀態而切換開關是針對動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
+對於二元選項，將主要之間的差異 **核取方塊** 和 [切換開關](toggles.md) 核取方塊針對狀態而切換開關是針對動作。 您可以延遲認可核取方塊互動 (例如，作為表格提交的一部分)，此時應該立即認可切換開關互動。 此外，多個選項僅允許使用核取方塊。
 
 針對使用者從不會互斥的選項群組中，選擇一個或多個項目的複選案例，請使用**多個核取方塊**。
 
@@ -51,21 +50,12 @@ translationtype: HT
 
 ![用來顯示混合選項的核取方塊](images/checkbox3.png)
 
-**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當有一個以上選項但僅能選取一個時，請改用選項按鈕。
+**核取方塊**和**選項按鈕**控制項都能讓使用者從選項清單中選取。 核取方塊可讓使用者選取一個選項組合。 相反地，選項按鈕可讓使用者從互斥的選項中進行單一選擇。 當選項有多個但只能選取一個時，請改用選項按鈕。
 
-## <a name="examples"></a>範例
-
-Microsoft Edge 瀏覽器中對話方塊上的核取方塊。
-
-![Microsoft Edge 瀏覽器中對話方塊上的核取方塊](images/control-examples/check-box-edge.png)
-
-Windows 中 [鬧鐘與時鐘] app 上的核取方塊。
-
-![Windows 中 [鬧鐘與時鐘] app 上的核取方塊](images/control-examples/check-box-alarm.png)
 
 ## <a name="create-a-checkbox"></a>建立核取方塊
 
-若要對核取方塊指派標籤，請使用 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性。 標籤會顯示在核取方塊旁邊。
+若要指派核取方塊的標籤，請使用 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性。 標籤會顯示在核取方塊旁邊。
 
 這個 XAML 會建立單一核取方塊，以便在可提交表單之前用來同意服務條款。 
 
@@ -83,9 +73,9 @@ checkBox1.Content = "I agree to the terms of service.";
 
 ### <a name="bind-to-ischecked"></a>繫結到 IsChecked
 
-使用 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
+使用 [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性，以判斷是否選取或清除核取方塊。 您可以將 IsChecked 屬性的值繫結到另一個二進位值。 不過，因為 IsChecked 是[可為 null](https://msdn.microsoft.com/library/windows/apps/b3h38hb0.aspx) 的布林值，所以您必須使用值轉換器，才能將它繫結到布林值。
 
-在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
+在這個範例中，用於同意服務條款之核取方塊的 **IsChecked** 屬性會繫結到 [提交] 按鈕的 [IsEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isenabled.aspx) 屬性。 唯有當您同意服務條款時，才會啟用 \[提交\] 按鈕。
 
 > 請注意&nbsp;&nbsp;我們只顯示相關的程式碼。 如需資料繫結和值轉換器的詳細資訊，請參閱[資料繫結概觀](../data-binding/data-binding-quickstart.md)。
 
@@ -128,7 +118,7 @@ public class NullableBooleanToBooleanConverter : IValueConverter
 
 ### <a name="handle-click-and-checked-events"></a>處理 Click 和 Checked 事件
 
-若要在核取方塊狀態變更時執行動作，您可以處理 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件，或者 [**Checked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [**Unchecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
+若要在核取方塊狀態變更時執行動作，您可以處理 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件，或者 [Checked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx) 和 [Unchecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.unchecked.aspx) 事件。 
 
 **Click** 事件會在已核取的狀態變更時發生。 如果要處理 Click 事件，請使用 **IsChecked** 屬性來判斷核取方塊的狀態。
 
@@ -189,7 +179,7 @@ CheckBox 控制項是繼承自 [ToggleButton](https://msdn.microsoft.com/library
 未核取 | IsChecked | **false** 
 不確定 | IsChecked | **null** 
 
-針對要報告不確定狀態的核取方塊，您必須將 [**IsThreeState**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) 屬性設為 **true**。 
+針對要報告不確定狀態的核取方塊，您必須將 [IsThreeState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.isthreestate.aspx) 屬性設為 **true**。 
 
 將選項分組時，您可以使用不確定的核取方塊來代表整個群組。 當使用者選取群組中部分而非全部的子項目時，請使用核取方塊的不確定狀態。
 
@@ -299,7 +289,7 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相關文章
 
--   [**CheckBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [CheckBox 類別](https://msdn.microsoft.com/library/windows/apps/br209316) 
 -   [選項按鈕](radio-button.md)
 -   [切換開關](toggles.md)
 

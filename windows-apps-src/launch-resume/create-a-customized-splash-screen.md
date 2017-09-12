@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0a7a51cdd330bc361b7d0cec3a002c5b1aee9de4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 83551438a629e39407c24cfd98d4a761ba3c039b
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延長顯示啟動顯示畫面
 
@@ -189,14 +191,14 @@ translationtype: HT
     在應用程式安裝完成後，請離開延長式啟動顯示畫面。 下列程式碼定義了一個叫做 `DismissExtendedSplash` 的方法，這個方法會瀏覽至您應用程式的 MainPage.xaml 檔案中定義的 `MainPage`。
 
     ```cs
-    void DismissExtendedSplash()
-    {
-        // Navigate to mainpage
-        rootFrame.Navigate(typeof(MainPage));
-        // Place the frame in the current Window
-        Window.Current.Content = rootFrame;
-    }
-    ```
+    async void DismissExtendedSplash()
+      {
+         await Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,() =>            {
+              rootFrame = new Frame();
+              rootFrame.Content = new MainPage(); Window.Current.Content = rootFrame;
+            });
+      }
+      ```
 
 7.  **在類別內部，定義 Window.SizeChanged 事件的處理常式**
 

@@ -1,17 +1,19 @@
 ---
 author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: "本節所包含的主題說明通用於您撰寫的任何 app 的程式設計概念。"
+description: "本節所包含的主題說明通用 Windows 平台 (UWP) app 的 XAML 架構。"
 title: "XAML 平台"
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 3a5a638a2b8caf63cc3353d7bd6a43068ec61119
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp
+ms.openlocfilehash: 82ef0c06fa706837f5cbd35d3975c464e14315fa
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xaml-platform"></a>XAML 平台
 
@@ -22,10 +24,10 @@ translationtype: HT
 | 主題 | 說明 |
 |-------|-------------|
 | [XAML 概觀](xaml-overview.md) | 我們將向 Windows 執行階段 app 開發人員介紹 XAML 語言與 XAML 概念，並描述在 XAML 中宣告物件與設定屬性的不同方法，因為 XAML 可以用來建立 Windows 執行階段 app。 |
-| [相依性屬性概觀](dependency-properties-overview.md) | 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段 app 時，可供使用的相依性屬性系統。 |
+| [相依性屬性概觀](dependency-properties-overview.md) | 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。 |
 | [自訂相依性屬性](custom-dependency-properties.md) | 說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段 app 定義及實作自訂相依性屬性。 |
 | [附加屬性概觀](attached-properties-overview.md) | 說明 XAML 中附加屬性的概念並提供一些範例。 |
 | [自訂附加屬性](custom-attached-properties.md) | 說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。 |
-| [事件與路由事件概觀](events-and-routed-events-overview.md) | 我們將描述使用 C#、Visual Basic 或 C++/CX 做為程式設計語言並使用 XAML 定義 UI 時，Windows 執行階段 app 中事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援**「路由事件」**：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或版面配置容器時，路由事件非常實用。 |
+| [事件與路由事件概觀](events-and-routed-events-overview.md) | 我們將描述使用 C#、Visual Basic 或 C++/CX 做為程式設計語言並使用 XAML 定義 UI 時，Windows 執行階段 app 中事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援**路由事件**：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或版面配置容器時，路由事件非常實用。 |
 
  

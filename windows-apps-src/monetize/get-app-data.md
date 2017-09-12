@@ -4,20 +4,20 @@ ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
 description: "在 Windows 市集提交 API 中使用這些方法，針對已登錄到您 Windows 開發人員中心帳戶的應用程式擷取資料。"
 title: "取得 App 資料"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式資料"
-ms.openlocfilehash: dc0aa91aa417689866aa6bd666f0446c0eb2e242
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0bb01250756c464113570ece433afe11506a5399
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="get-app-data"></a>取得 App 資料
 
 在 Windows 市集提交 API 中使用下列方法，取得您開發人員中心帳戶中現有應用程式的資料。 如需 Windows 市集提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
-
->**注意**&nbsp;&nbsp;這些方法僅供已獲授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 此權限是在各個階段中針對開發人員帳戶啟用，並非所有帳戶目前都啟用此權限。 若要要求早一點存取，請登入開發人員中心儀表板，按一下儀表板下方的 **\[意見反應\]**，選取意見反應區域的 **\[提交 API\]**，並提交您的要求。 當您的帳戶啟用此權限時，您會收到電子郵件。
 
 使用這些方法之前，應用程式必須已經存在於開發人員中心帳戶中。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
 
@@ -88,7 +88,8 @@ Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用�
   "pendingApplicationSubmission": {
     "id": "1152921504621243487",
     "resourceLocation": "applications/9NBLGGH4R315/submissions/1152921504621243487"
-  }
+  },
+  "hasAdvancedListingPermission": false
 }
 ```
 
@@ -103,7 +104,8 @@ Windows 市集提交 API 方法，其使用下列 JSON 資料資源取得應用�
 | publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到 Windows 開發人員中心儀表板中應用程式的[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) 頁面上顯示的 **Package/Identity/Publisher** 值。       |
 | firstPublishedDate      | 字串  | 第一次發佈應用程式的日期 (格式為 ISO 8601)。   |
 | lastPublishedApplicationSubmission       | 物件 | [提交資源](#submission_object)，其提供應用程式最新發行提交的資訊。    |
-| pendingApplicationSubmission        | 物件  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   |
+| pendingApplicationSubmission        | 物件  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   
+| hasAdvancedListingPermission        | 物件  |  指出您是否可以為應用程式的提交設定 [gamingOptions](manage-app-submissions.md#gaming-options-object) 或 [trailers](manage-app-submissions.md#trailer-object)。 如需詳細資訊，請參閱[本節](manage-app-submissions.md#advanced-listings)。 |  |
 
 
 <span id="add-on-object" />

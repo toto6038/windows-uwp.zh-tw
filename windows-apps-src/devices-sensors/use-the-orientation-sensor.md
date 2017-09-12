@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: "使用方向感應器"
 description: "了解如何使用方向感應器來判斷裝置方向。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 435c2d7ca1bf2a256356c28a83d51e493d98e014
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2a354d4e3f26d0a8ac3678d4f07d606c7cf88cc5
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向感應器
 
@@ -22,6 +24,11 @@ translationtype: HT
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
 -   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+
+**範例**
+
+-   [方向感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)
+-   [簡單方向感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)
 
 了解如何使用方向感應器來判斷裝置方向。
 
@@ -173,11 +180,11 @@ translationtype: HT
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **OrientationSensorCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="OrientationSensorCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:OrientationSensorCS"`。
 
--   按 F5 或選取 **\[偵錯\]** >  **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 **\[偵錯\]** > **\[開始偵錯\]** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更方向。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** >  **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
 
 ###  <a name="explanation"></a>說明
 
@@ -319,11 +326,11 @@ OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **SimpleOrientationCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="SimpleOrientationCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:SimpleOrientationCS"`。
 
--   按 F5 或選取 **\[偵錯\]** >  **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 **\[偵錯\]** > **\[開始偵錯\]** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更方向。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** >  **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
 
 ### <a name="explanation"></a>說明
 
@@ -348,9 +355,3 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
-
-## <a name="related-topics"></a>相關主題
-
-* [OrientationSensor 範例](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [SimpleOrientation 感應器範例](http://go.microsoft.com/fwlink/p/?linkid=241383)
- 

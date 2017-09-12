@@ -4,60 +4,71 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: "帳戶類型、位置和費用"
 description: "我們在許多國家與地區提供個人開發人員帳戶及公司開發人員帳戶。"
 ms.author: wdg-dev-content
-ms.date: 03/07/2017
+ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9f6cdace7d619ede77956fb081756e0bc5682e16
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 25ae63638a76df2d064dbbc6334d5793cdadbedf
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
 我們提供兩種開發人員帳戶類型：個人帳戶和公司帳戶。 許多[國家和地區](#developer-account-and-app-submission-markets)都提供開發人員帳戶。 任一種類型的帳戶都會為您提供存取權來將 App 發佈到市集，以及參與其他的 Microsoft 開發人員計劃。
 
-> **注意**：無論您建立的是公司或個人帳戶，這個開發人員帳戶只能與一個 Microsoft 帳戶產生關聯。 註冊帳戶時，請務必使用要用於開發人員帳戶的 Microsoft 帳戶登入。
+> [!NOTE]
+> 註冊帳戶時，請務必使用要用於開發人員帳戶的 Microsoft 帳戶登入。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
 
-當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、增益集與服務。 個人帳戶適用於獨立作業的單一開發人員。 公司帳戶適用於組織和企業，可讓您存取一些額外的應用程式功能。 對於公司帳戶，我們會要求較高的[驗證](#account-verification)，以確認您已獲授權進行公司的帳戶設定。 
+當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
 
-> **重要事項**：選擇帳戶類型之後無法變更，所以務必選擇正確的類型。
+公司帳戶適用於組織和企業，這些帳戶可讓您存取一些額外的應用程式功能。 對於公司帳戶，我們會要求較高的[驗證](#account-verification)，以確認您已獲授權進行公司的帳戶設定。 個人帳戶通常適用於獨立作業的單一開發人員，雖然您可以選擇將其他帳戶使用者新增至任一種類型的帳戶。
+
+> [!IMPORTANT]
+> 選擇帳戶類型之後無法變更，所以務必選擇正確的類型。
 
 以下是這兩種帳戶類型的主要差異。
 
 | 個人帳戶 | 公司帳戶 |
 |--------------------|-----------------|
-| <ul><li>使用某些應用程式功能的限制</li><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> | <ul><li>需要透過賽門鐵克 (Symantec) 或鄧白氏 (Dun &amp; Bradstreet) 認證</li><li>存取更多應用程式功能</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> |
+| <ul><li>使用某些應用程式功能的限制</li><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> | <ul><li>要求較高的帳戶驗證</li><li>存取更多應用程式功能</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 公司帳戶還可讓您提交宣告其他 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)的應用程式。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 公司帳戶還可讓您提交宣告其他 [App 功能宣告](../packaging/app-capability-declarations.md)的應用程式。
 
 具體來說，您必須擁有公司帳戶，才能發佈使用下列三種功能的 App：
 
 -   **enterpriseAuthentication**—使用 Windows 認證存取公司內部網路。 此功能通常用於企業中與伺服器連線的企業營運應用程式。 (您不需要針對網際網路上的一般通訊使用這種功能)。
 -   **sharedUserCertificates**—可以讓應用程式存取軟體和硬體憑證，例如儲存在智慧卡的憑證。 這個功能通常用於需要使用智慧卡進行身分驗證的金融或企業 App。
--   **documentsLibrary**—可讓您以程式設計方式存取使用者的文件 (已篩選出封裝資訊清單所宣告的檔案類型關聯)。 (您不需要宣告此功能，即可使用[檔案選擇器](https://msdn.microsoft.com/library/windows/apps/Hh465174)存取使用者的 \[文件\])。 請注意針對 Windows Phone 8.1 或更早版本的 App 不能使用 documentsLibrary 功能。
+-   **documentsLibrary**—可讓您以程式設計方式存取使用者的文件 (已篩選出封裝資訊清單所宣告的檔案類型關聯)。 (您不需要宣告此功能，即可使用[檔案選擇器](../files/quickstart-using-file-and-folder-pickers.md)存取使用者的 \[文件\])。 請注意針對 Windows Phone 8.1 或更早版本的 App 不能使用 documentsLibrary 功能。
 
-> **注意**：除此之外，您必須先連絡支援並獲得核准，才能提交宣告 **documentsLibrary** 功能的應用程式。
+> [!NOTE]
+> 除此之外，您必須先連絡支援並獲得核准，才能提交宣告 **documentsLibrary** 功能的應用程式。
 
-擁有公司帳戶並不保證使用這些功能的 App 會通過認證。 這些功能是應用於非常特定的案例，大多數應用程式不應宣告這些功能。 如需詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/Mt270968)。
+擁有公司帳戶並不保證使用這些功能的 App 會通過認證。 這些功能是應用於非常特定的案例，大多數應用程式不應宣告這些功能。 如需詳細資訊，請參閱 [App 功能宣告](../packaging/app-capability-declarations.md)。
+
 
 ## <a name="account-verification"></a>帳戶驗證
 
-完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們使用賽門鐵克或鄧白氏來驗證您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 公司帳戶必須通過驗證才能送出 App，等待期間可以[保留 App 名稱](create-your-app-by-reserving-a-name.md)、存取 Windows 開發人員中心儀表板，以及持續建置和測試 App。
+完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 公司帳戶必須通過驗證才能送出 App，等待期間可以[保留 App 名稱](create-your-app-by-reserving-a-name.md)、存取 Windows 開發人員中心儀表板，以及持續建置和測試 App。
 
 您可以在 **\[帳戶設定\]** 頁面檢查您的驗證狀態。 
+
 
 ## <a name="developer-account-and-app-submission-markets"></a>開發人員帳戶與 App 提交市場
 
 如果您在以下列出的國家或地區居住或經商，將可以註冊開發人員帳戶以及送出應用程式。
 
-在下表中，**\[註冊費用\]** 是目前註冊開發人員帳戶所需的花費。 價格可能會有所變動。
+在下表中，**\[註冊費用\]** 是目前註冊開發人員帳戶所需的花費。 這是一次性註冊費用，沒有續約費用。 請注意，以下價格可能會有所變動。
 
-> **注意**：我們將在您註冊時，對註冊費用加上任何相關稅賦與費用。 此外，當我們支付款項給您時，您的銀行可能會收取收款手續費。
+> [!NOTE]
+> 我們將在您註冊時，對註冊費用加上任何相關稅賦與費用。 此外，當我們支付款項給您時，您的銀行可能會收取收款手續費。
 
 **\[支付\]** 欄說明我們如何[支付您](getting-paid-apps.md)的 App 獲利。 您可以選擇要供我們存入這筆款項的[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)。
 
-> **注意**：有些市場不支援付費應用程式 (**款項**)。 在這些市場中，只能提交免費 App。
+> [!NOTE]
+> 有些市場不支援付費應用程式 (**支付**)。 在這些市場中，只能提交免費 App。
 
 **\[PayPal\]** 欄指出 PayPal 是否為可適用於您[支付帳戶](setting-up-your-payout-account-and-tax-forms.md)的支援付款方法 (且除非另有說明，也適用於開發人員帳戶註冊費用)。
 

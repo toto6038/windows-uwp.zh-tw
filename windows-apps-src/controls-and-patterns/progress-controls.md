@@ -6,14 +6,20 @@ ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ed43df4e1702064fbff0bd2f6fa4e4d736edc48c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: jeffarn
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: d85c32a1e0cbd826877fa22182647103bdc9eac9
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="progress-controls"></a>進度控制項
 
@@ -21,15 +27,7 @@ translationtype: HT
 
 進度控制項為使用者提供回饋，告知正在進行長時間執行的操作。 根據所使用的指示器，它可以表示在進度指示器可見的時候，使用者無法與 App 互動，也可以指示可能需要等待多久的時間。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**ProgressBar 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)</li>
-<li>[**IsIndeterminate 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)</li>
-<li>[**ProgressRing 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)</li>
-<li>[**IsActive 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[ProgressBar 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)、[IsIndeterminate 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)、[ProgressRing 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)、[IsActive 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
 ## <a name="types-of-progress"></a>進度的類型
 
@@ -172,8 +170,8 @@ Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows
 ## <a name="related-articles"></a>相關文章
 
 
-- [**ProgressBar 類別**](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [**ProgressRing 類別**](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [ProgressBar 類別](https://msdn.microsoft.com/library/windows/apps/br227529)
+- [ProgressRing 類別](https://msdn.microsoft.com/library/windows/apps/br227538)
 
 **適用於開發人員 (XAML)**
 - [新增進度控制項](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)

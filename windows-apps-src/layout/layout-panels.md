@@ -7,14 +7,16 @@ label: Layout panels
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 45c7c541ab278da1f00899a16636337dcdc20d3f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 55b7c431482b171e56e670cd5d2ce0fc9148a5f9
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="layout-panels"></a>版面配置面板
 
@@ -91,7 +93,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
                RelativePanel.Below="RedRect" 
                RelativePanel.AlignLeftWith="RedRect" 
                RelativePanel.AlignRightWith="BlueRect"/>
-    <Rectangle Fill="Yellow"
+    <Rectangle Fill="Orange"
                RelativePanel.Below="GreenRect" 
                RelativePanel.AlignLeftWith="BlueRect" 
                RelativePanel.AlignRightWithPanel="True"
@@ -106,7 +108,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
 以下提供在調整矩形大小時應注意的一些事項。
 - 已針對紅色矩形指定明確的大小：44x44。 此矩形會放置於面板左上角，這是預設位置。
 - 已針對綠色矩形指定明確的高度：44。 它的左側會與紅色矩形對齊，而其右側會與藍色矩形對齊，這會決定它的寬度。
-- 並未針對黃色矩形指定明確的大小。 它的左側會與藍色矩形對齊。 它的右邊和底部邊緣會與面板的邊緣對齊。 它的大小取決於這些對齊方式，而它將會在面板調整大小時調整其大小。
+- 並未針對橘色矩形指定明確的大小。 它的左側會與藍色矩形對齊。 它的右邊和底部邊緣會與面板的邊緣對齊。 它的大小取決於這些對齊方式，而它將會在面板調整大小時調整其大小。
 
 ## <a name="stackpanel"></a>StackPanel
 
@@ -121,7 +123,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
     <Rectangle Fill="Red" Height="44"/>
     <Rectangle Fill="Blue" Height="44"/>
     <Rectangle Fill="Green" Height="44"/>
-    <Rectangle Fill="Yellow" Height="44"/>
+    <Rectangle Fill="Orange" Height="44"/>
 </StackPanel>
 ```
 
@@ -155,7 +157,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
     <Rectangle Fill="Red" Width="44"/>
     <Rectangle Fill="Blue" Grid.Row="1"/>
     <Rectangle Fill="Green" Grid.Column="1"/>
-    <Rectangle Fill="Yellow" Grid.Row="1" Grid.Column="1"/>
+    <Rectangle Fill="Orange" Grid.Row="1" Grid.Column="1"/>
 </Grid>
 ```
 
@@ -188,7 +190,7 @@ RelativePanel、StackPanel 及 Grid 面板會定義框線屬性，讓您能夠�
                VariableSizedWrapGrid.RowSpan="2"/>
     <Rectangle Fill="Green" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
-    <Rectangle Fill="Yellow" 
+    <Rectangle Fill="Orange" 
                VariableSizedWrapGrid.RowSpan="2" 
                VariableSizedWrapGrid.ColumnSpan="2"/>
 </VariableSizedWrapGrid>
@@ -216,7 +218,7 @@ Canvas 不會針對其子項進行任何調整大小的動作。 每個元素都
     <Rectangle Fill="Red" Height="44" Width="44"/>
     <Rectangle Fill="Blue" Height="44" Width="44" Canvas.Left="20" Canvas.Top="20"/>
     <Rectangle Fill="Green" Height="44" Width="44" Canvas.Left="40" Canvas.Top="40"/>
-    <Rectangle Fill="Yellow" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
+    <Rectangle Fill="Orange" Height="44" Width="44" Canvas.Left="60" Canvas.Top="60"/>
 </Canvas>
 ```
 

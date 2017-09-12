@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: "最佳化動畫、媒體及影像"
 description: "建立具有流暢的動畫、高畫面播放速率和高效能媒體擷取和播放功能的通用 Windows 平台 (UWP) 應用程式。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 29383c65d36b7bc9e5946e4c55298ac0e04107c6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 74f8b5a47a0ebee123ccad13bee2177870630a27
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="optimize-animations-media-and-images"></a>最佳化動畫、媒體及影像
 
@@ -37,8 +39,9 @@ translationtype: HT
 -   以這些傳回值類型的子屬性為目標時，下列 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) 屬性的動畫：
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
-    -   [**投影**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
-    -   [**裁剪**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+    -   [**Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)
+    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
+    -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
 相依式動畫會影響配置，因此需要有來自 UI 執行緒的額外輸入才能進行計算。 相依式動畫包含對 [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) 和 [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) 這類屬性的修改。 相依式動畫預設不會執行，且需要由 app 開發人員選擇加入。 如果 UI 執行緒保持未封鎖狀態，則相依式動畫啟用後便可以很流暢地執行，但是如果架構或 app 正在 UI 執行緒上執行大量的其他工作，就會發生斷斷續續的現象。
 

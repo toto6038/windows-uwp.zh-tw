@@ -6,34 +6,37 @@ ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
 label: Show multiple views for an app
 template: detail.hbs
 op-migration-status: ready
-ms.author: jimwalk
-ms.date: 02/08/2017
+ms.author: mijacobs
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 87f3d5e75b361d1ba9d2c304e58542803da66cd4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 629e6b4bc2b192f5e81bf49e2cc4c18fbd9a0d54
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="show-multiple-views-for-an-app"></a>顯示 app 的多重檢視
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-您可以讓使用者在個別的視窗中檢視您 app 的多個獨立部分，以協助他們提高生產力。 典型的範例是電子郵件 app，其主要 UI 會顯示電子郵件清單和所選電子郵件的預覽。 但是使用者也可以在個別的視窗中開啟訊息，並以並列的方式檢視它們。
+讓使用者在個別的視窗中檢視您 App 的獨立部分，以協助他們提高生產力。 如果您為 App 建立多個視窗，則每個視窗的行為都是各自獨立。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都以自己的執行緒運作。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)</li>
-<li>[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)</li>
-</ul>
-</div> 
+![線框顯示含有多個視窗的 App](images/multi-view.png)
 
-如果您為 app 建立多個視窗，則每個視窗的行為都是各自獨立的。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都以自己的執行緒運作。
+> **重要 API**：[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)、[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+
+## <a name="when-should-an-app-use-multiple-views"></a>App 何時應該使用多個檢視？
+有各種不同的案例可從多個檢視受惠。 以下是一些範例：
+ - 電子郵件 App 可讓使用者在撰寫新的電子郵件時檢視所接收郵件的清單
+ - 通訊錄 App 可讓使用者並排比較多人的連絡資訊
+ - 音樂播放程式 App 可讓使用者在瀏覽其他可用音樂的清單時看到正在播放的音樂
+ - 筆記紀錄 App 可讓使用者將資訊從一頁筆記複製到另一頁
+ - 閱讀 App 可讓使用者在有機會細讀所有高階標題之後，開啟幾個文章供稍後閱讀
 
 ## <a name="what-is-a-view"></a>什麼是檢視？
-
 
 應用程式檢視是執行緒與應用程式用來顯示內容之視窗的 1:1 配對。 它是由 [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 物件表示。
 
@@ -45,8 +48,9 @@ XAML 架構同樣也會將 [**CoreWindow**](https://msdn.microsoft.com/library/w
 
 ## <a name="show-a-new-view"></a>顯示新的檢視
 
+每個 App 配置是獨一無二的，我們建議在可預測的位置包括「新視窗」按鈕，例如可在新視窗中開啟的內容的右上角。 也請考慮包括內容功能表選項，可「在新視窗開啟」。
 
-在繼續深入之前，讓我們看看建立新檢視的步驟。 這裡會啟動新檢視來回應按鈕點選。
+我們來看看建立新檢視的步驟。 這裡會啟動新檢視來回應按鈕點選。
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -131,7 +135,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="switch-from-one-view-to-another"></a>從一個檢視切換到另一個檢視
 
-您必須提供一個方法，讓使用者能夠從次要視窗瀏覽回主要視窗。 若要這樣做，請使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 您可以從原來的視窗執行緒呼叫此方法，然後傳送要切換的目的地視窗的檢視識別碼。
+考慮提供一個方法，讓使用者能夠從次要視窗瀏覽回其父視窗。 若要這樣做，請使用 [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 方法。 您可以從原來的視窗執行緒呼叫此方法，然後傳送要切換的目的地視窗的檢視識別碼。
 
 ```csharp
 await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
@@ -139,10 +143,16 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);
 
 使用 [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) 時，您可以指定 [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105) 的值來選擇是否要關閉初始視窗並將它從工作列中移除。
 
- 
+## <a name="dos-and-donts"></a>可行與禁止事項
+
+* 利用「開啟新視窗」字符，提供清楚的次要檢視進入點。
+* 與使用者溝通次要檢視的用途。
+* 確保您的 App 在單一檢視中可充分運作，而使用者僅為方便才開啟次要檢視。
+* 不要仰賴次要檢視，提供通知或其他暫時性視覺效果。
+
+## <a name="related-topics"></a>相關主題
+
+* [ApplicationViewSwitcher](https://msdn.microsoft.com/library/windows/apps/dn281094)
+* [CreateNewView](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
  
-
-
-
-

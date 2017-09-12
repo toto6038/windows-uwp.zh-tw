@@ -7,31 +7,28 @@ dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 85c23206d421d061b81f46645b6e6820fb079df3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 61e0d0c1d368a515a7d0b6aba24c7de4b5898092
+ms.sourcegitcommit: 45490bd85e6f8d247a041841d547ecac2ff48250
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/23/2017
 ---
 # <a name="auto-suggest-box"></a>自動建議方塊
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-![自動建議方塊](images/controls/auto-suggest-box-open.png)
+> **重要 API**：[AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[TextChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)、[SuggestionChose 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)、[QuerySubmitted 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**AutoSuggestBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)</li>
-<li>[**TextChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)</li>
-<li>[**SuggestionChose 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)</li>
-<li>[**QuerySubmitted 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)</li>
-</ul>
-</div>
+![自動建議方塊](images/controls/auto-suggest-box-open.png)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -65,7 +62,7 @@ Groove 音樂 app 中的自動建議方塊。
 
 ### <a name="text-changed"></a>變更文字
 
-每當更新文字方塊的內容時，就會發生 [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) 事件。 使用事件引數 [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) 屬性判斷變更是否因為使用者輸入所造成。 如果變更原因是 **UserInput**，請根據輸入，篩選您的資料。 接著，將已篩選的資料設定為 AutoSuggestBox 的 [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 以更新建議清單。
+每當更新文字方塊的內容時，就會發生 [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) 事件。 使用事件引數 [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) 屬性判斷變更是否因為使用者輸入所造成。 如果變更原因是 **UserInput**，請根據輸入，篩選您的資料。 接著，將已篩選的資料設定為 AutoSuggestBox 的 [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) 以更新建議清單。
 
 若要控制建議清單中顯示項目的方式，您可以使用 [DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) 或 [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)。
 
@@ -156,18 +153,20 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
     ![沒有搜尋結果的自動建議方塊範例](images/controls_autosuggest_noresults.png)
 
+<!--
 <div class="microsoft-internal-note">
-**全球化和當地語系化檢查清單**
+**Globalization and localization checklist**
 
 <table>
 <tr>
-<th>垂直間距</th><td>使用非拉丁字元的垂直間距，確保將適當地顯示非拉丁指令碼，包含數字。</td>
+<th>Vertical spacing</th><td>Use non-Latin characters for vertical spacing to ensure non-Latin scripts will display properly, including numbers.</td>
 </tr>
 <tr>
-<th>捲動</th><td>選取自動建議文字時，使用者應該可以捲動到字串結尾。</td>
+<th>Scrolling</th><td>When auto suggest text is selected, user should be able to scroll to end of string.</td>
 </tr>
 </table>
 </div>
+-->
 
 
 ## <a name="related-articles"></a>相關文章
@@ -175,6 +174,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [文字控制項](text-controls.md)
 - [拼字檢查](spell-checking-and-prediction.md)
 - [搜尋](search.md)
-- [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)

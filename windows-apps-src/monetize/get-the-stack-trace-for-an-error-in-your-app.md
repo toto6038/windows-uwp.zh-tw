@@ -4,14 +4,16 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: "在 Windows 市集分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。"
 title: "取得應用程式中錯誤的堆疊追蹤"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 市集服務, Windows 市集分析 API, 堆疊追蹤, 錯誤"
-ms.openlocfilehash: fb99c65e91e02e3e60b12258e30083183c213324
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.openlocfilehash: bec42609ee9441a872415bc270a97bcb21a858f7
+ms.sourcegitcommit: 7aabd2e59d45bbc5512dd4ddd9110ae62b79d552
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/19/2017
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 
@@ -129,3 +131,4 @@ Authorization: Bearer <your access token>
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)
 * [取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)
+* [下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)

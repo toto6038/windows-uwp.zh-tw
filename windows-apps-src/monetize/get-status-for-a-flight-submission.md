@@ -4,14 +4,16 @@ ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: "在 Windows 市集提交 API 中使用這個方法，取得套件正式發行前小眾測試版提交的狀態。"
 title: "取得套件正式發行前小眾測試版提交的狀態"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 正式發行前小眾測試版提交, 狀態"
-ms.openlocfilehash: 06367fd2110b66fc36babf137a12b482df4f7d40
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9397b0e3bd43ae77fd68e564c0af9a1c4ad67282
+ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/04/2017
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>取得套件正式發行前小眾測試版提交的狀態
 
@@ -27,8 +29,6 @@ translationtype: HT
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立套件正式發行前小眾測試版提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)方法進行。
-
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -54,7 +54,7 @@ translationtype: HT
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 包含您想取得狀態之套件正式發行前小眾測試版提交的 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| flightId | 字串 | 必要。 包含您想取得狀態之提交的套件正式發行前小眾測試版的識別碼。 識別碼可在開發人員中心儀表板上取得，並且包含在[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中。  |
+| flightId | 字串 | 必要。 包含您想取得狀態之提交的套件正式發行前小眾測試版的識別碼。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。  |
 | submissionId | 字串 | 必要。 您想取得狀態之提交的識別碼。 識別碼可在開發人員中心儀表板上取得，並且包含在[建立套件正式發行前小眾測試版提交](create-a-flight-submission.md)要求的回應資料中。  |
 
 <span/>

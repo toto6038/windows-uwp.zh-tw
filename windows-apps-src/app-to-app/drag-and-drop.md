@@ -2,16 +2,18 @@
 description: "本文說明如何在您的通用 Windows 平台 (UWP) app 中新增拖放功能。"
 title: "拖放"
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 84f78d43a0d9a34b8ba992a2357f08ad374b32d1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b3efc0a30c3407fbc05d0fa800df8596af548931
+ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/19/2017
 ---
 # <a name="drag-and-drop"></a>拖放
 

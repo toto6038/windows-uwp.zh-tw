@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用者傳送電子郵件訊息。 您可以在顯示該對話方塊之前，使用資料預先填入電子郵件的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。"
 title: "傳送電子郵件"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: "連絡人, 電子郵件, 傳送"
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 67c2f808050547f5a56cbeb4e1087cdf3555727d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bfeec341b0b4e63b4fe37118c1f7daac67929018
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="send-email"></a>傳送電子郵件
 
@@ -31,8 +33,8 @@ translationtype: HT
 建立一個新的 [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) 物件，然後設定您要在 [撰寫電子郵件] 對話方塊中預先填入的資料。 呼叫 [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) 以顯示該對話方塊。
 
 ``` cs
-private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
+private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
     StorageFile attachmentFile)
 {
     var emailMessage = new Windows.ApplicationModel.Email.EmailMessage();
@@ -57,7 +59,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
     }
 
     await Windows.ApplicationModel.Email.EmailManager.ShowComposeNewEmailAsync(emailMessage);
-        
+
 }
 ```
 
@@ -72,7 +74,3 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
  
 
  
-
-
-
-

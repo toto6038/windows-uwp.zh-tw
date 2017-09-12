@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: jwmsft
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: "最佳化檔案存取"
 description: "建立可有效存取檔案系統的通用 Windows 平台 (UWP) 應用程式，避免因為磁碟延遲和記憶體/CPU 週期而發生效能問題。"
-ms.author: markl
+ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 967ed4b6db682524bd06f81d4c6d7771cc41d84b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 00ad06179ed4a77cb3e5144df12d5490f79a5df2
+ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/14/2017
 ---
 # <a name="optimize-file-access"></a>最佳化檔案存取
 

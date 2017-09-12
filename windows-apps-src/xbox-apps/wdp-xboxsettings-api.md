@@ -1,5 +1,5 @@
 ---
-author: payzer
+author: m-stahl
 title: "裝置入口網站 Xbox 開發人員設定 API 參考"
 description: "了解如何存取 Xbox 開發人員設定。"
 ms.author: wdg-dev-content
@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
-ms.openlocfilehash: 43e4bb289d12439bbc0f6de347d187b067288d51
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: dfde4c45a4aa5a520e0aa98cd7f31f7d84854e08
+ms.sourcegitcommit: 0e44f197e7e649d542ec3f67cd790a61dbe1226f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/07/2017
 ---
 # <a name="developer-settings-api-reference"></a>開發人員設定 API 參考   
 您可以使用這個 API 來存取適合用於開發的 Xbox One 設定。
@@ -39,12 +41,20 @@ GET | /ext/settings
 - 無
 
 **回應**   
-回應是包含所有設定的 Settings JSON 陣列。 每個設定物件包含下列欄位：   
+回應是包含所有設定的 Settings JSON 陣列。 每個設定物件包含下列欄位：
 
-Name - (字串) 設定的名稱。   
-Value - (字串) 設定的值。   
+Name - (字串) 設定的名稱。
+Value - (字串) 設定的值。
 RequiresReboot - ("Yes" | "No") 這個欄位會指示設定是否需要重新開機才會生效。
-Category - (字串) 設定的類別
+Disabled - ("Yes" | "No") 這個欄位會指示設定是否已停用，無法編輯。
+Category - (字串) 設定的類別。
+Type - ("Text" | "Number" | "Bool" | "Select") 這個欄位指示是設定的類型：文字輸入、布林值 ("true" 或 "false")、有最小值和最大值的數字，或有特定值清單的 select。
+
+如果設定是數字：Min - (Number) 這個欄位表示設定的最小數值。
+Max - (Number) 這個欄位表示設定的最大數值。
+
+如果設定為 select：OptionsVariable - ("Yes" | "No") 這個欄位表示設定選項是否為變數，有效選項是否不需要重新開機就可以變更。
+Options - JSON 陣列，包含有效 select 選項 (為字串)。
 
 **狀態碼**
 
@@ -80,12 +90,20 @@ GET | /ext/settings/\&lt;設定名稱\&gt;
 - 無
 
 **回應**   
-回應是 JSON 物件，包含下列欄位：   
+回應是 JSON 物件，包含下列欄位：
 
-Name - (字串) 設定的名稱。   
-Value - (字串) 設定的值。   
+Name - (字串) 設定的名稱。
+Value - (字串) 設定的值。
 RequiresReboot - ("Yes" | "No") 這個欄位會指示設定是否需要重新開機才會生效。
-Category - (字串) 設定的類別
+Disabled - ("Yes" | "No") 這個欄位會指示設定是否已停用，無法編輯。
+Category - (字串) 設定的類別。
+Type - ("Text" | "Number" | "Bool" | "Select") 這個欄位指示是設定的類型：文字輸入、布林值 ("true" 或 "false")、有最小值和最大值的數字，或有特定值清單的 select。
+
+如果設定是數字：Min - (Number) 這個欄位表示設定的最小數值。
+Max - (Number) 這個欄位表示設定的最大數值。
+
+如果設定為 select：OptionsVariable - ("Yes" | "No") 這個欄位表示設定選項是否為變數，有效選項是否不需要重新開機就可以變更。
+Options - JSON 陣列，包含有效 select 選項 (為字串)。
 
 **狀態碼**
 
@@ -138,4 +156,3 @@ HTTP 狀態碼      | 描述
 **可用裝置系列**
 
 * Windows Xbox
-

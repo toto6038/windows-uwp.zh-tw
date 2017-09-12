@@ -4,19 +4,18 @@ ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
 description: "使用 Windows 市集提交 API 的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新提交。"
 title: "建立 App 提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 建立應用程式提交"
-ms.openlocfilehash: 13b1b1cc83b6a8659bf38f5a97caf8b2f50a3ee0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6ed90a764701e40ed513b623a9ddb5aa6a2be466
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="create-an-app-submission"></a>建立 App 提交
-
-
-
 
 使用 Windows 市集提交 API 的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新提交。 使用這個方法成功建立新提交之後，請[更新提交](update-an-app-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-app-submission.md)供擷取和發佈。
 
@@ -30,8 +29,6 @@ translationtype: HT
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 請確定 App 至少有一個已完成[年齡分級](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)資訊的提交。
-
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -131,6 +128,7 @@ Authorization: Bearer <your access token>
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -182,7 +180,8 @@ Authorization: Bearer <your access token>
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

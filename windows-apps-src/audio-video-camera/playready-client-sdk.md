@@ -1,17 +1,19 @@
 ---
-author: eliotcowley
+author: drewbatgit
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
 description: "本主題說明如何將 PlayReady 保護的媒體內容新增到您的通用 Windows 平台 (UWP) app。"
 title: PlayReady DRM
-ms.author: elcowle
+ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 161a048a4bfa9479821aec542db17ded8243d231
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 803070143a3d07bfbdbb4f3e1b7b70858b75e0f9
+ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/21/2017
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -470,6 +472,33 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
+## <a name="query-for-protection-capabilities"></a>查詢保護功能
+從 Windows 10 版本 1703 開始，您可以查詢 HW DRM 功能，例如解碼轉碼器、解析度和輸出保護 (HDCP)。 查詢是使用 [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_) 方法來執行，這個方法接受表示查詢支援功能的字串以及指定查詢套用所在金鑰系統的字串。 如需支援的字串值清單，請參閱 [**IsTypeSupported**](https://docs.microsoft.com/uwp/api/windows.media.protection.protectioncapabilities#Windows_Media_Protection_ProtectionCapabilities_IsTypeSupported_System_String_System_String_) 的 API 參考頁面。 下列程式碼範例說明此方法的使用方式。  
+
+    ```cs
+    using namespace Windows::Media::Protection;
+
+    ProtectionCapabilities^ sr = ref new ProtectionCapabilities();
+
+    ProtectionCapabilityResult result = sr->IsTypeSupported(
+    L"video/mp4; codecs=\"avc1.640028\"; features=\"decode-bpp=10,decode-fps=29.97,decode-res-x=1920,decode-res-y=1080\"",
+    L"com.microsoft.playready");
+
+    switch (result)
+    {
+        case ProtectionCapabilityResult::Probably:
+        // Queue up UHD HW DRM video
+        break;
+
+        case ProtectionCapabilityResult::Maybe:
+        // Check again after UI or poll for more info.
+        break;
+
+        case ProtectionCapabilityResult::NotSupported:
+        // Do not queue up UHD HW DRM video.
+        break;
+    }
+    ```
 ## <a name="add-secure-stop"></a>新增安全停止功能
 
 本節說明如何將安全停止功能新增到您的 UWP app。
@@ -508,6 +537,7 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
 * 實作邏輯來使只有特定的已驗證測試帳戶可以針對特定內容取得 SL150 授權。
 
 請使用最適合您公司和產品的方法。
+
 
 ## <a name="see-also"></a>另請參閱
 - [媒體播放](media-playback.md)

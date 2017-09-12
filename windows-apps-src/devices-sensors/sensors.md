@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: "感應器"
 description: "感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: af862471fcac7ee7f0ab8ad61f57c485d995bae2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eee6bb0c70c39a6676639f5b6da0f5465811dbad
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="sensors"></a>感應器
 
@@ -65,17 +67,25 @@ translationtype: HT
 
 可使用加速計感應器的應用程式，包括以您傾斜裝置的方向 (重力向量) 讓彈珠在螢幕上滾動的遊戲。 這類功能會密切對應到 [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) 的功能，且也可利用該感應器或結合使用俯仰與翻滾動作來完成。 使用加速計的重力向量，為裝置傾斜提供輕鬆以數學方式操控的向量，可稍微簡化此動作。 另一個範例是使用者在空中揮動裝置 (線性加速向量) 時，讓鞭子發出霹啪聲的 app。
 
+如需範例實作，請參閱[加速計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
+
 ## <a name="activity-sensor"></a>活動感應器
 
-[**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器會判斷連接至感應器的裝置目前的狀態。 此感應器通常用於健身 app，可在攜帶裝置的使用者跑步或步行時進行追蹤。 若想了解此感應器 API 可偵測到哪些可能的活動，請參閱 [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128)。
+[**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器會判斷連接至感應器的裝置目前的狀態。 此感應器通常用於健身 app，可在攜帶裝置的使用者跑步或步行時進行追蹤。 如需此感應器 API 可偵測的可能活動清單，請參閱 [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128)。
+
+如需範例實作，請參閱[活動感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ActivitySensor)。
 
 ## <a name="altimeter"></a>高度表
 
-[**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) 感應器會傳回一個值，指出感應器的高度。 這可讓您追蹤距離海平面的高度變化 (以公尺為單位)。 舉例來說，會在跑步期間追蹤高度變化以計算卡路里燃燒量的跑步 app，就是可能會使用此感應器的 app 之一。 在此案例中，這個感應器的資料可與 [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) 感應器相結合，以提供更精確的追蹤資訊。
+[**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) 感應器會傳回一個值，指出感應器的高度。 這可讓您追蹤距離海平面的高度變化 (以公尺為單位)。 舉例來說，會在跑步期間追蹤高度變化以計算卡路里燃燒量的跑步 app，就是可能會使用此感應器的 app 之一。 在這種情況下，此感應器資料可與[**活動**](https://msdn.microsoft.com/library/windows/apps/Dn785096)感應器相結合，以提供更精確的追蹤資訊。
+
+如需範例實作，請參閱[高度表範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Altimeter)。
 
 ## <a name="barometer"></a>氣壓計
 
 [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) 感應器可讓 app 取得氣壓計讀數。 天氣 app 可使用這項資訊提供目前的氣壓。 這可以用來提供更詳細的資訊，並預測可能的天氣變化。
+
+如需範例實作，請參閱[氣壓計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Barometer)。
 
 ## <a name="compass"></a>指南針
 
@@ -85,6 +95,8 @@ translationtype: HT
 
 想要顯示羅盤或巡覽地圖的 app，通常都會使用指南針感應器。
 
+如需範例實作，請參閱[指南針範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)。
+
 ## <a name="gyrometer"></a>陀螺儀
 
 [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) 感應器可測量沿著 X 軸、Y 軸及 Z 軸的角速度。 這在簡單動作應用程式中非常有用，因為這些應用程式不受裝置指向影響，但會受到裝置以不同速度旋轉所影響。 陀螺儀會因為資料中的雜訊或沿著一或多軸的常數偏差而受到影響。 您應該查詢加速計以確認裝置是否正在移動，以判斷陀螺儀是否受到偏差所影響，然後據此在應用程式中加以補償。
@@ -92,6 +104,8 @@ translationtype: HT
 ![陀螺儀：俯仰、翻滾及偏擺](images/gyrometer.png)
 
 使用陀螺儀感應器的 app 範例，就是將裝置猛然快速旋轉來旋轉輪盤的遊戲。
+
+如需範例實作，請參閱[陀螺儀範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Gyrometer)。
 
 ## <a name="inclinometer"></a>傾角計
 
@@ -101,9 +115,13 @@ translationtype: HT
 
 本身會變更檢視方式以符合裝置指向的應用程式，都可以使用傾角計感應器。 再者，本身會根據裝置偏擺、俯仰及翻滾而顯示飛機動作的 app，也可以使用傾角計讀數。
 
+如需範例實作，請參閱[傾角計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer).
+
 ## <a name="light-sensor"></a>光感應器
 
 [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) 感應器可判斷感應器周圍的周遭環境光線。 這可讓 app 判斷裝置周圍的光線設定何時有所變化。 例如，平板電腦的使用者可能會在晴天從室內移到室外去。 智慧型 app 可以使用此值，來提高背景與呈現的字型之間的對比。 如此，即使是在較亮的室外設定下也可閱讀內容。
+
+如需範例實作，請參閱[光感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LightSensor)。
 
 ## <a name="orientation-sensor"></a>方向感應器
 
@@ -113,13 +131,19 @@ translationtype: HT
 
 方向感應器通常用於高階擴增實境 app，這種 app 會根據裝置背面所指的方向，對您的周遭環境繪製覆疊。
 
+如需範例實作，請參閱[方向感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/OrientationSensor)。
+
 ## <a name="pedometer"></a>計步器
 
 [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) 感應器會追蹤攜帶連線裝置的使用者行走的步數。 感應器依設定會追蹤一段指定時間內的步數。 有些健身 app 會追蹤使用者的行走步數，以幫助他們設定並達到各種目標。 後續可以收集並儲存這項資訊，以顯示一段時間的進度。
 
+如需範例實作，請參閱[計步器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Pedometer)。
+
 ## <a name="proximity-sensor"></a>鄰近性感測器
 
 [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) 感應器可用來指出感應器是否偵測到物件。 除了可判斷物件是否在裝置的範圍內、鄰近性感測器也可判斷與偵測的物件之間相隔多少距離。 舉例來說，想要在使用者進入指定範圍時從睡眠狀態啟動的 app，就可能會使用此感應器。 在鄰近性感測器偵測到物件之前，裝置會處於低耗電的睡眠狀態，之後則可進入較活躍的狀態。
+
+如需範例實作，請參閱[鄰近性感測器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ProximitySensor)。
 
 ## <a name="simple-orientation"></a>簡單方向
 
@@ -127,7 +151,4 @@ translationtype: HT
 
 根據裝置是平行於地面或與地面成直角而變更其顯示方式的閱讀程式，都可以使用 SimpleOrientationSensor 的值來判斷裝置的手持姿勢。
 
-## <a name="samples"></a>範例
-
-如需示範使用其他幾個感應器的範例，請參閱 [Windows 感應器範例](http://go.microsoft.com/fwlink/?LinkID=616041)。
-
+如需範例實作，請參閱[簡單方向感應器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleOrientationSensor)。

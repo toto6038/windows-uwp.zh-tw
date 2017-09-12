@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
 title: "使用 Visual Studio 測試 Surface Hub app"
 description: "Visual Studio 模擬器提供了可設計、開發、偵錯和測試 UWP 應用程式 (包括針對 Surface Hub 建置的應用程式) 的環境。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ed2f7dc63e478d3dde2eb58b502d373db3181501
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 859c28d59e3c289ac3cb7151f0b9e396d52546c3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="test-surface-hub-apps-using-visual-studio"></a>使用 Visual Studio 測試 Surface Hub 應用程式
 Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用 Windows 平台 (UWP) app (包括針對 Microsoft Surface Hub 建置的應用程式) 的環境。 此模擬器不會使用與 Surface Hub 相同的使用者介面，但很適合以 Surface Hub 的畫面大小與解析度測試您應用程式的外觀和行為。
@@ -90,7 +92,7 @@ Visual Studio 模擬器提供了可讓您設計、開發、偵錯和測試通用
 
    > **注意**&nbsp;&nbsp;此功能至少需要 **Visual Studio 2015 Update 1**。
 
-1. 瀏覽至 **\[開始偵錯\]** 按鈕旁的偵錯目標下拉式清單，並選取 **[遠端電腦\]**。
+1. 瀏覽至 **\[開始偵錯\]** 按鈕旁的偵錯目標下拉式清單，並選取 **\[遠端電腦\]**。
 
     <!--lcap: in your screenshot, you have local machine selected-->
 

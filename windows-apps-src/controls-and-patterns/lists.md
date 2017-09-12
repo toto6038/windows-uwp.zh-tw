@@ -6,18 +6,25 @@ ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4c17bab575be207106abfac44104bb32bcffd6ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: predavid
+design-contact: kimsea
+dev-contact: ranjeshj
+doc-status: Published
+ms.openlocfilehash: 0249132942cbb15a009c85c929185bffcba23cd9
+ms.sourcegitcommit: 690320e6cbfc16ed9e935a136fecc44d68e95719
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="lists"></a>清單
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
+
 
 會顯示清單，並啟用與集合內容的互動。 本文中涵蓋的四個清單模式包括：
 
@@ -26,16 +33,15 @@ translationtype: HT
 -   下拉式清單，讓使用者從展開的清單中選擇一個項目
 -   清單方塊，讓使用者從可以捲動的方塊中選擇一或多個項目
 
-針對每個清單模式指定設計指導方針、功能和範例。 在文件的結尾是相關主題和 API 的連結。
+針對每個清單模式指定設計指導方針、功能和範例。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/br242878)</li>
-<li>[**GridView 類別**](https://msdn.microsoft.com/library/windows/apps/br242705)</li>
-<li>[**ComboBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209348)</li>
-</ul>
-</div>
+> **重要 API**：[ListView 類別](https://msdn.microsoft.com/library/windows/apps/br242878)、[GridView 類別](https://msdn.microsoft.com/library/windows/apps/br242705)、[ComboBox 類別](https://msdn.microsoft.com/library/windows/apps/br209348)
+
+> <div id="main">
+> <strong><span class="uwpd-prelease">發行前版本。</span> 秋季版 Creators Update (Windows 10 Insider Preview 組建 16215 及更新版本) - 行為變更</strong>
+> </div>
+> 根據預設，主動式手寫筆現在可在 UWP 應用程式中捲動/移動瀏覽 (例如觸控、觸控板和被動式手寫筆)，而不用執行選擇。
+> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 請參閱 [ScrollViewer 類別] (https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer) (英文) API 參照主題，以取得詳細資訊。
 
 ## <a name="list-views"></a>清單檢視
 
@@ -180,10 +186,12 @@ translationtype: HT
 
 -   將下拉式方塊項目的文字內容限制為單行。
 -   以最合乎邏輯的順序排序下拉式方塊中的項目。 將相關選項群組在一起並將最常用的選項放在頂端。 以字母順序排序名稱、以數字順序排序數字，以及以時間順序排序日期。
+-   若要建立會在使用者使用方向鍵 (例如 [字型選擇] 下拉式清單) 時即時更新的下拉式方塊，請將 SelectionChangedTrigger 設定為 [永遠]。  
 
 ### <a name="text-search"></a>文字搜尋
 
-下拉式方塊可自動支援在其集合內的搜尋。 當焦點在一個已開啟或關閉的下拉式方塊上時，如果使用者在實體鍵盤上輸入字元，就會顯示與使用者的字串相符的候選項目。 在瀏覽長清單時，這項功能特別有幫助。 例如，與包含狀態清單的下拉式清單進行互動時，使用者可以按 “w” 鍵來顯示 “Washington” 以供快速選取。 
+下拉式方塊可自動支援在其集合內的搜尋。 當焦點在一個已開啟或關閉的下拉式方塊上時，如果使用者在實體鍵盤上輸入字元，就會顯示與使用者的字串相符的候選項目。 在瀏覽長清單時，這項功能特別有幫助。 例如，與包含狀態清單的下拉式清單進行互動時，使用者可以按 “w” 鍵來顯示 “Washington” 以供快速選取。
+
 
 ## <a name="list-boxes"></a>清單方塊
 
@@ -252,12 +260,12 @@ translationtype: HT
 
 - [中樞](hub.md)
 - [主要/詳細資料](master-details.md)
-- [瀏覽窗格](nav-pane.md)
+- [瀏覽窗格](navigationview.md)
 - [語意式縮放](semantic-zoom.md)
 - [拖放](https://msdn.microsoft.com/windows/uwp/app-to-app/drag-and-drop)
 
 **適用於開發人員**
-- [**ListView 類別**](https://msdn.microsoft.com/library/windows/apps/br242878)
-- [**GridView 類別**](https://msdn.microsoft.com/library/windows/apps/br242705)
-- [**ComboBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209348)
-- [**ListBox 類別**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [ListView 類別](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [GridView 類別](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [ComboBox 類別](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [ListBox 類別](https://msdn.microsoft.com/library/windows/apps/br242868)

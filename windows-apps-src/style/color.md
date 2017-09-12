@@ -6,14 +6,18 @@ ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 template: detail.hbs
 extraBodyClass: style-color
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0d4266d1335198cffb74900b0d1eb2bb48cd1879
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+design-contact: rybick
+doc-status: Published
+ms.openlocfilehash: fd37d69c2e9b20b46c34e6071f302bd55bbbba26
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="color"></a>色彩
 
@@ -132,13 +136,47 @@ translationtype: HT
       </tr>
   </table>
 
+避免使用輔色作為背景，尤其是文字與圖示。 由於輔色會改變，因此如果您必須將它用作背景，則必須再進行一些工作，確保能輕鬆辨識前景文字。 例如，如果文字是白色，輔色是淺灰色，則文字會因為白色與淺灰色的對比率低而難以辨識。 您可以測試輔色來判定其是否為深色，來解決此問題：  
 
-<div class="microsoft-internal-note">
-原則上，將輔色當成背景使用時，一律會在其上放置白色文字。 Windows 隨附的預設輔色與白色文字的對比度極佳。 但若使用者想依據喜好來選取與白色對比度較差的輔色，也沒有關係。 如果讀取時發生問題，隨時可以選取較深的輔色。
-</div>
+使用下列演算法判定背景色彩為淺色或深色。
+
+```C#
+void accentColorUpdated(FrameworkElement elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+
+    bool colorIsDark = (5 * c.G + 2 * c.R + c.B) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }
+}
+```
 
 
-當使用者選擇輔色時，它會顯示為其系統佈景主題的一部分。 受影響的區域是開始畫面、工作列、視窗、選取的互動狀態，以及[通用控制項](../controls-and-patterns/index.md)內的超連結。 每個 App 都可透過其印刷樣式、背景及互動來進一步併入輔色，或覆寫它以保留其特定品牌。
+```JS
+function accentColorUpdated(elementWithText)
+{
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    Windows.UI.Color c = uiSettings.GetColorValue(UIColorType.Accent);
+    var colorIsDark (5 * c.g + 2 * c.r + c.b) <= 8 * 128;
+    if (colorIsDark)
+    {
+        elementWithText.RequestedTheme = ElementTheme.Light;
+    }
+    else
+    {
+        elementWithText.RequestedTheme = ElementTheme.Dark;
+    }     
+}
+```
+
+在您判定輔色為淺色或深色後，選擇適當的前景色彩。 建議為深色背景使用淺色佈景主題中的 SystemControlForegroundBaseHighBrush，為淺色背景使用深色佈景主題版本。
 
 ## <a name="color-palette-building-blocks"></a>調色盤建置組塊
 
@@ -228,7 +266,7 @@ translationtype: HT
 </Application>
 ```
 
-如果移除 **RequestedTheme**，即表示您的應用程式將會遵循使用者的 App 模式設定，而他們將能夠選擇以深色或淺色主題來檢視您的 App。 
+如果移除 **RequestedTheme**，即表示您的應用程式將會遵循使用者的 App 模式設定，而他們將能夠選擇以深色或淺色主題來檢視您的 App。
 
 請確定您在建立 App 時將佈景主題納入考量，因為佈景主題對您 App 的外觀有很大的影響。
 

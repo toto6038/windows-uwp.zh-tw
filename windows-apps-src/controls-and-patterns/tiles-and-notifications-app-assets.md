@@ -6,14 +6,16 @@ ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0d3b58b8ea03c3ba836078e507495beeebe74fb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 54ad78d5799a96ddcec7b060704ee198e0bf8db5
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="guidelines-for-tile-and-icon-assets"></a>磚和圖示資產的指導方針
 
@@ -123,7 +125,7 @@ translationtype: HT
 
 ![寬型磚大小調整比例](images/assetguidance11.png)
 
-對於大型磚，將圖示寬度和高度限制為磚大小的 50%：
+對於大型磚，將圖示寬度限制為磚大小的 66%，將高度限制為磚大小的 50%：
 
 ![大型磚大小比例](images/assetguidance12.png)
 
@@ -181,24 +183,6 @@ translationtype: HT
 
 ![以目標為基礎的資產的大小調整 (縮放比例 100%)](images/assetguidance23.png)
 
-**圖示範本 app 資產**
-
-圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本 (在[特殊的磚範本](tiles-and-notifications-special-tile-templates-catalog.md)一文中，了解如何建立圖示磚)。
-
-使用圖示範本的 app (例如傳訊、電話和市集) 具有以目標為基礎的資產，可使用徽章做為其特色 (含有動態計數器)。 正如其他以目標為基礎的資產一樣，不需要邊框間距。 圖示資產不是應用程式資訊清單的一部分，而是動態磚裝載的一部分。 資產會調整大小以落在 3:2 比例的容器內並置中：
-
-![含/不含徽章的資產大小調整](images/assetguidance24.png)
-
-對於正方形資產，會自動於容器內置中：
-
-![含/不含徽章的正方形資產大小調整](images/assetguidance25.png)
-
-對於非正方形資產，會自動水平/垂直置中並貼齊至容器寬度/高度：
-
-![含/不含徽章的非正方形資產大小調整](images/assetguidance26a.png)
-
-![含/不含徽章的非正方形資產大小調整](images/assetguidance26b.png)
-
 ## <a name="splash-screen-assets"></a>啟動顯示畫面資產
 
 
@@ -233,38 +217,217 @@ translationtype: HT
 
 我們強烈建議您起碼為 100、200 及 400 的縮放比例提供資產。 針對所有縮放比例提供資產將可提供最佳的使用者體驗。
 
-**以縮放比例為基礎的資產**
+<br/>
 
-| 類別             | 元素名稱      | 縮放比例 100% | 縮放比例 125% | 縮放比例 150% | 縮放比例 200% | 縮放比例 400% |
-|----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| 小型                | Square71x71Logo   | 71x71         | 89 x 89         | 107 x 107       | 142 x 142       | 284x284       |
-| 中型               | Square150x150Logo | 150x150       | 188 x 188       | 225 x 225       | 300 x 300       | 600x600       |
-| 寬形                 | Square310x150Logo | 310x150       | 388 x 188       | 465 x 225       | 620x300       | 1240x600      |
-| 大型 (僅限桌面) | Square310x310Logo | 310x310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240 x 1240     |
-| App 清單 (圖示)      | Square44x44Logo   | 44x44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
+<table>
+<thead>
+<tr><th colspan="3">小型磚 (Square71x71Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 縮放</td>
+    <td width="20%">71x71</td>
+    <td>Square71x71Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 縮放</td>
+    <td>89x89</td>
+    <td>Square71x71Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 縮放</td>
+    <td>107x107</td>
+    <td>Square71x71Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 縮放</td>
+    <td>142x142</td>
+    <td>Square71x71Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 縮放</td>
+    <td>284x284</td>
+    <td>Square71x71Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
- 
+<br/>
 
-**以縮放比例為基礎的資產的檔案名稱範例**
+<table>
+<thead>
+<tr><th colspan="3">中型磚 (Square150x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 縮放</td>
+    <td width="20%">150x150</td>
+    <td>Square150x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 縮放</td>
+    <td>188x188</td>
+    <td>Square150x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 縮放</td>
+    <td>225x225</td>
+    <td>Square150x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 縮放</td>
+    <td>300x300</td>
+    <td>Square150x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 縮放</td>
+    <td>600x600</td>
+    <td>Square150x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| 類別             | 元素名稱      | 縮放比例 100%                  | 縮放比例 125%                  | 縮放比例 150%                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| 小型                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| 中型               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| 寬形                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| 大型 (僅限桌面) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| App 清單 (圖示)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+<br/>
 
- 
+<table>
+<thead>
+<tr><th colspan="3">寬形磚 (Wide310x150Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 縮放</td>
+    <td width="20%">310x150</td>
+    <td>Wide310x150Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 縮放</td>
+    <td>388x188</td>
+    <td>Wide310x150Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 縮放</td>
+    <td>465 x 225</td>
+    <td>Wide310x150Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 縮放</td>
+    <td>620x300</td>
+    <td>Wide310x150Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 縮放</td>
+    <td>1240x600</td>
+    <td>Wide310x150Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
 
-| 類別             | 元素名稱      | 縮放比例 200%                  | 縮放比例 400%                  |
-|----------------------|-------------------|--------------------------------|--------------------------------|
-| 小型                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| 中型               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| 寬形                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| 大型 (僅限桌面) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| App 清單 (圖示)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+<br/>
 
+<table>
+<thead>
+<tr><th colspan="3">大型磚 (Square310x310Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 縮放</td>
+    <td width="20%">310x310</td>
+    <td>Square310x310Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 縮放</td>
+    <td>388x388</td>
+    <td>Square310x310Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 縮放</td>
+    <td>465x465</td>
+    <td>Square310x310Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 縮放</td>
+    <td>620x620</td>
+    <td>Square310x310Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 縮放</td>
+    <td>1240x1240</td>
+    <td>Square310x310Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">應用程式清單圖示 (Square44x44Logo)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 縮放</td>
+    <td width="20%">44x44</td>
+    <td>Square44x44Logo.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 縮放</td>
+    <td>55x55</td>
+    <td>Square44x44Logo.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 縮放</td>
+    <td>66x66</td>
+    <td>Square44x44Logo.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 縮放</td>
+    <td>88x88</td>
+    <td>Square44x44Logo.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 縮放</td>
+    <td>176x176</td>
+    <td>Square44x44Logo.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
+
+<table>
+<thead>
+<tr><th colspan="3">啟動顯示畫面 (SplashScreen)</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td width="20%">100% 縮放</td>
+    <td width="20%">620x300</td>
+    <td>SplashScreen.scale-100.png</td>
+</tr>
+<tr>
+    <td>125% 縮放</td>
+    <td>775x375</td>
+    <td>SplashScreen.scale-125.png</td>
+</tr>
+<tr>
+    <td>150% 縮放</td>
+    <td>930x450</td>
+    <td>SplashScreen.scale-150.png</td>
+</tr>
+<tr>
+    <td>200% 縮放</td>
+    <td>1240x600</td>
+    <td>SplashScreen.scale-200.png</td>
+</tr>
+<tr>
+    <td>400% 縮放</td>
+    <td>2480x1200</td>
+    <td>SplashScreen.scale-400.png</td>
+</tr>
+</tbody>
+</table>
+
+<br/>
  
 
 **以目標為基礎的資產**
@@ -275,22 +438,22 @@ translationtype: HT
 
 下表列出所有以目標為基礎的資產大小及對應的檔案名稱範例：
 
-| 資產大小 | 檔案名稱範例                 |
-|------------|-----------------------------------|
-| 16x16*    | AppNameAppList.targetsize-16.png  |
-| 24x24    | AppNameAppList.targetsize-24.png  |
-| 32x32*    | AppNameAppList.targetsize-32.png  |
-| 48x48*    | AppNameAppList.targetsize-48.png  |
-| 256x256*  | AppNameAppList.targetsize-256.png |
-| 20x20      | AppNameAppList.targetsize-20.png  |
-| 30x30      | AppNameAppList.targetsize-30.png  |
-| 36x36      | AppNameAppList.targetsize-36.png  |
-| 40x40      | AppNameAppList.targetsize-40.png  |
-| 60x60      | AppNameAppList.targetsize-60.png  |
-| 64x64      | AppNameAppList.targetsize-64.png  |
-| 72x72      | AppNameAppList.targetsize-72.png  |
-| 80x80      | AppNameAppList.targetsize-80.png  |
-| 96x96      | AppNameAppList.targetsize-96.png  |
+| 資產大小 | 檔案名稱範例                  |
+|------------|------------------------------------|
+| 16x16\*    | Square44x44Logo.targetsize-16.png  |
+| 24x24\*    | Square44x44Logo.targetsize-24.png  |
+| 32x32\*    | Square44x44Logo.targetsize-32.png  |
+| 48x48\*    | Square44x44Logo.targetsize-48.png  |
+| 256x256\*  | Square44x44Logo.targetsize-256.png |
+| 20x20      | Square44x44Logo.targetsize-20.png  |
+| 30x30      | Square44x44Logo.targetsize-30.png  |
+| 36x36      | Square44x44Logo.targetsize-36.png  |
+| 40x40      | Square44x44Logo.targetsize-40.png  |
+| 60x60      | Square44x44Logo.targetsize-60.png  |
+| 64x64      | Square44x44Logo.targetsize-64.png  |
+| 72x72      | Square44x44Logo.targetsize-72.png  |
+| 80x80      | Square44x44Logo.targetsize-80.png  |
+| 96x96      | Square44x44Logo.targetsize-96.png  |
 
  
 
@@ -304,8 +467,8 @@ translationtype: HT
 **磚資產**
 
 -   置中的資產一般使用於 [開始] 畫面上，以展示您的應用程式。
--   檔案名稱格式：\*Tile.scale-\*.PNG
--   受影響的應用程式：每個 UWP app
+-   檔案名稱格式：[Square\Wide]\*x\*Logo.scale-\*.png
+-   受影響的應用程式：每個 UWP 應用程式
 -   用途：
     -   預設的 [開始] 畫面磚 (桌面和行動)
     -   重要訊息中心 (桌面和行動)
@@ -317,8 +480,8 @@ translationtype: HT
 **含有背板的可調式清單資產**
 
 -   這些資產用於要求縮放比例的介面。 資產可能使用系統提供的背板，或附帶本身的背景色彩 (如果應用程式有包含的話)。
--   檔案名稱格式：\*AppList.scale-\*.PNG
--   受影響的應用程式：每個 UWP app
+-   檔案名稱格式：Square44x44Logo.scale-\*.png
+-   受影響的應用程式：每個 UWP 應用程式
 -   用途：
     -   [開始] 畫面的所有 App 清單 (桌面)
     -   [開始] 畫面的最常用清單 (桌面)
@@ -330,8 +493,8 @@ translationtype: HT
 **含有背板的目標大小清單資產**
 
 -   這些是固定不調整的資產大小。 主要用於傳統體驗。 系統會檢查資產。
--   檔案名稱格式：\*AppList.targetsize-\*.PNG
--   受影響的應用程式：每個 UWP app
+-   檔案名稱格式：Square44x44Logo.targetsize-\*.png
+-   受影響的應用程式：每個 UWP 應用程式
 -   用途：
     -   [開始] 畫面的捷徑清單 (桌面)
     -   [開始] 畫面的右下角的磚 (桌面)
@@ -341,8 +504,8 @@ translationtype: HT
 **不含背板的目標大小清單資產**
 
 -   這些是系統不會提供背板或調整的資產。
--   檔案名稱格式：\*AppList.targetsize-\*\_altform-unplated.PNG
--   受影響的應用程式：每個 UWP app
+-   檔案名稱格式：Square44x44Logo.targetsize-\*\_altform-unplated.png
+-   受影響的應用程式：每個 UWP 應用程式
 -   用途：
     -   工作列和工作列縮圖 (桌面)
     -   工作列捷徑清單
@@ -352,7 +515,7 @@ translationtype: HT
 **副檔名資產**
 
 -   這些是副檔名特定的資產。 它們顯示在檔案總管中的 Win32 樣式檔案關聯圖示旁，而且必須不限佈景主題。 大小調整在桌面和行動平台上各不相同。
--   檔案名稱格式：\*LogoExtensions.targetsize-\*.PNG
+-   檔案名稱格式：\*LogoExtensions.targetsize-\*.png
 -   受影響的應用程式：音樂、影片、相片、Microsoft Edge、Microsoft Office
 -   用途：
     -   檔案總管
@@ -362,30 +525,7 @@ translationtype: HT
 **啟動顯示畫面**
 
 -   在您的應用程式啟動顯示畫面上出現的資產。 在桌面和行動平台上自動調整。
--   檔案名稱格式：\*SplashScreen.screen-100.PNG
--   受影響的應用程式：每個 UWP app
+-   檔案名稱格式：SplashScreen.scale-*.png
+-   受影響的應用程式：每個 UWP 應用程式
 -   用途：
     -   應用程式的啟動顯示畫面
-
-**圖示磚資產**
-
--   這些是使用圖示範本的應用程式的資產。
--   檔案名稱格式：不適用
--   受影響的應用程式：傳訊、電話和市集等
--   用途：
-    -   圖示磚
-
-
-
-## <a name="related-topics"></a>相關主題
-
-
-
-* [特殊的磚範本](tiles-and-notifications-special-tile-templates-catalog.md)
- 
-
- 
-
-
-
-

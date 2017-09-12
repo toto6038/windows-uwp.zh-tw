@@ -2,22 +2,22 @@
 author: mcleanbyron
 ms.assetid: 8AC56AAF-8D8C-4193-A6B3-BB5D0669D994
 description: "使用本節的 Python 程式碼範例，深入了解如何使用 Windows 市集提交 API。"
-title: "提交 API 的 Python 程式碼範例"
+title: "Python 範例 - 提交應用程式、附加元件與正式發行前小眾測試版"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例"
-ms.openlocfilehash: a46907ecfea1de60b8a32cdaea7076f056a41ff5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: "Windows 10, UWP, Windows 市集提交 API, 程式碼範例, python"
+ms.openlocfilehash: 01d40aa31531aa4d5b75f02627bc7e6234963c7e
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
-# <a name="python-code-examples-for-the-submission-api"></a>提交 API 的 Python 程式碼範例
+# <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
-本文提供使用*「Windows 市集提交 API」*的 Python 程式碼範例。 如需此 API 的詳細資訊，請參閱[使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
-
-這些程式碼範例示範下列工作︰
+本文提供 Python 程式碼範例，示範如何使用 [Windows 市集提交 API](create-and-manage-submissions-using-windows-store-services.md)來執行這些任務：
 
 * [取得 Azure AD 存取權杖](#token)
 * [建立附加元件](#create-add-on)
@@ -36,7 +36,7 @@ translationtype: HT
 <span id="create-add-on" />
 ## <a name="create-an-add-on"></a>建立附加元件
 
-下列範例示範如何[建立](create-an-add-on.md)然後[刪除](delete-an-add-on.md)附加元件 (附加元件也稱為應用程式內產品或 IAP)。
+下列範例示範如何[建立](create-an-add-on.md)然後[刪除](delete-an-add-on.md)套件正式發行前小眾測試版和附加元件。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L26-L52)]
 

@@ -6,14 +6,20 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 33a8b62a378e4a9abe20be04a49c94d886144cc5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 370c5266277ff442f26c9aeb951d869ec70b31c5
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="radio-buttons"></a>選項按鈕
 
@@ -21,19 +27,11 @@ translationtype: HT
 
 選項按鈕可以讓使用者從兩個以上的選項中選取一個選項。 每個選項都由一個選項按鈕表示；使用者在選項按鈕群組中只能選取一個選項按鈕。
 
-(如果您對名稱感到好奇，選項按鈕 (Radio Button) 的名稱來自於收音機 (Radio) 上的頻道預設按鈕。)
+> **重要 API**：[RadioButton 類別](https://msdn.microsoft.com/library/windows/apps/br227544)、[Checked 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+
+(如果您想知道選項按鈕的名稱，其實就是以收音機的頻道預設按鈕來命名)。
 
 ![選項按鈕](images/controls/radio-button.png)
-
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**RadioButton 類別**](https://msdn.microsoft.com/library/windows/apps/br227544)</li>
-<li>[**Checked 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)</li>
-<li>[**IsChecked 屬性**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)</li>
-</ul>
-</div>
-
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -68,7 +66,7 @@ Microsoft Edge 瀏覽器設定中的選項按鈕。
 
 選項按鈕以群組方式運作。 您可以用 2 種方式來將選項按鈕控制項方組︰
 - 將它們放入同一個父容器。
-- 將每個選項按鈕的 [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 屬性設定為相同的值。
+- 將每個選項按鈕的 [GroupName](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) 屬性設定為相同的值。
 
 > **注意**&nbsp;&nbsp;透過鍵盤存取時，選項按鈕群組的操作就像單一控制項一樣。 使用 Tab 鍵只能存取已選取的選項，但是使用者可以使用方向鍵循環瀏覽群組。
 
@@ -158,7 +156,7 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 ![兩個群組中的選項按鈕](images/radio-button-groups.png)
 
-選項按鈕有兩個狀態：*已選取* 或 *已清除*。 已選取選項按鈕時，其 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
+選項按鈕有兩個狀態：*已選取* 或 *已清除*。 已選取選項按鈕時，其 [IsChecked](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 屬性為 **true**。 已清除選項按鈕時，其 **IsChecked** 屬性為 **false**。 按一下同一個群組中的另一個選項按鈕，即可清除選項按鈕，但無法藉由再按一次來清除。 不過，您可以將選項按鈕的 IsChecked 屬性設定為 **false**，以程式設計方式清除該選項按鈕。
 
 ## <a name="recommendations"></a>建議
 
@@ -193,4 +191,4 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 
 
 **適用於開發人員 (XAML)**
-- [**Windows.UI.Xaml.Controls RadioButton 類別**](https://msdn.microsoft.com/library/windows/apps/br227544)
+- [Windows.UI.Xaml.Controls RadioButton 類別](https://msdn.microsoft.com/library/windows/apps/br227544)

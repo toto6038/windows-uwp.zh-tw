@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: "使用加速計"
 description: "了解如何使用加速計來回應使用者移動。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f0665bf071b4c75ee6a3ea8bcc11cefb357c6825
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f0a09faebf554fd0d669ecb4fc3c37dd61a742e4
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-accelerometer"></a>使用加速計
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**加速計**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+
+**範例**
+
+-   如需更完整的實作，請參閱[加速計範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Accelerometer)。
 
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
@@ -173,6 +179,3 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## <a name="related-topics"></a>相關主題
-
-* [加速計範例](http://go.microsoft.com/fwlink/p/?linkid=241377)

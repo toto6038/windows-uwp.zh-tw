@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, 市集服務, Windows 市集分析 API, 附加元件下載數"
-ms.openlocfilehash: cdd43c6e5df73ec1983593eb6198eba77c9df6e2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2c641d9fb7e4835df2cf1da05467efcb01cd3681
+ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="get-add-on-acquisitions"></a>取得附加元件下載數
 
 
 
 
-使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得 App 附加元件 (也稱為應用程式內產品或 IAP) 的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
+使用「Windows 市集分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式之附加元件的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -61,7 +63,7 @@ translationtype: HT
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
 | filter |字串  | 在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。 | 否   |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 | 否 |
-| orderby | 字串 | 對每個附加元件下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>。 <em>field</em> 參數可以是下列其中一個字串：<ul><li><strong>日期</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
+| orderby | 字串 | 對每個附加元件下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰<ul><li><strong>日期</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
 | groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>inAppProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>日期</strong></li><li><strong>applicationId</strong></li><li><strong>inAppProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
 
 <span/>
@@ -173,10 +175,10 @@ Authorization: Bearer <your access token>
 
 * [附加元件下載數報告](../publish/add-on-acquisitions-report.md)
 * [使用 Windows 市集服務存取分析資料](access-analytics-data-using-windows-store-services.md)
+* [依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)
 * [取得 App 下載數](get-app-acquisitions.md)
-* [取得錯誤報告資料](get-error-reporting-data.md)
-* [取得 App 評分](get-app-ratings.md)
-* [取得 App 評論](get-app-reviews.md)
+* [取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)
+* [依通道取得應用程式轉換](get-app-conversions-by-channel.md)
 
  
 

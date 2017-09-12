@@ -5,102 +5,107 @@ title: "按鈕"
 label: Buttons
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
-ms.openlocfilehash: e5c8b5056581540abd5e0ddf75da7785648df1d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: kimsea
+dev-contact: mitra
+doc-status: Published
+ms.openlocfilehash: 2cb15d21496c080002411849682278df7f927e41
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="buttons"></a>按鈕
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 按鈕為使用者提供觸發立即動作的方式。
 
-![按鈕的範例](images/controls/button.png)
+> **重要 API**：[Button 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)、[RepeatButton 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)、[Click 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**Button 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)</li>
-<li>[**RepeatButton 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)</li>
-<li>[**Click 事件**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)</li>
-</ul>
-</div>
+![按鈕的範例](images/controls/button.png)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 按鈕可讓使用者起始直接動作，例如提交表單。
 
 如果動作是瀏覽到另一個頁面，請不要使用按鈕，改為使用連結。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
-    
+
 > 例外：對於精靈瀏覽，請使用標籤為 [上一頁] 和 [下一頁] 的按鈕。 對於其他類型的反向瀏覽或瀏覽到上層，請使用 [上一頁] 按鈕。
 
 ## <a name="example"></a>範例
 
-這個範例是在 Microsoft Edge 瀏覽器的對話方塊中使用兩個按鈕 ([全部關閉] 和 [取消])。 
+這個範例在要求位置存取權的對話方塊中使用兩個按鈕 ([允許] 和 [封鎖])。
 
-![按鈕的範例 (用於對話方塊中)](images/control-examples/buttons-edge.png)
+![按鈕的範例 (用於對話方塊中)](images/dialogs/dialog_RS2_two_button.png)
 
 ## <a name="create-a-button"></a>建立按鈕
 
-這個範例會顯示一個按鈕，它會回應 Click 動作。 
+這個範例會顯示一個按鈕，它會回應 Click 動作。
 
 在 XAML 中建立按鈕。
 
 ```xaml
-<Button Content="Submit" Click="SubmitButton_Click"/>
+<Button Content="Subscribe" Click="SubscribeButton_Click"/>
 ```
 
 或者，在程式碼中建立按鈕。
 
 ```csharp
-Button submitButton = new Button();
-submitButton.Content = "Submit";
-submitButton.Click += SubmitButton_Click;
+Button subscribeButton = new Button();
+subscribeButton.Content = "Subscribe";
+subscribeButton.Click += SubscribeButton_Click;
 
 // Add the button to a parent container in the visual tree.
-stackPanel1.Children.Add(submitButton);
+stackPanel1.Children.Add(subscribeButton);
 ```
 
 處理 Click 事件。
 
 ```csharp
-private async void SubmitButton_Click(object sender, RoutedEventArgs e)
+private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 {
-    // Call app specific code to submit form. For example:
-    // form.Submit();
-    Windows.UI.Popups.MessageDialog messageDialog = 
-        new Windows.UI.Popups.MessageDialog("Thank you for your submission.");
-    await messageDialog.ShowAsync();
+    // Call app specific code to subscribe to the service. For example:
+    ContentDialog subscribeDialog = new ContentDialog
+    {
+        Title = "Subscribe to App Service?",
+        Content = "Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.",
+        CloseButtonText = "Not Now",
+        PrimaryButtonText = "Subscribe",
+        SecondaryButtonText = "Try it"
+    };
+
+    ContentDialogResult result = await subscribeDialog.ShowAsync();
 }
 ```
 
 ### <a name="button-interaction"></a>按鈕互動
 
-當您以手指或手寫筆點選按鈕，或在游標位於按鈕上方時按下滑鼠左鍵，按鈕會引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按鈕有鍵盤焦點，則按下 Enter 鍵或空格鍵也會引發 Click 事件。
+當您以手指或手寫筆點選按鈕，或在游標位於按鈕上方時按下滑鼠左鍵，按鈕會引發 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 如果按鈕有鍵盤焦點，則按下 Enter 鍵或空格鍵也會引發 Click 事件。
 
-您通常無法處理按鈕上的低階 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
+您通常無法處理按鈕上的低階 [PointerPressed](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) 事件，因為按鈕本身有 Click 行為。 如需詳細資訊，請參閱[事件與路由事件概觀](https://msdn.microsoft.com/library/windows/apps/mt185584.aspx)。
 
-您可以變更 [**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) 屬性，以變更按鈕引發 Click 事件的方式。 預設 ClickMode 值是 **Release**。 如果 ClickMode 是 **Hover**，則使用鍵盤或觸控方式並不能引發 Click 事件。 
+您可以變更 [ClickMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) 屬性，以變更按鈕引發 Click 事件的方式。 預設 ClickMode 值是 **Release**。 如果 ClickMode 是 **Hover**，則使用鍵盤或觸控方式並不能引發 Click 事件。
 
 
 ### <a name="button-content"></a>按鈕內容
 
-按鈕是 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx)。 它的 XAML 內容屬性是 [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)，它可讓您使用如下 XAML 語法︰`<Button>A button's content</Button>`。 您可以將任何物件設定為按鈕的內容。 如果內容是 [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx)，就會呈現於按鈕中。 如果內容是其他類型的物件，則會在按鈕中顯示它的字串表示。
+按鈕是 [ContentControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx)。 它的 XAML 內容屬性是 [Content](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx)，它可讓您使用如下 XAML 語法︰`<Button>A button's content</Button>`。 您可以將任何物件設定為按鈕的內容。 如果內容是 [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx)，就會呈現於按鈕中。 如果內容是其他類型的物件，則會在按鈕中顯示它的字串表示。
 
 此處提供的是 **StackPanel**，其中包含一個柳橙的影像，且文字已設定為按鈕的內容。
 
 ```xaml
-<Button Click="Button_Click" 
-        Background="#FF0D6AA3" 
+<Button Click="Button_Click"
+        Background="LightGray"
         Height="100" Width="80">
     <StackPanel>
-        <Image Source="Assets/Slices.png" Height="62"/>
-        <TextBlock Text="Orange"  Foreground="White"
+        <Image Source="Assets/Photo.png" Height="62"/>
+        <TextBlock Text="Photos" Foreground="Black"
                    HorizontalAlignment="Center"/>
     </StackPanel>
 </Button>
@@ -112,7 +117,7 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-repeat-button"></a>建立一個重複按鈕
 
-[**RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
+[RepeatButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 是一個按鈕，可以從按鈕被按下的當時到鬆開後為止，重複引發 [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件。 設定 [Delay](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) 屬性以指定 RepeatButton 在它被按下之後以及在它開始重複按一下動作之前，必須等待的時間。 設定 [Interval](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) 屬性以指定重複按下動作之間的時間。 這兩個屬性的時間是以毫秒為單位來指定。
 
 下列範例顯示兩個 RepeatButton 控制項，而且其各自的 Click 事件是用來增加或減少文字區塊中顯示的值。
 
@@ -146,7 +151,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 -   確定使用者能清楚了解按鈕的用途和狀態。
 -   使用簡潔、專屬、一目了然的文字，清楚說明按鈕執行的動作。 通常按鈕文字內容是一個動詞單字。
--   同一個決策 (例如確認對話方塊) 有多個按鈕時，會依下列順序呈現認可按鈕： 
+-   同一個決策 (例如確認對話方塊) 有多個按鈕時，會依下列順序呈現認可按鈕：
     -   確定/[執行]/是
     -   [不執行]/否
     -   取消
@@ -163,12 +168,27 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   考慮自訂您的按鈕。 按鈕的預設形狀是矩形，但是您可以自訂組成按鈕外觀的視覺效果。 按鈕的內容通常是文字，例如 [接受] 或 [取消]，但是您可以使用圖示來取代文字，或是使用圖示加上文字。
 -   確定在使用者與按鈕互動時，按鈕會變更狀態和外觀，為使用者提供回饋。 按鈕狀態的範例有正常、已按下、已停用。
 -   當使用者點選或按下按鈕時，觸發按鈕的動作。 通常使用者放開按鈕時會觸發動作，但是您也可以設定手指一按下時就觸發按鈕的動作。
--   不要使用命令按鈕設定狀態。
--   請不要在應用程式執行同時變更按鈕文字；例如，不要將按鈕文字「下一步」變更為「繼續」。
--   不要交換預設的送出、重設及按鈕樣式。
--   不要在按鈕內放入過多內容。 讓內容簡潔且容易理解 (一張圖片和一些文字就已足夠)。
+-   不要交換預設的提交、重設及按鈕樣式。
+-   不要在按鈕內放入過多內容。 內容力求簡潔且易於了解。
+
+### <a name="recommended-single-button-layout"></a>建議使用的單一按鈕配置
+
+如果您的配置只需要一個按鈕，此按鈕應根據其容器內容靠左或靠右對齊。
+
+-   只有一個按鈕的對話方塊必須讓按鈕**靠右對齊**。 如果對話方塊只包含一個按鈕，請確保按鈕執行的是安全、不具破壞性的動作。 如果您使用 [ContentDialog](dialogs.md) 並指定單一按鈕，此按鈕將會自動靠右對齊。
+
+![對話方塊內的按鈕](images/pushbutton_doc_dialog.png)
+
+-   如果您的按鈕會在容器 UI 中出現 (例如，在快顯通知、飛出視窗或的清單檢視項目中)，就必須讓按鈕在容器內**靠右對齊**。
+
+![容器內的按鈕](images/pushbutton_doc_container.png)
+
+-   在包含單一按鈕 (例如，設定頁面底部的 [套用] 按鈕) 的頁面中，您應該讓按鈕**靠左對齊**。 這樣可確保按鈕對齊其餘的網頁內容。
+
+![頁面上的按鈕](images/pushbutton_doc_page.png)
 
 ## <a name="back-buttons"></a>返回按鈕
+
 返回按鈕是一種系統提供的 UI 元素，可透過使用者的返回堆疊或瀏覽歷程記錄啟用向後瀏覽。 您不需要自行建立返回按鈕，但您可能必須花一點心力來提供良好的向後瀏覽體驗。 如需詳細資訊，請參閱[歷程記錄和向後瀏覽](../layout/navigation-history-and-backwards-navigation.md)。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
@@ -181,6 +201,4 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 - [選項按鈕](radio-button.md)
 - [切換開關](toggles.md)
 - [核取方塊](checkbox.md)
-- [**Button 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
-
-
+- [Button 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)

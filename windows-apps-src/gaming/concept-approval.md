@@ -4,20 +4,26 @@ title: "概念核准"
 description: "了解如何提交您的產品以進行概念核准，如果您的產品會在 Xbox 上執行或使用 Xbox Live，就需要進行概念核准。"
 ms.assetid: 850ec988-761b-49d8-9508-da8a83108de3
 ms.author: elcowle
-ms.date: 02/08/2017
+ms.date: 06/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 概念核准"
-ms.openlocfilehash: f05789d87f3260aa02d1e0dd33490b248efb42a7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f49e27ad5753a8f4074ca3b55bd7cde47a7e6600
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="concept-approval"></a>概念核准
 
-當您開始建置將在 Xbox 上執行的遊戲時，您需要先將遊戲相關的提案提交給 Microsoft 進行*概念核准*才能發行。 您與 Microsoft 都能從這份直接且高層級的提交獲得益處，因為它能在程序的初期就識別出整體遊戲計劃中可能的困難與缺點。 請盡量確認您的內容不會過度不雅、具冒犯性，或具爭議性，且其在目標平台上能順暢執行。 一旦提交您的提案之後，Microsoft 會檢閱提案並通知您結果。
+概念核准是一種將遊戲提案提交給 Microsoft 的程序。 您與 Microsoft 都能從這份直接且高層級的提交獲得益處，因為它能在程序的初期就識別出整體遊戲計劃中可能的困難與缺點。 請盡量確認您的內容不會過度不雅、具冒犯性，或具爭議性，且其在目標平台上能順暢執行。 一旦提交您的提案之後，Microsoft 會檢閱提案並通知您結果。
 
-如果您正在開發通用 Windows 平台 (UWP) 遊戲，則只有在您想要讓客戶在 Xbox 裝置上下載它，或要啟用 Xbox Live 功能的情況下才需要概念核准。 如果您只要讓您的 UWP 遊戲可在 Windows 電腦或行動裝置上使用 (或如果您是發行以任何裝置為目標的*「非」*遊戲 UWP App) 且不使用 Xbox Live，您只需要一個[開發人員帳戶](https://go.microsoft.com/fwlink/?LinkId=817223)，就能透過儀表板自由設定並提交您的 App 到市集。
+## <a name="who-needs-concept-approval"></a>誰需要概念核准？
+
+只有在您透過 [ID@Xbox](http://www.xbox.com/Developers/id) 或以受管理合作夥伴的身分將遊戲發佈至 Xbox 時，才需要此程序。 如果您加入 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 並製作通用 Windows 平台 (UWP) 遊戲，則不需要完成此程序；您之後可以自發發佈至 Xbox。 但透過此計畫製作的遊戲將會放在市集的另外區段中。 如果您想要您的遊戲與大型 AAA 遊戲放在一起，或如果您想要使用 Xbox 開發套件 (XDK) 建立更密集的遊戲，您必須完成概念核准。
+
+如果您正在為 Windows 傳統型或行動裝置開發 UWP (或者您正在針對任何裝置發佈*不*是遊戲的 UWP 應用程式)，您也不需要概念核准。 您只需要[開發人員帳戶](https://go.microsoft.com/fwlink/?LinkId=817223)，便能自由地透過儀表板設定應用程式並提交到市集。
 
 ## <a name="submit-your-concept-for-approval"></a>提交您的概念進行核准
 

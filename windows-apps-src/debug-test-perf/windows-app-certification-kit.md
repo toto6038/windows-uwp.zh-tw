@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: "Windows 應用程式認證套件"
 description: "為了讓您的 App 能順利在 Windows 市集上發行或成為 Windows 認證，請在送出以進行認證之前，先在本機進行驗證和測試。 本主題示範如何安裝和執行 Windows 應用程式認證套件。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 118d4643c3d4fcb8549549e9d58d4b64d64f0885
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: fb5303898bfb0d7021ba4c0aa48afd5038bcad4d
+ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/27/2017
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
@@ -26,8 +28,8 @@ translationtype: HT
 
 -   您必須安裝和執行 Windows 10。
 -   您必須安裝 [Windows 應用程式認證套件 10 版]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
--   您必須要有電腦的有效開發人員授權。 請參閱[取得開發人員授權](https://msdn.microsoft.com/library/windows/apps/Hh974578)，以了解如何取得該授權。
--   您必須將要測試的 Windows App 部署至電腦。
+-   您必須[啟用您的裝置以進行開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
+-   您必須將要測試的 Windows 應用程式部署至電腦。
 
 **關於就地升級的附註**
 

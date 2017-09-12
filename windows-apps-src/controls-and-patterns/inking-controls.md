@@ -5,21 +5,23 @@ title: "筆跡控制項"
 label: Inking Controls
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
-ms.openlocfilehash: 50c18f0ef72ad990971323921eae282c76c70be3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 3efbda64a872a59cd1e3e5da03cd9ab896642766
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="inking-controls"></a>筆跡控制項
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-有兩個不同的控制項可協助在通用 Windows 平台 (UWP) 應用程式中使用手寫筆跡：[**InkCanvas**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [**InkToolbar**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
+有兩個不同的控制項可協助在通用 Windows 平台 (UWP) app 中使用手寫筆跡：[InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [InkToolbar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
 
 InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與粗細的預設設定) 或擦去筆劃。 此控制項為完全透明的重疊，不包含任何用於變更預設筆墨筆劃屬性的內建 UI。
 
@@ -33,18 +35,9 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 > [!NOTE]
 > InkToolbar 支援手寫筆以及滑鼠輸入，並可設定為辨識觸控輸入設定。
 
-<img src="images/ink-tools-invoked-toolbar.png" width="300">
+<img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**InkCanvas 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)</li>
-<li>[**InkToolbar 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)</li>
-<li>[**InkPresenter 類別**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)</li>
-<li>[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)</li>
-</ul>
-</div>
-
+> **重要 API**：[InkCanvas 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)、[InkToolbar 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)、[InkPresenter 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)、[Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
@@ -56,7 +49,7 @@ InkCanvas 控制項可將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與�
 將 InkCanvas 與 InkToolbar 配對來提供用於啟用筆跡功能和設定基本筆跡屬性 (例如筆觸大小、色彩及筆尖形狀) 的 UI。
 
 > [!NOTE] 
-> 如需更多 InkCanvas 轉譯的筆墨筆劃自訂項目，請使用基礎 [**InkPresenter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 物件。
+> 如需更多 InkCanvas 轉譯的筆墨筆劃自訂項目，請使用基礎 [InkPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 物件。
 
 ## <a name="examples"></a>範例
 
@@ -88,7 +81,7 @@ InkToolbar 控制項必須與 InkCanvas 搭配使用。 將 InkToolbar (與所�
  ```
 
 這會顯示下列 InkToolbar：
-<img src="images/ink-tools-uninvoked-toolbar.png" width="250">
+<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
 
 ### <a name="built-in-buttons"></a>內建按鈕
 

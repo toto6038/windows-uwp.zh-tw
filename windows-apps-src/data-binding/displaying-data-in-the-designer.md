@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4997895e73e7c8bf0f20a2bc504b7b8c17c45339
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 00a6bbf06f918c0b86bcaed7ae7891b474baefe8
+ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/27/2017
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================
@@ -22,6 +24,11 @@ translationtype: HT
 **注意**  您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)或 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
 
 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。 為了讓您的控制項能夠填入資料 (讓您能夠在 app 的配置、範本及其他視覺化屬性上運作)，系統提供了各種不同方式，讓您可以使用設計階段的範例資料。 如果您正在建置草圖 (或原型) app，則範例資料也可以是非常實用且省時的。 您可以在執行階段於草圖或原型中使用範例資料來說明您的想法，而不需連線到實際的即時資料。
+
+**示範 {Binding} 的範例 app**
+
+-   下載 [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app。
+-   下載 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app。
 
 <a name="setting-datacontext-in-markup"></a>在標記中設定 DataContext
 -----------------------------

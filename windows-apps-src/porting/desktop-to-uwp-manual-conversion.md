@@ -1,121 +1,213 @@
 ---
 author: normesta
-Description: "說明如何將 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms) 手動轉換為通用 Windows 平台 (UWP) 應用程式。"
+Description: "說明如何針對 Windows 10，手動封裝 Windows 傳統型應用程式 (例如，Win32、WPF 及 Windows Forms)。"
 Search.Product: eADQiWindows 10XVcnh
-title: "傳統型轉 UWP 橋接器手動轉換"
+title: "手動封裝應用程式 (傳統型橋接器)"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
-ms.openlocfilehash: 8d09a0349620e071f5c4d680df18f716e3b10a8e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e8a09b6e362662b9bb207117d8a3fcc905da6ef4
+ms.sourcegitcommit: ae93435e1f9c010a054f55ed7d6bd2f268223957
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/10/2017
 ---
-# <a name="desktop-to-uwp-bridge-manual-conversion"></a>傳統型轉 UWP 橋接器：手動轉換
+# <a name="package-an-app-manually-desktop-bridge"></a>手動封裝應用程式 (傳統型橋接器)
 
-使用 [Desktop App Converter (DAC)](desktop-to-uwp-run-desktop-app-converter.md) 相當簡便且自動化，如果您對於安裝程式所做的一切有任何不確定性，這相當有用。 但如果您的 app 是使用 xcopy 所安裝，或者您已熟悉 app 的安裝程式對於系統所做的變更，您可能想要手動建立應用程式套件和資訊清單。 本文包含開始使用的步驟。 其中也會說明如何將無背板資產新增至您的應用程式，而 DAC 並未涵蓋此項。
+此主題將會描述如何不使用工具 (例如 Visual Studio 或 Desktop App Converter (DAC)) 封裝您的應用程式。
 
-以下說明如何開始進行手動轉換。 或者，如果您有 .NET 應用程式，並使用 Visual Studio，請參閱文章[.NET 傳統型應用程式與 Visual Studio 的傳統型橋接器封裝指南](desktop-to-uwp-packaging-dot-net.md)。  
+<div style="float: left; padding: 10px">
+    ![手動流程](images/desktop-to-uwp/manual-flow.png)
+</div>
 
-## <a name="create-a-manifest-by-hand"></a>手動建立資訊清單
+若要手動封裝應用程式，您必須先建立封裝資訊清單檔案，然後執行命令列工具來產生 Windows 應用程式套件。
 
-您的 _appxmanifest.xml_ 檔案必須具有下列內容 (基本內容)。 將已格式化的預留位置 (例如 \*\*\*THIS\*\*\*) 變更為適用於應用程式的實際值。
+若您是透過 xcopy 命令安裝您的應用程式，或是您對您應用程式安裝程式所做出的系統變更非常熟悉，且想要對處理程序擁有更細微的主控權的話，您就可以考慮使用手動封裝。
+
+若您不確定您的安裝程式會對系統做出什麼變更，或者您想要使用自動化的工具產生您的封裝資訊清單，請考慮[這些](desktop-to-uwp-root.md#convert)選項。
+
+## <a name="first-consider-how-youll-distribute-your-app"></a>首先，請先考慮您將會如何散布您的應用程式
+若您打算將您的應用程式發行至 [Windows 市集](https://www.microsoft.com/store/apps)，請先從填寫[此表單](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)開始。 Microsoft 將會與您連絡以啟動上架程序。 作為這個程序的一部分，您將會在市集中保留一個名稱，並取得您需要用來封裝您應用程式的資訊。
+
+## <a name="create-a-package-manifest"></a>建立封裝資訊清單
+
+建立一個檔案，並將其命名為 **appxmanifest.xml**，然後將此 XML 新增至其中。
+
+這是一個包含了您套件所需之元素和屬性的基礎範本。 我們會在下一節添加數值。
 
 ```XML
-    <?xml version="1.0" encoding="utf-8"?>
-    <Package
-       xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-       xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-       xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
-      <Identity Name="***YOUR_PACKAGE_NAME_HERE***"
-        ProcessorArchitecture="x64"
-        Publisher="CN=***COMPANY_NAME***, O=***ORGANIZATION_NAME***, L=***CITY***, S=***STATE***, C=***COUNTRY***"
-        Version="***YOUR_PACKAGE_VERSION_HERE***" />
-      <Properties>
-        <DisplayName>***YOUR_PACKAGE_DISPLAY_NAME_HERE***</DisplayName>
-        <PublisherDisplayName>Reserved</PublisherDisplayName>
-        <Description>No description entered</Description>
-        <Logo>***YOUR_PACKAGE_RELATIVE_DISPLAY_LOGO_PATH_HERE***</Logo>
-      </Properties>
-      <Resources>
-        <Resource Language="en-us" />
-      </Resources>
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="" Version="" Publisher="" ProcessorArchitecture="" />
+    <Properties>
+       <DisplayName></DisplayName>
+       <PublisherDisplayName></PublisherDisplayName>
+             <Description></Description>
+      <Logo></Logo>
+    </Properties>
+    <Resources>
+      <Resource Language="" />
+    </Resources>
       <Dependencies>
-        <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.14316.0" />
+      <TargetDeviceFamily Name="Windows.Desktop" MinVersion="" MaxVersionTested="" />
       </Dependencies>
       <Capabilities>
         <rescap:Capability Name="runFullTrust"/>
       </Capabilities>
-      <Applications>
-        <Application Id="***YOUR_PRAID_HERE***" Executable="***YOUR_PACKAGE_RELATIVE_EXE_PATH_HERE***" EntryPoint="Windows.FullTrustApplication">
-          <uap:VisualElements
-           BackgroundColor="#464646"
-           DisplayName="***YOUR_APP_DISPLAY_NAME_HERE***"
-           Square150x150Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Square44x44Logo="***YOUR_PACKAGE_RELATIVE_PNG_PATH_HERE***"
-           Description="***YOUR_APP_DESCRIPTION_HERE***" />
-        </Application>
-      </Applications>
-    </Package>
+    <Applications>
+      <Application Id="" Executable="" EntryPoint="Windows.FullTrustApplication">
+        <uap:VisualElements DisplayName="" Description=""   Square150x150Logo=""
+                   Square44x44Logo=""   BackgroundColor="" />
+      </Application>
+     </Applications>
+  </Package>
 ```
 
-要新增無背板資產嗎？ 如需做法的詳細資訊，請參閱本文稍後的[無背板資產](#unplated-assets)一節。
+## <a name="fill-in-the-package-level-elements-of-your-file"></a>填寫您檔案中的套件層級元素
 
-## <a name="run-the-makeappx-tool"></a>執行 MakeAppX 工具
+使用足以描述您套件的資訊填寫這個範本。
 
-使用[應用程式封裝工具 (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)，為您的專案產生 Windows 應用程式套件。 MakeAppx.exe 隨附於 Windows10 SDK。
+### <a name="identity-information"></a>識別資訊
 
-若要執行 MakeAppx，必須先確定您已建立資訊清單檔案，如上方所述。
+以下是一個屬性以預留位置文字填上的 **Identity** 元素範例。 您可以將 ``ProcessorArchitecture`` 屬性設定為 ``x64`` 或 ``x86``。
 
-接著，建立對應檔案。 檔案的開頭應該是 **[Files]**，然後列出磁碟上的每個原始程式檔，之後接著它們在套件中的目的地路徑。 以下是範例：
-
+```XML
+<Identity Name="MyCompany.MySuite.MyApp"
+          Version="1.0.0.0"
+          Publisher="CN=MyCompany, O=MyCompany, L=MyCity, S=MyState, C=MyCountry"
+                ProcessorArchitecture="x64">
 ```
-[Files]
-"C:\MyApp\StartPage.htm"     "default.html"
-"C:\MyApp\readme.txt"        "doc\readme.txt"
-"\\MyServer\path\icon.png"   "icon.png"
-"MyCustomManifest.xml"       "AppxManifest.xml"
+> [!NOTE]
+> 若您已經在 Windows 市集中保留了您應用程式的名稱，您可以使用 Windows 開發人員中心儀表板取得名稱和發行者。 若您想要在其他系統上側載您的應用程式，您可以為他們提供您自己的名稱，只要其發行者名稱與您選擇用來簽署您應用程式之憑證上的名稱相同即可。
+
+### <a name="properties"></a>屬性
+
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素有 3 個必要的子元素。 以下是以預留位置文字填上元素的 **Properties** 節點範例。 **DisplayName** 是您將應用程式上傳至市集之後，在市集中保留的您應用程式的名稱。
+
+```XML
+<Properties>
+  <DisplayName>MyApp</DisplayName>
+  <PublisherDisplayName>MyCompany</PublisherDisplayName>
+  <Logo>images\icon.png</Logo>
+</Properties>
 ```
 
-最後，執行下列命令：
+### <a name="resources"></a>資源
 
-```cmd
-MakeAppx.exe pack /f mapping_filepath /p filepath.appx
+以下是 [Resource](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources) 節點的範例。
+
+```XML
+<Resources>
+  <Resource Language="en-us" />
+</Resources>
+```
+### <a name="dependencies"></a>相依性
+
+針對傳統型橋接器應用程式，您必須將 ``Name`` 屬性設定為 ``Windows.Desktop``。
+
+```XML
+<Dependencies>
+<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14316.0" MaxVersionTested="10.0.15063.0" />
+</Dependencies>
 ```
 
-## <a name="sign-your-appx-package"></a>簽署您的 AppX 套件
+### <a name="capabilities"></a>功能
+針對傳統型橋接器應用程式，您必須新增 ``runFullTrust`` 功能。
 
-Add-AppxPackage Cmdlet 要求部署的應用程式套件 (.appx) 必須進行簽署。 使用 [SignTool.exe](https://msdn.microsoft.com/library/windows/desktop/aa387764(v=vs.85).aspx) (其隨附於 Microsoft Windows10 SDK) 來簽署 Windows 應用程式套件。
-
-使用範例：
-
-```cmd
-C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -sv <my.pvk> <my.cer>
-C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
-C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
+```XML
+<Capabilities>
+  <rescap:Capability Name="runFullTrust"/>
+</Capabilities>
 ```
-當您執行 MakeCert.exe，且系統要求您輸入密碼時，請選取 **\[無\]**。 如需憑證和簽章的詳細資訊，請參閱下列各項︰
+## <a name="fill-in-the-application-level-elements"></a>填寫應用程式層級元素
 
-- [做法︰建立開發時要使用的暫時憑證](https://msdn.microsoft.com/library/ms733813.aspx)
-- [SignTool](https://msdn.microsoft.com/library/windows/desktop/aa387764.aspx)
-- [SignTool.exe (簽署工具)](https://msdn.microsoft.com/library/8s9b9yaz.aspx)
+使用足以描述您應用程式的資訊填寫這個範本。
 
-<span id="unplated-assets" />
-## <a name="add-unplated-assets"></a>新增無背板資產
+### <a name="application-element"></a>應用程式元素
 
-以下是如何針對您的應用程式，選擇性設定要顯示於工作列上的 44x44 筆資產。
+針對傳統型橋接器應用程式，Application 元素的 ``EntryPoint`` 屬性永遠都是 ``Windows.FullTrustApplication``。
+
+```XML
+<Applications>
+  <Application Id="MyApp"     
+        Executable="MyApp.exe" EntryPoint="Windows.FullTrustApplication">
+   </Application>
+</Applications>
+```
+
+### <a name="visual-elements"></a>視覺元素
+
+以下是 [VisualElements](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements) 節點的範例。
+
+```XML
+<uap:VisualElements
+    BackgroundColor="#464646"
+    DisplayName="My App"
+    Square150x150Logo="images\icon.png"
+    Square44x44Logo="images\small_icon.png"
+    Description="A useful description" />
+```
+
+## <a name="optional-add-target-based-unplated-assets"></a>(選用) 新增以目標為基礎的 Unplated 資產
+
+以目標為基礎的資產適用於圖示和磚，會顯示在 Windows 工作列、工作檢視、ALT + TAB 及貼齊小幫手上，以及開始畫面磚的右下角。 您也可以在[這裡](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets#target-based-assets)閱讀更多資訊。
 
 1. 取得正確的 44x44 影像，並將它們複製到包含您的影像 (也就是資產) 的資料夾。
 
-2. 針對每個 44x44 影像，在相同的資料夾中建立一個複本，然後將 *.targetsize-44_altform-unplated* 附加至檔案名稱。 每個圖示應該會有兩個複本，每個均以特定方式命名。 例如，完成處理程序之後，您的資產資料夾可能包含 *MYAPP_44x44.png* 和 *MYAPP_44x44.targetsize-44_altform-unplated.png* (注意︰前者是 VisualElements 屬性 *Square44x44Logo* 下方 appxmanifest 中所參考的圖示)。
+2. 針對每個 44x44 影像，在相同的資料夾中建立一個複本，然後將 **.targetsize-44_altform-unplated** 附加至檔案名稱。 每個圖示應該會有兩個複本，每個均以特定方式命名。 例如：完成此程序之後，您的「資產 (assets)」資料夾可能會包含 **MYAPP_44x44.png** 和 **MYAPP_44x44.targetsize-44_altform-unplated.png**。
 
-3.    在 AppXManifest 中，針對您要修正的每個圖示，將 BackgroundColor 設為透明。 這個屬性可以在每個應用程式的 VisualElements 下方找到。
+   > [!NOTE]
+   > 在這個範例中，名為 **MYAPP_44x44.png** 的圖示將會是您 Windows 應用程式套件的 ``Square44x44Logo`` 商標屬性中參考的圖示。
 
-4.    開啟 CMD、將目錄變更為套件的根資料夾，然後執行命令 ```makepri createconfig /cf priconfig.xml /dq en-US``` 來建立 priconfig.xml 檔案。
+3.  在 Windows 應用程式套件中，將您正在製作的每個圖示之 ``BackgroundColor`` 設定為透明。
 
-5.    使用 CMD、留在套件的根資料夾中，然後使用命令 ```makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml``` 來建立 resources.pri 檔案。 例如，應用程式的命令可能看起來像這樣：```makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml```。
+4.  開啟 CMD，將目錄變更為套件的根資料夾，然後執行命令 ``makepri createconfig /cf priconfig.xml /dq en-US`` 來建立 priconfig.xml 檔案。
 
-6.    使用下一個步驟中的指示封裝您的 Windows 應用程式套件，以查看結果。
+5.  使用 ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` 命令來建立 resources.pri 檔案。
+
+    例如，應用程式的命令可能看起來會像這樣：``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
+
+6.  使用下一個步驟中的指示封裝您的 Windows 應用程式套件，以查看結果。
+
+<span id="make-appx" />
+## <a name="generate-a-windows-app-package"></a>產生 Windows 應用程式套件
+
+使用 **MakeAppx.exe** 來為您的專案產生 Windows 應用程式套件。 此項目已隨附於 Windows 10 SDK，如果您已安裝 Visual Studio，則可透過您 Visual Studio 版本的「開發人員命令提示字元」輕鬆存取。
+
+請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)
+
+## <a name="run-the-packaged-app"></a>執行封裝後的應用程式
+
+您可以在本機執行您的應用程式並進行測試，而不需要取得憑證和進行簽署。 您只需要執行此 PowerShell cmdlet：
+
+```Add-AppxPackage –Register AppxManifest.xml```
+
+若要更新應用程式的 .exe 或.dll 檔案，使用新檔案來取代套件中現有的檔案、提高 AppxManifest.xml 的版本號碼，然後再次執行上述命令即可。
+
+> [!NOTE]
+> 封裝的應用程式總是會以互動使用者的身分執行，您安裝已封裝應用程式的任何磁碟機都必須格式化為 NTFS 格式。
+
+## <a name="next-steps"></a>後續步驟
+
+**逐步執行程式碼/找出並修正問題**
+
+請參閱[執行、偵錯以及測試封裝的傳統型橋接器應用程式 (傳統型橋接器)](desktop-to-uwp-debug.md)
+
+**簽署您的應用程式並散布它**
+
+請參閱[散佈封裝的傳統型應用程式 (傳統型橋接器)](desktop-to-uwp-distribute.md)
+
+**尋找特定問題的解答**
+
+我們的團隊會監視這些 [StackOverflow 標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。
+
+**提供有關本文的意見反應**
+
+使用下方的留言區塊。

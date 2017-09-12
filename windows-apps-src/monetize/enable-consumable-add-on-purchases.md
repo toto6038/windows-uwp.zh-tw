@@ -5,20 +5,22 @@ description: "了解如何使用 Windows.Services.Store 命名空間來搭配使
 title: "啟用消費性附加元件購買"
 keywords: "Windows 10, UWP, 消費性, 附加元件, 應用程式內購買, IAP, Windows.Services.Store"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 534c03287d39916d5fa357307b7479f895240b02
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 6fe73068f3a4a0588e3d7959054879a92ff23c0f
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="enable-consumable-add-on-purchases"></a>啟用消費性附加元件購買
 
-目標為 Windows10 版本 1607 或更新版本的 app，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來管理使用者如何在您的 UWP app 中完成消費性附加元件 (也稱為 App 內產品或 IAP)。 請針對可購買、使用，然後再次購買的項目使用消費性附加元件。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
+目標為 Windows 10 版本 1607 或更新版本的應用程式，可以在 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的方法，來管理使用者如何在您的 UWP app 中完成消費性附加元件。 請針對可購買、使用，然後再次購買的項目使用消費性附加元件。 這對於像遊戲內貨幣 (金幣、錢幣等) 這種可在買來後用來購買特定火力升級配備的東西，特別有用。
 
 > [!NOTE]
-> 本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)
+> 本文適用於目標為 Windows 10 版本 1607 或更新版本的 App。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[這篇文章](enable-consumable-in-app-product-purchases.md)。
 
 ## <a name="overview-of-consumable-add-ons"></a>消費性附加元件概觀
 
@@ -32,9 +34,6 @@ translationtype: HT
 
   例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 10 個金幣，則您的應用程式會向市集回報已完成附加元件的 10 個單位，而市集會更新剩下的餘額。 當使用者花光 100 個金幣之後，該使用者就能再次購買 100 個金幣的附加元件。
 
-  > [!NOTE]
-  > 市集管理的消費性產品是從 Windows 10 版本 1607 開始提供。 即將推出在 Windows 開發人員中心儀表板建立市集管理的消費性產品的能力。
-
 若要為使用者提供消費性附加元件，請依照下列一般程序執行：
 
 1. 讓使用者能夠從您的 App [購買附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)。
@@ -45,8 +44,9 @@ translationtype: HT
 ## <a name="prerequisites"></a>先決條件
 
 這些範例包含下列先決條件：
-* 適用於目標為 Windows10 版本 1607 或更新版本的通用 Windows 平台 (UWP) app 的 Visual Studio 專案。
-* 您已在 Windows 開發人員中心儀表板中建立 app 並具備消費性附加元件 (亦稱為App 內購買或 IAP)，而且已在市集中發佈此 app 且可供使用。 這可以是您想要釋出給客戶的 app，或者可以是符合最低 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求的基本 app，而您只能基於測試目的加以使用。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
+* 適用於目標為 Windows 10 版本 1607 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
+* 您已在 Windows 開發人員中心儀表板中[建立 App 提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，而且已在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
+* 您已在開發人員中心儀表板中[為應用程式建立消費性附加元件](../publish/add-on-submissions.md)。
 
 這些範例中的程式碼假設：
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。

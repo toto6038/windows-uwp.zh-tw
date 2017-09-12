@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: c9bf682e6818f7c9854604448e52aa0111605a05
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 457c31a0657839632cbc60db0c908dca2cc4fafd
+ms.sourcegitcommit: a61e9fc06f74dc54c36abf7acb85eeb606e475b8
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/15/2017
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -35,7 +37,9 @@ translationtype: HT
 |可用的觸發程序 | 同處理序背景工作不支援下列觸發程序︰[DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396)、[DeviceServicingTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceservicingtrigger.aspx) 和 **IoTStartupTask**。 |
 |VoIP | 同處理序背景工作不支援在應用程式內啟用 VoIP 背景工作。 |  
 
-**CPU 配額：**背景工作會受到它們根據觸發程序類型所取得的實際執行使用時間所限制。 大部分的觸發程序有 30 秒的實際執行使用限制，而部分觸發程序擁有最多 10 分鐘的執行時間，以完成需要大量運算資源的工作。 背景工作應該要輕量，才能延長電池使用時間並為前景應用程式提供較佳的使用者體驗。 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
+**觸發程序執行個體的數目限制：**App 可以註冊某些觸發程序的執行個體數目有限制。 App 只能針對其每個執行個體註冊 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)、[MediaProcessingTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.mediaprocessingtrigger) 和 [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.deviceusetrigger.aspx?f=255&MSPPError=-2147217396) 一次。 如果 App 超過此限制，註冊將會擲回例外狀況。
+
+**CPU 配額：**背景工作受限於其依據觸發程序類型所取得的實際執行使用時間量。 大部分的觸發程序有 30 秒的實際執行使用限制，而部分觸發程序擁有最多 10 分鐘的執行時間，以完成需要大量運算資源的工作。 背景工作應該要輕量，才能延長電池使用時間並為前景應用程式提供較佳的使用者體驗。 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
 
 **管理背景工作：**您的應用程式應該取得已登錄的背景工作清單、登錄進度與完成處理常式，並適當地處理這些事件。 您的背景工作類別應該報告進度、取消和完成。 如需詳細資訊，請參閱[處理已取消的背景工作](handle-a-cancelled-background-task.md)和[監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)。
 
@@ -53,7 +57,7 @@ translationtype: HT
 
 > **重要**  自 Windows 10 起，應用程式不再需要將位於鎖定畫面作為先決條件，也可執行背景工作。
 
-通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何類型的背景工作。 如果使用者已明確地在裝置設定中拒絕您應用程式的背景工作權限，則這個方法會傳回 [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439)。
+通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何類型的背景工作。 如果使用者已明確地在裝置設定中拒絕您應用程式的背景工作權限，則這個方法會傳回 [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439)。 如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>背景工作檢查清單
 
 *同時適用於同處理序和跨處理序的背景工作*
@@ -78,17 +82,7 @@ translationtype: HT
 
 - 取消工作時，請確認 `BackgroundActivated` 事件處理常式在取消發生或終止整個處理序之前結束。
 -   撰寫短期背景工作。 背景工作的使用時間是限制為 30 秒時鐘時間。
--   請勿仰賴背景工作的使用者互動。
-
-## <a name="windows-background-task-checklist-for-lock-screen-capable-apps"></a>Windows：具有鎖定畫面功能的應用程式背景工作檢查清單
-
-針對能夠位於鎖定畫面上的應用程式開發背景工作時，請遵循這個指導方針。 遵循[鎖定畫面磚的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh465403)中的指導方針。
-
--   將您的應用程式開發成具有鎖定畫面功能的應用程式之前，請先確定應用程式是否一定要位於鎖定畫面上。 如需詳細資訊，請參閱[鎖定畫面概觀](https://msdn.microsoft.com/library/windows/apps/hh779720)。
-
--   確認應用程式不在鎖定畫面上仍然可運作。
-
--   納入已向 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 登錄的背景工作，並在應用程式資訊清單中宣告它。 確認進入點與觸發程序類型是否正確。 這是認證的必要步驟，而且可以讓使用者在鎖定畫面上放置應用程式。
+-   不要依賴背景工作的使用者互動。
 
 **注意**  
 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。

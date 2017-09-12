@@ -6,20 +6,21 @@ keywords: "uwP 應用程式配置, 通用 Windows 平台,應用程式設計, 介
 label: Layout
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.assetid: 1aa12606-8a99-4db3-8311-90e02fde9cf1
-ms.openlocfilehash: 1034588565032301cb0746d79a122e8388dad8f9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 4c1b4617b3b58cb613bcca8d5df456621af730fa
+ms.sourcegitcommit: 0d5b3daddb3ae74f91178c58e35cbab33854cb7f
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="layout-for-uwp-apps"></a>UWP 應用程式的配置
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-
-應用程式結構、版面配置及瀏覽都是您的應用程式使用者體驗的基礎。 本節中的文章可協助您建立一個很容易瀏覽，且在不同裝置與螢幕大小上有不同外觀的應用程式。
+應用程式結構、版面配置及瀏覽都是您的應用程式使用者體驗的基礎。 本節中的文章使用 Fluent 設計系統協助您建立一個很容易瀏覽，且在不同裝置與螢幕大小上有不同外觀的應用程式。
 
 ## <a name="intro"></a>簡介
 
@@ -27,7 +28,7 @@ translationtype: HT
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
   <p><b>[應用程式 UI 設計簡介](design-and-ui-intro.md)</b><br />
-當您設計 UWP 應用程式時，必須建立適合顯示器大小不同之各種裝置的使用者介面。 本文章提供 UI 相關功能與 UWP 應用程式的優點，以及設計回應式 UI 的一些秘訣與技巧的概觀。 </p>
+當您設計 UWP 應用程式時，必須建立適合顯示器大小不同之各種裝置的使用者介面。 本文章提供 Fluent 設計系統簡介、UI 相關功能與 UWP 應用程式的優點，以及設計回應式 UI 的一些秘訣與技巧的概觀。 </p>
   </div>
   <div class="side-by-side-content-right">
     ![在多種裝置上執行的應用程式](images/rspd-reposition-type1-sm.png)
@@ -47,7 +48,7 @@ UWP 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功�
 </p>
 <p>
 <b>[內容基本知識](content-basics.md)</b><br/>
-任何一種應用程式的主要用途都是讓使用者存取內容：在相片編輯應用程式中，內容是相片；在旅遊應用程式中，內容是地圖與旅遊地點的相關資訊；以此類推。 本文提供三種內容案例的內容設計建議：取用、建立與互動。
+任何一種 app 的主要用途都是讓使用者存取內容：在相片編輯 app 中，內容是相片；在旅遊 app 中，內容是地圖與旅遊地點的相關資訊；以此類推。 本文提供三種內容案例的內容設計建議：取用、建立與互動。
 </p> 
   </div>
   <div class="side-by-side-content-right">
@@ -60,30 +61,31 @@ UWP 應用程式中的瀏覽，以瀏覽結構、瀏覽元素和系統層級功�
 ## <a name="page-layout"></a>頁面配置 
 這些文章可協助您建立在不同螢幕尺寸、視窗大小、解析度及方向上看起來都會很棒的彈性化 UI。 
 
+<div style="column-count: 2; column-gap: 40px; margin-top: 40px;">
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b>[螢幕大小與中斷點](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+<p style="margin-top: 0px; padding-top: 0px;"><b>[螢幕大小與中斷點](screen-sizes-and-breakpoints-for-responsive-design.md)</b><br/>
 整個 Windows 10 生態系統中，裝置目標和螢幕大小有太多種，以致於無法針對每一個最佳化您的 UI。 我們建議使用幾個重要的寬度 (也稱做「中斷點」) 的設計：360、640、1024 以及 1366 有效像素，做為替代方案。</p>
-  </div>
-  <div class="side-by-side-content-right">
- <p><b>[使用 XAML 定義版面配置](layouts-with-xaml.md)</b> <br/>
+</div>
+
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+  <p><b>[使用 XAML 定義版面配置](layouts-with-xaml.md)</b> <br/>
 如何使用 XAML 屬性和版面配置面板，讓您的應用程式具有回應性及調適性。</p>
-  </div>
 </div>
-</div>
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
    <p><b>[版面配置面板](layout-panels.md)</b> <br />
-深入了解每個面板的每種配置類型，以及示範如何使用它們來配置 XAML UI 元素。</p>
-  </div>
-  <div class="side-by-side-content-right">
+深入了解每個面板的每種配置類型，以及示範如何使用它們來配置 XAML UI 元素。</p> 
+</div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
  <p><b>[對齊、邊界及邊框間距](alignment-margin-padding.md)</b> <br />
 除了維度屬性 (寬度、高度及限制) 之外，元素還可以有對齊、邊界及邊框間距屬性，這些屬性會在元素進行版面配置階段並在 UI 中轉譯時，影響配置行為。</p> 
-  </div>
 </div>
+<div style="-webkit-column-break-inside: avoid; page-break-inside: avoid; break-inside: avoid;">
+ <p><b>[使用 Grid 和 StackPanel 建立配置](grid-tutorial.md)</b> <br />
+利用 Grid 和 StackPanel 元素，使用 XAML 來建立簡單的天氣應用程式。 </p> 
 </div>
+
+</div>
+
 
 

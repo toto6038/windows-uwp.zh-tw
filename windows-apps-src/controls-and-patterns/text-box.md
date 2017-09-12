@@ -6,14 +6,19 @@ title: "文字方塊"
 label: Text box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 29ab04588088907a851700fcbd04a64bcea77d63
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: e3b39208db6cd0cb8954d773b704b68888cc5ff0
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -23,26 +28,20 @@ TextBox 控制項可讓使用者在應用程式中輸入文字。 其通常用�
 
 TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的內建操作功能表，支援複製與貼上文字。 「全部清除」按鈕可讓使用者快速刪除所有已輸入的文字。 其亦具備預設啟用的內建拼字檢查功能。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)</li>
-<li>[**Text 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、[Text 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
 使用者可使用 **TextBox** 控制項來輸入和編輯未格式化的文字 (例如在表單中)。 您可以使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 屬性來取得 TextBox 中的文字，並在其中設定文字。
 
-您可將 TextBox 設為唯讀，但此應為暫時性的條件狀態。 若該文字永遠無法編輯，請考慮改用 [**TextBlock**](text-block.md)。
+您可將 TextBox 設為唯讀，但此應為暫時性的條件狀態。 若該文字永遠無法編輯，請考慮改用 [TextBlock](text-block.md)。
 
-使用 [**PasswordBox**](password-box.md) 控制項，以收集密碼或其他私人資料，例如身分證號碼。 密碼方塊看起來就像文字輸入方塊，只不過它會將已輸入的文字轉譯成項目符號。
+使用 [PasswordBox](password-box.md) 控制項，以收集密碼或其他私人資料，例如身分證號碼。 密碼方塊看起來就像文字輸入方塊，只不過它會將已輸入的文字轉譯成項目符號。
 
-使用 [**AutoSuggestBox**](auto-suggest-box.md) 控制項讓使用者輸入搜尋字詞，或向使用者顯示建議清單方便其在輸入時從中選擇。
+使用 [AutoSuggestBox](auto-suggest-box.md) 控制項讓使用者輸入搜尋字詞，或向使用者顯示建議清單方便其在輸入時從中選擇。
 
-使用 [**RichEditBox**](rich-edit-box.md) 顯示和編輯純文字檔案。
+使用 [RichEditBox](rich-edit-box.md) 顯示和編輯純文字檔案。
 
 如需如何選擇正確文字控制項的詳細資訊，請參閱[文字控制項](text-controls.md)文章。
 
@@ -104,8 +103,8 @@ IsEnabled
 ### <a name="enable-multi-line-input"></a>啟用多行輸入
 
 您可使用兩種屬性來控制文字方塊是否採用多行方式顯示文字。 您通常會同時設定這兩個屬性，以產生多行文字方塊。
-- 若要讓文字方塊允許並顯示新行或傳回字元，請將 [**AcceptsReturn**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 屬性設為 **true**。
-- 若要啟用文字換行，請將 [**TextWrapping**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
+- 若要讓文字方塊允許並顯示新行或傳回字元，請將 [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 屬性設為 **true**。
+- 若要啟用文字換行，請將 [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
 > **注意**&nbsp;&nbsp;TextBox 和 RichEditBox 的 TextWrapping 屬性均不支援 **WrapWholeWords** 值。 若您嘗試使用 WrapWholeWords 做為 TextBox.TextWrapping 或 RichEditBox.TextWrapping 的值，則會擲回無效的引數例外狀況。
 
@@ -282,6 +281,6 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [拼字檢查指導方針](spell-checking-and-prediction.md)
 - [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文字輸入的指導方針](text-controls.md)
-- [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)

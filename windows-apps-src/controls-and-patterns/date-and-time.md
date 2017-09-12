@@ -6,14 +6,20 @@ ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 5da40bb4c680416f0766cf0d1a171f95358ea63e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: f2ffe1fa42f3202ee3fce8850d151b40af2e486a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="calendar-date-and-time-controls"></a>行事曆、日期和時間控制項
 
@@ -21,15 +27,7 @@ translationtype: HT
 
 日期和時間控制項為您提供一個標準、當地語系化的方式，讓使用者在您的 app 中檢視以及設定日期和時間值。 此文章提供設計指導方針，並協助您挑選適當的控制項。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**CalendarView 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)</li>
-<li>[**CalendarDatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)</li>
-<li>[**DatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
-<li>[**TimePicker 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[CalendarView 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)、[CalendarDatePicker 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)、[DatePicker 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)、[TimePicker 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
 
 
 ## <a name="which-date-or-time-control-should-you-use"></a>您應該使用哪一個日期或時間控制項？
@@ -90,27 +88,27 @@ translationtype: HT
 
 如需每個日期和時間控制項的特定資訊和範例，請參閱以下文章。
 
-- [**行事曆檢視**](calendar-view.md)
-- [**行事曆日期選擇器**](calendar-date-picker.md)
-- [**日期選擇器**](date-picker.md)
-- [**時間選擇器**](time-picker.md)
+- [行事曆檢視](calendar-view.md)
+- [行事曆日期選擇器](calendar-date-picker.md)
+- [日期選擇器](date-picker.md)
+- [時間選擇器](time-picker.md)
 
 ### <a name="globalization"></a>全球化
 
-XAML 日期控制項支援 Windows 所支援的每個日曆系統。 這些行事曆是在 [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) 類別中指定。 每個控制項會針對您 app 的預設語言使用正確的行事曆，或者您也可以設定 **CalendarIdentifier** 屬性，以使用特定的行事曆系統。
+XAML 日期控制項支援 Windows 所支援的每個日曆系統。 這些行事曆是在 [Windows.Globalization.CalendarIdentifiers](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) 類別中指定。 每個控制項會針對您 app 的預設語言使用正確的行事曆，或者您也可以設定 **CalendarIdentifier** 屬性，以使用特定的行事曆系統。
 
-時間選擇器控制項支援 [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) 類別中指定的每個時鐘系統。 您可以設定 [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) 屬性，以使用 12 小時制或 24 小時制的時鐘。 屬性的類型是字串，但您必須使用對應到 ClockIdentifiers 類別的靜態字串屬性的值。 這些是︰TwelveHour ("12HourClock" 字串) 和 TwentyFourHour ("24HourClock" 字串)。 "12HourClock" 是預設值。
+時間選擇器控制項支援 [Windows.Globalization.ClockIdentifiers](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) 類別中指定的每個時鐘系統。 您可以設定 [ClockIdentifier](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) 屬性，以使用 12 小時制或 24 小時制的時鐘。 屬性的類型是字串，但您必須使用對應到 ClockIdentifiers 類別的靜態字串屬性的值。 這些是︰TwelveHour ("12HourClock" 字串) 和 TwentyFourHour ("24HourClock" 字串)。 "12HourClock" 是預設值。
 
 
 ### <a name="datetime-and-calendar-values"></a>DateTime 與 Calendar 值
 
 XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，取決於您的程式設計語言。 
-- C# 和 Visual Basic 使用屬於 .NET 一部分的 [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 結構。 
-- C++/CX 使用 [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) 結構。 
+- C# 和 Visual Basic 使用屬於 .NET 一部分的 [System.DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 結構。 
+- C++/CX 使用 [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) 結構。 
 
-相關的概念是 Calendar 類別，這會影響在內容中如何解譯日期。 所有 Windows 執行階段應用程式都可以使用 [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 類別。 C# 和 Visual Basic 應用程式也可以使用 [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 類別，它包含非常類似的功能。 (Windows 執行階段 app 可使用.NET 行事曆的基底類別，但非特定的實作；例如：GregorianCalendar。)
+相關的概念是 Calendar 類別，這會影響在內容中如何解譯日期。 所有 Windows 執行階段應用程式都可以使用 [Windows.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) 類別。 C# 和 Visual Basic 應用程式也可以使用 [System.Globalization.Calendar](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) 類別，它包含非常類似的功能。 (Windows 執行階段 app 可使用.NET 行事曆的基底類別，但非特定的實作；例如：GregorianCalendar。)
 
-.NET 亦支援名為 [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的類型，隱含可轉換為 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 類別中的「備註」。
+.NET 亦支援名為 [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 的類型，隱含可轉換為 [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)。 因此，您可能會在 .NET 程式碼中看到用來設定值的 "DateTime" 類型，其實是 DateTimeOffset。 如需 DateTime 和 DateTimeOffset 之間差異的詳細資訊，請參閱 [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) 類別中的「備註」。
 
 > **注意**&nbsp;&nbsp;採用日期物件的屬性不能設定為 XAML 屬性字串，因為 Windows 執行階段 XAML 剖析器沒有可將字串轉換為 DateTime/DateTimeOffset 物件形式之日期的轉換邏輯。 您通常會在程式碼中設定這些值。 另一個可能的技術是定義可作為資料物件或在資料內容中使用的日期，然後將屬性設定為 XAML 屬性，參考可存取日期作為資料的 [\{Binding\} 標記延伸模組](../xaml-platform/binding-markup-extension.md)運算式。
 
@@ -121,7 +119,7 @@ XAML 日期和時間控制項中使用的日期物件有不同的呈現方式，
 ## <a name="related-topics"></a>相關主題
 
 **適用於開發人員 (XAML)**
-- [**CalendarView 類別**](https://msdn.microsoft.com/library/windows/apps/dn890052)
-- [**CalendarDatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn950083)
-- [**DatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn298584)
-- [**TimePicker 類別**](https://msdn.microsoft.com/library/windows/apps/dn299280)
+- [CalendarView 類別](https://msdn.microsoft.com/library/windows/apps/dn890052)
+- [CalendarDatePicker 類別](https://msdn.microsoft.com/library/windows/apps/dn950083)
+- [DatePicker 類別](https://msdn.microsoft.com/library/windows/apps/dn298584)
+- [TimePicker 類別](https://msdn.microsoft.com/library/windows/apps/dn299280)

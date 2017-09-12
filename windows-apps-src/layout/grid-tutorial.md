@@ -2,22 +2,27 @@
 author: mukin
 Description: "此教學課程式文章會逐步指引讀者，使其了解建立基本應用程式使用者介面的步驟。 其解釋並示範 Grid 與 StackPanel 這兩項常見 XAML 元素的用法。"
 title: "使用 Grid 和 StackPanel 建立簡單的天氣應用程式"
-ms.author: wdg-dev-content
-ms.date: 02/08/2017
+template: detail.hbs
+ms.author: mukin
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
-ms.openlocfilehash: 094cabc642884f57af2dbeb5125a2a8b81365824
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 12a48ec9e907a65abbbd9ec1e9f9c60c3519fa20
+ms.sourcegitcommit: 2de58584a42e580dbc0d19bdecee12bfee7fd7e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/23/2017
 ---
 # <a name="create-a-simple-weather-app-by-using-grid-and-stackpanel"></a>使用 Grid 和 StackPanel 建立簡單的天氣應用程式
 
 利用 **Grid** 和 **StackPanel** 元素，使用 XAML 來建立簡單的天氣應用程式。 有了這些工具，您便可製作外觀極佳的應用程式，且其可在任何執行 Windows 10 的裝置上運作。 完成本教學課程可能需要 10-20 分鐘。
 
-## <a name="prerequisites"></a>先決條件
+> **重要 API**：[Grid 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.grid)、[StackPanel 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.stackpanel)
+
+## <a name="prerequisites"></a>必要條件
 - Windows 10 和 Microsoft Visual Studio 2015。 [按一下這裡，以了解如何開始設定 Visual Studio](../get-started/get-set-up.md)。
 - 如何使用 XAML 和 C# 建立基本 "Hello World" 應用程式的知識。 如果您未具備此知識，[按一下這裡，以了解如何建立 "Hello World" app](https://msdn.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 
@@ -46,7 +51,7 @@ translationtype: HT
 </Grid>
 ```
 
-新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義應用程式介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "3\*" 和 "\*"，因此，**Grid** 為第一列配置的空間為第二列的三倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
+新的 **Grid** 會建立一個兩列和兩欄的組合，其會定義應用程式介面的版面配置。 第一欄的 **Width** 為 "3\*"，而第二欄為 "5\*"，並以 3:5 的比例在兩欄之間劃分出水平空間。 透過相同的方式，這兩列的 **Height** 分別為 "2\*" 和 "\*"，因此，**Grid** 為第一列配置的空間為第二列的兩倍 ("\*" 相當於 "1\*")。 即使重新調整視窗大小或變更裝置，都會保留這些比例。
 
 若要了解調整列與欄的其他方法，請參閱[使用 XAML 定義版面配置](https://msdn.microsoft.com/windows/uwp/layout/layouts-with-xaml#layout-properties)。
 

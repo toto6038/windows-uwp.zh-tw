@@ -1,68 +1,11 @@
 ---
-author: mcleanbyron
-ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
-description: "深入了解開發和發佈包含廣告之 App 的端對端處理程序。"
-title: "建立包含廣告之應用程式的工作流程"
-ms.author: mcleans
-ms.date: 02/08/2017
-ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: "Windows 10, uwp, 廣告, AdControl, InterstitialAd"
-ms.openlocfilehash: 93b56259314c54a56cd8ebbef89694319a95e41c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+redirect_url: display-ads-in-your-app
+ms.openlocfilehash: 629343ad70df7acdceb1d96939579f171b43c933
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/21/2017
 ---
-# <a name="workflows-for-creating-apps-with-ads"></a>建立包含廣告之應用程式的工作流程
+# <a name="workflows-for-creating-apps-with-ads"></a>建立包含廣告之 App 的工作流程
 
-
-
-
-若要在您的 App 中顯示廣告，您的 App 需要能從廣告網路接收廣告。 Microsoft 提供了一個 Web 服務，可讓 Windows 應用程式開發人員接收廣告。 當使用者按一下 App 中的廣告，您 (廣告的*「發行者」*) 就可以從廣告的建立者 (*「廣告客戶」*) 賺取金額。 從廣告客戶方面賺取的金額會使用您的帳戶支付給您。
-
-下列高階步驟說明開發和發佈包含廣告之 App 的一般處理程序。
-
-1.  開發階段：
-
-    * 設定您的 Windows 開發人員中心帳戶。
-    * 使用測試模式的值開發您的 App。
-
-2.  預備發行：
-
-    * 設定您的 App 接收即時廣告。
-    * 將您的 App 提交至 Windows 開發人員中心，然後檢閱效能資料。
-
-如需有關每個步驟的詳細資訊，請閱讀以下其對應的章節。
-
-## <a name="set-up-your-windows-dev-center-account"></a>設定您的 Windows 開發人員中心帳戶
-
-您必須具備 Windows 開發人員中心帳戶，才能發佈您的 App 與接收廣告。 廣告相關的 App 管理也會在 Windows 開發人員中心中完成。 如果您曾使用 Microsoft pubCenter 來管理 App 中的廣告，這已經由 Windows 開發人員中心中的功能取代。
-
-若要設定 Windows 開發人員中心帳戶，請造訪[本頁面](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
-
-## <a name="develop-your-app-using-test-mode-values"></a>使用測試模式值開發您的 App
-
-使用下列逐步解說中的指示新增 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 或 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx)，以在您的 App 中顯示廣告。
-
--   [插入式廣告](interstitial-ads.md)
--   [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
--   [HTML 5 和 JavaScript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
--   [Windows Phone Silverlight 中的 AdControl](adcontrol-in-windows-phone-silverlight.md)
-
-當您使用 **AdControl** 或 **InterstitialAd** 在您的 App 中顯示廣告時，您必須在您的程式碼中指定應用程式識別碼與廣告單位識別碼，以將您的 App 連結至您的 Windows 開發人員中心帳戶並提供廣告。 當您開發您的 App 時，使用測試應用程式識別碼和廣告單位識別碼值，以查看您的 App 於測試期間呈現廣告的方式。 這可讓您看到 App 在測試期間接收及呈現廣告的方式。 如需詳細資訊，請參閱[測試模式值](test-mode-values.md)。
-
-如需示範如何使用 C# 和 C++ 將橫幅及插播式廣告新增至 JavaScript/HTML 應用程式以及 XAML 應用程式的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
-
-## <a name="configure-your-app-to-receive-live-ads"></a>設定您的 App 接收即時廣告
-
-在您完成測試您的 App 且準備好將 App 提交至 Windows 開發人員中心時，您必須更新您的 App 程式碼，以使用 [Windows 開發人員中心儀表板](https://msdn.microsoft.com/library/windows/apps/mt170658.aspx)的應用程式識別碼和廣告單位識別碼值。 如果您嘗試在實際 App 中使用測試值，您的 App 將不會收到即時廣告。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md)。
-
-## <a name="submit-your-app"></a>提交 App
-
-完成 App 開發之後，您就可以使用 Windows 開發人員中心儀表板在 Windows 市集中發佈您的 App。 除了符合 Windows 市集中所有 App 的需求以外，顯示廣告的 App 也必須符合數個其他的需求。 如需詳細資訊，請參閱[提交包含廣告的 App 到 Windows 市集](submit-an-app-with-ads-to-the-windows-store.md)。
-
-在您發佈 App 且在 Windows 市集中提供使用之後，您可以在開發人員中心儀表板中檢視您的[廣告績效報告](../publish/advertising-performance-report.md)。
-
- 
-
- 
+此頁面已重新導向至：在您的 App 中顯示廣告

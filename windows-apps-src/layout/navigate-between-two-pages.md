@@ -7,35 +7,30 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7e1529d641920c93ce7914c39d38001c2cbdfd78
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5d0b0303218415d529b60e2dcaf28a21a28e430
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
-# <a name="peer-to-peer-navigation-between-two-pages"></a>兩個頁面之間的對等瀏覽
+# <a name="implement-navigation-between-two-pages"></a>在兩頁間實作瀏覽
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
-了解如何在通用 Windows 平台 (UWP) app 的基本兩個對等頁面中瀏覽。
+了解如何使用框架和頁面，以便在您的 App 中能夠進行基本瀏覽。 
+<p></p>
+<table>
+    <tr>
+        <td>重要 API：</td><td>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 類別、[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別、[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300) 命名空間</td>
+    </tr>
+</table>
 
-![兩個頁面對等瀏覽範例](images/nav-peertopeer-2page.png)
-
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**Windows.UI.Xaml.Controls.Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)</li>
-<li>[**Windows.UI.Xaml.Controls.Page**](https://msdn.microsoft.com/library/windows/apps/br227503)</li>
-<li>[**Windows.UI.Xaml.Navigation**](https://msdn.microsoft.com/library/windows/apps/br243300)</li>
-</ul>
-</div>
-
-
-
-## <a name="create-the-blank-app"></a>建立空白 App
+## <a name="1-create-a-blank-app"></a>1. 建立空白的應用程式
 
 
 1.  在 Microsoft Visual Studio 功能表，選擇 **\[檔案\] &gt; \[新增專案\]**。
@@ -51,7 +46,7 @@ translationtype: HT
 
 6.  按 Shift+F5 可停止偵錯並返回 Visual Studio。
 
-## <a name="add-basic-pages"></a>新增基本頁面
+## <a name="2-add-basic-pages"></a>2. 新增基本頁面
 
 接下來，將兩個內容頁面新增到專案。
 
@@ -195,7 +190,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 > 
 >     if (rootFrame.Content == null)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame.Navigate(typeof(Page1), e.Arguments);
@@ -219,7 +214,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 > 
 >         rootFrame->NavigationFailed += 
 >             ref new Windows::UI::Xaml::Navigation::NavigationFailedEventHandler(
->                 this, &amp;App::OnNavigationFailed);
+>                 this, &App::OnNavigationFailed);
 > 
 >         if (e->PreviousExecutionState == ApplicationExecutionState::Terminated)
 >         {
@@ -232,7 +227,7 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 > 
 >     if (rootFrame->Content == nullptr)
 >     {
->         // When the navigation stack isn&#39;t restored navigate to the first page,
+>         // When the navigation stack isn't restored navigate to the first page,
 >         // configuring the new page by passing required information as a navigation
 >         // parameter
 >         rootFrame->Navigate(Windows::UI::Xaml::Interop::TypeName(Page1::typeid), e->Arguments);
@@ -247,9 +242,9 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 現在，建置並執行 app。 按一下顯示為 [按一下以移至頁面 2] 的連結。 最上方顯示 [第 2 頁] 的第二頁應該會載入並顯示在框架中。
 
-## <a name="frame-and-page-classes"></a>Frame 和 Page 類別
+## <a name="about-the-frame-and-page-classes"></a>關於 Frame 和 Page 類別
 
-將更多功能新增到 app 前，我們先來看看前面新增的頁面如何為 app 提供瀏覽支援。
+將更多功能新增到 App 前，我們先來看看前面新增的頁面如何為 App 提供瀏覽支援。
 
 首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為 app 建立 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) (`rootFrame`)。 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法是用來顯示這個 **Frame** 中的內容。
 
@@ -263,9 +258,9 @@ void Page2::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 
 每當頁面載入框架時，就會以 [**PageStackEntry**](https://msdn.microsoft.com/library/windows/apps/dn298572) 將該頁面新增到 [**Frame**](https://msdn.microsoft.com/library/windows/apps/dn279543) 的 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) 或 [**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/br227504)。
 
-## <a name="pass-information-between-pages"></a>在頁面之間傳送資訊
+## <a name="3-pass-information-between-pages"></a>3. 在頁面之間傳送資訊
 
-我們的 app 可以在兩個頁面之間瀏覽，但這只是最基本的功能。 通常，當應用程式有多個頁面時，這些頁面需要共用資訊。 讓我們將一些資訊從第一頁傳送到第二頁。
+我們的 App 可以在兩個頁面之間瀏覽，但這只是最基本的功能。 通常，當應用程式有多個頁面時，這些頁面需要共用資訊。 讓我們將一些資訊從第一頁傳送到第二頁。
 
 在 Page1.xaml 中，使用下列 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br242739) 取代您稍早新增的 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br209635)。
 
@@ -297,15 +292,28 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 }
 ```
 
+在 Page2.xaml 中，使用下列 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br242739) 取代您稍早新增的 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br209635)。
+
+以下，我們新增 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 以顯示從 Page1 傳來的文字字串。
+
+```xaml
+<StackPanel>
+    <TextBlock HorizontalAlignment="Center" Name="greeting"/>
+    <HyperlinkButton Content="Click to go to page 1" 
+                     Click="HyperlinkButton_Click"
+                     HorizontalAlignment="Center"/>
+</StackPanel>
+```
+
 在 Page2.xaml 程式碼後置檔案中，以下列內容覆寫 `OnNavigatedTo` 方法：
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    if (e.Parameter is string)
+    if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
     {
-        greeting.Text = "Hi, " + e.Parameter.ToString();
+        greeting.Text = $"Hi, {e.Parameter.ToString()}";
     }
     else
     {
@@ -329,11 +337,11 @@ void Page2::OnNavigatedTo(NavigationEventArgs^ e)
 }
 ```
 
-執行 app，在文字方塊中輸入您的名稱，然後按一下 **\[按一下以移至頁面 2\]** 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br227737) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br242739) 事件中的 `this.Frame.Navigate(typeof(Page2), tb1.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
+執行 app，在文字方塊中輸入您的名稱，然後按一下 **\[按一下以移至頁面 2\]** 連結。 當您呼叫 [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br227737) 的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br242739) 事件中的 `this.Frame.Navigate(typeof(Page2), name.Text)` 時，`name.Text` 屬性會傳送到 `Page2`，而事件資料的值會用來做為在頁面上顯示的訊息。
 
-## <a name="cache-a-page"></a>快取頁面
+## <a name="4-cache-a-page"></a>4. 快取頁面
 
-頁面內容和狀態預設不會快取，您必須在 app 的每個頁面中啟用。
+頁面內容和狀態預設不會快取，您必須在 App 的每個頁面中啟用。
 
 在基本對等範例中沒有返回按鈕 (我們會在[返回按鈕瀏覽](navigation-history-and-backwards-navigation.md)中示範返回瀏覽)，但如果您真的在 `Page2` 上按一下返回按鈕，`Page1` 上的 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) (以及任何其他欄位) 會設為其預設狀態。 解決此問題的方式之一，是使用 [**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 屬性來指定頁面要新增至框架的頁面快取。
 

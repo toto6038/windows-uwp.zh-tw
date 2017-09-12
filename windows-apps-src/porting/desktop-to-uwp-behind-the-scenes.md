@@ -1,39 +1,41 @@
 ---
 author: normesta
-Description: "本文章提供傳統型轉 UWP 橋接器背後運作方式的深入解析。"
-title: "傳統型轉 UWP 橋接器幕後作業"
+Description: "本文提供傳統型橋接器背後運作方式的深入解析。"
+title: "傳統型橋接器的幕後作業"
 ms.author: normesta
-ms.date: 03/09/2017
+ms.date: 05/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
-ms.openlocfilehash: 9a145ba2699ce95ed853a18faa1cff3af77e7664
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 050499baaf383fc135d833ae1e4733c95f2b5fa1
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/26/2017
 ---
-# <a name="desktop-to-uwp-bridge-behind-the-scenes"></a>傳統型轉 UWP 橋接器：幕後作業
+# <a name="behind-the-scenes-of-the-desktop-bridge"></a>傳統型橋接器的幕後作業
 
-本文章提供傳統型至 UWP 橋接器背後運作方式的深入解析。
+本文提供傳統型橋接器背後運作方式的深入解析。
 
-傳統型至 UWP 橋接器的主要目標是將應用程式狀態盡可能地與系統狀態分離，同時保留其他 App 的相容性。 橋接器會透過將應用程式放入通用 Windows 平台 (UWP) 套件中，然後偵測它在執行階段對檔案系統與登錄所做的某些變更並重新導向，來達到此目標。
+傳統型橋接器的主要目標是將應用程式狀態盡可能地與系統狀態分離，同時保留其他應用程式的相容性。 橋接器會透過將應用程式放入通用 Windows 平台 (UWP) 套件中，然後偵測它在執行階段對檔案系統與登錄所做的某些變更並重新導向，來達到此目標。
 
-已轉換的應用程式套件為桌面專用、完全信任的應用程式，並且無法虛擬化或沙箱化。 這可讓它們以和傳統桌面應用程式的相同方式與其他 App 互動。
+您為傳統型應用程式建立的套件為桌面專用、完全信任的應用程式，並且無法虛擬化或沙箱化。 這可讓它們以和傳統桌面應用程式的相同方式與其他 App 互動。
 
 ## <a name="installation"></a>安裝
 
-應用程式套件會安裝於 *C:\Program Files\WindowsApps\package_name* 之下，可執行檔名為 *app_name.exe*。 每個套件資料夾都包含資訊清單 (名稱為 AppxManifest.xml)，其中包含已轉換 App 的特殊 XML 命名空間。 該資訊清單檔案內部是一個 ```<EntryPoint>``` 項目，它會參考完全信任的 App。 啟動該 App 時，它不會在應用程式容器內執行，而是改為以使用者身分執行，就如其平常所做的一樣。
+應用程式套件會安裝於 *C:\Program Files\WindowsApps\package_name* 之下，可執行檔名為 *app_name.exe*。 每個套件資料夾都包含資訊清單 (名稱為 AppxManifest.xml)，其中包含已封裝應用程式的特殊 XML 命名空間。 該資訊清單檔案內部是一個 ```<EntryPoint>``` 項目，它會參考完全信任的 App。 啟動該 App 時，它不會在應用程式容器內執行，而是改為以使用者身分執行，就如其平常所做的一樣。
 
 部署之後，套件檔案會由作業系統標示為唯讀並嚴密地鎖定。 如果這些檔案遭到竄改，Windows 會防止這些 App 啟動。
 
 ## <a name="file-system"></a>檔案系統
 
-為了包含應用程式狀態，橋接器會嘗試擷取 App 對 AppData 所做的變更。 所有寫入到使用者 [AppData] 資料夾 (例如 *C:\Users\user_name\AppData*) 的動作 (包括建立、刪除和更新) 都會在寫入時複製到私人的各個使用者、各個 App 位置。 這會產生已轉換的 App 正在編輯實際 AppData 的錯覺，而該 App 實際上修改的是私人複本。 透過這種方式將寫入重新導向，系統就可以追蹤 App 執行的所有檔案修改。 這可讓系統在解除安裝 App 時清理那些檔案，減少系統「垃圾」，並提供使用者更好的 App 移除體驗。
+為了包含應用程式狀態，橋接器會嘗試擷取 App 對 AppData 所做的變更。 所有寫入到使用者 [AppData] 資料夾 (例如 *C:\Users\user_name\AppData*) 的動作 (包括建立、刪除和更新) 都會在寫入時複製到私人的各個使用者、各個 App 位置。 這會產生已封裝的應用程式正在編輯實際 AppData 的錯覺，而該應用程式實際上修改的是私人複本。 透過這種方式將寫入重新導向，系統就可以追蹤 App 執行的所有檔案修改。 這可讓系統在解除安裝 App 時清理那些檔案，減少系統「垃圾」，並提供使用者更好的 App 移除體驗。
 
-除了重新導向 AppData 之外，橋接器也會動態合併 Windows 的已知資料夾 (System32、Program Files (x86) 等等) 與應用程式套件中相對應的目錄。 每個已轉換的套件在其根目錄都會包含名為「VFS」的資料夾。 在 VFS 目錄中讀取的任何目錄或檔案，都會在執行階段與各自的原生對應項目合併。 例如，App 可能在其應用程式套件中包含 *C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll*，但檔案會顯示為安裝在 *C:\Windows\System32\vc10.dll*。  這樣可維持與可能預期檔案位於非套件位置的傳統型應用程式的相容性。
+除了重新導向 AppData 之外，橋接器也會動態合併 Windows 的已知資料夾 (System32、Program Files (x86) 等等) 與應用程式套件中相對應的目錄。 每個套件在其根目錄都會包含名為「VFS」的資料夾。 在 VFS 目錄中讀取的任何目錄或檔案，都會在執行階段與各自的原生對應項目合併。 例如，App 可能在其應用程式套件中包含 *C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll*，但檔案會顯示為安裝在 *C:\Windows\System32\vc10.dll*。  這樣可維持與可能預期檔案位於非套件位置的傳統型應用程式的相容性。
 
-不允許在已轉換的應用程式套件中對檔案/資料夾進行寫入。 只要使用者具有權限，橋接器就會略過並允許對不屬於套件的檔案和資料夾進行的寫入作業。
+不允許在應用程式套件中對檔案/資料夾進行寫入。 只要使用者具有權限，橋接器就會略過並允許對不屬於套件的檔案和資料夾進行的寫入作業。
 
 ### <a name="common-operations"></a>常見作業
 
@@ -69,7 +71,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86、amd64
 
 ## <a name="registry"></a>登錄
 
-橋接器處理登錄的方式與檔案系統類似。 已轉換的應用程式套件包含 registry.dat 檔案，它會做為實際登錄中 *HKLM\Software* 的邏輯對等項目。 在執行階段，此虛擬登錄會將此登錄區的內容合併至原生系統登錄區，以提供兩者的單一檢視。 例如，如果 registry.dat 包含單一機碼 "Foo"，則執行階段的 *HKLM\Software* 讀取也會顯示包含 "Foo" (除了所有原生系統機碼之外)。
+橋接器處理登錄的方式與檔案系統類似。 應用程式套件包含 registry.dat 檔案，它會做為實際登錄中 *HKLM\Software* 的邏輯對等項目。 在執行階段，此虛擬登錄會將此登錄區的內容合併至原生系統登錄區，以提供兩者的單一檢視。 例如，如果 registry.dat 包含單一機碼 "Foo"，則執行階段的 *HKLM\Software* 讀取也會顯示包含 "Foo" (除了所有原生系統機碼之外)。
 
 只有 *HKLM\Software* 之下的機碼是套件的一部分；*HKCU* 或登錄的其他部分之下的機碼則不是。 不允許對套件中的機碼或值進行寫入。 只要使用者具有權限，橋接器就會略過並允許對不屬於套件的機碼或值進行的寫入作業。
 
@@ -91,3 +93,13 @@ FOLDERID_System\spool | AppVSystem32Spool | x86、amd64
 ## <a name="uninstallation"></a>解除安裝
 
 當套件是由使用者解除安裝時，會移除所有位於 *C:\Program Files\WindowsApps\package_name* 之下的檔案與資料夾，以及橋接器所擷取對 AppData 或登錄所進行的任何重新導向寫入。
+
+## <a name="next-steps"></a>後續步驟
+
+**尋找特定問題的解答**
+
+我們的團隊會監視這些 [StackOverflow 標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。
+
+**提供有關本文的意見反應**
+
+使用下方的留言區塊。

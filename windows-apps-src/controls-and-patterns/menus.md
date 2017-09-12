@@ -5,78 +5,101 @@ title: "功能表和內容功能表"
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
-ms.openlocfilehash: 3e194902b9fb166600ee58ec601993dc808a6853
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: llongley
+doc-status: Published
+ms.openlocfilehash: a53c71e999b94e2ad25ad21b9eec09b81681c0a4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="menus-and-context-menus"></a>功能表和內容功能表
 
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
+<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
 
 功能表和操作功能表會在使用者要求命令或選項時，顯示它們的清單。
 
-![一般操作功能表的範例](images/controls_contextmenu_singlepane.png)
+> **重要 API**：[MenuFlyout 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Controls.MenuFlyout)、[ContextFlyout 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)、[FlyoutBase.AttachedFlyout 屬性](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)</li>
-<li>[ContextFlyout 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx)</li>
-<li>[FlyoutBase.AttachedFlyout 屬性](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx)</li>
-</ul>
-</div>
+![一般操作功能表的範例](images/contextmenu_rs2_icons.png)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
-功能表和操作功能表可組織命令並在使用者不需要它們時加以隱藏，藉以節省空間。 如果經常會用到某個特定命令，而且您有可用的空間，請考慮直接將它放置於它自己的元素中，而不是放在功能表中，讓使用者不需瀏覽功能表，即可取得該命令。 
+功能表和操作功能表可組織命令並在使用者不需要它們時加以隱藏，藉以節省空間。 如果經常會用到某個特定命令，而且您有可用的空間，請考慮直接將它放置於它自己的元素中，而不是放在功能表中，讓使用者不需瀏覽功能表，即可取得該命令。
 
 功能表和操作功能表適用於組織命令。若要顯示任意內容 (例如通知或要求確認)，請使用[對話方塊或飛出視窗](dialogs.md)。  
 
 
 ## <a name="menus-vs-context-menus"></a>功能表與操作功能表
 
-功能表和操作功能表在其外觀和可包含的內容部分是完全相同的。 事實上，您會使用同一個控制項 [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) 來建立它們。 唯一的差別在於使用者存取它的方式。 
+功能表和操作功能表在其外觀和可包含的內容部分是完全相同的。 事實上，您會使用同一個控制項 [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030) 來建立它們。 唯一的差別在於使用者存取它的方式。
 
 您何時應該使用功能表或操作功能表？
 * 如果裝載元素為按鈕或一些其他命令元素，且其主要作用是呈現其他命令，請使用功能表。
-* 如果裝載元素是一些具有不同主要用途 (例如呈現文字或影像) 的其他類型元素，請使用操作功能表。 
+* 如果裝載元素是一些具有不同主要用途 (例如呈現文字或影像) 的其他類型元素，請使用操作功能表。
 
-例如，在瀏覽窗格的按鈕上使用功能表，來提供額外的瀏覽選項。 在這個案例中，按鈕控制項的主要用途是提供功能表的存取。 
+例如，在瀏覽窗格的按鈕上使用功能表，來提供額外的瀏覽選項。 在這個案例中，按鈕控制項的主要用途是提供功能表的存取。
 
-如果您想要在文字元素中新增命令 (例如剪下、複製及貼上)，請使用操作功能表，而不是功能表。 在這個案例中，文字元素的主要作用是呈現和編輯文字；其他命令 (例如剪下、複製及貼上) 均為次要的且隸屬於操作功能表。 
+如果您想要在文字元素中新增命令 (例如剪下、複製及貼上)，請使用操作功能表，而不是功能表。 在這個案例中，文字元素的主要作用是呈現和編輯文字；其他命令 (例如剪下、複製及貼上) 均為次要的且隸屬於操作功能表。
 
 <div class="side-by-side">
 <div class="side-by-side-content">
   <div class="side-by-side-content-left">
    <p><b>功能表</b></p>
-<p>
 <ul>
 <li>具有一律顯示的單一進入點 (例如，位於畫面頂端的 [檔案] 功能表)。</li>
 <li>通常會附加到按鈕或父功能表項目。</li>
-<li>是透過按一下滑鼠左鍵 (或對等的動作，例如使用手指點選) 來叫用。</li>  
-<li>透過 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 或 [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) 屬性來與元素產生關聯。</li> 
+<li>是透過按一下滑鼠左鍵 (或對等的動作，例如使用手指點選) 來叫用。</li><li>透過 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 或 [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) 屬性來與元素產生關聯。</li>
 </ul>
-</p><br/>
-
-  </div>
+</div>
   <div class="side-by-side-content-right">
    <p><b>操作功能表</b></p>
-   
-<ul>
-<li>會附加到單一元素，但只有當內容有意義時才可存取。</li>
-<li>是透過按一下滑鼠右鍵 (或對等的動作，例如使用您的手指長按) 來叫用。</li>
-<li>透過其 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來與元素產生關聯。  
-</ul><br/>
 
+<ul>
+<li>已連結至單一元素，並會顯示次要命令。</li>
+<li>是透過按一下滑鼠右鍵 (或對等的動作，例如使用您的手指長按) 來叫用。</li><li>透過其 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來與元素產生關聯。</li>
+</ul>
   </div>
 </div>
 </div>
+
+## <a name="icons"></a>圖示
+
+請考慮將功能表項目圖示提供給：
+
+<ul>
+<li> 最常使用的項目 </li>
+<li> 圖示為標準或眾所周知的功能表項目 </li>
+<li> 圖示清楚表明命令所做動作的功能表項目 </li>
+</ul>
+
+不一定要為所有的功能表項目提供圖示，尤其是功能表很長，或命令沒有標準視覺效果時。 含義模糊的圖示沒有幫助，會造成顯示畫面凌亂，而且讓使用者無法專注在重要的功能表項目。
+
+![使用圖示的範例操作功能表](images/contextmenu_rs2_icons.png)
+
+````xaml
+<MenuFlyout>
+  <MenuFlyoutItem Text="Share" >
+    <MenuFlyoutItem.Icon>
+      <FontIcon Glyph="&#xE72D;" />
+    </MenuFlyoutItem.Icon>
+  </MenuFlyoutItem>
+  <MenuFlyoutItem Text="Copy" Icon="Copy" />
+  <MenuFlyoutItem Text="Delete" Icon="Delete" />
+  <MenuFlyoutSeparator />
+  <MenuFlyoutItem Text="Rename" />
+  <MenuFlyoutItem Text="Select" />
+</MenuFlyout>
+````
+> MenuFlyoutItems 中的圖示大小為 16x16px。 如果您使用 SymbolIcon、FontIcon 或 PathIcon，圖示會自動縮放成正確大小，但逼真度沒有降低。 如果使用 BitmapIcon，請確定您的資產為 16x16px。  
 
 ## <a name="create-a-menu-or-a-context-menu"></a>建立功能表或操作功能表
 
@@ -89,8 +112,8 @@ translationtype: HT
 這個範例會建立 [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)，並使用 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性 (適用於大多數控制項的屬性)，以將 [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)顯示為操作功能表。
 
 ````xaml
-<Rectangle 
-  Height="100" Width="100" 
+<Rectangle
+  Height="100" Width="100"
   Tapped="Rectangle_Tapped">
   <Rectangle.ContextFlyout>
     <MenuFlyout>
@@ -106,7 +129,7 @@ translationtype: HT
 ````csharp
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
-    // Change the color from red to blue or blue to red. 
+    // Change the color from red to blue or blue to red.
     if (rectangleFill.Color == Windows.UI.Colors.Red)
     {
         rectangleFill.Color = Windows.UI.Colors.Blue;
@@ -118,11 +141,11 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 }
 ````
 
-下一個範例幾乎完全相同，但不會使用 [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來將 [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)顯示為操作功能表，這個範例改用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 屬性來將它顯示為功能表。 
+下一個範例幾乎完全相同，但不會使用 [ContextFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來將 [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)顯示為操作功能表，這個範例改用 [FlyoutBase.ShowAttachedFlyout](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.showattachedflyout) 屬性來將它顯示為功能表。
 
 ````xaml
-<Rectangle 
-  Height="100" Width="100" 
+<Rectangle
+  Height="100" Width="100"
   Tapped="Rectangle_Tapped">
   <FlyoutBase.AttachedFlyout>
     <MenuFlyout>
@@ -143,7 +166,7 @@ private void Rectangle_Tapped(object sender, TappedRoutedEventArgs e)
 
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
-    // Change the color from red to blue or blue to red. 
+    // Change the color from red to blue or blue to red.
     if (rectangleFill.Color == Windows.UI.Colors.Red)
     {
         rectangleFill.Color = Windows.UI.Colors.Blue;
@@ -156,10 +179,10 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ````
 
 
-> 消失關閉控制項 (例如，功能表、操作功能表及其他飛出視窗) 會將鍵盤和遊戲台焦點困在暫時性 UI 內，直到關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 您可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 屬性來修改此行為。 根據預設，暫時性 UI 將在 Xbox 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過 app 可以選擇將重疊強制為一律**開啟**或一律**關閉**。
+> 消失關閉控制項 (例如，功能表、操作功能表及其他飛出視窗) 會將鍵盤和遊戲台焦點困在暫時性 UI 內，直到關閉為止。 若要提供此行為的視覺提示，Xbox 上的消失關閉控制項將會繪製重疊，以使超出範圍 UI 的可見度變暗。 您可以使用新的 [LightDismissOverlayMode](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode.aspx) 屬性來修改此行為。 根據預設，暫時性 UI 將在 Xbox (**\[自動\]**) 上繪製消失關閉重疊，但不會在其他裝置系列上繪製，不過應用程式可以選擇強制重疊一律為 **\[開啟\]** 或一律為 **\[關閉\]**。
 
 > ```xaml
-> <MenuFlyout LightDismissOverlayMode=\"Off\">
+> <MenuFlyout LightDismissOverlayMode="Off" />
 > ```
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
@@ -168,4 +191,4 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-- [**MenuFlyout 類別**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [MenuFlyout 類別](https://msdn.microsoft.com/library/windows/apps/dn299030)

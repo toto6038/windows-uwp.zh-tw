@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: "使用指南針"
 description: "了解如何使用指南針來判斷目前朝向何方。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 04634214aaa32a1beda05b5b127ccc2e0e141bad
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b077d0a38b4146aa84d82c63dbcd3e705c7cd914
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-compass"></a>使用指南針
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**指南針**](https://msdn.microsoft.com/library/windows/apps/BR225705)
+
+**範例**
+
+-   如需更完整的實作，請參閱[指南針範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)。
 
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
@@ -137,7 +143,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更指南針值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** >  **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
 
 ### <a name="explanation"></a>說明
 
@@ -172,10 +178,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
  <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
  <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
 ```
-
-## <a name="related-topics"></a>相關主題
-
-* [指南針範例](http://go.microsoft.com/fwlink/p/?linkid=241378)
  
 
  

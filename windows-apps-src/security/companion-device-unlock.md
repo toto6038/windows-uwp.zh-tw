@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
-ms.openlocfilehash: 050aa91e8d2a25fa80ec95d2fcdebf886430e37d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: bf1928d7e2d96ecafa092ab6dc1ca1bc8c1f8073
+ms.sourcegitcommit: bfa61aae632cca0c68dbfb0168424d38fd607f84
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/31/2017
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
@@ -227,10 +229,10 @@ Windows Hello 隨附裝置 app 應該包含兩個元件︰具有 UI 的前景 ap
 ```C#
 {
     Failed = 0,         // Something went wrong in the underlying components
-    Started,             // First call succeeded
-    CanceledByUser,      // User cancelled PIN prompt
-    PinSetupRequired,    // PIN is not set up
-    DisabledByPolicy,    // Companion device framework or this app is disabled
+    Started,            // First call succeeded
+    CanceledByUser,     // User cancelled PIN prompt
+    PinSetupRequired,   // PIN is not set up
+    DisabledByPolicy,   // Companion device framework or this app is disabled
 }
 ```
 
@@ -356,9 +358,9 @@ namespace SecondaryAuthFactorSample
 {
     Failed = 0,                     // Something went wrong in the underlying components
     Started,
-    UnknownDevice,                    // Companion device app is not registered with framework
-    DisabledByPolicy,                 // Policy disabled this device after registration
-    InvalidAuthenticationStage,        // Companion device framework is not currently accepting
+    UnknownDevice,                  // Companion device app is not registered with framework
+    DisabledByPolicy,               // Policy disabled this device after registration
+    InvalidAuthenticationStage,     // Companion device framework is not currently accepting
                                     // incoming authentication requests
 }
 ```
@@ -368,7 +370,7 @@ namespace SecondaryAuthFactorSample
 ```C#
 {
     Failed = 0,     // Something went wrong in the underlying components
-    Completed,       // Success
+    Completed,      // Success
     NonceExpired,   // Nonce is expired
 }
 ```
@@ -381,13 +383,13 @@ Windows Hello 隨附裝置架構可藉由提供使用者在驗證流程中的全
 
 這其中每一個狀態的詳細資料如下所示︰
 
-| 狀態                          | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|----------------------------    |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation     | 出現鎖定畫面時 (例如，使用者按下 Windows + L 鍵)，即會觸發此狀態變更通知事件。 由於很難找到處於此狀態的裝置，因此我們建議不要請求任何與之相關的錯誤訊息。 我們通常建議只在有意圖訊號可用時，才顯示訊息。 如果隨附裝置會收集意圖訊號 (例如，在 NFC 讀取器上點選、按隨附裝置上的按鈕，或像是拍手的特定手勢)，Windows Hello 隨附裝置 app 就應該進行第一個 API 呼叫以便在此狀態中進行驗證，而 Windows Hello 隨附裝置 app 背景工作會接收來自偵測到該意圖訊號之隨附裝置的指示。 否則，如果 Windows Hello 裝置隨附 app 依賴電腦來啟動驗證流程 (讓使用者向上撥動解除鎖定畫面，或者按空格鍵)，則 Windows Hello 隨附裝置 app 就需要等待下一個狀態 (CollectingCredential)。     |
-| CollectingCredential           | 當使用者開啟膝上型電腦的上蓋、按鍵盤上的任何按鍵，或者向上撥動至解除鎖定畫面時，即會觸發此狀態變更通知事件。 如果 Windows Hello 隨附裝置依賴上述動作以開始收集意圖訊號，則 Windows Hello 隨附裝置 app 應該會開始收集它 (例如，透過隨附裝置上的快顯視窗，詢問使用者是否想要解除鎖定電腦)。 如果 Windows Hello 隨附裝置 app 需要使用者在隨附裝置上提供使用者存在訊號 (例如，在 Windows Hello 隨附裝置上輸入 PIN)，則這是提供錯誤案例的好時機。                                                                                                                                                                                                                                                                                                                                               |
-| SuspendingAuthentication       | 當 Windows Hello 隨附裝置 app 收到這個狀態時，表示隨附驗證服務已停止接受驗證要求。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| CredentialCollected            | 這表示另一個 Windows Hello 隨附裝置 app 已經呼叫第二個 API，而隨附驗證服務正在驗證提交的項目。 此時，除非目前提交的項目未通過驗證，否則隨附驗證服務不會接受任何其他驗證要求。 在到達下一個狀態之前，Windows Hello 隨附裝置 app 應持續關注。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| CredentialAuthenticated        | 這表示提交的認證是有效的。 CredentialAuthenticated 具備已成功之 Windows Hello 隨附裝置的裝置識別碼。 Windows Hello 隨附裝置 app 應該確定會在其上進行檢查，以查看與其相關聯的裝置是否會勝出。 如果沒有，則 Windows Hello 隨附裝置 app 應該避免顯示任何後續驗證流程 (例如，隨附裝置上的成功訊息，也可能是該裝置上的震動) 請注意，如果提交的認證無法運作，則狀態將變更為 CollectingCredential 狀態。                                                                                                                                                                                                                                                                                                                                                                                        |
+| 狀態                         | 說明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
+| WaitingForUserConfirmation    | 出現鎖定畫面時 (例如，使用者按下 Windows + L 鍵)，即會觸發此狀態變更通知事件。 由於很難找到處於此狀態的裝置，因此我們建議不要請求任何與之相關的錯誤訊息。 我們通常建議只在有意圖訊號可用時，才顯示訊息。 如果隨附裝置會收集意圖訊號 (例如，在 NFC 讀取器上點選、按隨附裝置上的按鈕，或像是拍手的特定手勢)，Windows Hello 隨附裝置 app 就應該進行第一個 API 呼叫以便在此狀態中進行驗證，而 Windows Hello 隨附裝置 app 背景工作會接收來自偵測到該意圖訊號之隨附裝置的指示。 否則，如果 Windows Hello 裝置隨附 app 依賴電腦來啟動驗證流程 (讓使用者向上撥動解除鎖定畫面，或者按空格鍵)，則 Windows Hello 隨附裝置 app 就需要等待下一個狀態 (CollectingCredential)。     |
+| CollectingCredential          | 當使用者開啟膝上型電腦的上蓋、按鍵盤上的任何按鍵，或者向上撥動至解除鎖定畫面時，即會觸發此狀態變更通知事件。 如果 Windows Hello 隨附裝置依賴上述動作以開始收集意圖訊號，則 Windows Hello 隨附裝置 app 應該會開始收集它 (例如，透過隨附裝置上的快顯視窗，詢問使用者是否想要解除鎖定電腦)。 如果 Windows Hello 隨附裝置 app 需要使用者在隨附裝置上提供使用者存在訊號 (例如，在 Windows Hello 隨附裝置上輸入 PIN)，則這是提供錯誤案例的好時機。                                                                                                                                                                                                                                                                                                                                            |
+| SuspendingAuthentication      | 當 Windows Hello 隨附裝置 app 收到這個狀態時，表示隨附驗證服務已停止接受驗證要求。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CredentialCollected           | 這表示另一個 Windows Hello 隨附裝置 app 已經呼叫第二個 API，而隨附驗證服務正在驗證提交的項目。 此時，除非目前提交的項目未通過驗證，否則隨附驗證服務不會接受任何其他驗證要求。 在到達下一個狀態之前，Windows Hello 隨附裝置 app 應持續關注。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| CredentialAuthenticated       | 這表示提交的認證是有效的。 CredentialAuthenticated 具備已成功之 Windows Hello 隨附裝置的裝置識別碼。 Windows Hello 隨附裝置 app 應該確定會在其上進行檢查，以查看與其相關聯的裝置是否會勝出。 如果沒有，則 Windows Hello 隨附裝置 app 應該避免顯示任何後續驗證流程 (例如，隨附裝置上的成功訊息，也可能是該裝置上的震動) 請注意，如果提交的認證無法運作，則狀態將變更為 CollectingCredential 狀態。                                                                                                                                                                                                                                                                                                                                                                                       |
 | StoppingAuthentication        | 驗證成功且使用者看到桌面。 刪除背景工作的時機                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
@@ -396,8 +398,8 @@ Windows Hello 隨附裝置 app 只能在前兩個狀態中呼叫這兩個驗證 
 
 ```C#
 {
-    SignIn = 0,          // Running under lock screen mode
-    CredentialPrompt,     // Running post unlock
+    SignIn = 0,         // Running under lock screen mode
+    CredentialPrompt,   // Running post unlock
 }
 ```
 
@@ -626,16 +628,17 @@ Windows Hello 隨附裝置 app 可以使用 ShowNotificationMessageAsync，為�
 
 有兩種類型的訊息：指引和錯誤。
 
-指引訊息是設計來向使用者顯示如何開始解除鎖定程序。 這些訊息只會在第一次進行裝置註冊時向使用者顯示一次，並且永遠不會再次顯示。
+指引訊息是設計來向使用者顯示如何開始解除鎖定程序。 這些訊息只會在第一次進行裝置註冊時於鎖定畫面向使用者顯示一次，並且永遠不會再次於該處顯示。 這些訊息會繼續顯示在鎖定畫面。
 
-一律會顯示錯誤訊息。 錯誤訊息將對使用者顯示 5 秒，然後消失不見。 假設在向使用者顯示訊息之前必須先收集意圖訊號，而使用者只會使用這其中一個 Windows Hello 隨附裝置來提供該意圖，則不能發生下列情況：有多個 Windows Hello 隨附裝置競相顯示錯誤訊息。 因此，Windows Hello 隨附裝置架構不會保留任何佇列。 當呼叫者要求錯誤訊息時，它將會顯示 5 秒，並捨棄在那 5 秒間所有顯示錯誤訊息的其他要求。 過了 5 秒之後，就有機會為其他呼叫者顯示錯誤訊息。 我們禁止任何呼叫者塞滿錯誤通道。
+錯誤訊息一律會顯示，並且會在提供意圖訊號之後顯示。 假設在向使用者顯示訊息之前必須先收集意圖訊號，而使用者只會使用這其中一個 Windows Hello 隨附裝置來提供該意圖，則不能發生下列情況：有多個 Windows Hello 隨附裝置競相顯示錯誤訊息。 因此，Windows Hello 隨附裝置架構不會保留任何佇列。 當呼叫者要求錯誤訊息時，它將會顯示 5 秒，並捨棄在那 5 秒間所有顯示錯誤訊息的其他要求。 過了 5 秒之後，就有機會為其他呼叫者顯示錯誤訊息。 我們禁止任何呼叫者塞滿錯誤通道。
 
 指引和錯誤訊息如下所示。 裝置名稱是隨附裝置 app 傳遞的參數，可做為 ShowNotificationMessageAsync 的一部分。
 
 **指引**
 
 - 「向上撥動或按空格鍵，使用*裝置名稱*來登入。」
-- 「點選 NFC 讀取器上的*裝置名稱*來登入。」
+- 「正在設定您的隨附裝置。 請稍候或使用另一個登入選項。」
+- 「將*裝置名稱*與 NFC 讀取器輕觸以登入。」
 - 「正在尋找*裝置名稱*...」
 - 「將*裝置名稱*插入 USB 連接埠來登入。」
 

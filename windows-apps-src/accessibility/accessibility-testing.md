@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a5a0a20ffa8ca27c123d139f25f636587db07aba
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 73fe48744346b2fd784b36d1fa29bd419c0fea02
+ms.sourcegitcommit: f6dd9568eafa10ee5cb2b849c0d82d84a1c5fb93
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
@@ -82,15 +84,18 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 <span id="verify_your_app_with_make_everything_on_your_screen_bigger"/>
 <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"/>
 ## <a name="verify-your-app-with-display-settings"></a>使用顯示設定驗證應用程式  
+
 使用系統顯示選項來調整顯示器的 DPI 值，並確定在 DPI 值變更時，app UI 能夠正確縮放。 (某些使用者會變更 DPI 值來做為其無障礙輔助，您可以在 **\[輕鬆存取\]** 中變更該選項，以及顯示屬性)。如果發現任何問題，請按照[配置縮放指導方針](https://msdn.microsoft.com/library/windows/apps/Dn611863)的做法，同時為不同的縮放比例提供額外的資源。
 
 <span id="verify_main_app_scenarios_by_using_narrator"/>
 <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"/>
 ## <a name="verify-main-app-scenarios-by-using-narrator"></a>使用朗讀程式，確認主 App 操作正常  
-執行以下步驟，使用朗讀程式測試應用程式的螢幕助讀使用體驗。
+使用朗讀程式可測試應用程式的螢幕助讀使用體驗。
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Using-Narrator-and-Dev-Mode/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 **透過下列步驟，使用朗讀程式搭配滑鼠和鍵盤來測試您的應用程式：**
-1.  按 _Windows 標誌鍵 + Enter 鍵_來啟動朗讀程式。
+1.  按 _Windows 標誌鍵 + Ctrl + Enter_ 來啟動朗讀程式。 在 Windows 10 版本 1607 之前的版本，請使用 _Windows 標誌鍵 + Enter_ 來啟動朗讀程式。
 2.  使用 _Tab_ 鍵、方向鍵及 _Caps Lock + 方向鍵_，利用鍵盤來瀏覽您的應用程式。
 3.  瀏覽應用程式時，聆聽朗讀程式朗讀 UI 的元素，並確認下列各項：
     * 對於每個控制項，確保朗讀程式朗讀所有顯示的內容。 此外，還需確保朗讀程式朗讀每個控制項的名稱、所有適當的狀態 (已勾選、已選取等)，以及控制項類型 (按鈕、核取方塊、清單項目等)。
@@ -145,4 +150,5 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 * [協助工具](accessibility.md)
 * [應避免的做法](practices-to-avoid.md)
 * [UI 自動化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows 中的協助工具](http://go.microsoft.com/fwlink/p/?LinkId=320802) 
+* [Windows 中的協助工具](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

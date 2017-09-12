@@ -1,17 +1,19 @@
 ---
-author: TylerMSFT
+author: normesta
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: "將工作項目提交至執行緒集區"
 description: "了解如何透過將工作項目提交至執行緒集區，以使用個別的執行緒來執行工作。"
-ms.author: twhitney
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 執行緒, 執行緒集區"
-ms.openlocfilehash: 00d354e531dca1e4b8a31d77ea09da20425b1512
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: eb1bcccb9657750c434a2090e22fbd3fc89dc0fa
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 

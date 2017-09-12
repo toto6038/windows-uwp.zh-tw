@@ -9,17 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, 技術, DirectX"
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 7f6ad043299efa2aae7abdb1f1e0a7e898d40836
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: afbab8d6e38bad7c72d4863f97d90b7eb8ff4cac
+ms.sourcegitcommit: ae20971c4c8276034cd22fd7e10b0e3ddfddf480
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/11/2017
 ---
+# <a name="game-technologies-for-uwp-apps"></a>適用於UWP app的遊戲技術
 
-# <a name="game-technologies-for-universal-windows-platform-uwp-apps"></a>適用於通用 Windows 平台 (UWP) 應用程式的遊戲技術
 
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 已為 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
 
@@ -36,17 +35,17 @@ ms.lasthandoff: 02/07/2017
 ## <a name="uwp-games-with-c-and-directx"></a>使用 C++ 和 DirectX 的 UWP 遊戲
 
 
-需要高效能的即時遊戲應使用 DirectX API。 DirectX 是原生 API 集合，可供建立需要高效能的遊戲和多媒體 app (例如 3D 遊戲)。 因為 DirectX API 是原生的，所以 C++ 是唯一可搭配 DirectX 使用的支援語言。
+需要高效能的即時遊戲應使用 DirectX API。 DirectX 是原生 API 集合，可供建立需要高效能的遊戲和多媒體應用程式 (例如 3D 遊戲)。
 
 ## <a name="development-environment"></a>開發環境
 
 
-若要建立 UWP 遊戲，您需要安裝一份 Visual Studio 2015 以便設定您的開發環境。 Visual Studio 2015 可讓您建立 UWP app 並提供遊戲開發的工具：
+若要建立 UWP 遊戲，您需要安裝 Visual Studio 2015 或更高版本以便設定您的開發環境。 Visual Studio 2015 可讓您建立 UWP 應用程式並提供遊戲開發的工具：
 
 -   可供 DX 遊戲程式設計的 Visual Studio 工具 - Visual Studio 提供的工具可用來建立、編輯、預覽及匯出影像、模型及著色器資源。 同時還有工具可讓您在建置期間用來轉換資源和偵錯 DirectX 圖形程式碼。 如需詳細資訊，請參閱[使用 Visual Studio 工具進行遊戲程式設計](set-up-visual-studio-for-game-development.md)。
 -   Visual Studio 圖形診斷功能 - 圖形診斷工具目前已在 Windows 內做為選用功能提供。 診斷工具讓您 進行圖形偵錯、圖形框架分析以及即時監視 GPU 使用量。 如需詳細資訊，請參閱[使用 DirectX 執行階段與 Visual Studio 圖形診斷功能](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)。
 
-如需詳細資訊，請參閱＜準備通用 Windows 平台和 DirectX 遊戲程式設計環境＞。
+如需詳細資訊，請參閱＜準備通用 Windows 平台＞和 [DirectX 遊戲程式設計環境](directx-programming.md)。
 
 ## <a name="getting-started-with-directx-game-project-templates"></a>開始使用 DirectX 遊戲專案範本
 
@@ -211,7 +210,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     <p><strong>使用時機</strong></p>
     <p>如果您的遊戲需要支援遊戲板輸入但不是使用現有的 XInput 程式碼或您需要以上所列的其中一個優勢，則應使用 Windows.Gaming.Input。</p>
     <p><strong>其他資訊</strong></p>
-    <p>請參閱 [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) 文件。</p></td>
+    <p>請參閱 [<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) (英文) 文件。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -325,8 +324,11 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
 ## <a name="xbox-live-services"></a>Xbox Live 服務
 
+[Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 允許任何開發人員將 Xbox Live 整合至其 UWP 遊戲中，並發佈到 Xbox One 和 Windows 10。 用最少的開發時間，將 Xbox Live 社交體驗 (例如登入、顯示線上狀態、排行榜等) 整合到您的遊戲中。 Xbox Live 社交功能的設計旨在自然地逐漸擴大您的目標客群，向超過 5 千 5 百萬戶的使用中玩家展開宣傳。
 
-Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 – 即將隨著 Windows 10 上市。 您很快就能夠使用 ID@Xbox 在您的 UWP 遊戲中包含動態服務！ 在未來，我們也將協助您在 Xbox One 上提供您的通用 app 平台遊戲。 如需詳細資訊，請參閱 [ID@Xbox](http://www.xbox.com/developers/id) 頁面。
+如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](http://www.xbox.com/developers/id) 計畫。 若要了解哪些功能適用於 Xbox Live 創作者計畫與 ID@Xbox 計畫，請參閱[功能表格](../xbox-live/developer-program-overview.md#feature-table)。
+
+如需詳細資訊，請移至[將 Xbox Live 新增到您的遊戲](e2e.md#adding-xbox-live-to-your-game)。
 
 ##  <a name="alternatives-to-writing-games-with-directx-and-uwp"></a>使用 DirectX 與 UWP 撰寫遊戲的替代方法
 
@@ -351,12 +353,11 @@ Xbox Live 功能集 - 使用 Xbox 跨平台遊戲、成就、玩家分數等 –
 
 一旦準備好發佈您的遊戲，您就需要建立開發人員帳戶並將遊戲提交至 Windows 市集。
 
-如需將遊戲提交至 Windows 市集的相關資訊，請參閱 <https://dev.windows.com/publish>。
+如需將遊戲提交至 Windows 市集的相關資訊，請參閱[提交及發行您的遊戲](e2e.md#submitting-and-publishing-your-game)。
 
  
 
  
-
 
 
 

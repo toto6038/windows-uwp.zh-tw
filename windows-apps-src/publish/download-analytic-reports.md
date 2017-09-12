@@ -4,30 +4,23 @@ Description: "您可以下載包含您分析資料的 .tsv 檔案，這樣您可
 title: "下載分析報告"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: e8080eb249b684fd1d6427de0f53aa6e2dd1cda9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f18dd0f240644c0a962b73e78c5c4dd9b1bc8682
+ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/21/2017
 ---
 # <a name="download-analytics-reports"></a>下載分析報告
 
 
 您可以下載包含您分析資料的檔案，這樣您可以離線檢閱您的統計資料和資訊。
 
-## <a name="to-download-a-specific-report"></a>下載特定報告
+當您檢視分析報告，您會看到每個區段中的箭號圖示，可供下載資料。 按一下箭號，產生可下載的 .tsv 檔案，該檔案可在 Microsoft Excel 或支援定位字元分隔值 (TSV) 檔案的另一個程式中開啟。
 
-1.  在 [Windows 開發人員中心] 儀表板中，選取頂端瀏覽功能表中的 **\[App\]**。
-2.  在 **\[App\]** 頁面，選取您的其中一個 app。
-3.  在左方導覽功能表中，展開 **\[分析\]**，然後選取其中一個可用報告。
-4.  在 [報告] 頁面中，選取 **\[下載報告\]**。
-5.  在 **\[選取 App\]** 下拉式清單中，確認您希望報告涵蓋的 App。 如果您希望報告涵蓋所有 App，請選擇 **\[所有 App\]**。
-6.  在 **\[可供下載的報告\]** 下拉式清單中，確認您想要下載的報告。
-7.  在 **\[彙總層級\]** 和 **\[日期範圍\]** 下拉式清單中，選取您想要的報告選項。 請注意，這些選項會根據所選報告的類型而有所不同。
-8.  選取 **\[下載報告\]** 按鈕，儲存 .tsv 檔案，然後在 Microsoft Excel 或支援定位字元分隔值 (TSV) 檔案的另一個程式中開啟檔案。
+您也可以下載所有應用程式或特定應用程式的報告，方法是展開左側瀏覽功能表的 **\[分析\]**，然後選取 **\[下載報告\]**。 從 **\[選取應用程式\]** 下拉式清單選取 **\[所有應用程式\]** 或特定應用程式。 選取要下載的報告，然後選擇所需的彙總層級和日期範圍。 按一下 **\[下載報告\]** 按鈕以產生可下載的 .tsv 檔案，該檔案可在 Microsoft Excel 或支援定位字元分隔值 (TSV) 檔案的另一個程式中開啟。
 
-## <a name="related-topics"></a>相關主題
-- [分析](analytics.md)

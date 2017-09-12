@@ -1,17 +1,19 @@
 ---
-author: Xansky
+author: normesta
 description: "本主題示範如何啟動 [撰寫 SMS] 對話方塊，讓使用者傳送 SMS 訊息。 您可以在顯示該對話方塊之前，使用資料預先填入 SMS 的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。"
 title: "傳送 SMS 訊息"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: "連絡人, SMS, 傳送"
-ms.author: mhopkins
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 3d2edd2e26633abacce07a2a6fe9f8c9d14b0afe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e5c3678e6c12a65b6821d2fc2a54e0710f7dcef3
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="send-an-sms-message"></a>傳送 SMS 訊息
 

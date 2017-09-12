@@ -1,21 +1,26 @@
 ---
 author: Jwmsft
+redirect_url: https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview
 Description: "提供最上層瀏覽同時節省螢幕空間。"
 title: "瀏覽窗格的指導方針"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2d48a92d5af75f8543f7b69ac59865e51bd334ee
-ms.sourcegitcommit: d1d53f5100edffe3f3ee57b853dc8cd1568fe7a2
-translationtype: HT
+ms.openlocfilehash: d5c838675eb8cb568f0dabd1c6b776a8a53d3bf4
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="nav-panes"></a>瀏覽窗格
+
+本文章已移到這裡︰[導覽檢視](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/navigationview)。
 
 瀏覽窗格是一種瀏覽模式，它可以有多個最上層瀏覽項目，同時節省螢幕空間。 瀏覽窗格廣泛使用於行動裝置應用程式，但也適用於較大的螢幕。 以重疊模式使用時，窗格會維持摺疊直到使用者按下按鈕，這適用於較小的螢幕。 以停駐模式使用時，窗格會維持開啟，如果有足夠的螢幕實際可用空間時，這可以提高使用效率。
 
@@ -24,7 +29,7 @@ translationtype: HT
 
 **重要 API**
 
-* [**SplitView 類別**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+* [SplitView 類別](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 ## <a name="is-this-the-right-pattern"></a>這是正確的模式嗎？
 
@@ -114,6 +119,3 @@ translationtype: HT
 * [分割檢視控制項](split-view.md)
 * [主要/詳細資料](master-details.md)
 * [瀏覽基本知識](https://msdn.microsoft.com/library/windows/apps/dn958438)
- 
-
- 

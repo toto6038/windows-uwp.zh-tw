@@ -9,15 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, app 內購買, IAP, 附加元件, 目錄, Windows.ApplicationModel.Store"
-ms.openlocfilehash: 69747b5700db9785d5e782cd71245ce60ee4150b
-ms.sourcegitcommit: d053f28b127e39bf2aee616aa52bb5612194dc53
-translationtype: HT
+ms.openlocfilehash: 264db118c3d9f84cffcc966f017ddab4c14e28fb
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的應用程式內產品型錄
 
 
 > [!NOTE]
-> 本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果 App 的目標為 Windows 10 版本 1607 或更新版本，則我們建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件 (也稱為應用程式內產品或 IAP)，而不是使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
+> 本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 如果您 App 的目標是 Windows10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的成員來管理附加元件，而非使用 **Windows.ApplicationModel.Store** 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。
 
 如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。 在 Windows 10 之前的版本中，市集將每個開發人員帳戶的產品清單數目限制為 200 個，而本主題中所描述的處理程序可用來解決該限制。 從 Windows 10 開始，市集不會限制每個開發人員帳戶的產品清單數目，也不再需要本文中所描述的程序。
 

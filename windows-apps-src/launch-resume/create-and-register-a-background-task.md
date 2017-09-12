@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2492d8c50b6f2e35a137eae6e1a002af0f46afd1
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 1974c90b89a34f3252face47b9f18786b638adf8
+ms.sourcegitcommit: 7540962003b38811e6336451bb03d46538b35671
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/26/2017
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
@@ -26,7 +28,7 @@ translationtype: HT
 建立背景工作類別並加以註冊，讓它在 App 不在前景時也能執行。 本主題示範如何建立及註冊與 App 處理序不同處理序中執行的背景工作。 若要在前景應用程式中直接進行背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
 > [!Note]
-> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/en-us/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
+> 如果您使用背景工作在背景播放媒體，請參閱[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)，以了解有關 Windows10 版本 1607 中讓此操作更容易進行的改進功能詳細資訊。
 
 ## <a name="create-the-background-task-class"></a>建立背景工作類別
 
@@ -241,7 +243,7 @@ translationtype: HT
     > [!div class="tabbedCodeSnippets"]
     > ```cs
     >     BackgroundTaskRegistration task = builder.Register();
-    >     ```
+    > ```
     > ```cpp
     >     BackgroundTaskRegistration^ task = builder->Register();
     > ```

@@ -6,14 +6,19 @@ ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b92febc902f293c4b6e5db8838a220a36becbf43
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 457e61426214b64d8b17f7b750f9d19b44a49018
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="rich-edit-box"></a>Rich Edit 方塊
 
@@ -21,15 +26,7 @@ translationtype: HT
 
 您可以使用 RichEditBox 控制項來輸入和編輯包含格式化文字、超連結及影像的 RTF 文件。 您可以藉由將 IsReadOnly 屬性設定成 **true**，使 RichEditBox 變成唯讀。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**RichEditBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)</li>
-<li>[**Document 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)</li>
-<li>[**IsReadOnly 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)</li>
-<li>[**IsSpellCheckEnabled 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)</li>
-</ul>
-</div>
+> **重要 API**：[RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[Document 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)、[IsReadOnly 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)、[IsSpellCheckEnabled 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -214,5 +211,5 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [拼字檢查指導方針](spell-checking-and-prediction.md)
 - [新增搜尋](search.md)
 - [文字輸入的指導方針](text-controls.md)
-- [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)

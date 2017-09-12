@@ -1,16 +1,22 @@
 ---
 author: mijacobs
 Description: "使用快顯動畫顯示和隱藏飛出視窗的快顯 UI 或自訂快顯的 UI 元素。 快顯元素是顯示在應用程式內容之上的容器，如果使用者點選或按一下快顯元素以外的地方則會關閉。"
-title: "UWP app 中的快顯 UI 動畫"
+title: "UWP 應用程式中的快顯 UI 動畫"
 ms.assetid: 4E9025CE-FC90-4d4c-9DE6-EC6B6F2AD9DF
 label: Motion--Pop-up animations
 template: detail.hbs
-translationtype: Human Translation
-ms.sourcegitcommit: a3924fef520d7ba70873d6838f8e194e5fc96c62
-ms.openlocfilehash: cb5d70784e758b4e18092b75df9e0d77243af7fc
-
+ms.author: mijacobs
+ms.date: 05/19/2017
+ms.topic: article
+ms.prod: windows
+ms.technology: uwp
+keywords: windows 10, uwp
+ms.openlocfilehash: c91e5cd3d4bad1b29d070f4750beb3dd95b3c5dc
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
-
 # <a name="pop-up-ui-animations"></a>快顯 UI 動畫
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -47,11 +53,5 @@ ms.openlocfilehash: cb5d70784e758b4e18092b75df9e0d77243af7fc
  
 
 
-
-
-
-
-
-<!--HONumber=Dec16_HO2-->
 
 

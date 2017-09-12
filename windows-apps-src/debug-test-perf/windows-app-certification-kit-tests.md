@@ -1,19 +1,21 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: "Windows 應用程式認證套件測試"
 description: "Windows 應用程式認證套件包含一些測試，協助確認您的 app 已準備好可以在 Windows 市集上發佈。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2dab2719eae86487b93b9030b430b84aea7b2737
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 5e3ae74ba4392b5021159f9fcb825009137701d3
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
-## <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
+# <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
@@ -668,8 +670,8 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
 
 > **注意** 本文適用於撰寫 UWP App 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
+## <a name="related-topics"></a>相關主題
 
- 
-
+* [Windows 傳統型橋接器應用程式測試](windows-desktop-bridge-app-tests.md)
+* [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  

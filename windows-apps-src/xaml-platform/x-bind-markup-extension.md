@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ba08e426fea4c494276978d96cf0b36f6956bdb8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 0adc0789c4e52e8b9943f774d786aea6efb60c91
+ms.sourcegitcommit: a9e4be98688b3a6125fd5dd126190fcfcd764f95
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/21/2017
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
@@ -182,9 +184,10 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 | **FallbackValue** | 指定當無法解析來源或路徑時，所要顯示的值。 |
 | **模式** | 指定繫結模式，如下列其中一個字串："OneTime"、"OneWay" 或 "TwoWay"。 預設值是 "OneTime"。 請注意，此與 **{Binding}** 的預設值 (通常為 "OneWay") 不同。 |
 | **TargetNullValue** | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
-| **BindBack** | 指定要針對雙向繫結的相反方向使用的函式。 | 
+| **BindBack** | 指定要針對雙向繫結的相反方向使用的函式。 |
+| **UpdateSourceTrigger** | 指定何時將變更從控制項推送回 TwoWay 繫結中的模型。 除了 TextBox.Text 之外，所有屬性的預設值都是 PropertyChanged，TextBox.Text 的預設值為 LostFocus。| 
 
-**注意** 如果要將標記從 **{Binding}** 轉換成 **{x:Bind}**，請留意 **Mode** 屬性的預設值不同。
+**注意**：如果要將標記從 **{Binding}** 轉換成 **{x:Bind}**，請留意 **Mode** 屬性的預設值不同。
  
 ## <a name="remarks"></a>備註
 

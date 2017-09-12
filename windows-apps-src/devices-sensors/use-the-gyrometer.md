@@ -1,17 +1,19 @@
 ---
-author: DBirtolo
+author: mukin
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: "使用陀螺儀"
 description: "了解如何使用陀螺儀來偵測使用者的移動變化。"
-ms.author: dbirtolo
-ms.date: 02/08/2017
+ms.author: mukin
+ms.date: 06/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 6f50ad39420f3154c437a58d19971ed01e638528
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b4dc5be2c6e9cd2dfb0b1f8d6f83250430d2c8b
+ms.sourcegitcommit: ca060f051e696da2c1e26e9dd4d2da3fa030103d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/03/2017
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺儀
 
@@ -21,6 +23,10 @@ translationtype: HT
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**陀螺儀**](https://msdn.microsoft.com/library/windows/apps/BR225718)
+
+**範例**
+
+-   如需更完整的實作，請參閱[陀螺儀範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/gyrometer)。
 
 \[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
@@ -135,11 +141,11 @@ translationtype: HT
 
 您需要將之前程式碼片段中的第一個部分的類別名稱，換成 app 的命名空間。 例如，如果您已建立名為 **GyrometerCS** 的專案，則應該將 `x:Class="App1.MainPage"` 取代為 `x:Class="GyrometerCS.MainPage"`。 您也應該將 `xmlns:local="using:App1"` 取代為 `xmlns:local="using:GyrometerCS"`。
 
--   按 F5 或選取 **\[偵錯\]** >  **\[開始偵錯\]** 以建置、部署及執行 App。
+-   按 F5 或選取 **\[偵錯\]** > **\[開始偵錯\]** 以建置、部署及執行 App。
 
 App 開始執行之後，您就可以移動裝置或使用模擬器工具來變更陀螺儀值。
 
--   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** >  **\[停止偵錯\]** 以停止 App。
+-   返回 Visual Studio，然後按 Shift+F5 或選取 **\[偵錯\]** > **\[停止偵錯\]** 以停止 App。
 
 ###  <a name="explanation"></a>說明
 

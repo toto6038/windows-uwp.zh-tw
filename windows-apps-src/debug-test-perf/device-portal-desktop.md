@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "傳統型裝置的 Device Portal"
 description: "了解 Windows Device Portal 如何在 Windows 桌面上開啟診斷與自動化功能。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7b8b396078d59cc2ab3180e9af8b6017fd5edbda
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 32155bfbb676a5f79dd4b1629f0a88368da36828
+ms.sourcegitcommit: 0fa9ae00117e8e6b04ed38956e605bb74c1261c6
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/07/2017
 ---
 # <a name="device-portal-for-desktop"></a>傳統型裝置的 Device Portal
 
@@ -76,37 +78,11 @@ HTTPS 需要進行驗證和安全通訊。
 
 - 在 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WebManagement\Service 下
     - UseDynamicPorts：所需的 DWORD。 將此設為 0，以保留選擇的連接埠號碼。
-    - HttpPort：所需的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。    
+    - HttpPort：所需的 DWORD。 包含 Device Portal 針對 HTTP 連線開啟接聽的連接埠號碼。  
     - HttpsPort：所需的 DWORD。 包含 Device Portal 用來接聽 HTTPS 連線的連接埠號碼。
 
-## <a name="failure-to-install-developer-mode-package-or-launch-device-portal"></a>無法安裝開發人員模式套件或啟動 Device Portal
-有時會因網路或相容性問題，致使「開發人員模式」無法正確安裝。 **「遠端」**部署 (Device Portal 和 SSH) 必須使用「開發人員模式」套件，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 來部署您的應用程式。 
+## <a name="failure-to-install-developer-mode-package"></a>無法安裝開發人員模式套件
+有時會因網路或相容性問題，致使「開發人員模式」無法正確安裝。 **遠端**部署至電腦需要開發人員模式套件 (從瀏覽器使用 Device Portal 或使用 [裝置探索] 來啟用 SSH)，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 來部署您的應用程式。 
 
-若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。 
+若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)論壇和[開發人員模式頁面](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package)。 
 
-### <a name="failed-to-locate-the-package"></a>找不到套件
-
-「在 Windows Update 中找不到開發人員模式套件。 錯誤程式碼 0x001234 深入了解」   
-
-發生此錯誤的原因，可能在於網路連線問題、企業設定或是套件已遺失。 
-
-解決此問題：
-
-1. 確認您的電腦是否已連線至網際網路。 
-2. 若您位於加入網域的電腦上，請說出您的網路系統管理員。 
-3. 在 [設定] &gt; [更新與安全性] &gt; Windows Updates 中，檢查 Windows 更新。
-4. 確認 Windows 開發人員模式套件顯示於 [設定] &gt; [系統] &gt; [應用程式與功能] &gt; 管理選用功能 &gt; [新增功能]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。 
-
-執行上述步驟之後，停用和重新啟用開發人員模式確認已修正問題。 
-
-
-### <a name="failed-to-install-the-package"></a>無法安裝套件
-
-「無法安裝開發人員模式套件。 錯誤程式碼 0x001234 深入了解」
-
-由於您的 Windows 組建與開發人員模式套件不相容，因此發生此錯誤。 
-
-解決此問題：
-
-1. 在 [設定] &gt; [更新與安全性] &gt; Windows Updates 中，檢查 Windows 更新。
-2. 重新啟動電腦，以確保套用所有的更新。

@@ -4,18 +4,16 @@ Description: "使用樹狀檢視範例程式碼建立可展開的樹狀結構。
 title: "樹狀檢視"
 label: Tree view
 template: detail.hbs
-ms.openlocfilehash: 88e3e79b7ebdf06c200f3525095d7685f7e3e6dc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: c7ad99d20fe30ea4b94ad62de45b3832aae3805e
+ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/20/2017
 ---
 # <a name="hierarchical-layout-with-treeview"></a>含有樹狀檢視的階層式版面配置
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-<div class="microsoft-internal-note">
-適用於樹狀檢視的紅線位於 Design Depot：http://designdepotweb1/DesignDepot.FrontEnd/#/Dashboard/856
-</div>
-
-樹狀檢視是階層式清單樣式，具有包含巢狀項目的展開和摺疊節點。 巢狀項目可以是額外的節點或一般清單項目。 您可以使用 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 建置樹狀檢視，以協助說明您 UI 中的資料夾結構或巢狀關係。
+樹狀檢視是階層式清單樣式，具有包含巢狀項目的展開和折疊節點。 巢狀項目可以是額外的節點或一般清單項目。 您可以使用 [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 建置樹狀檢視，以協助說明您 UI 中的資料夾結構或巢狀關係。
 
 [樹狀檢視範例](http://go.microsoft.com/fwlink/?LinkId=785018)是使用 **ListView** 建置的參考實作。 它並不是獨立的控制項。 Microsoft Edge 瀏覽器 [我的最愛] 窗格中可看到的 [樹狀檢視] 就是使用此參考實作。
 

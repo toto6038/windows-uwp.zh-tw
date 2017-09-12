@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: "在應用程式資訊清單中宣告背景工作"
-description: "在應用程式資訊清單中，透過宣告背景工作為延伸的方式，啟用它們的使用。"
+description: "在 App 資訊清單中宣告背景工作為擴充功能，以允許使用背景工作。"
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ms.author: twhitney
 ms.date: 02/08/2017
@@ -9,17 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: 364edc93c52d3c7c8cbe5f1a85c8ca751eb44b35
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
+ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/24/2017
 ---
-
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -62,8 +61,7 @@ ms.lasthandoff: 02/07/2017
  </Application>
 ```
 
-## <a name="add-a-background-task-extension"></a>新增背景工作延伸
-
+## <a name="add-a-background-task-extension"></a>新增背景工作延伸  
 
 宣告您的第一個背景工作。
 
@@ -108,12 +106,11 @@ ms.lasthandoff: 02/07/2017
 </Extension>
 ```
 
+### <a name="add-multiple-background-task-extensions"></a>新增多個背景工作擴充功能
 
-## <a name="add-additional-background-task-extensions"></a>新增其他背景工作擴充功能
+針對每一個由應用程式註冊的其他背景工作類別，重複步驟 2。
 
-針對每一個由應用程式登錄的額外背景工作類別，請重複步驟 2。
-
-下列範例是取自[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 請複製這個範例的 Extensions 區段，並視需要修改它，以在應用程式資訊清單中宣告背景工作。
+下列範例是取自[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
 
 ```xml
 <Applications>
@@ -154,17 +151,22 @@ ms.lasthandoff: 02/07/2017
 </Applications>
 ```
 
-## <a name="declare-your-background-task-to-run-in-a-different-process"></a>宣告要在不同處理程序中執行的背景工作
+## <a name="declare-where-your-background-task-will-run"></a>宣告背景工作執行所在位置
 
-Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (背景工作預設在其中執行的處理程序) 不同的處理程序中執行背景工作。  有兩個選項︰在與您前景應用程式相同的處理程序中執行；在與其他來自相同應用程式之背景工作執行個體不同的 BackgroundTaskHost.exe 執行個體中執行。  
+您可以指定背景工作執行所在位置︰
 
-### <a name="run-in-the-foreground-application"></a>在前景應用程式中執行
+* 預設會在 BackgroundTaskHost.exe 處理序中執行。
+* 在前景應用程式所在的相同處理序中。
+* 使用 `ResourceGroup` 將多背景工作放在相同的主控處理序，或分別放在不同的處理序。
+* 使用 `SupportsMultipleInstances` 在新處理序中執行背景處理程序，這個新的處理序會在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。
 
-以下是一個範例 XML，當中宣告與前景應用程式在相同處理程序中執行的背景工作。 請注意，`Executable` 屬性：
+### <a name="run-in-the-same-process-as-your-foreground-application"></a>在前景應用程式所在的那個處理序中執行
+
+以下是宣告背景工作的範例 XML，這個背景工作與前景應用程式在相同處理序中執行。
 
 ```xml
 <Extensions>
-    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask" Executable="$targetnametoken$.exe">
+    <Extension Category="windows.backgroundTasks" EntryPoint="ExecModelTestBackgroundTasks.ApplicationTriggerTask">
         <BackgroundTasks>
             <Task Type="systemEvent" />
         </BackgroundTasks>
@@ -172,12 +174,11 @@ Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (�
 </Extensions>
 ```
 
-> [!Note]
-> 請只將 Executable 元素與需要它的背景工作 (例如 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)) 搭配使用。  
+當您指定 **EntryPoint** 時，應用程式會在觸發程序引發時收到對指定之方法的回呼。 如果沒有指定 **EntryPoint**，應用程式則會透過 [OnBackgroundActivated()](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx) 收到回呼。  如需詳細資訊，請參閱[建立和註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)。
 
-### <a name="run-in-a-different-background-host-process"></a>在不同的背景主機處理程序中執行
+### <a name="specify-where-your-background-task-runs-with-the-resourcegroup-attribute"></a>使用 ResourceGroup 屬性來指定背景工作執行所在的位置。
 
-以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 請注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會一起執行。
+以下是一個範例 XML，當中宣告在 BackgroundTaskHost.exe 處理程序中執行的背景工作，但該處理程序是與其他來自相同 App 的背景工作執行個體不同的執行個體。 注意 `ResourceGroup` 屬性，此屬性可識別哪些背景工作會在一起執行。
 
 ```xml
 <Extensions>
@@ -209,11 +210,33 @@ Windows 10 版本 1507 中的新功能可讓您在與 BackgroundTaskHost.exe (�
 </Extensions>
 ```
 
+### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次觸發程序透過 SupportsMultipleInstances 屬性引發時，在新的處理序中執行
+
+此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 為了使用此屬性，您必須鎖定 SDK 版本 '10.0.15063' (Windows 10 Creators Update) 或更高的版本。
+
+```xml
+<Package
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+    ...
+    <Applications>
+        <Application ...>
+            ...
+            <Extensions>
+                <Extension Category="windows.backgroundTasks" EntryPoint="BackgroundTasks.TimerTriggerTask">
+                    <BackgroundTasks uap4:SupportsMultipleInstances=“True”>
+                        <Task Type="timer" />
+                    </BackgroundTasks>
+                </Extension>
+            </Extensions>
+        </Application>
+    </Applications>
+```
+
+> [!NOTE]
+> 您無法連同 `SupportsMultipleInstances` 一起指定 `ResourceGroup` 或 `ServerName`。
 
 ## <a name="related-topics"></a>相關主題
-
 
 * [偵錯背景工作](debug-a-background-task.md)
 * [登錄背景工作](register-a-background-task.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-

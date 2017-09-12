@@ -1,17 +1,19 @@
 ---
-author: dbirtolo
+author: mukin
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
 title: "Device Portal 核心 API 參考資料"
 description: "了解可用來存取資料並以程式設計方式控制裝置的 Windows Device Portal 核心 REST API。"
-ms.author: dbirtolo
+ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 347d658f346ab14c60a4468c4a9935e555c2e016
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b6df8f361df82ef65098877027cf1857fa575b0b
+ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/28/2017
 ---
 # <a name="device-portal-core-api-reference"></a>Device Portal 核心 API 參考資料
 
@@ -1272,6 +1274,69 @@ HTTP 狀態碼      | 描述
 * IoT
 
 ---
+## User information
+---
+### <a name="get-the-active-user"></a>取得使用中使用者
+
+**要求**
+
+您可以使用下列要求格式，取得裝置上使用中使用者的名稱。
+ 
+方法      | 要求 URI
+:------     | :-----
+GET | /api/users/activeuser
+<br />
+
+**URI 參數**
+
+- 無
+
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+回應包含下列格式的使用者資訊。 
+
+成功時： 
+```
+{
+    "UserDisplayName" : string, 
+    "UserSID" : string
+}
+```
+失敗時：
+```
+{
+    "Code" : int, 
+    "CodeText" : string, 
+    "Reason" : string, 
+    "Success" : bool
+}
+```
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows 電腦
+* HoloLens
+* IoT
+
+---
 ## Performance data
 ---
 ### <a name="get-the-list-of-running-processes"></a>取得執行中的處理程序清單
@@ -2023,6 +2088,52 @@ HTTP 狀態碼      | 描述
 * IoT
 
 ---
+### <a name="kill-process-by-pid"></a>依 PID 終止處理序
+
+**要求**
+
+您可以使用下列要求格式來終止處理序。
+ 
+方法      | 要求 URI
+:------     | :-----
+DELETE | /api/taskmanager/process
+<br />
+
+**URI 參數**
+
+您可以在要求 URI 上指定下列其他參數：
+
+URI 參數 | 描述
+:---          | :---
+pid   | (**必要**) 要停止的處理序唯一的處理序 ID。
+<br />
+**要求標頭**
+
+- 無
+
+**要求主體**
+
+- 無
+
+**回應**
+
+**狀態碼**
+
+此 API 具有下列預期狀態碼。
+
+HTTP 狀態碼      | 描述
+:------     | :-----
+200 | 確定
+4XX | 錯誤碼
+5XX | 錯誤碼
+<br />
+**可用裝置系列**
+
+* Windows 電腦
+* HoloLens
+* IoT
+
+---
 ## Networking
 ---
 ### <a name="get-the-current-ip-configuration"></a>取得目前的 IP 設定
@@ -2262,8 +2373,8 @@ URI 參數 | 描述
 :---          | :---
 interface   | (**必要**) 可用來連線到網路的網路介面 GUID。
 op   | (**必要**) 指出要採取的動作。 可能的值是 connect 或 disconnect。
-ssid   | (*如果 op == connect** *則為必要**) 要連線的 SSID。
-索引鍵   | (*如果 op == connect 且網路需要驗證***則為必要**) 共用金鑰。
+ssid   | (**如果 *op* == connect 則為必要**) 要連線的 SSID。
+key   | (**如果 *op* == connect 且網路需要驗證則為必要**) 共用金鑰。
 createprofile | (**必要**) 在裝置上建立網路設定檔。  這會導致日後將裝置自動連線至網路。 此項目可為**是**或**否**。 
 
 **要求標頭**
@@ -3230,7 +3341,7 @@ GET | /api/filesystem/apps/files
 URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望取得檔案清單的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
-packagefullname | (*如果 knownfolderid == LocalAppData** *則為必要**) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
 
 **要求標頭**
@@ -3290,7 +3401,7 @@ URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望下載檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
 filename | (**必要**) 下載的檔案名稱。 
-packagefullname | (*如果 knownfolderid == LocalAppData** *則為必要**) 您感興趣的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3340,7 +3451,7 @@ URI 參數 | 描述
 knownfolderid | (**必要**) 檔案所在的最上層目錄。 使用 **LocalAppData** 來存取側載 App。 
 filename | (**必要**) 所要重新命名之檔案的原始名稱。 
 newfilename | (**必要**) 檔案的新名稱。
-packagefullname | (*如果 knownfolderid == LocalAppData** *則為必要**) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。 
 
 **要求標頭**
@@ -3390,7 +3501,7 @@ URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望刪除檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。 
 filename | (**必要**) 刪除的檔案名稱。 
-packagefullname | (*如果 knownfolderid == LocalAppData** *則為必要**) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**
@@ -3439,7 +3550,7 @@ POST | /api/filesystem/apps/file
 URI 參數 | 描述
 :------     | :-----
 knownfolderid | (**必要**) 您希望上傳檔案的最上層目錄。 使用 **LocalAppData** 存取側載 App。
-packagefullname | (*如果 knownfolderid == LocalAppData** *則為必要**) 您感興趣之 App 的套件完整名稱。 
+packagefullname | (**如果 *knownfolderid* == LocalAppData 則為必要**) 您感興趣之應用程式的套件完整名稱。 
 path | (**選用**) 資料夾內的子目錄或上方所指定的套件。
 
 **要求標頭**

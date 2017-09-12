@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: "本文會引導您完成以各種部署和偵錯目標為目標的步驟。"
 title: "部署和偵錯通用 Windows 平台 (UWP) 應用程式"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, 偵錯, 測試, 效能"
-ms.openlocfilehash: 6f399136be121288dcff4b482f9e022fc0323181
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 2d4f49b0b9756162a22adf5c52910102d4a37281
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP app
 
@@ -70,7 +72,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ![[偵錯] 索引標籤](images/debug-remote-machine-config.png)
 
-若要將 App 部署到遠端電腦，您將也需要在目標電腦上下載並安裝「Visual Studio 遠端工具」。 如需完整指示，請參閱[遠端電腦指示](#remote-pc-instructions)。
+若要將 App 部署到 Creators Update 發行之前的遠端電腦，您將也需要在目標電腦上下載並安裝「Visual Studio 遠端工具」。 如需完整指示，請參閱[遠端電腦指示](#remote-pc-instructions)。  不過，從 Creators Update 開始，電腦也會支援遠端部署。  
 
 ### <a name="c-and-javascript"></a>C++ 和 JavaScript
 
@@ -86,7 +88,10 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ### <a name="remote-pc-instructions"></a>遠端電腦指示
 
-若要部署到遠端電腦，目標電腦必須先安裝 Visual Studio 遠端工具。 遠端電腦必須也執行大於或等於 app **\[目標平台最小版本\]** 屬性的 Windows 版本。 安裝遠端工具之後，您必須啟動目標電腦上的遠端偵錯工具。
+> [!NOTE]
+> 只有舊版 Windows 10 才需要遵循這些指示。  從 Creators Update 開始，可以將電腦視為 Xbox。  也就是，藉由啟用電腦 [開發人員模式] 功能表中的 [裝置探索]，以及透過使用通用驗證來與電腦進行 PIN 配對和連線。 
+
+若要部署到 Creators Update 發行之前的遠端電腦，目標電腦必須先安裝 Visual Studio 遠端工具。 遠端電腦必須也執行大於或等於 app **\[目標平台最小版本\]** 屬性的 Windows 版本。 安裝遠端工具之後，您必須啟動目標電腦上的遠端偵錯工具。
 
 若要這樣做，請在 **\[開始\]** 功能表中搜尋 **\[遠端偵錯工具\]**、開啟它，如果出現提示，請允許偵錯工具設定您的防火牆設定。 偵錯工具預設會使用 Windows 驗證啟動。 如果兩部電腦上的登入使用者不相同，這將會要求提供使用者認證。
 
@@ -94,13 +99,31 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 如需詳細資訊，請參閱 [Visual Studio 下載中心](https://www.visualstudio.com/downloads/)頁面。
 
+## <a name="passing-command-line-debug-arguments"></a>傳遞命令列偵錯引數 
+在 Visual Studio 2017 中，您可以在開始偵錯 UWP app 時傳遞命令列偵錯引數。 您可以從 *args* 參數存取命令列偵錯引數，而此參數位於 [**Application**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.application) 類別的 **OnLaunched** 方法中。 若要指定命令列偵錯引數，請開啟專案屬性，並導覽至 **\[偵錯\]** 索引標籤。 
+
+> [!NOTE]
+> 這是在 Visual Studio 2017 (版本 15.1) for C#、VB 和 C++ 中提供。 較新的 Visual Studio 2017 版本提供 JavaScript。 命令列偵錯引數適用於所有部署類型，但模擬器除外。
+
+針對 C# 和 VB UWP 專案，您會在 **\[開始選項\]** 下方看到 **\[命令列引數:\]** 欄位。 
+
+![命令列引數](images/command-line-arguments.png)
+
+針對 C++ 和 JS UWP 專案，您會看到 **\[命令列引數\]** 顯示為 **\[偵錯屬性\]** 中的欄位。
+
+![命令列引數 C++ 和 JS](images/command-line-arguments-cpp.png)
+
+指定命令列引數之後，即可存取應用程式之 **OnLaunched** 方法中的引數值。 [**LaunchActivatedEventArgs**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs)物件*args*的**Arguments**屬性值設定為**\[命令列引數\]**欄位中的文字。 
+
+![命令列引數 C++ 和 JS](images/command-line-arguments-debugging.png)
+
 ## <a name="authentication-modes"></a>驗證模式
 
 有三種遠端電腦部署的驗證模式：
 
-- **通用 (未加密的通訊協定)**：每次部署到非 Windows 電腦 (桌上型電腦或膝上型電腦) 的遠端裝置時，都請使用此驗證模式。 目前這適用於 IoT 裝置、Xbox 裝置及 HoloLens 裝置。 [通用 (未加密通訊協定)] 應該只有在受信任的網路上才使用。 偵錯連接容易受到惡意使用者的攻擊，這些使用者可以攔截與變更在開發電腦與遠端電腦之間傳送的資料。
-- **Windows**：此驗證模式只適用於遠端電腦部署 (桌上型電腦或膝上型電腦)。 當您能夠存取目標電腦登入使用者的認證時，請使用這個驗證模式。 這是最安全的遠端部署通道。
-- **無**：此驗證模式只適用於遠端電腦部署 (桌上型電腦或膝上型電腦)。 當您在已有測試帳戶登入的環境中安裝了測試電腦，但無法輸入認證時，請使用這個驗證模式。 請確定遠端偵錯工具設定已設定為接受非驗證。
+- **通用 (未加密的通訊協定)**：每次部署到遠端裝置時，都請使用此驗證模式。 目前這適用於 IoT 裝置、Xbox 裝置和 HoloLens 裝置，以及 Creators Update 電腦或較新的電腦。 [通用 (未加密通訊協定)] 應該只有在受信任的網路上才使用。 偵錯連接容易受到惡意使用者的攻擊，這些使用者可以攔截與變更在開發電腦與遠端電腦之間傳送的資料。
+- **Windows**：此驗證模式只適用於執行 Visual Studio 遠端工具的遠端電腦 (桌上型電腦或膝上型電腦)。 當您可以存取目標電腦登入使用者的認證時，請使用這個驗證模式。 這是最安全的遠端部署通道。
+- **無**：此驗證模式只適用於執行 Visual Studio 遠端工具的遠端電腦 (桌上型電腦或膝上型電腦)。 當您在已有測試帳戶登入的環境中安裝了測試電腦，但無法輸入認證時，請使用這個驗證模式。 請確定遠端偵錯工具設定已設定為接受非驗證。
 
 ## <a name="advanced-remote-deployment-options"></a>進階遠端部署選項
 隨著 Visual Studio 2015 Update 3 和「Windows 10 年度更新版」的發行，為特定 Windows 10 裝置提供了新的進階遠端部署選項。 您可以在專案屬性的 **\[偵錯\]** 功能表上找到進階遠端部署選項。
@@ -113,8 +136,8 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 ### <a name="requirements"></a>需求
 若要利用進階遠端部署選項，您必須滿足下列需求：
 * 使用「Windows 10 工具 1.4.1」(其中包含「Windows 10 年度更新版 SDK」) 來安裝 Visual Studio 2015 Update 3
-* 以「Windows 10 年度更新版」Xbox 遠端裝置為目標
-* 使用「通用驗證」模式
+* 以 Windows 10 年度更新版 Xbox 遠端裝置或 Windows 10 Creators Update 電腦為目標 
+* 使用通用驗證模式
 
 ### <a name="properties-pages"></a>屬性頁面
 C# 或 Visual Basic UWP app 的屬性頁面會看起來如下。
@@ -131,10 +154,10 @@ C++ UWP app 的屬性頁面會看起來如下。
 您在 **\[將檔案複製到裝置\]** 時指定的 **\[封裝註冊路徑\]** 是作為檔案複製目的地之遠端裝置上的實體位置。 此路徑可以指定為任何相對路徑。 部署檔案的位置會是開發檔案根目錄的相對位置，此根目錄會依目標裝置而有不同。 如果多位開發人員共用相同裝置並處理含有一些組建差異的封裝，則指定此路徑會相當有用。
 
 > [!NOTE]
-> 目前在執行「Windows 10 年度更新版」的 Xbox 上有支援 **\[將檔案複製到裝置\]**。
+> 執行 Windows 10 年度更新版的 Xbox 以及執行 Windows 10 Creators Update 的電腦目前支援 **\[將檔案複製到裝置\]**。
 
-在遠端裝置上，視裝置系列而定，會將配置複製到下列預設位置︰
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
+在遠端裝置上，會將配置複製到下列預設位置︰
+  `\\MY-DEVKIT\DevelopmentFiles\PACKAGE-REGISTRATION-PATH`
 
 ### <a name="register-layout-from-network"></a>從網路登錄配置
 當您選擇從網路登錄配置時，您可以將您的封裝配置建置到網路共用，然後直接從網路在遠端裝置上登錄該配置。 這會要求您指定一個可從遠端裝置存取的配置資料夾路徑 (網路共用)。 **\[配置資料夾路徑\]** 屬性是設定成與執行 Visual Studio 的電腦相對的路徑，雖然 **\[封裝註冊路徑\]** 屬性是相同的路徑，但指定成遠端裝置的相對路徑。
@@ -156,10 +179,10 @@ C++ UWP app 的屬性頁面會看起來如下。
 當您從網路登錄配置時，無法選取 **\[保留裝置上的所有檔案\]**，因為沒有任何檔案被實際複製到遠端裝置上。
 
 > [!NOTE]
-> 目前在執行「Windows 10 年度更新版」的 Xbox 上有支援 **\[從網路登錄配置\]**。
+> 執行 Windows 10 年度更新版的 Xbox 以及執行 Windows 10 Creators Update 的電腦目前支援 **\[從網路登錄配置\]**。
 
-在遠端裝置上，視裝置系列而定，會將配置登錄到下列預設位置︰
-  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles`
+在遠端裝置上，視裝置系列而定，會將配置登錄到下列預設位置︰  `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` - 這是**封裝註冊路徑**的符號連結
+電腦不會使用符號連結，而是直接登錄**封裝註冊路徑**
 
 
 ## <a name="debugging-options"></a>偵錯選項

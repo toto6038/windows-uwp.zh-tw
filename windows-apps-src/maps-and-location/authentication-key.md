@@ -1,17 +1,19 @@
 ---
-author: msatranjr
+author: normesta
 title: "要求地圖驗證金鑰"
 description: "您的通用 Windows app 必須經過驗證，才能使用 MapControl 和 Windows.Services.Maps 命名空間中的地圖服務。"
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: misatran
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項"
-ms.openlocfilehash: 42078becbc5853787ca057dcbfb58b8d8de7967d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 7b964c19933db460b8f6b0cc7791165ad86adb6c
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
 
@@ -40,9 +42,9 @@ translationtype: HT
 
 4.  如果您還沒有「Bing 地圖服務」帳戶，請建立一個新的「Bing 地圖服務」帳戶。 輸入 **\[帳戶名稱\]**、**\[連絡人名稱\]**、**\[公司名稱\]**、**\[電子郵件地址\]** 及 **\[電話號碼\]**。 接受使用規定之後，按一下 **\[建立\]**。
 
-5.  在 **\[我的帳戶\]** 功能表下方，按一下 **\[建立或檢視金鑰\]**。
+5.  在**[我的帳戶]**功能表下方，按一下 **[我的金鑰]**。
 
-6.  按一下**建立新金鑰**的連結。
+6.  如果您之前已建立金鑰，請按一下連結，以建立新的金鑰。 否則，請前往建立金鑰表單。
 
 7.  完成 **\[建立金鑰\]** 表單，然後按一下 **\[建立\]**。
 

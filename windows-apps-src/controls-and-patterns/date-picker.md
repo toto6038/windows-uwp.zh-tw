@@ -7,14 +7,20 @@ isNew: True
 label: Date picker
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 114e91276ee4f080ead825b655fc05fcf460bacb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: kisai
+design-contact: ksulliv
+dev-contact: joyate
+doc-status: Published
+ms.openlocfilehash: 25c49681085946e145d4feb4c8f93d2908f7bcbd
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="date-picker"></a>日期選擇器
 
@@ -22,14 +28,7 @@ translationtype: HT
 
 日期選擇器為您提供一個標準化的方式，可以讓使用者利用觸控、滑鼠或鍵盤輸入來挑選當地語系化的日期值。 
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**DatePicker 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)</li>
-<li>[**Date 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx) </li>
-
-</ul>
-</div>
+> **重要 API**：[DatePicker 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)、[Date 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
 
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？

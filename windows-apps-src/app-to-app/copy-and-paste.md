@@ -2,16 +2,18 @@
 description: "本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。"
 title: "複製並貼上"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
-author: awkoren
-ms.author: alkoren
+author: msatranjr
+ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: bb99a8ccdfb37039407e32634e5ce95d92878ecb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: f49a417e87199a625a023f7aa867f855cbd5d3c9
+ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/19/2017
 ---
 #<a name="copy-and-paste"></a>複製並貼上
 
@@ -63,12 +65,15 @@ Clipboard.SetContent(dataPackage);
 若要取得剪貼簿的內容，請呼叫靜態 [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent) 方法。 這個方法會傳回包含內容的 [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView)。 這個物件與 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) 物件幾乎完全一樣，不同的是它的內容是唯讀的。 有了該物件，您便可以使用 [**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) 或 [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) 方法來識別可用的格式。 接著，您可以呼叫對應的 [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) 方法來取得資料。
 
 ```cs
-DataPackageView dataPackageView = Clipboard.GetContent();
-if (dataPackageView.Contains(StandardDataFormats.Text))
+async void OutputClipboardText()
 {
-    string text = await dataPackageView.GetTextAsync();
-    // To output the text from this example, you need a TextBlock control
-    TextOutput.Text = "Clipboard now contains: " + text;
+    DataPackageView dataPackageView = Clipboard.GetContent();
+    if (dataPackageView.Contains(StandardDataFormats.Text))
+    {
+        string text = await dataPackageView.GetTextAsync();
+        // To output the text from this example, you need a TextBlock control
+        TextOutput.Text = "Clipboard now contains: " + text;
+    }
 }
 ```
 
@@ -77,7 +82,7 @@ if (dataPackageView.Contains(StandardDataFormats.Text))
 除了複製和貼上命令，您可能也想要追蹤剪貼簿的變更。 處理剪貼簿的 [**ContentChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.ContentChanged) 事件即可執行這個動作。
 
 ```cs
-Clipboard.ContentChanged += (s, e) => 
+Clipboard.ContentChanged += async (s, e) => 
 {
     DataPackageView dataPackageView = Clipboard.GetContent();
     if (dataPackageView.Contains(StandardDataFormats.Text))

@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8238076131d932900e8edfb53ab963de8c98402c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 8b55968a93f09dae396353e73d72566feb188a89
+ms.sourcegitcommit: 77bbd060f9253f2b03f0b9d74954c187bceb4a30
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/11/2017
 ---
 # <a name="background-transfers"></a>背景傳輸
 
@@ -36,6 +38,10 @@ translationtype: HT
 ### <a name="how-does-the-background-transfer-feature-work"></a>背景傳送功能如何運作？
 
 當應用程式使用背景傳輸來起始傳輸時，會使用 [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) 或 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 類別物件設定和初始化要求。 每個傳輸作業會由系統分別處理，並與呼叫的應用程式分隔。 如果您想要在應用程式 UI 中為使用者提供狀態，而且應用程式可以在傳輸進行暫停、繼續、取消，甚至讀取資料，則可以使用進度資訊。 系統處理傳輸的方式可以運用更智慧的電力使用方法，而且可以避免當連線 app 發生 app 暫停、終止或是突發性網路狀態變更這類事件時引發的問題。
+
+此外，背景傳輸使用系統事件代理人事件。 因此，下載數目受限於系統中的可用事件數目。 根據預設，這是 500 事件，但那些事件在所有處理程序間共用。 因此，單一應用程式一次應該不會建立超過 100 個背景傳輸。
+
+當應用程式啟動背景傳輸時，應用程式必須在所有現有的 [**DownloadOperation**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) 物件上呼叫 [**AttachAsync**](https://docs.microsoft.com/en-us/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation#methods_)。 未執行此動作可能會造成這些事件流失，因而將背景傳輸功能呈現為無用。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用背景傳輸來執行已驗證的檔案要求
 
@@ -182,6 +188,8 @@ function uploadFiles() {
 
 如果您是下載可以快速完成的小量資源，則應該改用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API 來取代背景傳輸。
 
+由於每個 app 的資源限制，因此應用程式在任何時候都不應有超過 200 個傳輸 (DownloadOperations + UploadOperations)。 超過該限制可能會使得應用程式的傳輸佇列處於無法復原狀態。
+
 以下的範例會逐步引導您建立和初始化基本下載，以及如何列舉和重新引進之前 app 工作階段中的持續作業。
 
 ### <a name="configure-and-start-a-background-transfer-file-download"></a>設定和啟動背景傳輸檔案下載
@@ -228,7 +236,7 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 
 起始背景傳輸與後續處理，如下所示。
 
-1.  建立 [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) 物件。 接著，建立 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件。 將建立器物件的 **Trigger** 屬性設定為完成群組物件，並將建立器的 **TaskEngtyPoint** 屬性設定為應在傳輸完成時執行之背景工作的進入點。 最後，呼叫 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法來登錄背景工作。 請注意，許多完成群組可以共用一個背景工作進入點，但每個背景工作登錄只能有一個完成群組。
+1.  建立 [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) 物件。 接著，建立 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件。 將建立器物件的 **Trigger** 屬性設定為完成群組物件，並將建立器的 **TaskEntryPoint** 屬性設定為應在傳輸完成時執行之背景工作的進入點。 最後，呼叫 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法來登錄背景工作。 請注意，許多完成群組可以共用一個背景工作進入點，但每個背景工作登錄只能有一個完成群組。
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -306,7 +314,7 @@ Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背�
 
 如果傳送到 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET**：[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 類別和其中一個 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法來測試接收自應用程式使用者的字串，以避免發生這個錯誤。
 

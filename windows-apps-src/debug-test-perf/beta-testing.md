@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: PatrickFarley
 ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
 title: "搶鮮版 (Beta) 測試"
 description: "搶鮮版 (Beta) 測試可讓您有機會根據您 App 開發小組以外的個人所提供的意見反應，改進您的 App，這些個人會在他們自己的裝置上試用您尚未發行的 App。"
-ms.author: markl
+ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a48a18fdb2c75f334a4ac9cb5916cab6b43d8c7e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 6f5a4e7f2961143f44acb533f045783fb4e4b7c1
+ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
 # <a name="beta-testing"></a>搶鮮版 (Beta) 測試
 

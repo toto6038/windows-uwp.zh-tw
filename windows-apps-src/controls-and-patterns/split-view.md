@@ -6,14 +6,20 @@ description: "分割檢視控制項有一個可展開/可摺疊的窗格和內�
 label: Split view
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b7488f19109925faa2c9e6b3be528cb2d19846e8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: yulikl
+design-contact: kimsea
+dev-contact: tpaine
+doc-status: Published
+ms.openlocfilehash: 126fab3db9a0728626289788757f576648a43856
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="split-view-control"></a>分割檢視控制項
 
@@ -21,12 +27,7 @@ translationtype: HT
 
 分割檢視控制項有一個可展開/可摺疊的窗格和內容區域。
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**SplitView 類別**](https://msdn.microsoft.com/library/windows/apps/dn864360)</li>
-</ul>
-</div>
+> **重要 API**：[SplitView 類別](https://msdn.microsoft.com/library/windows/apps/dn864360)
 
 以下是 Microsoft Edge app 使用 SplitView 顯示其「中心」的範例。
 
@@ -53,7 +54,7 @@ translationtype: HT
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-分割檢視控制項可以用於[瀏覽窗格](nav-pane.md)。 若要建立這種模式，請新增展開/摺疊按鈕 (「漢堡」按鈕) 和顯示瀏覽項目的清單檢視。
+分割檢視控制項可以用於[瀏覽窗格](navigationview.md)。 若要建立這種模式，請新增展開/摺疊按鈕 (「漢堡」按鈕) 和顯示瀏覽項目的清單檢視。
 
 分割檢視控制項也可以用來建立任何「抽屜」體驗，讓使用者可以開啟和關閉補充的窗格。
 
@@ -83,7 +84,7 @@ translationtype: HT
 
 
 ## <a name="related-topics"></a>相關主題
-* [瀏覽窗格模式](nav-pane.md)
+* [瀏覽窗格模式](navigationview.md)
 * [清單檢視](lists.md)
  
 

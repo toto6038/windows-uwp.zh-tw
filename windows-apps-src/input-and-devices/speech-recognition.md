@@ -11,9 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 49cd1e7ac0fceff7e39679f337ea4c029fa98806
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 246db868cda1b1d6e61a33981fc756767ebdbd8d
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="speech-recognition"></a>語音辨識
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
@@ -54,48 +56,32 @@ translationtype: HT
 
     網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
-    **注意** 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。
-
-     
+    **注意** 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。     
 
     這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
-    若要使用 Web 服務的限制，必須在 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面的 **[設定]** 中開啟 [了解我] 選項以啟用語音輸入與聽寫支援。
+    若要使用 Web 服務的限制，必須在 \[設定\] -> \[隱私權\] -> \[語音、筆跡與輸入\] 頁面的 \[設定\]**** 中開啟 \[了解我\] 選項以啟用語音輸入與聽寫支援。
 
-    以下說明如何測試是否已啟用語音輸入，並開啟 [設定] -&gt; [隱私權] -&gt; [語音、筆跡與輸入] 頁面 (如果未啟用)。
+    以下說明如何測試是否已啟用語音輸入，並開啟 \[設定\] -> \[隱私權\] -> \[語音、筆跡與輸入\] 頁面 (如果未啟用)。
 
     首先，我們會將全域變數 (HResultPrivacyStatementDeclined) 初始化為 0x80045509 的 HResult 值。 請參閱[以 C\# 或 Visual Basic 撰寫的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
-```    CSharp
-private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
+    ```csharp
+    private static uint HResultPrivacyStatementDeclined = 0x80045509;
+    ```
 
-    We then catch any standard exceptions during recogntion and test if the [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` to open the Settings page.
-
+    然後我們會在辨識期間捕捉任何標準例外，並測試 [**HResult**](https://msdn.microsoft.com/library/windows/apps/br206579) 值是否等於 HResultPrivacyStatementDeclined 變數的值。 如果相等，我們會顯示警告並呼叫 `await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts"));` 以開啟 [設定] 頁面。
     
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-catch (Exception exception)
+    ```csharp
+    catch (Exception exception)
     {
       // Handle the speech privacy policy error.
       if ((uint)exception.HResult == HResultPrivacyStatementDeclined)
       {
         resultTextBlock.Visibility = Visibility.Visible;
-        resultTextBlock.Text = "The privacy statement was declined. 
-          Go to Settings -> Privacy -> Speech, inking and typing, and ensure you 
-          have viewed the privacy policy, and &#39;Get To Know You&#39; is enabled.";
+        resultTextBlock.Text = "The privacy statement was declined." + 
+          "Go to Settings -> Privacy -> Speech, inking and typing, and ensure you" +
+          "have viewed the privacy policy, and 'Get To Know You' is enabled.";
         // Open the privacy/speech, inking, and typing settings page.
         await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-accounts")); 
       }
@@ -105,7 +91,7 @@ catch (Exception exception)
         await messageDialog.ShowAsync();
       }
     }
-```
+    ```
 
 2.  **程式設計的清單限制式** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421))。
 
@@ -193,7 +179,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
     speechRecognizer.UIOptions.AudiblePrompt = "Say what you want to search for...";
-    speechRecognizer.UIOptions.ExampleText = @"Ex. &#39;weather for London&#39;";
+    speechRecognizer.UIOptions.ExampleText = @"Ex. 'weather for London'";
     speechRecognizer.Constraints.Add(webSearchGrammar);
 
     // Compile the constraint.

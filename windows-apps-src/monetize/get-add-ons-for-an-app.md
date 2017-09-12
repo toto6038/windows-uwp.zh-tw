@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 附加元件, 應用程式內產品, IAP"
-ms.openlocfilehash: 198db630fbba8d4145454a6912f118225b13ac1c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9c39bfe9754805dccf5ccb82c9834d6d4deea385
+ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/09/2017
 ---
 # <a name="get-add-ons-for-an-app"></a>取得 App 的附加元件
 
 
 
 
-在 Windows 市集提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 列出附加元件 (也稱為應用程式內產品或 IAP)。
+使用 Windows 市集提交 API 中的這個方法，為註冊到您 Windows 開發人員中心帳戶的應用程式列出附加元件。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -26,8 +28,6 @@ translationtype: HT
 
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
-
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 

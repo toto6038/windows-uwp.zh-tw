@@ -9,9 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
-ms.openlocfilehash: 81a437807332ff60a1401c00abdcff78e41a7496
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 76c9d372cdfd98ef86f123862c35d238b24fe2ed
+ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>適用於 Xbox One 上 UWP 應用程式和遊戲的系統資源
 
@@ -36,5 +38,11 @@ translationtype: HT
 
 對於**「遊戲開發」**，請務必牢記，Xbox One (如同其他遊戲主機) 是需要特定硬體型開發套件來存取其完整功能的特殊化硬體。 如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲，請向 [ID@Xbox](http://www.xbox.com/Developers/id) 計畫註冊來存取該 Xbox One 開發套件 (內含 DirectX 12 支援)。
 
-## <a name="see-also"></a>另請參閱
+
+如需稍多一些關於 Xbox One 上 UWP app 系統資源的說明，請觀看這部影片前面的一小段。
+</br>
+</br>
+<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+
+## <a name="see-also"></a>請參閱
 - [Xbox One 上的 UWP](index.md)

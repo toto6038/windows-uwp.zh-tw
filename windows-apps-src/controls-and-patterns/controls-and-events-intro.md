@@ -6,14 +6,16 @@ ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 14186f0623f16426a98b5184020736bd4321857d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 566f43b83f410ccd690abca95b9de2323fd2631d
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
@@ -21,7 +23,9 @@ translationtype: HT
 
 在 UWP app 開發中，「控制項」**是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
 
-「模式」**是可修改控制項或結合數個控制項以創造新項目的方法。 例如，[瀏覽窗格](nav-pane.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽 app 的方式。 同樣地，您可以自訂 [Pivot](tabs-pivot.md) 控制項的範本來實作索引標籤模式。
+> **重要 API**：[Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
+
+*模式*是修改控制項或結合數個控制項以創造新項目的秘訣。 例如，[瀏覽窗格](navigationview.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽 app 的方式。 同樣地，您可以自訂 [Pivot](tabs-pivot.md) 控制項的範本來實作索引標籤模式。
 
 在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
 

@@ -6,14 +6,16 @@ ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 11c8fbdfd8653fe93ab712c865dc1d23e7a76581
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: ebeac8bb4d2787514c788ecfa0ab1381ff40820b
+ms.sourcegitcommit: 9a1310468970c8d1ade0fb200126dff56ea8c9e1
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/14/2017
 ---
 # <a name="special-tile-templates"></a>特殊的磚範本
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -35,13 +37,25 @@ translationtype: HT
 
 **步驟 1：以 PNG 格式建立您的影像資產**
 
-為您的磚建立圖示資產，並將它們與您的其他資產一起放在專案資源中。 建立一個最低限度為 200 x 200 像素的圖示，這適用於手機和桌上型電腦上的小型和中型磚。 若要提供最佳的使用者體驗，請為每個大小建立一個圖示。 請參閱下方影像中的調整大小詳細資訊。
+為您的磚建立圖示資產，並將它們與您的其他資產一起放在專案資源中。 建立一個最低限度為 200 x 200 像素的圖示，這適用於手機和桌上型電腦上的小型和中型磚。 若要提供最佳的使用者體驗，請為每個大小建立一個圖示。 不需要在這些資產上填補。 請參閱下方影像中的調整大小詳細資訊。
 
 以 PNG 格式儲存具有透明度的圖示資產。 在 Windows Phone 上，每個非透明的像素會顯示成白色 (RGB 255, 255, 255)。 為求簡單一致，也請針對桌面圖示使用白色。
 
 平板電腦、膝上型電腦和桌上型電腦上的 Windows 10 僅支援正方形圖示資產。 Phone 支援正方形的資產和高度大於寬度的資產 (最多為 2:3 的寬度:高度比率)，這對於手機圖示等的影像很有用。
 
 ![手機和桌上型電腦上小型和中型磚的圖示大小調整](images/iconic-template-sizing-info.png)
+
+![含/不含徽章的資產大小調整](images/assetguidance24.png)
+
+對於正方形資產，會自動於容器內置中：
+
+![含/不含徽章的正方形資產大小調整](images/assetguidance25.png)
+
+對於非正方形資產，會自動水平/垂直置中並貼齊至容器寬度/高度：
+
+![含/不含徽章的非正方形資產大小調整](images/assetguidance26a.png)
+
+![含/不含徽章的非正方形資產大小調整](images/assetguidance26b.png)
 
 **步驟 2：建立基本的磚**
 

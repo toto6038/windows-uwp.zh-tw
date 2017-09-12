@@ -1,17 +1,19 @@
 ---
-author: mcleblanc
+author: normesta
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: "Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特定物件處理關聯式資料。"
 title: "Entity Framework Core 與 SQLite 搭配用於 C# App"
-ms.author: markl
+ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, SQLite, C#, EF, Entity Framework
-ms.openlocfilehash: 015030774c7d148d3a9be757c80de827987347a9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 9d447b8a197ed7eaea0f991749064912dffb66d7
+ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="entity-framework-core-with-sqlite-for-c-apps"></a>Entity Framework Core 與 SQLite 搭配用於 C# App
 

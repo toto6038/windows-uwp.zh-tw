@@ -10,18 +10,17 @@ label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-translationtype: Human Translation
-ms.sourcegitcommit: c6b64cff1bbebc8ba69bc6e03d34b69f85e798fc
-ms.openlocfilehash: a46e26491e909d825ceaff04d008b8cb56c9aff3
-ms.lasthandoff: 02/07/2017
-
+ms.openlocfilehash: 4fbc5c2e7bea43c2f18cf9e247b0143795bdfc1a
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
-
 # <a name="boxpanel-an-example-custom-panel"></a>BoxPanel，自訂面板範例
 
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
@@ -51,7 +50,7 @@ ms.lasthandoff: 02/07/2017
 -   面板何時會對自己的空間有所限制
 -   面板的邏輯如何決定最後產生所呈現之子系 UI 配置的所有度量、放置位置和大小調整
 
-請記住，這裡所示的 `BoxPanel` 僅適用於特定案例。 為了讓本範例以程式碼為主，我們將不會詳細說明案例，而是將焦點放在必要步驟與程式碼撰寫模式。 若您想要先深入了解案例，可以直接跳到[「`BoxPanel` 的案例」](#scenario)，然後再回來看程式碼。
+請記住，這裡所示的 `BoxPanel` 僅適用於特定案例。 為了讓本範例以程式碼為主，我們將不會詳細說明案例，而是將焦點放在必要步驟與程式碼撰寫模式。 若您想要先深入了解案例，可以直接跳到[「`BoxPanel` 的案例」](#the-scenario-for-boxpanel)，然後再回來看程式碼。
 
 ## <a name="start-by-deriving-from-panel"></a>從 **Panel** 衍生著手
 
@@ -113,15 +112,15 @@ protected override Size MeasureOverride(Size availableSize)
     if (aspectratio > 1)
     {
         rowcount = maxrc;
-        colcount = (maxrc > 2 &amp;&amp; Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        colcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
     } 
     else 
     {
-        rowcount = (maxrc > 2 &amp;&amp; Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        rowcount = (maxrc > 2 && Children.Count < maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
         colcount = maxrc;
     }
 
-    // Now that we have a column count, divide available horizontal, that&#39;s our cell width.
+    // Now that we have a column count, divide available horizontal, that's our cell width.
     cellwidth = (int)Math.Floor(availableSize.Width / colcount);
     // Next get a cell height, same logic of dividing available vertical by rowcount.
     cellheight = Double.IsInfinity(availableSize.Height) ? Double.PositiveInfinity : availableSize.Height / rowcount;
@@ -137,7 +136,7 @@ protected override Size MeasureOverride(Size availableSize)
 
 [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) 實作的必要模式是循環顯示 [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 中的每一個元素。 一律在每一個元素上呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 方法。 **Measure** 有一個 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) 類型的參數。 這裡傳送的是面板可供特定子元素使用的大小。 因此，在您執行迴圈並開始呼叫 **Measure** 之前，必須先知道每個儲存格所能提供的空間。 您可以從 **MeasureOverride** 方法本身得知 *availableSize* 值。 那就是面板的父系呼叫 **Measure** 時使用的大小，它會在呼叫這個 **MeasureOverride** 時立即觸發。 一般邏輯就是制定一個配置，讓每個子元素藉以劃分面板整體 *availableSize* 的空間。 接下來，您可以將所劃分的大小傳遞至每個子元素的 **Measure**。
 
-`BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#scenario)。
+`BoxPanel` 劃分大小的方式很簡單：它將空間劃分為主要由項目數量控制的一些方塊。 方塊的大小是根據列與欄的計數和可用大小來劃分。 有時候會因不需要方形的其中一列或一欄，而將它捨棄，而使得面板在列與欄的比例上變成矩形而不是方形。 如需有關如何得出這個邏輯的詳細資訊，請直接跳到[BoxPanel 的案例](#the-scenario-for-boxpanel)。
 
 度量階段有何作用？ 它在呼叫 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208921) 的每個元素上設定唯讀 [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208952) 屬性的值。 因為步入排列階段之後，**DesiredSize** 會傳達進行排列時和最終轉譯中可有或應有的大小，所以最好能有 **DesiredSize** 值。 即使您自己的邏輯中不會使用 **DesiredSize**，但是系統仍需要它。
 
@@ -243,4 +242,3 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 **概念**
 
 * [對齊、邊界及邊框間距](alignment-margin-padding.md)
-

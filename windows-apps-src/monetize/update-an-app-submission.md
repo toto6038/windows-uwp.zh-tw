@@ -4,14 +4,16 @@ ms.assetid: E8751EBF-AE0F-4107-80A1-23C186453B1C
 description: "使用 Windows 市集提交 API 中的這個方法，更新現有的 App 提交。"
 title: "更新 App 提交"
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, UWP, Windows 市集提交 API, 應用程式提交, 更新"
-ms.openlocfilehash: a4b7816d0d6e47282864992044eea58eaaa05d1d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: b3c071c0d4f070c1a0ac95d6f35c73fcbb4e0455
+ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/11/2017
 ---
 # <a name="update-an-app-submission"></a>更新 App 提交
 
@@ -26,8 +28,6 @@ translationtype: HT
 * 如果您尚未完成，請先完成 Windows 市集提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 * 針對您開發人員中心帳戶中的 App 建立提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立 App 提交](create-an-app-submission.md)方法進行。
-
->**注意**&nbsp;&nbsp;這個方法僅供已被授權使用 Windows 市集提交 API 的 Windows 開發人員中心帳戶使用。 並非所有的帳戶都已啟用此權限。
 
 ## <a name="request"></a>要求
 
@@ -73,6 +73,7 @@ translationtype: HT
 | automaticBackupEnabled           |  布林值  |   指出 Windows 是否可以在自動備份至 OneDrive 時包含您 App 的資料。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。   |   
 | canInstallOnRemovableMedia           |  布林值  |   指出客戶是否可以將您的 App 安裝到抽取式存放裝置。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | isGameDvrEnabled           |  布林值 |   指出是否已針對 App 啟用遊戲 DVR。    |   
+| gamingOptions           |  物件 |   包含一個[遊戲選項資源](manage-app-submissions.md#gaming-options-object)的陣列，其定義此 App 的遊戲相關設定。<br/><br/>**注意：**&nbsp;&nbsp;並非所有開發人員目前都能使用此 API 來設定遊戲選項。 如果您的帳戶無法存取此資源，則 *gamingOptions* 值會是 null。     |   
 | hasExternalInAppProducts           |     布林值          |   指出您的 App 是否允許使用者在 Windows 市集商務系統外部進行購買。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。     |   
 | meetAccessibilityGuidelines           |    布林值           |  指出您的 App 是否已經過測試，符合協助工具指導方針。 如需詳細資訊，請參閱[應用程式宣告](https://msdn.microsoft.com/windows/uwp/publish/app-declarations)。      |   
 | notesForCertification           |  字串  |   包含您 App 的[認證注意事項](https://msdn.microsoft.com/windows/uwp/publish/notes-for-certification)。    |    
@@ -80,7 +81,8 @@ translationtype: HT
 | packageDeliveryOptions    | 物件  | 包含提交的漸進式套件推出和強制更新設定。 如需詳細資訊，請參閱[套件交付選項物件](manage-app-submissions.md#package-delivery-options-object)。  |
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](manage-app-submissions.md#enterprise-licensing)，可指出 App 適用的企業授權行為。  |    
 | allowMicrosftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
-| allowTargetFutureDeviceFamilies           | 布林值   |  指出是否允許您的 App [以未來的 Windows10 裝置系列為目標](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |    
+| allowTargetFutureDeviceFamilies           | 布林值   |  指出是否允許您的 App [以未來的 Windows 10 裝置系列為目標](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。     |   
+| trailers           |  陣列 |   包含最多 15 個[預告片資源](manage-app-submissions.md#trailer-object)的陣列，代表 App 清單的預告影片。 <br/><br/>**注意：**&nbsp;&nbsp;目前並非所有開發人員帳戶都能使用此 API 來提交 App 提交的預告片。 如果您的帳戶無法存取此資源，則 *trailers* 值會是 null。  |   
 
 <span/>
 
@@ -108,16 +110,16 @@ Content-Type: application/json
       "baseListing": {
         "copyrightAndTrademarkInfo": "",
         "keywords": [
-          "epub"
-        ],
+              "epub"
+            ],
         "licenseTerms": "",
         "privacyPolicy": "",
         "supportContact": "",
         "websiteUrl": "",
         "description": "Description",
         "features": [
-          "Free ebook reader"
-        ],
+              "Free ebook reader"
+            ],
         "releaseNotes": "",
         "images": [
           {
@@ -143,6 +145,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -172,7 +175,8 @@ Content-Type: application/json
     "Holographic": true,
     "Xbox": false,
     "Team": true
-  }
+  },
+  "trailers": []
 }
 ```
 
@@ -233,6 +237,7 @@ Content-Type: application/json
   "automaticBackupEnabled": false,
   "canInstallOnRemovableMedia": true,
   "isGameDvrEnabled": false,
+  "gamingOptions": [],
   "hasExternalInAppProducts": false,
   "meetAccessibilityGuidelines": true,
   "notesForCertification": "",
@@ -284,7 +289,8 @@ Content-Type: application/json
     "Xbox": false,
     "Team": true
   },
-  "friendlyName": "Submission 2"
+  "friendlyName": "Submission 2",
+  "trailers": []
 }
 ```
 

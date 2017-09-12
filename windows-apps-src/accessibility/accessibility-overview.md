@@ -11,9 +11,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f0fd2e03c58ac5ffa575cf2381df4c652422efea
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: 230480343a3f63ece4935e34101b1d3ec5408b84
+ms.sourcegitcommit: 63c815f8c6665872987b5410cabf324f2b7e3c7c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/10/2017
 ---
 # <a name="accessibility-overview"></a>協助工具概觀  
 
@@ -22,11 +24,12 @@ translationtype: HT
 
 本文提供通用 Windows 平台 (UWP) App 協助工具案例相關概念和技術的概觀。
 
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Developing-Apps-for-Accessibility/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
+
 <span id="Accessibility_and_your_app"/>
 <span id="accessibility_and_your_app"/>
 <span id="ACCESSIBILITY_AND_YOUR_APP"/>
-## <a name="accessibility-and-your-app"></a>協助工具與應用程式  
-身心障礙或功能損傷有許多種類，其中包括行動、視力、色彩分辨、聽力、說話、認知以及識字能力。 不過，只要遵守本文提供的指導方針，就可以滿足大部分的需求。 這表示提供：
+## 協助工具與應用程式：身心障礙或功能損傷有許多種類，其中包括行動、視力、色彩分辨、聽力、說話、認知以及識字能力。 不過，只要遵守本文提供的指導方針，就可以滿足大部分的需求。 這表示提供：
 
 * 鍵盤互動和螢幕助讀程式的支援。
 * 使用者自訂的支援，例如字型、縮放設定 (放大)、色彩以及高對比設定。
@@ -181,4 +184,4 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 * [協助工具設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
 * [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具](accessibility.md)
-* [開始使用朗讀器](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [開始使用朗讀器](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

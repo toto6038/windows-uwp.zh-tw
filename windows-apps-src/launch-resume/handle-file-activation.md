@@ -9,9 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b35b8a9dcd6ea23b734de1041d829f620103fa6e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.openlocfilehash: e05cc939d4a836e2f385a20f63d6ffb2242696db
+ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/01/2017
 ---
 # <a name="handle-file-activation"></a>處理檔案啟用
 
@@ -80,8 +82,7 @@ App 僅會接受封裝資訊清單中列示之副檔名的啟用事件。 以下
 -   檔案選擇器
 -   [開始] 畫面上的搜尋結果
 
-請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 如需範例圖示，請參閱[關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=620490)。
-![方案總管及影像資料夾中檔案的檢視。 「icon.targetsize」和「smalltile-sdk」皆有 16、32、48 及 256 像素的版本](images/seviewofimages.png)
+連同您的專案包含 44x44 圖示，讓您的標誌可以出現在這些位置中。 請調整為相符的應用程式磚標誌外觀，並使用應用程式的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 請參閱[磚和圖示資產的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)，以取得圖示的詳細資訊。
 
 ## <a name="step-3-handle-the-activated-event"></a>步驟 3：處理啟用的事件
 
@@ -124,7 +125,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。 如需輸入驗證的詳細資訊，請參閱[撰寫安全程式碼](http://go.microsoft.com/fwlink/p/?LinkID=142053)
 
-> **備註**  本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+> **備註**  本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
  
 

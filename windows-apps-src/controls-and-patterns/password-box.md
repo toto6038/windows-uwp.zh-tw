@@ -7,14 +7,19 @@ dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 0dee750042edc3c80c993d29c2f6f29cf6b2a130
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+pm-contact: miguelrb
+design-contact: ksulliv
+doc-status: Published
+ms.openlocfilehash: 742d72d1d62cdb1bc2cd0397589d167cd6d3cfe2
+ms.sourcegitcommit: 10d6736a0827fe813c3c6e8d26d67b20ff110f6c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/22/2017
 ---
 # <a name="password-box"></a>密碼方塊
 
@@ -22,18 +27,9 @@ translationtype: HT
 
 密碼方塊是一個文字輸入方塊，會基於隱私權考量而隱藏輸入其中的字元。 密碼方塊看起來就像文字方塊，只不過它會將已輸入的文字轉譯成預留位置字元。 您可以設定預留位置字元。
 
-根據預設，密碼方塊會提供一種方式，讓使用者能夠藉由按住顯示按鈕來檢視他們的密碼。 您可以停用顯示按鈕，或提供替代機制來顯示密碼，例如核取方塊。
+> **重要 API**：[PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[Password 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)、[PasswordChar 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)、[PasswordRevealMode 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)、[PasswordChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
 
-<div class="important-apis" >
-<b>重要 API</b><br/>
-<ul>
-<li>[**PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)</li>
-<li>[**Password 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)</li>
-<li>[**PasswordChar 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)</li>
-<li>[**PasswordRevealMode 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)</li>
-<li>[**PasswordChanged 事件**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)</li>
-</ul>
-</div>
+根據預設，密碼方塊會提供一種方式，讓使用者能夠藉由按住顯示按鈕來檢視他們的密碼。 您可以停用顯示按鈕，或提供替代機制來顯示密碼，例如核取方塊。
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -191,6 +187,6 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [拼字檢查指導方針](spell-checking-and-prediction.md)
 - [新增搜尋](https://msdn.microsoft.com/library/windows/apps/hh465231)
 - [文字輸入的指導方針](text-controls.md)
-- [**TextBox 類別**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox 類別**](https://msdn.microsoft.com/library/windows/apps/br227519)
+- [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
 - [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
