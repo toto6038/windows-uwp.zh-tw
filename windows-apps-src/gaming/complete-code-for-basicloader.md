@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, BasicLoader"
 ms.openlocfilehash: d6714030031a4986c8a5495fc02a5c68fb0aa4d8
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="complete-code-for-basicloader"></a>BasicLoader 的完整程式碼
 

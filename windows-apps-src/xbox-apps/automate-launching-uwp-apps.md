@@ -4,7 +4,8 @@ description: "開發人員可以使用通訊協定啟用和啟動啟用來自動
 author: listurm
 ms.openlocfilehash: 4b31ec06b1ded4882d26cffed029eb8179ff47c3
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自動化啟動 Windows 10 UWP App
 

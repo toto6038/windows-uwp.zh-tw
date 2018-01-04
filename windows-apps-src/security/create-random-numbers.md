@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 251bd58d36ea1c6d9aa54d68034cfe819acdf72e
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="create-random-numbers"></a>建立隨機數字
 

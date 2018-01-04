@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 遊戲, directx, 範例, 3D"
 ms.openlocfilehash: 3bd5f6ced66ba52aef4a0aa0580f348e3faa0a09
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="directx-samples"></a>DirectX 範例
 

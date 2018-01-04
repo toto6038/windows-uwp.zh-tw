@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, games, directx, input latency, 遊戲, 輸入延遲"
 ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 

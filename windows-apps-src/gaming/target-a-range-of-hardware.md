@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, 陰影圖, directx"
 ms.openlocfilehash: e4cffcf1e9655d5bc5dacbfc17cb64b5671d7551
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>支援各種硬體上的陰影圖
 

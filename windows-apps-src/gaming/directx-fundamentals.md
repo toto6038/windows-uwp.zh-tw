@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 遊戲, directx, 載入, 點陣化, 網格, 點陣圖, 2D, 3D"
 ms.openlocfilehash: 2633bba5425ca78c3f109a4571fd8c0529f17b56
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 程式設計的基礎
 

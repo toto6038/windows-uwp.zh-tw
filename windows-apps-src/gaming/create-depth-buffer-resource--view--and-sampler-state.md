@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, Direct3D, 深度緩衝區"
 ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="create-depth-buffer-device-resources"></a>建立深度緩衝區裝置資源
 

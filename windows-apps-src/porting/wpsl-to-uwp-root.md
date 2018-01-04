@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: d055f576cfa56502da845e849c100f66dd0c7ccf
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 #  <a name="move-from-windows-phone-silverlight-to-uwp"></a>從 Windows Phone Silverlight 移到 UWP
 

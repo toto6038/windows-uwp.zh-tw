@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: d5f84ce00026c9e2381e7b90213b3dcdd8aad9ff
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="compare-buffers"></a>比較緩衝區
 

@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, 繼續, DirectX"
 ms.openlocfilehash: 0ef4617417526cd2e39ce968e4d682b4015e22d3
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>如何繼續應用程式 (DirectX 和 C++)
 

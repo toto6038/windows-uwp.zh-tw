@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, opengl, direct3d, 移植"
 ms.openlocfilehash: 1298f165444b31c75ca9d98f04eb82a58be46e5b
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="map-opengl-es-20-to-direct3d-11"></a>將 OpenGL ES 2.0 對應到 Direct3D 11
 

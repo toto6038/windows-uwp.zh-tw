@@ -9,13 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, sd 記憶卡, 儲存空間"
-ms.openlocfilehash: 89dfed0cbd8a4a87f432a747e4155cdef3bbc757
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 44354bbacd5ea775c8a973fe7f82aaf65b3f70db
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限且具備 SD 記憶卡插槽的低價行動裝置。

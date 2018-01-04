@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: c0426320e978c88bc2db67398e626c0ed3794edc
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="launch-an-app-through-file-activation"></a>透過檔案啟用啟動應用程式
 

@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 6eee2c509956dcc38907334000a35fd9c9344a52
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>複製到位元組陣列和從位元組陣列中複製
 

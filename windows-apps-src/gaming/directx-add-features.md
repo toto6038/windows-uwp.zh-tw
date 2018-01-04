@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 遊戲, directx, xaml, 螢幕旋轉, 輸入"
 ms.openlocfilehash: 0fe07d43c5da86d323136f3305166bd51d963756
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="add-features-to-directx-games"></a>在 DirectX 遊戲中新增功能
 

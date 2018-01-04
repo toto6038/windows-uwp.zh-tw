@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "windows 10, uwp, 遊戲, directx, 輸入, 滑鼠, 觸控, 控制項"
 ms.openlocfilehash: d0494015e4cd2811cc0f21ccc983f621575f1de4
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="game-input-for-directx-games"></a>DirectX 遊戲的遊戲輸入
 

@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, 遊戲, directx, 啟動, 繼續"
 ms.openlocfilehash: c3557a11f8f18262f0b5e0c6ad6cac88d5274f73
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="launching-and-resuming-apps-directx-and-c"></a>啟動和繼續應用程式 (DirectX 和 C++)
 

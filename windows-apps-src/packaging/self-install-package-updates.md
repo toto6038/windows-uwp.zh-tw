@@ -9,13 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 07b8b769cbcaf86bfa70a562de568cab65c91a77
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: high
+ms.openlocfilehash: 62dc1cf81bd26ca5ba4adf181cc9f710e41565c2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="download-and-install-package-updates-for-your-app"></a>下載與安裝應用程式的套件更新
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 從 Windows 10 版本 1607 開始，您可以在 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中使用 API，以程式設計方式檢查目前 app 的套件更新，以及下載並安裝更新的套件。 您也可以查詢已[在 Windows 開發人員中心儀表板上標記為強制性](#mandatory-dashboard)的套件，並在安裝強制更新之前停用 app 中的功能。
 

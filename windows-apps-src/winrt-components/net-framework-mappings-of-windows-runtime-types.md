@@ -9,14 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a69ad9bdff70dc04f9bdf9eb4f5117a22a005969
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a2baf9058f841c2d8de938df65d07f0584b736e9
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 執行階段類型的 .NET Framework 對應
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 下表列出 .NET Framework 在通用 Windows 平台 (UWP) 類型與 .NET Framework 類型之間所做的對應。 在使用 Managed 程式碼撰寫的通用 Windows app 中，IntelliSense 會顯示 .NET Framework 類型，而不會顯示 UWP 類型。 例如，如果 Windows 執行階段方法使用類型 IVector&lt;string&gt; 的參數，IntelliSense 即會顯示類型 IList&lt;string&gt; 的參數。 同樣地，在使用 Managed 程式碼撰寫的 Windows 執行階段元件中，您也會使用成員簽章中的 .NET Framework 類型。 當 [Windows 執行階段中繼資料匯出工具 (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) 產生您的 Windows 執行階段元件時，.NET Framework 類型會變成對應的 UWP 類型。
 

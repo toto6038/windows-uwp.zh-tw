@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, UWP, 地理編碼, 地圖, 位置"
 ms.openlocfilehash: a68898e86ad2e901499077e8f856c5318a7feae7
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="perform-geocoding-and-reverse-geocoding"></a>執行地理編碼和反向地理編碼
 

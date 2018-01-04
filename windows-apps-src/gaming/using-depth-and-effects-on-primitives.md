@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, 深度, 效果, 基本類型, directx"
 ms.openlocfilehash: 923bce3dd5f340b97fd6d4e7b31c4ed2e949ca94
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>在基本型別上使用深度和效果
 

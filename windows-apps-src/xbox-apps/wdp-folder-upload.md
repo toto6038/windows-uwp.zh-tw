@@ -11,7 +11,8 @@ keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.openlocfilehash: d071a0ff6d228608d7f6c7acdcfd88df38f2c390
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>將資料夾上傳到開發目錄
 

@@ -4,7 +4,8 @@ description: "本文章提供通用 Windows 平台 (UWP) 新功能 CPUSets API �
 author: hammondsp
 ms.openlocfilehash: 6065435dc3add0d9bde15dc6bdd355935b8f53cd
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets 遊戲開發
 

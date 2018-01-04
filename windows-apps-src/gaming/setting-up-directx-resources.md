@@ -11,7 +11,8 @@ ms.technology: uwp
 keywords: "Windows 10, uwp, 遊戲, directx, 資源, 影像"
 ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>設定 DirectX 資源及顯示影像
 
