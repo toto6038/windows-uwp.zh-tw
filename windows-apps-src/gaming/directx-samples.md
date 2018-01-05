@@ -9,10 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, uwp, 遊戲, directx, 範例, 3D"
-ms.openlocfilehash: 3bd5f6ced66ba52aef4a0aa0580f348e3faa0a09
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 51aac640791884c80503464b75b5ebbd736382f6
+ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="directx-samples"></a>DirectX 範例
 
@@ -31,7 +33,7 @@ ms.contentlocale: zh-TW
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-metro-style-directx-game.md)</p></td>
+<td align="left"><p>[使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)</p></td>
 <td align="left"><p>使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。 這組教學課程著重在關鍵 UWP DirectX 遊戲開發技巧和考量。</p></td>
 </tr>
 <tr class="even">
