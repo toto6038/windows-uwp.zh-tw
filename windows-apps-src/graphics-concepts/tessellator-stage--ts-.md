@@ -3,15 +3,18 @@ title: "曲面細分器 (TS) 階段"
 description: "曲面細分器 (TS) 階段建立代表幾何塊面的網域取樣模式，並產生一組連接這些樣本的小物件 (三角形、點或線)。"
 ms.assetid: 2F006F3D-5A04-4B3F-8BC7-55567EFCFA6C
 keywords: "曲面細分器 (TS) 階段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 0a18a2ba4172fb4c7aad1d4e8a071bf077afeead
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tessellator-ts-stage"></a>曲面細分器 (TS) 階段
 

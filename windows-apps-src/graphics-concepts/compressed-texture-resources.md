@@ -3,15 +3,18 @@ title: "壓縮紋理資源"
 description: "紋理貼圖為繪製在三維圖形上的數位化影像，用來增加更多視覺上的細節。"
 ms.assetid: 2DD5FF94-A029-4694-B103-26946C8DFBC1
 keywords: "壓縮紋理資源"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 2bfe93bf5b50fb1206611697113a84cebe0e35d0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 79bb9d7ea52dbb34645db3284836b73b26a416a3
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="compressed-texture-resources"></a>壓縮紋理資源
 

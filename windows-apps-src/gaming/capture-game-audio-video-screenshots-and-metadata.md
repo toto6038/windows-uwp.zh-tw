@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "windows 10, 遊戲, 擷取, 音訊, 影片, 元資料"
-localizationpriority: medium
-ms.openlocfilehash: a642e93fc81fa69acc8f692c526e617403416432
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: 064231d6b778afa427bd6c32657d100a5b508bdd
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>擷取遊戲音訊、元資料、螢幕擷取畫面和元資料
 本文說明如何擷取遊戲影片、音訊和螢幕擷取畫面，以及如何提交系統將會嵌入所擷取和廣播的媒體中的元資料，讓您的 App 和其他人可建立與遊戲活動同步的動態遊戲體驗。 

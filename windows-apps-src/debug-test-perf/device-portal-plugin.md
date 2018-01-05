@@ -9,11 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 1eb756c794e23a17420c14af7e27ec315305f232
-ms.sourcegitcommit: c5c96ec4b6ccef57f69eb341b06e6280994c9767
+ms.localizationpriority: medium
+ms.openlocfilehash: 2aae0e634ea219ef602eafdb1516d1d42b9c7913
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>撰寫 Device Portal 的自訂外掛程式
 
@@ -187,15 +188,15 @@ Device Portal 提供者所提供的靜態內容，是在與核心 Device Portal 
 若要針對背景工作進行偵錯，您必須變更 Visual Studio 執行程式碼的方法。 請遵循下列步驟，對應用程式服務連線進行偵錯，以檢查您的提供者如何處理 HTTP 要求︰
 
 1.  從 [偵錯] 功能表中，選取 [DevicePortalProvider 屬性]。 
-1.  在 [偵錯] 索引標籤下方，於 [起始動作] 區段中選取 [不啟動，但在我的程式碼啟動時進行偵錯]。  
+2.  在 [偵錯] 索引標籤下方，於 [起始動作] 區段中選取 [不啟動，但在我的程式碼啟動時進行偵錯]。  
 ![讓外掛程式進入偵錯模式](images/device-portal/plugin-debug-mode.png)
-1.  在 RequestReceived 處理常式函式中設定中斷點。
+3.  在 RequestReceived 處理常式函式中設定中斷點。
 ![requestreceived 處理常式中的中斷點](images/device-portal/plugin-requestreceived-breakpoint.png)
-    > [!NOTE]
-    > 請確定組建架構完全符合目標的架構。  如果您使用的是 64 位元電腦，就必須使用 AMD64 組建來部署。
-1.  按下 F5 鍵部署應用程式
-1.  將 Device Portal 關閉後再重新開啟，讓它找到您的應用程式 (只有當您變更應用程式資訊清單時才需要 – 其他時間，您只需要重新部署和跳過此步驟)。 
-1.  在您的瀏覽器中，存取提供者的命名空間，並且應該會叫用中斷點。
+> [!NOTE] 
+> 請確定組建架構完全符合目標的架構。 如果您使用的是 64 位元電腦，就必須使用 AMD64 組建來部署。 
+4.  按下 F5 鍵部署應用程式
+5.  將 Device Portal 關閉後再重新開啟，讓它找到您的應用程式 (只有當您變更應用程式資訊清單時才需要 – 其他時間，您只需要重新部署和跳過此步驟)。 
+6.  在您的瀏覽器中，存取提供者的命名空間，並且應該會叫用中斷點。
 
 ## <a name="related-topics"></a>相關主題
 * [Windows Device Portal 概觀](device-portal.md)

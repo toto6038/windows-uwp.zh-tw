@@ -3,15 +3,18 @@ title: "緩衝區拼貼"
 description: "緩衝資源分為 64KB 的磚，若大小不是 64 KB 的倍數，則最後一個磚會有某些空白空間。"
 ms.assetid: 577DC6B0-F373-4748-AD80-2784C597C366
 keywords: "緩衝區拼貼"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: f79d04675722c2bcc84c9c79f4da338c7b46732d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 03769964bfe3eff13314e62b8594edd5509b26fb
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="buffer-tiling"></a>緩衝區拼貼
 

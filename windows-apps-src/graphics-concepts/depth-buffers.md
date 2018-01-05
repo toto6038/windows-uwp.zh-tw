@@ -3,15 +3,18 @@ title: "深度緩衝區"
 description: "深度緩衝區 (或稱 z 緩衝區) 儲存深度資訊來控制所呈現而不是隱藏的多邊形區域。"
 ms.assetid: BE83A1D7-D43D-4013-8817-EFD2B24DC58E
 keywords: "深度緩衝區"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: b33ca3f4c4557578a3f0878308db45281b315201
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: bbdd567a6ed9af523c720b6ad5a7136a5c59d1cd
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="depth-buffers"></a>深度緩衝區
 

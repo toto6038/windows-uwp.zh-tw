@@ -3,15 +3,18 @@ title: "串流資源可使用的位址空間"
 description: "本章節指定虛擬位址空間，可供串流資源使用。"
 ms.assetid: 145EB4A3-3910-4126-BC7E-A4CF53E2A098
 keywords: "串流資源可使用的位址空間"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: a63136f04570c4bf964c461f7296c930f5e168b5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d3ae9729270967269d6543ed80bb136a04dc9edc
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="address-space-available-for-streaming-resources"></a>串流資源可使用的位址空間
 

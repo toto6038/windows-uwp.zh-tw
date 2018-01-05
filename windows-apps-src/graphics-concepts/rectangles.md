@@ -3,15 +3,18 @@ title: "矩形"
 description: "在整個 Direct3D 及 Windows 程式設計中，螢幕上的物件會以週框的形式參照。"
 ms.assetid: 3B78AE66-2C1A-4191-BDCA-D737E33460BA
 keywords: "矩形"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 2128dd8fa6ff22e20cd8a25dea0fd44431c1fae2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 3c493b6189cfc8c396568ca42faa4162e40501f5
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rectangles"></a>矩形
 

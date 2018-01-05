@@ -3,15 +3,18 @@ title: "頂點著色器 (VS)階段"
 description: "頂點著色器 (VS) 階段處理頂點，通常執行轉換、皮膚形變與光照等作業。 頂點著色器採用單一輸入頂點，並產生單一輸出頂點。"
 ms.assetid: 5133C4BB-B4E6-4697-9276-F718AD44869C
 keywords: "頂點著色器 (VS)階段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 761296a9897ad99ec57527f073a1ad1c2d792966
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 521b3254fd8f3f86e8b55923627b8560d2991ae6
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="vertex-shader-vs-stage"></a>頂點著色器 (VS)階段
 

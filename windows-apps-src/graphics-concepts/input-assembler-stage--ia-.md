@@ -3,15 +3,18 @@ title: "輸入組合語言 (IA) 階段"
 description: "輸入組合語言 (IA) 階段提供基本類型和管線相鄰資料，例如三角形、行及點，包括語意識別碼，藉由減少處理尚未處理的基本類型來讓著色更有效率。"
 ms.assetid: AF1DC611-C872-47F1-BF1A-92C68C8903E6
 keywords: "輸入組合語言 (IA) 階段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 3093fc58a3432fae64e9324773a9277d907a15fd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: c05572c71f3863f6c6218d15a28ee620c4c645bb
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="input-assembler-ia-stage"></a>輸入組合語言 (IA) 階段
 

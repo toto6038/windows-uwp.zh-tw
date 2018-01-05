@@ -3,15 +3,18 @@ title: "紋理簡介"
 description: "紋理資源是儲存紋素的資料結構，這是可讀取或寫入的最小紋理單位。 著色器讀取紋理時，可以由紋理樣本篩選。"
 ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
 keywords: "紋理簡介"
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: d642668a9af1e62f232e13e411e51e6d850de7f5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d2390568efc43e89da8aa8df73767bbd7b752538
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="introduction-to-textures"></a>紋理簡介
 

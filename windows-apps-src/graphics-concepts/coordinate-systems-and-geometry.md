@@ -3,15 +3,18 @@ title: "座標系統與幾何"
 description: "要進行 Direct3D 應用程式的程式設計，就需要在工作上熟悉 3D 幾何原則。 本節介紹建立 3D 場景所需的最重要幾何概念。"
 ms.assetid: E82EB0A9-0678-496B-96B3-8993BA580099
 keywords: "座標系統與幾何"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 01885f6e2014e1659b1e59cc13bc6ce275f1ad03
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 7be32042bc71e02984fcffbd10f2ad0b0e4482ef
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="coordinate-systems-and-geometry"></a>座標系統與幾何
 

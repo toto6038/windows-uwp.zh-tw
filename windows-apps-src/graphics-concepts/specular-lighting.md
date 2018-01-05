@@ -3,15 +3,18 @@ title: "反射光源"
 description: "反射光源辨識當光碰到物件表面並反射回到相機時發生的明亮反射強光。"
 ms.assetid: 71F87137-B00F-48CE-8E6A-F98A139A742A
 keywords: "反射光源"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c57edefa190fbb56b8bbe2a0c06ef2828b780927
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 305924b19914bf4e85366695add2476c3c81c281
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="specular-lighting"></a>反射光源
 

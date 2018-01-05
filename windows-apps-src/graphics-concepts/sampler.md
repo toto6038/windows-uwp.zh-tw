@@ -3,15 +3,18 @@ title: "取樣器"
 description: "取樣是從紋理或其他資源讀取輸入值的程序。 「取樣器」是可讀取資源的任何物件。"
 ms.assetid: 7ECE13BB-9FC5-44A3-B1B2-2FE163F1D627
 keywords: "取樣器"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 919de99d9f0680ea63f70a027344c49f3fbd093e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ec409f734e2f3e338f6bfe064a0bed29936980f6
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="sampler"></a>取樣器
 

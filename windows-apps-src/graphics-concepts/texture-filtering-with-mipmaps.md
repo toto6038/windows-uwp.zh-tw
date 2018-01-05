@@ -3,15 +3,18 @@ title: "使用 Mipmap 進行紋理篩選"
 description: "Mipmap 是一組紋理序列，序列中的每個影像都是相同影像漸進式降低解析度的結果。 每個影像的高度、寬度，或是層級，都是前一層級以 2 的乘冪縮小的結果。"
 ms.assetid: 28E863A2-C776-40E4-8551-9851DF7EC93E
 keywords: "使用 Mipmap 進行紋理篩選"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 65c775a265f7c5a0b15f76d867a9403308fc7128
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: af0c9c7013b663bceb5c3747ff5d5250f62c54c7
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-filtering-with-mipmaps"></a>使用 Mipmap 進行紋理篩選
 

@@ -3,15 +3,18 @@ title: "使用 Alpha 色板的紋理"
 description: "有兩種方式可以對呈現較複雜透明度的紋理貼圖進行編碼。"
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
 keywords: "使用 Alpha 色板的紋理"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1ea2282bb00f309f0dd2616898ce8d4a43215ff4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="textures-with-alpha-channels"></a>使用 Alpha 色板的紋理
 

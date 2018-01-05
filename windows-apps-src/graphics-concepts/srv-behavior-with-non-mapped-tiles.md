@@ -3,15 +3,18 @@ title: "非對應磚的 SRV 行為"
 description: "著色器資源檢視 (SRV) 涉及非對應磚的讀取行為取決於硬體支援程度。"
 ms.assetid: 0E1D64BE-EB09-4F9D-9800-BD23A3B374EE
 keywords: "非對應磚的 SRV 行為"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e6c4334446ef3bc302602d0b59b81164c9a28f3d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: a97afde2314a220465a7c2b840c9959a7edb4030
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptssrvbehaviorwithnon-mappedtilesspansrv-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.srv_behavior_with_non-mapped_tiles"></span>非對應磚的 SRV 行為
 

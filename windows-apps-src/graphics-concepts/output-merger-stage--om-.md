@@ -3,15 +3,18 @@ title: "輸出合併 (OM) 階段"
 description: "輸出合併 (OM) 階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。"
 ms.assetid: ED2DC4A0-2B92-47AF-884A-BFC2183C78B8
 keywords: "輸出合併 (OM) 階段"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 35d242502441d9f7539a811fbcd376ac6e0b8794
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 47725e562008e2ac948f552107816fa9fe015001
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="output-merger-om-stage"></a>輸出合併 (OM) 階段
 

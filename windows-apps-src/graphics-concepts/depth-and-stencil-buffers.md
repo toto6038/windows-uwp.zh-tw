@@ -3,15 +3,18 @@ title: "深度和樣板緩衝區"
 description: "深度緩衝區儲存深度資訊來控制所呈現而不是隱藏的多邊形區域。"
 ms.assetid: 98B9D73A-04A7-4758-AC27-33CD4CB24216
 keywords: "深度和樣板緩衝區"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 1b94a6e7c7935c74215db3236c31dcf405f5428a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 6c3eb7f9eed2580bfd8a24f3dc833a0ef1f0a640
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="depth-and-stencil-buffers"></a>深度和樣板緩衝區
 

@@ -8,15 +8,18 @@ keywords:
 - "鏡像紋理位址模式"
 - "鉗位紋理位址模式"
 - "邊框色彩紋理位址模式"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c003e78b192aa85440219be739fc2fec6eba3c20
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 75aa946f3a0f1259adf1207e9568ca6da783883e
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-addressing-modes"></a>紋理定址模式
 

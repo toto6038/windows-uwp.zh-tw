@@ -3,15 +3,18 @@ title: "串流資源紋理取樣功能"
 description: "串流資源紋理取樣功能包含取得有關對應區域的著色器狀態回饋、檢查存取的所有資料是否都在資源中對應、鉗制以協助著色器避免 mipmap 串流資源中已知為非對應的區域，以及探索整個紋理篩選足跡的完全對應最低 LOD。"
 ms.assetid: C2B2DD69-8354-417A-894D-6235A8B48B53
 keywords: "串流資源紋理取樣功能"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 7d03ba6eec780a3c05e4d15247c423852d7d75f6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: ee5dc703fe52b0ac8b7163a8067e8b8b87ac8103
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="streaming-resources-texture-sampling-features"></a>串流資源紋理取樣功能
 

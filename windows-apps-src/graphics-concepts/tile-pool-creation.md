@@ -3,15 +3,18 @@ title: "建立磚集區"
 description: "應用程式可以在每一個 Direct3D 裝置建立一個或多個磚集區。 每個磚集區的大小總和限制為 Direct3D 11 的資源大小上限，也就是約為圖形處理器 (GPU) RAM 的 1/4。"
 ms.assetid: BD51EDD3-4AD3-4733-B014-DD77B9D743BB
 keywords: "建立磚集區"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 315c1b2e1a2b8c89b432a89278ae1b3b240c5ad5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 4336d38bca354da3c30cfe2d7e4b092cff15af83
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tile-pool-creation"></a>建立磚集區
 

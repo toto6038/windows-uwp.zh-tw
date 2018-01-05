@@ -8,18 +8,18 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: "Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件"
-localizationpriority: medium
-ms.openlocfilehash: 11c11e339cacccbaa841fd6442009946d53d8890
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: medium
+ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
 ## <a name="overview"></a>概觀
 
-.NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../globalizing/globalizing-portal.md)。 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的 App 資源。 這個深入主題說明技術。
+.NET 和 Win32 應用程式和遊戲通常會當地語系化為不同語言，以拓展其潛在市場範圍。 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的 App 資源。 這個深入主題說明技術。
 
 將傳統 Win32 應用程式當地語系化的方法有許多種，但 Windows 8 引進了[新資源管理系統](https://msdn.microsoft.com/en-us/library/windows/apps/jj552947.aspx)，其跨程式設計語言、跨應用程式類型運作，並且提供超簡單的當地語系化功能。 此系統在本主題中將稱為「MRT」。 過去這代表「現代化資源技術」，但「現代化」一詞已停止使用。 資源管理員也稱為 MRM (現代化資源管理員) 或 PRI (套件資源索引)。
 

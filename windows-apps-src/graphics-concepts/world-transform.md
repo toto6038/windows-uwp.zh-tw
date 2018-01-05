@@ -3,15 +3,18 @@ title: "世界矩陣轉換"
 description: "世界矩陣轉換將座標從模型空間（其中頂點是相對於模型的區域原點定義的）變更為世界空間。"
 ms.assetid: 767B032C-69D0-4583-8FEB-247F4C41E31D
 keywords: "世界矩陣轉換"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 6218747e0522235f1d71510a4ad4b6ce60def4a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 1f4d40360833596b9ef9eed97c426a5ec90db353
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="world-transform"></a>世界矩陣轉換
 

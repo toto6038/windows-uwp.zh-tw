@@ -3,15 +3,18 @@ title: "光線與紋理對應"
 description: "光線對應為紋理或紋理群組，其包含 3D 場景中的照明相關資訊。"
 ms.assetid: 5C7518D2-AC92-4A97-B7AF-4469D213D7BD
 keywords: "光線與紋理對應"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 18e24c1bc60c37a01cb99335e7a8e984697b19b7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 453cee43a0fca6f8e48e6af17a158dc5be6ba12a
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="light-mapping-with-textures"></a>光線與紋理對應
 

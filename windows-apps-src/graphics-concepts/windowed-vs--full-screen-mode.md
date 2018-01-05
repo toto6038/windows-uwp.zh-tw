@@ -3,15 +3,18 @@ title: "視窗與全螢幕模式"
 description: "Direct3D 應用程式可以兩種模式執行：視窗或全螢幕模式。"
 ms.assetid: EE8B9F87-822B-4576-A446-CA603E786862
 keywords: "視窗與全螢幕模式"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 91b488dce85ed173584fdb9873884f9f36689858
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 8c08f879ec783c8065fe539dbefd3698c44bb608
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>視窗與全螢幕模式
 

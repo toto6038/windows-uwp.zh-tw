@@ -3,15 +3,18 @@ title: "非對應磚的 UAV 行為"
 description: "未排序存取檢視 (UAV) 讀取和寫入的行為取決於硬體支援程度。"
 ms.assetid: CDB224E2-CC07-4568-9AAC-C8DC74536561
 keywords: "非對應磚的 UAV 行為"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: c5e3b3be467a49839d530fd976c7f756421de218
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: c1429579ddd896d5c717968f509ddf578a79f2e0
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>非對應磚的 UAV 行為
 

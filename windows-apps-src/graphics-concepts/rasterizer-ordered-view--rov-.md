@@ -3,15 +3,18 @@ title: "轉譯器排序檢視 (ROV)"
 description: "轉譯器排序檢視可解決讓某些深度緩衝區限制，尤其是有多個紋理的透明度全套用至同一個像素時。"
 ms.assetid: BCB1EE0D-4C1D-4E17-BDB7-173F448E0A7B
 keywords: "轉譯器排序檢視 (ROV)"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 313b599a402ba00e220aca649834a217daf3eaaa
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: bb75d903bee3990b13e261393f3801b4089ec1b0
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="rasterizer-ordered-view-rov"></a>轉譯器排序檢視 (ROV)
 

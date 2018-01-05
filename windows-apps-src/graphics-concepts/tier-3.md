@@ -3,15 +3,18 @@ title: "第 3 層"
 description: "除了第 2 層功能外，第 3 層還新增 Texture3D 的串流資源支援。"
 ms.assetid: 86E2F311-A221-4C87-BA89-642FF388FAEB
 keywords: "第 3 層"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 992801ff70d9b99752af2b70be72674225e3573f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d30af696fe92576dee79c4203fb0ec2c959dd346
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="tier-3"></a>第 3 層
 

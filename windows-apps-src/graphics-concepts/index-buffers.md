@@ -3,15 +3,18 @@ title: "索引緩衝"
 description: "索引緩衝是包含索引資料的記憶體緩衝區，是置入頂點緩衝區的整數位移，用於呈現基本類型。"
 ms.assetid: 14D3DEC5-CF74-488B-BE41-16BF5E3201BE
 keywords: "索引緩衝"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: aeb526032489cac2fdbbc436f98eac0cda59b643
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f79b6982ccb6a938f88a289a823dd5da855e57e2
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="index-buffers"></a>索引緩衝
 

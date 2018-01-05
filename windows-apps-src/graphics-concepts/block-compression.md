@@ -3,15 +3,18 @@ title: "區塊壓縮"
 description: "區塊壓縮是一種失真紋理壓縮技術，主要用於減少紋理大小和磁碟使用量，並提升效能。 區塊壓縮的紋理可以比每個色彩 32 位元的紋理更小。"
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords: "區塊壓縮"
-author: mtoepke
-ms.author: mtoepke
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: d67ec99494dc0b598d9eeb8c4aa5b29255a415ac
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 6b0b87f827e7a878b1952ca1970841c3fd5584db
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="block-compression"></a>區塊壓縮
 

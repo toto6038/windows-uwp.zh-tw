@@ -3,15 +3,18 @@ title: "紋理篩選"
 description: "當一個原始物件透過將 3D 原始物件對應到 2D 畫面上進行轉譯時，紋理篩選會為原始物件的 2D 轉譯影像中的每個像素產生色彩。"
 ms.assetid: 1CCF4138-5D48-4B07-9490-996844F994D8
 keywords: "紋理篩選"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: 43dccdc8a8834830b6c15fcfc1cd56216e27ee90
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 42d184b15de4fdeac18549b41447da81580d6b99
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="texture-filtering"></a>紋理篩選
 

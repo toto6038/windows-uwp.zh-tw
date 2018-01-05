@@ -3,15 +3,18 @@ title: "複製和存取資源資料"
 description: "使用方式旗幟表示了應用程式將會如何使用資源資料，並在可能的情況下將資源放置於記憶體中效能最佳的區域。 資源資料在所有資源中都會被複製，以便 CPU 或 GPU 可以在不影響效能的情況下進行存取。"
 ms.assetid: 6A09702D-0FF2-4EA6-A353-0F95A3EE34E2
 keywords: "複製和存取資源資料"
-author: PeterTurcan
-ms.author: pettur
+author: michaelfromredmond
+ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.openlocfilehash: e26e6abf4b15584f8c04a837dcc6bd23aad0f1d0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 438b9608e9b15fd0c00def517a4c38491d486217
+ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="copying-and-accessing-resource-data"></a>複製和存取資源資料
 
