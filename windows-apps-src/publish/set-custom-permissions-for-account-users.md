@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "設定帳戶使用者的自訂權限。"
+Description: Set custom permissions for account users.
 title: "設定帳戶使用者的自訂權限"
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: d45ae4001dbb14a11e2beeecc3f98fb72bbc8a86
-ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+keywords: "windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色"
+ms.localizationpriority: high
+ms.openlocfilehash: 1fdde4be606abae849ff3350d27afbbced157f75
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -26,6 +27,9 @@ ms.lasthandoff: 07/17/2017
 -   使用者 (包括群組和 Azure AD 應用程式) 將能夠使用與其獲指派角色相關聯的權限來存取完整的開發人員中心帳戶，除非您[自動權限](#custom)並指派[產品層級權限](#product-level-permissions)，讓他們只能使用特定應用程式和/或附加元件。
 -   您可以藉由選取多個角色，來允許使用者、群組或 Azure AD 應用程式具備一個以上之角色功能的存取權，或使用自訂權限授與您想要的存取權。
 -   具有特定角色 (或一組自訂權限) 的使用者也可以是具有不同角色 (或一組權限) 之群組的一部分。 在此情況下，使用者將具備與群組和個別帳戶相關聯之所有功能的存取權。
+
+> [!TIP]
+> 本主題專屬於 Windows 應用程式開發人員計畫。 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。
 
 
 <span id="roles" />
@@ -41,7 +45,7 @@ ms.lasthandoff: 07/17/2017
 
 | 角色                 | 說明              |
 |----------------------|--------------------------|
-| 管理員              | 具備帳戶的完整存取權，但變更稅務和支付設定例外。 這包括管理開發人員中心的使用者，但請注意，建立和刪除使用者的能力取決於帳戶在 Azure AD 中的權限。 也就是，如果為使用者指派管理員角色，但其不具組織 Azure AD 中的系統管理員權限，則他們將無法建立新的使用者或從目錄刪除使用者 (但他們可以變更使用者的開發人員中心角色)。 |
+| 管理員              | 具備帳戶的完整存取權，但變更稅務和支付設定例外。 這包括管理開發人員中心的使用者，但請注意，在 Azure AD 租用戶中建立和刪除使用者的能力，取決於帳戶在 Azure AD 中的權限。 也就是，如果為使用者指派管理員角色，但其不具組織 Azure AD 中的全域管理員權限，則他們將無法建立新的使用者或從目錄刪除使用者 (但他們可以變更使用者的開發人員中心角色)。 <p> 請注意，如果開發人員中心帳戶關聯至多個 Azure AD 租用戶，則除非管理員使用擁有該租用戶之全域系統管理員權限的帳戶來登入該租用戶，否則他看不到使用者的完整詳細資料 (包括名字、姓氏、密碼復原電子郵件，以及他們是否為 Azure AD 全域管理員)。 不過，他們可以新增和移除與開發人員中心帳戶相關聯之租用戶中的使用者。 |
 | 開發人員            | 可以上傳套件並提交 App 和附加元件，而且可以檢視[使用方式報告](usage-report.md)來取得遙測詳細資料。 無法檢視財務資訊或帳戶設定。   |
 | 商務參與者 | 可檢視[健康情況](health-report.md)與[使用量](usage-report.md)報告。 無法建立或提交產品、 變更帳戶設定或檢視財務資訊。                                         |
 | 財務參與者  | 可檢視[支付報告](payout-summary.md)、財務資訊及下載數報告。 無法對 App、附加元件或帳戶設定進行任何變更。                                                                                                                                   |
@@ -99,19 +103,19 @@ ms.lasthandoff: 07/17/2017
     </thead>
     <tbody>
 <tr><td align="left">    **帳戶設定**                    </td><td align="left">  可檢視 **\[帳戶設定\]** 區段中的所有頁面，包括[連絡資訊](managing-your-profile.md)。       </td><td align="left">  可檢視 **\[帳戶設定\]** 區段中的所有頁面。 可變更[連絡資訊](managing-your-profile.md)和其他頁面，但不能變更支付帳戶或稅金設定檔 (除非另外授與該權限)。            </td></tr>
-<tr><td align="left">    **帳戶使用者**                       </td><td align="left">  可檢視已加入 **\[管理使用者\]** 區段中的帳戶的使用者。          </td><td align="left">  可在 **\[管理使用者\]** 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
+<tr><td align="left">    **帳戶使用者**                       </td><td align="left">  可檢視已加入 **\[使用者\]** 區段中的帳戶的使用者。          </td><td align="left">  可在 **\[使用者\]** 區段中新增使用者到帳戶和變更現有使用者。             </td></tr>
 <tr><td align="left">    **帳戶層級的廣告績效報告** </td><td align="left">  可檢視帳戶層級的[廣告效益報告](advertising-performance-report.md)。      </td><td align="left">  不適用   </td></tr>
 <tr><td align="left">    **廣告活動**                        </td><td align="left">  可檢視帳戶中建立的[廣告活動](create-an-ad-campaign-for-your-app.md)。      </td><td align="left">  可建立、管理和檢視帳戶中建立的[廣告活動](create-an-ad-campaign-for-your-app.md)。          </td></tr>
 <tr><td align="left">    **廣告流量分配**                        </td><td align="left">  可檢視帳戶中所有產品的[廣告流量分配設定](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx)。    </td><td align="left">  可檢視和變更帳戶中所有產品的[廣告流量分配設定](https://msdn.microsoft.com/library/windows/apps/xaml/mt149935.aspx)。        </td></tr>
 <tr><td align="left">    **廣告流量分配報告**                </td><td align="left">  可檢視帳戶中所有產品的[廣告流量分配報告](ad-mediation-report.md)。    </td><td align="left">  不適用    </td></tr>
 <tr><td align="left">    **廣告績效報告**              </td><td align="left">  可檢視帳戶中所有產品的[廣告效益報告](advertising-performance-report.md)。       </td><td align="left">  不適用         </td></tr>
-<tr><td align="left">    **廣告單位**                            </td><td align="left">  可檢視已為帳戶建立的[廣告單位](monetize-with-ads.md)。    </td><td align="left">  可建立、管理及檢視帳戶的[廣告單位](monetize-with-ads.md)。             </td></tr>
+<tr><td align="left">    **廣告單位**                            </td><td align="left">  可檢視已為帳戶建立的[廣告單位](in-app-ads.md)。    </td><td align="left">  可建立、管理及檢視帳戶的[廣告單位](in-app-ads.md)。             </td></tr>
 <tr><td align="left">    **聯盟廣告**                       </td><td align="left">  可檢視帳戶中所有產品的[聯盟廣告](about-affiliate-ads.md)使用量。    </td><td align="left">  可管理和檢視帳戶中所有產品的[聯盟廣告](about-affiliate-ads.md)使用量。                </td></tr>
 <tr><td align="left">    **聯盟績效報告**      </td><td align="left">  可檢視帳戶中所有產品的[聯盟績效報告](affiliates-performance-report.md)。   </td><td align="left">  不適用   </td></tr>
 <tr><td align="left">    **應用程式安裝廣告報告**             </td><td align="left">  可檢視[廣告活動報告](promote-your-app-report.md)。           </td><td align="left">  不適用   </td></tr>
 <tr><td align="left">    **社群廣告**                       </td><td align="left">  可檢視帳戶中所有產品的[社群廣告](about-community-ads.md)使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費[社群廣告](about-community-ads.md)使用量。               </td></tr>
 <tr><td align="left">    **連絡資訊**                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的[連絡資訊](managing-your-profile.md)。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的[連絡資訊](managing-your-profile.md)。            </td></tr>
-<tr><td align="left">    **COPPA 規範**                    </td><td align="left">  可檢視帳戶中所有產品的 [COPPA 規範](monetize-with-ads.md#coppa-compliance)選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 [COPPA 規範](monetize-with-ads.md#coppa-compliance)選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
+<tr><td align="left">    **COPPA 規範**                    </td><td align="left">  可檢視帳戶中所有產品的 [COPPA 規範](in-app-ads.md#coppa-compliance)選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 [COPPA 規範](in-app-ads.md#coppa-compliance)選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
 <tr><td align="left">    **客戶群組**                     </td><td align="left">  可檢視 **\[客戶\]** 區段中的[客戶群組](create-customer-groups.md) (區隔和正式發行前小眾測試版群組)。      </td><td align="left">  可建立、編輯和檢視 **\[客戶\]** 區段中的[客戶群組](create-customer-groups.md) (區隔和正式發行前小眾測試版群組)。       </td></tr>
 <tr><td align="left">    **新的 app**                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中[建立新的 app](create-your-app-by-reserving-a-name.md)，並可建立提交內容，將 app 提交到市集。     </td></tr>
 <tr><td align="left">    **新的套件組合**&nbsp;*                       </td><td align="left">  可檢視新的套件組合建立頁面，但實際上不能在帳戶中建立新的套件組合。     </td><td align="left">  可建立新的產品套件組合。          </td></tr>
@@ -162,11 +166,11 @@ ms.lasthandoff: 07/17/2017
     </thead>
     <tbody>
     <tr><td align="left">    **下載數**     </td><td>    可檢視產品的[下載數](acquisitions-report.md)和[附加元件下載數](add-on-acquisitions-report.md)報告。        </td><td>    不適用    </td><td>    不適用 (父項產品的設定包含附加元件下載數報告)        </td><td>    不適用                         </td></tr>
-    <tr><td align="left">    **使用量** </td><td>    可檢視產品的[使用量報告](usage-report.md)。     </td><td>    不適用       </td><td>    無     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    **健康情況** </td><td>    可檢視產品的[健康情況報告](health-report.md)。    </td><td>    不適用     </td><td>    無     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    **使用量** </td><td>    可檢視產品的[使用量報告](usage-report.md)。     </td><td>    不適用       </td><td>    N/A     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    **健康情況** </td><td>    可檢視產品的[健康情況報告](health-report.md)。    </td><td>    不適用     </td><td>    N/A     </td><td>    不適用         </td></tr>
     <tr><td align="left">    **客戶回函**    </td><td>    可檢視產品的[評論](reviews-report.md)及[意見反應](feedback-report.md)報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與**連絡客戶**權限)   </td><td>    不適用     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    **Xbox 分析** </td><td>    可檢視產品的 Xbox 分析報告。 (注意︰這份報告尚未提供。)    </td><td>    不適用   </td><td>    無       </td><td>    不適用          </td></tr>
-    <tr><td align="left">    **即時**   </td><td>    可檢視產品的即時報告。 (注意：目前只透過[開發人員中心測試人員計畫](dev-center-insider-program.md)提供這份報告)。      </td><td>    不適用   </td><td>    無     </td><td>    不適用                 </td></tr>
+    <tr><td align="left">    **Xbox 分析** </td><td>    可檢視產品的 Xbox 分析報告。 (注意︰這份報告尚未提供。)    </td><td>    不適用   </td><td>    N/A       </td><td>    不適用          </td></tr>
+    <tr><td align="left">    **即時**   </td><td>    可檢視產品的即時報告。 (注意：目前只透過[開發人員中心測試人員計畫](dev-center-insider-program.md)提供這份報告)。      </td><td>    不適用   </td><td>    N/A     </td><td>    不適用                 </td></tr>
     </tbody>
     </table>
 

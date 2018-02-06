@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "將使用者新增到您的開發人員中心帳戶，並為它們指派具有特定權限的角色。"
+Description: Add users to your Dev Center account and assign them roles with specific permissions.
 title: "管理帳戶使用者"
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
-ms.date: 07/17/2017
+ms.date: 01/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: bba67fd6f4db4464b02d1b351bbb75adbec1acdc
-ms.sourcegitcommit: eaacc472317eef343b764d17e57ef24389dd1cc3
+keywords: "windows 10, uwp, 帳戶使用者, 管理使用者, azure ad, 多使用者"
+ms.localizationpriority: high
+ms.openlocfilehash: e9a08225f0eac5018b3634df3bfb055d38ccb895
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="manage-account-users"></a>管理帳戶使用者
 
@@ -21,12 +22,11 @@ ms.lasthandoff: 07/17/2017
 
 若要新增和管理帳戶使用者，您必須先將開發人員中心帳戶與組織的 Azure Active Directory 產生關聯。 
 
-若要管理帳戶使用者，請移至 **\[帳戶設定\]**，然後選取 **\[管理使用者\]**。
-
 本節會說明如何執行下列動作：
 
 -   [將 Azure Active Directory 與您的開發人員中心帳戶產生關聯](associate-azure-ad-with-dev-center.md)
 -   [新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶](add-users-groups-and-azure-ad-applications.md)
 -   [設定帳戶使用者的角色和自訂權限](set-custom-permissions-for-account-users.md)
 
-
+> [!TIP]
+> 本節專屬於 Windows 應用程式開發人員計畫，但關聯租用戶和管理使用者的運作方式類似於 Windows 硬體開發人員計畫中的帳戶。 如需硬體開發人員計畫中使用者管理的詳細資訊，請參閱[儀表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)。

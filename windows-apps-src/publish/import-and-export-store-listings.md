@@ -1,43 +1,45 @@
 ---
 author: jnHs
-Description: "您可以藉由將市集清單匯出為 .csv 檔案，輸入您的資訊和資產，然後匯入更新的檔案，建立您的應用程式市集清單，而不使用開發人員中心儀表板。"
-title: "匯入及匯出市集清單"
+Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
+title: "匯入及匯出 Store 清單"
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 12/22/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 691074727bab67e616541b393468eb70f0b20a05
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: "windows 10, uwp, 匯入 Store 清單, 匯出 Store 清單, 匯入匯出, Store 清單 csv"
+ms.localizationpriority: high
+ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/12/2018
 ---
-# <a name="import-and-export-store-listings"></a>匯入及匯出市集清單
+# <a name="import-and-export-store-listings"></a>匯入及匯出 Store 清單
+除了[直接在儀表板中輸入 Store 清單的資訊](create-app-store-listings.md)，您也可以選擇藉由將清單匯出為 .csv 檔案、輸入您的資訊和資產，然後匯入更新的檔案，來新增或更新資訊。 您可以使用此方法，從頭開始建立清單或更新您已經建立的清單。
 
-您可以藉由將市集清單匯出為 .csv 檔案，輸入您的資訊和資產，然後匯入更新的檔案，建立您的應用程式[市集清單](create-app-store-listings.md)，而不使用開發人員中心儀表板。 您可以使用此方法，從頭開始建立清單或更新您已經建立的清單。 
-
-請注意，您無法使用此方法來針對應用程式建立或更新[平台特定市集清單](create-platform-specific-store-listings.md)。
+如果您想為您的產品建立或更新多種語言的 Store 清單，此選項會很有用，因為您可將相同資訊複製/貼上至多個欄位，並輕鬆進行應套用至特定語言的任何變更。 不過，您無法使用此方法來針對應用程式建立或更新[平台特定 Store 清單](create-platform-specific-store-listings.md)。 
 
 > [!TIP]
-> 您也可以使用此功能，匯入及匯出附加元件的市集清單詳細資料。 對於附加元件，除了[只包含附加元件的相關欄位](#add-ons)以外，程序運作方式是相同的。
+> 您也可以使用此功能，匯入及匯出附加元件的 Store 清單詳細資料。 對於附加元件，除了[只包含附加元件的相關欄位](#add-ons)以外，程序運作方式是相同的。
+
+請記住，您永遠可在開發人員中心儀表板中直接建立或更新清單 (即使您先前已使用匯入/匯出方法)。 如果只是要進行一個簡單變更，在儀表板中直接更新可能比較容易，但您可以隨時使用任一個方法。
 
 ## <a name="export-listings"></a>匯出清單
 
-在應用程式提交概觀頁面上，按一下 **\[匯出清單\]** (在 **\[市集清單\]** 區段) 來建立 UTF-8 編碼的 .csv 檔案。 將此檔案儲存到您電腦上的位置。
+在應用程式提交概觀頁面上，按一下 **\[匯出清單\]** (在 **\[Store 清單\]** 區段) 來建立 UTF-8 編碼的 .csv 檔案。 將此檔案儲存到您電腦上的位置。
 
-您可以使用 Microsoft Excel 或其他編輯器來編輯這個檔案。 請注意，Office 365 版本的 Excel 會讓您將 .csv 檔案儲存為 **CSV UTF-8 (逗號分隔) ((*.csv)**，但其他版本可能不支援此功能。 您可以在 [Excel 2016 新功能公告](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73)找到哪些版本的 Excel 支援這項功能的詳細資料，並在[這裡](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16)找到使用各種不同編輯器編碼為 UTF-8 的詳細資訊。
+您可以使用 Microsoft Excel 或其他編輯器來編輯這個檔案。 請注意，Office 365 版本的 Excel 會讓您將 .csv 檔案儲存為 **CSV UTF-8 (逗號分隔) (*.csv)**，但其他版本可能不支援此功能。 您可以在 [Excel 2016 新功能公告](https://support.office.com/en-us/article/What-s-new-in-Excel-2016-for-Windows-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73)找到哪些版本的 Excel 支援這項功能的詳細資料，並在[這裡](https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16)找到使用各種不同編輯器編碼為 UTF-8 的詳細資訊。
       
-如果您尚未建立產品的任何清單，匯出的 .csv 檔案不會包含任何自訂資料。 您會看到 **Field**、**ID**、**Type** 和 **default** 欄，以及對應至可能會出現在市集清單中每個項目的列。
+如果您尚未建立產品的任何清單，匯出的 .csv 檔案不會包含任何自訂資料。 您會看到 **Field**、**ID**、**Type** 和 **default** 欄，以及對應至可能會出現在 Store 清單中每個項目的列。
 
 如果您已經建立清單（或已上傳套件），您也會看到標示為語言-地區設定代碼的欄，該代碼對應到您所建立的（或我們在您的套件偵測到的）每個清單的語言，以及您先前已提供的任何清單資訊。
      
 以下是匯出的 .csv 檔案中各欄內容的概觀：
-- **Field** 欄包含市集清單中每個部分的相關名稱。 這些對應於您在儀表板中建立市集清單時可以提供的相同項目，雖然有些名稱稍微不同。 對於您可以輸入多個類型相同的項目，您會看到多列，直到可提供的列數上限。 例如，對於 **App features**，您會看到 **Feature1**、**Feature2** 等等，直到 **Feature20**（因為最多可提供 20 個功能）。
+- **Field** 欄包含 Store 清單中每個部分的相關名稱。 這些對應於您在儀表板中建立 Store 清單時可以提供的相同項目，雖然有些名稱稍微不同。 對於您可以輸入多個類型相同的項目，您會看到多列，直到可提供的列數上限。 例如，對於 **App features**，您會看到 **Feature1**、**Feature2** 等等，直到 **Feature20**（因為最多可提供 20 個功能）。
 - **ID** 欄包含開發人員中心為每個欄位關聯的數字。 
 - **Type** 欄提供應該為該欄位提供何種資訊類型的一般指引，例如 **Text** (文字) 或 **Relative path (or URL to file in Dev Center)** (相對路徑 (或開發人員中心中的檔案 URL))。 
-- **default** 欄（及任何標示語言-地區設定代碼的欄）代表市集清單中每個部分的相關聯文字或資產。 您可以編輯這些欄中的欄位，對您的市集清單進行更新。
+- **default** 欄（及任何標示語言-地區設定代碼的欄）代表 Store 清單中每個部分的相關聯文字或資產。 您可以編輯這些欄中的欄位，對您的 Store 清單進行更新。
 
 >[!IMPORTANT]
 > 請勿變更 **Field**、**ID** 或 **Type** 欄的任何資訊。 這些欄中的資訊必須維持不變，以處理匯入檔案。
@@ -50,7 +52,7 @@ ms.lasthandoff: 08/03/2017
 
 您可以使用 **default** 欄，輸入您想要在所有應用程式描述中共用的資訊。 如果特定語言的欄位保留空白，該語言將會使用 default 欄中的資訊。 您可以輸入特定語言的其他資訊，覆寫該語言的該欄位。
 
-大部分的市集清單欄位都是選擇性的。 每個清單都需要 **Description** 和一個螢幕擷取畫面。對於沒有相關套件的語言，您也需要提供 **Title** 以指出您保留的 app 名稱應該用於該清單。 針對其他所有欄位，如果您不想要包含在清單中，您可以將欄位保留空白。 請記住，如果您將特定語言的欄位保留空白，我們會檢查 default 欄中的該欄位是否有資訊。 若是有，則會使用該資訊。 
+大部分的 Store 清單欄位都是選擇性的。 每個清單都需要 **Description** 和一個螢幕擷取畫面。對於沒有相關套件的語言，您也需要提供 **Title** 以指出您保留的 app 名稱應該用於該清單。 針對其他所有欄位，如果您不想要包含在清單中，您可以將欄位保留空白。 請記住，如果您將特定語言的欄位保留空白，我們會檢查 default 欄中的該欄位是否有資訊。 若是有，則會使用該資訊。 
 
 例如，請考慮下列範例： 
 
@@ -63,11 +65,11 @@ ms.lasthandoff: 08/03/2017
 
 刪除一種語言的欄位資訊，而不移除整列，運作方式根據欄位而不同。 對於其 **Type** 是 **Text** 的欄位，刪除欄位中的資訊只會從該語言的清單移除該項目。  不過，刪除影像欄位中的資訊，例如螢幕擷取畫面或商標，沒有任何影響。除非您直接在開發人員中心編輯，將它移除，否則仍然可以使用先前的影像。 刪除預告片欄位資訊，實際上會從開發人員中心移除預告片，所以這麼做之前，請務必確定您有任何所需檔案的複本。
 
-您匯出清單中的許多欄位需要文字項目，例如上面範例中的 **Description** 和 **ReleaseNotes** 欄位。 這些類型的欄位中，只要將適當的文字輸入每一種語言的欄位中。 請務必遵循每個欄位的長度與其他需求。 如需這些需求的詳細資訊，請參閱[建立應用程式市集清單](create-app-store-listings.md)。
+您匯出清單中的許多欄位需要文字項目，例如上面範例中的 **Description** 和 **ReleaseNotes** 欄位。 這些類型的欄位中，只要將適當的文字輸入每一種語言的欄位中。 請務必遵循每個欄位的長度與其他需求。 如需這些需求的詳細資訊，請參閱[建立應用程式 Store 清單](create-app-store-listings.md)。
 
 為對應到影像和預告片等資產的欄位提供資訊，更加複雜一點。 這些資產的 **Type** 是 **Relative path (or URL to file in Dev Center)** (相對路徑 (或開發人員中心中的檔案 URL))，而非 **Text**。 
      
-如果您已經為市集清單上傳資產，這些資產就會由 URL 表示。 這些 URL 可以重複使用在產品的多個描述中，或甚至在相同開發人員帳戶內不同產品的描述中，所以如果您要的話，可以複製這些 URL 以重複使用在不同的欄位中。
+如果您已經為 Store 清單上傳資產，這些資產就會由 URL 表示。 這些 URL 可以重複使用在產品的多個描述中，或甚至在相同開發人員帳戶內不同產品的描述中，所以如果您要的話，可以複製這些 URL 以重複使用在不同的欄位中。
 
 > [!TIP]
 > 若要確認哪些資產對應至 URL，您可以在瀏覽器中輸入 URL 以檢視影像（或下載預告片影片）。  您必須登入開發人員中心帳戶，此 URL 才能正常運作。
@@ -101,8 +103,8 @@ ms.lasthandoff: 08/03/2017
 
 ## <a name="add-ons"></a>附加元件
 
-對於附加元件，匯入及匯出市集清單使用上述相同的程序，不過您只會看到[附加元件存放區清單](create-add-on-store-listings.md)的三個相關欄位：**Description**、**Title** 和 **StoreLogo300x300** (在開發人員中心的市集中清單頁面中稱為 **\[圖示\]**)。 **Title** 欄位是必要的，其他兩個欄位則是選擇性的。
+對於附加元件，匯入及匯出 Store 清單使用上述相同的程序，不過您只會看到[附加元件存放區清單](create-add-on-store-listings.md)的三個相關欄位：**Description**、**Title** 和 **StoreLogo300x300** (在開發人員中心的 Store 中清單頁面中稱為 **\[圖示\]**)。 **Title** 欄位是必要的，其他兩個欄位則是選擇性的。
 
-請注意，您必須藉由瀏覽到附加元件提交概觀頁面，針對應用程式的每個附加元件分別匯入及匯出市集清單。
+請注意，您必須藉由瀏覽到附加元件提交概觀頁面，針對應用程式的每個附加元件分別匯入及匯出 Store 清單。
 
 

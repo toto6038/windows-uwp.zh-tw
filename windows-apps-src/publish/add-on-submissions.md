@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "您要透過 Windows 開發人員中心儀表板發佈附加元件。"
+Description: Add-ons are published through the Windows Dev Center dashboard.
 title: "附加元件提交"
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 06/26/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 85ad5e297eed8daa5205aedc1253191fcff5fd49
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+keywords: "windows 10, uwp, iap, App 內購買, 應用程式內產品, iap 提交"
+ms.localizationpriority: high
+ms.openlocfilehash: 5591542370f8ed47be37c10e8e8b7afd9ac69d65
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="add-on-submissions"></a>附加元件提交
 
@@ -21,10 +22,10 @@ ms.lasthandoff: 06/27/2017
 
 您要透過 Windows 開發人員中心儀表板發佈附加元件。 您也需要在您的 App 程式碼中[啟用附加元件](../monetize/in-app-purchases-and-trials.md)。
 
-附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您就可以建立提交作業，讓您的附加元件可透過 Windows 市集購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到市集之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
+附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您就可以建立提交作業，讓您的附加元件可透過 Microsoft Store 購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到 Store 之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
 
 > [!NOTE]
-> 本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Windows 市集提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
+> 本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
 
 ## <a name="checklist-for-submitting-an-add-on"></a>提交附加元件的檢查清單
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 06/27/2017
 ### <a name="create-a-new-add-on-page"></a>建立新的附加元件頁面
 | 欄位名稱                    | 注意事項                            |
 |-------------------------------|----------------------------------|
-| [**產品類型**](set-your-add-on-product-id.md#product-type)      | 必要。 如果是 **\[耐久\]**，就必須有 **\[產品存留期\]**。 |  
+| [**產品類型**](set-your-add-on-product-id.md#product-type)      | 必要 |  
 | [**產品識別碼**](set-your-add-on-product-id.md#product-id)          | 必要 |        
 
 <span/>
@@ -42,10 +43,12 @@ ms.lasthandoff: 06/27/2017
 | 欄位名稱                    | 注意事項                              |   
 |-------------------------------|------------------------------------|
 | [**產品存留期**](enter-add-on-properties.md#product-lifetime)  | 如果產品類型是 **\[耐久品\]**，則為必要。 不適用於其他產品類型。 |
-| [**數量**](enter-add-on-properties.md#quantity)  | 如果產品類型是 **\[市集管理的消費性產品\]**，則為必要。 不適用於其他產品類型。
-| [**內容類型**](enter-add-on-properties.md#content-type)          | 必要       |               
+| [**數量**](enter-add-on-properties.md#quantity)  | 如果產品類型是 **\[Store 管理的消費性產品\]**，則為必要。 不適用於其他產品類型。 |
+| [**訂閱期間**](enter-add-on-properties.md#subscription-period)          | 如果產品類型是 **\[訂閱\]**，則為必要。 不適用於其他產品類型。       |  
+| [**免費試用**](enter-add-on-properties.md#free-trial)          | 如果產品類型是 **\[訂閱\]**，則為必要。 不適用於其他產品類型。       |
+| [**內容類型**](enter-add-on-properties.md#content-type)          | 必要    |               
 | [**關鍵字**](enter-add-on-properties.md#keywords)                  | 選擇性 (最多 10 個關鍵字，每個關鍵字最多 30 個字元) |
-| [**自訂開發人員資料**](enter-add-on-properties.md#custom-developer-data)                               | 選擇性 (最多 3000 個字元)             |
+| [**自訂開發人員資料**](enter-add-on-properties.md#custom-developer-data)   | 選擇性 (最多 3000 個字元)            |
 
 <span/>
 
@@ -61,18 +64,18 @@ ms.lasthandoff: 06/27/2017
 
 <span/>
 
-### <a name="store-listings"></a>市集清單
-需要一個市集清單。 我們建議針對 App 支援的每個[語言](create-add-on-store-listings.md#store-listing-languages)提供市集清單。
+### <a name="store-listings"></a>Store 清單
+需要一個 Store 清單。 我們建議針對 App 支援的每個[語言](create-add-on-store-listings.md#store-listing-languages)提供 Store 清單。
 
 | 欄位名稱                    | 注意事項                                       |
 |-------------------------------|---------------------------------------------|
-| [**標題**](create-add-on-store-listings.md#title)                    | 必要 (最多 100 個字元)              |
-| [**說明**](create-add-on-store-listings.md#description)       | 選擇性 (最多 200 個字元)              |
-| [**圖示**](create-add-on-store-listings.md#icon)                    | 選擇性 (300x300 像素的 .png)             |
+| [**標題**](create-add-on-store-listings.md#title)                    | 必要 (最多 100 個字元)           |
+| [**說明**](create-add-on-store-listings.md#description)       | 選擇性 (最多 200 個字元)            |
+| [**圖示**](create-add-on-store-listings.md#icon)                    | 選擇性 (300x300 像素的 .png)            |
 
 <span/>
 
-當您輸入完此資訊，請按一下 **\[送出到市集\]**。 在大多數情況下，認證程序大概需要一個小時。 之後，您的附加元件就會發佈到市集，供客戶購買。
+當您輸入完此資訊，請按一下 **\[送出到 Store\]**。 在大多數情況下，認證程序大概需要一個小時。 之後，您的附加元件就會發佈到 Store，供客戶購買。
 
 > [!NOTE]
 > 您也必須在您的應用程式程式碼中實作附加元件。 如需詳細資訊，請參閱 [App 內購買和試用版](../monetize/in-app-purchases-and-trials.md)。
@@ -85,6 +88,6 @@ ms.lasthandoff: 06/27/2017
 > [!IMPORTANT]
 > 如果您的應用程式可供 Windows 8.x 的客戶使用，您必須建立並發佈新的應用程式提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
 
-若要提交更新，請移至儀表板的附加元件頁面，然後按一下 **\[更新\]**。 這會使用您前一個提交作業的資訊做為起點，建立一個新的附加元件提交作業。 視需要變更資訊，然後按一下 **\[提交至市集\]**。
+若要提交更新，請移至儀表板的附加元件頁面，然後按一下 **\[更新\]**。 這會使用您前一個提交作業的資訊做為起點，建立一個新的附加元件提交作業。 視需要變更資訊，然後按一下 **\[提交至 Store\]**。
 
-如果您想要移除先前提供的附加元件，請建立新的提交並且將 [配送和可見性](set-add-on-pricing-and-availability.md) 選項變更為 **\[不再提供購買。未顯示在您的 App 清單中\]**。 請務必視需要更新您 App 的程式碼，以便同時移除附加元件的參考。
+如果您想要移除先前提供的附加元件，請建立新的提交並且將 [\[配送和可見性\]](set-add-on-pricing-and-availability.md) 選項變更為 **\[在 Microsoft Store 中隱藏\]** 以及 **\[停止取得\]** 選項。 請務必視需要更新您的程式碼，以同時移除附加元件的參考 (尤其是當您的應用程式支援 Windows 8.1 和較舊版本；這個可見性設定不會套用到這些客戶)。

@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: "如果您的應用程式使用 Microsoft Advertising SDK 顯示廣告，請使用開發人員中心儀表板中的應用程式內廣告頁面來管理您的廣告用量。"
+Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
 title: "應用程式內廣告"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
-localizationpriority: high
-ms.openlocfilehash: eb835269cd9df7385d8d03e032d8b41cb7f92a19
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+ms.localizationpriority: high
+ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -120,10 +120,13 @@ ms.lasthandoff: 10/31/2017
 | AOL 和 AppNexus |  這是透過合作夥伴網路 AOL 和 AppNexus 提供廣告的 Microsoft 管理廣告網路。<p/>**注意**：AOL 和 AppNexus 在 \[橫幅\] 廣告單元的 **\[付費廣告網路\]** 清單中始終排在第一，而且無法變更至這類廣告的較低排名。 | 橫幅、插播式影片 |
 | AppNexus (直接) | 選取此選項可從 [AppNexus](https://www.appnexus.com) 提供插播式影片廣告。 | 插播式影片、原生  |
 | Microsoft 應用程式安裝廣告 | 選取此選項可提供 Windows 生態系統中其他[為自己的 App 建立促銷廣告活動](create-an-ad-campaign-for-your-app.md)的開發人員建立的應用程式安裝廣告或應用程式重新佔用廣告。  |  橫幅、插播式橫幅、原生  |
+| Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅  |
+| Revcontent |  選取此選項可從 [Revcontent](http://www.revcontent.com/) 提供廣告。 |  橫幅  |
 | Smaato |  選取此選項可從 [Smaato](https://www.smaato.com/) 提供廣告。 |  橫幅  |
 | smartclip |  選取此選項可從 [smartclip](http://www.smartclip.com/) 提供廣告。 |  插播式影片  |
 | SpotX |  選取此選項可從 [SpotX](https://www.spotx.tv/) 提供廣告。 |  插播式影片  |
 | Taboola |  選取此選項可從 [Taboola](https://www.taboola.com/) 提供廣告。 |  橫幅  |
+
 
 <span id="other-networks" />
 ### <a name="other-ad-networks"></a>其他廣告網路
@@ -143,12 +146,18 @@ ms.lasthandoff: 10/31/2017
 
 |  廣告網路  |  支援的市場  |
 |--------------|---------------------|
+| Revcontent | 巴西、加拿大、法國、德國、義大利、日本、西班牙、英國、美國  |
 | Smaato | 巴西、加拿大、法國、德國、義大利、日本、西班牙、英國、美國 |
 | smartclip | 奧地利、比利時、丹麥、芬蘭、德國、義大利、荷蘭、挪威、瑞典、瑞士  |
 
 <span id="coppa" />
 ## <a name="coppa-compliance"></a>COPPA 合規性
 
-基於兒童線上隱私權保護法 (「 COPPA 」) 的立法宗旨，如果您的 app 是針對 13 歲以下的兒童，則您必須通知 Microsoft。 如果您使用開發人員中心來通知 Microsoft 有關您 app 是針對 13 歲以下的兒童，當傳送廣告到您 app 時，Microsoft 會採取步驟來停用其行為廣告服務。 如果您的 app 是針對 13 歲以下的兒童，基於 COPPA 的規範，您必須承擔某些義務。
+當您[建立廣告單元](#create-ad-unit)或[選取現有的廣告單元](#available-ad-units)時，如果廣告單元的所選應用程式至少有一個提交到達應用程式認證程序的 [Store 中](../publish/the-app-certification-process.md#in-the-store)步驟，**\[COPPA 合規性\]** 區段就會顯示在儀表板頁面底部。
 
-如需有關 COPPA 所規範權利義務的詳細資訊，請參閱[此頁面](http://go.microsoft.com/fwlink/p/?linkid=536558)。
+基於兒童線上隱私權保護法 (「COPPA」) 的立法宗旨，如果您的應用程式是針對 13 歲以下的兒童，您必須選取本區段中的 **\[這個應用程式是針對 13 歲以下的孩童\]**。 如果您選取此選項，當傳送廣告到您的應用程式時，Microsoft 會採取步驟來停用其行為廣告服務。
+
+您選擇的 **\[COPPA 合規性\]** 設定會自動套用到所選應用程式的所有廣告單元。
+
+> [!IMPORTANT]
+> 如果您的 app 是針對 13 歲以下的兒童，基於 COPPA 的規範，您必須承擔某些義務。 如需有關您的義務的詳細資訊，請參閱[此頁面](http://go.microsoft.com/fwlink/p/?linkid=536558)。

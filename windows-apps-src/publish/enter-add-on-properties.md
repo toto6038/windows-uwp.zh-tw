@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "提交附加元件時，[屬性] 頁面上的選項有助於決定提供給客戶時附加元件的行為。"
+Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
 title: "輸入附加元件屬性"
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 253e008d3622094dcfe765531d71e5f37b7777b0
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+keywords: "windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品"
+ms.localizationpriority: high
+ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
@@ -29,28 +30,31 @@ ms.lasthandoff: 08/17/2017
 
 您在此頁面看到的欄位會根據附加元件的產品類型而有所不同。
 
-## <a name="product-lifetime"></a>產品存留期
 
+## <a name="product-lifetime"></a>產品存留期
 
 如果您選取的產品類型是 **\[耐久性\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]**，這表示附加元件永久有效。 若有需要，您可以設定 **\[產品存留期\]**，讓附加元件在設定的期間後到期 (可選擇 1-365 天)。
 
-## <a name="quantity"></a>數量
 
+## <a name="quantity"></a>數量
 
 如果您選取的產品類型是 **\[市集管理的消費性產品\]**，則此處會顯示 **\[數量\]**。 您將需要輸入 1 到 1000000 之間的數字。 當客戶取得您的附加元件時，會將此數量授與客戶，而且當 App 報告客戶取用的附加元件時，市集將會追蹤餘額。
 
 
 ## <a name="subscription-period"></a>訂閱期間
 
-如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 您將需要選擇其中一個可用的選項 (**\[每月\]**，**\[3 個月\]**、**\[6 個月\]**、**\[每年\]** 或 **\[24 個月\]**)，以指出向客戶收取訂閱費用的頻率。 請注意，您的附加元件發行之後，您無法變更 **\[訂閱期間\]** 選項。
+如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是 **每個月，但您也可以選取 **3 個月**、**6 個月**、**每年** 或 **24 個月** 
 
-> [!NOTE]
-> 目前，只有參與早期採用者計畫的一組開發人員帳戶才可以建立訂閱附加元件。 未來我們會讓所有開發人員帳戶都可以建立訂閱附加元件，這份初步文件現在可讓開發人員預覽此功能。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
+> [!IMPORTANT]
+> 您的附加元件發行之後，您無法變更 **\[訂閱期間\]** 選項。
 
 
 ## <a name="free-trial"></a>免費試用
 
-對於訂閱附加元件，此處也會顯示 **\[免費試用\]**。 您必須選擇是否要讓客戶在一段指定時間內免費使用附加元件 (**\[1 週\]** 或 **\[1 個月\]**)，或是否提供 **\[無免費試用\]**。 請注意，您的附加元件發行之後，您無法變更 **\[免費試用\]** 選項。
+如果您選取的產品類型是 **\[訂閱\]**，則此處也會顯示 **\[免費試用\]**。 預設選項是 **\[無免費試用\]**。 如果您想要的話，也可以讓客戶免費使用附加元件一段指定時間 (**1 星期**或 **1 個月**)。 
+
+> [!IMPORTANT]
+> 您的附加元件發行之後，您無法變更 **\[免費試用\]** 選項。
 
 
 ## <a name="content-type"></a>內容類型

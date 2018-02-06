@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "當您在 Windows 開發人員中心儀表板中建立新的附加內容時，您需要指定產品類型並指派產品識別碼。"
+Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
 title: "設定您的附加內容產品類型與產品識別碼"
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
-ms.date: 06/28/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 136077edcf4704f3ea71416719e7c37db43dafda
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: "windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品"
+ms.localizationpriority: high
+ms.openlocfilehash: 24731a378ddc0defada7a94282afd790dfb5b780
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>設定您的附加內容產品類型與產品識別碼
 
@@ -42,21 +43,18 @@ ms.lasthandoff: 08/09/2017
 
 消耗性附加元件有兩種類型：
 - **開發人員管理的消費性產品**：餘額和履行必須在您的 App 內管理。 所有 OS 版本皆支援。
-- **市集管理消耗型**：Microsoft 將會在客戶執行 Windows 10 版本 1607 或更新版本的所有裝置上追蹤餘額；在任何舊版 OS 上不支援。 若要使用此選項，父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯。 另請注意，在父產品發佈之前，您無法將市集管理消耗性附加元件提交至 [市集] (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。 您將必須在提交的 **\[內容\]** 頁面中輸入您市集管理消耗性附加元件的數量。
+- **Store 管理消耗型**：Microsoft 將會在客戶執行 Windows 10 版本 1607 或更新版本的所有裝置上追蹤餘額；在任何舊版 OS 上不支援。 若要使用此選項，父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯。 另請注意，在父產品發佈之前，您無法將 Store 管理消耗性附加元件提交至 [Store] (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。 您將必須在提交的 **\[內容\]** 頁面中輸入您 Store 管理消耗性附加元件的數量。
 
 <span id="subscription" />
 ### <a name="subscription"></a>訂閱
 
 如果您想要向客戶收取附加元件的週期性費用，請選擇 **\[訂閱\]**。
 
-> [!NOTE]
-> 目前，只有參與早期採用者計畫的一組開發人員帳戶才可以建立訂閱附加元件。 未來我們會讓所有開發人員帳戶都可以建立訂閱附加元件，這份初步文件現在可讓開發人員預覽此功能。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
-
 客戶取得一開始訂閱附加元件之後，將會繼續向其收取週期性費用，才能繼續使用附加元件。 客戶隨時都可以取消訂閱，避免進一步的費用。 您將需要在提交的 **\[內容\]** 步驟指定訂閱期間，以及是否提供免費試用。
 
 訂閱附加元件僅支援執行 Windows 10 版本 1607 或更新版本的客戶。 父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯，而且必須使用 **Windows.Services.Store** 命名空間中的 App 內購買 API，而不是 **Windows.ApplicationModel.Store** 命名空間中的 API。 如需有關這些命名空間之間差異的詳細資訊，請參閱 [App 內購買和試用版](../monetize/in-app-purchases-and-trials.md)。
 
-您必須先提交父產品，才能將訂閱附加元件發行至市集 (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。
+您必須先提交父產品，才能將訂閱附加元件發行至 Store (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。
 
 ## <a name="product-id"></a>產品識別碼
 
@@ -69,5 +67,5 @@ ms.lasthandoff: 08/09/2017
 -   產品識別碼的長度不能超過 100 個字元。
 -   產品識別碼不能包含下列任何字元：**&lt; &gt; \* % &amp; : \\ ? + ,**
 -   若要在所有作業系統版本中提供您的附加內容，您只能使用英數字元、句點和/或底線。 如果您使用任何其他類型的字元，附加內容將無法供執行 Windows Phone 8.1 或更舊版本的客戶購買。
--   產品識別碼在 Windows 市集中不一定要是唯一的，但是對您的開發人員帳戶則必須是唯一的。
+-   產品識別碼在 Microsoft Store 中不一定要是唯一的，但是對您的開發人員帳戶則必須是唯一的。
  

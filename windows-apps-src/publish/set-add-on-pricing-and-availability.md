@@ -1,27 +1,25 @@
 ---
 author: jnHs
-Description: "提交附加內容時，在價格與可用性頁面上的選項會決定您的附加內容計費內容，以及提供給客戶的方式。"
+Description: When submitting an add-on, the options on the Pricing and availability page determine what to charge for your add-on and how it should be offered to customers.
 title: "設定附加內容價格與可用性"
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 09671148e670acbfdbc944558a2738712f848dd5
-ms.sourcegitcommit: de6bc8acec2cd5ebc36bb21b2ce1a9980c3e78b2
+keywords: "windows 10, uwp, 附加元件, iap, 價格"
+ms.localizationpriority: high
+ms.openlocfilehash: 8eb2321ec6d2bc8602438e2dc66ca1d96690a3f8
+ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 01/12/2018
 ---
 # <a name="set-add-on-pricing-and-availability"></a>設定附加內容價格與可用性
 
 
 提交附加內容時，在**價格與可用性**頁面上的選項會決定您的附加內容計費內容，以及提供給客戶的方式。
-
-> [!NOTE]
-> 我們最近已經更新此頁面上的可用選項。 如果在這些選項可供使用之前您有任何進行中的提交，該提交仍會顯示較舊的選項。 您可以刪除該提交，然後建立新提交，如果您想要使用最新選項。 否則，最新選項會在您發行進行中的提交後，於下一次更新時生效。
 
 ## <a name="markets"></a>市場
 
@@ -78,7 +76,7 @@ ms.lasthandoff: 08/17/2017
 選擇 [**不早於 \[日期\]**] 可確保提交項目要到某個日期之後才會發行。 使用此選項，您的提交項目會在指定日期的當天或之後立即發行。 此日期至少必須是未來的 24 小時後。 除了日期，您還能指定應開始發行提交項目的時間。
  
 > [!NOTE]
-> 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Windows 市集無法保證將會在特定日期推出您的附加內容 (或更新)。  
+> 認證或發行期間的延遲會造成實際的發行日期晚於您要求的日期。 Microsoft Store 無法保證將會在特定日期推出您的附加內容 (或更新)。  
 
 
 
