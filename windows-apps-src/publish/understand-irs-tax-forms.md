@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "了解 Microsoft 寄發的稅單，包括哪些人會接收到以及收到的時機。"
-title: "了解 Microsoft 寄發的 IRS 稅單"
+Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
+title: 了解 Microsoft 寄發的 IRS 稅單
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 03/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
-ms.openlocfilehash: bffb666184f52e6e6491d8651414ecbc269352b8
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 0bdae8a8489ddf4f2ec7eb7a619631bd4fa26e9e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 06/21/2017
 | IRS 稅單 | 說明 | 可用性 |
 |--------------|-------------|--------------|
 |1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本表單將於 **1 月 31 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
-|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制)。 | 紙本表單將於 **3 月 15 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
+|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 紙本表單將於 **3 月 15 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
 
 > [!NOTE]
 > IRS 稅單上所列的地址來自於您[稅務設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
@@ -39,19 +40,19 @@ ms.lasthandoff: 06/21/2017
      <th> 我應收到此表單</th>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度**銷售超過 200 個應用程式**，其中銷售總額**超過 $20,000 美元** (**不**含透過 Windows 10 市集於巴西及中國所進行的銷售。)</td>
-    <td valign="top">**1099-K** :<br>
+     <td valign="top">我在適用的納税年度**銷售超過 200 個應用程式**，其中銷售總額**超過 $20,000 美元** (**不**含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
+    <td valign="top">**1099-K**：<br>
 報稅者：Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
 <br>
 **重要：**Form 1099-K 內含**購買總額** 量，非您收到的款項。</td>
   </tr>
   <tr> 
-     <td valign="top">我透過 Windows 10 市集於巴西及中國所進行的應用程式銷售**款項至少有 $10 美元**。<br>
+     <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到**至少 $10 美元的款項**。<br>
 <br>
 **或**<br>
 <br>
-我在適用的納税年度從 Microsoft 收到 $600  美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
+我在適用的納税年度從 Microsoft 收到 $600 美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
     <td valign="top">**1099-MISC**：<br>
 付款者：Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>

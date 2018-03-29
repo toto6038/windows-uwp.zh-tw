@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "App 提交程序的 [年齡分級] 頁面讓您能夠提供 app 的相關資訊，因此，它可以接收到來自國際年齡分級聯盟 (IARC) 的適當年齡分級。"
-title: "年齡分級"
+Description: The Age ratings page of the app submission process lets you provide information about your app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
+title: 年齡分級
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 4adac59c0508bcdd9c21180a1c6dcb70fc4532b3
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+keywords: windows 10, uwp, 年齡分級, 遊戲分級, iarc, 分級, 問卷, 分級委員會, 內容分級
+ms.localizationpriority: high
+ms.openlocfilehash: 0af2d316b0d0c4705c4669ef910f37845ca78aa8
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="age-ratings"></a>年齡分級
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 07/20/2017
 當您第一次提交 App (或第一次更新使用較舊的年齡分級程序發佈的 App) 時，會提示您完成一份具有多個選項的問卷，以判斷 App 的年齡分級。
 
 > [!IMPORTANT]
-> 如果您已經在其他店面完成應用程式的問卷且具備 IARC 分級識別碼，就能選取選項來將您的分級識別碼提供給我們。 我們將會使用您的識別碼，將現有的分級與您在 Windows 市集中的 App 產生關聯。
+> 如果您已經在其他店面完成應用程式的問卷且具備 IARC 分級識別碼，就能選取選項來將您的分級識別碼提供給我們。 我們將會使用您的識別碼，將現有的分級與您在 Microsoft Store 中的 App 產生關聯。
 
 您必須準確地回答問題。 在此程序中，我們會將您的發行者顯示名稱及電子郵件地址與 IARC 共享。 當您完成問卷之後，IARC 分級系統將會根據您的回應，提供年齡和內容分級資訊。 在不同的市場中向客戶顯示您的 App 時，我們將會使用這個分級資訊。 您也將收到來自 IARC 的電子郵件，其中包含您的 App 發佈時，App 分級的確認。
 
@@ -38,7 +39,10 @@ ms.lasthandoff: 07/20/2017
 <span id="boards" />
 
 > [!NOTE]
-> 南韓的法律要求遊戲必須經過南韓[遊戲等級委員會](http://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您的 app 是遊戲，而您想要在南韓提供使用，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
+> 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](http://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您將提交遊戲，而您想要在南韓提供使用時，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
+
+> [!NOTE]
+> 如果您要提交會在台灣上市的遊戲，法律規定您必須使用[此表單](https://go.microsoft.com/fwlink/?linkid=867281)來登錄提供的 CSRR 分級。 
 
 <span id="appeal" />
 ## <a name="appealing-ratings-or-refused-classifications"></a>申訴分級或拒絕分類
@@ -48,9 +52,9 @@ ms.lasthandoff: 07/20/2017
 在某些情況下，您 App 的分級可能會使 App 在特定國家或地區被歸類為不適當的 App。 如果發生這個情況，您將會看到指示無法對其提供您 App 之市場的訊息。 如果您不同意此分類 (或其他任何事項)，可以使用 IARC 寄送給您之分級憑證電子郵件中顯示的連結要求申訴。
 
 
-## <a name="previous-windows-store-age-ratings"></a>舊版 Windows 市集年齡分級
+## <a name="previous-microsoft-store-age-ratings"></a>舊版 Microsoft Store 年齡分級
 
-以前是由開發人員指定他們的 App 年齡分級，而非完成問卷。 以下可找到舊版的 Windows 市集年齡分級解析：
+以前是由開發人員指定他們的 App 年齡分級，而非完成問卷。 以下可找到舊版 Microsoft Store 年齡分級明細：
 
 | 年齡分級                           | 說明                            |
 |--------------------------------------|----------------------------------------|

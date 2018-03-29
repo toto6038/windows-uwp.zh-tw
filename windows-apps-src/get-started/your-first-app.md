@@ -1,33 +1,24 @@
 ---
-author: jken
+author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: "建立您的第一個 App"
-description: "這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。"
-ms.author: jken
-ms.date: 03/16/2017
+title: 建立您的第一個 App
+description: 使用您最愛的程式設計語言，建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
+ms.author: quradic
+ms.date: 1/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: fca180db42fcd5b8b9c30bd67fe2bb890a817c78
-ms.sourcegitcommit: a2908889b3566882c7494dc81fa9ece7d1d19580
+keywords: windows 10, uwp, 入門, 開始, c#, c++, JavaScript
+ms.localizationpriority: high
+ms.openlocfilehash: 39c9a6c65f5eb6ca828b782e6550d92601165481
+ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/31/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 
-## <a name="write-a-uwp-app-using-your-favorite-programming-language"></a>使用您最愛的程式設計語言撰寫 UWP app
-
-![建置您的 App](images/build-your-app.png)
-
-歡迎使用 UWP ([何謂 UWP？](whats-a-uwp.md)) 平台！ 這些教學課程將協助您使用所選擇的語言來建立您的第一個 UWP app。 您將會了解如何：
-
--   在 Microsoft Visual Studio 中建立 UWP 專案。
--   將 UI 元素和程式碼新增至專案。
--   在您的應用程式中使用筆墨與 Dial。
--   使用協力廠商程式庫加入新的功能。
--   在本機電腦上建置並偵錯 App。
+歡迎使用 UWP ([何謂 UWP？](whats-a-uwp.md)) 平台！ 這些教學課程將協助您使用所選擇的語言來建立您的第一個 UWP app。
 
 若要開始使用，請選擇您最愛的語言！
 
@@ -44,24 +35,11 @@ ms.lasthandoff: 05/31/2017
 * [Windows 10 開發人員指南](https://go.microsoft.com/fwlink/?linkid=850804)
 * [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
 
-如果您已準備好要嘗試比 "Hello, World!" 更有趣的內容，請嘗試這個 C# 及 MonoGame 教學課程︰
+如果您已準備好要嘗試比 "Hello, World!" 更有趣的內容，請嘗試下列教學課程︰
 
-* [適用於Windows 市集的簡單 2D UWP 遊戲，以 C# 和 MonoGame 撰寫](get-started-tutorial-game-mg2d.md)
+* [UWP 中的 XAML 與資料繫結](xaml-basics-intro.md)
+* [適用於 Microsoft Store 的簡單 2D UWP 遊戲，以 C# 和 MonoGame 撰寫](get-started-tutorial-game-mg2d.md)
 
-## <a name="javascript-and-html"></a>JavaScript 和 HTML
-
-利用您的 Web 技能，使用 HTML5、CSS3 和 JavaScript 來建置 App。
-
-* [使用 HTML 和 JavaScript 建立 "Hello, world" app](create-a-hello-world-app-js-uwp.md)
-* [以 JavaScript 和 CreateJS 撰寫的適用於 Windows 市集的簡單 2D UWP 遊戲](get-started-tutorial-game-js2d.md)
-* [以 JavaScript 和 threeJS 撰寫的適用於 Windows 市集的 3D UWP 遊戲](get-started-tutorial-game-js3d.md)
-* [單頁 Web 應用程式與 REST API](get-started-tutorial-fullstack-web-app.md)
-
-需要重新學習 Web 技能嗎？
-
-* [適用於初學者的 JavaScript 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [適用於初學者的 HTML5 與 CSS3 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Visual C++ 元件延伸 (C++/CX) 和 XAML
 
@@ -74,36 +52,38 @@ ms.lasthandoff: 05/31/2017
 * [C++：一般用途語言和程式庫入門](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
 * [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
-## <a name="using-features-unique-to-windows-10"></a>使用對 Windows 10 唯一的功能
+如果您已準備好要嘗試比 "Hello, World!" 更有趣的內容，請嘗試下列教學課程︰
 
-Windows 10 有什麼特別？ 除了其他眾多功能外，還有筆跡控制器與 Surface Dial 控制器。
+* [UWP 中的 XAML 與資料繫結](xaml-basics-intro.md)
 
-* [在您的 UWP 應用程式中使用筆跡](ink-walkthrough.md)
-* [支援 Surface Dial](radialcontroller-walkthrough.md)
+## <a name="javascript-and-html"></a>JavaScript 和 HTML
 
-## <a name="cutting-edge-ideas"></a>前衛的創意
+利用您的 Web 技能，使用 HTML5、CSS3 和 JavaScript 來建置 App。
 
-對探索虛擬實境感興趣？
+* [使用 HTML 和 JavaScript 建立 [Hello, world] App](create-a-hello-world-app-js-uwp.md)
 
-* [新增 WebVR 至 Babylon.js game](adding-webvr-to-a-babylonjs-game.md)
+將您的 JavaScript 和 HTML 技能擴展到 UWP 之外以建立 Web 應用程式，或在網站上透過 WebVR 探索虛擬實境。
 
-## <a name="objective-c"></a>Objective-C
+* [Microsoft Edge 開發人員文件](https://docs.microsoft.com/microsoft-edge/)
+* [將 WebVR 與 Microsoft Edge 搭配使用](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
 
-您更像是 iOS 開發人員嗎？ 
+Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，並在 Microsoft Store 上推廣。
 
-* 請使用[適用於 iOS 的 Windows 橋接器](https://developer.microsoft.com/windows/bridges/ios)將您現有的程式碼轉換成 UWP app，然後繼續以 Objective-C 進行開發。
+* [託管的 Web 應用程式](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [將您的 Web 應用程式轉換成 UWP app](../porting/hwa-create-windows.md)
 
+需要重新學習 Web 技能嗎？
 
-## <a name="cross-platform-and-mobile-development"></a>跨平台和行動應用程式開發
-
-* 需要以 Android 和 iOS 做為目標嗎？ 請查看 [Xamarin](https://www.xamarin.com)。
+* [適用於初學者的 JavaScript 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [適用於初學者的 HTML5 與 CSS3 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="see-also"></a>另請參閱
 
-* [發行您的 Windows 市集應用程式](https://developer.microsoft.com/store/publish-apps)。
+* [UWP 教學課程](create-uwp-apps.md)
+* [發佈您的 UWP app](https://developer.microsoft.com/store/publish-apps)。
 * [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [通用 Windows app 是什麼？](whats-a-uwp.md)
 * [開始設定](get-set-up.md)
 * [註冊 Windows 帳戶](sign-up.md)
-

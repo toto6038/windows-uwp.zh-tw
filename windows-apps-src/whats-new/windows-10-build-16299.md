@@ -1,19 +1,19 @@
 ---
 author: QuinnRadich
-title: "Windows 10 中適合開發人員的新功能、工具與特色"
-description: "Windows 10 組建 16299 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。"
-keywords: "新功能, 更新, 功能, 全新, Windows 10, 1709, 10 月, 最新版, 開發人員, 16299, Fall Creators"
+title: Windows 10 中適合開發人員的新功能、工具與特色
+description: Windows 10 組建 16299 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
+keywords: 新功能, 更新, 功能, 全新, Windows 10, 1709, 10 月, 最新版, 開發人員, 16299, Fall Creators
 ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 852d59433f3dfe24da6509e588e350dbe1011bbf
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 1e61ede3d16d9c92c28a0e40a0dd65951444ef3a
+ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 的新功能
 
@@ -27,10 +27,12 @@ Windows 10 組建 16299 (也稱為 Fall Creators Update 或 1709 版本) 搭配 
  :------ | :------
 條件式 XAML | 您現在可以使用[條件式 XAML](../debug-test-perf/conditional-xaml.md) 來建立[版本調適型應用程式](../debug-test-perf/version-adaptive-apps.md)。 條件式 XAML 可讓您在 XAML 標記中使用 **ApiInformation.IsApiContractPresent** 方法，因此可以根據 API 是否存在來設定屬性和具現化物件，而不必使用程式碼後置。
 設計工具組 | [UWP app 的設計工具組和資源](../design/downloads/index.md)已藉由新增 Sketch 及 Adobe XD 工具組進行擴充。 先前既有的工具組也已更新並修訂，為您的 UWP app 提供更強固的控制項與版面配置範本。 此外，也加入新的工具和範例，以提供範例與靈感。
-Fluent 設計效果 | 這些新效果屬於 Fluent 設計系統的一部分，採用深度、透視以及移動協助使用者專注於重要的 UI 項目。 </br>* [壓克力材質](../design/style/acrylic.md)是一種建立透明紋理的筆刷。 </br>* [視差效果](../design/motion/parallax.md)可為您的應用程式增加立體深度及透視效果。 </br>* [顯色](../design/style/reveal.md)會顯目提示您應用程式中的重要項目。 </br> 如需詳細資訊，請參閱 [Fluent 設計概觀](https://fluent.microsoft.com/)。
+Fluent Design 效果 | 這些新效果屬於 Fluent Design 系統的一部分，採用深度、透視以及移動協助使用者專注於重要的 UI 項目。 </br>* [壓克力材質](../design/style/acrylic.md)是一種建立透明紋理的筆刷。 </br>* [視差效果](../design/motion/parallax.md)可為您的應用程式增加立體深度及透視效果。 </br>* [顯色](../design/style/reveal.md)會顯目提示您應用程式中的重要項目。 </br> 如需詳細資訊，請參閱 [Fluent Design 概觀](https://fluent.microsoft.com/)。
 鍵盤快速操作 | 利用[鍵盤快速鍵](../design/input/keyboard-accelerators.md)或快速鍵，提升您應用程式的存取性和可用性。 這些功能提供直覺的方式，讓使用者不需瀏覽應用程式 UI 即可叫用常見的動作或命令，並可設定為符合其功能的必要範圍。
 筆跡 | [CoreIncrementalInkStroke](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreincrementalinkstroke) API 允許使用個別 **InkPoint** 物件，建立以遞增方式呈現的個別筆墨筆劃。 </br></br> [CoreInkPresenterHost](https://docs.microsoft.com/uwp/api/windows.ui.input.inking.core.coreinkpresenterhost) API 讓您不需相關 **InkCanvas** 控制項即可裝載 **InkPresenter** 物件。
 星形控制器 | [RadialControllerConfiguration](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontrollerconfiguration)API 已更新，可將 **RadialController** 功能表的範圍設定在應用程式的檢視或程序。
+動態磚 | [從傳統型橋接器 Win32 應用程式釘選次要磚](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md)。
+快顯通知 | 使用按鈕的[擱置更新](../design/shell/tiles-and-notifications/toast-pending-update.md)在快顯通知建立多個步驟互動。
 UI 控制項 | 這些新的控制項使得快速建立美觀 UI 的工作變得更為輕鬆。 </br>* [色彩選擇器控制項](../design/controls-and-patterns/color-picker.md)可讓使用者瀏覽及選取色彩。 </br>* [導覽檢視控制項](../design/controls-and-patterns/navigationview.md)可讓您將頂層導覽功能輕鬆的加入到您的應用程式之中。 </br>* [個人圖片控制項](../design/controls-and-patterns/person-picture.md)會為個人顯示圖片影像。 </br>* [評分控制項](../design/controls-and-patterns/rating.md)可讓使用者輕鬆的檢視及設定評分，以反映其對內容和服務的滿意程度。
 語氣和語調 | 我們新增新的 [UWP app 中的語氣和語調指導方針](../design/style/voice-and-tone.md)，提供撰寫應用程式中文字的建議。 無論您要創造什麼，請切記您使用的語言必須平易近人、友善且具有資訊性。
 
@@ -95,7 +97,7 @@ Store 清單 | Store 清單已藉由新功能而獲得增強，用以吸引潛�
 
 - 示範與各種服務整合，例如 Facebook、Microsoft Graph (用於驗證)、圖形作業和好友探索。
 - 可搭配 Yelp 和 Bing 地圖來提供餐廳建議。
-- 在 UWP app 中納入 Fluent 設計系統元素，包括壓克力風格、顯色和連接動畫。
+- 在 UWP app 中納入 Fluent Design 系統元素，包括壓克力風格、顯色和連接動畫。
 
 ### <a name="quiz-game"></a>測驗遊戲
 

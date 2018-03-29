@@ -1,19 +1,20 @@
 ---
 author: jnHs
-Description: "支付摘要說明您透過 App 和附加元件所賺取金額的相關詳細資料。 也可以讓您了解何時會收到付款與付款金額。"
-title: "支付摘要"
+Description: The Payout summary shows you details about the money you’ve earned with your apps and add-ons. It also lets you know when you’ll receive payments and how much you'll be paid.
+title: 支付摘要
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: d6a069bab6bc24c6f6388eec7ad63c0c79525fd9
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
+ms.localizationpriority: high
+ms.openlocfilehash: 5be84a7fe6918a0ba272aead83ec26e68669c477
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="payout-summary"></a>支付摘要
 
@@ -29,6 +30,7 @@ ms.lasthandoff: 06/21/2017
 >
 > 付款是每月進行一次 (假設已符合任何適用的付款門檻)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何應付款項。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。 如需詳細資訊，請參閱[付款門檻、方法和時間範圍](payment-thresholds-methods-and-timeframes.md)。
 
+若要檢視您的 **\[支付摘要\]**，請按一下開發人員中心右上角附近顯示的 **\[支付\]** 圖示，然後選取 **\[支付摘要\]**。
 
 ## <a name="current-proceeds-and-payments"></a>目前的收益與付款
 
@@ -56,7 +58,7 @@ ms.lasthandoff: 06/21/2017
 
 在每份對帳單的上方，您會看見每月付款的總金額。 在下方的 **\[核發付款\]** 中，您即可看到如何計算您付款金額的摘要。
 
-在 **\[收益解析\]** 區段底下，您可以依 app 檢閱各個市場與收益來源 (例如 Windows Phone 市集、Windows 市集 8、Windows 市集等等) 的營收詳細資料。 您也會看見任何[調整](#proceeds-by-app-and-adjustments)的詳細資料，包括日期、金額，以及調整的原因。
+在 **\[收益明細\]** 區段底下，您可以依 app 檢閱各個市場與收益來源 (例如 Microsoft Store、Windows 市集 8、Windows Phone 市集等) 的營收詳細資料。 您也會看到有關所做任何[調整](#proceeds-by-app-and-adjustments)的詳細資料，包括調整的日期、金額和原因。
 
 請注意上述提及的區段只會顯示來自 app 銷售的收益 (及調整) 的相關資訊；如果您透過廣告來賺取報酬，則您會看到另一個不同的 Microsoft Advertising 區段，提供有關支付和貨幣轉換的詳細資料。
 
@@ -80,7 +82,7 @@ ms.lasthandoff: 06/21/2017
 
 | 欄位名稱              | 說明                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| 收入來源          | 您的收入來源，根據該筆交易發生的位置 (例如 Windows 市集、Windows Phone 市集、 Windows 市集 8、廣告等)。 |
+| 收入來源          | 您的收入來源，根據該筆交易發生的位置 (例如 Microsoft Store、Windows Phone 市集、 Windows 市集 8、廣告等)。 |
 | 訂單識別碼                |  唯一的訂單識別碼。 此識別碼可讓您識別購買交易與其各自的非購買交易 (如退款等)。 兩者具有相同的訂單識別碼。 此外，如果是分割付款的情況 (單一購買使用多種付款方式)，這樣可讓您連結各購買交易。                                                                                                          |
 | 交易識別碼          |       唯一的交易識別碼。  |
 | 交易日期時間   | 發生該筆交易的日期與時間 (UTC)。                                                                                        |
@@ -89,7 +91,7 @@ ms.lasthandoff: 06/21/2017
 | 父系產品名稱     | 父系產品的名稱。 請注意：如果該交易沒有父系產品，則父系產品名稱 = 產品名稱。   |
 | 產品名稱            | 產品的名稱。                                                                                                                     |
 | 產品類型            | 產品類型 (例如應用程式、附加元件、遊戲等等)                                                                                        |
-| 數量                | 當收入來源為商務用 Windows 市集時，數量代表購買的授權數目。 針對所有其他的收入來源，數量永遠都會是 1。 注意︰即使單一交易分成兩個行項目，因為使用兩個不同的付款方式，每個行項目會顯示數量 1。    |
+| 數量                | 當收入來源為商務用 Microsoft Store 時，數量代表購買的授權數目。 針對所有其他的收入來源，數量永遠都會是 1。 注意︰即使單一交易分成兩個行項目，因為使用兩個不同的付款方式，每個行項目會顯示數量 1。    |
 | 交易類型        | 交易類型 (例如購買、退貨、作廢、退款等等)                                                                |
 | 付款方式          | 交易使用的客戶付款方式 (例如，卡片、行動裝置電信業者帳單、PayPal 等)。                                 |
 | 國家/地區        | 發生該筆交易的國家/地區。                                                                                            |

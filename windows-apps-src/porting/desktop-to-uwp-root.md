@@ -2,7 +2,7 @@
 author: normesta
 Description: Create a modern Windows app package for your existing Windows Forms, WPF, or Win32 app or game. Add modern experiences for Windows 10 users and simplify deployment and monitization.
 Search.Product: eADQiWindows 10XVcnh
-title: "傳統型橋接器"
+title: 傳統型橋接器
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: b8a70a249a91f654354d27faeffdf5f605fd9c26
-ms.sourcegitcommit: 12cc05b59b2a249a7683a8692ed453da03a91b28
+ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
+ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="desktop-bridge"></a>傳統型橋接器
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/04/2018
 除了用來提供 Windows 10 體驗的程式碼，您的應用程式仍保持不變，您可以繼續將應用程式散佈給現有的 Windows 7、Windows Vista 或 Windows XP 使用者基礎。 在 Windows 10 上，您的應用程式會一如往常，繼續以完全信任使用者模式執行。
 
 >[!IMPORTANT]
->傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 Anniversary Edition (10.0；組建 14393) 或更新版本的專案。
+>傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 年度更新版 (10.0；組建 14393) 或更新版本的專案。
 
 > [!NOTE]
 > 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片將會逐步解說，協助您將您的傳統型應用程式帶往通用 Windows 平台 (UWP)。

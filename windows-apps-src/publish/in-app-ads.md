@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: If your app displays ads using the Microsoft Advertising SDK, use the In-app ads page of the Dev Center dashboard to manage your use of ads.
-title: "應用程式內廣告"
+title: 應用程式內廣告
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ms.author: wdg-dev-content
-ms.date: 12/04/2017
+ms.date: 2/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: f0faa69cef0f98171c4679d6a94b01199b215cb4
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -78,6 +78,8 @@ ms.lasthandoff: 12/12/2017
 
 若要編輯 UWP 廣告單元的[流量分配設定](#mediation)或使用廣告單元所在應用程式的 [COPPA 合規性](#coppa)，請按一下廣告單元名稱。
 
+請注意，廣告單元過去 6 個月都沒有活動，我們會將其標示為**非使用中**，而且最後會將其從您的儀表板中移除。 您可以使用篩選，只顯示**使用中**或**非使用中**廣告單元。 如果您看到任何您認為不正確標示為**非使用中**的廣告單元時，請[連絡客戶支援](http://aka.ms/storesupport)。
+
 <span id="mediation" />
 ## <a name="mediation-settings"></a>流量分配設定
 
@@ -120,8 +122,8 @@ ms.lasthandoff: 12/12/2017
 | AOL 和 AppNexus |  這是透過合作夥伴網路 AOL 和 AppNexus 提供廣告的 Microsoft 管理廣告網路。<p/>**注意**：AOL 和 AppNexus 在 \[橫幅\] 廣告單元的 **\[付費廣告網路\]** 清單中始終排在第一，而且無法變更至這類廣告的較低排名。 | 橫幅、插播式影片 |
 | AppNexus (直接) | 選取此選項可從 [AppNexus](https://www.appnexus.com) 提供插播式影片廣告。 | 插播式影片、原生  |
 | Microsoft 應用程式安裝廣告 | 選取此選項可提供 Windows 生態系統中其他[為自己的 App 建立促銷廣告活動](create-an-ad-campaign-for-your-app.md)的開發人員建立的應用程式安裝廣告或應用程式重新佔用廣告。  |  橫幅、插播式橫幅、原生  |
-| Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅  |
-| Revcontent |  選取此選項可從 [Revcontent](http://www.revcontent.com/) 提供廣告。 |  橫幅  |
+| Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅、插播式橫幅  |
+| Revcontent |  選取此選項可從 [Revcontent](http://www.revcontent.com/) 提供廣告。 |  橫幅、原生  |
 | Smaato |  選取此選項可從 [Smaato](https://www.smaato.com/) 提供廣告。 |  橫幅  |
 | smartclip |  選取此選項可從 [smartclip](http://www.smartclip.com/) 提供廣告。 |  插播式影片  |
 | SpotX |  選取此選項可從 [SpotX](https://www.spotx.tv/) 提供廣告。 |  插播式影片  |

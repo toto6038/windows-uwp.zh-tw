@@ -1,26 +1,27 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板的「下載數」報告讓您能夠查看已取得並安裝您 app 的對象、人數統計資料及平台詳細資訊。"
-title: "取得次數報告"
+Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+title: 下載數報告
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: d6540db7a3d0a045fa6a2c8fec617f045f4a1bf4
-ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
+ms.localizationpriority: high
+ms.openlocfilehash: d1675b3a2ffe879585ea2fd3792b47e7bdc7a8af
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 02/14/2018
 ---
-# <a name="acquisitions-report"></a>取得次數報告
+# <a name="acquisitions-report"></a>下載數報告
 
 
-Windows 開發人員中心儀表板的**「下載數」**報告讓您能夠查看已取得並安裝您 app 的對象、人數統計資料及平台詳細資訊。 它也可讓您取得有關 Windows 10 客戶如何抵達您的應用程式清單的資訊。
+Windows 開發人員中心儀表板的**「下載數」**報告讓您能夠查看已取得並安裝您 app 的對象、人數統計資料及平台詳細資訊。 這還可讓您取得有關 Windows 10 (包括 Xbox) 客戶如何來到您的應用程式清單的資訊。
 
-您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
+您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
 
 在此報告中，一個**下載數**表示一位新客戶已取得您 app 的授權 (不論是付費或免費取得)。 **安裝**指的是安裝在 Windows 10 裝置上的 app。
 
@@ -37,7 +38,7 @@ Windows 開發人員中心儀表板的**「下載數」**報告讓您能夠查�
 您也可以展開 **\[篩選條件\]**，依市場和/或裝置類型篩選此頁面上的所有資料。
 
 -   **市場**：預設篩選條件是 **\[所有市場\]**，但您可以限制資料為一或多個市場中的下載數。
--   **裝置類型**：預設設定為 **\[所有裝置\]**。 如果您只想要顯示來自特定裝置類型的下載數資料，您可以在此處選擇特定的類型。
+-   **裝置類型**：預設設定為 **\[所有裝置\]**。 如果您只想要顯示來自特定裝置類型 (例如個人電腦、主機或平板電腦) 的下載數資料，您可以在此處選擇特定的類型。
 
 下列所有圖表中的資訊將反映您選取的日期範圍和任何篩選條件。 某些區段也可讓您套用其他篩選。
 
@@ -55,10 +56,10 @@ Windows 開發人員中心儀表板的**「下載數」**報告讓您能夠查�
 
 ## <a name="installs"></a>安裝數
 
-**安裝數**圖表顯示在所選時段內，我們偵測到客戶在 Windows 10 裝置上成功安裝您的應用程式的次數。 會顯示總數，以及圖表依天或星期顯示安裝數（根據您已選取的持續時間）。 您可以選擇性地依據特定套件版本篩選結果。
+**安裝數**圖表顯示在所選時段內，我們偵測到客戶在 Windows 10 裝置 (包括 Xbox One 主機) 上成功安裝您的應用程式的次數。 會顯示總數，以及圖表依天或星期顯示安裝數（根據您已選取的持續時間）。 您可以選擇性地依據特定套件版本篩選結果。
 
 安裝總數包括︰
--   **在多部 Windows 10 裝置上安裝。** 例如，如果同一位客戶在兩部 Windows 10 電腦和一支 Windows 10 手機上安裝您的應用程式，會算為三個安裝。
+-   **在多部 Windows 10 裝置上安裝。** 例如，如果同一位客戶在兩部 Windows 10 電腦和一台 Xbox One 主機上安裝您的應用程式，就算為三個安裝。
 -   **重新安裝。** 例如，如果客戶今天安裝您的應用程式，明天解除安裝應用程式，然後在下個月重新安裝應用程式，便算成兩個安裝。
 
 安裝總數不包括或反映︰
@@ -76,7 +77,7 @@ Windows 開發人員中心儀表板的**「下載數」**報告讓您能夠查�
 **取得漏斗圖**顯示多少客戶完成漏斗圖的每個步驟，從檢視市集頁面到使用應用程式，以及轉換率。 這項資料可以協助您識別哪些領域可能要提高投資，以增加下載數、安裝數或使用量。
 
 > [!IMPORTANT]
-> **取得漏斗圖**只針對過去 90 天的 Windows 10 客戶顯示資料。
+> **取得漏斗圖**只針對過去 90 天的 Windows 10 (包括 Xbox) 客戶顯示資料。
 
 漏斗圖的步驟是︰
 

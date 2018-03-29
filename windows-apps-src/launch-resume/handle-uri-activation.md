@@ -1,25 +1,22 @@
 ---
 author: TylerMSFT
-title: "處理 URI 啟用"
-description: "了解如何登錄應用程式，以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。"
+title: 處理 URI 啟用
+description: 了解如何登錄應用程式，以使它成為統一資源識別項 (URI) 配置名稱的預設處理常式。
 ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ms.author: twhitney
-ms.date: 02/08/2017
+ms.date: 10/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 40c70770028853d5912ef63f84259245252ce881
-ms.sourcegitcommit: 7f03e200ef34f7f24b6f8b6489ecb44aa2b870bc
+ms.localizationpriority: high
+ms.openlocfilehash: 754fa7c1fe805b45b33be1d560d07c22646d497c
+ms.sourcegitcommit: 444eaccbdcd4be2f1a1e6d4ce5525ba57e363b56
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/01/2017
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="handle-uri-activation"></a>處理 URI 啟用
-
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
 
 **重要 API**
 
@@ -30,12 +27,11 @@ ms.lasthandoff: 08/01/2017
 
 建議您只有當您希望處理某個 URI 配置類型的所有 URI 啟動時，才登錄該 URI 配置名稱。 如果您選擇登錄某個 URI 配置名稱，則在針對該 URI 配置名稱啟用您的 app 時，您必須為使用者提供預期的功能。 例如，登錄 mailto: URI 配置名稱的 app 必須開啟新的電子郵件訊息，以便讓使用者撰寫新的電子郵件。 如需 URI 關聯的詳細資訊，請參閱[檔案類型與 URI 的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh700321)。
 
-這些步驟示範如何登錄自訂 URI 配置名稱 alsdk://，以及如何在使用者啟動 alsdk:// URI 時啟用您的 app。
+這些步驟示範如何登錄自訂 URI 配置名稱 `alsdk://`，以及如何在使用者啟動 `alsdk://` URI 時啟用您的 App。
 
-> **注意**  在 UWP 應用程式中，會將特定的 URI 和副檔名保留給內建應用程式和作業系統使用。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 請在[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)中，參閱 URI 配置依字母排列的檔案類型清單，以了解遭保留或禁止而不能為 UWP app 登錄的檔案類型。
+> **注意**：在 UWP app 中，會將特定的 URI 和副檔名保留給內建應用程式和作業系統使用。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 請在[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)中，參閱 URI 配置依字母排列的檔案類型清單，以了解遭保留或禁止而不能為 UWP app 登錄的檔案類型。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>步驟 1：在封裝資訊清單中指定擴充點
-
 
 App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件。 以下是如何指示 app 處理 `alsdk`URI 配置名稱的方法。
 
@@ -63,22 +59,26 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
     這樣會將和這個一樣的 [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 元素新增至封裝資訊清單。 **windows.protocol** 類別指示 app 處理 `alsdk` URI 配置名稱。
 
     ```xml
-          <Extensions>
-            <uap:Extension Category="windows.protocol">
-              <uap:Protocol Name="alsdk">
-                <uap:Logo>images\icon.png</uap:Logo>
-                <uap:DisplayName>SDK Sample URI Scheme</uap:DisplayName>
-              </uap:Protocol>
-            </uap:Extension>
+    <Applications>
+        <Application Id= ... >
+            <Extensions>
+                <uap:Extension Category="windows.protocol">
+                  <uap:Protocol Name="alsdk">
+                    <uap:Logo>images\icon.png</uap:Logo>
+                    <uap:DisplayName>SDK Sample URI Scheme</uap:DisplayName>
+                  </uap:Protocol>
+                </uap:Extension>
           </Extensions>
+          ...
+        </Application>
+   <Applications>
     ```
 
 ## <a name="step-2-add-the-proper-icons"></a>步驟 2：新增適當圖示
 
-成為 URI 配置名稱預設程式的應用程式，會在系統的各個地方顯示它們的圖示，例如 [預設程式] 控制台。 針對此用途，會連同您的專案包含 44x44 圖示。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 請參閱[磚和圖示資產的指導方針](https://docs.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)，以取得圖示的詳細資訊。
+成為 URI 配置名稱預設程式的應用程式，會在系統的各個地方顯示它們的圖示，例如 [預設程式] 控制台。 針對此用途，會連同您的專案包含 44x44 圖示。 請調整為相符的 app 磚標誌外觀，並使用 app 的背景色彩，而不要讓圖示變成透明。 請將標誌延伸至邊緣，且沒有邊框間距。 在白色背景上測試您的圖示。 請參閱[磚和圖示資產的指導方針](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets)，以取得圖示的詳細資訊。
 
 ## <a name="step-3-handle-the-activated-event"></a>步驟 3：處理啟用的事件
-
 
 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) 事件處理常式會收到所有啟用事件。 **Kind** 屬性指示啟用事件的類型。 這個範例是設定來處理 [**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) 啟用事件。
 
@@ -123,12 +123,21 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 
 > **注意**  當透過「通訊協定協定」啟動時，請確定 [返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是應用程式先前的內容。
 
+下列程式碼透過其 URI 以程式設計方式啟動 App：
+
+```cs
+   // Launch the URI
+   var uri = new Uri("alsdk:");
+   var success = await Windows.System.Launcher.LaunchUriAsync(uri)
+```
+
+如需關於如何透過 URI 啟動 App 的詳細資訊，請參閱[啟動 URI 的預設 App](launch-default-app.md)。
+
 建議 app 針對每個開啟新頁面的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。 決定針對啟動和檔案協定使用單一 XAML **Frame** 的 app，應該先清除 **Frame** 瀏覽日誌上的頁面，然後再瀏覽到新頁面。
 
 當透過通訊協定啟用啟動時，app 應該考慮包含能讓使用者回到 app 頂端頁面的 UI。
 
 ## <a name="remarks"></a>備註
-
 
 任何 app 或網站都可以使用您的 URI 配置名稱，包含惡意 app 或網站。 因此您透過 URI 取得的任何資料都可能來自不受信任的來源。 建議您絕對不要採用透過 URI 接收的參數來執行永久動作。 例如，URI 參數可以用來啟動 app 進入使用者的帳戶頁面，但是建議您絕對不要使用它們直接修改使用者的帳戶。
 
@@ -140,16 +149,11 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 
 如果您決定讓 app 針對啟動和通訊協定協定使用單一 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，請先清除 **Frame** 瀏覽日誌上的頁面，然後再瀏覽到新頁面。 當透過通訊協定協定啟動時，請考慮在 app 中包含能讓使用者回到 app 頂端的 UI。
 
-> **備註**  本文章適用於撰寫通用 Windows 平台 (UWP) 應用程式的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
 ## <a name="related-topics"></a>相關主題
-
 
 **完整範例**
 
-* [關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [關聯啟動範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 
 **概念**
 
@@ -167,9 +171,9 @@ App 僅會接受封裝資訊清單中列示之 URI 配置名稱的啟用事件�
 
 **參考資料**
 
-* [**AppX 封裝資訊清單**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+* [AppX 封裝資訊清單](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [Windows.UI.Xaml.Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330)~~
 
  
 

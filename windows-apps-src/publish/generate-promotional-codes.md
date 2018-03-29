@@ -1,29 +1,30 @@
 ---
 author: jnHs
-Description: "您可以為您在 Windows 市集中發佈的 App 或附加元件產生促銷碼。"
-title: "產生促銷碼"
+Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
+title: 產生促銷碼
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 97d0cb79a00140a7255923131f78c2b3fecff1d9
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+keywords: windows 10, uwp, 促銷代碼, 促銷碼, 預付碼, 預付代碼
+ms.localizationpriority: high
+ms.openlocfilehash: 634c0857982924ca1b588519172d77d97dd74791
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 01/22/2018
 ---
-# <a name="generate-promotional-codes"></a>產生促銷碼
+# <a name="generate-promotional-codes"></a>產生促銷代碼
 
 
-您可以為您在 Windows 市集中發佈的 App 或附加元件產生促銷碼。 促銷碼是讓具影響力的使用者能夠免費存取您 App 或附加元件的簡單方式。 您也可以使用促銷碼來處理客戶服務案例，方法是提供使用者免費存取您的 App 或附加元件，搭配 Windows 10 提供[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。
+您可以為您在 Microsoft Store 中發佈的 App 或附加元件產生促銷代碼。 促銷代碼是讓有影響力使用者可以免費存取您的 App 或附加元件的簡單方式。 您也可以使用促銷碼來處理客戶服務案例，方法是提供使用者免費存取您的 App 或附加元件，搭配 Windows 10 提供[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。
 
-每個促銷碼都有您可以散佈給單一使用者或使用者群組的對應獨特可兌換 URL。 使用者只要按一下 URL 即可兌換代碼，並從 Windows 市集安裝您的 App 或附加元件。
+每個促銷代碼都有對應的獨特可兌換 URL，您可以散佈給單一客戶或客戶群組。 客戶只要按一下 URL 即可兌換代碼，並從 Microsoft Store 安裝您的 App 或附加元件。
 
-> [!TIP] 
-> 您可以使用[目標式推播通知](send-push-notifications-to-your-apps-customers.md)散發促銷碼給某一區的客戶。 當您這樣做，請務必使用允許多位客戶使用相同代碼的促銷碼。
+> [!TIP]
+> 您可以使用[目標式推播通知](send-push-notifications-to-your-apps-customers.md)散發促銷代碼給特定客戶區隔。 當您這樣做，請務必使用允許多位客戶使用相同代碼的促銷碼。
 
 在 Windows 開發人員中心儀表板，您可以：
 
@@ -36,29 +37,29 @@ ms.lasthandoff: 06/21/2017
 
 請注意，您的應用程式必須通過 [應用程式認證程序](the-app-certification-process.md)的最終發佈階段，客戶才能兌換促銷碼以安裝它。
 
+
 ## <a name="promotional-code-policies"></a>促銷碼原則
 
+請注意下列促銷代碼原則：
 
-請注意下列促銷碼原則：
-
--   您可以為您發佈到 Windows 市集的任何 App 或附加元件產生促銷碼。 客戶可以在您的應用程式或附加元件所支援的任何版本 Windows 上兑換代碼。
--   促銷碼會在您訂購之日起的 6 個月之後到期 (除非您選擇較早的到期日)。
+-   您可以為您發佈到 Microsoft Store 的任何 App 或附加元件 (但訂閱附加元件除外) 產生促銷代碼。 客戶可以在您的應用程式或附加元件所支援的任何版本 Windows 上兑換代碼。
+-   促銷代碼會在您訂購日期後 6 個月到期 (如果沒有選擇較早的到期日)。
 -   對於每個應用程式或附加元件，您每 6 個月可以產生最多允許 1600 次兌換的促銷碼。 6 個月期間是從提交第一筆促銷碼訂單開始起算，即使您選擇較早的到期日。 每項產品總共 1600 次兌換同時適用於單次使用的代碼和可多次使用的代碼。
--   您必須遵循[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)中定義的需求，包括小節 **3k。促銷碼**。
+-   您必須遵循[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定義的需求，包括小節 **3k。促銷碼**。
+
 
 ## <a name="order-promotional-codes"></a>訂購促銷碼
 
+若要訂購您發佈到 Microsoft Store 的 App 或附加元件的促銷代碼：
 
-訂購您發佈到 Windows 市集的 App 或附加元件的促銷碼：
-
-1.  在 Windows 開發人員中心儀表板的左側瀏覽功能表，展開 **\[吸引\]**，然後選取 **\[促銷碼\]**。
+1.  在 Windows 開發人員中心儀表板的左側瀏覽功能表，展開 **\[吸引\]**，然後選取 **\[促銷代碼\]**。
 
 2.   在 **\[促銷碼\]** 頁面上，按一下 **\[訂購代碼\]**。
 
 3.  在 **\[新促銷碼訂購\]** 頁面上，輸入下列項目：
-    -   選取您要產生代碼的 App 或附加元件。
+    -   選取您要產生代碼的 App 或附加元件 (請注意，您無法產生訂閱附加元件的促銷代碼)。
     -   指定訂單的名稱。 您可以使用這個名稱，在檢閱您的促銷碼使用資料時區分不同代碼的訂購。
-    -   選取訂單類型。 您可以選擇產生一組每個可以使用一次的促銷碼，或者您可以選擇產生一個可以多次使用的促銷碼。 
+    -   選取訂單類型。 您可以選擇產生一組每個可以使用一次的促銷碼，或者您可以選擇產生一個可以多次使用的促銷碼。
     -   指定要訂購的代碼數目 (如果產生一組代碼)，或代碼可兌換的次數 (如果產生一組代碼供多次使用)。
     -   指定促銷碼應生效的時間。 若要選擇特定的開始日期和時間，請清除 [**代碼會立即生效**] 核取方塊。 否則，代碼會立即生效。
     -   指定促銷碼過期的時間。 若要選擇早於 6 個月的特定到期日期和時間，請清除 [**代碼會在 6 個月之後到期**] 核取方塊。
@@ -93,6 +94,7 @@ ms.lasthandoff: 06/21/2017
     -   可兌換的代碼 URL。
     -   引導客戶瀏覽可兌換的 URL，使用他們的 Microsoft 帳戶登入並依照指示來下載並安裝您的應用程式的指示。
 
+
 ## <a name="code-redemption-user-experience"></a>代碼兌換使用者經驗
 
 將促銷碼 (或其可兌換 URL) 發佈給客戶後，客戶就可以使用該 URL 免費取得產品。 按一下可兌換 URL 將會啟動經驗證的 [**兌換您的代碼**] 頁面，網址：<https://account.microsoft.com/billing/redeem>。 這個頁面包含使用者即將兌換應用程式的描述。 如果客戶未使用其 Microsoft 帳戶登入，可能會提示他們登入。 您的客戶也可以造訪 <https://account.microsoft.com/billing/redeem> 並直接輸入代碼。
@@ -100,7 +102,7 @@ ms.lasthandoff: 06/21/2017
 > [!IMPORTANT]
 > 我們建議您在產品完成發行程序之前，不要將促銷碼散發給您的客戶 (即使您已選取 [**在市集推出此產品，但不供搜尋**])。 如果客戶嘗試使用尚未發行的產品的促銷碼，將會看到錯誤。
 
-客戶按一下 [**兌換**] 後，Windows 市集將會開啟應用程式的概觀頁面 (如果他們使用 Windows 10 或 Windows 8.1 裝置)，並且可以按一下 [**安裝**] 免費下載並安裝應用程式。 如果客戶是在未安裝 Windows 市集的電腦或裝置上，連結將會啟動應用程式的 Windows 市集頁面。 代碼將會套用到客戶的 Microsoft 帳戶，方便他們之後在 Windows 裝置 (與同一個 Microsoft 帳戶相關聯) 上免費下載應用程式。
+客戶按一下 **\[兌換\]** 後， Microsoft Store 將會開啟應用程式的概觀頁面 (如果他們使用 Windows 10 或 Windows 8.1 裝置)，並且可以按一下 **\[安裝\]** 免費下載並安裝應用程式。 如果客戶是在未安裝 Microsoft Store 的電腦或裝置上，連結將會啟動應用程式的 Microsoft Store 頁面。 代碼將會套用到客戶的 Microsoft 帳戶，方便他們之後在 Windows 裝置 (與同一個 Microsoft 帳戶相關聯) 上免費下載應用程式。
 
 > [!NOTE]
 > 在某些情況下，客戶可能會看見 [**購買**] 按鈕而不是 [**安裝**]，即使已順利透過促銷碼兑換應用程式。 客戶可以按一下 [**購買**] 免費安裝應用程式。
@@ -108,7 +110,7 @@ ms.lasthandoff: 06/21/2017
 
 ## <a name="review-your-promotional-codes"></a>檢閱您的促銷碼
 
-若要檢閱應用程式及其附加元件的促銷碼訂單的詳細摘要，請瀏覽到應用程式的 [**促銷碼**] 頁面 (展開 [**獲利**]，並按一下 [**促銷碼**])。 您可以檢閱應用程式的所有目前和非使用中促銷碼的下列詳細資料：
+若要檢閱應用程式及其附加元件的促銷代碼訂單的詳細摘要，請瀏覽至應用程式的 **\[促銷代碼\]** 頁面 (在開發人員中心儀表板的左側瀏覽功能表中，展開 **\[吸引\]**，然後選取 **\[促銷代碼\]**)。 您可以檢閱下列有關您所有目前和非使用中促銷碼的詳細資料：
     -   訂單名稱
     -   應用程式或附加元件
     -   開始日期
@@ -116,10 +118,6 @@ ms.lasthandoff: 06/21/2017
     -   可用
     -   已兌換
 
-您也可以從這個表格下載訂單，如上所述。 
+您也可以從這個表格[下載](#download-and-distribute-promotional-codes)訂單。
 
  
-
-
-
-

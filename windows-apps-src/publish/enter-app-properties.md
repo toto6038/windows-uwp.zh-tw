@@ -1,29 +1,32 @@
 ---
 author: jnHs
-Description: "App 提交程序的 [應用程式屬性] 頁面可讓您定義 app 的類別，並指出硬體喜好設定或其他宣告。"
-title: "輸入應用程式屬性"
+Description: The App properties page of the app submission process lets you define your app's category and indicate hardware preferences or other declarations.
+title: 輸入應用程式屬性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 01/24/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: e4d391d551cf4e41853a1aac0e4b5be8bf0b0c3f
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: windows 10, uwp, 遊戲設定, 顯示模式, 系統需求, 硬體需求, 基本硬體, 建議的硬體
+ms.localizationpriority: high
+ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
+ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enter-app-properties"></a>輸入應用程式屬性
 
-[應用程式提交程序](app-submissions.md)的 [**屬性**] 頁面可讓您定義應用程式的類別，並指出硬體喜好設定或其他宣告。 我們將在這裡逐步解說此頁面上的選項，以及輸入這項資訊時所應考慮的事項。
+[應用程式提交程序](app-submissions.md)的 [**屬性**] 頁面可用來定義應用程式的類別，並輸入其他資訊和宣告。 請務必在此頁面上提供有關您應用程式完整且準確的詳細資料。
+
 
 ## <a name="category-and-subcategory"></a>類別與子類別
 
-您可以在此區段中指示市集應用來將您的應用程式分類的類別 (與子類別 (如果適用))。 您必須指定類別才能送出應用程式。
+您必須指示 Microsoft Store 要用來分類您的應用程式的類別 (與子類別/內容類型，如果適用的話)。 您必須指定類別才能送出應用程式。
 
 如需詳細資訊，請參閱[類別與子類別表格](category-and-subcategory-table.md)。
+
 
 ## <a name="game-settings"></a>遊戲設定
 
@@ -32,6 +35,17 @@ ms.lasthandoff: 08/03/2017
 如果您的遊戲支援任何多人遊戲選項，請務必指出一場遊戲可參與的玩家人數下限和上限。 您無法輸入超過 1,000 名玩家下限或上限。
 
 **跨平台多人遊戲**表示，遊戲支援在 Windows 10 電腦和 Xbox 之間的多人工作階段。
+
+
+## <a name="display-mode"></a>顯示模式
+
+此區段可讓您指出您的產品的設計目的是要在電腦和/或 HoloLens 裝置上的 [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) 沈浸式 (而非 2D) 檢視中執行。 如果是這樣，您也必須：
+- 在**\[屬性\]** 頁面下半部顯示的[系統需求](#system-requirements)區段中，選取 **\[Windows Mixed Reality 沉浸式頭戴裝置\]** 的 **\[基本硬體\]** 或 **\[建議硬體\]**。
+- 指定 **\[界限設定\]** (如果已選取電腦)，讓使用者知這原本是要僅限以坐姿或站姿使用，或者是否允許 (或要求) 使用者在使用時四處移動。 
+
+如果您已選取 **\[遊戲\]** 做為產品的類別，您會在 **\[顯示模式\]** 選項中看到額外選項，讓您表示產品是否支援 4K 解析度視訊輸出、高動態範圍 (HDR) 視訊輸出或可變更新頻率顯示器。
+
+如果您的產品不支援這些顯示模式選項，請讓所有的方塊保持未選取狀態。。
 
 
 ## <a name="product-declarations"></a>產品宣告
@@ -59,9 +73,12 @@ ms.lasthandoff: 08/03/2017
 - **對於 Windows 8.x 和更舊版本或 Windows Phone 8.x 和更舊版本的客戶︰**
      - 如果您為 **\[觸控螢幕\]** 核取 **\[最低硬體\]** 方塊，此需求將會顯示在您 App 的市集清單中，而且如果沒有觸控螢幕的裝置上的客戶嘗試下載 App，將會看到一個警告。 在您的市集清單中將不會驗證或顯示其他任何需求。
 
-我們也建議您將指定硬體的執行階段檢查新增到您的 App 中，因為市集不一定能夠偵測到客戶的裝置缺少選取的功能，而且即使顯示警告，他們仍然能夠下載您的 App。
+我們也建議您將指定硬體的執行階段檢查新增到您的 App 中，因為市集不一定能夠偵測到客戶的裝置缺少選取的功能，而且即使顯示警告，他們仍然能夠下載您的 App。 如果您希望完全避免您的 UWP 應用遲是在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 [StoreManifest XML 檔案](https://docs.microsoft.com/uwp/schemas/storemanifest/storemanifestschema2015/schema-root)中指定最低需求。
 
 > [!TIP]
-> 如果您希望完全避免您的 UWP 應用遲是在不符合記憶體或 DirectX 層級最低需求的裝置上下載，您可以在 StoreManifest XML 檔案中指定最低需求。 如需詳細資訊，請參閱 [StoreManifest 結構描述 (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)。
+> 如果您的產品需要額外的項目才能正常運作 (例如 3D 印表機或 USB 裝置)，但該項目未在本節列出，您也可以在建立 Microsoft Store 清單時輸入[額外的系統需求](create-app-store-listings.md#additional-system-requirements)。
+
+
+
 
 

@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: When you create a new add-on in the Windows Dev Center dashboard, you need to specify a product type and assign it a product ID.
-title: "設定您的附加內容產品類型與產品識別碼"
+title: 設定您的附加內容產品類型與產品識別碼
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品"
+keywords: windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品
 ms.localizationpriority: high
-ms.openlocfilehash: 24731a378ddc0defada7a94282afd790dfb5b780
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 12ed8eb58f9f7f7a5fec55c62f19afe0bf6fa2d5
+ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>設定您的附加內容產品類型與產品識別碼
 
@@ -39,11 +39,11 @@ ms.lasthandoff: 01/12/2018
 <span id="consumable" />
 ### <a name="consumable"></a>消耗性
 
-如果附加元件可以購買、使用 (消耗)，然後重新購買，您可能希望選取其中一種**消耗性**產品類型 消耗型附加內容通常用於遊戲內的貨幣 (金幣、錢幣等)，客戶可以購買設定的量並使用。 如需在您的 App 中加入消耗性附加元件的詳細資訊，請參閱[啟用消費性附加元件購買](../monetize/enable-consumable-add-on-purchases.md)。
+如果附加元件可以購買、使用 (消耗)，然後重新購買，您可能希望選取其中一種**消耗性**產品類型 消耗型附加內容通常用於遊戲內的貨幣 (金幣、錢幣等)，客戶可以購買設定的量並使用。 如需詳細資訊，請參閱[啟用消費性附加元件購買](../monetize/enable-consumable-add-on-purchases.md)。
 
 消耗性附加元件有兩種類型：
 - **開發人員管理的消費性產品**：餘額和履行必須在您的 App 內管理。 所有 OS 版本皆支援。
-- **Store 管理消耗型**：Microsoft 將會在客戶執行 Windows 10 版本 1607 或更新版本的所有裝置上追蹤餘額；在任何舊版 OS 上不支援。 若要使用此選項，父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯。 另請注意，在父產品發佈之前，您無法將 Store 管理消耗性附加元件提交至 [Store] (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。 您將必須在提交的 **\[內容\]** 頁面中輸入您 Store 管理消耗性附加元件的數量。
+- **市集管理消耗型**：Microsoft 將會在客戶執行 Windows 10 版本 1607 或更新版本的所有裝置上追蹤餘額；在任何舊版 OS 上不支援。 若要使用此選項，父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯。 另請注意，在父產品發佈之前，您無法將市集管理消耗性附加元件提交至 [市集] (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。 您將必須在提交的 **\[內容\]** 頁面中輸入您市集管理消耗性附加元件的數量。
 
 <span id="subscription" />
 ### <a name="subscription"></a>訂閱
@@ -52,7 +52,7 @@ ms.lasthandoff: 01/12/2018
 
 客戶取得一開始訂閱附加元件之後，將會繼續向其收取週期性費用，才能繼續使用附加元件。 客戶隨時都可以取消訂閱，避免進一步的費用。 您將需要在提交的 **\[內容\]** 步驟指定訂閱期間，以及是否提供免費試用。
 
-訂閱附加元件僅支援執行 Windows 10 版本 1607 或更新版本的客戶。 父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯，而且必須使用 **Windows.Services.Store** 命名空間中的 App 內購買 API，而不是 **Windows.ApplicationModel.Store** 命名空間中的 API。 如需有關這些命名空間之間差異的詳細資訊，請參閱 [App 內購買和試用版](../monetize/in-app-purchases-and-trials.md)。
+訂閱附加元件僅支援執行 Windows 10 版本 1607 或更新版本的客戶。 父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯，而且必須使用 **Windows.Services.Store** 命名空間中的 App 內購買 API，而不是 **Windows.ApplicationModel.Store** 命名空間中的 API。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 您必須先提交父產品，才能將訂閱附加元件發行至 Store (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。
 

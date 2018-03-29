@@ -1,7 +1,7 @@
 ---
 author: mijacobs
-description: "一種筆刷，可建立部分透明的紋理。"
-title: "壓克力材質"
+description: 一種筆刷，可建立部分透明的紋理。
+title: 壓克力材質
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
@@ -14,11 +14,11 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: 8f8266878356ae182b6abf59a6729bf7066d6e4c
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 21fccc72081d1825cad91e9d44bdc458c62d99d4
+ms.sourcegitcommit: 9666ef4cf5bb63dd62ee95f89a6ad0ac1bf7ac9d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -51,9 +51,9 @@ ms.lasthandoff: 01/08/2018
 
 > [!VIDEO https://channel9.msdn.com/Events/Windows/Windows-Developer-Day-Fall-Creators-Update/WinDev002/player]
 
-## <a name="acrylic-and-the-fluent-design-system"></a>壓克力和 Fluent 設計系統
+## <a name="acrylic-and-the-fluent-design-system"></a>壓克力和 Fluent Design 系統
 
- Fluent 設計系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 壓克力是將實體紋理 (材質) 與深度加入應用程式中的 Fluent 設計系統元件。 若要深入瞭解，請參閱[適用於 UWP 的 Fluent 設計概觀](../fluent-design-system/index.md)。
+ Fluent Design 系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化前衛 UI。 壓克力是將實體紋理 (材質) 與深度加入應用程式中的 Fluent Design 系統元件。 若要深入瞭解，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
 
 ## <a name="when-to-use-acrylic"></a>使用壓克力的時機
 
@@ -268,7 +268,7 @@ else
 
 ```csharp
 /// Extend acrylic into the title bar. 
-private void extendAcrylicIntoTitleBar()
+private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
     ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
@@ -318,7 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
         Window.Current.Activate();
 
         // Extend acrylic
-        extendAcrylicIntoTitleBar();
+        ExtendAcrylicIntoTitleBar();
     }
 }
 ```

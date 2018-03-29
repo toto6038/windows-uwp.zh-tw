@@ -1,19 +1,20 @@
 ---
 author: msatranjr
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
-title: "app 功能宣告"
-description: "功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。"
+title: app 功能宣告
+description: 功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。
 ms.author: misatran
-ms.date: 02/08/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 42141cd2f7a479555ec722e35c859918c973b149
-ms.sourcegitcommit: 2b436dc5e5681b8884e0531ee303f851a3e3ccf2
+ms.localizationpriority: high
+ms.openlocfilehash: 3d198d984c24e08e6397897fd930fc38d9ea94c7
+ms.sourcegitcommit: 14c37e23b8966468e8c28a3b34d21aaa4e6b571b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -56,11 +57,12 @@ ms.lasthandoff: 08/18/2017
 | **使用者帳戶資訊**\* | **userAccountInformation** 功能讓 app 能夠存取使用者的名稱和圖片。<br /><br />您需要具備這個功能，才能存取 [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/Windows.System.UserProfile) 命名空間中的某些 API。<br /><br />在您的 app 套件資訊清單中宣告 **userAccountInformation** 功能時，它必須包含 **uap** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="userAccountInformation"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **VOIP 通話** | **voipCall** 功能讓 app 能夠存取 [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 命名空間中的 VOIP 通話 API。<br /><br />在您的 app 套件資訊清單中宣告 **voipCall** 功能時，它必須包含 **uap** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="voipCall"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **3D 物件** | **objects3D** 功能讓 app 能以程式設計的方式存取 3D 物件檔案。 這項功能通常用於必須存取整個 3D 物件庫的 3D 應用程式和遊戲。<br /><br />需要具備這個功能，才能使用 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間中的 API 存取包含 3D 物件的資料夾。<br /><br />在您的 app 套件資訊清單中宣告 **objects3D** 功能時，它必須包含 **uap** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="objects3d"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
-| **讀取已封鎖訊息**\* | **blockedChatMessages** 功能讓 app 能夠讀取已由垃圾郵件篩選 app 封鎖的簡訊和多媒體簡訊訊息。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API 存取已封鎖的訊息。<br /><br />在您的 app 套件資訊清單中宣告 **blockedChatMessages** 功能時，它必須包含 **uap** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="chat"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
+| **讀取已封鎖訊息**\* | **blockedChatMessages** 功能讓 app 能夠讀取已由垃圾郵件篩選 app 封鎖的簡訊和多媒體簡訊訊息。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API 存取已封鎖的訊息。<br /><br />在您的 app 套件資訊清單中宣告 **blockedChatMessages** 功能時，它必須包含 **uap** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="blockedChatMessages"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **IoT 低階匯流排硬體** | **lowLevelDevices** 功能讓在 IoT 裝置上執行的 app 能夠存取低階匯流排硬體，例如 GPIO、I2C、SPI、ADC 和 PWM。<br /><br />需要具備此功能才能存取 [**Windows.Devices.Spi**](https://msdn.microsoft.com/library/windows/apps/Dn708178) 命名空間中的某些 API。<br /><br />在您的 app 套件資訊清單中宣告 **lowLevelDevices** 功能時，它必須包含 **iot** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="lowLevelDevices"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **IoT 系統管理** | **systemManagement** 功能讓 app 具備基本的系統管理權限，例如關機或重新啟動、地區設定和時區。<br /><br />需要具備這個功能，才能存取 [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814) 命名空間中的某些 API。<br /><br />在您的 app 套件資訊清單中宣告 **systemManagement** 功能時，它必須包含 **iot** 命名空間，如下所示。<table><thead><tr><th>XML</th></tr></thead><tbody><tr><td><pre><code>&lt;Capabilities&gt;&lt;iot:Capability Name="systemManagement"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table>
 | **背景媒體播放** | **backgroundMediaPlayback** 功能會變更媒體特定 API (例如 [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/windows.media.playback.mediaplayer.aspx) 和 [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx) 類別) 的行為，以便在您的 app 位於背景時啟用媒體播放。 所有作用中的音訊資料流將不再設為靜音，但在 app 轉換到背景時仍可繼續聽到聲音。 此外，進行播放時，將會自動延伸應用程式存留期。
-| **遠端系統** | **remoteSystem** 功能讓 app 能夠存取與使用者 Microsoft 帳戶相關聯的裝置清單。 需要存取裝置清單，才能執行任何保留在裝置上的操作。 需要具備這個功能，才能存取下列各項的所有成員。<br /><br />Windows.System.RemoteSystems 命名空間<br />Windows.System.RemoteLauncher 命名空間<br />AppServiceConnection.OpenRemoteAsync 方法
+| **遠端系統** | **remoteSystem** 功能讓 app 能夠存取與使用者 Microsoft 帳戶相關聯的裝置清單。 需要存取裝置清單，才能執行任何保留在裝置上的操作。 需要具備這個功能，才能存取下列各項的所有成員。<br /><br />Windows.System.RemoteSystems 命名空間<br />Windows.System.RemoteLauncher 命名空間<br />AppServiceConnection.OpenRemoteAsync 方法 |
+| **空間感知** | **spatialPerception** 功能提供空間對應資料的程式設計存取，並提供有關使用者附近空間的應用程式指定區域中表面的混合實境應用程式資訊。  只有在應用程式明確使用這些表面網格時，才要宣告 spatialPerception 功能，因為混合實境應用程式根據使用者頭部姿勢執行全像轉譯時並不需要此功能。 |
 
 ## <a name="device-capabilities"></a>裝置功能
 
@@ -74,7 +76,7 @@ ms.lasthandoff: 08/18/2017
 | **網路攝影機** | **webcam** 功能提供存取內建相機或外接式網路攝影機的視訊饋送，讓 app 能夠擷取相片和影片。 在 Windows 上，當使用者從 **\[設定\]** 常用鍵停用相機時，app 必須能夠處理這種狀況。<br/>**webcam** 功能只授與對視訊串流的存取權。 若要同時授與對音訊串流的存取權，必須新增 **microphone** 功能。 |
 | **USB** | **usb** 裝置功能可讓您存取[針對 USB 裝置更新應用程式資訊清單套件](http://go.microsoft.com/fwlink/p/?LinkId=302259)中所述的 API。 |
 | **人性化介面裝置 (HID)** | **humaninterfacedevice** 裝置功能可讓您存取[如何指定 HID 的裝置功能](https://msdn.microsoft.com/library/windows/apps/Dn263091)中的 API。 |
-| **服務點 (POS)** | **pointOfService** 裝置功能可讓您存取 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 命名空間中的 API。 這個命名空間可以讓您的 app 存取服務指標 (POS) 條碼掃描器和磁條讀取器。 這個命名空間提供一個廠商中性介面，可讓您從 Windows 市集應用程式存取來自各個製造商的 POS 裝置。 |
+| **服務指標 (POS)** | **pointOfService** 裝置功能可讓您存取 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 命名空間中的 API。 這個命名空間可以讓您的 app 存取服務指標 (POS) 條碼掃描器和磁條讀取器。 這個命名空間提供一個廠商中性介面，可讓您從 UWP app 存取來自各個製造商的 POS 裝置。 |
 | **藍牙** | **bluetooth** 裝置功能讓 app 能夠與兩個都透過 Generic Attribute (GATT) 或 Classic Basic Rate (RFCOMM) 通訊協定且配對好的藍牙裝置通訊。<br/>需要具備這個功能，才能使用 [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413) 命名空間中的某些 API。 |
 | **Wi-Fi 網路功能** | **wiFiControl** 裝置功能讓 app 能夠掃描並連線到 Wi-Fi 網路。<br/>需要具備這個功能，才能使用 [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/Dn975224) 命名空間中的某些 API。 |
 | **無線電狀態** | **radios** 裝置功能讓 app 能夠在 Wi-Fi 和藍牙無線電之間切換。<br/>需要具備這個功能，才能使用 [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/Dn996447) 命名空間中的 API。  |
@@ -107,10 +109,10 @@ ms.lasthandoff: 08/18/2017
     IgnorableNamespaces="uap mp wincap rescap">
 ```
 **重要**  
-特殊和受限制的功能適用於非常特殊的情況。 這些功能的用法受到高度限制，而且受其他市集上架原則和審查規定的規範。 將您的 app 提交到市集之前，請依照下列步驟來要求存取受限制的功能。
-1. 查看下表，以判斷您是否有資格能夠利用特定的受限制功能，將 app 提交到市集。 如果您不符合資格，則您所做的任何要求將會遭到拒絕。
+特殊和受限制的功能適用於非常特殊的情況。 這些功能的用法受到高度限制，而且受其他市集上架原則和審查規定的規範。 將您的 App 提交到市集之前，請依照下列步驟來要求存取受限制的功能。 請注意，您可以毫無限制地使用應用程式套件資訊清單中指定的受限制功能來側載 App。 
+1. 請查看下表，以判斷您是否有資格使用特定的受限制功能，將 App 提交到市集。 如果您不符合資格，則您所做的任何要求將會遭到拒絕。
 2. 如果您符合資格，請瀏覽 [Windows 開發人員支援頁面](https://developer.microsoft.com/windows/support)。
-3. 在 [與我們連絡] 下方選取問題類型 **\[應用程式\]**，以及子分類 **\[其他\]**。 
+3. 在 [與我們連絡] 下方選取問題類型 **\[應用程式\]**，以及子分類 **\[其他\]**。
 4. 包含您要求存取的功能，並包含您提出要求的原因。 如果您未提供所有必要資訊，您的要求將會遭到拒絕。 您可能還需要提供更多資訊。
 
 **注意** 我們將個別檢閱要求，因此可能需要 5 個工作天或較長的時間來回應。 我們強烈建議您能夠在將 app 提交到市集之前適當地提交您的要求。
@@ -121,7 +123,7 @@ ms.lasthandoff: 08/18/2017
 | **共用使用者憑證** | **sharedUserCertificates** 特殊功能可讓 app 在「共用使用者」存放區中新增和存取軟體和硬體型憑證，例如儲存在智慧卡的憑證。 這個功能通常用於需要使用智慧卡進行身分驗證的金融或企業 app。<br /><br />在您的 app 套件資訊清單中宣告 **sharedUserCertificates** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br /><div class="code"><span codelanguage="XML"></span><table><colgroup><col width="100%" /></colgroup><thead><tr class="header"><th align="left">XML</th></tr></thead><tbody><tr class="odd"><td align="left"><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="sharedUserCertificates"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></div><br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 |**文件**\* | **documentsLibrary** 功能提供以程式設計方式存取使用者的 \[文件\] \(已篩選出套件資訊清單中宣告的檔案類型關聯\) 的功能，以支援對 OneDrive 進行離線存取。 例如，如果 DOC 閱讀程式 app 宣告 .doc 檔案類型關聯，則它可以開啟 \[文件\] 中的 .doc 檔案，但無法開啟其他類型的檔案。 <br /><br />宣告 **documentsLibrary** 特殊功能的 app 無法存取家用群組電腦上的 [文件]。 [檔案選擇器](https://msdn.microsoft.com/library/windows/apps/Hh465174)提供健全的 UI 機制，能夠讓使用者開啟要供 app 使用的檔案。 只有在您無法使用檔案選擇器時，才宣告 **documentsLibrary** 特殊功能。<br /><br />若要使用 **documentsLibrary** 特殊功能，app 必須：<ul><li>使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取。</li><li>在離線時自動將開啟的檔案儲存到使用者的 OneDrive</li></ul>針對這兩個目的而使用 **documentsLibrary** 特殊功能的 app，也可選擇使用此功能開啟另一份文件內的內嵌內容。 只接受上述使用 **documentsLibrary** 特殊功能的方式。<ul><li>您的 app 無法存取手機內部儲存空間中的文件庫。 不過，如果另一個 app 在選用的 SD 記憶卡上建立 \[文件\] 資料夾，您的 app 能夠看到該資料夾。</li></ul>在您的 app 套件資訊清單中宣告 **documentsLibrary** 功能時，它必須包含 **uap** 命名空間，如下所示。<div class="code"><span codelanguage="XML"></span><table><colgroup><col width="100%" /></colgroup><thead><tr class="header"><th align="left">XML</th></tr></thead><tbody><tr class="odd"><td align="left"><pre><code>&lt;Capabilities&gt;&lt;uap:Capability Name="documentsLibrary"/&gt;&lt;/Capabilities&gt;</code></pre></td></tr></tbody></table></div><br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **遊戲 DVR 設定** | **appCaptureSettings** 受限制的功能讓 app 能夠控制「遊戲 DVR」的使用者設定。<br /><br />需要具備這個功能，才能使用 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 命名空間中的某些 API。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
-| **行動數據** | **cellularDeviceControl** 受限制的功能讓 app 能夠控制行動電話通訊裝置。<br /><br />**cellularDeviceIdentity** 功能讓 app 能夠存取行動電話通訊識別資料。<br /><br />**cellularMessaging** 功能讓 app 能夠使用簡訊和 RCS。<br /><br />需要具備這些功能，才能使用 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 命名空間中的某些 API。<br /><br />從 Windows 10 開始，app 會呼叫 [**AppIDList**](https://msdn.microsoft.com/library/windows/apps/Dn393996))。 <br /><br />任何人都可能要求存取這些功能以進行市集提交。
+| **行動數據** | **cellularDeviceControl** 受限制的功能讓 app 能夠控制行動電話通訊裝置。<br /><br />**cellularDeviceIdentity** 功能讓 app 能夠存取行動電話通訊識別資料。<br /><br />**cellularMessaging** 功能讓 app 能夠使用簡訊和 RCS。<br /><br />必須有這些功能，才能使用 [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 命名空間中的一些 API。<br /><br />任何人都可能要求存取這些功能以進行 Microsoft Store 提交。
 | **裝置解除鎖定** | **deviceUnlock** 受限制的功能讓 app 能夠解除鎖定裝置，以供開發人員和企業側載案例使用。<br /><br /> 沒有人能夠要求存取這個功能以進行市集提交。
 | **雙 SIM 卡磚** | **dualSimTiles** 受限制的功能讓 app 能夠在配備多張 SIM 卡的裝置上建立其他 app 清單項目。<br /><br />需要具備這個功能，才能使用 [**Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) 命名空間中的某些 API。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **企業共用存放裝置** | **enterpriseDeviceLockdown** 受限制的功能讓 app 使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
@@ -134,7 +136,7 @@ ms.lasthandoff: 08/18/2017
 | **使用者主體名稱** | **userPrincipalName** 受限制的功能讓 app 能夠修改和存取相片的縮圖快取。<br /><br />需要具備這個功能，才能呼叫 [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) 函式。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 | **電子錢包** | **walletSystem** 受限制的功能讓 app 能完整存取儲存式電子錢包卡。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 命名空間中的 API。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 | **位置歷程記錄** | **locationHistory** 受限制的功能讓 app 能夠存取裝置的位置歷程記錄。<br /><br />需要具備這個功能，才能使用 [**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603) 命名空間中的 API。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
-| **App 關閉確認** | **confirmAppClose** 受限制的功能讓 app 能夠關閉本身和它們自己的視窗，並延遲關閉它們的 app。<br /><br />任何人都可能要求存取這個功能以進行市集提交。
+| **App 關閉確認** | **confirmAppClose** 受限功能可讓 App 關閉本身及其自有視窗，並延遲關閉其 App。<br /><br />App 可能會在 Windows 10 版本 1703 (組建 10.0.15063) 及更新版本中要求此功能。 在先前的 Windows 10 版本中，此功能為私用，並且導致應用程式安裝失敗而顯示「此應用程式無法授權要求的功能」錯誤訊息。 <br /><br />任何人都可能會要求存取此功能以進行 Microsoft Store 提交。
 | **通訊記錄**\* | **phoneCallHistory** 受限制的功能讓 app 能夠讀取通訊記錄並刪除記錄中的項目。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 | **系統層級的約會存取** | **appointmentsSystem** 受限制的功能讓 app 能夠讀取和修改使用者行事曆上的所有約會。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空間中的 API。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 | **系統層級的聊天訊息存取**\* | **chatSystem** 受限制的功能讓 app 能夠讀取和寫入所有簡訊和多媒體簡訊訊息。<br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 命名空間中的 API。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
@@ -153,7 +155,7 @@ ms.lasthandoff: 08/18/2017
 | **連線管理員佈建** | **networkConnectionManagerProvisioning** 受限制的功能讓 app 能夠定義可將裝置連線到 WWAN 和 WLAN 介面的原則。 電信業者會建立使用這個功能的 app，以便管理連線至其行動網路的裝置。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **行動數據方案佈建** | **networkDataPlanProvisioning** 受限制的功能讓 app 能夠收集裝置上行動數據方案的相關資訊，並讀取網路使用量。 電信業者會建立使用這個功能的 app，以便將其客戶的實際數據使用量整合到 OS 數據使用量設定。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **軟體授權** | **slapiQueryLicenseValue** 受限制的功能讓 app 能夠查詢軟體授權原則。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
-| **延伸執行** | **ExtendedBackgroundTaskTime** 受限制的功能防止背景工作因執行時間限制而遭到取消或終止。 他們仍會受制於所有其他記憶體和能源使用量的限制。 這項功能可以透過電池使用量或隱私權背景 app 設定進行限制。 請注意：消費者和系統管理員仍然可以透過群組原則設定控制背景工作。 僅限用於企業簽署的側載 app。<br /><br />**extendedExecutionBackgroundAudio** 受限制的功能讓 app 能夠在背景執行時也能播放音訊。<br /><br />**extendedExecutionCritical** 受限制的功能讓 app 能夠開始嚴重延伸執行工作階段。<br /><br />**extendedExecutionUnconstrained** 受限制的功能讓 app 能夠開始不受限制的延伸執行工作階段。 <br /><br />沒有人能夠要求存取這些功能以進行市集提交。<br /><br />請參閱[使用延伸執行，在最小化時執行](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/run-minimized-with-extended-execution)以取得關於在您的 app 暫止時使用延伸執行來延期的詳細資訊。 |
+| **延伸執行** | **ExtendedBackgroundTaskTime** 受限制的功能防止背景工作因執行時間限制而遭到取消或終止。 他們仍會受制於所有其他記憶體和能源使用量的限制。 這項功能可以透過電池使用量或隱私權背景 app 設定進行限制。 請注意：消費者和系統管理員仍然可以透過群組原則設定控制背景工作。<br /><br />**extendedExecutionBackgroundAudio** 受限功能可讓 App 在背景執行時也能播放音訊。<br /><br />**extendedExecutionCritical** 受限制的功能讓 app 能夠開始嚴重延伸執行工作階段。<br /><br />**extendedExecutionUnconstrained** 受限制的功能讓 app 能夠開始不受限制的延伸執行工作階段。 <br /><br />沒有人可以要求存取這些功能來進行 Microsoft Store 提交。<br /><br />如需有關在 App 暫止時使用延伸執行延期的詳細資訊，請參閱[透過延長執行延後應用程式暫停](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/run-minimized-with-extended-execution)。 |
 | **行動裝置管理** | **deviceManagementDmAccount** 受限制的功能讓 app 能夠佈建和設定 [電信業者開放行動裝置聯盟 - 裝置管理 (MO OMA-DM)] 帳戶。<br /><br />**deviceManagementFoundation** 受限制的功能讓 app 能夠基本存取裝置上的行動裝置管理 (MDM) 設定服務提供者 (CSP) 基礎結構。 請注意，需有其他功能才能存取特定 CSP。<br /><br />**deviceManagementWapSecurityPolicies** 受限制的功能讓 app 能夠設定無線應用通訊協定 (WAP) 服務，例如 MMs、服務指示/服務載入 (SI/SL) 及開放行動裝置聯盟 - 用戶端佈建 (OMA-CP)。<br /><br />**deviceManagementEmailAccount** 受限制的功能讓 app 能夠由電信業者建立，以便在他們佈建給使用者的裝置上新增和管理電子郵件帳戶。<br /><br />任何人都可能要求存取這些功能以進行市集提交。
 | **套件原則控制項** | **packagePolicySystem** 受限制的功能讓 app 能夠掌控裝置上所安裝之 app 的相關系統原則。<br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 | **遊戲清單** | **gameList** 受限制的功能讓 app 能夠取得一份系統上已安裝的知名遊戲清單。<br /><br />沒有人能夠要求存取這個功能以進行市集提交。
@@ -163,7 +165,7 @@ ms.lasthandoff: 08/18/2017
 | **驅動程式存取** | **interopServices** 受限制的功能讓 app 能夠直接與驅動程式互動。 <br /><br />只有 Microsoft 合作夥伴能夠要求存取這個功能以進行市集提交。
 | **前景觀察** | **inputForegroundObservation** 受限制的功能讓前景的 app 能夠攔截鍵盤輸入，並繞過所有非 app 鍵盤輸入的處理。 此功能無法攔截 SAS 組合。 需要具備這個功能，才能存取 [**KeyboardDeliveryInterceptor**](https://msdn.microsoft.com/library/windows/apps/Mt608395) 類別的成員。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **OEM 和 MO 合作夥伴 app** | **oemDeployment** 受限制的功能讓 Microsoft 合作夥伴建立的 app 可以在裝置上安裝新的 app 和查詢目前安裝的 app。 任何人都可能要求存取這個功能以進行市集提交。<br /><br />**oemPublicDirectory** 受限制的功能讓 Microsoft 合作夥伴建立的 app 可以存取共用 app 資料夾。 <br /><br />只有 Microsoft 合作夥伴能夠要求存取這個功能以進行市集提交。
-| **應用程式授權** | **appLicensing** 受限制的功能可允許 app 在不需要授權的情況下執行。 如果您在資訊清單中宣告此功能，您就無法將 app 提交至市集。 <br /><br />任何要求存取此功能以進行市集提交的要求將會一律被拒絕。
+| **應用程式授權** | **appLicensing** 受限制的功能可允許 app 在不需要授權的情況下執行。 如果您在資訊清單中宣告此功能，您就無法將 app 提交至市集。 <br /><br />任何要求存取此功能以進行市集提交的要求將會一律遭到拒絕。
 | **位置系統**| **locationSystem** 受限制的功能可允許 app 執行特定需要特殊權限的位置設定，例如設定裝置的預設位置。 如果您在資訊清單中宣告此功能，您就無法將 app 提交至市集。 任何要求存取此功能以進行市集提交的要求將會一律遭到拒絕。 <br /><br />沒有人能夠要求存取這個功能以進行市集提交。
 | **使用者資料帳戶提供者**| **userDataAccountsProvider** 受限制的功能讓 app 能夠完全管理電子郵件、行事曆和連絡人帳戶。 <br /><br />任何人都可能要求存取這個功能以進行市集提交。
 | **手寫筆工作區** | **previewPenWorkspace** 功能讓 app 能夠存取 Windows.ApplicationModel.Preview.Notes 命名空間，此命名空間要裝載於手寫筆工作區內部，以做為記住動作處理常式。<br /><br />任何人都可能要求存取這個功能以進行市集提交。
@@ -176,18 +178,19 @@ ms.lasthandoff: 08/18/2017
 |**App 擷取服務**| **appCaptureServices** 容量僅限於與 Microsoft 具有契約關係之對象。 這些關係會根據由 Xbox 服務及 bizdev 支援推動的夥伴協議進行授與。<br /><br />必須具備這項功能，才能使用 [**Windows.Media.Capture.AppCaptureServices**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.appcaptureservices) 類別。<br /><br /> 任何人都可能要求存取這個功能以進行市集提交。
 |**App 廣播服務**| **appBroadcastServices** 功能僅限於與 Microsoft 具有契約關係之對象。 這些關係會根據由 Xbox 服務支援推動的夥伴協議進行授與。<br /> <br /><br />必須具備這項功能，才能使用 [**Windows.Media.capture.AppBroadcastServices**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.appbroadcastservices) 類別。<br /><br /> 只有 Microsoft 合作夥伴以及與裝置廠商合作的人員能夠要求存取這個功能以進行市集提交。
 |**音訊裝置設定**| **audioDeviceConfiguration** 這項功能可以讓應用程式查詢、設定、啟用，以及停用音訊驅動程式公開的音訊效果。 <br /> <br />必須具備這項功能，才能使用 [**Windows.Media.Devices.AudioDeviceModulesManager**](https://docs.microsoft.com/en-us/uwp/api/windows.media.devices.audiodevicemodulesmanager) 類別。<br /><br />只有 Microsoft 合作夥伴以及與裝置廠商合作的人員能夠要求存取這個功能以進行市集提交。 這是因為 **AudioDeviceModulesManager** 可讓應用程式存取特定系統上所有的音訊效果。 而音訊效果可能會用於造成裝置上音訊效能的負面影響。 因此，市集禁止使用 **AudioDevicesModulesManager** 之應用程式的上架，除非其 1) 宣告有使用此功能，及 2) 是由已核准的開發中心帳戶所製作。
-|**預覽 Ink 工作區**| **previewInkWorkspace** 功能可讓 app 存取裝載在 ink 工作區的預覽 Ink 命名空間。 一般而言，OEM 會使用這項功能來取代裝置上的白板應用程式。<br /> <br />必須具備這項功能，才能使用 [**Windows.ApplicationModel.Preview.InkWorkspace**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.preview.inkworkspace) 命名空間中的 API。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 
-|**開始畫面管理**| **startScreenManagement** 功能可讓 app 直接將磚釘選至開始畫面。 App 也可以從背景進行釘選。 不具備 **startScreenManagement** 功能時並不會封鎖任何 API。然而，使用 **startScreenManagement** 表示殼層不會在任何 app 使用釘選 API 時顯示任何 UI。<br /><br /> 任何人都可能要求存取這個功能以進行市集提交。 
-|**Cortana 權限**| **cortanaPermissions** 功能可讓 app 列舉使用者授與裝置上 Cortana 的權限。 此功能同時也允許 app 授與或撤銷裝置上 Cortana 的權限。 請注意：使用 **cortanaPermissions** 需要裝置在授與權限前顯示法律聲明文字。 因此，app 應負起責任，告知使用者修改權限可能造成的法律後果。<br /> <br /><br />必須具備這項功能，才能取得 **HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\ (*)** 登錄設定的閱讀權限。<br /><br />只有 Microsoft 合作夥伴以及與裝置廠商合作的人員能夠要求存取這個功能以進行市集提交。 
-|**所有 App 模組**| **allAppMods** 功能可讓 app 存取所有 app 的 AppMods 資料夾。  模組管理公用程式使用 **allAppMods** 以在使用該模組的遊戲或 app 之外管理模組。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 
+|**預覽 Ink 工作區**| **previewInkWorkspace** 功能可讓 app 存取裝載在 ink 工作區的預覽 Ink 命名空間。 一般而言，OEM 會使用這項功能來取代裝置上的白板應用程式。<br /> <br />必須具備這項功能，才能使用 [**Windows.ApplicationModel.Preview.InkWorkspace**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.preview.inkworkspace) 命名空間中的 API。<br /><br />任何人都可能要求存取這個功能以進行市集提交。
+|**開始畫面管理**| **startScreenManagement** 功能可讓 app 直接將磚釘選至開始畫面。 App 也可以從背景進行釘選。 不具備 **startScreenManagement** 功能時並不會封鎖任何 API。然而，使用 **startScreenManagement** 表示殼層不會在任何 app 使用釘選 API 時顯示任何 UI。<br /><br /> 任何人都可能要求存取這個功能以進行市集提交。
+|**Cortana 權限**| **cortanaPermissions** 功能可讓 app 列舉使用者授與裝置上 Cortana 的權限。 此功能同時也允許 app 授與或撤銷裝置上 Cortana 的權限。 請注意：使用 **cortanaPermissions** 需要裝置在授與權限前顯示法律聲明文字。 因此，app 應負起責任，告知使用者修改權限可能造成的法律後果。<br /> <br /><br />必須有這項功能，才能取得 **HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\(*)** 登錄設定的讀取存取權限。<br /><br />只有 Microsoft 合作夥伴以及裝置廠商的合作者，才可能會要求存取此功能以進行 Microsoft Store 提交。
+|**所有 App 模組**| **allAppMods** 功能可讓 app 存取所有 app 的 AppMods 資料夾。  模組管理公用程式使用 **allAppMods** 以在使用該模組的遊戲或 app 之外管理模組。<br /><br />任何人都可能要求存取這個功能以進行市集提交。
 |**展開的資源**| **expandedResources** 功能可讓 app 存取遊戲模式資源。  在 Xbox，以及符合足夠列的電腦上，遊戲模式資源代表可供 app 獨佔使用的保留 CPU 核心子集。  在 Xbox 上，app 也有至少 4 GB 記憶體分割的獨佔使用權。<br /><br />必須具備這項功能，才能取得如上方所定義之 CPU 和記憶體資源的獨佔使用權。<br /><br /> 任何人都可能要求存取這個功能以進行市集提交。
 |**受保護的 App**| **protectedApp** 功能授與 app 載入至來自市集之受保護處理程序的能力。 當 app 內嵌至市集時，市集會將 blob 新增至可執行檔。 市集也會使用 Microsoft 金鑰頁面簽署可執行檔。  由於 blob 需要 Microsoft 的簽章，處理程序載入器會檢查此 blob，而非強制執行受保護處理程序的能力。<br /><br /> 只有 Microsoft 合作夥伴以及與裝置廠商合作的人員能夠要求存取這個功能以進行市集提交。
-|**遊戲監視器**| **gameMonitor** 功能會使系統使用主動式監視偵測 app 所導致的遊戲作弊行為。  Windows 會即時啟用監視，並且重新開機過程中持續進行。  監視中樞是一項 NT 服務，負責聆聽 Windows Defender 事件。  事件會處理為信號，發行至雲端服務，使合作夥伴得以取用。<br /><br />只有 Microsoft 合作夥伴以及與裝置廠商合作的人員能夠要求存取這個功能以進行市集提交。
+|**遊戲監視器**| **gameMonitor** 功能會讓系統使用主動式監視來偵測 App 的遊戲作弊行為。<br /><br />只有 Microsoft 合作夥伴以及裝置廠商的合作者，才可能會要求存取此功能以進行 Microsoft Store 提交。
 |**App 診斷**| **appDiagnostics** 功能可讓 app 取得任何其他正在執行中之 UWP app 的診斷資訊 (例如：套件資訊、記憶體使用量，以及帳戶名稱)。 傳回的資訊包含了正在執行該 app 的網域/機器帳戶名稱。若呼叫的 app 是以系統管理員權限啟動的，則該 app 還可以擷取機器上所有帳戶正在執行的所有 app 清單。 <br /><br />必須具備這項功能，才能使用 [**Windows.System.AppDiagnosticInfo**](https://docs.microsoft.com/en-us/uwp/api/windows.system.appdiagnosticinfo)、**Windows.System.AppDiagnosticInfo.RequestAppDiagnosticInfoAsync**，以及 [**Windows.ApplicationModel.AppInfo**](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.appinfo) 類別。<br /><br /> 任何人都可能要求存取這個功能以進行市集提交。
-| **裝置入口網站提供者** | **devicePortalProvider** 受限的功能可讓 app 呼叫 **Windows.System.Diagnostics.DevicePortal** API，並在開發人員模式下針對診斷工具[作為網頁伺服器](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-plugin)使用。<br /><br />只有 Microsoft 合作夥伴以及與裝置廠商合作的人員能夠要求存取這個功能以進行市集提交。
-
-**注意**  
-此文章適用於撰寫 UWP app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
+| **裝置入口網站提供者** | **devicePortalProvider** 受限的功能可讓 app 呼叫 **Windows.System.Diagnostics.DevicePortal** API，並在開發人員模式下針對診斷工具[作為網頁伺服器](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-plugin)使用。<br /><br />只有 Microsoft 合作夥伴以及裝置廠商的合作者，才可能會要求存取此功能以進行 Microsoft Store 提交。
+| **企業雲端單一登入** | The **enterpriseCloudSSO** 功能可讓 App 搭配 Web 檢視託管控制項內部的 Azure Active Director (AAD) 資源使用單一登入。
+| **自動接受 VoIP 通話** | **backgroundVoIP** 功能可讓開發人員自動接收和接聽 VoIP 來電，而不需要使用者明確接受通話。 使用這項功能的應用程式獲得攝影機及麥克風的完整控制權，並且可以在背景使用這些資源。
+| **開發模式網路** | 呼叫 C++/CX UWP app 或 C++ Windows 執行階段元件中的 OpenFile Win32 API 時，**developmentModeNetwork** 功能可讓應用程式使用已登入使用者的認證存取網路路徑。 沒有人可以要求存取這項功能來進行 Microsoft Store 提交。
+| **廣泛的檔案系統存取** | **broadFileSystemAccess** 功能可讓應用程式在沒有任何其他檔案選擇器樣式提示的情況下，於執行階段期間取得和目前正在執行應用程式的使用者同樣的檔案系統存取權。 <br/><br/>請務必注意，在應用程式封裝資訊清單中宣告此功能，第一次使用任何 [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API 時，將會觸發使用者可在其中授與或拒絕權限的使用者內容提示。 使用者也可以藉由切換 [設定]，隨時授與或拒絕權限。 同樣重要的是，請勿宣告任何使用這項功能的特殊資料夾功能，例如 **\[文件\]**、**\[圖片\]** 或 **\[影片\]**。
 
 ## <a name="related-topics"></a>相關主題
 

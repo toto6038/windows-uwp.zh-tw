@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: In order to add and manage account users, you must first associate your Dev Center account with your organization's Azure Active Directory.
-title: "將 Azure Active Directory 與您的開發人員中心帳戶產生關聯"
+title: 將 Azure Active Directory 與您的開發人員中心帳戶產生關聯
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶"
+keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: high
-ms.openlocfilehash: ef53a8b339f7f6444373d7445721b641926f00a3
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>將 Azure Active Directory 與您的開發人員中心帳戶產生關聯
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/12/2018
 Windows 開發人員中心會針對多使用者帳戶存取和管理來運用 Azure AD。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以從開發人員中心免費建立新的 Azure AD 租用戶。
 
 > [!TIP]
-> 本主題專屬於 Windows 應用程式開發人員計畫，但關聯租用戶和管理使用者的運作方式類似於 Windows 硬體開發人員計畫中的帳戶。 在本節中，提及**管理員**角色時也適用於具備**系統管理員**角色的硬體帳戶。 如需硬體開發人員計畫中使用者管理的詳細資訊，請參閱[儀表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)。
+> 本主題專屬於 Windows 應用程式開發人員計畫，但建立租用戶關聯和管理使用者的方式同樣適用於 Windows 傳統型應用程式計畫 (如需詳細資訊，請參閱 [Windows 傳統型應用程式計畫](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)) 和 Windows 硬體開發人員計畫 (其中 **\[管理員\]** 角色的參考資料也適用於具有 **\[系統管理員\]** 角色的硬體帳戶；如需詳細資訊，請參閱[儀表板管理](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-administration)) 中的帳戶。
 
 一個 Azure AD 租用戶可以與多個開發人員中心帳戶產生關聯。 您只需將一個 Azure AD 租用戶關聯至開發人員中心帳戶，即可新增多個帳戶使用者，但您也可以選擇新增多個 Azure AD 租用戶至單一開發人員中心帳戶。 在開發人員中心帳戶中具有**管理員**角色的所有使用者，都能選擇新增和移除 Azure AD 租用戶。
 

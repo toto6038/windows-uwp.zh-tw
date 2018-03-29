@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
-title: "Xbox 分析報告"
+title: Xbox 分析報告
 ms.author: wdg-dev-content
-ms.date: 10/30/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料"
+keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料
 ms.localizationpriority: high
-ms.openlocfilehash: ad40d33d51287126cd1940eb830b1be0c5ba7812
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 2b6ab5c15b4683456502ce1b94b1bf3ca74c239c
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析報告
 
@@ -55,7 +55,6 @@ Windows 開發人員中心儀表板中的 **Xbox 分析**報告向您顯示有�
 此區段包含索引標籤，您可選擇來顯示您的遊戲客戶的各種不同資料。 請注意，此區段的統計資料指的是總體上的 (而不是您的特定產品內的) 功能使用量。
 
 - **\[社交使用量\]** 索引標籤顯示客戶如何透過社交進行互動的相關資料。
-   - **\[遊戲中心\]** 顯示您的客戶中與遊戲中心互動的人數百分比。 此資料只適用於 Xbox 上的產品，所指的是您的客戶中通常有多少人使用遊戲中心，而不是明確指著您產品的遊戲中心來說。
    - **\[遊戲邀請\]** 顯示您的客戶中送出邀請 (就任何遊戲而言) 的人數百分比。
    - **\[派對交談\]** 顯示您的客戶中使用派對交談 (就任何遊戲而言) 的人數百分比。
    - **\[簡訊\]** 顯示您的客戶中透過 Xbox 命令介面傳送訊息 (就任何遊戲而言) 的人數百分比。

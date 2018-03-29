@@ -1,28 +1,29 @@
 ---
 author: JnHs
-Description: "了解如何從 Windows 開發人員中心傳送通知到您的 app，以鼓勵客戶群組採取行動，例如為 app 評分或購買附加元件。"
-title: "傳送特定對象的推播通知給您的應用程式客戶"
+Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
+title: 傳送特定對象的推播通知給您的 App 客戶
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 02/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10, uwp, 目標式通知, 推播通知, 快顯通知, 磚
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
-ms.openlocfilehash: e1103639cd324ec0dab9e43159cab57c39747d17
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: f7b4558b6c5ea2cc9dbc30cb605f1cb06432504f
+ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 
-在對的時間以適當的訊息和客戶互動，是您身為 app 開發人員的致勝關鍵。 Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳送通知給所有客戶，或只鎖定符合您在[客戶區隔](create-customer-segments.md)中定義之條件的 Windows 10 客戶子集。
+在對的時間以適當的訊息和客戶互動，是您身為 App 開發人員的致勝關鍵。 通知可以鼓勵您的客戶採取行動，例如為應用程式評分、購買附加元件、嘗試新功能或下載另一個應用程式 (或許可透過您提供的[促銷代碼](generate-promotional-codes.md)免費取得)。
 
-您可以使用通知來鼓勵您的客戶採取行動，例如為應用程式評等、購買附加元件、嘗試新功能或下載另一個應用程式 (或許可透過您提供的[促銷碼](generate-promotional-codes.md)免費取得)。
+Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳送通知給 App 的所有客戶，或只鎖定符合您在[客戶區隔](create-customer-segments.md)中定義之條件的 App 的 Windows 10 客戶子集。 <!-- You can also send a single notification to all of the customers for multiple apps. -->
 
 > [!IMPORTANT]
-> 這些通知只能用於 UWP 應用程式。
+> 這些通知只能用於 UWP app。
 
 考慮您的通知內容時，請牢記︰
 - 通知中的內容必須符合市集[內容原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#content_policies)。
@@ -30,13 +31,17 @@ ms.lasthandoff: 06/21/2017
 - 雖然我們會全力按照預定時間提供您的通知，但有時可能會發生影響傳遞的延遲問題。
 - 請勿傳送通知太過頻繁。 每 30 分鐘多於一次可能會顯得很冒昧 (對許多案例來說，最好低於這個頻率)。
 - 請注意，如果使用您的 App (並且在確定區隔會員資格後使用其 Microsoft 帳戶登入) 的客戶稍後將裝置交給某人使用，那麼其他人可能會看到針對原來客戶的通知。 如需詳細資訊，請參閱[針對確定目標推播通知設定您的 App](../monetize/configure-your-app-to-receive-dev-center-notifications.md#notification-customers)。
+<!-- - If you send the same notification to customers of multiple apps, you can't target a segment; the notification will be sent to all customers for the apps you select. -->
+
 
 ## <a name="getting-started-with-notifications"></a>開始使用通知
 
 有三件重要的事必須執行，您才能使用通知和客戶互動。
+
 1. **登錄您的 app 以接收推播通知。** 您要在您的 app 中加入 Microsoft Store Services 的引用，然後再新增幾行於開發人員中心和您的 app 之間登錄通知通道的程式碼。 我們將使用該管道傳遞您的通知給您的客戶。 如需詳細資訊，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
-2. **建立做為特定對象的一個或多個客戶區隔。** 您可以根據人口統計或收入條件，將客戶群組為不同的區隔。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。 如果您想要，您也可以傳送通知給所有應用程式客戶。
-3. **建立推播通知，並將它傳送到特定的客戶區隔。** 例如，傳送通知以鼓勵新客戶為您的 app 評等，或傳送以特殊優惠購買附加元件的通知。
+2. **決定要設定為目標的客戶。** 您可以將通知傳送給 App 所有的客戶或 (針對單一 App 所建立的通知) 稱為*區隔*的客戶群組 (您可以根據人口統計資料或營收準則定義此群組)。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。 
+3. **建立您的通知內容並將其送出。**例如，您可能會建立鼓勵新客戶為您的 App 評等的通知，或傳送促進購買附加元件之特殊交易的通知。
+
 
 ## <a name="to-create-and-send-a-notification"></a>若要建立並傳送通知
 
@@ -47,15 +52,14 @@ ms.lasthandoff: 06/21/2017
 
 1.  在[Windows 開發人員中心儀表板](https://developer.microsoft.com/dashboard/overview)，展開 **\[互動\]** 區段，然後選取 **\[通知\]**。
 2.  在 **\[通知\]** 頁面上，選取 **\[新通知\]**。
-3.      從下拉式功能表中，選取您要產生通知的 app。
-4.  在 **\[選取範本\]** 區段中，選擇您想傳送的通知類型。 如需詳細資訊，請參閱[通知範本類型](#notification-template-types)。
-  ![通知範本](images/push-notifications-template.png)
-5.  在 **\[通知設定\]** 區段中選擇 **\[通知\]** 的名稱，然後選擇您想要傳送通知的 **\[客戶群組\]**。
-如果您尚未建立區隔，請選取 **\[建立新的客戶群組\]**。 請注意，在 24 小時後，新的區隔才能使用於通知。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
-6.  如果您想要指定傳送通知的對象，請清除 **\[立即傳送通知\]** 核取方塊，然後選擇特定的日期和時間。
-7.  如果您想讓通知在某個時間點到期，請清除 **\[通知永遠不會到期\]** 核取方塊，然後選擇特定的到期日期和時間。
-8.  如果您想要篩選收件者，以便只將通知傳送給使用特定語言的人，或是位於特定時區的人，請核取 [**篩選**] 核取方塊。 然後您可以選取語言和/或時區，用來篩選收件者。
-9.  在 [**通知內容**] 區段的 [**語言**] 功能表中，選擇您希望通知以何種語言顯示。 如需詳細資訊，請參閱[翻譯您的通知](#translate-your-notifications)。
+3.  在 **\[選取範本\]** 區段中，選擇您想傳送的通知類型。 如需詳細資訊，請參閱[通知範本類型](#notification-template-types)。 <!-- ![Notification templates](images/push-notifications-template.png) -->
+4.      在下一個頁面上，<!-- use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. -->選取 App<!-- or apps --> (這必須經過設定，才能使用 Microsoft Store Services SDK 接收通知)。
+5.  在 **\[通知設定\]** 區段中選擇 **\[通知\]** 的名稱，然後 (如果適用) 選擇您想要將通知傳送到的 **\[客戶群組\]**。 <!-- (Notifications sent to multiple apps can only be sent to all customers of those apps.) --> 如果您想要使用尚未建立的區隔，請選取 **\[建立新的客戶群組\]**。 請注意，這需要 24 小時才能將新區隔用於通知。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
+6.  如果您想要指定何時傳送通知，請清除 **\[立即傳送通知\]** 核取方塊，然後選擇特定的日期和時間 (除非您指定要使用每個客戶的當地時區，否則對所有客戶皆以 UTC 顯示)。
+7.  如果您想要讓通知在某個時間點到期，請清除 **\[通知永遠不會到期\]** 核取方塊，然後選擇特定的到期日期和時間 (以 UTC 表示)。
+8.  <!-- For notifications to a single app: --> If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the **Use filters** checkbox. You can then specify the language and/or time zone options you want to use.
+<!-- and don't forget to update numbers when this comes back... 9.      For notifications to multiple apps: Specify whether to send the notification only to the last active app on each device (per customer), or to all apps on each device. -->
+9.  在 **\[通知內容\]** 區段的 **\[語言\]** 功能表中，選擇您希望通知以何種語言顯示。 如需詳細資訊，請參閱[翻譯您的通知](#translate-your-notifications)。
 10. 在 **\[選項\]** 區段中，輸入文字並設定您想要的任何其他選項。 如果您使用範本開始，則預設會提供一部分，但您可以視需要變更。
    可用的選項會依據您使用的通知類型而不同。 部分選項包括：
    - **啟用類型** (互動式快顯通知類型)。 您可以選擇 **\[前景\]**、**\[背景\]** 或 **\[通訊協定\]**。
@@ -66,13 +70,14 @@ ms.lasthandoff: 06/21/2017
    - **基底 URI** (互動式快顯通知類型)。 如需詳細資訊，請參閱 [BaseUri](https://msdn.microsoft.com/library/windows/apps/br208712)。
    - **新增影像查詢** (互動式快顯通知類型)。 如需詳細資訊，請參閱 [addImageQuery](https://msdn.microsoft.com/library/windows/apps/br230847)。
    - **視覺**。 影像、視訊或音效。 如需詳細資訊，請參閱[視覺效果](https://msdn.microsoft.com/library/windows/apps/br230847)。
-   - **輸入**/**動作**/**選取項目** (互動式快顯通知類型)。 可讓使用者與通知互動。 如需詳細資訊，請參閱[調適型和互動式快顯通知](../controls-and-patterns/tiles-and-notifications-adaptive-interactive-toasts.md)。
+   - **輸入**/**動作**/**選取項目** (互動式快顯通知類型)。 可讓使用者與通知互動。 如需詳細資訊，請參閱[調適型和互動式快顯通知](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)。
    - **繫結** (互動式磚類型)。 快顯通知範本。 如需詳細資訊，請參閱[繫結](https://msdn.microsoft.com/library/windows/apps/br230843)。
 
    > [!TIP]
    > 請嘗試使用[通知視覺化檢視](https://www.microsoft.com/store/apps/9nblggh5xsl1)應用程式來設計和測試您的調適型磚和互動式快顯通知。
 
 11. 選取 **\[儲存為草稿\]** 以在稍後繼續處理通知，如果您已完成，請選取 **\[傳送\]**。
+
 
 ## <a name="notification-template-types"></a>通知範本類型
 
@@ -93,31 +98,34 @@ ms.lasthandoff: 06/21/2017
 
   ![交叉宣傳快顯通知 \[啟動\] 方塊](images/push-notifications-promote-toast-launch-box.png)
 -   **宣傳銷售 (快顯通知)。** 可用來宣告 app 優惠的快顯通知。 當客戶選取通知時，會顯示您的 app 的市集清單。
--   **提示更新 (快顯通知)。** 鼓勵執行您的舊版 app 的客戶安裝最新版的快顯通知。 當客戶選取通知時，會顯示市集 app 中的 **\[下載與更新\]** 清單。 請注意，您不需要建立客戶區隔就能使用此範本。 我們會將這個通知排程在 24 小時內，並將對象鎖定為尚未執行您的 app 最新版的所有使用者。
+-   **提示更新 (快顯通知)。** 鼓勵執行您的舊版 app 的客戶安裝最新版的快顯通知。 當客戶選取通知時，Microsoft Store 應用程式將會啟動，並顯示 **\[下載與更新\]** 清單。 請注意，此範本只能用於單一 App，您無法以特定客戶區隔為目標，也不能定義傳送的時間；我們一律將此通知排程在 24 小時內傳送，但會盡最大努力將目標設定為所有尚未執行您的最新版本 App 的使用者。
+
 
 ## <a name="measure-notification-performance"></a>測量通知效能
 
 您可以測量透過每個通知與客戶互動的狀況。
+
 
 ###<a name="to-measure-notification-performance"></a>測量通知效能
 
 1.  當您建立通知時，請在 **\[通知內容\]** 區段選取 **\[追蹤 app 啟動速率\]** 核取方塊。
 2.  在您的應用程式中呼叫 [ParseArgumentsAndTrackAppLaunch](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch.aspx) 方法，即可通知開發人員中心您的應用程式已啟動，以回應特定對象的通知。 這個方法由 Microsoft Store Services SDK 提供。 如需如何呼叫這個方法的詳細資訊，請參閱[設定您的應用程式以接收開發人員中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
+
 ###<a name="to-view-notification-performance"></a>檢視通知效能
 
-當您依上述方式設定通知和 app 以[測量通知效能](#measure-notification-performance)後，可以使用儀表板來查看通知執行狀況。
+當您依上述方式設定通知和 app 以測量通知效能後，可以使用儀表板來查看通知執行狀況。
 
-1.  在儀表板中，選取您的其中一個 app。
-2.  展開左側功能表的 **\[服務\]** 區段，然後選取 **\[推播通知\]** 以查看該 App 關聯的通知。
-3.  在 **\[特定對象的推播通知\]** 頁面上，選取 **\[進行中\]** 或 **\[完成\]**，再查看 **\[傳遞速率\]** 和 **\[App 啟動速率\]** 欄位以了解每個通知的整體效能。
-4.  若要查看更詳細的效能詳細資料，請選取通知名稱。 **\[傳遞統計資料\]** 區段就會顯示，並針對下列通知 **\[狀態\]** 類型顯示 **\[計數\]** 和 **\[百分比\]** 資訊︰
+1.  在[Windows 開發人員中心儀表板](https://developer.microsoft.com/dashboard/overview)，展開 **\[互動\]** 區段，然後選取 **\[通知\]**。
+2.  在 **\[特定對象的推播通知\]** 頁面上，選取 **\[進行中\]** 或 **\[完成\]**，再查看 **\[傳遞速率\]** 和 **\[App 啟動速率\]** 欄位以了解每個通知的整體效能。
+3.  若要查看更詳細的效能詳細資料，請選取通知名稱。 在 **\[傳遞統計資料\]** 區段中，您可以檢視下列通知 **\[狀態\]** 類型的 **\[計數\]** 和 **\[百分比\]** 資訊︰
  - **失敗**︰通知因為某些原因未傳遞。 例如，如果 Windows 通知服務中發生問題，這個情況就會發生。
  - **通道到期失敗**︰無法傳遞通知，因為應用程式與開發人員中心之間的通道已到期。 例如，如果客戶長時間未開啟您的 app，這個情況就會發生。
  - **傳送中**︰通知在待傳送的佇列中。
  - **已傳送**︰已傳送通知。
  - **啟動**︰通知已傳送、客戶按一下通知，因此開啟您的應用程式。 請注意，這只會追蹤 app 啟動。 這個狀態不包括邀請客戶採取其他行動 (例如啟動市集以留下評等) 的通知。
  - **不明**︰我們無法判斷這個通知的狀態。
+
 
 ## <a name="translate-your-notifications"></a>翻譯您的通知
 
@@ -134,8 +142,8 @@ ms.lasthandoff: 06/21/2017
  - 如果您在通知翻譯後變更英文的文字，我們將會自動更新翻譯的通知以符合變更。 不過，如果您先前選擇覆寫初始翻譯，就不會發生這個狀況。
 
 ## <a name="related-topics"></a>相關主題
-- [UWP app的磚、徽章及通知](../controls-and-patterns/tiles-badges-notifications.md)
-- [Windows 推播通知服務 (WNS) 概觀](../controls-and-patterns/tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+- [適用於 UWP app 的磚](../design/shell/tiles-and-notifications/creating-tiles.md)
+- [Windows 推播通知服務 (WNS) 概觀](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)
 - [通知視覺化檢視應用程式](https://www.microsoft.com/store/apps/9nblggh5xsl1)
 - [StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() 方法](https://msdn.microsoft.com/library/windows/apps/mt771190.aspx)
 - [客戶區隔與推播通知︰新的 Windows 開發人員中心測試人員計畫功能 (部落格文章)](https://blogs.windows.com/buildingapps/2016/08/17/customer-segmentation-and-push-notifications-a-new-windows-dev-center-insider-program-feature/#XTuCqrG8G5IMgWew.97)

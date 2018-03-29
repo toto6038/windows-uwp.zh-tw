@@ -1,26 +1,27 @@
 ---
 author: jnHs
-Description: "Windows 開發人員中心儀表板的 \\[附加元件下載數\\] 報告讓您能夠查看您所銷售的附加元件數、人數統計資料及平台詳細資訊。"
-title: "附加元件下載數報告"
+Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+title: 附加元件下載數報告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 08/04/2017
+ms.date: 02/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 46d5ee3d0e0ac9c2a3599f51e17ea4d7425ab5af
-ms.sourcegitcommit: a8e7dc247196eee79b67aaae2b2a4496c54ce253
+keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
+ms.localizationpriority: high
+ms.openlocfilehash: 5b8d0bb140206612a5096f48d87029b2285a0770
+ms.sourcegitcommit: 980e604c3767e7a73619d027bebd78cf4bfe9678
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2017
+ms.lasthandoff: 02/14/2018
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 
 
-Windows 開發人員中心儀表板的 **\[附加元件下載數\]** 報告讓您能夠查看您所銷售的附加元件數、人數統計資料及平台詳細資訊。 它也可讓您取得 Windows 10 客戶的轉換資訊。
+Windows 開發人員中心儀表板的 **\[附加元件下載數\]** 報告讓您能夠查看您所銷售的附加元件數、人數統計資料及平台詳細資訊。 它也可讓您取得 Windows 10 (包括 Xbox) 客戶的轉換資訊。
 
-您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用 [Windows 市集分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得附加元件下載數](../monetize/get-in-app-acquisitions.md)方法來擷取此資料。
+您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得附加元件下載數](../monetize/get-in-app-acquisitions.md)方法來擷取此資料。
 
 在此報告中，附加元件下載數表示客戶已經向您購買附加元件（或取得而不需付費，如果您免費提供附加元件）。 同一位客戶購買多個相同的消耗型附加元件會當作個別的附加元件下載數來計算。
 
@@ -36,7 +37,7 @@ Windows 開發人員中心儀表板的 **\[附加元件下載數\]** 報告讓�
 
 -   **附加元件**：預設篩選條件是 **\[所有附加元件\]**，但您可以限制資料為 App 的一或多個附加元件。
 -   **市場**：預設篩選條件是 **\[所有市場\]**，但您可以限制資料為一或多個市場中的下載數。
--   **裝置類型**：預設設定為 **\[所有裝置\]**。 如果您只想要顯示來自特定裝置類型的下載數資料，您可以在此處選擇特定的類型。
+-   **裝置類型**：預設設定為 **\[所有裝置\]**。 如果您只想要顯示來自特定裝置類型 (例如個人電腦、主機或平板電腦) 的下載數資料，您可以在此處選擇特定的類型。
 
 下列所有圖表中的資訊將反映您選取的日期範圍和任何篩選條件。 某些區段也可讓您套用其他篩選。
 
@@ -67,7 +68,7 @@ Windows 開發人員中心儀表板的 **\[附加元件下載數\]** 報告讓�
 
 ## <a name="add-on-page-views-and-conversions-by-campaign-id"></a>附加元件頁面檢視數與轉換數 (依行銷活動識別碼)
 
-**附加元件頁面檢視數與轉換數 (依行銷活動識別碼)** 圖表顯示在所選時段內，每個行銷活動識別碼的附加元件轉換（下載）總數，協助您追蹤每個[自訂促銷活動](create-a-custom-app-promotion-campaign.md)的 Windows 10 客戶轉換數和頁面檢視數。 此圖表僅顯示附加元件轉換。
+**附加元件頁面檢視數與轉換數 (依行銷活動識別碼)** 圖表顯示在所選時段內，每個行銷活動識別碼的附加元件轉換 (下載) 總數，協助您追蹤每個[自訂促銷活動](create-a-custom-app-promotion-campaign.md)的 Windows 10 (包括 Xbox) 客戶轉換數和頁面檢視數。 此圖表僅顯示附加元件轉換。
 
 > [!NOTE]
 > 客戶可能透過按一下並非由您建立的自訂行銷活動，而連到您的應用程式清單。 我們將工作階段中的每個頁面檢視都加上客戶首度進入市集的行銷活動識別碼。 接著，對於 24 小時內的所有下載，我們會將轉換歸至該行銷活動識別碼。 因此，您可能會看到比您行銷活動識別碼轉換總計更多的轉換總計，以及可能會有頁面檢視為零的轉換或附加元件轉換。 

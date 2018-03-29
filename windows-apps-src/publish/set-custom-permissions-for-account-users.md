@@ -1,20 +1,20 @@
 ---
 author: jnHs
-Description: Set custom permissions for account users.
-title: "設定帳戶使用者的自訂權限"
+Description: Set roles or custom permissions for account users.
+title: 設定帳戶使用者的角色或自訂權限
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色"
+keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: high
-ms.openlocfilehash: 1fdde4be606abae849ff3350d27afbbced157f75
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 3c62ff8a028af62512936e51bd81d3f3e229bd24
+ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/12/2018
 -   具有特定角色 (或一組自訂權限) 的使用者也可以是具有不同角色 (或一組權限) 之群組的一部分。 在此情況下，使用者將具備與群組和個別帳戶相關聯之所有功能的存取權。
 
 > [!TIP]
-> 本主題專屬於 Windows 應用程式開發人員計畫。 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。
+> 本主題專屬於 Windows 應用程式開發人員計畫。 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 如需有關 Windows 傳統型應用程式計畫中使用者角色的詳細資訊，請參閱 [Windows 傳統型應用程式計畫](https://msdn.microsoft.com/library/windows/desktop/mt826504#users)。
 
 
 <span id="roles" />
@@ -86,7 +86,7 @@ ms.lasthandoff: 01/12/2018
 
 ## <a name="account-level-permissions"></a>帳戶層級權限
 
-本節中的權限不限特定產品。 授與這些權限的存取權可讓使用者在整個帳戶擁有該項權限。
+本節中的權限不限特定產品。 授與這其中一個權限的存取權可讓使用者在整個帳戶擁有該項權限。
 
 <table>
     <colgroup>
@@ -117,7 +117,8 @@ ms.lasthandoff: 01/12/2018
 <tr><td align="left">    **連絡資訊**                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的[連絡資訊](managing-your-profile.md)。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的[連絡資訊](managing-your-profile.md)。            </td></tr>
 <tr><td align="left">    **COPPA 規範**                    </td><td align="left">  可檢視帳戶中所有產品的 [COPPA 規範](in-app-ads.md#coppa-compliance)選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 [COPPA 規範](in-app-ads.md#coppa-compliance)選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
 <tr><td align="left">    **客戶群組**                     </td><td align="left">  可檢視 **\[客戶\]** 區段中的[客戶群組](create-customer-groups.md) (區隔和正式發行前小眾測試版群組)。      </td><td align="left">  可建立、編輯和檢視 **\[客戶\]** 區段中的[客戶群組](create-customer-groups.md) (區隔和正式發行前小眾測試版群組)。       </td></tr>
-<tr><td align="left">    **新的 app**                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中[建立新的 app](create-your-app-by-reserving-a-name.md)，並可建立提交內容，將 app 提交到市集。     </td></tr>
+<tr><td align="left">    **管理產品金鑰**&nbsp;\*                            </td><td align="left">  可檢視新的產品群組建立頁面，但實際上不能在帳戶中建立新的產品群組。    </td><td align="left">  可以建立和編輯產品群組。     </td></tr>
+<tr><td align="left">    **新 App**                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中[建立新的 app](create-your-app-by-reserving-a-name.md)，並可建立提交內容，將 app 提交到市集。     </td></tr>
 <tr><td align="left">    **新的套件組合**&nbsp;*                       </td><td align="left">  可檢視新的套件組合建立頁面，但實際上不能在帳戶中建立新的套件組合。     </td><td align="left">  可建立新的產品套件組合。          </td></tr>
 <tr><td align="left">    **合作夥伴服務**&nbsp;*                  </td><td align="left">  可檢視安裝到服務以擷取 XTokens 的憑證。     </td><td align="left">  可管理和檢視安裝到服務以擷取 XTokens 的憑證。       </td></tr>
 <tr><td align="left">    **支付帳戶**                      </td><td align="left">  可檢視 **\[帳戶設定\]** 中的[支付帳戶資訊](setting-up-your-payout-account-and-tax-forms.md#payout-account)。     </td><td align="left">  可編輯和檢視 **\[帳戶設定\]** 中的[支付帳戶資訊](setting-up-your-payout-account-and-tax-forms.md#payout-account)。       </td></tr>
@@ -125,6 +126,7 @@ ms.lasthandoff: 01/12/2018
 <tr><td align="left">    **信賴憑證者**&nbsp;*                   </td><td align="left">  可檢視信賴憑證者以擷取 XTokens。    </td><td align="left">  可管理和檢視信賴憑證者以擷取 XTokens。     </td></tr>
 <tr><td align="left">    **要求光碟片**&nbsp;*                   </td><td align="left">  可以檢視遊戲光碟要求。    </td><td align="left">  可以建立及檢視遊戲光碟要求。     </td></tr>
 <tr><td align="left">    **沙箱**&nbsp;*                         </td><td align="left">  可存取 **\[沙箱\]** 頁面，和檢視帳戶中的沙箱與這些沙箱適用的任何設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。 </td><td align="left">  可存取 **\[沙箱\]** 頁面及檢視和管理帳戶中的沙箱，包括建立和刪除沙箱及管理其設定。 除非被授與適當的產品層級權限，否則無法檢視每個沙箱的產品和提交內容。    </td></tr>
+<tr><td align="left">    **Microsoft Store 銷售事件**&nbsp;\*                            </td><td align="left">  N/A    </td><td align="left">  可以設定自動將產品包含在 Microsoft Store 銷售事件中的選項。     </td></tr>
 <tr><td align="left">    **稅金設定檔**                         </td><td align="left">  可檢視 **\[帳戶設定\]** 中的[稅金設定檔資訊和表單](setting-up-your-payout-account-and-tax-forms.md#tax-forms)。     </td><td align="left">  可在 **\[帳戶設定\]** 中填寫稅單並更新[稅金設定檔資訊](setting-up-your-payout-account-and-tax-forms.md#tax-forms)。     </td></tr>
 <tr><td align="left">    **測試帳戶**&nbsp;*                     </td><td align="left">  可檢視用於測試 Xbox Live 設定的帳戶。      </td><td align="left">  可建立、管理和檢視用於測試 Xbox Live 設定的帳戶。      </td></tr>
 <tr><td align="left">    **Xbox 裝置**                        </td><td align="left">  可在 **\[帳戶設定\]** 區段中檢視為帳戶啟用的 Xbox 開發主機。       </td><td align="left">  可在 **\[帳戶設定\]** 區段中新增、移除和檢視為帳戶啟用的 Xbox 開發主機 。     </td></tr>
@@ -169,7 +171,7 @@ ms.lasthandoff: 01/12/2018
     <tr><td align="left">    **使用量** </td><td>    可檢視產品的[使用量報告](usage-report.md)。     </td><td>    不適用       </td><td>    N/A     </td><td>    不適用         </td></tr>
     <tr><td align="left">    **健康情況** </td><td>    可檢視產品的[健康情況報告](health-report.md)。    </td><td>    不適用     </td><td>    N/A     </td><td>    不適用         </td></tr>
     <tr><td align="left">    **客戶回函**    </td><td>    可檢視產品的[評論](reviews-report.md)及[意見反應](feedback-report.md)報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與**連絡客戶**權限)   </td><td>    不適用     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    **Xbox 分析** </td><td>    可檢視產品的 Xbox 分析報告。 (注意︰這份報告尚未提供。)    </td><td>    不適用   </td><td>    N/A       </td><td>    不適用          </td></tr>
+    <tr><td align="left">    **Xbox 分析** </td><td>    可檢視產品的 Xbox 分析報告。 (注意︰這份報告尚未提供。)    </td><td>    N/A   </td><td>    不適用       </td><td>    不適用          </td></tr>
     <tr><td align="left">    **即時**   </td><td>    可檢視產品的即時報告。 (注意：目前只透過[開發人員中心測試人員計畫](dev-center-insider-program.md)提供這份報告)。      </td><td>    不適用   </td><td>    N/A     </td><td>    不適用                 </td></tr>
     </tbody>
     </table>
@@ -190,7 +192,8 @@ ms.lasthandoff: 01/12/2018
     <tr><td align="left">    **促銷碼**     </td><td>    可檢視產品和其附加元件的[促銷碼](generate-promotional-codes.md)訂單與使用量資訊，並可檢視使用量資訊。         </td><td>    可檢視、管理及建立產品及其附加元件的[促銷碼](generate-promotional-codes.md)訂單，並可檢視使用量資訊。          </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td></tr>
     <tr><td align="left">    **針對性優惠**     </td><td>    可檢視產品的[針對性優惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)。         </td><td>    可檢視、管理及建立產品的[針對性優惠](use-targeted-offers-to-maximize-engagement-and-conversions.md)。          </td><td>    不適用     </td><td>    不適用      </td></tr>
     <tr><td align="left">    **連絡客戶**  </td><td>    只要一併授與**客戶回函**權限，即可檢視[對客戶回函的回應](respond-to-customer-feedback.md)和[對客戶評論的回應](respond-to-customer-reviews.md)。 也可檢視已為產品建立的[特定對象的通知](send-push-notifications-to-your-apps-customers.md)。    </td><td>    只要一併授與**客戶回函**權限，即可[回應客戶回函](respond-to-customer-feedback.md)和[回應客戶評論](respond-to-customer-reviews.md)。 也可為產品[建立和傳送特定對象的通知](send-push-notifications-to-your-apps-customers.md)。                   </td><td>    不適用         </td><td>    不適用                          </td></tr>
-    <tr><td align="left">    **實驗**</td><td>    可檢視 [實驗 (A/B 測試)](../monetize/run-app-experiments-with-a-b-testing.md) 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 [實驗 (A/B 測試)](../monetize/run-app-experiments-with-a-b-testing.md) 及檢視實驗資料。     </td><td>    不適用  </td><td>    不適用                 </td></tr>
+    <tr><td align="left">    **實驗**</td><td>    可檢視 [實驗 (A/B 測試)](../monetize/run-app-experiments-with-a-b-testing.md) 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 [實驗 (A/B 測試)](../monetize/run-app-experiments-with-a-b-testing.md) 及檢視實驗資料。     </td><td>    不適用  </td><td>    N/A                 </td></tr>
+    <tr><td align="left">    **Microsoft Store 銷售活動**&nbsp;\*</td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td></tr>
 
     </tbody>
     </table>
