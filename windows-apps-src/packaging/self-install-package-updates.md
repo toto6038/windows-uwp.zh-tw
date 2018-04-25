@@ -1,20 +1,20 @@
 ---
 author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
-title: "下載與安裝 App 的套件更新"
-description: "了解如何在開發人員中心儀表板中將套件標記為強制性，以及在您的 app 中撰寫程式碼來下載並安裝套件更新。"
+title: 下載與安裝 App 的套件更新
+description: 了解如何在開發人員中心儀表板中將套件標記為強制性，以及在您的 app 中撰寫程式碼來下載並安裝套件更新。
 ms.author: mcleans
-ms.date: 03/15/2017
+ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: high
-ms.openlocfilehash: 62dc1cf81bd26ca5ba4adf181cc9f710e41565c2
-ms.sourcegitcommit: c80b9e6589a1ee29c5032a0b942e6a024c224ea7
+ms.openlocfilehash: ce2f6d6607f09186a3969f37b6808fa1f04fb338
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="download-and-install-package-updates-for-your-app"></a>下載與安裝應用程式的套件更新
 
@@ -29,9 +29,9 @@ ms.lasthandoff: 12/22/2017
 
 |  方法  |  說明  |
 |----------|---------------|
-| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetAppAndOptionalStorePackageUpdatesAsync) | 呼叫這個方法以取得可用套件更新的清單。 請注意，在套件通過認證程序之時到 **GetAppAndOptionalStorePackageUpdatesAsync** 方法辨識出有可供 App 使用的套件更新之時，中間會有最多一天的延遲。 |
-| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | 呼叫這個方法以下載 (但不安裝) 可用的套件更新。 此作業系統會顯示對話方塊，詢問使用者是否可以下載更新。 |
-| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_RequestDownloadAndInstallStorePackageUpdatesAsync_Windows_Foundation_Collections_IIterable_Windows_Services_Store_StorePackageUpdate__) | 呼叫這個方法以下載並安裝可用的套件更新。 作業系統會顯示對話方塊，詢問使用者是否可以下載並安裝更新。 如果您已經藉由呼叫 **RequestDownloadStorePackageUpdatesAsync** 來下載套件更新，這個方法就會略過下載程序，而只會安裝更新。  |
+| [GetAppAndOptionalStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetAppAndOptionalStorePackageUpdatesAsync) | 呼叫這個方法以取得可用套件更新的清單。 請注意，在套件通過認證程序之時到 **GetAppAndOptionalStorePackageUpdatesAsync** 方法辨識出有可供 App 使用的套件更新之時，中間會有最多一天的延遲。 |
+| [RequestDownloadStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadstorepackageupdatesasync) | 呼叫這個方法以下載 (但不安裝) 可用的套件更新。 此作業系統會顯示對話方塊，詢問使用者是否可以下載更新。 |
+| [RequestDownloadAndInstallStorePackageUpdatesAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestdownloadandinstallstorepackageupdatesasync) | 呼叫這個方法以下載並安裝可用的套件更新。 作業系統會顯示對話方塊，詢問使用者是否可以下載並安裝更新。 如果您已經藉由呼叫 **RequestDownloadStorePackageUpdatesAsync** 來下載套件更新，這個方法就會略過下載程序，而只會安裝更新。  |
 
 <span/>
 
@@ -39,8 +39,8 @@ ms.lasthandoff: 12/22/2017
 
 |  屬性  |  說明  |
 |----------|---------------|
-| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Mandatory) | 使用此屬性以判斷在開發人員中心儀表板中套件是否標記為強制性。 |
-| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate#Windows_Services_Store_StorePackageUpdate_Package) | 使用此屬性以存取套件相關的基礎資料。 |
+| [Mandatory](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Mandatory) | 使用此屬性以判斷在開發人員中心儀表板中套件是否標記為強制性。 |
+| [Package](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdate.Package) | 使用此屬性以存取套件相關的基礎資料。 |
 
 <span/>
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/22/2017
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行。
 * **Page** 包含名為 ```downloadProgressBar``` 的 [ProgressBar](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressbar.aspx)，可提供下載作業的狀態。
 * 程式碼檔案含有使用 **Windows.Services.Store**、**Windows.Threading.Tasks** 及 **Windows.UI.Popups** 命名空間的 **using** 陳述式。
-* App 是單一使用者 App，僅會在啟動 App 的使用者內容中執行。 針對[多使用者應用程式](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetForUser_Windows_System_User_) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext#Windows_Services_Store_StoreContext_GetDefault) 方法。
+* App 是單一使用者 App，僅會在啟動 App 的使用者內容中執行。 針對[多使用者應用程式](https://msdn.microsoft.com/windows/uwp/xbox-apps/multi-user-applications)，使用 [GetForUser](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.User) 方法來取得 **StoreContext** 物件，而不是 [GetDefault](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.GetDefault) 方法。
 
 <span/>
 
@@ -221,11 +221,12 @@ private void HandleMandatoryPackageError()
 
 ### <a name="display-progress-info-for-the-download-and-install"></a>顯示下載與安裝的進度資訊
 
-呼叫 **RequestDownloadStorePackageUpdatesAsync** 或 **RequestDownloadAndInstallStorePackageUpdatesAsync** 時，您可以在此要求中，為每個套件的下載 (或下載與安裝) 程序指派其中每個步驟各呼叫一次的 [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_#Windows_Foundation_IAsyncOperationWithProgress_2_Progress) 處理常式。 處理常式會收到 [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) 物件，這個物件提供關於引發進度通知之更新套件的資訊。 先前的範例會使用 **StorePackageUpdateStatus** 物件的 **PackageDownloadProgress** 欄位來顯示下載與安裝程序的進度。
+呼叫 **RequestDownloadStorePackageUpdatesAsync** 或 **RequestDownloadAndInstallStorePackageUpdatesAsync** 時，您可以在此要求中，為每個套件的下載 (或下載與安裝) 程序指派其中每個步驟各呼叫一次的 [Progress](https://docs.microsoft.com/uwp/api/windows.foundation.iasyncoperationwithprogress-2.progress) 處理常式。 處理常式會收到 [StorePackageUpdateStatus](https://docs.microsoft.com/uwp/api/windows.services.store.storepackageupdatestatus) 物件，這個物件提供關於引發進度通知之更新套件的資訊。 先前的範例會使用 **StorePackageUpdateStatus** 物件的 **PackageDownloadProgress** 欄位來顯示下載與安裝程序的進度。
 
 請注意，當您在單一作業中呼叫 **RequestDownloadAndInstallStorePackageUpdatesAsync** 下載並安裝套件更新時，**PackageDownloadProgress** 欄位會在下載套件的過程中從 0.0 增加至 0.8，然後再於安裝期間從 0.8 增加至 1.0。 因此，如果直接將自訂進度 UI 顯示的用百分比對應至 **PackageDownloadProgress** 欄位的值，您的 UI 將會在完成套件下載且作業系統顯示安裝對話方塊時顯示 80%。 如果您希望自訂進度 UI 在套件已下載且準備好要安裝時顯示 100%，您可以將程式碼修改為，在 **PackageDownloadProgress** 欄位到達 0.8 時指派 100% 給自訂進度 UI。
 
 <span id="mandatory-dashboard" />
+
 ## <a name="make-a-package-submission-mandatory-in-the-dev-center-dashboard"></a>在開發人員中心儀表板上將套件提交設定為強制性
 
 當您針對目標為 Windows 10 版本 1607 或更新版本的 app 建立套件提交時，可以將套件標記為強制性，並標記其成為強制性的日期/時間。 當設定此屬性，且 App 使用本文先前所述 API 發現有套件更新可供使用時，App 就可以判斷更新套件是否為強制，並變更其行為，直到安裝更新為止 (例如，App 可以停用功能)。

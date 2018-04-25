@@ -1,24 +1,27 @@
 ---
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
-title: "管理帳戶設定與設定檔資訊"
-description: "您可以在整合的 Windows 開發人員中心儀表板中的 [帳戶設定] 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。"
+title: 管理帳戶設定與設定檔資訊
+description: 您可以在整合的 Windows 開發人員中心儀表板中的 [帳戶設定] 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。
 ms.author: wdg-dev-content
-ms.date: 01/08/2018
+ms.date: 03/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定"
+keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: high
-ms.openlocfilehash: 840eb445eaf5cac05201a58140a7ea7f505d7e14
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 5bedc2bb91478d86af95f45d57369f5409e7cea1
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 
 您可以在[Windows 開發人員中心儀表板](using-the-windows-dev-center-dashboard.md)中的 **\[帳戶設定\]** 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。 
+
+> [!NOTE]
+> 通知喜好設定 (例如接收的通知類型，以及接收方式) 可以在 **\[訊息中心\]** 管理 (您可以透過選取靠近儀表板頂端的訊息圖示來存取)。
 
 ## <a name="account-settings"></a>帳戶設定
 

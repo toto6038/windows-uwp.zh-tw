@@ -3,17 +3,17 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: 設定與排程應用程價格
 ms.author: wdg-dev-content
-ms.date: 02/05/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 定價, App 定價, App 價格, 銷售應用程式, 價格變更, 自訂價格, 價格, 定價, 成本, 覆寫基本價格, 自由格式價格, 自由格式
 ms.localizationpriority: high
-ms.openlocfilehash: 2be7e664279cb19527a262ad3c170d04f8d026fb
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 44ded7baf563d0253c2cca6b7937cb5c8fea74e3
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="set-and-schedule-app-pricing"></a>設定與排程應用程價格
 
@@ -37,6 +37,8 @@ ms.lasthandoff: 02/09/2018
 
 請記住，您選取的價格區間可以包含客戶必須支付的銷售或增值稅。 若要深入了解您的應用程式在選取市場中的稅務關連相關資訊，請參閱[付費應用程式的稅務詳細資料](tax-details-for-paid-apps.md)。 另外建議您檢閱[特定市場的定價考量](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)。
 
+> [!NOTE]
+> 如果您在[可見度](choose-visibility-options.md#discoverability)區段中，選擇 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 下方的 **\[停止擷取\]** 選項，您將無法為提交設定定價 (因為除非獲得可免費取得應用程式的促銷碼，否則沒有人可以取得應用程式)。
 
 ## <a name="schedule-price-changes"></a>排程價格變更
 
@@ -85,7 +87,7 @@ ms.lasthandoff: 02/09/2018
 
 若要覆寫多個市場的基本價格，您可以建立*市場群組*。 若要這樣做，請選取您想要包括的市場，然後選擇性輸入群組的名稱 (此名稱僅供參考，不會對客戶顯示)。當您完成時，按一下 **\[建立\]**。 您將會看見相同的 **\[基本價格\]** 和 **\[排程價格變更\]** 選項，如上所述，但您所做的選擇會是針對該特定市場群組。 請注意，自由格式價格無法用於市場群組。您必須選取可用的價格區間。
 
-若要變更市場群組中包含的市場，請按一下市場群組的名稱，並新增或移除您想要的任何市場，然後按一下**\[確定\]** 儲存變更。 
+若要變更市場群組中包含的市場，請按一下市場群組的名稱，並新增或移除您想要的任何市場，然後按一下 **\[確定\]** 儲存變更。 
 
 > [!NOTE]
 > 一個市場不可屬於 **\[定價\]** 區段中的多個市場群組。

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: high
-ms.openlocfilehash: 0bdae8a8489ddf4f2ec7eb7a619631bd4fa26e9e
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 747d79bb3f271638bcf08bb06965c56340771b73
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -40,20 +40,20 @@ ms.lasthandoff: 03/08/2018
      <th> 我應收到此表單</th>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度**銷售超過 200 個應用程式**，其中銷售總額**超過 $20,000 美元** (**不**含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
-    <td valign="top">**1099-K**：<br>
+     <td valign="top">我在適用的納税年度<b>銷售超過 200 個應用程式</b>，其中銷售總額<b>超過 $20,000 美元</b> (<b>不</b>含透過 Windows 10 上的 Microsoft Store 於巴西及中國所進行的銷售)。</td>
+    <td valign="top"><b>1099-K</b>：<br>
 報稅者：Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
 <br>
 **重要：**Form 1099-K 內含**購買總額** 量，非您收到的款項。</td>
   </tr>
   <tr> 
-     <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到**至少 $10 美元的款項**。<br>
+     <td valign="top">我因為 (i) 於巴西及中國透過 Windows 10 上的 Microsoft Store 進行應用程式銷售，或是 (ii) 在 Minecraft Marketplace 中的銷售，收到<b>至少 $10 美元的款項</b>。<br>
 <br>
 **或**<br>
 <br>
 我在適用的納税年度從 Microsoft 收到 $600 美元的款項，該款項與應用程式銷售無關 (例如：來自選拔或促銷的獎勵款項)</td>
-    <td valign="top">**1099-MISC**：<br>
+    <td valign="top"><b>1099-MISC</b>：<br>
 付款者：Microsoft Corporation<br>
 EIN: \*\*\*\*\*4442<br>
 <br>
@@ -72,15 +72,15 @@ EIN: \*\*\*\*\*4442<br>
      <th> 我應收到此表單</th>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告收到**至少 $600 美元的款項**</td>
-    <td valign="top">**1099-MISC**：<br>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>至少 $600 美元的款項</b></td>
+    <td valign="top"><b>1099-MISC</b>：<br>
 付款者：Microsoft Online Inc<br>
 EIN: \*\*\*\*\*0505<br>
 <br>
 **重要：**部分商務實體不會收到 1099-MISC 表單，無論自 Microsoft 收到的款項額多少皆然。  如需進一步的資訊，請洽詢您的稅務專業人員。  </td>
   </tr>
   <tr> 
-     <td valign="top">我在適用的納税年度從應用程式內的廣告收到**少於 $600 美元的款項**</td>
+     <td valign="top">我在適用的納税年度從應用程式內的廣告收到<b>少於 $600 美元的款項</b></td>
      <td valign="top">無</td>
   </tr>
 </table>
@@ -90,15 +90,15 @@ EIN: \*\*\*\*\*0505<br>
 
 <table>
   <tr>
-    <td valign="top">**我收到來自 Microsoft 的表單 1042-S。 其用途為何？**</td>
+    <td valign="top"><b>我收到來自 Microsoft 的表單 1042-S。 其用途為何？</b></td>
     <td valign="top">因為美國稅務機關將 Microsoft 所支付給您的收益視為應申報且受扣繳稅款限制，所以我們將 1042-S 表單提供給您。  此項申報需求使用表單 1042-S。</td>
   </tr>
   <tr>
-    <td valign="top">**我該如何處理這些表單？**</td>
+    <td valign="top"><b>我該如何處理這些表單？</b></td>
     <td valign="top">一般而言，您無須進行任何特定動作。 若您想向當地稅務機關申請任何形式的扣抵稅額，表單 1042-S 可能就會派上用場。  您應洽詢您專屬的稅務顧問，以取得此主題的詳細資訊。</td>
   </tr>
   <tr>
-    <td valign="top">**為何我完成 W8 表單時，款項有扣繳稅款？**</td>
+    <td valign="top"><b>為何我完成 W8 表單時，款項有扣繳稅款？</b></td>
     <td valign="top">下列任一情況即會產生扣繳稅款：<br>
      1. 您未正確完成 W8 的稅務協定一節，或是<br>
      2. 您所居住的國家/地區與美國並無稅務協定。
@@ -108,15 +108,15 @@ EIN: \*\*\*\*\*0505<br>
      **Note:** Not all income is subject to tax withholding.</td>
   </tr>
   <tr>
-    <td valign="top">**我已提交更新的 W8 表單及有效的協定資訊。 Microsoft 可將扣繳稅款退還給我嗎？**</td>
+    <td valign="top"><b>我已提交更新的 W8 表單及有效的協定資訊。 Microsoft 可將扣繳稅款退還給我嗎？</b></td>
     <td valign="top">稅款一旦經扣繳，便無法退還。 您應與稅務顧問討論是否能要求這些稅款的本地扣抵稅額，或是否可向 IRS 尋求退稅。</td>
   </tr>
   <tr>
-    <td valign="top">**表單 1042-S 申報了哪些銷售？**</td>
-    <td valign="top">僅可申報與**美國買家進行且分類為受扣繳稅款限制**的銷售。  所有其他銷售皆視為不可申報。</td>
+    <td valign="top"><b>表單 1042-S 申報了哪些銷售？</b></td>
+    <td valign="top">僅可申報與<b>美國買家進行且分類為受扣繳稅款限制</b>的銷售。  所有其他銷售皆視為不可申報。</td>
   </tr>
   <tr>
-    <td valign="top">**為何我在同個信封內收到相同表單 1042-S 的 3 個複本？**</td>
+    <td valign="top"><b>為何我在同個信封內收到相同表單 1042-S 的 3 個複本？</b></td>
     <td valign="top">IRS 規定要求需提供三份該表單的複本：
 <ul>
 <li>一份供收件者留作記錄</li>

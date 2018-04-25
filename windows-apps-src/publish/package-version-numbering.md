@@ -1,24 +1,25 @@
 ---
 author: jnHs
-Description: "Windows 市集會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。"
-title: "套件版本編號"
+Description: The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+title: 套件版本編號
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 67c90f87fe0d02a0a906392409103e93e83103c3
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: a5c9c676a3ccd8ff7f1e7d53d9019d722fefa722
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="package-version-numbering"></a>套件版本編號
 
 
-您提供的每個套件必須具有版本號碼 (做為 app 資訊清單之 **Package/Identity** 元素的 **Version** 屬性中的值)。 Windows 市集會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
+您提供的每個套件必須具有版本號碼 (做為 app 資訊清單之 **Package/Identity** 元素的 **Version** 屬性中的值)。 Microsoft Store 會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
 
 > [!NOTE]
 > 本主題是關於「套件」，但是除非另行註明，相同的規則適用於 .appx 和 .appxbundle 檔案兩者的版本號碼。
@@ -26,12 +27,12 @@ ms.lasthandoff: 06/21/2017
 
 ## <a name="version-numbering-for-windows-10-packages"></a>Windows 10 套件的版本編號
 
-任何 Windows 10 套件的版本號碼都必須高於您正對相同 app 發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件的任何版本號碼 (或者適用於您先前發佈之作業系統版本套件的版本號碼)。 (如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 App](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app))。
+任何 Windows 10 套件的版本號碼都必須高於您正對相同 app 發佈的 Windows 8、Windows 8.1 和/或 Windows Phone 8.1 套件的任何版本號碼 (或者適用於您先前發佈之作業系統版本套件的版本號碼)。 (如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 App](https://docs.microsoft.com/en-us/windows/uwp/publish/guidance-for-app-package-management#adding-packages-for-windows-10-to-a-previously-published-app))。
 
 > [!IMPORTANT]
 > 版本號碼的最後一個 (第四個) 區段保留給市集使用，而且當您建置套件時，必須保留為 0 (但是市集可能會變更此區段中的值)。
 
-從您發佈的提交中選擇 Windows 10 套件時，Windows 市集將永遠使用適用於客戶裝置的最高版本套件。 這可讓您有更大的彈性，並讓您可以控制對於特定裝置類型的客戶提供哪個套件。 重要的是，您可以任何順序提交這些套件；您並不受限於在每個後續提交提供較高版本的套件。
+從您發佈的提交中選擇 Windows 10 套件時，Microsoft Store 將永遠使用適用於客戶裝置的最高版本套件。 這可讓您有更大的彈性，並讓您可以控制對於特定裝置類型的客戶提供哪個套件。 重要的是，您可以任何順序提交這些套件；您並不受限於在每個後續提交提供較高版本的套件。
 
 您甚至可以提供具有相同版本號碼的多個 Windows 10 套件。 不過，因為市集用於每個套件的完整身分識別必須是唯一的，所以共用版本號碼的套件不能同時具有相同的架構。 如需詳細資訊，請參閱 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-identity)。
 
@@ -65,11 +66,12 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 
 若要修正客戶已收到有問題的套件的問題，您可以立即提交具有比損壞的套件更高版本號碼的新 Windows 10 套件。 提交進行認證程序之後，所有客戶都會更新為新套件，因為它將會有較高的版本號碼。
 
+
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Windows 8.1 (和舊版) 和 Windows Phone 8.1 套件的版本編號
 
 對於以 Windows Phone 8.1 為目標的 .appx 套件，新提交套件的版本號碼必須一律高於最後提交 (或任何先前的提交) 中包含的套件的版本號碼。
 
-對於以Windows 8 和 Windows 8.1 為目標的 .appx 套件，每個架構會套用相同規則：新提交套件的版本號碼必須一律高於最後針對架構發佈至 Windows 市集的套件的版本號碼。
+對於以Windows 8 和 Windows 8.1 為目標的 .appx 套件，每個架構會套用相同規則：新提交套件的版本號碼必須一律高於最後針對相同架構發佈至 Microsoft Store 之套件的版本號碼。
 
 此外，Windows 8.1 套件的版本編號必須永遠高於同一個 app 的任何 Windows 8 套件版本編號。 換句話說，您提交的任何 Windows 8 套件版本編號必須低於您為相同 app 提交的任何 Windows 8.1 套件版本編號。
 
@@ -78,7 +80,7 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 
 以下是一些 Windows 8 和 Windows 8.1 的不同版本號碼更新案例中發生情形的範例。
 
-| 市集中您 app 的版本  | 您上傳這個版本 | 在 Windows 市集中提供新的版本之後，將會安裝於新的擷取中 | 在 Windows 市集中提供新的版本之後，將會更新 (如果客戶已經擁有該 app) |
+| 市集中您 app 的版本  | 您上傳這個版本 | 在 Microsoft Store 中提供新的版本之後，將會安裝於新的擷取中 | 在 Microsoft Store 中提供新的版本之後，將會更新 (如果客戶已經擁有該 app) |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
 | 無                                     | x86, v1.0.0.0               | x86 和 x64 電腦上都是 x86, v1.0.0.0                                                | 無。 |
 | x86, v1.0.0.0                               | x64, v1.0.0.0               | 客戶的架構為 v1.0.0.0                                                   | 無。 版本號碼相同。 |
@@ -87,6 +89,6 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 | 中性, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | 客戶電腦的架構為 v1.0.0.0。          | 無。 擁有中性, v1.0.0.1 版本 app 的客戶將繼續使用。 |
 | 中性, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | 客戶電腦的架構為 v1.0.0.1。 | 執行中性, v1.0.0.1 版本應用程式的客戶不顯示任何資訊。 <br> 執行為電腦特定架構建置的 v1.0.0.0 應用程式的客戶，v1.0.0.0 將更新為 v1.0.0.1。 |
 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | 客戶電腦的架構為 v1.0.0.2。  | 對於執行為電腦特定架構建置的 v1.0.0.1 應用程式的客戶，v1.0.0.1 將更新為 v1.0.0.2。 |
- 
+
 > [!NOTE]
 > 不同於 .appx 套件，在判斷要為特定客戶提供哪一個套件時，不會考慮任何 .xap 套件中的版本號碼。 若要將客戶從一個 .xap 套件更新為較新的套件，請務必在新的提交中移除較舊的 .xap。

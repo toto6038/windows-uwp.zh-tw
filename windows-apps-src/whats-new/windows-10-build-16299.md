@@ -9,11 +9,11 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 1e61ede3d16d9c92c28a0e40a0dd65951444ef3a
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
+ms.openlocfilehash: e6d9f03fc638581272cca5895c8949209a71e594
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 的新功能
 
@@ -62,7 +62,7 @@ Cortana | 使用 [Cortana 技能套件](https://docs.microsoft.com/cortana/skill
 診斷和執行緒處理 | 新的診斷 API 提供執行應用程式的相關資訊： </br></br>* [AppMemoryReport](https://docs.microsoft.com/uwp/api/Windows.System.AppMemoryReport) 類別提供應用程式總認可限制、私人認可使用量及其他項目的相關資訊。 </br>* [AppDiagnosticInfo](https://docs.microsoft.com/uwp/api/windows.system.appdiagnosticinfo) 類別現在可以監控應用程式或工作的執行狀態，並提供執行狀態變更時的通知。 </br>* [MemoryManager](https://docs.microsoft.com/uwp/api/windows.system.memorymanager) 類別有新的方法來設定應用程式記憶體的使用量限制並報告預期的應用程式記憶體使用量限制。 </br></br>您可以依照優先順序佇列工作，並使用 [DispatcherQueue](https://docs.microsoft.com/uwp/api/windows.system.dispatcherqueue) 類別在不同的執行緒上執行工作。 此功能也能透過 [CreateDispatcherQueueController](https://msdn.microsoft.com/library/windows/desktop/mt826210.aspx) 功能在 Win32 上使用。
 EdgeHTML 16 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提供動力的 Web 平台已更新至 EdgeHTML 16，並且現在包含 F12 開發人員工具的重大改進、支援 CSS 格線版面配置，以及其他數個重要功能。 </br></br> * Microsoft Edge 現在支援 [CSS 格線版面配置](https://docs.microsoft.com/microsoft-edge/dev-guide/css/grid-layout)。 格線版面配置定義二維的格線型版面配置系統，可提供比使用浮點數或指令碼定位更高的版面配置流暢度。</br></br> * [Microsoft Edge 之 F12 DevTools 文件](https://docs.microsoft.com/microsoft-edge/f12-devtools-guide)已更新，改進穩定性和效能。 此外也加入新功能，用以最佳化您的開發體驗。 </br></br>* 僅限 Microsoft Edge，[WebVR](https://docs.microsoft.com/microsoft-edge/webvr/) 已新增支援[運動控制器](https://docs.microsoft.com/microsoft-edge/webvr/input#controller-buttons)和多種 [Windows Mixed Reality 頭戴式裝置](https://docs.microsoft.com/microsoft-edge/webvr/hardware)。 WebVR 也已最佳化為支援高達每秒 90 個畫面格。 </br></br> 請參閱 [Microsoft Edge 開發人員指南](https://docs.microsoft.com/microsoft-edge/dev-guide) 以取得完整的變更和新支援 API 清單。
 地圖 3D 元素 | 您可以加入 3D 物件至地圖。 您可以使用新的 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 類別，從 [3D 製造格式 (3MF)](http://3mf.io/specification/) 檔案匯入 3D 物件。
-地圖元素樣式 | 您可以使用兩個新的 [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) 屬性：[MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement#Windows_UI_Xaml_Controls_Maps_MapElement_MapStyleSheetEntry) 和 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement#Windows_UI_Xaml_Controls_Maps_MapElement_MapStyleSheetEntryState)，自訂地圖元素的外觀。 </br></br>* 您可以使用 [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement#Windows_UI_Xaml_Controls_Maps_MapElement_MapStyleSheetEntry) 屬性，確保您的地圖元素看起來像是基底地圖的一部分 (例如：將元素樣式設定為地圖樣式表中的現有項目，例如*水*)。 </br></br>* 您可以使用 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement#Windows_UI_Xaml_Controls_Maps_MapElement_MapStyleSheetEntryState) 屬性，在地圖樣式表中運用預設狀態 (例如*暫留*和*已選取*) 修改您的地圖元素外觀，或覆寫這些元素以建立您自己的。
+地圖元素樣式 | 您可以使用兩個新的 [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) 屬性：[MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) 和 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState)，自訂地圖元素的外觀。 </br></br>* 您可以使用 [MapStyleSheetEntry](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntry) 屬性，確保您的地圖元素看起來像是基底地圖的一部分 (例如：將元素樣式設定為地圖樣式表中的現有項目，例如*水*)。 </br></br>* 您可以使用 [MapStyleSheetEntryState](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement.MapStyleSheetEntryState) 屬性，在地圖樣式表中運用預設狀態 (例如*暫留*和*已選取*) 修改您的地圖元素外觀，或覆寫這些元素以建立您自己的。
 地圖層 | 您可以新增感興趣的地點元素至[地圖層](../maps-and-location/display-poi.md#layers)，再直接繫結 XAML 至該層。 將您的元素分組為層。 然後，您就可以獨立操作每一層。 例如，每一層都有自己的事件組，讓您可以回應特定層的特定事件，以及執行該事件專屬的動作。
 地圖地點資訊 | 您可以在 UI 元素上方、下方或側面的[輕量彈出式視窗](../maps-and-location/display-maps.md#placecard)中，或使用者觸控的應用程式區域中，顯示地圖給使用者。  當使用者變更內容時，這個視窗就會自行關閉。 這讓使用者無需在應用程式或瀏覽器視窗之間切換，即可取得位置資訊。
 地圖服務 | 想去觀光嗎？ 使用新的 [MapRouteOptimization.Scenic](https://docs.microsoft.com/uwp/api/windows.services.maps.maprouteoptimization) 值，可最佳化路徑以包含大部分景區道路，以及使用 [MapRoute.IsScenic](https://docs.microsoft.com/uwp/api/windows.services.maps.maproute) 來探索現有路徑是否包含景區道路。

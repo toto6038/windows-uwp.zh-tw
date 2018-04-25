@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 5d416ad13c2e689c5265164c0269244a387a6c7f
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 518cc64fec2524bb3cc02daca72a990d016c8ce5
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="whats-new-in-windows-10-for-developers-sdk-preview-build-17110"></a>適用於開發人員的 Windows 10 (SDK 預覽版組建 17110) 的新功能
 
 Windows 10 SDK 預覽版組建 17110 (搭配 Visual Studio 2017 及更新的 SDK) 提供工具、功能及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
-這是此 SDK 預覽版中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 現在這些功能可供 [Windows 測試人員計畫](https://insider.windows.com/en-us/)的成員存取，並且會在 Windows 10 的下一個主要更新中公開提供。 如需 Windows SDK 中所加入新命名空間的完整清單，請參閱 [Windows 10 組建 17110 API 變更](windows-10-build-17110-api-diff.md)。如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷炫功能](http://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
+這是此 SDK 預覽版中 Windows 開發人員會感興趣的新功能和改良功能以及指引的集合。 現在這些功能可供 [Windows 測試人員計畫](https://insider.windows.com/)的成員存取，並且會在 Windows 10 的下一個主要更新中公開提供。 如需 Windows SDK 中所加入新命名空間的完整清單，請參閱 [Windows 10 組建 17110 API 變更](windows-10-build-17110-api-diff.md)。如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷炫功能](http://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
@@ -63,7 +63,7 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 PlayReady | Microsoft PlayReady 是一組保護數位內容免遭未經授權使用的技術。 PlayReady 可在各種裝置和 App 上執行，以及跨所有作業系統執行。 [了解如何將 PlayReady 納入您的 App 中。](https://docs.microsoft.com/playready/)
 螢幕擷取 | [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。 如需詳細資訊，請參閱 [螢幕擷取](../audio-video-camera/screen-capture.md)。
 系統觸發程序 | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) 可讓您在作業系統未提供您需要的系統觸發程序時定義系統觸發程序。 例如，當硬體驅動程式和 UWP app 都屬於協力廠商，而且硬體驅動程式必須引發其 App 處理的自訂事件時。 例如，需要通知使用者關於何時插入音訊插孔時的音訊卡。
-使用者活動 | **UserActivitySessionHistoryItem** 類別有擷取最近使用者活動的新方法。 如需詳細資訊，請參閱 [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel#Windows_ApplicationModel_UserActivities_UserActivityChannel_GetRecentUserActivitiesAsync_System_Int32_) 及其多載。
+使用者活動 | **UserActivitySessionHistoryItem** 類別有擷取最近使用者活動的新方法。 如需詳細資訊，請參閱 [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) 及其多載。
 Windows Mixed Reality | 為了支援逐漸茁壯的 Windows Mixed Reality 平台，新的 API 已新增至 [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 和 [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 命名空間。
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利

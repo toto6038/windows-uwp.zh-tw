@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: 66c0ae56c3722162ebef5a8660cc2322d69a278b
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 04d4ca665a8f0dff495b144868767506d7a210f8
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -26,6 +26,7 @@ ms.lasthandoff: 03/08/2018
 如需有關如何將這些 SDK 與應用程式整合來顯示廣告的詳細資訊，請參閱[使用 Microsoft Advertising SDK 在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md)。
 
 <span id="create-ad-unit" />
+
 ## <a name="create-ad-units"></a>建立廣告單元
 
 若要在您的應用程式中建立[橫幅廣告](../monetize/banner-ads.md)、[插播式廣告](../monetize/interstitial-ads.md)或[原生廣告](../monetize/native-ads.md)的廣告單元：
@@ -61,6 +62,7 @@ ms.lasthandoff: 03/08/2018
 建立新的廣告單元後，廣告單元會顯示在 **\[創造營收\]** &gt; **\[應用程式內廣告\]** 頁面的可用廣告單元表格中。
 
 <span id="available-ad-units" />
+
 ## <a name="review-and-edit-ad-units"></a>檢閱和編輯廣告單元
 
 建立一個或多個應用程式的廣告單元後，這些廣告單元會顯示在 **\[創造營收\]** &gt; **\[應用程式內廣告\]** 頁面底部的表格中。 此表格會顯示每個廣告單元的 **\[應用程式識別碼\]** 和 **\[廣告單元識別碼\]**，以及其他資訊。 若要在應用程式中顯示廣告，您必須在程式碼中使用下列值。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](../monetize/set-up-ad-units-in-your-app.md)。
@@ -81,6 +83,7 @@ ms.lasthandoff: 03/08/2018
 請注意，廣告單元過去 6 個月都沒有活動，我們會將其標示為**非使用中**，而且最後會將其從您的儀表板中移除。 您可以使用篩選，只顯示**使用中**或**非使用中**廣告單元。 如果您看到任何您認為不正確標示為**非使用中**的廣告單元時，請[連絡客戶支援](http://aka.ms/storesupport)。
 
 <span id="mediation" />
+
 ## <a name="mediation-settings"></a>流量分配設定
 
 當您[建立新的 UWP 廣告單元](#create-ad-unit)或[編輯現有 UWP 廣告單元](#available-ad-units)時，請使用此區段中的選項來設定廣告單元的廣告流量分配。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路的廣告，以及 Microsoft 應用程式促銷活動的非營收產生廣告， 我們負責處理來自您選擇的廣告網路的橫幅廣告要求的流量分配。 如果您的 App 中的橫幅廣告、插播式廣告或原生廣告已經與 UWP 廣告單元相關聯，則不需要改變 App 的程式碼就能啟用廣告流量分配。
@@ -113,6 +116,7 @@ ms.lasthandoff: 03/08/2018
 10. 按一下 **\[建立廣告單元\]** (如果要建立新的廣告單元) 或 **\[儲存\]** (如果要編輯現有的廣告單元)。
 
 <span id="paid-networks" />
+
 ### <a name="supported-paid-ad-networks"></a>支援的付費廣告網路
 
 下表列出每個廣告類型目前支援的付費網路。 請注意，其中一些網路[並非所有市場都有提供](#network-markets)。
@@ -131,6 +135,7 @@ ms.lasthandoff: 03/08/2018
 
 
 <span id="other-networks" />
+
 ### <a name="other-ad-networks"></a>其他廣告網路
 
 下表列出每個廣告類型目前支援的其他網路。
@@ -142,6 +147,7 @@ ms.lasthandoff: 03/08/2018
 
 
 <span id="network-markets" />
+
 ### <a name="supported-markets-for-ad-networks"></a>廣告網路支援的市場
 
 可用的廣告網路會在所有[支援的市場](define-pricing-and-market-selection.md#microsoft-store-consumer-markets)中提供廣告，但有下列例外。
@@ -153,6 +159,7 @@ ms.lasthandoff: 03/08/2018
 | smartclip | 奧地利、比利時、丹麥、芬蘭、德國、義大利、荷蘭、挪威、瑞典、瑞士  |
 
 <span id="coppa" />
+
 ## <a name="coppa-compliance"></a>COPPA 合規性
 
 當您[建立廣告單元](#create-ad-unit)或[選取現有的廣告單元](#available-ad-units)時，如果廣告單元的所選應用程式至少有一個提交到達應用程式認證程序的 [Store 中](../publish/the-app-certification-process.md#in-the-store)步驟，**\[COPPA 合規性\]** 區段就會顯示在儀表板頁面底部。

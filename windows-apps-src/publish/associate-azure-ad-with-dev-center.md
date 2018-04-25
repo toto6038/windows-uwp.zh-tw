@@ -9,11 +9,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: high
-ms.openlocfilehash: c430bb279d0b9da6126212a8af7400df8cd1693e
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: f488a72b916e2950a46a5b48e79be2795806a900
+ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/21/2018
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>將 Azure Active Directory 與您的開發人員中心帳戶產生關聯
 
@@ -51,9 +51,9 @@ Windows 開發人員中心會針對多使用者帳戶存取和管理來運用 Az
 1.  移至您的 **\[帳戶設定\]**，然後按一下 **\[租用戶\]**。
 2.  選取 **\[建立新的 Azure AD\]**。
 3.  輸入新 Azure AD 的目錄資訊︰
- - **網域名稱**︰我們會連同 “.onmicrosoft.com” 針對您的 Azure AD 網域使用的唯一名稱。 例如，如果您輸入 “example”，您的 Azure AD 網域就是 “example.onmicrosoft.com”。
- - **連絡人電子郵件**：我們可以在需要時針對帳戶相關資訊與您連絡的電子郵件地址。
- - **全域管理員使用者帳戶資訊**：您想要針對新的全域管理員帳戶使用的名字、姓氏、使用者名稱及密碼。
+    - **網域名稱**︰我們會連同 “.onmicrosoft.com” 針對您的 Azure AD 網域使用的唯一名稱。 例如，如果您輸入 “example”，您的 Azure AD 網域就是 “example.onmicrosoft.com”。
+    - **連絡人電子郵件**：我們可以在需要時針對帳戶相關資訊與您連絡的電子郵件地址。
+    - **全域管理員使用者帳戶資訊**：您想要針對新的全域管理員帳戶使用的名字、姓氏、使用者名稱及密碼。
 4.  按一下 **\[建立\]** 來確認新網域和帳戶資訊。
 5.  使用您新的 Azure AD 全域管理員使用者名稱與密碼來登入，開始[新增和管理其他的帳戶使用者](add-users-groups-and-azure-ad-applications.md)。
 

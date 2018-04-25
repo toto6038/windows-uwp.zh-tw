@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
-title: "將 LOB app 發佈到企業"
+title: 將 LOB app 發佈到企業
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業"
+keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: high
-ms.openlocfilehash: 3857e8e6e494700233d41832fb9edce6c65b89bc
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: 97a56ec68e2aa51f0ee733c2eedaee18dc3cedb9
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB app 發佈到企業
 
@@ -54,6 +54,7 @@ ms.lasthandoff: 01/12/2018
 至少必須選取一家企業，以便將應用程式當成企業營運應用程式來發佈。
 
 <span id="organizational" />
+
 ### <a name="organizational-licensing"></a>組織授權
 
 根據預設，在您提交 app 時，會勾選 **\[Store 管理 (線上) 大量授權\]** 的方塊。 發佈 LOB app 時，此方塊必須維持勾選，讓企業能夠大量取得您的 app。 這樣一來，您於 **\[配送和可見性\]** 區段中選取之企業外部的任何使用者都將無法使用該 app。
@@ -82,7 +83,7 @@ ms.lasthandoff: 01/12/2018
 
 若要將更新發佈到您已經準備好發佈為 LOB 的 app，只需建立新的提交。 您可以上傳新的套件或進行任何其他變更，然後按一下 **\[提交至 Store\]**，讓更新的版本可供使用。 請確定會在 **\[可見性\]** 中使企業選取項目保持不變 (除非您故意想要變更它們，例如，選取其他企業來取得該 app，或是移除您先前已發佈該 app 的其中一個企業)。
 
-如果您想要停止提供您先前已發佈為企業營運 app 的 app 並防止任何新的取得，您需要建立新的提交。 首先，需要將 **\[可見性\]** 選取項目從 **\[企業營運 (LOB) 發佈\]** 變更為 **\[零售經銷\]**。 然後 **\[可見度\]** 區段中，選擇 **\[在 Store 推出此產品，但不供搜尋\]** 與 **\[停止取得\]** 選項。
+如果您想要停止提供您先前已發佈為企業營運 app 的 app 並防止任何新的取得，您需要建立新的提交。 首先，需要將 **\[可見性\]** 選取項目從 **\[企業營運 (LOB) 發佈\]** 變更為 **\[零售經銷\]**。 然後在 [\[可搜尋性\]](choose-visibility-options.md#discoverability) 區段中，選擇 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 與 **\[停止取得\]** 選項。
 
 在提交進入認證程序之後，該 App 將不再供新的下載數使用 (儘管任何已經擁有它的人還是能夠繼續使用)。
 

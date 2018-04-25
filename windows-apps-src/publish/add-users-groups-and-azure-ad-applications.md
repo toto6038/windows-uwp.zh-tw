@@ -3,17 +3,17 @@ author: jnHs
 Description: You can add users, groups, and Azure AD applications to your Dev Center account.
 title: 新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶
 ms.author: wdg-dev-content
-ms.date: 09/20/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10, uwp, azure ad 應用程式, aad, 使用者, 群組
 ms.localizationpriority: high
-ms.openlocfilehash: bf640dbfe642401b9a4f9c767b8c2145fed11d57
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
+ms.openlocfilehash: 463117eb14343e7e2bd19502b31774b78e4093eb
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶
 
@@ -24,15 +24,16 @@ ms.lasthandoff: 02/19/2018
 > [!IMPORTANT]
 > 若要新增使用者到帳戶，您必須[先將開發人員中心帳戶與組織的 Azure Active Directory 租用戶產生關聯](associate-azure-ad-with-dev-center.md)。 
 
-新增使用者時，您將需要為其指定開發人員中心帳戶的存取權，方法是為其指定[角色或一組自訂權限](set-custom-permissions-for-account-users.md)。請留心下列考量 (這適用於群組和 Azure AD 應用程式，以及個人使用者)。
+新增使用者時，您將需要為其指定開發人員中心帳戶的存取權，方法是為其指定[角色或一組自訂權限](set-custom-permissions-for-account-users.md)。 
 
-請記住，所有開發人員中心使用者在[與您的開發人員中心帳戶相關聯的 Azure AD 租用戶](associate-azure-ad-with-dev-center.md)上都必須有使用中的帳戶。 使用者管理是一次在一個租用戶上進行；您必須使用要在其中新增或編輯使用者的租用戶的管理員帳戶登入。 在開發人員中心建立新的使用者也會在您所登入之 Azure AD 租用戶建立該使用者的帳戶，而在開發人員中心對使用者名稱進行變更也將會在您組織的 Azure AD 租用戶進行同樣的變更。
+請記住，所有開發人員中心使用者 (包括群組和 Azure AD 應用程式) 在[與您的開發人員中心帳戶相關聯的 Azure AD 租用戶](associate-azure-ad-with-dev-center.md)上都必須有使用中的帳戶。 使用者管理是一次在一個租用戶上進行；您必須使用要在其中新增或編輯使用者的租用戶的管理員帳戶登入。 在開發人員中心建立新的使用者也會在您所登入之 Azure AD 租用戶建立該使用者的帳戶，而在開發人員中心對使用者名稱進行變更也將會在您組織的 Azure AD 租用戶進行同樣的變更。
 
 > [!NOTE]
 > 如果您的組織使用[目錄整合](http://go.microsoft.com/fwlink/p/?LinkID=724033)來將內部部署目錄服務和您的 Azure AD 進行同步處理，您將無法在開發人員中心建立新的使用者、群組或 Azure AD 應用程式。 您 (或您內部部署目錄中的其他系統管理員) 將需要在內部部署目錄中直接建立它們，然後您才能在開發人員中心看見和新增它們。
 
 
 <span id="users" />
+
 ## <a name="add-users-to-your-dev-center-account"></a>新增使用者到您的開發人員中心帳戶
 
 若要將使用者新增至您的開發人員中心帳戶，請移至 **\[帳戶設定\]** 中的 **\[使用者\]** 頁面，然後選取 **\[新增使用者\]**。 您必須使用要在其中工作的 Azure AD 租用戶的管理員帳來登入。 
@@ -42,11 +43,11 @@ ms.lasthandoff: 02/19/2018
 您可以選取組織租用戶既有的使用者，讓他們存取您的開發人員中心帳戶。 
 
 <span id="from-directory" />
+
 1.  從 **\[使用者\]** 頁面選取 **\[新增使用者\]**。 
 2.  從出現的清單中選取一個或多個使用者。 您可以使用搜尋方塊來搜尋特定的使用者。
     > [!TIP]
     > 如果您選取多個使用者新增至您的開發人員中心帳戶，您必須為他們指派相同的角色或一組自訂的權限。 若要新增多個具有不同角色/權限的使用者，請針對每個角色或一組自訂權限重複下列步驟。
-
 3.  當您完成選取使用者時，請按一下 **\[新增選取的項目\]**。
 4.  在 **\[角色\]** 區段中，指定所選使用者的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
 5.  按一下 **\[儲存\]**。
@@ -61,6 +62,7 @@ ms.lasthandoff: 02/19/2018
 -   **邀請外部使用者**：傳送電子郵件邀請給目前不在您的組織目錄中的使用者。 這些使用者將受邀存取您的開發人員中心帳戶，並在您的 Azure AD 租用戶為其建立新的[來賓使用者](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帳戶。
 
 <span id="new-user" />
+
 ### <a name="create-new-users"></a>建立新的使用者
 
 > [!IMPORTANT]
@@ -77,6 +79,7 @@ ms.lasthandoff: 02/19/2018
 
 
 <span id="email" />
+
 ### <a name="invite-outside-users"></a>邀請外部使用者
 
 > [!IMPORTANT]
@@ -89,6 +92,9 @@ ms.lasthandoff: 02/19/2018
 您邀請的使用者會取得電子郵件邀請來加入您的帳戶，而在您的 Azure AD 租用戶中將為其建立新的[來賓使用者](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帳戶。 使用者必須接受邀請才能存取您的帳戶。
 
 如果您需要重新傳送邀請，請在 **\[使用者\]** 頁面上尋找使用者，然後選取其電子郵件地址 (或選取表示**邀請擱置中**的文字)。 然後，按一下頁面底部的 **\[重新傳送邀請\]**。
+
+> [!IMPORTANT]
+> 您邀請加入開發人員中心帳戶的外部使用者，可以獲指派與其他使用者相同的角色與權限。 不過，外部使用者無法在 Visual Studio 中執行某些工作，例如將關聯應用程式至 Microsoft Store，或是建立套件以上傳至 Microsoft Store。 如果使用者需要執行這些工作，請選擇 **\[建立新的使用者\]** 而不是 **\[邀請外部使用者\]**。 (如果您不想將這些使用者新增至您現有的 Azure AD 租用戶，您可以[建立新的租用戶](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-dev-center-account)，然後在該租用戶中為他們建立新的使用者帳戶)。 
 
 
 ### <a name="changing-a-users-directory-password"></a>變更使用者的目錄密碼
@@ -103,6 +109,7 @@ ms.lasthandoff: 02/19/2018
     >  請務必列印或複製此資訊，並將它提供給該使用者，因為您在離開此頁面之後將無法存取該暫時密碼。
 
 <span id="groups" />
+
 ## <a name="add-groups-to-your-dev-center-account"></a>新增群組到您的開發人員中心帳戶
 
 您可以從組織的目錄新增群組到您的開發人員中心帳戶。 當您這樣做時，隸屬於該群組成員的每位使用者都能使用與群組指派角色相關聯的權限來存取它。
@@ -133,9 +140,11 @@ ms.lasthandoff: 02/19/2018
 
 
 <span id="azure-ad-applications" />
+
 ## <a name="add-azure-ad-applications-to-your-dev-center-account"></a>新增 Azure AD 應用程式至開發人員中心帳戶
 
-您可以允許屬於組織 Azure AD 一部分的應用程式或服務存取您的開發人員中心帳戶。
+您可以允許屬於組織 Azure AD 一部分的應用程式或服務存取您的開發人員中心帳戶。 這些 Azure AD 應用程式使用者帳戶可以用來呼叫 [Microsoft Store 服務](../monetize/using-windows-store-services.md)提供的 REST API。
+
 
 ### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>從組織的目錄新增 Azure AD 應用程式
 
@@ -158,8 +167,8 @@ ms.lasthandoff: 02/19/2018
 
 1.  從 **\[使用者\]** 頁面，選取 **\[新增 Azure AD 應用程式\]**。
 2.  在下一個頁面，按一下 **\[新增 Azure AD 應用程式\]**。
-3.  輸入新的 Azure AD 應用程式的 **\[回覆 URL\]**。 使用者可以從此 URL 登入並使用您的 Azure AD 應用程式 (也稱為 App URL 或登入 URL)。 **\[回覆 URL\]** 的長度不能超過 256 個字元。
-4.  輸入新 Azure AD 應用程式的 [**應用程式識別碼 URI**]。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。
+3.  輸入新的 Azure AD 應用程式的 **\[回覆 URL\]**。 使用者可以從此 URL 登入並使用您的 Azure AD 應用程式 (也稱為 App URL 或登入 URL)。 **回覆 URL** 長度不可超過 256 個字元，而且在您的目錄中必須是唯一的。
+4.  輸入新 Azure AD 應用程式的 **\[應用程式識別碼 URI\]**。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。 如需**應用程式識別碼 URI** 的詳細資訊，請參閱[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。
 5.  在 **\[角色\]** 區段中，指定 Azure AD 應用程式的[角色或自訂權限](set-custom-permissions-for-account-users.md)。
 6.  按一下 **\[儲存\]**。
 
@@ -169,6 +178,7 @@ ms.lasthandoff: 02/19/2018
 > 如果您想要使用 [Microsoft Store 服務](../monetize/using-windows-store-services.md)所提供的 REST API，您將需要此頁面上所顯示的 [租用戶識別碼] 和 [用戶端識別碼] 的值，以取得 Azure AD 存取權杖，您可以使用此存取權杖向服務驗證呼叫。   
 
 <span id="manage-keys" />
+
 ### <a name="manage-keys-for-an-azure-ad-application"></a>管理 Azure AD 應用程式的金鑰
 
 如果您的 Azure AD 應用程式會在 Microsoft Azure AD 讀取或寫入資料，則它需要金鑰。 您可以在開發人員中心編輯 Azure AD 應用程式的資訊來新增其金鑰。 您也可以移除不再需要的金鑰。
@@ -185,6 +195,7 @@ ms.lasthandoff: 02/19/2018
 4.  如果您想要建立更多金鑰，請按一下 **\[新增其他金鑰\]**。
 
 <span id="edit" />
+
 ## <a name="edit-a-user-group-or-azure-ad-application"></a>編輯使用者、群組或 Azure AD 應用程式
 
 新增使用者、群組和/或 Azure AD 應用程式至開發人員中心帳戶之後，您可以變更其帳戶資訊。 
@@ -209,11 +220,12 @@ ms.lasthandoff: 02/19/2018
 在 **\[使用者\]** 頁面中，針對您想檢閱其瀏覽歷程記錄的使用者按一下 **\[上次活動\]** 底下顯示的連結。 您將可以檢視使用者在最近 30 天中瀏覽之所有頁面的 URL。
 
 <span id="remove" />
+
 ## <a name="remove-users-groups-and-azure-ad-applications"></a>移除使用者、群組及 Azure AD 應用程式
 
 若要從您的開發人員中心帳戶移除使用者、群組或 Azure AD 應用程式，請在 **\[使用者\]** 頁面上，按一下依其名稱顯示的 **\[移除\]** 連結。 在確認您想要移除它之後，該使用者、群組，或 Azure AD 應用程式將無法再存取您的開發人員中心帳戶 (除非您稍後再次新增它)。
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > 移除使用者、群組或 Azure AD 應用程式表示它將不再具備您開發人員中心帳戶的存取權。 它**不**會從組織的目錄中刪除使用者、群組或 Azure AD 應用程式。
 
  

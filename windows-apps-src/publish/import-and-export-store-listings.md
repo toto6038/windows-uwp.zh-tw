@@ -1,21 +1,22 @@
 ---
 author: jnHs
 Description: You can create Store listings for your apps without using the Dev Center dashboard by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file.
-title: "匯入及匯出 Store 清單"
+title: 匯入及匯出 Store 清單
 ms.author: wdg-dev-content
-ms.date: 12/22/2017
+ms.date: 03/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 匯入 Store 清單, 匯出 Store 清單, 匯入匯出, Store 清單 csv"
+keywords: windows 10, uwp, 匯入 Store 清單, 匯出 Store 清單, 匯入匯出, Store 清單 csv
 ms.localizationpriority: high
-ms.openlocfilehash: f003ab35fa968e7b4be8e6e0591d97baafaa8648
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: fb9a3e6fd93600392ef724226368d33ed1585c76
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="import-and-export-store-listings"></a>匯入及匯出 Store 清單
+
 除了[直接在儀表板中輸入 Store 清單的資訊](create-app-store-listings.md)，您也可以選擇藉由將清單匯出為 .csv 檔案、輸入您的資訊和資產，然後匯入更新的檔案，來新增或更新資訊。 您可以使用此方法，從頭開始建立清單或更新您已經建立的清單。
 
 如果您想為您的產品建立或更新多種語言的 Store 清單，此選項會很有用，因為您可將相同資訊複製/貼上至多個欄位，並輕鬆進行應套用至特定語言的任何變更。 不過，您無法使用此方法來針對應用程式建立或更新[平台特定 Store 清單](create-platform-specific-store-listings.md)。 

@@ -1,23 +1,24 @@
 ---
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: "開立開發人員帳戶"
-description: "這份關於如何註冊 Windows 市集和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。"
+title: 開立開發人員帳戶
+description: 這份關於如何註冊 Microsoft Store 和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。
 ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 726c2edebe5c12120c0f034414516b3076bf3795
-ms.sourcegitcommit: fadde8afee46238443ec1cb71846d36c91db9fb9
+ms.localizationpriority: high
+ms.openlocfilehash: 5a82afad1c56a5e06e3d82d6b6e6e381fa8934dd
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/21/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
-這份關於如何註冊 Windows 市集和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。
+這份關於如何註冊 Microsoft Store 和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。
 
 > [!NOTE]
 > 當您註冊開發人員帳戶時，我們會使用您在連絡資訊中提供的電子郵件地址，寄送與您帳戶相關的電子郵件通訊。 有時也會包含與程式相關的資訊性電子郵件。 如果您透過[退出宣告](http://go.microsoft.com/fwlink/p/?LinkId=533280)選擇不要收到這些資訊性電子郵件，請注意，我們仍然會寄送交易性電子郵件給您 (例如，讓您知道您的 app 已通過認證，或即將進行付款)。 這些電子郵件是您帳戶的必要部分，除非您關閉帳戶，否則將持續收到這些交易式電子郵件。
@@ -35,7 +36,8 @@ ms.lasthandoff: 06/21/2017
 
   > [!NOTE]
   > 請確定您有權使用在此輸入的名稱。 如果其他人已經擁有您挑選之名稱的商標或著作權，您的帳戶會被關閉。 如需詳細資訊，請參閱[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/Hh694058)。 如果其他人使用了您所擁有之商標或其他法定權利的發行者顯示名稱，請[連絡 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
-6.  輸入您要為開發人員帳戶使用的連絡資訊。
+
+  6.  輸入您要為開發人員帳戶使用的連絡資訊。
 
   > [!NOTE]
   > 我們將使用這個資訊與您連絡有關帳戶的事項。 例如，完成註冊後，您會收到電子郵件確認訊息。 之後，我們會在付款給您或您需要修正帳戶的某些資訊時傳送訊息給您。 我們可能還會傳送如上所述的參考電子郵件給您，除非您取消接收非交易的電子郵件。
@@ -59,7 +61,7 @@ ms.lasthandoff: 06/21/2017
 > [!IMPORTANT]
 > 若要允許多個使用者存取您的開發人員中心帳戶，我們建議使用 Azure Active Directory 來指派角色給個別的使用者。 每一位使用者即可使用其個別的 Azure AD 認證來登入及存取該開發人員中心帳戶。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
 
--   使用還不屬於您或其他人的電子郵件地址建立您的 Microsoft 帳戶，例如 MyCompany_DevCenter@outlook.com。 您可能無法使用公司網域的電子郵件地址，尤其是您公司已使用 Azure AD 的情況下。
+-   使用一個不屬於您或其他人的電子郵件地址建立您的 Microsoft 帳戶，例如 MyCompany_DevCenter@outlook.com。您可能無法使用位於公司網域的電子郵件地址，尤其是當您的公司已使用 Azure AD 時。
 -   將可以存取此 Microsoft 帳戶的使用者人數限制在最少。
 -   設定一份公司電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的所有人，並將這個電子郵件地址新增到您的安全性資訊。 這樣可讓清單上的所有員工在需要時收到安全密碼。 如果設定通訊清單不可行，則每個電子郵件帳戶的擁有者在系統提示時 (例如，當有新的安全性資訊新增到該帳戶時，或是從新的裝置存取該帳戶時) 將必須能夠存取和共用安全密碼。
 -   新增一個不需分機而且主要小組成員可以使用的公司電話號碼。
@@ -83,9 +85,9 @@ ms.lasthandoff: 06/21/2017
 
 開發人員帳戶永久有效，因此不需要更新帳戶以保持開通。 如果您決定完全關閉您的帳戶，您可以連絡支援人員來執行此動作。
 
-當您關閉您的帳戶時，請務必了解您已在 Windows 市集中發行的任何 app 會發生什麼事：
+當您關閉您的帳戶時，請務必了解您已在 Microsoft Store 中發行的任何應用程式會發生什麼事：
 
--   您目前 app 的客戶仍然可以繼續使用 app。 但是，他們將無法使用 App 內購買功能。
+-   您目前應用程式的客戶仍然可以繼續使用應用程式。 但是，他們將無法使用 App 內購買功能。
 -   即使先前取得應用程式的客戶仍能使用應用程式，但您的應用程式清單將自市集中移除。 新客戶將無法取得您的應用程式。
 -   您的應用程式名稱將釋出，而其他開發人員可以使用該名稱。
 -   如果您先前的 app 銷售額有到期的餘額，則即使到期金額未達一般付款門檻，您也能要求將餘額支付給您。

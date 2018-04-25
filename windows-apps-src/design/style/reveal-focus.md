@@ -13,11 +13,11 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: high
-ms.openlocfilehash: 0a5f3dca3c8310bddbcd63c814d2d883151ff1f3
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: f545cf38897e44dc2b3da9fac139f37bf10fc50a
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="reveal-focus"></a>顯色焦點
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 03/08/2018
 (如需了解顯色顯目提示效果，即醒目提示互動式元素的光源效果，請參閱[顯色顯目提示文章](/windows/uwp/design/style/reveal))。
 
 
-> **重要 API**：[Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_FocusVisualKind)、[FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_UseSystemFocusVisuals)
+> **重要 API**：[Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
 
 ## <a name="how-it-works"></a>運作方式
 顯色焦點以動畫方式在元素框線周圍呈現光暈，藉以引起對取得焦點元素的注意：
@@ -54,8 +54,8 @@ ms.lasthandoff: 03/08/2018
 ## <a name="how-to-use-it"></a>如何使用
 
 預設會關閉顯色焦點。 若要啟用：
-1. 在 App 的建構函式中，呼叫 [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo#Windows_System_Profile_AnalyticsVersionInfo_DeviceFamily) 屬性，並檢查目前的裝置系列是否為 `Windows.Xbox`。
-2. 如果裝置系列是 `Windows.Xbox`，請將 [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_FocusVisualKind) 屬性設定為 `FocusVisualKind.Reveal`。 
+1. 在 App 的建構函式中，呼叫 [AnalyticsInfo.VersionInfo.DeviceFamily](/uwp/api/windows.system.profile.analyticsversioninfo.DeviceFamily) 屬性，並檢查目前的裝置系列是否為 `Windows.Xbox`。
+2. 如果裝置系列是 `Windows.Xbox`，請將 [Application.FocusVisualKind](/uwp/api/windows.ui.xaml.application.FocusVisualKind) 屬性設定為 `FocusVisualKind.Reveal`。 
 
 ```csharp
     if(AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
@@ -64,14 +64,14 @@ ms.lasthandoff: 03/08/2018
     }
 ```
 
-設定 **FocusVisualKind** 屬性後，系統會自動將顯色焦點效果套用至所有已將 [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_UseSystemFocusVisuals) 屬性已設定為 **True** (大多數控制項的預設值) 的控制項。 
+設定 **FocusVisualKind** 屬性後，系統會自動將顯色焦點效果套用至所有已將 [UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals) 屬性已設定為 **True** (大多數控制項的預設值) 的控制項。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>為什麼預設不開啟顯色焦點？ 
 如您所見，當 App 偵測到本身是在 Xbox 上執行時，很容易就能開啟顯色焦點。 因此，為什麼系統不直接為您開啟它？ 因為顯色焦點會增加焦點視覺效果的大小，可能導致 UI 配置發生問題。 有時，您會想要自訂顯色焦點效果，為您的應用程式將該效果最佳化。
 
 ## <a name="customizing-reveal-focus"></a>自訂顯色焦點
 
-您可以自訂顯色焦點效果，方法是修改每個控制項的焦點視覺效果屬性[FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryThickness)、[FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryThickness)、[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryBrush)。 這些屬性可讓您自訂焦點矩形的色彩和粗細 (這些屬性是您用於建立[高可見度焦點視覺效果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的相同屬性)。 
+您可以自訂顯色焦點效果，方法是修改每個控制項的焦點視覺效果屬性[FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、[FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 這些屬性可讓您自訂焦點矩形的色彩和粗細 (這些屬性是您用於建立[高可見度焦點視覺效果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的相同屬性)。 
 
 但在您開始進行自訂之前，多了解一點構成顯色焦點的元件會很有幫助。
 
@@ -87,8 +87,8 @@ ms.lasthandoff: 03/08/2018
 
 | 框線類型 | 屬性 |
 | --- | --- |
-| 主要、光暈   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryThickness)<br/> (變更主要框線會依比例變更光暈的粗細)。   |
-| 次要   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryThickness)   |
+| 主要、光暈   | [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)<br/> (變更主要框線會依比例變更光暈的粗細)。   |
+| 次要   | [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)   |
 
 
 此範例變更按鈕焦點視覺效果的框線粗細：
@@ -99,7 +99,7 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="customize-the-margin"></a>自訂邊界
 
-邊界是控制項視覺界限與焦點視覺效果次要框線起始位置之間的空間。 預設邊界是距離控制項界限 1px。 您可以編輯個別控制項的這個邊界，方法是變更 [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualMargin) 屬性︰
+邊界是控制項視覺界限與焦點視覺效果次要框線起始位置之間的空間。 預設邊界是距離控制項界限 1px。 您可以編輯個別控制項的這個邊界，方法是變更 [FocusVisualMargin](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualMargin) 屬性︰
 
 ```xaml
 <Button FocusVisualPrimaryThickness="2" FocusVisualSecondaryThickness="1" FocusVisualMargin="-3"/>
@@ -109,12 +109,12 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="customize-the-color"></a>自訂色彩
 
-若要變更的顯色焦點視覺效果的色彩，請使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryBrush) 屬性。
+若要變更的顯色焦點視覺效果的色彩，請使用 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 和 [FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush) 屬性。
 
 | 屬性 | 預設資源 | 預設資源值 |
 | ---- | ---- | --- | 
-| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
-| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
+| [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) | SystemControlRevealFocusVisualBrush  | SystemAccentColor |
+| [FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)  | SystemControlFocusVisualSecondaryBrush  | SystemAltMediumColor |
 
 (當 **FocusVisualKind** 設定為 **Reveal** 時，FocusPrimaryBrush 屬性只會預設為 **SystemControlRevealFocusVisualBrush** 資源。 否則會使用 **SystemControlFocusVisualPrimaryBrush**)。
 
@@ -151,7 +151,7 @@ ms.lasthandoff: 03/08/2018
 
 ## <a name="show-just-the-glow"></a>只顯示光暈
 
-如果您只要使用不含主要或次要焦點視覺效果的光暈，只需將控制項的 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryBrush) 屬性設定為 `Transparent`，並將 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualSecondaryThickness) 設定為 `0`。 在這種情況下，光暈將會採用控制項背景的色彩來提供無框線風格。 您可以使用 [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement#Windows_UI_Xaml_FrameworkElement_FocusVisualPrimaryThickness) 來修改光暈粗細。
+如果您只要使用不含主要或次要焦點視覺效果的光暈，只需將控制項的 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush) 屬性設定為 `Transparent`，並將 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness) 設定為 `0`。 在這種情況下，光暈將會採用控制項背景的色彩來提供無框線風格。 您可以使用 [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness) 來修改光暈粗細。
 
 ```xaml
 

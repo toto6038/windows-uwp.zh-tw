@@ -1,17 +1,20 @@
 ---
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: "建立 Hello, world 應用程式 (XAML)"
-description: "本教學課程會教您如何使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。"
+title: 了解如何建立 "Hello, world" 應用程式 (XAML)
+description: 使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 95e447550705d606483c20ec34cca6c97b03785c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+keywords: windows 10, uwp, 第一個應用程式, hello world
+ms.localizationpriority: high
+ms.openlocfilehash: e6fb25572213947aa7c536cde552aca3c572f0cf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 
@@ -27,8 +30,8 @@ translationtype: HT
 
 ## <a name="before-you-start"></a>開始之前...
 
--   [通用 Windows app 是什麼](whats-a-uwp.md)？
--   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2017。 [開始設定](get-set-up.md)。
+-   [通用 Windows app 是什麼？](universal-application-platform-guide.md)
+-   [下載 Visual Studio 2017 (和 Windows 10)](https://developer.microsoft.com/windows/downloads)。 如果您需要協助，請了解如何[開始設定](get-set-up.md)。
 -   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 **\[視窗\]** 功能表中的 **\[重設視窗配置\]** 命令來重設它。
 
 > [!NOTE]
@@ -97,7 +100,7 @@ translationtype: HT
 
 *一組標誌影像*
 -   Assets/Square150x150Logo.scale-200.png 代表 [開始] 功能表中您的 App。
--   Assets/StoreLogo.png 代表「Windows 市集」中您的 App。
+-   Assets/StoreLogo.png 代表「Microsoft Store」中您的 App。
 -   Assets/SplashScreen.scale-200.png 是您 App 啟動時顯示的啟動顯示畫面。
 
 ## <a name="step-2-adding-a-button"></a>步驟 2：新增按鈕
@@ -189,7 +192,7 @@ translationtype: HT
 
    關閉應用程式視窗。
 
-## <a name="step-3-event-handlers"></a>步驟 3：事件處理常式
+## <a name="step-4-event-handlers"></a>步驟 4：事件處理常式
 
 「事件處理常式」聽起來很複雜，但它只是事件發生時 (例如使用者按一下按鈕) 所呼叫程式碼的另一個名稱。
 
@@ -232,17 +235,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>摘要
 
-
 恭喜！您已經完成適用於 Windows 10 和 UWP 的第一個應用程式了！
 
-若要了解如何使用 XAML 來配置您的應用程式將使用的控制項，請嘗試進行[格線教學課程](../layout/grid-tutorial.md)，或直接進行[下一步](learn-more.md)？
-
+若要了解如何使用 XAML 來配置您的應用程式將使用的控制項，請嘗試進行[格線教學課程](../design/layout/grid-tutorial.md)，或直接進行[下一步](learn-more.md)？
 
 ## <a name="see-also"></a>另請參閱
 
 * [您的第一個應用程式](your-first-app.md)
-* [發行您的 Windows 市集應用程式](https://developer.microsoft.com/store/publish-apps)。
+* [發佈您的 UWP app](https://developer.microsoft.com/store/publish-apps)。
 * [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
-* [通用 Windows app 是什麼？](whats-a-uwp.md)
+* [通用 Windows app 是什麼？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

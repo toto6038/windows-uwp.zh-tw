@@ -14,17 +14,17 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: high
-ms.openlocfilehash: 21fccc72081d1825cad91e9d44bdc458c62d99d4
-ms.sourcegitcommit: 9666ef4cf5bb63dd62ee95f89a6ad0ac1bf7ac9d
+ms.openlocfilehash: 3f42a839f29b13d7245770675b1f3eea84ffa5d5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
 壓克力是一種[筆刷](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Media.Brush)，可建立部分透明的紋理。 您可以將壓克力套用到應用程式表面來增加深度，並協助建立視覺階層。  <!-- By allowing user-selected wallpaper or colors to shine through, Acrylic keeps users in touch with the OS personalization they've chosen. -->
 
-> **重要 API**：[AcrylicBrush 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Background)
+> **重要 API**：[AcrylicBrush 類別](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.acrylicbrush)、[背景屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.controls.control.Background)
 
 
 ![在淺色佈景主題中的壓克力](images/Acrylic_DarkTheme_Base.png)
@@ -143,7 +143,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
     <tr>
         <th align="center">資源索引鍵</th>
         <th align="center">色調不透明度</th>
-        <th align="center">[回復色彩](color.md)</th>
+        <th align="center"><a href="color.md">回復色彩</a> </th>
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowBrush, SystemControlAcrylicElementBrush <br/> SystemControlChromeLowAcrylicWindowBrush, SystemControlChromeLowAcrylicElementBrush <br/> SystemControlBaseHighAcrylicWindowBrush, SystemControlBaseHighAcrylicElementBrush <br/> SystemControlBaseLowAcrylicWindowBrush, SystemControlBaseLowAcrylicElementBrush <br/> SystemControlAltHighAcrylicWindowBrush, SystemControlAltHighAcrylicElementBrush <br/> SystemControlAltLowAcrylicWindowBrush, SystemControlAltLowAcrylicElementBrush </td>
@@ -151,7 +151,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
         <td> ChromeMedium <br/> ChromeLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltHigh <br/><br/> AltLow </td>
     </tr>
     </tr>
-        <td> **建議的使用方式︰**這些是以各種不同使用方式皆能正常運作的一般用途壓克力資源。 如果您的應用程式使用色彩為 AltMedium 且文字大小小於 18px 的次要文字，請將 80% 壓克力資源放置在文字之後，以[符合對比率需求](../accessibility/accessible-text-requirements.md)。 </td>
+        <td> <b>建議的使用方式︰</b>這些是以各種不同使用方式皆能正常運作的一般用途壓克力資源。 如果您的應用程式使用色彩為 AltMedium 且文字大小小於 18px 的次要文字，請將 80% 壓克力資源放置在文字之後，以<a href="../accessibility/accessible-text-requirements.md">符合對比率需求</a>。 </td>
     </tr>
     <tr>
         <td> SystemControlAcrylicWindowMediumHighBrush, SystemControlAcrylicElementMediumHighBrush <br/> SystemControlBaseHighAcrylicWindowMediumHighBrush, SystemControlBaseHighAcrylicElementMediumHighBrush </td>
@@ -159,7 +159,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> **建議的使用方式︰**如果您的應用程式使用色彩為 AltMedium 且文字大小為 18px 或以上的次要文字，您可以將這些透明度大於 70% 的壓克力資源放在文字後面。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
+        <td> <b>建議的使用方式︰</b>如果您的應用程式使用色彩為 AltMedium 且文字大小為 18px 或以上的次要文字，您可以將這些透明度大於 70% 的壓克力資源放在文字後面。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -167,7 +167,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
         <td> ChromeHigh <br/><br/> ChromeMedium <br/><br/> ChromeMediumLow <br/><br/> BaseHigh <br/><br/> BaseLow <br/><br/> AltMediumLow </td>
     </tr>
     <tr>
-        <td> **建議的使用方式︰**僅將色彩為 AltHigh 主要文字放置在壓克力之上時，您的應用程式可以利用 60% 的資源。 建議以 60% 壓克力繪製您應用程式的[垂直瀏覽窗格](../controls-and-patterns/navigationview.md)，亦即漢堡式功能表。 </td>
+        <td> <b>建議的使用方式︰</b>僅將色彩為 AltHigh 主要文字放置在壓克力之上時，您的應用程式可以利用 60% 的資源。 建議以 60% 壓克力繪製您應用程式的<a href="../controls-and-patterns/navigationview.md">垂直瀏覽窗格</a>，亦即漢堡式功能表。 </td>
     </tr>
 </table>
 
@@ -176,7 +176,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
     <tr>
         <th align="center">資源索引鍵</th>
         <th align="center">色調不透明度</th>
-        <th align="center">[色調與回復色彩](color.md)</th>
+        <th align="center"><a href="color.md">色調與回復色彩</a> </th>
     </tr>
     <tr>
         <td> SystemControlAccentAcrylicWindowAccentMediumHighBrush, SystemControlAccentAcrylicElementAccentMediumHighBrush  </td>
@@ -264,7 +264,7 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>將壓克力延伸至標題列
 
-若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力風格。 此範例透過設定 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar#Windows_UI_ViewManagement_ApplicationViewTitleBar_ButtonBackgroundColor) 以及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar#Windows_UI_ViewManagement_ApplicationViewTitleBar_ButtonInactiveBackgroundColor) 屬性為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors#Windows_UI_Colors_Transparent)，將壓克力風格延伸到標題列。 
+若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力風格。 此範例透過設定 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 以及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 屬性為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)，將壓克力風格延伸到標題列。 
 
 ```csharp
 /// Extend acrylic into the title bar. 
@@ -277,7 +277,7 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-您可以將這段程式碼放在應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中，對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window#Windows_UI_Xaml_Window_Activate) 的呼叫之後 (如這裡所示)，或放在應用程式的第一個頁面中。 
+您可以將這段程式碼放在應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中，對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的呼叫之後 (如這裡所示)，或放在應用程式的第一個頁面中。 
 
 
 ```csharp

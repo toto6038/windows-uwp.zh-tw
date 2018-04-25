@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品
 ms.localizationpriority: high
-ms.openlocfilehash: 12ed8eb58f9f7f7a5fec55c62f19afe0bf6fa2d5
-ms.sourcegitcommit: b6915c7fa2c7292e9b4e3d3e9927dc8746ec1ffb
+ms.openlocfilehash: f3611f74a33aaed0867df343829312c82dd16785
+ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>設定您的附加內容產品類型與產品識別碼
 
@@ -30,6 +30,7 @@ ms.lasthandoff: 01/22/2018
 > 儲存此頁面建立附加元件之後，您將無法變更產品類型。 如果不慎選錯了產品類型，您隨時可以刪除進行中的附加元件提交，並建立新的附加元件以重新開始。
 
 <span id="durable" />
+
 ### <a name="durable"></a>耐久性
 
 如果您的附加元件通常是一次性購買，請選取 **\[耐久性\]** 產品類型。 這些附加元件通常用於解除鎖定 App 中的額外功能。
@@ -37,6 +38,7 @@ ms.lasthandoff: 01/22/2018
 耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]**，這表示附加元件永久有效。 您可以在附加元件提交程序的[內容](enter-add-on-properties.md)步驟中，將 **\[產品存留期\]** 設為不同的持續時間。 若您這樣做，附加元件會在您指定的持續時間後到期（選項是 1-365 天），在此情況下客戶可以在附加元件到期之後重新購買附加元件。
 
 <span id="consumable" />
+
 ### <a name="consumable"></a>消耗性
 
 如果附加元件可以購買、使用 (消耗)，然後重新購買，您可能希望選取其中一種**消耗性**產品類型 消耗型附加內容通常用於遊戲內的貨幣 (金幣、錢幣等)，客戶可以購買設定的量並使用。 如需詳細資訊，請參閱[啟用消費性附加元件購買](../monetize/enable-consumable-add-on-purchases.md)。
@@ -46,6 +48,7 @@ ms.lasthandoff: 01/22/2018
 - **市集管理消耗型**：Microsoft 將會在客戶執行 Windows 10 版本 1607 或更新版本的所有裝置上追蹤餘額；在任何舊版 OS 上不支援。 若要使用此選項，父產品必須使用 Windows 10 SDK 版本 14393 或更新版本進行編譯。 另請注意，在父產品發佈之前，您無法將市集管理消耗性附加元件提交至 [市集] (雖然您可以在您的儀表板中建立提交並隨時開始使用它)。 您將必須在提交的 **\[內容\]** 頁面中輸入您市集管理消耗性附加元件的數量。
 
 <span id="subscription" />
+
 ### <a name="subscription"></a>訂閱
 
 如果您想要向客戶收取附加元件的週期性費用，請選擇 **\[訂閱\]**。

@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 使用量, 自訂事件, 報告, 遙測, 使用者工作階段
 ms.localizationpriority: high
-ms.openlocfilehash: 35bc42e8a65441d9ee4387b65c60c3a51903142c
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 68e9643093aa4f5b777f3e5c430edc394838766a
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="usage-report"></a>使用量報告
 
@@ -38,7 +38,7 @@ Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客�
 > 這份報告僅包含未選擇不提供遙測資訊之 Windows 10 (包括 Xbox) 客戶的使用方式資料。 不論是否客戶已登入 Xbox Live，Xbox 遊戲的使用者量資料都包含在這裡。 
 
 
-##<a name="usage"></a>使用量
+## <a name="usage"></a>使用量
 
 **使用量**圖表顯示在所選時段內客戶使用您的應用程式的相關詳細資訊。 請注意，此圖表不會追蹤您 App 的不重複使用者或不重複使用者工作階段 (亦即，無論只使用一次您的 App 或使用多次，在此圖表中都會呈現一個使用者)。
 

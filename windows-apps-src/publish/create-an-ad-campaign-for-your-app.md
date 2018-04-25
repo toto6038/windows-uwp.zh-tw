@@ -1,19 +1,20 @@
 ---
 author: JnHs
-Description: "您可以使用開發人員中心儀表板建立廣告行銷活動，以協助您促銷應用程式及擴大應用程式的使用者基礎。"
-title: "為您的應用程式建立廣告活動"
+Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+title: 為您的應用程式建立廣告活動
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, UWP, 廣告, 行銷活動, 促銷"
-ms.openlocfilehash: 04074261b7efd38f0309f08910e4ee1350302e4c
-ms.sourcegitcommit: 5ece992c31870df4c089360ef47501bd4ce14fa9
+keywords: Windows 10, UWP, 廣告, 行銷活動, 促銷
+ms.localizationpriority: high
+ms.openlocfilehash: 7506ee6e793e38a7babbf88ef4f63467fc044182
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立廣告活動
 
@@ -22,7 +23,7 @@ ms.lasthandoff: 06/22/2017
 您可以只針對已通過[應用程式認證程序](the-app-certification-process.md)最後發佈階段的應用程式建立廣告行銷活動。
 
 > [!NOTE]
-> 本文件章節描述如何在開發人員中心儀表板上建立廣告行銷活動。 或者，您也可以使用 [Windows 市集促銷 API](../monetize/run-ad-campaigns-using-windows-store-services.md)，以程式設計方式建立和管理廣告行銷活動。
+> 本文件章節描述如何在開發人員中心儀表板上建立廣告行銷活動。 或者，您也可以使用 [Microsoft Store 促銷 API](../monetize/run-ad-campaigns-using-windows-store-services.md)，以程式設計方式建立和管理廣告行銷活動。
 
 ## <a name="instructions"></a>指示
 
@@ -37,9 +38,9 @@ ms.lasthandoff: 06/22/2017
 4.  選取您想要透過這個廣告活動宣傳的 app。 請注意，應用程式必須已經在市集中。
 5.  檢閱 **\[廣告活動名稱\]** 欄位中提供的廣告活動名稱，以，並視需要進行變更。
 6.  在 **\[廣告活動類型\]** 底下，選擇下列其中一個選項：
-        -   **付費廣告**：這些廣告會在任何符合您應用程式的裝置與類別中執行。 對於 2017 年 1 月 9 日後建立的新行銷活動，這些廣告也會出現在 MSN.com、Outlook.com、Skype 和其他 Microsoft 進階內容中。 將應用程式與 Microsoft 進階內容做為目標的應用程式促銷活動稱為*「通用」*行銷活動。
-        -   **社群廣告 (免費)**︰這些廣告會在其他開發人員發行的應用程式中執行，而這些開發人員也會建立社群廣告行銷活動。 您必須先在 **\[利用廣告獲利\]** 頁面中選擇在您的應用程式中顯示社群廣告，才能選取此選項。 如需詳細資訊，請參閱[關於社群廣告](about-community-ads.md)。
-        -   **自家廣告 (免費)**：這些廣告只會在您的 app (符合廣告 app 的裝置類型) 中執行。 自家廣告完全免費。 如需詳細資訊，請參閱[關於自家廣告](about-house-ads.md)。
+    -   **付費廣告**：這些廣告會在任何符合您應用程式的裝置與類別中執行。 對於 2017 年 1 月 9 日後建立的新行銷活動，這些廣告也會出現在 MSN.com、Outlook.com、Skype 和其他 Microsoft 進階內容中。 將應用程式與 Microsoft 進階內容做為目標的應用程式促銷活動稱為*「通用」*行銷活動。
+    -   **社群廣告 (免費)**︰這些廣告會在其他開發人員發行的應用程式中執行，而這些開發人員也會建立社群廣告行銷活動。 您必須先在 **\[獲利\]** -> **\[應用程式內廣告\]** 頁面中選擇在您的應用程式中顯示社群廣告，才能選取此選項。 如需詳細資訊，請參閱[關於社群廣告](about-community-ads.md)。
+    -   **自家廣告 (免費)**：這些廣告只會在您的應用程式 (符合廣告應用程式的裝置類型) 中執行。 自家廣告完全免費。 如需詳細資訊，請參閱[關於自家廣告](about-house-ads.md)。
 
 7.  對於付費廣告活動，請確認 **\[廣告活動持續期間\]**（將支出廣告活動預算的期間）。 預設選項是 **\[每月\]**，這表示每個月重複支出您的廣告活動預算，直到停止廣告活動為止。 如果您有 Premium 帳戶，您也可以選擇 **\[自訂\]** 來指定支出廣告活動預算的自訂日期和時間範圍。 如需有關 Premium 帳戶的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)。
 
@@ -75,7 +76,7 @@ ms.lasthandoff: 06/22/2017
 
 10.  在 **\[廣告設計\]** 頁面，選擇下列其中一個選項：
     -   **自動產生**。 這是預設選項，可讓您從我們的預設範本建立廣告。 您可以進行選擇以自訂您的廣告內容，然後我們會根據您的選項進行廣告預覽（當您進行選取時更新自動）。
-        -   在 **\[語言\]** 下拉式清單中選取廣告的語言。 Windows 市集徽章的文字會以您選取的語言顯示。
+        -   在 **\[語言\]** 下拉式清單中選取廣告的語言。 Microsoft Store 徽章的文字會以您選取的語言顯示。
         -   若要新增額外的標語文字到廣告中，在 **\[自訂標語\]** 欄位中輸入文字。
             > [!NOTE]
             > 您在此輸入的文字必須當地語系化成選取的語言。 如果文字未符合 [Bing 廣告原則](http://go.microsoft.com/fwlink?LinkId=398341)，將會拒絕自訂標語。 如需樣式與禁止內容的指導方針，請參閱此頁面。
@@ -94,11 +95,11 @@ ms.lasthandoff: 06/22/2017
 
 11.  如果您有 [Premium 帳戶](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)，您可以使用 **\[連結網址\]** 方塊來控制客戶按一下您的廣告時會發生的事。
     - 如果方塊保留空白，當客戶按一下您的廣告時，會顯示您的應用程式市集清單。
-    - 如果您使用 Kochava 或 Tune 來測量您應用程式的安裝分析，請從 Kochava 或 Tune 輸入您的安裝追蹤 URL。 當您儲存活動時，系統會驗證該追蹤 URL 以確保它會解析至您的 app 在 Windows 市集中的清單頁面。 如需使用 Kochava 和 Tune 的安裝追蹤的詳細資訊，請參閱 [Kochava](http://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文件。
+    - 如果您使用 Kochava 或 Tune 來測量您應用程式的安裝分析，請從 Kochava 或 Tune 輸入您的安裝追蹤 URL。 當您儲存活動時，系統會驗證該追蹤 URL 以確保它會解析至您應用程式在Microsoft Store 中的清單頁面。 如需使用 Kochava 和 Tune 的安裝追蹤的詳細資訊，請參閱 [Kochava](http://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文件。
     - 如果您選擇 **\[增加與 App 的互動\]** 做為您的行銷活動目標，您可以指定[深層連結 URI](../launch-resume/handle-uri-activation.md)，將選取區隔中的客戶重新導向到您應用程式內的指定頁面。
     - 如果您指定了任何不是您應用程式說明頁面或應用程式內頁面的目的地，您的行銷活動將會自動暫停。
 
-13.  最後，按一下 **\[檢閱\]** 確認您的廣告活動設定與預算和付款資訊 (如果它是付費廣告活動)。 按一下 **\[確認\]**，您的廣告通常會在幾個小時內開始出現在裝置上。
+12.  最後，按一下 **\[檢閱\]** 確認您的廣告活動設定與預算和付款資訊 (如果它是付費廣告活動)。 按一下 **\[確認\]**，您的廣告通常會在幾個小時內開始出現在裝置上。
 
 ## <a name="review-ad-campaign-performance"></a>檢閱廣告行銷活動成效
 

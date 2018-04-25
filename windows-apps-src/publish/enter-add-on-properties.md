@@ -1,20 +1,20 @@
 ---
 author: jnHs
 Description: When submitting an add-on, the options on the Properties page help determine the behavior of your add-on when offered to customers.
-title: "輸入附加元件屬性"
+title: 輸入附加元件屬性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
 ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品"
+keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: high
-ms.openlocfilehash: 63fc414c230e5a988013b1509280bfdb083a93c0
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
+ms.openlocfilehash: c3f5de17dc090989572d72c30bd9d8b85e385316
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
@@ -80,16 +80,18 @@ ms.lasthandoff: 01/12/2018
 這些欄位對所有類型的附加元件都是選擇性的。
 
 <span id="keywords" />
+
 ### <a name="keywords"></a>關鍵字
 
 您可以選擇為您所提交的每個附加元件提供最多 10 個關鍵字 (字元數上限為 30)。 接著，您的 App 可以查詢符合這些單字的附加元件。 此功能可讓您在 App 中建置能夠載入附加元件的畫面，而不必直接在 App 的程式碼中指定產品識別碼。 之後，您可以隨時變更附加元件的關鍵字，不需要變更 App 中的程式碼或重新提交 App。
 
-若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct#Windows_Services_Store_StoreProduct_Keywords) 屬性  (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)，則使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting#Windows_ApplicationModel_Store_ProductListing_Keywords) 屬性)。
+若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.services.store.aspx)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 屬性  (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.store.aspx)，則使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 屬性)。
 
 > [!NOTE]
 > 關鍵字不適用於以 Windows 8 和 Windows 8.1 為目標的套件。
 
 <span id="custom-developer-data" />
+
 ### <a name="custom-developer-data"></a>自訂開發人員資料
 
 您最多可輸入 3000 個字元在 **\[自訂開發人員資料\]** 欄位中 (舊稱為**「標記」**)，提供應用程式內產品的額外內容。 更常見的狀況是使用 XML 字串形式，但您可以在此欄位中輸入任何內容。 接著，您的應用程式可以查詢此欄位以讀取其內容（雖然應用程式無法編輯資料並傳回變更）。

@@ -4,17 +4,17 @@ Description: The Microsoft Store offers Mobile Operator Billing as a payment met
 title: 電信業者帳單
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ms.author: wdg-dev-content
-ms.date: 02/24/2018
+ms.date: 03/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: high
-ms.openlocfilehash: 314a6564a1a48cdd969ce1fa910d274a418e1f67
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
+ms.openlocfilehash: bcdf8166804b6778e5e513cf04fd696a428f225e
+ms.sourcegitcommit: 0ee9c6848cb9d624f15cdab1d0c5991ca7245e70
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 
@@ -50,7 +50,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 斯洛伐克        | Slovak Telekom                   |
 | 西班牙           | Orange                           |
 | 瑞典          | Telenor、3                       |
-| 瑞士     | Swisscom                         |
+| 瑞士     | Swisscom、Sunrise                |
 | 土耳其          | Turkcell                         |
 | 美國   | Sprint、Verizon                  |
 | 英國  | O2、3 UK、EE                     |

@@ -1,19 +1,19 @@
 ---
 author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
-title: "裝置系列可用性"
+title: 裝置系列可用性
 ms.author: wdg-dev-content
-ms.date: 10/12/2017
+ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 套件, 上傳, 裝置系列可用性"
+keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: high
-ms.openlocfilehash: a3ae23a08ec305285569de8b6d55e805beaa86ba
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 44c20c05457669edb31067b6d7ac8bc60f09e72e
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 
@@ -36,6 +36,7 @@ ms.lasthandoff: 12/12/2017
 如果您的 App 支援那些裝置，除非有特定原因必須限制可以取得這些 App 的 Windows 10 裝置類型，建議您讓所有的方塊保持選取狀態。 例如，如果已知您的 App 無法在 [Surface Hub](https://developer.microsoft.com/windows/surfacehub) 和/或 [Microsoft HoloLens](http://dev.windows.com/holographic/development_overview) 上提供良好體驗，您可以取消選取 **\[Windows 10 團隊版\]** 和/或 **\[Windows 10 全像攝影版\]** 方塊。 如此即可防止任何新客戶在這些裝置上取得該 App。 如果您後來決定要提供給那些客戶，則可以建立新的提交並核取該方塊。
 
 <span id="xbox" />
+
 Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 **\[Windows 10 Xbox\]**。 如果您的 App 不是遊戲 (或者是遊戲，但您已啟用 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或完成[概念核准](../gaming/concept-approval.md)程序)，且您的提交包含使用 Windows 10 SDK 版本 14393 或更新版本編譯的中性和/或 x64 UWP 套件，您可以選取 **\[Windows 10 Xbox\]** 方塊來提供 App 給 Xbox One 上的客戶。
 
 > [!IMPORTANT]
@@ -48,6 +49,8 @@ Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 *
 >   
 > 如果您仍然無法解決問題，請連絡支援服務。
 
+如果您提交適用於 Windows 10 IoT 核心版的 UWP app，在上傳套件之後您不應變更預設選項。針對 Windows 10 IoT 沒有不同的核取方塊。 如需發佈 IoT 核心版 UWP app 的詳細資訊，請參閱[適用於 IoT 核心版 UWP app 的 Microsoft Store 支援](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)。
+
 如果您的提交包含可在 **Windows 8/8.1** 和 **Windows Phone 8.x 及更新版本**上執行的套件，將會提供這些套件給客戶使用，如表中所示。 這些 OS 版本沒有對應的核取方塊。 若要停止將您的 App 提供給這些客戶，請從您的提交移除對應的套件。
 
 > [!IMPORTANT]
@@ -57,8 +60,7 @@ Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 *
 
 例如，如果您有具有 Windows Phone 8.1 套件的已發佈 App，您稍後將 Windows 10 (UWP) 套件新增至目標為通用裝置系列的相同 App，具有您的 Windows Phone 8.1 套件的 Windows 10 行動裝置客戶就會取得這個 Windows 10 (UWP) 套件的更新，即使您已經取消選取 **\[Windows 10 行動裝置版\]** 方塊 (因為這不是新購買而是更新)。 但是，如果您未提供目標為通用或行動裝置系列的任何 Windows 10 (UWP) 套件，則您的 Windows 10 行動裝置客戶仍然保持為 Windows Phone 8.1 套件。
 
-如需裝置系列的詳細資訊，請參閱[通用 Windows 平台簡介](../get-started/universal-application-platform-guide.md)和 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)。
-
+如需裝置系列的詳細資訊，請參閱[**裝置系列概觀**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 ## <a name="understanding-ranking"></a>了解排行
 

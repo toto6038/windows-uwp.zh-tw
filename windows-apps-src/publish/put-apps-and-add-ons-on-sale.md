@@ -1,7 +1,7 @@
 ---
 author: jnHs
-Description: "您可以在限定時間內降價銷售您的 App 或附加元件，以便在 Windows 市集進行促銷。"
-title: "促銷應用程式和附加元件"
+Description: You can promote your app or add-on in the Microsoft Store by putting it on sale for a limited time.
+title: 促銷 App 和附加元件
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
 ms.date: 08/21/2017
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d17394808232aeffbe81404427e668fb9c06e677
-ms.sourcegitcommit: cd9b4bdc9c3a0b537a6e910a15df8541b49abf9c
+ms.localizationpriority: high
+ms.openlocfilehash: 0cc26403c10e9300e983275d28a1a969af513dc3
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2017
+ms.lasthandoff: 03/17/2018
 ---
-# <a name="put-apps-and-add-ons-on-sale"></a>促銷應用程式和附加元件
+# <a name="put-apps-and-add-ons-on-sale"></a>促銷 App 和附加元件
 
-您可以在限定時間內降價銷售您的 App 或附加元件，以便在 Windows 市集進行促銷。 您可以選擇以較低價格區間或百分比計算的折扣提供產品。
+您可以在限定時間內降價銷售您的 App 或附加元件，以便在 Microsoft Store 進行促銷。 您可以選擇以較低價格區間或百分比計算的折扣提供產品。
 
 當您使用提交的 **\[價格和可用性\]** 頁面的 **\[銷售定價\]** 區段暫時降低應用程式或附加元件的價格時，檢視您的市集清單的客戶將會看見刪除定價，指出該價格已調降 (與[排程價格變更](set-and-schedule-app-pricing.md#schedule-price-changes)相反，它可調低或調高價格，但不在市集中顯示為變更)。 
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 08/21/2017
 
 > [!NOTE]
 > 可以選取高於您的應用程式基本價格的價格區間。 不過，如果銷售價格低於該市場中 app 的正常價格，則銷售定價將只會對客戶顯示。
-
+>
 > 如果您已在高於您的 app 基本價格的特定市場設定自訂價格，以及您想要暫時降低該市場的價格 (但是銷售價格仍然高於 app 的基本價格)，則選取高於您的 app 基本價格的價格可能適合您的銷售。 如果您的選擇會導致 app 的價格在特定市場提高，我們將不會在該市場對客戶顯示該 (高) 價格；他們會繼續看到 app 是其先前 (低) 的價格。 如果您排程不同價格的個別重疊銷售，我們也會顯示向客戶顯示可用的最低價格。
 
 ## <a name="changing-or-canceling-a-scheduled-sale"></a>變更或取消排定的銷售

@@ -4,17 +4,17 @@ Description: The App properties page of the app submission process lets you defi
 title: 輸入應用程式屬性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 01/24/2018
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp, 遊戲設定, 顯示模式, 系統需求, 硬體需求, 基本硬體, 建議的硬體
+keywords: windows 10, uwp, 遊戲設定, 顯示模式, 系統需求, 硬體需求, 基本硬體, 建議的硬體, 隱私權原則, 支援連絡資訊, 應用程式網站, 支援資訊
 ms.localizationpriority: high
-ms.openlocfilehash: 8ecdeb0dd4ebba83a387666ab87067ff419a9303
-ms.sourcegitcommit: 8d9d4f17e272b78e38b346f846b96260c922bbb2
+ms.openlocfilehash: 35d7be3aa88ca17219c2f2e4024bd2e692fb1abc
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/03/2018
 ---
 # <a name="enter-app-properties"></a>輸入應用程式屬性
 
@@ -26,6 +26,37 @@ ms.lasthandoff: 01/24/2018
 您必須指示 Microsoft Store 要用來分類您的應用程式的類別 (與子類別/內容類型，如果適用的話)。 您必須指定類別才能送出應用程式。
 
 如需詳細資訊，請參閱[類別與子類別表格](category-and-subcategory-table.md)。
+
+
+## <a name="support-info"></a>支援資訊
+
+此區段可讓您提供資訊，以協助客戶更深入了解您的應用程式，以及取得支援的方式。
+
+### <a name="privacy-policy-url"></a>隱私權原則 URL
+
+您必須負責確定您的應用程式遵循隱私權的法律與法規，如有必要並在此處提供有效的隱私權原則 URL。
+
+您必須在本區段中，指出您的應用程式是否會存取、收集或傳送任何[個人資訊](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information)。 如果您回答 **\[是\]**，就需要提供隱私權原則 URL。 否則，這是選用的 (但若我們判斷您的應用程式需要隱私權原則，但您並未提供的話，您的提交項目可能會無法通過認證)。
+
+> [!NOTE]
+> 如果我們偵測到您的套件所宣告的[功能](../packaging/app-capability-declarations.md)可能會允許存取、傳輸或收集個人資訊，我們會將此問題標示為 **\[是\]**，並要求您輸入隱私權原則 URL。
+
+為了協助您判斷您的應用程式是否需要隱私權原則，請檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#105-personal-information)。 
+
+> [!NOTE]
+> Microsoft 不會為您的應用程式提供預設隱私權原則。 同樣地，所有的 Microsoft 隱私權原則都不會涵蓋您的應用程式。 
+
+
+### <a name="website"></a>網站
+
+請輸入您 app 網頁的 URL。 這個 URL 必須指向您自己網站的頁面，而不是 Microsoft Store 中您 app 的網站清單。 這個欄位是選用項目，但建議使用。
+
+### <a name="support-contact-info"></a>支援連絡方式的資訊
+
+輸入您的客戶可取得應用程式支援的網頁 URL，或客戶可聯絡以取得支援的電子郵件地址。 我們建議您對所有提交加入這項資訊，好讓您的客戶了解在需要時如何取得支援。 請注意，Microsoft 不會向客戶提供有關您應用程式的支援。
+
+> [!IMPORTANT]
+> 如果您要在 Xbox 上提供您的應用程式或遊戲，**\[支援連絡資訊\]** 欄位為必要。 否則，這是選用的 (但建議使用)。
 
 
 ## <a name="game-settings"></a>遊戲設定
@@ -40,7 +71,7 @@ ms.lasthandoff: 01/24/2018
 ## <a name="display-mode"></a>顯示模式
 
 此區段可讓您指出您的產品的設計目的是要在電腦和/或 HoloLens 裝置上的 [Windows Mixed Reality](https://developer.microsoft.com/windows/mixed-reality) 沈浸式 (而非 2D) 檢視中執行。 如果是這樣，您也必須：
-- 在**\[屬性\]** 頁面下半部顯示的[系統需求](#system-requirements)區段中，選取 **\[Windows Mixed Reality 沉浸式頭戴裝置\]** 的 **\[基本硬體\]** 或 **\[建議硬體\]**。
+- 在 **\[屬性\]** 頁面下半部顯示的[系統需求](#system-requirements)區段中，選取 **\[Windows Mixed Reality 沉浸式頭戴裝置\]** 的 **\[基本硬體\]** 或 **\[建議硬體\]**。
 - 指定 **\[界限設定\]** (如果已選取電腦)，讓使用者知這原本是要僅限以坐姿或站姿使用，或者是否允許 (或要求) 使用者在使用時四處移動。 
 
 如果您已選取 **\[遊戲\]** 做為產品的類別，您會在 **\[顯示模式\]** 選項中看到額外選項，讓您表示產品是否支援 4K 解析度視訊輸出、高動態範圍 (HDR) 視訊輸出或可變更新頻率顯示器。

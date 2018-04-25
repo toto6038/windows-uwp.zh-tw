@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3cbaa8a8e78ad14472a34e107521d9c966ba434f
-ms.sourcegitcommit: 884b79b4c6fd8014fab9953faca557e56bb8c400
+ms.openlocfilehash: a16f86512a3c33055cb4825966282f1487ea158d
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="desktop-bridge"></a>傳統型橋接器
 
@@ -58,6 +58,7 @@ ms.lasthandoff: 02/15/2018
 下一步，請檢閱[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)文章，並在建立 Windows 應用程式套件之前解決任何適用於您應用程式的問題。 在建立套件之前，您也有可能不需要對您的應用程式進行任何變更。 然而，在某些情況下，您可能仍需要在建立套件之前調整您的應用程式。
 
 <a id="convert" />
+
 ## <a name="package"></a>套件
 
 以下是一些您可以用來為您的應用程式建立 Windows 應用程式套件的工具。
@@ -114,6 +115,9 @@ Desktop App Converter 也整合了 Hyper-V 和 [VMWare](http://www.vmware.com/)�
 Advanced Installer 也提供了適用於 Visual Studio 2017 及 2015 的延伸模組，可用於[建置和偵錯傳統型橋接器應用程式](http://www.advancedinstaller.com/debug-desktop-bridge-apps.html)。
 
 請查看[這個影片](https://www.youtube.com/watch?v=cmLKgn04Vfg&feature=youtu.be)以獲得快速概觀。
+
+> [!TIP]
+> 請務必查看最近發行的[進階安裝程式 Express 版](https://www.advancedinstaller.com/express-edition.html)。
 
 #### <a name="cloudhouse-compatibility-containers"></a>Cloudhouse Compatibility Containers
 

@@ -4,17 +4,17 @@ Description: The Age ratings page of the app submission process lets you provide
 title: 年齡分級
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
-ms.date: 02/06/2018
+ms.date: 03/28/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 年齡分級, 遊戲分級, iarc, 分級, 問卷, 分級委員會, 內容分級
 ms.localizationpriority: high
-ms.openlocfilehash: 0af2d316b0d0c4705c4669ef910f37845ca78aa8
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
+ms.openlocfilehash: 8ee0b2dd91de7cf18fc71ace8b97abc795e22e6b
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="age-ratings"></a>年齡分級
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 02/09/2018
 > [!IMPORTANT]
 > 如果您已經在其他店面完成應用程式的問卷且具備 IARC 分級識別碼，就能選取選項來將您的分級識別碼提供給我們。 我們將會使用您的識別碼，將現有的分級與您在 Microsoft Store 中的 App 產生關聯。
 
-您必須準確地回答問題。 在此程序中，我們會將您的發行者顯示名稱及電子郵件地址與 IARC 共享。 當您完成問卷之後，IARC 分級系統將會根據您的回應，提供年齡和內容分級資訊。 在不同的市場中向客戶顯示您的 App 時，我們將會使用這個分級資訊。 您也將收到來自 IARC 的電子郵件，其中包含您的 App 發佈時，App 分級的確認。
+您必須準確地回答問題。 如需任何問題的詳細資訊，請按一下其旁邊的資訊圖示。 在此程序中，我們會將您的發行者顯示名稱及電子郵件地址與 IARC 共享。 當您完成問卷之後，IARC 分級系統將會根據您的回應，提供年齡和內容分級資訊。 在不同的市場中向客戶顯示您的 App 時，我們將會使用這個分級資訊。 您也將收到來自 IARC 的電子郵件，其中包含您的 App 發佈時，App 分級的確認。
 
 第一個問題會要求您選擇最適合描述您 App (及其中繼資料) 的類別。 選取之後，您將會看到其他問題。 依據您先前的答案，您看到的特定問題會有所不同。 如果您填錯，可以返回或重新開始問卷，以提供正確的答案。
 
@@ -45,6 +45,7 @@ ms.lasthandoff: 02/09/2018
 > 如果您要提交會在台灣上市的遊戲，法律規定您必須使用[此表單](https://go.microsoft.com/fwlink/?linkid=867281)來登錄提供的 CSRR 分級。 
 
 <span id="appeal" />
+
 ## <a name="appealing-ratings-or-refused-classifications"></a>申訴分級或拒絕分類
 
 在 App 發佈之後，您將會收到分級憑證電子郵件，如果您對於 App 所收到的年齡分級有疑問，或希望提出申訴，可透過電子郵件中顯示的連結連絡 IARC。

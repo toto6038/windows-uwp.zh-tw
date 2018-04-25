@@ -1,34 +1,32 @@
 ---
 author: jnHs
-Description: "您可以在 App 提交程序的 [市集清單] 區段中，提供客戶將在您 App 的市集清單中看到的文字和影像。"
-title: "建立應用程式市集清單"
+Description: The Store listings section of the app submission process is where you provide the text and images that customers will see when viewing your app's listing in the Microsoft Store.
+title: 建立應用程式 Store 清單
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 08/08/2017
+ms.date: 04/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 004169178c906ac892865569fd2ed483bd2471fa
-ms.sourcegitcommit: 6c6f3c265498d7651fcc4081c04c41fafcbaa5e7
+keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
+ms.localizationpriority: high
+ms.openlocfilehash: 91242f7bd5f43b9d8af605b3b814e80006c90ce4
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/09/2017
+ms.lasthandoff: 04/03/2018
 ---
-# <a name="create-app-store-listings"></a>建立應用程式市集清單
+# <a name="create-app-store-listings"></a>建立應用程式 Store 清單
 
 
-您可以在 [App 提交程序](app-submissions.md)的 **\[市集清單\]** 區段中，提供客戶將在您 App 的市集清單中看到的文字和[影像](app-screenshots-and-images.md)。
+您可以在[應用程式提交程序](app-submissions.md)的 **\[Store 清單\]** 區段中，提供客戶在 Microsoft Store 中檢視您應用程式清單時會看到的文字和[影像](app-screenshots-and-images.md)。
 
-> [!NOTE]
-> 我們最近已經更新此頁面上的選項。 如果在較新的選項可供使用之前您有進行中的提交，該提交仍會顯示較舊的選項。 您可以刪除該提交，然後建立新提交，如果您想要對該應用程式使用新選項。 否則，較新的選項會在您發行進行中的提交後，於下一次更新時生效。
-
-**\[市集清單\]** 中的許多欄位都是選填的，但我們建議盡可能地提供多個影像及更多資訊，讓您的清單更為出色。 完成**市集清單**步驟的最低需求是一段文字描述，以及至少一張[螢幕擷取畫面](app-screenshots-and-images.md#screenshots)。
+**Store 清單**中的許多欄位都是選填的，但我們建議盡可能地提供多個影像及更多資訊，讓您的清單更為出色。完成 **Store 清單**步驟的最低需求是一段文字描述，以及至少一張[螢幕擷取畫面](app-screenshots-and-images.md#screenshots). 對於某些提交，[隱私權原則](#privacy-policy)和[支援連絡資訊](#support-contact-info)也是必要欄位。 
 
 > [!TIP]
-> 如果您想要在 .csv 檔案中離線輸入清單資訊，而不直接在儀表板中提供這項資訊，也可以[匯入及匯出市集清單](import-and-export-store-listings.md)。 如果您有許多語言的清單時，這可能尤其便利。
+> 如果您想要在 .csv 檔案中離線輸入清單資訊，而不直接在儀表板中提供這項資訊並上傳檔案，則也可以[匯入及匯出 Store 清單](import-and-export-store-listings.md)。 如果您有多種語言的清單版本，使用匯入及匯出選項就很方便，因為您可以一次進行多個更新。 
 
-根據預設，我們會對所有目標作業系統使用相同的市集清單 (每個語言)。 如果您想要針對特定作業系統使用自訂市集清單，您可以[建立平台專屬的市集清單](create-platform-specific-store-listings.md)。 您的預設清單一律會對使用 Windows 10 的客戶顯示。
+根據預設，我們會對所有目標作業系統使用相同的 Store 清單 (每個語言)。 如果想要針對您的提交支援的特定作業系統使用自訂 Store 清單，您可以[建立平台專屬的 Store 清單](create-platform-specific-store-listings.md)。 您的預設清單一律會對使用 Windows 10 的客戶顯示。
 
 ## <a name="store-listing-languages"></a>市集清單語言
 
@@ -56,24 +54,35 @@ ms.lasthandoff: 08/09/2017
 
 如需讓描述更為出色的一些提示，請參閱[撰寫一份出色的應用程式描述](write-a-great-app-description.md)。
 
-## <a name="release-notes"></a>版本資訊
+<span id="release-notes" />
 
-如果這是您第一次提交 app，可能想讓此欄位保留空白。 如果是現有 app 的更新，您就可以在此處讓客戶了解最新版本中有哪些變更。 這個欄位有 1500 個字元的限制。
+## <a name="whats-new-in-this-version"></a>此版本中的新功能
+
+如果這是您第一次提交應用程式，請將此欄位保留空白。 如果是現有應用程式的更新，您就可以在此處讓客戶了解最新版本中有哪些變更。 這個欄位有 1500 個字元的限制。 (此欄位之前稱為「**版本資訊**」)。
+
+## <a name="app-features"></a>應用程式功能
+
+這些是您應用程式重要功能的簡短摘要。 它們會在您的應用程式 Store 清單的 [**功能**] 區段中，以項目符號清單的形式讓客戶看見，除了**描述**之外。 讓它們保持簡潔有力，每個功能只使用數個文字來說明 (不超過 200 個字元)。 您最多可包含 20 個功能。
+
+> [!NOTE]
+> 您的應用程式功能將會在 Store 清單中以項目符號的形式顯示，所以不要再新增您自己的項目符號。
 
 ## <a name="screenshots"></a>螢幕擷取畫面
 
-需要有一個螢幕擷取畫面才能提交您的應用程式。 我們建議您為應用程式支援的每一種裝置類型提供至少一個螢幕擷取畫面。
+需要有一個螢幕擷取畫面才能提交您的應用程式。 我們建議您針對應用程式所支援的每個裝置類型提供至少四個螢幕擷取畫面，如此人們就可查看應用程式在其裝置類型上如何顯示。
 
 如需詳細資訊，請參閱[應用程式螢幕擷取畫面與影像](app-screenshots-and-images.md#screenshots)。
 
+
 ## <a name="store-logos"></a>市集標誌。 
 
-市集標誌是選用影像，您可以上傳以強化應用程式對客戶顯示的外觀。 您也可以選擇性地指定只有您在此處上傳的影像，才能在應用程式針對 Windows 10 的市集清單中使用，而不允許市集使用您應用程式套件中的標誌影像。
+市集標誌是選用影像，您可以上傳以強化應用程式對客戶顯示的外觀。 您也可以選擇性地指定只能將您在此處上傳的影像用於針對 Windows 10 (包括 Xbox) 客戶的應用程式 Store 清單中，而不是允許 Microsoft Store 使用您應用程式套件中的標誌影像。
 
 > [!IMPORTANT]
 > 如果您的應用程式支援 Xbox，或支援 Windows Phone 8.1 或較舊版本，您必須在此提供特定影像，清單才會正常出現在市集中。 
 
 如需詳細資訊，請參閱[市集標誌](app-screenshots-and-images.md#store-logos)。
+
 
 ## <a name="additional-art-assets"></a>其他美工圖案資產
 
@@ -81,56 +90,65 @@ ms.lasthandoff: 08/09/2017
 
 如需詳細資訊，請參閱[其他美工圖案資產](app-screenshots-and-images.md#additional-art-assets)。
 
-## <a name="additional-information"></a>其他資訊
 
-本區段中的欄位全部是選用，但可幫助客戶更了解您的應用程式，以及獲得最佳體驗所需的內容。 我們建議您檢閱下述選項，並提供客戶可能需要了解的任何應用程式相關資訊，或是可吸引客戶下載的任何資訊。
+## <a name="supplemental-information"></a>補充資訊
 
-### <a name="app-features"></a>應用程式功能
+本區段中的欄位全部是選用。 應用程式功能和系統需求可幫助客戶更了解您的應用程式，以及獲得最佳體驗所需的內容。 其他選項可協助提供您的產品用於不同案例的最佳體驗。 請檢閱下方資訊，以判斷提供這項資訊對您的提交是否具有意義。
 
-這些是您應用程式重要功能的簡短摘要。 它們會在您的應用程式市集清單中，以項目符號清單的形式讓客戶看見，除了描述之外。 讓它們保持簡潔有力，每個功能只使用數個文字來說明 (不超過 200 個字元)。 您最多可包含 20 個功能。
+### <a name="short-title"></a>簡短標題
 
-> [!NOTE]
-> 您的應用程式功能將會在市集清單中以項目符號的形式顯示，所以不要再新增您自己的項目符號。
+產品名稱的較短版本。 若有提供，這個較短名稱可能會出現在 Xbox One 上的各種位置 (在安裝期間、在成就中等) 來取代您產品的完整標題。
 
-### <a name="additional-system-requirements"></a>其他系統需求
+**簡短標題**有 50 個字元的限制。
 
-如有需要，您可以描述您的 App 為正常運作所需的硬體組態 (除了您在 [App 屬性](enter-app-properties.md#system-requirements)之 **\[系統需求\]** 區段中提供的資訊之外)。 如果不是每部電腦都有您 App 所需的硬體，這項資訊尤其重要。
 
-您最多可以為 **\[最低硬體\]** 和 **\[建議的硬體\]** 輸入 11 個項目。  它們會在您的 App 清單中，以項目符號清單的形式讓客戶看見。 讓它們保持簡潔有力，每個項目只使用數個文字來說明 (不超過 200 個字元)。
+### <a name="sort-title"></a>排序標題
 
-您在這裡輸入的資訊會向在 Windows 10 1607 版或更新版本上，檢視 App 市集清單的客戶顯示，而且還會顯示您在產品的 [屬性] 頁面上指示的需求。
-
-> [!NOTE]
-> 其他系統需求將在市集清單中以項目符號的形式出現，所以不要再新增您自己的項目符號。
-
-### <a name="developed-by"></a>開發者
-
-在此輸入文字，如果您想要將 **\[開發者\]** 欄位包含在您的應用程式市集清單中  (**\[發行者\]** 欄位會列出與您帳戶相關聯的發行者顯示名稱，無論您是否提供 **\[開發者\]** 欄位值。)
+如果您的產品可以依字母順序排列或以其他方式拼寫，您可以在此處輸入另一個版本。 如果您的客戶在搜尋時輸入這個版本，這可讓他們更快找到您的產品。 
 
 這個欄位有 255 個字元的限制。
 
 
-## <a name="shared-fields"></a>共用欄位
+### <a name="voice-title"></a>語音標題
 
-下述項目可幫助客戶探索及了解您的產品。 您在這裡輸入的資訊將套用至指定語言的所有市集清單，而且不論作業系統為何，即使您[建立平台專屬的市集清單](create-platform-specific-store-listings.md)也一樣。
+您產品的替代名稱，若有提供，在 Xbox One 上使用 Kinect 或頭戴式裝置時，此名稱會用於音訊體驗。
+
+這個欄位有 255 個字元的限制。
+
+
+### <a name="short-description"></a>簡短描述
+
+僅適用於遊戲。 此描述會出現在 Xbox One [遊戲中心] 的 [資訊] 區段，可協助客戶更加了解您的遊戲。
+
+這個欄位有 500 個字元的限制。
+
+
+### <a name="additional-system-requirements"></a>其他系統需求
+
+如有需要，您可以描述您的 App 為正常運作所需的硬體組態 (除了您在 [App 屬性](enter-app-properties.md#system-requirements)之 **\[系統需求\]** 區段中提供的資訊之外)。 如果不是每部電腦都有您應用程式所需的硬體，這項資訊尤其重要。 例如，如果您的應用程式必須搭配 3D 印表機或微控制器等外接式 USB 硬體才能正常運作，我們建議在此處輸入這些項目。 您在這裡輸入的資訊會向在 Windows 10 1607 版或更新版本 (包括 Xbox) 上，檢視應用程式 Store 清單的客戶顯示，而且還會顯示您在產品的 [屬性] 頁面上指示的需求。 
+
+您最多可以為 **\[最低硬體\]** 和 **\[建議的硬體\]** 輸入 11 個項目。 它們會在您的 Store 清單中，以項目符號清單的形式讓客戶看見。 讓它們保持簡潔有力，每個項目只使用數個文字來說明 (不超過 200 個字元)。
+
+> [!NOTE]
+> 其他系統需求將在 Store 清單中以項目符號的形式出現，所以不要再新增您自己的項目符號。
+
+
+<span id="shared-fields" />
+
+## <a name="additional-information"></a>其他資訊
+
+下述項目可幫助客戶探索及了解您的產品。 您在這裡輸入的資訊將套用至指定語言的所有市集清單，而且不論作業系統為何，即使您[建立平台專屬的市集清單](create-platform-specific-store-listings.md)也一樣。 (本節先前稱為「**共用欄位**」)。
 
 ### <a name="search-terms"></a>搜尋詞彙
 
-搜尋詞彙 (舊稱為關鍵字) 是單字或簡短的詞彙，使用者看不到，但在與詞彙相關的搜尋裡，可以協助您的應用程式出現在結果中。 您最多可以包含 7 個搜尋詞彙，每個詞彙的長度上限為 30 個字元，並且在所有搜尋詞彙中最多可以使用 21 個不同的字。
+搜尋詞彙 (舊稱為關鍵字) 是單字或簡短的詞彙，客戶看不到，但在客戶使用這些詞彙進行搜尋時，可以協助您的應用程式在 Microsoft Store 中被找到。 您最多可以包含 7 個搜尋詞彙，每個詞彙的長度上限為 30 個字元，並且在所有搜尋詞彙中最多可以使用 21 個不同的字。
 
 新增搜尋詞彙時，請想想看客戶在搜尋與您應用程式類似的應用程式時可能使用哪些字句，特別是如果它們不屬於您應用程式名稱的一部分。 請注意不要使用與您應用程式無關的搜尋詞彙。
-
-
-### <a name="privacy-policy"></a>隱私權原則
-
-如果您的應用程式具有隱私權原則，請在這裡輸入它的 URL。 您必須負責確定您的應用程式遵循隱私權的法律與法規，以及視需要提供隱私權原則。
-
-> [!IMPORTANT]
-> Microsoft 不會為您的應用程式提供預設隱私權原則。 同樣地，所有的 Microsoft 隱私權原則都不會涵蓋您的應用程式。 若要判斷您的應用程式是否需要隱私權原則，請檢閱[應用程式開發人員合約](https://msdn.microsoft.com/library/windows/apps/hh694058)和 [Windows 市集原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_5_1)。
 
 ### <a name="copyright-and-trademark-info"></a>著作權與商標資訊
 
 如果您想要提供額外的著作權及/或商標資訊，請在這裡輸入。 這個欄位有 200 個字元的限制。
+
 
 ### <a name="additional-license-terms"></a>其他授權條款
 
@@ -142,14 +160,16 @@ ms.lasthandoff: 08/09/2017
 
 您在此欄位最多可輸入 10,000 個字元的文字。  如果您在此欄位輸入文字，客戶會看到以純文字形式顯示的這些額外授權條款。
 
-### <a name="website"></a>網站
 
-請輸入您 app 網頁的 URL。 這個 URL 必須指向您自己網站的頁面，而不是市集中您 app 的網站清單。
+### <a name="developed-by"></a>開發者
 
-### <a name="support-contact-info"></a>支援連絡方式的資訊
+在此輸入文字，如果您想要將 **\[開發者\]** 欄位包含在您的應用程式市集清單中  (**\[發行者\]** 欄位會列出與您帳戶相關聯的發行者顯示名稱，無論您是否提供 **\[開發者\]** 欄位值。)
 
-輸入您的客戶可取得應用程式支援的網頁 URL，或客戶可聯絡以取得支援的電子郵件地址。
+這個欄位有 255 個字元的限制。
+ 
 
-> [!IMPORTANT]
-> Microsoft 不會向客戶提供有關您應用程式的支援。
+<span id="privacy-policy" />
+
+> [!NOTE]
+> **隱私權原則**、**網站**和**支援連絡資訊**欄位現在位於[內容](enter-app-properties.md)頁面。
 

@@ -1,25 +1,26 @@
 ---
 author: JnHs
-Description: "了解如何建立客戶區隔，讓您可以一部分的客戶群為特定對象來進行促銷或互動。"
-title: "建立客戶區隔"
+Description: Learn how to create customer segments so you can target a subset of your customer base for promotional or engagement purposes.
+title: 建立客戶區隔
 ms.author: wdg-dev-content
 ms.date: 07/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "windows 10, uwp, 區段, 目標群組, 客戶"
+keywords: windows 10, uwp, 區段, 目標群組, 客戶
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
-ms.openlocfilehash: 7c55528a47fe00782e5997e60fedca920cfdeb48
-ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.localizationpriority: high
+ms.openlocfilehash: 9b3af4a04889a46c0ff2b2592eceafd2605f139a
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="create-customer-segments"></a>建立客戶區隔
 
 有時候，您可能想要將一部分的客戶群做為特定對象來進行促銷和互動。 要這樣做，您可以在 Windows 開發人員中心建立一種[客戶群組](create-customer-groups.md) (稱為*「區隔」*)，其中包含符合您選擇的人口統計或收入條件的 Windows10 客戶。
 
-例如，您可以建立只包含 50 或 50 歲以上客戶的區隔，或包含在 Windows 市集花費超過 $10 的客戶的區隔。 您也可以合併這些條件，建立一個區隔來包含 50 歲以上且在市集中花費超過 $10 的所有客戶。 
+例如，您可以建立只包含 50 或 50 歲以上客戶的區隔，或包含在 Microsoft Store 花費超過 $10 的客戶的區隔。 您也可以合併這些條件，建立一個區隔來包含 50 歲以上且在市集中花費超過 $10 的所有客戶。 
 
 我們提供幾個區隔範本以協助您開始進行，但是您可以定義和合併您想要的條件。
 
@@ -39,8 +40,8 @@ ms.lasthandoff: 07/27/2017
 2.  在 **\[客戶群組\]** 頁面，執行下列其中一項︰
  - 在 **\[我的客戶群組\]** 區段，選取 **\[建立新群組\]** 以從頭定義區隔。 在下一頁，選取 **\[區隔\]** 選項按鈕。
  - 在 **\[區隔範本\]** 區段，選取其中一個預先定義的區隔 (您可以直接使用或依您的需求修改) 旁邊的 **\[複製\]**。
-4.  在 **\[群組名稱\]** 方塊中，輸入您的區隔名稱。
-3.  在 **\[包含這個 app 中的客戶\]** 清單中，選取您的其中一個 app 做為目標。
+3.  在 **\[群組名稱\]** 方塊中，輸入您的區隔名稱。
+4.  在 **\[包含這個 app 中的客戶\]** 清單中，選取您的其中一個 app 做為目標。
 5.  在 **\[定義包含條件\]** 區段中，指定區隔的篩選條件。
 
     您可以從各種篩選條件中選擇，包括 **\[下載數\]**、**\[下載來源\]**、**\[使用量\]**、**\[人口統計\]**、**\[分級\]**、**\[客戶流失預測\]**、**\[市集購買\]**、**\[市集下載\]** 和 **\[市集花費\]**。

@@ -1,18 +1,19 @@
 ---
 author: jnHs
-Description: "您可以設定應用程式應在市集中推出的精確日期和時間，讓您擁有更大的彈性和能力針對不同市場自訂日期。"
-title: "設定精確發行時間表"
+Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
+title: 設定精確發行時間表
 ms.author: wdg-dev-content
-ms.date: 08/03/2017
+ms.date: 03/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
-ms.openlocfilehash: 77e954e3d8b85c0cf517a154447957a2d81d5bcf
-ms.sourcegitcommit: 968187e803a866b60cda0528718a3d31f07dc54c
+keywords: windows 10, uwp, 排程, 發行日期, 日期, 推出
+ms.localizationpriority: high
+ms.openlocfilehash: 7c6f39622c4b64e787a7d9a226121dac7dcefdfa
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="configure-precise-release-scheduling"></a>設定精確發行時間表
 
@@ -23,14 +24,14 @@ ms.lasthandoff: 08/03/2017
 
 此外，您可以選擇設定產品不再於市集中提供的日期。 請注意，這表示不再能透過搜尋或瀏覽的方式在市集中找到產品，但擁有直接連結的客戶仍看得見產品的市集清單。 如果他們已擁有產品，或是有[促銷碼](generate-promotional-codes.md)且使用 Windows 10 裝置，才能進行下載。
 
-根據預設，(除非您已選取[可見度](set-app-pricing-and-availability.md#visibility)區段的其中一個 [**在市集推出此應用程式，但不供搜尋**] 選項)，您的應用程式將在通過認證並完成發行程序後，立即對客戶提供。 若要選擇其他日期，請選取 [**顯示選項**] 展開這個區段。
+根據預設，(除非您已選取[可見度](choose-visibility-options.md#discoverability)區段的其中一個 [**在市集推出此應用程式，但不供搜尋**] 選項)，您的應用程式將在通過認證並完成發行程序後，立即對客戶提供。 若要選擇其他日期，請選取 [**顯示選項**] 展開這個區段。
 
-請注意，您無法在 [**排程**] 區段中設定日期，如果您已選取[可見度](set-app-pricing-and-availability.md#visibility)區段的其中一個 [**在市集推出此應用程式，但不供搜尋**] 選項，因為您的應用程式不會對客戶發行，因此沒有發行日期可設定。
+請注意，您無法在 [**排程**] 區段中設定日期，如果您已選取[可見度](choose-visibility-options.md#discoverability)區段的其中一個 [**在市集推出此應用程式，但不供搜尋**] 選項，因為您的應用程式不會對客戶發行，因此沒有發行日期可設定。
 
 > [!IMPORTANT]
 > 您在 [排程] 區段中指定的日期只適用於使用 Windows 10 的客戶。
 >
->如果您的應用程式支援舊版作業系統，使用這些作業系統版本的客戶將在應用程式通過認證並完成發行程序後，看見您的應用程式清單，即使您已選取較晚的發行日期。 您選取的任何 [**停止取得**] 日期將不適用這些客戶；他們仍可以取得應用程式 (除非您在[可見度](set-app-pricing-and-availability.md#visibility)區段中選取新選項來提交更新，或您從 [**應用程式概觀**] 頁面選取 [**停止提供應用程式**])。
+>如果您的應用程式支援舊版作業系統，使用這些作業系統版本的客戶將在應用程式通過認證並完成發行程序後，看見您的應用程式清單，即使您已選取較晚的發行日期。 您選取的任何 [**停止取得**] 日期將不適用這些客戶；他們仍可以取得應用程式 (除非您在[可見度](choose-visibility-options.md#discoverability)區段中選取新選項來提交更新，或您從 [**應用程式概觀**] 頁面選取 [**停止提供應用程式**])。
 
 
 ## <a name="base-schedule"></a>基本時間表
@@ -39,7 +40,7 @@ ms.lasthandoff: 08/03/2017
 
 您將會看到這兩個選項︰[**發行**] 和 [**停止取得**]。 
 
-### <a name="release"></a>發行
+## <a name="release"></a>發行
 
 在 [**發行**] 下拉式清單中，您可以設定要在市集中提供應用程式的時間。 這表示，可在市集中透過搜尋或瀏覽的方式搜尋應用程式，且客戶可以檢視其市集清單並取得應用程式。
 
@@ -56,20 +57,20 @@ ms.lasthandoff: 08/03/2017
 > [!TIP]
 > 您也可以選擇性地[輸入不同的發行日期](set-app-pricing-and-availability.md#display-release-date)在您的應用程式市集清單中出現。 
 
-### <a name="stop-acquisition"></a>停止取得
+## <a name="stop-acquisition"></a>停止取得
 
 在 [**停止取得**] 下拉式清單中，您可以設定要停止新客戶從市集取得應用程式或探索其清單的日期和時間。 如果您想要精確控制不再對新客戶提供應用程式的時間，例如您正在協調多個應用程式的可用性時，這會很實用。
 
 根據預設，[**停止取得**] 設定為永不。 若要變更此項，請在下拉式清單中選取 [**於**]，然後指定日期和時間，如上所述。 在您選取的日期和時間，客戶將不再能取得應用程式。
 
-務必了解此選項與選取[可見度](set-app-pricing-and-availability.md#visibility)區段中的 [**此應用程式可供搜尋，但不提供**] 選項，並選擇 [**停止取得：擁有直接連結的任何客戶可以看到產品的市集清單，但除非他們已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置，才能下載**] 的效果相同。 若要完全停止為新客戶提供某個應用程式，請按一下 [應用程式概觀] 頁面的 [**停止提供應用程式**]。 如需詳細資訊，請參閱[從市集移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+務必了解此選項與選取[可見度](choose-visibility-options.md#discoverability)區段中的 [**此應用程式可供搜尋，但不提供**] 選項，並選擇 [**停止取得：擁有直接連結的任何客戶可以看到產品的市集清單，但除非他們已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置，才能下載**] 的效果相同。 若要完全停止為新客戶提供某個應用程式，請按一下 [應用程式概觀] 頁面的 [**停止提供應用程式**]。 如需詳細資訊，請參閱[從市集移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 > [!TIP]
 > 如果您選取 [**停止取得**] 的日期，且之後決定要再次提供應用程式，您可以建立新的提交項目，並將 [**停止取得**] 變更回 [**永不**]。 在您將更新的提交項目發行後，應用程式將再次提供。
 
-### <a name="customize-the-schedule-for-specific-markets"></a>自訂特定市場的排程 
+## <a name="customize-the-schedule-for-specific-markets"></a>自訂特定市場的排程 
 
-根據預設，您在上方選取的選項將適用於提供應用程式所在的所有市場。 若要自訂特定市場的價格，請按一下 [**針對特定市場自訂**]。 [**選擇市場**] 快顯視窗將會出現，列出您選擇提供應用程式的所有市場。 如果您在 [市場]((define-pricing-and-market-selection.md) 區段中排除任何市場，則不會顯示這些市場。 
+根據預設，您在上方選取的選項將適用於提供應用程式所在的所有市場。 若要自訂特定市場的價格，請按一下 [**針對特定市場自訂**]。 **\[選擇市場\]** 快顯視窗將會出現，列出您選擇提供應用程式的所有市場。 如果您在[市場](define-pricing-and-market-selection.md)區段中排除任何市場，這些市場就不會顯示。 
 
 若要新增某一個市場的排程，請選取該市場並按一下 [**儲存**]。 然後您會看到與上述相同的 [**發行**] 和 [**停止取得**] 選項，但您所做的選擇只會套用至該市場。
 
