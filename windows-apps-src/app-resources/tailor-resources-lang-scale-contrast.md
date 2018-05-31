@@ -1,30 +1,29 @@
 ---
 author: stevewhims
-Description: "本主題說明限定詞的一般概念、其使用方式，以及每個限定詞名稱的用途。"
-title: "針對語言、縮放比例、高對比及其他限定詞量身打造您的資源"
+Description: This topic explains the general concept of qualifiers, how to use them, and the purpose of each of the qualifier names.
+title: 針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: 930a49ab3d9bab034f771a323b17484ae6aa0e16
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: 5309b33e0f65a1a06e1a3c0060a84e4c4a88ef9d
+ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/03/2018
+ms.locfileid: "1700794"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
-本主題說明資源限定詞的一般概念、其使用方式，以及每個限定詞名稱的用途。 如需所有可能限定詞值的參考表，請參閱 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues)。
+本主題說明資源限定詞的一般概念、其使用方式，以及每個限定詞名稱的用途。 如需所有可能限定詞值的參考表，請參閱 [**ResourceContext.QualifierValues**](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)。
 
-您的應用程式可以載入專為執行階段內容量身訂做的資產和資源，例如顯示語言、高對比、[顯示縮放比例](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)，以及許多其他內容。 執行此動作的方式是命名資源的檔案或資料夾，以符合對應至這些內容的限定詞名稱及限定詞值。 例如，您可能希望應用程式在高對比模式下載入不同的一組影像資產。
+您的應用程式可以載入專為執行階段內容量身訂做的資產和資源，例如顯示語言、高對比、[顯示縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)，以及許多其他內容。 執行此動作的方式是命名資源的檔案或資料夾，以符合對應至這些內容的限定詞名稱及限定詞值。 例如，您可能希望應用程式在高對比模式下載入不同的一組影像資產。
 
-如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../globalizing/globalizing-portal.md)。
+如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
 
 ## <a name="qualifier-name-qualifier-value-and-qualifier"></a>限定詞名稱、限定詞值和限定詞
 
@@ -89,7 +88,7 @@ ms.lasthandoff: 11/03/2017
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
 
-如需限定詞比對運作方式的詳細資訊，請參閱[資源管理系統](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)。
+如需限定詞比對運作方式的詳細資訊，請參閱[資源管理系統](resource-management-system.md)。
 
 ## <a name="multiple-qualifiers"></a>多個限定詞
 
@@ -135,9 +134,8 @@ ms.lasthandoff: 11/03/2017
 
 ## <a name="custom"></a>Custom
 
-您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 App 啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
+您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 應用程式啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
 
-**C#**
 ```csharp
 public void SetLicenseLevel(BrandID brand)
 {
@@ -160,7 +158,7 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="devicefamily"></a>DeviceFamily
 
-您不太可能需要 `devicefamily` 限定詞名稱。 您應該盡可能避免使用此限定詞，因為另有更方便且穩健的技術可供您使用。 這些技術在[偵測執行您 app 的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)和[撰寫程式碼](../get-started/universal-application-platform-guide.md#writing-code)中有說明。
+您不太可能需要 `devicefamily` 限定詞名稱。 您應該盡可能避免使用此限定詞，因為另有更方便且穩健的技術可供您使用。 這些技術在[偵測執行您 app 的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)和[版本調適型程式碼](https://docs.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)中有說明。
 
 但在不得已時，還是可以使用 devicefamily 限定詞來命名含有 XAML 檢視表 (XAML 檢視表是一個包含 UI 版面配置及控制項的 XAML 檔案) 的資料夾。
 
@@ -230,11 +228,11 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="layoutdirection"></a>LayoutDirection
 
-`layoutdirection` 限定詞對應於顯示語言設定的配置方向。 例如，可能需要針對阿拉伯文或希伯來文等由右至左的語言建立影像的鏡像。 如果 UI 中的配置面板及影像設定了 [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement?branch=live#Windows_UI_Xaml_FrameworkElement_FlowDirection) 屬性，便會適當地對應至配置方向 (請參閱[調整配置和字型並支援 RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md))。 不過，`layoutdirection` 限定詞較適用於無法以簡單翻轉來達到滿意效果的情況，而且可讓您以更通用的方式回應特定閱讀順序的方向和文字對齊。
+`layoutdirection` 限定詞對應於顯示語言設定的配置方向。 例如，可能需要針對阿拉伯文或希伯來文等由右至左的語言建立影像的鏡像。 如果 UI 中的配置面板及影像設定了 [FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性，便會適當地對應至配置方向 (請參閱[調整配置和字型並支援 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md))。 不過，`layoutdirection` 限定詞較適用於無法以簡單翻轉來達到滿意效果的情況，而且可讓您以更通用的方式回應特定閱讀順序的方向和文字對齊。
 
 ## <a name="scale"></a>縮放比例
 
-Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選取每個螢幕的縮放比例。 請參閱[有效像素與縮放比例](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)。 您應該建立幾種建議大小 (至少 100、200 以及 400) 的影像，以便 Windows 可以選擇完美大小或者可以使用最接近的大小，並調整它。 因此，Windows 可以找出包含正確大小的實體檔案，以顯示縮放比例，您使用 `scale` 限定詞。 資源的縮放比例的相符項目會是 [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation?branch=live#Windows_Graphics_Display_DisplayInformation_ResolutionScale) 的值或次大的縮放資源。
+Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選取每個螢幕的縮放比例。 請參閱[有效像素與縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)。 您應該建立幾種建議大小 (至少 100、200 以及 400) 的影像，以便 Windows 可以選擇完美大小或者可以使用最接近的大小，並調整它。 因此，Windows 可以找出包含正確大小的實體檔案，以顯示縮放比例，您使用 `scale` 限定詞。 資源的縮放比例的相符項目會是 [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale) 的值或次大的縮放資源。
 
 以下是在資料夾層級設定限定詞的範例。
 
@@ -264,21 +262,22 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 ## <a name="theme"></a>Theme
 
-`theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master#Windows_UI_Xaml_Application_RequestedTheme) 的覆寫。
+`theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme) 的覆寫。
 
 ## <a name="important-apis"></a>重要 API
 
+* [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
 * [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
 
 ## <a name="related-topics"></a>相關主題
 
-* [有效像素與縮放比例](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
-* [資源管理系統](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj552947)
+* [有效像素與縮放比例](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
+* [資源管理系統](resource-management-system.md)
 * [如何準備當地語系化](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh967762)
 * [偵測執行您 app 的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
-* [撰寫程式碼](../get-started/universal-application-platform-guide.md#writing-code)
+* [裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [當地語系化您的 UI 字串](localize-strings-ui-manifest.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
 * [聯合國統計司 M49 區域分類編碼](http://go.microsoft.com/fwlink/p/?linkid=247929)
 * [IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)
-* [調整配置和字型並支援 RTL](../globalizing/adjust-layout-and-fonts--and-support-rtl.md)
+* [調整配置和字型並支援 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

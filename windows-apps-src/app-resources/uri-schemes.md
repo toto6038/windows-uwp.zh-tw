@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從應用程式資源檔案 (.resw) 載入的字串。"
-title: "URI 配置"
+Description: There are several URI (Uniform Resource Identifier) schemes that you can use to refer to files that come from your app's package, your app's data folders, or the cloud. You can also use a URI scheme to refer to strings loaded from your app's Resources Files (.resw).
+title: URI 配置
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: 7cbd4a6fea3ca7d179eae9857c6e98010d11439e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: 445f053b0243f1b9c2e54e6e9fcfa332d49cbec5
+ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 03/22/2018
+ms.locfileid: "1674515"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="uri-schemes"></a>URI 配置
 
 有幾個可供您用來參考您的應用程式套件、您的 App 資料的資料夾或雲端之檔案的 URI (統一資源識別項) 配置。 您也可以使用 URI 配置參考從應用程式資源檔案 (.resw) 載入的字串。 您可以在程式碼、XAML 標記、應用程式套件資訊清單或磚及快顯通知範本中使用這些 URI 配置。
@@ -28,7 +27,7 @@ ms.lasthandoff: 11/03/2017
 
 所有的 URI 配置都會根據 [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) 將階層式組件定義為 URI 的授權單位及路徑元件。
 
-```
+```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
 hier-part   = "//" authority path-abempty
             / path-absolute
@@ -50,7 +49,7 @@ hier-part   = "//" authority path-abempty
 
 ## <a name="ms-appx-and-ms-appx-web"></a>ms-appx 和 ms-appx-web
 
-使用 `ms-appx` 或 `ms-appx-web` URI 配置來參考應用程式套件中的檔案 (請參閱[封裝應用程式](../packaging/index.md))。 應用程式套件中的檔案通常是靜態影像、資料、程式碼及配置檔案。 `ms-appx-web` 配置將相同的檔案當做 `ms-appx` 來存取，但會在網頁區間中進行。 如需詳細資訊，請參閱[從 XAML 標記和程式碼參照影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
+使用 `ms-appx` 或 `ms-appx-web` URI 配置來參考應用程式套件中的檔案 (請參閱[封裝應用程式](../packaging/index.md))。 應用程式套件中的檔案通常是靜態影像、資料、程式碼及配置檔案。 `ms-appx-web` 配置將相同的檔案當做 `ms-appx` 來存取，但會在網頁區間中進行。 如需詳細資訊，請參閱[從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)。
 
 ### <a name="scheme-name-ms-appx-and-ms-appx-web"></a>配置名稱 (ms-appx 和 ms-appx-web)
 
@@ -109,8 +108,7 @@ ms-appx:///images/logo.png
 
 當然也可以直接以其完整名稱參考這個相同的實體檔案來進行擷取。
 
-**XAML**
-```xml
+```xaml
 <Image Source="ms-appx:///images/fr-FR/logo.scale-100_contrast-white.png"/>
 ```
 
@@ -128,9 +126,9 @@ ms-appx:///Hello%23World.html
 
 ## <a name="ms-appdata"></a>ms-appdata
 
-使用 `ms-appdata` URI 配置來參考來自應用程式本機、漫遊以及暫存資料之資料夾的檔案。 如需有關這些應用程式資料之資料夾的詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](../app-settings/store-and-retrieve-app-data.md)。
+使用 `ms-appdata` URI 配置來參考來自應用程式本機、漫遊以及暫存資料之資料夾的檔案。 如需有關這些應用程式資料之資料夾的詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)。
 
-`ms-appdata` URI 配置不會執行 [ms-appx 和 ms-appx-web](#ms-appx-and-ms-appx-web) 所做的執行階段內容交涉。 但是您可以回應 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live#Windows_ApplicationModel_Resources_Core_ResourceContext_QualifierValues) 的內容，並在 URI 中使用完整實體檔案名稱，從應用程式資料載入適當的資產。
+`ms-appdata` URI 配置不會執行 [ms-appx 和 ms-appx-web](#ms-appx-and-ms-appx-web) 所做的執行階段內容交涉。 但是您可以回應 [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues) 的內容，並在 URI 中使用完整實體檔案名稱，從應用程式資料載入適當的資產。
 
 ### <a name="scheme-name-ms-appdata"></a>配置名稱 (ms-appdata)
 
@@ -253,9 +251,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 ### <a name="path-ms-resource"></a>路徑 (ms-resource)
 
-路徑會識別 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 樹狀子目錄的階層位置 (請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)) 以及其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResourcebranch=live)。 這通常對應至資源檔案 (.resw) 的檔名 (不含副檔名)，以及其中字串資源的識別碼。
+路徑會識別 [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap?branch=live) 樹狀子目錄的階層位置 (請參閱[資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)) 以及其中的 [NamedResource](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live)。 這通常對應至資源檔案 (.resw) 的檔名 (不含副檔名)，以及其中字串資源的識別碼。
 
-如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](tile-toast-language-scale-contrast.md)。
+如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
 `ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，當存取資源的基礎檔案系統不區分大小寫時，則會執行 [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)，並將 *ignoreCase* 設為 `true`，以不區分大小寫的方式進行擷取。
 
@@ -275,8 +273,8 @@ ms-resource:///Hello%23World/String1
 
 * [統一資源識別項 (URI)：一般語法](http://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [封裝應用程式](../packaging/index.md)
-* [從 XAML 標記和程式碼參照影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
-* [儲存和擷取設定及其他應用程式資料](../app-settings/store-and-retrieve-app-data.md)
+* [從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
+* [儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)
 * [將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)
 * [資源管理系統](https://msdn.microsoft.com/library/windows/apps/jj552947)
-* [對語言、縮放比例及高對比的磚和快顯通知支援](tile-toast-language-scale-contrast.md)
+* [對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)

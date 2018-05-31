@@ -1,17 +1,21 @@
 ---
 author: drewbatgit
 ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
-description: "本文說明當您的 app 在背景執行時如何播放媒體。"
-title: "在背景播放媒體"
+description: 本文說明當您的 app 在背景執行時如何播放媒體。
+title: 在背景播放媒體
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 148bb77f9386864a1b127341aa875beb7123bae9
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f8fdc99355ef5a024757cc2e415b1d259965c1ce
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690494"
 ---
 # <a name="play-media-in-the-background"></a>在背景播放媒體
 本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
@@ -19,10 +23,10 @@ translationtype: HT
 背景音訊播放的案例包含：
 
 -   
-            **長時間執行的播放清單：**使用者會短暫叫用前景 app 來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
+            **長時間執行的播放清單：** 使用者會短暫叫用前景 app 來選取和開始播放清單，完成這些動作後，使用者預期播放清單會在背景持續播放。
 
 -   
-            **使用工作切換器：**使用者會短暫叫用前景 app 來開始播放音訊，然後使用工作切換器，切換到另一個開啟的 app。 使用者預期音訊會在背景持續播放。
+            **使用工作切換器：** 使用者會短暫叫用前景 app 來開始播放音訊，然後使用工作切換器，切換到另一個開啟的 app。 使用者預期音訊會在背景持續播放。
 
 本文中描述的背景音訊實作可讓您的 app 在所有 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
 
@@ -67,7 +71,7 @@ translationtype: HT
 </Capabilities>
 ```
 
-##<a name="handle-transitioning-between-foreground-and-background"></a>處理前景與背景之間的轉換
+## <a name="handle-transitioning-between-foreground-and-background"></a>處理前景與背景之間的轉換
 當您的 app 從前景移到背景時，會引發 [**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 事件。 當您的 app 回到前景時，會引發 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground) 事件。 因為這些是應用程式週期事件，您應該在建立 app 時登錄這些事件的處理常式。 在預設專案範本中，這表示將它新增到 App.xaml.cs 中的 **App** 類別建構函式。 
 
 [!code-cs[RegisterEvents](./code/BackgroundAudio_RS1/cs/App.xaml.cs#SnippetRegisterEvents)]
@@ -90,7 +94,7 @@ translationtype: HT
 ## <a name="network-availability-for-background-media-apps"></a>背景媒體 App 的網路可用性
 所有網路感知的媒體來源 (不是從資料流或檔案建立的媒體來源) 會在擷取遠端內容時，讓網路連線保持使用中狀態，並且在不需擷取遠端內容時釋放網路連線。 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.MediaStreamSource) 特別依賴應用程式使用 [**SetBufferedRange**](https://msdn.microsoft.com/library/windows/apps/dn282762)，正確地向平台報告正確的緩衝範圍。 針對整個內容完整進行緩衝處理之後，就不會再代替 app 保留網路了。
 
-如果您需要在無法下載媒體時，於背景中進行網路呼叫，則必須將它們包裝於適當的工作中，例如 [**ApplicationTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.ApplicationTrigger)、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger)。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
+如果您需要在無法下載媒體時，於背景中進行網路呼叫，則必須將它們包裝於適當的工作中，例如 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.MaintenanceTrigger) 或 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Background.TimeTrigger)。 如需詳細資訊，請參閱[使用背景工作支援 app](https://msdn.microsoft.com/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 ## <a name="related-topics"></a>相關主題
 * [媒體播放](media-playback.md)

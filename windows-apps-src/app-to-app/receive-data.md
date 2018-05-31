@@ -1,6 +1,6 @@
 ---
-description: "本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。"
-title: "接收資料"
+description: 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
+title: 接收資料
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9c3054d161e45bd614e8ef42ea6f21aeb937f582
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: 3b44b3d693f6e9675f0b60e667bc434a7485eed8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832532"
 ---
 # <a name="receive-data"></a>接收資料
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
@@ -79,7 +80,7 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 在某些情形下，您的 app 需要時間來處理想要分享的資料。 範例包括使用者分享檔案或影像的集合。 這些項目比簡單文字字串更大，所以需要更長的處理時間。
 
 ```cs
-shareOperation.ReportDataRetreived(); 
+shareOperation.ReportStarted(); 
 ```
 
 呼叫 [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) 後，不要預期使用者與您的 App 進行更多互動。 因此，除非使用者可以關閉 App，否則不應該呼叫它。
@@ -108,7 +109,7 @@ shareOperation.ReportCompleted();
 
 當使用者選取您的 app 來接收內容時，建議您建立一個 [**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink)。 **QuickLink** 就像捷徑，可讓使用者方便與您的應用程式分享資訊。 例如，您可以建立一個 **QuickLink**，開啟已預先設定朋友電子郵件地址的新電子郵件訊息。
 
-**QuickLink** 必須包含標題、圖示以及識別碼。 當使用者點選分享常用鍵時，就會出現標題 (如「Email Mom」) 和圖示。 識別碼是您的 app 用來存取任何自訂資訊的物件，例如電子郵件地址或登入認證。 當您的 app 建立 **QuickLink** 時，app 會呼叫 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) 來將 **QuickLink** 傳回系統。
+**QuickLink** 必須有標題、圖示和識別碼。當使用者點選 [分享] 常用鍵時，就會出現標題 (如「Email Mom」) 和圖示。 識別碼是您的 app 用來存取任何自訂資訊的物件，例如電子郵件地址或登入認證。 當您的 app 建立 **QuickLink** 時，app 會呼叫 [**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) 來將 **QuickLink** 傳回系統。
 
 **QuickLink** 實際上不會儲存資料。 而是會含有一個識別碼，在選取時傳送到您的 app。 您的 app 要負責儲存 **QuickLink** 的識別碼及對應的使用者資料。 當使用者點選 **QuickLink** 時，您可以透過 [**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) 屬性取得它的 ID。
 
