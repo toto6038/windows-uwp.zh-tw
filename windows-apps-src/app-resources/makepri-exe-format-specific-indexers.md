@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "本主題說明 MakePri.exe 用來產生資源索引的格式特定索引子。"
-title: "MakePri.exe 格式特定的索引子"
+Description: This topic describes the format-specific indexers used by the MakePri.exe tool to generate its index of resources.
+title: MakePri.exe 格式特定的索引子
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: d0ab502a4735ac028a4d2869824378d69314eb72
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: 09c0ff50a3056b986eb3938c34ad61fde7e86f26
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
+ms.locfileid: "1393267"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-format-specific-indexers"></a>MakePri.exe 格式特定的索引子
 
 本主題說明  [MakePri.exe](compile-resources-manually-with-makepri.md) 工具用來產生資源索引的格式特定索引子。

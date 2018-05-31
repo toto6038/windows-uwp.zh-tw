@@ -1,6 +1,6 @@
 ---
-description: "本文說明如何在通用 Windows 平台 (UWP) 應用程式中支援分享協定。"
-title: "分享資料"
+description: 本文說明如何在通用 Windows 平台 (UWP) 應用程式中支援分享協定。
+title: 分享資料
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: msatranjr
 ms.author: misatran
@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: fe6da350fbfe006b55e90aee8c12da90967f5711
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: d283ce0211b28f9d41e4689c978e8731c677698d
+ms.sourcegitcommit: c11e7163010cb7547aeaca96e9b90a3c3a8ef31e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 01/25/2018
+ms.locfileid: "1541111"
 ---
 # <a name="share-data"></a>分享資料
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文說明如何在通用 Windows 平台 (UWP) 應用程式中支援分享協定。 分享協定是一種在 app 之間快速分享資料 (例如文字、連結，照片和影片) 的簡單方法。 舉例來說，使用者可能會想要使用社交網路 app 與朋友分享網頁，或是將連結儲存在筆記本 app 以供日後參考。
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 07/19/2017
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-發生 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件後，應用程式會收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 物件。 這個物件包含一個 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可以用來提供使用者想分享的內容。 您必須提供標題和資料才能分享。 描述是選擇性的，但建議使用。
+當 [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) 事件發生時，您的 App 會收到 [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) 物件。 這個物件包含一個 [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)，可以用來提供使用者想分享的內容。 您必須提供標題和資料才能分享。 描述是選擇性的，但建議使用。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
@@ -40,7 +41,6 @@ ms.lasthandoff: 07/19/2017
 -   HTML
 -   格式化文字
 -   點陣圖
--   純文字
 -   檔案
 -   自訂開發人員定義資料
 

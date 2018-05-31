@@ -1,19 +1,20 @@
 ---
 author: ptorr-msft
-title: "針對轉換後的傳統型應用程式和遊樂場使用 MRT"
-description: "將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的 App 資源。 這個深入主題說明技術。"
+title: 針對轉換後的傳統型應用程式和遊樂場使用 MRT
+description: 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的 App 資源。 這個深入主題說明技術。
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件"
+keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
 ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
 ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/12/2017
+ms.locfileid: "1396477"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
@@ -307,7 +308,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
  * `/p` 設定輸出套件名稱
  * `/o` 如果適用則設定為覆寫輸出檔案
 0. 一旦建立套件，就必須簽署。 取得簽署憑證的最簡單方式是在 Visual Studio 中建立空白的通用 Windows 專案，並複製其建立的 `.pfx` 檔案，但您可以依照 [**有關 MSDN 之如何建立應用程式套件簽署憑證**主題] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx) 中所述，使用 `MakeCert` 和 `Pvk2Pfx` 公用程式手動建立一個專案。 
- * **重要︰**手動建立簽署憑證，確保將檔案放置在不同於來源專案或套件來源的目錄中，否則可能會被納入為套件的一部分，包括私密金鑰！
+ * **重要︰** 手動建立簽署憑證，確保將檔案放置在不同於來源專案或套件來源的目錄中，否則可能會被納入為套件的一部分，包括私密金鑰！
 0. 若要登入套件，請使用下列命令。 請注意，`AppxManifest.xml` 的 `Identity` 元素中所指定的 `Publisher`，必須符合憑證的 `Subject` (這**不是**`<PublisherDisplayName>` 元素，而是對使用者顯示的當地語系化顯示名稱)。 一如往常，將 `contoso_demo...` 檔名取代為專案的適用名稱，並且 (**非常重要**) 確定 `.pfx` 檔案不在目錄的目錄中 (否則可能建立為套件的一部分，包括私用簽署金鑰！)︰
 
     `signtool sign /fd SHA256 /a /f ..\contoso_demo_key.pfx ..\contoso_demo.appx`
@@ -724,7 +725,7 @@ HRESULT GetMrtResourceHandle(LPCWSTR resourceFilePath,  HINSTANCE* resourceHandl
 
 若要使用套件組合產生器工具，為套件建立的 PRI 檔案，需要手動更新，以移除 `<packaging>` 一節。
 
-如果使用 Visual Studio，請參閱[有關 MSDN 的**確認已安裝資源...**主題](https://msdn.microsoft.com/en-us/library/dn482043.aspx)以取得有關如何透過建立檔案 `priconfig.packaging.xml` 和 `priconfig.default.xml`，將所有語言建置到主要套件的詳細資訊。
+如果使用 Visual Studio，請參閱[有關 MSDN 的**確認已安裝資源...** 主題](https://msdn.microsoft.com/en-us/library/dn482043.aspx)以取得有關如何透過建立檔案 `priconfig.packaging.xml` 和 `priconfig.default.xml`，將所有語言建置到主要套件的詳細資訊。
 
 如果手動編輯檔案，請依照下列步驟執行︰ 
 

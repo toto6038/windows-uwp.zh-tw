@@ -1,30 +1,31 @@
 ---
 author: stevewhims
-Description: "上一個主題 (資源管理系統如何比對和選擇資源) 主要綜觀限定詞比對。 本主題著重於語言標記比對的細節。"
-title: "資源管理系統如何比對語言標記"
+Description: The previous topic (How the Resource Management System matches and chooses resources) looks at qualifier-matching in general. This topic focuses on language-tag-matching in more detail.
+title: 資源管理系統如何比對語言標記
 template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: ae1c4a3093e978cc054934d991d37c31264f128d
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: 6c01b3efe77f1933c8d9a8620a60757e14d94bd5
+ms.sourcegitcommit: dd1a2e22eadd2304afee0912fd21772a9d2d8fda
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/13/2017
+ms.locfileid: "1437739"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-language-tags"></a>資源管理系統如何比對語言標記
 
 上一個主題 ([資源管理系統如何比對和選擇資源](how-rms-matches-and-chooses-resources.md)) 主要綜觀限定詞比對。 本主題著重於語言標記比對的細節。
 
 ## <a name="introduction"></a>簡介
 
-含有語言標記限定詞的資源的比較和評分是根據使用者依照優先順序排列的慣用語言清單。 評分機制使用包含在 [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 子標記登錄中的資料及其他資料來源。 該機制允許使用不同品質相符項目的評分梯度，當提供多個候選項目時，會選取分數最符合的候選項目。
+含有語言標記限定詞的資源是根據應用程式執行階段語言清單進行比較和評分。 如需了解不同語言清單的定義，請參閱[了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 系統會先比對清單中的第一個語言，然後再比對清單中的第二個語言，即使是其他地區變體也一樣。 例如，如果應用程式執行階段語言為 en-US，則會優先選擇 en-GB 資源，而不是 fr-CA 資源。 只在 形式沒有任何資源時，才會選擇 fr-CA 資源 (請注意，應用程式的預設語言在這種情況下，可能不會設定為任何形式的 en)。
+
+評分機制使用包含在 [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 子標記登錄中的資料及其他資料來源。 該機制允許使用不同品質相符項目的評分梯度，當提供多個候選項目時，會選取分數最符合的候選項目。
 
 因此，您可用一般詞彙標記語言內容，但是您仍然可以視需要指定特定的內容。 例如，您的 App 可能會擁有許多美國、英國和其他地區通用的英文字串。 將這些字串標示為「en」(英文) 可節省空間和當地語系化費用。 當需要區別時，例如包含「色彩/顏色」用詞的字串，可以使用語言和地區子標記「en-US」和「en-GB」分別標記美國和英國版本。
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 11/03/2017
 
 ## <a name="matching-two-languages"></a>比對兩種語言
 
-每當 Windows 比較兩種語言時，通常是在較大程序的內容中完成。 它可能是在評估多種語言的內容中，例如 Windows 產生應用程式語言清單時 (請參閱[管理語言和地區](../globalizing/manage-language-and-region.md))。 Windows 會藉由比對使用者慣用的多種語言和 App 資訊清單中指定的語言來進行。 也可能在評估語言的內容中加上特定資源的其他限定詞，來進行比較。 其中一個範例是當 Windows 將特定的檔案資源解析為特定資源內容時；將使用者的家鄉位置或裝置目前的縮放或 dpi 做為其他因素 (除了語言之外)，即納入資源選取項目的因素。
+每當 Windows 比較兩種語言時，通常是在較大程序的內容中完成。 這可能是在評估多種語言的背景下進行，例如在 Windows 產生應用程式語言清單時進行 (請參閱[了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md))。 Windows 會藉由比對使用者慣用的多種語言和應用程式資訊清單中指定的語言來進行。 也可能在評估語言的內容中加上特定資源的其他限定詞，來進行比較。 其中一個範例是當 Windows 將特定的檔案資源解析為特定資源內容時；將使用者的家鄉位置或裝置目前的縮放或 dpi 做為其他因素 (除了語言之外)，即納入資源選取項目的因素。
 
 當比較兩種語言標記時，會根據相符項目的相近度給分。
 
@@ -61,7 +62,7 @@ ms.lasthandoff: 11/03/2017
 
 ### <a name="exact-match"></a>完全相符
 
-標記完全相等 (所有子標記項目相符)。 可提倡比較變體的此相符類型或地區相符。
+標記完全相等 (所有子標記項目相符)。 可以將一項比較從變體相符或地區相符升階至此比對類型。 例如，en-US 與 en-US 相符。
 
 ### <a name="variant-match"></a>變體相符
 
@@ -69,11 +70,11 @@ ms.lasthandoff: 11/03/2017
 
 ### <a name="region-match"></a>地區相符
 
-語言、字集和地區子標記的標記相符，但是它們在某些方面又不相同。
+語言、字集和地區子標記的標記相符，但是它們在某些方面又不相同。 例如，de-DE-1996 與 de-DE 相符，而 en-US-x-Pirate 與 en-US 相符。
 
 ### <a name="partial-matches"></a>部分相符
 
-語言和字集子標記的標記相符，但是它們在地區或某些其他子標記又不相同。
+語言和字集子標記的標記相符，但是它們在地區或某些其他子標記又不相同。 例如，en-US 與 en 相符，或是 en-US 與 en-\* 相符。
 
 #### <a name="macro-region-match"></a>宏觀地區相符
 
@@ -93,7 +94,7 @@ ms.lasthandoff: 11/03/2017
 
 #### <a name="preferred-region-match"></a>慣用地區相符
 
-語言和字集子標記的標記相符，以及其中一個地區子標記是語言的預設地區子標記。 例如「fr-FR」是「fr」子標記的預設地區。 這仰賴保留在 Windows 中為 Windows 當地語系化的每一種語言定義預設地區的資料。
+語言和字集子標記的標記相符，以及其中一個地區子標記是語言的預設地區子標記。 例如「fr-FR」是「fr」子標記的預設地區。 因此 fr-FR 與 fr-BE 的相符性比 fr-CA 更高。 這仰賴保留在 Windows 中為 Windows 當地語系化的每一種語言定義預設地區的資料。
 
 #### <a name="sibling-match"></a>同層級相符
 
@@ -109,19 +110,19 @@ ms.lasthandoff: 11/03/2017
 
 ### <a name="no-match"></a>不相符
 
-不相符的主要語言子標記，會被評分為有效相符的層級以下。
+不相符主要語言子標記的評分會低於有效相符的等級。 例如，zh-Hant 與 zh-Hans 不相符。
 
 ## <a name="examples"></a>範例
 
 使用者語言「zh-Hans-CN」(簡體中文 (中國)) 以顯示的優先順序符合下列資源。 X 表示不相符。
 
-[!系統會比對簡體中文 (中國)](/images/language_matching_1.png)
+![簡體中文 (中國) 的比對](images/language_matching_1.png)
 
 1. 完全相符；2。 & 3。 地區相符；4。 上層相符；5。 同層級相符。
 
-當語言子標記有 BCP-47 子標記登錄中所定義的隱藏字集值，就會發生對應的比對，接受隱藏字集代碼的值。 在下一個範例中，使用者語言是「en-AU」(英文 (澳洲))。
+當語言子標記有 BCP-47 子標記登錄中所定義的隱藏字集值，就會發生對應的比對，接受隱藏字集代碼的值。 例如，en-Latn-US 與 en-US 相符。 在下一個範例中，使用者語言是「en-AU」(英文 (澳洲))。
 
-[!系統會比對英文 (澳洲)](/images/language_matching_2.png)
+![英文 (澳洲) 的比對](images/language_matching_2.png)
 
 1. 完全相符；2。 宏觀地區相符；3。 地區中立相符；4。 正交相關性相符；5。 慣用地區相符；6。 同層級相符。
 
@@ -193,5 +194,5 @@ App 通常只支援任何指定語言的單一種類。 假設 App 擁有僅一�
 
 * [資源管理系統如何比對和選擇資源](how-rms-matches-and-chooses-resources.md)
 * [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [管理語言和地區](../globalizing/manage-language-and-region.md)
-* [宏觀地理 (大陸) 地區、地理子地區和所選取經濟和其他群組的組合。](http://go.microsoft.com/fwlink/p/?LinkId=247929)
+* [了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)
+* [宏觀地理 (大陸) 地區、地理子地區以及所選取經濟和其他群組的組合。](http://go.microsoft.com/fwlink/p/?LinkId=247929)

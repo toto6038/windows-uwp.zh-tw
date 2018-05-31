@@ -1,23 +1,22 @@
 ---
 author: stevewhims
-Description: "本主題說明 MakePri.exe XML 設定檔的結構描述。"
-title: "MakePri.exe 設定檔"
+Description: This topic describes the schema of the MakePri.exe XML configuration file.
+title: MakePri.exe 設定檔
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: 7d19d1d778b434abd25d0d087159ea79521642e8
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: 24ba76549053ef0f88612249eb903278d8554167
+ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/12/2017
+ms.locfileid: "1393517"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="makepriexe-configuration-file"></a>MakePri.exe 設定檔
 
 本主題說明 [MakePri.exe](compile-resources-manually-with-makepri.md) XML 設定檔的結構描述；也稱為 PRI 設定檔。 MakePri.exe 工具擁有 [createconfig 命令](makepri-exe-command-options.md#createconfig-command)，您可以用來建立新初始化的 PRI 設定檔。
@@ -186,7 +185,6 @@ MakePri.exe 不會明確封鎖資源 PRI 檔案和任何特定維度的產生。
 
 MakePri.exe 會剖析所有 `index` 節點之後的 `packaging` 項目，以填入限定詞。 MakePri.exe 會收集這些資料結構的已剖析資訊。
 
-**C#**
 ```csharp
 enum ResourcePackageMode
 {
