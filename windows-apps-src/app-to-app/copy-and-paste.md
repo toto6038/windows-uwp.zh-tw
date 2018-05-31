@@ -1,6 +1,6 @@
 ---
-description: "本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。"
-title: "複製並貼上"
+description: 本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。
+title: 複製並貼上
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: msatranjr
 ms.author: misatran
@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f49a417e87199a625a023f7aa867f855cbd5d3c9
-ms.sourcegitcommit: 23cda44f10059bcaef38ae73fd1d7c8b8330c95e
+ms.localizationpriority: medium
+ms.openlocfilehash: ca01be87619dc88cc39b0c2906d9689768c0fa46
+ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/19/2017
+ms.lasthandoff: 03/17/2018
+ms.locfileid: "1662568"
 ---
-#<a name="copy-and-paste"></a>複製並貼上
-
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
+# <a name="copy-and-paste"></a>複製並貼上
 
 本文說明如何使用剪貼簿在通用 Windows 平台 (UWP) App 中支援複製和貼上。 複製和貼上是在 App 間 (或是 App 內) 交換資料的傳統方式，而且幾乎每個 App 在某種程度上都能支援剪貼簿作業。
 
