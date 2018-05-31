@@ -1,24 +1,27 @@
 ---
 author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
-description: "本文說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。"
-title: "使用 Windows 內建相機 UI 來擷取相片和視訊"
+description: 本文說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。
+title: 使用 Windows 內建相機 UI 來擷取相片和視訊
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7be9a38bdb4d9489c08cd53c5b24348e16d7a74f
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: acd14b63bb877dca2f801423f9d0de73ec994acf
+ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1691967"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-此文章說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。 這個功能很容易使用，可讓 app 只需幾行程式碼即可取得使用者所擷取的相片或視訊。
+本文說明如何使用 CameraCaptureUI 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。 這個功能很容易使用，可讓 app 只需幾行程式碼即可取得使用者所擷取的相片或視訊。
 
 如果您想提供自己的相機 UI 或您的案例需要更健全的擷取作業低階控制項，您應該使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
@@ -77,38 +80,14 @@ translationtype: HT
 
 您對擷取的視訊檔案所做的動作取決於您的 app 案例。 本文的其餘部分說明如何從一或多個擷取的視訊快速建立媒體組合並顯示在 UI 中。
 
-首先，新增 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 控制項，以便讓視訊組合顯示在 XAML 頁面中。
+首先，新增 [**MediaPlayerElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) 控制項，以便讓視訊組合顯示在 XAML 頁面中。
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-將 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 和 [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 命名空間新增到您的專案。
 
+利用從相機擷取 UI 傳回的視訊檔案，藉由呼叫 [**CreateFromStorageFile**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) 來建立新的 **[MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)**。 呼叫與 **MediaPlayerElement** 相關聯之預設 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 的 **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** 方法，來播放影片。
 
-[!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
-
-宣告 [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) 物件的成員變數以及您想要在頁面存留期間留在範圍內的 [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716)。
-
-[!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
-
-在擷取任何視訊之前，您應該建立 **MediaComposition** 類別的新執行個體。
-
-[!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
-
-利用從相機擷取 UI 傳回的視訊檔案，藉由呼叫 [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652596) 來建立新的 [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652607)。 將媒體剪輯新增至合成的 [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) 集合。
-
-呼叫 [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674)，從合成建立 **MediaStreamSource** 物件。
-
-[!code-cs[AddToComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
-
-最後，將資料流來源設為使用媒體元素的 [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) 方法，以在 UI 中顯示合成。
-
-[!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
-
-您可以繼續擷取視訊短片，並將它們新增到組合。 如需媒體合成的詳細資訊，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。
-
-> [!NOTE] 
-> 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
+[!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
  
 
 ## <a name="related-topics"></a>相關主題

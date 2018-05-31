@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
-description: "此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。 這其中包括如下的工作：選取支援特定解析度或畫面播放速率的設定檔、選取支援可同時存取多台相機的設定檔，以及選取支援 HDR 的設定檔。"
-title: "使用相機設定檔探索並選取相機功能"
+description: 此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。 這其中包括如下的工作：選取支援特定解析度或畫面播放速率的設定檔、選取支援可同時存取多台相機的設定檔，以及選取支援 HDR 的設定檔。
+title: 使用相機設定檔探索並選取相機功能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f45fea396c775a7d9e783be1d0a821ff68716279
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
+ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/03/2018
+ms.locfileid: "1832252"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>使用相機設定檔探索並選取相機功能
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 此文章討論如何使用相機設定檔來探索和管理不同視訊擷取裝置的功能。 這其中包括如下的工作：選取支援特定解析度或畫面播放速率的設定檔、選取支援可同時存取多台相機的設定檔，以及選取支援 HDR 的設定檔。
@@ -61,21 +64,18 @@ translationtype: HT
 
 [!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
 
-## <a name="select-a-profile-that-supports-concurrence"></a>選取支援並行處理的設定檔
+## <a name="use-media-frame-source-groups-to-get-profiles"></a>使用媒體畫面來源群組取得設定檔
 
-您可以使用相機設定檔來判斷裝置是否支援從多台相機可同時擷取視訊。 在這個案例中，您需要建立兩組擷取物件：一個適用於前置鏡頭，一個適用於後置鏡頭。 針對每台相機，建立 **MediaCapture**、**MediaCaptureInitializationSettings**，以及用來保存擷取裝置識別碼的字串。 此外，新增布林值變數，以追蹤是否支援並行處理。
+從 Windows 10 版本 1803 開始，在初始化 **MediaCapture** 物件前，您可以使用 [**MediaFrameSourceGroup**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup) 類別來取得具有特殊功能的相機設定檔。 畫面來源群組可讓裝置製造商將一組感應器或擷取功能表示為單一虛擬裝置。 這樣可以啟用計算攝影案例，例如一起使用景深和彩色相機，但也可以用來選取簡單擷取案例的相機設定檔。 如需使用 **MediaFrameSourceGroup** 的詳細資訊，請參閱[使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)。
 
-[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+以下範例方法示範如何使用 **MediaFrameSourceGroup** 物件來尋找支援已知視訊設定檔 (例如支援 HDR 或可變相片序列) 的相機設定檔。 首先，呼叫 [**MediaFrameSourceGroup.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.FindAllAsync) 以取得目前裝置上可用的所有媒體畫面來源群組清單。 循環顯示每個來源群組並呼叫 [**MediaCapture.FindKnownVideoProfiles**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) 以取得支援所指定設定檔之目前來源群組的所有視訊設定檔清單，在此例中是 HDR 含 WCG 相片。 如果找到符合條件的設定檔，則建立新的 **MediaCaptureInitializationSettings** 物件，並將 **VideoProfile** 設定為所選設定檔以及將 **VideoDeviceId** 設定為目前媒體畫面來源群組的 **Id** 屬性。 因此，舉例來說，您可以傳遞 **KnownVideoProfile.HdrWithWcgVideo** 值到此方法以取得支援 HDR 影片的媒體擷取設定。 傳遞 **KnownVideoProfile.VariablePhotoSequence** 以取得支援可變相片序列的設定。
 
-靜態方法 [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) 會傳回由指定的擷取裝置支援並且支援並行處理的相機設定檔清單。 使用 Linq 查詢來尋找支援並行處理並由前置和後置鏡頭支援的設定檔。 如果找到符合這些需求的設定檔，請在每個 **MediaCaptureInitializationSettings** 物件上設定此設定檔，並將布林值並行處理追蹤變數設定為 true。
+ [!code-cs[FindKnownVideoProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindKnownVideoProfile)]
 
-[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video-legacy-technique"></a>使用已知的設定檔來尋找支援 HDR 視訊的設定檔 (舊版技術)
 
-針對您 app 案例的主要相機呼叫 **MediaCapture.InitializeAsync**。 如果支援並行處理，則初始化第二台相機。
-
-[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
-
-## <a name="use-known-profiles-to-find-a-profile-that-supports-hdr-video"></a>使用已知的設定檔來尋找支援 HDR 視訊的設定檔
+> [!NOTE] 
+> 這一節中所述的 API 從 Windows 10 版本 1803 起已過時。 請參閱上一節，**使用媒體畫面來源群組取得設定檔**。
 
 像其他案例一樣，開始選取支援 HDR 的設定檔。 建立 **MediaCaptureInitializationSettings**以及用來保存擷取裝置識別碼的字串。 新增布林值變數，以追蹤是否支援 HDR 視訊。
 
