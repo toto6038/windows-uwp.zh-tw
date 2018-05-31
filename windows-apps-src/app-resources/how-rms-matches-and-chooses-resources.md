@@ -1,28 +1,28 @@
 ---
 author: stevewhims
-Description: "當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 本主題將詳細說明該程序，並且提供範例。"
-title: "資源管理系統如何比對和選擇資源"
+Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+title: 資源管理系統如何比對和選擇資源
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: 4731ae7add7d5b969ab98da60b3f6740dbbbee1b
-ms.sourcegitcommit: 44a24b580feea0f188c7eae36e72e4a4f412802b
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: bb1168401aaa715f8d1c459691dfa1b1ca38ccbe
+ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 03/28/2018
+ms.locfileid: "1690424"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>資源管理系統如何比對和選擇資源
-
 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 做法是為所有的候選項目排名時將所有限定詞列入考慮。
 
 在這個排名程序中，會提供不同的優先順序給不同的限定詞：語言對於整體排名上有最大的影響，接著是對比，然後是縮放等。 對於每個限定詞，候選限定詞會與內容限定詞值做比較，以判定相符項的品質。 使用的比較方式取決於限定詞。
+
+如需有關如何執行語言標記比對的詳細資訊，請參閱[資源管理系統如何比對語言標記](how-rms-matches-lang-tags.md)。
 
 對於某些限定詞，例如縮放和對比，一定有些最小程度的相符。 例如，符合「縮放 100」的候選項目在某些小程度上與「縮放 400」的內容相符，儘管相符程度不如符合「縮放 200」的候選項目或 (完全相符的)「縮放 400」。
 
@@ -41,7 +41,6 @@ ms.lasthandoff: 10/31/2017
 如果有關係，則會檢查下一個最高優先順序的內容限定詞值並持續進行此程序，直到找到最佳相符者。
 
 ## <a name="example-of-choosing-a-resource-candidate"></a>選擇資源候選項目的範例
-
 請考慮這些檔案。
 
 ```
@@ -85,7 +84,7 @@ en/images/logo.scale-100.jpg
 en/images/logo.scale-400.jpg
 ```
 
-您可以使用進階的 [**NamedResource.ResolveAll**](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_) 方法，以符合內容設定的順序來擷取所有候選項目。 對於我們剛剛瀏覽過的範例，**ResolveAll** 是以此順序傳回候選項目。
+您可以使用進階的 [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) 方法，以符合內容設定的順序來擷取所有候選項目。 對於我們剛剛瀏覽過的範例，**ResolveAll** 是以此順序傳回候選項目。
 
 ```
 en/images/logo.scale-400.jpg
@@ -95,7 +94,6 @@ fr/images/logo.scale-100.jpg
 ```
 
 ## <a name="example-of-producing-a-fallback-choice"></a>遞補選擇的範例
-
 請考慮這些檔案。
 
 ```
@@ -138,9 +136,7 @@ de/images/contrast-standard/logo.jpg
 ```
 
 ## <a name="important-apis"></a>重要 API
-
-* [NamedResource.ResolveAll](/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource?branch=live#Windows_ApplicationModel_Resources_Core_NamedResource_ResolveAll_Windows_ApplicationModel_Resources_Core_ResourceContext_)
+* [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-
 * [手動以 MakePri.exe 編譯資源](compile-resources-manually-with-makepri.md)

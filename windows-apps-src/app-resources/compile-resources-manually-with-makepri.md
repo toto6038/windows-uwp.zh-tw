@@ -1,26 +1,34 @@
 ---
 author: stevewhims
-Description: "MakePri.exe 是一個命令列工具，您可以用來建立和傾印 PRI 檔案。 其做為 MSBuild 的一部分整合到 Microsoft Visual Studio 中，但用於手動建立套件或自訂組建系統也很有用。"
-title: "手動以 MakePri.exe 編譯資源"
+Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+title: 使用 MakePri.exe 來手動編譯資源
 template: detail.hbs
 ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: "Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞"
-localizationpriority: medium
-ms.openlocfilehash: 16d2a270a69497bc66f7b17109bc28b062f14b5e
-ms.sourcegitcommit: d0c93d734639bd31f264424ae5b6fead903a951d
+keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
+ms.localizationpriority: medium
+ms.openlocfilehash: 261a2b747d25284351bb6f4e51f108158b6e2bc5
+ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 04/05/2018
+ms.locfileid: "1707023"
 ---
-<link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css">
-
 # <a name="compile-resources-manually-with-makepriexe"></a>手動以 MakePri.exe 編譯資源
 
 MakePri.exe 是一個命令列工具，您可以用來建立和傾印 PRI 檔案。 其做為 MSBuild 的一部分整合到 Microsoft Visual Studio 中，但用於手動建立套件或自訂組建系統也很有用。
+
+PRI 檔案的大小上限是 64 KB。
+
+## <a name="in-this-section"></a>本節內容
+|主題|描述|
+|-|-|
+| [MakePri.exe 命令列選項](makepri-exe-command-options.md) | MakePri.exe 有一組命令 `createconfig`，`dump`，`new`、`resourcepack` 和 `versioned`。 本主題詳述命令列選項的使用。 |
+| [MakePri.exe 設定檔](makepri-exe-configuration.md) | 本主題說明 MakePri.exe XML 設定檔的結構描述。 |
+| [MakePri.exe 格式特定的索引子](makepri-exe-format-specific-indexers.md) | 本主題說明 MakePri.exe 用來產生資源索引的格式特定索引子。 |
 
 ## <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
@@ -59,7 +67,6 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 當為其他元件、類別庫、組件、DLL 和 SDK 建置 PRI 檔案時，**initialPath** 設定應用來確保元件資源有自己的子資源地圖，不會與包含該地圖的 App 相衝突。
 
 ## <a name="related-topics"></a>相關主題
-
 * [MakePri.exe 命令列選項](makepri-exe-command-options.md)
 * [MakePri.exe 設定](makepri-exe-configuration.md)
 * [MakePri.exe 格式特定的索引子](makepri-exe-format-specific-indexers.md)
