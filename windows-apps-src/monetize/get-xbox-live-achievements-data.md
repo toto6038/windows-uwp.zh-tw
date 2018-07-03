@@ -3,25 +3,25 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法取得 Xbox Live 成就資料。
 title: 取得 Xbox Live 成就資料
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、成就
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cbe9abf3b6d668bb157e40f3e61aff885e3cbb
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 09800229b45b9eb1a0a456e8e421412ca1a88f8d
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816013"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976050"
 ---
 # <a name="get-xbox-live-achievements-data"></a>取得 Xbox Live 成就資料
 
 在 Microsoft Store 分析 API 中使用此方法來取得在最近的一天中為您的[已啟用 Xbox Live 遊戲](../xbox-live/index.md) 解除鎖定每一個成就的客戶數目，其中這些資料可用的，在這一天之前的前 30 天，直到遊戲壽命結束的那天。 「Windows 開發人員中心」儀表板中的 [Xbox 分析報告](../publish/xbox-analytics-report.md)也有提供這項資訊。
 
 > [!IMPORTANT]
-> 此方法目前只支援由 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners) 發行或透過 [ID@Xbox 程式](../xbox-live/developer-program-overview.md#id) 提交的支援 Xbox Live 的遊戲。 它不會傳回透過 [Xbox Live 創作者計畫](../xbox-live/developer-program-overview.md#xbox-live-creators-program) 提交的遊戲的資料。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過 [ [ID@Xbox程式](../xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -50,7 +50,7 @@ ms.locfileid: "1816013"
 ### <a name="request-parameters"></a>要求參數
 
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取 Xbox Live 成就資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **成就**值。  |  是  |
@@ -70,7 +70,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>回應
 
-| 數值      | 類型   | 描述                  |
+| 值      | 類型   | 說明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | 陣列  | 物件陣列包含遊戲中每項成就資料。 如需有關每個物件中資料的詳細資訊，請參閱下表。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 100，但是查詢有超過 100 個資料列，就會傳回此值。 |

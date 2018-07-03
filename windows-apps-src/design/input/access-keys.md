@@ -6,7 +6,7 @@ label: Access keys design guidelines
 keywords: 鍵盤, 便捷鍵, keytip, 按鍵提示, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動
 template: detail.hbs
 ms.author: kbridge
-ms.date: 02/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b335068762dd3999e07526962b0d6629825ad68d
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707053"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018512"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -76,13 +76,11 @@ _在 Microsoft Word 便捷鍵 KeyTip 徽章_
 
 下列影像示範 Word 中的兩個便捷鍵範圍。 第一個影像顯示主要便捷鍵，讓使用者選取索引標籤和其他最上層命令，而第二個影像顯示 [首頁] 索引標籤的次要便捷鍵。
 
-![Microsoft Word 中的主要便捷鍵](images/accesskeys/primary-access-keys-word.png)
+![Microsoft Word 的主要便捷鍵](images/accesskeys/primary-access-keys-word.png)
+_Microsoft Word 的主要便捷鍵_
 
-_Microsoft Word 中的主要便捷鍵_
-
-![Microsoft Word 中的次要便捷鍵](images/accesskeys/secondary-access-keys-word.png)
-
-Microsoft Word 中的次要便捷鍵
+![Microsoft Word 的次要便捷鍵](images/accesskeys/secondary-access-keys-word.png)
+_Microsoft Word 的次要便捷鍵_
 
 對於不同範圍中的項目，便捷鍵可以複製。 在先前的範例，“2”是主要範圍中 [復原] 的便捷鍵，也是次要範圍中 [斜體] 的便捷鍵。
 
@@ -122,10 +120,11 @@ _CommandBar 主要範圍和支援的便捷鍵_
 
 _CommandBar 次要範圍和支援的便捷鍵_
 
-> [!NOTE]
-> 在 Windows 10 Fall Creators Update 之前，有些控制項，例如 CommandBar 並不支援內建的便捷鍵範圍。 在此案例中，您必須如以下範例所示自行實作快捷鍵範圍。   
->
-> 在這裡，我們示範如何以叫用父命令 (類似 Word 的功能區) 時可用的便捷鍵支援 CommandBar 的 SecondaryCommands。
+### <a name="windows-10-creators-update-and-older"></a>Windows 10 Creators Update 及較舊版本
+
+在 Windows 10 Fall Creators Update 之前，有些控制項，例如 CommandBar 並不支援內建的便捷鍵範圍。
+
+以下範例顯示如何在叫用父命令（類似 Word 的功能區）時，以可用的便捷鍵支援 CommandBar 的 SecondaryCommands。
 
 ```xaml
 <local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
@@ -178,11 +177,10 @@ public class CommandBarHack : CommandBar
         secondaryItemsControl.AccessKeyScopeOwner = moreButton;
 
         overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-
     }
+
     private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
     {
-
         if (overflowPopup != null)
         {
             overflowPopup.Opened += SecondaryMenuOpened;

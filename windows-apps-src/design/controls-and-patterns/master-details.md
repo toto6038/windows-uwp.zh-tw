@@ -10,14 +10,14 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9c39243217f28dd4f88c4776c058a1b93c145c50
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: 68a8a812c6e5080630254014552a8bb05747749b
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393527"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983519"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -99,7 +99,7 @@ ms.locfileid: "1393527"
 下列範例使用調適型配置實作主要/詳細資訊模式，並示範靜態、資料庫及離線資源的資料繫結： 
 - [主要/詳細資料範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
 - [主要/詳細資料以及選取項目範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
-- [Windows Template Studio 主要/詳細資料範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Pages/MasterDetail)
+- [Windows Template Studio 主要/詳細資料範例](https://github.com/Microsoft/WindowsTemplateStudio/tree/master/templates/Uwp/Pages/MasterDetail)
 - [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS 閱讀程式範例](https://github.com/Microsoft/Windows-appsample-rssreader)
 

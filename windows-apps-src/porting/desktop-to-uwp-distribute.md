@@ -4,36 +4,36 @@ Description: Distribute a packaged desktop app (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: 將您的已封裝傳統型應用程式發行至 Microsoft Store，或是在一或多個裝置上進行側載。
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 8aff2635094064c0758f9d0d2ca56b7aa73cfda1
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 682d7dfcef1ea8037b113499362f0664c388d987
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816833"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989622"
 ---
 # <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>散佈封裝的傳統型應用程式 (傳統型橋接器)
 
 將您的已封裝傳統型應用程式發行至 Microsoft Store，或是在一或多個裝置上進行側載。  
 
 > [!NOTE]
-> 您有計畫如何將使用者轉換至您的已封裝應用程式嗎？ 在您散布您的應用程式之前，請參閱本文中[轉換使用者至您的傳統型橋接器應用程式](#transition-users)一節，以取得一些靈感。
+> 您有計畫如何將使用者轉換至您的已封裝應用程式嗎？ 在您散布您的應用程式之前，請參閱本文中[轉換使用者至您的已封裝應用程式](#transition-users)一節，以取得一些靈感。
 
 ## <a name="distribute-your-app-by-publishing-it-to-the-microsoft-store"></a>透過發行至 Microsoft Store 散布您的應用程式
 
 [Microsoft Store](https://www.microsoft.com/store/apps)是讓客戶取得您應用程式的一種簡便方式。
 
-將您的應用程式發行至Microsoft Store，以觸達最廣的對象。 同時，同時，組織客戶也可以取得您的應用程式，並透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)在他們的組織內部進行散布。
+將您的 App 發佈到 Microsoft Store，以接觸最廣的對象。 同時，組織型客戶也可以取得您的 App，並透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)在他們的組織內部進行散發。
 
-若您打算發行至 Microsoft Store，但您尚未連絡我們，請填寫[此表單](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。Microsoft 將會與您連絡以啟動上架程序。
+如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以在這裡閱讀更多關於此需求的資訊：[受限制的功能](https://docs.microsoft.com/en-us/windows/uwp/packaging/app-capability-declarations#restricted-capabilities.html)。
 
-在您提交到Microsoft Store之前，您不需要簽署您的應用程式。
+在您將 App 提交到 Microsoft Store 之前，您不需要簽署您的 App。
 
 >[!IMPORTANT]
 > 如果您計劃將您的應用程式發行至 Microsoft Store，請確定您的應用程式可在執行 Windows 10 S 的裝置上正確運作這是 Store 需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
@@ -63,25 +63,25 @@ ms.locfileid: "1816833"
 
 **影片**
 
-|將您的應用程式發行至 Microsoft Store |散布企業應用程式  |
+|將您的應用程式發行至 Microsoft Store |散發企業應用程式  |
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
 <a id="transition-users" />
 
-## <a name="transition-users-to-your-desktop-bridge-app"></a>轉換使用者至您的傳統型橋接器應用程式
+## <a name="transition-users-to-your-packaged-app"></a>將使用者轉換至您已封裝的應用程式。
 
-在您散布您的應用程式之前，建議您考慮將幾個延伸模組新增至您的封裝資訊清單中，以協助使用者習慣使用您的傳統型橋接器應用程式。 以下是幾個您可以嘗試的方法。
+在您散發您的 App 之前，建議您考慮將幾個延伸模組新增至您的封裝資訊清單中，以協助使用者習慣使用您的封裝應用程式。 以下是幾個您可以嘗試的方法。
 
-* 將現有的開始畫面磚和工作列按鈕指向您的傳統型橋接器應用程式。
+* 將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式。
 * 使您已封裝的應用程式和一組檔案類型產生關聯。
-* 使您的傳統型橋接器應用程式作為開啟特定類型檔案的預設應用程式。
+* 使您的已封裝應用程式作為開啟特定類型檔案的預設應用程式。
 
-若需要延伸功能的完整清單及如何使用他們的指南，請參閱[將使用者轉換至您的應用程式](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
+如需延伸功能的完整清單及如何使用其指南，請參閱[將使用者轉換至您的應用程式](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
 
-此外，建議您考慮將能完成這些工作的程式碼新增至您的傳統型橋接器應用程式︰
+此外，建議您考慮將能完成這些工作的程式碼新增至您的已封裝應用程式︰
 
-* 移轉與您傳統型應用程式相關聯的使用者資料至您傳統型橋接器應用程式的適當資料夾位置。
+* 移轉與您傳統型應用程式相關聯的使用者資料至您已封裝應用程式的適當資料夾位置。
 * 提供使用者解除安裝您應用程式傳統型版本的選項。
 
 讓我們談談每一項工作。 我們會先從使用者資料移轉開始。
@@ -90,7 +90,7 @@ ms.locfileid: "1816833"
 
 若您要新增能將使用者資料移轉的程式碼，最好只在應用程式第一次啟動時執行。 在您移轉使用者資料之前，請先向使用者顯是一個對話方塊，解釋發生了什麼事情、為何建議這樣做，以及對於他們現有的資料會造成何種影響。
 
-以下是如何在 .NET 型傳統型橋接器應用程式中完成這樣工作的方法。
+以下是如何在 .NET 型已封裝應用程式中完成這樣工作的方法。
 
 ```csharp
 private void MigrateUserData()
@@ -100,11 +100,9 @@ private void MigrateUserData()
 
     if (sourceDir != null)
     {
-        String migrateMessage =
-            "Would you like to migrate your data from the previous version of this app?";
-
         DialogResult migrateResult = MessageBox.Show
-            (migrateMessage, "Data Migration", MessageBoxButtons.YesNo);
+            ("Would you like to migrate your data from the previous version of this app?",
+             "Data Migration", MessageBoxButtons.YesNo);
 
         if (migrateResult.Equals(DialogResult.Yes))
         {
@@ -131,7 +129,7 @@ private void MigrateUserData()
 
 建議您在解除安裝使用者的傳統型應用程式之前，先徵求他們的同意。 您可以藉由顯示對話方塊來徵求同意。 使用者可以選擇不解除安裝您應用程式的傳統型版本。 若發生這種情形，您將必須決定是否要封鎖傳統型應用程式的使用，或是支援兩種版本應用程式的並列使用。
 
-以下是如何在 .NET 型傳統型橋接器應用程式中完成這樣工作的方法。
+以下是如何在 .NET 型已封裝應用程式中完成這樣工作的方法。
 
 若要檢視此程式碼片段的完整內容，請參閱此範例[具有轉換/移轉/解除安裝的 WPF 圖片檢視器](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition)中的 **MainWindow.cs** 檔案。
 
@@ -146,11 +144,10 @@ private void RemoveDesktopApp()
     //Detect if the previous version of the Desktop App is installed.
     if (uninstallString != null)
     {
-        String uninstallMessage = "To have the best experience, consider uninstalling the "
-            +" previous version of this app. Would you like to do that now?";
-
         DialogResult uninstallResult = MessageBox.Show
-            (uninstallMessage, "Uninstall the previous version", MessageBoxButtons.YesNo);
+            ("To have the best experience, consider uninstalling the "
+              + " previous version of this app. Would you like to do that now?",
+              "Uninstall the previous version", MessageBoxButtons.YesNo);
 
         if (uninstallResult.Equals(DialogResult.Yes))
         {

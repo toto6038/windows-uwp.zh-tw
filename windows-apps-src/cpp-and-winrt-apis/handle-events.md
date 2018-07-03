@@ -3,27 +3,24 @@ author: stevewhims
 description: 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。
 title: 藉由在 C++/WinRT 使用委派來處理事件
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
-ms.openlocfilehash: 44eb49e0e9797ec363c160ef701e19b58f8227a1
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 1cf3c87411bb6d8eb5886e7205f96c466d707220
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832012"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976486"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>藉由在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 使用委派來處理事件
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。 您可以使用任何標準 C++ 類函式的物件處理事件。
 
 > [!NOTE]
-> 如需有關目前可用的 C++/WinRT Visual Studio 擴充功能 (VSIX) ( 提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請查閱 [Visual Studio 支援 C++/WinRT，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>註冊委派，處理事件
 簡單範例為處理按鈕的按一下事件。 通常像這樣使用 XAML 標記，註冊成員函式來處理事件。
@@ -100,7 +97,7 @@ MainPage::MainPage()
 ```
 
 ## <a name="revoke-a-registered-delegate"></a>撤銷已註冊的委派
-當您註冊委派時，通常會將權杖傳回給您。 您後續可以使用該權杖撤銷委派；這表示從事件中取消委派的註冊，且不會被呼叫，事件必須重新產生。 為了簡單起見，上述的程式碼範例皆無顯示如何執行。 但下一個程式碼範例將權杖儲存於結構的私用資料成員中，並在解構函式中撤銷其處理常式。
+當您註冊委派時，通常會將權杖傳回給您。 您後續可以使用該權杖撤銷委派；這表示從事件中取消委派的註冊，且不會被呼叫，事件必須重新產生。 為了簡單起見，上述的程式碼範例皆無顯示如何執行。 但下一個程式碼範例將預付碼儲存於結構的私用資料成員中，並在解構函式中撤銷其處理常式。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -123,7 +120,9 @@ private:
 };
 ```
 
-或者，您註冊委派時，可以指定 **winrt::auto_revoke** (即為類型值[**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t))，要求事件撤銷。 當該撤銷超出範圍時，它會自動撤銷您的委派。 在此範例中，不需要儲存事件來源，且也不需要解構函式。
+如上面的範例，而不是穩固參考資料，您可以將弱式參考而不是強式參考保存到按鈕 (請參閱 [C++/WinRT 中的弱式參考](weak-references.md))。
+
+或者，您註冊委派時，可以指定 **winrt::auto_revoke** (即類型為 [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t) 的值) 來要求事件撤銷 (類型為 **winrt::event_revoker**)。 事件撤銷為您保留事件來源 (引發事件的物件) 的弱式參考。 您可以藉由呼叫 **event_revoker::revoke** 成員函式手動撤銷；但是事件撤銷會在其超出範圍時自動呼叫該函式本身。 **revoke** 函式會檢查事件來源是否仍然存在，如果是，撤銷您的委派。 在此範例中，不需要儲存事件來源，並且也不需要解構函式。
 
 ```cppwinrt
 struct Example : ExampleT<Example>
@@ -151,7 +150,7 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
     winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
@@ -160,7 +159,7 @@ event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click
 您可能要考慮在網頁瀏覽的案例中撤銷處理常式。 如果您正重複瀏覽網頁並返回，您離開網頁時，可以撤銷任何處理常式。 或者，如果您重新使用相同的網頁執行個體，然後檢查您的權證值，且如果尚未設定 (`if (!m_token){ ... }`)，，只有註冊。 第三個選項是將事件撤銷儲存在網頁上做為資料成員。 本主題稍後說明，第四個選項是在您的 lambda 函式中擷取*this*物件的強式或弱式參考。
 
 ## <a name="delegate-types-for-asynchronous-actions-and-operations"></a>非同步動作和作業的委派類型
-上述範例使用**RoutedEventHandler**委派類型，但當然還有許多其委派類型。 例如，已完成非同步動作和作業 (有與沒有進度) 和/或預期委派對應類型的進行中事件。 例如，有進度的非同步作業的進行中事件 (可以是實作[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)的任何項目) 需要 [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler)類型的委派。 以下是使用 lambda 函式的撰寫委派類型的程式碼範例。 此範例也會顯示如何撰寫一個[**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler)委派。
+上述範例使用**RoutedEventHandler**委派類型，但當然還有許多其委派類型。 例如，已完成非同步動作和作業 (有與沒有進度) 和/或預期委派對應類型的進行中事件。 例如，有進度的非同步作業的進行中事件 (可以是實作[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)的任何項目) 需要 [**AsyncOperationProgressHandler**](/uwp/api/windows.foundation.asyncoperationprogresshandler)類型的委派。 以下是使用 lambda 函式的撰寫委派類型的程式碼範例。 此範例也會顯示如何撰寫 [**AsyncOperationWithProgressCompletedHandler**](/uwp/api/windows.foundation.asyncoperationwithprogresscompletedhandler) 委派。
 
 ```cppwinrt
 using namespace winrt;
@@ -188,12 +187,22 @@ void ProcessFeedAsync()
         // use syndicationFeed;
     });
     
-    // or (but this function must then return IAsyncAction)
+    // or (but this function must then be a coroutine and return IAsyncAction)
     // SyndicationFeed syndicationFeed = co_await async_op_with_progress;
 }
 ```
 
-如上述意見建議，不使用已完成的非同步動作和作業的委派，您可能會發現它使用協同程序會更自然。 如需詳細資訊和程式碼範例，請查看[並行和使用 C++/WinRT 的非同步作業](concurrency.md)。
+如上述「協同程式」意見建議，不使用已完成的非同步動作和作業的委派，您可能會發現它使用協同程序會更自然。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](concurrency.md)。
+
+不過，您若堅持使用委派，您可以選擇較簡單的語法。
+
+```cppwinrt
+async_op_with_progress.Completed(
+    [](auto&& /*sender*/, AsyncStatus const)
+{
+    ....
+});
+```
 
 ## <a name="delegate-types-that-return-a-value"></a>傳回一個值的委派類型
 某些委派類型本身必須傳回一個值。 範例為[**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler)，其會傳回字串。 以下是撰寫該類型委派 (請注意 lambda 函式傳回一個值) 的範例。
@@ -261,5 +270,5 @@ Lamba 擷取子句中，已建立暫存變數，代表*this*的弱式參考資�
 
 ## <a name="related-topics"></a>相關主題
 * [在 C++/WinRT 中撰寫事件 ](author-events.md)
-* [C++/WinRT 中的弱式參考資料](weak-references.md)
-
+* [使用 C++/WinRT 的並行和非同步作業](concurrency.md)
+* [C++/WinRT 中的弱式參考](weak-references.md)

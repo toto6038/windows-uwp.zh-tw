@@ -4,19 +4,19 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: 已知問題 (傳統型橋接器)
 ms.author: normesta
-ms.date: 07/18/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 78e5ffddfa1c5005bb640baeafed7023ebdd74a3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662848"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905379"
 ---
 # <a name="known-issues-desktop-bridge"></a>已知問題 (傳統型橋接器)
 
@@ -97,7 +97,7 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
 
 如果更新無法修正問題，或您不確定如何復原電腦，請連絡 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。
 
-如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝傳統型橋接器 App。 請注意，這麼做將會使您的 App 無法提供給尚未安裝更新的使用者。 若要將您 App 的可用性限制為僅提供給已安裝此更新的使用者，請如下所示修改您的 AppxManifest.xml 檔案：
+如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，這麼做將會使您的 App 無法提供給尚未安裝更新的使用者。 若要將您 App 的可用性限制為僅提供給已安裝此更新的使用者，請如下所示修改您的 AppxManifest.xml 檔案：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 

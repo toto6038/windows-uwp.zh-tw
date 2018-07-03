@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、弱式、參考資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 63ffad19c0ae8a52737ae13a54e5657df875d0b5
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 69294115af93ec464abfe908df948c8ff5504efc
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832602"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842452"
 ---
 # <a name="weak-references-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的弱式參考資料
 您應該可以不用這麼頻繁以這種方法來設計自己的 C++/WinRT API，避免循環參考和弱式參考的需求。 不過，談到 XAML 為基礎的 UI frameworkL 的原生實作&mdash;因為架構的歷史設計&mdash; C++/WinRT 中的弱式參考機制才能處理循環參考。 XAML 以外，您不太需要使用弱式參考 (雖然理論上，沒有任何 XAML 專用的弱式參考)。

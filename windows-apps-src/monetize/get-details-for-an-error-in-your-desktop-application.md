@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法，以取得傳統型應用程式特定錯誤的詳細資料。
 title: 取得傳統型應用程式中錯誤的詳細資料
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e24d3c44743cae77fdbf2c42dcf0792d0ce11b4
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 5c7836119b99e885bd0328a8ea313409a6fcf6dc
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663825"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989542"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>取得傳統型應用程式中錯誤的詳細資料
 
@@ -50,7 +50,7 @@ ms.locfileid: "1663825"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取錯誤詳細資料的傳統型應用程式的產品識別碼值。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
 | failureHash | 字串 | 您想要取得詳細資訊之錯誤的唯一識別碼。 若要取得您有興趣之錯誤的此值，請使用[取得錯誤報告資料](get-error-reporting-data.md)方法，並在該方法的回應主體中使用 **failureHash** 值。 |  是  |
@@ -79,11 +79,11 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 描述    |
+| 值      | 類型    | 說明    |
 |------------|---------|------------|
 | 值      | 陣列   | 包含詳細錯誤資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[錯誤詳細資料值](#error-detail-values)一節。          |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。        |
+| TotalCount | 整數 | 查詢之資料結果的資料列總數。        |
 
 
 <span id="error-detail-values"/>
@@ -104,8 +104,8 @@ Authorization: Bearer <your access token>
 | osBuild         | 字串  | 發生錯誤之 OS 的組建編號。       |
 | applicationVersion         | 字串  |   發生錯誤之應用程式可執行的版本。     |
 | deviceModel           | 字串  | 此字串指定錯誤發生時，App 正在執行的裝置機型。   |
-| osVersion       | 字串  | 下列其中一個字串，指定傳統型應用程式安裝所在的作業系統版本：<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>不明</strong></li></ul>    |
-| osRelease       | 字串  |  下列其中一個字串指定的 OS 版本或正式發行前小眾測試頻道 (為 OS 版本內的次群族) 上已安裝傳統型應用程式。<p/><p>適用於 Windows10：</p><ul><li><strong>版本 1507</strong></li><li><strong>版本 1511</strong></li><li><strong>版本 1607</strong></li><li><strong>版本 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>發行預覽</strong></li><li><strong>測試人員 - 快</strong></li><li><strong>測試人員 - 慢</strong></li></ul><p/><p>若是 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>若是 Windows Server 2016：</p><ul><li><strong>版本 1607</strong></li></ul><p>適用於 Windows8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>適用於 Windows7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果 OS 版本或正式發行前小眾測試通道不明，此欄位會有<strong>不明</strong>值。</p>    |
+| osVersion       | 字串  | 下列其中一個字串，指定傳統型應用程式安裝所在的作業系統版本：<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>不明</strong></li></ul>    |
+| osRelease       | 字串  |  下列其中一個字串指定的 OS 版本或正式發行前小眾測試頻道 (為 OS 版本內的次群族) 上發生的錯誤。<p/><p>適用於 Windows10：</p><ul><li><strong>版本 1507</strong></li><li><strong>版本 1511</strong></li><li><strong>版本 1607</strong></li><li><strong>版本 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>發行預覽</strong></li><li><strong>測試人員 - 快</strong></li><li><strong>測試人員 - 慢</strong></li></ul><p/><p>若是 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>若是 Windows Server 2016：</p><ul><li><strong>版本 1607</strong></li></ul><p>適用於 Windows8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>適用於 Windows7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果 OS 版本或正式發行前小眾測試通道不明，此欄位會有<strong>不明</strong>值。</p>    |
 | deviceType      | 字串  | 下列其中一個字串，指出發生錯誤的裝置類型： <p/><ul><li><strong>電腦</strong></li><li><strong>伺服器</strong></li><li><strong>不明</strong></li></ul>     |
 | cabDownloadable           | 布林值  | 指示 CAB 檔案是否可供這個使用者下載。   |
 | fileName           | 字串  | 您已擷取錯誤詳細資料的傳統型應用程式可執行檔名稱。  |

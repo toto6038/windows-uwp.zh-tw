@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c61de6dbeb8b1c455c1312cc993d0eee7b1bba7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 40abeae4048784599deadd9a1a62a995447159be
+ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653987"
+ms.lasthandoff: 05/19/2018
+ms.locfileid: "1903192"
 ---
 # <a name="identify-input-devices"></a>識別輸入裝置
 
@@ -90,8 +90,6 @@ private void GetTouchProperties()
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 類別，這個類別可以用來擷取是否有任何裝置支援指標輸入 (觸控、觸控板、滑鼠或手寫筆)。 做法是建立一個新的 **PointerDevice** 物件並取得您感興趣的屬性。
 
 **注意**  這裡所討論屬性傳回的值是以所有偵測到的指標裝置為根據：只要至少有一個裝置支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一指標裝置所公開的最大值。
-
- 
 
 下列程式碼會使用一個表格來顯示每個指標裝置的屬性和值。
 

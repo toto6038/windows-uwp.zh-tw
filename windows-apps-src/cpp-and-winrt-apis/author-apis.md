@@ -3,23 +3,20 @@ author: stevewhims
 description: 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。
 title: '使用 C++/WinRT 撰寫 API '
 ms.author: stwhi
-ms.date: 04/18/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、可實作、執行階段類別、啟用
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ee00443e35061fa1c3cc58c268ad0bd0c89c6e
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 0cf5d196d6dfa390fc537a0f14c041049d4ef714
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832232"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877320"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)撰寫 API
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
 本主題示範如何直接或間接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構撰寫 C++/WinRT API。 在此內容中適用於 *author* 的同義字有 *produce*，或 *implement*。 在此訂單中，本主題涵蓋下列 C++/WinRT 類型的實作 API 案例。
 
 - 您 *不* 撰寫 Windows 執行階段類別 (執行階段類別) ；您只要為應用程式中的本機使用實作一或多個 Windows 執行階段介面。 您可以直接從此案例的 **winrt::implements** 衍生並實作函式。
@@ -31,10 +28,10 @@ ms.locfileid: "1832232"
 > 請務必從投影類型的執行類型中區分出執行類型的概念。 在 [使用 C++/WinRT 使用 API](consume-apis.md) 中所描述的投影類型。
 
 ## <a name="if-youre-not-authoring-a-runtime-class"></a>如果您 *不* 撰寫執行階段類別。
-您正為本機使用量實作 的Windows 執行階段介面，是最簡單的案例。 您不需要執行階段類別；只需要一般 C++ 類別。 例如，您可能會根據 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 撰寫 app。
+您正為本機使用量實作 的Windows 執行階段介面，是最簡單的案例。 您不需要執行階段類別；只需要一般 C++ 類別。 例如，您可能會根據 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 撰寫應用程式。
 
 > [!NOTE]
-> 針對有關目前可用的 C++/WinRT Visual Studio 擴充功能 (VSIX) ( 提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請查閱 [Visual Studio 支援 C++/WinRT，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 在 Visual Studio 中，**Visual C++ Core App (C + + / WinRT)** 專案範本說明 **CoreApplication** 模式。 此模式以傳遞 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)的實作給 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)，做為開始。
 
@@ -127,7 +124,12 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ```
 
 ## <a name="if-youre-authoring-a-runtime-class-in-a-windows-runtime-component"></a>如果您正在 Windows 執行階段元件中撰寫執行階段類別
-如果您的類型為了使用一個應用程式，已封裝在 Windows 執行階段元件中，它必須是執行階段類別。 我們建議您在其自身的介面定義語言 (IDL) (`.idl`) 的檔案中，宣告每個執行階段類別。 範例如下。
+如果您的類型為了使用一個應用程式，已封裝在 Windows 執行階段元件中，它必須是執行階段類別。
+
+> [!TIP]
+> 為了在您編輯 IDL 檔案時最佳化建置效能，以及將 IDL 檔案邏輯對應到其產生的原始碼檔案，建議您在其本身的介面定義語言 (IDL) (.idl) 檔案中宣告各個執行階段類別。 Visual Studio 會合併所有產生的 `.winmd` 檔案為單一檔案，檔案名稱與根命名空間相同。 最終 `.winmd` 檔案將會是您的元件消費者將參照的檔案。
+
+範例如下。
 
 ```idl
 // MyRuntimeClass.idl
@@ -143,7 +145,7 @@ namespace MyProject
 }
 ```
 
-這個 IDL 宣告一個 Windows 執行階段 (執行階段) 類別。 執行階段類別可透過現代化 COM 介面啟動與使用，一般經過可執行的界限。 當您新增 IDL 檔案至專案，並組建 C++/WinRT toolchain (`midl.exe`與`cppwinrt.exe`) 為您產生實作類型。 使用上述範例 IDL，實作類型是 C++ 結構虛設常式名為 **winrt::MyProject::implementation::MyRuntimeClass** 在原始程式碼檔案中名為 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp`。
+這個 IDL 宣告 Windows 執行階段 (執行階段) 類別。 執行階段類別可透過現代化 COM 介面啟動與使用，一般經過可執行的界限。 當您新增 IDL 檔案至專案，並組建 C++/WinRT toolchain (`midl.exe`與`cppwinrt.exe`) 為您產生實作類型。 使用上述範例 IDL，實作類型是 C++ 結構虛設常式名為 **winrt::MyProject::implementation::MyRuntimeClass** 在原始程式碼檔案中名為 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 和 `MyRuntimeClass.cpp`。
 
 實作類型如下所示。
 
@@ -180,11 +182,13 @@ struct MyRuntimeClass_base : implements<D, MyProject::IMyRuntimeClass, I...>
 
 在本案例中，您同時撰寫*與*使用此 API。 實作您執行階段類別的程序，基本上與 Windows 執行階段元件相同。 因此，請查閱前一章節&mdash;[如果您在 Windows 執行階段元件中撰寫執行階段類別](#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component)。 唯一不同的詳細資料是，從 IDL C + + / WinRT toolchain 不僅產生執行類型，也產生投影的類型。 還好，在本案例中，只有 **MyRuntimeClass** 可能會模擬兩可；有數個不同種類相同名字的實體。
 
-- **MyRuntimeClass** 是執行階段類別的名稱；在 IDL 宣告，並在某些程式設計語言中實作。
+- **MyRuntimeClass** 是執行階段類別的名稱。 但這是非常抽象：在 IDL 中宣告，並以某些程式語言實作。
 - **MyRuntimeClass**是 C++ 結構 **winrt::MyProject::implementation::MyRuntimeClass** 的名字，也就是執行階段類別的 C++/WinRT 實作。 我們已經看過，如果有不同的實作和使用專案，則此結構只存在實作專案中。 這是*實作類型*，或*實作*。 在檔案 `\MyProject\MyProject\Generated Files\sources\MyRuntimeClass.h` 與 `MyRuntimeClass.cpp` 會產生 (藉由 `cppwinrt.exe` 工具) 此類型。 
-- **MyRuntimeClass**是 C++ 結構 **winrt::MyProject::MyRuntimeClass** 表單中投影類型的名稱。 如果有不同的實作和使用專案，則此結構只存在使用專案中。 這是*投影類型*，或*投影*。 在檔案 `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h` 中產生 (藉由 `cppwinrt.exe`) 此類型。
+- **MyRuntimeClass**是 C++ 結構 **winrt::MyProject::MyRuntimeClass** 表單中投影類型的名稱。 如果有不同的實作和使用專案，則此結構只存在使用專案中。 這是*投影類型*，或*投影*。 在檔案 `\MyProject\MyProject\Generated Files\winrt\impl\MyProject.2.h` 中 (由 `cppwinrt.exe`) 產生此類型。
 
-以下是有關本主題投影類型的部分。
+![投影的類型和實作類型](images/myruntimeclass.png)
+
+以下是本主題相關的投影類型部分。
 
 ```cppwinrt
 // MyProject.2.h
@@ -207,7 +211,7 @@ namespace winrt::MyProject
 以下是幾個重點，從我們上述看到的清單中取走。
 
 - 您在 IDL 中宣告的每個建構函式，導致在實作類型與投影類型上產生一個建構函示。 從*不同的*編譯單位使用 IDL 已宣告的建構函式使用執行階段類型。
-- 不論您是否有 IDL 已宣告的建構函式，會在您的投影類型上產生採用 `nullptr` 的建構函式多載。 呼叫 `nullptr` 建構函式是從 *相同* 編譯單位耗用執行階段類別中的 *首兩個步驟*。 如需詳細資訊和程式碼範例，請參閱 [使用 C++/WinRT 使用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
+- 不論您是否有 IDL 已宣告的建構函式，會在您的投影類型上產生採用 `nullptr_t` 的建構函式多載。 呼叫 `nullptr_t` 建構函式是從 *相同* 編譯單位耗用執行階段類別中的 *首兩個步驟*。 如需詳細資訊和程式碼範例，請參閱 [使用 C++/WinRT 使用 API](consume-apis.md#if-the-api-is-implemented-in-the-consuming-project)。
 - 如果您正從 *相同* 編譯單位耗用執行階段類別，您也可以直接在實作類別 (請記住，是在 `MyRuntimeClass.h`) 上實作非預設建構函式。
 
 > [!NOTE]
@@ -244,7 +248,7 @@ namespace MyProject
     runtimeclass MyType: Windows.Foundation.IStringable, Windows.Foundation.IClosable
     {
         MyType();
-    }   
+    }    
 }
 ```
 

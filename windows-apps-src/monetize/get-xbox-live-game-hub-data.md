@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法，取得 Xbox Live 遊戲中心資料。
 title: 取得 Xbox Live 遊戲中心資料
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox Live 分析, 遊戲中心
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d34c95e615a10131b3e7f3ffe9ceb246b652727
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 70a76f82c37a4cfba6e0a562c8a6295da38976db
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815783"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976193"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>取得 Xbox Live 遊戲中心資料
 
@@ -22,7 +22,7 @@ ms.locfileid: "1815783"
 在 Microsoft Store 分析 API 中使用此方法，取得您的 [支援 Xbox Live 遊戲](../xbox-live/index.md)的遊戲中心。 「Windows 開發人員中心」儀表板中的 [Xbox 分析報告](../publish/xbox-analytics-report.md)也有提供這項資訊。
 
 > [!IMPORTANT]
-> 此方法目前僅支援由 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的，或透過[ID@Xbox 程式](../xbox-live/developer-program-overview.md#id)提交的 Xbox Live 遊戲。 它不傳回透 過[Xbox Live 創作者計畫](../xbox-live/developer-program-overview.md#xbox-live-creators-program)所提交的遊戲資料。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過 [ [ID@Xbox程式](../xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -50,7 +50,7 @@ ms.locfileid: "1815783"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要為其擷取 Xbox Live 遊戲中心資料的遊戲的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取之 Xbox Live 分析資料類型的字串。 對於此方法，請指定值 **communitymanagergamehub**。  |  是  |
@@ -72,7 +72,7 @@ Authorization: Bearer <your access token>
 ## <a name="response"></a>回應
 
 
-| 值      | 類型   | 描述                  |
+| 值      | 類型   | 說明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 項目陣列，其包含指定日期範圍內每個日期的遊戲中心資料。 如需有關每個物件中資料的詳細資訊，請參閱下表。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢有超過 10000 個資料列，就會傳回此值。 |
@@ -88,9 +88,10 @@ Authorization: Bearer <your access token>
 | gameHubLikeCount     | 數字 |   在指定日期加入遊戲中心頁面的喜歡數目。   |
 | gameHubCommentCount          | 數字 |  在指定日期加入您應用程式的遊戲中心頁面的註解數目。  |
 | gameHubShareCount           | 數字 | 在指定日期您應用程式的遊戲中心頁面被客戶分享的註解數目。   |
+| gameHubFollowerCount          | 數目 | 適用於您的應用程式的 Game 中心頁面全程追隨者數目。   |
 
 
-### <a name="response-example"></a>回應的範例
+### <a name="response-example"></a>回應範例
 
 下列範例針對此要求示範範例 JSON 回應主體。
 
@@ -102,14 +103,16 @@ Authorization: Bearer <your access token>
       "applicationId": "9NBLGGGZ5QDR",
       "gameHubLikeCount": 10,
       "gameHubCommentCount": 1,
-      "gameHubShareCount": 0
+      "gameHubShareCount": 0,
+      "gameHubFollowerCount": 15924
     },
     {
       "date": "2018-01-05",
       "applicationId": "9NBLGGGZ5QDR",
       "gameHubLikeCount": 12,
       "gameHubCommentCount": 1,
-      "gameHubShareCount": 0
+      "gameHubShareCount": 0,
+      "gameHubFollowerCount": 15931
     }
   ],
   "@nextLink": null,

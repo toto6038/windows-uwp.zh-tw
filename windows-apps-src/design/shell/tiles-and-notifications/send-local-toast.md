@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: e59c90bae19116f725b58fc6ec9fdbb41e5dccb3
-ms.sourcegitcommit: 0ee9c6848cb9d624f15cdab1d0c5991ca7245e70
+ms.openlocfilehash: 4f76bc94c80a5191cf7bad86b43230f0d03e81b1
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2018
-ms.locfileid: "1641688"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917707"
 ---
 # <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
 
@@ -25,7 +25,7 @@ ms.locfileid: "1641688"
 快顯通知是一則訊息，App 可以建構此訊息，並於使用者目前未在 App 內時，傳遞給使用者。 這項快速入門會逐步引導您使用新的調適型範本和互動式動作，完成建立、傳遞和顯示 Windows 10 快顯通知的步驟。 這些動作透過本機通知進行示範，本機通知是我們要實作的最簡單通知。
 
 > [!IMPORTANT]
-> 傳統型應用程式 (傳統型橋接器和傳統型 Win32) 對於傳送通知及處理啟用有不同的步驟。 請參閱[傳統型 C#](send-local-toast-desktop.md) 和[傳統型 C++ WRL](send-local-toast-desktop-cpp-wrl.md) 文件以了解如何實作快顯通知。
+> 傳統型應用程式 (傳統型橋接器和傳統型 Win32) 對於傳送通知及處理啟用有不同的步驟。 請參閱 [傳統型應用程式](toast-desktop-apps.md)文件以了解如何實作快顯通知。
 
 我們將會詳細討論下列內容：
 
@@ -382,7 +382,7 @@ BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAs
 // Create the background task
 BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
 {
-    Name = "MyToastNotificationActionTrigger",
+    Name = taskName
 };
 
 // Assign the toast action trigger

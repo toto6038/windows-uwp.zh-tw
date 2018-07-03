@@ -4,24 +4,21 @@ Description: With the package resource indexing (PRI) APIs, you can develop a cu
 title: 套件資源索引 (PRI) API 和自訂建置系統
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 8947f9305829e5045a418ac2fdd2d6c327acb2a1
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 58473101f0972040fe80c7f7f582ad33eafeb009
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707349"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862497"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>套件資源索引 (PRI) API 和自訂建置系統
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
-您可以使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，開發適用於您的 UWP app 資源的自訂建置系統。 建置系統可以依據 UWP app 所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 如果您的自訂建置系統目前使用 MakePri.exe 命令列工具 (請參閱[使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md))，為了提高效能和控制，建議您改為呼叫 PRI API，而不呼叫 MakePri.exe。
+您可以使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，開發適用於您的 UWP app 資源的自訂組建系統。 建置系統可以依據 UWP app 所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 如果您的自訂建置系統目前使用 MakePri.exe 命令列工具 (請參閱[使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md))，為了提高效能和控制，建議您改為呼叫 PRI API，而不呼叫 MakePri.exe。
 
 PRI API 是在 Windows 10 版本 1803 的 Windows SDK 中引進。 API 採用 Win32 Windows API 的形式，這表示您有一些呼叫選項。 您可以直接從 Win32 應用程式進行呼叫，也可以透過[平台叫用](/dotnet/framework/interop/consuming-unmanaged-dll-functions?branch=live)，從 .NET 應用程式甚至 UWP app 進行呼叫。
 

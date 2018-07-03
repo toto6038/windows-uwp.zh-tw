@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
-ms.openlocfilehash: cdb49ba0082c24c00bc77d8ce2a392d9a6090ce2
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 263a0b7ce4eaeb3bac132789d4970fbf2c7ccc1f
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815583"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842485"
 ---
 # <a name="packaging-apps"></a>封裝應用程式
 
@@ -31,6 +31,7 @@ ms.locfileid: "1815583"
 | [應用程式套件架構](device-architecture.md) | 深入了解在建置 UWP app 套件時您應使用哪種處理器架構。 |
 | [UWP app 串流安裝](streaming-install.md) | 通用 Windows 平台 (UWP) 應用程式串流安裝，讓您可以指定您應用程式中 Microsoft Store 需要優先下載的部分。 當應用程式的必要檔案獲得優先下載時，使用者可以直接啟動並與應用程式進行互動，同時讓剩餘的檔案在背景完成下載。 |
 | [選用套件及相關集合的製作](optional-packages.md) | 選用套件包含了可與主要套件整合的內容。 這些選用套件相當適合用於可下載內容 (DLC)、將大型應用程式根據尺寸限制進行分割，或是傳送與您原始應用程式分離的額外內容。 |
+| [具可執行程式碼的選用套件](optional-packages-with-executable-code.md) | 了解如何使用 Visual Studio 建立具可執行程式碼的選用套件。 |
 | [使用應用程式安裝程式安裝 UWP app](appinstaller-root.md) | 應用程式安裝程式可讓您以按兩下應用程式套件的方式來安裝 UWP app。 |
 | [使用 WinAppDeployCmd.exe 工具安裝 App](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows 應用程式部署 (WinAppDeployCmd.exe) 是可以用來從 Windows10 電腦將 UWP app 部署到任何 Windows10 行動裝置版裝置的命令列工具。 當 Windows10 行動裝置版裝置是透過 USB 連接或可在相同的子網路上使用而不需要 Microsoft Visual Studio 或該 app 適用的方案時，您就可以使用此工具來部署 .appx 套件。 本文章說明如何使用此工具安裝 UWP app。 |
 | [為您的 UWP app 設定自動化組建](auto-build-package-uwp-apps.md) | 如果您要在自動化建置程序中封裝您的 App，本主題示範如何使用 Visual Studio Team Services (VSTS) 來完成。 |

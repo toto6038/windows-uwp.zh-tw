@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法，以取得傳統型應用程式中錯誤的堆疊追蹤。
 title: 取得傳統型應用程式中錯誤的堆疊追蹤
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤, 詳細資料, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 64413600d1e7cb91ce3e8c90d1b64f921cfc21a2
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: dfe496c771c4e69bc51b562c476469e8fef53c92
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663078"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989322"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>取得傳統型應用程式中錯誤的堆疊追蹤
 
@@ -50,7 +50,7 @@ ms.locfileid: "1663078"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  |
+| 參數        | 類型   |  說明      |  必要  |
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要取得堆疊追蹤的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
 | cabIdHash | string | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
@@ -70,11 +70,11 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 描述                  |
+| 值      | 類型    | 說明                  |
 |------------|---------|--------------------------------|
 | 值      | 陣列   | 物件的陣列，每個物件都包含一個堆疊追蹤資料框架。 如需有關每個物件中資料的詳細資訊，請參閱下方的[堆疊追蹤值](#stack-trace-values)一節。 |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。          |
+| TotalCount | 整數 | 查詢之資料結果的資料列總數。          |
 
 
 ### <a name="stack-trace-values"></a>堆疊追蹤值

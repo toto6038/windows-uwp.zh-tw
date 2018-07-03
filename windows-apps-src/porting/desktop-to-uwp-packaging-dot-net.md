@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: d7ae77c499cb8398aa5557f0d422899fbe8b252d
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 5e3dce1950de907462b62967291d456fb062bd9c
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816253"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989263"
 ---
 # <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>使用 Visual Studio 封裝應用程式 (傳統型橋接器)
 
@@ -27,11 +27,9 @@ ms.locfileid: "1816253"
 >[!IMPORTANT]
 >傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 年度更新版 (10.0；組建 14393) 或更新版本的專案。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>首先，請先考慮您將會如何散布您的應用程式
+## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
-若您打算將您的應用程式發行至 [Microsoft Store](https://www.microsoft.com/store/apps)，請先從填寫[此表單](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)開始。 Microsoft 將會與您連絡以啟動上架程序。 作為這個程序的一部分，您將會在Microsoft Store中保留一個名稱，並取得您需要用來封裝您應用程式的資訊。
-
-此外，開始建立應用程式套件之前，請務必先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
+開始建立應用程式套件之前，先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -72,7 +70,8 @@ ms.locfileid: "1816253"
 
 **影片**
 
-<iframe src="https://www.youtube.com/embed/fJkbYPyd08w" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
 
 ## <a name="next-steps"></a>後續步驟
 

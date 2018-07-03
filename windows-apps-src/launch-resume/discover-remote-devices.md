@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e5b30e9fe2fb4f3bfbec81366a920cd74a19dcec
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673875"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018492"
 ---
 # <a name="discover-remote-devices"></a>探索遠端裝置
 您的 App 可以使用和探索裝置相同的 Microsoft 帳戶登入，使用無線網路、藍牙及雲端連線來探索 Windows 裝置。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。
@@ -33,9 +33,12 @@ ms.locfileid: "1673875"
 
 [!code-cs[Main](./code/DiscoverDevices/MainPage.xaml.cs#SnippetMakeFilterList)]
 
-> [!TIP]
+> [!NOTE]
 > 「近端」篩選值無法保證實體鄰近程度。 對於需要可靠實體鄰近性的案例，請在篩選器中使用 [**RemoteSystemDiscoveryType.SpatiallyProximal**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemdiscoverytype) 值。 此篩選器目前只允許藍牙找到的裝置。 由於保證實體鄰近性的新探索機制及通訊協定已在支援之列，因此也包含在其中。  
 [**RemoteSystem**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.RemoteSystem) 類別中還有表示找到的裝置實際上是否在實體鄰近範圍內的屬性：[**RemoteSystem.IsAvailableBySpatialProximity**](https://docs.microsoft.com/uwp/api/Windows.System.RemoteSystems.RemoteSystem.IsAvailableByProximity)。
+
+> [!NOTE]
+> 如果您想要探索 (由您探索的類型篩選條件選擇) 區域網路上的裝置，您的網路需要使用「私人」或「網域」設定檔。 您的裝置不會透過「公用」網路探索其他裝置。
 
 建立 [**IRemoteSystemFilter**](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems.IRemoteSystemFilter) 物件的清單之後，即可傳遞至 **RemoteSystemWatcher** 的建構函式。
 
@@ -65,9 +68,6 @@ bool isRemoteSystemLaunchUriCapable = remoteSystem.GetCapabilitySupportedAsync(K
 ```
 
 ## <a name="cross-user-discovery"></a>跨使用者探索
-
-> [!WARNING]
-> 本節中的功能目前無法供開發人員使用。
 
 開發人員可以指定探索用鄰近戶端裝置的_所有_裝置，而不只是註冊到相同使用者的裝置。 這會透過特殊的 **IRemoteSystemFilter**、[**RemoteSystemAuthorizationKindFilter**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemauthorizationkindfilter) 進行實作。 就像其他篩選類型一樣進行實作︰
 

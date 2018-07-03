@@ -4,19 +4,19 @@ Description: This article lists things you need to know before packaging your ap
 Search.Product: eADQiWindows 10XVcnh
 title: 準備封裝應用程式 (傳統型橋接器)
 ms.author: normesta
-ms.date: 02/21/2018
+ms.date: 05/18/20188
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4836992675f65773e9b5c890aca243e2a9e172
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 46e71812acdad92a5d017cee44490e7d8cc0de32
+ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832542"
+ms.lasthandoff: 05/21/2018
+ms.locfileid: "1905389"
 ---
 # <a name="prepare-to-package-an-app-desktop-bridge"></a>準備封裝應用程式 (傳統型橋接器)
 
@@ -105,7 +105,7 @@ ms.locfileid: "1832542"
 
 + __您的應用程式會執行公用程式以執行工作__。 避免啟動命令公用程式，例如 PowerShell 和 Cmd.exe。 事實上，若使用者將您的應用程式安裝至執行 Windows 10 S 的系統上，您的應用程式將會完全無法啟動他們。 這可能會使得您的應用程式無法提交至 Microsoft Store，因為提交到 Microsoft Store 的所有應用程式都必須與 Windows 10 S 相容
 
-啟動公用程式通常可以提供一個便利的方式來取得作業系統資訊、存取登錄，或存取系統功能。 然而，您也可以改用 UWP API 來完成這類工作。 這些 API 的效能是最好的，因為他們不需要個別的可執行檔即可執行，但重要的是，他們會禁止應用程式觸達套件的外部。 應用程式的設計與隔離、信任，以及來自傳統型橋接器應用程式的安全性維持一致。您的應用程式在執行 Windows 10 S 的系統上也將會如預期般運作。
+啟動公用程式通常可以提供一個便利的方式來取得作業系統資訊、存取登錄，或存取系統功能。 然而，您也可以改用 UWP API 來完成這類工作。 這些 API 的效能是最好的，因為他們不需要個別的可執行檔即可執行，但重要的是，他們會禁止應用程式觸達套件的外部。 應用程式的設計與隔離、信任，以及來自傳統型橋接器封裝的應用程式的安全性維持一致。您的應用程式在執行 Windows 10 S 的系統上也將會如預期般運作。
 
 + __您的應用程式管理增益集、外掛程式或延伸模組__。   很多時候，只要延伸模組尚未封裝，且其本身是以完全信任的模式安裝的，COM 式的延伸模組都會繼續運作。 這是因為那些安裝程式可以使用其完全信任的功能修改登錄，並將延伸模組檔案放在您主機應用程式能找到他們的任何地方。
 

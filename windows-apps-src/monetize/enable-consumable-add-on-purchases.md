@@ -3,19 +3,19 @@ author: mcleanbyron
 ms.assetid: FD381669-F962-465E-940B-AED9C8D19C90
 description: 了解如何使用 Windows.Services.Store 命名空間來搭配使用消費性附加元件。
 title: 啟用消費性附加元件購買
-keywords: Windows 10, UWP, 消費性, 附加元件, App 內購買, IAP, Windows.Services.Store
+keywords: Windows 10, UWP, 消費性, 附加元件, 應用程式內購買, IAP, Windows.Services.Store
 ms.author: mcleans
-ms.date: 08/25/2017
+ms.date: 05/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b327327448b47416e3ba113a65aa8a7b755f1f0
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: c7c36abe2d1332e5b6c94cbb936ad00769314d07
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689304"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874416"
 ---
 # <a name="enable-consumable-add-on-purchases"></a>啟用消費性附加元件購買
 
@@ -28,13 +28,13 @@ ms.locfileid: "1689304"
 
 應用程式可提供兩種類型的消費性附加元件，其差別在於管理完成的方式：
 
-* **開發人員管理的消費性產品**。 針對這種類型的消費性產品，您必須負責持續追蹤使用者對該附加元件所代表之項目的餘額，以及在使用者用完所有項目之後，向 Microsoft Store 回報已完成附加元件的購買。 在您的 App 回報已完成先前的附加元件購買之前，使用者將無法再次購買該附加元件。
+* **開發人員管理的消費性產品**。 針對這種類型的消費性產品，您必須負責持續追蹤使用者對該附加元件所代表之項目的餘額，以及在使用者用完所有項目之後，向市集回報已完成附加元件的購買。 在您的 App 回報已完成先前的附加元件購買之前，使用者將無法再次購買該附加元件。
 
   例如，如果您的附加元件在遊戲中代表 100 個金幣，而使用者花費了 10 個金幣，則您的應用程式或服務必須針對該使用者保留 90 個金幣的新餘額。 當使用者花光 100 個金幣之後，您的 App 必須回報該附加元件已完成，接著使用者就能再次購買 100 個金幣的附加元件。
 
-* **Microsoft Store 管理的消費性產品**。 針對這種類型的消費性產品，Microsoft Store 會持續追蹤使用者對該附加元件所代表之項目的餘額。 當使用者取用任何項目時，您必須負責向 Microsoft Store 回報這些項目已完成，而 Microsoft Store 會更新使用者的餘額。 您的應用程式可以隨時查詢使用者目前的餘額。 當使用者用完所有項目之後，該使用者就能再次購買該附加元件。
+* **市集管理的消費性產品**。 針對這種類型的消費性產品，市集會持續追蹤使用者對該附加元件所代表之項目的餘額。 當使用者取用任何項目時，您必須負責向市集回報這些項目已完成，而市集會更新使用者的餘額。 使用者可以隨時多次購買附加元件 (不需要先取用項目)。 您的應用程式可以隨時查詢 Microsoft Store 有關使用者目前的餘額。
 
-  例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 10 個金幣，則您的應用程式會向 Microsoft Store 回報已完成附加元件的 10 個單位，而 Microsoft Store 會更新剩下的餘額。 當使用者花光 100 個金幣之後，該使用者就能再次購買 100 個金幣的附加元件。
+  例如，如果您的附加元件在遊戲中代表最初的 100 個金幣數量，而使用者花費了 50 個金幣，則您的應用程式會向 Microsoft Store 回報已完成附加元件的 50 個單位，而 Microsoft Store 會更新剩下的餘額。 如果使用者然後重新購買附加元件以獲取多 100 個硬幣，它們現在總計會有 150 個硬幣。
     > [!NOTE]
     > Microsoft Store 管理的消費性產品是從 Windows 10 (版本 1607) 開始提供。
 
@@ -43,7 +43,7 @@ ms.locfileid: "1689304"
 1. 讓使用者能夠從您的 App [購買附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)。
 3. 當使用者取用附加元件 (例如，他們在遊戲中花費金幣) 時，[將附加元件回報為已完成](enable-consumable-add-on-purchases.md#report_fulfilled)。
 
-您也可以隨時針對 Microsoft Store 管理的消費性產品來[取得剩下的餘額](enable-consumable-add-on-purchases.md#get_balance)。
+您也可以隨時針對市集管理的消費性產品來[取得剩下的餘額](enable-consumable-add-on-purchases.md#get_balance)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -57,7 +57,7 @@ ms.locfileid: "1689304"
 * 程式碼檔案含有適用於 **Windows.Services.Store** 命名空間的 **using** 陳述式。
 * App 是單一使用者 app，僅會在啟動 app 的使用者內容中執行。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md#api_intro)。
 
-如需完整的範例應用程式，請參閱[ Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 > [!NOTE]
 > 如果您的傳統型應用程式使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)，您可能需要新增這些範例中未顯示的額外程式碼來設定 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 物件。 如需詳細資訊，請參閱[在使用傳統型橋接器的傳統型應用程式中使用 StoreContext 類別](in-app-purchases-and-trials.md#desktop)。
@@ -68,10 +68,10 @@ ms.locfileid: "1689304"
 
 當使用者從您的 app [購買附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)並取用您的附加元件之後，您的 app 必須藉由呼叫 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.reportconsumablefulfillmentasync) 方法來將附加元件回報為已完成。 您必須將下列資訊傳遞給此方法：
 
-* 您想要回報為已完成之附加元件的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。
+* 您想要回報為已完成之附加元件的[市集識別碼](in-app-purchases-and-trials.md#store-ids)。
 * 您想要回報為已完成之附加元件的單位數。
-  * 對於開發人員管理的消費性產品，請針對 *quantity* 參數指定 1。 這會警示 Microsoft Store，消費性產品已完成，而客戶接著可再次購買消費性產品。 在您的 app 通知 Microsoft Store 該消費性產品已完成之前，使用者將無法再次購買該產品。
-  * 針對 Microsoft Store 管理的消費性產品，指定實際已取用的單位數。 Microsoft Store 將會更新該消費性產品剩下的餘額。
+  * 對於開發人員管理的消費性產品，請針對 *quantity* 參數指定 1。 這會警示市集，消費性產品已完成，而客戶接著可再次購買消費性產品。 在您的 app 通知市集該消費性產品已完成之前，使用者將無法再次購買該產品。
+  * 針對市集管理的消費性產品，指定實際已取用的單位數。 市集將會更新該消費性產品剩下的餘額。
 * 適用於完成操作的追蹤識別碼。 這是開發人員提供的 GUID，可基於追蹤目的用來識別與完成操作相關聯的特定交易。 如需詳細資訊，請參閱 [ReportConsumableFulfillmentAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.reportconsumablefulfillmentasync) 中的備註。
 
 這個範例示範如何將 Microsoft Store 管理的消費性產品回報為已完成。
@@ -81,9 +81,9 @@ ms.locfileid: "1689304"
 
 <span id="get_balance" />
 
-## <a name="get-the-remaining-balance-for-a-store-managed-consumable"></a>取得 Microsoft Store 管理的消費性產品剩下的餘額。
+## <a name="get-the-remaining-balance-for-a-store-managed-consumable"></a>取得市集管理的消費性產品剩下的餘額。
 
-這個範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [GetConsumableBalanceRemainingAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) 方法，來取得 Microsoft Store 管理的消費性產品剩下的餘額。
+這個範例示範如何使用 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的 [GetConsumableBalanceRemainingAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.getconsumablebalanceremainingasync) 方法，來取得市集管理的消費性產品剩下的餘額。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[EnableConsumables](./code/InAppPurchasesAndLicenses_RS1/cs/GetRemainingAddOnBalancePage.xaml.cs#GetRemainingAddOnBalance)]
@@ -95,4 +95,4 @@ ms.locfileid: "1689304"
 * [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
 * [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

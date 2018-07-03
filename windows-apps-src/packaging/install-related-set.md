@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 45d88f88963f7f4d5aad4b1c48d0e86145be6c81
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: 0b7ef1d1a9eb3e268e642cf9b0889df71a59fb44
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638462"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917613"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用應用程式安裝程式檔案安裝相關集合
 
@@ -36,7 +36,7 @@ ms.locfileid: "1638462"
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -84,7 +84,7 @@ ms.locfileid: "1638462"
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
 </AppInstaller>
@@ -96,7 +96,7 @@ ms.locfileid: "1638462"
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -116,7 +116,7 @@ ms.locfileid: "1638462"
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -156,7 +156,7 @@ ms.locfileid: "1638462"
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    
@@ -201,7 +201,7 @@ ms.locfileid: "1638462"
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller
-    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017"
+    xmlns="http://schemas.microsoft.com/appx/appinstaller/2017/2"
     Version="1.0.0.0" 
     Uri="http://mywebservice.azurewebsites.net/appset.appinstaller" > 
    

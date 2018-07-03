@@ -3,27 +3,24 @@ author: stevewhims
 description: 本主題示範如何撰寫包含引發事件的執行階段類別的 Windows 執行階段元件。 也示範使用元件和處理事件的應用程式。
 title: '在 C++/WinRT 中撰寫事件 '
 ms.author: stwhi
-ms.date: 04/23/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、撰寫、事件
+keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event, 標準, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: b7574f1a3406dae665ced80294f7bc1cf91aeb8c
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 192000f937989d7218931ce1465bd96d5d9b71c6
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832022"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880879"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中撰寫事件
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
 本主題示範如何撰寫一個 Windows 執行階段元件，其包含一個執行階段類別代表銀行帳戶，當餘額進入借方時，引發一個事件。 也示範一個核心應用程式，其使用銀行帳戶執行階段類別，呼叫調整餘額的函式，並處理所造成的任何事件。
 
 > [!NOTE]
-> 如需有關目前可用的 C++/WinRT Visual Studio 擴充功能 (VSIX) ( 其提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請查閱 [適用於 C++/WinRT 的 Visual Studio 支援，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 > [!IMPORTANT]
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請查閱[使用 C++/WinRT 使用API](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
@@ -33,11 +30,11 @@ ms.locfileid: "1832022"
 
 編譯器會協助您解決 *必須是 WinRT 類型* 的錯誤，如果您忘記此限制的話。
 
-## <a name="winrtdelegatelttgt"></a>winrt::delegate&lt;...T&gt;
-如果您想要從 C++ 類型 (在同一個專案中撰寫與使用) 引發一個事件，您可以使用適用於您事件委派類型的 C++/WinRT 的 **winrt::delegate&lt;...T&gt;**。 在此情況下，類型參數便不需要為 Windows 執行階段類型。
+## <a name="winrtdelegatelt-tgt"></a>winrt::delegate&lt;...T&gt;
+如果您想要從 C++ 類型 (在同一個專案中撰寫與使用) 引發一個事件，您可以使用適用於您事件委派類型的 C++/WinRT 的 [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate)。 在此情況下，委派的類型參數不需要為 Windows 執行階段類型。 如果您正從事件和委派是在內部使用的 C++/CX 程式碼基底進行移植 (並非所有二進位檔案)，則 **winrt::delegate** 可協助您在 C++/WinRT 中複寫該模式。
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
-在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立 **Visual C++ Windows 執行階段元件 (C + + / WinRT)** 專案，並將它命名為 *BankAccountWRC*  (適用於「銀行帳戶 Windows 執行階段元件」)。
+在 Microsoft Visual Studio 中，從建立新的專案開始。 建立 **Visual C++ Windows 執行階段元件 (C + + / WinRT)** 專案，並將它命名為 *BankAccountWRC*  (適用於「銀行帳戶 Windows 執行階段元件」)。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 重新命名檔案 `BankAccountWRC.idl`，讓您建置時，元件的 Windows 執行階段中繼資料會以元件本身來命名。 在 `BankAccountWRC.idl` 中，定義您的介面，如下列清單所示。
 
@@ -70,14 +67,14 @@ namespace winrt::BankAccountWRC::implementation
         ...
 
     private:
-        event<Windows::Foundation::EventHandler<float>> accountIsInDebitEvent;
+        winrt::event<Windows::Foundation::EventHandler<float>> accountIsInDebitEvent;
         float balance{ 0.f };
     };
 }
 ...
 ```
 
-在 `BankAccount.cpp` 中，如下實作函式。
+在`BankAccount.cpp` 中，如下列程式碼範例所示實作函式。 在 C++/WinRT 中，IDL 宣告的事件實作為一組的多載函式 (與將屬性實作為一對多載的 get 和 set 函式類似)。 一個多載會接受將註冊的委派，並傳回預付碼。 其他則接收預付碼並撤銷相關的委派。
 
 ```cppwinrt
 // BankAccount.cpp
@@ -102,14 +99,16 @@ namespace winrt::BankAccountWRC::implementation
 }
 ```
 
-**AdjustBalance**函式的實作引發 **AccountIsInDebit** 事件，如果餘額為負數的話。
+您不需要實作事件撤銷的多載 (如需詳細資訊，請參閱[撤銷已註冊的委派](handle-events.md#revoke-a-registered-delegate))&mdash;透過 C++/WinRT 投影為您處理。 為了提供您彈性以針對您的案例進行最佳實作，其他多載不會納入投影。 呼叫 [**event::add**](/uwp/cpp-ref-for-winrt/event#eventadd-function) 和 [**event::remove**](/uwp/cpp-ref-for-winrt/event#eventremove-function)，如同這是有效率且並行/執行緒安全的預設值。 但若您有大量的事件，則您可能不想要每一個都有事件欄位，而寧願改用一些疏鬆的實作。
+
+如果餘額為負數的話，您也可能看到以上 **AdjustBalance** 函式的實作引發 **AccountIsInDebit** 事件。
 
 如果有任何警告妨礙您建置，則將專案屬性 **C/C++** > **一般** > **視警告為錯誤** 設定為 **No (/WX-)**，並再試一次建置專案。
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>建立核心應用程式 (BankAccountCoreApp) 測試 Windows 執行階段元件
 現在建立新的專案 (在您的 `BankAccountWRC` 解決方案中，或在新的一個裡)。 建立 **Visual C++ 核心應用程式 (C++/WinRT)** 專案，並將它命名為 *BankAccountCoreApp*。
 
-新增參考資料，並瀏覽至`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`。 按一下 [新增]****，然後 **[確定]**。 現在建置 BankAccountCoreApp。 如果您看到裝載檔案 `readme.txt`不存在的錯誤，從 Windows 執行階段元件專案排除該檔案，重建它，然後重建 BankAccountCoreApp。
+新增參考資料，並瀏覽至 `\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd` (或新增專案參考資料，如果有兩個專案在相同的方案中)。 按一下 \[新增\]****，然後 **\[確定\]**。 現在建置 BankAccountCoreApp。 如果您看到承載檔案 `readme.txt` 不存在的錯誤，從 Windows 執行階段元件專案排除該檔案，重建它，然後重建 BankAccountCoreApp。
 
 在建置程序期間，執行 `cppwinrt.exe` 工具將被參考的 `.winmd` 檔案處理到包含投影類型的原始碼檔案中，在使用元件裡支援您。 適用於您元件執行階段類別的投影類型標頭&mdash;命名為`BankAccountWRC.h`&mdash;在資料夾`\BankAccountCoreApp\BankAccountCoreApp\Generated Files\winrt\`中產生。
 

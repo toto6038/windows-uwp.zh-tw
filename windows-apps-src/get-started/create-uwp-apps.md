@@ -3,94 +3,77 @@ author: QuinnRadich
 title: 使用通用 Windows 平台建立應用程式
 description: 這比您以為的建立適用於 Windows 10 的通用 Windows 平台 (UWP) app 還要簡單。
 ms.author: quradic
-ms.date: 08/24/2017
+ms.date: 5/7/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: windows 10, uwp, 開始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 66536a3059ea6d9b17709c836f4149b1ec583165
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: c31a659b7584bec5a8f71307c40a220e17d62b53
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692709"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843531"
 ---
-# <a name="create-apps-for-windows-10"></a>建立適用於 Windows 10 的應用程式
+# <a name="start-coding"></a>開始程式設計
 
-![建置您的 App](images/build-your-app.png)
+![建置您的應用程式](images/build-your-app.png)
 
-歡迎使用 [UWP 平台](universal-application-platform-guide.md)！ 無論您想要的是開始建立您的第一個 UWP app，還是使用更多的進階功能，下列教學課程將會讓您步入正軌。您將會了解如何：
+歡迎使用 [UWP 平台](universal-application-platform-guide.md)！ 在這個頁面上，我們將指向您需要開始程式設計您想要建立的 Windows 10 應用程式的正確資訊。
 
--   在 Microsoft Visual Studio 中建立 UWP 專案。
--   將 UI 元素和程式碼新增至專案。
--   使用 XAML、資料繫結及其他基本 UWP 元素。
--   將獨特的 UWP 功能 (例如筆跡和 Dial) 納入您的應用程式。
--   使用協力廠商程式庫加入新的功能。
--   在本機電腦上建置並偵錯 App。
+開始開發之前，您應該要[開始設定。](get-set-up.md)
 
-## <a name="ask-a-bot"></a>詢問 Bot！
+## <a name="learning-tracks"></a>學習追蹤
 
-如果您在尋找適當文件時受阻或是需要協助，請嘗試詢問下面實驗性的聊天 Bot。 例如，問說「哪裡可以下載 Visual Studio？」 或「告訴我關於 Fluent 設計的資訊」。 如果沒有得到有用的答案，請嘗試稍微改變您的查詢措辭。
+下列學習追蹤顯示完成一些基本工作所需要知道的事項，以及可以在何處找到該資訊。 它們不教學課程，但它們提供參考驗證碼以確定您在正軌上。
 
-<iframe src='https://webchat.botframework.com/embed/DocBot4?s=T2nP6qZUXC8.cwA.lvc.AR-ZBwtULpaITu6_dAhMwrmg4R2GSLNzIoiMNFL8M7M' height="400" width="400"></iframe>
+| 工作 | 說明 |
+| --- | --- |
+| [建構表單](construct-form-learning-track.md) | 了解如何建立易於使用，且看起來讓人覺得滿意的表單，不論螢幕大小。 | 
+| [顯示清單中的客戶](display-customers-in-list-learning-track.md) | 了解如何顯示和編輯 UI 中的資料。 | 
+| [載入和儲存設定](settings-learning-track.md) | 了解如何與何處儲存及擷取設定。 |
+| [使用檔案](fileio-learning-track.md) | 了解如何從讀取檔案和寫入檔案，以及存取您有存取權或沒有存取權的資料夾。 | 
 
-## <a name="write-your-first-uwp-app-in-your-favorite-programming-language"></a>使用最喜愛的程式設計語言撰寫您的第一個 UWP app
+我們的所有學習追蹤都是為熟悉的 Windows 10 的有經驗開發人員設計的。 如果您才剛開始，請先從我們的[適用於新開發人員](#For-new-developers)的內容入門。
 
-如果您是新的開發人員，或是您熟悉 Windows 平台但不想要開始使用 UWP 時，請查看下列基本教學課程︰
+## <a name="for-new-developers"></a>適用於新開發人員
 
-* [使用 C#,、Visual C++ 或 JavaScript 建立您的第一個 UWP app](your-first-app.md)
+如果您是新的開發人員，Microsoft 會有許多資源教您如何使用的程式碼和工具的基本知識，而這些是您開發 Windows 10 所需。 
 
-您是 IOS 開發人員嗎？
+* [建立 Hello World 應用程式](your-first-app.md)
 
-* 請使用[適用於 iOS 的 Windows 橋接器](https://developer.microsoft.com/windows/bridges/ios)將您現有的程式碼轉換成 UWP app，然後繼續以 Objective-C 進行開發。
+如果您想要更詳細的逐步了解程式設計、C# 語言、Visual Studio 或的通用 Windows 平台功能的基本知識，您應該查看下列資源：
 
-如果您仍在學習，或是需要溫故知新，請試著閱讀下列外部資源：
+**文件：**
 
-* [Windows 10 開發人員指南](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [開始使用 C#](https://docs.microsoft.com/dotnet/csharp/getting-started/)
+* [C# 快速入門](https://docs.microsoft.com/dotnet/csharp/quick-starts/index)
+* [開始使用 Visual Studio。](https://docs.microsoft.com/visualstudio/ide/)
 
-## <a name="customize-your-apps-layout-and-appearance-with-xaml"></a>使用 XAML 自訂應用程式版面配置及外觀
+**影片**
 
-大部分 UWP app 會使用 XAML 標記語言建立其 UI。 了解您可以如何使用其核心功能來自訂您的 App 的視覺呈現，並瀏覽此指導方針以建立適合您的 App 的獨特外觀。
+* [Microsoft Virtual Academy](https://mva.microsoft.com/training-topics/c-app-development#!level=Beginner&lang=1033)
+* [LinkedIn Learning](https://www.linkedin.com/learning/learning-universal-windows-app-development/welcome)
 
-* [應用程式 UI 設計簡介](../design/basics/design-and-ui-intro.md)
-* [教學課程：以 XAML 建立使用者介面](../design/basics/xaml-basics-ui.md)
-* [UWP app 的版面配置](../design/layout/index.md)
-* [適用於UWP app 的控制項和模式](../design/controls-and-patterns/index.md)
+## <a name="using-the-docs"></a>使用文件
 
-## <a name="use-features-unique-to-windows-10"></a>使用只有 Windows 10 才有的功能
+如果您已經探索我們的學習追蹤，或是未包含在內的任何事項感興趣，您應該自行閱讀我們的文件。 以下是您可以在每個區域中找到之內容的簡單概觀：
 
-Windows 10 有什麼特別之處？ 學習只使用它的一些獨特功能。
+| 區域 | 說明 |
+| --- | --- |
+| **新功能** | Windows 10 的每個主要更新，都詳載在我們的更新文件新增內容中。 這些文件包含我們針對每個版本新增的功能與開發人員指南相關資訊，其中也包含新的 API 清單： </br>   [最新 Windows 10 版本中為開發人員設計的新功能](../whats-new/windows-10-version-latest.md) </br> 主要版本不是我們更新文件的唯一一次。 我們會一直提供新資訊供您瀏覽，而且會讓您掌握最新資訊： </br>   [文件中的新功能](../whats-new/windows-docs-latest.md) |
+| **設計與 UI** | 包含在此文件區域中的視覺呈現與應用程式的 UI 上的所有資訊。如果您對 XAML 標記語言的特定項目感興趣，或只是想要建立獨特的文件外觀，請由此開始︰ </br>   [UWP app 設計基本知識](../design/basics/index.md) |
+| **開發應用程式** | 如果您需要特定 Windows 10 功能的詳細資訊，或只想要查看 UWP 開發的相關資訊，請查看此文件區域： </br>   [UWP app 功能](../develop/index.md)。 </br> Windows 10 應用程式的 API 參考記載在一組相關文件中，您可在此處找到： </br>   [Windows UWP 命名空間](https://docs.microsoft.com/en-us/uwp/api/) </br>   [檔案和 XML 結構描述](https://docs.microsoft.com/uwp/schemas/) |
+| **開發遊戲** | 這些文件包含如何開發 Windows 或 Xbox 遊戲的詳細資訊。 這包括的安裝指示、開發人員程式與使用 DirectX 或 Xbox 功能進行程式設計的指示。 </br>   [遊戲開發快速入門](../gaming/getting-started.md) |
+| **發佈** | 這些文件包含如何將您的應用程式發佈到 Microsoft Store 中，從應用程式提交到定價到促銷和客戶參與： </br>   [將您的應用程式發佈至 Microsoft Store](../publish/index.md) |
 
-* [教學課程︰在 UWP app 中支援筆跡](../design/input/ink-walkthrough.md)
-* [教學課程︰支援 Surface Dial](../design/input/radialcontroller-walkthrough.md)
-* [探索最新版 Windows 中的新功能](../whats-new/windows-10-version-latest.md)
+## <a name="other-docs"></a>其他文件
 
-探索操作說明文章和適用於 Windows 10 開發的詳細文件：
+某些特定的 Windows 10 平台如 Web 開發或混合實境，有自己的文件設定。 如果您對於開發具這些功能的應用程式感興趣，請查看其文件：
 
-* [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
-* [UWP app 的 API 參照](https://docs.microsoft.com/en-us/uwp/)
-
-## <a name="develop-javascript-and-web-apps"></a>開發 JavaScript 和 Web 應用程式
-
-UWP 是非常有彈性的平台，可支援各種不同的語言版本及架構。 利用 JavaScript 建置 UWP app，並使用您的技能建置可在 Microsoft Store 中特別展售的託管 Web 應用程式。
-
-* [利用您的 Web 技能，使用 HTML5、CSS3 和 JavaScript 來建置 App。](your-first-app.md#javascript-and-html)
-
-對於有關建置 Web 應用程式的詳細資訊感興趣嗎？
-
-* [Microsoft Edge 開發人員文件](https://docs.microsoft.com/microsoft-edge/)
-
-## <a name="cross-platform-and-mobile-development"></a>跨平台和行動應用程式開發
-
-* 需要以 Android 和 iOS 做為目標嗎？ 請查看 [Xamarin](https://www.xamarin.com)。
-
-## <a name="see-also"></a>請參閱
-
-* [發佈您的 UWP app](https://developer.microsoft.com/store/publish-apps)。
-* [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
-* [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
-* [什麼是 UWP app？](universal-application-platform-guide.md)
-* [開始設定](get-set-up.md)
-* [註冊 Windows 帳戶](sign-up.md)
+| 文件 | 說明 |
+| --- | --- |
+| **Microsoft Azure** | 與雲端開發和 Microsoft Azure 相關的資訊，都可在 [Microsoft Azure 開發人員文件中找到。](https://docs.microsoft.com/azure/) |
+| **Web 開發** | 關於 Microsoft Edge、WebVR 及其他 Windows Web 開發功能的詳細，請參閱 [Microsoft Edge 開發人員文件。](https://docs.microsoft.com/microsoft-edge/) |
+| **Windows Mixed Reality** | 混合實境將現實世界和虛擬內容混合到實體和數位物件共存的體驗中。 關於建置的 Microsoft HoloLens 應用程式和其他沈浸式頭戴式裝置的詳細資訊，請參閱 [Windows Mixed Reality 文件。](https://docs.microsoft.com/en-us/windows/mixed-reality/)|

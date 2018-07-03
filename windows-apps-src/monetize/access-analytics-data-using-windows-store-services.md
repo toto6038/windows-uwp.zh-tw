@@ -4,18 +4,18 @@ ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: 使用「Microsoft Store 分析 API」，以程式設計方式擷取登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式分析資料。
 title: 使用 Microsoft Store 服務存取分析資料
 ms.author: mcleans
-ms.date: 03/23/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a8523acb06a0bda48f85221f384d8a3d554c7dc
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: f7ca3c23179d97816fc54fdbacb951915aecf71f
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707153"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976393"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -41,11 +41,11 @@ ms.locfileid: "1707153"
 
 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯並擷取需要的值：
 
-1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，[將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
+1.  在開發人員中心，[將組織的開發人員中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來存取開發人員中心帳戶分析資料之應用程式或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增 Azure AD 應用程式至開發人員中心帳戶](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
+2.  接著，從開發人員中心**\[帳戶設定\]** 區段的**\[使用者\]** 頁面，[新增 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account)代表您將用來存取開發人員中心帳戶分析資料之應用程式或服務。 請確定您指派此應用程式 **[管理員]** 角色。 如果應用程式尚未存在於您的 Azure AD 目錄，您可以[在開發人員中心建立新的 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account)。
 
-3.  返回 **\[管理使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
+3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
 4. 按一下 **\[加入新的金鑰\]**。 在下列畫面中，複製 **\[金鑰\]** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
@@ -98,16 +98,6 @@ grant_type=client_credentials
 | 安裝數 |  <ul><li>[取得傳統型應用程式安裝](get-desktop-app-installs.md)</li></ul> |
 | 應用程式錯誤 |  <ul><li>[取得傳統型應用程式的錯誤報告資料](get-desktop-application-error-reporting-data.md)</li><li>[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)</li><li>[取得傳統型應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下載傳統型應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 
-### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
-
-下列分析方法可供隸屬於 [Windows 硬體開發人員中心計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶使用。
-
-| 案例       | 方法      |
-|---------------|--------------------|
-| Windows 10 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 10 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[取得 Windows 10 驅動程式錯誤的詳細資料](get-details-for-a-windows-10-driver-error.md)</li><li>[下載適用於 Windows 10 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
-| Windows 7/Windows 8.x 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 7 和 Windows 8.x 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[取得 Windows 7 或 Windows 8.x 驅動程式錯誤的詳細資料](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下載適用於 Windows 7 或 Windows 8.x 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
-| 硬體錯誤 (適用於 OEM) |  <ul><li>[取得 OEM 硬體錯誤報告資料](get-oem-hardware-error-reporting-data.md)</li><li>[取得 OEM 硬體錯誤的詳細資料](get-details-for-an-oem-hardware-error.md)</li><li>[下載適用於 OEM 硬體錯誤的 CAB 檔案](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
-
 ### <a name="methods-for-xbox-live-services"></a>適用於 Xbox Live 服務的方法
 
 下列其他方法可供使用 [Xbox Live 服務](../xbox-live/developer-program-overview.md)的遊戲開發人員帳戶使用。
@@ -124,7 +114,17 @@ grant_type=client_credentials
 
 | 案例       | 方法      |
 |---------------|--------------------|
-| 下載數 |  <ul><li>[取得 Xbox One 下載數](get-xbox-one-game-acquisitions.md)</li></ul> |
+| 下載數 |  <ul><li>[取得 Xbox One 遊戲下載數](get-xbox-one-game-acquisitions.md)</li></ul> |
+
+### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
+
+下列分析方法可供隸屬於 [Windows 硬體開發人員中心計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶使用。
+
+| 案例       | 方法      |
+|---------------|--------------------|
+| Windows 10 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 10 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-10-drivers.md)</li><li>[取得 Windows 10 驅動程式錯誤的詳細資料](get-details-for-a-windows-10-driver-error.md)</li><li>[下載適用於 Windows 10 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-10-driver-error.md)</li></ul> |
+| Windows 7/Windows 8.x 驅動程式的錯誤 (適用於 IHV) |  <ul><li>[取得 Windows 7 和 Windows 8.x 驅動程式的錯誤報告資料](get-error-reporting-data-for-windows-7-and-windows-8.x-drivers.md)</li><li>[取得 Windows 7 或 Windows 8.x 驅動程式錯誤的詳細資料](get-details-for-a-windows-7-or-windows-8.x-driver-error.md)</li><li>[下載適用於 Windows 7 或 Windows 8.x 驅動程式錯誤的 CAB 檔案](download-the-cab-file-for-a-windows-7-or-windows-8.x-driver-error.md)</li></ul> |
+| 硬體錯誤 (適用於 OEM) |  <ul><li>[取得 OEM 硬體錯誤報告資料](get-oem-hardware-error-reporting-data.md)</li><li>[取得 OEM 硬體錯誤的詳細資料](get-details-for-an-oem-hardware-error.md)</li><li>[下載適用於 OEM 硬體錯誤的 CAB 檔案](download-the-cab-file-for-an-oem-hardware-error.md)</li></ul> |
 
 ## <a name="code-example"></a>程式碼範例
 

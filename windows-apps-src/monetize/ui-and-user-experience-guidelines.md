@@ -4,25 +4,36 @@ ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: 了解關於在應用程式中廣告的 UI 和使用者體驗指導方針。
 title: 廣告的 UI 和使用者體驗指導方針
 ms.author: mcleans
-ms.date: 08/23/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eaeacdb24428b8870e941e5f93ca40dfa554903
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690804"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1881069"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
 本文提供的指引可讓您在應用程式中提供絕佳的橫幅廣告、插播式廣告以及原生廣告體驗。 如需如何設計應用程式外觀與操作方式的一般指引，請參閱[設計與 UI](https://developer.microsoft.com/windows/apps/design)。
 
 > [!IMPORTANT]
-> 您應用程式中的任何廣告使用都必須符合 Microsoft Store 原則，包括但不限於[原則 10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有需多其他方式也可能會違反 Microsoft Store 原則而未列於本文中。
+> 您應用程式中的任何廣告使用都必須符合 Microsoft Store 原則，包括但不限於[原則 10.10](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) (廣告行為與內容)。 尤其，您應用程式的橫幅或插入式廣告實作必須符合 Microsoft Store 原則[原則 10.10.1](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content) 中的需求。 本文包含會違反此原則的實作範例。 這些範例僅用以提供資訊所用，協助您更加了解原則。 這些範例並非全面性，有許多其他方式也可能會違反 Microsoft Store 原則而未列於本文中。
+
+## <a name="general-best-practices"></a>一般最佳做法
+
+檢閱本文中不同廣告類型的指導方針之前，請先查看這些一般最佳做法，以提升您的廣告收益。
+
+* [仔細計劃您的廣告位置](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/)。 參閱[最佳化您的廣告單元的可見性](optimize-ad-unit-viewability.md)的相關指導方針。
+* [作為插播式廣告做為插播式影片廣告的後援](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video)。
+* [了解您的使用者以提供更好的目標廣告](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/)。
+* [使用最新的廣告程式庫](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/)。
+* [為您的應用程式設定正確的 COPPA 設定](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app)。
+
 
 ## <a name="guidelines-for-banner-ads"></a>橫幅廣告指南
 
@@ -32,19 +43,17 @@ ms.locfileid: "1690804"
 
 建議您在應用程式中實作橫幅廣告時，依照這些最佳做法：
 
+* [使用美國互動廣告局大小](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes)以容納於裝置的配置。
+
 * 將您應用程式多數 UI 用於功能控制項及內容。
 
 * 將廣告設計融入您的體驗中。 提供設計人員範例廣告，以規劃廣告的外觀。 應用程式中兩個良好規劃的廣告範例是「廣告即內容」配置和分割配置。
 
   若要在開發與測試階段查看不同廣告大小在您應用程式中的外觀與功能，您可以利用[測試廣告單位](set-up-ad-units-in-your-app.md#test-ad-units)。 完成測試後，請記得在提交應用程式進行認證之前，[使用即時廣告單位更新您的應用程式](set-up-ad-units-in-your-app.md#live-ad-units)。
 
-* 使用能容納於執行中裝置配置的[廣告大小](supported-ad-sizes-for-banner-ads.md)。
-
 * 針對沒有可用廣告的情況進行計畫。 有時候廣告可能無法傳送到您的應用程式。 請以無論是否展示廣告都能展現極佳外觀的方式，配置您的頁面。 如需詳細資訊，請參閱[處理廣告錯誤](error-handling-with-advertising-libraries.md)。
 
 * 若您的警示使用者案例最好使用覆疊處理，請於顯示覆疊時呼叫 [AdControl.Suspend](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.suspend.aspx)，接著在完成警示案例時呼叫 [AdControl.Resume](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.resume.aspx)。
-
-<span />
 
 ### <a name="practices-to-avoid"></a>應避免的做法
 
@@ -55,8 +64,6 @@ ms.locfileid: "1690804"
 * 請勿使用過多廣告和塞滿應用程式。 若應用程式中有太多廣告，其外觀和可用性會受影響。 您想要透過廣告獲利，但不應犧牲應用程式本身。
 
 * 請勿混淆使用者的核心工作。 主要的焦點應一律在應用程式上。 廣告空間應受到整合，以便讓它維持為次要焦點。
-
-<span />
 
 ### <a name="examples-of-policy-violations"></a>原則違反範例
 
@@ -74,7 +81,7 @@ ms.locfileid: "1690804"
 
 * 與 Microsoft 廣告程式庫建立的未記載介面或子物件互動，例如 **WebView** 或 **MediaElement**。
 
-<span id="interstitialbestpractices10">
+<span id="interstitialbestpractices10" />
 
 ## <a name="guidelines-for-interstitial-ads"></a>插入式廣告指南
 
@@ -112,13 +119,9 @@ ms.locfileid: "1690804"
 
 * 使用預設 (30 秒) 逾時，除非您有合理的理由設定其他值，在該情況下不低於 10 秒。 插播式影片廣告比標準橫幅廣告需要更長的時間下載，特別是在沒有高速連線的市場中。
 
-<span/>
-
 * 請留意使用者的行動數據方案。 例如，在接近/超過其行動數據方案的行動裝置上提供插播式影片廣告前，不要顯示或是警告使用者。 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 類別中有 API 可協助您。
 
 * 在初始提交後，請繼續改善您的應用程式。 查看[廣告報表](../publish/advertising-performance-report.md)，然後變更設計以改進覆蓋率與插播式影片廣告完成率。
-
-<span />
 
 ### <a name="practices-to-avoid"></a>應避免的做法
 
@@ -141,8 +144,6 @@ ms.locfileid: "1690804"
     * 讓包含內建體驗的應用程式可以產生與廣告相同的好處。
 
 * 請勿使用插入式廣告讓使用者可在多人遊戲中取得競爭優勢。 例如，請勿透過在第一人稱射擊遊戲中提供更好的槍來引誘使用者檢視插入式廣告。 玩家虛擬人偶上的自訂上衣也不錯，只要不會提供隱身效果！
-
-<span />
 
 ### <a name="examples-of-policy-violations"></a>原則違反範例
 
@@ -170,23 +171,23 @@ ms.locfileid: "1690804"
 
 ### <a name="register-the-container-for-your-native-ad"></a>註冊原生廣告的容器
 
-在程式碼中，您必須呼叫 **NativeAd** 物件的 [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) 方法來註冊做為原生廣告容器的 UI 元素，並可選擇您想要的任何特定控制項來註冊做為廣告的可點選目標。 這樣才能正確追蹤廣告的曝光次數和點擊數。
+在您的程式碼中，您必須呼叫 **NativeAdV2** 物件的 [RegisterAdContainer](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.registeradcontainer.aspx) 方法來註冊做為原生廣告容器的 UI 元素，並可選擇您想要的任何特定控制項來註冊做為廣告的可點選目標。 這樣才能正確追蹤廣告的曝光次數和點擊數。
 
 **RegisterAdContainer** 方法有兩個多載可供使用：
 
-* 如果您希望所有個別原生廣告元素的整個容器都是可點選的，請呼叫 [RegisterAdContainer(FrameworkElement)](https://msdn.microsoft.com/library/windows/apps/mt809188.aspx) 方法並傳遞容器控制項給方法。 例如，如果您在全部裝載於 **StackPanel** 的不同控制項中顯示所有原生廣告元素，而您希望整個**StackPanel** 都是可點選的，那麼請傳遞 **StackPanel** 給此方法。
+* 如果您希望所有個別原生廣告元素的整個容器都是可點選的，請呼叫 **RegisterAdContainer(FrameworkElement)** 方法並傳遞容器控制項給方法。 例如，如果您在全部裝載於 **StackPanel** 的不同控制項中顯示所有原生廣告元素，而您希望整個**StackPanel** 都是可點選的，那麼請傳遞 **StackPanel** 給此方法。
 
-* 如果您只希望某些原生廣告元素是可點選的，請呼叫 [RegisterAdContainer (FrameworkElement、IVector(FrameworkElement))](https://msdn.microsoft.com/library/windows/apps/mt809189.aspx) 方法。 只有傳遞給第二個參數的控制項是可點選的。
+* 如果您只希望某些原生廣告元素是可點選的，請呼叫 **RegisterAdContainer (FrameworkElement、IVector(FrameworkElement))** 方法。 只有傳遞給第二個參數的控制項是可點選的。
 
 ### <a name="required-native-ad-elements"></a>必要的原生廣告元素
 
-您至少必須一律顯示下列原生廣告元素給您原生廣告設計中的使用者。 如果未加入下列元素，您的廣告單元可能會績效不佳、收入低。
+您至少必須一律顯示下列 **NativeAdV2** 物件的屬性所提供的原生廣告元素給您原生廣告設計中的使用者。 如果未加入下列元素，您的廣告單元可能會績效不佳、收入低。
 
-1. 一律顯示原生廣告標題 (在 **NativeAd** 物件的 [Title](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.title.aspx) 屬性中提供)。 提供可顯示至少 25 個字元的空間。 如果標題較長，以省略符號取代其他文字。
+1. 一律顯示原生廣告標題 (在 **Title** 屬性中提供)。 提供可顯示至少 25 個字元的空間。 如果標題較長，以省略符號取代其他文字。
 2. 一律顯示至少一個下列元素，協助區分原生廣告體驗和您應用程式的其餘部分，並明確呼叫廣告商提供的內容：
-  * 可區分的 *ad* 圖示 (於 **NativeAd** 物件的 [AdIcon](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.adicon.aspx) 屬性提供)。 此圖示由 Microsoft 提供。
-  * *贊助廠商*文字 (於 **NativeAd** 物件的 [SponsoredBy](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.sponsoredby.aspx) 屬性提供)。 此文字由廣告商提供。
-  * 另一個顯示*贊助廠商*文字的方法是由您選擇顯示某些其他文字，以協助區分原生廣告體驗和您應用程式的其餘部分，例如「贊助內容」、「促銷內容」、「建議內容」等。
+    * 可區分的*廣告*圖示 (在 **AdIcon** 屬性中提供)。 此圖示由 Microsoft 提供。
+    * *贊助廠商*文字 (在 **SponsoredBy** 屬性中提供)。 此文字由廣告商提供。
+    * 另一個顯示*贊助廠商*文字的方法是由您選擇顯示某些其他文字，以協助區分原生廣告體驗和您應用程式的其餘部分，例如「贊助內容」、「促銷內容」、「建議內容」等。
 
 ### <a name="user-experience"></a>使用者體驗
 
@@ -194,11 +195,11 @@ ms.locfileid: "1690804"
 
 ### <a name="description"></a>描述
 
-如果您選擇要顯示廣告的描述 (於 **NativeAd** 物件的 [Description](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.description.aspx)屬性提供)，請提供至少可顯示 75 個字元的空間。 我們建議您使用動畫來顯示廣告描述的完整內容。
+如果您選擇要顯示廣告的描述 (於 **NativeAdV2** 物件的 **Description**屬性提供)，請提供至少可顯示 75 個字元的空間。 我們建議您使用動畫來顯示廣告描述的完整內容。
 
 ### <a name="call-to-action"></a>喚起行動
 
-*喚起行動*文字 (於 **NativeAd**物件的 [CallToAction](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.calltoaction.aspx) 屬性提供) 是廣告的關鍵元件。 如果您選擇要顯示此文字，請依照下列指導方針操作︰
+*喚起行動*文字 (於 **NativeAdV2** 物件的 **CallToAction** 屬性提供) 是廣告的關鍵元件。 如果您選擇要顯示此文字，請依照下列指導方針操作︰
 
 * 一律在可點選控制項 (例如按鈕或超連結) 上顯示*喚起行動*文字給使用者。
 * 一律完整顯示*喚起行動*文字。

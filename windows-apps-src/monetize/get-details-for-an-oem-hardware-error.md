@@ -4,18 +4,18 @@ ms.assetid: 8425F704-8A03-493F-A3D2-8442E85FD835
 description: 在 Microsoft Store 分析 API 中使用此方法，以取得特定硬體錯誤的詳細資料。 這個方法僅供 OEM 使用。
 title: 取得 OEM 硬體錯誤的詳細資料
 ms.author: mcleans
-ms.date: 01/18/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 429ebc5237ce35baa6f9c3f31a25d480410d9c86
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: c4ac647559b71b7c8cf2724940e857fd99c557f5
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663208"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989552"
 ---
 # <a name="get-details-for-an-oem-hardware-error"></a>取得 OEM 硬體錯誤的詳細資料
 
@@ -47,12 +47,12 @@ ms.locfileid: "1663208"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | failureHash | 字串 | 您想要取得詳細資訊之錯誤的唯一識別碼。 若要取得您有興趣之錯誤的此值，請使用[取得 OEM 硬體錯誤報告資料](get-oem-hardware-error-reporting-data.md)方法，並並使用該方法回應主體中的 **failureHash** 值。 |  是  |
 | startDate | 日期 | 要擷取詳細錯誤資料之日期範圍的開始日期。 預設為目前日期的前 30 天。 |  否  |
@@ -80,11 +80,11 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 描述    |
+| 值      | 類型    | 說明    |
 |------------|---------|------------|
 | 值      | 陣列   | 包含詳細錯誤資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下表。          |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。        |
+| TotalCount | 整數 | 查詢之資料結果的資料列總數。        |
 
 
 *Value* 陣列中的元素包含下列值。
@@ -97,7 +97,7 @@ Authorization: Bearer <your access token>
 | failureHash     | 字串  | 錯誤的唯一識別碼。     |
 | osVersion       | 字串  | 發生錯誤之 OS 的四個部分組建版本。    |
 | market          | 字串  | 裝置市場的 ISO 3166 國家/地區碼。     |
-| deviceType      | 字串  | 下列其中一個字串，指定發生錯誤的裝置類型：<p/><ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>     |
+| deviceType      | 字串  | 下列其中一個字串，指定發生錯誤的裝置類型：<p/><ul><li><strong>電腦</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>     |
 | moduleName     | 字串  | 與此錯誤關聯之模組的唯一名稱。      |
 | moduleVersion  | 字串  | 與此錯誤關聯之模組的版本。   |
 | architecture | 字串 |  發生錯誤之裝置的架構。  |

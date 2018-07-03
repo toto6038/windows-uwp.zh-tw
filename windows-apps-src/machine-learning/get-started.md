@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、Windows 機器學習、winml、Windows ML
 ms.localizationpriority: medium
-ms.openlocfilehash: e30786f775a66bcf5c8e6dce0b4aab4f1f239be6
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: eec2ada8e3aadad134381a93bca2652133912b2e
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816583"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843621"
 ---
 # <a name="get-started-with-windows-ml"></a>開始使用 Windows ML。
 
@@ -22,10 +22,8 @@ ms.locfileid: "1816583"
 
 ## <a name="prerequisites"></a>必要條件
 
-- [Windows SDK - 組建 17110+](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)
-- [Visual Studio (版本 15.7 - 預覽版 1)](https://www.visualstudio.com/vs/preview/) 
-
-    **注意**：在 Visual Studio 安裝程式，您需要查看檢查選用的 Windows 10 預覽版 SDK (10.0.17110.0)。
+- [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) (組建 17110 或更高版本)
+- [Visual Studio](https://developer.microsoft.com/windows/downloads)
 
 ## <a name="1-download-the-sample"></a>1. 下載範例
 
@@ -69,7 +67,7 @@ ms.locfileid: "1816583"
 
 ## <a name="5-add-the-model"></a>5. 新增模型
 
-下載 MNIST 模型後，在方案總管中的資產資料夾按右鍵，然後選擇「**Add** > **Existing Item**」。 將檔案選擇器指向 ONNX 模型的位置，然後按一下新增。 
+下載 MNIST 模型後，在方案總管中的資產資料夾按右鍵，然後選擇「**Add** > **Existing Item**」。 將檔案選擇器指向 ONNX 模型的位置，然後按一下新增。
 
 該專案現在應該有兩個新的檔案：
 

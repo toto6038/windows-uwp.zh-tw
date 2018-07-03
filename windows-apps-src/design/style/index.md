@@ -1,9 +1,8 @@
 ---
-description: 透過「Windows 開發人員中心」UWP 樣式指南，了解如何使用色彩、印刷樣式和動作來定義您 UWP 應用程式的特質。
+description: 透過 UWP 樣式指南，了解如何使用色彩、印刷樣式和圖示來定義您的 UWP app 的特質。
 keywords: uwp 樣式指南, 設計指導方針, 印刷樣式, 動作, 音效, 動作, 應用程式開發
-title: UWP 樣式指南
+title: 適用於 UWP app 的樣式
 author: mijacobs
-layout: LandingPage
 ms.author: mijacobs
 ms.date: 08/10/2017
 ms.topic: article
@@ -11,134 +10,67 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
-ms.openlocfilehash: bc703dd76827ada708f9861b5772b2fce552e5bb
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: d1b9620907c3d5852db35d62f3d971031f3122c4
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652937"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842405"
 ---
 # <a name="style-for-uwp-apps"></a>適用於 UWP app 的樣式
 
-樣式可以讓您的應用程式脫穎而出。它是關於大膽的選擇、美學選擇和細微的裝飾。 樣式可以讓項目更美觀。 
+![主角圖像](images/header-style.svg)
 
-## <a name="style-and-the-fluent-design-system"></a>樣式和 Fluent Design 系統
+樣式可以讓您的應用程式脫穎而出，本節的樣式指導方針協助您透過色彩、印刷樣式以及壓克力材質和顯色醒目提示等新功能，來建立 Fluent Design。
 
-<p>Fluent 設計系統協助您建立結合光線、深度、動作、材質及縮放比例的現代化嶄新 UI。 本節的樣式指導方針協助您透過色彩、印刷樣式以及<a href="../style/acrylic.md">壓克力材質</a>和<a href="../style/reveal.md">顯色</a>等新功能，來建立 Fluent Design。 
-</p>
+::: 列:::::: 欄:::![主角圖像](images/header-color.svg)
+        ### [Color](color.md)
+        Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
+    :::column-end:::
+    :::column:::
+        ![hero image](images/header-typography.svg)
+        ### [Typography](typography.md)
+       As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. The following guidelines focus on how to use typography to help users understand content easily. 
+    :::column-end:::
+:::列結束:::
 
-## <a name="style-articles"></a>樣式文章
+::: 列:::::: 欄:::![主角圖像](images/header-icons.svg)
+        ### [Icons](icons.md)
+        Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
+    :::column-end:::
+    :::column:::
+        ![hero image](images/header-acrylic.svg)
+        ### [Acrylic](acrylic.md)
+        Create a sense of depth with acrylic, a brush that creates stunning, translucent surfaces.
+    :::column-end:::
+:::列結束:::
 
-<ul class="panelContent cardsH" style="margin-left: 1px">
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="acrylic.md">壓克力材質</a></h3>
-                        <p>使用壓克力建立深度感；壓克力是一種筆刷，可建立透明的表面。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="color.md">色彩</a></h3>
-                        <p>色彩可提供 app 直覺式尋找路徑方法，並做為強化互動模型的重要工具。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="icons.md">圖示</a></h3>
-                        <p>設計優良的圖示能與印刷格式以及其餘的設計語言協調搭配 它們不會混合使用隱喻，而且只會盡可能快速並簡單地溝通所需的內容。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="reveal.md">顯色顯目提示</a></h3>
-                        <p>使用光線照亮重要元素。 </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-     <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="reveal-focus.md">顯色焦點</a></h3>
-                        <p>使用光線來醒目提示目前的焦點項目。 </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="sound.md">音效</a></h3>
-                        <p>音效有助於讓應用程式的使用者體驗變完整，並提供他們額外的音訊銳度，以符合所有平台的 Windows 操作方式。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>  
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="typography.md">印刷樣式</a></h3>
-                        <p>如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 但是，印刷格式也具有配置元件的重要角色，不僅在設計的密度與複雜性方面具有強大的效果，對於該設計的使用者經驗，也是如此。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="writing-style.md">撰寫方式</a></h3>
-                        <p>正確的措辭可以對使用者體驗產生很大的影響。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>     
-    <li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3><a href="../controls-and-patterns/xaml-styles.md">設定控制項的樣式</a></h3>
-                        <p>您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>                     
-</ul>
+::: 列:::::: 欄:::![主角圖像](images/header-reveal-highlight.svg)
+        ### [Reveal highlight](reveal.md)
+        Use light to illuminate important elements.
+    :::column-end:::
+    :::column:::
+        ![hero image](images/header-reveal-focus.svg)
+        ### [Reveal focus](reveal-focus.md)
+        Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
+    :::column-end:::
+:::列結束:::
 
+::: 列:::::: 欄:::![主角圖像](images/header-sound.svg)
+        ### [Sound](sound.md)
+        Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
+    :::column-end:::
+    :::column:::
+        ![hero image](images/header-writing-style.gif)
+        ### [Writing style](writing-style.md)
+        Writing style can make a big difference between an awful user experience and a better one.
+    :::column-end:::
+:::列結束:::
 
-
+:::列::: :::欄:::
+        ### [XAML styles](../controls-and-patterns/xaml-styles.md)
+        You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::列結束:::

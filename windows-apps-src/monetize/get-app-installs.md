@@ -4,25 +4,25 @@ ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總安裝資料。
 title: 取得 App 安裝
 ms.author: mcleans
-ms.date: 03/17/2017
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式安裝數
 ms.localizationpriority: medium
-ms.openlocfilehash: 162678fef3b431483a36d1de89c7adf2811b8d9f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: fe2e9a012a094a5eeb5bc60510fc8fb115c57fb0
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663328"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1975970"
 ---
 # <a name="get-app-installs"></a>取得 App 安裝
 
 
-在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總安裝資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[安裝報告](../publish/installs-report.md)也有提供這項資訊。
+在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總安裝資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[下載數報告](../publish/acquisitions-report.md)也有提供這項資訊。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 
 若要使用這個方法，您必須先進行下列動作：
@@ -44,12 +44,12 @@ ms.locfileid: "1663328"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取安裝資料之應用程式的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | startDate | 日期 | 要擷取安裝資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -79,7 +79,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 描述                  |
+| 值      | 類型   | 說明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | 陣列  | 內含彙總安裝資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下表。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的安裝資料，就會傳回此值。 |
@@ -95,7 +95,7 @@ Authorization: Bearer <your access token>
 | applicationName     | 字串 | App 的顯示名稱。     |
 | deviceType          | 字串 | 下列其中一個字串，指定完成安裝的裝置類型：<p/><ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | packageVersion           | 字串 | 已安裝的套件版本。  |
-| osVersion           | 字串 | 下列其中一個字串，指定發生安裝所在的作業系統版本：<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>   |
+| osVersion           | 字串 | 下列其中一個字串，指定發生安裝所在的作業系統版本：<p/><ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>   |
 | market              | 字串 | 發生安裝之市場的 ISO 3166 國家/地區碼。    |
 | successfulInstallCount | 數字 | 指定彙總層級期間發生的成功安裝數目。     |
 

@@ -9,19 +9,19 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ceb698bfbe95693ff9d5785b4bea94f1ec3070c
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 7b263fda1de798473f581e2191d3fa01385060e6
+ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675375"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1893843"
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 
@@ -255,8 +255,7 @@ private async void DisplaySubscribeDialog()
 <ul>
     <li>
         <p>一般而言，確認按鈕應放在左邊 (主要按鈕)，取消按鈕 (次要按鈕) 應放在右邊。</p>
-         ![確定/取消對話方塊](images/dialogs/dialog_RS2_delete_file.png)
-
+        <img alt="An OK/cancel dialog" src="images/dialogs/dialog_RS2_delete_file.png" />
     </li>
     <li>如一般建議一節所述，將按鈕與可識別針對主要指示或內容做出明確回應的文字搭配使用。
     </li>

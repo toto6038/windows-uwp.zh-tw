@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Test your app for Windows 10 S without having to install Windows 10 S.
+Description: Test your app for Windows 10 in S mode.
 Search.Product: eADQiWindows 10XVcnh
 title: 針對 Windows 10 S 測試您的 Windows 應用程式
 ms.author: normesta
@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5810789ab2457ed14964a61bf278c84e7deb416
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 69cceb86710cea0e9066454fba4ef4e1746633d1
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662708"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874316"
 ---
-# <a name="test-your-windows-app-for-windows-10-s"></a>針對 Windows 10 S 測試您的 Windows 應用程式
+# <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>針對 Windows 10 S 模式測試您的 Windows 應用程式
 
-您可以測試您的 Windows 應用程式，以確保它可在執行 Windows 10 S 的裝置上正常運作。事實上，如果您計畫在 Microsoft Store 發行應用程式，則必須執行此步驟，因為這是 Microsoft Store 需求。 若要測試您的應用程式，您可以在執行 Windows 10 專業版的裝置上套用 Device Guard 程式碼完整性原則。
+您可以測試您的 Windows 應用程式，以確定此應用程式會在執行 Windows S 模式的裝置上正常運作。 事實上，如果要將應用程式發行至 Microsoft Store，您必須執行此動作，因為它是 Microsoft Store 的要求。 若要測試您的應用程式，您可以在執行 Windows 10 專業版的裝置上套用 Device Guard 程式碼完整性原則。
 
 > [!NOTE]
 > 套用 Device Guard 程式碼完整性原則的裝置必須執行 Windows 10 Creators 版本 (10.0；組建 15063) 或更新版本。
@@ -39,8 +39,8 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 
 |原則 |強制執行 |簽署憑證 |檔案名稱 |
 |--|--|--|--|
-|稽核模式原則 |記錄檔問題/沒有封鎖 |Microsoft Store |SiPolicy_Audit.p7b |
-|運作模式原則 |是 |Microsoft Store |SiPolicy_Enforced.p7b |
+|稽核模式原則 |記錄檔問題/沒有封鎖 |市集 |SiPolicy_Audit.p7b |
+|運作模式原則 |是 |市集 |SiPolicy_Enforced.p7b |
 |帶有自我簽署應用程式的運作模式原則 |是 |AppX 測試憑證  |SiPolicy_DevModeEx_Enforced.p7b |
 
 我們建議您從稽核模式原則開始。 您可以檢閱程式碼完整性事件記錄檔，並使用該資訊協助您調整您的應用程式。 然後，當您準備好進行最後一項測試時，套用運作模式原則。
@@ -70,7 +70,7 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 這項原則會執行符合 Windows 10 S 的程式碼完整性規則，讓您可以模擬執行 Windows 10 S。由於這是最嚴格的原則，因此相當適合用於最終運作測試。 在此模式下，您的應用程式會受到與使用者裝置上相同的規則限制。 若要使用此模式，您的應用程式必須先經 Microsoft Store 簽署。
 
 ### <a name="production-mode-policy-with-self-signed-apps"></a>帶有自我簽署應用程式的運作模式原則
-此模式與運作模式原則相似，但它允許經由包含在 zip 檔案中之測試憑證簽署過的應用程式執行。 安裝包含在此 zip 檔案中 **AppxTestRootAgency** 資料夾下的 PFX 檔案。 然後，使用它登入您的應用程式。 如此一來，您可以快速的逐一查看，而不需要Microsoft Store的簽署。
+此模式與運作模式原則相似，但它允許經由包含在 zip 檔案中之測試憑證簽署過的應用程式執行。 安裝包含在此 zip 檔案中 **AppxTestRootAgency** 資料夾下的 PFX 檔案。 然後，使用它登入您的應用程式。 如此一來，您可以快速的逐一查看，而不需要市集的簽署。
 
 因為您憑證的發行者名稱必須符合您應用程式的發行者名稱，因此必須將 **Identity** 元素 **Publisher** 屬性的值暫時變更為「CN=Appx Test Root Agency Ex」。 測試完成之後，可以將該屬性變更回其原始值。
 
@@ -80,7 +80,7 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 
 若您想要將這些項原則套用至您的本機電腦，建議您最好先從稽核模式原則開始。 透過使用這項原則，您可以檢閱程式碼完整性事件記錄檔，以確保強制執行原則不會封鎖任何重要的項目。
 
-當您準備好要套用原則之後，尋找您選擇之原則的 .P7B 檔案，將它重新命名為 **SIPolicy.P7B**，然後將該檔案儲存到您系統上的這個位置：**C:\Windows\System32\CodeIntegrity\**。
+當您準備好要套用原則之後，尋找您選擇之原則的 .P7B 檔案，將它重新命名為 **SIPolicy.P7B**，然後將該檔案儲存到您系統上的這個位置：**C:\Windows\System32\CodeIntegrity\\**。
 
 然後，請重新啟動您的系統。
 
@@ -101,6 +101,6 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 
 請參閱[使用傳統型橋接器在 Windows 10 S 上移植並測試您的傳統桌面應用程式](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/) (英文)。
 
-**深入了解可讓您輕鬆測試 Windows S 的工具**
+**深入了解可讓您輕鬆測試 Windows S 模式的工具**
 
 請參閱[解除封裝、修改、重新封裝、簽署 APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/) (英文)。

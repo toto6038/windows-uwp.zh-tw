@@ -1,21 +1,21 @@
 ---
-author: GrantMeStrength
+author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 開始設定
 description: 開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
-ms.author: jken
-ms.date: 03/06/2017
+ms.author: quradic
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: high
-ms.openlocfilehash: ac918fac5d2733a39f3f5d9a469105c61328a676
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 86603443aefe08ddf684e4dc8a2df8541074e0b4
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817669"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935658"
 ---
 # <a name="get-set-up"></a>開始設定
 
@@ -56,20 +56,22 @@ Microsoft Visual Studio 2017 可協助您設計、撰寫、測試和偵錯您的
 
 ## <a name="whats-next"></a>接下來要做什麼？
 
-安裝工具並啟用您的裝置以進行開發之後，請使用我們的教學課程建立您的第一個應用程式：
+您安裝工具並啟用裝置進行開發之後，請查看有關如何開始建立 Windows 10 應用程式的指導方針。
 
--   [建立您的第一個應用程式](your-first-app.md)教學課程
+-   [開始程式設計](create-uwp-apps.md)
+
+## <a name="windows-development-setup-scripts"></a>Windows 開發設定指令碼
+
+如果您想要自訂您的裝置並安裝其他功能或套件，請查看此專案的系統設定指令碼。
+
+- [開發人員設定指令碼](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>想要更多工具和下載？
 
 如需工具和下載的完整清單，請參閱[下載](http://go.microsoft.com/fwlink/p/?linkid=285935)。
 
+## <a name="see-also"></a>請參閱
 
-## <a name="see-also"></a>另請參閱
-
-* [建立 UWP app](create-uwp-apps.md)
-* [發佈您的 UWP app](https://developer.microsoft.com/store/publish-apps)。
-* [開發 UWP app 的操作說明文章](https://developer.microsoft.com/windows/apps/develop)
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 UWP app？](universal-application-platform-guide.md)
 * [註冊 Windows 帳戶](sign-up.md)

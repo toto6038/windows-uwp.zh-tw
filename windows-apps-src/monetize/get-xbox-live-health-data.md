@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法取得 Xbox Live 健康情況資料。
 title: 取得 Xbox Live 健康情況資料
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、健康情況、用戶端錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 21964063449eb226d5f2f0feb9900fed13039c53
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 2882ea7759068777d1a8816e3833cbd8c6325c8a
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816623"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976253"
 ---
 # <a name="get-xbox-live-health-data"></a>取得 Xbox Live 健康情況資料
 
@@ -22,7 +22,7 @@ ms.locfileid: "1816623"
 在 Microsoft Store 分析 API 中使用此方法取得[已啟用 Xbox Live 遊戲](../xbox-live/index.md) 的健康情況資料。 「Windows 開發人員中心」儀表板中的 [Xbox 分析報告](../publish/xbox-analytics-report.md)也有提供這項資訊。
 
 > [!IMPORTANT]
-> 此方法目前只支援由 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners) 發行或透過 [ID@Xbox 程式](../xbox-live/developer-program-overview.md#id) 提交的支援 Xbox Live 的遊戲。 它不會傳回透過 [Xbox Live 創作者計畫](../xbox-live/developer-program-overview.md#xbox-live-creators-program) 提交的遊戲的資料。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過 [ [ID@Xbox程式](../xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -51,7 +51,7 @@ ms.locfileid: "1816623"
 ### <a name="request-parameters"></a>要求參數
 
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取 Xbox Live 健康情況資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **callingpattern**值。  |  是  |
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>回應
 
-| 數值      | 類型   | 描述                  |
+| 值      | 類型   | 說明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | 陣列  | 包含健康情況資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下表。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢有超過 10000 個資料列，就會傳回此值。 |

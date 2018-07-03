@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 564f59dfd7b27e3ece1aa6811ac667cd438aae68
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
+ms.openlocfilehash: c043b20cb00873bf115ff2d65306bc727d23a02a
+ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488952"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1877220"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
 
@@ -55,10 +55,9 @@ ms.locfileid: "1488952"
 
 ![進行中的遊戲範例](images/simple-dx-game-overview.png)
 
-
 | 主題 | 說明 |
-|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md) | 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 使用正確的範本並設定專用於遊戲開發的專案，可以為您節省很多時間和麻煩。 我們會逐步引導您如何準備和設定簡單的遊戲專案。 |
+|-------|-------------|
+|[設定遊戲專案](tutorial--setting-up-the-games-infrastructure.md) | 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。 使用正確的範本並設定專用於遊戲開發的專案，可以為您節省很多時間和麻煩。 我們會逐步引導您如何準備和設定簡單的遊戲專案。 |
 | [定義遊戲的 UWP app 架構](tutorial--building-the-games-uwp-app-framework.md) | 建置一個可讓 UWP DirectX 遊戲物件與 Windows 互動的架構。 這包括下列 Windows 執行階段屬性：暫停/繼續事件處理、視窗焦點以及貼齊。  |
 | [管理遊戲流程](tutorial-game-flow-management.md) | 定義高階狀態電腦，讓玩家與系統互動。 了解 UI 如何與整體遊戲的狀態電腦互動，以及如何建立 UWP 遊戲事件處理常式。 |
 | [定義主要遊戲物件](tutorial--defining-the-main-game-loop.md) | 定義遊戲如何透過建立規則來進行。 |
@@ -68,12 +67,3 @@ ms.locfileid: "1488952"
 | [新增控制項](tutorial--adding-controls.md) | 新增移動視角控制項到遊戲&mdash;基本觸控、滑鼠及遊戲控制器控制項。 |
 | [新增音效](tutorial--adding-sound.md) | 了解如何使用 [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) API 建立遊戲的音效。 |
 | [延伸遊戲範例](tutorial-resources.md) | 使您進一步擁有 DirectX 遊戲開發的知識的資源，包括使用 XAML 建立重疊。 |
- 
-
- 
-
- 
-
-
-
-

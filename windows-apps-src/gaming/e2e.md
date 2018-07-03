@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: de899d95e25489fa815f099d696752389cc3f94e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: b351b5072c6bba228d81a65b51656a81bd564daf
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817449"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862257"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 遊戲開發指南
 
@@ -93,12 +93,12 @@ ms.locfileid: "1817449"
         <td><a href="../xbox-live/index.md">Xbox Live 開發人員指南</a></td>
     </tr>
     <tr>
-        <td>Xbox One 開發人員文件 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/documentation/Pages/home.aspx">Xbox One XDK 文件</a></td>
+        <td>Xbox One 開發文件 (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-home">Xbox One 開發</a></td>
     </tr>
     <tr>
-        <td>Xbox One 開發人員白皮書 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/WhitePapers.aspx">白皮書</a></td>
+        <td>Xbox One 開發白皮書 (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-whitepapers">白皮書</a></td>
     </tr>
     <tr>
         <td>Mixer Interactive 文件</td>
@@ -133,7 +133,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
 
 您可以只使用零售硬體在創作者計畫中部署、設計和發佈您的遊戲，不需要專用的開發套件。 若要開始使用，請在您的 Xbox 在One 上下載[啟用開發人員模式 App](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation)。
 
-如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One Microsoft Store 的推薦，您可以申請加入 [ID@Xbox](http://www.xbox.com/Developers/id) 計畫。
+如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](http://www.xbox.com/Developers/id) 計畫。
 
 <table>
     <colgroup>
@@ -227,8 +227,8 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td><a href="https://github.com/Microsoft/xbox-live-samples">xbox-live-samples</a></td>
     </tr>
     <tr>
-        <td>Xbox One 遊戲範例 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx">範例</a></td>
+        <td>Xbox One 遊戲範例 (XGD)</td>
+        <td><a href="https://developer.microsoft.com/games/xbox/partner/development-education-samples">範例</a></td>
     </tr>
     <tr>
         <td>Windows 遊戲範例 (MSDN Code Gallery)</td>
@@ -260,7 +260,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </colgroup>
     <tr>
         <td>Windows 應用程式開發人員論壇</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Microsoft Store 與應用程式論壇</a></td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Windows 市集與應用程式論壇</a></td>
     </tr>
     <tr>
         <td>UWP app 開發人員論壇</td>
@@ -1604,7 +1604,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>以合作廠商開發人員的身分封裝您的遊戲 (部落格文章)</td>
-        <td><a href="https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/">在沒有發行人員的 Microsoft Store 帳戶存取權之下建立可上傳的套件</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/">在沒有發行人員的市集帳戶存取權之下建立可上傳的套件</a></td>
     </tr>
     <tr>
         <td>使用 MakeAppx 建立應用程式套件和應用程式套件組合</td>
@@ -1645,9 +1645,9 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 </table>
  
 
-### <a name="store-manifest-storemanifestxml"></a>Microsoft Store 資訊清單 (StoreManifest.xml)
+### <a name="store-manifest-storemanifestxml"></a>市集資訊清單 (StoreManifest.xml)
 
-Microsoft Store 資訊清單 (StoreManifest.xml) 是一個選用的組態檔，可以包含在您的應用程式套件中。 Microsoft Store 資訊清單提供不屬於 AppxManifest.xml 檔案一部分的額外功能。 例如，您可以使用 Microsoft Store 資訊清單，在目標裝置不具備指定的最低 DirectX 功能層級或指定的最低系統記憶體時，阻止安裝您的遊戲。
+市集資訊清單 (StoreManifest.xml) 是一個選用的組態檔，可以包含在您的應用程式套件中。 市集資訊清單提供不屬於 AppxManifest.xml 檔案一部分的額外功能。 例如，您可以使用市集資訊清單，在目標裝置不具備指定的最低 DirectX 功能層級或指定的最低系統記憶體時，阻止安裝您的遊戲。
 
 <table>
     <colgroup>
@@ -1655,7 +1655,7 @@ Microsoft Store 資訊清單 (StoreManifest.xml) 是一個選用的組態檔，�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Microsoft Store 資訊清單結構描述</td>
+        <td>市集資訊清單結構描述</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt617335">StoreManifest 結構描述 (Windows10)</a></td>
     </tr>
 </table>
@@ -1711,7 +1711,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
     </tr>
     <tr>
         <td>在 Windows 應用程式中啟用 Application Insights</td>
-        <td><a href="https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/">適用於 Windows Phone 與 Microsoft Store 應用程式的 Application Insights</a></td>
+        <td><a href="https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/">適用於 Windows Phone 與市集應用程式的 Application Insights</a></td>
     </tr>
 </table>
 

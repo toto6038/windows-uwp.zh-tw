@@ -1,29 +1,35 @@
 ---
 author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: 了解在提交 app 到 Microsoft Store 之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。
+description: 了解在提交 app 到市集之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。
 title: 在您的應用程式中設定廣告單元
 ms.author: mcleans
-ms.date: 10/04/2017
+ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, 廣告單元, 測試
 ms.localizationpriority: medium
-ms.openlocfilehash: 6473d571ed44f60f8001b8a565d70c58d43407d1
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 978f0599ec783b5dcfade82b97c92d1dec9fb541
+ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654657"
+ms.lasthandoff: 05/14/2018
+ms.locfileid: "1880949"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在您的應用程式中設定廣告單元
 
-通用 Windows 平台 (UWP) app 中的每個控制項都有對應的*廣告單元*，是由我們的服務用來提供廣告給控制項。 每個廣告單元包含*廣告單元識別碼*和*應用程式識別碼*，您必須將其指派給應用程式中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 或 [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx)。
+通用 Windows 平台 (UWP) app 中的每個控制項都有對應的*廣告單元*，是由我們的服務用來提供廣告給控制項。 每個廣告單元包含*廣告單元識別碼*和*應用程式識別碼*，您必須將其指派給應用程式中的程式碼。
 
 我們提供[測試廣告單元值](#test-ad-units)，您可以在測試期間用來確認您的應用程式可以顯示測試廣告。 這些測試值只能在您應用程式的測試版本中使用。 如果您嘗試在應用程式發佈後使用測試值，您的實際應用程式將不會收到廣告。
 
 完成測試 UWP app 且準備好提交至 Windows 開發人員中心時，您必須從 Windows 開發人員中心儀表板的 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面[建立即時廣告單元](#live-ad-units)，然後更新您的 App 程式碼來使用此廣告單元的應用程式識別碼和廣告單元識別碼值。
+
+如需有關在您的應用程式程式碼中指派應用程式識別碼和廣告單元識別碼值，請參閱下列文件：
+* [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
+* [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
+* [插播式廣告](../monetize/interstitial-ads.md)
+* [原生廣告](../monetize/native-ads.md)
 
 <span id="test-ad-units" />
 
@@ -58,13 +64,11 @@ ms.locfileid: "1654657"
     > [!NOTE]
     > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在儀表板中建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式的 Microsoft Store 識別碼 (Microsoft Store 識別碼值範例類似於 9NBLGGH4R315)。
 
-3.  在您的應用程式代碼中，指派**應用程式識別碼**和**廣告單元識別碼**值：
-
-    * 如果您的 App 顯示橫幅廣告，請將這些值指派給 [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) 物件的 [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) 和 [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) 屬性。 如需詳細資訊，請參閱 [XAML 和 .NET 中的 AdControl](../monetize/adcontrol-in-xaml-and--net.md) 和 [HTML 5 和 JavaScript 中的 AdControl](../monetize/adcontrol-in-html-5-and-javascript.md)。
-
-    * 如果您的 App 顯示插播式廣告，請將這些值傳遞給 [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) 物件的 [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) 方法。 如需詳細資訊，請參閱[插播式廣告](../monetize/interstitial-ads.md)。
-
-    * 如果您的 app 顯示原生廣告，請將這些值指派給 [NativeAdsManager](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativeadsmanager.nativeadsmanager.aspx) 建構函式的 *applicationId* 和 *adUnitId* 參數。 如需詳細資訊，請參閱[原生廣告](../monetize/native-ads.md)。
+3.  在您的應用程式代碼中，指派應用程式識別碼和廣告單元識別碼值。 如需詳細資訊，請參閱下列文章：
+    * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
+    * [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)
+    * [插播式廣告](../monetize/interstitial-ads.md)
+    * [原生廣告](../monetize/native-ads.md)
 
 <span id="manage" />
 

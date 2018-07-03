@@ -14,12 +14,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ade5f867a71019fb02818c7441d833f1a6c31b2
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 051d3d5251a135dcb1a41e1cd005f462fb074c3b
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707309"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983635"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -498,7 +498,7 @@ protected override void OnProcessKeyboardAccelerators(
 <Button x:Uid="myButton" Click="OnSave">
   <Button.KeyboardAccelerators>
     <KeyboardAccelerator x:Uid="myKeyAccelerator" Modifiers="Control"/>
-  </Button.KeyAccelerators>
+  </Button.KeyboardAccelerators>
 </Button>
 ```
 

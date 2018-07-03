@@ -4,18 +4,18 @@ ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: 使用「Microsoft Store 促銷 API」，以程式設計方式管理登錄到您或您組織的 Windows 開發人員中心帳戶的應用程式促銷廣告行銷活動。
 title: 使用Microsoft Store 服務執行廣告行銷活動
 ms.author: mcleans
-ms.date: 02/08/2017
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: dd90b970a126495d7a1035256f4bdd219aee9ee5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 45869b96d17fa51fbdf22e417c7e7f43a8c90a9b
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655280"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976223"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用Microsoft Store 服務執行廣告行銷活動
 
@@ -48,11 +48,11 @@ ms.locfileid: "1655280"
 
 將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯並擷取需要的值：
 
-1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，[將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
+1.  在開發人員中心，[將組織的開發人員中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來管理開發人員中心帳戶促銷廣告行銷活動之應用程式或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增 Azure AD 應用程式至開發人員中心帳戶](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
+2.  接著，從開發人員中心**\[帳戶設定\]** 區段的**\[使用者\]** 頁面，[新增 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account)代表您將用來管理開發人員中心帳戶促銷活動之應用程式或服務。 請確定您指派此應用程式 **[管理員]** 角色。 如果應用程式尚未存在於您的 Azure AD 目錄，您可以[在開發人員中心建立新的 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account)。 
 
-3.  返回 **\[管理使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
+3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
 4. 按一下 **\[加入新的金鑰\]**。 在下列畫面中，複製 **\[金鑰\]** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 

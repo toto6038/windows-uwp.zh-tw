@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, directx, 載入資源
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cd2ca426f5a73a6cf8953ab599f8a7332be43a4
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655610"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983551"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 遊戲中載入資源
 
 
 
-大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。 本文會引導您了解在通用 Windows 平台 (UWP) 遊戲中載入這些檔案來使用時必須考量的整體事項。
+大多數的遊戲會在某個時間點從本機存放區或一些其他資料串流中載入資源和資產 (如著色器、紋理、預先定義的網格或其他圖形資料)。 本文會引導您了解在 DirectX C/C++ 通用 Windows 平台 (UWP) 遊戲中載入這些檔案來使用時必須考量的整體事項。
 
 例如，您可能使用另一種工具建立遊戲中多邊形物件的網格，然後再以特定格式匯出。 紋理也是一樣 (甚至更是如此)：雖然通常可以使用大多數的工具來撰寫多數圖形 API 都能辨識的一般未壓縮點陣圖，但是用在遊戲中卻非常沒有效率。 本文說明載入下列三種不同類型的圖形資源以搭配 Direct3D 使用時的基本步驟：網格 (模型)、紋理 (點陣圖) 及編譯的著色器物件。
 

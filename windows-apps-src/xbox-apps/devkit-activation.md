@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cce355ab6f571f932d9dc10a1b185821118266c
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: a6442857f8d7914ab423c0981ae97598084f0068
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690314"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862840"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>啟用 Xbox One 開發人員模式
 
@@ -61,9 +61,9 @@ Xbox One 有兩種模式，*零售*模式 (**1**) 和*開發人員*模式 (**2**
 ## <a name="switch-between-retail-and-developer-mode"></a>在零售和開發人員模式之間切換
 當開發人員模式已在您的主機上啟用之後，請使用 **\[開發人員首頁\]** 來在零售模式和開發人員模式之間切換。 如需深入了解啟動並使用 [開發人員首頁] 的方式，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。
 
-* 若要切換至零售模式，請開啟**\[開發人員首頁\]**，瀏覽至**\[設定\]** 索引標籤。在**\[主機設定\]**，選取**\[離開開發人員模式\]**。 這會將您的主機重新啟動為零售模式。    
+* 若要切換至零售模式，請開啟**開發人員首頁**。 在 **/[快速控制項目/]** 下，選取 **/[離開開發人員模式/]**。 這會將您的主機重新啟動為零售模式。    
 
-  ![啟用步驟 13](images/activation-step-13-rs2.png)  
+  ![啟用步驟 13](images/activation-step-13-rs4.png)  
   
 * 如需切換至開發人員模式，請使用「啟用開發人員模式」App。 開啟 app 並選取 **\[切換並重新啟動\]**。 這會將您的主機重新啟動為開發人員模式。  
 

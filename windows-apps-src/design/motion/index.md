@@ -15,107 +15,65 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1423aeff139758c780dcecb079141744931cdd7b
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: ffe26e949be254e85d28dde4a98a1730baa84a3e
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816533"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843481"
 ---
 # <a name="motion-for-uwp-apps"></a>適用於 UWP app 的動作
 
-有意義且精心設計的動作會讓應用程式更有生氣和活力。 動作可協助使用者了解內容的變更，以及他們在您應用程式瀏覽階層中的位置。 它讓使用體驗與視覺轉換結合在一起。 動作讓體驗增加了速度感與立體感。
+![主角圖像](images/header-motion2.svg)
 
-## <a name="benefits-of-motion"></a>動作優點
+Fluent 動作在您的 App 中可以起作用。 它根據使用者的行為提供智慧的意見反應、保持 UI 充滿生氣，以及引導使用者導覽您的 App。 Fluent 動作在使用者及其數位體驗間引發感情的聯繫。 我們以使用者已經從實際的世界理解的自然移動為基礎來建置，並從那裡延伸我們的系統。
 
-動作不只是讓物品移動。 動作是一個用來為使用者建立實體生態系統的工具，以讓使用者沈浸其中，並透過滑鼠、鍵盤、觸控及手寫筆等各種輸入方式進行操縱。 體驗的品質高低依應用程式如何回應使用者及 UI 的通訊特質種類而定。
+## <a name="fluent-motion-principles"></a>Fluent 動作原則
 
-確保動作在您的應用程式中可以起作用。 最佳的通用 Windows 平台 (UWP) 應用程式會使用動作讓 UI 表現得活靈活現。 動作應︰
+### <a name="physical"></a>實體
 
-- 基於使用者的行為提供回饋。
-- 教導使用者如何與 UI 互動。
-- 指示如何瀏覽到之前或之後的檢視。
+動作中的物件展示物體在現實世界中的行為。 流暢並有回應的動作能為體驗帶來自然的感覺，並建立情感的連結和增加個性。
 
-隨著使用者在應用程式內花費的時間越來越多，或者應用程式中的工作變得越來越複雜，高品質的動作變得越來越重要：因為它可以用來改變使用者對其認知負載和應用程式易用性的看法。 動作有許多其他直接益處：
+![實體動作的 UI 範例](images/Physical.gif)
+> 當您透過觸控式與 UI 互動時，UI 的移動直接與互動的速度相關。 因為觸控是直接操縱，您與之互動的物件會影響其周圍的物件。
 
-- **動作支援互勳和尋找路徑方法。**
+### <a name="functional"></a>功能性
 
-    動作是有方向性的：它會向前和向後移動，移出和移入內容，留下關於使用者如何到達目前檢視的心理「瀏覽軌跡」提示。 轉換可以透過類似使用者已經熟悉的工作來協助其了解如何操作新應用程式。
+動作具有目的和信念。 它會引導使用者面對複雜性，並協助建立階層。 移動提供增強的效能廣告曝光，並藉由隱藏認知的延遲來最佳化使用者體驗。
 
-- **動作可讓人產生性能增強的印象。**
+![功能性動作的 UI 範例](images/functional.gif)
+> 頁面轉換是特殊用途。 它們提供網頁如何彼此相關的提示。 它們移動的方式即使在效能不是最佳時也被視為快速。
 
-    當網路速度緩慢或系統暫停工作時，動畫可以讓使用者感覺等待的時間較短。 動畫可以用來讓使用者知道應用程式正在運作，而不是靜止不動，而且可以被動顯示使用者可能感興趣的新資訊。
+### <a name="continuous"></a>連續
 
-- **動作可增添個性。**
+Fluid 會從點到點移動自然地繪製眼睛並引導使用者。 它會精細地將使用者的工作拼接在一起，讓它感覺更易使用和友善。
 
-    動作通常是常見的執行緒，可在使用者體驗時傳達您應用程式的個性。
+![連續動作的 UI 範例](images/continuous3.gif)
+> 物件可以從場景到場景移動或在場景中轉化，以提供連續性並協助使用者呼應場景。
 
-- **動作可增添雅致。**
+### <a name="contextual"></a>前後呼應
 
-    流暢並有回應，動作能為體驗帶來自然的感覺，並建立情感的連結。
+智慧型動作提供回饋給使用者，與其操作 UI 的方式一致。 互動是以使用者為中心。 移動適合外形規格並圍繞場景進行設計。 應該是每一位使用者都感覺舒適。
 
-## <a name="examples-of-motion"></a>動作範例
+![前後呼應動作的 UI 範例](images/Contextual.gif)
+> 動畫應該繫結到使用者的互動。 特色選單是從使用者啟用它的點部署。 
 
-以下為一些應用程式中的動作範例。
+## <a name="motion-articles"></a>動作文章
 
-在此，應用程式使用連接動畫讓項目有動畫效果，因為它會「持續」成為下一頁標題的一部分。 此效果可幫助使用者在轉換之間維持脈絡。
-
-![連接動畫](images/connected-animations/example.gif)
-
-在此，視覺視差效果會在 UI 捲動或平移時以不同的速率移動不同的物件，以產生深度、透視和移動的感覺。
-
-![一個帶有背景影像和清單的視差範例](images/_Parallax_v2.gif)
-
-
-## <a name="types-of-motion"></a>動作類型
-
-<table>
-    <tr>
-        <th align="left">動作類型</th>
-        <th align="left">描述</th>
-    </tr>
-    <tr>
-        <td><a href="motion-list.md">新增和刪除</a>
-        </td>
-        <td>清單動畫可讓您從集合 (如相簿或搜尋結果清單) 中插入或移除單個或多個項目。
-        </td>
-    </tr>
-    <tr>
-        <td><a href="connected-animation.md">連接動畫</a>
-        </td>
-        <td>連接動畫可讓兩個不同檢視之間元素的轉換有動畫效果，而產生動態且迷人的瀏覽體驗。 這可幫助使用者能夠在檢視之間保持其脈絡並連續性。 在連接動畫中，當 UI 內容變更期間元素在兩個檢視之間看起來是「連續的」，從其來源檢視中的位置飛過畫面到其新檢視中的目的地。 這可強調檢視之間的通用內容，並在轉換時創造美麗且動態的效果。 
-        </td>
-    </tr>
-    <tr>
-        <td><a href="content-transition-animations.md">內容轉換</a>
-        </td>
-        <td>內容轉換動畫可讓您變更畫面中區域的內容，同時保持容器或背景不變。 新的內容會淡入。 如果需要取代現有內容，該內容會淡出。 </td>
-    </tr>
-    <tr>
-        <td><a href="motion-fade.md">淡化</a>
-        </td>
-        <td>使用淡化動畫將項目帶入檢視或帶出檢視。 兩個常見的淡化動畫會淡入和淡出。 </td>
-    </tr>
-    <tr>
-        <td><a href="page-transitions.md">頁面轉換</a>
-        </td>
-        <td>使用者在應用程式裡的頁面間瀏覽，頁面轉換提供回饋做為頁面間的關係。
-        </td>
-    </tr>
-    <tr>
-        <td><a href="parallax.md">視差</a>
-        </td>
-        <td>視覺視差效果可幫助建立深度、透視和移動的感覺。 這是透過在 UI 捲動或平移時以不同的速率移動不同的物件來達成此效果。
-        </td>
-    </tr> 
-    <tr>
-        <td><a href="motion-pointer.md">按下回饋</a>
-        </td>
-        <td>指標按下動畫為使用者提供在項目上點選時的視覺化回饋。 第一次點選項目時，會播放稍微縮小並傾斜已按下項目的指標向下動畫。 當使用者放開指標時，則會播放將項目還原至其原始位置的指標向上動畫。
-        </td>
-    </tr>
-</table>
-
-## <a name="animations-in-xaml"></a>XAML 中的動畫
-
-若要深入了解如何使用 XAML 的內建動畫或建立您自己的動畫，請參閱 [XAML 的動畫](xaml-animation.md)。 
+:::列::: :::欄:::
+        ### [Timing and easing](timing-and-easing.md)
+        Timing and easing are important elements that make motion feel natural for objects entering, exiting, or moving within the UI.
+    :::column-end:::
+    :::column:::
+        ### [Directionality and gravity](directionality-and-gravity.md)
+        Directional signals help provide a solid mental model of the journey a user takes across experiences. Directional movement is subject to forces like gravity, which reinforces the natural feel of the movement.
+    :::column-end:::
+:::列結束::: :::列::: :::欄:::
+        ### [Page transitions](page-transitions.md)
+        Page transitions navigate users between pages in an app, providing feedback about the relationship between pages. They help users understand where they are in the navigation hierarchy.
+    :::column-end:::
+    :::column:::
+        ### [Connected animation](connected-animation.md)
+        Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
+    :::column-end:::
+:::列結束:::

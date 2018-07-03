@@ -13,17 +13,25 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3713d74edd93f437726c04dd68b604cb8a22da8f
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: da1248937d8f7d1a5a1da27e376690cde2ac7ef6
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1392427"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842848"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 
-通用 Windows 平台 (UWP) 應用程式現在支援遊戲台與遙控器輸入。 遊戲台與遙控器是 Xbox 和 TV 體驗的主要輸入裝置。 UWP 應用程式應該針對這些輸入裝置類型進行最佳化，就像針對電腦上的鍵盤與滑鼠輸入以及針對手機和平板電腦上的觸控輸入一樣。 確定您的應用程式可使用這些輸入裝置順暢運作，是最佳化 Xbox 和 TV的最重要步驟。
-您現在可以在電腦上插入並使用遊戲台與 UWP 應用程式，這樣可輕鬆地驗證工作。
+![遠端與方向鍵](images/dpad-remote/dpad-remote.png)
+
+通用 Windows 平台(UWP) 應用程式現在支援遊戲台和遙控器輸入，其為 Xbox 和電視的主要輸入裝置。
+
+UWP 應用程式應該針對這些輸入裝置類型進行最佳化，就像針對電腦上的鍵盤與滑鼠輸入以及針對手機和平板電腦上的觸控輸入一樣。
+
+確定您的應用程式可使用這些輸入裝置順暢運作，是最佳化 Xbox 和 TV的關鍵步驟。
+
+> [!NOTE] 
+> 您現在可以在電腦上插入並使用遊戲台與 UWP 應用程式，這樣可輕鬆地驗證工作。
 
 若要確保使用遊戲台或遙控器時，UWP app 可提供成功且有趣的使用者體驗，您應該考慮下列各項 ︰
 

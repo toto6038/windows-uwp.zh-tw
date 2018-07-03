@@ -1,21 +1,24 @@
 ---
 author: drewbatgit
 ms.assetid: 66d0c3dc-81f6-4d9a-904b-281f8a334dd0
-description: "本文示範使用 MediaCapture 類別來擷取相片和視訊的最簡單方式。"
-title: "使用 MediaCapture 進行基本相片、視訊和音訊的擷取"
+description: 本文示範使用 MediaCapture 類別來擷取相片和視訊的最簡單方式。
+title: 使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: dbdc65fb842c6f8d6439f0041a33d991e27bd6b6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 81205dc7122c75345b686240f79200d8304704b7
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843418"
 ---
 # <a name="basic-photo-video-and-audio-capture-with-mediacapture"></a>使用 MediaCapture 進行基本相片、視訊和音訊的擷取
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文示範使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) 類別來擷取相片和視訊的最簡單方式。 **MediaCapture** 類別會公開一組健全的 API，可提供擷取管線的低階控制權，並啟用進階擷取案例，但本文的目的是協助您快速且輕鬆地新增對 app 的基本媒體擷取。 如需深入了解 **MediaCapture** 提供的功能，請參閱[**相機**](camera.md)。
 
@@ -54,7 +57,13 @@ translationtype: HT
 
 [!code-cs[CaptureToSoftwareBitmap](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureToSoftwareBitmap)]
 
-如需使用 **SoftwareBitmap** 物件的相關資訊 (包含如何在 XAML 頁面中顯示該物件)，請參閱[**建立、編輯和儲存點陣圖影像**](imaging.md)。
+從 Windows 版本 1803 開始，您可以存取從 **CaptureAsync** 傳回之 **CapturedFrame** 類別的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 屬性，以擷取被擷取相片的相關中繼資料。 您可以將此資料傳遞至 **BitmapEncoder** 以將中繼資料儲存到檔案。 以前沒有方法存取未壓縮影像格式的此項資料。 您也可以存取 [**ControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.controlvalues) 屬性來擷取 [**CapturedFrameControlValues**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframecontrolvalues) 物件，此物件描述所擷取畫面的控制項值，例如曝光及白平衡。
+
+如需使用 **BitmapEncoder** 和操作 **SoftwareBitmap** 物件的相關資訊 (包含如何在 XAML 頁面中顯示該物件)，請參閱[**建立、編輯和儲存點陣圖影像**](imaging.md)。 
+
+如需設定擷取裝置控制值的詳細資訊，請參閱[擷取相片和視訊的裝置控制項](capture-device-controls-for-photo-and-video-capture.md)。
+
+從 Windows 10 版本 1803 開始，您可以透過存取 **MediaCapture** 傳回之 **CapturedFrame** 的 [**BitmapProperties**](https://docs.microsoft.com/uwp/api/windows.media.capture.capturedframe.bitmapproperties) 屬性，取得以未壓縮格式擷取之相片的中繼資料，例如 EXIF 資訊。 在舊版中，只能在以壓縮檔案格式擷取之相片的標頭中存取此項資料。 手動寫入影像檔時，您可以將這項資料提供至 [**BitmapEncoder**](https://docs.microsoft.com/uwp/api/windows.graphics.imaging.bitmapencoder)。 如需編碼點陣圖的詳細資訊，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。  您也可以透過存取 [**ControlValues**](https://docs.microsoft.com/en-us/uwp/api/windows.media.capture.capturedframe.controlvalues) 屬性，存取擷取影像時所用的畫面控制項值，例如曝光和閃光燈設定。 如需詳細資訊，請參閱[擷取相片和視訊擷取的裝置控制項](capture-device-controls-for-photo-and-video-capture.md)。
 
 ## <a name="capture-a-photo-to-a-file"></a>將相片擷取到檔案
 典型的攝影 app 會將擷取的相片儲存到磁碟或雲端儲存空間，而且需要將中繼資料 (例如相片方向) 新增到檔案。 下列範例示範如何將相片擷取到檔案。 您稍後仍然可以選擇從影像檔建立 **SoftwareBitmap**。 
@@ -96,6 +105,11 @@ translationtype: HT
 
 [!code-cs[RecordLimitationExceededHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceededHandler)]
 
+### <a name="play-and-edit-captured-video-files"></a>播放和編輯擷取的視訊檔案
+您將視訊擷取至檔案後，可能會想要載入檔案並在應用程式的 UI 中播放。 您可以使用 **[MediaPlayerElement](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML 控制項和相關 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 進行這項作業。 如需在 XAML 頁面中播放媒體的相關資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。
+
+您也可以透過呼叫 **[CreateFromFileAsync](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip.createfromfileasync)**，從視訊檔案建立 **[MediaClip](https://docs.microsoft.com/uwp/api/windows.media.editing.mediaclip)** 物件。  **[MediaComposition](https://docs.microsoft.com/uwp/api/windows.media.editing.mediacomposition)** 提供基本的視訊編輯功能，例如排列 **MediaClip** 物件的順序、修剪視訊長度、建立層級、增加背景音樂和套用視訊效果。 如需操作媒體組合的詳細資訊，請參閱[媒體組合和編輯](media-compositions-and-editing.md)。
+
 ## <a name="pause-and-resume-video-recording"></a>暫停和繼續視訊錄製
 您可以藉由呼叫 [**PauseAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.PauseAsync)，然後呼叫 [**ResumeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.ResumeAsync)，來暫停視訊錄製，然後再繼續錄製，而不需建立個別的輸出檔案。
 
@@ -124,15 +138,34 @@ translationtype: HT
 
 呼叫 [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagPhotoSequenceCapture.StopAsync) 以停止音訊錄製。
 
+## <a name="related-topics"></a>相關主題
+
+* [相機](camera.md)
 [!code-cs[StopRecording](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStopRecording)]
 
 您可以多次呼叫 **StartAsync** 和 **StopAsync** 來錄製數個音訊檔。 當您完成擷取音訊時，呼叫 [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.LowLagMediaRecording.FinishAsync) 來處置擷取工作階段，並清除相關聯的資源。 在這個呼叫之後，您必須再次呼叫 **PrepareLowLagRecordToStorageFileAsync** 以重新初始化拍攝工作階段，然後再呼叫 **StartAsync**。
 
 [!code-cs[FinishAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetFinishAsync)]
 
-## <a name="related-topics"></a>相關主題
 
-* [相機](camera.md)
+## <a name="detect-and-respond-to-audio-level-changes-by-the-system"></a>偵測及回應系統進行的音量變更
+從 Windows 10 版本 1803 開始，您的應用程式可偵測系統何時將應用程式音訊擷取和音訊轉譯串流的音量降低或設為靜音。 例如，系統可能會在您的應用程式進入背景時，將其串流設為靜音。 [**AudioStateMonitor**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor) 類別可讓您註冊以在系統修改音訊資料流的音量時接收事件。 透過呼叫 [**CreateForCaptureMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring)，取得 **AudioStateMonitor** 的執行個體以監控音訊擷取串流。 透過呼叫 [**CreateForRenderMonitoring**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring)，取得用於監控音訊轉譯串流的執行個體。 註冊每個監視器的 [**SoundLevelChanged**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) 事件處理常式，以在系統變更對應串流類別的音訊時收到通知。
+
+[!code-cs[AudioStateMonitorUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateMonitorUsing)]
+
+[!code-cs[AudioStateVars](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAudioStateVars)]
+
+[!code-cs[RegisterAudioStateMonitor](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterAudioStateMonitor)]
+
+在擷取串流的 **SoundLevelChanged** 事件處理常式中，您可以檢查 **AudioStateMonitor** 傳送者的 [**SoundLevel**](https://docs.microsoft.com/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) 屬性來判斷新的音量大小。 請注意，擷取串流永遠不應由系統降低。 它應該只能設為靜音或切換回最大音量。 如果音訊被設為靜音，您可以停止進行中的擷取。 如果音訊還原為最大音量，您可以再次開始擷取。 下列範例使用一些布林值類別變數來追蹤應用程式目前是否正在擷取音訊，以及是否因為音訊狀態變更而停止擷取。 這些變數可用來判斷何時適合以程式設計方式停止或開始擷取音訊。
+
+[!code-cs[CaptureSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCaptureSoundLevelChanged)]
+
+下列程式碼範例示範實作音訊轉譯的 **SoundLevelChanged**處理常式。 根據您的應用程式案例，以及您正在播放的內容類型，您可以在音量降低時暫停音訊播放。 如需處理媒體播放之音量變更的詳細資訊，請參閱[使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)。
+
+[!code-cs[RenderSoundLevelChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRenderSoundLevelChanged)]
+
+
 * [使用 Windows 內建相機 UI 來擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md)
 * [使用 MediaCapture 處理裝置方向](handle-device-orientation-with-mediacapture.md)
 * [建立、編輯和儲存點陣圖影像](imaging.md)

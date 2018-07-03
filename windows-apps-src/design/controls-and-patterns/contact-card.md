@@ -13,12 +13,12 @@ design-contact: tbd
 dev-contact: tbd
 doc-status: not-published
 ms.localizationpriority: medium
-ms.openlocfilehash: 434229c7d66ccd4c1a16750750d592c5bc4a89e6
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 9ed520c8ad71203a2f2f9888f775d7ca51d0089f
+ms.sourcegitcommit: dc3389ef2e2c94b324872a086877314d6f963358
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673675"
+ms.lasthandoff: 05/11/2018
+ms.locfileid: "1874336"
 ---
 # <a name="contact-card"></a>連絡人卡片
 
@@ -70,7 +70,7 @@ ms.locfileid: "1673675"
 1. 您通常會因為使用者按一下某個項目 (按鈕或者[個人圖片控制項](person-picture.md)) 而顯示連絡人卡片。 我們並不想要隱藏元素。 為了避免隱藏，我們需要建立描述元素位置及大小的 [Rect](/uwp/api/windows.foundation.rect)。 
 
     我們來建立為我們這樣做的公用程式函式，稍後會用到。
-    ``` C#
+    ```csharp
     // Gets the rectangle of the element 
     public static Rect GetElementRectHelper(FrameworkElement element) 
     { 
@@ -83,7 +83,7 @@ ms.locfileid: "1673675"
     ```
 
 2. 呼叫 [ContactManager.IsShowContactCardSupported](/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported) 方法，以判斷您是否可以顯示連絡人卡片。 如果不支援，則會顯示錯誤訊息  (此範例假設您要顯示連絡人卡片來回應按一下事件)。
-    ``` C#
+    ```csharp
     // Contact and Contact Managers are existing classes 
     private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
     { 
@@ -94,13 +94,13 @@ ms.locfileid: "1673675"
 
 3. 使用您在步驟 1 建立的公用程式函式，取得引發事件的控制項範圍 (這樣連絡人卡片就不會蓋住它)。
 
-    ``` C#
+    ```csharp
             Rect selectionRect = GetElementRect((FrameworkElement)sender); 
     ```
 
 4. 取得您要顯示的 [Contact](//docs.microsoft.com/uwp/api/Windows.ApplicationModel.Contacts.Contact) 物件。 此範例只是建立簡單的連絡人，但您的程式碼應該擷取實際的連絡人。 
 
-    ``` C#
+    ```csharp
                 // Retrieve the contact to display
                 var contact = new Contact(); 
                 var email = new ContactEmail(); 
@@ -109,7 +109,7 @@ ms.locfileid: "1673675"
     ```
 5. 呼叫 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_) 方法顯示連絡人卡片。 
 
-    ``` C#
+    ```csharp
             ContactManager.ShowFullContactCard(
                 contact, selectionRect, Placement.Default); 
         } 
@@ -118,7 +118,7 @@ ms.locfileid: "1673675"
 
 以下是完整的程式碼範例：
 
-``` C#
+```csharp
 // Gets the rectangle of the element 
 public static Rect GetElementRect(FrameworkElement element) 
 { 
@@ -152,7 +152,7 @@ private void OnUserClickShowContactCard(object sender, RoutedEventArgs e)
 
 若要顯示完整的連絡人卡片，請呼叫 [ShowFullContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_ApplicationModel_Contacts_FullContactCardOptions_) 方法，而不是 [ShowContactCard](/uwp/api/windows.applicationmodel.contacts.contactmanager#Windows_ApplicationModel_Contacts_ContactManager_ShowFullContactCard_Windows_ApplicationModel_Contacts_Contact_Windows_Foundation_Rect_)。
 
-``` C#
+```csharp
 private void onUserClickShowContactCard() 
 { 
    

@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得傳統型應用程式的彙總錯誤報告資料。
 title: 取得傳統型應用程式的錯誤報告資料
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 28fa9e8d6efec6fb6c4930d9c74917d4275fa29c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 422a570635fd6788b8e8b5656060a309d628b7bf
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663768"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989392"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>取得傳統型應用程式的錯誤報告資料
 
@@ -46,7 +46,7 @@ ms.locfileid: "1663768"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取其錯誤報告資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期，格式為 ```mm/dd/yyyy```。 預設為目前的日期。  |  否  |
@@ -76,11 +76,11 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 描述     |
+| 值      | 類型    | 說明     |
 |------------|---------|--------------|
 | 值      | array   | 內含彙總錯誤報告資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[錯誤數值](#error-values)一節。     |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。     |
+| TotalCount | 整數 | 查詢之資料結果的資料列總數。     |
 
 
 ### <a name="error-values"></a>錯誤數值
@@ -98,13 +98,13 @@ Authorization: Bearer <your access token>
 | failureHash     | 字串  | 錯誤的唯一識別碼。   |
 | symbol          | 字串  | 指派給此錯誤的符號。 |
 | osBuild       | 字串  | 發生錯誤之 OS 的四個部分組建號碼。  |
-| osVersion       | 字串  | 下列其中一個字串，指定傳統型應用程式安裝所在的作業系統版本：<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows 10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>不明</strong></li></ul>   |   
-| osRelease | 字串  | 下列其中一個字串指定的 OS 版本或正式發行前小眾測試頻道 (為 OS 版本內的次群族) 上已安裝傳統型應用程式。<p/><p>適用於 Windows10：</p><ul><li><strong>版本 1507</strong></li><li><strong>版本 1511</strong></li><li><strong>版本 1607</strong></li><li><strong>版本 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>發行預覽</strong></li><li><strong>測試人員 - 快</strong></li><li><strong>測試人員 - 慢</strong></li></ul><p/><p>若是 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>若是 Windows Server 2016：</p><ul><li><strong>版本 1607</strong></li></ul><p>適用於 Windows8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>適用於 Windows7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果 OS 版本或正式發行前小眾測試通道不明，此欄位會有<strong>不明</strong>值。</p> |
+| osVersion       | 字串  | 下列其中一個字串，指定傳統型應用程式安裝所在的作業系統版本：<p/><ul><li><strong>Windows 7</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Windows Server 2016</strong></li><li><strong>Windows Server 1709</strong></li><li><strong>不明</strong></li></ul>   |   
+| osRelease | 字串  | 下列其中一個字串指定的 OS 版本或正式發行前小眾測試頻道 (為 OS 版本內的次群族) 上發生的錯誤。<p/><p>適用於 Windows10：</p><ul><li><strong>版本 1507</strong></li><li><strong>版本 1511</strong></li><li><strong>版本 1607</strong></li><li><strong>版本 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>發行預覽</strong></li><li><strong>測試人員 - 快</strong></li><li><strong>測試人員 - 慢</strong></li></ul><p/><p>若是 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>若是 Windows Server 2016：</p><ul><li><strong>版本 1607</strong></li></ul><p>適用於 Windows8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>適用於 Windows7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果 OS 版本或正式發行前小眾測試通道不明，此欄位會有<strong>不明</strong>值。</p> |
 | eventType       | 字串  | 其中一個下列字串，可指出錯誤事件的類型：<ul><li>**crash**</li><li>**hang**</li><li>**memory**</li><li>**jse**</li></ul>       |
 | market          | 字串  | 裝置市場的 ISO 3166 國家/地區碼。   |
 | deviceType      | 字串  | 下列其中一個字串，指定發生錯誤的裝置類型：<p/><ul><li><strong>電腦</strong></li><li><strong>伺服器</strong></li><li><strong>平板電腦</strong></li><li><strong>不明</strong></li></ul>    |
 | applicationVersion     | 字串  |   發生錯誤之應用程式可執行的版本。    |
-| eventCount      | inumber | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
+| eventCount      | 整數 | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
 
 
 ### <a name="response-example"></a>回應範例

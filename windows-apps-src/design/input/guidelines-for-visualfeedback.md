@@ -12,15 +12,14 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a986d6de680a3024ae252ba640871f9c5d22141
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 4653e07d6d81f884ee6519206e75350aa47945f8
+ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707043"
+ms.lasthandoff: 05/24/2018
+ms.locfileid: "1917583"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
-
 
 使用視覺化回饋以向使用者顯示系統已偵測到、解譯及處理他們的互動。 視覺化回饋可以透過激發互動意願來協助使用者。 它會指出互動是否成功來改善使用者的控制感應。 它也會轉送系統狀態並減少錯誤。
 
@@ -28,10 +27,13 @@ ms.locfileid: "1707043"
 
 ## <a name="recommendations"></a>建議事項
 
--   儘可能嘗試與原始控制項範本保持接近，以獲得最佳的控制項及應用程式效能。
--   如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
--   不要在非必要情況下顯示回饋。 除非您是要藉由顯示視覺化回饋來添加其他地方所無法提供的好處，否則請勿顯示視覺化回饋，以便讓 UI 保持簡潔、整齊。
--   不要嘗試對內建的 Windows 手勢進行大幅的視覺化回饋行為自訂，因為這可能會導致產生不一致和混淆的使用者體驗。
+- 嘗試限制修改這些與您的設計目的直接相關的控制項範本，不然的話，多出來的變更會影響控制項和應用程式的效能與可存取性。 
+    - 請參閱 [XAML 樣式](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-styles)以取得有關自訂控制項屬性的詳細資訊，包括可見狀態屬性。
+    - 請參閱 [UserControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)以取得有關變更控制項範本的詳細資訊
+    - 如果您需要大幅變更控制項範本，請考慮建立自訂範本化控制項。 如需自訂範本化控制項的範例，請參閱[自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)。
+- 如果觸控視覺效果可能干擾應用程式的使用，就不要使用觸控視覺效果。 如需詳細資訊，請參閱 [**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)。
+- 不要在非必要情況下顯示回饋。 除非您是要藉由顯示視覺化回饋來添加其他地方所無法提供的好處，否則請勿顯示視覺化回饋，以便讓 UI 保持簡潔、整齊。
+- 不要嘗試對內建的 Windows 手勢進行大幅的視覺化回饋行為自訂，因為這可能會導致產生不一致和混淆的使用者體驗。
 
 ## <a name="additional-usage-guidance"></a>其他用法指導方針
 
@@ -39,8 +41,8 @@ ms.locfileid: "1707043"
 
 使用可用的預設 XAML 平台控制項，可確保您的應用程式在所有裝置上及在所有輸入情況下都能正確運作。 如果您的應用程式包含需要自訂回饋的自訂互動，那麼您應當確保回饋適當、可跨輸入裝置，而且不會讓使用者從工作上分心。 在遊戲或繪圖應用程式中這可能成為特別的問，視覺化回饋有可能與重要 UI 相衝突或遮蓋到重要 UI。
 
-> [!Important] 
-> 建議您不要變更內建手勢的互動行為。 
+> [!Important]
+> 建議您不要變更內建手勢的互動行為。
 
 **跨裝置回饋**
 
@@ -59,6 +61,8 @@ ms.locfileid: "1707043"
 ## <a name="high-visibility-focus-visuals"></a>高可見度焦點視覺效果
 
 所有 Windows 應用程式都支援在應用程式內的可互動控制項周圍使用更詳細定義的焦點視覺效果。 這些新的焦點視覺效果都是完全可自訂的，而且也可視需要予以停用。
+
+針對 Xbox 和電視典型的 **10 英呎體驗**，Windows 支援**顯色焦點**，當透過遊樂器或鍵盤輸入聚焦時，這個光源效果會動畫顯示可聚焦的元素邊框，例如按鈕。 如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv#reveal-focus)。
 
 ## <a name="color-branding--customizing"></a>色彩商標和自訂
 

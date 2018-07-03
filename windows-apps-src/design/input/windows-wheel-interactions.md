@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
-ms.openlocfilehash: 61711098d07d830d4f6a1a6cdabed1a31217d2ea
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: a443dd7505ce399d82cbd33c5691ec9b35a18b93
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396707"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983695"
 ---
 # <a name="surface-dial-interactions"></a>Surface Dial 互動
 
@@ -29,11 +29,11 @@ ms.locfileid: "1396707"
 Windows 滾輪裝置，例如 Surface Dial，是一種新的輸入裝置，可以針對 Windows 和 Windows 應用程式提供極具吸引力且獨特的使用者互動體驗。 
 
 > [!IMPORTANT]
-> 在本主題中，我們特別說明 Surface Dial 互動，但此資訊適用於所有 Windows 滾輪裝置。
+> 在本主題中，我們特別說明 Surface Dial 互動，但此資訊適用於所有 Windows 滾輪裝置。 
 
 | 影片 |   |
 | --- | --- |
-| <iframe width="300" height="200" src="https://www.youtube.com/embed/WMklcdzcNcU" frameborder="0" allowfullscreen></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen frameBorder="0"></iframe> |
+| <iframe src="https://www.youtube-nocookie.com/embed/WMklcdzcNcU" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> | <iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Programming-the-Microsoft-Surface-Dial/player" width="300" height="200" allowFullScreen="true" frameBorder="0"></iframe> |
 | *Surface Dial 應用程式合作夥伴* | *適用於開發人員的 Surface Dial* |
 
 Surface Dial 使用根據*旋轉*動作 (或手勢) 的形狀規格，做為次要、多重強制回應的輸入裝置，補充主要裝置的輸入。 在大部分情況下，使用者是以慣用手執行工作 (例如以手寫筆寫字)，同時以非慣用手操作這類裝置。 其設計的目的並不是為了精確的指標輸入 (例如觸控、手寫筆或滑鼠)。 

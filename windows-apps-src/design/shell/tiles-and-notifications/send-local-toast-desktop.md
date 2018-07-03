@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, win32, 傳統型, 快顯通知, 傳送快顯通知, 傳送本機快顯通知, 傳統型橋接器, C#, c sharp
 ms.localizationpriority: medium
-ms.openlocfilehash: e869ebb4fad7be55ef4f31c1c7e544ce8c290e4a
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 44457221d7b108563e7df030125a909da6609cbe
+ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816663"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "1983454"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
@@ -101,7 +101,7 @@ public class MyNotificationActivator : NotificationActivator
 1. **xmlns:com** 的宣告
 2. **xmlns:desktop** 的宣告
 3. 在 **IgnorableNamespaces** 屬性中，**com** 和 **desktop**
-4. 使用步驟 #4 的 GUID，新增 COM 伺服器的 **com:Extension**。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
+4. 使用步驟 #4 的 GUID，新增 COM 啟動者的 **com:Extension**。 請務必包含 `Arguments="-ToastActivated"`，讓您知道您的啟動是來自快顯通知
 5. **windows.toastNotificationActivation** 的 **desktop:Extension**，宣告您的快顯通知啟動者 CLSID (步驟 #4 的 GUID)。
 
 **Package.appxmanifest**
@@ -238,6 +238,9 @@ var toast = new ToastNotification(doc);
 DesktopNotificationManagerCompat.CreateToastNotifier().Show(toast);
 ```
 
+> [!IMPORTANT]
+> 傳統 Win32 應用程式無法使用舊版的快顯通知 (例如 ToastText02) 的範本。 指定 COM CLSID 時，啟用舊版範本將會失敗。 您必須使用的 Windows 10 ToastGeneric 範本，如上方所示。
+
 
 ## <a name="step-8-handling-activation"></a>步驟 8：處理啟用
 
@@ -260,7 +263,7 @@ public class MyNotificationActivator : NotificationActivator
         Application.Current.Dispatcher.Invoke(delegate
         {
             // Tapping on the top-level header launches with empty args
-            if (arguments.Length = 0)
+            if (arguments.Length == 0)
             {
                 // Perform a normal launch
                 OpenWindowIfNeeded();
@@ -406,4 +409,6 @@ DesktopNotificationManagerCompat.History.Clear();
 ## <a name="resources"></a>資源
 
 * [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/desktop-toasts)
+* [傳統型應用程式的快顯通知:](toast-desktop-apps.md)
 * [快顯通知內容文件](adaptive-interactive-toasts.md)
+

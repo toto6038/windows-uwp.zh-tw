@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f6da2ae68ab2b40f11d1a9d092eb8ff447f2844
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: b881d3bdaa9adec28b78a72e127dcebd49ee1df6
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664008"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976423"
 ---
 # <a name="get-add-on-acquisitions"></a>取得附加元件下載數
 
@@ -42,14 +42,14 @@ ms.locfileid: "1664008"
 
 | 標頭        | 類型   | 描述          |
 |---------------|--------|--------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 *applicationId* 或 *inAppProductId* 參數為必要。 若要擷取所有註冊至 App 之附加元件的下載數資料，請指定 *applicationId* 參數。 若要擷取單一附加元件的下載數資料，請指定 *inAppProductId* 參數。 如果您同時指定上面兩個參數，*applicationId* 參數將會被忽略。
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取附加元件下載數資料之 App 的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | inAppProductId | 字串 | 您想要擷取下載數資料之附加元件的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  | 是  |
@@ -79,7 +79,7 @@ ms.locfileid: "1664008"
 | storeClient | 下列其中一個字串：<ul><li><strong>Windows Phone Store (client)</strong></li><li><strong>Microsoft Store (用戶端)</strong></li><li><strong>Microsoft Store (web)</strong></li><li><strong>Volume purchase by organizations</strong></li><li><strong>Other</strong></li></ul> |
 | gender | 下列其中一個字串：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul> |
 | market | 內含發生下載之市場的 ISO 3166 國家/地區碼的字串。 |
-| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
+| osVersion | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul> |
 | deviceType | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul> |
 | orderName | 指定用來取得附加元件之促銷碼訂單名稱的字串 (這只適用於使用者透過兌換促銷碼來取得附加元件的情況)。 |
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 描述         |
+| 值      | 類型   | 說明         |
 |------------|--------|------------------|
 | 值      | 陣列  | 內含彙總附加元件下載數資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[附加元件下載數數值](#add-on-acquisition-values)一節。                                                                                                              |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的附加元件下載數資料，就會傳回此值。 |
@@ -132,7 +132,7 @@ Authorization: Bearer <your access token>
 | gender              | 字串  | 做出下載之使用者的性別。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                    |
 | ageGroup            | 字串  | 做出下載之使用者的年齡層。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                 |
 | acquisitionType     | 字串  | 下載的類型 (免費、付費等等)。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                                    |
-| acquisitionQuantity | inumber | 發生的下載數目。                        |
+| acquisitionQuantity | 整數 | 發生的下載數目。                        |
 
 
 ### <a name="response-example"></a>回應範例

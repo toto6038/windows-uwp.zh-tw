@@ -4,18 +4,18 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: 在 Microsoft Store 分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。
 title: 取得應用程式中錯誤的堆疊追蹤
 ms.author: mcleans
-ms.date: 06/16/2017
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: d29237bfc36c745933c5c40bba9c584d2e705947
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 902bf87f1650cc5b9f4aeabd8539da4a774dce75
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662778"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989532"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 
@@ -46,12 +46,12 @@ ms.locfileid: "1662778"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  |
+| 參數        | 類型   |  說明      |  必要  |
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要取得堆疊追蹤之 App 的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | cabId | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |
@@ -71,11 +71,11 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 描述                  |
+| 值      | 類型    | 說明                  |
 |------------|---------|--------------------------------|
 | 值      | 陣列   | 物件的陣列，每個物件都包含一個堆疊追蹤資料框架。 如需有關每個物件中資料的詳細資訊，請參閱下方的[堆疊追蹤值](#stack-trace-values)一節。 |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。          |
+| TotalCount | 整數 | 查詢之資料結果的資料列總數。          |
 
 
 ### <a name="stack-trace-values"></a>堆疊追蹤值

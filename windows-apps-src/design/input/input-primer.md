@@ -12,15 +12,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 910920c1f5eb5bdc3e55b51d7886be1632559c14
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
+ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396607"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862097"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
-
 
 ![Windows 輸入類型](images/input-interactions/icons-inputdevices03.png)
 
@@ -30,14 +29,34 @@ UWP 會使用「智慧型」且與內容相關的互動系統，在大部分情�
 
 與特定尺寸規格配對使用時，請熟悉各個輸入裝置類型及其行為、功能與限制。 這可以協助您判斷您的應用程式是否有足夠的平台控制項與能供性，或者需要您提供自訂的互動體驗。
 
-## <a name="surface-dial"></a>Surface Dial
+## <a name="gaze"></a>注視
 
-在 Windows10 年度更新版中，我們引進了新的輸入裝置類別，稱為 Windows Wheel。 Surface Dial 是第一個這類裝置。 
+對於 **Windows 10 2018 年 4 月更新版**，我們推出使用眼睛和頭追蹤輸入裝置的注視輸入支援。 
+
+> [!NOTE]
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。
 
 ### <a name="device-support"></a>裝置支援
 
--   平板電腦
--   電腦和膝上型電腦
+- 平板電腦
+- 電腦和膝上型電腦
+
+### <a name="typical-usage"></a>一般使用方式
+
+追蹤使用者的注視、注意力，以及根據他們眼球的位置與移動存在。 這種與 UWP app 互動所使用的強大且全新的方式，對於患有神經肌肉疾病（如 ALS）和其他肌肉或神經功能受損的使用者來說，它是特別有用的輔助技術。 注視輸入也提供吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
+
+### <a name="more-info"></a>其他資訊
+
+[注視互動與眼球追蹤](gaze-interactions.md)
+
+## <a name="surface-dial"></a>Surface Dial
+
+對於 **Windows10 年度更新版**，我們引進了輸入裝置的 Windows Wheel 類別。 Surface Dial 是第一個這類裝置。
+
+### <a name="device-support"></a>裝置支援
+
+- 平板電腦
+- 電腦和膝上型電腦
 
 ### <a name="typical-usage"></a>一般使用方式
 
@@ -46,7 +65,6 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 ### <a name="more-info"></a>其他資訊
 
 [Surface Dial 設計指導方針](windows-wheel-interactions.md)
-
 
 ## <a name="cortana"></a>Cortana
 

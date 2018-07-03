@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e54af14d23b255718f5247605b9bdd611f172308
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 424ca52020bd5b9aeab745030dd6eef4cd4430b6
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663838"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1862417"
 ---
 # <a name="create-and-host-an-app-extension"></a>建立和裝載應用程式延伸模組
 
@@ -27,7 +27,7 @@ ms.locfileid: "1663838"
 
 ## <a name="introduction-to-app-extensions"></a>應用程式延伸模組簡介
 
-外掛程式、增益集和附加元件是您熟悉的不同名稱，但我們在通用 Windows 平台 (UWP) 中稱之為應用程式延伸模組。 Microsoft Edge 延伸模組即是 UWP 應用程式延伸模組。 UWP 應用程式延伸模組是在 Windows 10 年度更新版 (版本 1607 組建 10.0.14393) 中引進的。
+在通用 Windows 平台 (UWP) 中，擴充功能提供類似於外掛模組、增益集和附加元件在其他平台上所執行的功能。 舉例來說，Microsoft Edge 延伸模組即是 UWP 應用程式延伸模組。 UWP 應用程式延伸模組是在 Windows 10 年度更新版 (版本 1607 組建 10.0.14393) 中引進的。
 
 UWP 應用程式延伸模組是具有延伸宣告的 UWP app，此宣告可讓延伸模組與主機應用程式共用內容和部署事件。 延伸應用程式可以提供多個延伸模組。
 
@@ -423,6 +423,7 @@ _MathExtension 專案中的 Package.appxmanifest：_
 
 ## <a name="related-topics"></a>相關主題
 
+* [應用程式延伸模組簡介](https://blogs.msdn.microsoft.com/appinstaller/2017/05/01/introduction-to-app-extensions/)
 * [關於應用程式延伸的組建 2016 工作階段](https://channel9.msdn.com/Events/Build/2016/B808)
 * [組建 2016 應用程式延伸模組程式碼範例](https://github.com/Microsoft/App-Extensibility-Sample)
 * [使用背景工作支援應用程式](support-your-app-with-background-tasks.md)

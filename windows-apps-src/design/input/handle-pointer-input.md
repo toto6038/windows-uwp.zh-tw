@@ -12,12 +12,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a5da807d430683689cf38f2db6920af2dc058a99
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
+ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707289"
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "1895137"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
@@ -704,9 +704,11 @@ String QueryPointer(PointerPoint ptrPt)
 **請從[指標輸入範例 (附帶動畫的 UserControl)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip) 下載此範例。**
 
 ### <a name="visual-feedback"></a>視覺回饋
+
 我們會根據 XAML **[Ellipse](https://docs.microsoft.com/uwp/api/windows.ui.xaml.shapes.ellipse)** 物件，定義一個 **[UserControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.usercontrol)** 來醒目提示哪個指標正位於畫布上，並使用 **[Storyboard](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.animation.storyboard)** 來為對應到主要指標的橢圓形建立動畫。
 
 **以下是 XAML：**
+
 ```xaml
 <UserControl
     x:Class="UWP_Pointers.PointerEllipse"

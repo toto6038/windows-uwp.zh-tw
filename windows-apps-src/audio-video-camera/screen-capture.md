@@ -4,24 +4,27 @@ title: 螢幕擷取
 description: Windows.Graphics.Capture 命名空間提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
 ms.author: elcowle
-ms.date: 3/1/2018
+ms.date: 5/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7883acd351c721b4539141cd46e3c199a8d8a1
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: e407842711d1bfcac0a54fdf484a38d39bc2b237
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639679"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912906"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
 從 Windows 10 版本 1803 起，[Windows.Graphics.Capture](https://docs.microsoft.com/uwp/api/windows.graphics.capture) 命名空間提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。
 
 使用螢幕擷取，開發人員可以為終端使用者叫用安全的系統 UI，選取要擷取的顯示或應用程式視窗，系統會在主動擷取項目周圍繪製黃色通知邊框。 在多個同時擷取工作階段中，會在每個擷取項目周圍繪製黃色邊框。
+
+> [!NOTE]
+> 螢幕擷取 API 需要您執行 Windows 10 專業版或企業版。
 
 ## <a name="add-the-screen-capture-capability"></a>新增螢幕擷取功能
 
@@ -158,23 +161,24 @@ _framePool.FrameArrived += (s, a) =>
 下列程式碼片段是在 UWP 應用程式中實作擷取螢幕的的端對端範例：
 
 ```cs
-using Microsoft.Graphics.Canvas; 
-using System; 
-using System.Threading.Tasks; 
-using Windows.Graphics.Capture; 
-using Windows.Graphics.DirectX; 
-using Windows.UI.Composition; 
- 
+using Microsoft.Graphics.Canvas;
+using System;
+using System.Threading.Tasks;
+using Windows.Graphics;
+using Windows.Graphics.Capture;
+using Windows.Graphics.DirectX;
+using Windows.UI.Composition;
+
 namespace CaptureSamples 
-{ 
+{
     class Sample
     {
         // Capture API objects.
-        private Vector2 _lastSize; 
+        private SizeInt32 _lastSize; 
         private GraphicsCaptureItem _item; 
         private Direct3D11CaptureFramePool _framePool; 
         private GraphicsCaptureSession _session; 
- 
+
         // Non-API related members.
         private CanvasDevice _canvasDevice; 
         private CompositionDrawingSurface _surface; 
@@ -252,7 +256,8 @@ namespace CaptureSamples
             bool needsReset = false; 
             bool recreateDevice = false; 
  
-            if (frame.ContentSize != _lastSize) 
+            if ((frame.ContentSize.Width != _lastSize.Width) || 
+                (frame.ContentSize.Height != _lastSize.Height)) 
             { 
                 needsReset = true; 
                 _lastSize = frame.ContentSize; 

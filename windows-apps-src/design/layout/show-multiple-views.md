@@ -9,18 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c54f3569d6add5e3e2bd2784f2a9e8907b5b2cea
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
+ms.openlocfilehash: 5bda75f71b1230974ecb4d136e5b40e85b7e5259
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707389"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843408"
 ---
 # <a name="show-multiple-views-for-an-app"></a>顯示 app 的多重檢視
 
-讓使用者在個別的視窗中檢視您 App 的獨立部分，以協助他們提高生產力。 如果您為 App 建立多個視窗，則每個視窗的行為都是各自獨立。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都以自己的執行緒運作。
+![線框顯示含有多個視窗的 App](images/multi-view.gif)
 
-![線框顯示含有多個視窗的 App](images/multi-view.png)
+讓使用者在個別的視窗中檢視您 App 的獨立部分，以協助他們提高生產力。 如果您為 App 建立多個視窗，則每個視窗的行為都是各自獨立。 工作列會個別顯示每個視窗。 使用者可以單獨移動、調整大小、顯示及隱藏 app 視窗，也可以在 app 視窗之間切換，就像是不同的 app 一樣。 每個視窗都以自己的執行緒運作。
 
 > **重要 API**：[**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)、[**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 

@@ -4,18 +4,18 @@ ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: 使用 Microsoft Store 提交 API 以程式設計方式為登錄到您 Windows 開發人員中心帳戶的 App 建立和管理提交。
 title: 建立及管理提交
 ms.author: mcleans
-ms.date: 02/28/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 037f76e9d0c7c9751786ba501478057687bfa910
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 9bd8d2f800969102d6957cafa92e04f482323611
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663678"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976463"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 
@@ -34,7 +34,7 @@ ms.locfileid: "1663678"
 > 如果您使用此 API 為應用程式、正式發行前小眾測試版或附加元件建立提交，請務必只使用 API 為提交進行其他變更，而不要使用開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 > [!IMPORTANT]
-> 您無法使用此 API 發佈適用於[透過商務用 Microsoft Store 和教育用 Microsoft Store 購買的磁碟區](../publish/organizational-licensing.md)的提交，或直接發佈 [LOB 應用程式](../publish/distribute-lob-apps-to-enterprises.md)提交至企業。 在這些案例中，您必須使用 Windows 開發人員中心儀表板發佈提交。
+> 您無法使用此 API 來發佈 [透過商務用 Microsoft Store 和教育用 Microsoft Store 大量購買](../publish/organizational-licensing.md) 的提交或直接向企業發佈 [LOB 應用程式](../publish/distribute-lob-apps-to-enterprises.md) 的提交。 在這些案例中，您必須使用 Windows 開發人員中心儀表板發佈提交。
 
 > [!NOTE]
 > 此 API 無法搭配應用程式或使用強制性應用程式更新以及 Microsoft Store 管理的可消耗附加元件的附加元件來使用。 如果您將 Microsoft Store 提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用儀表板管理 App 或附加元件的提交。
@@ -70,11 +70,11 @@ ms.locfileid: "1663678"
 > [!NOTE]
 > 您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
-1.  在開發人員中心，移至您的 **\[帳戶設定\]**，按一下 **\[管理使用者\]**，[將您組織的開發人員中心帳戶與您組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
+1.  在開發人員中心，[將組織的開發人員中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
 
-2.  在 **\[管理使用者\]** 頁面中，按一下 **\[新增 Azure AD 應用程式\]**，新增代表您要用來存取開發人員中心帳戶提交之 App 或服務的 Azure AD 應用程式，並指派 **\[管理員\]** 角色給它。 如果這個應用程式已經在您的 Azure AD 目錄中，則您可以在 **\[新增 Azure AD 應用程式\]** 頁面中選取它，以將其新增至您的開發人員中心帳戶。 如果不是，可以在 **\[新增 Azure AD 應用程式\]** 頁面建立新的 Azure AD 應用程式。 如需詳細資訊，請參閱[新增 Azure AD 應用程式至開發人員中心帳戶](../publish/add-users-groups-and-azure-ad-applications.md#azure-ad-applications)。
+2.  接著，從開發人員中心**\[帳戶設定\]** 區段的**\[使用者\]** 頁面，[新增 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-dev-center-account)代表您將用來存取開發人員中心帳戶提交的應用程式或服務。 請確定您指派此應用程式 **[管理員]** 角色。 如果應用程式尚未存在於您的 Azure AD 目錄，您可以[在開發人員中心建立新的 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-dev-center-account)。  
 
-3.  返回 **\[管理使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
+3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
 4. 按一下 **\[加入新的金鑰\]**。 在下列畫面中，複製 **\[金鑰\]** 的值。 您離開這個頁面之後就無法再存取此資訊。 如需詳細資訊，請參閱[管理 Azure AD 應用程式的金鑰](../publish/add-users-groups-and-azure-ad-applications.md#manage-keys)。
 
@@ -129,11 +129,11 @@ grant_type=client_credentials
 * [Java 範例：提交應用程式、附加元件與正式發行前小眾測試版](java-code-examples-for-the-windows-store-submission-api.md)
 * [Java 範例：提交含遊戲選項與預告片的應用程式](java-code-examples-for-submissions-game-options-and-trailers.md)
 * [Python 範例：提交應用程式、附加元件與正式發行前小眾測試版](python-code-examples-for-the-windows-store-submission-api.md)
-* [Python 範例：提交含遊戲選項與預告片的應用程式](python-code-examples-for-submissions-game-options-and-trailers.md)
+* [Python 範例：連同遊戲選項和預告片提交應用程式](python-code-examples-for-submissions-game-options-and-trailers.md)
 
 ## <a name="storebroker-powershell-module"></a>StoreBroker PowerShell 模組
 
-除了直接呼叫 Microsoft Store 提交 API 以外，我們也提供在 Microsoft Store 提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Microsoft Store 提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至 Microsoft Store 的主要方式。
+另一種直接呼叫 Microsoft Store 提交 API 的方法，我們也提供了開放原始碼 PowerShell 模組，該模組在 API 上方實作命令列介面。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以使用此模組從命令列來管理您的應用程式、正式發行前小眾測試版和附加元件提交，而不是直接直接呼叫 Microsoft Store 提交 API，也可以簡單瀏覽來源以檢視有關如何呼叫此 API 的更多範例。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至 Microsoft Store 的主要方式。
 
 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
 

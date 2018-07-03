@@ -15,12 +15,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 43150acef5c7e9ce73132cd35061d4239821f6d0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
+ms.openlocfilehash: 47a2e48be14df6a59aec4404d760f416804bad6b
+ms.sourcegitcommit: 3522d888781ff6f063b129b54760a5cbefd38139
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673545"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "1937084"
 ---
 # <a name="swipe"></a>撥動
 
@@ -158,6 +158,7 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
     <ListView.ItemContainerStyle>
         <Style TargetType="ListViewItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         </Style>
     </ListView.ItemContainerStyle>
     <ListView.ItemTemplate>
@@ -166,7 +167,7 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
                           LeftItems="{StaticResource RevealOptions}"
                           RightItems="{StaticResource ExecuteDelete}"
                           Height="60">
-                <StackPanel Orientation="Vertical" Margin="5">
+                <StackPanel Orientation="Vertical">
                     <TextBlock Text="{x:Bind}" FontSize="18"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit..." FontSize="12"/>
@@ -238,7 +239,7 @@ UWP 撥動命令功能有兩種模式：[顯示](/uwp/api/windows.ui.xaml.contro
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics)：以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 

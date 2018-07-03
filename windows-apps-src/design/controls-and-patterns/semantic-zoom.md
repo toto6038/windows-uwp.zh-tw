@@ -10,17 +10,17 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: predavid
 design-contact: kimsea
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 528353ba8da8efb35adae60b0810ad6be3045ff1
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
+ms.openlocfilehash: 384110e404e5520f9edacc1385242f4aa131a92c
+ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1493655"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "1935838"
 ---
 # <a name="semantic-zoom"></a>語意式縮放
 
@@ -124,7 +124,7 @@ ms.locfileid: "1493655"
 群組標頭的外觀是在 `ZoomedInGroupHeaderTemplate` 資源中定義。 項目的外觀是在 `ZoomedInTemplate` 資源中定義。 
 
 ```xaml
-<DataTemplate x:Key="" x:DataType="data:ControlInfoDataGroup">
+<DataTemplate x:Key="ZoomedInGroupHeaderTemplate" x:DataType="data:ControlInfoDataGroup">
     <TextBlock Text="{x:Bind Title}" 
                Foreground="{ThemeResource ApplicationForegroundThemeBrush}" 
                Style="{StaticResource SubtitleTextBlockStyle}"/>

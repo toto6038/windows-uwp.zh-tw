@@ -4,18 +4,18 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。
 title: 取得 App 的錯誤報告資料
 ms.author: mcleans
-ms.date: 03/06/2018
+ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f6926e8252f761ed54d30c410ffabe135e9c4a
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 2937d0d9ebfc8c9450692a01e77e57e68c896dba
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664088"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989472"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 
@@ -45,12 +45,12 @@ ms.locfileid: "1664088"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取錯誤報告資料之 app 的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。  |  不可以  |
@@ -80,11 +80,11 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型    | 描述     |
+| 值      | 類型    | 說明     |
 |------------|---------|--------------|
 | 值      | array   | 內含彙總錯誤報告資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[錯誤數值](#error-values)一節。     |
 | @nextLink  | 字串  | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的錯誤，就會傳回此值。 |
-| TotalCount | inumber | 查詢之資料結果的資料列總數。     |
+| TotalCount | 整數 | 查詢之資料結果的資料列總數。     |
 
 
 ### <a name="error-values"></a>錯誤數值
@@ -99,15 +99,15 @@ Authorization: Bearer <your access token>
 | failureName     | 字串  | 失敗的名稱，由四個部分組成：一個或多個問題類別、例外狀況/錯誤檢查碼、失敗發生位置映像名稱，以及相關函式名稱。  |
 | failureHash     | 字串  | 錯誤的唯一識別碼。   |
 | symbol          | 字串  | 指派給此錯誤的符號。 |
-| osVersion       | 字串  | 下列其中一個字串，指定發生錯誤所在的作業系統版本：<ul><li>**Windows Phone 7.5**</li><li>**Windows Phone 8**</li><li>**Windows Phone 8.1**</li><li>**Windows Phone 10**</li><li>**Windows8**</li><li>**Windows 8.1**</li><li>**Windows10**</li><li>**不明**</li></ul>  |
-| osRelease       | 字串  |  下列其中一個字串指定的 OS 版本或正式發行前小眾測試頻道 (為 OS 版本內的次群族) 上已安裝傳統型應用程式。<p/><p>適用於 Windows10：</p><ul><li><strong>版本 1507</strong></li><li><strong>版本 1511</strong></li><li><strong>版本 1607</strong></li><li><strong>版本 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>發行預覽</strong></li><li><strong>測試人員 - 快</strong></li><li><strong>測試人員 - 慢</strong></li></ul><p/><p>若是 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>若是 Windows Server 2016：</p><ul><li><strong>版本 1607</strong></li></ul><p>適用於 Windows8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>適用於 Windows7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果 OS 版本或正式發行前小眾測試通道不明，此欄位會有<strong>不明</strong>值。</p>    |
+| osVersion       | 字串  | 下列其中一個字串，指定發生錯誤所在的作業系統版本：<ul><li>**Windows Phone 7.5**</li><li>**Windows Phone 8**</li><li>**Windows Phone 8.1**</li><li>**Windows Phone 10**</li><li>**Windows8**</li><li>**Windows8.1**</li><li>**Windows10**</li><li>**不明**</li></ul>  |
+| osRelease       | 字串  |  下列其中一個字串指定的 OS 版本或正式發行前小眾測試頻道 (為 OS 版本內的次群族) 上發生的錯誤。<p/><p>適用於 Windows10：</p><ul><li><strong>版本 1507</strong></li><li><strong>版本 1511</strong></li><li><strong>版本 1607</strong></li><li><strong>版本 1703</strong></li><li><strong>版本 1709</strong></li><li><strong>版本 1803</strong></li><li><strong>發行預覽</strong></li><li><strong>測試人員 - 快</strong></li><li><strong>測試人員 - 慢</strong></li></ul><p/><p>若是 Windows Server 1709：</p><ul><li><strong>RTM</strong></li></ul><p>若是 Windows Server 2016：</p><ul><li><strong>版本 1607</strong></li></ul><p>適用於 Windows8.1：</p><ul><li><strong>Update 1</strong></li></ul><p>適用於 Windows7：</p><ul><li><strong>Service Pack 1</strong></li></ul><p>如果 OS 版本或正式發行前小眾測試通道不明，此欄位會有<strong>不明</strong>值。</p>    |
 | eventType       | 字串  | 下列其中一個字串：<ul><li>**crash**</li><li>**hang**</li><li>**memory**</li><li>**jse**</li></ul>      |
 | market          | 字串  | 裝置市場的 ISO 3166 國家/地區碼。   |
 | deviceType      | 字串  | 下列其中一個字串，指出發生錯誤的裝置類型：<ul><li>**電腦**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul>    |
 | packageName     | 字串  | 與此錯誤關聯之應用程式套件的唯一名稱。      |
 | packageVersion  | 字串  | 與此錯誤關聯之應用程式套件的版本。   |
-| deviceCount     | inumber | 針對指定的彙總層級對應到此錯誤的唯一裝置數目。  |
-| eventCount      | inumber | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
+| deviceCount     | 整數 | 針對指定的彙總層級對應到此錯誤的唯一裝置數目。  |
+| eventCount      | 整數 | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
 
 
 ### <a name="response-example"></a>回應範例
@@ -151,4 +151,4 @@ Authorization: Bearer <your access token>
 * [取得 App 下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得 App 評分](get-app-ratings.md)
-* [取得 App 評論](get-app-reviews.md)
+* [取得應用程式評論](get-app-reviews.md)

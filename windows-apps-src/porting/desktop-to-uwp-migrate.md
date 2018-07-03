@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ec676446562d5d97ff2a7020fc494f248323450b
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
+ms.openlocfilehash: e0931440977c33642a3154cfa1b0adca42032df0
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691937"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018624"
 ---
 # <a name="share-code-between-a-desktop-app-and-a-uwp-app"></a>在傳統型應用程式與 UWP app 之間共用程式碼
 
@@ -26,8 +26,8 @@ ms.locfileid: "1691937"
 盡可能多地將程式碼放入 .NET Standard 2.0 類別庫中。  只要您的程式碼使用 Standard 中定義的 API，就可以在 UWP app 中重複使用該程式碼。 這比以往任何時候都還要容易共用 .NET Standard 程式庫的程式碼，因為 .NET Standard 2.0 中包含更加多的 API 了。
 
 以下是一部告訴您更多相關資訊的不錯影片。
-<br><br>
-<iframe src="https://www.youtube.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
 
 ### <a name="add-net-standard-libraries"></a>新增 .NET Standard 程式庫
 
@@ -56,10 +56,10 @@ ms.locfileid: "1691937"
 如果您的應用程式使用這其中任何一個，請判斷是否與 .NET Standard 2.0 相容。 若要這樣做，您可以使用 Visual Studio 擴充功能或命令列公用程式。
 
 您也可以使用這些工具來分析程式碼。 從這裡下載工具 ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases))，然後觀看此影片以了解如何使用這些工具。
-<br><br>
-<iframe src="https://www.youtube.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
+&nbsp;
+> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
 
- 如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
+如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
 
 ![Dot Net 選項](images/desktop-to-uwp/dot-net-option.png)
 
@@ -101,7 +101,7 @@ public static ArrayList GetCustomerNames()
 }
 
 ```
-不過，[.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)告訴了我們替代方式。 我們可以使用 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 類別，因為 .NET Standard 2.0 有提供這些類別。  
+您可以使用 [.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)尋找替代方式。 ``DbConnection``、``DbCommand`` 和 ``DbDataReader`` 類別全都以 .NET Standard 2.0 提供，所以我們可以改為使用它們。  
 
 此修訂版本使用這些類別來取得客戶清單，但要建立 ``DbConnection`` 類別，就必須傳入我們在用戶端應用程式中建立的 Factory 物件。
 
@@ -158,9 +158,9 @@ public partial class Customers : Form
 ## <a name="reach-all-windows-devices"></a>將目標範圍擴及所有 Windows 裝置
 
 現在就可以開始將 UWP app 新增至您的方案。
-<div style="float: left; padding: 10px">
-    ![傳統型轉 UWP 橋接器影像](images/desktop-to-uwp/adaptive-ui.png)
-</div>
+
+![傳統型轉 UWP 橋接器影像](images/desktop-to-uwp/adaptive-ui.png)
+
 您仍然需要使用 XAML 設計 UI 頁面，並撰寫任何裝置或平台特定程式碼。不過，一旦完成，您就可以將適用範圍涵蓋全系列的 Windows 10 裝置，而您的應用程式頁面也將具備可配合不同螢幕大小及解析度適當調整的現代化觀感。
 
 應用程式除了鍵盤和滑鼠之外，還能回應其他輸入機制，而且功能和設定在所有裝置上都會變得直覺。 這表示使用者了解過一次操作方法後，不論什麼裝置，使用起來都會非常熟悉。
@@ -211,9 +211,8 @@ public sealed partial class MainPage : Page
 ## <a name="reach-ios-and-android-devices"></a>將目標範本擴及 iOS 和 Android 裝置
 
 您可以透過新增 Xamarin 專案，將目標範本擴及 Android 和 iOS 裝置  
-<div style="float: left; padding: 10px">
-    ![Xamarin 應用程式](images/desktop-to-uwp/xamarin-apps.png)
-</div>
+
+![Xamarin 應用程式](images/desktop-to-uwp/xamarin-apps.png)
 
 這些專案允許您使用 C# 來建置可以完整存取平台特定及裝置特定 API 的 Android 和 iOS 應用程式。 這些應用程式充分利用平台特定的硬體加速，並且針對原生效能進行編譯。
 

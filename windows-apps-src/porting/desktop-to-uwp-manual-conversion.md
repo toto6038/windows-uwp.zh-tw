@@ -4,19 +4,19 @@ Description: Shows how to manually package a Windows desktop application (like W
 Search.Product: eADQiWindows 10XVcnh
 title: 手動封裝應用程式 (傳統型橋接器)
 ms.author: normesta
-ms.date: 05/25/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 81d5b9b0b52ef0f7529b277215e7fe0b95683f0a
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: eeadd41debcfcf5cfde23948c52bdfe1ce32e9df
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689764"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989642"
 ---
 # <a name="package-an-app-manually-desktop-bridge"></a>手動封裝應用程式 (傳統型橋接器)
 
@@ -31,8 +31,9 @@ ms.locfileid: "1689764"
 >[!IMPORTANT]
 >傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 年度更新版 (10.0；組建 14393) 或更新版本的專案。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>首先，請先考慮您將會如何散布您的應用程式
-若您打算將您的應用程式發行至 [Microsoft Store](https://www.microsoft.com/store/apps)，請先從填寫[此表單](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)開始。 Microsoft 將會與您連絡以啟動上架程序。 作為這個程序的一部分，您將會在Microsoft Store中保留一個名稱，並取得您需要用來封裝您應用程式的資訊。
+## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
+
+開始建立應用程式套件之前，先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
 
 ## <a name="create-a-package-manifest"></a>建立封裝資訊清單
 
@@ -111,7 +112,7 @@ ms.locfileid: "1689764"
 ```
 ### <a name="dependencies"></a>相依性
 
-針對傳統型橋接器應用程式，您必須將 ``Name`` 屬性設定為 ``Windows.Desktop``。
+針對利用傳統型橋接器封裝的傳統型應用程式，請一律將 ``Name`` 屬性設定為 ``Windows.Desktop``。
 
 ```XML
 <Dependencies>
@@ -120,7 +121,7 @@ ms.locfileid: "1689764"
 ```
 
 ### <a name="capabilities"></a>功能
-針對傳統型橋接器應用程式，您必須新增 ``runFullTrust`` 功能。
+針對利用傳統型橋接器封裝的傳統型應用程式，您必須新增 ``runFullTrust`` 能力。
 
 ```XML
 <Capabilities>
@@ -133,7 +134,7 @@ ms.locfileid: "1689764"
 
 ### <a name="application-element"></a>應用程式元素
 
-針對傳統型橋接器應用程式，Application 元素的 ``EntryPoint`` 屬性永遠都是 ``Windows.FullTrustApplication``。
+針對利用傳統型橋接器封裝的傳統型應用程式，Application 元素的 ``EntryPoint`` 屬性一律為 ``Windows.FullTrustApplication``。
 
 ```XML
 <Applications>

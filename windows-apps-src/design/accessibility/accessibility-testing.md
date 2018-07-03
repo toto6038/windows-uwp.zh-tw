@@ -6,18 +6,18 @@ title: 協助工具測試
 label: Accessibility testing
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 02/08/2017
+ms.date: 05/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b059a3088f3f8f9491cb3cccfdddee0a3eeb707
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
+ms.openlocfilehash: 02ba4a94bdca7ae9964cc40e7aba40f72beb5429
+ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655217"
+ms.lasthandoff: 05/28/2018
+ms.locfileid: "1924351"
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
@@ -30,7 +30,9 @@ ms.locfileid: "1655217"
 Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) 和 [**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985)。 這些工具可以協助您確認應用程式的協助工具。 請務必確認所有的 app 案例以及 UI 元素。
 
 您可以從 Microsoft Visual Studio 命令提示字元或從 Windows SDK 工具資料夾 (您開發電腦上安裝 Windows SDK 所在的 bin 子目錄) 啟動協助工具測試工具。
-
+  
+> [!VIDEO https://www.youtube.com/embed/ce0hKQfY9B8]
+  
 <span id="AccScope"/>
 <span id="accscope"/>
 <span id="ACCSCOPE"/>

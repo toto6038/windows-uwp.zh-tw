@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f867861537ddfb7fe346011cd637156854e2f7d8
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 141d87bf48b5b4835055375320f1e4a79498a42f
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817183"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989672"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>使用 Desktop App Converter 封裝應用程式 (傳統型橋接器)
 
@@ -60,10 +60,9 @@ ms.locfileid: "1817183"
 
 當您準備好要建立套件時，我們就可以開始進行操作。
 
-## <a name="first-consider-how-youll-distribute-your-app"></a>首先，請先考慮您將會如何散布您的應用程式
-若您打算將您的應用程式發行至 [Microsoft Store](https://www.microsoft.com/store/apps)，請先從填寫[此表單](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)開始。 Microsoft 將會與您連絡以啟動上架程序。 作為這個程序的一部分，您將會在Microsoft Store中保留一個名稱，並取得您需要用來封裝您應用程式的資訊。
+## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
-此外，開始建立應用程式套件之前，請務必先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
+開始建立應用程式套件之前，先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>請確定您的系統可以執行轉換器
 
@@ -74,7 +73,6 @@ ms.locfileid: "1817183"
 * 硬體協助虛擬化
 * 第二層位址轉譯 (SLAT)
 * [適用於 Windows 10 的 Windows 軟體開發套件 (SDK)](https://go.microsoft.com/fwlink/?linkid=821375)。
-
 
 ## <a name="start-the-desktop-app-converter"></a>啟動 Desktop App Converter
 

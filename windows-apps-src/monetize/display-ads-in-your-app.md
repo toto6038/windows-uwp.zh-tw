@@ -4,18 +4,18 @@ ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK 提供您數種方式來透過廣告讓您的 App 獲利。
 title: 使用 Microsoft Advertising SDK 停用應用程式中的廣告
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 05/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b5e8181dbf9cc661600a0ad15f5eb713621c5b3
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 601f3fe67d6ed44403c65427af75042456bdfddb
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816083"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843018"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
@@ -96,15 +96,15 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 在您完成測試應用程式後，即可將其提交到 Microsoft Store，在 Windows 開發人員中心儀表板的 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面上建立廣告單元。 然後，更新您的應用程式程式碼為使用此廣告單元，讓您的應用程式可以收到即時廣告。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
-根據預設，您的應用程式會顯示 Microsoft 付款廣告網路中的廣告。 若要讓您有最佳的廣告收入，您可以為您的廣告單元啟用廣告流量分配，以顯示其他付費廣告網路如 Taboola 和 Smaato 的廣告。 您也可以提供來自 Microsoft 應用程式促銷活動的廣告，提高您應用程式的促銷功能。
+根據預設，您的應用程式會顯示 Microsoft 付款廣告網路中的廣告。 若要讓您有最佳的廣告收入，您可以為您的廣告單元啟用[廣告流量分配](ad-mediation-service.md)，以顯示其他付費廣告網路如 Taboola 和 Smaato 的廣告。 您也可以提供來自 Microsoft 應用程式促銷活動的廣告，提高您應用程式的促銷功能。
 
 若要開始在您的 UWP app 中使用廣告流量分配，請針對您的廣告單元[設定廣告流量分配設定](../publish/in-app-ads.md#mediation-settings)。 根據預設，我們會使用機器學習演算法自動設定廣告流量分配，來協助您的 app 在支援的所有市場，將您的廣告收入最大化。 不過，您也可以手動選擇所要使用網路的選項。 無論是哪一種方式，廣告流量分配完全在我們的伺服器上設定；您不需要在您的 app 中進行程式碼變更。    
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>步驟 4：提交您的應用程式，並檢閱績效
 
-當您完成包含廣告之應用程式的開發之後，您可以[提交更新後的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)至 Windows 開發人員中心儀表板，讓它能夠在 Microsoft Store 中提供。 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的額外要求。
+當您完成包含廣告之應用程式的開發之後，您可以[提交更新後的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)至 Windows 開發人員中心儀表板，讓它能夠在 Windows 市集中提供。 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的額外要求。
 
-您的應用程式發行並在 Microsoft Store 中提供後，您可以在儀表板中檢視[廣告績效報告](../publish/advertising-performance-report.md)並繼續變更廣告流量分配設定以將廣告績效最佳化。 您的廣告收益包含在[付款摘要](../publish/payout-summary.md)中。
+您的應用程式發行並在市集中提供後，您可以在儀表板中檢視[廣告績效報告](../publish/advertising-performance-report.md)並繼續變更廣告流量分配設定以將廣告績效最佳化。 您的廣告收益包含在[付款摘要](../publish/payout-summary.md)中。
 
 <span id="additional-help" />
 

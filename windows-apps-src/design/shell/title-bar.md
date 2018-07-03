@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 556234eb4047418b0798a432d917268fb3634996
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
+ms.openlocfilehash: d7c620d5e6a45d48442a2761285f8509db91961d
+ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691004"
+ms.lasthandoff: 05/09/2018
+ms.locfileid: "1863164"
 ---
 # <a name="title-bar-customization"></a>標題列自訂
 
@@ -71,7 +71,7 @@ titleBar.ButtonInactiveBackgroundColor = Windows.UI.Colors.SeaGreen;
 > 您可以將這段程式碼放在應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.onlaunched) 方法 (_App.xaml.cs_) 中，對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的呼叫之後，或放在應用程式的第一個頁面中。
 
 > [!TIP]
-> UWP 社群工具組提供可讓您在 XAML 中設定這些色彩屬性的延伸模組。 如需詳細資訊，請參閱 [UWP 社群工具組文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)。
+> Windows 社群工具組提供可讓您在 XAML 中設定這些色彩屬性的延伸模組。 如需詳細資訊，請參閱 [Windows 社群工具組文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/extensions/viewextensions)。
 
 有幾個需要在設定標題列色彩時注意的事項：
 

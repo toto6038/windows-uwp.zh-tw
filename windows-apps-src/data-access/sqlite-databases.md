@@ -3,18 +3,18 @@ author: normesta
 title: 在 UWP app 中使用 SQLite 資料庫
 description: 在 UWP app 中使用 SQLite 資料庫。
 ms.author: normesta
-ms.date: 11/08/2017
+ms.date: 06/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, SQLite, 資料庫
 ms.localizationpriority: medium
-ms.openlocfilehash: d10347bb1bd2eb33bfc58a7bc09b6eb5d1ac7a58
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
+ms.openlocfilehash: 01cac3c1b8c18e968c35acb01b3d3918d9efe60d
+ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663618"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "2018594"
 ---
 # <a name="use-a-sqlite-database-in-a-uwp-app"></a>在 UWP app 中使用 SQLite 資料庫
 您可以使用 SQLite 在使用者的裝置上儲存和擷取輕量資料庫中的資料。 本指南會示範怎麼做。
@@ -145,7 +145,7 @@ Entity Framework (EF) 為物件關聯式對應程式，可讓您使用網域特�
 
 ![資料存取類別庫](images/ref-class-library.png)
 
-將下列 ``using`` 陳述式新增到您 UWP 專案中的 **App.xaml.cs** 和 **MainPage.xaml** 檔案。
+將下列 ``using`` 陳述式新增到您 UWP 專案中的 **App.xaml.cs** 和 **MainPage.xaml.cs** 檔案。
 
 ```csharp
 using DataAccessLibrary;
@@ -188,7 +188,7 @@ public static void InitializeDatabase()
         db.Open();
 
         String tableCommand = "CREATE TABLE IF NOT " +
-            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, " +
             "Text_Entry NVARCHAR(2048) NULL)";
 
         SqliteCommand createTable = new SqliteCommand(tableCommand, db);

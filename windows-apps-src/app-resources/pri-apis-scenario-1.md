@@ -4,23 +4,20 @@ Description: In this scenario, we'll make a new app to represent our custom buil
 title: 案例 1：從字串資源和資產檔案建立 PRI 檔案
 template: detail.hbs
 ms.author: stwhi
-ms.date: 02/20/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 7071c6e6eea3e4484f1ce416654d30d90d905325
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
+ms.openlocfilehash: 22a648d9366a3abcedd9fd75328cf0f504a9f84c
+ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658159"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "1992074"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>案例 1：從字串資源和資產檔案建立 PRI 檔案
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
 在本案例中，我們會使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，建立新的應用程式來表示我們的自訂建置系統。 請記住，這個自訂建置系統的目的是建立適用於目標 UWP app 的 PRI 檔案。 因此在這個逐步解說過程中，我們會建立一些範例資源檔案 (包含字串以及其他種類的資源) 來代表該目標 UWP app 的資源。
 
 ## <a name="new-project"></a>新專案
@@ -31,7 +28,7 @@ ms.locfileid: "1658159"
 ## <a name="headers-static-library-and-dll"></a>標頭、靜態程式庫和 dll
 在 MrmResourceIndexer.h 標頭檔案 (已安裝到 `%ProgramFiles(x86)%\Windows Kits\10\Include\<WindowsTargetPlatformVersion>\um\`) 中宣告 PRI API。 開啟 `CBSConsoleApp.cpp` 檔案，並將此標頭以及一些您所需的其他標頭加入其中。
 
-```cpp
+```cppwinrt
 #include <string>
 #include <windows.h>
 #include <MrmResourceIndexer.h>
@@ -43,7 +40,7 @@ API 是在 MrmSupport.dll 中實作，您可以連結到靜態程式庫 MrmSuppo
 
 將下列 Helper 函式新增至 `CBSConsoleApp.cpp`，我們將要用到。
 
-```cpp
+```cppwinrt
 inline void ThrowIfFailed(HRESULT hr)
 {
     if (FAILED(hr))
@@ -56,7 +53,7 @@ inline void ThrowIfFailed(HRESULT hr)
 
 在 `main()` 函式中加入初始化和解除初始化 COM 的呼叫。
 
-```cpp
+```cppwinrt
 int main()
 {
     ::ThrowIfFailed(::CoInitializeEx(nullptr, COINIT_MULTITHREADED));
@@ -117,7 +114,7 @@ int main()
 ## <a name="index-the-resources-and-create-a-pri-file"></a>建立資源的索引，然後建立 PRI 檔案
 在 `main()` 函式中初始化 COM 的呼叫之前，宣告一些我們需要的字串，並且也建立輸出資料夾，我們會在其中產生 PRI 檔案。
 
-```cpp
+```cppwinrt
 std::wstring projectRootFolderUWPApp{ L"UWPAppProjectRootFolder" };
 std::wstring generatedPRIsFolder{ projectRootFolderUWPApp + L"\\Generated PRIs" };
 std::wstring filePathPRI{ generatedPRIsFolder + L"\\resources.pri" };
@@ -128,7 +125,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 
 緊接初始化 COM 的呼叫之後，宣告資源索引子控制代碼，然後呼叫 [**MrmCreateResourceIndexer**]() 以建立資源索引子。
 
-```cpp
+```cppwinrt
 MrmResourceIndexerHandle indexer;
 ::ThrowIfFailed(::MrmCreateResourceIndexer(
     L"OurUWPApp",
@@ -148,7 +145,7 @@ MrmResourceIndexerHandle indexer;
 
 下一個步驟是將我們的資源新增至剛建立的資源索引子。 `resources.resw` 是包含目標 UWP app 中性字串的資源檔案 (.resw)。 如果您想要查看其內容，請向上捲動 (在本主題中)。 `de-DE\resources.resw` 包含德文字串，而 `en-US\resources.resw` 包含英文字串。 為了將資源檔案中的字串資源新增至資源索引子，您呼叫 [**MrmIndexResourceContainerAutoQualifiers**]()。 第三，我們對包含中性影像資源的檔案呼叫資源索引子的 [**MrmIndexFile**]() 函式。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"de-DE\\resources.resw"));
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"en-US\\resources.resw"));
@@ -159,19 +156,19 @@ MrmResourceIndexerHandle indexer;
 
 簡單介紹資源檔案的資源索引子之後，這就呼叫 [**MrmCreateResourceFile**]() 函式，讓它在磁碟上為我們產生 PRI 檔案。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
 此時，名為 `Generated PRIs` 資料夾中已建立名為 `resources.pri` 的 PRI 檔案。 現在已完成資源索引子，我們會呼叫 [**MrmDestroyIndexerAndMessages**]() 來終結其控制代碼，並釋放所配置的任何電腦資源。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
 由於 PRI 檔案是二進位檔，如果我們將二進位 PRI 檔案傾印成其對應的 XML 檔案，就更容檢視我們剛才產生的內容。 呼叫 [**MrmDumpPriFile**]() 所做的就是這個工作。
 
-```cpp
+```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));
 ```
 

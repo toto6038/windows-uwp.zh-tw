@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法取得 Xbox Live 並行使用資料。
 title: 取得 Xbox Live 並行使用資料
 ms.author: mcleans
-ms.date: 04/16/2018
+ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、並行使用
 ms.localizationpriority: medium
-ms.openlocfilehash: b739c9ac3ce9fe4501ecaa1071df4fd3901484ab
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 47e9a23ba046e70a4d755a3ac9dc1bbf4d62f307
+ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816243"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "1976173"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>取得 Xbox Live 並行使用資料
 
@@ -22,7 +22,7 @@ ms.locfileid: "1816243"
 在 Microsoft Store 分析 API 中使用此方法可以取得有關在指定時間範圍內每分鐘、每小時或每天玩您的 [已啟用 Xbox Live 遊戲](../xbox-live/index.md) 的平均客戶數量的即時使用量資料 (延遲 5-15 分鐘)。 「Windows 開發人員中心」儀表板中的 [Xbox 分析報告](../publish/xbox-analytics-report.md)也有提供這項資訊。
 
 > [!IMPORTANT]
-> 此方法目前只支援由 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners) 發行或透過 [ID@Xbox 程式](../xbox-live/developer-program-overview.md#id) 提交的支援 Xbox Live 的遊戲。 它不會傳回透過 [Xbox Live 創作者計畫](../xbox-live/developer-program-overview.md#xbox-live-creators-program) 提交的遊戲的資料。
+> 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過 [ [ID@Xbox程式](../xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -51,7 +51,7 @@ ms.locfileid: "1816243"
 ### <a name="request-parameters"></a>要求參數
 
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取 Xbox Live 並行使用資料之遊戲的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | metricType | 字串 | 指定要擷取 Xbox Live 分析資料類型的字串。 對於此方法，請指定 **並行**值。  |  是  |

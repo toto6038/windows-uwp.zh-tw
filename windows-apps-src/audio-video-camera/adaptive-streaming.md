@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ac00104917d41a48abda97c2d5d37c0ced3ab5e9
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: ae99a7a92ce933c8536dc30f9807d60a1441a809
+ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816643"
+ms.lasthandoff: 05/23/2018
+ms.locfileid: "1912966"
 ---
 # <a name="adaptive-streaming"></a>彈性資料流
 
 
-本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。
+本文說明如何將彈性串流多媒體內容播放新增到通用 Windows 平台 (UWP) 應用程式。 本功能支援 HTTP 即時串流 (HLS) 與 HTTP 動態串流 (DASH) 內容播放。 從 Windows 10 版本 1803 開始，**[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支援平滑串流處理。
 
 如需支援的 HLS 通訊協定標記的清單，請參閱 [HLS 標記支援](hls-tag-support.md)。 
 

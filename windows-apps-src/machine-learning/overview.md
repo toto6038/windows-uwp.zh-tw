@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、Windows 機器學習
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ef6ea1a4e1dab23f5ff6a09aec9b8c49c135f5e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: a2470cff6b5c7f07c720a38d0bff00486e4c6b27
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817659"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842868"
 ---
 # <a name="windows-ml-overview"></a>Windows ML 概觀
 
@@ -54,7 +54,7 @@ Windows ML 的一些醒目提示包括：
 
 ### <a name="system-requirements"></a>系統需求
 
-要組建使用 Windows ML 的應用程式，您需要 [Windows SDK - 組建 17110 或更高版本](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK)。
+若要組建使用 Windows ML 的應用程式，您需要 [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) - 組建 17110 或更高版本。
 
 ### <a name="onnx-models"></a>ONNX 模型
 
@@ -76,6 +76,8 @@ Windows ML 的一些醒目提示包括：
 - LibSVM
 
 若要了解如何安裝和使用 WinMLTools，請參閱 [轉換模型](conversion-samples.md)。
+
+有了 Visual Studio Tools for AI 延伸，您也可以在 Visual Studio IDE 內使用 WinMLTools 感受更簡便的點擊體驗，將您的機型轉換成 ONNX 格式。 若要進一步瞭解，請參閱 [VS Tools for AI](https://github.com/Microsoft/vs-tools-for-ai/)。
 
 ### <a name="onnx-operators"></a>ONNX 運算子
 
@@ -106,7 +108,7 @@ Windows ML 支援 ONNX v1.0 文件中所定義的所有運算子，其區別如�
 
 使用 ONNX 模型檔案，Windows ML 的程式碼產生器會建立介面，以便您的應用程式中的模型進行互動。 產生的介面包含代表模型、輸入和輸出的包裝函式類別。 產生的程式碼為您呼叫 [Windows ML API](/uwp/api/windows.ai.machinelearning.preview)，讓您輕鬆地在專案中載入、繫結和評估模型。 程式碼產生器目前支援 C# 和 C++/CX。
 
-對於 UWP 開發人員，Windows ML 的自動程式碼產生本身與 [Visual Studio (版本 15.7 - 預覽版 1)](https://www.visualstudio.com/vs/preview/) 原生整合。 (**注意**：在 Visual Studio 安裝程式中，您需要檢查選用的 Windows 10 Insider Preview SDK 組建 17110。) 在 Visual Studio 專案中，只需將您的 ONNX 檔案新增為現有的項目，然後 VS 將在新的介面檔案中產生 Windows ML 包裝函式類別。
+對於 UWP 開發人員，Windows ML 的自動程式碼產生本身與 [Visual Studio](https://developer.microsoft.com/windows/downloads) 原生整合。 在 Visual Studio 專案內部，只要將您 ONNX 檔案新增為現有的項目，VS 將會在新介面檔案中產生 Windows ML 包裝函式類別。
 
 您還可以使用 Windows SDK 隨附的命令列工具 `mlgen.exe` 來產生 Windows ML 包裝函式類別。 該工具位於 `(SDK_root)\bin\<version>\x64` 或 `(SDK_root)\bin\<version>\x86` 中，其中 SDK_root 是 SDK 安裝目錄。 若要執行該工具，請使用下列命令。
 

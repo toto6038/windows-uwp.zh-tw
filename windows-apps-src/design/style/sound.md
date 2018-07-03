@@ -16,16 +16,16 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dbe59b422a83ad31727928c406a1f4a6dd550301
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
+ms.openlocfilehash: c6e85bcbf131755af6909fd0ae7ee42bc36544b8
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638392"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1842798"
 ---
 # <a name="sound"></a>音效
 
- 
+![主角圖像](images/header-sound.svg)
 
 有許多方式可以使用音效來增強您的 App。 您可以使用音效來補充其他 UI 元素，讓使用者能透過音效辨識事件。 針對視覺殘障人士而言，音效可以是有效的使用者介面元素。 您可以使用音效來建立一個讓使用者身歷其境的氛圍；例如，您可以在拼圖遊戲的背景中播放詭譎的音樂，或針對恐怖/求生遊戲使用具威脅性的音效。
 

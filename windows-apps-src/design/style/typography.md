@@ -7,18 +7,18 @@ ms.date: 04/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd5e6f3dbddca2f6a944ee18e32463afe029f89
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
+ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
+ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816773"
+ms.lasthandoff: 05/07/2018
+ms.locfileid: "1843368"
 ---
 # <a name="typography"></a>印刷樣式
 
-![印刷樣式標頭影像](images/type/header-typography.svg)
+![主角圖像](images/header-typography.svg)
 
 作為語言的視覺表示，印刷格式的主要工作是溝通資訊。 其樣式絕對不能阻礙這項目標。 在這篇文章中，我們將會討論如何在您的 UWP app 中設定印刷樣式，以協助使用者輕鬆且有效地了解內容。
 
