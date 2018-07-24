@@ -4,19 +4,19 @@ Description: Create a modern Windows app package for your existing Windows Forms
 Search.Product: eADQiWindows 10XVcnh
 title: 傳統型橋接器
 ms.author: normesta
-ms.date: 08/30/2017
+ms.date: 05/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: high
-ms.openlocfilehash: 3c4285d6717c27e78c13ac6588fe634c566138d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
+ms.openlocfilehash: 321fb71d44e1298b29b6119168f67207e6df4a8d
+ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832369"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "1989692"
 ---
 # <a name="desktop-bridge"></a>傳統型橋接器
 
@@ -54,9 +54,7 @@ ms.locfileid: "1832369"
 
 ## <a name="prepare"></a>準備
 
-您計畫要將您的應用程式發行至 [Windows app Store](https://www.microsoft.com/store/apps)嗎？ 若是如此，請先填寫[此表單](https://developer.microsoft.com/windows/projects/campaigns/desktop-bridge)。 Microsoft 將會與您連絡以啟動上架程序。 作為這個程序的一部分，您將會在 Store 中保留一個名稱，並取得您需要用來建立 Windows 應用程式套件的資訊。
-
-下一步，請檢閱[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)文章，並在建立 Windows 應用程式套件之前解決任何適用於您應用程式的問題。 在建立套件之前，您也有可能不需要對您的應用程式進行任何變更。 然而，在某些情況下，您可能仍需要在建立套件之前調整您的應用程式。
+首先，準備好您的應用程式，為此請檢閱[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)文章，並在建立其 Windows 應用程式套件之前解決任何會影響應用程式的問題。 在建立套件之前，您也有可能不需要對您的應用程式進行任何變更。 然而，在某些情況下，您可能仍需要在建立套件之前調整您的應用程式。
 
 <a id="convert" />
 
@@ -188,6 +186,30 @@ InstallShield 提供單一解決方案，用以開發 MSI 和 EXE 安裝程式�
 
 請參閱 [RAD Studio by Embarcadero](https://www.embarcadero.com/products/rad-studio/windows-10-store-desktop-bridge)
 
+#### <a name="raypack-studio"></a>RayPack Studio
+
+Raynet 的封裝解決方案 [RayPack Studio](https://raynet.de/Raynet-Products/RayPackStudio) 支援傳統型橋接器，做為有效率且易於設定之轉換及重新封裝架構的幾個可能途徑之一。
+
+<img width="20%" src="images/desktop-to-uwp/RaynetLogo_v3.png">
+
+現有虛擬環境 (VMWare Workstation、Hyper-V) 無需冗長環境設定，即可用於執行自動化/大量轉換。 此製作公司的元件 ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad)) 可以進行預先轉換檢測和相容性測試來確認軟體符合轉換的條件。 此外，使用者現在可以執行與各種 Windows 10 版本 (包括年度更新版和 Creators Update) 的完整碰撞及相容性檢查。
+
+除了不能建立 Windows 10 APPX/UWP 格式的軟體套件之外，RayPack Studio 也可以用來建立傳統 Windows Installer 套件 (MSI)、修補程式 (MSP)、轉換 (MST) 和 App-V 套件。 此外，此解決方案還隨附一組適用於企業專業軟體封裝的軟體產品及元件。 除了封裝軟體和虛擬化之外，RayPack Studio 也顧慮到所有封裝相關工作上的需要：軟體應用程式與套件的衝突及相容性檢查 ([RayQC Advanced](https://raynet.de/Raynet-Products/RayQCad))、軟體評估 ([RayEval](https://raynet.de/Raynet-Products/RayEval)) 和品質保證 ([RayQC](https://raynet.de/Raynet-Products/RayQC))。
+
+如果與 [RayFlow](https://raynet.de/Raynet-Products/RayFlow) 這個 Raynet 的企業工作流程系統搭配使用，使用者就可以從安排封裝順序一直到評估、分析、封裝、品質保證、使用者接受度測試和部署，有效率地在整個企業應用程式生命週期中處理軟體。 所有套件和格式都可以直接儲存和部署到 SCCM 或其他解決方案中。 RayFlow 會追蹤和管理整個應用程式生命週期流程。 此外，還可以整合任何訂單系統，例如 ServiceNow。 Raynet 憑藉其供應服務提供者的工具，在世界各地建立軟體封裝廠。
+
+為了讓自己確信，請取得 Raynet 的 RayPack Studio and RayFlow [免費試用授權](https://raynet.de/contact?init=license)。 如需詳細資訊，請瀏覽 [www.raynet.de](https://raynet.de/home)。
+
+**相關連結**：
+
+* Raynet：[https://raynet.de/home](https://raynet.de/home)
+* RayPack Studio：[https://raynet.de/Raynet-Products/RayPackStudio](https://raynet.de/Raynet-Products/RayPackStudio)
+* RayFlow：[https://raynet.de/Raynet-Products/RayFlow](https://raynet.de/Raynet-Products/RayFlow)
+* RayEval：[https://raynet.de/Raynet-Products/RayEval](https://raynet.de/Raynet-Products/RayEval)
+* RayQC：[https://raynet.de/Raynet-Products/RayQC](https://raynet.de/Raynet-Products/RayQC)
+* RayQC Advanced：[https://raynet.de/Raynet-Products/RayQCad](https://raynet.de/Raynet-Products/RayQCad)
+* 免費試用授權：[https://raynet.de/contact?init=license](https://raynet.de/contact?init=license)
+
 ### <a name="manual-packaging"></a>手動封裝
 
 您還有一個最後選擇，就是不使用上述任一工具來轉換您的應用程式。 若您希望細微控制您的轉換，您可以建立一個資訊清單檔，然後執行 **MakeAppx.exe** 工具來建立您的 Windows 應用程式套件。
@@ -228,7 +250,7 @@ InstallShield 提供單一解決方案，用以開發 MSI 和 EXE 安裝程式�
 當您準備好在逼真的設定下測試您的應用程式以準備散布時，我們建議您簽署您的應用程式並安裝它。 請參閱[測試您的應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-debug#test-your-app)。
 
 >[!IMPORTANT]
-> 如果您計劃將您的應用程式發行至 Microsoft Store，請確定您的應用程式可在執行 Windows 10 S 的裝置上正確運作這是 Store 需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
+> 如果您計劃將您的應用程式發行至 Microsoft Store，請確定應用程式可在執行 Windows 10 (S 模式) 的裝置上正確運作。 這是 Microsoft Store 的要求條件。 請參閱[針對 Windows 10 S 模式測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
 
 ## <a name="validate"></a>驗證
 
