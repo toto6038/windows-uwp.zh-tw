@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: c43d4af3-9a1a-4eae-a137-1267c293c1b5
-description: "本文示範如何利用只會出現在行動裝置上的特殊相機 UI 功能。"
-title: "適用於行動裝置的相機 UI 功能"
+description: 本文示範如何利用只會出現在行動裝置上的特殊相機 UI 功能。
+title: 適用於行動裝置的相機 UI 功能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.locfileid: "208974"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>適用於行動裝置的相機 UI 功能
 

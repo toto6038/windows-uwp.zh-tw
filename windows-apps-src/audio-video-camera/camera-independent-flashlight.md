@@ -1,8 +1,8 @@
 ---
 author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
-description: "本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃光燈功能來管理。"
-title: "相機獨立閃光燈"
+description: 本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃光燈功能來管理。
+title: 相機獨立閃光燈
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,7 +11,9 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
 ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
-translationtype: HT
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.locfileid: "209094"
 ---
 # <a name="camera-independent-flashlight"></a>相機獨立閃光燈
 
