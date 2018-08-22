@@ -4,31 +4,33 @@ description: 說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執�
 title: 自訂相依性屬性
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f1b17f4ea61e28b1ba43d886455d8a3373efb79
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+dev_langs:
+- csharp
+- vb
+- cppwinrt
+- cpp
+ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675625"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801949"
 ---
 # <a name="custom-dependency-properties"></a>自訂相依性屬性
-
 
 我們將在此處說明如何針對使用 C++、C# 或 Visual Basic 的 Windows 執行階段應用程式定義和實作您自己的相依性屬性。 我們會列出為什麼應用程式開發人員及元件撰寫人員要建立自訂相依性屬性的理由。 我們不但描述了自訂相依性屬性的實作步驟，也會描述一些可以改善相依性屬性的效能、可用性或多樣性的最佳做法。
 
 ## <a name="prerequisites"></a>先決條件
 
-
 我們假設您已經閱讀過[相依性屬性概觀](dependency-properties-overview.md)，而且也了解現有相依性屬性使用者對於相依性屬性的觀點。 為了遵循這個主題中的範例，您也必須了解 XAML 並知道如何使用 C++、C# 或 Visual Basic 撰寫基本的 Windows 執行階段應用程式。
 
 ## <a name="what-is-a-dependency-property"></a>什麼是相依性屬性？
-
 
 若要支援樣式、資料繫結、動畫以及屬性的預設值，則應實作為相依性屬性。 相依性屬性值不會儲存為類別上的欄位，它們會由 xaml 架構儲存並使用索引鍵來參照，該索引鍵會在呼叫 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法將屬性登錄到 Windows 執行階段屬性系統時進行擷取。   相依性屬性只能由衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 的類型使用。 但是 **DependencyObject** 位於類別階層中很高的位置，所以用於 UI 和呈現的大部分類別也可以支援相依性屬性。 如需相依性屬性以及本文件中一些詞彙及描述它們慣例的詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
@@ -36,7 +38,7 @@ Windows 執行階段中相依性屬性的範例包括：[**Control.Background**]
 
 慣例是由類別公開的每個相依性屬性都具有類型 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的對應 **public static readonly** 屬性，它會在相同的類別上公開，而且提供相依性屬性的識別碼。 識別碼名稱會遵循這個慣例：相依性屬性的名稱，並在名稱最後面附加字串 "Property"。 例如，**Control.Background** 屬性的對應 **DependencyProperty** 識別碼是 [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396)。 識別碼會儲存登錄時的相依性屬性資訊，之後只要有其他操作需要使用相依性屬性 (如呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361))，就可以使用。
 
-##  <a name="property-wrappers"></a>屬性包裝函式
+## <a name="property-wrappers"></a>屬性包裝函式
 
 相依性屬性通常具有包裝函式實作。 如果沒有包裝函式，取得或設定屬性的唯一方法就是使用相依性屬性公用程式方法 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 並將識別碼當作參數傳遞給它們。 這對於表面上是屬性的物件而言不是尋常的做法。 但是如果使用包裝函式，那麼您的程式碼以及參考相依性屬性的任何其他程式碼就可以使用直接的物件屬性語法，這對您所使用的語言而言是很自然的語法。
 
@@ -48,26 +50,27 @@ Windows 執行階段中相依性屬性的範例包括：[**Control.Background**]
 
 如果您想要屬性支援 Windows 執行階段或 Windows 執行階段應用程式的一或多個功能時，就可以考慮將屬性實作為相依性屬性：
 
--   透過 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 設定屬性
--   做為與 [**{Binding}**](binding-markup-extension.md) 繫結之資料的有效目標屬性
--   透過 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 支援動畫值
--   當下列情況變更屬性的值時回報：
-    -   屬性系統自己採取的動作
-    -   環境
-    -   使用者動作
-    -   讀取和寫入樣式
+- 透過 [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 設定屬性
+- 做為與 [**{Binding}**](binding-markup-extension.md) 繫結之資料的有效目標屬性
+- 透過 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 支援動畫值
+- 當下列情況變更屬性的值時回報：
+  - 屬性系統自己採取的動作
+  - 環境
+  - 使用者動作
+  - 讀取和寫入樣式
 
 ## <a name="checklist-for-defining-a-dependency-property"></a>定義相依性屬性的檢查清單
 
 定義相依性屬性可以想成是一組概念。 這些概念不一定是依序執行的步驟，因為數個概念可以放置在實作的單行程式碼中。 這個清單只提供簡略概觀。 我們稍後會在這個主題中詳細說明每個概念，並為您示範不同語言的範例程式碼。
 
--   在屬性系統中登錄屬性名稱 (呼叫 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829))，指定擁有者類型及屬性值的類型。 
-    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一個必要參數需要使用屬性中繼資料。 為此指定 **null**，或者如果您想要屬性變更行為，或可以透過呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 還原的中繼資料預設值，請指定 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata) 執行個體。
--   在擁有者類型上將 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼定義為 **public static readonly** 屬性成員。
--   定義包裝函式屬性，遵循您實作的語言中所使用的屬性存取子模型。 包裝函式屬性名稱必須符合 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 中使用的 *name* 字串。 實作 **get** 和 **set** 存取子，將包裝函式連接到它所包裝的相依性屬性，方法是呼叫 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 並將您自己的屬性識別碼當作參數傳遞。
--   (選用) 將 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 之類的屬性放置到包裝函式中。
+- 在屬性系統中登錄屬性名稱 (呼叫 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829))，指定擁有者類型及屬性值的類型。
+  - [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 有一個必要參數需要使用屬性中繼資料。 為此指定 **null**，或者如果您想要屬性變更行為，或可以透過呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 還原的中繼資料預設值，請指定 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.propertymetadata) 執行個體。
+- 在擁有者類型上將 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別碼定義為 **public static readonly** 屬性成員。
+- 定義包裝函式屬性，遵循您實作的語言中所使用的屬性存取子模型。 包裝函式屬性名稱必須符合 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 中使用的 *name* 字串。 實作 **get** 和 **set** 存取子，將包裝函式連接到它所包裝的相依性屬性，方法是呼叫 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 並將您自己的屬性識別碼當作參數傳遞。
+- (選用) 將 [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) 之類的屬性放置到包裝函式中。
 
-**注意**：如果您定義的是自訂附加屬性，則通常會省略包裝函式。 相反地，您要撰寫 XAML 處理器可以使用的不同樣式存取子。 請參閱[自訂附加屬性](custom-attached-properties.md)。 
+> [!NOTE]
+> 如果您要定義自訂附加的屬性，通常會省略包裝函式。 相反地，您要撰寫 XAML 處理器可以使用的不同樣式存取子。 請參閱[自訂附加屬性](custom-attached-properties.md)。 
 
 ## <a name="registering-the-property"></a>登錄屬性
 
@@ -75,7 +78,11 @@ Windows 執行階段中相依性屬性的範例包括：[**Control.Background**]
 
 若為 Microsoft .NET 語言 (C# 和 Microsoft Visual Basic)，您可以在類別的內文中呼叫 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) (在類別內，但在任何成員定義外)。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 方法呼叫也會提供識別碼做為傳回值。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼叫通常是做為靜態建構函式或是類型 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的 **public static readonly** 屬性初始化的一部份 (做為您類別的一部份)。 這個屬性會公開您相依性屬性的識別碼。 以下是 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼叫的範例。
 
-> [!div class="tabbedCodeSnippets"]
+> [!NOTE]
+> 註冊的相依性屬性做為識別碼的一部分屬性定義的典型的實作，但您也可以在類別靜態建構函式中註冊的相依性屬性。 如果您需要一行以上的程式碼來初始化相依性屬性，這個方法比較適用。
+
+For C + + CX，您有您分割標頭和程式碼檔案之間的實作方式的選項。 典型的分割方式是在標頭將識別碼本身宣告為 **public static** 屬性，搭配 **get** 實作但不使用 **set**。 **get** 實作會參考私用欄位，它是未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 執行個體。 您也可以宣告包裝函式以及包裝函式的 **get** 和 **set** 實作。 在這個情況下，標頭會包含一些基本的實作。 如果包裝函式需要 Windows 執行階段屬性，那麼標頭中也會包含屬性。 在程式碼檔案中放置 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼叫，位置是在只會在應用程式第一次初始化時執行的協助程式函式中。 使用 **Register** 的傳回值來填入您在標頭中宣告的靜態但未初始化的識別碼，您可以在實作檔案的根範圍內初始設為 **nullptr**。
+
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -84,6 +91,7 @@ public static readonly DependencyProperty LabelProperty = DependencyProperty.Reg
   new PropertyMetadata(null)
 );
 ```
+
 ```vb
 Public Shared ReadOnly LabelProperty As DependencyProperty = 
     DependencyProperty.Register("Label", 
@@ -92,9 +100,35 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
-**注意**：相依性屬性登錄為識別碼屬性定義的一部份是典型的實作，但是您也可以在類別靜態建構函式中登錄相依性屬性。 如果您需要一行以上的程式碼來初始化相依性屬性，這個方法比較適用。
+```cppwinrt
+// ImageWithLabelControl.idl
+namespace ImageWithLabelControlApp
+{
+    runtimeclass ImageWithLabelControl : Windows.UI.Xaml.Controls.Control
+    {
+        ImageWithLabelControl();
+        static Windows.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        String Label;
+    }
+}
 
-若為 C++，您可以選擇如何分割標頭和程式碼檔案之間的實作。 典型的分割方式是在標頭將識別碼本身宣告為 **public static** 屬性，搭配 **get** 實作但不使用 **set**。 **get** 實作會參考私用欄位，它是未初始化的 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 執行個體。 您也可以宣告包裝函式以及包裝函式的 **get** 和 **set** 實作。 在這個情況下，標頭會包含一些基本的實作。 如果包裝函式需要 Windows 執行階段屬性，那麼標頭中也會包含屬性。 在程式碼檔案中放置 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼叫，位置是在只會在應用程式第一次初始化時執行的協助程式函式中。 使用 **Register** 的傳回值來填入您在標頭中宣告的靜態但未初始化的識別碼，您可以在實作檔案的根範圍內初始設為 **nullptr**。
+// ImageWithLabelControl.h
+...
+private:
+    static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+...
+
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ nullptr }
+);
+...
+```
 
 ```cpp
 //.h file
@@ -104,46 +138,46 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 //using namespace Platform;
 
 public ref class ImageWithLabelControl sealed : public Control
-{  
+{
 private:
     static DependencyProperty^ _LabelProperty;
 ...
 public:
-    static void RegisterDependencyProperties(); 
+    static void RegisterDependencyProperties();
     static property DependencyProperty^ LabelProperty
     {
         DependencyProperty^ get() {return _LabelProperty;}
     }
 ...
 };
-```
 
-```cpp
 //.cpp file
 using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml.Interop;
 
 DependencyProperty^ ImageWithLabelControl::_LabelProperty = nullptr;
 
-// This function is called from the App constructor in App.xaml.cpp 
+// This function is called from the App constructor in App.xaml.cpp
 // to register the properties
-void ImageWithLabelControl::RegisterDependencyProperties() 
+void ImageWithLabelControl::RegisterDependencyProperties()
 { 
-    if (_LabelProperty == nullptr) 
+    if (_LabelProperty == nullptr)
     { 
         _LabelProperty = DependencyProperty::Register(
-          "Label", Platform::String::typeid, ImageWithLabelControl::typeid, nullptr); 
+          "Label", Platform::String::typeid, ImageWithLabelControl::typeid, nullptr);
     } 
 }
 ```
 
-**注意**：針對 C++ 程式碼，同時使用私用欄位和公用唯讀屬性顯示 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的原因，在於讓使用您相依性屬性的其他呼叫者也可以使用需要讓識別碼成為公用的屬性系統公用程式 API。 如果讓識別碼保持私用，別人就無法使用這些公用程式 API。 這類 API 的範例和案例包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (選用)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 以及 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836)。 您無法為此使用公用欄位，因為 Windows 執行階段中繼資料的規則並不允許公用欄位。
+> [!NOTE]
+> For C + + CX 程式碼的原因為何您有私人功能變數並且會呈現[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)公用唯讀屬性會使其他來電者使用相依性屬性也可以使用屬性系統公用程式需要 api （英文）是公用的識別碼。 如果讓識別碼保持私用，別人就無法使用這些公用程式 API。 這類 API 的範例和案例包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (選用)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 以及 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836)。 您無法為此使用公用欄位，因為 Windows 執行階段中繼資料的規則並不允許公用欄位。
 
 ## <a name="dependency-property-name-conventions"></a>相依性屬性名稱慣例
 
 相依性屬性有命名慣例；除了例外情況之外，請在所有情況中遵循這種命名慣例。 相依性屬性本身具有基本名稱 (在前面的範例中是 "Label")，它是以 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的第一個參數來指定的。 這個名稱在每個登錄類型中必須是唯一的，而且這種唯一性的需求也適用於任何繼承的成員。 經由基本類型而繼承的相依性屬性會被視為登錄類型的一部分；而繼承的屬性名稱不可被重複登錄。
 
-**警告**：雖然您在這裡提供的名稱可以是您所選用之程式語言的任何有效字串識別碼，但是您通常也會希望能夠在 XAML 中設定您的相依性屬性。 為了能夠在 XAML 中設定，您選擇的屬性名稱必須是有效的 XAML 名稱。 如需詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
+> [!WARNING]
+> 雖然您提供以下可以是任何字串識別碼的名稱會是有效的程式設計 （英文） 您選擇的語言，您通常是要能夠太在 XAML 中設定相依性屬性。 為了能夠在 XAML 中設定，您選擇的屬性名稱必須是有效的 XAML 名稱。 如需詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
 
 在您建立識別碼屬性時，請合併登錄時的屬性名稱與尾碼 "Property" (例如，"LabelProperty")。 這個屬性就是您相依性屬性的識別碼，當您在自己的屬性包裝函式中進行 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 和 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 呼叫時，它就會是您的輸入。 它也會由屬性系統和其他 XAML 處理器所使用，例如
 [**{x:Bind}**](x-bind-markup-extension.md)
@@ -152,9 +186,9 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 
 您的屬性包裝函式應該在 **get** 實作中呼叫 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)，以及在 **set** 實作中呼叫 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)。
 
-**警告**：在除了例外情況之外，您的包裝函式在所有情況下應該只執行 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 和 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 操作。 否則，透過 XAML 和透過程式碼設定的屬性會出現不同的行為。 為求效率，當設定相依性屬性時 XAML 剖析器會略過包裝函式；並透過 **SetValue** 與備份存放區通訊。
+> [!WARNING]
+> 在所有但例外的情況下，包裝函式實作應該執行僅[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)和[**setvalue 巨集**](https://msdn.microsoft.com/library/windows/apps/br242361)的作業。 否則，透過 XAML 和透過程式碼設定的屬性會出現不同的行為。 為求效率，當設定相依性屬性時 XAML 剖析器會略過包裝函式；並透過 **SetValue** 與備份存放區通訊。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 public String Label
 {
@@ -162,16 +196,33 @@ public String Label
     set { SetValue(LabelProperty, value); }
 }
 ```
+
 ```vb
-Public Property Label() As String 
-    Get 
+Public Property Label() As String
+    Get
         Return DirectCast(GetValue(LabelProperty), String) 
     End Get 
-    Set(ByVal value As String) 
-        SetValue(LabelProperty, value) 
-    End Set 
+    Set(ByVal value As String)
+        SetValue(LabelProperty, value)
+    End Set
 End Property
 ```
+
+```cppwinrt
+// ImageWithLabelControl.h
+...
+winrt::hstring Label()
+{
+    return winrt::unbox_value<winrt::hstring>(GetValue(m_labelProperty));
+}
+
+void Label(winrt::hstring const& value)
+{
+    SetValue(m_labelProperty, winrt::box_value(value));
+}
+...
+```
+
 ```cpp
 //using namespace Platform;
 public:
@@ -182,7 +233,7 @@ public:
       return (String^)GetValue(LabelProperty);
     }
     void set(String^ value) {
-      SetValue(LabelProperty, value); 
+      SetValue(LabelProperty, value);
     }
   }
 ```
@@ -191,8 +242,8 @@ public:
 
 屬性中繼資料被指派給相依性屬性時，會針對屬性擁有者類型的每個執行個體或它的子類別，將相同的中繼資料套用到這個屬性。 在屬性中繼資料中，您可以指定兩種行為：
 
--   屬性系統指派給所有屬性的預設值。
--   只要偵測到屬性值變更時，屬性系統內部自動叫用的靜態回呼方法。
+- 屬性系統指派給所有屬性的預設值。
+- 只要偵測到屬性值變更時，屬性系統內部自動叫用的靜態回呼方法。
 
 ### <a name="calling-register-with-property-metadata"></a>使用屬性中繼資料呼叫登錄
 
@@ -200,11 +251,11 @@ public:
 
 通常您會在 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的參數內提供 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 做為內嵌建立的執行個體。
 
-**注意**：如果您正在定義 [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) 實作，則必須使用公用程式方法 [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) (而非呼叫 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 建構函式) 來定義 **PropertyMetadata** 執行個體。
+> [!NOTE]
+> 如果您要定義為[**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812)實作，您必須使用 [公用程式方法[**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099)而不是呼叫[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771)建構函式定義**PropertyMetadata**執行個體。
 
 下一個範例參考一個具有 [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 值的 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 執行個體，修改了先前顯示的 [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 範例。 "OnLabelChanged" 回呼的實作稍後會在本節中說明。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -213,19 +264,34 @@ public static readonly DependencyProperty LabelProperty = DependencyProperty.Reg
   new PropertyMetadata(null,new PropertyChangedCallback(OnLabelChanged))
 );
 ```
+
 ```vb
-Public Shared ReadOnly LabelProperty As DependencyProperty = 
-    DependencyProperty.Register("Label", 
-      GetType(String), 
-      GetType(ImageWithLabelControl), 
+Public Shared ReadOnly LabelProperty As DependencyProperty =
+    DependencyProperty.Register("Label",
+      GetType(String),
+      GetType(ImageWithLabelControl),
       New PropertyMetadata(
         Nothing, new PropertyChangedCallback(AddressOf OnLabelChanged)))
 ```
+
+```cppwinrt
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ nullptr, Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+);
+...
+```
+
 ```cpp
-DependencyProperty^ ImageWithLabelControl::_LabelProperty = 
-    DependencyProperty::Register("Label", 
+DependencyProperty^ ImageWithLabelControl::_LabelProperty =
+    DependencyProperty::Register("Label",
     Platform::String::typeid,
-    ImageWithLabelControl::typeid, 
+    ImageWithLabelControl::typeid,
     ref new PropertyMetadata(nullptr,
       ref new PropertyChangedCallback(&ImageWithLabelControl::OnLabelChanged))
     );
@@ -237,7 +303,21 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 如果未指定預設值，相依性屬性的參考類型的預設值為 Null，或是值類型或語言基本類型的預設類型 (例如，整數為 0 或字串為空字串)。 建立預設值的主要原因在於當您在屬性上呼叫 [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) 的時候會還原這個值。 在每個屬性上建立預設值可能比在建構函式中建立預設值更方便，特別是對值類型而言。 不過，對於參考類型來說，請確定建立預設值不會建立不想要的單一執行個體模式。 如需詳細資訊，請參閱這個主題中後面的[最佳做法](#best-practices)。
 
-**注意**：不要使用 [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371) 的預設值來登錄。 這樣做會混淆屬性使用者，而且會在屬性系統內會造成不想要的結果。
+```cppwinrt
+// ImageWithLabelControl.cpp
+...
+Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Windows::UI::Xaml::DependencyProperty::Register(
+        L"Label",
+        winrt::xaml_typename<winrt::hstring>(),
+        winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
+        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+);
+...
+```
+
+> [!NOTE]
+> 不會註冊[**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371)的預設值。 這樣做會混淆屬性使用者，而且會在屬性系統內會造成不想要的結果。
 
 ### <a name="createdefaultvaluecallback"></a>CreateDefaultValueCallback
 
@@ -253,7 +333,6 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 這個接下來的範例示範 [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 實作。 它將您在前面的 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 範例中看到的參考方法實作為 [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 的建構引數的一部分。 這個回呼所述的案例說明類別也具有名為 "HasLabelValue" 的計算唯讀屬性 (未顯示實作)。 只要重新評估 "Label" 屬性，就會叫用這個回呼方法，而且回呼能夠讓相依的計算值與相依性屬性的變更同步。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
     ImageWithLabelControl iwlc = d as ImageWithLabelControl; //null checks omitted
@@ -266,6 +345,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     }
 }
 ```
+
 ```vb
     Private Shared Sub OnLabelChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
         Dim iwlc As ImageWithLabelControl = CType(d, ImageWithLabelControl) ' null checks omitted
@@ -277,6 +357,16 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
         End If
     End Sub
 ```
+
+```cppwinrt
+void ImageWithLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto iwlc{ d.as<ImageWithLabelControlApp::ImageWithLabelControl>() };
+    auto s{ winrt::unbox_value<winrt::hstring>(e.NewValue()) };
+    iwlc.HasLabelValue(s.size() != 0);
+}
+```
+
 ```cpp
 static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
@@ -292,7 +382,6 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
 
 如果 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的類型是列舉或結構，即使結構或列舉值的內部值未變更，也可以叫用回呼。 這與系統基元 (如字串，只有在值變更時才會叫用) 不同。 這是這些值的 Box 和 Unbox 操作在內部產生的副作用。 如果您的屬性使用 [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 方法，而且您的值是列舉或結構，您必須自行轉換值，並使用 now-cast 值可用的超載比較運算子，以比較 [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) 與 [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364)。 或者，如果沒有這類運算子 (自訂結構可能會發生這種情況)，您可能必須比較個別的值。 如果結果是值並未變更，您通常會選擇什麼都不做。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 private static void OnVisibilityValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
     if ((Visibility)e.NewValue != (Visibility)e.OldValue)
@@ -301,6 +390,7 @@ private static void OnVisibilityValueChanged(DependencyObject d, DependencyPrope
     } // else this was invoked because of boxing, do nothing
 }
 ```
+
 ```vb
 Private Shared Sub OnVisibilityValueChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
     If CType(e.NewValue,Visibility) != CType(e.OldValue,Visibility) Then
@@ -309,6 +399,21 @@ Private Shared Sub OnVisibilityValueChanged(d As DependencyObject, e As Dependen
     '  else this was invoked because of boxing, do nothing
 End Sub
 ```
+
+```cppwinrt
+static void OnVisibilityValueChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    auto oldVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.OldValue()) };
+    auto newVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.NewValue()) };
+
+    if (newVisibility != oldVisibility)
+    {
+        // The value really changed; invoke your property-changed logic here.
+    }
+    // Otherwise, OnVisibilityValueChanged was invoked because of boxing; do nothing.
+}
+```
+
 ```cpp
 static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChangedEventArgs^ e)
 {
@@ -343,10 +448,10 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 集合類型相依性屬性在 Windows 執行階段 API 中相對是較為少見的。 在大多數情況下，您可以在項目是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 子類別的地方使用集合，但是集合屬性本身會被當作傳統的 CLR 或 C++ 屬性來實作。 因為使用相依性屬性時，一些典型案例可能不適合使用集合。 例如：
 
--   您通常不會為集合建立動畫效果。
--   您通常不會使用樣式或範本在集合中預先填入項目。
--   雖然繫結到集合是主要的案例，但是集合不一定必須是相依性屬性才能成為繫結來源。 對於繫結目標來說，最常見的做法是使用 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 的子類別來支援集合項目，或是使用檢視模型模式。 如需與集合相互繫結的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
--   透過 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 之類的介面，或是從 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) 衍生集合類型，可以較好的處理集合變更的通知。
+- 您通常不會為集合建立動畫效果。
+- 您通常不會使用樣式或範本在集合中預先填入項目。
+- 雖然繫結到集合是主要的案例，但是集合不一定必須是相依性屬性才能成為繫結來源。 對於繫結目標來說，最常見的做法是使用 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) 或 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) 的子類別來支援集合項目，或是使用檢視模型模式。 如需與集合相互繫結的詳細資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+- 透過 **INotifyPropertyChanged** 或 **INotifyCollectionChanged** 之類的介面，或是從 [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) 衍生集合類型，可以較好的處理集合變更的通知。
 
 儘管如此，還是有適用於集合類型相依性屬性的案例。 接下來三個小節提供一些如何實作集合類型相依性屬性的指導方針。
 
@@ -376,9 +481,8 @@ Windows 執行階段不提供將自訂相依性屬性登錄為唯讀的方法。
 
 ## <a name="related-topics"></a>相關主題
 
-* [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
-* [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
-* [相依性屬性概觀](dependency-properties-overview.md)
-* [XAML 使用者和自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581)
+- [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
+- [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
+- [相依性屬性概觀](dependency-properties-overview.md)
+- [XAML 使用者和自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
-

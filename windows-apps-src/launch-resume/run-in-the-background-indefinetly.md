@@ -3,19 +3,19 @@ author: TylerMSFT
 title: 在背景無限期執行
 description: 使用 extendedExecutionUnconstrained 功能，在背景無限期執行背景工作或延伸執行工作階段。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
-keywords: 背景工作, 延伸執行, 資源, 限制
+keywords: 背景工作、 擴充執行、 資源、 限制、 背景工作
 ms.author: twhitney
 ms.date: 10/3/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d3ab075a5a2c999c2331c62898e5afb345db8291
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: af0f7670f2b131671ce82708d2b0a826db0fcfb1
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673635"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2802069"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 
