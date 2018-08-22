@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: 從背景工作更新動態磚
-description: 使用背景工作來更新含有最新內容的 app 動態磚。
+description: 使用背景工作來更新含有最新內容的應用程式動態磚。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.author: twhitney
@@ -9,14 +9,14 @@ ms.date: 01/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、 uwp、 背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: e4dcfce2e3eba0875968ad52c7c3195c190fcccf
-ms.sourcegitcommit: 446fe2861651f51a129baa80791f565f81b4f317
-ms.translationtype: HT
+ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/12/2018
-ms.locfileid: "1509175"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799714"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 

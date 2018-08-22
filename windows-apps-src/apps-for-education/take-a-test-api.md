@@ -4,26 +4,24 @@ title: 進行測驗 JavaScript API。
 author: PatrickFarley
 ms.author: pafarley
 ms.assetid: 9bff6318-504c-4d0e-ba80-1a5ea45743da
-ms.date: 10/06/2017
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、 uwp education
 ms.localizationpriority: medium
-ms.openlocfilehash: 43edadfba169ddae85818f8ef1dbd1e7f4adba64
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691357"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792582"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
-[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是為重大考試提供線上鎖定評量的瀏覽器型應用程式，可讓授課者專注在評量內容，而非如何提供安全的考試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[執行測試](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是允許教育者以專注於評估內容而不是如何提供安全的測試環境呈現鎖定線上評估高賭注測試、 瀏覽器型 UWP 應用程式。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
-如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。
-
-如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
+如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
 
 ## <a name="reference-documentation"></a>參考文件
 進行測驗 API 存在於下列命名空間。 請注意，所有的 API 都相依於全域 `SecureBrowser` 物件。
@@ -32,12 +30,9 @@ ms.locfileid: "1691357"
 |-----------|-------------|
 |[安全性命名空間](#security-namespace)|包含可讓您鎖定裝置進行考試和強制執行考試環境的 API。 |
 
-> [!NOTE]
-> 自 Windows 10 版本 1709 開始，已移除文字轉換語音 (TTS) 命名空間。 [Microsoft Edge 語音合成 API](https://blogs.windows.com/msedgedev/2016/06/01/introducing-speech-synthesis-api/) 實作 [W3C 語音 API](https://dvcs.w3.org/hg/speech-api/raw-file/tip/webspeechapi.html)，目前是文字轉換語音實作的建議解決方案。
-
 ### <a name="security-namespace"></a>安全性命名空間
 
-安全性命名空間可讓您鎖定裝置、檢查使用者與系統處理序清單、取得 MAC 和 IP 位址，以及清除快取的 Web 資源。
+安全性命名空間可讓您鎖定裝置、 檢查清單中的使用者和系統的程序、 取得 MAC 和 IP 位址及清除快取的 web 資源。
 
 | 方法 | 描述   |
 |--------|---------------|

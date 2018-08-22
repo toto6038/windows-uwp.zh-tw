@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、繫結、集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d9f74e6d0c755e0a247a65751bdab65964ac1f7
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 9337c0625c68970d9e68df74fa13228369e8bf41
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935724"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800328"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 項目控制項；繫結至一個 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -39,7 +39,7 @@ XAML 項目控制項藉由擷取更新的集合並且更新其本身以顯示目
 有一個可觀察的向量範本會很有用，做為實用、一般用途的 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 實作。 以下類別清單稱為 **single_threaded_observable_vector\<T\>**。
 
 > [!NOTE]
-> 如果您已安裝 [Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK) 或更新版本，您就可以直接使用 **winrt::single_threaded_observable_vector\<T\>** 改為輸入下列驗證碼。 如果您未在該 SDK 版本，便很容易從使用程式碼清單版本，轉換到 **winrt**。
+> 如果您已安裝[Windows 10 SDK 預覽建置的 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以只是直接使用**winrt::single_threaded_observable_vector\ < T\ >** 原廠函數，而非清單下方的程式碼。 如果您是不在該版本的 sdk （英文） 中，然後就較容易切換時使用**winrt**函數的程式碼清單版本。 請記得而不是使用下面所列的類型而直接呼叫[**winrt::make**]() 、 您改用呼叫**winrt::single_threaded_observable_vector\ < T\ >** 函數。
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -310,6 +310,8 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 
 ```cppwinrt
 // BookstoreViewModel.h
+...
+#include "single_threaded_observable_vector.h"
 ...
     struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
     {

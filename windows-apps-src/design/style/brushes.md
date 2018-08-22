@@ -4,18 +4,18 @@ ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: 使用筆刷
 description: Brush 物件可用來繪製形狀、文字或部分控制項的內部或外框，這樣繪製的物件才會顯示在 UI 中。
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 872e93d5714eb832b64efb047079be9dbfc3b617
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396517"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795955"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用筆刷繪製背景、前景和輪廓
 
@@ -181,6 +181,10 @@ SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
 
 ```vb
 Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
+```
+
+```cppwinrt
+Windows::UI::Xaml::Media::SolidColorBrush blueBrush{ Windows::UI::Colors::Blue() };
 ```
 
 ```cpp

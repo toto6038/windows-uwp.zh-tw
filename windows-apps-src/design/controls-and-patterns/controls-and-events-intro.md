@@ -10,31 +10,29 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2355d9f655e1eb4e38557b11797aff1784eb8ea6
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f8f86a6988e68e3ff8d2dfef32512633b3761fd
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393647"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800372"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
-
- 
 
 在 UWP app 開發中，「控制項」** 是顯示內容或啟用互動的 UI 元素。 您可以利用控制項 (例如按鈕、文字方塊以及下拉式方塊) 為自己的 app 建立 UI，以顯示資料和取得使用者輸入。
 
 > **重要 API**：[Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*模式*是修改控制項或結合數個控制項以創造新項目的秘訣。 例如，[瀏覽窗格](navigationview.md)模式是您可以使用 [SplitView](split-view.md) 控制項瀏覽 app 的方式。 同樣地，您可以自訂 [Pivot](tabs-pivot.md) 控制項的範本來實作索引標籤模式。
+*模式*是修改控制項或結合數個控制項以創造新項目的秘訣。 例如，[主要/詳細資料](master-details.md)模式是一種方式，您可以使用[SplitView](split-view.md)控制項的應用程式導覽。 同樣地，您可以自訂以實作] 索引標籤圖樣[NavigationView](navigationview.md)控制項的範本。
 
 在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
 
-在本節中，我們會針對您可用來建置 app 之 UI 的每個 XAML 控制項提供指導方針。 做為開始，這篇文章會說明如何將控制項新增至 app。 在 app 使用控制項有 3 個主要步驟： 
+在本節中，我們會針對您可用來建置 app 之 UI 的每個 XAML 控制項提供指導方針。 做為開始，這篇文章會說明如何將控制項新增至 app。 在 app 使用控制項有 3 個主要步驟：
 
-- 將控制項新增到 app UI。 
-- 設定控制項上的屬性，例如寬度、高度或前景色彩。 
+- 將控制項新增到 app UI。
+- 設定控制項上的屬性，例如寬度、高度或前景色彩。
 - 在控制項的事件處理常式中新增程式碼，使其執行某些功能。 
 
 ## <a name="add-a-control"></a>新增控制項
@@ -54,9 +52,9 @@ Visual Studio [工具箱] 顯示許多控制項，可以讓您用於自己的應
 
 您也可以將控制項從 [工具箱] 拖曳到 XAML 設計工具。
 
-## <a name="set-the-name-of-a-control"></a>設定控制項的名稱 
+## <a name="set-the-name-of-a-control"></a>設定控制項的名稱
 
-若要在程式碼中處理控制項，您需設定其 [x:Name](../../xaml-platform/x-name-attribute.md) 屬性，然後在您的程式碼中以名稱參照該控制項。 您可以在 Visual Studio [屬性] 視窗或 XAML 中設定名稱。 以下說明如何使用 [屬性] 視窗頂端的 [名稱] 文字方塊來變更目前所選控制項的名稱。 
+若要在程式碼中處理控制項，您需設定其 [x:Name](../../xaml-platform/x-name-attribute.md) 屬性，然後在您的程式碼中以名稱參照該控制項。 您可以在 Visual Studio [屬性] 視窗或 XAML 中設定名稱。 以下說明如何使用 [屬性] 視窗頂端的 [名稱] 文字方塊來變更目前所選控制項的名稱。
 
 命名控制項
 1. 選取要命名的元素。

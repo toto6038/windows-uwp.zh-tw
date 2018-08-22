@@ -4,22 +4,20 @@ ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: 腳本動畫
 description: 腳本動畫不只是視覺意義上的動畫。
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e5fad5bdea602767484fa55e943d262e7a1798fa
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675575"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797862"
 ---
 # <a name="storyboarded-animations"></a>腳本動畫
-
-
 
 腳本動畫不只是視覺意義上的動畫。 腳本動畫是一種變更相依性屬性值做為時間函式的方式。 您可能需要動畫庫以外之腳本動畫的其中一個主要原因，就是定義控制項的視覺狀態，做為控制項範本或頁面定義的一部分。
 
@@ -49,17 +47,23 @@ ms.locfileid: "1675575"
 讓我們看一下簡單的範例。 在這個 XAML 範例中，是在特定的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上為 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 屬性設定動畫效果。
 
 ```xaml
-<!-- Animates the rectangle's opacity. -->
-<Storyboard x:Name="myStoryboard">
-  <DoubleAnimation
-    Storyboard.TargetName="MyAnimatedRectangle"
-    Storyboard.TargetProperty="Opacity"
-    From="1.0" To="0.0" Duration="0:0:1"/>
-</Storyboard>
+<Page ...>
+  <Page.Resources>
+    <!-- Storyboard resource: Animates a rectangle's opacity. -->
+    <Storyboard x:Name="myStoryboard">
+      <DoubleAnimation
+        Storyboard.TargetName="MyAnimatedRectangle"
+        Storyboard.TargetProperty="Opacity"
+        From="1.0" To="0.0" Duration="0:0:1"/>
+    </Storyboard>
+  </Page.Resources>
 
-<!-- A different area of the XAML. -->
-<Rectangle x:Name="MyAnimatedRectangle"
-  Width="300" Height="200" Fill="Blue"/>
+  <!--Page root element, UI definition-->
+  <Grid>
+    <Rectangle x:Name="MyAnimatedRectangle"
+      Width="300" Height="200" Fill="Blue"/>
+  </Grid>
+</Page>
 ```
 
 ### <a name="identifying-the-object-to-animate"></a>識別要設定動畫效果的物件
@@ -213,10 +217,10 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
     </Storyboard>
   </Page.Resources>
   <!--Page root element, UI definition-->
-  <StackPanel>
+  <Grid>
     <Rectangle x:Name="MyAnimatedRectangle"
       Width="300" Height="200" Fill="Blue"/>
-  </StackPanel>
+  </Grid>
 </Page>
 ```
 
@@ -291,6 +295,10 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 ```csharp
 myStoryboard.Begin();
+```
+
+```cppwinrt
+myStoryboard().Begin();
 ```
 
 ```cpp

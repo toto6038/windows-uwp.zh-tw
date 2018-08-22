@@ -1,34 +1,36 @@
 ---
 author: mijacobs
 description: 顯色是一種光源效果，有助於讓應用程式的互動元素更具深度感並吸引注意力。
-title: 顯色顯目提示
+title: 顯示醒目提示
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 08/9/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, uwp
 pm-contact: kisai
 design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
-ms.localizationpriority: high
-ms.openlocfilehash: b29de0c1d27f852f2292161331401bb185656c17
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816983"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800279"
 ---
-# <a name="reveal-highlight"></a>顯色顯目提示
+# <a name="reveal-highlight"></a>顯示醒目提示
 
-顯色顯目提示是一個會在使用者將指標移近互動式元素 (例如命令列) 時亮顯該元素的醒目提示效果。 
+![主角圖像](images/header-reveal-highlight.svg)
+
+顯示醒目提示是當使用者移動滑鼠指標接近其醒目提示互動式元素，例如命令列的光源效果。 
 
 > **重要的 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>運作方式
-顯色顯目提示會在指標移近互動式元素時顯露元素的容器，藉以引起對該元素的注意，如下圖所示。
+顯示醒目提示通話廣告互動式元素由此處元素的容器當指標位於附近，如本圖所示：
 
 ![顯色視覺效果](images/Nav_Reveal_Animation.gif)
 
@@ -56,7 +58,7 @@ ms.locfileid: "1816983"
 
 ## <a name="how-to-use-it"></a>如何使用
 
-顯色會自動在一些控制項上運作。 至於其他控制項，您可以藉由指派特殊樣式給控制項來啟用顯色，如本文 [在其他控制項上啟用顯色](#enabling-reveal-on-other-controls)和[在自訂控制項上啟用顯色](#enabling-reveal-on-custom-controls)小節中所述。
+顯色會自動在一些控制項上運作。 其他控制項，您可以藉由將特殊樣式指派給控制項，啟用 Reveal 本文的[其他控制項上啟用顯示](#enabling-reveal-on-other-controls)並[啟用顯示自訂的控制項上](#enabling-reveal-on-custom-controls)節所述。
 
 ## <a name="controls-that-automatically-use-reveal"></a>自動使用顯色的控制項
 
@@ -67,7 +69,7 @@ ms.locfileid: "1816983"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-下圖顯示數個不同控制項上的顯色效果：
+下列圖例顯示數個不同的控制項上來顯示醒目提示
 
 ![顯色範例](images/RevealExamples_Collage.png)
 
@@ -132,8 +134,8 @@ ms.locfileid: "1816983"
 
 
 這些效果是由兩個筆刷定義： 
-* 框線顯色由 **RevealBorderBrush** 定義
-* 暫留顯色由 **RevealBackgroundBrush** 定義
+* 框線顯示由**RevealBorderBrush**定義
+* 動態顯示 Reveal 定義**RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -257,17 +259,20 @@ ms.locfileid: "1816983"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>微調自訂控制項上的顯色效果 
 
-在自訂或重新樣板化控制項或自訂命令介面上啟用顯色時，下列提示可以協助您將效果最佳化：
+當您在自訂或 re 樣板控制項或自訂的命令介面上啟用 Reveal 時，下列秘訣可協助您最佳化影響：
  
 * 在高度或寬度大小不一致的相鄰項目 (特別是在清單中)：移除框線接近行為，僅保留暫留時所顯示的框線。
 * 經常切換進出停用狀態的命令項目：將框線趨近筆刷放置在元素的背板及框線以突顯其狀態。
 * 靠近到會彼此接觸的相鄰命令元素：在兩個元素之間加入 1px 的邊界。 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
+### <a name="do"></a>執行動作：
 - 要在使用者可以執行許多動作的元素 (命令列、瀏覽功能表) 上使用顯色
 - 要在預設沒有視覺分隔線的互動式元素群組 (清單、功能區) 中使用顯色
 - 要在互動式元素密集度高的區域 (命令功能案例) 中使用顯色
 - 要在顯色項目之間放置 1px 邊界空間
+
+### <a name="dont"></a>禁止事項
 - 不要在靜態內容 (背景、文字) 上使用顯色
 - 不要在快顯視窗、飛出視窗或下拉式清單上使用顯色
 - 不要在僅出現一次的單獨情況中使用顯色

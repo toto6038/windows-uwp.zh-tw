@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 6a4088c24f801db3b25dc1d9740d261e12853d63
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+keywords: windows 10，uwp 列印
+ms.localizationpriority: medium
+ms.openlocfilehash: fe4086cc87699083304594eb4ccc8e7bb137b19f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696105"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2797464"
 ---
 # <a name="customize-the-print-preview-ui"></a>自訂預覽列印 UI
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**

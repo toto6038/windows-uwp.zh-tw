@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、 uwp、 連線裝置、 遠端系統、 羅馬、 專案羅馬、 背景工作、 應用程式服務
 ms.localizationpriority: medium
-ms.openlocfilehash: a40b48df9f9d8fe740795d6af0d71ba70a34c469
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1572765"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2799819"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>與遠端 App 服務通訊
 
@@ -24,7 +24,7 @@ ms.locfileid: "1572765"
 ## <a name="set-up-the-app-service-on-the-host-device"></a>設定主機裝置上的 App 服務
 您必須已經在遠端裝置上安裝 app 服務的提供者，才能在該裝置上執行該 app 服務。 本指南會使用 [Windows 通用範例儲存機制](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)上的 CSharp 版[隨機數字產生器應用程式服務](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)。 如需如何撰寫您自己的 app 服務的指示，請參閱[建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)。
 
-不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案 (在範例中名為「AppServicesProvider」)，然後選取其 _Package.appxmanifest_ 檔案。 以滑鼠右鍵按一下，然後選取 **\[檢視程式碼\]** 以檢視檔案的完整內容。 尋找將專案定義為應用程式服務的 **Extension** 元素，並命名其父專案。
+不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案 (在範例中名為「AppServicesProvider」)，然後選取其 _Package.appxmanifest_ 檔案。 以滑鼠右鍵按一下，然後選取 **\[檢視程式碼\]** 以檢視檔案的完整內容。 建立內部主**應用程式**項目**延伸模組**元素 （或發現如已存在）。 然後建立**副檔名**為應用程式服務定義專案及參照其父專案。
 
 ``` xml
 ...
@@ -36,7 +36,7 @@ ms.locfileid: "1572765"
 ...
 ```
 
-新增 **SupportsRemoteSystems** 屬性 (若尚未有)：
+**AppService**項目旁邊新增**SupportsRemoteSystems**屬性：
 
 ``` xml
 ...
@@ -44,7 +44,20 @@ ms.locfileid: "1572765"
 ...
 ```
 
-建置您的應用程式服務提供者專案，並部署到主機裝置。
+才可使用此**uap3**命名空間中的元素，您必須在資訊清單檔案的最頂端新增命名空間定義如果它已經不是有。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3">
+  ...
+</Package>
+```
+
+然後建置您的應用程式服務提供者專案並將其部署至主機裝置。
 
 ## <a name="target-the-app-service-from-the-client-device"></a>以用戶端裝置的 App 服務為目標
 要從中呼叫遠端 app 服務的裝置，需要有具備遠端系統功能的 app。 這可加入至在主機裝置上提供 app 服務的相同 app (在這種情況下，您會在這兩個裝置上安裝相同的 app)，或在完全不同的 app 中加以實作。

@@ -15,12 +15,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a336109e9464052a33f5a0d8548e13b260b387a3
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018512"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800805"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -358,3 +358,13 @@ _按鍵提示自訂選項_
 XAML 架構公開自動化屬性，可讓 UI 自動化用戶端探索使用者介面項目的相關資訊。
 
 如果您在 UIElement 或 TextElement 控制項上指定 AccessKey 屬性，可以使用 [AutomationProperties.AccessKey](https://msdn.microsoft.com/library/windows/apps/hh759763) 屬性取得這個值。 協助工具用戶端，例如「朗讀程式」，會在項目取得焦點時朗讀這個屬性的值。
+
+## <a name="related-articles"></a>相關文章
+
+* [鍵盤互動](keyboard-interactions.md)
+* [鍵盤快速操作](keyboard-accelerators.md)
+
+**範例**
+* [XAML 控制項組件庫 (亦即 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+
+

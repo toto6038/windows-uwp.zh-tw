@@ -4,18 +4,18 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: 應用程式套件需求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 04/30/2018
+ms.date: 05/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
-ms.localizationpriority: high
-ms.openlocfilehash: 76dd0a5f9ebcb1e92ac7874b535d286cb051df22
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832312"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791373"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 
@@ -41,7 +41,7 @@ ms.locfileid: "1832312"
 
 ### <a name="app-bundles"></a>App 套件組合
 
-針對 Windows 8.1、Windows Phone 8.1 及更新版本設計的 app 可以產生 app 套件組合 (.appxbundle)，以便縮減供使用者下載的 app 大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
+Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 為目標的應用程式、 Visual Studio 可以產生應用程式組合 (.appxbundle) 以減少使用者下載的應用程式的大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
 
 > [!NOTE]
 > 一個應用程式套件組合可以包含所有架構的套件。 只能針對每個目標 OS 提交一個套件組合。
@@ -61,16 +61,10 @@ ms.locfileid: "1832312"
 > 資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
 
 
-App 套件組合使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。
+應用程式可 (.appxbundle) 使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。 附註中.appxbundle，每個.appxmanifest 包含套件必須使用相同的元素和屬性，但不包括**ProcessorArchitecture**元素之屬性的[身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
 > [!TIP]
 > 在您提交套件之前，請務必執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
-
-如果您的 app 具有多個套件，每個套件中的 app 資訊清單元素必須是相同的 (針對每個目標 OS)：
-
--   [**套件/功能**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities)
--   [**套件/相依性**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-dependencies)
--   [**套件/資源**](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-resources)
 
 
 ## <a name="package-format-requirements"></a>套件格式需求
@@ -94,7 +88,7 @@ UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML 檔案
 
-StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 StoreManifest.xml 會與 app 套件一起提交，且必須位於您 app 主要專案的根資料夾中。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
+StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用 StoreManifest.xml 送出與應用程式套件和必須在您的應用程式的主要專案的根資料夾。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
  
 

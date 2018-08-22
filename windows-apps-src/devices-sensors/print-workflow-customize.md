@@ -8,14 +8,14 @@ ms.date: 08/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: windows 10，uwp 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 470984ce9f9a3304350a3479a01bc31a403bd8af
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 9e53c15b01a08c8c617529fe074929ce89a68ce9
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674975"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800312"
 ---
 # <a name="customize-the-print-workflow"></a>自訂列印工作流程
 
@@ -220,7 +220,7 @@ internal async void OnXpsDataAvailable(PrintWorkflowForegroundSession sessionMan
 }
 ```
 
-此外，事件引數公開的 **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** 執行個體提供選項來取消列印工作或指出工作成功但不需要輸出列印工作。 做法是呼叫 **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation#Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedOperation_Complete_Windows_Graphics_Printing_Workflow_PrintWorkflowSubmittedStatus_)** 方法搭配 **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 值。
+此外，事件引數公開的 **[PrintWorkflowSubmittedOperation](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation)** 執行個體提供選項來取消列印工作或指出工作成功但不需要輸出列印工作。 做法是呼叫 **[Complete](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedoperation.Complete)** 方法搭配 **[PrintWorkflowSubmittedStatus](https://docs.microsoft.com/uwp/api/windows.graphics.printing.workflow.printworkflowsubmittedstatus)** 值。
 
 > [!NOTE]
 > 如果工作流程應用程式取消列印工作，強烈建議它提供快顯通知，指出為何取消工作。 
@@ -244,9 +244,9 @@ UI 完成 **PrintTaskXpsDataAvailable** 事件中的延遲延之後 (或如果�
 
 ### <a name="set-the-workflow-apps-policy"></a>設定工作流程應用程式的原則
 工作流程應用程式原則由 Powershell 命令在執行工作流程應用程式的裝置上設定。 需修改 Set-Printer、Add-Printer (現有的連接埠) 和 Add-Printer (新的 WSD 連接埠) 命令以允許設定工作流程原則。 
-* `Off`：不啟動工作流程應用程式。
-* `Optional`：如果系統中安裝工作流程 DCA，則會啟動工作流程應用程式。 如果未安裝應用程式，列印仍會繼續。 
-* `On`：如果系統中安裝工作流程 DCA，則會啟動工作流程合約。 如果未安裝應用程式，列印會失敗。 
+* `Disabled`：不啟動工作流程應用程式。
+* `Uninitialized`：如果系統中安裝工作流程 DCA，則會啟動工作流程應用程式。 如果未安裝應用程式，列印仍會繼續。 
+* `Enabled`：如果系統中安裝工作流程 DCA，則會啟動工作流程合約。 如果未安裝應用程式，列印會失敗。 
 
 下列命令在指定的印表機上設定必要的工作流程應用程式。
 ```Powershell

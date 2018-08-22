@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
-ms.openlocfilehash: 20146c8a1bae92a46fc8cf878acd4d2dc5d2fb1e
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992094"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795450"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -48,9 +48,9 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="what-goes-in-a-form"></a>有什麼項目會在表單中？
 
-您將需要各種 [XAML 控制項](../design/controls-and-patterns/controls-and-events-intro.md) 來填入表單。 您可能對此很熟悉了，但若您需要複習，請隨時閱讀。 尤其是，您會需要控制項，可讓您的使用者輸入文字，或從值的清單中選擇。 這是您可以新增的選項基本清單 – 您還未閱讀有關其的一切，但已足夠讓您了解它們的外觀及運作方式。
+您將需要各種 [XAML 控制項](../design/controls-and-patterns/controls-and-events-intro.md) 來填入表單。 您可能對此很熟悉了，但若您需要複習，請隨時閱讀。 尤其是，您會需要控制項，可讓您的使用者輸入文字，或從值的清單中選擇。 這是基本選項無法新增清單 – 您不需要讀取其相關的所有項目僅足夠讓您了解為何及其外觀和它們的運作方式。
 
-* [TextBox](../design/controls-and-patterns/text-box.md) 可讓使用者將文字輸入到您的應用程式。
+* [TextBox](../design/controls-and-patterns/text-box.md)讓使用者輸入的文字到您的應用程式。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 可讓使用者在兩個選項中選擇。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 可讓使用者選取一個日期的值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 可讓使用者選取一個日期的值。
@@ -71,18 +71,18 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
         <TextBox x:Name="Address" Header="Address" PlaceholderText="Address" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <TextBox x:Name="Address2" Margin="0,24,0,0" PlaceholderText="Address 2" HorizontalAlignment="Left" />
             <RelativePanel>
-                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0"HorizontalAlignment="Left" />
+                <TextBox x:Name="City" PlaceholderText="City" Margin="0,24,0,0" HorizontalAlignment="Left" />
                 <ComboBox x:Name="State" PlaceholderText="State" Margin="24,24,0,0" RelativePanel.RightOf="City">
                     <!--List of valid states-->
                 </ComboBox>
             </RelativePanel>
     </StackPanel>
-    <StackPanel x:Name="Associate" Margin="20" RelativePanel.RightOf="Customer">
+    <StackPanel x:Name="Associate" Margin="20" RelativePanel.Below="Customer">
         <TextBox x:Name="AssociateName" Header= "Associate" Margin="0,24,0,0" HorizontalAlignment="Left" />
         <DatePicker x:Name="TargetInstallDate" Header="Target install Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
         <TimePicker x:Name="InstallTime" Header="Install Time" HorizontalAlignment="Left" Margin="0,24,0,0"></TimePicker>
     </StackPanel>
-    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Customer">
+    <StackPanel x:Name="Save" Orientation="Horizontal" RelativePanel.Below="Associate">
         <Button Content="Save" Margin="24" />
         <Button Content="Cancel" Margin="24" />
     </StackPanel>
@@ -110,9 +110,9 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
             </VisualState.StateTriggers>
 
             <VisualState.Setters>
-                <Setter Target="Associate.(RelativePanel.RightOf)" Value=""/>
-                <Setter Target="Associate.(RelativePanel.Below)" Value="Customer"/>
-                <Setter Target="Save.(RelativePanel.Below)" Value="Associate"/>
+                <Setter Target="Associate.(RelativePanel.RightOf)" Value="Customer"/>
+                <Setter Target="Associate.(RelativePanel.Below)" Value=""/>
+                <Setter Target="Save.(RelativePanel.Below)" Value="Customer"/>
             </VisualState.Setters>
         </VisualState>
     </VisualStateGroup>
@@ -136,7 +136,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="going-further"></a>更進一步
 
-雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 隨時回顧我們已連結的文件，並在您的表單中進行實驗，新增新的 UI 功能，並進一步修改使用者體驗。 如果您想要透過更詳細的版面配置功能獲得逐步指導方針，請參閱我們的 [調適型版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)
+雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 隨時返回透過我們已連結您和實驗有，新增新的 UI 功能及進一步調整的使用者經驗的表單文件。 如果您要透過更詳細的版面配置功能的逐步指引，請參閱我們[調適型的版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)
 
 表單也不一定要與世隔絕，您可以往前一個步驟，將您的表單嵌入 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [樞紐控制項](../design/controls-and-patterns/tabs-pivot.md)。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的 [事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 

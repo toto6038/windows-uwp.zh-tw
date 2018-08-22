@@ -4,18 +4,18 @@ ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: 在 Microsoft Store 購買 API 中使用此方法，變更使用者訂閱的帳單狀態。
 title: 變更使用者訂閱的帳單狀態
 ms.author: mcleans
-ms.date: 03/16/2018
+ms.date: 08/01/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fb4a3de45d19b1a43af1de06a46f0b440fe53e6
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664881"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2796319"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 
@@ -47,7 +47,7 @@ ms.locfileid: "1664881"
 
 | 標頭         | 類型   | 描述   |
 |----------------|--------|-------------|
-| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
+| 授權  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字串 | 其值必須設定為 **purchase.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
@@ -57,7 +57,7 @@ ms.locfileid: "1664881"
 
 | 名稱         | 類型  | 描述   |  必要  |
 |----------------|--------|-------------|-----------|
-| recurrenceId | string | 您想要變更之訂閱的識別碼。 若要取得此識別碼，呼叫[取得使用者訂用帳戶](get-subscriptions-for-a-user.md)方法，找出代表您想要變更的訂閱附加元件的回應主體項目，並將 **Id** 欄位的值用於項目。     | 是      |
+| recurrenceId | string | 您想要變更之訂閱的識別碼。 若要取得這個 ID，呼叫[取得使用者的訂閱](get-subscriptions-for-a-user.md)方法、 識別代表您要變更之訂閱附加元件的回應主體項目及使用的 [**識別碼**] 欄位值的項目。     | 是      |
 
 
 ### <a name="request-body"></a>要求主體
@@ -74,7 +74,7 @@ ms.locfileid: "1664881"
 以下範例示範如何使用此方法，將訂閱期間延長 5 天。 使用值 [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4) (代表您要變更其訂閱的使用者身分識別) 取代 *b2bKey*。
 
 ```json
-POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/query HTTP/1.1
+POST https://purchase.mp.microsoft.com/v8.0/b2b/recurrences/mdr:0:bc0cb6960acd4515a0e1d638192d77b7:77d5ebee-0310-4d23-b204-83e8613baaac/change HTTP/1.1
 Authorization: Bearer <your access token>
 Content-Type: application/json
 Host: https://purchase.mp.microsoft.com
@@ -120,6 +120,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | 布林值 |  指出訂閱是否設定為訂閱期間結束時自動續約。   |
 | beneficiary | string |  這個訂閱相關聯的權利的受益人識別碼。   |
 | expirationTime | string | 訂閱將結束的日期和時間 (ISO 8601 格式)。 訂閱處於特定狀態時，才可以使用這個欄位。 到期時間通常表示目前狀態到期的時間。 例如，對於使用中的訂閱，到期日表示將會發生下一個自動續約的時間。    |
+| expirationTimeWithGrace | 字串 | 日期及時間訂閱到期 ISO 8601 格式包括寬限期。 此值會指出當使用者無法存取訂閱之訂閱來自動更新失敗之後。    |
 | id | string |  訂閱的識別碼。 當您呼叫[變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)方法，使用這個值，指出您想要修改的訂閱。    |
 | isTrial | 布林值 |  表示訂閱是否試用。     |
 | lastModified | string |  上次修改訂閱的日期和時間 (ISO 8601 格式)。      |

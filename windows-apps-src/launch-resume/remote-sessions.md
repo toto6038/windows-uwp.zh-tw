@@ -8,14 +8,14 @@ ms.date: 06/28/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、 uwp、 連線裝置、 遠端系統、 羅馬、 專案羅馬
 ms.localizationpriority: medium
-ms.openlocfilehash: 0539c9b50196d98809fc01ea3f2a1950cbf27599
-ms.sourcegitcommit: 12cc283e821cbf978debf24914490982f076b4b4
-ms.translationtype: HT
+ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "1658084"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794881"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>透過遠端工作階段連接裝置
 
@@ -27,7 +27,7 @@ ms.locfileid: "1658084"
 
 ### <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\]**** 索引標籤上選取 \[遠端系統\]**** 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
+為了讓您的應用程式能夠啟動遠端裝置上的應用程式，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\]**** 索引標籤上選取 \[遠端系統\]**** 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
 
 ``` xml
 <Capabilities>
@@ -124,7 +124,7 @@ RemoteSystemSessionController manager = new RemoteSystemSessionController("Bob's
 //...
 ```
 
-若要傳送邀請，您必須有接收端遠端系統的參考 (透過一般遠端系統探索取得)。 只需將此參考傳入工作階段物件的 **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession#remotesystemsession_sendinvitationasync_1664759118)** 方法即可。 工作階段中所有的參與者都有遠端工作階段的參考 (請參閱下一節)，因此任何參與者皆可傳送邀請。
+若要傳送邀請，您必須有接收端遠端系統的參考 (透過一般遠端系統探索取得)。 只需將此參考傳入工作階段物件的 **[SendInvitationAsync](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystemsession.sendinvitationasync)** 方法即可。 工作階段中所有的參與者都有遠端工作階段的參考 (請參閱下一節)，因此任何參與者皆可傳送邀請。
 
 ```csharp
 // "currentSession" is a reference to a RemoteSystemSession.

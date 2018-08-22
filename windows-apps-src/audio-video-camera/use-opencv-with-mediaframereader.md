@@ -10,16 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
-ms.openlocfilehash: d9c2ac6ad4de6dc67cc4c661e055ad43ecb143ec
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692799"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2789803"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
-本文說明如何使用 Open Source Computer Vision Library (OpenCV，這是一個原生程式碼程式庫，提供廣泛的影像處理演算法) 來搭配 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 類別，此類別可同時從多種來源讀取媒體畫面。 本文中的範例程式碼會引導您建立簡單的應用程式，從色彩感應器取得畫面、使用 OpenCV 程式庫模糊每個畫面，然後在 XAML **Image** 控制項中顯示處理過的影像。
+本文說明如何使用 Open Source Computer Vision Library (OpenCV，這是一個原生程式碼程式庫，提供廣泛的影像處理演算法) 來搭配 [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) 類別，此類別可同時從多種來源讀取媒體畫面。 本文中的範例程式碼會引導您建立簡單的應用程式，從色彩感應器取得畫面、使用 OpenCV 程式庫模糊每個畫面，然後在 XAML **Image** 控制項中顯示處理過的影像。 
+
+>[!NOTE]
+>OpenCV.Win.Core 和 OpenCV.Win.ImgProc 會不定期更新，但仍建議建立本頁所述的 OpenCVHelper。
 
 本文以其他兩篇文章的內容為基礎：
 
@@ -29,7 +32,8 @@ ms.locfileid: "1692799"
 
 除了這些文章，若要檢視及下載本文所述案例的完整端對端工作範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003) (英文)。
 
-透過 NuGet 套件將 OpenCV程式庫加入 UWP app 專案。 本文中的範例使用 OpenCV.Win.Core 和 OpenCV.Win.ImgProc NuGet 套件。 文章[使用 OpenCV 處理點陣圖](process-software-bitmaps-with-opencv.md)包含將這些套件新增至您的方案的指示。 使用 OpenCV 開發的相關資訊位於 [http://opencv.org](http://opencv.org)
+若要開始進行開發快速，您可以包含 OpenCV 文件庫 UWP 應用程式專案中使用 NuGet 套件，但是這些套件可能沒有傳遞任何應用程式 certficication 程序時您提交您的應用程式存放區，因此建議您下載 OpenCV文件庫來源程式碼及提交您的應用程式之前自行建立二進位檔案。 使用 OpenCV 開發的相關資訊位於 [http://opencv.org](http://opencv.org)
+
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>實作 OpenCVHelper 原生 Windows 執行階段元件
 請依照[使用 OpenCV 處理點陣圖](process-software-bitmaps-with-opencv.md)中的步驟來建立 OpenCV helper Windows 執行階段元件，以及新增元件專案的參考至您的 UWP app 方案。

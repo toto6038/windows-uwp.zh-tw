@@ -3,21 +3,21 @@ author: stevewhims
 description: 使用 C++/WinRT，您可以使用標準 C++ 資料類型呼叫 Windows 執行階段 API。
 title: 標準 C++ 資料類型與 C++/WinRT
 ms.author: stwhi
-ms.date: 04/10/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、資料、類型
 ms.localizationpriority: medium
-ms.openlocfilehash: ccf79b1ec21688d9573e62777def8f15295c3fca
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832072"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2791573"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準 C++ 資料類型與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-使用 C++/WinRT，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。
+使用 C++/WinRT，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可將標準的字串傳遞給 Api (請參閱[字串處理在 C + + WinRT](strings.md))，以及您可以預期語意對等集合的 Api 來傳遞初始設定式清單及標準的容器。
 
 ## <a name="standard-initializer-lists"></a>標準初始設定式清單
 初始設定式清單 (**std::initializer_list**) 是 C++ 標準程式庫建構。 您呼叫某些 Windows 執行階段建構函式與方法時，可以使用初始設定式清單。 例如，您可以使用一個來呼叫 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。
@@ -64,7 +64,7 @@ IAsyncOperation<IMap<winrt::hstring, IInspectable>> StorageItemContentProperties
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile)
 {
-    auto properties = co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" });
+    auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync({ L"System.ItemUrl" }) };
 }
 ```
 
@@ -92,28 +92,28 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 如果被呼叫者為非同步，則您必須複製或移動向量。 在下列程式碼範例，我們將向量的所有權移到非同步的被呼叫者。
+C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 沒有要謹記非同步受話者是否額外詳細資料。 由於該案例的實作詳細資料，而您將需要提供右值，因此您必須提供複製或移動的向量。 在下列程式碼範例中，移動向量的擁有權接受非同步處理受話者使用的參數類型的物件 (與然後我們已經小心不要將存取`vecH`後再將它移)。 如果您想要更了解右，請參閱[值類別和它們的參照](cpp-value-categories.md)。
 
 ```cppwinrt
-IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<winrt::hstring> const& vecH)
+IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
 {
-    auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH));
+    auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecH)) };
 }
 ```
 
-但您無法傳遞 **std::vector&lt;std::wstring&gt;** 其中預期一個 Windows 執行階段集合。 這是因為發生轉換至適當的 **std::wstring** Windows 執行階段集合，C++ 語言不會強制該集合的類型參數。 因此，不編譯下列程式碼範例。
+但您無法傳遞 **std::vector&lt;std::wstring&gt;** 其中預期一個 Windows 執行階段集合。 這是因為發生轉換至適當的 **std::wstring** Windows 執行階段集合，C++ 語言不會強制該集合的類型參數。 因此，下列程式碼範例會將不會編譯 (和解決方案是傳遞**std::vector&lt;winrt::hstring&gt;** 而上面所示)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
 {
-    auto properties = co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)); // error! Can't convert from vector of wstring to async_iterable of hstring.
+    auto properties{ co_await storageFile.Properties().RetrievePropertiesAsync(std::move(vecW)) }; // error! Can't convert from vector of wstring to async_iterable of hstring.
 }
 ```
 
 ## <a name="raw-arrays-and-pointer-ranges"></a>原始陣列和指標範圍
 請記住，在之後 C++ 標準程式庫中可能會存在一個對等項目，您也可以直接使用 **array_view**，如果您選擇如此，或者需要這麼做的話。
 
-**array_view** 已從原始陣列，以及從 **T*** 的範圍 (指向元素類型) 轉換建構函式。
+**array_view**已轉換建構函式從原始的陣列，並從某個範圍的**T&ast; ** （元素類型的指標）。
 
 ```cppwinrt
 using namespace winrt;
@@ -131,5 +131,33 @@ dataWriter.WriteBytes(fromRange); // the array_view is passed to WriteBytes.
 
 如需詳細範例和資訊，請參閱 [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view) API 參考主題。
 
+## <a name="ivectorlttgt-and-standard-iteration-constructs"></a>**IVector&lt;T&gt;** 及標準反覆運算建構
+[**SyndicationFeed.Items**](/uwp/api/windows.web.syndication.syndicationfeed.items)是一個範例會傳回類型的 Windows Runtime API [**IVector&lt;T&gt; **](/uwp/api/windows.foundation.collections.ivector_t_) (預估到 C + + 為 WinRT **winrt::Windows::Foundation::Collections::IVector&lt;T&gt; **). 您可以搭配這個類型標準反覆運算建構，例如範圍型`for`。
+
+```cppwinrt
+// main.cpp
+#include "pch.h"
+#include <winrt/Windows.Web.Syndication.h>
+#include <iostream>
+
+using namespace winrt;
+using namespace Windows::Web::Syndication;
+
+void PrintFeed(SyndicationFeed const& syndicationFeed)
+{
+    for (SyndicationItem const& syndicationItem : syndicationFeed.Items())
+    {
+        std::wcout << syndicationItem.Title().Text().c_str() << std::endl;
+    }
+}
+```
+
+## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>C + + coroutines 與非同步 Windows Runtime api （英文）
+您可以繼續使用[平行模式文件庫 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl)呼叫非同步 Windows Runtime Api 時。 不過，在許多情況下，c + + coroutines 提供有效率且更輕鬆地編碼用語互動非同步物件。 如需詳細資訊，以及程式碼範例，請參閱[並行處理和非同步作業 C + + WinRT](concurrency.md)。
+
 ## <a name="important-apis"></a>重要 API
+* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view 結構範本](/uwp/cpp-ref-for-winrt/array-view)
+
+## <a name="related-topics"></a>相關主題
+* [C++/WinRT 中的字串處理](strings.md)

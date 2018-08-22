@@ -7,15 +7,15 @@ ms.date: 12/6/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、 uwp、 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 30a072ddc3489ca310875a6fc4a2d00902986277
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674815"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792133"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -173,12 +173,13 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 }
 ```
 
-在此範例中，我們傳送「wl.basic」字串到 _scope_ 參數。 範圍代表您從特定使用者提供的服務要求所要求的資訊類型。 某些範圍僅提供使用者基本資訊的存取，例如姓名和電子郵件地址，有些範圍可能授與敏感資訊的存取權，像是使用者的相片或電子郵件收件匣。 一般而言，您的 app 應該使用達成其功能所需的最低權限範圍。
-
-服務提供者會提供文件，說明需要哪些範圍以取得權杖來使用他們的服務。 
+在此範例中，我們傳送「wl.basic」字串到 _scope_ 參數。 範圍代表您從特定使用者提供的服務要求所要求的資訊類型。 某些範圍僅提供使用者基本資訊的存取，例如姓名和電子郵件地址，有些範圍可能授與敏感資訊的存取權，像是使用者的相片或電子郵件收件匣。 一般而言，您的 app 應該使用達成其功能所需的最低權限範圍。 服務提供者會提供文件，說明需要哪些範圍以取得權杖來使用他們的服務。 
 
 * 針對 Office 365 和 Outlook.com 範圍，請參閱[使用 v2.0 驗證端點驗證 Office 365 和 Outlook.com API](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)。 
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
+
+> [!TIP]
+> （選用） 如果您的應用程式會使用登入提示 （以填入 [使用者] 欄位使用的預設電子郵件地址） 或其他特殊的屬性相關的登入經驗，列出它**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致快取 web 帳戶，以防止快取中的帳戶不相符時忽略屬性系統。
 
 如果您是在開發企業應用程式，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
 

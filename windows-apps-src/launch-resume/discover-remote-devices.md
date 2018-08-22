@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、 uwp、 連線裝置、 遠端系統、 羅馬、 專案羅馬
 ms.localizationpriority: medium
-ms.openlocfilehash: 724e2ce05dc439ba440f46697b736faabb1e8df0
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 02d04074ece0033da8c3454a95bc35af201903f3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018492"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794659"
 ---
 # <a name="discover-remote-devices"></a>探索遠端裝置
 您的 App 可以使用和探索裝置相同的 Microsoft 帳戶登入，使用無線網路、藍牙及雲端連線來探索 Windows 裝置。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。
@@ -60,7 +60,7 @@ ms.locfileid: "2018492"
 
 ## <a name="querying-a-capability-on-a-remote-system"></a>查詢遠端系統上的功能
 
-雖然有別於探索篩選，查詢裝置功能可能仍舊是探索程序的重要部分。 您可以使用 [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem#Windows_System_RemoteSystems_RemoteSystem_GetCapabilitySupportedAsync_System_String_) 方法查詢找到的遠端裝置來支援特定功能，例如遠端工作階段連線能力或空間實體 (全息影像) 共用。 如需可查詢功能的清單，請參閱 [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) 類別。
+雖然有別於探索篩選，查詢裝置功能可能仍舊是探索程序的重要部分。 您可以使用 [**RemoteSystem.GetCapabilitySupportedAsync**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.remotesystem.GetCapabilitySupportedAsync) 方法查詢找到的遠端裝置來支援特定功能，例如遠端工作階段連線能力或空間實體 (全息影像) 共用。 如需可查詢功能的清單，請參閱 [**KnownRemoteSystemCapabilities**](https://docs.microsoft.com/uwp/api/windows.system.remotesystems.knownremotesystemcapabilities) 類別。
 
 ```csharp
 // Check to see if the given remote system can accept LaunchUri requests

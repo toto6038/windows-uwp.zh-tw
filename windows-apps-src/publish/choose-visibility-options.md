@@ -3,18 +3,18 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 選擇可見度選項
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 08/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 可見度, 私人對象, 可用, 可搜尋
-ms.localizationpriority: high
-ms.openlocfilehash: 548b25d4e74945eadfcc8ebe8a5cb2f8d870d38f
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832082"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2801854"
 ---
 # <a name="choose-visibility-options"></a>選擇可見度選項
 
@@ -75,7 +75,7 @@ ms.locfileid: "1832082"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>在 Microsoft Store 推出此產品並且可供搜尋
 
-此為預設選項。 如果您想讓您的應用程式列於 Microsoft Store 中，讓客戶能夠透過應用程式的直接連結和/或其他方法來尋找，包括搜尋、瀏覽和包含於經過挑選的清單中，請保留選取此選項。 
+此為預設選項。 保持如果希望您的應用程式列在 [尋找透過應用程式的直接連結和/或由其他方法 curated 清單中包括搜尋、 瀏覽及包含相對路徑的客戶的存放區中選取此選項。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>在 Microsoft Store 推出此產品，但不供搜尋
 

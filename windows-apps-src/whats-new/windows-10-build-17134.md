@@ -8,13 +8,13 @@ ms.date: 4/10/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-ms.localizationpriority: high
-ms.openlocfilehash: 7652e45cd4c5fc416429248929889eeffc04dba3
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: e2f12190c405ad611cf5b884b82c4a430aa5264f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832572"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792075"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 的新功能
 
@@ -38,7 +38,7 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 瀏覽檢視 | [瀏覽檢視](../design/controls-and-patterns/navigationview.md)控制項在 App 中提供最上層瀏覽的可摺疊瀏覽功能表。 此控制項實作瀏覽窗格 (或漢堡式功能表) 模式，並自動配合窗格的顯示模式調整為不同視窗大小。
 顯色焦點 | 新的[顯色焦點](../design/style/reveal-focus.md)效果提供體驗 (例如 Xbox One 和電視螢幕) 的光源效果。 這會在使用者將遊戲台或鍵盤焦點移近可設定焦點元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。
 音效 | XAML 現在使用 **SpatialAudioMode** 屬性支援 3D 音訊。 如需其設定方式的詳細資訊，請參閱[音效](../design/style/sound.md)。
-磚 | [可追蹤式磚通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)現可在 JavaScript 為主的 UWP app 中支援。
+磚 | [可追蹤式磚通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)現可在 JavaScript 為主的 UWP app 中支援。<br><br>次要磚和名牌通知是[現在支援從桌面 Bridge 應用程式](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
 樹狀目錄檢視 | [TreeView](../design/controls-and-patterns/tree-view.md) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
 撰寫方式 | 我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在 App 中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
 
@@ -59,7 +59,7 @@ C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-api
 主機 UWP app | 您現在可以撰寫執行於主控台視窗 (例如 DOS 或 PowerShell 主控台視窗) 中的 C++ /WinRT 或 /CX UWP 主控台應用程式。 主控台應用程式使用主控台視窗進行輸入和輸出。 UWP 主控台應用程式可以發佈至 Microsoft Store，列入應用程式清單，以及列入可釘選到 [開始] 功能表的主要磚。 如需詳細資訊，請參閱[建立通用 Windows 平台主控台應用程式](../launch-resume/console-uwp.md)
 更多應用程式資訊清單功能 | 應用程式套件資訊清單結構描述中新增了幾項功能，包括：廣泛的檔案系統存取、針對服務點裝置啟用條碼掃描器、定義 UWP 主控台應用程式等。 如需詳細資料，請參閱 [Windows 10 中的應用程式資訊清單變更](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/what-s-changed-in-windows-10)。
 無障礙技術 (AT) 支援的地標和標題 | 地標和標題定義可協助輔助技術 (例如螢幕助讀程式) 使用者有效率進行瀏覽的使用者介面區段。 如需詳細資訊，請參閱[地標和標題](../design/accessibility/landmarks-and-headings.md)。
-機器學習 | Windows Machine Learning 可讓您建置透過 Windows 10 裝置本機預先訓練機器學習模型進行問題求解的應用程式。 若要深入了解此平台，請參閱 [Windows Machine Learning](../machine-learning/index.md)。 </br> [MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview) 命名空間包含可讓應用程式載入機器學習模型、繫結資料做為輸入以及評估結果的類別。
+機器學習 | Windows Machine Learning 可讓您建置透過 Windows 10 裝置本機預先訓練機器學習模型進行問題求解的應用程式。 若要深入了解此平台，請參閱 [Windows Machine Learning](https://docs.microsoft.com/windows/ai/)。 </br> [MachineLearning](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning.preview) 命名空間包含可讓應用程式載入機器學習模型、繫結資料做為輸入以及評估結果的類別。
 地圖控制項 | [MapControl](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) 類別有名為 **Region** 的新屬性，可以用來根據特定地區 (例如，縣市或省份) 的語言的顯示地圖控制項內容。
 地圖元素 | [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) 類別有名為 **IsEnabled** 的新屬性，可以用來指定使用者可否與 [MapElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelement) 進行互動。
 地圖地點資訊 | [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo) 類別包含新方法 **CreateFromAddress**，可以用來使用地址和顯示名稱建立 [PlaceInfo](https://docs.microsoft.com/uwp/api/windows.services.maps.placeinfo)。
@@ -73,7 +73,7 @@ PlayReady | Microsoft PlayReady 是一組保護數位內容免遭未經授權使
 系統觸發程序 | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) 可讓您在作業系統未提供您需要的系統觸發程序時定義系統觸發程序。 例如，當硬體驅動程式和 UWP app 都屬於協力廠商，而且硬體驅動程式必須引發其 App 處理的自訂事件時。 例如，需要通知使用者關於何時插入音訊插孔時的音訊卡。
 使用者活動 | 新的 [UserActivity 文件](../launch-resume/useractivities.md) 說明如何協助使用者繼續使用您的應用程式執行作業，甚至是在多個裝置之間作業。</br>**UserActivitySessionHistoryItem** 類別有擷取最近使用者活動的新方法。 如需詳細資訊，請參閱 [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) 及其多載。
 Windows Mixed Reality API | 為了支援逐漸茁壯的 Windows Mixed Reality 平台，新的 API 已新增至 [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 和 [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 命名空間。
-Windows Mixed Reality 文件 | Windows Mixed Reality 開發人員指引[現在託管於 docs.microsoft.com](https://docs.microsoft.com/windows/mixed-reality/)。如同這些 UWP 文件，您現在可以在 GitHub Issues 提出意見反應，或透過提取要求提交您的意見。
+Windows Mixed Reality 文件 | Windows 混合現實的開發人員指導[現在架設在 docs.microsoft.com。](https://docs.microsoft.com/windows/mixed-reality/) 就像是這些 UWP 文件中可以立即檔案具有 GitHub 問題的意見反應或提交您自己的捐款透過提取要求。
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利
 

@@ -8,14 +8,14 @@ ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: windows 10、 uwp、 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e73519f57d9b08e08a7400f322367b6634cf945
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817719"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792478"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的裝置入口網站
 
@@ -23,8 +23,6 @@ ms.locfileid: "1817719"
 ## <a name="set-up-device-portal-on-hololens"></a>在 HoloLens 上設定裝置入口網站
 
 ### <a name="enable-device-portal"></a>啟用 Device Portal
-
-**啟用 Device Portal**
 
 1. 開啟您的 HoloLens 並將裝置戴上。
 2. 做出[盛開](https://dev.windows.com/holographic/Gestures.html#Bloom)手勢來啟動主功能表。
@@ -37,7 +35,7 @@ ms.locfileid: "1817719"
 
 ### <a name="pair-your-device"></a>配對您的裝置
 
-### <a name="connect-over-wi-fi"></a>透過 Wi-Fi 連線 
+#### <a name="connect-over-wi-fi"></a>透過 Wi-Fi 連線 
 
 1. 將您的 HoloLens 連線到 Wi-Fi。
 2. 尋找裝置的 IP 位址。在裝置上的 [設定] &gt; [網路和網際網路] &gt; [Wi-Fi] &gt; [進階選項] 之下尋找 IP 位址。
@@ -46,18 +44,21 @@ ms.locfileid: "1817719"
 3. 從您電腦上的網頁瀏覽器，移至 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - 瀏覽器將會顯示下列訊息：「此網站的安全性憑證有問題」。 這是因為核發給 Device Portal 的憑證是測試憑證。 您可以暫時略過這個憑證錯誤並繼續。
 
-### <a name="connect-over-usb"></a>透過 USB 連線 
+#### <a name="connect-over-usb"></a>透過 USB 連線 
 
 1. 安裝工具以確保您擁有 Visual Studio Update 1，並在電腦上安裝 Windows 10 開發人員工具。 這將能啟用 USB 連線能力。
 2. 透過 Micro-USB 纜線將您的 HoloLens 與電腦連接。
 3. 從您電腦上的網頁瀏覽器，移至 `http://127.0.0.1:10080`。
 
-### <a name="connect-to-an-emulator"></a>連線到模擬器 
+> [!IMPORTANT]
+> 如果您的電腦無法找到該裝置，嘗試使用實際網路裝置 IP 位址 HoloLens，而不是比`http://127.0.0.1:10080`。
+
+#### <a name="connect-to-an-emulator"></a>連線到模擬器 
 
 您也可以透過模擬器使用 Device Portal。 若要連線到 Device Portal，請使用工具列。 按一下這個圖示：
 - 開啟 Device Portal：在模擬器中開啟 HoloLens OS 的 Windows Device Portal。
 
-### <a name="create-a-username-and-password"></a>建立使用者名稱和密碼。 
+#### <a name="create-a-username-and-password"></a>建立使用者名稱和密碼。 
 
 首次在 HoloLens 上連線到 Device Portal 時，您必須建立使用者名稱和密碼。
 1. 在您電腦上的網頁瀏覽器中，輸入 HoloLens 的 IP 位址。 [設定存取] 頁面將會開啟。
@@ -69,7 +70,7 @@ ms.locfileid: "1817719"
 
 如果您想在任何時候變更此使用者名稱或密碼，您可以造訪裝置安全性頁面來重複此程序，方法是按一下位於右上方的 [安全性] 連結，或是瀏覽到：`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`。
 
-### <a name="security-certificate"></a>安全性憑證 
+#### <a name="security-certificate"></a>安全性憑證 
 
 如果您在瀏覽器中看見「憑證錯誤」，您可以透過和裝置建立信任關係來修正它。
 

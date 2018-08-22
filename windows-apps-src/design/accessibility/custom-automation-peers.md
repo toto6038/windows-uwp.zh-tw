@@ -6,18 +6,18 @@ title: 自訂自動化對等
 label: Custom automation peers
 template: detail.hbs
 ms.author: mhopkins
-ms.date: 09/25/2017
+ms.date: 07/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bab0ac8b89815a67be2c963979b3712f022248b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a2f9caf8519aa76ef9487e5318a238a6e1d53fe2
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656563"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2800534"
 ---
 # <a name="custom-automation-peers"></a>自訂自動化對等  
 
@@ -122,7 +122,6 @@ UWP 是利用現有 UI 自動化技術和舊版的 Managed 程式碼 UI 架構 (
 
 例如，以下程式碼會宣告自訂控制項 `NumericUpDown` 應該將對等 `NumericUpDownPeer` 用於使用者介面自動化。
 
-C#
 ```csharp
 using Windows.UI.Xaml.Automation.Peers;
 ...
@@ -138,7 +137,6 @@ public class NumericUpDown : RangeBase {
 }
 ```
 
-Visual Basic
 ```vb
 Public Class NumericUpDown
     Inherits RangeBase
@@ -151,7 +149,29 @@ Public Class NumericUpDown
 End Class
 ```
 
-C++
+```cppwinrt
+// NumericUpDown.idl
+namespace MyNamespace
+{
+    runtimeclass NumericUpDown : Windows.UI.Xaml.Controls.Primitives.RangeBase
+    {
+        NumericUpDown();
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDown.h
+...
+struct NumericUpDown : NumericUpDownT<NumericUpDown>
+{
+    ...
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer()
+    {
+        return winrt::make<MyNamespace::implementation::NumericUpDownAutomationPeer>(*this);
+    }
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives::RangeBase
@@ -160,7 +180,7 @@ public ref class NumericUpDown sealed : Windows::UI::Xaml::Controls::Primitives:
 protected:
     virtual AutomationPeer^ OnCreateAutomationPeer() override
     {
-         return ref new NumericUpDown(this);
+         return ref new NumericUpDownAutomationPeer(this);
     }
 };
 ```
@@ -193,20 +213,38 @@ protected:
 ## <a name="initialization-of-a-custom-peer-class"></a>初始化自訂對等類別  
 自動化對等應該定義一個類型安全建構函式，而這個建構函式會使用擁有者控制項的執行個體來進行基本初始化。 在下一個範例中，實作會將 *owner* 值傳送至 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 基底，最後這個 [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) 會使用 *owner* 來設定 [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner)。
 
-C#
 ```csharp
 public NumericUpDownAutomationPeer(NumericUpDown owner): base(owner)
 {}
 ```
 
-Visual Basic
 ```vb
 Public Sub New(owner As NumericUpDown)
     MyBase.New(owner)
 End Sub
 ```
 
-C++
+```cppwinrt
+// NumericUpDownAutomationPeer.idl
+import "NumericUpDown.idl";
+namespace MyNamespace
+{
+    runtimeclass NumericUpDownAutomationPeer : Windows.UI.Xaml.Automation.Peers.AutomationPeer
+    {
+        NumericUpDownAutomationPeer(NumericUpDown owner);
+        Int32 MyProperty;
+    }
+}
+
+// NumericUpDownAutomationPeer.h
+...
+struct NumericUpDownAutomationPeer : NumericUpDownAutomationPeerT<NumericUpDownAutomationPeer>
+{
+    ...
+    NumericUpDownAutomationPeer(MyNamespace::NumericUpDown const& owner);
+};
+```
+
 ```cpp
 //.h
 public ref class NumericUpDownAutomationPeer sealed :  Windows::UI::Xaml::Automation::Peers::RangeBaseAutomationPeer
@@ -225,7 +263,6 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 
 當您定義新的對等類別時，至少應該實作 [**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getclassnamecore) 方法，如以下範例所示。
 
-C#
 ```csharp
 protected override string GetClassNameCore()
 {
@@ -244,7 +281,6 @@ protected override string GetClassNameCore()
 
 實作的 [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getautomationcontroltypecore) 會傳回 [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 值來描述您的控制項。 雖然您可以傳回 **AutomationControlType.Custom**，不過您應該傳回一個更明確的控制項類型 (只要它可以準確描述控制項的主要情況)。 範例如下。
 
-C#
 ```csharp
 protected override AutomationControlType GetAutomationControlTypeCore()
 {
@@ -268,7 +304,7 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 
 雖然這個範例不是文字程式碼，但近似於 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 中已經有的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 實作。
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -288,7 +324,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 以下範例示範自訂對等的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 覆寫。 它報告兩種模式的支援：[**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 和 [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653)。 這裡的控制項是一個媒體顯示控制項，它可以顯示全螢幕 (切換模式)，而且有一個可以讓使用者在其中選取位置 (範圍控制項) 的進度列。 這個程式碼來自 [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)。
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -311,7 +347,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 ### <a name="forwarding-patterns-from-sub-elements"></a>來自子元素的轉送模式  
 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 方法實作也可以指定某個子元素或組件做為其主機的模式提供者。 這個範例模擬 [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 如何將捲動模式處理傳輸到它的內部 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) 控制項對等。 為了指定子元素來進行模式處理，這個程式碼會取得子元素物件、使用 [**FrameworkElementAutomationPeer.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.createpeerforelement) 方法來建立子元素的對等，然後傳回新的對等。
 
-C#
+
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
 {
@@ -403,7 +439,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 典型的實作是提供者 API 先呼叫 [**Owner**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.frameworkelementautomationpeer.owner) 以便在執行階段存取控制項執行個體。 接著即可在該物件上呼叫必要的行為方法。
 
-C#
+
 ```csharp
 public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCollapseProvider {
     private IndexCard ownerIndexCard;
@@ -447,7 +483,7 @@ UI 自動化用戶端可以訂閱自動化事件。 在自動化對等模型中�
 
 下一個程式碼範例示範如何從控制項定義程式碼中取得對等物件，然後呼叫方法從該對等觸發事件。 最佳的做法是，程式碼判斷這個事件類型是否有任何接聽程式。 有接聽程式時才觸發事件並建立對等物件，以避免不必要的額外負荷，並協助控制項保持回應狀態。
 
-C#
+
 ```csharp
 if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 {

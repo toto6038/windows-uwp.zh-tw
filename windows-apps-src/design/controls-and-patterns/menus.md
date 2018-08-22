@@ -9,19 +9,19 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 68c22c12ac5c5dbd90878e8828160e0f56831898
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: e38e9d61e8546d412cc30bad26680243f3a188e4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1638988"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2792341"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -78,7 +78,7 @@ ms.locfileid: "1638988"
 <ul>
 <li>具有一律顯示的單一進入點 (例如，位於畫面頂端的 [檔案] 功能表)。</li>
 <li>通常會附加到按鈕或父功能表項目。</li>
-<li>是透過按一下滑鼠左鍵 (或對等的動作，例如使用手指點選) 來叫用。</li><li>透過 [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx) 或 [FlyoutBase.AttachedFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) 屬性來與元素產生關聯。</li>
+<li>是透過按一下滑鼠左鍵 (或對等的動作，例如使用手指點選) 來叫用。</li><li>透過 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.flyout.aspx">Flyout</a> 或 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx">FlyoutBase.AttachedFlyout</a> 屬性來與元素產生關聯。</li>
 </ul>
 </div>
   <div class="side-by-side-content-right">
@@ -86,7 +86,7 @@ ms.locfileid: "1638988"
 
 <ul>
 <li>已連結至單一元素，並會顯示次要命令。</li>
-<li>是透過按一下滑鼠右鍵 (或對等的動作，例如使用您的手指長按) 來叫用。</li><li>透過其 [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 屬性來與元素產生關聯。</li>
+<li>是透過按一下滑鼠右鍵 (或對等的動作，例如使用您的手指長按) 來叫用。</li><li>透過其 <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx">ContextFlyout</a> 屬性來與元素產生關聯。</li>
 </ul>
   </div>
 </div>

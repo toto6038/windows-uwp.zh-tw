@@ -8,16 +8,16 @@ ms.date: 08/21/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、 uwp、 背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a22c08dffc3deb22978fd45051ba86ada0f64be
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927763"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2795288"
 ---
-# <a name="support-your-app-with-background-tasks"></a>使用背景工作支援應用程式
+# <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 
 
 本節中的主題將示範如何在背景中執行輕量型程式碼來回應觸發程序。 您可以使用背景工作，在 app 被暫停或未執行時提供功能。 您也可以將背景工作用於即時通訊 App，像是 VOIP、郵件和 IM。

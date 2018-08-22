@@ -1,6 +1,6 @@
 ---
 author: Jwmsft
-description: 使用樹狀檢視範例程式碼建立可展開的樹狀結構。
+description: 您可以建立可展開的樹狀檢視中將 ItemsSource 繫結至階層式資料來源、 或您可建立並管理自己的 TreeViewNode 物件。
 title: 樹狀檢視
 label: Tree view
 template: detail.hbs
@@ -13,24 +13,36 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 41e17d299e9bac34e58f3c8ffdffecff19ddac18
-ms.sourcegitcommit: e020e9a4d947368a68e4eeba1eea65e9b3a725af
-ms.translationtype: HT
+ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2018
-ms.locfileid: "1924391"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2794856"
 ---
 # <a name="treeview"></a>TreeView
 
-XAML TreeView 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
+> [!IMPORTANT]
+> 本文說明尚未發佈但可能在正式發行前大幅度修改的功能。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。 預覽功能需要的[最新的 Windows 10 內部預覽建置及 sdk （英文）](https://insider.windows.com/for-developers/)或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-> **重要 API**：[TreeView 類別](/uwp/api/windows.ui.xaml.controls.treeview)、[TreeViewNode 類別](/uwp/api/windows.ui.xaml.controls.treeviewnode)
+XAML TreeView 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
 
 TreeView API 支援下列功能：
 
 - N 層巢狀結構
-- 展開/摺疊節點
 - 選取單一節點或多個節點
+- （預覽）在樹狀檢視和 TreeViewItem ItemsSource 屬性的資料繫結
+- （預覽）TreeViewItem 為根目錄的樹狀檢視的項目範本
+- （預覽）任意 TreeViewItem 中的內容類型
+- （預覽）樹狀檢視之間拖放式
+
+| **取得 Windows UI 文件庫** |
+| - |
+| 此控制項是 Windows UI 文件庫包含新控制項和 UWP 應用程式的 UI 功能 NuGet 套件的一部分。 如需詳細資訊，包括安裝指示，請參閱[Windows UI 文件庫概觀 （英文）](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+
+| **平台 api （英文)** | **Windows 使用者介面程式庫 api （英文)** |
+| - | - |
+| [樹狀檢視類別](/uwp/api/windows.ui.xaml.controls.treeview)， [TreeViewNode 類別](/uwp/api/windows.ui.xaml.controls.treeviewnode) [TreeView.ItemsSource 屬性](/uwp/api/windows.ui.xaml.controls.treeview.itemssource) | [樹狀檢視類別](/uwp/api/microsoft.ui.xaml.controls.treeview)， [TreeViewNode 類別](/uwp/api/microsoft.ui.xaml.controls.treeviewnode) [TreeView.ItemsSource 屬性](/uwp/api/microsoft.ui.xaml.controls.treeview.itemssource) |
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -38,19 +50,42 @@ TreeView API 支援下列功能：
 
 - 如果將項目的巢狀關係以醒目提示方式顯示不是優先考量，請避免使用樹狀檢視。 對於大部分深入案例來說，適合使用一般清單檢視
 
+## <a name="examples"></a>範例
+
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您有安裝的<strong style="font-weight: semi-bold">XAML 控制項圖庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/TreeView">開啟 [應用程式並查看巨集指令在樹狀檢視</a>。</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## <a name="treeview-ui"></a>TreeView UI
 
 樹狀檢視使用縮排和圖示的組合來表示資料夾/父節點和非資料夾/子節點之間的巢狀關係。 摺疊的節點使用＞形箭號指向右方，而展開的節點使用＞形箭號指向下方。
 
-![TreeView 中的＞形箭號圖示](images/treeview_chevron.png)
+![TreeView 中的＞形箭號圖示](images/treeview-simple.png)
 
 您可以在樹檢視項目資料範本中包含圖示來表示節點。 如果這樣做，您應該只對代表常值資料夾 (例如磁碟上的資料夾結構) 的節點使用資料夾圖示。
 
-![同在 TreeView 中的＞形箭號和資料夾圖示](images/treeview_chevron_folder.png)
+![同在 TreeView 中的＞形箭號和資料夾圖示](images/treeview-icons.png)
 
 ## <a name="create-a-tree-view"></a>建立樹狀檢視
 
-若要建立樹檢視，請使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 物件階層。 您可以將一個或多個根節點新增至 TreeView 控制項的 RootNodes 集合，來建立節點階層。 然後，每個 TreeViewNode 都可以有更多新增至其 Children 集合的節點。 您可以將樹狀檢視節點巢狀化到您需要的任何深度。
+您可以建立樹狀檢視中將[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)繫結至階層式資料來源、 或您可建立並管理自己的 TreeViewNode 物件。
+
+若要建立樹檢視，請使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 物件階層。 您建立的節點階層樹狀檢視控制項的[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)集合中加入一或多個根節點。 然後，每個 TreeViewNode 都可以有更多新增至其 Children 集合的節點。 您可以將樹狀檢視節點巢狀化到您需要的任何深度。
+
+從 Windows 內部預覽，您可以繫結的階層式資料來源[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)屬性提供的樹狀檢視內容，就像與清單檢視的 ItemsSource 一樣。 同樣地，使用提供轉譯之項目的 DataTemplate [ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) （並選擇性[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)）。
+
+> [!IMPORTANT]
+> ItemsSource 是 TreeView.RootNodes 替代機制的內容放在樹狀檢視控制項。 您無法同時設定 ItemsSource 和 RootNodes。 當您使用 ItemsSource 時，節點建立，且您可以從 TreeView.RootNodes 屬性存取它們。
 
 以下是使用 XAML 宣告的簡單樹狀檢視範例。 您通常會在程式碼中新增節點，但我們在此顯示 XAML 階層，因為這對視覺化展示如何建立節點階層可能會有幫助。
 
@@ -68,7 +103,40 @@ TreeView API 支援下列功能：
 </TreeView>
 ```
 
-在大部分情況下，樹狀檢視會顯示資料來源的資料，因此您通常在 XAML 中宣告根 TreeView 控制項，而在程式碼中新增 TreeViewNode 物件。
+在大多數情況下，在樹狀檢視中顯示資料來源，讓一般宣告根樹狀檢視控制項在 XAML，但在程式碼或使用資料繫結新增 TreeViewNode 物件。
+
+### <a name="bind-to-a-hierarchical-data-source"></a>繫結至階層式資料來源
+
+若要建立樹狀檢視中使用資料繫結，將 TreeView.ItemsSource 屬性中的階層式集合。 然後在 ItemTemplate 設下層 items 集合 TreeViewItem.ItemsSource 屬性。
+
+```xaml
+<TreeView ItemsSource="{x:Bind DataSource}">
+    <TreeView.ItemTemplate>
+        <DataTemplate x:DataType="local:Item">
+            <TreeViewItem ItemsSource="{x:Bind Children}"
+                          Content="{x:Bind Name}"/>
+        </DataTemplate>
+    </TreeView.ItemTemplate>
+</TreeView>
+```
+
+請參閱_樹狀檢視中使用資料繫結_的完整程式碼範例一節。
+
+#### <a name="items-and-item-containers"></a>項目及項目容器
+
+如果您使用 TreeView.ItemsSource，這些 Api 可用來取得節點或資料的項目從容器，反之亦然。
+
+| **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
+| - | - |
+| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | 取得指定的 TreeViewItem 容器資料項目。 |
+| [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | 取得指定之的資料的項目 TreeViewItem 容器。 |
+
+| **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
+| - | - |
+| [TreeView.NodeFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.nodefromcontainer) | 取得指定的 TreeViewItem 容器 TreeViewNode。 |
+| [TreeView.ContainerFromNode](/uwp/api/windows.ui.xaml.controls.treeview.containerfromnode) | 取得指定之 TreeViewNode TreeViewItem 容器。 |
+
+### <a name="manage-tree-view-nodes"></a>管理樹狀目錄檢視節點
 
 此樹狀檢視與先前使用 XAML 建立的樹狀檢視相同，但節點是使用程式碼所建立。
 
@@ -137,7 +205,67 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 您可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 來指定資料項目在樹狀檢視中的顯示方式。
 
 > [!NOTE]
-> 在 Windows 10 版本 1803 中，如果您的內容不是字串，就必須重新建立 TreeView 控制項的範本並指定自訂 ItemTemplate。 如需詳細資訊，請參閱本文結尾的完整範例。
+> 在 Windows 10 版本 1803 中，如果您的內容不是字串，就必須重新建立 TreeView 控制項的範本並指定自訂 ItemTemplate。 如需詳細資訊，請參閱本文結尾的完整範例。 在更新版本、 設定[TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)屬性。
+
+### <a name="item-container-style"></a>項目容器樣式
+
+您使用 ItemsSource 或 RootNodes，用來顯示每個節點 – 實際元素稱為"容器"– [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)物件。 您可以樣式使用樹狀檢視的容器 ItemContainerStyle 或 ItemContainerStyleSelector 屬性。
+
+### <a name="item-template-selectors"></a>項目範本選取器
+
+您可以選擇設定不同的 DataTemplate 項目類型為基礎的樹狀檢視項目。 例如在檔案總管] 中的應用程式，您可以使用一個資料範本的資料夾及其他檔案。
+
+![資料夾和使用不同的資料範本的檔案](images/treeview-icons.png)
+
+以下是如何建立及使用項目範本選取器的範例。
+
+```xaml
+<Page.Resources>
+    <DataTemplate x:Key="FolderTemplate" x:DataType="local:ExplorerItem">
+        <TreeViewItem ItemsSource="{x:Bind Children}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Source="Assets/folder.png"/>
+                <TextBlock Text="{x:Bind Name}" />
+            </StackPanel>
+        </TreeViewItem>
+    </DataTemplate>
+
+    <DataTemplate x:Key="FileTemplate" x:DataType="local:ExplorerItem">
+        <TreeViewItem>
+            <StackPanel Orientation="Horizontal">
+                <Image Width="20" Source="Assets/file.png"/>
+                <TextBlock Text="{Binding Name}"/>
+            </StackPanel>
+        </TreeViewItem>
+    </DataTemplate>
+
+    <local:ExplorerItemTemplateSelector
+            x:Key="ExplorerItemTemplateSelector"
+            FolderTemplate="{StaticResource FolderTemplate}"
+            FileTemplate="{StaticResource FileTemplate}" />
+</Page.Resources>
+
+<Grid>
+    <TreeView ItemsSource="{x:Bind DataSource}"
+              ItemTemplateSelector="{StaticResource ExplorerItemTemplateSelector}"/>
+</Grid>
+```
+
+```csharp
+public class ExplorerItemTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate FolderTemplate { get; set; }
+    public DataTemplate FileTemplate { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
+    {
+        var explorerItem = (ExplorerItem)item;
+        if (explorerItem.Type == ExplorerItem.ExplorerItemType.Folder) return FolderTemplate;
+
+        return FileTemplate;
+    }
+}
+```
 
 ## <a name="interacting-with-a-tree-view"></a>與樹狀檢視互動
 
@@ -256,6 +384,10 @@ TreeView 控制項同時支援單一選取和多重選取。 預設會關閉節�
 
 啟用選項時，每個樹狀檢視節點旁邊會顯示核取方塊，並反白顯示選取的項目。 使用者可以使用核取方塊來選取或取消選取項目。按一下項目仍會導致叫用該項目。
 
+選取或取消選取 [父節點會選取或取消選取該節點下的所有子系。 如果某些，但不是所有的子項目父節點下的選取、 在父節點的核取方塊會顯示為未定 （填滿黑色方塊）。
+
+![在樹狀檢視中的多個選取項目](images/treeview-selection.png)
+
 選取的節點會新增至樹狀檢視的 [SelectedNodes](/uwp/api/windows.ui.xaml.controls.treeview.selectednodes) 集合。 您可以呼叫 [SelectAll](/uwp/api/windows.ui.xaml.controls.treeview.selectall) 方法來選取樹狀檢視中的所有節點。
 
 > [!NOTE]
@@ -271,7 +403,7 @@ TreeView 控制項同時支援單一選取和多重選取。 預設會關閉節�
 
 ## <a name="code-examples"></a>程式碼範例
 
-### <a name="tree-view-with-selection-enabled"></a>已啟用選取的樹狀檢視
+### <a name="tree-view-using-xaml"></a>使用 XAML 的樹狀檢視
 
 此範例顯示如何使用 XAML 建立簡單樹狀檢視結構。 樹狀檢視依類型排列，顯示可供使用者選擇的冰淇淋口味及配料。 已啟用多重選取，當使用者按一下按鈕時，主應用程式 UI 會顯示 SelectedItems。
 
@@ -378,6 +510,122 @@ Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
         DessertTree.SelectAll()
     End If
 End Sub
+```
+
+### <a name="tree-view-using-data-binding"></a>樹狀檢視中使用資料繫結
+
+本範例會示範如何建立前一個範例相同的樹狀檢視。 不過，而不是在 XAML 中建立的資料階層的程式碼中建立並繫結至樹狀檢視中的 ItemsSource 屬性。 （先前範例所示] 按鈕的事件處理常式適用於此範例也）。
+
+```xaml
+<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">
+    <SplitView IsPaneOpen="True"
+               DisplayMode="Inline"
+               OpenPaneLength="296">
+        <SplitView.Pane>
+            <TreeView Name="DessertTree"
+                      SelectionMode="Multiple"
+                      ItemsSource="{x:Bind DataSource}">
+                <TreeView.ItemTemplate>
+                    <DataTemplate x:DataType="local:Item">
+                        <TreeViewItem ItemsSource="{x:Bind Children}"
+                                      Content="{x:Bind Name}"/>
+                    </DataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </SplitView.Pane>
+
+        <StackPanel Grid.Column="1" Margin="12,0">
+            <Button Content="Select all" Click="SelectAllButton_Click"/>
+            <Button Content="Create order" Click="OrderButton_Click" Margin="0,12"/>
+            <TextBlock Text="Your flavor selections:" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <TextBlock x:Name="FlavorList" Margin="0,0,0,12"/>
+            <TextBlock Text="Your topping selections:" Style="{StaticResource CaptionTextBlockStyle}"/>
+            <TextBlock x:Name="ToppingList"/>
+        </StackPanel>
+    </SplitView>
+</Grid>
+```
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    private ObservableCollection<Item> DataSource = new ObservableCollection<Item>();
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+        DataSource = GetDessertData();
+    }
+
+    private ObservableCollection<Item> GetDessertData()
+    {
+        var list = new ObservableCollection<Item>();
+        Item flavorsCategory = new Item()
+        {
+            Name = "Flavors",
+            Children =
+            {
+                new Item() { Name = "Vanilla" },
+                new Item() { Name = "Strawberry" },
+                new Item() { Name = "Chocolate" }
+            }
+        };
+        Item toppingsCategory = new Item()
+        {
+            Name = "Toppings",
+            Children =
+            {
+                new Item()
+                {
+                    Name = "Candy",
+                    Children =
+                    {
+                        new Item() { Name = "Chocolate" },
+                        new Item() { Name = "Mint" },
+                        new Item() { Name = "Sprinkles" }
+                    }
+                },
+                new Item()
+                {
+                    Name = "Fruits",
+                    Children =
+                    {
+                        new Item() { Name = "Mango" },
+                        new Item() { Name = "Peach" },
+                        new Item() { Name = "Kiwi" }
+                    }
+                },
+                new Item()
+                {
+                    Name = "Berries",
+                    Children =
+                    {
+                        new Item() { Name = "Strawberry" },
+                        new Item() { Name = "Blueberry" },
+                        new Item() { Name = "Blackberry" }
+                    }
+                }
+            }
+        };
+
+        list.Add(flavorsCategory);
+        list.Add(toppingsCategory);
+        return list;
+    }
+
+    // Button event handlers...
+}
+
+public class Item
+{
+    public string Name { get; set; }
+    public ObservableCollection<Item> Children { get; set; } = new ObservableCollection<Item>();
+
+    public override string ToString()
+    {
+        return Name;
+    }
+}
 ```
 
 ### <a name="pictures-and-music-library-tree-view"></a>圖片及音樂媒體櫃樹狀檢視
