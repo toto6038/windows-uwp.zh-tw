@@ -9,15 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e1e939f6df9bd35e3717b9cc0ce810e97275494
-ms.sourcegitcommit: f9690c33bb85f84466560efac6f23cca2daf5a02
-ms.translationtype: HT
+ms.openlocfilehash: 02aa86231cd611bd20a386d3da2f9d2b6dc5df66
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "1912916"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788258"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-ccx"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 與 C++/CX 之間的互通性
-本主題示範可用於 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 您可以使用它們在使用兩種語言專案的程式碼間互通，或您可以使用函式，從 C++/CX 逐漸將程式碼移至 C + / WinRT。
+本主題示範可用於 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 您可用於 interop 之間使用兩種語言、 預測的程式碼或函數可以用逐漸移動時您的程式碼從 C + + CX C + WinRT (請參閱[移至 C + + WinRT 從 C + + CX](move-to-winrt-from-cx.md))。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函式
 下述的協助程式函式將 C++/CX 物件轉換為對等 C++/WinRT 物件。 函式將 C++/CX 物件轉換為其基礎 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)介面指標。 然後它在該指標上呼叫 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 為 C++/WinRT 物件的預設介面詢問。 **QueryInterface** 是 Windows 執行階段應用程式二進位介面 (ABI) 相當於 C++/CX safe_cast 擴充功能。 且，[**Winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函式擷取 C++/WinRT 物件的基礎 **IUnknown** 介面指標的位址，讓它可以設定另一個值。

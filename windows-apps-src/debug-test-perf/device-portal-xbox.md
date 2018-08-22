@@ -8,14 +8,14 @@ ms.date: 02/12/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、 uwp、 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: fd196c76afe8f8cb1841ba7a7869de725177969a
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816923"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788663"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
@@ -196,6 +196,12 @@ Kinect 感應器必須連接至主機，才能變更這些設定。
 這會空白工作區，可依您的喜好自訂。 您可以使用功能表 (按一下左上方的功能表按鈕) 來新增工具 (選取 **\[新增工具至工作區\]**，然後選取您要新增的工具，再選取 **\[新增\]**)。 請注意，您可以使用此功能表新增工具至任何工作區，以及管理工作區本身。
 
 ![新增工具至工作區](images/device-portal-xbox-13.png)
+
+### <a name="game-event-data"></a>遊戲事件資料
+
+在 [**遊戲事件資料**] 頁面上您可以檢視即時圖該資料流中目前記錄上您 Xbox 一個事件追蹤 for Windows (ETW) 遊戲事件的次數。 如果沒有記錄在系統上的遊戲事件，您也可以檢視詳細資料 （事件名稱、 事件出現和遊戲標題） 描述下方資料圖表的運算列表中的每個事件。 如果沒有記錄事件，表格只有。
+
+![遊戲事件資料](images/device-portal-xbox-22.PNG)
 
 ## <a name="see-also"></a>請參閱
 

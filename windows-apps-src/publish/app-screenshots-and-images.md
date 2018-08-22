@@ -4,18 +4,18 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: 應用程式螢幕擷取畫面、影像及預告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 4/30/2018
+ms.date: 8/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
-ms.localizationpriority: high
-ms.openlocfilehash: e0ac8e01aab07e68e0a4f22160cb58e558b4dc42
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.localizationpriority: medium
+ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817779"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788433"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -85,11 +85,13 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 
 必須要有此影像，才能在 Windows Phone 8.1 與較舊版本上正確顯示。 如果您的應用程式支援 Windows Phone 8.1 或較舊版本但您未提供這個影像，這些客戶將會在應用程式清單中看到空白圖示。 (這也適用於使用 Windows 10 的客戶，如果您的應用程式只有以 Windows Phone 8.1 或更舊版本為目標的套件)。如果您的提交內容*僅*包含 UWP 套件，則不需要提供這個影像。 (請注意，如果您提交的內容同時包含 Windows Phone 8.x 套件和 UWP 套件，而且您提供此影像，在某些 Microsoft Store 配置中它可能會用在 Windows 10 上。 若要避免此情況，您可以建立適用於您應用程式支援之 Windows Phone 版本的[平台專屬清單](create-platform-specific-store-listings.md)，並且僅在那裡包含應用程式磚圖示)。
 
-您也可以選擇性地為 Windows 10 (包含 Xbox) 客戶顯示清單時，防止 Microsoft Store 使用您應用程式套件中的標誌影像，指定讓 Microsoft Store 只使用您上傳的影像。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。
+### <a name="display-only-uploaded-logo-images-in-the-store"></a>只顯示上傳的存放區中的標誌圖像
 
-若只要將上傳的影像用於在 Windows 10 (包含 Xbox) 的 Microsoft Store 中顯示，請勾選 **\[針對 Windows 10 客戶顯示上傳的標誌影像，而不是我的套件中的影像\]** 方塊。 (如果未勾選此方塊，則會使用來自您應用程式套件中的影像)。
+您必須選擇來防止存放區時顯示在清單上 （包括 Xbox） 的 Windows 10 的客戶在您的應用程式封裝中使用的標誌圖像及而有使用您上傳的圖像儲存區。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您的產品支援舊版的 OS 版本，這些客戶可能仍請參閱圖像從您的套件，即使您使用此選項）。
 
-勾選此方塊時，就會出現稱為 **\[上傳的 Microsoft Store 標誌\]** 的新區段。 在此處可上傳 3 個影像，包括 300 x 300「應用程式磚圖示」大小 (如果您核取此方塊，提供該影像的欄位就會移至此區段中)。 如果您使用此選項，建議您三種影像大小都提供：300 x 300、150 x 150 及 71 x 71 像素。 不過，只需要 300 x 300 大小。
+若要使用您上傳 （的客戶在 Windows 10，包括 Xbox） 映像不使用任何圖像從您的封裝、 核取方塊，指出**的存放區的 Windows 10 和 xbox 應用程式上的客戶，顯示上傳標誌圖像，而不是從 「 我的套件的圖像**.
+
+當您核取此方塊時，會出現新區段呼叫**存放區中顯示圖像**。 這裡，您可以上傳 3 圖像，包括**1:1 app 並排顯示的圖示 （300 x 300 像素）** 大小 （如果您核取方塊，以提供該圖像移到本節欄位）。 如果您使用此選項，建議您三種影像大小都提供：300 x 300、150 x 150 及 71 x 71 像素。 不過，只需要 300 x 300 大小。
 
 
 <span id="promotional-images" />
@@ -209,7 +211,7 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 - 標題不可超過 255 個字元。 
 - 不要在您的預告片中包含年齡分級。
 
-就像 Store 清單頁面上的其他欄位一樣，預告片必須通過認證，才能發行至 Microsoft Store。 確定您的預告片遵循 [Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx)。
+就像 Store 清單頁面上的其他欄位一樣，預告片必須通過認證，才能發行至 Microsoft Store。 確定您的預告片遵循 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 根據檔案類型，可能有其他需求。
 

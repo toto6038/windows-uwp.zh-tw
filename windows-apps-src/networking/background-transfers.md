@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f533ab00cd80838d630a78f6f877f65fc1d617ba
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691487"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788623"
 ---
 # <a name="background-transfers"></a>背景傳輸
 使用背景傳輸 API 在網路上可靠地複製檔案。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
@@ -29,9 +29,10 @@ ms.locfileid: "1691487"
 ### <a name="how-does-the-background-transfer-feature-work"></a>背景傳送功能如何運作？
 當應用程式使用背景傳輸來起始傳輸時，會使用 [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) 或 [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) 類別物件設定和初始化要求。 每個傳輸作業會由系統分別處理，並與呼叫的應用程式分隔。 如果您想要在應用程式 UI 中為使用者提供狀態，而且應用程式可以在傳輸進行暫停、繼續、取消，甚至讀取資料，則可以使用進度資訊。 系統處理傳輸的方式可以運用更智慧的電力使用方法，而且可以避免當連線 app 發生 app 暫停、終止或是突發性網路狀態變更這類事件時引發的問題。
 
-此外，背景傳輸使用系統事件代理人事件。 因此，下載數目受限於系統中的可用事件數目。 根據預設，這是 500 事件，但那些事件在所有處理程序間共用。 因此，單一應用程式一次應該不會建立超過 100 個背景傳輸。
+> [!NOTE]
+> 由於每個 app 的資源限制，因此應用程式在任何時候都不應有超過 200 個傳輸 (DownloadOperations + UploadOperations)。 超過該限制可能會使得應用程式的傳輸佇列處於無法復原狀態。
 
-當應用程式啟動背景傳輸時，應用程式必須在所有現有的 [**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live) 物件上呼叫 [**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)。 未執行此動作可能會造成這些事件流失，因而將背景傳輸功能呈現為無用。
+完成可啟動應用程式，它必須呼叫[**AttachAsync**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)所有現有的[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)物件。 不執行此動作會導致已經完成傳輸的流失以及將最後轉譯的背景傳輸功能使用失去作用。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用背景傳輸來執行已驗證的檔案要求
 背景傳輸提供的方法，支援基本伺服器與 Proxy 認證、Cookie，並且支援在每個傳輸作業使用自訂的 HTTP 標頭 (透過 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146))。
@@ -167,8 +168,6 @@ function uploadFiles() {
 使用背景傳輸時，每個下載以 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 的方式存在，可公開用於暫停、繼續、重新啟動和取消作業的一些控制方法。 系統會對每個 **DownloadOperation** 自動處理 app 事件 (例如暫停或終止) 和連線變更；在 app 暫停期間下載仍將繼續，或在 app 終止之後會暫停或持續下去。 對於行動網路案例，設定 [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) 屬性將指出您的 app 是否將開始或繼續下載 (當網際網路連線使用計量付費網路時)。
 
 如果您是下載可以快速完成的小量資源，則應該改用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API 來取代背景傳輸。
-
-由於每個 app 的資源限制，因此應用程式在任何時候都不應有超過 200 個傳輸 (DownloadOperations + UploadOperations)。 超過該限制可能會使得應用程式的傳輸佇列處於無法復原狀態。
 
 以下的範例會逐步引導您建立和初始化基本下載，以及如何列舉和重新引進之前 app 工作階段中的持續作業。
 

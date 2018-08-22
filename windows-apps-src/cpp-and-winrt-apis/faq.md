@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 617f9ee49130a55cf0378f2a70b72296224dcefc
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: 80c27332c05e285fdad6b8ec8deddd82d24a6e4a
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881019"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788453"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>有關 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的常見問題集
 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -84,6 +84,65 @@ windows.com
 因為 C++/WinRT 使用 C++17 標準，您將需要使用任何必要的編譯器旗標來取得支援，這類旗標在編譯器間各不相同。
 
 Visual Studio 是我們支援和為 C++/WinRT 建議的開發工具。 請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+
+## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>唯讀的屬性產生的實作函數為何沒有`const`辨識？
+
+當您在宣告的[MIDL 3.0](/uwp/midl-3/)唯讀屬性時，您可能會預期`cppwinrt.exe`會為您產生實作函數工具`const`集合格 （const 函數會視為 const*這個*指標）。
+
+當然建議使用 const 儘可能，但`cppwinrt.exe`本身工具不會嘗試將哪些實作的相關的功能可能可想而知都會 const，而這可能不的原因。 您可以選擇讓任何您實作函數 const，如本範例所示。
+
+```cppwinrt
+struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
+{
+    winrt::hstring ToString() const
+    {
+        return L"MyStringable";
+    }
+};
+```
+
+您可以移除的`const` **ToString**上的辨識您應決定您要變更其實作一些物件狀態。 但讓每個您成員函數 const 或非 const 不可同時。 換句話說，未超載上實作函數`const`。
+
+除了您實作函式之外另其他撥打其中 const 而言到圖片是在 Windows Runtime 函數估算。 請考慮下列程式碼。
+
+```cppwinrt
+int main()
+{
+    winrt::Windows::Foundation::IStringable s{ winrt::make<MyStringable>() };
+    auto result{ s.ToString() };
+}
+```
+
+針對**ToString**上述的呼叫，Visual Studio 中的命令會**移至宣告**顯示可預測的 Windows Runtime **IStringable::ToString**到 C + + WinRT 看起來像這樣。
+
+```
+winrt::hstring ToString() const;
+```
+
+不論您選擇限定實作它們 const 所上預測的功能。 在幕後預測呼叫應用程式二進位介面 (ABI) 透過 COM 介面指標通話的金額。 預估的**ToString**與其互動的唯一狀態是該 COM 介面指標;且其確實具有不需要修改該指標，所以此函數是 const。 您並不會變更後呼叫，透過**IStringable**參照有關的任何項目及可確保您可以使用 const 甚至是呼叫**ToString**保證參照至**IStringable**此提供。
+
+了解，這些範例`const`會實作詳細資料的 C + + WinRT 規劃和實作;所組成的程式碼檢疫您福利。 有沒有這類兩回事`const`COM 和 Windows Runtime ABI （如成員函數） 上。
+
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>您是否有任何的建議會降低程式碼大小的 C + + WinRT 二進位檔案吗？
+
+使用 Windows 執行階段物件、 時應避免因為它對可能造成負面影響您的應用程式所導致比必要會產生多個二進位碼下面所顯示的編碼圖樣。
+
+```cppwinrt
+anobject.b().c().d();
+anobject.b().c().e();
+anobject.b().c().f();
+```
+
+在 Windows Runtime 裡，編譯器是快取的值無法`c()`或間接取值透過呼叫各方法的介面 ('。 」)。 除非您介入，會產生多個虛擬通話和參考計數負荷。 上述的模式可以輕鬆地產生倍為嚴格所需的程式碼。 而是希望示您可以在任何位置的圖樣。 它會產生更少的程式碼和它可也可大幅改善執行的時間效能。
+
+```cppwinrt
+auto a{ anobject.b().c() };
+a.d();
+a.e();
+a.f();
+```
+
+上面所示的建議的模式適用於不只是 C + + WinRT 但所有 Windows Runtime 語言估算。
 
 > [!NOTE]
 > 如果本主題未能回答您的問題，也許您可透過使用 [Stack Overflow 上的 `c++-winrt` 標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt) 來尋求協助。

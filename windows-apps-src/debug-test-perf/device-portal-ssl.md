@@ -8,14 +8,14 @@ ms.date: 07/11/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: windows 10、 uwp、 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ccdef5c9462f18c1a7044fcc3a683c749177349
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1070885"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2786696"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自訂的 SSL 憑證佈建裝置入口網站
 在 Windows 10 建立者 Update Windows 裝置入口網站新增裝置的系統管理員可以使用自訂憑證安裝中的 HTTPS 通訊的一種方式。 

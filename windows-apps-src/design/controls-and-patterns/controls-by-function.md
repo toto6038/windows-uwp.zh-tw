@@ -10,24 +10,37 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 21539d625dc70ded7bec77b9916c7ea4bff72536
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396807"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788523"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
- 
-
 Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式庫。 部分控制項以視覺方式呈現；其餘控制項則當做其他控制項或內容 (例如影像與媒體) 的容器。 
 
-您可以下載 [XAML UI 基本知識範例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。 
+您可以下載 [XAML UI 基本知識範例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。
 
-以下是可用於 App 的常用 XAML 控制項清單 (依功能分類)。 
+<table>
+<th align="left">XAML 控制項庫<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
+<td>
+    <p>如果您有安裝的<strong style="font-weight: semi-bold">XAML 控制項圖庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/NavigationView">開啟該應用程式並查看 NavigationView 中巨集指令</a> </p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
+
+以下是可用於 App 的常用 XAML 控制項清單 (依功能分類)。
 
 ## <a name="appbars-and-commands"></a>應用程式列與命令
 
@@ -257,7 +270,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-設計和作法︰[操作功能表和對話方塊](dialogs.md) 
+設計與使用方法：[延伸顯示](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>功能表飛出視窗
 暫時顯示與使用者目前正在執行之動作相關的命令或選項清單。
@@ -277,7 +290,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-設計和作法︰[操作功能表和對話方塊](dialogs.md) 
+設計與使用方法：[功能表和快顯功能表](menus.md) 
 
 範例程式碼：[XAML 操作功能表範例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -286,7 +299,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-設計和作法︰[操作功能表和對話方塊](dialogs.md) 
+設計與使用方法： [Dialogs](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>工具提示
 顯示元素資訊的快顯視窗。 
@@ -540,58 +553,16 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ## <a name="navigation"></a>瀏覽
 
-### <a name="hub"></a>中樞
-可讓使用者檢視並瀏覽到不同內容區段的容器控制項。
+### <a name="navigationview"></a>NavigationView
 
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-    </HubSection>
-</Hub>
-```
+適應容器和彈性導覽模型，實作左的功能窗格、 上方導覽列和索引標籤圖樣。
 
-參考：[Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+參照： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-設計和作法︰[中樞控制項指南](hub.md) 
-
-範例程式碼：[XAML中樞控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=309828)
-
-### <a name="pivot"></a>樞紐分析
-全螢幕容器和瀏覽模型也可讓您迅速在不同的樞紐分析 (檢視或篩選) 之間移動，而通常是在同一組資料。
-
-樞紐分析控制項的樣式可設定為具有「索引標籤」版面配置。
-
-參考：[Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
-
-設計和作法︰[索引標籤和樞紐分析控制項指南](tabs-pivot.md) 
-
-範例程式碼：[樞紐分析範例](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
-
-### <a name="semantic-zoom"></a>語意式縮放
-讓使用者在項目集合的兩個檢視之間縮放的容器控制項。
-
-```xaml
-<SemanticZoom>
-    <ZoomedInView>
-        <GridView></GridView>
-    </ZoomedInView>
-    <ZoomedOutView>
-        <GridView></GridView>
-    </ZoomedOutView>
-</SemanticZoom>
-```
-
-參考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
-
-設計和作法︰[語意式縮放控制項指南](semantic-zoom.md) 
-
-範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](http://go.microsoft.com/fwlink/p/?linkid=226564)
+設計與使用方法： [NavigationView 控制指南](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
+
 具有兩個檢視的容器控制項；一個檢視供主要內容使用，另一個檢視則通常用於導覽功能表。
 
 ![分割檢視控制項](images/controls/split-view.png) 
@@ -612,6 +583,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 設計和作法：[分割檢視控制項指南](split-view.md)
 
 ### <a name="web-view"></a>網頁檢視
+
 裝載網頁內容的容器控制項。
 
 ```xaml
@@ -624,6 +596,27 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 設計和作法：網頁檢視的指導方針 
 
 範例程式碼：[XAML WebView 控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238582)
+
+### <a name="semantic-zoom"></a>語意式縮放
+
+讓使用者在項目集合的兩個檢視之間縮放的容器控制項。
+
+```xaml
+<SemanticZoom>
+    <ZoomedInView>
+        <GridView></GridView>
+    </ZoomedInView>
+    <ZoomedOutView>
+        <GridView></GridView>
+    </ZoomedOutView>
+</SemanticZoom>
+```
+
+參考：[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+
+設計和作法︰[語意式縮放控制項指南](semantic-zoom.md)
+
+範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>進度控制項
 

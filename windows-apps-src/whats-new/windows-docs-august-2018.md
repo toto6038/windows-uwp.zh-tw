@@ -4,17 +4,17 @@ title: 在 2010 年 8 月 2018 Windows 文件中新功能-開發 UWP 應用程�
 description: 新功能、 影片、 範例及開發人員指南已新增至 Windows 10 開發人員文件的 2010 年 8 月 2018年。
 keywords: 什麼是新增、 更新、 功能、 開發人員指引，Windows 10、 august
 ms.author: quradic
-ms.date: 8/9/2018
+ms.date: 08/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 06eef0c115675ba9673a81459c91e0f08f6fab71
-ms.sourcegitcommit: be5b71a8ec7b686d5f93d56d10cb9a50c3c5bb4a
+ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "2748864"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2787783"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2010 年 8 月 2018 Windows 開發人員文件中新增功能
 
@@ -30,17 +30,17 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 * [Windows UI 文件庫](https://aka.ms/winui-docs)是 NuGet 套件提供控制項和其他使用者 interfact 元素 UWP 應用程式的一組。 讓您的應用程式的運作即使您的使用者不需要的最新的 OS 版本這些套件也包含與舊版 Windows 10 相容。
 
-* [DropDownButton、 SplitButton，以及 ToggleSplitButton](../design/controls-and-patterns/buttons.md)提供使用特殊功能來加強您的應用程式的使用者經驗的按鈕控制項。
-
-* NavigationView 現在支援[上方導覽列中，](../design/controls-and-patterns/navigationview.md)針對您的應用程式中具有較小的數字的導覽選項的情況下，並為您的應用程式內容需要更多空間。
-
-* 樹狀檢視已增強，可以支援[資料繫結、 項目範本和龍及放置。](../design/controls-and-patterns/tree-view.md)
+* [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)，以及[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)提供使用特殊功能來加強您的應用程式使用者介面按鈕控制項。
 
 ![分割按鈕選取前景色彩](../design/controls-and-patterns/images/split-button-rtb.png)
 
+* NavigationView 現在也支援[上方導覽列中](../design/controls-and-patterns/navigationview.md)，針對您的應用程式具有較小的數字的導覽選項與您的應用程式內容需要更多空間的案例。
+
+* 樹狀檢視已增強，可以支援[資料繫結，項目範本，並將拖放。](../design/controls-and-patterns/tree-view.md)
+
 ### <a name="package-support-framework"></a>套件支援架構
 
-套件支援架構是可協助您修正 win32 應用程式時套用您不需要存取來源的程式碼，使其能夠繼續運作 MSIX 容器中的開放原始碼套件。  
+套件支援架構是可協助您修正 win32 應用程式時套用您不需要存取來源的程式碼，使其能夠繼續運作 MSIX 容器中的開放原始碼套件。
 
 如需了解，請參閱[套用 runtime 修正至使用套件支援架構的 MSIX 套件](../porting/package-support-framework.md)。
 
@@ -52,7 +52,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="cwinrt-code-examples"></a>C + + WinRT 程式碼範例
 
-我們已新增 250 [C + + WinRT](../cpp-and-winrt-apis/index.md)程式碼片段主題中我們文件所附現有 C + + CX 程式碼範例。
+我們已新增 250 [C + + WinRT](../cpp-and-winrt-apis/index.md)程式碼伴隨現有 C + 在我們的文件中的主題清單 + CX 程式碼範例。
 
 ### <a name="project-rome"></a>Project Rome
 

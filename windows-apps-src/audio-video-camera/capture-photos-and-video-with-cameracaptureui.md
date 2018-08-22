@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: acd14b63bb877dca2f801423f9d0de73ec994acf
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691967"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788381"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 
@@ -26,7 +26,7 @@ ms.locfileid: "1691967"
 如果您想提供自己的相機 UI 或您的案例需要更健全的擷取作業低階控制項，您應該使用 [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 物件並實作您自己的擷取體驗。 如需詳細資訊，請參閱[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)。
 
 > [!NOTE]
-> 如果您是使用 CameraCaptureUI，則不應該在應用程式資訊清單檔案中指定**網路攝影機**或**麥克風**功能。 因為如果您這麼做，將會以裝置的相機隱私性設定您的應用程式；但即使使用者拒絕相機對您應用程式的存取，還是不會防止 CameraCaptureUI 擷取媒體。 原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 如果您在使用 CameraCaptureUI 時指定網路攝影機或麥克風功能，則在提交給「市集」時，應用程式可能會讓 WACK (Windows 應用程式認證套件) 認證失敗。
+> 您不應該指定的**網路攝影機**或**麥克風**的功能在應用程式資訊清單檔案中若您的應用程式僅使用 CameraCaptureUI。 因為如果您這麼做，將會以裝置的相機隱私性設定您的應用程式；但即使使用者拒絕相機對您應用程式的存取，還是不會防止 CameraCaptureUI 擷取媒體。 原因是 Windows 內建相機應用程式是信任的第一方應用程式，需要使用者透過按下按鈕來起始相片、音訊和視訊擷取。 您的應用程式可能會失敗時如果您指定的網路攝影機或麥克風功能使用 CameraCaptureUI 作為唯一的相片擷取機制時所送出至存放區的 Windows 應用程式的憑證套件 （英文） 憑證。
 > 如果您是使用 MediaCapture 透過程式設計方式來擷取音訊、相片或視訊，則必須在應用程式資訊清單檔案中指定網路攝影機或麥克風功能。
 
 ## <a name="capture-a-photo-with-cameracaptureui"></a>使用 CameraCaptureUI 擷取相片

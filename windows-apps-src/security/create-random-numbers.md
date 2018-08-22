@@ -1,6 +1,6 @@
 ---
 title: 建立隨機數字
-description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 中建立要用於加密編譯的隨機數字或緩衝區。
+description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) 應用程式中建立要用於加密編譯的隨機數字或緩衝區。
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 author: msatranjr
 ms.author: misatran
@@ -8,14 +8,14 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
+keywords: windows 10、 uwp、 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: da60dd982ab378bc71ecbc1f485ca3127cefc9dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 595b4ab47e3c6c833a4b8f2e692a0cc0c8ffcaa4
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689224"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788473"
 ---
 # <a name="create-random-numbers"></a>建立隨機數字
 

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP
-ms.openlocfilehash: 65ee6cd32e1fdb6900c859725b8deb6b5031d297
-ms.sourcegitcommit: ba0d20f6fad75ce98c25ceead78aab6661250571
+keywords: windows 10、 uwp、 背景工作
+ms.localizationpriority: medium
+ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2017
-ms.locfileid: "848425"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788303"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -213,7 +213,7 @@ ms.locfileid: "848425"
 
 ### <a name="run-in-a-new-process-each-time-a-trigger-fires-with-the-supportsmultipleinstances-attribute"></a>每次觸發程序透過 SupportsMultipleInstances 屬性引發時，在新的處理序中執行
 
-此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 為了使用此屬性，您必須鎖定 SDK 版本 '10.0.15063' (Windows 10 Creators Update) 或更高的版本。
+此範例會宣告在新處理序中執行的背景工作，這個新的處理序在每次引發新的觸發程序時取得本身的資源限制 (記憶體、CPU)。 注意啟用此行為的 `SupportsMultipleInstances` 使用方式。 您必須才可使用此屬性為目標 sdk （英文） 版本 '10.0.15063' （Windows 10 建立者更新） 或更高。
 
 ```xml
 <Package

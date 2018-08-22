@@ -4,21 +4,20 @@ description: 我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸
 title: 事件與路由事件概觀
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 07/12/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 61e55fa85e54970ba48413767ccf5a65b05af471
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
+ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691187"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "2788793"
 ---
 # <a name="events-and-routed-events-overview"></a>事件與路由事件概觀
-
 
 **重要 API**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -40,39 +39,50 @@ Windows 執行階段應用程式最常見的一項程式設計工作，是將使
 
 您是透過產生 XAML 的方式定義 Windows 執行階段應用程式的 UI。 此 XAML 通常是 Visual Studio 設計介面的輸出。 您也可以在純文字編輯器或其他廠商的 XAML 編輯器中撰寫 XAML。 在產生該 XAML 的過程中，您可以連接個別 UI 元素的事件處理常式，同時定義建立該 UI 元素的屬性值的其他所有 XAML 屬性。
 
-若要在 XAML 中連接事件，請指定您已定義或稍後將在程式碼後置中定義之處理常式方法的字串格式名稱。 例如，下列 XAML 定義一個將其他屬性 ([x:Name 屬性](x-name-attribute.md)、[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) 指派為屬性的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 物件，並參考名為 `showUpdatesButton_Click` 的方法來連接按鈕的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的處理常式：
+若要在 XAML 中連接事件，請指定您已定義或稍後將在程式碼後置中定義之處理常式方法的字串格式名稱。 例如，下列 XAML 定義一個將其他屬性 ([x:Name 屬性](x-name-attribute.md)、[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366)) 指派為屬性的 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 物件，並參考名為 `ShowUpdatesButton_Click` 的方法來連接按鈕的 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的處理常式：
 
-```XML
+```xaml
 <Button x:Name="showUpdatesButton"
   Content="{Binding ShowUpdatesText}"
-  Click="showUpdatesButton_Click"/>
+  Click="ShowUpdatesButton_Click"/>
 ```
 
 **提示**  *事件連接*是一個程式設計術語。 它指的是您在表示發生某個事件時應叫用具名處理常式方法的處理程序或程式碼。 在大部分的程序性程式碼模型中，事件連接是隱含或明確的 "AddHandler" 程式碼，可以為事件和方法命名，通常包含目標物件執行個體。 在 XAML 中，"AddHandler" 是隱含的，而事件連接完全是由下列兩個動作所組成：將事件命名為物件元素的屬性名稱，以及將處理常式命名為該屬性的值。
 
-您是以用來撰寫所有 app 之程式碼和程式碼後置的程式設計語言，來撰寫實際的處理常式。 使用屬性 `Click="showUpdatesButton_Click"` 會建立一個協定，也就是當 XAML 是以標記編譯和剖析時，您的 IDE 建置動作的 XAML 標記編譯步驟和應用程式載入時的最終 XAML 剖析，都可以在應用程式的程式碼中找到名為 `showUpdatesButton_Click` 的方法。 `showUpdatesButton_Click` [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何處理常式實作相容之方法簽章 (依據委派) 的方法。 例如，下列程式碼會定義 `showUpdatesButton_Click` 處理常式。
+您是以用來撰寫所有 app 之程式碼和程式碼後置的程式設計語言，來撰寫實際的處理常式。 使用屬性 `Click="ShowUpdatesButton_Click"` 會建立一個協定，也就是當 XAML 是以標記編譯和剖析時，您的 IDE 建置動作的 XAML 標記編譯步驟和應用程式載入時的最終 XAML 剖析，都可以在應用程式的程式碼中找到名為 `ShowUpdatesButton_Click` 的方法。 `ShowUpdatesButton_Click` [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何處理常式實作相容之方法簽章 (依據委派) 的方法。 例如，下列程式碼會定義 `ShowUpdatesButton_Click` 處理常式。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
-private void showUpdatesButton_Click (object sender, RoutedEventArgs e) {
+private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e) 
+{
     Button b = sender as Button;
     //more logic to do here...
 }
 ```
+
 ```vb
-Private Sub showUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
+Private Sub ShowUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
     Dim b As Button = CType(sender, Button)
     '  more logic to do here...
 End Sub
 ```
+
+```cppwinrt
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+{
+    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    // More logic to do here.
+}
+```
+
 ```cpp
-void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) {
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+{
     Button^ b = (Button^) sender;
     //more logic to do here...
 }
 ```
 
-在此範例中，`showUpdatesButton_Click` 方法是以 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委派為基礎。 您會知道這就是要使用的委派，因為 MSDN 參考頁面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的語法中將會提及該委派。
+在此範例中，`ShowUpdatesButton_Click` 方法是以 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委派為基礎。 您會知道這就是要使用的委派，因為 MSDN 參考頁面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的語法中將會提及該委派。
 
 **提示**  Visual Studio 在您編輯 XAML 時，會提供一個命名事件處理常式並定義處理常式方法的便利方式。 當您在 XAML 文字編輯器中提供事件的屬性名稱時，請稍候片刻，讓 Microsoft IntelliSense 清單顯示。 如果您按一下清單中的 **\[&lt;新事件處理常式&gt;\]**，Microsoft Visual Studio 會根據元素的 **x:Name** (或類型名稱)、事件名稱以及數值尾碼來建議方法名稱。 然後，您可以在選取的事件處理常式名稱上按一下滑鼠右鍵，再按一下 [**巡覽至事件處理常式**]。 這會直接瀏覽到新插入的事件處理常式定義，如您在 XAML 頁面程式碼後置檔案的程式碼編輯器檢視中所見。 事件處理常式已經有正確的簽章，其中包含事件使用的 *sender* 參數及事件資料類別。 此外，如果您的程式碼後置中已經有正確簽章的處理常式方法，這個方法的名稱會顯示在自動完成下拉式清單中，連同顯示 **\[&lt;新事件處理常式&gt;\]** 選項。 您也可以按下 Tab 鍵做為快速鍵，以取代按一下 IntelliSense 清單項目。
 
@@ -104,7 +114,7 @@ XAML 不是將事件處理常式指派給物件的唯一方法。 如果要將�
 
 如果您使用程式碼新增事件處理常式到顯示在執行階段 UI 中的物件，常見的做法是新增這類處理常式以回應物件存留期事件或回呼，例如 [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) 或 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737)，這樣的話，相關物件的事件處理常式就會為使用者在執行階段起始的事件做好準備。 此範例說明頁面結構的 XAML 大綱，然後提供可將事件處理常式新增到物件的 C# 語言語法。
 
-```xml
+```xaml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
   <StackPanel>
     <TextBlock Name="textBlock1">Put the pointer over this text</TextBlock>
@@ -143,15 +153,19 @@ End Sub
 
 **注意**  Visual Studio 和它的 XAML 設計介面通常會升級執行個體處理技巧，而非 **Handles** 關鍵字。 這是因為在 XAML 中建立事件處理常式連接，是設計人員與開發人員之間一般工作流程的一部分，而 **Handles** 關鍵字技巧與連接 XAML 中的事件處理常式不相容。
 
-在 C++ 中，也可以使用 **+=** 語法，但是它與基本 C# 格式有一些差異：
+在 C + + CX，您也使用**+=** 語法，但有基本的 C# 表單中的差異：
 
 -   不具備委派推斷功能，因此必須針對委派執行個體使用 **ref new**。
 -   委派建構函式有兩個參數，並且需要以目標物件做為第一個參數。 通常您是指定**這個**。
 -   委派建構函式需以方法位址做為第二個參數，因此 **&** 參考運算子必須位於方法名稱之前。
 
+```cppwinrt
+textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
+```
+
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
+ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 ```
 
 ### <a name="removing-event-handlers-in-code"></a>移除程式碼中的事件處理常式
@@ -170,10 +184,10 @@ ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerEntered);
 
 例如，您可以使用這個程式碼將名稱為 **textBlock1\_PointerEntered** 的事件處理常式從目標物件 **textBlock1** 中移除。
 
-> [!div class="tabbedCodeSnippets"]
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
 ```
+
 ```vb
 RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
@@ -294,5 +308,3 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 * [.NET 事件與委派](http://go.microsoft.com/fwlink/p/?linkid=214364)
 * [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
- 
-
