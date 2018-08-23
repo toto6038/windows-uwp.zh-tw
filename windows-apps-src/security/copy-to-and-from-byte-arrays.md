@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: cc7119ba2d97bfc6e1fb3f1a519b6d650027b1a3
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2786710"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2820013"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>複製到位元組陣列和從位元組陣列中複製
 
