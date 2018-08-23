@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 發佈暫停, 發佈日期, 傳送提交以發佈, 受限制的功能核准
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2791323"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814453"
 ---
 # <a name="manage-submission-options"></a>管理提交選項
 

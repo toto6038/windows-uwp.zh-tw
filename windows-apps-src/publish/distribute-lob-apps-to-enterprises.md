@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: medium
 ms.openlocfilehash: 9149533a12263e105356a1683257c4d9172eefb5
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2791393"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2823070"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB app 發佈到企業
 

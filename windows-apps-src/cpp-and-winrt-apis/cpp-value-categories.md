@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 預測、 移動、 轉接、 值類別、 move 語意、 完美轉接、 左值、 右值、 glvalue、 prvalue、 xvalue
 ms.localizationpriority: medium
 ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2796945"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2814670"
 ---
 # <a name="value-categories-and-references-to-them"></a>值類別及給他們參考
 本主題說明存在於 c + + 中的各種類別的值 （以及參考以值）。 您相信有聽到*的值*和*右*，但是您可能不認為這些本主題提供的合約。 並有一些太其他種類的值。

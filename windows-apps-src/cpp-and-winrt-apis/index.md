@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
-ms.openlocfilehash: c9aaca0194f57c244bca0d6cb8ccf08e5e4eafda
-ms.sourcegitcommit: f2f4820dd2026f1b47a2b1bf2bc89d7220a79c1a
+ms.openlocfilehash: 165800f76e78bc9de15e5294a81672d3968b241e
+ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "2788713"
+ms.lasthandoff: 08/23/2018
+ms.locfileid: "2810603"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
@@ -29,7 +29,7 @@ C++ 程式設計語言同時用於企業 *和* 獨立軟體廠商 (ISV) 區段�
 
 從語言的觀點來看，C++ 向來與類型豐富且輕量的撰寫和使用抽象概念有關。 但因為原始指標、原始迴圈和詳細的記憶體配置與 C++98 發行，語言有了大幅度的變更。 現代化 C++ (從 C++ 11 後續版本) 是關於清楚運算式的想法、簡單、可讀性和較低引入錯誤的可能性。
 
-使用 C++，還有 C++/WinRT，適合撰寫與使用 Windows 執行階段 API。 這是 Microsoft 針對 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live) 和 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 的建議替代方案。
+使用 C++，還有 C++/WinRT，適合撰寫與使用 Windows 執行階段 API。 這是 Microsoft 的建議的取代[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)語言預測和[Windows Runtime c + + 範本文件庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。
 
 當您使用 C++/WinRT 時，使用標準 C++ 資料類型、演算法及關鍵字。 投影會有自己的自訂資料類型，但在大部分案例中，您不需要了解它們因為它們從標準類型提供適當轉換，以及提供適當轉換至標準類型。 如此一來，可以繼續使用您已經習慣使用的標準 C++ 語言功能，以及您已經擁有的原始碼。 C++/WinRT 可讓您在任何 C++ 應用程式中很輕鬆呼叫 Windows 執行階段 API，從 Win32 到 UWP。
 
