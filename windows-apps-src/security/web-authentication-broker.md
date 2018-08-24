@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 245fb2cfb3a62dc739abc7cfb2522da6495429ed
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2814492"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2840491"
 ---
 # <a name="web-authentication-broker"></a>Web 驗證代理人
 
@@ -159,12 +159,15 @@ catch (Exception ex)
 
 Fiddler Web 偵錯工具可以與 app 搭配使用。
 
-1.  由於 AuthHost 是在自己的 App 容器中執行以給予私人網路功能，因此您必須設定登錄機碼：Windows Registry Editor Version 5.00
+1.  由於 AuthHost 執行其專屬應用程式] 容器中，以授與其私人網路功能您必須設定的登錄機碼： Windows 登錄編輯程式 5.00 版
 
     **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
-                         Data type  
-                         DWORD
+    如果您沒有此登錄機碼，您可以在命令提示字元中以系統管理員權限建立它。
+
+    ```cmd 
+    REG ADD "HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\authhost.exe" /v EnablePrivateNetwork /t REG_DWORD /d 1 /f
+    ```
 
 2.  為 AuthHost 新增一個規則，因為它負責產生輸出流量。
     ```syntax

@@ -4,18 +4,18 @@ title: 遊戲台與震動
 description: 使用 Windows.Gaming.Input 遊戲台 API 來偵測與讀取震動和脈衝命令，並將其傳送給遊戲台。
 ms.assetid: BB03BB8E-255F-4AE8-AC43-1E519CA860FE
 ms.author: wdg-dev-content
-ms.date: 02/08/2017
+ms.date: 8/23/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 遊戲台, 震動
 ms.localizationpriority: medium
-ms.openlocfilehash: 893e744f43992304bac704c1874c5132146cb9a4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f44d5f4dee8293ed40d22a301f2a3d2a9611e15d
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "771541"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2843563"
 ---
 # <a name="gamepad-and-vibration"></a>遊戲台與震動
 
@@ -327,7 +327,7 @@ gamepad.Vibration = vibration;
 
 ## <a name="run-the-gamepad-vibration-sample"></a>執行遊戲台震動範例
 
-[GamepadVibrationUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/Samples/System/GamepadVibrationUWP) 示範如何使用遊戲台震動馬達和脈衝發射鍵來產生各種效果。
+[GamepadVibrationUWP 範例 _(github)_](https://github.com/Microsoft/Xbox-ATG-Samples/tree/master/UWPSamples/System/GamepadVibrationUWP) 示範如何使用遊戲台震動馬達和脈衝發射鍵來產生各種效果。
 
 ## <a name="see-also"></a>另請參閱
 

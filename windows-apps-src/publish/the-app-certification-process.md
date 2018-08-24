@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 發佈、 前置處理憑證釋出，擱置、 送出、 發佈狀態的時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2811007"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2841162"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
