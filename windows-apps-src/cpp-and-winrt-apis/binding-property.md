@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6343832801926254c64fcefc269ce7fda9ed6dfc
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2817505"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831450"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-property"></a>XAML 控制項；繫結至一個 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 屬性
 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題顯示在 C++/WinRT 中實作和可觀察屬性的方法，以及如何將 XAML 控制項繫結至它們。

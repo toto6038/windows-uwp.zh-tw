@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 連線裝置、 遠端系統、 羅馬、 專案羅馬、 背景工作、 應用程式服務
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2809964"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2834795"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>與遠端 App 服務通訊
 

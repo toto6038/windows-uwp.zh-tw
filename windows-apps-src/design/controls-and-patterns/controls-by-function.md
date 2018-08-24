@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2820672"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2836821"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 

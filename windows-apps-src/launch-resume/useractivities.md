@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a4bba1efb52dc3b25b12c3891d9472f44729c85
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 53aac2375d60df3cd9493f315b20431961378fe8
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818306"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2831120"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -167,14 +167,13 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## <a name="key-apis"></a>重要 API
 
-* [UserActivity 命名空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* [UserActivities 命名空間](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 
 ## <a name="related-topics"></a>相關主題
 
-* [調適型卡片](https://docs.microsoft.com/en-us/adaptive-cards/)
+* [使用者活動 （Project 羅馬文件）](https://docs.microsoft.com/windows/project-rome/user-activities/)
+* [調適型卡片](https://docs.microsoft.com/adaptive-cards/)
 * [調適型卡片視覺化工具範例](http://adaptivecards.io/)
 * [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、活動摘要及調適型卡片在任何平台上與您的客戶互動](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)
-* [Github 上的 Project Rome](https://github.com/microsoft/project-rome)
-* [Windows 開發人員中心上的 Project Rome](https://aka.ms/projectrome)

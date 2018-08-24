@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 連線裝置、 遠端系統、 羅馬、 專案羅馬
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 51f11dd7b3d44e39da86e7b8c33aa59ef5bdda4e
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: d3efb7e094ce1464028dadaa14c6f0bfb3f3b214
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2820132"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830437"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (專案 Rome)
 
@@ -39,3 +39,5 @@ Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.c
 | [探索遠端裝置](discover-remote-devices.md)  | 了解如何探索能夠連線的裝置。 |
 | [與遠端應用程式服務通訊](communicate-with-a-remote-app-service.md) | 了解如何與遠端裝置上的 app 互動。 |
 | [透過遠端工作階段連接裝置](remote-sessions.md) | 將裝置加入遠端工作階段，以建立跨多部裝置的共用體驗。 |
+| [繼續使用者活動，甚至是在各個裝置之間](useractivities.md)| 協助使用者在繼續它們已在做什麼在您的應用程式、 甚至是跨多個裝置。|
+| [使用者活動的最佳作法](useractivities-best-practices.md)| 了解建立和更新使用者活動的建議的作法。|

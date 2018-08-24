@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf1e647931b6e7680fb65ddcf200bf2a74be716a
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815020"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2832024"
 ---
 # <a name="app-submissions"></a>App 提交
 
@@ -113,7 +113,7 @@ ms.locfileid: "2815020"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **發佈暫停選項**     | 預設︰通過認證之後就立即發佈此提交項目 (或根據您在 \[排程\] 區段中選取的日期)      | [發佈暫停選項](manage-submission-options.md#publishing-hold-options)    
 | **認證注意事項**     | 推薦項目          | [認證注意事項](notes-for-certification.md)             |
-| **受限制的功能**     | 需要您的產品如果宣告任何 [受限制的功能] (。。 {3}/packaging/app-capability-declarations.md#restricted-capabilities    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
+| **受限制的功能**     | 如果您的產品會宣告任何[受限制的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

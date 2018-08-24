@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event, 標準, 投影, 撰寫, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b52bf8e33bbf111dd02c695d8c3baf77e1338ac
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2817721"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2832409"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中撰寫事件
 

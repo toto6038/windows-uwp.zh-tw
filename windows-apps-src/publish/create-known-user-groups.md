@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 目標群組, 客戶, 正式發行前小眾測試版群組, 使用者群組, 已知的使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: e15b5a4a2f76cbfc33db593c3110ac6f2d054b5b
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2813790"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2834475"
 ---
 # <a name="create-known-user-groups"></a>建立已知的使用者群組
 

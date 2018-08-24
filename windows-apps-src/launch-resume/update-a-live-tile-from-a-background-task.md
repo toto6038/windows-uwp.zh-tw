@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 9c79fdab9039ff592edf7984732d300a14e81d92
+ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "2815700"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "2830810"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
