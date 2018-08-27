@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 Store 服務、 Microsoft 存放區分析 API 觀點
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2831646"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2867337"
 ---
 # <a name="get-insights-data"></a>取得前瞻資料
 

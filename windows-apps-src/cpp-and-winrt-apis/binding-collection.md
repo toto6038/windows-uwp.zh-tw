@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、繫結、集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 9337c0625c68970d9e68df74fa13228369e8bf41
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2834127"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2865947"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 項目控制項；繫結至一個 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -28,9 +28,7 @@ ms.locfileid: "2834127"
 > 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱 [使用 C++/WinRT 使用API](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
 
 ## <a name="what-does-observable-mean-for-a-collection"></a>對一個集合來說，*可觀察*的意義是什麼？
-如果表示集合的執行階段類別選擇引發 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，每當將元素新增至它或從它移除，執行階段類別便是可觀察的集合。
-
-XAML 項目控制項藉由擷取更新的集合並且更新其本身以顯示目前的元素，可繫結至以及處理這些事件。
+如果表示集合的執行階段類別選擇引發 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件，每當將元素新增至它或從它移除，執行階段類別便是可觀察的集合。 XAML 項目控制項藉由擷取更新的集合並且更新其本身以顯示目前的元素，可繫結至以及處理這些事件。
 
 > [!NOTE]
 > 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
@@ -39,7 +37,7 @@ XAML 項目控制項藉由擷取更新的集合並且更新其本身以顯示目
 有一個可觀察的向量範本會很有用，做為實用、一般用途的 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 實作。 以下類別清單稱為 **single_threaded_observable_vector\<T\>**。
 
 > [!NOTE]
-> 如果您已安裝[Windows 10 SDK 預覽建置的 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以只是直接使用**winrt::single_threaded_observable_vector\ < T\ >** 原廠函數，而非清單下方的程式碼。 如果您是不在該版本的 sdk （英文） 中，然後就較容易切換時使用**winrt**函數的程式碼清單版本。 請記得而不是使用下面所列的類型而直接呼叫[**winrt::make**]() 、 您改用呼叫**winrt::single_threaded_observable_vector\ < T\ >** 函數。
+> 如果您已安裝[Windows 10 SDK 預覽建置的 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以只是直接使用**winrt::single_threaded_observable_vector\ < T\ >** 原廠函數，而不是清單下方的程式碼 （將顯示指示的確切的程式碼更新版本本主題）。 如果您是不在該版本的 sdk （英文） 中，然後就較容易切換時使用**winrt**函數的程式碼清單版本。
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -298,13 +296,16 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ```idl
 // BookstoreViewModel.idl
 ...
-    runtimeclass BookstoreViewModel
-    {
-        BookSku BookSku{ get; };
-        Windows.Foundation.Collections.IVector<IInspectable> BookSkus{ get; };
-    }
+runtimeclass BookstoreViewModel
+{
+    BookSku BookSku{ get; };
+    Windows.Foundation.Collections.IVector<IInspectable> BookSkus{ get; };
+}
 ...
 ```
+
+> [!IMPORTANT]
+> 在上述的 MIDL 3.0 清單，請注意**BookSkus**屬性的類型的[**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) 。 在本主題的下一步] 區段中，我們將會繫結[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)中的項目來源**BookSkus**。 清單方塊項目控制項，且必須正確設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，將它設為類型**IVector** **IInspectable**，或是[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)等的互通性類型的值。
 
 儲存並建置。 從 `Generated Files` 資料夾中的 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製存取子虛設常式，並加以執行。
 
@@ -313,35 +314,57 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ...
 #include "single_threaded_observable_vector.h"
 ...
-    struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
-    {
-        BookstoreViewModel();
-        Bookstore::BookSku BookSku();
-        Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookSkus();
+struct BookstoreViewModel : BookstoreViewModelT<BookstoreViewModel>
+{
+    BookstoreViewModel();
 
-    private:
-        Bookstore::BookSku m_bookSku{ nullptr };
-        Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_bookSkus;
-    };
+    Bookstore::BookSku BookSku();
+
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookSkus();
+
+private:
+    Bookstore::BookSku m_bookSku{ nullptr };
+    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> m_bookSkus;
+};
 ...
 ```
 
 ```cppwinrt
 // BookstoreViewModel.cpp
 ...
-    BookstoreViewModel::BookstoreViewModel()
-    {
-        m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
-        m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
-        m_bookSkus.Append(m_bookSku);
-    }
+BookstoreViewModel::BookstoreViewModel()
+{
+    m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
+    m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
+    m_bookSkus.Append(m_bookSku);
+}
 
-    Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
-    {
-        return m_bookSkus;
-    }
+Bookstore::BookSku BookstoreViewModel::BookSku()
+{
+    return m_bookSku;
+}
+
+Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> BookstoreViewModel::BookSkus()
+{
+    return m_bookSkus;
+}
 ...
 ```
+
+## <a name="if-you-have-a-windows-10-sdk-preview-build"></a>如果您有 Windows 10 SDK 預覽組建
+如果您已安裝[Windows 10 SDK 預覽建置的 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後將此行程式碼
+
+```cppwinrt
+m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
+```
+
+與此。
+
+```cppwinrt
+m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
+```
+
+而不是呼叫[**winrt::make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，您可以建立的適當集合物件呼叫**winrt::single_threaded_observable_vector\ < T\ >** 原廠函數。
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>將一個 ListBox 繫結至 **BookSkus** 屬性
 開啟 `MainPage.xaml`，其中包含我們主要 UI 頁面的 XAML 標記。 在相同的 **StackPanel** 中新增下列標記做為**按鈕**。
@@ -361,11 +384,11 @@ m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
 ```cppwinrt
 // MainPage.cpp
 ...
-    void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
-    {
-        MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
-        MainViewModel().BookSkus().Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
-    }
+void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
+{
+    MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
+    MainViewModel().BookSkus().Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
+}
 ...
 ```
 
