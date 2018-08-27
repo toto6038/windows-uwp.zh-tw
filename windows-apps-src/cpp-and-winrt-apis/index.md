@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 165800f76e78bc9de15e5294a81672d3968b241e
-ms.sourcegitcommit: c6d6f8b54253e79354f8db14e5cf3b113a3e5014
+ms.openlocfilehash: 6cded1be4bd7ca5044a2eee8832545a8d83ee3d4
+ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "2843606"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "2855829"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
@@ -52,6 +52,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [使用 C++/WinRT 的錯誤處理](error-handling.md) | 本主題討論使用 C++/WinRT 程式設計時處理錯誤的策略。 |
 | [使用委派來處理事件](handle-events.md) | 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。 |
 | [撰寫事件](author-events.md) | 本主題示範如何撰寫包含引發事件的執行階段類別的 Windows 執行階段元件。 也示範使用元件和處理事件的應用程式。 |
+| [集合 C + + WinRT](collections.md) | C + + WinRT 提供的功能和儲存許多的時間和工作當您想要實作及 （或） 傳遞集合的基底類別。 |
 | [並行和非同步作業](concurrency.md) | 本主題中示範的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件。 |
 | [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md) | 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。 |
 | [XAML 項目控制項；繫結至一個 C++/WinRT 集合](binding-collection.md) | 可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。 |
