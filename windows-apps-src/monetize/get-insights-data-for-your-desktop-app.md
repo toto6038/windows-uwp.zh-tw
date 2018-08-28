@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 Store 服務、 Microsoft 存放區分析 API 觀點
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2857753"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2882984"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>取得您的桌面應用程式的觀點資料
 

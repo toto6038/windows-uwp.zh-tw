@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 更新、 背景工作、 updatetask、 背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2857656"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2881161"
 ---
 # <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在更新 UWP app 時執行背景工作
 
@@ -97,6 +97,6 @@ namespace BackgroundTasks
 > [!NOTE]
 > Visual Studio 2015 使用者： 上面的步驟適用於 Visual Studio 2017。 如果您使用 Visual Studio 2015，您可以使用觸發程序及測試 UpdateTask 除了 Visual Studio 不會附加至其的相同技術。 VS 2015 的替代程序是安裝程式將 UpdateTask 設為其進入點， [ApplicationTrigger](https://docs.microsoft.com/windows/uwp/launch-resume/trigger-background-task-from-app)並觸發直接從前景應用程式執行。
 
-## <a name="see-also"></a>也請參閱
+## <a name="see-also"></a>請參閱
 
 [建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
