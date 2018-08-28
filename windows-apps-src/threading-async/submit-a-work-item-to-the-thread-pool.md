@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2856043"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2888067"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 

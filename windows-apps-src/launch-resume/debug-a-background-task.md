@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2866331"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2894087"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 

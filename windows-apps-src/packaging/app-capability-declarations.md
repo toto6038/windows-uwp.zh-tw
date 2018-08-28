@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c9ff43ac0a3aa4fb0dfdc3353029b60dbf442459
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2865187"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2884332"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -92,7 +92,7 @@ ms.locfileid: "2865187"
 如果您的應用程式宣告任何受限制的功能，您必須在[應用程式送出程序](../publish/app-submissions.md)提供資訊以核准發佈至 Microsoft 存放區的應用程式。 您提供此資訊在您提交的[送出選項](../publish/manage-submission-options.md#restricted-capabilities)] 頁面上解釋您的應用程式如何使用它會宣告每個限制的功能。
 
 > [!IMPORTANT]
-> 受限制的功能都是非常特定的情況。 這些功能的用法受到高度限制，而且受其他Microsoft Store上架原則和審查規定的規範。 請注意您可以 sideload 宣告受限制的功能而不需要接收任何核准的應用程式。 只有在將這些應用程式提交到 Microsoft Store 時才需要核准。 
+> 受限制的功能都是非常特定的情況。 這些功能的用法受到高度限制，而且受其他Microsoft Store上架原則和審查規定的規範。 請注意您可以 sideload 宣告受限制的功能而不需要接收任何核准的應用程式。 只有在將這些應用程式提交到 Microsoft Store 時才需要核准。
 
 請務必不可以宣告除非您的應用程式確實需要這些限制的功能。 這類功能在某些情況下是必要且適當的，例如具備雙因素驗證的銀行系統，使用者需提供含數位憑證的智慧卡來確認身分識別。 其他應用程式主要可能是針對企業客戶所設計，而且可能需要存取公司資源，若使用者沒有網域認證，便無法存取這類公司資源。
 
@@ -119,9 +119,9 @@ ms.locfileid: "2865187"
 
 在過去，我們要求您連絡支援服務以取得使用功能的核准。 我們現在可讓您在開發人員中心儀表板中提供這項資訊，做為[提交程序](../publish/app-submissions.md)的一部分。
 
-當您將套件上傳您提交時，我們將會偵測是否宣告任何受限制的功能。 如果我們這樣做，您將需要在[提交選項](../publish/manage-submission-options.md#restricted-capabilities)頁面提供有關您的產品如何使用每項功能的詳細資訊。 請務必提供詳細資料以協助我們了解您的產品需要宣告功能的原因。 請注意，提交可能需要更多時間以完成認證程序。 
+當您將套件上傳您提交時，我們將會偵測是否宣告任何受限制的功能。 如果我們這樣做，您將需要在[提交選項](../publish/manage-submission-options.md#restricted-capabilities)頁面提供有關您的產品如何使用每項功能的詳細資訊。 請務必提供詳細資料以協助我們了解您的產品需要宣告功能的原因。 請注意，提交可能需要更多時間以完成認證程序。
 
-認證過程中，我們的測試人員將會檢閱您所提供的資訊，以判斷您的提交是否已核准使用功能。 請注意，提交可能需要更多時間以完成認證程序。 如果我們核准您使用功能，您的應用程式將繼續進行認證程序的其餘部分。 當您提交應用程式更新，通常不會重複功能核准程序（除非您宣告其他功能）。 
+認證過程中，我們的測試人員將會檢閱您所提供的資訊，以判斷您的提交是否已核准使用功能。 請注意，提交可能需要更多時間以完成認證程序。 如果我們核准您使用功能，您的應用程式將繼續進行認證程序的其餘部分。 當您提交應用程式更新，通常不會重複功能核准程序（除非您宣告其他功能）。
 
 如果我們不核准您使用功能，您的提交無法通過認證，而且我們將會在認證報告中提供意見反應。 然後，您可以選擇建立新的提交和上傳不宣告功能的套件，或 (如果適用) 解決有關您使用功能的任何問題，並在新提交中要求核准。
 
@@ -134,14 +134,14 @@ ms.locfileid: "2865187"
 
 ### <a name="restricted-capability-list"></a>受限制的功能清單
 
-下表列出受限制的功能。 您可以依照上述的程序，為提交到 Microsoft Store 的應用程式中的這些功能要求核准。 
+下表列出受限制的功能。 您可以依照上述的程序，為提交到 Microsoft Store 的應用程式中的這些功能要求核准。
 
 > [!IMPORTANT]
-> 除非在非常特定與有限的情況中，否則提交到 Microsoft Store 的應用程式，某些受限制的功能幾乎不會獲得核准。 下表說明這些功能。 如果您想要透過 Microsoft Store 散發應用程式，建議您不要在應用程式宣告這些功能。 
+> 除非在非常特定與有限的情況中，否則提交到 Microsoft Store 的應用程式，某些受限制的功能幾乎不會獲得核准。 下表說明這些功能。 如果您想要透過 Microsoft Store 散發應用程式，建議您不要在應用程式宣告這些功能。
 
 | 功能案例 | 功能使用方式 |
 |---------------------|------------------|
-| **企業版** | Windows 網域認證可以讓使用者使用自己的認證登入遠端資源，如同使用者提供自己的使用者名稱和密碼一樣。 **EnterpriseAuthentication**功能通常用於連線至企業內的伺服器的企業營運系統應用程式。 <br /><br />您不需要針對網際網路上的一般通訊使用此功能。<br /><br />**EnterpriseAuthentication**功能被為了支援一般的企業營運系統應用程式。 請勿在不需要存取公司資源的 app 中宣告此功能。 [**檔案選擇器**](https://msdn.microsoft.com/library/windows/apps/BR207847)提供健全的 UI 機制，能夠讓使用者開啟網路共用上要供 app 使用的檔案。 只有當您的應用程式的案例需要以程式設計方式存取，且您無法使用**檔案選擇器**實現這些宣告**enterpriseAuthentication**功能。<br /><br />在您的 app 套件資訊清單中宣告 **enterpriseAuthentication** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**enterpriseDataPolicy** 功能可讓 app 定義和使用裝置適用的企業特定原則。 若要使用下列類別的所有成員，必須要有這個功能。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
+| **企業版** | Windows 網域認證可以讓使用者使用自己的認證登入遠端資源，如同使用者提供自己的使用者名稱和密碼一樣。 **EnterpriseAuthentication**功能通常用於連線至企業內的伺服器的企業營運系統應用程式。 <br /><br />您不需要針對網際網路上的一般通訊使用此功能。<br /><br />**EnterpriseAuthentication**功能被為了支援一般的企業營運系統應用程式。 請勿在不需要存取公司資源的 app 中宣告此功能。 [**檔案選擇器**](https://msdn.microsoft.com/library/windows/apps/BR207847)提供健全的 UI 機制，能夠讓使用者開啟網路共用上要供 app 使用的檔案。 只有當您的應用程式的案例需要以程式設計方式存取，且您無法使用**檔案選擇器**實現這些宣告**enterpriseAuthentication**功能。<br /><br />在您的 app 套件資訊清單中宣告 **enterpriseAuthentication** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="enterpriseAuthentication"/></Capabilities>```<br /><br />**EnterpriseDataPolicy**功能可讓分別處理企業資料的應用程式及安全地時應用程式管理與 Windows 資訊保護原則 (例如： 行動裝置管理及行動應用程式管理系統)。  宣告此限制的功能如下所示。 <br /><br />```<Capabilities><rescap:Capability Name="enterpriseDataPolicy"/></Capabilities>```<br /><br />若要使用下列類別的所有成員，必須要有這個功能。<ul><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705151">FileProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn706017">DataProtectionManager</a></li><li><a href="https://msdn.microsoft.com/library/windows/apps/Dn705170">ProtectionPolicyManager</a></li></ul> |
 | **共用使用者憑證** | **SharedUserCertificates**功能可讓應用程式來新增和存取軟體和硬體式共用使用者憑證存放區，例如智慧卡上儲存的憑證。 這個功能通常用於需要使用智慧卡進行身分驗證的金融或企業 app。<br /><br />在您的 app 套件資訊清單中宣告 **sharedUserCertificates** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="sharedUserCertificates"/></Capabilities>``` |
 |**文件**\* | **DocumentsLibrary**功能提供以程式設計方式存取至使用者的文件、 篩選檔案類型關聯的套件資訊清單中所宣告以支援至 OneDrive 的離線存取。 例如，如果 DOC 閱讀程式 app 宣告 .doc 檔案類型關聯，則它可以開啟 \[文件\] 中的 .doc 檔案，但無法開啟其他類型的檔案。 <br /><br />宣告**documentsLibrary**功能的應用程式無法存取文件住家群組的電腦上。 [檔案選擇器](https://msdn.microsoft.com/library/windows/apps/Hh465174)提供健全的 UI 機制，能夠讓使用者開啟要供 app 使用的檔案。 只有當您無法使用檔案選擇器宣告**documentsLibrary**功能。<br /><br />若要使用的**documentsLibrary**功能，應用程式必須：<ul><li>使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取。</li><li>在離線時自動將開啟的檔案儲存到使用者的 OneDrive</li></ul>使用下列兩種用途**documentsLibrary**功能之應用程式可能也可以選擇性地使用功能來開啟另一個文件中內嵌的內容。 可接受的**documentsLibrary**功能上述用途。<ul><li>您的 app 無法存取手機內部儲存空間中的文件庫。 不過，如果另一個 app 在選用的 SD 記憶卡上建立 \[文件\] 資料夾，您的 app 能夠看到該資料夾。</li></ul>在您的 app 套件資訊清單中宣告 **documentsLibrary** 功能時，它必須包含 **uap** 命名空間，如下所示。<br /><br />```<Capabilities><uap:Capability Name="documentsLibrary"/></Capabilities>``` |
 | **遊戲 DVR 設定** | **appCaptureSettings** 受限制的功能讓 app 能夠控制「遊戲 DVR」的使用者設定。<br /><br />需要具備這個功能，才能使用 [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 命名空間中的某些 API。 <br /><br />我們不建議在提交到 Microsoft Store 的應用程式中宣告這項功能。 大部分的開發人員都不會獲得核准使用這項功能。  |

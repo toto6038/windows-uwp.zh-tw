@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867687"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2887777"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>取得傳統型應用程式的錯誤報告資料
 

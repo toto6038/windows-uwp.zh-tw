@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp、 標準、 c + +、 cpp、 winrt、 預測集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f949c41af885ec379eaa9e5b12764710532b50
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.openlocfilehash: dacfe4135402b85bac68b63c06f99f97001fa5b9
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2867939"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2889325"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用集合[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -32,7 +32,7 @@ ms.locfileid: "2867939"
 
 ### <a name="general-purpose-collection-empty"></a>一般用途集合空白
 
-若要擷取新的物件類型的實作的一般用途集合，您可以呼叫**winrt::single_threaded_vector**函數範本。 為[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)中，傳回的物件而透過其呼叫傳回的物件的功能和屬性的介面。
+若要擷取新的物件類型的實作的一般用途集合，您可以呼叫[**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)函數範本。 為[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)中，傳回的物件而透過其呼叫傳回的物件的功能和屬性的介面。
 
 ```cppwinrt
 ...
@@ -58,7 +58,7 @@ int main()
 }
 ```
 
-您可以看到上述程式碼範例中，建立集合後您可以附加元素、 逐一，和通常將物件一樣您可能會收到來自 API 任何 Windows Runtime 集合物件。 如果您需要在檢視 over 集合，您可以呼叫[IVector::GetView](/uwp/api/windows.foundation.collections.ivector-1.getview)，如下所示。 上面所示的圖樣&mdash;建立和取用集合的&mdash;適合您要傳遞至、 資料或取得資料移出，API 的簡單案例。
+您可以看到上述程式碼範例中，建立集合後您可以附加元素、 逐一，和通常將物件一樣您可能會收到來自 API 任何 Windows Runtime 集合物件。 如果您需要不變的檢視 over 集合，您可以呼叫[IVector::GetView](/uwp/api/windows.foundation.collections.ivector-1.getview)，如下所示。 上面所示的圖樣&mdash;建立和取用集合的&mdash;適合您要傳遞至、 資料或取得資料移出，API 的簡單案例。
 
 ### <a name="general-purpose-collection-primed-from-data"></a>一般用途集合中，從資料 ！
 
@@ -89,7 +89,7 @@ bookSkus.Append(make<Bookstore::implementation::BookSku>(L"Moby Dick"));
 
 ### <a name="observable-collection"></a>觀察到的集合
 
-若要擷取新的物件類型的實作*機制*集合，請呼叫**winrt::single_threaded_observable_vector**函數範本與任何項目類型。 但是若要讓適用於 XAML 的項目控制項繫結觀察到的集合，請使用**IInspectable**做為項目類型。
+若要擷取新的物件類型的實作*機制*集合，請呼叫[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)函數範本與任何項目類型。 但是若要讓適用於 XAML 的項目控制項繫結觀察到的集合，請使用**IInspectable**做為項目類型。
 
 為[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)中，傳回的物件而透過其您 （或控制項所繫結） 呼叫傳回的物件的功能和屬性的介面。
 
@@ -99,14 +99,14 @@ auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IIn
 
 如需詳細資訊和程式碼範例、 繫結您的使用者介面 (UI) 控制項的觀察到的集合，請參閱[XAML 項目] 控制項，將繫結至 C + + WinRT 集合](binding-collection.md)。
 
-### <a name="associative-container-map"></a>關聯的容器 (map)
+### <a name="associative-collection-map"></a>關聯的集合 (map)
 
-有關聯的容器版本的兩個我們已經討論過的功能。
+有關聯的集合版本的兩個我們已經討論過的功能。
 
-- **Single_threaded_map**函數範本為[**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)傳回關聯的容器。 無法顯著對應。
-- **Single_threaded_observable_map**函數範本會以[**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)傳回觀察到的關聯容器。
+- [**Winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map)函數範本將會傳回非機制關聯為[**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)。
+- [**Winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)函數範本會傳回[**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)顯著關聯集合。
 
-您選擇性地可以傳遞給函數的類型**std::map**或**std::unordered_map**將*右值*質數這些容器的資料。
+您選擇性地可以傳遞給函數的類型**std::map**或**std::unordered_map**將*右值*質數資料這些集合。
 
 ```cppwinrt
 auto coll1{
@@ -131,8 +131,9 @@ auto coll2{ winrt::single_threaded_map<winrt::hstring, int>(std::move(values)) }
 
 ```cppwinrt
 ...
+using namespace winrt;
 using namespace Windows::Foundation::Collections;
-
+...
 struct MyVectorView :
     implements<MyVectorView, IVectorView<float>, IIterable<float>>
 {
@@ -149,7 +150,7 @@ struct MyVectorView :
 IVectorView<float> view{ winrt::make<MyVectorView>() };
 ```
 
-而是很容易衍生自**winrt::vector_view_base**結構範本的自訂向量檢視並只實作**get_container**函數公開含有您資料的容器。
+而是很容易衍生自[**winrt::vector_view_base**](/uwp/cpp-ref-for-winrt/vector-view-base)結構範本的自訂向量檢視並只實作**get_container**函數公開含有您資料的容器。
 
 ```cppwinrt
 struct MyVectorView2 :
@@ -201,17 +202,135 @@ private:
 
 這些是在基底類別的 C + + WinRT 提供可協助您實作自訂集合。
 
-- **winrt::vector_view_base**
-- **winrt::vector_base**
-- **winrt::observable_vector_base**
-- **winrt::map_view_base**
-- **winrt::map_base**
-- **winrt::observable_map_base**
+### [<a name="winrtvectorviewbase"></a>winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
+
+請參閱上述的程式碼範例。
+
+### [<a name="winrtvectorbase"></a>winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+
+```cppwinrt
+struct MyVector :
+    implements<MyVector, IVector<float>, IVectorView<float>, IIterable<float>>,
+    winrt::vector_base<MyVector, float>
+{
+    auto& get_container() const noexcept
+    {
+        return m_values;
+    }
+
+    auto& get_container() noexcept
+    {
+        return m_values;
+    }
+
+private:
+    std::vector<float> m_values{ 0.1f, 0.2f, 0.3f };
+};
+```
+
+### [<a name="winrtobservablevectorbase"></a>winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
+
+```cppwinrt
+struct MyObservableVector :
+    implements<MyObservableVector, IObservableVector<float>, IVector<float>, IVectorView<float>, IIterable<float>>,
+    winrt::observable_vector_base<MyObservableVector, float>
+{
+    auto& get_container() const noexcept
+    {
+        return m_values;
+    }
+
+    auto& get_container() noexcept
+    {
+        return m_values;
+    }
+
+private:
+    std::vector<float> m_values{ 0.1f, 0.2f, 0.3f };
+};
+```
+
+### [<a name="winrtmapviewbase"></a>winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+
+```cppwinrt
+struct MyMapView :
+    implements<MyMapView, IMapView<winrt::hstring, int>, IIterable<IKeyValuePair<winrt::hstring, int>>>,
+    winrt::map_view_base<MyMapView, winrt::hstring, int>
+{
+    auto& get_container() const noexcept
+    {
+        return m_values;
+    }
+
+private:
+    std::map<winrt::hstring, int> m_values{
+        { L"AliceBlue", 0xfff0f8ff }, { L"AntiqueWhite", 0xfffaebd7 }
+    };
+};
+```
+
+### [<a name="winrtmapbase"></a>winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
+
+```cppwinrt
+struct MyMap :
+    implements<MyMap, IMap<winrt::hstring, int>, IMapView<winrt::hstring, int>, IIterable<IKeyValuePair<winrt::hstring, int>>>,
+    winrt::map_base<MyMap, winrt::hstring, int>
+{
+    auto& get_container() const noexcept
+    {
+        return m_values;
+    }
+
+    auto& get_container() noexcept
+    {
+        return m_values;
+    }
+
+private:
+    std::map<winrt::hstring, int> m_values{
+        { L"AliceBlue", 0xfff0f8ff }, { L"AntiqueWhite", 0xfffaebd7 }
+    };
+};
+```
+
+### [<a name="winrtobservablemapbase"></a>winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
+
+```cppwinrt
+struct MyObservableMap :
+    implements<MyObservableMap, IObservableMap<winrt::hstring, int>, IMap<winrt::hstring, int>, IMapView<winrt::hstring, int>, IIterable<IKeyValuePair<winrt::hstring, int>>>,
+    winrt::observable_map_base<MyObservableMap, winrt::hstring, int>
+{
+    auto& get_container() const noexcept
+    {
+        return m_values;
+    }
+
+    auto& get_container() noexcept
+    {
+        return m_values;
+    }
+
+private:
+    std::map<winrt::hstring, int> m_values{
+        { L"AliceBlue", 0xfff0f8ff }, { L"AntiqueWhite", 0xfffaebd7 }
+    };
+};
+```
 
 ## <a name="important-apis"></a>重要 API
 * [ItemsControl.ItemsSource](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
 * [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_)
 * [IVector](/uwp/api/windows.foundation.collections.ivector_t_)
+* [winrt::map_base](/uwp/cpp-ref-for-winrt/map-base)
+* [winrt::map_view_base](/uwp/cpp-ref-for-winrt/map-view-base)
+* [winrt::observable_map_base](/uwp/cpp-ref-for-winrt/observable-map-base)
+* [winrt::observable_vector_base](/uwp/cpp-ref-for-winrt/observable-vector-base)
+* [winrt::single_threaded_observable_map](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)
+* [winrt::single_threaded_map](/uwp/cpp-ref-for-winrt/single-threaded-map)
+* [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)
+* [winrt::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector)
+* [winrt::vector_base](/uwp/cpp-ref-for-winrt/vector-base)
+* [winrt::vector_view_base](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## <a name="related-topics"></a>相關主題
 * [值類別及給他們參考](cpp-value-categories.md)

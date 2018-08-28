@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 背景工作應用程式服務連線遠端系統的裝置
 ms.localizationpriority: medium
 ms.openlocfilehash: 142eba8eb919ed25632f44a6f185ae40e16dec6b
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2861617"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2886685"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 

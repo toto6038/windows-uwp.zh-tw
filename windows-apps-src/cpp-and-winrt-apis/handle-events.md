@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
 ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
-ms.sourcegitcommit: 753dfcd0f9fdfc963579dd0b217b445c4b110a18
+ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "2862751"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "2886778"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>藉由在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 使用委派來處理事件
 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。 您可以使用任何標準 C++ 類函式的物件處理事件。
