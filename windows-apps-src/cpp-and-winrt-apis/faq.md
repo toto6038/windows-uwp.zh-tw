@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c27332c05e285fdad6b8ec8deddd82d24a6e4a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889237"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906354"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>有關 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的常見問題集
 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -85,11 +85,11 @@ windows.com
 
 Visual Studio 是我們支援和為 C++/WinRT 建議的開發工具。 請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>唯讀的屬性產生的實作函數為何沒有`const`辨識？
+## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>為什麼沒有唯讀屬性的產生的實作函式`const`限定詞？
 
-當您在宣告的[MIDL 3.0](/uwp/midl-3/)唯讀屬性時，您可能會預期`cppwinrt.exe`會為您產生實作函數工具`const`集合格 （const 函數會視為 const*這個*指標）。
+當您宣告中[MIDL 3.0](/uwp/midl-3/)的唯讀屬性時，您可能會預期`cppwinrt.exe`工具，來為您產生實作函式是`const`-完整 （const 函式會將*這個*指標視為 const）。
 
-當然建議使用 const 儘可能，但`cppwinrt.exe`本身工具不會嘗試將哪些實作的相關的功能可能可想而知都會 const，而這可能不的原因。 您可以選擇讓任何您實作函數 const，如本範例所示。
+當然建議使用 const 如果可行，但`cppwinrt.exe`工具本身不會嘗試原因相關之實作函式都可能 const，而這可能無法。 您可以選擇讓任何您實作函式 const，如這個範例所示。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -101,9 +101,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-您可以移除的`const` **ToString**上的辨識您應決定您要變更其實作一些物件狀態。 但讓每個您成員函數 const 或非 const 不可同時。 換句話說，未超載上實作函數`const`。
+您可以移除這些`const`限定詞上**ToString**應該您決定需要修改它的實作中一些物件狀態。 但讓每個您的成員函式 const 或非 const 不可兩者。 換句話說，不多載實作函式在`const`。
 
-除了您實作函式之外另其他撥打其中 const 而言到圖片是在 Windows Runtime 函數估算。 請考慮下列程式碼。
+除了您實作的函式，另一個其他放置的位置 const 已能圖片是在 Windows 執行階段函式投射。 請考慮此程式碼。
 
 ```cppwinrt
 int main()
@@ -113,19 +113,19 @@ int main()
 }
 ```
 
-針對**ToString**上述的呼叫，Visual Studio 中的命令會**移至宣告**顯示可預測的 Windows Runtime **IStringable::ToString**到 C + + WinRT 看起來像這樣。
+為**ToString**上述的呼叫，在 Visual Studio 中的**移至宣告**命令會顯示的 Windows 執行階段**istringable:: Tostring**的投影到 C + + /winrt 看起來像這樣。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-不論您選擇限定實作它們 const 所上預測的功能。 在幕後預測呼叫應用程式二進位介面 (ABI) 透過 COM 介面指標通話的金額。 預估的**ToString**與其互動的唯一狀態是該 COM 介面指標;且其確實具有不需要修改該指標，所以此函數是 const。 您並不會變更後呼叫，透過**IStringable**參照有關的任何項目及可確保您可以使用 const 甚至是呼叫**ToString**保證參照至**IStringable**此提供。
+投影的函式是 const 不論您選擇以符合您的實作它們的方式。 在幕後投影會呼叫的應用程式二進位介面 (ABI)，哪些量，透過 COM 介面指標的呼叫。 投影的**ToString**互動的唯一狀態是該 COM 介面指標。而且，當然具備不需要修改該指標，因此函式是 const。 這讓您確保它不會變更，透過呼叫**IStringable**參考的相關的任何項目，以及它可確保您可以呼叫**ToString**即使有 const 參考到**IStringable**。
 
-了解，這些範例`const`會實作詳細資料的 C + + WinRT 規劃和實作;所組成的程式碼檢疫您福利。 有沒有這類兩回事`const`COM 和 Windows Runtime ABI （如成員函數） 上。
+了解，這些範例中的`const`是實作詳細資料的 C + + /winrt 投影和實作;這些構成的程式碼健康，供您參考。 沒有這類的`const`上，COM，也不 Windows 執行階段 ABI （適用於成員函式）。
 
-## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>您是否有任何的建議會降低程式碼大小的 C + + WinRT 二進位檔案吗？
+## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>您有任何建議縮小的程式碼的 C + + /winrt 的二進位檔嗎？
 
-使用 Windows 執行階段物件、 時應避免因為它對可能造成負面影響您的應用程式所導致比必要會產生多個二進位碼下面所顯示的編碼圖樣。
+使用 Windows 執行階段物件時，您應該避免因為它可以在您的應用程式上所造成不必要產生更多二進位檔案的程式碼會有負面影響，如下所示的程式碼撰寫模式。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -133,7 +133,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-在 Windows Runtime 裡，編譯器是快取的值無法`c()`或間接取值透過呼叫各方法的介面 ('。 」)。 除非您介入，會產生多個虛擬通話和參考計數負荷。 上述的模式可以輕鬆地產生倍為嚴格所需的程式碼。 而是希望示您可以在任何位置的圖樣。 它會產生更少的程式碼和它可也可大幅改善執行的時間效能。
+在 Windows 執行階段世界中，則編譯器會無法快取的值`c()`或透過間接取值稱為每一種方法的介面 ('。 」)。 除非您介入，產生更多虛擬呼叫和參考計數額外負荷。 上述的模式可以輕鬆地產生倍地所需的程式碼。 相反地，想要的模式，您可以在任何地方，如下所示。 它會產生很多較少的程式碼，以及它可以也可大幅改善您的執行的階段效能。
 
 ```cppwinrt
 auto a{ anobject.b().c() };
@@ -142,7 +142,7 @@ a.e();
 a.f();
 ```
 
-上面所示的建議的模式適用於不只是 C + + WinRT 但所有 Windows Runtime 語言估算。
+上述的建議的模式會套用而不只是以 C + + /winrt，但所有的 Windows 執行階段語言投影。
 
 > [!NOTE]
 > 如果本主題未能回答您的問題，也許您可透過使用 [Stack Overflow 上的 `c++-winrt` 標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt) 來尋求協助。

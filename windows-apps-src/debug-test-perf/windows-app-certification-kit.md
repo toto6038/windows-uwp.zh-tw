@@ -2,26 +2,26 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 應用程式認證套件
-description: 若要授與您的應用程式正在發佈的 Microsoft 存放區上的最佳機會或變成 Windows 認證、 驗證和測試本機之前送出憑證。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
+description: 若要讓您的 app 能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 應用程式的憑證
+keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891731"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917024"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
 
 
-若要取得您[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)的應用程式或準備[Microsoft 存放區的出版物](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試其在本機上第一次。 本主題顯示如何安裝及執行[Windows 應用程式的憑證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)可確保您的應用程式安全與有效率。
+若要取得您[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)的應用程式或準備發行[至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機上第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -46,7 +46,7 @@ ms.locfileid: "2891731"
 
 3.  輸入或選取要測試的 app 之後，請按一下 **\[下一步\]**。
 
-4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意 Microsoft 存放區可能適用的所有測試此工作流程。 選取要執行的測試，然後按一下 **\[下一步\]**。
+4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意 Microsoft 網上商店，可能會套用來自此工作流程的所有測試。 選取要執行的測試，然後按一下 **\[下一步\]**。
 
     Windows 應用程式認證套件隨即開始驗證該應用程式。
 
@@ -90,9 +90,9 @@ ms.locfileid: "2891731"
 
 Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效能為基礎。
 
-執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式效能是否符合[Microsoft 存放區原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式的低 power 電腦上，例如 Intel Atom 處理器型電腦螢幕解析度為 1366 x 768 （或更高） 及旋轉硬碟磁碟機 （而非固態硬碟）。
+執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式的效能是否符合[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式在低功率電腦上，例如 Intel Atom 處理器電腦搭配 1366x768 （或更高版本） 的螢幕解析度與旋轉式硬碟磁碟機 （而非固態硬碟）。
 
-隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 最新的[Microsoft 存放區原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，請參閱和測試您的應用程式與 Windows 應用程式的憑證套件以確定您的應用程式遵守最新的效能需求的最新版本。
+隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並測試您的應用程式與最新版本的 Windows 應用程式認證套件，以確保您的應用程式符合最新的效能需求。
 
 ## <a name="related-topics"></a>相關主題
 

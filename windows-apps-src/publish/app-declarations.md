@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888803"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918809"
 ---
 # <a name="product-declarations"></a>產品宣告
 
-[送出程序](app-submissions.md)中的 [[屬性](enter-app-properties.md)] 頁面上的**產品宣告**區段可協助確保您的應用程式會顯示適當地與提供給右邊的客戶，並協助其了解如何他們可以使用您的應用程式集。
+**產品宣告**區段的 [[屬性](enter-app-properties.md)] 頁面的[提交程序](app-submissions.md)可協助確保您的應用程式已適當顯示並提供給獲得正確的客戶，並幫助他們了解如何使用您的應用程式集。
 
-下列各節說明宣告和您需要決定是否每個宣告適用於您的應用程式時所應考量的一些。 請注意這些宣告的兩個會檢查有預設 （如下所示）。視您的產品類別] 中，您也可能會看到其他宣告。 請務必檢閱所有宣告並確定他們正確地反映您提交。
+下列各節將說明的宣告，而且必須判斷每個宣告是否適用於您的應用程式時，請考慮一些。 請注意 （如下所述。） 檢查的這些宣告兩個預設根據您的產品類別，您可能也會看到其他宣告。 請務必檢閱所有宣告，並確保它們會正確反映您的提交。
 
-## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此應用程式可讓使用者進行購買，但不會使用 Microsoft 存放區商務系統。
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此 app 允許使用者進行購買，但不會使用 Microsoft Store 商務系統。
 
-如幾乎送出、 應保留未核取此方塊，自提供機會購買的應用程式是或可耗用或您的應用程式中使用項目必須使用 Microsoft 存放區中應用程式購買功能 API 來建立並送出的附加元件。 每個[應用程式開發人員協議](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中，應用程式的已建立並送出前 2015 年 6 月 29 無法繼續了在應用程式購買功能提供而不需使用 Microsoft 的 commerce 引擎，因此只要購買功能遵守[Microsoft 存放區原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+幾乎每個提交中，您應該讓此方塊保留未選取，因為提供機會購買的應用程式會是或可以使用或在您的應用程式中使用項目必須使用 Microsoft Store 應用程式內購買 API 來建立並提交附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中，建立並提交 2015 年 6 月 29 日之前的應用程式無法繼續而不需使用 Microsoft 的商務引擎，提供應用程式內購買功能，前提是，購買功能符合[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 
@@ -41,30 +41,30 @@ ms.locfileid: "2888803"
 
 當您將應用程式宣告為無障礙應用程式時，表示同意所有客戶 (包含殘障人士) 都能使用您的應用程式。 例如，這表示您已使用高對比模式和螢幕助讀程式測試過應用程式。 您也已經確認當使用鍵盤、放大鏡以及其他協助工具時，使用者介面都可以正常運作。
 
-如需詳細資訊，請參閱[協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)及[存放區中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
+如需詳細資訊，請參閱[協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)，以及[在市集中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非您特別工程及測試的目的不清單為可存取您的應用程式。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> 除非您特別建置 app 並測試它針對該用途，否則不要清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
-根據預設，若要讓客戶能夠安裝您的應用程式至 SD 卡，例如或非系統磁碟區的媒體磁碟機等外部的磁碟機的外部或抽取式儲存裝置已核取此方塊。 （for Windows Phone 8.1，這是先前所述透過 StoreManifest.xml。）
+根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
 
-若要防止您的應用程式正在安裝至替代磁碟機或抽取式儲存並只允許安裝，以在其裝置上的內部硬碟機、 取消核取此方塊。
+如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部硬碟在其裝置上安裝，請取消選取核取此方塊。
 
-請注意是沒有選項可以限制安裝，以便讓應用程式可以*只*安裝到抽取式儲存媒體。
+請注意，是沒有選項可用來限制，讓*應用程式只能*安裝到抽取式存放裝置媒體。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
 
-預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。 （for Windows Phone 8.1，這是先前所述透過 StoreManifest.xml。）
+預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
 
 如果您想要防止 app 的資料包含於自動備份中，請取消選取此方塊。
 
 
-## <a name="this-app-sends-kinect-data-to-external-services"></a>此應用程式會將 Kinect 資料傳送至外部服務。 
+## <a name="this-app-sends-kinect-data-to-external-services"></a>此應用程式會傳送到外部服務 Kinect 資料。 
 
-如果您的應用程式使用 Kinect 資料並將它傳送至任何外部的服務，您必須核取此方塊。
+如果您的應用程式會使用 Kinect 資料並將它傳送至外部的任何服務，您必須核取此方塊。
 
 
 

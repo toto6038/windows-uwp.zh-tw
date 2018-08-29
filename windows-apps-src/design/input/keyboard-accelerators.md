@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886133"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913075"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -355,21 +355,21 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 鍵盤快速操作通常不會直接在您 UWP 應用程式的 UI 中描述，您可以透過[工具提示](../controls-and-patterns/tooltips.md)改善發現性。工具提示會在使用者將焦點移動到控制項、按住不放，或滑鼠指標在控制項上暫留時自動顯示。 工具提示可識別控制項是否有相關聯的鍵盤快速操作，以及快速按鍵組合為何 (若有的話)。
 
-**Windows 10、 版本 1803年 （2018 年 4 月更新） 和更新版本**
+**Windows 10，版本 1803年 （2018 年 4 月更新） 和更新版本**
 
-根據預設時所宣告的鍵盤快速鍵，, （除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 的所有控制項都呈現相對應的組合鍵的工具提示。
+根據預設，當宣告的鍵盤快速鍵時，（除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 的所有控制項都顯示對應的按鍵組合在工具提示中。
 
 > [!NOTE] 
-> 如果控制項有一個以上所定義的快速鍵，會呈現的第一個。
+> 如果控制項有一個以上定義的快速鍵時，會呈現的第一個。
 
 ![快速鍵工具提示](images/accelerators/accelerators_tooltip_savebutton_small.png)
 
 *工具提示中的快速按鍵組合*
 
-[按鈕](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，及[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)物件，鍵盤快速鍵會附加至控制項的預設工具提示。 [MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 物件的鍵盤快速鍵顯示彈出式文字。
+適用於[按鈕](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，以及[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)物件，鍵盤快速操作會附加到控制項的預設工具提示。 適用於[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 物件，以飛出視窗的文字會顯示鍵盤快速鍵。
 
 > [!NOTE]
-> 指定工具提示 （請參閱 Button1 在下列範例中） 會覆寫此表現方式。
+> 指定工具提示 （請參閱 Button1 在下列範例中） 會覆寫這個行為。
 
 ```xaml
 <StackPanel x:Name="Container" Grid.Row="0" Background="AliceBlue">
@@ -400,7 +400,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![快速鍵工具提示](images/accelerators/accelerators-button-small.png)
 
-*快速鍵按鍵組合附加至按鈕的預設工具提示*
+*附加到按鈕的預設工具提示的快速按鍵組合*
 
 ```xaml
 <AppBarButton Icon="Save" Label="Save">
@@ -412,7 +412,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![快速鍵工具提示](images/accelerators/accelerators-appbarbutton-small.png)
 
-*快速鍵按鍵組合附加至 AppBarButton 的預設工具提示*
+*附加到 AppBarButton 的預設工具提示的快速按鍵組合*
 
 ```xaml
 <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
@@ -438,7 +438,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ![快速鍵工具提示](images/accelerators/accelerators-appbar-menuflyoutitem-small.png)
 
-*快速鍵按鍵組合附加至 MenuFlyoutItem 的文字*
+*附加到 MenuFlyoutItem 的文字的快速按鍵組合*
 
 藉由使用 [KeyboardAcceleratorPlacementMode](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.KeyboardAcceleratorPlacementMode) 控制展示行為，其接受兩種值：[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode) 或 [Hidden](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorplacementmode)。    
 
@@ -619,7 +619,7 @@ public class MyListView : ListView
 * [便捷鍵](access-keys.md)
 
 **範例**
-* [XAML 控制項組件庫 (亦即 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
+* [XAML 控制項庫 (亦即 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
  

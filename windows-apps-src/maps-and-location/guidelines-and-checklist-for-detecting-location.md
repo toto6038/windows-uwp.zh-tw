@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881731"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906515"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
@@ -51,7 +51,7 @@ ms.locfileid: "2881731"
 
     如果使用者透過 [設定] 關閉位置資訊的存取，則釋放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件。 然後，針對任何定位 API 呼叫，app 將會收到 **ACCESS\_DENIED** 結果。 如果您的 app 會儲存或快取位置資料，請在使用者撤銷存取位置資訊時清除所有快取資料。 在無法透過定位服務使用位置資訊時，提供手動輸入位置的替代方法。
 
--   提供用來重新啟用定位服務的 UI。 例如，提供重新整理] 按鈕 reinstantiates [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)物件並嘗試再次取得位置資訊。
+-   提供用來重新啟用定位服務的 UI。 例如，提供重新整理] 按鈕，重新具現化[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)物件，並嘗試再次取得位置資訊。
 
     讓您的 app 提供可重新啟用定位服務的 UI—
 
@@ -91,7 +91,7 @@ ms.locfileid: "2881731"
         例如：
 
         -   如果您的應用程式為了廣告調整、天氣、新聞等而取得位置，5000 公尺的準確度通常足以勝任。
-        -   如果您的應用程式會顯示附近負責上的芳鄰] 中，300 測量器的是一般良好提供結果。
+        -   如果您的應用程式會顯示附近街區的鄰近，300 公尺的準確度很通常足以提供結果。
         -   如果使用者在尋找鄰近的推薦餐廳，我們希望能夠取得同個街區內的位置，因此 100 公尺的準確度即足夠。
         -   如果使用者嘗試分享其位置，應用程式應該要求大約 10 公尺的準確度。
     -   如果您的 app 有特定的準確度需求，請使用 [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) 屬性。 例如，導航 app 應該使用 **Geocoordinate.accuracy** 屬性來判斷可用的位置資料是否符合 app 的需求。

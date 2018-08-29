@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889185"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906475"
 ---
 # <a name="feedback-report"></a>意見反應報告
 
@@ -26,12 +26,12 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 
 鼓勵客戶提供有關您 App 的意見反應，是了解對他們而言最重要的問題和功能的不錯方式。 當客戶知道他們可以直接將意見反應直接傳送給您時，較不可能在市集中留下負面評論的意見反應。
 
-您可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的 App 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您 App 的所有客戶，都可以使用意見反應中樞 App 留下意見反應。 因此，您可能會看到此報告中的客戶意見即使詢問您有不特別的意見反應從您的應用程式內。
+您可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的 App 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您 App 的所有客戶，都可以使用意見反應中樞 App 留下意見反應。 基於這個原因，您可能會看到客戶在此報告中的意見反應，即使您未明確要求意見反應，從您的應用程式。
 
 使用[套件正式發行前小眾測試](package-flights.md)，意見反應也會有所幫助，因為意見反應報告會顯示每個客戶在留下意見反應時已安裝在其裝置的特定套件。
 
 > [!TIP]
-> 快速瀏覽檢閱 （英文）、 分級、 及使用者意見反應中的所有您的應用程式在過去 30 天內，針對左邊瀏覽功能表中展開 [ **Engage**並選取**檢閱 （英文） 及意見反應。** 
+> 如需快速查看評論、 評分，並在所有您的應用程式的使用者意見反應過去 30 天內，請展開左側瀏覽功能表中的**互動**，然後選取**評論和意見反應。** 
 
 
 ## <a name="apply-filters"></a>套用篩選
@@ -58,14 +58,14 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 - **新鮮貨**：顯示其他客戶在最後七天附議的意見反應，而取得最新活動的意見反應顯示在最前面。
 - **最近**︰顯示所有意見反應，而最近留下的意見反應顯示在最前面。
 
-在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看見客戶的市場、 其使用他們留意見反應、 類型的裝置，以及**Windows 內部**如果送出意見反應客戶是 Windows 內部成員時在裝置已安裝之特定封裝計劃。
+在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場，留下意見反應，該裝置類型和**Windows 測試人員**如果提交意見反應的客戶是 Windows 測試人員的成員時所使用的裝置已安裝的特定套件計畫。
 
 您也會在此看到[回應意見反應](respond-to-customer-feedback.md)的選項。
 
 
 ## <a name="translating-feedback"></a>翻譯評論
 
-根據預設，不在您偏好的語言撰寫的意見反應會轉譯為您。 您也可以取消核取頁面篩選附近的 **\[翻譯意見反應\]** 核取方塊，停用意見反應翻譯的功能。
+根據預設，不在您的慣用語言撰寫的意見反應會幫您翻譯。 您也可以取消核取頁面篩選附近的 **\[翻譯意見反應\]** 核取方塊，停用意見反應翻譯的功能。
 
 請注意：意見反應是由系統自動翻譯，結果不一定正確。 我們也提供原文，供您與翻譯比較，或透過其他方式翻譯。
 

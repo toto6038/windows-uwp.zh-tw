@@ -1,36 +1,36 @@
 ---
 author: TylerMSFT
 title: 從您的應用程式觸發背景工作
-description: 說明如何觸發背景任務的工時從應用程式內
+description: 說明如何觸發背景工作的應用程式中
 ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: 背景工作觸發程序、 背景工作
+keywords: 背景工作觸發程序，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882746"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917077"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>從您的應用程式觸發背景工作
 
 了解如何使用 [ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger) 從您的應用程式啟動背景工作。
 
-如需如何建立應用程式觸發程序，請參閱此[範例中](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)的範例。
+如需如何建立一個應用程式觸發程序的範例，請參閱此[範例](https://github.com/Microsoft/Windows-universal-samples/blob/v2.0.0/Samples/BackgroundTask/cs/BackgroundTask/Scenario5_ApplicationTriggerTask.xaml.cs)。
 
-本主題假設您有您要從您的應用程式啟動背景工作。 如果您不已經背景工作，會在[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)是範例背景工作。 或者，請遵循的步驟中[建立與註冊程序 （英文） 背景工作](create-and-register-a-background-task.md)來建立 web 應用程式。
+本主題假設您有您想要啟用從您的應用程式的背景工作。 如果您還沒有背景工作，在[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)就範例背景工作。 或者，請依照下列步驟中[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)建立一個。
 
 ## <a name="why-use-an-application-trigger"></a>為什麼要使用的應用程式觸發程序
 
-若要從前景應用程式不同的程序中執行程式碼使用**ApplicationTrigger** 。 **ApplicationTrigger**適合您的應用程式是否需要在背景-完成即使使用者關閉前景應用程式的工作。 如果背景工作應該停止應用程式已關閉，或時應該要繫結至之前景程序的狀態則[擴充執行](run-minimized-with-extended-execution.md)應使用，但是。
+使用**ApplicationTrigger**從前景應用程式在個別處理程序中執行的程式碼。 **ApplicationTrigger**適合您的應用程式有工作所需執行的動作，在背景中： 即使在使用者關閉前景應用程式。 如果背景工作應該停止當應用程式關閉時，或應該繫結至狀態的前景處理程序，則[延伸執行](run-minimized-with-extended-execution.md)應該會改為使用。
 
 ## <a name="create-an-application-trigger"></a>建立應用程式觸發程序
 
-建立新的[ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)。 您無法將其儲存欄位中如下列程式碼片段中完成。 這是為了方便，讓我們沒有我們想要訊號觸發程序時，更新版本建立的新執行個體。 但是您可以使用任何**ApplicationTrigger**執行個體來提醒觸發程序。
+建立新的[ApplicationTrigger](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.ApplicationTrigger)。 您可以將其儲存在欄位中如同您在下方的程式碼片段。 這是為了方便起見，因此，我們不需要稍後建立新的執行個體，當我們想要發出訊號觸發程序。 但您可以使用任何**ApplicationTrigger**執行個體來發出訊號觸發程序。
 
 ```csharp
 // _AppTrigger is an ApplicationTrigger field defined at a scope that will keep it alive
@@ -58,9 +58,9 @@ ApplicationTrigger ^ _AppTrigger = ref new ApplicationTrigger();
 
 ## <a name="optional-add-a-condition"></a>(選用) 新增條件
 
-您可以建立控制項的背景工作條件時執行工作。 條件會防止背景工作執行之前，以符合條件。 如需詳細資訊，請參閱[設定執行背景工作中的條件](set-conditions-for-running-a-background-task.md)。
+您可以建立背景工作條件以控制何時執行工作。 條件會執行符合條件之前，條件會防止背景工作。 如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
-在此範例使一次觸發條件設為**InternetAvailable**中工作只執行後可存取網際網路。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+在此範例中，條件設成**InternetAvailable** ，以便一次觸發，工作僅能執行之後網際網路存取權是以可用。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 ```csharp
 SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
@@ -75,11 +75,11 @@ Windows::ApplicationModel::Background::SystemCondition internetCondition{
 SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable)
 ```
 
-如需深入資訊條件和背景觸發程序類型，請參閱 ＜[支援您的應用程式與背景工作](support-your-app-with-background-tasks.md)。
+如需條件與類型的背景觸發程序詳細的深入資訊，請參閱[支援您的應用程式使用背景工作](support-your-app-with-background-tasks.md)。
 
 ##  <a name="call-requestaccessasync"></a>呼叫 RequestAccessAsync()
 
-再登錄**ApplicationTrigger**背景工作，呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)來判斷使用者可因為使用者可能已停用您的應用程式的背景活動的背景活動層級。 請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)的詳細資訊的方式使用者可以控制背景活動的設定。
+登錄之前**ApplicationTrigger**背景工作，呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)來判斷背景活動，因為使用者可能已停用您的應用程式的背景活動，可讓使用者的層級。 如需有關方式使用者[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制的背景活動的設定，請參閱。
 
 ```csharp
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -92,9 +92,9 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
-呼叫背景工作登錄函式以登錄背景工作。 如需登錄背景工作，以及查看**RegisterBackgroundTask()** 方法在下列範例程式碼中的定義的詳細資訊，請參閱[註冊背景工作](register-a-background-task.md)。
+呼叫背景工作登錄函式以登錄背景工作。 如需有關註冊背景工作，並查看**RegisterBackgroundTask()** 方法，在下列範例程式碼中定義的詳細資訊，請參閱[登錄背景工作](register-a-background-task.md)。
 
-如果您考慮使用應用程式觸發程序來擴充存留期前景程序，請考慮改用[擴充執行](run-minimized-with-extended-execution.md)。 應用程式觸發程序的執行工作建立個別主控的程序的設計。 下列程式碼片段註冊 （英文） 程序背景觸發程序。
+如果您正考慮使用一個應用程式觸發程序來擴充您的前景處理程序的存留期，請考慮改為使用[延伸執行](run-minimized-with-extended-execution.md)。 應用程式觸發程序的設計是供建立託管個別處理程序來執行工作。 下列程式碼片段會註冊一個處理程序背景觸發程序。
 
 ```csharp
 string entryPoint = "Tasks.ExampleBackgroundTaskClass";
@@ -120,34 +120,34 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
-## <a name="trigger-the-background-task"></a>觸發背景工作
+## <a name="trigger-the-background-task"></a>觸發程序背景工作
 
-觸發背景工作之前，請使用[BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)來確認已登錄背景工作。 若要確認已登錄的所有背景工作良好時間是在應用程式啟動期間。
+觸發背景工作之前，請使用[BackgroundTaskRegistration](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskRegistration)來驗證已登錄背景工作。 確認已登錄所有背景工作的好時機是在應用程式啟動期間。
 
-藉由呼叫[ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)觸發背景工作。 會執行任何**ApplicationTrigger**執行個體。
+藉由呼叫[ApplicationTrigger.RequestAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtrigger)觸發背景工作。 任何**ApplicationTrigger**執行個體將會執行動作。
 
-請注意從背景工作本身，或應用程式會在背景執行狀態無法呼叫的**ApplicationTrigger.RequestAsync** （請參閱如需關於應用程式狀態的[應用程式生命週期](app-lifecycle.md)）。
-它可能會傳回[DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)如果使用者已設定防止應用程式執行背景活動的能源或隱私權原則。
-此外，只有一個 AppTrigger 可以執行一次。 如果您嘗試執行 AppTrigger 另一個已執行時，此函數會傳回[CurrentlyRunning](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)。
+請注意本身，背景工作，或在應用程式在背景執行狀態時，無法呼叫**ApplicationTrigger.RequestAsync** （如需應用程式狀態的詳細資訊，請參閱[應用程式生命週期](app-lifecycle.md)）。
+如果使用者已設定執行的背景活動時，防止應用程式的能源或隱私權原則，它可能會將[DisabledByPolicy](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult) 。
+此外，只有一個 AppTrigger 可以執行一次。 如果您嘗試執行 AppTrigger，而另一部已在執行時，此函式會傳回[CurrentlyRunning](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.applicationtriggerresult)。
 
 ```csharp
 var result = await _AppTrigger.RequestAsync();
 ```
 
-## <a name="manage-resources-for-your-background-task"></a>管理資源背景工作
+## <a name="manage-resources-for-your-background-task"></a>管理您的背景工作的資源
 
-使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)的詳細資訊的方式使用者可以控制背景活動的設定。  
+使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 如需有關方式使用者[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制的背景活動的設定，請參閱。  
 
-- 記憶體： 調整您的應用程式記憶體及能源使用為機碼，以確保作業系統會允許執行將背景工作。 若要查看背景工作正在使用的記憶體使用[記憶體管理 api （英文)](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 。 更多的記憶體背景工作使用、 OS 保留其時另一個應用程式是在前景中執行的是更困難。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
-- CPU 時間： 背景工作會受限於取得根據觸發類型牆時鐘流量時間量。 應用程式觸發程序所觸發的背景工作會限制在大約 10 分鐘。
+- 記憶體： 調整您的應用程式的記憶體與能源使用量很重要，作業系統仍將允許您執行的背景工作。 若要查看您的背景工作正在使用多少記憶體中使用的[記憶體管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 。 您的背景工作會使用更多的記憶體，就越難讓它執行另一個 app 在前景時，作業系統。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
+- CPU 時間： 背景工作會受到它們根據取得觸發程序類型的實際執行使用時間量所限制。 觸發應用程式觸發程序的背景工作限於約 10 分鐘的時間。
 
 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
 
 ## <a name="remarks"></a>備註
 
-開頭 Windows 10，它不再需要將您的應用程式新增至鎖定] 畫面上，以便使用背景工作的使用者。
+從 Windows 10 開始，以便在不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
 
-背景工作才會執行使用**ApplicationTrigger**如果您已先呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) 。
+背景工作只會執行使用**ApplicationTrigger** ，如果您已呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)第一次。
 
 ## <a name="related-topics"></a>相關主題
 

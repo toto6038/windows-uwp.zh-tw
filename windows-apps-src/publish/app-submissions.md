@@ -11,23 +11,23 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888427"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913628"
 ---
 # <a name="app-submissions"></a>App 提交
 
 
 一旦您已[透過保留名稱來建立您的 app](create-your-app-by-reserving-a-name.md)，您就可以開始進行發行。 第一個步驟是建立**提交**。
 
-您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 會儲存您對您提交的更新，因此您可以再回來並每當您準備好以便在處理。
+您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 您對您的提交的更新會儲存，讓您可以回來，並在其上運作，每當您準備好。
 
 > [!NOTE]
-> 您必須具備才能存取[Windows 開發人員中心](https://partner.microsoft.com/dashboard)及送出至 Microsoft 存放區的應用程式[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)。
+> 您必須有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能存取[Windows 開發人員中心 」](https://partner.microsoft.com/dashboard)並提交到 Microsoft 網上商店的應用程式。
 
-發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發行的應用程式建立新的提交，請按一下 [應用程式概觀] 頁面上所顯示最新提交旁的 [**更新**]。 您也可以[移除應用程式之儲存區](guidance-for-app-package-management.md#removing-an-app-from-the-store)如果您需要這麼 （，然後以供稍後再如果您想要）。
+發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發行的應用程式建立新的提交，請按一下 [應用程式概觀] 頁面上所顯示最新提交旁的 [**更新**]。 您也可以[移除從 microsoft Store 應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （和再將其提供一次更新的版本，如果您想要）。
 
 > [!NOTE]
 > 本文件章節描述如何在開發人員中心儀表板上建立應用程式提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。
@@ -36,7 +36,7 @@ ms.locfileid: "2888427"
 
 以下是您在建立 app 提交時可提供的詳細資料，以及指向更多資訊的連結。
 
-您必須提供或指定的項目如下所示。 某些區域是選用的，或者會提供預設值，但您可視需要予以變更。 您不需要處理此處所列順序以下各節。
+您必須提供或指定的項目如下所示。 某些區域是選用的，或者會提供預設值，但您可視需要予以變更。 您不需要在此處所列的順序這些區段上運作。
 
 ### <a name="pricing-and-availability-page"></a>定價和可用性頁面
 | 欄位名稱                    | 注意事項                                       | 如需詳細資訊                                                             |
@@ -98,7 +98,7 @@ ms.locfileid: "2888427"
 | **Microsoft Store 標誌**               | 建議使用；某些 OS 版本為必要 | [Microsoft Store 標誌](app-screenshots-and-images.md#store-logos)             |
 | **其他美工圖案資產**     | 建議使用 (尤其對某些 OS 版本)         | [其他美工圖案資產](app-screenshots-and-images.md#additional-art-assets) |
 | **預告片**                  | 選用                                    | [預告片](app-screenshots-and-images.md#trailers)                | 
-| **附加欄位**  | 選用                                    | [補充資訊](create-app-store-listings.md#supplemental-fields) 
+| **補充的欄位**  | 選用                                    | [補充資訊](create-app-store-listings.md#supplemental-fields) 
 | **搜尋詞彙**              | 選用                                    | [搜尋詞彙](create-app-store-listings.md#search-terms)         |
 | **著作權與商標資訊** | 選用                                 | [著作權與商標資訊](create-app-store-listings.md#copyright-and-trademark-info) |
 | **其他授權條款**  | 選用                                    | [其他授權條款](create-app-store-listings.md#additional-license-terms) |
@@ -113,7 +113,7 @@ ms.locfileid: "2888427"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **發佈暫停選項**     | 預設︰通過認證之後就立即發佈此提交項目 (或根據您在 \[排程\] 區段中選取的日期)      | [發佈暫停選項](manage-submission-options.md#publishing-hold-options)    
 | **認證注意事項**     | 推薦項目          | [認證注意事項](notes-for-certification.md)             |
-| **受限制的功能**     | 如果您的產品會宣告任何[受限制的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
+| **受限制的功能**     | 如果您的產品宣告任何[受限制的功能](../packaging/app-capability-declarations.md#restricted-capabilities)所需    | [受限制的功能](manage-submission-options.md#publishing-hold-options)       
 
 <span/>
 

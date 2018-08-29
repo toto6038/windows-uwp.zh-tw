@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 第一個應用程式, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886464"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918739"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 
@@ -48,11 +48,11 @@ ms.locfileid: "2886464"
 
 1.  啟動 Visual Studio 2017。
 
-2.  從 [**檔案**] 功能表選取 [**新增 > 專案**若要開啟 [*新增專案*] 對話方塊。
+2.  從 [**檔案**] 功能表中，選取**新增 > 專案**以開啟 [*新增專案*] 對話方塊。
 
-3.  從左側的範本清單中選擇 [ **Installed > Visual C# > Windows 萬用**查看 UWP 專案範本的清單。
+3.  從左邊的範本清單中，選擇**已安裝 > Visual C# > Windows 通用**來查看 UWP 專案範本的清單。
 
-    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP app 的元件。 您可以重複安裝程序並新增 UWP 支援，方法是按一下 **\[新增專案\]** 對話方塊上的 *\[開啟 Visual Studio 安裝程式\]*。 請參閱[取得設定](get-set-up.md)）。
+    (如果您沒有看到任何「通用」範本，表示您可能遺失用於建立 UWP app 的元件。 您可以重複安裝程序並新增 UWP 支援，方法是按一下 **\[新增專案\]** 對話方塊上的 *\[開啟 Visual Studio 安裝程式\]*。 請參閱[開始設定](get-set-up.md)）。
 
     ![如何重複安裝程序](images/win10-cs-install.png)
 

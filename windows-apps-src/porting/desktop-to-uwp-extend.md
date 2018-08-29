@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e1d808dd2991aa2ffd1e30967d329b3eced9f99
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018564"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914096"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -140,7 +140,7 @@ ms.locfileid: "2018564"
 
 ### <a name="add-a-protocol-extension"></a>新增通訊協定延伸模組
 
-在 **\[方案總管\]** 中，開啟解決方案中 UWP 專案的 **package.appxmanifest** 檔案，並新增此延伸模組。
+在 [**方案總管] 中**，封裝專案的**package.appxmanifest**檔案中開啟您的方案，並新增此延伸模組。
 
 ```xml
 <Extensions>
@@ -311,9 +311,9 @@ public sealed class AppServiceTask : IBackgroundTask
 
 <a id="extension" />
 
-### <a name="add-an-app-service-extension-to-the-uwp-project"></a>將應用程式服務延伸模組新增到 UWP 專案
+### <a name="add-an-app-service-extension-to-the-packaging-project"></a>將應用程式服務延伸模組新增至封裝專案
 
-開啟 UWP 專案的 **package.appxmanifest** 檔案，並將應用程式服務延伸模組新增到 ``<Application>`` 元素。
+開啟**package.appxmanifest**檔案的封裝專案中，並新增到應用程式服務延伸模組``<Application>``項目。
 
 ```xml
 <Extensions>
@@ -398,7 +398,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>新增分享目標擴充功能
 
-在 **\[方案總管\]** 中，開啟解決方案中 UWP 專案的 **package.appxmanifest** 檔案，並新增此延伸模組。
+在 [**方案總管] 中**，在您的方案中開啟封裝專案的**package.appxmanifest**檔案，並新增延伸模組。
 
 ```xml
 <Extensions>
@@ -512,7 +512,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>設定背景工作
 
-在資訊清單設計工具中，開啟解決方案中 UWP 專案的 **package.appxmanifest** 檔案。
+在資訊清單設計工具中，開啟您的方案中的封裝專案的**package.appxmanifest**檔案。
 
 在**\[宣告\]** 索引標籤，新增**\[背景工作\]** 宣告。
 

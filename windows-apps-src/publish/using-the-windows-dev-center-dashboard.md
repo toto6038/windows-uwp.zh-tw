@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 儀表板, devcenter, 開發人員中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885017"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910092"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>使用 Windows 開發人員中心儀表板
 
 
-[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)可讓您管理並提交您的應用程式的 Windows 裝置集中一處的所有。
+[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)可讓您管理和提交所有應用程式適用於 Windows 裝置在一個地方。
 
 > [!NOTE]
 > 您必須具有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能存取 Windows 開發人員中心儀表板。
@@ -33,13 +33,13 @@ ms.locfileid: "2885017"
 - 右上角的單一位置用以存取設定檔及帳戶詳細資料、支付明細、支援和通知。
 - 快速存取所有開發人員計畫，不需要登入和登出每一項。 在推出新計畫時，我們也會推薦您可能感興趣的新計畫。
 
-當您[建立您的應用程式的提交](app-submissions.md)（第一次或更新為） 您可以[上傳應用程式套件](upload-app-packages.md)的任何支援的作業系統版本和存放區將會自動提供客戶可讓它們的運作最佳的套件。
+當您[建立您的應用程式的提交](app-submissions.md)（第一次或做為更新），您可以[上傳應用程式套件](upload-app-packages.md)針對任何支援的作業系統版本，市集將會自動為客戶提供最適合他們的套件。
 
-您的應用程式送出獨立管理[附加元件 （在應用程式產品）](add-on-submissions.md) 。 這可以為您帶來更多彈性，讓您能夠單獨進行變更。
+[附加內容 （應用程式內產品）](add-on-submissions.md)是您的應用程式提交作業中單獨管理。 這可以為您帶來更多彈性，讓您能夠單獨進行變更。
 
-Windows 開發人員中心也會提供功能[將多個使用者加入](manage-account-users.md)[應用程式的管理及設定服務](app-management-and-services.md)、[檢閱分析的資料](analytics.md)、[支付額報告](payout-summary.md)、[升級您的應用程式](attract-customers-and-promote-your-apps.md)、[積極參與您客戶](engage-with-your-customers.md)、 [beta 測試](beta-testing-and-targeted-distribution.md)、[發佈至適用於企業的 LOB 應用程式](distribute-lob-apps-to-enterprises.md)及其他眾多功能。
+Windows 開發人員中心也提供吸引進行[新增多個使用者](manage-account-users.md)[的應用程式管理和設定服務](app-management-and-services.md)，[檢閱分析資料](analytics.md)、[支付報告](payout-summary.md)、[促銷應用程式](attract-customers-and-promote-your-apps.md)，[功能您客戶](engage-with-your-customers.md)， [beta 測試](beta-testing-and-targeted-distribution.md)、[散發至企業的 LOB 應用程式](distribute-lob-apps-to-enterprises.md)，以及更多。
 
-您的意見反應協助我們打造出最佳功能和體驗。 當您在儀表板工作，請使用 [**意見反應**] 連結的右上角的儀表板共用您的想法並建議。
+您的意見反應協助我們打造出最佳功能和體驗。 當您使用儀表板中，請使用**意見反應**] 連結在儀表板右上角來分享您的想法和建議。
 
 
  

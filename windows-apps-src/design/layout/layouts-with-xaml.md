@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881781"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2916865"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -99,7 +99,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 您可以在程式碼或視覺狀態中變更元素的 Visibility 屬性。 當元素的 Visibility 變更時，其所有子元素也會變更。 您可以藉由顯示某一個面板，同時摺疊另一個面板，來取代 UI 的區段。
 
 > [!Tip]
-> 當您在 UI 中的預設**摺疊**的項目時，物件仍會在建立啟動，即使其不可見。 您可以延遲載入這些元素，直到藉由將 **x:DeferLoadStrategy attribute** 屬性設為 "Lazy" 來顯示它們為止。 這可以提升啟動效能。 如需詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
+> 當您有在 UI 中的元素是**Collapsed**根據預設時，仍會建立物件在啟動時，即使它們不會顯示。 您可以延遲載入這些元素，直到藉由將 **x:DeferLoadStrategy attribute** 屬性設為 "Lazy" 來顯示它們為止。 這可以提升啟動效能。 如需詳細資訊，請參閱 [x:DeferLoadStrategy 屬性](../../xaml-platform/x-deferloadstrategy-attribute.md)。
 
 ### <a name="style-resources"></a>樣式資源
 
@@ -236,7 +236,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在上述範例中，VisualStateManager.VisualStateGroups 附加屬性設在**格線**元素。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
+> 在上一個範例中，在**Grid**元素上設定 VisualStateManager.VisualStateGroups 附加屬性。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
 
 ### <a name="attached-property-syntax"></a>附加屬性語法
 

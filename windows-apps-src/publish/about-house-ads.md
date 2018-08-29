@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885172"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917951"
 ---
 # <a name="about-house-ads"></a>關於自家廣告
 
 
 您可以免費建立一個廣告，在您其他的應用程式中促銷您其中一個應用程式。 我們通稱為*自家廣告*。
 
-門牌 ads 才會出現在設定為[顯示 microsoft ads](../monetize/display-ads-in-your-app.md)自己應用程式中。
+自家廣告只會出現在您的應用程式設定為[顯示來自 Microsoft 的廣告](../monetize/display-ads-in-your-app.md)。
 
 若要設定自家廣告，請在[建立廣告活動](create-an-ad-campaign-for-your-app.md)時選取 **\[自家廣告 (免費)\]** 做為 **\[行銷活動類型\]**。 廣告會自動出現在符合下列條件的任何應用程式中：
 

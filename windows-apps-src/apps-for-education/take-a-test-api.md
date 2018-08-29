@@ -8,18 +8,18 @@ ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp education
+keywords: windows 10，uwp，教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2894245"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917614"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
-[執行測試](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是允許教育者以專注於評估內容而不是如何提供安全的測試環境呈現鎖定線上評估高賭注測試、 瀏覽器型 UWP 應用程式。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[「 進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是瀏覽器為基礎的 UWP 應用程式轉譯鎖定線上評定針對高度利害攸關，讓授課者專注在評量內容，而非如何提供安全的考試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
 如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
 
@@ -32,7 +32,7 @@ ms.locfileid: "2894245"
 
 ### <a name="security-namespace"></a>安全性命名空間
 
-安全性命名空間可讓您鎖定裝置、 檢查清單中的使用者和系統的程序、 取得 MAC 和 IP 位址及清除快取的 web 資源。
+安全性命名空間可讓您鎖定裝置、 檢查使用者與系統處理程序的清單、 取得 MAC 和 IP 位址，以及清除快取的 web 資源。
 
 | 方法 | 描述   |
 |--------|---------------|

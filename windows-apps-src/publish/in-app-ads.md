@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83c4645a09a38a76dfd230436e858e222d817eab
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2893746"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917231"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -37,9 +37,9 @@ ms.locfileid: "2893746"
 3.  在 **\[廣告單元名稱\]** 欄位中，輸入廣告單元的名稱。 這可以是任何要用來識別報告用途廣告單元的描述性字串。
 4.  在 **\[廣告單元類型\]** 下拉式清單中選取廣告類型。
 
-    * 如果您在您的應用程式中顯示橫幅 ad、 選取**橫幅**。
-    * 如果您在您的應用程式中顯示插入影片 ad 或插入式橫幅 ad、 選取**插入影片**] 或 [**插入式橫幅**（請務必選取類型插入式 ad 想要顯示的適當的選項）。
-    * 如果您在您的應用程式中顯示原生 ad，選取 [**原生**]。
+    * 如果您要在您的應用程式中顯示橫幅廣告，選取 [**橫幅**]。
+    * 如果您要在您的應用程式中顯示的插播式影片廣告或插播式橫幅廣告，請選取**插播式影片**或**插播式橫幅 \** （請務必選取適合您想要顯示的插播式廣告類型的選項）。
+    * 如果您要在您的應用程式中顯示原生廣告，請選取 [**原生**。
 
 5. 在 **\[裝置系列\]** 下拉式清單中，選取使用廣告單元所在應用程式的目標裝置系列。 可用的選項包括：**\[UWP (Windows 10)\]**、**\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]**。
 
@@ -61,7 +61,7 @@ ms.locfileid: "2893746"
 
 * 如果您的 app 顯示[橫幅廣告](../monetize/banner-ads.md)，請將這些值指派給 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 物件的 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 和 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 屬性。
 * 如果您的應用程式顯示[插播式廣告](../monetize/interstitial-ads.md)，請將這些值傳遞給 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 物件的 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法。
-* 如果您的應用程式顯示的[原生 ads](../monetize/native-ads.md)，將這些值傳遞**NativeAdsManagerV2**建構函式。
+* 如果您的 app 顯示[原生廣告](../monetize/native-ads.md)，請將這些值傳遞至**NativeAdsManagerV2**建構函式。
   > [!IMPORTANT]
   > 每個廣告單元只能在一個 app 中使用。 如果您在多個 app 中使用廣告單元，不會提供廣告給該廣告單元。
 
@@ -71,13 +71,13 @@ ms.locfileid: "2893746"
 若要編輯 UWP 廣告單元的[流量分配設定](#mediation)或使用廣告單元所在應用程式的 [COPPA 合規性](#coppa)，請按一下廣告單元名稱。
 
 > [!NOTE]
-> 如果 ad 單位有無活動過去六個月，我們將會標示為**非使用中**，並最後從儀表板中移除。 您可以使用篩選，只顯示**使用中**或**非使用中**廣告單元。 如果您看到任何您認為不正確標示為**非使用中**的廣告單元時，請[連絡客戶支援](http://aka.ms/storesupport)。
+> 如果廣告單元過去 6 個月都沒有活動，我們將其標示為**非使用中**，並最後會將它移除從您的儀表板。 您可以使用篩選，只顯示**使用中**或**非使用中**廣告單元。 如果您看到任何您認為不正確標示為**非使用中**的廣告單元時，請[連絡客戶支援](http://aka.ms/storesupport)。
 
 <span id="mediation" />
 
 ## <a name="mediation-settings"></a>流量分配設定
 
-當您[建立新的 UWP ad 單位](#create-ad-unit)的或[編輯現有的 UWP ad 單位](#available-ad-units)，請使用本節中選項來 ad 單位設定[ad 中繼](../monetize/ad-mediation-service.md)中。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路的廣告，以及 Microsoft 應用程式促銷活動的非營收產生廣告， 我們負責處理來自您選擇的廣告網路的橫幅廣告要求的流量分配。 如果您的 App 中的橫幅廣告、插播式廣告或原生廣告已經與 UWP 廣告單元相關聯，則不需要改變 App 的程式碼就能啟用廣告流量分配。
+當您[建立新的 UWP 廣告單元](#create-ad-unit)或[編輯現有 UWP 廣告單元](#available-ad-units)，請使用此區段中選項來設定廣告單元的[廣告流量分配](../monetize/ad-mediation-service.md)中。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路的廣告，以及 Microsoft 應用程式促銷活動的非營收產生廣告， 我們負責處理來自您選擇的廣告網路的橫幅廣告要求的流量分配。 如果您的 App 中的橫幅廣告、插播式廣告或原生廣告已經與 UWP 廣告單元相關聯，則不需要改變 App 的程式碼就能啟用廣告流量分配。
 
 > [!NOTE]
 > 當您啟用 UWP 廣告單元的廣告流量分配時，不需要從協力廠商廣告網路取得廣告單元。 我們的廣告流量分配服務會自動建立任何必要的協力廠商廣告單元。
@@ -85,13 +85,13 @@ ms.locfileid: "2893746"
 若要針對應用程式中的 UWP 廣告單元設定廣告流量分配設定：
 
 1. [建立廣告單元](#create-ad-unit)或[選取現有的廣告單元](#available-ad-units)。
-2. 在 [**應用程式中 ads** ] 頁面移至**中繼設定**] 區段和設定您的設定。
+2. 在**應用程式內廣告**頁面上，移至**流量分配設定**\] 區段並設定您的設定。
 
-    * 根據預設，**\[讓 Microsoft 為您的應用程式選擇最佳流量分配設定\]** 核取方塊已選取。 建議您使用此選項。 這個選項會使用機器學習演算法為您的應用程式自動選擇廣告流量分配設定，幫助您在應用程式支援的所有市場獲得最大的廣告收益。 當您使用此選項時，您也可以選擇您想要設定中使用的 ad 網路。 取消核取您不想要組態的一部分且我們演算法會確保您的應用程式僅選取的 ad 網路接收 ads ad 網路。
-    * 如果您想要選擇您自己的 ad 中繼設定，選擇 [**修改預設設定**。
+    * 根據預設，**\[讓 Microsoft 為您的應用程式選擇最佳流量分配設定\]** 核取方塊已選取。 建議您使用此選項。 這個選項會使用機器學習演算法為您的應用程式自動選擇廣告流量分配設定，幫助您在應用程式支援的所有市場獲得最大的廣告收益。 當您使用此選項時，您也可以選擇您想要在設定中使用廣告網路。 取消核取您不想要設定的一部分，並且我們演算法可確保您的應用程式只從選取的廣告網路接收廣告的廣告網路。
+    * 如果您想要選擇自己的廣告流量分配設定，選擇**修改預設設定**。
 
     > [!NOTE]
-    > 本節中的其餘步驟是僅適用如果您選擇**修改預設設定**。
+    > 在本節中的其餘步驟所只適用於您選擇**修改預設設定**。
 
 4. 在 **\[目標\]** 下拉式清單中選擇 **\[基準\]**，為您的廣告流量分配設定預設設定。 這個預設設定將適用於所有市場，除了您定義市場特定設定的市場之外。
 6. 接著指定要在控制項中顯示付費網路 (依據廣告效果支付收益給您) 和其他廣告網路 (不依據廣告效果支付收益給您) 的廣告比率。 若要這樣做，請在 **\[付費廣告網路\]** 和 **\[其他廣告網路\]** 的 **\[權重\]** 欄位中輸入介於 0 到 100 之間的值。  
@@ -111,17 +111,17 @@ ms.locfileid: "2893746"
 
 |  廣告網路  |  描述  |  支援的廣告類型  |
 |--------------|---------------|---------------------|
-| Oath 和 AppNexus |  這是 Microsoft managed ad 網路中做透過我們協力廠商的 ads Oath 和 AppNexus 的網路。<p/>**請注意**： Oath 和 AppNexus 一律排名後的第一次**已付 ad 網路**清單中的橫幅 ad 單位，且您無法變更以較低的排名這些類型的 ads。 | 橫幅、插播式影片 |
-| AppNexus (直接) | 選取此選項可從[AppNexus](https://www.appnexus.com)做 ads。 | 插播式影片、原生  |
+| \ [Oath 和 AppNexus |  這是透過合作夥伴網路，\ [Oath 和 AppNexus 提供廣告的 Microsoft 管理廣告網路。<p/>**注意**: \ [Oath 和 AppNexus 始終排在第一次**付費廣告網路**清單中的橫幅廣告單元，且它無法變更至這類廣告的較低排名。 | 橫幅、插播式影片 |
+| AppNexus (直接) | 選取此選項可從[AppNexus](https://www.appnexus.com)提供廣告。 | 插播式影片、原生  |
 | Microsoft 應用程式安裝廣告 | 選取此選項可提供 Windows 生態系統中其他[為自己的 App 建立促銷廣告活動](create-an-ad-campaign-for-your-app.md)的開發人員建立的應用程式安裝廣告或應用程式重新佔用廣告。  |  橫幅、插播式橫幅、原生  |
-| MSN 內容建議 |  選取此選項可提供 ads 服務從 MSN 內容建議。 |  橫幅、插播式橫幅  |
+| MSN 內容建議 |  選取此選項可從 MSN 內容建議提供廣告。 |  橫幅、插播式橫幅  |
 | Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅、插播式橫幅  |
 | Revcontent |  選取此選項可從 [Revcontent](http://www.revcontent.com/) 提供廣告。 |  橫幅、原生  |
 | Smaato |  選取此選項可從 [Smaato](https://www.smaato.com/) 提供廣告。 |  橫幅  |
 | smartclip |  選取此選項可從 [smartclip](http://www.smartclip.com/) 提供廣告。 |  插播式影片  |
 | SpotX |  選取此選項可從 [SpotX](https://www.spotx.tv/) 提供廣告。 |  插播式影片  |
 | Taboola |  選取此選項可從 [Taboola](https://www.taboola.com/) 提供廣告。 |  橫幅  |
-| Undertone | 選取此選項可從[Undertone](https://www.undertone.com/)做 ads。 | 插入式橫幅 |
+| Undertone | 選取此選項可從[Undertone](https://www.undertone.com/)提供廣告。 | 插播式橫幅 \ |
 
 
 <span id="other-networks" />

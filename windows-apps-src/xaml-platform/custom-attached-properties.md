@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2890891"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917121"
 ---
 # <a name="custom-attached-properties"></a>自訂附加屬性
 
@@ -35,7 +35,7 @@ ms.locfileid: "2890891"
 當定義類別以外的類別需要屬性設定機制的時候，就可以建立附加屬性。 最常見的案例是配置和服務支援。 現有配置屬性的範例包括 [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) 和 [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772)。 在配置案例中，做為配置控制元素之子元素的元素，可以個別對它們的父元素表達配置需求，每個都會將父元素定義的屬性值設定為附加屬性。 Windows 執行階段 API 中服務支援案例的範例是一組 [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) 的附加屬性，如 [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561)。
 
 > [!WARNING]
-> Windows Runtime XAML 實作現有限制是您不能製作自訂附加的屬性。
+> Windows 執行階段 XAML 實作的侷限是您無法動畫顯示自訂附加的屬性。
 
 ## <a name="registering-a-custom-attached-property"></a>登錄自訂附加屬性
 
@@ -43,10 +43,10 @@ ms.locfileid: "2890891"
 
 宣告類型 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 的 **public** **static** **readonly** 屬性，即可將附加屬性定義為相依性屬性。 使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法的傳回值來定義這個屬性。 屬性名稱必須符合您指定為 **RegisterAttached** *name* 參數的附加屬性名稱，最後要加上字串 "Property"。 這是根據代表的屬性命名相依性屬性識別碼的既定慣例。
 
-定義自訂附加屬性與自訂相依性屬性的主要差異在於定義存取子或包裝函式的方式。 而不使用[自訂相依性屬性](custom-dependency-properties.md)中所述的包裝函式技術也必須提供靜態 **取得 * * * PropertyName*和 **設定 * * * PropertyName*身分存取子方法的附加的屬性。 存取子主要是由 XAML 剖析器使用，不過任何其他呼叫者也可以使用它們在非 XAML 案例中設定值。
+定義自訂附加屬性與自訂相依性屬性的主要差異在於定義存取子或包裝函式的方式。 而不是使用[自訂相依性屬性](custom-dependency-properties.md)中所述的包裝函式技術，您必須也提供靜態 **取得 * * * PropertyName*和 **設定 * * * PropertyName*方法存取子做為附加屬性。 存取子主要是由 XAML 剖析器使用，不過任何其他呼叫者也可以使用它們在非 XAML 案例中設定值。
 
 > [!IMPORTANT]
-> 如果您不正確地定義存取子、 XAML 處理器無法存取附加的屬性並嘗試使用它的任何人可能會收到 XAML 剖析器錯誤。 此外，設計和程式碼編寫工具遇到參考組件中的自訂相依性屬性時，通常會使用命名識別碼的 "\*Property" 慣例。
+> 如果您沒有正確定義存取子，XAML 處理器就無法存取您的附加的屬性，並嘗試使用它的任何人將可能收到 XAML 剖析器錯誤。 此外，設計和程式碼編寫工具遇到參考組件中的自訂相依性屬性時，通常會使用命名識別碼的 "\*Property" 慣例。
 
 ## <a name="accessors"></a>存取子
 
@@ -60,7 +60,7 @@ ms.locfileid: "2890891"
 
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *valueType* 傳回值也可以是實作中的更具體類型。 基本 **Object** 類型是可以被接受的，不過通常您會希望您的附加屬性強制執行類型安全技術。 建議的類型安全技術是在 getter 和 setter 簽章中使用類型。
 
-簽章的 **設定 * * * PropertyName* accessor 必須是如此。
+簽章 **設定 * * * PropertyName*存取子必須是這個。
 
 `public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
@@ -71,13 +71,13 @@ ms.locfileid: "2890891"
 *target* 物件可以是實作中更具體的類型，但是必須衍生自 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)。 *value* 物件及它的 *valueType* 可以是實作中的更具體類型。 請記住，這個方法的值是 XAML 處理器在標記中遇到附加屬性時，來自於 XAML 處理器的輸入。 您使用的類型必須取得類型轉換或現有標記延伸的支援，這樣才能從屬性值建立適當的類型 (最終只是字串)。 基本 **Object** 類型是可以接受的，但是通常您會想要更進一步的類型安全性。 若要這樣做，請將類型強制放到存取子中。
 
 > [!NOTE]
-> 它也可定義之預定的用法不透過屬性元素語法附加的屬性。 在該情況下，您不需要輸入值的轉換，但必須確保您想要的值可以在 XAML 中建構。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是現有附加屬性的一個範例，這個屬性僅支援屬性元素用法。
+> 它也是可以定義附加的屬性的預定的用法是透過屬性元素語法。 在該情況下，您不需要輸入值的轉換，但必須確保您想要的值可以在 XAML 中建構。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 是現有附加屬性的一個範例，這個屬性僅支援屬性元素用法。
 
 ## <a name="code-example"></a>程式碼範例
 
 這個範例示範自訂附加屬性的相依性屬性登錄 (使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法) 以及 **Get** 和 **Set** 存取子。 在範例中，附加屬性名稱是 `IsMovable`。 所以，存取子必須命名為 `GetIsMovable` 和 `SetIsMovable`。 附加屬性的擁有者是名為 `GameService` 的服務類別，這個類別沒有自己的 UI；其用途只是在使用 **GameService.IsMovable** 附加屬性時提供附加屬性服務。
 
-附加的屬性定義在 C + + CX 是比較複雜一點。 您必須決定如何切分標頭與程式碼檔案。 另外，您應該將識別碼公開為只包含一個 **get** 存取子的屬性，原因請參閱[自訂相依性屬性](custom-dependency-properties.md)中的討論。 在 C + + CX 您必須定義此屬性欄位關係明確而不在.NET **readonly** keywording 和隱含信賴憑證者備份的簡單的屬性。 當應用程式第一次啟動，但在載入任何需要附加屬性的 XAML 頁面之前，您也需要在只執行一次的協助程式函式內執行附加屬性的登錄。 一般會針對任何和全部相依性或附加屬性呼叫屬性登錄協助程式函式的位置，是從 app.xaml 檔案程式碼中的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 建構函式內呼叫。
+定義附加的屬性在 C + + /CX 是較為複雜。 您必須決定如何切分標頭與程式碼檔案。 另外，您應該將識別碼公開為只包含一個 **get** 存取子的屬性，原因請參閱[自訂相依性屬性](custom-dependency-properties.md)中的討論。 在 C + + /CX，您必須定義這個屬性欄位關係明確而不在.NET **readonly**關鍵字和隱含信賴憑證者支援的簡單的屬性。 當應用程式第一次啟動，但在載入任何需要附加屬性的 XAML 頁面之前，您也需要在只執行一次的協助程式函式內執行附加屬性的登錄。 一般會針對任何和全部相依性或附加屬性呼叫屬性登錄協助程式函式的位置，是從 app.xaml 檔案程式碼中的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 建構函式內呼叫。
 
 ```csharp
 public class GameService : DependencyObject
@@ -234,7 +234,7 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 ```
 
 > [!NOTE]
-> 如果您正在撰寫 c + + XAML 的 UI，您必須包含自訂類型定義附加的屬性，每當標題 XAML] 頁面上使用該類型。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
+> 如果您正在撰寫 XAML UI 搭配 c + +，您必須包含定義附加的屬性，任何時間的自訂類型的標頭 XAML 頁面使用該類型。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
 
 ## <a name="value-type-of-a-custom-attached-property"></a>自訂附加屬性的值類型
 
@@ -253,7 +253,7 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 
 為了能夠成為實際的面板，[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 具有會覆寫架構層級的 [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 和 [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) 方法的行為。 這是 **Canvas** 實際檢查其子項是否有附加屬性值的位置。 **Measure** 和 **Arrange** 模式都有部分是迴圈，會逐一查看任何內容，而面板具有 [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 屬性，可以明確指出哪個應該視為面板子項。 因此，**Canvas** 配置行為會逐一查看這些子項，並且在每個子項進行靜態的 [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) 和 [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) 呼叫，以查看那些附加屬性是否包含非預設值 (預設值為 0)。 然後，會使用這些值並根據每個子項提供的特定值，以賦予每個子項在 **Canvas** 可用配置空間中的絕對位置，然後使用 **Arrange** 來進行認可。
 
-程式碼看起來像這個虛擬程式碼。
+程式碼看起來就像這個虛擬程式碼。
 
 ```syntax
 protected override Size ArrangeOverride(Size finalSize)
@@ -270,7 +270,7 @@ protected override Size ArrangeOverride(Size finalSize)
 ```
 
 > [!NOTE]
-> 如面板的運作方式的詳細資訊，請參閱[XAML 自訂面板概觀 （英文）](https://msdn.microsoft.com/library/windows/apps/mt228351)。
+> 如需面板運作方式的詳細資訊，請參閱[XAML 自訂面板概觀](https://msdn.microsoft.com/library/windows/apps/mt228351)。
 
 ## <a name="related-topics"></a>相關主題
 

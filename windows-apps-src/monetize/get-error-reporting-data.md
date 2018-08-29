@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892151"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910212"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 
-使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您 App 的彙總錯誤報告資料 (JSON 格式)。 此方法只能擷取一個在過去 30 天中發生錯誤。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 **\[失敗\]** 區段也提供此資訊。
+使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您 App 的彙總錯誤報告資料 (JSON 格式)。 這個方法只能擷取過去 30 天內發生的錯誤。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 **\[失敗\]** 區段也提供此資訊。
 
 您可以使用[取得錯誤詳細資料](get-details-for-an-error-in-your-app.md)、[取得堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)和[下載 CAB 檔](download-the-cab-file-for-an-error-in-your-app.md)案方法，擷取其他錯誤資訊。
 
@@ -53,7 +53,7 @@ ms.locfileid: "2892151"
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取錯誤報告資料之 app 的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別](../publish/view-app-identity-details.md) 頁面取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
-| startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。<p/><p/>**請注意：**&nbsp;&nbsp;此方法只能擷取一個在過去 30 天中發生錯誤。  |  否  |
+| startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。<p/><p/>**注意：**&nbsp;&nbsp;這個方法只能擷取過去 30 天內發生的錯誤。  |  否  |
 | endDate | 日期 | 要擷取錯誤報告資料之日期範圍的結束日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。 |  不可以  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |

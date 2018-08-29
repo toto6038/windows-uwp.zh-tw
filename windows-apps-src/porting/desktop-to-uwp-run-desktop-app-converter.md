@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884826"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905974"
 ---
 # <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>使用 Desktop App Converter 封裝應用程式 (傳統型橋接器)
 
@@ -271,7 +271,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-InstallerArguments &lt;String&gt; |選用 |以逗號分隔的引數清單或字串，可強制您的安裝程式自動執行或以無訊息方式執行。 如果您的安裝程式是 msi，則此為選用參數。 若要取得安裝程式的記錄，請提供此處的安裝程式記錄引數，然後使用路徑 &lt;log_folder&gt;，此為轉換器會使用適當路徑來取代的語彙基元。 <br><br>**注意**︰自動/無訊息旗標和記錄引數會隨著安裝程式技術而不同。 <br><br>此參數的一個用法範例︰-InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" 另一個不會產生記錄檔的範例可能看起來如下︰```-InstallerArguments "/quiet", "/norestart"``` 同樣地，如果您想要轉換器擷取它並將它放在最後一個記錄資料夾中，就必須照字面將任何記錄引導至語彙基元路徑 &lt;log_folder&gt;。|
 |-InstallerValidExitCodes &lt;Int32&gt; |選用 |以逗號分隔的結束代碼清單，表示您的安裝程式已成功執行 (例如︰0, 1234, 5678)。  針對非 msi，這個值預設是 0，針對 msi 則為 0, 1641, 3010。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |選用 |一個參數，如果顯示，即會通知這個指令碼呼叫輸出上的 MakeAppx。 |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |選擇性 |可使用時，會指示此指令碼以封裝為 MSIX 套件輸出參數。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |選擇性 |一個參數，如果存在，會告訴這個指令碼來封裝為 MSIX 套件輸出。 |
 |<a id="identity-params" /><strong>套件識別資料參數</strong>||
 |-PackageName &lt;String&gt; |必要 |通用 Windows app 套件的名稱。 如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。 |
 |-Publisher &lt;String&gt; |必要 |通用 Windows app 套件的發行者 |

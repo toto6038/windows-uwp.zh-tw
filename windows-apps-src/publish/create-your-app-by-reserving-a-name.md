@@ -11,22 +11,22 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 83f2ab8a27810635b569d44961ff532ce3240e28
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888167"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913105"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>透過保留名稱建立您的應用程式
 
-在您的[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中建立新的應用程式的第一個步驟保留的應用程式名稱。 每個保留名稱 (有時稱為您應用程式的*標題*) 必須在 Microsoft Store 中是唯一的。
+在您[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中建立新的應用程式的第一個步驟即為保留應用程式名稱。 每個保留名稱 (有時稱為您應用程式的*標題*) 必須在 Microsoft Store 中是唯一的。
 
 即使您尚未開始建置應用程式，也能保留名稱給您的應用程式。 我們建議您儘速執行這個動作，好讓其他人無法使用該名稱。 請注意，您需要在 3 個月內提交應用程式，該名稱才能保留給您使用。
 
 [上傳應用程式套件](upload-app-packages.md)時，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 值必須符合您為應用程式保留的名稱。 如果您使用 Microsoft Visual Studio 建立應用程式套件，則系統將會幫您填入此屬性。
 
 > [!IMPORTANT]
-> 您可以保留的應用程式的其他名稱與您可以選擇使用其中一個應用程式的已發佈的版本中，而不是您可以先儀表板中建立您的應用程式時的一個。 不過，請注意您在此處輸入的名字將用於在某些應用程式的[身分識別的詳細資訊](view-app-identity-details.md)，例如**套件系列名稱 (PFN)**。 這些值可能會看到某些使用者，而不能變更，所以請確定您保留的名稱是適用於此使用。
+> 您可以保留其他名稱用於應用程式，以及您可以選擇使用其中一個在您的應用程式的發行版本而不是您保留您先在儀表板中建立您的應用程式時的一個。 不過，請注意，在某些您的應用程式的[身分識別詳細資料](view-app-identity-details.md)，例如**套件系列名稱 (PFN)** 會使用您在這裡輸入的名字。 這些值可能會看到某些使用者，而且不能變更，因此請確定您保留的名稱是適用於這種使用。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>透過保留新名稱建立您的應用程式

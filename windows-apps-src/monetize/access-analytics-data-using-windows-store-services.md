@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: f36facd8ba89fbaccb7c61ad937c2ce005922aa8
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886247"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910564"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -86,7 +86,7 @@ grant_type=client_credentials
 |---------------|--------------------|
 | 下載、轉換和安裝 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得訂閱附加元件下載數](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得 App 安裝](get-app-installs.md)</li></ul> |
 | App 錯誤 | <ul><li>[取得錯誤報告資料](get-error-reporting-data.md)</li><li>[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| 觀點 | <ul><li>[取得您的應用程式的觀點資料](get-insights-data-for-your-app.md)</li></ul>  |
+| 深入解析 | <ul><li>[取得您的應用程式的深入解析資料](get-insights-data-for-your-app.md)</li></ul>  |
 | 評分與評論 | <ul><li>[取得 App 評分](get-app-ratings.md)</li><li>[取得 App 評論](get-app-reviews.md)</li></ul> |
 | 應用程式內廣告與廣告行銷活動 | <ul><li>[取得廣告效益資料](get-ad-performance-data.md)</li><li>[取得廣告行銷活動效益資料](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -97,9 +97,9 @@ grant_type=client_credentials
 | 案例       | 方法      |
 |---------------|--------------------|
 | 安裝數 |  <ul><li>[取得傳統型應用程式安裝](get-desktop-app-installs.md)</li></ul> |
-| 封鎖 |  <ul><li>[取得升級組塊桌面應用程式](get-desktop-block-data.md)</li><li>[取得您的桌面應用程式升級區塊的詳細資訊](get-desktop-block-data-details.md)</li></ul> |
+| 區塊 |  <ul><li>[升級的區塊，取得傳統型應用程式](get-desktop-block-data.md)</li><li>[取得傳統型應用程式的封鎖升級詳細資料](get-desktop-block-data-details.md)</li></ul> |
 | 應用程式錯誤 |  <ul><li>[取得傳統型應用程式的錯誤報告資料](get-desktop-application-error-reporting-data.md)</li><li>[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)</li><li>[取得傳統型應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下載傳統型應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
-| 觀點 | <ul><li>[取得您的桌面應用程式的觀點資料](get-insights-data-for-your-desktop-app.md)</li></ul>  |
+| 深入解析 | <ul><li>[取得傳統型應用程式的深入解析資料](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 
 ### <a name="methods-for-xbox-live-services"></a>適用於 Xbox Live 服務的方法
 
@@ -121,7 +121,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
 
-開發人員帳戶屬於[Windows 硬體開發人員中心程式](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)可以存取其他組擷取的硬體和發行的驅動程式的分析資料的方法。 如需詳細資訊，請參閱[硬體儀表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
+屬於[Windows 硬體開發人員中心計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶可以存取另一組適用於擷取分析資料的硬體和驅動程式的方法。 如需詳細資訊，請參閱[硬體儀表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
 
 ## <a name="code-example"></a>程式碼範例
 

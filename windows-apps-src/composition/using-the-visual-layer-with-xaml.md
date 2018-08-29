@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 643a5abf22bfbeb9e7ace48bc430ab6e0d446ae1
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018574"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2914513"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>使用視覺層搭配 XAML
 
@@ -43,7 +43,7 @@ XAML 與視覺層互通性功能可用來建立單獨使用 XAML API 所無法�
 
 **XamlLight** 會針對使用**CompositionLight**動態讓區域變亮的 XAML 光源效果，提供基底類別。
 
-請參閱[**光源**](lighting.md)小節，以取得使用光源 (包括光源 XAML UI 元素) 的詳細資訊。
+請參閱[**光源**](xaml-lighting.md)小節，以取得使用光源 (包括光源 XAML UI 元素) 的詳細資訊。
 
 如需程式碼範例，請參閱 [**XamlLight**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamllight) 的參考頁面。
 

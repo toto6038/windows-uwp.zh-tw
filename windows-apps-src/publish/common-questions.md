@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 89745d0bb93b76e4497d6cb5c57f4e6c091c8bd7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881831"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2917166"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
@@ -41,7 +41,7 @@ ms.locfileid: "2881831"
 
 ### <a name="where-will-my-ad-appear"></a>我的廣告會在哪裡顯示？
 
-您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 您在 Microsoft 存放區中發佈您的應用程式時設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
+您的廣告會出現在年齡分級與 OS 版本和您的 app 相同的 app 中。 當您在 Microsoft Store 中發佈您的應用程式時，您可以設定這些屬性。 若為「通用」行銷活動，您的廣告也會出現在 MSN.com、Outlook.com、Skype、和其他 Microsoft 進階內容中。
 
 目前下列國家與地區支援廣告活動：
 
@@ -63,7 +63,7 @@ ms.locfileid: "2881831"
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>我要如何刪除信用卡或編輯信用卡的詳細資料？
 
-移至 [ <http://commerce.microsoft.com>、 使用 Microsoft 帳戶認證，登入並進行必要的變更。
+移至<http://commerce.microsoft.com>，您的 Microsoft 帳戶認證，登入，並進行必要的變更。
 
 ### <a name="related-topics"></a>相關主題
 

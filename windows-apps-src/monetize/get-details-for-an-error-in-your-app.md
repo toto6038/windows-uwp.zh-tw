@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料
 ms.localizationpriority: medium
 ms.openlocfilehash: b3c9994d2738dbcd283ac7458fdde6979d43ee2f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887457"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907785"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>取得應用程式中錯誤的詳細資料
 
@@ -55,7 +55,7 @@ ms.locfileid: "2887457"
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取詳細錯誤資料之 App 的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | failureHash | 字串 | 您想要取得詳細資訊之錯誤的唯一識別碼。 若要取得您有興趣之錯誤的此值，請使用[取得錯誤報告資料](get-error-reporting-data.md)方法，並在該方法的回應主體中使用 **failureHash** 值。 |  是  |
-| startDate | 日期 | 要擷取詳細錯誤資料之日期範圍的開始日期。 預設為目前日期的前 30 天。<p/><p/>**請注意：**&nbsp;&nbsp;此方法只能擷取一個在過去 30 天內發生之錯誤的詳細資料。 |  否  |
+| startDate | 日期 | 要擷取詳細錯誤資料之日期範圍的開始日期。 預設為目前日期的前 30 天。<p/><p/>**注意：**&nbsp;&nbsp;這個方法只能擷取過去 30 天內發生的錯誤的詳細資料。 |  否  |
 | endDate | 日期 | 要擷取詳細錯誤資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10 且 skip=0 將擷取前 10 個資料列的資料，top=10 且 skip=10 將擷取下 10 個資料列的資料，以此類推。 |  否  |

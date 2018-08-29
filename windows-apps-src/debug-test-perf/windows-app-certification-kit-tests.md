@@ -2,25 +2,25 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 應用程式認證套件測試
-description: Windows 應用程式的憑證套件包含可協助確保您的應用程式已準備好要發佈的 Microsoft 存放區上的測試號碼。
+description: Windows 應用程式認證套件包含一些測試，可協助確保您的應用程式已準備好可以在 Microsoft Store 上發佈。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 應用程式的憑證
+keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887647"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2906065"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
 
-[Windows 應用程式的憑證套件](windows-app-certification-kit.md)包含可協助您確保您的應用程式已準備好要發佈至 Microsoft 存放區的測試號碼。 測試如下所示使用他們的準則的詳細資訊，並建議但如果是失敗的動作。
+[Windows 應用程式認證套件](windows-app-certification-kit.md)包含一些可協助確保您的應用程式已準備好發佈至 Microsoft Store 的測試。 測試如下所示使用他們的準則的詳細資訊，並建議的動作在失敗。
 
 ## <a name="deployment-and-launch-tests"></a>部署和啟動測試
 
@@ -60,7 +60,7 @@ Windows 應用程式認證套件會呼叫 [**IApplicationActivationManager::Acti
 
 ### <a name="background"></a>背景
 
-作業系統版本資訊具有受限 Microsoft 存放區的使用方式。 這常被 app 錯誤地用於檢查作業系統版本，使 app 可以提供使用者作業系統版本特定的功能。
+作業系統版本資訊的用途限於 Microsoft 網上商店。 這常被 app 錯誤地用於檢查作業系統版本，使 app 可以提供使用者作業系統版本特定的功能。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -128,7 +128,7 @@ Windows 應用程式認證套件會使用 HighVersionLie 偵測應用程式如�
 
 -   **處理程序間通訊 (IPC) 驗證**
 
-    這項測試會強制執行 UWP 應用程式不會桌面元件的應用程式容器外部通訊的需求。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
+    這項測試會強制執行的 UWP 應用程式不會在桌面元件的應用程式容器外部與通訊的需求。 處理程序間通訊僅適用於側載 App。 將 [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) 的名稱指定為 "DesktopApplicationPath" 的 App 將無法通過這個測試。
 
 ### <a name="corrective-action"></a>修正動作
 
@@ -248,7 +248,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 如果原始可執行檔未通過這個測試，請確定您使用了最新的編譯器和連結器來建立檔案，並在連結器上使用 */appcontainer* 旗標。
 
-如果受管理的可執行檔失敗測試，請務必建立 UWP 應用程式使用的最新的編譯器及連結器，例如 Microsoft Visual Studio]。
+如果 managed 可執行檔未通過這個測試，請確定您使用了最新的編譯器和連結器，例如 Microsoft Visual Studio 中，來建置 UWP 應用程式。
 
 **備註**
 
@@ -308,22 +308,22 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 ### <a name="background"></a>背景
 
-應用程式必須使用 Api UWP 應用程式 （Windows Runtime 或支援的 Win32 Api） 認證之 Microsoft 存放區。 這個測試也會識別 Managed 二進位檔案相依於核准的設定檔外部函式的狀況。
+應用程式必須使用 Api，適用於 UWP app （Windows 執行階段或支援的 Win32 Api），Microsoft Store 進行認證。 這個測試也會識別 Managed 二進位檔案相依於核准的設定檔外部函式的狀況。
 
 ### <a name="test-details"></a>測試詳細資料
 
--   驗證應用程式套件內每個二進位都不會檢查二進位檔的匯入地址資料表不支援 UWP 應用程式開發 Win32 API 上有相依性。
+-   確認應用程式套件內的每個二進位檔案都相依於所檢查的二進位檔匯入位址表不支援的 UWP 應用程式開發的 Win32 API。
 -   確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。
 
 ### <a name="corrective-actions"></a>修正動作
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **附註** 即使應用程式使用[UWP 應用程式 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)應用程式的偵錯組建將會失敗這項測試。
+> **注意：** 應用程式的偵錯組建無法通過這個測試，即使應用程式會使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
 
-檢閱識別 API 應用程式所使用的不是[UWP 應用程式 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的錯誤訊息。
+檢閱錯誤訊息，找出 API 不是[適用於 UWP app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的應用程式使用。
 
-> **附註** 即使設定僅使用從 Windows SDK Api UWP 應用程式建置偵錯組態中的 c + + 應用程式將會失敗這項測試。 請參閱 ＜ 的詳細資訊的[替代方式來 UWP 應用程式中的 Windows api （英文）](http://go.microsoft.com/fwlink/p/?LinkID=244022) 。
+> **注意：** 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 請參閱，如需詳細資訊的[UWP 應用程式中的 Windows Api 的替代方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
 ## <a name="performance-tests"></a>效能測試
 
@@ -433,7 +433,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <tr><td>
 <p>"resources.pri" 檔案不能啟用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支援一個稱為 <strong>AutoMerge</strong> 的選項。 <strong>AutoMerge</strong> 的預設值為 <strong>off</strong>。 啟用時，<strong>AutoMerge</strong> 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這您想要發佈到 Microsoft 存放區的應用程式。 透過 Microsoft Store 分散式應用程式的 resources.pri 必須在應用程式套件的根目錄中並包含應用程式支援的所有語言參照。</p>
+<p>MakePRI.exe 支援一個稱為 <strong>AutoMerge</strong> 的選項。 <strong>AutoMerge</strong> 的預設值為 <strong>off</strong>。 啟用時，<strong>AutoMerge</strong> 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這樣的應用程式，您要透過 Microsoft 網上商店散布。 透過 Microsoft 網上商店散發應用程式的 resources.pri 必須是應用程式套件的根目錄中，而且包含應用程式支援的所有語言參考。</p>
 </td></tr>
 <tr><td>
 <p>字串 {string} 不符合 {number} 個字元的長度上限限制。</p>
@@ -485,7 +485,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 ### <a name="branding-validation"></a>商標驗證
 
-UWP apps 預計有完整並維持完整功能。 使用預設影像 (來自範本或 SDK 範例) 的應用程式會呈現不佳的使用者經驗，而且在市集型錄中也不容易識別。
+UWP 應用程式應該要完整且功能正常。 使用預設影像 (來自範本或 SDK 範例) 的應用程式會呈現不佳的使用者經驗，而且在市集型錄中也不容易識別。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -501,7 +501,7 @@ UWP apps 預計有完整並維持完整功能。 使用預設影像 (來自範�
 
 ### <a name="background"></a>背景
 
-經過認證 Microsoft 存放區、 應用程式必須未編譯的偵錯及他們必須不參考偵錯版本的可執行檔。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
+若要通過 Microsoft Store 認證，應用程式不會編譯針對偵錯，而且不可以參照可執行檔的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -509,7 +509,7 @@ UWP apps 預計有完整並維持完整功能。 使用預設影像 (來自範�
 
 ### <a name="corrective-actions"></a>修正動作
 
--   建立應用程式為發行組建之前送出至 Microsoft 存放區。
+-   在您提交到 Microsoft 網上商店之前，請為發行組建建置應用程式。
 -   確定您已安裝正確的 .NET Framework 版本。
 -   確認應用程式並未連結到偵錯版本的架構，且是利用發行版本所建置。 如果這個應用程式包含 .NET 元件，請確認您已安裝正確的 .NET Framework 版本。
 
@@ -537,7 +537,7 @@ UWP apps 預計有完整並維持完整功能。 使用預設影像 (來自範�
 
 ### <a name="background"></a>背景
 
-Microsoft 存放區需要使用 Direct3D 正確轉譯或無法正常功能層級 9\ 1 圖形卡上的所有應用程式。
+Microsoft Store 需要使用 Direct3D 正確呈現，或正常功能層級 9 \-1 圖形卡上的所有應用程式。
 
 因為使用者可以在安裝 app 之後變更裝置中的圖形硬體，如果您選擇高於 9\-1 的最低功能層級，您的 app 必須在啟動時偵測目前的硬體是否符合最低需求。 若不符合最低需求，該 app 必須向使用者顯示訊息，以詳細說明 Direct3D 的需求。 此外，如果客戶在不相容的裝置上下載 app，該 app 必須在啟動時偵測執行環境，並顯示訊息給客戶，以詳細說明需求。
 
@@ -551,7 +551,7 @@ Microsoft 存放區需要使用 Direct3D 正確轉譯或無法正常功能層級
 
 ### <a name="direct3d-trim-after-suspend"></a>暫停後的 Direct3D 修剪
 
-> **附註** 這項測試僅適用於開發 Windows 8.1 或更新版本的 UWP 應用程式。
+> **注意：** 這項測試僅適用於開發適用於 Windows 8.1 和更新版本的 UWP 應用程式。
 
 ### <a name="background"></a>背景
 

@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888257"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2909886"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -58,7 +58,7 @@ ms.locfileid: "2888257"
 
 ### <a name="consistency"></a>一致性
 
-瀏覽應該與使用者的期望一致。 使用使用者所熟悉和下列標準圖示慣例的[標準控制項](#use-the-right-controls)、 位置及樣式設定會讓導覽明顯且可預測的使用者。
+瀏覽應該與使用者的期望一致。 使用[標準控制項](#use-the-right-controls)，使用者可熟悉和圖示的下列標準慣例，位置，以及樣式會讓瀏覽可預測且直覺的使用者。
 
 ![頁面元件影像](images/nav/page-components.svg)
 
@@ -99,7 +99,7 @@ ms.locfileid: "2888257"
 
 1. 考量您的使用者。 找出使用者可能在您的 app 中依循的一般途徑，並思考使用者來到每個頁面的原因，以及接著想前往哪裡。
 
-2. 避免深入導覽階層。 如果您的瀏覽超過三層，可能會讓您的使用者陷在深度階層中而難以離開。
+2. 避免深層的瀏覽階層。 如果您的瀏覽超過三層，可能會讓您的使用者陷在深度階層中而難以離開。
 
 3. 避免「上下彈跳」。 當有相關的內容時，但瀏覽到該內容卻要求使用者往上一層然後再往下一層，就發生上下彈跳狀況。
 
@@ -111,7 +111,7 @@ ms.locfileid: "2888257"
     :::column:::
         ![單層式結構排列的頁面](images/nav/flat-lateral-structure.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::
+    ::: 欄範圍 ="2":::
         ### Flat/lateral
 
         In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
@@ -130,7 +130,7 @@ ms.locfileid: "2888257"
     :::column:::
         ![階層排列的頁面](images/nav/hierarchical-structure.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::
+    ::: 欄範圍 ="2":::
         ### Hierarchical
 
         In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
@@ -150,7 +150,7 @@ ms.locfileid: "2888257"
     :::column:::
         ![具備混合式結構的 App](images/nav/combining-structures.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::
+    ::: 欄範圍 ="2":::
         ### Combining structures
 
         You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
@@ -168,18 +168,18 @@ ms.locfileid: "2888257"
 
 :::row:::
     :::column:::
-        ![圖文框的圖像](images/nav/thumbnail-frame.svg)
+        ![畫面影像](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::[**圖文框**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    ::: 欄範圍 ="2":::[**畫面**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![索引標籤及 [樞紐分析表的影像](images/nav/thumbnail-tabs-pivot.svg)
+        ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::[**上方導覽列和索引標籤**](../controls-and-patterns/navigationview.md)
+    ::: 欄範圍 ="2":::[**頂端瀏覽和索引標籤**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
@@ -200,7 +200,7 @@ ms.locfileid: "2888257"
     :::column:::
         ![navview 映像](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::[**左側的導覽**](../controls-and-patterns/navigationview.md)
+    ::: 欄範圍 ="2":::[**左側瀏覽**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
@@ -212,9 +212,9 @@ ms.locfileid: "2888257"
 
 :::row:::
     :::column:::
-        ![主要的詳細資訊圖像](images/nav/thumbnail-master-detail.svg)
+        ![主要詳細資料影像](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::[**主圖形/詳細資料**](../controls-and-patterns/master-details.md)
+    ::: 欄範圍 ="2":::[**主要/詳細資料**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         
@@ -226,9 +226,9 @@ ms.locfileid: "2888257"
 
 :::row:::
     :::column:::
-        ![超連結及按鈕圖像](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![超連結與按鈕影像](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
-    ::: 欄跨越 ="2":::[**超連結**](../controls-and-patterns/hyperlinks.md)
+    ::: 欄範圍 ="2":::[**超連結**](../controls-and-patterns/hyperlinks.md)
 
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::

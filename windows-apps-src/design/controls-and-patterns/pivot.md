@@ -15,17 +15,17 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: e8f0fbbfacc3fa4edb602f7505ea1e88f211a81a
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2889408"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913015"
 ---
 # <a name="pivot"></a>Pivot
 
-[[樞紐分析表](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控制項可讓觸控 swiping 內容小節一小群之間。
+[Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控制項可讓觸控撥動內容區段一小群之間。
 
-> **重要 Api**： [[樞紐分析表類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **重要 Api**: [Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>範例
 
@@ -34,7 +34,7 @@ ms.locfileid: "2889408"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您有安裝的<strong style="font-weight: semi-bold">XAML 控制項圖庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/Pivot">開啟 [應用程式並查看巨集指令中的 [樞紐分析表控制項</a>。</p>
+    <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/Pivot">開啟應用程式並查看 Pivot 控制項的運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
@@ -43,26 +43,26 @@ ms.locfileid: "2889408"
 </tr>
 </table>
 
-[樞紐分析表控制項，就像是[NavigationView](navigationview.md)，加上底線選取的項目。
+Pivot 控制項，就像[NavigationView](navigationview.md)，加上底線選取的項目。
 
 ![預設焦點底線選取的標頭](images/pivot_focus_selectedHeader.png)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-若要達到常見的上方導覽列和索引標籤模式，建議使用[NavigationView](navigationview.md)、 自動適應不同螢幕大小，並允許更大的自訂。
+若要達到常見的頂端瀏覽和索引標籤模式，我們建議使用[NavigationView](navigationview.md)，這會自動適應不同螢幕大小，可讓您進一步自訂項目。
 
-不過，如果您導覽需要觸控 swiping，我們建議使用 [樞紐分析表。
+不過，如果您的瀏覽需要觸控式撥動，我們建議使用樞紐分析。
 
-其他之間的主要差異 NavigationView 和樞紐分析表控制項是預設溢位行為和導覽 API：
+NavigationView 和樞紐控制項之間的其他主要差異是預設溢位行為和瀏覽 API:
 
-- 樞紐分析項目，而 NavigationView 使用功能表下拉式清單溢出，讓使用者可以查看所有項目的各種溢位。
-- [樞紐分析表會處理內容] 區段中，而 NavigationView 允許導覽行為的更多控制權之間導覽。
+- 各樞紐項目，NavigationView 會使用功能表下拉式清單時溢位，讓使用者能夠看到的所有項目各種溢位。
+- 樞紐處理內容的區段，而 NavigationView 可讓您進一步控制瀏覽行為之間的瀏覽。
 
-## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView 而不是 [樞紐分析表
+## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView，而不是樞紐分析
 
-如果您的應用程式使用者介面使用 [樞紐分析表控制，然後您可以將轉換樞紐分析表 NavigationView 使用以下的程式碼。
+如果您的應用程式 UI 使用 Pivot 控制項，然後您可以將轉換樞紐 NavigationView 以下的程式碼。
 
-此 XAML 建立 NavigationView 3 區段的 [樞紐分析表中[建立樞紐分析表控制項](#create-a-pivot-control)範例類似的內容。
+此 XAML 會 NavigationView 建立包含 3 個區段的內容，如樞紐分析的[建立 pivot 控制項](#create-a-pivot-control)的範例。
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -87,7 +87,7 @@ ms.locfileid: "2889408"
 </Page>
 ```
 
-NavigationView 提供更多控制權導覽自訂並要求相對應的程式碼後置。 若要隨附上述 XAML，請使用下列程式碼後置：
+NavigationView 提供對瀏覽自訂項目更多控制權，且需要相對應的程式碼後置。 若要伴隨上述的 XAML，請使用下列程式碼後置：
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,11 +116,11 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-這段程式碼模擬樞紐分析表控制項的內建的瀏覽體驗，減去內容區段間的觸控 swiping 經驗。 但如您所見，您也可以自訂包括動畫的轉換、 導覽參數及堆疊功能的數個點。
+此程式碼會模擬樞紐分析控制項的內建的瀏覽體驗，減內容區段之間的觸控式撥動體驗。 不過，如您所見，您也無法自訂數個點，包括動畫的轉換、 瀏覽參數，以及堆疊功能。
 
 ## <a name="create-a-pivot-control"></a>建立 Pivot 控制項
 
-這段程式碼會建立內容的 3 幾個基本 [樞紐分析表控制項。
+這個程式碼會建立包含 3 個內容區段的基本 Pivot 控制項。
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="Category Title">

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2891680"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2912382"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -85,13 +85,13 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 
 必須要有此影像，才能在 Windows Phone 8.1 與較舊版本上正確顯示。 如果您的應用程式支援 Windows Phone 8.1 或較舊版本但您未提供這個影像，這些客戶將會在應用程式清單中看到空白圖示。 (這也適用於使用 Windows 10 的客戶，如果您的應用程式只有以 Windows Phone 8.1 或更舊版本為目標的套件)。如果您的提交內容*僅*包含 UWP 套件，則不需要提供這個影像。 (請注意，如果您提交的內容同時包含 Windows Phone 8.x 套件和 UWP 套件，而且您提供此影像，在某些 Microsoft Store 配置中它可能會用在 Windows 10 上。 若要避免此情況，您可以建立適用於您應用程式支援之 Windows Phone 版本的[平台專屬清單](create-platform-specific-store-listings.md)，並且僅在那裡包含應用程式磚圖示)。
 
-### <a name="display-only-uploaded-logo-images-in-the-store"></a>只顯示上傳的存放區中的標誌圖像
+### <a name="display-only-uploaded-logo-images-in-the-store"></a>只顯示上傳的標誌影像，在市集中
 
-您必須選擇來防止存放區時顯示在清單上 （包括 Xbox） 的 Windows 10 的客戶在您的應用程式封裝中使用的標誌圖像及而有使用您上傳的圖像儲存區。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您的產品支援舊版的 OS 版本，這些客戶可能仍請參閱圖像從您的套件，即使您使用此選項）。
+您可以選擇防止 microsoft Store 使用您的應用程式套件中的標誌影像，在 Windows 10 （包括 Xbox） 上對客戶顯示清單時，並改為讓 microsoft Store 使用您上傳的影像。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您的產品支援較舊版本的作業系統版本，這些客戶可能仍然看到映像從您的套件，即使您使用此選項）。
 
-若要使用您上傳 （的客戶在 Windows 10，包括 Xbox） 映像不使用任何圖像從您的封裝、 核取方塊，指出**的存放區的 Windows 10 和 xbox 應用程式上的客戶，顯示上傳標誌圖像，而不是從 「 我的套件的圖像**.
+對於 Windows 10 和 Xbox 的客戶已在市集中使用您上傳 （適用於客戶的 Windows 10，包括 Xbox） 的映像，並不使用任何映像從您的套件，核取方塊，指出 **，顯示上傳的標誌影像，而不是我的套件中的影像**.
 
-當您核取此方塊時，會出現新區段呼叫**存放區中顯示圖像**。 這裡，您可以上傳 3 圖像，包括**1:1 app 並排顯示的圖示 （300 x 300 像素）** 大小 （如果您核取方塊，以提供該圖像移到本節欄位）。 如果您使用此選項，建議您三種影像大小都提供：300 x 300、150 x 150 及 71 x 71 像素。 不過，只需要 300 x 300 大小。
+當您勾選此方塊時，新的章節稱為**市集中顯示影像，** 將會出現。 在這裡，您可以上傳 3 個影像，包括**1:1 的應用程式磚圖示 （300 x 300 像素）** 大小 （如果您核取方塊，提供該映像將會移至此區段的欄位）。 如果您使用此選項，建議您三種影像大小都提供：300 x 300、150 x 150 及 71 x 71 像素。 不過，只需要 300 x 300 大小。
 
 
 <span id="promotional-images" />

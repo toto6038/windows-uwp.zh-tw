@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 價格, 提供, 可搜尋的, 免費試用, 試用, 試用版, 應用程式, 發行日期
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881554"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918839"
 ---
 # <a name="set-app-pricing-and-availability"></a>設定應用程式價格與可用性
 
@@ -74,7 +74,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 >[!NOTE]
 > 這些日期僅適用於使用 Windows 10 (包括 Xbox) 的客戶。 如果您的 App 適用於使用較舊作業系統版本的客戶，只要您的產品可供使用，也會持續提供試用給這些客戶。 
 
-若要設定何時將試用提供給 Windows 10 的客戶，請將 **\[開始於\]** 和/或 **\[結束於\]** 下拉式清單變更為 **\[於\]**，然後選擇日期和時間。 如果您這樣做，可以選擇 [**UTC**]，如此您選擇的時間會是全球定位時間 (UTC)，或選擇 [**當地**]，如此將會使用市場所在時區的時間。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 如美國、 東部時間的時區使用）。您可以選取**特定的市場的自訂**如果您想要設定的任何 market(s) 的不同日期。
+若要設定何時將試用提供給 Windows 10 的客戶，請將 **\[開始於\]** 和/或 **\[結束於\]** 下拉式清單變更為 **\[於\]**，然後選擇日期和時間。 如果您這樣做，可以選擇 [**UTC**]，如此您選擇的時間會是全球定位時間 (UTC)，或選擇 [**當地**]，如此將會使用市場所在時區的時間。 (請注意，對於包含多個時區的市場，只會使用該市場中的一個時區。 若是美國，東岸時區使用）。如果您想要設定不同的日期，為任何市場，您可以選取**針對特定市場自訂**。
 
 
 ## <a name="sale-pricing"></a>銷售定價

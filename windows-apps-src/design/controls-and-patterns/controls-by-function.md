@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887907"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2908789"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -30,7 +30,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您有安裝的<strong style="font-weight: semi-bold">XAML 控制項圖庫</strong>應用程式，請按一下這裡以<a href="xamlcontrolsgallery:/item/NavigationView">開啟該應用程式並查看 NavigationView 中巨集指令</a> </p>
+    <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/NavigationView">開啟應用程式並查看 NavigationView 運作</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
@@ -270,7 +270,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-設計與使用方法：[延伸顯示](dialogs-and-flyouts/flyouts.md) 
+設計和作法：[飛出視窗](dialogs-and-flyouts/flyouts.md) 
 
 ### <a name="menu-flyout"></a>功能表飛出視窗
 暫時顯示與使用者目前正在執行之動作相關的命令或選項清單。
@@ -290,7 +290,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-設計與使用方法：[功能表和快顯功能表](menus.md) 
+設計和作法：[功能表和操作功能表](menus.md) 
 
 範例程式碼：[XAML 操作功能表範例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
@@ -299,7 +299,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 參考：[PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-設計與使用方法： [Dialogs](dialogs-and-flyouts/dialogs.md) 
+設計和作法：[對話方塊](dialogs-and-flyouts/dialogs.md) 
 
 ### <a name="tooltip"></a>工具提示
 顯示元素資訊的快顯視窗。 
@@ -555,11 +555,11 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ### <a name="navigationview"></a>NavigationView
 
-適應容器和彈性導覽模型，實作左的功能窗格、 上方導覽列和索引標籤圖樣。
+適應，以容器和彈性的瀏覽模型來實作的左瀏覽窗格，頂端瀏覽和索引標籤模式。
 
-參照： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+參考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 
-設計與使用方法： [NavigationView 控制指南](navigationview.md)
+設計和作法： [NavigationView 控制項指南](navigationview.md)
 
 ### <a name="splitview"></a>SplitView
 

@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2895672"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918719"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支付及稅收表格
 
 
-若要從 Microsoft 存放區中的 [應用程式銷售接收 money，您需要設定支付額帳戶及填寫必要稅表單。
+若要接收來自 Microsoft Store 中的應用程式銷售的金額，您需要設定您的支付帳戶並填寫所需的納稅申報表。
 
-如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果您稍後改變心意並決定您想要買賣應用程式 （或附加元件），您可以設定支付額帳戶及填寫稅表單的時間。 您要先完成支付帳戶和稅務設定檔，才能提交任何付費 App 或附加元件。
+如果您只打算列出免費 app (而不打算提供 app 內購買，或者不打算使用 Microsoft Advertising)，就不需要設定支付帳戶或填寫任何納稅申報表。 如果您改變心意更新版本，並決定您想要銷售 app （或附加元件），您可以設定支付帳戶並填寫納稅申報表，在該時間。 您要先完成支付帳戶和稅務設定檔，才能提交任何付費 App 或附加元件。
 
 > [!NOTE]
 > 在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 App。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
 
-[設定您的開發人員帳戶](opening-a-developer-account.md)之後，您需要執行之前您可以出售應用程式 （或附加元件） 的兩件事中有 Microsoft 存放區：
+[設定您的開發人員帳戶](opening-a-developer-account.md)之後，有兩件事您需要執行之前的應用程式 （或附加元件），您可以銷售 Microsoft 網上商店：
 
 -   [設定您的支付帳戶](#payout-account)
 -   [填寫您的納稅申報表](#tax-forms)
@@ -125,7 +125,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 ## <a name="tax-forms"></a>納稅申報表
 
-您已[登錄的開發人員帳戶](opening-a-developer-account.md)並設定[支付額帳戶](#payout-account)之後，您可以建立 Microsoft 存放區您*稅設定檔*，請完成下列步驟：
+當您[註冊開發人員帳戶](opening-a-developer-account.md)並設定您[的支付帳戶](#payout-account)之後，您可以建立適用於 Microsoft 市集*稅金設定檔*藉由完成下列步驟：
 
 -   指定您的居住國家/地區和國籍。
 -   填寫適當的納稅申報表。
@@ -133,7 +133,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 您可以在儀表板中以電子化方式完成並提交納稅申報表；在大多數情況下，您不需要列印及郵寄任何申報表。
 
 > [!IMPORTANT]
-> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈鼓勵您連絡人的相關的授權單位的國家或地區的最佳可協助您判斷 Microsoft 存放區的開發人員活動右稅資訊。
+> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您為您的國家或地區最能夠協助您判斷您的 Microsoft Store 開發人員活動之正確稅金資訊的相關機構聯繫。
 
  
 **完成您的稅金設定檔**
@@ -148,7 +148,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 4.  回答美國公民與居住地相關問題，然後按 **\[下一步\]**。
 5.  如果顯示您的姓名和地址資訊，請確認這些資訊以供報稅使用。
 
-接著，您會看到必須完成填寫的電子版本納稅申報表。 不論我或公民您國家/地區，您必須填寫美國稅表單到買賣任何應用程式或透過 Microsoft 存放區的附加元件。 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
+接著，您會看到必須完成填寫的電子版本納稅申報表。 不論您居住國家/地區和國籍，您必須填寫美國納稅申報表，才能銷售任何應用程式或附加元件，透過 Microsoft 網上商店。 符合特定美國居住規定的開發人員必須填寫 IRS W-9 表單。 美國以外的其他開發人員必須填寫 IRS W-8 表單。 完成稅金設定檔之後，您就可以在線上填寫這些表單。
 
 向 Microsoft 收到付款或要求稅務協定優惠時不需要美國個人納稅識別號碼 (或 ITIN)。
 
@@ -158,7 +158,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 ### <a name="tax-treaty-benefits"></a>稅務協定優惠
 
-如果您在美國以外的地區，可能可以享有稅務協定優惠。 這些優點改變國家，並可能會讓您減少 withholds Microsoft 存放區的負擔。 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
+如果您在美國以外的地區，可能可以享有稅務協定優惠。 這些優惠國家，而有所不同，而且可讓您將減少扣繳的稅金總額 Microsoft 網上商店。 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
 
  
 

@@ -8,14 +8,14 @@ ms.date: 09/26/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 裝置入口網站
+keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2884144"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913755"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的裝置入口網站
 
@@ -51,7 +51,7 @@ ms.locfileid: "2884144"
 3. 從您電腦上的網頁瀏覽器，移至 `http://127.0.0.1:10080`。
 
 > [!IMPORTANT]
-> 如果您的電腦無法找到該裝置，嘗試使用實際網路裝置 IP 位址 HoloLens，而不是比`http://127.0.0.1:10080`。
+> 如果您的電腦是找不到裝置，請嘗試使用實際的網路 IP 位址的 HoloLens 裝置，而不是`http://127.0.0.1:10080`。
 
 #### <a name="connect-to-an-emulator"></a>連線到模擬器 
 

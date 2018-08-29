@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2881791"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918299"
 ---
 # <a name="events-and-routed-events-overview"></a>事件與路由事件概觀
 
@@ -153,7 +153,7 @@ End Sub
 
 **注意**  Visual Studio 和它的 XAML 設計介面通常會升級執行個體處理技巧，而非 **Handles** 關鍵字。 這是因為在 XAML 中建立事件處理常式連接，是設計人員與開發人員之間一般工作流程的一部分，而 **Handles** 關鍵字技巧與連接 XAML 中的事件處理常式不相容。
 
-在 C + + CX，您也使用**+=** 語法，但有基本的 C# 表單中的差異：
+在 C + + /CX，您也使用**+=** 語法，但與基本 C# 格式有一些差異：
 
 -   不具備委派推斷功能，因此必須針對委派執行個體使用 **ref new**。
 -   委派建構函式有兩個參數，並且需要以目標物件做為第一個參數。 通常您是指定**這個**。

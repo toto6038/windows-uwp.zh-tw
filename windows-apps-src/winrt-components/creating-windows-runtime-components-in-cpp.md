@@ -1,7 +1,7 @@
 ---
 author: msatranjr
 title: 在 C++ 中建立 Windows 執行階段元件
-description: 本主題說明如何使用 C + + CX 建立 Windows 執行階段元件，這是可以從內建使用 C#、 Visual Basic、 c + + 或 Javascript 萬用 Windows 應用程式呼叫的元件。
+description: 本主題示範如何使用 C + + /CX 來建立 Windows 執行階段元件，也就是從使用 C#、 Visual Basic、 c + + 或 Javascript 建置的通用 Windows 應用程式可以呼叫的元件。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ms.author: misatran
 ms.date: 05/14/2018
@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888187"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2911912"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>在 C++/CX 中建立 Windows 執行階段元件
 > [!NOTE]
-> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何建立 Windows 執行階段元件使用 C + + WinRT，請參閱[製作事件的 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
+> 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 若要了解如何建立 Windows 執行階段元件，使用 C + + /winrt，請參閱[中撰寫事件在 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
 
-本主題說明如何使用 C + + CX 建立 Windows 執行階段元件，這是可以從內建使用 C#、 Visual Basic、 c + + 或 Javascript 萬用 Windows 應用程式呼叫的元件。
+本主題示範如何使用 C + + /CX 來建立 Windows 執行階段元件，也就是從使用 C#、 Visual Basic、 c + + 或 Javascript 建置的通用 Windows 應用程式可以呼叫的元件。
 
-原因有幾個建置 Windows 執行階段元件。
+有數個建置 Windows 執行階段元件的理由。
 - 獲得 C++ 在複雜或密集運算作業中的效能優勢。
 - 重複使用已經撰寫好且經過測試的程式碼。
 
 當您建置包含 JavaScript 或 .NET 專案以及 Windows 執行階段元件專案的方案時，JavaScript 專案檔與已編譯的 DLL 會合併成單一封裝，如此您就能在模擬器進行本機偵錯，或在行動網卡上進行遠端偵錯。 您也可以利用擴充功能 SDK 格式，僅發佈元件專案。 如需詳細資訊，請參閱[建立軟體開發套件](https://msdn.microsoft.com/library/hh768146.aspx)。
 
-一般而言，當您撰寫程式碼在 C + + CX 元件使用的一般 c + + 程式庫及內建類型以外在抽象二進位介面 (ABI) 邊界上您要將資料與程式碼傳遞另一個.winmd 套件中。 那里，使用 Windows Runtime 類型和特殊語法的 C + + CX 支援建立和管理這些類型。 此外，在您 C + + CX 程式碼，例如委派和事件 JavaScript、 Visual Basic、 c + + 或 C# 中實作可從您的元件會引發並處理事件的使用類型。 如需關於 C + + CX 語法，請參閱[Visual c + + 語言參考 (C + + CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
+一般而言，當您撰寫程式碼您 C + + /CX 元件，應使用一般的 c + + 程式庫與內建類型，除非在抽象二進位介面 (ABI) 界限上您要在其中傳遞其他.winmd 封裝中的程式碼的資料。 那時請使用 Windows 執行階段類型，以及特殊語法的 C + + /CX 支援建立和操作那些類型。 此外，在您的 C + + /CX 程式碼，使用像是 delegate 和 event JavaScript、 Visual Basic、 c + +，或 C# 中實作，可從您的元件引發和處理事件的類型。 如需有關 C + + /CX 語法中，請參閱[Visual c + + 語言參考 (C + + /CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)。
 
 ## <a name="casing-and-naming-rules"></a>大小寫和命名規則
 
@@ -44,7 +44,7 @@ JavaScript 會區分大小寫。 因此，您必須遵循下列大小寫慣例�
 .NET 語言都會遵循它們的一般大小寫規則。
 
 ## <a name="instantiating-the-object"></a>具現化物件
-只有 Windows 執行階段類型可以跨 ABI 界限傳遞。 如果元件有 std::wstring 這類的類型做為公用方法中的傳回類型或參數，則編譯器將會發出錯誤。 Visual c + + 元件延伸模組 (C + + CX) 內建類型包括如 int 和 double、 以及也其 typedef 等同項目 int32 float64，一般純量等等。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
+只有 Windows 執行階段類型可以跨 ABI 界限傳遞。 如果元件有 std::wstring 這類的類型做為公用方法中的傳回類型或參數，則編譯器將會發出錯誤。 Visual c + + 元件延伸 (C + + /CX) 內建類型包括一般的純量類型例如 int 和 double，以及也它們的 typedef 對等項目 int32，float64，以此類推。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
 ```cpp
 // ref class definition in C++
@@ -74,10 +74,10 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C + + CX 內建的類型、 文件庫類型及 Windows Runtime 類型
+## <a name="ccx-built-in-types-library-types-and-windows-runtime-types"></a>C + + /CX 內建類型、 程式庫類型，以及 Windows 執行階段類型
 可啟用的類別 (也稱為 ref 類別) 是可從其他語言 (例如 JavaScript、C# 或 Visual Basic) 中具現化的類別。 元件至少必須包含一個可啟用的類別，才可從其他語言取用。
 
-Windows 執行階段元件可以包含多個公用的可啟用類別，以及其他只有在元件內部才認得的類別。 將[WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx)屬性套用至 C + + CX 無法看到 JavaScript 的類型。
+Windows 執行階段元件可以包含多個公用的可啟用類別，以及其他只有在元件內部才認得的類別。 將[WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx)屬性套用至 C + + /CX 類型，並非用來會對 JavaScript 顯示。
 
 所有的公用類別都必須位於相同的根命名空間 (與元件中繼資料檔案同名) 中。 例如，名為 A.B.C.MyClass 的類別必須在名為 A.winmd、A.B.winmd 或 A.B.C.winmd 的中繼資料檔案中定義，才能具現化。 DLL 的名稱不需要符合 .winmd 檔案名稱。
 
@@ -85,7 +85,7 @@ Windows 執行階段元件可以包含多個公用的可啟用類別，以及其
 
 可啟用的類別必須宣告為 **public ref class sealed**。 **ref class** 關鍵字會指示編譯器，將類別建立為可與 Windows 執行階段相容的類型，而 sealed 關鍵字則會指定此類別無法被繼承。 Windows 執行階段目前不支援一般化繼承模型，因為受限制的繼承模型支援建立自訂的 XAML 控制項。 如需詳細資訊，請參閱 [Ref 類別與結構 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx)。
 
-For C + + CX 所有預設的命名空間中所定義的數字的基本項目。 [平台](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx)命名空間包含 C + + CX 類別的專屬 Windows Runtime 輸入系統。 這些包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 類別和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 類別。 這類具象集合類型 (例如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 類別和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 類別) 定義於 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空間中。 這些類型實作的公用介面定義於 [Windows::Foundation::Collections 命名空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中。 它是 JavaScript、C# 和 Visual Basic 所取用的這些介面類型。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
+針對 C + + /CX，所有的數值基本類型的預設命名空間中定義。 [平台](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx)命名空間包含 C + + /CX 類別的特定 Windows 執行階段類型系統。 這些包括 [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) 類別和 [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) 類別。 這類具象集合類型 (例如 [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) 類別和 [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) 類別) 定義於 [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) 命名空間中。 這些類型實作的公用介面定義於 [Windows::Foundation::Collections 命名空間 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx) 中。 它是 JavaScript、C# 和 Visual Basic 所取用的這些介面類型。 如需詳細資訊，請參閱[類型系統 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)。
 
 ## <a name="method-that-returns-a-value-of-built-in-type"></a>傳回內建類型之值的方法
 ```cpp
@@ -131,7 +131,7 @@ namespace CppComponent
 }
 ```
 
-若要傳遞 ABI 不同的使用者定義的值結構，定義的 JavaScript 物件具有相同的成員身分值結構定義在 C + + CX。 然後您可以傳遞該物件做為引數來 C + + CX 方法使物件隱含轉換成 C + + CX 類型。
+若要跨 ABI 傳遞使用者定義的值結構，請定義一個 JavaScript 物件，其具有相同的成員的值結構定義在 C + + /CX。 然後您可以傳遞該物件當做引數至 C + + /CX 方法，讓物件隱含地轉換成 C + + /CX 類型。
 
 ```javascript
 // Get and set the value struct
@@ -150,7 +150,7 @@ function GetAndSetPlayerData() {
 
 另一種方式是定義會實作 IPropertySet (未顯示) 的類別。
 
-以.NET 語言您剛建立的變數類型的定義在 C + + CX 元件。
+.NET 語言中，在您剛建立的變數之類型的定義在 C + + /CX 元件。
 
 ```csharp
 private void GetAndSetPlayerData()
@@ -176,7 +176,7 @@ private void GetAndSetPlayerData()
 ```
 
 ## <a name="overloaded-methods"></a>多載方法
-C + + CX 公用 ref 類別可包含多載的方法，但 JavaScript 受限能夠區分多載的方法。 例如，它可以區別下列簽章間的差異：
+C + + /CX 公用 ref 類別可以包含多載的方法，但 JavaScript 區分多載的方法的能力有限。 例如，它可以區別下列簽章間的差異：
 
 ```cpp
 public ref class NumberClass sealed
@@ -206,7 +206,7 @@ document.getElementById('P4').innerHTML = num;
 ```
 
 ## <a name="net"></a>.NET
-.NET 語言辨識 + 3 多載在 C + + CX ref 類別相同的任何.NET Framework 類別。
+.NET 語言可以辨識辨識多載，在 C + + /CX ref 類別，就像任何.NET Framework 類別。
 
 ## <a name="datetime"></a>DateTime
 在 Windows 執行階段中，[Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) 物件只是一個 64 位元帶正負號的整數，它代表 1601 年 1 月 1 日之前或之後的 100 奈秒間隔數。 Windows:Foundation::DateTime 物件上沒有任何方法。 相反地，使用每種語言撰寫專案時，都可以使用該語言原生的 DateTime 表達方式：JavaScript 中有 Date 物件，而 .NET Framework 中有 System.DateTime 和 System.DateTimeOffset 類型。
@@ -225,7 +225,7 @@ public:
 };
 ```
 
-當您傳遞的 DateTime 值 C + + CX javascript、 JavaScript 接受做為日期物件並將其顯示預設為 long 表單日期字串。
+當您將 DateTime 值傳遞從 C + + /CX javascript，JavaScript 視為 Date 物件來接受它，並顯示預設為完整格式的日期字串。
 
 ```javascript
 function SetAndGetDate() {
@@ -242,7 +242,7 @@ function SetAndGetDate() {
 }
 ```
 
-當.NET 語言會 System.DateTime 傳遞到 C + + CX 元件方法會接受其為 Windows::Foundation::DateTime。 當元件將 Windows::Foundation::DateTime 傳給 .NET Framework 方法時，Framework 方法會將這個值當做 DateTimeOffset 來接受它。
+當.NET 語言將 system.datetime 傳至 C + + /CX 元件方法來接受它做為 datetime。 當元件將 Windows::Foundation::DateTime 傳給 .NET Framework 方法時，Framework 方法會將這個值當做 DateTimeOffset 來接受它。
 
 ```csharp
 private void DateTimeExample()
@@ -263,7 +263,7 @@ private void DateTimeExample()
 ```
 
 ## <a name="collections-and-arrays"></a>集合和陣列
-集合跨 ABI 界限傳遞時一律是採 Windows 執行階段類型之控制代碼的形式，例如 Windows::Foundation::Collections::IVector^ 與 Windows::Foundation::Collections::IMap^。 例如，如果您將控制代碼傳回 Platform::Collections::Map，它會隱含地轉換成 Windows::Foundation::Collections::IMap^。 集合介面所定義的命名空間不同 C + + CX 類別提供具體實作。 JavaScript 和 .NET 語言都會使用這些介面。 如需詳細資訊，請參閱[集合 (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) 和 [Array 和 WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx)。
+集合跨 ABI 界限傳遞時一律是採 Windows 執行階段類型之控制代碼的形式，例如 Windows::Foundation::Collections::IVector^ 與 Windows::Foundation::Collections::IMap^。 例如，如果您將控制代碼傳回 Platform::Collections::Map，它會隱含地轉換成 Windows::Foundation::Collections::IMap^。 集合介面定義在命名空間中不同於 C + + /CX 提供具象實作的類別。 JavaScript 和 .NET 語言都會使用這些介面。 如需詳細資訊，請參閱[集合 (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) 和 [Array 和 WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx)。
 
 ## <a name="passing-ivector"></a>傳遞 IVector
 ```cpp
@@ -349,7 +349,7 @@ private void GetDictionary()
 ```
 
 ## <a name="properties"></a>屬性
-公用 ref 類別的 C + + CX 元件延伸模組會公開公用資料成員屬性，以使用屬性關鍵字。 這個概念與 .NET Framework 屬性相同。 由於 trivial 屬性的功能都是隱含的，因此與資料成員類似。 非 trivial 屬性具有明確的 get 和 set 存取子，以及一個可做為值之「備份存放區」的具名私用變數。 在此範例中，私用成員變數 \_propertyAValue 是 PropertyA 的備份存放區。 屬性可以在其值變更時引發事件，而用戶端 app 可註冊來接收該事件。
+公用 ref 類別，在 C + + /CX 元件擴充功能所公開的公用資料成員作為屬性，使用屬性關鍵字。 這個概念與 .NET Framework 屬性相同。 由於 trivial 屬性的功能都是隱含的，因此與資料成員類似。 非 trivial 屬性具有明確的 get 和 set 存取子，以及一個可做為值之「備份存放區」的具名私用變數。 在此範例中，私用成員變數 \_propertyAValue 是 PropertyA 的備份存放區。 屬性可以在其值變更時引發事件，而用戶端 app 可註冊來接收該事件。
 
 ```cpp
 //Properties
@@ -396,7 +396,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-.NET 語言存取屬性在原生 C + + CX 物件只是按照它們在.NET Framework 物件上。
+.NET 語言存取屬性上原生 C + + /CX 物件就像在.NET Framework 物件上如出一轍。
 
 ```csharp
 private void GetAProperty()
@@ -511,7 +511,7 @@ nativeObject.fireEvent("The answer is ");
 如上述範例所示，在 C# 中，無論事件處理常式的數目為何，都可以使用 += 運算子來訂閱事件。
 
 ## <a name="enums"></a>列舉
-Windows Runtime 列舉在 C + + CX 宣告使用公用類別列舉;它的格式類似於 standard c + + 中範圍的列舉。
+Windows 執行階段列舉，在 C + + /CX 宣告的使用公用類別列舉;它類似於標準 c + + 中限定範圍的列舉。
 
 ```cpp
 public enum class Direction {North, South, East, West};
@@ -529,7 +529,7 @@ private:
 };
 ```
 
-列舉值傳遞之間 C + + CX 及 JavaScript 為整數。 您可以選擇性地宣告 JavaScript 物件，其中包含相同的已命名的值為 C + + CX 列舉和使用它做為依下列方式。
+列舉值傳遞之間 C + + /CX 與 JavaScript 以整數形式。 您可以選擇性地將 JavaScript 物件宣告為包含相同的具名的值做為 C + + /CX 列舉並使用它做為如下。
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -546,7 +546,7 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 ## <a name="asynchronous-methods"></a>非同步方法
 若要使用其他 Windows 執行階段物件所公開的非同步方法，請使用 [task 類別 (並行執行階段)](https://msdn.microsoft.com/library/hh750113.aspx)。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)](https://msdn.microsoft.com/library/dd492427.aspx)。
 
-若要實作非同步方法的 C + + CX、 使用 ppltasks.h 中所定義的[create\_async](https://msdn.microsoft.com/library/hh750102.aspx)函數。 如需詳細資訊，請參閱[建立非同步作業 C + + CX UWP apps](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 如需範例，請參閱[逐步解說： 建立基本的 Windows 執行階段元件在 C + + CX 呼叫從 JavaScript 或 C# 和](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 語言取用 C + + CX 只是按照它們定義.NET Framework 中任何非同步方法的非同步方法。
+若要實作非同步方法，在 C + + /CX，使用 ppltasks.h 中定義的[create\_async](https://msdn.microsoft.com/library/hh750102.aspx)函式。 如需詳細資訊，請參閱[建立非同步作業在 C + + /CX 適用於 UWP app](https://msdn.microsoft.com/library/vstudio/hh750082.aspx)。 如需範例，請參閱[逐步解說： 建立基本 Windows 執行階段元件，在 C + + /CX，然後從 JavaScript 或 C# 呼叫該](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)。 .NET 語言使用 C + + /CX 它們像在.NET Framework 中定義的任何非同步方法一樣的非同步方法。
 
 ## <a name="exceptions"></a>例外狀況
 您可以擲回 Windows 執行階段所定義的任何例外狀況類型。 您無法從任何 Windows 執行階段例外狀況類型衍生自訂類型。 不過，您可以擲回 COMException，並提供自訂的 HRESULT，以供攔截到例外狀況的程式碼存取。 您無法在 COMException 中指定自訂訊息。
@@ -556,9 +556,9 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 
 請務必在封裝設計工具中選取適當的功能。 例如，如果您嘗試使用 Windows 執行階段 API 來開啟使用者圖片庫中的影像檔，請務必選取資訊清單設計工具的 [功能] 窗格中的 [圖片庫] 核取方塊。
 
-如果 JavaScript 程式碼似乎無法辨識元件中的公用屬性或方法，請確定您在 JavaScript 中使用的是 Camel 命名法的大小寫慣例。 例如，LogCalc C+ + CX 方法必須參照為 logCalc 在 JavaScript 中。
+如果 JavaScript 程式碼似乎無法辨識元件中的公用屬性或方法，請確定您在 JavaScript 中使用的是 Camel 命名法的大小寫慣例。 例如，LogCalc C + /CX 方法必須當做 JavaScript 中的 logcalc 來參考。
 
-如果您移除 C + + CX Windows 執行階段元件專案從一種解決方案，您必須也手動移除從 JavaScript 專案的專案參照。 若未執行此動作，後續的偵錯或建置作業將無法執行。 之後如有必要，您可以加入 DLL 的組件參考。
+如果您移除 C + + /CX 的 Windows 執行階段元件專案的方案，您也必須手動移除該專案的參考從 JavaScript 專案。 若未執行此動作，後續的偵錯或建置作業將無法執行。 之後如有必要，您可以加入 DLL 的組件參考。
 
 ## <a name="related-topics"></a>相關主題
-* [逐步解說： 建立基本的 Windows 執行階段元件 C + + CX 和呼叫從 JavaScript 或 C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+* [逐步解說： 建立基本 Windows 執行階段元件，在 C + + /CX 然後從 JavaScript 或 C# 呼叫該元件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

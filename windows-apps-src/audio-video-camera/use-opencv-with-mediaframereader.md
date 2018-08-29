@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2886638"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913035"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
@@ -32,7 +32,7 @@ ms.locfileid: "2886638"
 
 除了這些文章，若要檢視及下載本文所述案例的完整端對端工作範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003) (英文)。
 
-若要開始進行開發快速，您可以包含 OpenCV 文件庫 UWP 應用程式專案中使用 NuGet 套件，但是這些套件可能沒有傳遞任何應用程式 certficication 程序時您提交您的應用程式存放區，因此建議您下載 OpenCV文件庫來源程式碼及提交您的應用程式之前自行建立二進位檔案。 使用 OpenCV 開發的相關資訊位於 [http://opencv.org](http://opencv.org)
+若要開始快速發展，您可以將 OpenCV 程式庫中包含 UWP app 專案使用 NuGet 套件，但當您提交您的應用程式到市集，所以建議您下載 OpenCV，這些套件可能無法通過應用程式 certficication 程序文件庫來源的程式碼，並自行建立二進位檔，再提交您的應用程式。 使用 OpenCV 開發的相關資訊位於 [http://opencv.org](http://opencv.org)
 
 
 ## <a name="implement-the-opencvhelper-native-windows-runtime-component"></a>實作 OpenCVHelper 原生 Windows 執行階段元件

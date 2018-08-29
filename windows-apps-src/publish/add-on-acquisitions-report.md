@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887497"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905691"
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 
 
-Windows 開發人員中心儀表板中**的附加元件擷取**報告可讓您查看您是否已售出，以及人口統計的多少附加元件與平台的詳細資訊，並顯示轉換資訊 （包括 Xbox） 的 Windows 10 客戶。 您也可以檢視最後一小時或 seventy 兩個小時期間內附近即時擷取資料。
+在 Windows 開發人員中心儀表板中的**附加元件下載數**報告可讓您查看有多個附加元件，您所銷售、 人數統計資料及平台詳細資訊，並顯示適用於 Windows 10 （包括 Xbox） 客戶的轉換資訊。 您也可以檢視的最後一個小時或 seventy 兩個小時期間接近即時的下載數資料。
 
 您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得附加元件下載數](../monetize/get-in-app-acquisitions.md)方法來擷取此資料。
 
@@ -32,7 +32,7 @@ Windows 開發人員中心儀表板中**的附加元件擷取**報告可讓您�
 
 ## <a name="apply-filters"></a>套用篩選
 
-在頁面頂端附近，您可以選取您想要顯示資料的時間週期。 預設選項是 **30D**（30 天），但您可以選擇在 3、6 或 12 個月期間顯示資料，或指定自訂的日期範圍。 您也可以選取**1 H**或**72 H**幾近即時擷取資料顯示為一小時或 seventy 兩個小時。這些時段僅適用於 [**每日的附加元件**] 索引標籤的**附加元件併**圖表以及**市場**圖表的**併**] 索引標籤。 
+在頁面頂端附近，您可以選取您想要顯示資料的時間週期。 預設選項是 **30D**（30 天），但您可以選擇在 3、6 或 12 個月期間顯示資料，或指定自訂的日期範圍。 您也可以選取**1 H**或**72h**來顯示近乎即時的下載數資料的一小時或 seventy 兩個小時。**附加元件下載數**圖表的 [**附加元件每日**] 索引標籤，以及**市場**圖表的 [**下載**] 索引標籤，僅適用於這些時間期間。 
 
 您也可以展開 **\[篩選條件\]**，依特定附加元件、市場和/或裝置類型篩選此頁面上的所有資料。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b0b6315b1177138c3ede7834e2dbc792ee106dd
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2895257"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910202"
 ---
 # <a name="guidance-for-app-package-management"></a>應用程式套件管理指導方針
 
@@ -32,7 +32,7 @@ ms.locfileid: "2895257"
 
 不同的作業系統上可以執行不同類型的套件。 如果有一個以上的套件可以在客戶的裝置上執行，則 Microsoft Store 將提供最佳絕配。
 
-一般而言，較新的作業系統版本可以針對相同的裝置系列，執行以之前作業系統版本為目標的套件。 不過，如果應用程式不會包含指向其目前的 OS 版本封裝客戶會只取得這些套件。
+一般而言，較新的作業系統版本可以針對相同的裝置系列，執行以之前作業系統版本為目標的套件。 不過，客戶只會取得那些套件，如果 app 不包含以其目前的作業系統版本為目標的套件。
 
 例如，Windows 10 裝置可以執行所有先前支援的作業系統版本 (每個裝置系列)。 Windows 10 桌面裝置可以執行針對 Windows 8.1 或 Windows 8 建置的 app；Windows 10 行動裝置可以執行針對 Windows Phone 8.1、Windows Phone 8 和 Windows Phone 7.x 所建置的 app。 
 
@@ -77,7 +77,7 @@ ms.locfileid: "2895257"
 |--------------------------------------|----------------------------------------------|
 | Windows 10 (通用裝置系列) | Windows 10 (所有裝置系列)             |
 
-在範例 app 4 中，任何執行 Windows 10 的裝置均可取得 app，但舊版作業系統的客戶無法使用該 app。 因為 UWP 套件所談的是通用裝置系列，其可用以任何 Windows 10 的裝置 （每個您的[裝置系列的可用性選項](device-family-availability.md)）。
+在範例 app 4 中，任何執行 Windows 10 的裝置均可取得 app，但舊版作業系統的客戶無法使用該 app。 因為 UWP 套件以通用裝置系列為目標，則將其提供給任何 Windows 10 的裝置 （每個您的[裝置系列可用性選取項目](device-family-availability.md)）。
 
 
 ## <a name="removing-an-app-from-the-store"></a>從 Microsoft Store 移除 App
@@ -99,9 +99,9 @@ ms.locfileid: "2895257"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>移除先前支援之裝置系列的套件
 
-如果您移除的特定[裝置系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)您的應用程式先前支援，提示您確認這是您用意之前您可以將變更儲存在 [**套件**] 頁面上, 的所有套件。
+如果您要移除所有套件之特定[裝置系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)，您的應用程式先前支援，系統將提示您確認這是您的目的，您可以在 \ [**套件**] 頁面上儲存您的變更之前。
 
-當您發佈會移除所有在您的應用程式先前支援的裝置系列無法執行套件的送出新客戶將無法取得該裝置系列上的應用程式。 此後您還是可以發佈其他更新，以再次針對該裝置系列提供套件。
+當您發佈移除所有套件，可在您的應用程式先前支援的裝置系列上執行的提交時，新客戶將無法取得該裝置系列上的應用程式。 此後您還是可以發佈其他更新，以再次針對該裝置系列提供套件。
 
 請注意，即使您移除支援特定裝置系列的所有套件，任何已安裝該 app 的現有客戶仍能夠使用它，且他們會取得您之後所提供的任何更新。
 
@@ -110,7 +110,7 @@ ms.locfileid: "2895257"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>將適用於 Windows 10 的套件新增至先前發佈的 app
 
-如果您在市集中有一個以 Windows 8.x 和/或 Windows Phone 8.x 為目標的 App，但是想要更新該 App 使之適用於 Windows 10 時，請在進行 [[套件](upload-app-packages.md)] 步驟時建立新的提交並新增 UWP .appxupload 套件。 您的應用程式會通過憑證程序後，已經有您的應用程式，現在在 Windows 10 的客戶會取得 UWP 套件更新為存放區。 Windows 10 上的客戶也可以透過全新取得的方式獲取 UWP 套件。
+如果您在市集中有一個以 Windows 8.x 和/或 Windows Phone 8.x 為目標的 App，但是想要更新該 App 使之適用於 Windows 10 時，請在進行 [[套件](upload-app-packages.md)] 步驟時建立新的提交並新增 UWP .appxupload 套件。 您的應用程式通過認證程序後，已經擁有您的 app 且現在位於 Windows 10 的客戶將會從 microsoft Store 就做為更新取得您的 UWP 套件。 Windows 10 上的客戶也可以透過全新取得的方式獲取 UWP 套件。
 
 > [!NOTE]
 > 一旦 Windows 10 客戶取得您的 UWP 套件後，您無法讓該客戶回復到使用任何之前作業系統版本的套件。 
@@ -122,9 +122,9 @@ ms.locfileid: "2895257"
 > [!IMPORTANT]
 > 請記住，如果您提供以通用裝置系列為目標的套件，那麼已經在任何舊版作業系統 (Windows Phone 8、Windows 8.1 等) 中擁有您的應用程式而後升級至 Windows 10 的客戶，將會進行更新以取得 Windows 10 套件。
 > 
-> 發生這種情況即使您已自排除特定裝置系列[裝置系列可用性](device-family-availability.md)步驟中的您提交] 區段中僅適用於新併。 如果您不想每一位先前客戶取得您的通用 Windows 10 套件，請務必更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素，只包含您想要支援的特定裝置系列。
+> 發生這種情況即使您已排除特定裝置系列的[裝置系列可用性](device-family-availability.md)步驟中的您的提交，因為一節，僅適用於全新取得的情況。 如果您不想每一位先前客戶取得您的通用 Windows 10 套件，請務必更新您的 appx 資訊清單中的 [**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) 元素，只包含您想要支援的特定裝置系列。
 > 
-> 例如，假設您想要在 Windows 8 和 Windows 8.1 客戶已升級至 Windows 10 桌面裝置以取得新的 UWP 應用程式，但又想要立即保留您先前一樣的套件 Windows 10 行動裝置進行 availabl 任何 Windows Phone 客戶e （目標 Windows Phone 8 或 Windows Phone 8.1）。 為達成此目的，您將需要更新[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) appx 資訊清單中要包含只**Windows.Desktop** （適用於桌面裝置系列），而不是離開**Windows.Universal**值 （通用裝置系列的）預設包含在資訊清單中的 Microsoft Visual Studio。 請勿提交任何針對通用或行動裝置系列的 UWP 套件 (**Windows.Universal** 或 **Windows.Universal**)。 如此一來，您的 Windows 10 行動裝置版客戶將不會取得任何 UWP 套件。
+> 例如，假設您想要讓您 Windows 8 和 Windows 8.1 客戶已升級至 Windows 10 desktop 裝置，以取得新的 UWP 應用程式，但您想要的任何 Windows Phone 客戶現在要保留您的套件先前的 Windows 10 行動裝置版裝置進行 available （Windows Phone 8 或 Windows Phone 8.1 為目標）。 若要這樣做，您將需要更新[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)您 appx 資訊清單中包含僅**Windows.Desktop** （適用於桌面裝置系列），而不是保留做為**Windows.Universal**值 （適用於通用裝置系列）Microsoft Visual Studio 預設包含在資訊清單中。 請勿提交任何針對通用或行動裝置系列的 UWP 套件 (**Windows.Universal** 或 **Windows.Universal**)。 如此一來，您的 Windows 10 行動裝置版客戶將不會取得任何 UWP 套件。
 
 
 ## <a name="maintaining-package-compatibility-for-windows-phone-81"></a>維護 Windows Phone 8.1 的套件相容性

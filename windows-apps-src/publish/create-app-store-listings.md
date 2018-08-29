@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882541"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2910288"
 ---
 # <a name="create-app-store-listings"></a>建立應用程式 Store 清單
 
@@ -42,22 +42,22 @@ ms.locfileid: "2882541"
 
 完成選擇後，按一下 **\[儲存\]**，以返回提交概觀頁面。
 
-## <a name="add-and-edit-store-listing-info"></a>新增和編輯列出資訊的存放區
+## <a name="add-and-edit-store-listing-info"></a>新增和編輯市集清單資訊
 
-若要編輯列出存放區，請從 [送出概觀] 頁面上選取語言名稱。
+若要編輯市集清單，請從提交概觀頁面選取的語言名稱。
 
 在 [**Microsoft Store清單**] 頁面的最上方是與所選語言的預設Microsoft Store清單相關聯的欄位。 除非您有以先前作業系統版本 (Windows 8.x 或更舊版本；Windows Phone 8.x 或更舊版本) 為目標的套件，而且建立了平台專屬的Microsoft Store清單以包含不同的螢幕擷取畫面或向客戶顯示的指定作業系統版本相關資訊，否則您的所有客戶都會看見這些欄位。 如需詳細資訊，請參閱[建立平台專屬的Microsoft Store清單](create-platform-specific-store-listings.md)。
 
 ## <a name="product-name"></a>產品名稱
 
-此下拉式方塊可讓您指定哪些名稱應用於存放區清單 （如果您有保留多個應用程式的名稱）。
+這個下拉式方塊可讓您指定 （如果您沒有保留多個應用程式名稱），應該在市集清單中使用的名稱。
 
-如果您已上傳為您使用存放區清單的相同語言套件，會選取那些封裝中所用的名稱。 如果您需要重新[命名 app](manage-app-names.md#rename-an-app-that-has-already-been-published)已經已發佈之後，您可以使用套件所使用的新名稱建立新的送出時選取不同保留的名稱此處。
+如果您已經上傳相同的語言，做為您正在使用的市集清單中的套件，將會選取這些套件中使用的名稱。 如果您需要重新命名[應用程式](manage-app-names.md#rename-an-app-that-has-already-been-published)，它已經發佈之後，您可以選取不同保留的名稱這裡，當您使用新的名稱的套件，以建立新的提交。
 
-如果您尚未上載語言套件，您使用和已保留多個名稱、 您需要選取其中一個保留應用程式名稱中，由於從中提取名稱該語言沒有相關聯的套件。
+如果您尚未上傳套件的語言，您使用和您已經保留多個名稱，您將需要選取其中一個已保留的 app 名稱，因為沒有該語言可從中提取名稱且相關聯的套件。
 
 > [!NOTE]
-> **產品名稱**選取 [僅適用於正在運作中列出的語言的存放區。 不會影響客戶安裝應用程式; 時所顯示的名稱該名稱來自取得安裝套件的資訊清單。 若要避免混淆，我們建議每個語言套件及存放區清單使用相同的名稱。
+> **產品名稱**您選取 [僅適用於您工作的市集清單的語言。 它不會影響在客戶安裝應用程式; 時所顯示的名稱取得已安裝的套件資訊清單來自該名稱。 若要避免混淆，我們建議每一種語言的封裝和市集清單使用相同的名稱。
 
 ## <a name="description"></a>描述
 
@@ -103,7 +103,7 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 <a id="supplemental-information" />
 
-## <a name="supplemental-fields"></a>附加欄位
+## <a name="supplemental-fields"></a>補充的欄位
 
 本區段中的欄位全部是選用。 請檢閱下方資訊，以判斷提供這項資訊對您的提交是否具有意義。 尤其是，針對大部分提交，建議使用**簡短描述**。 其他欄位可協助提供您的產品用於不同案例的最佳體驗。
 
@@ -134,7 +134,7 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 遊戲的簡短描述可能也會出現在 Xbox One 遊戲中心的 [資訊] 一節。
 
-為了獲得最佳結果保留在簡短描述底下 270 字元。 [] 欄位中有 500 字元的限制，但是在某些] 檢視中的第一次 270 個字元會顯示 （使用可以檢視的簡短描述其餘的連結）。
+為獲得最佳結果，讓您的簡短描述下 270 的字元。 欄位有 500 個字元的限制，但在某些檢視中，只有第一次 270 字元將會顯示 （的連結可用來檢視的簡短描述的其餘部分）。
 
 
 ### <a name="additional-system-requirements"></a>其他系統需求

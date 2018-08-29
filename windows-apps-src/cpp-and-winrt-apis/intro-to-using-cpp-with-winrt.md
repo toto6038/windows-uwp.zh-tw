@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
 ms.openlocfilehash: 03abe68fd19573d7b2deba9937c515a8641e8fca
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2885903"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2913095"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;
@@ -22,7 +22,7 @@ ms.locfileid: "2885903"
 
 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
 
-C + + WinRT 是 Microsoft 的建議的取代[C + + CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)語言預測和[Windows Runtime c + + 範本文件庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整清單[主題相關 C + + WinRT](index.md#topics-about-cwinrt)包含資訊同時互通，並從移植，C + + CX 和 WRL。
+C + + /winrt 是 Microsoft 的建議替代方案為[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)語言投影，與[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整清單[主題有關 C + + /winrt](index.md#topics-about-cwinrt)包含的資訊是有關同時互通，並從移植，C + + /CX 與 WRL。
 
 > [!IMPORTANT]
 > 最重要的兩個 C++/WinRT 項目會在 [C++/WinRT 的 SDK 支援](#sdk-support-for-cwinrt) 和 [C++/WinRT 的支援，以及 VSIX](#visual-studio-support-for-cwinrt-and-the-vsix) 等章節中說明。
@@ -41,9 +41,9 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過*語�
 ## <a name="visual-studio-support-for-cwinrt-and-the-vsix"></a>C++/WinRT 的 Visual Studio 支援，以及 VSIX
 適用於 Visual Studio 中的 C++/WinRT 專案範本，以及 C++/WinRT MSBuild 屬性及目標，從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 下載並安裝 [C + + / WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)。
 
-您將需要 Visual Studio 2017 (至少為版本 15.6；我們建議至少 15.7) 和 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803)。 如果您尚未其安裝，您需要安裝 Visual Studio 安裝程式中的 [從**c + + 通用 Windows 平台工具**選項。 與 Windows**設定**] 中 > **更新 \ & Security** > **適用於開發人員**，選擇 [**開發人員模式**] 選項而不是**Sideload 應用程式**] 選項。
+您將需要 Visual Studio 2017 (至少為版本 15.6；我們建議至少 15.7) 和 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803)。 如果您在尚未安裝它，您將需要安裝 Visual Studio 安裝程式中的從**c + + 通用 Windows 平台工具**選項。 和在 Windows**設定**中 > **更新 \ & 安全性** > **適用於開發人員**，選擇 [**開發人員模式**] 選項，而不是 [**側載應用程式**] 選項。
 
-您將接著可以建立和建立或開啟、 C + + WinRT project 在 Visual Studio 中，以及如何進行部署。 或者，您可以在這裡轉換現有專案新增`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性及其`.vcxproj`檔案。
+您將會接著能夠建立和建置，或開啟，C + + /winrt 投影在 Visual Studio 中，並將它部署。 或者，您可以轉換現有的專案，藉由新增`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性，以其`.vcxproj`檔案。
 
 ```xml
 <Project ...>

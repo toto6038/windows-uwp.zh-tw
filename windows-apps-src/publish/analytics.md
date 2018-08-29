@@ -8,14 +8,14 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 分析、 報告、 儀表板、 應用程式、 資料、 評量
+keywords: windows 10、 uwp、 分析、 報告、 儀表板，應用程式、 資料、 計量
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892459"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2907891"
 ---
 # <a name="analyze-app-performance"></a>分析應用程式效能
 
@@ -39,7 +39,7 @@ ms.locfileid: "2892459"
 -   [評論報告](reviews-report.md)
 -   [意見反應報告](feedback-report.md)
 -   [Xbox 分析報告](xbox-analytics-report.md)
--   [前瞻報告](insights-report.md)
+-   [見解報告](insights-report.md)
 -   [廣告績效報告](advertising-performance-report.md)
 -   [廣告活動報告](promote-your-app-report.md)
 

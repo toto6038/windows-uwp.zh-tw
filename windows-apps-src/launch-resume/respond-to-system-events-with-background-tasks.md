@@ -8,18 +8,18 @@ ms.date: 07/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp、 背景工作
+keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
 ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2890694"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2918316"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>使用背景工作回應系統事件
 
@@ -83,7 +83,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 ```
 
 > [!NOTE]
-> 通用 Windows 平台應用程式必須先呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)再登錄任何背景觸發類型。
+> 通用 Windows 平台應用程式必須呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) ，才能登錄任何背景觸發程序類型。
 
 為了確保您的通用 Windows app 會在您發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在 app 於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 

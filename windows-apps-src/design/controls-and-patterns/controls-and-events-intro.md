@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f8f86a6988e68e3ff8d2dfef32512633b3761fd
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882571"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905961"
 ---
 # <a name="intro-to-controls-and-patterns"></a>控制項和模式的簡介
 
@@ -25,7 +25,7 @@ ms.locfileid: "2882571"
 
 > **重要 API**：[Windows.UI.Xaml.Controls 命名空間](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.aspx)
 
-*模式*是修改控制項或結合數個控制項以創造新項目的秘訣。 例如，[主要/詳細資料](master-details.md)模式是一種方式，您可以使用[SplitView](split-view.md)控制項的應用程式導覽。 同樣地，您可以自訂以實作] 索引標籤圖樣[NavigationView](navigationview.md)控制項的範本。
+*模式*是修改控制項或結合數個控制項以創造新項目的秘訣。 例如[主要/詳細資料](master-details.md)模式時，您可以使用[SplitView](split-view.md)控制項，瀏覽 app 的方式。 同樣地，您可以自訂來實作索引標籤模式[NavigationView](navigationview.md)控制項的範本。
 
 在許多情況下，您可以直接使用控制項。 但 XAML 控制項將功能和結構與外觀分開處理，因此您可以依據需求做出不同程度的修改。 在[樣式](../style/index.md)一節中，您會了解如何使用 [XAML 樣式](xaml-styles.md)與[控制項範本](control-templates.md)來修改控制項。
 
