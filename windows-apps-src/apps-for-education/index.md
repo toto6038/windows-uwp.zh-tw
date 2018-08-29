@@ -7,18 +7,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10、 uwp education
+keywords: windows 10，uwp，教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2882674"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905421"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows App
-![讓 a test app 的螢幕擷取畫面](images/take-a-test-screen-small.png)
+![「 進行測驗應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)
 
 下列資源會協助您撰寫教育用通用 Windows App。
 

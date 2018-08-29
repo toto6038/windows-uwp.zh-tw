@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888067"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905491"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
@@ -35,7 +35,7 @@ ms.locfileid: "2888067"
 提供三個版本的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
 
 >[!NOTE]
->使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI 執行緒以及顯示進度從工作項目。
+>使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI 執行緒及顯示進度從工作項目。
 
 下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
 

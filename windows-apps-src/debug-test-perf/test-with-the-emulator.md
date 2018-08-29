@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892006"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2904793"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -29,9 +29,9 @@ ms.locfileid: "2892006"
 
 您的電腦必須符合下列需求：
 
-CPU （這些設定，如果有的話可以啟用 BIOS 中）
+CPU （這些設定，如果有的話，可以啟用在 BIOS 中）
 
--   硬體輔助虛擬化 （[檢查相容性](https://www.microsoft.com/download/details.aspx?id=592)）。
+-   硬體協助虛擬化 （[檢查的相容性](https://www.microsoft.com/download/details.aspx?id=592)）。
 -   第二層位址轉譯 (SLAT)。
 -   硬體型資料執行防止 (DEP)。
 
@@ -49,11 +49,11 @@ RAM
 
 若要檢查 RAM 與作業系統的需求，請在 [控制台] 中選取 **\[系統及安全性\]**，然後選取 **\[系統\]**。
 
-Microsoft Windows 10 行動電話模擬器需要 Visual Studio 2015 或更新版本 ；它不是舊版的 Visual Studio 與舊版相容。
+適用於 Windows 10 行動裝置版的 Microsoft 模擬器需要 Visual Studio 2015 或更新版本;它不是使用較舊版本的 Visual Studio 回溯相容。
 
 適用於 Windows 10 行動裝置版的 Microsoft 模擬器無法載入以 Windows Phone OS 7.1 之前的 Windows Phone OS 版本為目標的應用程式。
 
-## <a name="installing-uninstalling-and-running-the-emulator"></a>安裝、 解除安裝以及執行模擬器
+## <a name="installing-uninstalling-and-running-the-emulator"></a>安裝、 解除安裝，以及執行模擬器
 
 ### <a name="installing"></a>安裝
 適用於 Windows 10 行動裝置版的 Microsoft 模擬器隨附於 Windows 10 SDK。 安裝 Visual Studio 時也可以安裝 Windows 10 SDK 與模擬器。 請參閱 [Visual Studio 下載頁面](https://go.microsoft.com/fwlink/p/?LinkId=534785)。
@@ -68,7 +68,7 @@ Microsoft Windows 10 行動電話模擬器需要 Visual Studio 2015 或更新版
 
 ### <a name="running"></a>Running
 
-若要在模擬器中執行應用程式，只需模擬的裝置從功能表選取 [**執行**下拉式 Visual Studio 中。
+若要在模擬器中執行的應用程式，只要選取模擬的裝置從 Visual Studio 中**執行**下拉式功能表。
 
 ![可以用於解析度、大小及記憶體的模擬器](images/em-list.png)
 

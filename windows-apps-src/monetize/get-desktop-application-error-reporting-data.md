@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2887777"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905781"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>取得傳統型應用程式的錯誤報告資料
 
-在 Microsoft Store 分析 API 使用此方法，取得傳統型應用程式之彙總錯誤報告資料，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 此方法只能擷取一個在過去 30 天中發生錯誤。 「Windows 開發人員中心」儀表板中傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)也提供此資訊。
+在 Microsoft Store 分析 API 使用此方法，取得傳統型應用程式之彙總錯誤報告資料，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 這個方法只能擷取過去 30 天內發生的錯誤。 「Windows 開發人員中心」儀表板中傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)也提供此資訊。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -49,7 +49,7 @@ ms.locfileid: "2887777"
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取其錯誤報告資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
-| startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期，格式為 ```mm/dd/yyyy```。 預設為目前的日期。<p/><p/>**請注意：**&nbsp;&nbsp;此方法只能擷取一個在過去 30 天中發生錯誤。  |  否  |
+| startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期，格式為 ```mm/dd/yyyy```。 預設為目前的日期。<p/><p/>**注意：**&nbsp;&nbsp;這個方法只能擷取過去 30 天內發生的錯誤。  |  否  |
 | endDate | 日期 | 要擷取錯誤報告資料之日期範圍的結束日期，格式為 ```mm/dd/yyyy```。 預設為目前的日期。   |  否  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |

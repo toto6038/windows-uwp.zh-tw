@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2892447"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905121"
 ---
 # <a name="supported-languages"></a>支援的語言
 
 
-您可以送出至 Microsoft 存放區超過 100 語言的應用程式。
+您可以將 app 提交到 Microsoft 網上商店超過 100 種語言。
 
-若要深入了解您的應用程式中設定的語言，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)和[了解使用者設定檔語言和應用程式資訊清單的語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，可以協助您撰寫支援多種語言的 app。
+若要深入了解在您的應用程式中設定語言，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)，並[了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，可以協助您撰寫支援多種語言的 app。
 
 ## <a name="supported-languages"></a>支援的語言
 
 
-這些是 Microsoft 存放區支援的語言。 您的 app 必須支援以下至少一種語言，並且不得指定此處未包含的任何語言代碼。
+這些是在 Microsoft Store 支援的語言。 您的 app 必須支援以下至少一種語言，並且不得指定此處未包含的任何語言代碼。
 
 | 語言名稱         | 支援的語言代碼                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

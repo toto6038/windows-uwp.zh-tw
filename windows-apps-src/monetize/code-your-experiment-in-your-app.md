@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 9a17266f208ec415fc718e5254d5b4c08835150c
+ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "2888347"
+ms.lasthandoff: 08/29/2018
+ms.locfileid: "2905861"
 ---
 # <a name="code-your-app-for-experimentation"></a>編寫實驗用的 App 程式碼
 
@@ -29,7 +29,7 @@ ms.locfileid: "2888347"
 下列小節描述取得實驗變化及將事件記錄至「開發人員中心」的一般程序。 編寫實驗用的 App 程式碼之後，就可以[在開發人員中心儀表板中定義實驗](define-your-experiment-in-the-dev-center-dashboard.md)。 如需示範建立及執行實驗的端對端處理程序的逐步解說，請參閱[利用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 > [!NOTE]
-> 試驗中 Microsoft Store Services SDK Api 的一些可用於[非同步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)從開發人員中心中擷取資料。 這意謂著這些方法的部分執行可能在方法被呼叫後才發生，因此您 App 的 UI 可以在作業完成時持續回應。 非同步模式會要求您的 App 在呼叫 API 時使用 **async** 關鍵字和 **await** 運算子，如本文的程式碼範例所示範。 根據慣例，非同步方法會以 **Async** 作為結尾。
+> 實驗 Api，Microsoft Store Services SDK 中的一些使用[非同步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)來從開發人員中心 」 擷取資料。 這意謂著這些方法的部分執行可能在方法被呼叫後才發生，因此您 App 的 UI 可以在作業完成時持續回應。 非同步模式會要求您的 App 在呼叫 API 時使用 **async** 關鍵字和 **await** 運算子，如本文的程式碼範例所示範。 根據慣例，非同步方法會以 **Async** 作為結尾。
 
 ## <a name="configure-your-project"></a>設定您的專案
 
@@ -42,7 +42,7 @@ ms.locfileid: "2888347"
 4. 在 SDK 清單中，選取 **\[Microsoft Engagement Framework\]** 旁邊的核取方塊，然後按一下 **\[確定\]**。
 
 > [!NOTE]
-> 本文中的程式碼範例假設您的程式碼檔案已**使用** **System.Threading.Tasks**和**Microsoft.Services.Store.Engagement**命名空間的陳述式。
+> 這篇文章中的程式碼範例假設您的程式碼檔案有**使用** **System.Threading.Tasks**和**Windows.applicationmodel.activation**命名空間的陳述式。
 
 ## <a name="get-variation-data-and-log-the-view-event-for-your-experiment"></a>取得變化資料並記錄實驗的檢視事件
 
@@ -60,7 +60,7 @@ ms.locfileid: "2888347"
 
 2. 宣告一個指派給您所要擷取的實驗之[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)的字串變數。
     > [!NOTE]
-    > 取得專案識別碼何時您[在開發人員中心儀表板建立專案](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 以下所示的專案識別碼僅供範例用途使用。
+    > 取得一個專案識別碼當您[建立在開發人員中心儀表板中的專案](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 以下所示的專案識別碼僅供範例用途使用。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 
