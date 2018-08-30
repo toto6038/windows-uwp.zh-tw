@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb9aad1fa9da79708b3c785da80811006153767
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918929"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3127118"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
@@ -35,7 +35,7 @@ ms.locfileid: "2918929"
 | 組建 10586 (11 月更新，版本 1511) | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10586.md) |
 | 組建 10240 (Windows 10 版本 1507) | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10240.md) |
 
-強烈建議新的開發人員與針對一般大眾撰寫程式碼的開發人員一律使用最新的 Windows 組建 (16299)。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
+我們強烈建議新的開發人員與針對一般大眾撰寫程式碼時，也將一律的開發人員使用最新組建的 Windows (17134)。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
 
 ## <a name="whats-different-in-each-uwp-version"></a>每個 UWP 版本有何差異？
 

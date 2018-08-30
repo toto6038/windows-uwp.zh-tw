@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cded1be4bd7ca5044a2eee8832545a8d83ee3d4
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2908551"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115847"
 ---
 # [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
@@ -57,7 +57,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md) | 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。 |
 | [XAML 項目控制項；繫結至一個 C++/WinRT 集合](binding-collection.md) | 可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。 |
 | [XAML 自訂 （化） 的控制項使用 C + + /winrt](xaml-cust-ctrl.md) | 本主題會引導您完成的步驟建立簡單的自訂控制項使用 C + + /winrt。 您可以在此處資訊來建立您自己的豐富的功能和可自訂的 UI 控制項上建置。 |
-| [使用 DirectX 與其他 COM Api 使用 C + + /winrt](consume-com.md) | 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。 |
+| [使用 DirectX 與其他 COM Api 使用 C + + /winrt](consume-com.md) | 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 使用 COM 類別和介面。 |
 | [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md) | 本主題示範可用於 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 |
 | [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md) | 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。 |
 | [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md) | 本主題示範如何在應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 |
@@ -69,7 +69,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 
 | 主題 | 描述 |
 | - | - |
-| [值類別，以及它們的參考](cpp-value-categories.md) | 本主題描述各種不同的值存在於 c + + 類別。 您將會相信有聽過的值和右，但有也會其他類型。 |
+| [值類別，以及它們的參考](cpp-value-categories.md) | 本主題描述各種不同的值存在於 c + + 類別。 您將會相信有聽過的值和右，但有也會其他的類型。 |
 
 ## <a name="important-apis"></a>重要 API
 * [Winrt 命名空間](/uwp/cpp-ref-for-winrt/winrt)

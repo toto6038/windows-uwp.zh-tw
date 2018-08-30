@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2919068"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3128265"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>量身訂做的效果與使用 Windows UI 體驗
 
-Windows UI 提供許多的美觀效果、 動畫以及表示區分。 不過，符合使用者的期望的效能和自訂仍然是建立成功的應用程式的必要部分。 通用 Windows 平台支援大型的各種不同裝置系列的則這有不同的特色和功能。 若要為所有使用者提供的全人的體驗，您需要確保您的應用程式的縮放比例在裝置上，並尊重使用者的喜好設定。 量身訂做的 UI 可以提供有效率的方式來利用裝置的功能，並確保令人容易接受以及全人使用者體驗。
+Windows UI 提供許多的美觀效果、 動畫以及表示區分。 不過，符合使用者的期望的效能與這些仍然是建立成功的應用程式的必要部分。 通用 Windows 平台支援大型的各種不同裝置系列的則這有不同的特色和功能。 若要為所有使用者提供的全人的體驗，您需要確保您的應用程式的縮放比例在裝置上，並尊重使用者的喜好設定。 量身訂做的 UI 可以提供利用裝置的功能，並確保更令人容易接受以及全人使用者體驗的有效方式。
 
 量身訂做的 UI 是一種廣泛類別，包含適用於高效能，美觀的 UI，根據下列幾個方面：
 
@@ -43,9 +43,9 @@ Windows UI 提供許多的美觀效果、 動畫以及表示區分。 不過，�
 關閉時，壓克力材質會自動切換回純色因為 XAML 的壓克力筆刷根據預設，有接聽此事件。 在這裡，我們還會看到小算盤應用程式適當地後援的純色時不會啟用透明度效果：
 
 ![以壓克力的 [小算盤]](images/tailoring-acrylic.png)
-![[小算盤] 以回應透明度設定的壓克力](images/tailoring-acrylic-fallback.png)
+![小算盤以回應透明度設定的壓克力](images/tailoring-acrylic-fallback.png)
 
-不過，任何自訂效果的應用程式需要回應[UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged)屬性或[AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged)事件，並切換出效果/效果圖形使用不具有任何透明度的效果。 例如，以下是：
+不過，任何自訂效果的應用程式需要回應[UISettings.AdvancedEffectsEnabled](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged)屬性或[AdvancedEffectsEnabledChanged](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged)事件及切換出效果/效果圖形使用不具有任何透明度的效果。 例如，以下是：
 
 ```cs
 public MainPage()
@@ -79,9 +79,9 @@ public MainPage()
 
 ## <a name="leveraging-the-capabilities-api"></a>利用 API 的功能
 
-利用[CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) Api，您可以偵測到的組合功能是提供高效能在指定的硬體，並量身打造設計，以確保使用者在任何裝置上取得的高效能和美觀的體驗。 Api 提供方法來檢查硬體系統功能，才能實作一級各種不同的尺寸規格縮放比例的效果。 這可讓您輕鬆適當地量身打造的應用程式以建立美觀和無縫的一般使用者體驗。
+利用[CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) Api，您可以偵測到的組合功能是提供高效能在指定的硬體，並量身打造設計，以確保使用者在任何裝置上取得的高效能和美觀的體驗。 Api 提供方法，來檢查硬體系統功能，才能實作一級各種不同的尺寸規格縮放比例的效果。 這可讓您輕鬆適當地量身打造的應用程式以建立美觀和無縫的一般使用者體驗。
 
-這個 API 提供方法和事件接聽程式，可以用來進行縮放的應用程式 UI 的決策的效果。 功能偵測複雜的組合和轉譯作業，系統可以處理的程度，然後利用的開發人員輕鬆取用模型中傳回的資訊。
+這個 API 提供方法和事件接聽程式，可以用來進行縮放的應用程式 UI 的決策的效果。 此功能會偵測複雜組合和轉譯作業，系統可以處理的程度，並再輕鬆使用適用於開發人員使用模型中傳回的資訊。
 
 ### <a name="using-composition-capabilities"></a>使用組合功能
 
@@ -101,7 +101,7 @@ API 可以新增至現有的程式碼在幾個簡單步驟中。
     _capabilities.Changed += HandleCapabilitiesChanged;
     ```
 
-1. 將內容新增到事件回呼方法，以處理各種不同功能層級。 這可能會或可能不是類似下列的下一個步驟。
+1. 將內容新增到事件回呼方法，以處理各種不同功能層級。 這可能會或可能不會相當類似下列的下一個步驟。
 1. 時使用效果，請先檢查的功能物件。 請考慮使用條件式檢查或切換控制陳述式，取決於您想要量身打造效果的方式。
 
     ```cs
@@ -120,10 +120,10 @@ API 可以新增至現有的程式碼在幾個簡單步驟中。
 
 ## <a name="fast-vs-slow-effects"></a>快速與緩慢的效果
 
-根據意見反應提供[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast)方法中 CompositionCapabilties API，應用程式可以決定能為其所選擇的其他效果最佳化的高度耗費資源或不受支援的效果適用於裝置。 某些效果已知為以一致的方式較大量的資源比其他應該謹慎，使用與其他效果可以使用更自由地。 所有的效果，不過，針對應該使用時鏈結，並產生動畫效果做為某些案例或組合可能會變更效果圖形的效能特性。 以下是一些通用的原則的效能特性個別的效果：
+根據提供[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast)方法 CompositionCapabilties API 中的意見反應，應用程式可以決定高度耗費資源或不受支援的效果能為他們選擇已進行最佳化的其他效果適用於裝置。 某些效果已知為以一致的方式較大量的資源比其他應該謹慎，使用與其他效果可以使用更自由地。 所有的效果，不過，針對應該使用時鏈結，並產生動畫效果做為某些案例或組合可能會變更效果圖形的效能特性。 以下是一些通用的原則的效能特性個別的效果：
 
 - 效果已知為高效能的影響，如下所示 – 高斯 Blur、 陰影遮罩、 BackDropBrush、 HostBackDropBrush，和視覺層級。 這些不建議使用的低階裝置[（功能層級 9.1 9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，並在高階裝置上應該謹慎使用。
-- 中型效能影響的情況下效果包含色彩矩陣，特定的混合效果 BlendModes （亮度、 色彩、 飽和，以及色調） 焦點、 SceneLightingEffect，及 （取決於案例） BorderEffect。 這些效果可能與某些案例低階裝置上運作，但鏈結，並產生動畫效果時，應該使用小心。 建議限制為兩個或更少的使用，並建立只轉換動畫。
+- 中型效能影響的情況下效果包含色彩矩陣，特定的混合效果 BlendModes （亮度、 色彩、 飽和，以及色調） 焦點、 SceneLightingEffect，及 （取決於案例） BorderEffect。 這些效果可能與特定案例運作低階在裝置上，但鏈結，並產生動畫效果時，應該使用小心。 建議限制為兩個或更少的使用，並建立只轉換動畫。
 - 所有其他效果低效能的影響，且在所有合理的案例時產生動畫效果鏈結中運作。
 
 ## <a name="related-articles"></a>相關文章

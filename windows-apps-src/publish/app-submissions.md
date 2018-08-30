@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9802577f9252b590657406bcb59b0c28adeb4781
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913628"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115929"
 ---
 # <a name="app-submissions"></a>App 提交
 
@@ -25,9 +25,9 @@ ms.locfileid: "2913628"
 您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 您對您的提交的更新會儲存，讓您可以回來，並在其上運作，每當您準備好。
 
 > [!NOTE]
-> 您必須有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能存取[Windows 開發人員中心 」](https://partner.microsoft.com/dashboard)並提交到 Microsoft 網上商店的應用程式。
+> 您必須有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能存取[Windows 開發人員中心](https://partner.microsoft.com/dashboard)，並將 app 提交到 Microsoft 網上商店。
 
-發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發行的應用程式建立新的提交，請按一下 [應用程式概觀] 頁面上所顯示最新提交旁的 [**更新**]。 您也可以[移除從 microsoft Store 應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （和再將其提供一次更新的版本，如果您想要）。
+發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發行的應用程式建立新的提交，請按一下 [應用程式概觀] 頁面上所顯示最新提交旁的 [**更新**]。 您也可以[移除從 microsoft Store 的應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （，並再一次更新的版本，如果您想要）。
 
 > [!NOTE]
 > 本文件章節描述如何在開發人員中心儀表板上建立應用程式提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 促銷代碼, 促銷碼, 預付碼, 預付代碼
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2918899"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3122038"
 ---
 # <a name="generate-promotional-codes"></a>產生促銷代碼
 
@@ -24,7 +24,7 @@ ms.locfileid: "2918899"
 
 每個促銷代碼都有對應的獨特可兌換 URL，客戶可以按一下才能兌換代碼，並從 Microsoft Store 安裝您的 app 或附加元件。  請注意，您的應用程式必須通過 [應用程式認證程序](the-app-certification-process.md)的最終發佈階段，客戶才能兌換促銷碼以安裝它。
 
-您可以產生單一用途代碼 （並發佈給每個客戶的其中一個），或者您可以選擇產生的程式碼可以使用多次藉由指定的客戶數目。
+您可以產生單一用途代碼 （並發佈給每個客戶的其中一個），或者您可以選擇產生的程式碼可以用數次藉由指定的客戶數目。
 
 > [!TIP]
 > 您可以使用[目標式推播通知](send-push-notifications-to-your-apps-customers.md)散發促銷代碼給特定客戶區隔。 當您這樣做，請務必使用允許多位客戶使用相同代碼的促銷碼。
@@ -40,7 +40,7 @@ ms.locfileid: "2918899"
 -   您必須遵循[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定義的需求，包括小節 **3k。促銷碼**。
 
 > [!NOTE]
-> 您可以使用促銷碼，即使您的應用程式無法使用給客戶 (也就是，如果您已選取**推出此產品，但供不在市集中搜尋**與停止取得 **： 擁有直接連結的任何客戶可以看到產品的市集清單，但它們，才能下載已擁有該產品，或具備促銷碼而且使用 Windows 10 裝置**您提交的 [[可搜尋性 \](choose-visibility-options.md#discoverability) ] 區段中選項)。 使用此選項，客戶必須是在 Windows 10 （包括 Xbox） 上，才能取得您的產品具備促銷代碼。
+> 您可以使用促銷碼，即使您的應用程式無法使用時的客戶 (也就是，如果您已選取**推出此產品，但供不在市集中搜尋**與**停止取得： 擁有直接連結的任何客戶可以看到產品的市集清單，但它們，才能下載已擁有該產品，或具備促銷碼而且使用 Windows 10 裝置**您提交的 [[可搜尋性 \](choose-visibility-options.md#discoverability) ] 區段中選項)。 使用此選項，客戶必須是在 Windows 10 （包括 Xbox） 上，才能取得您的產品具備促銷代碼。
 
 
 ## <a name="order-promotional-codes"></a>訂購促銷碼

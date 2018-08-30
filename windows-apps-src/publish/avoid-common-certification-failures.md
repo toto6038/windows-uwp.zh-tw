@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909699"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123215"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
@@ -23,7 +23,7 @@ ms.locfileid: "2909699"
 檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 
 > [!NOTE]
-> 請務必檢閱以確保您的應用程式符合此處所列的需求的所有的[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+> 請務必檢閱以確認您的應用程式符合此處所列的需求的所有的[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 -   只有在完成上述檢閱之後，才提教您的 app。 您可以使用應用程式的介紹來提及即將推出的新功能，但務必確定應用程式中沒有包含未完成的區段或建構中的網頁連結，或是讓客戶覺得您的應用程式有未完成的任何其他項目。
 
@@ -35,7 +35,7 @@ ms.locfileid: "2909699"
 
 -   [提供任何所需的資訊](notes-for-certification.md)來使用應用程式，例如測試帳戶的使用者名稱和密碼 (若您的應用程式需要使用者登入服務)，或存取隱藏或鎖定功能的任何所需步驟。
 
--   您的應用程式需要時包含[隱私權原則](create-app-store-listings.md#privacy-policy)。例如，如果您的應用程式以任何方式存取任何類型的個人資訊或若法律要求時。 若要協助判斷您的應用程式是否需要隱私權原則，檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+-   您的應用程式需要時包含[隱私權原則](create-app-store-listings.md#privacy-policy)。例如，如果您的應用程式以任何方式存取任何類型的個人資訊或若法律要求時。 若要協助判斷您的應用程式是否需要隱私權原則，檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」 和 「 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 -   確定應用程式描述可清楚說明應用程式的功能。 如需說明，請參閱[撰寫一份出色的應用程式介紹](write-a-great-app-description.md)的指導方針。
 

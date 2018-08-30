@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、資料、類型
 ms.localizationpriority: medium
 ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2907217"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112372"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準 C++ 資料類型與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 使用 C++/WinRT，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 Api (請參閱[字串處理在 C + + /winrt](strings.md))，以及您可以傳遞初始設定式清單和標準的容器來預期語意對等的集合 Api。
@@ -92,7 +92,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 沒有謹記如果被呼叫者是非同步的額外細節。 因為該案例的實作詳細資料，而您將需要提供值，因此，您必須提供一份複本或移動向量。 在下列程式碼範例，移動向量的所有權接受非同步被呼叫者的參數類型的物件 (然後我們小心，不要存取`vecH`移動後，一次)。 如果您想要深入了解右，請參閱[值類別，以及它們的參考](cpp-value-categories.md)。
+C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 沒有非同步被呼叫者是否值得注意的額外細節。 因為該案例的實作詳細資料，您將需要提供值，因此您必須提供一份複本或移動向量。 在下列程式碼範例，我們會將向量的所有權藉由非同步被呼叫者的參數類型的物件 (接通小心，不要存取`vecH`移動後，一次)。 如果您想要深入了解右，請參閱[值類別，以及它們的參考](cpp-value-categories.md)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -101,7 +101,7 @@ IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vecto
 }
 ```
 
-但您無法傳遞 **std::vector&lt;std::wstring&gt;** 其中預期一個 Windows 執行階段集合。 這是因為發生轉換至適當的 **std::wstring** Windows 執行階段集合，C++ 語言不會強制該集合的類型參數。 因此，不編譯下列程式碼範例 (和解決方案是將傳遞**std:: vector&lt;winrt:: hstring&gt;** 相反地，如以上所示)。
+但您無法傳遞 **std::vector&lt;std::wstring&gt;** 其中預期一個 Windows 執行階段集合。 這是因為發生轉換至適當的 **std::wstring** Windows 執行階段集合，C++ 語言不會強制該集合的類型參數。 因此，不編譯下列程式碼範例 (和解決方案是通過**std:: vector&lt;winrt:: hstring&gt;** 相反地，如以上所示)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vector<std::wstring> const& vecW)
@@ -113,7 +113,7 @@ IAsyncAction retrieve_properties_async(StorageFile const& storageFile, std::vect
 ## <a name="raw-arrays-and-pointer-ranges"></a>原始陣列和指標範圍
 請記住，在之後 C++ 標準程式庫中可能會存在一個對等項目，您也可以直接使用 **array_view**，如果您選擇如此，或者需要這麼做的話。
 
-**array_view**已從原始陣列，以及從一系列的轉換建構函式**T&ast; ** （指向元素類型）。
+**array_view**已從原始陣列，以及一系列的轉換建構函式**T&ast; ** （指向元素類型）。
 
 ```cppwinrt
 using namespace winrt;
@@ -152,8 +152,8 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 }
 ```
 
-## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>使用非同步 Windows 執行階段 Api 的 c + + 協同程式
-您可以繼續呼叫非同步 Windows 執行階段 Api 時使用[平行模式程式庫 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 。 不過，在許多情況下，c + + 協同程式會提供與非同步物件互動有效率且更輕鬆地編碼慣例。 如需詳細資訊和程式碼範例，請參閱[並行和非同步作業使用 C + + /winrt](concurrency.md)。
+## <a name="c-coroutines-with-asynchronous-windows-runtime-apis"></a>非同步 Windows 執行階段 Api 與 c + + 協同程式
+您可以繼續呼叫非同步 Windows 執行階段 Api 時使用[平行模式程式庫 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 。 不過，在許多情況下，c + + 協同程式有效率且更輕鬆地撰寫慣用語針對的互動提供非同步物件。 如需詳細資訊和程式碼範例，請參閱[並行和非同步作業 C + + /winrt](concurrency.md)。
 
 ## <a name="important-apis"></a>重要 API
 * [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)

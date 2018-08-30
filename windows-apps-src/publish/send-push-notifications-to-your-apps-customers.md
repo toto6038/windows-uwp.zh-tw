@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 目標式通知, 推播通知, 快顯通知, 磚
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917557"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115327"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 
@@ -137,7 +137,7 @@ Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳
 1.  在 Windows 開發人員中心儀表板，展開 [**互動**] 區段，然後選取 [**通知**]。
 2.  在**通知**上，按一下 [**分析**] 索引標籤。此索引標籤上會顯示下列資料：
     * 各種不同的使用者動作狀態，您的快顯通知與重要訊息中心通知的圖形檢視。
-    * 世界地圖檢視的按一下透過-率為您的快顯通知和控制中心的通知。
+    * 世界地圖檢視的按一下透過-率為您的快顯通知和控制中心通知。
 3. 在頁面頂端附近，您可以選取您想要顯示資料的時間週期。 預設選項是 30D（30 天），但您可以選擇在 3、6 或 12 個月期間顯示資料，或指定自訂的日期範圍。 您也可以展開**篩選器**來篩選的所有應用程式和市場的資料。
 
 ## <a name="translate-your-notifications"></a>翻譯您的通知

@@ -9,14 +9,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: d2f9b336d9a95efe28668991d66ab0a9e48e96e7
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: a2e475cc39118824dcdfe777b8729fe2b7da1a1b
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2912365"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112716"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)撰寫 API
+
+> [!NOTE]
+> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
+
 本主題示範如何直接或間接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構撰寫 C++/WinRT API。 在此內容中適用於 *author* 的同義字有 *produce*，或 *implement*。 在此訂單中，本主題涵蓋下列 C++/WinRT 類型的實作 API 案例。
 
 - 您 *不* 撰寫 Windows 執行階段類別 (執行階段類別) ；您只要為應用程式中的本機使用實作一或多個 Windows 執行階段介面。 您可以直接從此案例的 **winrt::implements** 衍生並實作函式。
@@ -252,7 +256,7 @@ namespace MyProject
 }
 ```
 
-從 **MyType** 移至 **IStringable** 或 **IClosable** 物件，您可以使用或傳回做為您投影的一部分，您可以呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函式範本。 **請**傳回實作類型的預設介面。
+從 **MyType** 移至 **IStringable** 或 **IClosable** 物件，您可以使用或傳回做為您投影的一部分，您可以呼叫 [**winrt::make**](/uwp/cpp-ref-for-winrt/make) 函式範本。 **讓**傳回實作類型的預設介面。
 
 ```cppwinrt
 IStringable istringable = winrt::make<MyType>();
@@ -261,7 +265,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > 不過，如果您正在從 XAML UI 參考您的類型，則在相同的專案中將會同時有執行類型和投影類型。 在此情況下，**讓**傳回投影類型的執行個體。 如需該案例的程式碼範例，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-我們可以只使用 `istringable` (在上述的程式碼範例中) 撥打電話給 **IStringable** 介面的成員。 但 C++/WinRT 介面 (這是一個投影介面) 從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以在其介面上撥打電話給 [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) 查詢其他介面，您也可以使用或傳回。
+我們可以只使用 `istringable` (在上述的程式碼範例中) 撥打電話給 **IStringable** 介面的成員。 但 C++/WinRT 介面 (這是一個投影介面) 從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以呼叫[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 在其上查詢其他投影的類型或介面，您也可以是使用或傳回。
 
 ```cppwinrt
 istringable.ToString();
@@ -281,7 +285,12 @@ iclosable.Close();
 
 **MyType** 類別並不是投影的一部分。它是實作。 但這種方式您可以直接撥打其實作方法，而不需要虛擬功能通話的額外負擔。 在上述的範例中，即使 **MyType::ToString** 在 **IStringable** 使用相同簽章做為投影方法，我們仍直接呼叫非 虛擬方法，而不需要通過應用程式二進位介面 (ABI)。 **Com_ptr** 簡單的保留 **MyType** 結構的指標，讓您也可以透過 [`myimpl` 變數和箭號運算子存取的任何其他內部 **MyType** 的詳細資訊。
 
-如此，您有介面物件，並知道這是在您實作上的介面，然後您可以回到使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi)功能範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。 範例如下。
+如此，您有介面物件，並知道這是在您實作上的介面，然後您可以回到使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi)功能範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
+
+> [!NOTE]
+> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，接著您可以呼叫[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+
+範例如下。 [實作**BgLabelControl**自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)沒有另一個範例。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
@@ -309,7 +318,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子存在於您實作類型 (由 `cppwinrt.exe` 工具產生的實作類型提供)，使其變可能。
+如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子存在於您實作類型 (但前提是所產生的實作類型`cppwinrt.exe`工具)，可讓這可能。
 
 ## <a name="deriving-from-a-type-that-has-a-non-trivial-constructor"></a>從一個不小的建構函式衍生
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是一個不小的建構函式的範例 因此，沒有預設建構函式建構 **ToggleButtonAutomationPeer**，您需要傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供取得一個 *owner* 的建構函式，並將它傳遞給基礎。 讓我們看看實際上看起來如何。
@@ -373,6 +382,7 @@ MySpecializedToggleButtonAutomationPeer::MySpecializedToggleButtonAutomationPeer
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::com_ptr::copy_from](/uwp/cpp-ref-for-winrt/com-ptr#comptrcopyfrom-function)
 * [winrt::from_abi 函式範本](/uwp/cpp-ref-for-winrt/from-abi)
+* [winrt::get_self 函式範本](/uwp/cpp-ref-for-winrt/get-self)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self 函式範本](/uwp/cpp-ref-for-winrt/make-self)

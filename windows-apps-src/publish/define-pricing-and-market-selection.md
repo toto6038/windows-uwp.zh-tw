@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 市場, 國家, 地區
 ms.localizationpriority: medium
 ms.openlocfilehash: dd8cdb1f69a9a8a73700483f04d17f64de337347
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906585"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114665"
 ---
 # <a name="define-market-selection"></a>定義市場選取項目
 
 
 Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以選擇提供應用程式的市場，且利用此選項依據市場或市場群組自訂許多[價格與可用性](set-app-pricing-and-availability.md)功能。
 
-為了讓您的應用程式適用於客戶世界各地的資訊，請參閱[全球化指導方針](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)，並[讓您的應用程式可當地語系化](../design/globalizing/prepare-your-app-for-localization.md)。
+為了讓您的 app 適用於客戶世界各地的資訊，請參閱[全球化指導方針](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)，並[讓您的應用程式可當地語系化](../design/globalizing/prepare-your-app-for-localization.md)。
 
 > [!NOTE]
 > 雖然本主題是關於應用程式，但是附加元件提交的市場選擇使用相同的程序。
@@ -480,7 +480,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>針對 Windows 8.x 的「世界其他地方」市場
 
-如果您的應用程式內容包含套件目標為 Windows 8.x，請務必注意市場的數字會被視為單一 「 世界其他地方 」 市場的客戶在 Windows 上使用 microsoft Store 8.x，即使他們在 Windows 開發人員中心中的個別市場以顯示儀表板 (而不是較舊版本的市集儀表板，其中有已將所有這些市場的其中一個 「 世界其他地方 」 市場選項)。
+如果您的應用程式內容包含套件目標為 Windows 8.x，請務必注意市場的數字會被視為單一 「 世界其他地方 」 市場的客戶在 Windows 上使用 microsoft Store 8.x，即使它們會顯示為 Windows 開發人員中心中的個別市場儀表板 (而不是較舊版本的市集儀表板，其中有已將所有這些市場的其中一個的 「 世界其他地方 」 市場選項)。
 
 如果提交您 app 時保留預設的選項，則您不需要擔心這些事，且所有可能的市場都將能使用您的 app。 然而，如果您想要排除某些市場，請記住：就算您只排除「世界其他地方」市場中的一個市場，「世界其他地方」市場上使用 Windows 8 或 Windows 8.1 的客戶都將無法使用您的 app。
 

@@ -1,35 +1,35 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The toggle switch represents a physical switch that allows users to turn things on or off.
 title: 切換開關控制項的指導方針
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a62adf816ece7217de6f2f6cb0ccd505f0a5ad56
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: daffbc5ff74adc234ac6c2b414a7e1b85763849d
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816363"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3122580"
 ---
 # <a name="toggle-switches"></a>切換開關
 
-[切換開關](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)相當於實體開關，讓使用者可以開啟或關閉選項，就像燈光開關一樣。 使用切換開關控制項向使用者顯示兩個互斥的選項 (例如開啟/關閉)，選擇其中一個選項就會立即給出結果。
+切換開關相當於實體開關，讓使用者可以開啟或關閉選項，就像燈光開關一樣。 使用切換開關控制項向使用者顯示兩個互斥的選項 (例如開啟/關閉)，選擇其中一個選項就會立即給出結果。
 
-若要建立切換開關控制項，請使用 [ToggleSwitch 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)。
+若要建立切換開關控制項，請使用 [ToggleSwitch 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)。
 
-> **重要 API**：[ToggleSwitch 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)、[IsOn 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)、[Toggled 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
+> **重要 API**：[ToggleSwitch 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)、[IsOn 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison)、[Toggled 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -101,7 +101,7 @@ stackPanel1.Children.Add(lightToggle);
 
 ### <a name="ison"></a>IsOn
 
-此開關可為開啟或關閉。 使用 [IsOn](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) 屬性判斷開關的狀態。 若使用此開關控制另一個二進位屬性的狀態時，則您可如此處所示使用繫結。
+此開關可為開啟或關閉。 使用 [IsOn](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.ison) 屬性判斷開關的狀態。 若使用此開關控制另一個二進位屬性的狀態時，則您可如此處所示使用繫結。
 
 ```xaml
 <StackPanel Orientation="Horizontal">
@@ -112,7 +112,7 @@ stackPanel1.Children.Add(lightToggle);
 
 ### <a name="toggled"></a>Toggled
 
-在其他情況下，您可處理 [Toggled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) 事件以回應狀態的變更。
+在其他情況下，您可處理 [Toggled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled) 事件以回應狀態的變更。
 
 此範例說明如何在 XAML 和程式碼中新增 Toggled 事件處理常式。 處理 Toggled 事件以開啟或關閉進度環，並變更其可見度。
 
@@ -156,7 +156,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ### <a name="onoff-labels"></a>開啟/關閉標籤
 
-根據預設，切換開關包含已自動當地語系化的「開啟」與「關閉」標籤常值。 您可以藉由設定 [OnContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) 和 [OffContent](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) 屬性來取代這些標籤。
+根據預設，切換開關包含已自動當地語系化的「開啟」與「關閉」標籤常值。 您可以藉由設定 [OnContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontent) 和 [OffContent](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontent) 屬性來取代這些標籤。
 
 此範例會將「開啟/關閉」標籤取代為「顯示/隱藏」標籤。
 
@@ -166,7 +166,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-您也可以藉由設定 [OnContentTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) 和 [OffContentTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) 屬性，使用更複雜的內容。
+您也可以藉由設定 [OnContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.oncontenttemplate) 和 [OffContentTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch.offcontenttemplate) 屬性，使用更複雜的內容。
 
 ## <a name="recommendations"></a>建議事項
 
@@ -179,7 +179,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-- [ToggleSwitch 類別](https://msdn.microsoft.com/library/windows/apps/hh701411)
+- [ToggleSwitch 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.toggleswitch)
 - [選項按鈕](radio-button.md)
 - [切換開關](toggles.md)
 - [核取方塊](checkbox.md)

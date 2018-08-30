@@ -11,15 +11,15 @@ keywords: Windows 10, UWP
 ms.assetid: 65d578a6-4e26-484c-90af-b2cd916f3634
 ms.localizationpriority: medium
 ms.openlocfilehash: 407ffb5fdebdc90a63ed7f65b4e97f8358dc58c8
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2915118"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112342"
 ---
 # <a name="gradual-package-rollout"></a>漸進式套件推出
 
-當您發佈提交的更新時，您可以選擇以漸進方式推出更新的套件到您的應用程式的客戶的百分比來表示在 Windows 10 （包括 Xbox） 上。 這可讓您監視特定套件的意見反應和分析資料，以確保您在更廣泛地推出更新之前，就已經信心滿滿。 您隨時可以增加百分比 (或停止更新)，而不必建立新的提交。 
+當您發佈提交的更新時，您可以選擇以漸進方式推出給已更新套件以您 app 的客戶的百分比來表示在 Windows 10 （包括 Xbox） 上。 這可讓您監視特定套件的意見反應和分析資料，以確保您在更廣泛地推出更新之前，就已經信心滿滿。 您隨時可以增加百分比 (或停止更新)，而不必建立新的提交。 
 
 > [!IMPORTANT]
 > 您的推出選項適用於所有套件，但是僅適用於執行可支援套件正式發行前小眾測試版之作業系統 (Windows.Desktop 組建 10586 或更新版本；Windows.Mobile 組建 10586.63 或更新版本，以及 Xbox) 的客戶，包括透過[市集管理 (線上) 授權](organizational-licensing.md)和[商務用 Microsoft 網上商店](https://businessstore.microsoft.com/store)或[教育用 Microsoft 網上商店](https://educationstore.microsoft.com/store)取得應用程式的所有客戶。 使用漸進式套件推出時，舊版作業系統的客戶將不會從最新的提交取得套件，直到您完成套件推出為止，如下所述。

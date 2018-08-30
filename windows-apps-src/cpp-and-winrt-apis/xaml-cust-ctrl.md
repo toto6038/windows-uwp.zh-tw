@@ -9,16 +9,22 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 XAML 中，自訂，範本化，控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: c108175c66d27b2cdbd910a0f7653ca1befb68e9
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 81eb7f29e511f76d1126c1e4a43a2b96f1fa6f9f
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917307"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3119100"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>XAML （範本化） 的自訂控制項[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
-其中一個最強大的功能的通用 Windows 平台 (UWP) 是在使用者介面 (UI) 堆疊提供建立根據 XAML[控制項](/uwp/api/windows.ui.xaml.controls.control)類型的自訂控制項的彈性。 XAML UI 架構提供功能，例如[自訂相依性屬性](/windows/uwp/xaml-platform/custom-dependency-properties)並附加的屬性和[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)，可讓您輕鬆地建立豐富的功能和可自訂控制項。 本主題會引導您完成的步驟建立 （範本化） 的自訂控制項使用 C + + /winrt。
+> [!NOTE]
+> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
+
+> [!IMPORTANT]
+> 如需支援您了解如何使用 C++/WinRT 使用及撰寫執行階段類別的基本概念和詞彙，請參閱 [使用 C++/WinRT 使用API](consume-apis.md)和[使用 C++/WinRT 撰寫 API](author-apis.md)。
+
+其中一個最強大的功能的通用 Windows 平台 (UWP) 是可在使用者介面 (UI) 堆疊提供建立根據 XAML[**控制項**](/uwp/api/windows.ui.xaml.controls.control)類型的自訂控制項的彈性。 XAML UI 架構提供功能，例如[自訂相依性屬性](/windows/uwp/xaml-platform/custom-dependency-properties)，附加的屬性，與[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)，可讓您輕鬆地建立豐富的功能和可自訂控制項。 本主題會逐步引導您完成的步驟，建立自訂 （範本化） 的控制項使用 C + + /winrt。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>建立空白的應用程式 (BgLabelControlApp)
 在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立**Visual c + + 空白的應用程式 (C + + /winrt)** 專案，並將它命名為*BgLabelControlApp*。
@@ -40,10 +46,10 @@ namespace BgLabelControlApp
 }
 ```
 
-上述清單中的顯示的模式，您可以依循宣告相依性屬性 (DP) 時。 有兩個部分每個 DP。 首先，您可以宣告[DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)類型的唯讀靜態屬性。 它有 DP 再加上*屬性*的名稱。 您將在您的實作中使用這個靜態屬性。 第二，您宣告的讀寫執行個體屬性的類型及您 DP 的名稱。
+上述清單中的顯示的模式，您可以依循宣告相依性屬性 (DP) 時。 有兩個部分每個 DP。 首先，您可以宣告[**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty)類型的唯讀靜態屬性。 它有 DP 再加上*屬性*的名稱。 您將在您的實作中使用這個靜態屬性。 第二，您宣告的讀寫執行個體屬性的類型及您 DP 的名稱。
 
 > [!NOTE]
-> 如果您想 DP 的浮點數類型，請`double`(`Double` [MIDL](/uwp/midl-3/)3.0)。 宣告和實作類型的 DP `float` (`Single`在 MIDL 中)，並產生錯誤，然後在 XAML 標記中，該 DP 的設定值*無法建立 'Windows.Foundation.Single' 從文字 '<NUMBER>'*。
+> 如果您想 DP 的浮點數類型，請`double`(`Double` [MIDL](/uwp/midl-3/)3.0)。 宣告和實作類型的 DP `float` (`Single` MIDL 中)，然後設定在 XAML 標記中，該 DP 值會導致錯誤及*無法建立 'Windows.Foundation.Single' 從文字 '<NUMBER>'*。
 
 儲存檔案並建置專案。 在建置程序期間，執行 `midl.exe` 工具建立描述執行階段類別的 Windows 執行階段中繼資料檔案 (`\BgLabelControlApp\Debug\BgLabelControlApp\Unmerged\BgLabelControl.winmd`)。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的**BgLabelControl**執行階段類別。 這些虛設常式為 `\BgLabelControlApp\BgLabelControlApp\Generated Files\sources\BgLabelControl.h` 與 `BgLabelControl.cpp`。
 
@@ -51,8 +57,6 @@ namespace BgLabelControlApp
 
 ## <a name="implement-the-bglabelcontrol-custom-control-class"></a>實作**BgLabelControl**自訂控制項類別
 現在，我們開啟 `\BgLabelControlApp\BgLabelControlApp\BgLabelControl.h` 與 `BgLabelControl.cpp` 並實作我們的執行階段類別。 在`BgLabelControl.h`、 變更的建構函式，若要設定的預設樣式索引鍵，實作的**標籤**和**LabelProperty**、 新增名為**OnLabelChanged**處理的相依性屬性的值變更的靜態事件處理常式以及新增私用成員若要儲存**LabelProperty**支援欄位。
-
-在這個逐步解說中，我們將不會使用**OnLabelChanged**。 但它有，讓您可以了解如何登錄相依性屬性的屬性變更回呼。
 
 新增之後，您`BgLabelControl.h`如下所示。
 
@@ -75,7 +79,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 
     static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
 
-    static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e);
+    static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_labelProperty;
@@ -83,7 +87,7 @@ private:
 ...
 ```
 
-在`BgLabelControl.cpp`，就像這樣的靜態成員定義。
+在`BgLabelControl.cpp`，定義就像這樣的靜態成員。
 
 ```cppwinrt
 // BgLabelControl.cpp
@@ -96,9 +100,23 @@ Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
         Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
 );
 
-void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e) {}
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // Call members of the projected type via theControl.
+
+        BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::from_abi<BgLabelControlApp::implementation::BgLabelControl>(theControl) };
+        // Call members of the implementation type via ptr.
+    }
+}
 ...
 ```
+
+在這個逐步解說中，我們將不會使用**OnLabelChanged**。 但它有讓您可以了解如何登錄相依性屬性的屬性變更回呼。 **OnLabelChanged**的實作也會顯示如何從基底投影類型 （基底的投影的類型是**DependencyObject**，在此情況下） 取得衍生的投影的類型。 還會示範如何以然後取得實作的投影的類型的型別的指標。 第二個作業自然才會可能在專案中實作的投影的類型 （也就是實作執行階段類別的專案）。
+
+> [!NOTE]
+> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，接著您可以呼叫[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)中的相依性屬性變更的事件處理常式中，而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
 
 ## <a name="design-the-default-style-for-bglabelcontrol"></a>適用於**BgLabelControl**設計預設樣式
 
@@ -127,7 +145,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 </ResourceDictionary>
 ```
 
-在此情況下，預設樣式設定的唯一屬性是控制項範本。 範本包含的方形 （其背景會繫結至 XAML[控制項](/uwp/api/windows.ui.xaml.controls.control)類型的所有執行個體都**背景**屬性） 和文字元素 （其文字繫結至**BgLabelControl::Label**相依性屬性）。
+在此情況下，預設樣式會設定的唯一屬性是控制項範本。 範本包含的方形 （其背景會繫結至 XAML[**控制項**](/uwp/api/windows.ui.xaml.controls.control)類型的所有執行個體都**背景**屬性） 和文字元素 （其文字繫結至**BgLabelControl::Label**相依性屬性）。
 
 ## <a name="add-an-instance-of-bglabelcontrol-to-the-main-ui-page"></a>將**BgLabelControl**的執行個體新增到主要 UI 頁面
 
@@ -137,7 +155,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-此外，新增下列 include 指示詞到`MainPage.h`以便**MainPage**類型 （編譯的 XAML 標記和命令式程式碼的組合） 是**BgLabelControl**自訂控制項類型的注意。
+此外，新增下列 include 指示詞，以`MainPage.h`以便**MainPage**類型 （編譯的 XAML 標記和命令式程式碼的組合） 是**BgLabelControl**自訂控制項類型的注意。
 
 ```cppwinrt
 // MainPage.h
@@ -146,13 +164,38 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ...
 ```
 
-現在建置並執行專案。 您會看到預設控制項範本繫結為背景筆刷和標籤，在標記中的**BgLabelControl**執行個體。
+現在建置並執行專案。 您會看到預設控制項範本繫結至背景筆刷，和標籤，在標記中的**BgLabelControl**執行個體。
 
-本逐步解說示範自訂 （範本化） 的控制項的簡單範例了在 C + + /winrt。 您可以任意豐富且完整功能，讓您的自訂控制項。 例如，自訂控制項可能需要項目一樣複雜的可編輯的資料方格、 影片播放程式或視覺化檢視的 3D 幾何的形式。
+這個逐步解說示範自訂 （範本化） 的控制項的簡單範例了在 C + + /winrt。 您可以任意豐富且完整功能，讓您的自訂控制項。 例如，自訂控制項可能需要項目一樣複雜的可編輯的資料方格、 影片播放程式或視覺化檢視的 3D 幾何的形式。
+
+## <a name="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate"></a>實作*可覆寫*功能，例如的**MeasureOverride**和**OnApplyTemplate**
+
+您衍生的自訂控制項本身進一步衍生自基底的執行階段類別從[**控制項**](/uwp/api/windows.ui.xaml.controls.control)執行階段類別。 也可覆寫方法的**控制項**、 [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement)，以及您可以覆寫您衍生的類別中的[**UIElement**](/uwp/api/windows.ui.xaml.uielement) 。 以下是程式碼範例，示範您如何執行此作業。
+
+```cppwinrt
+struct BgLabelControl : BgLabelControlT<BgLabelControl>
+{
+...
+    // Control overrides.
+    void OnPointerPressed(Windows::UI::Xaml::Input::PointerRoutedEventArgs const& /* e */) const { ... };
+
+    // FrameworkElement overrides.
+    Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size const& /* availableSize */) const { ... };
+    void OnApplyTemplate() const { ... };
+
+    // UIElement overrides.
+    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const { ... };
+...
+};
+```
+
+*可覆寫*函式本身以不同的方式在中顯示不同的語言投影。 在 C# 中，為例，覆寫函式通常會顯示為受保護的虛擬函式。 在 C + + /winrt，它們不虛擬也不受保護，但您仍然可以覆寫這些，並提供您自己的實作，如以上所示。
 
 ## <a name="important-apis"></a>重要 API
 * [控制項](/uwp/api/windows.ui.xaml.controls.control)
 * [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
+* [UIElement](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>相關主題
 * [控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)

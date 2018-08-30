@@ -1,27 +1,27 @@
 ---
-author: serenaz
+author: QuinnRadich
 title: 分割檢視
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
 description: 分割檢視控制項有一個可展開/可摺疊的窗格和內容區域。
 label: Split view
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f1e845b6041a6c3fc09178bb677d273304a35b4
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: cde4b5d95a0c978faa647fcc108d74874ff52c40
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1615803"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117785"
 ---
 # <a name="split-view-control"></a>分割檢視控制項
 

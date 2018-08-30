@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906475"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3127469"
 ---
 # <a name="feedback-report"></a>意見反應報告
 
@@ -31,7 +31,7 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 使用[套件正式發行前小眾測試](package-flights.md)，意見反應也會有所幫助，因為意見反應報告會顯示每個客戶在留下意見反應時已安裝在其裝置的特定套件。
 
 > [!TIP]
-> 如需快速查看評論、 評分，並在所有您的應用程式的使用者意見反應過去 30 天內，請展開左側瀏覽功能表中的**互動**，然後選取**評論和意見反應。** 
+> 如需快速查看評論、 評分和使用者意見反應，在您的應用程式的所有過去 30 天內，請展開左側瀏覽功能表中的**互動**，然後選取**評論和意見反應。** 
 
 
 ## <a name="apply-filters"></a>套用篩選
@@ -58,7 +58,7 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 - **新鮮貨**：顯示其他客戶在最後七天附議的意見反應，而取得最新活動的意見反應顯示在最前面。
 - **最近**︰顯示所有意見反應，而最近留下的意見反應顯示在最前面。
 
-在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場，留下意見反應，該裝置類型和**Windows 測試人員**如果提交意見反應的客戶是 Windows 測試人員的成員時所使用的裝置已安裝的特定套件計畫。
+在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場，在留下意見反應，該裝置類型和**Windows 測試人員**如果提交意見反應的客戶是 Windows 測試人員的成員時所使用的裝置已安裝的特定套件計畫。
 
 您也會在此看到[回應意見反應](respond-to-customer-feedback.md)的選項。
 

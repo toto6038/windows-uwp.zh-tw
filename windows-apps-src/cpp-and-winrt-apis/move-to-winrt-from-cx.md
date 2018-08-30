@@ -9,23 +9,23 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aba8f559b7b6f0518a620d5127692d541953255
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 63f730e5256cb88c04549cc64e36003885e02fb6
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905941"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3113298"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>從 C++/CX 移到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 
 本主題示範如何將 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 程式碼移植到其在 C++/WinRT 中的對等項目。
 
 > [!IMPORTANT]
-> 如果您想要逐漸移植您[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)程式碼為 C + + /winrt，則您可以。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於在同一個專案中，除了 XAML 編譯器支援，以及 Windows 執行階段元件。 對於這些例外狀況，您將需要為目標的 C + + /CX 或 C + + /winrt 在同一個專案中的。 但您可以使用因數的程式碼在 Windows 執行階段元件從您的 XAML 應用程式，因為您將其移植。 無論是移動簽定 C + + /CX 程式碼，因為您可以到元件，並接著將 XAML 專案變更為 C + + /winrt。 或其他留下的 XAML 專案為 C + + /CX，建立一個新的 C + + WinRT 元件，並開始移植 C + + /CX 程式碼不使用 XAML 專案和元件。 您可能也會有一個 C + + /CX 元件專案旁邊的 C + + WinRT 元件專案，在同一個方案中，這兩個參考從您的應用程式專案，並逐漸移植從另一個。
+> 如果您想要逐漸移植您[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)程式碼為 C + + /winrt 中，則您可以。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於相同的專案，除了 XAML 編譯器支援，以及 Windows 執行階段元件中。 對於這些例外狀況，您將需要為目標的 C + + /CX 或 C + + /winrt 在同一個專案中的。 但是，您可以使用因數的程式碼在 Windows 執行階段元件從您的 XAML 應用程式，因為您將其移植。 將移盡可能 C + + /CX 程式碼，因為您可以在元件中，並再將 XAML 專案變更為 C + + /winrt。 或其他留下的 XAML 專案為 C + + /CX，建立一個新的 C + + WinRT 元件，並開始移植 C + + /CX 程式碼不使用 XAML 專案和元件。 您可能也會有一個 C + + /CX 元件專案旁邊的 C + + 在同一個方案中，內的 WinRT 元件專案參考這兩個從您的應用程式專案，並逐漸移植到另一個。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 以及根命名空間 **Windows** 的 Windows SDK 宣告類型。 投影到 C++/WinRT 的 Windows 類型有與 Windows 類型相同的完整名稱，但它放在 C++ **winrt** 命名空間。 這些不同的命名空間，可讓您以自己的速度從 C++/CX 移植至 C++/WinRT。
 
-請記住如上方所述的例外狀況，第一個步驟中將專案移植到 C + + /winrt 是手動新增 C + + /winrt 支援 (請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 該項變更的一個效果是專案中支援的 C++/CX 為關閉。 它是不錯的想法讓支援保持關閉，以便尋找 （和連接埠） 建置訊息協助您所有的相依性於 C + + /CX，或者您可以將支援重新開啟 (專案屬性中， **C/c + +** \> **一般** \> **取用 Windows 執行階段延伸模組** \> **是 (/ZW)**)，並逐漸移植。
+請記住如上方所述的例外狀況，第一個步驟中將專案移植到 C + + /winrt 是手動新增 C + + /winrt 支援 (請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 該項變更的一個效果是專案中支援的 C++/CX 為關閉。 它是不錯的想法，將會關閉，以便建置訊息會協助您尋找 （和連接埠） 支援所有您相依性的 C + + /CX，或者您可以將支援重新開啟 (專案屬性， **C/c + +** 中 \> **一般** \> **取用 Windows 執行階段延伸模組** \> **是 (/ZW)**)，並逐漸移植。
 
 將專案屬性**一般** \> **目標平台版本**設置為 10.0.17134.0 (Windows 10，版本 1803) 或更高。
 
@@ -67,7 +67,7 @@ if (userList != nullptr)
     ...
 ```
 
-當轉換成對等項目 C++/WinRT 程式碼，您基本上要移除控制帽和將箭號運算子 (-&gt;) 變更為點運算子（.），因為 C++/WinRT 投影類型是值，而不是指標。
+當移植到對等 C + + /winrt 程式碼中，您基本上要移除控制帽和變更箭號運算子 (-&gt;) 為點運算子 （.），因為 C + + /winrt 投影類型是值，而不是指標。
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -183,6 +183,43 @@ private:
 };
 ```
 
+## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>轉換為衍生一個基本執行階段類別
+它是類型的通常有參考-為基底您知道是類型的指衍生的物件。 在 C + + /CX，您使用`dynamic_cast`來*轉型*以基礎參考到參考衍生。 `dynamic_cast`是只[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)隱藏的呼叫。 以下是常見的範例&mdash;您所處理相依性屬性變更事件，而且您想要從**DependencyObject**轉換回實際，是相依性屬性的擁有者類型。
+
+```cpp
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
+{
+    BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
+
+    if (theControl != nullptr)
+    {
+        // succeeded ...
+    }
+}
+```
+
+對等 C + + /winrt 程式碼取代`dynamic_cast` [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)函式呼叫，這會封裝**QueryInterface**。 您也可以選擇改為呼叫[**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，這會擲回例外狀況，如果沒有傳回查詢所需的介面 （您要求的類型的預設介面）。 以下是 C + + /winrt 程式碼範例。
+
+```cppwinrt
+void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+{
+    if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
+    {
+        // succeeded ...
+    }
+
+    try
+    {
+        BgLabelControlApp::BgLabelControl theControl{ d.as<BgLabelControlApp::BgLabelControl>() };
+        // succeeded ...
+    }
+    catch (winrt::hresult_no_interface const&)
+    {
+        // failed ...
+    }
+}
+```
+
 ## <a name="event-handling-with-a-delegate"></a>使用委派的事件處理
 以下是在 C++/CX 中處理事件的一般範例，這種情形下，使用 lambda 函式做為委派。
 
@@ -204,7 +241,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 
 您可以選擇實作委派做為可用功能，或做為指標成員函式，而不是 lambda 函式，。 如需詳細資訊，請參閱 [透過使用 C++/WinRT 中的委派處理事件](handle-events.md)。
 
-如果您正從在內部使用事件和委派的 C++/CX 程式碼基底進行移植 (並非所有二進位檔案)，則 [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 可協助您在 C++/WinRT 中複寫該模式。 另請參閱[參數化委派、 簡單的訊號，以及在專案中的回呼](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
+如果您正從在內部使用事件和委派的 C++/CX 程式碼基底進行移植 (並非所有二進位檔案)，則 [**winrt::delegate**](/uwp/cpp-ref-for-winrt/delegate) 可協助您在 C++/WinRT 中複寫該模式。 另請參閱[參數化委派、 簡單的訊號和在專案中的回呼](author-events.md#parameterized-delegates-simple-signals-and-callbacks-within-a-project)。
 
 ## <a name="revoking-a-delegate"></a>撤銷委派
 您在 C++/CX 中使用 `-=` 運算子撤銷前一個事件註冊。

@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, promote, app, campaign, report, installs, 促銷, 應用程式, 行銷活動, 報告, 安裝
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906435"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3115675"
 ---
 # <a name="ad-campaign-report"></a>廣告活動報告
 
-在 Windows 開發人員中心儀表板中的**廣告行銷活動**報告可讓您查看您的應用程式促銷[廣告行銷活動](create-an-ad-campaign-for-your-app.md)的表現。 若要查看報告，展開 [**吸引**左邊的導覽功能表中，選取**廣告行銷活動**。
+在 Windows 開發人員中心儀表板中的**廣告活動**報告可讓您看到應用程式促銷[廣告行銷活動](create-an-ad-campaign-for-your-app.md)的表現。 若要查看報告，展開 [**吸引**左邊的導覽功能表中，選取**廣告行銷活動**。
 
 ## <a name="definitions"></a>定義
 

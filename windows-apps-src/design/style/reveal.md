@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2915312"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117986"
 ---
 # <a name="reveal-highlight"></a>顯色醒目提示
 
@@ -30,7 +30,7 @@ ms.locfileid: "2915312"
 > **重要的 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>運作方式
-顯色醒目提示互動式元素呼叫注意藉由顯示某元素的容器，當指標在附近，如這個圖例所示：
+顯色醒目提示引起互動元素藉由顯示某元素的容器，當指標在附近，如這個圖例所示：
 
 ![顯色視覺效果](images/Nav_Reveal_Animation.gif)
 
@@ -266,7 +266,7 @@ ms.locfileid: "2915312"
 * 靠近到會彼此接觸的相鄰命令元素：在兩個元素之間加入 1px 的邊界。 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
-### <a name="do"></a>執行：
+### <a name="do"></a>請執行：
 - 要在使用者可以執行許多動作的元素 (命令列、瀏覽功能表) 上使用顯色
 - 要在預設沒有視覺分隔線的互動式元素群組 (清單、功能區) 中使用顯色
 - 要在互動式元素密集度高的區域 (命令功能案例) 中使用顯色

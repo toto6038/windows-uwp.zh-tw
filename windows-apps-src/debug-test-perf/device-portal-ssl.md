@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2916755"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121003"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自訂 SSL 憑證的佈建裝置入口網站
 在 Windows 10 Creators Update 中，Windows Device Portal 會新增裝置系統管理員使用自訂憑證安裝在 HTTPS 通訊的方式。 
 
 雖然您自己的電腦上，您可以執行此動作，這項功能主要適用於中都有現有的憑證基礎結構的企業。  
 
-例如，公司可能會有憑證授權單位 (CA) 用來登入近端內部網路網站提供透過 HTTPS 的憑證。 這項功能上面代表基礎結構。 
+例如，公司可能會有憑證授權單位 (CA) 用來簽署內部網路網站提供透過 HTTPS 的憑證。 此功能表示上面基礎結構。 
 
 ## <a name="overview"></a>概觀
-根據預設，Device Portal 會產生自我簽署的根 CA，並接著會使用，來簽署它會在車內聆聽上每個端點的 SSL 憑證。 這包括`localhost`， `127.0.0.1`，以及`::1`(IPv6 localhost)。
+根據預設，Device Portal 會產生自我簽署的根 CA，並接著會使用，來簽署它會在車內聆聽上每個端點的 SSL 憑證。 這包括`localhost`， `127.0.0.1`，並`::1`(IPv6 localhost)。
 
 也包含是裝置的主機名稱 (例如， `https://LivingRoomPC`) 和指派給裝置的每個連結本機 IP 位址 (最多 2 個 [IPv4，IPv6] 每個網路介面卡)。 您可以看到適用於裝置的連結本機 IP 位址來看看裝置入口網站中的網路功能工具。 他們將會開始使用`10.`或`192.`針對 IPv4，或`fe80:`ipv6。 
 
-在預設設定中，憑證警告可能會出現在您的瀏覽器中，因為未受信任的根 CA。 具體而言，裝置入口網站所提供的 SSL 憑證是由瀏覽器或電腦不信任的 CA 的根簽署。 這可以透過建立新的受信任的根 CA 修正。
+在預設設定中，憑證警告可能會出現在您的瀏覽器中，因為未受信任的根 CA。 具體而言，裝置入口網站所提供的 SSL 憑證是由根瀏覽器或電腦不信任的 CA 簽署。 這可以透過建立新的受信任的根 CA 修正。
 
 ## <a name="create-a-root-ca"></a>建立的根 CA
 
@@ -52,7 +52,7 @@ $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 
 SSL 憑證，將有兩個重要功能： 保護您透過加密的連線，並確認您實際通訊的位址列中顯示的瀏覽器 (Bing.com，192.168.1.37，等) 並不是惡意的協力廠商。
 
-下列 PowerShell 指令碼會建立的 SSL 憑證`localhost`端點。 裝置入口網站接聽每個端點需要其本身的憑證。您可以取代`$IssuedTo`適用於您裝置的引數中使用不同的端點的每個指令碼： 主機名稱、 本機主機和 IP 位址。
+下列 PowerShell 指令碼會建立的 SSL 憑證`localhost`端點。 Device Portal 接聽的每個端點需要它自己的憑證。您可以取代`$IssuedTo`指令碼與每個不同的端點中適用於您裝置的引數： 主機名稱、 本機主機和 IP 位址。
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -96,4 +96,4 @@ sc start webmanagement
 
 > [!TIP]
 > IP 位址會隨著時間改變。
-許多網路會使用 DHCP 來提供出 IP 位址，讓裝置永遠不會取得他們之前已擁有相同的 IP 位址。 如果您已經在裝置上建立的 IP 位址的憑證和裝置的地址有所變更，Windows 裝置入口網站將會產生新的憑證使用現有的自我簽署的憑證，並將會停止使用您建立。 這會導致憑證警告頁面，才會出現在您的瀏覽器一次。 基於這個原因，我們建議您連接到您的裝置透過其主機名稱，您可以設定裝置入口網站中。 這些將會保持不變，無論 IP 位址。
+許多網路會使用 DHCP 來提供出 IP 位址，讓裝置永遠不會取得他們之前已擁有相同的 IP 位址。 如果您已建立的憑證的 IP 位址在裝置上且該裝置的地址有所變更，Windows Device Portal 會產生新的憑證使用現有的自我簽署的憑證，並將會停止使用您所建立。 這會導致憑證警告頁面，才會出現在您的瀏覽器一次。 基於這個原因，我們建議您連接到您的裝置透過其主機，您可以設定裝置入口網站中。 這些將會保持不變，無論 IP 位址。

@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 儀表板, devcenter, 開發人員中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2910092"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3126565"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>使用 Windows 開發人員中心儀表板
 
 
-[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)可讓您管理和提交所有應用程式適用於 Windows 裝置在一個地方。
+[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)可讓您管理和提交您的應用程式，適用於 Windows 裝置在一個地方次數。
 
 > [!NOTE]
 > 您必須具有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能存取 Windows 開發人員中心儀表板。
@@ -37,7 +37,7 @@ ms.locfileid: "2910092"
 
 [附加內容 （應用程式內產品）](add-on-submissions.md)是您的應用程式提交作業中單獨管理。 這可以為您帶來更多彈性，讓您能夠單獨進行變更。
 
-Windows 開發人員中心也提供吸引進行[新增多個使用者](manage-account-users.md)[的應用程式管理和設定服務](app-management-and-services.md)，[檢閱分析資料](analytics.md)、[支付報告](payout-summary.md)、[促銷應用程式](attract-customers-and-promote-your-apps.md)，[功能您客戶](engage-with-your-customers.md)， [beta 測試](beta-testing-and-targeted-distribution.md)、[散發至企業的 LOB 應用程式](distribute-lob-apps-to-enterprises.md)，以及更多。
+Windows 開發人員中心也會提供與互動的狀況[新增多個使用者](manage-account-users.md)[應用程式管理和設定服務](app-management-and-services.md)、[檢閱分析資料](analytics.md)、[支付報告](payout-summary.md)、[宣傳您的應用程式](attract-customers-and-promote-your-apps.md)、[功能您客戶](engage-with-your-customers.md)， [beta 測試](beta-testing-and-targeted-distribution.md)、[散發至企業的 LOB 應用程式](distribute-lob-apps-to-enterprises.md)，以及更多。
 
 您的意見反應協助我們打造出最佳功能和體驗。 當您使用儀表板中，請使用**意見反應**] 連結在儀表板右上角來分享您的想法和建議。
 

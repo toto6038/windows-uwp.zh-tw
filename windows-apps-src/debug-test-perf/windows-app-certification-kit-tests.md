@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows 應用程式認證套件測試
-description: Windows 應用程式認證套件包含一些測試，可協助確保您的應用程式已準備好可以在 Microsoft Store 上發佈。
+description: Windows 應用程式認證套件包含一些測試，可協助確認您的 app 已準備好可以在 Microsoft Store 上發佈。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2906065"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3121022"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
 
-[Windows 應用程式認證套件](windows-app-certification-kit.md)包含一些可協助確保您的應用程式已準備好發佈至 Microsoft Store 的測試。 測試如下所示使用他們的準則的詳細資訊，並建議的動作在失敗。
+[Windows 應用程式認證套件](windows-app-certification-kit.md)包含一些測試，可協助確保您的 app 已準備好發佈至 Microsoft Store。 測試如下所示使用其條件，詳細資料，並建議在失敗的動作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和啟動測試
 
@@ -248,7 +248,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 如果原始可執行檔未通過這個測試，請確定您使用了最新的編譯器和連結器來建立檔案，並在連結器上使用 */appcontainer* 旗標。
 
-如果 managed 可執行檔未通過這個測試，請確定您使用了最新的編譯器和連結器，例如 Microsoft Visual Studio 中，來建置 UWP 應用程式。
+如果 managed 可執行檔未通過這個測試，請確定您使用的最新的編譯器和連結器，如 Microsoft Visual Studio 中，來建置 UWP 應用程式。
 
 **備註**
 
@@ -312,18 +312,18 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 ### <a name="test-details"></a>測試詳細資料
 
--   確認應用程式套件內的每個二進位檔案都相依於所檢查的二進位檔匯入位址表不支援的 UWP 應用程式開發的 Win32 API。
+-   確認，應用程式套件內的每個二進位檔案都相依於 Win32 API 所支援的 UWP 應用程式開發檢查的二進位檔匯入位址表。
 -   確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。
 
 ### <a name="corrective-actions"></a>修正動作
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **注意：** 應用程式的偵錯組建無法通過這個測試，即使應用程式會使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+> **注意：** 偵錯組建的 app 無法通過這個測試，即使應用程式使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
 
-檢閱錯誤訊息，找出 API 不是[適用於 UWP app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的應用程式使用。
+檢閱錯誤訊息，找出 API app 使用的不是[適用於 UWP app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
 
-> **注意：** 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 請參閱，如需詳細資訊的[UWP 應用程式中的 Windows Api 的替代方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **注意：** 偵錯設定中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 請參閱，[在 UWP app 中的 Windows Api 的替代方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)，如需詳細資訊。
 
 ## <a name="performance-tests"></a>效能測試
 
@@ -433,7 +433,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <tr><td>
 <p>"resources.pri" 檔案不能啟用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支援一個稱為 <strong>AutoMerge</strong> 的選項。 <strong>AutoMerge</strong> 的預設值為 <strong>off</strong>。 啟用時，<strong>AutoMerge</strong> 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這樣的應用程式，您要透過 Microsoft 網上商店散布。 透過 Microsoft 網上商店散發應用程式的 resources.pri 必須是應用程式套件的根目錄中，而且包含應用程式支援的所有語言參考。</p>
+<p>MakePRI.exe 支援一個稱為 <strong>AutoMerge</strong> 的選項。 <strong>AutoMerge</strong> 的預設值為 <strong>off</strong>。 啟用時，<strong>AutoMerge</strong> 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這對於您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft 網上商店的應用程式的 resources.pri 必須位於 app 套件的根目錄，並包含應用程式支援的所有語言參考。</p>
 </td></tr>
 <tr><td>
 <p>字串 {string} 不符合 {number} 個字元的長度上限限制。</p>
@@ -501,7 +501,7 @@ UWP 應用程式應該要完整且功能正常。 使用預設影像 (來自範�
 
 ### <a name="background"></a>背景
 
-若要通過 Microsoft Store 認證，應用程式不會編譯針對偵錯，而且不可以參照可執行檔的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
+若要通過 Microsoft Store 認證，應用程式不會編譯針對偵錯，而且不可以參照可執行檔檔案的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
 
 ### <a name="test-details"></a>測試詳細資料
 
@@ -509,7 +509,7 @@ UWP 應用程式應該要完整且功能正常。 使用預設影像 (來自範�
 
 ### <a name="corrective-actions"></a>修正動作
 
--   在您提交到 Microsoft 網上商店之前，請為發行組建建置應用程式。
+-   在您提交到 Microsoft 網上商店之前，請為版本組建建置應用程式。
 -   確定您已安裝正確的 .NET Framework 版本。
 -   確認應用程式並未連結到偵錯版本的架構，且是利用發行版本所建置。 如果這個應用程式包含 .NET 元件，請確認您已安裝正確的 .NET Framework 版本。
 
@@ -537,7 +537,7 @@ UWP 應用程式應該要完整且功能正常。 使用預設影像 (來自範�
 
 ### <a name="background"></a>背景
 
-Microsoft Store 需要使用 Direct3D 正確呈現，或正常功能層級 9 \-1 圖形卡上的所有應用程式。
+Microsoft Store 需要使用 Direct3D 正確呈現，或正常關閉功能層級 9 \-1 圖形卡上的所有應用程式。
 
 因為使用者可以在安裝 app 之後變更裝置中的圖形硬體，如果您選擇高於 9\-1 的最低功能層級，您的 app 必須在啟動時偵測目前的硬體是否符合最低需求。 若不符合最低需求，該 app 必須向使用者顯示訊息，以詳細說明 Direct3D 的需求。 此外，如果客戶在不相容的裝置上下載 app，該 app 必須在啟動時偵測執行環境，並顯示訊息給客戶，以詳細說明需求。
 

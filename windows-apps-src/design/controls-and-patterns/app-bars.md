@@ -1,28 +1,28 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Command bars give users easy access to your app's most common tasks.
 title: 命令列
 label: App bars/command bars
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 pm-contact: yulikl
 design-contact: ksulliv
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d8a55643a598a90805f45b614cadd4db64d4c8a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: ce64e6002bd71bd0806fb5574dc404ac4df856a9
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691547"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3112667"
 ---
 # <a name="command-bar"></a>命令列
 

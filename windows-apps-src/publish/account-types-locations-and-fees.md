@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913203"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123931"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
@@ -37,11 +37,11 @@ ms.locfileid: "2913203"
 |--------------------|-----------------|
 | <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個 「[市集原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，應用程式具備某些功能，例如存取金融帳戶資訊或需要存取主要功能 （而不使用安全專用的第三方驗證提供者）、 驗證僅要發佈的公司帳戶。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個 「[市集原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，應用程式特定的功能，例如存取金融帳戶資訊或需要存取主要功能 （而不使用安全專用的第三方驗證提供者）、 驗證僅要發佈的公司帳戶。
 
 ## <a name="account-verification"></a>帳戶驗證
 
-完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 必須通過驗證，等待，您可以[保留 app 名稱](create-your-app-by-reserving-a-name.md)，您才能送出的公司帳戶的應用程式持續建置和測試應用程式，並讓您提交準備好上運作。
+完成註冊程序之後，您的帳戶將進行驗證程序。 若是個人帳戶，我們會確認沒有其他公司使用您的發行者顯示名稱。 針對公司帳戶，我們的驗證合作夥伴 Dun & Bradstreet 會確認您已獲得授權為您所代表的公司建立帳戶。 這個程序可能需要幾天到幾週的時間才能完成，並且通常會致電您的公司 (以便確認您在填寫註冊表單時提供的所有連絡人資訊是最新的)。 必須通過驗證，等待，您可以[保留 app 名稱](create-your-app-by-reserving-a-name.md)，您才能送出的公司帳戶的應用程式持續建置和測試應用程式，而上運作的準備您的提交。
 
 您可以在 **\[帳戶設定\]** 頁面檢查您的驗證狀態。 
 

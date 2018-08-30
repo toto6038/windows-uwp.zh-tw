@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2916956"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3114525"
 ---
 # <a name="attached-properties-overview"></a>附加屬性概觀
 
@@ -40,7 +40,7 @@ ms.locfileid: "2916956"
 ```
 
 > [!NOTE]
-> 我們只使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)做為範例中附加屬性而沒有充分解說您為何要使用它。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+> 我們只使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)做為一個範例中附加屬性而沒有充分解說您為何要使用它。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
 ## <a name="why-use-attached-properties"></a>為什麼要使用附加屬性？
 

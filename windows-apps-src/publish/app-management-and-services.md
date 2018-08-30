@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905441"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118101"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -31,7 +31,7 @@ ms.locfileid: "2905441"
 
 如果您正在發佈遊戲，您可以啟用此頁面上的[Xbox Live 創作者計畫](http://xbox.com/developers/creators-program)。 這可讓您啟動設定並測試 Xbox Live 功能，及最後發佈您的 Xbox Live 創作者計畫遊戲。
 
-如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)並[建立新的 Xbox Live 創作者計畫遊戲並發佈到測試環境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，並[建立新的 Xbox Live 創作者計畫遊戲並發佈到測試環境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
 ## <a name="experimentation"></a>實驗
 
@@ -56,7 +56,7 @@ ms.locfileid: "2905441"
 
 ## <a name="administrator-consent"></a>系統管理員同意
 
-f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意下，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中所有使用者的產品用於其組織授與同意取得的應用程式的系統管理員。
+f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意下，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品用於其組織授與同意取得的應用程式的系統管理員。
 
 如需詳細資訊，請參閱[的整個租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
@@ -89,10 +89,10 @@ f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式
 
 ## <a name="wnsmpns"></a>WNS/MPNS\
 
-[ **WNS/MPNS\** ] 區段會提供選項以協助您建立和傳送通知給您的應用程式客戶。 
+[ **WNS/MPNS\** ] 區段會提供選項以協助您建立和傳送通知給您的應用程式的客戶。 
 
 > [!TIP]
-> 適用於 UWP app，我們建議您在儀表板中使用**通知**\] 選項。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您定義在[客戶區隔](create-customer-segments.md)中特定對象的您符合條件的 Windows 10 客戶子集。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
+> 適用於 UWP app 中，我們建議使用儀表板中 \ [**通知**選項。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您定義在[客戶區隔](create-customer-segments.md)中特定對象的您符合條件的 Windows 10 客戶子集。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
 
 根據您的應用程式套件類型及其特定需求，您也可以使用其中一個下列選項： 
 
@@ -100,7 +100,7 @@ f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式
 
 -   **Microsoft Azure Mobile Apps** 讓您能夠傳送推播通知、驗證和管理應用程式使用者，以及在雲端中儲存應用程式資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳至 \ [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳到 [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

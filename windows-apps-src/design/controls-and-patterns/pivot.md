@@ -1,9 +1,9 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.author: sezhen
+ms.author: quradic
 ms.date: 06/19/2018
 ms.topic: article
 ms.prod: windows
@@ -14,18 +14,18 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e8f0fbbfacc3fa4edb602f7505ea1e88f211a81a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2913015"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3116113"
 ---
 # <a name="pivot"></a>Pivot
 
 [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控制項可讓觸控撥動內容區段一小群之間。
 
-> **重要 Api**: [Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)、 [NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
+> **重要 Api**: [Pivot 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)， [NavigationView 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.NavigationView)
 
 ## <a name="examples"></a>範例
 
@@ -34,7 +34,7 @@ ms.locfileid: "2913015"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/Pivot">開啟應用程式並查看 Pivot 控制項的運作情形</a>。</p>
+    <p>如果您有安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/Pivot">開啟應用程式並查看 Pivot 控制項的運作情形</a>。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
@@ -49,20 +49,20 @@ Pivot 控制項，就像[NavigationView](navigationview.md)，加上底線選取
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-若要達到常見的頂端瀏覽和索引標籤模式，我們建議使用[NavigationView](navigationview.md)，這會自動適應不同螢幕大小，可讓您進一步自訂項目。
+若要達到常見的頂端瀏覽和索引標籤模式，我們建議使用[NavigationView](navigationview.md)，它會自動可隨不同的螢幕大小，並可讓您進一步自訂項目。
 
 不過，如果您的瀏覽需要觸控式撥動，我們建議使用樞紐分析。
 
 NavigationView 和樞紐控制項之間的其他主要差異是預設溢位行為和瀏覽 API:
 
 - 各樞紐項目，NavigationView 會使用功能表下拉式清單時溢位，讓使用者能夠看到的所有項目各種溢位。
-- 樞紐處理內容的區段，而 NavigationView 可讓您進一步控制瀏覽行為之間的瀏覽。
+- 樞紐分析處理內容的區段，而 NavigationView 可讓您更多的控制權瀏覽行為之間的瀏覽。
 
 ## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView，而不是樞紐分析
 
 如果您的應用程式 UI 使用 Pivot 控制項，然後您可以將轉換樞紐 NavigationView 以下的程式碼。
 
-此 XAML 會 NavigationView 建立包含 3 個區段的內容，如樞紐分析的[建立 pivot 控制項](#create-a-pivot-control)的範例。
+此 XAML 會 NavigationView 建立包含 3 個內容區段的如樞紐分析的[建立 pivot 控制項](#create-a-pivot-control)的範例。
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -87,7 +87,7 @@ NavigationView 和樞紐控制項之間的其他主要差異是預設溢位行�
 </Page>
 ```
 
-NavigationView 提供對瀏覽自訂項目更多控制權，且需要相對應的程式碼後置。 若要伴隨上述的 XAML，請使用下列程式碼後置：
+NavigationView 提供對瀏覽的自訂項目更多控制權，且需要相對應的程式碼後置。 若要伴隨上述的 XAML，請使用下列程式碼後置：
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-此程式碼會模擬樞紐分析控制項的內建的瀏覽體驗，減內容區段之間的觸控式撥動體驗。 不過，如您所見，您也無法自訂數個點，包括動畫的轉換、 瀏覽參數，以及堆疊功能。
+此程式碼會模擬將樞紐分析控制項的內建的瀏覽體驗，減內容區段之間的觸控式撥動體驗。 不過，如您所見，您也無法自訂數個點，包括的動畫的轉換、 瀏覽參數及堆疊功能。
 
 ## <a name="create-a-pivot-control"></a>建立 Pivot 控制項
 

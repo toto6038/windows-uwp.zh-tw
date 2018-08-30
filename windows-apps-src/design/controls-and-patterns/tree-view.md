@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: 20de58d13c4ace6b71ec952dc88cd59d1ab6114f
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905831"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3122485"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -33,12 +33,12 @@ TreeView API 支援下列功能：
 - 選取單一節點或多個節點
 - （預覽）資料繫結至樹狀檢視的 ItemsSource 屬性的 TreeViewItem
 - （預覽）做為根的樹狀檢視的項目範本的 TreeViewItem
-- （預覽）任意類型的 TreeViewItem 中的內容
-- （預覽）將，樹狀檢視之間的拖放
+- （預覽）內容中的 TreeViewItem 任意類型
+- （預覽）拖放之間樹狀檢視
 
 | **取得 Windows UI 文件庫** |
 | - |
-| 這個控制項是包含在 Windows UI 程式庫，包含新的控制項和 UI 功能適用於 UWP app 的 NuGet 套件。 如需詳細資訊，包括的安裝指示，請參閱[Windows UI 文件庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 這個控制項是包含在 Windows UI 程式庫，包含新的控制項和適用於 UWP app 的 UI 功能的 NuGet 套件。 如需詳細資訊，包括的安裝指示，請參閱[Windows UI 文件庫概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows 使用者介面程式庫 Api** |
 | - | - |
@@ -57,7 +57,7 @@ TreeView API 支援下列功能：
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/TreeView">開啟應用程式</a>並查看動作中的樹狀檢視。</p>
+    <p>如果您有安裝<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/TreeView">開啟應用程式</a>並查看動作中的樹狀檢視。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
@@ -82,7 +82,7 @@ TreeView API 支援下列功能：
 
 若要建立樹檢視，請使用 [TreeView](/uwp/api/windows.ui.xaml.controls.treeview) 控制項和 [TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode) 物件階層。 您可以將一或多個根節點新增至 TreeView 控制項的[RootNodes](/uwp/api/windows.ui.xaml.controls.treeview.rootnodes)集合建立節點階層。 然後，每個 TreeViewNode 都可以有更多新增至其 Children 集合的節點。 您可以將樹狀檢視節點巢狀化到您需要的任何深度。
 
-從 Windows Insider Preview，您可以繫結階層式資料來源的[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)屬性，來提供樹狀結構的檢視內容，就像您使用清單檢視的 ItemsSource。 同樣地，使用[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) （並選擇性[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)） 提供 DataTemplate，會呈現在項目。
+從 Windows Insider Preview，您可以繫結階層式資料來源的[ItemsSource](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)屬性，以提供樹狀檢視內容，就像您使用清單檢視的 ItemsSource。 同樣地，使用[ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate) （並選擇性[ItemTemplateSelector](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)） 提供 DataTemplate，轉譯項目。
 
 > [!IMPORTANT]
 > ItemsSource 是適用於將內容放入 TreeView 控制項 TreeView.RootNodes 替代機制。 在此同時，您無法設定 ItemsSource 和 RootNodes。 當您使用 ItemsSource 時，節點所建立，並從 TreeView.RootNodes 屬性存取檔案。
@@ -103,11 +103,11 @@ TreeView API 支援下列功能：
 </TreeView>
 ```
 
-在大部分情況下，樹狀檢視會顯示資料來源的資料，因此您通常宣告根 TreeView 控制項，在 XAML 中，而在程式碼或使用資料繫結中新增 TreeViewNode 物件。
+在大部分情況下，樹狀檢視會顯示資料來源的資料，因此您通常會宣告根 TreeView 控制項，在 XAML 中，而在程式碼或使用資料繫結中新增 TreeViewNode 物件。
 
 ### <a name="bind-to-a-hierarchical-data-source"></a>繫結到階層式資料來源
 
-若要建立的樹狀檢視使用資料繫結，設定的 TreeView.ItemsSource 屬性則採用階層式集合。 然後 ItemTemplate，在設定子系的項目集合的 TreeViewItem.ItemsSource 屬性。
+若要建立樹狀檢視使用資料繫結，設定的 TreeView.ItemsSource 屬性則採用階層式集合。 然後在 ItemTemplate，設定子項項目集合的 TreeViewItem.ItemsSource 屬性。
 
 ```xaml
 <TreeView ItemsSource="{x:Bind DataSource}">
@@ -120,15 +120,15 @@ TreeView API 支援下列功能：
 </TreeView>
 ```
 
-請參閱_樹狀檢視使用資料繫結_的完整程式碼範例 」 一節。
+請_使用資料繫結的樹狀檢視_的完整程式碼範例 」 一節。
 
 #### <a name="items-and-item-containers"></a>項目和項目容器
 
-如果您使用 TreeView.ItemsSource，這些 Api 是可用來從容器中，取得節點或資料的項目，反之亦然。
+如果您使用 TreeView.ItemsSource，這些 Api 可用於從容器中，取得節點或資料的項目，反之亦然。
 
 | **[TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)** | |
 | - | - |
-| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | 適用於指定的 TreeViewItem 容器中取得的資料項目。 |
+| [TreeView.ItemFromContainer](/uwp/api/windows.ui.xaml.controls.treeview.itemfromcontainer) | 取得適用於指定的 TreeViewItem 容器的資料項目。 |
 | [TreeView.ContainerFromItem](/uwp/api/windows.ui.xaml.controls.treeview.containerfromitem) | 指定的資料的項目中取得的 TreeViewItem 容器。 |
 
 | **[TreeViewNode](/uwp/api/windows.ui.xaml.controls.treeviewnode)** | |
@@ -205,15 +205,15 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 您可以提供 [DataTemplate](/uwp/api/windows.ui.xaml.datatemplate) 來指定資料項目在樹狀檢視中的顯示方式。
 
 > [!NOTE]
-> 在 Windows 10 版本 1803 中，如果您的內容不是字串，就必須重新建立 TreeView 控制項的範本並指定自訂 ItemTemplate。 如需詳細資訊，請參閱本文結尾的完整範例。 在後續版本中，將[TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)屬性。
+> 在 Windows 10 版本 1803 中，如果您的內容不是字串，就必須重新建立 TreeView 控制項的範本並指定自訂 ItemTemplate。 如需詳細資訊，請參閱本文結尾的完整範例。 在較新版本，設定[TreeView.ItemTemplate](/uwp/api/windows.ui.xaml.controls.treeview.itemtemplate)屬性。
 
 ### <a name="item-container-style"></a>項目容器樣式
 
-您是否使用 ItemsSource 或 RootNodes，實際的元素，用來顯示每個節點 – 稱為 「 容器 」 – [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)物件。 您可以設定使用樹狀檢視的容器的樣式 ItemContainerStyle 或 ItemContainerStyleSelector 屬性。
+您使用 ItemsSource 或 RootNodes，實際的元素，用來顯示每個節點 – 稱為 「 容器 」 – [TreeViewItem](/uwp/api/windows.ui.xaml.controls.treeviewitem)物件。 您可以設定使用樹狀檢視的容器的樣式 ItemContainerStyle 或 ItemContainerStyleSelector 屬性。
 
 ### <a name="item-template-selectors"></a>項目範本選取器
 
-您可以選擇設定不同的基礎類型的項目樹狀檢視項目 DataTemplate。 例如，在檔案總管] app 中，您可以使用一個資料範本的資料夾，和另一個用於檔案。
+您可以選擇設定不同的項目類型為基礎的樹狀結構檢視項目 DataTemplate。 例如，在檔案總管] app 中，您可以使用一個資料範本資料夾，和另一個用於檔案。
 
 ![資料夾和檔案使用不同的資料範本](images/treeview-icons.png)
 
@@ -384,7 +384,7 @@ TreeView 控制項同時支援單一選取和多重選取。 預設會關閉節�
 
 啟用選項時，每個樹狀檢視節點旁邊會顯示核取方塊，並反白顯示選取的項目。 使用者可以使用核取方塊來選取或取消選取項目。按一下項目仍會導致叫用該項目。
 
-選取或取消選取父節點會選取或取消選取該節點下的所有子系。 如果某些，但不是全部的父節點下的子系已選取，父節點的核取方塊會顯示為 「 不確定 」 （填入黑色方塊）。
+選取或取消選取父節點會選取或取消選取該節點下的所有子系。 如果某些，但不是全部，會選取父節點下的子節點，父節點的核取方塊會顯示為 「 不確定 」 （填入黑色方塊）。
 
 ![樹狀檢視中的多個選取項目](images/treeview-selection.png)
 
@@ -514,7 +514,7 @@ End Sub
 
 ### <a name="tree-view-using-data-binding"></a>使用資料繫結的樹狀檢視
 
-這個範例示範如何建立相同的樹狀檢視與先前的範例。 不過，而不是在 XAML 中建立的資料階層，資料是在程式碼中建立，並且在樹狀檢視的 ItemsSource 屬性繫結。 （先前範例所示的按鈕事件處理常式適用於此範例也。）
+此範例示範如何建立相同的樹狀檢視與先前的範例。 不過，而不是在 XAML 中建立的資料階層，資料會建立在程式碼中，且繫結至樹狀檢視的 ItemsSource 屬性。 （先前範例所示的按鈕事件處理常式適用於此範例也。）
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Padding="100">

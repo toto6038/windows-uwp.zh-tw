@@ -11,11 +11,11 @@ keywords: windows 10，uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2917271"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3122509"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -179,7 +179,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> 或者，如果您的應用程式使用 （若要填入使用者欄位使用預設的電子郵件地址） 登入提示或其他特殊的登入體驗的相關的屬性，列出它**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統當快取 web 帳戶，以防止在快取帳戶不符會忽略此屬性。
+> 或者，如果您的應用程式使用 （若要填入使用者欄位使用預設的電子郵件地址） 登入提示或其他特殊的登入體驗的相關的屬性，列出它**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統快取的 web 帳戶，以防止在快取帳戶不相符時會忽略此屬性。
 
 如果您是在開發企業應用程式，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
 

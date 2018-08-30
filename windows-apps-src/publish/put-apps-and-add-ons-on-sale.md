@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2905511"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123701"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>促銷 App 和附加元件
 
 您可以在限定時間內降價銷售您的 App 或附加元件，以便在 Microsoft Store 進行促銷。 您可以選擇以較低價格區間或百分比計算的折扣提供產品。
 
 > [!NOTE]
-> 訂閱附加元件不支援銷售定價。
+> 不支援訂閱附加元件銷售定價。
 
 當您使用提交的 **\[價格和可用性\]** 頁面的 **\[銷售定價\]** 區段暫時降低應用程式或附加元件的價格時，檢視您的市集清單的客戶將會看見刪除定價，指出該價格已調降 (與[排程價格變更](set-and-schedule-app-pricing.md#schedule-price-changes)相反，它可調低或調高價格，但不在市集中顯示為變更)。 
 

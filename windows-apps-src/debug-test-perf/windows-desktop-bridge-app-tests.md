@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows 傳統型橋接器應用程式測試
-description: 使用傳統型橋接器的內建測試，以確保您的傳統型應用程式最適合其轉換為 UWP 應用程式。
+description: 使用傳統型橋接器的內建的測試，以確保您的傳統型應用程式最適合其轉換為 UWP app。
 ms.author: pafarley
 ms.date: 12/18/2017
 ms.topic: article
@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909755"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3123375"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
 [傳統型橋接器應用程式](https://docs.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-root)會轉換為通用 Windows 平台 (UWP) 應用程式使用[傳統型橋接器](https://developer.microsoft.com/en-us/windows/bridges/desktop)的 Windows 傳統型應用程式。 轉換之後，Windows 傳統型應用程式就會以目標為 Windows10 Desktop 的 UWP app 套件形式 (.appx 或 .appxbundle) 來封裝、提供服務及部署。
 
 ## <a name="required-versus-optional-tests"></a>必要與選擇性測試
-選擇性測試的 Windows 傳統型橋接器應用程式僅供參考，不會用來在 Microsoft Store 上架期間評估您的應用程式。 我們建議調查這些測試結果，以產生更好的品質應用程式。 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
+選擇性測試的 Windows 傳統型橋接器應用程式僅供參考，不會用來在 Microsoft 網上商店上架期間評估您的應用程式。 我們建議調查這些測試結果，以產生更好的品質應用程式。 市集上架的整體成功/失敗條件是由必要測試所決定，而非這些選擇性測試。
 
 ## <a name="current-optional-tests"></a>目前選擇性測試
 
@@ -50,13 +50,13 @@ ms.locfileid: "2909755"
 這項測試會確認 appx 不是偵錯組建。
  
 **背景 **  
-若要通過 Microsoft Store 認證，應用程式不會編譯針對偵錯，而且不可以參照可執行檔的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
+若要通過 Microsoft Store 認證，應用程式不會編譯針對偵錯，而且不可以參照可執行檔檔案的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
  
 **測試詳細資料**  
 測試應用程式，確定不是偵錯組建，而且沒有連結到任何偵錯架構。
  
 **修正動作**  
-* 在您提交到 Microsoft 網上商店之前，請為發行組建建置應用程式。
+* 在您提交到 Microsoft 網上商店之前，請為版本組建建置應用程式。
 * 確定您已安裝正確的 .NET Framework 版本。
 * 確認應用程式並未連結到偵錯版本的架構，且是利用發行版本所建置。 如果這個應用程式包含 .NET 元件，請確認您已安裝正確的 .NET Framework 版本。
 
@@ -125,7 +125,7 @@ ms.locfileid: "2909755"
 影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
-"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這樣的應用程式，您要透過 Microsoft 網上商店散布。 透過 Microsoft 網上商店散發應用程式的 resources.pri 必須是應用程式套件的根目錄中，而且包含應用程式支援的所有語言參考。 
+"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這對於您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft 網上商店的應用程式的 resources.pri 必須位於 app 套件的根目錄，並包含應用程式支援的所有語言參考。 
 字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
 字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -214,17 +214,17 @@ ms.locfileid: "2909755"
  
 **測試詳細資料**  
 這項測試會檢查應用程式中的所有 UWP 元件︰
-* 確認應用程式套件內每個受管理二進位檔案都相依於所檢查的二進位檔匯入位址表不支援的 UWP 應用程式開發的 Win32 API。
+* 確認應用程式套件內的每個受管理二進位檔案都相依於 Win32 API 所支援的 UWP 應用程式開發檢查的二進位檔匯入位址表。
 * 確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。 
 
 **修正動作**  
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
 
 > [!NOTE]
-> 應用程式的偵錯組建無法通過這個測試，即使應用程式會使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
+> 偵錯組建的 app 無法通過這個測試，即使應用程式使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
 
 > [!NOTE]
-> 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 如需詳細資訊，請參閱[UWP 應用程式中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
+> 偵錯設定中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 如需詳細資訊，請參閱[在 UWP app 中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
 
 ### <a name="6-user-account-control-uac-test"></a>6. 使用者帳戶控制 (UAC) 測試  
 

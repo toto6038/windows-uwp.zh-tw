@@ -1,24 +1,24 @@
 ---
-author: serenaz
+author: QuinnRadich
 Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
 title: UWP app 的瀏覽基本知識
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.author: sezhen
+ms.author: quradic
 ms.date: 7/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 464da3dd3a9a181555f7b4bfd1059e9834fe7338
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2909886"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3117795"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -179,7 +179,7 @@ ms.locfileid: "2909886"
     :::column:::
         ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**頂端瀏覽和索引標籤**](../controls-and-patterns/navigationview.md)
+    ::: 欄範圍 ="2":::[**頂端瀏覽與索引標籤**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: 3727445c1d6374401b867c78e4ff8b07d92b7adc
+ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "2907416"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "3118702"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 
@@ -26,9 +26,9 @@ ms.locfileid: "2907416"
 
 ## <a name="account-settings"></a>帳戶設定
 
-若要檢視您的帳戶設定，按一下您儀表板右上角的齒輪圖示，然後選取 [**開發人員設定**。 您可以在此處找到關於您的帳戶和連結至其他頁面，您可以在此檢視資訊以及執行各種帳戶相關工作的詳細資料。
+若要檢視您的帳戶設定，請按一下儀表板右上角的齒輪圖示，然後選取 [**開發人員設定**。 您可以在此處找到關於您的帳戶和連結至其他頁面，您可以在此檢視資訊並執行各種帳戶相關工作的詳細資料。
 
-在 **\[帳戶詳細資料\]** 區段中，您可以查看帳戶的狀態和類型。 您也可以查看您的賣方識別碼和其他的發行者識別碼資訊以下。 這些值由 Microsoft 指派用以唯一識別您的開發人員帳戶，並無法編輯。
+在 **\[帳戶詳細資料\]** 區段中，您可以查看帳戶的狀態和類型。 您也可以查看您的賣方識別碼及其他的發行者識別碼資訊以下。 這些值由 Microsoft 指派用以唯一識別您的開發人員帳戶，並無法編輯。
 
 > [!NOTE]
 > 針對您個別應用程式的身分識別詳細資料，可以在每個應用程式的[應用程式身分識別](view-app-identity-details.md)頁面找到。
@@ -49,11 +49,11 @@ ms.locfileid: "2907416"
 以下是一些您將會在 **\[帳戶設定\]** 區段中找到的其他項目。
 
 - **驗證狀態**： 當您的帳戶正在進行驗證程序 （例如，當您第一次註冊或之後您大幅更新連絡資訊） 時，您可以檢閱您的驗證狀態。
-- **開發人員中心測試人員計畫**： 您可以選擇在或不使用[開發人員中心測試人員計畫](dev-center-insider-program.md)與主要**帳戶設定**\] 頁面。
+- **開發人員中心測試人員計畫**： 入或移出主從 「[開發人員中心測試人員計畫](dev-center-insider-program.md)，您可以選擇**帳戶設定**\] 頁面。
 - **支付帳戶**與**稅務設定檔**：這是您[設定支付帳戶和稅單](setting-up-your-payout-account-and-tax-forms.md)的地方。 您需要先完成這個部分，才能為 App 或附加元件收取款項。
 - **企業關聯**：接受企業的邀請，這些企業希望您發行其專用的應用程式。 如需詳細資訊，請參閱[向企業散發企業營運應用程式](distribute-lob-apps-to-enterprises.md)。
 - **使用者**：將使用者新增到您的開發人員中心帳戶，並為他們指派角色和權限。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
-- **租用戶**： 管理您的 Azure AD 租用戶關聯。 如需詳細資訊，請參閱[將 Azure AD 與您的開發人員中心帳戶建立關聯](associate-azure-ad-with-dev-center.md)。
+- **租用戶**： 管理您的 Azure AD 租用戶關聯。 如需詳細資訊，請[將 Azure AD 與您的開發人員中心帳戶建立關聯](associate-azure-ad-with-dev-center.md)。
 - **計畫**：檢視您所參與之計畫的詳細資料，並了解其他感興趣的計畫。
 - **合約**：檢視您的帳戶已接受的合約。
 - **開發人員的裝置**： 檢視及管理[您已解鎖用於測試的 Windows Phone 8.x 裝置](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[為開發啟用 Xbox One 主機](../xbox-apps/devkit-activation.md)。 
