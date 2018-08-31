@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 XAML 中，自訂，範本化，控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: 81eb7f29e511f76d1126c1e4a43a2b96f1fa6f9f
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.openlocfilehash: 25e17888c3292cbaf7b84c8a4bdd7c411530b558
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3119100"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3233060"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>XAML （範本化） 的自訂控制項[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -189,7 +189,7 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 };
 ```
 
-*可覆寫*函式本身以不同的方式在中顯示不同的語言投影。 在 C# 中，為例，覆寫函式通常會顯示為受保護的虛擬函式。 在 C + + /winrt，它們不虛擬也不受保護，但您仍然可以覆寫這些，並提供您自己的實作，如以上所示。
+*可覆寫*函式本身以不同的方式在中顯示不同的語言投影。 在 C# 中，例如，可覆寫功能通常會顯示為受保護的虛擬函式。 在 C + + /winrt，它們不虛擬也不受保護，但您仍然可以覆寫這些，並提供您自己的實作，如以上所示。
 
 ## <a name="important-apis"></a>重要 API
 * [控制項](/uwp/api/windows.ui.xaml.controls.control)

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: a2e475cc39118824dcdfe777b8729fe2b7da1a1b
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.openlocfilehash: ef8e9cab3ce3bcdb390b527efc5ec65c5f92dd9f
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3112716"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3228063"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)撰寫 API
 
@@ -265,7 +265,7 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > 不過，如果您正在從 XAML UI 參考您的類型，則在相同的專案中將會同時有執行類型和投影類型。 在此情況下，**讓**傳回投影類型的執行個體。 如需該案例的程式碼範例，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
-我們可以只使用 `istringable` (在上述的程式碼範例中) 撥打電話給 **IStringable** 介面的成員。 但 C++/WinRT 介面 (這是一個投影介面) 從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以呼叫[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 在其上查詢其他投影的類型或介面，您也可以是使用或傳回。
+我們可以只使用 `istringable` (在上述的程式碼範例中) 撥打電話給 **IStringable** 介面的成員。 但 C++/WinRT 介面 (這是一個投影介面) 從 [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown) 衍生。 因此，您可以呼叫[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) （或[**iunknown:: Try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)） 在其上查詢其他投影的類型或介面，您也可以是使用或傳回。
 
 ```cppwinrt
 istringable.ToString();

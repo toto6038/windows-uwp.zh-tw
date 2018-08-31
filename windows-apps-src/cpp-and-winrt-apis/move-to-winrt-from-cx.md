@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 63f730e5256cb88c04549cc64e36003885e02fb6
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.openlocfilehash: ac7affb044c6b60a249b154cc62379c7517161b0
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3113298"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3228103"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-ccx"></a>從 C++/CX 移到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 
 本主題示範如何將 [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 程式碼移植到其在 C++/WinRT 中的對等項目。
@@ -198,7 +198,7 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Wind
 }
 ```
 
-對等 C + + /winrt 程式碼取代`dynamic_cast` [**IUnknown::_try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)函式呼叫，這會封裝**QueryInterface**。 您也可以選擇改為呼叫[**IUnknown::_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，這會擲回例外狀況，如果沒有傳回查詢所需的介面 （您要求的類型的預設介面）。 以下是 C + + /winrt 程式碼範例。
+對等 C + + /winrt 程式碼取代`dynamic_cast` [**iunknown:: Try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)函式呼叫，這會封裝**QueryInterface**。 您也可以選擇改為呼叫[**iunknown:: As**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)，這會擲回例外狀況，如果沒有傳回查詢所需的介面 （您要求的類型的預設介面）。 以下是 C + + /winrt 程式碼範例。
 
 ```cppwinrt
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
