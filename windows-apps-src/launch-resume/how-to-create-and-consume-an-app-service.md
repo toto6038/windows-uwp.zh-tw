@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7475ae8db964b23de89488d883c135158ea20e74
-ms.sourcegitcommit: 7efffcc715a4be26f0cf7f7e249653d8c356319b
+ms.sourcegitcommit: 1e5590dd10d606a910da6deb67b6a98f33235959
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "3115977"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "3244326"
 ---
 # <a name="create-and-consume-an-app-service"></a>建立和取用 App 服務
 
