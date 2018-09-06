@@ -11,11 +11,11 @@ keywords: windows 10，uwp，背景工作，應用程式服務
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: 1144443f943f134991d050dea1457f252eaaf36d
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3382104"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3393824"
 ---
 # <a name="convert-an-out-of-process-background-task-to-an-in-process-background-task"></a>將跨處理序背景工作轉換成同處理序背景工作
 
