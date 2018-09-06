@@ -3,18 +3,18 @@ author: mcleanbyron
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得傳統型應用程式的彙總錯誤報告資料。
 title: 取得傳統型應用程式的錯誤報告資料
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 71c566ff375f36108d724f3c550570b3332f4c6b
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 66594fd6f59281011fccab21ad5618827db322dd
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3382354"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3402041"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>取得傳統型應用程式的錯誤報告資料
 
@@ -104,7 +104,7 @@ Authorization: Bearer <your access token>
 | market          | 字串  | 裝置市場的 ISO 3166 國家/地區碼。   |
 | deviceType      | 字串  | 下列其中一個字串，指定發生錯誤的裝置類型：<p/><ul><li><strong>電腦</strong></li><li><strong>伺服器</strong></li><li><strong>平板電腦</strong></li><li><strong>不明</strong></li></ul>    |
 | applicationVersion     | 字串  |   發生錯誤之應用程式可執行的版本。    |
-| eventCount      | 整數 | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
+| eventCount      | 數目 | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
 
 
 ### <a name="response-example"></a>回應範例

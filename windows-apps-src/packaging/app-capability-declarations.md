@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3404900"
+ms.locfileid: "3409979"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 

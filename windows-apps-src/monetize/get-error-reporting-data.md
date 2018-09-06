@@ -4,18 +4,18 @@ ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總錯誤報告資料。
 title: 取得 App 的錯誤報告資料
 ms.author: mcleans
-ms.date: 06/05/2018
+ms.date: 09/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c03ea17e111f86ad390dafe5360db9d10864edc
-ms.sourcegitcommit: 7aa1933e6970f878faf50d59e1f799b90afd7cc7
+ms.openlocfilehash: 15dd4d5febe0b57e164f0aadeeb8d7b816dcdd66
+ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "3381844"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "3399246"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 
@@ -106,8 +106,8 @@ Authorization: Bearer <your access token>
 | deviceType      | 字串  | 下列其中一個字串，指出發生錯誤的裝置類型：<ul><li>**電腦**</li><li>**Phone**</li><li>**Console**</li><li>**IoT**</li><li>**Holographic**</li><li>**Unknown**</li></ul>    |
 | packageName     | 字串  | 與此錯誤關聯之應用程式套件的唯一名稱。      |
 | packageVersion  | 字串  | 與此錯誤關聯之應用程式套件的版本。   |
-| deviceCount     | 整數 | 針對指定的彙總層級對應到此錯誤的唯一裝置數目。  |
-| eventCount      | 整數 | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
+| deviceCount     | 數目 | 針對指定的彙總層級對應到此錯誤的唯一裝置數目。  |
+| eventCount      | 數目 | 針對指定的彙總層級被歸類到此錯誤的事件數目。      |
 
 
 ### <a name="response-example"></a>回應範例

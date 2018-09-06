@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，檢閱、 註解，評論者
 ms.localizationpriority: medium
 ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: 914b38559852aaefe7e9468f6f53a7465bf36e30
+ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "3392954"
+ms.locfileid: "3408249"
 ---
 # <a name="reviews-report"></a>評論報告
 
