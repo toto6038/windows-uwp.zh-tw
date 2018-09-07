@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event, 標準, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b52bf8e33bbf111dd02c695d8c3baf77e1338ac
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 1b0aa1a53ce69369c442cef7f3b5912631593242
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3413591"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3660650"
 ---
 # <a name="author-events-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中撰寫事件
 
@@ -28,7 +28,7 @@ ms.locfileid: "3413591"
 
 ## <a name="create-a-windows-runtime-component-bankaccountwrc"></a>建立 Windows 執行階段元件 (BankAccountWRC)
 
-在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立 **Visual C++ Windows 執行階段元件 (C + + / WinRT)** 專案，並將它命名為 *BankAccountWRC*  (適用於「銀行帳戶 Windows 執行階段元件」)。
+在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立**Visual c + +** > **Windows 通用** > **Windows 執行階段元件 (C + + /winrt)** 專案，並將它命名為*BankAccountWRC* （適用於 「 銀行帳戶 Windows 執行階段元件 」）。
 
 新建立的專案中包含一個名為 `Class.idl` 的檔案。 重新命名檔案`BankAccount.idl`(重新命名`.idl`檔案，自動重新命名相依`.h`和`.cpp`太檔案)。 內容取代成`BankAccount.idl`使用下列清單。
 
@@ -101,7 +101,7 @@ namespace winrt::BankAccountWRC::implementation
 
 ## <a name="create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component"></a>建立核心應用程式 (BankAccountCoreApp) 測試 Windows 執行階段元件
 
-現在建立新的專案 (在您的 `BankAccountWRC` 解決方案中，或在新的一個裡)。 建立 **Visual C++ 核心應用程式 (C++/WinRT)** 專案，並將它命名為 *BankAccountCoreApp*。
+現在建立新的專案 (在您的 `BankAccountWRC` 解決方案中，或在新的一個裡)。 建立**Visual c + +** > **Windows 通用** > **核心應用程式 (C + + /winrt)** 專案，並將它命名為*BankAccountCoreApp*。
 
 新增參考資料，並瀏覽至`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`（或新增專案對專案參照，如果兩個專案在同一個方案中）。 按一下 \[新增\]****，然後 **\[確定\]**。 現在建置 BankAccountCoreApp。 萬一您看到的錯誤的承載檔案`readme.txt`不存在，從 Windows 執行階段元件專案排除該檔案，重建它，然後重建 BankAccountCoreApp。
 
