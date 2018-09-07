@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 XAML 中，自訂，範本化，控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: 25e17888c3292cbaf7b84c8a4bdd7c411530b558
-ms.sourcegitcommit: 53ba430930ecec8ea10c95b390fe6e654fe363e1
+ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
+ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "3422193"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "3664855"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>XAML （範本化） 的自訂控制項[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -27,7 +27,7 @@ ms.locfileid: "3422193"
 其中一個最強大的功能的通用 Windows 平台 (UWP) 是可在使用者介面 (UI) 堆疊提供建立根據 XAML[**控制項**](/uwp/api/windows.ui.xaml.controls.control)類型的自訂控制項的彈性。 XAML UI 架構提供功能，例如[自訂相依性屬性](/windows/uwp/xaml-platform/custom-dependency-properties)，附加的屬性，與[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)，可讓您輕鬆地建立豐富的功能和可自訂控制項。 本主題會逐步引導您完成的步驟，建立自訂 （範本化） 的控制項使用 C + + /winrt。
 
 ## <a name="create-a-blank-app-bglabelcontrolapp"></a>建立空白的應用程式 (BgLabelControlApp)
-在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立**Visual c + + 空白的應用程式 (C + + /winrt)** 專案，並將它命名為*BgLabelControlApp*。
+在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立**Visual c + +** > **Windows 通用** > **空白的應用程式 (C + + /winrt)** 專案，並將它命名為*BgLabelControlApp*。
 
 我們要撰寫新的類別來代表自訂 （範本化） 的控制項。 我們在相同的編譯單位裡撰寫和使用此類別。 但我們想要能夠具現化此類別從 XAML 標記中，以及適用於這個原因，它會一個執行階段類別。 且我們會使用 C++/WinRT 撰寫和使用它。
 
