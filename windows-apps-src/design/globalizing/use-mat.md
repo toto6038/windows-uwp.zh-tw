@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 39e002247cabb6389ddf23860499ebf1f166b03a
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3663130"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3826018"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 

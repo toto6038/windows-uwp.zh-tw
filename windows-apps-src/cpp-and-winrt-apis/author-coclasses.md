@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 作者，COM、 元件
 ms.localizationpriority: medium
-ms.openlocfilehash: 428e1e963c89b7f9061d6b579b3bd5368a3a0ad1
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3659035"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3825225"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>撰寫使用 COM 元件[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -22,8 +22,6 @@ C + + /winrt 可協助您撰寫的傳統型元件物件模型 (COM) 元件 （�
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
-//
-
 #include "pch.h"
 
 using namespace winrt;
@@ -47,6 +45,8 @@ int main()
 }
 ```
 
+另請參閱[使用 COM 元件，使用 C + + /winrt](consume-com.md)。
+
 ## <a name="a-more-realistic-and-interesting-example"></a>更逼真且有趣的範例
 
 本主題的其餘部分逐步解說如何建立最少的主控台應用程式專案使用 C + + /winrt 實作基本的 coclass 和類別原廠。 範例應用程式示範如何提供回呼按鈕的快顯通知上，並 coclass （這會實作**INotificationActivationCallback** COM 介面） 可讓應用程式會啟動並呼叫傳回時使用者按一下該按鈕的快顯通知。
@@ -60,8 +60,6 @@ int main()
 開啟`main.cpp`，並移除 using 指示詞的專案範本產生。 在其位置，貼上下列程式碼 （這可讓我們要、 標頭，以及我們需要的類型名稱）。
 
 ```cppwinrt
-#pragma comment(lib, "onecore")
-#pragma comment(lib, "propsys")
 #pragma comment(lib, "shell32")
 
 #include <iomanip>
@@ -80,7 +78,7 @@ using namespace Windows::UI::Notifications;
 
 ## <a name="implement-the-coclass-and-class-factory"></a>實作 coclass 和類別的原廠
 
-在 C + + /winrt，您實作 coclasses 和類別 factory 衍生直接從[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基礎結構。 在三個 using 指示詞上述後立即 (以及在之前`main`)，將此程式碼來實作您的快顯通知啟動者 COM 元件。
+在 C + + /winrt，您實作 coclasses 和類別 factory 衍生自[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基礎結構。 在三個 using 指示詞上述後立即 (以及在之前`main`)，將此程式碼來實作您的快顯通知的 COM 通知啟動者元件。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -93,15 +91,22 @@ std::wstring const this_app_name{ L"ToastAndCallback" };
 struct callback : winrt::implements<callback, INotificationActivationCallback>
 {
     HRESULT __stdcall Activate(
-        [[maybe_unused]] LPCWSTR app,
-        [[maybe_unused]] LPCWSTR args,
+        LPCWSTR app,
+        LPCWSTR args,
         [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
         [[maybe_unused]] ULONG count) noexcept final
     {
-        std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
-        std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
-        std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
-        return S_OK;
+        try
+        {
+            std::wcout << this_app_name << L" has been called back from a notification." << std::endl;
+            std::wcout << L"Value of the 'app' parameter is '" << app << L"'." << std::endl;
+            std::wcout << L"Value of the 'args' parameter is '" << args << L"'." << std::endl;
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
     }
 };
 
@@ -137,9 +142,9 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 
 ## <a name="best-practices-for-implementing-com-methods"></a>實作 COM 方法的最佳做法
 
-錯誤處理和資源管理技術可以瀏覽手中最。 它是更方便且不方便使用比錯誤碼的例外狀況。 如果您使用資源下載並初始化 (RAII) 慣用語，則可以同時避免： 明確檢查錯誤碼。然後明確釋出資源。 如此一來讓多錯綜複雜多餘的情況下，您的程式碼，它提供錯誤充分的位置來隱藏。 相反地，使用 RAII 和攔截例外狀況。 如此一來，您資源配置是異常安全，而您的程式碼很簡單。
+錯誤處理和資源管理技術可以瀏覽手中最。 它是更方便且不方便使用比錯誤碼的例外狀況。 此外，如果您使用資源的下載數的是-初始化 (RAII) 慣用語，則您可以避免明確地檢查錯誤碼，並明確釋放資源。 這類明確檢查讓更多錯綜複雜多餘的情況下，您的程式碼，它提供錯誤充分的位置來隱藏。 反之，請使用 RAII，並擲回/catch 例外狀況。 如此一來，您資源配置是異常安全，而您的程式碼很簡單。
 
-不過，您我允許逸出您的 COM 方法實作的例外狀況。 您可以確保使用`noexcept`規範，在您的 COM 方法。 只要您處理這類之前您方法結束後，它是 ok 擲回任何一處的您方法中，呼叫圖形中的例外狀況。
+不過，您我允許逸出您的 COM 方法實作的例外狀況。 您可以確保使用`noexcept`規範，在您的 COM 方法。 只要您處理這類之前您方法結束後，它是 ok 擲回任何一處的您方法中，呼叫圖形中的例外狀況。 如果您使用`noexcept`，但您然後允許來逸出您方法中，例外狀況，則您的應用程式將會終止。
 
 ## <a name="add-helper-types-and-functions"></a>新增協助程式類型和函式
 
@@ -376,3 +381,13 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 ## <a name="how-to-test-the-example-application"></a>如何在測試範例應用程式
 
 建置應用程式，並加以執行至少一次以系統管理員身分，使註冊，以及其他安裝程式中，若要執行的程式碼。 您是否正在執行以系統管理員身分，然後按下不要 ' 會造成顯示快顯通知。 您可以按一下 [**回呼 ToastAndCallback** ] 按鈕是直接從突然，或從在控制中心和您的應用程式將會啟動快顯通知、 具現化，coclass 和**INotificationActivationCallback:: 啟用**執行方法。
+
+## <a name="important-apis"></a>重要 API
+* [IInspectable 介面](https://msdn.microsoft.com/library/br205821)
+* [IUnknown 介面](https://msdn.microsoft.com/library/windows/desktop/ms680509)
+* [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
+
+## <a name="related-topics"></a>相關主題
+* [使用 C++/WinRT 撰寫 API ](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [使用 COM 元件使用 C + + /winrt](consume-com.md)
+* [傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

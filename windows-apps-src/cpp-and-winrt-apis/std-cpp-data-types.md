@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、資料、類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 729a3c30f84e20a89912b728db1efecc3e54ad9e
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3663965"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3823622"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準 C++ 資料類型與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 使用 C++/WinRT，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 Api (請參閱[字串處理在 C + + /winrt](strings.md))，以及您可以傳遞初始設定式清單和標準的容器來預期語意對等的集合 Api。
@@ -156,7 +156,7 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 您可以繼續呼叫非同步 Windows 執行階段 Api 時使用[平行模式程式庫 (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) 。 不過，在許多情況下，c + + 協同程式有效率且更輕鬆地撰寫慣用語針對的互動提供非同步物件。 如需詳細資訊和程式碼範例，請參閱[並行和非同步作業 C + + /winrt](concurrency.md)。
 
 ## <a name="important-apis"></a>重要 API
-* [IVector&lt;T&gt;](/uwp/api/windows.foundation.collections.ivector_t_)
+* [IVector&lt;T&gt;介面](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view 結構範本](/uwp/cpp-ref-for-winrt/array-view)
 
 ## <a name="related-topics"></a>相關主題

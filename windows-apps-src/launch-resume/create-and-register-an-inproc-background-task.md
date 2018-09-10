@@ -11,11 +11,11 @@ keywords: windows 10，uwp，背景工作
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3660942"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821132"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>建立及註冊同處理序的背景工作
 

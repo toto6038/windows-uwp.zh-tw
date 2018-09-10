@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: ebb71b91af7e1490099898084f42ce04e698ef20
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 1e1bd5f23f40c5d0238f8089c91ee69c6a52313f
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3658791"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3820972"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>開始使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。
@@ -120,10 +120,10 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 也不需要處理 HRESULT 傳回碼。 C++/WinRT 將錯誤 HRESULT 轉換為例外，例如 [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)，以擁有自然而現代化的程式設計樣式。 如需有關錯誤處理和程式碼範例的詳細資訊，請參閱[錯誤處理 C++/WinRT](error-handling.md)。
 
 ## <a name="important-apis"></a>重要 API
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [SyndicationFeed.Items](/uwp/api/windows.web.syndication.syndicationfeed.items)
+* [Syndicationclient:: Retrievefeedasync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [SyndicationFeed.Items 屬性](/uwp/api/windows.web.syndication.syndicationfeed.items)
 * [winrt::hstring 結構](/uwp/cpp-ref-for-winrt/hstring)
-* [winrt::hresult-error](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
+* [hresult-error 結構](/uwp/cpp-ref-for-winrt/error-handling/hresult-error)
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)

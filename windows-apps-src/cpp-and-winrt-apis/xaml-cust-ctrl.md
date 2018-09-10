@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 XAML 中，自訂，範本化，控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354f3371807a7000160976b6f8af5b87e1ad3f8
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: fd1843afc58bc758db1c6e575f3733bdc4f47b4e
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664855"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821032"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>XAML （範本化） 的自訂控制項[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -192,10 +192,10 @@ struct BgLabelControl : BgLabelControlT<BgLabelControl>
 *可覆寫*函式本身以不同的方式在中顯示不同的語言投影。 在 C# 中，例如，可覆寫功能通常會顯示為受保護的虛擬函式。 在 C + + /winrt，它們不虛擬也不受保護，但您仍然可以覆寫這些，並提供您自己的實作，如以上所示。
 
 ## <a name="important-apis"></a>重要 API
-* [控制項](/uwp/api/windows.ui.xaml.controls.control)
-* [DependencyProperty](/uwp/api/windows.ui.xaml.dependencyproperty)
-* [FrameworkElement](/uwp/api/windows.ui.xaml.frameworkelement)
-* [UIElement](/uwp/api/windows.ui.xaml.uielement)
+* [控制項類別](/uwp/api/windows.ui.xaml.controls.control)
+* [DependencyProperty 類別](/uwp/api/windows.ui.xaml.dependencyproperty)
+* [FrameworkElement 類別](/uwp/api/windows.ui.xaml.frameworkelement)
+* [UIElement 類別](/uwp/api/windows.ui.xaml.uielement)
 
 ## <a name="related-topics"></a>相關主題
 * [控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)

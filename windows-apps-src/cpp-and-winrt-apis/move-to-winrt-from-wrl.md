@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b9afd50b2c360c11b103f676b91d512881eaa71
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 935b76e668153c9519bc6516da0c2872c2428f2e
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664168"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3823342"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-wrl"></a>從 WRL 移到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 C++/WinRT 中的對等項目。
@@ -214,7 +214,7 @@ HRESULT __stdcall DllCanUnloadNow(void)
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::com_ptr](/uwp/cpp-ref-for-winrt/com-ptr)
+* [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題

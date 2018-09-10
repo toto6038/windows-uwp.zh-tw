@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
-ms.openlocfilehash: a29c095e49b49baa63bd547c0bb928ad7f78aa86
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 7af66c3f0586f2fb99a2a742f6da0144ed69d253
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664651"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821992"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>藉由在 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 使用委派來處理事件
 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。 您可以使用任何標準 C++ 類函式的物件處理事件。
@@ -264,7 +264,7 @@ void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const
 Lamba 擷取子句中，已建立暫存變數，代表*this*的弱式參考資料。 lambda 本文中，如果可以取得*this*的強式參考資料，則可呼叫**OnCompositionScaleChanged**函式。 如此一來，在 **OnCompositionScaleChanged** 中，可安全使用 *this*。
 
 ## <a name="important-apis"></a>重要 API
-* [winrt::auto_revoke_t](/uwp/cpp-ref-for-winrt/auto-revoke-t)
+* [winrt:: auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)
 * [winrt::implements::get_weak function](/uwp/cpp-ref-for-winrt/implements#implementsgetweak-function)
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsgetstrong-function)
 

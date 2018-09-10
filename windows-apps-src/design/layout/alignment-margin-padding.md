@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7a45e89c63ec12cb7b77997eac741ebedc415c54
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3661176"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3824912"
 ---
 # <a name="alignment-margin-padding"></a>對齊、邊界、邊框間距
 

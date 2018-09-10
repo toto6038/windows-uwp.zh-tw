@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: fe43eaa233d3384eecb5e8755190efc1a109bbb9
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3659835"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3824792"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>透過 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的並行和非同步作業。
 > [!NOTE]
@@ -321,13 +321,13 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 ```
 
 ## <a name="important-apis"></a>重要 API
-* [concurrency::task](/cpp/parallel/concrt/reference/task-class)
-* [IAsyncAction](/uwp/api/windows.foundation.iasyncaction)
-* [IAsyncActionWithProgress&lt;TProgress&gt;](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
-* [IAsyncOperation&lt;TResult&gt;](/uwp/api/windows.foundation.iasyncoperation_tresult_)
-* [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
-* [SyndicationClient::RetrieveFeedAsync](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
-* [SyndicationFeed](/uwp/api/windows.web.syndication.syndicationfeed)
+* [concurrency:: task 類別](/cpp/parallel/concrt/reference/task-class)
+* [IAsyncAction 介面](/uwp/api/windows.foundation.iasyncaction)
+* [IAsyncActionWithProgress&lt;TProgress&gt;介面](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)
+* [IAsyncOperation&lt;TResult&gt;介面](/uwp/api/windows.foundation.iasyncoperation_tresult_)
+* [IAsyncOperationWithProgress&lt;TResult，TProgress&gt;介面](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)
+* [Syndicationclient:: Retrievefeedasync 方法](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync)
+* [SyndicationFeed 類別](/uwp/api/windows.web.syndication.syndicationfeed)
 
 ## <a name="related-topics"></a>相關主題
 * [藉由在 C++/WinRT 使用委派來處理事件](handle-events.md)

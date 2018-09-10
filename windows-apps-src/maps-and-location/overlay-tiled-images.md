@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
 ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
-ms.sourcegitcommit: 00d27738325d6db5b5e481911ae7fac0711b05eb
+ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "3664581"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "3821142"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
