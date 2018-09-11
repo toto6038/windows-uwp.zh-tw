@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 遊戲台, 震動
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf78b43bb09f97c196858d7cc4fcdb1e71462fc
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824122"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3846302"
 ---
 # <a name="gamepad-and-vibration"></a>遊戲台與震動
 

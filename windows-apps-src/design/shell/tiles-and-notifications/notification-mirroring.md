@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use notification mirroring on your toast notifications.
 title: 通知鏡像
 label: Notification mirroring
@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 雲端的控制中心, 通知鏡像, 通知, 跨裝置
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eda26c37bc95943691063c3d21d39a6c7a1d7b2
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523228"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3845472"
 ---
 # <a name="notification-mirroring"></a>通知鏡像
 
@@ -29,7 +29,7 @@ ms.locfileid: "1523228"
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-開發人員可從通知鏡像取得兩個優點：鏡像通知可讓使用者更積極參與您的服務，同時也能協助使用者發掘出您的 Microsoft Store 傳統型應用程式！ 您的使用者可能根本不知道您有適用於 Windows 10 桌面的絕佳 UWP app。 當使用者從他們的手機收到鏡像通知時，使用者可以按一下快顯通知前往 Microsoft Store，並從那裡安裝您的 UWP 傳統型應用程式。
+開發人員可從通知鏡像取得兩個優點： 鏡像的通知中更多的使用者持續使用您的服務，同時也能協助使用者探索 Microsoft Store 傳統型應用程式 ！ 您的使用者可能根本不知道您有適用於 Windows 10 桌面的絕佳 UWP app。 當使用者從他們的手機收到鏡像的通知時，使用者可以按一下快顯通知來將您引導至 Microsoft Store，他們可以在其中安裝您的 UWP 傳統型應用程式。
 
 鏡像適用於 Windows Phone 和 Android。 使用者必須在他們的手機和桌面同時登入 Cortana，通知鏡像才能運作。
 

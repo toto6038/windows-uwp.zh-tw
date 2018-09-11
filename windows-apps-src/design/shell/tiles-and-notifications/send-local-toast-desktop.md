@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
 title: 從傳統型 C# 應用程式傳送本機快顯通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, win32, 傳統型, 快顯通知, 傳送快顯通知, 傳送本機快顯通知, 傳統型橋接器, C#, c sharp
 ms.localizationpriority: medium
-ms.openlocfilehash: 44457221d7b108563e7df030125a909da6609cbe
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983454"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3847142"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
@@ -70,7 +70,7 @@ ms.locfileid: "1983454"
 
 ## <a name="step-4-implement-the-activator"></a>步驟 4：實作啟動者
 
-您必須為快顯通知啟用實作處理常式，以便使用者按下您的快顯通知時，您的應用程式可執行某個動作。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
+您必須實作快顯通知啟用的處理常式，以便當使用者按下快顯通知，您的應用程式可以執行某個動作。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
 
 延伸 **NotificationActivator** 類別然後新增下列三個屬性，並使用眾多線上 GUID 產生器的其中一個，為您的應用程式建立唯一 GUID CLSID。 此 CLSID (類別識別碼) 是控制中心得知 COM 啟用哪個類別的方式。
 
