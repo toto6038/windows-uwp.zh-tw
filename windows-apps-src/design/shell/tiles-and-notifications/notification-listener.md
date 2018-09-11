@@ -1,5 +1,5 @@
 ---
-author: anbare
+author: andrewleader
 Description: Learn how to use Notification Listener to access all of the user's notifications.
 title: 通知接聽程式
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 00774817574c209826050a084bba77084d404ace
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674615"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3850582"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
@@ -281,19 +281,17 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>新增/關閉通知的前景事件
 
 > [!IMPORTANT] 
-> 已知問題：前景事件無法運作 (我們沒有修正這個問題的即時計劃)。 
+> 已知問題： 前景事件最新版 Windows 中，會造成 CPU 迴圈與先前操作不在此之前。 請勿使用前景事件。 在 Windows 的即將推出更新，我們將會修正此問題。
 
-如果您有需要前景事件的案例，請讓我們知道。 不過，大部分 (如果並非所有) 的案例應該實際上一律使用背景工作，因為您的應用程式最有可能需要因通知事件而從背景中喚醒。 例如，您的穿戴式裝置配件應用程式很少在前景中執行，且必須知道來自背景的新通知。
-
-此外，歸功於[單一處理程序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)，可以很輕鬆地在前景應用程式中使用背景工作觸發程序。 所以，如果您真的要接收前景事件，只需使用背景觸發程序搭配單一處理程序模型。
+而不是使用前景事件，使用顯示較舊版本的[單一處理程序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)的背景工作的程式碼。 背景工作也可讓您關閉或執行您的應用程式時收到變更事件通知這兩個。
 
 ```csharp
-// Subscribe to foreground event
+// Subscribe to foreground event (DON'T USE THIS)
 listener.NotificationChanged += Listener_NotificationChanged;
  
 private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
 {
-    // NOTE: This event DOES NOT WORK. Use the background task instead.
+    // NOTE: This event WILL CAUSE CPU LOOPS, DO NOT USE. Use the background task instead.
 }
 ```
 

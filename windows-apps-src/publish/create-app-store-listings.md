@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: f5cf806a595969ecbb018c3f7eea86c7a34940f6
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "3824302"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849192"
 ---
 # <a name="create-app-store-listings"></a>建立應用程式 Store 清單
 

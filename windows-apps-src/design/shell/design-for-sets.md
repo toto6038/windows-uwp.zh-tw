@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 43e727100872421ac519a7c00363e6f6eeaf832c
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 7c3e0e6ec7331e860c9153e2a2e29a51fb5848bd
+ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877130"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "3849872"
 ---
 # <a name="designing-for-sets"></a>針對集合的設計
 
@@ -119,7 +119,7 @@ titleBar.BackgroundColor = Windows.UI.Colors.Green;
 
 若要確認集合中您的應用程式圖示是否為最佳外觀，您應該針對應用程式提供替代、無背板的圖示。 （您應用程式索引標籤中使用的應用程式圖示與工作列中使用的相同。）替代圖示的目的是為了在任何背景色彩下都有良好外觀。 如果有的話，將會使用替代圖示。
 
-在應用程式清單中，除了您的一般圖示外，請指定一個其他形式無背板的圖示。 如需詳細資訊，請參閱 [磚與圖示資產指導方針](./tiles-and-notifications/app-assets.md)。 指定圖示如文章中 [資產類型](./tiles-and-notifications/app-assets.md#asset-types) 章節裡「無背板的目標大小清單資產」所述。
+在應用程式清單中，除了您的一般圖示外，請指定一個其他形式無背板的圖示。 如需詳細資訊，請參閱[應用程式圖示和標誌](/windows/uwp/design/style/app-icons-and-logos)。 若要指定圖示做為 「 無背板的目標大小清單資產 」 所述文章的[了解 app 圖示資產](/windows/uwp/design/style/app-icons-and-logos#more-about-app-icon-assets)區段中。
 
 如果您在應用程式資訊清單中不指定替代圖示，系統會用索引標籤色彩重新版面您的磚圖示，並使用它。
 
