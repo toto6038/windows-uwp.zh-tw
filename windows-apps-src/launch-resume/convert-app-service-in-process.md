@@ -11,11 +11,11 @@ keywords: windows 10，uwp，應用程式服務
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
 ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847782"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929888"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
 
@@ -42,7 +42,7 @@ ms.locfileid: "3847782"
 >   </Applications>
 > ```
 
-移除`EntryPoint`屬性從`<Extension>`元素因為[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)現在是進入點，就會叫用應用程式服務時，將會使用。
+移除`EntryPoint`屬性`<Extension>`元素因為[onbackgroundactivated （）](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)現在是叫用應用程式服務時，將會使用的進入點。
 
 第二處變更是，將服務邏輯從其個別的背景工作專案移入可從 **OnBackgroundActivated()** 呼叫的方法中。
 

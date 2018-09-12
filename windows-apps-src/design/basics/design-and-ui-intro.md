@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 952db87d0dabdb927a472de17f0c0d7b345bde4e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849062"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936375"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP app 設計簡介
 
@@ -66,7 +66,7 @@ ms.locfileid: "3849062"
 
 :::row:::
     :::column:::
-        在任何 Windows 10 裝置上啟動 UWP app 時，它會在一個[畫面](/uwp/api/Windows.UI.Xaml.Controls.Frame)，這可以瀏覽[頁面](/uwp/api/Windows.UI.Xaml.Controls.Page)的執行個體之間的[] 視窗](/uwp/api/Windows.UI.Xaml.Controls.Window)中啟動。
+        UWP 應用程式在任何 Windows 10 裝置上啟動時，它會啟動在[視窗](/uwp/api/Windows.UI.Xaml.Controls.Window)中使用[的畫面](/uwp/api/Windows.UI.Xaml.Controls.Frame)，這可以瀏覽[頁面](/uwp/api/Windows.UI.Xaml.Controls.Page)執行個體。
     :::column-end:::
     :::column:::
         ![框架](images/frame.svg)
@@ -75,7 +75,7 @@ ms.locfileid: "3849062"
 
 :::row:::
     :::column:::
-        您可以將您的應用程式的 UI 視為頁面的集合。 這取決於您決定每個頁面上應顯示內容以及在頁面之間的關係。
+        您可以將您的應用程式 UI 視為頁面的集合。 這取決於您決定每個頁面上應顯示內容以及在頁面之間的關係。
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
@@ -118,7 +118,7 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 :::row:::
     :::column:::
-        您的 UWP app 會與磚以及在 Windows[殼層](../shell/tiles-and-notifications/creating-tiles.md)通知更廣泛的 Windows 體驗互動。
+        您的 UWP app 會與磚以及 Windows[殼層](../shell/tiles-and-notifications/creating-tiles.md)通知更廣泛的 Windows 體驗互動。
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 

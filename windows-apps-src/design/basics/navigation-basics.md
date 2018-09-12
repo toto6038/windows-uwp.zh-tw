@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849362"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929278"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -179,7 +179,7 @@ ms.locfileid: "3849362"
     :::column:::
         ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**頂端瀏覽與索引標籤**](../controls-and-patterns/navigationview.md)
+    ::: 欄範圍 ="2":::[**頂端瀏覽和索引標籤**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851478"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936405"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>透過 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的並行和非同步作業。
 > [!NOTE]
@@ -69,7 +69,7 @@ int main()
 C++/WinRT 與 C++ 協同程式整合為程式設計模型，提供以自然的方式合作等待結果。 您可以藉由撰寫協同程式產生自己的 Windows 執行階段非同步作業。 下列程式碼範例中，**ProcessFeedAsync** 是協同程式。
 
 > [!NOTE]
-> **取得**函式存在於 C + + /winrt 投影類型**winrt::Windows::Foundation::IAsyncAction**，，因此您可以呼叫的函式內任何 C + + /winrt 專案。 您將找不到列為[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)介面中，成員函式因為**取得**不是實際的 Windows 執行階段類型**IAsyncAction**的應用程式二進位介面 (ABI) 表面的一部分。
+> **取得**函式存在於 C + + /winrt 投影類型**winrt::Windows::Foundation::IAsyncAction**，，因此您可以呼叫函式的內任何 C + + /winrt 專案。 因為**取得**不是實際的 Windows 執行階段類型**IAsyncAction**的應用程式二進位介面 (ABI) 表面的一部分，您不會找到列為[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)介面的成員函式。
 
 ```cppwinrt
 // main.cpp

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1bd5f23f40c5d0238f8089c91ee69c6a52313f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851348"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933791"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>開始使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。
@@ -26,7 +26,7 @@ ms.locfileid: "3851348"
 建立新的 **Windows 主控台應用程式 (C++/WinRT)** 專案。
 
 > [!IMPORTANT]
-> 如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，，並且針對 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，則新建立 C + + /winrt 專案可能會失敗來編譯錯誤 「*錯誤 C3861: 'from_abi': 識別碼不找到*」，以及來自*base.h*其他錯誤。 更新版本 （更多符合） 為目標的解決方案是版本的 Windows SDK 中或將專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 已-** 會出現在專案屬性**C/C++** > **語言** > **命令列****的其他選項**，然後刪除它)。
+> 如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並且針對 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，則新建立 C + + /winrt 專案可能會無法編譯錯誤 」*錯誤 C3861: 'from_abi': 識別碼不找到*」，並包含來自*base.h*其他錯誤。 解決方案是任一目標更新版本 （更多符合） 版本的 Windows SDK 中或將專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 寬鬆-** 會出現在專案屬性**C/C++** > **語言** > **命令列**在**其他選項**，然後刪除它)。
 
 
 編輯 `pch.h` 和 `main.cpp`，外觀如下。

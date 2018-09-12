@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
 ms.localizationpriority: medium
 ms.openlocfilehash: e6b4a3d8a10234e5f95e70f397a4de962a29c929
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848722"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3931861"
 ---
 # <a name="acquisitions-report"></a>下載數報告
 
 
-在 Windows 開發人員中心儀表板的**下載數**報告可讓您能夠查看已取得並安裝您的應用程式、 人數統計資料及平台詳細資訊，以及顯示的相關資訊 （包括 Xbox） 的 Windows 10 的客戶的如何找到您的應用程式清單。 您也可以檢視的最後一個小時或 seventy 兩個小時期間接近即時的下載數資料。 
+在 Windows 開發人員中心儀表板的**下載數**報告可讓您能夠查看已取得並安裝您的應用程式、 人數統計資料及平台詳細資訊，以及顯示的相關資訊 （包括 Xbox） 的 Windows 10 的客戶如何抵達您的應用程式清單。 您也可以檢視的最後一個小時或 seventy 兩個小時期間接近即時的下載數資料。 
 
 您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
 
@@ -55,10 +55,10 @@ ms.locfileid: "3848722"
 > [!NOTE]
 > 您也可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得應用程式下載數](../monetize/get-app-acquisitions.md)方法來擷取此資料。
 
-在**每日的應用程式**檢視中， **30d**時間期間選取時，您可能會看到圓圈標記。 這些代表大幅增加或減少我們認為您會想要知道的特定值。 所在的圓形顯示的日期代表一週中我們偵測到的大幅增加或減少相較於前一週結尾。 若要查看有關所做變更的更多詳細資料，游標暫留在圓圈。  
+在**每日的應用程式**檢視中， **30d**時間期間選取時，您可能會看到圓圈標記。 這些代表大幅增加或減少我們認為您會想要知道的特定值。 在其的圓形顯示日期代表我們偵測大幅增加或減少相較於前一週一週結尾。 若要查看有關所做變更的更多詳細資料，游標暫留在圓圈。  
 
 > [!TIP]
-> 您可以檢視更多大幅變更的相關過去 30 天[見解報告](insights-report.md)中的深入解析。
+> 您可以檢視更多[見解報告](insights-report.md)中過去 30 天的重大變更的相關的深入資訊。
 
 ## <a name="installs"></a>安裝數
 

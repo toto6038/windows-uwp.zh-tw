@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, 次要磚, 釘選, 快速入門, 程式碼範例, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: 437d149e22f035fdd0cb1f5251a114b6dd4765e4
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849502"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930356"
 ---
 # <a name="pin-secondary-tiles"></a>釘選次要磚
 

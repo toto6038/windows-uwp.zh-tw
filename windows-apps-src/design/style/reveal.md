@@ -15,22 +15,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848892"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935279"
 ---
 # <a name="reveal-highlight"></a>顯色醒目提示
 
 ![主角圖像](images/header-reveal-highlight.svg)
 
-顯色醒目提示是一種光源效果，會反白顯示互動式元素，例如命令列，當使用者移動指標靠近它們。 
+顯色醒目提示是當使用者移動指標靠近它們會反白顯示互動式元素，例如命令列，一種光源效果。 
 
 > **重要的 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>運作方式
-顯色醒目提示引起互動元素藉由顯示某元素的容器，當指標在附近，如這個圖例所示：
+顯色醒目提示引起互動元素藉由顯示某元素的容器，當指標在附近的如這個圖例所示：
 
 ![顯色視覺效果](images/Nav_Reveal_Animation.gif)
 
@@ -58,7 +58,7 @@ ms.locfileid: "3848892"
 
 ## <a name="how-to-use-it"></a>如何使用
 
-顯色會自動在一些控制項上運作。 至於其他控制項，您可以藉由指派特殊樣式給控制項，啟用顯色，如本文的[其他控制項上啟用顯色](#enabling-reveal-on-other-controls)和[自訂控制項上啟用顯色](#enabling-reveal-on-custom-controls)區段中所述。
+顯色會自動在一些控制項上運作。 至於其他控制項，您可以藉由指派特殊樣式給控制項，啟用顯色，如本文的[其他控制項上啟用顯色](#enabling-reveal-on-other-controls)和[自訂控制項上啟用顯色](#enabling-reveal-on-custom-controls)各節中所述。
 
 ## <a name="controls-that-automatically-use-reveal"></a>自動使用顯色的控制項
 
@@ -134,7 +134,7 @@ ms.locfileid: "3848892"
 
 
 這些效果是由兩個筆刷定義： 
-* 邊框顯色**RevealBorderBrush**所定義
+* 邊框顯色是由**RevealBorderBrush**定義
 * 暫留顯色是由**RevealBackgroundBrush**所定義
 
 ```xaml
@@ -266,7 +266,7 @@ ms.locfileid: "3848892"
 * 靠近到會彼此接觸的相鄰命令元素：在兩個元素之間加入 1px 的邊界。 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
-### <a name="do"></a>請執行：
+### <a name="do"></a>執行：
 - 要在使用者可以執行許多動作的元素 (命令列、瀏覽功能表) 上使用顯色
 - 要在預設沒有視覺分隔線的互動式元素群組 (清單、功能區) 中使用顯色
 - 要在互動式元素密集度高的區域 (命令功能案例) 中使用顯色

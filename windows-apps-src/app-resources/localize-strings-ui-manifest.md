@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848262"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935407"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>將 UI 及應用程式套件資訊清單中的字串當地語系化
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
@@ -92,13 +92,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 您可以使用類別庫 (通用 Windows) 或 [Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 專案中的此相同程式碼。 在執行階段，會載入裝載媒體櫃的 App 的資源。 建議從裝載媒體櫃的 App 載入資源，因為 App 可能有較大程度當地語系化。 如果媒體櫃確實需要提供資源，則它應該提供其裝載的 App 選項以取代那些做為輸入的資源。
 
-如果區隔的資源名稱 (其中包含"。 」 字元)，然後取代點線使用正斜線 （"/"） 中的資源名稱的字元。 屬性識別碼，例如，包含點。因此，您必須執行此 substition 以載入其中一個從程式碼。
+如果區隔的資源名稱 (其中包含"。 」 字元)，然後取代點線使用正斜線 （"/"） 中的資源名稱的字元。 屬性識別碼，例如，包含點。因此，您必須執行此 substition 才能載入其中一個，從程式碼。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的應用程式的 PRI 檔案傾印。 每個資源的`uri`傾印檔案所示。
+如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的應用程式 PRI 檔案傾印。 每個資源`uri`傾印檔案所示。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -175,13 +175,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果您已將您的「AppDisplayName」資源移出 `Resources.resw` 到 `ManifestResources.resw`，然後到您要變更 `ms-resource:AppDisplayName` 為 `ms-resource:/ManifestResources/AppDisplayName` 的應用程式套件資訊清單中。
 
-如果區隔的資源檔案名稱 (其中包含"。 」 字元)，然後保留，點則在名稱中，當您參考它。 **不**使用正斜線 （"/"） 個字元，就像資源名稱取代點。
+如果區隔的資源檔案名稱 (其中包含"。 」 字元)，然後離開英名稱中，當您參考它。 **不要**使用正斜線 （"/"） 個字元，就像資源名稱取代點。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的應用程式的 PRI 檔案傾印。 每個資源的`uri`傾印檔案所示。
+如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的應用程式 PRI 檔案傾印。 每個資源`uri`傾印檔案所示。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -268,13 +268,13 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName");
 ```
 
-適用於 Windows 執行階段媒體櫃 (通用 Windows)，如果區隔的預設命名空間 (其中包含"。 」 字元)，然後在資源對應名稱中使用點。
+適用於 Windows 執行階段程式庫 (通用 Windows)，如果區隔預設命名空間 (其中包含 」。 」 字元)，然後在資源對應名稱中使用點。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-您不需要執行此作業的類別庫 (通用 Windows)。 如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的元件或程式庫的 PRI 檔案傾印。 每個資源的`uri`傾印檔案所示。
+您不需要執行此作業的類別庫 (通用 Windows)。 如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的元件或程式庫的 PRI 檔案傾印。 每個資源`uri`傾印檔案所示。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...

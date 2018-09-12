@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 89745d0bb93b76e4497d6cb5c57f4e6c091c8bd7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849932"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929326"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
@@ -63,7 +63,7 @@ ms.locfileid: "3849932"
 
 ### <a name="how-do-i-delete-a-credit-card-or-edit-the-details-of-a-credit-card"></a>我要如何刪除信用卡或編輯信用卡的詳細資料？
 
-移至<http://commerce.microsoft.com>，使用您的 Microsoft 帳戶認證，登入，並進行必要的變更。
+移至<http://commerce.microsoft.com>，您的 Microsoft 帳戶認證，登入，並進行必要的變更。
 
 ### <a name="related-topics"></a>相關主題
 

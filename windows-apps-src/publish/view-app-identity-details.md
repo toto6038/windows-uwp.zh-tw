@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846622"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932931"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
 
-使用 Windows 開發人員中心儀表板中的 app 時，您可以檢視由 Microsoft 網上商店指派給它的唯一身分識別相關詳細資料。 您也可以取得 app 市集清單的連結。
+使用 Windows 開發人員中心儀表板中應用程式時，您可以檢視由 Microsoft 市集指派給它的唯一身分識別相關詳細資料。 您也可以取得 app 市集清單的連結。
 
 若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 **\[應用程式管理\]**。 選取 **\[應用程式身分識別\]** 可檢視這些詳細資料。
 

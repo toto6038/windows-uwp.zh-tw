@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: c7951098e576047b5c82da72b7c4e9118ffb7569
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848702"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934001"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
@@ -35,7 +35,7 @@ ms.locfileid: "3848702"
 | 組建 10586 (11 月更新，版本 1511) | 此版本的 Windows 10 發行於 2015 年 11 月。 重點功能包括為 Microsoft Edge 和提供者 API 中的影片通訊推出 ORTC (物件即時通訊) API，讓 App 可以使用 Windows Hello 臉部驗證。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10586.md) |
 | 組建 10240 (Windows 10 版本 1507) | 這是 2015 年 7 月發行的初始 Windows 10 版本。 [於此組建推出之功能的詳細資訊。](../whats-new/windows-10-build-10240.md) |
 
-我們強烈建議新的開發人員與針對一般大眾撰寫程式碼時，也將一律的開發人員使用最新組建的 Windows (17134)。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
+我們強烈建議新的開發人員和開發人員針對一般大眾撰寫程式碼時，也將一律使用最新的 Windows (17134) 組建。 撰寫企業應用程式的開發人員應強烈考慮支援較舊的 **\[最小版本\]**。
 
 ## <a name="whats-different-in-each-uwp-version"></a>每個 UWP 版本有何差異？
 
@@ -45,11 +45,11 @@ ms.locfileid: "3848702"
 
 ## <a name="net-api-availability-in-uwp-versions"></a>在 UWP 版本中的.NET API 可用性
 
-UWP 支援有限的.NET Api，這適用於無論**目標版本**或專案的**最小版本**子集。 [本頁面提供更多有關可用的類型](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
+UWP 支援有限的可用無論**目標版本**或專案的**最小版本**的.NET Api 子集。 [本頁面提供詳細資訊，可用的類型](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501(d=robot).aspx)。
 
-如果您想要建立可重複使用的跨平台程式庫，.NET Standard 支援 UWP 上。 [.NET Standard 文件](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 哪些 UWP 版本皆支援功能的資訊。
+如果您想要建立可重複使用的跨平台程式庫，則被支援.NET Standard UWP 上。 [.NET Standard 文件](https://docs.microsoft.com/dotnet/standard/net-standard)提供的.NET Standard 支援哪些 UWP 版本中的資訊。
 
-如果您正在開發的傳統型應用程式，請改為[.NET Framework 版本與相依性](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的詳細資訊。
+如果您正在開發的傳統型應用程式，請參閱改為[.NET Framework 版本與相依性](https://docs.microsoft.com/dotnet/framework/migration-guide/versions-and-dependencies)的.NET framework 可用性的詳細資訊。
 
 ## <a name="choose-which-version-to-use-for-your-app"></a>選擇要針對您 App 使用的版本
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 第一個應用程式, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850112"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930642"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 
@@ -48,7 +48,7 @@ ms.locfileid: "3850112"
 
 1.  啟動 Visual Studio 2017。
 
-2.  從 \ [**檔案**] 功能表中，選取**新增 > 專案**以開啟 [*新增專案*] 對話方塊。
+2.  從 [**檔案**] 功能表中，選取**新增 > 專案**以開啟 [*新增專案*] 對話方塊。
 
 3.  從左邊的範本清單中，選擇**已安裝 > Visual C# > Windows 通用**來查看 UWP 專案範本的清單。
 

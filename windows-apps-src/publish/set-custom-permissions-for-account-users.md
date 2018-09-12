@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845132"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929950"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -119,7 +119,7 @@ ms.locfileid: "3845132"
 <tr><td align="left">    <b>社群廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-community-ads.md">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="about-community-ads.md">社群廣告</a>使用量。               </td></tr>
 <tr><td align="left">    <b>連絡資訊</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 規範</b>                    </td><td align="left">  可檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
-<tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可檢視<a href="create-customer-groups.md">的客戶群組</a>（區隔和已知的使用者群組）。      </td><td align="left">  可建立、 編輯和檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。       </td></tr>
+<tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。      </td><td align="left">  可以建立、 編輯和檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。       </td></tr>
 <tr><td align="left">    <b>管理產品金鑰</b>&nbsp;*                            </td><td align="left">  可檢視新的產品群組建立頁面，但實際上不能在帳戶中建立新的產品群組。    </td><td align="left">  可以建立和編輯產品群組。     </td></tr>
 <tr><td align="left">    <b>新 App</b>                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中<a href="create-your-app-by-reserving-a-name.md">建立新的 app</a>，並可建立提交內容，將 app 提交到市集。     </td></tr>
 <tr><td align="left">    <b>新的套件組合</b>&nbsp;*                       </td><td align="left">  可檢視新的套件組合建立頁面，但實際上不能在帳戶中建立新的套件組合。     </td><td align="left">  可建立新的產品套件組合。          </td></tr>

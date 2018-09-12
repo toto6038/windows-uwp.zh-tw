@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 404db3963d2f9508d7c81053abf96b0e742103f7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848782"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936189"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
@@ -199,7 +199,7 @@ Kinect 感應器必須連接至主機，才能變更這些設定。
 
 ### <a name="game-event-data"></a>遊戲的事件資料
 
-在**遊戲的事件資料**頁面上，您可以檢視即時圖形該資料流中的事件 Windows 追蹤 (ETW) 遊戲目前錄製您 Xbox One 上的事件數目。 如果沒有在系統上的遊戲事件，您也可以檢視詳細資料 （事件名稱、 事件項目，以及遊戲的標題） 描述資料下列表格的資料圖形中每個事件。 表格僅適用於有記錄的事件。
+在**遊戲的事件資料**頁面上，您可以檢視即時圖形該資料流中的事件 Windows 追蹤 (ETW) 遊戲您 Xbox One 上目前記錄的事件數目。 如果沒有記錄系統上的遊戲事件，您也可以檢視詳細資料 （事件名稱、 事件發生，以及遊戲的標題） 描述資料表格的資料圖形中每個事件。 表格僅適用於有記錄的事件。
 
 ![遊戲的事件資料](images/device-portal-xbox-22.PNG)
 

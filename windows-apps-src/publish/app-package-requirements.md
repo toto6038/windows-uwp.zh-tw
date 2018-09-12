@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845084"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933395"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 
@@ -41,7 +41,7 @@ ms.locfileid: "3845084"
 
 ### <a name="app-bundles"></a>App 套件組合
 
-對於以 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 為目標的應用程式，Visual Studio 可以產生應用程式套件組合 (.appxbundle)，以減少使用者下載的應用程式的大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
+針對 Windows 10、 Windows 8.1 和/或 Windows Phone 8.1 為目標的應用程式，Visual Studio 可以產生應用程式套件組合 (.appxbundle)，以減少使用者下載的應用程式的大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
 
 > [!NOTE]
 > 一個應用程式套件組合可以包含所有架構的套件。 只能針對每個目標 OS 提交一個套件組合。
@@ -88,7 +88,7 @@ UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML 檔案
 
-StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用，StoreManifest.xml 會與提交應用程式套件，且必須在您的應用程式的主要專案的根資料夾中。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
+StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用，StoreManifest.xml 是與提交應用程式套件，且必須在您的應用程式主要專案的根資料夾。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
  
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，套件上, 傳，套件上傳
 ms.localizationpriority: medium
 ms.openlocfilehash: 6013a238cff8db3b85dd98af58cccaf344a72f51
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846602"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3936385"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 
@@ -32,7 +32,7 @@ ms.locfileid: "3846602"
 
 當您建立新的提交時，您將會在 [套件](package-flights.md)頁面上看到一個下拉式清單，其中包含從其中一個套件正式發行前小眾測試版複製套件的選項。 選取含有您要納入之套件的套件正式發行前小眾測試版。 然後，您可選取其任一或所有套件，以包含在此提交中。
 
-如果我們錯誤的套件驗證時偵測到它，我們會顯示訊息，可讓您了解什麼是錯誤。 您將需要移除套件、 修正這個問題，然後再試一次上傳。 您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
+如果我們偵測到與套件的錯誤，驗證它時，我們會顯示，讓您知道什麼是錯誤訊息。 您將需要移除套件、 修正這個問題，然後再重新上傳。 您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
 
 
 ## <a name="device-family-availability"></a>裝置系列可用性
@@ -44,7 +44,7 @@ ms.locfileid: "3846602"
 
 ## <a name="package-details"></a>套件詳細資料
 
-上傳的套件會列出在這裡，依照目標作業系統分組。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 **\[顯示詳細資料\]**。
+您已上傳的套件將依照目標作業系統分組，列出。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 **\[顯示詳細資料\]**。
 
 如果您需要移除您提交的某個套件，可以按一下每個套件的 **\[詳細資料\]** 區段底部的 **\[移除\]** 連結。
 

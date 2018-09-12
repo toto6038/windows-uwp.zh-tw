@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848512"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933863"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 
@@ -120,7 +120,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | 布林值 |  指出訂閱是否設定為訂閱期間結束時自動續約。   |
 | beneficiary | string |  這個訂閱相關聯的權利的受益人識別碼。   |
 | expirationTime | string | 訂閱將結束的日期和時間 (ISO 8601 格式)。 訂閱處於特定狀態時，才可以使用這個欄位。 到期時間通常表示目前狀態到期的時間。 例如，對於使用中的訂閱，到期日表示將會發生下一個自動續約的時間。    |
-| expirationTimeWithGrace | 字串 | 日期和時間訂閱將會到期，包括在寬限期，格式為 ISO 8601。 這個值表示當使用者將會無法存取訂閱之後訂閱無法自動續約。    |
+| expirationTimeWithGrace | 字串 | 日期和時間訂閱將會到期，包括在寬限期，格式為 ISO 8601。 這個值表示當使用者將會遺失存取訂閱之後訂閱無法自動續約。    |
 | id | string |  訂閱的識別碼。 當您呼叫[變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)方法，使用這個值，指出您想要修改的訂閱。    |
 | isTrial | 布林值 |  表示訂閱是否試用。     |
 | lastModified | string |  上次修改訂閱的日期和時間 (ISO 8601 格式)。      |

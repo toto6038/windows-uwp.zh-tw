@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: medium
 ms.openlocfilehash: dd729d76705849c981516109da39bbd27c140286
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848572"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929526"
 ---
 # <a name="associate-azure-active-directory-with-your-dev-center-account"></a>將 Azure Active Directory 與您的開發人員中心帳戶產生關聯
 
@@ -35,7 +35,7 @@ Windows 開發人員中心會針對多使用者帳戶存取和管理來運用 Az
 
 如果您的組織已經使用 Azure AD，請依照下列步驟連結您的開發人員中心帳戶。
 
-1.  從[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中，選取 （靠近儀表板右上角） 的齒輪圖示，然後選取 [**帳戶設定**。 在 \ [**設定**] 功能表中，選取 [**租用戶**。
+1.  從[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中，選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取**租用戶**。
 2.  選取 **\[將 Azure AD 與您的開發人員中心帳戶建立關聯\]**。
 3.  輸入您想要建立關聯之租用戶的 Azure AD 認證。
 4.  檢閱 Azure AD 租用戶的組織和網域名稱。 若要完成關聯，請選取 **\[確認\]**。
@@ -49,7 +49,7 @@ Windows 開發人員中心會針對多使用者帳戶存取和管理來運用 Az
 
 如果您需要設定新的 Azure AD 以便與您的開發人員中心帳戶連結，請遵循下列步驟。
 
-1.  從[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中，選取 （靠近儀表板右上角） 的齒輪圖示，然後選取 [**帳戶設定**。 在 \ [**設定**] 功能表中，選取 [**租用戶**。
+1.  從[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中，選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取**租用戶**。
 2.  選取 **\[建立新的 Azure AD\]**。
 3.  輸入新 Azure AD 的目錄資訊︰
     - **網域名稱**︰我們會連同 “.onmicrosoft.com” 針對您的 Azure AD 網域使用的唯一名稱。 例如，如果您輸入 “example”，您的 Azure AD 網域就是 “example.onmicrosoft.com”。
@@ -78,7 +78,7 @@ Windows 開發人員中心會針對多使用者帳戶存取和管理來運用 Az
 > [!IMPORTANT]
 > 移除租用戶時，從該租用戶新增至開發人員中心帳戶的所有使用者都將無法再登入帳戶。 
 
-若要移除租用戶，在 [**租用戶**\] 頁面上尋找其名稱 （在 [**帳戶設定**），然後選取 [**移除**。 系統會提示您確認您要移除租用戶。 一旦這樣做，該租用戶中的任何開發人員中心使用者都將無法登入開發人員中心帳戶，並會移除您為這些使用者設定的任何權限。
+若要移除租用戶，**租用戶**頁面上尋找其名稱 （在 [**帳戶設定**），然後選取 [**移除**]。 系統會提示您確認您要移除租用戶。 一旦這樣做，該租用戶中的任何開發人員中心使用者都將無法登入開發人員中心帳戶，並會移除您為這些使用者設定的任何權限。
 
 > [!TIP]
 > 如果您目前使用同一個租用戶的帳戶登入開發人員中心，將無法移除該租用戶。 若要移除租用戶，您必須以與該帳戶關聯之另一個租用戶的 **\[管理員\]** 身分登入開發人員中心。 如果只有一個租用戶關聯至帳戶，則必須以開啟該帳戶的 Microsoft 帳戶登入後，才能移除該租用戶。

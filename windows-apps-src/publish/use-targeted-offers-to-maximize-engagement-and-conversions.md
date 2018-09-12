@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 針對性優惠, 優惠, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 727c438bacf51fd2ead03df72421363116c4701b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3847852"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932411"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>使用針對性優惠提高吸引力與轉換數
 
@@ -28,7 +28,7 @@ ms.locfileid: "3847852"
 有三件重要的事必須執行，您才能使用針對性優惠：
 
 1. **在您的儀表板中建立優惠。** 瀏覽至 **\[互動 > 針對性優惠\]** 頁面建立優惠。 有關這個程序的詳細資訊如下所述。
-2. **實作應用程式內的購買選項體驗。** 使用*Microsoft Store 針對性優惠 API*在您的應用程式的程式碼中擷取指定使用者可用的優惠。 您也需要對針對性優惠建立應用程式內體驗。 如需詳細資訊，請參閱[使用市集服務管理針對性優惠](../monetize/manage-targeted-offers-using-windows-store-services.md)。
+2. **實作應用程式內的購買選項體驗。** 使用*Microsoft Store 針對性優惠 API*在您的應用程式程式碼中擷取指定使用者可用的優惠。 您也需要對針對性優惠建立應用程式內體驗。 如需詳細資訊，請參閱[使用市集服務管理針對性優惠](../monetize/manage-targeted-offers-using-windows-store-services.md)。
 3. **將您的應用程式提交到市集。** 為了讓客戶看見您的優惠，您需要在實作應用程式內的購買選項體驗之後發行應用程式。
 
 完成這些步驟之後，使用您的應用程式的客戶將會看到他們當時可用的優惠，根據其在該優惠相關區隔中的會員資格。 請注意，雖然我們盡力對您的客戶顯示所有可用優惠，但有時可能會發生問題而影響優惠的可用性。

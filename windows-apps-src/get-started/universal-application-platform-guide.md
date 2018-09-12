@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f0168f0a1baef5e68bccdf0a33c3ac7eb7683a7
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850372"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933891"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) app？
 
@@ -155,8 +155,8 @@ Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>通用 Windows 平台如何與 Windows 執行階段 Api 建立關聯
 如果您正在建置的通用 Windows 平台 (UWP) 應用程式，您可以取得大量里程與不使用 「 通用 Windows 平台 (UWP) 」 和 「 Windows 執行階段 (WinRT) 」 的條款視為同義多或少的便利性。 但它*是*可能看起來背後的技術，並判斷只是什麼不同之處在於這些想法之間。 如果您是想了解，，最後一個本節就很適合您。
 
-WinRT Api，與 Windows 執行階段，是 Windows Api 的進化版。 原本 Windows 的程式設計透過單層式，C 式的 Win32 Api。 那些已新增 COM Api ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)正在顯著的範例)。 Windows Forms、 WPF、.NET 和受管理的語言，就會顯示他們自己的寫入 Windows 應用程式，以及他們自己的 API 技術類別的方式。 Windows 執行階段是，背後下, 一個階段的 com。 在實際的應用程式二進位介面 (ABI) 層，才會顯示在 COM 中其根目錄。 但在 Windows 執行階段設計成可從不同的程式設計語言的絕佳範圍呼叫。 及可呼叫的方式，是很自然的每個這些語言。 為此，存取 Windows 執行階段會立即提供透過所謂語言投影。 沒有 Windows 執行階段語言投影到 C#、 Visual Basic 到、 至標準 c + +、 至 JavaScript 中，以及等等。 此外，一次已封裝的適當地 （請參閱[傳統型橋接器](/windows/uwp/porting/desktop-to-uwp-root)），您可以呼叫 WinRT Api，從應用程式模型的絕佳範圍的其中一個內建的應用程式： Win32，.NET，WinForms，WPF。
+Windows 執行階段，並 WinRT Api 是 Windows Api 的進化版。 原本 Windows 的程式設計透過單層式，C 式的 Win32 Api。 那些已新增 COM Api ([DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274)正在顯著的範例)。 Windows Forms、 WPF、.NET 和受管理的語言帶他們自己的寫入 Windows 應用程式，以及他們自己的 API 技術類別的方式。 Windows 執行階段是，背後下, 一個階段的 com。 在實際應用程式二進位介面 (ABI) 層級，才會顯示在 COM 中的根源。 但在 Windows 執行階段設計為可從不同的程式設計語言的絕佳範圍呼叫。 及可呼叫的方式，是很自然的每個這些語言。 為此，存取 Windows 執行階段會立即提供透過所謂語言投影。 沒有 Windows 執行階段語言投影到 C#、 Visual Basic 到、 到標準 c + +、 到 JavaScript，以此類推。 此外，一次已封裝的適當地 （請參閱[傳統型橋接器](/windows/uwp/porting/desktop-to-uwp-root)），您可以從應用程式模型的絕佳範圍的其中一個內建的應用程式呼叫 WinRT Api: Win32，.NET，WinForms，WPF。
 
-以及，當然，您可以呼叫 WinRT Api，從您的 UWP app。 UWP 是 Windows 執行階段為基礎所建置的應用程式模型。 技術上來說，在 UWP 應用程式模型，為基礎[CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)，雖然可能會向您，隱藏該詳細資料，視您所選擇的程式設計語言而定。 依照本主題有說明，從值主張的觀點，在 UWP 適用於撰寫單一的二進位檔案，可以您應該選擇，發佈到 Microsoft 網上商店，並執行任何一種很好的裝置外形規格的範圍。 您的 UWP app 的裝置範圍取決於 UWP Api 子集，您會限制您的應用程式呼叫，或您有條件地呼叫。
+以及，當然，您可以呼叫 WinRT Api，從您的 UWP app。 UWP 是 Windows 執行階段為基礎所建置的應用程式模型。 技術上來說，UWP 應用程式模型，根據[CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication)，雖然可能會根據您選擇的程式設計語言而定，隱藏該詳細資料。 依照本主題有說明，從值主張的觀點，在 UWP 本身撰寫單一的二進位檔可以您應該選擇，發佈至 Microsoft Store，並執行任何一種很棒的裝置外形規格的範圍。 您的 UWP app 的裝置範圍取決於 UWP Api 子集，您限制您的應用程式呼叫，或您有條件地呼叫。
 
 希望本節已成功在描述 Windows 執行階段 Api，以及機制和商務用值的通用 Windows 平台基礎技術之間的差異。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846892"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934431"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標與著作權保護
 
@@ -25,7 +25,7 @@ ms.locfileid: "3846892"
 ### <a name="1-how-may-i-report-an-infringement-of-my-intellectual-property-rights-within-a-windows-app"></a>1. 如何提報 Windows app 內有人侵犯到我的智慧財產權？
 
 
-請使用下列[表單](http://go.microsoft.com/fwlink/p/?LinkId=273879)，送出 Windows app 上著作權、商標或公開發表權的侵權控訴。 如果是跨多個應用程式的著作權、商標或公開發表權的侵權控訴，請將您的要求送到 mktlegal@microsoft.com。 如果您需要其他有關 Microsoft DMCA 原則的資訊，請瀏覽： [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)。
+請使用下列[表單](http://go.microsoft.com/fwlink/p/?LinkId=273879)，送出 Windows app 上著作權、商標或公開發表權的侵權控訴。 如果是跨多個應用程式的著作權、商標或公開發表權的侵權控訴，請將您的要求送到 mktlegal@microsoft.com。 如果您需要其他 Microsoft 的 DMCA 原則有關的資訊，請瀏覽： [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976)。
 
 ### <a name="2-i-created-my-app-to-work-with-a-microsoft-productservice-may-i-use-the-microsoft-productservice-name-in-the-name-of-my-app"></a>2. 我建立了能與 Microsoft 產品/服務搭配使用的應用程式。 我是否可以在 app 名稱中使用 Microsoft 產品/服務名稱？
 

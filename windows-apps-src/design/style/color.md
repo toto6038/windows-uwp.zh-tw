@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850925"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929790"
 ---
 # <a name="color"></a>色彩
 
@@ -108,7 +108,7 @@ UWP app 可以使用淺色或深色應用程式佈景主題。 佈景主題會�
 
 :::row:::
     :::column:::
-        當建立自訂控制項的範本，請使用佈景主題筆刷，而非硬式色彩值。 如此一來，您的應用程式可以輕鬆地適應任何佈景主題。
+        當建立自訂控制項的範本，請使用佈景主題筆刷，而不是硬式色彩值。 如此一來，您的應用程式可以輕鬆地適應任何佈景主題。
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -147,10 +147,10 @@ UWP app 可以使用淺色或深色應用程式佈景主題。 佈景主題會�
 
 :::row:::
     :::column:::
-        ![使用者選取的輔色標頭](images/color/user-accent.svg)![使用者選取的輔色](images/color/user-selected-accent.svg)
+        ![使用者選取輔標頭](images/color/user-accent.svg)![使用者選取的輔色](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![自訂輔色標頭](images/color/custom-accent.svg)![自訂品牌輔色](images/color/brand-color.svg)
+        ![自訂輔標頭](images/color/custom-accent.svg)![自訂品牌輔色](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846612"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932803"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
@@ -38,7 +38,7 @@ ms.locfileid: "3846612"
 
 如果您使用 C#，然後將新類別新增到您的專案，並將它命名為`Recording.cs`。
 
-如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後將新**Midl 檔案 (.idl)** 項目新增到專案中，名為如所示的 C + + /winrt 下列的程式碼範例清單。 這些新檔案的內容取代顯示在清單中的[MIDL 3.0](/uwp/midl-3/intro)程式碼、 組建專案，以產生`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合的清單。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果您使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後將新的**Midl 檔案 (.idl)** 項目新增到專案中，名為如所示的 C + + /winrt 下列的程式碼範例清單。 這些新檔案的內容取代顯示在清單中的[MIDL 3.0](/uwp/midl-3/intro)程式碼、 建置專案以產生`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合清單。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
 ```csharp
 namespace Quickstart
@@ -221,7 +221,7 @@ namespace Quickstart
 
 接著，從代表標記頁面的類別中公開繫結來源類別。 作法是將 **RecordingViewModel** 類型的屬性加入到 **MainPage**。
 
-如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則第一次更新`MainPage.idl`。 建置專案產生`MainPage.h`和`.cpp`，並合併到您的專案中的這些產生的檔案中的變更。
+如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則第一次更新`MainPage.idl`。 建置專案產生`MainPage.h`和`.cpp`，並將這些產生的檔案中的變更合併到您的專案。
 
 ```csharp
 namespace Quickstart
@@ -305,7 +305,7 @@ namespace Quickstart
 </Page>
 ```
 
-如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則您將需要移除**Clickhandler**函式，順序來建置專案。
+如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則您將需要移除**Clickhandler**函式來建置專案的順序。
 
 結果如下。
 
@@ -439,7 +439,7 @@ public:
 
 ![繫結清單檢視](images/xaml-databinding1.png)
 
-若要解決這個問題，我們可能覆寫[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)以傳回值的**OneLineSummary**，或提供資料範本。 資料範本選項是更多一般解決方案和一個更具彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 屬性或項目控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
+若要解決這個問題，我們可能覆寫[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)傳回值的**OneLineSummary**，或提供資料範本。 資料範本選項是更多一般解決方案和一個更具彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 屬性或項目控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -479,15 +479,15 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 您可以選擇在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 項目中顯示 **Recording** 物件的所有詳細資料。 但這會佔用大量空間。 相反地，您可以在項目中顯示剛好足夠識別它的資料，然後當使用者做出選擇時，您可以在另一個稱為詳細資料檢視的 UI 中，顯示選定項目的所有詳細資料。 這種安排也稱為主要/詳細資料檢視，或清單/詳細資料檢視。
 
-有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，在這種情況下您繫結**清單檢視**與詳細資料檢視到**CollectionViewSource** （為您執行的目前選取的項目是會負責）。 這兩種技巧如下所示，且兩者相同的結果 （在此圖例顯示）。
+有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，這種情況下您繫結**ListView**和詳細資料檢視到**CollectionViewSource** （為您執行目前選取的項目會負責的話）。 這兩種技巧如下所示，且兩者相同的結果 （如圖所示）。
 
 > [!NOTE]
 > 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
 > [!IMPORTANT]
-> 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性 （如下所述） 是只有當您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，可使用或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{繫結}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
+> 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性 （如下所述） 是只有當您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，可使用或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
 
-如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX)，因為我們會使用[{繫結}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增至**錄製**類別。
+如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX)，因為我們會使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增至**錄製**類別。
 
 首先是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技術。
 
@@ -616,7 +616,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 ![顯示自訂格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 從 Windows 10，版本 1607 開始，XAML 架構提供內建布林值-可見度轉換器。 轉換器對應 **，則為 true** **Visibility.Visible**列舉值，並選取 [ **false** **Visibility.Collapsed**來讓您可以而不需建立轉換器 Visibility 屬性繫結至布林值。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需目標版本的詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10，版本 1607 開始，XAML 架構提供內建的布林值-可見度轉換器。 轉換器對應 **，則為 true** **Visibility.Visible**列舉值，並選取 [ **false** **Visibility.Collapsed**來讓您可以不用建立轉換器 Visibility 屬性繫結至布林值。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需目標版本的詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="see-also"></a>另請參閱
 * [資料繫結](index.md)

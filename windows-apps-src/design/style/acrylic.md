@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851258"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933535"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -49,10 +49,10 @@ ms.locfileid: "3851258"
 ## <a name="examples"></a>範例
 
 :::row:::
-    ::: 範圍欄:::![一些映像](images/XAML-controls-gallery-app-icon.png)
+    ::: 範圍欄:::![某些映像](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
     ::: 欄範圍 ="2"::: **XAML 控制項庫**<br>
-        如果您有安裝 XAML 控制項庫應用程式，請按一下<a href="xamlcontrolsgallery:/item/Acrylic">這裡</a>開啟應用程式並查看動作中的壓克力。
+        如果您有安裝的 XAML 控制項庫應用程式，請按一下<a href="xamlcontrolsgallery:/item/Acrylic">這裡</a>開啟應用程式並查看壓克力情形。
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
@@ -77,7 +77,7 @@ ms.locfileid: "3851258"
 
 [NavigationView](../controls-and-patterns/navigationview.md) 是用於將瀏覽功能新增至應用程式的新通用控制項，其視覺設計中包含壓克力。 NavigationView 的窗格開啟時若與主要內容並排，便會顯示背景壓克力，若是以重疊方式開啟的，便會自動轉換成應用程式內壓克力。
 
-如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自行接洽，我們建議使用相對透明壓克力色調不透明度 60%。
+如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自己，我們建議使用相對透明壓克力色調不透明度 60%。
  - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
  - 當窗格以與主要應用程式內容並排的方式開啟時，則應為 [60% 背景壓克力](#acrylic-theme-resources)
 
@@ -106,7 +106,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
 ![以壓克力做為其整個背景的 [小算盤] 公用應用程式](images/acrylic_app-pattern_full.png)
 
 > [!Note]
-> 呈現壓克力表面 GPU 會耗用大量時，可以將其裝置耗電量增加並縮短電池使用時間。 壓克力效果會自動停用當電池進入省電模式時，使用者可以停用的所有應用程式，壓克力效果時，若有選擇的話。
+> 呈現壓克力表面 GPU 會耗用大量時，裝置耗電量增加並縮短電池使用時間。 壓克力效果會自動停用當電池進入省電模式，使用者可以停用所有的應用程式的壓克力效果時，如果使用者選擇。
 
 
 ## <a name="acrylic-blend-types"></a>壓克力混合類型
@@ -125,11 +125,11 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
 壓克力會自動針對各種不同的裝置與內容調適其外觀。
 
 在高對比模式中，使用者會繼續看見其所選熟悉的背景色彩取代壓克力。 此外，背景壓克力與應用程式內壓克力會顯示成單色中：
- - 當使用者在中關閉透明度設定 > 個人化 > 色彩
+ - 當使用者關閉設定中的透明度 > 個人化 > 色彩
  - 當省電模式啟動時
  - 當應用程式在低階硬體上執行時
 
-此外，只背景壓克力會取代其半透明和紋理的純色色彩：
+此外，只有背景壓克力將會取代其半透明和紋理純色：
  - 當桌面上的應用程式視窗啟用時
  - 當 UWP 應用程式正在電話、Xbox、HoloLens 或平板電腦模式中執行時
 
@@ -163,7 +163,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建議的使用方式：</b>如果您的應用程式使用次要文字色彩為 altmedium 且文字大小為 18px 或較大，您可以放置在文字後面的這些更半透明 70%壓克力資源。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
+        <td> <b>建議的使用方式：</b>如果您的應用程式使用次要文字色彩為 altmedium 且文字大小為 18px 或較大，您可以放置在文字的這些更半透明 70%壓克力資源。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -338,7 +338,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 ## <a name="how-we-designed-acrylic"></a>我們如何設計壓克力
 
-我們將壓克力的重要元件微調至讓壓克力有獨特的外觀與屬性。 我們一開始使用半透明、 模糊和噪音平面新增視覺的深度和維度。 我們新增了排除混合模式層，以確保放置在壓克力背景上的對比與可讀性。 最後，我們加入了色彩色調讓壓克力個人化。 這些圖層最後一齊產生全新、可使用的材質。
+我們將壓克力的重要元件微調至讓壓克力有獨特的外觀與屬性。 我們一開始使用半透明、 模糊並將視覺的深度和維度新增到平面的雜訊。 我們新增了排除混合模式層，以確保放置在壓克力背景上的對比與可讀性。 最後，我們加入了色彩色調讓壓克力個人化。 這些圖層最後一齊產生全新、可使用的材質。
 
 ![壓克力配方](images/AcrylicRecipe_Diagram.jpg)
 <br/>壓克力配方：背景、排除混合、色彩/色調重疊、雜訊

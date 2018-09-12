@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845322"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935463"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP app 的工具組和範例
  
 
-設計與 UI 相關下載適用於 Fluent 設計/UWP app。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/downloads">我們的主要下載頁面</a>。 
+設計與 UI 相關下載 Fluent 設計/UWP 應用程式。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/downloads">我們的主要下載頁面</a>。 
 
 
 ## <a name="design-toolkits"></a>設計工具組
@@ -39,7 +39,7 @@ ms.locfileid: "3845322"
         <a href="https://aka.ms/adobeillustratortoolkit">下載</a>
     :::column-end:::
     :::column:::
-        ![主角影像](images/sketch.png) <b>Sketch</b><br>
+        ![主角影像](images/sketch.png)<b>草圖</b><br>
         v1803，2018 年 3 月<br>
         <a href="https://aka.ms/sketchtoolkit">下載</a>
     :::column-end:::
@@ -88,7 +88,7 @@ ms.locfileid: "3845322"
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: 欄範圍 ="2":::**適用於 Adobe Photoshop 的磚與圖示產生器**這組適用於 Adobe Photoshop 的產生 68 建議的磚和圖示資產從只需 7 的檔案。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下載磚與圖示產生器</a></p>
+    ::: 欄範圍 ="2":::**適用於 Adobe Photoshop 的磚與圖示產生器**這組適用於 Adobe Photoshop 只需 7 檔案產生 68 的建議的磚和圖示資產。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下載磚與圖示產生器</a></p>
     :::column-end:::
 :::row-end:::
 
@@ -97,7 +97,7 @@ ms.locfileid: "3845322"
 
 ![建置轉型映像](images/buildcast.png)
 **BuildCast**<br>
-BuildCast 是端對端範例，用來展示 Fluent Design 系統，以及通用 Windows 平台的其他功能。 它可讓您瀏覽、下載和播放特選影片播客，包括 Channel 9 上最受歡迎的取樣，以及一些 Windows 科技愛好者摘要。 它也具備 Ink Notes、書籤和遠端播放。 此範例最初呈現於 Build 2017 會議的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">運用 Fluent 設計建置令人驚豔的應用程式</a>討論中。 <br>
+BuildCast 是端對端範例，用來展示 Fluent 設計系統，以及通用 Windows 平台的其他功能。 它可讓您瀏覽、下載和播放特選影片播客，包括 Channel 9 上最受歡迎的取樣，以及一些 Windows 科技愛好者摘要。 它也具備 Ink Notes、書籤和遠端播放。 此範例最初呈現於 Build 2017 會議的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">運用 Fluent 設計建置令人驚豔的應用程式</a>討論中。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下載 BuildCast 範例</a> <br><a href="https://github.com/Microsoft/BuildCast">查看 GitHub 上的 BuildCast 範例</a>
 
 ![午餐排程器](images/lunchscheduler.png)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851298"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929766"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -313,7 +313,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>將應用程式服務延伸模組新增至封裝專案
 
-開啟**package.appxmanifest**檔案的封裝專案中，並新增到應用程式服務延伸模組``<Application>``項目。
+開啟**package.appxmanifest**檔案的封裝專案中，並新增到應用程式服務延伸模組``<Application>``元素。
 
 ```xml
 <Extensions>

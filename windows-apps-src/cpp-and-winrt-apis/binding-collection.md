@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、繫結、集合
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850725"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3932943"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 項目控制項；繫結至一個 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
 > [!NOTE]
@@ -37,7 +37,7 @@ ms.locfileid: "3850725"
 有一個可觀察的向量範本會很有用，做為實用、一般用途的 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 實作。 以下類別清單稱為 **single_threaded_observable_vector\<T\>**。
 
 > [!NOTE]
-> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以只是直接使用**winrt < 所 >** factory 函式而不是下面所列的程式碼 （我們將說明的確切的程式碼更新版本在此主題）。 如果您還不在 SDK 版本，則它便會容易能切換，當您使用**winrt**函式的程式碼清單版本。
+> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以只是直接使用**winrt < T\ >** factory 函式而非清單下方的程式碼 （確切的程式碼稍後說明在此主題）。 如果您已經不在該版本的 SDK，則它便會切換 「 透過 ims 使用**winrt**函式的程式碼清單版本，當您更容易。
 
 ```cppwinrt
 // single_threaded_observable_vector.h
@@ -305,7 +305,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 在上述的 MIDL 3.0 清單，請注意， **BookSkus**屬性的類型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)。 本主題的下一節中，我們將會繫結[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)項目的來源到**BookSkus**。 清單方塊的項目控制項，且正確設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，您需要將其設為類型**IVector**或的**IInspectable**，例如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)的互通性類型的值。
+> 在上述的 MIDL 3.0 清單，請注意， **BookSkus**屬性的類型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)。 本主題的下一節中，我們會繫結[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)項目的來源至**BookSkus**。 清單方塊是項目控制項，並正確地設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，您需要將其設為類型**IVector** **IInspectable**，或的互通性類型，例如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)的值。
 
 儲存並建置。 從 `Generated Files` 資料夾中的 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製存取子虛設常式，並加以執行。
 
@@ -352,7 +352,7 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 ```
 
 ## <a name="if-you-have-a-windows-10-sdk-preview-build"></a>如果您有 Windows 10 SDK 預覽版組建
-如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，取代這行程式碼
+如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後取代這行程式碼
 
 ```cppwinrt
 m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
@@ -364,7 +364,7 @@ m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::
 m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
 ```
 
-而不是呼叫[**winrt:: make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，您可以建立適當的集合物件呼叫**winrt < 所 >** factory 函式。
+而不是呼叫[**winrt:: make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，您可以建立適當的集合物件呼叫**winrt < T\ >** factory 函式。
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>將一個 ListBox 繫結至 **BookSkus** 屬性
 開啟 `MainPage.xaml`，其中包含我們主要 UI 頁面的 XAML 標記。 在相同的 **StackPanel** 中新增下列標記做為**按鈕**。

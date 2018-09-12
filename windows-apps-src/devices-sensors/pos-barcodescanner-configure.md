@@ -1,7 +1,7 @@
 ---
 author: TerryWarwick
 title: 設定條碼掃描器
-description: 了解如何設定想要的應用程式的條碼掃描器。
+description: 了解如何設定條碼掃描器的預定的應用程式。
 ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: b33c1d33fe88a09de36e8f80a3034b915d338861
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3845842"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3931002"
 ---
 # <a name="configure-a-barcode-scanner"></a>設定條碼掃描器
 

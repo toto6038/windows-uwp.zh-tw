@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 搶鮮版 (Beta) 測試, 限量發行, 搶鮮版, beta, 測試, 測試人員
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849562"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3931595"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
@@ -53,7 +53,7 @@ Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>在 Microsoft Store 中隱藏應用程式及使用促銷碼
 
-此選項提供限制散佈應用程式只有特定群組的測試人員，同時防止其他人探索您的應用程式在市集中的另一種方式 （或取得而不需促銷碼）。 不過，與私人對象選項不同的是，如果某人有直接連結，他們可以看得到您應用程式的清單。 如果機密性對您的提交很重要，我們建議改為發佈至私人對象。
+此選項提供限制散佈應用程式只有特定群組的測試人員，同時防止任何人探索您的應用程式在市集中的另一種方式 （或取得促銷碼）。 不過，與私人對象選項不同的是，如果某人有直接連結，他們可以看得到您應用程式的清單。 如果機密性對您的提交很重要，我們建議改為發佈至私人對象。
 
 隱藏應用程式和使用促銷碼可用於以任何作業系統版本為目標的應用程式，但您的測試人員必須執行 Windows 10，才能取得應用程式。
 

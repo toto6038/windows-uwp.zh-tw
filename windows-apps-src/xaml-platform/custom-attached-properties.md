@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ce26242f1f5093afcbfb652a7d1736897975cb3a
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848912"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934871"
 ---
 # <a name="custom-attached-properties"></a>自訂附加屬性
 
@@ -77,7 +77,7 @@ ms.locfileid: "3848912"
 
 這個範例示範自訂附加屬性的相依性屬性登錄 (使用 [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 方法) 以及 **Get** 和 **Set** 存取子。 在範例中，附加屬性名稱是 `IsMovable`。 所以，存取子必須命名為 `GetIsMovable` 和 `SetIsMovable`。 附加屬性的擁有者是名為 `GameService` 的服務類別，這個類別沒有自己的 UI；其用途只是在使用 **GameService.IsMovable** 附加屬性時提供附加屬性服務。
 
-定義附加的屬性，在 C + + /CX 是較為複雜。 您必須決定如何切分標頭與程式碼檔案。 另外，您應該將識別碼公開為只包含一個 **get** 存取子的屬性，原因請參閱[自訂相依性屬性](custom-dependency-properties.md)中的討論。 在 C + + /CX，您必須定義這個屬性欄位關係明確而不在.NET **readonly**關鍵字和隱含信賴憑證者支援的簡單的屬性。 當應用程式第一次啟動，但在載入任何需要附加屬性的 XAML 頁面之前，您也需要在只執行一次的協助程式函式內執行附加屬性的登錄。 一般會針對任何和全部相依性或附加屬性呼叫屬性登錄協助程式函式的位置，是從 app.xaml 檔案程式碼中的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 建構函式內呼叫。
+定義附加的屬性，在 C + + /CX 是較為複雜。 您必須決定如何切分標頭與程式碼檔案。 另外，您應該將識別碼公開為只包含一個 **get** 存取子的屬性，原因請參閱[自訂相依性屬性](custom-dependency-properties.md)中的討論。 在 C + + /CX，您必須定義這個屬性欄位關係明確而不.NET **readonly**關鍵字和隱含信賴憑證者支援的簡單的屬性。 當應用程式第一次啟動，但在載入任何需要附加屬性的 XAML 頁面之前，您也需要在只執行一次的協助程式函式內執行附加屬性的登錄。 一般會針對任何和全部相依性或附加屬性呼叫屬性登錄協助程式函式的位置，是從 app.xaml 檔案程式碼中的 **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) 建構函式內呼叫。
 
 ```csharp
 public class GameService : DependencyObject
@@ -234,7 +234,7 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 ```
 
 > [!NOTE]
-> 如果您正在撰寫 XAML UI 搭配 c + +，您必須包含的任何時候定義附加的屬性，自訂類型的標頭在 XAML 頁面，使用該類型。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
+> 如果您正在撰寫 XAML UI 搭配 c + +，您必須包含定義附加的屬性，任何時間的自訂類型的標頭 XAML 頁面使用該類型。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
 
 ## <a name="value-type-of-a-custom-attached-property"></a>自訂附加屬性的值類型
 

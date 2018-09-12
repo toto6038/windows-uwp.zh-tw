@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3851218"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934111"
 ---
 # <a name="code-your-app-for-experimentation"></a>編寫實驗用的 App 程式碼
 
@@ -29,7 +29,7 @@ ms.locfileid: "3851218"
 下列小節描述取得實驗變化及將事件記錄至「開發人員中心」的一般程序。 編寫實驗用的 App 程式碼之後，就可以[在開發人員中心儀表板中定義實驗](define-your-experiment-in-the-dev-center-dashboard.md)。 如需示範建立及執行實驗的端對端處理程序的逐步解說，請參閱[利用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
 > [!NOTE]
-> 實驗 Api，Microsoft Store Services SDK 中的一些才能從開發人員中心擷取資料使用[非同步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)。 這意謂著這些方法的部分執行可能在方法被呼叫後才發生，因此您 App 的 UI 可以在作業完成時持續回應。 非同步模式會要求您的 App 在呼叫 API 時使用 **async** 關鍵字和 **await** 運算子，如本文的程式碼範例所示範。 根據慣例，非同步方法會以 **Async** 作為結尾。
+> 實驗 Api，Microsoft Store Services SDK 中的一些使用[非同步模式](../threading-async/asynchronous-programming-universal-windows-platform-apps.md)來從開發人員中心 」 擷取資料。 這意謂著這些方法的部分執行可能在方法被呼叫後才發生，因此您 App 的 UI 可以在作業完成時持續回應。 非同步模式會要求您的 App 在呼叫 API 時使用 **async** 關鍵字和 **await** 運算子，如本文的程式碼範例所示範。 根據慣例，非同步方法會以 **Async** 作為結尾。
 
 ## <a name="configure-your-project"></a>設定您的專案
 
@@ -60,7 +60,7 @@ ms.locfileid: "3851218"
 
 2. 宣告一個指派給您所要擷取的實驗之[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)的字串變數。
     > [!NOTE]
-    > 取得一個專案識別碼當您[建立在開發人員中心儀表板中的專案](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 以下所示的專案識別碼僅供範例用途使用。
+    > 取得一個專案識別碼當您[建立的專案，在開發人員中心儀表板](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)。 以下所示的專案識別碼僅供範例用途使用。
 
     [!code-cs[ExperimentExamples](./code/StoreSDKSamples/cs/ExperimentExamples.cs#Snippet2)]
 

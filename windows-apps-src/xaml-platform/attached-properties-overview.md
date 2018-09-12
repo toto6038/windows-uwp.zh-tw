@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3849952"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3930418"
 ---
 # <a name="attached-properties-overview"></a>附加屬性概觀
 
@@ -40,7 +40,7 @@ ms.locfileid: "3849952"
 ```
 
 > [!NOTE]
-> 我們只使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)做為一個範例中附加屬性而沒有充分解說您為何要使用它。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
+> 我們只使用[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771)做為範例中附加屬性而沒有充分解說您為何要使用它。 如果您想要進一步了解 **Canvas.Left** 的用途，以及 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 如何處理它的配置子項，請參閱 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 參考主題或[使用 XAML 定義版面配置](https://msdn.microsoft.com/library/windows/apps/mt228350)。
 
 ## <a name="why-use-attached-properties"></a>為什麼要使用附加屬性？
 
@@ -76,7 +76,7 @@ Windows 執行階段的附加屬性會實作為相依性屬性，這樣一來值
 
 ### <a name="using-the-xaml-accessor-pattern"></a>使用 XAML 存取子樣式
 
-當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性的擁有者類型必須實作專用的存取子方法在表單中名為 **取得 * * * PropertyName*和 **設定 * * * PropertyName*。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
+當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性擁有者類型必須實作專用的存取子方法在表單中名為 **取得 * * * PropertyName*和 **設定 * * * PropertyName*。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
 
 下面的範例顯示如何透過 XAML 存取子 API，在程式碼中設定附加屬性。 在此範例中，`myCheckBox` 是 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 類別的執行個體。 最後一行是實際設定值的程式碼，前一行會建立執行個體與它們的父系-子系關係。 如果您使用屬性系統，語法是未標記為註解的最後一行。 如果您使用 XAML 存取子樣式，語法是標記為註解的最後一行。
 
@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 執行階段 XAML 實作的侷限是您無法動畫顯示自訂附加的屬性。
 
-- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設那里一個元素`<TextBlock x:Uid="Title" />`，目標是該執行個體上的**Canvas.Top**值的資源檔案中的資源索引鍵是 「 Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top 」。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設那里一個元素`<TextBlock x:Uid="Title" />`，目標是**Canvas.Top**值，該執行個體上的資源檔中的資源索引鍵是 「 Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top 」。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## <a name="related-topics"></a>相關主題
 

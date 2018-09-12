@@ -1,6 +1,6 @@
 ---
 author: eliotcowley
-title: 使用軟體觸發程序
+title: 使用軟體的觸發程序
 description: 了解如何控制的軟體從掃描動作。
 ms.author: elcowle
 ms.date: 08/29/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848922"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3934443"
 ---
-# <a name="use-a-software-trigger"></a>使用軟體觸發程序
+# <a name="use-a-software-trigger"></a>使用軟體的觸發程序
 
 如果您在簡報模式中使用條碼掃描器，或者掃描器沒有如相機型條碼掃描器的實體觸發器，它可以從軟體控制掃描的動作。 您可以藉由呼叫 [StartSoftwareTriggerAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync) 來起始掃描程序。
 
@@ -33,7 +33,7 @@ ms.locfileid: "3848922"
 > [!Important]
 > 確認您的條碼掃描器支援使用軟體觸發器，首先檢查屬性 [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported)。
 
-下列範例示範如何開始使用的軟體觸發程序，將會停止掃描之後，它會掃描一個條碼掃描︰
+下列範例示範如何初始化使用的軟體觸發程序，將會停止掃描之後，它會掃描一個條碼掃描︰
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 

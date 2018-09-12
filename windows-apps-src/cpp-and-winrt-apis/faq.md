@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
 ms.openlocfilehash: 9316a29a50970bdaa288a4744f3aab7d873cbe4e
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850542"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933215"
 ---
 # <a name="frequently-asked-questions-about-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>有關 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的常見問題集
 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
@@ -22,9 +22,9 @@ ms.locfileid: "3850542"
 > [!NOTE]
 > 如果您的問題是關於您已經看過的錯誤訊息，則也會看到[疑難排解 C++/WinRT](troubleshooting.md)主題。
 
-## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>為什麼我的新專案將無法編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 17134 版本
+## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>為什麼我的新專案將無法編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 版本 17134
 
-如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，，並且針對 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，則新建立 C + + /winrt 專案可能會失敗來編譯錯誤 「*錯誤 C3861: 'from_abi': 識別碼不找到*」，以及來自*base.h*其他錯誤。 更新版本 （更多符合） 為目標的解決方案是版本的 Windows SDK 中或將專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 已-** 會出現在專案屬性**C/C++** > **語言** > **命令列****的其他選項**，然後刪除它)。
+如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，並且針對 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，則新建立 C + + /winrt 專案可能會無法編譯錯誤 」*錯誤 C3861: 'from_abi': 識別碼不找到*」，並包含來自*base.h*其他錯誤。 解決方案是任一目標更新版本 （更多符合） 版本的 Windows SDK 中或將專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 寬鬆-** 會出現在專案屬性**C/C++** > **語言** > **命令列**在**其他選項**，然後刪除它)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix) 的需求是什麼？
 [VSIX](https://aka.ms/cppwinrt/vsix) 強制執行 10.0.17134.0 (Windows 10，版本 1803 ) 的最小 Windows SDK 目標版本。 您也需要 Visual Studio 2017 (至少版本 15.6；我們建議至少 15.7)。 您可以識別一個專案，其藉由 `.vcxproj`檔案中的 `<PropertyGroup Label="Globals">` 的 `<CppWinRTEnabled>true</CppWinRTEnabled>` 存在來使用 VSIX。 如需詳細資訊，請參閱 [適用於 C++/WinRT 的 Visual Studio 支援，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
@@ -89,11 +89,11 @@ windows.com
 
 Visual Studio 是我們支援和為 C++/WinRT 建議的開發工具。 請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>為什麼不會產生的實作函式的唯讀屬性有`const`限定詞？
+## <a name="why-doesnt-the-generated-implementation-function-for-a-read-only-property-have-the-const-qualifier"></a>為什麼沒有唯讀屬性的產生的實作函式`const`限定詞？
 
-當您宣告中[MIDL 3.0](/uwp/midl-3/)的唯讀屬性時，您可能會預期`cppwinrt.exe`工具來為您產生實作函式的`const`-完整 （const 函式會將視為 const*這個*指標）。
+當您宣告中[MIDL 3.0](/uwp/midl-3/)的唯讀屬性時，您可能會預期`cppwinrt.exe`工具，來為您產生實作函式是`const`-完整 （const 函式會將視為 const*這個*指標）。
 
-當然建議使用 const 如果可行，但`cppwinrt.exe`工具本身不會嘗試原因的相關之實作函式都可能 const，而這可能無法。 您可以選擇讓任何您實作函式 const，如這個範例所示。
+當然建議使用 const 如果可行，但`cppwinrt.exe`工具本身不會嘗試原因相關之實作函式都可能 const，而這可能無法。 您可以選擇讓任何您實作函式 const，如這個範例所示。
 
 ```cppwinrt
 struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation::IStringable>
@@ -105,9 +105,9 @@ struct MyStringable : winrt::implements<MyStringable, winrt::Windows::Foundation
 };
 ```
 
-您可以移除這些`const`限定詞上**ToString**應該您決定，您需要修改它的實作中一些物件狀態。 但讓每個您的成員函式 const 或非 const 不可兩者。 換句話說，不多載的實作函式在`const`。
+您可以移除這些`const`限定詞上**ToString**應該您決定您需要修改它的實作中一些物件狀態。 但讓每個您的成員函式 const 或非 const 不可兩者。 換句話說，不多載實作函式在`const`。
 
-除了您實作的函式，另一個其他放置的位置 const 已能圖片是在 Windows 執行階段函式投影。 請考慮此程式碼。
+除了您實作的函式，另一個其他放置的位置 const 已能圖片是在 Windows 執行階段函式投射。 請考慮此程式碼。
 
 ```cppwinrt
 int main()
@@ -117,19 +117,19 @@ int main()
 }
 ```
 
-為**ToString**上述的呼叫，在 Visual Studio 中的**移至宣告**命令會顯示的 Windows 執行階段**istringable:: Tostring**的投影到 C + + /winrt 看起來像這樣。
+**ToString**上述的呼叫，**請移至宣告**命令，在 Visual Studio 中的顯示的 Windows 執行階段**istringable:: Tostring**投影到 C + + /winrt 看起來像這樣。
 
 ```
 winrt::hstring ToString() const;
 ```
 
-投影的函式是 const 不論您選擇以符合您的實作它們的方式。 在幕後投影會呼叫的應用程式二進位介面 (ABI)，哪些量，透過 COM 介面指標的呼叫。 投影的**ToString**與互動的唯一狀態是該 COM 介面指標。而且當然具備不需要修改該指標，因此 const 函式。 這讓您確保它不會變更，透過呼叫**IStringable**參考的相關的任何項目，它可確保您可以呼叫**ToString**即使有 const 參考**IStringable**。
+投影的函式是 const 不論您選擇以符合您的實作它們的方式。 在幕後投影呼叫應用程式二進位介面 (ABI)，到透過 COM 介面指標呼叫的金額。 投影的**ToString**互動的唯一狀態是該 COM 介面指標。而且，當然具備不需要修改該指標，因此函式是 const。 這讓您確保它不會變更，透過呼叫**IStringable**參考的相關的任何項目，以及它可確保您可以呼叫**ToString**即使有 const 參考**IStringable**。
 
-了解，這些範例中的`const`是實作詳細資料的 C + + /winrt 投影和實作;它們會構成您可的程式碼健康。 沒有這類的`const`上，COM，也不 Windows 執行階段 ABI （適用於成員函式中）。
+了解，這些範例中的`const`是實作詳細資料的 C + + /winrt 規劃和實作;它們會構成供您參考的程式碼健康。 沒有這類的`const`上，COM，也不 Windows 執行階段 ABI （適用於成員函式）。
 
 ## <a name="do-you-have-any-recommendations-for-decreasing-the-code-size-for-cwinrt-binaries"></a>您有任何建議縮小的程式碼的 C + + /winrt 的二進位檔嗎？
 
-使用 Windows 執行階段物件時，您應該避免因為它可以在您的應用程式上所造成不必要產生更多二進位檔案的程式碼會有負面影響，如下所示的程式碼撰寫模式。
+使用 Windows 執行階段物件時，您應該避免因為它可以在您的應用程式上引起不必要產生更多二進位檔案的程式碼會有負面影響，如下所示的程式碼撰寫模式。
 
 ```cppwinrt
 anobject.b().c().d();
@@ -137,7 +137,7 @@ anobject.b().c().e();
 anobject.b().c().f();
 ```
 
-在 Windows 執行階段世界中，則編譯器會無法快取的值`c()`或每個方法的呼叫透過間接取值介面 ('。 」)。 除非您介入，這樣會造成更多虛擬呼叫和參考計數額外負荷。 上述的模式可以輕鬆地產生兩次做為更嚴格地為所需的程式碼。 相反地，想要的模式，您可以在任何地方，如下所示。 它會產生很多較少的程式碼，以及它可以也可大幅改善您的執行的階段效能。
+在 Windows 執行階段世界中，編譯器就無法快取的值`c()`或透過間接取值稱為每個方法的介面 ('。 」)。 除非您介入，這樣會造成更多虛擬呼叫和參考計數額外負荷。 上述的模式可以輕鬆地產生倍地所需的程式碼。 相反地，想要的模式，您可以在任何地方，如下所示。 它會產生很多較少的程式碼，以及它可以也可大幅改善您的執行的階段效能。
 
 ```cppwinrt
 auto a{ anobject.b().c() };

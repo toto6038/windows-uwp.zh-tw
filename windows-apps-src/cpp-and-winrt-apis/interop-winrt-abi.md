@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: b641591e7be23226edc354e02513d723fbe8afba
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3848232"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3933019"
 ---
 # <a name="interop-between-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-and-the-abi"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 與 ABI 之間的互通性
 本主題示範如何在 SDK 應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 您可以使用這些技術在使用這些程式設計的兩種方法的程式碼以及 Windows 執行階段之間互通，或您逐漸將程式碼從 ABI 移至 C++/WinRT 時，可以使用它們。
@@ -236,11 +236,11 @@ int main()
 ## <a name="important-apis"></a>重要 API
 * [AddRef 函式](https://msdn.microsoft.com/library/windows/desktop/ms691379)
 * [QueryInterface 函式](https://msdn.microsoft.com/library/windows/desktop/ms682521)
-* [winrt::attach_abi 函式](/uwp/cpp-ref-for-winrt/attach-abi)
+* [winrt:: attach_abi 函式](/uwp/cpp-ref-for-winrt/attach-abi)
 * [winrt::com_ptr 結構範本](/uwp/cpp-ref-for-winrt/com-ptr)
 * [winrt:: copy_from_abi 函式](/uwp/cpp-ref-for-winrt/copy-from-abi)
 * [winrt:: copy_to_abi 函式](/uwp/cpp-ref-for-winrt/copy-to-abi)
-* [winrt::detach_abi 函式](/uwp/cpp-ref-for-winrt/detach-abi)
+* [winrt:: detach_abi 函式](/uwp/cpp-ref-for-winrt/detach-abi)
 * [winrt::get_abi 函式](/uwp/cpp-ref-for-winrt/get-abi)
 * [winrt::Windows::Foundation::IUnknown::as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 成員函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)

@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: C + + /winrt 可協助您撰寫傳統 COM 元件，就如同它可協助您撰寫 Windows 執行階段類別。
+description: C + + WinRT 可協助您撰寫傳統 COM 元件，就如同它可協助您撰寫 Windows 執行階段類別。
 title: 撰寫 COM 元件使用 C + + /winrt
 ms.author: stwhi
 ms.date: 09/06/2018
@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 作者，COM、 元件
 ms.localizationpriority: medium
 ms.openlocfilehash: 729cfae39f302ae6b5bae275d9e28a39f3d9503b
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3850122"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3935688"
 ---
 # <a name="author-com-components-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>撰寫使用 COM 元件[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
-C + + /winrt 可協助您撰寫的傳統型元件物件模型 (COM) 元件 （或 coclasses），就如同它可協助您撰寫 Windows 執行階段類別。 以下是非常簡單圖例中，這您可以測試一點，如果您將它貼到`main.cpp`的新**Windows 主控台應用程式 (C + + /winrt)** 專案。
+C + + /winrt 可協助您撰寫的傳統型元件物件模型 (COM) 元件 （或 coclasses），就如同它可協助您撰寫 Windows 執行階段類別。 以下是非常簡單的圖例，您可以測試一點，如果您將它貼到`main.cpp`的新**Windows 主控台應用程式 (C + + /winrt)** 專案。
 
 ```cppwinrt
 // main.cpp : Defines the entry point for the console application.
@@ -45,19 +45,19 @@ int main()
 }
 ```
 
-另請參閱[使用 COM 元件，使用 C + + /winrt](consume-com.md)。
+另請參閱[取用 COM 元件，使用 C + + /winrt](consume-com.md)。
 
 ## <a name="a-more-realistic-and-interesting-example"></a>更逼真且有趣的範例
 
-本主題的其餘部分逐步解說如何建立最少的主控台應用程式專案使用 C + + /winrt 實作基本的 coclass 和類別原廠。 範例應用程式示範如何提供回呼按鈕的快顯通知上，並 coclass （這會實作**INotificationActivationCallback** COM 介面） 可讓應用程式會啟動並呼叫傳回時使用者按一下該按鈕的快顯通知。
+本主題的其餘部分逐步解說如何建立最少的主控台應用程式專案使用 C + + /winrt 實作基本的 coclass 和類別原廠。 範例應用程式示範如何提供回呼按鈕的快顯通知，並 coclass （這會實作**INotificationActivationCallback** COM 介面） 可讓應用程式啟動並呼叫返回時使用者按一下該按鈕的快顯通知。
 
-[傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)位於快顯通知功能區域相關的詳細背景。 沒有任何文件的在該節中的程式碼範例使用 C + + /winrt，不過，因此我們建議您想要顯示在本主題中的程式碼。
+[傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)位於快顯通知功能區域相關的詳細背景。 無文件的在該節中的程式碼範例使用 C + + /winrt，不過，因此我們建議您想要顯示在本主題中的程式碼。
 
 ## <a name="create-a-windows-console-application-project-toastandcallback"></a>建立 Windows 主控台應用程式專案 (ToastAndCallback)
 
-在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立**Visual c + +** > **Windows 傳統型** > **Windows 主控台應用程式 (C + + /winrt)** 專案，並將它命名為*ToastAndCallback*。
+在 Microsoft Visual Studio 中，藉由建立新的專案來開始。 建立**Visual c + +** > **的 Windows 桌面** > **Windows 主控台應用程式 (C + + /winrt)** 專案，並將它命名為*ToastAndCallback*。
 
-開啟`main.cpp`，並移除 using 指示詞的專案範本產生。 在其位置，貼上下列程式碼 （這可讓我們要、 標頭，以及我們需要的類型名稱）。
+開啟`main.cpp`，並移除 using 指示詞專案範本所產生。 在其位置，貼上下列程式碼 （這可讓我們程式庫、 標頭，以及我們需要的類型名稱）。
 
 ```cppwinrt
 #pragma comment(lib, "shell32")
@@ -76,9 +76,9 @@ using namespace Windows::Data::Xml::Dom;
 using namespace Windows::UI::Notifications;
 ```
 
-## <a name="implement-the-coclass-and-class-factory"></a>實作 coclass 和類別的原廠
+## <a name="implement-the-coclass-and-class-factory"></a>實作 coclass 和類別 factory
 
-在 C + + /winrt，您實作 coclasses 和類別 factory 衍生自[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基礎結構。 在三個 using 指示詞上述後立即 (以及在之前`main`)，將此程式碼來實作您的快顯通知的 COM 通知啟動者元件。
+在 C + + /winrt，您實作 coclasses 和類別 factory 衍生自[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基礎結構。 在三個 using 指示詞上述後立即 (和之前`main`)，貼上下列程式碼來實作您的快顯通知 COM 啟動者元件。
 
 ```cppwinrt
 static constexpr GUID callback_guid // BAF2FA85-E121-4CC9-A942-CE335B6F917F
@@ -134,17 +134,17 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-上述 coclass 實作如下所示的相同模式[撰寫 Api 使用 C + + /winrt](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。 請注意，您可以使用 [不只適用於 Windows 執行階段介面 （任何介面最終衍生自[**IInspectable**](https://msdn.microsoft.com/library/br205821)），但也實作 COM 介面 （最終衍生自[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)任何介面） 是這項技術。
+上述 coclass 實作如下所示的相同模式[撰寫 Api 使用 C + + /winrt](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class)。 請注意，您可以使用這項技術，不只適用於 Windows 執行階段介面 （任何介面最終衍生自[**IInspectable**](https://msdn.microsoft.com/library/br205821)），但也實作 COM 介面 （最終衍生自[**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)任何介面） 是。
 
-在上述程式碼中 coclass，我們實作**INotificationActivationCallback::Activate**方法，也就是當使用者按下快顯通知上的 [回呼] 按鈕時所呼叫的函式。 但該函式可呼叫之前，您必須建立，coclass 的執行個體，而這就是**IClassFactory::CreateInstance**函式的工作。
+在上述程式碼中 coclass，我們會實作**INotificationActivationCallback::Activate**方法，也就是當使用者按一下快顯通知上的 [回呼] 按鈕時所呼叫的函式。 但是，該函式可呼叫之前，您必須建立，coclass 的執行個體，而這就是**IClassFactory::CreateInstance**函式的工作。
 
-我們只是實作 coclass 稱為通知， *COM 啟動者*，它有其類別識別碼 (CLSID) 的形式`callback_guid`識別碼 (of 類型**的 GUID**），您看到以上。 我們會使用該識別碼更新版本，形式的 [開始] 功能表捷徑，以及 Windows 登錄項目。 COM 啟動者 CLSID，以及其相關聯的 COM 伺服器 （也就是我們在這裡建置的可執行檔的路徑） 的路徑是量的快顯通知會知道什麼類別來建立執行個體的當其回呼按一下按鈕的機制 (是否通知按一下控制中心中或不）。
+我們只是實作 coclass 稱為通知， *COM 啟動者*，它有其類別識別碼 (CLSID) 的形式`callback_guid`識別項 (of 類型**的 GUID**），您看到以上。 我們會使用該識別碼更新版本，形式的 [開始] 功能表捷徑，以及 Windows 登錄項目。 COM 啟動者 CLSID，以及其相關聯的 COM 伺服器 （也就是我們在這裡建置的可執行檔的路徑） 的路徑是量的快顯通知會知道什麼類別來建立執行個體的當其回呼按一下按鈕的機制 (是否通知按一下控制中心中或不）。
 
 ## <a name="best-practices-for-implementing-com-methods"></a>實作 COM 方法的最佳做法
 
-錯誤處理和資源管理技術可以瀏覽手中最。 它是更方便且不方便使用比錯誤碼的例外狀況。 此外，如果您使用資源的下載數的是-初始化 (RAII) 慣用語，則您可以避免明確地檢查錯誤碼，並明確釋放資源。 這類明確檢查讓更多錯綜複雜多餘的情況下，您的程式碼，它提供錯誤充分的位置來隱藏。 反之，請使用 RAII，並擲回/catch 例外狀況。 如此一來，您資源配置是異常安全，而您的程式碼很簡單。
+錯誤處理和資源管理技術可以瀏覽手中手。 它是更方便且不方便使用比錯誤碼的例外狀況。 此外，如果您使用資源的下載數-是-初始化 (RAII) 慣用語，則您可以避免明確檢查錯誤碼，並明確釋放資源。 這類明確檢查進行更錯綜複雜多餘的情況下，您的程式碼，它提供錯誤充分的隱藏的地方。 反之，請使用 RAII，並擲回/catch 例外狀況。 如此一來，您的資源配置是異常安全和您的程式碼很簡單。
 
-不過，您我允許逸出您的 COM 方法實作的例外狀況。 您可以確保使用`noexcept`規範，在您的 COM 方法。 只要您處理這類之前您方法結束後，它是 ok 擲回任何一處的您方法中，呼叫圖形中的例外狀況。 如果您使用`noexcept`，但您然後允許來逸出您方法中，例外狀況，則您的應用程式將會終止。
+不過，您我允許逸出您的 COM 方法實作的例外狀況。 您可以確保使用`noexcept`在您的 COM 方法的規範。 只要您處理這類您方法結束之前是方法的確定在您的呼叫圖形中任何一處回的例外狀況。 如果您使用`noexcept`，但您然後允許來逸出您方法中，例外狀況，則您的應用程式會終止。
 
 ## <a name="add-helper-types-and-functions"></a>新增協助程式類型和函式
 
@@ -220,7 +220,7 @@ std::wstring get_shortcut_path()
 
 ## <a name="implement-the-remaining-functions-and-the-wmain-entry-point-function"></a>實作的剩餘的函式，以及 wmain 進入點函式
 
-專案範本會產生`main`為您的函式。 刪除這個`main`函式，並在它的位置中貼上此程式碼清單，其中包含註冊您 coclass 的程式碼，然後提供可呼叫回您的應用程式的快顯通知。
+專案範本會產生`main`為您的函式。 刪除這個`main`函式，並在它的位置中貼上此程式碼清單，其中包括程式碼來登錄您 coclass，然後傳送快顯通知能夠呼叫回您的應用程式。
 
 ```cppwinrt
 void register_callback()
@@ -380,7 +380,7 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="how-to-test-the-example-application"></a>如何在測試範例應用程式
 
-建置應用程式，並加以執行至少一次以系統管理員身分，使註冊，以及其他安裝程式中，若要執行的程式碼。 您是否正在執行以系統管理員身分，然後按下不要 ' 會造成顯示快顯通知。 您可以按一下 [**回呼 ToastAndCallback** ] 按鈕是直接從突然，或從在控制中心和您的應用程式將會啟動快顯通知、 具現化，coclass 和**INotificationActivationCallback:: 啟用**執行方法。
+建置應用程式，並再以系統管理員身分註冊，以及其他安裝程式中，若要執行的程式碼會造成中至少一次執行。 您是否正在執行以系統管理員身分，然後按下 T ' 會造成顯示快顯通知。 您可以按一下直接從突然向上，或從在控制中心和您的應用程式將會啟動快顯通知、 具現化，coclass 和 INotificationActivationCallback****回呼 ToastAndCallback**按鈕:: As 啟用**執行的方法。
 
 ## <a name="important-apis"></a>重要 API
 * [IInspectable 介面](https://msdn.microsoft.com/library/br205821)

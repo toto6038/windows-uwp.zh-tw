@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
 ms.openlocfilehash: d787ac620f9d0114d67d85def758416afd9f5f15
-ms.sourcegitcommit: 72710baeee8c898b5ab77ceb66d884eaa9db4cb8
+ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "3846382"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "3929714"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -87,11 +87,11 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>只顯示上傳的標誌影像，在市集中
 
-您可以選擇防止 microsoft Store 使用您的應用程式套件中的標誌影像，在 Windows 10 （包括 Xbox） 上的客戶顯示您的清單時，並改為讓 microsoft Store 使用您上傳的影像。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您的產品支援較舊版本的作業系統版本，這些客戶可能會仍然看到映像從您的套件，即使您使用此選項。）
+您可以選擇防止市集使用您的應用程式套件中的標誌影像，在 Windows 10 （包括 Xbox） 上的客戶顯示您的清單時，並改為讓 microsoft Store 使用您上傳的影像。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您的產品支援較舊版本的作業系統版本，這些客戶可能仍然看到映像從您的套件，即使您使用此選項）。
 
-對於 Windows 10 和 Xbox 的客戶已在市集中使用您上傳 （適用於客戶的 Windows 10，包括 Xbox） 的映像不使用任何您的套件中的影像，核取方塊，指出 **，顯示上傳的標誌影像，而不是我的套件中的影像**.
+對於 Windows 10 和 Xbox 的客戶已在市集中使用您上傳 （適用於客戶的 Windows 10，包括 Xbox） 的映像，並不使用任何的映像，從您的套件，核取方塊，指出 **，顯示上傳的標誌影像，而不是我的套件中的影像**.
 
-當您勾選此方塊時，新的章節稱為**市集中顯示影像，** 將會出現。 在這裡，您可以上傳 3 個影像，包括**1:1 應用程式磚圖示 （300 x 300 像素）** 大小 （如果您核取方塊，提供該映像將會移至此區段的欄位）。 如果您使用此選項，建議您三種影像大小都提供：300 x 300、150 x 150 及 71 x 71 像素。 不過，只需要 300 x 300 大小。
+當您勾選此方塊時，新的章節，稱為**市集中顯示影像，** 將會出現。 在這裡，您可以上傳 3 個影像，包括**1:1 應用程式磚圖示 （300 x 300 像素）** 大小 （如果您核取方塊，提供該映像會移至此區段的欄位）。 如果您使用此選項，建議您三種影像大小都提供：300 x 300、150 x 150 及 71 x 71 像素。 不過，只需要 300 x 300 大小。
 
 
 <span id="promotional-images" />
