@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp、 標準、 c + +、 cpp、 winrt、 投影、 移動、 轉送、 值類別、 移動語意、 完美轉送、 左、 右值、 glvalue，prvalue，xvalue
 ms.localizationpriority: medium
 ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928848"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3962970"
 ---
 # <a name="value-categories-and-references-to-them"></a>值類別，以及它們的參考
 本主題描述各種不同的值 （和值的參考） 類別存在於 c + +。 您將會相信有聽過*的值*和*右*，但您可能不想要它們在本主題提供的條款。 而且有一些其他類型的值，太。

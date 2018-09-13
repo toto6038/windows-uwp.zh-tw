@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: d7d748f36dafd93066928f01f9aa42414f2ffc1f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933395"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3961286"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 

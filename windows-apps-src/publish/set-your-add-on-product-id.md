@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 0673048fc9a1ed8fb7c439607ebc4197039699e9
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931258"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959472"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>設定您的附加內容產品類型與產品識別碼
 

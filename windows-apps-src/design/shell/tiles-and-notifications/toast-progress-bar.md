@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 進度列, 快顯通知進度列, 通知, 快顯通知資料繫結
 ms.localizationpriority: medium
 ms.openlocfilehash: b99c2479bef3c10ecc82707e475f49fd2b9014ec
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930590"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963254"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>快顯通知進度列和資料繫結
 

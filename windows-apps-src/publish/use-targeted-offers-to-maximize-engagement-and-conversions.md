@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 針對性優惠, 優惠, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 727c438bacf51fd2ead03df72421363116c4701b
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932411"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963958"
 ---
 # <a name="use-targeted-offers-to-maximize-engagement-and-conversions"></a>使用針對性優惠提高吸引力與轉換數
 

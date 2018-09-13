@@ -12,12 +12,12 @@ keywords: Windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 136a52cedd7d4b0599adaff08fd0860260da4ce3
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3928386"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964702"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示和標誌 
 
@@ -129,7 +129,7 @@ Visual Studio 提供非常有用的工具來管理您的應用程式圖示稱為
 :::row-end:::
 :::row:::
     :::column:::
-        2.在 [**方案總管] 中**按兩下 package.appmanifest 檔案。
+        2.在**方案總管]** 中，按兩下 Package.appmxanifest 檔案。
     :::column-end:::
     :::column:::
         ![在 Visual Studio 2017 資訊清單設計工具](images/icons/vs-solution-explorer.png)

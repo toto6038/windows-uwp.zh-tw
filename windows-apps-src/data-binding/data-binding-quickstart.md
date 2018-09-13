@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9cf12bc5c875e4ce3be2d627c87e15770e4cc214
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932803"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3960190"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 

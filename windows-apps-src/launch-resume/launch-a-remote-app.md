@@ -11,11 +11,11 @@ keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project ro
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 58a420d73ba4a0cd51f909fd5d7d417af1cfb38f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933355"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963644"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
 

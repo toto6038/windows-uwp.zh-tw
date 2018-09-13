@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 背景工作觸發程序，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3932973"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963856"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>從您的應用程式觸發背景工作
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, promote, app, campaign, report, installs, 促銷, 應用程式, 行銷活動, 報告, 安裝
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930528"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964642"
 ---
 # <a name="ad-campaign-report"></a>廣告活動報告
 

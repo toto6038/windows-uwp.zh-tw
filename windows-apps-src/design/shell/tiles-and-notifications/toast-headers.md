@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 標頭, 快顯通知標頭, 通知, 群組快顯通知, 控制中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b3c92a41832729b5a60411308d010c3cbb4470a
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931537"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3963792"
 ---
 # <a name="toast-headers"></a>快顯通知標頭
 

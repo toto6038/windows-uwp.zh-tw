@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，市集服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
 ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3929116"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3957870"
 ---
 # <a name="get-daily-app-usage"></a>取得每日的應用程式使用方式
 

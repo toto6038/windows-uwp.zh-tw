@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 1192c200cd42ab28cc7e763c06fd8a5638aa3400
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3933099"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3958926"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自訂 SSL 憑證佈建裝置入口網站
 在 Windows 10 Creators Update 中，Windows Device Portal 會新增裝置系統管理員來安裝自訂使用憑證的 HTTPS 通訊的方式。 

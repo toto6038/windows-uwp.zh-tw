@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，原生映像編譯器
 ms.localizationpriority: medium
 ms.openlocfilehash: d98b576fb51a8f9507802796ab359d0d00d21998
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3931118"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964732"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>最佳化您的.NET 傳統型應用程式使用原生映像
 

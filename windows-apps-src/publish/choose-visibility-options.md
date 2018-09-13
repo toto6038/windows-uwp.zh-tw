@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 可見度, 私人對象, 可用, 可搜尋
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3930580"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3956594"
 ---
 # <a name="choose-visibility-options"></a>選擇可見度選項
 

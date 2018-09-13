@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3934431"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3964762"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標與著作權保護
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 26bed64053e8de9a42ac01ed3262c7b0f41d1d42
-ms.sourcegitcommit: 2a63ee6770413bc35ace09b14f56b60007be7433
+ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "3935483"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "3959956"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
