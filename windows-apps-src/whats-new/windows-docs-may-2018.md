@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 322bc056411095019dfc027078cbfef7de0883fb
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3963896"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3985547"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>在 2018 年 Windows 開發人員文件的最新動向
 
@@ -48,7 +48,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 * [回應式設計技術](../design/layout/responsive-design.md)
 * [螢幕大小與中斷點](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 * [樣式概觀](../design/style/index.md)
-* [撰寫方式](../design/style/writing-style.md)
+* [撰寫樣式](../design/style/writing-style.md)
 
 此外，我們已經重寫下列頁面以其內容區域上的所有新資訊：
 
@@ -103,13 +103,13 @@ Project Rome 團隊有徹底檢查，其 iOS 和 Android 的 Sdk，新增新的�
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="get-started"></a>開始
+### <a name="get-started"></a>入門
 
 我們已經 revitalized 我們取得啟動具有新的學習追蹤的內容。 這些新主題旨在提供新的 Windows 10 開發人員可能會想要完成一些常見的工作資訊。 它們不教學課程和未提供手持的逐步解說中，但改為為止現有的文件存在於的位置，以及如何使用它。 請查看改頭換面[開始撰寫程式碼](../get-started/create-uwp-apps.md)的頁面上，或瀏覽每個個別的學習追蹤：
 
 * [建構表單](../get-started/construct-form-learning-track.md)
-* [顯示清單中的客戶](../get-started/display-customers-in-list-learning-track.md)
-* [載入和儲存設定](../get-started/settings-learning-track.md)
+* [在清單中顯示客戶](../get-started/display-customers-in-list-learning-track.md)
+* [儲存和載入設定](../get-started/settings-learning-track.md)
 * [使用檔案](../get-started/fileio-learning-track.md)
 
 ![取得已啟動的映像](../get-started/images/build-your-app.png)

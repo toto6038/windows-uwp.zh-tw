@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 測試人員, 開發人員中心測試人員, 預覽�
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
 ms.openlocfilehash: 430d8588b83dd605848bba63f46dc5a440c28cf3
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964872"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3982827"
 ---
 # <a name="dev-center-insider-program"></a>開發人員中心測試人員計畫
 

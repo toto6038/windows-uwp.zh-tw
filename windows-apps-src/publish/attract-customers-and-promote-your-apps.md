@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ca47bfb26649f2e8a9fc1344c3264d90548eb836
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3960122"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3983465"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客戶以及促銷您的應用程式
 
@@ -23,7 +23,7 @@ ms.locfileid: "3960122"
 -   [產生促銷碼](generate-promotional-codes.md)
 -   [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
 -   [建立自訂 app 促銷活動](create-a-custom-app-promotion-campaign.md)
--   [促銷 App 和附加元件](put-apps-and-add-ons-on-sale.md)
+-   [促銷應用程式和附加元件](put-apps-and-add-ons-on-sale.md)
 -   [Microsoft Store 銷售 app 的指導方針](app-marketing-guidelines.md)
 -   [應用程式的連結](link-to-your-app.md)
 -   [讓您的 app 更容易促銷](make-your-app-easier-to-promote.md)

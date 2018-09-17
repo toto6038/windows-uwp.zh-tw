@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961188"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3981965"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 
@@ -81,7 +81,7 @@ Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，
 
 ## <a name="see-also"></a>另請參閱
 
-* [開始程式設計](create-uwp-apps.md)
+* [開始撰寫程式碼](create-uwp-apps.md)
 * [什麼是 UWP app？](universal-application-platform-guide.md)
 * [開始設定](get-set-up.md)
 * [註冊 Windows 帳戶](sign-up.md)

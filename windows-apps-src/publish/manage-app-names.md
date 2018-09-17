@@ -1,7 +1,7 @@
 ---
 author: jnHs
 Description: View the names that you've reserved for your app, reserve additional names (for other languages or to change your app's name), and delete reserved names that you don't need anymore.
-title: 管理 app 名稱
+title: 管理應用程式名稱
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ms.author: wdg-dev-content
 ms.date: 8/07/2018
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式名稱，變更應用程式名稱、 更新應用程式名稱、 遊戲名稱、 產品名稱
 ms.localizationpriority: medium
 ms.openlocfilehash: f0d2c6f72e2f69f0b768af55f9bddeb9bb008027
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3964692"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3986869"
 ---
-# <a name="manage-app-names"></a>管理 app 名稱
+# <a name="manage-app-names"></a>管理應用程式名稱
 
 **管理應用程式名稱**可讓您檢視所有已保留給您的應用程式的名稱保留其他名稱 （適用於其他語言或變更您的應用程式名稱），並刪除您不需要的名稱。 您可以在[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中找到此頁面，藉此拓展您的應用程式的任何的左方的導覽功能表中的 [**應用程式管理**] 區段。
 

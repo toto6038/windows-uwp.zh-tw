@@ -4,18 +4,18 @@ Description: The Acquisitions report in the Windows Dev Center dashboard lets yo
 title: 下載數報告
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 08/15/2018
+ms.date: 09/14/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
 ms.localizationpriority: medium
-ms.openlocfilehash: e6b4a3d8a10234e5f95e70f397a4de962a29c929
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3961346"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3987925"
 ---
 # <a name="acquisitions-report"></a>下載數報告
 
@@ -49,6 +49,8 @@ ms.locfileid: "3961346"
 **下載數**圖表會顯示在選取時段內，每日或每週取得數目 (取得您 app 授權的新客戶)。 (當您使用 **\[套用篩選\]** 顯示較長持續時間的資料，下載數資料將會依星期群組。) 使用有效 Microsoft 帳戶登入的客戶所做的下載數才會納入本圖表。 
 
 根據預設，我們會顯示**每日的應用程式**檢視，其中包括接近即時資料。 您也可以透過選取 **\[App cumulative\]** (App 累積)，看到您 app 生命週期內的下載數。 這會顯示所有下載數的累計總數 (從您 App 第一次發行開始)。
+
+**授權銷售**取得您的應用程式 （年 10 月 2016-存在) 也會提供此圖表中顯示從應用程式銷售，（以美元） 賺取的總金額。 請注意這段不會考量任何退款、 解除安裝、 作廢、 等。
 
 您可以選擇性地依據下載是來自用戶端或 web 架構市集，和（或）依據 OS 版本來篩選結果。
 
