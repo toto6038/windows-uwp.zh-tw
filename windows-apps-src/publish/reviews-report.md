@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp、 檢閱、 註解，評論者
 ms.localizationpriority: medium
-ms.openlocfilehash: 8891aecb904f69e3f77ec5892d9234f79db46ff0
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958686"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3989537"
 ---
 # <a name="reviews-report"></a>評論報告
 
@@ -68,7 +68,7 @@ ms.locfileid: "3958686"
 此圖表也看過[評等報告](ratings-report.md)，以及您的應用程式評等相關的更多詳細資料。
 
 
-< span id ="評論見解類別 / >
+<span id = "review-insight-categories" />
 
 ## <a name="insight-categories"></a>見解類別
 

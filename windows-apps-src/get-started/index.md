@@ -11,11 +11,11 @@ keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d7ad7835e56b874c37b9376eb00278fea055dd1
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3958516"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990183"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式 
  
@@ -75,7 +75,7 @@ ms.locfileid: "3958516"
                         <h3>開始程式設計</h3>
                         <p>無論您是經驗豐富的開發人員或才剛開始建立您的第一個應用程式，都能獲得 Windows 10 平台和文件的實機操作體驗。</p>
                         <ul>
-                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">開始程式設計</a></li>
+                            <li><a href="//docs.microsoft.com/windows/uwp/get-started/create-uwp-apps">開始撰寫程式碼</a></li>
                         </ul>
                     </div>
                 </div>

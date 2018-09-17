@@ -1,7 +1,7 @@
 ---
 author: QuinnRadich
 Description: The Pivot control enables touch-swiping between a small set of content sections.
-title: Pivot
+title: 樞紐分析
 template: detail.hbs
 ms.author: quradic
 ms.date: 06/19/2018
@@ -15,13 +15,13 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: c8f6866100a4b38fdda8394ea185b02d7af66411
+ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "3962590"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "3990061"
 ---
-# <a name="pivot"></a>Pivot
+# <a name="pivot"></a>樞紐分析
 
 [Pivot](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Pivot)控制項可讓觸控撥動內容區段一小群之間。
 
