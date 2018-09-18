@@ -14,12 +14,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 714a1af932dfb8d5b0aab5c84437f92d5c2bd90e
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983813"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4016060"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
@@ -335,14 +335,14 @@ bool App::On_BackRequested()
 </tr>
 <tr class="even">
 <td style="vertical-align:top;"><strong>頁面之間、相同對等群組、沒有螢幕上的瀏覽元素</strong>
-<p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有螢幕上沒有提供直接瀏覽到兩頁面的瀏覽元素 （例如[NavigationView](../controls-and-patterns/navigationview.md))。</p></td>
+<p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有螢幕上沒有提供直接瀏覽到兩頁面的瀏覽元素 （例如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>)。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
 <p>在以下圖例中，使用者在相同的對等群組中，兩個頁面之間瀏覽，並瀏覽應該新增到瀏覽歷程記錄。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td style="vertical-align:top;"><strong>頁面之間、相同對等群組、有螢幕上的瀏覽元素</strong>
-<p>使用者從相同對等群組中的一個頁面瀏覽到另一個頁面。 這兩個頁面都顯示在同一個瀏覽元素，例如[NavigationView](../controls-and-patterns/navigationview.md)。</p></td>
+<p>使用者從相同對等群組中的一個頁面瀏覽到另一個頁面。 這兩個頁面都顯示在同一個瀏覽元素，例如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>。</p></td>
 <td style="vertical-align:top;"><strong>不一定</strong>
 <p>是的新增至瀏覽歷程記錄，有兩個值得注意的例外。 如果您希望您的應用程式的使用者經常，對等群組中的頁面之間切換，或如果您想要保留的瀏覽階層，則請勿新增至瀏覽歷程記錄。 在此情況下，當使用者按下返回時，將返回使用者瀏覽到目前對等群組之前的最後一個頁面。 </p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>

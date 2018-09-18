@@ -3,18 +3,18 @@ author: jwmsft
 title: 版本調適型應用程式
 description: 了解如何利用新的 API 並維持與先前版本的相容性
 ms.author: jimwalk
-ms.date: 10/10/2017
+ms.date: 09/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d43cd9d03977e34b57d78e1f22bd7e8b340ff4ab
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1701034"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4019644"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型應用程式：使用新的 API 並同時維持與先前版本的相容性
 
@@ -48,19 +48,23 @@ ms.locfileid: "1701034"
 
 若要變更 Visual Studio 中已經建立專案的「最低」和「目標」版本，請移至 [專案] -&gt; [屬性] -&gt; [應用程式] 索引標籤 -&gt; [目標預測]。
 
-![在 Visual Studio 中變更目標 SDK](images/vs-target-sdk-2.png) 
+![在 Visual Studio 中變更目標 SDK](images/vs-target-sdk-2.png)
 
-下表顯示各個 SDK 的組建編號，供您參考。 如需 Windows 10 更新的詳細資訊，請參閱 TechNet 上的 [Windows 10 版本資訊](https://technet.microsoft.com/windows/release-info)。
+下表顯示各個 SDK 的組建編號，供您參考。
 
-易記名稱 | 版本 | OS/SDK 組建 | 附註
----- | ---- | ---- | ----
-RTM | 1507 | 10240 | 請參閱重要[支援](https://support.microsoft.com/help/4015562/windows-10-version-1507-will-no-longer-receive-security-updates)資訊。
-11 月份更新 | 1511 | 10586 | 請參閱重要[支援](https://support.microsoft.com/help/4035050/windows-10-version-1511-will-no-longer-receive-security-updates)資訊。
-年度更新版 | 1607 | 14393 |
-Creators Update | 1703 | 15063 |
-Fall Creators Update | 1709 | 16299 |
+| 易記名稱 | 版本 | OS/SDK 組建 |
+| ---- | ---- | ---- |
+| RTM | 1507 | 10240 |
+| 11 月份更新 | 1511 | 10586 |
+| 年度更新版 | 1607 | 14393 |
+| Creators Update | 1703 | 15063 |
+| Fall Creators Update | 1709 | 16299 |
+| 2018 年 4 月更新 | 1803 | 17134 |
+| 2018 年 10 月更新 | 1809 | _Insider Preview_ |
 
 您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/downloads/sdk-archive)下載任何已發行的 SDK 版本。 您可以從 [Windows 測試人員](https://insider.windows.com/Home/BuildWithWindows)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
+
+ 如需 Windows 10 更新的詳細資訊，請參閱[Windows 10 版本資訊](https://technet.microsoft.com/windows/release-info)。 如需有關 Windows 10 的重要資訊會支援週期，請參閱[Windows 生命週期事實表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>執行 API 檢查
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、字串
 ms.localizationpriority: medium
 ms.openlocfilehash: 332edcf17f2b6bbf595def67c9df7043f21828c7
-ms.sourcegitcommit: 9e2c34a5ed3134aeca7eb9490f05b20eb9a3e5df
+ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "3983095"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "4020618"
 ---
 # <a name="string-handling-in-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>[C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 中的字串處理
 使用 C++/WinRT，您可以使用 C++ 標準程式庫寬字串類型例如 **std::wstring** (請注意：無法與縮小字串類型例如**std::string** 共用)，來呼叫 Windows 執行階段 API。 C++/WinRT 有一個稱為 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的自訂字串類型 (在 C++/WinRT 基底程式庫中定義，也就是 `%WindowsSdkDir%Include\<WindowsTargetPlatformVersion>\cppwinrt\winrt\base.h`)。 且這是 Windows 執行階段建構函式、函式和屬性確實採用與傳回的字串類型。 但在許多情況下&mdash;多虧了 **hstring** 的轉換建構函式和轉換運算子&mdash;您可以選擇是否要注意用戶端程式碼中的 **hstring**。 如果您正 *撰寫* API，您更需要深入了解 **hstring**。
