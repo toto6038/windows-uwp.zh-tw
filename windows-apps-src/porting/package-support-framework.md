@@ -10,34 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 46d5705233af9e8254b9ac89a2d6e9891e90701f
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.openlocfilehash: 7e5119696498156d36ec63b16b1d76c00b03f4df
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4021518"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4060960"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段的修正程式套用到 MSIX 套件
 
 套件支援架構是開放原始碼套件，可協助您將套用修正程式現有的 win32 應用程式時您不需要的存取權的原始程式碼，讓它可以 MSIX 容器中執行。 套件支援架構可協助您的應用程式遵循的現代化的執行階段環境的最佳做法。
 
-若要建立套件支援的架構，我們會運用開放原始碼架構開發的 Microsoft 研究 (MSR)，並且也有助於 API 重新導向和攔截的[課程](https://www.microsoft.com/en-us/research/project/detours)技術。
-
-此架構是開放原始碼、 輕量，以及您可以使用它來解決應用程式問題快速。 它也會提供您有機會洽詢擁有遍佈全球，社群，並在其他投資上建置。
-
-## <a name="a-quick-look-inside-of-the-package-support-framework"></a>快速瀏覽內套件支援架構
-
-套件支援架構包含可執行檔、 執行階段管理員 DLL，以及一組的執行階段的修正程式。
-
-![套件支援的架構](images/desktop-to-uwp/package-support-framework.png)
-
-它的運作方式如下： 您將會建立設定檔，指定您想要套用到您的應用程式 fix(s)。 然後，您將會修改您的套件，指向填充碼啟動程式可執行檔。
-
-當使用者啟動您的應用程式時，填充碼啟動程式會執行的第一個可執行檔。 它會讀取您的設定檔，並會執行階段 fix(s) 和執行階段 manager DLL 插入到應用程式處理程序。
-
-![套件支援架構 DLL 插入](images/desktop-to-uwp/package-support-framework-2.png)
-
-需要 MSIX 容器中執行的應用程式時，執行階段管理員適用於已修正問題。
+若要深入了解，請參閱[套件支援的架構](https://docs.microsoft.com/windows/msix/package-support-framework-overview)。
 
 本指南將協助您找出應用程式相容性問題，和來尋找、 套用和延伸執行階段的修正，解決這些問題。
 

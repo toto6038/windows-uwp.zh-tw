@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 935b76e668153c9519bc6516da0c2872c2428f2e
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4016998"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052158"
 ---
 # <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-wrl"></a>從 WRL 移到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 C++/WinRT 中的對等項目。

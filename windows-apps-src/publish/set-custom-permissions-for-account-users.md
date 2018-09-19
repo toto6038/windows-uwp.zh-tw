@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4024304"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052388"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 

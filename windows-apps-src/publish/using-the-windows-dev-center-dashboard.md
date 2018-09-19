@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 儀表板, devcenter, 開發人員中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5357b038091b72681915e46875f92077bb3c9e
-ms.sourcegitcommit: f5321b525034e2b3af202709e9b942ad5557e193
+ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "4021968"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "4052524"
 ---
 # <a name="using-the-windows-dev-center-dashboard"></a>使用 Windows 開發人員中心儀表板
 
