@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，市集服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
 ms.openlocfilehash: 53fbd91437e5dc702f8672c6cbadeea32a8a96bf
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4055092"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4087037"
 ---
 # <a name="get-insights-data"></a>取得的深入解析資料
 

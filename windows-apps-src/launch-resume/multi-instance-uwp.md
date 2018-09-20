@@ -4,31 +4,31 @@ title: 建立多執行個體通用 Windows 應用程式
 description: 本主題描述如何撰寫支援多執行個體的 UWP 應用程式。
 keywords: 多重執行個體 uwp
 ms.author: twhitney
-ms.date: 02/22/2018
+ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0717ac9a2af0a0e1078e39af8f7300ac506823
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 9302ed0375739153eb95ac2b54c1ed396b14daee
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816543"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4085187"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
-在 Windows 10 版本 1803 之前，UWP 應用程式在同一時間只會有一個執行個體執行。 現在，UWP 應用程式可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP 應用程式可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
 
-## <a name="opt-in-to-multi-instance-behavior"></a>選擇加入至多重執行個體行為
+## <a name="opt-in-to-multi-instance-behavior"></a>選擇加入多個執行個體行為
 
 如果您正在建立新的多重執行個體應用程式，您可以安裝 **Multi-Instance App Project Templates.VSIX** (可從 [Visual Studio Marketplace](https://aka.ms/E2nzbv) 取得)。 在安裝範本後，便可從 \[Visual C#\] > \[Windows Universal\]**** (或 \[其他語言\] > \[Visual C++\] > \[Windows Universal\]****) 下的 \[新專案\] **** 對話方塊中取得這些範本。
 
 這會安裝兩個範本：一是**多重執行個體 UWP 應用程式**，可提供用於建立多重執行個體應用程式的範本；另一是**多重執行個體重新導向 UWP 應用程式**，可提供額外的邏輯作為建置的基礎，以啟動新的執行個體，或選擇性地啟用已啟動的執行個體。 例如，或許您在編輯相同文件時只想要一個執行個體，因此您帶入會讓該檔案對前端開啟的執行個體，而非啟動新的執行個體。
 
-這兩個範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案。 請注意，命名空間的前置詞為 `desktop4` 與 `iot2`：只有以桌面或物聯網 (IoT) 專案為目標的專案支援多重執行個體：
+這兩個範本新增`SupportsMultipleInstances`到`package.appxmanifest`檔案。 請注意命名空間前置詞`desktop4`和`iot2`： 只有目標為桌面或物聯網 (IoT) 專案，支援多重執行個體。
 
 ```xml
 <Package
@@ -53,10 +53,13 @@ ms.locfileid: "1816543"
 
  UWP 應用程式的多重執行個體支援不僅僅是可以啟動應用程式的多重執行個體。 無論您想要選取啟動應用程式的新執行個體，或選取啟用已執行的執行個體，皆允許自訂。 例如，如果啟動應用程式以編輯一個檔案，但已有另一個執行個體正在編輯檔案，此時您想要將啟用重新導向至該執行個體，而非開啟另一個已在編輯該檔案的執行個體。
 
-若要透過動作瞭解，請觀賞這部「Creating multi-instance UWP apps」：
+若要查看它情形，請觀看此影片有關建立多重執行個體 UWP 應用程式。
+
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
-**多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 **Program.cs** 的範本如下所示：
+**多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 **Program.cs**的範本如下所示。
+
+如果有的話， [AppInstance.RecommendedInstance](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表該啟用要求，提供殼層慣用執行個體 (或`null`如果沒有一個)。 如果殼層提供喜好設定，然後您可以可以重新導向啟用該執行個體，或如果您選擇您可以忽略它。
 
 ``` csharp
 public static class Program
@@ -73,8 +76,8 @@ public static class Program
         // logic for generating the key for this instance.
         IActivatedEventArgs activatedArgs = AppInstance.GetActivatedEventArgs();
 
-        // In some scenarios, the platform might indicate a recommended instance.
-        // If so, we can redirect this activation to that instance instead, if we wish.
+        // If the Windows shell indicates a recommended instance, then
+        // the app can choose to redirect this activation to that instance instead.
         if (AppInstance.RecommendedInstance != null)
         {
             AppInstance.RecommendedInstance.RedirectActivationTo();
@@ -87,7 +90,7 @@ public static class Program
             // to the first instance. In practice, the app should produce a key
             // that is sometimes unique and sometimes not, depending on its own needs.
             string key = Guid.NewGuid().ToString(); // always unique.
-            //string key = "Some-App-Defined-Key"; // never unique.
+                                                    //string key = "Some-App-Defined-Key"; // never unique.
             var instance = AppInstance.FindOrRegisterInstanceForKey(key);
             if (instance.IsCurrentInstance)
             {
@@ -112,7 +115,6 @@ public static class Program
 
 如果找到以該索引鍵註冊的執行個體，則會啟用該執行個體。 如果找不到索引鍵，則目前的執行個體 (亦即目前正在執行 `Main` 的執行個體) 會建立其應用程式物件，並開始執行。
 
-
 ## <a name="background-tasks-and-multi-instancing"></a>背景工作與多重執行個體
 
 - 跨處理序背景工作支援多重執行個體。 一般而言，每個新觸發程序都會產生背景工作的新執行個體 (雖然從技術方面而言，多背景工作會在相同的主機處理序中執行)。 不過，系統會為背景工作建立不同的執行個體。
@@ -131,7 +133,7 @@ public static class Program
 
 ## <a name="sample"></a>範例
 
-請參閱[多重執行個體範例](https://aka.ms/Kcrqst) (英文)，以取得多重執行個體啟用重新導向範例。
+請參閱[多重執行個體範例](https://aka.ms/Kcrqst)以取得多重執行個體啟用重新導向範例。
 
 ## <a name="see-also"></a>請參閱
 
