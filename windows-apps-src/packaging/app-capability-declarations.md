@@ -4,18 +4,18 @@ ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: app 功能宣告
 description: 功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。
 ms.author: misatran
-ms.date: 7/17/2018
+ms.date: 09/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 30e4bb7b493e6fb839f300f4c446b7510f28fabb
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: 17f40055f22d8d065ac85d207f3ea17a58a14519
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4089167"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4110860"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -25,13 +25,12 @@ ms.locfileid: "4089167"
 
 部分功能提供 app 存取*敏感資源*的權限。 這些資源會視為敏感資源是因為它們可以存取使用者的個人資料或使用者必須付費才能使用。 受設定 app 管理的隱私權設定可讓使用者動態控制敏感資源的存取權。 因此，您的 app 不會假設敏感資源可隨時使用這點非常重要。 如需存取敏感資源的詳細資訊，請參閱[隱私權感知 app 的指導方針](https://msdn.microsoft.com/library/windows/apps/Hh768223)。 提供 app *敏感資源*存取權的功能，其功能案例旁邊會加註星號 (\*)。
 
-有三種類型的功能，說明如下：
+有數種類型的功能。
 
--   適用於大部分常見 app 案例的一般用途功能。
-
--   可以讓您的應用程式存取周邊和內部裝置的裝置功能。
-
--   需要取得 Microsoft Store 提交之核准和/或通常只有 Microsoft 和特定合作夥伴可以使用的受限制功能。
+- [一般用途功能](#general-use-capabilities)，可適用於大部分常見 app 案例。
+- [裝置功能](#device-capabilities)，可讓您的應用程式存取周邊和內部裝置。
+- [受限制的功能](#restricted-capabilities)，這需要取得 Microsoft Store 提交之核准和/或通常只有 Microsoft 和特定合作夥伴可以使用。
+- [自訂功能](#custom-capabilities)。
 
 ## <a name="general-use-capabilities"></a>一般用途功能
 
@@ -96,23 +95,19 @@ ms.locfileid: "4089167"
 
 請確定未宣告這些受限制的功能，除非您的應用程式真正需要。 這類功能在某些情況下是必要且適當的，例如具備雙因素驗證的銀行系統，使用者需提供含數位憑證的智慧卡來確認身分識別。 其他應用程式主要可能是針對企業客戶所設計，而且可能需要存取公司資源，若使用者沒有網域認證，便無法存取這類公司資源。
 
-在您的 app 套件資訊清單中宣告受限制的功能時，所有受限制的功能都必須包含 **rescap** 命名空間。 例如，以下示範如何宣告 **appCaptureSettings** 功能。
+若要宣告受限制的功能，修改您[的應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/BR211474)來源檔案 (`Package.appxmanifest`)。 新增**xmlns: rescap** XML 命名空間宣告，並使用**rescap**前置詞，當您宣告受限制的功能。 例如，以下示範如何宣告 **appCaptureSettings** 功能。
 
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="... rescap">
+...
 <Capabilities>
     <rescap:Capability Name="appCaptureSettings"/>
 </Capabilities>
-```
-
-您也必須在 Package.appxmanifest 檔案的頂端新增 **xmlns:rescap** 命名空間宣告，如下所示。
-
-```xml
-<Package
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-    IgnorableNamespaces="uap mp wincap rescap">
+</Package>
 ```
 
 ### <a name="restricted-capability-approval-process"></a>受限制的功能核准程序
@@ -123,7 +118,7 @@ ms.locfileid: "4089167"
 
 認證過程中，我們的測試人員將會檢閱您所提供的資訊，以判斷您的提交是否已核准使用功能。 請注意，提交可能需要更多時間以完成認證程序。 如果我們核准您使用功能，您的應用程式將繼續進行認證程序的其餘部分。 當您提交應用程式更新，通常不會重複功能核准程序（除非您宣告其他功能）。
 
-如果我們不核准您使用功能，您的提交無法通過認證，而且我們將會在認證報告中提供意見反應。 然後，您可以選擇建立新的提交和上傳不宣告功能的套件，或 (如果適用) 解決有關您使用功能的任何問題，並在新提交中要求核准。
+如果我們不核准您使用功能，您的提交無法通過認證，以及我們將提供認證報告中的意見反應。 然後，您可以選擇建立新的提交和上傳不宣告功能的套件，或 (如果適用) 解決有關您使用功能的任何問題，並在新提交中要求核准。
 
 > [!NOTE]
 > 如果您的提交使用開發人員中心開發沙箱（例如，與 Xbox Live 整合的任何遊戲案例），您必須預先要求核准，而不是在**提交選項**頁面提供資訊。 若要這樣做，請瀏覽 [Windows 開發人員支援頁面](https://developer.microsoft.com/windows/support)。 選取 [開發人員支援主題**儀表板的問題**、**應用程式提交**的問題類型，和子類別**其他**。 然後描述您如何使用此功能，以及為何需要為您的產品。 如果您未提供所有必要資訊，您的要求將會遭到拒絕。 您可能還需要提供更多資訊。 請注意，此程序通常會需要 5 個工作天或更長，所以請事前提交您的要求。
@@ -219,8 +214,25 @@ ms.locfileid: "4089167"
 | **Windows 小組裝置認證** | **TeamEditionDeviceCredentials**受限制的功能讓 app 能夠存取的 Api，要求執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的裝置帳戶認證。<br/><br/>我們不建議在提交到 Microsoft Store 的應用程式中宣告這項功能。 大部分的開發人員都不會獲得核准使用這項功能。 |
 | **Windows 小組應用程式檢視** | **TeamEditionView**受限制的功能讓 app 能夠存取裝載在執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的應用程式檢視的 Api。<br/><br/>我們不建議在提交到 Microsoft Store 的應用程式中宣告這項功能。 大部分的開發人員都不會獲得核准使用這項功能。 |
 
+## <a name="custom-capabilities"></a>自訂的功能
 
+上述的[受限制的功能](#restricted-capabilities)章節描述了相同的功能核准程序，您可以用來要求核准使用自訂的功能。 [內嵌的 sim 卡](/uwp/api/windows.networking.networkoperators.esim)Api 是需要自訂的功能的 Api 的範例。 如果您只想要在開發人員模式的本機執行您的應用程式，您不需要自訂的功能。 但是，您需要將您的應用程式發行至 Microsoft Store，或是外部開發人員模式執行它。
 
+如果您有 Windows 技術管理員 (TAM)，然後您可以使用您 TAM 要求存取權。 您可以在[連絡人 Microsoft TAM](/windows-hardware/drivers/mobilebroadband/testing-your-desktop-cosa-apn-database-submission#contact-your-microsoft-tam)找到更多詳細資料。
+
+若要宣告自訂功能，修改您[的應用程式套件資訊清單](https://msdn.microsoft.com/library/windows/apps/BR211474)來源檔案 (`Package.appxmanifest`)。 新增**xmlns:uap4** XML 命名空間宣告，並使用**uap4**前置詞宣告您的自訂功能時。 範例如下。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Package
+    ...
+    xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4">
+...
+<Capabilities>
+    <uap4:CustomCapability Name="CompanyName.customCapabilityName_PublisherID"/>
+</Capabilities>
+</Package>
+```
 
 ## <a name="related-topics"></a>相關主題
 

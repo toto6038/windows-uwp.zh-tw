@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 4129c50a2273c8ac425f6ea972898aa09fe0fcf3
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4085725"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4115302"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>疑難排解 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 問題
 > [!NOTE]
@@ -37,7 +37,7 @@ XAML 剖析例外狀況可能難以診斷&mdash;特別是如果例外狀況中�
 | C++ 編譯器產生錯誤「*嘗試參考已刪除的函式*」。 | 您呼叫 **make** 且您做為範本參數傳遞的實作類型有一個 `= delete` 預設建構函式時，便會發生此情況。 編輯實作類型的標頭檔案，並變更 `= delete` 為 `= default`。 您也可以將建構函式新增至適用於執行階段類別的 IDL。 |
 | 您已實作 [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged)，但無法更新您的 XAML 繫結 (且 UI 不訂閱 [**PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged))。 | 請記得在 XAML 標記中的繫結運算式上設定 `Mode=OneWay` (或 TwoWay)。 請參閱 [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md)。 |
 | 您把 XAML 項目控制項繫結到可觀察的集合，且在執行階段擲回一個例外與「參數不正確」的訊息。 | 在您的 IDL 和實作中，宣告任何可觀察的集合做為類型 **Windows.Foundation.Collections.IVector<IInspectable>**。 但傳回實作 **Windows.Foundation.Collections.IObservableVector<T>** 的物件，其中 T 為您的元素類型。 請參閱 [XAML 項目控制項；繫結一個 C++/WinRT 集合](binding-collection.md)。  |
-| C++ 編譯器產生一個錯誤的表單「*' MyImplementationType_base&lt;MyImplementationType&gt;'；沒有適當的預設建構函式可使用*」。|您已從有一個非小型建構函式衍生時，這可能會發生。 您衍生的類型建構函式需要與需要基本類型建構函式的參數一起傳遞。 如需一個已執行的範例，請參閱 [從一個不小的建構函式衍生](author-apis.md#deriving-from-a-type-that-has-a-non-trivial-constructor)。|
+| C++ 編譯器產生一個錯誤的表單「*' MyImplementationType_base&lt;MyImplementationType&gt;'；沒有適當的預設建構函式可使用*」。|您已從有一個非小型建構函式衍生時，這可能會發生。 您衍生的類型建構函式需要與需要基本類型建構函式的參數一起傳遞。 如需一個已執行的範例，請參閱 [從一個不小的建構函式衍生](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor)。|
 | C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*」。|您將 std::wstring 的 std::vector 傳遞到除了一個集合之外的 Windows 執行階段 API，便可能會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
 | C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*」。|當您將 winrt::hstring 的 std::vector 傳遞至除了一個集合之外的 Windows 執行階段 API，且您已沒有將向量複製或移動到非同步被呼叫者，便會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
 | 打開一個專案時，Visual Studio 產生此錯誤「*未安裝此專案的應用程式*」。|如果您尚未開始，您需要從 Visual Studio 的**新專案**對話方塊中安裝 **C++ 開發 Windows 通用工具**。 如果無法解決問題，則此專案可能取決於 C++/WinRT Visual Studio 擴充功能 (VSIX) (請查閱[適用於 C++/WinRT 的 Visual Studio 支援，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。|

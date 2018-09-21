@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 051c24e0acc645150f4ca7ff74480f7de3ce456b
-ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
+ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
+ms.sourcegitcommit: 5dda01da4702cbc49c799c750efe0e430b699502
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4090371"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "4111540"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)撰寫 API
 
@@ -320,8 +320,8 @@ IClosable ic1 = myimpl.as<IClosable>(); // error
 
 如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子存在於您實作類型 (但前提是所產生的實作類型`cppwinrt.exe`工具)，讓這能夠進行。
 
-## <a name="deriving-from-a-type-that-has-a-non-trivial-constructor"></a>從一個不小的建構函式衍生
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是一個不小的建構函式的範例 因此，沒有預設建構函式建構 **ToggleButtonAutomationPeer**，您需要傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供取得一個 *owner* 的建構函式，並將它傳遞給基礎。 讓我們看看實際上看起來如何。
+## <a name="deriving-from-a-type-that-has-a-non-default-constructor"></a>從有一個非預設建構函式衍生
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_)是一個非預設建構函式的範例。 因此，沒有預設建構函式建構 **ToggleButtonAutomationPeer**，您需要傳遞 *owner*。 因此，如果您從 **ToggleButtonAutomationPeer** 衍生，則您需要提供取得一個 *owner* 的建構函式，並將它傳遞給基礎。 讓我們看看實際上看起來如何。
 
 ```idl
 // MySpecializedToggleButton.idl
