@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 雲端的控制中心, 通用關閉, 通知, 跨裝置, 關閉一個就關閉全部
 ms.localizationpriority: medium
 ms.openlocfilehash: 90ad60949504d4478341ff9455fe0f7da90d78a9
-ms.sourcegitcommit: 68fcac3288d5698a13dbcbd57f51b30592f24860
+ms.sourcegitcommit: 4f6dc806229a8226894c55ceb6d6eab391ec8ab6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "4056384"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "4091822"
 ---
 # <a name="universal-dismiss"></a>通用關閉
 
