@@ -11,11 +11,11 @@ keywords: windows 10，uwp，背景工作，應用程式服務
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126767"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4153733"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>移植到同處理序背景工作的處理程序背景工作
 
