@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 85071fb28cb87c991e2f5ba7f64b681c6850c819
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: fab1e83f212675b2c0bb28e0b1ae449f271edec7
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4127703"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4154633"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>透過 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的並行和非同步作業。
 > [!NOTE]
@@ -319,6 +319,83 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
 ```
+
+## <a name="reporting-progress"></a>報告進度
+
+如果您的協同程式傳回[**IAsyncActionWithProgress**](/uwp/api/windows.foundation.iasyncactionwithprogress_tprogress_)或[**IAsyncOperationWithProgress**](/uwp/api/windows.foundation.iasyncoperationwithprogress_tresult_tprogress_)，然後您可以擷取**winrt::get_progress_token**函式所傳回的物件並使用它來回到進度報告進度處理常式。 以下是程式碼範例。
+
+```cppwinrt
+// main.cpp : Defines the entry point for the console application.
+//
+
+#include "pch.h"
+#include <iostream>
+using namespace winrt;
+using namespace Windows::Foundation;
+using namespace std::chrono_literals;
+
+IAsyncOperationWithProgress<double, double> CalcPiTo5DPs()
+{
+    auto progress{ co_await winrt::get_progress_token() };
+
+    co_await 1s;
+    double pi_so_far{ 3.1 };
+    progress(0.2);
+
+    co_await 1s;
+    pi_so_far += 4.e-2;
+    progress(0.4);
+
+    co_await 1s;
+    pi_so_far += 1.e-3;
+    progress(0.6);
+
+    co_await 1s;
+    pi_so_far += 5.e-4;
+    progress(0.8);
+
+    co_await 1s;
+    pi_so_far += 9.e-5;
+    progress(1.0);
+    co_return pi_so_far;
+}
+
+IAsyncAction DoMath()
+{
+    auto async_op_with_progress{ CalcPiTo5DPs() };
+    async_op_with_progress.Progress([](auto const& /* sender */, double progress)
+    {
+        std::wcout << L"CalcPiTo5DPs() reports progress: " << progress << std::endl;
+    });
+    double pi{ co_await async_op_with_progress };
+    std::wcout << L"CalcPiTo5DPs() is complete !" << std::endl;
+    std::wcout << L"Pi is approx.: " << pi << std::endl;
+}
+
+int main()
+{
+    init_apartment();
+    DoMath().get();
+}
+```
+
+> [!NOTE]
+> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種下列兩種完成處理常式的其中一個是適當;不同時針對相同的非同步物件。
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+async_op_with_progress.Completed([](auto const& sender, AsyncStatus /* status */)
+{
+    double pi{ sender.GetResults() };
+});
+```
+
+```cppwinrt
+auto async_op_with_progress{ CalcPiTo5DPs() };
+double pi{ co_await async_op_with_progress };
+```
+
+如需完成處理常式的詳細資訊，請參閱[適用於非同步動作和作業的委派類型](handle-events.md#delegate-types-for-asynchronous-actions-and-operations)。
 
 ## <a name="important-apis"></a>重要 API
 * [concurrency:: task 類別](/cpp/parallel/concrt/reference/task-class)

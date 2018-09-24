@@ -4,23 +4,26 @@ title: 建立多執行個體通用 Windows 應用程式
 description: 本主題描述如何撰寫支援多執行個體的 UWP 應用程式。
 keywords: 多重執行個體 uwp
 ms.author: twhitney
-ms.date: 09/19/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9302ed0375739153eb95ac2b54c1ed396b14daee
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126993"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4156093"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
 從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP 應用程式可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+
+> [!IMPORTANT]
+> 多重執行個體支援適用於 JavaScript 應用程式，但不是多重執行個體重新導向。 適用於 JavaScript 應用程式不支援多重執行個體重新導向，因為[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別不是適用於這類應用程式。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>選擇加入多個執行個體行為
 
@@ -59,7 +62,7 @@ ms.locfileid: "4126993"
 
 **多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 **Program.cs**的範本如下所示。
 
-如果有的話， [AppInstance.RecommendedInstance](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表該啟用要求，提供殼層慣用執行個體 (或`null`如果沒有一個)。 如果殼層提供喜好設定，然後您可以可以重新導向啟用該執行個體，或如果您選擇您可以忽略它。
+如果有的話， [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表該啟用要求，提供殼層慣用執行個體 (或`null`如果沒有一個)。 如果殼層提供喜好設定，然後您可以可以重新導向啟用該執行個體，或如果您選擇您可以忽略它。
 
 ``` csharp
 public static class Program
@@ -109,7 +112,7 @@ public static class Program
 }
 ```
 
-`Main()` 是第一個執行的。 它會在 [OnLaunched()](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 與 [OnActivated](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_) 之前執行。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
+`Main()` 是第一個執行的。 它會[**OnLaunched**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_)和[**OnActivated**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_)之前執行。 在任何其他初始化程式碼在您的應用程式執行之前，這可讓您決定要啟用此執行個體，或啟用另一個執行個體。
 
 以上的程式碼會判斷啟用的是應用程式的現有執行個體或新執行個體。 在此會使用索引鍵來判斷是否有您想要啟用的現有執行個體。 例如，如果可以啟動您的應用程式以[處理檔案啟用](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/handle-file-activation)，您可以使用檔案名稱作為索引鍵。 然後，您可以檢查該應用程式的執行個體是否已透過該索引鍵註冊，並啟用該執行個體，而非開啟新的執行個體。 這是程式碼背後的概念： `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
@@ -129,7 +132,7 @@ public static class Program
 - 為避免產生競爭條件及發生爭用的問題，多重執行個體應用程式必須採取步驟來分割/同步化設定、應用程式本機存放區，及任何其他可在多重執行個體間共用之資源 (例如使用者檔案、資料存放區等等) 的存取權。 有標準同步化機制 (例如 Mutex、系統信號、事件等等) 可供使用。
 - 如果應用程式在 Package.appxmanifest 檔案中有 `SupportsMultipleInstances`，則其延伸模組不需要宣告 `SupportsMultipleInstances`。 
 - 如果除了背景工作或應用程式服務外，您將 `SupportsMultipleInstances` 新增至任何其他延伸模組，且主控該延伸模組的應用程式也未在其 Package.appxmanifest 檔案中宣告 `SupportsMultipleInstances`，則會產生結構描述錯誤。
-- 應用程式會在其資訊清單中使用 [ResourceGroup](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) 宣告，將多個背景工作群組至同一部主機。 這會與多重執行個體衝突，其中的每個啟用都會分別進入不同的主機。 因此，應用程式無法在其資訊清單中宣告 `SupportsMultipleInstances` 與 `ResourceGroup`。
+- 應用程式可以在其資訊清單中使用[**ResourceGroup**](https://docs.microsoft.com/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest)宣告多個背景工作群組至同一部主機。 這會與多重執行個體衝突，其中的每個啟用都會分別進入不同的主機。 因此，應用程式無法在其資訊清單中宣告 `SupportsMultipleInstances` 與 `ResourceGroup`。
 
 ## <a name="sample"></a>範例
 

@@ -3,18 +3,18 @@ author: stevewhims
 description: C + + /winrt 提供函式和您節省很多時間和精力當您想要實作和/或傳遞集合的基底類別。
 title: 集合使用 C + + /winrt
 ms.author: stwhi
-ms.date: 08/24/2018
+ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef6fbfab45197c868296186363c168a6c443247
-ms.sourcegitcommit: a160b91a554f8352de963d9fa37f7df89f8a0e23
+ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
+ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "4126343"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "4155391"
 ---
 # <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用集合[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 
@@ -32,6 +32,8 @@ ms.locfileid: "4126343"
 
 ### <a name="general-purpose-collection-empty"></a>一般用途的集合，空的
 
+本節涵蓋您要建立最初是空白的; 集合的案例然後填入*之後*建立。
+
 若要擷取實作一般用途的集合類型的新物件，您可以呼叫[**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)函式範本。 物件會傳回為[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)，，而這就是您可透過呼叫傳回的物件函式和屬性的介面。
 
 ```cppwinrt
@@ -42,7 +44,7 @@ using namespace winrt;
 ...
 int main()
 {
-    init_apartment();
+    winrt::init_apartment();
 
     Windows::Foundation::Collections::IVector<int> coll{ winrt::single_threaded_vector<int>() };
     coll.Append(1);
@@ -60,9 +62,13 @@ int main()
 
 如您所見上述程式碼範例中，建立集合之後您可以附加元素、 逐一查看，而通常將該物件，就像任何 Windows 執行階段集合的物件，您可能會收到 API。 如果您需要透過集合的不可變的檢視，您可以呼叫[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)，如所示。 上述的模式&mdash;建立和取用集合的&mdash;適用於簡單案例中，您將資料傳遞至，或取得退出 API 的資料。 您可以傳遞**IVector**或**IVectorView**、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)預期的任何位置。
 
+**Winrt:: init_apartment**呼叫會在上述程式碼範例中，初始化 COM;根據預設，在多執行緒 apartment 中。
+
 ### <a name="general-purpose-collection-primed-from-data"></a>一般用途的集合，從資料 ！
 
-您也可以避免對您所見上述程式碼範例中的**Append**呼叫的額外負荷。 您可能已經有資料來源，或您可能會想要填入之前建立 Windows 執行階段集合物件。 以下是執行此作業的方式。
+本節涵蓋您要建立集合，並填入在同一時間的案例。
+
+您可以避免呼叫先前的程式碼範例中**附加**的額外負荷。 您可能已經有資料來源，或您可能會想要填入之前建立 Windows 執行階段集合物件的來源資料。 以下是執行此作業的方式。
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };
