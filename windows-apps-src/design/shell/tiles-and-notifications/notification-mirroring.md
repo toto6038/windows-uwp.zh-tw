@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 雲端的控制中心, 通知鏡像, 通知, 跨裝置
 ms.localizationpriority: medium
 ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149519"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173497"
 ---
 # <a name="notification-mirroring"></a>通知鏡像
 

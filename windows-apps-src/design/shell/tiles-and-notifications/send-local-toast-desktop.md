@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, 傳統型, 快顯通知, 傳送快顯通知, 傳送本機快顯通知, 傳統型橋接器, C#, c sharp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bda3e85fd89ef7a8b819fcd809acea4fd9a276b
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153099"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174801"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 

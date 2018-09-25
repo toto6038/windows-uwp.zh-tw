@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4151703"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177661"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 

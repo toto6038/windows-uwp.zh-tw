@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 45f6e10bc355e3a2dc054d54fef35fbeb1095dc7
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153773"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177119"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>使用背景工作回應系統事件
 

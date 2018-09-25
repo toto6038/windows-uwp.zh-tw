@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
 ms.openlocfilehash: f058ece64e6f041b5b0e8731a7891968f573f744
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149761"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177159"
 ---
 # <a name="get-started-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>開始使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。

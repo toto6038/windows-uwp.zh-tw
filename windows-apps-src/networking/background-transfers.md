@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4156425"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173341"
 ---
 # <a name="background-transfers"></a>背景傳輸
 使用背景傳輸 API 在網路上可靠地複製檔案。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。

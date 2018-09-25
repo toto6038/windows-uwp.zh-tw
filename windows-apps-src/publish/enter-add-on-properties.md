@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4153345"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4173865"
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b4cae2e135f7a66cd68192faabeffdb309a909
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155933"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4174851"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段的修正程式套用到 MSIX 套件
 
