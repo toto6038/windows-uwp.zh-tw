@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4148413"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181419"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 

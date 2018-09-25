@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: a9177061f70419e2a3b0e3b47f933af75a11ad68
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4155207"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4181689"
 ---
 # <a name="encode-and-decode-data"></a>編碼及解碼資料
 

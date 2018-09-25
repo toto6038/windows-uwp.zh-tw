@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b32ebcff59e89046c45d1a0f23d3bca1c268a6b9
-ms.sourcegitcommit: 194ab5aa395226580753869c6b66fce88be83522
+ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "4149463"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "4177983"
 ---
 # <a name="download-analytics-reports"></a>下載分析報告
 
