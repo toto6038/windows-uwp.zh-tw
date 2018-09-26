@@ -9,40 +9,37 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b8c263b030cbb8f945ffb13a24b6dff3af28fcc
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173631"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4204670"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
 > [!NOTE]
 > Api 與此文章中討論的控制項是目前可為開發人員預覽。 雖然我們鼓勵您試用您自己的原型程式碼中現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟並穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
 
-Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項，以便您可以提升外觀、 感覺和您現有的傳統型應用程式與最新的 Windows 10 UI 功能只會透過 UWP 控制項的功能。 這表示您可以使用例如[Fluent Design 系統](../design/fluent-design-system/index.md)和在您的現有 WPF、 Windows Forms 和 c + + Win32 應用程式中的[Windows Ink](../design/input/pen-and-stylus-interactions.md)的 UWP 功能。 這個案例中開發人員有時稱為*XAML 群島*。
+Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項，以便您可以提升外觀、 感覺和您現有的傳統型應用程式與最新的 Windows 10 UI 功能只會透過 UWP 控制項的功能。 這表示您可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和支援在您的現有 WPF、 Windows Forms 和 c + + Win32 應用程式中的[Fluent Design 系統](../design/fluent-design-system/index.md)的控制項。 這個案例中開發人員有時稱為*XAML 群島*。
 
-我們提供數種方式來使用您的傳統型應用程式，取決於技術或您正在使用的架構中的 XAML 群島。
+我們提供幾種方式可使用 XAML 群島在 WPF、 Windows Forms 和 c + + Win32 應用程式，取決於技術或您正在使用的架構。
 
 ## <a name="wrapped-controls"></a>包裝的控制項
 
-WPF 和 Windows Forms 應用程式可以使用包裝 UWP 控制項的選取[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中。 您可以直接在 WPF 或 Windows Forms 專案的設計介面中新增這些控制項，然後使用設計工具中的 [就像任何其他 WPF 或 Windows Forms 控制項一樣。 我們會將這些控制項做為*包裝控制項*因為它們換行的介面和特定的 UWP 控制項的功能。
-
-下列包裝的控制項支援 Windows 10，版本 1803，和更新版本。
-
-* [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview)。 這個控制項使用 Microsoft Edge 轉譯引擎在 WPF 或 Windows Forms 應用程式中顯示網頁內容。
-* [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible)。 此控制項為**WebView**與 Windows 10 相容的版本與先前的 Windows 版本。 這個控制項使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 （版本 1803年或更新版本） 上的網頁內容和 Internet Explorer 的轉譯引擎，以顯示 web 內容，在 Windows 7 和 Windows 8.x。
-
-下列的包裝的控制項支援 Windows 10 Insider Preview SDK 組建 17709 和更新版本發行版本。
-
-* [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)與[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar)。 這些控制項提供 surface 和相關的工具列中 Windows Forms 或 WPF 傳統型應用程式與 Windows Ink 為基礎的使用者互動。
-* [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement)。 此控制項中嵌入串流，並轉譯媒體內容，例如 Windows Forms 或 WPF 傳統型應用程式中的視訊的檢視。
-
-多個 UWP 包裝控制項對於 WPF 及 Windows Forms 應用程式已計劃未來版本的 Windows 社群工具組。
+WPF 和 Windows Forms 應用程式可以使用包裝 UWP 控制項的選取[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中。 我們會將這些控制項做為*包裝控制項*因為它們換行的介面和特定的 UWP 控制項的功能。 您可以直接在 WPF 或 Windows Forms 專案的設計介面中新增這些控制項，然後依照像任何其他 WPF 或 Windows Forms 控制項在您的設計工具中使用它們。
 
 > [!NOTE]
 > C + + Win32 傳統型應用程式都不包裝的控制項。 這些類型的應用程式必須使用[UWP XAML 裝載 API](#uwp-xaml-hosting-api)。
+
+下列包裝的 UWP 控制項是目前可用的 WPF 和 Windows Forms 應用程式。 更多的包裝的 UWP 控制項已計劃未來版本的 Windows 社群工具組。
+
+| 控制項 | 最低支援的作業系統 | 描述 |
+|-----------------|-------------------------------|-------------|
+| [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 (版本 1803) | 您可以使用 Microsoft Edge 轉譯引擎來顯示網頁內容。 |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供**WebView**與多個作業系統版本相容的版本。 這個控制項使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 版本 1803年或更新版本上的網頁內容和 Internet Explorer 的轉譯引擎，以顯示 web 內容，在先前版本的 Windows 10，Windows 8.x 和 Windows 7。 |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK 組建 17709 | Surface 和相關的工具列提供 Windows Forms 或 WPF 傳統型應用程式中的 Windows Ink 為基礎的使用者互動。 |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK 組建 17709 | 將檢視嵌入串流，並轉譯媒體內容，例如 Windows Forms 或 WPF 傳統型應用程式中的影片。 |
 
 ## <a name="host-controls"></a>主控制項
 
