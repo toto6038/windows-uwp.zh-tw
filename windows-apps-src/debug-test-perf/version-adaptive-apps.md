@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4181323"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210098"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型應用程式：使用新的 API 並同時維持與先前版本的相容性
 

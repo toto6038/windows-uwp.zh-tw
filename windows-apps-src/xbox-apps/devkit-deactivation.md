@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 90d1c5a8c5fc65cf591211d6f26cfce099597aad
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: d1df8d475ec27ff3de7e3d6599e53ec3035cffc6
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689084"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4213188"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>停用 Xbox One 開發人員模式
 
@@ -78,7 +78,7 @@ ms.locfileid: "1689084"
 
 如果基於任何原因，使您無法存取您的主機，您也可以透過 Windows 開發人員中心來停用主機上的開發人員模式。
 
-1. 瀏覽至開發人員中心的[管理 Xbox One 主機](https://developer.microsoft.com/xboxdevices)頁面。 系統可能會提示您使用開發人員帳戶登入。
+1. 瀏覽至開發人員中心的[管理 Xbox One 主機](https://partner.microsoft.com/xboxdevices)頁面。 系統可能會提示您使用開發人員帳戶登入。
 
 2. 在主機清單上，藉由比對序號、主機 ID 或裝置識別碼來尋找您想要停用的主機。  
 

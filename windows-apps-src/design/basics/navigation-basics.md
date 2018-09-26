@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4175121"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4209938"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 

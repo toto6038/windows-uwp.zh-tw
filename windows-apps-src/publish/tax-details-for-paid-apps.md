@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 稅, 應用程式稅金, 稅金要求, 商務擴展, 稅率
 ms.localizationpriority: medium
 ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4174705"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210462"
 ---
 # <a name="tax-details-for-paid-apps"></a>付費應用程式的稅務詳細資料
 

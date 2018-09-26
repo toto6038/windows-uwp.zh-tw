@@ -10,29 +10,26 @@ ms.date: 05/19/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d68d0a5e6f2a22bc0012b3245ba050df271f7f92
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fc18db25e6404e5236038badd8169ef7bcfc4817
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817406"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4210990"
 ---
 # <a name="text-controls"></a>文字控制項
-
- 
 
 文字控制項包含文字輸入方塊、密碼方塊、自動建議方塊以及文字區塊。 XAML 架構提供用於轉譯、輸入和編輯文字的數個控制項，以及一組用於格式化文字的屬性。
 
 - 顯示唯讀文字的控制項是 [TextBlock](text-block.md) 與 [RichTextBlock](rich-text-block.md)。
-- 輸入和編輯文字的控制項是：[TextBox](text-box.md)、[AutoSuggestBox](auto-suggest-box.md)、[PasswordBox](password-box.md) 和 [RichEditBox](rich-edit-box.md)。
+- 輸入和編輯文字的控制項是： [TextBox](text-box.md)、 [RichEditBox](rich-edit-box.md)、 [AutoSuggestBox](auto-suggest-box.md)，以及[PasswordBox](password-box.md)。
 
-> **重要 API**：[AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)、[RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、[RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、[TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)
-
+> **重要 Api**: [TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、 [RichTextBlock 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)、 [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、 [RichEditBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)、 [AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、 [PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -124,28 +121,13 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 
 ## <a name="pen-input"></a>手寫筆輸入
 
-> 手寫筆輸入功能目前只能在 Windows Insider Preview 中使用。 功能名稱、詞彙和功能尚未定案。
-
 **適用於：** TextBox、RichEditBox、AutoSuggestBox
 
 從 Windows 10 使用 1803 開始，XAML 文字輸入方塊使用 [Windows Ink](../input/pen-and-stylus-interactions.md) 特別提供手寫筆輸入的內嵌支援。 當使用者使用 Windows 手寫筆點選文字輸入方塊時，文字方塊會改變形式，讓使用者使用手寫筆直接在其中書寫，而不是開啟另一個輸入面板。
 
 ![文字方塊在使用手寫筆點選時展開](images/pen-input-expand.gif)
 
-文字可隨著使用者在文字方塊任何位置書寫時進行辨識，而候選字視窗會顯示辨識結果。 使用者可以點選結果來選擇，或繼續書寫以接受建議的候選字。 候選字視窗會包含逐字 (逐個字母) 辨識結果，因此辨識範圍並不局限於字典中的單字。 當使用者書寫時，接受的文字輸入會轉換為保有自然書寫風格的書寫體字型。
-
-![文字方塊與手寫筆輸入](images/pen-input-1.png)
-
-使用者可以使用如下所示的標準手勢及動作來編輯他們的文字：
-
-- _刪除線_或_劃掉_：一筆劃過，可刪除一個字或字的一部分
-- _聯結_：在單字之間劃弧線，可刪除其間的空格
-- _插入_：劃插入號可插入空格
-- _覆寫_：在現有文字上面書寫，可加以取代
-
-![覆寫手寫筆輸入](images/pen-input-2.png)
-
-當您的應用程式是以 Windows 10 版本 1803 或更新版本為目標，並且在這些版本上執行時，預設會啟用內嵌文字輸入。 您可以選擇依每個文字方塊為基準來退出，以停用此功能並還原為文字輸入面板。 若要停用內嵌文字輸入，請將文字控制項的 **IsHandwritingViewEnabled** 屬性設定為 **false**。
+如需詳細資訊，請參閱[手寫檢視使用的文字輸入](text-handwriting-view.md)。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>選擇文字控制項的正確鍵盤
 

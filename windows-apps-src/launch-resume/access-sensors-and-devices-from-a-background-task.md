@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 99f853da53302d4080bfa9462da0ec524e8d2064
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4173441"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4209854"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>從背景工作存取感應器和裝置
 

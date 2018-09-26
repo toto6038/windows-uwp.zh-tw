@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176795"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4208770"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 

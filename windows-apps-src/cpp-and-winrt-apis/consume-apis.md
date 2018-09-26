@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: 136abd5e3312b7a387ccc3b7c993d4e70d8ef0d4
-ms.sourcegitcommit: 232543fba1fb30bb1489b053310ed6bd4b8f15d5
+ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "4176697"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "4211656"
 ---
 # <a name="consume-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 使用 API 
 本主題示範如何使用 C++/WinRT API，不管是否為 Windows 的一部分，由第三方元件廠商或您自己來實作它們。
