@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 付款, 應用程式銷售, 應用程式收益, 支出, Microsoft Store 費用, 支付保留, 百分比
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4263645"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4308720"
 ---
 # <a name="getting-paid"></a>獲得報酬
 此處提供一些您需要用來確認收到應用程式、附加元件及廣告營收之付款的重要資訊。
