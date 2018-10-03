@@ -2,7 +2,7 @@
 author: normesta
 Description: Shows how to manually package a Windows desktop application (like Win32, WPF, and Windows Forms) for Windows 10.
 Search.Product: eADQiWindows 10XVcnh
-title: 手動封裝應用程式 (傳統型橋接器)
+title: 手動封裝應用程式 （傳統型橋接器）
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
@@ -11,29 +11,29 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a9c413b8f0b79f9e6a331145d086e3e563bd989
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410835"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268106"
 ---
-# <a name="package-an-app-manually-desktop-bridge"></a>手動封裝應用程式 (傳統型橋接器)
+# <a name="package-a-desktop-application-manually"></a>手動封裝的傳統型應用程式
 
-此主題將會描述如何不使用工具 (例如 Visual Studio 或 Desktop App Converter (DAC)) 封裝您的應用程式。
+本主題示範如何不使用工具例如 Visual Studio 或 Desktop App Converter (DAC) 封裝您的應用程式。
 
 若要手動封裝應用程式，您必須先建立封裝資訊清單檔案，然後執行命令列工具來產生 Windows 應用程式套件。
 
-若您是透過 xcopy 命令安裝您的應用程式，或是您對您應用程式安裝程式所做出的系統變更非常熟悉，且想要對處理程序擁有更細微的主控權的話，您就可以考慮使用手動封裝。
+如果您使用 xcopy 命令安裝您的應用程式，或是您已經熟悉您的應用程式安裝程式對系統的變更，請考慮手動封裝，並想要對程序更細微的控制。
 
 若您不確定您的安裝程式會對系統做出什麼變更，或者您想要使用自動化的工具產生您的封裝資訊清單，請考慮[這些](desktop-to-uwp-root.md#convert)選項。
 
 >[!IMPORTANT]
->傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 年度更新版 (10.0；組建 14393) 或更新版本的專案。
+>若要建立 Windows 應用程式套件的傳統型應用程式的能力 （也就是傳統型橋接器，在 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
-開始建立應用程式套件之前，先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
+開始建立您的應用程式套件之前，先檢閱本指南：[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)。
 
 ## <a name="create-a-package-manifest"></a>建立封裝資訊清單
 
@@ -87,11 +87,11 @@ ms.locfileid: "2410835"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 若您已經在 Microsoft Store中保留了您應用程式的名稱，您可以使用 Windows 開發人員中心儀表板取得名稱和發行者。 若您想要在其他系統上側載您的應用程式，您可以為他們提供您自己的名稱，只要其發行者名稱與您選擇用來簽署您應用程式之憑證上的名稱相同即可。
+> 如果您已經保留了您在 Windows 市集中的應用程式名稱，您可以使用 Windows 開發人員中心儀表板取得名稱和發行者。 如果您計劃側載至其他系統應用程式，您可以提供您自己的這些名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
 
 ### <a name="properties"></a>屬性
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素有 3 個必要的子元素。 以下是以預留位置文字填上元素的 **Properties** 節點範例。 **DisplayName** 是您將應用程式上傳至Microsoft Store之後，在Microsoft Store中保留的您應用程式的名稱。
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素有 3 個必要的子元素。 以下是以預留位置文字填上元素的 **Properties** 節點範例。 **DisplayName**是您在市集中，對於上傳至 microsoft store 的應用程式保留的應用程式的名稱。
 
 ```XML
 <Properties>
@@ -112,7 +112,7 @@ ms.locfileid: "2410835"
 ```
 ### <a name="dependencies"></a>相依性
 
-針對利用傳統型橋接器封裝的傳統型應用程式，請一律將 ``Name`` 屬性設定為 ``Windows.Desktop``。
+針對您建立的封裝的傳統型應用程式，一律設定``Name``屬性設定為``Windows.Desktop``。
 
 ```XML
 <Dependencies>
@@ -121,7 +121,7 @@ ms.locfileid: "2410835"
 ```
 
 ### <a name="capabilities"></a>功能
-針對利用傳統型橋接器封裝的傳統型應用程式，您必須新增 ``runFullTrust`` 能力。
+針對傳統型應用程式，您建立的封裝的您必須新增``runFullTrust``功能。
 
 ```XML
 <Capabilities>
@@ -134,7 +134,7 @@ ms.locfileid: "2410835"
 
 ### <a name="application-element"></a>應用程式元素
 
-針對利用傳統型橋接器封裝的傳統型應用程式，Application 元素的 ``EntryPoint`` 屬性一律為 ``Windows.FullTrustApplication``。
+針對您建立的封裝的傳統型應用程式``EntryPoint``Application 元素的屬性永遠都是``Windows.FullTrustApplication``。
 
 ```XML
 <Applications>
@@ -177,7 +177,7 @@ ms.locfileid: "2410835"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>產生套件資源索引 (PRI) 檔案
 
-如果您如上一節所述建立以目標為基礎的資產，或者您在建立套件之後修改應用程式的任一視覺資產，您必須產生新的 PRI 檔案。
+如果您在上，一節中所述建立以目標為基礎的資產，或您修改的任一視覺資產的應用程式在建立套件之後，您必須產生新的 PRI 檔案。
 
 1.  開啟**適用於 VS 2017 的開發人員命令提示字元**。
 
@@ -187,7 +187,7 @@ ms.locfileid: "2410835"
 
 5.  使用 ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` 命令來建立 resources.pri 檔案。
 
-    例如，應用程式的命令可能看起來會像這樣：``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
+    例如，您的應用程式的命令可能看起來像這樣： ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
 
 6.  使用下一個步驟中的指示封裝您的 Windows 應用程式套件。
 
@@ -201,14 +201,14 @@ ms.locfileid: "2410835"
 
 ## <a name="run-the-packaged-app"></a>執行封裝後的應用程式
 
-您可以在本機執行您的應用程式並進行測試，而不需要取得憑證和進行簽署。 您只需要執行此 PowerShell cmdlet：
+您可以執行您的應用程式進行測試，在本機而不需要取得憑證和進行簽署。 您只需要執行此 PowerShell cmdlet：
 
 ```Add-AppxPackage –Register AppxManifest.xml```
 
 若要更新應用程式的 .exe 或.dll 檔案，使用新檔案來取代套件中現有的檔案、提高 AppxManifest.xml 的版本號碼，然後再次執行上述命令即可。
 
 > [!NOTE]
-> 封裝的應用程式總是會以互動使用者的身分執行，您安裝已封裝應用程式的任何磁碟機都必須格式化為 NTFS 格式。
+> 已封裝的應用程式一律會以互動式使用者的身分執行，並安裝您已封裝的應用程式在任何磁碟機必須格式化為 NTFS 格式。
 
 ## <a name="next-steps"></a>後續步驟
 
@@ -222,8 +222,8 @@ ms.locfileid: "2410835"
 
 **逐步執行程式碼/找出並修正問題**
 
-請參閱[執行、偵錯以及測試封裝的傳統型橋接器應用程式 (傳統型橋接器)](desktop-to-uwp-debug.md)
+請參閱[執行、 偵錯以及測試封裝的傳統型應用程式](desktop-to-uwp-debug.md)
 
 **簽署您的應用程式並散布它**
 
-請參閱[散佈封裝的傳統型應用程式 (傳統型橋接器)](desktop-to-uwp-distribute.md)
+請參閱[散發的已封裝的傳統型應用程式](desktop-to-uwp-distribute.md)

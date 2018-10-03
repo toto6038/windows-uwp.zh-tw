@@ -3,19 +3,19 @@ author: laurenhughes
 title: 使用 SignTool 簽署應用程式套件
 description: 使用 SignTool，手動簽署具憑證的應用程式套件。
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: b0aab34b187e06ba2b87a1537d6e30df09b35d7e
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663008"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267849"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 簽署應用程式套件
 
@@ -79,16 +79,25 @@ SignTool sign [options] <filename(s)>
 ```
 SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /a /f <Path to Certificate>.pfx /p <Your Password> <File path>.msix
+```
 請注意，`/a` 選項可讓 **SignTool** 自動選擇最佳的憑證。
 
 如果您的憑證不是 .pfx 檔案，請使用下列語法：
 ```
 SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.appx
 ```
+```
+SignTool sign /fd <Hash Algorithm> /n <Name of Certificate> <File Path>.msix
+```
 
 或者，您可以指定所要憑證的 SHA1 雜湊，而不是 &lt;Name of Certificate&gt;，請使用這個語法：
 ```
 SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.appx
+```
+```
+SignTool sign /fd <Hash Algorithm> /sha1 <SHA1 hash> <File Path>.msix
 ```
 
 請注意，某些憑證不使用密碼。 如果您的憑證不使用密碼，請省略命令範例中的 "/p &lt;Your Password&gt;"。

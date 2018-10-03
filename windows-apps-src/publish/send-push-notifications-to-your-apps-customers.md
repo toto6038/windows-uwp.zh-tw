@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 目標式通知, 推播通知, 快顯通知, 磚
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d62f46ad1b55fbad3ab7c21a593625a2538b68f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205544"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4266839"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 
@@ -53,8 +53,8 @@ Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳
 
 1. 在[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard/)，展開 **\[互動\]** 區段，然後選取 **\[通知\]**。
 2. 在 **\[通知\]** 頁面上，選取 **\[新通知\]**。
-3. 在**選取範本**] 區段中，選擇您想要傳送，然後按一下 **[確定]** 的[通知類型](#notification-template-types)。
-4. 在下一個頁面上，使用下拉式功能表選擇您想要產生通知的**\[單一應用程式\]** 或**\[多個應用程式\]**。 您可以只選取已[設定為使用 Microsoft Store Services SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)的應用程式。
+3. 在**選取範本**區段中，選擇您想要傳送，然後按一下 **[確定]** 的[通知類型](#notification-template-types)。
+4. 在下一個頁面上，使用下拉式功能表選擇您想要產生通知的**\[單一應用程式\]** 或**\[多個應用程式\]**。 您可以只選取應用程式已[設定為使用 Microsoft Store Services SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 5. 在 **\[通知設定\]** 區段中選擇 **\[通知\]** 的名稱，然後 (如果適用) 選擇您想要將通知傳送到的 **\[客戶群組\]**。 （傳送至多個應用程式的通知只能傳送到這些 app 的所有客戶。）如果您想要使用尚未建立的客戶區隔，請選取**\[建立新的客戶群組\]**。 請注意，這需要 24 小時才能將新區隔用於通知。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
 6. 如果您想要指定何時傳送通知，請清除 **\[立即傳送通知\]** 核取方塊，然後選擇特定的日期和時間 (除非您指定要使用每個客戶的當地時區，否則對所有客戶皆以 UTC 顯示)。
 7. 如果您想要讓通知在某個時間點到期，請清除 **\[通知永遠不會到期\]** 核取方塊，然後選擇特定的到期日期和時間 (以 UTC 表示)。

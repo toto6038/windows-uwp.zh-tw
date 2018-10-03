@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b4cae2e135f7a66cd68192faabeffdb309a909
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210888"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266671"
 ---
-# <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段的修正程式套用到 MSIX 套件
+# <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援的架構，將執行階段的修正程式套用至 MSIX 封裝
 
 套件支援架構是開放原始碼套件，可協助您將套用修正程式現有的 win32 應用程式時您不需要的存取權的原始程式碼，讓它可以 MSIX 容器中執行。 套件支援架構可協助您的應用程式遵循的現代化的執行階段環境的最佳做法。
 
 若要深入了解，請參閱[套件支援的架構](https://docs.microsoft.com/windows/msix/package-support-framework-overview)。
 
-本指南將協助您找出應用程式相容性問題，和來尋找、 套用和延伸執行階段的修正，解決這些問題。
+本指南將協助您找出應用程式相容性問題，和尋找、 套用，並將延伸執行階段的修正，解決這些問題。
 
 <a id="identify" />
 
@@ -33,7 +33,7 @@ ms.locfileid: "4210888"
 
 ### <a name="using-process-monitor-to-identify-an-issue"></a>使用以找出問題的處理程序監視器
 
-[處理程序監視器](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)是功能強大的公用程式觀察應用程式的檔案和登錄作業，以及它們的結果。  這可協助您了解應用程式相容性問題。  開啟處理程序監視器之後, 新增篩選器 (篩選 > 篩選...) 包含從應用程式可執行檔的事件。
+[處理程序監視器](https://docs.microsoft.com/en-us/sysinternals/downloads/procmon)是功能強大的公用程式來觀察應用程式的檔案和登錄作業，以及它們的結果。  這可協助您了解應用程式相容性問題。  開啟處理程序監視器之後, 新增篩選器 (篩選 > 篩選...) 包含只從應用程式可執行檔的事件。
 
 ![ProcMon 應用程式篩選器](images/desktop-to-uwp/procmon_app_filter.png)
 
@@ -45,11 +45,11 @@ ms.locfileid: "4210888"
 
 ![ProcMon 排除成功](images/desktop-to-uwp/procmon_exclude_success.png)
 
-如果您懷疑檔案系統權限失敗，搜尋 System32/SysWOW64 或套件檔案路徑下的失敗事件。 篩選器也可以協助在這裡，太。 啟動底部的這份清單，然後向上捲動。 最近發生出現在此清單的底部的失敗。 大部分注意包含字串，例如 「 拒絕存取 」 的錯誤以及 「 路徑/名稱找不到 」，並忽略看起來可疑的項目。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)有兩個問題。 您可以看到下列影像中出現的清單中的這些問題。
+如果您懷疑檔案系統權限失敗，搜尋 System32/SysWOW64 或套件檔案路徑下的失敗事件。 篩選器也可以協助在這裡，太。 啟動底部的這份清單，然後向上捲動。 最近發生失敗的底部的這份清單會顯示。 大部分注意的錯誤，包含字串，例如 「 拒絕存取 」 和 「 路徑/名稱找不到 」，並且忽略看起來可疑的項目。 [PSFSample](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/samples/PSFSample/)有兩個問題。 您可以看到下列影像中出現的清單中的這些問題。
 
 ![ProcMon Config.txt](images/desktop-to-uwp/procmon_config_txt.png)
 
-出現在此映像中的第一個問題，在應用程式失敗位於 「 C:\Windows\SysWOW64 「 路徑 」 Config.txt 」 檔案中讀取。 也不太可能應用程式嘗試直接參考該路徑。 最有可能，它嘗試使用相對路徑，從該檔案讀取，並根據預設，「 System32/SysWOW64 」 是應用程式的工作目錄。 這可能表示應用程式預期其目前的工作目錄某處設定套件中。 尋找 appx 內，我們可以看到檔案存在與可執行檔相同的目錄中。
+在第一個問題出現在此映像中，應用程式失敗位於 「 C:\Windows\SysWOW64 「 路徑 」 Config.txt 」 檔案中讀取。 也不太可能應用程式正在嘗試直接參考該路徑。 最有可能，它嘗試使用相對路徑，從該檔案讀取，並根據預設，「 System32/SysWOW64 」 是應用程式的工作目錄。 這可能表示應用程式預期其目前的工作目錄某處設定套件中。 尋找 appx 內，我們可以看到檔案存在與可執行檔相同的目錄中。
 
 ![應用程式 Config.txt](images/desktop-to-uwp/psfsampleapp_config_txt.png)
 
@@ -90,7 +90,7 @@ PSF 包含執行階段的修正程式，您可以使用這個時候，例如檔�
 
 ### <a name="create-the-package-layout-folder"></a>建立套件配置資料夾
 
-如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾做為您的套件預備區域 unpack 其內容。  您可以從執行此操作**x64 適用於 VS 2017 原生工具的命令提示字元中**，或手動使用 SDK bin 路徑中的可執行檔的搜尋路徑。
+如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾做為您的套件預備區域 unpack 其內容。  您可以從**x64 適用於 VS 2017 原生工具的命令提示字元中**，或手動使用 SDK bin 路徑中的可執行檔的搜尋路徑。
 
 ```
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -105,11 +105,11 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 ### <a name="get-the-package-support-framework-files"></a>取得套件支援的架構檔案
 
-您可以透過使用 Visual Studio 取得 PSF Nuget 套件。 您也可以透過使用獨立 Nuget 命令列工具取得它。
+您可以透過使用 Visual Studio 中取得 PSF Nuget 套件。 您也可以透過使用獨立 Nuget 命令列工具取得它。
 
 #### <a name="get-the-package-by-using-visual-studio"></a>透過使用 Visual Studio，以取得套件
 
-在 Visual Studio 中，您的方案或專案節點上按一下滑鼠右鍵並選擇其中一項管理 Nuget 套件命令。  搜尋**Microsoft.PackageSupportFramework**或**PSF** Nuget.org 上尋找的套件。然後，安裝它。
+在 Visual Studio 中，您的方案或專案節點上按一下滑鼠右鍵並選擇其中一項管理 Nuget 套件命令。  搜尋**Microsoft.PackageSupportFramework**或**PSF**尋找 Nuget.org 套件。然後，安裝它。
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>透過使用命令列工具，以取得套件
 
@@ -121,7 +121,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>將套件支援的架構檔案新增到您的套件
 
-將所需的 32 位元和 64 位元 PSF Dll 和可執行檔新增到套件目錄中。 使用下表做為指引。 您也會想要包含您所需要的任何執行階段修正程式。 在範例中，我們需要的檔案重新導向執行階段修正程式。
+將所需的 32 位元與 64 位元 PSF Dll 和可執行檔新增到套件目錄中。 使用下表做為指引。 您也會想要包含您所需要的任何執行階段修正程式。 在我們的範例，我們需要的檔案重新導向執行階段修正程式。
 
 | 應用程式可執行檔是 x64 | 應用程式可執行檔是 x86 |
 |-------------------------------|-----------|
@@ -135,7 +135,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="modify-the-package-manifest"></a>修改套件資訊清單
 
-在文字編輯器中開啟您的套件資訊清單，然後設定`Executable`屬性`Application`元素 PSF 啟動程式可執行檔的名稱。  如果您知道您的目標應用程式的架構，選取適當的版本，PSFLauncher32.exe 或 PSFLauncher64.exe。  如果沒有，PSFLauncher32.exe 能在所有情況下。  範例如下。
+在文字編輯器中開啟您的套件資訊清單，然後設定`Executable`屬性`Application`元素 PSF 啟動程式可執行檔的名稱。  如果您知道您目標的應用程式的架構，選取適當的版本，PSFLauncher32.exe 或 PSFLauncher64.exe。  如果沒有，PSFLauncher32.exe 能在所有情況下。  範例如下。
 
 ```xml
 <Package ...>
@@ -152,7 +152,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="create-a-configuration-file"></a>建立設定檔
 
-建立檔案名稱``config.json``，並將該檔案儲存到您的套件的根資料夾。 修改 config.json 檔案的宣告的應用程式識別碼，將它指向您只是取代的可執行檔。 使用您所獲得使用處理程序監視器的知識，您可以也設定工作目錄，以及用來將讀取/寫入重新導向至.log 目錄底下的檔案套件相對 」 PSFSampleApp 」 的檔案重新導向修復。
+建立檔案名稱``config.json``，並將該檔案儲存到您的套件的根資料夾。 修改 config.json 檔案的宣告的應用程式識別碼，將它指向您只是取代的可執行檔。 使用您所獲得使用處理程序監視器的知識，您可以也設定工作目錄，以及使用檔案重新導向修復重新導向至.log 目錄底下的檔案套件相對 」 PSFSampleApp 」 的讀取/寫入。
 
 ```json
 {
@@ -192,11 +192,11 @@ nuget install Microsoft.PackageSupportFramework
 | 陣列 | key | 值 |
 |-------|-----------|-------|
 | applications | id |  使用的值，`Id`屬性`Application`套件資訊清單中的項目。 |
-| applications | 可執行檔 | 您想要啟動的可執行檔套件相對路徑。 在大部分情況下，您可以從您的封裝資訊清單檔案取得此值，才能加以修改。 它是值的`Executable`屬性`Application`元素。 |
-| applications | workingDirectory | （選擇性）若要使用做為工作目錄的應用程式的啟動與套件相對的路徑。 如果您未設定此值，作業系統會使用`System32`目錄做為應用程式的工作目錄。 |
+| applications | 可執行檔 | 您想要啟動的可執行檔套件相對路徑。 在大部分情況下，您可以從您的封裝資訊清單檔案取得此值，再進行修改。 它是值的`Executable`屬性`Application`項目。 |
+| applications | workingDirectory | （選擇性）與套件相對的路徑做為工作目錄的應用程式的啟動。 如果您未設定此值，作業系統會使用`System32`目錄做為應用程式的工作目錄。 |
 | 處理程序 | 可執行檔 | 在大部分情況下，這將會是名稱`executable`上述設定已移除的路徑和檔案副檔名。 |
 | 修復 | dll | 修復，載入.msix/.appx 套件相對路徑。 |
-| 修復 | 設定 | （選擇性）控制修復 dl 會如何反應。 為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異確切此值的格式。 |
+| 修復 | 組態 | （選擇性）控制修復 dl 會如何反應。 因為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異確切此值的格式。 |
 
 `applications`， `processes`，以及`fixups`鍵是陣列。 這表示，您可以使用 config.json 檔案來指定多個應用程式、 處理程序，以及修復 DLL。
 
@@ -230,7 +230,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 ### <a name="use-the-trace-fixup"></a>使用追蹤修復
 
-若要診斷已封裝的應用程式相容性問題的替代技術是使用追蹤修復。 這個 DLL 隨附於 PSF，並提供詳細的診斷檢視的應用程式的行為，類似於處理程序監視器。  此外，它是特別設計顯色應用程式相容性問題。  使用追蹤修復，將 DLL 新增到 「 套件 」，將下列片段新增到您 config.json，然後將封裝和安裝和您的應用程式。
+另一個技術來診斷已封裝的應用程式相容性問題是使用追蹤修復。 這個 DLL 隨附於 PSF，並提供應用程式的行為，類似於處理程序監視器診斷的詳細的檢視。  它被專為顯色應用程式相容性問題。  使用追蹤修復、 將 DLL 新增到 「 套件 」，將下列片段新增到您 config.json，然後將封裝和安裝和您的應用程式。
 
 ```json
 {
@@ -243,9 +243,9 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 }
 ```
 
-根據預設，追蹤修復會篩選掉可能會被視為 「 必須 」 的失敗。  例如，應用程式可能會嘗試無條件刪除檔案，而不檢查以確認是否已經存在，略過結果。 這會有某些非預期的失敗可能會篩選出來，不幸結果，因此在上述範例中，我們選擇從檔案系統的函式會收到所有失敗。 因為我們知道從之前，嘗試從 Config.txt 檔案讀取會失敗訊息 「 找不到檔案 」，我們可以這麼做。 這是經常觀察到與一般並不會假設為非預期的失敗。 實際上它是可能的最佳開始篩選，只會以預期的失敗，並再回到所有失敗如果仍然無法識別的問題。
+根據預設，追蹤修復會篩選掉可能會被視為 「 必須 」 的失敗。  例如，應用程式可能會嘗試無條件刪除檔案，而不需檢查以查看是否已經存在，略過結果。 這會有某些非預期的失敗可能會篩選出來，不幸結果，因此在上述範例中，我們選擇從檔案系統函式會收到所有失敗。 因為我們知道從之前，嘗試從 Config.txt 檔案讀取會失敗，且訊息 「 找不到檔案 」，我們可以這麼做。 這是經常觀察到與一般並不會假設為非預期的失敗。 實際上它會是最有可能出篩選，只會以預期的失敗，以及然後後援的所有失敗，仍無法識別的問題時啟動。
 
-根據預設，追蹤修復的輸出傳送到附加偵錯工具。 針對此範例，我們將不是移至附加偵錯工具，並將會改為使用 SysInternals [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)程式來檢視其輸出。 在之後執行該應用程式，我們可以看到相同的失敗像之前一樣，這會我們指向相同的執行階段修正程式。
+根據預設，追蹤修復的輸出傳送到附加偵錯工具。 針對此範例，我們將不是移至附加偵錯工具，並將會改為使用 SysInternals [DebugView](https://docs.microsoft.com/en-us/sysinternals/downloads/debugview)程式來檢視它的輸出。 在之後執行該應用程式，我們可以看到相同的失敗像之前一樣，這會我們指向相同的執行階段修正程式。
 
 ![找不到 TraceShim 檔案](images/desktop-to-uwp/traceshim_filenotfound.png)
 
@@ -257,20 +257,20 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 > [!div class="checklist"]
 > * 新增封裝專案
-> * 新增執行階段修正的專案
-> * 新增專案啟動可執行檔 PSF 啟動程式
+> * 新增適用於執行階段修正的專案
+> * 新增的專案，啟動可執行檔 PSF 啟動程式
 > * 在設定封裝專案
 
-當您完成後時，您的解決方案看起來像這樣。
+當您完成時，您的解決方案看起來像這樣。
 
 ![已完成的解決方案](images/desktop-to-uwp/runtime-fix-project-structure.png)
 
-讓我們看看每個專案，在此範例中。
+我們來看看每個專案，在此範例中。
 
 | 專案 | 用途 |
 |-------|-----------|
-| DesktopApplicationPackage | 這個專案以[Windows 應用程式封裝專案](desktop-to-uwp-packaging-dot-net.md)為基礎，它會輸出 MSIX 套件。 |
-| Runtimefix | 這是包含做為執行階段修正程式的一或多個取代函式的 c + + Dynamic-Linked 程式庫專案。 |
+| DesktopApplicationPackage | 這個專案以[Windows 應用程式封裝專案](desktop-to-uwp-packaging-dot-net.md)為基礎，它會輸出 MSIX 封裝。 |
+| Runtimefix | 這是一個包含做為執行階段修正程式的一或多個取代函式的 c + + Dynamic-Linked 文件庫專案。 |
 | PSFLauncher | 這是 c + + 空白專案。 這個專案是以收集套件支援架構的執行階段可發佈檔案的位置。 它會將輸出的可執行檔。 該可執行檔是第一個啟動方案時執行。 |
 | WinFormsDesktopApplication | 這個專案包含傳統型應用程式的原始碼。 |
 
@@ -281,15 +281,15 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 ### <a name="create-a-package-solution"></a>建立的封裝解決方案
 
-如果您還沒有一個解決方案，傳統型應用程式，請在 Visual Studio 中建立新的**空白方案**。
+如果您還沒有一個解決方案適用於傳統型應用程式，請在 Visual Studio 中建立新的**空白方案**。
 
 ![空白的解決方案](images/desktop-to-uwp/blank-solution.png)
 
-您也可以新增您有任何應用程式專案。
+您也可能會想要新增您有任何應用程式專案。
 
 ### <a name="add-a-packaging-project"></a>新增封裝專案
 
-如果您還沒有**Windows 應用程式封裝專案**，建立一個，並將它新增至您的方案。
+如果您還沒有**Windows 應用程式封裝專案**，建立租用戶，並將它新增至您的方案。
 
 ![封裝專案範本](images/desktop-to-uwp/package-project-template.png)
 
@@ -309,7 +309,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 </Target>
 ```
 
-### <a name="add-project-for-the-runtime-fix"></a>新增執行階段修正的專案
+### <a name="add-project-for-the-runtime-fix"></a>新增適用於執行階段修正的專案
 
 將 c + +**動態連結程式庫 (DLL)** 專案新增至方案。
 
@@ -321,7 +321,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 ![ISO 17 選項](images/desktop-to-uwp/iso-option.png)
 
-該專案，以滑鼠右鍵按一下，然後在操作功能表中，選擇 [**管理 Nuget 套件**的選項。 請確定 [**封裝來源**選項設定為**所有**或**nuget.org**。
+該專案中，以滑鼠右鍵按一下，然後在操作功能表中，選擇 [**管理 Nuget 套件**的選項。 確定**所有**或**nuget.org****套件來源**選項設定。
 
 按一下設定圖示接下來該欄位。
 
@@ -329,11 +329,11 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 ![nuget 套件](images/desktop-to-uwp/psf-package.png)
 
-如果您想要偵錯，或延伸現有的執行階段修正，新增執行階段修正檔案取得使用本指南中[找到的執行階段修正](#find)所述的指導方針。
+如果您想要偵錯，或將現有的執行階段修正延伸，新增執行階段修正程式檔案取得使用本指南中[找到的執行階段修正](#find)所述的指導方針。
 
-如果您想要建立全新的修正，不要加入任何項目到這個專案只是尚未。 我們將會協助您將正確的檔案新增到這個稍後在本指南中的專案。 現在，我們將會繼續設定您的方案。
+如果您想要建立全新的修正程式，不要加入任何項目到這個專案只是尚未。 我們將會協助您將正確的檔案新增到這個稍後在本指南中的專案。 現在，我們將會繼續設定您的方案。
 
-### <a name="add-a-project-that-starts-the-psf-launcher-executable"></a>新增專案啟動可執行檔 PSF 啟動程式
+### <a name="add-a-project-that-starts-the-psf-launcher-executable"></a>新增的專案，啟動可執行檔 PSF 啟動程式
 
 將 c + +**空白專案**專案新增至方案。
 
@@ -349,7 +349,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 ![執行階段修正參考](images/desktop-to-uwp/reference-fix.png)
 
-參考資料，以滑鼠右鍵按一下，然後在 [**屬性**] 視窗中，將套用這些值。
+參考，以滑鼠右鍵按一下，然後在 [**屬性**] 視窗中，將套用這些值。
 
 | 屬性 | 值 |
 |-------|-----------|
@@ -406,13 +406,13 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 | 陣列 | key | 值 |
 |-------|-----------|-------|
 | applications | id |  使用的值，`Id`屬性`Application`套件資訊清單中的項目。 |
-| applications | 可執行檔 | 您想要啟動的可執行檔套件相對路徑。 在大部分情況下，您可以從您的封裝資訊清單檔案取得此值，才能加以修改。 它是值的`Executable`屬性`Application`元素。 |
-| applications | workingDirectory | （選擇性）若要使用做為工作目錄的應用程式的啟動與套件相對的路徑。 如果您未設定此值，作業系統會使用`System32`目錄做為應用程式的工作目錄。 |
+| applications | 可執行檔 | 您想要啟動的可執行檔套件相對路徑。 在大部分情況下，您可以從您的封裝資訊清單檔案取得此值，再進行修改。 它是值的`Executable`屬性`Application`項目。 |
+| applications | workingDirectory | （選擇性）與套件相對的路徑做為工作目錄的應用程式的啟動。 如果您未設定此值，作業系統會使用`System32`目錄做為應用程式的工作目錄。 |
 | 處理程序 | 可執行檔 | 在大部分情況下，這將會是名稱`executable`上述設定已移除的路徑和檔案副檔名。 |
 | 修復 | dll | 修復載入的 DLL 套件相對路徑。 |
-| 修復 | 設定 | （選擇性）控制修復 DLL 的運作方式。 為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異確切此值的格式。 |
+| 修復 | 組態 | （選擇性）控制修復 DLL 的運作方式。 因為每個修復可解譯此 「 blob 」 它想要修復的修復為基礎而異確切此值的格式。 |
 
-當您完成後時，您``config.json``檔案看起來會像這樣。
+當您完成時，您``config.json``檔案看起來會像這樣。
 
 ```json
 {
@@ -438,24 +438,24 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 ### <a name="debug-a-runtime-fix"></a>偵錯的執行階段修正
 
-在 Visual Studio 中，按下 F5 來啟動偵錯工具。  啟動第一件事是 PSF 啟動程式應用程式，接著，會啟動傳統型應用程式目標。  若要偵錯目標的傳統型應用程式，您必須手動附加至傳統型應用程式的處理序選擇 [**偵錯**->**附加至處理序**，然後選取 [應用程式處理程序。 若要允許偵錯的原生執行階段修正 DLL 的.NET 應用程式，請選取 （混合的模式偵錯） 的 managed 和原生程式碼類型。  
+在 Visual Studio 中，按 F5 來啟動偵錯工具。  啟動第一件事是 PSF 啟動程式應用程式，接著，會啟動傳統型應用程式目標。  若要偵錯目標的傳統型應用程式，您必須手動將附加至傳統型應用程式處理程序選擇 [**偵錯**->**附加至處理序**，並選取應用程式處理程序。 若要允許偵錯的原生執行階段修正 DLL 的.NET 應用程式，請選取 （混合的模式偵錯） 的 managed 和原生程式碼類型。  
 
-一旦您已將它設定好，您可以在傳統型應用程式程式碼和執行階段修正專案中設定中斷點旁邊幾行程式碼。 如果您不需要原始碼到您的應用程式，您將無法在執行階段修正專案中設定中斷點，只旁邊幾行程式碼。
+一旦您已將它設定好，您可以在傳統型應用程式程式碼和執行階段修正專案中設定中斷點旁邊幾行程式碼。 如果您不需要原始碼到您的應用程式，您將無法在您執行階段的修正程式專案中設定中斷點只旁邊幾行程式碼。
 
 >[!NOTE]
 > Visual Studio 可讓您在最簡單的開發和偵錯經驗，有一些限制，而稍後在本指南中，我們會討論您可以套用其他偵錯技巧。
 
 ## <a name="create-a-runtime-fix"></a>建立執行階段修正程式
 
-如果沒有，但在執行階段修正問題，您想要解決，您可以建立新的執行階段修正撰寫取代函式，並包含任何設定資料，會比較合理。 讓我們看看每個部分。
+如果沒有，但在執行階段修正問題，您想要解決，您可以建立新的執行階段修正程式撰寫取代函式，並包含任何設定資料，會比較合理。 我們來看看每個部分。
 
 ### <a name="replacement-functions"></a>取代函式
 
-首先，找出哪些函式 MSIX 容器中執行的應用程式時，呼叫會失敗。 然後，您可以建立您想要改為呼叫，執行階段管理員的取代函式。 這會讓您有機會，將函式的實作取代符合現代化的執行階段環境中的規則的行為。
+首先，找出哪些函式 MSIX 容器中執行的應用程式時，呼叫會失敗。 然後，您可以建立您會想要改為呼叫，執行階段管理員取代函式。 這會讓您有機會，將函式的實作取代符合現代化的執行階段環境中的規則的行為。
 
 在 Visual Studio 中，開啟您稍早在本指南中建立執行階段修正專案。
 
-宣告``FIXUP_DEFINE_EXPORTS``巨集，然後加入陳述式包含`fixup_framework.h`頂端的每個。您要新增的函式的執行階段修正 CPP 檔案。
+宣告``FIXUP_DEFINE_EXPORTS``巨集，然後將包含的陳述式新增`fixup_framework.h`頂端的每個。您想要將您的執行階段修正程式的函式的其中 CPP 檔案。
 
 ```c++
 #define FIXUP_DEFINE_EXPORTS
@@ -492,7 +492,7 @@ DECLARE_FIXUP(MessageBoxWImpl, MessageBoxWFixup);
 
 ### <a name="configuration-data"></a>設定資料
 
-如果您想要將設定資料新增到您的執行階段修正程式，請考慮新增至``config.json``。 如此一來，您可以使用`FixupQueryCurrentDllConfig`輕鬆地分析該資料。 這個範例會剖析該設定檔的字串和布林值。
+如果您想要將設定資料新增到您的執行階段修正程式，請考慮新增至``config.json``。 如此一來，您可以使用`FixupQueryCurrentDllConfig`輕鬆地分析該資料。 這個範例會剖析該設定檔的布林值和字串值。
 
 ```c++
 if (auto configRoot = ::FixupQueryCurrentDllConfig())
@@ -519,9 +519,9 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 若要解決此問題，請使用.msix /.appx 套件部署，而不是 F5 鬆散檔案部署。  若要建立.msix /.appx 套件檔案中，使用 Windows SDK 中，從[MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)公用程式，如上文所述。 或者，從 Visual Studio 中，您的應用程式的專案節點上按一下滑鼠右鍵，然後選取**市集**->**建立應用程式套件**。
 
-使用 Visual Studio 的另一個問題是它不需要附加至任何子處理程序啟動偵錯工具的內建支援。   這會讓您難以偵錯目標應用程式，必須以手動方式連結 Visual studio 啟動後將啟動路徑中的邏輯。
+使用 Visual Studio 的另一個問題是它不需要附加至任何子處理程序啟動偵錯工具的內建支援。   這會讓您難以偵錯目標應用程式，必須以手動方式連結由 Visual Studio 啟動後將啟動路徑中的邏輯。
 
-若要解決此問題，使用支援子處理程序在偵錯工具附加。  請注意，它通常不可能只是時間 (JIT) 偵錯工具附加到目標應用程式。  這是因為大部分的 JIT 技術涉及啟動偵錯工具來取代目標應用程式，透過 ImageFileExecutionOptions 登錄機碼。  這會導致 PSFLauncher.exe 用於 FixupRuntime.dll 插入目標 app 的 detouring 機制變成無效。  WinDbg，包含在 「 [Windows 偵錯工具](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)中，並從[Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)中，取得附加支援子處理程序。  它現在也支援直接[啟動和偵錯 UWP 應用程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)。
+若要解決此問題，使用支援子處理程序的偵錯工具附加。  請注意，它通常不可能在以 just-in-time (JIT) 偵錯工具附加到目標應用程式。  這是因為大部分的 JIT 技術涉及啟動偵錯工具來取代目標應用程式，透過 ImageFileExecutionOptions 登錄機碼。  這無法用於 detouring PSFLauncher.exe 用於 FixupRuntime.dll 插入目標 app 的機制。  WinDbg，包含在 「 [Windows 偵錯工具](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)中，並從[Windows SDK](https://developer.microsoft.com/en-US/windows/downloads/windows-10-sdk)中，取得附加支援子處理程序。  它現在也支援直接[啟動和偵錯 UWP 應用程式](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugging-a-uwp-app-using-windbg#span-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanspan-idlaunchinganddebuggingauwpappspanlaunching-and-debugging-a-uwp-app)。
 
 若要偵錯目標為子處理程序的應用程式啟動時，開始``WinDbg``。
 
@@ -548,7 +548,7 @@ bp ...
 ```
 
 >[!NOTE]
-> [PLMDebug](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/plmdebug)也可用來偵錯工具附加到應用程式在啟動，時，也會包含在[Windows 偵錯工具](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)。  不過，它會更複雜比現在 WinDbg 所提供的直接支援使用。
+> [PLMDebug](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/plmdebug)也可用來偵錯工具附加到應用程式在啟動，時，也會包含在[Windows 偵錯工具](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/index)。  不過，它會更複雜的直接存取的支援，現在 WinDbg 所提供比使用。
 
 ## <a name="support-and-feedback"></a>支援與意見反應
 

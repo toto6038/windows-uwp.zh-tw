@@ -2,9 +2,6 @@
 author: QuinnRadich
 Description: Learn how to implement backwards navigation for traversing the user's navigation history within an UWP app.
 title: 瀏覽歷程記錄和向後瀏覽 (Windows 應用程式)
-ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
-isNew: true
-label: History and backwards navigation
 template: detail.hbs
 op-migration-status: ready
 ms.author: quradic
@@ -14,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eb8bc40c2e9066487a14d217f53a6433266b308
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 255f0bbcdc0e746499a1014ad818a71d90887234
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211556"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268129"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
@@ -50,7 +47,7 @@ ms.locfileid: "4211556"
 Style="{StaticResource NavigationBackButtonNormalStyle}"/>
 ```
 
-為了將 UI 元素最小化，以便在 App 中四處移動，請在上一頁堆疊中沒有內容時顯示已停用的返回按鈕 (請參閱下方程式碼範例)。
+為了將 UI 元素最小化，以便在 App 中四處移動，請在上一頁堆疊中沒有內容時顯示已停用的返回按鈕 (請參閱下方程式碼範例)。 不過，如果您預期您的應用程式將會永遠不會有 backstack，您不需要完全顯示 [上一頁] 按鈕。
 
 ![返回按鈕狀態](images/back-nav/BackDisabled.png)
 
@@ -174,7 +171,7 @@ namespace winrt::PageNavTest::implementation
 }
 ```
 
-以上所述，我們處理向後瀏覽單一頁面。 如果您想要某些頁面不要有返回瀏覽，或您想要顯示頁面之前執行頁面層級的程式碼，您可以處理每個頁面中的瀏覽。
+以上所述，我們處理向後瀏覽的單一頁面。 如果您想要某些頁面不要有返回瀏覽，或您想要顯示頁面之前執行頁面層級的程式碼，您可以處理每個頁面中的瀏覽。
 
 若要處理向後瀏覽整個應用程式，您將會登錄[**BackRequested**](https://docs.microsoft.com/uwp/api/windows.ui.core.systemnavigationmanager.BackRequested)事件中的全域接聽程式`App.xaml`程式碼後置檔案。
 
@@ -289,11 +286,11 @@ bool App::On_BackRequested()
 
 ## <a name="system-back-behavior-for-backward-compatibilities"></a>提供回溯相容性的系統返回行為
 
-之前 UWP app 是使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 提供返回瀏覽。 API 將繼續受到支援以提供回溯相容性，但我們不再建議依賴標題列返回按鈕。 您的 App 應設置自己的應用程式內返回按鈕。
+之前 UWP app 是使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 提供返回瀏覽。 API 將會繼續支援以確保回溯相容性，但我們不再建議依賴[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 您的 App 應設置自己的應用程式內返回按鈕。
 
-如果您的 app 繼續使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，則返回按鈕會如往常出現在標題列內。
+如果您的應用程式會繼續使用[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，的系統 UI 將會轉譯系統返回按鈕：
 
-- 如果您的應用程式**不索引標籤**，在標題列內轉譯返回按鈕。 [上一頁] 按鈕的視覺體驗與使用者互動並不會變更從上一個組建。
+- 如果您的應用程式**不索引標籤**，在標題列內轉譯返回按鈕。 [返回] 按鈕的視覺體驗與使用者互動並不會變更從上一個組建。
 
     ![標題列返回按鈕](images/nav-back-pc.png)
 
@@ -304,13 +301,30 @@ bool App::On_BackRequested()
 ### <a name="system-back-bar"></a>系統背面列
 
 > [!NOTE]
-> 「 系統背面列 」 只說明，不正式名稱。
+> 「 系統背面列 」 是只描述，不正式名稱。
 
-系統背面列是索引標籤色調和應用程式 s 內容區域間插入的色調。 色調跨越了整個應用程式的寬度，與左邊緣的返回按鈕。 色調有 32 個像素，以確保返回按鈕的適當觸控目標大小的垂直高度。
+系統背面列是 「 色調 」，在索引標籤色調和應用程式的內容區域間插入。 色調跨越了整個應用程式的寬度，與左邊緣的返回按鈕。 色調有 32 個像素，以確保返回按鈕的適當觸控目標大小的垂直高度。
 
-根據返回按鈕可見度，動態顯示系統背面列。 看見返回按鈕時，系統背面列插入，向下轉移應用程式內容的索引標籤色調下方 32 像素。 隱藏 [上一頁] 按鈕時，系統背面列動態移除時，轉移應用程式內容符合索引標籤色調 32 個像素。 若要避免您的應用程式 UI 轉移向上或向下，我們建議另設[應用程式內返回按鈕](#back-button)。
+- 如果您的應用程式**不索引標籤**，在標題列內轉譯返回按鈕。 [返回] 按鈕的視覺體驗與使用者互動並不會變更從上一個組建。
 
-[標題列自訂項目](../shell/title-bar.md)將會沿用應用程式索引標籤與系統背面列。 如果您的應用程式會指定背景和前景色彩屬性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，則色彩將會套用到索引標籤和系統背面列。
+    ![標題列返回按鈕](images/nav-back-pc.png)
+
+- 如果應用程式**索引標籤**，則返回按鈕會呈現在新的系統返回列。
+
+    ![系統繪製返回按鈕列](images/back-nav/tabs.png)
+
+### <a name="system-back-bar"></a>系統背面列
+
+> [!NOTE]
+> 「 系統背面列 」 是只描述，不正式名稱。
+
+系統背面列是 「 色調 」，在索引標籤色調和應用程式的內容區域間插入。 色調跨越了整個應用程式的寬度，與左邊緣的返回按鈕。 色調有 32 個像素，以確保返回按鈕的適當觸控目標大小的垂直高度。
+
+根據返回按鈕可見度，動態顯示系統背面列。 看見 [上一頁] 按鈕時，系統背面列插入，向下轉移應用程式內容的索引標籤色調下方 32 個像素。 隱藏 [上一頁] 按鈕時，系統背面列動態移除時，轉移應用程式內容符合索引標籤色調 32 個像素。 若要避免您的應用程式 UI 轉移向上或向下，我們建議另設[應用程式內返回按鈕](#back-button)。
+
+[標題列自訂項目](../shell/title-bar.md)將會延續到應用程式索引標籤和系統背面列。 如果您的應用程式會指定背景和前景色彩屬性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，則色彩將會套用到索引標籤和系統背面列。
+
+[標題列自訂項目](../shell/title-bar.md)將會延續到應用程式索引標籤和系統背面列。 如果您的應用程式會指定背景和前景色彩屬性具有[ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar)，則色彩將會套用到索引標籤和系統背面列。
 
 ## <a name="guidelines-for-custom-back-navigation-behavior"></a>自訂返回瀏覽行為的指導方針
 
@@ -337,7 +351,7 @@ bool App::On_BackRequested()
 <td style="vertical-align:top;"><strong>頁面之間、相同對等群組、沒有螢幕上的瀏覽元素</strong>
 <p>使用者從相同對等群組內的一個頁面瀏覽到另一個頁面。 沒有螢幕上沒有提供直接瀏覽到兩頁面的瀏覽元素 （例如<a href="https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/navigationview">NavigationView</a>)。</p></td>
 <td style="vertical-align:top;"><strong>是</strong>
-<p>在以下圖例中，使用者在相同的對等群組中，兩個頁面之間瀏覽，並瀏覽應該新增到瀏覽歷程記錄。</p>
+<p>在以下圖例中，使用者在相同對等群組中，兩個頁面之間瀏覽，並瀏覽應該新增到瀏覽歷程記錄。</p>
 <p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">

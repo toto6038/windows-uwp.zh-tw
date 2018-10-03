@@ -14,11 +14,11 @@ design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5fa84efbe20368be55a50ce20c8e6e5d1fe439
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206236"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4268153"
 ---
 # <a name="reveal-focus"></a>顯色焦點
 
@@ -26,7 +26,7 @@ ms.locfileid: "4206236"
 
 顯色焦點是一種光源效果，針對[10 英呎體驗](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和電視螢幕。 這會在使用者將遊戲台或鍵盤焦點移近可設定焦點元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。 預設會關閉此效果，但要啟用，也很簡單 
 
-（顯色醒目提示效果，光源會影響會反白顯示互動式元素，請參閱[顯色醒目提示文章](/windows/uwp/design/style/reveal)）。
+（顯色醒目提示效果，光源造成的影響，反白顯示互動式元素，請參閱[顯色醒目提示文章](/windows/uwp/design/style/reveal)）。
 
 
 > **重要 API**：[Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
@@ -67,18 +67,18 @@ ms.locfileid: "4206236"
     }
 ```
 
-設定**Reveal**屬性之後，系統會自動套用顯色焦點效果至其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)屬性設為**True** （大多數控制項的預設值） 的所有控制項。 
+您將**Reveal**屬性之後，系統會自動套用顯色焦點效果至其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)屬性設定為**True** （大多數控制項的預設值） 的所有控制項。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>為什麼不開啟顯色焦點預設？ 
-如您所見，它是很容易就能開啟顯色焦點，當應用程式偵測到本身在 Xbox 上執行。 因此，為什麼系統不直接為您開啟它？ 因為顯色焦點會增加焦點視覺效果的大小，可能導致 UI 配置發生問題。 在某些情況下，您會想要自訂顯色焦點效果，效果最佳化您的應用程式。
+如您所見，它是很容易就能開啟顯色焦點，當應用程式偵測到本身在 Xbox 上執行。 因此，為什麼系統不直接為您開啟它？ 因為顯色焦點會增加焦點視覺效果的大小，可能導致 UI 配置發生問題。 在某些情況下，您會想要自訂顯色焦點效果，將它最佳化您的應用程式。
 
 ## <a name="customizing-reveal-focus"></a>自訂顯色焦點
 
 您可以自訂顯色焦點效果，方法是修改每個控制項的焦點視覺效果屬性： [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，以及[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 這些屬性可讓您自訂焦點矩形的色彩和粗細 (這些屬性是您用於建立[高可見度焦點視覺效果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的相同屬性)。 
 
-但在您開始構成會很有幫助一點多了解構成顯色焦點的元件。
+但在您開始構成會很有一點多了解構成顯色焦點的元件，很有幫助。
 
-有三個預設顯色焦點視覺效果部分︰ 主要框線、 次要框線和顯色光暈。 主要框線的粗細為 **2px**，圍繞在次要框線 *「外」*。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」*。 顯色焦點光暈粗細為主要框線粗細成比例，圍繞 [*以外*的主要框線。
+有三個預設顯色焦點視覺效果部分︰ 主要框線、 次要框線和顯色光暈。 主要框線的粗細為 **2px**，圍繞在次要框線 *「外」*。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」*。 顯色焦點光暈粗細為主要框線粗細成比例，圍繞*以外*的主要框線。
 
 除了靜態元素，顯色焦點視覺效果功能規律波動、 時依焦點方向移動焦點移動的動畫的光源。
 
@@ -167,12 +167,12 @@ ms.locfileid: "4206236"
 
 ## <a name="use-your-own-focus-visuals"></a>使用您自己的焦點視覺效果
 
-若要自訂顯色焦點的另一種方式是使用視覺狀態自行繪製選擇不使用系統提供的焦點視覺效果。 若要深入了解，請參閱[焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)。
+若要自訂顯色焦點的另一種方式是使用視覺狀態自行繪製，選擇不使用系統提供的焦點視覺效果。 若要深入了解，請參閱[焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>顯色焦點和 Fluent 設計系統
 
-顯色焦點是將光源加入您的應用程式的 Fluent 設計系統元件。 若要深入了解 Fluent Design 系統及其他元件，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
+顯色焦點是將光源加入您的應用程式中的 Fluent 設計系統元件。 若要深入了解 Fluent Design 系統及其他元件，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
 
 ## <a name="related-articles"></a>相關文章
 

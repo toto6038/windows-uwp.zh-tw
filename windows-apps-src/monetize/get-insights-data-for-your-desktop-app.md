@@ -7,14 +7,14 @@ ms.date: 07/31/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，市集服務，Microsoft Store 分析 API，深入解析
+keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API 的深入資訊
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ca6eed40af37276b5b4c98ec7b1b709bdadfb9
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208112"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267483"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>取得傳統型應用程式的深入解析資料
 
@@ -48,10 +48,10 @@ ms.locfileid: "4208112"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您要取得的深入解析資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 如果您未指定此參數，回應主體會包含針對登錄到您帳戶的所有應用程式的深入解析資料。  |  否  |
-| startDate | 日期 | 要擷取的深入解析資料之日期範圍的開始日期。 預設為目前日期的前 30 天。 |  否  |
+| applicationId | 字串 | 您要取得的深入解析資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 如果您未指定此參數，回應主體會包含針對登錄到您帳戶的所有 app 的深入解析資料。  |  否  |
+| startDate | 日期 | 要擷取的深入解析資料之日期範圍中開始日期。 預設為目前日期的前 30 天。 |  否  |
 | endDate | 日期 | 要擷取的深入解析資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
-| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 例如， *filter = dataType eq '取得'*。 <p/><p/>目前此方法僅支援篩選**健康情況**。  | 否   |
+| filter | 字串  | 一或多個篩選回應中資料列的陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 例如， *filter = dataType eq '下載數 」*。 <p/><p/>目前此方法僅支援篩選**健康情況**。  | 否   |
 
 ### <a name="request-example"></a>要求範例
 
@@ -79,9 +79,9 @@ Authorization: Bearer <your access token>
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
 | applicationId       | 字串 | 您已擷取的深入解析資料的傳統型應用程式的產品識別碼。     |
-| insightDate                | 字串 | 我們所識別在特定的衡量標準變更日期。 此日期代表我們偵測到大幅增加一週結尾，或減少度量單位，相較於前一週中。 |
-| 資料類型     | 字串 | 字串，指定此深入了解通知的一般分析區域。 目前，此方法僅支援**健康情況**。    |
-| insightDetail          | array | 一或多個[InsightDetail 值](#insightdetail-values)代表目前的深入解析的詳細資料。    |
+| insightDate                | 字串 | 我們可以在其指出特定的衡量標準的變更日期。 此日期代表我們偵測到大幅增加一週結尾，或減少度量單位，相較於前一週中。 |
+| 資料類型     | 字串 | 字串，指定會通知這個深入了解一般分析區域。 目前，此方法僅支援**健康情況**。    |
+| insightDetail          | array | 一或多個[InsightDetail 值](#insightdetail-values)表示目前的深入解析的詳細資料。    |
 
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
@@ -90,12 +90,12 @@ Authorization: Bearer <your access token>
 |---------------------|--------|-------------------------------------------|
 | FactName           | 字串 | 表示為目前的深入解析或目前維度描述的衡量標準的字串。 目前，此方法僅支援值**叫用次數**。  |
 | SubDimensions         | array |  一或多個物件，其描述單一的衡量標準的深入解析。   |
-| PercentChange            | 字串 |  跨整個客戶群變更為的衡量標準百分比。  |
+| PercentChange            | 字串 |  跨整個客戶群變更為的衡量標準的百分比。  |
 | DimensionName           | 字串 |  為目前的維度中所述的衡量標準的名稱。 範例包括**EventType**、**市場**、 **DeviceType**，以及**PackageVersion**。   |
-| DimensionValue              | 字串 | 目前的維度中所述的衡量標準的值。 例如，如果**EventType** **DimensionName** ， **DimensionValue**可能會**損毀**或**停止回應**。   |
+| DimensionValue              | 字串 | 目前的維度中所述的衡量標準的值。 例如，如果**DimensionName** **EventType**， **DimensionValue**可能會**損毀**或**停止回應**。   |
 | FactValue     | 字串 | 深入了解已偵測到的日期的衡量標準絕對值。  |
 | Direction | 字串 |  變更 （**正**或**負**） 的方向。   |
-| 日期              | 字串 |  我們識別出目前的深入解析或目前的維度相關的變更日期。   |
+| 日期              | 字串 |  我們識別出目前的深入解析或目前的維度的相關的變更日期。   |
 
 ### <a name="response-example"></a>回應範例
 

@@ -3,18 +3,18 @@ author: laurenhughes
 title: 資產套件簡介
 description: 資產套件是一種套件，做為應用程式的常見檔案的集中位置 – 有效免除架構套件中的重複檔案。
 ms.author: lahugh
-ms.date: 04/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb006e0575d025d9d823981e32b6d0749de0996
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 8aafac1c1217ce082cd9d6176c530967f32e4cdd
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1818283"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267987"
 ---
 # <a name="introduction-to-asset-packages"></a>資產套件簡介
 
@@ -30,7 +30,7 @@ ms.locfileid: "1818283"
 ### <a name="how-do-asset-packages-affect-publishing"></a>資產套件如何影響資產？
 資產套件的最明顯優點是減少封裝應用程式的大小。 較小的應用程式套件會透過讓 Microsoft Store 處理較少的檔案，加快應用程式的發佈程序，但是這不是最重要的資產套件好處。
 
-建立資產套件時，您可以指定是否應該允許執行套件。 因為資產套件應只包含架構無關檔案，它們通常不包含任何 .dll 或 .exe 檔案，因此通常不需要執行資產套件。 此區別的重要性是在發佈過程中，所有的可執行檔套件都必須掃描，確保不包含惡意程式碼，而對於較大的套件此掃描程序需要較長的時間。 不過，如果套件指定為不可執行，應用程式安裝將確保，無法執行此套件中所包含的檔案。 這項保證免除完整套件掃描，在應用程式發佈期間 (以及更新) 會大幅降低惡意程式碼掃描時間 - 因此使用資產套件的應用程式，發佈速度大幅提升。 請注意，[一般套件組合應用程式套件](flat-bundles.md)也必須使用以取得此發佈好處，因為這可讓 Microsoft Store 平行處理每個 .appx 套件檔案。 
+建立資產套件時，您可以指定是否應該允許執行套件。 因為資產套件應只包含架構無關檔案，它們通常不包含任何 .dll 或 .exe 檔案，因此通常不需要執行資產套件。 此區別的重要性是在發佈過程中，所有的可執行檔套件都必須掃描，確保不包含惡意程式碼，而對於較大的套件此掃描程序需要較長的時間。 不過，如果套件指定為不可執行，應用程式安裝將確保，無法執行此套件中所包含的檔案。 這項保證免除完整套件掃描，在應用程式發佈期間 (以及更新) 會大幅降低惡意程式碼掃描時間 - 因此使用資產套件的應用程式，發佈速度大幅提升。 請注意，[一般套件組合應用程式套件](flat-bundles.md)必須也用來取得此發佈好處，因為這可讓 microsoft Store 處理每個.appx 或.msix 套件檔案，以並行方式。 
 
 
 ### <a name="should-i-use-asset-packages"></a>我應該使用資產套件嗎？
@@ -54,6 +54,11 @@ ms.locfileid: "1818283"
 
 ```syntax 
 MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.appx
+
+...
+
+MakeAppx.exe pack /r /m AppxManifest.xml /f MappingFile.txt /p Videos.msix
+
 ```
 請注意，此處的 AppxManifest（商標檔案）中所參照的所有檔案無法移到資產套件 – 必須在架構套件上複製這些檔案。 資產套件也不應該包含 resources.pri；MRT 不能用來存取資產套件檔案。 若要了解更多有關如何存取資產套件檔案和資產套件需要應用程式安裝到 NTFS 磁碟機的原因，請查看[使用資產套件與套件摺疊進行開發](Package-Folding.md)。
 

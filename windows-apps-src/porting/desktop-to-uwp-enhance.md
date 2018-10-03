@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: Enhance your desktop app for Windows 10 users by using Universal Windows Platform (UWP) APIs.
+Description: Enhance your desktop application for Windows 10 users by using Universal Windows Platform (UWP) APIs.
 Search.Product: eADQiWindows 10XVcnh
 title: 增強您的 Windows 10 傳統型應用程式
 ms.author: normesta
@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aafe2d09fc27a2693ccf2c4c9d8f189aa0164a3c
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 392f8166e16c028a57bc9e27039a9884f1d9714a
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976506"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267763"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增強您的 Windows 10 傳統型應用程式
 
@@ -78,11 +78,11 @@ ms.locfileid: "1976506"
 
 :white_check_mark: **首先，決定您要新增哪些體驗**
 
-您有許多選擇。 例如，您可以使用創造營收 API 簡化採購訂單流程，或透過分享一些有趣事物來吸引別人關注您的應用程式，例如另一位使用者張貼的新圖片。
+您有許多選擇。 例如，您可以使用創造營收 Api 或直接注意到您的應用程式，當您有一些有趣共用，例如另一位使用者張貼的新圖片簡化採購訂單流程。
 
 ![快顯通知](images/desktop-to-uwp/toast.png)
 
-即使使用者忽略或關閉您的訊息，他們仍可以在控制中心再次看到這些訊息，按一下即可開啟您的應用程式。 如此可提高使用者與您應用程式的互動程度，並獲得您的應用程式與作業系統深度整合的額外好處。 我們稍後會顯示該體驗的程式碼。
+即使使用者忽略或關閉您的訊息，他們仍可以在控制中心再次看到這些訊息，按一下即可開啟您的應用程式。 這會增加持續使用您的應用程式，並獲得在於能夠讓您的應用程式與作業系統整合的額外好處。 我們稍後會顯示該體驗的程式碼。
 
 請造訪我們的[開發人員中心](https://developer.microsoft.com/windows)以尋找靈感。
 
@@ -173,7 +173,7 @@ void UWP::ShowToast()
 
 ## <a name="support-windows-xp-windows-vista-and-windows-78-install-bases"></a>支援 Windows XP、Windows Vista 和 Windows 7/8 安裝基礎
 
-您不需要建立新的分支並維護個別程式碼基底，即可針對 Windows 10 現代化您的應用程式。
+您可以現代化您的應用程式，適用於 Windows 10，而不必建立新的分支並維護個別的程式碼基底。
 
 如果您想為 Windows 10 使用者建置不同的二進位檔，請使用條件式編譯。 如果您傾向組建一組二進位檔然後部署到所有 Windows 使用者，請使用執行階段檢查。
 
@@ -224,7 +224,7 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>執行階段檢查
 
-您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 只有當使用者在 Windows 10 上以封裝應用程式執行您的應用程式時，您的應用程式才會呼叫 UWP API。
+您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 Windows 10 上，您的應用程式呼叫 UWP Api 使用者時，才會執行您的應用程式與已封裝的應用程式。
 
 將執行階段檢查新增至程式碼的最簡單方式是安裝此 Nuget 套件：[傳統型橋接器協助程式](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然後使用 ``IsRunningAsUWP()`` 方法來關閉所有 UWP 程式碼。 如需詳細資訊，請參閱此部落格文章：[傳統型橋接器 - 識別應用程式的內容](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/) (英文)。
 

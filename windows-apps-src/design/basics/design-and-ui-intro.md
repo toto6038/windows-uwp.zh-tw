@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206940"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267997"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP app 設計簡介
 
@@ -29,11 +29,11 @@ ms.locfileid: "4206940"
 
 ## <a name="effective-pixels-and-scaling"></a>有效像素與縮放
 
-在所有[Windows 10 裝置](../devices/index.md)上的 UWP app 是從您的電視到您的平板電腦或電腦執行。 您要如何設計在各種不同的裝置和螢幕大小有很好的 UI？
+在所有[Windows 10 裝置](../devices/index.md)上的 UWP app 是從您的電視到您的平板電腦或個人電腦執行。 您要如何設計在各種不同的裝置和螢幕大小有很好的 UI？
 
 ![各種裝置上的相同 App](images/universal-image-1.jpg)
 
-UWP 可協助自動調整 UI 元素，使它們更清晰可讀並可輕鬆地在所有裝置和螢幕大小上進行互動。
+UWP 可協助透過自動調整 UI 元素，使其更清晰可讀並可輕鬆地在所有裝置和螢幕大小上進行互動。
 
 當您在裝置上執行 App 時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
 
@@ -49,7 +49,8 @@ UWP 可協助自動調整 UI 元素，使它們更清晰可讀並可輕鬆地在
 ### <a name="multiples-of-four"></a>四的倍數
 
 :::row:::
-    ::: 範圍欄::: 大小、 邊界及 UI 元素的位置應一律為**4 epx 的倍數**在您的 UWP app 中。
+    :::column span:::
+        The sizes, margins, and positions of UI elements should always be in **multiples of 4 epx** in your UWP apps.
 
         UWP scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it's the only integer that can be scaled by non-whole numbers (e.g. 4*1.5 = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
     :::column-end:::
@@ -66,16 +67,16 @@ UWP 可協助自動調整 UI 元素，使它們更清晰可讀並可輕鬆地在
 
 :::row:::
     :::column:::
-        UWP 應用程式在任何 Windows 10 裝置上啟動時，它會啟動在[視窗](/uwp/api/Windows.UI.Xaml.Controls.Window)中使用[的畫面](/uwp/api/Windows.UI.Xaml.Controls.Frame)，這可以瀏覽[頁面](/uwp/api/Windows.UI.Xaml.Controls.Page)執行個體。
+        When a UWP app is launched on any Windows 10 device, it launches in a [Window](/uwp/api/Windows.UI.Xaml.Controls.Window) with a [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame), which can navigate between [Page](/uwp/api/Windows.UI.Xaml.Controls.Page) instances.
     :::column-end:::
     :::column:::
-        ![框架](images/frame.svg)
+        ![Frame](images/frame.svg)
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        您可以將您的應用程式 UI 視為頁面的集合。 這取決於您決定每個頁面上應顯示內容以及在頁面之間的關係。
+        You can think of your app's UI as a collection of pages. It's up to you to decide what should go on each page, and the relationships between pages.
 
         To learn how you can organize your pages, see [Navigation basics](navigation-basics.md).
     :::column-end:::
@@ -118,7 +119,7 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 :::row:::
     :::column:::
-        您的 UWP app 會與磚以及 Windows[殼層](../shell/tiles-and-notifications/creating-tiles.md)通知更廣泛的 Windows 體驗互動。
+        Your UWP app will interact with the broader Windows experience with tiles and notifications in the Windows [Shell](../shell/tiles-and-notifications/creating-tiles.md).
 
         Tiles are displayed in the Start menu and when your app launches, and they provide a glimpse of what's going on in your app. Their power comes from the content behind them, and the intelligence and craft with which they're offered up.
 
@@ -133,10 +134,10 @@ UWP 的設計平台提供一組通用控制項，確保可在所有執行 Window
 
 :::row:::
     :::column:::
-        UWP app 需依賴智慧型互動。 您可以針對按一下的互動來設計，無需知道或定義按一下是來自滑鼠、手寫筆或手指的點選。 不過，您也可以針對[特定的輸入模式](../input/input-primer.md)設計您的應用程式。
+        UWP apps rely on smart interactions. You can design around a click interaction without having to know or define whether the click comes from a mouse, a stylus, or a tap of a finger. However, you can also design your apps for [specific input modes](../input/input-primer.md).
     :::column-end:::
     :::column:::
-        ![輸入](images/inputs.svg)
+        ![inputs](images/inputs.svg)
     :::column-end:::
 :::row-end:::
 

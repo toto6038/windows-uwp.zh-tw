@@ -15,11 +15,11 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5bb6ed36c772e5ae80a3cb801b4b6b36bb1ab18c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211480"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267749"
 ---
 # <a name="pivot"></a>樞紐分析
 
@@ -49,20 +49,20 @@ Pivot 控制項，就像[NavigationView](navigationview.md)，加上底線選取
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
-若要達到常見的頂端瀏覽和索引標籤模式，我們建議使用[NavigationView](navigationview.md)，以自動適應不同螢幕大小，並可讓您進一步自訂項目。
+若要達到常見的頂端瀏覽和索引標籤模式，我們建議使用[NavigationView](navigationview.md)，以自動配合不同螢幕大小調整，並可讓您更大的自訂項目。
 
 不過，如果您的瀏覽需要觸控式撥動，我們建議使用樞紐。
 
-其他之間的主要差異的 NavigationView 和 Pivot 控制項是預設溢位行為和瀏覽 API:
+預設溢位行為和 API 的瀏覽其他之間的主要差異的 NavigationView 和 Pivot 控制項︰
 
 - 各樞紐項目，而 NavigationView 使用功能表下拉式清單溢位，讓使用者可以看到的所有項目各種溢位。
-- 樞紐處理內容的區段，雖然 NavigationView 可讓您進一步控制瀏覽行為之間的瀏覽。
+- 樞紐處理內容的區段，雖然 NavigationView 允許進一步控制瀏覽行為之間的瀏覽。
 
 ## <a name="use-navigationview-instead-of-pivot"></a>使用 NavigationView，而不是樞紐
 
 如果您的應用程式 UI 使用 Pivot 控制項，然後您可以將轉換樞紐 NavigationView 以下的程式碼。
 
-此 XAML 會建立包含 3 個區段的內容，如範例[建立 pivot 控制項](#create-a-pivot-control)中的樞紐 NavigationView。
+此 XAML 會建立 NavigationView，包含 3 個區段的內容，如[建立 pivot 控制項](#create-a-pivot-control)中的樞紐的範例。
 
 ```xaml
 <NavigationView x:Name="rootNavigationView" Header="Category Title"
@@ -87,7 +87,7 @@ Pivot 控制項，就像[NavigationView](navigationview.md)，加上底線選取
 </Page>
 ```
 
-NavigationView 提供對瀏覽自訂項目更多控制權，且需要相對應的程式碼後置。 若要伴隨上述的 XAML，請使用下列程式碼後置：
+NavigationView 提供對瀏覽的自訂項目更多控制權，且需要相對應的程式碼後置。 若要伴隨上述的 XAML，請使用下列程式碼後置：
 
 ```csharp
 private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
@@ -116,7 +116,7 @@ private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvoke
 }
 ```
 
-此程式碼會模擬 Pivot 控制項的內建的瀏覽體驗，減去內容區段之間的觸控撥動體驗。 不過，如您所見，您也無法自訂數個點，包括動畫的轉換、 瀏覽參數，以及堆疊功能。
+此程式碼會模擬 Pivot 控制項的內建的瀏覽體驗，減內容區段之間的觸控式撥動體驗。 不過，如您所見，您也無法自訂數個點，包括動畫的轉換、 瀏覽參數，以及堆疊功能。
 
 ## <a name="create-a-pivot-control"></a>建立 Pivot 控制項
 

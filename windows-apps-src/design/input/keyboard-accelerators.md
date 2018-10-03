@@ -14,12 +14,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ce84debc3422f923c7c88aae1fa216665ef1ef0f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208658"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267133"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -250,6 +250,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 }
 ```
 
+## <a name="override-default-keyboard-behavior"></a>覆寫預設鍵盤行為
+
+在某些情況下，您可能需要覆寫特定的按鍵，如退格鍵索引鍵或 Enter 鍵的預設行為。 例如， 
+
 ## <a name="disable-a-keyboard-accelerator"></a>停用鍵盤快速鍵 
 
 如果停用控制項，也會停用相關聯的快速鍵。 下列範例中，ListView 的 IsEnabled 屬性已設定為 false，因此無法叫用相關聯的 Control+A 快速鍵。
@@ -357,7 +361,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 **Windows 10，版本 1803年 （2018 年 4 月更新） 和更新版本**
 
-根據預設，當宣告鍵盤快速鍵時，（除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 的所有控制項都顯示對應的按鍵組合在工具提示中。
+根據預設，當宣告的鍵盤快速鍵時，（除了[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 的所有控制項都顯示對應的按鍵組合在工具提示中。
 
 > [!NOTE] 
 > 如果控制項有一個以上的快速鍵定義，會呈現的第一個。
@@ -366,7 +370,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 *工具提示中的快速按鍵組合*
 
-[按鈕](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，及[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)物件，鍵盤快速操作會附加到控制項的預設工具提示。 適用於[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 物件，鍵盤快速鍵會顯示飛出視窗文字。
+適用於[按鈕](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.button)、 [AppBarButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)，以及[AppBarToggleButton](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbartogglebutton)物件，鍵盤快速操作會附加到控制項的預設工具提示。 適用於[MenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.appbarbutton)和[ToggleMenuFlyoutItem](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)） 物件，鍵盤快速操作會顯示飛出視窗文字。
 
 > [!NOTE]
 > 指定工具提示 （請參閱 Button1 在下列範例中） 會覆寫這個行為。

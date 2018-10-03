@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd702f9ba6e28e1902ea8e595287ba10b46f4bb
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: 5a61b8bdcfcfad490528cdceed5e732a6f5f3a89
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895280"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4267369"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -116,16 +116,29 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 根據預設，工具提示會顯示在指標上的置中位置。 位置並不受應用程式視窗的限制，因此工具提示可能會超出應用程式視窗範圍部分顯示或完整顯示。
 
-如果工具提示遮蔽其所指出的內容，您可以調整它的位置。 使用 [Placement](/uwp/api/windows.ui.xaml.controls.tooltip.placement) 屬性或 **ToolTipService.Placement** 附加屬性來將工具提示放在指標的上、下、左或右的位置。 您可以設定 [VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset) 和 [HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset) 屬性來變更指標與工具提示之間的距離。
+廣泛的調整，使用[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性或**ToolTipService.Placement**附加屬性來指定工具提示是否應繪製上、 下、 左或向右的指標。 您可以設定[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)的屬性來變更指標與工具提示之間的距離。 只有其中一個兩個位移值將會影響最後位置-VerticalOffset 時位置是頂端或底部，HorizontalOffset 時就會留位置或向右。
 
 ```xaml
-<!-- A TextBlock with an offset ToolTip. -->
-<TextBlock Text="TextBlock with an offset ToolTip.">
+<!-- An Image with an offset ToolTip. -->
+<Image Source="Assets/StoreLogo.png">
     <ToolTipService.ToolTip>
         <ToolTip Content="Offset ToolTip."
-                 HorizontalOffset="20" VerticalOffset="30"/>
+                 Placement="Right"
+                 HorizontalOffset="20"/>
     </ToolTipService.ToolTip>
-</TextBlock>
+</Image>
+```
+
+如果工具提示遮蔽其指出的內容是以，您可以調整它準確地使用新的**PlacementRect**屬性的位置。 PlacementRect 錨定在工具提示的位置，並提供足夠的螢幕空間，以繪製工具提示此區域以外也會將不會遮蓋工具提示，一個區域。 您可以指定相對於工具提示的擁有者，和高度矩形的原點和排除區域的寬度。 如果工具提示應繪製上、 下、 左或向右的 PlacementRect，將會定義的[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性。 
+
+```xaml
+<!-- An Image with a non-occluding ToolTip. -->
+<Image Source="Assets/StoreLogo.png" Height="64" Width="96">
+    <ToolTipService.ToolTip>
+        <ToolTip Content="Non-occluding ToolTip."
+                 PlacementRect="0,0,96,64"/>
+    </ToolTipService.ToolTip>
+</Image>
 ```
 
 ## <a name="recommendations"></a>建議事項
