@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: fab1e83f212675b2c0bb28e0b1ae449f271edec7
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206458"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266305"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>透過 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 的並行和非同步作業。
 > [!NOTE]
@@ -380,7 +380,7 @@ int main()
 ```
 
 > [!NOTE]
-> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種下列兩種完成處理常式的其中一個是適當;不同時針對相同的非同步物件。
+> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種其中一項下列兩種類型的完成處理常式是適當;不同時針對相同的非同步物件。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };

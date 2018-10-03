@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208902"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262347"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
-從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP 應用程式可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP app 可以選擇加入以支援多重執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
 
 > [!IMPORTANT]
 > 多重執行個體支援適用於 JavaScript 應用程式，但不是多重執行個體重新導向。 適用於 JavaScript 應用程式不支援多重執行個體重新導向，因為[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別不是適用於這類應用程式。

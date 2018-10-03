@@ -4,7 +4,7 @@ ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 封裝 UWP 應用程式
 description: 若要發佈或銷售您的通用 Windows 平台 (UWP) 應用程式，您必須為其建立應用程式套件。
 ms.author: lahugh
-ms.date: 06/10/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -13,25 +13,25 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: eb930c5e6b2c1c1f864f2e63fbce97c89bb89e1f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211580"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258459"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
 若要銷售通用 Windows 平台 (UWP) app 或將其散發給其他使用者，您必須封裝應用程式。 如果不想透過 Microsoft Store 散發應用程式，您可以直接將應用程式套件側載至裝置或透過 [Web 安裝](installing-UWP-apps-web.md)散發。 本文描述使用 Visual Studio 設定、建立和測試 UWP app 套件的程序。 如需管理和部署線 (LOB) 應用程式的相關資訊，請查看[企業應用程式管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，您可以提交應用程式套件 (.appx)、應用程式套件組合 (.appxbundle) 或完整的應用程式上傳檔案 (.appxupload) 至 Windows 開發人員中心。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。 
+在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案至 Windows 開發人員中心。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。 
 
 ## <a name="types-of-app-packages"></a>應用程式套件類型
 
-- **應用程式套件 (.appx)**  
-    檔案，包含可側載在裝置上的格式的應用程式。 Visual studio 建立的任何單一 .appx 套件檔案**不**適用於開發人員中心提交，只適用於側載和測試用途。 如果您想要提交應用程式至開發人員中心，請使用應用程式套件上傳檔案。  
+- **應用程式套件 （.appx 或.msix）**  
+    檔案，包含可側載在裝置上的格式的應用程式。 Visual Studio 建立的任何單一應用程式套件檔案是**不**打算提交至開發人員中心，應用於側載和測試之用。 如果您想要提交應用程式至開發人員中心，請使用應用程式套件上傳檔案。  
 
-- **應用程式套件組合 (.appxbundle)**  
+- **應用程式套件組合 （.appxbundle 或.msixbundle）**  
     應用程式套件組合是一種套件，可以包含多個應用程式套件，每一個為了支援特定裝置架構而建置。 例如應用程式套件組合可以包含適用於 x86、x64 及 ARM 設定的三個不同的應用程式套件。 應該盡可能產生應用程式套件組合，因為它們允許您的應用程式用於最多種類的裝置。  
 
 - **應用程式套件上傳檔案 (.appxupload)**  
@@ -80,7 +80,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
 ## <a name="create-an-app-package-upload-file"></a>建立應用程式套件上傳檔案
 
-若要透過 Microsoft Store 散發應用程式，您必須建立應用程式套件 (.appx)、應用程式套件組合 (.appxbundle) 或上傳套件 (.appxupload)，並[將封裝的應用程式提交至開發人員中心](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以只提交應用程式套件或應用程式套件組合至開發人員中心，但建議提交上傳套件。
+若要透過 Microsoft 網上商店應用程式發佈，您必須建立應用程式套件 （.appx 或.msix）、 應用程式套件組合 （.appxbundle 或.msixbundle），或上傳套件 (.appxupload) 並[提交到開發人員中心已封裝的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以只提交應用程式套件或應用程式套件組合至開發人員中心，但建議提交上傳套件。
 
 >[!NOTE]
 > 應用程式套件上傳檔案 (.appxupload) 是**唯一**可使用 Visual Studio 建立、可提交至開發人員中心的有效應用程式套件類型。 其他有效[應用程式套件可以手動建立](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，而不使用 Visual Studio。 
@@ -102,7 +102,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 4.  使用您的開發人員帳戶登入 Windows 開發人員中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
 5.  選取您套件的 App 名稱，或如果您還沒有在 Windows 開發人員中心入口網站保留一個名稱，則保留一個新的名稱。  
     ![顯示選取 App 名稱的 [建立應用程式套件] 視窗](images/packaging-screen4.jpg)
-6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 (.appxbundle) 優於單一應用程式套件 (.appx)，因為它包含了為每種處理器架構類型而設定的應用程式套件集合。 當您選擇產生應用程式套件組合時，將會最終應用程式套件上傳 (.appxupload) 檔案中包含應用程式套件組合，以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 (.appxbundle) 是慣用透過單一應用程式套件檔案因為它包含了為每一種處理器架構設定的應用程式套件的集合。 當您選擇產生應用程式套件組合時，將會最終應用程式套件上傳 (.appxupload) 檔案中包含應用程式套件組合，以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![顯示套件設定的 [建立應用程式套件] 視窗](images/packaging-screen5.jpg)
 
 
@@ -137,7 +137,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
 ## <a name="sideload-your-app-package"></a>側載您的應用程式套件
 
-Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件檔案即可安裝應用程式套件。 若要使用此功能，只需瀏覽到您的應用程式套件 (.appx) 或應用程式套件組合 (.appxbundle) 檔案，然後按兩下。 應用程式安裝程式會啟動並提供基本的應用程式資訊，以及安裝按鈕、安裝進度列和任何相關的錯誤訊息。 
+Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件檔案即可安裝應用程式套件。 若要使用這種情況，瀏覽至您的應用程式套件或應用程式套件組合檔案，然後按兩下它。 應用程式安裝程式會啟動並提供基本的應用程式資訊，以及安裝按鈕、安裝進度列和任何相關的錯誤訊息。 
 
 ![應用程式安裝程式顯示安裝稱為 Contoso 的範例應用程式](images/appinstaller-screen.png)
 
@@ -145,7 +145,7 @@ Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件
 > 應用程式安裝程式假設應用程式已受到裝置的信任。 如果要側載開發人員或企業應用程式，您必須在裝置的受信任的人或受信任的發行者憑證授權單位存放區安裝簽署憑證。 如果您不確定如何執行此動作，請參閱[安裝測試憑證](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-on-previous-versions-of-windows"></a>在舊版 Windows 上側載您的應用程式
-使用 UWP app 套件時，因為它們是使用傳統型應用程式，所以應用程式不會安裝到裝置上。 一般而言，您從 Microsoft Store 下載 UWP app 時，也會同時將應用程式安裝到您的裝置。 應用程式不需要發佈到 Microsoft Store 即可安裝 (側載)。 這可讓您使用您已建立的應用程式套件 (.appx) 來安裝並測試應用程式。 如果您不想在 Microsoft Store 中銷售某個應用程式，例如企業營運 (LOB) 應用程式，您可以側載該應用程式，讓您公司中的其他使用者可以使用它。
+使用 UWP app 套件時，因為它們是使用傳統型應用程式，所以應用程式不會安裝到裝置上。 一般而言，您從 Microsoft Store 下載 UWP app 時，也會同時將應用程式安裝到您的裝置。 應用程式不需要發佈到 Microsoft Store 即可安裝 (側載)。 這可讓您安裝和使用應用程式套件的測試應用程式檔案所建立。 如果您不想在 Microsoft Store 中銷售某個應用程式，例如企業營運 (LOB) 應用程式，您可以側載該應用程式，讓您公司中的其他使用者可以使用它。
 
 下列清單提供您的應用程式的側載需求。
 

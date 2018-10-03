@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 連結, windows 市集通訊協定, 連結到應用程式, 應用程式的連結
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206768"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262075"
 ---
 # <a name="link-to-your-app"></a>應用程式的連結
 
@@ -45,7 +45,7 @@ ms.locfileid: "4206768"
 
 如果您知道您的使用者是在 Windows 裝置上且您想要這些使用者可以直接進入市集中的清單頁面，這些連結會非常有用。 例如，在檢查過瀏覽器中的使用者代理字串以確認使用者的作業系統支援市集後，或您已經透過 UWP app 進行通訊，您可能會想要使用此連結。
 
-若要使用此 URI 配置來直接連結至您的應用程式市集清單，請將您 app 的市集識別碼附加到此連結：
+若要使用此 URI 配置來直接連結至您的應用程式市集清單，將您 app 的市集識別碼附加到此連結：
 
 `ms-windows-store://pdp/?ProductId=`
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207722"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260383"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
@@ -38,7 +38,7 @@ ms.locfileid: "4207722"
 > [!NOTE]
 > 如果*FreshnessTime*設定為少於 15 分鐘，嘗試登錄背景工作時，會擲回例外狀況。
  
-例如，這個觸發程序將導致背景工作小時執行一次。
+例如，這個觸發程序將導致背景工作執行一次在一小時。
 
 ```cs
 TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
@@ -122,7 +122,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 如需有關方式使用者[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制的背景活動的設定，請參閱。
 
 - 記憶體： 調整您的應用程式記憶體與能源使用量很重要，作業系統仍將允許您執行的背景工作。 若要查看您的背景工作正在使用多少記憶體中使用[的記憶體管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 。 您的背景工作會使用更多的記憶體，讓它執行另一個應用程式在前景時，作業系統會越難。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
-- CPU 時間： 背景工作會受限於的實際執行使用時間它們取得根據觸發程序類型。
+- CPU 時間： 背景工作會受限於取得根據觸發程序類型的實際執行使用時間量。
 
 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
 

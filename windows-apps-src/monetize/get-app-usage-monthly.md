@@ -8,18 +8,18 @@ ms.date: 08/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，市集服務，Microsoft Store 分析 API，使用方式
+keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4213258"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258429"
 ---
 # <a name="get-monthly-app-usage"></a>取得每月的應用程式使用方式
 
-在 Microsoft Store 分析 API 中使用這個方法，以針對特定的日期範圍 （過去 90 天只） 及其他選擇性篩選器應用程式取得 JSON 格式 （不包括多人遊戲的 Xbox） 的彙總的使用狀況資料。 這項資訊也會在 Windows 開發人員中心儀表板中的[使用方式報告](../publish/usage-report.md)中提供的。
+在 Microsoft Store 分析 API 中使用這個方法，以取得 （不包括多人遊戲的 Xbox） 的彙總的使用狀況資料 JSON 格式，以針對特定的日期範圍 （過去 90 天只） 及其他選擇性篩選器應用程式。 這項資訊也會在 Windows 開發人員中心儀表板中的[使用方式報告](../publish/usage-report.md)中提供的。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -79,21 +79,21 @@ Authorization: Bearer <your access token>
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                                                                          |
 
  
-### <a name="usage-values"></a>使用值
+### <a name="usage-values"></a>使用量值
 
 *Value* 陣列中的元素包含下列值。
 
 | 值                     | 類型    | 描述                                                                                 |
 |---------------------------|---------|---------------------------------------------------------------------------------------------|
 | 日期                      | 字串  | 第一個日期之日期範圍中的使用狀況資料。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。                          |
-| applicationId             | 字串  | 您正在擷取使用狀況資料之應用程式的 「 市集識別碼。                            |
+| applicationId             | 字串  | 您正在擷取使用狀況資料之 app 的 「 市集識別碼。                            |
 | applicationName           | 字串  | App 的顯示名稱。                                                                |
 | market                    | 字串  | 客戶使用您的應用程式的所在市場的 ISO 3166 國家/地區碼。                   |
 | packageVersion            | 字串  | 使用狀況的發生位置套件的版本。                                            |
 | deviceType                | 字串  | 其中一個下列字串，指定使用狀況的發生所在的裝置的類型：<ul><li>**電腦**</li><li>**Phone**</li><li>**Console**</li><li>**平板電腦**</li><li>**IoT**</li><li>**伺服器**</li><li>**Holographic**</li><li>**不明**</li></ul>                                                                                                                           |
-| subscriptionName          | 字串  | 指出是否透過 Xbox Game Pass 使用量。                                              |
-| monthlySessionCount       | 長整數    | 在該月份的使用者工作階段數目。                                              |
-| engagementDurationMinutes | double  | 以分鐘為單位的使用者正在使用您的應用程式測量由不同的一段時間，從應用程式啟動 （程序開始），而其終止 （程序結束） 時或一段閒置時間後。                               |
+| subscriptionName          | 字串  | 指出是否透過 Xbox Game Pass 使用方式。                                              |
+| monthlySessionCount       | 長整數    | 在該月份內的使用者工作階段數目。                                              |
+| engagementDurationMinutes | double  | 以分鐘為單位的使用者正在使用您的應用程式的一段不同的時間，從應用程式啟動期間測量 （處理程序開始），而其終止 （程序結束） 時或一段閒置時間後。                               |
 | monthlyActiveUsers        | 長整數    | 使用應用程式該月份的客戶數目。                                           |
 | monthlyActiveDevices      | 長整數    | 數字的裝置不同的一段時間，從應用程式啟動 （程序啟動） 開始執行您的應用程式，並在其終止 （程序結束） 時結束，或在一段閒置時間之後。                                                        |
 | monthlyNewUsers           | 長整數    | 使用您的應用程式的第一次該月份的客戶數目。                    |

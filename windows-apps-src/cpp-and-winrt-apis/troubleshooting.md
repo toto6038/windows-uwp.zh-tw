@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: cccc58c0b9dd5f922c87d3e6860bb2f2045ea767
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bc2e7a8f28de4b43a42ff180fe0b12493c398dd0
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208290"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259583"
 ---
 # <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>疑難排解 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 問題
 > [!NOTE]
@@ -51,6 +51,9 @@ XAML 剖析例外狀況可能難以診斷&mdash;特別是如果例外狀況中�
 | LLVM 和 Clang toolchain 會產生錯誤時搭配 C + + /winrt。|我們不支援 LLVM 和 Clang toolchain C + /winrt，但如果您想要模擬我們如何使用它在內部，則您可能會嘗試實驗這類中所述的其中一個[可以使用 LLVM/Clang 來編譯 C + + /winrt？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
 | C + + 編譯器產生的投影類型的 「*沒有適當的預設建構函式*」。 | 如果您嘗試要延遲初始化的執行階段類別物件，或使用，並在同一個專案中，實作執行階段類別，則您必須呼叫`nullptr_t`建構函式。 如需詳細資訊，請參閱 [使用 C++/WinRT 取用 API](consume-apis.md)。 |
 | C + + 編譯器產生 「*錯誤 C3861: 'from_abi': 找不到的識別碼*」，以及其他來自*base.h*的錯誤。 您可能會看到這個錯誤，如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年) 為目標。 | 無論是目標更新版本 （更多符合） 版本的 Windows SDK 中或將專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 寬鬆-** 會出現在專案屬性**C/c + +**  > **語言** > **命令列**在**其他選項**，然後刪除它)。 |
+| C + + 編譯器產生 「*錯誤 C2039: 'IUnknown': 不的成員 '\'global 命名空間'*」。 | 請參閱[我該如何重定我 C + + /winrt 專案，以更新版本的 Windows SDK？](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
+| C + + 連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號_WINRT_CanUnloadNow@0函式中參考_VSDesignerCanUnloadNow@0*」 | 請參閱[我該如何重定我 C + + /winrt 專案，以更新版本的 Windows SDK？](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
+
 
 > [!NOTE]
 > 如果本主題未能回答您的問題，也許您可透過使用 [Stack Overflow 上的 `c++-winrt` 標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt) 來尋求協助。

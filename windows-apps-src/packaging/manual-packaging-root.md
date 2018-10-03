@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8a9c7f504584f64bb561a01170c965aa9d3983
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: fcd6d937c7261b5cfa8af954eb5d2ec2869d8afd
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815823"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260503"
 ---
 # <a name="manual-app-packaging"></a>手動封裝 App
 
@@ -46,5 +46,5 @@ ms.locfileid: "1815823"
 |-------|-------------|
 | [資產套件簡介](asset-packages.md) | 資產套件是一種套件，做為應用程式的常見檔案的集中位置 – 有效免除架構套件中的重複檔案。 |
 | [使用資產套件與套件摺疊進行開發](package-folding.md) | 了解如何使用資產套件與套件摺疊有效地組織您的應用程式。 |
-| [一般套件組合應用程式套件](flat-bundles.md) | 描述如何建立一般套件組合，使用應用程式套件的參照將應用程式的 .appx 套件檔案組合起來。 |
+| [一般套件組合應用程式套件](flat-bundles.md) | 說明如何建立一般套件組合，為您的應用程式套件檔案。 |
 | [使用封裝配置的套件建立](packaging-layout.md) | 封裝配置是一份描述應用程式封裝結構的文件。 它會指定應用程式套件組合（主要和選用）、套件組合中的套件，和套件中的檔案。 |

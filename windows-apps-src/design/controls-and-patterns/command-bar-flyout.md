@@ -5,7 +5,7 @@ title: 命令列飛出視窗
 label: Command bar flyout
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 07/19/2018
+ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -15,17 +15,14 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ec532749fc2dacfc56e80ee2830da36f71c75b2f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205170"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258511"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
-
-> [!IMPORTANT]
-> 本文說明尚未發佈但可能在正式發行前大幅度修改的功能。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。 預覽功能，需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/) ] 或 [ [Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 命令列飛出視窗可讓您與您的 UI 畫布上的項目相關的浮動工具列中顯示命令提供使用者輕鬆存取常見的工作。
 
@@ -33,16 +30,16 @@ ms.locfileid: "4205170"
 
 > 相關資訊，請參閱[飛出視窗](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)、[功能表和操作功能表](menus.md)，和[命令列](app-bars.md)。
 
-[CommandBar](app-bars.md)，例如 CommandBarFlyout 有**PrimaryCommands**和**SecondaryCommands**的屬性，可用來新增命令。 您可以將命令放在集合，或兩者。 何時及如何顯示主要和次要命令，則顯示模式而定。
+[CommandBar](app-bars.md)，例如 CommandBarFlyout 有**PrimaryCommands**和**SecondaryCommands**的屬性，您可用來新增命令。 您可以將命令放在集合，或兩者。 何時及如何顯示主要和次要命令，則顯示模式而定。
 
-命令列飛出視窗有兩種顯示模式：*摺疊*及*展開*。
+命令列飛出視窗會有兩種顯示模式：*摺疊*及*展開*。
 
-- 在已摺疊模式中，會顯示主要的命令。 如果您的命令列飛出視窗具有主要和次要命令，[查看更多] 按鈕，這會以省略符號 \ [• • • \]，會顯示。 這可讓使用者透過轉換到展開模式，以取得存取次要命令。
+- 在已摺疊模式中，會顯示主要的命令。 如果您的命令列飛出視窗具有主要和次要命令，[查看更多] 按鈕，這會以省略符號 \ [• • • \]，會顯示。 這可讓使用者透過轉換來源 \] 來展開模式，以取得次要命令的存取權。
 - 在展開模式中，會顯示主要和次要命令。 （如果控制項有只有第二個項目，它們會顯示類似於 MenuFlyout 控制項的方式）。
 
 | **取得 Windows UI 文件庫** |
 | - |
-| 此控制項是包含在 Windows UI 程式庫，包含新的控制項和 UI 功能適用於 UWP app 的 NuGet 套件。 如需詳細資訊，包括安裝指示，請參閱[Windows UI 文件庫的概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控制項是包含在 Windows UI 程式庫，包含新的控制項和 UI 功能適用於 UWP app 的 NuGet 套件。 如需詳細資訊，包括的安裝指示，請參閱[Windows UI 文件庫的概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows 使用者介面程式庫 Api** |
 | - | - |
@@ -52,7 +49,7 @@ ms.locfileid: "4205170"
 
 使用 CommandBarFlyout 控制項來顯示一組命令給使用者，例如按鈕與功能表項目，在 app 畫布上元素的內容中。
 
-TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以及 PasswordBox 在控制項中顯示文字的命令。 命令會自動適當地設定為目前所選取的文字。 您可以使用 CommandBarFlyout 來取代文字控制項上的預設文字命令。
+TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以及 PasswordBox 在控制項中顯示文字的命令。 命令都會自動適當地設定為目前所選取的文字。 您可以使用 CommandBarFlyout 來取代文字控制項上的預設文字命令。
 
 要顯示與內容相關命令清單項目上的，請依照下列[Contextual 集合和清單的命令功能](collection-commanding.md)中的指導方針。
 
@@ -76,13 +73,13 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以�
 </tr>
 </table>
 
-## <a name="proactive-vs-reactive-invocation"></a>主動與被動引動過程
+## <a name="proactive-vs-reactive-invocation"></a>主動與反應引動過程的比較
 
-通常有兩種方式來叫用的飛出視窗或與 UI 畫布上的項目相關聯的功能表：_主動式引動過程_和_反應引動過程_。
+通常有兩種方式來叫用的飛出視窗或與您的 UI 畫布上的項目相關聯的功能表：_主動式引動過程_和_反應引動過程_。
 
-主動式引動過程中，命令時，自動出現在使用者與命令相關的項目互動。 例如，文字格式設定命令可能會跳出當使用者在文字方塊中選取的文字。 在此情況下，命令列飛出視窗不會焦點。 相反地，它會顯示與使用者互動的項目接近相關的命令。 如果使用者不會與命令互動，它們可將它關閉。
+在主動引動過程中，命令會在使用者互動與命令相關的項目時自動顯示。 例如，文字格式設定命令可能會跳出當使用者在文字方塊中選取的文字。 在此情況下，命令列飛出視窗不會焦點。 相反地，它會顯示與使用者互動的項目接近相關的命令。 如果使用者不會與命令互動，它們可將它關閉。
 
-在被動引動過程中，命令會為了回應明確的使用者動作顯示要求命令;例如，以滑鼠右鍵按一下。 這會對應到傳統[操作功能表](menus.md)的概念。
+在被動引動過程中，命令會以回應明確的使用者動作顯示要求命令;例如，以滑鼠右鍵按一下。 這會對應到傳統[操作功能表](menus.md)的概念。
 
 您可以使用一種方式，或甚至是兩個混合 CommandBarFlyout。
 
@@ -90,16 +87,16 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以�
 
 > **預覽**： CommandBarFlyout 需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/) ] 或 [ [Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
-這個範例示範如何建立命令列飛出視窗並主動及疑問，請使用它。 當點選影像時，飛出視窗會顯示在其摺疊模式。 當顯示為操作功能表，飛出視窗會顯示在其展開模式。 在任一情況下，使用者可以展開或摺疊飛出視窗之後開啟它。
+這個範例示範如何建立命令列飛出視窗並主動及疑問，請使用它。 當點選影像時，飛出視窗會顯示在其摺疊的模式。 當顯示為操作功能表，飛出視窗會顯示在其展開模式。 在任一情況下，使用者可以展開或摺疊飛出視窗之後開啟它。
 
 :::row:::
     :::column:::
-        摺疊的命令列飛出視窗<br/>
-        ![摺疊的命令列飛出視窗的範例](images/command-bar-flyout-img-collapsed.png)
+        A collapsed command bar flyout<br/>
+        ![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
     :::column-end:::
     :::column:::
-        已擴充的命令列飛出視窗<br/>
-        ![已擴充的命令列飛出視窗的範例](images/command-bar-flyout-img-expanded.png)
+        An expanded command bar flyout<br/>
+        ![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
     :::column-end:::
 :::row-end:::
 
@@ -140,7 +137,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 ### <a name="show-commands-proactively"></a>主動顯示命令
 
-當您主動顯示關聯式命令時，只主要命令應該會顯示預設 （應該摺疊命令列飛出視窗）。 將最重要的命令放在主要命令集合和傳統上來說會在操作功能表中移到次要命令集合的其他命令。
+當您主動顯示的關聯式命令時，只主要命令應該會顯示預設 （應該摺疊命令列飛出視窗）。 將最重要的命令放在主要命令集合和傳統上來說會在操作功能表中移到次要命令集合的其他命令。
 
 若要主動顯示命令，您通常會處理[按一下](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click)或[Tapped](/uwp/api/windows.ui.xaml.uielement.tapped)事件，以顯示命令列飛出視窗。 設定飛出視窗的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)為**暫時性**或**TransientWithDismissOnPointerMoveAway**在其摺疊模式中開啟飛出視窗，而不進行對焦。
 
@@ -152,26 +149,26 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 若要顯示命令的操作功能表中，您通常指派飛出視窗的 UI 元素的[ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout)屬性。 如此一來，開啟飛出視窗由項目，處理，而且您不需要執行任何動作。
 
-如果您處理自行顯示飛出視窗，（例如，在上一個[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件），請設定為**標準**其展開模式中開啟飛出視窗，並為它提供焦點的飛出視窗的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode) 。
+如果您處理自行顯示飛出視窗，（例如，在上一個[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件），請設定飛出視窗的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)為**標準**其展開模式中開啟飛出視窗，並為它提供焦點。
 
 > [!TIP]
 > 如需顯示飛出視窗，以及如何控制飛出視窗的位置時的選項的詳細資訊，請參閱[飛出視窗](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)。
 
 ## <a name="commands-and-content"></a>命令與內容
 
-CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性： [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands)和[SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands)。
+CommandBarFlyout 控制項有 2 個您可用來新增命令與內容的屬性： [PrimaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.primarycommands)和[SecondaryCommands](/uwp/api/windows.ui.xaml.controls.commandbarflyout.secondarycommands)。
 
-預設會將命令列項目新增至 **PrimaryCommands** 集合。 這些命令會顯示在命令列中，會顯示在摺疊或展開模式。 不同於 CommandBar，主要命令不會自動溢位的次要命令，並可能會被截斷。
+預設會將命令列項目新增至 **PrimaryCommands** 集合。 這些命令會顯示在命令列中，會顯示在摺疊或展開模式。 不同於 CommandBar，主要命令不會自動執行次要命令的溢位以及可能會被截斷。
 
-您也可以新增到**SecondaryCommands**集合的命令。 次要命令會顯示在功能表部分控制項的而且是只有在展開的模式中顯示。
+您也可以新增到**SecondaryCommands**集合的命令。 次要命令會顯示在功能表部分控制項的而且會顯示只有在展開的模式。
 
 ### <a name="app-bar-buttons"></a>應用程式列按鈕
 
 您可以直接使用[AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、 [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)，以及[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx)控制項填入 PrimaryCommands 和 SecondaryCommands。
 
-應用程式列按鈕控制項可依圖示和文字標籤加以區分。 這些控制項最適合用在命令列中，以及其外觀會改變，取決於控制項在命令列或溢位功能表中所示。
+應用程式列按鈕控制項可依圖示和文字標籤加以區分。 這些控制項最適合用在命令列中，以及其外觀會改變，取決於控制項在命令列還是在溢位功能表中所示。
 
-- 應用程式列按鈕做為主要命令會顯示在命令列中使用其圖示。不顯示的文字標籤。 我們建議您以顯示命令的文字說明使用工具提示，如下所示。
+- 應用程式列按鈕做為主要命令會顯示在命令列中使用其圖示。不會顯示的文字標籤。 我們建議您以顯示命令的文字說明使用工具提示，如下所示。
     ```xaml
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     ```
@@ -179,7 +176,7 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性： [P
 
 ### <a name="other-content"></a>其他內容
 
-您可以在 AppBarElementContainer 中包裝它們，將其他控制項新增到命令列飛出視窗。 這可讓您新增控制項，例如[DropDownButton]()或[SplitButton]()，或新增像是[StackPanel]()來建立更複雜的 UI 容器。
+您可以在 AppBarElementContainer 中包裝它們，將其他控制項新增到命令列飛出視窗。 這可讓您新增控制項，例如[DropDownButton]()或[SplitButton]()，或新增像來建立更複雜的 UI [StackPanel]()容器。
 
 > [!NOTE]
 > 若要新增到主要或次要命令的集合命令列飛出視窗，元素必須實作[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)介面。 AppBarElementContainer 是實作這個介面，讓您可以將項目新增到命令列，即使它不會實作介面本身的包裝函式。
@@ -191,12 +188,12 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性： [P
 
 :::row:::
     :::column:::
-        開啟 SplitButton 包含已摺疊的命令列飛出視窗<br/>
-        ![命令列飛出視窗與分割按鈕](images/command-bar-flyout-split-button.png)
+        A collapsed command bar flyout with an open SplitButton<br/>
+        ![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
     :::column-end:::
     :::column:::
-        包含在功能表中的自訂縮放 UI 擴充的命令列飛出視窗<br/>
-        ![命令列飛出視窗與複雜的 UI](images/command-bar-flyout-complex-ui.png)
+        An expanded command bar flyout with custom zoom UI in the menu<br/>
+        ![A command bar flyout with complex UI](images/command-bar-flyout-complex-ui.png)
     :::column-end:::
 :::row-end:::
 
@@ -271,7 +268,7 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性： [P
 
 您可以使用 CommandBarFlyout 僅次要命令，為[操作功能表](menus.md)，來取代 MenuFlyout。
 
-![命令列飛出視窗僅次要命令](images/command-bar-flyout-context-menu.png)
+![僅次要命令的命令列飛出視窗](images/command-bar-flyout-context-menu.png)
 
 ```xaml
 <Grid>
@@ -313,41 +310,41 @@ CommandBarFlyout 控制項有 2 個可用來新增命令與內容的屬性： [P
 
 ## <a name="command-bar-flyouts-for-text-controls"></a>文字控制項的命令列飛出視窗
 
-[TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)是特殊的命令列飛出視窗，其中包含編輯文字的命令。 每個文字控制項自動顯示 TextCommandBarFlyout，為操作功能表 （按一下滑鼠右鍵），或選取的文字。 文字命令列飛出視窗可隨文字選取項目，只顯示相關的命令。
+[TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)是包含編輯文字的命令專用的命令列飛出視窗。 每個文字控制項可顯示 TextCommandBarFlyout 自動為操作功能表 （按一下滑鼠右鍵），或選取文字時。 文字命令列飛出視窗可隨文字選取項目，只顯示相關的命令。
 
 :::row:::
     :::column:::
-        文字命令列飛出視窗所選取的文字<br/>
-        ![摺疊的文字命令列飛出視窗](images/command-bar-flyout-text-selection.png)
+        A text command bar flyout on text selection<br/>
+        ![A collapsed text command bar flyout](images/command-bar-flyout-text-selection.png)
     :::column-end:::
     :::column:::
-        已展開的文字命令列飛出視窗<br/>
-        ![已展開的文字命令列飛出視窗](images/command-bar-flyout-text-full.png)
+        An expanded text command bar flyout<br/>
+        ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
     :::column-end:::
 :::row-end:::
 
 ### <a name="available-commands"></a>可用的命令
 
-下表顯示已包含在 TextCommandBarFlyout，並顯示這些命令。
+下表顯示已包含在 TextCommandBarFlyout，並顯示它們的命令。
 
 | 命令 | 顯示 \] |
 | ------- | -------- |
-| 粗體 | 當文字控制項不是唯讀 (RichEditBox 只)。 |
-| 斜體 | 當文字控制項不是唯讀 (RichEditBox 只)。 |
-| 底線 | 當文字控制項不是唯讀 (RichEditBox 只)。 |
+| 粗體 | 當文字控制項不是為唯讀 (RichEditBox 只)。 |
+| 斜體 | 當文字控制項不是為唯讀 (RichEditBox 只)。 |
+| 底線 | 當文字控制項不是為唯讀 (RichEditBox 只)。 |
 | 校訂 | 當 IsSpellCheckEnabled **，則為 true** ，而且拼字錯誤時已選取文字。 |
-| 剪下 | 當文字控制項不是唯讀的且已選取文字。 |
+| 剪下 | 當文字控制項不是唯讀的和已選取文字。 |
 | 複製 | 當已選取文字。 |
 | 貼上 | 當文字控制項不是唯讀的且剪貼簿具有內容。 |
-| 復原 | 可以復原的動作時。 |
+| 復原 | 沒有可以復原的動作時。 |
 | 全選 | 當您可以選取文字。 |
 
 ### <a name="custom-text-command-bar-flyouts"></a>自訂文字命令列飛出視窗
 
-TextCommandBarFlyout 無法自訂，並由每個文字控制項自動管理。 不過，您可以將預設 TextCommandBarFlyout 取代自訂命令。
+TextCommandBarFlyout 無法自訂，並由每個文字控制項自動管理。 不過，您可以使用自訂命令來取代預設 TextCommandBarFlyout。
 
-- 若要取代預設會顯示文字選取項目顯示的 TextCommandBarFlyout，您可以建立自訂 CommandBarFlyout （或其他飛出視窗類型），並將它指派給**SelectionFlyout**屬性。 如果您將 SelectionFlyout 設為**null**，沒有命令會顯示在選取項目上。
-- 若要取代預設會顯示為操作功能表的 TextCommandBarFlyout，指派**ContextFlyout**屬性文字控制項上自訂 CommandBarFlyout （或其他飛出視窗類型）。 如果您將 ContextFlyout 設為**null**，而不是 TextCommandBarFlyout 顯示功能表飛出視窗舊版的文字控制項中所示。
+- 若要取代預設 TextCommandBarFlyout 顯示在文字選取項目，您可以建立自訂 CommandBarFlyout （或其他飛出視窗類型），並將它指派給**SelectionFlyout**屬性。 如果您將 SelectionFlyout 設為**null**，沒有命令會顯示在選取項目上。
+- 若要取代預設會顯示為操作功能表的 TextCommandBarFlyout，指派到**ContextFlyout**屬性，在文字控制項上自訂 CommandBarFlyout （或其他飛出視窗類型）。 如果您將 ContextFlyout 設為**null**，而不是 TextCommandBarFlyout 顯示功能表飛出視窗舊版的文字控制項中所示。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

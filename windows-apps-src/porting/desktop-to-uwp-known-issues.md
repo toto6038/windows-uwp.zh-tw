@@ -4,23 +4,23 @@ Description: This article contains known issues with the Desktop Bridge.
 Search.Product: eADQiWindows 10XVcnh
 title: 已知問題 (傳統型橋接器)
 ms.author: normesta
-ms.date: 05/18/2018
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 76ff4fb4b7933c54e5137507e7996eefa7b46d5a
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905379"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263875"
 ---
-# <a name="known-issues-desktop-bridge"></a>已知問題 (傳統型橋接器)
+# <a name="known-issues-with-packaged-desktop-applications"></a>已封裝的傳統型應用程式的已知的問題
 
-本文包含傳統型橋接器的已知問題。
+這篇文章包含傳統型應用程式建立 Windows 應用程式套件時，可能會發生的已知的問題。
 
 <a id="app-converter" />
 
@@ -38,7 +38,7 @@ ms.locfileid: "1905379"
 
 若要修正此問題，請嘗試在提升權限的命令提示字元中執行命令 `Netsh int ipv4 reset`，並重新啟動您的電腦。
 
-### <a name="your-net-app-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>您的 .NET 應用程式使用「AnyCPU」組建選項進行編譯，但安裝仍然失敗
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>您的.NET 應用程式使用"AnyCPU"組建選項編譯並無法安裝
 
 若主要可執行檔或任何相依性檔案是存放於 **Program Files** 或 **Windows\System32** 資料夾階層底下，就有可能會發生此問題。
 
@@ -54,9 +54,9 @@ ms.locfileid: "1905379"
 
 ### <a name="error-found-in-xml-the-executable-attribute-is-invalid---the-value-myappexe-is-invalid-according-to-its-datatype"></a>XML 中找到錯誤。 'Executable' 屬性無效：根據其資料類型，數值 'MyApp.EXE' 無效
 
-若您應用程式中包含了副檔名為大寫 **.EXE** 的可執行檔，就有可能發生這個錯誤。 雖然副檔名的大小寫並不會影響您應用程式的執行，但這仍有可能會使 DAC 產生這個錯誤。
+若您應用程式中包含了副檔名為大寫 **.EXE** 的可執行檔，就有可能發生這個錯誤。 雖然此延伸模組的大小寫不會影響您的應用程式執行，這可能會造成 DAC 產生這個錯誤。
 
-若要修正此問題，請嘗試在封裝時指定 **-AppExecutable** 旗標，並使用小寫的「.exe」作為您主要可執行檔的副檔名 (例如：MYAPP.exe)。    或者，您也可以將您應用程式當中所有可執行檔的副檔名，從小寫變更為大寫 (例如：從 .EXE 改為 .exe)。
+若要修正此問題，請嘗試在封裝時指定 **-AppExecutable** 旗標，並使用小寫的「.exe」作為您主要可執行檔的副檔名 (例如：MYAPP.exe)。    或者您可以變更所有可執行檔的大小寫，在您的應用程式從小寫大寫 (例如： 從。EXE 可.exe)。
 
 ### <a name="corrupted-or-malformed-authenticode-signatures"></a>毀損或格式錯誤的 Authenticode 簽章
 
@@ -97,7 +97,7 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
 
 如果更新無法修正問題，或您不確定如何復原電腦，請連絡 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。
 
-如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，這麼做將會使您的 App 無法提供給尚未安裝更新的使用者。 若要將您 App 的可用性限制為僅提供給已安裝此更新的使用者，請如下所示修改您的 AppxManifest.xml 檔案：
+如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，如此您的應用程式不會提供給尚未安裝更新的使用者。 若要限制您已安裝此更新的使用者的應用程式的可用性，如下所示修改您的 AppxManifest.xml 檔案：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -131,6 +131,41 @@ Windows 應用程式套件資訊清單中的發行者項目必須符合您用來
 certutil -dump <cert_file.pfx>
 ```
 
+<a id="bad-pe-cert" />
+
+### <a name="bad-pe-certificate-0x800700c1"></a>錯誤的 PE 憑證 (0x800700C1)
+
+當您的套件包含已損毀的憑證的二進位檔案時，這可能會發生。 以下是一些為什麼這可能會發生的原因：
+
+* 開始不是憑證的映像的結尾。  
+
+* 憑證的大小不是正面。
+
+* 憑證 [開始] 畫面未之後`IMAGE_NT_HEADERS32`針對 32 位元可執行檔或之後的結構`IMAGE_NT_HEADERS64`64 位元可執行檔的結構。
+
+* 憑證指標沒有正確對齊 WIN_CERTIFICATE 結構。
+
+若要尋找包含錯誤的 PE 憑證檔案，開啟**命令提示字元中**，並設定環境變數，名為`APPXSIP_LOG`設為 1 的值。
+
+```
+set APPXSIP_LOG=1
+```
+
+然後，從**命令提示字元中**，登入您的應用程式一次。 例如：
+
+```
+signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
+```
+
+在**主控台視窗**中，會顯示包含錯誤的 PE 憑證的檔案的相關資訊。 例如：
+
+```
+...
+
+ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.exe
+
+...   
+```
 ## <a name="next-steps"></a>後續步驟
 
 **尋找您的問題解答**

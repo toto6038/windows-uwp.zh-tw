@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop app for the Desktop Bridge.
+Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 Visual Studio 封裝應用程式 (傳統型橋接器)
+title: 使用 Visual Studio 封裝的傳統型應用程式
 ms.author: normesta
 ms.date: 08/30/2017
 ms.topic: article
@@ -11,25 +11,25 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f7ff53aeffced746e78d8b27243469dc547097
-ms.sourcegitcommit: 6382f751f09e2f4aa8406c1ceeb25b5189e23da3
+ms.openlocfilehash: 2c9b7a30a50c26d2dbdaf6df04e85549addaf181
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "2410705"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259807"
 ---
-# <a name="package-an-app-by-using-visual-studio-desktop-bridge"></a>使用 Visual Studio 封裝應用程式 (傳統型橋接器)
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝的傳統型應用程式
 
 您可以使用 Visual Studio 為您的傳統型應用程式產生套件。 然後，您可以將套件發行到 Microsoft Store或將其側載至一部以上的電腦。
 
 最新版的 Visual Studio 提供新版的封裝專案，讓您不必執行以往封裝應用程式過程中需要執行的所有手動步驟。 只需加入封裝專案、參考桌面專案，然後按 F5 對您的應用程式進行偵錯。 不需進行任何手動調整。 這個有效率的全新體驗可以大幅改善舊版 Visual Studio 中所提供的體驗。
 
 >[!IMPORTANT]
->傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 年度更新版 (10.0；組建 14393) 或更新版本的專案。
+>若要建立 Windows 應用程式套件的傳統型應用程式的能力 （也就是傳統型橋接器，在 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
-開始建立應用程式套件之前，先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
+開始建立您的應用程式套件之前，先檢閱本指南：[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -83,18 +83,18 @@ ms.locfileid: "2410705"
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**執行、偵錯或測試您的 app**
+**執行、 偵錯或測試您的傳統型應用程式**
 
-請參閱[執行、偵錯以及測試封裝的傳統型橋接器應用程式 (傳統型橋接器)](desktop-to-uwp-debug.md)
+請參閱[執行、 偵錯以及測試封裝的傳統型應用程式](desktop-to-uwp-debug.md)
 
-**透過新增 UWP API 來增強您的傳統型應用程式**
+**透過新增 UWP Api 來增強您的傳統型應用程式**
 
 請參閱[增強您的 Windows 10 傳統型應用程式](desktop-to-uwp-enhance.md)
 
-**新增 UWP 專案及 Windows 執行階段元件，延伸您的傳統型應用程式**
+**透過新增 UWP 專案和 Windows 執行階段元件來擴充您的傳統型應用程式**
 
 請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](desktop-to-uwp-extend.md)。
 
 **散布您的應用程式**
 
-請參閱[散佈封裝的傳統型應用程式 (傳統型橋接器)](desktop-to-uwp-distribute.md)
+請參閱[散發的已封裝的傳統型應用程式](desktop-to-uwp-distribute.md)

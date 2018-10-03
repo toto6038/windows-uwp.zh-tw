@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3354dad1702d275fb7b2af53516689d2c5d5014
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4204734"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258389"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -24,7 +24,7 @@ ms.locfileid: "4204734"
 在許多情況下，您可以直接從傳統型應用程式呼叫 UWP API，因此在檢視本指南之前，請先參閱[增強 Windows 10](desktop-to-uwp-enhance.md)。
 
 >[!NOTE]
->本指南假設您已使用傳統型橋接器，為您的傳統型應用程式建立 Windows 應用程式套件。 如果尚未完成此步驟，請參閱[傳統型橋接器](desktop-to-uwp-root.md)。
+>本指南假設您已經為您的傳統型應用程式建立 Windows 應用程式套件。 如果您還沒有這麼做，請參閱[封裝傳統型應用程式](desktop-to-uwp-root.md)。
 
 當您準備好時，我們就可以開始進行操作。
 
@@ -40,7 +40,7 @@ ms.locfileid: "4204734"
 
 ![延伸起始專案](images/desktop-to-uwp/extend-start-project.png)
 
-如果您的解決方案不包含封裝專案，請查看[使用 Visual Studio封裝您的應用程式套件](desktop-to-uwp-packaging-dot-net.md)。
+如果您的解決方案不包含封裝專案，請參閱[您使用 Visual Studio 的傳統型應用程式套件](desktop-to-uwp-packaging-dot-net.md)。
 
 ### <a name="add-a-uwp-project"></a>新增 UWP 專案
 
@@ -83,6 +83,9 @@ ms.locfileid: "4204734"
 此圖顯示一個 Windows Forms 應用程式，開啟包含地圖控制項的 XAML 型現代化 UI。
 
 ![調適型設計](images/desktop-to-uwp/extend-xaml-ui.png)
+
+>[!NOTE]
+>這個範例會顯示在 XAML UI，藉由 UWP 專案新增至方案。 這是傳統型應用程式中顯示 XAML Ui 穩定的支援的方法。 這個方法的替代方法是以 UWP XAML 控制項直接新增至您的傳統型應用程式使用 XAML 島。 目前提供做為開發人員預覽 XAML 群島。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟並穩定在未來的 Windows 版本。 若要深入了解 XAML 群島，請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>設計模式
 
@@ -245,7 +248,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ## <a name="provide-services-to-other-apps"></a>提供服務給其他應用程式
 
-您新增一種服務，可供其他應用程式使用。 例如，您可以新增一種服務，提供其他應用程式對於您應用程式後面資料庫的受控制存取權。 藉由執行背景工作，即使您的傳統型應用程式未執行，其他應用程式仍可連線到服務。
+您新增一種服務，可供其他應用程式使用。 例如，您可以新增一種服務，提供其他應用程式對於您應用程式後面資料庫的受控制存取權。 藉由實作背景工作，應用程式可以觸達服務，即使您的傳統型應用程式未執行。
 
 以下是執行此程序的範例。
 
@@ -313,7 +316,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="add-an-app-service-extension-to-the-packaging-project"></a>將應用程式服務延伸模組新增至封裝專案
 
-開啟**package.appxmanifest**檔案的封裝專案中，並新增到應用程式服務延伸模組``<Application>``元素。
+開啟**package.appxmanifest**檔案的封裝專案中，並新增到應用程式服務延伸模組``<Application>``項目。
 
 ```xml
 <Extensions>
@@ -330,7 +333,7 @@ public sealed class AppServiceTask : IBackgroundTask
 
 ### <a name="test-the-app-service"></a>測試應用程式服務
 
-從另一個應用程式呼叫服務，測試您的服務。 此程式碼可以是傳統型應用程式 (例如 Windows Forms 應用程式) 或其他 UWP app。
+從另一個應用程式呼叫服務，測試您的服務。 此程式碼可以是例如 Windows forms 應用程式或其他 UWP 應用程式的傳統型應用程式。
 
 > [!NOTE]
 > 此程式碼只有當您正確設定 ``AppServiceConnection`` 類別的 ``PackageFamilyName`` 屬性時適用。 您可以藉由在 UWP 專案的內容中呼叫打 ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` 取得該名稱。 請參閱[建立和取用 App 服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
@@ -376,7 +379,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 您可以讓您的傳統型應用程式成為分享目標，讓使用者可以輕鬆地共用資料，例如來自支援共用的其他應用程式的圖片。
 
-例如，使用者可以選擇您的應用程式來從 Microsoft Edge 的 [相片] App 分享圖片。 以下是具有該功能的 WPF 範例應用程式。
+例如，使用者可以選擇您的應用程式，來從 Microsoft Edge、 [相片] app 分享圖片。 以下是具有該功能的 WPF 範例應用程式。
 
 ![分享目標](images/desktop-to-uwp/share-target.png)
 

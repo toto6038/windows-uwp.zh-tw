@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208500"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262789"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>建立通用 Windows 平台主控台應用程式
 
 本主題說明如何建立[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 主控台應用程式。
 
-從 Windows 10，版本 1803 起，您可以撰寫 C + + /winrt 或 C + + /CX UWP 主控台應用程式執行於主控台視窗，例如 DOS 或 PowerShell 主控台視窗。 主控台應用程式使用主控台視窗輸入與輸出，並可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，例如**printf**以及**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可從 [開始] 功能表中，啟動 UWP 主控台應用程式，雖然您一般會啟動它們從命令列。
+從 Windows 10，版本 1803 起，您可以撰寫 C + + /winrt 或 C + + /CX UWP 主控台應用程式執行於主控台視窗中，例如 DOS 或 PowerShell 主控台視窗。 主控台應用程式使用主控台視窗輸入與輸出，並可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，例如**printf**以及**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可從 [開始] 功能表中，啟動 UWP 主控台應用程式，雖然您一般會啟動它們從命令列。
 
 若要查看作用中的其中一個，以下是有關建立 UWP 主控台應用程式的影片。
 

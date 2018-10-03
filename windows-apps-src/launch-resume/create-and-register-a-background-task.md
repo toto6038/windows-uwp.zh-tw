@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a599fdef47bb681ef4909fe5bba2a01a1687ba66
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209433"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265375"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立及註冊跨處理序的背景工作
 
@@ -41,11 +41,11 @@ ms.locfileid: "4209433"
 下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。
 
 1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這樣做，請在**方案總管] 中**您的方案節點上按一下滑鼠右鍵，然後選取 [**加入** \> **新的專案**。 然後選取 [ **Windows 執行階段元件**專案類型名稱在專案中，並按一下 [確定]。
-2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 為 C# 或 c + + 應用程式，在您的應用程式專案中，**參考**上按一下滑鼠右鍵並選取 [**加入新的參考**。 在 **\[方案\]** 下選取 **\[專案\]**，然後選取您背景工作專案的名稱並按一下 **\[確定\]**。
-3.  若要背景工作專案中，新增新的類別實作[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法就是一個會在觸發指定的事件; 時呼叫的必要的進入點需要具備這個方法，每個背景工作。
+2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 為 C# 或 c + + 應用程式，在您的應用程式專案中**參考**上按一下滑鼠右鍵並選取 [**加入新的參考**。 在 **\[方案\]** 下選取 **\[專案\]**，然後選取您背景工作專案的名稱並按一下 **\[確定\]**。
+3.  若要背景工作專案中，新增實作[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面的新類別。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是將會在觸發指定的事件; 時呼叫的必要的進入點需要具備這個方法，每個背景工作。
 
 > [!NOTE]
-> 背景工作類別本身&mdash;及背景工作專案中的所有其他類別&mdash;一定要位於**密封**（或**最後一個**） 的**公用**類別。
+> 背景工作類別本身&mdash;和背景工作專案中的所有其他類別&mdash;一定要位於**密封**（或**最後一個**） 的**公用**類別。
 
 下列範例程式碼示範一個非常基本的起點的背景工作類別。
 
@@ -146,7 +146,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 
 4.  如果您在背景工作中執行任何非同步程式碼，您的背景工作就需要使用延遲。 如果您沒有使用延遲，就背景工作處理程序可能意外終止如果**Run**方法傳回之前執行任何非同步工作完成。
 
-要求在**Run**方法中的呼叫非同步方法之前延遲。 將延遲儲存至類別資料成員，以便能夠從非同步方法存取它。 在非同步程式碼執行完成之後，請宣告延遲完成。
+要求**Run**方法中呼叫非同步方法之前的延遲。 將延遲儲存至類別資料成員，以便能夠從非同步方法存取它。 在非同步程式碼執行完成之後，請宣告延遲完成。
 
 下列範例程式碼會取得延遲、 儲存它，並完成非同步程式碼時，放開按鈕後。
 
@@ -204,7 +204,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 ```
 
 > [!NOTE]
-> 在 C# 中，可以使用 **async/await** 關鍵字呼叫背景工作的非同步方法。 在 C + + /CX，可以藉由使用工作鏈結達成類似的結果。
+> 在 C# 中，可以使用 **async/await** 關鍵字呼叫背景工作的非同步方法。 在 C + + /CX，可以使用工作鏈結達成類似的結果。
 
 如需有關非同步模式的詳細資訊，請參閱[非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187335)。 如需有關如何使用延遲防止背景工作提前停止的其他範例，請參閱[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
@@ -276,7 +276,7 @@ while (hascur)
 
 背景工作觸發程序會控制背景工作將在何時執行。 如需可用觸發程序的清單，請參閱 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
-例如，此程式碼會建立新的背景工作，並設定**TimeZoneChanged**觸發程序發生時執行：
+例如，此程式碼會建立新的背景工作，並將設定**TimeZoneChanged**觸發程序發生時也能執行：
 
 ```csharp
 var builder = new BackgroundTaskBuilder();
@@ -417,7 +417,7 @@ task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::
 
 ## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>在應用程式資訊清單中宣告您的 app 使用背景工作
 
-在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的應用程式嘗試與未列在資訊清單中的觸發程序註冊背景工作時，背景工作的註冊將會失敗，「 執行階段類別未登錄 」 錯誤。
+在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的應用程式嘗試與未列在資訊清單中的觸發程序註冊背景工作，背景工作的註冊將會失敗，「 執行階段類別未登錄 」 錯誤。
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
 2.  開啟 **\[宣告\]** 索引標籤。

@@ -4,30 +4,30 @@ Description: View details related to the unique identity assigned to your app by
 title: 檢視應用程式身分識別詳細資料
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ms.author: wdg-dev-content
-ms.date: 12/21/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cf2c10fd8fa581e29fe20c5bdcb2683c5246af1d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211112"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259827"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
 
-使用 Windows 開發人員中心儀表板中應用程式時，您可以檢視由 Microsoft 市集指派給它的唯一身分識別相關詳細資料。 您也可以取得 app 市集清單的連結。
+您可以檢視由其**應用程式身分識別**頁面上的 Microsoft Store 指派給您的應用程式的唯一身分識別相關詳細資料。 您也可以取得的連結到您的應用程式市集清單，在此頁面上。
 
 若要尋找這項資訊，請瀏覽到其中一個 app，然後在左方導覽功能表中展開 **\[應用程式管理\]**。 選取 **\[應用程式身分識別\]** 可檢視這些詳細資料。
 
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>app 套件資訊清單中包含的值
 
-.appx 套件資訊清單中必須包含下列值。 如果您[使用 Microsoft Visual Studio 建立套件](../packaging/packaging-uwp-apps.md)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
+在您的套件資訊清單中必須包含下列值。 如果您[使用 Microsoft Visual Studio 建立套件](../packaging/packaging-uwp-apps.md)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
 
 -   **套件/身分識別/名稱**
 -   **套件/身分識別/發佈者**

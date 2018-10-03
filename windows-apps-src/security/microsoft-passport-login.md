@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209874"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262585"
 ---
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
 
@@ -33,7 +33,7 @@ ms.locfileid: "4209874"
 ## <a name="get-started"></a>入門
 
 
-為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要使用 Visual Studio 2015 (Community 版或更高版本)，或更新版本的 Visual Studio 中，Windows 10 電腦上。 Visual Studio 2015 時所需的最低版本，我們建議您在最新的開發人員和安全性更新使用最新版的 Visual Studio。
+為了能順利建置這個專案，您需要有 C# 及 XAML 方面的經驗。 您也需要使用 Visual Studio 2015 (Community 版或更高版本)，或更新版本的 Visual Studio 中，Windows 10 電腦上。 Visual Studio 2015 時所需的最低版本，我們建議您針對最新的開發人員和安全性更新使用最新版的 Visual Studio。
 
 -   開啟 Visual Studio，然後選取檔案 > 新增 > 專案。
 -   這將會開啟 \[新增專案\] 視窗。 瀏覽至 \[範本\] &gt; \[Visual C#\]。

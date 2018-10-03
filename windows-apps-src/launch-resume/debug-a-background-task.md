@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208482"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262775"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
@@ -105,7 +105,7 @@ ms.locfileid: "4208482"
 -   如果背景工作需要鎖定畫面存取，請確定先將 app 置於鎖定畫面後，再嘗試偵錯背景工作。 如需為具有鎖定畫面功能的 App 指定資訊清單選項的詳細資訊，請參閱[在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。
 -   背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
-如需使用 VS 偵錯背景工作的詳細資訊請參閱[如何觸發暫停、 繼續以及背景事件 UWP 應用程式中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
+如需使用 VS 偵錯背景工作的詳細資訊請參閱[如何觸發暫停、 繼續以及背景事件在 UWP app 中的](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -114,7 +114,7 @@ ms.locfileid: "4208482"
 * [註冊背景工作](register-a-background-task.md)
 * [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [如何觸發暫停、 繼續以及背景事件在 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [如何觸發暫停、 繼續以及背景事件在 UWP app](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [使用 Visual Studio 程式碼分析的 UWP 應用程式的程式碼品質](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  

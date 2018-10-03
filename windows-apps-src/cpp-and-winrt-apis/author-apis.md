@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211238"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261157"
 ---
 # <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)撰寫 API
 
@@ -288,7 +288,7 @@ iclosable.Close();
 如此，您有介面物件，並知道這是在您實作上的介面，然後您可以回到使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi)功能範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
 
 > [!NOTE]
-> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以呼叫[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self) ，而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以呼叫[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
 
 範例如下。 [實作**BgLabelControl**自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)沒有另一個範例。
 

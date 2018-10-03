@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
 ms.localizationpriority: medium
 ms.openlocfilehash: bd3585b1a2fee2a00c99990b32902b524f3318da
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206540"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266146"
 ---
 # <a name="create-app-store-listings"></a>建立應用程式 Store 清單
 
@@ -52,12 +52,12 @@ ms.locfileid: "4206540"
 
 這個下拉式方塊可讓您指定 （如果您沒有保留多個應用程式名稱），應該在市集清單中使用的名稱。
 
-如果您已上傳套件相同的語言，做為您正在使用的市集清單中，會選取這些套件中使用的名稱。 如果您需要重新命名[應用程式](manage-app-names.md#rename-an-app-that-has-already-been-published)，它已經發佈之後，您可以選取不同保留的名稱這裡，當您建立新的提交以使用新的名稱的套件。
+如果您已上傳套件相同的語言，做為您正在使用的市集清單中，會選取這些套件中使用的名稱。 如果您需要重新命名[應用程式](manage-app-names.md#rename-an-app-that-has-already-been-published)，它已經發佈之後，您可以選取不同保留的名稱這裡，當您使用新的名稱的套件，以建立新的提交。
 
 如果您尚未上傳套件的語言，您使用和您已經保留多個名稱，您將需要選取其中一個已保留的 app 名稱，因為沒有該語言可從中提取名稱且相關聯的套件。
 
 > [!NOTE]
-> **產品名稱**選取 [僅適用於您工作的市集清單的語言。 它不會影響在客戶安裝應用程式; 時所顯示的名稱該名稱來自於取得已安裝的套件資訊清單。 若要避免混淆，我們建議每一種語言的封裝和市集清單使用相同的名稱。
+> **產品名稱**選取 [僅適用於您工作的市集清單的語言。 它不會影響在客戶安裝應用程式; 時所顯示的名稱該名稱來自於取得已安裝的套件資訊清單。 若要避免混淆，我們建議每一種語言的封裝和市集清單，使用相同的名稱。
 
 ## <a name="description"></a>描述
 
@@ -134,7 +134,7 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 遊戲的簡短描述可能也會出現在 Xbox One 遊戲中心的 [資訊] 一節。
 
-為獲得最佳結果，讓您的簡短描述下 270 的字元。 欄位有 500 個字元的限制，但在某些檢視中，只有第一次 270 的字元將會顯示 （的連結可用來檢視的簡短描述的其餘部分）。
+為獲得最佳結果，讓您的簡短描述下 270 的字元。 欄位有 500 個字元的限制，但在某些檢視中，只有第一次 270 字元將會顯示 （的連結可用來檢視的簡短描述的其餘部分）。
 
 
 ### <a name="additional-system-requirements"></a>其他系統需求

@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ddeccfe4c5e198afd77eaa4a81fc017543291ba1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4206108"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266033"
 ---
 # <a name="custom-dependency-properties"></a>自訂相依性屬性
 
@@ -170,14 +170,14 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 ```
 
 > [!NOTE]
-> C + /CX 程式碼，為什麼您有私用欄位和表面[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)的公用唯讀屬性是，這樣其他呼叫者使用您相依性屬性也可以使用屬性系統公用程式 Api 需要的原因成為公用的識別碼。 如果讓識別碼保持私用，別人就無法使用這些公用程式 API。 這類 API 的範例和案例包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (選用)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 以及 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836)。 您無法為此使用公用欄位，因為 Windows 執行階段中繼資料的規則並不允許公用欄位。
+> C + /CX 程式碼，為什麼您有私用欄位，而且表面[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)的公用唯讀屬性是，這樣其他呼叫者使用您相依性屬性也可以使用屬性系統公用程式 Api 要求的原因成為公用的識別碼。 如果讓識別碼保持私用，別人就無法使用這些公用程式 API。 這類 API 的範例和案例包括 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 或 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) (選用)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) 以及 [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836)。 您無法為此使用公用欄位，因為 Windows 執行階段中繼資料的規則並不允許公用欄位。
 
 ## <a name="dependency-property-name-conventions"></a>相依性屬性名稱慣例
 
 相依性屬性有命名慣例；除了例外情況之外，請在所有情況中遵循這種命名慣例。 相依性屬性本身具有基本名稱 (在前面的範例中是 "Label")，它是以 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 的第一個參數來指定的。 這個名稱在每個登錄類型中必須是唯一的，而且這種唯一性的需求也適用於任何繼承的成員。 經由基本類型而繼承的相依性屬性會被視為登錄類型的一部分；而繼承的屬性名稱不可被重複登錄。
 
 > [!WARNING]
-> 雖然您提供以下可以是任何字串識別碼的名稱，是在您所選擇的語言進行程式設計中有效，但您通常會想要能夠在 XAML 中設定相依性屬性。 為了能夠在 XAML 中設定，您選擇的屬性名稱必須是有效的 XAML 名稱。 如需詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
+> 雖然您提供以下可以是任何字串識別碼的名稱，是在您所選擇的語言進行程式設計中有效，但您通常會想要能夠太在 XAML 中設定您相依性屬性。 為了能夠在 XAML 中設定，您選擇的屬性名稱必須是有效的 XAML 名稱。 如需詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
 
 在您建立識別碼屬性時，請合併登錄時的屬性名稱與尾碼 "Property" (例如，"LabelProperty")。 這個屬性就是您相依性屬性的識別碼，當您在自己的屬性包裝函式中進行 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 和 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 呼叫時，它就會是您的輸入。 它也會由屬性系統和其他 XAML 處理器所使用，例如
 [**{x:Bind}**](x-bind-markup-extension.md)

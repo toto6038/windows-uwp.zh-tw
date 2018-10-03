@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: 259b171ea490272241fcef1170e2413cb40d7330
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210448"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259977"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP app 的工具組和範例
  
@@ -29,32 +29,37 @@ ms.locfileid: "4210448"
 
 :::row:::
     :::column:::
-        ![主角影像](images/adobe-xd.png) <b>Adobe XD 工具組</b><br>
-        v1806，2018 年 6 月<br>
-        <a href="https://aka.ms/adobexdtoolkit">下載</a>
+        ![hero image](images/adobe-xd.png)
+        <b>Adobe XD toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobexdtoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![主角影像](images/adobe-illustrator.png) <b>Adobe Illustrator 工具組</b><br>
-        v1806，2018 年 6 月<br>
-        <a href="https://aka.ms/adobeillustratortoolkit">下載</a>
+        ![hero image](images/adobe-illustrator.png)
+        <b>Adobe Illustrator toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/adobeillustratortoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![主角影像](images/sketch.png)<b>草圖</b><br>
-        v1803，2018 年 3 月<br>
-        <a href="https://aka.ms/sketchtoolkit">下載</a>
+        ![hero image](images/sketch.png)
+        <b>Sketch</b><br>
+        v1803, March 2018<br>
+        <a href="https://aka.ms/sketchtoolkit">Download</a>
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![主角影像](images/adobe-photoshop.png) <b>Adobe Photoshop 工具組</b><br>
-        v1705，2017 年<br>
-        <a href="https://aka.ms/adobephotoshoptoolkit">下載</a>
+        ![hero image](images/adobe-photoshop.png)
+        <b>Adobe Photoshop toolkit</b><br>
+        v1705, May 2017<br>
+        <a href="https://aka.ms/adobephotoshoptoolkit">Download</a>
     :::column-end:::
     :::column:::
-        ![主角影像](images/framer.png) <b>Framer 工具組</b><br>
-        v1806，2018 年 6 月<br>
-        <a href="https://aka.ms/framertoolkit">下載</a>
+        ![hero image](images/framer.png)
+        <b>Framer toolkit</b><br>
+        v1806, June 2018<br>
+        <a href="https://aka.ms/framertoolkit">Download</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -64,14 +69,16 @@ ms.locfileid: "4210448"
 
 :::row:::
     :::column:::
-        ![WinUI 文件庫縮圖](images/WinUI-library.png) <b>Windows UI 文件庫</b><br>
-        控制項和其他適用於 UWP app 的 UI 元素。<br/>
-        <a href="/uwp/toolkits/winui/getting-started">安裝指示</a><br/>
+        ![WinUI library thumbnail](images/WinUI-library.png)
+        <b>Windows UI Library</b><br>
+        Controls and other UI elements for UWP apps.<br/>
+        <a href="/uwp/toolkits/winui/getting-started">Installation instructions</a><br/>
     :::column-end:::
     :::column:::
-        ![Windows 社群縮圖](images/Windows-community-toolkit.png) <b>Windows 社群工具組</b><br>
-        協助程式函式、 自訂控制項，以及應用程式服務。<br />
-        <a href="/windows/uwpcommunitytoolkit/getting-started">安裝指示</a>
+        ![Windows community thumbnail](images/Windows-community-toolkit.png)
+        <b>Windows Community Toolkit</b><br>
+        Helper functions, custom controls, and app services.<br />
+        <a href="/windows/uwpcommunitytoolkit/getting-started">Installation instructions</a>
     :::column-end:::
     :::column:::
     :::column-end:::
@@ -88,16 +95,22 @@ ms.locfileid: "4210448"
     :::column:::
         <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
-    ::: 欄範圍 ="2":::**適用於 Adobe Photoshop 的磚與圖示產生器**這組適用於 Adobe Photoshop 只需 7 檔案產生 68 的建議的磚和圖示資產。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下載磚與圖示產生器</a></p>
+    :::column span="2":::
+      **適用於 Adobe Photoshop 的磚與圖示產生器**這組適用於 Adobe Photoshop 的動作會從只需 7 檔案產生 68 建議的磚和圖示資產。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下載磚與圖示產生器</a></p>
     :::column-end:::
 :::row-end:::
 
     
 ## <a name="samples"></a>範例
 
+![VanArsdel 映像](images/VanArsdel_Screenshot.png)
+**VanArsdel**<br>
+Van Arsdel，Ltd.端對端 UWP 範例應用程式是以展示波 Microsoft Fluent 設計系統所建立。 它在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 文件庫</a>以及基礎功能強大的 ux 架構和組合會大量運用更高的密度和新的控制項。 此範例顯示如何建立一個豐富且生產力體驗管理作業與購買 （在本案例中，燈光） 的 IoT 裝置。<br>
+<a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下載 VanArsdel 範例</a> <br><a href="https://github.com/microsoft/vanarsdel">請查看 GitHub 上的 VanArsdel 範例</a>
+
 ![建置轉型映像](images/buildcast.png)
 **BuildCast**<br>
-BuildCast 是端對端範例，用來展示 Fluent 設計系統，以及通用 Windows 平台的其他功能。 它可讓您瀏覽、下載和播放特選影片播客，包括 Channel 9 上最受歡迎的取樣，以及一些 Windows 科技愛好者摘要。 它也具備 Ink Notes、書籤和遠端播放。 此範例最初呈現於 Build 2017 會議的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">運用 Fluent 設計建置令人驚豔的應用程式</a>討論中。 <br>
+BuildCast 是端對端範例，用來展示 Fluent Design 系統以及 UWP。 它可讓您瀏覽、下載和播放特選影片播客，包括 Channel 9 上最受歡迎的取樣，以及一些 Windows 科技愛好者摘要。 它也具備 Ink Notes、書籤和遠端播放。 此範例最初呈現於 Build 2017 會議的<a href="https://channel9.msdn.com/Events/Build/2017/B8034">運用 Fluent 設計建置令人驚豔的應用程式</a>討論中。 <br>
 <a href="https://github.com/Microsoft/BuildCast/archive/master.zip">下載 BuildCast 範例</a> <br><a href="https://github.com/Microsoft/BuildCast">查看 GitHub 上的 BuildCast 範例</a>
 
 ![午餐排程器](images/lunchscheduler.png)

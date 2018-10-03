@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
 ms.openlocfilehash: f4d8cb9ef7589bd8f0c56586ab8fcfec7c1f01e3
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212536"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264133"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
@@ -281,9 +281,9 @@ foreach (uint id in toBeRemoved)
 ## <a name="foreground-event-for-notification-addeddismissed"></a>新增/關閉通知的前景事件
 
 > [!IMPORTANT] 
-> 已知問題： 前景事件最新版 Windows 中，會造成 CPU 迴圈與先前無法運作，之前。 請勿使用前景事件。 在 Windows 的未來更新，我們將會修正此問題。
+> 已知問題： 前景事件最新版 Windows 中，會造成 CPU 迴圈與先前操作不在此之前。 請勿使用前景事件。 在 Windows 的即將推出更新，我們將會修正此問題。
 
-而不是使用前景事件，使用較舊版本顯示為[單一處理程序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)的背景工作的程式碼。 背景工作也可讓您關閉或執行您的應用程式時收到變更事件通知這兩個。
+而不是使用前景事件，使用較舊版本顯示為[單一處理程序模型](../../../launch-resume/create-and-register-an-inproc-background-task.md)的背景工作的程式碼。 背景工作也可讓您收到變更事件通知這兩個您的應用程式已關閉或正在執行。
 
 ```csharp
 // Subscribe to foreground event (DON'T USE THIS)

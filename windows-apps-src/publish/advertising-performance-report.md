@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a1a82c91aeafa253427d8e526b38b8ac304591a2
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208574"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261077"
 ---
 # <a name="advertising-performance-report"></a>廣告績效報告
 
@@ -62,7 +62,7 @@ ms.locfileid: "4208574"
 | 投放率  | 從顯示廣告所在的應用程式傳送廣告要求的百分比。  |
 | 點閱數  |  使用者點閱您應用程式中的廣告的次數。 |
 | CTR  |  點閱率，即廣告點閱數除以曝光數。 |
-| 可見性 | 檢視您的應用程式中的廣告曝光數的百分比。 如需有關此值的計算方式的詳細資訊，請參閱[最佳化您的廣告單元的可見性](../monetize/optimize-ad-unit-viewability.md)。 |
+| 可見性 | 可在您的應用程式中檢視廣告曝光數的百分比。 如需有關此值的計算方式的詳細資訊，請參閱[最佳化您的廣告單元的可見性](../monetize/optimize-ad-unit-viewability.md)。 |
 | 賺取的點數  | 如果您執行[社群廣告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)行銷活動，這是指您藉由在應用程式中顯示社群廣告所賺得的促銷廣告空間點數。  |
 | 花費的點數  | 如果您執行[社群廣告](https://docs.microsoft.com/windows/uwp/publish/about-community-ads)行銷活動，這是指您在應用程式廣告上花費的點數。  |
 

@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b7ef1d1a9eb3e268e642cf9b0889df71a59fb44
-ms.sourcegitcommit: f91aa1e402f1bc093b48a03fbae583318fc7e05d
-ms.translationtype: HT
+ms.openlocfilehash: 965ef217fa00131504841ef2209dbe6aa54f50af
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/24/2018
-ms.locfileid: "1917613"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265987"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用應用程式安裝程式檔案安裝相關集合
 
@@ -91,7 +91,7 @@ ms.locfileid: "1917613"
 ```
 
 ### <a name="step-3-add-the-main-package-information"></a>步驟 3：新增主要套件資訊 
-如果主要應用程式套件是 .appxbundle 檔案，則使用 `<MainBundle>`，如下所示。 如果主要應用程式套件是 .appx 檔案，則使用 `<MainPackage>` 取代程式碼片段中的 `<MainBundle>`。 
+如果主要應用程式套件是.appxbundle 或.msixbundle 檔案，請使用`<MainBundle>`如下所示。 如果主要應用程式套件是.appx 或.msix 檔案，請使用`<MainPackage>`取代`<MainBundle>`中的程式碼片段。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

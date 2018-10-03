@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: medium
 ms.openlocfilehash: bf464fa5c7b681b3d36ad95cff5ffc874e319f46
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210028"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263013"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 
@@ -26,9 +26,9 @@ ms.locfileid: "4210028"
 
 ## <a name="account-settings"></a>帳戶設定
 
-若要檢視您的帳戶設定，請按一下儀表板右上角的齒輪圖示，然後選取 [**開發人員設定**。 您可以在此處找到關於您的帳戶和連結至其他頁面，您可以在此檢視資訊以及執行各種帳戶相關工作的詳細資料。
+若要檢視您的帳戶設定，按一下您儀表板右上角的齒輪圖示，然後選取 [**開發人員設定**。 您可以在此處找到關於您的帳戶和連結至其他頁面，您可以在此檢視資訊以及執行各種帳戶相關工作的詳細資料。
 
-在 **\[帳戶詳細資料\]** 區段中，您可以查看帳戶的狀態和類型。 您也可以查看您的賣方識別碼和其他的發行者識別碼資訊以下。 這些值由 Microsoft 指派用以唯一識別您的開發人員帳戶，並無法編輯。
+在 **\[帳戶詳細資料\]** 區段中，您可以查看帳戶的狀態和類型。 您也可以查看您的賣方識別碼及其他的發行者識別碼資訊以下。 這些值由 Microsoft 指派用以唯一識別您的開發人員帳戶，並無法編輯。
 
 > [!NOTE]
 > 針對您個別應用程式的身分識別詳細資料，可以在每個應用程式的[應用程式身分識別](view-app-identity-details.md)頁面找到。

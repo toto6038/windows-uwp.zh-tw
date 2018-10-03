@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211014"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262573"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 銷售 app 的指導方針
 
@@ -47,7 +47,7 @@ ms.locfileid: "4211014"
 
 *授與 Microsoft 商標權*表示*Microsoft 徽章*[徽章產生器](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面上所述。 若要使用這些徽章，您必須：
 
--   在 Microsoft Store 中擁有您的應用程式或提供其他內容，或者是[Microsoft 加盟計畫](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   在 Microsoft Store 中擁有您的 app 或提供其他內容，或者是[Microsoft 加盟計畫](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
 -   如果您已註冊開發人員中心，請遵守「應用程式開發人員合約」的[授與 Microsoft 商標權限](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)區段。
 

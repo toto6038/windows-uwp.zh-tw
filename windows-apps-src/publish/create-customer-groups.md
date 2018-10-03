@@ -11,17 +11,17 @@ keywords: windows 10, uwp, 客戶群組, 區隔, 正式發行前小眾測試版�
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: 88101d9f8cc7ca40d37f88202667f36ecf5d8a3f
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212218"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264165"
 ---
 # <a name="create-customer-groups"></a>建立客戶群組
 
 您可以建立*客戶群組*，包括您的應用程式的客戶的子集。 這些群組可以用來目標客戶，適用於促銷、 測試，以及其他用途。
 
-若要檢視和建立客戶群組，在左邊的導覽功能表中的[Windows 開發人員中心](https://partner.microsoft.com/dashboard)，展開**互動**，然後選取 [**客戶群組**。
+若要檢視和建立客戶群組，在左方的導覽功能表中的[Windows 開發人員中心](https://partner.microsoft.com/dashboard)，展開**互動**，然後選取 [**客戶群組**。
 
 目前支援兩種類型的客戶群組︰
 

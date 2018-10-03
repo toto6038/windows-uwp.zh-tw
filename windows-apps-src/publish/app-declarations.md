@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4208458"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263529"
 ---
 # <a name="product-declarations"></a>產品宣告
 
-[提交程序](app-submissions.md)的 [[屬性](enter-app-properties.md)] 頁面的 [**產品宣告**] 區段可協助確保您的應用程式已適當顯示並提供給獲得正確的客戶，並幫助他們了解如何使用您的應用程式集。
+[提交程序](app-submissions.md)的 [[屬性](enter-app-properties.md)] 頁面的 [**產品宣告**] 區段可協助確保您的應用程式已適當顯示並提供給客戶，並幫助他們了解如何使用您的應用程式正確設定。
 
-下列章節說明部分宣告和您需要決定每個宣告是否適用於您的應用程式時納入考量。 請注意 （如下所述。） 檢查的這些宣告兩個預設根據您的產品類別，您可能也會看到其他宣告。 請務必檢閱所有宣告，並確保它們會正確反映您的提交。
+下列章節說明部分宣告和您需要決定每個宣告是否適用於您的應用程式時納入考量。 請注意，這些宣告其中兩個會檢查預設 （如下所述。）根據您的產品類別中，您可能也會看到其他宣告。 請務必檢閱所有宣告，並確保它們會正確反映您的提交。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此 app 允許使用者進行購買，但不會使用 Microsoft Store 商務系統。
 
@@ -44,13 +44,13 @@ ms.locfileid: "4208458"
 如需詳細資訊，請參閱[協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)，以及[在市集中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非您特別建置 app 並測試針對該用途不清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> 除非您特別建置 app 並測試它針對該用途，否則不要清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
-根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
+根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或為非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
 
-如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在其裝置上內部硬碟的安裝，請取消選取核取此方塊。
+如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部的硬碟在其裝置上安裝，請取消選取核取此方塊。
 
 請注意，是沒有選項可用來限制，讓*應用程式只能*安裝到抽取式存放裝置媒體。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207276"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259767"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -68,7 +68,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在模擬器中執行的應用程式，只需從**執行**下拉式功能表中，在 Visual Studio 中選取模擬的裝置。
+若要在模擬器中執行的應用程式，只要選取從 Visual Studio 中的 [**執行**] 下拉式清單下功能表的模擬的裝置。
 
 ![可以用於解析度、大小及記憶體的模擬器](images/em-list.png)
 

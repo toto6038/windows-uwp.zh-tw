@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: 38596ad12ac309db5dc60e4a5183eee9bf8c7b7c
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211924"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259005"
 ---
 # <a name="take-a-test-javascript-api"></a>進行測驗 JavaScript API
 
-[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是轉譯鎖定線上評定針對高度利害攸關，瀏覽器型 UWP 應用程式可讓授課者專注在評量內容，而非如何提供安全的考試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
+[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10)是瀏覽器為基礎的 UWP 應用程式會轉譯鎖定線上評定針對高度利害攸關，可讓授課者專注在評量內容，而非如何提供安全的考試環境。 為了達成此目的，此應用程式採用任何 Web 應用程式都能使用的 JavaScript API。 「進行測驗」API 支援適用於重大通用核心考試的 [SBAC 瀏覽器 API 標準](http://www.smarterapp.org/documents/SecureBrowserRequirementsSpecifications_0-3.pdf)。
 
 如需有關 App 本身的詳細資訊，請參閱[進行測驗 App 技術參考](https://technet.microsoft.com/edu/windows/take-a-test-app-technical?f=255&MSPPError=-2147217396)。 如需疑難排解協助，請參閱[使用事件檢視器對 [Microsoft 進行測驗] 進行疑難排解](troubleshooting.md)。
 

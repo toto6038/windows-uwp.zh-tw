@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, App 內購買, 應用程式內產品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4212320"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261869"
 ---
 # <a name="add-on-submissions"></a>附加元件提交
 
@@ -85,7 +85,7 @@ ms.locfileid: "4212320"
 
 ## <a name="updating-an-add-on-after-publication"></a>發佈之後更新附加元件
 
-您可以隨時對已發佈的附加元件進行變更。 附加元件變更會提交與發佈獨立於您的應用程式之外，因此您通常不需要更新整個應用程式，就可以對附加元件，例如更新 app 的價格或描述進行變更。
+您可以隨時對已發佈的附加元件進行變更。 附加元件變更會提交與發佈獨立於您的應用程式，因此您通常不需要更新整個應用程式，就可以對附加元件，例如更新 app 的價格或描述的變更。
 
 > [!IMPORTANT]
 > 如果您的應用程式可供 Windows 8.x 的客戶使用，您必須建立並發佈新的應用程式提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。

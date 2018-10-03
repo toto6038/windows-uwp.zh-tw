@@ -11,14 +11,14 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 8748b68bf4efbcc79d0bba475db32f3a2d7cc933
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205230"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260865"
 ---
-# <a name="package-an-app-using-the-desktop-app-converter-desktop-bridge"></a>使用 Desktop App Converter 封裝應用程式 (傳統型橋接器)
+# <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>封裝傳統型應用程式使用 Desktop App Converter
 
 [取得 Desktop App Converter](https://aka.ms/converter)
 
@@ -33,7 +33,7 @@ ms.locfileid: "4205230"
 這個轉換器會在隔離的 Windows 環境中，使用全新基礎映像 (當作轉換器下載的一部分來提供) 來執行桌面安裝程式。 它會擷取桌面安裝程式所製作的任何登錄與檔案系統 I/O，並將它重新封裝為輸出的一部分。
 
 >[!IMPORTANT]
->傳統型橋接器在 Windows 10 (版本 1607) 中引進，只適用於 Visual Studio 中目標為 Windows 10 年度更新版 (10.0；組建 14393) 或更新版本的專案。
+>若要建立 Windows 應用程式套件的傳統型應用程式的能力 （也就是傳統型橋接器，在 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 > [!NOTE]
 > 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片會帶領您逐步操作並探索一些常見的 Desktop App Converter 使用方式。
@@ -54,7 +54,7 @@ ms.locfileid: "4205230"
 
 :heavy_check_mark: 自動簽署您的套件，讓您可以測試您的應用程式。
 
-:heavy_check_mark: 驗證您的應用程式是否違反傳統型橋接器和 Microsoft Store 的需求。
+: heavy_check_mark： 驗證您的應用程式封裝的應用程式與 Microsoft Store 需求。
 
 若要尋找選項的完整清單，請參閱本文的[參數](#command-reference)一節。
 
@@ -62,7 +62,7 @@ ms.locfileid: "4205230"
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
-開始建立應用程式套件之前，先檢閱本指南：[準備封裝應用程式 (傳統型橋接器)](desktop-to-uwp-prepare.md)。
+開始建立您的應用程式套件之前，先檢閱本指南：[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)。
 
 ## <a name="make-sure-that-your-system-can-run-the-converter"></a>請確定您的系統可以執行轉換器
 
@@ -86,7 +86,7 @@ ms.locfileid: "4205230"
 
 ## <a name="set-a-few-things-up-apps-with-installers-only"></a>進行幾項設定 (僅限有安裝程式的應用程式)
 
-若您的應用程式沒有安裝程式，您可以跳到下一節。
+您可以跳到下一節如果您的應用程式沒有安裝程式。
 
 1. 識別您作業系統的版本號碼。
 
@@ -121,7 +121,7 @@ ms.locfileid: "4205230"
 
 若要封裝您的應用程式，請在啟動 Desktop App Converter 時開啟的主控台視窗中執行 ``DesktopAppConverter.exe`` 命令。  
 
-您將會使用參數來指定應用程式的套件名稱、發行者，以及版本號碼。
+您將會使用參數來指定應用程式的套件名稱、 發行者和版本號碼。
 
 > [!NOTE]
 > 若您已經在 Microsoft Store中保留了您應用程式的名稱，您可以使用 Windows 開發人員中心儀表板取得套件和發行者的名稱。 若您想要在其他系統上側載您的應用程式，您可以為他們提供您自己的名稱，只要其發行者名稱與您選擇用來簽署您應用程式之憑證上的名稱相同即可。
@@ -145,13 +145,13 @@ DesktopAppConverter.exe
 以下是一些封裝應用程式的常見方式。
 
 * [封裝有安裝程式 (.msi) 檔案的應用程式](#installer-conversion)
-* [封裝有安裝程式執行檔的應用程式](#setup-conversion)
+* [封裝有安裝程式的可執行檔的應用程式](#setup-conversion)
 * [封裝沒有安裝程式的應用程式](#no-installer-conversion)
 * [封裝應用程式、簽署應用程式，並準備提交Microsoft Store](#optional-parameters)
 
 <a id="installer-conversion" />
 
-#### <a name="package-an-app-that-has-an-installer-msi-file"></a>封裝有安裝程式 (.msi) 檔案的應用程式
+#### <a name="package-an-application-that-has-an-installer-msi-file"></a>封裝有安裝程式 (.msi) 檔案的應用程式
 
 使用 ``Installer`` 參數指向安裝程式檔案。
 
@@ -170,7 +170,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 
 <a id="setup-conversion" />
 
-#### <a name="package-an-app-that-has-a-setup-executable-file"></a>封裝有安裝程式執行檔的應用程式
+#### <a name="package-an-application-that-has-a-setup-executable-file"></a>封裝有安裝程式的可執行檔的應用程式
 
 使用 ``Installer`` 參數指向安裝程式執行檔。
 
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
 
-``InstallerArguments`` 是一項選擇性參數。 然而，由於 Desktop App Converter 需要您的安裝程式才能在自動模式下執行，您可能需要使用這項參數，才能確保您的應用程式能使無訊息 (silent) 旗標正常運作。 ``/S`` 旗標是一個相當常見的無訊息旗標，但您使用的旗幟可能會因您所使用的安裝技術而有所不同。
+``InstallerArguments`` 是一項選擇性參數。 不過，由於 Desktop App Converter 需要您在自動安裝模式中執行的安裝程式，您可能會有使用它，如果您的應用程式需要以無訊息方式執行的無訊息旗標。 ``/S`` 旗標是一個相當常見的無訊息旗標，但您使用的旗幟可能會因您所使用的安裝技術而有所不同。
 
 **影片**
 
@@ -188,9 +188,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 <a id="no-installer-conversion" />
 
-#### <a name="package-an-app-that-doesnt-have-an-installer"></a>封裝沒有安裝程式的應用程式
+#### <a name="package-an-application-that-doesnt-have-an-installer"></a>封裝沒有安裝程式的應用程式
 
-在這個範例中，您可以使用 ``Installer`` 參數指向您應用程式的根資料夾。
+在這個範例中，使用``Installer``參數指向您的應用程式檔案的根資料夾。
 
 使用 `AppExecutable` 參數，指向您應用程式的可執行檔。
 
@@ -209,7 +209,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>封裝應用程式、簽署應用程式，並對套件執行驗證檢查
 
-這個範例與第一個範例相似，然而其不同點在它會告訴您如何簽署您的應用程式以供本機進行測試。並且驗證您的應用程式，確定其並未違反傳統型橋接器和 Microsoft Store 需求。
+此範例是第一個類似，只不過它會顯示如何簽署您的應用程式供本機進行測試，並驗證您的應用程式封裝的應用程式與 Microsoft Store 需求。
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -217,9 +217,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
 
-``Sign`` 參數會產生一個憑證，然後以此憑證簽署您的應用程式。 若要執行您的應用程式，您必須先安裝該產生的憑證。 若要了解如何執行，請參閱本文中[執行封裝後的應用程式](#run-app)一節。
+``Sign``參數會產生憑證，然後簽署您的應用程式使用它。 若要執行您的應用程式，您必須先安裝該產生的憑證。 若要了解如何執行，請參閱本文中[執行封裝後的應用程式](#run-app)一節。
 
-您可以使用 ``Verify`` 參數來驗證您的應用程式。
+您可以驗證您的應用程式使用``Verify``參數。
 
 ### <a name="a-quick-look-at-optional-parameters"></a>快速查看選用參數
 
@@ -267,11 +267,11 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |<a id="conversion-params" /> <strong>轉換參數</strong>|||
 |-AppInstallPath &lt;String&gt;  |選用 |您的應用程式在安裝之後，其已安裝檔案根資料夾的完整路徑 (例如 "C:\Program Files (x86)\MyApp")。|
 |-Destination &lt;String&gt; |必要 |適用於轉換器 appx 輸出的所需目的地，如果尚未存在，DesktopAppConverter可以建立此位置。|
-|-Installer &lt;String&gt; |必要 |應用程式的安裝程式路徑，必須能夠自動執行或以無訊息方式執行。 無安裝程式碼轉換，這是應用程式檔案根目錄的路徑。 |
+|-Installer &lt;String&gt; |必要 |應用程式的安裝程式路徑，必須能夠自動執行或以無訊息方式執行。 無安裝程式轉換時，這是您的應用程式檔案的根目錄的路徑。 |
 |-InstallerArguments &lt;String&gt; |選用 |以逗號分隔的引數清單或字串，可強制您的安裝程式自動執行或以無訊息方式執行。 如果您的安裝程式是 msi，則此為選用參數。 若要取得安裝程式的記錄，請提供此處的安裝程式記錄引數，然後使用路徑 &lt;log_folder&gt;，此為轉換器會使用適當路徑來取代的語彙基元。 <br><br>**注意**︰自動/無訊息旗標和記錄引數會隨著安裝程式技術而不同。 <br><br>此參數的一個用法範例︰-InstallerArguments "/silent /log &lt;log_folder&gt;\install.log" 另一個不會產生記錄檔的範例可能看起來如下︰```-InstallerArguments "/quiet", "/norestart"``` 同樣地，如果您想要轉換器擷取它並將它放在最後一個記錄資料夾中，就必須照字面將任何記錄引導至語彙基元路徑 &lt;log_folder&gt;。|
 |-InstallerValidExitCodes &lt;Int32&gt; |選用 |以逗號分隔的結束代碼清單，表示您的安裝程式已成功執行 (例如︰0, 1234, 5678)。  針對非 msi，這個值預設是 0，針對 msi 則為 0, 1641, 3010。|
 |-MakeAppx [&lt;SwitchParameter&gt;]  |選用 |一個參數，如果顯示，即會通知這個指令碼呼叫輸出上的 MakeAppx。 |
-|-MakeMSIX [&lt;SwitchParameter&gt;]  |選擇性 |一個參數，如果存在，會告訴這個指令碼來封裝為 MSIX 套件輸出。 |
+|-MakeMSIX [&lt;SwitchParameter&gt;]  |選擇性 |一個參數，如果存在，即會通知這個指令碼來封裝 MSIX 封裝為輸出。 |
 |<a id="identity-params" /><strong>套件識別資料參數</strong>||
 |-PackageName &lt;String&gt; |必要 |通用 Windows app 套件的名稱。 如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。 |
 |-Publisher &lt;String&gt; |必要 |通用 Windows app 套件的發行者 |
@@ -296,7 +296,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-LogFile &lt;String&gt;  |選用 |指定記錄檔。 如果省略，則會建立記錄檔暫時位置。 |
 | -Sign [&lt;SwitchParameter&gt;] |選用 |告訴此指令碼使用為測試用途產生的憑證簽署輸出的 Windows 應用程式套件。 這個參數應該出現在參數 ```-MakeAppx``` 旁邊。 |
 |&lt;一般參數&gt; |必要 |這個 Cmdlet 支援一般參數：*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable* 及 *OutVariable*。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)。 |
-| -Verify [&lt;SwitchParameter&gt;] |選擇性 |一個參數，如果存在，這個參數會指示 DAC 根據傳統型橋接器及 Microsoft Store 需求來驗證應用程式套件。 結果會是驗證報告「VerifyReport.xml」，這在瀏覽器中呈現最佳視覺效果。 這個參數應該出現在參數 `-MakeAppx` 旁邊。 |
+| -Verify [&lt;SwitchParameter&gt;] |選擇性 |一個參數，如果存在，會告訴 DAC 來驗證應用程式套件已封裝應用程式與 Microsoft Store 需求。 結果會是驗證報告「VerifyReport.xml」，這在瀏覽器中呈現最佳視覺效果。 這個參數應該出現在參數 `-MakeAppx` 旁邊。 |
 |-PublishComRegistrations| 選用| 掃描所有由您的安裝程式建立的公用 COM 註冊，並發行資訊清單中有效的項目。 只有當您想要讓其他應用程式使用這些註冊時，才使用此旗標。 若只有您的應用程式才會使用到這些註冊，則您就不需要使用此旗標。 <br><br>請參閱[本文](https://blogs.windows.com/buildingapps/2017/04/13/com-server-ole-document-support-desktop-bridge/#lDg5gSFxJ2TDlpC6.97)以確定您的 COM 註冊在您封裝應用程式之後，其行為會跟預期中的一樣。
 
 <a id="run-app" />
@@ -305,9 +305,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 您有兩種方式執行您的應用程式。
 
-其中一個方式是開啟 PowerShell 命令提示字元，並輸入此命令︰```Add-AppxPackage –Register AppxManifest.xml```。 這可能是執行您的應用程式最簡單的方式，因為應用程式不需要先經過簽署。
+其中一個方式是開啟 PowerShell 命令提示字元，並輸入此命令︰```Add-AppxPackage –Register AppxManifest.xml```。 這可能是最簡單的方式執行您的應用程式，因為您不需要簽署它。
 
-另一個方式則是使用一個憑證簽署您的應用程式。 若您使用了 ```sign``` 參數，Desktop App Converter 會為您產生一個憑證，並以該憑證簽署您的應用程式。 該憑證的檔名為 **auto-generated.cer**，您可以在封裝後應用程式的根資料夾中找到該檔案。
+另一種方法是簽署您的應用程式的憑證。 如果您使用```sign```參數，Desktop App Converter 會產生一個，並再登入您的應用程式使用它。 該憑證的檔名為 **auto-generated.cer**，您可以在封裝後應用程式的根資料夾中找到該檔案。
 
 請依照下列步驟來安裝產生的認證，然後再執行您的應用程式。
 
@@ -334,9 +334,9 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 ## <a name="modify-the-packaged-app"></a>修改已封裝的應用程式
 
-您可能會想要變更您已封裝的應用程式，處理 BUG、增加視覺資產，或是透過現代化的體驗 (例如動態磚) 來美化您的應用程式。
+您可能會進行變更，您已封裝的應用程式，以處理 bug、 增加視覺資產，或增強您的應用程式透過現代化的體驗，例如動態磚。
 
-在您完成變更之後，您不需要再執行一次轉換器。 在大部分情況下，您可以使用 MakeAppx 工具和 DAC 為您應用程式產生的 appxmanifest.xml 檔案，重新封裝您的應用程式。 請參閱[產生 Windows 應用程式套件](desktop-to-uwp-manual-conversion.md#make-appx)。
+在您完成變更之後，您不需要再執行一次轉換器。 在大部分情況下，您可以和重新封裝您的應用程式使用 MakeAppx 工具產生的 appxmanifest.xml 檔案 DAC 為您的 app。 請參閱[產生 Windows 應用程式套件](desktop-to-uwp-manual-conversion.md#make-appx)。
 
 * 如果您修改應用程式的任一視覺資產，請產生新的套件資源索引檔案，然後執行 MakeAppx 工具以產生新的套件。 請參閱[建立套件資源索引 (PRI) 檔案](desktop-to-uwp-manual-conversion.md#make-pri)。
 
@@ -351,7 +351,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Modifying-and-Repackaging-Output-from-Desktop-App-Converter-OwpAJ3WhD_6706218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Modify-Output-from-Desktop-App-Converter-gEnsa3WhD_8606218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
-下列兩個小節描述了幾個您可能會考慮套用至您已封裝應用程式的選用修正內容。
+下列兩個章節說明幾個選擇性的已封裝的應用程式，您可能要考慮的修正程式開放。
 
 ### <a name="delete-unnecessary-files-and-registry-keys"></a>刪除不需要的檔案和登錄機碼
 
@@ -400,10 +400,10 @@ Desktop App Converter 不支援 Unicode；因此，您無法在工具上使用�
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**執行您的應用程式/找出並修正問題**
+**執行您的應用程式 / 找出並修正問題**
 
-請參閱[執行、偵錯以及測試封裝的傳統型橋接器應用程式 (傳統型橋接器)](desktop-to-uwp-debug.md)
+請參閱[執行、 偵錯以及測試封裝的傳統型應用程式](desktop-to-uwp-debug.md)
 
 **散布您的應用程式**
 
-請參閱[散佈封裝的傳統型應用程式 (傳統型橋接器)](desktop-to-uwp-distribute.md)
+請參閱[散發的已封裝的傳統型應用程式](desktop-to-uwp-distribute.md)

@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f4d9cde6ee2bc9615f044f18bc5e8828ca1985
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: ca59855456abe366ec681404b3bf6253bc182f79
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209318"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258687"
 ---
 # <a name="color"></a>色彩
 
@@ -29,23 +29,23 @@ ms.locfileid: "4209318"
 
 :::row:::
     :::column:::
-        **有意義地使用色彩。**
-謹慎使用色彩來醒目提示重要元素，可以協助建立流暢、直覺的使用者介面。
+        **Use color meaningfully.**
+        When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.
     :::column-end:::
     :::column:::
-        **使用色彩來表示互動性。**
-最好選擇一種色彩來表示您應用程式中的可互動元素。 例如，許多網頁使用藍色文字來表示超連結。
+        **Use color to indicate interactivity.**
+        It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **色彩是個人化。**
-在 Windows 中，使用者可以選擇在他們的體驗中要反映的輔色和淺色或深色佈景主題。 您可以選擇如何將使用者的輔色及佈景主題整合到您的應用程式中，以提供個人化的體驗。
+        **Color is personal.**
+        In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.
     :::column-end:::
     :::column:::
-        **色彩跟文化有關。**
-請考慮您使用的色彩會如何被來自不同文化背景的人解讀。 例如，在某些文化中，藍色代表美德和保護，但在其他文化中代表服喪。
+        **Color is cultural.**
+        Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.
     :::column-end:::
 :::row-end:::
 
@@ -108,7 +108,7 @@ UWP app 可以使用淺色或深色應用程式佈景主題。 佈景主題會�
 
 :::row:::
     :::column:::
-        當建立自訂控制項的範本，請使用佈景主題筆刷，而不是硬式色彩值。 如此一來，您的應用程式可以輕鬆地適應任何佈景主題。
+        When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
         For example, these [item templates for ListView](../controls-and-patterns/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
@@ -147,10 +147,12 @@ UWP app 可以使用淺色或深色應用程式佈景主題。 佈景主題會�
 
 :::row:::
     :::column:::
-        ![使用者選取輔標頭](images/color/user-accent.svg)![使用者選取的輔色](images/color/user-selected-accent.svg)
+        ![user-selected accent header](images/color/user-accent.svg)
+        ![user-selected accent color](images/color/user-selected-accent.svg)
     :::column-end:::
     :::column:::
-        ![自訂輔標頭](images/color/custom-accent.svg)![自訂品牌輔色](images/color/brand-color.svg)
+        ![custom accent header](images/color/custom-accent.svg)
+        ![custom brand accent color](images/color/brand-color.svg)
     :::column-end:::
 :::row-end:::
 
@@ -254,13 +256,160 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 如需如何使用筆刷的詳細資訊，請參閱 [XAML 筆刷](brushes.md)。
 
+## <a name="scoping-system-colors"></a>設定系統色彩的範圍。
+
+除了在您的應用程式中定義您自己的色彩，您可以也的範圍設定到所需的地區我們 systematized 的色彩在您的 app 使用**ColorSchemeResources**標記。 此 API 可讓您不僅以色彩標示和佈景主題大型的控制項群組，一次是藉由設定一些屬性，但也可讓您許多其他系統受益，您通常不會取得以手動方式定義您自己自訂的色彩：
+
+- 使用**ColorSchemeResources**設定任何色彩不會作用高對比佈景主題
+  * 這表示您的應用程式都可以存取更多人不需要任何額外的設計或開發人員成本
+- 可以輕鬆地色彩為淺色、 深色或普遍跨兩個佈景主題上設定設定的一個屬性 API
+- **ColorSchemeResources**上所設定的色彩會重疊顯示下所有相似的控制項也會使用該系統色彩
+  * 這樣可確保，您將會同時又維持您的品牌的外觀在應用程式有一致的色彩本文
+- 不需要重新套用範本會影響所有的視覺狀態、 動畫和不透明度變化
+
+### <a name="how-to-use-colorschemeresources"></a>如何使用 ColorSchemeResources
+
+ColorSchemeResources 是 API，以告知的系統有哪些資源甚已限定範圍的位置。 ColorSchemeResources 必須採取一種[X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，可以是三個選項的其中一個：
+- 預設值
+  * 將會在[淺色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)佈景主題中顯示您色彩的變更
+- 光源
+  * 將會在[淺色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)中僅顯示您的色彩變更 
+- 暗色調
+  * 將會在[深色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)中僅顯示您的色彩變更
+
+設定該 X:key 可確保您的色彩將適當地變更為系統或應用程式佈景主題中，您應該想要在任一種佈景主題中的不同自訂外觀。
+
+### <a name="how-to-apply-scoped-colors"></a>如何套用限定範圍的色彩
+
+範圍透過**ColorSchemeResources** API 在 XAML 中的資源，可讓您充分任何系統色彩或筆刷，在我們[的佈景主題資源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)的程式庫，並重新定義它們的頁面或容器的範圍內。
+
+例如，如果您定義兩個系統色彩- **SystemBaseLowColor**和**SystemBaseMediumLowColor**內 grid，並再放在頁面上的兩個按鈕： 在該資料格，內的一個，一個外部：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+        <ColorSchemeResources x:Key="Default" 
+        SystemBaseLowColor="LightGreen" 
+        SystemBaseMediumLowColor="DarkCyan"/>
+    </Grid.Resources>
+
+    <Buton Content="Button_A"/>
+</Grid>
+<Buton Content="Button_B"/>
+```
+
+您會取得**Button_A**用套用新的色彩，並**Button_B**不會受到看起來就像我們的系統預設按鈕一樣：
+
+![限定範圍的系統色彩] 按鈕](images/color/scopedcolors_cyan_button.png)
+
+不過，因為我們所有的系統色彩串聯到其他控制項，設定**SystemBaseLowColor**和**SystemBaseMediumLowColor**會影響不只是按鈕。 在此情況下，會控制像**ToggleButton**、**選項按鈕**和**滑桿**會也會受到這些系統色彩會變更，應該這些控制項放上方 exampl grid 的範圍。
+如果您想要的範圍設定系統色彩變更*至單一控制項只有*您可以藉由在該控制項的資源中定義**ColorSchemeResources**來執行此動作：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Button Content="Button_A">
+        <Button.Resources>
+            <ColorSchemeResources x:Key="Default" 
+                SystemBaseLowColor="LightGreen" 
+                SystemBaseMediumLowColor="DarkCyan"/>
+        </Button.Resources>
+    </Button>
+</Grid>
+<Button Content="Button_B"/>
+```
+您基本上有完全相同的動作之前，但現在任何其他控制項新增至方格會被選取，色彩會變更。 這是因為這些系統色彩的僅限範圍限於**Button_A** 。
+
+### <a name="nesting-scoped-resources"></a>巢狀結構已限定範圍，資源
+
+巢狀系統色彩也是可能的時候，並會在您的應用程式的版面配置的標記內的巢狀項目資源中放置**ColorSchemeResources**這樣做：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+        <ColorSchemeResources x:Key="Default"
+            SystemBaseLowColor="LightGreen"
+            SystemBaseMediumLowColor="DarkCyan"/>
+    </Grid.Resources>
+
+    <Button Content="Button_A"/>
+    <Grid x:Name="Grid_B">
+        <Grid.Resources>
+            <ColorSchemeResources x:Key="Default"
+                SystemBaseLowColor="Goldenrod"
+                SystemBaseMediumLowColor="DarkGoldenrod"/>
+        </Grid.Resources>
+
+        <Button Content="Nested Button"/>
+    </Grid>
+</Grid>
+```
+
+在此範例中，繼承**Button_A** **Grid_A**的資源中定義的色彩和**巢狀按鈕**繼承自**Grid_B**的資源的色彩。 透過擴充方式，這表示任何其他控制項放在**Grid_B**將會檢查，或之前檢查或套用**Grid_A**的資源，第一次，套用**Grid_B**的資源，最後套用我們的預設色彩，如果不顯示任何資訊定義在頁面或應用程式層級。
+
+這適用於任何數目的巢狀項目，將其資源有色彩定義。
+
+### <a name="scoping-with-a-resourcedictionary"></a>使用 ResourceDictionary 範圍設定
+
+您並不受限於容器或頁面的資源，並也可以可以合併在任何範圍的方式，您通常會合併字典的 ResourceDictionary 中定義這些系統色彩。
+
+#### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
+
+首先，您會建立 ResourceDictionary。 然後放置內 ThemeDictionaries **ColorSchemeResources**並覆寫所需的系統的色彩：
+
+```xaml
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TestApp">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <ColorSchemeResources x:Key="Default"
+            SystemBaseLowColor="LightGreen"
+            SystemBaseMediumLowColor="DarkCyan"/>
+        
+    </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
+```
+
+#### <a name="mainpagexaml"></a>MainPage.xaml
+
+在頁面中包含您的版面配置，只需合併您想要的範圍內該字典中：
+
+```xaml
+<Grid x:Name="Grid_A">
+    <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="MyCustomTheme.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </Grid.Resources>
+             
+    <Button Content="Button_A"/>
+</Grid>
+```
+
+現在，您可以是所有的資源、 佈景主題設定，以及自訂色彩放在單一的**MyCustomTheme**資源字典中並已限定範圍，而不必擔心您版面配置的標記中的額外雜亂所需的位置。
+
+### <a name="other-ways-to-define-color-resources"></a>其他方式定義的色彩資源
+
+ColorSchemeResources 也允許放入系統色彩和為包裝函式，而不列中，直接內定義：
+
+``` xaml
+<ColorSchemeResources x:Key="Dark">
+    <Color x:Key="SystemBaseLowColor">Goldenrod</Color>
+</ColorSchemeResources>
+```
+
 ## <a name="usability"></a>可用性
 
 :::row:::
     :::column:::
-        ![對比圖例](images/color/illo-contrast.svg)
+        ![contrast illustration](images/color/illo-contrast.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::**對比**
+    :::column span="2":::
+        **Contrast**
 
         Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.
 
@@ -270,9 +419,10 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 :::row:::
     :::column:::
-        ![對比圖例](images/color/illo-lighting.svg)
+        ![contrast illustration](images/color/illo-lighting.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::**光源**
+    :::column span="2":::
+        **Lighting**
 
         Be aware that variation in ambient lighting can affect the useability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
@@ -280,9 +430,10 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 :::row:::
     :::column:::
-        ![對比圖例](images/color/illo-colorblindness.svg)
+        ![contrast illustration](images/color/illo-colorblindness.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::**色盲**
+    :::column span="2":::
+        **Colorblindness**
 
         Be aware of how colorblindness could affect the useability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About **8 percent of men** and **0.5 percent of women** are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.
     :::column-end:::

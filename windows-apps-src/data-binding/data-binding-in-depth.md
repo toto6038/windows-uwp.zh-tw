@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c77450c3885f8a9bcd698e25ca721c4c3fe1305
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817829"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259153"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
@@ -23,6 +23,7 @@ ms.locfileid: "1817829"
 
 **重要 API**
 
+-   [**{x:Bind} 標記延伸**](../xaml-platform/x-bind-markup-extension.md)
 -   [**Binding 類別**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
@@ -64,7 +65,8 @@ ms.locfileid: "1817829"
 
 以下是一個非常基本的類別實作，可做為繫結來源。
 
-**注意**  如果您將 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 與 Visual C++ 元件延伸模組 (C++/CX) 搭配使用，則需將 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 屬性新增到繫結來源類別。 如果使用 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，則不需該屬性。 請參閱[新增詳細資料檢視](data-binding-quickstart.md#adding-a-details-view)，以取得程式碼片段。
+> [!Note]
+> 如果您使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)使用 Visual c + + 元件延伸 (C + + /CX) 便需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您的繫結來源類別。 如果使用 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，則不需該屬性。 請參閱[新增詳細資料檢視](data-binding-quickstart.md#adding-a-details-view)，以取得程式碼片段。
 
 ```csharp
 public class HostViewModel
@@ -84,7 +86,8 @@ public class HostViewModel
 
 將類別變成可觀察還有更簡便的作法，也是已有基底類別的類別的必要作法，就是實作 [**System.ComponentModel.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx)。 這只需要實作一個名為 **PropertyChanged** 的事件。 以下是使用 **HostViewModel** 的範例。
 
-**注意**  對於 C++/CX，您實作 [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)，且繫結來源類別必須具備 [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 或實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。
+> [!Note]
+> 針對 C + + /CX，您實作[**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)，並繫結來源類別必須有[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)或實作[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。
 
 ```csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -158,12 +161,11 @@ public class HostViewModel : BindableBase
 
 在下列兩個範例中，**Button.Content** 屬性是繫結目標，而它的值設定為宣告繫結物件的標記延伸。 首先顯示 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，接著顯示 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 通常是在標記中宣告繫結 (方便、易讀、可加工)。 但如果需要的話，您可以避免使用標記，改為立即 (以程式設計方式) 建立 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 類別的執行個體。
 
-<!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-```xml
+```xaml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-```xml
+```xaml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -189,7 +191,7 @@ namespace QuizGame.View
 
 完成了，我們現在可以仔細看看宣告繫結物件的標記。 下列範例使用稍早已在「繫結目標」一節中使用的 **Button.Content** 繫結目標，並顯示它已繫結到 **HostViewModel.NextButtonText** 屬性。
 
-```xml
+```xaml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -201,13 +203,14 @@ namespace QuizGame.View
               **Path**
             ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) 屬性支援多種繫結語法選項，可讓您繫結到巢狀屬性、附加屬性以及整數和字串索引子。 如需詳細資訊，請參閱 [Property-path 語法](https://msdn.microsoft.com/library/windows/apps/Mt185586)。 繫結到字串索引子可以提供繫結至動態屬性的效果，卻不需實作 [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878)。 如需其他設定，請參閱 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。
 
-**注意**  當 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦點時 (不是在使用者每次按下按鍵之後)，即會將 [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的變更傳送到雙向繫結來源。
+> [!Note]
+> 設為雙向繫結來源[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)失去焦點時並不是在每個使用者按下按鍵之後，會傳送到[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)的變更。
 
 **DataTemplate 和 x:DataType**
 
 在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 內 (不論是用來做為項目範本、內容範本或標頭範本)，**Path** 的值不是從頁面的內容來解譯，而是根據樣板化的資料物件來解譯。 因此在資料範本中使用 {x:Bind} 時，可以在編譯階段驗證其繫結 (並為它們產生有效率的程式碼)，而 **DataTemplate** 必須使用 **x:DataType** 宣告其資料物件的類型。 對於繫結到 **SampleDataGroup** 物件集合的項目控制項，以下提供的範例可做為其 **ItemTemplate**。
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -224,15 +227,14 @@ namespace QuizGame.View
 
 支援 **{x:Bind}** 的程式碼是在編譯頁面的部分類別時所產生。 您可以在 `obj` 資料夾中找到這些檔案，其名稱類似於 (適用於 C#) `<view name>.g.cs`。 產生的程式碼包含頁面的 [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) 事件處理常式，而該處理常式會在產生的類別上呼叫 **Initialize** 方法，其代表頁面的繫結。 **Initialize** 接著會呼叫 **Update**，開始在繫結來源與目標之間移動資料。 **Loading** 只會在第一次衡量頁面或使用者控制項的階段之前引發。 如果您的資料是以非同步方式載入，可能就不會在呼叫 **Initialize** 之前備妥。 因此，載入資料之後，您可以呼叫 `this.Bindings.Update();`，強制將一次性繫結初始化。 如果您只需要針對以非同步方式載入的資料使用一次性繫結，則將它們初始化的方法會比讓它擁有單向繫結並接聽變更來得經濟實惠。 如果您的資料不能進行細部變更，而且如果它很可能更新為特定動作的一部分，則您可以讓繫結變成一次性，並隨時呼叫 **Update** 來強制進行手動更新。
 
-**限制**
-
-**{x:Bind}** 不適合晚期繫結案例 (例如，瀏覽 JSON 物件的字典結構)，也不適合 duck 類型，此為類型的弱式格式，其會以屬性名稱上的語彙相符項為依據 (「如果它走路、游泳的方式及呱呱聲像隻鴨子，那它就是隻鴨子」)。 透過 duck 類型，與 Age 屬性的繫結同樣可滿足 Person 或 Wine 物件。 針對這些案例，請使用 **{Binding}**。
+> [!Note]
+> **{x:Bind}** 不適合晚期繫結案例 (例如，瀏覽 JSON 物件的字典結構)，也不適合 duck 類型，此為類型的弱式格式，其會以屬性名稱上的語彙相符項為依據 (「如果它走路、游泳的方式及呱呱聲像隻鴨子，那它就是隻鴨子」)。 透過 duck 類型，與 Age 屬性的繫結同樣可滿足 Person 或 Wine 物件。 針對這些案例，請使用 **{Binding}**。
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 宣告的繫結物件
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) 預設會假設您繫結到標記頁面的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)。 我們會將頁面的 **DataContext** 設定為繫結來源類別的執行個體 (在此案例中為 **HostViewModel** 類型)。 下列範例顯示宣告繫結物件的標記。 我們使用稍早已在「繫結目標」一節中使用的 **Button.Content** 繫結目標，並繫結到 **HostViewModel.NextButtonText** 屬性。
 
-```xml
+```xaml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -250,7 +252,7 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 
 在 [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 內，[**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 設定為樣板化的資料物件。 如果項目控制項繫結到任何類型的集合，且這些類型有 **Title** 和 **Description** 字串屬性，以下提供的範例可做為其 **ItemTemplate**。
 
-```xml
+```xaml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -259,7 +261,8 @@ UI 元素的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
   </DataTemplate>
 ```
 
-**注意**  根據預設，當 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 失去焦點時，[**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) 的變更會傳送到雙向繫結來源。 若要在使用者每次按下按鍵輸入傳送變更，請在標記中的繫結上將 **UpdateSourceTrigger** 設定為 **PropertyChanged**。 您可以也將 **UpdateSourceTrigger** 設定為 **Explicit**，以完全掌控何時將變更傳送到來源。 接著需要處理文字方塊上的事件 (通常是 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683))、在目標上呼叫 [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) 以取得 [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) 物件，最後呼叫 [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) 以程式設計方式更新資料來源。
+> [!Note]
+> 根據預設， [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text)的變更會傳送到雙向繫結來源， [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)失去焦點時。 若要在使用者每次按下按鍵輸入傳送變更，請在標記中的繫結上將 **UpdateSourceTrigger** 設定為 **PropertyChanged**。 您可以也將 **UpdateSourceTrigger** 設定為 **Explicit**，以完全掌控何時將變更傳送到來源。 接著需要處理文字方塊上的事件 (通常是 [**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683))、在目標上呼叫 [**GetBindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.getbindingexpression) 以取得 [**BindingExpression**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.aspx) 物件，最後呼叫 [**BindingExpression.UpdateSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindingexpression.updatesource.aspx) 以程式設計方式更新資料來源。
 
 [
               **Path**
@@ -359,7 +362,7 @@ End Class
 
 以下說明如何在您的繫結物件標記中使用該值轉換器。
 
-```xml
+```xaml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -377,7 +380,8 @@ End Class
 
 轉換器也有選用的參數：[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage) 可以指定轉換中要使用的語言，以及 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter) 可允許傳遞轉換邏輯的參數。 如需使用轉換器參數的範例，請參閱 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)。
 
-**注意**  如果轉換中出現錯誤，請不要擲回例外狀況。 而是傳回 [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue)，以便停止資料傳送。
+> [!Note]
+> 如果轉換中有錯誤，不會擲回例外狀況。 而是傳回 [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue)，以便停止資料傳送。
 
 如果要在繫結來源無法解析時顯示預設值，請在標記中的繫結物件上設定 **FallbackValue** 屬性。 這對控制代碼轉換與格式錯誤很有用。 繫結到異質類型繫結集合中的所有物件上可能不存在的來源屬性也很有用。
 
@@ -388,7 +392,7 @@ End Class
 
 ## <a name="function-binding-in-xbind"></a>{x:Bind} 中的函式繫結
 
-{x:Bind} 讓繫結路徑中的最後一個步驟可以是函式。 這可以用來執行轉換，以及執行和一個以上屬性相依的繫結。 請參閱 [**{x:Bind} 標記延伸**](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension)。
+{x:Bind} 讓繫結路徑中的最後一個步驟可以是函式。 這可以用來執行轉換，以及執行和一個以上屬性相依的繫結。 請參閱[**X:bind 中的函式**](function-bindings.md)
 
 <span id="resource-dictionaries-with-x-bind"/>
 
@@ -398,7 +402,7 @@ End Class
 
 TemplatesResourceDictionary.xaml
 
-```xml
+```xaml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -431,7 +435,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-```xml
+```xaml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -461,7 +465,7 @@ MainPage.xaml
 
 同樣地，您可以將按鈕的 **Click** 事件繫結到 **RootFrame** 屬性所傳回的 **Frame** 物件的方法。 請注意，我們也將按鈕的 **IsEnabled** 屬性繫結到相同 **Frame** 的另一個成員。
 
-```xml
+```xaml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -528,15 +532,13 @@ MainPage.xaml
     ...
 
     <GridView
-    ItemsSource="{Binding Source={StaticResource AuthorHasACollectionOfBookSku}}" ...>
+    ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
         <GridView.GroupStyle>
             <GroupStyle
                 HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
         </GridView.GroupStyle>
     </GridView>
 ```
-
-請注意，[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) 必須使用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (而非 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783))，因為它需要將 **Source** 屬性設定為資源。 若要以完整 app 的角度來檢視上述範例，請下載 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 範例 app。 與上述標記不同，[Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) 只使用 {Binding}。
 
 「是一個群組」模式有兩種實作方式。 其中一種方法是撰寫您自己的群組類別。 從 **List&lt;T&gt;** 衍生類別 (其中，*T* 是項目類型)。 例如，`public class Author : List<BookSku>`。 第二種方法是使用 [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 運算式，從 **BookSku** 項目的相似屬性值，動態建立群組物件 (和群組類別)。 這個方法—維護一般項目清單並即時將它們組合在一起—常見於從雲端服務存取資料的 app。 這可讓您依作者或內容類型 (舉例)，靈活地將書籍分組，而不需要 **Author** 和 **Genre** 之類的特殊群組類別。
 
@@ -566,13 +568,13 @@ MainPage.xaml
 
 請記住，當使用 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 和資料範本時，我們需要設定 **x:DataType** 值來表示繫結到的類型。 如果類型是泛型，則無法表達在標記中，我們需要在群組樣式標頭範本中改用 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-```xml
+```xaml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{Binding Genres}"
+        Source="{x:Bind Genres}"
         IsSourceGrouped="true"/>
     </Grid.Resources>
-    <GridView ItemsSource="{Binding Source={StaticResource GenreIsACollectionOfBookSku}}">
+    <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
             <DataTemplate>
                 <TextBlock Text="{x:Bind Title}"/>
@@ -616,7 +618,7 @@ MainPage.xaml
 
 下列範例示範如何在程式碼中實作繫結。
 
-```xml
+```xaml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -667,8 +669,8 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 | FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | 繫結路徑的任何部分 (除了分葉) 為 null 時使用。 | 
 | ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | 您使用 {x:Bind} 繫結到欄位；Path 預設以 Page 為根目錄，任何具名的項目都可以透過它的欄位來存取。 | 
 | RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | 使用 {X:Bind} 來命名元素，並在 Path 中使用它的名稱。 | 
-| RelativeSource: TemplatedParent | 不支援 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | 一般範本繫結可以用在控制項範本中滿足大部分的用途。 但在需要使用轉換器或雙向繫結的情況下，請使用 TemplatedParent。&lt; | 
-| 來源 | 不支援 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | 在 {X:Bind} 中，改用屬性或靜態路徑。 | 
+| RelativeSource: TemplatedParent | 不需要 | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | {X:bind} 上 ControlTemplate TargetType 會指出繫結至範本父項。 {繫結} 一般範本繫結可在控制項範本中大部分的用途。 但在需要使用轉換器或雙向繫結的情況下，請使用 TemplatedParent。&lt; | 
+| 來源 | 不需要 | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | {X:bind} 您可以直接使用具名的項目，使用屬性或靜態路徑。 | 
 | 模式 | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode 可以是 OneTime、OneWay 或 TwoWay。 {x:Bind} 預設為 OneTime。{Binding} 預設為 OneWay。 | 
 | UpdateSourceTrigger | `{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}` | `{Binding UpdateSourceTrigger=PropertyChanged}` | UpdateSourceTrigger 可以是 Default、LostFocus 或 PropertyChanged。 {x:Bind} 不支援 UpdateSourceTrigger=Explicit。 {x:Bind} 一律使用 PropertyChanged 行為，但 TextBox.Text 除外，它會使用 LostFocus 行為。 | 
 

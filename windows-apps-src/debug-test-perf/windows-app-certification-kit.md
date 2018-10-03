@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211466"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259411"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
 
 
-若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)的應用程式或準備發行[至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機上第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
+若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)您的應用程式或準備[發佈至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機上第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -92,7 +92,7 @@ Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效
 
 執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式效能是否符合[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式在低功率電腦上，例如 Intel Atom 處理器電腦搭配 1366x768 （或更高版本） 的螢幕解析度與旋轉式硬碟磁碟機 （而非固態硬碟）。
 
-隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並測試您的應用程式與最新版本的 Windows 應用程式認證套件，以確保您的應用程式符合最新的效能需求。
+隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並測試您的應用程式與最新版本的 Windows 應用程式認證套件，以確定您的 app 符合最新的效能需求。
 
 ## <a name="related-topics"></a>相關主題
 

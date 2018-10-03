@@ -1,8 +1,8 @@
 ---
 author: normesta
-Description: Distribute a packaged desktop app (Desktop Bridge)
+Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: 將您的已封裝傳統型應用程式發行至 Microsoft Store，或是在一或多個裝置上進行側載。
+title: 發佈您已封裝的傳統型應用程式至 Windows 市集，或是側載至一或多個裝置。
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
@@ -11,59 +11,59 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: fe36fec72645558c539dd8270fd15d35d92b66b5
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207184"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263793"
 ---
-# <a name="distribute-a-packaged-desktop-app-desktop-bridge"></a>散佈封裝的傳統型應用程式 (傳統型橋接器)
+# <a name="distribute-a-packaged-desktop-application"></a>散發的已封裝的傳統型應用程式
 
-將您的已封裝傳統型應用程式發行至 Microsoft Store，或是在一或多個裝置上進行側載。  
+發佈您已封裝的傳統型應用程式至 Windows 市集，或是側載至一或多個裝置。  
 
 > [!NOTE]
-> 您有計畫如何將使用者轉換至您的已封裝應用程式嗎？ 在您散布您的應用程式之前，請參閱本文中[轉換使用者至您的已封裝應用程式](#transition-users)一節，以取得一些靈感。
+> 您有計畫如何您可能會將使用者轉換至您已封裝的應用程式嗎？ 在您散布您的應用程式之前，請參閱本文中[轉換使用者至您的已封裝應用程式](#transition-users)一節，以取得一些靈感。
 
-## <a name="distribute-your-app-by-publishing-it-to-the-microsoft-store"></a>透過發行至 Microsoft Store 散布您的應用程式
+## <a name="distribute-your-application-by-publishing-it-to-the-microsoft-store"></a>透過發行至 Microsoft Store 散布您的應用程式
 
 [Microsoft Store](https://www.microsoft.com/store/apps)是讓客戶取得您應用程式的一種簡便方式。
 
-將您的 App 發佈到 Microsoft Store，以接觸最廣的對象。 同時，組織型客戶也可以取得您的 App，並透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)在他們的組織內部進行散發。
+發佈到該存放區您應用程式，將適用範圍擴及廣的對象。 同時，組織客戶也可以取得您內部進行散布他們的組織透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)的應用程式。
 
 如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以在這裡閱讀更多關於此需求的資訊：[受限制的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
-在您將 App 提交到 Microsoft Store 之前，您不需要簽署您的 App。
+您不需要簽署您的應用程式，才能提交到市集。
 
 >[!IMPORTANT]
-> 如果您計劃將您的應用程式發行至 Microsoft Store，請確定您的應用程式可在執行 Windows 10 S 的裝置上正確運作這是 Store 需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
+> 如果您打算發行至 Microsoft Store 的應用程式，請確定您的應用程式執行 Windows 10 S 的裝置上正確運作這是市集需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
 
 <a id="side-load" />
 
-## <a name="distribute-your-app-without-placing-it-onto-the-microsoft-store"></a>不透過 Microsoft Store 散布您的應用程式
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>不透過 Microsoft Store 的情況下發佈您的應用程式
 
-若您不想要使用Microsoft Store散布您的應用程式，您可以手動將應用程式散布到一或多個裝置。
+如果您不想要使用市集散布您的應用程式，您可以手動發佈到一或多個裝置的應用程式。
 
 在您想要進一步控制散布體驗，或是您不想要參與 Microsoft Store 的認證程序時，這將會是一個合理的作法。
 
-若您不想要透過Microsoft Store將您的應用程式散布到別的裝置，首先您必須取得憑證、使用該憑證簽署您的應用程式，然後在那些裝置上側載您的應用程式。
+若要發佈您的應用程式到其他裝置不需將它放到在市集中，您必須取得憑證、 簽署應用程式使用該憑證，然後側載您的應用程式到那些裝置。
 
 您可以[建立憑證](../packaging/create-certificate-package-signing.md)或從受歡迎的供應商，例如 [Verisign](https://www.verisign.com/) 取得憑證。
 
-若您想要將您的應用程式散布到執行 Windows 10 S 的裝置，您的應用程式必須先經過 Microsoft Store 簽署，所以您必須先完成市集提交程序，才能將您的應用程式散布到那些裝置。
+如果您打算發佈您的應用程式到執行 Windows 10 S 的裝置，您的應用程式必須經過 Microsoft Store 簽署，所以您必須先完成市集提交程序，您可以發佈您的應用程式到那些裝置才能。
 
 若您已建立了一個憑證，您必須先將該憑證安裝到每個執行您應用程式裝置上的 **「受信任的根」** 或 **「受信任的人」** 憑證存放區。 若您是從受歡迎的供應商取得憑證，則除了將您的應用程式安裝到其他系統之外，您不需要安裝任何東西。  
 
 > [!IMPORTANT]
 > 請確定您憑證的發行者名稱符合您應用程式的發行者名稱。
 
-若要使用憑證來簽署您的應用程式，請參閱[使用 SignTool 簽署應用程式套件](../packaging/sign-app-package-using-signtool.md)。
+若要使用憑證簽署您的應用程式，請參閱[簽署應用程式套件使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
-若要將您的應用程式側載到其他裝置上，請參閱[在 Windows 10 中側載 LOB 應用程式](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+若要側載您的應用程式到其他裝置，請參閱[Windows 10 中的側載 LOB app](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
 
 **影片**
 
-|將您的應用程式發行至 Microsoft Store |散發企業應用程式  |
+|發佈到 Microsoft Store 應用程式 |散發企業應用程式  |
 |---|---|
 |<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Demo-Windows-Store-Publication-3cWyG5WhD_5506218965"      width="426" height="472" allowFullScreen frameBorder="0"></iframe>|<iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developers-guide-to-the-desktop-bridge-17373/Video-Distribution-for-Enterprise-Apps-XJ5Hd5WhD_1106218965" width="426" height="472" allowFullScreen frameBorder="0"></iframe>|
 
@@ -74,21 +74,21 @@ ms.locfileid: "4207184"
 在您散發您的 App 之前，建議您考慮將幾個延伸模組新增至您的封裝資訊清單中，以協助使用者習慣使用您的封裝應用程式。 以下是幾個您可以嘗試的方法。
 
 * 將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式。
-* 使您已封裝的應用程式和一組檔案類型產生關聯。
-* 使您的已封裝應用程式作為開啟特定類型檔案的預設應用程式。
+* 將您已封裝的應用程式與一組檔案類型產生關聯。
+* 請您已封裝的應用程式作為開啟特定類型的檔案的預設。
 
 如需延伸功能的完整清單及如何使用其指南，請參閱[將使用者轉換至您的應用程式](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
 
-此外，建議您考慮將能完成這些工作的程式碼新增至您的已封裝應用程式︰
+此外，請考慮將程式碼新增到您已封裝的應用程式能完成這些工作：
 
-* 移轉與您傳統型應用程式相關聯的使用者資料至您已封裝應用程式的適當資料夾位置。
+* 移轉至傳統型應用程式的已封裝應用程式的適當資料夾位置相關聯的使用者資料。
 * 提供使用者解除安裝您應用程式傳統型版本的選項。
 
 讓我們談談每一項工作。 我們會先從使用者資料移轉開始。
 
 ### <a name="migrate-user-data"></a>移轉使用者資料
 
-若您要新增能將使用者資料移轉的程式碼，最好只在應用程式第一次啟動時執行。 在您移轉使用者資料之前，請先向使用者顯是一個對話方塊，解釋發生了什麼事情、為何建議這樣做，以及對於他們現有的資料會造成何種影響。
+如果您要新增移轉使用者資料至的程式碼，最好只在應用程式第一次啟動時，才執行該程式碼。 在您移轉使用者資料之前，請先向使用者顯是一個對話方塊，解釋發生了什麼事情、為何建議這樣做，以及對於他們現有的資料會造成何種影響。
 
 以下是如何在 .NET 型已封裝應用程式中完成這樣工作的方法。
 
@@ -127,7 +127,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>解除安裝您應用程式的傳統型版本
 
-建議您在解除安裝使用者的傳統型應用程式之前，先徵求他們的同意。 您可以藉由顯示對話方塊來徵求同意。 使用者可以選擇不解除安裝您應用程式的傳統型版本。 若發生這種情形，您將必須決定是否要封鎖傳統型應用程式的使用，或是支援兩種版本應用程式的並列使用。
+最好先徵求他們的權限解除安裝使用者的傳統型應用程式。 您可以藉由顯示對話方塊來徵求同意。 使用者可以選擇不解除安裝您應用程式的傳統型版本。 如果這種情形時，您必須決定是否要封鎖傳統型應用程式，或是支援這兩個應用程式以並排使用。
 
 以下是如何在 .NET 型已封裝應用程式中完成這樣工作的方法。
 
@@ -141,7 +141,7 @@ private void RemoveDesktopApp()
         (@"HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion" +
          @"\Uninstall\{7AD02FB8-B85E-44BC-8998-F4803BA5A0E3}\", "UninstallString", null);
 
-    //Detect if the previous version of the Desktop App is installed.
+    //Detect if the previous version of the Desktop application is installed.
     if (uninstallString != null)
     {
         DialogResult uninstallResult = MessageBox.Show
@@ -163,7 +163,7 @@ private void RemoveDesktopApp()
 
             if (process.ExitCode != 0)
             {
-                //Uninstallation was unsuccessful - You can choose to block the app here.
+                //Uninstallation was unsuccessful - You can choose to block the application here.
             }
         }
     }

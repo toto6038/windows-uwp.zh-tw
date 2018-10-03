@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209938"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263865"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -30,7 +30,7 @@ ms.locfileid: "4209938"
 
 :::row:::
     :::column:::
-        ![瀏覽範例 1](images/nav/nav-1.svg)
+        ![navigation example 1](images/nav/nav-1.svg)
 
         Require users to go through a series of pages in order.
     :::column-end:::
@@ -70,7 +70,7 @@ ms.locfileid: "4209938"
 
 :::row:::
     :::column:::
-        ![執行範例](images/nav/do.svg)
+        ![do example](images/nav/do.svg)
 
         ![navview good](images/nav/navview-good.svg)
 
@@ -109,28 +109,28 @@ ms.locfileid: "4209938"
 
 :::row:::
     :::column:::
-        ![單層式結構排列的頁面](images/nav/flat-lateral-structure.svg)
+        ![Pages arranged in a flat structure](images/nav/flat-lateral-structure.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::
+    :::column span="2":::
         ### Flat/lateral
 
         In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.
 
         We recommend using a flat structure when:
 
-        - The pages can be viewed in any order.
-        - The pages are clearly distinct from each other and don't have an obvious parent/child relationship.
-        - There are less than 8 pages in the group. <br>
-        (When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)
+        - 頁面可以用任何順序瀏覽。
+        - 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
+        - 在群組中有少於 8 的頁面。 <br>
+        (有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
 
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![階層排列的頁面](images/nav/hierarchical-structure.svg)
+        ![Pages arranged in a hierarchy](images/nav/hierarchical-structure.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::
+    :::column span="2":::
         ### Hierarchical
 
         In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.
@@ -139,26 +139,26 @@ ms.locfileid: "4209938"
 
         We recommend a hierarchical structure when:
         
-        - Pages should be traversed in a specific order.
-        - There is a clear parent-child relationship between pages.
-        - There are more than 7 pages in the group.
+        - 頁面應以特定順序周遊。
+        - 頁面之間有清楚的父-子關係。
+        - 群組中的頁面數超過 7 個。
         
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![具備混合式結構的 App](images/nav/combining-structures.svg)
+        ![an app with a hybrid structure](images/nav/combining-structures.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::
+    :::column span="2":::
         ### Combining structures
 
         You don't have choose to one structure or the other; many well-design apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.
 
         If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:
 
-        - At level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
-        - At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
+        - 於層級 1，對等瀏覽元素應提供對頁面 A、B、C 和 D 的存取功能。
+        - 在層級 2 中，A2 頁面的對等瀏覽元素應只連結到其他 A2 頁面。 它們不應連結到 C 子樹系中的層級 2 頁面。
     :::column-end:::
 :::row-end:::
 
@@ -168,67 +168,72 @@ ms.locfileid: "4209938"
 
 :::row:::
     :::column:::
-        ![畫面影像](images/nav/thumbnail-frame.svg)
+        ![Frame image](images/nav/thumbnail-frame.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**畫面**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
+    :::column span="2":::
+        [**Frame**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Frame)
 
         With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![索引標籤和樞紐影像](images/nav/thumbnail-tabs-pivot.svg)
+        ![tabs and pivot image](images/nav/thumbnail-tabs-pivot.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**頂端瀏覽和索引標籤**](../controls-and-patterns/navigationview.md)
+    :::column span="2":::
+        [**Top navigation and tabs**](../controls-and-patterns/navigationview.md)
 
         Displays a horizontal list of links to pages at the same level. The [NavigationView](../controls-and-patterns/navigationview.md) control implements the top navigation and tabs patterns.
         
         Use top navigation when:
 
-        - You want to show all navigation options on the screen.
-        - You desire more space for your app's content.
-        - Icons cannot clearly describe your navigation categories.
+        - 您想要顯示在螢幕上的所有瀏覽選項。
+        - 您想要針對您的應用程式內容的更多空間。
+        - 圖示不能清楚說明您的瀏覽類別。
         
-        Use tabs when:
+        使用索引標籤的時機：
 
-        - You want to preserve navigation history and page state.
-        - You expect users to switch between tabs frequently.
+        - 您想要保留瀏覽歷程記錄和頁面的狀態。
+        - 您預期使用者會頻繁索引標籤之間切換。
 
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![navview 映像](images/nav/thumbnail-navview.svg)
+        ![navview image](images/nav/thumbnail-navview.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**左側瀏覽**](../controls-and-patterns/navigationview.md)
+    :::column span="2":::
+        [**Left navigation**](../controls-and-patterns/navigationview.md)
 
         Displays a vertical list of links to top-level pages. Use when:
         
-        - The pages exist at the top level.
-        - There are many navigation items (more than 5)
-        - You don't expect users to switch between pages frequently.
+        - 頁面位於最上層。
+        - 有許多瀏覽項目 (超過 5)
+        - 您預期使用者不會在頁面之間頻繁切換。
         
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![主要詳細資料影像](images/nav/thumbnail-master-detail.svg)
+        ![Master details image](images/nav/thumbnail-master-detail.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**主要/詳細資料**](../controls-and-patterns/master-details.md)
+    :::column span="2":::
+        [**Master/details**](../controls-and-patterns/master-details.md)
 
         Displays a list (master view) of items. Selecting an item displays its corresponding page in the details section. Use when:
         
-        - You expect users to switch between child items frequently.
-        - You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.
+        - 您預期使用者會在子項目之間頻繁切換。
+        - 您想讓使用者對個別項目或項目群組執行高層級操作 (例如刪除或排序)，並且也想讓使用者能夠檢視或更新每個項目的詳細資料。
 
-        Master/details is well suited for email inboxes, contact lists, and data entry.
+        主要/詳細資料適合電子郵件收件匣、連絡人清單及資料項目。
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![超連結與按鈕影像](images/nav/thumbnail-hyperlinks-buttons.svg)
+        ![Hyperlinks and buttons image](images/nav/thumbnail-hyperlinks-buttons.svg)
     :::column-end:::
-    ::: 欄範圍 ="2":::[**超連結**](../controls-and-patterns/hyperlinks.md)
+    :::column span="2":::
+        [**Hyperlinks**](../controls-and-patterns/hyperlinks.md)
 
         Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.
 :::row-end:::

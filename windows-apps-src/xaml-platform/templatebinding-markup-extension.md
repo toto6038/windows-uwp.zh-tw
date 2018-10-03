@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ca551ff53a0a91b5bc60263b6e282b95c32bf976
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210491"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4259797"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 **TemplateBinding** 只能在 XAML 的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義中使用。
 
@@ -57,6 +58,24 @@ ms.locfileid: "210491"
 **TemplateBinding** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
 **注意**  在 Windows 執行階段 XAML 處理器實作中，沒有 **TemplateBinding** 的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
+
+### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
+
+從 Windows 10 的下一個主要更新，您可以使用**X:bind**標記延伸[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中所使用**TemplateBinding**的任何位置。 
+
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)屬性會被要求 （不是選用的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**時。
+
+**X:bind**的支援，您現在可以使用這兩個[函式繫結](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中的良好為雙向繫結
+
+在下列範例中，TextBlock.Text 評估 Button.Content.ToString()。 ControlTemplate 上的 TargetType 做為資料來源，並完成與父項 TemplateBinding 相同的結果。
+
+```xaml
+<ControlTemplate TargetType="Button">
+    <Grid>
+        <TextBlock Text="{x:Bind Content}" />
+    </Grid>
+</ControlTemplate>
+```
 
 ## <a name="related-topics"></a>相關主題
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209768"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260023"
 ---
 # <a name="acquisitions-report"></a>下載數報告
 
@@ -50,14 +50,14 @@ ms.locfileid: "4209768"
 
 根據預設，我們會顯示**每日的應用程式**檢視，其中包括接近即時資料。 您也可以透過選取 **\[App cumulative\]** (App 累積)，看到您 app 生命週期內的下載數。 這會顯示所有下載數的累計總數 (從您 App 第一次發行開始)。
 
-**授權銷售**取得您的應用程式 （年 10 月 2016-存在) 也會提供此圖表中顯示從應用程式銷售，（以美元） 賺取的總金額。 請注意這段不會考量任何退款、 解除安裝、 作廢、 等。
+取得您的應用程式 （年 10 月 2016-存在) 的**總銷售**也會提供此圖表中顯示從應用程式銷售，（以美元） 賺取的總金額。 請注意這段不會考量任何退款、 解除安裝、 作廢、 等。
 
 您可以選擇性地依據下載是來自用戶端或 web 架構市集，和（或）依據 OS 版本來篩選結果。
 
 > [!NOTE]
 > 您也可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得應用程式下載數](../monetize/get-app-acquisitions.md)方法來擷取此資料。
 
-在**每日的應用程式**檢視中， **30d**時間期間選取時，您可能會看到圓圈標記。 這些代表大幅增加或減少我們認為您會想要知道的特定值。 在其的圓形顯示日期代表我們偵測大幅增加或減少相較於前一週一週結尾。 若要查看有關所做變更的更多詳細資料，游標暫留在圓圈。  
+在**每日的應用程式**檢視中， **30d**時間期間選取時，您可能會看到圓圈標記。 這些代表大幅增加或減少我們認為您會想要知道的特定值。 在其的圓形顯示的日期代表我們在其中偵測大幅增加或減少相較於前一週一週結尾。 若要查看有關所做變更的更多詳細資料，游標暫留在圓圈。  
 
 > [!TIP]
 > 您可以檢視更多[見解報告](insights-report.md)中過去 30 天的重大變更的相關的深入資訊。

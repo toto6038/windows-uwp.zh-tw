@@ -14,12 +14,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8589a450b53a5ea028f8af2cee2aef7dc0816b52
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205714"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4258481"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -31,10 +31,12 @@ ms.locfileid: "4205714"
 
 :::row:::
     :::column:::
-        在淺色佈景主題壓克力![在淺色佈景主題壓克力](images/Acrylic_LightTheme_Base.png)
+        Acrylic in light theme
+        ![Acrylic in light theme](images/Acrylic_LightTheme_Base.png)
     :::column-end:::
     :::column:::
-        在深色佈景主題壓克力![在深色佈景主題壓克力](images/Acrylic_DarkTheme_Base.png)
+        Acrylic in dark theme
+        ![Acrylic in dark theme](images/Acrylic_DarkTheme_Base.png)
     :::column-end:::
 :::row-end:::
 
@@ -49,68 +51,20 @@ ms.locfileid: "4205714"
 ## <a name="examples"></a>範例
 
 :::row:::
-    ::: 範圍欄:::![某些映像](images/XAML-controls-gallery-app-icon.png)
+    :::column span:::
+        ![Some image](images/XAML-controls-gallery-app-icon.png)
     :::column-end:::
-    ::: 欄範圍 ="2"::: **XAML 控制項庫**<br>
-        如果您有安裝的 XAML 控制項庫應用程式，請按一下<a href="xamlcontrolsgallery:/item/Acrylic">這裡</a>開啟應用程式並查看壓克力情形。
+    :::column span="2":::
+        **XAML Controls Gallery**<br>
+        If you have the XAML Controls Gallery app installed, click <a href="xamlcontrolsgallery:/item/Acrylic">here</a> to open the app and see acrylic in action.
 
         <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a><br>
         <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
     :::column-end:::
 :::row-end:::
 
-## <a name="when-to-use-acrylic"></a>使用壓克力的時機
-
-我們建議您將支援的 UI (例如應用程式內瀏覽或命令元素) 放置在壓克力表面上。 此材質對於如對話方塊與飛出視窗等暫時性 UI 元素很有幫助，因為它有助於維持與已觸發暫時性 UI 之內容間的視覺關係。 我們設計出壓克力做為背景材質，並顯示在講究視覺呈現的窗格中，因此請勿將壓克力套用到精細的前景元素上。
-
-於主要應用程式內容後的表面應採用實心、不透明的背景。
-
-請考慮讓壓克力延伸到應用程式的一或多個邊緣，包括視窗標題列，以改善視覺流程。 透過將不同混合類型的壓克力彼此相鄰地堆疊在一起，可避免產生條紋效果。 壓克力是一種讓您的設計賞心悅目的工具，但若使用方式不正確，會產生視覺上的違和感。
-
-請考慮採用下列使用模式來判定將壓克力融入應用程式的最佳方式。
-
-### <a name="vertical-acrylic-pane"></a>垂直壓克力窗格
-
-對於採用垂直瀏覽的應用程式，建議將壓克力套用到包含瀏覽元素的次要窗格上。
-
-![使用單一垂直壓克力窗格的應用程式模式](images/acrylic_app-pattern_vertical.png)
-
-[NavigationView](../controls-and-patterns/navigationview.md) 是用於將瀏覽功能新增至應用程式的新通用控制項，其視覺設計中包含壓克力。 NavigationView 的窗格開啟時若與主要內容並排，便會顯示背景壓克力，若是以重疊方式開啟的，便會自動轉換成應用程式內壓克力。
-
-如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自己，我們建議使用相對透明壓克力色調不透明度 60%。
- - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
- - 當窗格以與主要應用程式內容並排的方式開啟時，則應為 [60% 背景壓克力](#acrylic-theme-resources)
-
-### <a name="multiple-acrylic-panes"></a>多壓克力窗格
-
-對於有三個不同垂直窗格的應用程式，建議將壓克力新增至非主要內容。
- - 對於最靠近主要內容的第二窗格，使用 [80% 背景壓克力](#acrylic-theme-resources)
- - 對於離主要內容稍遠的第三窗格，使用 [60% 背景壓克力](#acrylic-theme-resources)
-
-![使用兩個垂直壓克力窗格的應用程式模式](images/acrylic_app-pattern_double-vertical.png)
-
-### <a name="horizontal-acrylic-pane"></a>水平壓克力窗格
-
-對於採用水平瀏覽、命令或其他橫跨應用程式頂端之強式水平元素的應用程式，建議將 [70% 壓克力](#acrylic-theme-resources)套用到此視覺元素上。
-
-![使用水平壓克力窗格的應用程式模式](images/acrylic_app-pattern_horizontal.png)
-
-強調內容連續、可縮放的畫布應用程式，應在頂端列中使用應用程式內壓克力，讓使用者能夠與此內容連接。 例如地圖、繪畫與繪圖軟體等，皆為畫布應用程式。
-
-對於沒有單一連續性畫布的應用程式，建議使用背景壓克力將使用者與其整體桌面環境連接。
-
-### <a name="acrylic-in-utility-apps"></a>在公用應用程式中的壓克力
-
-Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣繪製壓克力以增加做為公用應用程式的氣勢。 屬於這個類別的應用程式，其使用者持續使用的時間通常很短暫，不大可能佔據使用者的整個桌面畫面。 比如 [小算盤] 和 [控制中心] 便是。
-
-![以壓克力做為其整個背景的 [小算盤] 公用應用程式](images/acrylic_app-pattern_full.png)
-
-> [!Note]
-> 呈現壓克力表面 GPU 會耗用大量時，裝置耗電量增加並縮短電池使用時間。 壓克力效果會自動停用當電池進入省電模式，使用者可以停用所有的應用程式的壓克力效果時，如果使用者選擇。
-
-
 ## <a name="acrylic-blend-types"></a>壓克力混合類型
-壓克力最明顯的特徵就是其半透明。 有兩種壓克力類型能改變可穿透此材質顯示的項目：
+壓克力最明顯的特徵就是透明度。 有兩種壓克力類型能改變可穿透此材質顯示的項目：
  - **背景壓克力**會顯示在目前使用中應用程式背後的桌面底色圖案及其他視窗，以增加應用程式視窗之間的深度，並呈現使用者個人化的喜好設定。
  - **應用程式內壓克力**可增加應用程式框架內的深度感，讓應用程式能夠聚焦並有層次。
 
@@ -118,8 +72,41 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
 
  ![應用程式內壓克力](images/AppAcrylic_DarkTheme.png)
 
- 將多壓克力表面分層時應小心謹慎。 背景壓克力如其名所示，在圖層順序上不應最靠近使用者。 多層的背景壓克力容易產生非預期的視覺錯覺，也應該避免使用。 如果您選擇將壓克力分層，請使用應用程式內壓克力進行，並考慮讓壓克力的色調值變淡，以幫助讓圖層在視覺上更往前靠近檢視者。
+ 時請小心將多壓克力表面分層： 多層的背景壓克力可以建立讓使用者分心的視覺錯覺。
 
+## <a name="when-to-use-acrylic"></a>使用壓克力的時機
+
+* 針對支援的 UI，例如 NavigationView 或內嵌命令元素使用應用程式內壓克力。 
+* 針對暫時性 UI 元素，例如操作功能表、 飛出視窗，以及光線 dimsissable UI 使用背景壓克力。<br />使用壓克力暫時性的案例中，可協助維持與已觸發暫時性 UI 之內容的視覺關係。
+
+如果您使用應用程式內壓克力風格上瀏覽的表面，請考慮延伸下方以改善您的應用程式上流程的壓克力窗格的內容。 使用 NavigationView 會自動執行此動作適用於您。 不過，若要避免產生條紋效果，不嘗試放置多個部分壓克力邊緣到邊緣-這會產生兩個模糊表面之間不想要的接縫。 壓克力工具可讓您的設計的視覺違，但是當使用不正確，可能會導致視覺雜訊。
+
+請考慮下列使用模式來判定將壓克力合併到您的應用程式的最佳方式：
+
+### <a name="horizontal-navigation-or-commanding"></a>水平瀏覽或命令功能
+
+如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自行接洽，我們建議使用相對透明壓克力色調不透明度 60%。
+ - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
+ - 當窗格以與主要應用程式內容並排的方式開啟時，則應為 [60% 背景壓克力](#acrylic-theme-resources)
+
+![使用應用程式內水平命令功能的地圖應用程式](images/Maps_In_App_Acrylic_1.png)
+
+此外，最上方擁有您的內容延伸或捲動底下的壓克力將可讓您的應用程式提供更身歷其境且無縫接軌的體驗。
+
+### <a name="vertical-panes"></a>垂直窗格
+
+對於垂直窗格或表面，可協助您的應用程式關閉內容區段中，我們建議您使用不透明的背景，而不是壓克力。 如果您的垂直窗格開啟在內容上方，就在 NavigationView 的**摺疊**或**最少**的模式，我們建議您使用來協助維持在頁面的內容，當使用者開啟這個窗格的應用程式內壓克力。
+
+### <a name="transient-surfaces"></a>暫時性的表面
+
+對於有功能表飛出視窗，非強制回應快顯視窗中，應用程式或消失關閉的窗格中，我們建議使用背景壓克力。
+
+![使用資訊的飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
+
+許多我們的控制項預設會使用壓克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[下拉式方塊](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和相似的控制項與光線 dimiss 快顯視窗將所有暫時性的壓克力時使用它們會叫用。
+
+> [!Note]
+> 呈現壓克力表面 GPU 會耗用大量時，裝置耗電量增加並縮短電池使用時間。 壓克力效果會自動停用當電池進入省電模式，使用者可以停用所有的應用程式的壓克力效果時，如果使用者選擇。
 
 ## <a name="usability-and-adaptability"></a>可用性與適應性
 壓克力會自動針對各種不同的裝置與內容調適其外觀。
@@ -129,7 +116,7 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
  - 當省電模式啟動時
  - 當應用程式在低階硬體上執行時
 
-此外，只有背景壓克力將會取代其半透明和紋理純色：
+此外，只有背景壓克力將取代其半透明和紋理使用純色：
  - 當桌面上的應用程式視窗啟用時
  - 當 UWP 應用程式正在電話、Xbox、HoloLens 或平板電腦模式中執行時
 
@@ -212,7 +199,6 @@ Widget 或輕量應用程式可在其應用程式視窗內部的邊緣到邊緣�
  - **TintOpacity**︰色調層不透明度。 雖然不同色彩可能看起來更具其他 translucencies，我們建議做為起點，80%不透明度。
  - **BackgroundSource**︰此旗標可指定您要背景壓克力或應用程式內壓克力。
  - **FallbackColor**： 在省電模式中的壓克力的單色。 對於背景壓克力，當您的應用程式不是使用中桌面視窗，或當應用程式在手機與 Xbox 上執行時，回復色彩也會取代壓克力。
-
 
 ![淺色佈景主題壓克力色樣](images/CustomAcrylic_Swatches_LightTheme.png)
 
@@ -332,6 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>可行與禁止注意事項
 * 請使用壓克力作為非主要應用程式表面 (如瀏覽窗格) 的背景材質。
 * 請將壓克力延伸至應用程式的至少一個邊緣，藉此與應用程式背景巧妙地混合以呈現無縫的效果。
+* 不要在您的應用程式的大型背景介面上放置桌面 arylic-這會中斷主要是用於暫時性表面的壓克力心理模式。
 * 請勿將應用程式內壓克力與背景壓克力直接相鄰放置，以避免在接縫處產生視覺壓力。
 * 請勿將多個色調與不透明度相同的壓克力窗格彼此相鄰，因為這會產生不想要讓人看到的接縫。
 * 請勿將輔色文字放置在壓克力表面。

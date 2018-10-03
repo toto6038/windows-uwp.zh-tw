@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0840bab2e039ec55ea4070f8dad39c0ae4e74bbc
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205306"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260553"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -555,7 +555,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ### <a name="navigationview"></a>NavigationView
 
-適應，以容器和彈性的瀏覽模型，實作的左瀏覽窗格、 頂端瀏覽和索引標籤模式。
+適應，以容器和彈性的瀏覽模型來實作的左瀏覽窗格、 頂端瀏覽和索引標籤模式。
 
 參考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
 

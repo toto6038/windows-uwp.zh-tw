@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ddcac274fb970de5c9afd1a536035bd21124547
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: e94eb0e819796dda456899bb877057e4532f5ce9
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833108"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265149"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>疑難排解應用程式安裝程式檔案的安裝問題
 
@@ -74,9 +74,9 @@ ms.locfileid: "1833108"
 
 如果應用程式安裝程式應用程式無法安裝應用程式，下列步驟將會協助找出安裝問題。
 
-### <a name="verify-appxappxbundle-file-installation"></a>確認 .appx/.appxbundle 檔案安裝
+### <a name="verify-app-package-file-installation"></a>確認應用程式套件檔案安裝
 
-- 下載`.appx`/`.appxbundle`檔案到本機資料夾，然後使用[Add-AppxPackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令嘗試安裝它。
+- 下載應用程式套件檔案到本機資料夾，然後再試使用[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令來安裝它。
 
 - 下載`.appinstaller`檔案到本機資料夾，然後使用`Add-AppxPackage -Appinstaller` PowerShell 命令嘗試安裝它。
 

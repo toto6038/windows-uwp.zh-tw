@@ -3,18 +3,18 @@ author: laurenhughes
 title: 具可執行程式碼的選用套件
 description: 了解如何使用 Visual Studio 建立具可執行程式碼的選用套件。
 ms.author: lahugh
-ms.date: 5/07/2018
+ms.date: 9/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 9745fa168ba337979a628ca9c4e799b07ad9c7ab
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: f5660649b6f82135cdb45a8678a3f871a0f5e61d
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843767"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265923"
 ---
 # <a name="optional-packages-with-executable-code"></a>具可執行程式碼的選用套件
  

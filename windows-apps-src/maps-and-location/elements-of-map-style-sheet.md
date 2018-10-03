@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 地圖, 地圖樣式表
 ms.localizationpriority: medium
 ms.openlocfilehash: 11360f9d76fc07d7a6b24bd1e0bfb78df4f1d22d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209350"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4266379"
 ---
 # <a name="map-style-sheet-reference"></a>地圖樣式表參考
 
@@ -56,7 +56,7 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 ## <a name="entries"></a>項目
 此表格使用 ">" 字元代表項目階層層級。  它也會顯示哪些版本的 Windows 支援的每個項目，而且這忽略它。
 
-| 組建 | Windows 版本名稱 |
+| 組建 | Windows 發行版本的名稱 |
 |-------|----------------------|
 | 1506  | Creators Update      |
 | 1629  | Fall Creators Update |
@@ -80,7 +80,7 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 | >>> medical                  | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 提供醫療用途的區域 (例如︰ 醫院園區)。 |
 | >>> military                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 包含軍事基地或有 military 用途的區域。 |
 | >>> nautical                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 提供航海相關用途的區域。 |
-| >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 街區區域標籤。 |
+| >>> neighborhood             | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 街區區域的標籤。 |
 | >>> runway                   | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 做為飛航陸地區域。 |
 | >>> sand                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 沙地區域，如沙灘。 |
 | >>> shoppingCenter           | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 為商場或其他購物中心配置的地面區域。 |
@@ -93,8 +93,8 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 | >>>> playingField            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 圍出的場地，例如棒球場或網球場。 |
 | >>>> reserve                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 保護包含本質上的區域。 |
 | >> point                     | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 所有點會繪製的某種圖示的功能。 |
-| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | 地址號碼標籤。 |
-| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表自然功能的圖示。 |
+| >>> address                  | [PointStyle](#pointstyle) |      |      |  ✔   |  ✔   | 解決數字的標籤。 |
+| >>> naturalPoint             | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表自然功能圖示。 |
 | >>>> peak                    | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表山峰的圖示。 |
 | >>>>> volcanicPeak           | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表火山山峰的圖示。 |
 | >>>> waterPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表水體位置的圖示，例如瀑布。 |
@@ -104,7 +104,7 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 | >>>>> communityPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 社群代表位置的一般用途的圖示。 |
 | >>>>> educationPoint         | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 代表學校及其他教育版的相關的位置。 |
 | >>>>> entertainmentPoint     | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 代表娛樂場合，例如劇場、 cinemas 等等的圖示。 |
-| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 代表重要的服務，例如停車、 銀行、 ga 等等的圖示。 |
+| >>>>> essentialServicePoint  | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 代表重要的服務，例如停車、 銀行、 ga 等圖示。 |
 | >>>>> foodPoint              | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表餐廳、 咖啡廳等等的圖示。 |
 | >>>>> lodgingPoint           | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 代表旅館和其他住宿企業的圖示。 |
 | >>>>> realEstatePoint        | [PointStyle](#pointstyle) |      |  ✔   |  ✔   |  ✔   | 代表實際可用空間企業圖示。 |
@@ -117,14 +117,14 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 | >>> roadExit                 | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表出口的圖示，通常來自高速公路。 |
 | >>> transit                  | [PointStyle](#pointstyle) |  ✔   |  ✔   |  ✔   |  ✔   | 代表公車站、火車站、機場等等的圖示。 |
 | >> political                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 政治地區，例如國家、地區及縣市。 |
-| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 國家/地區區域邊界和標籤。 |
+| >>> countryRegion            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 國家/地區地區框線和標籤。 |
 | >>> adminDistrict            | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin1、 州、 省等框線和標籤。 |
 | >>> district                 | [BorderedMapElement](#borderedmapelement) |  ✔   |  ✔   |  ✔   |  ✔   | Admin2、 縣等等，框線和標籤。 |
 | >> structure                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建築物及其他類似建築物的結構。 |
 | >>> building                 | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建築物。 |
 | >>>> educationBuilding       | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建築物教育版使用。 |
 | >>>> medicalBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 建築物醫院例如醫療用途。 |
-| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用於運輸工具，例如機場建築物。 |
+| >>>> transitBuilding         | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 用於運輸工具例如機場建築物。 |
 | >> transportation            | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 屬於運輸網路的線 (例如：道路、火車及渡輪)。 |
 | >>> road                     | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 代表所有道路的線。 |
 | >>>> controlledAccessHighway | [MapElement](#mapelement) |  ✔   |  ✔   |  ✔   |  ✔   | 代表高速公路大型的受控制存取的線。 |
@@ -181,13 +181,13 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 | landColor                    | 色彩   |  ✔   |  ✔   |  ✔   |  ✔   | 在土地上未繪製任何項目前，土地的 ARGB 色彩值。 |
 | logosVisible                 | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，表示具有**Organization**屬性的項目是否應繪製適當的標誌或使用通用圖標。 |
 | officialColorVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，表示具有官方色彩屬性的項目（例如中國的中轉線）應繪製該色彩。 例如，關閉此值即為黑白地圖。 |
-| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出要繪製點陣區域，其中有更好的表示法，比向量 （日本及韓國）。 |
+| rasterRegionsVisible         | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出要繪製點陣區域他們有更好的表示法，比向量 （日本及韓國）。 |
 | shadedReliefVisible          | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出是否在地圖上繪製海拔著色。 |
 | shadedReliefDarkColor        | 色彩   |  ✔   |  ✔   |  ✔   |  ✔   | 暈渲地貌的暗面色彩。  Alpha 通道代表 alpha 的最大值。 |
 | shadedReliefLightColor       | 色彩   |  ✔   |  ✔   |  ✔   |  ✔   | 暈渲地貌的亮面色彩。  Alpha 通道代表 alpha 的最大值。 |
 | shadowColor                  | 色彩   |      |      |      |  ✔️   | 使用陰影的圖示後方陰影的色彩。 |
 | spaceColor                   | 色彩   |  ✔   |  ✔   |  ✔   |  ✔   | 地圖周圍區域的 ARGB 色彩值。 |
-| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出是否 SVG 內的原始色彩應該使用，而不是設定的影像中的色彩調色盤項目的外觀。 |
+| useDefaultImageColors        | Bool    |  ✔   |  ✔   |  ✔   |  ✔   | 旗標，指出是否 SVG 內的原始色彩應該使用，而不是向上影像中的色彩調色盤項目的外觀。 |
 
 <a id="mapelement" />
 
@@ -231,7 +231,7 @@ Microsoft 對應技術會使用_地圖樣式表_來定義地圖的外觀。  地
 
 | 屬性                     | 類型    | 1506 | 1629 | 1713 | 下一則 | 描述 |
 |------------------------------|---------|------|------|------|------|-------------|
-| 圖形背景             | 浮點數   |      |      |      |  ✔️   | 做為圖示： 取代存在任何圖形的背景圖形。 |
+| 圖形背景             | 浮點數   |      |      |      |  ✔️   | 做為圖示： 取代那里存在於任何形狀的背景圖形。 |
 | stemAnchorRadiusScale        | 浮點數   |      |      |  ✔   |  ✔   | 應該縮放的圖示主體的錨點量。  例如，使用 *1* 顯示預設和 *2* 以放大二倍。 |
 | stemColor                    | 色彩   |  ✔   |  ✔   |  ✔   |  ✔   | 在 3D 模式下，圖示底部出現的主體色彩。 |
 | stemHeightScale              | 浮點數   |      |      |  ✔   |  ✔   | 應該縮放的圖示主體的長度量。  例如，使用 *1* 顯示預設和 *2* 以加長二倍。 |

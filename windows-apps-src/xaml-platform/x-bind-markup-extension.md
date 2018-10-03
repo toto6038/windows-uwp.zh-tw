@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: xBind 標記延伸是 Binding 的替代項目。 xBind 沒有 Binding 的部分功能，但在執行時所需的時間和記憶體都比 Binding 少，並且支援較強的偵錯功能。
+description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新的 Windows 10-執行更少的時間和記憶體都比繫結並且支援較佳的偵錯。
 title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -10,19 +10,19 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 340f8e72c5015fad341810ef335dea73f77fc82f
-ms.sourcegitcommit: b8c77ac8e40a27cf762328d730c121c28de5fbc4
-ms.translationtype: HT
+ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2018
-ms.locfileid: "1672885"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261485"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
 **注意** 如需有關如何在 app 中使用資料繫結與 **{x:Bind}** (以及完整比較 **{x:Bind}** 和 **{Binding}**) 的一般資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 
-  **{x:Bind}** 標記延伸 (Windows10 的新功能) 是 **{Binding}** 的替代項目。 **{x:Bind}** 沒有 **{Binding}** 的部分功能，但在執行時所需的時間和記憶體都比 **{Binding}** 少，並且支援較強的偵錯功能。
+  **{x:Bind}** 標記延伸 (Windows10 的新功能) 是 **{Binding}** 的替代項目。 **{X:bind}** 執行更少的時間和記憶體都比 **{繫結}** 且支援更好的偵錯。
 
 在 XAML 編譯時間，**{x:Bind}** 會轉換為可取得來自資料來源上之屬性值的程式碼，並將它設定在標記中指定的屬性上。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更自我重新整理 (`Mode="OneWay"`)。 您也可以選擇性地設定繫結物件，以便將自己的值中的變更推回到來源屬性 (`Mode="TwoWay"`)。
 
@@ -47,6 +47,8 @@ ms.locfileid: "1672885"
 <object property="{x:Bind bindingProperties}" .../>
 -or-
 <object property="{x:Bind propertyPath, bindingProperties}" .../>
+-or-
+<object property="{x:Bind pathToFunction.functionName(functionParameter1, functionParameter2, ...), bindingProperties}" .../>
 ```
 
 | 詞彙 | 說明 |
@@ -56,6 +58,25 @@ ms.locfileid: "1672885"
 | _propName_=_value_\[, _propName_=_value_\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
 | _propName_ | 要在繫結物件上設定之屬性的字串名稱。 例如，"Converter"。 |
 | _value_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-you-can-set)一節。 |
+
+## <a name="examples"></a>範例
+
+```XAML
+<Page x:Class="QuizGame.View.HostView" ... >
+    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
+</Page>
+```
+
+此範例 XAML 會搭配使用 **{x:Bind}** 與 **ListView.ItemTemplate** 屬性。 請注意 **x:DataType** 值的宣告。
+
+```XAML
+  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
+    <StackPanel Orientation="Vertical" Height="50">
+      <TextBlock Text="{x:Bind Title}"/>
+      <TextBlock Text="{x:Bind Description}"/>
+    </StackPanel>
+  </DataTemplate>
+```
 
 ## <a name="property-path"></a>屬性路徑
 
@@ -69,7 +90,8 @@ ms.locfileid: "1672885"
 
 針對 C++/CX，**{x:Bind}** 無法繫結至頁面或資料模型中的私用欄位和屬性；您必須使用公用屬性才可加以繫結。 繫結的表面區域必須公開為 CX 類別/介面，以便我們取得相關的中繼資料。 此時應該不需要 **\[Bindable\]** 屬性。
 
-使用 **x:Bind** 時，您無須以 **ElementName=xxx** 做為繫結運算式的一部分。 透過 **x:Bind**，您可以使用元素的名稱做為繫結路徑的第一個部分，因為命名的元素會成為頁面或使用者控制項中代表根繫結來源的欄位
+使用 **x:Bind** 時，您無須以 **ElementName=xxx** 做為繫結運算式的一部分。 相反地，您可以使用元素的名稱做為路徑的第一個部分為繫結因為命名的元素會成為頁面或使用者控制項中代表根繫結來源的欄位。 
+
 
 ### <a name="collections"></a>集合
 
@@ -94,78 +116,7 @@ _注意：C# 風格的轉換語法比附加的屬性語法更具彈性，且是�
 
 ## <a name="functions-in-binding-paths"></a>繫結路徑中的函式
 
-從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可以
-
-- 使完成值轉換更為簡單
-- 使繫結取決於多個參數
-
-> [!NOTE]
-> 若要搭配 **{x:Bind}** 使用函式，您 App 的最低目標 SDK 版本必須是 14393 或更新版本。 當您的 App 以舊版 Windows10 為目標時，您將無法使用函式。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
-
-在下列範例中，項目的背景與前景會繫結函式，以根據色彩參數來執行轉換
-
-```xaml
-<DataTemplate x:DataType="local:ColorEntry">
-    <Grid Background="{x:Bind local:ColorEntry.Brushify(Color)}" Width="240">
-        <TextBlock Text="{x:Bind ColorName}" Foreground="{x:Bind TextColor(Color)}" Margin="10,5" />
-    </Grid>
-</DataTemplate>
-```
-
-```csharp
-class ColorEntry
-{
-    public string ColorName { get; set; }
-    public Color Color { get; set; }
-
-    public static SolidColorBrush Brushify(Color c)
-    {
-        return new SolidColorBrush(c);
-    }
-
-    public SolidColorBrush TextColor(Color c)
-    {
-        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) > 150) ? Colors.Black : Colors.White);
-    }
-}
-
-```
-
-### <a name="function-syntax"></a>函式語法
-
-``` Syntax
-Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Order.ShipAddr.Zip, 'Contoso'), Mode=OneTime}"
-             |      Path to function         |    Path argument   |       Path argument       | Const arg |  Bind Props
-```
-
-### <a name="path-to-the-function"></a>函式的路徑
-
-函式的路徑是以和其他屬性路徑相同的方式指定，且可以包含句點 (.)、索引子或轉換來找出該函式。
-
-靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，**&lt;CalendarDatePicker Date="\{x:Bind sys:DateTime.Parse(TextBlock1.Text)\}" /&gt;** 會對應到 DateTime.Parse 函式，但前提是 **xmlns:sys="using:System"** 已在頁面頂端上指定。
-
-如果模式為 OneWay/TwoWay，則函式路徑上會執行變更偵測，且如果那些物件有變更，繫結將會重新評估。
-
-繫結的函式必須︰
-
-- 讓程式碼與中繼資料可以存取。因此 internal / private可在 C# 運作，但是 C++/CX 則需要公用 WinRT 方法
-- 多載是根據引數的數量，而非類型，而它會嘗試針對第一個具有相同數量引述的多載進行比對
-- 引數類型需要符合傳入的資料，我們不會進行縮小轉換
-- 函式的傳回類型必須符合正在使用繫結的屬性類型
-
-### <a name="function-arguments"></a>函式引數
-
-可以指定多個函式引數，以逗號 (,) 分隔
-
-- 繫結路徑 - 和您直接繫結到該物件相同的語法。
-  - 如果模式為 OneWay/TwoWay，則會執行變更偵測，並在物件變更時會重新評估繫結
-- 以引號括住常數字串 - 需要引號來將它指定為字串。 上標三角 (^) 可以用來逸出字串中的引號
-- 常數的數字 - 例如 123.456
-- 布林值 - 指定為 "x:True" 或 "x:False"
-
-### <a name="two-way-function-bindings"></a>雙向函式繫結
-
-在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 這可以使用 **BindBack** 繫結屬性來完成，例如 **Text="\{x:Bind a.MyFunc(b), BindBack=a.MyFunc2\}"**。 函式應該有一個引數是推回到模型所需的值。
+從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這是非常強大的功能，可讓在標記中的數個案例的資料繫結。 如需詳細資訊的[函式繫結](../data-binding/function-bindings.md)，請參閱。
 
 ## <a name="event-binding"></a>事件繫結
 
@@ -227,21 +178,3 @@ Text="{x:Bind MyModel.Order.CalculateShipping(MyModel.Order.Weight, MyModel.Orde
 
 **{x:Bind}** 只是標記延伸，無法以程式設計方式建立或操作這類繫結。 如需標記延伸的詳細資訊，請參閱 [XAML 概觀](xaml-overview.md)。
 
-## <a name="examples"></a>範例
-
-```XML
-<Page x:Class="QuizGame.View.HostView" ... >
-    <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
-</Page>
-```
-
-此範例 XAML 會搭配使用 **{x:Bind}** 與 **ListView.ItemTemplate** 屬性。 請注意 **x:DataType** 值的宣告。
-
-```XML
-  <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
-    <StackPanel Orientation="Vertical" Height="50">
-      <TextBlock Text="{x:Bind Title}"/>
-      <TextBlock Text="{x:Bind Description}"/>
-    </StackPanel>
-  </DataTemplate>
-```

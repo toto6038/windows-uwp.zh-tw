@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ff104bfb5114cd51eb04d75af3c096f47a7d286d
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4205054"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262283"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
@@ -40,9 +40,9 @@ ms.locfileid: "4205054"
 
 每個繫結是由繫結目標和繫結來源所組成。 通常，目標是控制項或其他 UI 元素的屬性，來源是類別執行個體 (資料模型或檢視模型) 的屬性。 這個範例示範如何將控制項繫結到單一項目。 目標是 **TextBlock** 的 **Text** 屬性。 來源是一個簡單類別 **Recording** 的執行個體，代表音訊錄製。 讓我們先看一下這個類別。
 
-如果您使用 C# 或 C + + /CX，然後將新類別新增到您的專案，並**錄製**的類別。
+如果您使用 C# 或 C + + /CX，然後將新類別新增到您的專案，並將此類別**錄製**。
 
-如果您使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後將新的**Midl 檔案 (.idl)** 項目新增到專案中，名為如所示的 C + + /winrt 下列的程式碼範例清單。 這些新檔案的內容取代顯示在清單中的[MIDL 3.0](/uwp/midl-3/intro)程式碼、 建置專案以產生`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合清單。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果您使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後將新的**Midl 檔案 (.idl)** 項目新增到專案中，名為所示，在 C + + /winrt 下列的程式碼範例清單。 這些新檔案的內容取代顯示在清單[MIDL 3.0](/uwp/midl-3/intro)程式碼、 建置專案以產生`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合的清單。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
 ```csharp
 namespace Quickstart
@@ -459,7 +459,7 @@ public:
 
 ![繫結清單檢視](images/xaml-databinding1.png)
 
-若要解決這個問題，我們可能覆寫[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)傳回值的**OneLineSummary**，或提供資料範本。 資料範本選項是更多一般解決方案和一個更具彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 屬性或項目控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
+若要解決這個問題，我們可以可以覆寫[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)以傳回值的**OneLineSummary**，或提供資料範本。 資料範本選項是更多一般解決方案和一個更具彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 屬性或項目控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -499,7 +499,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 您可以選擇在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 項目中顯示 **Recording** 物件的所有詳細資料。 但這會佔用大量空間。 相反地，您可以在項目中顯示剛好足夠識別它的資料，然後當使用者做出選擇時，您可以在另一個稱為詳細資料檢視的 UI 中，顯示選定項目的所有詳細資料。 這種安排也稱為主要/詳細資料檢視，或清單/詳細資料檢視。
 
-有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，這種情況下您繫結**ListView**和詳細資料檢視到**CollectionViewSource** （為您執行目前選取的項目會負責的話）。 這兩種技巧如下所示，且兩者相同的結果 （如圖所示）。
+有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，這種情況下您繫結**清單檢視**與詳細資料檢視到**CollectionViewSource** （為您執行目前選取的項目會負責的話）。 這兩種技巧如下所示，且兩者相同的結果 （如圖所示）。
 
 > [!NOTE]
 > 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
@@ -582,13 +582,13 @@ public ref class Recording sealed
 以下是各種情況的相同結果。
 
 > [!NOTE]
-> 如果您使用 c + +，則您的 UI 看起來不會完全像下圖： **ReleaseDateTime**屬性的呈現是不同。 請參閱下的一節，如需詳細資訊。
+> 如果您使用 c + +，則您的 UI 看起來不會完全像下圖： **ReleaseDateTime**屬性的轉譯是不同。 請參閱下的一節，如需詳細資訊。
 
 ![繫結清單檢視](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>格式化或轉換資料值以供顯示
 
-沒有以上呈現的問題。 **ReleaseDateTime**屬性不只是日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果您使用 c + +，則它是[**行事曆**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它會顯示多餘的精確度，我們需要。 和 c + + 中轉譯做為類型名稱。 一個解決方案是將字串屬性新增到傳回的對等的**錄製**類別`this.ReleaseDateTime.ToString("d")`。 該屬性**ReleaseDate**命名，則表示，它會傳回日期，並不日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
+沒有以上呈現的問題。 **ReleaseDateTime**屬性不只是日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果您使用 c + +，則它是[**行事曆**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它會顯示多餘的精確度，我們需要。 和 c + + 中轉譯做為類型名稱。 一個解決方案是將字串屬性加入到傳回的對等的**錄製**類別`this.ReleaseDateTime.ToString("d")`。 該屬性**ReleaseDate**命名，則表示，它會傳回日期，並不日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
 
 更有彈性的解決辦法是使用所謂的「值轉換器」。 以下是如何撰寫您自己的值轉換器的範例。 將下列程式碼加入到 Recording.cs 原始程式碼檔。
 
@@ -721,14 +721,14 @@ public:
 ...
 ```
 
-如您所見上述，用於格式化彈性，我們使用標記來將格式字串傳遞至轉換器參數透過轉換器。 會顯示在此主題中，只有 C# 值轉換器的程式碼範例中使用了該參數。 但您可以輕鬆地將 c + + 樣式的格式字串傳遞做為轉換器參數，並使用這個值轉換器，與格式的功能，例如**wprintf**或**swprintf**。
+如您所見上述，用於格式化彈性，我們使用標記來將格式字串傳遞至轉換器透過轉換器參數。 顯示在此主題中，只有 C# 值轉換器，可以讓程式碼範例中使用了該參數。 但您可以輕鬆地將 c + + 樣式的格式字串傳遞做為轉換器參數，並使用這個值轉換器，與格式化的功能，例如**wprintf**或**swprintf**。
 
 結果如下。
 
 ![顯示自訂格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 從 Windows 10，版本 1607 開始，XAML 架構提供內建的布林值-可見度轉換器。 轉換器對應 **，則為 true** **Visibility.Visible**列舉值，並選取 [ **false** **Visibility.Collapsed**來讓您可以不用建立轉換器 Visibility 屬性繫結至布林值。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需目標版本的詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10，版本 1607 開始，XAML 架構提供內建的布林值-可見度轉換器。 轉換器對應 **，則為 true** **Visibility.Visible**列舉值，並選取 [ **false** **Visibility.Collapsed**來讓您可以不用建立轉換器 Visibility 屬性繫結至布林值。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需版本為目標的詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="see-also"></a>另請參閱
 * [資料繫結](index.md)

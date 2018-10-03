@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211604"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260067"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -31,7 +31,7 @@ ms.locfileid: "4211604"
 
 如果您正在發佈遊戲，您可以啟用此頁面上的[Xbox Live 創作者計畫](http://xbox.com/developers/creators-program)。 這可讓您啟動設定並測試 Xbox Live 功能，及最後發佈您的 Xbox Live 創作者計畫遊戲。
 
-如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，並[建立新的 Xbox Live 創作者計畫遊戲並發佈到測試環境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
+如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，並[建立新的 Xbox Live 創作者計畫遊戲並發佈至測試環境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
 ## <a name="experimentation"></a>實驗
 
@@ -50,7 +50,7 @@ ms.locfileid: "4211604"
 
 ## <a name="product-collections-and-purchases"></a>產品集合與購買
 
-若要使用 Microsoft Store 集合 API 及 Microsoft Store 購買 API 存取 app 和附加元件的擁有權資訊，您需要輸入相關聯 Azure AD 用戶端識別碼以下。 請注意，這些變更可能要花費最多 16 個小時才會生效。
+若要使用 Microsoft Store 集合 API 及 Microsoft Store 購買 API 來存取 app 和附加元件的擁有權資訊，您需要輸入相關聯 Azure AD 用戶端識別碼以下。 請注意，這些變更可能要花費最多 16 個小時才會生效。
 
 如需詳細資訊，請參閱[管理服務的產品權利](../monetize/view-and-grant-products-from-a-service.md)。
 
@@ -58,7 +58,7 @@ ms.locfileid: "4211604"
 
 f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意下，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品用於其組織授與同意取得的應用程式的系統管理員。
 
-如需詳細資訊，請參閱[整個的租用戶所同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+如需詳細資訊，請參閱[整個的租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>應用程式管理
 
@@ -87,12 +87,12 @@ f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式
 
 具備 OEM 權限的開發人員也可以從 **\[目前的套件\]** 頁面[產生預先安裝的套件](generate-preinstall-packages-for-oems.md)。
 
-## <a name="wnsmpns"></a>WNS/MPNS
+## <a name="wnsmpns"></a>WNS/MPNS\
 
 [ **WNS/MPNS\** ] 區段會提供選項以協助您建立和傳送通知給您的應用程式客戶。 
 
 > [!TIP]
-> 適用於 UWP app 中，我們建議您在儀表板中使用**通知**選項。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您定義在[客戶區隔](create-customer-segments.md)中特定對象的子集的 Windows 10 客戶符合條件。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
+> 適用於 UWP app 中，我們建議您在儀表板中使用**通知**選項。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您的 Windows 10 客戶符合條件的特定對象子集您所定義[的消費者區隔](create-customer-segments.md)中。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
 
 根據您的應用程式套件類型及其特定需求，您也可以使用其中一個下列選項： 
 

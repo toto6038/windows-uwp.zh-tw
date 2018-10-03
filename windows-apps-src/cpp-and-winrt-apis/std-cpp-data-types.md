@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、資料、類型
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209614"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262087"
 ---
 # <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準 C++ 資料類型與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
 使用 C++/WinRT，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 Api (請參閱[字串處理在 C + + /winrt](strings.md))，以及您可以傳遞初始設定式清單和標準的容器來預期語意對等的集合 Api。
@@ -92,7 +92,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to an array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 沒有到非同步被呼叫者時，請記住的額外細節。 該案例的實作詳細資料，因為您將需要提供值，因此您必須提供一份複本或移動向量。 在下列程式碼範例，移動向量的所有權接受非同步被呼叫者的參數類型的物件 (接通小心，不要存取`vecH`移動後，一次)。 如果您想要深入了解右，請參閱[值類別，以及它們的參考](cpp-value-categories.md)。
+C++/WinRT 繫結 **std::vector** 做為 Windows 執行階段集合參數。 因此，您可以傳遞 **std::vector&lt;winrt::hstring&gt;**，並將它轉換為適當的 **winrt::hstring** Windows 執行階段集合。 沒有到非同步被呼叫者時，請記住的額外細節。 因為該案例的實作詳細資料，而您將需要提供值，因此您必須提供一份複本或移動向量。 在下列程式碼範例，移動向量的所有權接受非同步被呼叫者的參數類型的物件 (接通小心，不要存取`vecH`移動後，一次)。 如果您想要深入了解右，請參閱[值類別，以及它們的參考](cpp-value-categories.md)。
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)

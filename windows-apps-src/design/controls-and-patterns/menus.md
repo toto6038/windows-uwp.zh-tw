@@ -5,7 +5,7 @@ title: 功能表和操作功能表
 label: Menus and context menus
 template: detail.hbs
 ms.author: mijacobs
-ms.date: 07/19/2018
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -16,25 +16,22 @@ design-contact: kimsea
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 703667bf22ce11c119463008e868a943d447c7ff
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 20b6f54f39be116ad77cb5a179ff8c3d188eb8c4
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4211544"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264297"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
-> [!IMPORTANT]
-> 本文說明尚未發佈但可能在正式發行前大幅度修改的功能。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。 預覽功能，需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/) ] 或 [ [Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
-
-功能表和操作功能表會在使用者要求命令或選項時，顯示它們的清單。 您可以使用功能表飛出視窗來顯示單一，內嵌功能表。 您可以使用功能表列在水平列中，通常在應用程式視窗的頂端顯示一組的功能表。 每個功能表可以有功能表項目和子功能表。
+功能表和操作功能表會在使用者要求命令或選項時，顯示它們的清單。 您可以使用功能表飛出視窗來顯示單一，內嵌功能表。 使用功能表列來顯示一組功能表在水平列中，通常是在應用程式視窗的頂端。 每個功能表可以有功能表項目和子功能表。
 
 ![一般操作功能表的範例](images/contextmenu_rs2_icons.png)
 
 | **取得 Windows UI 文件庫** |
 | - |
-| 此控制項是包含在 Windows UI 程式庫，包含新的控制項和 UI 功能適用於 UWP app 的 NuGet 套件。 如需詳細資訊，包括安裝指示，請參閱[Windows UI 文件庫的概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
+| 此控制項是包含在 Windows UI 程式庫，包含新的控制項和 UI 功能適用於 UWP app 的 NuGet 套件。 如需詳細資訊，包括的安裝指示，請參閱[Windows UI 文件庫的概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
 
 | **平台 Api** | **Windows 使用者介面程式庫 Api** |
 | - | - |
@@ -44,17 +41,17 @@ ms.locfileid: "4211544"
 
 功能表和操作功能表可組織命令並在使用者不需要它們時加以隱藏，藉以節省空間。 如果經常會用到某個特定命令，而且您有可用的空間，請考慮直接將它放置於它自己的元素中，而不是放在功能表中，讓使用者不需瀏覽功能表，即可取得該命令。
 
-功能表和操作功能表是適用於組織命令;若要顯示任意內容，例如通知或確認要求，使用[對話方塊或飛出視窗](dialogs.md)。
+功能表和操作功能表僅適用於組織命令的方式。若要顯示任意內容，例如通知或確認要求，使用[對話方塊或飛出視窗](dialogs.md)。
 
-### <a name="menubar-vs-menuflyout"></a>功能表列與 MenuFlyout
+### <a name="menubar-vs-menuflyout"></a>與 MenuFlyout 功能表列
 
-若要附加到畫布上 UI 元素的飛出視窗中顯示在功能表中，使用 MenuFlyout 控制項來裝載您的功能表項目。 您可以叫用功能表飛出視窗為一般的功能表或操作功能表。 功能表飛出視窗會裝載單一的最上層功能表 （和選擇性的子功能表）。
+若要附加到畫布上 UI 元素的飛出視窗中顯示在功能表中，使用 MenuFlyout 控制項來裝載您的功能表項目。 您可以叫用功能表飛出視窗為一般功能表或操作功能表。 功能表飛出視窗會裝載單一的最上層功能表 （和選擇性子功能表）。
 
 若要在水平列中顯示一組的多個最上層的功能表，請使用功能表列。 您通常會放置在應用程式視窗的頂端的功能表列。
 
 ### <a name="menubar-vs-commandbar"></a>功能表列與 CommandBar
 
-功能表列和 CommandBar 兩者代表您可用來公開命令給您的使用者的表面。 功能表列提供快速且簡易的方式可以公開一組命令可能需要更多的組織或群組的應用程式，然後 CommandBar 允許。
+功能表列和 CommandBar 兩者代表您可用來公開命令給您的使用者的表面。 功能表列提供快速且簡易的方式可以公開一組命令可能需要更多的組織或群組比 CommandBar 允許的應用程式。
 
 您也可以使用功能表列與 CommandBar 搭配使用。 您可以使用功能表列來提供大量的命令，以及 CommandBar 反白顯示的最常用的命令。
 
@@ -76,7 +73,7 @@ ms.locfileid: "4211544"
 
 ## <a name="menus-vs-context-menus"></a>功能表與操作功能表
 
-功能表和操作功能表會在其外觀和可包含類似。 事實上，您可以使用相同的控制項， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，來建立它們。 不同之處在於讓使用者存取它的方式。
+功能表和操作功能表會在其外觀和可包含類似。 事實上，您可以使用相同的控制項， [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/dn299030)，來建立它們。 不同之處在於您如何讓使用者存取它。
 
 您何時應該使用功能表或操作功能表？
 
@@ -229,7 +226,7 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 ![功能表列的範例](images/menu-bar-submenu.png)
 
 > [!NOTE]
-> 這個範例示範如何只建立 UI 結構，但不是顯示任何命令的實作。
+> 這個範例示範如何只建立 UI 結構，但不會顯示任何一項命令的實作。
 
 ```xaml
 <MenuBar>

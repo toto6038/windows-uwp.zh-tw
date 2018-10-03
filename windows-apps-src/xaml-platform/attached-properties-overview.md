@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4213060"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263305"
 ---
 # <a name="attached-properties-overview"></a>附加屬性概觀
 
@@ -76,7 +76,7 @@ Windows 執行階段的附加屬性會實作為相依性屬性，這樣一來值
 
 ### <a name="using-the-xaml-accessor-pattern"></a>使用 XAML 存取子樣式
 
-當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性擁有者類型必須實作專用的存取子方法在表單中名為 **取得 * * * PropertyName*和 **設定 * * * PropertyName*。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
+當 XAML 剖析為物件樹時，XAML 存取子必須能夠設定附加屬性值。 附加屬性的擁有者類型必須實作專用的存取子方法在表單中名為 **取得 * * * PropertyName*和 **設定 * * * PropertyName*。 這些專用的存取子方法，也是在程式碼中取得或設定附加屬性的一種方式。 就程式碼的觀點而言，附加屬性與擁有方法存取子 (而非屬性存取子) 的支援欄位類似，該支援欄位可以存在任何物件中，不需要具體地定義。
 
 下面的範例顯示如何透過 XAML 存取子 API，在程式碼中設定附加屬性。 在此範例中，`myCheckBox` 是 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 類別的執行個體。 最後一行是實際設定值的程式碼，前一行會建立執行個體與它們的父系-子系關係。 如果您使用屬性系統，語法是未標記為註解的最後一行。 如果您使用 XAML 存取子樣式，語法是標記為註解的最後一行。
 

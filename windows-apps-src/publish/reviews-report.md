@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10，uwp、 檢閱、 註解，評論者
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209246"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261497"
 ---
 # <a name="reviews-report"></a>評論報告
 
 
 在 Windows 開發人員中心儀表板 [**評論**] 報告可讓您查看客戶對您在市集中的應用程式進行評分時所輸入的評論 （註解）。
 
-您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可以使用 「 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)[取得應用程式評論](../monetize/get-app-reviews.md)的方法以程式設計方式擷取此資料。
+您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可以在[Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md)中使用[應用程式評論的 get](../monetize/get-app-reviews.md)方法以程式設計方式擷取此資料。
 
 您也可以回應客戶評論[直接從這個頁面](respond-to-customer-reviews.md)，以程式設計方式[透過 Microsoft Store 評論 API](../monetize/submit-responses-to-app-reviews.md)，或使用[開發人員中心應用程式](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
 
@@ -52,7 +52,7 @@ ms.locfileid: "4209246"
 
 ## <a name="ratings-breakdown"></a>評分明細
 
-**評分明細**圖表就會顯示頂端的這份報告，以便您可以取得快速查看下列： 
+**評分明細**圖表顯示在此報告中的頂端，以便您可以取得快速瀏覽下列： 
 - app 的平均評分/星級評等。
 - 在過去 12 個月 app 的評分總數。
 - 每個星級評等的評分總數。
@@ -65,7 +65,7 @@ ms.locfileid: "4209246"
 
 請注意，此圖表一律包含所有評論，即使您在**評論內容的**頁面篩選器中選取 [**評等與評論內容**。
 
-此圖表也看過[評等報告](ratings-report.md)，以及您的應用程式評等相關的更多詳細資料。
+此圖表也會出現在[評等報告](ratings-report.md)，以及您的應用程式評等相關的更多詳細資料。
 
 
 <span id = "review-insight-categories" />
@@ -99,7 +99,7 @@ ms.locfileid: "4209246"
 
 您可以對頁面上評論依照日期和/或評分、以遞增或遞減的順序來進行排序。 按一下**排序方式**連結來檢視依**日期**和/或**評等**進行排序的選項。
 
-您也可以使用搜尋方塊來搜尋特定的字詞或片語，在您 app 的評論。 請注意，只有原始的評論文字客戶所撰寫的搜尋，即使是其他語言撰寫評論。 翻譯的評論文字不會搜尋。
+您也可以使用搜尋方塊來搜尋特定的字詞或片語，在您 app 的評論。 請注意，只有原始的評論的文字客戶所撰寫的搜尋，即使是其他語言撰寫評論。 翻譯的評論文字就不會搜尋。
 
 > [!NOTE]
 > 您可能偶爾會注意到此報告中的評論消失。 這有可能發生，因為 Microsoft 會從 \[市集\] 移除由執行 Windows 10 特定發行前版本和測試人員組建的客戶所撰寫的評論。 這麼做的原因是為了減少發行前版本 Windows 組建中的問題造成負面評論的可能性。 我們也會從 \[市集\] 移除已識別為垃圾郵件、不適當，具有冒犯意味或違反其他原則的評論。 我們希望這樣的舉動可以讓客戶體驗變得更好。
@@ -111,7 +111,7 @@ ms.locfileid: "4209246"
 
 請注意：評論是由系統自動翻譯，結果不一定正確。 我們也提供原文，供您與翻譯比較，或透過其他方式翻譯。
 
-如前所述，當搜尋評論時，只由客戶留下的原始文字搜尋 （而不是任何翻譯文字），即使您已經選取**翻譯評論**的方塊。
+如前所述，當搜尋評論時，只由客戶留下的原始文字搜尋 （而不是任何翻譯文字），即使您已經選取**翻譯評論**方塊。
 
 
 ## <a name="responding-to-customer-reviews"></a>回應客戶評論

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4209842"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260587"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 
@@ -35,7 +35,7 @@ ms.locfileid: "4209842"
 
 同處理序背景支援是在 Windows10 版本 1607 中引進，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
 
-跨處理序背景工作是更具彈性，因為背景處理程序無法關閉您的應用程式處理程序如果發生錯誤。 但是彈性的代價是以管理應用程式和背景工作之間的跨處理程序通訊方面複雜度變高的價格。
+因為背景處理程序無法關閉您的應用程式處理程序在發生錯誤時，跨處理序背景工作是更具彈性。 但是彈性的代價是以管理應用程式和背景工作之間的跨處理程序通訊方面複雜度變高的價格。
 
 跨處理序背景工作會實作為輕量型類別來實作[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)介面的作業系統在個別處理程序 (backgroundtaskhost.exe) 中執行。 使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)類別登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
 
@@ -77,7 +77,7 @@ ms.locfileid: "4209842"
 
 新增 **InternetAvailable** 條件至您的背景工作 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 可延遲觸發背景工作，直到網路堆疊執行。 這個條件可以節省電源，因為背景工作將不會執行網路可供使用。 這個條件不提供即時啟動。
 
-如果您的背景工作需要網路連線，設定[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以確保，保持網路時執行背景工作。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不會設定**IsNetworkRequested**，則您的背景工作將無法存取網路在 [連線待命] 模式 （例如，當手機螢幕關閉時。）
+如果您的背景工作需要網路連線，設定[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以確保，保持網路時執行背景工作。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不會設定**IsNetworkRequested**，則您的背景工作將無法存取網路時在連線待命] 模式 （例如，當手機螢幕關閉。）
  
 如需背景工作條件的詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
@@ -143,7 +143,7 @@ ms.locfileid: "4209842"
 
 除非您豁免您的 App，使其在省電模式開啟時，仍然可以執行背景工作並接收推播通知，否則當電池省電功能啟用時，只要裝置沒有連接外部電源，而且電池電量低於指定的剩餘電量，它就會阻止背景工作執行。 但是不會阻止您登錄背景工作。
 
-不過，企業應用程式，並將不會在 Microsoft Store 中發佈的應用程式，請參閱[在背景無限期執行](run-in-the-background-indefinetly.md)以了解如何使用背景工作或延伸的執行工作階段在背景無限期執行的功能。
+不過，企業應用程式及將不會在 Microsoft Store 中發佈的應用程式，請參閱[在背景無限期執行](run-in-the-background-indefinetly.md)以了解如何使用背景工作或延伸的執行工作階段在背景無限期執行的功能。
 
 ## <a name="background-task-resource-guarantees-for-real-time-communication"></a>即時通訊的背景工作資源保證
 
@@ -171,7 +171,7 @@ ms.locfileid: "4209842"
 [處理已取消的背景工作](handle-a-cancelled-background-task.md)  
 [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 
-在應用程式啟動時檢查您的背景工作註冊。 請確定您的應用程式取消的背景工作會出現在 BackgroundTaskBuilder.AllTasks。 重新註冊便不會出現。 取消登錄任何不再需要的工作。 這樣可確保每次啟動應用程式時，所有背景工作註冊都是最新狀態。
+在應用程式啟動時，請檢查您的背景工作登錄。 請確定您的應用程式取消的背景工作是出現在 BackgroundTaskBuilder.AllTasks。 重新註冊便不會出現。 取消登錄任何不再需要的工作。 這樣可確保每次啟動應用程式時，所有背景工作註冊都是最新狀態。
 
 ## <a name="related-topics"></a>相關主題
 

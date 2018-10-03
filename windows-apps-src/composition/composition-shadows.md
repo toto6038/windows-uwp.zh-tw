@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 84e12d6c3e25a18902aaa55011949dd5b5ff97ca
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207378"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264155"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的陰影
 
@@ -22,7 +22,7 @@ ms.locfileid: "4207378"
 
 ## <a name="basic-drop-shadow"></a>基本的陰影
 
-若要建立基本的陰影，只要建立新的 DropShadow，並將它關聯到您的 visual。 陰影預設是矩形。 調整您陰影的外觀及操作提供一組標準的屬性。
+若要建立基本的陰影，只要建立新的 DropShadow，並將它以您的 visual 產生關聯。 陰影預設是矩形。 調整您的陰影的外觀及操作提供一組標準的屬性。
 
 ```cs
 var basicRectVisual = _compositor.CreateSpriteVisual();
@@ -37,19 +37,19 @@ basicShadow.Offset = new Vector3(20, 20, 20);
 basicRectVisual.Shadow = basicShadow;
 ```
 
-![使用基本 DropShadow 矩形的視覺效果](images/rectangular-dropshadow.png)
+![以 DropShadow 基本矩形的視覺效果](images/rectangular-dropshadow.png)
 
 ## <a name="shaping-the-shadow"></a>罰陰影
 
 有幾個您 DropShadow 為定義圖形的方式：
 
 - **使用預設值**-預設 DropShadow 圖形是由定義 CompositionDropShadowSourcePolicy 上的 「 預設 」 模式。 SpriteVisual，預設值是矩形除非遮罩會提供。 LayerVisual，預設值是要繼承使用 「 視覺效果的筆刷的 alpha 遮罩。
-- **設定遮罩**– 您可能會設定[遮罩](/uwp/api/windows.ui.composition.dropshadow.mask)屬性來定義不透明度遮罩，陰影。
-- **指定要使用繼承的遮罩**– 將使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy) [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)屬性。 若要使用產生的視覺效果的筆刷的 alpha 遮罩 InheritFromVisualContent。
+- **設定遮罩**– 您可能會將[遮罩](/uwp/api/windows.ui.composition.dropshadow.mask)屬性來定義不透明度遮罩，陰影。
+- **指定要使用繼承的遮罩**– 將使用[CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy) [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy)屬性。 若要使用產生的 「 視覺效果的筆刷的 alpha 遮罩 InheritFromVisualContent。
 
 ## <a name="masking-to-match-your-content"></a>遮罩，使其符合您的內容
 
-如果您想要以符合的視覺內容您陰影您可以使用 「 視覺效果的筆刷適用於您陰影遮罩的屬性，或設定要自動從內容繼承遮罩，陰影。 如果使用 LayerVisual，陰影將預設繼承遮罩。
+如果您想要以符合的視覺內容您陰影您可以使用 「 視覺效果的筆刷適用於您陰影遮罩的屬性，或設定要自動從內容繼承遮罩，陰影。 如果使用 LayerVisual，陰影會根據預設會繼承遮罩。
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -75,7 +75,7 @@ imageSpriteVisual.Shadow = shadow;
 
 在某些情況下，您可能會想要打造陰影，它不符合您的視覺內容。 若要達到這個效果，您將需要明確地將使用筆刷與 alpha 遮罩屬性。
 
-在以下範例中，我們載入兩個表面的另一個用於視覺化內容，一個適用於陰影遮罩：
+在以下範例中，我們載入兩個表面-另一個用於視覺化內容，一個適用於陰影遮罩：
 
 ```cs
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
@@ -115,15 +115,15 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 ## <a name="shadows-in-xaml"></a>在 XAML 中的陰影
 
-如果您想要將陰影新增到更複雜的架構項目時，有幾種方式與陰影 XAML 與組合之間的互通性：
+如果您想要更複雜的架構項目來新增陰影，有幾種方式與陰影 XAML 與組合之間的互通性：
 
-1. 使用[DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs)於 Windows 社群工具組。 請參閱有關如何使用它的詳細資料的[DropShadowPanel 文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)。
-1. 建立要使用做為陰影主機與將它繫結至 XAML 交出 Visual 的視覺效果。
-1. 使用組合範例庫[SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon)自訂 CompositionShadow 控制項。 請參閱以下的範例使用方式。
+1. 使用[DropShadowPanel](https://github.com/Microsoft/UWPCommunityToolkit/blob/master/Microsoft.Toolkit.Uwp.UI.Controls/DropShadowPanel/DropShadowPanel.Properties.cs) Windows 社群工具組中提供。 請參閱有關如何使用它的詳細資料的[DropShadowPanel 文件](https://docs.microsoft.com/windows/uwpcommunitytoolkit/controls/DropShadowPanel)。
+1. 建立至使用與陰影主機 & 將它繫結至 XAML 交出 Visual 的視覺效果。
+1. 使用組合範例庫[SamplesCommon](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SamplesCommon/SamplesCommon)自訂 CompositionShadow 控制項。 請參閱使用量以下的範例。
 
 ## <a name="performance"></a>效能
 
-雖然視覺層中，讓效果有效率及可用的地方有許多最佳化，產生陰影可以是相當耗費資源的作業，根據您設定哪些選項。 以下是層級 」 的高成本' 不同類型的陰影。 請注意，雖然某些陰影可能昂貴他們仍然可能適合在某些情況下謹慎使用。
+視覺層中，讓效果，有效率及可用的地方有許多最佳化，雖然產生陰影可以是相當耗費資源的作業，取決於您設定哪些選項。 以下是層級 」 的高成本' 不同類型的陰影。 請注意，雖然某些陰影可能昂貴他們仍然可能適合在某些情況下謹慎使用。
 
 陰影特性| 費用
 ------------- | -------------

@@ -5,7 +5,7 @@ title: 方向性和重力 - UWP app 中的動畫
 label: Directionality and gravity
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
@@ -14,17 +14,14 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: a5216e81bc556a2e761e88b071e988bf6e4f457e
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: b61abf00d5ab8820457742f16feb9b496b7d7d1c
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843762"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4265807"
 ---
 # <a name="directionality-and-gravity"></a>方向性和重力
-
-> [!IMPORTANT]
-> 本文說明尚未發佈但可能在正式發行前大幅度修改的功能。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
 
 方向訊號有助於強化使用者體驗期間的心智模式。 任何動作的方向，必須能同時支援空間的持續性，以及空間中物件的完整性。
 
@@ -32,14 +29,16 @@ ms.locfileid: "1843762"
 
 ## <a name="direction-of-movement"></a>移動方向
 
-::: 列:::::: 欄::: 移動方向對應於實體動作。 就像大自然中，物件可在任何世界軸 (X、Y、Z) 移動。 這就是我們想像螢幕上物件如何移動的情況。
+:::row:::
+    :::column:::
+        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
 
         When you move objects, avoid unnatural collisions. Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.
     :::column-end:::
     :::column:::
         ![direction backward in](images/Direction.gif)
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
 ## <a name="direction-of-navigation"></a>瀏覽方向
 
@@ -63,35 +62,46 @@ ms.locfileid: "1843762"
 
 有 4 個謹慎瀏覽方向考量。
 
-::: 列:::::: 欄:::**前進**
+:::row:::
+    :::column:::
+        **Forward-In**
 
         Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
     :::column-end:::
-::: 列結束:::::: 列:::::: 欄:::**前出**
+:::row-end:::
+:::row:::
+    :::column:::
+        **Forward-Out**
 
         Content exits quickly. Objects accelerate off screen.
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
     :::column-end:::
-::: 列結束:::::: 列:::::: 欄:::**後進**
+:::row-end:::
+:::row:::
+    :::column:::
+        **Backward-In**
 
         Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
     :::column-end:::
-::: 列結束:::::: 列:::::: 欄:::**後出**
+:::row-end:::
+:::row:::
+    :::column:::
+        **Backward-Out**
 
         Same as Forward-Out, but reversed.
     :::column-end:::
     :::column:::
         ![direction backward out](images/backwardOUT.gif)
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
 ## <a name="gravity"></a>重力
 

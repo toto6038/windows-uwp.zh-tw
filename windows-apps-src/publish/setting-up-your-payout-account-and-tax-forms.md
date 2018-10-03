@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207814"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261473"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支付及稅收表格
 
@@ -27,7 +27,7 @@ ms.locfileid: "4207814"
 > [!NOTE]
 > 在[特定市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)中，開發人員只能提交免費 App。 如果您的帳戶在上述其中一個市場中註冊，就無法選擇設定支付帳戶。
 
-[設定您的開發人員帳戶](opening-a-developer-account.md)之後，有兩件事您需要執行之前的應用程式 （或附加元件），您可以銷售 Microsoft 網上商店：
+[設定您的開發人員帳戶](opening-a-developer-account.md)之後，有在 Microsoft Store 中是您需要執行之前，您可以銷售 app （或附加元件） 的兩件事：
 
 -   [設定您的支付帳戶](#payout-account)
 -   [填寫您的納稅申報表](#tax-forms)
@@ -125,7 +125,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 ## <a name="tax-forms"></a>納稅申報表
 
-當您[註冊開發人員帳戶](opening-a-developer-account.md)並設定您的[支付帳戶](#payout-account)之後，您可以建立 Microsoft 網上商店的*稅金設定檔*藉由完成下列步驟：
+當您[註冊開發人員帳戶](opening-a-developer-account.md)並設定您的[支付帳戶](#payout-account)之後，您可以建立用於 Microsoft Store 的*稅金設定檔*藉由完成下列步驟：
 
 -   指定您的居住國家/地區和國籍。
 -   填寫適當的納稅申報表。
@@ -133,7 +133,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 您可以在儀表板中以電子化方式完成並提交納稅申報表；在大多數情況下，您不需要列印及郵寄任何申報表。
 
 > [!IMPORTANT]
-> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您相關機構聯繫您國家或地區最能夠協助您判斷您的 Microsoft Store 開發人員活動之正確稅金資訊。
+> 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您的相關機構聯繫適用於您國家或地區最能夠協助您判斷您的 Microsoft Store 開發人員活動之正確稅金資訊。
 
  
 **完成您的稅金設定檔**

@@ -4,18 +4,18 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: 解決提交錯誤
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 09/13/2017
+ms.date: 10/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d027e35f8fe76a0d4139301f1a7dabc7798348a
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4210224"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4260773"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -23,15 +23,15 @@ ms.locfileid: "4210224"
 
 ## <a name="uwp-apps"></a>UWP app
 
-如果您提交 UWP app 時，如果您的套件檔不是由 Visual Studio 針對市集所產生 .appxupload 檔案，則會在前置處理期間看到錯誤訊息。 請確定您遵循[套件與 Visual Studio 的 UWP 應用程式](../packaging/packaging-uwp-apps.md)中的步驟，在建立您的應用程式套件檔案，並只上傳.appxupload 檔案提交、 appx 或.appxbundle 不使用 [[套件](upload-app-packages.md)] 頁面。
+如果您提交 UWP app，您可能會看到錯誤，如果您的套件檔案不是由 Visual Studio 針對市集所產生的.msixupload 或.appxupload 檔案，前置處理期間。 請務必依照[封裝 UWP 應用程式與 Visual Studio](../packaging/packaging-uwp-apps.md)中的步驟，在建立您的應用程式套件檔案，並只上傳提交的複本，不是.msix/appx 或.msixbundle/appxbundle[套件](upload-app-packages.md)頁面上.msixupload 或.appxupload 檔案.
 
 如果出現編譯錯誤，請確認您可以成功在釋出模式中建置您的應用程式。 如需詳細資訊，請參閱 [.NET 原生內部編譯器錯誤](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
 ## <a name="desktop-application"></a>傳統型應用程式
 
-如果您計劃提交的套件，其中包含 Win32 和 UWP 二進位檔案，請確定您使用 Visual Studio 2017 更新 4 適用於 Windows 封裝專案來建立該套件。 如果您可以使用 UWP 專案範本，以建立套件，您可能無法送出的存放區或側載將其封裝到其他電腦上。 即使成功發佈套件，可能會在使用者的電腦上有非預期的方式運作。 如需詳細資訊，請參閱[封裝的應用程式使用 Visual Studio （傳統型橋接器）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果您計劃提交的套件，其中包含 UWP 和 Win32 二進位檔，請確定您使用 Visual Studio 2017 更新 4 中可用的 Windows 封裝專案來建立該套件。 如果您可以使用 UWP 專案範本，以建立套件，您可能無法送出的存放區或側載將其封裝到其他電腦上。 即使成功發佈套件，可能會在使用者的電腦上有非預期的方式運作。 如需詳細資訊，請參閱[封裝的應用程式使用 Visual Studio （傳統型橋接器）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
-## <a name="windows-phone-apps"></a>Windows Phone app
+## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 和更舊版本
 
 在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 **\[提交至市集\]** 前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
 

@@ -15,11 +15,11 @@ dev_langs:
 - cpp
 - cppwinrt
 ms.openlocfilehash: b4e3678e17e7545dfe9cb4049ace7ff864198156
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207596"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262207"
 ---
 # <a name="xaml-lighting"></a>XAML 光源
 
@@ -461,7 +461,7 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-然後，您可以將此光線套用到任何 XAML UIElement 或筆刷來增強它們。 這個範例示範不同可能用法。
+然後，您可以將此光線套用到任何 XAML UIElement 或筆刷，來增強它們。 這個範例示範不同可能用法。
 
 > [!Important]
 > 適用於[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，移除的兩個`local:OrangeSpotLight.IsTarget="True"`從下列標記。 在程式碼後置中已設定的附加的屬性。

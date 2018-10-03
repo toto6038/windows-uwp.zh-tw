@@ -3,19 +3,19 @@ author: laurenhughes
 title: 為您的 UWP app 設定自動化組建
 description: 如何設定您的自動化組建以產生側載及/或儲存套件。
 ms.author: lahugh
-ms.date: 03/30/2018
+ms.date: 09/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 4354254e01333db17f1151c182267c0330a799ba
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832359"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4261681"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -81,7 +81,7 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 
 #### <a name="configure-the-build-solution-build-task"></a>設定建置方案建置工作
 
-這個工作會將任何工作資料夾中的方案編譯為二進位檔，並產生輸出 AppX 檔案。 這個工作會使用 MSbuild 引數。  您必須指定那些引數的值。 使用下表做為指引。 
+這項工作會編譯任何解決方案，在工作資料夾，以二進位檔，而且會產生輸出應用程式套件檔案。 這個工作會使用 MSbuild 引數。  您必須指定那些引數的值。 使用下表做為指引。 
 
 |**MSBuild 引數**|**值**|**說明**|
 |--------------------|---------|---------------|
@@ -111,7 +111,7 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 
 ![構件](images/building-screen6.png)
 
-因為我們已將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，構件資料夾包含建議提交至Microsoft Store的套件 (.appxupload)。 請注意，您也可以提交一般應用程式套件 (.appx) 或應用程式套件組合 (.appxbundle) 至Microsoft Store。 根據本文的用途，我們將使用 .appxupload 檔案。
+因為我們已將 `UapAppxPackageBuildMode` 屬性設定為 `StoreUpload`，構件資料夾包含建議提交至Microsoft Store的套件 (.appxupload)。 請注意，您也可以提交一般應用程式套件 (.appx/.msix) 或應用程式套件組合 (.appxbundle/.msixbundle) 至市集。 根據本文的用途，我們將使用 .appxupload 檔案。
 
 
 >[!NOTE]
@@ -216,7 +216,7 @@ MakeAppx(0,0): Error : Error info: error 80080204: The package with file name "A
 然後，從建置步驟中移除 `AppxBundle` msbuild 引數。
 
 ## <a name="set-up-a-continuous-deployment-build-for-sideloading"></a>設定用於側載的連續部署組建
-完成這種類型的組建時，使用者可以從組建結果頁面的構件區段下載 .appxbundle 檔案。 如果您想透過建立更完整的通訊群組對 App 進行 Beta 測試，您可以使用 HockeyApp 服務。 此服務提供進行 Beta 測試、使用者分析以及損毀診斷的進階功能。
+完成這種類型的組建時，使用者可以從組建結果頁面的構件區段下載應用程式套件組合檔案。 如果您想透過建立更完整的通訊群組對 App 進行 Beta 測試，您可以使用 HockeyApp 服務。 此服務提供進行 Beta 測試、使用者分析以及損毀診斷的進階功能。
 
 ### <a name="applying-version-numbers-to-your-builds"></a>對您的組建套用版本號碼
 
@@ -257,9 +257,9 @@ CI_MyUWPApp_1.1.2501.0
 
 接著，使用本指南設定 HockeyApp 連線：[如何使用 HockeyApp 搭配 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS)](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)。 您可以使用您的 Microsoft 帳戶、社交媒體帳戶或電子郵件地址來設定您的 HockeyApp 帳戶。 免費方案隨附兩個 App、一位擁有者，而且沒有資料限制。
 
-然後，您可以手動建立 HockeyApp App，或上傳現有的 appx 套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
+然後，您可以建立 HockeyApp app，以手動方式，或上傳現有的應用程式套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
 
-若要使用現有的 appx 套件檔案，請新增建置步驟，並設定該建置步驟的二進位檔案路徑參數。 
+若要使用現有的應用程式套件檔案，新增建置步驟中，並設定該建置步驟的二進位檔案路徑參數。 
 
 ![設定 hockey app](images/building-screen15.png) 
 
@@ -269,7 +269,7 @@ CI_MyUWPApp_1.1.2501.0
 $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUWPApp_$(AppxVersion)_x86_x64_ARM.appxbundle
 ```
 
-雖然 HockeyApp 工作允許您指定符號檔案的路徑，但最佳做法是在套件組合中包含符號 (appxsym 檔案)。
+雖然 HockeyApp 工作允許您指定符號檔案的路徑，它會是最佳做法中包含符號套件組合。
 
 ## <a name="set-up-a-continuous-deployment-build-that-submits-a-package-to-the-store"></a>設定將套件提交至Microsoft Store的連續部署組建 
 
@@ -287,7 +287,7 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-這將會產生可提交至Microsoft Store的 .appxupload 檔案。
+這將會產生可提交至 microsoft Store 上傳的檔案。
 
 
 #### <a name="configure-automatic-store-submission"></a>設定自動Microsoft Store提交
@@ -296,7 +296,7 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 
 您需要將開發人員中心帳戶與 Azure Active Directory (AD) 連接，然後在您的 AD 中建立 App 以驗證要求。 您可以依照 [擴充功能] 頁面中的指示來完成該作業。 
 
-一旦您設定好擴充功能，就可以新增建置工作，並使用您的應用程式識別碼以及 .appxupload 檔案的位置進行設定。
+一旦您設定好擴充功能，您可以新增建置工作，並使用您的應用程式識別碼和上傳檔案的位置進行設定。
 
 ![設定開發人員中心](images/building-screen17.png) 
 
@@ -317,17 +317,17 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果您想要在不發佈到Microsoft Store的情況下發佈您的 App，只要這些裝置信任用來簽署應用程式套件的憑證，您就可以將您的 App 直接側載到裝置。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 此指令碼會將憑證新增到本機電腦的 [信任的根憑證] 區段，然後將會安裝或更新 appx 檔案。
+使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並接著將會安裝或更新應用程式套件檔案。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 年度更新版側載您的 App
-在 Windows10 年度更新版中，您可以按兩下 appxbundle 檔案，並透過選擇對話方塊中的 [安裝] 按鈕來安裝您的 App。 
+在 Windows 10 年度更新版，您可以按兩下應用程式套件檔案，並在對話方塊中選擇 [安裝] 按鈕來安裝您的應用程式。 
 
 ![在 rs1 側載](images/building-screen18.png) 
 
 >[!NOTE]
 > 此方法不會安裝憑證或相關的相依性。
 
-如果您想要從網站 (例如 VSTS 或 HockeyApp) 發佈您的 appx 套件，您必須將該網站新增到您瀏覽器中信任的網站清單。 否則，Windows 會將檔案標示為已鎖定。 
+如果您想要發佈您的 Windows 應用程式套件，例如 VSTS 或 HockeyApp 的網站，您將需要將該網站新增到您的瀏覽器中信任的網站清單。 否則，Windows 會將檔案標示為已鎖定。 
 
 <span id="certificates-best-practices"/>
 

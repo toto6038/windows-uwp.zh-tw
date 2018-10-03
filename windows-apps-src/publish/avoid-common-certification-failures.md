@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207246"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4262159"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
@@ -23,7 +23,7 @@ ms.locfileid: "4207246"
 檢閱此清單有助於避免發生經常讓 app 無法通過認證的問題，或是 app 發行後可能在抽樣檢查中發現的問題。
 
 > [!NOTE]
-> 請務必檢閱[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)，以確認您的應用程式符合此處所列的需求的所有項目。
+> 請務必檢閱以確保您的應用程式符合此處所列的需求的所有的[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 -   只有在完成上述檢閱之後，才提教您的 app。 您可以使用應用程式的介紹來提及即將推出的新功能，但務必確定應用程式中沒有包含未完成的區段或建構中的網頁連結，或是讓客戶覺得您的應用程式有未完成的任何其他項目。
 

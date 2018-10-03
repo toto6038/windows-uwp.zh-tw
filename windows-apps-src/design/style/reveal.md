@@ -15,17 +15,17 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: e4f3e1b2d08a02b9920e78e802234e5b674e7223
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "4207878"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4263083"
 ---
 # <a name="reveal-highlight"></a>顯色醒目提示
 
 ![主角圖像](images/header-reveal-highlight.svg)
 
-顯色醒目提示是當使用者移動指標靠近它們會反白顯示互動式元素，例如命令列，一種光源效果。 
+顯色醒目提示是一種光源效果，當使用者移動指標靠近它們會反白顯示互動式元素，例如命令列。 
 
 > **重要的 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
@@ -134,7 +134,7 @@ ms.locfileid: "4207878"
 
 
 這些效果是由兩個筆刷定義： 
-* 邊框顯色是由**RevealBorderBrush**定義
+* 邊框顯色**RevealBorderBrush**所定義
 * 暫留顯色是由**RevealBackgroundBrush**所定義
 
 ```xaml
@@ -266,7 +266,7 @@ ms.locfileid: "4207878"
 * 靠近到會彼此接觸的相鄰命令元素：在兩個元素之間加入 1px 的邊界。 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
-### <a name="do"></a>執行：
+### <a name="do"></a>執行作業：
 - 要在使用者可以執行許多動作的元素 (命令列、瀏覽功能表) 上使用顯色
 - 要在預設沒有視覺分隔線的互動式元素群組 (清單、功能區) 中使用顯色
 - 要在互動式元素密集度高的區域 (命令功能案例) 中使用顯色

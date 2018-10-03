@@ -3,19 +3,19 @@ author: laurenhughes
 title: 使用 MakeAppx.exe 工具建立應用程式套件
 description: MakeAppx.exe 建立、加密、解密應用程式套件與套件組合，並從應用程式套件與套件組合中擷取檔案。
 ms.author: lahugh
-ms.date: 03/07/2017
+ms.date: 06/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 封裝
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
-ms.openlocfilehash: 94972915e5fc80a477d8d647212ab3b91e0aa384
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
+ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817789"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "4264323"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具建立應用程式套件
 
@@ -25,10 +25,12 @@ ms.locfileid: "1817789"
 > [!IMPORTANT] 
 > 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
 
-請注意，**MakeAppx.exe** 不會建立 .appxupload 檔案。 .appxupload 檔案會在 Visual Studio 封裝程序中建立，並包含兩個其他檔案︰.appx 和 .appxsym。 .appxsym 檔案是一個壓縮的 .pdb 檔案，其中包含您的 App 用於 Windows 開發人員中心中[損毀分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的公用符號。 一般的 .appx 檔案也可以一起提交，但不會有任何損毀分析或偵錯資訊。 如需有關將套件提交到Microsoft Store的詳細資訊，請參閱[上傳應用程式套件](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
+請注意，**MakeAppx.exe** 不會建立 .appxupload 檔案。 .Appxupload 檔案會建立為 Visual Studio 封裝程序的一部分，並包含其他兩個檔案：.msix 或.appx 和.appxsym。 .appxsym 檔案是一個壓縮的 .pdb 檔案，其中包含您的 App 用於 Windows 開發人員中心中[損毀分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的公用符號。 一般的 .appx 檔案也可以一起提交，但不會有任何損毀分析或偵錯資訊。 如需有關將套件提交到Microsoft Store的詳細資訊，請參閱[上傳應用程式套件](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
+
+ 此工具的最新版本的 Windows 10 中的更新不會影響.appx 套件使用方式。 您可以繼續使用.appx 套件，使用此工具，或使用工具的支援，針對.msix 套件如下所述。
 
 手動建立 .appxupload 檔案︰
-- 將 .appx 和 .appxsym 放在資料夾中
+- 將.msix 和.appxsym 放在資料夾中
 - 壓縮資料夾
 - 將壓縮的資料夾副檔名從 .zip 變更為 .appxupload
 
@@ -58,7 +60,6 @@ MakeAppx <command> [options]
 | unbundle      | 將所有套件解除封裝到以套件組合完整名稱命名之指定輸出路徑下的子目錄。 |
 | encrypt       | 從輸入的套件/套件組合在指定的輸出套件/套件組合建立加密的應用程式套件或套件組合。 |
 | decrypt       | 從輸入的應用程式套件/套件組合在指定的輸出套件/套件組合建立解密的應用程式套件或套件組合。 |
-| build         |  |
 
 
 這個選項清單適用於所有命令︰
@@ -81,14 +82,14 @@ MakeAppx <command> [options]
 
 | **引數**                          | **描述**                       |
 |---------------------------------------|---------------------------------------|
-| &lt;輸出套件名稱&gt;           | 建立的套件名稱。 此檔案名稱會附加 .appx。 |
-| &lt;加密的輸出套件名稱&gt; | 建立的加密套件名稱。 此檔案名稱會附加 .eappx。 |
-| &lt;輸入套件名稱&gt;            | 套件的名稱。 此檔案名稱會附加 .appx。 |
-| &lt;加密的輸入套件名稱&gt;  | 加密套件的名稱。 此檔案名稱會附加 .eappx。 |
-| &lt;輸出套件組合名稱&gt;            | 建立的套件組合名稱。 此檔案名稱會附加 .appxbundle。 |
-| &lt;加密的輸出套件組合名稱&gt;  | 建立的加密套件組合名稱。 此檔案名稱會附加 .eappxbundle。 |
-| &lt;輸入套件組合名稱&gt;             | 套件組合的名稱。 此檔案名稱會附加 .appxbundle。 |
-| &lt;加密的輸入套件組合名稱&gt;   | 加密套件組合的名稱。 此檔案名稱會附加 .eappxbundle。 |
+| &lt;輸出套件名稱&gt;           | 建立的套件名稱。 這是檔案名稱會附加.msix 或.appx。 |
+| &lt;加密的輸出套件名稱&gt; | 建立的加密套件名稱。 這是檔案名稱會附加.emsix 或.eappx。 |
+| &lt;輸入套件名稱&gt;            | 套件的名稱。 這是檔案名稱會附加.msix 或.appx。 |
+| &lt;加密的輸入套件名稱&gt;  | 加密套件的名稱。 這是檔案名稱會附加.emsix 或.eappx。 |
+| &lt;輸出套件組合名稱&gt;            | 建立的套件組合名稱。 這是檔案名稱會附加.msixbundle 或.appxbundle。 |
+| &lt;加密的輸出套件組合名稱&gt;  | 建立的加密套件組合名稱。 這是檔案名稱會附加.emsixbundle 或.eappxbundle。 |
+| &lt;輸入套件組合名稱&gt;             | 套件組合的名稱。 這是檔案名稱會附加.msixbundle 或.appxbundle。 |
+| &lt;加密的輸入套件組合名稱&gt;   | 加密套件組合的名稱。 這是檔案名稱會附加.emsixbundle 或.eappxbundle。 |
 | &lt;內容目錄&gt;             | 應用程式套件或套件組合內容的路徑。 |
 | &lt;對應檔案&gt;                  | 指定套件來源和目的地的檔案名稱。 |
 | &lt;輸出目錄&gt;              | 輸出套件和套件組合的目錄路徑。 |
@@ -98,7 +99,7 @@ MakeAppx <command> [options]
 
 ### <a name="create-an-app-package"></a>建立應用程式套件
 
-應用程式套件是一組封裝成 .appx 套件檔案的完整應用程式檔案。 若要使用 **pack** 命令建立應用程式套件，您必須提供內容目錄或套件位置的對應檔案。 您也可以在建立套件時進行加密。 如果您想要加密套件，您必須使用 /ep，並指定要使用金鑰檔案 (/kf) 或全域測試金鑰 (/kt)。 如需有關建立加密套件的詳細資訊，請參閱[加密或解密套件或套件組合](#encrypt-or-decrypt-a-package-or-bundle)。
+應用程式套件是一組完整的應用程式的封裝成.msix 或.appx 套件檔案的檔案。 若要使用 **pack** 命令建立應用程式套件，您必須提供內容目錄或套件位置的對應檔案。 您也可以在建立套件時進行加密。 如果您想要加密套件，您必須使用 /ep，並指定要使用金鑰檔案 (/kf) 或全域測試金鑰 (/kt)。 如需有關建立加密套件的詳細資訊，請參閱[加密或解密套件或套件組合](#encrypt-or-decrypt-a-package-or-bundle)。
 
 **pack** 命令專用的選項︰
 
@@ -125,12 +126,12 @@ MakeAppx pack [options] /d <content directory> /ep <encrypted output package nam
 以下顯示 **pack** 命令的命令列範例︰
 
 ``` examples
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.appx
-MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.appx
-MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.appx
-MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.appx
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kf MyKeyFile.txt
-MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.eappx /kt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /p MyPackage.msix
+MakeAppx pack /v /o /f MyMapping.txt /p MyPackage.msix
+MakeAppx pack /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p AppPackage.msix
+MakeAppx pack /r /m "MyApp\AppxManifest.xml" /f MyMapping.txt /p ResourcePackage.msix
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kf MyKeyFile.txt
+MakeAppx pack /v /h SHA256 /d "C:\My Files" /ep MyPackage.emsix /kt
 ```
 
 ### <a name="create-an-app-bundle"></a>建立應用程式套件組合
@@ -157,10 +158,10 @@ MakeAppx bundle [options] /f <mapping file> /ep <encrypted output bundle name> /
 下列區塊包含 **bundle** 命令的範例︰
 
 ``` examples
-MakeAppx bundle /v /d "C:\My Files" /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.appxbundle
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kf MyKeyFile.txt
-MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.eappxbundle /kt
+MakeAppx bundle /v /d "C:\My Files" /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /p MyBundle.msixbundle
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kf MyKeyFile.txt
+MakeAppx bundle /v /o /bv 1.0.1.2096 /f MyMapping.txt /ep MyBundle.emsixbundle /kt
 ```
 
 ### <a name="extract-files-from-a-package-or-bundle"></a>從套件或套件組合解壓縮檔案
@@ -189,13 +190,13 @@ MakeAppx unbundle [options] /ep <encrypted input bundle name> /d <output directo
 下列區塊包含使用 **unpack** 和 **unbundle** 命令的範例︰
 
 ``` examples
-MakeAppx unpack /v /p MyPackage.appx /d "C:\My Files"
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unpack /v /ep MyPackage.eappx /d "C:\My Files" /kt
+MakeAppx unpack /v /p MyPackage.msix /d "C:\My Files"
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unpack /v /ep MyPackage.emsix /d "C:\My Files" /kt
 
-MakeAppx unbundle /v /p MyBundle.appxbundle /d "C:\My Files"
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kf MyKeyFile.txt
-MakeAppx unbundle /v /ep MyBundle.eappxbundle /d "C:\My Files" /kt
+MakeAppx unbundle /v /p MyBundle.msixbundle /d "C:\My Files"
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kf MyKeyFile.txt
+MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 ```
 
 ### <a name="encrypt-or-decrypt-a-package-or-bundle"></a>加密或解密套件或套件組合
@@ -223,28 +224,12 @@ MakeAppx decrypt [options] /ep <package name> /p <output package name> /kt
 下列區塊包含使用 **encrypt** 和 **decrypt** 命令的範例︰
 
 ``` examples
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe encrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe encrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 
-MakeAppx.exe decrypt /p MyPackage.appx /ep MyEncryptedPackage.eappx /kt
-MakeAppx.exe decrypt p MyPackage.appx /ep MyEncryptedPackage.eappx /kf MyKeyFile.txt
+MakeAppx.exe decrypt /p MyPackage.msix /ep MyEncryptedPackage.emsix /kt
+MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile.txt
 ```
-
-### <a name="build-an-app-package"></a>建置應用程式套件 
-
-**MakeAppx.exe**可以根據應用程式套件配置檔案建置應用程式。 若要了解如何建立套件配置檔案，以及如何使用**MakeAppx.exe**進行建置，請查看[使用封裝配置的套件建立](packaging-layout.md)。  
-
-**build** 命令專用的選項︰
-
-| **選項**    | **描述**                       |
-|---------------|---------------------------------------|
-| /bc           | 在要建置的套件系列中指定子套件。  |
-| /id           | 根據套件**ID**屬性，用來選取要建置的套件。 |
-| /ip           | 表示應用程式套件之前版本的位置。 |
-| /iv           | 自動遞增建置套件的版本。 |
-| /f            | 指定封裝配置檔案。 |
-| /nbp          | 表示不應建置應用程式套件。 |
-| /op           | 輸出套件目的地。 |
 
 ## <a name="key-files"></a>金鑰檔案
 
