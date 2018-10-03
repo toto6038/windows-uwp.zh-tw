@@ -9,15 +9,15 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, WRL
 ms.localizationpriority: medium
-ms.openlocfilehash: 935b76e668153c9519bc6516da0c2872c2428f2e
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 44a41e42477de9d29f1d0443324fa83590c37caf
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4258751"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309734"
 ---
-# <a name="move-to-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-from-wrl"></a>從 WRL 移到 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 C++/WinRT 中的對等項目。
+# <a name="move-to-cwinrt-from-wrl"></a>從 WRL 移到 C++/WinRT
+本主題示範如何將[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)程式碼，以在其對等項目[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 移植 C+/WinRT 中的第一個步驟是手動新增 C++/WinRT 支援您的專案 (請參閱 [Visual Studio 支援 C++/WinRT，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 這項變更的一個效果是支援的[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)在專案中，關閉。 如果您在專案中使用 C++/CX，則您也可以讓支援保持關閉並更新 C++/CX 程式碼為 C++/WinRT (查看[從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md))。 或您可以將支援切換回來 (專案屬性中，**C/C++** \> **一般** \> ** 使用 Windows 執行階段延伸** \> **是 (/ZW)**)，並優先著重在移植您的 WRL 程式碼。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於在同一個專案中，除了 XAML 編譯器支援，以及 Windows 執行階段元件 (請參閱[移到 C + + /winrt 從 C + + /CX](move-to-winrt-from-cx.md))。
 

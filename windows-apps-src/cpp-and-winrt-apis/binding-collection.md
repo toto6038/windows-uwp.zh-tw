@@ -3,24 +3,22 @@ author: stevewhims
 description: 可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。
 title: XAML 項目控制項；繫結至一個 C++/WinRT 集合
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、繫結、集合
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ba935b1a5316c2d7af9c7681705595efea7ca08
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: bdae6ca018670109120c85945d78806158b6c1b7
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266517"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4315508"
 ---
-# <a name="xaml-items-controls-bind-to-a-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-collection"></a>XAML 項目控制項；繫結至一個 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 集合
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
+# <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 項目控制項；繫結至一個 C++/WinRT 集合
 
-可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題示範在 C++/WinRT 中實作可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它們。
+可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題示範如何實作中可觀察的集合[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何將 XAML 繫結項目控制項給他們。
 
 在建立於 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md) 中的專案裡組建本逐步解說，並新增到該主題中所述的概念。
 
@@ -33,263 +31,12 @@ ms.locfileid: "4266517"
 > [!NOTE]
 > 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
-## <a name="implement-singlethreadedobservablevectorlttgt"></a>實作 **single_threaded_observable_vector&lt;T&gt;**
-有一個可觀察的向量範本會很有用，做為實用、一般用途的 [**IObservableVector&lt;T&gt;**](/uwp/api/windows.foundation.collections.iobservablevector_t_) 實作。 以下類別清單稱為 **single_threaded_observable_vector\<T\>**。
+## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>將 **BookSkus** 集合新增至 **BookstoreViewModel**
+
+在 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md) 中，我們已將類型 **BookSku** 的屬性新增至我們主要的檢視模型。 在此步驟中，我們會使用[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector) factory 函式範本，以協助我們在相同的檢視模型上實作一個**BookSku**可觀察的集合。
 
 > [!NOTE]
-> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以只是直接使用**winrt < T\ >** factory 函式而非清單下方的程式碼 （確切的程式碼稍後說明在此主題）。 如果您已經不在該版本的 SDK，則它便會切換 「 透過 ims 使用**winrt**函式的程式碼清單版本，當您更容易。
-
-```cppwinrt
-// single_threaded_observable_vector.h
-#pragma once
-
-namespace winrt::Bookstore::implementation
-{
-    using namespace Windows::Foundation::Collections;
-
-    template <typename T>
-    struct single_threaded_observable_vector : implements<single_threaded_observable_vector<T>,
-        IObservableVector<T>,
-        IVector<T>,
-        IVectorView<T>,
-        IIterable<T>>
-    {
-        event_token VectorChanged(VectorChangedEventHandler<T> const& handler)
-        {
-            return m_changed.add(handler);
-        }
-
-        void VectorChanged(event_token const cookie)
-        {
-            m_changed.remove(cookie);
-        }
-
-        T GetAt(uint32_t const index) const
-        {
-            if (index >= m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            return m_values[index];
-        }
-
-        uint32_t Size() const noexcept
-        {
-            return static_cast<uint32_t>(m_values.size());
-        }
-
-        IVectorView<T> GetView()
-        {
-            return *this;
-        }
-
-        bool IndexOf(T const& value, uint32_t& index) const noexcept
-        {
-            index = static_cast<uint32_t>(std::find(m_values.begin(), m_values.end(), value) - m_values.begin());
-            return index < m_values.size();
-        }
-
-        void SetAt(uint32_t const index, T const& value)
-        {
-            if (index >= m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values[index] = value;
-            m_changed(*this, make<args>(CollectionChange::ItemChanged, index));
-        }
-
-        void InsertAt(uint32_t const index, T const& value)
-        {
-            if (index > m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values.insert(m_values.begin() + index, value);
-            m_changed(*this, make<args>(CollectionChange::ItemInserted, index));
-        }
-
-        void RemoveAt(uint32_t const index)
-        {
-            if (index >= m_values.size())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values.erase(m_values.begin() + index);
-            m_changed(*this, make<args>(CollectionChange::ItemRemoved, index));
-        }
-
-        void Append(T const& value)
-        {
-            ++m_version;
-            m_values.push_back(value);
-            m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
-        }
-
-        void RemoveAtEnd()
-        {
-            if (m_values.empty())
-            {
-                throw hresult_out_of_bounds();
-            }
-
-            ++m_version;
-            m_values.pop_back();
-            m_changed(*this, make<args>(CollectionChange::ItemRemoved, Size()));
-        }
-
-        void Clear() noexcept
-        {
-            ++m_version;
-            m_values.clear();
-            m_changed(*this, make<args>(CollectionChange::Reset, 0));
-        }
-
-        uint32_t GetMany(uint32_t const startIndex, array_view<T> values) const
-        {
-            if (startIndex >= m_values.size())
-            {
-                return 0;
-            }
-
-            uint32_t actual = static_cast<uint32_t>(m_values.size() - startIndex);
-
-            if (actual > values.size())
-            {
-                actual = values.size();
-            }
-
-            std::copy_n(m_values.begin() + startIndex, actual, values.begin());
-            return actual;
-        }
-
-        void ReplaceAll(array_view<T const> value)
-        {
-            ++m_version;
-            m_values.assign(value.begin(), value.end());
-            m_changed(*this, make<args>(CollectionChange::Reset, 0));
-        }
-
-        IIterator<T> First()
-        {
-            return make<iterator>(this);
-        }
-
-    private:
-
-        std::vector<T> m_values;
-        event<VectorChangedEventHandler<T>> m_changed;
-        uint32_t m_version{};
-
-        struct args : implements<args, IVectorChangedEventArgs>
-        {
-            args(CollectionChange const change, uint32_t const index) :
-                m_change(change),
-                m_index(index)
-            {
-            }
-
-            CollectionChange CollectionChange() const
-            {
-                return m_change;
-            }
-
-            uint32_t Index() const
-            {
-                return m_index;
-            }
-
-        private:
-
-            Windows::Foundation::Collections::CollectionChange const m_change{};
-            uint32_t const m_index{};
-        };
-
-        struct iterator : implements<iterator, IIterator<T>>
-        {
-            explicit iterator(single_threaded_observable_vector<T>* owner) noexcept :
-            m_version(owner->m_version),
-                m_current(owner->m_values.begin()),
-                m_end(owner->m_values.end())
-            {
-                m_owner.copy_from(owner);
-            }
-
-            void abi_enter() const
-            {
-                if (m_version != m_owner->m_version)
-                {
-                    throw hresult_changed_state();
-                }
-            }
-
-            T Current() const
-            {
-                if (m_current == m_end)
-                {
-                    throw hresult_out_of_bounds();
-                }
-
-                return*m_current;
-            }
-
-            bool HasCurrent() const noexcept
-            {
-                return m_current != m_end;
-            }
-
-            bool MoveNext() noexcept
-            {
-                if (m_current != m_end)
-                {
-                    ++m_current;
-                }
-
-                return HasCurrent();
-            }
-
-            uint32_t GetMany(array_view<T> values)
-            {
-                uint32_t actual = static_cast<uint32_t>(std::distance(m_current, m_end));
-
-                if (actual > values.size())
-                {
-                    actual = values.size();
-                }
-
-                std::copy_n(m_current, actual, values.begin());
-                std::advance(m_current, actual);
-                return actual;
-            }
-
-        private:
-
-            com_ptr<single_threaded_observable_vector<T>> m_owner;
-            uint32_t const m_version;
-            typename std::vector<T>::const_iterator m_current;
-            typename std::vector<T>::const_iterator const m_end;
-        };
-    };
-}
-```
-
-**Append** 函式示範如何引發 [**IObservableVector&lt;T&gt;::VectorChanged**](/uwp/api/windows.foundation.collections.iobservablevector-1.vectorchanged) 事件。
-
-```cppwinrt
-m_changed(*this, make<args>(CollectionChange::ItemInserted, Size() - 1));
-```
-
-事件引數同時指出插入的元素，以及它的索引是什麼 (此案例中，最後一個元素)。 這些引數啟用 XAML 項目控制項，回應事件以及以最佳方式重新整理自己。
-
-## <a name="add-a-bookskus-collection-to-bookstoreviewmodel"></a>將 **BookSkus** 集合新增至 **BookstoreViewModel**
-在 [XAML 控制項；繫結至 C++/WinRT 屬性](binding-property.md) 中，我們已將類型 **BookSku** 的屬性新增至我們主要的檢視模型。 在此步驟，我們會使用 **single_threaded_observable_vector&lt;T&gt;**，協助我們在相同的檢視模型上實作 **BookSku** 的可觀察集合。
+> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，請參閱[如果您有舊版的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) ，您可以使用而不是**winrt::single_ 可觀察的向量範本的清單threaded_observable_vector**。
 
 在 `BookstoreViewModel.idl` 中宣告一個新的屬性。
 
@@ -305,7 +52,7 @@ runtimeclass BookstoreViewModel
 ```
 
 > [!IMPORTANT]
-> 在上述的 MIDL 3.0 清單，請注意， **BookSkus**屬性的類型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821)。 本主題的下一節中，我們會繫結[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)項目的來源至**BookSkus**。 清單方塊是一個項目控制項，並正確地設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，您需要將其設為的值類型**IVector** **IInspectable**，或的互通性類型，例如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
+> 在上述的 MIDL 3.0 清單，請注意， **BookSkus**屬性的類型[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable)。 本主題的下一節中，我們會繫結[**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox)項目的來源至**BookSkus**。 清單方塊是一個項目控制項，並正確地設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，您需要將其設為的值類型**IVector** **IInspectable**，或的互通性類型，例如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)。
 
 儲存並建置。 從 `Generated Files` 資料夾中的 `BookstoreViewModel.h` 與 `BookstoreViewModel.cpp` 複製存取子虛設常式，並加以執行。
 
@@ -335,7 +82,7 @@ private:
 BookstoreViewModel::BookstoreViewModel()
 {
     m_bookSku = make<Bookstore::implementation::BookSku>(L"Atticus");
-    m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
+    m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
     m_bookSkus.Append(m_bookSku);
 }
 
@@ -350,21 +97,6 @@ Windows::Foundation::Collections::IVector<Windows::Foundation::IInspectable> Boo
 }
 ...
 ```
-
-## <a name="if-you-have-a-windows-10-sdk-preview-build"></a>如果您有 Windows 10 SDK 預覽版組建
-如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後取代這行程式碼
-
-```cppwinrt
-m_bookSkus = winrt::make<single_threaded_observable_vector<Windows::Foundation::IInspectable>>();
-```
-
-考慮到這。
-
-```cppwinrt
-m_bookSkus = winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>();
-```
-
-而不是呼叫[**winrt:: make**](https://docs.microsoft.com/en-us/uwp/cpp-ref-for-winrt/make)，您可以建立適當的集合物件呼叫**winrt < T\ >** factory 函式。
 
 ## <a name="bind-a-listbox-to-the-bookskus-property"></a>將一個 ListBox 繫結至 **BookSkus** 屬性
 開啟 `MainPage.xaml`，其中包含我們主要 UI 頁面的 XAML 標記。 在相同的 **StackPanel** 中新增下列標記做為**按鈕**。

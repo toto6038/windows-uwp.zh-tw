@@ -9,16 +9,17 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2e7a8f28de4b43a42ff180fe0b12493c398dd0
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 05542a42e362f024e92547d9eb496b936b85236c
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4259583"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314662"
 ---
-# <a name="troubleshooting-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt-issues"></a>疑難排解 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) 問題
+# <a name="troubleshooting-cwinrt-issues"></a>疑難排解 C++/WinRT 問題
+
 > [!NOTE]
-> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 如需有關安裝和使用資訊[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C + + /winrt MSBuild 屬性和目標) 看到[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
 
 本主題是預先準備，這樣您就會立即知道；即使您還不需要。 無論您是剪下新的程式碼或移植現有的應用程式，下述疑難排解問題和解決方式表格可能對您會很有幫助。 如果您正在移植，且您急著想要儘快進入建置及執行專案的階段，您可以暫時將任何非必要的程式碼標成註解或移除，稍後再回來清償該負債。
 
@@ -45,15 +46,14 @@ XAML 剖析例外狀況可能難以診斷&mdash;特別是如果例外狀況中�
 | C++ 編譯器產生一個 EventHandler 或 TypedEventHandler 特定委派的「*必須為 WinRT 類型*」錯誤。|請考慮改用 **winrt::delegate&lt;...T&gt;**。 請參閱 [在 C++/WinRT 中撰寫事件](author-events.md)。|
 | C++ 編譯器產生一個特定 Windows 執行階段非同步作業的「*必須為 WinRT 類型*」錯誤。|請考慮改傳回平行模式程式庫 (PPL) [**工作**](https://msdn.microsoft.com/library/hh750113)。 請查閱[並行和非同步作業](concurrency.md)。|
 | C++ 編譯器產生「*錯誤 C2220：警告視為錯誤，不產生 '物件' 檔案*」。|修正警告，或設定 **C/C++** > **一般** > **視警告為錯誤**為**No (/WX-)**。|
-| 您的應用程式當機，因為在終結物件後，呼叫了在 C++/WinRT 物件中處理的事件。|請參閱 [在事件處裡常式中使用 *this* 物件](handle-events.md#using-the-this-object-in-an-event-handler)。|
-| C++ 編譯器產生「*錯誤 C2338：這僅適用於弱式參考資料支援*」。|您為將 **winrt::no_weak_ref** 標記結構做為範本引數傳遞至其基底類別的類型，要求一個弱式參考資料。 請參閱[不使用弱式參考資料支援](weak-references.md#opting-out-of-weak-reference-support)|
-| C + + 連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號*」|請參閱[為何連結器給我 「 LNK2019： 無法解析的外部符號 」 錯誤？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)|
+| 您的應用程式當機，因為在終結物件後，呼叫了在 C++/WinRT 物件中處理的事件。|請參閱[安全地存取*此*指標事件處理委派](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。|
+| C++ 編譯器產生「*錯誤 C2338：這僅適用於弱式參考資料支援*」。|您為將 **winrt::no_weak_ref** 標記結構做為範本引數傳遞至其基底類別的類型，要求一個弱式參考資料。 請參閱[不使用弱式參考資料支援](weak-references.md#opting-out-of-weak-reference-support)。|
+| C + + 連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號*」|請參閱[為何連結器給我 「 LNK2019： 無法解析的外部符號 」 錯誤？](faq.md#why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error)。|
 | LLVM 和 Clang toolchain 會產生錯誤時搭配 C + + /winrt。|我們不支援 LLVM 和 Clang toolchain C + /winrt，但如果您想要模擬我們如何使用它在內部，則您可能會嘗試實驗這類中所述的其中一個[可以使用 LLVM/Clang 來編譯 C + + /winrt？](faq.md#can-i-use-llvmclang-to-compile-with-cwinrt)。|
 | C + + 編譯器產生的投影類型的 「*沒有適當的預設建構函式*」。 | 如果您嘗試要延遲初始化的執行階段類別物件，或使用，並在同一個專案中，實作執行階段類別，則您必須呼叫`nullptr_t`建構函式。 如需詳細資訊，請參閱 [使用 C++/WinRT 取用 API](consume-apis.md)。 |
 | C + + 編譯器產生 「*錯誤 C3861: 'from_abi': 找不到的識別碼*」，以及其他來自*base.h*的錯誤。 您可能會看到這個錯誤，如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，以及 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年) 為目標。 | 無論是目標更新版本 （更多符合） 版本的 Windows SDK 中或將專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 寬鬆-** 會出現在專案屬性**C/c + +**  > **語言** > **命令列**在**其他選項**，然後刪除它)。 |
-| C + + 編譯器產生 「*錯誤 C2039: 'IUnknown': 不的成員 '\'global 命名空間'*」。 | 請參閱[我該如何重定我 C + + /winrt 專案，以更新版本的 Windows SDK？](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
-| C + + 連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號_WINRT_CanUnloadNow@0函式中參考_VSDesignerCanUnloadNow@0*」 | 請參閱[我該如何重定我 C + + /winrt 專案，以更新版本的 Windows SDK？](faq.md#how-do-i-retarget-my-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
-
+| C + + 編譯器產生 「*錯誤 C2039: 'IUnknown': 不的成員 '\'global 命名空間'*」。 | 請參閱[如何重定您 C + + /winrt 專案，以更新版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
+| C + + 連結器會產生 「*錯誤 LNK2019： 無法解析的外部符號_WINRT_CanUnloadNow@0函式中參考_VSDesignerCanUnloadNow@0*」 | 請參閱[如何重定您 C + + /winrt 專案，以更新版本的 Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk)。 |
 
 > [!NOTE]
-> 如果本主題未能回答您的問題，也許您可透過使用 [Stack Overflow 上的 `c++-winrt` 標記](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt) 來尋求協助。
+> 如果本主題未能回答您的問題，也許則造訪[Visual Studio c + + 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)中，或使用，您可能會發現說明[`c++-winrt`標記 Stack Overflow 上](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。

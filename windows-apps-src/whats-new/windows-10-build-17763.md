@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b0f67562699e437be83cd6a7251efdb93f9e034
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: c354d9ed4bae4cd8b484fcc3281dc5ac753dab1e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4268893"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312884"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 
@@ -69,7 +69,7 @@ Windows Mixed Reality | 開發人員現在可以要求硬體保護後端緩衝�
 
 ## <a name="web-development"></a>Web 開發
 
-功能 |描述:---|:---EdgeHTML 18 |Windows 10 Fall 2018 更新隨附[EdgeHTML 18](https://aka.ms/devguide_edgehtml_18)，Microsoft Edge 瀏覽器和適用於 UWP app 的 JavaScript 引擎最新的更新。 EdgeHTML 18 帶來現代化或展開支援 Web 驗證 API、 新 WebView 控制項功能，以及更多 ！ 工具，一邊 EdgeHTML 18 為帶來了新的 WebDriver 功能和自動更新，並增強功能的邊緣 DevTools 和 Edge DevTools 通訊協定。 查看[什麼是 EdgeHTML 18 的新功能](https://aka.ms/devguide_edgehtml_18)和[DevTools 在最新的 Windows 10 更新 (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new) ，如所有的詳細資料。
+功能 |描述:---|:---EdgeHTML 18 |Windows 10 年 10 月 2018年更新隨附[EdgeHTML 18](https://docs.microsoft.com/microsoft-edge/dev-guide)，最新的更新，以在 Microsoft Edge 瀏覽器和 JavaScript 引擎適用於 UWP app 使用。 EdgeHTML 18 帶來現代化或展開支援 Web 驗證 API、 新 WebView 控制項功能，以及更多 ！ 工具，一邊 EdgeHTML 18 為帶來了新的 WebDriver 功能和自動更新，並增強功能的邊緣 DevTools 和 Edge DevTools 通訊協定。 查看[什麼是 EdgeHTML 18 的新功能](https://docs.microsoft.com/microsoft-edge/dev-guide)和[DevTools 在最新的 Windows 10 更新 (EdgeHTML 18)](https://docs.microsoft.com/microsoft-edge/devtools-guide/whats-new) ，如所有的詳細資料。
 漸進式 Web 應用程式 |開發適用於 Windows 的 Pwa 嗎？ 請查看下列指南： </br> * [PWA 與組建的簡單 web 應用程式](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started) </br> * [增強您的 Windows 執行階段 PWA](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps/windows-features) </br> * [發佈到 Microsoft 網上商店您 PWA](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)Web API 的擴充功能 |已新增的[舊版 Microsoft API 延伸](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)清單跨瀏覽器 web 開發的 Mozilla Developer Network 文件。 這些 API 的擴充功能都是唯一的 Internet Explorer 或 Microsoft Edge，並補充現有 MDN web 文件中的相容性及 broswer 支援的相關資訊。舊版 Microsoft [CSS 擴充功能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和[JavaScript 延伸模組](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也已提供，且您可以找到豐富 web API 的資訊從 MDN 直接在呈現[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 WebVR |我們已經主要更新中[WebVR 開發人員指南](https://docs.microsoft.com/microsoft-edge/webvr/)，包括重新設計的首頁頁面並重新組織的目錄。 我們也已撰寫數個新的主題，包括： </br> * [什麼是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr) 說明 WebVR 的是，為什麼您應該使用它，以及如何開始使用它進行開發。 </br> * [漸進式 Web 應用程式中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)： 了解如何新增 WebVR 至漸進式 Web 應用程式 (PWA)。 </br> * [WebView 中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)： 了解如何新增 WebVR 至 WebView 控制項，在 Windows 10 應用程式。 </br> * [WebVR 示範](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 請查看某些 WebVR 示範，使用 Microsoft Edge 與 Windows Mixed Reality 沉浸式頭戴式裝置。
 

@@ -3,30 +3,29 @@ author: stevewhims
 description: C + + /winrt 提供函式和您節省很多時間和精力當您想要實作和/或傳遞集合的基底類別。
 title: 集合使用 C + + /winrt
 ms.author: stwhi
-ms.date: 09/21/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 集合
 ms.localizationpriority: medium
-ms.openlocfilehash: c7ac3635a96b8dd3d757f25da1b826ea318c1ad4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265363"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4312312"
 ---
-# <a name="collections-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用集合[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+# <a name="collections-with-cwinrt"></a>集合使用 C + + /winrt
 
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
-在內部，Windows 執行階段集合有很多複雜的移動部分。 但當您想要傳遞至 Windows 執行階段函式，集合物件或來實作您自己的集合屬性和集合類型，有函式和基底類別，在 C + + /winrt 支援您。 這些功能採取不使用您的手各自的複雜性，並儲存您的額外負荷許多中的時間和精力。
-
-> [!IMPORTANT]
-> 本主題中所述的功能都適用於您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本。
+在內部，Windows 執行階段集合有很多複雜的移動部分。 但當您想要傳遞至 Windows 執行階段函式，集合物件或來實作您自己的集合屬性和集合類型，有函式和中的基底類別[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)支援您。 這些功能採取不使用您的手各自的複雜性，並儲存您的額外負荷許多中的時間和精力。
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)是任何隨機存取的集合項目所實作的 Windows 執行階段介面。 如果您是要自行實作**IVector** ，您也必須實作[**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)，以及[**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)。 即使您*需要*自訂的集合類型，這會是工作的大量。 但如果您有**std:: vector** （或**std:: map**或**std::unordered_map**） 中的資料，而且您只想將它傳送到 Windows 執行階段 API，然後您會想要避免執行該層級的工作，如果可能的話。 並避免*是*越好，因為 C + + /winrt 可協助您有效且輕鬆地建立集合。
+
+另請參閱[XAML 項目控制項; 繫結至 C + + /winrt 集合](binding-collection.md)。
+
+> [!NOTE]
+> 如果您在安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您不需要的存取權的函式與本主題中所述的基底類別。 相反地，查看[是否有較舊版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) ，您可以改為使用可觀察的向量範本的清單。
 
 ## <a name="helper-functions-for-collections"></a>針對集合的協助程式函式
 

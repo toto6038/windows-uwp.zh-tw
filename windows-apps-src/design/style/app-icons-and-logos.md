@@ -12,12 +12,12 @@ keywords: Windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: e947b00c3a070a8d95a21e38c56bda07cd45d3c4
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/03/2018
-ms.locfileid: "4268163"
+ms.locfileid: "4312426"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示和標誌 
 
@@ -162,9 +162,9 @@ Visual Studio 提供非常有用的工具來管理您的應用程式圖示稱為
 
 第一個功能表項目，**視覺資產**] 索引標籤中，**所有的視覺資產**，沒有正好什麼其名所示： 產生您的 app 需要按下按鈕與每個視覺資產。
 
-![產生 Visaul Studio 中的所有視覺資產](images/app-icons/all-visual-assets.png)
+![在 Visual Studio 中產生所有視覺資產](images/app-icons/all-visual-assets.png)
 
-您只需要提供單一影像，且 Visaul Studio 將會產生小型磚，中型磚、 大型磚、 寬形磚、 大型磚、 應用程式圖示，啟動顯示畫面，並且套件針對每個縮放比例的標誌資產。
+您只需要是提供一個影像，以及 Visual Studio 會產生小型磚，中型磚、 大型磚、 寬形磚、 大型磚、 應用程式圖示，啟動顯示畫面，並套件針對每個縮放比例的標誌資產。
 
 若要一次產生所有資產：
 1. 按一下 **...** 旁邊的**來源**欄位，並選取您想要使用的影像。 如果您使用點陣圖影像，請確定它是至少 400 400 個像素，這樣您取得銳利的結果。 向量影像達到最佳運作狀況;Visual Studio 可讓您使用 AI (Adobe Illustrator) 和 PDF 檔案。 

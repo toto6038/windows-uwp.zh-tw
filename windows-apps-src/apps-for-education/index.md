@@ -11,11 +11,11 @@ keywords: windows 10，uwp，教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
 ms.openlocfilehash: da03a3c478ca45cc2d2b518988738e510a6c5ea9
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4266339"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4314232"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows App
 ![「 進行測驗應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)

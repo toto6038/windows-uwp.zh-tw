@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、資料、類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b004b5dfbeaa1d123398db780582382857eec25
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: f9763e7f69b143dffe8fea611f25ae75284929cb
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4262087"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4316602"
 ---
-# <a name="standard-c-data-types-and-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>標準 C++ 資料類型與 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-使用 C++/WinRT，您可以標準 C++ 資料類型呼叫 Windows 執行階段 API，包括部分 C++ 標準程式庫資料類型。 您可以將標準字串傳遞至 Api (請參閱[字串處理在 C + + /winrt](strings.md))，以及您可以傳遞初始設定式清單和標準的容器來預期語意對等的集合 Api。
+# <a name="standard-c-data-types-and-cwinrt"></a>標準 C++ 資料類型與 C++/WinRT
+
+與[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，您可以呼叫 Windows 執行階段 Api 使用標準 c + + 資料類型，包括部分 c + + 標準程式庫資料類型。 您可以將標準字串傳遞至 Api (請參閱[字串處理在 C + + /winrt](strings.md))，以及您可以傳遞初始設定式清單和標準的容器來預期語意對等的集合 Api。
 
 ## <a name="standard-initializer-lists"></a>標準初始設定式清單
 初始設定式清單 (**std::initializer_list**) 是 C++ 標準程式庫建構。 您呼叫某些 Windows 執行階段建構函式與方法時，可以使用初始設定式清單。 例如，您可以使用一個來呼叫 [**DataWriter::WriteBytes**](/uwp/api/windows.storage.streams.datawriter.writebytes)。

@@ -13,12 +13,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3480288035d98ab3f68da33f9121e7daaf86180f
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4264383"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4327439"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 圖示
 
@@ -58,6 +58,12 @@ ms.locfileid: "4264383"
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
+
+您也可以使用靜態資源`SymbolThemeFontFamily` **Segoe MDL2 Assets**，存取而不需指定字型，依名稱：
+```xaml
+<FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
+```
+
 
 ## <a name="how-do-i-get-this-font"></a>如何取得此字型？
 * 在 Windows 10： 您只需要執行任何動作，字型隨附的 Windows。

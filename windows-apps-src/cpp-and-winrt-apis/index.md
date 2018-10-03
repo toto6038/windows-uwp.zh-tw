@@ -9,15 +9,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 7168ee705114523a324194b89f8450e768cfab22
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4265059"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4315976"
 ---
-# [<a name="cwinrt"></a>C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
-C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
+# <a name="cwinrt"></a>C++/WinRT
+
+[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是完全標準現代 c++17 c++17 語言投影適用於 Windows 執行階段 (WinRT) Api，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows api 第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
 
 C++/WinRT 適用於任何對寫出漂亮且快速的 Windows 程式碼感興趣的開發人員。 原因如下。
 
@@ -41,6 +42,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | - | - |
 | [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md) | C++/ WinRT&mdash;Windows 執行階段 API 的標準 C++ 語言投影的簡介。 |
 | [開始使用 C++/WinRT](get-started.md) | 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。 |
+| [有何新在 C + + /winrt](news.md) | 新聞和變更至 C + + /winrt。 |
 | [常見問答集](faq.md) | 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。 |
 | [疑難排解](troubleshooting.md) | 無論您是剪下新的程式碼或移植現有的應用程式，本主題中的疑難排解問題和解決方式表格可能對您會很有幫助。 |
 | [Photo Editor C++/WinRT 範例應用程式](photo-editor-sample.md) | Photo Editor 是 UWP 範例應用程式，展示使用 C++/WinRT 語言投影進行開發。 範例應用程式可讓您從**圖片**庫擷取相片，然後以混合的相片效果編輯所選的影像。 | 
@@ -63,7 +65,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md) | 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。 |
 | [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md) | 本主題示範如何在應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 |
 | [從 WRL 移到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 C++/WinRT 中的對等項目。 |
-| [弱式參考](weak-references.md) | C++/WinRT 弱式參考支援是使用付費，其中您不需要支付任何項目除非針對 [**IWeakReferenceSource**](https://msdn.microsoft.com/library/br224609) 查詢您的物件。 |
+| [強式和弱式參考資料，在 C + + /winrt](weak-references.md) | Windows 執行階段是計算參考次數的系統。請務必讓您了解的重要性和區別，這類系統在強式與弱式參考。 |
 | [敏捷式物件](agile-objects.md) | 敏捷式物件是可以從任何執行緒中存取的一個。 C++/WinRT 預設為敏捷式，但您可以選擇退出。 |
 
 ### <a name="topics-about-the-c-language"></a>C + + 語言相關主題

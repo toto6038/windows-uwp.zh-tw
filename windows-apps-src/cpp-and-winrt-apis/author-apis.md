@@ -3,25 +3,22 @@ author: stevewhims
 description: 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。
 title: '使用 C++/WinRT 撰寫 API '
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: d613cb87297cdc810e4d8e16dfeb36d4804678d1
-ms.sourcegitcommit: 1938851dc132c60348f9722daf994b86f2ead09e
+ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
+ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4261157"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "4309268"
 ---
-# <a name="author-apis-with-cwinrtwindowsuwpcpp-and-winrt-apisintro-to-using-cpp-with-winrt"></a>使用 [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)撰寫 API
+# <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API 
 
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
-
-本主題示範如何直接或間接使用 [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) 基礎結構撰寫 C++/WinRT API。 在此內容中適用於 *author* 的同義字有 *produce*，或 *implement*。 在此訂單中，本主題涵蓋下列 C++/WinRT 類型的實作 API 案例。
+本主題示範如何撰寫[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api 使用[**winrt:: implements**](/uwp/cpp-ref-for-winrt/implements)基礎結構，直接或間接。 在此內容中適用於 *author* 的同義字有 *produce*，或 *implement*。 在此訂單中，本主題涵蓋下列 C++/WinRT 類型的實作 API 案例。
 
 - 您 *不* 撰寫 Windows 執行階段類別 (執行階段類別) ；您只要為應用程式中的本機使用實作一或多個 Windows 執行階段介面。 您可以直接從此案例的 **winrt::implements** 衍生並實作函式。
 - 您 *正* 撰寫執行階段類別。 您可能會撰寫使用應用程式的元件。 或您可能撰寫使用 XAML 使用者介面 (UI) 的類型，且在此情況下，您會同時實作與使用相同編譯單位中的執行階段類別。 在這些案例中，您讓工具為您產生類別，從 **winrt::implements** 衍生。
@@ -285,17 +282,17 @@ iclosable.Close();
 
 **MyType** 類別並不是投影的一部分。它是實作。 但這種方式您可以直接撥打其實作方法，而不需要虛擬功能通話的額外負擔。 在上述的範例中，即使 **MyType::ToString** 在 **IStringable** 使用相同簽章做為投影方法，我們仍直接呼叫非 虛擬方法，而不需要通過應用程式二進位介面 (ABI)。 **Com_ptr** 簡單的保留 **MyType** 結構的指標，讓您也可以透過 [`myimpl` 變數和箭號運算子存取的任何其他內部 **MyType** 的詳細資訊。
 
-如此，您有介面物件，並知道這是在您實作上的介面，然後您可以回到使用 [**from_abi**](/uwp/cpp-ref-for-winrt/from-abi)功能範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
+在案例中，您有介面物件，並知道這是您實作上的介面，然後您可以回到使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函式範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
 
 > [!NOTE]
-> 如果您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，或更新版本，然後您可以呼叫[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)而不是[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)。
+> 如果您在安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您需要呼叫[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
 範例如下。 [實作**BgLabelControl**自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)沒有另一個範例。
 
 ```cppwinrt
 void ImplFromIClosable(IClosable const& from)
 {
-    MyType* myimpl = winrt::from_abi<MyType>(from);
+    MyType* myimpl = winrt::get_self<MyType>(from);
     myimpl->ToString();
     myimpl->Close();
 }
@@ -305,7 +302,7 @@ void ImplFromIClosable(IClosable const& from)
 
 ```cppwinrt
 winrt::com_ptr<MyType> impl;
-impl.copy_from(winrt::from_abi<MyType>(from));
+impl.copy_from(winrt::get_self<MyType>(from));
 // com_ptr::copy_from ensures that AddRef is called.
 ```
 
