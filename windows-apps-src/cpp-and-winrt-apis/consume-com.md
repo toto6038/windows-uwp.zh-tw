@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。
-title: 使用 COM 元件使用 C + + /winrt
+title: 使用 C++/WinRT 來使用 COM 元件
 ms.author: stwhi
 ms.date: 07/23/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 COM、 元件、 類別、 介面
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af5a8149faab3bece62e4da5d41138aaede16e7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310702"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355209"
 ---
-# <a name="consume-com-components-with-cwinrt"></a>使用 COM 元件使用 C + + /winrt
+# <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 來使用 COM 元件
 
 您可以使用的設備[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)文件庫以使用 COM 元件，例如 DirectX Api 高效能的 2d 和 3d 圖形。 C + + /winrt 是使用 DirectX 又無須犧牲效能最簡單的方式。 本主題使用 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。 您當然可以混合 COM 和 Windows 執行階段的程式設計中相同的 C + + /winrt 專案。
 

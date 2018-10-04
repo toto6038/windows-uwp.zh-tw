@@ -4,22 +4,20 @@ ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: 深入了解資料繫結
 description: 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。
 ms.author: markl
-ms.date: 02/08/2017
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72c7037e9e99ad69ff13c65fb2195bc6e3f8110f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 559bbbc3421151a9055b89c94bc1293a950ccb5b
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318462"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351449"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
-
-
 
 **重要 API**
 
@@ -31,16 +29,15 @@ ms.locfileid: "4318462"
 > [!Note]
 > 這個主題將提供資料繫結功能的詳細說明。 如需簡短且實用的簡介，請參閱[資料繫結概觀](data-binding-quickstart.md)。
 
-
 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。 資料繫結可讓您將資料與 UI 分開考量，為 app 建構更簡單的概念模型，以及更好的可讀性、測試性和維護性。
 
-資料繫結可讓您在 UI 最初顯示時，單純地顯示資料來源的值，而不是要回應這些值的變更。 這稱為一次性繫結，適用於執行階段不會變更值的資料。 此外，您可以選擇「觀察」這些值，並於值變更時更新 UI。 這稱為單向繫結，適用於唯讀資料。 最後，您可以選擇同時觀察和更新，將使用者對 UI 中的值所做的變更，自動推回到資料來源。 這稱為雙向繫結，適用於讀寫資料。 以下是一些範例。
+資料繫結可讓您在 UI 最初顯示時，單純地顯示資料來源的值，而不是要回應這些值的變更。 這是一種模式的繫結稱為*一次性*，以及適用於執行階段期間不會變更的值。 或者，您可以選擇 「 觀察 」 這些值，並變更時，更新 UI。 這更多稱為*單向*，以及適用於唯讀資料。 最後，您可以選擇同時觀察和更新，將使用者對 UI 中的值所做的變更，自動推回到資料來源。 這個模式會呼叫*雙向*，以及適用於讀寫資料。 以下是一些範例。
 
--   您可以使用一次性繫結將 [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 繫結到目前使用者的相片。
--   您可以使用單向繫結將 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 繫結到依新聞區段分組的即時新聞文章集合。
--   您可以使用雙向繫結將 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 繫結到表單中的客戶名稱。
+-   您可以使用一次性模式來將[**影像**](https://msdn.microsoft.com/library/windows/apps/BR242752)繫結到目前使用者的相片。
+-   您可以使用單向模式來將[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)繫結到依新聞區段分組的即時新聞文章集合。
+-   您可以使用雙向模式，以將[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)繫結到表單中的客戶的名稱。
 
-繫結有兩種，通常都在 UI 標記中宣告。 您可以選擇使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)或 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 您甚至可以在相同的 app 中將兩者混用 (甚至在相同的 UI 元素上)。 {x:Bind} 是 Windows 10 新增的標記，效能更好。 本主題所述的所有詳細資料適用於這兩種繫結類型，除非明確指出不是如此。
+獨立以外的模式，有兩種繫結，以及它們通常都宣告 UI 標記中。 您可以選擇使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)或 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 您甚至可以在相同的 app 中將兩者混用 (甚至在相同的 UI 元素上)。 {x:Bind} 是 Windows 10 新增的標記，效能更好。 本主題所述的所有詳細資料適用於這兩種繫結類型，除非明確指出不是如此。
 
 **示範 {x:Bind} 的範例 app**
 

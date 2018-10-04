@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318304"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352122"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 
@@ -196,7 +196,7 @@ ms.locfileid: "4318304"
 * [登錄背景工作](register-a-background-task.md)
 * [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
-* [在更新 UWP app 時執行背景工作](run-a-background-task-during-updatetask.md)
+* [在更新 UWP 應用程式時執行背景工作](run-a-background-task-during-updatetask.md)
 * [在背景無限期執行](run-in-the-background-indefinetly.md)
 * [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
 * [從您的 App 觸發背景工作](trigger-background-task-from-app.md)

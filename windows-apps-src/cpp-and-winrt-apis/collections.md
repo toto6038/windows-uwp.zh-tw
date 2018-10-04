@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: C + + /winrt 提供函式和您節省很多時間和精力當您想要實作和/或傳遞集合的基底類別。
-title: 集合使用 C + + /winrt
+title: 使用 C++/WinRT 的集合
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312312"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361117"
 ---
-# <a name="collections-with-cwinrt"></a>集合使用 C + + /winrt
+# <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 
 在內部，Windows 執行階段集合有很多複雜的移動部分。 但當您想要傳遞至 Windows 執行階段函式，集合物件或來實作您自己的集合屬性和集合類型，有函式和中的基底類別[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)支援您。 這些功能採取不使用您的手各自的複雜性，並儲存您的額外負荷許多中的時間和精力。
 

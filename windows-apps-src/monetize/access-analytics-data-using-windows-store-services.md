@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 26bed64053e8de9a42ac01ed3262c7b0f41d1d42
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319408"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357003"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -84,9 +84,9 @@ grant_type=client_credentials
 
 | 案例       | 方法      |
 |---------------|--------------------|
-| 下載數、 轉換數、 安裝，以及使用方式 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得訂閱附加元件下載數](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得 App 安裝](get-app-installs.md)</li><li>[取得每日的應用程式使用方式](get-app-usage-daily.md)</li><li>[取得每月的應用程式使用方式](get-app-usage-monthly.md)</li></ul> |
+| 下載數、 轉換數、 安裝，以及使用方式 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得訂閱附加元件下載數](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得 App 安裝](get-app-installs.md)</li><li>[取得每日應用程式使用量](get-app-usage-daily.md)</li><li>[取得每月應用程式使用量](get-app-usage-monthly.md)</li></ul> |
 | App 錯誤 | <ul><li>[取得錯誤報告資料](get-error-reporting-data.md)</li><li>[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
-| 深入解析 | <ul><li>[取得您的應用程式的深入解析資料](get-insights-data-for-your-app.md)</li></ul>  |
+| 深入解析 | <ul><li>[取得應用程式的深入解析資料](get-insights-data-for-your-app.md)</li></ul>  |
 | 評分與評論 | <ul><li>[取得 App 評分](get-app-ratings.md)</li><li>[取得 App 評論](get-app-reviews.md)</li></ul> |
 | 應用程式內廣告與廣告行銷活動 | <ul><li>[取得廣告效益資料](get-ad-performance-data.md)</li><li>[取得廣告行銷活動效益資料](get-ad-campaign-performance-data.md)</li></ul> |
 
@@ -97,7 +97,7 @@ grant_type=client_credentials
 | 案例       | 方法      |
 |---------------|--------------------|
 | 安裝數 |  <ul><li>[取得傳統型應用程式安裝](get-desktop-app-installs.md)</li></ul> |
-| 區塊 |  <ul><li>[升級的區塊，取得傳統型應用程式](get-desktop-block-data.md)</li><li>[取得傳統型應用程式的封鎖升級的詳細資料](get-desktop-block-data-details.md)</li></ul> |
+| 區塊 |  <ul><li>[取得傳統型應用程式的升級區塊](get-desktop-block-data.md)</li><li>[取得傳統型應用程式的升級區塊詳細資料](get-desktop-block-data-details.md)</li></ul> |
 | 應用程式錯誤 |  <ul><li>[取得傳統型應用程式的錯誤報告資料](get-desktop-application-error-reporting-data.md)</li><li>[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)</li><li>[取得傳統型應用程式中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-desktop-application.md)</li><li>[下載傳統型應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-desktop-application.md)</li></ul> |
 | 深入解析 | <ul><li>[取得傳統型應用程式的深入解析資料](get-insights-data-for-your-desktop-app.md)</li></ul>  |
 

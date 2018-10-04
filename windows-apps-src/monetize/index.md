@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 營利, 參與, 升階, Microsoft Store 服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 58993f3a62f6fd85589aeac931e3abbb42a6cda6
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 02ef073e319af3fe2cf3bdd7906a7027200c4854
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689044"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352507"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 
@@ -27,7 +27,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 
 | 主題                | 描述                 |
 |--------------------|-----------------------------|
-| [ App 內購買和試用版](in-app-purchases-and-trials.md)      | 了解如何使用 Windows SDK 中的 API，將應用程式內產品購買和試用版功能新增至您的應用程式。  |
+| [應用程式內購買和試用版](in-app-purchases-and-trials.md)      | 了解如何使用 Windows SDK 中的 API，將應用程式內產品購買和試用版功能新增至您的應用程式。  |
 | [使用 Microsoft Advertising SDK 停用應用程式中的廣告](display-ads-in-your-app.md)      |   藉由在您的應用程式中顯示橫幅廣告或插播式廣告來增加營收。 這項功能需要 Microsoft Advertising SDK。 |
 | [透過 Microsoft Store Services SDK 與客戶互動](microsoft-store-services-sdk.md)      | Microsoft Store Services SDK 提供一些可讓您在應用程式中新增功能的程式庫和工具，以協助您吸引客戶。 這些功能包括開發人員中心目標式通知、A/B 測試，以及從您的應用程式啟動「意見反應中樞」。 |
 | [使用 A/B 測試執行實驗](run-app-experiments-with-a-b-testing.md)      |   在通用 Windows 平台 (UWP) 應用程式中執行 A/B 測試，在將功能釋出給每個人之前，對部分客戶測量功能的有效性。 這個功能需要 Microsoft Store Services SDK。  |
@@ -36,7 +36,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 | [為開發人員中心記錄自訂事件](log-custom-events-for-dev-center.md)  | 記錄來自您 UWP 應用程式的自訂事件，然後在「開發人員中心」儀表板上的[使用方式報告](../publish/usage-report.md)中檢閱這些事件。 這個功能需要 Microsoft Store Services SDK。 |
 | [要求評分與評論](request-ratings-and-reviews.md) |  歡迎您的客戶透過程式設計方式顯示評分和評論 UI 來對您的應用程式進行評分或評論。  |
 | [Microsoft Store services](using-windows-store-services.md)    |  了解如何使用 RESTful API 來自動化提交至 Microsoft Store，存取您的應用程式的分析資料以及自動化與 Microsoft Store 相關的其他工作。    |
-| [建立零售示範體驗 (RDX) 應用程式](retail-demo-experience.md)        |  了解如何建立可安裝在零售商店的電腦和行動示範裝置上的零售示範體驗 (RDX) 應用程式。  |
+| [將零售示範 (RDX) 功能新增到您的應用程式](retail-demo-experience.md)        |  Windows 應用程式中包括零售示範模式，讓客戶試用電腦和裝置上銷售地板可以跳中的權限。  |
 
 ## <a name="related-topics"></a>相關主題
 

@@ -1,6 +1,6 @@
 ---
 author: PatrickFarley
-title: 使用者活動的最佳做法
+title: 使用者活動最佳做法
 description: 本文將概述建立和更新使用者活動的建議的做法。
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome, 使用者活動, 時間軸, cortana 從先前離開的地方開始, cortana 接續未完成的部分, project rome
 ms.author: pafarley
@@ -10,13 +10,13 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b11151df981a4b5ce233458581d21e405be9844c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310444"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351786"
 ---
-# <a name="user-activities-best-practices"></a>使用者活動的最佳做法
+# <a name="user-activities-best-practices"></a>使用者活動最佳做法
 
 本文將概述建立和更新使用者活動的建議的做法。 如需在 Windows 上的使用者活動功能的概觀，請參閱[繼續使用者活動，甚至是在裝置之間](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities)。 或者，活動的實作，其他開發平台上，請參閱專案 Rome 的[使用者活動一節](https://docs.microsoft.com/windows/project-rome/user-activities/)。
 

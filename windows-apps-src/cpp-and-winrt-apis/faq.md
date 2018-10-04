@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f1d2bdfe5ce88ed4e3f5f3e618fb7034f4eb0bb
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: e00f387c3dd78353158d93d3b4749345936396f5
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313882"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352193"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 您很可能有撰寫和使用 Windows 執行階段 Api 使用的相關的問題的解答[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -47,11 +47,13 @@ ms.locfileid: "4313882"
 ## <a name="why-is-the-linker-giving-me-a-lnk2019-unresolved-external-symbol-error"></a>為何連結器給我「LNK2019：無法解析的外部符號」錯誤？
 如果無法解析的符號是來自 C++/WinRT 投影的 Windows 命名空間標頭的 API (在 **winrt** 命名空間中)，則API 在您已包含的標頭中是向前宣告，但其定義是在您尚未包含的標頭中。 包含為 API 命名空間命名的標頭，並且重新建置。 如需詳細資訊，請參閱 [C++/WinRT 投影標頭](consume-apis.md#cwinrt-projection-headers)。
 
-如果無法解析的符號是 Windows 執行階段可用函式，例如 [RoInitialize](https://msdn.microsoft.com/library/br224650)，則您將需要在您的專案中明確包含 [WindowsApp.lib](/uwp/win32-and-com/win32-apis) 傘程式庫。 C++/WinRT 投影仰賴部分這些免費 (非成員) 函式和進入點。 如果您使用其中一個 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix) 投影來為您的應用程式轉譯，則 `WindowsApp.lib` 會自動為您連結。 否則，您也可以使用專案連結設定來包括它，或在原始程式碼中執行它。
+如果無法解析的符號是 Windows 執行階段可用函式，例如[RoInitialize](https://msdn.microsoft.com/library/br224650)，您將需要明確地連結[WindowsApp.lib](/uwp/win32-and-com/win32-apis)傘程式庫，在您的專案。 C++/WinRT 投影仰賴部分這些免費 (非成員) 函式和進入點。 如果您使用其中一個 [C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix) 投影來為您的應用程式轉譯，則 `WindowsApp.lib` 會自動為您連結。 否則，您也可以使用專案連結設定來包括它，或在原始程式碼中執行它。
 
 ```cppwinrt
 #pragma comment(lib, "windowsapp")
 ```
+
+我們建議您先解決問題，您可以藉由連結**WindowsApp.lib**任何連結器錯誤。 但是，如果您不需要您的應用程式通過 Visual Studio 和 Microsoft 網上商店使用來驗證提交 （亦即，因此，所以必須讓應用程式能夠成功的[Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試內嵌到 Microsoft Store，），然後您可以改為連結替代的靜態連結程式庫。 為例，如果您的連結器錯誤是關於**CoIncrementMTAUsage** （或**WINRT_CoIncrementMTAUsage**），然後您可以解決，方法是絕對必要時 （例如，如果您的**WindowsApp.lib**版本不會將連結 Ole32.lib匯出函式）。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，該如何進行？
 如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。

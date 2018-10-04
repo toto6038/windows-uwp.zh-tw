@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4315976"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352432"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -54,13 +54,13 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [使用 C++/WinRT 的錯誤處理](error-handling.md) | 本主題討論使用 C++/WinRT 程式設計時處理錯誤的策略。 |
 | [使用委派來處理事件](handle-events.md) | 本主題示範如何註冊和撤銷使用 C++/WinRT 的事件處理委派。 |
 | [撰寫事件](author-events.md) | 本主題示範如何撰寫包含引發事件的執行階段類別的 Windows 執行階段元件。 也示範使用元件和處理事件的應用程式。 |
-| [集合使用 C + + /winrt](collections.md) | C + + /winrt 提供函式和您節省很多時間和精力當您想要實作和/或傳遞集合的基底類別。 |
+| [使用 C++/WinRT 的集合](collections.md) | C + + /winrt 提供函式和您節省很多時間和精力當您想要實作和/或傳遞集合的基底類別。 |
 | [並行和非同步作業](concurrency.md) | 本主題中示範的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件。 |
 | [XAML 控制項；繫結至一個 C++/WinRT 屬性](binding-property.md) | 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 本主題示範如何實作和使用可觀察屬性，以及如何將 XAML 控制項繫結至它。 |
 | [XAML 項目控制項；繫結至一個 C++/WinRT 集合](binding-collection.md) | 可有效地繫結至 XAML 項目控制項的集合稱為*可觀察的* 集合。 本主題示範實作和使用可觀察集合的方法，以及如何將 XAML 項目控制項繫結至它。 |
-| [XAML 自訂 （化） 的控制項使用 C + + /winrt](xaml-cust-ctrl.md) | 本主題會引導您完成的步驟建立簡單的自訂控制項使用 C + + /winrt。 您可以在此處資訊來建立您自己的豐富的功能和可自訂 UI 控制項上建置。 |
-| [使用 COM 元件使用 C + + /winrt](consume-com.md) | 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。 |
-| [撰寫 COM 元件使用 C + + /winrt](author-coclasses.md) | C + + WinRT 可協助您撰寫傳統 COM 元件，就如同它可協助您撰寫 Windows 執行階段類別。 |
+| [使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項](xaml-cust-ctrl.md) | 本主題會引導您完成的步驟建立簡單的自訂控制項使用 C + + /winrt。 您可以在此處資訊來建立您自己的豐富的功能和可自訂 UI 控制項上建置。 |
+| [使用 C++/WinRT 來使用 COM 元件](consume-com.md) | 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。 |
+| [使用 C++/WinRT 撰寫 COM 元件](author-coclasses.md) | C + + WinRT 可協助您撰寫傳統 COM 元件，就如同它可協助您撰寫 Windows 執行階段類別。 |
 | [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md) | 本主題示範可用於 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 |
 | [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md) | 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。 |
 | [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md) | 本主題示範如何在應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 |

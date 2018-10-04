@@ -2,7 +2,7 @@
 author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
 description: 在 Microsoft Store 分析 API 中使用這個方法，以針對特定的日期範圍與其他選擇性篩選器取得每月的 app 使用狀況資料。
-title: 取得每月的應用程式使用方式
+title: 取得每月應用程式使用量
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
 ms.openlocfilehash: ad45422dea9b0c4335fa3cf67a594f819a60ca9c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4310676"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351384"
 ---
-# <a name="get-monthly-app-usage"></a>取得每月的應用程式使用方式
+# <a name="get-monthly-app-usage"></a>取得每月應用程式使用量
 
 在 Microsoft Store 分析 API 中使用這個方法，以取得 （不包括多人遊戲的 Xbox） 的彙總的使用狀況資料 JSON 格式，以針對特定的日期範圍 （過去 90 天只） 及其他選擇性篩選器應用程式。 這項資訊也會在 Windows 開發人員中心儀表板中的[使用方式報告](../publish/usage-report.md)中提供的。
 
@@ -150,6 +150,6 @@ Authorization: Bearer <your access token>
 
 * [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
 * [取得每日的應用程式 ussage](get-app-usage-daily.md)
-* [取得 App 下載數](get-app-acquisitions.md)
+* [取得應用程式下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得錯誤報告資料](get-error-reporting-data.md)

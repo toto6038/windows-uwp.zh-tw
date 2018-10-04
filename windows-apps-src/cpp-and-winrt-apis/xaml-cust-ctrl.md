@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: 本主題會引導您完成的步驟建立簡單的自訂控制項使用 C + + /winrt。 您可以在此處資訊來建立您自己的豐富的功能和可自訂 UI 控制項上建置。
-title: XAML 自訂 （化） 的控制項使用 C + + /winrt
+title: 使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項
 ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 XAML 中，自訂，範本化，控制項
 ms.localizationpriority: medium
 ms.openlocfilehash: 539876113ce2aba563cfa65b13571cbf3998cc2d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313872"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4351730"
 ---
-# <a name="xaml-custom-templated-controls-with-cwinrt"></a>XAML 自訂 （化） 的控制項使用 C + + /winrt
+# <a name="xaml-custom-templated-controls-with-cwinrt"></a>使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項
 
 > [!IMPORTANT]
 > 基本概念和詞彙支援您了解如何使用及撰寫執行階段類別與[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，請參閱[使用的 Api，使用 C + + WinRT](consume-apis.md)和[撰寫 Api 使用 C + + /winrt](author-apis.md)。

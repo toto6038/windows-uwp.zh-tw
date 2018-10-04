@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作，應用程式服務連線的裝置，遠端系統
 ms.localizationpriority: medium
 ms.openlocfilehash: d4aa5a4f379e0791e9da7db4ecd2a27c09cf0a3a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4309348"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4356793"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 
@@ -102,7 +102,7 @@ ms.locfileid: "4309348"
 | [從背景工作存取感應器和裝置](access-sensors-and-devices-from-a-background-task.md)   | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows 應用程式在背景存取感應器和周邊裝置，即使您的前景應用程式已暫停也一樣。 |
 | [建立和註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)       | 建立和註冊與前景應用程式在相同處理序中執行的背景工作。 |
 | [建立和註冊跨處理序背景工作](create-and-register-a-background-task.md)           | 建立及註冊在與應用程式不同處理序中執行的背景工作，以便在應用程式不在前景時也能執行。 |
-| [移植到同處理序背景工作的跨處理序背景工作](convert-out-of-process-background-task.md) | 了解如何將跨處理序背景工作，您的前景 app 在相同處理序中執行的同處理序背景工作。|
+| [將跨處理序背景工作移植到同處理序背景工作](convert-out-of-process-background-task.md) | 了解如何將跨處理序背景工作，您的前景 app 在相同處理序中執行的同處理序背景工作。|
 | [偵錯背景工作](debug-a-background-task.md)                                                       | 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。 |
 | [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md) | 在 App 資訊清單中宣告背景工作為擴充功能，以允許使用背景工作。 |
 | [群組背景工作註冊](group-background-tasks.md)                                             | 使用群組隔離背景工作註冊。 |

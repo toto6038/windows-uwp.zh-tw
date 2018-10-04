@@ -1,6 +1,6 @@
 ---
 author: eliotcowley
-title: 取得，並了解條碼資料
+title: 取得並了解條碼資料
 description: 了解如何取得和您掃描條碼資料解譯。
 ms.author: elcowle
 ms.date: 08/29/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 0992ea54092063ba53f23871599905e58f1b456e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318612"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352458"
 ---
-# <a name="obtain-and-understand-barcode-data"></a>取得，並了解條碼資料
+# <a name="obtain-and-understand-barcode-data"></a>取得並了解條碼資料
 
 一旦您設定好您的條碼掃描器，您當然需要了解資料掃描的一種。 當您掃描條碼時，會引發[DataReceived](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.datareceived)事件。 這個事件應該訂閱[Claimscannerasyc](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedbarcodescanner) 。 **DataReceived**事件會傳遞的[BarcodeScannerDataReceivedEventArgs](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)物件，您可以用來存取的條碼資料。
 

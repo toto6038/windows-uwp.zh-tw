@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319526"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4361097"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -47,7 +47,7 @@ Xbox | 在開發人員模式內啟用 | 已停用 | 11443 | N/A
 如需裝置特定的安裝指示，請參閱︰
 - [HoloLens 的 Device Portal](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-hololens)
 - [IoT 的裝置入口網站](https://go.microsoft.com/fwlink/?LinkID=616499)
-- [行動裝置的裝置入口網站](device-portal-mobile.md)
+- [行動裝置的 Device Portal](device-portal-mobile.md)
 - [Xbox 的 Device Portal](device-portal-xbox.md)
 - [傳統型裝置的 Device Portal](device-portal-desktop.md#set-up-device-portal-on-windows-desktop)
 

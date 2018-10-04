@@ -4,17 +4,17 @@ title: Windows 10 中適合開發人員的新功能、工具與特色
 description: Windows 10 組建 17763 和新的開發人員工具提供工具、 功能，以及通用 Windows 平台所支援的體驗。
 keywords: 新功能，新，更新，多項更新，功能，新，Windows 10，最新，開發人員，17763
 ms.author: quradic
-ms.date: 10/02/2018
+ms.date: 10/03/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c354d9ed4bae4cd8b484fcc3281dc5ac753dab1e
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 29fe3dc2958a9dfbd679eb62d012292b44bcf40d
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312884"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4354883"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 
@@ -26,7 +26,7 @@ Windows 10 組建 17763 (也稱為年 10 月 2018年更新或版本 1809年)，�
 
 功能 | 描述
  :------ | :------
-應用程式圖示和標誌 | [應用程式圖示和標誌頁面](../design/style/app-icons-and-logos.md)已重新撰寫，和現在會顯示最新的 Visual Studio 圖示工具，並將影像新增到您的 app 清單，在 Microsoft Store 中提供的資訊。
+應用程式圖示及標誌 | [應用程式圖示和標誌頁面](../design/style/app-icons-and-logos.md)已重新撰寫，和現在會顯示最新的 Visual Studio 圖示工具，並將影像新增到您的 app 清單，在 Microsoft Store 中提供的資訊。
 設計登陸頁面 | [更新登陸頁面的設計](https://developer.microsoft.com/windows/apps/design)具備 UWP 設計區域和 Fluent 設計的最新新增項目上的資訊在快速的概觀。
 Fluent 設計控制項 | 下列新的 UI 控制項已新增，以增強 Fluent Design 系統與您的應用程式的 apparence: </br> * [CommandBarFlyout](../design/controls-and-patterns/command-bar-flyout.md)可讓您在項目在您的 UI 畫布上的內容中顯示一般使用者的工作。 </br> * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)，以及[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)提供按鈕控制項具有特殊功能來增強您的應用程式使用者介面。 </br> * [功能表列](../design/controls-and-patterns/menus.md)會顯示水平列中的一組的多個最上層的功能表。 </br> * [NavigationView](../design/controls-and-patterns/navigationview.md)現已支援頂端的瀏覽，對於您的應用程式有數目較少的瀏覽選項且需要更多空間內容的案例。 </br> * [樹狀檢視](../design/controls-and-patterns/tree-view.md)已增強對支援資料繫結，項目範本，並將拖放。
 Fluent Design 更新 | 下列的 Fluent Design 頁面已經做視覺更新和次要變更： </br> * [對齊方式、 邊框間距，邊界](../design/layout/alignment-margin-padding.md) </br> * [色彩](../design/style/color.md) </br> * [Windows 應用程式的 fluent 設計](../design/fluent-design-system/index.md) </br> * [應用程式設計簡介](../design/basics/design-and-ui-intro.md) </br> * [瀏覽基本知識](../design/basics/navigation-basics.md) </br> * [回應式設計技術](../design/layout/responsive-design.md) </br> * [螢幕大小與中斷點](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) </br> * [樣式概觀](../design/style/index.md) </br> * [書寫風格反應](../design/style/writing-style.md) </br> 此外，我們已經重寫下列頁面以其內容區域上的所有新資訊： </br> * [圖示](../design/style/icons.md)現在會提供實際使用的圖示，並讓他們成為可點選的建議。 </br> * [印刷樣式](../design/style/typography.md)合併資訊從類似的文章，將所有項目放在單一位置的已更新的指導方針與圖例。
@@ -44,7 +44,7 @@ Windows UI 文件庫 | [Windows UI 文件庫](https://aka.ms/winui-docs)是一�
 功能 | 描述
  :------ | :------
 條碼掃描器 | [條碼掃描器](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)的文件已重新組織，並改善了更多詳細資料和程式碼片段。 我們也新增了一個新的主題：[取得，並了解條碼資料](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，正好說明如何取得並處理來自條碼掃描器的資料。
-C++/WinRT | [C + + /winrt](https://aka.ms/cppwinrt)包含此版本的新功能。 例如，有新函式和支援您在實作您自己的[集合屬性和集合類型](/windows/uwp/cpp-and-winrt-apis/collections)的基底類別。 </br> 您現在也可以使用[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension)標記延伸模組與您 C + + /winrt 執行階段類別。 如需詳細資訊和程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)。 </br> 其他新的 C + + /winrt 項內容包括： [XAML 自訂 （化） 控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl)。[作者 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)。和[值類別，以及它們的參考](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)。
+C++/WinRT | [C + + /winrt](https://aka.ms/cppwinrt)包含許多的新功能、 變更，以及適用於此版本中修正程式。 有新函式和實作您自己的[集合屬性和集合類型](/windows/uwp/cpp-and-winrt-apis/collections); 支援您的基底類別您現在可以使用[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 標記延伸，使用您 C + + /winrt 執行階段類別 （如需程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)）。 如需完整的全新和已變更，在此版本中的所有內容說明，請參閱[新在 C + + /winrt](../cpp-and-winrt-apis/news.md)。</br></br>其他新的 C + + /winrt 項內容包括：[自訂的 XAML 控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[作者 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)。[值類別](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)。與[強式和弱式參考](../cpp-and-winrt-apis/weak-references.md)。
 C + + /winrt 程式碼範例 | 我們已新增 250 C + + /winrt 程式碼清單主題中我們的文件，伴隨的現有的 C + + /CX 程式碼範例。
 發表指導方針 | 如需我們 UWP 文件，我們已更新[我們貢獻的指導方針](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 工作流程和對我們文件的外部貢獻的期望，可清楚說明這個新的指導方針。
 DirectX 圖形 Infastructure (DXGI) | 遺失的 DXGI Api 已新增新的文件，並在 Windows 10 上呈現時，我們已提供的最佳做法的相關的文章。 </br> * [為獲得最佳效能，使用 DXGI 翻轉模型](https://docs.microsoft.com/windows/desktop/direct3ddxgi/for-best-performance--use-dxgi-flip-model)： 提供如何獲得最佳效能和效率簡報堆疊現代的 Windows 版本上中的指導方針。 </br> * [IDXGIOutput6::CheckHardwareCompositionSupport 方法](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/nf-dxgi1_6-idxgioutput6-checkhardwarecompositionsupport)： 會通知應用程式，支援的硬體自動縮放。 </br> * [DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS 列舉](https://docs.microsoft.com/windows/desktop/api/dxgi1_6/ne-dxgi1_6-dxgi_hardware_composition_support_flags)： 描述支援硬體組合的哪一個層級。

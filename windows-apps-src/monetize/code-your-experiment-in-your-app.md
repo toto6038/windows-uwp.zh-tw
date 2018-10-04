@@ -1,7 +1,7 @@
 ---
 author: mcleanbyron
 Description: To run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must code the experiment in your app.
-title: 編寫實驗用的 App 程式碼
+title: 編寫實驗用的 app 程式碼
 ms.assetid: 6A5063E1-28CD-4087-A4FA-FBB511E9CED5
 ms.author: mcleans
 ms.date: 02/08/2017
@@ -11,13 +11,13 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
 ms.openlocfilehash: b0931d712ca99b429e2aaa7dec4b855f41ce55ef
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4319756"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4352816"
 ---
-# <a name="code-your-app-for-experimentation"></a>編寫實驗用的 App 程式碼
+# <a name="code-your-app-for-experimentation"></a>編寫實驗用的 app 程式碼
 
 在您[在開發人員中心儀表板中建立專案並定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)之後，就可以準備更新通用 Windows 平台 (UWP) app 中的程式碼，以：
 * 從 Windows 開發人員中心收到遠端變數值。

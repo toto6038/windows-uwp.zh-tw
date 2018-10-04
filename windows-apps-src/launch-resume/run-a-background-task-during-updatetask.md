@@ -1,6 +1,6 @@
 ---
 author: TylerMSFT
-title: 在更新 UWP app 時執行背景工作
+title: 在更新 UWP 應用程式時執行背景工作
 description: 了解如何在更新通用 Windows 平台 (UWP) 市集應用程式時執行背景工作。
 ms.author: twhitney
 ms.date: 04/21/2017
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 更新、 背景工作、 updatetask、 背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: fcba2cb736f86cebc6d2664e2ec3b557d47c86d7
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4311338"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4350990"
 ---
-# <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在更新 UWP app 時執行背景工作
+# <a name="run-a-background-task-when-your-uwp-app-is-updated"></a>在更新 UWP 應用程式時執行背景工作
 
 了解如何撰寫您的通用 Windows 平台 (UWP) 市集應用程式會更新後執行背景工作。
 
@@ -99,4 +99,4 @@ namespace BackgroundTasks
 
 ## <a name="see-also"></a>請參閱
 
-[建立及註冊跨處理序的背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+[建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)

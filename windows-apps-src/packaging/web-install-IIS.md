@@ -1,6 +1,6 @@
 ---
 author: laurenhughes
-title: 從 IIS 伺服器上安裝 UWP app
+title: 從 IIS 伺服器上安裝 UWP 應用程式
 description: 本教學課程示範如何設定 IIS 伺服器，確認您的 web 應用程式可以裝載應用程式套件和叫用並有效地使用應用程式安裝程式。
 ms.author: cdon
 ms.date: 05/30/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式安裝程式，AppInstaller，側載，相關設定，選用套件，IIS 伺服器
 ms.localizationpriority: medium
 ms.openlocfilehash: 214ddd2b55bca1acecbab0a841cf2048335e7b3a
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312122"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4355773"
 ---
-# <a name="install-a-uwp-app-from-an-iis-server"></a>從 IIS 伺服器上安裝 UWP app
+# <a name="install-a-uwp-app-from-an-iis-server"></a>從 IIS 伺服器上安裝 UWP 應用程式
 
 本教學課程示範如何設定 IIS 伺服器，確認您的 web 應用程式可以裝載應用程式套件和叫用並有效地使用應用程式安裝程式。
 
