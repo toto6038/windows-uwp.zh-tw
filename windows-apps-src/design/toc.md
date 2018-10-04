@@ -39,6 +39,7 @@
 ## [按鈕](controls-and-patterns/buttons.md)
 ## [核取方塊](controls-and-patterns/checkbox.md)
 ## [色彩選擇器](controls-and-patterns/color-picker.md)
+## [命令列飛出視窗](controls-and-patterns/command-bar-flyout.md)
 ## [連絡人卡片](controls-and-patterns/contact-card.md)
 ## [日期和時間](controls-and-patterns/date-and-time.md)
 ### [行事曆日期選擇器](controls-and-patterns/calendar-date-picker.md)
@@ -56,6 +57,7 @@
 ## [影像與影像筆刷](controls-and-patterns/images-imagebrushes.md)
 ## [筆跡控制項](controls-and-patterns/inking-controls.md)
 ## [清單](controls-and-patterns/lists.md)
+### [下拉式方塊](controls-and-patterns/combo-box.md)
 ### [清單檢視和方格檢視](controls-and-patterns/listview-and-gridview.md)
 ### [項目容器與範本](controls-and-patterns/item-containers-templates.md)
 ### [清單檢視的項目範本](controls-and-patterns/item-templates-listview.md)
@@ -100,6 +102,7 @@
 ## [印刷樣式](style/typography.md)
 ## 圖示
 ### [概觀](style/icons.md)
+### [應用程式圖示及標誌](style/app-icons-and-logos.md)
 ### [Segoe MDL2 圖示](style/segoe-ui-symbol-font.md)
 ## [壓克力](style/acrylic.md)
 ## [顯色顯目提示](style/reveal.md)
@@ -126,7 +129,6 @@
 
 # 命令介面
 ## [磚](shell/tiles-and-notifications/creating-tiles.md)
-### [磚和圖示資產的指導方針](shell/tiles-and-notifications/app-assets.md)
 ### [次要磚](shell/tiles-and-notifications/secondary-tiles.md)
 #### [指引](shell/tiles-and-notifications/secondary-tiles-guidance.md)
 #### [釘選次要磚](shell/tiles-and-notifications/secondary-tiles-pinning.md)
