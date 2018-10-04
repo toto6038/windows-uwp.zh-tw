@@ -14,17 +14,14 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: ff104bfb5114cd51eb04d75af3c096f47a7d286d
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: c088aa6a2a8b1922eb93ec758dcda8c9a5ec8965
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4318070"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357660"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
-
-> [!NOTE]
-> **正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。**
 
 本主題說明如何在通用 Windows 平台 (UWP) 應用程式中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目控制項繫結到項目集合。 此外，我們還會說明如何控制項目的呈現、根據選擇來實作詳細資料檢視、以及轉換資料以供顯示。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
@@ -505,7 +502,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 > 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
 > [!IMPORTANT]
-> 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性 （如下所述） 是只有當您已安裝[Windows 10 SDK 預覽版 17661](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK)，可使用或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
+> 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性 （如下所述） 是適用於您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
 
 如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX)，因為我們會使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增至**錄製**類別。
 

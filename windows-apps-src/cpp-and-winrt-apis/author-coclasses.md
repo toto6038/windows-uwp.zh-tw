@@ -1,7 +1,7 @@
 ---
 author: stevewhims
 description: C + + WinRT 可協助您撰寫傳統 COM 元件，就如同它可協助您撰寫 Windows 執行階段類別。
-title: 撰寫 COM 元件使用 C + + /winrt
+title: 使用 C++/WinRT 撰寫 COM 元件
 ms.author: stwhi
 ms.date: 09/06/2018
 ms.topic: article
@@ -9,14 +9,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 作者，COM、 元件
 ms.localizationpriority: medium
-ms.openlocfilehash: 2886d2b42d4c192a3f6924a41a4c4dd1483db471
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: 94f59833f4c657445b7135b1158974d8a553813f
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313828"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358416"
 ---
-# <a name="author-com-components-with-cwinrt"></a>撰寫 COM 元件使用 C + + /winrt
+# <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
 [C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)可協助您撰寫的傳統型元件物件模型 (COM) 元件 （或 coclasses），就如同它可協助您撰寫 Windows 執行階段類別。 以下是簡單的圖例，如果您將貼到的程式碼，您可以測試出`pch.h`和`main.cpp`的新**Windows 主控台應用程式 (C + + /winrt)** 專案。
 
@@ -415,9 +415,9 @@ void LaunchedFromNotification(HANDLE consoleHandle, INPUT_RECORD & buffer, DWORD
 
 ## <a name="in-process-com-server"></a>同處理序 COM 伺服器
 
-上述*ToastAndCallback*範例應用程式的函式做為本機 （或處理程序） COM 伺服器。 這是由[LocalServer32](/windows/desktop/com/localserver32) Windows 登錄機碼表示您用來登錄它。 本機的 COM 伺服器裝載其 coclass(es) 可執行的二進位檔 ( `.exe`)。
+上述*ToastAndCallback*範例應用程式的函式做為本機 （或處理程序） COM 伺服器。 這表示[LocalServer32](/windows/desktop/com/localserver32) Windows 登錄機碼，您用來註冊其 coclass 的 CLSID。 本機的 COM 伺服器裝載其 coclass(es) 可執行的二進位檔 ( `.exe`)。
 
-或者 （和可以說是更有可能），您可以選擇來裝載您 coclass(es) 動態連結程式庫中的 ( `.dll`)。 DLL 的形式的 COM 伺服器稱為同處理序 COM server，它會以將登錄使用[InprocServer32](/windows/desktop/com/inprocserver32) Windows 登錄機碼。
+或者 （和可以說是更有可能），您可以選擇來裝載您 coclass(es) 動態連結程式庫中的 ( `.dll`)。 DLL 的形式的 COM 伺服器稱為同處理序 COM server，它由 Clsid 將使用[InprocServer32](/windows/desktop/com/inprocserver32) Windows 登錄機碼來登錄。
 
 ### <a name="create-a-dynamic-link-library-dll-project"></a>建立動態連結程式庫 (DLL) 專案
 
@@ -556,5 +556,5 @@ struct MyCoclass : winrt::implements<MyCoclass, IMyComInterface, winrt::Windows:
 
 ## <a name="related-topics"></a>相關主題
 * [使用 C++/WinRT 撰寫 API ](/windows/uwp/cpp-and-winrt-apis/author-apis)
-* [使用 COM 元件使用 C + + /winrt](consume-com.md)
+* [使用 C++/WinRT 來使用 COM 元件](consume-com.md)
 * [傳送本機快顯通知](/windows/uwp/design/shell/tiles-and-notifications/send-local-toast)

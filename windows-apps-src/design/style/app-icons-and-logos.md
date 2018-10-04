@@ -1,7 +1,7 @@
 ---
 author: mijacobs
 Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more.
-title: 應用程式圖示和標誌
+title: 應用程式圖示及標誌
 template: detail.hbs
 ms.author: mijacobs
 ms.date: 04/17/2018
@@ -13,13 +13,13 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4312426"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4359792"
 ---
-# <a name="app-icons-and-logos"></a>應用程式圖示和標誌 
+# <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
 每個應用程式有圖示/標誌，表示它，與該圖示會出現在 Windows 殼層中的多個位置： 
 

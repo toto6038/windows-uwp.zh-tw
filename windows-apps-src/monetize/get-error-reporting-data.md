@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 15dd4d5febe0b57e164f0aadeeb8d7b816dcdd66
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313904"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358732"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 
@@ -148,7 +148,7 @@ Authorization: Bearer <your access token>
 * [取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)
 * [下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)
 * [使用 Microsoft Store 服務存取分析資料](access-analytics-data-using-windows-store-services.md)
-* [取得 App 下載數](get-app-acquisitions.md)
+* [取得應用程式下載數](get-app-acquisitions.md)
 * [取得附加元件下載數](get-in-app-acquisitions.md)
 * [取得 App 評分](get-app-ratings.md)
 * [取得應用程式評論](get-app-reviews.md)

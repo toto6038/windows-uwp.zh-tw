@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313788"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4358377"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>在 C++/CX 中建立 Windows 執行階段元件
 > [!NOTE]
@@ -561,4 +561,4 @@ C# 和 Visual Basic 語言都支援列舉。 這些語言看到 C++ 公用列舉
 如果您移除 C + + /CX 的 Windows 執行階段元件專案從方案，您也必須手動移除該專案的參考從 JavaScript 專案。 若未執行此動作，後續的偵錯或建置作業將無法執行。 之後如有必要，您可以加入 DLL 的組件參考。
 
 ## <a name="related-topics"></a>相關主題
-* [逐步解說： 建立基本 Windows 執行階段元件，在 C + + /CX 然後從 JavaScript 或 C# 呼叫該元件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+* [逐步解說：在 C++/CX 中建立基本 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)

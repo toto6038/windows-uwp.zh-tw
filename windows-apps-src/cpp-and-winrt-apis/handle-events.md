@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
 ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4313644"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4360631"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 

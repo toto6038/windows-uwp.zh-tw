@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 新聞，什麼的、 新
 ms.localizationpriority: medium
-ms.openlocfilehash: 3cc28092020639d108ec35898ad1d6bddcd055f5
-ms.sourcegitcommit: e6daa7ff878f2f0c7015aca9787e7f2730abcfbf
+ms.openlocfilehash: bc6be28e112dfdd14b3585bd88ba066fbeae382d
+ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4317460"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "4357770"
 ---
 # <a name="whats-new-in-cwinrt"></a>有何新在 C + + /winrt
 
@@ -45,6 +45,12 @@ ms.locfileid: "4317460"
 - 已改善程式碼產生： 各種不同的改進功能，以減少程式碼大小、 改善內嵌，並最佳化原廠快取。
 - 移除不必要的遞迴。 當命令列指的是資料夾，而不是特定的`.winmd`、`cppwinrt.exe`工具不會再搜尋適用於以遞迴方式`.winmd`檔案。 `cppwinrt.exe`工具現在也會處理重複的項目更有效地使它更有彈性的使用者錯誤，且到不良形成`.winmd`檔案。
 - 強化智慧型指標。 之前，無法撤銷時事件 revokers 移動-指派新的值。 這有助於發現的問題，其中智慧型指標類別無法可靠地處理自我指派;[**winrt:: com_ptr 結構範本**](/uwp/cpp-ref-for-winrt/com-ptr)中的根目錄。 **winrt:: com_ptr**已經修復，再固定來處理事件 revokers 移動語意正確，讓它們撤銷時指派。
+
+> [!NOTE]
+> 版本 1.0.181002.2 （或更新版本） 的[C + + /winrt Visual Studio 擴充功能 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)安裝，請建立一個新的 C + + /winrt 專案會自動安裝該專案的[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 套件提供更高的 C + + /winrt 專案建置支援，讓您的專案可攜式開發電腦之間 （僅限 NuGet 套件，以及不 VSIX，安裝所在） 的組建代理程式。
+>
+> 現有專案&mdash;您已安裝版本 1.0.181002.2 之後 （或更新版本） 的 VSIX&mdash;我們建議您在 Visual Studio 中開啟專案，按一下 [**專案**] \> **管理 NuGet 套件...** \> **瀏覽**，請輸入或貼**Microsoft.Windows.CppWinRT**在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [**安裝**安裝該專案的套件。
+
 
 ## <a name="isolation-from-windows-sdk-header-files"></a>Windows SDK 標頭檔案從隔離
 
