@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b9858be036732c2894ff3c009233e021b37da040
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4355486"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388478"
 ---
 # <a name="security"></a>安全性
 

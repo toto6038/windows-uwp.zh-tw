@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 8aafac1c1217ce082cd9d6176c530967f32e4cdd
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4358896"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389507"
 ---
 # <a name="introduction-to-asset-packages"></a>資產套件簡介
 

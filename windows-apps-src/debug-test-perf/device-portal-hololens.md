@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: e70ab7c7fba8b8da9a0115a86a13f08e4ef3ebe2
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353275"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389831"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的裝置入口網站
 

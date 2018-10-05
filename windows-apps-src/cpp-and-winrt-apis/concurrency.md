@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f29828a800795aba70c17bcab19b56b85d56382
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4356993"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4388902"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
