@@ -14,11 +14,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4360886"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4384545"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
 
@@ -87,7 +87,7 @@ ms.locfileid: "4360886"
 
 若要達到各種不同的效果，有些設定忽略這些屬性上 ConnectedAnimationService 並改用他們自己的值，此表格中所述。
 
-| 設定 | 方面 DefaultDuration 嗎？ | 方面 DefaultEasingFunction 嗎？ |
+| 組態 | 方面 DefaultDuration 嗎？ | 方面 DefaultEasingFunction 嗎？ |
 | - | - | - |
 | 重力 | 是 | 是* <br/> **基本轉譯從 A 到 B 會使用這個 easing 函式，但是 「 重力 dip 」 有它自己的 easing 函式。*  |
 | 直接存取 | 否 <br/> *動畫超過 150ms年。*| 否 <br/> *使用 easing 函式開始減速。* |
