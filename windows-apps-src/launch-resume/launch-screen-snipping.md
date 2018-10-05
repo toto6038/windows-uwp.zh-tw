@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，uri、 剪取草圖
 ms.localizationpriority: medium
 ms.openlocfilehash: e18662125ef72051a289b3f1d0f3dc09b452d256
-ms.sourcegitcommit: 5c9a47b135c5f587214675e39c1ac058c0380f4c
+ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4353285"
+ms.lasthandoff: 10/05/2018
+ms.locfileid: "4389520"
 ---
 # <a name="launch-screen-snipping"></a>啟動畫面剪
 
