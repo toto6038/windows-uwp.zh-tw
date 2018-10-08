@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 069f13926fda125ebb383f16bf96eab333a28523
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958653"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4420297"
 ---
 # <a name="use-the-compass"></a>使用指南針
 
@@ -28,8 +28,6 @@ ms.locfileid: "958653"
 **範例**
 
 -   如需更完整的實作，請參閱[指南針範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Compass)。
-
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 了解如何使用指南針來判斷目前朝向何方。
 
