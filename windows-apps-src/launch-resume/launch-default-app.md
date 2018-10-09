@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cdfc2beabb640764f85a5ee9f1b24e390b2f87a
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664068"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4469998"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -45,6 +45,7 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 |[ms-store:](#store-app-uri-scheme)  | 市集應用程式 |
 |[ms-tonepicker:](#tone-picker-uri-scheme) | 音調選擇器 |
 |[ms-yellowpage:](#nearby-numbers-app-uri-scheme) | 附近號碼 App |
+|[msnweather:](#weather-app-uri-scheme) | 天氣應用程式 |
 
 <br>
 例如，下列 URI 會開啟預設瀏覽器，並顯示 Bing 網站。
@@ -240,3 +241,11 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 `ms-windows-store://home/`
 
 如需詳細資訊，請參閱[啟動 UWP 應用程式](launch-store-app.md)。
+
+### <a name="weather-app-uri-scheme"></a>天氣 app URI 配置
+
+使用**msnweather:** URI 配置來啟動 「 天氣 」 app。
+
+| URI 配置 | 結果 |
+|------------|---------|
+| msnweather://forecast?la= \[latitude\] & lo = \ [longitude\] | 啟動根據位置的地理座標預測頁面中的天氣應用程式。<br>`latitude` 指的是位置的緯度。<br> `longitude` 指的是位置的經度。<br> |

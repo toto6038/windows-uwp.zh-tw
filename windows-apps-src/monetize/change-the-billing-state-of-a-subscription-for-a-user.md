@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: d8734c1fe25cf6c22d88d2d50b323b7d3ee86710
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4429376"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4469807"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 
@@ -55,14 +55,14 @@ ms.locfileid: "4429376"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 名稱         | 類型  | 描述   |  必要  |
+| 名稱         | 類型  | 說明   |  必要  |
 |----------------|--------|-------------|-----------|
 | recurrenceId | string | 您想要變更之訂閱的識別碼。 若要取得此識別碼，呼叫方法，[取得使用者的訂閱](get-subscriptions-for-a-user.md)，找出代表您想要變更之訂閱附加元件的回應主體項目並使用**id**欄位的值用於項目。     | 是      |
 
 
 ### <a name="request-body"></a>要求主體
 
-| 欄位      | 類型   | 描述   | 必要 |
+| 欄位      | 類型   | 說明   | 必要 |
 |----------------|--------|---------------|----------|
 | b2bKey         | string | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要變更其訂閱的使用者身分識別。     | 是      |
 | changeType     | string |  下列其中一個字串，辨識您想要進行的變更類型：<ul><li>**Cancel**：取消訂閱。</li><li>**Extend**：延長訂閱。 如果您指定這個值，必須也包含 *extensionTimeInDays* 參數。</li><li>**Refund**：將訂閱費用退款給客戶。</li><li>**ToggleAutoRenew**：停用訂閱的自動續約。 如果訂閱目前已停用自動續約，這個值不會執行任何動作。</li></ul>   | 是      |
@@ -120,7 +120,7 @@ Host: https://purchase.mp.microsoft.com
 | autoRenew | 布林值 |  指出訂閱是否設定為訂閱期間結束時自動續約。   |
 | beneficiary | string |  這個訂閱相關聯的權利的受益人識別碼。   |
 | expirationTime | string | 訂閱將結束的日期和時間 (ISO 8601 格式)。 訂閱處於特定狀態時，才可以使用這個欄位。 到期時間通常表示目前狀態到期的時間。 例如，對於使用中的訂閱，到期日表示將會發生下一個自動續約的時間。    |
-| expirationTimeWithGrace | 字串 | 日期和時間，訂閱將會到期，包括在寬限期，格式為 ISO 8601。 這個值表示當使用者將會遺失存取訂閱之後訂閱無法自動續約。    |
+| expirationTimeWithGrace | string | 日期和時間，訂閱將會到期，包括在寬限期，格式為 ISO 8601。 這個值表示當使用者將會遺失存取訂閱之後訂閱無法自動續約。    |
 | id | string |  訂閱的識別碼。 當您呼叫[變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)方法，使用這個值，指出您想要修改的訂閱。    |
 | isTrial | 布林值 |  表示訂閱是否試用。     |
 | lastModified | string |  上次修改訂閱的日期和時間 (ISO 8601 格式)。      |

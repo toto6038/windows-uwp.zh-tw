@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ec6cf478097a6cd00af85d52112555650db35f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817143"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468747"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -70,12 +70,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-|存取工作或學校帳戶 | ms-settings:workplace |
-|電子郵件與應用程式帳戶  | ms-settings:emailandaccounts |
-|家人與其他使用者 | ms-settings:otherusers |
-|登入選項 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-|同步您的設定 | ms-settings:sync |
-|您的資訊 | ms-settings:yourinfo |
+| 存取工作或學校帳戶 | ms-settings:workplace |
+| 電子郵件與應用程式帳戶  | ms-settings:emailandaccounts |
+| 家人與其他使用者 | ms-settings:otherusers |
+| 登入選項 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
+| 同步您的設定 | ms-settings:sync |
+| Windows Hello 設定 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| 您的資訊 | ms-settings:yourinfo |
 
 ## <a name="apps"></a>應用程式
 
@@ -86,16 +87,21 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 網站的應用程式 | ms-settings:appsforwebsites |
 | 預設應用程式 | ms-settings:defaultapps |
 | 管理選用功能 | ms-settings:optionalfeatures |
+| 離線地圖 | ms-settings:maps |
 | 啟動應用程式 | ms-settings:startupapps |
+| 視訊播放 | ms-settings:videoplayback |
 
 ## <a name="cortana"></a>Cortana
 
 |設定頁面| URI |
 |-------------|-----|
-| Cortana 權限與歷程記錄 | ms-settings:cortana-permissions |
+| 權限與歷程記錄 | ms-settings:cortana-permissions |
 | 更多詳細資料 | ms-settings:cortana-moredetails |
-| 通知 | ms-settings:cortana-notifications |
+| 我的裝置上的 Cortana | ms-settings:cortana-notifications |
 | 向 Cortana 講話 | ms-settings:cortana-language |
+
+> [!NOTE] 
+> 在桌面上此設定 \] 區段時將會呼叫搜尋電腦設定為其中沒有目前可用的 Cortana，或已停用 Cortana 的區域。 在此情況下不會列 (不同的我的裝置上 Cortana) 和 Cortana 與交談，Cortana 特定頁面。 
 
 ## <a name="devices"></a>裝置
 
@@ -158,7 +164,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 設定首頁 | ms-settings: |
 
 
-## <a name="network-wireless--internet"></a>網路、無線與網際網路
+## <a name="network--internet"></a>網路和網際網路
 
 |設定頁面| URI |
 |-------------|-----|
@@ -189,9 +195,14 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 瀏覽列 | ms-settings:personalization-navbar |
 | 個人化 (類別) | ms-settings:personalization |
 | 開始 | ms-settings:personalization-start |
-| 音效 | ms-settings:sounds |
 | 工作列 | ms-settings:taskbar |
 | 佈景主題 | ms-settings:themes |
+
+## <a name="phone"></a>Phone
+
+|設定頁面| URI |
+|-------------|-----|
+| 您的手機 | ms-settings:mobile-devices  |
 
 ## <a name="privacy"></a>隱私權
 
@@ -257,7 +268,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 訊息中心 | ms-settings:messaging |
 | 多工 | ms-settings:multitasking |
 | 夜間光線設定 | ms-settings:nightlight |
-| 離線地圖 | ms-settings:maps |
 | 電話 | ms-settings:phone-defaultapps |
 | 投影到此電腦 | ms-settings:project |
 | 共用體驗 | ms-settings:crossdevice |
@@ -267,9 +277,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 遠端桌面 | ms-settings:remotedesktop |
 | 電話 | ms-settings:phone |
 | 電源與睡眠 | ms-settings:powersleep |
+| 音效 | ms-settings:sounds |
 | 儲存空間 | ms-settings:storagesense |
 | 儲存空間感知器 | ms-settings:storagepolicies |
-| 視訊播放 | ms-settings:videoplayback |
 
 ## <a name="time-and-language"></a>時間與語言
 
@@ -290,21 +300,15 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 備份 | ms-settings:backup |
 | 傳遞最佳化 | ms-settings:delivery-optimization |
 | 尋找我的裝置 | ms-settings:findmydevice |
+| 適用於開發人員 | ms-settings:developers |
 | 修復 | ms-settings:recovery |
 | 疑難排解 | ms-settings:troubleshoot |
-| Windows Defender | ms-settings:windowsdefender |
-| Windows Hello 設定 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
+| Windows 資訊安全中心 | ms-settings:windowsdefender |
 | Windows 測試人員計畫 | ms-settings:windowsinsider (僅適用於使用者已在 WIP 中註冊時) |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update-進階選項 | ms-settings:windowsupdate-options |
 | Windows Update-重新啟動選項 | ms-settings:windowsupdate-restartoptions |
 | Windows Update-檢視更新記錄 | ms-settings:windowsupdate-history |
-
-## <a name="developers"></a>開發人員
-
-|設定頁面| URI |
-|-------------|-----|
-| 適用於開發人員 | ms-settings:developers |
 
 ## <a name="user--accounts"></a>使用者帳戶
 

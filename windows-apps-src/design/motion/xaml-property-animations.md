@@ -7,16 +7,16 @@ ms.date: 09/13/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421907"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4466418"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用組合動畫產生動畫效果的 XAML 項目
 
@@ -38,7 +38,7 @@ ms.locfileid: "4421907"
 
 下表顯示可用來修改的 UIElement，也與[CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation)產生動畫呈現的屬性。
 
-| 屬性 | 類型 | 描述 |
+| 屬性 | 類型 | 說明 |
 | -- | -- | -- |
 | [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | 雙線 | 物件的不透明度 |
 | [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | 移動元素的 X/Y/Z 位置 |

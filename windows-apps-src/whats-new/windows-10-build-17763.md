@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f2d29d94759a4b8fd273c8fdc0cdf5c93311de
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4418134"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4467080"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 
@@ -24,7 +24,7 @@ Windows 10 組建 17763 (也稱為年 10 月 2018年更新或版本 1809年)，�
 
 ## <a name="design--ui"></a>設計與 UI
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 應用程式圖示及標誌 | [應用程式圖示和標誌頁面](../design/style/app-icons-and-logos.md)已重新撰寫，和現在會顯示最新的 Visual Studio 圖示工具，並將影像新增到您的 app 清單，在 Microsoft Store 中提供的資訊。
 設計登陸頁面 | [更新登陸頁面的設計](https://developer.microsoft.com/windows/apps/design)具備 UWP 設計區域和 Fluent 設計的最新新增項目上的資訊在快速的概觀。
@@ -41,7 +41,7 @@ Windows UI 文件庫 | [Windows UI 文件庫](https://aka.ms/winui-docs)是一�
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 條碼掃描器 | [條碼掃描器](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)的文件已重新組織，並改善了更多詳細資料和程式碼片段。 我們也新增了一個新的主題：[取得，並了解條碼資料](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，正好說明如何取得並處理來自條碼掃描器的資料。
 C++/WinRT | [C + + /winrt](https://aka.ms/cppwinrt)包含許多的新功能、 變更，以及適用於此版本中修正程式。 有新函式和實作您自己的[集合屬性和集合類型](/windows/uwp/cpp-and-winrt-apis/collections); 支援您的基底類別您現在可以使用[{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 標記延伸，使用您 C + + /winrt 執行階段類別 （如需程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)）。 如需完整的全新和已變更，在此版本中的所有內容說明，請參閱[新在 C + + /winrt](../cpp-and-winrt-apis/news.md)。</br></br>其他新的 C + + /winrt 項內容包括：[自訂的 XAML 控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[作者 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses)。[值類別](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories)。與[強式和弱式參考](../cpp-and-winrt-apis/weak-references.md)。
@@ -76,7 +76,7 @@ WebVR |我們已經主要更新中[WebVR 開發人員指南](https://docs.micros
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利
 
-功能 | 描述
+功能 | 說明
  :------ | :------
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview)是提供現代化的封裝體驗，以所有 Windows 應用程式的新 Windows 應用程式套件格式。 開放原始碼 MSIX 格式啟用現代化部署功能同時保留現有的套件的功能。
 MSIX 封裝工具 | 新的[MSIX 封裝工具](https://docs.microsoft.com/windows/msix/mpt-overview)） 可讓您重新封裝您現有的傳統型應用程式 MSIX 格式，即使您不需要存取其原始碼。 它可以在命令列，或透過其互動式 UI 執行。

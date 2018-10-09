@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
 ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4422564"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4468949"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -70,7 +70,7 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 
 ### <a name="topics-about-the-c-language"></a>C + + 語言相關主題
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 | - | - |
 | [值類別，以及它們的參考](cpp-value-categories.md) | 本主題描述各種不同的值存在於 c + + 類別。 您將會相信有聽過的值和右，但有也會其他類型。 |
 
