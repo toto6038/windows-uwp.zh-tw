@@ -8,14 +8,14 @@ ms.date: 08/30/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4421171"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4462649"
 ---
 # <a name="enterprise"></a>企業版
 
@@ -189,7 +189,7 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 動作-與交談處理器和/或卡爾一起取得更多企業為主的範例。
 
-| 主題 |  描述 |
+| 主題 |  說明 |
 |------ |--------------|
 | [VanArsdel 詳細目錄範例](https://github.com/Microsoft/InventorySample) | 範例 Windows 10 應用程式 （使用通用 Windows 平台） 將焦點放在特定業務的情況下，顯示如何在傳統型應用程式中使用最新的 Windows 功能。 此範例是以建立與管理客戶、 訂單及產品為虛構公司 VanArsdel 為基礎。
 在 MVVM 中，會反白顯示的 SQL 資料庫，Entity Framework。 列出其他人。|

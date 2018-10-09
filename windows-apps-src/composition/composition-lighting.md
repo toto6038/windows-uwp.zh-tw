@@ -7,14 +7,14 @@ ms.date: 07/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e634b18fffc4f601f6512d6ceeed51efbe9c1886
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4426419"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463624"
 ---
 # <a name="using-lights-in-windows-ui"></a>使用 Windows UI 中的光源
 
@@ -37,7 +37,7 @@ Windows.UI.Composition Api 可讓您建立即時動畫及效果。 組合光源�
 
 ### <a name="light-types"></a>光源類型
 
-| 類型 | 描述 |
+| 類型 | 說明 |
 | --- | --- |
 | [AmbientLight](/uwp/api/windows.ui.composition.ambientlight) | 光源發出出現非方向光線反映在場景中的所有項目。 |
 | [DistantLight](/uwp/api/windows.ui.composition.distantlight) | 無限大型遠距離的光源會發出單一方向燈。 像是陽光。 |
@@ -85,7 +85,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 根據使用的光線類型，光線可有衰減和空間的屬性。 並非所有光線類型均使用所有的屬性。
 
-屬性 | 描述
+屬性 | 說明
 --- | ---
 **色彩** | 光線[色彩](/uwp/api/windows.ui.color)。 光源值由[D3D](https://docs.microsoft.com/windows/uwp/graphics-concepts/light-properties) Diffuse、 Ambient，以及定義發出的色彩的 Specular 定義的色彩。 光源使用光線; RGBA 值不會使用 alpha 色彩元件。
 **Direction** | 光線的方向。 在其中光線指的方向被指定相對於其[CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace)視覺效果。
@@ -98,7 +98,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 
 ### <a name="advanced-lighting-properties"></a>進階光源屬性
 
-屬性 | 描述
+屬性 | 說明
 --- | ---
 **強度** | 控制光線的亮度。
 **衰減** | 衰減控制光線強度如何隨著範圍屬性指定的最大距離減少。  常數，可以用 Quadradic 和線性衰減屬性。
@@ -121,7 +121,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 > 場景光源不會產生陰影。它會將焦點放在 2D 轉譯效果。  它不會納入考量 3D 光源案例，包括真實的光源模型，包括陰影。
 
 
-屬性 | 描述
+屬性 | 說明
 --- | ---
 **一般的地圖** | NormalMaps 建立的紋理其中光線一般指向將會較亮與一般指向遠將會較暗的效果。 若要新增您特定對象的視覺 NormalMap 使用載入 NormalMap 資產使用 LoadedImageSurface [CompositionSurfaceBrush](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 。
 **周遭環境** | 周遭環境的屬性大部分用來控制整體的色彩反映。

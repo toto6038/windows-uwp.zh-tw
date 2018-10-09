@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，點服務、 pos、 磁條讀取器
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4422856"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4463578"
 ---
 # <a name="magnetic-stripe-reader"></a>磁條讀取器
 
@@ -26,6 +26,6 @@ ms.locfileid: "4422856"
 
 ## <a name="in-this-section"></a>本節內容
 
-| 主題 | 描述 |
+| 主題 | 說明 |
 |-------|-------------|
 | [取得，並了解磁條讀取資料](../devices-sensors/pos-magnetic-stripe-reader-data.md) | 了解如何取得並解譯從磁條讀取資料。 |

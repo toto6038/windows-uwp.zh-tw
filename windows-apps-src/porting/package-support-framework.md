@@ -8,14 +8,14 @@ ms.date: 07/02/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d4b4cae2e135f7a66cd68192faabeffdb309a909
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4420363"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4465090"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援的架構，將執行階段的修正程式套用至 MSIX 封裝
 
@@ -135,7 +135,7 @@ nuget install Microsoft.PackageSupportFramework
 
 ### <a name="modify-the-package-manifest"></a>修改套件資訊清單
 
-在文字編輯器中開啟您的套件資訊清單，然後設定`Executable`屬性`Application`元素 PSF 啟動程式可執行檔的名稱。  如果您知道您目標的應用程式的架構，選取適當的版本，PSFLauncher32.exe 或 PSFLauncher64.exe。  如果沒有，PSFLauncher32.exe 能在所有情況下。  範例如下。
+在文字編輯器中開啟您的套件資訊清單，然後設定`Executable`屬性`Application`元素 PSF 啟動程式可執行檔的名稱。  如果您知道您目標的應用程式的架構，選取適當的版本，PSFLauncher32.exe 或 PSFLauncher64.exe。  如果沒有，PSFLauncher32.exe 能在所有情況下。  這裡提供一個範例。
 
 ```xml
 <Package ...>
