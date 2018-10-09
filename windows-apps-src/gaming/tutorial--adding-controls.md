@@ -12,7 +12,7 @@ keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 84230759f03cb60b5b776d3407ac0f96e090d495
 ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/22/2018
 ms.locfileid: "1675295"

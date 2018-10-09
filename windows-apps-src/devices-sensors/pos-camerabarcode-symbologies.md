@@ -11,7 +11,7 @@ keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b1a96e0e8f512b59e912ed0898f2f0b03a8c261
 ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/03/2018
 ms.locfileid: "1833103"

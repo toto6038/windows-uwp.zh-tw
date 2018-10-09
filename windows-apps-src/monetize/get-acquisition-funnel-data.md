@@ -11,7 +11,7 @@ keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, �
 ms.localizationpriority: medium
 ms.openlocfilehash: 85ffe2219ce7bc1dc47ff92240eeeff1374b5f43
 ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.translationtype: Auto
 ms.contentlocale: zh-TW
 ms.lasthandoff: 03/17/2018
 ms.locfileid: "1663578"
