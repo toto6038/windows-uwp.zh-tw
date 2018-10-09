@@ -10,19 +10,14 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 284609399f167a7229d0c7bb5858d0f0eda451ce
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.openlocfilehash: 106ea458502a95c53ecbf02d9118f3c31ff43978
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4389442"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4429071"
 ---
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
-
-
-
-
-\[正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不提供任何明確或隱含的瑕疵擔保。\]
 
 這是一份完整逐步解說的第 1 部分，將說明如何建立會利用 Windows Hello 來取代傳統的使用者名稱及密碼驗證系統的 Windows 10 UWP (通用 Windows 平台) 應用程式。 應用程式利用使用者名稱來進行登入作業，並為每個帳戶建立 Hello 金鑰。 這些帳戶會受到 PIN 碼的保護；而該 PIN 碼是在 Windows 設定中針對 Windows Hello 組態所設定的。
 

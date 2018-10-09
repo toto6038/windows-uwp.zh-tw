@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，點服務、 pos、 磁條讀取器
 ms.localizationpriority: medium
 ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 63cef0a7805f1594984da4d4ff2f76894f12d942
+ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4391436"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "4422856"
 ---
 # <a name="magnetic-stripe-reader"></a>磁條讀取器
 
