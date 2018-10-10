@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
 ms.openlocfilehash: a2923834fd968114a4ed607de214763fb2575697
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462457"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504991"
 ---
 # <a name="page-transitions"></a>頁面轉換
 
@@ -59,9 +59,9 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## <a name="horizontal-slide"></a>水平的投影片
 
-使用水平的投影片顯示同層級頁面顯示旁邊彼此。 [NavigationView](../controls-and-patterns/navigationview.md)控制項會自動使用這個動畫，如上方瀏覽，但如果您要建立您自己的水平瀏覽體驗，然後您可以實作具有 SlideNavigationTransitionInfo 水平投影。
+使用水平的投影片顯示的同層級頁面都顯示彼此。 [NavigationView](../controls-and-patterns/navigationview.md)控制項自動使用這個動畫，如上方瀏覽，但如果您要建立您自己的水平瀏覽體驗，然後您可以實作具有 SlideNavigationTransitionInfo 水平投影。
 
-所需的感覺是，使用者瀏覽到相鄰的頁面之間。 
+所需的感覺是使用者，彼此的頁面之間瀏覽。 
 
 ```csharp
 // Navigate to the right, ie. from LeftPage to RightPage

@@ -15,11 +15,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466316"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505310"
 ---
 # <a name="xaml-lighting"></a>XAML 光源
 
@@ -29,7 +29,7 @@ ms.locfileid: "4466316"
 
 ## <a name="applying-lights-to-xaml-uielements"></a>將光源套用至 XAML UIElement
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight)物件是用來套用[**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight)，以動態設定 XAML UIElement 的光源。 XamlLight 提供方法來針對 Uielement 或 XAML Brush、 將光源套用至 Uielement 的樹狀結構，並協助管理 CompositionLight 的存留期根據不論是否為目前在資源使用。
+[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight)物件是用來套用[**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight)，以動態設定 XAML UIElement 的光源。 XamlLight 提供適用於目標為 Uielement 或 XAML Brush、 將光源套用至 Uielement 的樹狀結構的方法，並協助管理 CompositionLight 的存留期根據不論目前在資源使用。
 
 - 如果您將目標設為具有 XamlLight 的**Brush**，則使用該 Brush 之任何 UIElement 的各部分都會透過光源亮起。
 - 如果您將目標設為具有 XamlLight 的**UIElement**，則整個 UIElement 和其子 UIElement 都會透過光源亮起。
@@ -461,7 +461,7 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-然後，您可以將此光線套用到任何 XAML UIElement 或筆刷，來增強它們。 這個範例示範不同可能用法。
+然後，您可以將此光線套用到任何 XAML UIElement 或筆刷來增強它們。 這個範例示範不同可能用法。
 
 > [!Important]
 > 適用於[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，移除的兩個`local:OrangeSpotLight.IsTarget="True"`從下列標記。 在程式碼後置中已設定的附加的屬性。
@@ -495,7 +495,7 @@ Platform::String^ OrangeSpotLight::GetId()
 
 這個 XAML 的結果看起來像這樣。
 
-![透過 xaml 光源亮起元素的範例](images/orange-spot-light.png)
+![Xaml 光線照亮元素的範例](images/orange-spot-light.png)
 
 > [!Important]
 > 如上述範例所示，只有最小版本等於 Windows 10 Creators Update 或更新版本的應用程式，才支援使用標記來設定 UIElement.Lights。 針對將目標設為較舊版本的應用程式，則必須透過程式碼後置來建立光源。

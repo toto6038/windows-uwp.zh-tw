@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 287b2b0fedac112f57f0342420a7830db5aa13be
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464955"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504556"
 ---
 # <a name="fingerprint-biometrics"></a>指紋生物識別技術
 

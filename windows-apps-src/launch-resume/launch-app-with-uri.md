@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465074"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505204"
 ---
 # <a name="launch-an-app-with-a-uri"></a>使用 URI 啟動應用程式
 
@@ -31,7 +31,7 @@ ms.locfileid: "4465074"
 | [啟動 UWP 應用程式](launch-store-app.md) | 本主題描述 ms-windows-store URI 配置。 您的應用程式可以使用此 URI 配置，將 UWP 應用程式啟動到 Microsoft Store 中的特定頁面。 |
 | [啟動 Windows 地圖應用程式](launch-maps-app.md) | 了解如何從您的應用程式啟動 Windows 地圖應用程式。 |
 | [啟動連絡人應用程式](launch-people-apps.md) | 本主題描述 ms-people URI 配置。 您的應用程式可以使用此 URI 配置來啟動連絡人應用程式，以執行特定動作。 |
-| [啟動畫面剪](launch-screen-snipping.md) | 了解如何使用 URI 配置來開啟新剪取，或是開啟剪取與草圖應用程式。 |
+| [啟動畫面剪](launch-screen-snipping.md) | 了解如何使用 URI 配置來開啟新的剪取，或是開啟剪取與草圖應用程式。 |
 | [可讓網站使用的應用程式 URI 處理常式的應用程式](web-to-app-linking.md) | 使用者持續使用您的應用程式藉由支援網站] 功能的應用程式。 |
 
 ## <a name="related-topics"></a>相關主題

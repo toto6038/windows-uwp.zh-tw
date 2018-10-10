@@ -1,7 +1,7 @@
 ---
 author: TylerMSFT
 title: 將跨處理序背景工作移植到同處理序背景工作
-description: 移植成同處理序背景工作在前景 app 處理序內執行的處理程序背景工作。
+description: 連接埠的同處理序背景工作，在前景 app 處理序內執行處理程序背景工作。
 ms.author: twhitney
 ms.date: 09/19/2018
 ms.topic: article
@@ -11,15 +11,15 @@ keywords: windows 10，uwp，背景工作，應用程式服務
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
 ms.openlocfilehash: b9010f82b0460bd46757bc1e0d58c01dec459104
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4464177"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505320"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>將跨處理序背景工作移植到同處理序背景工作
 
-移植您的處理程序 (OOP) 背景活動，同處理序活動的最簡單方式是將應用程式內您[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法的程式碼，並從[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)啟動它。 以下所述的技術不需建立從看見之 OOP 的背景工作的填充碼成同處理序背景工作;它的關於重寫 （或移植） 的處理程序版本看見之 OOP 版本。
+移植您的處理程序 (OOP) 背景活動，同處理序活動的最簡單方式是將您[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)方法的程式碼在您的應用程式內，並從[OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated)啟動它。 以下所述的技術不需建立填充碼從看見之 OOP 的背景工作，同處理序背景工作;它的關於重寫 （或移植） 的處理程序版本看見之 OOP 版本。
 
 如果您的 app 有多個背景工作，[背景啟用範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/BackgroundActivation)會示範如何使用 `BackgroundActivatedEventArgs.TaskInstance.Task.Name` 來識別正在初始化哪個工作。
 

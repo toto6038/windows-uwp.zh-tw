@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470034"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505191"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
@@ -157,7 +157,7 @@ ms.locfileid: "4470034"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">飛出視窗</a>是輕量型內容相關快顯視窗的可關閉只要點選或按一下飛出視窗以外的地方。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">飛出視窗</a>是輕量型的內容相關快顯的可關閉只要點選或按一下飛出視窗以外的地方。
 :::row-end:::
 
 :::row:::

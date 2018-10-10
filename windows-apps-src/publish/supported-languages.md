@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e76f63fa30c3a294e1917bf1bed9ea79897390b2
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462373"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505115"
 ---
 # <a name="supported-languages"></a>支援的語言
 
 
-您可以將 app 提交到 Microsoft Store 超過 100 種語言。
+您可以提交到 Microsoft Store 超過 100 種語言的應用程式。
 
 若要深入了解在您的應用程式中設定語言，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)，並[了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，可以協助您撰寫支援多種語言的 app。
 

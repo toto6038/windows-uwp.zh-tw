@@ -10,14 +10,14 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461303"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504929"
 ---
 # <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
-在大部分案例中，Windows 執行階段課類別的執行個體&mdash;像標準 C++ 物件一樣&mdash;可以從任何執行緒存取。 這樣的類別是*敏捷的*。 只有少數隨附於 Windows 的 Windows 執行階段類別是非敏捷的，但當您使用它們時，需要考量其執行緒模型與封送處理行為 (封送處理會通過執行緒或處理程序的界限傳遞資料)。 它是適用於敏捷式物件，每個 Windows 執行階段物件的最佳預設值讓您自己[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是敏捷的預設值。
+在大部分案例中，Windows 執行階段課類別的執行個體&mdash;像標準 C++ 物件一樣&mdash;可以從任何執行緒存取。 這樣的類別是*敏捷的*。 只有少數隨附於 Windows 的 Windows 執行階段類別是非敏捷的，但當您使用它們時，需要考量其執行緒模型與封送處理行為 (封送處理會通過執行緒或處理程序的界限傳遞資料)。 適用於敏捷式物件，每個 Windows 執行階段物件的最佳預設值是讓您自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是敏捷的預設值。
 
 但您可以選擇退出。您可能會有個有力的理由，讓您類型的物件駐留，例如，指定的單一執行緒 Apartment。 這通常與重新進入需求有關。 但即使使用者介面 (UI) API 提供越來越多敏捷式物件。 一般而言，敏捷性式最簡單且效能最佳的選項。 此外，當您實作啟動原廠，它必須是敏捷的，即使您對應執行階段類別不是。
 
