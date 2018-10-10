@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462659"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504102"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>使用 MonoGame 2D 建立 UWP 遊戲
 
@@ -30,12 +30,12 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 
 ## <a name="prerequisites"></a>必要條件
 +   Windows 10 和 Microsoft Visual Studio 2017。  [按一下這裡，以了解如何開始設定 Visual Studio](https://docs.microsoft.com/en-us/windows/uwp/get-started/get-set-up)。
-+ .NET 傳統型開發架構。 如果您還沒有這安裝，您可以透過重新執行 Visual Studio 安裝程式，並修改您的安裝的 Visual Studio 2017 中取得它。
++ .NET 傳統型開發架構。 如果您已經不需要這安裝，您可以重新執行，Visual Studio 安裝程式，並修改您的 Visual Studio 2017 的安裝即可取得它。
 +   C# 或類似物件導向程式設計語言的基本知識。 [按一下此處以了解如何開始使用 C#](https://docs.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。
 +   熟悉基本電腦科學概念，如類別、方法和變數，為加分技能。
 
 ## <a name="why-monogame"></a>為什麼選擇 MonoGame？
-談到遊戲開發環境，並沒有選項短缺的問題。 從完整功能引擎如 Unity，到全方位且複雜的多媒體 API 如 DirectX，可能不知從何開始。 MonoGame 是一組工具，複雜層級落在遊戲引擎與更精細的 API (如 DirectX) 之間。 它提供簡單易用的內容管線，以及建立執行於各種不同平台上之輕量遊戲所需的所有功能。 最棒的是，MonoGame 應用程式以純 C# 撰寫，而且您透過 Microsoft Store 或其他類似散發平台快速散發。
+談到遊戲開發環境，並沒有選項短缺的問題。 從完整功能引擎如 Unity，到全方位且複雜的多媒體 API 如 DirectX，可能不知從何開始。 MonoGame 是一組工具，複雜層級落在遊戲引擎與更精細的 API (如 DirectX) 之間。 它提供簡單易用的內容管線，以及建立執行於各種不同平台上之輕量遊戲所需的所有功能。 最棒的是，MonoGame 應用程式以純 C# 撰寫，而且您透過 Microsoft 網上商店或其他類似散發平台快速散發。
 
 ## <a name="get-the-code"></a>取得程式碼
 如果您不想逐步完成教學課程的工作，只是想要看運作中的 MonoGame，[請按一下此處取得完成的 App](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
@@ -44,7 +44,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 
 如果已經這樣做，請略過有關設定 MonoGame 查看程式碼逐步解說的下一節。
 
-**注意：** 這個範例中建立的遊戲並不完整（也根本談不上有趣）。 唯一目的是要示範 MonoGame 中 2D 開發的所有核心概念。 歡迎將此程式碼做成更好的遊戲，或在您已經掌握基本知識之後從頭開始！
+**注意：** 這個範例中建立的遊戲並不完整（也根本談不上有趣）。 其唯一目的是要示範 MonoGame 中 2D 開發的所有核心概念。 歡迎將此程式碼做成更好的遊戲，或在您已經掌握基本知識之後從頭開始！
 
 ## <a name="set-up-monogame-project"></a>設定 MonoGame 專案
 1. 從 [MonoGame.net](http://www.monogame.net/) 安裝適用於 Visual Studio 的 **MonoGame 3.6**
@@ -265,7 +265,7 @@ public void Draw (SpriteBatch spriteBatch)
 
 現在，對於玩家需要避免的障礙， 忍者貓與肉食恐龍這兩個最討厭什麼？ 吃蔬菜！ [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
-Just as before with the green rectangle, add these images to **Content.mgcb** via the **MonoGame Pipeline**, naming them “ninja-cat-dino.png” and “broccoli.png” respectively.
+如同之前的綠色矩形，透過**MonoGame Pipeline** 新增這些影像至 **Content.mgcb**，將它們分別命名為 “ninja-cat-dino.png” 和 “broccoli.png”。
 
 ### <a name="2-add-class-variables"></a>2. 新增類別變數
 將下列程式碼新增到 **Game1.cs** 中的類別變數清單：
@@ -286,13 +286,13 @@ float score;
 Random random;
 ```
 
-**dino** and **broccoli** are our SpriteClass variables. **dino** will hold the player avatar, while **broccoli** holds the broccoli obstacle.
+**dino** 和 **broccoli** 是我們的 SpriteClass 變數。 **dino** 會保留玩家虛擬人偶，而 **broccoli** 保留花椰菜障礙。
 
 **spaceDown** 追蹤空格鍵是否正在按住，而非按下並放開。
 
 **gameStarted** 告訴我們使用者是否第一次開始遊戲。
 
-**broccoliSpeedMultiplier** determines how fast the broccoli obstacle moves across the screen.
+**broccoliSpeedMultiplier** 決定花椰菜障礙在螢幕上移動的速度。
 
 **gravitySpeed** 決定玩家虛擬人偶在跳躍後加速向下的速度。
 
@@ -383,7 +383,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7.處理鍵盤輸入
-接下來，我們需要新的方法來處理透過鍵盤使用者輸入。 將這個方法新增至 **Game1.cs**：
+接下來，我們需要新的方法來處理透過鍵盤的使用者輸入。 將這個方法新增至 **Game1.cs**：
 
 ```CSharp
 void KeyboardHandler()

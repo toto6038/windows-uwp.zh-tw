@@ -15,11 +15,11 @@ dev_langs:
 - vb
 - cpp
 ms.openlocfilehash: 7f92b12ab9c8962fe98d8eed22b21e7d10330c99
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467847"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499711"
 ---
 # <a name="attached-properties-overview"></a>附加屬性概觀
 
@@ -129,7 +129,7 @@ myCheckBox.SetValue(Canvas::TopProperty(), winrt::box_value(75));
 > [!WARNING]
 > Windows 執行階段 XAML 實作的侷限是您無法動畫顯示自訂附加的屬性。
 
-- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設那里一個元素`<TextBlock x:Uid="Title" />`，目標是**Canvas.Top**值，該執行個體上的資源檔中的資源索引鍵是 「 Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top 」。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
+- 如果要為從資源檔到 **x:Uid** 的資源參考指定一個附加屬性做為目標屬性，請使用特殊語法，將程式碼樣式的完整 **using:** 宣告插入方括弧 ("\[\]") 中，以建立一個明確的範圍分隔。 例如，假設那里一個元素`<TextBlock x:Uid="Title" />`，目標是該執行個體上的**Canvas.Top**值的資源檔案中的資源索引鍵是 「 Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top 」。 如需資源檔案和 XAML 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。
 
 ## <a name="related-topics"></a>相關主題
 

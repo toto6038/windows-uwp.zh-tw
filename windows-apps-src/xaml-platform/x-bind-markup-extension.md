@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新的 Windows 10-執行更少的時間和記憶體都比繫結並且支援較佳的偵錯。
+description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新增適用於 Windows 10-執行更少的時間和記憶體都比繫結並且支援較佳的偵錯。
 title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468098"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498439"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 

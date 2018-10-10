@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
 ms.openlocfilehash: bde2e58934e24df7db2cb77fb793106aa65e3834
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470642"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4499253"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>封裝傳統型應用程式使用 Desktop App Converter
 
@@ -33,7 +33,7 @@ ms.locfileid: "4470642"
 這個轉換器會在隔離的 Windows 環境中，使用全新基礎映像 (當作轉換器下載的一部分來提供) 來執行桌面安裝程式。 它會擷取桌面安裝程式所製作的任何登錄與檔案系統 I/O，並將它重新封裝為輸出的一部分。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （也就是傳統型橋接器，在 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>若要建立 Windows 應用程式套件的傳統型應用程式的功能 （稱為傳統型橋接器，在 Windows 10 版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 > [!NOTE]
 > 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片會帶領您逐步操作並探索一些常見的 Desktop App Converter 使用方式。
@@ -54,7 +54,7 @@ ms.locfileid: "4470642"
 
 :heavy_check_mark: 自動簽署您的套件，讓您可以測試您的應用程式。
 
-: heavy_check_mark： 驗證您的應用程式封裝的應用程式與 Microsoft Store 需求。
+: heavy_check_mark： 驗證您的應用程式，針對已封裝應用程式與 Microsoft Store 的需求。
 
 若要尋找選項的完整清單，請參閱本文的[參數](#command-reference)一節。
 
@@ -180,7 +180,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
 
-``InstallerArguments`` 是一項選擇性參數。 不過，由於 Desktop App Converter 需要您在自動安裝模式中執行的安裝程式，您可能會有使用它，如果您的應用程式需要以無訊息方式執行的無訊息旗標。 ``/S`` 旗標是一個相當常見的無訊息旗標，但您使用的旗幟可能會因您所使用的安裝技術而有所不同。
+``InstallerArguments`` 是一項選擇性參數。 不過，由於 Desktop App Converter 需要您在自動安裝模式中執行的安裝程式，您可能使用它，如果您的應用程式需要以無訊息方式執行的無訊息旗標。 ``/S`` 旗標是一個相當常見的無訊息旗標，但您使用的旗幟可能會因您所使用的安裝技術而有所不同。
 
 **影片**
 
@@ -209,7 +209,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 
 #### <a name="package-an-app-sign-the-app-and-run-validation-checks-on-the-package"></a>封裝應用程式、簽署應用程式，並對套件執行驗證檢查
 
-此範例是第一個類似，只不過它會顯示如何簽署您的應用程式供本機進行測試，並驗證您的應用程式封裝的應用程式與 Microsoft Store 需求。
+這個範例是類似於第一個，只不過它會顯示如何簽署您的應用程式供本機進行測試和驗證您的應用程式，針對已封裝應用程式與 Microsoft Store 的需求。
 
 ```cmd
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
@@ -217,7 +217,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 >[!IMPORTANT]
 >如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
 
-``Sign``參數會產生憑證，然後簽署您的應用程式使用它。 若要執行您的應用程式，您必須先安裝該產生的憑證。 若要了解如何執行，請參閱本文中[執行封裝後的應用程式](#run-app)一節。
+``Sign``參數會產生一個憑證，然後簽署您的應用程式使用它。 若要執行您的應用程式，您必須先安裝該產生的憑證。 若要了解如何執行，請參閱本文中[執行封裝後的應用程式](#run-app)一節。
 
 您可以驗證您的應用程式使用``Verify``參數。
 
@@ -305,7 +305,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 您有兩種方式執行您的應用程式。
 
-其中一個方式是開啟 PowerShell 命令提示字元，並輸入此命令︰```Add-AppxPackage –Register AppxManifest.xml```。 這可能是最簡單的方式執行您的應用程式，因為您不需要簽署它。
+其中一個方式是開啟 PowerShell 命令提示字元，並輸入此命令︰```Add-AppxPackage –Register AppxManifest.xml```。 這可能是最簡單的方式執行您的應用程式，因此您不需要簽署它。
 
 另一種方法是簽署您的應用程式的憑證。 如果您使用```sign```參數，Desktop App Converter 會產生一個，並再登入您的應用程式使用它。 該憑證的檔名為 **auto-generated.cer**，您可以在封裝後應用程式的根資料夾中找到該檔案。
 
@@ -336,7 +336,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 
 您可能會進行變更，您已封裝的應用程式，以處理 bug、 增加視覺資產，或增強您的應用程式透過現代化的體驗，例如動態磚。
 
-在您完成變更之後，您不需要再執行一次轉換器。 在大部分情況下，您可以和重新封裝您的應用程式使用 MakeAppx 工具產生的 appxmanifest.xml 檔案 DAC 為您的 app。 請參閱[產生 Windows 應用程式套件](desktop-to-uwp-manual-conversion.md#make-appx)。
+在您完成變更之後，您不需要再執行一次轉換器。 在大部分情況下，您可以使用 MakeAppx 工具只是重新封裝您的應用程式，並產生的 appxmanifest.xml 檔案 DAC 為您的 app。 請參閱[產生 Windows 應用程式套件](desktop-to-uwp-manual-conversion.md#make-appx)。
 
 * 如果您修改應用程式的任一視覺資產，請產生新的套件資源索引檔案，然後執行 MakeAppx 工具以產生新的套件。 請參閱[建立套件資源索引 (PRI) 檔案](desktop-to-uwp-manual-conversion.md#make-pri)。
 

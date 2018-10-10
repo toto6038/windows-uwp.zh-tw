@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468415"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498748"
 ---
 # <a name="package-version-numbering"></a>套件版本編號
 
@@ -34,9 +34,9 @@ ms.locfileid: "4468415"
 
 您可以提供多個 UWP 套件具有相同版本號碼。 不過，因為市集用於每個套件的完整身分識別必須是唯一的，所以共用版本號碼的套件不能同時具有相同的架構。 如需詳細資訊，請參閱 [**Identity**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)。
 
-當您提供使用相同版本號碼的多個 UWP 套件時，架構 （依照順序 x64、 x86、 ARM、 中性） 將用於決定哪一種更高排名的 （當在市集中決定哪一個套件提供給客戶的裝置）。 當排名使用相同版本號碼的 app 套件組合時，會考量套件組合中最高架構等級：包含 x64 套件的 app 套件組合比只包含 x86 套件的套件組合具有較高的等級。
+當您提供使用相同版本號碼的多個 UWP 套件時，架構 （依照順序 x64、 x86、 ARM、 中性） 將會用來決定哪一種更高排名的 （當在市集中決定哪一個套件提供給客戶的裝置）。 當排名使用相同版本號碼的 app 套件組合時，會考量套件組合中最高架構等級：包含 x64 套件的 app 套件組合比只包含 x86 套件的套件組合具有較高的等級。
 
-給予您許多彈性讓 app 隨著時間進化。 您可以上傳並提交新增支援適用於您先前未支援的 Windows 10 裝置使用較低的版本號碼的新套件，您可以新增具有較嚴格相依性，以充分利用硬體或作業系統功能，或您的較高版本套件可以新增較高版本的套件，做為部分或所有現有客戶的更新基底。
+給予您許多彈性讓 app 隨著時間進化。 您可以上傳並提交使用較低的版本號碼新增支援適用於您先前未支援的 Windows 10 裝置的新套件，您可以新增具有較嚴格相依性，以充分利用硬體或作業系統功能，或您的較高版本套件可以新增較高版本套件，做為部分或所有現有客戶的更新基底。
 
 下列範例說明如何管理版本編號以透過多重提交將想要的套件傳遞給客戶。
 
@@ -58,11 +58,11 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 
 ### <a name="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions"></a>針對新的擷取使用版本編號回復到先前發佈的套件
 
-如果您保留您的套件的複本，您必須選擇復原您的應用程式套件在市集中到舊版的 Windows 10 套件如果您應該發現有版本問題。 這是暫時的方式，您需要時間來修正這個問題時，限制對您的客戶的中斷。
+如果您保留您的套件的複本，您必須選擇復原您的應用程式封裝在市集中到舊版的 Windows 10 套件如果您應該發現有版本問題。 這是暫時的方式，您需要時間來修正這個問題時，限制對您的客戶的中斷。
 
-若要這樣做，請建立新的[提交](app-submissions.md)。 移除有問題的套件，並上傳您想要在市集中提供的舊套件。 已經收到您復原的套件的客戶仍然有問題套件 (因為您的舊版套件會有較早的版本號碼)。 但這會阻止任何人取得問題套件，同時讓 app 仍然可以在市集中取得。
+若要這樣做，建立新的[提交](app-submissions.md)。 移除有問題的套件，並上傳您想要在市集中提供的舊套件。 已經收到您復原的套件的客戶仍然有問題套件 (因為您的舊版套件會有較早的版本號碼)。 但這會阻止任何人取得問題套件，同時讓 app 仍然可以在市集中取得。
 
-若要修正這個問題，針對已收到有問題的套件的客戶，您可以提交像您可以具有比損壞的套件更高的版本號碼的新 Windows 10 套件。 提交進行認證程序之後，所有客戶都會更新為新套件，因為它將會有較高的版本號碼。
+若要修正這個問題，客戶已經收到有問題的套件的您可以提交像您可以具有比損壞的套件更高的版本號碼的新 Windows 10 套件。 提交進行認證程序之後，所有客戶都會更新為新套件，因為它將會有較高的版本號碼。
 
 
 ## <a name="version-numbering-for-windows-81-and-earlier-and-windows-phone-81-packages"></a>Windows 8.1 (和舊版) 和 Windows Phone 8.1 套件的版本編號
@@ -74,7 +74,7 @@ Windows 10 可讓您撰寫一個可在任何地方執行的程式碼基底。 �
 此外，Windows 8.1 套件的版本編號必須永遠高於同一個 app 的任何 Windows 8 套件版本編號。 換句話說，您提交的任何 Windows 8 套件版本編號必須低於您為相同 app 提交的任何 Windows 8.1 套件版本編號。
 
 > [!NOTE]
-> 如果您的 app 也有 Windows 10 套件，Windows 10 套件的版本號碼必須高於的任何 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 套件。 如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。
+> 如果您的應用程式也有 Windows 10 套件，Windows 10 套件的版本號碼必須高於的任何 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 套件。 如需詳細資訊，請參閱[將適用於 Windows 10 的套件新增至先前發佈的 app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)。
 
 以下是一些 Windows 8 和 Windows 8.1 為目標的套件的不同版本號碼更新案例中發生情形的範例。
 

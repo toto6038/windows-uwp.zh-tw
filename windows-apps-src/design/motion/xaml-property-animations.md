@@ -1,7 +1,7 @@
 ---
 author: Jwmsft
 title: XAML 屬性的動畫
-description: XAML 項目使用組合動畫產生動畫效果。
+description: 使用組合動畫的 XAML 元素產生動畫效果。
 ms.author: jimwalk
 ms.date: 09/13/2018
 ms.topic: article
@@ -12,24 +12,24 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466418"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500576"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用組合動畫產生動畫效果的 XAML 項目
 
 這篇文章導入了新的屬性，可讓您在 XAML UIElement，使用組合動畫的效能和輕鬆設定 XAML 屬性產生動畫效果。
 
-在 Windows 10，版本 1809 之前, 您有 2 個選項來建置您的 UWP app 中的動畫：
+在 Windows 10 版本 1809年之前您有 2 個選項來建置您的 UWP app 中的動畫：
 
 - 使用[腳本動畫](storyboarded-animations.md)，例如 XAML 建構或 _* ThemeTransition_和 _* ThemeAnimation_ [Windows.UI.Xaml.Media.Animation](/uwp/api/windows.ui.xaml.media.animation)命名空間中的類別。
 - [使用視覺層搭配 XAML](../../composition/using-the-visual-layer-with-xaml.md)中所述，請使用組合動畫。
 
-使用視覺層提供較佳的效能比使用 XAML 建構。 但使用[ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) ，以取得元素的基礎組合[視覺](/uwp/api/windows.ui.composition.visual)物件，並再以動畫顯示的視覺效果使用組合動畫會使用更複雜。
+使用視覺層提供較佳的效能比使用 XAML 建構。 但是，以取得元素的基礎組合[視覺](/uwp/api/windows.ui.composition.visual)物件，使用[ElementCompositionPreview](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) ，並再以動畫顯示的視覺效果使用組合動畫會使用更複雜。
 
-從 Windows 10，版本 1809，您可以產生動畫效果上 UIElement，直接使用組合動畫，而不需要以取得基礎的組合視覺效果的屬性。
+您可以從 Windows 10 版本 1809年開始的動畫屬性 UIElement 直接使用組合動畫，而不需要以取得基礎的組合視覺效果上。
 
 > [!NOTE]
 > 若要在 UIElement 上使用這些屬性，您 UWP 專案的目標版本必須是 1809年或更新版本。 如需設定您專案的版本的詳細資訊，請參閱[版本調適型應用程式](../../debug-test-perf/version-adaptive-apps.md)。
@@ -40,8 +40,8 @@ ms.locfileid: "4466418"
 
 | 屬性 | 類型 | 說明 |
 | -- | -- | -- |
-| [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | 雙線 | 物件的不透明度 |
-| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | 移動元素的 X/Y/Z 位置 |
+| [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | 雙線 | 該物件的不透明度 |
+| [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Shift 元素的 X/Y/Z 位置 |
 | [TransformMatrix](/uwp/api/windows.ui.xaml.uielement.transformmatrix) | Matrix4x4 | 將套用到元素的轉換矩陣 |
 | [Scale](/uwp/api/windows.ui.xaml.uielement.scale) | Vector3 | 縮放比例項目，在中心點上置中 |
 | [旋轉](/uwp/api/windows.ui.xaml.uielement.rotation) | 浮點數 | 旋轉 RotationAxis 及中心點周圍的項目 |
@@ -52,7 +52,7 @@ TransformMatrix 屬性值結合的縮放、 旋轉和轉譯的屬性，以下列
 
 這些屬性不會影響元素的版面配置，所以，修改這些屬性不會造成新的[度量](/uwp/api/windows.ui.xaml.uielement.measure)/[排列](/uwp/api/windows.ui.xaml.uielement.arrange)階段。
 
-這些屬性都有相同的用途和行為上組合[視覺](/uwp/api/windows.ui.composition.visual)類別 （除了轉譯，不在視覺） 的名稱相同的屬性。
+這些屬性都有相同的用途和行為類似命名的屬性上組合[視覺](/uwp/api/windows.ui.composition.visual)類別 （除了轉譯，不在視覺）。
 
 ### <a name="example-setting-the-scale-property"></a>範例： 設定縮放比例屬性
 
@@ -71,7 +71,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 ### <a name="mutual-exclusivity-between-new-and-old-properties"></a>新的和舊屬性之間的相互專屬性
 
 > [!NOTE]
-> **Opacity**屬性不會強制執行本節中所述相互專屬性。 不論您是使用 XAML 或 composition 動畫，您可以使用相同的 Opacity 屬性。
+> **Opacity**屬性不會強制執行本節中所述相互專屬性。 不論您是使用 XAML 或組合動畫，您可以使用相同的 Opacity 屬性。
 
 可以使用 CompositionAnimation 來製作動畫效果的屬性會取代項目適用於數個現有的 UIElement 屬性：
 
@@ -88,9 +88,9 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 - [ElementCompositionPreview.SetIsTranslationEnabled](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setistranslationenabled)
 
 > [!IMPORTANT]
-> 嘗試混合使用這兩組屬性，會造成 API 呼叫失敗，並產生錯誤訊息。
+> 嘗試混合使用兩個屬性集，會造成 API 呼叫失敗，並產生的錯誤訊息。
 
-很可能伺服器安裝切換屬性的一組方法清除它們，但為了簡單起見不建議。 如果該屬性都由以 DependencyProperty 支援 （例如，UIElement.Projection 由 UIElement.ProjectionProperty），然後呼叫 ClearValue 將它還原到其 「 未使用 」 狀態。 （例如，縮放屬性），否則將屬性設定為其預設值。
+就可能但為了簡單起見不建議，從一組屬性切換方法清除它們。 如果該屬性都由以 DependencyProperty 支援 （例如，UIElement.Projection 由 UIElement.ProjectionProperty），然後呼叫 ClearValue 將它還原到其 「 未使用 」 狀態。 （例如，縮放屬性），否則將屬性設定為其預設值。
 
 ## <a name="animating-uielement-properties-with-compositionanimation"></a>使用 CompositionAnimation UIElement 屬性產生動畫效果
 
@@ -100,7 +100,7 @@ button.Scale = new Vector3(2.0f,2.0f,1.0f);
 
 ### <a name="example-animating-the-scale-property-with-a-vector3keyframeanimation"></a>範例： 讓 Vector3KeyFrameAnimation 縮放屬性產生動畫效果
 
-此範例示範如何以動畫顯示按鈕的縮放比例。
+這個範例示範如何以動畫顯示按鈕的縮放比例。
 
 ```csharp
 var compositor = Window.Current.Compositor;
@@ -113,9 +113,9 @@ animation.Target = "Scale";
 button.StartAnimation(animation);
 ```
 
-### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>範例： 讓使用 ExpressionAnimation 縮放屬性產生動畫效果
+### <a name="example-animating-the-scale-property-with-an-expressionanimation"></a>範例： 讓使用 ExpressionAnimation 的縮放比例屬性產生動畫效果
 
-頁面有兩個按鈕。 第二個按鈕以動畫顯示兩次會一樣大 （透過 scale) 做為第一個按鈕。
+頁面有兩個按鈕。 第二個按鈕以動畫顯示為兩次大 （透過 scale) 做為第一個按鈕。
 
 ```xaml
 <Button x:Name="sourceButton" Content="Source"/>

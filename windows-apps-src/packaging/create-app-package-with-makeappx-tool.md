@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 封裝
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.openlocfilehash: dbde8f2f11276ded6ad0994a1cd52f7f12de229e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470546"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502448"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具建立應用程式套件
 
@@ -27,7 +27,7 @@ ms.locfileid: "4470546"
 
 請注意，**MakeAppx.exe** 不會建立 .appxupload 檔案。 .Appxupload 檔案會建立為 Visual Studio 封裝程序的一部分，並包含其他兩個檔案：.msix 或.appx 和.appxsym。 .appxsym 檔案是一個壓縮的 .pdb 檔案，其中包含您的 App 用於 Windows 開發人員中心中[損毀分析](https://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)的公用符號。 一般的 .appx 檔案也可以一起提交，但不會有任何損毀分析或偵錯資訊。 如需有關將套件提交到Microsoft Store的詳細資訊，請參閱[上傳應用程式套件](https://msdn.microsoft.com/windows/uwp/publish/upload-app-packages)。 
 
- 此工具的最新版本的 Windows 10 中的更新不會影響.appx 套件使用方式。 您可以繼續使用.appx 套件，使用此工具，或使用工具的支援，針對.msix 套件如下所述。
+ 此工具的最新版本的 Windows 10 中的更新不會影響.appx 套件使用方式。 您可以繼續使用.appx 套件，使用此工具，或使用的工具與支援，針對.msix 套件如下所述。
 
 手動建立 .appxupload 檔案︰
 - 將.msix 和.appxsym 放在資料夾中

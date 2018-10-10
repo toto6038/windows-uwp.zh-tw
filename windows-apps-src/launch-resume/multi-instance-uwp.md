@@ -10,20 +10,20 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: dd4e0ced4de2419858424a88f5fa5ce66f5b4286
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462803"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498020"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
 本主題描述如何建立多重執行個體通用 Universal Windows 平台 (UWP) 應用程式。
 
-從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP app 可以選擇加入以支援多重執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
+從 Windows 10，版本 1803 (10.0;組建 17134） 後續版本，您的 UWP app 可以選擇加入以支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。
 
 > [!IMPORTANT]
-> 多重執行個體支援適用於 JavaScript 應用程式，但不是多重執行個體重新導向。 適用於 JavaScript 應用程式不支援多重執行個體重新導向，因為[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別不是適用於這類應用程式。
+> 多重執行個體支援適用於 JavaScript 應用程式，但不是多重執行個體重新導向。 適用於 JavaScript 應用程式不支援多重執行個體重新導向，因為[**AppInstance**](/uwp/api/windows.applicationmodel.appinstance)類別不是適用於這類應用程式的。
 
 ## <a name="opt-in-to-multi-instance-behavior"></a>選擇加入多個執行個體行為
 
@@ -31,7 +31,7 @@ ms.locfileid: "4462803"
 
 這會安裝兩個範本：一是**多重執行個體 UWP 應用程式**，可提供用於建立多重執行個體應用程式的範本；另一是**多重執行個體重新導向 UWP 應用程式**，可提供額外的邏輯作為建置的基礎，以啟動新的執行個體，或選擇性地啟用已啟動的執行個體。 例如，或許您在編輯相同文件時只想要一個執行個體，因此您帶入會讓該檔案對前端開啟的執行個體，而非啟動新的執行個體。
 
-這兩個範本新增`SupportsMultipleInstances`到`package.appxmanifest`檔案。 請注意命名空間前置詞`desktop4`和`iot2`： 只有目標為桌面或物聯網 (IoT) 專案，支援多重執行個體。
+這兩個範本會新增`SupportsMultipleInstances`到`package.appxmanifest`檔案。 請注意命名空間前置詞`desktop4`和`iot2`： 只有的專案目標為桌面或物聯網 (IoT) 專案支援多重執行個體。
 
 ```xml
 <Package
@@ -56,13 +56,13 @@ ms.locfileid: "4462803"
 
  UWP 應用程式的多重執行個體支援不僅僅是可以啟動應用程式的多重執行個體。 無論您想要選取啟動應用程式的新執行個體，或選取啟用已執行的執行個體，皆允許自訂。 例如，如果啟動應用程式以編輯一個檔案，但已有另一個執行個體正在編輯檔案，此時您想要將啟用重新導向至該執行個體，而非開啟另一個已在編輯該檔案的執行個體。
 
-若要查看它情形，請觀看此影片有關建立多重執行個體 UWP 應用程式。
+若要查看其運作，請觀看此影片有關建立多重執行個體 UWP 應用程式。
 
 > [!VIDEO https://www.youtube.com/embed/clnnf4cigd0]
 
 **多重執行個體重新導向 UWP 應用程式**範本會將 `SupportsMultipleInstances` 新增至 package.appxmanifest 檔案，如上所示，也會將  **Program.cs** (如果您使用的是 C++ 版範本，則為 **Program.cpp**) 新增至包含 `Main()` 函數的專案。 重新導向啟用的邏輯會進入 `Main` 函數。 **Program.cs**的範本如下所示。
 
-如果有的話， [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性代表該啟用要求，提供殼層慣用執行個體 (或`null`如果沒有一個)。 如果殼層提供喜好設定，然後您可以可以重新導向啟用該執行個體，或如果您選擇您可以忽略它。
+如果有的話， [**AppInstance.RecommendedInstance**](/uwp/api/windows.applicationmodel.appinstance.recommendedinstance)屬性表示針對此啟用要求，提供殼層慣用執行個體 (或`null`如果沒有一個)。 如果殼層提供喜好設定，然後您可以可以重新導向啟用該執行個體，或如果您選擇您可以忽略它。
 
 ``` csharp
 public static class Program

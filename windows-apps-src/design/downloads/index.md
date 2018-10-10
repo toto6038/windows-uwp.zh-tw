@@ -11,16 +11,16 @@ ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.openlocfilehash: 88a07db357125d3f9cb35a5e133e9b0add350069
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468972"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502739"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP app 的工具組和範例
  
 
-設計與 UI 相關下載 Fluent 設計/UWP 應用程式。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/downloads">我們的主要下載頁面</a>。 
+設計和 Fluent 設計/UWP 應用程式的 UI 相關下載。 如需其他工具 (例如 Visual Studio)，請參閱<a href="https://developer.microsoft.com/downloads">我們的主要下載頁面</a>。 
 
 
 ## <a name="design-toolkits"></a>設計工具組
@@ -105,7 +105,7 @@ ms.locfileid: "4468972"
 
 ![VanArsdel 映像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>
-Van Arsdel，Ltd.端對端 UWP 範例應用程式是以展示波 Microsoft Fluent 設計系統所建立。 它在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 文件庫</a>以及基礎功能強大的 ux 架構和組合會大量運用更高的密度和新的控制項。 此範例顯示如何建立一個豐富且生產力體驗管理作業與購買 （在本案例中，燈光） 的 IoT 裝置。<br>
+Van Arsdel，Ltd.端對端 UWP 範例應用程式是以展示波 Microsoft Fluent 設計系統所建立。 它在<a herf="https://docs.microsoft.com/uwp/toolkits/winui/">Windows UI 文件庫</a>以及基礎功能強大的 ux 架構和組合會大量運用更高的密度和新的控制項。 此範例顯示如何您可以建立一個豐富且生產力體驗管理作業與購買 （在此情況下，燈光） 的 IoT 裝置。<br>
 <a href="https://github.com/Microsoft/VanArsdel/archive/master.zip">下載 VanArsdel 範例</a> <br><a href="https://github.com/microsoft/vanarsdel">請查看 GitHub 上的 VanArsdel 範例</a>
 
 ![建置轉型映像](images/buildcast.png)

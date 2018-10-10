@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e1aecb6ac3d5830659d9aadb7539e8103712fb3
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4466286"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509607"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
@@ -37,7 +37,7 @@ ms.locfileid: "4466286"
 |--------------------|-----------------|
 | <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個 「[市集原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，應用程式具備某些功能，例如存取金融帳戶資訊或需要存取主要功能 （而不使用安全專用的第三方驗證提供者）、 驗證僅要發佈的公司帳戶。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個 「[市集原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，應用程式，某些功能，例如存取金融帳戶資訊或需要存取主要功能 （而不使用安全專用的第三方驗證提供者）、 驗證僅要發佈的公司帳戶。
 
 ## <a name="account-verification"></a>帳戶驗證
 

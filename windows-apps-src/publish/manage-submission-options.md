@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 發佈暫停, 發佈日期, 傳送提交以發佈, 受限制的功能核准
 ms.localizationpriority: medium
 ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465514"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500067"
 ---
 # <a name="manage-submission-options"></a>管理提交選項
 
@@ -35,7 +35,7 @@ ms.locfileid: "4465514"
 
 ### <a name="publish-your-submission-manually"></a>以手動方式發佈您的提交
 
-如果您還不想設定發行日期，並且希望提交項目維持未發佈狀態，直到您手動決定開始發佈程序，您可以選擇 **\[不要發佈此提交項目，直到我選取 [立即發佈]\]**。 選擇此選項表示您的提交項目不會發行，直到您指示其發行。 在您的提交通過認證之後, 您可以將它發行藉由在認證狀態頁面上，選取 [**立即發佈**，或以相同的方式選取特定日期，如下所述。
+如果您還不想設定發行日期，並且希望提交項目維持未發佈狀態，直到您手動決定開始發佈程序，您可以選擇 **\[不要發佈此提交項目，直到我選取 [立即發佈]\]**。 選擇此選項表示您的提交項目不會發行，直到您指示其發行。 在您的提交通過認證之後, 您可以發佈它在認證狀態頁面上，選取 [**立即發佈**，或以相同的方式選取特定日期，如下所述。
 
 
 ### <a name="start-publishing-your-submission-on-a-certain-date"></a>在特定日期開始發佈您的提交項目

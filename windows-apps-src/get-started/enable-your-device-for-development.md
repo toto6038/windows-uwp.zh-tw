@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: ad817bbae2fb8b28b95095880aa1a65c391720f3
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465267"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498780"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -150,7 +150,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。 
 
 > [!NOTE]
-> 如果不會正確地安裝開發人員模式，我們鼓勵您提出的意見反應要求。 在 [**意見反應中樞**] app 中，選取**新增新的意見反應**，然後選擇 [**開發人員平台**類別，以及 [**開發人員模式**] 子類別。 提交意見反應，可協助 Microsoft 解決您遇到的問題。
+> 如果沒有正確地安裝開發人員模式，我們鼓勵您提出的意見反應要求。 在 [**意見反應中樞**] app 中，選取 [**新增新的意見反應**，並選擇 [**開發人員平台**類別，以及 [**開發人員模式**] 子類別。 提交意見反應，可協助 Microsoft 解決您遇到的問題。
 
 ### <a name="failed-to-locate-the-package"></a>找不到套件
 

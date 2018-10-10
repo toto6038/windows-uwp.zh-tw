@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 87aafe36d05298a8fa157426e39c530190f98908
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462639"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509302"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>對語言、縮放比例及高對比的磚和快顯通知支援
 
-您的磚和快顯通知可以載入針對顯示語言、[顯示縮放比例](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高對比及其他執行階段內容量身訂做的文字與影像。 如需有關如何在您的資源檔案的名稱中使用限定詞的背景，請參閱[您的資源，針對語言、 縮放比例及其他限定詞量身打造](../../../app-resources/tailor-resources-lang-scale-contrast.md)和[應用程式圖示和標誌。](/windows/uwp/design/style/app-icons-and-logos)
+您的磚和快顯通知可以載入針對顯示語言、[顯示縮放比例](../../layout/screen-sizes-and-breakpoints-for-responsive-design.md)、高對比及其他執行階段內容量身訂做的文字與影像。 如需有關如何在您的資源檔案的名稱中使用限定詞的背景，請參閱[您的資源，針對語言、 縮放比例及其他限定詞量身打造](../../../app-resources/tailor-resources-lang-scale-contrast.md)和[應用程式圖示和標誌](/windows/uwp/design/style/app-icons-and-logos)。
 
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../../globalizing/globalizing-portal.md)。
 

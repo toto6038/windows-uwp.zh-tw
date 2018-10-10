@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471266"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502812"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
@@ -65,9 +65,9 @@ ms.locfileid: "4471266"
 
 -   使用還不屬於您或其他人的電子郵件地址建立您的 Microsoft 帳戶，例如 MyCompany_DevCenter@outlook.com。 不要在您的公司網域使用電子郵件地址，尤其是當您的公司已使用 Azure AD。 (如上文所述，您可以新增額外的使用者從您公司的 Azure AD 稍後。)
 -   將可以存取此 Microsoft 帳戶的使用者人數限制在最少。
--   設定公司的電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的人，並新增到此電子郵件地址 [Microsoft 帳戶相關聯的安全性資訊 [(https://account.microsoft.com/security)。 這可讓的所有員工在收到安全密碼傳送給此別名清單上。 如果設定通訊清單不可行，您可以將個人的電子郵件地址新增到您的安全性資訊，但該電子郵件地址的擁有者會是唯一的人可存取和共用安全系統提示時 （例如，當有新的安全性資訊新增到 t他帳戶，或當從新的裝置存取它。）
+-   設定公司的電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的人，並新增到此電子郵件地址 [Microsoft 帳戶相關聯的安全性資訊 [(https://account.microsoft.com/security)。 這可讓的所有員工在收到安全密碼傳送給此別名清單上。 如果設定通訊清單不可行，您可以將個人的電子郵件地址新增到您的安全性資訊，但該電子郵件地址的擁有者會是唯一的人可存取和共用安全的程式碼系統提示時 （例如，當有新的安全性資訊新增到 t他帳戶，或當從新的裝置存取它。）
 -   使用 Microsoft 帳戶的安全性資訊新增公司電話號碼。 嘗試使用不需要延伸模組，而且主要小組成員可以存取的數字。
--   一般情況下，有開發人員使用[信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登入貴公司的開發人員帳戶。 所有主要小組成員都必須擁有這些信任的裝置的存取權。 這樣可減少存取帳戶時必須傳送安全密碼的需求。 每週每個帳戶可產生的代碼數目有限。
+-   一般情況下，有開發人員使用[信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)來登入貴公司的開發人員帳戶。 所有主要小組成員都必須擁有這些信任的裝置的存取權。 這樣可減少存取帳戶時必須傳送安全密碼的需求。 每週每個帳戶可產生的代碼數目有限。
 -   如果您需要允許從非信任的電腦存取帳戶，請將可存取的開發人員人數限制為最多 5 位。 在理想的情況下，這些開發人員應該從位於相同地理和網路位置的電腦存取帳戶。
 -   經常檢閱位於 https://account.microsoft.com/security 的公司安全性資訊，確認資訊都是最新的。
 
@@ -78,7 +78,7 @@ ms.locfileid: "4471266"
 
 您的 Microsoft 帳戶必須至少有兩個電子郵件地址和/或電話號碼。 建議您新增的越多越好。 請記住，部分安全性資訊需要經過確認才能生效。 同時，務必經常檢閱您的安全性資訊，以確保是最新的資訊。 前往 https://account.microsoft.com/security，然後使用您的 Microsoft 帳戶登入，可以管理您的安全性資訊。 如需詳細資訊，請參閱[安全性資訊與安全密碼](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
 
-當您登入 Windows 開發人員中心儀表板中使用您的 Microsoft 帳戶時，系統可能會要求您驗證身分，藉由傳送來完成登入程序，您必須提供的安全性程式碼。 我們建議您指定為*信任的裝置*經常使用的電腦。 當您從信任的裝置登入時，通常不會提示您的程式碼中，雖然可能偶爾會提示您在特定情況下，或如果您還沒有登入該裝置上中很長的時間。 如需詳細資訊，請參閱[新增到您的 Microsoft 帳戶的受信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+當您登入 Windows 開發人員中心儀表板中使用您的 Microsoft 帳戶時，系統可能會要求您驗證身分，藉由傳送來完成登入程序，您必須提供的安全性程式碼。 我們建議您指定為*信任的裝置*經常使用的電腦。 當您從信任的裝置登入時，通常不會提示您的程式碼中，雖然可能偶爾會提示您在特定情況下，或如果您還沒有登入該裝置上中很長的時間。 如需詳細資訊，請參閱[新增到您的 Microsoft 帳戶信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
 
 
 ## <a name="closing-your-account"></a>關閉您的帳戶

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472228"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502926"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -119,7 +119,7 @@ ms.locfileid: "4472228"
 <tr><td align="left">    <b>社群廣告</b>                       </td><td align="left">  可檢視帳戶中所有產品的<a href="about-community-ads.md">社群廣告</a>使用量。          </td><td align="left">  可建立、管理和檢視帳戶中所有產品的免費<a href="about-community-ads.md">社群廣告</a>使用量。               </td></tr>
 <tr><td align="left">    <b>連絡資訊</b>                        </td><td align="left">  可檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。        </td><td align="left">  可編輯和檢視 \[帳戶設定\] 區段中的<a href="managing-your-profile.md">連絡資訊</a>。            </td></tr>
 <tr><td align="left">    <b>COPPA 規範</b>                    </td><td align="left">  可檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。                                            </td><td align="left">  可編輯和檢視帳戶中所有產品的 <a href="in-app-ads.md#coppa-compliance">COPPA 規範</a>選取項目 (指示產品的目標對象是否為 13 歲以下的兒童)。         </td></tr>
-<tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。      </td><td align="left">  可以建立、 編輯和檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。       </td></tr>
+<tr><td align="left">    <b>客戶群組</b>                     </td><td align="left">  可檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。      </td><td align="left">  可建立、 編輯和檢視<a href="create-customer-groups.md">客戶群組</a>（區隔和已知的使用者群組）。       </td></tr>
 <tr><td align="left">    <b>管理產品金鑰</b>&nbsp;*                            </td><td align="left">  可檢視新的產品群組建立頁面，但實際上不能在帳戶中建立新的產品群組。    </td><td align="left">  可以建立和編輯產品群組。     </td></tr>
 <tr><td align="left">    <b>新 App</b>                            </td><td align="left">  可檢視新的 app 建立頁面，但實際上不能在帳戶中建立新的 app。    </td><td align="left">  可透過保留新的 app 名稱以在帳戶中<a href="create-your-app-by-reserving-a-name.md">建立新的 app</a>，並可建立提交內容，將 app 提交到市集。     </td></tr>
 <tr><td align="left">    <b>新的套件組合</b>&nbsp;*                       </td><td align="left">  可檢視新的套件組合建立頁面，但實際上不能在帳戶中建立新的套件組合。     </td><td align="left">  可建立新的產品套件組合。          </td></tr>
@@ -194,7 +194,7 @@ ms.locfileid: "4472228"
     <tbody>
     <tr><td align="left">    <b>促銷碼</b>     </td><td>    可檢視產品和其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單與使用量資訊，並可檢視使用量資訊。         </td><td>    可檢視、管理及建立產品及其附加元件的<a href="generate-promotional-codes.md">促銷碼</a>訂單，並可檢視使用量資訊。          </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td><td>    不適用 (父產品的設定適用於所有附加元件)     </td></tr>
     <tr><td align="left">    <b>針對性優惠</b>     </td><td>    可檢視產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。         </td><td>    可檢視、管理及建立產品的<a href="use-targeted-offers-to-maximize-engagement-and-conversions.md">針對性優惠</a>。          </td><td>    不適用     </td><td>    不適用      </td></tr>
-    <tr><td align="left">    <b>連絡客戶</b>  </td><td>    只要一併授與<b>客戶回函</b>權限，即可檢視<a href="respond-to-customer-feedback.md">對客戶回函的回應</a>和<a href="respond-to-customer-reviews.md">對客戶評論的回應</a>。 也可檢視已為產品建立的<a href="send-push-notifications-to-your-apps-customers.md">特定對象的通知</a>。    </td><td>    可以<a href="respond-to-customer-feedback.md">回應客戶意見反應</a>與<a href="respond-to-customer-reviews.md">回應客戶評論</a>，只要也已被授與<b>客戶的意見反應</b>權限。 也可為產品<a href="send-push-notifications-to-your-apps-customers.md">建立和傳送特定對象的通知</a>。                   </td><td>    不適用         </td><td>    不適用                          </td></tr>
+    <tr><td align="left">    <b>連絡客戶</b>  </td><td>    只要一併授與<b>客戶回函</b>權限，即可檢視<a href="respond-to-customer-feedback.md">對客戶回函的回應</a>和<a href="respond-to-customer-reviews.md">對客戶評論的回應</a>。 也可檢視已為產品建立的<a href="send-push-notifications-to-your-apps-customers.md">特定對象的通知</a>。    </td><td>    可以<a href="respond-to-customer-feedback.md">回應客戶意見反應</a>，以及<a href="respond-to-customer-reviews.md">回應客戶評論</a>，請將，只要也已被授與<b>客戶的意見反應</b>的權限。 也可為產品<a href="send-push-notifications-to-your-apps-customers.md">建立和傳送特定對象的通知</a>。                   </td><td>    不適用         </td><td>    不適用                          </td></tr>
     <tr><td align="left">    <b>實驗</b></td><td>    可檢視 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視產品的實驗資料。   </td><td>    可建立、管理及檢視產品的 <a href="../monetize/run-app-experiments-with-a-b-testing.md">實驗 (A/B 測試)</a> 及檢視實驗資料。     </td><td>    不適用  </td><td>    N/A                 </td></tr>
     <tr><td align="left">    <b>Microsoft Store 銷售活動</b>&nbsp;*</td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td><td>    可以檢視產品的銷售活動狀態。   </td><td>    可以新增產品銷售活動，並設定折扣。      </td></tr>
     </tbody>

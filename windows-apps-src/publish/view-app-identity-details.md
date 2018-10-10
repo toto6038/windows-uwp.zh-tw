@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463888"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498700"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
@@ -27,7 +27,7 @@ ms.locfileid: "4463888"
 
 ## <a name="values-to-include-in-your-app-package-manifest"></a>app 套件資訊清單中包含的值
 
-在您的套件資訊清單中必須包含下列值。 如果您[使用 Microsoft Visual Studio 建立套件](../packaging/packaging-uwp-apps.md)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
+在您的封裝資訊清單中必須包含下列值。 如果您[使用 Microsoft Visual Studio 建立套件](../packaging/packaging-uwp-apps.md)，並且使用與您開發人員帳戶關聯的相同 Microsoft 帳戶進行簽署，這些詳細資料就會自動包含在內。 如果您手動建立套件，您就必須加入下列這些項目：
 
 -   **套件/身分識別/名稱**
 -   **套件/身分識別/發佈者**

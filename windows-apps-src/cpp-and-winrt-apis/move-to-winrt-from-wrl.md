@@ -10,16 +10,16 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 連接埠, 移轉, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: 44a41e42477de9d29f1d0443324fa83590c37caf
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470123"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4502474"
 ---
 # <a name="move-to-cwinrt-from-wrl"></a>從 WRL 移到 C++/WinRT
 本主題示範如何將[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl)程式碼，以在其對等項目[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
-移植 C+/WinRT 中的第一個步驟是手動新增 C++/WinRT 支援您的專案 (請參閱 [Visual Studio 支援 C++/WinRT，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 這項變更的一個效果是支援的[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)在專案中，關閉。 如果您在專案中使用 C++/CX，則您也可以讓支援保持關閉並更新 C++/CX 程式碼為 C++/WinRT (查看[從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md))。 或您可以將支援切換回來 (專案屬性中，**C/C++** \> **一般** \> ** 使用 Windows 執行階段延伸** \> **是 (/ZW)**)，並優先著重在移植您的 WRL 程式碼。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於在同一個專案中，除了 XAML 編譯器支援，以及 Windows 執行階段元件 (請參閱[移到 C + + /winrt 從 C + + /CX](move-to-winrt-from-cx.md))。
+移植 C+/WinRT 中的第一個步驟是手動新增 C++/WinRT 支援您的專案 (請參閱 [Visual Studio 支援 C++/WinRT，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 這項變更的一個效果是支援的[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)在專案中，關閉。 如果您在專案中使用 C++/CX，則您也可以讓支援保持關閉並更新 C++/CX 程式碼為 C++/WinRT (查看[從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md))。 或您可以將支援切換回來 (專案屬性中，**C/C++** \> **一般** \> ** 使用 Windows 執行階段延伸** \> **是 (/ZW)**)，並優先著重在移植您的 WRL 程式碼。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於在同一個專案中，除了 XAML 編譯器支援，以及 Windows 執行階段元件 (請參閱[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md))。
 
 將專案屬性**一般** \> **目標平台版本**設置為 10.0.17134.0 (Windows 10，版本 1803) 或更高。
 
@@ -45,7 +45,7 @@ winrt::check_hresult(m_dxgiFactory->EnumAdapters1(0, previousDefaultAdapter.put(
 ```
 
 > [!IMPORTANT]
-> 如果您有已經安裝[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其內部的原始指標已經有一個目標） 和您想要重新座位它指向不同的物件，則您必須先將指派`nullptr`，&mdash;在下列程式碼範例所示。 如果沒有，則已經安裝**com_ptr**將會繪製問題 （當您呼叫[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)或[**put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 注意到藉由宣告其內部指標不 null。
+> 如果您有已經安裝[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其內部的原始指標已經有一個目標） 和您想要重新座位它指向不同的物件，則您必須先將指派`nullptr`，&mdash;，在下列程式碼範例所示。 如果沒有，則已經安裝**com_ptr**將會繪製問題 （當您呼叫[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) [**:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 注意到藉由宣告其內部指標不 null。
 
 ```cppwinrt
 winrt::com_ptr<IDXGISwapChain1> m_pDXGISwapChain1;

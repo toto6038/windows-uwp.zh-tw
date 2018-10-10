@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.openlocfilehash: 26bed64053e8de9a42ac01ed3262c7b0f41d1d42
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462945"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4503449"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -84,7 +84,7 @@ grant_type=client_credentials
 
 | 案例       | 方法      |
 |---------------|--------------------|
-| 下載數、 轉換數、 安裝，以及使用方式 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得訂閱附加元件下載數](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得 App 安裝](get-app-installs.md)</li><li>[取得每日應用程式使用量](get-app-usage-daily.md)</li><li>[取得每月應用程式使用量](get-app-usage-monthly.md)</li></ul> |
+| 下載數、 轉換數、 安裝及使用方式 |  <ul><li>[取得 App 下載數](get-app-acquisitions.md)</li><li>[取得應用程式取得漏斗圖資料](get-acquisition-funnel-data.md)</li><li>[依通道取得應用程式轉換](get-app-conversions-by-channel.md)</li><li>[取得附加元件下載數](get-in-app-acquisitions.md)</li><li>[取得訂閱附加元件下載數](get-subscription-acquisitions.md)</li><li>[依通道取得附加元件轉換](get-add-on-conversions-by-channel.md)</li><li>[取得 App 安裝](get-app-installs.md)</li><li>[取得每日應用程式使用量](get-app-usage-daily.md)</li><li>[取得每月應用程式使用量](get-app-usage-monthly.md)</li></ul> |
 | App 錯誤 | <ul><li>[取得錯誤報告資料](get-error-reporting-data.md)</li><li>[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)</li><li>[取得 App 中錯誤的堆疊追蹤](get-the-stack-trace-for-an-error-in-your-app.md)</li><li>[下載應用程式中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-app.md)</li></ul> |
 | 深入解析 | <ul><li>[取得應用程式的深入解析資料](get-insights-data-for-your-app.md)</li></ul>  |
 | 評分與評論 | <ul><li>[取得 App 評分](get-app-ratings.md)</li><li>[取得 App 評論](get-app-reviews.md)</li></ul> |

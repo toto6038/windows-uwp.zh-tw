@@ -1,6 +1,6 @@
 ---
 author: mijacobs
-description: 一種建立透明紋理的筆刷。
+description: 一種筆刷，可建立半透明的紋理。
 title: 壓克力材質
 template: detail.hbs
 ms.author: mijacobs
@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469068"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500826"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -76,30 +76,30 @@ ms.locfileid: "4469068"
 
 ## <a name="when-to-use-acrylic"></a>使用壓克力的時機
 
-* 針對支援的 UI，例如 NavigationView 或內嵌命令元素使用應用程式內壓克力。 
-* 針對暫時性 UI 元素，例如操作功能表、 飛出視窗，以及光線 dimsissable UI 使用背景壓克力。<br />使用壓克力暫時性的案例中，可協助維持與已觸發暫時性 UI 之內容的視覺關係。
+* 使用應用程式內壓克力支援的 UI，例如 NavigationView 或內嵌命令元素。 
+* 使用背景壓克力暫時性 UI 元素，例如操作功能表、 飛出視窗，以及光線 dimsissable UI。<br />使用壓克力暫時性的案例中，可協助維持與已觸發暫時性 UI 之內容的視覺關係。
 
-如果您使用應用程式內壓克力風格上瀏覽的表面，請考慮延伸下方以改善您的應用程式上流程的壓克力窗格的內容。 使用 NavigationView 會自動執行此動作適用於您。 不過，若要避免產生條紋效果，不嘗試放置多個部分壓克力邊緣到邊緣-這會產生兩個模糊表面之間不想要的接縫。 壓克力工具可讓您的設計的視覺違，但是當使用不正確，可能會導致視覺雜訊。
+如果您使用應用程式內壓克力風格上瀏覽的表面，請考慮延伸下方以改善您的應用程式上流程的壓克力窗格的內容。 使用 NavigationView 會自動執行此動作適用於您。 不過，若要避免產生條紋效果，不嘗試放置多個部分壓克力邊緣到邊緣-這會產生兩個模糊表面之間不想要的接縫。 壓克力是一個工具，可以讓您的設計的視覺違，但不正確，使用時，會導致視覺雜訊。
 
-請考慮下列使用模式來判定將壓克力合併到您的應用程式的最佳方式：
+請考慮下列使用模式來判定將壓克力納入您的應用程式的最佳方式：
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平瀏覽或命令功能
 
-如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自行接洽，我們建議使用相對透明壓克力色調不透明度 60%。
+如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自行接洽，建議使用相對透明壓克力色調不透明度 60%。
  - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
  - 當窗格以與主要應用程式內容並排的方式開啟時，則應為 [60% 背景壓克力](#acrylic-theme-resources)
 
 ![使用應用程式內水平命令功能的地圖應用程式](images/Maps_In_App_Acrylic_1.png)
 
-此外，最上方擁有您的內容延伸或捲動底下的壓克力將可讓您的應用程式提供更身歷其境且無縫接軌的體驗。
+此外，需要您的內容延伸或捲動壓克力在最上方將可讓您的應用程式提供更身歷其境且無縫接軌的體驗。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-對於垂直窗格或表面，可協助您的應用程式關閉內容區段中，我們建議您使用不透明的背景，而不是壓克力。 如果您的垂直窗格開啟在內容上方，就在 NavigationView 的**摺疊**或**最少**的模式，我們建議您使用來協助維持在頁面的內容，當使用者開啟這個窗格的應用程式內壓克力。
+對於垂直窗格或表面，可協助您的應用程式關閉內容區段中，我們建議您使用不透明的背景，而不是壓克力。 如果您的垂直窗格開啟在內容上方，像是在 NavigationView**摺疊**或**基本**模式中，我們建議您使用來協助維持在頁面的內容，當使用者開啟這個窗格的應用程式內壓克力。
 
 ### <a name="transient-surfaces"></a>暫時性的表面
 
-對於有功能表飛出視窗，非強制回應快顯視窗中，應用程式或消失關閉的窗格中，我們建議使用背景壓克力。
+功能表飛出視窗，非強制回應快顯視窗的應用程式或消失關閉的窗格中，我們建議使用背景壓克力。
 
 ![使用資訊的飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "4469068"
  - 當省電模式啟動時
  - 當應用程式在低階硬體上執行時
 
-此外，只有背景壓克力將取代其半透明和紋理使用純色：
+此外，只有背景壓克力將會取代其半透明和紋理使用純色：
  - 當桌面上的應用程式視窗啟用時
  - 當 UWP 應用程式正在電話、Xbox、HoloLens 或平板電腦模式中執行時
 
@@ -150,7 +150,7 @@ ms.locfileid: "4469068"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建議的使用方式：</b>如果您的應用程式使用次要文字色彩為 altmedium 且文字大小為 18px 或較大，您可以放置在文字的這些更半透明 70%壓克力資源。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
+        <td> <b>建議的使用方式：</b>如果您的應用程式使用次要文字色彩為 altmedium 且文字大小的 18px 或更大，您可以放置在文字的這些更半透明 70%壓克力資源。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -318,7 +318,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>可行與禁止注意事項
 * 請使用壓克力作為非主要應用程式表面 (如瀏覽窗格) 的背景材質。
 * 請將壓克力延伸至應用程式的至少一個邊緣，藉此與應用程式背景巧妙地混合以呈現無縫的效果。
-* 不要在您的應用程式的大型背景介面上放置桌面 arylic-這會中斷主要是用於暫時性表面的壓克力心理模式。
+* 不要在您的應用程式的大型背景介面上放置桌面 arylic-這會中斷主要用於暫時性表面的壓克力心理模式。
 * 請勿將應用程式內壓克力與背景壓克力直接相鄰放置，以避免在接縫處產生視覺壓力。
 * 請勿將多個色調與不透明度相同的壓克力窗格彼此相鄰，因為這會產生不想要讓人看到的接縫。
 * 請勿將輔色文字放置在壓克力表面。

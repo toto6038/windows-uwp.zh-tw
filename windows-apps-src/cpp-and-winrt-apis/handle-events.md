@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
 ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4465422"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4504330"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -53,7 +53,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 註冊委派，在上述的程式碼範例會將傳遞是原始*此*指標 （指向目前的物件）。 深入了解如何建立強式或弱式參考目前的物件，請參閱[安全地存取*此*指標事件處理委派](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一節中的**如果您使用成員函式做為委派**子區段。
+> 註冊委派，在上述的程式碼範例會將傳遞原始*這個*指標 （指向目前的物件）。 若要了解如何建立強式或弱式參考目前的物件，請參閱[安全地存取*此*指標事件處理委派](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)的一節中的**如果您使用成員函式做為委派**子區段。
 
 有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從頁面中 **語言** 下拉式清單選擇 *C++/WinRT*)。 請注意的各種建構函式：一種是 lambda；另一種是可用函式；以及另一種是 (上述中我們使用的) 物件和指標成員函式。
 
@@ -202,9 +202,9 @@ void ProcessFeedAsync()
 如上述「協同程式」意見建議，不使用已完成的非同步動作和作業的委派，您可能會發現它使用協同程序會更自然。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](concurrency.md)。
 
 > [!NOTE]
-> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。
+> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派，其已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。
 
-如果您堅持使用委派，而不是在協同程式，您可以選擇簡單的語法。
+如果您堅持使用委派，而不是在協同程式，您可以選擇較簡單的語法。
 
 ```cppwinrt
 async_op_with_progress.Completed(
@@ -232,7 +232,7 @@ winrt::hstring f(ListView listview)
 
 ## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地存取*此*指標事件處理委派
 
-如果您處理的事件物件的成員函式，或從 lambda 函式內物件的成員函式，則您需要考量事件收件者 （處理事件的物件） 和事件來源 （的物件的相對存留時間引發事件）。 如需詳細資訊和程式碼範例，請參閱[強式和弱式參考資料，在 C + + /winrt](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果您處理事件的物件的成員函式，或從 lambda 函式內物件的成員函式，則您需要考量事件收件者 （處理事件的物件） 和事件來源 （的物件的相對存留時間引發事件）。 如需詳細資訊和程式碼範例，請參閱[強式和弱式參考資料，在 C + + /winrt](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt:: auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)

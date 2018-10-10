@@ -8,14 +8,14 @@ ms.date: 7/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: windows 10，uwp，回應，回應，檢閱
+keywords: windows 10，uwp，回應，回應評論
 ms.localizationpriority: medium
 ms.openlocfilehash: 2a043a0b721ee6eabdc3520960ae6da253587c33
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462252"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500501"
 ---
 # <a name="respond-to-customer-reviews"></a>回應客戶評論
 
@@ -29,14 +29,14 @@ ms.locfileid: "4462252"
 
 根據預設，您的回應將會被張貼在市集中，原始的客戶評論的正下方。 這些回應會顯示給 Windows 10 裝置上檢視市集的所有客戶。 如果留下此評論的客戶正在使用執行 Windows 10，版本 1803年或以上版本的裝置，他們還沒有選擇退出接收電子郵件回應一份您的回應將也會傳送到該客戶透過電子郵件。  您將需要提供有效的電子郵件地址，才能提交您的回應，我們將會包含在電子郵件給客戶。 然後，他們可以使用此電子郵件地址來直接連絡您。
 
-如果您不想您顯示於市集，並改為想要回應只透過電子郵件給客戶的回應，取消選取 [**將此回應公開**的方塊。 請注意，您將無法取消選取此方塊，如果客戶已選擇不收到回應的電子郵件和/或如果他們使用的裝置不執行的 Windows 10 版本 1803年或更高版本。
+如果您不想您的回應會出現在市集中，並改為想要回應只透過電子郵件給客戶，取消選取 [**將此回應公開**的方塊。 請注意，您將無法取消選取此方塊，如果客戶已選擇不收到回應的電子郵件和/或如果他們使用的裝置，未執行 Windows 10 版本 1803年或更高版本。
 
 ## <a name="guidelines-for-responses"></a>回應的指導方針
 
-回應客戶的評論時，您必須遵循以下指導方針。 這適用於所有回應，無論是公用。
+回應客戶的評論時，您必須遵循以下指導方針。 這適用於所有的回應，無論是公用。
 
 > [!IMPORTANT]
-> 您將無法變更的回應 （除非客戶修訂原始的評論） 張貼到市集時，請仔細檢視您的回應。 如果客戶修訂原始的評論，您的回應將會從 app 的市集清單頁面。 您接著可以選擇將新的回應，針對修訂的評論提交選取**更新您的回應**。
+> 您無法變更的回應 （除非客戶修訂原始的評論） 發佈到市集時，請仔細檢視您的回應。 如果客戶修訂原始的評論，您的回應將會從 app 的市集清單頁面。 您接著可以選擇將新的回應，針對修訂的評論提交選取**更新您的回應**。
 
 -   回應的長度不可超過 1000 個字元。
 -   您無法提供任何形式的補償給變更 app 評分的使用者，包括數位 app 項目。 請記住，嘗試操縱評等是[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)所不允許的行為。

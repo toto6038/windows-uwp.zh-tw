@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 搶鮮版 (Beta) 測試, 限量發行, 搶鮮版, beta, 測試, 測試人員
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467663"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4498244"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
@@ -35,7 +35,7 @@ Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式
 
 如果您在將應用程式提供給其他人使用之前想先讓測試人員使用，並想確定其他人都看不到應用程式清單，請使用 [\[可見度\]](choose-visibility-options.md) 下方的 **\[私人對象\]** 選項 (位在您提交的 **\[定價和可用性\]** 頁面上)。 這是唯一可讓您散發應用程式給測試人員，同時完全防止其他人看到應用程式 Store 清單 (即使他們可以輸入直接連結) 的方式。 
 
-**私人對象**選項可以只可用時不已發佈您的應用程式給公開對象。 您可以使用此選項以任何作業系統版本中，為目標的應用程式，但您的測試人員必須執行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，且必須登入您所提供之電子郵件地址相關聯的 Microsoft 帳戶。
+**私人對象**選項可以只可用時您不公開對象到已發佈您的應用程式。 您可以使用此選項以任何作業系統版本中，為目標的應用程式，但您的測試人員必須執行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，且必須登入您所提供之電子郵件地址相關聯的 Microsoft 帳戶。
 
 如需詳細資訊，請參閱[私人對象](choose-visibility-options.md#audience)。
 
@@ -53,7 +53,7 @@ Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式
 
 ## <a name="hiding-the-app-in-the-store-and-using-promotional-codes"></a>在 Microsoft Store 中隱藏應用程式及使用促銷碼
 
-此選項提供限制散佈應用程式給只有特定群組的測試人員，同時防止任何人探索您的應用程式在市集中的另一種方式 （或不促銷碼的情況下取得它）。 不過，與私人對象選項不同的是，如果某人有直接連結，他們可以看得到您應用程式的清單。 如果機密性對您的提交很重要，我們建議改為發佈至私人對象。
+此選項提供限制散佈應用程式只有特定群組的測試人員，同時防止任何人探索您的應用程式在市集中的另一種方法 （或取得促銷碼）。 不過，與私人對象選項不同的是，如果某人有直接連結，他們可以看得到您應用程式的清單。 如果機密性對您的提交很重要，我們建議改為發佈至私人對象。
 
 隱藏應用程式和使用促銷碼可用於以任何作業系統版本為目標的應用程式，但您的測試人員必須執行 Windows 10，才能取得應用程式。
 

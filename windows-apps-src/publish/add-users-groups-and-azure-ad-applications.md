@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者、 群組、 多個使用者，多使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470231"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500893"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶
 
-（在 [**帳戶設定**） 下的 Windows 開發人員中心的 [**使用者**] 區段可讓您使用 Azure Active Directory 將使用者新增到您的開發人員中心帳戶。 為每位使用者指派角色（或一組自訂權限），定義帳戶的存取權。 您也可以新增[使用者群組](#groups)和 [Azure AD 應用程式](#azure-ad-applications)，為其授與您開發人員中心帳戶的存取權。
+（在 [**帳戶設定**） 下的 Windows 開發人員中心的**使用者**區段可讓您使用 Azure Active Directory 將使用者新增到您的開發人員中心帳戶。 為每位使用者指派角色（或一組自訂權限），定義帳戶的存取權。 您也可以新增[使用者群組](#groups)和 [Azure AD 應用程式](#azure-ad-applications)，為其授與您開發人員中心帳戶的存取權。
 
 新增使用者到帳戶之後，您可以[編輯帳戶詳細資料](#edit)、變更[角色與權限](set-custom-permissions-for-account-users.md)，或[移除使用者](#remove)。
 
@@ -104,7 +104,7 @@ ms.locfileid: "4470231"
 如果您的其中一個使用者需要變更其密碼，只要您已在建立使用者帳戶時提供**密碼復原電子郵件**，他們就可以自行進行變更。 您也可以依照下列步驟更新使用者的密碼 (如果您使用 Azure AD 租用戶的全域管理員帳戶登入，以變更使用者的密碼)。 請注意，這會變更您 Azure AD 租用戶中該使用者的密碼，以及他們使用存取開發人員中心的密碼。 
 
 1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取您想要編輯的使用者帳戶的名稱。
-2.  選取在頁面底部的 [**重設密碼**] 按鈕。
+2.  選取 [\] 頁面底部的 [**重設密碼**] 按鈕。
 3.  隨即會出現確認頁面，顯示該使用者的登入資訊 (包括暫時密碼)。
 
     > [!IMPORTANT]
@@ -119,7 +119,7 @@ ms.locfileid: "4470231"
 ### <a name="add-groups-from-your-organizations-directory"></a>從組織的目錄新增群組
 
 1.  選取 （靠近儀表板右上角） 的齒輪圖示，然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取 \ [**使用者**。
-2. 從**使用者**] 頁面上，選取 [**新增群組**。
+2. 從**使用者**] 頁面中，選取 [**新增群組**。
 2.  從出現的清單中選取一個或多個群組。 您可以使用搜尋方塊來搜尋特定的群組。
     > [!TIP]
     > 如果您選取多個群組新增至您的開發人員中心帳戶，您必須為他們指派相同的角色或一組自訂的權限。 若要新增多個具有不同角色/權限的群組，請針對每個角色或一組自訂權限重複下列步驟。
@@ -169,7 +169,7 @@ ms.locfileid: "4470231"
 > [!TIP]
 > 如果您主要使用此 Azure AD 應用程式進行開發人員中心驗證，而且不需要使用者直接存取該應用程式，您可以針對 **\[回覆 URL\]** 和 **\[應用程式識別碼 URI\]** 輸入任何有效的位址，但前提是，您目錄中的其他任何 Azure AD 應用程式不會使用這些值。
 
-1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取 [**新增 Azure AD 應用程式**。
+1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取 [**新增 Azure AD 應用程式**]。
 2.  在下一個頁面上，選取**新的 Azure AD 應用程式**。
 3.  輸入新的 Azure AD 應用程式的 **\[回覆 URL\]**。 使用者可以從此 URL 登入並使用您的 Azure AD 應用程式 (也稱為 App URL 或登入 URL)。 **回覆 URL** 長度不可超過 256 個字元，而且在您的目錄中必須是唯一的。
 4.  輸入新 Azure AD 應用程式的 **\[應用程式識別碼 URI\]**。 這是 Azure AD 應用程式的邏輯識別碼，是在傳送單一登入要求至 Azure AD 時提供。 請注意，在目錄中的每個 Azure AD 應用程式的 **\[應用程式識別碼 URI\]** 必須是唯一的，且長度不能超過 256 個字元。 如需**應用程式識別碼 URI** 的詳細資訊，請參閱[整合應用程式與 Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#changing-the-application-registration-to-support-multi-tenant)。

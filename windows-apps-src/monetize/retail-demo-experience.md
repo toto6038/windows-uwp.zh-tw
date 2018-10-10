@@ -11,27 +11,27 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 152c775c1b69bfd82d8969aed7e638f98646bdd7
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4460900"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4500271"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能新增到您的應用程式
 
-Windows 應用程式中包括零售示範模式，讓客戶試用電腦和裝置上銷售地板可以跳中的權限。
+因此試用電腦和裝置銷售地板上的客戶可以跳中的權限，請在您的 Windows 應用程式中包含零售示範模式。
 
-客戶在零售商店中時，他們會預期要能夠試用示範的電腦和裝置。 它們通常會花費相當大量的時間與透過[零售示範體驗 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)應用程式。
+客戶在零售商店中時，他們會預期能夠試用的電腦和裝置的示範。 它們通常會花費相當大量的時間與透過[零售示範體驗 (RDX)](https://docs.microsoft.com/windows-hardware/customize/desktop/retail-demo-experience)應用程式。
 
-您可以提供不同的體驗，在_一般_」 或 「_零售_模式中設定您的應用程式。 例如，如果您的應用程式啟動時與安裝程序，可能會跳過它在零售模式中，並預先填入之 app 的範例資料和預設設定，讓他們可以跳中的權限。
+您可以提供不同的體驗，在_一般_」 或 「_零售_模式中設定您的應用程式。 為例，如果您的應用程式啟動時進行安裝程序，您可能會在零售模式下，跳過它並預先填入應用程式使用範例資料和預設設定，讓他們可以跳中的權限。
 
 從我們客戶的觀點來看，則只有一個應用程式。 為了協助客戶區分兩種模式，我們建議，當您的應用程式處於零售模式，它會顯示為文字 「 零售 」 字樣在標題列或適當的位置。
 
-除了應用程式的 Microsoft Store 需求，RDX 感知的應用程式也必須與 RDX 安裝、 清理及更新的程序，以確保客戶在零售商店有一致的正面體驗相容。
+除了應用程式的 Microsoft Store 需求，RDX 感知應用程式都必須也相容於 RDX 安裝、 清理及更新程序，以確保客戶在零售商店有一致的正面體驗。
 
 ## <a name="design-principles"></a>設計原則
 
-* **展現最好的一面**。 使用零售示範體驗來展示您的應用程式為何出色。 這有可能是第一次您的客戶將會看到您的應用程式，因此最好的一面它們出來 ！
+* **展現最好的一面**。 使用零售示範體驗來展示您的應用程式為何出色。 這是可能會在第一次您的客戶將會看到您的應用程式，因此最好的一面它們出來 ！
 
 * **它快速顯示**。 客戶可能沒有那麼多耐心 - 能讓使用者越快體驗到您 App 的實際價值越好。
 
@@ -41,17 +41,17 @@ Windows 應用程式中包括零售示範模式，讓客戶試用電腦和裝置
 
 ## <a name="technical-requirements"></a>技術需求
 
-RDX 感知 app 的目的是要展示給零售客戶的應用程式的最佳，因為它們必須符合技術需求，並遵守 Microsoft Store 」 的所有零售示範體驗 app 隱私權規定。
+RDX 感知 app 的目的是要展示給零售客戶的應用程式的最佳，因為它們必須符合技術的需求，並遵守 Microsoft Store 」 的所有零售示範體驗 app 隱私權規定。
 
-這可以用做為一份檢查清單，來協助您準備進行驗證程序，並讓測試程序更為透明。 請注意，您不僅要針對驗證程序維護這些需求，只要您的 App 持續在零售示範裝置上執行，您也必須針對零售示範體驗 App 的整個生命週期維護這些需求。
+這可以用為一份檢查清單，來協助您準備進行驗證程序，並讓測試程序更為透明。 請注意，您不僅要針對驗證程序維護這些需求，只要您的 App 持續在零售示範裝置上執行，您也必須針對零售示範體驗 App 的整個生命週期維護這些需求。
 
 ### <a name="critical-requirements"></a>重要需求
 
 將從所有零售示範裝置儘速移除不符合這些重要需求的 RDX 感知應用程式。
 
-* **不要求提供個人識別資訊 (PII)**。 這包括登入資訊、 Microsoft 帳戶資訊或連絡人詳細資料。
+* **不要求個人識別資訊 (PII)**。 這包括登入資訊、 Microsoft 帳戶資訊或連絡人詳細資料。
 
-* **無錯誤的體驗**。 您的 App 必須在執行時不發生任何錯誤。 此外，不應向使用零售示範裝置的客戶顯示任何錯誤快顯畫面或通知。 錯誤負面反映在應用程式上本身、 您的品牌、 裝置的品牌、 裝置的製造商品牌以及 microsoft 品牌。
+* **無錯誤的體驗**。 您的 App 必須在執行時不發生任何錯誤。 此外，不應向使用零售示範裝置的客戶顯示任何錯誤快顯畫面或通知。 錯誤負面反映在應用程式本身、 您的品牌、 裝置的品牌、 裝置的製造商品牌以及 microsoft 品牌。
 
 * **付費應用程式必須提供試用模式**。 您的 app 必須是免費或包含[試用模式](https://msdn.microsoft.com/windows/uwp/monetize/exclude-or-limit-features-in-a-trial-version-of-your-app)。 客戶不會想要為零售商店中的體驗支付費用。
 
@@ -63,24 +63,24 @@ RDX 感知 app 的目的是要展示給零售客戶的應用程式的最佳，�
 
 * **已更新內容體驗**。 您的應用程式應該永遠不會更新時線上的提示。 如果需要更新的他們應該會以無訊息方式執行。
 
-* **無匿名通訊**。 使用零售示範裝置的客戶是匿名使用者，因為他們不應該是能夠從裝置訊息或共用內容。
+* **無匿名通訊**。 使用零售示範裝置的客戶是匿名使用者，因為他們不應該是可以從裝置的訊息或共用內容。
 
-* **提供一致的體驗，利用清理程序**。 每個客戶在走近零售示範裝置時都應該有相同的體驗。 您的應用程式應該使用[清理程序](#clean-up-process)來在每次使用後回到相同的預設狀態。 我們不希望下一個客戶看到哪些最後一個客戶留下的東西。 這包括計分板、成就及解鎖項目。
+* **提供一致的體驗，利用清理程序**。 每個客戶在走近零售示範裝置時都應該有相同的體驗。 您的應用程式應該使用[清理程序](#clean-up-process)來在每次使用後回到相同的預設狀態。 我們不希望下一個客戶看到上一個客戶留下。 這包括計分板、成就及解鎖項目。
 
-* **年齡適當的內容**。 所有應用程式內容都必須被指派 13 歲以上或較低的評等類別。 若要了解更多資訊，請參閱[由 IARC 分級您的應用程式的取得](https://www.globalratings.com/for-developers.aspx)和[ESRB 分級](https://www.esrb.org/ratings/ratings_guide.aspx)。
+* **年齡適當的內容**。 所有應用程式內容都必須被指派 13 歲以上或較低的評等類別。 若要了解更多資訊，請參閱[的取得您的應用程式由 IARC 分級](https://www.globalratings.com/for-developers.aspx)與[ESRB 分級](https://www.esrb.org/ratings/ratings_guide.aspx)。
 
 ### <a name="medium-priority-requirements"></a>中優先順序需求
 
 「Windows 零售商店」小組可以直接接觸開發人員，來發起一個有關如何修正這修問題的討論。
 
-* **能夠成功在各種裝置上執行**。 應用程式必須可以在所有裝置，包括低階規格的裝置上執行。 應用程式是安裝在不符合最低規格的裝置上時，app 必須清楚此資訊告知使用者。 最低裝置需求必須公開，以便讓 App 一律能夠以高效能模式執行。
+* **能夠在一系列的裝置上成功執行**。 應用程式必須可以在所有裝置，包括低階規格的裝置上執行。 如果不符合最低規格的裝置上安裝應用程式，應用程式需要清楚地告知使用者關於這個。 最低裝置需求必須公開，以便讓 App 一律能夠以高效能模式執行。
 
-* **符合零售商店 app 大小需求**。 App 大小必須小於 800 MB。 如果您 RDX 感知的應用程式不符合大小需求，請連絡 「 Windows 零售商店 」 小組直接為進行進一步的討論。
+* **符合零售商店 app 大小需求**。 App 大小必須小於 800 MB。 如果您 RDX 感知應用程式不符合大小需求，請連絡 「 Windows 零售商店 」 小組直接為進行進一步的討論。
 
 ## <a name="retailinfo-api-preparing-your-code-for-demo-mode"></a>屬性 API： 準備您的程式碼示範模式
 
 ### <a name="isdemomodeenabled"></a>IsDemoModeEnabled
-在[**屬性**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)公用程式類別中，也就是在 Windows 10 SDK 中的[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空間的一部分， [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)屬性來作為布林值指標指定您的應用程式執行-在哪個程式碼路徑_法向量_模式或_零售_模式。
+在[**屬性**](https://docs.microsoft.com/uwp/api/Windows.System.Profile.RetailInfo)公用程式類別中，也就是在 Windows 10 SDK 中的[Windows.System.Profile](https://docs.microsoft.com/uwp/api/windows.system.profile)命名空間的一部分， [**IsDemoModeEnabled**](https://docs.microsoft.com/uwp/api/windows.system.profile.retailinfo.isdemomodeenabled)屬性來作為布林值指標指定您應用程式-執行的程式碼路徑_法向量_模式或_零售_模式。
 
 ``` csharp
 using Windows.Storage;
@@ -233,7 +233,7 @@ namespace Windows.System.Profile
 
 ## <a name="cleanup-process"></a>清理程序
 
-清理開始兩分鐘後購物會停止與裝置互動。 零售示範播放時，以及 Windows 會開始重設任何連絡人、 相片和其他應用程式中的範例資料。 根據裝置，這可能需要花費 1-5 分鐘的時間來完全將所有項目重設回一般之間。 這樣可確保零售商店中的每一位客戶可以走近裝置，並與裝置互動時，有相同的體驗。
+清理開始兩分鐘後購物停止與裝置互動。 零售示範播放時，以及 Windows 會開始重設任何連絡人、 相片和其他應用程式中的範例資料。 根據裝置，這可能需要花費介於 1 到 5 分鐘的時間來完全將所有項目重設回一般。 這樣可確保零售商店中的每一位客戶可以走近裝置並與裝置互動時，有相同的體驗。
 
 步驟 1： 清理
 * 所有 Win32 和 Microsoft Store  App 都會被關閉
@@ -253,7 +253,7 @@ namespace Windows.System.Profile
 
 若要自訂清理程序，實作`Microsoft-RetailDemo-Cleanup`到您的應用程式的應用程式服務。
 
-需要自訂清理邏輯的案例包括執行大量的設定、 下載和快取資料，或是不想讓*LocalState*資料被刪除。
+需要有自訂清理邏輯的案例包括執行大量的設定、 下載和快取資料，或是不想讓*LocalState*資料被刪除。
 
 步驟 1： 宣告您的應用程式資訊清單中的_Microsoft-RetailDemo-Cleanup_服務。
 ``` CSharp
@@ -268,7 +268,7 @@ namespace Windows.System.Profile
 
 ```
 
-步驟 2： 實作您的自訂清理邏輯，在使用下面的範例範本_AppdataCleanup_案例函式。
+步驟 2： 實作您的自訂清理邏輯，在使用下面的範例範本的_AppdataCleanup_案例函式。
 ``` CSharp
 using System;
 using System.IO;

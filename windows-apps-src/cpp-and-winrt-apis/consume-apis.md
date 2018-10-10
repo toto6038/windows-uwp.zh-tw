@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b1cd05f974bf9193e84919a5e679ef996746d7e
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471374"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4509427"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
-本主題示範如何使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api，無論他們是否 Windows 的一部分，實作由第三方元件廠商或您自己來實作。
+本主題示範如何使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api，無論他們 Windows 的一部分，是否實作由第三方元件廠商或您自己來實作。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 在 Windows 命名空間中
 這是您使用 Windows 執行階段 API 最常見的案例。 適用於中繼資料中定義的 Windows 命名空間裡每一類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為 *投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ syntax 的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
