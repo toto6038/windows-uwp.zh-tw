@@ -9,18 +9,18 @@ ms.date: 10/2/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: abarlow
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4431130"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471279"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 

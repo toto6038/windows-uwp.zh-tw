@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式服務
 ms.assetid: 30aef94b-1b83-4897-a2f1-afbb4349696a
 ms.localizationpriority: medium
-ms.openlocfilehash: a77ea3cefcc423e710ab0afebb3fa064e61507ec
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.openlocfilehash: d259df2a65046acb1c34dd2958ab4513bc31f43b
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4425410"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471364"
 ---
 # <a name="convert-an-app-service-to-run-in-the-same-process-as-its-host-app"></a>轉換應用程式服務，以便與其主控應用程式在相同處理序中執行
 
@@ -47,6 +47,8 @@ ms.locfileid: "4425410"
 第二處變更是，將服務邏輯從其個別的背景工作專案移入可從 **OnBackgroundActivated()** 呼叫的方法中。
 
 現在可以您的應用程式可以直接執行應用程式服務。 例如，在 App.xaml.cs:
+
+[!NOTE] 下列程式碼與所提供的範例 1 （處理程序服務） 的不同。 下列程式碼提供僅供說明，並不應做為範例 2 的一部分 （同處理序服務）。  若要繼續文章的轉換，範例 1 （處理程序服務） 到範例 2 （同處理序服務） 繼續使用提供的範例 1 而不是下方說明的程式碼的程式碼。
 
 ``` cs
 using Windows.ApplicationModel.AppService;

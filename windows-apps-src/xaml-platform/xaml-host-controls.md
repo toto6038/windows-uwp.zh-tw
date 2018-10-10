@@ -10,11 +10,11 @@ ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
-ms.sourcegitcommit: fbdc9372dea898a01c7686be54bea47125bab6c0
+ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "4428137"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "4471716"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
@@ -34,7 +34,7 @@ WPF 和 Windows Forms 應用程式可以使用[Windows 社群工具組](https://
 
 下列包裝的 UWP 控制項是目前可用的 WPF 和 Windows Forms 應用程式。 更多的包裝 UWP 控制項已計劃未來版本的 Windows 社群工具組。
 
-| 控制項 | 最低支援的作業系統 | 描述 |
+| 控制項 | 最低支援的作業系統 | 說明 |
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 (版本 1803) | 您可以使用 Microsoft Edge 轉譯引擎來顯示網頁內容。 |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供**WebView**與多個作業系統版本相容的版本。 這個控制項使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 版本 1803年或更新版本上的網頁內容和 Internet Explorer 的轉譯引擎，以顯示 web 內容，在先前版本的 Windows 10，Windows 8.x 和 Windows 7。 |
