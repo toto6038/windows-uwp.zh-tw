@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467228"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508168"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 > [!NOTE]
-> 了解如何以引發事件中的[C + + WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 執行階段元件，請參閱[中撰寫事件在 C + + /winrt](../cpp-and-winrt-apis/author-events.md)。
+> 若要了解如何引發的事件[C + + WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) Windows 執行階段元件，請參閱[中撰寫事件在 C + + WinRT](../cpp-and-winrt-apis/author-events.md)。
 
 如果您的 Windows 執行階段元件會在背景執行緒 (背景工作執行緒) 上引發使用者定義之委派類型的事件，而您希望 JavaScript 可以接收該事件，則可透過下列其中一種方式來實作和 (或) 引發此事件：
 
@@ -229,15 +229,15 @@ IToast 介面包含可擷取來描述快顯通知類型的字串。 IToaster 介
     }
 ```
 
-如果您現在建置專案時，它應該執行全新建置。
+如果您現在建置專案時，它應該會完全建置。
 
 ## <a name="to-program-the-javascript-app"></a>進行程式設計的 JavaScript app
 
 現在我們可以將按鈕新增至 JavaScript 應用程式會使用我們只是定義，讓快顯通知的類別。 我們執行此動作之前，我們必須新增到我們剛建立的命名為 ToasterComponent 專案的參考。 在 [方案總管] 中開啟命名為 ToasterApplication 專案的捷徑功能表，選擇**新增&gt;參考**，然後選擇 [**加入新參考**] 按鈕。 在 [加入參考] 對話方塊中，在方案下的左窗格中選取元件專案，然後在中間窗格中，選取命名為 ToasterComponent。 選擇 **\[確定\]** 按鈕。
 
-在方案總管] 中開啟命名為 ToasterApplication 專案的捷徑功能表，然後選擇**設定為啟始專案**。
+在 [方案總管] 中開啟命名為 ToasterApplication 專案的捷徑功能表，然後選擇 [**設定為啟始專案**。
 
-在 default.js 檔案的結尾，新增命名空間包含可呼叫元件，其回呼叫的函式。 命名空間將會有兩個函式，一個讓快顯通知，另一個處理快顯通知完成事件。 MakeToast 的實作會建立分別物件，註冊事件處理常式中，並讓快顯通知。 到目前為止，事件處理常式不會執行太多，如下所示：
+在 default.js 檔案的結尾，新增命名空間包含可呼叫元件，其返回呼叫的函式。 命名空間將會有兩個函式，一個讓快顯通知，另一個處理快顯通知完成事件。 MakeToast 的實作會建立分別物件，註冊事件處理常式中，並可讓快顯通知。 到目前為止，事件處理常式不會執行太多，如下所示：
 
 ```javascript
     WinJS.Namespace.define("ToasterApplication"), {
@@ -273,21 +273,21 @@ MakeToast 函式必須設定好的按鈕。 更新 default.html 来包含按鈕�
     </body>
 ```
 
-如果我們無法使用 TypedEventHandler，我們現在能夠在本機電腦上執行的應用程式，並按一下按鈕讓快顯通知。 但在我們的 app 中沒有任何作用。 若要了解為何，讓我們來偵錯 ToastCompletedEvent，就會引發的 managed 程式碼。 停止專案，然後在功能表列上，選擇**偵錯&gt;分別應用程式內容**。 將**偵錯工具類型**變更為**只管理**。 一次的功能表列上，選擇**偵錯&gt;例外狀況**，然後選取 [**通用語言執行階段例外狀況**。
+如果我們無法使用 TypedEventHandler，我們現在會是可以在本機電腦上執行的應用程式，並按一下按鈕來讓快顯通知。 但在我們的 app 中沒有任何作用。 若要了解為何，讓我們來偵錯 ToastCompletedEvent，就會引發的 managed 程式碼。 停止專案，然後在功能表列上選擇**偵錯&gt;分別應用程式內容**。 將**偵錯工具類型**變更為**僅限管理**。 一次在功能表列上選擇**偵錯&gt;例外狀況**，然後選取 [**通用語言執行階段例外狀況**。
 
-現在執行 app 並按一下產生快顯通知按鈕。 偵錯工具會攔截例外狀況無效的轉型。 雖然您不能從其訊息，則這個例外狀況的發生原因 proxy 是針對該介面遺失。
+現在執行的應用程式，然後按一下讓快顯通知按鈕。 偵錯工具會攔截例外狀況無效的轉型。 雖然您不能從其訊息，則這個例外狀況的發生原因 proxy 是針對該介面遺失。
 
 ![遺失的 proxy](./images/debuggererrormissingproxy.png)
 
-建立 proxy 和虛設常式元件的第一個步驟是要新增的唯一識別碼或 GUID 的介面。 不過，要使用的 GUID 格式不同取決於您正在撰寫在 C#、 Visual Basic 中或另一個.NET 語言，或 c + + 中。
+建立 proxy 和虛設常式元件的第一個步驟是要新增的唯一識別碼或 GUID 的介面。 不過，若要使用的 GUID 格式不同取決於您正在撰寫在 C#、 Visual Basic 中或另一個.NET 語言，或 c + + 中。
 
-## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>若要針對元件的介面 （C# 和其他.NET 語言） 產生 Guid
+## <a name="to-generate-guids-for-the-components-interfaces-c-and-other-net-languages"></a>若要產生的 Guid 元件的介面 （C# 和其他.NET 語言）
 
-在功能表列上，選擇 [工具&gt;建立 GUID。 在對話方塊中，選取 5。 \[Guid (」...儲存-xxxx xxxx) \]。 選擇 [新的 GUID] 按鈕，然後選擇 [複製] 按鈕。
+在功能表列上選擇工具&gt;建立 GUID。 在對話方塊中，選取 5。 \[Guid (」...儲存-xxxx xxxx) \]。 選擇 [新的 GUID] 按鈕，然後選擇 [複製] 按鈕。
 
 ![guid 產生器工具](./images/guidgeneratortool.png)
 
-返回介面定義，然後再將新的 GUID 貼之前 IToaster 介面，如下列範例所示。 （不在範例中使用的 GUID。 每個唯一的介面應該擁有它自己的 GUID）。
+返回介面定義，然後再將新的 GUID 貼正前方 IToaster 介面，如下列範例所示。 （不在範例中使用 GUID。 每個唯一的介面應該有它自己的 GUID）。
 
 ```cpp
 [Guid("FC198F74-A808-4E2A-9255-264746965B9F")]
@@ -298,11 +298,11 @@ MakeToast 函式必須設定好的按鈕。 更新 default.html 来包含按鈕�
 
 IToast 介面重複這些步驟。
 
-## <a name="to-generate-guids-for-the-components-interfaces-c"></a>若要針對元件的介面 （c + +） 產生的 Guid
+## <a name="to-generate-guids-for-the-components-interfaces-c"></a>若要產生的 Guid 元件的介面 （c + +）
 
-在功能表列上，選擇 [工具&gt;建立 GUID。 在對話方塊中，選取 3。 靜態 const 結構 GUID = {...}。 選擇 [新的 GUID] 按鈕，然後選擇 [複製] 按鈕。
+在功能表列上選擇工具&gt;建立 GUID。 在對話方塊中，選取 [3。 靜態 const 結構 GUID = {...}。 選擇 [新的 GUID] 按鈕，然後選擇 [複製] 按鈕。
 
-貼上之前 IToaster 介面定義的 GUID。 貼上之後，該 GUID 應該類似下列的範例。 （不在範例中使用的 GUID。 每個唯一的介面應該擁有它自己的 GUID）。
+貼上正前方 IToaster 介面定義的 GUID。 貼上之後，該 GUID 應該類似下列的範例。 （不在範例中使用 GUID。 每個唯一的介面應該有它自己的 GUID）。
 ```cpp
 // {F8D30778-9EAF-409C-BCCD-C8B24442B09B}
     static const GUID <<name>> = { 0xf8d30778, 0x9eaf, 0x409c, { 0xbc, 0xcd, 0xc8, 0xb2, 0x44, 0x42, 0xb0, 0x9b } };
@@ -318,11 +318,11 @@ IToast 介面重複這些步驟。
 ```
 IToast 介面重複這些步驟。
 
-既然介面的唯一識別碼，我們可以建立 IDL 檔案送入.winmd 檔案到 winmdidl 命令列工具，並提供該 IDL 檔案到 MIDL 命令列工具，以產生 proxy 和虛設常式的 C 原始程式碼。 Visual Studio 這麼做為我們如果我們會建立建置後事件，如下列步驟中所示。
+既然介面的唯一識別碼，我們可以建立 IDL 檔案送入.winmd 檔案到 winmdidl 命令列工具，並會在 IDL 檔案到 MIDL 命令列工具，以產生 proxy 和虛設常式的 C 原始程式碼。 Visual Studio 如果這麼做為我們在下列步驟中所示，我們會建立建置後事件。
 
 ## <a name="to-generate-the-proxy-and-stub-source-code"></a>產生 proxy 和虛設常式原始碼
 
-若要新增自訂的建置後事件，在 [方案總管] 中，開啟命名為 ToasterComponent 專案的捷徑功能表，然後選擇 [屬性]。 在左窗格中的屬性頁面，選取 Build Events，，然後選擇 [建置後編輯按鈕。 將下列命令新增到建置後命令列。 （批次檔案必須被稱為第一次設定環境變數，以尋找 winmdidl 工具）。
+若要新增自訂的建置後事件，在 [方案總管] 中，開啟命名為 ToasterComponent 專案的捷徑功能表，然後選擇 [屬性]。 在左窗格中的屬性頁面，選取 [建置事件，，然後選擇 [建置後編輯按鈕。 將下列命令新增到建置後命令列。 （批次檔案必須被稱為第一次設定環境變數，以尋找 winmdidl 工具）。
 
 ```cpp
 call "$(DevEnvDir)..\..\vc\vcvarsall.bat" $(PlatformName)
@@ -332,22 +332,22 @@ midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid 
 
 **重要** 適用於 ARM 或 x64 專案設定，將 MIDL /env 參數變更為 x64 或 arm32。
 
-若要確保每次.winmd 檔案變更時，會重新產生 IDL 檔案，變更，以**執行建置後事件****當組建更新專案輸出。**
-建置事件的屬性頁面上看起來應該像這樣：![建置事件](./images/buildevents.png)
+若要確保 IDL 檔案重新產生的每次.winmd 檔案已變更，變更，以**執行建置後事件****當組建更新專案輸出。**
+Build Events 屬性頁面上看起來應該像這樣：![建置事件](./images/buildevents.png)
 
-重新建置產生及編譯 IDL 解決方案。
+重新建置方案，以產生及編譯 IDL。
 
 您可以確認 MIDL 正確藉由尋找 ToasterComponent.h、 ToasterComponent_i.c、 ToasterComponent_p.c，以及 dlldata.c 命名為 ToasterComponent 專案目錄中的編譯方案。
 
-## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>編譯 proxy 和虛設常式 DLL 到的程式碼
+## <a name="to-compile-the-proxy-and-stub-code-into-a-dll"></a>編譯 proxy 和虛設常式程式碼到 DLL
 
-現在，您擁有必要的檔案，您可以將它們產生的 DLL，也就是 c + + 檔案編譯。 這相當簡單，只要可能，請新增新的專案，以支援建置 proxy。 開啟命名為 ToasterApplication 方案的捷徑功能表，然後選擇**新增 > 新專案**。 在 [**新增專案**\] 對話方塊的左窗格中，依序展開**Visual c + + &gt; Windows&gt;通用 Windows**，然後在中間窗格中，選取 [ **DLL （UWP 應用程式）**。 （請注意這不是 c + + Windows 執行階段元件專案）。專案 Proxy 的名稱，然後選擇 [**確定**] 按鈕。 在 C# 類別中的項目變更時的建置後事件將會更新這些檔案。
+現在，您擁有必要的檔案，您可以將它們產生的 DLL，也就是 c + + 檔案編譯。 若要讓此盡可能簡單，新增新的專案，以支援建置 proxy。 開啟命名為 ToasterApplication 方案的捷徑功能表，然後選擇**新增 > 新的專案**。 在 [**新增專案**] 對話方塊的左窗格中，依序展開**Visual c + + &gt; Windows&gt;通用 Windows**，然後在中間窗格中，選取 [ **DLL （UWP 應用程式）**。 （請注意這不是 c + + Windows 執行階段元件專案）。專案 Proxy 的名稱，然後選擇 [**確定**] 按鈕。 在 C# 類別中的項目變更時的建置後事件將會更新這些檔案。
 
-根據預設，Proxy 專案會產生標頭.h 檔案和 c + +.cpp 檔案。 因為建置 DLL 的從 MIDL 從產生的檔案，則不需要.h 和.cpp 檔案。 在方案總管] 中，為他們開啟捷徑功能表，選擇**移除**，並確認刪除。
+根據預設，Proxy 專案會產生標頭.h 檔案和 c + +.cpp 檔案。 因為 DLL 建置從 MIDL 從產生的檔案，則不需要.h 和.cpp 檔案。 在方案總管] 中，開啟捷徑功能表，選擇**移除**，並確認刪除。
 
 現在，在專案是空的您可以新增返回 MIDL 產生的檔案。 開啟 Proxy 專案的捷徑功能表，然後選擇**新增 > 現有項目。** 在對話方塊中，瀏覽至命名為 ToasterComponent 專案目錄，然後選取這些檔案： ToasterComponent.h、 ToasterComponent_i.c、 ToasterComponent_p.c，以及 dlldata.c 檔案。 選擇 [**加入**] 按鈕。
 
-在 Proxy 專案中，建立.def 檔案，以定義 dlldata.c 中所述的 DLL 匯出。 開啟專案的捷徑功能表，然後選擇**新增 > 新項目**。 在 [\] 對話方塊的左窗格中，選取的程式碼，然後在中間窗格中，選取 [模組定義檔案。 將檔案 proxies.def 命名，然後選擇 [**新增**\] 按鈕。 開啟此.def 檔案，並修改它以包含匯出 dlldata.c 中定義：
+在 Proxy 專案中，建立.def 檔案，以定義 dlldata.c 中所述的 DLL 匯出。 開啟專案的捷徑功能表，然後選擇**新增 > 新項目**。 在對話方塊的左窗格中，選取 [程式碼，然後在中間窗格中，選取 [模組定義檔案。 命名檔案 proxies.def，然後選擇 [**新增**\] 按鈕。 開啟此.def 檔案，並修改它以包含匯出 dlldata.c 中定義：
 
 ```cpp
 EXPORTS
@@ -355,18 +355,18 @@ EXPORTS
     DllGetClassObject       PRIVATE
 ```
 
-如果您現在建置專案時，它將會失敗。 若要正確編譯這個專案，您必須變更如何在專案是以編譯和連結。 在方案總管] 中開啟 Proxy 專案的捷徑功能表，然後選擇**屬性**。 變更的屬性頁面，如下所示。
+如果您現在建置專案時，它將會失敗。 若要正確編譯這個專案，您必須變更如何在專案是以編譯和連結。 在 [方案總管] 中開啟 Proxy 專案的捷徑功能表，然後選擇 [**屬性**]。 變更的屬性頁面，如下所示。
 
 在左窗格中，選取**C/c + + > 前置處理器**，並在右窗格中，然後選取**前置處理器定義**、 選擇向下箭號按鈕，以及然後選取 [**編輯**。 在方塊中新增這些定義：
 
 ```cpp
 WIN32;_WINDOWS
 ```
-下方**C/c + + > 先行編譯標頭**，將**先行編譯標頭**變更為**未使用先行編譯標頭檔**，然後選擇 [**套用**] 按鈕。
+在**C/c + + > 先行編譯標頭**，將**先行編譯標頭**變更為**未使用先行編譯標頭檔**，然後選擇 [**套用**] 按鈕。
 
-下方**連結器 > 一般** **Ar-ye**s、 變更**忽略匯入程式庫**，然後選擇 [**套用**] 按鈕。
+在**連結器 > 一般** **Ar-ye**s、 變更**忽略匯入程式庫**，然後選擇 [**套用**] 按鈕。
 
-下方**連結器 > 輸入**，選取**其他相依性**，選擇 [向下鍵] 按鈕，然後選取 [**編輯**。 在方塊中，新增此文字：
+在**連結器 > 輸入**，選取**其他相依性**，選擇 [向下鍵] 按鈕，然後選取 [**編輯**。 在方塊中，新增此文字：
 
 ```cpp
 rpcrt4.lib;runtimeobject.lib
@@ -376,16 +376,16 @@ rpcrt4.lib;runtimeobject.lib
 
 當您擁有這些變更，請**屬性頁**] 對話方塊中選擇 [**確定**] 按鈕。
 
-接下來，採取命名為 ToasterComponent 專案的相依性。 這樣可確保，分別將組建之前 proxy 專案會建置。 這是必要的因為分別專案負責產生的檔案，來建置 proxy。
+接下來，採取命名為 ToasterComponent 專案的相依性。 這樣可確保，分別將組建之前 proxy 專案會建置。 這是必要的因為分別專案負責產生的檔案來建置 proxy。
 
 開啟 Proxy 專案的捷徑功能表，然後選擇 [專案相依性。 選取核取方塊，以指出 Proxy 專案，取決於命名為 ToasterComponent 專案中，以確保，Visual Studio 就會將它們組建以正確的順序。
 
-確認 [方案選擇正確建置**建置 > 重新建置方案**Visual Studio 功能表列上。
+確認 [方案選擇正確建置**建置 > 重建方案**Visual Studio 功能表列上。
 
 
 ## <a name="to-register-the-proxy-and-stub"></a>若要登錄 proxy 和虛設常式
 
-在命名為 ToasterApplication 專案中，開啟 package.appxmanifest 的捷徑功能表，然後選擇 [**開啟方式**。 在 [開啟檔案] 對話方塊中，選取 [ **XML 文字編輯器**，然後選擇 [**確定**] 按鈕。 我們將在 windows.activatableClass.proxyStub 擴充功能註冊，並可根據 proxy 中的 Guid 會提供一些 XML 中貼上。 若要尋找的 Guid，用於.appxmanifest 檔案中，開啟 ToasterComponent_i.c。 尋找顯示的類似在下列範例中的項目。 也請注意針對 IToast，IToaster，定義和第三個介面，有兩個參數的具類型的事件處理常式： 分別與快顯通知。 這符合分別類別中定義的事件。 請注意 IToast 和 IToaster Guid，符合在 C# 檔案中的介面中定義的 Guid。 因為具類型的事件處理常式介面是自動產生，此介面的 GUID 也是自動產生。
+在命名為 ToasterApplication 專案中，開啟 package.appxmanifest 的捷徑功能表，然後選擇 [**開啟方式**。 在 [開啟檔案] 對話方塊中，選取 [ **XML 文字編輯器**，然後選擇 [**確定**] 按鈕。 我們將在 windows.activatableClass.proxyStub 擴充功能註冊，並可根據 proxy 中的 Guid 會提供一些 XML 中貼上。 若要尋找的 Guid，用於.appxmanifest 檔案中，開啟 ToasterComponent_i.c。 尋找類似下列的範例中的項目。 也請注意針對 IToast，IToaster，定義和第三個介面，有兩個參數的輸入的事件處理常式： 分別與快顯通知。 這符合分別類別中定義的事件。 請注意 IToast 和 IToaster 的 Guid，符合在 C# 檔案中的介面中定義的 Guid。 因為具類型的事件處理常式介面是自動產生，此介面的 GUID 也是自動產生。
 
 ```cpp
 MIDL_DEFINE_GUID(IID, IID___FITypedEventHandler_2_ToasterComponent__CToaster_ToasterComponent__CToast,0x1ecafeff,0x1ee1,0x504a,0x9a,0xf5,0xa6,0x8c,0x6f,0xb2,0xb4,0x7d);
@@ -395,7 +395,7 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToast,0xF8D30778,0x9EAF,0x409C,
 MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA4,0xA4,0xC0,0xB0,0xC2,0xFD,0x13,0x07,0xC3);
 ```
 
-現在我們要將複製的 Guid，將它們貼在 package.appxmanifest 中的節點，我們將新增和名稱擴充功能，然後再將它們重新格式化。 資訊清單項目類似下列的範例 — 但同樣地，請記得要使用您自己的 Guid。 請注意，在 XML 中 ClassId GUID ITypedEventHandler2 相同。 這是因為該 GUID 是第一個 ToasterComponent_i.c 中所列。 以下的 Guid 不區分大小寫。 而不是針對 IToast 和 IToaster，手動重新格式化的 Guid，您可以返回介面定義，並取得 GuidAttribute 值，它包含為正確的格式。 在 c + +，有在註解是格式正確的 GUID。 在任何情況下，您必須手動重新格式化用於 ClassId 和事件處理常式的 GUID。
+現在我們要將複製的 Guid，將它們貼在 package.appxmanifest 中的節點，我們會新增與名稱擴充功能，然後再將它們重新格式化。 資訊清單項目類似下列的範例 — 但同樣地，請記得要使用您自己的 Guid。 請注意，在 XML 中 ClassId GUID ITypedEventHandler2 相同。 這是因為該 GUID 是第一個 ToasterComponent_i.c 中所列。 以下的 Guid 不區分大小寫。 而不是 IToast 和 IToaster，手動重新格式化的 Guid，您可以返回到的介面定義，並取得 GuidAttribute 值，其中有正確的格式。 在 c + +，有在註解是格式正確的 GUID。 在任何情況下，您必須手動重新格式化用於 ClassId 和事件處理常式的 GUID。
 
 ```cpp
       <Extensions> <!--Use your own GUIDs!!!-->
@@ -412,15 +412,15 @@ MIDL_DEFINE_GUID(IID, IID___x_ToasterComponent_CIToaster,0xE976784C,0xAADE,0x4EA
 
 貼上的延伸 XML 節點，做為子系的 [套件] 節點中，並為例，資源節點的對等。
 
-然後再移，請務必確定：
+然後再移，請務必確認：
 
--   ProxyStub ClassId ToasterComponent\_i.c 檔案中設定為第一次的 GUID。 使用適用於 classId 這個檔案中定義的第一個 GUID。 （這可能是相同的 GUID，ITypedEventHandler2。）
+-   ProxyStub ClassId ToasterComponent\_i.c 檔案中設為第一次的 GUID。 使用 classId 這個檔案中定義的第一個 GUID。 （這可能是相同的 GUID，ITypedEventHandler2。）
 -   路徑是套件 proxy 二進位檔案的相對路徑。 （在本逐步解說，proxies.dll 是 ToasterApplication.winmd 相同的資料夾中）。
 -   Guid 為正確的格式。 （這是容易就能取得錯誤）。
 -   在資訊清單中的介面識別碼符合 Iid ToasterComponent\_i.c 檔案中。
--   介面名稱都是在資訊清單中唯一的。 因為這些不由系統所用，您可以選擇的值。 它是很好的做法，來選擇清楚符合您已定義的介面的介面名稱。 產生的介面，名稱應該要產生的介面表示。 您可以使用 ToasterComponent\_i.c 檔案，可協助您產生介面名稱。
+-   介面名稱是在資訊清單中唯一的。 由於這些不由系統所用，您可以選擇值。 它是很好的做法，來選擇清楚符合您已定義的介面的介面名稱。 產生的介面，名稱應該要產生的介面表示。 您可以使用 ToasterComponent\_i.c 檔案，可協助您產生介面名稱。
 
-如果您嘗試現在執行該方案，您會收到錯誤，proxies.dll 不是裝載的一部分。 命名為 ToasterApplication 專案中開啟 [**參考**] 資料夾的捷徑功能表，然後選擇 [**加入參考**。 選取 Proxy 專案旁邊的核取方塊。 此外，請確定已也選取命名為 ToasterComponent 旁邊的核取方塊。 選擇 **\[確定\]** 按鈕。
+如果您嘗試現在執行該方案，您會收到錯誤，proxies.dll 不是裝載的一部分。 命名為 ToasterApplication 專案中開啟 [**參考**] 資料夾的捷徑功能表，然後選擇 [**加入參考**。 選取 Proxy 專案旁邊的核取方塊。 此外，請確定命名為 ToasterComponent 旁邊的核取方塊已選取。 選擇 **\[確定\]** 按鈕。
 
 現在應該建置專案。 執行專案，並確認您可以讓快顯通知。
 

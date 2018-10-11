@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f14e7f8747639ef139e774416e09af954211940
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470149"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506180"
 ---
 # <a name="package-a-desktop-application-manually"></a>手動封裝的傳統型應用程式
 
@@ -24,12 +24,12 @@ ms.locfileid: "4470149"
 
 若要手動封裝應用程式，您必須先建立封裝資訊清單檔案，然後執行命令列工具來產生 Windows 應用程式套件。
 
-如果您使用 xcopy 命令安裝您的應用程式，或是您已經熟悉您的應用程式安裝程式對系統的變更，請考慮手動封裝，並想要對程序更細微的控制。
+如果您使用 xcopy 命令安裝您的應用程式，或您已熟悉您的應用程式安裝程式對系統的變更，請考慮手動封裝，並想要對程序更細微的控制。
 
 若您不確定您的安裝程式會對系統做出什麼變更，或者您想要使用自動化的工具產生您的封裝資訊清單，請考慮[這些](desktop-to-uwp-root.md#convert)選項。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （也就是傳統型橋接器，在 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>若要建立 Windows 應用程式套件的傳統型應用程式的功能 （稱為傳統型橋接器，在 Windows 10 版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
@@ -87,7 +87,7 @@ ms.locfileid: "4470149"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果您已經保留了您在 Windows 市集中的應用程式名稱，您可以使用 Windows 開發人員中心儀表板取得名稱和發行者。 如果您計劃側載至其他系統應用程式，您可以提供您自己的這些名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
+> 如果您已經保留了您在 Windows 市集中的應用程式名稱，您可以使用 Windows 開發人員中心儀表板取得名稱和發行者。 如果您打算側載至其他系統應用程式，您可以提供您自己的這些名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
 
 ### <a name="properties"></a>屬性
 
@@ -112,7 +112,7 @@ ms.locfileid: "4470149"
 ```
 ### <a name="dependencies"></a>相依性
 
-針對您建立的封裝的傳統型應用程式，一律設定``Name``屬性設定為``Windows.Desktop``。
+針對您建立的封裝的傳統型應用程式，一律設定``Name``屬性``Windows.Desktop``。
 
 ```XML
 <Dependencies>
@@ -177,7 +177,7 @@ ms.locfileid: "4470149"
 
 ### <a name="generate-a-package-resource-index-pri-file"></a>產生套件資源索引 (PRI) 檔案
 
-如果您在上，一節中所述建立以目標為基礎的資產，或您修改的任一視覺資產的應用程式在建立套件之後，您必須產生新的 PRI 檔案。
+如果您在上，一節中所述建立以目標為基礎的資產，或您修改的任一視覺資產您的應用程式在建立套件之後，您必須產生新的 PRI 檔案。
 
 1.  開啟**適用於 VS 2017 的開發人員命令提示字元**。
 
@@ -187,7 +187,7 @@ ms.locfileid: "4470149"
 
 5.  使用 ``makepri new /pr <PHYSICAL_PATH_TO_FOLDER> /cf <PHYSICAL_PATH_TO_FOLDER>\priconfig.xml`` 命令來建立 resources.pri 檔案。
 
-    例如，您的應用程式的命令可能看起來像這樣： ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
+    例如，您的應用程式的命令可能看起來就像這樣： ``makepri new /pr c:\MYAPP /cf c:\MYAPP\priconfig.xml``。
 
 6.  使用下一個步驟中的指示封裝您的 Windows 應用程式套件。
 
@@ -208,7 +208,7 @@ ms.locfileid: "4470149"
 若要更新應用程式的 .exe 或.dll 檔案，使用新檔案來取代套件中現有的檔案、提高 AppxManifest.xml 的版本號碼，然後再次執行上述命令即可。
 
 > [!NOTE]
-> 已封裝的應用程式一律會以互動式使用者的身分執行，並安裝您已封裝的應用程式在任何磁碟機必須格式化為 NTFS 格式。
+> 已封裝的應用程式一律會以互動式使用者的身分執行，並安裝已封裝的應用程式到任何磁碟機必須格式化為 NTFS 格式。
 
 ## <a name="next-steps"></a>後續步驟
 
@@ -224,6 +224,6 @@ ms.locfileid: "4470149"
 
 請參閱[執行、 偵錯以及測試封裝的傳統型應用程式](desktop-to-uwp-debug.md)
 
-**簽署您的應用程式並散布它**
+**登入您的應用程式並散布它**
 
 請參閱[散發的已封裝的傳統型應用程式](desktop-to-uwp-distribute.md)

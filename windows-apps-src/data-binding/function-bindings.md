@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 標記延伸，可讓函式，以在標記中使用。
+description: XBind 標記延伸可讓函式，以在標記中使用。
 title: 在 X:bind 的函式
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472571"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507866"
 ---
 # <a name="functions-in-xbind"></a>在 X:bind 的函式
 
@@ -66,7 +66,7 @@ class ColorEntry
 
 函式的路徑是以和其他屬性路徑相同的方式指定，且可以包含句點 (.)、索引子或轉換來找出該函式。
 
-靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用繫結至程式碼後置中的靜態函式的語法如下。
+靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用下列程式碼後置中的靜態函式繫結的語法。
 
 ```xaml
 <Page 
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-您也可以直接在標記中使用系統功能，來完成簡單的案例，包括日期格式設定文字格式、 文字串連、 等，例如：
+您也可以直接在標記中使用的系統功能，來完成簡單的案例，包括日期格式設定文字格式、 文字串連、 等，例如：
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -108,7 +108,7 @@ public class MyPage : Page
 - 引數類型需要符合傳入的資料，我們不會進行縮小轉換
 - 函式的傳回類型必須符合正在使用繫結的屬性類型
 
-從開始到 Windows 10 的下一個主要更新，繫結引擎會回應引發的函式名稱的屬性變更通知，以及重新評估繫結為必要。 例如： 
+開始使用 Windows 10 的下一個主要更新，繫結引擎會回應引發的函式名稱的屬性變更通知，以及重新評估繫結為必要。 例如： 
 
 ```XAML
 <DataTemplate x:DataType="local:Person">
@@ -177,7 +177,7 @@ public class Person:INotifyPropertyChanged
 
 ### <a name="two-way-function-bindings"></a>雙向函式繫結
 
-在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 做法是使用**BindBack**繫結屬性。 在以下範例中，函式應該有一個引數是推回到模型所需的值。
+在雙向繫結案例中，必須針對繫結的相反方向指定第二個函式。 做法是使用**BindBack**繫結屬性。 在下列範例中，函式應該有一個引數是推回到模型所需的值。
 ```xaml
 <TextBlock Text="{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}" />
 ```

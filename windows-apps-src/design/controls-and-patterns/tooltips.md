@@ -17,11 +17,11 @@ dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a61b8bdcfcfad490528cdceed5e732a6f5f3a89
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467867"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508552"
 ---
 # <a name="tooltips"></a>工具提示
 
@@ -116,7 +116,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 
 根據預設，工具提示會顯示在指標上的置中位置。 位置並不受應用程式視窗的限制，因此工具提示可能會超出應用程式視窗範圍部分顯示或完整顯示。
 
-廣泛的調整，使用[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性或**ToolTipService.Placement**附加屬性來指定工具提示是否應繪製上、 下、 左或向右的指標。 您可以設定[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)的屬性來變更指標與工具提示之間的距離。 只有其中一個兩個位移值將會影響最後位置-VerticalOffset 時位置是頂端或底部，HorizontalOffset 時就會留位置或向右。
+廣泛的調整，使用[位置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性或**ToolTipService.Placement**附加屬性，指定工具提示是否應繪製上方、 下、 左或向右的指標。 您可以設定[VerticalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.verticaloffset)或[HorizontalOffset](/uwp/api/windows.ui.xaml.controls.tooltip.horizontaloffset)的屬性，來變更指標與工具提示之間的距離。 只有其中一個兩個位移值將會影響最後位置-VerticalOffset 時的位置是頂端或底部，HorizontalOffset 時的位置會保留或向右。
 
 ```xaml
 <!-- An Image with an offset ToolTip. -->
@@ -129,7 +129,7 @@ ToolTipService.SetToolTip(submitButton, toolTip);
 </Image>
 ```
 
-如果工具提示遮蔽其指出的內容是以，您可以調整它準確地使用新的**PlacementRect**屬性的位置。 PlacementRect 錨定在工具提示的位置，並提供足夠的螢幕空間，以繪製工具提示此區域以外也會將不會遮蓋工具提示，一個區域。 您可以指定相對於工具提示的擁有者，和高度矩形的原點和排除區域的寬度。 如果工具提示應繪製上、 下、 左或向右的 PlacementRect，將會定義的[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性。 
+如果工具提示遮蔽指出它是以的內容，您可以調整它準確地使用新的**PlacementRect**屬性的位置。 PlacementRect 錨定在工具提示的位置，並提供足夠的螢幕空間，以繪製工具提示此區域以外也會將不會遮蓋工具提示，一個區域。 您可以指定相對於在工具提示的擁有者，和高度矩形的原點和排除區域的寬度。 如果工具提示應繪製上、 下、 左或向右 PlacementRect，將會定義的[配置](/uwp/api/windows.ui.xaml.controls.tooltip.placement)屬性。 
 
 ```xaml
 <!-- An Image with a non-occluding ToolTip. -->

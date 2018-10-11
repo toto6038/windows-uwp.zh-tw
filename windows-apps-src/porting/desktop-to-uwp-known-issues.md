@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4471194"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508503"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已封裝的傳統型應用程式的已知的問題
 
@@ -38,7 +38,7 @@ ms.locfileid: "4471194"
 
 若要修正此問題，請嘗試在提升權限的命令提示字元中執行命令 `Netsh int ipv4 reset`，並重新啟動您的電腦。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>您的.NET 應用程式使用"AnyCPU"組建選項編譯並無法安裝
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>您的.NET 應用程式使用"AnyCPU"組建選項編譯且無法安裝
 
 若主要可執行檔或任何相依性檔案是存放於 **Program Files** 或 **Windows\System32** 資料夾階層底下，就有可能會發生此問題。
 
@@ -97,7 +97,7 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
 
 如果更新無法修正問題，或您不確定如何復原電腦，請連絡 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。
 
-如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，如此您的應用程式不會提供給尚未安裝更新的使用者。 若要限制您已安裝此更新的使用者的應用程式的可用性，如下所示修改您的 AppxManifest.xml 檔案：
+如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，如此您的應用程式不會提供給尚未安裝更新的使用者。 若要限制使用者已安裝此更新您的應用程式的可用性，如下所示修改您的 AppxManifest.xml 檔案：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -141,9 +141,9 @@ certutil -dump <cert_file.pfx>
 
 * 憑證的大小不是正面。
 
-* 憑證 [開始] 畫面未之後`IMAGE_NT_HEADERS32`針對 32 位元可執行檔或之後的結構`IMAGE_NT_HEADERS64`64 位元可執行檔的結構。
+* 憑證 [開始] 畫面未之後`IMAGE_NT_HEADERS32`32 位元可執行檔或之後的結構`IMAGE_NT_HEADERS64`64 位元可執行檔的結構。
 
-* 憑證指標沒有正確對齊 WIN_CERTIFICATE 結構。
+* 憑證指標不正確對齊 WIN_CERTIFICATE 結構。
 
 若要尋找包含錯誤的 PE 憑證檔案，開啟**命令提示字元中**，並設定環境變數，名為`APPXSIP_LOG`設為 1 的值。
 
@@ -157,7 +157,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-在**主控台視窗**中，會顯示包含錯誤的 PE 憑證的檔案的相關資訊。 例如：
+在**主控台視窗**中，會顯示包含錯誤的 PE 憑證檔案的相關資訊。 例如：
 
 ```
 ...

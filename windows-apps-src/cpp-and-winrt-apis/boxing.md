@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、boxing、純量、數值
 ms.localizationpriority: medium
 ms.openlocfilehash: 7496725d84339de5e318ee6c00aebefb204af751
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467391"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505817"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing 和 unboxing 純量數值到使用 C++/WinRT 的 IInspectable 
  
@@ -22,7 +22,7 @@ Windows 執行階段 (WinRT) 中，[**IInspectable 介面**](/windows/desktop/ap
 
 換言之，預期 **IInspectable** 的函示可以傳遞任何執行階段類別的執行個體。 但您無法直接將純量數值，例如數字或文字值，傳遞至這項函式。 而是需要將純量數值包裝於參考類別物件中。 該包裝處理程序稱為*boxing*值。
 
-[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供[**winrt:: box_value**](/uwp/cpp-ref-for-winrt/box-value)函式，它會將純量數值到**IInspectable**傳回被框的值。 針對 unboxing **IInspectable**返回純量數值，有 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
+[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)提供[**winrt:: box_value**](/uwp/cpp-ref-for-winrt/box-value)函式，它會將純量數值到**IInspectable**傳回 boxed 的值。 針對 unboxing **IInspectable**返回純量數值，有 [**winrt::unbox_value**](/uwp/cpp-ref-for-winrt/unbox-value) 和 [**winrt::unbox_value_or**](/uwp/cpp-ref-for-winrt/unbox-value-or) 函式。
 
 ## <a name="examples-of-boxing-a-value"></a>Boxing 值的範例
 [**LaunchActivatedEventArgs::Arguments**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.Arguments) 存取子函式傳回[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)，即為純量數值。 我們可以 box 該 **hstring** 值，並將它傳遞至預期 **IInspectable** 的函式，如下所示。

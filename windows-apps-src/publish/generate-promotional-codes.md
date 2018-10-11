@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 促銷代碼, 促銷碼, 預付碼, 預付代碼
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4469674"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505747"
 ---
 # <a name="generate-promotional-codes"></a>產生促銷代碼
 
@@ -24,7 +24,7 @@ ms.locfileid: "4469674"
 
 每個促銷碼都有對應獨特可兌換 URL，客戶可以按一下才能兌換代碼，並從 Microsoft Store 安裝您的應用程式或附加元件。  請注意，您的應用程式必須通過 [應用程式認證程序](the-app-certification-process.md)的最終發佈階段，客戶才能兌換促銷碼以安裝它。
 
-您可以產生單一用途代碼 （並發佈給每個客戶的其中一個），或者您可以選擇產生的程式碼可以用多次藉由指定的客戶數目。
+您可以產生單一用途代碼 （並發佈給每個客戶的其中一個），或者您可以選擇產生的程式碼可以使用多次所指定的客戶數目。
 
 > [!TIP]
 > 您可以使用[目標式推播通知](send-push-notifications-to-your-apps-customers.md)散發促銷代碼給特定客戶區隔。 當您這樣做，請務必使用允許多位客戶使用相同代碼的促銷碼。
@@ -40,7 +40,7 @@ ms.locfileid: "4469674"
 -   您必須遵循[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中定義的需求，包括小節 **3k。促銷碼**。
 
 > [!NOTE]
-> 您可以使用促銷碼，即使您的應用程式無法使用時的客戶 (也就是，如果您選取**推出此產品，但不是在市集中搜尋供****停止下載數使用： 擁有直接連結的任何客戶可以看到產品的市集清單，但它們，才能下載已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置**您的提交[可搜尋性 \](choose-visibility-options.md#discoverability) ] 區段中選項)。 使用此選項，客戶必須是在 Windows 10 （包括 Xbox） 上，才能取得您的產品具備促銷碼。
+> 您可以使用促銷碼，即使您的應用程式無法使用給客戶 (也就是，如果您已選取**推出此產品，但供不在市集中搜尋**與停止取得 **： 擁有直接連結的任何客戶可以看到產品的市集清單，但它們，才能下載已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置**您的提交[可搜尋性 \](choose-visibility-options.md#discoverability) ] 區段中選項)。 使用此選項，客戶必須是在 Windows 10 （包括 Xbox） 上，才能取得您的產品具備促銷碼。
 
 
 ## <a name="order-promotional-codes"></a>訂購促銷碼
@@ -56,7 +56,7 @@ ms.locfileid: "4469674"
     -   指定訂單的名稱。 您可以使用這個名稱，在檢閱您的促銷碼使用資料時區分不同代碼的訂購。
     -   選取訂單類型。 您可以選擇產生一組每個可以使用一次的促銷碼，或者您可以選擇產生一個可以多次使用的促銷碼。
     -   指定要訂購的代碼數目 (如果產生一組代碼)，或代碼可兌換的次數 (如果產生一組代碼供多次使用)。
-    -   指定促銷碼應生效的時間。 若要選擇特定的開始日期和時間，請清除 [**代碼會立即生效**] 核取方塊。 否則，代碼會立即生效 （雖然您的產品必須先完成發行程序客戶可以使用程式碼的順序）。
+    -   指定促銷碼應生效的時間。 若要選擇特定的開始日期和時間，請清除 [**代碼會立即生效**] 核取方塊。 否則，代碼會立即生效 （雖然您的產品必須已完成發行程序客戶可以使用程式碼的順序）。
     -   指定促銷碼過期的時間。 若要選擇早於 6 個月的特定到期日期和時間，請清除 [**代碼會在 6 個月之後到期**] 核取方塊。
 
 4.  按一下 [**訂購代碼**]。 您會再回到 [**促銷碼**] 頁面，您就可以在該應用程式的促銷碼摘要表中看到新訂單。
@@ -92,7 +92,7 @@ ms.locfileid: "4469674"
 
 ## <a name="code-redemption-user-experience"></a>代碼兌換使用者經驗
 
-促銷碼 （或其可兌換的 URL） 發佈給客戶後，他們可以按一下免費取得產品的 URL。 按一下可兌換 URL 將會啟動經驗證的 **\[兌換您的代碼\]** 頁面，網址：<https://account.microsoft.com/billing/redeem>。 這個頁面包含使用者即將兌換應用程式的描述。 如果客戶未使用其 Microsoft 帳戶登入，可能會提示他們登入。 您的客戶也可以造訪 <https://account.microsoft.com/billing/redeem> 並直接輸入代碼。
+促銷碼 （或其可兌換 URL） 發佈給客戶後，他們可以按一下免費取得產品的 URL。 按一下可兌換 URL 將會啟動經驗證的 **\[兌換您的代碼\]** 頁面，網址：<https://account.microsoft.com/billing/redeem>。 這個頁面包含使用者即將兌換應用程式的描述。 如果客戶未使用其 Microsoft 帳戶登入，可能會提示他們登入。 您的客戶也可以造訪 <https://account.microsoft.com/billing/redeem> 並直接輸入代碼。
 
 > [!IMPORTANT]
 > 我們建議您在產品完成發行程序之前，不要將促銷碼散發給您的客戶 (即使您已選取 [**在市集推出此產品，但不供搜尋**])。 如果客戶嘗試使用尚未發行的產品的促銷碼，將會看到錯誤。

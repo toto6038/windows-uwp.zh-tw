@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462539"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507304"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -257,7 +257,7 @@ CI_MyUWPApp_1.1.2501.0
 
 接著，使用本指南設定 HockeyApp 連線：[如何使用 HockeyApp 搭配 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS)](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)。 您可以使用您的 Microsoft 帳戶、社交媒體帳戶或電子郵件地址來設定您的 HockeyApp 帳戶。 免費方案隨附兩個 App、一位擁有者，而且沒有資料限制。
 
-然後，您可以建立 HockeyApp app，以手動方式，或上傳現有的應用程式套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
+然後，您可以建立 HockeyApp app，以手動方式或上傳現有的應用程式套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
 
 若要使用現有的應用程式套件檔案，新增建置步驟中，並設定該建置步驟的二進位檔案路徑參數。 
 
@@ -287,7 +287,7 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-這將會產生可提交至 microsoft Store 上傳的檔案。
+這將會產生可提交至市集的上傳檔案。
 
 
 #### <a name="configure-automatic-store-submission"></a>設定自動Microsoft Store提交

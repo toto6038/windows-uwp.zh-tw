@@ -12,17 +12,17 @@ keywords: Windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4470263"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506844"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>您已封裝的傳統型應用程式整合至 Windows 10
 
-若要將您已封裝的傳統型應用程式與 Windows 10 整合預先定義的方式使用擴充功能。
+使用擴充功能來整合您已封裝的傳統型應用程式與 Windows 10 預先定義的方式。
 
-例如，使用延伸模組建立防火牆例外，讓您的應用程式預設的應用程式檔案類型，或開始畫面磚指向您的應用程式的已封裝版本。 若要使用延伸模組，您只需要將一些 XML 加入您應用程式的封裝資訊清單檔案。 不需要程式碼。
+例如，使用延伸模組建立防火牆例外、 檔案類型的預設應用程式，讓您的應用程式或開始畫面磚指向您的應用程式的已封裝版本。 若要使用延伸模組，您只需要將一些 XML 加入您應用程式的封裝資訊清單檔案。 不需要程式碼。
 
 本主題會描述這些延伸模組，以及您可以使用他們來執行的工作。
 
@@ -31,7 +31,7 @@ ms.locfileid: "4470263"
 協助使用者轉換至您已封裝版本的應用程式。
 
 * [將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式](#point)
-* [請開啟檔案，而非您傳統型應用程式的已封裝的應用程式](#make)
+* [請開啟檔案，而非您傳統型應用程式已封裝應用程式](#make)
 * [將您已封裝的應用程式與一組檔案類型產生關聯](#associate)
 * [將選項新增至具有特定檔案類型的檔案操作功能表](#add)
 * [使用 URL 直接開啟特定類型的檔案](#open)
@@ -94,9 +94,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 <a id="make" />
 
-### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>請開啟檔案，而非您傳統型應用程式的已封裝的應用程式
+### <a name="make-your-packaged-application-open-files-instead-of-your-desktop-app"></a>請開啟檔案，而非您傳統型應用程式已封裝應用程式
 
-您可以確保使用者開啟特定類型的檔案，而非您的應用程式的傳統型版本的預設開啟新的已封裝應用程式。
+您可以確保使用者開啟特定類型的檔案，而非開啟您的應用程式的傳統型版本的預設開啟新的已封裝應用程式。
 
 若要完成這項工作，您可以指定您想要繼承檔案關聯的每個應用程式的[程式設計識別碼 (ProgID)](https://msdn.microsoft.com/library/windows/desktop/cc144152.aspx)。
 
@@ -156,7 +156,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>將您已封裝的應用程式與一組檔案類型產生關聯
 
-您可以將您已封裝的應用程式關聯的檔案類型副檔名。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [**開啟方式**] 選項，您的應用程式會出現在建議清單中。
+您可以將您已封裝的應用程式關聯的檔案類型副檔名。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [**開啟**] 選項，您的應用程式會出現在建議清單。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -245,8 +245,8 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |類別 | 總是 ``windows.fileTypeAssociation``。
 |名稱 |您應用程式的唯一識別碼。 |
 |Verb |在檔案總管操作功能表中出現的名稱。 此字串可使用 ```ms-resource``` 進行當地語系化。|
-|Id |指令動詞的唯一識別碼。 如果您的應用程式是 UWP app，這被傳遞至您的應用程式，做為其啟用事件引數的一部分讓它能夠適當處理使用者的選擇。 如果您的應用程式為完全信任的已封裝應用程式，它參數會改為接收 （請參閱下一個項目符號）。 |
-|Parameters |與指令動詞關聯的引數參數與值清單。 如果您的應用程式為完全信任的已封裝應用程式，這些參數會傳遞至應用程式做為事件引數，應用程式啟動時。 您可以自訂您的應用程式根據不同的啟用動詞的行為。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 如果您的應用程式是 UWP app，您無法傳送參數。 應用程式會改為接收識別碼 (請參閱上一個項目符號)。|
+|Id |指令動詞的唯一識別碼。 如果您的應用程式是 UWP 應用程式，這被傳遞至您的應用程式，做為其啟用事件引數的一部分讓它能夠適當處理使用者的選擇。 如果您的應用程式為完全信任的已封裝應用程式，該參數會改為接收 （請參閱下一個項目符號）。 |
+|Parameters |與指令動詞關聯的引數參數與值清單。 如果您的應用程式為完全信任的已封裝應用程式，這些參數會傳遞至應用程式做為事件引數，應用程式啟動時。 您可以自訂您的應用程式根據不同的啟用動詞的行為。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 如果您的應用程式是 UWP 應用程式，您無法傳送參數。 應用程式會改為接收識別碼 (請參閱上一個項目符號)。|
 |Extended |指定是否僅在使用者以滑鼠右鍵按一下檔案顯示操作功能表前按住 **Shift** 鍵，才會顯示指令動詞。 此屬性為選擇性，若未列出則其預設值為 **False** (一律顯示動詞)。 您會針對每個動詞個別指定此行為 (不包括「開啟」，其一律設定為 **False**)。|
 
 #### <a name="example"></a>範例
@@ -282,7 +282,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="open-certain-types-of-files-directly-by-using-a-url"></a>使用 URL 直接開啟特定類型的檔案
 
-您可以確保使用者開啟特定類型的檔案，而非您的應用程式的傳統型版本的預設開啟新的已封裝應用程式。
+您可以確保使用者開啟特定類型的檔案，而非開啟您的應用程式的傳統型版本的預設開啟新的已封裝應用程式。
 
 #### <a name="xml-namespaces"></a>XML 命名空間
 
@@ -307,7 +307,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |您應用程式的唯一識別碼。 |
-|UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您沒有設定此值，就會嘗試透過您的應用程式要使用的 URL 原因先將檔案下載到系統在本機開啟的檔案。 |
+|UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您沒有設定此值，嘗試透過您的應用程式要使用的 URL 原因先將檔案下載系統在本機開啟的檔案。 |
 |Parameters |選用參數。 |
 |FileType |相關的檔案副檔名。 |
 
@@ -344,7 +344,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="create-firewall-exception-for-your-app"></a>為您的應用程式建立防火牆例外
 
-如果您的應用程式需要透過連接埠進行通訊，您可以新增您應用程式至清單的防火牆例外狀況。
+如果您的應用程式需要透過連接埠進行通訊，您可以新增到清單應用程式的防火牆例外狀況。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -458,7 +458,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 協助使用者組織您的檔案，並以熟悉的方式與他們互動。
 
-* [定義當使用者選取和同時開啟多個檔案時，您的應用程式的行為](#define)
+* [定義使用者選取和同時開啟多個檔案時，您的應用程式的運作方式](#define)
 * [在檔案總管中以縮圖影像顯示檔案內容](#show)
 * [在檔案總管的預覽窗格中顯示檔案內容](#preview)
 * [讓使用者在檔案總管中使用種類欄位群組檔案](#enable)
@@ -467,7 +467,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 <a id="define" />
 
-### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定義當使用者選取和同時開啟多個檔案時，您的應用程式的行為
+### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定義使用者選取和同時開啟多個檔案時，您的應用程式的運作方式
 
 指定當使用者同時開啟多個檔案時，您的應用程式的行為。
 
@@ -504,8 +504,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 已封裝的傳統型應用程式具有與一般傳統型應用程式相同的三個選項。
 
  * ``Player``： 您的應用程式會啟動一次。 所有選取的檔案會傳遞至您的應用程式，做為引數參數。
- * ``Single``： 您的應用程式會啟動一次針對第一個選取的檔案。 系統會忽略其他的檔案。
- * ``Document``： 針對每個所選檔案啟用您的應用程式的新，個別執行個體。
+ * ``Single``： 您的應用程式會啟動一次，針對第一個選取的檔案。 系統會忽略其他的檔案。
+ * ``Document``： 針對每個所選檔案啟用您的應用程式的新的另一個執行個體。
 
  您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如：您可能會想要在 *Documents* 模式中開啟 *「文件」*，以及在 *Player* 模式中開啟 *「影像」*。
 
@@ -849,7 +849,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 <a id="start" />
 
-## <a name="start-your-application-in-different-ways"></a>以不同方式啟動您的應用程式
+## <a name="start-your-application-in-different-ways"></a>以不同的方式啟動您的應用程式
 
 * [使用通訊協定啟動您的應用程式](#protocol)
 * [透過使用別名啟動您的應用程式](#alias)
@@ -1088,7 +1088,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 如果您的應用程式已開啟，當使用者安裝更新給它，就會關閉應用程式。
 
-如果您想要完成更新之後重新啟動該應用程式，請在每個您想要重新啟動的處理序中呼叫[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
+如果您想要完成更新之後重新啟動該應用程式，請在您想要重新啟動每個處理程序呼叫[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
 
 在您的應用程式中每個使用中視窗收到[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)訊息。 到目前為止，您的應用程式可以呼叫一次以更新命令列，如有必要的[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
 
@@ -1105,13 +1105,13 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 與其他應用程式整合，啟動其他處理程序，或共用資訊。
 
-* [讓您的應用程式作為列印目標支援應用程式中顯示列印](#printing)
+* [讓您的應用程式會顯示為中支援的應用程式的列印目標列印](#printing)
 * [與其他 Windows 應用程式共用字型](#fonts)
 * [從通用 Windows 平台 (UWP) 應用程式中啟動 Win32 處理程序](#win32-process)
 
 <a id="printing" />
 
-### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>讓您的應用程式作為列印目標支援應用程式中顯示列印
+### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>讓您的應用程式會顯示為中支援的應用程式的列印目標列印
 
 當使用者想要從另一個應用程式，例如記事本列印資料時，您可以讓您的應用程式作為列印目標應用程式的可用列印目標清單中出現。
 

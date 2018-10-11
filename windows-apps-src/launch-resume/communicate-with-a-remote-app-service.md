@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，連接裝置、 遠端系統、 rome、 專案 rome、 背景工作、 應用程式服務
 ms.localizationpriority: medium
 ms.openlocfilehash: 72a8a02d14a4fa9287c987150a526745b294b65f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463600"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507543"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>與遠端 App 服務通訊
 
@@ -24,7 +24,7 @@ ms.locfileid: "4463600"
 ## <a name="set-up-the-app-service-on-the-host-device"></a>設定主機裝置上的 App 服務
 您必須已經在遠端裝置上安裝 app 服務的提供者，才能在該裝置上執行該 app 服務。 本指南會使用 [Windows 通用範例儲存機制](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)上的 CSharp 版[隨機數字產生器應用程式服務](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)。 如需如何撰寫您自己的 app 服務的指示，請參閱[建立和取用 App 服務](how-to-create-and-consume-an-app-service.md)。
 
-不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案 (在範例中名為「AppServicesProvider」)，然後選取其 _Package.appxmanifest_ 檔案。 以滑鼠右鍵按一下，然後選取 **\[檢視程式碼\]** 以檢視檔案的完整內容。 建立**Extensions**元素內的主要的**應用程式**元素 （或如果已經存在，請尋找它）。 接著，建立**擴充功能**來定義為應用程式服務專案，並參考其父專案。
+不論您正在使用現成的應用程式服務或要撰寫自己的，都需要進行一些編輯，才能讓服務與遠端系統相容。 在 Visual Studio 中，移至應用程式服務提供者的專案 (在範例中名為「AppServicesProvider」)，然後選取其 _Package.appxmanifest_ 檔案。 以滑鼠右鍵按一下，然後選取 **\[檢視程式碼\]** 以檢視檔案的完整內容。 建立**Extensions**元素內的主要的**應用程式**元素 （或如果已經存在，請尋找它）。 接著，建立**擴充功能**來定義為應用程式服務的專案，並參考其父專案。
 
 ``` xml
 ...
@@ -36,7 +36,7 @@ ms.locfileid: "4463600"
 ...
 ```
 
-旁邊**AppService**元素中，新增**SupportsRemoteSystems**屬性：
+**AppService**項目旁邊新增**SupportsRemoteSystems**屬性：
 
 ``` xml
 ...
@@ -44,7 +44,7 @@ ms.locfileid: "4463600"
 ...
 ```
 
-若要使用此**uap3**命名空間中的元素，您必須在資訊清單檔案的頂端新增命名空間定義，如果還沒有有。
+若要使用此**uap3**命名空間中的項目，您必須在資訊清單檔案的頂端新增命名空間定義，如果尚未有。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

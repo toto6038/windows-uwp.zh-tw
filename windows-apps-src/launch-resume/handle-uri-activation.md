@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c7286493e08fd62ad4b207d0e014dd4fbd5318
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463954"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506873"
 ---
 # <a name="handle-uri-activation"></a>處理 URI 啟用
 
@@ -31,7 +31,7 @@ ms.locfileid: "4463954"
 這些步驟示範如何登錄自訂 URI 配置名稱 `alsdk://`，以及如何在使用者啟動 `alsdk://` URI 時啟用您的 App。
 
 > [!NOTE]
-> 在 UWP app 中，特定的 Uri 和副檔名被保留給使用內建的應用程式和作業系統。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 請在[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)中，參閱 URI 配置依字母排列的檔案類型清單，以了解遭保留或禁止而不能為 UWP app 登錄的檔案類型。
+> 在 UWP app 中，特定的 Uri 和副檔名由內建的應用程式和作業系統使用的保留。 如果嘗試以保留的 URI 或副檔名登錄 app，該嘗試將會被忽略。 請在[保留 URI 配置名稱和檔案類型](reserved-uri-scheme-names.md)中，參閱 URI 配置依字母排列的檔案類型清單，以了解遭保留或禁止而不能為 UWP app 登錄的檔案類型。
 
 ## <a name="step-1-specify-the-extension-point-in-the-package-manifest"></a>步驟 1：在封裝資訊清單中指定擴充點
 
@@ -138,7 +138,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 ```
 
 > [!NOTE]
-> 當透過通訊協定協定 」 啟動，請確定 [返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是 app 先前內容。
+> 當透過通訊協定協定 」 啟動，請確定返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是應用程式先前的內容。
 
 下列程式碼透過其 URI 以程式設計方式啟動 App：
 
@@ -159,10 +159,10 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 任何 app 或網站都可以使用您的 URI 配置名稱，包含惡意 app 或網站。 因此您透過 URI 取得的任何資料都可能來自不受信任的來源。 建議您絕對不要採用透過 URI 接收的參數來執行永久動作。 例如，URI 參數可以用來啟動 app 進入使用者的帳戶頁面，但是建議您絕對不要使用它們直接修改使用者的帳戶。
 
 > [!NOTE]
-> 如果您正在建立新的 URI 配置名稱的您的應用程式，請務必遵循[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550)中的指導方針。 這樣可確保您的名稱符合 URI 配置的標準。
+> 如果您正在建立新的 URI 配置名稱為您的應用程式，請務必遵循[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550)中的指引。 這樣可確保您的名稱符合 URI 配置的標準。
 
 > [!NOTE]
-> 當透過通訊協定協定 」 啟動，請確定 [返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是 app 先前內容。
+> 當透過通訊協定協定 」 啟動，請確定返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是應用程式先前的內容。
 
 建議 app 針對每個開啟新 URI 目標的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。
 

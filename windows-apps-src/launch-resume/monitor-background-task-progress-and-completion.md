@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: ef57c6293b37f91653b5f825881b1446e38a824b
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467437"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508704"
 ---
 # <a name="monitor-background-task-progress-and-completion"></a>監視背景工作進度和完成
 
@@ -38,7 +38,7 @@ ms.locfileid: "4467437"
 ## <a name="create-an-event-handler-to-handle-completed-background-tasks"></a>建立事件處理常式，以處理完成的背景工作。
 
 ### <a name="step-1"></a>步驟 1
-建立事件處理常式函式，以處理完成的背景工作。 這個程式碼需要遵循特定的配置， [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)物件和[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)物件。
+建立事件處理常式函式，以處理完成的背景工作。 這個程式碼需要遵循特定的配置，採用[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803)物件和[**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778)物件。
 
 針對**OnCompleted**背景工作事件處理常式方法使用下列配置。
 

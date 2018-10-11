@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4462649"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506342"
 ---
 # <a name="enterprise"></a>企業版
 
@@ -23,9 +23,9 @@ ms.locfileid: "4462649"
 
 **注意：** 本文的適用對象是撰寫企業 UWP app 的開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
 
-有顯示一些已建置在其中顯示此簡報[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)時已大幅提升這個應用程式的版本
+有顯示已在建置期間此簡報[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)其中顯示改進的一些這個應用程式的版本
 
-幾件事值得最高階呼叫︰
+件事值得事先在前端呼叫：
 
 ## <a name="whats-new-for-enterprise-applications"></a>什麼是企業應用程式的新功能
 
@@ -33,7 +33,7 @@ ms.locfileid: "4462649"
 
 > [!div class="checklist"]
 > * [Windows Template Studio](#template-studio)
-> * [若要建立桌面樣式 Ui 控制項](#desktop-style-UI)
+> * [若要建立桌面樣式的 Ui 控制項](#desktop-style-UI)
 > * [控制項，以支援企業案例](#enterprise)
 > * [Windows UI 文件庫](#UI-library)
 > * [傳統型應用程式中的 UWP 控制項](#xaml-islands)
@@ -53,7 +53,7 @@ Windows Template Studio 是 Visual Studio 2017 擴充功能，加速建立新的
 
 <a id="desktop-style-UI" />
 
-### <a name="controls-to-create-desktop-style-uis"></a>若要建立桌面樣式 Ui 控制項
+### <a name="controls-to-create-desktop-style-uis"></a>若要建立桌面樣式的 Ui 控制項
 
 我們已發行新的 UWP XAML 控制項，填滿傳統桌面應用程式 UI 和 UWP UI 之間的差距。
 
@@ -84,15 +84,15 @@ Windows UI 文件庫是一組提供控制項與其他使用者介面元素用於
 
 ### <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
-Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以提升外觀、 感覺和功能的最新的 Windows 10 UI 功能只會透過 UWP 控制項，例如 Windows Ink 和支援 Fluent Design 系統控制項與您現有的傳統型應用程式。 此功能稱為 XAML 群島。
+Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以增強的外觀、 感覺和最新的 Windows 10 UI 功能只會透過 UWP 控制項，例如 Windows Ink 和支援 Fluent Design 系統控制項與您現有的傳統型應用程式的功能。 這項功能稱為 XAML 群島。
 
-請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
+[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)，請參閱。
 
 <a id="standard" />
 
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
-.NET Standard 包含超過 20000 更多的 Api，比.NET Standard 1.x。 這可讓因此更容易移轉現有的.NET Framework 程式庫，然後將它們使用跨不同包括您的 UWP 應用程式的.NET 應用程式。
+.NET Standard 包含超過 20000 更多的 Api，比.NET Standard 1.x。 這可讓因此更容易移轉現有的.NET Framework 程式庫，然後將它們使用跨不同.NET 應用程式，包括您的 UWP 應用程式。
 
 ![net 標準](images/dot-net-standard-project-template.png)
 
@@ -110,9 +110,9 @@ Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應�
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是提供現代化的封裝體驗，以所有 Windows 應用程式的 Windows 應用程式套件格式。 MSIX 封裝格式會保留現有的應用程式套件的功能，並安裝除了啟用新的現代化封裝及部署功能，Win32、 WPF 及 Windows Forms 應用程式的檔案。
+MSIX 是提供現代化的封裝體驗，以所有 Windows 應用程式的 Windows 應用程式套件格式。 MSIX 封裝格式會保留現有的應用程式套件的功能，並安裝除了啟用新的現代封裝及部署功能，Win32、 WPF 及 Windows Forms 應用程式的檔案。
 
-MSIX 是安全、 安全且可靠，內建的封裝格式根據.msi、.appx、 APP-V 和 ClickOnce 安裝技術組合。
+MSIX 是安全、 安全且可靠，內建的封裝格式根據.msi、.appx、 APP-V 以及 ClickOnce 安裝技術組合。
 
 ![MSIX 圖示](images/WinUI_MSIX_2col_740x417.png)
 
@@ -126,8 +126,8 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 | 主題 | 描述 |
 |-------|-------------|
-| [安全開發 Windows app 的簡介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 它涵蓋大範圍的主題，並主要目的是協助 app 設計人員充分更清楚地了解可快速且簡單地讓建立通用 Windows 平台 app 的 Windows 功能。 |
-| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼是驗證現有的認證，並建立的裝置特定認證，生物特徵辨識或 PIN 式使用者手勢所保護，導致同時便利和高度安全的體驗。 |
+| [安全開發 Windows app 的簡介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 它涵蓋大範圍的主題，並主要目的是協助更清楚地了解可快速且簡單地讓建立通用 Windows 平台應用程式的 Windows 功能的應用程式設計師。 |
+| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼是驗證現有的認證，以及建立的裝置特定認證生物特徵辨識或 PIN 式使用者手勢所保護導致同時方便和高度安全的體驗。 |
 | [密碼編譯](https://msdn.microsoft.com/library/windows/apps/mt270191) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括從如何輕鬆加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰，以及使用 MAC、雜湊和簽章這類進階主題。 |
 | [Windows 資訊保護 (WIP)](wip-hub.md) | 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。 |
 
@@ -138,7 +138,7 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 | 主題 | 描述 |
 |-------|-------------|
 | [資料繫結概觀](https://msdn.microsoft.com/library/windows/apps/mt269383) | 本主題示範如何將控制項 （或其他 UI 元素） 繫結到單一項目，或將項目控制項繫結至通用 Windows 平台 (UWP) 應用程式中的項目集合。 此外，還會示範如何控制項目的呈現、根據選擇來實作詳細資料檢視，以及轉換資料以供顯示。 |
-| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | 對大型資料集執行複雜查詢，可使用支援 UWP 的 Entity Framework 7 進行大幅簡化。 在本逐步解說，您將建置對使用 Entity Framework 本機 SQLite 資料庫執行基本資料存取的 UWP 應用程式。 |
+| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | 對大型資料集執行複雜查詢，可使用支援 UWP 的 Entity Framework 7 進行大幅簡化。 在這個逐步解說中，您將建置 UWP 應用程式，以執行對本機 SQLite 資料庫使用 Entity Framework 的基本資料存取。 |
 | [SQLite 本機資料庫](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | 這個影片是使用 SQLite 的完整開發人員指南，而 SQLite 是本機 app 資料庫的建議方案。 請瀏覽 [SQLite](https://www.sqlite.org/download.html) 以下載 UWP 的最新版本，或使用 Windows 10 SDK 已隨附的版本。 |
 
 ## <a name="networking-and-data-serialization"></a>網路功能和資料序列化
@@ -187,7 +187,7 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 在此處出現簡介文字。
 
-動作-與交談處理器和/或卡爾一起取得更多企業為主的範例。
+動作-通話處理器和/或卡爾一起取得更多企業為主的範例。
 
 | 主題 |  說明 |
 |------ |--------------|

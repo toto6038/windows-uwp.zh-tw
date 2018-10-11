@@ -11,11 +11,11 @@ keywords: windows 10，uwp，背景工作
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
 ms.openlocfilehash: 5879977662dc2bd609d09e5fe53fc2a2f0b9180f
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4467720"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4505920"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>建立及註冊同處理序的背景工作
 
@@ -72,7 +72,7 @@ ms.locfileid: "4467720"
 
 ## <a name="place-your-background-activity-code-in-onbackgroundactivated"></a>將您的背景活動程式碼放在 OnBackgroundActivated() 中
 
-將您的背景活動程式放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)以回應時，它就會引發背景觸發程序。 **OnBackgroundActivated**可以視為如同[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)。 此方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)參數，其中包含**Run**方法提供的所有項目。 例如，在 App.xaml.cs:
+將您的背景活動程式放在[OnBackgroundActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onbackgroundactivated.aspx)來回應時就會觸發的背景觸發程序中。 **OnBackgroundActivated**可以視為如同[IBackgroundTask.Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx?f=255&MSPPError=-2147217396)。 此方法具有[BackgroundActivatedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.activation.backgroundactivatedeventargs.aspx)參數，其中包含**Run**方法提供的所有項目。 例如，在 App.xaml.cs:
 
 ``` cs
 using Windows.ApplicationModel.Background;

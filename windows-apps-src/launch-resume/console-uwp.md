@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4461515"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4507083"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>建立通用 Windows 平台主控台應用程式
 
@@ -22,7 +22,7 @@ ms.locfileid: "4461515"
 
 從 Windows 10，版本 1803 起，您可以撰寫 C + + /winrt 或 C + + /CX UWP 主控台應用程式執行於主控台視窗中，例如 DOS 或 PowerShell 主控台視窗。 主控台應用程式使用主控台視窗輸入與輸出，並可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，例如**printf**以及**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可從 [開始] 功能表中，啟動 UWP 主控台應用程式，雖然您一般會啟動它們從命令列。
 
-若要查看作用中的其中一個，以下是有關建立 UWP 主控台應用程式的影片。
+若要查看動作中的其中一個，以下是如何建立 UWP 主控台應用程式的影片。
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 

@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b731910f53a6152554b74e946374234b827f4a86
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4463496"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506417"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -194,7 +194,7 @@ ms.locfileid: "4463496"
         使用索引標籤的時機：
 
         - 您想要保留瀏覽歷程記錄和頁面的狀態。
-        - 您預期使用者會頻繁索引標籤之間切換。
+        - 您預期使用者會頻繁的索引標籤之間切換。
 
 :::row-end:::
 
@@ -208,7 +208,7 @@ ms.locfileid: "4463496"
         Displays a vertical list of links to top-level pages. Use when:
         
         - 頁面位於最上層。
-        - 有許多瀏覽項目 (超過 5)
+        - 有許多的瀏覽項目 (超過 5)
         - 您預期使用者不會在頁面之間頻繁切換。
         
 :::row-end:::

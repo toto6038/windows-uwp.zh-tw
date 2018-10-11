@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 17e5aa64fff2c42974dbb78ce3cdcff1ca414946
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4472788"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4508575"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -29,7 +29,7 @@ ms.locfileid: "4472788"
 
 您的電腦必須符合下列需求：
 
-CPU （這些設定中，如果有的話，可以啟用在 BIOS 中）
+CPU （這些設定，如果有的話，可以啟用在 BIOS 中）
 
 -   硬體協助虛擬化 （[檢查的相容性](https://www.microsoft.com/download/details.aspx?id=592)）。
 -   第二層位址轉譯 (SLAT)。
@@ -68,7 +68,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在模擬器中執行的應用程式，只要選取從 Visual Studio 中的 [**執行**] 下拉式清單下功能表的模擬的裝置。
+若要在模擬器中執行的應用程式，只是從 Visual Studio 中**執行**下拉式功能表中選取模擬的裝置。
 
 ![可以用於解析度、大小及記憶體的模擬器](images/em-list.png)
 

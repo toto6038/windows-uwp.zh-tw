@@ -10,16 +10,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
-ms.sourcegitcommit: 49aab071aa2bd88f1c165438ee7e5c854b3e4f61
+ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "4468707"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "4506948"
 ---
 # <a name="enumerating-point-of-service-devices"></a>列舉服務點裝置
 本節中，您會了解如何 [定義裝置選取器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)，用來查詢提供給系統的裝置並用此選取器使用其中一項下列方法列舉服務點裝置：
 
-**方法 1:**[使用裝置選擇器](#method-1:-use-a-device-picker)
+**方法 1:**[使用的裝置選擇器](#method-1:-use-a-device-picker)
 <br/>
 顯示的裝置選擇器 UI，並讓使用者選擇連接的裝置。 這個方法會處理更新清單，當裝置連接並移除，並會更簡單、 更安全，比其他方法。
 
@@ -32,7 +32,7 @@ ms.locfileid: "4468707"
 ## <a name="define-a-device-selector"></a>定義裝置選取器
 裝置選取器可讓您在列舉裝置時限制要搜尋的裝置。  這可讓您只獲得相關結果，並減少列舉所需的裝置所花費的時間。
 
-您可以使用**GetDeviceSelector**方法適用於您正在尋找的裝置選取器，取得該類型的裝置類型。 例如，使用[PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector)會提供您選取器以列舉所有[PosPrinters](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)附加至系統，包括 USB、 網路和藍牙 POS 印表機。
+您可以使用**GetDeviceSelector**方法適用於您正在尋找的裝置選取器，取得該類型的裝置類型。 例如，使用[PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector)會提供您選取器以列舉所有[PosPrinters](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter)連接到系統，包括 USB、 網路和藍牙 POS 印表機。
 
 ```Csharp
 using Windows.Devices.PointOfService;
@@ -63,7 +63,7 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 
 [DevicePicker](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker)類別可讓您顯示選擇器飛出視窗，其中包含一份使用者可從中選擇的裝置。 您可以使用[篩選器](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.filter)屬性以選擇要顯示在選擇器中的裝置類型。 這個屬性是類型[DevicePickerFilter](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter)。 您可以新增裝置類型篩選器使用[SupportedDeviceClasses](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceclasses)或[SupportedDeviceSelectors](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepickerfilter.supporteddeviceselectors)屬性。
 
-當您準備要顯示裝置選擇器時，您可以呼叫[PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync)方法，這將會顯示在選擇器 UI 並傳回所選取的裝置。 您將需要指定[Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect)決定飛出視窗的顯示位置。 這個方法會傳回[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)物件，因此若要使用它的服務點 Api，您將需要使用您想要的特定裝置類別**FromIdAsync**的方法。 您將[DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)屬性傳遞做為方法的*deviceId*參數，並取得做為傳回值的裝置類別的執行個體。
+當您準備好以顯示裝置選擇器時，您可以呼叫[PickSingleDeviceAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicepicker.picksingledeviceasync)方法，這將會顯示在選擇器 UI，並傳回所選取的裝置。 您將需要指定飛出視窗的顯示位置會決定[Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect) 。 這個方法會傳回[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)物件，因此若要使用它的服務點 Api，您將需要使用您想要的特定裝置類別**FromIdAsync**的方法。 您將[DeviceInformation.Id](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.id)屬性傳遞做為方法的*deviceId*參數，並取得做為傳回值的裝置類別的執行個體。
 
 下列程式碼片段： 建立**DevicePicker**，新增條碼掃描器篩選器，具有使用者挑選一個裝置，並接著會建立基礎的裝置識別碼的**BarcodeScanner**物件：
 
@@ -83,7 +83,7 @@ private async Task<BarcodeScanner> GetBarcodeScanner()
 
 若要取得的服務點裝置的最簡單方式是使用**GetDefaultAsync**取得服務點裝置類別中的第一個可用裝置。 
 
-下列範例說明如何使用[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync)適用於[BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner)。 程式碼撰寫模式則是類似的所有服務點裝置類別。
+下列範例說明[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync)用於[BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner)。 程式碼撰寫模式則是類似的所有服務點裝置類別。
 
 ```Csharp
 using Windows.Devices.PointOfService;
@@ -94,7 +94,7 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 > [!CAUTION]
 > 因為它可能會從一個工作階段將不同的裝置，到下**GetDefaultAsync**必須小心使用。 許多事件可能影響這個列舉，導致第一個可用裝置不同，包括： 
 > - 變更連接到您電腦的相機 
-> - 變更 in Point of 服務裝置連接到您電腦
+> - 變更連接到您電腦的服務裝置 in Point of
 > - 在您網路上可用的 [網路連接服務點裝置中變更
 > - 在您的電腦的範圍內的藍芽服務點裝置中變更 
 > - 服務點設定的變更 
@@ -130,7 +130,7 @@ foreach (DeviceInformation devInfo in deviceCollection)
 
 ## <a name="method-4-enumerate-and-watch"></a>方法 4： 列舉並監看
 
-一個功能更強大且彈性的列舉裝置方法是建立一個 [DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)。  裝置監看員動態列舉裝置，如此一來，如果在初始列舉完成之後加入、移除或變更裝置，應用程式就會收到通知。  **DeviceWatcher**可讓您偵測網路連線的裝置何時上線，藍牙裝置是否處於範圍，以及是否拔除本機連接的裝置，以便您可以在應用程式中採取適當的動作。
+一個功能更強大且彈性的列舉裝置方法是建立一個 [DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)。  裝置監看員動態列舉裝置，如此一來，如果在初始列舉完成之後加入、移除或變更裝置，應用程式就會收到通知。  **DeviceWatcher**可讓您偵測網路連線的裝置何時上線，藍牙裝置是否處於範圍，以及是否拔除本機連接的裝置，以便您可以在您的應用程式中採取適當的動作。
 
 這個範例使用上述定義建立**DeviceWatcher**的選取器，以及定義事件處理常式[新增](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.added)、[移除](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.removed)和[已更新](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.devicewatcher.updated)的通知。 您必須填寫希望對每個通知採取動作的詳細資訊。
 
