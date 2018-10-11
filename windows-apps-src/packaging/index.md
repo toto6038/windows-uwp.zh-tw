@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
 ms.openlocfilehash: ce77391fc189ef33aba3002685b0662d7cab1953
-ms.sourcegitcommit: 8e30651fd691378455ea1a57da10b2e4f50e66a0
+ms.sourcegitcommit: 933e71a31989f8063b020746fdd16e9da94a44c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "4506922"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "4529260"
 ---
 # <a name="packaging-apps"></a>封裝應用程式
 
