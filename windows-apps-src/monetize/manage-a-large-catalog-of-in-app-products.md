@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: 如果您的 app 提供大型的 app 內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。
 title: 管理大型的應用程式內產品型錄
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, app 內購買, IAP, 附加元件, 目錄, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: d3503238d701678e2dc181d89dedd30c00bf5bf4
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: fad186ed63557024fb71a6ec3c6997833afb7f4c
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689604"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613898"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的應用程式內產品型錄
 
@@ -54,7 +54,7 @@ Microsoft Store 只會使用產生的 [PurchaseResults](https://msdn.microsoft.c
 
 ## <a name="related-topics"></a>相關主題
 
-* [啟用 app 內產品購買](enable-in-app-product-purchases.md)
+* [啟用應用程式內產品購買](enable-in-app-product-purchases.md)
 * [啟用消費性 app 內產品購買](enable-consumable-in-app-product-purchases.md)
 * [Microsoft Store 範例 (示範試用版和 app 內購買)](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)
 * [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263382)

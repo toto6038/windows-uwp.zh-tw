@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: 了解如何使用 Windows.Services.Store 命名空間，來取得目前 app 及其附加元件的授權資訊。
 title: 取得應用程式和附加元件的授權資訊
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 12/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 授權, 應用程式, 附加元件, App 內購買, IAP, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 26a8ee69c291bd1b181cdc842175232a8310fd0d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 83889dce2959a3d373081808864a6b7913fb142b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689374"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613145"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的授權資訊
 
@@ -57,4 +57,4 @@ ms.locfileid: "1689374"
 * [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
 * [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

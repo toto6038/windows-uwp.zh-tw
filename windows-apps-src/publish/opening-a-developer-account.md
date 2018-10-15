@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565894"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615368"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
@@ -59,15 +59,15 @@ ms.locfileid: "4565894"
 ## <a name="additional-guidelines-for-company-accounts"></a>公司帳戶的其他指導方針
 
 > [!IMPORTANT]
-> 若要允許多個使用者存取您的開發人員中心帳戶，我們建議使用 Azure Active Directory 來指派角色給個別的使用者 （而非共用的存取權的 Microsoft 帳戶）。 每一位使用者即可使用其個別的 Azure AD 認證來登入及存取該開發人員中心帳戶。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
+> 若要允許多個使用者存取您的開發人員中心帳戶，我們建議使用 Azure Active Directory 來指派角色給個別的使用者 （而非 Microsoft 帳戶的共用存取）。 每一位使用者即可使用其個別的 Azure AD 認證來登入及存取該開發人員中心帳戶。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
 
-當建立公司帳戶時，這些指導方針可能可以協助如果多人需要存取該帳戶來登入開啟該帳戶的 Microsoft 帳戶 （而不以個別新增到開發人員中心帳戶的使用者)。
+當建立公司帳戶時，這些指導方針可能可以協助如果一個以上的人員將需要存取該帳戶來登入開啟該帳戶的 Microsoft 帳戶 （而不做為個別新增到開發人員中心帳戶的使用者)。
 
 -   使用還不屬於您或其他人的電子郵件地址建立您的 Microsoft 帳戶，例如 MyCompany_DevCenter@outlook.com。 不要在您的公司網域使用電子郵件地址，尤其是當您的公司已使用 Azure AD。 (如上文所述，您可以新增額外的使用者從您公司的 Azure AD 稍後。)
 -   將可以存取此 Microsoft 帳戶的使用者人數限制在最少。
--   設定公司的電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的人，並新增到此電子郵件地址 [Microsoft 帳戶相關聯的安全性資訊 [(https://account.microsoft.com/security)。 這可讓的所有員工在收到安全密碼傳送給此別名清單上。 如果設定通訊清單不可行，您可以將個人的電子郵件地址新增到您的安全性資訊，但該電子郵件地址的擁有者會是唯一的人可存取和共用安全的程式碼系統提示時 （例如，當有新的安全性資訊新增到 t他帳戶，或當從新的裝置存取它。）
--   使用 Microsoft 帳戶的安全性資訊新增公司電話號碼。 嘗試使用不需要延伸模組，而且主要小組成員可以存取的數字。
--   一般情況下，有開發人員使用[信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)來登入貴公司的開發人員帳戶。 所有主要小組成員都必須擁有這些信任的裝置的存取權。 這樣可減少存取帳戶時必須傳送安全密碼的需求。 每週每個帳戶可產生的代碼數目有限。
+-   設定公司的電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的人，並新增到此電子郵件地址 [Microsoft 帳戶相關聯的安全性資訊 [(https://account.microsoft.com/security)。 這可讓的所有員工在收到安全密碼傳送給此別名清單上。 如果設定通訊清單不可行，您可以將個別的電子郵件地址新增到您的安全性資訊，但該電子郵件地址的擁有者，將會是唯一的人可存取和共用安全的程式碼系統提示時 （例如，當有新的安全性資訊新增到 t他帳戶，或當從新的裝置存取它。）
+-   使用 Microsoft 帳戶的安全性資訊新增公司電話號碼。 請嘗試使用不需要延伸模組分機而且主要小組成員的數字。
+-   一般情況下，已開發人員使用[信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)登入貴公司的開發人員帳戶。 所有主要小組成員都必須擁有這些信任的裝置的存取權。 這樣可減少存取帳戶時必須傳送安全密碼的需求。 每週每個帳戶可產生的代碼數目有限。
 -   如果您需要允許從非信任的電腦存取帳戶，請將可存取的開發人員人數限制為最多 5 位。 在理想的情況下，這些開發人員應該從位於相同地理和網路位置的電腦存取帳戶。
 -   經常檢閱位於 https://account.microsoft.com/security 的公司安全性資訊，確認資訊都是最新的。
 

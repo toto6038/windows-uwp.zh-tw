@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a43f3b4c5684d93ea6986c4d1f1e4dae46c1a959
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566375"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624346"
 ---
 # <a name="guidance-for-app-package-management"></a>應用程式套件管理指導方針
 
@@ -77,7 +77,7 @@ ms.locfileid: "4566375"
 |--------------------------------------|----------------------------------------------|
 | Windows 10 (通用裝置系列) | Windows 10 (所有裝置系列)             |
 
-在範例 app 4 中，任何執行 Windows 10 的裝置均可取得 app，但舊版作業系統的客戶無法使用該 app。 通用裝置系列為目標的 UWP 套件，因為它可供任何 Windows 10 的裝置 （每個[裝置系列可用性選取項目](device-family-availability.md)）。
+在範例 app 4 中，任何執行 Windows 10 的裝置均可取得 app，但舊版作業系統的客戶無法使用該 app。 通用裝置系列為目標的 UWP 套件，因為它可供任何 Windows 10 的裝置 （每個您的[裝置系列可用性選取項目](device-family-availability.md)）。
 
 
 ## <a name="removing-an-app-from-the-store"></a>從 Microsoft Store 移除 App
@@ -99,9 +99,9 @@ ms.locfileid: "4566375"
 
 ## <a name="removing-packages-for-a-previously-supported-device-family"></a>移除先前支援之裝置系列的套件
 
-如果您移除所有套件之特定[裝置系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)，您的應用程式先前支援，系統將提示您確認這是您意圖，您可以在 \ [**套件**] 頁面上儲存變更。
+如果您移除所有套件之特定[裝置系列](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)，您的 app 先前支援，系統將提示您確認這是您意圖，您可以在 \ [**套件**] 頁面上儲存變更之前。
 
-當您發佈移除所有套件，可在您的應用程式先前支援的裝置系列上執行的提交時，新客戶將無法取得該裝置系列上的應用程式。 此後您還是可以發佈其他更新，以再次針對該裝置系列提供套件。
+當您發佈移除所有套件，可在您的 app 先前支援的裝置系列上執行的提交時，新客戶將無法取得該裝置系列上的應用程式。 此後您還是可以發佈其他更新，以再次針對該裝置系列提供套件。
 
 請注意，即使您移除支援特定裝置系列的所有套件，任何已安裝該 app 的現有客戶仍能夠使用它，且他們會取得您之後所提供的任何更新。
 
@@ -110,11 +110,11 @@ ms.locfileid: "4566375"
 
 ## <a name="adding-packages-for-windows-10-to-a-previously-published-app"></a>將適用於 Windows 10 的套件新增至先前發佈的 app
 
-如果您有應用程式在市集中只包含套件適用於 Windows 8.x 和/或 Windows Phone 8.x，而您想要更新您的 app 適用於 Windows 10、 建立新的提交和在[套件](upload-app-packages.md)階段期間新增 UWP.msixupload 或.appxupload 套件。 您的應用程式通過認證程序之後，也會適用於 Windows 10 上的客戶所提供新的下載數的 UWP 套件。
+如果您有一個 app 在市集中只包含套件適用於 Windows 8.x 和/或 Windows Phone 8.x，而您想要更新您的 app 適用於 Windows 10、 建立新的提交和[套件](upload-app-packages.md)步驟期間加入您的 UWP.msixupload 或.appxupload 套件。 您的應用程式通過認證程序之後，也會適用於 Windows 10 的客戶透過新的下載數的 UWP 套件。
 
 > [!NOTE]
 > 一旦 Windows 10 客戶取得您的 UWP 套件後，您無法讓該客戶回復到使用任何之前作業系統版本的套件。 
 
-請注意，您的 Windows 10 套件的版本號碼必須高於您已經使用任何 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 套件的。 如需詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。
+請注意，您的 Windows 10 套件的版本號碼必須高於您已經使用的任何 Windows 8、 Windows 8.1 和/或 Windows Phone 8.1 套件的。 如需詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。
 
 如需針對 Microsoft Store 封裝 UWP 應用程式的詳細資訊，請參閱[封裝應用程式](../packaging/index.md)。

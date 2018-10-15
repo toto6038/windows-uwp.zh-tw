@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FABA802F-9CB2-4894-9848-9BB040F9851F
 description: 使用本節的 C# 程式碼範例，深入了解如何使用 Microsoft Store 提交 API。
 title: C# 範例 - 提交應用程式、附加元件與正式發行前小眾測試版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 96040a01b62693d45aec703c332577a3b6bb8eef
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: f5e508bd89c06841009576a0a69cb960a20faa83
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654577"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612535"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 範例：提交應用程式、附加元件與正式發行前小眾測試版
 

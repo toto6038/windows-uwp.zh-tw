@@ -1,27 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 14C23FE6-3EAF-445E-85C1-DF188A7822CA
-description: 使用本節的程式碼範例，深入了解如何使用 Windows 市集提交 API。
+description: 若要深入了解如何使用 Microsoft Store 提交 API 中使用此節中的程式碼範例。
 title: 提交 API 的程式碼範例
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
-keywords: Windows 10, UWP, Windows 市集提交 API, 程式碼範例
-ms.openlocfilehash: c5344667922a7445ad7694f36a542b3ff35c4bdb
-ms.sourcegitcommit: a7a1b41c7dce6d56250ce3113137391d65d9e401
+keywords: windows 10，uwp，Microsoft Store 提交 API，程式碼範例
+ms.localizationpriority: medium
+ms.openlocfilehash: f728a17d98d53cf1783452ddfd543c1062156200
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2017
-ms.locfileid: "772303"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615496"
 ---
 # <a name="code-examples-for-the-submission-api"></a>提交 API 的程式碼範例
 
-本節提供以幾個不同的程式設計語言使用[「Windows 市集提交 API」](create-and-manage-submissions-using-windows-store-services.md)的程式碼範例。
+本章節提供數個不同的程式設計語言中使用[Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md)的程式碼範例。
 
 > [!NOTE]
-> 除了下方所列的程式碼範例，我們也提供在 Windows 市集提交 API 上方實作命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以從命令列使用此模組管理您的應用程式、正式發行前小眾測試版和附加元件提交，而無須直接呼叫 Windows 市集提交 API，或是您只需瀏覽來源即可查看更多的範例，了解如何呼叫此 API。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至市集的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
+> 除了下方所列的程式碼範例，我們也會提供實作在 Microsoft Store 提交 API 上方命令列介面的開放原始碼 PowerShell 模組。 這個模組稱為 [StoreBroker](https://aka.ms/storebroker)。 您可以使用此模組從命令列來管理您的應用程式、正式發行前小眾測試版和附加元件提交，而不是直接直接呼叫 Microsoft Store 提交 API，也可以簡單瀏覽來源以檢視有關如何呼叫此 API 的更多範例。 StoreBroker 模組在 Microsoft 中積極地被用作為將眾多第一方應用程式提交至 Microsoft Store 的主要方式。 如需詳細資訊，請查看我們[在 GitHub 上的 StoreBroker 頁面](https://aka.ms/storebroker)。
 
 ## <a name="app-submissions-add-on-submissions-and-package-flight-submissions"></a>應用程式提交、附加元件提交，以及套件正式發行前小眾測試版提交
 
@@ -41,4 +42,4 @@ ms.locfileid: "772303"
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Windows 市集服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)

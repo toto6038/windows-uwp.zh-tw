@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7B6A99C6-AC86-41A1-85D0-3EB39A7211B6
 description: 在 Microsoft Store 提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取所有附加元件資料。
 title: 取得所有附加元件
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69ec59a39c91152788f757beb56afc75e7191922
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: c711e2443de4607d2266dcddf513a48ff11522a7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663118"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614031"
 ---
 # <a name="get-all-add-ons"></a>取得所有附加元件
 
@@ -41,14 +41,14 @@ ms.locfileid: "1663118"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含已登錄到您帳戶之所有 App 的所有附加元件的資料。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  說明  |  必要  |
 |------|------|------|------|
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果您的帳戶擁有的附加元件超過您在查詢中指定的值，回應本文會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |

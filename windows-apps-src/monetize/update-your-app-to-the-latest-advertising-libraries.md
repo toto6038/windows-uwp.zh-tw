@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 了解如何將您的應用程式更新成使用最新支援的 Microsoft Advertising 程式庫，並確定您的應用程式會繼續接收橫幅廣告。
 title: 將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 76581de948a4bb62597443e389122298f69c561d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 87cd734196e66021555002a43cb41719c88a1cf8
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654807"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612170"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
 

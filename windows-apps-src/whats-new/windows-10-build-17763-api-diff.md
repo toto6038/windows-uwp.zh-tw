@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: Windows 10 組建 17763 API 變更
 description: 開發人員可以使用下列清單識別 Windows 10 組建 17763 中新增或變更的命名空間
-keywords: 最新動向，最新動向，更新，Windows 10，最新，api，17763，10 月
+keywords: 新動向，最新動向，更新，Windows 10，最新，api，17763，10 月
 ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa3e586e82fc5c2da78cc201f772112699a9035
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567978"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611915"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Windows 10 中的新 Api 建置 17763
 
-全新和已更新的 API 命名空間已可供 Windows 10 組建 17763 中的開發人員 (也稱為年 10 月 2018年更新或版本 1809年)。 以下是針對在這個版本中新增或修改之命名空間所提供的文件完整清單。
+全新和已更新的 API 命名空間已可供開發人員在 Windows 10 組建 17763 (也稱為年 10 月 2018年更新或版本 1809年)。 以下是針對在這個版本中新增或修改之命名空間所提供的文件完整清單。
 
-上一個公開發行版本中新增之 Api 的資訊，請參閱[Windows 10 年 4 月更新版中的新 Api](windows-10-build-17134-api-diff.md)。
+在上一個公開發行版本中新增之 Api 的資訊，請參閱[Windows 10 年 4 月更新中的新 Api](windows-10-build-17134-api-diff.md)。
 
 ## <a name="windowsai"></a>Windows.AI
 

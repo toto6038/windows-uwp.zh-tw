@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
 description: 使用 Microsoft Store 提交 API 中的這個方法，更新現有的附加元件提交。
 title: 更新附加元件提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 更新, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 14a648bc19ef90f91313177f883bb5f4daaea47d
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 9126bae03644fb22f773cbd69cc397456a4cd48f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817376"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611762"
 ---
 # <a name="update-an-add-on-submission"></a>更新附加元件提交
 

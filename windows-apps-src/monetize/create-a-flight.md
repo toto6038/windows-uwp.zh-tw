@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
 description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立套件正式發行前小眾測試版。
 title: 建立套件正式發行前小眾測試版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c53addfb58006ec305d702716a29668440bb90e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 5e6a547c8baf0f8990415e303d6b69ca04986d3b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816693"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612013"
 ---
 # <a name="create-a-package-flight"></a>建立套件正式發行前小眾測試版
 
@@ -58,7 +58,7 @@ ms.locfileid: "1816693"
 
 要求本文包含下列參數。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  說明  |  必要  |
 |------|------|------|------|
 |  friendlyName  |  字串  |  開發人員指定的套件正式發行前小眾測試版名稱。  |  否  |
 |  groupIds  |  陣列  |  此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |  否  |

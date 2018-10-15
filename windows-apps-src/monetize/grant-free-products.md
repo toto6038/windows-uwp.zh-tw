@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: 在 Microsoft Store 購買 API 中使用這個方法，將免費 App 或附加元件授與指定的使用者。
 title: 授與免費產品
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 購買 API, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: c1ecb1f7db755fd21014ebc7edf979e7a25e7c7f
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1665024"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610594"
 ---
 # <a name="grant-free-products"></a>授與免費產品
 
@@ -54,7 +54,7 @@ ms.locfileid: "1665024"
 
 ### <a name="request-body"></a>要求主體
 
-| 參數      | 類型   | 描述        | 必要 |
+| 參數      | 類型   | 說明        | 必要 |
 |----------------|--------|---------------------|----------|
 | availabilityId | 字串 | 要從 Microsoft Store 型錄授與之產品的可用性識別碼。         | 是      |
 | b2bKey         | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要授與產品的使用者身分識別。    | 是      |
@@ -67,7 +67,7 @@ ms.locfileid: "1665024"
 | skuId          | 字串 | Microsoft Store 目錄中[產品 SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如，SKU 的 Store 識別碼是 0010。     | 是      |
 
 
-### <a name="request-example"></a>要求的範例
+### <a name="request-example"></a>要求範例
 
 ```syntax
 POST https://purchase.mp.microsoft.com/v6.0/purchases/grant HTTP/1.1
@@ -91,7 +91,7 @@ Content-Type: application/json
 
 ### <a name="response-body"></a>回應主體
 
-| 參數                 | 類型                        | 描述             | 必要 |
+| 參數                 | 類型                        | 說明             | 必要 |
 |---------------------------|-----------------------------|-----------------------|----------|
 | clientContext             | ClientContextV6             | 此訂單的用戶端內容相關資訊， 這將會指派給 Azure AD 權杖的 *clientID* 值。    | 是      |
 | createdtime               | DateTimeOffset              | 訂單的建立時間。         | 是      |
@@ -114,14 +114,14 @@ Content-Type: application/json
 
 ClientContext 物件包含下列參數。
 
-| 參數 | 類型   | 描述                           | 必要 |
+| 參數 | 類型   | 說明                           | 必要 |
 |-----------|--------|---------------------------------------|----------|
 | client    | 字串 | 建立訂單的用戶端識別碼。 | 否       |
 
 
 OrderLineItemV6 物件包含下列參數。
 
-| 參數               | 類型           | 描述                                                                                                  | 必要 |
+| 參數               | 類型           | 說明                                                                                                  | 必要 |
 |-------------------------|----------------|--------------------------------------------------------------------------------------------------------------|----------|
 | agent                   | IdentityV6     | 上次編輯明細項目的代理程式。 如需此物件的詳細資訊，請參閱下表。       | 否       |
 | availabilityId          | 字串         | 要從 Microsoft Store 型錄購買之產品的可用性識別碼。                           | 是      |
@@ -152,7 +152,7 @@ OrderLineItemV6 物件包含下列參數。
 
 IdentityV6 物件包含下列參數。
 
-| 參數     | 類型   | 描述                                                                        | 必要 |
+| 參數     | 類型   | 說明                                                                        | 必要 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Microsoft Store 識別碼金鑰之 *publisherUserId* 的字串值。 | 是      |

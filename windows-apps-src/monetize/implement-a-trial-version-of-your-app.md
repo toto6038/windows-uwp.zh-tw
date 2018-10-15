@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 571697B7-6064-4C50-9A68-1374F2C3F931
 description: 了解如何使用 Windows.Services.Store 命名空間來實作 App 的試用版。
 title: 實作應用程式的試用版
 keywords: Windows 10, UWP, 試用版, App 內購買, Windows.Services.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 402d2c584732611d79a74fbc24e11f590e029171
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 50eced0042cf9c166a7c0c8f73305dec3c1df12d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690094"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613359"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>實作應用程式的試用版
 
@@ -24,7 +24,7 @@ ms.locfileid: "1690094"
 本文顯示如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您應用程式的試用授權，而且如果授權狀態在應用程式執行期間變更，則會收到通知。 
 
 > [!NOTE]
-> **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如果您的應用程式目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[這篇文章](exclude-or-limit-features-in-a-trial-version-of-your-app.md)。
+> **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[這篇文章](exclude-or-limit-features-in-a-trial-version-of-your-app.md)。
 
 ## <a name="guidelines-for-implementing-a-trial-version"></a>實作試用版的指導方針
 
@@ -93,4 +93,4 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 * [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
 * [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

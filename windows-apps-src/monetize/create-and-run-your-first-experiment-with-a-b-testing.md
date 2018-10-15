@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: In this walkthrough, you will create, run, and manage your first experiment with A/B testing.
 title: 建立和執行您的第一個實驗
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd19034a8bf775e9a317d1ddb4f54223eb4a5ed
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: ac97b8d34ec0f5dbfc42022fc54911f04f09ba3b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "476904"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613875"
 ---
 # <a name="create-and-run-your-first-experiment"></a>建立和執行您的第一個實驗
 
@@ -48,7 +48,7 @@ ms.locfileid: "476904"
 
 ## <a name="code-the-experiment-in-your-app"></a>在您的 App 中編寫實驗程式碼
 
-1. Visual Studio 中建立新萬用 Windows 平台的專案使用 Visual C#。 將專案命名為 **SampleExperiment**。
+1. 在 Visual Studio 中，建立新的通用 Windows 平台專案使用 Visual C#。 將專案命名為 **SampleExperiment**。
 2. 在 \[方案總管\] 中，展開您的專案節點、以滑鼠右鍵按一下 **\[參考\]**，然後按一下 **\[加入參考\]**。
 3. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**，然後按一下 **\[擴充功能\]**。
 4. 在 SDK 清單中，選取 **\[Microsoft Engagement Framework\]** 旁邊的核取方塊，然後按一下 **\[確定\]**。

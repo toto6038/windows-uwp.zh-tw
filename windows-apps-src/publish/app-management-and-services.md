@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571382"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610394"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -56,9 +56,9 @@ ms.locfileid: "4571382"
 
 ## <a name="administrator-consent"></a>系統管理員同意
 
-f 與 Azure AD 整合您的產品，並呼叫 Api，要求[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意下，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品其組織授與同意取得的應用程式的系統管理員。
+f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意下，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中所有使用者的產品其組織授與同意取得的應用程式的系統管理員。
 
-如需詳細資訊，請參閱[的整個租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+如需詳細資訊，請參閱[適用於整個的租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>應用程式管理
 
@@ -87,12 +87,12 @@ f 與 Azure AD 整合您的產品，並呼叫 Api，要求[應用程式的權限
 
 具備 OEM 權限的開發人員也可以從 **\[目前的套件\]** 頁面[產生預先安裝的套件](generate-preinstall-packages-for-oems.md)。
 
-## <a name="wnsmpns"></a>WNS/MPNS\
+## <a name="wnsmpns"></a>WNS/MPNS
 
 [ **WNS/MPNS\** ] 區段會提供選項以協助您建立和傳送通知給您的應用程式客戶。 
 
 > [!TIP]
-> 適用於 UWP app 中，我們建議您在儀表板中使用**通知**選項。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您定義在[客戶區隔](create-customer-segments.md)中特定對象符合條件將 Windows 10 客戶子集。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
+> 適用於 UWP app 中，我們建議您在儀表板中使用**通知**選項。 這項功能可讓您傳送通知給所有的應用程式的客戶，或您定義[客戶區隔](create-customer-segments.md)中特定對象的符合條件 Windows 10 客戶子集。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
 
 根據您的應用程式套件類型及其特定需求，您也可以使用其中一個下列選項： 
 

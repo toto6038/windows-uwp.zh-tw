@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570734"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613973"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 銷售 app 的指導方針
 
@@ -47,13 +47,13 @@ ms.locfileid: "4570734"
 
 *授與 Microsoft 商標權*表示*Microsoft 徽章*[徽章產生器](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面上所述。 若要使用這些徽章，您必須：
 
--   在 Microsoft Store 中擁有您的應用程式或提供其他內容，或者是[Microsoft 加盟計畫](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
+-   在 Microsoft Store 中, 擁有您的應用程式或提供其他內容，或者是[Microsoft 加盟計畫](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
 -   如果您已註冊開發人員中心，請遵守「應用程式開發人員合約」的[授與 Microsoft 商標權限](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)區段。
 
 -   如果您未註冊 Windows 開發人員中心，Microsoft 會授與您的全球、 非專屬、 免、 免費的 Microsoft 市集徽章的指導方針中所述的單獨使用徽章，授權。 Microsoft 得變更這些指導方針，若有變更，Microsoft 將使用合理的方式將您導向到張貼這些規格的任何新 URL。 Microsoft 保留此處未明確授與的所有權利。
 
--   請遵循[Microsoft 市集徽章的指導方針](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的標誌使用規範。
+-   請依照下列[Microsoft 市集徽章的指導方針](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的標誌使用規範。
 
 Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使用 Microsoft 標誌之商譽的唯一受益人。 Microsoft 在未經通知的情況下，得隨時撤銷此授權。
 

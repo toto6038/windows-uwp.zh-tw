@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566277"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612671"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -167,7 +167,7 @@ _framePool.FrameArrived += (s, a) =>
 
 ## <a name="putting-it-all-together"></a>總結
 
-下列程式碼片段是如何在 UWP 應用程式中實作擷取螢幕的端對端範例。 在此範例中，新增按鈕在前端中，按一下時，會呼叫**Button_ClickAsync**方法。
+下列程式碼片段是如何在 UWP 應用程式中實作擷取螢幕的端對端範例。 在此範例中，我們有在前端按鈕，按下，會呼叫**Button_ClickAsync**方法。
 
 > [!NOTE]
 > 此程式碼片段會使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 圖形轉譯的程式庫。 如需有關如何將它設定您的專案進行資訊其文件，請參閱。

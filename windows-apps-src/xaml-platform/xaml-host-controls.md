@@ -1,59 +1,59 @@
 ---
-author: normesta
+author: mcleanbyron
 description: 本指南可協助您直接在 WPF 和 Windows Forms 應用程式中建立 Fluent 型 UWP UI
 title: 傳統型應用程式中的 UWP 控制項
-ms.author: normesta
+ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 67669dd30f376df823f2f9ad08ad69c193cdb602
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.openlocfilehash: b9757466502283c673c7b2106b4a7775be412faf
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571472"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610246"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
 > [!NOTE]
-> Api 與此文章中討論的控制項是目前可為開發人員預覽。 雖然我們鼓勵您試用您自己的原型程式碼中現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟並穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+> Api 與這篇文章中討論的控制項是目前可為開發人員預覽。 雖然我們鼓勵您嘗試它們自己的原型程式碼中現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
 
-Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項，以便您可以提升外觀、 感覺和現有的傳統型應用程式使用最新 Windows 10 UI 功能只會透過 UWP 控制項的功能。 這表示您可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 設計系統](../design/fluent-design-system/index.md)支援在您的現有 WPF、 Windows Forms 和 c + + Win32 應用程式中的控制項。 這個案例中開發人員有時稱為*XAML 群島*。
+Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項，以便您可以提升外觀、 感覺與您現有的傳統型應用程式與最新的 Windows 10 UI 功能只會透過 UWP 控制項可用的功能。 這表示您可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 設計系統](../design/fluent-design-system/index.md)支援您的現有 WPF、 Windows Forms 和 c + + Win32 應用程式中的控制項。 這個案例中開發人員有時稱為*XAML 群島*。
 
-我們提供幾種方式可使用 XAML 群島在 WPF、 Windows Forms 和 c + + Win32 應用程式，取決於技術或您正在使用的架構。
+我們提供幾種方式可使用 XAML 群島您 WPF、 Windows Forms 和 c + + Win32 應用程式中，根據技術或您正在使用的架構。
 
 ## <a name="wrapped-controls"></a>包裝的控制項
 
-[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中，WPF 和 Windows Forms 應用程式可以使用包裝 UWP 控制項的選取項目。 我們稱為這些控制項*包裝控制項*因為它們換行的介面和特定的 UWP 控制項的功能。 您可以直接在 WPF 或 Windows Forms 專案的設計介面中新增這些控制項，然後依照像任何其他 WPF 或 Windows Forms 控制項在您的設計工具中使用它們。
+WPF 和 Windows Form 應用程式可以使用選取項目包裝 UWP 控制項的[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中。 我們稱為這些控制項*包裝控制項*因為它們換行的介面和特定的 UWP 控制項的功能。 您可以直接在 WPF 或 Windows Forms 專案的設計表面新增這些控制項，然後依照任何其他 WPF 或 Windows Forms 控制項一樣設計工具中使用它們。
 
 > [!NOTE]
 > C + + Win32 傳統型應用程式都不包裝的控制項。 這些類型的應用程式必須使用[UWP XAML 裝載 API](#uwp-xaml-hosting-api)。
 
-下列包裝的 UWP 控制項是目前可用的 WPF 和 Windows Forms 應用程式。 更多的包裝的 UWP 控制項已計劃未來版本的 Windows 社群工具組。
+下列包裝的 UWP 控制項是目前可用的 WPF 和 Windows Form 應用程式。 更多的包裝 UWP 控制項已計劃未來版本的 Windows 社群工具組。
 
 | 控制項 | 最低支援的作業系統 | 說明 |
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 (版本 1803) | 您可以使用 Microsoft Edge 轉譯引擎來顯示網頁內容。 |
-| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供**WebView**與多個作業系統版本相容的版本。 這個控制項使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 版本 1803年或更新版本上的網頁內容和 Internet Explorer 的轉譯引擎，以顯示 web 內容，在先前版本的 Windows 10，Windows 8.x 和 Windows 7。 |
+| [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供**WebView**與多個作業系統版本相容的版本。 這個控制項使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 版本 1803年或更新版本上的網頁內容和 Internet Explorer 的轉譯引擎，以顯示 web 內容在先前版本的 Windows 10，Windows 8.x 和 Windows 7。 |
 | [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK 組建 17709 | Surface 和相關的工具列提供 Windows Forms 或 WPF 傳統型應用程式中的 Windows Ink 為基礎的使用者互動。 |
 | [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK 組建 17709 | 將檢視嵌入串流，並轉譯媒體內容，例如 Windows Forms 或 WPF 傳統型應用程式中的影片。 |
 
 ## <a name="host-controls"></a>主控制項
 
-以外可用的包裝控制項所涵蓋的情況下，WPF 和 Windows Forms 應用程式也可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中。 此控制項可以裝載衍生自[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括 Windows SDK 以及自訂使用者控制項所提供的任何 UWP 控制項的任何 UWP 控制項。 這個控制項支援 Windows 10 Insider Preview SDK 組建 17709 和更新版本發行版本。
+以外可用的包裝控制項所涵蓋的情況下，WPF 和 Windows Form 應用程式也可以使用[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制[Windows 社群工具組](https://docs.microsoft.com/windows/uwpcommunitytoolkit/)中。 此控制項可以裝載衍生自[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)，包括 Windows SDK，以及自訂使用者控制項所提供的任何 UWP 控制項的任何 UWP 控制項。 這個控制項支援 Windows 10 Insider Preview SDK 組建 17709 和更新版本發行版本。
 
 > [!NOTE]
 > 主控制項沒有可用的 c + + Win32 傳統型應用程式。 這些類型的應用程式必須使用[UWP XAML 裝載 API](#uwp-xaml-hosting-api)。
 
 ## <a name="uwp-xaml-hosting-api"></a>UWP XAML 裝載 API
 
-如果您有 c + + Win32 應用程式，您可以使用*UWP XAML 裝載 API*來裝載所有 UWP 所衍生的控制項[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)相關聯的視窗控制代碼 (HWND) 的應用程式中的任何 UI 項目中。 Windows 10 Insider Preview SDK 組建 17709 引進此 API。 如需有關如何使用此 API 的詳細資訊，請參閱[使用裝載 API 的傳統型應用程式的 XAML](using-the-xaml-hosting-api.md)。
+如果您有 c + + Win32 應用程式，您可以使用*UWP XAML 裝載 API*來裝載任何 UWP 所衍生的控制項[**Windows.UI.Xaml.UIElement**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement)相關聯的視窗控制代碼 (HWND) 的應用程式中的任何 UI 項目中。 Windows 10 Insider Preview SDK 組建 17709 引進此 API。 如需使用此 API 的詳細資訊，請參閱[使用 XAML 裝載在傳統型應用程式中的 API](using-the-xaml-hosting-api.md)。
 
 > [!NOTE]
-> C + + Win32 傳統型應用程式必須使用 UWP XAML 裝載 API 來裝載 UWP 控制項。 包裝的控制項和主機沒有可用的這些類型的應用程式。 對於 WPF 及 Windows Forms 應用程式，我們建議您先使用 Windows 社群工具組，而不是 UWP XAML 中包裝的控制項和主控制項裝載 API。 這些控制項使用 UWP XAML 內部裝載 API，並提供更簡單的開發體驗。 不過，您可以使用 UWP XAML 裝載直接在 WPF 和 Windows Forms 應用程式中的 API，如果您選擇。
+> C + + Win32 傳統型應用程式必須使用 UWP XAML 裝載來裝載 UWP 控制項的 API。 包裝的控制項和主機沒有可用的這些類型的應用程式。 對於 WPF 和 Windows Form 應用程式，我們建議在 Windows 社群工具組，而不是 UWP XAML 中使用的包裝的控制項和主控制項裝載 API。 這些控制項使用 UWP XAML 裝載在內部的 API，並提供更簡單的開發體驗。 不過，您可以使用 UWP XAML 裝載直接在 WPF 和 Windows Form 應用程式中的 API，如果您選擇。
 
 ## <a name="architecture-overview"></a>架構概觀
 

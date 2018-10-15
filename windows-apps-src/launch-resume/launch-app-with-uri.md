@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f801e9093676ec9fbf55c4ec4af7c5c444ed3ead
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4568030"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612338"
 ---
 # <a name="launch-an-app-with-a-uri"></a>使用 URI 啟動應用程式
 
@@ -32,7 +32,7 @@ ms.locfileid: "4568030"
 | [啟動 Windows 地圖應用程式](launch-maps-app.md) | 了解如何從您的應用程式啟動 Windows 地圖應用程式。 |
 | [啟動連絡人應用程式](launch-people-apps.md) | 本主題描述 ms-people URI 配置。 您的應用程式可以使用此 URI 配置來啟動連絡人應用程式，以執行特定動作。 |
 | [啟動畫面剪](launch-screen-snipping.md) | 了解如何使用 URI 配置來開啟新的剪取，或是開啟剪取與草圖應用程式。 |
-| [可讓網站使用的應用程式 URI 處理常式的應用程式](web-to-app-linking.md) | 使用者持續使用您的應用程式藉由支援網站] 功能的應用程式。 |
+| [啟用使用應用程式 URI 處理常式的網站的應用程式](web-to-app-linking.md) | 使用者持續使用您的應用程式藉由支援網站] 功能的應用程式。 |
 
 ## <a name="related-topics"></a>相關主題
 * [啟動遠端裝置上的 App](launch-a-remote-app.md)

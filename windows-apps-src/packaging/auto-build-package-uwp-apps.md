@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564631"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612515"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -81,7 +81,7 @@ VSTS 可同時搭配以 TFS 和 GIT 為基礎的程式碼儲存機制運作。
 
 #### <a name="configure-the-build-solution-build-task"></a>設定建置方案建置工作
 
-這項工作會編譯任何解決方案，在工作資料夾，以二進位檔，而且會產生輸出應用程式套件檔案。 這個工作會使用 MSbuild 引數。  您必須指定那些引數的值。 使用下表做為指引。 
+這項工作會編譯任何方案中為二進位檔的工作資料夾並產生輸出應用程式套件檔案。 這個工作會使用 MSbuild 引數。  您必須指定那些引數的值。 使用下表做為指引。 
 
 |**MSBuild 引數**|**值**|**說明**|
 |--------------------|---------|---------------|
@@ -257,7 +257,7 @@ CI_MyUWPApp_1.1.2501.0
 
 接著，使用本指南設定 HockeyApp 連線：[如何使用 HockeyApp 搭配 Visual Studio Team Services (VSTS) 或 Team Foundation Server (TFS)](https://support.hockeyapp.net/kb/third-party-bug-trackers-services-and-webhooks/how-to-use-hockeyapp-with-visual-studio-team-services-vsts-or-team-foundation-server-tfs)。 您可以使用您的 Microsoft 帳戶、社交媒體帳戶或電子郵件地址來設定您的 HockeyApp 帳戶。 免費方案隨附兩個 App、一位擁有者，而且沒有資料限制。
 
-然後，您可以建立 HockeyApp app，以手動方式或上傳現有的應用程式套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
+然後，您可以建立 HockeyApp app，以手動方式，或上傳現有的應用程式套件檔案。 若要深入了解，請參閱[如何建立新的 App](https://support.hockeyapp.net/kb/app-management-2/how-to-create-a-new-app)。  
 
 若要使用現有的應用程式套件檔案，新增建置步驟中，並設定該建置步驟的二進位檔案路徑參數。 
 
@@ -287,7 +287,7 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-這將會產生可提交至市集的上傳檔案。
+這將會產生可提交至 microsoft Store 上傳檔案。
 
 
 #### <a name="configure-automatic-store-submission"></a>設定自動Microsoft Store提交
@@ -317,17 +317,17 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果您想要在不發佈到Microsoft Store的情況下發佈您的 App，只要這些裝置信任用來簽署應用程式套件的憑證，您就可以將您的 App 直接側載到裝置。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並接著將會安裝或更新應用程式套件檔案。
+使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並再將會安裝或更新應用程式套件檔案。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 年度更新版側載您的 App
-在 Windows 10 年度更新版，您可以按兩下應用程式套件檔案，並在對話方塊中選擇 [安裝] 按鈕來安裝您的應用程式。 
+在 Windows 10 年度更新版中，您可以按兩下應用程式套件檔案並安裝您的 app 透過選擇對話方塊中的 [安裝] 按鈕。 
 
 ![在 rs1 側載](images/building-screen18.png) 
 
 >[!NOTE]
 > 此方法不會安裝憑證或相關的相依性。
 
-如果您想要發佈您的 Windows 應用程式套件，例如 VSTS 或 HockeyApp 的網站，您將需要將該網站新增到您的瀏覽器中信任的網站清單。 否則，Windows 會將檔案標示為已鎖定。 
+如果您想要發佈您的 Windows 應用程式套件從例如 VSTS 或 HockeyApp 網站，您將需要將該網站新增到您的瀏覽器中信任的網站清單。 否則，Windows 會將檔案標示為已鎖定。 
 
 <span id="certificates-best-practices"/>
 

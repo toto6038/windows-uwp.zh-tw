@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 63A9EDCF-A418-476C-8677-D8770B45D1D7
 description: Microsoft Advertising SDK 提供您數種方式來透過廣告讓您的 App 獲利。
 title: 使用 Microsoft Advertising SDK 停用應用程式中的廣告
-ms.author: mcleans
-ms.date: 05/02/2018
+ms.author: mhopkins
+ms.date: 06/20/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 601f3fe67d6ed44403c65427af75042456bdfddb
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843018"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613559"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
-使用 Microsoft Advertising SDK，在您的適用於 Windows10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的廣告營收平台支援各式各樣的廣告類型，也支援在各大廣告網路間流量分配的功能。
+使用 Microsoft Advertising SDK，在您的適用於 Windows10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的廣告營收平台提供各種不同的可以順暢地整合到您應用程式和支援的流量分配與多個最熱門的廣告網路的廣告格式。 我們的平台符合 OpenRTB、 VAST 2.x、 MRAID 2 及 VPAID 3 標準的而且不相容於壕溝及 IAS。 
 
 <br/>
 
@@ -121,7 +121,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 和 Windows Phone 8.x 應用程式
 
-對於 Windows 8.1 和 Windows Phone 8.x 應用程式，我們提供 [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。 如需有關如何在 Windows 8.1 和 Windows Phone 8.x 應用程式中使用此 SDK 顯示廣告的詳細資訊，請參閱[本文](https://msdn.microsoft.com/library/windows/apps/xaml/dn792120.aspx)。
+對於 Windows 8.1 和 Windows Phone 8.x 應用程式，我們提供 [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。 如需有關如何在 Windows 8.1 和 Windows Phone 8.x 應用程式中使用此 SDK 顯示廣告的詳細資訊，請參閱[本文](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))。
 
 ## <a name="related-topics"></a>相關主題
 

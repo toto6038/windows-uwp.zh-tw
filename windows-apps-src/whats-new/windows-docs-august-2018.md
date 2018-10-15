@@ -1,8 +1,8 @@
 ---
 author: QuinnRadich
 title: 2018 年 8 月 Windows 文件的最新動向-開發 UWP app
-description: 新功能、 影片、 範例及開發人員指引已新增到 2018 年 8 月的 Windows 10 開發人員文件。
-keywords: 最新動向，更新，功能，開發人員指引，Windows 10，august
+description: 新功能、 影片、 範例及開發人員指引已加入 2018 年 8 月的 Windows 10 開發人員文件。
+keywords: 新動向，更新，功能，開發人員指引，Windows 10，august
 ms.author: quradic
 ms.date: 08/14/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573543"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611328"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 開發人員文件的最新動向
 
@@ -28,7 +28,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 下列功能已新增到 Windows Insider Preview 組建，可透過[Windows 測試人員](https://insider.windows.com/)計畫。
 
-* [Windows UI 文件庫](https://aka.ms/winui-docs)是一組提供控制項與其他使用者 interfact 項目適用於 UWP app 的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容，因此您的應用程式運作方式，即使您的使用者不需要的最新的 OS 版本。
+* [Windows UI 文件庫](https://aka.ms/winui-docs)是一組提供控制項與其他使用者 interfact 項目適用於 UWP app 的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容，讓您的應用程式運作方式，即使您的使用者不需要的最新的 OS 版本。
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)，以及[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)提供按鈕控制項具有特殊功能來增強您的應用程式使用者介面。
 
@@ -42,31 +42,31 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 套件支援架構是開放原始碼套件，可協助您將套用修正程式中對 win32 應用程式時您不需要的存取權的原始程式碼，讓它可以 MSIX 容器中執行。
 
-若要了解更多資訊，請參閱[套用執行階段修正程式，以使用套件支援 Framework MSIX 封裝](../porting/package-support-framework.md)。
+若要了解更多資訊，請參閱[套用執行階段修正程式，以使用套件支援架構 MSIX 封裝](../porting/package-support-framework.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="web-api-extensions"></a>Web API 擴充功能
+### <a name="web-api-extensions"></a>Web API 的擴充功能
 
-已新增的[舊版 Microsoft API 延伸](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)清單跨瀏覽器 web 開發的 Mozilla Developer Network 文件。 這些 API 的擴充功能都是唯一的 Internet Explorer 或 Microsoft Edge，並補充現有 MDN web 文件中的相容性及 broswer 支援的相關資訊。舊版 Microsoft [CSS 擴充功能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)和[JavaScript 延伸模組](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也已提供，且您可以找到直接在顯示豐富的 web API 的資訊從 MDN [Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+已新增的[舊版 Microsoft API 延伸模組](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)清單跨瀏覽器 web 開發的 Mozilla Developer Network 文件。 這些 API 的擴充功能都是唯一的 Internet Explorer 或 Microsoft Edge，並補充現有 MDN web 文件中的相容性及 broswer 支援的相關資訊。舊版 Microsoft [CSS 擴充功能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)與[JavaScript 延伸模組](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也已提供，且您可以找到豐富 web API 的資訊從 MDN 直接在呈現[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
 ### <a name="cwinrt-code-examples"></a>C + + /winrt 程式碼範例
 
-我們已經新增 250 [C + + /winrt](../cpp-and-winrt-apis/index.md)程式碼清單以主題中我們的文件中，然後再伴隨的現有的 C + + /CX 程式碼範例。
+我們已經新增 250 [C + + /winrt](../cpp-and-winrt-apis/index.md)程式碼清單以主題中我們的文件，伴隨的現有的 C + + /CX 程式碼範例。
 
 ### <a name="project-rome"></a>Project Rome
 
-[Project Rome 文件](https://docs.microsoft.com/windows/project-rome/)網站已重新整理至功能第一種方式。 這應該讓開發人員來尋找他們所尋找的並且跨多個平台實作他們選擇的功能更容易。
+已重新整理[的 Project Rome 文件](https://docs.microsoft.com/windows/project-rome/)網站到功能第一種方法。 這應該讓開發人員來尋找他們所尋找的並實作跨多個平台功能他們選擇更容易。
 
 ## <a name="videos"></a>影片
 
 ### <a name="xbox-live-unity-plugin"></a>Xbox Live Unity 外掛程式
 
-Unity 的 Xbox Live 外掛程式包含加入 Xbox Live 簽章、 統計資料、 朋友清單、 雲端儲存空間及排行榜加入您的遊戲的支援。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以了解更多]，然後[下載 GitHub 套件](https://aka.ms/UnityPlugin)來開始。
+Unity 的 Xbox Live 外掛程式包含加入 Xbox Live 簽署、 統計資料、 朋友清單、 雲端儲存空間及排行榜加入您的遊戲的支援。 [觀看影片](https://youtu.be/fVQZ-YgwNpY)以了解更多]，然後[下載 GitHub 套件](https://aka.ms/UnityPlugin)來開始。
 
-### <a name="one-dev-question"></a>開發人員問題
+### <a name="one-dev-question"></a>一個開發人員問題
 
-在開發人員問題影片系列，longtime Microsoft 開發人員會討論一系列的 Windows 開發、 小組文化和歷程記錄的相關問題。 以下是我們已經回答的最新問題 ！
+在開發人員問題影片系列，longtime Microsoft 開發人員會討論一系列的 Windows 開發、 小組文化特性和歷程記錄的相關問題。 以下是我們已經回答的最新問題 ！
 
 Raymond Chen:
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 第一個應用程式, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567868"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611244"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 

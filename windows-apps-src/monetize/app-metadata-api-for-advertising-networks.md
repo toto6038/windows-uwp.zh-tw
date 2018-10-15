@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 了解如何使用 App 中繼資料 REST API 來存取 App 的特定類型中繼資料。 此 API 是要供廣告網路用來擷取 Microsoft Store 中 App 的相關資訊，讓它們能夠改進將廣告空間銷售給廣告商的方式。
 title: 廣告網路的應用程式中繼資料 API
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告網路, 應用程式中繼資料
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: bc5cb5bed964528b34339742e34b5d2761de2b95
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 16603bfe8c3fe0bfeaef1e19018798d0c6477b85
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654737"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613539"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>廣告網路的應用程式中繼資料 API
 

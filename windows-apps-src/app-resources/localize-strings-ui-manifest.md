@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573693"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611703"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>將 UI 及應用程式套件資訊清單中的字串當地語系化
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
@@ -92,7 +92,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 您可以使用類別庫 (通用 Windows) 或 [Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 專案中的此相同程式碼。 在執行階段，會載入裝載媒體櫃的 App 的資源。 建議從裝載媒體櫃的 App 載入資源，因為 App 可能有較大程度當地語系化。 如果媒體櫃確實需要提供資源，則它應該提供其裝載的 App 選項以取代那些做為輸入的資源。
 
-如果區隔的資源名稱 (其中包含"。 」 字元)，然後取代點線使用正斜線 （"/"） 中的資源名稱的字元。 屬性識別碼，例如，包含句點;因此，您必須執行此 substition 才能載入其中一個從程式碼。
+如果區隔的資源名稱 (其中包含 」。 」 字元)，然後取代點線使用正斜線 （"/"） 中的資源名稱的字元。 屬性識別碼，例如，包含點;因此，您必須執行此 substition 才能載入其中一個，從程式碼。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
@@ -175,7 +175,7 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果您已將您的「AppDisplayName」資源移出 `Resources.resw` 到 `ManifestResources.resw`，然後到您要變更 `ms-resource:AppDisplayName` 為 `ms-resource:/ManifestResources/AppDisplayName` 的應用程式套件資訊清單中。
 
-如果區隔的資源檔案名稱 (其中包含"。 」 字元)，然後離開點在名稱中，當您參考它。 **不要**使用正斜線 （"/"） 個字元，就像資源名稱取代點。
+如果區隔的資源檔案名稱 (其中包含 」。 」 字元)，然後離開英名稱中，當您參考它。 **不要**使用正斜線 （"/"） 個字元，就像資源名稱取代點。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
@@ -281,7 +281,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>從其他套件載入字串
-應用程式套件的資源會受管理，並透過套件的存取擁有可從目前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)存取的最上層[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live) 。 在每個套件內，各種元件可以有自己的 ResourceMap 樹狀子目錄，您可以透過 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 存取。
+應用程式套件的資源會受管理，並透過套件的存取擁有最上層[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)可從目前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)存取。 在每個套件內，各種元件可以有自己的 ResourceMap 樹狀子目錄，您可以透過 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 存取。
 
 架構套件可以存取自己具有絕對資源識別碼 URI 的資源。 另請參閱 [URI 配置](uri-schemes.md)。
 

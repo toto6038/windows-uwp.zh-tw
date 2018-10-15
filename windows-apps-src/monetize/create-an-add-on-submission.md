@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的附加元件提交。
 title: 建立附加元件提交
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ece9403652d02e7d42f33aa4aaacae5a25bd386
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 39af744d8c8e4b9d26cd9d82a9489396857ffa5b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662338"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610335"
 ---
 # <a name="create-an-add-on-submission"></a>建立附加元件提交
 

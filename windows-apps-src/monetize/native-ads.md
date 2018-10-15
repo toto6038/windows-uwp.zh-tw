@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 了解如何將原生廣告加入您的 UWP App。
 title: 原生廣告
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 5479efef22d31c5a23086b7e596553542e6e9e51
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.openlocfilehash: 4a529cc360d6a357cf4ff6aa36370c4339b37ed6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1881109"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614301"
 ---
 # <a name="native-ads"></a>原生廣告
 
@@ -49,7 +49,7 @@ ms.locfileid: "1881109"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Namespaces)]
 
-5.  在您的應用程式的適當位置中 (例如，在 ```MainPage``` 中或部分其他頁面)，為您的插播式廣告宣告 **NativeAdsManagerV2** 物件和代表原生廣告的應用程式識別碼和廣告單元識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至原生廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
+5.  在您的應用程式的適當位置中 (例如，在 ```MainPage``` 中或部分其他頁面)，為您的插播式廣告宣告 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 物件和代表原生廣告的應用程式識別碼和廣告單元識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至原生廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
     > [!NOTE]
     > 每個 **NativeAdsManagerV2** 都有對應的*廣告單元*，由我們的服務用來提供廣告給原生廣告控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 在您發行應用程式到 Microsoft Store 之前，您必須[以 Windows 開發人員中心的實際值取代這些測試值](#release)。
 
@@ -63,7 +63,7 @@ ms.locfileid: "1881109"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#RequestAd)]
 
-8.  原生廣告準備好可供您的應用程式使用時，會呼叫您的 **AdReady** 事件處理常式，而代表原生廣告的 **NativeAdV2** 物件會傳遞至 *e* 參數。 使用 **NativeAdV2** 屬性來取得原生廣告的每個元素，並將這些元素顯示在頁面上。 請務必也要呼叫 **RegisterAdContainer** 方法來註冊做為原生廣告容器的 UI 元素，這樣才能正確追蹤廣告的曝光次數和點擊數。
+8.  原生廣告準備好可供您的應用程式使用時，會呼叫您的 [AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.adready) 事件處理常式，而代表原生廣告的 [NativeAdV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadv2) 物件會傳遞至 *e* 參數。 使用 **NativeAdV2** 屬性來取得原生廣告的每個元素，並將這些元素顯示在頁面上。 請務必也要呼叫 **RegisterAdContainer** 方法來註冊做為原生廣告容器的 UI 元素，這樣才能正確追蹤廣告的曝光次數和點擊數。
     > [!NOTE]
     > 原生廣告的一些元素是必要項目，必須一律顯示在您的應用程式中。 如需詳細資訊，請參閱我們的[原生廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)。
 
@@ -119,7 +119,7 @@ ms.locfileid: "1881109"
 
 3. 您可以選擇為原生廣告啟用廣告流量分配，方法是在 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面的 [\[利用廣告獲利\]](../publish/in-app-ads.md#mediation) 區段進行設定。 廣告流量分配可以透過顯示來自多個廣告網路的廣告，讓您獲得最大的廣告收益並充分發揮應用程式促銷功能。
 
-4.  在您的程式碼中，將測試的廣告單元值 (也就是 **NativeAdsManagerV2** 建構函式的 *applicationId* 和 *adUnitId* 參數)，更換為在開發人員中心產生的實際值。
+4.  在您的程式碼中，將測試的廣告單元值 (也就是 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) 建構函式的 *applicationId* 和 *adUnitId* 參數)，更換為在開發人員中心產生的實際值。
 
 5.  使用開發人員中心儀表板[提交您的應用程式](../publish/app-submissions.md)到 Microsoft Store。
 

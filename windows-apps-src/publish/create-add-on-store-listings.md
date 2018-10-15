@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566940"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612322"
 ---
 # <a name="create-add-on-store-listings"></a>建立附加元件 Store 清單
 

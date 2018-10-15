@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 了解如何使用 Windows.Services.Store 命名空間來實作訂閱附加元件。
 title: 啟用應用程式的訂閱附加元件
 keywords: Windows 10, UWP, 訂閱, 附加元件, 在應用程式內購買, IAP, Windows.Services.Store
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f0bed75a8201b9875f79419c0a77c8a35918b77e
-ms.sourcegitcommit: 4b6c197e1567d86e19af3ab5da516c022f1b6dfb
-ms.translationtype: HT
+ms.openlocfilehash: 3575d4d30515a3c26bf99e1cc37afa3b98f4e7dc
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "1877150"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612815"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 

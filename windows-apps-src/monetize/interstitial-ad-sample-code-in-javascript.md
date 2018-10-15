@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: 了解如何使用 JavaScript/HTML 啟動插播式廣告。
 title: 使用 JavaScript 的插播式廣告範例程式碼
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, javascript, 範例程式碼
 ms.localizationpriority: medium
-ms.openlocfilehash: f0cd50a8d3a08053f04dd0e6e8afbfafc8ef34dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 894053298428818c2f3304220f14afb6c44ba2af
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690344"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611928"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>使用 JavaScript 的插播式廣告範例程式碼
 
@@ -30,7 +30,7 @@ ms.locfileid: "1690344"
 使用 Windows 開發人員中心的實際值取代 ```applicationId``` 和 ```adUnitId``` 變數的值，再提交應用程式到 Microsoft Store。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 > [!NOTE]
-> 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **InterstitialAdType.display** 傳遞到 [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) 方法的第一個參數，而不是 **InterstitialAdType.video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
+> 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **InterstitialAdType.display** 傳遞到 [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一個參數，而不是 **InterstitialAdType.video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
 
 ### <a name="indexhtml"></a>index.html
 

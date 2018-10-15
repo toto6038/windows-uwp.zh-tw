@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4570257"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614875"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
 
@@ -61,13 +61,13 @@ ms.locfileid: "4570257"
 
 ### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
 
-開始使用 Windows 10 的下一個主要更新，您可以使用**X:bind**標記延伸[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中所使用**TemplateBinding**的任何位置。 
+從 Windows 10 的下一個主要更新，您可以使用**X:bind**標記延伸[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中使用**TemplateBinding**任何一處。 
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)屬性將需要 （不是選用的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**時。
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)屬性會被要求 （不是選用的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**時。
 
-**X:bind**的支援，您現在可以使用這兩個[函式繫結](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中也為雙向繫結
+**X:bind**的支援，您現在可以使用這兩個[函式繫結](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中的良好為雙向繫結
 
-在下列範例中，TextBlock.Text 評估 Button.Content.ToString()。 ControlTemplate 上的 TargetType 做為資料來源，並完成與父項 TemplateBinding 相同的結果。
+在下列範例中，TextBlock.Text Button.Content.ToString() 評估。 ControlTemplate 上的 TargetType 做為資料來源，並完成與父項 TemplateBinding 相同的結果。
 
 ```xaml
 <ControlTemplate TargetType="Button">

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7b07a6ca-4be1-497c-a901-0a2da3762555
 description: 在 Microsoft Store 中使用此方法促銷 API，建立、編輯及獲得促銷廣告活動。
 title: 管理廣告行銷活動
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 125e67e7b56ac4f8d7d15a36ceca3922ea58ac82
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: f707c252e404da3aaf6e82317c80a266f4d91d26
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664228"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611263"
 ---
 # <a name="manage-ad-campaigns"></a>管理廣告行銷活動
 
@@ -56,7 +56,7 @@ ms.locfileid: "1664228"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -154,7 +154,7 @@ Authorization: Bearer <your access token>
 |  id   |  整數   |  廣告行銷活動的識別碼。     |   是    |      |  否     |       
 |  name   |  字串   |   廣告行銷活動的名稱。    |    否   |      |  是     |       
 |  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li></ul>     |  否     |  作用中    |   是    |       
-|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**Inactive**</li><li>**正在處理**</li></ul>    |    是   |      |   否      |       
+|  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的廣告行銷活動狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li><li>**正在處理**</li></ul>    |    是   |      |   否      |       
 |  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效廣告行銷活動狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**BillingFailed**</li><li>**AdLinesInactive**</li><li>**ValidationFailed**</li><li>**Failed**</li></ul>      |  是     |     |    否     |       
 |  storeProductId   |  字串   |  此廣告行銷活動所關聯之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如產品 Store 識別碼為 9nblggh42cfd。     |   是    |      |  是     |       
 |  標籤   |  陣列   |   一或多個字串，表示自訂活動的標籤。 使用下列的標籤來搜尋及標記活動。    |   否    |  null    |    否     |       

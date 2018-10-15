@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來停止 App 提交的套件推出。
 title: 中斷 App 提交的推出
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 應用程式提交, 停止
 ms.assetid: 4ce79fe3-deda-4d31-b938-d672c3869051
 ms.localizationpriority: medium
-ms.openlocfilehash: 75575724e93d8abfb79c5527ae97fdec7da6f137
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 90ebfa61fa200342e32beb87be6cd27ea11e8f40
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817689"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614311"
 ---
 # <a name="halt-the-rollout-for-an-app-submission"></a>中斷 App 提交的推出
 

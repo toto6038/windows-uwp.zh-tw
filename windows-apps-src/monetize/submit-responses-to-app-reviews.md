@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: 使用 Microsoft Store 評論 API 中的此方法，針對您 app 的評論提交回應。
 title: 提交評論的回應
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a757743bec947a5e8b0edf8c7a0d02e7c00942d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662598"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614825"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 
@@ -48,7 +48,7 @@ ms.locfileid: "1662598"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
@@ -67,13 +67,13 @@ ms.locfileid: "1662598"
 
 *Responses* 陣列中的每個物件包含下列值。
 
-| 值        | 類型   | 描述           |  必要  |
+| 值        | 類型   | 說明           |  必要  |
 |---------------|--------|-----------------------------|-----|
 | ApplicationId | 字串 |  您想要回應評論之 App 的「Store 識別碼」。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
 | ReviewId | 字串 |  您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字串 | 您想要提交的回應。 您的回應必須依照[這些指導方針](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字串 | 您 app 的支援電子郵件地址，客戶可以用來直接連絡您。 這必須是有效的電子郵件地址。     |  是  |
-| IsPublic | 布林值 |  值 **true** 表示您的回應將會顯示在您 app 的 Store 清單中，在客戶評論下方，而且所有客戶都會看到。 值 **false** 表示您的回應將透過電子郵件傳送至客戶，而且不會顯示在您的 app Store 清單中被其他客戶看到。     |  是  |
+| IsPublic | 布林值 |  如果您指定 **，則為 true**，則您的回應將會顯示在您的應用程式市集清單中，客戶的評論的正下方，而且會顯示給所有客戶。 如果您指定**false** ，且使用者未選擇不收到電子郵件回應，您的回應將會傳送給客戶透過電子郵件，並不會看到其他客戶在您的應用程式市集清單中。 如果您指定**false** ，且使用者已選擇不收到回應的電子郵件，將會傳回錯誤。   |  是  |
 
 
 ### <a name="request-example"></a>要求範例

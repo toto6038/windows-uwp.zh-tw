@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571111"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615247"
 ---
 # <a name="about-house-ads"></a>關於自家廣告
 

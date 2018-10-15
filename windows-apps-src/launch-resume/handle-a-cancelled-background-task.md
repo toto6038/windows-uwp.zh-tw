@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567748"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610766"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 
@@ -89,7 +89,7 @@ private:
 
 您在步驟 1 中建立的**OnCanceled**方法中設定旗標變數**\_CancelRequested**為**true**。
 
-完整[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法將**\_CancelRequested**設定為**true** ，並撰寫可能會用偵錯輸出。
+完整[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法將**\_CancelRequested**設**為 true** ，並將可能很有用的偵錯輸出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -139,7 +139,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果**\_cancelRequested**變得設定為 true，便會阻止工作繼續。
 
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含，如果取消背景工作時停止定期計時器回呼的檢查。
+[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含取消背景工作時，會停止定期計時器回呼的檢查。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -183,7 +183,7 @@ else
 > [!NOTE]
 > 上述的程式碼範例會使用[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。用來記錄背景工作進度的[**進度**](https://msdn.microsoft.com/library/windows/apps/br224800)屬性。 進度會透過 [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) 類別回報給應用程式。
 
-修改**Run**方法，以便工作停止後，它會記錄在工作已完成還是被取消。 此步驟適用於跨處理序背景工作，因為您需要一個當背景工作被取消時，可在處理序之間通訊的方法。 針對同處理序背景工作，您只能與應用程式分享狀態以指出工作已被取消。
+修改**Run**方法，以便讓工作停止後，記錄工作已完成還是被取消。 此步驟適用於跨處理序背景工作，因為您需要一個當背景工作被取消時，可在處理序之間通訊的方法。 針對同處理序背景工作，您只能與應用程式分享狀態以指出工作已被取消。
 
 [背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態。
 

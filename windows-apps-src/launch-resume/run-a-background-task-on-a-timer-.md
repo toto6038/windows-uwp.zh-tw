@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575287"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615464"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
@@ -29,7 +29,7 @@ ms.locfileid: "4575287"
 
 建立一個新的 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)。 第二個參數 *OneShot* 會指定背景工作將只執行一次，還是要繼續定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (以分鐘為單位)。 如果 *OneShot* 設定成 False，*FreshnessTime* 會指定背景工作的執行頻率。
 
-以傳統型或行動裝置系列為目標之「通用 Windows 平台」(UWP) app 的內建計時器會每隔 15 分鐘執行一次背景工作。 （在計時器中執行每隔 15 分鐘，讓系統只需要以喚醒 TimerTriggers-可以節省電源，要求的應用程式喚醒一次每隔 15 分鐘。）
+以傳統型或行動裝置系列為目標之「通用 Windows 平台」(UWP) app 的內建計時器會每隔 15 分鐘執行一次背景工作。 （計時器會執行每隔 15 分鐘，讓系統只需要以喚醒 TimerTriggers-可以節省電源，要求的應用程式喚醒一次每隔 15 分鐘。）
 
 - 如果 *FreshnessTime* 設定為 15 分鐘且 *OneShot* 為 True，就會將工作排定在從工作登錄之後的 15 到 30 分鐘之間開始，執行一次。 如果是設定為 25 分鐘且 *OneShot* 為 True，就會將工作排定在從工作登錄之後的 25 到 40 分鐘之間開始，執行一次。
 
@@ -54,7 +54,7 @@ TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
 
 ## <a name="optional-add-a-condition"></a>(選用) 新增條件
 
-您可以建立背景工作條件以控制何時執行工作。 條件會防止背景工作執行，直到條件符合時。 如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
+您可以建立背景工作條件以控制何時執行工作。 條件會執行符合條件之前，條件會防止背景工作。 如需詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
 這個範例中，條件是設成 **UserPresent**，因此觸發後工作只有在使用者作用中時才會執行一次。 如需可用條件的清單，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
@@ -75,7 +75,7 @@ SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::U
 
 ##  <a name="call-requestaccessasync"></a>呼叫 RequestAccessAsync()
 
-註冊**ApplicationTrigger**背景工作，再呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)來判斷背景活動，因為使用者可能已停用您的應用程式的背景活動，可讓使用者的層級。 如需有關方式使用者[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制的背景活動的設定，請參閱。
+登錄**ApplicationTrigger**背景工作之前，呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)來判斷背景活動，因為使用者可能已停用您的應用程式的背景活動，可讓使用者的層級。 如需有關方式使用者[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制的背景活動的設定，請參閱。
 
 ```cs
 var requestStatus = await Windows.ApplicationModel.Background.BackgroundExecutionManager.RequestAccessAsync();
@@ -128,14 +128,14 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="remarks"></a>備註
 
-從 Windows 10 開始，就不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
+從 Windows 10 開始，它已經不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
 
-背景工作只會執行使用**TimeTrigger** ，如果您已呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)第一次。
+背景工作將只執行使用**TimeTrigger** ，如果您已呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)第一次。
 
 ## <a name="related-topics"></a>相關主題
 
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
-* [背景工作的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
+* [背景工作程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask)
 * [建立和註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)
 * [建立和註冊跨處理序背景工作](create-and-register-a-background-task.md)
 * [偵錯背景工作](debug-a-background-task.md)

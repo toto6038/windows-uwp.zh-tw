@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b45196a83edf45a69f6b79ab82542cef6817703
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567568"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616427"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -236,7 +236,7 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 ```
 
 > [!Important]
-> 在上一個範例中，是**Grid**元素上設定 VisualStateManager.VisualStateGroups 附加屬性。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
+> 在上一個範例中，**方格**元素上設定 VisualStateManager.VisualStateGroups 附加屬性。 使用 StateTrigger 時，請一律確保會將 VisualStateGroups 附加到根目錄的第一個子項，讓觸發程序能夠自動生效 (此處的 **Grid** 是根 **Page** 元素的第一個子項)。
 
 ### <a name="attached-property-syntax"></a>附加屬性語法
 

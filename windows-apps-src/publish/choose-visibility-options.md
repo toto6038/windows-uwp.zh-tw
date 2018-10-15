@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 可見度, 私人對象, 可用, 可搜尋
 ms.localizationpriority: medium
 ms.openlocfilehash: 07986353be41fcc9ef9dd9406fb0b30c4aa3d7f2
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575237"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4615599"
 ---
 # <a name="choose-visibility-options"></a>選擇可見度選項
 
@@ -75,7 +75,7 @@ ms.locfileid: "4575237"
 
 ### <a name="make-this-product-available-and-discoverable-in-the-store"></a>在 Microsoft Store 推出此產品並且可供搜尋
 
-此為預設選項。 保留如果您想要透過 app 的直接連結和/或其他方法，包括搜尋、 瀏覽和包含於經過挑選的清單中找到的客戶在市集中列出您的應用程式選取此選項。 
+此為預設選項。 保留選取您想要讓客戶能夠透過應用程式的直接連結和/或其他方法，包括搜尋、 瀏覽和包含於經過挑選的清單中尋找來在市集中列出您的應用程式如果此選項。 
 
 ### <a name="make-this-product-available-but-not-discoverable-in-the-store"></a>在 Microsoft Store 推出此產品，但不供搜尋
 

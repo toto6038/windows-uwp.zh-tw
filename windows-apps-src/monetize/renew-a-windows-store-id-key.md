@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: 請使用這個方法來更新 Microsoft Store 金鑰。
 title: 更新 Microsoft Store 識別碼金鑰
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew, Microsoft Store 集合 API, Microsoft Store 購買 API, Microsoft Store 識別碼金鑰, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 430eaaa040e731e429eba15d58f554e41349a959
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664821"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612442"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>更新 Microsoft Store 識別碼金鑰
 
@@ -53,13 +53,13 @@ ms.locfileid: "1664821"
 
 ### <a name="request-body"></a>要求主體
 
-| 參數     | 類型   | 描述                       | 必要 |
+| 參數     | 類型   | 說明                       | 必要 |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | 字串 | Azure AD 存取權杖。        | 是      |
-| key           | 字串 | 過期的 Microsoft Store 識別碼金鑰。 | 否       |
+| key           | 字串 | 過期的 Microsoft Store 識別碼金鑰。 | 是       |
 
 
-### <a name="request-example"></a>要求的範例
+### <a name="request-example"></a>要求範例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
@@ -78,9 +78,9 @@ Host: collections.mp.microsoft.com
 
 ### <a name="response-body"></a>回應主體
 
-| 參數 | 類型   | 描述                                                                                                            | 必要 |
-|-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
-| key       | 字串 | 更新的 Microsoft Store 金鑰，可在未來呼叫 Microsoft Store 集合 API 或購買 API 時使用。 | 否       |
+| 參數 | 類型   | 說明                                                                                                            |
+|-----------|--------|------------------------------------------------------------------------------------------------------------------------|
+| key       | 字串 | 更新的 Microsoft Store 金鑰，可在未來呼叫 Microsoft Store 集合 API 或購買 API 時使用。 |
 
 
 ### <a name="response-example"></a>回應的範例
@@ -103,8 +103,8 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 ## <a name="error-codes"></a>錯誤碼
 
 
-| 代碼 | 錯誤        | 內部錯誤碼           | 說明                                                                                                                                                                           |
-|------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 代碼 | 錯誤        | 內部錯誤碼           | 說明   |
+|------|--------------|----------------------------|---------------|
 | 401  | Unauthorized | AuthenticationTokenInvalid | Azure AD 存取權杖無效。 在某些情況下，ServiceError 的詳細資料會包含更多資訊，例如權杖過期或 *appid* 宣告遺失時。 |
 | 401  | Unauthorized | InconsistentClientId       | Microsoft Store 識別碼金鑰的 *clientId* 宣告，和 Azure AD 存取權杖的 *appid* 不相符。                                                                     |
 

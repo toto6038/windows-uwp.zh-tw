@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來完成 App 提交的套件推出。
 title: 完成應用程式提交的推出
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 應用程式提交, 完成
 ms.assetid: c7dd39e6-5162-455a-b03b-1ed76bffcf6e
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a95f5ec792ca24e282c8708b8b622e8b3fdbca2
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 2f78bacbb4f283215e8675f949b26e5e084e2aa0
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815843"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4611449"
 ---
 # <a name="finalize-the-rollout-for-an-app-submission"></a>完成應用程式提交的推出
 

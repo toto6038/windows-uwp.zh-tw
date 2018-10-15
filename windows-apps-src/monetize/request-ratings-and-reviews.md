@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: 為您的應用程式作評等與評論
-ms.author: mcleans
-ms.date: 03/22/2018
+ms.author: mhopkins
+ms.date: 06/15/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f897eeaee835c1c1bcd96e9bd843ed8f6a85612
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690374"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610124"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -23,6 +23,9 @@ ms.locfileid: "1690374"
 * 您可以以以程式設計方式在 Microsoft Store 中打開您的應用程式的評等與評論頁面。
 
 當您準備好分析評等與評論資料後，您可以在 Windows 開發人員中心儀表板中檢視資料，或使用 Microsoft Store 分析 API 以程式設計方式擷取這些資料。
+
+> [!IMPORTANT]
+> 當您新增您的應用程式內的評等函式，所有評論必須傳送都給使用者，在市集中評分機制，無論/星級評等的選擇。 如果您從使用者收集意見反應或註解，它必須是清除它不相關的應用程式評等或評論存放區中的，但會直接傳送到應用程式開發人員。 請參閱 「 開發人員管理辦法[Fraudulent](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)或誠實活動的相關資訊。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>在您的應用程式中顯示評等與評論對話方塊
 

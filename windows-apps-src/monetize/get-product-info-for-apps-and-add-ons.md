@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: 了解如何使用 Windows.Services.Store 命名空間，來取得目前 app 或其中一個附加元件的 Microsoft Store 相關產品資訊。
 title: 取得應用程式和附加元件的產品資訊
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, App 內購買, IAP, 附加元件, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 3dd8ab9cb86bfeb645f8d46e313c78c681901508
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 417478df3b82967656d2210b3b532c5341f1fb2e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689284"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612429"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的產品資訊
 
@@ -24,9 +24,9 @@ ms.locfileid: "1689284"
 如需完整的範例應用程式，請參閱 [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 > [!NOTE]
-> **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如果您的應用程式目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[這篇文章](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
+> **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如果您的 app 目標為較早版本的 Windows 10，您必須使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間，而不是 **Windows.Services.Store** 命名空間。 如需詳細資訊，請參閱[這篇文章](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md)。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>先決條件
 
 這些範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
@@ -92,4 +92,4 @@ ms.locfileid: "1689284"
 * [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
 * [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
 * [實作 App 的試用版](implement-a-trial-version-of-your-app.md)
-* [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

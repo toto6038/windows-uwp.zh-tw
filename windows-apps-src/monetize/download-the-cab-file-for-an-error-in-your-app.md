@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: ''
 description: 在 Microsoft Store 分析 API 中使用此方法，以下載適應用程式中錯誤的 CAB 檔案。
 title: 下載應用程式中錯誤的 CAB 檔案
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/16/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: a74a72e1d02a73d2b930179d9d2cb99ea09c7c40
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 671c5c1b187ac48c12988a00d66acb366cae72f1
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662058"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612704"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下載應用程式中錯誤的 CAB 檔案
 
@@ -46,12 +46,12 @@ ms.locfileid: "1662058"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  |
+| 參數        | 類型   |  說明      |  必要  |
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要下載 CAB 檔案之應用程式的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的[應用程式身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | cabId | 字串 | 要下載之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |

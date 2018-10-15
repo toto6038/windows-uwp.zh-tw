@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 4F9657E5-1AF8-45E0-9617-45AF64E144FC
 description: 在 Microsoft Store 提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理附加元件。
 title: 管理附加元件
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d603ab8901eae16da92365042e3244202539586
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: be0d383fc271084fe20a958d20f6fa3a340da187
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663048"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4610450"
 ---
 # <a name="manage-add-ons"></a>管理附加元件
 

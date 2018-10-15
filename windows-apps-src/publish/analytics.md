@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 分析、 報告、 儀表板，應用程式、 資料、 計量
 ms.localizationpriority: medium
 ms.openlocfilehash: 090ddfdfbed1ae49e87f4dc419765e006913764f
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571892"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613506"
 ---
 # <a name="analyze-app-performance"></a>分析應用程式效能
 

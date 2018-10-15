@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b04033fb53a90015427feb820c91d0f4a1de7d5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575107"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612957"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 

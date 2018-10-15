@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
 description: 在 Microsoft Store 提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取 App 內購買相關資訊。
 title: 取得 App 的附加元件
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e829d497a62a55fb56462a669f4e3545740975c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 9b450636db1896de32b0b3c0d2822b37624de10b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663198"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4612482"
 ---
 # <a name="get-add-ons-for-an-app"></a>取得 App 的附加元件
 
@@ -41,13 +41,13 @@ ms.locfileid: "1663198"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 
-|  名稱  |  類型  |  描述  |  必要  |
+|  名稱  |  類型  |  說明  |  必要  |
 |------|------|------|------|
 |  applicationId  |  字串  |  您想要擷取其附加元件之 App 的「Store 識別碼」。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果 App 擁有的附加元件超過您在查詢中指定的值，回應主體會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
@@ -119,6 +119,6 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [取得所有 App](get-all-apps.md)
+* [取得所有應用程式](get-all-apps.md)
 * [取得 App](get-an-app.md)
 * [取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)

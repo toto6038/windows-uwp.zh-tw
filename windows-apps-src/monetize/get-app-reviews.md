@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器取得評論資料。
 title: 取得應用程式評論
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評論
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1e71fc0fb96344ab73c503de6fcc741673d8d9
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: ce1f9c3a360209bc9ac7b03ac162460a333c7192
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663848"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4613572"
 ---
 # <a name="get-app-reviews"></a>取得應用程式評論
 
@@ -44,12 +44,12 @@ ms.locfileid: "1663848"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取評論資料之應用程式的　[Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |  是  |
 | startDate | 日期 | 要擷取評論資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -71,7 +71,7 @@ ms.locfileid: "1663848"
 | 欄位        | 支援的運算子   |  描述        |
 |---------------|--------|-----------------|
 | market | eq、ne | 內含裝置市場的 ISO 3166 國家/地區碼的字串。 |
-| osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows 8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
+| osVersion  | eq、ne  | 下列其中一個字串：<ul><li><strong>Windows Phone 7.5</strong></li><li><strong>Windows Phone 8</strong></li><li><strong>Windows Phone 8.1</strong></li><li><strong>Windows Phone 10</strong></li><li><strong>Windows8</strong></li><li><strong>Windows8.1</strong></li><li><strong>Windows10</strong></li><li><strong>Unknown</strong></li></ul>  |
 | deviceType  | eq、ne  | 下列其中一個字串：<ul><li><strong>PC</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>Holographic</strong></li><li><strong>Unknown</strong></li></ul>  |
 | isRevised  | eq、ne  | 指定 <strong>true</strong> 以篩選已修訂的評論，否則請指定 <strong>false</strong>。  |
 | packageVersion  | eq、ne  | 已評論的應用程式套件版本。  |
@@ -109,7 +109,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
+| 值      | 類型   | 說明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | array  | 包含評論資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[評論數值](#review-values)一節。                                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評論資料，就會傳回此值。 |

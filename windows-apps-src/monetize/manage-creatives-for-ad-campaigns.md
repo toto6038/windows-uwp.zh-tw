@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: 在 Microsoft Store 促銷 API 中使用此方法，管理適用於廣告行銷活動的廣告素材。
 title: 管理廣告素材
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: f29920bba22be689c79f2264836ebcee6d8dfe5c
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 838329101695c21abfb7ac89dd9c83330b7bd26b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664018"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4614054"
 ---
 # <a name="manage-creatives"></a>管理廣告素材
 
@@ -51,7 +51,7 @@ ms.locfileid: "1664018"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -120,7 +120,7 @@ Authorization: Bearer <your access token>
 | 欄位        | 類型   |  描述      |  唯讀  | 預設值  |  POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  廣告素材的識別碼。     |   是    |      |    否   |       
-|  名稱   |  字串   |   廣告素材的名稱。    |    否   |      |  是     |       
+|  name   |  字串   |   廣告素材的名稱。    |    否   |      |  是     |       
 |  內容   |  字串   |  廣告素材影像的內容，含 Base64 編碼格式。<br/><br/>**注意**&nbsp;&nbsp;允許的廣告素材大小上限為 40 KB。 如果您提交的廣告素材檔案大於此上限，這個 API 將不會傳回錯誤，但不會成功建立行銷活動。     |  否     |      |   是    |       
 |  height   |  整數   |   廣告素材的高度。    |    否    |      |   是    |       
 |  width   |  整數   |  廣告素材的寬度。     |  否    |     |    是   |       
