@@ -1,25 +1,25 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: 了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。
 title: 處理廣告錯誤
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: fb60f870aa220a123bab185ef98ccca1f6a8881a
-ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
+ms.openlocfilehash: 49748a616654ae69c496dca74b25fd5e925e80ee
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "1880969"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620738"
 ---
 # <a name="handle-ad-errors"></a>處理廣告錯誤
 
-The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx),  [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx), and **NativeAdsManagerV2** classes each have an **ErrorOccurred** event that is raised if an ad-related error occurs. 您的應用程式程式碼可以處理這個事件，並檢查事件引數物件的 [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errorcode.aspx) 和 [ErrorMessage](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.errormessage.aspx) 屬性以協助判斷錯誤原因。
+每個 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)、[InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 和 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 類別都有 **ErrorOccurred** 事件，會在發生廣告相關錯誤時引發。 您的應用程式程式碼可以處理這個事件，並檢查事件引數物件的 [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errorcode) 和 [ErrorMessage](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs.errormessage) 屬性以協助判斷錯誤原因。
 
 <span id="bkmk-dotnet"/>
 
@@ -27,11 +27,11 @@ The [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advert
 
 處理 XAML app 中的廣告相關錯誤：
 
-1. Assign the **ErrorOccurred** event of your **AdControl**, **InterstitialAd**, or **NativeAdsManagerV2** object to the name of an event handler delegate.
+1. 指派 **AdControl**、**InterstitialAd** 或 **NativeAdsManagerV2** 物件的 **ErrorOccurred** 事件給事件處理常式委派的名稱。
 
-2. 為事件處理常式委派撰寫程式碼，以使其使用兩個參數：一個適用於寄件者的 **Object** 和一個 [AdErrorEventArgs](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aderroreventargs.aspx) 物件。
+2. 為事件處理常式委派撰寫程式碼，以使其使用兩個參數：一個適用於寄件者的 **Object** 和一個 [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) 物件。
 
-Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.
+以下範例會將名為 **OnAdError** 的委派指派給名為 *myBannerAdControl* 的 **AdControl** 物件之 **ErrorOccurred** 事件。
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -55,13 +55,13 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 ## <a name="javascripthtml-apps"></a>JavaScript/HTML app
 
-To handle **ErrorOccur** errors in a JavaScript app:
+處理 JavaScript 應用程式中的 **ErrorOccur** 錯誤：
 
-1.  Assign the **onErrorOccurred** event to an event handler.
+1.  指派 **onErrorOccurred** 事件給事件處理常式。
 
 2.  為事件處理常式撰寫程式碼。
 
-Here is an example that assigns an event handler named **errorLogger** to the **ErrorOccurred** event of an **AdControl** object.
+以下範例會將名為 **errorLogger** 的事件處理常式指派給 **AdControl** 物件的 **ErrorOccurred** 事件。
 
 > [!div class="tabbedCodeSnippets"]
 ``` html
@@ -75,7 +75,7 @@ Here is an example that assigns an event handler named **errorLogger** to the **
 
 錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
 
-Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.
+以下是處理 **onErrorOccurred** 事件且名為 **errorLogger** 之錯誤處理函式的範例。
 
 > [!div class="tabbedCodeSnippets"]
 ``` javascript

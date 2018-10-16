@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bceb1d2cc6682698d0ad06ed4b1865f3d6510442
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563746"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623797"
 ---
 # <a name="feedback-report"></a>意見反應報告
 
@@ -26,12 +26,12 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 
 鼓勵客戶提供有關您 App 的意見反應，是了解對他們而言最重要的問題和功能的不錯方式。 當客戶知道他們可以直接將意見反應直接傳送給您時，較不可能在市集中留下負面評論的意見反應。
 
-您可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的 App 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您 App 的所有客戶，都可以使用意見反應中樞 App 留下意見反應。 基於這個原因，您可能會看到客戶在此報告中的意見反應，即使您未明確要求意見反應您的應用程式。
+您可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的 App 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您 App 的所有客戶，都可以使用意見反應中樞 App 留下意見反應。 基於這個原因，您可能會看到客戶在此報告中的意見反應，即使您未明確要求意見反應內您的應用程式。
 
 使用[套件正式發行前小眾測試](package-flights.md)，意見反應也會有所幫助，因為意見反應報告會顯示每個客戶在留下意見反應時已安裝在其裝置的特定套件。
 
 > [!TIP]
-> 如需快速查看評論、 評分和使用者意見反應，您的應用程式的所有過去 30 天內，展開左側瀏覽功能表中的**互動**，然後選取**評論和意見反應。** 
+> 如需快速查看評論、 評分，並在您的應用程式的所有使用者意見反應過去 30 天內，請展開左側瀏覽功能表中的**互動**，然後選取**評論和意見反應。** 
 
 
 ## <a name="apply-filters"></a>套用篩選
@@ -58,7 +58,7 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 - **新鮮貨**：顯示其他客戶在最後七天附議的意見反應，而取得最新活動的意見反應顯示在最前面。
 - **最近**︰顯示所有意見反應，而最近留下的意見反應顯示在最前面。
 
-在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場，留下意見反應、 的類型的裝置，以及**Windows 測試人員**如果提交意見反應的客戶是 Windows 測試人員的成員時所使用的裝置已安裝的特定套件計畫。
+在每個意見的旁邊，您會看到留下意見反應的日期，以及意見反應的類型。 您也會看到客戶的市場，留下意見反應，該裝置類型和**Windows 測試人員**如果提交意見反應的客戶是 Windows 測試人員的成員時所使用的裝置已安裝的特定套件計畫。
 
 您也會在此看到[回應意見反應](respond-to-customer-feedback.md)的選項。
 

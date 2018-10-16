@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563505"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623730"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 
@@ -41,7 +41,7 @@ ms.locfileid: "4563505"
 
 ### <a name="app-bundles"></a>App 套件組合
 
-對於 UWP 應用程式，Visual Studio 可以產生應用程式套件組合 （.msixbundle 或.appxbundle） 減少使用者下載的應用程式的大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
+適用於 UWP app，Visual Studio 可以產生應用程式套件組合 （.msixbundle 或.appxbundle） 減少使用者下載的應用程式的大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
 
 > [!NOTE]
 > 一個應用程式套件組合可以包含所有架構的套件。
@@ -61,7 +61,7 @@ ms.locfileid: "4563505"
 > 資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
 
 
-應用程式套件組合 （.msixbundle 或.appxbundle） 會使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。 請注意，在.msixbundle 或.appxbundle 中，每個包含套件的資訊清單必須使用的相同元素和屬性，除了的[身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的**ProcessorArchitecture**屬性。
+應用程式套件組合 （.msixbundle 或.appxbundle） 會使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。 請注意，在.msixbundle 或.appxbundle 中，每個包含套件的資訊清單必須使用的相同元素和屬性，除了**ProcessorArchitecture** [身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素的屬性。
 
 > [!TIP]
 > 在您提交套件之前，請務必執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
@@ -83,12 +83,12 @@ UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows
 
 目前支援的版本範圍為： 
 - 最小值：10.0.10240.0
-- 最大值： 10.0.17763.1
+- 最大： 10.0.17763.1
 
 
 ## <a name="storemanifest-xml-file"></a>StoreManifest XML 檔案
 
-StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用，StoreManifest.xml 送出應用程式套件，並且必須是在您的應用程式主要專案的根資料夾中。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
+StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用，StoreManifest.xml 是與提交應用程式套件，且必須在您的 app 主要專案的根資料夾中。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
  
 

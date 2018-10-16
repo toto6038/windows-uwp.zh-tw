@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f29828a800795aba70c17bcab19b56b85d56382
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564162"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4624066"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
-本主題示範的方式都可以建立和使用 Windows 執行階段非同步物件[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
+本主題示範您可以兩者的方式建立和取用與 Windows 執行階段非同步物件[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
 
 ## <a name="asynchronous-operations-and-windows-runtime-async-functions"></a>非同步作業與 Windows 執行階段 "Async" 函式
 實作有可能超過 50 毫秒完成的任何 Windows 執行階段 API 做為非同步函式 (名稱以 "Async" 結尾)。 非同步函式的實作在另一個執行續上起始工作，並立即傳回代表非同步作業的物件。 非同步作業完成時，傳回包含工作所產生任何值的物件。 **Windows::Foundation** Windows 執行階段命名空間包含四種非同步作業物件。
@@ -317,7 +317,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 ## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消非同步作業，並取消回呼
 
-非同步程式設計的 Windows 執行階段的功能可讓您取消 「 執行中 」 的非同步動作或作業。 讓我們開始使用簡單的範例。
+在 Windows 執行階段功能進行非同步程式設計可讓您取消 「 執行中 」 的非同步動作或作業。 讓我們開始使用簡單的範例。
 
 ```cppwinrt
 // pch.h
@@ -354,11 +354,11 @@ int main()
 }
 ```
 
-如果您執行上述範例，則您會看到**ImplicitCancellationAsync**列印一則訊息每秒後的三秒的時間就會自動終止帶來被取消。 因為在發生`co_await`運算式中，在協同程式檢查是否已取消。 如果有，則它 short-circuits 出;此外，如果未指定，則它就會暫停為一般。
+如果您執行上面的範例，則您會看到**ImplicitCancellationAsync**列印一則訊息每秒後的三秒的時間就會自動終止帶來被取消。 因為在遇到`co_await`運算式，協同程式會檢查是否已取消。 如果有，則它 short-circuits 出;此外，若未指定，則它會暫停為一般。
 
-協同程式暫停時，取消，當然，會發生。 只有當協同程式恢復時，碰到另一部或`co_await`，它會檢查的取消。 這個問題是其中一個可能太--粗糙延遲回應取消作業。
+協同程式暫停時，取消可以當然，會發生。 只有當協同程式恢復時，碰到另一部或`co_await`，它會檢查的取消。 問題是其中一個可能太--粗糙延遲回應取消作業。
 
-因此，另一個選項是明確地輪詢從您的協同程式中的取消。 請使用下列清單中的程式碼更新，上述範例。 在這個新的範例中， **ExplicitCancellationAsync**擷取[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函式所傳回的物件，並使用它來定期檢查是否已取消協同程式。 協同程式，只要不取消，迴圈無限期;一旦取消，迴圈，並將函式正常的結束。 因為先前範例中，但此處離開會發生明確，並控制，結果會相同。
+因此，另一個選項是明確地輪詢取消從您的協同程式中。 更新，上述範例使用下列清單中的程式碼。 在這個新的範例中， **ExplicitCancellationAsync**擷取[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函式所傳回的物件，並使用它來定期檢查是否已取消協同程式。 協同程式，只要它不會取消，迴圈無限期;一旦取消，迴圈，並將函式正常的結束。 因為先前範例中，但此處結束會發生明確，並控制下，結果會相同。
 
 ```cppwinrt
 ...
@@ -382,12 +382,12 @@ IAsyncAction MainCoroutineAsync()
 ...
 ```
 
-等候**winrt::get_cancellation_token**擷取代表您的協同程式便會產生**IAsyncAction**知識的取消語彙基元。 您可以在該權杖使用函式呼叫運算子來查詢取消狀態&mdash;基本上輪詢取消。 如果您正在執行某些計算繫結的作業，或逐一查看大型集合，這是合理的技術。
+等候**winrt::get_cancellation_token**擷取代表您的協同程式便會產生**IAsyncAction**知識與取消語彙基元。 您可以在該權杖使用函式呼叫運算子來查詢取消狀態&mdash;基本上輪詢取消。 如果您正在執行某些計算繫結的作業，或逐一查看大型的集合，這是合理的技術。
 
 ### <a name="register-a-cancellation-callback"></a>登錄取消回呼
-在 Windows 執行階段取消不會自動流程其他非同步物件。 但是&mdash;版本 10.0.17763.0 (Windows 10，版本 1809年) 的 Windows sdk 中導入&mdash;您可以登錄取消回呼。 這是預先勾點取消可以被傳播，並可讓您能夠使用現有的並行處理程式庫整合。
+在 Windows 執行階段取消不會自動流向其他非同步物件。 但是&mdash;版本 10.0.17763.0 (Windows 10，版本 1809年) 的 Windows sdk 中導入&mdash;您可以登錄取消回呼。 這是預先勾點取消可以被傳播，並可讓您可以使用現有的並行處理程式庫整合。
 
-在下一個程式碼範例， **NestedCoroutineAsync**負責運作，但它有任何特殊的取消邏輯中。 **CancellationPropagatorAsync**是基本上是巢狀的協同程式; 上的包裝函式包裝函式會聯合國轉送取消。
+在下一個程式碼範例， **NestedCoroutineAsync**負責運作，但它中有任何特殊的取消邏輯。 **CancellationPropagatorAsync**是基本上是巢狀的協同程式; 上的包裝函式包裝函式會聯合國轉送取消。
 
 ```cppwinrt
 // pch.h
@@ -437,7 +437,7 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync**登錄它自己的取消回呼，lambda 函式，並在它的等待然後 （它暫停） 除非巢狀的工作完成。 當或取消**CancellationPropagatorAsync**時，它傳播到巢狀的協同程式取消。 不需要為輪詢取消;也不會取消封鎖無限期。 這種機制是有足夠的彈性，您可以使用它來與其互通的協同程式或並行處理的媒體櫃知道執行任何動作的 C + + /winrt。
+**CancellationPropagatorAsync**登錄它自己的取消回呼，lambda 函式，並在它的等待然後 （它會暫停） 除非巢狀的工作完成。 當或取消**CancellationPropagatorAsync** ，它傳播到巢狀的協同程式取消。 不需要地輪詢有取消;也不會取消封鎖無限期。 這種機制是有足夠的彈性，您可以使用它來與其互通的協同程式或並行存取媒體櫃知道執行任何動作的 C + + /winrt。
 
 ## <a name="reporting-progress"></a>報告進度
 
@@ -501,7 +501,7 @@ int main()
 ```
 
 > [!NOTE]
-> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派，其已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種下列兩種類型的完成處理常式的其中一個是適當;不同時針對相同的非同步物件。
+> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種其中一項下列兩種完成處理常式是適當;不同時針對相同的非同步物件。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };

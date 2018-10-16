@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得附加元件的依通道彙總轉換資料。
 title: 依通道取得附加元件轉換
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件轉換, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c32cc30d65c798c09592ac46d64c2c1c550b64
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: af29c790df5508a22c545cdc5a2ca2faac15e134
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663418"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623992"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>依通道取得附加元件轉換
 
@@ -46,12 +46,12 @@ ms.locfileid: "1663418"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  描述      |  必要  
+| 參數        | 類型   |  說明      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取附加元件轉換資料之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | inAppProductId | 字串 | 您想要擷取轉換資料之附加元件的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  | 是  |
@@ -82,7 +82,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 描述                  |
+| 值      | 類型   | 說明                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 物件陣列，內含附加元件的彙總轉換資料。 如需有關每個物件中資料的詳細資訊，請參閱下方的[轉換值](#conversion-values)一節。                     |
 | @nextLink  | string | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的轉換資料，就會傳回此值。 |
