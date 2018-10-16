@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, python
 ms.localizationpriority: medium
 ms.openlocfilehash: 0dc6f9854ed3fabeb788b99297cd2b33cdc1b79b
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4615116"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688541"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
 

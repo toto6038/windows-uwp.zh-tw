@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 72b6ee6c57b9b4bebcda16b8e65a663c0e51788d
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675505"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4683651"
 ---
 # <a name="optimize-animations-media-and-images"></a>最佳化動畫、媒體及影像
 
@@ -223,7 +223,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-範例 2 程式碼後置 (壞)—將 BitmapImage 連接到樹狀結構之前先設定其 UriSource。
+範例 2 程式碼後置 （壞） — 將 BitmapImage UriSource 設定連接到樹狀結構之前先。
 
 ```csharp
 var bitmapImage = new BitmapImage();

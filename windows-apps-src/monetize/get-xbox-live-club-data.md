@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、俱樂部
 ms.localizationpriority: medium
 ms.openlocfilehash: f9f901ce5a91443321f7cc5b182a5ea64279dbfb
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4613963"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688018"
 ---
 # <a name="get-xbox-live-club-data"></a>取得 Xbox Live 俱樂部資料
 

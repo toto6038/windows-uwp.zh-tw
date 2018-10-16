@@ -11,12 +11,12 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 731d449d779806fbd4104787b692d3b7d0408036
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622259"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4688679"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已封裝的傳統型應用程式的已知的問題
 
@@ -125,7 +125,7 @@ Windows 應用程式套件資訊清單中的發行者項目必須符合您用來
 
 **選項 3：CertUtil**
 
-從 PFX 檔案的命令列執行 **certutil**，然後從輸出複製 *\[主體\]* 欄位。
+從命令列執行**certutil** PFX 檔案，並從輸出複製 [*主體*] 欄位。
 
 ```cmd
 certutil -dump <cert_file.pfx>

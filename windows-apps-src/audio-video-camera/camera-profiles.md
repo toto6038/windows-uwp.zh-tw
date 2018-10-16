@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f842b10ce056d02d1c30c2fe285a87d5fe20dca8
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832252"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4690107"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>使用相機設定檔探索並選取相機功能
 
@@ -77,7 +77,7 @@ ms.locfileid: "1832252"
 > [!NOTE] 
 > 這一節中所述的 API 從 Windows 10 版本 1803 起已過時。 請參閱上一節，**使用媒體畫面來源群組取得設定檔**。
 
-像其他案例一樣，開始選取支援 HDR 的設定檔。 建立 **MediaCaptureInitializationSettings**以及用來保存擷取裝置識別碼的字串。 新增布林值變數，以追蹤是否支援 HDR 視訊。
+像其他案例一樣，開始選取支援 HDR 的設定檔。 建立**MediaCaptureInitializationSettings**和字串來保存擷取裝置識別碼。 新增布林值變數，以追蹤是否支援 HDR 視訊。
 
 [!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
 

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評論
 ms.localizationpriority: medium
-ms.openlocfilehash: ce1f9c3a360209bc9ac7b03ac162460a333c7192
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4613572"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4686212"
 ---
 # <a name="get-app-reviews"></a>取得應用程式評論
 
@@ -109,43 +109,43 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                                                                                                                                                                                                                                                                            |
-|------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 值      | array  | 包含評論資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[評論數值](#review-values)一節。                                                                                                                                      |
+| 值      | 類型   | 說明      |
+|------------|--------|------------------|
+| 值      | array  | 包含評論資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[評論數值](#review-values)一節。       |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評論資料，就會傳回此值。 |
-| TotalCount | 整數    | 查詢之資料結果的資料列總數。                                    |
+| TotalCount | 整數    | 查詢之資料結果的資料列總數。  |
 
  
 ### <a name="review-values"></a>評論數值
 
 *Value* 陣列中的元素包含下列值。
 
-| 值                  | 類型    | 描述                                                                                                                                                                                                                          |
-|------------------------|---------|---------------------|
-| 日期                   | 字串  | 評論資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。  |
-| applicationId          | 字串  | 您正在擷取評論資料之 App 的 Store 識別碼。        |
-| applicationName        | 字串  | App 的顯示名稱。   |
-| market                 | 字串  | 提交評論之市場的 ISO 3166 國家/地區碼。       |
-| osVersion              | 字串  | 提交評論的 OS 版本。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。         |
-| deviceType             | 字串  | 提交評論的裝置類型。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。      |
-| isRevised              | 布林值 | **true** 值表示評論已修訂，否則為 **false**。         |
-| packageVersion         | 字串  | 已評論的應用程式套件版本。   |
-| deviceModel            | 字串  | 評論 app 的裝置類型。      |
-| productFamily          | 字串  | 裝置系列名稱。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。  |
-| deviceRAM              | 數字  | 實體 RAM (以 MB 為單位)。        |
-| deviceScreenResolution | 字串  | 裝置的螢幕解析度，格式為「*width* x *height*」。        |
-| deviceStorageCapacity  | 數字  | 主要存放磁碟的容量 (以 GB 為單位)。   |
-| isTouchEnabled         | 布林值 | **true** 值表示已啟用觸控功能，否則為 **false**。      |
-| reviewerName           | 字串  | 評論者名稱。      |
-| rating                 | 數字  | App 評分 (以星星為單位)。         |
-| reviewTitle            | 字串  | 評論的標題。       |
-| reviewText             | 字串  | 評論的文字內容。     |
-| helpfulCount           | 數字  | 該評論被標記為「很有幫助」的次數。     |
-| notHelpfulCount        | 數字  | 該評論被標記為「沒有幫助」的次數。               |
-| responseDate           | 字串  | 提交回應的日期。                 |
-| responseText           | 字串  | 回應的文字內容。        |
-| id                     | 字串  | 評論的識別碼 (這是 GUID)。 您可以在[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)和[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法中使用此識別碼。       |
- 
+| 值           | 類型    | 描述       |
+|-----------------|---------|-------------------|
+| 日期            | 字串  | 評論資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
+| applicationId   | 字串  | 您正在擷取評論資料之 App 的 Store 識別碼。         |
+| applicationName | 字串  | App 的顯示名稱。    |
+| market          | 字串  | 提交評論之市場的 ISO 3166 國家/地區碼。        |
+| osVersion       | 字串  | 提交評論的 OS 版本。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。            |
+| deviceType      | 字串  | 提交評論的裝置類型。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。            |
+| isRevised       | 布林值 | **true** 值表示評論已修訂，否則為 **false**。   |
+| packageVersion  | 字串  | 已評論的應用程式套件版本。        |
+| deviceModel        | 字串  |評論 app 的裝置類型。     |
+| productFamily      | 字串  | 裝置系列名稱。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。   |
+| deviceRAM       | 數字  | 實體 RAM (以 MB 為單位)。    |
+| deviceScreenResolution       | 字串  | 裝置的螢幕解析度，格式為「*width* x *height*」。    |
+| deviceStorageCapacity | 數字 | 主要存放磁碟的容量 (以 GB 為單位)。 |
+| isTouchEnabled | 布林值 | **true** 值表示已啟用觸控功能，否則為 **false**。 |
+| reviewerName | 字串 | 評論者名稱。 |
+| rating | 數字 | App 評分 (以星星為單位)。 |
+| reviewTitle | 字串 | 評論的標題。 |
+| reviewText | 字串 | 評論的文字內容。 |
+| helpfulCount | 數字 | 該評論被標記為「很有幫助」的次數。 |
+| notHelpfulCount | 數字 | 該評論被標記為「沒有幫助」的次數。 |
+| responseDate | 字串 | 提交回應的日期。 |
+| responseText | 字串 | 回應的文字內容。 |
+| id | 字串 | 評論的識別碼 (這是 GUID)。 您可以在[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)和[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法中使用此識別碼。 |
+
 
 ### <a name="response-example"></a>回應範例
 
