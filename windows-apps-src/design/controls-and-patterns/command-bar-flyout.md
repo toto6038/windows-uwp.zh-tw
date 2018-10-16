@@ -15,12 +15,12 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: ed17299051ae7da32f238eb57876b81597c8effa
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4617948"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680119"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -149,7 +149,7 @@ private void Image_Tapped(object sender, TappedRoutedEventArgs e)
 
 若要顯示命令的操作功能表中，您通常會指派飛出視窗[ContextFlyout](/uwp/api/windows.ui.xaml.uielement.contextflyout)屬性的 UI 元素。 如此一來，開啟的飛出視窗由項目，處理，而且您不需要執行任何動作。
 
-如果您處理自行顯示飛出視窗，（例如，在上一個[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件），請將設定飛出視窗的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)為**標準**其展開模式中開啟飛出視窗，並為它提供焦點。
+如果您處理自行顯示飛出視窗，（例如，在上一個[RightTapped](/uwp/api/windows.ui.xaml.uielement.righttapped)事件），請設定飛出視窗的[ShowMode](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.showmode)為**標準**其展開模式中開啟飛出視窗，並為它提供焦點。
 
 > [!TIP]
 > 如需時顯示飛出視窗，以及如何控制飛出視窗的位置選項的詳細資訊，請參閱[飛出視窗](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)。

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 09dcf1ace7c5d00509e54cd6fa936a2aa5ef7820
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 79873d014c5ee735a509328d4a123f839831325b
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653877"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4682520"
 ---
 # <a name="accessing-homegroup-content"></a>存取 HomeGroup 內容
 
@@ -197,7 +197,7 @@ ms.locfileid: "1653877"
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **開啟使用者所選的檔案以進行讀取，將檔案資料流設定為** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 的來源，然後播放檔案。
+3.  **開啟使用者的檔案以進行讀取存取權，並將檔案資料流設定做為來源**[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)，，然後播放檔案。
     ```cs
     if (file != null)
     {

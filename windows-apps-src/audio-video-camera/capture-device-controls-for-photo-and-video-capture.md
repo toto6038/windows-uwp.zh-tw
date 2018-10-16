@@ -9,15 +9,16 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d0d7a429cf702455d969e1ac1c62def6181e8dd0
-ms.sourcegitcommit: 64cfb79fd27b09d49df99e8c9c46792c884593a7
+ms.localizationpriority: medium
+ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "211212"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4681759"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>相片和視訊擷取的手動相機控制項
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文示範如何使用手動裝置控制項來啟用美化的相片和視訊擷取案例，包括光學防手震和平滑變焦。
@@ -98,11 +99,11 @@ ms.locfileid: "211212"
 
 在消除紅眼核取方塊的處理常式中，將 [**RedEyeReduction**](https://msdn.microsoft.com/library/windows/apps/dn297758) 屬性設定為適當的值。
 
-[!code-cs[紅眼](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
+[!code-cs[RedEye](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
 
 最後，在視訊手電筒核取方塊的處理常式中，將 [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 屬性設定為適當的值。
 
-[!code-cs[手電筒](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
+[!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
 > [!NOTE] 
 >  在某些裝置上，除非裝置的預覽串流處於執行狀態且正在主動擷取視訊，否則即使 [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) 設定為 true，手電筒也不會發光。 建議的操作順序是開啟視訊預覽，接著將 **Enabled** 設定為 true 來開啟手電筒，然後起始視訊擷取。 在某些裝置上，要在啟動預覽後，手電筒才會亮起。 在其他裝置上，則是在啟動視訊擷取後，手電筒才會亮起。
@@ -205,7 +206,7 @@ ms.locfileid: "211212"
 
 取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **FocusControl** 目前的值，如此才不會在設定值時觸發事件。
 
-[!code-cs[對焦](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
+[!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
 在手動對焦選項按鈕的 **Checked** 事件處理常式中，取得 **FocusControl** 物件並呼叫[**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075)，以防萬一您的 App 先前已透過呼叫 [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) 將焦點解除鎖定。
 
@@ -268,7 +269,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 ## <a name="powerline-frequency"></a>電源頻率
 有些相機裝置支援抗閃爍處理，而這取決於了解目前環境中電源的 AC 頻率。 有些裝置支援自動決定電源頻率，有些則需要手動設定頻率。 下列程式碼範例顯示如何判斷裝置上的電源頻率支援，以及必要時如何手動設定頻率。 
 
-首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 透過呼叫 [**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899) 並傳入 **Auto** 值以執行此操作。 如果呼叫成功，表示裝置支援您的自動電源頻率。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
+首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 藉由呼叫[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)並傳入的值為**自動**執行此動作。如果呼叫成功，這表示您的自動電源頻率支援的說明。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 
@@ -286,7 +287,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 取消註冊 [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) 事件處理常式之後，將滑桿控制項的值設定為 **WhiteBalanceControl** 目前的值，如此才不會在設定值時觸發事件。
 
-[!code-cs[白平衡](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
+[!code-cs[WhiteBalance](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
 
 在色溫預設下拉式方塊的 [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) 事件處理常式中，藉由呼叫 [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) 來取得目前選取的預設並設定控制項的值。 如果選取的預設值不是 **Manual**，請停用手動白平衡滑桿。
 
@@ -338,7 +339,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 
 在 **ManipulationDelta** 事件的處理常式中，更新以使用者的捏合手勢變更為基礎的縮放係數。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 值代表捏合手勢的比例變更，讓少量增加的捏合大小是稍微大於 1.0 的數字，而少量減少的捏合大小是稍微小於 1.0 的數字。 在這個範例中，目前的縮放控制項值會乘以縮放差異。
 
-在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最後，您必須確定縮放係數是裝置所支援的縮放分段大小的倍數 (以 [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) 屬性表示)。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
+在設定縮放係數之前，您必須確定此值不會小於裝置所支援的最小值 (以 [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) 屬性表示)。 此外，確定此值是小於或等於 [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 值。 最後，您必須確定縮放係數是裝置所示[**步驟**](https://msdn.microsoft.com/library/windows/apps/dn633818)屬性所支援的縮放分段大小的倍數。 如果縮放係數不符合這些需求，當您嘗試在擷取裝置上設定縮放比例時，將會擲回例外狀況。
 
 建立新的 [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) 物件，以在擷取裝置上設定縮放比例。 將 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) 屬性設為 [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726)，然後將 [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) 屬性設為所需的縮放係數。 最後，呼叫 [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) 以在裝置上設定新的縮放值。 裝置將會順暢地轉換到新的縮放值。
 

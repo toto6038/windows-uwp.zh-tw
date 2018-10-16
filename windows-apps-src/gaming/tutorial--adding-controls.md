@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 84230759f03cb60b5b776d3407ac0f96e090d495
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: Auto
+ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675295"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4680196"
 ---
 # <a name="add-controls"></a>新增控制項
 
@@ -99,7 +99,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 當遊戲暫停時，遊戲會進入 **WaitForInput** 狀態。 當玩家將指標移到遊戲主視窗外，或按下暫停按鈕 (P 按鍵或遊戲台 \[**開始** \] 按鈕)，就會發生此狀況。 **MoveLookController** 會登錄按鍵動作，並在呼叫 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法時通知遊戲迴圈。 此時，如果 **IsPauseRequested** 傳回 **true**，遊戲迴圈會在 **MoveLookController** 上呼叫 **WaitForPress**，讓控制器進入 **WaitForInput** 狀態。 
 
 
-一旦在 **WaitForInput** 狀態，遊戲會停止處理幾乎所有遊戲輸入事件，直到它會返回 \[**使用中**\] 狀態。 例外的是暫停按鈕，按此按鈕會造成遊戲回復到使用中的狀態。 暫停按鈕以外，為了讓遊戲回復到 \[**使用中**\] 狀態，玩家需要選取一個選單項目。 
+一旦在 **WaitForInput** 狀態，遊戲會停止處理幾乎所有遊戲輸入事件，直到它會返回 \[**使用中**\] 狀態。 例外的是暫停按鈕，按此按鈕會造成遊戲回復到使用中的狀態。 暫停按鈕以外，為了讓遊戲回復到**使用中**狀態玩家需要選取選單項目。 
 
 
 
@@ -579,7 +579,7 @@ RT 鍵 | 射擊球體
 
 
 
-在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我們新增兩個新事件，以判斷遊戲台是否已經[新增](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[移除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 下列事件會更新 **m_gamepadsChanged** 屬性。 這是在 **UpdatePollingDevices** 方法中用來檢查已知遊戲台的清單是否已變更。 
+在 [**InitWindow**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L68-L103) 方法中，我們新增兩個新事件，以判斷遊戲台是否已經[新增](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1100-L1105)或[移除](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L1109-L1114)。 下列事件會更新 **m_gamepadsChanged** 屬性。 這是在**UpdatePollingDevices**方法用來檢查已知遊戲台的清單是否有所變更。 
 
 ```cpp
     // Detect gamepad connection and disconnection events.

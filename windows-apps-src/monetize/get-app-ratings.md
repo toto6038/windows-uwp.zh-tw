@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評分
 ms.localizationpriority: medium
-ms.openlocfilehash: d3d09aa395f9c0924951a44f5b0abaf9c99cb32e
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 0671015ead96b57515b4b451a06ff3c9cf1a94cb
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620840"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694625"
 ---
 # <a name="get-app-ratings"></a>取得應用程式評分
 
@@ -106,20 +106,20 @@ Authorization: Bearer <your access token>
 
 *Value* 陣列中的元素包含下列值。
 
-| 值           | 類型    | 描述                                                                                                                                                                                                                          |
-|-----------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 值           | 類型    | 描述       |
+|-----------------|---------|-------------------|
 | 日期            | 字串  | 評分資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| applicationId   | 字串  | 您正在擷取評分資料之 app 的 Store 識別碼。                                                                                                                                                                 |
-| applicationName | 字串  | App 的顯示名稱。                                                                                                                                                                                                         |
-| market          | 字串  | 提交評分之市場的 ISO 3166 國家/地區碼。                                                                                                                                                              |
-| osVersion       | 字串  | 提交評分的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                               |
-| deviceType      | 字串  | 提交評分的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。                                                                                           |
-| isRevised       | 布林值 | **true** 值表示評分已修訂，否則為 **false**。                                                                                                                                                       |
-| oneStar         | 數字  | 一顆星評分的數目。                                                                                                                                                                                                      |
-| twoStars        | 數字  | 兩顆星評分的數目。                                                                                                                                                                                                      |
-| threeStars      | 數字  | 三顆星評分的數目。                                                                                                                                                                                                    |
-| fourStars       | 數字  | 四顆星評分的數目。                                                                                                                                                                                                     |
-| fiveStars       | 數字  | 五顆星評分的數目。            |
+| applicationId   | 字串  | 您正在擷取評分資料之 app 的 Store 識別碼。         |
+| applicationName | 字串  | App 的顯示名稱。    |
+| market          | 字串  | 提交評分之市場的 ISO 3166 國家/地區碼。        |
+| osVersion       | 字串  | 提交評分的 OS 版本。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。            |
+| deviceType      | 字串  | 提交評分的裝置類型。 如需支援的字串清單，請參閱上方的＜[篩選欄位](#filter-fields)＞一節。            |
+| isRevised       | 布林值 | **true** 值表示評分已修訂，否則為 **false**。   |
+| oneStar         | 數字  | 一顆星評分的數目。        |
+| twoStars        | 數字  | 兩顆星評分的數目。    |
+| threeStars      | 數字  | 三顆星評分的數目。   |
+| fourStars       | 數字  | 四顆星評分的數目。    |
+| fiveStars       | 數字  | 五顆星評分的數目。    |
 
 
 ### <a name="response-example"></a>回應範例

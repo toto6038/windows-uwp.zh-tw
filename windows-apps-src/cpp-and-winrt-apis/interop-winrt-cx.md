@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: b60b0d7c201f172261de1546fc250e40b8cd670f
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4618592"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694575"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 本主題示範可用於之間轉換的兩個協助程式函式[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)及[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)物件。 您可以使用它們來使用兩種語言專案中，程式碼之間的互通性，或者您可以使用函式，逐漸將程式碼移從 C + + /CX 至 C + + WinRT (請參閱[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md))。

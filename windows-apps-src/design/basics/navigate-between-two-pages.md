@@ -17,12 +17,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 359c6527c341a08eca23aa6dd28acd27ddb19205
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4611363"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4679977"
 ---
 # <a name="implement-navigation-between-two-pages"></a>在兩頁間實作瀏覽
 
@@ -320,7 +320,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 我們的 App 可以在兩個頁面之間瀏覽，但這只是最基本的功能。 通常，當應用程式有多個頁面時，這些頁面需要共用資訊。 讓我們將一些資訊從第一頁傳送到第二頁。
 
-在 Page1.xaml 中，使用下列 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 取代您稍早新增的 **HyperlinkButton**。
+在 Page1.xaml 中，您已新增**HyperlinkButton**較舊版本以取代下列[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。
 
 在此，我們新增 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 標籤和 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) `name` 以輸入文字字串。
 
