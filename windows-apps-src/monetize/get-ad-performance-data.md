@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 235EBA39-8F64-4499-9833-4CCA9C737477
 description: 使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告績效資料。
 title: 取得廣告效益資料
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告, 效益
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e7439b8602f8b6900b747d26add2914f8685526
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: e4800a0021288f4d0081946c1fad20099aa4cd77
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663599"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622953"
 ---
 # <a name="get-ad-performance-data"></a>取得廣告效益資料
 
@@ -48,14 +48,14 @@ ms.locfileid: "1663599"
 
 | 標頭        | 類型   | 描述           |
 |---------------|--------|--------------------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 若要擷取特定 App 的廣告績效資料，請使用 *applicationId* 參數。 若要擷取與您開發人員帳戶關聯之所有 App 的廣告績效資料，請省略 *applicationId* 參數。
 
-| 參數     | 類型   | 描述     | 必要 |
+| 參數     | 類型   | 說明     | 必要 |
 |---------------|--------|-----------------|----------|
 | applicationId   | 字串    | 您想要擷取廣告績效資料之 App 的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |    不可以      |
 | startDate   | 日期    | 要擷取的廣告績效資料之日期範圍的開始日期，格式為 YYYY/MM/DD。 預設為目前的日期減去 30 天。 |    否      |
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
+| 值      | 類型   | 說明                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | 陣列  | 內含彙總廣告績效資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[廣告績效值](#ad-performance-values)一節。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 5，但是查詢有超過 5 個資料項目，就會傳回此值。 |

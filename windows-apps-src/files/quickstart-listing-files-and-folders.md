@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571008"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620390"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
@@ -35,7 +35,7 @@ ms.locfileid: "4571008"
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何撰寫非同步的 app 在 C + + /winrt，請參閱[並行和非同步作業，使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 了解如何撰寫非同步的 app 在 C + + /CX，請參閱[的非同步程式設計在 C + + /CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何撰寫非同步的 app 在 C + + /winrt，請參閱[並行和非同步作業，使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何撰寫非同步的 app 在 C + + /CX，請參閱[非同步程式設計在 C + + /CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **位置的存取權限**
 
@@ -46,7 +46,7 @@ ms.locfileid: "4571008"
 > [!NOTE]
 > 請記得宣告 **picturesLibrary** 功能。
 
-在此範例中我們第一次使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法取得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的所有檔案 （不在子資料夾），並列出每個檔案的名稱。 接下來，我們會使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法來取得**PicturesLibrary**中的所有子資料夾，並列出每個子資料夾的名稱。
+在此範例中我們第一次使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法來取得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的所有檔案 （不在子資料夾），並列出每個檔案的名稱。 接下來，我們會使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法來取得所有的子資料夾中**PicturesLibrary**並列出每個子資料夾的名稱。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -181,7 +181,7 @@ Next folder
 > [!NOTE]
 > 在 C# 或 Visual Basic 中，請務必在您使用 **await** 運算子的任何方法的方法宣告中放置 **async** 關鍵字。
 
-或者，您可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法以取得特定位置中的所有項目 （檔案與子資料夾）。 下列範例會使用**GetItemsAsync**方法，以取得所有檔案與[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的子資料夾 （不在子資料夾）。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
+或者，您可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法來取得特定位置中的所有項目 （檔案與子資料夾）。 下列範例會使用**GetItemsAsync**方法，以取得所有檔案與子資料夾[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中 （不在子資料夾）。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -284,7 +284,7 @@ Next item
 
 ## <a name="query-files-in-a-location-and-enumerate-matching-files"></a>查詢位置中的檔案並列舉相符的檔案
 
-在此範例中，我們會依月份和這次[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)中的所有檔案查詢範例遞迴到子資料夾而產生。 首先，我們會呼叫 [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) 並將 [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) 值傳遞到方法。 我們會得到 [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) 物件。
+在此範例中我們查詢依月份和這次分組[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)中的所有檔案的範例遞迴到子資料夾而產生。 首先，我們會呼叫 [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) 並將 [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) 值傳遞到方法。 我們會得到 [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) 物件。
 
 接著我們會呼叫 [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync)，它會傳回代表虛擬資料夾的 [**StorageFolder**](/uwp/api/windows.storage.storagefolder) 物件。 在這個案例中，我們依月份分組，讓每個虛擬資料夾代表相同月份的檔案群組。
 

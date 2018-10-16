@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571915"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616962"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
@@ -145,7 +145,7 @@ Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件
 > 應用程式安裝程式假設應用程式已受到裝置的信任。 如果要側載開發人員或企業應用程式，您必須在裝置的受信任的人或受信任的發行者憑證授權單位存放區安裝簽署憑證。 如果您不確定如何執行此動作，請參閱[安裝測試憑證](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
 ### <a name="sideload-your-app-on-previous-versions-of-windows"></a>在舊版 Windows 上側載您的應用程式
-使用 UWP app 套件時，因為它們是使用傳統型應用程式，所以應用程式不會安裝到裝置上。 一般而言，您從 Microsoft Store 下載 UWP app 時，也會同時將應用程式安裝到您的裝置。 應用程式不需要發佈到 Microsoft Store 即可安裝 (側載)。 這可讓您安裝並測試應用程式使用的應用程式套件檔案所建立。 如果您不想在 Microsoft Store 中銷售某個應用程式，例如企業營運 (LOB) 應用程式，您可以側載該應用程式，讓您公司中的其他使用者可以使用它。
+使用 UWP app 套件時，因為它們是使用傳統型應用程式，所以應用程式不會安裝到裝置上。 一般而言，您從 Microsoft Store 下載 UWP app 時，也會同時將應用程式安裝到您的裝置。 應用程式不需要發佈到 Microsoft Store 即可安裝 (側載)。 這可讓您安裝和使用應用程式套件的測試應用程式檔案所建立。 如果您不想在 Microsoft Store 中銷售某個應用程式，例如企業營運 (LOB) 應用程式，您可以側載該應用程式，讓您公司中的其他使用者可以使用它。
 
 下列清單提供您的應用程式的側載需求。
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: 了解 Microsoft Advertising SDK 目前版本的已知問題。
 title: 應用程式內廣告的已知問題與疑難排解
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: aaf2db68df9de3f397a0cbc677e18f4ed544cf4b
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817529"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622140"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -26,7 +26,7 @@ ms.locfileid: "1817529"
 
 ## <a name="adcontrol-interface-unknown-in-xaml"></a>AdControl 介面於 XAML 中為未知
 
-[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
+[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 的 XAML 標記可能會不正確地顯示藍色曲線，意指該介面為未知。 這只會在以 x86 為目標時發生，並可以忽略它。
 
 ## <a name="lasterror-from-previous-ad-request"></a>來自先前廣告要求的 lastError
 

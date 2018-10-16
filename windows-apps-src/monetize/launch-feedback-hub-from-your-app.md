@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: 從您的 App 啟動意見反應中樞
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
-ms.openlocfilehash: f4a5c6dab627a2022b36a4afee3dc155b345f855
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 6617c3d5901fbb1a1e9a7f271f4c80d4f38e41f6
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689214"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623527"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 
@@ -48,7 +48,7 @@ ms.locfileid: "1689214"
     <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
     ```
 
-7. 在裝載意見反應控制項之應用程式頁面的初始化程式碼中，使用 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 類別的靜態 [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported.aspx) 方法來判斷是否可以在使用者裝置上使用「意見反應中樞」。 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)為基礎之 Windows10 OS 10.0.14271 版或更新版本的裝置。
+7. 在裝載意見反應控制項之應用程式頁面的初始化程式碼中，使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別的靜態 [IsSupported](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.issupported) 方法來判斷是否可以在使用者裝置上使用「意見反應中樞」。 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)為基礎之 Windows10 OS 10.0.14271 版或更新版本的裝置。
 
     如果這個屬性傳回 **true**，請將控制項設為可見。 下列程式碼示範適用於 [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) 的操作方法。
 
@@ -56,7 +56,7 @@ ms.locfileid: "1689214"
       > [!NOTE]
       > 雖然目前 Xbox 裝置上不支援「意見反應中樞」，但在執行 Windows 10 10.0.14271 版或更新版本的 Xbox 裝置上，**IsSupported** 屬性目前會傳回 **true**。 這是已知的問題，在未來的 Microsoft Store Services SDK 版本中將會修正此問題。  
 
-8. 在使用者按一下控制項時會執行的事件處理常式中，取得 [StoreServicesFeedbackLauncher](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.aspx) 物件，並呼叫 [LaunchAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync.aspx) 方法來啟動「意見反應中樞」App。 這個方法有兩個多載︰一個不含參數，另一個接受索引鍵/值組的字典，其中包含您想要與意見反應產生關聯的中繼資料。 下列範例示範如何在 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件處理常式中啟動意見反應中樞。
+8. 在使用者按一下控制項時會執行的事件處理常式中，取得 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 物件，並呼叫 [LaunchAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher.launchasync) 方法來啟動「意見反應中樞」App。 這個方法有兩個多載︰一個不含參數，另一個接受索引鍵/值組的字典，其中包含您想要與意見反應產生關聯的中繼資料。 下列範例示範如何在 [Button](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Button) 的 [Click](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) 事件處理常式中啟動意見反應中樞。
 
     [!code-cs[LaunchFeedback](./code/StoreSDKSamples/cs/FeedbackPage.xaml.cs#FeedbackButtonClick)]
 

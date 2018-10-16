@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
 ms.openlocfilehash: c81e8d07efa04e93128089eaec78fb83b822a4b9
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574098"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619589"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>散佈封裝的傳統型應用程式
 
@@ -29,37 +29,37 @@ ms.locfileid: "4574098"
 
 [Microsoft Store](https://www.microsoft.com/store/apps)是讓客戶取得您應用程式的一種簡便方式。
 
-發佈到該存放區您應用程式，將適用範圍擴及廣的對象。 同時，組織客戶也可以取得您的應用程式透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)其組織內部進行散發。
+發佈到該存放區您應用程式，將適用範圍擴及廣的對象。 同時，組織客戶也可以取得您內部進行散布他們的組織透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)的應用程式。
 
 如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以在這裡閱讀更多關於此需求的資訊：[受限制的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
 您不需要簽署您的應用程式，才能提交到市集。
 
 >[!IMPORTANT]
-> 如果您打算發行至 Microsoft Store 的應用程式，請確定您的應用程式執行 Windows 10 S 的裝置上正確運作這是市集需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
+> 如果您打算發行至 Microsoft Store 應用程式，請確定您的應用程式執行 Windows 10 S 的裝置上正確運作這是市集需求。 請參閱[針對 Windows 10 S 測試您的 Windows 應用程式](desktop-to-uwp-test-windows-s.md)。
 
 <a id="side-load" />
 
-## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>不透過 Microsoft Store 的情況下發佈您的應用程式
+## <a name="distribute-your-application-without-placing-it-onto-the-microsoft-store"></a>不需將它放到 Microsoft 網上商店散布您的應用程式
 
 如果您不想要使用市集散布您的應用程式，您可以手動發佈到一或多個裝置的應用程式。
 
 在您想要進一步控制散布體驗，或是您不想要參與 Microsoft Store 的認證程序時，這將會是一個合理的作法。
 
-若要集散透過市集散布您的應用程式到其他裝置，您必須取得憑證、 簽署您的應用程式使用該憑證，然後側載您的應用程式到那些裝置。
+若要在不需將它放到在市集中發佈您的應用程式到其他裝置，您必須取得憑證、 簽署應用程式使用該憑證，然後側載您的應用程式到那些裝置。
 
 您可以[建立憑證](../packaging/create-certificate-package-signing.md)或從受歡迎的供應商，例如 [Verisign](https://www.verisign.com/) 取得憑證。
 
-如果您打算發佈您的應用程式到執行 Windows 10 S 的裝置，您的應用程式必須經過 Microsoft Store 簽署，所以您必須完成市集提交程序，才能在您可以發佈您的應用程式到那些裝置。
+如果您打算發佈您的應用程式到執行 Windows 10 S 的裝置，您的應用程式必須經過 Microsoft Store 簽署，所以您必須以進行市集提交程序之前，您可以發佈您的應用程式到那些裝置。
 
 若您已建立了一個憑證，您必須先將該憑證安裝到每個執行您應用程式裝置上的 **「受信任的根」** 或 **「受信任的人」** 憑證存放區。 若您是從受歡迎的供應商取得憑證，則除了將您的應用程式安裝到其他系統之外，您不需要安裝任何東西。  
 
 > [!IMPORTANT]
 > 請確定您憑證的發行者名稱符合您應用程式的發行者名稱。
 
-若要使用憑證簽署您的應用程式，請參閱[簽署應用程式套件使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
+若要使用憑證簽署您的應用程式，請參閱[正負號的應用程式套件使用 SignTool](../packaging/sign-app-package-using-signtool.md)。
 
-若要側載您的應用程式到其他裝置，請參閱[Windows 10 中的側載 LOB app](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
+側載您的應用程式到其他裝置，請參閱[Windows 10 中的側載 LOB app](https://technet.microsoft.com/itpro/windows/deploy/sideload-apps-in-windows-10)。
 
 **影片**
 
@@ -75,11 +75,11 @@ ms.locfileid: "4574098"
 
 * 將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式。
 * 將您已封裝的應用程式與一組檔案類型產生關聯。
-* 讓您已封裝的應用程式作為開啟特定類型的檔案的預設。
+* 使您已封裝的應用程式作為開啟特定類型的檔案的預設。
 
 如需延伸功能的完整清單及如何使用其指南，請參閱[將使用者轉換至您的應用程式](desktop-to-uwp-extensions.md#transition-users-to-your-app)。
 
-此外，請考慮將程式碼新增到您已封裝的應用程式能完成這些工作：
+此外，請考慮將程式碼新增到您的已封裝應用程式能完成這些工作：
 
 * 移轉至傳統型應用程式的已封裝應用程式的適當資料夾位置相關聯的使用者資料。
 * 提供使用者解除安裝您應用程式傳統型版本的選項。
@@ -127,7 +127,7 @@ private void MigrateUserData()
 
 ### <a name="uninstall-the-desktop-version-of-your-app"></a>解除安裝您應用程式的傳統型版本
 
-最好先徵求他們的權限解除安裝使用者的傳統型應用程式。 您可以藉由顯示對話方塊來徵求同意。 使用者可以選擇不解除安裝您應用程式的傳統型版本。 如果發生這種情形，您必須決定是否要封鎖傳統型應用程式，或是支援這兩個應用程式的並列使用。
+最好先徵求他們的權限解除安裝使用者的傳統型應用程式。 您可以藉由顯示對話方塊來徵求同意。 使用者可以選擇不解除安裝您應用程式的傳統型版本。 如果發生這種情形，您必須決定是否要封鎖傳統型應用程式的使用狀況或支援這兩個應用程式以並排使用。
 
 以下是如何在 .NET 型已封裝應用程式中完成這樣工作的方法。
 

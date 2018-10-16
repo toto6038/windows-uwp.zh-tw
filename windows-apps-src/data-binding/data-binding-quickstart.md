@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571590"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619740"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
@@ -37,9 +37,9 @@ ms.locfileid: "4571590"
 
 每個繫結是由繫結目標和繫結來源所組成。 通常，目標是控制項或其他 UI 元素的屬性，來源是類別執行個體 (資料模型或檢視模型) 的屬性。 這個範例示範如何將控制項繫結到單一項目。 目標是 **TextBlock** 的 **Text** 屬性。 來源是一個簡單類別 **Recording** 的執行個體，代表音訊錄製。 讓我們先看一下這個類別。
 
-如果您使用 C# 或 C + + /CX，然後將新的類別新增到您的專案，並將此類別**錄製**。
+如果您使用 C# 或 C + + /CX，然後將新類別新增到您的專案，並**錄製**的類別。
 
-如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後將新的**Midl 檔案 (.idl)** 項目新增到專案中，名為所示，在 C + + WinRT 下列的程式碼範例清單。 這些新檔案的內容取代顯示在清單中的[MIDL 3.0](/uwp/midl-3/intro)程式碼、 建置專案以產生`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合清單。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
+如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後將新**Midl 檔案 (.idl)** 項目新增到專案中，名為所示，在 C + + WinRT 下方的程式碼範例清單。 這些新檔案的內容取代顯示在清單中的[MIDL 3.0](/uwp/midl-3/intro)程式碼、 建置專案以產生`Recording.h`和`.cpp`和`RecordingViewModel.h`和`.cpp`，然後將程式碼新增至產生的檔案，以符合的清單。 如需這些產生的檔案的詳細資訊，以及如何將它們複製到您的專案，請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](/windows/uwp/cpp-and-winrt-apis/binding-property)。
 
 ```csharp
 namespace Quickstart
@@ -330,7 +330,7 @@ MainPage::MainPage()
 
 常見的一個情況是繫結到商業物件的集合。 在 C# 和 Visual Basic 中，[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) 泛型類別是適用於資料繫結的集合選擇，因為它實作 [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) 和 [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) 介面。 當加入或移除項目，或清單本身的屬性變更時，這些介面提供變更通知給繫結。 如果您希望繫結控制項隨著集合中物件屬性的變更一起更新，那麼商業物件也應該實作 **INotifyPropertyChanged**。 如需詳細資訊，請參閱[深入了解資料繫結](data-binding-in-depth.md)。
 
-如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則您可以進一步了解有關繫結至可觀察的集合中[XAML 項目控制項; 繫結至 C + + /winrt 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)。 如果您閱讀該主題第一次，然後意圖的 C + + /winrt 程式碼清單，如下所示，將會是更清楚。
+如果您使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後您可以深入了解到可觀察的集合中的繫結[XAML 項目控制項; 繫結至 C + + /winrt 集合](/windows/uwp/cpp-and-winrt-apis/binding-collection)。 如果您閱讀該主題第一次，然後意圖的 C + + /winrt 程式碼清單，如下所示，將會是更清楚。
 
 下一個範例將 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 繫結到 `Recording` 物件的集合。 首先讓我們將集合加入到檢視模型。 將這些新成員加入到 **RecordingViewModel** 類別。
 
@@ -456,7 +456,7 @@ public:
 
 ![繫結清單檢視](images/xaml-databinding1.png)
 
-若要解決這個問題，我們可能覆寫[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)傳回值的**OneLineSummary**，或提供資料範本。 資料範本選項是更多一般解決方案和一個更具彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 屬性或項目控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
+若要解決這個問題，我們可以覆寫[**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx)以傳回值的**OneLineSummary**，或我們可以提供資料範本。 資料範本選項是更多一般解決方案和一個更具彈性。 您可以使用內容控制項的 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) 屬性或項目控制項的 [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) 屬性來指定資料範本。 以下是為 **Recording** 設計資料範本的兩種方式，同時提供結果的插圖。
 
 ```xml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -496,15 +496,15 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 您可以選擇在 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 項目中顯示 **Recording** 物件的所有詳細資料。 但這會佔用大量空間。 相反地，您可以在項目中顯示剛好足夠識別它的資料，然後當使用者做出選擇時，您可以在另一個稱為詳細資料檢視的 UI 中，顯示選定項目的所有詳細資料。 這種安排也稱為主要/詳細資料檢視，或清單/詳細資料檢視。
 
-有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，在此情況下您繫結**ListView**與詳細資料檢視到**CollectionViewSource** （為您執行目前選取的項目會負責的話）。 這兩種技巧如下所示，且兩者相同的結果 （如圖所示）。
+有兩種作法。 您可以將詳細資料檢視繫結到 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 的 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 屬性。 或者，您可以使用[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833)，這種情況下您繫結**ListView**與詳細資料檢視到**CollectionViewSource** （為您執行目前選取的項目會負責的話）。 這兩種技巧如下所示，且兩者相同的結果 （如圖所示）。
 
 > [!NOTE]
 > 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX)，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您想要繫結至任何執行階段類別。 若要使用[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
+如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX)，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您想要繫結至任何執行階段類別。 若要使用[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
 
 > [!IMPORTANT]
-> 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性是可用，如果您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
+> 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，然後[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性是可用，如果您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
 
 首先是 [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) 技術。
 
@@ -579,13 +579,13 @@ public ref class Recording sealed
 以下是各種情況的相同結果。
 
 > [!NOTE]
-> 如果您使用 c + +，那麼您的 UI 將不會看起來完全一樣下圖： **ReleaseDateTime**屬性的呈現是不同。 請參閱下的一節，如需詳細資訊。
+> 如果您使用 c + +，則您的 UI 看起來不會完全像下圖： **ReleaseDateTime**屬性的呈現是不同。 請參閱下的一節，如需詳細資訊。
 
 ![繫結清單檢視](images/xaml-databinding4.png)
 
 ## <a name="formatting-or-converting-data-values-for-display"></a>格式化或轉換資料值以供顯示
 
-沒有以上呈現的問題。 **ReleaseDateTime**屬性不只是日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果您使用 c + +，則它是[**行事曆**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它會顯示多餘的精確度，我們需要。 與 c + + 中它會呈現為類型名稱。 一個解決方案是將字串屬性加入到傳回的對等的**錄製**類別`this.ReleaseDateTime.ToString("d")`。 命名**ReleaseDate**該屬性會指出，它會傳回日期，並不日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
+沒有使用上述的呈現問題。 **ReleaseDateTime**屬性不只是日期，它是[**DateTime**](/uwp/api/windows.foundation.datetime) （如果您使用 c + +，則它是[**行事曆**](/uwp/api/windows.globalization.calendar)）。 因此，在 C# 中，它會顯示多餘的精確度，我們需要。 與 c + + 中正在轉譯成類型名稱。 一個解決方案是將字串屬性加入到傳回的對等的**錄製**類別`this.ReleaseDateTime.ToString("d")`。 命名**ReleaseDate**該屬性會指出，它會傳回日期，並不日期和時間。 命名為 **ReleaseDateAsString** 進一步表示傳回字串。
 
 更有彈性的解決辦法是使用所謂的「值轉換器」。 以下是如何撰寫您自己的值轉換器的範例。 將下列程式碼加入到 Recording.cs 原始程式碼檔。
 
@@ -718,14 +718,14 @@ public:
 ...
 ```
 
-如您所見上述，用於格式化彈性，我們使用標記來將格式字串傳遞至轉換器透過轉換器參數。 在程式碼範例中顯示在此主題中，只有 C# 值轉換器，可以讓使用該參數。 但您可以輕鬆地將 c + + 樣式的格式字串傳遞做為轉換器參數，並使用您的值轉換器，例如**wprintf**或**swprintf**的格式設定功能。
+如您所見上述的格式化彈性我們使用標記來將格式字串傳遞至轉換器透過轉換器參數。 顯示在此主題中，只有 C# 值轉換器，可以讓程式碼範例中使用了該參數。 但您無法輕鬆地將 c + + 樣式的格式字串傳遞做為轉換器參數，並使用這個值轉換器，例如**wprintf**或**swprintf**的格式設定功能。
 
 結果如下。
 
 ![顯示自訂格式的日期](images/xaml-databinding5.png)
 
 > [!NOTE]
-> 從 Windows 10，版本 1607 開始，XAML 架構提供內建布林值-可見度轉換器。 轉換器對應 **，則為 true** **Visibility.Visible**列舉值，並選取 [ **false** **Visibility.Collapsed**來讓您可以不用建立轉換器 Visibility 屬性繫結至布林值。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需版本為目標的詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
+> 從 Windows 10，版本 1607 開始，XAML 架構提供內建布林值-可見度轉換器。 轉換器對應 **，則為 true** **Visibility.Visible**列舉值，並選取 [ **false** **Visibility.Collapsed**來讓您可以不用建立轉換器 Visibility 屬性繫結至布林值。 若要使用內建轉換器，您 App 的最低目標 SDK 版本必須為 14393 或更新版本。 當您的 App 是以舊版 Windows10 為目標時，您就無法使用它。 如需目標版本的詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
 ## <a name="see-also"></a>另請參閱
 * [資料繫結](index.md)

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 內容群組對應, 串流安裝, uwp app 串流安裝, 來源內容群組對應
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566135"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616417"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>建立和轉換來源內容群組對應
 
@@ -27,7 +27,7 @@ ms.locfileid: "4566135"
 
 讓我們帶領您探索一個簡單的案例：在此案例中，UWP App 串流安裝將會非常有幫助。 
 
-假設您已建立了一個 UWP 遊戲，但您應用程式的最終大小超過 100 GB。 就需要較長的時間，以下載從 Microsoft Store，可以是相當程度的不便。 若您選擇使用 UWP App 串流安裝，就可以指定您應用程式中檔案下載的順序。 藉由告訴市集先下載必要檔案，使用者就可以提早進入您的應用程式，並在背景繼續下載其他非必要的檔案。
+假設您已建立了一個 UWP 遊戲，但您應用程式的最終大小超過 100 GB。 接著就需要較長的時間下載從 Microsoft Store，可以是相當程度的不便。 若您選擇使用 UWP App 串流安裝，就可以指定您應用程式中檔案下載的順序。 藉由告訴市集先下載必要檔案，使用者就可以提早進入您的應用程式，並在背景繼續下載其他非必要的檔案。
 
 > [!NOTE]
 > UWP App 串流安裝會受到您應用程式檔案組織的極大影響。 我們建議您盡早針對 UWP App 串流安裝考慮您應用程式內容的配置，以簡化切割您應用程式檔案的工作，

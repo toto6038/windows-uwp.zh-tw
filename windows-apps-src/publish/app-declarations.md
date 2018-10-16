@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574775"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617090"
 ---
 # <a name="product-declarations"></a>產品宣告
 
-[提交程序](app-submissions.md)的 [[屬性](enter-app-properties.md)] 頁面的 [**產品宣告**] 區段可協助確保您的應用程式已適當顯示並提供給獲得正確的客戶，並幫助他們了解如何使用您的應用程式集。
+[提交程序](app-submissions.md)的 [[屬性](enter-app-properties.md)] 頁面的**產品宣告**區段可協助確保您的應用程式已適當顯示並提供給客戶，並幫助他們了解如何使用您的應用程式的 「 正確設定。
 
-下列章節說明部分宣告和您需要決定每個宣告是否適用於您的應用程式時納入考量。 請注意 （如下所述。） 檢查的這些宣告兩個預設根據您的產品類別，您可能也會看到其他宣告。 請務必檢閱所有的宣告，並確保它們會正確反映您的提交。
+下列章節說明部分宣告和您需要決定每個宣告是否適用於您的應用程式時納入考量。 請注意 （如下所述。） 檢查的這些宣告兩個預設根據您的產品類別中，您可能也會看到其他宣告。 請務必檢閱所有的宣告，並確保它們會正確反映您的提交。
 
 ## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此 app 允許使用者進行購買，但不會使用 Microsoft Store 商務系統。
 
-幾乎每個提交中，您應該讓此方塊保留未選取，因為提供機會購買的應用程式是或可以使用或在您的應用程式中使用的項目必須使用 Microsoft Store 應用程式內購買 API 來建立並提交附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中，建立並提交 2015 年 6 月 29 日之前的應用程式無法得以繼續提供應用程式內購買功能而不需使用 Microsoft 的商務引擎，前提是，購買功能符合[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+幾乎每個提交中，您應該讓此方塊保留未選取，因為提供機會購買的應用程式是或可以取用，或是使用您的應用程式內的項目必須使用 Microsoft Store 應用程式內購買 API 來建立並提交附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中，建立並提交 2015 年 6 月 29 日之前的應用程式無法得以繼續提供應用程式內購買功能而不需使用 Microsoft 的商務引擎，前提是，購買功能符合[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 
@@ -44,20 +44,20 @@ ms.locfileid: "4574775"
 如需詳細資訊，請參閱[協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)，以及[在市集中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非您特別建置 app 並測試它針對該用途，否則不要清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> 除非您特別建置 app 並測試它針對該用途不清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
-根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。 （適用於 Windows Phone 8.1，這是先前指出透過 StoreManifest.xml。）
+根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
 
-如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部的硬碟在其裝置上安裝，請取消選取核取此方塊。
+如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部硬碟在其裝置上安裝，請取消選取核取此方塊。
 
 請注意，是沒有選項可用來限制，因此*應用程式只能*安裝到抽取式存放裝置媒體。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
 
-預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。 （適用於 Windows Phone 8.1，這是先前指出透過 StoreManifest.xml。）
+預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
 
 如果您想要防止 app 的資料包含於自動備份中，請取消選取此方塊。
 

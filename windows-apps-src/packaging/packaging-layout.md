@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 3f8cbb3989b58b726336b4bd757902bd9ea3f8c0
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574330"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623556"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用封裝配置的套件建立  
 
@@ -147,7 +147,7 @@ ms.locfileid: "4574330"
 
 選用套件有自己不同的套件系列名稱，必須使用**PackageFamily**元素定義，同時將**Optional**屬性指定為**true**。 **RelatedSet**屬性用來指定選用套件是否在相關集合中（預設是 true）– 選用套件是否應該使用主要套件更新。
 
-**PrebuiltPackage**元素用來新增至包含或參考在要建置的應用程式套件組合檔案中的封裝配置中未定義的套件。 在此情況下，以便主要的應用程式套件組合檔案可以參考它，並讓它成為相關集合的一部分，是在這裡包含另一個 DLC 選用套件。
+**PrebuiltPackage**元素用來新增至包含或參考在要建置的應用程式套件組合檔案中的封裝配置中未定義的套件。 在此情況下，另一個 DLC 選用套件包含以下以便主要的應用程式套件組合檔案可以參考它，並讓它成為相關集合的一部分。
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用封裝配置和 MakeAppx.exe 建置應用程式套件

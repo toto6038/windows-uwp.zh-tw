@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: 了解如何使用 C# 啟動插播式廣告。
 title: 使用 C# 的插播式廣告範例程式碼
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, c#, 範例程式碼
 ms.localizationpriority: medium
-ms.openlocfilehash: a92de70f09318b7509a9895aba6f23a152377c57
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 195f13d3a51925925d320b87cd0142d14d449226
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1688924"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619474"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>使用 C\# 的插播式廣告範例程式碼 #  
 
@@ -28,7 +28,7 @@ ms.locfileid: "1688924"
 此範例應用程式使用兩個按鈕來要求然後啟動插播式廣告。 使用 Windows 開發人員中心的實際值取代 ```myAppId``` 和 ```myAdUnitId``` 欄位的值，再提交應用程式到 Microsoft Store。 如需詳細資訊，請參閱[在您的 App 中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 > [!NOTE]
-> 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **AdType.Display** 傳遞到  [RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx) 方法的第一個參數，而不是 **AdType.Video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
+> 若要變更此範例以顯示插播式橫幅廣告，而不是插播式影片廣告，請將值 **AdType.Display** 傳遞到  [RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad) 方法的第一個參數，而不是 **AdType.Video**。 如需詳細資訊，請參閱[插播式廣告](interstitial-ads.md)。
 
 ### <a name="mainpagexaml"></a>MainPage.xaml
 

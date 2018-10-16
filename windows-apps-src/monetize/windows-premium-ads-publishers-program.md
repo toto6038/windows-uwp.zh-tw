@@ -1,52 +1,52 @@
 ---
-author: mcleanbyron
-description: Premium ads 發行者程式所組成的協力廠商 ad 網路可以與 premium 為目標的 ad 啟用應用程式的 curated 集合 Windows 高收益 ads。 此程式的應用程式是最佳就使用量及參與體驗的類別中。
+author: Xansky
+description: Windows premium 廣告發行者計畫包含於經過挑選之 ad 啟用的應用程式的協力廠商廣告網路可以使用 premium 的目標集合的高利潤廣告。 此計畫中的應用程式會最佳使用方式、 參與和體驗的類別中。
 title: Windows Premium 廣告發行者計畫
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 09/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: b148109e2a33fe7c481c87bb3d8f3f2cd7a67657
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 310b48e4a659ccf6c159b7768ae8984da74b1c61
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1070890"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620584"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium 廣告發行者計畫
 
-我們連續致力於協助企業 ads 透過其應用程式的 Windows 開發人員的一部分，我們提供[Windows Premium Ads 發行者程式](http://www.windowspremiumapps.com)。 這是 ad 啟用應用程式和最就使用量及參與體驗的類別中的遊戲 curated 的集合。 這些應用程式和遊樂場且 viewability 認證具有高度體驗的識別使用者全域分散式對象。
+我們持續努力，以協助 Windows 開發人員從自己的 app 透過廣告獲利的一部分，我們提供[Windows Premium 廣告發行者計畫](http://www.windowspremiumapps.com)。 這會是於經過挑選啟用廣告的應用程式和遊戲的最佳使用方式、 參與和體驗的類別中的集合。 這些應用程式和遊戲是可見性認證，並有全域分散式對象的識別使用者有的高度。
 
-從我們的協力廠商 ad 網路廣告可以分別識別這些應用程式及做高階、 高收益 ads 獨佔至這些應用程式的最高的投資報酬他們的活動。 適用於開發人員，這表示屬於此程式的應用程式可以獲得更多的廣告收益。
+來自我們合作夥伴廣告網路的廣告商分別找出這些應用程式，並且其行銷活動的投資報酬率提供付費、 高利潤的廣告，專門給這些應用程式的最高傳回。 適用於開發人員，這表示此計畫的一部分的應用程式可以獲得更多的廣告收益。
 
-## <a name="how-does-microsoft-add-apps-to-this-program"></a>如何沒有 Microsoft 將應用程式新增到此程式？ 
+## <a name="how-does-microsoft-add-apps-to-this-program"></a>如何沒有 Microsoft 將 app 新增到此計畫？ 
 
-我們持續檢閱對[合格的準則](#what-are-the-criteria-for-apps-in-the-program)市集的應用程式。 透過嚴格的手動檢閱程序順利、 定義完善的使用者經驗的檢查並確定 ads 也會以避免不慎點閱放放符合所有準則的應用程式。 清除 [自動] 和 [手動過濾程序的應用程式則會新增至該程式。
+我們會持續檢閱針對[合格的條件](#what-are-the-criteria-for-apps-in-the-program)在市集中的應用程式。 透過嚴格的手動檢閱程序來檢查有更順暢、 定義良好的使用者體驗，以及確定廣告也會以避免意外點擊數放置放符合合格的條件的應用程式。 然後清除自動和手動檢測程序的應用程式新增至程式。
 
-這是目前僅限邀請的程式，並只是會議到合格的準則不會不會自動贊成成為 premium 計畫的一部分應用程式。 如果您想要更了解提升您的應用程式功能來限定計畫，請對我們在抵達aiacare@microsoft.com。
+這是目前僅限透過邀請加入計畫，並只會議的合格的條件不會不會自動贊成成為 premium 計畫一部分的應用程式。 如果您想要深入了解改善您的 app 體驗，以符合計畫的資格，請連絡我們在aiacare@microsoft.com。
 
-## <a name="what-are-the-criteria-for-apps-in-the-program"></a>在計畫中的應用程式的準則是什麼？
+## <a name="what-are-the-criteria-for-apps-in-the-program"></a>在計畫中的應用程式的準則有哪些？
 
-此程式的應用程式必須滿足下列準則：
+此計畫中的應用程式必須符合下列條件：
 
-* 最小值保證每日 ad 要求磁碟區。 
-* 曝光高 viewability 速率。 
-* 良好的品質點選最小 click 透過-速率貢獻跨所有 ad 格式。 
-* 請遵循互動式廣告機構 (IAB) 標準 ad 大小和位置方法。 沒有隱藏的 ads。
-* 全新的橫幅 ads 的位置 （例如廣告不是彼此的相鄰位置）。
-* Ad 單位不會使用跨多個應用程式。
-* 會顯示[純定義的使用者流量](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/)的視訊及/或插入式橫幅 ad 的點。 視訊 ads 不預先快取。 
-* 使中繼伺服器所傳回 ads 一律播放控制 ad 重新整理行為。
-* Great 存放區的目前狀態與清除應用程式說明、 高畫質螢幕擷取畫面及上傳至存放區的圖示。 強烈建議視訊前端。
+* 最小保證每日廣告要求的磁碟區。 
+* 廣告曝光的高的可見率。 
+* 品質良好點按到最小按一下-透過-速率發表跨所有廣告格式。 
+* 請依照 Interactive Advertising Bureau (IAB) 標準的廣告大小和位置的方法。 沒有隱藏的廣告。
+* 橫幅廣告的全新的位置 （例如，廣告不是彼此相鄰地）。
+* 跨多個應用程式，不會使用廣告單元。
+* [清楚定義的使用者流程](https://blogs.windows.com/buildingapps/2017/08/31/best-practices-using-video-ads-windows-apps/)的視訊和/或插播式橫幅廣告的點會顯示。 影片廣告不會預先快取。 
+* 控制 ad 重新整理行為，以便在一律會播放從流量分配伺服器傳回的廣告。
+* 順暢存放區存在，以清除應用程式描述、 高精確度的螢幕擷取畫面和上傳到市集的圖示。 強烈建議使用預告片。
 * 沒有詐騙活動。
 
-## <a name="can-apps-get-removed-from-the-program"></a>應用程式取得移除該程式吗？
+## <a name="can-apps-get-removed-from-the-program"></a>應用程式取得移除程式嗎？
 
-在計畫中的應用程式所監視以確保其繼續符合所有準則經常為基礎。 為維持的最小的每日 ad 要求磁碟區，請務必一段時間未卸應用程式使用量大幅。 為達成此目的更好的方法是執行[定期促銷活動](https://developer.microsoft.com/en-us/store/promote-your-apps)。
+在計畫中的應用程式會以確保他們繼續符合合格的條件定期監視。 若要維持在最小的每日廣告要求磁碟區，請確定您的應用程式使用方式不會卸除大幅經過一段時間。 若要這樣做的絕佳方式是[執行一般促銷活動](https://developer.microsoft.com/en-us/store/promote-your-apps)。
 
-## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>可提供以展示我在計畫中的應用程式的其他行銷材料吗？ 
+## <a name="can-i-provide-additional-marketing-material-to-showcase-my-app-in-the-program"></a>可以提供其他行銷的資料，以展示我的應用程式計畫？ 
 
-上傳的存放區提交一部分的任何內容自動用以展現 premium 應用程式。 此外，如果您想要使用多個應用程式或遊戲的螢幕擷取畫面、 遊戲前端和豐富的說明，請連絡對我們在aiacare@microsoft.com。
+做為在市集中提交的一部分上傳的任何內容會自動用來展示 premium 應用程式。 此外，如果您想要使用多個應用程式或遊戲的螢幕擷取畫面、 遊戲預告片和豐富的說明，請連絡我們在aiacare@microsoft.com。

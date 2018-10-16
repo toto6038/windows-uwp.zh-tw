@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 應用程式認證套件
-description: 若要讓您的 app 能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和本機測試它，才能送出以進行認證。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
+description: 若要讓您的 app 能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573868"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619006"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
 
 
-若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)的應用程式或準備[發佈到 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機上第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
+若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)您的應用程式或準備[發行至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -90,9 +90,9 @@ ms.locfileid: "4573868"
 
 Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效能為基礎。
 
-執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式效能是否符合[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式在低功率電腦上，例如 Intel Atom 處理器電腦搭配 1366x768 （或更高版本） 的螢幕解析度與旋轉式硬碟磁碟機 （而非固態硬碟）。
+執行測試之電腦的特性會影響測試結果。 若要判斷您的應用程式效能是否符合[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，我們建議您測試您的應用程式在低功率電腦上，例如 Intel Atom 處理器電腦搭配式 1366x768 （或更高版本） 的螢幕解析度與旋轉式硬碟磁碟機 （而非固態硬碟）。
 
-隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並測試您的應用程式與最新版本的 Windows 應用程式認證套件，以確保您的應用程式符合最新的效能需求。
+隨著低功率電腦不斷演進，其效能特性可能會隨時間改變。 請參閱最新的[Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)，並測試您的應用程式與最新版本的 Windows 應用程式認證套件，以確定您的 app 符合最新的效能需求。
 
 ## <a name="related-topics"></a>相關主題
 

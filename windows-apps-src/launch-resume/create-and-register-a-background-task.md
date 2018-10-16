@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: a599fdef47bb681ef4909fe5bba2a01a1687ba66
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564132"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617004"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立和註冊跨處理序背景工作
 
@@ -36,16 +36,16 @@ ms.locfileid: "4564132"
 
 ## <a name="create-the-background-task-class"></a>建立背景工作類別
 
-您可以撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別，在背景執行程式碼。 藉由使用，例如， [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)或[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)觸發特定事件時，就會執行此程式碼。
+您可以撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的類別，在背景執行程式碼。 藉由使用，例如， [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)或[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)觸發特定事件時，執行此程式碼。
 
 下列步驟示範如何撰寫實作 [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) 介面的新類別。
 
-1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這樣做，請在**方案總管] 中**您的方案節點上按一下滑鼠右鍵，然後選取 [**加入** \> **新的專案**。 然後選取 [ **Windows 執行階段元件**專案類型名稱在專案中，並按一下 [確定]。
-2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 適用於 C# 或 c + + 應用程式，在您的應用程式專案中，**參考**上按一下滑鼠右鍵並選取 [**加入新的參考**。 在 **\[方案\]** 下選取 **\[專案\]**，然後選取您背景工作專案的名稱並按一下 **\[確定\]**。
-3.  背景工作專案中，新增新的類別實作[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是將會在觸發指定的事件; 時呼叫的必要的進入點需要具備這個方法，每個背景工作。
+1.  為背景工作建立一個新專案，並將其新增到您的方案中。 若要這樣做，請在**方案總管] 中**您的方案節點上按一下滑鼠右鍵，然後選取 [**加入** \> **新的專案**。 然後選取 [ **Windows 執行階段元件**專案類型名稱的專案，並按一下 [確定]。
+2.  從您的通用 Windows 平台 (UWP) app 專案參考背景工作專案。 為 C# 或 c + + 應用程式，在您的應用程式專案中，**參考**上按一下滑鼠右鍵並選取 [**加入新的參考**。 在 **\[方案\]** 下選取 **\[專案\]**，然後選取您背景工作專案的名稱並按一下 **\[確定\]**。
+3.  若要背景工作專案中，新增實作[**IBackgroundTask**](/uwp/api/Windows.ApplicationModel.Background.IBackgroundTask)介面的新類別。 [**IBackgroundTask.Run**](/uwp/api/windows.applicationmodel.background.ibackgroundtask.run)方法是將會在觸發指定的事件; 時呼叫的必要的進入點需要具備這個方法，每個背景工作。
 
 > [!NOTE]
-> 背景工作類別本身&mdash;及背景工作專案中的所有其他類別&mdash;一定要位於**密封**（或**最後一個**） 的**公用**類別。
+> 背景工作類別本身&mdash;背景工作專案中的所有其他類別與&mdash;一定要位於**密封**（或**最後一個**） 的**公用**類別。
 
 下列範例程式碼示範一個非常基本的起點的背景工作類別。
 
@@ -211,7 +211,7 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 下列步驟是在您 app 的其中一個類別 (例如 MainPage.xaml.cs) 中完成。
 
 > [!NOTE]
-> 您也可以建立專門用來登錄背景工作的函式&mdash;請參閱[登錄背景工作](register-a-background-task.md)。 在此情況下，而不是使用接下來三個步驟，您可以只需建構觸發程序及它提供給登錄函式，以及在工作名稱、 工作進入點，和 （選擇性） 條件。
+> 您也可以建立專門用來登錄背景工作的函式&mdash;請參閱[登錄背景工作](register-a-background-task.md)。 在此情況下，而不是使用接下來三個步驟，您可以只需建構觸發程序及它提供給登錄函式，以及工作名稱、 工作進入點，和 （選擇性） 條件。
 
 ## <a name="register-the-background-task-to-run"></a>註冊要執行的背景工作
 
@@ -276,7 +276,7 @@ while (hascur)
 
 背景工作觸發程序會控制背景工作將在何時執行。 如需可用觸發程序的清單，請參閱 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839)。
 
-例如，此程式碼會建立新的背景工作，並設定**TimeZoneChanged**觸發程序發生時執行：
+例如，此程式碼會建立新的背景工作，並將設定**TimeZoneChanged**觸發程序發生時也能執行：
 
 ```csharp
 var builder = new BackgroundTaskBuilder();
@@ -415,9 +415,9 @@ task.Completed({ this, &MainPage::OnCompleted });
 task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &MainPage::OnCompleted);
 ```
 
-## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>在應用程式資訊清單中宣告您的應用程式使用背景工作
+## <a name="declare-in-the-app-manifest-that-your-app-uses-background-tasks"></a>在應用程式資訊清單中宣告您的 app 使用背景工作
 
-在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的應用程式嘗試登錄背景工作觸發程序而未列在資訊清單中，登錄的背景工作將會失敗，「 執行階段類別未登錄 」 錯誤。
+在 app 能執行背景工作之前，您必須在 app 資訊清單中宣告每一個背景工作。 如果您的應用程式嘗試與未列在資訊清單中的觸發程序註冊背景工作，背景工作的註冊將會失敗，「 執行階段類別未登錄 」 錯誤。
 
 1.  透過開啟名為 Package.appxmanifest 的檔案來開啟封裝資訊清單設計工具。
 2.  開啟 **\[宣告\]** 索引標籤。

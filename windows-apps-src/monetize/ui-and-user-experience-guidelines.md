@@ -12,7 +12,7 @@ keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: 026ec28c609d62f59958f6ca804c67bb9ca3e109
 ms.sourcegitcommit: 834992ec14a8a34320c96e2e9b887a2be5477a53
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/14/2018
 ms.locfileid: "1881069"
@@ -107,13 +107,13 @@ ms.locfileid: "1881069"
 
 * 在您需要顯示廣告前，預先擷取廣告 (藉由呼叫 [InterstitialAd.RequestAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.requestad.aspx))，理想的情況為 30 秒到 60 秒。
 
-* 訂閱在 [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 類別中公開的四個事件 (**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**) 並使用它們來為應用程式做出正確的決策。
+* Subscribe to all four events exposed in the [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
 
 * 有一些內建的體驗可以用來取代伺服器比對的廣告。 您會在以下的一些範例中發現這很有用：
 
     * 離線模式 (當無法連線到廣告伺服器時)。
 
-    * 當引發 **ErrorOccurred** 事件時。
+    * When the **ErrorOccurred** event fires.
 
     * 如果您選擇根據 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 儲存使用者的頻寬時，在 **ConnectionProfile** 類別中有 API 可協助您。
 
@@ -155,7 +155,7 @@ ms.locfileid: "1881069"
 
 * 使用插入式廣告來取得任何可當作貨幣來消費或可與其他使用者交易的項目。
 
-* 在 [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) 事件的事件處理常式內容中要求新的插入式廣告。 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
+* Requesting a new interstitial ad in the context of the event handler for the [InterstitialAd.ErrorOccurred](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.erroroccurred.aspx) event. 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
 
 * 僅為了讓瀑布式廣告序列有備用廣告而要求插入式廣告。 如果您要求插入式廣告，然後收到 [InterstitialAd.AdReady](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.adready.aspx) 事件，在應用程式中顯示的下一個插入式廣告就必須是已經準備好透過 [InterstitialAd.Show](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.show.aspx) 方法顯示的廣告。
 

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: d305746a-d370-4404-8cde-c85765bf3578
 description: 在 Microsoft Store 促銷 API 中使用此方法，管理適用於廣告行銷活動的目標設定檔。
 title: 管理目標設定檔
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 692da5c2cc45e64d3feeab6136c1e50c72a7b0b0
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fa142f1df672703d2f14dc185481bb248efe07b
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664188"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619150"
 ---
 # <a name="manage-targeting-profiles"></a>管理目標設定檔
 
@@ -46,7 +46,7 @@ ms.locfileid: "1664188"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -146,7 +146,7 @@ Authorization: Bearer <your access token>
 | 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST 所需 |  
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  目標設定檔的識別碼。     |   是    |       |   否      |       
-|  名稱   |  字串   |   目標設定檔的名稱。    |    否   |      |  是     |       
+|  name   |  字串   |   目標設定檔的名稱。    |    否   |      |  是     |       
 |  targetingType   |  字串   |  下列其中一個值： <ul><li>**自動**︰指定這個值，允許 Microsoft 根據應用程式開發人員中心應用程式的設定來選擇目標設定檔。</li><li>**手動**︰指定這個值以定義您自己的目標設定檔。</li></ul>     |  否     |  自動    |   是    |       
 |  年齡   |  陣列   |   一或多個整數，識別目標使用者的年齡範圍。 如需整數的完整清單，請參閱本篇文章中的[年齡值](#age-values)。    |    否    |  null    |     否    |       
 |  性別   |  陣列   |  一或多個整數，識別目標使用者的性別。 如需整數的完整清單，請參閱本篇文章中的[性別值](#gender-values)。       |  否    |  null    |     否    |       

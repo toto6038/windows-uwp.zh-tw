@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
 description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件。
 title: 建立附加元件
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d463fb1f2e40b8556d9f2c57847dae5420ec3b21
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: a24355ca09380c46d8e648899ca2fe96f9e989c7
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662538"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619090"
 ---
 # <a name="create-an-add-on"></a>建立附加元件
 
@@ -51,7 +51,7 @@ ms.locfileid: "1662538"
 
 要求本文包含下列參數。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  說明  |  必要  |
 |------|------|------|------|
 |  applicationIds  |  陣列  |  此陣列包含此附加元件相關聯之 App 的 Store 識別碼。 此陣列只支援一個項目。   |  是  |
 |  productId  |  字串  |  附加元件的產品識別碼。 這是可在程式碼中用來參考附加元件的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |

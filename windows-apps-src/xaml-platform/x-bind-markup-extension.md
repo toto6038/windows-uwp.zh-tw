@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新增適用於 Windows 10-執行更少的時間和記憶體都比繫結並且支援較佳的偵錯。
+description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新的 Windows 10-執行更少的時間和記憶體都比繫結和支援較佳的偵錯。
 title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574412"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616108"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
 **注意** 如需有關如何在 app 中使用資料繫結與 **{x:Bind}** (以及完整比較 **{x:Bind}** 和 **{Binding}**) 的一般資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 
-  **{x:Bind}** 標記延伸 (Windows10 的新功能) 是 **{Binding}** 的替代項目。 **{X:bind}** 執行更少的時間和記憶體都比 **{繫結}** 且支援更好的偵錯。
+  **{x:Bind}** 標記延伸 (Windows10 的新功能) 是 **{Binding}** 的替代項目。 **{X:bind}** 執行更少的時間和記憶體都比 **{Binding}** 和支援更好的偵錯。
 
 在 XAML 編譯時間，**{x:Bind}** 會轉換為可取得來自資料來源上之屬性值的程式碼，並將它設定在標記中指定的屬性上。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更自我重新整理 (`Mode="OneWay"`)。 您也可以選擇性地設定繫結物件，以便將自己的值中的變更推回到來源屬性 (`Mode="TwoWay"`)。
 
@@ -116,7 +116,7 @@ _注意：C# 風格的轉換語法比附加的屬性語法更具彈性，且是�
 
 ## <a name="functions-in-binding-paths"></a>繫結路徑中的函式
 
-從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這是非常強大的功能，可讓在標記中的數個案例的資料繫結。 如需詳細資訊的[函式繫結](../data-binding/function-bindings.md)，請參閱。
+從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這是非常強大的功能，可讓在標記中的數個案例的資料繫結。 [函式繫結](../data-binding/function-bindings.md)，如需詳細資訊，請參閱。
 
 ## <a name="event-binding"></a>事件繫結
 

@@ -1,8 +1,8 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來取得 App 提交的套件推出資訊。
 title: 取得 App 提交的推出資訊
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 ms.prod: windows
@@ -10,12 +10,12 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 應用程式提交
 ms.assetid: 9ada5ac3-a86e-4bb6-8ebc-915ba9649e3c
 ms.localizationpriority: medium
-ms.openlocfilehash: eec1e573a27dc2edfcbccbd634492b854758af0e
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: ead13a255eb707df2e60907265672d53aab120d9
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1815513"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4617769"
 ---
 # <a name="get-rollout-info-for-an-app-submission"></a>取得 App 提交的推出資訊
 

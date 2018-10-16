@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: 在 Microsoft Store 促銷 API 中使用此方法，管理適用於廣告行銷活動的播送行。
 title: 管理廣告播送行
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: a7dca49ee1ecaeb675127ea19191a028f6f7846f
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 387b5ccf999452780b89aa7edcc9b58bcc35ea8a
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1664098"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622733"
 ---
 # <a name="manage-delivery-lines"></a>管理廣告播送行
 
@@ -51,7 +51,7 @@ ms.locfileid: "1664098"
 
 | 標頭        | 類型   | 描述         |
 |---------------|--------|---------------------|
-| Authorization | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
 | 追蹤識別碼   | GUID   | 選用。 追蹤呼叫流程的識別碼。                                  |
 
 
@@ -142,7 +142,7 @@ Authorization: Bearer <your access token>
 | 欄位        | 類型   |  描述      |  唯讀  | 預設值  | POST/PUT 所需 |   
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  播送行的識別碼。     |   是    |      |  否      |    
-|  名稱   |  字串   |   播送行的名稱。    |    否   |      |  POST     |     
+|  name   |  字串   |   播送行的名稱。    |    否   |      |  POST     |     
 |  configuredStatus   |  字串   |  下列其中一個值，指定開發人員指定的播送行狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li></ul>     |  否     |      |   POST    |       
 |  effectiveStatus   |  字串   |   下列其中一個值，根據系統驗證指定有效的播送行狀態︰ <ul><li>**作用中**</li><li>**非作用中**</li><li>**正在處理**</li><li>**失敗**</li></ul>    |    是   |      |  否      |      
 |  effectiveStatusReasons   |  陣列   |  下列一或多個值，指定有效播送行狀態的原因如下︰ <ul><li>**AdCreativesInactive**</li><li>**ValidationFailed**</li></ul>      |  是     |     |    否    |           

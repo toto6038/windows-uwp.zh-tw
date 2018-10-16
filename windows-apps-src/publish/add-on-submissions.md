@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, iap, App 內購買, 應用程式內產品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 37d05722578ed945fbf75040f96360bb569c6d06
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573852"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621891"
 ---
 # <a name="add-on-submissions"></a>附加元件提交
 
@@ -23,7 +23,7 @@ ms.locfileid: "4573852"
 
 您要透過 Windows 開發人員中心儀表板發佈附加元件。 您也需要在您的 App 程式碼中[啟用附加元件](../monetize/in-app-purchases-and-trials.md)。
 
-附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 在那之後，您將會建立提交作業，讓您的附加元件可透過 Microsoft 網上商店購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到 Store 之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
+附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您將會建立提交，讓您的附加元件可透過 Microsoft Store 購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到 Store 之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
 
 > [!NOTE]
 > 本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
@@ -85,11 +85,11 @@ ms.locfileid: "4573852"
 
 ## <a name="updating-an-add-on-after-publication"></a>發佈之後更新附加元件
 
-您可以隨時對已發佈的附加元件進行變更。 附加元件變更會提交與發佈獨立於您的應用程式之外，因此您通常不需要更新整個應用程式，就可以進行變更，例如更新 app 的價格或描述附加元件。
+您可以隨時對已發佈的附加元件進行變更。 附加元件變更會提交與發佈獨立於您的應用程式之外，因此您通常不需要更新整個 app，就可以對附加元件，例如更新 app 的價格或描述進行變更。
 
 > [!IMPORTANT]
 > 如果您的應用程式可供 Windows 8.x 的客戶使用，您必須建立並發佈新的應用程式提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
 
-若要提交更新，請移至儀表板的附加元件頁面，然後按一下 **\[更新\]**。 這會建立新的提交之附加元件，使用您先前提交的資訊做為起點。 讓您想要，然後按一下 [**提交至市集**所做的變更。
+若要提交更新，請移至儀表板的附加元件頁面，然後按一下 **\[更新\]**。 這將會建立新的提交之附加元件，使用您先前提交的資訊做為起點。 進行的變更您想要，然後按一下 [**提交至市集**。
 
 如果您想要移除先前提供的附加元件，請建立新的提交並且將 [\[配送和可見性\]](set-add-on-pricing-and-availability.md) 選項變更為 **\[在 Microsoft Store 中隱藏\]** 以及 **\[停止取得\]** 選項。 請務必視需要更新您的程式碼，以同時移除附加元件的參考 (尤其是當您的應用程式支援 Windows 8.1 和較舊版本；這個可見性設定不會套用到這些客戶)。

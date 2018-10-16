@@ -12,13 +12,13 @@ keywords: Windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c39301c37c83f57a67dca35c3628bd9f3eda2583
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4572277"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623873"
 ---
-# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>已封裝的傳統型應用程式可使用 UWP Api
+# <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP Api 適用於已封裝的傳統型應用程式
 
 已封裝的傳統型應用程式可以使用各種不同的通用 Windows 平台 (UWP) API，即使它們尚未完全轉換為 UWP app。 本文列出您的已封裝應用程式可以使用的類別。
 

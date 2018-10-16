@@ -14,11 +14,11 @@ design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 31e940c87626a05ee6911d3ffda36ab8dfd3fad0
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564025"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4616181"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
 
@@ -30,7 +30,7 @@ ms.locfileid: "4564025"
 
 ## <a name="see-it-in-action"></a>以動作呈現
 
-在這個簡短的影片中，應用程式會使用連接的動畫，以動畫顯示項目，因為它會 「 持續 」 成為下一頁的標頭的一部分。 此效果可幫助使用者在轉換之間維持脈絡。
+在這個簡短影片中，應用程式會使用連接的動畫，以動畫顯示的項目影像，因為它會 「 持續 」 成為下一頁的標頭的一部分。 此效果可幫助使用者在轉換之間維持脈絡。
 
 ![連接動畫](images/connected-animations/example.gif)
 
@@ -57,7 +57,7 @@ ms.locfileid: "4564025"
 ## <a name="configure-connected-animation"></a>設定連接的動畫
 
 > [!IMPORTANT]
-> 這項功能需要，您的應用程式目標版本是 RS5 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 或更高版本。 設定屬性不適用於較舊版本的 Sdk。 您可以以 RS5 較低的最小版本為目標 (使用 10.0.NNNNN.0 (Windows 10，版本 YYMM) 的 Windows SDK 版本調適型程式碼或條件式 XAML。 如需詳細資訊，請參閱[版本調適型應用程式](/debug-test-perf/version-adaptive-apps)。
+> 這項功能需要您 app 的目標版本會 RS5 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 或更高版本。 設定屬性不適用於較舊版本的 Sdk。 您可以以 RS5 較低的最小版本為目標 (使用 10.0.NNNNN.0 (Windows 10，版本 YYMM) Windows SDK 版本調適型程式碼或條件式 XAML。 如需詳細資訊，請參閱[版本調適型應用程式](/debug-test-perf/version-adaptive-apps)。
 
 從開始 RS5，進一步連接的動畫只限 Fluent design 藉由提供動畫設定量身訂做的專為向前和向後頁面瀏覽。
 
@@ -68,15 +68,15 @@ ms.locfileid: "4564025"
 | [GravityConnectedAnimationConfiguration]() |
 | - |
 | 這是預設設定，並建議向前瀏覽。 |
-使用者瀏覽正向應用程式 (A 到 B) 中的，已連接的項目會顯示實際 」 提取關閉頁面 」。 在此情況下，元素會出現在 z 空間向前移動，並卸除稍做為進行保留的重力的效果。 有需要克服的重力效果，元素取得速度，並加速到最終的位置。 結果會是 「 縮放比例及 dip 」 的動畫。 |
+使用者瀏覽正向應用程式 (A 到 B) 中的，已連接的項目會顯示實際 」 提取關閉頁面 」。 在此情況下，元素會出現在 z 空間向前移動和卸除有點與重力採取保留的效果。 有需要克服的重力效果，元素會取得速度和加速到其最後位置。 結果會是 「 縮放比例及 dip 」 動畫。 |
 
 | [DirectConnectedAnimationConfiguration]() |
 | - |
-| 當使用者往回應用程式 (B 到 A) 中，動畫會是更直接存取。 連接的項目以線性方式從 B 轉譯，以使用開始減速三次方貝茲 easing 函式。 向後視覺能供性讓使用者回到先前的狀態速仍維持瀏覽流程的內容。 |
+| 當使用者向後瀏應用程式 (B 到 A) 中，動畫會是更直接存取。 已連線的項目以線性方式可以從轉譯 B 至使用開始減速三次方貝茲 easing 函式。 向後視覺能供性讓使用者回到先前的狀態儘速仍維持瀏覽流程的內容。 |
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
-| 這是預設值 （與只） RS5 之前的 SDK 版本中使用的動畫 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM)。 |
+| 這是預設值 （和僅） RS5 之前的 SDK 版本中使用的動畫 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM)。 |
 
 ### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService 設定
 
@@ -85,7 +85,7 @@ ms.locfileid: "4564025"
 - [DefaultDuration](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration)
 - [DefaultEasingFunction](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction)
 
-若要達到各種不同的效果，有些設定忽略這些屬性上 ConnectedAnimationService 並改用他們自己的值，此表格中所述。
+若要達到各種不同的效果，部分設定忽略這些屬性上 ConnectedAnimationService 並改用他們自己的值，此表格中所述。
 
 | 組態 | 方面 DefaultDuration 嗎？ | 方面 DefaultEasingFunction 嗎？ |
 | - | - | - |
@@ -187,7 +187,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="back-navigation"></a>返回瀏覽
 
-返回瀏覽 (以 Page_A Page_B)，請依照相同的步驟，但在來源和目的地頁面會反轉。
+瀏覽 (以 Page_A Page_B)，請依照相同的步驟，但會反轉來源和目的地頁面。
 
 當使用者瀏覽回時，他們會預期儘速返回到先前的狀態應用程式。 因此，建議的設定是[DirectConnectedAnimationConfiguration]()。 這個動畫是快速、 更直接存取時，並開始減速加/減速。
 
@@ -227,7 +227,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-之間的時間，動畫就會設定完成，並啟動時，來源元素會顯示成凍結應用程式中其他 UI 上。 這可讓您同時執行任何其他轉換動畫。 基於這個原因，您不應等待超過 ~ 250 毫秒，兩個步驟之間，因為來源元素的存在可能會造成分心。 如果您準備動畫，且在三秒內未啟動動畫，則系統將會處理動畫，任何後續對 [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) 的呼叫都將會失敗。
+之間的時間動畫設定和啟動時，來源元素會顯示成凍結應用程式中其他 UI 上。 這可讓您同時執行任何其他轉換動畫。 基於這個原因，您不應等待超過 ~ 250 毫秒，兩個步驟之間，因為來源元素的存在可能會造成分心。 如果您準備動畫，且在三秒內未啟動動畫，則系統將會處理動畫，任何後續對 [TryStart](/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart) 的呼叫都將會失敗。
 
 ## <a name="connected-animation-in-list-and-grid-experiences"></a>清單中的連接動畫與格線體驗
 
@@ -248,7 +248,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 </ListView>
 ```
 
-若要準備一個連接的動畫使用對應至所指定的清單項目的橢圓形，呼叫[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)方法，使用唯一索引鍵、 項目及"PortraitEllipse"名稱。
+若要準備一個連接的動畫與對應至所指定的清單項目的橢圓形，呼叫[PrepareConnectedAnimation](/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation)方法，使用唯一索引鍵、 項目及"PortraitEllipse"名稱。
 
 ```csharp
 void PrepareAnimationWithItem(ContactsItem item)
@@ -285,7 +285,7 @@ private void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 <iframe width=640 height=360 src='https://microsoft.sharepoint.com/portals/hub/_layouts/15/VideoEmbedHost.aspx?chId=552c725c%2De353%2D4118%2Dbd2b%2Dc2d0584c9848&amp;vId=9066bbbe%2Dcf58%2D4ab4%2Db274%2D595616f5d0a0&amp;width=640&amp;height=360&amp;autoPlay=false&amp;showInfo=true' allowfullscreen></iframe>
 -->
 
-*協調的動畫*是一種特殊類型的進入動畫，以及連接的動畫目標，當橫跨螢幕移動，連同連接的動畫元素建立動畫元素的顯示位置。 協調動畫可以為轉換增加更多視覺上的趣味，進一步吸引使用者對在來源檢視與目的地檢視之間共用內容的注意力。 在這些影像中。項目的標題 UI 正使用協調動畫呈現動畫效果。
+*協調的動畫*是一種特殊類型的進入動畫，以及連接的動畫目標，當橫跨螢幕移動，和連接的動畫元素一起建立動畫元素的顯示位置。 協調動畫可以為轉換增加更多視覺上的趣味，進一步吸引使用者對在來源檢視與目的地檢視之間共用內容的注意力。 在這些影像中。項目的標題 UI 正使用協調動畫呈現動畫效果。
 
 當協調的動畫便使用重力組態時，重力會套用至連接的動畫元素與協調的元素。 協調的元素將 」 swoop 「 已連線的項目旁邊這樣元素才能維持真正地協調。
 
@@ -320,7 +320,7 @@ void OnNavigatedTo(NavigationEventArgs e)
 - 在來源頁面與目的地頁面之間共用元素的頁面轉換中使用連接動畫。
 - 使用[GravityConnectedAnimationConfiguration]()向前瀏覽。
 - 使用[DirectConnectedAnimationConfiguration]()返回瀏覽。
-- 不要等候網路要求或其他長時間執行非同步作業，準備與啟動連接的動畫之間。 您可能需要預先載入必要的資訊，才能事先執行轉換，或在目的地檢視中載入高解析度影像時，使用低解析度預留位置影像。
+- 不要等候網路要求或其他準備與啟動連接的動畫之間的長時間執行非同步作業。 您可能需要預先載入必要的資訊，才能事先執行轉換，或在目的地檢視中載入高解析度影像時，使用低解析度預留位置影像。
 - 若要防止**畫面**中的轉換動畫，如果您使用**ConnectedAnimationService**，因為連接的動畫不是要用於與預設的瀏覽同時使用[SuppressNavigationTransitionInfo](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo)轉換。 請參閱 [NavigationThemeTransition](/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition) 以取得如何使用瀏覽轉換的詳細資訊。
 
 ## <a name="download-the-code-samples"></a>下載程式碼範例

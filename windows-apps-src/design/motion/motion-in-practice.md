@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4566303"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622918"
 ---
 # <a name="bringing-it-together"></a>組合在一起
 
@@ -85,9 +85,9 @@ ms.locfileid: "4566303"
 
 > **預覽**： 隱含動畫需要[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)。
 
-隱含動畫是自動參數變更期間的舊和新值之間插入達到 Fluent 動作的簡單方式。
+隱含動畫是由自動參數變更期間舊和新值之間插入達到 Fluent 動作的簡單方式。
 
-您可以以隱含方式產生動畫效果的下列屬性的變更：
+您可以以隱含方式產生動畫效果的下列屬性來變更：
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
@@ -98,9 +98,9 @@ ms.locfileid: "4566303"
 - [框線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **背景**
 
-可以有以隱含方式產生動畫效果的變更每個屬性都有對應的_轉換_屬性。 要產生動畫效果的屬性，您可以指派轉換類型相對應的_轉換_屬性。 下表顯示_轉換_屬性和使用的每個轉換類型。
+每個可以有變更，以隱含方式產生動畫效果的屬性都有對應的_轉換_屬性。 要產生動畫效果的屬性，您將轉換類型指派的對應的_轉換_屬性。 下表顯示_轉換_屬性和使用的每個轉換類型。
 
-| 產生動畫效果的屬性 | 轉換屬性 | 隱含轉換類型 |
+| 動畫的屬性 | 轉換屬性 | 隱含轉換類型 |
 | -- | -- | -- |
 | [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
 | [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |

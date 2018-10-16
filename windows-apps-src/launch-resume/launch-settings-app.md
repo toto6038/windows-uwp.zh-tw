@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4571459"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621089"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -101,7 +101,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 向 Cortana 講話 | ms-settings:cortana-language |
 
 > [!NOTE] 
-> 電腦設定為其中沒有目前可用的 Cortana，或已停用 Cortana 的區域時，此設定 \] 區段在桌面上將會呼叫搜尋。 在此情況下不會列 (不同的我的裝置上 Cortana) 和 Cortana 與交談，Cortana 特定頁面。 
+> 在桌面上此設定 \] 區段時將會呼叫搜尋電腦設定為其中沒有目前可用的 Cortana，或已停用 Cortana 的區域。 在此情況下不會列 (不同的我的裝置上 Cortana) 和 Cortana 與交談，Cortana 特定頁面。 
 
 ## <a name="devices"></a>裝置
 

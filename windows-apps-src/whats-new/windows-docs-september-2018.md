@@ -2,7 +2,7 @@
 author: QuinnRadich
 title: 2018 年 9 月 Windows 文件的最新動向-開發 UWP app
 description: 新功能、 影片、 範例及開發人員指引已加入 2018 年 9 月的 Windows 10 開發人員文件。
-keywords: 最新動向，更新，功能，開發人員指引，Windows 10 年 9 月
+keywords: 新動向，更新，功能，開發人員指引，Windows 10 年 9 月
 ms.author: quradic
 ms.date: 09/10/2018
 ms.topic: article
@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f017dbb30586d3ec3c2da54d0f262c4b159328cc
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4574159"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619967"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>2018 年 9 月 Windows 開發人員文件的最新動向
 
@@ -26,17 +26,17 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="windows-machine-learning"></a>Windows 機器學習
 
-[Windows 機器學習文件](https://docs.microsoft.com/windows/ai/)現在位於自己的網站，並會針對最新的 Windows 測試人員 SDK 進行更新。 有桌面與 UWP 教學課程以 c + + 和 C# 可協助您開始將 WinML 新增到您的應用程式。
+[Windows 機器學習文件](https://docs.microsoft.com/windows/ai/)現在位於自己的站台，並會針對最新的 Windows 測試人員 SDK 進行更新。 有桌面與 UWP 教學課程以 c + + 和 C# 可協助您開始將 WinML 新增到您的應用程式。
 
 [Windows.AI.MachineLearning API 參考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)已更新的最新的 Windows 測試人員 SDK。
 
-[Windows 機器學習 GitHub 存放庫](https://github.com/Microsoft/Windows-Machine-Learning)已更新使用新的範例適用於最新的 SDK。
+[Windows 機器學習 GitHub 存放庫](https://github.com/Microsoft/Windows-Machine-Learning)已經更新與新的範例可搭配最新的 SDK。
 
 ![Windows 機器學習圖形](images/winml-graphic.png)
 
 ### <a name="windows-ui-library"></a>Windows UI 文件庫
 
-[Windows UI 文件庫](https://aka.ms/winui-docs)是一組提供控制項與其他使用者介面元素用於 UWP 應用程式的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容的所以您的應用程式運作方式，即使您的使用者不需要的最新的 OS 版本。
+[Windows UI 文件庫](https://aka.ms/winui-docs)是一組適用於 UWP app 提供控制項與其他使用者介面元素的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容的所以您的應用程式運作方式，即使您的使用者不需要的最新的 OS 版本。
 
 如需 Windows UI 文件庫的詳細資訊，請參閱[NuGet 套件中包含的 API 命名空間的這份清單。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
@@ -44,27 +44,27 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="how-blur-effects-work"></a>如何模糊效果工作
 
-我們的技巧，esteemed Mike Jacobs，其中已開始的系列文章中媒體有關模糊，從應用程式和遊戲設計攝影願景。 如果您有興趣深入了解此普遍的視覺效果，請參閱[上攝影及願景的第一個文件](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)及[消除鋸齒圖形中的第二個。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+其中一個我們技巧，esteemed Mike Jacobs 中，已開始一連串的媒體中有關模糊，從應用程式和遊戲設計攝影願景的文件。 如果您有興趣深入了解此普遍的視覺效果，請查看[上攝影及願景的第一個文件](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)及[消除鋸齒，在圖形上的第二個。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
-![模糊情形](images/blur-example.jpg)
+![Blur 情形](images/blur-example.jpg)
 
 ### <a name="contributing-guidance"></a>發表指導方針
 
-如需我們 UWP 文件，我們已更新[我們貢獻的指導方針](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 對我們文件的外部貢獻的期望與工作流程，可清楚說明這個新的指導方針。
+如需我們 UWP 文件，我們已更新[我們貢獻的指導方針](https://github.com/MicrosoftDocs/windows-uwp/blob/docs/CONTRIBUTING.md)。 工作流程和對我們文件的外部貢獻的期望，可清楚說明這個新的指導方針。
 
 ## <a name="videos"></a>影片
 
-### <a name="one-dev-question"></a>開發人員問題
+### <a name="one-dev-question"></a>一個開發人員問題
 
-在開發人員問題影片系列，longtime Microsoft 開發人員會討論一系列的 Windows 開發、 小組文化和歷程記錄的相關問題。 以下是我們已經回答的最新問題 ！
+在開發人員問題影片系列，longtime Microsoft 開發人員會討論一系列的 Windows 開發、 小組文化特性和歷程記錄的相關問題。 以下是我們已經回答的最新問題 ！
 
 Aaron Gustafson:
 
-* [漸進式 Web 應用程式上的 6 影片](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
+* [6 個視訊上漸進式 Web 應用程式](https://www.youtube.com/playlist?list=PLWs4_NfqMtoyPHoI-CIB71mEq-om6m35I)
 
 Chris Heilmann
 
-* [4 個視訊 webhint 工具](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
+* [4 個視訊上 webhint 工具](https://www.youtube.com/watch?v=eXfmxmiA00Y&list=PLWs4_NfqMtow00LM-vgyECAlMDxx84Q2v)
 
 Larry Osterman:
 

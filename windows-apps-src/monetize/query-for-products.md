@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: 請在 Microsoft Store 集合 API 中使用這個方法，來取得與您 Azure AD 用戶端識別碼相關聯的應用程式中，某個客戶擁有的所有產品。 您可以把查詢範圍設定為特定產品，或是使用其他的篩選條件。
 title: 查詢產品
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, view products, Microsoft Store 集合, 檢視產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 696d2c0ca4f8d0d92bef66efb9d551a2f19d2aa3
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 066660c307be9f3592aa38cb21a6e00cd960aa73
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664964"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618833"
 ---
 # <a name="query-for-products"></a>查詢產品
 
@@ -47,7 +47,7 @@ ms.locfileid: "1664964"
 
 | 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
+| 授權  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
 | Host           | 字串 | 其值必須設定為 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
 | Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
@@ -55,7 +55,7 @@ ms.locfileid: "1664964"
 
 ### <a name="request-body"></a>要求主體
 
-| 參數         | 類型         | 描述         | 必要 |
+| 參數         | 類型         | 說明         | 必要 |
 |-------------------|--------------|---------------------|----------|
 | beneficiaries     | UserIdentity | UserIdentity 物件，代表為所查詢產品的使用者。 如需詳細資訊，請參閱下表。    | 是      |
 | continuationToken | 字串       | 如果有多組產品，回應主體會在達到頁面限制時傳回接續權杖。 為後續的呼叫提供該接續權杖，即可擷取剩餘的產品。       | 否       |
@@ -69,7 +69,7 @@ ms.locfileid: "1664964"
 
 UserIdentity 物件包含下列參數。
 
-| 參數            | 類型   |  描述      | 必要 |
+| 參數            | 類型   |  說明      | 必要 |
 |----------------------|--------|----------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。    | 是      |
 | identityValue        | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您想要為其查詢產品之使用者的身分識別。  | 是      |
@@ -78,13 +78,13 @@ UserIdentity 物件包含下列參數。
 
 ProductSkuId 物件包含下列參數。
 
-| 參數 | 類型   | 描述          | 必要 |
+| 參數 | 類型   | 說明          | 必要 |
 |-----------|--------|----------------------|----------|
 | productId | 字串 | Microsoft Store 目錄中[產品](in-app-purchases-and-trials.md#products-skus-and-availabilities)的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如，產品的 Store 識別碼是 9NBLGGH42CFD。 | 是      |
 | skuID     | 字串 | Microsoft Store 目錄中產品 [SKU](in-app-purchases-and-trials.md#products-skus-and-availabilities) 的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 例如，SKU 的 Store 識別碼是 0010。       | 是      |
 
 
-### <a name="request-example"></a>要求的範例
+### <a name="request-example"></a>要求範例
 
 ```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/query HTTP/1.1
@@ -121,7 +121,7 @@ Content-Type: application/json
 
 ### <a name="response-body"></a>回應主體
 
-| 參數         | 類型                     | 描述          | 必要 |
+| 參數         | 類型                     | 說明          | 必要 |
 |-------------------|--------------------------|-----------------------|----------|
 | continuationToken | 字串                   | 如果有多組產品，會在達到頁面限制時傳回此權杖。 您可以為後續的呼叫指定此接續權杖，來擷取剩餘的產品。 | 否       |
 | 項目             | CollectionItemContractV6 | 特定使用者的產品陣列。 如需詳細資訊，請參閱下表。        | 否       |
@@ -129,7 +129,7 @@ Content-Type: application/json
 
 CollectionItemContractV6 物件包含下列參數。
 
-| 參數            | 類型               | 描述            | 必要 |
+| 參數            | 類型               | 說明            | 必要 |
 |----------------------|--------------------|-------------------------|----------|
 | acquiredDate         | datetime           | 使用者取得該項目的日期。                  | 是      |
 | campaignId           | 字串             | 在購買此項目時所提供的行銷活動識別碼。                  | 否       |
@@ -158,7 +158,7 @@ CollectionItemContractV6 物件包含下列參數。
 
 IdentityContractV6 物件包含下列參數。
 
-| 參數     | 類型   | 描述                                                                        | 必要 |
+| 參數     | 類型   | 說明                                                                        | 必要 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | 字串 | 包含 *「pub」* 值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Microsoft Store 識別碼金鑰之 *publisherUserId* 的字串值。 | 是      |

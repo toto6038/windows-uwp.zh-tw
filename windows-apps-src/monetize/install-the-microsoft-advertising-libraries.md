@@ -1,28 +1,28 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: 了解如何安裝 Microsoft Advertising SDK。
 title: 安裝 Microsoft Advertising SDK
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 17c12d09fdc7643a2d2ac1c13fa2a4e6c92cad03
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e65b26006cbeb7f7fbd9bf95f83051873e6f1140
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654877"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620192"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
 若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
 
 > [!NOTE]
-> 如果您正在開發 JavaScript/HTML UWP app 且已經安裝 Windows 10 SDK 版本 10.0.14393 (年度更新版) 或更新版本，則也須安裝 WinJS 程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。 若要安裝 WinJS，請參閱[取得 WinJS](http://try.buildwinjs.com/download/GetWinJS/)。
+> 如果您正在開發 JavaScript/HTML UWP app 且已經安裝 Windows 10 SDK 版本 10.0.14393 （年度更新版） 或更新版本，則也須安裝[WinJS](https://github.com/winjs/winjs)程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。
 
 <span id="install-msi" />
 
@@ -33,11 +33,11 @@ ms.locfileid: "1654877"
 1.  關閉所有 Visual Studio 執行個體。
 
 2. 如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  下載並安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
 
@@ -56,11 +56,11 @@ ms.locfileid: "1654877"
 1.  關閉所有 Visual Studio 執行個體。
 
 2.  如果您先前已安裝任何版本的 Microsoft Advertising SDK、Universal Ad Client SDK、Ad Mediator 擴充功能或 Microsoft Store Engagement and Monetization SDK，請將這些 SDK 版本解除安裝。 或者，也可以開啟 **\[命令提示字元\]** 視窗，然後執行下列命令，以清除可能已與 Visual Studio 一起安裝但未出現在電腦上已安裝程式清單中的任何舊廣告 SDK 版本：
-  ```
-  MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
-  MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
-  MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
-  ```
+    ```
+    MsiExec.exe /x{5C87A4DB-31C7-465E-9356-71B485B69EC8}
+    MsiExec.exe /x{6AB13C21-C3EC-46E1-8009-6FD5EBEE515B}
+    MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
+    ```
 
 3.  啟動 Visual Studio，然後開啟您要在其中使用 Microsoft Advertising SDK 的專案。
     > [!NOTE]
@@ -105,7 +105,7 @@ ms.locfileid: "1654877"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft Advertising SDK 中的架構套件
 
-適用於 UWP App 的 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 程式庫是設定為*架構套件*。 這個程式庫包含 [Microsoft.Advertising](https://msdn.microsoft.com/library/windows/apps/mt313187.aspx) 和 [Microsoft.Advertising.WinRT.UI](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.aspx) 命名空間中的廣告 API。
+適用於 UWP App 的 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 程式庫是設定為*架構套件*。 這個程式庫包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空間中的廣告 API。
 
 因為這個程式庫是架構套件，這意謂著在使用者安裝使用這個程式庫的 App 版本之後，每當我們發佈具有修正程式和效能改進的新程式庫版本時，便會在其裝置上透過 Windows Update 自動更新這個程式庫。 這有助於確保您客戶的裝置上一律會安裝最新的可用程式庫版本。
 

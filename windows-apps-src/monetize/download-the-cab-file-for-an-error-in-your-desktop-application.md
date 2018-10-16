@@ -1,20 +1,20 @@
 ---
-author: mcleanbyron
+author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法，以下載適傳統型應用程式中錯誤的 CAB 檔案。
 title: 下載傳統型應用程式中錯誤的 CAB 檔案
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: f1aa6c770451676cb1326f95b96bb0d808039880
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: Auto
+ms.openlocfilehash: b7f4e8d1dabb701df75e06a9ebda7042fd3f16dd
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662718"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618510"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>下載傳統型應用程式中錯誤的 CAB 檔案
 

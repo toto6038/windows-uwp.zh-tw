@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，套件上, 傳，套件上傳
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573530"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619140"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 
-**套件**頁面是為您上傳位置的所有您提交的應用程式套件檔案 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap）。 您可以在此步驟中，為您的 App 對象上傳適用於任何作業系統的套件。 當客戶下載您的 App 時，[市集] 會自動提供每位客戶最適合他們的裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
+**套件**頁面是為您上傳其中的所有您提交應用程式套件檔案 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap）。 您可以在此步驟中，為您的 App 對象上傳適用於任何作業系統的套件。 當客戶下載您的 App 時，[市集] 會自動提供每位客戶最適合他們的裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
 
-如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要了解[如何的版本號碼可能會影響哪個套件傳遞給特定的客戶](package-version-numbering.md)，以及[如何將套件發佈到不同的作業系統](guidance-for-app-package-management.md)。
+如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要深入了解[如何的版本號碼可能會影響哪個套件傳遞給特定的客戶](package-version-numbering.md)，以及[如何將套件發佈到不同的作業系統](guidance-for-app-package-management.md)。
 
 ## <a name="uploading-packages-to-your-submission"></a>將套件上傳到您的提交
 
@@ -32,7 +32,7 @@ ms.locfileid: "4573530"
 
 當您建立新的提交時，您將會在 [套件](package-flights.md)頁面上看到一個下拉式清單，其中包含從其中一個套件正式發行前小眾測試版複製套件的選項。 選取含有您要納入之套件的套件正式發行前小眾測試版。 然後，您可選取其任一或所有套件，以包含在此提交中。
 
-如果我們偵測到的套件的錯誤，驗證它時，我們將會顯示，讓您知道什麼是錯誤訊息。 您將需要移除套件、 修正這個問題，然後再重新上傳。 您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
+如果我們偵測到與套件的錯誤，驗證它時，我們會顯示，讓您知道什麼是錯誤訊息。 您將需要移除套件、 修正這個問題，然後再重新上傳。 您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
 
 
 ## <a name="device-family-availability"></a>裝置系列可用性
@@ -44,7 +44,7 @@ ms.locfileid: "4573530"
 
 ## <a name="package-details"></a>套件詳細資料
 
-您已上傳的套件將依照目標作業系統分組，列出。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 **\[顯示詳細資料\]**。
+您已上傳的套件會列出在這裡，依照目標作業系統分組。 系統將會顯示套件的名稱、版本及架構。 如需有關如每個套件支援的語言、App 功能，以及檔案大小的詳細資訊，可以按一下 **\[顯示詳細資料\]**。
 
 如果您需要移除您提交的某個套件，可以按一下每個套件的 **\[詳細資料\]** 區段底部的 **\[移除\]** 連結。
 

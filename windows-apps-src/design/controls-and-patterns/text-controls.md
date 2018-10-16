@@ -16,11 +16,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: ad7326acf728aef66f10c72ee04461fd90e5f775
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4565411"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619038"
 ---
 # <a name="text-controls"></a>文字控制項
 
@@ -127,7 +127,7 @@ RichTextBlock 的內容屬性是 [Blocks](https://msdn.microsoft.com/library/win
 
 ![文字方塊在使用手寫筆點選時展開](images/pen-input-expand.gif)
 
-如需詳細資訊，請參閱[與手寫檢視的文字輸入](text-handwriting-view.md)。
+如需詳細資訊，請參閱[手寫檢視使用的文字輸入](text-handwriting-view.md)。
 
 ## <a name="choose-the-right-keyboard-for-your-text-control"></a>選擇文字控制項的正確鍵盤
 

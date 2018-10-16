@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 雲端的控制中心, 通知鏡像, 通知, 跨裝置
 ms.localizationpriority: medium
 ms.openlocfilehash: eb8e2ceb16add551f3c8e3a71a69d36b99f21c62
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4567688"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619924"
 ---
 # <a name="notification-mirroring"></a>通知鏡像
 
@@ -29,7 +29,7 @@ ms.locfileid: "4567688"
 
 <img alt="Notification mirroring diagram" src="images/toast-mirroring.gif" width="350"/>
 
-開發人員從通知鏡像取得兩個優點： 鏡像的通知中更多的使用者持續使用您的服務，同時也能協助使用者探索 Microsoft Store 傳統型應用程式 ！ 您的使用者可能根本不知道您有適用於 Windows 10 桌面的絕佳 UWP app。 當使用者從他們的手機收到鏡像的通知時，使用者可以按一下快顯通知前往 Microsoft Store，他們可以在其中安裝您的 UWP 傳統型應用程式。
+開發人員從通知鏡像取得兩個優點： 鏡像的通知中更多的使用者持續使用您的服務，同時也能協助使用者探索您的 Microsoft Store 傳統型應用程式 ！ 您的使用者可能根本不知道您有適用於 Windows 10 桌面的絕佳 UWP app。 當使用者從他們的手機收到鏡像的通知時，使用者可以按一下快顯通知前往 Microsoft Store，他們可以在其中安裝您的 UWP 傳統型應用程式。
 
 鏡像適用於 Windows Phone 和 Android。 使用者必須在他們的手機和桌面同時登入 Cortana，通知鏡像才能運作。
 

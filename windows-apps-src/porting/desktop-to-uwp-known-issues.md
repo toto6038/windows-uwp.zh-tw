@@ -12,11 +12,11 @@ keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
 ms.openlocfilehash: 50a455dc43007a433bfabd995af7968e93fe1900
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4563601"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622259"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已封裝的傳統型應用程式的已知的問題
 
@@ -135,17 +135,17 @@ certutil -dump <cert_file.pfx>
 
 ### <a name="bad-pe-certificate-0x800700c1"></a>錯誤的 PE 憑證 (0x800700C1)
 
-當您的套件包含已損毀的憑證的二進位檔案時，這可能會發生。 以下是一些為什麼這可能會發生的原因：
+當您的套件包含已損毀的憑證的二進位檔，這可能會發生。 以下是一些為什麼這可能會發生的原因：
 
-* 開始不是憑證的映像的結尾。  
+* [開始] 畫面的憑證不是映像的結尾。  
 
 * 憑證的大小不是正面。
 
-* 憑證 [開始] 畫面未之後`IMAGE_NT_HEADERS32`32 位元可執行檔或之後的結構`IMAGE_NT_HEADERS64`64 位元可執行檔的結構。
+* 憑證開始不之後`IMAGE_NT_HEADERS32`結構的 32 位元可執行檔或之後`IMAGE_NT_HEADERS64`結構的 64 位元可執行檔。
 
-* 憑證指標不正確對齊 WIN_CERTIFICATE 結構。
+* WIN_CERTIFICATE 結構不正確對齊憑證指標。
 
-若要尋找包含錯誤的 PE 憑證檔案，開啟**命令提示字元中**，並設定環境變數，名為`APPXSIP_LOG`設為 1 的值。
+若要尋找包含錯誤的 PE 憑證的檔案，開啟**命令提示字元**，並設定環境變數，名為`APPXSIP_LOG`設為 1 的值。
 
 ```
 set APPXSIP_LOG=1
@@ -157,7 +157,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-在**主控台視窗**中，會顯示包含錯誤的 PE 憑證檔案的相關資訊。 例如：
+包含錯誤的 PE 憑證的檔案的相關資訊會出現在**主控台視窗**。 例如：
 
 ```
 ...

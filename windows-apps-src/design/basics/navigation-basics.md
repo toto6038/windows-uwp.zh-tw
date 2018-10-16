@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4575327"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4620787"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -120,7 +120,7 @@ ms.locfileid: "4575327"
 
         - 頁面可以用任何順序瀏覽。
         - 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
-        - 在群組中有少於 8 的頁面。 <br>
+        - 在群組中有少於 8 頁面。 <br>
         (有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
 
     :::column-end:::
@@ -194,7 +194,7 @@ ms.locfileid: "4575327"
         使用索引標籤的時機：
 
         - 您想要保留瀏覽歷程記錄和頁面的狀態。
-        - 您預期使用者會頻繁的索引標籤之間切換。
+        - 您預期使用者會頻繁索引標籤之間切換。
 
 :::row-end:::
 
@@ -208,7 +208,7 @@ ms.locfileid: "4575327"
         Displays a vertical list of links to top-level pages. Use when:
         
         - 頁面位於最上層。
-        - 有許多的瀏覽項目 (超過 5)
+        - 有許多瀏覽項目 (超過 5)
         - 您預期使用者不會在頁面之間頻繁切換。
         
 :::row-end:::

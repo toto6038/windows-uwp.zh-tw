@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
 description: 在 Microsoft Store 提交 API 中使用這個方法，針對登錄到您 Windows 開發人員中心帳戶的所有 App 擷取相關資訊。
 title: 取得所有 App
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: bf2e7bb5e809d975c7217118ebc36409a54061c9
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: d4261c984eb992092230425205313d751a351f07
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816133"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4621649"
 ---
 # <a name="get-all-apps"></a>取得所有 App
 
@@ -49,7 +49,7 @@ ms.locfileid: "1816133"
 
 對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含已登錄到您帳戶之所有 App 的資料。
 
-|  參數  |  類型  |  描述  |  必要  |
+|  參數  |  類型  |  說明  |  必要  |
 |------|------|------|------|
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的 App 數目)。 如果您的帳戶擁有的 App 超過您在查詢中指定的值，回應本文會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 封裝, 套件設定, 一般套件組合
 ms.localizationpriority: medium
 ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4573901"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618245"
 ---
 # <a name="flat-bundle-app-packages"></a>一般套件組合應用程式套件 
 
@@ -33,7 +33,7 @@ ms.locfileid: "4573901"
 可透過使用 MakeAppx.exe 工具，或透過使用封裝配置來定義套件組合結構，建立一般套件組合。
 
 ### <a name="using-makeappxexe"></a>使用 MakeAppx.exe
-若要建立一般套件組合使用 MakeAppx.exe，使用"MakeAppx.exe bundle"命令如往常一樣，但搭配 /fb 切換，產生的一般應用程式套件組合檔案 （這會是非常小，因為它僅參考應用程式套件檔案，不含任何實際承載). 
+若要建立一般套件組合使用 MakeAppx.exe，使用"MakeAppx.exe bundle"命令如往常一樣，但搭配 /fb 切換，產生的一般應用程式套件組合檔案 （這會是非常小，因為它僅參考這些應用程式套件檔案，不含任何實際承載). 
 
 以下是命令語法的範例：
 
@@ -47,4 +47,4 @@ MakeAppx bundle [options] /d <content directory> /fb <output flat bundle name>
 或者，您可以使用封裝配置來建立一般套件組合。 若要這樣做，請將應用程式套件組合資訊清單的**PackageFamily**元素中的**FlatBundle**屬性設定為**true**。 若要深入了解封裝配置，請查看[使用封裝配置的套件建立](packaging-layout.md)。
 
 ## <a name="how-to-deploy-a-flat-bundle"></a>如何部署一般套件組合 
-在部署一般套件組合之前，（除了應用程式套件組合）每個應用程式套件也需要使用相同的憑證來簽署。 這是因為所有應用程式套件檔案 (.appx/.msix) 現在都是獨立的檔案，不再包含在應用程式套件組合 (.appxbundle/.msixbundle) 檔案中。 一旦簽署套件，請在 PowerShell 中使用[Add-appxpackage cmdlet](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) ，指向 [應用程式套件組合檔案和部署應用程式 （假設應用程式套件應用程式套件組合所預期的位置）。 
+在部署一般套件組合之前，（除了應用程式套件組合）每個應用程式套件也需要使用相同的憑證來簽署。 這是因為所有應用程式套件檔案 (.appx/.msix) 現在都是獨立的檔案，不再包含在應用程式套件組合 (.appxbundle/.msixbundle) 檔案中。 一旦簽署套件，請在 PowerShell 中使用[Add-appxpackage cmdlet](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps)指向應用程式套件組合檔案和部署應用程式 （假設應用程式套件應用程式套件組合所預期他們能夠）。 

@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bf91725a62c8d03c37448ddf69b072461288f11
-ms.sourcegitcommit: d10fb9eb5f75f2d10e1c543a177402b50fe4019e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4564075"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4622302"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -72,47 +72,47 @@ ms.locfileid: "4564075"
 
  ![應用程式內壓克力](images/AppAcrylic_DarkTheme.png)
 
- 時請小心將多壓克力表面分層： 多層的背景壓克力可以建立讓使用者分心的視覺錯覺。
+ 謹慎使用多個壓克力表面分層時應： 多層的背景壓克力可以建立讓使用者分心的視覺錯覺。
 
 ## <a name="when-to-use-acrylic"></a>使用壓克力的時機
 
-* 使用應用程式內壓克力支援的 UI，例如 NavigationView 或內嵌命令元素。 
-* 使用背景壓克力暫時性 UI 元素，例如操作功能表、 飛出視窗，以及光線 dimsissable UI。<br />使用壓克力暫時性的案例中，可協助維持與已觸發暫時性 UI 之內容的視覺關係。
+* 針對支援的 UI，例如 NavigationView 或命令列中的元素使用應用程式內壓克力。 
+* 針對暫時性 UI 元素，例如操作功能表、 飛出視窗，以及光線 dimsissable UI 使用背景壓克力。<br />使用壓克力暫時性的案例中，有助於維持與已觸發暫時性 UI 之內容的視覺關係。
 
-如果您使用應用程式內壓克力風格上瀏覽的表面，請考慮延伸下方以改善您的應用程式上流程的壓克力窗格的內容。 使用 NavigationView 會自動執行此動作適用於您。 不過，若要避免產生條紋效果，不嘗試放置多個部分壓克力邊緣到邊緣-這會產生兩個模糊表面之間不想要的接縫。 壓克力是一個工具，可以讓您的設計的視覺違，但不正確，使用時，會導致視覺雜訊。
+如果您使用應用程式內壓克力上瀏覽的表面，請考慮延伸下方以改善您的應用程式上流程的壓克力窗格的內容。 使用 NavigationView 會自動執行此動作適用於您。 不過，若要避免產生條紋效果，不嘗試放置多個部分壓克力邊緣到邊緣-這會產生兩個模糊表面之間不想要的接縫。 壓克力是一個工具，可以讓您的設計的視覺違，但是當使用不正確，可能會導致視覺雜訊。
 
-請考慮下列使用模式來判定將壓克力納入您的應用程式的最佳方式：
+請考慮下列使用模式來判定將壓克力合併到您的應用程式的最佳方式：
 
 ### <a name="horizontal-navigation-or-commanding"></a>水平瀏覽或命令功能
 
-如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自行接洽，建議使用相對透明壓克力色調不透明度 60%。
+如果您的應用程式無法利用 NavigationView，且您計劃將壓克力新增您自行接洽，我們建議使用相對透明壓克力色調不透明度 60%。
  - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
  - 當窗格以與主要應用程式內容並排的方式開啟時，則應為 [60% 背景壓克力](#acrylic-theme-resources)
 
 ![使用應用程式內水平命令功能的地圖應用程式](images/Maps_In_App_Acrylic_1.png)
 
-此外，需要您的內容延伸或捲動壓克力在最上方將可讓您的應用程式提供更身歷其境且無縫接軌的體驗。
+此外，需要您的內容延伸或捲動底下的壓克力最上方將可讓您的應用程式提供更身歷其境且無縫接軌的體驗。
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-對於垂直窗格或表面，可協助您的應用程式關閉內容區段中，我們建議您使用不透明的背景，而不是壓克力。 如果您的垂直窗格開啟在內容上方，像是在 NavigationView**摺疊**或**基本**模式中，我們建議您使用來協助維持在頁面的內容，當使用者開啟這個窗格的應用程式內壓克力。
+對於垂直窗格或表面，可協助您的應用程式關閉內容區段中，我們建議您使用不透明的背景，而不是壓克力。 如果在內容上方，開啟您的垂直窗格，像是在 NavigationView 的**摺疊**或**最少**的模式，我們建議您以協助維持在頁面的內容時，使用者必須開啟此窗格使用應用程式內壓克力。
 
-### <a name="transient-surfaces"></a>暫時性的表面
+### <a name="transient-surfaces"></a>暫時性表面
 
-功能表飛出視窗，非強制回應快顯視窗的應用程式或消失關閉的窗格中，我們建議使用背景壓克力。
+對於有功能表飛出視窗，非強制回應快顯視窗中，應用程式或消失關閉的窗格中，我們建議使用背景壓克力。
 
 ![使用資訊的飛出視窗的郵件應用程式模式](images/Mail_TransientContextMenu.png)
 
 許多我們的控制項預設會使用壓克力。 [MenuFlyouts](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/menus)、 [AutoSuggestBox](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/auto-suggest-box)、[下拉式方塊](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.combobox)和相似的控制項與光線 dimiss 快顯視窗將所有暫時性的壓克力時使用它們會叫用。
 
 > [!Note]
-> 呈現壓克力表面 GPU 會耗用大量時，裝置耗電量增加並縮短電池使用時間。 壓克力效果會自動停用當電池進入省電模式，使用者可以停用所有的應用程式的壓克力效果時，如果使用者選擇。
+> 呈現壓克力表面 GPU 會耗用大量時，裝置耗電量增加並縮短電池使用時間。 壓克力效果會自動停用當電池進入省電模式時，使用者可以停用所有的應用程式的壓克力效果時，如果使用者選擇。
 
 ## <a name="usability-and-adaptability"></a>可用性與適應性
 壓克力會自動針對各種不同的裝置與內容調適其外觀。
 
 在高對比模式中，使用者會繼續看見其所選熟悉的背景色彩取代壓克力。 此外，背景壓克力與應用程式內壓克力會顯示成單色中：
- - 當使用者關閉設定中的透明度 > 個人化 > 色彩
+ - 當使用者在中關閉透明度設定 > 個人化 > 色彩
  - 當省電模式啟動時
  - 當應用程式在低階硬體上執行時
 
@@ -150,7 +150,7 @@ ms.locfileid: "4564075"
         <td> ChromeMedium <br/><br/> BaseHigh </td>
     </tr>
     <tr>
-        <td> <b>建議的使用方式：</b>如果您的應用程式使用次要文字色彩為 altmedium 且文字大小的 18px 或更大，您可以放置在文字的這些更半透明 70%壓克力資源。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
+        <td> <b>建議的使用方式：</b>如果您的應用程式使用次要文字色彩為 altmedium 且文字大小為 18px 或較大，您可以放置在文字的這些更半透明 70%壓克力資源。 建議在應用程式的頂端水平瀏覽與命令區中使用這些資源。  </td>
     </tr>
     <tr>
         <td> SystemControlChromeHighAcrylicWindowMediumBrush, SystemControlChromeHighAcrylicElementMediumBrush <br/> SystemControlChromeMediumAcrylicWindowMediumBrush, SystemControlChromeMediumAcrylicElementMediumBrush <br/> SystemControlChromeMediumLowAcrylicWindowMediumBrush, SystemControlChromeMediumLowAcrylicElementMediumBrush <br/> SystemControlBaseHighAcrylicWindowMediumBrush, SystemControlBaseHighAcrylicElementMediumBrush <br/> SystemControlBaseMediumLowAcrylicWindowMediumBrush, SystemControlBaseMediumLowAcrylicElementMediumBrush <br/> SystemControlAltMediumLowAcrylicWindowMediumBrush, SystemControlAltMediumLowAcrylicElementMediumBrush  </td>
@@ -318,14 +318,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 ## <a name="dos-and-donts"></a>可行與禁止注意事項
 * 請使用壓克力作為非主要應用程式表面 (如瀏覽窗格) 的背景材質。
 * 請將壓克力延伸至應用程式的至少一個邊緣，藉此與應用程式背景巧妙地混合以呈現無縫的效果。
-* 不要在您的應用程式的大型背景介面上放置桌面 arylic-這會中斷主要用於暫時性表面的壓克力心理模式。
+* 不要在您的應用程式的大型背景表面上放置桌面 arylic-這會中斷主要用於暫時性表面的壓克力心理模式。
 * 請勿將應用程式內壓克力與背景壓克力直接相鄰放置，以避免在接縫處產生視覺壓力。
 * 請勿將多個色調與不透明度相同的壓克力窗格彼此相鄰，因為這會產生不想要讓人看到的接縫。
 * 請勿將輔色文字放置在壓克力表面。
 
 ## <a name="how-we-designed-acrylic"></a>我們如何設計壓克力
 
-我們將壓克力的重要元件微調至讓壓克力有獨特的外觀與屬性。 我們一開始使用半透明、 模糊並將視覺的深度和維度新增到平面的雜訊。 我們新增了排除混合模式層，以確保放置在壓克力背景上的對比與可讀性。 最後，我們加入了色彩色調讓壓克力個人化。 這些圖層最後一齊產生全新、可使用的材質。
+我們將壓克力的重要元件微調至讓壓克力有獨特的外觀與屬性。 我們一開始使用半透明、 模糊並將視覺的深度和維度新增到平面雜訊。 我們新增了排除混合模式層，以確保放置在壓克力背景上的對比與可讀性。 最後，我們加入了色彩色調讓壓克力個人化。 這些圖層最後一齊產生全新、可使用的材質。
 
 ![壓克力配方](images/AcrylicRecipe_Diagram.jpg)
 <br/>壓克力配方：背景、排除混合、色彩/色調重疊、雜訊

@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: FAD033C7-F887-4217-A385-089F09242827
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總安裝資料。
 title: 取得 App 安裝
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式安裝數
 ms.localizationpriority: medium
-ms.openlocfilehash: fe2e9a012a094a5eeb5bc60510fc8fb115c57fb0
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: 7a5a947d58ecec7ca52a355ef44f8a880864df5d
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1975970"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4618271"
 ---
 # <a name="get-app-installs"></a>取得 App 安裝
 

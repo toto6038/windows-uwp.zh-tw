@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: cc24ba75-a185-4488-b70c-fd4078bc4206
 description: 了解如何使用 AdScheduler 類別在影片內容中顯示廣告。
 title: 在影片內容中顯示廣告
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 9142770c6063aba34977c20309bcaeb6ac46450e
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: cc5dd40ca3d9fe6e20f5e79c95b59cef3bea9a34
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690644"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4623147"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 
@@ -56,8 +56,8 @@ ms.locfileid: "1690644"
 3. 將 **Microsoft Advertising SDK for JavaScript** 程式庫的參考新增至您的專案。
 
     1. 在 [方案總管]**** 視窗中的 [參考]**** 上按一下滑鼠右鍵，然後選取 [加入參考]****。
-    2. 在 [參考管理員]**** 中，展開 [通用 Windows]****、按一下 [擴充功能]****，然後選取 [Microsoft Advertising SDK for JavaScript]**** (Version 10.0) 旁邊的核取方塊。
-    3. 在 [參考管理員]**** 中，按一下 [確定]。
+    2. 在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**、按一下 **\[擴充功能\]**，然後選取 **\[Microsoft Advertising SDK for JavaScript\]** (Version 10.0) 旁邊的核取方塊。
+    3. 在 **\[參考管理員\]** 中，按一下 \[確定\]。
 
 4.  將 AdScheduler.js 檔案新增到您的專案︰
 
@@ -166,7 +166,7 @@ ms.locfileid: "1690644"
 
 ### <a name="onerroroccurred"></a>onErrorOccurred  
 
-當 **AdScheduler** 發生錯誤會引發此事件。 有關錯誤碼值的詳細資訊，請參閱 [ErrorCode](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.errorcode.aspx)。
+當 **AdScheduler** 發生錯誤會引發此事件。 有關錯誤碼值的詳細資訊，請參閱 [ErrorCode](https://docs.microsoft.com/uwp/api/microsoft.advertising.errorcode)。
 
 ### <a name="onpodcountdown"></a>onPodCountdown
 

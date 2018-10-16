@@ -1,21 +1,21 @@
 ---
-author: mcleanbyron
+author: Xansky
 ms.assetid: 32572890-26E3-4FBB-985B-47D61FF7F387
 description: 了解如何在目標為 Windows10 版本 1607 之前版本的 UWP app 中啟用 App 內購買和試用版。
 title: 使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
-ms.author: mcleans
+ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ccefb07b5eb0881979d91b656159f82ef050ac91
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: bb2c242ea4b7e3881751874c096165279854aa5e
+ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691197"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "4619302"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 
