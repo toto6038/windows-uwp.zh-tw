@@ -1,6 +1,6 @@
 ---
 author: eliotcowley
-title: 取得並了解磁條讀取資料
+title: 取得並了解磁條資料
 description: 了解如何取得並解譯從磁條讀取資料。
 ms.author: elcowle
 ms.date: 10/04/2018
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10，uwp，點的服務、 pos、 磁條讀取器
 ms.localizationpriority: medium
 ms.openlocfilehash: ad954e8c03d92307fa72ead236d5428ac2bdddab
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690087"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4749899"
 ---
-# <a name="obtain-and-understand-magnetic-stripe-data"></a>取得並了解磁條讀取資料
+# <a name="obtain-and-understand-magnetic-stripe-data"></a>取得並了解磁條資料
 
 一旦您設定好您磁條讀取器，在您的應用程式使用中[開始使用服務點](pos-basics.md)所述的步驟，就可以開始從其取得資料。
 

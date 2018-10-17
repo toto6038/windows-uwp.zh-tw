@@ -12,11 +12,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4679620"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750842"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>XAML 項目使用組合動畫產生動畫效果
 
@@ -38,7 +38,7 @@ ms.locfileid: "4679620"
 
 下表顯示可用來修改的 UIElement，也[CompositionAnimation](/uwp/api/windows.ui.composition.compositionanimation)以動畫顯示的轉譯內容。
 
-| 屬性 | 類型 | 說明 |
+| 屬性 | 類型 | 描述 |
 | -- | -- | -- |
 | [Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | 雙線 | 物件的不透明度 |
 | [Translation](/uwp/api/windows.ui.xaml.uielement.translation) | Vector3 | Shift 元素的 X/Y/Z 位置 |

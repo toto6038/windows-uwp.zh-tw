@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告, 效益
 ms.localizationpriority: medium
 ms.openlocfilehash: e4800a0021288f4d0081946c1fad20099aa4cd77
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684256"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4750315"
 ---
 # <a name="get-ad-performance-data"></a>取得廣告效益資料
 
@@ -55,7 +55,7 @@ ms.locfileid: "4684256"
 
 若要擷取特定 App 的廣告績效資料，請使用 *applicationId* 參數。 若要擷取與您開發人員帳戶關聯之所有 App 的廣告績效資料，請省略 *applicationId* 參數。
 
-| 參數     | 類型   | 說明     | 必要 |
+| 參數     | 類型   | 描述     | 必要 |
 |---------------|--------|-----------------|----------|
 | applicationId   | 字串    | 您想要擷取廣告績效資料之 App 的 [Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  |    不可以      |
 | startDate   | 日期    | 要擷取的廣告績效資料之日期範圍的開始日期，格式為 YYYY/MM/DD。 預設為目前的日期減去 30 天。 |    否      |
@@ -103,7 +103,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                                                                                                                                                                                                                                                                            |
+| 值      | 類型   | 描述                                                                                                                                                                                                                                                                            |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 值      | 陣列  | 內含彙總廣告績效資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[廣告績效值](#ad-performance-values)一節。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串會包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 5，但是查詢有超過 5 個資料項目，就會傳回此值。 |
