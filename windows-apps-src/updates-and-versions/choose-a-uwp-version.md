@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: d2909e6e674d524327b676441f7f08fc51595772
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4690511"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743007"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
@@ -26,7 +26,7 @@ ms.locfileid: "4690511"
 
 下表說明可用的 Windows 10 版本。 請注意，此表格僅適用於建置只有 Windows 10 支援的 UWP 應用程式。 您無法為舊版 Windows 開發 UWP 應用程式，且必須已[安裝適當的 SDK 組建](http://go.microsoft.com/fwlink/?LinkId=821431)，才能以該版本為目標。 
 
-| 版本 | 說明 |
+| 版本 | 描述 |
 | --- | --- |
 | 建置 17763 （版本 1809年） | 這是最新版的 Windows 10 發行於 2018 年 10 月。 **請注意，您_必須_使用 Visual Studio 2017，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **Windows 機器學習：** Windows Machine Learning 已現在正式啟動，提供功能，例如更快速的評估及支援尖端機器學習模型。 若要深入了解此平台，請參閱 [Windows Machine Learning](https://docs.microsoft.com/windows/ai/)。 </br> \* **Fluent Design:** 已新增至 Windows 10 新功能，例如功能表列、 命令列飛出視窗，以及 XAML 屬性的動畫。 請至 [Fluent design 概觀](../design/fluent-design-system/index.md)查看最新消息。 </br> 如需這些與這個發行版本的 Windows 中新增的許多其他功能的資訊，請瀏覽[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)或更深入的頁面上[的新功能適用於開發人員的 Windows 10](../whats-new/windows-10-build-17763.md)
 | 組建 17134 (版本 1803) | 這是發行於 2018 年的 Windows 10 版本。 **請注意，您_必須_使用 Visual Studio 2017，才能以這個版本的 Windows 為目標。** 此版本的一些重點功能包括： </br> \* **Fluent Design：** Windows 10 中已新增樹狀檢視、拖動重新整理及瀏覽檢視等新功能。 請至 [Fluent design 概觀](../design/fluent-design-system/index.md)查看最新消息。 </br> \* **主機 UWP app：** 您現在可以撰寫執行於主控台視窗 (例如 DOS 或 PowerShell 主控台視窗) 中的 C++ /WinRT 或 /CX UWP 主控台應用程式。 </br> 如需這些功能及其他於此版本 Windows 中新增之多項功能的詳細資訊，請造訪[開發人員中心](https://developer.microsoft.com/windows/windows-10-for-developers)，或是參閱更深入的 [Windows10 中適用於開發人員的新增功能](../whats-new/windows-10-build-17134.md)頁面。

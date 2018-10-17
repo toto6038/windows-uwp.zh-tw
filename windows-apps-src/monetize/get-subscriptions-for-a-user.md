@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4688623"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4756079"
 ---
 # <a name="get-subscriptions-for-a-user"></a>取得使用者訂閱
 
@@ -55,7 +55,7 @@ ms.locfileid: "4688623"
 
 ### <a name="request-body"></a>要求主體
 
-| 參數      | 類型   | 說明     | 必要 |
+| 參數      | 類型   | 描述     | 必要 |
 |----------------|--------|-----------------|----------|
 | b2bKey         | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您想要取得其訂閱之使用者的身分識別。  | 是      |
 | continuationToken |  string     |  如果使用者有多個訂閱的權利，在達到頁面限制時，回應主體就會傳回接續權杖。 為後續的呼叫提供該接續權杖，即可擷取剩餘的產品。    | 否      |

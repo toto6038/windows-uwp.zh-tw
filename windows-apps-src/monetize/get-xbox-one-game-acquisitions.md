@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox One 遊戲下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: a175096860fe2d2e73259ab9e82cbd5c33b8b889
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.openlocfilehash: 39d932a49e573d55a0ccb9cb69568006feede8a7
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686590"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4741685"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>取得 Xbox One 遊戲下載數
 
@@ -47,7 +47,7 @@ ms.locfileid: "4686590"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您正在擷取下載數資料之 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 開發人員中心分析報告中下載收購資料，產品識別碼將包含在 .tsv 檔案中。  |  是  |
 | startDate | 日期 | 要擷取下載數資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                  |
+| 值      | 類型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | 陣列  | 內含遊戲的彙總下載數資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的＜[下載數數值](#acquisition-values)＞一節。                                                                                                                      |
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的下載數資料，就會傳回此值。 |
@@ -93,7 +93,7 @@ Authorization: Bearer <your access token>
 | 日期                | 字串 | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
 | applicationId       | 字串 | 您正在擷取下載數資料之 Xbox One 遊戲的產品識別碼。 |
 | applicationName     | 字串 | 遊戲的顯示名稱。       |
-| acquisitionType     | 字串 | 其中一個下列字串，可指出收購類型：<ul><li><strong>免費</strong></li><li><strong>試用版</strong></li><li><strong>付費</strong></li><li><strong>促銷碼</strong></li><li><strong>預購</strong></li><li>**Xbox Game Pass** (或**Game Pass**如果在 2018 年 3 月 23 之前查詢資料)</li><li><strong>磁碟</strong></li><li><strong>預付碼</strong></li></ul>    |
+| acquisitionType     | 字串 | 其中一個下列字串，可指出收購類型：<ul><li><strong>免費</strong></li><li><strong>試用版</strong></li><li><strong>付費</strong></li><li><strong>促銷代碼</strong></li><li><strong>Iap</strong></li><li><strong>訂閱 Iap</strong></li><li><strong>私人對象</strong></li><li><strong>Pre 順序</strong></li><li><strong>Xbox Game Pass</strong> (或<strong>Game Pass</strong>如果在 2018 年 3 月 23 之前查詢資料)</li><li><strong>磁碟</strong></li><li><strong>預付碼</strong></li><li><strong>充電的 Pre 順序</strong></li><li><strong>取消的前順序</strong></li><li><strong>失敗的前順序</strong></li></ul>    |
 | ageGroup            | 字串 | 下列其中一個字串，這些字串表示進行下載的使用者的年齡層：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | 字串 | 以下字串之一指定完成收購的裝置類型：<ul><li><strong>電腦</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>伺服器</strong></li><li><strong>平板電腦</strong></li><li><strong>全息影像</strong></li><li><strong>不明</strong></li></ul>  |
 | gender              | 字串 | 下列其中一個字串，這些字串詳列進行收購的使用者的性別：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |

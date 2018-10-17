@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e6a547c8baf0f8990415e303d6b69ca04986d3b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689892"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4742504"
 ---
 # <a name="create-a-package-flight"></a>建立套件正式發行前小眾測試版
 
@@ -58,7 +58,7 @@ ms.locfileid: "4689892"
 
 要求本文包含下列參數。
 
-|  參數  |  類型  |  說明  |  必要  |
+|  參數  |  類型  |  描述  |  必要  |
 |------|------|------|------|
 |  friendlyName  |  字串  |  開發人員指定的套件正式發行前小眾測試版名稱。  |  否  |
 |  groupIds  |  陣列  |  此字串陣列包含與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |  否  |

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: d4261c984eb992092230425205313d751a351f07
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692518"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743877"
 ---
 # <a name="get-all-apps"></a>取得所有 App
 
@@ -49,7 +49,7 @@ ms.locfileid: "4692518"
 
 對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含已登錄到您帳戶之所有 App 的資料。
 
-|  參數  |  類型  |  說明  |  必要  |
+|  參數  |  類型  |  描述  |  必要  |
 |------|------|------|------|
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的 App 數目)。 如果您的帳戶擁有的 App 超過您在查詢中指定的值，回應本文會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
 |  skip  |  整數  |  在傳回剩餘項目之前要略過的項目數目。 使用此參數來瀏覽資料集。 例如，top=10 且 skip=0 會擷取 1 到 10 的項目，top=10 且 skip=10 會擷取 11 到 20 的項目，依此類推。  |  否  |

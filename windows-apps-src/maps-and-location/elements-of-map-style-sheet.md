@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 地圖, 地圖樣式表
 ms.localizationpriority: medium
 ms.openlocfilehash: f0a657ada755b77abe8ffef6a38bfa1f9ece8fcd
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686103"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4743679"
 ---
 # <a name="map-style-sheet-reference"></a>地圖樣式表參考
 
@@ -230,7 +230,7 @@ Microsoft 對應技術使用_地圖樣式表_來定義地圖的外觀。  地圖
 
 這個屬性群組繼承自[MapElement](#mapelement)屬性群組。
 
-| 屬性                     | 類型    | 1703 | 1709 | 1803 | 1809 | 說明 |
+| 屬性                     | 類型    | 1703 | 1709 | 1803 | 1809 | 描述 |
 |------------------------------|---------|------|------|------|------|-------------|
 | 圖形背景             | 浮點數   |      |      |      |  ✔️   | 做為圖示-取代存在任何圖形的背景圖形。 |
 | stemAnchorRadiusScale        | 浮點數   |      |      |  ✔   |  ✔   | 應該縮放的圖示主體的錨點量。  例如，使用 *1* 顯示預設和 *2* 以放大二倍。 |
