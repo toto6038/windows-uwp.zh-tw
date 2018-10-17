@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 48462623d17c612d716300acc3a64057738e72c9
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: a4685a891facab39cb984f0b2d5f697e22477233
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707719"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4694665"
 ---
 # <a name="drag-and-drop"></a>拖放
 
@@ -102,7 +102,7 @@ ms.locfileid: "1707719"
 
 ## <a name="implementing-custom-drag-and-drop"></a>實作自訂拖放
 
-[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 類別會為您完成實作拖放的大部分工作。 但若您希望的話，您可以藉由使用 [Windows.ApplicationModel.DataTransfer.DragDrop.Core 命名空間](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)中的 API 來實作您自己的版本。
+[UIElement](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement) 類別會為您完成實作拖放的大部分工作。 但如果您想要您可以藉由使用[Windows.ApplicationModel.DataTransfer.DragDrop.Core 命名空間](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core)中的 Api 來實作您自己的版本。
 
 | 功能 | WinRT API |
 | --- | --- |

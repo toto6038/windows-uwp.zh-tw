@@ -11,12 +11,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, secondary tiles, 次要磚
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f11ca4d29f22daf953ce03436c3b786c70a9e04
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: d8d6a79ddd497bc3ada777af25791e9938355c79
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4622874"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692874"
 ---
 # <a name="secondary-tiles"></a>次要磚
 
@@ -70,7 +70,7 @@ ms.locfileid: "4622874"
 * 使用者可以隨時刪除其次要磚，無須刪除父項應用程式。
 * 次要磚可以在執行階段建立。 應用程式磚只能在安裝期間建立。
 * 飛出視窗會提示使用者在新增次要磚前先確認。
-* 無法以程式設計的方式透過向使用者要求來為鎖定畫面選取次要磚。 使用者必須透過 \[電腦設定\] 中的 \[個人化\] 頁面手動新增次要磚。
+* 無法以程式設計的方式透過向使用者要求來為鎖定畫面選取次要磚。 在電腦設定，使用者必須手動新增次要磚透過 \ [個人化] 頁面。
 
 對於傳送通知，會為搭配次要磚使用的磚與徽章更新程式及推播通知通道提供特定的方法。 這些方法與搭配主要磚使用的版本一致。 例如，CreateBadgeUpdaterForApplication 與 CreateBadgeUpdaterForSecondaryTile 比較。
 

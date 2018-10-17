@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 3004b7041838656890b3a967e858dddc64c29ee5
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 656e6123db1fc9ea0f3d8c6b6fb106864200e431
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4612393"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4691568"
 ---
 # <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
 
@@ -88,7 +88,7 @@ using Microsoft.QueryStringDotNET; // QueryString.NET
 
 我們這就開始建構內容的視覺部分，其中包括您想要讓使用者看到的文字及影像。
 
-歸功於 Notifications 程式庫的幫助，產生 XML 內容變得極其簡單。 如果您未安裝 NuGet 提供的 Notifications 程式庫，就必須手動建構 XML，很有可能會發生錯誤。
+歸功於 Notifications 程式庫，產生 XML 內容很簡單。 如果您未安裝 NuGet 提供的 Notifications 程式庫，就必須手動建構 XML，很有可能會發生錯誤。
 
 > [!NOTE]
 > 您可以使用 App 套件、App 本機存放區或網頁中的影像。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。

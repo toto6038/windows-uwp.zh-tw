@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 5309b33e0f65a1a06e1a3c0060a84e4c4a88ef9d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 8f3aa529e1c292bcea816e21222ca2a5e07f4319
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700794"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4692313"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -48,7 +48,7 @@ ms.locfileid: "1700794"
 \Assets\Images\contrast-white\<logo.png, and other image files>
 ```
 
-如果您為資料夾命名 (如上述範例所示)，應用程式就會使用高對比設定從適當限定詞命名的資料夾載入資源檔案。 因此，如果設定是 [高對比黑色]，則會載入 `\Assets\Images\contrast-black` 資料夾中的資源檔案。 如果設定為 [無] (也就是，電腦未使用高對比模式)，則載入 `\Assets\Images\standard` 資料夾中的資源檔案。
+如果您為資料夾命名 (如上述範例所示)，應用程式就會使用高對比設定從適當限定詞命名的資料夾載入資源檔案。 因此，如果設定是 [高對比黑色]，則會載入 `\Assets\Images\contrast-black` 資料夾中的資源檔案。 如果設定為 [無] (也就是，電腦未使用高對比模式)，則載入 `\Assets\Images\contrast-standard` 資料夾中的資源檔案。
 
 ## <a name="use-qualifiers-in-file-names"></a>在檔案名稱中使用限定詞
 

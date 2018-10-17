@@ -9,17 +9,17 @@ ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 00a6bbf06f918c0b86bcaed7ae7891b474baefe8
-ms.sourcegitcommit: 73ea31d42a9b352af38b5eb5d3c06504b50f6754
+ms.localizationpriority: medium
+ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
-ms.locfileid: "852874"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4694171"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **注意**  您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)或 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
@@ -143,7 +143,7 @@ else
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-**IsDesignTimeCreatable** 屬性會指出設計工具應該實際建立類別的執行個體，表示這個類別具有公用的預設建構函式，以及它會在其本身中填入資料 (真實或範例)。 如果您沒有設定 **IsDesignTimeCreatable** (或將它設定為 **False**)，則將無法取得設計介面上顯示的範例資料。 在這個案例中，設計工具唯一要做的就是剖析適用於其可繫結屬性的類別，並在 **\[資料\]** 面板和 **\[建立資料繫結\]** 對話方塊中顯示它們。
+**IsDesignTimeCreatable** 屬性會指出設計工具應該實際建立類別的執行個體，表示這個類別具有公用的預設建構函式，以及它會在其本身中填入資料 (真實或範例)。 如果您沒有設定 **IsDesignTimeCreatable** (或將它設定為 **False**)，則將無法取得設計介面上顯示的範例資料。 所有的設計工具會在該情況下是剖析適用於其可繫結屬性的類別，並顯示這些**資料**面板中，並在**建立資料繫結**\] 對話方塊。
 
 <a name="sample-data-for-prototyping"></a>適用於原型設計的範例資料
 --------------------------------------------------------

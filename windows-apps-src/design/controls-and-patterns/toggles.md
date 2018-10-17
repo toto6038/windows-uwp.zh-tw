@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: daffbc5ff74adc234ac6c2b414a7e1b85763849d
-ms.sourcegitcommit: 106aec1e59ba41aae2ac00f909b81bf7121a6ef1
+ms.openlocfilehash: 796ee4ffaa551c23286110ec7164f511655d6017
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "4620728"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4694007"
 ---
 # <a name="toggle-switches"></a>切換開關
 
@@ -71,7 +71,7 @@ ms.locfileid: "4620728"
 - 當使用者需要執行額外步驟讓變更生效時，請使用核取方塊。 例如，如果使用者必須按一下 [提交] 或 [下一步] 按鈕以套用變更時，請使用核取方塊。
 - 當使用者可以選取多個與單一設定或功能相關的項目時，請使用核取方塊。
 
-## <a name="toggle-switches-in-the-the-windows-ui"></a>Windows UI 中的切換開關
+## <a name="toggle-switches-in-the-windows-ui"></a>Windows UI 中的切換開關
 
 下列影像示範 Windows UI 如何使用切換開關。 以下是 [智慧存放裝置設定] 畫面使用切換開關的方式：
 

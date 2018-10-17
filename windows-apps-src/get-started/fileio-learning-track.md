@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a6400a265cdf0bfe78a6982874dcc6747d662b
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
+ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895260"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "4693313"
 ---
 # <a name="work-with-files"></a>使用檔案
 
@@ -64,7 +64,7 @@ await Windows.Storage.FileIO.AppendLinesAsync(file, listOfStrings); // each entr
 
 ## <a name="read-text-from-a-file"></a>從檔案讀取文字
 
-與寫入檔案一樣，從指定檔案的位置開始讀取檔案。 我們會使用如上述範例中相同的位置。 然後我們會使用 **FileIO** 類別讀取其內容。
+與寫入檔案一樣，從指定檔案的位置開始讀取檔案。 我們會使用如上述範例中相同的位置。 然後我們會使用**FileIO**類別讀取其內容。
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
