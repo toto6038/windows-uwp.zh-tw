@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 購買 API, 授與產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 432d5976cb018148ba0f53aae6446a046f0a3b2f
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4683852"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4748477"
 ---
 # <a name="grant-free-products"></a>授與免費產品
 
@@ -54,7 +54,7 @@ ms.locfileid: "4683852"
 
 ### <a name="request-body"></a>要求主體
 
-| 參數      | 類型   | 說明        | 必要 |
+| 參數      | 類型   | 描述        | 必要 |
 |----------------|--------|---------------------|----------|
 | availabilityId | 字串 | 要從 Microsoft Store 型錄授與之產品的可用性識別碼。         | 是      |
 | b2bKey         | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要授與產品的使用者身分識別。    | 是      |
@@ -91,7 +91,7 @@ Content-Type: application/json
 
 ### <a name="response-body"></a>回應主體
 
-| 參數                 | 類型                        | 說明             | 必要 |
+| 參數                 | 類型                        | 描述             | 必要 |
 |---------------------------|-----------------------------|-----------------------|----------|
 | clientContext             | ClientContextV6             | 此訂單的用戶端內容相關資訊， 這將會指派給 Azure AD 權杖的 *clientID* 值。    | 是      |
 | createdtime               | DateTimeOffset              | 訂單的建立時間。         | 是      |
@@ -114,14 +114,14 @@ Content-Type: application/json
 
 ClientContext 物件包含下列參數。
 
-| 參數 | 類型   | 說明                           | 必要 |
+| 參數 | 類型   | 描述                           | 必要 |
 |-----------|--------|---------------------------------------|----------|
 | client    | 字串 | 建立訂單的用戶端識別碼。 | 否       |
 
 
 OrderLineItemV6 物件包含下列參數。
 
-| 參數               | 類型           | 說明                                                                                                  | 必要 |
+| 參數               | 類型           | 描述                                                                                                  | 必要 |
 |-------------------------|----------------|--------------------------------------------------------------------------------------------------------------|----------|
 | agent                   | IdentityV6     | 上次編輯明細項目的代理程式。 如需此物件的詳細資訊，請參閱下表。       | 否       |
 | availabilityId          | 字串         | 要從 Microsoft Store 型錄購買之產品的可用性識別碼。                           | 是      |
@@ -152,7 +152,7 @@ OrderLineItemV6 物件包含下列參數。
 
 IdentityV6 物件包含下列參數。
 
-| 參數     | 類型   | 說明                                                                        | 必要 |
+| 參數     | 類型   | 描述                                                                        | 必要 |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
 | identityType  | 字串 | 包含 **"pub"** 值。                                                      | 是      |
 | identityValue | 字串 | 來自特定 Microsoft Store 識別碼金鑰之 *publisherUserId* 的字串值。 | 是      |

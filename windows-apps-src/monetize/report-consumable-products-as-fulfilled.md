@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable, Microsoft Store 集合, 執行, 消費性產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cbacd35a25e8eaf9673d118fcbece835572e289
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4685290"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747237"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>將消費性產品回報為已完成
 
@@ -58,7 +58,7 @@ ms.locfileid: "4685290"
 
 ### <a name="request-body"></a>要求主體
 
-| 參數     | 類型         | 說明         | 必要 |
+| 參數     | 類型         | 描述         | 必要 |
 |---------------|--------------|---------------------|----------|
 | beneficiary   | UserIdentity | 取用此項目時所針對的使用者。 如需詳細資訊，請參閱下表。        | 是      |
 | itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 *itemId* 值。 請搭配 *trackingId* 來使用這個參數      | 否       |
@@ -69,7 +69,7 @@ ms.locfileid: "4685290"
 
 UserIdentity 物件包含下列參數。
 
-| 參數            | 類型   | 說明       | 必要 |
+| 參數            | 類型   | 描述       | 必要 |
 |----------------------|--------|-------------------|----------|
 | identityType         | 字串 | 指定字串值 **b2b**。    | 是      |
 | identityValue        | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要回報消費性產品已完成之使用者的身分。      | 是      |

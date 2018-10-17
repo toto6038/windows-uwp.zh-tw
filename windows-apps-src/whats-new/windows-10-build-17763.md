@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 19f2d29d94759a4b8fd273c8fdc0cdf5c93311de
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689577"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745519"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 
@@ -24,7 +24,7 @@ Windows 10 組建 17763 (也稱為年 10 月 2018年更新或版本 1809年)，�
 
 ## <a name="design--ui"></a>設計與 UI
 
-功能 | 說明
+功能 | 描述
  :------ | :------
 應用程式圖示及標誌 | [應用程式圖示及標誌頁面](../design/style/app-icons-and-logos.md)已重新撰寫，和現在會顯示最新的 Visual Studio 圖示工具，並將影像新增到您的 app 清單，在 Microsoft Store 中提供的資訊。
 設計登陸頁面 | [更新登陸頁面的設計](https://developer.microsoft.com/windows/apps/design)具備 UWP 設計區域和 Fluent 設計的最新新增項目上的資訊在快速的概觀。
@@ -34,14 +34,14 @@ Fluent Design 更新 | 下列的 Fluent Design 頁面已經做視覺更新和次
 手寫檢視 | [HandwritingView](../design/controls-and-patterns/text-handwriting-view.md)是 TextBox 和 RichEditBox 的新的筆墨輸入的表面。 使用者可以展開控制項書寫表面其手寫筆點選文字控制項。 本指南說明如何管理及自訂您的應用程式中 HandwritingView。
 在 Fluent 設計的動作 | Fluent Design 系統中的動作使用已發展，建置在時間、 加/減速、 方向以及重力的基本概念。 將套用這些基礎可協助引導使用者透過您的應用程式，以及及其數位體驗與它們連線，藉由反映自然界。 了解這些文章中的多個： </br> * [動作概觀](../design/motion/index.md)已更新以反映這些基本概念。 </br> * [實務影片](../design/motion/motion-in-practice.md)提供如何套用這些基礎在您的應用程式內的範例。 它也包含隱含動畫，允許針對 XAML 元素的屬性變更時的舊和新值之間輕鬆內插補點的詳細資訊。 </br> * [方向性和重力](../design/motion/directionality-and-gravity.md)強化使用者的心理模式的應用程式。 </br> * [計時和加/減速](../design/motion/timing-and-easing.md)擬真度加入您的應用程式中的動作。 </br> * [XAML 屬性的動畫](../design/motion/xaml-property-animations.md)可讓您直接屬性產生動畫效果的 XAML 元素，而不需要與基礎組合視覺效果進行互動。
 頁面轉換 | 使用者在應用程式中的頁面之間瀏覽的[頁面轉換](../design/motion/page-transitions.md)。 它們能協助使用者了解它們的瀏覽階層中的位置，並提供有關在頁面之間關聯性的意見反應。
-文字縮放比例 | 新[文字縮放比例指南](../design/input/text-scaling.md)說明如何更新您的應用程式以適應新文字縮放比例行為，提供使用者變更相對字型大小跨作業系統和個別應用程式的能力。 而不是使用放大鏡 app （這通常只會放大螢幕的區域內的所有項目和導入了自己的可用性問題）、 變更顯示器解析度，或依賴 DPI 縮放比例 （這會調整大小，根據顯示和一般檢視的所有項目距離），使用者可以快速地存取調整大小只是文字，涵蓋範圍可從 100%（預設大小） 的設定 225%。
+文字大小調整 | 新[文字縮放比例指南](../design/input/text-scaling.md)說明如何更新您的應用程式以適應新文字縮放比例行為，提供使用者變更相對字型大小跨作業系統和個別應用程式的能力。 而不是使用放大鏡 app （這通常只會放大螢幕的區域內的所有項目和導入了自己的可用性問題）、 變更顯示器解析度，或依賴 DPI 縮放比例 （這會調整大小，根據顯示和一般檢視的所有項目距離），使用者可以快速地存取調整大小只是文字，涵蓋範圍可從 100%（預設大小） 的設定 225%。
 工具組 | [Adobe XD 和 Adobe Illustrator 工具組](../design/downloads/index.md)已更新為新的功能。 這些設計工具組提供控制項與版面配置範本可用於設計 UWP 應用程式。
 UI 命令功能 | [UWP 命令基礎結構](../design/basics/commanding-basics.md)的更新包含更好的命令物件 （行為、 標籤、 圖示、 鍵盤快速鍵、 便捷鍵和描述） 封裝和一組標準的常用的命令，包括剪下、 複製、 貼上、 結束、 等。，這不需要手動設定這些屬性。 </br> 新[XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand)類別提供的基底類別 deveining 命令執行動作時叫用的互動式 UI 元素的行為。 這是[StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand)，這會公開一組預先定義的屬性的標準的平台命令的父類別。 
 Windows UI 文件庫 | [Windows UI 文件庫](https://aka.ms/winui-docs)是一組適用於 UWP app 提供控制項與其他使用者介面元素的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容的所以您的應用程式運作方式，即使您的使用者不需要的最新的 OS 版本。 </br> 如需什麼是 Windows UI 文件庫中的詳細資訊，請參閱[NuGet 套件中包含的 API 命名空間的這份清單。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
 
-功能 | 說明
+功能 | 描述
  :------ | :------
 條碼掃描器 | [條碼掃描器](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner)的文件已重新組織，並改善了更多詳細資料和程式碼片段。 我們也新增了一個新的主題：[取得並了解條碼資料](https://docs.microsoft.com/windows/uwp/devices-sensors/pos-barcodescanner-scan-data)，正好說明如何取得並搭配從條碼掃描器的資料。
 C++/WinRT | [C + + /winrt](https://aka.ms/cppwinrt)包含許多的新功能、 變更，以及適用於此版本中修正程式。 有新函式和實作您自己的[集合屬性和集合類型](/windows/uwp/cpp-and-winrt-apis/collections); 支援您的基底類別您現在可以使用[{繫結}](/windows/uwp/xaml-platform/binding-markup-extension) XAML 標記延伸，使用您 C + + /winrt 執行階段類別 （如需程式碼範例，請參閱[資料繫結概觀](/windows/uwp/data-binding/data-binding-quickstart)）。 如需完整描述的所有項目全新和已變更，在此版本中，請參閱[的新功能 C + + /winrt](../cpp-and-winrt-apis/news.md)。</br></br>其他新的 C + + /winrt 項內容包括：[自訂的 XAML 控制項](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl);[撰寫 COM 元件](/windows/uwp/cpp-and-winrt-apis/author-coclasses);[值類別](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories);與[強式和弱式參考](../cpp-and-winrt-apis/weak-references.md)。
@@ -76,7 +76,7 @@ WebVR |我們已經重大更新[WebVR 開發人員指南](https://docs.microsoft
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利
 
-功能 | 說明
+功能 | 描述
  :------ | :------
 MSIX | [MSIX](https://docs.microsoft.com/windows/msix/overview)是提供現代化的封裝體驗，以所有 Windows 應用程式的新 Windows 應用程式套件格式。 開放原始碼 MSIX 格式時啟用現代化部署功能保留現有的套件的功能。
 MSIX 封裝工具 | 新的[MSIX 封裝工具](https://docs.microsoft.com/windows/msix/mpt-overview)） 可讓您重新封裝 MSIX 格式，您現有的傳統型應用程式，即使您不需要存取其原始碼。 它可以在命令列，或透過其互動式 UI 執行。

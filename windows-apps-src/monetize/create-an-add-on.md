@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: a24355ca09380c46d8e648899ca2fe96f9e989c7
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4687538"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4745988"
 ---
 # <a name="create-an-add-on"></a>建立附加元件
 
@@ -51,7 +51,7 @@ ms.locfileid: "4687538"
 
 要求本文包含下列參數。
 
-|  參數  |  類型  |  說明  |  必要  |
+|  參數  |  類型  |  描述  |  必要  |
 |------|------|------|------|
 |  applicationIds  |  陣列  |  此陣列包含此附加元件相關聯之 App 的 Store 識別碼。 此陣列只支援一個項目。   |  是  |
 |  productId  |  字串  |  附加元件的產品識別碼。 這是可在程式碼中用來參考附加元件的識別碼。 如需詳細資訊，請參閱[設定您的產品類型和產品識別碼](https://msdn.microsoft.com/windows/uwp/publish/set-your-iap-product-id)。  |  是  |

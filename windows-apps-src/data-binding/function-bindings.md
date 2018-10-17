@@ -1,7 +1,7 @@
 ---
 author: jwmsft
 description: XBind 標記延伸，可讓函式，以在標記中使用。
-title: 在 X:bind 中的函式
+title: x:Bind 中的函式
 ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
@@ -10,13 +10,13 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4691955"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4747016"
 ---
-# <a name="functions-in-xbind"></a>在 X:bind 中的函式
+# <a name="functions-in-xbind"></a>x:Bind 中的函式
 
 **注意** 如需有關如何在 app 中使用資料繫結與 **{x:Bind}** (以及完整比較 **{x:Bind}** 和 **{Binding}**) 的一般資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
