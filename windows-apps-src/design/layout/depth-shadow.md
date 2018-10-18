@@ -13,11 +13,11 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4748510"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4969021"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和陰影
 
@@ -65,7 +65,7 @@ Z 深度是與 z 軸，兩個表面之間的距離，它會示範如何關閉物
 
 ## <a name="what-is-shadow"></a>什麼是陰影？
 
-![陰影](images/elevation-shadow/shadow.svg)
+![shadow](images/elevation-shadow/shadow.svg)
 
 陰影是一種方式認知提高權限。 光線提升權限的物件上方時，就會有陰影下面的表面上。 較高的物件、 更大和柔和陰影會變得。 請注意，不需要提升權限的物件會有陰影，但陰影並表示提高權限。
 

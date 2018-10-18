@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4753746"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "4967076"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>取得傳統型應用程式的深入解析資料
 
 在 Microsoft Store 分析 API 中使用這個方法，來取得與您已新增到[Windows 傳統型應用程式](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的傳統型應用程式的健康情況計量資料相關的深入資訊。 這項資料也會在 Windows 開發人員中心儀表板中傳統型應用程式[健康情況報告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中提供的。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
