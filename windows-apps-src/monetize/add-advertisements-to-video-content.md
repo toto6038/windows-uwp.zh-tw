@@ -93,7 +93,7 @@ ms.locfileid: "4745413"
     > [!NOTE]
     > 在開始播放 **MediaPlayer** 中的主要返回。內容之前，您應該等待 **requestSchedule** 或 **requestScheduleByUrl** 傳回。 在 **requestSchedule** 傳回之前開始播放媒體 (在預載廣告的情况下) 將導致預載中斷主視訊內容。 即使函數失敗，您還是必須呼叫 **play**，因為 **AdScheduler** 會告訴 **MediaPlayer** 略過廣告並直接移動到內容。 您可能有不同的商務需求，例如若無法從遠端成功擷取廣告，則插入內建的廣告。
 
-8.  在播放時，您可以處理其他事件，這些事件可讓您的應用程式追蹤進度和/或初始廣告符合處理程序之後可能發生的錯誤。 下列程式碼顯示其中一部分事件，包含 **onPodStart**、**onPodEnd**、**onPodCountdown**、**onAdProgress**、**onAllComplete** 和 **onErrorOccurred**。
+8.  在播放時，您可以處理其他事件，這些事件可讓您的應用程式追蹤進度和/或初始廣告符合處理程序之後可能發生的錯誤。 The following code shows some of these events, including **onPodStart**, **onPodEnd**, **onPodCountdown**, **onAdProgress**, **onAllComplete**, and **onErrorOccurred**.
 
     [!code-javascript[TrialVersion](./code/AdvertisingSamples/AdSchedulerSamples/js/js/main.js#Snippet5)]
 

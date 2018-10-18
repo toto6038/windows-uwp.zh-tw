@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e6a654897efba1fa66350abaddbacf9791bbbcc
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4686265"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753451"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 
@@ -55,14 +55,14 @@ ms.locfileid: "4686265"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 名稱         | 類型  | 說明   |  必要  |
+| 名稱         | 類型  | 描述   |  必要  |
 |----------------|--------|-------------|-----------|
 | recurrenceId | string | 您想要變更之訂閱的識別碼。 若要取得此識別碼，呼叫方法，[取得使用者的訂閱](get-subscriptions-for-a-user.md)，找出代表您想要變更之訂閱附加元件的回應主體項目並使用**id**欄位的值用於項目。     | 是      |
 
 
 ### <a name="request-body"></a>要求主體
 
-| 欄位      | 類型   | 說明   | 必要 |
+| 欄位      | 類型   | 描述   | 必要 |
 |----------------|--------|---------------|----------|
 | b2bKey         | string | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要變更其訂閱的使用者身分識別。     | 是      |
 | changeType     | string |  下列其中一個字串，辨識您想要進行的變更類型：<ul><li>**Cancel**：取消訂閱。</li><li>**Extend**：延長訂閱。 如果您指定這個值，必須也包含 *extensionTimeInDays* 參數。</li><li>**Refund**：將訂閱費用退款給客戶。</li><li>**ToggleAutoRenew**：停用訂閱的自動續約。 如果訂閱目前已停用自動續約，這個值不會執行任何動作。</li></ul>   | 是      |

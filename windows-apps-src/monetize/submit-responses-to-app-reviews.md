@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684451"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752469"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 
@@ -67,7 +67,7 @@ ms.locfileid: "4684451"
 
 *Responses* 陣列中的每個物件包含下列值。
 
-| 值        | 類型   | 說明           |  必要  |
+| 值        | 類型   | 描述           |  必要  |
 |---------------|--------|-----------------------------|-----|
 | ApplicationId | 字串 |  您想要回應評論之 App 的「Store 識別碼」。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
 | ReviewId | 字串 |  您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |

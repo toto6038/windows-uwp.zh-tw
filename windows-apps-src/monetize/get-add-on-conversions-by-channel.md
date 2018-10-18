@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件轉換, 通道
 ms.localizationpriority: medium
 ms.openlocfilehash: af29c790df5508a22c545cdc5a2ca2faac15e134
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4692035"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753538"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>依通道取得附加元件轉換
 
@@ -51,7 +51,7 @@ ms.locfileid: "4692035"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | 字串 | 您想要擷取附加元件轉換資料之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | inAppProductId | 字串 | 您想要擷取轉換資料之附加元件的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。  | 是  |
@@ -82,7 +82,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                  |
+| 值      | 類型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 物件陣列，內含附加元件的彙總轉換資料。 如需有關每個物件中資料的詳細資訊，請參閱下方的[轉換值](#conversion-values)一節。                     |
 | @nextLink  | string | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10，但是查詢卻有超過 10 個資料列的轉換資料，就會傳回此值。 |

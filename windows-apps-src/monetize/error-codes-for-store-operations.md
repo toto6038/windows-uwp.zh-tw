@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式內購買，Iap，附加元件，錯誤碼
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2d3a4562be403172520f8377afb16c782a49c0
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4681739"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4751363"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 作業的錯誤碼
 
@@ -26,7 +26,7 @@ ms.locfileid: "4681739"
 
 下列錯誤碼相關應用程式內購買的作業。
 
-|  錯誤碼  |  說明  |
+|  錯誤碼  |  描述  |
 |--------------|---------------|
 | 0x803F6100   | 無法完成應用程式內購買，因為兒童專區作用中。 若要完成購買，來將裝置與您的 Microsoft 帳戶登入並執行的應用程式。               |
 | 0x803F6101   | 找不到指定的 App。 應用程式可能不會再可用在市集中，或是您可能會有應用程式提供不正確的市集識別碼。     |
@@ -48,7 +48,7 @@ ms.locfileid: "4681739"
 
 下列錯誤碼相關授權的應用程式或附加元件的作業。
 
-|  錯誤碼  |  說明  |
+|  錯誤碼  |  描述  |
 |--------------|---------------|
 | 0x803F700C   | 裝置目前已離線。 當裝置處於離線狀態時，請使用此應用程式，開啟您市集的設定，並切換**離線的權限**設定。            |
 | 0x803F8001   | 您沒有產品的權利。 您可能會使用與用來購買該產品的一個不同的 Microsoft 帳戶。           |
@@ -67,7 +67,7 @@ ms.locfileid: "4681739"
 
 下列的錯誤代碼與有關[自我安裝套件更新](../packaging/self-install-package-updates.md)。
 
-|  錯誤碼  |  說明  |
+|  錯誤碼  |  描述  |
 |--------------|---------------|
 | 0x803F6200   | 取得使用者同意，才能下載的套件更新。               |
 | 0x803F6201   | 取得使用者同意，才能下載並安裝套件更新。                                                  |

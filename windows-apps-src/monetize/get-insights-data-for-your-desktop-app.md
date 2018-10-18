@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4689593"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4753746"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>取得傳統型應用程式的深入解析資料
 
@@ -46,7 +46,7 @@ ms.locfileid: "4689593"
 
 ### <a name="request-parameters"></a>要求參數
 
-| 參數        | 類型   |  說明      |  必要  
+| 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
 | applicationId | string | 您想要取得深入解析資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 如果您未指定此參數，回應主體會包含針對登錄到您帳戶的所有應用程式的深入解析資料。  |  否  |
 | startDate | 日期 | 要擷取的深入解析資料之日期範圍中開始日期。 預設為目前日期的前 30 天。 |  否  |
@@ -66,7 +66,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="response-body"></a>回應主體
 
-| 值      | 類型   | 說明                  |
+| 值      | 類型   | 描述                  |
 |------------|--------|-------------------------------------------------------|
 | 值      | array  | 包含應用程式的深入解析資料的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱下方的[深入解析值](#insight-values)一節。                                                                                                                      |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。                 |
@@ -86,7 +86,7 @@ Authorization: Bearer <your access token>
 
 ### <a name="insightdetail-values"></a>InsightDetail 值
 
-| 值               | 類型   | 說明                           |
+| 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
 | FactName           | string | 表示目前的深入解析或目前的維度描述的衡量標準的字串。 目前，此方法僅支援值**叫用次數**。  |
 | SubDimensions         | array |  一或多個物件，其描述深入了解的單一單位。   |

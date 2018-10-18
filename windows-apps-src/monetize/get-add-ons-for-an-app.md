@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b450636db1896de32b0b3c0d2822b37624de10b
-ms.sourcegitcommit: 9354909f9351b9635bee9bb2dc62db60d2d70107
+ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4684474"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "4752041"
 ---
 # <a name="get-add-ons-for-an-app"></a>取得 App 的附加元件
 
@@ -47,7 +47,7 @@ ms.locfileid: "4684474"
 ### <a name="request-parameters"></a>要求參數
 
 
-|  名稱  |  類型  |  說明  |  必要  |
+|  名稱  |  類型  |  描述  |  必要  |
 |------|------|------|------|
 |  applicationId  |  字串  |  您想要擷取其附加元件之 App 的「Store 識別碼」。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |  是  |
 |  top  |  整數  |  要求中要傳回的項目數目 (也就是要傳回的附加元件數目)。 如果 App 擁有的附加元件超過您在查詢中指定的值，回應主體會包含您可以附加到方法 URI 的相對 URI 路徑以要求下一個頁面的資料。  |  否  |
