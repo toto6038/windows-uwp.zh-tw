@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3575d4d30515a3c26bf99e1cc37afa3b98f4e7dc
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4952252"
+ms.locfileid: "5127537"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 

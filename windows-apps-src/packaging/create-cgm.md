@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 內容群組對應, 串流安裝, uwp app 串流安裝, 來源內容群組對應
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce32958d5a99dc9f3f772d6272450a4f2b0f81b
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4965313"
+ms.locfileid: "5128004"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>建立和轉換來源內容群組對應
 

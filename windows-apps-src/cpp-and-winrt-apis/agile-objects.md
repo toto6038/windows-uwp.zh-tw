@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 9af1fb0a9d23727924ae3c165bc8977fb9cc7774
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4961557"
+ms.locfileid: "5128642"
 ---
 # <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
 在大部分案例中，Windows 執行階段課類別的執行個體&mdash;像標準 C++ 物件一樣&mdash;可以從任何執行緒存取。 這樣的類別是*敏捷的*。 只有少數隨附於 Windows 的 Windows 執行階段類別是非敏捷的，但當您使用它們時，需要考量其執行緒模型與封送處理行為 (封送處理會通過執行緒或處理程序的界限傳遞資料)。 適用於敏捷式物件，每個 Windows 執行階段物件的最佳預設值是讓您自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是敏捷的預設值。

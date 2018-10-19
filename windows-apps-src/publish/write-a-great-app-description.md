@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 描述, 說明, Store 清單, 行銷
 ms.localizationpriority: medium
 ms.openlocfilehash: 54877e43ced6044e0866f951a653f2b32d040d9d
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4954658"
+ms.locfileid: "5126992"
 ---
 # <a name="write-a-great-app-description"></a>撰寫一份出色的 App 介紹
 

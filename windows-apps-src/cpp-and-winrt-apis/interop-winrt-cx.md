@@ -3,21 +3,24 @@ author: stevewhims
 description: 本主題示範可用於 C++/CX 與 C++/WinRT 物件之間轉換的協助程式函式。
 title: C++/WinRT 與 C++/CX 之間的互通性
 ms.author: stwhi
-ms.date: 05/21/2018
+ms.date: 10/09/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: b60b0d7c201f172261de1546fc250e40b8cd670f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: a21255299207bf6de06661e63936e6715c1f41c9
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4950586"
+ms.locfileid: "5125976"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
-本主題示範可用於之間轉換的兩個協助程式函式[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)及[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)物件。 您可以使用它們來使用兩種語言專案中，程式碼之間的互通性，或者您可以使用函式，逐漸將程式碼移從 C + + /CX 至 C + + WinRT (請參閱[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md))。
+
+逐漸移植中的程式碼的策略您[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)專案[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中所討論[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md)。
+
+本主題示範您可以使用 C + 之間轉換的兩個協助程式函式 + /CX 與 C + + /winrt 物件在同一個專案中的。 您可以使用它們來使用兩種語言專案中，程式碼之間的互通性，或您可以使用函式移植您的程式碼從 C + + /CX 至 C + + /winrt。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函式
 下述的協助程式函式將 C++/CX 物件轉換為對等 C++/WinRT 物件。 函式將 C++/CX 物件轉換為其基礎 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)介面指標。 然後它在該指標上呼叫 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 為 C++/WinRT 物件的預設介面詢問。 **QueryInterface** 是 Windows 執行階段應用程式二進位介面 (ABI) 相當於 C++/CX safe_cast 擴充功能。 且，[**Winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函式擷取 C++/WinRT 物件的基礎 **IUnknown** 介面指標的位址，讓它可以設定另一個值。
@@ -46,18 +49,20 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 }
 ```
 
-## <a name="code-example"></a>程式碼範例
-以下是一個程式碼範例 (根據 C++/CX**空白應用程式**專案範本) 示範使用中的兩個協助程式函式。 它也會示範您可以如何對不同孤立區使用命名空間別名，處理 C++/WinRT 投影與 C++/CX 投影之間可能產生的命名空間衝突。
+## <a name="example-project-showing-the-two-helper-functions-in-use"></a>使用中顯示兩個協助程式函式的範例專案
+
+簡單的方式，重現逐漸移植 C + 中的程式碼的案例 + CX 專案至 C + + WinRT，您可以開始建立新的專案，在 Visual Studio 中使用其中一個 C + + /winrt 專案範本 (看到[Visual Studio 支援 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
+
+這個範例專案也會示範如何使用命名空間別名對不同孤立的程式碼中，為了處理 C + 之間可能命名空間衝突 + /winrt 投影與 C + + /CX 投影。
+
+- 建立**Visual c + +** \> **Windows 通用** > **核心應用程式 (C + + /winrt)** 專案。
+- 在專案屬性， **C/c + +** \> **一般** \> **使用的 Windows 執行階段擴充功能** \> **是 (/ZW)**。 這會開啟專案支援 C + + /CX。
+- 內容取代成`App.cpp`具有下列程式碼清單。
 
 ```cppwinrt
-// MainPage.xaml.cpp
-
+// App.cpp
 #include "pch.h"
-#include "MainPage.xaml.h"
-#include <winrt/Windows.Foundation.h>
 #include <sstream>
-
-using namespace InteropExample;
 
 namespace cx
 {
@@ -66,7 +71,13 @@ namespace cx
 
 namespace winrt
 {
+    using namespace Windows;
+    using namespace Windows::ApplicationModel::Core;
     using namespace Windows::Foundation;
+    using namespace Windows::Foundation::Numerics;
+    using namespace Windows::UI;
+    using namespace Windows::UI::Core;
+    using namespace Windows::UI::Composition;
 }
 
 template <typename T>
@@ -87,11 +98,145 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
     return safe_cast<T^>(reinterpret_cast<Platform::Object^>(winrt::get_abi(from)));
 }
 
-MainPage::MainPage()
+struct App : winrt::implements<App, winrt::IFrameworkViewSource, winrt::IFrameworkView>
 {
-    InitializeComponent();
+    winrt::CompositionTarget m_target{ nullptr };
+    winrt::VisualCollection m_visuals{ nullptr };
+    winrt::Visual m_selected{ nullptr };
+    winrt::float2 m_offset{};
 
-    winrt::init_apartment(winrt::apartment_type::single_threaded);
+    winrt::IFrameworkView CreateView()
+    {
+        return *this;
+    }
+
+    void Initialize(winrt::CoreApplicationView const &)
+    {
+    }
+
+    void Load(winrt::hstring const&)
+    {
+    }
+
+    void Uninitialize()
+    {
+    }
+
+    void Run()
+    {
+        winrt::CoreWindow window = winrt::CoreWindow::GetForCurrentThread();
+        window.Activate();
+
+        winrt::CoreDispatcher dispatcher = window.Dispatcher();
+        dispatcher.ProcessEvents(winrt::CoreProcessEventsOption::ProcessUntilQuit);
+    }
+
+    void SetWindow(winrt::CoreWindow const & window)
+    {
+        winrt::Compositor compositor;
+        winrt::ContainerVisual root = compositor.CreateContainerVisual();
+        m_target = compositor.CreateTargetForCurrentView();
+        m_target.Root(root);
+        m_visuals = root.Children();
+
+        window.PointerPressed({ this, &App::OnPointerPressed });
+        window.PointerMoved({ this, &App::OnPointerMoved });
+
+        window.PointerReleased([&](auto && ...)
+        {
+            m_selected = nullptr;
+        });
+    }
+
+    void OnPointerPressed(IInspectable const &, winrt::PointerEventArgs const & args)
+    {
+        winrt::float2 const point = args.CurrentPoint().Position();
+
+        for (winrt::Visual visual : m_visuals)
+        {
+            winrt::float3 const offset = visual.Offset();
+            winrt::float2 const size = visual.Size();
+
+            if (point.x >= offset.x &&
+                point.x < offset.x + size.x &&
+                point.y >= offset.y &&
+                point.y < offset.y + size.y)
+            {
+                m_selected = visual;
+                m_offset.x = offset.x - point.x;
+                m_offset.y = offset.y - point.y;
+            }
+        }
+
+        if (m_selected)
+        {
+            m_visuals.Remove(m_selected);
+            m_visuals.InsertAtTop(m_selected);
+        }
+        else
+        {
+            AddVisual(point);
+        }
+    }
+
+    void OnPointerMoved(IInspectable const &, winrt::PointerEventArgs const & args)
+    {
+        if (m_selected)
+        {
+            winrt::float2 const point = args.CurrentPoint().Position();
+
+            m_selected.Offset(
+            {
+                point.x + m_offset.x,
+                point.y + m_offset.y,
+                0.0f
+            });
+        }
+    }
+
+    void AddVisual(winrt::float2 const point)
+    {
+        winrt::Compositor compositor = m_visuals.Compositor();
+        winrt::SpriteVisual visual = compositor.CreateSpriteVisual();
+
+        static winrt::Color colors[] =
+        {
+            { 0xDC, 0x5B, 0x9B, 0xD5 },
+            { 0xDC, 0xED, 0x7D, 0x31 },
+            { 0xDC, 0x70, 0xAD, 0x47 },
+            { 0xDC, 0xFF, 0xC0, 0x00 }
+        };
+
+        static unsigned last = 0;
+        unsigned const next = ++last % _countof(colors);
+        visual.Brush(compositor.CreateColorBrush(colors[next]));
+
+        float const BlockSize = 100.0f;
+
+        visual.Size(
+        {
+            BlockSize,
+            BlockSize
+        });
+
+        visual.Offset(
+        {
+            point.x - BlockSize / 2.0f,
+            point.y - BlockSize / 2.0f,
+            0.0f,
+        });
+
+        m_visuals.InsertAtTop(visual);
+
+        m_selected = visual;
+        m_offset.x = -BlockSize / 2.0f;
+        m_offset.y = -BlockSize / 2.0f;
+    }
+};
+
+int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
+{
+    winrt::init_apartment();
 
     winrt::Uri uri(L"http://aka.ms/cppwinrt");
     std::wstringstream wstringstream;
@@ -106,6 +251,8 @@ MainPage::MainPage()
     winrt::Uri uri_from_cx = from_cx<winrt::Uri>(cx);
     WINRT_ASSERT(uri.Domain() == uri_from_cx.Domain());
     WINRT_ASSERT(uri == uri_from_cx);
+
+    winrt::CoreApplication::Run(winrt::make<App>());
 }
 ```
 
@@ -117,3 +264,4 @@ MainPage::MainPage()
 
 ## <a name="related-topics"></a>相關主題
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
+* [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md)

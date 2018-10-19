@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: e00f387c3dd78353158d93d3b4749345936396f5
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: 5fe355c4ee4ee2dcc9d2e48130773e5632eb4a90
+ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4963163"
+ms.locfileid: "5127419"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 您很可能有撰寫和使用 Windows 執行階段 Api 使用的相關的問題的解答[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -28,7 +28,7 @@ ms.locfileid: "4963163"
 
 ## <a name="why-wont-my-new-project-compile-im-using-visual-studio-2017-version-1580-or-higher-and-sdk-version-17134"></a>為什麼我的新專案將無法編譯？ 我使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，和 SDK 17134 版本
 
-如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，，並且針對 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，則新建立 C + + /winrt 專案可能會失敗來編譯錯誤 「*錯誤 C3861: 'from_abi': 識別碼不找到*」，並使用*base.h*來自其他錯誤。 解決方案是任一目標更新版本 （更多符合） 版本的 Windows SDK 中或設定專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 寬鬆-** 會出現在專案屬性**C/C++** > **語言** > **命令列**在**其他選項**，然後刪除它)。
+如果您使用 Visual Studio 2017 (版本 15.8.0 或更高版本)，，並且針對 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)，則新建立 C + + /winrt 專案可能會失敗來編譯錯誤 「*錯誤 C3861: 'from_abi': 識別碼不找到*」，並使用*base.h*來自其他錯誤。 解決方案是任一目標更新版本 （更多符合） 版本的 Windows SDK 中或設定專案屬性**C/c + +** > **語言** > **一致性模式： 否**(此外，如果 **/ 寬鬆-** 會出現在專案屬性**C/C++** > **命令列**在**其他選項**，然後刪除它)。
 
 ## <a name="what-are-the-requirements-for-the-cwinrt-visual-studio-extension-vsixhttpsakamscppwinrtvsix"></a>[C++/WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix) 的需求是什麼？
 [VSIX](https://aka.ms/cppwinrt/vsix) 強制執行 10.0.17134.0 (Windows 10，版本 1803 ) 的最小 Windows SDK 目標版本。 您也需要 Visual Studio 2017 (至少版本 15.6；我們建議至少 15.7)。 您可以識別一個專案，其藉由 `.vcxproj`檔案中的 `<PropertyGroup Label="Globals">` 的 `<CppWinRTEnabled>true</CppWinRTEnabled>` 存在來使用 VSIX。 如需詳細資訊，請參閱 [適用於 C++/WinRT 的 Visual Studio 支援，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
