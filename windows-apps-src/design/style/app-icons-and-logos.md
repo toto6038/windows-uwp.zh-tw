@@ -13,11 +13,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 04263122c1a96aadc5e4d0ad8f804730d3a2a20f
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4743537"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4950889"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -172,7 +172,7 @@ Visual Studio 提供非常有用的工具來管理您的應用程式圖示稱為
 
     a.  **簡短名稱**： 指定您的應用程式的簡短名稱。
 
-    b。  **顯示名稱**： 指出您是否要在中型、 寬形或大型磚上顯示的簡短名稱。 
+    b.  **顯示名稱**： 指出您是否要在中型、 寬形或大型磚上顯示的簡短名稱。 
 
     c. **磚背景**： 指定十六進位值或色彩名稱的磚背景色彩。 例如，`#464646`。 預設值為 `transparent`。
 

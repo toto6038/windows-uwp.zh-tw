@@ -11,11 +11,11 @@ keywords: windows 10, uwp, 客戶群組, 區隔, 正式發行前小眾測試版�
 ms.assetid: ad1a5a02-71aa-47d9-8d03-2d85f4941442
 ms.localizationpriority: medium
 ms.openlocfilehash: 88101d9f8cc7ca40d37f88202667f36ecf5d8a3f
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749099"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4952092"
 ---
 # <a name="create-customer-groups"></a>建立客戶群組
 

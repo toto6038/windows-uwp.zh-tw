@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 刪除正式發行前小眾測試版
 ms.localizationpriority: medium
 ms.openlocfilehash: 436a28cc1be0c106928784086731fe078d789527
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4746279"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4950982"
 ---
 # <a name="delete-a-package-flight"></a>刪除套件正式發行前小眾測試版
 

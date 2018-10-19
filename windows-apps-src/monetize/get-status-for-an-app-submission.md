@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式提交, 狀態
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d14ce17f4e6dff08351ca0764f3b6a173550426
-ms.sourcegitcommit: 1c6325aa572868b789fcdd2efc9203f67a83872a
+ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "4749935"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "4951164"
 ---
 # <a name="get-the-status-of-an-app-submission"></a>取得 App 提交的狀態
 
