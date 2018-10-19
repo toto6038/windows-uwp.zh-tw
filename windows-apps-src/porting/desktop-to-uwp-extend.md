@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bed06d5f9f43acd5aa4ec5ff7b2b7139ad0dd26f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953418"
+ms.locfileid: "5157870"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -41,6 +41,12 @@ ms.locfileid: "4953418"
 ![延伸起始專案](images/desktop-to-uwp/extend-start-project.png)
 
 如果您的解決方案不包含封裝專案，請參閱[您使用 Visual Studio 的傳統型應用程式套件](desktop-to-uwp-packaging-dot-net.md)。
+
+### <a name="configure-the-desktop-application"></a>將傳統型應用程式設定
+
+請確定您的傳統型應用程式的檔案，您需要呼叫 Windows 執行階段 Api 的參考。
+
+若要這樣做，請參閱主題[增強適用於 Windows 10 傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)的 [[首先，設定您的專案](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)] 區段。
 
 ### <a name="add-a-uwp-project"></a>新增 UWP 專案
 
@@ -71,6 +77,12 @@ ms.locfileid: "4953418"
 然後，從您的 UWP 專案，新增執行階段元件的參考。 您的解決方案看起來會像這樣：
 
 ![執行階段參考](images/desktop-to-uwp/runtime-component-reference.png)
+
+### <a name="build-your-solution"></a>建置您的方案
+
+建置您的解決方案，以確保未出現任何錯誤。 如果您收到錯誤，開啟 \ [**組態管理員**，並確保您的專案目標相同的平台。
+
+![組態管理員](images/desktop-to-uwp/config-manager.png)
 
 讓我們看看您可以使用 UWP 專案和執行階段元件做幾件事。
 
@@ -211,7 +223,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-覆寫 ``OnNavigatedTo`` 方法以使用傳遞到頁面的參數。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
+在程式碼後置 XAML 頁面中，覆寫``OnNavigatedTo``方法，使用參數傳遞到頁面。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -238,156 +250,15 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
  }
 ```
 
-### <a name="similar-samples"></a>類似範例
-
-[新增 UWP XAML 使用者體驗到 VB6 應用程式](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/VB6withXaml)
-
-[Northwind 範例：UWA UI 和 Win32 舊版程式碼的端對端範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/NorthwindSample)
-
-[Northwind 範例：連接至 SQL Server 的 UWP 應用程式](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SQLServer)
-
-## <a name="provide-services-to-other-apps"></a>提供服務給其他應用程式
-
-您新增一種服務，可供其他應用程式使用。 例如，您可以新增一種服務，提供其他應用程式對於您應用程式後面資料庫的受控制存取權。 藉由實作背景工作，應用程式可以觸達服務，即使您的傳統型應用程式未執行。
-
-以下是執行此程序的範例。
-
-![調適型設計](images/desktop-to-uwp/winforms-app-service.png)
-
-### <a name="have-a-closer-look-at-this-app"></a>更仔細檢視這個應用程式
-
-:heavy_check_mark: [取得應用程式](https://www.microsoft.com/en-us/store/p/winforms-appservice/9p7d9b6nk5tn)
-
-:heavy_check_mark: [瀏覽程式碼](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinformsAppService)
-
-### <a name="the-design-pattern"></a>設計模式
-
-若要顯示提供服務，請執行下列動作：
-
-:one: [實作應用程式服務](#appservice)
-
-:two: [新增應用程式服務擴充功能](#extension)
-
-:three: [測試應用程式服務](#test)
-
-<a id="appservice" />
-
-### <a name="implement-the-app-service"></a>實作應用程式服務
-
-您在此處驗證並處理來自其他應用程式的要求。 新增此程式碼至解決方案中的 Windows 執行階段元件。
-
-```csharp
-public sealed class AppServiceTask : IBackgroundTask
-{
-    private BackgroundTaskDeferral backgroundTaskDeferral;
- 
-    public void Run(IBackgroundTaskInstance taskInstance)
-    {
-        this.backgroundTaskDeferral = taskInstance.GetDeferral();
-        taskInstance.Canceled += OnTaskCanceled;
-        var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
-        details.AppServiceConnection.RequestReceived += OnRequestReceived;
-    }
- 
-    private async void OnRequestReceived(AppServiceConnection sender,
-                                         AppServiceRequestReceivedEventArgs args)
-    {
-        var messageDeferral = args.GetDeferral();
-        ValueSet message = args.Request.Message;
-        string id = message["ID"] as string;
-        ValueSet returnData = DataBase.GetData(id);
-        await args.Request.SendResponseAsync(returnData);
-        messageDeferral.Complete();
-    }
- 
- 
-    private void OnTaskCanceled(IBackgroundTaskInstance sender,
-                                BackgroundTaskCancellationReason reason)
-    {
-        if (this.backgroundTaskDeferral != null)
-        {
-            this.backgroundTaskDeferral.Complete();
-        }
-    }
-}
-```
-
-<a id="extension" />
-
-### <a name="add-an-app-service-extension-to-the-packaging-project"></a>將應用程式服務延伸模組新增至封裝專案
-
-開啟**package.appxmanifest**檔案的封裝專案中，並新增到應用程式服務延伸模組``<Application>``項目。
-
-```xml
-<Extensions>
-      <uap:Extension
-          Category="windows.appService"
-          EntryPoint="AppServiceComponent.AppServiceTask">
-        <uap:AppService Name="com.microsoft.samples.winforms" />
-      </uap:Extension>
-    </Extensions>    
-```
-命名應用程式服務，並提供進入點類別的名稱。 這是您實作服務的類別。
-
-<a id="test" />
-
-### <a name="test-the-app-service"></a>測試應用程式服務
-
-從另一個應用程式呼叫服務，測試您的服務。 此程式碼可以是例如 Windows forms 應用程式或其他 UWP 應用程式的傳統型應用程式。
-
-> [!NOTE]
-> 此程式碼只有當您正確設定 ``AppServiceConnection`` 類別的 ``PackageFamilyName`` 屬性時適用。 您可以藉由在 UWP 專案的內容中呼叫打 ``Windows.ApplicationModel.Package.Current.Id.FamilyName`` 取得該名稱。 請參閱[建立和取用 App 服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
-
-```csharp
-private async void button_Click(object sender, RoutedEventArgs e)
-{
-    AppServiceConnection dataService = new AppServiceConnection();
-    dataService.AppServiceName = "com.microsoft.samples.winforms";
-    dataService.PackageFamilyName = "Microsoft.SDKSamples.WinformWithAppService";
- 
-    var status = await dataService.OpenAsync();
-    if (status == AppServiceConnectionStatus.Success)
-    {
-        string id = int.Parse(textBox.Text);
-        var message = new ValueSet();
-        message.Add("ID", id);
-        AppServiceResponse response = await dataService.SendMessageAsync(message);
- 
-        if (response.Status == AppServiceResponseStatus.Success)
-        {
-            if (response.Message["Status"] as string == "OK")
-            {
-                DisplayResult(response.Message["Result"]);
-            }
-        }
-    }
-}
-```
-
-請至此處深入了解應用程式服務：[建立和使用應用程式服務](https://docs.microsoft.com/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)。
-
-### <a name="similar-samples"></a>類似範例
-
-[應用程式服務橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample)
-
-[使用 C++ win32 應用程式的應用程式服務橋接器範例](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/AppServiceBridgeSample_C%2B%2B)
-
-[接收推播通知的 MFC 應用程式](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/MFCwithPush)
-
-
 ## <a name="making-your-desktop-application-a-share-target"></a>讓您的傳統型應用程式成為分享目標
 
 您可以讓您的傳統型應用程式成為分享目標，讓使用者可以輕鬆地共用資料，例如來自支援共用的其他應用程式的圖片。
 
 例如，使用者可以選擇您的應用程式，來從 Microsoft Edge、 [相片] app 分享圖片。 以下是具有該功能的 WPF 範例應用程式。
 
-![分享目標](images/desktop-to-uwp/share-target.png)
+![分享目標](images/desktop-to-uwp/share-target.png).
 
-### <a name="have-a-closer-look-at-this-app"></a>更仔細檢視這個應用程式
-
-:heavy_check_mark: [取得應用程式](https://www.microsoft.com/en-us/store/p/wpf-app-as-sharetarget/9pjcjljlck37)
-
-:heavy_check_mark: [瀏覽程式碼](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WPFasShareTarget)
+請參閱完整的範例[以下](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
 
 ### <a name="the-design-pattern"></a>設計模式
 
@@ -395,20 +266,28 @@ private async void button_Click(object sender, RoutedEventArgs e)
 
 :one: [新增分享目標擴充功能](#share-extension)
 
-:two: [覆寫 OnNavigatedTo 事件處理常式](#override)
+: two：[覆寫 OnShareTargetActivated 事件處理常式](#override)
+
+: three：[新增桌面延伸模組至 UWP 專案](#desktop-extensions)
+
+： 四：[新增完全信任的處理程序擴充功能](#full-trust)
+
+： 五：[修改的傳統型應用程式，以取得共用的檔案](#modify-desktop)
 
 <a id="share-extension" />
 
+下列步驟  
+
 ### <a name="add-a-share-target-extension"></a>新增分享目標擴充功能
 
-在 [**方案總管]** 中，在您的方案中開啟封裝專案的**package.appxmanifest**檔案，並新增延伸模組。
+在 [**方案總管]** 中，在您的方案中開啟封裝專案的**package.appxmanifest**檔案，並新增分享目標擴充功能。
 
 ```xml
 <Extensions>
       <uap:Extension
           Category="windows.shareTarget"
           Executable="ShareTarget.exe"
-          EntryPoint="ShareTarget.App">
+          EntryPoint="App">
         <uap:ShareTarget>
           <uap:SupportedFileTypes>
             <uap:SupportsAnyFileType />
@@ -419,31 +298,99 @@ private async void button_Click(object sender, RoutedEventArgs e)
 </Extensions>  
 ```
 
-提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。 您也需要指定您的應用程式可以分享哪些檔案類型。
+提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。 此標記會假設您的 UWP 應用程式的可執行檔的名稱是`ShareTarget.exe`。
+
+您也需要指定您的應用程式可以分享哪些檔案類型。 在此範例中，我們正在進行的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式成為分享目標的點陣圖影像，因此我們指定`Bitmap`做為支援的檔案類型。
 
 <a id="override" />
 
-### <a name="override-the-onnavigatedto-event-handler"></a>覆寫 OnNavigatedTo 事件處理常式
+### <a name="override-the-onsharetargetactivated-event-handler"></a>覆寫 OnShareTargetActivated 事件處理常式
 
-覆寫 UWP 專案 **App** 類別中的 **OnNavigatedTo** 事件處理常式。
+覆寫您的 UWP 專案的**應用程式**類別中的**OnShareTargetActivated**事件處理常式。
 
 當使用者選擇您的應用程式來共用檔案時，就會呼叫這個事件處理常式。
 
 ```csharp
-protected override async void OnNavigatedTo(NavigationEventArgs e)
+
+protected override void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
 {
-  this.shareOperation = (ShareOperation)e.Parameter;
-  if (this.shareOperation.Data.Contains(StandardDataFormats.StorageItems))
-  {
-      this.sharedStorageItems =
-        await this.shareOperation.Data.GetStorageItemsAsync();
-       
-      foreach (StorageFile item in this.sharedStorageItems)
-      {
-          ProcessSharedFile(item);
-      }
-  }
+    shareWithDesktopApplication(args.ShareOperation);
 }
+
+private async void shareWithDesktopApplication(ShareOperation shareOperation)
+{
+    if (shareOperation.Data.Contains(StandardDataFormats.StorageItems))
+    {
+        var items = await shareOperation.Data.GetStorageItemsAsync();
+        StorageFile file = items[0] as StorageFile;
+        IRandomAccessStreamWithContentType stream = await file.OpenReadAsync();
+
+        await file.CopyAsync(ApplicationData.Current.LocalFolder);
+            shareOperation.ReportCompleted();
+
+        await FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync();
+    }
+}
+```
+在這個程式碼中，我們將儲存已被使用者分享到應用程式本機存放裝置資料夾的影像。 稍後，我們將會修改到提取映像的傳統型應用程式從該相同的資料夾。 傳統型應用程式可以這麼做，因為它包含做為 UWP 應用程式在相同套件中。
+
+<a id="desktop-extensions" />
+
+### <a name="add-desktop-extensions-to-the-uwp-project"></a>將桌面延伸新增到 UWP 專案
+
+將**適用於 UWP 的 Windows 桌面延伸**延伸模組新增到 UWP app 專案。
+
+![桌面延伸模組](images/desktop-to-uwp/desktop-extensions.png)
+
+<a id="full-trust" />
+
+### <a name="add-the-full-trust-process-extension"></a>新增完全信任的處理程序擴充功能
+
+在 [**方案總管**] 中，在您的方案，開啟封裝專案的**package.appxmanifest**檔案，然後新增完全信任的處理程序延伸模組，旁邊您稍早新增此檔案分享目標擴充功能。
+
+```xml
+<Extensions>
+  ...
+      <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
+  ...
+</Extensions>  
+```
+
+此延伸模組可讓 UWP 應用程式啟動到您想要共用檔案的傳統型應用程式。 在範例中，我們會參考的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式的可執行檔。
+
+<a id="modify-desktop" />
+
+### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改傳統型應用程式，以取得共用的檔案
+
+修改您的傳統型應用程式來尋找並處理共用的檔案。 在此範例中，UWP app 會儲存在本機應用程式資料資料夾中的共用的檔案。 因此，我們會修改[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式以提取相片從該資料夾。
+
+```csharp
+Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+```
+執行個體的傳統型應用程式已開啟使用者，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並將路徑中傳遞至檔案位置。 如此一來所有開啟的執行個體的傳統型應用程式將會顯示共用的相片。
+
+```csharp
+...
+
+   FileSystemWatcher watcher = new FileSystemWatcher(Photos.Path);
+
+...
+
+private void Watcher_Created(object sender, FileSystemEventArgs e)
+{
+    // new file got created, adding it to the list
+    Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(() =>
+    {
+        if (File.Exists(e.FullPath))
+        {
+            ImageFile item = new ImageFile(e.FullPath);
+            Photos.Insert(0, item);
+            PhotoListBox.SelectedIndex = 0;
+            CurrentPhoto.Source = (BitmapSource)item.Image;
+        }
+    }));
+}
+
 ```
 
 ## <a name="create-a-background-task"></a>建立背景工作
@@ -456,9 +403,7 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 
 工作提供 http 要求並測量傳回要求回應所需的時間。 您的工作可能更有趣，但此範例非常適合學習背景工作的入門技巧。
 
-### <a name="have-a-closer-look-at-this-app"></a>更仔細檢視這個應用程式
-
-:heavy_check_mark: [瀏覽程式碼](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)
+請參閱完整的範例[如下](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)。
 
 ### <a name="the-design-pattern"></a>設計模式
 
