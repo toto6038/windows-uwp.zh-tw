@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告, 效益
 ms.localizationpriority: medium
 ms.openlocfilehash: e4800a0021288f4d0081946c1fad20099aa4cd77
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "5013144"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171025"
 ---
 # <a name="get-ad-performance-data"></a>取得廣告效益資料
 

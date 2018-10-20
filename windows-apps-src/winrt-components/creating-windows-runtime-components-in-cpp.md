@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b5515d0ed5dc6e200c7c4fc9a7785c993d4cab59
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5134880"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5168653"
 ---
 # <a name="creating-windows-runtime-components-in-ccx"></a>在 C++/CX 中建立 Windows 執行階段元件
 > [!NOTE]

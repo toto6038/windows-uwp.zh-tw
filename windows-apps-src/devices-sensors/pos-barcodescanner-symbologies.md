@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd1dffe4da7b3725ef7716fe9cf28bdf8eaf34f
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4965114"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171417"
 ---
 # <a name="working-with-symbologies"></a>使用碼制
 [條碼碼制](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodesymbologies)是資料到特定條碼格式的對應。 一些常見的碼制包含 UPC、 Code 128、 QR 代碼等等。  通用 Windows 平台條碼掃描器 Api 可讓應用程式控制掃描器如何處理這些碼制，而不需要手動設定掃描器。 

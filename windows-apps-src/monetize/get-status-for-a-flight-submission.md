@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交, 狀態
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d661800371d90f15a5b7e355c2f06b7bd631f6b
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5131007"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5171660"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>取得套件正式發行前小眾測試版提交的狀態
 
