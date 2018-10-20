@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
 ms.openlocfilehash: e86b56c09f907e45655a0ef9b94fad30a4959b59
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4954209"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5167016"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 

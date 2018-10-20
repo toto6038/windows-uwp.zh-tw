@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 152c775c1b69bfd82d8969aed7e638f98646bdd7
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4951002"
+ms.locfileid: "5165621"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能新增到您的應用程式
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: 2476161954c1d4d49fcf9f8f74cd1b7cf9180c0a
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5132793"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169939"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 

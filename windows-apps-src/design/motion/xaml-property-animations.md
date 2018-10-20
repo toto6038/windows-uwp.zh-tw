@@ -12,11 +12,11 @@ pm-contact: stmoy
 design-contact: jeffarn
 ms.localizationpriority: medium
 ms.openlocfilehash: a03ffc8d5ea78ee6cbdf78feaae7ba1cd1448f37
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4948017"
+ms.locfileid: "5165310"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>XAML 項目使用組合動畫產生動畫效果
 

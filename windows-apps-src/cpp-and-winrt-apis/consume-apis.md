@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: f0e99d23e54bd096a9dd7fa8d878929086711c81
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: dbd657c966cac2310a1078c889ff31b8147c3a59
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4955735"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5166973"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
@@ -172,7 +172,7 @@ struct MainPage : MainPageT<MainPage>
 
 MainPage::MainPage()
 {
-    m_mainViewModel = make<Bookstore::implementation::BookstoreViewModel>();
+    m_mainViewModel = winrt::make<Bookstore::implementation::BookstoreViewModel>();
     ...
 }
 ```
@@ -180,7 +180,7 @@ MainPage::MainPage()
 如需更多詳細資料、程式碼以及在使用專案中實做使用執行階段類別的逐步解說，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>初始化並傳回投影類型與介面
-以下是在您使用專案中的投影類型和介面可能會有的外觀範例。
+以下是在您使用專案中的投影類型和介面可能會有的外觀範例。 請記住投影的類型 （例如一在此範例中），是工具產生，並不是您可以撰寫您自己的項目。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,

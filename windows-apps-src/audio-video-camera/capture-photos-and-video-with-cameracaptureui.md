@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4965681"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5168967"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 

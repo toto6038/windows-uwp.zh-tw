@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953603"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169888"
 ---
 # <a name="enumerating-point-of-service-devices"></a>列舉服務點裝置
 本節中，您會了解如何 [定義裝置選取器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)，用來查詢提供給系統的裝置並用此選取器使用其中一項下列方法列舉服務點裝置：

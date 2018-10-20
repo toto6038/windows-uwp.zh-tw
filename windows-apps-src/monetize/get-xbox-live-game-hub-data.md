@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox Live 分析, 遊戲中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f798750017729ad571d73fba71868c78cfbbb3b
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5132371"
+ms.locfileid: "5162110"
 ---
 # <a name="get-xbox-live-game-hub-data"></a>取得 Xbox Live 遊戲中心資料
 
