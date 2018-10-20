@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 自訂時間戳記, 時間戳記, 通知, 控制中心
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ef01feaf422674977dc4549d4cc68a2ca0052c7
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5127491"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5166399"
 ---
 # <a name="custom-timestamps-on-toasts"></a>快顯通知上的自訂時間戳記
 

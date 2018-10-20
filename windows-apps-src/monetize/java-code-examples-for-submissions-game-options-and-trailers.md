@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, java
 ms.localizationpriority: medium
 ms.openlocfilehash: f84dfeb202a86c9b1cb1fa29a8c0dae83f3c54de
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128829"
+ms.locfileid: "5162129"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Java 範例：提交含遊戲選項與預告片的應用程式
 

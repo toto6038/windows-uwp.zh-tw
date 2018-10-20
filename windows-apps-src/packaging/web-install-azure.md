@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, Azure web server, 應用程式安裝程式, 側載, 相關集合, 選用套件, Azure 網頁伺服器
 ms.localizationpriority: medium
 ms.openlocfilehash: b98ca6316f733210dbdbc5201178b3a89a2b5982
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4959694"
+ms.locfileid: "5162484"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>從 Azure Web 應用程式安裝 UWP app
 

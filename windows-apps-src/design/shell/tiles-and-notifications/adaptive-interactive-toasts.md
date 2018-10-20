@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 快顯通知, 互動式快顯通知, 調適性快顯通知, 快顯通知內容, 快顯通知裝載
 ms.localizationpriority: medium
 ms.openlocfilehash: de999528d07e6bd7d243e53708e9afc465004af7
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130574"
+ms.locfileid: "5159099"
 ---
 # <a name="toast-content"></a>快顯通知內容
 

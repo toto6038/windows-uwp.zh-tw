@@ -4,18 +4,18 @@ ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得 Xbox One 遊戲的彙總下載數資料。
 title: 取得 Xbox One 遊戲下載數
 ms.author: mhopkins
-ms.date: 03/23/2018
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox One 遊戲下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 39d932a49e573d55a0ccb9cb69568006feede8a7
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.openlocfilehash: aac2bd45cf102816db8ba1f434be5743dead48e3
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130987"
+ms.locfileid: "5157632"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>取得 Xbox One 遊戲下載數
 
@@ -49,15 +49,15 @@ ms.locfileid: "5130987"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您正在擷取下載數資料之 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 開發人員中心分析報告中下載收購資料，產品識別碼將包含在 .tsv 檔案中。  |  是  |
+| applicationId | 字串 | 您正在擷取下載數資料之 Xbox One 遊戲的產品識別碼。 若要取得您的遊戲的產品識別碼，瀏覽至您的遊戲在 XDP 分析程式，並從 URL 擷取產品識別碼。 或者，如果您從合作夥伴中心分析報告中下載收購資料，產品識別碼包含在.tsv 檔案中。  |  是  |
 | startDate | 日期 | 要擷取下載數資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
 | endDate | 日期 | 要擷取下載數資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | top | 整數 | 要傳回的資料列數目。 如果未指定，最大值和預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
 | skip | 整數 | 在查詢中要略過的資料列數目。 使用此參數來瀏覽大型資料集。 例如，top=10000 且 skip=0 將擷取前 10000 個資料列的資料，top=10000 且 skip=10000 將擷取下 10000 個資料列的資料，以此類推。 |  否  |
-| filter | 字串  | 在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 例如，*filter=market eq 'US' and gender eq 'm'*。 <p/><p/>您可以指定來自回應主體的下列欄位：<p/><ul><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
+| filter | 字串  | 在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 **and** 或 **or** 結合。 *filter* 參數中的字串值必須由單引號括住。 例如，*filter=market eq 'US' and gender eq 'm'*。 <p/><p/>您可以指定來自回應主體的下列欄位：<p/><ul><li><strong>acquisitionType</strong></li><li><strong>年齡</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul> | 否   |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 | 否 |
-| orderby | 字串 | 對每個下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰<ul><li><strong>日期</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li><li><strong>purchasePriceUSDAmount</strong></li><li><strong>taxUSDAmount</strong></li></ul><p><em>order</em> 參數為選用項目，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，用來指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li><li><strong>purchasePriceUSDAmount</strong></li><li><strong>taxUSDAmount</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
+| orderby | 字串 | 對每個下載數的結果資料值做出排序的陳述式。 語法為 <em>orderby=field [order],field [order],...</em>，其中 <em>field</em> 參數可以是下列其中一個字串︰<ul><li><strong>日期</strong></li><li><strong>acquisitionType</strong></li><li><strong>年齡</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，用來指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>acquisitionType</strong></li><li><strong>ageGroup</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如：<em>&amp;groupby=ageGroup,market&amp;aggregationLevel=week</em></p> |  否  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -65,10 +65,10 @@ ms.locfileid: "5130987"
 下列範例示範數個取得 Xbox One 遊戲範下載數資料的要求。 將 *applicationId* 值以您遊戲的 Store 識別碼取代。
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=1/1/2017&endDate=2/1/2017&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=8/1/2017&endDate=8/31/2017&skip=0&filter=market eq 'US' and gender eq 'm'  HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/acquisitions?applicationId=BRRT4NJ9B3D1&startDate=8/1/2017&endDate=8/31/2017&skip=0&filter=market eq 'US' and gender eq 'm' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -94,7 +94,7 @@ Authorization: Bearer <your access token>
 | applicationId       | 字串 | 您正在擷取下載數資料之 Xbox One 遊戲的產品識別碼。 |
 | applicationName     | 字串 | 遊戲的顯示名稱。       |
 | acquisitionType     | 字串 | 其中一個下列字串，可指出收購類型：<ul><li><strong>免費</strong></li><li><strong>試用版</strong></li><li><strong>付費</strong></li><li><strong>促銷代碼</strong></li><li><strong>Iap</strong></li><li><strong>訂閱 Iap</strong></li><li><strong>私人對象</strong></li><li><strong>Pre 順序</strong></li><li><strong>Xbox Game Pass</strong> (或<strong>Game Pass</strong>如果在 2018 年 3 月 23 之前查詢資料)</li><li><strong>磁碟</strong></li><li><strong>預付碼</strong></li><li><strong>充電的 Pre 順序</strong></li><li><strong>取消的前順序</strong></li><li><strong>失敗的前順序</strong></li></ul>    |
-| ageGroup            | 字串 | 下列其中一個字串，這些字串表示進行下載的使用者的年齡層：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
+| 年齡                 | 字串 | 下列其中一個字串，這些字串表示進行下載的使用者的年齡層：<ul><li><strong>less than 13</strong></li><li><strong>13-17</strong></li><li><strong>18-24</strong></li><li><strong>25-34</strong></li><li><strong>35-44</strong></li><li><strong>44-55</strong></li><li><strong>greater than 55</strong></li><li><strong>Unknown</strong></li></ul>     |
 | deviceType          | 字串 | 以下字串之一指定完成收購的裝置類型：<ul><li><strong>電腦</strong></li><li><strong>Phone</strong></li><li><strong>Console</strong></li><li><strong>IoT</strong></li><li><strong>伺服器</strong></li><li><strong>平板電腦</strong></li><li><strong>全息影像</strong></li><li><strong>不明</strong></li></ul>  |
 | gender              | 字串 | 下列其中一個字串，這些字串詳列進行收購的使用者的性別：<ul><li><strong>m</strong></li><li><strong>f</strong></li><li><strong>Unknown</strong></li></ul>     |
 | market              | 字串 | 發生下載之市場的 ISO 3166 國家/地區碼。  |
@@ -120,7 +120,7 @@ Authorization: Bearer <your access token>
       "applicationId": "BRRT4NJ9B3D1 ",
       "applicationName": "Contoso Game",
       "acquisitionType": "Paid",
-      "ageGroup": "35-49",
+      "age": "35-49",
       "deviceType": "Console",
       "gender": "m",
       "market": "US",

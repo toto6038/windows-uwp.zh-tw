@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5133866"
+ms.locfileid: "5159636"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>使用資產套件與套件摺疊進行開發 
 

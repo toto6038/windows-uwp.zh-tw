@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
-ms.openlocfilehash: e9c5cb8a0f81513038a18522c39f0138bb25ab27
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.openlocfilehash: b5603063f8038b5617f8a1c2dd7d77d90c702901
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "4953032"
+ms.locfileid: "5161289"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 
@@ -61,10 +61,10 @@ C++/WinRT 執行得更好，且比適用於 Windows 執行階段的任何其他�
 | [使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項](xaml-cust-ctrl.md) | 本主題會引導您完成的步驟建立簡單的自訂控制項使用 C + + /winrt。 您可以在此處資訊來建立您自己的豐富的功能和可自訂 UI 控制項上建置。 |
 | [使用 C++/WinRT 來使用 COM 元件](consume-com.md) | 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 來使用 COM 類別和介面。 |
 | [使用 C++/WinRT 撰寫 COM 元件](author-coclasses.md) | C + + WinRT 可協助您撰寫傳統 COM 元件，就如同它可協助您撰寫 Windows 執行階段類別。 |
-| [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md) | 本主題示範可用於 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 |
 | [從 C++/CX 移到 C++/WinRT](move-to-winrt-from-cx.md) | 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。 |
-| [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md) | 本主題示範如何在應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 |
+| [C++/WinRT 與 C++/CX 之間的互通性](interop-winrt-cx.md) | 本主題示範可用於 [C + + / CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) 與 C++/WinRT 物件之間轉換的協助程式函式。 |
 | [從 WRL 移到 C++/WinRT](move-to-winrt-from-wrl.md) | 本主題示範如何將 [Windows 執行階段 C++ 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) 程式碼移植到其在 C++/WinRT 中的對等項目。 |
+| [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md) | 本主題示範如何在應用程式二進位介面 (ABI) 與 C++/WinRT 物件之間轉換。 |
 | [強式和弱式參考資料，在 C + + /winrt](weak-references.md) | Windows 執行階段是計算參考次數系統;請務必讓您了解的重要性和區別，這類系統在強式與弱式參考。 |
 | [敏捷式物件](agile-objects.md) | 敏捷式物件是可以從任何執行緒中存取的一個。 C++/WinRT 預設為敏捷式，但您可以選擇退出。 |
 

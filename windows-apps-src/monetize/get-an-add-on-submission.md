@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: e126ce53da515724f5fb1f9992ed8ca27c02ce06
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5133009"
+ms.locfileid: "5162514"
 ---
 # <a name="get-an-add-on-submission"></a>取得附加元件提交
 

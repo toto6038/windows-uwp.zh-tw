@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: a2c2acc8351e8b646353a05e8d408dee57e633b0
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128057"
+ms.locfileid: "5164695"
 ---
 # <a name="common-cryptography-tasks"></a>常見的密碼編譯工作
 

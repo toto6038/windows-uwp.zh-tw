@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: e16c9845b52d5bd43fc02bbe92296a9682d96926
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "5013154"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "5162779"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告
 ms.localizationpriority: medium
 ms.openlocfilehash: 310b48e4a659ccf6c159b7768ae8984da74b1c61
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5128859"
+ms.lasthandoff: 10/20/2018
+ms.locfileid: "5169253"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium 廣告發行者計畫
 

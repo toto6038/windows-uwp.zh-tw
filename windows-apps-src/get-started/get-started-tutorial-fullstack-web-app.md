@@ -10,11 +10,11 @@ ms.prod: Microsoft Edge, Azure, Visual Studio Code
 ms.technology: web
 ms.localizationpriority: medium
 ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5130393"
+ms.locfileid: "5164112"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 

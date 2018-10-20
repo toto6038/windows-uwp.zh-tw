@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db3af004831f010a3dd4918898ce5f7cf70bb1a
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5133942"
+ms.locfileid: "5157847"
 ---
 # <a name="intro-to-certificates"></a>憑證簡介
 

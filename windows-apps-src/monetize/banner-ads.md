@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，廣告，廣告，AdControl，橫幅廣告
 ms.localizationpriority: medium
 ms.openlocfilehash: fc47c8d40d10eef3e6d92f2d47485d8cf265172d
-ms.sourcegitcommit: 310a4555fedd4246188a98b31f6c094abb33ec60
+ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/19/2018
-ms.locfileid: "5133549"
+ms.locfileid: "5163368"
 ---
 # <a name="banner-ads"></a>橫幅廣告
 
