@@ -265,7 +265,7 @@ public void Draw (SpriteBatch spriteBatch)
 
 現在，對於玩家需要避免的障礙， 忍者貓與肉食恐龍這兩個最討厭什麼？ 吃蔬菜！ [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
-如同之前的綠色矩形，透過**MonoGame Pipeline** 新增這些影像至 **Content.mgcb**，將它們分別命名為 “ninja-cat-dino.png” 和 “broccoli.png”。
+Just as before with the green rectangle, add these images to **Content.mgcb** via the **MonoGame Pipeline**, naming them “ninja-cat-dino.png” and “broccoli.png” respectively.
 
 ### <a name="2-add-class-variables"></a>2. 新增類別變數
 將下列程式碼新增到 **Game1.cs** 中的類別變數清單：
@@ -286,13 +286,13 @@ float score;
 Random random;
 ```
 
-**dino** 和 **broccoli** 是我們的 SpriteClass 變數。 **dino** 會保留玩家虛擬人偶，而 **broccoli** 保留花椰菜障礙。
+**dino** and **broccoli** are our SpriteClass variables. **dino** will hold the player avatar, while **broccoli** holds the broccoli obstacle.
 
 **spaceDown** 追蹤空格鍵是否正在按住，而非按下並放開。
 
 **gameStarted** 告訴我們使用者是否第一次開始遊戲。
 
-**broccoliSpeedMultiplier** 決定花椰菜障礙在螢幕上移動的速度。
+**broccoliSpeedMultiplier** determines how fast the broccoli obstacle moves across the screen.
 
 **gravitySpeed** 決定玩家虛擬人偶在跳躍後加速向下的速度。
 
