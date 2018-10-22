@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 逐步解說
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c1974618c65dd057c4c8152d9c4c9556869a3ef
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171015"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5401893"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>應用程式內廣告的最佳做法
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: d4261c984eb992092230425205313d751a351f07
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170268"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410946"
 ---
 # <a name="get-all-apps"></a>取得所有 App
 

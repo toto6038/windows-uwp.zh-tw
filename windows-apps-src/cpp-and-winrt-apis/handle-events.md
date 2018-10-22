@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
-ms.openlocfilehash: c64b4a23e3b63c939d192e828e890a9ceb92e5ab
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.openlocfilehash: 96655c14f9c21f804ef5ebfdfe73cee0b04edfe3
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5162990"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5400056"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
@@ -142,7 +142,7 @@ struct Example : ExampleT<Example>
     }
 
 private:
-    winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> m_event_revoker;
+    winrt::Windows::UI::Xaml::Controls::Button::Click_revoker m_event_revoker;
 };
 ```
 
@@ -156,11 +156,13 @@ winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& han
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
-winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase> Click(winrt::auto_revoke_t,
+Button::Click_revoker Click(winrt::auto_revoke_t,
     winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
-一個類似的模式適用於所有 C++/WinRT 事件。
+> [!NOTE]
+> 在程式碼上述範例中，`Button::Click_revoker`是類型別名`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`。 一個類似的模式適用於所有 C++/WinRT 事件。 每個 Windows 執行階段事件已撤銷函式多載傳回事件撤銷，並撤銷的類型是事件來源的成員。 因此，若要充分另一個範例， [**corewindow:: Sizechanged**](/uwp/api/windows.ui.core.corewindow.sizechanged)事件已傳回的值類型**CoreWindow::SizeChanged_revoker**登錄函式多載。
+
 
 您可能要考慮在網頁瀏覽的案例中撤銷處理常式。 如果您正重複瀏覽網頁並返回，您離開網頁時，可以撤銷任何處理常式。 或者，如果您重新使用相同的網頁執行個體，然後檢查您的權證值，且如果尚未設定 (`if (!m_token){ ... }`)，，只有註冊。 第三個選項是將事件撤銷儲存在網頁上做為資料成員。 本主題稍後說明，第四個選項是在您的 lambda 函式中擷取*this*物件的強式或弱式參考。
 

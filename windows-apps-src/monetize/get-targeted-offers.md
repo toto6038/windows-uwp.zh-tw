@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 取得針對性優惠
 ms.localizationpriority: medium
 ms.openlocfilehash: 1032831492443460bd63671012a09edfceca2690
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5163670"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5399998"
 ---
 # <a name="get-targeted-offers"></a>取得針對性優惠
 

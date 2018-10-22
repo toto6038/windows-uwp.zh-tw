@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, ui, 瀏覽
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f95094ebf31c4b80ee8858ad849da33ff16434a
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164734"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5397618"
 ---
 # <a name="ui-navigation-controller"></a>UI 瀏覽控制器
 
