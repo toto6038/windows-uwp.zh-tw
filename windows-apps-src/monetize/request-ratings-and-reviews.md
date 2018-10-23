@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
 ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397980"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431407"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -25,7 +25,7 @@ ms.locfileid: "5397980"
 當您準備好分析評等與評論資料後，您可以在 Windows 開發人員中心儀表板中檢視資料，或使用 Microsoft Store 分析 API 以程式設計方式擷取這些資料。
 
 > [!IMPORTANT]
-> 當您新增您的應用程式內的評等函式，所有評論必須傳送都給使用者，在市集中評分機制，無論/星級評等的選擇。 如果您從使用者收集意見反應或註解，它必須是清除它不相關的應用程式評等或評論存放區中的，但會直接傳送到應用程式開發人員。 請參閱 「 開發人員管理辦法[Fraudulent](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)或誠實活動的相關資訊。
+> 當您新增您的應用程式內的評等函式，所有評論必須在市集中評分機制，無論/星級評等所選傳送都給使用者。 如果您從使用者收集意見反應或註解，它必須是清除它不相關的應用程式評等或評論存放區中的，但會直接傳送到應用程式開發人員。 請參閱 「 開發人員管理辦法[Fraudulent](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)或誠實活動的相關資訊。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>在您的應用程式中顯示評等與評論對話方塊
 
