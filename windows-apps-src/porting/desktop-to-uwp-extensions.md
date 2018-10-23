@@ -12,15 +12,15 @@ keywords: Windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
 ms.openlocfilehash: fadd9c2b6a35a1418a782ab0a6ef419e3f127f42
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5157642"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408111"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>您已封裝的傳統型應用程式整合至 Windows 10
 
-若要將您已封裝的傳統型應用程式與 Windows 10 整合預先定義的方式使用擴充功能。
+使用擴充功能來整合您已封裝的傳統型應用程式與 Windows 10 中預先定義的方式。
 
 例如，使用延伸模組建立防火牆例外、 檔案類型的預設應用程式，讓您的應用程式或開始畫面磚指向您的應用程式的已封裝版本。 若要使用延伸模組，您只需要將一些 XML 加入您應用程式的封裝資訊清單檔案。 不需要程式碼。
 
@@ -156,7 +156,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>將您已封裝的應用程式與一組檔案類型產生關聯
 
-您可以將您已封裝的應用程式關聯的檔案類型副檔名。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [**開啟**] 選項，您的應用程式會出現在建議清單。
+您可以使用檔案類型副檔名產生關聯您已封裝的應用程式。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [**開啟**] 選項，您的應用程式會出現在建議清單。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -307,7 +307,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |您應用程式的唯一識別碼。 |
-|UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您沒有設定此值，嘗試透過您的應用程式要使用的 URL 原因先將檔案下載到系統在本機開啟的檔案。 |
+|UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您沒有設定此值，會嘗試透過您的應用程式使用的 URL 原因先將檔案下載到系統在本機開啟的檔案。 |
 |Parameters |選用參數。 |
 |FileType |相關的檔案副檔名。 |
 
@@ -344,7 +344,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="create-firewall-exception-for-your-app"></a>為您的應用程式建立防火牆例外
 
-如果您的應用程式需要透過連接埠進行通訊，您可以新增您應用程式至清單的防火牆例外狀況。
+如果您的應用程式需要透過連接埠進行通訊，您可以新增應用程式清單的防火牆例外狀況。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -458,7 +458,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 協助使用者組織您的檔案，並以熟悉的方式與他們互動。
 
-* [定義您的應用程式會如何反應當使用者選取，並在此同時開啟多個檔案](#define)
+* [定義使用者選取和同時開啟多個檔案時，您的應用程式的運作方式](#define)
 * [在檔案總管中以縮圖影像顯示檔案內容](#show)
 * [在檔案總管的預覽窗格中顯示檔案內容](#preview)
 * [讓使用者在檔案總管中使用種類欄位群組檔案](#enable)
@@ -467,7 +467,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 <a id="define" />
 
-### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定義您的應用程式會如何反應當使用者選取，並在此同時開啟多個檔案
+### <a name="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time"></a>定義使用者選取和同時開啟多個檔案時，您的應用程式的運作方式
 
 指定當使用者同時開啟多個檔案時，您的應用程式的行為。
 
@@ -503,9 +503,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 已封裝的傳統型應用程式具有與一般傳統型應用程式相同的三個選項。
 
- * ``Player``： 您的應用程式會啟動一次。 所有選取的檔案會傳遞至您的應用程式做為引數參數。
- * ``Single``： 您的應用程式會啟動一次針對第一個選取的檔案。 系統會忽略其他的檔案。
- * ``Document``： 針對每個所選檔案啟用您的應用程式的新的個別執行個體。
+ * ``Player``： 您的應用程式會啟動一次。 所有選取的檔案都會傳遞至您的應用程式做為引數參數。
+ * ``Single``： 您的應用程式會啟動一次，針對第一個選取的檔案。 系統會忽略其他的檔案。
+ * ``Document``： 針對每個所選檔案啟用新，個別的執行個體應用程式。
 
  您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如：您可能會想要在 *Documents* 模式中開啟 *「文件」*，以及在 *Player* 模式中開啟 *「影像」*。
 
@@ -854,14 +854,14 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 * [使用通訊協定啟動您的應用程式](#protocol)
 * [透過使用別名啟動您的應用程式](#alias)
 * [在使用者登入 Windows 時執行可執行檔](#executable)
-* [讓使用者啟動您的應用程式時將裝置連接至電腦](#autoplay)
+* [讓使用者將裝置連接至電腦時，啟動您的應用程式](#autoplay)
 * [從 Microsoft Store 接收更新後自動重新開機](#updates)
 
 <a id="protocol" />
 
 ### <a name="start-your-application-by-using-a-protocol"></a>使用通訊協定啟動您的應用程式
 
-通訊協定關聯支援已封裝應用程式與其他程式或系統元件間的互相操作。 當您已封裝的應用程式使用通訊協定啟動時，您可以指定特定參數傳送至其啟用事件引數，讓其據以運作。 參數僅支援已封裝、完全信任的應用程式。 UWP app 無法使用參數。  
+通訊協定關聯支援已封裝應用程式與其他程式或系統元件間的互相操作。 使用通訊協定啟動已封裝應用程式時，您可以指定特定參數傳送至其啟用事件引數，讓其據以運作。 參數僅支援已封裝、完全信任的應用程式。 UWP app 無法使用參數。  
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -885,7 +885,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |-------|-------------|
 |類別 |總是 ``windows.protocol``。
 |Name |通訊協定的名稱。 |
-|Parameters |之參數與值，以啟動應用程式時，將傳遞至您的應用程式做為事件引數的清單。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 |
+|Parameters |之參數與值，以啟動應用程式時，您的應用程式做為事件引數傳遞的清單。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 |
 
 ### <a name="example"></a>範例
 
@@ -1025,7 +1025,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 ```
 <a id="autoplay" />
 
-### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>讓使用者啟動您的應用程式時將裝置連接至電腦
+### <a name="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc"></a>讓使用者將裝置連接至電腦時，啟動您的應用程式
 
 當使用者將裝置連接至電腦時，「 自動播放 」 可以呈現您的應用程式成為一個選項。
 
@@ -1053,7 +1053,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 |ActionDisplayName |字串，表示使用者可以在連接到電腦的裝置上執行的動作 (例如：「匯入檔案」或「播放影片」)。 |
 |ProviderDisplayName | 字串，表示您的應用程式或服務 (例如: 「 Contoso 影片播放程式 」)。 |
 |ContentEvent |內容事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將磁碟區裝置 (例如，相機記憶卡、隨身碟或 DVD) 插入電腦時，就會引發內容事件。 您可以在[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)找到那些事件的完整清單。  |
-|Verb |Verb 設定會識別它的值會傳遞至您的應用程式的選取的選項。 您可以為自動播放事件指定多個啟動動作，並使用 \[動詞\] 設定判斷使用者為您 app 選取的選項。 您可以檢查傳遞至 app 啟動事件引數的 verb 屬性，以判斷使用者選取的選項。 您可以在 \[動詞\] 設定使用保留字 open 以外的任何值。 |
+|Verb |Verb 設定會識別它的值會傳遞至您的應用程式針對選取的選項。 您可以為自動播放事件指定多個啟動動作，並使用 \[動詞\] 設定判斷使用者為您 app 選取的選項。 您可以檢查傳遞至 app 啟動事件引數的 verb 屬性，以判斷使用者選取的選項。 您可以在 \[動詞\] 設定使用保留字 open 以外的任何值。 |
 |DropTargetHandler |應用程式實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面的類別 ID。 抽取式媒體中的檔案將會傳遞至[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)實作的[Drop](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop?view=visualstudiosdk-2017#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__)方法。  |
 |Parameters |您不需要為所有內容事件實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對於任何內容事件，您可以提供命令列參數，而不實作[IDropTarget](https://docs.microsoft.com/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget?view=visualstudiosdk-2017)介面。 對這些事件，「 自動播放 」 會使用這些命令列參數啟動您的應用程式。 您可以在應用程式的初始化程式碼中剖析這些參數，以判斷自動播放是否啟動應用程式，然後提供您的自訂實作。 |
 |DeviceEvent |裝置事件的名稱，該事件導致向使用者提示您的``ActionDisplayName``與``ProviderDisplayName``。 將裝置連接到電腦時，就會引發裝置事件。 裝置事件以字串``WPD``開頭，[這裡](https://docs.microsoft.com/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference)列出這些裝置事件。 |
@@ -1086,7 +1086,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>從 Microsoft Store 接收更新後自動重新開機
 
-如果您的應用程式已開啟，當使用者安裝更新給它，就會關閉應用程式。
+如果您的應用程式開啟時使用者安裝更新它，就會關閉應用程式。
 
 如果您想要完成更新之後重新啟動該應用程式，請在每個您想要重新啟動的處理序中呼叫[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
 
@@ -1105,13 +1105,13 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 與其他應用程式整合，啟動其他處理程序，或共用資訊。
 
-* [讓您的應用程式作為列印目標支援的應用程式中顯示列印](#printing)
+* [讓您的應用程式作為列印目標支援應用程式中顯示列印](#printing)
 * [與其他 Windows 應用程式共用字型](#fonts)
 * [從通用 Windows 平台 (UWP) 應用程式中啟動 Win32 處理程序](#win32-process)
 
 <a id="printing" />
 
-### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>讓您的應用程式作為列印目標支援的應用程式中顯示列印
+### <a name="make-your-application-appear-as-the-print-target-in-applications-that-support-printing"></a>讓您的應用程式作為列印目標支援應用程式中顯示列印
 
 當使用者想要從另一個應用程式，例如記事本列印資料時，您可以讓您的應用程式作為列印目標應用程式的可用列印目標清單中出現。
 
@@ -1137,7 +1137,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
 |-------|-------------|
 |類別 |總是 ``windows.appPrinter``。
 |DisplayName |您想要出現在另外一個應用程式的列印目標清單中的顯示名稱。 |
-|Parameters |您的應用程式需要正常處理要求的任何參數。 |
+|Parameters |應用程式正常處理要求時所需要的任何參數。 |
 
 #### <a name="example"></a>範例
 

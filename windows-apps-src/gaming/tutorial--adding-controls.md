@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169471"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406713"
 ---
 # <a name="add-controls"></a>新增控制項
 
@@ -99,7 +99,7 @@ void MoveLookController::InitWindow(_In_ CoreWindow^ window)
 當遊戲暫停時，遊戲會進入 **WaitForInput** 狀態。 當玩家將指標移到遊戲主視窗外，或按下暫停按鈕 (P 按鍵或遊戲台 \[**開始** \] 按鈕)，就會發生此狀況。 **MoveLookController** 會登錄按鍵動作，並在呼叫 [**IsPauseRequested**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp#L107-L127) 方法時通知遊戲迴圈。 此時，如果 **IsPauseRequested** 傳回 **true**，遊戲迴圈會在 **MoveLookController** 上呼叫 **WaitForPress**，讓控制器進入 **WaitForInput** 狀態。 
 
 
-一旦在 **WaitForInput** 狀態，遊戲會停止處理幾乎所有遊戲輸入事件，直到它會返回 \[**使用中**\] 狀態。 例外的是暫停按鈕，按此按鈕會造成遊戲回復到使用中的狀態。 暫停按鈕以外，為了讓遊戲回復到**使用中**狀態玩家需要選取選單項目。 
+一旦在 **WaitForInput** 狀態，遊戲會停止處理幾乎所有遊戲輸入事件，直到它會返回 \[**使用中**\] 狀態。 例外的是暫停按鈕，按此按鈕會造成遊戲回復到使用中的狀態。 暫停按鈕以外，為了讓遊戲回復到**使用中**狀態玩家需要選取功能表項目。 
 
 
 

@@ -11,21 +11,21 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158497"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406999"
 ---
 # <a name="product-declarations"></a>產品宣告
 
-[提交程序](app-submissions.md)的 [[屬性](enter-app-properties.md)] 頁面的**產品宣告**區段可協助確保您的應用程式已適當顯示並提供給客戶，並幫助他們了解如何使用您的應用程式的 「 正確設定。
+[提交程序](app-submissions.md)的 [[屬性](enter-app-properties.md)] 頁面的 [**產品宣告**] 區段可協助確保您的應用程式已適當顯示並提供給客戶，並幫助他們了解如何使用您的應用程式的正確組。
 
-下列章節說明部分宣告和您需要決定每個宣告是否適用於您的應用程式時納入考量。 請注意 （如下所述。） 檢查的這些宣告兩個預設根據您的產品類別中，您可能也會看到其他宣告。 請務必檢閱所有的宣告，並確保它們會正確反映您的提交。
+下列章節說明部分宣告和您需要決定每個宣告是否適用於您的應用程式時納入考量。 請注意 （如下所述。） 檢查的這些宣告兩個預設根據您的產品類別，您可能也會看到其他宣告。 請務必檢閱所有的宣告，並確保它們正確反映您的提交。
 
-## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此 app 允許使用者進行購買，但不會使用 Microsoft Store 商務系統。
+## <a name="this-app-allows-users-to-make-purchases-but-does-not-use-the-microsoft-store-commerce-system"></a>此應用程式可讓使用者進行購買，但不會使用 Microsoft Store 商務系統。
 
-幾乎每個提交中，您應該讓此方塊保留未選取，因為提供機會購買的應用程式是或可以取用，或是使用您的應用程式內的項目必須使用 Microsoft Store 應用程式內購買 API 來建立並提交附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中，建立並提交 2015 年 6 月 29 日之前的應用程式無法得以繼續提供應用程式內購買功能而不需使用 Microsoft 的商務引擎，前提是，購買功能符合[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
+幾乎每個提交中，您應該讓此方塊保留未選取，因為提供機會購買的應用程式是或可以取用，或是使用您的應用程式內的項目必須使用 Microsoft Store 應用程式內購買 API 來建立並提交附加元件。 每個[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中，建立及提交 2015 年 6 月 29 日之前的應用程式可能會繼續而不需使用 Microsoft 的商務引擎，提供應用程式內購買功能，前提是，購買功能符合[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#108-financial-transactions)。 如果這適用您的 app，您必須選取此方塊。 否則，請保留它未核取。
 
 ## <a name="this-app-has-been-tested-to-meet-accessibility-guidelines"></a>這個應用程式已經過測試，符合協助工具指導方針。
 
@@ -52,7 +52,7 @@ ms.locfileid: "5158497"
 
 如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部硬碟在其裝置上安裝，請取消選取核取此方塊。
 
-請注意，是沒有選項可用來限制，因此*應用程式只能*安裝到抽取式存放裝置媒體。
+請注意，是沒有選項可用來限制，讓應用程式*只*可以安裝到抽取式存放裝置媒體。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。

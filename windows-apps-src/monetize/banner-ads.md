@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，廣告，廣告，AdControl，橫幅廣告
 ms.localizationpriority: medium
 ms.openlocfilehash: fc47c8d40d10eef3e6d92f2d47485d8cf265172d
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5163368"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410836"
 ---
 # <a name="banner-ads"></a>橫幅廣告
 
-在本節中的文章將示範如何使用 Microsoft Advertising SDK 中的[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)類別來將橫幅廣告新增到您的 UWP app。
+在本節中的文章將示範如何使用 Microsoft Advertising SDK 中的[AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol)類別來將橫幅廣告新增到您的 UWP 應用程式。
 
-橫幅廣告是頁面的靜態顯示廣告，使用您的應用程式來顯示促銷內容中的矩形部分。 這些廣告會定期自動更新。 如果您是在應用程式中使用廣告的新手，這是入門的好地方。
+橫幅廣告是頁面的靜態顯示廣告，利用您的應用程式來顯示促銷內容中的矩形部分。 這些廣告會定期自動更新。 如果您是在應用程式中使用廣告的新手，這是入門的好地方。
 
 ![addreferences](images/banner-ad.png)
 
@@ -30,7 +30,7 @@ ms.locfileid: "5163368"
 |----------|-------|
 | [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)     | 在您的 XAML/.NET app 中新增橫幅廣告。        |
 | [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)     | 在您的 HTML5/JavaScript app 中新增橫幅廣告。        |
-| [支援的橫幅廣告大小](supported-ad-sizes-for-banner-ads.md)    |  檢閱適用於 UWP 應用程式中橫幅廣告支援的大小。        |
+| [支援的橫幅廣告大小](supported-ad-sizes-for-banner-ads.md)    |  檢閱 UWP 應用程式中橫幅廣告支援的大小。        |
 
 
 ## <a name="related-topics"></a>相關主題

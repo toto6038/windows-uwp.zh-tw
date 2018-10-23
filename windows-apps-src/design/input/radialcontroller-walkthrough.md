@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c7dc6436e1a233a6b0a74a787b5c30de47899eff
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169535"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409686"
 ---
 # <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教學：在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
 
@@ -62,7 +62,7 @@ Dial 支援三個基本手勢︰
 6. 返回您的 Windows 裝置並選取 **\[新增藍牙或其他裝置\]**。
 7. 在 **\[新增裝置\]** 對話方塊中，選取 **\[藍牙\]** > **\[Surface Dial\]**。 您的 Surface Dial 現在應該連接，而且新增到 **\[藍牙與其他裝置\]** 設定頁面上 **\[滑鼠、鍵盤和手寫筆\]** 下的裝置清單。
 8. 按住幾秒鐘以顯示內建功能表，測試 Dial。
-9. 如果功能表未顯示 （Dial 應該也會震動） 在螢幕上，移回到藍牙設定，移除裝置，並再試一次連接裝置。
+9. 如果功能表未顯示 （Dial 應該也會震動） 在螢幕上，移回到藍牙設定，移除裝置，然後再試一次連接裝置。
 
 > [!NOTE]
 > 轉盤裝置可以透過 **\[轉盤\]** 設定進行設定︰

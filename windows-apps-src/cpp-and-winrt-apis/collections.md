@@ -10,28 +10,28 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169671"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406097"
 ---
 # <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 
-在內部，Windows 執行階段集合有很多個複雜的移動部分。 但當您想要將集合物件傳遞至 Windows 執行階段函式，或來實作您自己的集合屬性和集合類型，有函式和中的基底類別[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)支援您。 這些功能採取出雙手，複雜性，並儲存您的額外負荷許多中的時間和精力。
+在內部，Windows 執行階段集合有許多的複雜的移動部分。 但當您想要將集合物件傳遞至 Windows 執行階段函式，或來實作您自己的集合屬性和集合類型，有函式和中的基底類別[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)支援您。 這些功能採取出雙手，複雜性，並儲存在時間和精力的額外負荷許多。
 
-[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)是任何隨機存取的集合項目所實作的 Windows 執行階段介面。 如果您是要自行實作**IVector** ，您也必須實作[**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)，以及[**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)。 即使您*需要*自訂的集合類型，這會是工作的大量。 但如果您有**std:: vector** （或**std:: map**或**std::unordered_map**） 中的資料，而且所有您想要將它傳送到 Windows 執行階段 API，然後您會想要避免執行該層級的工作，如果可能的話。 並避免*是*越好，因為 C + + /winrt 可協助您有效且輕鬆地建立集合。
+[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)是任何隨機存取的集合項目所實作的 Windows 執行階段介面。 如果您是要自行實作**IVector** ，您也必須實作[**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)、 [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_)，以及[**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_)。 即使您*需要*自訂的集合類型，這會是工作的大量。 但如果您有**std:: vector** （或 **:: map**或**std::unordered_map**） 中的資料，而且所有您要執行的作業是將它傳送到 Windows 執行階段 API，然後您會想要避免執行該層級的工作，如果可能的話。 並避免*是*越好，因為 C + + /winrt 可協助您有效且輕鬆地建立集合。
 
 另請參閱[XAML 項目控制項; 繫結至 C + + /winrt 集合](binding-collection.md)。
 
 > [!NOTE]
-> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您不需要的存取權的函式和本主題中所記載的基底類別。 相反地，查看[是否有較舊版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) ，您可以改為使用可觀察的向量範本的清單。
+> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您不需要的存取權的函式和本主題中所記載的基底類別。 相反地，看到[是否您有較舊版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) ，您可以改為使用可觀察的向量範本的清單。
 
 ## <a name="helper-functions-for-collections"></a>針對集合的協助程式函式
 
 ### <a name="general-purpose-collection-empty"></a>一般用途的集合，空的
 
-本節涵蓋您想要建立最初是空白的; 集合的案例然後填入*之後*建立。
+本節涵蓋您想要用來建立的集合，最初是空白的; 的案例然後填入*之後*建立。
 
 若要擷取一般用途的集合的實作類型的新物件，您可以呼叫[**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)函式範本。 物件會傳回為[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)，，而這就是您可透過呼叫傳回的物件函式和屬性的介面。
 
@@ -59,7 +59,7 @@ int main()
 }
 ```
 
-如您所見上述程式碼範例中，建立集合之後您可以附加元素、 逐一查看，而通常視為物件，就如同您可能會收到 API 從任何 Windows 執行階段集合物件。 如果您需要透過集合的不可變的檢視，您可以呼叫[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)，如所示。 上述的模式&mdash;建立和取用集合的&mdash;適用於簡單案例中，您將資料傳遞至，或取得退出 API 的資料。 您可以傳遞**IVector**或**IVectorView**、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)預期的任何位置。
+如您所見上述程式碼範例中，建立集合之後您可以附加元素、 逐一查看它們，並且通常視為物件，就如同您可能會收到 API 從任何 Windows 執行階段集合物件。 如果您需要透過集合的不可變的檢視，您可以呼叫[**IVector::GetView**](/uwp/api/windows.foundation.collections.ivector-1.getview)，如所示。 上述的模式&mdash;建立和取用集合的&mdash;適用於簡單案例中，您將資料傳遞至，或取得退出 API 的資料。 您可以傳遞**IVector**或**IVectorView**、 [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_)預期的任何位置。
 
 **Winrt:: init_apartment**呼叫會在上述程式碼範例中，初始化 COM;根據預設，在多執行緒 apartment 中。
 
@@ -83,7 +83,7 @@ for (auto const& el : coll2)
 
 您可以傳遞暫存物件包含您的資料**winrt::single_threaded_vector**，如同`coll1`上方。 或您可以將**std:: vector** （假設您將不會存取它一次） 移到函式。 在這兩種情況下，您要將*右值*傳送到函式。 這可讓編譯器會失效，並以避免複製資料。 如果您想要深入了解*右*，請參閱[值類別，以及它們的參考](cpp-value-categories.md)。
 
-如果您想要將 XAML 項目控制項繫結到您的集合，然後您可以。 但請注意，若要正確設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，需要將其設為的值類型**IVector** **IInspectable** （或互通性類型，例如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)）。 以下是產生一個適合繫結，一種類型的集合，並將項目附加到它的程式碼範例。
+如果您想要將 XAML 項目控制項繫結到您的集合，然後您可以。 但請注意，若要正確設定[**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)屬性，需要將其設為類型**IVector** **IInspectable**的 （或的互通性類型，例如[**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)） 的值。 以下是產生一個適合繫結，一種類型的集合，並將項目附加到它的程式碼範例。
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>() };
@@ -101,7 +101,7 @@ IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetVie
 
 ### <a name="observable-collection"></a>可觀察的集合
 
-若要擷取會*變成可觀察*集合的實作類型的新物件，請呼叫[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)函式範本與任何項目類型。 但是為了讓適用於 XAML 項目控制項繫結可觀察的集合，使用**IInspectable**做為項目類型。
+若要擷取新的物件類型實作*可觀察*集合的請呼叫[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)函式範本與任何項目類型。 但是為了讓適用於 XAML 項目控制項繫結可觀察的集合，使用**IInspectable**做為項目類型。
 
 物件會傳回為[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)，，而這就是透過其您 （或它繫結的控制項） 呼叫傳回的物件函式和屬性的介面。
 
@@ -118,7 +118,7 @@ auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IIn
 - [**Winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map)函式範本會傳回為[**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)非變成可觀察集合關聯。
 - [**Winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)函式範本會傳回為[**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)關聯可觀察集合。
 
-您可以選擇性地質數這些集合與資料，藉由傳遞給函式的類型 **:: map**或**std::unordered_map***右值*。
+您可以選擇性地質數這些集合與資料，藉由*右值*的類型 **:: map**或**std::unordered_map**傳遞給函式。
 
 ```cppwinrt
 auto coll1{

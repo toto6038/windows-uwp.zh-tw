@@ -1,6 +1,6 @@
 ---
 author: Xansky
-description: 在 Microsoft Store 分析 API 中使用這個方法，以取得傳統型應用程式的深入解析資料。
+description: 在 Microsoft Store 分析 API 中使用這個方法，取得傳統型應用程式的深入解析資料。
 title: 取得傳統型應用程式的深入解析資料
 ms.author: mhopkins
 ms.date: 07/31/2018
@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b4390fba26922372a74de76d09844a7243bce73
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168001"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407612"
 ---
 # <a name="get-insights-data-for-your-desktop-application"></a>取得傳統型應用程式的深入解析資料
 
-在 Microsoft Store 分析 API 中使用這個方法，來取得與您已新增到[Windows 傳統型應用程式](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的傳統型應用程式的健康情況計量資料相關的深入資訊。 這項資料也會在 Windows 開發人員中心儀表板中傳統型應用程式[健康情況報告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中提供的。
+在 Microsoft Store 分析 API 中使用這個方法，來取得與您已新增到[Windows 傳統型應用程式](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program)的傳統型應用程式的健康情況計量資料相關的深入資訊。 這項資料也會在 Windows 開發人員中心儀表板中傳統型應用程式的[健康情況報告](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#health-report)中提供的。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -55,7 +55,7 @@ ms.locfileid: "5168001"
 
 ### <a name="request-example"></a>要求範例
 
-下列範例示範取得深入解析資料的要求。 *ApplicationId*值取代為您的傳統型應用程式適當的值。
+下列範例示範取得深入解析資料的要求。 值取代為*applicationId*傳統型應用程式的適當的值。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/insights?applicationId=10238467886765136388&startDate=6/1/2018&endDate=6/15/2018&filter=dataType eq 'health' HTTP/1.1
@@ -80,7 +80,7 @@ Authorization: Bearer <your access token>
 |---------------------|--------|-------------------------------------------|
 | applicationId       | string | 您已擷取的深入解析資料的傳統型應用程式的產品識別碼。     |
 | insightDate                | string | 我們所識別在特定的衡量標準的變更日期。 此日期代表我們偵測到大幅增加一週結尾，或減少度量單位，相較於前一週中。 |
-| 資料類型     | string | 字串，指定會通知這個深入了解一般分析區域。 目前，此方法僅支援**健康情況**。    |
+| 資料類型     | string | 指定的字串，會通知這個深入了解一般分析區域。 目前，此方法僅支援**健康情況**。    |
 | insightDetail          | array | 一或多個[InsightDetail 值](#insightdetail-values)代表目前的深入解析的詳細資料。    |
 
 
@@ -88,11 +88,11 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | string | 表示目前的深入解析或目前的維度描述的衡量標準的字串。 目前，此方法僅支援值**叫用次數**。  |
-| SubDimensions         | array |  一或多個物件，其描述深入了解的單一單位。   |
+| FactName           | string | 表示為目前的深入解析或目前維度描述的衡量標準的字串。 目前，此方法僅支援值**叫用次數**。  |
+| SubDimensions         | array |  一或多個物件，其描述單一的衡量標準的深入解析。   |
 | PercentChange            | string |  跨整個客戶群的銷售量變更為的衡量標準的百分比。  |
 | DimensionName           | string |  為目前的維度中所述的衡量標準的名稱。 範例包括**EventType**、**市場**、 **DeviceType**，以及**PackageVersion**。   |
-| DimensionValue              | string | 為目前的維度中所述的衡量標準的值。 例如，如果**DimensionName** **EventType**， **DimensionValue**可能會**損毀**或**停止回應**。   |
+| DimensionValue              | string | 目前的維度中所述的衡量標準的值。 例如，如果**DimensionName** **EventType**， **DimensionValue**可能會**損毀**或**停止回應**。   |
 | FactValue     | string | 深入了解已偵測到的日期的衡量標準絕對值。  |
 | Direction | string |  變更 （**正**或**負**） 的方向。   |
 | 日期              | 字串 |  我們識別出目前的深入解析或目前的維度相關的變更日期。   |

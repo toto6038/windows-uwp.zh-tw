@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 31c27430c850f861c8b97863521202a6dcab80f7
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159636"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407039"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>使用資產套件與套件摺疊進行開發 
 
@@ -29,7 +29,7 @@ ms.locfileid: "5159636"
 
 若要了解套件摺疊如何不會影響您的開發程序，讓我們首先回來了解當您將應用程式分成多個套件（使用資產套件或資源套件）時的行為。 
 
-從高階角度來看，分割部分應用程式檔案為其他套件（不是架構套件），您將無法從程式碼執行的相對位置存取直接這些檔案。 這是因為這些套件的安裝目錄不同於架構套件的安裝位置。 為例，如果您正在製作遊戲，您的遊戲翻譯為法文及德文和您針對 x86 與 x64 電腦建置，則您應該會有這些遊戲的應用程式套件組合中的應用程式套件檔案：
+從高階角度來看，分割部分應用程式檔案為其他套件（不是架構套件），您將無法從程式碼執行的相對位置存取直接這些檔案。 這是因為這些套件的安裝目錄不同於架構套件的安裝位置。 例如，如果您正在製作遊戲，您的遊戲翻譯為法文及德文，而且建置適用於 x86 與 x64 電腦，則您應該會有這些遊戲的應用程式套件組合中的應用程式套件檔案：
 
 -   MyGame_1.0_x86.appx
 -   MyGame_1.0_x64.appx

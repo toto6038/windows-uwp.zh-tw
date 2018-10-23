@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 匯入 Store 清單, 匯出 Store 清單, 匯入匯出, Store 清單 csv
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e9b23f21f87bf6caeb2cbee97a854bc8202c0b3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164875"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407881"
 ---
 # <a name="import-and-export-store-listings"></a>匯入及匯出 Store 清單
 

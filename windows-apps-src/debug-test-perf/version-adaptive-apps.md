@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f2485eab4b192fe4a65c68d957de1ec9192f8c20
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5163457"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409513"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型應用程式：使用新的 API 並同時維持與先前版本的相容性
 
@@ -64,7 +64,7 @@ ms.locfileid: "5163457"
 
 您可以從 [Windows SDK 與模擬器封存](https://developer.microsoft.com/downloads/sdk-archive)下載任何已發行的 SDK 版本。 您可以從 [Windows 測試人員](https://insider.windows.com/Home/BuildWithWindows)網站的開發人員區段下載最新的 Windows Insider Preview SDK。
 
- 如需 Windows 10 更新的詳細資訊，請參閱[Windows 10 版本資訊](https://technet.microsoft.com/windows/release-info)。 如需有關 Windows 10 的重要資訊支援週期，請參閱[Windows 生命週期事實表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
+ 如需 Windows 10 更新的詳細資訊，請參閱[Windows 10 版本資訊](https://technet.microsoft.com/windows/release-info)。 如需 Windows 10 的重要資訊會支援週期，請參閱[Windows 生命週期事實表](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)。
 
 ## <a name="perform-api-checks"></a>執行 API 檢查
 

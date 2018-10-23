@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164820"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5405272"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -320,7 +320,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並再將會安裝或更新應用程式套件檔案。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 年度更新版側載您的 App
-在 Windows 10 年度更新版中，您可以按兩下應用程式套件檔案並安裝您的 app 透過選擇對話方塊中的 [安裝] 按鈕。 
+在 Windows 10 年度更新版，您可以按兩下應用程式套件檔案，並在對話方塊中選擇 [安裝] 按鈕來安裝您的應用程式。 
 
 ![在 rs1 側載](images/building-screen18.png) 
 

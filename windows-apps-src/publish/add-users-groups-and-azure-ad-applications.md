@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者、 群組、 多個使用者，多使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170288"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406239"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶
 
-（在 [**帳戶設定**） 下的 Windows 開發人員中心的**使用者**] 區段可讓您使用 Azure Active Directory 將使用者新增到您的開發人員中心帳戶。 為每位使用者指派角色（或一組自訂權限），定義帳戶的存取權。 您也可以新增[使用者群組](#groups)和 [Azure AD 應用程式](#azure-ad-applications)，為其授與您開發人員中心帳戶的存取權。
+（在 [**帳戶設定**） 下的 Windows 開發人員中心的**使用者**區段可讓您使用 Azure Active Directory 將使用者新增到您的開發人員中心帳戶。 為每位使用者指派角色（或一組自訂權限），定義帳戶的存取權。 您也可以新增[使用者群組](#groups)和 [Azure AD 應用程式](#azure-ad-applications)，為其授與您開發人員中心帳戶的存取權。
 
 新增使用者到帳戶之後，您可以[編輯帳戶詳細資料](#edit)、變更[角色與權限](set-custom-permissions-for-account-users.md)，或[移除使用者](#remove)。
 
@@ -45,7 +45,7 @@ ms.locfileid: "5170288"
 
 <span id="from-directory" />
 
-1.  選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取 \ [**使用者**。
+1.  選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取**使用者**。
 2.  從 **\[使用者\]** 頁面選取 **\[新增使用者\]**。 
 3.  從出現的清單中選取一個或多個使用者。 您可以使用搜尋方塊來搜尋特定的使用者。
     > [!TIP]
@@ -103,7 +103,7 @@ ms.locfileid: "5170288"
 
 如果您的其中一個使用者需要變更其密碼，只要您已在建立使用者帳戶時提供**密碼復原電子郵件**，他們就可以自行進行變更。 您也可以依照下列步驟更新使用者的密碼 (如果您使用 Azure AD 租用戶的全域管理員帳戶登入，以變更使用者的密碼)。 請注意，這會變更您 Azure AD 租用戶中該使用者的密碼，以及他們使用存取開發人員中心的密碼。 
 
-1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取您想要編輯的使用者帳戶名稱。
+1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取您想要編輯的使用者帳戶的名稱。
 2.  選取在頁面底部的 [**重設密碼**] 按鈕。
 3.  隨即會出現確認頁面，顯示該使用者的登入資訊 (包括暫時密碼)。
 
@@ -118,7 +118,7 @@ ms.locfileid: "5170288"
 
 ### <a name="add-groups-from-your-organizations-directory"></a>從組織的目錄新增群組
 
-1.  選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取 \ [**使用者**。
+1.  選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取**使用者**。
 2. 從**使用者**] 頁面上，選取 [**新增群組**。
 2.  從出現的清單中選取一個或多個群組。 您可以使用搜尋方塊來搜尋特定的群組。
     > [!TIP]
@@ -151,7 +151,7 @@ ms.locfileid: "5170288"
 
 ### <a name="add-azure-ad-applications-from-your-organizations-directory"></a>從組織的目錄新增 Azure AD 應用程式
 
-1.  1.  選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取 \ [**使用者**。
+1.  1.  選取齒輪圖示 （靠近儀表板右上角），然後選取 [**帳戶設定**。 在 [**設定**] 功能表中，選取**使用者**。
 2. 從 **\[使用者\]** 頁面，選取 **\[新增 Azure AD 應用程式\]**。
 3.  從出現的清單中選取一個或多個 Azure AD 應用程式。 您可以使用搜尋方塊來搜尋特定的 Azure AD 應用程式。
     > [!TIP]

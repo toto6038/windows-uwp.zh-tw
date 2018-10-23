@@ -11,11 +11,11 @@ keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 正式發�
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
 ms.openlocfilehash: 983cd2f2f849c28a4f3f3cae25efb0b93bec3f41
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158256"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406494"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>停止正式發行前小眾測試版的推出
 

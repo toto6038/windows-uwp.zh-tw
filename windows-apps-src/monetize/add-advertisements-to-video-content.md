@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 影片, 排程器, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: cc5dd40ca3d9fe6e20f5e79c95b59cef3bea9a34
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5164267"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407425"
 ---
 # <a name="show-ads-in-video-content"></a>在影片內容中顯示廣告
 

@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 標記延伸，可讓函式，以在標記中使用。
+description: XBind 標記延伸可讓函式，以在標記中使用。
 title: x:Bind 中的函式
 ms.author: jimwalk
 ms.date: 04/26/2018
@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5156977"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408619"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
@@ -66,7 +66,7 @@ class ColorEntry
 
 函式的路徑是以和其他屬性路徑相同的方式指定，且可以包含句點 (.)、索引子或轉換來找出該函式。
 
-靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用繫結至程式碼後置中的靜態函式的語法如下。
+靜態函式可以使用 XMLNamespace:ClassName.MethodName 語法來指定。 例如，使用繫結到程式碼後置中的靜態函式的語法如下。
 
 ```xaml
 <Page 
@@ -88,7 +88,7 @@ public class MyPage : Page
 }
 ```
 
-您也可以直接在標記中使用系統函式，來完成簡單的案例，包括日期格式設定文字格式、 文字串連、 等，例如：
+您也可以直接在標記中使用的系統功能，來完成簡單的案例，包括日期格式設定文字格式、 文字串連、 等，例如：
 ```xaml
 <Page 
      xmlns:sys="using:System"
@@ -163,7 +163,7 @@ public class Person:INotifyPropertyChanged
 ```
 
 > [!TIP]
-> 您可以使用 X:bind 中的函式來達到相同的案例做為執行轉換器，並在 WPF MultiBinding 所支援的功能。
+> 您可以使用 X:bind 中的函式來達到相同的案例做為執行轉換器，並在 WPF MultiBinding 已支援的功能。
 
 ## <a name="function-arguments"></a>函式引數
 

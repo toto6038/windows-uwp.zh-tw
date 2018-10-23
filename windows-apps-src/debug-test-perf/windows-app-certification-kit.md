@@ -2,7 +2,7 @@
 author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 應用程式認證套件
-description: 若要讓您的 app 能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
+description: 若要讓您的應用程式能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167338"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410144"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
 
 
-若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)您的應用程式或準備[發行至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
+若要取得[Windows 認證](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)的應用程式或準備[發行至 Microsoft Store](https://msdn.microsoft.com/library/windows/apps/Hh694062)，您應該驗證和測試它在本機第一次。 本主題示範如何安裝和執行[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，以確保您的應用程式是安全且有效率。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -46,7 +46,7 @@ ms.locfileid: "5167338"
 
 3.  輸入或選取要測試的 app 之後，請按一下 **\[下一步\]**。
 
-4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意 Microsoft 網上商店，可能會套用來自此工作流程的所有測試。 選取要執行的測試，然後按一下 **\[下一步\]**。
+4.  在下一個畫面中，您將會看到與您要測試之應用程式類型對應的測試工作流程。 若清單中的測試呈現灰色，表示該測試不適用於您的環境。 例如，若您在 Windows 7 上測試 Windows 10 應用程式，只有靜態測試會套用到工作流程。 請注意，Microsoft Store 可能會套用來自此工作流程的所有測試。 選取要執行的測試，然後按一下 **\[下一步\]**。
 
     Windows 應用程式認證套件隨即開始驗證該應用程式。
 

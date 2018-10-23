@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5166515"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410776"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
@@ -102,7 +102,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 4.  使用您的開發人員帳戶登入 Windows 開發人員中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
 5.  選取您套件的 App 名稱，或如果您還沒有在 Windows 開發人員中心入口網站保留一個名稱，則保留一個新的名稱。  
     ![顯示選取 App 名稱的 [建立應用程式套件] 視窗](images/packaging-screen4.jpg)
-6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 (.appxbundle) 是慣用透過單一應用程式套件檔案因為它包含一組設定每個處理器架構類型的應用程式套件。 當您選擇產生應用程式套件組合時，將會最終應用程式套件上傳 (.appxupload) 檔案中包含應用程式套件組合，以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 (.appxbundle) 是慣用透過單一應用程式套件檔案因為它包含了為每種處理器架構設定的應用程式套件的集合。 當您選擇產生應用程式套件組合時，將會最終應用程式套件上傳 (.appxupload) 檔案中包含應用程式套件組合，以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![顯示套件設定的 [建立應用程式套件] 視窗](images/packaging-screen5.jpg)
 
 

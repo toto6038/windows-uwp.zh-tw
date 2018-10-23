@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新的 Windows 10-執行更少的時間和記憶體都比繫結和支援較佳的偵錯。
+description: XBind 標記延伸是 Binding 高效能替代項目。 xBind-新的適用於 Windows 10-執行更少的時間和記憶體都比繫結和支援較佳的偵錯。
 title: xBind 標記延伸
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e605ab70a3d251e92768fd26fd105ab68644995
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158072"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410666"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
@@ -116,7 +116,7 @@ _注意：C# 風格的轉換語法比附加的屬性語法更具彈性，且是�
 
 ## <a name="functions-in-binding-paths"></a>繫結路徑中的函式
 
-從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這是非常強大的功能，可讓在標記中的數個案例的資料繫結。 [函式繫結](../data-binding/function-bindings.md)，如需詳細資訊，請參閱。
+從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這是非常強大的功能可讓在標記中的數個案例的資料繫結。 [函式繫結](../data-binding/function-bindings.md)，如需詳細資訊，請參閱。
 
 ## <a name="event-binding"></a>事件繫結
 

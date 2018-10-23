@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: ddd8ec979cb6d5a72b48b9b8b6a60adb73c35657
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5169130"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408030"
 ---
 # <a name="use-a-software-trigger"></a>使用軟體觸發器
 
@@ -33,7 +33,7 @@ ms.locfileid: "5169130"
 > [!Important]
 > 確認您的條碼掃描器支援使用軟體觸發器，首先檢查屬性 [IsSoftwareTriggerSupported](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescannercapabilities.issoftwaretriggersupported#Windows_Devices_PointOfService_BarcodeScannerCapabilities_IsSoftwareTriggerSupported)。
 
-下列範例示範如何初始化使用軟體觸發器，這將會停止掃描之後，它會掃描一個條碼掃描︰
+下列範例示範如何起始使用軟體觸發器，將會停止掃描之後，它會掃描一個條碼掃描︰
 
 ```cs
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 

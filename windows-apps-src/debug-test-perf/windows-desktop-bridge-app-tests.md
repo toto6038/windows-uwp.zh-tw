@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159490"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404869"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -50,13 +50,13 @@ ms.locfileid: "5159490"
 這項測試會確認 appx 不是偵錯組建。
  
 **背景 **  
-若要通過 Microsoft Store 認證，應用程式必須不可以針對編譯偵錯，而且不可以參照可執行檔檔案的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
+若要通過 Microsoft Store 認證，應用程式必須不可以針對編譯偵錯，而且不可以參照可執行檔的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
  
 **測試詳細資料**  
 測試應用程式，確定不是偵錯組建，而且沒有連結到任何偵錯架構。
  
 **修正動作**  
-* 在您提交到 Microsoft 網上商店之前，請為發行組建建置應用程式。
+* 在您提交到 Microsoft Store 之前，請為發行組建建置應用程式。
 * 確定您已安裝正確的 .NET Framework 版本。
 * 確認應用程式並未連結到偵錯版本的架構，且是利用發行版本所建置。 如果這個應用程式包含 .NET 元件，請確認您已安裝正確的 .NET Framework 版本。
 
@@ -214,7 +214,7 @@ ms.locfileid: "5159490"
  
 **測試詳細資料**  
 這項測試會檢查應用程式中的所有 UWP 元件︰
-* 確認應用程式套件內的每個受管理二進位檔案都相依於 Win32 API 所支援的 UWP 應用程式開發檢查的二進位檔匯入位址表。
+* 確認應用程式套件內的每個受管理二進位檔案都相依於所支援的 UWP 應用程式開發檢查匯入位址表二進位檔的 Win32 API。
 * 確認應用程式套件內的每個受管理二進位檔案不會相依於核准的設定檔外部的函式。 
 
 **修正動作**  
@@ -224,7 +224,7 @@ ms.locfileid: "5159490"
 > 應用程式的偵錯組建即使只[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)會使用應用程式，無法通過這個測試。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
 
 > [!NOTE]
-> 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 如需詳細資訊，請參閱[在 UWP app 中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
+> 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 如需詳細資訊，請參閱[UWP 應用程式中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
 
 ### <a name="6-user-account-control-uac-test"></a>6. 使用者帳戶控制 (UAC) 測試  
 
@@ -232,7 +232,7 @@ ms.locfileid: "5159490"
 確保應用程式不會在執行階段要求使用者帳戶控制。
 
 **測試詳細資料**  
-應用程式無法每個 Microsoft Store 原則來要求系統管理員權限提高或 UIAccess。 不支援安全性權限提高。 
+應用程式無法要求系統管理員權限提高或 UIAccess 每個 Microsoft Store 原則。 不支援安全性權限提高。 
 
 **修正動作**  
 必須以互動式使用者身分執行應用程式。 如需詳細資料，請參閱 [UI 自動化安全性概觀](https://go.microsoft.com/fwlink/?linkid=839440)。

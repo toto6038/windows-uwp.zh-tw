@@ -10,17 +10,17 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 3aa3e586e82fc5c2da78cc201f772112699a9035
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159958"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408056"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Windows 10 中的新 Api 建置 17763
 
 全新和已更新的 API 命名空間已可供開發人員在 Windows 10 組建 17763 (也稱為年 10 月 2018年更新或版本 1809年)。 以下是針對在這個版本中新增或修改之命名空間所提供的文件完整清單。
 
-在上一個公開發行版本中新增之 Api 的資訊，請參閱[Windows 10 年 4 月更新中的新 Api](windows-10-build-17134-api-diff.md)。
+上一個公開發行版本中新增之 Api 的資訊，請參閱[Windows 10 年 4 月更新中的新 Api](windows-10-build-17134-api-diff.md)。
 
 ## <a name="windowsai"></a>Windows.AI
 

@@ -11,19 +11,19 @@ keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6cd2b305a9d52a2239be46cc7f77650cdd6531
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5168573"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407186"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>您已封裝的傳統型應用程式的幕後作業
 
 這篇文章提供的深入解析為傳統型應用程式建立 Windows 應用程式套件時，檔案與登錄項目會發生什麼事。
 
-現代化套件的主要目標是將應用程式狀態分離與系統狀態儘可能同時維持與其他應用程式的相容性。 橋接器會透過將應用程式放入通用 Windows 平台 (UWP) 套件中，然後偵測它在執行階段對檔案系統與登錄所做的某些變更並重新導向，來達到此目標。
+現代化套件的主要目標是將應用程式狀態分離與系統狀態盡可能同時維持與其他應用程式的相容性。 橋接器會透過將應用程式放入通用 Windows 平台 (UWP) 套件中，然後偵測它在執行階段對檔案系統與登錄所做的某些變更並重新導向，來達到此目標。
 
-您為您的傳統型應用程式建立的套件為桌面專用、 完全信任的應用程式並且無法虛擬化或沙箱化。 這可讓它們以和傳統桌面應用程式的相同方式與其他 App 互動。
+您為傳統型應用程式建立的套件為桌面專用、 完全信任的應用程式並且無法虛擬化或沙箱化。 這可讓它們以和傳統桌面應用程式的相同方式與其他 App 互動。
 
 ## <a name="installation"></a>安裝
 
@@ -33,7 +33,7 @@ ms.locfileid: "5168573"
 
 ## <a name="file-system"></a>檔案系統
 
-為了包含應用程式狀態，並擷取應用程式對 appdata 所做的變更。 所有寫入到使用者 [AppData] 資料夾 (例如 *C:\Users\user_name\AppData*) 的動作 (包括建立、刪除和更新) 都會在寫入時複製到私人的各個使用者、各個 App 位置。 這會建立時實際上修改的是私人複本的已封裝的應用程式正在編輯實際 AppData 的錯覺效果。 透過這種方式將寫入重新導向，系統就可以追蹤 App 執行的所有檔案修改。 這可讓系統在解除安裝應用程式時清理那些檔案，因此減少系統 「 垃圾 」，並提供更好的應用程式移除使用者體驗。
+為了包含應用程式狀態，擷取應用程式對 appdata 所做的變更。 所有寫入到使用者 [AppData] 資料夾 (例如 *C:\Users\user_name\AppData*) 的動作 (包括建立、刪除和更新) 都會在寫入時複製到私人的各個使用者、各個 App 位置。 這會建立時實際上修改的是私人複本的已封裝的應用程式正在編輯實際 AppData 的錯覺效果。 透過這種方式將寫入重新導向，系統就可以追蹤 App 執行的所有檔案修改。 這可讓系統在解除安裝應用程式時清理那些檔案，因此減少系統 「 垃圾 」，並提供更好的應用程式移除使用者體驗。
 
 除了重新導向 AppData 與應用程式套件中相對應的目錄動態合併 Windows 的已知資料夾 （System32、 Program Files (x86) 等等）。 每個套件在其根目錄都會包含名為「VFS」的資料夾。 在 VFS 目錄中讀取的任何目錄或檔案，都會在執行階段與各自的原生對應項目合併。 例如，應用程式可包含*C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll*做為其應用程式套件的一部分，但檔案會顯示為安裝在*C:\Windows\System32\vc10.dll*。  這樣可維持與可能預期檔案位於非套件位置的傳統型應用程式的相容性。
 
@@ -79,7 +79,7 @@ FOLDERID_System\spool | AppVSystem32Spool | x86、amd64
 
 在 HKCU 之下的所有寫入會在寫入時複製到私人的各個使用者、各個 App 位置。 傳統上來說，解除安裝程式無法清除 *HKEY_CURRENT_USER*，因為已登出使用者的登錄資料無法卸載且無法使用。
 
-所有寫入會保留套件升級期間，並僅刪除時，應用程式會完全移除。
+所有寫入會保留套件升級期間，並僅刪除時，應用程式完全移除。
 
 ### <a name="common-operations"></a>常見作業
 

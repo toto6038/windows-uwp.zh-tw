@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5166353"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409555"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 
@@ -40,7 +40,7 @@ ms.locfileid: "5166353"
 撰寫方法以處理取消事件。
 
 > [!NOTE]
-> 針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外，或應用程式不會處理，則沒有警告也沒有引發 OnCanceled 事件情況下，將會終止背景工作。 這有助於確保前景應用程式的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
+> 針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外，或應用程式不會處理它，然後在背景工作將會終止沒有警告也沒有引發 OnCanceled 事件。 這有助於確保前景應用程式的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
 
 依下列方式建立名為 **OnCanceled** 的方法。 這個方法是當針對您的背景工作提出取消要求時，由「Windows 執行階段」呼叫的進入點。
 
@@ -89,7 +89,7 @@ private:
 
 您在步驟 1 中建立的**OnCanceled**方法中設定旗標變數**\_CancelRequested**為**true**。
 
-完整[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法將**\_CancelRequested**設**為 true** ，並將可能很有用的偵錯輸出。
+完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法會**\_CancelRequested**設為**true** ，並將潛在的實用偵錯輸出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)

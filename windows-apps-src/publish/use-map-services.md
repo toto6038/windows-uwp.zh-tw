@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d322a22898f2f45a89b4cd30051149133bc3e2bf
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5156840"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5409357"
 ---
 # <a name="use-map-services"></a>使用地圖服務
 
@@ -23,7 +23,7 @@ ms.locfileid: "5156840"
 
 若要在適用於 Windows Phone 8.1 和較舊版本的應用程式中使用地圖服務，您需要要求在您的應用程式開發人員中心儀表板中的程式碼中包含地圖服務應用程式識別碼和權杖。
 
-任何時候之後您已經[保留了您的應用程式的名稱](create-your-app-by-reserving-a-name.md)，, 您可以瀏覽到該應用程式，您的儀表板中，展開左側瀏覽功能表中的 [**服務**] 區段並選取**對應**。 當您按一下 [**取得權杖**時，我們將會產生地圖服務應用程式識別碼 (**ApplicationID**) 與地圖服務驗證語彙基元 (**AuthenticationToken**) 為您的 app。 這些值會儲存在此頁面上，因此您可以在任何時間來檢視他們傳回。
+任何時候之後您已經[保留您的應用程式的名稱](create-your-app-by-reserving-a-name.md)，, 您可以瀏覽到該應用程式，您的儀表板中，展開左側瀏覽功能表中的 [**服務**] 區段並選取**地圖**。 當您按一下**取得權杖**時，我們將會產生地圖服務應用程式識別碼 (**ApplicationID**) 與地圖驗證語彙基元 (**AuthenticationToken**) 的服務，您的應用程式。 這些值會儲存在此頁面上，因此您可以在任何時間來檢視他們傳回。
 
 > [!IMPORTANT]
 > 請務必將**ApplicationID**和**AuthenticationToken**新增到您的程式碼之前您套件並提交您的應用程式。 如需詳細資訊，請參閱[如何新增地圖控制項到頁面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。

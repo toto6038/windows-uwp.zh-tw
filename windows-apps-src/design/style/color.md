@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.openlocfilehash: e5d26d0e2fc8c040af81645477e3b75b0d128738
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5167787"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5410766"
 ---
 # <a name="color"></a>色彩
 
@@ -258,13 +258,13 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 ## <a name="scoping-system-colors"></a>設定系統色彩的範圍。
 
-除了在您的應用程式中定義您自己的色彩，您可以也將所需的地區我們 systematized 的色彩在您的應用程式的整個範圍使用**ColorSchemeResources**標記。 此 API 可讓您不僅以色彩標示和佈景主題大型的控制項群組，一次藉由設定一些屬性，但也可讓您許多其他系統受益，您通常不會取得以手動定義您自己自訂的色彩：
+除了在您的應用程式中定義您自己的色彩，您可以也將到所需的地區我們 systematized 的色彩在您的應用程式的整個範圍使用**ColorSchemeResources**標記。 此 API 可讓您不僅以色彩標示和佈景主題大型的控制項群組，一次是藉由設定一些屬性，但也可讓您許多其他系統優點，您通常不會取得以手動定義您自己自訂的色彩：
 
 - 使用**ColorSchemeResources**設定任何色彩不會作用高對比佈景主題
   * 這表示您的應用程式都可以存取更多人不需要任何額外的設計或開發人員成本
 - 可以輕鬆地色彩為淺色、 深色或普遍跨兩個佈景主題上設定設定的一個屬性 API
-- **ColorSchemeResources**上設定色彩會重疊顯示下所有相似的控制項也會使用該系統色彩
-  * 這樣可確保，您將會同時又維持您的品牌的外觀在應用程式有一致的色彩本文
+- **ColorSchemeResources**上設定的色彩會重疊顯示下所有相似的控制項也使用該系統色彩
+  * 這樣可確保您會有一致的色彩故事整個應用程式同時維持您的品牌的外觀
 - 效果，而不需要重新套用範本來所有的視覺狀態、 動畫及不透明度變化
 
 ### <a name="how-to-use-colorschemeresources"></a>如何使用 ColorSchemeResources
@@ -281,7 +281,7 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 
 ### <a name="how-to-apply-scoped-colors"></a>如何套用限定範圍的色彩
 
-範圍透過**ColorSchemeResources** API 在 XAML 中的資源，可讓您充分任何系統色彩或筆刷，在我們[的佈景主題資源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)的程式庫，並重新定義它們的頁面或容器的範圍內。
+透過**ColorSchemeResources** API 在 XAML 中的資源範圍設定可讓您充分任何系統色彩或筆刷，在我們[的佈景主題資源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)的程式庫，並重新定義它們的頁面或容器的範圍內。
 
 例如，如果您定義兩個系統色彩- **SystemBaseLowColor**和**SystemBaseMediumLowColor**內 grid，並再放在頁面上的兩個按鈕： 一個內該格線和一個外部：
 
@@ -302,8 +302,8 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 
 ![限定範圍的系統在按鈕上的色彩](images/color/scopedcolors_cyan_button.png)
 
-不過，因為我們所有的系統色彩串聯到其他控制項，設定**SystemBaseLowColor**和**SystemBaseMediumLowColor**會影響只是多個按鈕。 在此情況下，會控制像**ToggleButton**、**選項按鈕**和**滑桿**會也會受到這些系統色彩會變更，應該這些控制項放上方 exampl 格線的範圍。
-如果您想要的範圍設定系統色彩變更*只有單一控制項到*您可以藉由在該控制項的資源中定義**ColorSchemeResources**來執行此動作：
+不過，因為我們所有的系統色彩串聯到其他控制項，設定**SystemBaseLowColor**和**SystemBaseMediumLowColor**會影響只是多個按鈕。 在此情況下，會控制像**ToggleButton**、**選項按鈕**和**滑桿**會也會受到這些系統色彩會變更，應該這些控制項放上方 exampl 方格的範圍。
+如果您想要的範圍設定系統色彩變更*至單一控制項只有*您可以藉由在該控制項的資源中定義**ColorSchemeResources**來執行此動作：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -344,13 +344,13 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 </Grid>
 ```
 
-在此範例中，繼承**Button_A** **Grid_A**的資源中定義的色彩和**巢狀按鈕**繼承自**Grid_B**的資源的色彩。 透過擴充方式，這表示任何其他控制項放在**Grid_B**將會檢查或首先，檢查或套用**Grid_A**的資源，再套用**Grid_B**的資源，最後套用我們的預設色彩，如果不顯示任何資訊定義在頁面或應用程式層級。
+在此範例中，繼承**Button_A** **Grid_A**的資源中定義的色彩和**巢狀按鈕**繼承自**Grid_B**的資源的色彩。 透過擴充方式，這表示任何其他控制項放在**Grid_B**內將會檢查或首先，檢查或套用**Grid_A**的資源，再套用**Grid_B**的資源，最後套用我們的預設色彩，如果不顯示任何資訊定義在頁面或應用程式層級。
 
 這適用於任何數目的巢狀項目，將其資源有色彩定義。
 
 ### <a name="scoping-with-a-resourcedictionary"></a>使用 ResourceDictionary 範圍設定
 
-您並不受限於容器或頁面的資源，並也可以合併在任何範圍的方式，您通常會合併字典 ResourceDictionary 中定義這些系統色彩。
+您不限於容器或頁面的資源，也可以合併在任何範圍的方式，您通常會合併字典 ResourceDictionary 中定義這些系統色彩。
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
@@ -390,11 +390,11 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 </Grid>
 ```
 
-現在，您可以在所有的資源、 佈景主題設定，以及自訂色彩放在單一**MyCustomTheme**資源字典中並已限定範圍，而不必擔心您的版面配置標記中的額外雜亂所需的位置。
+現在，所有的資源、 佈景主題設定，自訂色彩可以放在單一的**MyCustomTheme**資源字典中及已限定範圍，而不必擔心您的版面配置的標記中的額外雜亂所需的位置。
 
 ### <a name="other-ways-to-define-color-resources"></a>其他方式定義的色彩資源
 
-ColorSchemeResources 也允許放入系統色彩和包裝函式，而非列中，直接內定義：
+ColorSchemeResources 也允許放入系統色彩和包裝函式，而非行中直接內定義：
 
 ``` xaml
 <ColorSchemeResources x:Key="Dark">

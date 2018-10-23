@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 556a787eb1e92e4c8adb7457235afb45c02df2dc
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5156870"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5408875"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>設定執行背景工作的條件
 
@@ -43,7 +43,7 @@ ms.locfileid: "5156870"
 
 本主題既適用於與前景 App 在不同處理序中執行的背景工作，也適用於與前景 App 在相同處理序中執行的背景工作。
 
-新增條件之前, 建立[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)物件來代表作用中必須是針對要執行的背景工作的條件。 在建構函式中，指定必須滿足[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)列舉值的條件。
+新增條件之前, 建立[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)物件來代表作用中必須是執行背景工作的條件。 在建構函式中，指定必須滿足[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)列舉值的條件。
 
 下列程式碼會建立[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)物件，指定**InternetAvailable**條件：
 
@@ -109,7 +109,7 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 若要新增多個條件，您的應用程式必須多次呼叫 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。 這些呼叫必須在工作登錄生效之前發生。
 
 > [!NOTE]
-> 請注意不要將衝突的條件新增到背景工作。
+> 採取小心，不要將衝突的條件新增到背景工作。
 
 下列程式碼片段顯示多個條件，建立並登錄背景工作的內容中。
 
