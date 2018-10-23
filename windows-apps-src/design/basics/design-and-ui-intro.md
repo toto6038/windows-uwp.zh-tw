@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 602a0af685e812f5c65f94d07297cac9fc411923
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5159520"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406844"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP app 設計簡介
 
@@ -29,11 +29,11 @@ ms.locfileid: "5159520"
 
 ## <a name="effective-pixels-and-scaling"></a>有效像素與縮放
 
-在所有[Windows 10 裝置](../devices/index.md)上的 UWP app 是從您的電視到您的平板電腦或個人電腦執行。 您要如何設計在各種不同的裝置和螢幕大小有很好的 UI？
+在所有[Windows 10 裝置](../devices/index.md)上的 UWP app 是從您的電視到您的平板電腦或電腦執行。 您要如何設計在各種不同的裝置和螢幕大小有很好的 UI？
 
 ![各種裝置上的相同 App](images/universal-image-1.jpg)
 
-UWP 可協助透過自動調整 UI 元素，使其更清晰可讀並可輕鬆地在所有裝置和螢幕大小上進行互動。
+UWP 可協助自動調整 UI 元素，使它們更清晰可讀並可輕鬆地在所有裝置和螢幕大小上進行互動。
 
 當您在裝置上執行 App 時，系統會使用演算法將螢幕上 UI 元素的顯示方式標準化。 這個縮放演算法會考量檢視距離和畫面密度 (每英吋像素) 來最佳化認知大小 (而不是實體大小)。 此縮放演算法可確保使用者在 10 英呎遠的 Surface Hub 上看到的 24 px 字型，就和在只有幾英吋遠的 5 吋手機上看到的 24 px 字型一樣清晰。
 

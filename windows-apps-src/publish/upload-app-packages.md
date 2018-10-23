@@ -11,28 +11,28 @@ ms.technology: uwp
 keywords: windows 10，uwp，套件上, 傳，套件上傳
 ms.localizationpriority: medium
 ms.openlocfilehash: d966688110870b669bdd296ec14e145a5d77b74e
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5170436"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406421"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 
 **套件**頁面是為您上傳其中的所有您提交應用程式套件檔案 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap）。 您可以在此步驟中，為您的 App 對象上傳適用於任何作業系統的套件。 當客戶下載您的 App 時，[市集] 會自動提供每位客戶最適合他們的裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
 
-如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要深入了解[如何的版本號碼可能會影響哪個套件傳遞給特定的客戶](package-version-numbering.md)，以及[如何將套件發佈到不同的作業系統](guidance-for-app-package-management.md)。
+如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要深入了解[如何版本號碼可能會影響哪個套件傳遞給特定的客戶](package-version-numbering.md)，以及[如何將套件發佈到不同的作業系統](guidance-for-app-package-management.md)。
 
 ## <a name="uploading-packages-to-your-submission"></a>將套件上傳到您的提交
 
-若要上傳套件，請將套件拖曳到欄位內，或按一下以瀏覽您的檔案。 \ [**套件**] 頁面可讓您上傳.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap 檔案。
+若要上傳套件，請將套件拖曳到欄位內，或按一下以瀏覽您的檔案。 **套件**頁面可讓您上傳.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap 檔案。
 
 > [!IMPORTANT]
 > 適用於 Windows 10 中，我們建議您上傳.msixupload 或.appxupload 檔案，而非.msix、.appx、.msixbundle 或.appxbundle。  如需針對市集封裝 UWP 應用程式的詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](../packaging/packaging-uwp-apps.md)。
 
 當您建立新的提交時，您將會在 [套件](package-flights.md)頁面上看到一個下拉式清單，其中包含從其中一個套件正式發行前小眾測試版複製套件的選項。 選取含有您要納入之套件的套件正式發行前小眾測試版。 然後，您可選取其任一或所有套件，以包含在此提交中。
 
-如果我們偵測到與套件的錯誤，驗證它時，我們會顯示，讓您知道什麼是錯誤訊息。 您將需要移除套件、 修正這個問題，然後再重新上傳。 您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
+如果我們偵測到與套件的錯誤，驗證它時，我們會顯示，讓您知道什麼是錯誤訊息。 您將需要移除套件、 修正這個問題，然後再試一次將上傳。 您也會看到警告，讓您知道可能會造成問題的相關資訊，但不會阻止您繼續提交。
 
 
 ## <a name="device-family-availability"></a>裝置系列可用性

@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5162779"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406920"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
 [MakePri.exe](compile-resources-manually-with-makepri.md) 擁有命令集 `createconfig`、`dump`、`new`、`resourcepack` 和 `versioned`。 本主題詳述命令列選項的使用。
 
 > [!NOTE]
-> 當您檢查**適用於 UWP 受管理的應用程式的 Windows SDK**選項，在安裝 Windows 軟體開發套件，MakePri.exe 會安裝。 它安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及名為其他架構資料夾中）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 當您檢查**適用於 UWP 受管理的應用程式的 Windows SDK**選項，在安裝 Windows 軟體開發套件，MakePri.exe 會安裝。 它安裝至路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及名為其他架構的套件的資料夾中）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 ## <a name="makepri-commands"></a>MakePri 命令
 

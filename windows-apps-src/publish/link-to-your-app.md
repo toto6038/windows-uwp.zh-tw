@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 連結, windows 市集通訊協定, 連結到應用程式, 應用程式的連結
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "5158576"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5407249"
 ---
 # <a name="link-to-your-app"></a>應用程式的連結
 
@@ -31,17 +31,17 @@ ms.locfileid: "5158576"
 
 ## <a name="linking-to-your-apps-store-listing-with-the-microsoft-store-badge"></a>連結到您的應用程式市集清單，使用 Microsoft Store 徽章
 
-您可以直接連結至您的應用程式使用自訂的徽章，讓客戶知道您的應用程式是在 Microsoft Store 中的清單。
+您可以直接連結到您的應用程式清單使用自訂的徽章，讓客戶知道您的應用程式是在 Microsoft Store 中。
 
 若要建立您的徽章，請瀏覽[Microsoft Store 徽章](http://go.microsoft.com/fwlink/p/?LinkID=534236)頁面。 您需要有您 app 的 12 個字元的**市集識別碼**，才能產生徽章與連結。 您可以在 **\[應用程式管理\]** 區段的[應用程式身分識別](view-app-identity-details.md)頁面上找到 App 的**市集識別碼**。
 
 > [!NOTE]
-> 如需資訊和 Microsoft 市集徽章的使用方式的相關的需求，請參閱[應用程式行銷指導方針](app-marketing-guidelines.md)。
+> 如需資訊和使用 Microsoft 市集徽章的相關的需求，請參閱[應用程式行銷指導方針](app-marketing-guidelines.md)。
 
 
 ## <a name="linking-directly-to-your-app-in-the-microsoft-store"></a>直接連結到您的應用程式在 Microsoft Store 中
 
-您可以建立一個連結，啟動 Microsoft Store，並直接連到您的 app 清單頁面不需要使用開啟瀏覽器**ms windows 市集：** URI 配置。
+您可以建立一個連結，啟動 Microsoft Store，並直接連到您的應用程式清單頁面不需要使用開啟瀏覽器**ms windows 市集：** URI 配置。
 
 如果您知道您的使用者是在 Windows 裝置上且您想要這些使用者可以直接進入市集中的清單頁面，這些連結會非常有用。 例如，在檢查過瀏覽器中的使用者代理字串以確認使用者的作業系統支援市集後，或您已經透過 UWP app 進行通訊，您可能會想要使用此連結。
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，Xbox One 的附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: 931cd7b351a122c22a59a3a0bc2975c61dc38aaa
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5173489"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5404879"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>取得 Xbox One 的附加元件下載數
 
@@ -59,7 +59,7 @@ ms.locfileid: "5173489"
 | filter |字串  | <p>在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 eq 或 ne 運算子關聯的欄位名稱 (來自回應主體) 和值，而陳述式可以使用 and 或 or 結合。 filter 參數中的字串值必須由單引號括住。 例如，filter=market eq 'US' and gender eq 'm'。</p> <p>您可以指定來自回應主體的下列欄位：</p> <ul><li><strong>acquisitionType</strong></li><li><strong>年齡</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>sandboxId</strong></li></ul>| 否   |
 | aggregationLevel | 字串 | 指定要擷取彙總資料的時間範圍。 可以是下列其中一個字串：<strong>day</strong>、<strong>week</strong> 或 <strong>month</strong>。 如果沒有指定，則預設為 <strong>day</strong>。 | 否 |
 | orderby | 字串 | 對每個附加元件下載數的結果資料值做出排序的陳述式。 語法<em>orderby = 欄位 [order]，[order]，...</em><em>欄位</em>參數可以是下列其中一個下列字串：<ul><li><strong>日期</strong></li><li><strong>acquisitionType</strong></li><li><strong>年齡</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>orderName</strong></li></ul><p><em>order</em> 參數為選擇性，並可以是 <strong>asc</strong> 或 <strong>desc</strong>，以指定每個欄位的遞增或遞減順序。 預設為 <strong>asc</strong>。</p><p>下列為 <em>orderby</em> 字串的範例：<em>orderby=date,market</em></p> |  否  |
-| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>年齡</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 如需範例： <em> &amp;groupby = 年齡，market&amp;aggregationLevel = week</em></p> |  否  |
+| groupby | 字串 | 將資料彙總僅套用至指定欄位的陳述式。 您可以指定下列欄位：<ul><li><strong>date</strong></li><li><strong>applicationName</strong></li><li><strong>addonProductName</strong></li><li><strong>acquisitionType</strong></li><li><strong>年齡</strong></li><li><strong>storeClient</strong></li><li><strong>gender</strong></li><li><strong>market</strong></li><li><strong>osVersion</strong></li><li><strong>deviceType</strong></li><li><strong>paymentInstrumentType</strong></li><li><strong>sandboxId</strong></li><li><strong>xboxTitleIdHex</strong></li></ul><p>傳回的資料列將包含 <em>groupby</em> 參數中指定的欄位，以及下列項目：</p><ul><li><strong>date</strong></li><li><strong>applicationId</strong></li><li><strong>addonProductId</strong></li><li><strong>acquisitionQuantity</strong></li></ul><p><em>groupby</em> 參數可以搭配 <em>aggregationLevel</em> 參數使用。 例如： <em> &amp;groupby = 年齡，市場&amp;aggregationLevel = week</em></p> |  否  |
 
 
 ### <a name="request-example"></a>要求範例
@@ -98,17 +98,17 @@ Authorization: Bearer <your access token>
 | 值               | 類型    | 描述        |
 |---------------------|---------|---------------------|
 | 日期                | 字串  | 下載數資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
-| addonProductId      | string  | 您正在擷取下載數資料之附加元件*產品識別碼*。                                                                                                                                                                 |
+| addonProductId      | string  | *ProductId*您正在擷取下載數資料之附加元件。                                                                                                                                                                 |
 | addonProductName    | 字串  | 附加元件的顯示名稱。 這個值只會出現在回應資料中如果*aggregationLevel*參數設為**一天**，除非您在*groupby*參數中指定**addonProductName**欄位。                                                                                                                                                                                                            |
-| applicationId       | string  | 您想要擷取附加元件下載數資料之 app*的 productId* 。                                                                                                                                                           |
+| applicationId       | string  | *ProductId*您想要擷取附加元件下載數資料之應用程式。                                                                                                                                                           |
 | applicationName     | 字串  | 遊戲的顯示名稱。                                                                                                                                                                                                             |
 | deviceType          | 字串  | <p>以下字串之一指定完成收購的裝置類型：</p> <ul><li>「 電腦 」</li><li>「 電話 」</li><li>」 主控台 」</li><li>「 IoT 」</li><li>「 伺服器 」</li><li>「 平板電腦 」</li><li>「 全像攝影版 」</li><li>"Unknown"</li></ul>                                                                                                  |
-| storeClient         | 字串  | <p>下列其中一個表示收購發生的 Microsoft Store 版本之字串：</p> <ul><li>「 Windows Phone Store （用戶端） 」</li><li>「 Microsoft Store (client) 」 (或 「 Windows Store (client) 」 如果在 2018 年 3 月 23 之前查詢資料)</li><li>「 Microsoft Store （網頁） 」 (或 「 Microsoft Store （網頁） 」 如果在 2018 年 3 月 23 之前查詢資料)</li><li>「 組織大量購買 」</li><li>「 其他 」</li></ul>                                                                                            |
+| storeClient         | 字串  | <p>下列其中一個表示收購發生的 Microsoft Store 版本之字串：</p> <ul><li>「 Windows Phone Store （用戶端） 」</li><li>「 Microsoft Store (client) 」 (或 「 Windows Store (client) 」 如果在 2018 年 3 月 23 之前查詢資料)</li><li>「 Microsoft Store (web) 」 (或 「 Windows Store (web) 」 如果在 2018 年 3 月 23 之前查詢資料)</li><li>「 組織大量購買 」</li><li>「 其他 」</li></ul>                                                                                            |
 | osVersion           | 字串  | 發生下載的 OS 版本。 對於此方法，這個值永遠都是 「 Windows 10 」。                                                                                                   |
 | market              | 字串  | 發生下載之市場的 ISO 3166 國家/地區碼。                                                                                                                                                                  |
-| gender              | 字串  | <p>下列其中一個字串，這些字串詳列進行收購的使用者的性別：</p> <ul><li>"m"</li><li>「 f 」</li><li>"Unknown"</li></ul>                                                                                                    |
+| gender              | 字串  | <p>下列其中一個字串，這些字串詳列進行收購的使用者的性別：</p> <ul><li>"m"</li><li>「 f 」</li><li>「 未知 」</li></ul>                                                                                                    |
 | 年齡            | 字串  | <p>下列其中一個字串，這些字串表示進行下載的使用者的年齡層：</p> <ul><li>「 小於 13 」</li><li>「 13 17 」</li><li>「 18 到 24 」</li><li>「 25 34 」</li><li>「 35 44 」</li><li>「 44 55 」</li><li>「 大於 55 」</li><li>"Unknown"</li></ul>                                                                                                 |
-| acquisitionType     | 字串  | <p>其中一個下列字串，可指出收購類型：</p> <ul><li>「 免費 」</li><li>「 試用 」</li><li>「 付費 」</li><li>「 促銷碼 」</li><li>「 Iap 」</li><li>「 訂閱 Iap 」</li><li>「 私人對象 」</li><li>「 Pre 順序 」</li><li>「 Xbox Game Pass 」 （或者 「 Game Pass 「 如果在 2018 年 3 月 23 之前查詢資料）</li><li>「 磁碟 」</li><li>「 預付的碼 」</li><li>「 收取前順序 」</li><li>「 取消前順序 」</li><li>「 失敗 Pre 順序 」</li></ul>                                                                                                    |
+| acquisitionType     | 字串  | <p>其中一個下列字串，可指出收購類型：</p> <ul><li>「 免費 」</li><li>「 試用 」</li><li>「 付費 」</li><li>「 促銷碼 」</li><li>「 Iap 」</li><li>「 訂閱 Iap 」</li><li>「 私人對象 」</li><li>「 Pre 順序 」</li><li>「 Xbox Game Pass 」 （或者 「 Game Pass 「 如果在 2018 年 3 月 23 之前查詢資料）</li><li>「 磁碟 」</li><li>「 預付的碼 」</li><li>「 收取 Pre 順序 」</li><li>「 取消前順序 」</li><li>「 失敗 Pre 順序 」</li></ul>                                                                                                    |
 | acquisitionQuantity | 整數 | 發生的下載數目。                        |
 
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，3dprinting，3d 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 72835733ec429a5deb6a11da4112336746e5e9cf
+ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/20/2018
-ms.locfileid: "5171407"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "5406153"
 ---
 # <a name="3d-printing"></a>3D 列印
 
@@ -26,7 +26,7 @@ ms.locfileid: "5171407"
 
 | 主題 | 說明 |
 |-------|-------------|
-| [從您的 App 進行 3D 列印](3d-print-from-app.md) | 了解如何將 3D 列印功能新增到您的 UWP app。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。 |
+| [從您的 App 進行 3D 列印](3d-print-from-app.md) | 了解如何將 3D 列印功能新增到您的 UWP 應用程式。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。 |
 | [產生 3MF 套件](generate-3mf.md) | 描述 3D 製造格式檔案類型及如何它來建立和操作使用 Windows.Graphics.Printing3D Api 的結構。 |
 
 ## <a name="related-topics"></a>相關主題
