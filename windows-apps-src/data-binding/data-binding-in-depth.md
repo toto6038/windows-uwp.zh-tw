@@ -14,11 +14,11 @@ dev_langs:
 - csharp
 - cppwinrt
 ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444252"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469664"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
@@ -40,7 +40,7 @@ ms.locfileid: "5444252"
 -   您可以使用單向模式來將[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)繫結到依新聞區段分組的即時新聞文章集合。
 -   您可以使用雙向模式來將[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)繫結到表單中的客戶的名稱。
 
-獨立的模式，有兩種繫結，以及它們通常都宣告 UI 標記中。 您可以選擇使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)或 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 您甚至可以在相同的 app 中將兩者混用 (甚至在相同的 UI 元素上)。 {x:Bind} 是 Windows 10 新增的標記，效能更好。 本主題所述的所有詳細資料適用於這兩種繫結類型，除非明確指出不是如此。
+獨立的模式，有兩種繫結，以及它們通常都宣告 UI 標記中。 您可以選擇使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)或 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。 您甚至可以在相同的 app 中將兩者混用 (甚至在相同的 UI 元素上)。 {X:bind} 是 windows 10 的新功能，而且具有較佳的效能。 本主題所述的所有詳細資料適用於這兩種繫結類型，除非明確指出不是如此。
 
 **示範 {x:Bind} 的範例 app**
 
@@ -256,7 +256,7 @@ public class HostViewModel : BindableBase
 <Button Content="{Binding ...}" ... />
 ```
 
-如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX)，您便需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增至任何您想要使用與[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組的執行階段類別。
+如果您使用 C + + /winrt 或 VisualC + + 元件延伸 (C + + /CX)，您便需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增至任何您想要使用與[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組的執行階段類別。
 
 > [!IMPORTANT]
 > 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性是可用，如果您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。
@@ -383,7 +383,7 @@ void MainPage::ClickHandler(IInspectable const&, RoutedEventArgs const&)
 
 ### <a name="binding-object-declared-using-binding"></a>使用 {Binding} 宣告的繫結物件
 
-如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX) 然後，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您想要繫結至任何執行階段類別。 若要使用[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
+如果您使用 C + + /winrt 或 VisualC + + 元件延伸 (C + + /CX)，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您想要繫結至任何執行階段類別。 若要使用[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
 
 ```cppwinrt
 // HostViewModel.idl
@@ -758,7 +758,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 
 ## <a name="creating-bindings-in-code"></a>在程式碼中建立繫結
 
-**注意**  本節只適用於 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因為您不能在程式碼中建立 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) 繫結。 不過，部分與 {x:Bind} 相同的優點可以利用 [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 來達成，讓您能夠在任何相依性屬性上登錄變更通知。
+**注意：** 本節僅適用於[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)，因為您無法在程式碼中建立[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)繫結。 不過，部分與 {x:Bind} 相同的優點可以利用 [**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) 來達成，讓您能夠在任何相依性屬性上登錄變更通知。
 
 您也可以使用程序性程式碼來取代 XAML，將 UI 元素連結到資料。 要這樣做，請建立新的 [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) 物件、設定適當的屬性，然後呼叫 [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) 或 [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx)。 當您想在執行階段選擇繫結屬性值，或在多個控制項間共用單一繫結時，以程式設計方式建立繫結會很有用。 不過，需注意在呼叫 **SetBinding** 之後，您就無法變更繫結屬性值。
 

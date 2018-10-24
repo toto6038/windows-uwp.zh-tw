@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a92be54e55e06b4e7ffd61b1526425920ea80f96
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433471"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470743"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================
 
 
 
-**注意**  您需要範例資料的程度以及它能夠為您提供多少協助，取決於您的繫結是否使用 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)或 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
+**注意：** 您需要範例資料的程度 — 多少，它會有助於您 — 取決於您的繫結是否使用[{Binding 標記延伸}](https://msdn.microsoft.com/library/windows/apps/Mt204782)或[{X:bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)。 本主題中所述的技術是以 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) 的使用方式為依據，因此，它們只適用於 **{Binding}**。 但是，如果您使用的是 **{x:Bind}**，則您的繫結至少會在設計介面上顯示預留位置值 (即使是針對項目控制項也一樣)，因此，您的需求不需要與範例資料完全相同。
 
 針對您的 app，(基於隱私權或效能因素) 可能無法或不希望在 Microsoft Visual Studio 或 Blend for Visual Studio 中的設計介面上顯示即時資料。 為了讓您的控制項能夠填入資料 (讓您能夠在 app 的配置、範本及其他視覺化屬性上運作)，系統提供了各種不同方式，讓您可以使用設計階段的範例資料。 如果您正在建置草圖 (或原型) app，則範例資料也可以是非常實用且省時的。 您可以在執行階段於草圖或原型中使用範例資料來說明您的想法，而不需連線到實際的即時資料。
 

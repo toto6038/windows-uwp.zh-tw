@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
 ms.openlocfilehash: b160b1e711f6e56b14f0d6e0e83e9f9150be5e90
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432359"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470290"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 
-**注意** 如需有關如何在 app 中使用資料繫結與 **{x:Bind}** (以及完整比較 **{x:Bind}** 和 **{Binding}**) 的一般資訊，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意：** 一般了解使用資料繫結中您的應用程式搭配 **{X:bind}** （並用於全啟動和之間的比較 **{X:bind}** **{Binding}**），請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 從 Windows10 版本 1607 開始，**{x:Bind}** 支援使用函式作為繫結路徑的分葉步驟。 這可讓：
 

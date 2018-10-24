@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f1236c2ade0423f6e092024e786741f3f3bf6d11
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443183"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470086"
 ---
 # <a name="masterdetails-pattern"></a>主要/詳細資料模式
 
@@ -46,7 +46,7 @@ ms.locfileid: "5443183"
 | 320 epx-640 epx        | 堆疊           |
 | 641 epx 或更寬       | 並排      |
 
- 
+ 
 ## <a name="stacked-style"></a>堆疊樣式
 
 在堆疊樣式中，一次只能看到一個檢視：主要或詳細資料檢視。

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ead9efdd0a1d37a051f24e94b40a7c61212f6b19
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444804"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472546"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>使用相機設定檔探索並選取相機功能
 
@@ -26,7 +26,7 @@ ms.locfileid: "5444804"
 > [!NOTE] 
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 建議您先熟悉該文中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文章中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
- 
+ 
 
 ## <a name="about-camera-profiles"></a>關於相機設定檔
 
@@ -103,9 +103,9 @@ ms.locfileid: "5444804"
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

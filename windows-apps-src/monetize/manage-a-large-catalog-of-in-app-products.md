@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, UWP, app 內購買, IAP, 附加元件, 目錄, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: fad186ed63557024fb71a6ec3c6997833afb7f4c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432586"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473351"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的應用程式內產品型錄
 
-如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。 在 Windows 10 之前的版本中，Microsoft Store 將每個開發人員帳戶的產品清單數目限制為 200 個，而本主題中所描述的處理程序可用來解決該限制。 從 Windows 10 開始，Microsoft Store 不會限制每個開發人員帳戶的產品清單數目，也不再需要本文中所描述的程序。
+如果您的 App 提供大型的應用程式內產品型錄，您可以選擇性地依照本主題中描述的程序來協助管理型錄。 在 Windows 10 之前的版本中，Microsoft Store 將每個開發人員帳戶的產品清單數目限制為 200 個，而本主題中所描述的處理程序可用來解決該限制。 從 windows 10 開始，「 市集 」 的每個開發人員帳戶的產品清單數目沒有限制，不再需要本文中所述的程序。
 
 > [!IMPORTANT]
 > 本文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如 Microsoft Store 管理的消費性附加元件及訂閱)，並且設計成與 Windows 開發人員中心和 Microsoft Store 所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需詳細資訊，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。

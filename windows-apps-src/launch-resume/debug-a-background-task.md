@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: f68c20a545e09d81912b8ef9a97a0ab0237ed0e0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431926"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476919"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 
@@ -117,6 +117,6 @@ ms.locfileid: "5431926"
 * [如何觸發暫停、 繼續以及背景事件在 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
 * [使用 Visual Studio 程式碼分析的 UWP 應用程式的程式碼品質](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
- 
+ 
 
- 
+ 

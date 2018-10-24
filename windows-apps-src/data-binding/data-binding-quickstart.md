@@ -15,11 +15,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: 8375cc54e75df71b28cfd3f550f47914b4b65519
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441625"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471863"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
@@ -501,7 +501,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 > [!NOTE]
 > 本主題到目前為止，我們只使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，但以下我們將說明的兩種技巧需要更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
-如果您使用 C + + /winrt 或 Visual c + + 元件延伸 (C + + /CX) 然後，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您想要繫結至任何執行階段類別。 若要使用[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
+如果您使用 C + + /winrt 或 VisualC + + 元件延伸 (C + + /CX)，若要使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組，您將需要將[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性新增到您想要繫結至任何執行階段類別。 若要使用[{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)，您不需要該屬性。
 
 > [!IMPORTANT]
 > 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872)屬性是可用，如果您已安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本。 如果沒有該屬性，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面才能使用[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782)標記延伸模組。

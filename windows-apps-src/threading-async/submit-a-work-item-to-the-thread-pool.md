@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
 ms.openlocfilehash: 29d7fc361e446207c8e14f83ca3f663bd5072e6e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435296"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478146"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
@@ -354,11 +354,11 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-您可以在[建立 ThreadPool 工作項目範例](http://go.microsoft.com/fwlink/p/?LinkID=328569)中，從針對 Windows 8.1 而撰寫的快速入門下載程式碼，並在 win\_unap Windows 10 應用程式中重複使用原始程式碼，以進行深入了解。
+您可以進一步了解從中[建立 ThreadPool 工作項目範例](http://go.microsoft.com/fwlink/p/?LinkID=328569)為 Windows8.1，撰寫此快速入門下載程式碼並重複使用原始程式碼在 win\_unap windows 10 應用程式。
 
 ## <a name="related-topics"></a>相關主題
 
 * [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
 * [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
 * [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
- 
+ 

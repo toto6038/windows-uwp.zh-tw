@@ -17,11 +17,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445396"
+ms.locfileid: "5473833"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -116,7 +116,7 @@ void MyProject::MainPage::Grid_KeyUp(
 > [!NOTE]
 > Alt 鍵以 **VirtualKey.Menu** 值表示。
 
- 
+ 
 
 ### <a name="shortcut-keys-example"></a>快速鍵範例
 
@@ -283,7 +283,7 @@ End Sub
 >
 > 設定 **AutomationProperties.AcceleratorKey** 或 **AutomationProperties.AccessKey** 本身不會有任何動作。 您還是需要附加 [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) 或 [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) 事件的處理常式，才能實際在應用程式中實作鍵盤快速鍵行為。 另外，也不會自動提供便捷鍵的底線文字裝飾。 如果您希望在 UI 中顯示有底線的文字，必須以內嵌 [**Underline**](https://msdn.microsoft.com/library/windows/apps/br209982) 格式明確地為助憶鍵中的特定鍵加上文字底線。
 
- 
+ 
 
 ## <a name="keyboard-routed-events"></a>鍵盤路由事件
 
@@ -405,6 +405,6 @@ public class CustomGridView : GridView
 * [輸入：觸控式鍵盤範例](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [回應螢幕小鍵盤外觀的範例](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
- 
+ 
 
- 
+ 

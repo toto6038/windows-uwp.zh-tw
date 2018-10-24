@@ -1,6 +1,6 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: 此藍圖概述適用於 Windows 10 和通用 Windows 平台 (UWP) app 的重要企業功能。
+description: 此藍圖概述的重要企業功能適用於 windows 10 和通用 Windows 平台 (UWP) app。
 title: 企業版
 author: awkoren
 ms.author: alkoren
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f7c5ad355aa6b99f8f76df230fefb283e54cffd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437505"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476610"
 ---
 # <a name="enterprise"></a>企業版
 
-此藍圖概述適用於 Windows 10 通用 Windows 平台 (UWP) app 的重要企業功能。
+此藍圖概述的重要企業功能 Windows10Universal Windows 平台 (UWP) 應用程式。
 
-**注意：** 本文的適用對象是撰寫企業 UWP app 開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
+**注意：** 這篇文章對象是撰寫企業 UWP app 開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
 
 有顯示一些已建置在其中顯示在此簡報[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)期間已大幅提升這個應用程式的版本
 
@@ -122,7 +122,7 @@ MSIX 是安全、 安全且可靠，內建的封裝格式根據.msi、.appx、 A
 
 ## <a name="security"></a>安全性
 
-Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者的身分識別、公司網路的安全性以及裝置上儲存的任何商務資料。 Windows 10 的新增功能是 Microsoft Passport，一種可使用 PIN 或 Windows Hello 存取的易部署雙因素密碼替代方式，可提供企業級安全性，以及支援指紋、臉部和虹膜辨識。
+Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們的使用者、 公司網路的安全性和儲存在裝置上的任何商務資料的身分識別。 新增適用於 windows 10 功能是 Microsoft Passport、 使用 PIN 的無障礙輕鬆部署雙因素密碼替代方式或 Windows Hello，可提供企業級安全性，以及支援指紋、 臉部和虹膜辨識。
 
 | 主題 | 描述 |
 |-------|-------------|
@@ -196,10 +196,10 @@ Windows 10 提供一套安全性功能，讓 app 開發人員保護其使用者�
 
 ## <a name="patterns-and-practices"></a>模式和做法
 
-大型企業級 app 的程式碼庫會變得雜亂無章。 Prism 是一個架構，用於在 WPF、Windows 10 UWP 和 Xamarin Forms 中建置鬆散結合、可維護和可測試的 XAML 應用程式。 Prism 提供一組設計模式的實作，這組設計模式有助於撰寫結構完善且可維護的 XAML 應用程式，包括 MVVM、相依性導入、命令、EventAggregator 和其他項目。
+大型企業級 app 的程式碼庫會變得雜亂無章。 Prism 是建置鬆散結合、 可維護和可測試的 XAML 應用程式在 WPF、 windows 10 UWP 和 Xamarin Forms 中的架構。 Prism 提供一組設計模式的實作，這組設計模式有助於撰寫結構完善且可維護的 XAML 應用程式，包括 MVVM、相依性導入、命令、EventAggregator 和其他項目。
 
 如需 Prism 的詳細資訊，請參閱 [GitHub 存放庫](https://github.com/PrismLibrary/Prism)。
 
- 
+ 
 
- 
+ 

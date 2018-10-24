@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a25980c964e399931a088e281e959df3095ffe9a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434302"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472559"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>促銷 App 和附加元件
 
@@ -29,7 +29,7 @@ ms.locfileid: "5434302"
 降價促銷產品期間，客戶將能在您選取的期間以較低價格購買。 如果您將價格調降為 **\[免費\]**，則客戶在銷售期間完全不需付費即可下載。
 
 > [!IMPORTANT]
-> 銷售定價只會對您 Windows 10 裝置 (包括 Xbox One) 的客戶顯示。 提供給擁有您其他產品之客戶的特價，只會對 Windows 10 版 1607 或更新版本的客戶顯示。
+> 銷售定價只會對您在 windows 10 裝置，包括 Xbox One 上的客戶顯示。 提供給擁有您其他產品之客戶的特價，只會對 Windows 10 版 1607 或更新版本的客戶顯示。
 > 
 > 在其他作業系統上，客戶將會看到您應用程式或附加元件的正常價格，無法以特價購買。 您可以隨時變更價格，方法是在新提交中選擇不同的價格區間，但是不會顯示為限定時間銷售。
 
@@ -83,7 +83,7 @@ ms.locfileid: "5434302"
 > [!IMPORTANT]
 > 如果特價銷售已開始，您就無法編輯開始日期。 雖然您可以編輯結束日期，但是建議您不要將特價銷售編輯為比原始結束日期更早結束。 如果特價銷售結束的日期早於原本發佈的日期，可能會令潛在客戶感到失望 (因為客戶檢視您的應用程式市集清單時會看見排程的結束日期)。
 
- **若要取消尚未開始的特價銷售**
+ **若要取消尚未開始的特價銷售**
 
 1.  在進行中應用程式或附加元件提交的 [**價格和可用性**] 頁面上，移至 [**銷售定價**] 區段。
 2.  尋找您想要取消的銷售，然後按一下 [**移除**]。

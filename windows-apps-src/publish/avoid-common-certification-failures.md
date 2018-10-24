@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 283856ad163d2e67078c61559f6f8ec667e92b87
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435581"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475065"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
@@ -46,9 +46,9 @@ ms.locfileid: "5435581"
 -   如果您的 app 使用來自 [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 命名空間的商務 API，請務必測試 app，確認它可以處理一般的例外狀況。 另外，請確定您的應用程式使用 [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 類別，而不是 [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 類別 (這僅供測試使用)  (請注意，如果您 App 的目標是 Windows 10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間 (而不是 Windows.ApplicationModel.Store 命名空間) 的成員)。
 
 
- 
+ 
 
- 
+ 
 
 
 

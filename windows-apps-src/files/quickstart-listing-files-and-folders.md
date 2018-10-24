@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435501"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477463"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
@@ -29,7 +29,7 @@ ms.locfileid: "5435501"
 如需如何儲存通用 Windows 平台應用程式資料的指導方針，請參閱 [ApplicationData](/uwp/api/windows.storage.applicationdata) 類別。
 
 > [!NOTE]
-> 另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)(英文)。
+> 另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)(英文)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -44,7 +44,7 @@ ms.locfileid: "5435501"
 ## <a name="enumerate-files-and-folders-in-a-location"></a>列舉位置中的檔案和資料夾
 
 > [!NOTE]
-> 請記得宣告 **picturesLibrary** 功能。
+> 請記得宣告 **picturesLibrary** 功能。
 
 在此範例中我們第一次使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法來取得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的所有檔案 （不在子資料夾），並列出每個檔案的名稱。 接下來，我們會使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法來取得所有的子資料夾中**PicturesLibrary**並列出每個子資料夾的名稱。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c03d99781114c4fefff04cc25930748ec16182f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434499"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470396"
 ---
 # <a name="storyboarded-animations"></a>腳本動畫
 
@@ -153,7 +153,7 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 
 ### <a name="fromtoby-are-nullable"></a>From/To/By 的型別為 Nullable
 
-我們之前提過，您可以省略 **From**、**To** 或 **By**，而使用目前的非動畫值替代遺漏值。 動畫的 **From**、**To**，或 **By** 屬性不是您可以猜得到的型別。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 屬性的型別不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)， 而是，**Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 另外，它的預設值是 **null** 而不是 0。 該 **null** 值是動畫系統用來分辨您並未特別針對 **From**、**To**，或 **By** 屬性設定值。 Visual C++ 元件延伸 (C++/CX) 沒有 **Nullable** 型別，所以改用 [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864)。
+我們之前提過，您可以省略 **From**、**To** 或 **By**，而使用目前的非動畫值替代遺漏值。 動畫的 **From**、**To**，或 **By** 屬性不是您可以猜得到的型別。 例如，[**DoubleAnimation.To**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) 屬性的型別不是 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)， 而是，**Double** 的 [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)。 另外，它的預設值是 **null** 而不是 0。 該 **null** 值是動畫系統用來分辨您並未特別針對 **From**、**To**，或 **By** 屬性設定值。 VisualC + + 元件延伸 (C + + /CX) 不會有**Nullable**類型，因此它會改為使用[**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) 。
 
 ### <a name="other-properties-of-an-animation"></a>其他動畫屬性
 
@@ -314,7 +314,7 @@ myStoryBoard.Begin()
 > [!TIP]
 > 當您為從應用程式程式碼啟動動畫的應用程式案例撰寫程式碼時，可能希望再次檢查動畫或轉換是否已經在您 UI 案例的動畫庫中。 動畫庫的動畫可以為所有 Windows 執行階段應用程式提供更一致的 UI 體驗，且更容易使用。
 
- 
+ 
 
 ### <a name="animations-for-visual-states"></a>視覺狀態的動畫
 
@@ -341,9 +341,9 @@ myStoryBoard.Begin()
 * [控制項範本](https://msdn.microsoft.com/library/windows/apps/Mt210948)
 * [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
 * [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+ 
 
- 
+ 
 
 
 

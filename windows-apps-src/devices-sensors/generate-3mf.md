@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02eb6442b4769e92bec2b41ed9ab0e91a6a98a7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443516"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475956"
 ---
 # <a name="generate-a-3mf-package"></a>產生 3MF 套件
 
@@ -33,7 +33,7 @@ ms.locfileid: "5443516"
 3D 製造格式 (3MF) 是一組慣例，基於製造 (3D 列印) 而使用 XML 來描述 3D 模型的外觀和結構。
  它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。
 
-在 Windows 10 中，**Windows.Graphics.Printing3D** 命名空間中的 [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) 類別與單一 .3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
+在 windows 10， **Windows.Graphics.Printing3D**命名空間中的[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)類別是單一.3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -89,7 +89,7 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
 > [!NOTE]
-> 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
+> 3D 製造裝置將決定哪些可用的實體材質對應到 3MF 中儲存的哪些虛擬材質元素。 材質對應不一定要是 1:1︰如果 3D 印表機只使用一個材質，則會使用該材質列印整個模型 (不管物件或表面已獲指派不同的材質)。
 
 ### <a name="color-materials"></a>色彩材質
 
@@ -147,8 +147,8 @@ Printing3DMesh 物件包含一組有效的頂點和三角形時，應該將它�
 
 [從 App 進行 3D 列印](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)  
 [3D 列印 UWP 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
- 
+ 
 
- 
+ 
 
- 
+ 

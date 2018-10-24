@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443369"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472669"
 ---
 # <a name="implement-navigation-between-two-pages"></a>在兩頁間實作瀏覽
 
@@ -91,7 +91,7 @@ ms.locfileid: "5443369"
 <TextBlock x:Name="pageTitle" Text="Page 1" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素，做為根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素並位於 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之後。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素，做為根[**格線**](https://msdn.microsoft.com/library/windows/apps/br242704)和之後的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 2"
                  Click="HyperlinkButton_Click"
@@ -128,7 +128,7 @@ void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
 <TextBlock x:Name="pageTitle" Text="Page 2" />
 ```
 
--   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 元素，做為根 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 的子元素並位於 `pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素之後。
+-   [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)元素，做為根[**格線**](https://msdn.microsoft.com/library/windows/apps/br242704)和之後的子元素`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)元素。
 ```xaml
 <HyperlinkButton Content="Click to go to page 1" 
                  Click="HyperlinkButton_Click"
@@ -309,7 +309,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 將更多功能新增到 App 前，我們先來看看前面新增的頁面如何在 App 內提供瀏覽。
 
 首先，以 App.xaml 程式碼後置檔案的 `App.OnLaunched` 方法為 app 建立 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)，稱為 `rootFrame`。 **Frame** 類別支援各種不同的瀏覽方法，例如 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) 和 [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693)，也支援不同的各種屬性，例如 [**BackStack**](https://msdn.microsoft.com/library/windows/apps/dn279543)、[**ForwardStack**](https://msdn.microsoft.com/library/windows/apps/dn279547) 和 [**BackStackDepth**](https://msdn.microsoft.com/library/windows/apps/hh967995)。
- 
+ 
 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) 方法是用來顯示這個 **Frame** 中的內容。 根據預設，此方法會載入 MainPage.xaml。 在我們的範例中，`Page1` 會傳遞至 **Navigate** 方法，此方法就會在 **Frame** 中載入 `Page1`。 
 
 `Page1` 是 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別的子類別。 **Page** 類別具有唯讀的 **Frame** 屬性，這個屬性會取得包含 **Page** 的 **Frame**。 當 `Page1` 中 **HyperlinkButton** 的 **Click** 事件處理常式呼叫 `this.Frame.Navigate(typeof(Page2))` 時，**Frame** 會顯示 Page2.xaml 的內容。
@@ -334,7 +334,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 </StackPanel>
 ```
 
-在 Page1.xaml 程式碼後置檔案的 `HyperlinkButton_Click` 事件處理常式中，將參考 `name` **TextBox** 之 `Text` 屬性的參數新增到 `Navigate` 方法。
+在`HyperlinkButton_Click`事件處理常式 Page1.xaml 程式碼後置檔案中，新增參數參考`Text`屬性的`name` **TextBox**到`Navigate`方法。
 
 ```csharp
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)

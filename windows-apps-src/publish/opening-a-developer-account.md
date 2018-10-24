@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b707479d11cc7aef62385b476720bff8477ed401
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444708"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478306"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
@@ -36,7 +36,7 @@ ms.locfileid: "5444708"
 5.  輸入您想要使用的**發行者顯示名稱** (50 個字元或更少)。 請謹慎選取此名稱，因為客戶會在瀏覽時看到此名稱，並透過此名稱認識您的 app。 若是公司帳戶，請輸入組織的註冊公司名稱或商號。 請注意，如果您輸入其他人已經選取的名稱，或如果其他人似乎有權使用該名稱，我們就不會讓您使用該名稱。 
 
    > [!NOTE]
-   > 請確定您有權使用在此輸入的名稱。 如果其他人已經擁有您挑選之名稱的商標或著作權，您的帳戶會被關閉。 如需詳細資訊，請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如果其他人使用了您所擁有之商標或其他法定權利的發行者顯示名稱，請[連絡 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
+   > 請確定您有權使用在此輸入的名稱。 如果其他人已經擁有您挑選之名稱的商標或著作權，您的帳戶會被關閉。 如需詳細資訊，請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 如果其他人使用了您所擁有之商標或其他法定權利的發行者顯示名稱，請[連絡 Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
 
 6.  輸入您要為開發人員帳戶使用的連絡資訊。
 

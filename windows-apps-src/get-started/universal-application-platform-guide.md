@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f0168f0a1baef5e68bccdf0a33c3ac7eb7683a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432405"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473921"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) app？
 
@@ -39,9 +39,9 @@ UWP app 在資訊清單中宣告他們所需的裝置功能，例如存取麥克
 
 ## <a name="a-common-api-surface-across-all-devices"></a>跨所有裝置的通用 API 表面
 
-Windows 10 引進了通用 Windows 平台 (UWP)，提供可在所有執行 Windows 10 的裝置上使用的通用 App 平台。 UWP 核心 API 在所有 Windows 裝置上是相同的。 如果您的 App 只使用核心 API，它會在任何 Windows 10 裝置上執行，無論您的目標是桌上型電腦、Xbox 或混合實境耳機等。
+Windows 10 引進了通用 Windows 平台 (UWP)，提供在執行 windows 10 的每個裝置上使用的通用 app 平台。 UWP 核心 API 在所有 Windows 裝置上是相同的。 如果您的應用程式只使用核心 Api，它會執行任何 windows 10 裝置，不論您的目標是桌上型電腦、 Xbox、 或混合實境耳機，以及等等。
 
-以 C++ /WinRT 或 C++ /CX 撰寫的 UWP app 具有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 API 是由所有 Windows10 裝置實作。
+以 C++ /WinRT 或 C++ /CX 撰寫的 UWP app 具有屬於 UWP 之 Win32 API 的存取權。 這些 Win32 Api 是由所有 windows 10 裝置實作。
 
 ## <a name="extension-sdks-expose-the-unique-capabilities-of-specific-device-types"></a>擴充功能 SDK 會公開特定裝置類型的獨特功能
 
@@ -70,7 +70,7 @@ Windows 使用下列功能，協助您讓您的 UI 以多個裝置為目標：
 
 ## <a name="theres-one-store-for-all-devices"></a>還有一個適用於所有裝置的 Microsoft Store
 
-整合的 App Store 可讓您的 App 在 Windows 10 裝置上使用，例如個人電腦、平板電腦、Xbox、HoloLens、Surface Hub 及物聯網 (IoT) 裝置。 您可以將 App 提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有 app。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
+整合的 app store 可讓您的應用程式使用 windows 10 裝置，例如電腦、 平板電腦、 Xbox、 HoloLens、 Surface Hub 及物聯網 (IoT) 裝置上。 您可以將 App 提交至 Microsoft Store，使其可用於所有類型的裝置，或僅適用於您選擇的裝置。 您在同一個地方提交和管理適用於 Windows 裝置的所有 app。 有您想要用 UWP 功能現代化，並在 Microsoft Store 中銷售的 C++ 傳統型應用程式嗎？ 這也沒有問題。
 
 UWP app 與 [Application Insights](http://azure.microsoft.com/services/application-insights/) 整合以進行詳細的遙測和分析，這是一項重要工具，可用以了解您的使用者並提升您的 App。
 

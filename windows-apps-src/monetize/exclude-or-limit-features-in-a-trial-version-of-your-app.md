@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 18d9fb3ba5b0fbd1e964450a75d8e0e417265e7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444326"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470592"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 
@@ -123,6 +123,6 @@ App 目前的授權狀態會儲存為 [LicenseInformation](https://msdn.microsof
 * [設定 app 價格與可用性](https://msdn.microsoft.com/library/windows/apps/mt148548)
 * [CurrentApp](https://msdn.microsoft.com/library/windows/apps/hh779765)
 * [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766)
- 
+ 
 
- 
+ 

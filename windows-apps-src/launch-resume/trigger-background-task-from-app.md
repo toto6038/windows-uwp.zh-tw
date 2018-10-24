@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 背景工作觸發程序，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 5ccd171f53795ef71830ffb022d0468facb3ac4f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431779"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469858"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>從您的應用程式觸發背景工作
 
@@ -145,7 +145,7 @@ var result = await _AppTrigger.RequestAsync();
 
 ## <a name="remarks"></a>備註
 
-從 Windows 10 開始，它不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
+從 windows 10 開始，它不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
 
 背景工作只會使用**ApplicationTrigger** ，如果您已先呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)來執行。
 

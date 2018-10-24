@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 89c021bb2c094aafc9b534acef9b009817669461
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439265"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472330"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 > [!NOTE]
@@ -142,7 +142,7 @@ toastCompletedEventHandler: function (event) {
 
 在 [方案總管] 中，開啟方案的捷徑功能表，然後選擇 **\[屬性\]**。 在 **\[屬性頁\]** 對話方塊的左窗格中選取 **\[組態屬性\]**，然後將對話方塊頂端的 **\[組態\]** 設定為 **\[偵錯\]**，並將 **\[平台\]** 設定為 [x86]、[x64] 或 [ARM]。 選擇 **\[確定\]** 按鈕。
 
-**注意：** 將 [平台] 設定為 [任何 CPU] 將無法運作，因為它並不適用於您稍後加入至方案的機器碼架構 Win32 DLL。
+**重要**平台 = 任何 CPU 將無法運作，因為它並不適用於您稍後加入至方案的機器碼架構 Win32 DLL。
 
 在 [方案總管] 中，將 class1.cs 重新命名為 ToasterComponent.cs，使其符合專案的名稱。 Visual Studio 會自動重新命名檔案中的類別，以符合新的檔案名稱。
 
@@ -150,7 +150,7 @@ toastCompletedEventHandler: function (event) {
 
 需要 Proxy 和虛設常式時，您的元件必須使用介面來公開它的公用成員。 在 ToasterComponent.cs 中，分別為快顯通知程式及其產生的 Toast 定義介面。
 
-**注意：** 在 C# 中，您可以略過此步驟， 改為先建立類別，然後開啟其捷徑功能表並選擇 **\[重構\] &gt; \[擷取介面\]**。 在產生的程式碼中，手動為介面提供公用存取範圍。
+**注意：** 在 C# 中您可以略過此步驟。 改為先建立類別，然後開啟其捷徑功能表並選擇 **\[重構\] &gt; \[擷取介面\]**。 在產生的程式碼中，手動為介面提供公用存取範圍。
 
 ```csharp
     public interface IToaster
@@ -218,8 +218,8 @@ IToast 介面包含可擷取來描述快顯通知類型的字串。 IToaster 介
 
 在上述程式碼中，我們建立了快顯通知，然後備妥執行緒集區工作項目來引發通知。 雖然 IDE 可能會建議您將 await 關鍵字套用至非同步呼叫，但在這種情況下不必這麼做，因為方法不會執行任何取決於作業結果的工作。
 
-**注意：** 上述程式碼中的非同步呼叫會單獨使用 ThreadPool.RunAsync，示範以簡單的方式在背景執行緒上引發事件。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
-  
+**注意：** 上述的程式碼中的非同步呼叫會使用 ThreadPool.RunAsync，示範在背景執行緒上引發事件的簡單方式。 您可以撰寫這個特殊的方法 (如下列範例所示)，因為 .NET 工作排程器會自動將 async/await 呼叫封送處理回 UI 執行緒，因此這個方法可正常運作。
+  
 ```csharp
     public async void MakeToast(string message)
     {
@@ -330,7 +330,7 @@ winmdidl /outdir:output "$(TargetPath)"
 midl /metadata_dir "%WindowsSdkDir%References\CommonConfiguration\Neutral" /iid "$(ProjectDir)$(TargetName)_i.c" /env win32 /h "$(ProjectDir)$(TargetName).h" /winmd "Output\$(TargetName).winmd" /W1 /char signed /nologo /winrt /dlldata "$(ProjectDir)dlldata.c" /proxy "$(ProjectDir)$(TargetName)_p.c" "Output\$(TargetName).idl"
 ```
 
-**重要** 適用於 ARM 或 x64 專案設定，將 MIDL /env 參數變更為 x64 或 arm32。
+**重要**適用於 ARM 或 x64 專案設定，將 MIDL /env 參數變更為 x64 或 arm32。
 
 若要確保每次.winmd 檔案變更時重新產生 IDL 檔案，變更**執行建置後事件**至**當組建更新專案輸出。**
 建置事件的屬性頁面上看起來應該像這樣：![建置事件](./images/buildevents.png)

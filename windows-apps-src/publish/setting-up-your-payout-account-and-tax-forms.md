@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f7359b2ae40e9b53d5ab73ee93402b11beab629
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432477"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478437"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支付及稅收表格
 
@@ -33,8 +33,8 @@ ms.locfileid: "5432477"
 -   [填寫您的納稅申報表](#tax-forms)
 
 > [!NOTE]
-> 如需深入了解取得 app 銷售款項的方法和時間，請參閱[獲得報酬](getting-paid-apps.md)。
- 
+> 如需深入了解取得 app 銷售款項的方法和時間，請參閱[獲得報酬](getting-paid-apps.md)。
+ 
 
 ## <a name="payout-account"></a>支付帳戶
 
@@ -43,7 +43,7 @@ ms.locfileid: "5432477"
 > [!NOTE]
 > 在某些市場中，PayPal 可以用於支付帳戶。 請參閱[帳戶類型、位置和費用](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)了解特定市場是否支援 PayPal，並且閱讀下面的 [PayPal 資訊](#paypal-info)了解詳細資訊。
 
- 
+ 
 **設定您的支付帳戶**
 
 1.  在 Windows 開發人員中心儀表板中，選取右上角的圖示，移至 **\[帳戶設定\]**。
@@ -63,7 +63,7 @@ ms.locfileid: "5432477"
 
 > [!IMPORTANT]
 > 變更支付帳戶會讓付款時間最多延遲一個付款週期。 之所以會發生延遲，是因為我們必須確認帳戶變更，正如我們在您首次建立支付帳戶時所做的一樣。 等到您的帳戶通過驗證後，仍然可以取得全額款項，目前付款週期到期的任何款項都會在下一個付款週期支付。 如需詳細資訊，請參閱[獲得報酬](getting-paid-apps.md)。
- 
+ 
 
 ### <a name="paypal-info"></a>PayPal 資訊
 
@@ -135,7 +135,7 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 > [!IMPORTANT]
 > 不同國家和地區的稅金要求不同。 您必須繳交的稅金確切金額取決於您銷售應用程式的國家和地區。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)，以了解 Microsoft 在哪些國家/地區為您代繳銷售和使用稅。 在其他國家/地區 (視您在何處註冊而定)，您可能必須直接到當地稅務機構繳納應用程式的銷售和使用稅。 此外，您收到的應用程式銷售收入可能會列為應稅收入。 我們強烈建議您他們的相關機構聯繫適用於您國家或地區最能夠協助您判斷您的 Microsoft Store 開發人員活動之正確稅金資訊。
 
- 
+ 
 **完成您的稅金設定檔**
 
 1.  在 Windows 開發人員中心儀表板中，按一下右上角的 [**帳戶設定**] 圖示。
@@ -160,9 +160,9 @@ R 表格 (Form-R) 是巴基斯坦的金融規範需求。 它用於指示從海�
 
 如果您在美國以外的地區，可能可以享有稅務協定優惠。 這些優惠國家，而有所不同，而且可讓您將減少扣繳的稅金總額 Microsoft Store。 您可以完成 W-8BEN 表單的 Part II 來要求稅務協定優惠。 建議您與您國家或地區的適當資源聯繫，以確認您是否適用這些優惠。
 
- 
+ 
 
- 
+ 
 
 
 

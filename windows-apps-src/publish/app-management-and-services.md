@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d0e4be450aa972ad8561f27a8d4749050458520a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438948"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472448"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -44,7 +44,7 @@ ms.locfileid: "5438948"
 若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 **\[地圖\]** 頁面的 **\[服務\]** 區段中取得這個權杖。
 
 > [!NOTE]
-> 若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)。
+> 若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)。
 
 如需詳細資訊，請參閱[使用地圖服務](use-map-services.md)。
 
@@ -101,6 +101,6 @@ f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式
 -   **Microsoft Azure Mobile Apps** 讓您能夠傳送推播通知、驗證和管理應用程式使用者，以及在雲端中儲存應用程式資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
 -   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳至 \ [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
- 
+ 
 
- 
+ 

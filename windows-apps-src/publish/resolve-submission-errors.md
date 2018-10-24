@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438473"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475209"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -55,9 +55,9 @@ ms.locfileid: "5438473"
 > [!IMPORTANT]
 >  如果您想要使用的名稱無法使用，另一個應用程式可能已經保留該名稱。 如果您的應用程式已發佈該名稱，或如果您認為您有權使用它，[請連絡客戶支援](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  
 
- 
+ 
 
- 
+ 
 
 
 

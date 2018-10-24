@@ -15,20 +15,23 @@ design-contact: ksulliv
 dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d965d14c4f10f904a4d94a18ce83721c49491c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 9650a60dd7e653ee7021603328a3cf6de0c13926
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445476"
+ms.locfileid: "5469714"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
 命令列飛出視窗可讓您與您的 UI 畫布上的項目相關的浮動工具列中顯示命令將使用者提供輕鬆存取常用的工作。
 
-![已展開的文字命令列飛出視窗](images/command-bar-flyout-text-full.png)
+![已展開的文字命令列飛出視窗](images/command-bar-flyout-header.png)
 
-> 相關資訊，請參閱[飛出視窗](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)、[功能表和操作功能表](menus.md)，和[命令列](app-bars.md)。
+> CommandBarFlyout 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+
+> - **平台 Api**: [CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、 [AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、 [AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、 [AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator)
+>- **Windows UI 程式庫 Api**: [CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)
 
 [CommandBar](app-bars.md)，例如 CommandBarFlyout 有**PrimaryCommands**和**SecondaryCommands**的屬性，可用來新增命令。 您可以將命令放在集合，或兩者。 何時及如何顯示主要和次要命令取決於顯示模式。
 
@@ -36,14 +39,6 @@ ms.locfileid: "5445476"
 
 - 在已摺疊模式中，會顯示主要的命令。 如果您的命令列飛出視窗具有主要和次要命令，[查看更多] 按鈕，這會以省略符號 \ [• • • \]，會顯示。 這可讓使用者透過轉換為展開模式，以取得存取次要命令。
 - 在展開模式中，會顯示主要和次要命令。 （如果控制項有次要的項目，它們會顯示類似於 MenuFlyout 控制項的方式）。
-
-| **取得 Windows UI 文件庫** |
-| - |
-| 此控制項是包含在 Windows UI 程式庫，包含新的控制項和 UI 功能適用於 UWP app 的 NuGet 套件。 如需詳細資訊，包括安裝指示，請參閱[Windows UI 文件庫的概觀](https://docs.microsoft.com/uwp/toolkits/winui/)。 |
-
-| **平台 Api** | **Windows UI 程式庫 Api** |
-| - | - |
-| [CommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.commandbarflyout)、 [TextCommandBarFlyout 類別](/uwp/api/windows.ui.xaml.controls.textcommandbarflyout)、 [AppBarButton 類別](/uwp/api/windows.ui.xaml.controls.appbarbutton)、 [AppBarToggleButton 類別](/uwp/api/windows.ui.xaml.controls.appbartogglebutton)、 [AppBarSeparator 類別](/uwp/api/windows.ui.xaml.controls.appbarseparator) | [CommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.commandbarflyout)， [TextCommandBarFlyout 類別](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) |
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -56,6 +51,8 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以�
 ### <a name="commandbarflyout-vs-menuflyout"></a>CommandBarFlyout vs MenuFlyout
 
 若要顯示命令的操作功能表中，您可以使用 CommandBarFlyout 或 MenuFlyout。 我們建議 CommandBarFlyout，因為它提供更多的功能，比 MenuFlyout。 您可以使用 CommandBarFlyout 僅次要命令，以取得的行為和看起來的 MenuFlyout，或使用完整的命令列飛出視窗主要和次要命令。
+
+> 相關資訊，請參閱[飛出視窗](../controls-and-patterns/dialogs-and-flyouts/flyouts.md)、[功能表和操作功能表](menus.md)，和[命令列](app-bars.md)。
 
 ## <a name="examples"></a>範例
 
@@ -85,20 +82,15 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以�
 
 ## <a name="create-a-command-bar-flyout"></a>建立命令列飛出視窗
 
-> **預覽**： CommandBarFlyout 需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
-
 這個範例示範如何建立命令列飛出視窗並主動及被動使用它。 當點選影像時，飛出視窗會顯示在其摺疊模式。 當顯示為操作功能表，飛出視窗會顯示在其展開模式。 在任一情況下，使用者可以展開或摺疊飛出視窗之後開啟它。
 
-:::row:::
-    :::column:::
-        A collapsed command bar flyout<br/>
-        ![Example of a collapsed command bar flyout](images/command-bar-flyout-img-collapsed.png)
-    :::column-end:::
-    :::column:::
-        An expanded command bar flyout<br/>
-        ![Example of an expanded command bar flyout](images/command-bar-flyout-img-expanded.png)
-    :::column-end:::
-:::row-end:::
+![摺疊的命令列飛出視窗的範例](images/command-bar-flyout-img-collapsed.png)
+
+> _摺疊的命令列飛出視窗_
+
+![已擴充的命令列飛出視窗的範例](images/command-bar-flyout-img-expanded.png)
+
+> _已擴充的命令列飛出視窗_
 
 ```xaml
 <Grid>
@@ -108,13 +100,13 @@ TextCommandBarFlyout TextBox、 TextBlock、 RichEditBox、 RichTextBlock，以�
             <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
             <AppBarButton Icon="Share" ToolTipService.ToolTip="Share"/>
             <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Label="Rotate" Icon="Rotate"/>
+                <AppBarButton Label="Select all"/>
                 <AppBarButton Label="Delete" Icon="Delete"/>
             </CommandBarFlyout.SecondaryCommands>
         </CommandBarFlyout>
     </Grid.Resources>
 
-    <Image Source="Assets/licorice.png" Width="300"
+    <Image Source="Assets/image1.png" Width="300"
            Tapped="Image_Tapped" FlyoutBase.AttachedFlyout="{x:Bind ImageCommandsFlyout}"
            ContextFlyout="{x:Bind ImageCommandsFlyout}"/>
 </Grid>
@@ -178,79 +170,118 @@ CommandBarFlyout 控制項有 2 個您可用來新增命令與內容的屬性：
 
 您可以在 AppBarElementContainer 中包裝它們，將其他控制項新增到命令列飛出視窗。 這可讓您新增控制項，例如[DropDownButton]()或[SplitButton]()，或新增像是[StackPanel]()來建立更複雜的 UI 容器。
 
-> [!NOTE]
-> 若要新增到主要或次要命令的集合命令列飛出視窗，元素必須實作[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)介面。 AppBarElementContainer 是實作這個介面，讓您可以將項目新增到命令列，即使它不會實作介面本身的包裝函式。
+若要新增到主要或次要命令的集合命令列飛出視窗，元素必須實作[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)介面。 AppBarElementContainer 是實作這個介面，讓您可以將項目新增到命令列，即使它不會實作介面本身的包裝函式。
 
 在這裡，AppBarElementContainer 用來將額外的項目新增到命令列飛出視窗。 SplitButton 會新增到主要命令來允許選取的色彩。 StackPanel 會新增到允許更複雜的版面配置的縮放控制項的次要命令。
+
+> [!TIP]
+> 根據預設，應用程式畫布的設計元素看起來可能不正確命令列中。 當您新增使用 AppBarElementContainer 為項目時，有一些您應該讓項目符合其他的命令列元素採取的步驟：
+>
+> - 覆寫預設筆刷使用[輕量型樣式設定](/design/controls-and-patterns/xaml-styles#lightweight-styling)，讓元素的背景及符合應用程式列按鈕的框線。
+> - 調整大小和位置的項目。
+> - 包裝 Viewbox 寬度與高度 16px 的圖示。
 
 > [!NOTE]
 > 此範例顯示只命令列飛出視窗的 UI，不會實作的任何指令，會顯示。 如需實作命令的詳細資訊，請參閱[按鈕](buttons.md)和[命令設計基本知識](../basics/commanding-basics.md)。
 
-:::row:::
-    :::column:::
-        A collapsed command bar flyout with an open SplitButton<br/>
-        ![A command bar flyout with a split button](images/command-bar-flyout-split-button.png)
-    :::column-end:::
-    :::column:::
-        An expanded command bar flyout with custom zoom UI in the menu<br/>
-        ![A command bar flyout with complex UI](images/command-bar-flyout-complex-ui.png)
-    :::column-end:::
-:::row-end:::
+![命令列飛出視窗與分割按鈕](images/command-bar-flyout-split-button.png)
+
+> _開啟的 SplitButton 包含已摺疊的命令列飛出視窗_
+
+![命令列飛出視窗與複雜的 UI](images/command-bar-flyout-custom-ui.png)
+
+> _包含在功能表中的自訂縮放 UI 擴充的命令列飛出視窗_
+
 
 ```xaml
 <CommandBarFlyout>
     <AppBarButton Icon="Cut" ToolTipService.ToolTip="Cut"/>
     <AppBarButton Icon="Copy" ToolTipService.ToolTip="Copy"/>
     <AppBarButton Icon="Paste" ToolTipService.ToolTip="Paste"/>
-    <!-- Color controls -->
+    <!-- Alignment controls -->
     <AppBarElementContainer>
-        <SplitButton Height="Auto" Margin="0,4,0,0"
-                     ToolTipService.ToolTip="Colors"
-                     Background="{ThemeResource AppBarItemBackgroundThemeBrush}">
+        <SplitButton ToolTipService.ToolTip="Alignment">
+            <SplitButton.Resources>
+                <!-- Override default brushes to make the SplitButton 
+                     match other command bar elements. -->
+                <Style TargetType="SplitButton">
+                    <Setter Property="Height" Value="38"/>
+                </Style>
+                <SolidColorBrush x:Key="SplitButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="SplitButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrush" Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="SplitButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+            </SplitButton.Resources>
             <SplitButton.Content>
-                <Rectangle Width="20" Height="20">
-                    <Rectangle.Fill>
-                        <SolidColorBrush Color="Red"/>
-                    </Rectangle.Fill>
-                </Rectangle>
+                <Viewbox Width="16" Height="16" Margin="0,2,0,0">
+                    <SymbolIcon Symbol="AlignLeft"/>
+                </Viewbox>
             </SplitButton.Content>
             <SplitButton.Flyout>
                 <MenuFlyout>
-                    <MenuFlyoutItem Text="Red"/>
-                    <MenuFlyoutItem Text="Yellow"/>
-                    <MenuFlyoutItem Text="Green"/>
-                    <MenuFlyoutItem Text="Blue"/>
+                    <MenuFlyoutItem Icon="AlignLeft" Text="Align left"/>
+                    <MenuFlyoutItem Icon="AlignCenter" Text="Center"/>
+                    <MenuFlyoutItem Icon="AlignRight" Text="Align right"/>
                 </MenuFlyout>
             </SplitButton.Flyout>
         </SplitButton>
     </AppBarElementContainer>
-    <!-- end Color controls -->
+    <!-- end Alignment controls -->
     <CommandBarFlyout.SecondaryCommands>
         <!-- Zoom controls -->
         <AppBarElementContainer>
             <AppBarElementContainer.Resources>
-                <Style TargetType="Button">
-                    <Setter Property="Background"
-                            Value="{ThemeResource AppBarItemBackgroundThemeBrush}"/>
-                </Style>
+                <!-- Override default brushes to make the Buttons 
+                     match other command bar elements. -->
+                <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+                <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
                 <Style TargetType="TextBlock">
                     <Setter Property="VerticalAlignment" Value="Center"/>
                 </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Height" Value="40"/>
+                    <Setter Property="Width" Value="40"/>
+                </Style>
             </AppBarElementContainer.Resources>
-            <Grid Margin="12,0">
+            <Grid Margin="12,-4">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="86"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="76"/>
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Zoom"/>
-                <StackPanel Orientation="Horizontal" Grid.Column="1">
-                    <Button>
-                        <SymbolIcon Symbol="Remove"/>
+                <Viewbox Width="16" Height="16" Margin="0,2,0,0">
+                    <SymbolIcon Symbol="Zoom"/>
+                </Viewbox>
+                <TextBlock Text="Zoom" Margin="10,0,0,0" Grid.Column="1"/>
+                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                    <Button ToolTipService.ToolTip="Zoom out">
+                        <Viewbox Width="16" Height="16">
+                            <SymbolIcon Symbol="ZoomOut"/>
+                        </Viewbox>
                     </Button>
                     <TextBlock Text="50%" Width="40"
                                HorizontalTextAlignment="Center"/>
-                    <Button>
-                        <SymbolIcon Symbol="Add"/>
+                    <Button ToolTipService.ToolTip="Zoom in">
+                        <Viewbox Width="16" Height="16">
+                            <SymbolIcon Symbol="ZoomIn"/>
+                        </Viewbox>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -259,7 +290,7 @@ CommandBarFlyout 控制項有 2 個您可用來新增命令與內容的屬性：
         <AppBarSeparator/>
         <AppBarButton Label="Undo" Icon="Undo"/>
         <AppBarButton Label="Redo" Icon="Redo"/>
-        <AppBarButton Label="Select all"/>
+        <AppBarButton Label="Select all" Icon="SelectAll"/>
     </CommandBarFlyout.SecondaryCommands>
 </CommandBarFlyout>
 ```
@@ -270,58 +301,87 @@ CommandBarFlyout 控制項有 2 個您可用來新增命令與內容的屬性：
 
 ![命令列飛出視窗僅次要命令](images/command-bar-flyout-context-menu.png)
 
+> _命令列飛出視窗為操作功能表_
+
 ```xaml
 <Grid>
     <Grid.Resources>
         <!-- A command bar flyout with only secondary commands. -->
         <CommandBarFlyout x:Name="ContextMenu">
             <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Label="Pin" Icon="Pin"/>
-                <AppBarButton Label="Unpin" Icon="UnPin"/>
                 <AppBarButton Label="Copy" Icon="Copy"/>
+                <AppBarButton Label="Save" Icon="Save"/>
+                <AppBarButton Label="Print" Icon="Print"/>
                 <AppBarSeparator />
                 <AppBarButton Label="Properties"/>
             </CommandBarFlyout.SecondaryCommands>
         </CommandBarFlyout>
     </Grid.Resources>
 
-    <Image Source="Assets/licorice.png" Width="300"
+    <Image Source="Assets/image1.png" Width="300"
            ContextFlyout="{x:Bind ContextMenu}"/>
 </Grid>
 ```
 
 您也可以使用 DropDownButton 使用 CommandBarFlyout 建立標準的功能表。
 
-![命令列飛出視窗與做為一種下拉式按鈕功能表](images/command-bar-flyout-button-menu.png)
+![命令列飛出視窗與做為一種下拉式按鈕功能表](images/command-bar-flyout-dropdown.png)
+
+> _一種下拉式按鈕功能表中的命令列飛出視窗_
 
 ```xaml
-<DropDownButton Content="Mail">
-    <DropDownButton.Flyout>
-        <CommandBarFlyout Placement="BottomEdgeAlignedLeft">
-            <CommandBarFlyout.SecondaryCommands>
-                <AppBarButton Icon="MailForward" Label="Forward"/>
-                <AppBarButton Icon="MailReply" Label="Reply"/>
-                <AppBarButton Icon="MailReplyAll" Label="Reply all"/>
-            </CommandBarFlyout.SecondaryCommands>
-        </CommandBarFlyout>
-    </DropDownButton.Flyout>
-</DropDownButton>
+<CommandBarFlyout>
+    <AppBarButton Icon="Placeholder"/>
+    <AppBarElementContainer>
+        <DropDownButton Content="Mail">
+            <DropDownButton.Resources>
+                <!-- Override default brushes to make the DropDownButton 
+                     match other command bar elements. -->
+                <Style TargetType="DropDownButton">
+                    <Setter Property="Height" Value="38"/>
+                </Style>
+                <SolidColorBrush x:Key="ButtonBackground"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPressed"
+                                 Color="{ThemeResource SystemListMediumColor}"/>
+                <SolidColorBrush x:Key="ButtonBackgroundPointerOver"
+                                 Color="{ThemeResource SystemListLowColor}"/>
+
+                <SolidColorBrush x:Key="ButtonBorderBrush"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushPointerOver"
+                                 Color="Transparent"/>
+                <SolidColorBrush x:Key="ButtonBorderBrushChecked"
+                                 Color="Transparent"/>
+            </DropDownButton.Resources>
+            <DropDownButton.Flyout>
+                <CommandBarFlyout Placement="BottomEdgeAlignedLeft">
+                    <CommandBarFlyout.SecondaryCommands>
+                        <AppBarButton Icon="MailReply" Label="Reply"/>
+                        <AppBarButton Icon="MailReplyAll" Label="Reply all"/>
+                        <AppBarButton Icon="MailForward" Label="Forward"/>
+                    </CommandBarFlyout.SecondaryCommands>
+                </CommandBarFlyout>
+            </DropDownButton.Flyout>
+        </DropDownButton>
+    </AppBarElementContainer>
+    <AppBarButton Icon="Placeholder"/>
+    <AppBarButton Icon="Placeholder"/>
+</CommandBarFlyout>
 ```
 
 ## <a name="command-bar-flyouts-for-text-controls"></a>文字控制項的命令列飛出視窗
 
 [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout)是特殊的命令列飛出視窗，其中包含編輯文字的命令。 每個文字控制項可顯示 TextCommandBarFlyout 自動為操作功能表 （按一下滑鼠右鍵），或選取文字時。 文字命令列飛出視窗可隨文字選取項目，只顯示相關的命令。
 
-:::row:::
-    :::column:::
-        A text command bar flyout on text selection<br/>
-        ![A collapsed text command bar flyout](images/command-bar-flyout-text-selection.png)
-    :::column-end:::
-    :::column:::
-        An expanded text command bar flyout<br/>
-        ![An expanded text command bar flyout](images/command-bar-flyout-text-full.png)
-    :::column-end:::
-:::row-end:::
+![摺疊的文字命令列飛出視窗](images/command-bar-flyout-text-selection.png)
+
+> _文字命令列飛出視窗所選取的文字_
+
+![已展開的文字命令列飛出視窗](images/command-bar-flyout-text-full.png)
+
+> _已展開的文字命令列飛出視窗_
+
 
 ### <a name="available-commands"></a>可用的命令
 

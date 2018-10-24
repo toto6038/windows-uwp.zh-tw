@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f99396b117efcf7c3bed3cb64f24b519734cc858
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441196"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471567"
 ---
 # <a name="trademark-and-copyright-protection"></a>商標與著作權保護
 
@@ -67,9 +67,9 @@ Microsoft 強烈建議您不要這樣做。 但是，如果有明確的商務需
 
 請仔細閱讀 Microsoft 的通知，並依照指示進行。 Microsoft 的通知可能會包含您能夠遵循的特定步驟來通知我們，您已完成問題的更正、您不同意控訴者的意見，和/或您想要重新送出 app 到「市集」。
 
- 
+ 
 
- 
+ 
 
 
 

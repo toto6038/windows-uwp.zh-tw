@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 強式弱式、 參考
 ms.localizationpriority: medium
 ms.openlocfilehash: 414a73c8df31e4547b8bd154945a8e9960529320
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445585"
+ms.locfileid: "5468781"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>強式和弱式參考，在 C + + /winrt
 
@@ -80,7 +80,7 @@ int main()
 
     auto myclass_instance{ winrt::make_self<MyClass>() };
     auto async{ myclass_instance->RetrieveValueAsync() };
-    myclass_instance = nullptr; // Simulate the class instance going out of scope.
+    myclass_instance = nullptr; // Simulate the class instance going out of scope.
 
     winrt::hstring result{ async.get() }; // Behavior is now undefined; crashing is likely.
     std::wcout << result.c_str() << std::endl;

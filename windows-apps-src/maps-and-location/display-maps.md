@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
 ms.openlocfilehash: ba03d430031ad2bdad6959e2c59500dc6f2d2666
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434460"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476557"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>用 2D、3D 和 Streetside 檢視顯示地圖
 
@@ -153,7 +153,7 @@ pageGrid.Children.Add(MapControl2);
 > [!NOTE]
 > 由於字串無法轉換成[**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675)，因此您無法在 XAML 標記中指定[**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005)屬性的值，除非您使用資料繫結。 (這項限制也適用於 [**MapControl.Location**](https://msdn.microsoft.com/library/windows/apps/dn653264) 附加屬性。)
 
- 
+ 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
@@ -327,9 +327,9 @@ Streetside 檢視是位置的街景透視，它會出現在地圖控制項上方
 
 本範例說明如何顯示類似先前影像的 Streetside 檢視。
 
-**注意**  如果地圖控制項的比例太小，則不會出現概觀地圖。
+**注意：** 如果地圖控制項的比例太小，不會出現概觀地圖。
 
- 
+ 
 
 ```csharp
 private async void showStreetsideView()

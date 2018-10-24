@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
 ms.openlocfilehash: 547a582064262d18467df4868df17a08e73b279c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436846"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477708"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
@@ -163,7 +163,7 @@ ms.locfileid: "5436846"
 ### <a name="c-directx-interop"></a>C++ (DirectX 互通性)
 
 此範例假設您已在 Visual Studio 中建立 C++ **DirectX 和 XAML 應用程式 (通用 Windows)** 專案，並且是針對特定的 CPU 架構。
- 
+ 
 1. 在 Visual Studio 中，開啟您的專案。
 
 3. 在您的專案中新增 Microsoft Advertising SDK 的參考：

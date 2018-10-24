@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 842d26a2bb257dd182813832c5e6480237a9f220
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431212"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478450"
 ---
 # <a name="export-restrictions-on-cryptography"></a>密碼編譯的出口限制
 
@@ -25,9 +25,9 @@ ms.locfileid: "5431212"
 
 美國商務部的工業安全局規定使用特定加密類型的技術出口事項。 Microsoft Store 列出的所有應用程式必須遵守這些法令規定，因為這些應用程式檔案可能會儲存在美國。 即使 app 開發人員從其他國家/地區上傳並在美國以外的地方發行的 app 也必須遵守這些法規。 因此，將 app 送出到 Microsoft Store 時，所有 app 開發人員必須確定他們的 app 中沒有包含這些法規管制使用的任何技術。
 
-> **注意**  此處的資訊提供了一些指引，但身為在 Microsoft Store 中發佈應用程式的應用程式開發人員，您必須負責確保您的應用程式遵守所有適用法規。
+> **注意：** 此處的資訊提供了一些指引，但它是應用程式開發人員若要確保您的應用程式遵守所有適用的法律與法規在 Microsoft Store 中發佈應用程式，您必須負責。
 
- 
+ 
 
 如需美國商務部與工業安全局的詳細資訊，請參閱[關於工業安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "5431212"
 
 首先，請判斷您的 app 是否是使用受出口管制條例規範的密碼編譯類型。 問題包含以下清單中顯示的範例；但請記住，這份清單未詳列每種可能的密碼編譯應用方式。
 
-> **重要**  除了考量您為應用程式所撰寫的程式碼，還需考量該應用程式所包含或連結至的所有軟體程式庫、公用程式以及作業系統元件。
+> **重要**，請考慮不只適用於您的應用程式，但也所有軟體程式庫、 公用程式以及作業系統元件，您的應用程式包含或連結至您所撰寫的程式碼。
 
 -   數位簽章的任何用途，例如驗證或完整性檢查
 -   加密您的應用程式使用或存取的任何資料或檔案

@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 22727f8d09b3d68970301677cdf632a0981c616a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 00baa088f0cb01068f1d1d78d101e6cd294c77f7
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433041"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476412"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -127,6 +127,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 音效 | ms-settings:easeofaccess-audio |
 | 隱藏式輔助字幕 | ms-settings:easeofaccess-closedcaptioning |
+| 色彩篩選器 | ms-設定： easeofaccess-colorfilter |
 | 顯示器 | ms-settings:easeofaccess-display |
 | 眼球控制 | ms-settings:easeofaccess-eyecontrol |
 | 字型 | ms-settings:fonts |

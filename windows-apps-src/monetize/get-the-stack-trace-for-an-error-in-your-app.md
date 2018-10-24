@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c39d157bc2fcab6a67bd273f5d00eedd80be54
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430859"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470429"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 
@@ -56,7 +56,7 @@ ms.locfileid: "5430859"
 | applicationId | 字串 | 您想要取得堆疊追蹤之 App 的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | cabId | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |
 
- 
+ 
 ### <a name="request-example"></a>要求範例
 
 下列範例示範如何使用此方法取得堆疊追蹤。 將 *applicationId* 值取代為您 App 的 Store 識別碼。

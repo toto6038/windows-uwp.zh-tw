@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436347"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472888"
 ---
 # <a name="add-controls"></a>新增控制項
 
 
 \[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-一個好的通用 Windows 平台 (UWP) 遊戲可以支援多種介面。 潛在玩家使用的也許是沒有實體按鈕的 Windows 10 平板電腦，或是連接 Xbox 控制器的電腦，或者是專為遊戲設計的最新傳統型電腦 (安裝有高效能滑鼠和遊戲鍵盤)。 在我們的遊戲中，控制項是在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 類別中實作。 這個類別彙總三種輸入 (滑鼠和鍵盤、觸控板及遊戲台) 到單一控制器。 最後的結果是第一人稱射擊遊戲使用可搭配多個裝置運作的一般標準移動視角控制項。
+一個好的通用 Windows 平台 (UWP) 遊戲可以支援多種介面。 潛在玩家可能會有 windows 10 上沒有實體按鈕連接，Xbox 控制器的電腦與平板電腦或最新傳統型遊戲也許有高效能滑鼠和遊戲鍵盤。 在我們的遊戲中，控制項是在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 類別中實作。 這個類別彙總三種輸入 (滑鼠和鍵盤、觸控板及遊戲台) 到單一控制器。 最後的結果是第一人稱射擊遊戲使用可搭配多個裝置運作的一般標準移動視角控制項。
 
 > [!NOTE]
 > 如需有關控制項的詳細資訊，請參閱[適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md)和[適用於遊戲的觸控控制項](tutorial--adding-touch-controls-to-your-directx-game.md)。
@@ -815,11 +815,11 @@ void MoveLookController::Update()
 
 現在，我們新增了我們的控制項，還有一項功能我們需要新增，以建立身歷其境的遊戲：音效！
 音樂和音效對所有遊戲都非常重要，讓我們接著討論[加入聲音](tutorial--adding-sound.md)。
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

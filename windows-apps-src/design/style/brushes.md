@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0473ee984461bf46be4ebf866a564f0d51e0cfc5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440915"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471623"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用筆刷繪製背景、前景和輪廓
 
@@ -41,7 +41,7 @@ ms.locfileid: "5440915"
 
 ### <a name="predefined-color-names"></a>預先定義的色彩名稱
 
-您可以使用預先定義的色彩名稱，像是 [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) 或 [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx)。 共有 256 個可用的命名色彩。 XAML 剖析器會將色彩名稱轉換成具有正確色板的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 結構。 這 256 個命名色彩是以階層式樣式表層級 3 (CSS3) 規格中的 *X11* 色彩名稱為基礎，因此如果您之前有 Web 開發或設計的經驗，您可能已經熟悉這個命名色彩的清單。
+您可以使用預先定義的色彩名稱，像是 [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) 或 [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx)。 共有 256 個可用的命名色彩。 XAML 剖析器會將色彩名稱轉換成具有正確色板的 [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 結構。 256 個命名的色彩為基礎的階層式樣式表層，Level3 *X11*色彩名稱 (CSS3) 規格，因此您可能已經熟悉這個命名色彩的清單如果您有之前有 web 開發或設計的經驗。
 
 下列範例會將 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) 屬性設成預先定義的色彩 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx)。
 
@@ -197,9 +197,9 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 -   對於 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)，如果您最近已重設 [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) 屬性，或者如果程式碼也同時變更 [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) 的內容，則可能需要呼叫 [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx)。
 
 如需程式碼範例，請參閱 [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703)、 [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) 和 [**XamlCompositionBrushBase**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase) 的參考頁面。
- 
+ 
 
- 
+ 
 
 
 

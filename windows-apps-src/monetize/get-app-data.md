@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
 ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442768"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474777"
 ---
 # <a name="get-app-data"></a>取得 App 資料
 
@@ -188,7 +188,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 |-----------------|---------|------------------------------|
 | id            | 字串  | 提交的識別碼。    |
 | resourceLocation   | 字串  | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。            |
- 
+ 
 <span/>
 
 ## <a name="related-topics"></a>相關主題

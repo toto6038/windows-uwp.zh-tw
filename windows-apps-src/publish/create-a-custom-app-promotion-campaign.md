@@ -11,20 +11,20 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 自訂, 應用程式, 促銷, 行銷活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 13ee8d7482a2ce0716d4e133af329cd0ea42c184
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435263"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478781"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>建立自訂應用程式促銷活動
 
 除了為您的 app 建立將在 Windows app 中執行的[廣告活動](create-an-ad-campaign-for-your-app.md)之外，您也可以使用其他管道促銷您的 app。 例如，您可以使用第三方 app 行銷提供者促銷您的 app，或可以在社交媒體網站上張貼 app 的連結。 這些活動稱為*自訂行銷活動*。
 
-如果為您的應用程式執行自訂行銷活動，可以追蹤每個行銷活動相關的效能，方法是為每個自訂行銷活動建立不同的 URL，其中每個 URL 包含不同的*行銷活動識別碼*。 當執行 Windows 10 的使用者按一下包含行銷活動識別碼的 URL 時，Microsoft 會將按一下與對應的自訂行銷活動產生關聯並讓您使用此資料。
+如果為您的應用程式執行自訂行銷活動，可以追蹤每個行銷活動相關的效能，方法是為每個自訂行銷活動建立不同的 URL，其中每個 URL 包含不同的*行銷活動識別碼*。 當執行 windows 10 客戶按一下包含行銷活動識別碼的 URL 時，Microsoft 會按一下與對應的自訂行銷活動產生關聯，並讓您使用此資料。
 
 > [!IMPORTANT]
-> 這項資料只能追蹤 Windows 10 客戶。 使用其他作業系統的客戶仍可以透過連結連到您的 app 清單，但不包含有關這些客戶的活動相關資料。
+> 這項資料只能追蹤的客戶在 windows 10 上。 使用其他作業系統的客戶仍可以透過連結連到您的 app 清單，但不包含有關這些客戶的活動相關資料。
 
 與自訂行銷活動關聯的資料類型主要有兩個：應用程式 Store 清單的 *「頁面檢視次數」*，以及 *「轉換」*。 「轉換」即是指客戶從包含自訂行銷活動識別碼的 URL，檢視您應用程式的市集清單頁面，並且取得您的應用程式。 如需轉換的詳細資訊，請參閱本主題中的[了解應用程式下載數如何符合轉換的資格](#understanding-how-acquisitions-qualify-as-conversions)。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: d354f0babec3ec2346c6e76fcae8666f40f3f6be
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443048"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473436"
 ---
 # <a name="web-authentication-broker"></a>Web 驗證代理人
 
@@ -27,7 +27,7 @@ ms.locfileid: "5443048"
 >[!NOTE]
 >如需完整的有效程式碼範例，請複製 [GitHub 上的 WebAuthenticationBroker 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
 
- 
+ 
 
 ## <a name="register-your-app-with-your-online-provider"></a>向線上提供者註冊 app
 
@@ -91,7 +91,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除了 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 以外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空間還包含 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 請不要呼叫此方法。 它是針對以 Windows Phone 8.1 為目標的應用程式設計的，從 Windows 10 開始即過時。
+>除了 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 以外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空間還包含 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 請不要呼叫此方法。 它設計來只以 Windows Phone 8.1 為目標的應用程式，並開始使用 windows 10 已過時。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用單一登入 (SSO) 連線。
 

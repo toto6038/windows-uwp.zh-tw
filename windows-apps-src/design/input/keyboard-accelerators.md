@@ -15,11 +15,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b4693c4ed6c02db9e4fe3f5f7fee6fe569c0e79
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435985"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468791"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -39,7 +39,7 @@ ms.locfileid: "5435985"
 > [!NOTE]
 > UWP 平台控制項會有內建鍵盤快速鍵。 例如，ListView 支援用於選取清單中所有項目的 Ctrl+A，而 RichEditBox 支援在文字方塊中插入 Tab 的 Ctrl+Tab。 這些內建鍵盤快速鍵稱為**控制項快速鍵**，只有在焦點位於元素或其中一個子系時才會執行。 使用此處討論之鍵盤快速鍵 API 所定義的鍵盤快速鍵稱為**應用程式快速鍵**。
 
-鍵盤快速鍵並非所有的動作都適用，但通常與功能表中公開的命令有關聯 (而且應該以功能表項目內容來指定)。 快速鍵也可以和沒有對等功能表項目的動作建立關聯。 不過，使用者依賴應用程式的功能表來探索並了解可用的命令集，因此必須盡可能嘗試讓探索快速鍵的方式變得簡單 (使用標籤或已建立的模式會很有幫助)。
+鍵盤快速鍵並非所有的動作都適用，但通常與功能表中公開的命令有關聯 (而且應該以功能表項目內容來指定)。快速鍵也可以和沒有對等功能表項目的動作建立關聯。 不過，使用者依賴應用程式的功能表來探索並了解可用的命令集，因此必須盡可能嘗試讓探索快速鍵的方式變得簡單 (使用標籤或已建立的模式會很有幫助)。
 
 ![功能表項目標籤中描述的鍵盤快速鍵](images/accelerators/accelerators_menuitemlabel.png)  
 *功能表項目標籤中描述的鍵盤快速鍵*
@@ -48,11 +48,11 @@ ms.locfileid: "5435985"
 
 我們建議您在 UI 任何適當的地方指定鍵盤快速鍵，並在所有自訂控制項中支援快速鍵。
 
-- 鍵盤快速鍵讓您的應用程式更容易存取，適用於運動功能障礙的使用者，包括一次只能按一個按鍵或使用滑鼠有困難的使用者。**
+- 鍵盤快速鍵讓您的應用程式更多 accessiblefor 使用者運動功能障礙，包括可以按一次只有一個按鍵或使用滑鼠 * 有困難的使用者
 
   設計良好的鍵盤 UI 是軟體協助工具的一個重要層面。 它讓視障使用者或受到某種程度運動神經傷害的使用者能夠瀏覽應用程式並與應用程式的功能互動。 這類使用者有可能無法使用滑鼠，因而必須仰賴像鍵盤增強功能工具、螢幕小鍵盤、螢幕放大機、螢幕助讀程式以及語音輸入公用程式這類協助技術。 對於這些使用者，完整命令涵蓋範圍很重要。
 
-- 鍵盤快速鍵讓您的應用程式更有用，適用於偏好使用鍵盤進行互動的進階使用者。
+- 鍵盤快速鍵讓您的應用程式更多 usablefor 電源使用者偏好使用鍵盤進行互動。
 
   經驗豐富的使用者通常極度偏好使用鍵盤，因為鍵盤式命令的輸入更快速，而且不需要從鍵盤移開其雙手。 對於這些使用者而言，效率與一致性非常重要；完整性只對最常用的命令很重要。
 
@@ -206,7 +206,7 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控�
 ``` xaml 
 <Button Content="Save" Click="OnSave">
   <Button.KeyboardAccelerators>
-    <KeyboardAccelerator Key="S" Modifiers="Control" />
+    <KeyboardAccelerator Key="S" Modifiers="Control" />
   </Button.KeyboardAccelerators>
 </Button>
 ```
@@ -215,7 +215,7 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控�
 1.  叫用 (Button)
 2.  切換 (Checkbox)
 3.  選取 (ListView)
-4.  展開/摺疊 (ComboBox) 
+4.  展開/摺疊 (ComboBox) 
 
 如果沒有識別出相符項目，則快速鍵無效，系統會提供偵錯訊息 (「找不到此元件的自動化模式。 請在 Invoked 事件中實作所有想要的行為。 將事件處理常式中的 Handled 設定為 true 將會隱藏此訊息。」)
 
@@ -230,10 +230,10 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控�
 ``` xaml
 <ListView x:Name="MyListView">
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
-    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
+    <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
+    <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>   
 ```
 
 ``` csharp
@@ -261,7 +261,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A" 
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -269,10 +269,10 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <TextBox>
     <TextBox.KeyboardAccelerators>
       <KeyboardAccelerator 
-        Key="A" 
-        Modifiers="Control" 
-        Invoked="CustomTextSelecAllInvoked" 
-        IsEnabled="False" />
+        Key="A" 
+        Modifiers="Control" 
+        Invoked="CustomTextSelecAllInvoked" 
+        IsEnabled="False" />
     </TextBox.KeyboardAccelerators>
   </TextBox>
 
@@ -292,18 +292,18 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
   <ListView.KeyboardAccelerators>
 
     <KeyboardAccelerator 
-      Key="A" 
-      Modifiers="Control,Shift" 
-      Invoked="CustomSelectAllInvoked" />
+      Key="A" 
+      Modifiers="Control,Shift" 
+      Invoked="CustomSelectAllInvoked" />
       
     <KeyboardAccelerator 
-      Key="F5" 
-      Modifiers="None" 
-      Invoked="RefreshInvoked" />
+      Key="F5" 
+      Modifiers="None" 
+      Invoked="RefreshInvoked" />
 
   </ListView.KeyboardAccelerators>
 
-</ListView>   
+</ListView>   
 ```
 
 > [!NOTE] 
@@ -342,14 +342,14 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 | **其他動作** | |
 | ------------- | ----------------------------------- |
-| 新增我的最愛 | Ctrl + D | 
-| 重新整理 | F5 或 Ctrl + R | 
-| 放大 | Ctrl + + | 
-| 縮小 | Ctrl + - | 
-| 縮放至預設檢視大小 | Ctrl + 0 | 
-| 儲存 | Ctrl + S | 
-| 關閉 | Ctrl + W | 
-| 列印 | Ctrl + P | 
+| 新增我的最愛 | Ctrl + D | 
+| 重新整理 | F5 或 Ctrl + R | 
+| 放大 | Ctrl + + | 
+| 縮小 | Ctrl + - | 
+| 縮放至預設檢視大小 | Ctrl + 0 | 
+| 儲存 | Ctrl + S | 
+| 關閉 | Ctrl + W | 
+| 列印 | Ctrl + P | 
 
 請注意，有些組合不適用於 Windows 的當地語系化版本。 例如，在 Windows 的西班牙文版本中，設定粗體要使用 Ctrl+N 而不是 Ctrl+B。 如果應用程式已當地語系化，建議您提供當地語系化的鍵盤快速鍵。
 
@@ -626,5 +626,5 @@ public class MyListView : ListView
 * [XAML 控制項庫 (亦即 XamlUiBasics)](https://github.com/Microsoft/Windows-universal-samples/tree/c2aeaa588d9b134466bbd2cc387c8ff4018f151e/Samples/XamlUIBasics)
 
 
- 
+ 
 

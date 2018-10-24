@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433497"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478074"
 ---
 # <a name="control-templates"></a>控制項範本
 
@@ -112,7 +112,7 @@ ms.locfileid: "5433497"
 | **false**           | `Unchecked`        | 空白。                  |
 | **null**            | `Indeterminate`    | 包含一個圓形。      |
 
- 
+ 
 
 您可以使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br208817) 中元素外觀的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br243053) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br209391)。 當控制項進入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上設定)。
 
@@ -188,7 +188,7 @@ ms.locfileid: "5433497"
 | 從 `Checked` 到 `Indeterminate`。   | 會套用 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 1。 會移除 `Checked` **VisualState** 的 **Setter** 值，所以 `CheckGlyph` 的 [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) 為 0。 | 顯示圓形。                            |
 | 從 `Indeterminate` 到 `Unchecked`。 | 會移除 `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br208817) 的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br209007) 值，所以 `IndeterminateGlyph` 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 為 0。                                                                                                                                           | 沒有顯示任何東西。                             |
 
- 
+ 
 如需有關如何建立控制項視覺狀態的詳細資訊，特別是如何使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 類別和動畫類型，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)。
 
 ## <a name="use-tools-to-work-with-themes-easily"></a>使用工具輕鬆處理主題
@@ -211,11 +211,11 @@ ms.locfileid: "5433497"
 
 針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的應用程式可以使用適用於該佈景主題的資源集，所以應用程式 UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
 
- ## <a name="get-the-sample-code"></a>取得範例程式碼
+ # # 取得的範例程式碼
 * [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [自訂文字編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
 
- 
+ 
 
 
 

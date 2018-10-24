@@ -1,6 +1,6 @@
 ---
 title: 安全開發 Windows app 的簡介
-description: 這篇簡介文章將協助應用程式設計人員和開發人員，能更了解各種能快速建立安全的通用 Windows 平台 (UWP) 應用程式的 Windows 10 平台功能。
+description: 這篇簡介文章將協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: msatranjr
 ms.author: misatran
@@ -11,18 +11,18 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e48d0b21d588ef7b4913e16b75f9d21c5d5209f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440360"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470416"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows 應用程式的簡介
 
 
 
 
-這篇簡介文章將協助應用程式設計人員和開發人員，能更了解各種能快速建立安全的通用 Windows 平台 (UWP) 應用程式的 Windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
+這篇簡介文章將協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
 
 ## <a name="1-introduction"></a>1 簡介
 
@@ -290,7 +290,7 @@ Azure API Management 也能減少針對某個服務的 API 呼叫數量 (稱為�
 
 Windows 過去從來沒有為應用程式下過定義。 它之前最常被稱為可執行檔 (.exe)，且從未包含安裝、儲存體狀態、執行長度、版本設定、作業系統整合，或是 app 之間的通訊。 通用 Windows 平台模型為應用程式模型下了定義，其定義涵蓋安裝、執行階段環境、資源管理、更新、資料模型，以及解除安裝。
 
-Windows 10 應用程式在容器中執行，這代表它們的預設權限有限 (使用者可以要求及授與額外的權限)。 舉例來說，如果應用程式要存取系統中的檔案，則必須使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間的檔案選擇器 ，來讓使用者挑選檔案 (而非啟用直接存取檔案的權限)。 我們再舉一個範例，如果應用程式要存取使用者的位置資料，它必須讓裝置的定位功能需求受到宣告，讓使用者在下載應用程式時，提示使用者該應用程式需要存取使用者的位置資訊。 除此之外，應用程式第一次要存取使用者的位置時，系統會顯示額外的同意提示，要求存取該資料的權限。
+Windows 10 應用程式執行中的容器，這表示，他們的權限有限 （額外的權限可以要求並授與使用者） 的預設值。 舉例來說，如果應用程式要存取系統中的檔案，則必須使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間的檔案選擇器 ，來讓使用者挑選檔案 (而非啟用直接存取檔案的權限)。 我們再舉一個範例，如果應用程式要存取使用者的位置資料，它必須讓裝置的定位功能需求受到宣告，讓使用者在下載應用程式時，提示使用者該應用程式需要存取使用者的位置資訊。 除此之外，應用程式第一次要存取使用者的位置時，系統會顯示額外的同意提示，要求存取該資料的權限。
 
 請注意，這個應用程式模型就像是應用程式的「監獄」，代表應用程式無法接觸外界，但它並非無法從外界接觸的「城堡」(擁有系統管理員權限的應用程式當然仍舊可以向內接觸)。 Windows 10 中的 Device Guard，可讓組織/IT 人員指定可執行的 (Win32) app，能進一步協助限制這項存取權。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 搶鮮版 (Beta) 測試, 限量發行, 搶鮮版, beta, 測試, 測試人員
 ms.localizationpriority: medium
 ms.openlocfilehash: e453be22d752ed78263cb34011cdf9a333057e03
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440384"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473800"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
@@ -79,4 +79,4 @@ Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式
 > [!IMPORTANT]
 > 這個選項不適用於新提交。 如果您之前已針對以 Windows Phone 8.1 或更早版本為目標的應用程式選取此選項，您將能繼續對該應用程式使用此選項。 您可以透過建立新的提交來變更測試人員清單 (最多 10,000 人)。 
 
-使用此選項，使用您所指定電子郵件地址的人員可以利用應用程式清單的直接連結來下載您的應用程式 (僅限執行 Windows Phone 8.1 或更早版本的裝置上)。 即使其他客戶擁有連結，仍無法下載應用程式，他們也無法透過搜尋或瀏覽在 Microsoft Store 中尋找應用程式。 為了讓測試人員能夠下載應用程式，您需要提供連結 ([應用程式身分識別頁面](view-app-identity-details.md)上的 **URL**)，他們也必須使用與您提供之電子郵件地址相關聯的 Microsoft 帳戶登入。 您也可以透過[產生促銷碼](generate-promotional-codes.md)來將應用程式提供給使用 Windows 10 裝置的測試人員，擁有應用程式促銷碼的任何人都可在 Windows 10 裝置上下載應用程式，您不需要在此處輸入他們的電子郵件。
+使用此選項，使用您所指定電子郵件地址的人員可以利用應用程式清單的直接連結來下載您的應用程式 (僅限執行 Windows Phone 8.1 或更早版本的裝置上)。 即使其他客戶擁有連結，仍無法下載應用程式，他們也無法透過搜尋或瀏覽在 Microsoft Store 中尋找應用程式。 為了讓測試人員能夠下載應用程式，您需要提供連結 ([應用程式身分識別頁面](view-app-identity-details.md)上的 **URL**)，他們也必須使用與您提供之電子郵件地址相關聯的 Microsoft 帳戶登入。 您可以也讓應用程式供測試者在 windows 10 裝置上[產生促銷碼](generate-promotional-codes.md);利用其中一個應用程式的促銷碼的任何人都可以下載它在 windows 10 裝置上，即使您沒有輸入其電子郵件以下。

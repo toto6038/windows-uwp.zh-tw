@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 24f41ac858e73041e5afb4db596ce52b7d9bf4d8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436767"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471893"
 ---
 # <a name="cryptographic-keys"></a>密碼編譯金鑰
 
@@ -79,4 +79,4 @@ ms.locfileid: "5436767"
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | 建立用於計數器模式、雜湊訊息驗證碼 (HMAC) 金鑰衍生函數的 KeyDerivationParameters 物件。 |
 | [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | 建立用於 SP800-56A 金鑰衍生函數的 KeyDerivationParameters 物件。                                                 |
 
- 
+ 

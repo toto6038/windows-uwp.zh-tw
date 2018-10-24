@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: af0f7670f2b131671ce82708d2b0a826db0fcfb1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445191"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475829"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 
@@ -27,7 +27,7 @@ ms.locfileid: "5445191"
 
 UWP app 不在前景執行時，會進入暫停狀態。 在桌面上，當使用者將應用程式最小化時，就會發生這種情況。 應用程式會使用延伸執行工作階段，以便在最小化時繼續執行。 Microsoft Store 接受的延伸執行 API 在[透過延伸執行延後應用程式暫停](https://docs.microsoft.com/windows/uwp/launch-resume/run-minimized-with-extended-execution)中有詳細說明。
 
-如果您在開發不打算提交到 Microsoft Store 的應用程式，則可以使用 `extendedExecutionUnconstrained` 功能受限的 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession)，讓應用程式可以在最小化時繼續執行，而不考慮裝置的能源狀態。  
+如果您在開發不打算提交到 Microsoft Store 的應用程式，則可以使用 `extendedExecutionUnconstrained` 功能受限的 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession)，讓應用程式可以在最小化時繼續執行，而不考慮裝置的能源狀態。  
 
 `extendedExecutionUnconstrained` 功能在應用程式資訊清單中會當做受限功能加入。 如需受限功能的詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
@@ -35,30 +35,30 @@ _Package.appxmanifest_
 ```xml
 <Package ...>
 ...
-  <Capabilities>  
-    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
-  </Capabilities>  
+  <Capabilities>  
+    <rescap:Capability Name="extendedExecutionUnconstrained"/>  
+  </Capabilities>  
 </Package>
 ```
 
 當您使用 `extendedExecutionUnconstrained` 功能時，使用的會是 [ExtendedExecutionForegroundSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession) 和 [ExtendedExecutionForegroundReason](https://docs.microsoft.com/en-us/uwp/api/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason)，而不是 [ExtendedExecutionSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionsession) 和 [ExtendedExecutionReason](https://docs.microsoft.com/uwp/api/windows.applicationmodel.extendedexecution.extendedexecutionreason)。 建立工作階段、設定成員以及非同步要求延伸的同樣模式仍然適用： 
 
 ```cs
-var newSession = new ExtendedExecutionForegroundSession();  
-newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
-newSession.Description = "Long Running Processing";  
-newSession.Revoked += SessionRevoked;  
-ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
-switch (result)  
-{  
-    case ExtendedExecutionResult.Allowed:  
-        DoLongRunningWork();  
-        break;  
+var newSession = new ExtendedExecutionForegroundSession();  
+newSession.Reason = ExtendedExecutionForegroundReason.Unconstrained;  
+newSession.Description = "Long Running Processing";  
+newSession.Revoked += SessionRevoked;  
+ExtendedExecutionResult result = await newSession.RequestExtensionAsync();  
+switch (result)  
+{  
+    case ExtendedExecutionResult.Allowed:  
+        DoLongRunningWork();  
+        break;  
 
-    default:  
-    case ExtendedExecutionResult.Denied:  
-        DoShortRunningWork();  
-        break;  
+    default:  
+    case ExtendedExecutionResult.Denied:  
+        DoShortRunningWork();  
+        break;  
 }
 ```
 
@@ -73,9 +73,9 @@ switch (result) 
 _Package.appxmanifest_
 ```xml
 <Package ...>
-   <Capabilities>  
-       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
-   </Capabilities>  
+   <Capabilities>  
+       <rescap:Capability Name="extendedBackgroundTaskTime"/>  
+   </Capabilities>  
 </Package>
 ```
 

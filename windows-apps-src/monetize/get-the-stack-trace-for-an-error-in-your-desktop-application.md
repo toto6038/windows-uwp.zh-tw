@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤, 詳細資料, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 60f4ed7251fa934190a96e8c7d6f0edd21520980
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440134"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472161"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>取得傳統型應用程式中錯誤的堆疊追蹤
 
@@ -46,7 +46,7 @@ ms.locfileid: "5440134"
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
- 
+ 
 
 ### <a name="request-parameters"></a>要求參數
 
@@ -55,7 +55,7 @@ ms.locfileid: "5440134"
 | applicationId | 字串 | 您想要取得堆疊追蹤的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
 | cabIdHash | string | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
 
- 
+ 
 ### <a name="request-example"></a>要求範例
 
 下列範例示範如何使用此方法取得堆疊追蹤。 將 *applicationId* 和 *cabIdHash* 參數以傳統型應用程式的適當值取代。

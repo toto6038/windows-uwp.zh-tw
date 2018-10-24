@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b81bf3c55b493d8e36f186ec56b68367c6245cc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434057"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478185"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
@@ -451,7 +451,7 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 | TPM                 | 信賴平台模組 (TPM) 可用來建立密碼編譯的公開/私密金鑰組，讓私密金鑰無法在 TPM 以外的地方顯示或使用 (亦即金鑰是不可移轉的)。                                                                                                                                                                                                                                                                                                               |
 | TPM 金鑰證明 | 以密碼編譯的方式證明金鑰與 TPM 繫結的通訊協定。 這種類型的證明可用來保證，某些密碼編譯作業確實曾發生在特定電腦的 TPM 中                                                                                                                                                                                                                                                                                                                       |
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 

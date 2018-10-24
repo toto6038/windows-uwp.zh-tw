@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66384c4df3195ae0fff35ae5dd7e1b1983204068
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440154"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470108"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>量身訂做的效果與使用 Windows UI 體驗
 

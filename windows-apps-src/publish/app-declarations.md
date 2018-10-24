@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 959e056d5edf5e1fe7a1c51a2f855c9e11512cb0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430724"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469309"
 ---
 # <a name="product-declarations"></a>產品宣告
 
@@ -44,7 +44,7 @@ ms.locfileid: "5430724"
 如需詳細資訊，請參閱[協助工具](../design/accessibility/accessibility.md)、[協助工具測試](../design/accessibility/accessibility-testing.md)，以及[在市集中的協助工具](../design/accessibility/accessibility-in-the-store.md)。
 
 > [!IMPORTANT]
-> 除非您特別建置 app 並測試它針對該用途不清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
+> 除非您特別建置 app 並測試它針對該用途不清單您的應用程式提供無障礙功能。 如果將您的 app 宣告為無障礙 app，但實際上不支援協助工具，則有面臨從社群收到負面意見反應的風險。
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
@@ -68,11 +68,11 @@ ms.locfileid: "5430724"
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

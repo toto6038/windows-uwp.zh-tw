@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: medium
 ms.openlocfilehash: da08e63cc42987f1a3876e13a713d670a80cf9ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432642"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471850"
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 
@@ -23,7 +23,7 @@ ms.locfileid: "5432642"
 Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、執行 Windows 10 行動裝置版的手機以及 Xbox One 主機的付款方式 如果客戶的電信業者支援這項功能，客戶就可以新增 [電信業者帳單] 做為付款方式，並使用其行動裝置帳戶在 Microsoft Store 購物。
 
 > [!TIP]
->  如果客戶的電信業者提供「電信業者帳單」，但是客戶的裝置上找不到這個選項，請檢閱這些[步驟](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
+>  如果客戶的電信業者提供「電信業者帳單」，但是客戶的裝置上找不到這個選項，請檢閱這些[步驟](http://go.microsoft.com/fwlink/p/?LinkId=523993)。
 
 我們會定期與電信業者合作，拓展此付款方式的可用性。 如果您想要建議未在下面清單中列出的電信業者，請連絡該電信業者並要求他們新增此付款方式。
 
@@ -57,16 +57,16 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 美國   | Sprint、Verizon                  |
 | 英國  | O2、3 UK、EE                     |
 
- 
+ 
 
 
 
- 
+ 
 
 
- 
+ 
 
- 
+ 
 
 
 

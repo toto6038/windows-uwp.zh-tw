@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433507"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469256"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
@@ -37,7 +37,7 @@ ms.locfileid: "5433507"
 
 > [!NOTE]
 > 如果*FreshnessTime*設定為少於 15 分鐘，嘗試登錄背景工作時，會擲回例外狀況。
- 
+ 
 例如，這個觸發程序將導致背景工作小時執行一次。
 
 ```cs
@@ -128,7 +128,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 ## <a name="remarks"></a>備註
 
-從 Windows 10 開始，它不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
+從 windows 10 開始，它不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
 
 背景工作只會使用**TimeTrigger** ，如果您已先呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)來執行。
 

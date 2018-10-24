@@ -14,11 +14,11 @@ f1_keywords:
 - vs.storeassociationwizard
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ce80206823694f06e4aa5c3480b4dcb30c4f95c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433954"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478335"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
@@ -44,7 +44,7 @@ ms.locfileid: "5433954"
 3.  [建立應用程式套件上傳檔案](#create-an-app-package-upload-file)。 使用 Visual Studio 應用程式套件精靈，接著使用 Windows 應用程式認證套件認證您的套件。
 4.  [側載您的應用程式套件](#sideload-your-app-package)。 將您的應用程式側載到裝置後，您可以測試它是否如預期運作。
 
-完成上述步驟之後，您已經準備好散發應用程式。 如果您有僅供內部使用而不打算銷售的特定業務 (LOB) 應用程式，您可以側載這個應用程式，以將它安裝到任何 Windows 10 裝置上。
+完成上述步驟之後，您已經準備好散發應用程式。 如果您有您不打算銷售，因為它是僅供內部的特定業務 (LOB) 應用程式，您可以側載這個應用程式，以將它安裝在任何 windows 10 裝置上。
 
 ## <a name="before-packaging-your-app"></a>封裝您的應用程式之前
 
@@ -117,20 +117,20 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
     Windows 應用程式認證套件會執行各種測試並傳回結果。 如需更具體的資訊，請參閱 [Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/mt186450)。
 
-    如果您有想用來測試的遠端 Windows 10 裝置，您將需要在該裝置上手動安裝 Windows 應用程式認證套件。 下一節會帶您逐步完成下列步驟。 完成此動作之後，接著您可以選取 **\[遠端電腦\]**，按一下 **\[啟動 Windows 應用程式認證套件\]** 以連線到遠端裝置並執行驗證測試。
+    如果您有您想要用來測試的遠端 windows 10 裝置，您將需要在該裝置上手動安裝 Windows 應用程式認證套件。 下一節會帶您逐步完成下列步驟。 完成此動作之後，接著您可以選取 **\[遠端電腦\]**，按一下 **\[啟動 Windows 應用程式認證套件\]** 以連線到遠端裝置並執行驗證測試。
 
 12. 完成 WACK 且您的 app 已通過認證後，您可以準備將應用程式提交至開發人員中心。 請確定您上傳的是正確的檔案。 您可以在方案的根資料夾 `\[AppName]\AppPackages` 找到檔案預設位置，它會以 .appxupload 的副檔名結尾。 如果您選擇應用程式套件組合並選取全部套件架構，名稱的形式為 `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`。
 
 如需有關提交應用程式至開發人員中心的詳細資訊，請查看[App 提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
-**在遠端 Windows 10 裝置上驗證您的應用程式套件。**
+**驗證遠端 windows 10 裝置上的應用程式套件**
 
-1.  依照[啟用您的裝置以進行開發](https://msdn.microsoft.com/library/windows/apps/Dn706236)的指示，啟用您的 Windows 10 裝置以進行開發。
-    **重要**  您無法在遠端 ARM 裝置上驗證您的應用程式套件是否適用於 Windows 10。
+1.  [啟用您的裝置以進行開發](https://msdn.microsoft.com/library/windows/apps/Dn706236)的指示來啟用 windows 10 裝置，以進行開發。
+    **重要**您無法驗證在遠端 ARM 裝置上的應用程式套件是否適用於 windows 10。
 2.  下載和安裝 Visual Studio 遠端工具。 這些工具可用來以遠端方式執行 Windows 應用程式認證套件。 您可以瀏覽[在遠端電腦上執行 UWP app](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)，以取得關於這些工具的詳細資訊 (包括下載位置)。
-3.  下載必要的 [Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然後將它安裝在遠端的 Windows 10 裝置上。
+3.  下載必要的[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然後再將它安裝在您的遠端 windows 10 裝置上。
 4.  在精靈的 **\[套件建立完成\]** 頁面上，選擇 **\[遠端電腦\]** 選項按鈕，然後選擇 **\[測試連線\]** 按鈕旁的省略符號按鈕。
-    **注意**：只有當您至少選取一個支援驗證的方案設定時，才可使用 **\[遠端電腦\]** 選項按鈕。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
+    **注意：** 是只有當您選取至少一個支援驗證的方案設定時，才可使用 [**遠端電腦**] 選項按鈕。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
 5.  指定您的子網路內的裝置種類，或提供子網路以外的裝置的網域名稱伺服器 (DNS) 名稱或 IP 位址。
 6.  如果您的裝置不需要您使用 Windows 認證登入，請在 **\[驗證模式\]** 清單中選擇 **\[無\]**。
 7.  選擇 **\[選取\]** 按鈕，然後再選擇 **\[啟動 Windows 應用程式認證套件\]** 按鈕。 如果遠端工具在該裝置上執行，Visual Studio 會與裝置連線，接著執行驗證測試。 請參閱 [Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/mt186450)。
@@ -150,7 +150,7 @@ Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件
 下列清單提供您的應用程式的側載需求。
 
 -   您必須[啟用您的裝置以進行開發](https://msdn.microsoft.com/library/windows/apps/Dn706236)。
--   若要在 Windows 10 行動裝置版裝置上側載您的應用程式，請使用 [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) 工具。
+-   側載您的應用程式在 windows 10 行動裝置版裝置上，使用[WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)工具。
 
 **側載應用程式到桌上型電腦、膝上型電腦或平板電腦**
 
@@ -172,5 +172,5 @@ Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件
 
     安裝完應用程式套件時，PowerShell 視窗會顯示此訊息：**您的應用程式已順利安裝。**
 
-    **提示**：若要在平板電腦上開啟捷徑功能表，請觸碰螢幕上您想要以滑鼠右鍵按一下的位置，暫停直到完整的圓形顯示，然後提起手指。 提起手指後，就會開啟捷徑功能表。
+    **提示**︰ 若要開啟平板電腦上的捷徑功能表，觸碰的螢幕您要以滑鼠右鍵按一下，暫停直到完整的圓形顯示，然後提起手指。 提起手指後，就會開啟捷徑功能表。
 4.  按一下 [開始] 按鈕以依據名稱搜尋應用程式，然後啟動它。

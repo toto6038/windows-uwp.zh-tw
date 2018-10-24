@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e69c41ec2ae6dface93b9f3148e699e448faa18
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433648"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475196"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析報告
 
@@ -143,6 +143,6 @@ Windows 開發人員中心儀表板中的 **Xbox 分析**報告向您顯示有�
 
 
 
- 
+ 
 
- 
+ 

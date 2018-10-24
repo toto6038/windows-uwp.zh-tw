@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, javascript, 範例程式碼
 ms.localizationpriority: medium
 ms.openlocfilehash: 894053298428818c2f3304220f14afb6c44ba2af
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435309"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477162"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>使用 JavaScript 的插播式廣告範例程式碼
 
@@ -51,4 +51,4 @@ ms.locfileid: "5435309"
 
 * [GitHub 上的廣告範例](http://aka.ms/githubads)
 
- 
+ 

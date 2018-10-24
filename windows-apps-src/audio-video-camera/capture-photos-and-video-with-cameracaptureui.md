@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ba33a1e79a2447c5dac546ce0f1caeaf16929a3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434110"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470730"
 ---
 # <a name="capture-photos-and-video-with-windows-built-in-camera-ui"></a>使用 Windows 內建相機 UI 來擷取相片和視訊
 
@@ -88,16 +88,16 @@ ms.locfileid: "5434110"
 利用從相機擷取 UI 傳回的視訊檔案，藉由呼叫 [**CreateFromStorageFile**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource) 來建立新的 **[MediaSource](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfromstoragefile)**。 呼叫與 **MediaPlayerElement** 相關聯之預設 **[MediaPlayer](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer)** 的 **[Play](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplayer.Play)** 方法，來播放影片。
 
 [!code-cs[PlayVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetPlayVideo)]
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 
- 
+ 
 
- 
+ 
 
 
 

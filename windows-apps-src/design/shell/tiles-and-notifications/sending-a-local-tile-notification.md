@@ -12,23 +12,23 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e91d4bd481188f4d29af68af2c4572b26d446ae
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432609"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478518"
 ---
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
  
 
-Windows 10 中的主要應用程式磚定義在您的應用程式資訊清單中，次要磚則是以程式設計方式建立，而且是由您的應用程式程式碼定義。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
+Windows 10 中的主要的應用程式磚被定義在您的應用程式資訊清單中，以程式設計方式建立和由您的應用程式程式碼定義次要磚。 本文說明如何使用彈性磚範本，將本機磚通知傳送到主要磚和次要磚。 (本機通知是透過應用程式程式碼傳送，而不是從 Web 伺服器推送或提取)。
 
 ![預設磚和含有通知的磚](images/sending-local-tile-01.png)
 
 > [!NOTE] 
 >了解[建立調適性磚](create-adaptive-tiles.md)及[磚內容結構描述](../tiles-and-notifications/tile-schema.md)。
 
- 
+ 
 
 ## <a name="install-the-nuget-package"></a>安裝 NuGet 套件
 
@@ -50,7 +50,7 @@ using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ## <a name="create-the-notification-content"></a>建立通知內容
 
 
-在 Windows 10 中，磚承載是彈性磚範本定義的，可讓您為您的通知建立自訂的視覺配置。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](create-adaptive-tiles.md)。)
+在 windows 10，磚承載被定義使用彈性磚範本，可讓您建立自訂的視覺配置，針對您的通知。 (若要深入了解彈性磚可以做什麼，請參閱[建立彈性磚](create-adaptive-tiles.md)。)
 
 這個程式碼範例會建立中型和寬形磚的彈性磚內容。
 
@@ -297,9 +297,9 @@ var notification = new TileNotification(doc);
 * [**Windows.UI.Notifications 命名空間**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
 * [如何使用通知佇列 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
 * [傳遞通知](choosing-a-notification-delivery-method.md)
- 
+ 
 
- 
+ 
 
 
 

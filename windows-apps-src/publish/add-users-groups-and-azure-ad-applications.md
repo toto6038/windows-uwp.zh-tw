@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者、 群組、 多個使用者，多使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438460"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473931"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶
 
@@ -23,7 +23,7 @@ ms.locfileid: "5438460"
 新增使用者到帳戶之後，您可以[編輯帳戶詳細資料](#edit)、變更[角色與權限](set-custom-permissions-for-account-users.md)，或[移除使用者](#remove)。
 
 > [!IMPORTANT]
-> 若要新增使用者到帳戶，您必須[先將開發人員中心帳戶與組織的 Azure Active Directory 租用戶產生關聯](associate-azure-ad-with-dev-center.md)。 
+> 若要新增使用者到帳戶，您必須[先將開發人員中心帳戶與組織的 Azure Active Directory 租用戶產生關聯](associate-azure-ad-with-dev-center.md)。 
 
 新增使用者時，您將需要為其指定開發人員中心帳戶的存取權，方法是為其指定[角色或一組自訂權限](set-custom-permissions-for-account-users.md)。 
 
@@ -108,7 +108,7 @@ ms.locfileid: "5438460"
 3.  隨即會出現確認頁面，顯示該使用者的登入資訊 (包括暫時密碼)。
 
     > [!IMPORTANT]
-    >  請務必列印或複製此資訊，並將它提供給該使用者，因為您在離開此頁面之後將無法存取該暫時密碼。
+    >  請務必列印或複製此資訊，並將它提供給該使用者，因為您在離開此頁面之後將無法存取該暫時密碼。
 
 <span id="groups" />
 
@@ -189,12 +189,12 @@ ms.locfileid: "5438460"
 
 1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取 Azure AD 應用程式的名稱。
     > [!TIP]
-    > 按一下 Azure AD 應用程式的名稱，您就會看到該 Azure AD 應用程式所有使用中的金鑰，包括金鑰的建立和到期日期的資料。 若要移除不再需要的金鑰，請按一下 **[移除]**。
+    > 按一下 Azure AD 應用程式的名稱，您就會看到該 Azure AD 應用程式所有使用中的金鑰，包括金鑰的建立和到期日期的資料。 若要移除不再需要的金鑰，請按一下 **[移除]**。
 
 2.  若要新增新的金鑰，選取 [**加入新的金鑰**。
 3.  您將會看到顯示 **\[用戶端識別碼\]** 和 **\[金鑰\]** 值的畫面。
     > [!IMPORTANT]
-    > 請務必複製此資訊，您離開這個頁面之後就無法再存取此資訊。
+    > 請務必複製此資訊，您離開這個頁面之後就無法再存取此資訊。
 
 4.  如果您想要建立更多金鑰，請選取 [**新增其他金鑰**。
 
@@ -232,5 +232,5 @@ ms.locfileid: "5438460"
 > [!IMPORTANT]
 > 移除使用者、群組或 Azure AD 應用程式表示它將不再具備您開發人員中心帳戶的存取權。 它**不**會從組織的目錄中刪除使用者、群組或 Azure AD 應用程式。
 
- 
+ 
 

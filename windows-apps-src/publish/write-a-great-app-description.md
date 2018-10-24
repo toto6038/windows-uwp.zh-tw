@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 描述, 說明, Store 清單, 行銷
 ms.localizationpriority: medium
 ms.openlocfilehash: 54877e43ced6044e0866f951a653f2b32d040d9d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442224"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472242"
 ---
 # <a name="write-a-great-app-description"></a>撰寫一份出色的 App 介紹
 
@@ -30,7 +30,7 @@ ms.locfileid: "5442224"
 -   **使用清單和精簡的段落。** 潛在客戶很可能只會快速瀏覽您的 app 描述。 使用簡短的段落和清單將內容分段，可以讓使用者更容易閱讀。
 
     > [!NOTE]
-    > 新增[應用程式功能](create-app-store-listings.md#app-features)清單也可以快速展示應用程式的功能。 這個清單要顯示在 app 描述的正下方。
+    > 新增[應用程式功能](create-app-store-listings.md#app-features)清單也可以快速展示應用程式的功能。 這個清單要顯示在 app 描述的正下方。
 
 -   **避免使用枯燥的敘述。** 使用生動的語調撰寫描述。 請確定內容清楚描述 app 的功能，但不要以太枯燥的文字描寫。 對很多 app 而言，輕鬆活潑的語調效果最好。
 -   **使用適中的長度。** 好的描述不必太長，但能包含足夠的資訊讓讀者感興趣，並說明 app 的功能。 複雜的 app 需要多點內容說明；簡單的 app 則只需簡單幾個字即可。 大多數情況下，適中的長度大約為 200 多個字，但不會超過 3000 個字。
@@ -41,9 +41,9 @@ ms.locfileid: "5442224"
 -   **請勿使用 HTML 標記。** HTML 或其他程式碼不會被轉譯。 您的描述必須是純文字。
 -   **從市集中類似 app 的描述獲得靈感。** 參考其他開發人員如何描述他們的 app。 這也有助於您找出 app 的獨特之處，並加以強調。
 
- 
+ 
 
- 
+ 
 
 
 

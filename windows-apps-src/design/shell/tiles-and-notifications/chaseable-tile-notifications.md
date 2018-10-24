@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
 ms.openlocfilehash: b6d86d8881e0027a28f0f2a737e5f3fcb46a6ab5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431101"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472569"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
@@ -61,48 +61,48 @@ ms.locfileid: "5431101"
 // Uses the following NuGet packages
 // - Microsoft.Toolkit.Uwp.Notifications
 // - QueryString.NET
- 
+ 
 TileContent content = new TileContent()
 {
-    Visual = new TileVisual()
-    {
-        // These arguments cascade down to Medium and Wide
-        Arguments = new QueryString()
-        {
-            { "action", "storyClicked" },
-            { "story", "201c9b1" }
-        }.ToString(),
- 
- 
-        // Medium tile
-        TileMedium = new TileBinding()
-        {
-            Content = new TileBindingContentAdaptive()
-            {
-                // Omitted
-            }
-        },
- 
- 
-        // Wide tile is same as Medium
-        TileWide = new TileBinding() { /* Omitted */ },
- 
- 
-        // Large tile is an aggregate of multiple stories
-        // and therefore needs different arguments
-        TileLarge = new TileBinding()
-        {
-            Arguments = new QueryString()
-            {
-                { "action", "storiesClicked" },
-                { "story", "43f939ag" },
-                { "story", "201c9b1" },
-                { "story", "d9481ca" }
-            }.ToString(),
- 
-            Content = new TileBindingContentAdaptive() { /* Omitted */ }
-        }
-    }
+    Visual = new TileVisual()
+    {
+        // These arguments cascade down to Medium and Wide
+        Arguments = new QueryString()
+        {
+            { "action", "storyClicked" },
+            { "story", "201c9b1" }
+        }.ToString(),
+ 
+ 
+        // Medium tile
+        TileMedium = new TileBinding()
+        {
+            Content = new TileBindingContentAdaptive()
+            {
+                // Omitted
+            }
+        },
+ 
+ 
+        // Wide tile is same as Medium
+        TileWide = new TileBinding() { /* Omitted */ },
+ 
+ 
+        // Large tile is an aggregate of multiple stories
+        // and therefore needs different arguments
+        TileLarge = new TileBinding()
+        {
+            Arguments = new QueryString()
+            {
+                { "action", "storiesClicked" },
+                { "story", "43f939ag" },
+                { "story", "201c9b1" },
+                { "story", "d9481ca" }
+            }.ToString(),
+ 
+            Content = new TileBindingContentAdaptive() { /* Omitted */ }
+        }
+    }
 };
 ```
 
@@ -115,31 +115,31 @@ LaunchActivatedEventArgs 物件具有可啟用可追蹤式通知的屬性：[Til
 
 [TileActivatedInfo 物件](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含名為 [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的屬性，其中包含過去 15 分鐘內顯示在磚上的通知清單。 清單中的第一個項目表示磚上的目前通知，後續項目代表目前通知之前使用者看到的先前通知。 如果您的磚已清除，這份清單會是空的。
 
-每個 ShownTileNotification 都有 Arguments 屬性。 Arguments 屬性會使用磚通知裝載上的引數字串來初始化，而如果裝載未包含引數字串則為 null。
+每個 ShownTileNotificationhas Argumentsproperty。 Argumentsproperty 將會以從您的磚通知裝載 argumentsstring 初始化或為 null，如果您的承載未包含 argumentsstring。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
 {
-    // If the API is present (doesn't exist on 10240 and 10586)
-    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
-    {
-        // If clicked on from tile
-        if (args.TileActivatedInfo != null)
-        {
-            // If tile notification(s) were present
-            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
-            {
-                // Get arguments from the notifications that were recently displayed
-                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
-                .Select(i => i.Arguments)
-                .ToArray();
- 
-                // TODO: Highlight each story in the app
-            }
-        }
-    }
- 
-    // TODO: Initialize app
+    // If the API is present (doesn't exist on 10240 and 10586)
+    if (ApiInformation.IsPropertyPresent(typeof(LaunchActivatedEventArgs).FullName, nameof(LaunchActivatedEventArgs.TileActivatedInfo)))
+    {
+        // If clicked on from tile
+        if (args.TileActivatedInfo != null)
+        {
+            // If tile notification(s) were present
+            if (args.TileActivatedInfo.RecentlyShownNotifications.Count > 0)
+            {
+                // Get arguments from the notifications that were recently displayed
+                string[] allArgs = args.TileActivatedInfo.RecentlyShownNotifications
+                .Select(i => i.Arguments)
+                .ToArray();
+ 
+                // TODO: Highlight each story in the app
+            }
+        }
+    }
+ 
+    // TODO: Initialize app
 }
 ```
 
@@ -150,31 +150,31 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ```xml
 <tile>
-  <visual arguments="action=storyClicked&amp;story=201c9b1">
- 
-    <binding template="TileMedium">
-       
-      <text>Kitten learns how to drive a car...</text>
-      ... (omitted)
-     
-    </binding>
- 
-    <binding template="TileWide">
-      ... (same as Medium)
-    </binding>
-     
-    <!--Large tile is an aggregate of multiple stories-->
-    <binding
-      template="TileLarge"
-      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
-   
-      <text>Can your dog understand what you're saying?</text>
-      ... (another story)
-      ... (one more story)
-   
-    </binding>
- 
-  </visual>
+  <visual arguments="action=storyClicked&amp;story=201c9b1">
+ 
+    <binding template="TileMedium">
+       
+      <text>Kitten learns how to drive a car...</text>
+      ... (omitted)
+     
+    </binding>
+ 
+    <binding template="TileWide">
+      ... (same as Medium)
+    </binding>
+     
+    <!--Large tile is an aggregate of multiple stories-->
+    <binding
+      template="TileLarge"
+      arguments="action=storiesClicked&amp;story=43f939ag&amp;story=201c9b1&amp;story=d9481ca">
+   
+      <text>Can your dog understand what you're saying?</text>
+      ... (another story)
+      ... (one more story)
+   
+    </binding>
+ 
+  </visual>
 </tile>
 ```
 

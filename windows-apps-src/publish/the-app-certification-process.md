@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，發佈，前置處理，認證，發行，擱置中，提交，發佈，狀態，時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442564"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475003"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
@@ -60,11 +60,11 @@ ms.locfileid: "5442564"
 > [!NOTE]
 > 我們也會在應用程式發佈之後進行抽樣檢查以找出潛在的問題，並且確保您的應用程式符合所有的 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。 如果我們發現任何問題，將會通知您相關問題和修正方式 (如果有)，或者問題是否已從市集移除。
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

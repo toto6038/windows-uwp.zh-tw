@@ -13,11 +13,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: c9db9f3ce4397bec6fb0b6b339875c206d17c3fd
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436205"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475704"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>將 UI 及應用程式套件資訊清單中的字串當地語系化
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
@@ -32,12 +32,12 @@ ms.locfileid: "5436205"
 1. 設定您的 App 預設語言。
     1. 在 Visual Studio 中開啟您的解決方案，然後開啟 `Package.appxmanifest`。
     2. 在 \[應用程式\] 索引標籤上，確認預設語言有適當地設定 (例如，「en」或「en-US」)。 剩餘的步驟會假設您已設定預設語言為「en-US」。
-    <br>**注意** 您至少需要提供此預設語言當地語系化的字串資源。 這些是在找不到使用者慣用語言或顯示語言設定的較佳相符項，將會載入的資源。
+    <br>**注意：** 最少，您需要提供此預設語言當地語系化的字串資源。 這些是在找不到使用者慣用語言或顯示語言設定的較佳相符項，將會載入的資源。
 2. 建立預設語言的資源檔案 (.resw)。
     1. 在您的專案節點下，建立新的資料夾，並將其命名為「Strings」。
     2. 在 `Strings` 下，建立新的子資料夾，並命名為「en-US」。
     3. 在 `en-US` 下，建立新的資源檔案 (.resw)，並確認其命名為「Resources.resw」。
-    <br>**注意** 如果您有想要移植的 .NET 資源檔案 (.resx)，請參閱[移植 XAML 和 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
+    <br>**注意：** 如果您有您想要連接埠的.NET 資源檔案 (.resx)，請參閱[移植 XAML 與 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
 3.  開啟 `Resources.resw`，並新增這些字串資源。
 
     `Strings/en-US/Resources.resw`
@@ -63,7 +63,7 @@ ms.locfileid: "5436205"
 
 不從資源檔案設定 **Width**，您可能會想要允許控制項動態依照內容調整大小。
 
-**注意** 對於[附加屬性](../xaml-platform/attached-properties-overview.md)，您在 .resw 檔案的 \[名稱\] 欄位中需要特殊語法 。 例如，若要設定「Greeting」識別碼的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加屬性的值，這就是您要在 \[名稱\] 欄位中輸入的內容。
+**注意：**[附加屬性](../xaml-platform/attached-properties-overview.md)，您需要在.resw 檔案的 [名稱] 欄中的特殊語法。 例如，若要設定「Greeting」識別碼的 [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties.NameProperty) 附加屬性的值，這就是您要在 \[名稱\] 欄位中輸入的內容。
 
 ```xml
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
@@ -120,7 +120,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>當地語系化字串資源
 1. 為其他語言製作一份資源檔案 (.resw) 的複本。
     1. 在「Strings」下，對於德文 (德國) 建立新的子資料夾並命名為「de-DE」。
-   <br>**注意** 對於資料夾名稱，您可以使用任何 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言限定詞的詳細資訊和常見語言標記的清單，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
+   <br>**注意：** 的資料夾名稱，您可以使用任何[bcp-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言限定詞的詳細資訊和常見語言標記的清單，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
    2. 在 `Strings/de-DE` 資料夾中製作一份 `Strings/en-US/Resources.resw` 的複本。
 2. 翻譯字串。
     1. 開啟 `Strings/de-DE/Resources.resw` 並翻譯 \[值\] 欄位中的值。 您不需要翻譯註解。
@@ -281,7 +281,7 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 ```
 
 ## <a name="loading-strings-from-other-packages"></a>從其他套件載入字串
-應用程式套件的資源會受管理，並透過套件的存取擁有最上層[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)可從目前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)存取。 在每個套件內，各種元件可以有自己的 ResourceMap 樹狀子目錄，您可以透過 [**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live) 存取。
+應用程式套件的資源會受管理，並透過套件的存取擁有最上層[**ResourceMap**](/uwp/api/windows.applicationmodel.resources.core.resourcemap?branch=live)可從目前[**ResourceManager**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager?branch=live)存取。 每個在套件內，各種元件可以有其 ownResourceMapsubtrees，您可以透過[**ResourceMap.GetSubtree**](/uwp/api/windows.applicationmodel.resources.core.resourcemap.getsubtree?branch=live)存取。
 
 架構套件可以存取自己具有絕對資源識別碼 URI 的資源。 另請參閱 [URI 配置](uri-schemes.md)。
 

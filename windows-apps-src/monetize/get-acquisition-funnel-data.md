@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, 取得, 漏斗
 ms.localizationpriority: medium
 ms.openlocfilehash: 362bcc956fa5945f9685aac7d6351b9fda7690de
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443134"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479651"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>取得應用程式取得漏斗圖資料
 
@@ -54,7 +54,7 @@ ms.locfileid: "5443134"
 | endDate | 日期 | 要擷取取得漏斗資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | filter | 字串  | 在回應中篩選資料列的一或多個陳述式。 如需更多資訊，請參閱下方的＜[篩選欄位](#filter-fields)＞一節。 | 否   |
 
- 
+ 
 ### <a name="filter-fields"></a>篩選欄位
 
 要求的 *filter* 參數包含在回應中篩選資料列的一或多個陳述式。 每個陳述式包含一個與 **eq** 或 **ne** 運算子關聯的欄位和值，而陳述式可以使用 **and** 或 **or** 結合。

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
 ms.openlocfilehash: 4a529cc360d6a357cf4ff6aa36370c4339b37ed6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439477"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475757"
 ---
 # <a name="native-ads"></a>原生廣告
 
@@ -99,7 +99,7 @@ ms.locfileid: "5439477"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
-9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
+9.  定義 **ErrorOccurred** 事件的事件處理常式來處理原生廣告的相關錯誤。 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 

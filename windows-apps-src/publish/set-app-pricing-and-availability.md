@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 價格, 提供, 可搜尋的, 免費試用, 試用, 試用版, 應用程式, 發行日期
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c52687b375f9bf33dd491eeb37d4142acace99
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433730"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478460"
 ---
 # <a name="set-app-pricing-and-availability"></a>設定應用程式價格與可用性
 
@@ -61,7 +61,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 根據預�
 
 選擇 [**限時**]，讓客戶免費試用您的應用程式幾天，如 [**1 天**]、[**7 天**]、[**15 天**] 或 [**30 天**]。 您可以新增程式碼來[排除或限制試用版中的功能](../monetize/in-app-purchases-and-trials.md)，或者您可以讓客戶在該期間存取完整的功能。 
 > [!NOTE]
-> 限時試用不會對使用 Windows 10 組建 10.0.10586 或較舊版本的客戶顯示，或是使用 Windows Phone 8.1 和較舊版本的客戶。
+> 限時試用不會對使用 Windows 10 組建 10.0.10586 或較舊版本的客戶顯示，或是使用 Windows Phone 8.1 和較舊版本的客戶。
 
 ### <a name="unlimited"></a>無限制
 

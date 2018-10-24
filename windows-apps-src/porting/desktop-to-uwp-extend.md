@@ -10,18 +10,18 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: be4338c7b7e7b3861c206a6d7d63e9e417e6cd0d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 3a516fea67239a737c1f8a05ef17fbc1d9203030
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438879"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476816"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
 有些 Windows 10 體驗 (例如：具有觸控功能的 UI 頁面) 必須在現代化應用程式容器中執行。 如果您想要新增這些體驗，請使用 UWP 專案和 Windows 執行階段元件擴充您的傳統型應用程式。
 
-在許多情況下，您可以直接從傳統型應用程式呼叫 UWP API，因此在檢視本指南之前，請先參閱[增強 Windows 10](desktop-to-uwp-enhance.md)。
+在許多情況下，您可以直接從傳統型應用程式呼叫 Windows 執行階段 Api，因此之前檢閱本指南中，請參閱[增強 Windows 10](desktop-to-uwp-enhance.md)。
 
 >[!NOTE]
 >本指南假設您已經為您傳統型應用程式建立 Windows 應用程式套件。 如果您還沒有這樣做，請參閱[封裝傳統型應用程式](desktop-to-uwp-root.md)。
@@ -162,7 +162,7 @@ ms.locfileid: "5438879"
   <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
     <uap:Protocol Name="xamluidemo" />
   </uap:Extension>
-</Extensions>    
+</Extensions>    
 ```
 
 為通訊協定命名，提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。
@@ -284,18 +284,18 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ```xml
 <Extensions>
-      <uap:Extension
-          Category="windows.shareTarget"
-          Executable="ShareTarget.exe"
-          EntryPoint="App">
-        <uap:ShareTarget>
-          <uap:SupportedFileTypes>
-            <uap:SupportsAnyFileType />
-          </uap:SupportedFileTypes>
-          <uap:DataFormat>Bitmap</uap:DataFormat>
-        </uap:ShareTarget>
-      </uap:Extension>
-</Extensions>  
+      <uap:Extension
+          Category="windows.shareTarget"
+          Executable="ShareTarget.exe"
+          EntryPoint="App">
+        <uap:ShareTarget>
+          <uap:SupportedFileTypes>
+            <uap:SupportsAnyFileType />
+          </uap:SupportedFileTypes>
+          <uap:DataFormat>Bitmap</uap:DataFormat>
+        </uap:ShareTarget>
+      </uap:Extension>
+</Extensions>  
 ```
 
 提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。 此標記會假設您的 UWP 應用程式的可執行檔的名稱是`ShareTarget.exe`。
@@ -353,7 +353,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
   ...
       <desktop:Extension Category="windows.fullTrustProcess" Executable="PhotoStoreDemo\PhotoStoreDemo.exe" />
   ...
-</Extensions>  
+</Extensions>  
 ```
 
 此延伸模組可讓 UWP 應用程式啟動到您想要共用檔案的傳統型應用程式。 在範例中，我們會參考的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式的可執行檔。

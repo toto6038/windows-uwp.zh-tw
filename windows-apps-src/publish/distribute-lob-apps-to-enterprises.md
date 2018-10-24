@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: medium
 ms.openlocfilehash: 9149533a12263e105356a1683257c4d9172eefb5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433608"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5471509"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB app 發佈到企業
 
@@ -23,7 +23,7 @@ ms.locfileid: "5433608"
 您可以透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，將企業營運 (LOB) 應用程式直接發佈到企業來進行大量取得，而不需使應用程式可在 Store 中廣泛取得。
 
 > [!NOTE]
-> 目前只有免費的應用程式可透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，單獨發佈到企業。 若您提交付費 app 做為 LOB，則無法將其提供給企業使用。 
+> 目前只有免費的應用程式可透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，單獨發佈到企業。 若您提交付費 app 做為 LOB，則無法將其提供給企業使用。 
 
 > [!IMPORTANT]
 > 您無法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，直接將 LOB 應用程式發佈到企業。 所有 LOB 應用程式提交都必須使用 Windows 開發人員中心儀表板來進行。
@@ -100,9 +100,9 @@ ms.locfileid: "5433608"
 
 如需詳細資訊，請參閱[在 Windows10 中側載 LOB 應用程式](http://go.microsoft.com/fwlink/p/?LinkId=623433)。
 
- 
+ 
 
- 
+ 
 
 
 

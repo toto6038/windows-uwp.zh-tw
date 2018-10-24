@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442194"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478175"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>開始使用 Xbox One 上的 UWP 應用程式開發
 

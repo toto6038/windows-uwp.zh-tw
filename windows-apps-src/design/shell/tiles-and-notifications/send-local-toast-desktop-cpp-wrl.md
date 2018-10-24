@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, 傳統型, 快顯通知, 傳送快顯通知, 傳送本機快顯通知, 傳統型橋接器, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ms.openlocfilehash: a6134e65a27563f96c03880dea026bed11f46641
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430924"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476900"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-wrl-apps"></a>從桌面 C++ WRL 應用程式傳送本機快顯通知
 

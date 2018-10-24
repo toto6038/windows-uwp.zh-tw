@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d45881ace6be3b0af88f14692837e96ab9b58d18
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433527"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474737"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>使用視覺層搭配 XAML
 

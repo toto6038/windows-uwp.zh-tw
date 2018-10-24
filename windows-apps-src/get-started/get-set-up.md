@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 開始設定
-description: 開始設定比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
+description: 開始設定比您想像中容易。 請依照下列指示，開始建立適用於 windows 10 的通用 Windows 平台 (UWP) app。
 ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
@@ -11,23 +11,23 @@ ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 378544282981c62d7a57f9abc3f666e8964b7117
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445615"
+ms.locfileid: "5474757"
 ---
 # <a name="get-set-up"></a>開始設定
 
 ![準備好使用 Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-開始操作比您想像中容易。 請依照下列指示操作，開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
+開始操作比您想像中容易。 請依照下列指示，開始建立適用於 windows 10 的通用 Windows 平台 (UWP) app。
 
 ## <a name="1-download-or-update-visual-studio"></a>1. 下載或更新 Visual Studio
 
-Microsoft Visual Studio 2017 可協助您設計、撰寫、測試和偵錯您的應用程式。
+Microsoft Visual Studio2017 可協助您設計、 程式碼、 測試和偵錯您的應用程式。
 
-如果您還沒有安裝 Visual Studio 2017，可以安裝免費的 Microsoft Visual Studio Community 2017。 此下載包含用來測試應用程式的裝置模擬器：
+如果您還沒有 Visual Studio2017，您可以安裝免費 Microsoft Visual Studio Community2017。 此下載包含用來測試應用程式的裝置模擬器：
 
 -   [下載 Windows 10 開發人員工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 

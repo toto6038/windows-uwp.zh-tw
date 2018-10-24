@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 付款, 應用程式銷售, 應用程式收益, 支出, Microsoft Store 費用, 支付保留, 百分比
 ms.localizationpriority: medium
 ms.openlocfilehash: 0c128bedd1c889f4c2dcf0565c7c10575eb75013
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438192"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5478699"
 ---
 # <a name="getting-paid"></a>獲得報酬
 此處提供一些您需要用來確認收到應用程式、附加元件及廣告營收之付款的重要資訊。
@@ -70,9 +70,9 @@ Microsoft Store 費用適用於 Windows 市集收取的所有 App 銷售金額�
 > **\[支付保留狀態\]** 選項套用至透過 Windows 開發人員中心 (Microsoft Store、廣告、Azure Marketplace 等等) 付款的**所有**收益來源。 您無法針對個別收入來源選取不同保留狀態。
 
 
- 
+ 
 
- 
+ 
 
 
 

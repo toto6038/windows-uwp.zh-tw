@@ -10,11 +10,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 548f5f5d1810347527c3c9bfe761a766c4a35c7f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445575"
+ms.locfileid: "5473892"
 ---
 # <a name="create-and-host-an-app-extension"></a>建立和裝載應用程式延伸模組
 
@@ -411,7 +411,7 @@ _MathExtension 專案中的 Package.appxmanifest：_
 
 應用程式延伸模組會參與開放式生態系統。 如果您的應用程式可以裝載應用程式延伸模組，任何人都能針對您的主機撰寫延伸模組，只要這些延伸模組符合您從延伸模組傳送/接收資訊的方法即可。 這點與參與封閉式生態系統的選用套件不同，其中是由發佈者決定允許誰來建立可與應用程式搭配使用的選用套件。
 
-應用程式延伸模組是獨立套件，而且可以成為獨立應用程式。 這些延伸模組對其他應用程式不能有部署相依性。 選用套件必須有主要套件，沒有就無法執行。
+應用程式延伸模組是獨立套件，而且可以成為獨立應用程式。 這些延伸模組對其他應用程式不能有部署相依性。選用套件必須有主要套件，沒有就無法執行。
 
 遊戲的擴充套件緊密繫結至遊戲，因此是很好的選用套件候選項目，無法單獨在遊戲之外執行，而且您可能也不希望生態系統中的任何開發人員都來建立擴充套件。
 

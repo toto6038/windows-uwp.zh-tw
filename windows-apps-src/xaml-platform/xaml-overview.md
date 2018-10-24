@@ -16,11 +16,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: d28f6bca5a0d849661f158e25767f27586ace101
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433813"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470498"
 ---
 # <a name="xaml-overview"></a>XAML 概觀
 
@@ -74,9 +74,9 @@ XAML 檔案幾乎永遠在它的根元素中宣告預設的 XAML 命名空間。
 |------|-------------|
 | [x:Key](x-key-attribute.md) | 為 XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中的每個資源設定唯一的使用者定義索引鍵。 索引鍵的權杖字串是 **StaticResource** 標記延伸的引數，而您稍後可以使用這個索引鍵，從位於 app XAML 任一處的其他 XAML 用法中抓取 XAML 資源。 |
 | [x:Class](x-class-attribute.md) | 指定類別的程式碼命名空間和程式碼類別名稱，該類別提供 XAML 頁面的程式碼後置。 這會在您建置應用程式時，為組建動作所建立或加入的類別命名。 這些組建動作支援 XAML 標記編譯器，並且可以在編譯應用程式時組合您的標記和程式碼後置。 您必須擁有這類類別，才能支援 XAML 頁面的程式碼後置。 [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051) (位於預設 Windows 執行階段啟用模型中)。 |
-| [x:Name](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意** [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 是架構中的類似屬性，但並非所有的元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
+| [x:Name](x-name-attribute.md) | 為處理完 XAML 中定義的物件元素後而存在執行階段程式碼中的執行個體，指定執行階段物件名稱。 您可以將在 XAML 中設定 **x:Name** 想像成在程式碼中宣告具名變數。 之後您就會了解，當您的 XAML 載入為 Windows 執行階段 app 的元件時所發生的狀況。 <br/><div class="alert">**注意：**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)是架構中的類似屬性，但並非所有元素都支援它。 因此，每當該元素類型不支援 **FrameworkElement.Name** 時，您就可以將 **x:Name** 用於元素識別。 |
 | [x:Uid](x-uid-directive.md) | 識別應該為某些屬性值使用當地語系化資源的元素。 如需如何使用 **x:Uid** 的詳細資訊，請參閱[快速入門：翻譯 UI 資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)。 |
-| [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 腳本視覺狀態中使用的 **true** 布林值。 針對 XAML 中的這個值，您可以使用 **x:Boolean** 內建類型當成物件元素，就像這樣： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [XAML 內建資料類型](xaml-intrinsic-data-types.md) | 這些類型可以針對屬性或資源要求的簡單值類型指定值。 這些內建類型會對應到通常是針對每種程式設計語言內建定義所定義的簡單值類型。 例如，您可能需要一個物件以表示要在 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 腳本視覺狀態中使用的 **true** 布林值。 針對 XAML 中的這個值，您可以使用 **x:Boolean** 內建類型當成物件元素，就像這樣： <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
 XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比較少見。
 
@@ -92,7 +92,7 @@ XAML 語言 XAML 命名空間中的其他程式設計建構雖然存在，但比
 
 例如，將前置詞 `myTypes` 對應到命名空間 `myCompany.myTypes` 的屬性語法是：`    xmlns:myTypes="using:myCompany.myTypes"`，代表性元素用法是： `<myTypes:CustomButton/>`
 
-如需針對自訂類型對應 XAML 命名空間的詳細資訊，包含適用於 Visual C++ 元件延伸 (C++/CX) 的特殊考量，請參閱 [XAML 命名空間與命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
+如需針對自訂類型對應 XAML 命名空間的詳細資訊，包括特殊考量 VisualC + + 元件延伸 (C + + /CX)，請參閱[XAML 命名空間與命名空間對應](xaml-namespaces-and-namespace-mapping.md)。
 
 ## <a name="other-xaml-namespaces"></a>其他 XAML 命名空間
 
@@ -202,7 +202,7 @@ namespace App1
 
 在專案中，XAML 會寫成 .xaml 檔案，您可以使用偏好的語言 (C#、Visual Basic、C++/CX) 來撰寫程式碼後置檔案。 當某個 XAML 檔案以標記編譯成專案建置動作的一部分時，是透過將命名空間與類別指定為 XAML 頁面根元素的 [x:Class](x-class-attribute.md) 屬性，以識別每個 XAML 頁面的 XAML 程式碼後置檔案位置。 如需這些機制在 XAML 中如何運作與它們和程式撰寫模型及 app 模型的關聯的相關資訊，請參閱[事件與路由事件概觀](events-and-routed-events-overview.md)。
 
-**注意** 針對 C++/CX，有兩個程式碼後置檔案，一個是標頭 (.xaml.h)，另一個則是實作 (.xaml.cpp)。 實作會參考標頭，技術上來說，它是代表程式碼後置連線進入點的標頭。
+**注意：** 針對 C + /CX，有兩個程式碼後置檔案，其中一個是標頭 (。.xaml.h)，另一個是實作 (。.xaml.cpp)。 實作會參考標頭，技術上來說，它是代表程式碼後置連線進入點的標頭。
 
 ## <a name="resource-dictionaries"></a>資源字典
 
@@ -256,6 +256,6 @@ XAML 通常是在 IDE 內 (如 Visual Studio) 以及它的其中一個 XAML 設�
 
 一旦 app 實際執行之後，如果設計階段未偵測到任何 XAML 剖析錯誤，通用語言執行階段 (CLR) 就會將它們報告為 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 如需可在執行階段 **XamlParseException** 執行哪些動作的詳細資訊，請參閱 [C# 或 Visual Basic 中 Windows 執行階段 app 的例外狀況處理](https://msdn.microsoft.com/library/windows/apps/dn532194)。
 
-**注意** 使用 C++/CX 程式碼的 app 不會取得特定的 [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
+**注意：** 應用程式使用 C + + /CX 程式碼不會取得特定[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774)。 但是，例外狀況中的訊息可清楚說明錯誤來源是與 XAML 相關，而且其中包含內容資訊，例如 XAML 檔案中的行號，就像 **XamlParseException** 一樣。
 
 如需偵錯 Windows 執行階段 app 的詳細資訊，請參閱[啟動偵錯工作階段](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)。

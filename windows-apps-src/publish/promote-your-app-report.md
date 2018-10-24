@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, promote, app, campaign, report, installs, 促銷, 應用程式, 行銷活動, 報告, 安裝
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f63b53fca8a97c4f6e61aa38f45a749ca0621b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445516"
+ms.locfileid: "5469577"
 ---
 # <a name="ad-campaign-report"></a>廣告活動報告
 
@@ -86,6 +86,6 @@ ms.locfileid: "5445516"
 
 * [為您的應用程式建立廣告活動](create-an-ad-campaign-for-your-app.md)
 
- 
+ 
 
- 
+ 

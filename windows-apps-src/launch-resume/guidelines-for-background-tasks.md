@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 7adfecbe216dce25d0f80eb3ef1f528196299db4
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440792"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470632"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 
@@ -64,7 +64,7 @@ ms.locfileid: "5440792"
 
 **執行背景工作的要求：**
 
-> **重要**  自 Windows 10 起，應用程式不再需要將位於鎖定畫面作為先決條件，也可執行背景工作。
+> **重要**從 windows 10 開始，應用程式不再必須是鎖定畫面上執行背景工作的必要條件。
 
 通用 Windows 平台 (UWP) 應用程式可以在不釘選到鎖定畫面上的情況下，執行所有支援的工作類型。 不過，應用程式必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何類型的背景工作。 如果使用者已明確地在裝置設定中拒絕您應用程式的背景工作權限，則這個方法會傳回 [**BackgroundAccessStatus.DeniedByUser**](https://msdn.microsoft.com/library/windows/apps/hh700439)。 如需使用者的背景活動與省電模式選項的詳細資訊，請參閱[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)。 
 ## <a name="background-task-checklist"></a>背景工作檢查清單
@@ -110,6 +110,6 @@ ms.locfileid: "5440792"
 * [偵錯背景工作](debug-a-background-task.md)
 * [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
+ 
 
- 
+ 

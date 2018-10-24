@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 促銷代碼, 促銷碼, 預付碼, 預付代碼
 ms.localizationpriority: medium
 ms.openlocfilehash: 37263794ffed6660f71c5e16195e992588c16d4a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440524"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472461"
 ---
 # <a name="generate-promotional-codes"></a>產生促銷代碼
 
 
-您可以為您在 Microsoft Store 中發佈的 App 或附加元件產生促銷代碼。 促銷代碼是讓有影響力使用者可以免費存取您的 App 或附加元件的簡單方式。 您也可以使用促銷碼來處理客戶服務案例，方法是提供使用者免費存取您的 App 或附加元件，搭配 Windows 10 提供[搶鮮版 (Beta) 測試](beta-testing-and-targeted-distribution.md)。 
+您可以為您在 Microsoft Store 中發佈的 App 或附加元件產生促銷代碼。 促銷代碼是讓有影響力使用者可以免費存取您的 App 或附加元件的簡單方式。 您也可能會提供使用者免費存取您的應用程式或附加元件，或適用於使用 windows 10 進行[beta 測試](beta-testing-and-targeted-distribution.md)，以使用促銷碼來處理客戶服務案例。 
 
 每個促銷碼都有對應獨特可兌換 URL，客戶可以按一下才能兌換代碼，並從 Microsoft Store 安裝您的應用程式或附加元件。  請注意，您的應用程式必須通過 [應用程式認證程序](the-app-certification-process.md)的最終發佈階段，客戶才能兌換促銷碼以安裝它。
 
@@ -115,4 +115,4 @@ ms.locfileid: "5440524"
 
 您也可以從這個表格[下載](#download-and-distribute-promotional-codes)訂單。
 
- 
+ 

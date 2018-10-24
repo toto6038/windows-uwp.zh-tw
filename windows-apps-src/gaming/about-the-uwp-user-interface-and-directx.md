@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, DirectX 應用程式物件
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444294"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475052"
 ---
 # <a name="the-app-object-and-directx"></a>App 物件和 DirectX
 
@@ -36,9 +36,9 @@ ms.locfileid: "5444294"
 -   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
 -   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **注意**：如果您不是開發 UWP app，請使用 JavaScript 或 XAML 專用程式庫和命名空間中提供的使用者介面元件，而不是使用這些命名空間中提供的類型。
+> **注意：** 如果您不開發 UWP 應用程式，請使用 JavaScript 或 XAML 專用程式庫和命名空間，而不是這些命名空間中提供的類型中提供的使用者介面元件。
 
- 
+ 
 
 ## <a name="the-windows-runtime-app-object"></a>Windows 執行階段 App 物件
 
@@ -114,7 +114,7 @@ ms.locfileid: "5444294"
 | [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | 等待新事件，並分派所有可用的事件。 繼續這個行為，直到視窗關閉，或是應用程式呼叫 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 執行個體上的 [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) 方法為止。 |
 | [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 在佇列中分派所有目前可用的事件。 如果沒有擱置的事件，則立即返回。                                                                                                                                          |
 
- 
+ 
 
 使用 DirectX 的 UWP 應該使用 [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) 選項來防止干擾圖形更新的封鎖行為。
 
@@ -155,9 +155,9 @@ int main(Platform::Array<Platform::String^>^)
 
 總而言之，在設計 UWP app 時，請為 App 的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 與 [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) 使用 [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 以處理所有 UI 執行緒，而非嘗試自行建立和管理您的 MTA 執行緒。 當您需要無法以 **CoreDispatcher** 處理的不同執行緒時，請使用非同步模式，並依循前述的指導原則以避免重新進入問題。
 
- 
+ 
 
- 
+ 
 
 
 

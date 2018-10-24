@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 新聞、 什麼的、 新的
 ms.localizationpriority: medium
 ms.openlocfilehash: bc6be28e112dfdd14b3585bd88ba066fbeae382d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439940"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470684"
 ---
 # <a name="whats-new-in-cwinrt"></a>有何新在 C + + /winrt
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c1812adc9d5610fffd6f9d275b4e093a4fa96e6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437681"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5475313"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
 
@@ -57,7 +57,7 @@ ms.locfileid: "5437681"
 
 **TemplateBinding** 是一個標記延伸。 當有需要將屬性值逸出文字值或處理常式名稱時，通常就會實作標記延伸，而且這需求是全域性的，而不只是在特定類型或屬性放置類型轉換器。 XAML 的所有標記延伸會在屬性語法中使用「{」和「}」字元，這是慣例，XAML 處理器藉此來辨識必須處理屬性的標記延伸。
 
-**注意**  在 Windows 執行階段 XAML 處理器實作中，沒有 **TemplateBinding** 的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
+**注意：** 在 Windows 執行階段 XAML 處理器實作中，沒有**TemplateBinding**的支援類別表示法。 **TemplateBinding** 僅限在 XAML 標記中使用。 並沒有一個直接的方式可以在程式碼中重現行為。
 
 ### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
 
@@ -84,5 +84,5 @@ ms.locfileid: "5437681"
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
 * [XAML 概觀](xaml-overview.md)
 * [相依性屬性概觀](dependency-properties-overview.md)
- 
+ 
 

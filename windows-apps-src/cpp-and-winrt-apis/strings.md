@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、字串
 ms.localizationpriority: medium
 ms.openlocfilehash: 865267a6897a551613479a099d10dd6d5a91c315
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438137"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468945"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字串處理
 
@@ -168,10 +168,10 @@ WINRT_ASSERT(w == L"Hello, World!");
 ...
 void OnPointerPressed(IInspectable const&, PointerEventArgs const& args)
 {
-    float2 const point = args.CurrentPoint().Position();
-    std::wstringstream wstringstream;
-    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
-    ::OutputDebugString(wstringstream.str().c_str());
+    float2 const point = args.CurrentPoint().Position();
+    std::wstringstream wstringstream;
+    wstringstream << L"Pointer pressed at (" << point.x << L"," << point.y << L")" << std::endl;
+    ::OutputDebugString(wstringstream.str().c_str());
 }
 ```
 

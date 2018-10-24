@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 44ffafab761741b8d7bc05f13ea2d8ae50ff048b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432049"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479716"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 行銷的應用程式的指導方針
 
@@ -41,7 +41,7 @@ ms.locfileid: "5432049"
 
 若要促銷您的 app，您可能會想要顯示該 app 在 Windows 裝置上執行時的外觀。 我們有各種不同的裝置機格圖片讓您選取，包括手機、平板電腦、膝上型電腦和個人電腦。 [Microsoft 市集行銷指導方針](http://go.microsoft.com/fwlink/p/?LinkId=529769)可以找到的最佳做法與技術規格如何使用這些映像。
 
-[![下載按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) **Windows 裝置美工圖案**
+[![下載按鈕](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057)**Windows 裝置美工圖案**
 
 ## <a name="license-to-microsoft-marks"></a>授與 Microsoft 商標權限
 
@@ -57,9 +57,9 @@ ms.locfileid: "5432049"
 
 Microsoft 是 Microsoft 標誌及相關商譽的唯一擁有人，也是您使用 Microsoft 標誌之商譽的唯一受益人。 Microsoft 在未經通知的情況下，得隨時撤銷此授權。
 
- 
+ 
 
- 
+ 
 
 
 

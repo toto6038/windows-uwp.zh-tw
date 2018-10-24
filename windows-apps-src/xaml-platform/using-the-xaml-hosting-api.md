@@ -9,12 +9,12 @@ ms.prod: windows
 ms.technology: uwp, windows forms, wpf
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 59072374e19da1c5c7e6e6a5e6a7b8c172d74052
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 5803646c3b613a5a57992a9791215138cf996966
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435471"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474022"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 
@@ -89,7 +89,7 @@ UWP XAML 裝載 API 包含[**DesktopWindowXamlSource**](https://docs.microsoft.c
 
     * 如果您的應用程式會建立**DesktopWindowXamlSource**物件，它會建立任何**Windows.UI.Xaml.UIElement**物件之前，此架構將會初始化為您時您具現化**DesktopWindowXamlSource**物件. 在此案例中，您不需要新增您自己來初始化架構的任何程式碼。
 
-    * 不過，如果您的應用程式會建立**Windows.UI.Xaml.UIElement**物件，它會建立裝載它們**DesktopWindowXamlSource**物件之前，您的應用程式必須呼叫靜態[**WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread)來明確初始化 UWP XAML 架構之前**Windows.UI.Xaml.UIElement**物件會具現化, 的方法。 您的應用程式應該通常應該時呼叫這個方法會裝載**DesktopWindowXamlSource**父 UI 元素已具現化。
+    * 不過，如果您的應用程式會建立**Windows.UI.Xaml.UIElement**物件，它會建立裝載它們**DesktopWindowXamlSource**物件之前，您的應用程式必須呼叫靜態[**WindowsXamlManager.InitializeForCurrentThread**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread)來明確初始化 UWP XAML 架構之前**Windows.UI.Xaml.UIElement**物件會具現化, 的方法。 具現化裝載**DesktopWindowXamlSource**父 UI 元素時，您的應用程式通常應該呼叫此方法。
 
     ```cppwinrt
     Windows::UI::Xaml::Hosting::WindowsXamlManager windowsXamlManager =

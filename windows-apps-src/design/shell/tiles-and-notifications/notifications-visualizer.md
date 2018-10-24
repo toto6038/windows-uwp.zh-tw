@@ -1,6 +1,6 @@
 ---
 author: andrewleader
-Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
+Description: Notifications Visualizer is a new Universal Windows Platform (UWP) app in the Store that helps developers design adaptive live tiles for Windows 10.
 title: 通知視覺化工具
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 template: detail.hbs
@@ -12,18 +12,18 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: af8b2489346e1ef81c5cae304802814b79b8b950
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432526"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473996"
 ---
 # <a name="notifications-visualizer"></a>通知視覺化工具
 
  
 
 
-通知視覺化檢視是 [Microsoft Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) 中新的通用 Windows 平台 (UWP) app，可協助開發人員設計適用於 Windows 10 的彈性動態磚和互動式快顯通知。
+通知視覺化檢視是新的通用 Windows 平台 (UWP) 應用程式[在市集中](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)，可協助開發人員設計彈性動態磚和互動式快顯通知，適用於 windows 10。
 
 
 ## <a name="overview"></a>概觀
@@ -34,13 +34,13 @@ ms.locfileid: "5432526"
 
 ![含有程式碼與磚的通知視覺化檢視應用程式編輯器的螢幕擷取畫面](images/notif-visualizer-001.png)
 
- 
+ 
 
 使用通知視覺化檢視，您可以建立及測試彈性磚和快顯通知承載，不需要編輯和部署您自己的應用程式。 建立含有理想的視覺效果的承載後，您便可將它整合到您的應用程式。 若要深入了解，請參閱[傳送本機磚通知](sending-a-local-tile-notification.md)和[傳送本機快顯通知](send-local-toast.md)。
 
-**注意**：Windows [開始] 功能表和快顯通知的通知視覺化檢視模擬不一定完全精確，而且它不支援部分進階承載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
+**注意：**  Windows [開始] 功能表和快顯通知的通知視覺化檢視模擬不一定完全精確，而且它不支援部分進階的承載屬性。 當您有想要的磚或快顯通知時，請釘選磚或彈出快顯通知來測試它，確認它顯示為您想要的樣子。
 
- 
+ 
 
 ## <a name="features"></a>功能
 
@@ -54,7 +54,7 @@ ms.locfileid: "5432526"
 
 ![含有磚的通知視覺化工具編輯器的螢幕擷取畫面](images/notif-visualizer-004.png)
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 

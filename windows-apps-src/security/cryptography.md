@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: aa01cc3d70db7a94667e944d1a1739e911f94b0c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439147"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5469767"
 ---
 # <a name="cryptography"></a>密碼編譯
 
@@ -46,7 +46,7 @@ ms.locfileid: "5439147"
 | 金鑰儲存提供者        | 儲存金鑰資料的容器。 金鑰目前可以儲存於軟體、智慧卡或信賴平台模組 (TPM)。                                                                   |
 | X.509 憑證           | 一種數位文件，通常由憑證授權單位發出，用於向其他相關各方來驗證個人、系統或實體的身分。                                            |
 
- 
+ 
 ## <a name="namespaces"></a>命名空間
 
 下列是應用程式中可供使用的命名空間。
@@ -152,4 +152,4 @@ SDK 也針對以密碼為基礎的資料保護提供簡化的介面。 您可以
 | [密碼編譯的出口限制](export-restrictions-on-cryptography.md) | 使用這項資訊判斷您的 app 使用密碼編譯的方式，是否會使它無法被刊登於 Microsoft Store 中。                                                                                                                                                                                                                                                                                                                                                                                            |
 | [常見的密碼編譯工作](common-cryptography-tasks.md)                     | 下列文章提供常見的 UWP 密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。                                                                                                                                                                                                                                                                                    |
 
- 
+ 

@@ -2,7 +2,7 @@
 author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 了解如何建立 "Hello, world" 應用程式 (XAML)
-description: 使用 Extensible Application Markup Language (XAML) 搭配 C# 來建立目標是 Windows 10 上通用 Windows 平台 (UWP) 的簡單 Hello, world 應用程式。
+description: 使用可延伸應用程式標記語言 (XAML) 搭配 C# 來建立 windows 10 上的簡單 Hello，world 應用程式針對目標為通用 Windows 平台 (UWP)。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
@@ -11,19 +11,19 @@ ms.technology: uwp
 keywords: windows 10, uwp, 第一個應用程式, hello world
 ms.localizationpriority: medium
 ms.openlocfilehash: 950b2f3fac44c8350a51fd5c1b7071f05c92d746
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434853"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479157"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 
-本教學課程會教您如何使用 XAML 和 C#，為 Windows10 上的「通用 Windows 平台」(UWP) 建立簡單的 Hello, world App。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows10 裝置上執行的 App。
+本教學課程會教您如何使用 XAML 和 C# 來建立簡單的"Hello，world"應用程式適用於通用 Windows 平台 (UWP) 上 windows 10。 在 Microsoft Visual Studio 中的單一專案，您可以建置在任何 windows 10 裝置執行的應用程式。
 
 您將在此處了解如何：
 
--   建立目標是 **Windows10** 和 **UWP** 的新 **Visual Studio 2017** 專案。
+-   建立新的**Visual Studio 2017**專案目標為**windows 10**和**UWP**。
 -   撰寫 XAML 以變更您開始頁面上的 UI。
 -   在本機桌面上使用 Visual Studio 執行專案。
 -   使用 SpeechSynthesizer 讓應用程式在您按下按鈕時說話。
@@ -236,7 +236,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 ## <a name="summary"></a>摘要
 
-恭喜！您已經完成適用於 Windows 10 和 UWP 的第一個應用程式了！
+恭喜，您已經完成第一個 app 針對 windows 10 和 UWP ！
 
 若要了解如何使用 XAML 來配置您的應用程式將使用的控制項，請嘗試進行[格線教學課程](../design/layout/grid-tutorial.md)，或直接進行[下一步](learn-more.md)？
 

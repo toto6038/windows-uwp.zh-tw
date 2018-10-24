@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 零售示範應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 152c775c1b69bfd82d8969aed7e638f98646bdd7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437432"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5472789"
 ---
 # <a name="add-retail-demo-rdx-features-to-your-app"></a>將零售示範 (RDX) 功能新增到您的應用程式
 
@@ -257,14 +257,14 @@ namespace Windows.System.Profile
 
 步驟 1： 宣告您的應用程式資訊清單中的_Microsoft-RetailDemo-Cleanup_服務。
 ``` CSharp
-  <Applications>
-      <Extensions>
-        <uap:Extension Category="windows.appService" EntryPoint="MyCompany.MyApp.RDXCustomCleanupTask">
-          <uap:AppService Name="Microsoft-RetailDemo-Cleanup" />
-        </uap:Extension>
-      </Extensions>
-   </Application>
-  </Applications>
+  <Applications>
+      <Extensions>
+        <uap:Extension Category="windows.appService" EntryPoint="MyCompany.MyApp.RDXCustomCleanupTask">
+          <uap:AppService Name="Microsoft-RetailDemo-Cleanup" />
+        </uap:Extension>
+      </Extensions>
+   </Application>
+  </Applications>
 
 ```
 

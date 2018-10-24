@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eebb967a7bf11163dc2e0ba502b40495901b39b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432986"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5476448"
 ---
 # <a name="optimize-animations-media-and-images"></a>最佳化動畫、媒體及影像
 
@@ -58,7 +58,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 讓 [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 產生動畫同樣也不是很好的做法。 除了效能變差，還會造成播放的視訊內容產生裂紋或其他殘影。
 
-> **注意**   這篇文章中對於 **MediaPlayerElement** 的建議也適用於 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
+> **注意：**  **MediaPlayerElement**本篇文章中的建議也適用於[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)。 **MediaPlayerElement** 只能在 Windows 10 版本 1607 取得，因此如果您是針對先前版本的 Windows 建立 App，則需要使用 **MediaElement**。
 
 ### <a name="use-infinite-animations-sparingly"></a>謹慎使用無限動畫
 
@@ -70,7 +70,7 @@ XAML 架構中幾乎所有的動畫皆預設為獨立式，但是您可以執行
 
 [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 命名空間包含高效能且順暢的動畫庫，這些動畫的外觀及操作與其他 Windows 動畫相同。 相關類別的名稱中會包含「佈景主題」，其相關說明請見[動畫概觀](https://msdn.microsoft.com/library/windows/apps/Mt187350)。 這個動畫庫支援許多常見的動畫案例，例如將應用程式的第一個檢視以動畫顯示，並建立狀態與內容轉換。 建議您儘量使用這個動畫庫來提升效能以及與 UWP UI 的一致性。
 
-> **注意**   動畫庫無法讓所有可能的屬性產生動畫。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
+> **注意：** 的動畫庫無法讓所有可能的屬性產生動畫。 如需無法套用動畫庫的 XAML 案例，請參閱[腳本動畫](https://msdn.microsoft.com/library/windows/apps/Mt187354)。
 
 
 ### <a name="animate-compositetransform3d-properties-independently"></a>個別使 CompositeTransform3D 屬性產生動畫效果

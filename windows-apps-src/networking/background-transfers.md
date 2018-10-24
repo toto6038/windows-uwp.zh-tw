@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fb273b6a37cb2f6322b0c9e3842b69676f82c616
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433560"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473986"
 ---
 # <a name="background-transfers"></a>背景傳輸
 使用背景傳輸 API 在網路上可靠地複製檔案。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
@@ -44,7 +44,7 @@ ms.locfileid: "5433560"
 
 儘管背景傳輸功能有它自己的網路狀態變更處理機制，網路連線的應用程式還有其他一般連線考量。 請參閱[利用可用的網路連線資訊](https://msdn.microsoft.com/library/windows/apps/hh452983)來取得其他資訊。
 
-> **注意：** 在行動裝置上執行的應用程式中，有些功能讓使用者能夠根據連線類型、漫遊狀態及使用者行動數據方案來監視和限制傳輸的資料量。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
+> **注意：** 的行動裝置上執行的應用程式，有些功能讓使用者來監視和限制傳輸的資料是根據連線類型、 漫遊狀態數量及使用者資料的計劃。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
 
 下表說明每個 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值何時可在手機上允許背景傳輸 (根據手機的目前狀態)。 您可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 類別來判定電話的目前狀態。
 
@@ -203,7 +203,7 @@ promise = download.startAsync().then(complete, error, progress);
 1.  您現在可以使用填入的清單重新啟動擱置的作業。
 
 ## <a name="post-processing"></a>後續處理
-Windows 10 的新功能是能夠在背景傳輸完成時 (即使 app 未執行) 執行 app 程式碼。 例如，您的 app 可能會想要在影片完成下載後更新可用的影片清單，而不是每次啟動 app 時掃描新的影片。 或者，您的 app 可能會想要嘗試使用不同的伺服器或連接埠，重新處理失敗的檔案傳輸。 成功和失敗的傳輸都會叫用後續處理，因此您可以用它來實作自訂的錯誤處理和重試邏輯。
+Windows 10 中的新功能是能夠在背景傳輸完成時執行應用程式程式碼，即使在應用程式未執行時。 例如，您的 app 可能會想要在影片完成下載後更新可用的影片清單，而不是每次啟動 app 時掃描新的影片。 或者，您的 app 可能會想要嘗試使用不同的伺服器或連接埠，重新處理失敗的檔案傳輸。 成功和失敗的傳輸都會叫用後續處理，因此您可以用它來實作自訂的錯誤處理和重試邏輯。
 
 Postprocessing 會使用現有的背景工作基礎結構。 您可以建立背景工作，並將它與傳輸建立關聯之後再開始傳輸。 傳輸接著會在背景執行，並在完成時呼叫您的背景工作以執行後續處理。
 
@@ -264,7 +264,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立連線之後，將中止任何在兩分鐘內未收到回應的 HTTP 要求訊息。
 
-> **注意：** 在任一種情況下，假設有網際網路連線，背景傳輸最多會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
+> **注意：** 在任一種情況下，假設有網際網路連線，背景傳輸會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
 
 ## <a name="debugging-guidance"></a>偵錯指導方針
 在 Microsoft Visual Studio 中停止偵錯工作階段就等同於關閉 app；PUT 上傳會被暫停，POST 上傳會被終止。 即使在偵錯時，應用程式應該列舉然後重新啟動或取消任何之前仍然存在的下載。 例如，如果偵錯工作階段與之前的操作無關，您可以在應用程式啟動時，讓應用程式取消已列舉的持續上傳作業。

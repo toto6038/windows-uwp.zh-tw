@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 863658438ce53f2c74faddb845a7d17c6ec3130c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443474"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5470853"
 ---
 # <a name="share-certificates-between-apps"></a>在應用程式之間共用憑證
 
@@ -78,9 +78,9 @@ app 可使用憑證來向 Web 服務驗證，而且多個 app 可使用憑證存
 
 如果沒有可用的用戶端憑證，則使用者必須新增憑證到憑證存放區。 您可以在 app 中包含程式碼，讓使用者選取包含用戶端憑證的 PFX 檔案，然後將該憑證匯入用戶端憑證存放區。
 
-**秘訣**  您可以使用 makecert.exe 來建立 PFX 檔案以配合此快速入門使用。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
+**提示：** 您可以使用 makecert.exe 來建立 PFX 檔案以配合此快速入門。 如需使用 makecert.exe 的資訊，請參閱 [MakeCert](https://msdn.microsoft.com/library/windows/desktop/aa386968)。
 
- 
+ 
 
 1.  開啟 Visual Studio，然後從開始頁面建立新專案。 將新專案命名為 "FirstContosoBankApp"。 按一下 **\[確定\]** 以建立新的專案。
 2.  在 MainPage.xaml 檔案中，將下列 XAML 新增至預設的 **Grid** 元素。 這個 XAML 包含一個瀏覽要匯入之 PFX 檔案的按鈕、一個輸入受密碼保護之 PFX 檔案的密碼的文字方塊、一個匯入所選 PFX 檔案的按鈕、一個登入受保護的 Web 服務的按鈕，以及一個顯示目前動作狀態的文字區塊。

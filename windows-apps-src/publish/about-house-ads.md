@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 155b8f67b5cd6080554afb889c7c27c921c998f8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439275"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479752"
 ---
 # <a name="about-house-ads"></a>關於自家廣告
 
@@ -34,7 +34,7 @@ ms.locfileid: "5439275"
 >[!NOTE]
 > 個別使用者每天看到任何指定自家廣告不超過 5 次。
 
- 
+ 
 
 ### <a name="related-topics"></a>相關主題
 

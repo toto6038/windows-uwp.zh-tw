@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: e4387ccb8ef7eb02cb0043530a4e683f7917f421
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434915"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5473488"
 ---
 # <a name="error-handling-in-xamlc-walkthrough"></a>XAML/C# 錯誤處理的逐步解說
 
@@ -35,7 +35,7 @@ ms.locfileid: "5434915"
       Width="300" />
     ```
 
-2.   After the **Width** property, but before the closing tag, assign a name of an error event handler to the [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) event. 在這個逐步解說中，錯誤事件處理常式的名稱為 **OnAdError**。
+2.   在 **Width** 屬性後方，但在結尾標記的前方，指派錯誤事件處理常式的名稱給 [ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.erroroccurred) 事件。 在這個逐步解說中，錯誤事件處理常式的名稱為 **OnAdError**。
     ``` xml
     <UI:AdControl
       ApplicationId="3f83fe91-d6be-434d-a0ae-7351c5a997f1"

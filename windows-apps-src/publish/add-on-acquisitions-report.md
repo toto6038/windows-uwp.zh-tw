@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
 ms.localizationpriority: medium
 ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440945"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5477403"
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 
 
-在 Windows 開發人員中心儀表板的**附加元件下載數**報告可讓您查看有多個附加元件，您所銷售、 人數統計資料及平台詳細資訊，並顯示適用於 Windows 10 （包括 Xbox） 客戶的轉換資訊。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。
+在 Windows 開發人員中心儀表板的**附加元件下載數**報告可讓您查看有多個附加元件，您所銷售、 人數統計資料及平台詳細資訊，並顯示對於 windows 10 的客戶 （包括 Xbox） 的轉換資訊。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。
 
 您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得附加元件下載數](../monetize/get-in-app-acquisitions.md)方法來擷取此資料。
 
@@ -90,6 +90,6 @@ ms.locfileid: "5440945"
 
 
 
- 
+ 
 
- 
+ 
