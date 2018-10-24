@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
 ms.openlocfilehash: d38465ce02e0aedf854094ede75fc33701b226a6
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396402"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440772"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>使用 MonoGame 2D 建立 UWP 遊戲
 
@@ -35,7 +35,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 +   熟悉基本電腦科學概念，如類別、方法和變數，為加分技能。
 
 ## <a name="why-monogame"></a>為什麼選擇 MonoGame？
-談到遊戲開發環境，並沒有選項短缺的問題。 從完整功能引擎如 Unity，到全方位且複雜的多媒體 API 如 DirectX，可能不知從何開始。 MonoGame 是一組工具，複雜層級落在遊戲引擎與更精細的 API (如 DirectX) 之間。 它提供簡單易用的內容管線，以及建立執行於各種不同平台上之輕量遊戲所需的所有功能。 最棒的是，MonoGame 應用程式以純 C# 撰寫，而且您透過 Microsoft 網上商店或其他類似散發平台快速散發。
+談到遊戲開發環境，並沒有選項短缺的問題。 從完整功能引擎如 Unity，到全方位且複雜的多媒體 API 如 DirectX，可能不知從何開始。 MonoGame 是一組工具，複雜層級落在遊戲引擎與更精細的 API (如 DirectX) 之間。 它提供簡單易用的內容管線，以及建立執行於各種不同平台上之輕量遊戲所需的所有功能。 最棒的是，MonoGame 應用程式以純 C# 撰寫，而且您透過 Microsoft Store 或其他類似散發平台快速散發。
 
 ## <a name="get-the-code"></a>取得程式碼
 如果您不想逐步完成教學課程的工作，只是想要看運作中的 MonoGame，[請按一下此處取得完成的 App](https://github.com/Microsoft/Windows-appsample-get-started-mg2d)。
@@ -44,7 +44,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 
 如果已經這樣做，請略過有關設定 MonoGame 查看程式碼逐步解說的下一節。
 
-**注意：** 這個範例中建立的遊戲並不完整（也根本談不上有趣）。 唯一目的是要示範 MonoGame 中 2D 開發的所有核心概念。 歡迎將此程式碼做成更好的遊戲，或在您已經掌握基本知識之後從頭開始！
+**注意：** 這個範例中建立的遊戲並不完整（也根本談不上有趣）。 其唯一目的是要示範 MonoGame 中 2D 開發的所有核心概念。 歡迎將此程式碼做成更好的遊戲，或在您已經掌握基本知識之後從頭開始！
 
 ## <a name="set-up-monogame-project"></a>設定 MonoGame 專案
 1. 從 [MonoGame.net](http://www.monogame.net/) 安裝適用於 Visual Studio 的 **MonoGame 3.6**
@@ -696,4 +696,4 @@ if (gameOver)
 
 必須提交 App 以取得[認證](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process)。
 
-如需詳細資訊，請參閱[發佈您的 UWP app](https://developer.microsoft.com/en-us/store/publish-apps)。
+如需詳細資訊，請參閱[發佈您的 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。

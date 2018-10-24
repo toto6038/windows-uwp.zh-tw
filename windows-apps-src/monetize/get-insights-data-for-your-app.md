@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
 ms.openlocfilehash: 30b9303fc44f557210c9ba80a2a135f77909dc10
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403891"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445805"
 ---
 # <a name="get-insights-data"></a>取得深入解析資料
 
-使用期間以針對特定的日期範圍與其他選擇性篩選器，取得的深入解析資料在 Microsoft Store 分析 API 中的這個方法與相關下載數、 健康情況，以及做為應用程式的使用方式計量。 這項資訊也會在 Windows 開發人員中心儀表板中的[見解報告](../publish/insights-report.md)中提供的。
+使用此方法來取得深入解析資料在 Microsoft Store 分析 API 中的與相關的下載數、 健康情況，以及做為應用程式的使用方式計量期間以針對特定的日期範圍與其他選擇性篩選器。 這項資訊也會在 Windows 開發人員中心儀表板[見解報告](../publish/insights-report.md)中提供的。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -79,9 +79,9 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| applicationId       | string | 您正在擷取深入解析資料之 app 的 「 市集識別碼。     |
+| applicationId       | string | 您正在擷取深入解析資料之應用程式的市集識別碼。     |
 | insightDate                | string | 我們所識別在特定的衡量標準的變更日期。 此日期代表我們偵測到大幅增加一週結尾，或減少度量單位，相較於前一週中。 |
-| 資料類型     | string | 其中一個下列字串，指定這個深入了解描述的一般分析區域：<p/><ul><li><strong>下載數</strong></li><li><strong>健康情況</strong></li><li><strong>使用方式</strong></li></ul>   |
+| 資料類型     | string | 其中一個下列字串，指定這個深入了解說明一般分析區域：<p/><ul><li><strong>下載數</strong></li><li><strong>健康情況</strong></li><li><strong>使用方式</strong></li></ul>   |
 | insightDetail          | array | 一或多個[InsightDetail 值](#insightdetail-values)代表目前的深入解析的詳細資料。    |
 
 
@@ -89,11 +89,11 @@ Authorization: Bearer <your access token>
 
 | 值               | 類型   | 描述                           |
 |---------------------|--------|-------------------------------------------|
-| FactName           | string | 下列其中一個值，指出目前的深入解析或目前的維度說明，為衡量標準會根據**資料類型**值。<ul><li>**健康情況**，如這個值永遠都是**叫用次數**。</li><li>**下載數**，這個值總是**AcquisitionQuantity**。</li><li>**使用方式**，此值可以是其中一個下列字串：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
-| SubDimensions         | array |  一或多個物件，其描述深入了解的單一單位。   |
+| FactName           | string | 下列其中一個值，指出目前的深入解析或目前維度說明，為衡量標準會根據**資料類型**值。<ul><li>**健康情況**，如這個值永遠都是**叫用次數**。</li><li>為**取得**此值永遠都是**AcquisitionQuantity**。</li><li>**使用方式**，此值可以是其中一個下列字串：<ul><li><strong>DailyActiveUsers</strong></li><li><strong>EngagementDurationMinutes</strong></li><li><strong>DailyActiveDevices</strong></li><li><strong>DailyNewUsers</strong></li><li><strong>DailySessionCount</strong></li></ul></ul>  |
+| SubDimensions         | array |  一或多個物件，其描述單一的衡量標準的深入解析。   |
 | PercentChange            | string |  跨整個客戶群的銷售量變更為的衡量標準的百分比。  |
 | DimensionName           | string |  為目前的維度中所述的衡量標準的名稱。 範例包括**EventType**、**市場**、 **DeviceType**、 **PackageVersion**、 **AcquisitionType**、 **AgeGroup**及**性別**。   |
-| DimensionValue              | string | 為目前的維度中所述的衡量標準的值。 例如，如果**DimensionName** **EventType**， **DimensionValue**可能會**損毀**或**停止回應**。   |
+| DimensionValue              | string | 目前的維度中所述的衡量標準的值。 例如，如果**DimensionName** **EventType**， **DimensionValue**可能會**損毀**或**停止回應**。   |
 | FactValue     | string | 深入了解已偵測到的日期的衡量標準絕對值。  |
 | Direction | string |  變更 （**正**或**負**） 的方向。   |
 | 日期              | 字串 |  我們識別出目前的深入解析或目前的維度相關的變更日期。   |

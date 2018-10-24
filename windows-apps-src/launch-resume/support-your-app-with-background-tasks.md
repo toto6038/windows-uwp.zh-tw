@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403068"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445254"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 
@@ -35,11 +35,11 @@ ms.locfileid: "5403068"
 
 同處理序背景支援是在 Windows10 版本 1607 中引進，用來簡化背景工作的撰寫。 但是您仍然可以撰寫跨處理程序工作。 如需有關撰寫同處理程序與跨處理程序背景工作的時機建議，請參閱[背景工作指導方針](guidelines-for-background-tasks.md)。
 
-跨處理序背景工作會更具彈性，因為背景處理程序無法關閉您的應用程式處理程序如果發生錯誤。 但是彈性的代價是以管理應用程式和背景工作之間的跨處理程序通訊方面複雜度變高的價格。
+跨處理序背景工作是更具彈性，因為背景處理程序無法關閉您的應用程式處理程序如果發生錯誤。 但是彈性的代價是以管理應用程式和背景工作之間的跨處理程序通訊方面複雜度變高的價格。
 
-跨處理序背景工作會實作為輕量型類別來實作[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)介面的作業系統在個別處理程序 (backgroundtaskhost.exe) 中執行。 使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)類別登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
+跨處理序背景工作會實作為輕量型類別來實作[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)介面不同處理序 (backgroundtaskhost.exe) 中執行的作業系統。 使用[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)類別登錄背景工作。 在登錄背景工作時，類別名稱可用來指定進入點。
 
-在 Windows10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為執行您直接在前景應用程式的程序的背景程式碼。
+在 Windows10 版本 1607 中，您可以在不建立背景工作的情況下啟用背景活動。 您可以改為執行您的背景程式碼，直接在前景應用程式的程序。
 
 若要快速開始使用同處理序背景工作，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)。
 
@@ -162,7 +162,7 @@ ms.locfileid: "5403068"
 > [!IMPORTANT]
 > **DeviceUseTrigger** 和 **DeviceServicingTrigger** 無法與同處理序背景工作搭配使用。
 
-部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個應用程式 (如果有的話) 指定為裝置的具有特殊權限的應用程式。 如需詳細資訊，請參閱[裝置同步和更新，適用於 Microsoft Store 裝置應用程式](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個應用程式 (如果有的話) 指定為裝置的具有特殊權限的應用程式。 如需詳細資訊，請參閱[裝置同步和更新 Microsoft Store 裝置應用程式](http://go.microsoft.com/fwlink/p/?LinkId=306619)
 
 ## <a name="managing-background-tasks"></a>管理背景工作
 
@@ -171,7 +171,7 @@ ms.locfileid: "5403068"
 [處理已取消的背景工作](handle-a-cancelled-background-task.md)  
 [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
 
-在應用程式啟動時檢查您的背景工作登錄。 請確定您的應用程式取消的背景工作會出現在 BackgroundTaskBuilder.AllTasks。 重新註冊便不會出現。 取消註冊不再需要任何工作。 這樣可確保所有背景工作登錄在每次啟動應用程式都會保持最新狀態。
+在應用程式啟動時檢查您的背景工作註冊。 請確定您的應用程式取消的背景工作是出現在 BackgroundTaskBuilder.AllTasks。 重新登錄便不會出現。 取消登錄任何不再需要的工作。 這樣可確保每次啟動應用程式時，所有背景工作註冊都是最新狀態。
 
 ## <a name="related-topics"></a>相關主題
 

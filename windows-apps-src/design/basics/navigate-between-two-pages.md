@@ -18,11 +18,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7df91069615b77ab54745690accc8f9353ff0163
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398964"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443369"
 ---
 # <a name="implement-navigation-between-two-pages"></a>在兩頁間實作瀏覽
 
@@ -300,7 +300,7 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 ```
 
 > [!NOTE]
-> 這裡的程式碼會使用[**瀏覽**](https://msdn.microsoft.com/library/windows/apps/br242694)的傳回值來擲回應用程式例外狀況，如果瀏覽到 app 的初始視窗框架失敗。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
+> 這裡的程式碼會使用傳回值的[**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694)擲回應用程式例外狀況，如果瀏覽到 app 的初始視窗框架失敗。 當 **Navigate** 傳回 **true** 時，表示已在瀏覽。
 
 現在，建置並執行 app。 按一下顯示為 [按一下以移至頁面 2] 的連結。 最上方顯示 [第 2 頁] 的第二頁應該會載入並顯示在框架中。
 

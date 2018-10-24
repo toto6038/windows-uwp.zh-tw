@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
 ms.openlocfilehash: 3be1312b5dcc716d29bf15a8e16a2647ada68d49
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403505"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444074"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -28,7 +28,7 @@ ms.locfileid: "5403505"
 
 ## <a name="add-the-screen-capture-capability"></a>新增螢幕擷取功能
 
-**Windows.Graphics.Capture**命名空間中找到的 Api 需要在您的應用程式資訊清單中宣告一般的功能：
+**Windows.Graphics.Capture**命名空間中找到的 Api 需要您的應用程式資訊清單中宣告一般的功能：
     
 1. 在**方案總管] 中**開啟**Package.appxmanifest** 。
 2. 選取 **\[功能\]** 索引標籤。

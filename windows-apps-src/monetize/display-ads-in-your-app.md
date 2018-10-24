@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
 ms.openlocfilehash: c0dde67e3f7ab43734ffb0bf2a5826cc54691e17
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395771"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445695"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
-使用 Microsoft Advertising SDK，在您的適用於 Windows10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的廣告營收平台提供各種不同的可以順暢地整合到您應用程式和支援的流量分配與多個最熱門的廣告網路的廣告格式。 我們的平台符合 OpenRTB、 VAST 2.x、 MRAID 2 及 VPAID 3 標準的而且不相容於壕溝及 IAS。 
+使用 Microsoft Advertising SDK，在您的適用於 Windows10 的通用 Windows 平台 (UWP) app 中投放廣告，提高您的獲利商機。 我們的廣告營收平台提供各種不同的可以順暢地整合到您應用程式和支援的流量分配與許多受歡迎的廣告網路的廣告格式。 我們的平台符合 OpenRTB、 原封不動 2.x、 MRAID 2 及 VPAID 3 標準的而且不相容於壕溝及 IAS。 
 
 <br/>
 

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、並行使用
 ms.localizationpriority: medium
 ms.openlocfilehash: 0853d3fce7a3af7539cce26229942f2bc31cb1a0
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405359"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444045"
 ---
 # <a name="get-xbox-live-concurrent-usage-data"></a>取得 Xbox Live 並行使用資料
 

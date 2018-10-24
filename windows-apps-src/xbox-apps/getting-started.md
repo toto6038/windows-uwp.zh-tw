@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: da260b4f9f5f50d97d39af883217dfbae91a566e
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403141"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442194"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>開始使用 Xbox One 上的 UWP 應用程式開發
 
@@ -23,7 +23,7 @@ ms.locfileid: "5403141"
 ## <a name="before-you-start"></a>開始之前
 
 開始之前，您需要執行下列動作：
--   設定 Windows 10 的最新版本的電腦。
+-   設定最新版的 Windows 10 的電腦。
 <!-- -  Install Microsoft Visual Studio 2015 Update 3 or Microsoft Visual Studio 2017.
 
     > [!NOTE]
@@ -43,7 +43,7 @@ ms.locfileid: "5403141"
 
 2.  安裝最新的[Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk)。
 
-3.  為您的開發電腦啟用開發人員模式 (**設定 / 更新與安全性 / 開發人員專用 / 開發人員功能的使用 / 開發人員模式**)。
+3.  為您的開發電腦啟用開發人員模式 (**設定 / 更新與安全性 / 開發人員專用 / 開發人員功能使用 / 開發人員模式**)。
 
 現在開發電腦已準備就緒，您可以觀看這段影片或繼續閱讀本文，了解如何設定您的 Xbox One 進行開發，以及建立和部署 UWP app。
 </br>
@@ -54,7 +54,7 @@ ms.locfileid: "5403141"
 
 1.  在 Xbox One上啟用開發人員模式。 下載應用程式、 取得啟用程式碼，然後輸入它在您的開發人員中心帳戶[管理 Xbox One 主機](https://partner.microsoft.com/xboxactivate)頁面中。 如需詳細資訊，請參閱[啟用 Xbox One 開發人員模式](devkit-activation.md)頁面。 
 
-2.  開啟 「**啟用開發人員模式 」** app，然後選取 [**切換並重新啟動**。 恭喜，您現在已經有處於開發人員模式的 Xbox One 了！
+2.  開啟**開發人員模式啟用**應用程式，然後選取 [**切換並重新啟動**。 恭喜，您現在已經有處於開發人員模式的 Xbox One 了！
   
   > [!NOTE]
   > 您的零售版遊戲和 App 將無法在開發人員模式中執行，但您所建立的 App 或遊戲則可以。 切換回零售模式，以執行您最愛的遊戲和 App。
@@ -70,13 +70,13 @@ ms.locfileid: "5403141"
 
     您可以透過啟動主機上的開發人員首頁 (位於首頁右側的大型磚)，並查看左上角來找到 Xbox One IP 位址。 如需開發人員首頁的詳細資訊，請參閱 [Xbox One 工具簡介](introduction-to-xbox-tools.md)。  
 
-2.  **適用於 c + + 和 HTML/Javascript 專案**： 您遵循類似的路徑 C# 專案，但在專案屬性中請移至 [**偵錯**] 索引標籤，選取 [偵錯工具來開啟下拉式清單中，輸入的 IP 位址或主機名稱中的 [**遠端電腦****電腦名稱**] 欄位中，並在 [**驗證類型**] 欄位中選取 **[通用 （未加密的通訊協定）** 到主控台。
+2.  **針對 c + + 和 HTML/Javascript 專案**： 您遵循類似的路徑 C# 專案，但在專案屬性中請移至 [**偵錯**] 索引標籤，選取 [偵錯工具來開啟下拉式清單中，輸入的 IP 位址或主機名稱中的 [**遠端電腦****電腦名稱**] 欄位中，並在 [**驗證類型**] 欄位中選取的**通用 （未加密的通訊協定）** 到主控台。
 
-3. 在頂端功能表列上的綠色播放按鈕左側，從下拉式清單選取**x64** 。
+3. 從下拉式清單選取**x64** ，綠色播放按鈕在頂端功能表列的左邊。
    
 4.  按 F5 鍵時，您的 App 將會建置並開始部署到您的 Xbox One 上。
   
-5.  第一次這樣做時，Visual Studio 會提示您輸入 Xbox One 的 PIN。 您可以透過在您的 Xbox One 上啟動開發人員首頁，並選取 [**顯示 Visual Studio pin\** ] 按鈕來取得 PIN。
+5.  第一次這樣做時，Visual Studio 會提示您輸入 Xbox One 的 PIN。 您可以透過您 Xbox One 上啟動開發人員首頁，並選取 [**顯示 Visual Studio pin** ] 按鈕來取得 PIN。
   
 6.  配對之後，您的 App 就會開始部署。 第一次這樣做時，處理速度可能會有點慢 (我們必須將所有工具都複製到您的 Xbox)，但如果花費的時間超過數分鐘，則可能有發生錯誤。 請確定您已依照上述所有步驟進行 (特別您是否有將 **\[驗證模式\]** 設為 **\[通用\]**？)，並且使用有線網路連線來連線到 Xbox One。  
 

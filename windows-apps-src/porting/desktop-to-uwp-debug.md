@@ -12,15 +12,15 @@ keywords: Windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: b5110eebde087593f07704e89c2e4708b2fcbb8b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397420"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443173"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>執行、 偵錯以及測試封裝的傳統型應用程式
 
-執行您的已封裝應用程式並查看外觀，而不需要簽署它。 然後，設定中斷點和逐步執行程式碼。 當您準備好在生產環境中測試您的應用程式時，簽署您的應用程式，然後再安裝它。 此主題將會告訴您如何執行每個項目。
+執行您的已封裝應用程式，並查看外觀，而不需要簽署它。 然後，設定中斷點和逐步執行程式碼。 當您準備好在生產環境中測試您的應用程式時，簽署您的應用程式，然後再安裝它。 此主題將會告訴您如何執行每個項目。
 
 <a id="run-app" />
 
@@ -44,7 +44,7 @@ Add-AppxPackage –Register AppxManifest.xml
 ![在 [開始] 功能表中的已封裝應用程式](images/desktop-to-uwp/converted-app-installed.png)
 
 > [!NOTE]
-> 已封裝的應用程式一律會以互動式使用者的身分執行，並安裝您已封裝的應用程式在任何磁碟機必須格式化為 NTFS 格式。
+> 已封裝的應用程式一律會以互動式使用者的身分執行，並安裝您已封裝的應用程式上任何磁碟機必須格式化為 NTFS 格式。
 
 ## <a name="debug-your-app"></a>偵錯您的應用程式
 
@@ -54,7 +54,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 如果使用任何其他工具建立套件，請依照下列步驟執行。
 
-1. 請確定您，讓它安裝在您的本機電腦上啟動您的已封裝應用程式至少一次。
+1. 請確定您啟動已封裝的應用程式至少一次，使它安裝在您的本機電腦上。
 
    請參閱上述[執行您的應用程式](#run-app)一節。
 
@@ -72,7 +72,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 ### <a name="debug-the-entire-application-lifecycle"></a>偵錯整個應用程式生命週期
 
-在某些情況下，您可能想對偵錯的程序，包括能夠在它開始之前偵錯您的應用程式進行更細微的控制。
+在某些情況下，您可能想對偵錯的程序，包括能夠在它開始之前，偵錯您的應用程式進行更細微的控制。
 
 您可以使用[PLMDebug](https://msdn.microsoft.com/library/windows/hardware/jj680085(v=vs.85).aspx)以取得完整控制應用程式生命週期，包括暫停、 繼續及終止。
 
@@ -84,7 +84,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>測試使用 Visual Studio 封裝的應用程式
 
-Visual Studio 使用測試憑證簽署您的應用程式。 您會在輸出資料夾中找到**建立應用程式套件**精靈產生的憑證。 憑證檔案有 *.cer*擴充功能，您必須將該憑證安裝到您想要測試您的應用程式上的電腦上**受信任的根憑證授權單位**存放區。 請參閱[側載您的套件](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
+Visual Studio 使用測試憑證來簽署您的應用程式。 您會在輸出資料夾中找到**建立應用程式套件**精靈產生的憑證。 憑證檔案有 *.cer*擴充功能，您必須將該憑證安裝到您想要測試您的應用程式上的電腦上**受信任的根憑證授權單位**存放區。 請參閱[側載您的套件](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>測試使用 Desktop App Converter (DAC) 封裝的應用程式
 
@@ -111,7 +111,7 @@ Visual Studio 使用測試憑證簽署您的應用程式。 您會在輸出資�
 
 ### <a name="test-your-application-for-windows-10-s"></a>測試您的應用程式，適用於 Windows 10 S
 
-發佈您的應用程式之前，請確定它將會正常運作上執行 Windows 10 S 的裝置事實上，如果您打算發行至 Microsoft Store 應用程式，您必須執行此動作因為這是市集需求。 無法在執行 Windows 10 S 的裝置上正確運作的應用程式，無法獲得認證。
+發佈您的應用程式之前，請確定它將會正常運作上執行 Windows 10 S 的裝置事實上，如果您打算發行至 Microsoft Store 的應用程式，您必須執行此動作因為這是市集需求。 無法在執行 Windows 10 S 的裝置上正確運作的應用程式，無法獲得認證。
 
 請參閱[您的 Windows 應用程式，適用於 Windows 10 S 測試](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-test-windows-s)。
 

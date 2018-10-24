@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ac0b2094b17120af8a0c85505cd03af389f1f4
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401120"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445436"
 ---
 # <a name="segoe-mdl2-icons"></a>Segoe MDL2 圖示
 
@@ -59,15 +59,15 @@ ms.locfileid: "5401120"
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
 ```
 
-您也可以使用靜態資源`SymbolThemeFontFamily` **Segoe MDL2 Assets**，存取而不需指定字型，依名稱：
+您也可以使用靜態資源`SymbolThemeFontFamily` **Segoe MDL2 Assets**，存取而不需指定字型依名稱：
 ```xaml
 <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" Glyph="&#xE700;"/>
 ```
 
 
 ## <a name="how-do-i-get-this-font"></a>如何取得此字型？
-* 在 Windows 10： 您只需要執行任何動作，字型隨附的 Windows。
-* 在 Mac 上，您需要下載並安裝字型：<a href="https://aka.ms/SegoeFonts">取得 Segoe UI 和 MDL2 圖示字型</a>
+* Windows 10： 上沒有任何您需要執行，字型隨附的 Windows。
+* 在 Mac 上您需要下載並安裝字型：<a href="https://aka.ms/SegoeFonts">取得 Segoe UI 和 MDL2 圖示字型</a>
 
 ## <a name="icon-list"></a>圖示清單
 請記住，**Segoe MDL2 Assets** 字型包含比我們在此處所展示的更多圖示。 許多圖示用於專門用途，通常不會用於其他地方。

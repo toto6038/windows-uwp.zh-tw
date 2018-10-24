@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 104788b98377b55564fcc204ecc161521d071c6b
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404093"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443490"
 ---
 #  <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
@@ -96,7 +96,7 @@ ms.locfileid: "5404093"
 
 在您的應用程式，包括 app 畫布或特殊命令容器，例如命令列、 命令列飛出視窗、 功能表列和對話方塊中，您可以在數個表面放置命令元素。
 
-請注意，可能的話，您應該讓使用者直接內容，而不是使用命令來處理內容的操作。 例如，讓使用者拖放清單項目來重新排列清單，而不要使用向上和向下命令按鈕。
+請注意，可能的話，您應該讓使用者操作直接內容，而不是使用命令來處理內容。 例如，讓使用者拖放清單項目來重新排列清單，而不要使用向上和向下命令按鈕。
 
 如果使用者無法直接操作內容，則在您 App 中的命令介面上放置下列命令元素。 以下是一些常用的命令介面的清單。
 
@@ -157,7 +157,7 @@ ms.locfileid: "5404093"
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">飛出視窗</a>是輕量型內容相關快顯視窗的可關閉只要點選或按一下飛出視窗以外的地方。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">飛出視窗</a>是輕量型的內容相關快顯的可關閉只要點選或按一下飛出視窗以外的地方。
 :::row-end:::
 
 :::row:::

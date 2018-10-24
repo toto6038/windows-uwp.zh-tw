@@ -10,22 +10,22 @@ ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 8796b2ea025a00015881d39449f2dd99d57121f8
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401272"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444136"
 ---
 # <a name="enumerating-point-of-service-devices"></a>列舉服務點裝置
 本節中，您會了解如何 [定義裝置選取器](https://docs.microsoft.com/windows/uwp/devices-sensors/build-a-device-selector)，用來查詢提供給系統的裝置並用此選取器使用其中一項下列方法列舉服務點裝置：
 
-**方法 1:**[使用的裝置選擇器](#method-1:-use-a-device-picker)
+**方法 1:**[使用裝置選擇器](#method-1:-use-a-device-picker)
 <br/>
-顯示的裝置選擇器 UI，並讓使用者選擇連接的裝置。 這個方法會處理更新清單，當裝置連接並移除，並會更簡單、 更安全，比其他方法。
+顯示裝置選擇器 UI，讓使用者選擇連接的裝置。 這個方法會處理更新清單，當裝置連接並移除，並會更簡單、 更安全，比其他方法。
 
 **方法 2:**[取得第一個可用裝置](#Method-1:-get-first-available-device)<br />使用[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync)存取特定服務點裝置類別中的第一個可用裝置。
 
-**方法 3:**[裝置的快照](#Method-2:-Snapshot-of-devices)<br />列舉的時間出現在系統指定時點的服務點裝置的快照。 您想要建置自己的 UI，或者需要在不向使用者顯示 UI 的情況下列舉裝置時，這非常實用。 [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)會保留回結果直到整個列舉完成。
+**方法 3:**[裝置的快照](#Method-2:-Snapshot-of-devices)<br />列舉的時間出現在特定點系統的服務點裝置的快照。 您想要建置自己的 UI，或者需要在不向使用者顯示 UI 的情況下列舉裝置時，這非常實用。 [FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync)會保留回結果直到整個列舉完成。
 
 **方法 4:**[列舉及監看](#Method-3:-Enumerate-and-watch)<br />[DeviceWatcher](https://docs.microsoft.com/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)是更強大且彈性的列舉模式，可讓您列舉目前存在，裝置，並新增或從系統移除裝置時也會收到通知。  當您想要保留背景中目前的裝置清單，可在您的 UI 中顯示，而不是等待發生快照時，這非常實用。
 
@@ -48,7 +48,7 @@ string selector = POSPrinter.GetDeviceSelector();
 * [MagneticStripeReader.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.magneticstripereader.getdeviceselector)
 * [PosPrinter.GetDeviceSelector](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector)
 
-使用**GetDeviceSelector**方法採用[PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes)值做為參數，您可以限制您的選取器列舉本機、 網路或藍牙連接 POS 裝置，減少完成查詢所需的時間。  下列範例顯示的這個方法，以定義只會在本機支援選取器使用連接的 POS 印表機。
+使用**GetDeviceSelector**方法來接受[PosConnectionTypes](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.posconnectiontypes)值做為參數，您可以限制您的選取器列舉本機、 網路或附加的藍牙 POS 裝置，減少完成查詢所需的時間。  下列範例顯示使用的這個方法，以定義選取器支援僅在本機連接的 POS 印表機。
 
  ```Csharp
 using Windows.Devices.PointOfService;
@@ -83,7 +83,7 @@ private async Task<BarcodeScanner> GetBarcodeScanner()
 
 若要取得的服務點裝置的最簡單方式是使用**GetDefaultAsync**取得服務點裝置類別中的第一個可用裝置。 
 
-下列範例說明如何使用[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync)適用於[BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner)。 程式碼撰寫模式都相似的所有服務點裝置類別。
+下列範例說明[GetDefaultAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync)適用於[BarcodeScanner](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.barcodescanner)的使用。 程式碼撰寫模式則是類似的所有服務點裝置類別。
 
 ```Csharp
 using Windows.Devices.PointOfService;
@@ -95,8 +95,8 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 > 因為它可能會從一個工作階段將不同的裝置，到下**GetDefaultAsync**必須小心使用。 許多事件可能影響這個列舉，導致第一個可用裝置不同，包括： 
 > - 變更連接到您電腦的相機 
 > - 變更 in Point of 服務裝置連接到您電腦
-> - 在您網路上可用的 [網路連接服務點裝置變更
-> - 在您的電腦的範圍內的藍芽服務點裝置變更 
+> - 在您網路上可用的 [網路連接服務點裝置中變更
+> - 在您的電腦的範圍內的藍芽服務點裝置中變更 
 > - 服務點設定的變更 
 > - 安裝驅動程式或 OPOS 服務物件
 > - 安裝服務點擴充功能
@@ -107,12 +107,12 @@ BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
 在某些情況下，或許您想要組建自己的 UI，或者需要在不向使用者顯示 UI 的情況下列舉裝置。  在這些情況下，您可能會列舉目前連接或使用 [DeviceInformation.FindAllAsync](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) 與系統配對的裝置快照。  這個方法在整個列舉完成之前，將不會顯示任何結果。
 
 > [!TIP]
-> 建議用**PosConnectionTypes**參數使用**GetDeviceSelector**方法時使用**FindAllAsync**限制您查詢所需的連線類型。  因為在傳回**FindAllAsync**結果前，必須完成他們的列舉網路及藍牙連線可能會延遲結果。
+> 建議使用**FindAllAsync**限制您查詢所需的連接類型時，用**PosConnectionTypes**參數使用**GetDeviceSelector**方法。  因為在傳回**FindAllAsync**結果前，必須完成他們的列舉網路及藍牙連線可能會延遲結果。
 
 > [!CAUTION] 
 > **FindAllAsync**傳回裝置的陣列。  這個陣列的順序可以在工作階段間變更，因此不建議透過在陣列中使用硬式編碼索引依賴特定順序。  使用[DeviceInformation](https://docs.microsoft.com/uwp/api/windows.devices.enumeration.deviceinformation)屬性來篩選您的結果，或是提供 UI 讓使用者可從中選擇。
 
-這個範例使用上述定義的裝置使用**FindAllAsync**快照的選取器，然後透過每個傳回的集合的項目會列舉並寫入偵錯輸出中的裝置名稱和識別碼。 
+這個範例使用上述定義的裝置使用**FindAllAsync**快照的選取器，然後透過每個傳回的集合的項目列舉並寫入偵錯輸出中的裝置名稱和識別碼。 
 
 ```Csharp
 using Windows.Devices.Enumeration;

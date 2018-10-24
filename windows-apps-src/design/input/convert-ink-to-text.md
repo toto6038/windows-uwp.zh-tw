@@ -13,11 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403614"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442623"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>將 Windows Ink 筆劃辨識為文字和圖案
 
@@ -212,7 +212,7 @@ private async void RecognizeStrokes_Click(object sender, RoutedEventArgs e)
         }
     }
 ```
-6. 以下是在我們的辨識畫布上繪製 TextBlock 的功能。 我們在筆跡畫布上中使用相關的筆墨筆劃的週框，來設定的位置和字型大小的 TextBlock。
+6. 以下是在我們的辨識畫布上繪製 TextBlock 的功能。 我們使用相關的筆墨筆劃的週框筆跡畫布上設定的位置和字型大小的 TextBlock。
 ```csharp
 /// <summary>
 /// Draw ink recognition text string on the recognitionCanvas.
@@ -231,7 +231,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
     recognitionCanvas.Children.Add(text);
 }
 ```
-7. 以下是在我們的辨識畫布上繪製省略符號和多邊形的功能。 我們在筆跡畫布上中使用相關的筆墨筆劃的週框，來設定的位置和圖形的字型大小。
+7. 以下是在我們的辨識畫布上繪製省略符號和多邊形的功能。 我們使用相關的筆墨筆劃的週框筆跡畫布上設定的位置和字型大小的圖形。
 ```csharp
     // Draw an ellipse on the recognitionCanvas.
     private void DrawEllipse(InkAnalysisInkDrawing shape)

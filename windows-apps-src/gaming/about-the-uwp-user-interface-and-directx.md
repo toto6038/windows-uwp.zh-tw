@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, DirectX 應用程式物件
 ms.localizationpriority: medium
 ms.openlocfilehash: fcbe68516e3ad8b2643faf68900e3305f18e8bbf
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395817"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444294"
 ---
 # <a name="the-app-object-and-directx"></a>App 物件和 DirectX
 
@@ -23,7 +23,7 @@ ms.locfileid: "5395817"
 
 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。 相反地，由於它們在 Windows 執行階段堆疊的較低層次執行，因此必須以更基礎的方法來與使用者介面架構進行互通： 方法為直接與 app 物件進行存取和互通。 了解這個互通發生的時間和方式，以及身為 DirectX 開發人員如何 在開發 UWP app 時有效使用這個模型。
 
-請參閱不熟悉的圖形條款或在讀取時遇到的概念的相關資訊的[Direct3D 圖形詞彙](../graphics-concepts/index.md)。
+請參閱[Direct3D 圖形詞彙](../graphics-concepts/index.md)不熟悉的圖形條款或在讀取時遇到的概念相關資訊。
 
 ## <a name="the-important-core-user-interface-namespaces"></a>重要的核心使用者介面命名空間
 

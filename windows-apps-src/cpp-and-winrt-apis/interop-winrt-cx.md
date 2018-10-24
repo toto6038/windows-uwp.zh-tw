@@ -10,17 +10,17 @@ ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: a21255299207bf6de06661e63936e6715c1f41c9
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396106"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445506"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 
-逐漸移植中的程式碼的策略您[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)專案[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中所討論[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md)。
+逐漸移植中的程式碼的策略您[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx)投影至[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)中所討論[移到 C + + WinRT 從 C + + /CX](move-to-winrt-from-cx.md)。
 
-本主題示範您可以使用 C + 之間轉換的兩個協助程式函式 + /CX 與 C + + /winrt 物件在同一個專案中的。 您可以使用它們來使用兩種語言專案中，程式碼之間的互通性，或您可以使用函式移植您的程式碼從 C + + /CX 至 C + + /winrt。
+本主題示範您可以使用 C + 之間轉換的兩個協助程式函式 + /CX 與 C + + /winrt 物件相同的專案中。 您可以使用它們來使用兩種語言專案中，程式碼之間的互通性，或您可以使用函式移植您的程式碼從 C + + /CX 至 C + + /winrt。
 
 ## <a name="fromcx-and-tocx-functions"></a>from_cx 和 to_cx 函式
 下述的協助程式函式將 C++/CX 物件轉換為對等 C++/WinRT 物件。 函式將 C++/CX 物件轉換為其基礎 [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509)介面指標。 然後它在該指標上呼叫 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) 為 C++/WinRT 物件的預設介面詢問。 **QueryInterface** 是 Windows 執行階段應用程式二進位介面 (ABI) 相當於 C++/CX safe_cast 擴充功能。 且，[**Winrt::put_abi**](/uwp/cpp-ref-for-winrt/put-abi) 函式擷取 C++/WinRT 物件的基礎 **IUnknown** 介面指標的位址，讓它可以設定另一個值。
@@ -51,9 +51,9 @@ T^ to_cx(winrt::Windows::Foundation::IUnknown const& from)
 
 ## <a name="example-project-showing-the-two-helper-functions-in-use"></a>使用中顯示兩個協助程式函式的範例專案
 
-簡單的方式，重現逐漸移植 C + 中的程式碼的案例 + CX 專案至 C + + WinRT，您可以開始建立新的專案，在 Visual Studio 中使用其中一個 C + + /winrt 專案範本 (看到[Visual Studio 支援 C + + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
+簡單的方式，重現逐漸移植 C + 中的程式碼的案例 + CX 專案至 C + + WinRT，您可以開始建立新的專案，在 Visual Studio 中使用這其中的 C + + WinRT 專案範本 (請參閱[Visual Studio 支援 C + WinRT以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。
 
-這個範例專案也會示範如何使用命名空間別名對不同孤立的程式碼中，為了處理 C + 之間可能命名空間衝突 + /winrt 投影與 C + + /CX 投影。
+這個範例專案也會示範如何使用命名空間別名對不同孤立的程式碼中，為了處理 C + 之間否則潛在命名空間衝突 + /winrt 投影與 C + + /CX 投影。
 
 - 建立**Visual c + +** \> **Windows 通用** > **核心應用程式 (C + + /winrt)** 專案。
 - 在專案屬性， **C/c + +** \> **一般** \> **使用的 Windows 執行階段擴充功能** \> **是 (/ZW)**。 這會開啟專案支援 C + + /CX。

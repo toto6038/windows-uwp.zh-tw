@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395532"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443593"
 ---
 # <a name="reveal-highlight"></a>顯色醒目提示
 
@@ -30,7 +30,7 @@ ms.locfileid: "5395532"
 > **重要的 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>運作方式
-顯色醒目提示引起對互動式元素，藉由顯示某元素的容器，當指標在附近的如這個圖例所示：
+顯色醒目提示引起互動式元素藉由顯示某元素的容器，當指標在附近的如這個圖例所示：
 
 ![顯色視覺效果](images/Nav_Reveal_Animation.gif)
 
@@ -134,7 +134,7 @@ ms.locfileid: "5395532"
 
 
 這些效果是由兩個筆刷定義： 
-* 邊框顯色**RevealBorderBrush**所定義
+* 邊框顯色是由**RevealBorderBrush**定義
 * 暫留顯色是由**RevealBackgroundBrush**所定義
 
 ```xaml

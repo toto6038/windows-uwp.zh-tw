@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
 ms.openlocfilehash: c2a851a442cabca4529cd202c90db692c43adcb5
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396412"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442636"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -136,7 +136,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="going-further"></a>更進一步
 
-雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 歡迎回到我們已經連結您並做實驗的表單，新增新的 UI 功能，並進一步修改使用者體驗與文件。 如果您想要透過更詳細的版面配置功能的逐步指導方針，請參閱我們的[調適型配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md)
+雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 歡迎回到我們已經連結您並實驗的表單，新增新的 UI 功能，並進一步修改使用者體驗的文件。 如果您想要透過更詳細的版面配置功能的逐步指導方針，請參閱我們的[調適型配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md)
 
 表單也不一定要與世隔絕，您可以往前一個步驟，將您的表單嵌入 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [樞紐控制項](../design/controls-and-patterns/tabs-pivot.md)。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的 [事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 

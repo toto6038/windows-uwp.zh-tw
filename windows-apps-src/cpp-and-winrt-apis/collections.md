@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 集合
 ms.localizationpriority: medium
 ms.openlocfilehash: e6a0cf8c2798adc59ffcf84381d6bbf64f2ce80e
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406097"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5444146"
 ---
 # <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 
@@ -25,7 +25,7 @@ ms.locfileid: "5406097"
 另請參閱[XAML 項目控制項; 繫結至 C + + /winrt 集合](binding-collection.md)。
 
 > [!NOTE]
-> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您不需要的存取權的函式和本主題中所記載的基底類別。 相反地，看到[是否您有較舊版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) ，您可以改為使用可觀察的向量範本的清單。
+> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本，則您不需要的存取權的函式和本主題中所記載的基底類別。 相反地，看到[是否您有較舊版本的 Windows SDK](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector#if-you-have-an-older-version-of-the-windows-sdk) ，您可以改為使用可觀察的向量範本的清單。
 
 ## <a name="helper-functions-for-collections"></a>針對集合的協助程式函式
 
@@ -33,7 +33,7 @@ ms.locfileid: "5406097"
 
 本節涵蓋您想要用來建立的集合，最初是空白的; 的案例然後填入*之後*建立。
 
-若要擷取一般用途的集合的實作類型的新物件，您可以呼叫[**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)函式範本。 物件會傳回為[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)，，而這就是您可透過呼叫傳回的物件函式和屬性的介面。
+若要擷取實作一般用途的集合類型的新物件，您可以呼叫[**winrt::single_threaded_vector**](/uwp/cpp-ref-for-winrt/single-threaded-vector)函式範本。 物件會傳回為[**IVector**](/uwp/api/windows.foundation.collections.ivector_t_)，，而這就是您可透過呼叫傳回的物件函式和屬性的介面。
 
 ```cppwinrt
 ...
@@ -67,7 +67,7 @@ int main()
 
 本節涵蓋您要建立集合，並填入它在同一時間的案例。
 
-您可以避免呼叫先前的程式碼範例中**附加**的額外負荷。 您可能已經資料來源，或是您可能會想要填入之前建立 Windows 執行階段集合物件的來源資料。 以下說明如何執行此動作。
+您可以避免呼叫**Append**先前的程式碼範例中的額外負荷。 您可能已經有資料來源，或您可能會想要填入之前建立 Windows 執行階段集合物件的來源資料。 以下是如何執行此動作。
 
 ```cppwinrt
 auto coll1{ winrt::single_threaded_vector<int>({ 1,2,3 }) };
@@ -101,7 +101,7 @@ IVectorView<float> view{ winrt::single_threaded_vector(std::move(values)).GetVie
 
 ### <a name="observable-collection"></a>可觀察的集合
 
-若要擷取新的物件類型實作*可觀察*集合的請呼叫[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)函式範本與任何項目類型。 但是為了讓適用於 XAML 項目控制項繫結可觀察的集合，使用**IInspectable**做為項目類型。
+若要擷取新的物件類型實作*可觀察*集合的請呼叫[**winrt::single_threaded_observable_vector**](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector)函式範本與任何項目類型。 但是為了讓適用於 XAML 項目控制項繫結可觀察的集合，使用**IInspectable**做為元素類型。
 
 物件會傳回為[**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_)，，而這就是透過其您 （或它繫結的控制項） 呼叫傳回的物件函式和屬性的介面。
 
@@ -115,7 +115,7 @@ auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IIn
 
 有兩個函式，我們看過關聯集合版本。
 
-- [**Winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map)函式範本會傳回為[**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)非變成可觀察集合關聯。
+- [**Winrt::single_threaded_map**](/uwp/cpp-ref-for-winrt/single-threaded-map)函式範本會傳回為[**IMap**](/uwp/api/windows.foundation.collections.imap_k_v_)非可觀察集合關聯。
 - [**Winrt::single_threaded_observable_map**](/uwp/cpp-ref-for-winrt/single-threaded-observable-map)函式範本會傳回為[**IObservableMap**](/uwp/api/windows.foundation.collections.iobservablemap_k_v_)關聯可觀察集合。
 
 您可以選擇性地質數這些集合與資料，藉由*右值*的類型 **:: map**或**std::unordered_map**傳遞給函式。
@@ -179,7 +179,7 @@ private:
 };
 ```
 
-**Get_container**所傳回的容器必須提供的**開始**和**結束**介面該**winrt::vector_view_base**預期。 如上述範例中所示， **std:: vector**提供的。 但您可以將傳回任何 fulfils 相同的合約，包括您自己的自訂容器的容器。
+**Get_container**所傳回的容器必須提供的**開始**和**結束**介面該**winrt::vector_view_base**預期。 如上述範例中所示， **std:: vector**提供的。 但您可以返回任何 fulfils 相同的合約，包括您自己的自訂容器的容器。
 
 ```cppwinrt
 struct MyVectorView3 :

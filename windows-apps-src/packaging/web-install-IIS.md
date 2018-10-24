@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式安裝程式，AppInstaller，側載，相關設定，選用套件，IIS 伺服器
 ms.localizationpriority: medium
 ms.openlocfilehash: 214ddd2b55bca1acecbab0a841cf2048335e7b3a
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405456"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443421"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>從 IIS 伺服器上安裝 UWP 應用程式
 
@@ -34,7 +34,7 @@ ms.locfileid: "5405456"
 
 ## <a name="step-1---install-iis-and-aspnet"></a>步驟 1-安裝 IIS 和 ASP.NET 
 
-[Internet Information Services](https://www.iis.net/)是可以透過 [開始] 功能表安裝的 Windows 功能。 在 **[開始] 功能表****開啟或關閉 Windows 功能**搜尋。
+[網際網路資訊服務](https://www.iis.net/)是透過 [開始] 功能表可安裝的 Windows 功能。 在 **[開始] 功能表****開啟或關閉 Windows 功能**搜尋。
 
 尋找並選取要安裝 IIS 的**網際網路資訊服務**。
 
@@ -49,7 +49,7 @@ ms.locfileid: "5405456"
 
 [安裝 Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio)如果您已經不安裝它。 如果您已經有 Visual Studio 2017，請確定已安裝下列工作負載。 如果工作負載未出現於您的安裝，請依照使用 Visual Studio 安裝程式 （從 [開始] 功能表中找到）。  
 
-在安裝期間，選取 [ **ASP.NET 和 Web 開發**與您感興趣的任何其他工作負載。 
+在安裝期間，選取 [ **ASP.NET 和 Web 開發**和其他您感興趣的工作負載。 
 
 安裝完成之後，啟動 Visual Studio，並建立新的專案 (**檔案** -> **新的專案**)。
 
@@ -69,7 +69,7 @@ ms.locfileid: "5405456"
 
 ## <a name="step-5---add-an-app-package-to-a-web-application"></a>步驟 5-新增應用程式套件的 web 應用程式 
 
-新增您要發佈到 web 應用程式的應用程式套件。 您可以使用的是提供[入門專案封裝](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)在 GitHub 上的一部分，如果您沒有可用的應用程式套件的應用程式套件。 簽署套件的憑證 (MySampleApp.cer) 也是在 GitHub 上的範例。 您必須有憑證安裝到您在之前安裝應用程式 (步驟 9) 的裝置。
+新增您要發佈到 web 應用程式的應用程式套件。 您可以使用的是 GitHub 上提供的[起始專案套件](https://github.com/AppInstaller/MySampleWebApp/tree/master/MySampleWebApp/packages)的一部分，如果您沒有可用的應用程式套件的應用程式套件。 簽署套件的憑證 (MySampleApp.cer) 也是在 GitHub 上的範例。 您必須有憑證安裝到您在之前安裝應用程式 (步驟 9) 的裝置。
 
 起始專案的 web 應用程式，在新的資料夾已新增到 web 應用程式呼叫`packages`，其中包含散佈應用程式套件。 若要在 Visual Studio 中建立資料夾，以滑鼠右鍵按一下 [方案總管] 中的根目錄中，選取 [**新增** -> **新的資料夾**，並命名為`packages`。 若要新增應用程式套件的資料夾，以滑鼠右鍵按一下`packages`資料夾，然後選取 [**新增]** -> **現有項目**和瀏覽至應用程式套件的位置。 
 
@@ -85,10 +85,10 @@ ms.locfileid: "5405456"
 
 按兩下 HTML 檔案，在程式碼編輯器視窗中開啟它。 在本教學課程中，將會使用只在必要來叫用應用程式安裝程式應用程式順利安裝在 Windows 10 應用程式的網頁中的元素。 
 
-在您的網頁，包含下列 HTML 程式碼。 若要成功叫用應用程式安裝程式的索引鍵是使用應用程式安裝程式會登錄於作業系統的自訂配置： `ms-appinstaller:?source=`。 下列程式碼範例，如需詳細資訊，請參閱。
+在您的網頁中包含下列 HTML 程式碼。 若要成功叫用應用程式安裝程式的索引鍵是使用應用程式安裝程式會登錄於作業系統的自訂配置： `ms-appinstaller:?source=`。 下列程式碼範例，如需詳細資訊，請參閱。
 
 > [!NOTE]
-> 確保指定自訂配置符合您 VS 解決方案的 [web] 索引標籤中的專案 Url 之後的 URL 路徑。
+> 請確定指定自訂配置符合 VS 方案的 [web] 索引標籤中的專案 Url 之後的 URL 路徑。
  
 ```HTML
 <html>
@@ -104,7 +104,7 @@ ms.locfileid: "5405456"
 
 ## <a name="step-7---configure-the-web-app-for-app-package-mime-types"></a>步驟 7-設定應用程式套件 MIME 類型的 web 應用程式
 
-從方案總管] 中開啟**Web.config**檔案，然後新增下列行內`<configuration>`項目。 
+從方案總管] 中開啟**Web.config**檔案，然後新增下列行內`<configuration>`元素。 
 
 ```xml
 <system.webServer>
@@ -133,7 +133,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 您應該尋找`microsoft.desktopappinstaller_8wekyb3d8bbwe`清單中。
 
-透過應用程式安裝程式的應用程式安裝的本機驗證完成後，您可以移除您在此步驟中所加入回送豁免：
+透過應用程式安裝程式的應用程式安裝本機驗證完成後，您可以移除您在此步驟中所新增回送豁免：
 
 '' 命令列 CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
 ```

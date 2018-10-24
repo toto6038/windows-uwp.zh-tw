@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404869"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5443583"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -125,7 +125,7 @@ ms.locfileid: "5404869"
 影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
-"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這樣的應用程式，您要透過 Microsoft 網上商店散布。 透過 Microsoft 網上商店散發應用程式的 resources.pri 必須位於應用程式套件的根目錄，並包含應用程式支援的所有語言參考。 
+"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這針對您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft Store 散發應用程式的 resources.pri 必須是應用程式套件的根目錄中，而且包含應用程式支援的所有語言參考。 
 字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
 字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -221,7 +221,7 @@ ms.locfileid: "5404869"
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
 
 > [!NOTE]
-> 應用程式的偵錯組建即使只[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)會使用應用程式，無法通過這個測試。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
+> 應用程式的偵錯組建無法通過這個測試，即使應用程式會使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
 
 > [!NOTE]
 > 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 如需詳細資訊，請參閱[UWP 應用程式中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。

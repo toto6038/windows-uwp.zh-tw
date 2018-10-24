@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 0767f8c1ca0fb80ff8c7b033832ffccd61aeabfc
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400364"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442804"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -362,11 +362,11 @@ int main()
 }
 ```
 
-如果您執行上面的範例，則您會看到**ImplicitCancellationAsync**列印一則訊息每秒後的三秒的時間就會自動終止帶來被取消。 因為在遇到`co_await`運算式，協同程式會檢查是否已取消。 如果有，則它 short-circuits 出;此外，若未指定，則它會暫停為一般。
+如果您執行上述範例，則您會看到**ImplicitCancellationAsync**列印一則訊息每秒後的三秒的時間就會自動終止帶來被取消。 因為在遇到`co_await`運算式，協同程式會檢查是否已取消。 如果有，則它 short-circuits 出;如果未指定，則它就會暫停為一般。
 
-協同程式暫停時，取消可以當然，會發生。 只有當協同程式恢復時，碰到另一部或`co_await`，它會檢查的取消。 問題是其中一個可能太--粗糙延遲回應取消作業。
+協同程式暫停時，取消可以當然，會發生。 只有當協同程式恢復時，碰到另一部或`co_await`，它會檢查的取消。 問題是其中一個可能太--粗糙的延遲時間以回應取消作業。
 
-因此，另一個選項是明確地輪詢取消從您的協同程式中。 更新，上述範例使用下列清單中的程式碼。 在這個新的範例中， **ExplicitCancellationAsync**擷取[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函式所傳回的物件，並使用它來定期檢查是否已取消協同程式。 協同程式，只要它不會取消，迴圈無限期;一旦取消，迴圈，並將函式正常的結束。 因為先前範例中，但此處結束會發生明確，並控制下，結果會相同。
+因此，另一個選項是明確地輪詢取消從您的協同程式中。 更新，上述範例使用下列清單中的程式碼。 在這個新的範例中， **ExplicitCancellationAsync**擷取[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函式所傳回的物件，並使用它來定期檢查是否已取消協同程式。 協同程式，只要不取消，迴圈無限期;一旦取消，迴圈，並將函式正常的結束。 因為先前範例中，但此處離開會發生明確，並控制下，結果會相同。
 
 ```cppwinrt
 ...
@@ -390,13 +390,13 @@ IAsyncAction MainCoroutineAsync()
 ...
 ```
 
-等候**winrt::get_cancellation_token**擷取代表您的協同程式便會產生**IAsyncAction**知識與取消語彙基元。 您可以在該權杖使用函式呼叫運算子來查詢取消狀態&mdash;基本上輪詢取消。 如果您正在執行某些計算繫結的作業，或逐一查看大型的集合，這是合理的技術。
+等候**winrt::get_cancellation_token**擷取代表您的協同程式便會產生**IAsyncAction**知識與取消語彙基元。 您可以在該權杖使用函式呼叫運算子來查詢取消狀態&mdash;基本上輪詢取消。 如果您正在執行某些計算繫結的作業，或逐一查看大型集合，這是合理的技術。
 
 ### <a name="register-a-cancellation-callback"></a>登錄取消回呼
 
-在 Windows 執行階段取消不會自動流向其他非同步物件。 但是&mdash;版本 10.0.17763.0 (Windows 10，版本 1809年) 的 Windows sdk 中導入&mdash;您可以登錄取消回呼。 這是預先勾點取消可以被傳播，並可讓您可以使用現有的並行處理程式庫整合。
+在 Windows 執行階段取消不會自動流向其他非同步物件。 但是&mdash;版本 10.0.17763.0 (Windows 10 版本 1809年) 的 Windows sdk 中導入&mdash;您可以登錄取消回呼。 這是預先勾點取消可以被傳播，並讓您使用現有的並行處理程式庫整合。
 
-在下一個程式碼範例， **NestedCoroutineAsync**負責運作，但它中有任何特殊的取消邏輯。 **CancellationPropagatorAsync**是基本上是巢狀的協同程式; 上的包裝函式包裝函式會聯合國轉送取消。
+在下一個程式碼範例， **NestedCoroutineAsync**負責運作，但它有任何特殊的取消邏輯中它。 **CancellationPropagatorAsync**是基本上是巢狀的協同程式; 上的包裝函式包裝函式會聯合國轉送取消。
 
 ```cppwinrt
 // pch.h
@@ -446,7 +446,7 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync**登錄它自己的取消回呼，lambda 函式，並在它的等待然後 （它會暫停） 除非巢狀的工作完成。 當或取消**CancellationPropagatorAsync** ，它傳播到巢狀的協同程式取消。 不需要地輪詢有取消;也不會取消封鎖無限期。 這種機制是有足夠的彈性，您可以使用它來與其互通的協同程式或並行存取媒體櫃知道執行任何動作的 C + + /winrt。
+**CancellationPropagatorAsync**登錄它自己的取消回呼，lambda 函式，並在它的等待然後 （它會暫停） 除非巢狀的工作完成。 當或取消**CancellationPropagatorAsync** ，它傳播到巢狀的協同程式取消。 不需要為輪詢取消;也不會取消封鎖無限期。 這種機制是有足夠的彈性，您可以使用它來與其互通的協同程式或並行處理的媒體櫃知道執行任何動作的 C + + /winrt。
 
 ## <a name="reporting-progress"></a>報告進度
 
@@ -510,7 +510,7 @@ int main()
 ```
 
 > [!NOTE]
-> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一種單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種其中一項下列兩種完成處理常式是適當;不同時針對相同的非同步物件。
+> 不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種下列兩種完成處理常式的其中一個是適當;不同時針對相同的非同步物件。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };
@@ -529,7 +529,7 @@ double pi{ co_await async_op_with_progress };
 
 ## <a name="fire-and-forget"></a>引發及忘記
 
-有時候，您有一個和其他工作，同時可以完成的工作，而且您不需要等待完成該工作 （任何其他工作相依性，） 也不需要它傳回一個值。 在此情況下，您可以關閉工作觸發，且忘記密碼。 您可以藉由撰寫協同程式，其傳回類型是[**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) （而不是其中一個 Windows 執行階段非同步作業類型，或是**concurrency:: task**）。
+有時候，您有一個和其他工作，同時可以完成的工作，而且您不需要等待完成該工作 （任何其他工作相依性，） 也不需要它傳回一個值。 在此情況下，您可以關閉工作觸發，且忘記它。 您可以藉由撰寫協同程式，其傳回類型是[**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) （而不是其中一個 Windows 執行階段非同步作業類型，或是**concurrency:: task**）。
 
 ```cppwinrt
 // pch.h

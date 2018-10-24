@@ -17,11 +17,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 78448081b81e7e28c4b97fcfdd7aa71ae32aeb0c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403792"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5445396"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -329,7 +329,7 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 您可以覆寫特定控制項 (例如 [**GridView**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.GridView)) 的按鍵事件，為各種輸入裝置 (包括鍵盤與遊戲台) 提供一致的焦點瀏覽。
 
-在下列範例中，我們的控制項分成子類別，並覆寫 KeyDown 行為，將焦點移至 GridView 內容時按下任一方向鍵時。
+在下列範例中，我們的控制項分成子類別，並覆寫 KeyDown 行為，將焦點移至 GridView 內容按下任一方向鍵時。
 
 ```csharp
 public class CustomGridView : GridView
