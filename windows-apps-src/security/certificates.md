@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 1db3af004831f010a3dd4918898ce5f7cf70bb1a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438117"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468596"
 ---
 # <a name="intro-to-certificates"></a>憑證簡介
 
@@ -26,7 +26,7 @@ ms.locfileid: "5438117"
 
 ### <a name="shared-certificate-stores"></a>共用的憑證存放區
 
-UWP app 使用 Windows 8 引進的新 Isolationist 應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
+UWP 應用程式使用 Windows8 中引進的新 isolationist 應用程式模型。 在這個模型中，在低階作業系統建構 (稱為 app 容器) 中執行的 app，除非明確允許，否則禁止 app 存取本身以外的資源或檔案。 下列章節描述這對公開金鑰基礎結構 (PKI) 所造成的影響。
 
 ### <a name="certificate-storage-per-app-container"></a>每一個 app 容器有一個憑證存放區
 

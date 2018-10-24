@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store reviews API, respond to reviews, Microsoft Store 評論 API, 回應評論
 ms.localizationpriority: medium
 ms.openlocfilehash: 004688612a7cdbebaa904acf7069a8d792f625da
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431124"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468453"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>使用Microsoft Store 服務回應評論
 
@@ -94,4 +94,4 @@ Microsoft Store 評論 API 包含數種方法您可以用來判斷，是否允�
 * [取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)
 * [提交應用程式評論的回應](submit-responses-to-app-reviews.md)
 
- 
+ 

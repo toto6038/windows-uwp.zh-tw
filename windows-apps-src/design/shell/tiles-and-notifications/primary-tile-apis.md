@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile, 釘選主要磚, 主要磚 api, 檢查是否釘選, 動態磚
 ms.localizationpriority: medium
 ms.openlocfilehash: 42b4c014dfd49c42497b8846e37e37af53cc3885
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445138"
+ms.locfileid: "5468348"
 ---
 # <a name="primary-tile-apis"></a>主要磚 API
  
@@ -88,7 +88,7 @@ bool isPinned = await StartScreenManager.GetDefault().ContainsAppListEntryAsync(
 如果主要磚目前未釘選，但 [開始] 支援畫面此磚時，您可能需要向使用者顯示提示，告知他們可以釘選您的主要磚。
 
 > [!NOTE]
-> 您必須在 App 處於前景時從 UI 執行緒呼叫此 API，而且只能在刻意要求使用者釘選主要磚之後 (例如，在使用者針對關於釘選主要磚的提示按一下 [是] 之後) 呼叫此 API。
+> 您的應用程式處於前景時，而您應該只呼叫這個 APIafterthe 已刻意要求使用者主要磚 bepinned （例如，在使用者關於釘選磚的提示，請按一下 [是]） 後，您必須從 UI 執行緒呼叫此 API。
 
 如果使用者按一下按鈕來釘選主要磚，您可以接著呼叫 [RequestAddAppListEntryAsync](https://docs.microsoft.com/uwp/api/windows.ui.startscreen.startscreenmanager#Windows_UI_StartScreen_StartScreenManager_RequestAddAppListEntryAsync_Windows_ApplicationModel_Core_AppListEntry_) 方法以要求將磚釘選到 [開始]。 這樣會顯示對話方塊，要求使用者確認他們想要將您的磚釘選到 [開始]。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 160a4ab0ff5bdc40ea46ff6d8fb9fd8e47f560e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439872"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5474353"
 ---
 # <a name="hardware-drm"></a>硬體 DRM
 
@@ -29,7 +29,7 @@ ms.locfileid: "5439872"
 
 ## <a name="windows-tee-implementation"></a>Windows TEE 實作
 
-本主題提供 Windows 10 如何實作受信任的執行環境 (TEE) 的簡要概觀。
+本主題提供 windows 10 如何實作受信任的執行環境 (TEE) 的簡要概觀。
 
 Windows TEE 實作的細節不在本文件的討論範圍內。 不過，對於標準移植套件 TEE 連接埠和 Windows 連接埠間差異的簡短討論是很有助益的。 Windows 會實作 OEM Proxy 層，並將序列化的 PRITEE 函式呼叫傳輸到 Windows 媒體基礎子系統中的使用者模式驅動程式。 這最終將路由傳送到 Windows TrEE (受信任的執行環境) 驅動程式或 OEM 的圖形驅動程式。 這些方法的細節都不在本文件的討論範圍內。 下圖顯示適用於 Windows 連接埠的一般元件互動。 如果您想要開發 Windows PlayReady TEE 實作，您可以連絡 <WMLA@Microsoft.com>。
 

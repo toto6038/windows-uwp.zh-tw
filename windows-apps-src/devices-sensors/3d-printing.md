@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，3dprinting，3d 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: acf0c9856328e26f8c39adf3f062a3516e7189e2
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440029"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468741"
 ---
 # <a name="3d-printing"></a>3D 列印
 
@@ -36,4 +36,4 @@ ms.locfileid: "5440029"
 * [3D 列印範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
 * [從 Unity 範例進行 3D 列印](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrintingFromUnity)
 
- 
+ 

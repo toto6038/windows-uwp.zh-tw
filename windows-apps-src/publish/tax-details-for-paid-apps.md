@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 稅, 應用程式稅金, 稅金要求, 商務擴展, 稅率
 ms.localizationpriority: medium
 ms.openlocfilehash: 461c9303bbb26e5c4739ca60c03343008377df6c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5444826"
+ms.locfileid: "5474383"
 ---
 # <a name="tax-details-for-paid-apps"></a>付費應用程式的稅務詳細資料
 
@@ -30,7 +30,7 @@ ms.locfileid: "5444826"
 > 
 > 除了下表中的資訊，經銷商國家/地區和環境的稅責 (如[下方](#reseller-countriesregions)所述) 於[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的附件 C 中說明
 
- 
+ 
 
 | 國家/地區                   | 價格選擇方面的稅務考量                                                                                                             | 支付關連                    | 稅責 |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------|
@@ -226,7 +226,7 @@ ms.locfileid: "5444826"
 | 尚比亞                           | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 辛巴威                         | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 
- 
+ 
 
 ## <a name="mixed-remittance-countriesregions"></a>混合免稅國家/地區
 
@@ -238,7 +238,7 @@ ms.locfileid: "5444826"
 | 南非                       |
 | 越南                            |
 
- 
+ 
 
 ## <a name="reseller-countriesregions"></a>轉銷商國家/地區
 
@@ -250,11 +250,11 @@ ms.locfileid: "5444826"
 | 中國 (執行 Windows Phone 7.x 的行動通訊裝置與執行 Windows8.x 的個人電腦除外) |
 | 巴西 (僅適用於透過執行 Windows 10 的裝置進行的購買)     |
 
- 
+ 
 
 
 
- 
+ 
 
 
 

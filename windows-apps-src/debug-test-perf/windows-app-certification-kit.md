@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: b7a72a89704aa3768cc43cdfbb75b620bae303e3
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443542"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468935"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
@@ -27,8 +27,8 @@ ms.locfileid: "5443542"
 
 測試通用 Windows app 的先決條件：
 
--   您必須安裝和執行 Windows 10。
--   您必須安裝 [Windows 應用程式認證套件 10 版]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，此套件包含在適用於 Windows 10 的 Windows 軟體開發套件 (SDK) 中。
+-   您必須安裝和執行 windows 10。
+-   您必須安裝[Windows 應用程式認證套件 10 版]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，其中包含適用於 windows 10 中 Windows 軟體開發套件 (SDK)。
 -   您必須[啟用您的裝置以進行開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 -   您必須將要測試的 Windows 應用程式部署至電腦。
 
@@ -56,17 +56,17 @@ ms.locfileid: "5443542"
 
 6.  開啟報告檔案，然後檢閱測試結果。
 
-**注意** 如果您使用的是 Visual Studio，可以在建立 app 套件時執行 Windows 應用程式認證套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
+**注意：** 如果您使用 Visual Studio，您就可以執行 Windows 應用程式認證套件，當您建立您的應用程式套件。 若要深入了解，請參閱[封裝 UWP app](https://msdn.microsoft.com/library/windows/apps/Mt627715)。
 
- 
+ 
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-from-a-command-line"></a>從命令列使用 Windows 應用程式認證套件來驗證 Windows app
 
-**重要** Windows 應用程式認證套件必須在使用中的使用者工作階段內容中執行。
+**重要**Windows 應用程式認證套件必須在作用中使用者工作階段的內容中執行。
 
 1.  在命令視窗中，瀏覽到包含 Windows 應用程式認證套件的目錄。
 
-    **注意** 預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
+    **注意：** 的預設路徑為 C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\。
 
 2.  依序輸入下列命令，以測試電腦上已安裝的 app：
 
@@ -82,9 +82,9 @@ ms.locfileid: "5443542"
 
 3.  測試完成之後，開啟名為 `[report file name]` 的報告檔案，然後檢閱測試結果。
 
-**注意** Windows 應用程式認證套件可以從服務中執行，但是該服務必須在使用中的使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
+**注意：** Windows 應用程式認證套件可以從服務中，執行，但是該服務必須在作用中使用者工作階段內初始套件處理程序，而且無法在 Session0 中執行。
 
-**注意** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
+**注意：** 如需 Windows 應用程式認證套件命令列的詳細資訊，請輸入下列命令 `appcert.exe /?`
 
 ## <a name="testing-with-a-low-power-computer"></a>使用低功率電腦進行測試
 
@@ -98,9 +98,9 @@ Windows 應用程式認證套件的效能測試閾值是以低功率電腦的效
 
 * [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)
 * [Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 
 
- 
+ 
 
 
 

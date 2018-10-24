@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f446299dcf1a0bcf93d483d13c926c6e4cd230f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432711"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468312"
 ---
 # <a name="authentication-and-user-identity"></a>驗證和使用者識別
 
@@ -25,7 +25,7 @@ ms.locfileid: "5432711"
 
 對於連線到第三方識別提供者服務 (例如 Facebook、Twitter 及 Flickr 等) 的一般 app 連線，請使用 [Web 驗證代理人](web-authentication-broker.md)。 如果您使用[認證保險箱](credential-locker.md)來儲存使用者的登入資訊，以及讓這些資訊漫遊，就能得到額外的便利性。
 
-我們強烈建議使用 Windows 10 的企業，採用能啟用高安全性雙因素驗證的 [Microsoft Passport 和 Windows Hello](microsoft-passport.md)。 如果您無法使用 Microsoft Passport，[智慧卡](smart-cards.md)和[指紋生物特徵辨識技術](fingerprint-biometrics.md)也能提供額外的安全性。
+使用 windows 10 的企業應強烈考慮使用[Microsoft Passport 及 Windows Hello](microsoft-passport.md)，可讓高度安全的雙因素驗證。 如果您無法使用 Microsoft Passport，[智慧卡](smart-cards.md)和[指紋生物特徵辨識技術](fingerprint-biometrics.md)也能提供額外的安全性。
 
 <table>
 <tr><th>主題</th><th>描述</th></tr>

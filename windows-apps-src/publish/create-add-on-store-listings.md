@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d6132c2ede9f14cd1f4d29195916c8b484abfe9f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435551"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468358"
 ---
 # <a name="create-add-on-store-listings"></a>建立附加元件 Store 清單
 
@@ -50,9 +50,9 @@ ms.locfileid: "5435551"
 
 您也可以選擇提供可以向客戶顯示的影像。 此圖示必須是 .png 檔案，大小必須是 300 x 300 像素。
 
- 
+ 
 
- 
+ 
 
 
 

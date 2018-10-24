@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式名稱，變更應用程式名稱、 更新應用程式名稱、 遊戲名稱、 產品名稱
 ms.localizationpriority: medium
 ms.openlocfilehash: 878b105541691834dbbe35b5210f33045afdc47b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438206"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5468626"
 ---
 # <a name="manage-app-names"></a>管理應用程式名稱
 
@@ -64,9 +64,9 @@ ms.locfileid: "5438206"
 > [!TIP]
 > 每個應用程式會出現在儀表板中使用它們您保留給它的名字。 如果您已按照上述步驟，以重新命名應用程式，而且您想要它才會出現在儀表板中使用新的名稱，您必須刪除的原始名稱 （藉由在 [**管理應用程式名稱**] 頁面上，按一下 [**刪除**)。 
 
- 
+ 
 
- 
+ 
 
 
 

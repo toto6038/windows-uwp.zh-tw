@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434691"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483878"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
@@ -481,7 +481,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 
 
- 
+ 
 
 ### <a name="branding-validation"></a>商標驗證
 
@@ -551,7 +551,7 @@ Microsoft Store 需要使用 Direct3D 正確呈現，或正常功能層級 9 \-1
 
 ### <a name="direct3d-trim-after-suspend"></a>暫停後的 Direct3D 修剪
 
-> **注意：** 這項測試僅適用於 Windows 8.1 及更新版本開發的 UWP 應用程式。
+> **注意：** 這項測試只適用於 UWP 應用程式開發的 Windows8.1 和更新版本。
 
 ### <a name="background"></a>背景
 
@@ -673,4 +673,4 @@ WinJS 背景工作測試可確保 JavaScript 應用程式具備適當的 close �
 
 * [Windows 傳統型橋接器應用程式測試](windows-desktop-bridge-app-tests.md)
 * [Microsoft Store 原則](https://msdn.microsoft.com/library/windows/apps/Dn764944)
- 
+ 
