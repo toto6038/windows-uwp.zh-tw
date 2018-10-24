@@ -10,31 +10,31 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: e4c1b1df8ad29635f38ae5b373685d3504a4eb60
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400911"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5440114"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>建立通用 Windows 平台主控台應用程式
 
 本主題說明如何建立[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)或 C + + /CX 通用 Windows 平台 (UWP) 主控台應用程式。
 
-從 Windows 10，版本 1803 起，您可以撰寫 C + + /winrt 或 C + + /CX UWP 主控台應用程式執行於主控台視窗中，例如 DOS 或 PowerShell 主控台視窗。 主控台應用程式使用主控台視窗輸入與輸出，並可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，例如**printf**以及**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可從 [開始] 功能表中，啟動 UWP 主控台應用程式，雖然您一般會啟動它們從命令列。
+從 Windows 10，版本 1803 起，您可以撰寫 C + + /winrt 或 C + + /CX UWP 主控台應用程式執行於主控台視窗中，例如 DOS 或 PowerShell 主控台視窗。 主控台應用程式使用主控台視窗輸入與輸出，並可以使用[通用 C 執行階段](/cpp/c-runtime-library/reference/crt-alphabetical-function-reference)功能，例如**printf**以及**getchar**。 UWP 主控台應用程式可發佈至 Microsoft Store。 這些應用程式均列於應用程式清單中，且皆有可釘選到 \[開始\] 功能表的主要磚。 可從 [開始] 功能表中，啟動 UWP 主控台應用程式，雖然您通常會啟動它們從命令列。
 
-若要查看動作中的其中一個，以下是 「 creating a UWP Console App。
+若要查看動作中的其中一個，以下是有關建立 UWP 主控台應用程式的影片。
 
 > [!VIDEO https://www.youtube.com/embed/bwvfrguY20s]
 
 ## <a name="use-a-uwp-console-app-template"></a>使用 UWP 主控台應用程式範本 
 
-若要建立 UWP 應用程式主控台，請先安裝**主控台應用程式 (通用) 專案範本** (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) 取得)。 已安裝的範本，便可使用**新的專案**底下 > **已安裝** > **其他語言** > **Visual c + +** > **Windows 通用**為**Console App C + /winrt (通用 Windows)** 及**Console App C + + /CX (通用 Windows)**。
+若要建立 UWP 應用程式主控台，請先安裝**主控台應用程式 (通用) 專案範本** (可從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.ConsoleAppUniversal) 取得)。 已安裝的範本，便可使用**新的專案**底下 > **已安裝** > **其他語言** > **Visual c + +** > **Windows 通用**為**Console App C + /winrt (通用 Windows)** 和**Console App C + + /CX (通用 Windows)**。
 
 ## <a name="add-your-code-to-main"></a>將您的程式碼新增至 main()
 
 範本會新增 **Program.cpp**，其中包含 `main()` 函數。 這是在 UWP 主控台應用程式中執行開始的位置。 存取具有 `__argc` 與 `__argv` 參數的命令列引數。 當控制項從 `main()` 傳回時，會有 UWP 主控台應用程式存取。
 
-新增下列範例的**Program.cpp** **Console App C + WinRT**範本：
+**Program.cpp**下列範例會藉由新增**Console App C + WinRT**範本：
 
 ```cppwinrt
 #include "pch.h"

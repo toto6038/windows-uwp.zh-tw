@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bed72b17ea59494a7eee6850d1ff4be2172c694
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400941"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436614"
 ---
 # <a name="manual-camera-controls-for-photo-and-video-capture"></a>相片和視訊擷取的手動相機控制項
 
@@ -269,7 +269,7 @@ OIS 控制項支援開啟、關閉和自動三種模式，這表示裝置會動�
 ## <a name="powerline-frequency"></a>電源頻率
 有些相機裝置支援抗閃爍處理，而這取決於了解目前環境中電源的 AC 頻率。 有些裝置支援自動決定電源頻率，有些則需要手動設定頻率。 下列程式碼範例顯示如何判斷裝置上的電源頻率支援，以及必要時如何手動設定頻率。 
 
-首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 藉由呼叫[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)並傳入的值為**自動**執行此動作。如果呼叫成功，這表示您的自動電源頻率支援的說明。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
+首先，呼叫 **VideoDeviceController** 方法 [**TryGetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206898)，傳入一個 [**PowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.PowerlineFrequency) 類型的輸出參數，如果此呼叫失敗，表示目前的裝置不支援電源頻率控制項。 如果支援此功能，您可以試著設定自動模式來判斷裝置上是否可使用自動模式。 藉由呼叫[**TrySetPowerlineFrequency**](https://msdn.microsoft.com/library/windows/apps/br206899)並傳入的值**自動**執行此動作。如果呼叫成功，這表示您的自動電源頻率支援的說明。 如果裝置支援電源頻率控制器，但不支援自動頻率偵測，您仍然可以使用 **TrySetPowerlineFrequency** 以手動方式設定頻率。 在這個範例中，**MyCustomFrequencyLookup** 是您為了判斷裝置目前位置的正確頻率而實作的自訂方法。 
 
 [!code-cs[PowerlineFrequency](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetPowerlineFrequency)]
 

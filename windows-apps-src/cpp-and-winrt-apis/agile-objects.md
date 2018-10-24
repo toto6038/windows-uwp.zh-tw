@@ -10,15 +10,15 @@ ms.technology: uwp
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cc8ebb24eb051cd8e9b141f361f47041b122d5c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5401923"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5436643"
 ---
 # <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
 
-在大部分的情況下，從任何執行緒 （就像大部分的標準 c + + 物件可以） 可以存取 Windows 執行階段類別的執行個體。 Windows 執行階段類別是*agile*。 只有少數隨附於 Windows 的 Windows 執行階段類別是非敏捷的但當您使用它們時需要考量其執行緒模型與封送處理行為 （封送處理是 apartment 通過界限傳遞資料）。 適用於敏捷式物件，每個 Windows 執行階段物件的最佳預設值是讓您自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是敏捷的預設值。
+在大部分的情況下，從任何執行緒 （就如同大部分的標準 c + + 物件可以） 可以存取 Windows 執行階段類別的執行個體。 Windows 執行階段類別是*agile*。 只有少數隨附於 Windows 的 Windows 執行階段類別是非敏捷的但當您使用它們時需要考量其執行緒模型與封送處理行為 （封送處理是 apartment 通過界限傳遞資料）。 適用於敏捷式物件，每個 Windows 執行階段物件的最佳預設值是讓您自己[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)是敏捷的預設值。
 
 但您可以選擇退出。您可能會有個有力的理由，讓您類型的物件駐留，例如，指定的單一執行緒 Apartment。 這通常與重新進入需求有關。 但即使使用者介面 (UI) API 提供越來越多敏捷式物件。 一般而言，敏捷性式最簡單且效能最佳的選項。 此外，當您實作啟動原廠，它必須是敏捷的，即使您對應執行階段類別不是。
 
@@ -89,7 +89,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 不論標記結構在 variadic 參數套件中出現的位置。
 
-不論您選擇退出敏捷性，您可以自行實作**IMarshal** 。 例如，您可以使用**winrt:: non_agile**標記避免預設敏捷性實作，並親自實作**IMarshal** &mdash;或許可來支援依照值封送處理的語意。
+不論您選擇退出敏捷性，您可以自行實作**IMarshal** 。 例如，您可以使用**winrt:: non_agile**標記避免預設敏捷性實作，並親自實作**IMarshal** &mdash;或許可以支援依照值封送處理的語意。
 
 ## <a name="agile-references-winrtagileref"></a>敏捷式參考資訊 (winrt::agile_ref)
 

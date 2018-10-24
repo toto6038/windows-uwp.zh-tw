@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ec6661ec0ef65174b6218957450540edceaa5a0
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403250"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438236"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 
@@ -73,7 +73,7 @@ ms.locfileid: "5403250"
 | ReviewId | 字串 |  您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字串 | 您想要提交的回應。 您的回應必須依照[這些指導方針](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字串 | 您 app 的支援電子郵件地址，客戶可以用來直接連絡您。 這必須是有效的電子郵件地址。     |  是  |
-| IsPublic | 布林值 |  如果您指定 **，則為 true**，則您的回應將會顯示在您的應用程式市集清單中，客戶的評論的正下方，而且會顯示給所有客戶。 如果您指定**false** ，且使用者未選擇不收到電子郵件回應，您的回應將會傳送給客戶透過電子郵件，並不會看到其他客戶在您的應用程式市集清單中。 如果您指定**false** ，且使用者已選擇不收到回應的電子郵件，將會傳回錯誤。   |  是  |
+| IsPublic | 布林值 |  如果您指定 **，則為 true**，您的回應將會顯示在您的應用程式市集清單中，客戶的評論下方，而且會顯示給所有客戶。 如果您指定**為 false** ，使用者還沒有選擇退出接收電子郵件回應，您的回應將會傳送給客戶透過電子郵件，並不會看到其他客戶在您的應用程式市集清單中。 如果您指定**false** ，且使用者已選擇不收到回應的電子郵件，將會傳回錯誤。   |  是  |
 
 
 ### <a name="request-example"></a>要求範例

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
 ms.openlocfilehash: 6617c3d5901fbb1a1e9a7f271f4c80d4f38e41f6
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396287"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438325"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 

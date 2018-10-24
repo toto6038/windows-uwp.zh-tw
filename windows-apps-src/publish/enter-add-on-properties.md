@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397361"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438515"
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
@@ -44,7 +44,7 @@ ms.locfileid: "5397361"
 
 ## <a name="subscription-period"></a>訂閱期間
 
-如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是**每月**，但您也可以選取**3 個月**、 **6 個月**、**年度**，還是**24 個月**。
+如果您選取的產品類型是 **\[訂閱\]**，則此處會顯示 **\[訂閱期間\]**。 選擇一個選項，來指定向客戶收取訂閱費用的頻率。 預設選項是**每月**，但您也可以選取**3 個月**、 **6 個月**、**年度**，或**24 個月**。
 
 > [!IMPORTANT]
 > 您的附加元件發行之後，您無法變更 **\[訂閱期間\]** 選項。

@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2caec1c245514f7c1596d2a40749e974998fadcd
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398369"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441173"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題示範如何實作中的可觀察屬性[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何將 XAML 控制項繫結至它們。
@@ -49,11 +49,11 @@ namespace Bookstore
 ```
 
 > [!NOTE]
-> 您的檢視模型類別&mdash;事實上，在您的應用程式中宣告的任何執行階段類別&mdash;不需要是衍生自基底類別。 上述宣告**BookSku**類別是該範例。 它實作的介面，但它不是衍生自任何基底類別。
+> 您的檢視模型類別&mdash;事實上，在您的應用程式中宣告的任何執行階段類別&mdash;不需要是衍生自基底類別。 上述宣告的**BookSku**類別是該範例。 它實作的介面，但它不會從任何基底類別衍生。
 >
-> 您在應用程式中宣告的任何執行階段類別*沒有*是衍生自基底類別稱為*可組合*類別。 也可組合類別周圍的限制式。 若要通過[Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試使用 Visual studio 和 Microsoft store 來驗證提交應用程式 (因而成功內嵌到 Microsoft Store 應用程式)，可組合類別必須最終從 Windows 的基底類別衍生。 這表示在非常根目錄繼承階層的類別必須來自 windows.* 命名空間中的類型。 如果您真的是一個執行階段類別衍生自基底類別&mdash;例如，若要實作的檢視模型是衍生自所有的**Quizgame**類別&mdash;，然後您可以從[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)衍生。
+> 您在應用程式中宣告的任何執行階段類別*沒有*衍生自基底類別稱為*可組合*類別。 也可組合類別周圍的限制式。 若要通過[Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試使用 Visual studio 和 Microsoft store 來驗證提交應用程式 (因而成功內嵌到 Microsoft Store 的應用程式)，可組合類別必須最終從 Windows 的基底類別衍生。 這表示在非常根目錄的類別繼承階層的必須來自 windows.* 命名空間的類型。 如果您真的是執行階段類別衍生自基底類別&mdash;例如，若要實作的檢視模型是衍生自所有的**Quizgame**類別&mdash;，然後您可以從[**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)衍生。
 >
-> 檢視模型是檢視的抽象概念，因此它會繫結，直接到檢視 （在 XAML 標記）。 資料模型的抽象概念的資料，而且它取用只從檢視模型，以及不直接繫結至 XAML。 因此，您可以宣告資料模型，不做為執行階段類別，但為 c + + 結構或類別。 不需要在 MIDL 中進行宣告，您可以隨意使用任何您喜歡的繼承階層決定。
+> 檢視模型是檢視的抽象概念，因此它會繫結，直接到檢視 （在 XAML 標記）。 資料模型的抽象概念的資料，而且它取用只從檢視模型，以及不直接繫結至 XAML。 因此，您可以宣告資料模型，不做為執行階段類別，但為 c + + 結構或類別。 不需要在 MIDL 中進行宣告，您可以隨意使用任何您喜歡的繼承階層。
 
 儲存檔案並建置專案。 在建置程序期間，執行 `midl.exe` 工具建立描述執行階段類別的 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
@@ -126,7 +126,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-在**標題**更動子函式中，我們會檢查是否設定的值，此地址不同於目前的值。 而且，如果是的話，我們更新標題並也會引發[**inotifypropertychanged:: Propertychanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)事件已變更的屬性名稱相同的引數。 這是為了讓使用者介面 (UI) 知道要重新查詢哪些屬性的值。
+在**標題**更動子函式中，我們會檢查是否設定的值，不同於目前的值。 而且，如果是的話，我們更新標題並也會引發[**inotifypropertychanged:: Propertychanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)事件已變更的屬性名稱相同的引數。 這是為了讓使用者介面 (UI) 知道要重新查詢哪些屬性的值。
 
 ## <a name="declare-and-implement-bookstoreviewmodel"></a>宣告和實作 **BookstoreViewModel**
 我們的主要 XAML 頁面會繫結至主要檢視模型。 且檢視模型會有幾個屬性，包括類型之一的 **BookSku**。 在此步驟，我們會宣告並實作主要檢視模型執行階段類別。
@@ -192,7 +192,7 @@ namespace winrt::Bookstore::implementation
 > 類型`m_bookSku`是投影的類型 (**winrt::Bookstore::BookSku**)，而您[**winrt:: make**](/uwp/cpp-ref-for-winrt/make)搭配使用的範本參數是實作類型 (**winrt::Bookstore::implementation::BookSku**)。 即便如此，**make** 傳回投影類型的執行個體。
 
 ## <a name="add-a-property-of-type-bookstoreviewmodel-to-mainpage"></a>新增類型的屬性 **BookstoreViewModel** 至 **MainPage**
-開放 `MainPage.idl`，其宣告代表我們主要 UI 頁面的執行階段類別。 新增一個匯入陳述式匯入 `BookstoreViewModel.idl`，並新增一個名為類型 **BookstoreViewModel** MainViewModel 的唯讀屬性。 同時移除**MyProperty**屬性。 另請注意`import`下列清單中的指示詞。
+開放 `MainPage.idl`，其宣告代表我們主要 UI 頁面的執行階段類別。 新增一個匯入陳述式匯入 `BookstoreViewModel.idl`，並新增一個名為類型 **BookstoreViewModel** MainViewModel 的唯讀屬性。 同時移除**MyProperty**屬性。 另請注意`import`指示詞，在下列清單中。
 
 ```idl
 // MainPage.idl
@@ -208,13 +208,13 @@ namespace Bookstore
 }
 ```
 
-儲存檔案。 將不會以當時，完成建置專案，但現在建置很有用，是以執行步驟，因為它會重新產生原始碼檔案中實作**MainPage**執行階段類別 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此，請繼續進行，現在建置。 若要查看在這個階段，您可以預期的建置錯誤是 **'MainViewModel': 不是 'winrt::Bookstore::implementation::MainPage' 的成員**。
+儲存檔案。 將不會完成時刻，來建置專案，但現在建置很有用，是以執行步驟，因為它會重新產生原始碼檔案中實作**MainPage**執行階段類別 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此，根源，現在建置。 若要查看在這個階段，您可以預期的建置錯誤是 **'MainViewModel': 不是 'winrt::Bookstore::implementation::MainPage' 的成員**。
 
-如果您省略所包含的`BookstoreViewModel.idl`(看到的清單`MainPage.idl`上方)，則您會看到錯誤**預期 \ < 附近 」 MainViewModel 」**。 請確定您在同一個命名空間中保留所有類型與另一個提示： 會顯示在程式碼清單中的命名空間。
+如果您省略所包含的`BookstoreViewModel.idl`(看到的清單`MainPage.idl`上方)，則您會看到錯誤**預期 \ < 附近 「 MainViewModel 」**。 另一個提示是確定您在相同的命名空間中保留所有類型： 會顯示在程式碼清單中的命名空間。
 
-若要解決這個錯誤，我們會看見，您將現在需要複製存取子虛設常式適用於**MainViewModel**屬性，從產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
+若要解決的錯誤，我們會看見，您將現在需要複製存取子虛設常式適用於**MainViewModel**屬性，從產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
 
-在`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其宣告實作類型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 加入私用成員儲存檢視模型。 請注意，按照 **Bookstore::BookstoreViewModel**，即為投影類型，實作屬性存取子函式 (以及 member m_mainViewModel)。 實作類型是在同一個專案 （編譯單位） 做為應用程式，因此我們建構 m_mainViewModel 的建構函式多載，透過`nullptr_t`。 同時移除**MyProperty**屬性。
+在`\Bookstore\Bookstore\MainPage.h`，包括`BookstoreViewModel.h`，其宣告實作類型 (**winrt::Bookstore::implementation::BookstoreViewModel**)。 加入私用成員儲存檢視模型。 請注意，按照 **Bookstore::BookstoreViewModel**，即為投影類型，實作屬性存取子函式 (以及 member m_mainViewModel)。 實作類型是在相同的專案 （編譯單位） 做為應用程式，因此我們建構 m_mainViewModel 的建構函式多載，透過`nullptr_t`。 同時移除**MyProperty**屬性。
 
 ```cppwinrt
 // MainPage.h
@@ -277,7 +277,7 @@ namespace winrt::Bookstore::implementation
 
 現在建置並執行專案。 按一下按鈕執行 **按一下** 事件處理常式。 該處理常式呼叫本書標題更動子函式；該更動子引發一個事件，讓 UI 知道 **Title** 屬性已變更；且按鈕重新查詢該屬性的值，更新其自身的 **Content** 值。
 
-## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸，使用 C + + /winrt
+## <a name="using-the-binding-markup-extension-with-cwinrt"></a>使用 {Binding} 標記延伸搭配 C + + /winrt
 目前已發行版本的 C + + /winrt，才能使用 {Binding} 標記延伸，您將需要實作的[ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider)和[ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty)介面。
 
 ## <a name="important-apis"></a>重要 API

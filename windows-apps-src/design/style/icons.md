@@ -15,11 +15,11 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 57856872fc664670756c310410223acaf9708bc5
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398924"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435408"
 ---
 # <a name="icons-for-uwp-apps"></a>適用於 UWP 應用程式的圖示
 

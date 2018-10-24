@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2aa30af537874f3c3f4845706de6f6788c7b08fb
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395656"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438473"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -23,13 +23,13 @@ ms.locfileid: "5395656"
 
 ## <a name="uwp-apps"></a>UWP app
 
-如果您提交 UWP 應用程式，您可能會看到錯誤，如果您的套件檔案不是由 Visual Studio 針對市集所產生的.msixupload 或.appxupload 檔案，前置處理期間。 請務必遵循[與 Visual Studio 的 UWP 應用程式套件](../packaging/packaging-uwp-apps.md)中的步驟時建立您的應用程式套件檔案，並只上傳.msixupload 或.appxupload 檔案不是.msix/appx 或.msixbundle/appxbundle 之提交的[套件](upload-app-packages.md)頁面上.
+如果您提交 UWP 應用程式，您可能會看到錯誤，如果您的套件檔案不是由 Visual Studio 針對市集所產生的.msixupload 或.appxupload 檔案前置處理期間。 請務必依照[套件與 Visual Studio 的 UWP 應用程式](../packaging/packaging-uwp-apps.md)中的步驟，在建立您的應用程式套件檔案，並只上傳.msixupload 或.appxupload 檔案不是.msix/appx 或.msixbundle/appxbundle 之提交的[套件](upload-app-packages.md)頁面上.
 
 如果出現編譯錯誤，請確認您可以成功在釋出模式中建置您的應用程式。 如需詳細資訊，請參閱 [.NET 原生內部編譯器錯誤](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
 ## <a name="desktop-application"></a>傳統型應用程式
 
-如果您打算提交的套件，其中包含 UWP 和 Win32 二進位檔，請確定您使用 Visual Studio 2017 更新 4 中可用的 Windows 封裝專案來建立該套件。 如果您使用 UWP 專案範本來建立套件，您可能無法送出的存放區或側載將其封裝到其他電腦上。 即使成功發佈套件，可能會在使用者的電腦上非預期的方式運作。 如需詳細資訊，請參閱[封裝的應用程式使用 Visual Studio （傳統型橋接器）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果您計劃提交的套件，其中包含 UWP 和 Win32 二進位檔，請確定您使用 Visual Studio 2017 更新 4 中可用的 Windows 封裝專案來建立該套件。 如果您使用 UWP 專案範本來建立套件，您可能無法提交的市集或側載將其封裝到其他電腦上。 即使成功發佈套件，可能會在使用者的電腦上有非預期的方式運作。 如需詳細資訊，請參閱[封裝應用程式使用 Visual Studio （傳統型橋接器）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 和更舊版本
 

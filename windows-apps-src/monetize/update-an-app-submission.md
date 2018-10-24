@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式提交, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 5f6797c288f3ee85daba9f90f81a3d1d8aa15562
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398954"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438493"
 ---
 # <a name="update-an-app-submission"></a>更新 App 提交
 

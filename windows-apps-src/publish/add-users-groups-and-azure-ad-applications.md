@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者、 群組、 多個使用者，多使用者
 ms.localizationpriority: medium
 ms.openlocfilehash: 97502a0a2863ed6f7ab2ce5d842fbebc1ae8091c
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406239"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5438460"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-dev-center-account"></a>新增使用者、群組和 Azure AD 應用程式至開發人員中心帳戶
 
@@ -59,7 +59,7 @@ ms.locfileid: "5406239"
 如果使用管理員帳戶登入，而此帳戶也有您工作所在 Azure AD 租用戶的[全域管理員](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)權限時，您將會有其他選項可以將使用者新增至您的開發人員中心帳戶。 您必須選取下列其中一項：
 
 -   **新增現有使用者**： 選擇使用者已經存在於您組織的目錄，並讓他們存取您的開發人員中心帳戶，使用上文所述的方法。
--   **建立新的使用者**： 建立全新使用者帳戶新增到同時您組織的目錄，以及您的開發人員中心帳戶
+-   **建立新的使用者**： 建立全新的使用者帳戶，將新增到同時您組織的目錄與您的開發人員中心帳戶
 -   **邀請外部使用者**：傳送電子郵件邀請給目前不在您的組織目錄中的使用者。 這些使用者將受邀存取您的開發人員中心帳戶，並在您的 Azure AD 租用戶為其建立新的[來賓使用者](https://docs.microsoft.com/azure/active-directory/active-directory-b2b-what-is-azure-ad-b2b)帳戶。
 
 <span id="new-user" />
@@ -69,7 +69,7 @@ ms.locfileid: "5406239"
 > [!IMPORTANT]
 > 您必須使用您的 Azure AD 租用戶中的全域管理員帳戶登入，才能建立新的使用者。
 
-1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取 \ [**新增使用者**，然後選擇 [**建立新的使用者**。
+1.  從**使用者**] 頁面 （在 [**帳戶設定**） 下，選取 \ [**新增使用者**，然後選擇**建立新的使用者**。
 2.  輸入新使用者的名字、姓氏及使用者名稱。
 3.  如果您希望新的使用者在您的組織目錄中具有[全域管理員帳戶](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles)，請核取標示為 **\[將這個使用者設為 Azure AD 中的全域管理員，可完整控制所有目錄資源\]** 方塊。 這將可讓使用者完整存取您公司的 Azure AD 中的所有系統管理功能。 他們將可在您的組織目錄 (而非開發人員中心，除非您授與帳戶適當的[角色/權限](set-custom-permissions-for-account-users.md)) 中新增和管理使用者。 如果您核取此方塊，必須為使用者提供**密碼復原電子郵件**。
 4.  如果您選取 **\[將這個使用者設為 Azure AD 中的全域管理員\]** 方塊，請輸入使用者需要復原其密碼時可以使用的電子郵件。
