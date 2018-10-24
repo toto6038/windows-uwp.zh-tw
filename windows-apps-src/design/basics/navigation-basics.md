@@ -14,11 +14,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b388a196e1f5fa6649ac1fb072c80d01bba45e20
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399723"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431134"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -120,7 +120,7 @@ ms.locfileid: "5399723"
 
         - 頁面可以用任何順序瀏覽。
         - 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
-        - 在群組中有少於 8 頁面。 <br>
+        - 在群組中有少於 8 的頁面。 <br>
         (有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
 
     :::column-end:::

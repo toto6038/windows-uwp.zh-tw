@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 營利, 參與, 升階, Microsoft Store 服務
 ms.localizationpriority: medium
 ms.openlocfilehash: abd6c772ed84934a54c1755b5d55d398e34fbad9
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399769"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431874"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 
@@ -36,7 +36,7 @@ Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Micro
 | [為開發人員中心記錄自訂事件](log-custom-events-for-dev-center.md)  | 記錄來自您 UWP 應用程式的自訂事件，然後在「開發人員中心」儀表板上的[使用方式報告](../publish/usage-report.md)中檢閱這些事件。 這個功能需要 Microsoft Store Services SDK。 |
 | [要求評分與評論](request-ratings-and-reviews.md) |  歡迎您的客戶透過程式設計方式顯示評分和評論 UI 來對您的應用程式進行評分或評論。  |
 | [Microsoft Store services](using-windows-store-services.md)    |  了解如何使用 RESTful API 來自動化提交至 Microsoft Store，存取您的應用程式的分析資料以及自動化與 Microsoft Store 相關的其他工作。    |
-| [將零售示範 (RDX) 功能新增到您的應用程式](retail-demo-experience.md)        |  Windows 應用程式中包括零售示範模式，讓客戶試用電腦和裝置上銷售地板可以跳中的權限。  |
+| [將零售示範 (RDX) 功能新增到您的應用程式](retail-demo-experience.md)        |  Windows 應用程式中包含零售示範模式，讓客戶試用電腦和裝置上銷售地板可以跳中的權限。  |
 
 ## <a name="related-topics"></a>相關主題
 

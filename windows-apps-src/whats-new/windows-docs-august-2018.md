@@ -10,15 +10,15 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: c294dedc8e19605bc2cee0308022bed8624df57e
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395725"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435737"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>2018 年 8 月 Windows 開發人員文件的最新動向
+# <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>在 2018 年 8 月 Windows 開發人員文件的最新動向
 
-Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、 開發人員指引和影片已可供年 8 月之月份中。
+Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、 開發人員指引和影片已可供 8 月月份中。
 
 在 Windows10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
@@ -28,7 +28,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 下列功能已新增到 Windows Insider Preview 組建，可透過[Windows 測試人員](https://insider.windows.com/)計畫。
 
-* [Windows UI 文件庫](https://aka.ms/winui-docs)是一組提供控制項與其他使用者 interfact 項目適用於 UWP app 的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容，讓您的應用程式運作方式，即使您的使用者不需要的最新的 OS 版本。
+* [Windows UI 文件庫](https://aka.ms/winui-docs)是一組提供控制項與其他使用者 interfact 元素用於 UWP 應用程式的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容，因此您的應用程式運作方式，即使您的使用者沒有最新的 OS 版本。
 
 * [DropDownButton](../design/controls-and-patterns/buttons.md#create-a-drop-down-button)、 [SplitButton](../design/controls-and-patterns/buttons.md#create-a-split-button)，以及[ToggleSplitButton](../design/controls-and-patterns/buttons.md#create-a-toggle-split-button)提供按鈕控制項具有特殊功能來增強您的應用程式使用者介面。
 
@@ -46,17 +46,17 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="web-api-extensions"></a>Web API 的擴充功能
+### <a name="web-api-extensions"></a>Web API 擴充功能
 
-已新增的[舊版 Microsoft API 延伸模組](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)清單跨瀏覽器 web 開發的 Mozilla Developer Network 文件。 這些 API 的擴充功能都是唯一的 Internet Explorer 或 Microsoft Edge，並補充現有 MDN web 文件中的相容性及 broswer 支援的相關資訊。舊版 Microsoft [CSS 擴充功能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)與[JavaScript 延伸模組](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也已提供，且您可以找到豐富 web API 的資訊從 MDN 直接在呈現[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
+已新增的[舊版 Microsoft API 延伸](https://developer.mozilla.org/docs/Web/API/Microsoft_API_extensions)清單跨瀏覽器 web 開發的 Mozilla Developer Network 文件。 這些 API 的擴充功能都是唯一的 Internet Explorer 或 Microsoft Edge，並補充現有 MDN web 文件中的相容性及 broswer 支援的相關資訊。舊版 Microsoft [CSS 擴充功能](https://developer.mozilla.org/docs/Web/CSS/Microsoft_Extensions)與[JavaScript 延伸模組](https://developer.mozilla.org/docs/Web/JavaScript/Microsoft_JavaScript_extensions)也使用，且您可以找到豐富 web API 的資訊從 MDN 直接在呈現[Visual Studio Code。](https://code.visualstudio.com/updates/v1_25#_new-css-pseudo-selectors-and-pseudo-elements-from-mdn)
 
 ### <a name="cwinrt-code-examples"></a>C + + /winrt 程式碼範例
 
-我們已經新增 250 [C + + /winrt](../cpp-and-winrt-apis/index.md)程式碼清單以主題中我們的文件，伴隨的現有的 C + + /CX 程式碼範例。
+我們已經新增 250 [C + + WinRT](../cpp-and-winrt-apis/index.md)程式碼清單主題中我們的文件，伴隨的現有的 C + + /CX 程式碼範例。
 
 ### <a name="project-rome"></a>Project Rome
 
-已重新整理[的 Project Rome 文件](https://docs.microsoft.com/windows/project-rome/)網站到功能第一種方法。 這應該讓開發人員來尋找他們所尋找的並實作跨多個平台功能他們選擇更容易。
+[Project Rome 文件](https://docs.microsoft.com/windows/project-rome/)網站已重新整理到功能第一種方法。 這應該讓開發人員尋找他們所尋找的並且跨多個平台實作他們選擇的功能更容易。
 
 ## <a name="videos"></a>影片
 
@@ -70,8 +70,8 @@ Unity 的 Xbox Live 外掛程式包含加入 Xbox Live 簽署、 統計資料、
 
 Raymond Chen:
 
-* [如何核心知道何時要重新啟動的視訊驅動程式？](https://youtu.be/3SNAdyO1l5c)
+* [如何核心知道何時要重新啟動視訊驅動程式？](https://youtu.be/3SNAdyO1l5c)
 
 Larry Osterman:
 
-* [什麼是 Windows 中的 Burgermaster 物件表達？](https://youtu.be/0TDSbyAIvX0)
+* [什麼是 Windows 中的 Burgermaster 物件後方故事？](https://youtu.be/0TDSbyAIvX0)

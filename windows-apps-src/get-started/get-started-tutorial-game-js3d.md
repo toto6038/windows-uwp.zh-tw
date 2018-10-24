@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
 ms.openlocfilehash: fa3722c5b011d16ca793b3541efe124b7c255dfd
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405312"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5432382"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 建立 3D JavaScript 遊戲
 
@@ -1084,11 +1084,11 @@ function lockChange() {
 返回頁面頂端，可查看[遊戲完稿 CodePen](#introduction)！
 
 
-## <a name="publishing-to-the-microsoft-store"></a>發佈到 Microsoft 網上商店
+## <a name="publishing-to-the-microsoft-store"></a>發佈至 Microsoft Store
 現在您擁有 UWP 應用程式，就可以將它發行至 Microsoft Store （假設您已先將它改進 ！）有幾個步驟的程序。
 
 1.  您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
 2.  您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3.  必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
-如需詳細資訊，請參閱[發佈您的 UWP app](https://developer.microsoft.com/store/publish-apps)。
+如需詳細資訊，請參閱[發佈您的 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
 

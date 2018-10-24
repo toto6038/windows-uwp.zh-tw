@@ -11,15 +11,15 @@ ms.technology: uwp
 keywords: windows 10，uwp，發佈，前置處理，認證，發行，擱置中，提交，發佈，狀態，時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 8372f316786d83d72dff8ef7a0a8fd53e5390743
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404615"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5442564"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 
-當您建立完 App 的提交作業並且按一下 **\[提交至 Microsoft Store\]** 時，提交就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 您的提交通過認證後，它可能需要長達 24 小時，客戶可以看到新的提交，或已更新套件提交進行的變更的應用程式的清單。 如果您的更新只會變更市集清單詳細資料，會小於在一小時內完成發行程序。  您的提交發佈，並在儀表板中的應用程式的狀態將會**在市集**時，您將會收到通知。
+當您建立完 App 的提交作業並且按一下 **\[提交至 Microsoft Store\]** 時，提交就進入認證步驟。 此程序通常會在幾個小時內完成，某些情況則需要三個工作天。 您的提交通過認證後，它可能需要 24 小時，讓客戶可以看到新的提交，或使用變更更新提交套件的應用程式清單。 如果您的更新只變更市集清單詳細資料，會少於每小時內完成發行程序。  您的提交發佈，並在儀表板中的應用程式的狀態將會**在市集**時，您將會收到通知。
 
 ## <a name="preprocessing"></a>前置處理
 
@@ -37,10 +37,10 @@ ms.locfileid: "5404615"
 
 ## <a name="release"></a>發行
 
-當您的應用程式通過認證之後時，它已經準備好移至**發佈**程序。
+當您的應用程式通過認證之後時，它已經準備好移到**發佈**程序。
 
 - 如果您之前指定，應該儘可能 （預設選項） 即將發行您的提交，就會立即開始發佈程序。
-- 如果這是第一次您已經發佈應用程式，並[排程](configure-precise-release-scheduling.md#release)\] 區段中指定**的發行日期**，應用程式也會提供根據您**的發行日期**選取項目。
+- 如果這是第一次您已經發佈應用程式，並在 [[排程](configure-precise-release-scheduling.md#release)\] 區段中所指定的**發行日期**，應用程式也會提供根據您的**發行日期**選擇。
 - 如果您曾使用[發佈暫停選項](manage-submission-options.md#publishing-hold-options)來指定，它應該不會釋放直到某個日期，我們會等到該日期開始發佈程序，除非您選取 [**變更發行日期**。
 - 如果您曾使用[發佈暫停選項](manage-submission-options.md#publishing-hold-options)來指定您想要手動發佈提交，我們將不會開始發行程序，直到您選取 [**立即發佈**（或選取 [**變更發行日期**並挑選特定日期）。
 

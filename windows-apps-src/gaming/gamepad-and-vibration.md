@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 遊戲台, 震動
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bf78b43bb09f97c196858d7cc4fcdb1e71462fc
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5410996"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431733"
 ---
 # <a name="gamepad-and-vibration"></a>遊戲台與震動
 
@@ -33,7 +33,7 @@ ms.locfileid: "5410996"
 
 Xbox 無線控制器和 Xbox 無線控制器 S 系列這類遊戲台是一般用途的遊戲輸入裝置。 它們是 Xbox One 的標準輸入裝置，而且是不愛用鍵盤和滑鼠的 Windows 遊戲玩家的共通選擇。 在 Windows 10 和 Xbox UWP 應用程式中，遊戲台受到 [Windows.Gaming.Input][] 命名空間所支援。
 
-Xbox One 遊戲台配備方向方向鍵 （或方向鍵）;**A**、 **B**、 **X**、 **Y**、**檢視**及**功能表**按鈕;向左和右搖桿、 lb 鍵鍵，以及觸發程序。和，總共有四個震動馬達。 兩個搖桿都提供 X 和 Y 軸中的雙類比讀數，同時在往內按時當成按鈕。 每個觸發程序提供代表遠提取回類比讀數。
+Xbox One 遊戲台配備方向板 （或方向鍵）;**A**、 **B**、 **X**、 **Y**、**檢視**及**功能表**按鈕;左和右搖桿、 lb，以及觸發程序;和，總共有四個震動馬達。 兩個搖桿都提供 X 和 Y 軸中的雙類比讀數，同時在往內按時當成按鈕。 每個觸發程序提供代表遠提取回類比讀數。
 
 <!-- > [!NOTE]
 > The Xbox Elite Wireless Controller is equipped with four additional **Paddle** buttons on its underside. These can be used to provide redundant access to game commands that are difficult to use together (such as the right thumbstick together with any of the **A**, **B**, **X**, or **Y** buttons) or to provide dedicated access to additional commands. -->
@@ -100,7 +100,7 @@ Xbox One 遊戲台提供兩個獨立馬達來進行強烈和輕微遊戲台震�
 
 [Gamepad][] 類別提供靜態屬性 [Gamepad][]，這個屬性是目前已連接遊戲台的唯讀清單。 因為您可能只感興趣一些已連接遊戲台，建議您維護您的專屬集合，而不是進行透過存取`Gamepads`屬性。
 
-下列範例會將所有已連接的遊戲台複製到新集合。 請注意，因為在背景中的其他執行緒將會存取這個集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），需要放置任何程式碼可讀取或更新集合周圍鎖定。
+下列範例會將所有已連接的遊戲台複製到新集合。 請注意，因為在背景中的其他執行緒將會存取這個集合 （在[GamepadAdded][]和[GamepadRemoved][]事件），需要放置鎖定繞著或更新集合的任何程式碼。
 
 ```cpp
 auto myGamepads = ref new Vector<Gamepad^>();
@@ -146,7 +146,7 @@ private void GetGamepads()
 
 ### <a name="adding-and-removing-gamepads"></a>新增和移除遊戲台
 
-當新增或移除遊戲台時，會引發[GamepadAdded][]和[GamepadRemoved][]事件。 您可以註冊這些事件的處理常式來追蹤目前已連接的遊戲台。
+當新增或移除遊戲台時， [GamepadAdded][]和[GamepadRemoved][]會引發事件。 您可以註冊這些事件的處理常式來追蹤目前已連接的遊戲台。
 
 下列範例會開始追蹤已新增的遊戲台。
 
@@ -183,7 +183,7 @@ Gamepad.GamepadAdded += (object sender, Gamepad e) =>
 };
 ```
 
-下列範例會停止追蹤已移除遊戲台。 您也需要在處理它們正在移除; 時，您正在追蹤遊戲台會發生什麼事這個程式碼為例，只會追蹤輸入從一個遊戲台，並只需將它設定成`nullptr`移除時。 您將需要檢查每個框架，如果在作用中，您的遊戲台與更新的遊戲台的控制器連接及中斷連線時，正在收集的輸入。
+下列範例會停止追蹤已移除遊戲台。 您也需要在處理它們正在移除; 時，您正在追蹤遊戲台會發生什麼事例如，只會追蹤輸入從一個遊戲台，這個程式碼，並只需將它設定成`nullptr`移除時。 您將需要檢查每個框架，如果您的遊戲台是作用中，並更新哪一個遊戲台的控制器連接及中斷連線時，正在收集的輸入。
 
 ```cpp
 Gamepad::GamepadRemoved += ref new EventHandler<Gamepad^>(Platform::Object^, Gamepad^ args)
@@ -257,7 +257,7 @@ GamepadReading reading = gamepad.GetCurrentReading();
 
 ### <a name="reading-the-thumbsticks"></a>讀取搖桿
 
-每個搖桿都提供 X 和 Y 軸中介於 -1.0 與 +1.0 之間的類比讀數。 在 X 軸中，-1.0 的值對應到最左邊的搖桿位置；+1.0 的值對應到最右邊的搖桿位置。 在 Y 軸中，-1.0 的值對應到最底端的搖桿位置；+1.0 的值對應到最頂端的搖桿位置。 在這兩個軸中，值大約會是 0.0，當搖桿處於中心位置，但其精確值會不同，即使在後續讀取;在本節稍後會討論如何減少這項差異的策略。
+每個搖桿都提供 X 和 Y 軸中介於 -1.0 與 +1.0 之間的類比讀數。 在 X 軸中，-1.0 的值對應到最左邊的搖桿位置；+1.0 的值對應到最右邊的搖桿位置。 在 Y 軸中，-1.0 的值對應到最底端的搖桿位置；+1.0 的值對應到最頂端的搖桿位置。 在這兩個軸，值大約會是 0.0，當搖桿處於中心位置，但其精確值會不同，即使在後續讀取;在本節稍後會討論如何減少這項差異的策略。
 
 左搖桿之 X 軸的值讀取自 [GamepadReading][] 結構的 `LeftThumbstickX` 屬性；Y 軸的值則讀取自 `LeftThumbstickY` 屬性。 右搖桿之 X 軸的值讀取自 `RightThumbstickX` 屬性；Y 軸的值則讀取自 `RightThumbstickY` 屬性。
 
@@ -374,7 +374,7 @@ if (GamepadButtons.None == (reading.Buttons & GamepadButtons.A))
 }
 ```
 
-您有時可能會想要判斷按鈕何時從轉換為放開的按下或放開為按下、 是否按下或放開，多個按鈕，或是否以特定方式排列一組按鈕是&mdash;部分為按，部分則否。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
+您有時可能會想要判斷按鈕何時從轉換為放開的按下或放開為按下、 是否按下或放開，多個按鈕，或是否以特定方式排列一組按鈕是&mdash;部分為按，某些否。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 ## <a name="run-the-gamepad-input-sample"></a>執行遊戲台輸入範例
 
@@ -390,7 +390,7 @@ Xbox One 遊戲台共配備四個獨立震動馬達。 其中兩個是大型位�
 
 遊戲台震動是透過 [Gamepad][] 類別的 [Vibration][] 屬性所控制。 `Vibration` 是由四個浮點值所構成之 [GamepadVibration][] 結構的執行個體；每個值都代表一個馬達的強度。
 
-雖然的成員`Gamepad.Vibration`屬性可以直接修改，建議您初始化個別`GamepadVibration`執行個體的值，然後將它複製到`Gamepad.Vibration`屬性，以同時變更實際馬達強度。
+雖然的成員`Gamepad.Vibration`屬性可以直接修改，建議您初始化個別`GamepadVibration`執行個體的值，然後複製到`Gamepad.Vibration`屬性，以同時變更實際馬達強度。
 
 下列範例示範如何同時變更馬達強度。
 

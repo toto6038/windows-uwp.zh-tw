@@ -1,7 +1,7 @@
 ---
 author: serenaz
 description: Z 深度或相對深度及陰影有兩種深度納入您的應用程式自然且有效率地協助使用者專注。
-title: Z 深度和陰影適用於 UWP app
+title: Z 深度和適用於 UWP app 的陰影
 template: detail.hbs
 ms.author: sezhen
 ms.date: 02/12/2018
@@ -13,17 +13,17 @@ pm-contact: chigy
 design-contact: balrayit
 ms.localizationpriority: medium
 ms.openlocfilehash: a1433b131b994ee2b1323909bc7c195e00f43cde
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5400708"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5439616"
 ---
 # <a name="z-depth-and-shadow"></a>Z 深度和陰影
 
 ![true 深度](images/elevation-shadow/depth.svg)
 
-Fluent 深入了解系統會使用 3D 定位、 光線，例如實體的概念和陰影來重建如何數位 UI 可以認知更分層的實體環境中。 Z 深度或相對深度及陰影有兩種深度納入您的 UWP app。
+Fluent 深度系統會使用 3D 定位、 光線，例如實體的概念和陰影來重建如何數位 UI 可以認知更分層的實體環境中。 Z 深度或相對深度及陰影有兩種深度納入您的 UWP 應用程式。
 
 ## <a name="what-is-z-depth"></a>什麼是 z 深度？
 
@@ -33,7 +33,7 @@ Z 深度是與 z 軸，兩個表面之間的距離，它會示範如何關閉物
 
 ### <a name="why-use-z-depth"></a>為什麼要使用 z 深度？
 
-在實際世界中，我們通常會將焦點放在靠近我們的物件。 我們可以將此空間直覺套用至數位 UI。 例如，如果元素靠攏帶給使用者，使用者將 instinctively 重點放在項目。 移動 UI 項目接近 z 軸中，您可以建立物件，協助使用者完成工作自然且有效率地在您的應用程式之間的視覺階層。 
+在實際世界中，我們通常會將焦點放在靠近我們的物件。 我們可以將此空間直覺套用至數位 UI。 例如，如果元素靠攏帶給使用者，然後使用者將 instinctively 將焦點放在元素上。 移動 UI 元素靠攏 z 軸中，您可以建立物件，協助使用者完成工作自然且有效率地在您的應用程式之間的視覺階層。 
 
 ![在內容功能表中的 z 深度](images/elevation-shadow/whyelevation.svg)
 
@@ -43,23 +43,23 @@ Z 深度是與 z 軸，兩個表面之間的距離，它會示範如何關閉物
 
 ### <a name="how-is-z-depth-perceived"></a>如何認知 z 深度？
 
-根據我們如何認知實際環境中的深度，以下是數種技術，可以用來在數位 UI 中顯示鄰近性。
+根據我們如何認知深度實際的世界，以下是數種技術，可以用來在數位 UI 中顯示鄰近性。
 
-- **縮放比例**久的物件會較接近相同的大小的物件。 這是方法很難在 2D 空間中，有效地示範，因此通常不建議。 不過，您可以使用縮放比例和[陰影](#what-is-shadow)建立將靠攏給使用者的 2D 物件的有效模擬。
+- **縮放比例**久物件出現小於接近相同大小的物件。 這是方法很難在 2D 空間中，有效地示範，因此通常不建議。 不過，您可以使用縮放比例和[陰影](#what-is-shadow)建立將靠攏給使用者，2D 物件的有效模擬。
 
     ![鄰近性與縮放比例](images/elevation-shadow/elevation-scale.svg)
 
-- **氛圍**物件可以顯示遠，以及退出與 「 smoky 」 覆疊或其他 atmospheric 效果的焦點。
+- **氛圍**物件可以顯示遠，以及退出與 「 smoky 」 重疊或其他 atmospheric 效果的焦點。
 
     ![氛圍與鄰近性](images/elevation-shadow/elevation-atmosphere.svg)
 
-- **動作**相對的速度可以用來示範鄰近性： 近的物件移動速度比背景遠方物件更快。 若要了解如何實作此效果，請參閱[視差](../motion/parallax.md)。
+- **動作**相對速度可以用來示範鄰近性： 近的物件移動速度比背景遠方物件更快。 若要了解如何實作此效果，請參閱[視差](../motion/parallax.md)。
 
     ![鄰近性的動作](images/elevation-shadow/elevation-motion.svg)
 
-### <a name="recommendations-for-z-depth"></a>適用於 z 深度的建議
+### <a name="recommendations-for-z-depth"></a>Z 深度的建議
 
-減少提升權限以提供清楚的視覺焦點平面的數目。 在大部分情況下，兩個平面就足以： 一個用於前景項目 （高鄰近性），另一個用於背景項目 （低鄰近性）。 如果您有多個提升權限的項目不重疊，群組它們以降低平面的數目相同的平面 （亦即，前景）。
+減少提升權限以提供清楚的視覺焦點平面的數目。 對於大部分案例中，兩個平面就足以： 一個用於前景項目 （高鄰近性），另一個用於背景項目 （低鄰近性）。 如果您有多個提升權限的項目不重疊，群組它們以降低平面的數目相同的平面 （亦即，前景）。
 
 ![應用程式中的 z 深度](images/elevation-shadow/app-depth.svg)
 
@@ -67,22 +67,22 @@ Z 深度是與 z 軸，兩個表面之間的距離，它會示範如何關閉物
 
 ![shadow](images/elevation-shadow/shadow.svg)
 
-陰影是一種方式認知提高權限。 光線提升權限的物件上方時，就會有陰影下面的表面上。 較高的物件、 更大和柔和陰影會變得。 請注意，不需要提升權限的物件會有陰影，但陰影並表示提高權限。
+陰影是認知提高權限的方式。 光線提升權限的物件上方時，就會有陰影下面的表面上。 高物件、 更大和柔和陰影會變得。 請注意，不需要提升權限的物件有陰影，但陰影不要指出提高權限。
 
 在 UWP app 中，陰影應該有意義、 不美觀。 如果焦點和生產力陰影受影響，然後限制陰影的使用。
 
-您可以使用陰影 ThemeShadow 或 DropShadow Api。
+您可以使用 ThemeShadow 或 DropShadow Api 使用陰影。
 
 ## <a name="themeshadow"></a>ThemeShadow
 
-類型可以套用到任何 XAML 元素，以繪製 ThemeShadow 遮蔽適當地根據的 x，y，z 座標。 ThemeShadow 也會自動調整以其他環境規格：
+類型可以套用到任何 XAML 元素，以繪製 ThemeShadow 遮蔽適當地根據的 x、 y、 z 座標。 針對其他環境規格也會自動調整 ThemeShadow:
 
-- 會適應光源、 使用者的佈景主題、 應用程式的環境，以及殼層中的變更。
-- 陰影項目會自動根據其提高權限。
-- 移動並變更提高權限會保留項目同步。
+- 適應光源、 使用者的佈景主題、 應用程式的環境，以及殼層中的變更。
+- 陰影元素會自動根據其提高權限。
+- 可讓元素維持同步移動並變更提高權限。
 - 讓陰影一致整個及跨應用程式。
 
-以下是在不同的提升權限的淺色和深色佈景主題使用 ThemeShadow 的範例：
+以下是在與淺色和深色佈景主題不同提升權限相關的 ThemeShadow 範例：
 
 ![使用淺色佈景主題的智慧陰影](images/elevation-shadow/smartshadow-light.svg)
 
@@ -100,14 +100,14 @@ Z 深度是與 z 軸，兩個表面之間的距離，它會示範如何關閉物
 - [自動建議](../controls-and-patterns/auto-suggest-box.md)，[下拉式方塊](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.ComboBox)，[行事曆/日期/時間選擇器](../controls-and-patterns/date-and-time.md)，[工具提示](../controls-and-patterns/tooltips.md)
 - [便捷鍵](../input/access-keys.md)
 
-### <a name="themeshadow-in-popups"></a>在快顯視窗中 ThemeShadow
+### <a name="themeshadow-in-popups"></a>快顯中 ThemeShadow
 
-ThemeShadow 自動將轉換套用到快[顯視窗](/uwp/api/windows.ui.xaml.controls.primitives.popup)中的任何 XAML 元素時的陰影。 它會轉型陰影它和其底下的其他任何開啟快顯背後的應用程式背景內容。
+ThemeShadow 自動將轉換套用到快[顯視窗](/uwp/api/windows.ui.xaml.controls.primitives.popup)中的任何 XAML 元素時的陰影。 它會轉型陰影它和它下方的其他任何開啟快顯背後的應用程式背景內容。
 
 若要使用快顯視窗 ThemeShadow，使用`Shadow`屬性，以將 ThemeShadow 套用到 XAML 元素。 然後，在元素從提高其他元素後面，例如使用的 z 元件`Translation`屬性。
 對於大部分的快顯 UI，建議的預設權限提高相對於應用程式背景內容是 32 個有效像素。
 
-此範例中顯示的矩形的快顯視窗中轉型陰影到應用程式背景內容及它後方任何其他快顯視窗：
+這個範例中顯示的矩形快顯視窗中轉型陰影到應用程式背景內容及它後方任何其他快顯視窗：
 
 ```xaml
 <Popup>
@@ -128,9 +128,9 @@ PopupRectangle.Translation += new Vector3(0, 0, 32);
 
 ### <a name="themeshadow-in-other-elements"></a>在其他元素 ThemeShadow
 
-轉型陰影從 XAML 項目不在快顯視窗中，您必須明確地指定可接收的陰影中的其他項目`ThemeShadow.Receivers`集合。
+轉型陰影從 XAML 項目不在快顯視窗中，您必須明確指定可接收的陰影中的其他項目`ThemeShadow.Receivers`集合。
 
-這個範例示範轉型陰影到背後的方格的兩個按鈕：
+這個範例示範轉型陰影到方格背後的兩個按鈕：
 
 ```xaml
 <Grid x:Name="BackgroundGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -152,11 +152,11 @@ Button1.Translation += new Vector3(0, 0, 16);
 Button2.Translation += new Vector3(0, 0, 32);
 ```
 
-### <a name="performance-best-practices-for-themeshadow"></a>ThemeShadow 效能最佳做法
+### <a name="performance-best-practices-for-themeshadow"></a>ThemeShadow 的效能最佳做法
 
-1. 限制自訂收件者的最小的必要項目數目。 
+1. 限制以最小必要的自訂收件者元素數目。 
 
-2. 如果多個收件者元素位於相同的權限提高請嘗試將它們結合改為針對單一父項目。
+2. 如果多個收件者元素位於相同的權限提高然後嘗試將它們結合改為針對單一父項目。
 
 3. 如果多個項目將會轉型陰影到相同的收件者元素上的相同類型，將陰影新增為共用的資源，並重複使用它。
 
@@ -164,7 +164,7 @@ Button2.Translation += new Vector3(0, 0, 32);
 
 DropShadow 不會自動回應它的環境，而且不會使用光線的來源。 如需範例實作，請參閱[DropShadow 類別](https://docs.microsoft.com/uwp/api/windows.ui.composition.dropshadow)。
 
-## <a name="which-shadow-should-i-use"></a>我應該使用哪些陰影？
+## <a name="which-shadow-should-i-use"></a>應該使用哪些陰影？
 
 | 屬性 | ThemeShadow | DropShadow |
 | - | - | - | - |
@@ -174,8 +174,8 @@ DropShadow 不會自動回應它的環境，而且不會使用光線的來源。
 | **光源** | 自動 (全域根據預設，但每個應用程式可以覆寫) | 無 |
 | **在 3D 環境中支援** | 是 | 否 |
 
-- 一般而言，我們建議使用 ThemeShadow，自動會適應環境。
+- 一般而言，我們建議使用 ThemeShadow，自動適應環境。
 - 如果您有更多進階自訂陰影的案例，請使用 DropShadow，也能更大的自訂項目。
 - 適用於回溯相容性，使用 DropShadow。
-- 效能相關的疑慮，陰影的數目限制或使用 DropShadow。
-- 在以，則為 true 的 3D HMDs，使用 ThemeShadow。 DropShadow 繪製在指定的位移自 visual，它從側邊，父項，因為它將會看起來像是懸空在空間中。 相反地，ThemeShadow 會呈現在上方定義為接收器的視覺效果。
+- 效能相關的疑慮，限制的數目陰影，或使用 DropShadow。
+- 在以 true 3D HMDs，使用 ThemeShadow。 DropShadow 繪製在指定的位移自 visual，它從側邊，父項，因為它看起來懸空在空間中。 相反地，ThemeShadow 會呈現在上方定義為接收器的視覺效果。

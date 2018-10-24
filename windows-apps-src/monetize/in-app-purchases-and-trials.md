@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 在應用程式內購買, IAP, 附加元件, 試用版, 消費性, 耐久性, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5398769"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441648"
 ---
 # <a name="in-app-purchases-and-trials"></a>在應用程式內購買和試用版
 
@@ -162,7 +162,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 如果您的應用程式使用 **Windows.Services.Store** 命名空間中的 API 來實作 App 內購買或試用版功能，您必須將應用程式發行至 Microsoft Store，並將應用程式下載至您的開發裝置以便使用它的授權來進行測試。 請依照此程序，測試您的程式碼：
 
-1. 如果您尚未在 Microsoft Store 中發行及提供您的應用程式，請確定您的應用程式符合最低的 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求、[將您的應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)給「Windows 開發人員中心」儀表板，以及確定您的應用程式通過認證程序。 測試時您可以[將應用程式設定為不可在市集中搜尋](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 請注意，[套件正式](../publish/package-flights.md)的適當設定。 不正確地設定的套件，新的提交可能會無法下載。
+1. 如果您尚未在 Microsoft Store 中發行及提供您的應用程式，請確定您的應用程式符合最低的 [Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求、[將您的應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)給「Windows 開發人員中心」儀表板，以及確定您的應用程式通過認證程序。 測試時您可以[將應用程式設定為不可在市集中搜尋](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 請注意，[套件正式](../publish/package-flights.md)的適當設定。 不正確地設定的套件正式可能會無法下載。
 
 2. 接著，確定您已完成下列操作：
 

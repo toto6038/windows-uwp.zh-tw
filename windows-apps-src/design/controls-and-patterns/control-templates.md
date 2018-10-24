@@ -16,11 +16,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ae344e9f10c5d1dbfd530950851e402da4bc2a0d
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5403455"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433497"
 ---
 # <a name="control-templates"></a>控制項範本
 
@@ -62,7 +62,7 @@ ms.locfileid: "5403455"
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 是特殊的繫結，這會將控制項範本中的屬性值連結至範本化控制項上一些其他已公開屬性的值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
 
 > [!NOTE]
-> 從 Windows 10 的下一個主要更新開始，您可以使用[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)標記延伸的位置，您使用[TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
+> 從開始到 Windows 10 的下一個主要更新，您可以使用[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)標記延伸的位置，您使用[TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

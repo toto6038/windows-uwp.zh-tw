@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e2a919af3cb532ce19427967f305cb03adc149a1
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5397875"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431828"
 ---
 # <a name="debugging-testing-and-performance"></a>偵錯、測試及效能
 
@@ -31,6 +31,6 @@ ms.locfileid: "5397875"
 | [部署應用程式通過鬆散檔案註冊](loose-file-registration.md) | 本指南會示範如何使用鬆散檔案配置來驗證和共用 Windows 10 應用程式，而不需要進行封裝。 |
 | [搶鮮版 (Beta) 測試](beta-testing.md) | **搶鮮版 (Beta) 測試**可讓您有機會根據您 App 開發小組以外的個人所提供的意見反應，改進您的 App，這些個人會在他們自己的裝置上試用您尚未發行的 App。 |
 | [Windows Device Portal](device-portal.md) | Windows Device Portal 能讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。 |
-| [Windows 應用程式認證套件](windows-app-certification-kit.md) | 若要讓您的 app 能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。 |
+| [Windows 應用程式認證套件](windows-app-certification-kit.md) | 若要讓您的應用程式能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。 |
 | [效能](performance-and-xaml-ui.md) | 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。 |
 | [版本調適型應用程式](version-adaptive-apps.md) | 運用最新 API 及功能，而同時又盡可能深入最廣大的客戶群。 使用執行階段 API 檢查，以在執行階段配合應用程式執行所在 Windows 10 版本可用的功能，自動調整您的程式碼和 XAML。 |

@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 25e3c76ae09ed6835f89f0d98c308f11c7a99624
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5396810"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433507"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 
 了解如何使用[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)排程一次性的背景工作，或執行定期的背景工作。
 
-請參閱**Scenario4**在[背景啟用範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)以查看如何觸發的背景工作所述的時間實作本主題中的範例。
+請參閱**Scenario4** [背景啟用範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundActivation)以查看如何觸發的背景工作所述的時間實作本主題中的範例中。
 
 本主題假設您有需要定期或在特定時間執行的背景工作。 如果您還沒有背景工作，在[BackgroundActivity.cs](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/BackgroundActivation/cs/BackgroundActivity.cs)就範例背景工作。 或者，請依照下列步驟中[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)建立一個。
 
@@ -38,7 +38,7 @@ ms.locfileid: "5396810"
 > [!NOTE]
 > 如果*FreshnessTime*設定為少於 15 分鐘，嘗試登錄背景工作時，會擲回例外狀況。
  
-例如，這個觸發程序將導致背景工作執行一次在一小時。
+例如，這個觸發程序將導致背景工作小時執行一次。
 
 ```cs
 TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
@@ -71,7 +71,7 @@ Windows::ApplicationModel::Background::SystemCondition userCondition{
 SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent);
 ```
 
-如需條件與類型的背景觸發程序詳細的深入資訊，請參閱[支援您的應用程式使用背景工作](support-your-app-with-background-tasks.md)。
+如需條件與背景觸發程序類型上的深入資訊，請參閱[支援您的應用程式使用背景工作](support-your-app-with-background-tasks.md)。
 
 ##  <a name="call-requestaccessasync"></a>呼叫 RequestAccessAsync()
 
@@ -88,7 +88,7 @@ if (requestStatus != BackgroundAccessStatus.AlwaysAllowed)
 
 ## <a name="register-the-background-task"></a>登錄背景工作
 
-呼叫背景工作登錄函式以登錄背景工作。 如需有關註冊背景工作，並查看**RegisterBackgroundTask()** 方法，在下列範例程式碼中定義的詳細資訊，請參閱[登錄背景工作](register-a-background-task.md)。
+呼叫背景工作登錄函式以登錄背景工作。 如需有關註冊背景工作，並查看**RegisterBackgroundTask()** 方法，在下列範例程式碼中定義的詳細資訊，請參閱[註冊背景工作](register-a-background-task.md)。
 
 > [!IMPORTANT]
 > 針對背景工作在您的應用程式在相同處理序中執行，請不要設定`entryPoint`。 針對背景工作與您的應用程式不同處理序中執行，設定`entryPoint`命名空間、 '。 '，以及包含您背景工作實作的類別的名稱。
@@ -121,16 +121,16 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。 如需有關方式使用者[最佳化背景活動](https://docs.microsoft.com/windows/uwp/debug-test-perf/optimize-background-activity)可以控制的背景活動的設定，請參閱。
 
-- 記憶體： 調整您的應用程式的記憶體與能源使用量很重要，作業系統仍將允許您執行的背景工作。 若要查看您的背景工作正在使用多少記憶體中使用[的記憶體管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 。 您的背景工作會使用更多的記憶體，讓它執行另一個應用程式在前景時，作業系統會越難。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
+- Memory： 微調您的應用程式的記憶體與能源使用量很重要，作業系統將會允許您執行的背景工作。 若要查看您的背景工作正在使用多少記憶體使用[的記憶體管理 Api](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx) 。 您的背景工作會使用更多的記憶體，讓它執行另一個應用程式在前景時，作業系統會越難。 最終是由使用者控制您的應用程式可執行的所有背景活動，而且他也能看到您的應用程式對電池使用量的影響。  
 - CPU 時間： 背景工作會受限於取得根據觸發程序類型的實際執行使用時間量。
 
 請參閱[使用背景工作支援應用程式](support-your-app-with-background-tasks.md)，以了解套用至背景工作的資源限制。
 
 ## <a name="remarks"></a>備註
 
-從 Windows 10 開始，它已經不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
+從 Windows 10 開始，它不再需要，讓使用者能夠將您的應用程式新增到鎖定畫面，就可以使用背景工作。
 
-背景工作將只執行使用**TimeTrigger** ，如果您已呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)第一次。
+背景工作只會使用**TimeTrigger** ，如果您已先呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)來執行。
 
 ## <a name="related-topics"></a>相關主題
 

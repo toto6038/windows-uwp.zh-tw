@@ -10,18 +10,18 @@ ms.technology: uwp
 keywords: windows 10, uwp, 定價, App 定價, App 價格, 銷售應用程式, 價格變更, 自訂價格, 價格, 定價, 成本, 覆寫基本價格, 自由格式價格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: ca37d0b360679a878cff3aeabd96f82016c36fde
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404915"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433273"
 ---
 # <a name="set-and-schedule-app-pricing"></a>設定與排程應用程價格
 
 [價格和可用性](set-app-pricing-and-availability.md)頁面的 **\[價格\]** 區段可讓您選取應用程式的基本價格。 您也可以[排程價格變更](#schedule-price-changes)，表示應用程式的價格應變更的日期和時間。 此外，您還有選項可以選取新的價格區間，或輸入以市場當地貨幣表示的自由格式價格，來[覆寫特定市場的基本價格](#override-base-price-for-specific-markets)。
 
 > [!NOTE]
-> 雖然本主題是關於應用程式，但是附加元件提交的價格選擇使用相同的程序。 請注意，針對[訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)，您選取的基本價格無法不斷增加 （無論是透過變更的基本價格，或依排程價格變更），雖然它可能會降低。
+> 雖然本主題是關於應用程式，但是附加元件提交的價格選擇使用相同的程序。 請注意，針對[訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)，您選取的基本價格無法不斷增加 （無論是透過變更的基本價格或排程價格變更），雖然它可能會降低。
 
 ## <a name="base-price"></a>基本價格
 

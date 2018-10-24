@@ -1,6 +1,6 @@
 ---
 author: stevewhims
-description: 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 來使用 COM 類別和介面。
+description: 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。
 title: 使用 C++/WinRT 來使用 COM 元件
 ms.author: stwhi
 ms.date: 07/23/2018
@@ -10,21 +10,21 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 COM、 元件、 類別、 介面
 ms.localizationpriority: medium
 ms.openlocfilehash: 8af5a8149faab3bece62e4da5d41138aaede16e7
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399074"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5441950"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 來使用 COM 元件
 
-您可以使用的設備[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)程式庫來使用 COM 元件，例如 DirectX Api 高效能的 2d 和 3d 圖形。 C + + /winrt 是使用 DirectX 又無須犧牲效能最簡單的方式。 本主題使用 Direct2D 程式碼範例，示範如何使用 C + + /winrt 來使用 COM 類別和介面。 當然，您可以混合 COM 和 Windows 執行階段程式設計在相同的 C + + /winrt 專案。
+您可以使用的設備[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)程式庫來使用 COM 元件，例如 DirectX Api 高效能的 2d 和 3d 圖形。 C + + /winrt 是最簡單的方式使用 DirectX 又無須犧牲效能。 本主題使用 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。 您當然可以混合 COM 和 Windows 執行階段程式設計內相同的 C + + /winrt 專案。
 
-本主題的結尾，您會發現最少的 Direct2D 應用程式的完整來源的程式碼清單。 我們會提起節錄該程式碼，並使用它們來說明如何使用 COM 元件使用 C + + /winrt 使用各種不同的設備的 C + + /winrt 程式庫。
+本主題的結尾，您會發現最少的 Direct2D 應用程式的完整來源的程式碼清單。 我們會提起節錄該程式碼，並使用它們來說明如何使用 COM 元件使用 C + + WinRT 使用各種不同的設備的 C + + /winrt 程式庫。
 
 ## <a name="com-smart-pointers-winrtcomptruwpcpp-ref-for-winrtcom-ptr"></a>COM 智慧型指標 ([**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr))
 
-當您使用 COM 程式設計時，您可以使用直接與介面，而不是使用的物件 （也在幕後適用於 Windows 執行階段 Api，這是 COM 的進化版，則為 true 的）。 若要在 COM 類別上呼叫函式，為例，您啟動類別，取得介面上一步]，然後在該介面上呼叫函式。 若要存取物件的狀態，您不直接; 存取其資料成員相反地，您會在介面上呼叫存取子和更動子函式。
+當您計畫以 COM 時，您可以使用直接與介面，而不是使用的物件 （也在幕後適用於 Windows 執行階段 Api，這是 COM 的進化版，則為 true 的）。 COM 類別上呼叫函式，例如，您啟動類別，取得介面回來，並接著在該介面上呼叫函式。 若要存取物件的狀態，您不直接; 存取其資料成員相反地，您會在介面上呼叫存取子和更動子函式。
 
 若要更具體，我們正在討論與介面*指標*互動。 為此，我們實惠的存在 COM 智慧型指標型別在 C + + /winrt&mdash; [**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr)類型。
 
@@ -32,7 +32,7 @@ ms.locfileid: "5399074"
 winrt::com_ptr<ID2D1Factory1> factory;
 ```
 
-上述的程式碼顯示如何宣告[**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM 介面未初始化的智慧型指標。 智慧型指標是未初始化，，因此它還不指至屬於先前依照任何實際的物件 （它不指向介面完全） **ID2D1Factory1**介面。 但它有可能這樣做;與 （正在智慧型指標） 已透過 COM 參考計數管理，它指向，介面的擁有者物件的存留期，並將其所依據的呼叫的函式在該介面的媒體的能力。
+上述的程式碼顯示如何宣告[**ID2D1Factory1**](https://msdn.microsoft.com/library/Hh404596) COM 介面未初始化的智慧型指標。 智慧型指標是未初始化，，因此它還不指至屬於先前依照任何實際的物件 （它不指向介面完全） **ID2D1Factory1**介面。 但它有可能這樣做;和 （正在智慧型指標） 已透過 COM 參考計數管理，它指向，介面的擁有者物件的存留期，並將其所依據的呼叫的函式在該介面的媒體的能力。
 
 ## <a name="com-functions-that-return-an-interface-pointer-as-void"></a>COM 函式，傳回**void**為介面指標
 
@@ -47,11 +47,11 @@ D2D1CreateFactory(
 );
 ```
 
-上述的程式碼呼叫[**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)函式，它會傳回透過其最後一個參數，其中有**ID2D1Factory1**介面指標**void\ * \ *** 類型。 許多 COM 函式會傳回**void\ * \ ***。 針對這類功能，請使用[**com_ptr:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) ，如所示。
+上述的程式碼會呼叫[**D2D1CreateFactory**](/windows/desktop/api/d2d1/nf-d2d1-d2d1createfactory)函式，傳回透過其最後一個參數，其中有**ID2D1Factory1**介面指標**void\ * \ *** 類型。 許多 COM 函式會傳回**void\ * \ ***。 針對這類功能，請使用[**com_ptr:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function) ，如所示。
 
 ## <a name="com-functions-that-return-a-specific-interface-pointer"></a>COM 函式，傳回特定介面指標
 
-透過其 antepenultimate 參數，其中有[**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函式會傳回的[**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596)介面指標**ID3D11Device\ * \ *** 類型。 針對像這樣傳回特定介面指標的函式，使用[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
+透過其 antepenultimate 參數，其中有[**D3D11CreateDevice**](/windows/desktop/api/dwrite/nf-dwrite-dwritecreatefactory)函式會傳回的[**ID3D11Device**](https://msdn.microsoft.com/library/Hh404596)介面指標**ID3D11Device\ * \ *** 類型。 對於函式，像這樣傳回特定介面指標，使用[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
 
 ```cppwinrt
 winrt::com_ptr<ID3D11Device> device;
@@ -61,7 +61,7 @@ D3D11CreateDevice(
     ...);
 ```
 
-前一個區段的程式碼範例示範如何呼叫原始**D2D1CreateFactory**函式。 但事實上，當本主題的程式碼範例呼叫**D2D1CreateFactory**時，它會使用原始的 API，換行的協助程式函式範本，因此在程式碼範例實際使用[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
+前一個區段的程式碼範例示範如何呼叫原始**D2D1CreateFactory**函式。 但事實上，當本主題中的程式碼範例呼叫**D2D1CreateFactory**時，它會使用原始的 API，換行的協助程式函式範本，因此在程式碼範例實際使用[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function)。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> factory;
@@ -85,7 +85,7 @@ DWriteCreateFactory(
 ## <a name="re-seat-a-winrtcomptr"></a>重新座位**winrt:: com_ptr**
 
 > [!IMPORTANT]
-> 如果您有已經安裝[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其內部的原始指標已經有一個目標） 和您想要重新座位它指向不同的物件，則您必須先將指派`nullptr`，&mdash;在下列程式碼範例所示。 如果沒有，則已經安裝**com_ptr**將會繪製問題 （當您呼叫[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) [**:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 注意到藉由宣告其內部指標不 null。
+> 如果您有已經安裝[**winrt:: com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr) （其內部的原始指標已經有一個目標） 和您想要重新座位它指向不同的物件，則您必須先指派`nullptr`它&mdash;在下列程式碼範例所示。 如果沒有，則已經安裝**com_ptr**將會繪製問題 （當您呼叫[**com_ptr**](/uwp/cpp-ref-for-winrt/com-ptr#comptrput-function) [**:: put_void**](/uwp/cpp-ref-for-winrt/com-ptr#comptrputvoid-function)） 注意到藉由宣告其內部指標不 null。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1SolidColorBrush> brush;
@@ -101,7 +101,7 @@ target->CreateSolidColorBrush(
 
 ## <a name="handle-hresult-error-codes"></a>處理 HRESULT 錯誤碼
 
-若要檢查從 COM 函式，傳回的 HRESULT 值與擲回例外狀況，它可以代表錯誤程式碼，請呼叫[**winrt:: check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)。
+若要檢查從 COM 函式，傳回的 HRESULT 值並擲回例外狀況，它可以代表錯誤程式碼，呼叫[**winrt:: check_hresult**](/uwp/cpp-ref-for-winrt/error-handling/check-hresult)。
 
 ```cppwinrt
 winrt::check_hresult(D2D1CreateFactory(
@@ -126,7 +126,7 @@ winrt::check_hresult(D2D1CreateFactory(
 }
 ```
 
-## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>**IUnknown**介面指標 COM 函式
+## <a name="com-functions-that-take-an-iunknown-interface-pointer"></a>採取**IUnknown**介面指標的 COM 函式
 
 您可以呼叫[**winrt::get_unknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#getunknown-function)可用函式，將您**com_ptr**傳遞給**IUnknown**介面指標的函式。
 
@@ -137,7 +137,7 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
     ...));
 ```
 
-## <a name="passing-and-returning-com-smart-pointers"></a>傳遞，並傳回 COM 智慧型指標
+## <a name="passing-and-returning-com-smart-pointers"></a>傳遞和傳回 COM 智慧型指標
 
 **Winrt:: com_ptr**的形式的 COM 智慧型指標的函式應該這樣由常數的參考，或參考。
 
@@ -147,13 +147,13 @@ winrt::check_hresult(factory->CreateSwapChainForCoreWindow(
 ... CreateDevice(..., winrt::com_ptr<ID3D11Device>& device) ...
 ```
 
-函式會傳回**winrt:: com_ptr**應該執行此動作的值。
+**Winrt:: com_ptr**傳回的函式應該執行此動作的值。
 
 ```cppwinrt
 winrt::com_ptr<ID2D1Factory1> CreateFactory() ...
 ```
 
-## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>查詢適用於不同的介面的 COM 智慧型指標
+## <a name="query-a-com-smart-pointer-for-a-different-interface"></a>查詢不同的介面的 COM 智慧型指標
 
 您可以使用[**com_ptr:: as**](/uwp/cpp-ref-for-winrt/com-ptr#comptras-function)函式來查詢不同的介面的 COM 智慧型指標。 如果不成功查詢函式會擲回例外狀況。
 
@@ -166,11 +166,11 @@ void ExampleFunction(winrt::com_ptr<ID3D11Device> const& device)
 }
 ```
 
-或者，使用[**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function)，這會傳回值，您可以檢查`nullptr`以查看查詢是否成功。
+或者，使用[**com_ptr::try_as**](/uwp/cpp-ref-for-winrt/com-ptr#comptrtryas-function)，這會傳回值，您可以檢查針對`nullptr`以查看查詢是否成功。
 
 ## <a name="full-source-code-listing-of-a-minimal-direct2d-application"></a>完整來源的最少的 Direct2D 應用程式的程式碼清單
 
-如果您想要建置並執行此來源的程式碼範例，則第一個，在 Visual Studio 中，建立一個新**核心應用程式 (C + + /winrt)**。 `Direct2D` 是合理的專案，名稱，但您可以將它命名您喜歡的任何項目。 開啟`App.cpp`、 刪除整個內容，以及貼上下列清單中。
+如果您想要建置並執行此來源的程式碼範例，則第一個，在 Visual Studio 中，建立一個新**核心應用程式 (C + + /winrt)**。 `Direct2D` 合理專案名稱，但您可以將它命名您喜歡的任何項目。 開啟`App.cpp`、 刪除整個內容，以及貼上下列清單中。
 
 ```cppwinrt
 #include "pch.h"

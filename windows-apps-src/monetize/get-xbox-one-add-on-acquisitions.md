@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，Xbox One 的附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: 931cd7b351a122c22a59a3a0bc2975c61dc38aaa
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5404879"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431697"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>取得 Xbox One 的附加元件下載數
 
@@ -50,8 +50,8 @@ ms.locfileid: "5404879"
 
 | 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | string | 您正在擷取下載數資料之 Xbox One 遊戲*productId* 。 若要取得您的遊戲的*產品識別碼*，瀏覽至您的遊戲在 XDP 分析程式，並從 URL 擷取*產品識別碼*。 或者，如果您從合作夥伴中心分析報告中下載收購資料，*產品識別碼*包含在.tsv 檔案中。 |  是  |
-| addonProductId | string | 您想要擷取下載數資料之附加元件*產品識別碼*。  | 是  |
+| applicationId | string | 您正在擷取下載數資料之 Xbox One 遊戲*productId* 。 若要取得您的遊戲*productId* ，瀏覽至您的遊戲在 XDP 分析程式，並從 URL 擷取*產品識別碼*。 或者，如果您從合作夥伴中心分析報告下載您的下載數資料，*產品識別碼*包含在.tsv 檔案中。 |  是  |
+| addonProductId | string | *ProductId*您想要擷取下載數資料之附加元件。  | 是  |
 | startDate | 日期 | 要擷取附加元件下載數資料之日期範圍的開始日期。 預設為目前的日期。 |  否  |
 | endDate | 日期 | 要擷取附加元件下載數資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
@@ -102,12 +102,12 @@ Authorization: Bearer <your access token>
 | addonProductName    | 字串  | 附加元件的顯示名稱。 這個值只會出現在回應資料中如果*aggregationLevel*參數設為**一天**，除非您在*groupby*參數中指定**addonProductName**欄位。                                                                                                                                                                                                            |
 | applicationId       | string  | *ProductId*您想要擷取附加元件下載數資料之應用程式。                                                                                                                                                           |
 | applicationName     | 字串  | 遊戲的顯示名稱。                                                                                                                                                                                                             |
-| deviceType          | 字串  | <p>以下字串之一指定完成收購的裝置類型：</p> <ul><li>「 電腦 」</li><li>「 電話 」</li><li>」 主控台 」</li><li>「 IoT 」</li><li>「 伺服器 」</li><li>「 平板電腦 」</li><li>「 全像攝影版 」</li><li>"Unknown"</li></ul>                                                                                                  |
+| deviceType          | 字串  | <p>以下字串之一指定完成收購的裝置類型：</p> <ul><li>「 電腦 」</li><li>「 電話 」</li><li>「 主控台 」</li><li>「 IoT 」</li><li>「 伺服器 」</li><li>「 平板電腦 」</li><li>「 全像攝影版 」</li><li>「 未知 」</li></ul>                                                                                                  |
 | storeClient         | 字串  | <p>下列其中一個表示收購發生的 Microsoft Store 版本之字串：</p> <ul><li>「 Windows Phone Store （用戶端） 」</li><li>「 Microsoft Store (client) 」 (或 「 Windows Store (client) 」 如果在 2018 年 3 月 23 之前查詢資料)</li><li>「 Microsoft Store (web) 」 (或 「 Windows Store (web) 」 如果在 2018 年 3 月 23 之前查詢資料)</li><li>「 組織大量購買 」</li><li>「 其他 」</li></ul>                                                                                            |
 | osVersion           | 字串  | 發生下載的 OS 版本。 對於此方法，這個值永遠都是 「 Windows 10 」。                                                                                                   |
 | market              | 字串  | 發生下載之市場的 ISO 3166 國家/地區碼。                                                                                                                                                                  |
-| gender              | 字串  | <p>下列其中一個字串，這些字串詳列進行收購的使用者的性別：</p> <ul><li>"m"</li><li>「 f 」</li><li>「 未知 」</li></ul>                                                                                                    |
-| 年齡            | 字串  | <p>下列其中一個字串，這些字串表示進行下載的使用者的年齡層：</p> <ul><li>「 小於 13 」</li><li>「 13 17 」</li><li>「 18 到 24 」</li><li>「 25 34 」</li><li>「 35 44 」</li><li>「 44 55 」</li><li>「 大於 55 」</li><li>"Unknown"</li></ul>                                                                                                 |
+| gender              | 字串  | <p>下列其中一個字串，這些字串詳列進行收購的使用者的性別：</p> <ul><li>「 m 」</li><li>「 f 」</li><li>「 未知 」</li></ul>                                                                                                    |
+| 年齡            | 字串  | <p>下列其中一個字串，這些字串表示進行下載的使用者的年齡層：</p> <ul><li>「 小於 13 」</li><li>「 13 17 」</li><li>「 18 到 24 」</li><li>「 25 34 」</li><li>「 35 44 」</li><li>「 44-55 」</li><li>「 大於 55 」</li><li>「 未知 」</li></ul>                                                                                                 |
 | acquisitionType     | 字串  | <p>其中一個下列字串，可指出收購類型：</p> <ul><li>「 免費 」</li><li>「 試用 」</li><li>「 付費 」</li><li>「 促銷碼 」</li><li>「 Iap 」</li><li>「 訂閱 Iap 」</li><li>「 私人對象 」</li><li>「 Pre 順序 」</li><li>「 Xbox Game Pass 」 （或者 「 Game Pass 「 如果在 2018 年 3 月 23 之前查詢資料）</li><li>「 磁碟 」</li><li>「 預付的碼 」</li><li>「 收取 Pre 順序 」</li><li>「 取消前順序 」</li><li>「 失敗 Pre 順序 」</li></ul>                                                                                                    |
 | acquisitionQuantity | 整數 | 發生的下載數目。                        |
 

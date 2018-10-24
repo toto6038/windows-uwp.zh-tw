@@ -16,11 +16,11 @@ dev_langs:
 - cpp
 - vb
 ms.openlocfilehash: 312e351a39bf291e1fcd21921230a73ed10cfd17
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5399296"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5435501"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
@@ -35,7 +35,7 @@ ms.locfileid: "5399296"
 
 -   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
 
-    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何撰寫非同步的 app 在 C + + /winrt，請參閱[並行和非同步作業，使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何撰寫非同步的 app 在 C + + /CX，請參閱[非同步程式設計在 C + + /CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+    您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 了解如何撰寫非同步的 app 在 C + + /winrt，請參閱[並行和非同步作業，使用 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)。 若要了解如何撰寫非同步的 app 在 C + + /CX，請參閱[非同步程式設計在 C + + /CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 -   **位置的存取權限**
 
@@ -181,7 +181,7 @@ Next folder
 > [!NOTE]
 > 在 C# 或 Visual Basic 中，請務必在您使用 **await** 運算子的任何方法的方法宣告中放置 **async** 關鍵字。
 
-或者，您可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法來取得特定位置中的所有項目 （檔案與子資料夾）。 下列範例會使用**GetItemsAsync**方法，以取得所有檔案與子資料夾[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中 （不在子資料夾）。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
+或者，您可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法以取得特定位置中的所有項目 （檔案與子資料夾）。 下列範例會使用**GetItemsAsync**方法，以取得所有檔案與[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的子資料夾 （不在子資料夾）。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

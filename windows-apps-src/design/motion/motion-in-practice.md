@@ -15,11 +15,11 @@ design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5406504"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5434100"
 ---
 # <a name="bringing-it-together"></a>組合在一起
 
@@ -87,7 +87,7 @@ ms.locfileid: "5406504"
 
 隱含動畫是由自動參數變更期間的舊和新值之間插入達到 Fluent 動作的簡單方式。
 
-您可以以隱含方式產生動畫效果的下列屬性來變更：
+您可以以隱含方式產生動畫效果下列屬性的變更：
 
 - [UIElement](/uwp/api/windows.ui.xaml.uielement)
   - **Opacity**
@@ -98,7 +98,7 @@ ms.locfileid: "5406504"
 - [框線](/uwp/api/windows.ui.xaml.controls.border)、 [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter)或[面板](/uwp/api/windows.ui.xaml.controls.panel)
   - **背景**
 
-每個可以有變更，以隱含方式產生動畫效果的屬性都有對應的_轉換_屬性。 要產生動畫效果的屬性，您將轉換類型指派的對應的_轉換_屬性。 下表顯示_轉換_屬性和使用的每個轉換類型。
+每個可以有變更，以隱含方式產生動畫效果的屬性都有對應的_轉換_屬性。 要產生動畫效果的屬性，您可以指派轉換類型相對應的_轉換_屬性。 下表顯示_轉換_屬性和使用的每個轉換類型。
 
 | 動畫的屬性 | 轉換屬性 | 隱含轉換類型 |
 | -- | -- | -- |

@@ -11,11 +11,11 @@ keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 7492f9d4fc2111880f27dcb6a48eff3ad0ccd315
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5405272"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5431903"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -287,7 +287,7 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 /p:UapAppxPackageBuildMode=StoreUpload 
 ```
 
-這將會產生可提交至 microsoft Store 上傳檔案。
+這將會產生可提交至市集的上傳檔案。
 
 
 #### <a name="configure-automatic-store-submission"></a>設定自動Microsoft Store提交
@@ -317,7 +317,7 @@ AppxPackages\MyUWPApp__$(AppxVersion)_x86_x64_ARM_bundle.appxupload
 
 如果您想要在不發佈到Microsoft Store的情況下發佈您的 App，只要這些裝置信任用來簽署應用程式套件的憑證，您就可以將您的 App 直接側載到裝置。 
 
-使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並再將會安裝或更新應用程式套件檔案。
+使用 `Add-AppDevPackage.ps1` PowerShell 指令碼來安裝 App。 這個指令碼會將憑證新增到在本機電腦、 信任的根憑證] 區段，並接著將會安裝或更新應用程式套件檔案。
 
 #### <a name="sideloading-your-app-with-the-windows-10-anniversary-update"></a>使用 Windows10 年度更新版側載您的 App
 在 Windows 10 年度更新版，您可以按兩下應用程式套件檔案，並在對話方塊中選擇 [安裝] 按鈕來安裝您的應用程式。 

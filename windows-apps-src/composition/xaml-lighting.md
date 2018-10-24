@@ -15,11 +15,11 @@ dev_langs:
 - cppcx
 - cppwinrt
 ms.openlocfilehash: 672efaa0899fa8b63b5ec0fda09a20f4f0ab7d67
-ms.sourcegitcommit: c4d3115348c8b54fcc92aae8e18fdabc3deb301d
+ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5395801"
+ms.lasthandoff: 10/23/2018
+ms.locfileid: "5433690"
 ---
 # <a name="xaml-lighting"></a>XAML 光源
 
@@ -38,7 +38,7 @@ ms.locfileid: "5395801"
 
 [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight)是基底類別，可用來建立自訂光源。
 
-這個範例示範自訂 XamlLight 多色的聚光燈適用於特定對象 Uielement 和筆刷的定義。
+這個範例示範自訂 XamlLight 多色的焦點會套用至特定對象 Uielement 和筆刷的定義。
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -461,7 +461,7 @@ Platform::String^ OrangeSpotLight::GetId()
 }
 ```
 
-然後，您可以將此光線套用到任何 XAML UIElement 或筆刷，來增強它們。 這個範例示範不同可能用法。
+您接著可以套用此光線到任何 XAML UIElement 或筆刷來增強它們。 這個範例示範不同可能用法。
 
 > [!Important]
 > 適用於[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，移除的兩個`local:OrangeSpotLight.IsTarget="True"`從下列標記。 在程式碼後置中已設定的附加的屬性。
