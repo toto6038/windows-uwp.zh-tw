@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 73a2a619c32e7d6a7f2fff768c9cec5b7986c3c1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044707"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542292"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 Alpha 色板的紋理
 
@@ -30,7 +28,7 @@ ms.locfileid: "1044707"
 | 3:0          | 透明度區塊                |
 | 7:4          | 之前已描述完成的 64 位元區塊 |
 
- 
+ 
 
 ## <a name="span-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanspan-idexplicit-texture-encodingspanexplicit-texture-encoding"></a><span id="Explicit-Texture-Encoding"></span><span id="explicit-texture-encoding"></span><span id="EXPLICIT-TEXTURE-ENCODING"></span>明確紋理編碼
 
@@ -41,9 +39,9 @@ ms.locfileid: "1044707"
 
 ![64 位元透明度區塊的簡圖](images/colors4.png)
 
-**注意**：壓縮 Direct3D 的方式使用了最高有效的四個位元。
+**注意：**  ： 壓縮 Direct3D 的方式使用四個最高有效位元。
 
- 
+ 
 
 下表描述了如何在記憶體中，針對每個 16 位元文字配置 Alpha 資訊。
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044707"
 | 11:8          | \[0\]\[2\] |
 | 15:12 (MSB\*) | \[0\]\[3\] |
 
- 
+ 
 
 \*最低有效位元、最高有效位元 (MSB)
 
@@ -69,7 +67,7 @@ ms.locfileid: "1044707"
 | 11:8        | \[1\]\[2\] |
 | 15:12 (MSB) | \[1\]\[3\] |
 
- 
+ 
 
 文字 2 的配置：
 
@@ -80,7 +78,7 @@ ms.locfileid: "1044707"
 | 11:8        | \[2\]\[2\] |
 | 15:12 (MSB) | \[2\]\[3\] |
 
- 
+ 
 
 文字 3 的配置：
 
@@ -91,7 +89,7 @@ ms.locfileid: "1044707"
 | 11:8        | \[3\]\[2\] |
 | 15:12 (MSB) | \[3\]\[3\] |
 
- 
+ 
 
 在 BC1 中用作判斷材質是否為透明的色彩比較，並未使用於此種格式之中。 若不使用色彩比較，色彩資料預設會以 4 色模式進行處理。
 
@@ -139,18 +137,18 @@ Alpha 區塊的記憶體配置如下︰
 | 6    | \[3\]\[1\] (1 MSB)，\[3\]\[0\]，\[2\]\[3\]，\[2\]\[2\] (1 LSB) |
 | 7    | \[3\]\[3\]，\[3\]\[2\]，\[3\]\[1\] (2 LSBs)                    |
 
- 
+ 
 
 在 BC1 中用作判斷材質是否為透明的色彩比較，並未使用於此種格式之中。 若不使用色彩比較，色彩資料預設會以 4 色模式處理。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[壓縮紋理資源](compressed-texture-resources.md)
+[壓縮的紋理資源](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

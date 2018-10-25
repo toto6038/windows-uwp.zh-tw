@@ -11,11 +11,11 @@ keywords: windows 10，uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
 ms.openlocfilehash: 2de5c969610aa6b4fa1a3af01af565d35854b5f2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478267"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5519411"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 

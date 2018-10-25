@@ -6,16 +6,14 @@ description: 了解如何藉由變更 UI 中元素的相對座標系統，在 Wi
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a68e91257e61856f4ac24603b9521fc2bcf30a3
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 2cfc7c34363bc05e13e618deccc44fada6dec96f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675395"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542571"
 ---
 # <a name="transforms-overview"></a>轉換概觀
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 563ca17864f95cfa98313608f5a5c32e64f44a16
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472888"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5521532"
 ---
 # <a name="add-controls"></a>新增控制項
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
 ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474777"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5520920"
 ---
 # <a name="get-app-data"></a>取得 App 資料
 

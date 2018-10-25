@@ -5,16 +5,14 @@ title: 裝置系列可用性
 ms.author: wdg-dev-content
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: e86b56c09f907e45655a0ef9b94fad30a4959b59
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: e575c3315411b7be0af14316e8063aa592b2920f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483628"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542528"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 

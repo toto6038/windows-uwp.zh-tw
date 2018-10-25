@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c08f879ec783c8065fe539dbefd3698c44bb608
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: b2f8c52835801f6cabccad3419bef9ef510522dc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044357"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572677"
 ---
 # <a name="span-iddirect3dconceptswindowedvsfull-screenmodespanwindowed-vs-full-screen-mode"></a><span id="direct3dconcepts.windowed_vs__full-screen_mode"></span>視窗與全螢幕模式
 
@@ -32,9 +30,9 @@ Direct3D 應用程式可以兩種模式執行：視窗或全螢幕模式。 在*
 
 [裝置](devices.md)
 
- 
+ 
 
- 
+ 
 
 
 

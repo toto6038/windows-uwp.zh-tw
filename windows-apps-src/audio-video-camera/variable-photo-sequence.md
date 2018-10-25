@@ -6,18 +6,17 @@ title: 可變相片序列
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4c6a6ef37af9f860e4ff1c77fd8e5e5151bb271e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 91a7d69d945b2ba2452d5bc477b6c17bf1dc6845
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209186"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572307"
 ---
 # <a name="variable-photo-sequence"></a>可變相片序列
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文章示範如何拍攝可變相片序列，讓您以快速連續的方式拍攝多個影像框架，並將每個框架設為使用不同焦點、閃光燈、ISO、曝光度以及曝光補償設定。 這個功能可用於建立高動態範圍 (HDR) 影像這類案例。
@@ -98,9 +97,9 @@ ms.locfileid: "209186"
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

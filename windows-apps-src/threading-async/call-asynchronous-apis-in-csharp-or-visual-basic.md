@@ -6,19 +6,17 @@ description: 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確�
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, C#, Visual Basic, 非同步
-ms.openlocfilehash: ad5d3432595761470a679bac690fe14711f9fdba
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665714"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542219"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。 本主題討論如何在 C# 或 Microsoft Visual Basic 使用 UWP 的非同步方法。
@@ -37,7 +35,8 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 下列範例會呼叫非同步方法 [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 並等待結果，以從部落格取得部落格文章清單。
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)] [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 這個範例有幾個重點。 首先，`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` 程式行使用 **await** 運算子搭配對非同步方法 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) 的呼叫。 您可以想像成 **await** 運算子告知編譯器您正在呼叫非同步方法，因而使編譯器代替您執行一些額外的工作。 其次，事件處理常式的宣告包含 **async** 關鍵字。 您必須在您使用 **await** 運算子的任何方法的方法宣告中包含這個關鍵字。
 
@@ -71,7 +70,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)，實作 **IAsyncOperation&lt;UInt32&gt;** 的自訂結果類別 | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
- 
+ 
 
 [**.NET for UWP app**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx) 中定義的非同步方法含有 [**Task**](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.task.aspx) 或 [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/dd321424.aspx) 傳回類型。 傳回 **Task** 的方法與 UWP 中傳回 [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) 的非同步方法類似。 在所有情況下，非同步方法的結果都是 **void**。 傳回類型 **Task&lt;TResult&gt;** 與 [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) 的相似處在於執行工作時非同步方法的結果與 `TResult` 類型參數的類型相同。 如需使用 **.NET for UWP apps** 和工作的詳細資訊，請參閱[適用於 Windows 執行階段應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)。
 
@@ -82,7 +81,7 @@ UWP 中的多數非同步 API 沒有同步對應項目，所以您必須確定�
 
 當非同步方法呼叫其他非同步方法時，任何造成例外狀況的非同步方法都將被傳播到外部方法中。 這表示您可以在最外層的方法中放入 **try/catch** 區塊，以攔截巢狀非同步方法的錯誤。 這和您攔截同步方法錯誤的方式類似。 不過，在 **catch** 區塊中不能使用 **await**。
 
-**提示：** 從 Microsoft Visual Studio 2005 中的 C# 開始，您可以在 **catch** 區塊中使用 **await**。
+**提示：** 從 Microsoft Visual Studio2005 中的 C#，您可以使用**await** **catch**區塊中。
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 4f3ebd2877dd786161c76d89e17a2667c07e65b3
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5478771"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5522490"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 

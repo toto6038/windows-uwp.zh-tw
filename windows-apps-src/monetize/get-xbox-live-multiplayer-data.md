@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、多人遊戲
 ms.localizationpriority: medium
 ms.openlocfilehash: 84255c97186accfcafc561eeb77e0fdb6924b5e9
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481242"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5517477"
 ---
 # <a name="get-xbox-live-multiplayer-data"></a>取得 Xbox Live 多人遊戲資料
 

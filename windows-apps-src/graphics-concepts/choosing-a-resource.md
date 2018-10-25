@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e616f5a04e50b400c4bd7a700981396570a6c1d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8ddac5d69ce0c562129255832adfc49380946510
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044657"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572377"
 ---
 # <a name="choosing-a-resource"></a>選擇資源
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044657"
 | 輸出合併   | 輸出    | 轉譯目標檢視     | 緩衝區, Texture1D, Texture2D, Texture3D |
 | 輸出合併   | 輸出    | 深度/樣板檢視     | Texture1D, Texture2D                    |
 
- 
+ 
 
 ## <a name="span-ididentifyusagespanspan-ididentifyusagespanspan-ididentifyusagespanidentify-how-each-resource-will-be-used"></a><span id="Identify_Usage"></span><span id="identify_usage"></span><span id="IDENTIFY_USAGE"></span>找出每個資源的使用方式
 
@@ -56,7 +54,7 @@ ms.locfileid: "1044657"
 | 暫存        | GPU                                  | n/a                 |
 | 固定      | CPU (只能在資源建立的時間) | n/a                 |
 
- 
+ 
 
 預設使用方式應用於預期不常由 CPU 更新的資源 (少於每畫面一次)。 理想的狀況是，CPU 永遠不會使用預設使用方式直接寫入資源，以避免潛在的效能降低。
 
@@ -75,7 +73,7 @@ ms.locfileid: "1044657"
 | 轉譯至紋理                     | 預設              |
 | CPU 的 GPU 資料存取權                | 暫存              |
 
- 
+ 
 
 如果您不確定要選擇哪個使用方式，請先使用預設使用方式，因其是最常見的情形。 著色器常數緩衝區這項資源類型應一律使用預設使用方式。
 
@@ -95,9 +93,9 @@ ms.locfileid: "1044657"
 
 [資源](resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

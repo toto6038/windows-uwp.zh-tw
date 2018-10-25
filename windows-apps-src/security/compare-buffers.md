@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 139514166d623dc9a621b533cd3ce4bb7fdea0c5
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: f307b459dad90f5204364a8c58a186ffae40c455
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5512142"
+ms.locfileid: "5572587"
 ---
 # <a name="compare-buffers"></a>比較緩衝區
 

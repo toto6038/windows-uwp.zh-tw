@@ -6,16 +6,14 @@ ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
 ms.date: 10/26/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 類別, 子類別, 內容類型, 分類, 類型
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f43ae7c70a9471f279927d87c9d55aac8519d6a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473468"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572217"
 ---
 # <a name="category-and-subcategory-table"></a>類別與子類別表格
 

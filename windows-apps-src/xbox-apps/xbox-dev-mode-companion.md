@@ -5,15 +5,15 @@ description: 提供 Xbox 開發人員模式小幫手 App 的相關資訊。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: ed84f232-ddb5-4ba1-bf1c-578e8df47602
-ms.openlocfilehash: 38bafd7c63b101e495748c169a1b566115c2a1e6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0054b71276eec33f87ff1ae51dff0d58c0efcfce
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210562"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572477"
 ---
 # <a name="xbox-dev-mode-companion"></a>Xbox 開發人員模式小幫手
 

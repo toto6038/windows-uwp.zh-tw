@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: bb2c242ea4b7e3881751874c096165279854aa5e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483728"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5521618"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 

@@ -6,21 +6,19 @@ title: XAML 平台
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 381103fed2d2caca64bf918951fc4fd31623a3a3
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: fe9bad5afabca3ef0b9c782446e581aea61fe4dc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842908"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542518"
 ---
 # <a name="xaml-platform"></a>XAML 平台
 
 
-本節包含說明程式設計概念的主題，如果您是使用 C#、Microsoft Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為您的程式設計語言，並且使用 XAML 定義 UI，則這些概念一般適用於您撰寫的所有 app。 這包含基本的程式設計概念，例如使用屬性和事件，以及如何將它們套用到通用 Windows 平台 (UWP) 應用程式的程式設計。 通用 Windows 平台 (UWP) 會藉由新增相依性屬性系統，來延伸屬性及其值的 C#、Visual Basic 或 C++/CX 概念。 本節中的主題也會在 UWP 使用 XAML 語言時記錄該語言，並且涵蓋基本案例和進階主題，以說明如何使用 XAML 來定義適用於 UWP app 的 UI。
+本節包含的主題說明程式設計概念通用於任何應用程式會在寫入時，如果您使用 C#、 Microsoft Visual Basic 中，或 VisualC + + 元件延伸 (C + + /CX) 做為程式設計語言並使用您的 UI 的 XAML定義。 這包含基本的程式設計概念，例如使用屬性和事件，以及如何將它們套用到通用 Windows 平台 (UWP) 應用程式的程式設計。 通用 Windows 平台 (UWP) 會藉由新增相依性屬性系統，來延伸屬性及其值的 C#、Visual Basic 或 C++/CX 概念。 本節中的主題也會在 UWP 使用 XAML 語言時記錄該語言，並且涵蓋基本案例和進階主題，以說明如何使用 XAML 來定義適用於 UWP app 的 UI。
 
 | 主題 | 說明 |
 |-------|-------------|

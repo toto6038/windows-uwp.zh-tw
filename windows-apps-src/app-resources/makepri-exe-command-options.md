@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: c0a3892348baff56bbef8d40dd9aade4e612c50d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468771"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542425"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
@@ -417,6 +415,19 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 ```
 
 **FILEPATH** 是指定輸入 PRI 檔案或 PRI 結構描述檔案的位置的權杖。
+
+## <a name="47indexoptionsio-option"></a>& #47;IndexOptions(io) 選項
+
+您使用索引選項選項 (/ io) 使用`new`， `resourcepack`，和`versioned`來指定選項可提供詳細的控制權資源的索引子的行為。 根據預設，會停用索引選項。
+
+```
+/IndexOptions(io) <OPTIONS>
+```
+
+**選項**是以逗號分隔的清單，下列選項所組成。
+
+- + /-HiddenFiles(hf)。 索引 （+） 或忽略 （-） 隱藏的檔案和資料夾。
+- + /-LinkedFiles(lf)。 索引 （+） 或忽略 （-） 連結的檔案和資料夾。
 
 ## <a name="47mappingfilemf-option"></a>&#47;MappingFile(mf) 選項
 

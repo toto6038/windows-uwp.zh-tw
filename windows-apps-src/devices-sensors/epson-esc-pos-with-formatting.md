@@ -6,19 +6,17 @@ description: 了解如何使用 ESC/POS 命令語言，針對您的服務點印�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f482f9f44a5f4acb9c5213745da3b8edd3613b62
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.localizationpriority: medium
+ms.openlocfilehash: 3ecc1a61b7db339c7c0c46168255d32bfbc241a1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696095"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5572537"
 ---
 # <a name="epson-escpos-with-formatting"></a>用來設定格式的 Epson ESC/POS
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 

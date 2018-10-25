@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.openlocfilehash: ae89b5c0e072eceec155009c07b3b3a7cf563a20
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5473276"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5521410"
 ---
 # <a name="work-with-files"></a>使用檔案
 

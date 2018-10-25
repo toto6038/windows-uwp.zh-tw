@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 89745d0bb93b76e4497d6cb5c57f4e6c091c8bd7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477181"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5521003"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 

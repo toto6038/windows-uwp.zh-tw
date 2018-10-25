@@ -1,29 +1,27 @@
 ---
 author: M-Stahl
-title: 裝置入口網站 Xbox info API 參考 （英文)
+title: 裝置入口網站 Xbox 資訊 API 參考
 description: 了解如何存取 Xbox 裝置資訊。
 ms.author: mstahl
 ms.date: 11/7/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10、 uwp、 xbox、 裝置入口網站
+keywords: windows 10、 uwp、 xbox 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: db1df2418a2bb60de4a72f51ad01a0bfd547ec20
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "406249"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542355"
 ---
-# <a name="xbox-info-api-reference"></a>Xbox Info API 參考 （英文)   
-您可以存取使用此 API Xbox 一部裝置資訊。
+# <a name="xbox-info-api-reference"></a>Xbox 資訊 API 參考   
+您可以存取 Xbox One 裝置的資訊，請使用此 API。
 
-## <a name="get-xbox-one-device-information"></a>取得一個 Xbox 裝置資訊
+## <a name="get-xbox-one-device-information"></a>取得 Xbox One 裝置資訊
 
 **要求**
 
-您可以取得裝置資訊有關您 Xbox 一個。
+您可以取得裝置的資訊有關您的 Xbox One。
 
 方法      | 要求 URI
 :------     | :-----
@@ -44,14 +42,14 @@ GET | /ext/xbox/info
 **回應**   
 JSON 物件，包含下列欄位：
 
-* OsVersion-(String) 的 OS 版本。
-* OsEdition-(String) 版本的作業系統，例如"年 3 月 2017"或"年 3 月 2017 QFE 1"。
-* ConsoleId-(String) 主控台的識別碼。
-* DeviceId-(String) 主控台的 Xbox Live 裝置 id。
-* SerialNumber-(String) 主控台的序號。
-* DevMode-(String) 主控台的目前開發人員模式，例如"None"或"零售"。
-* ConsoleType-(String) 主控台的類型，例如"Xbox 一"或"Xbox 一個 S"。
-* DevkitCertificateExpirationTime-主控台的開發人員 kit 憑證到期時的秒數 （數字） UTC 時間。
+* OsVersion-（字串） 的 os 版本。
+* OsEdition-（字串） 版本的作業系統，例如 「 3 月 2017 」 或 「 3 月 2017 QFE 1 」。
+* ConsoleId-（字串） 主機的識別碼。
+* DeviceId-（字串） 主機的 Xbox Live 裝置 id。
+* SerialNumber-（字串） 主機的序號。
+* DevMode-（字串） 主機的目前開發人員模式，例如 「 無 」 或 「 零售 」。
+* ConsoleType-（字串） 主機的類型，例如 「 Xbox One 」 或 「 Xbox One S 」。
+* DevkitCertificateExpirationTime-（數字） 的 UTC 時間 （秒） 主機的開發人員套件的憑證將會到期。
 
 **狀態碼**
 
@@ -59,7 +57,7 @@ JSON 物件，包含下列欄位：
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 個 | 要求成功
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 

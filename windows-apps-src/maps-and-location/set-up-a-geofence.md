@@ -6,16 +6,14 @@ ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 02baf078d127f516d57e947145ec639df5ba891b
-ms.sourcegitcommit: 11edca90aaf7856c762e68903483079d30ad3877
-ms.translationtype: HT
+ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2018
-ms.locfileid: "1594776"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542272"
 ---
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 
@@ -479,7 +477,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取位置。 在 **\[設定\]** 應用程式中，確認已開啟下列**位置隱私權設定**：
 
--   已將 **此裝置的位置** 設為 **開啟** \(不適用於 Windows 10 行動裝置版\)
+-   **...此裝置的位置**已**開啟 （不適用於 windows 10 行動裝置版）**
 -   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
 -   在 \[**選擇可以使用您的位置的應用程式**\] 底下，將您的 app 設為 \[**開啟**\]
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477220"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5520867"
 ---
 # <a name="get-subscriptions-for-a-user"></a>取得使用者訂閱
 

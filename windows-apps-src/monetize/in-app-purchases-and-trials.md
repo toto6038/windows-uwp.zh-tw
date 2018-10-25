@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 在應用程式內購買, IAP, 附加元件, 試用版, 消費性, 耐久性, 訂閱
 ms.localizationpriority: medium
 ms.openlocfilehash: b116e4794f024ecc5cf44d73e22c09ab8ee33ff4
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468870"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5520973"
 ---
 # <a name="in-app-purchases-and-trials"></a>在應用程式內購買和試用版
 

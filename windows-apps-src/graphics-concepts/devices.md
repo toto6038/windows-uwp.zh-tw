@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2676c59251a4aadb0f97a1180238ec076bf45229
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d1c35af3dd1f8826fbd61268c5c47cef9d77146a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652887"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542435"
 ---
 # <a name="devices"></a>裝置
 
@@ -80,16 +78,16 @@ Direct3D 支援兩種主要的 Direct3D 裝置類型：
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [Direct3D 圖形學習指南](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

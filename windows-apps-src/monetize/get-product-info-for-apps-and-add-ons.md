@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, App 內購買, IAP, 附加元件, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 417478df3b82967656d2210b3b532c5341f1fb2e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479346"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5519998"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的產品資訊
 
