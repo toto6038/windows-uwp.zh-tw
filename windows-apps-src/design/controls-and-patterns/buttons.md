@@ -16,12 +16,12 @@ design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: badaefc406daa5f4500c76262d916f47d82e7a52
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b3afb0cba92e5f3c08de19c926bd5fb949185379
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5469942"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5517409"
 ---
 # <a name="buttons"></a>按鈕
 
@@ -36,9 +36,9 @@ XAML 架構提供標準 button 控制項，以及數個特殊的 button 控制�
 [Button](/uwp/api/windows.ui.xaml.controls.button) | 起始立即的動作。 可以搭配 Click 事件或命令繫結。
 [RepeatButton](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton) | 引發 Click 事件持續時按下按鈕。
 [HyperlinkButton](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton) | A 按鈕，具有像超連結，用來瀏覽樣式設定。 如需詳細資訊，請參閱[超連結](hyperlinks.md)。
-[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | （預覽）若要開啟附加飛出視窗 > 形箭號按鈕。
-[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | （預覽）具有兩個邊的按鈕。 另一側會起始動作，並在另一端，會開啟功能表。
-[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | （預覽）具有兩個邊切換按鈕。 另一側切換開/關，並在另一端，會開啟功能表。
+[DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton) | 若要開啟附加飛出視窗 > 形箭號按鈕。
+[SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton) | 具有兩個邊的按鈕。 另一側會起始動作，並在另一端，會開啟功能表。
+[ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton) | 具有兩個邊切換按鈕。 另一側切換開/關，並在另一端，會開啟功能表。
 
 | **取得 Windows UI 文件庫** |
 | - |
@@ -210,7 +210,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-drop-down-button"></a>建立一種下拉式按鈕
 
-> **預覽**： DropDownButton 需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> DropDownButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton)是顯示視覺指示器它有更多選項包含附加飛出視窗 > 形箭號按鈕。 它有相同的行為與飛出視窗; 在標準按鈕只是不同的外觀。
 
@@ -269,7 +269,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 
 ## <a name="create-a-split-button"></a>建立分割按鈕
 
-> **預覽**： SplitButton 需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> SplitButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton)有兩個部分可個別叫用。 一個部分行為類似標準按鈕，並立即的動作會叫用。 其他部分會叫用飛出視窗，其中包含其他使用者可從中選擇的選項。
 
@@ -376,7 +376,7 @@ public sealed partial class MainPage : Page
 
 ## <a name="create-a-toggle-split-button"></a>建立切換開關分割按鈕
 
-> **預覽**： ToggleSplitButton 需要的[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
+> ToggleSplitButton 需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，或[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton)有兩個部分可個別叫用。 其中一個部分的行為類似的切換按鈕，可開啟或關閉。 其他部分會叫用飛出視窗，其中包含其他使用者可從中選擇的選項。
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 96087d2a41eb443374d8cd9bda5608d6156f9173
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5471771"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5514568"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 

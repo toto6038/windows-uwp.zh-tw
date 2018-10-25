@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 使用者介面, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a82958f01530b84276823ea8d025d292bd664ac
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483538"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5513434"
 ---
 # <a name="add-a-user-interface"></a>新增使用者介面
 

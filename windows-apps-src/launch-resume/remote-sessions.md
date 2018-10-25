@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e5226b23a454bf48add22d590a3ff247c629e4f
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482230"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5515608"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>透過遠端工作階段連接裝置
 

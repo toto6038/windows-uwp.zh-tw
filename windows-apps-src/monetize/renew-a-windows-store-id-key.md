@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew, Microsoft Store 集合 API, Microsoft Store 購買 API, Microsoft Store 識別碼金鑰, 更新
 ms.localizationpriority: medium
 ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5468469"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5513224"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>更新 Microsoft Store 識別碼金鑰
 

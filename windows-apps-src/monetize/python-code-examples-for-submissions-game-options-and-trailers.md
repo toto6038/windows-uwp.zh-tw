@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, python
 ms.localizationpriority: medium
 ms.openlocfilehash: d3617e7868f62c5d8e430deb4be295bc552dff18
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475842"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5516183"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Python 範例：提交含遊戲選項與預告片的應用程式
 

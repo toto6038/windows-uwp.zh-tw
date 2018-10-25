@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 387b5ccf999452780b89aa7edcc9b58bcc35ea8a
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482954"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5516683"
 ---
 # <a name="manage-delivery-lines"></a>管理廣告播送行
 

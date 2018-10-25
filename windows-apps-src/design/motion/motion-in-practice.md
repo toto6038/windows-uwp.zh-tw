@@ -14,12 +14,12 @@ pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6001f955b3ab6a60446eb84296dc3bc52ad3a99e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 64cc534391aae694b80b5750d74ccf98bd5cdc6b
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5482993"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5515696"
 ---
 # <a name="bringing-it-together"></a>組合在一起
 
@@ -83,7 +83,8 @@ ms.locfileid: "5482993"
 
 ## <a name="implicit-animations"></a>隱含動畫
 
-> **預覽**： 隱含動畫需要[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)。
+> 隱含動畫所需的 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
+
 
 隱含動畫是由自動參數變更期間的舊和新值之間插入達到 Fluent 動作的簡單方式。
 

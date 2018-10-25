@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ecc472c8c1d4adebd8376fce9d2d5e6e2a955e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483878"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5516264"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
