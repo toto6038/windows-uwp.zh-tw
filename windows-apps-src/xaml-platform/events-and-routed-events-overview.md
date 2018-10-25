@@ -1,6 +1,6 @@
 ---
 author: jwmsft
-description: 我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。
+description: 我們將說明在 Windows 執行階段 app 中，事件的程式設計概念時使用 C#、 Visual Basic 或 VisualC + + 元件延伸 (C + + /CX) 做為程式設計語言，並使用 XAML 定義 UI。
 title: 事件與路由事件概觀
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.author: jimwalk
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6ca58613a5874cde10d2bb5322c3f930e1fbce44
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5444768"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480441"
 ---
 # <a name="events-and-routed-events-overview"></a>事件與路由事件概觀
 
@@ -23,7 +23,7 @@ ms.locfileid: "5444768"
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
 -   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-我們將描述使用 C#、Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 做為程式設計語言，並使用 XAML 定義 UI 時，Windows 執行階段 app 中之事件的程式設計概念。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援*路由事件*：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或配置容器時，路由事件非常實用。
+我們將說明在 Windows 執行階段 app 中，事件的程式設計概念時使用 C#、 Visual Basic 或 VisualC + + 元件延伸 (C + + /CX) 做為程式設計語言，並使用 XAML 定義 UI。 您可以在 XAML 中指派事件的處理常式，以做為 UI 元素宣告的一部分，或是在程式碼中新增處理常式。 Windows 執行階段支援*路由事件*：某些輸入事件與資料事件，可以由引發事件之物件以外的物件來處理。 當您定義控制項範本或是使用頁面或配置容器時，路由事件非常實用。
 
 ## <a name="events-as-a-programming-concept"></a>程式設計概念的事件
 
@@ -31,7 +31,7 @@ ms.locfileid: "5444768"
 
 當您使用 C#、Visual Basic 或 C++/CX 做為程式設計語言時，UI 會定義在標記 (XAML) 中。 就 XAML 標記語法而言，在標記元素與執行階段程式碼實體間之連接事件的一些原理，與其他 Web 技術 (像是 ASP.NET 或 HTML5) 類似。
 
-**注意**  為 XAML 定義的 UI 提供執行階段邏輯的程式碼，通常稱為*程式碼後置*或程式碼後置檔案。 在 Microsoft Visual Studio 方案檢視中，會以圖形顯示這個關係，而程式碼後置檔案對它所參考的 XAML 頁面而言，是相依與巢狀的檔案。
+**注意：** 為 XAML 定義 UI 提供執行階段邏輯的程式碼通常稱為*程式碼後置*或程式碼後置檔案。 在 Microsoft Visual Studio 方案檢視中，會以圖形顯示這個關係，而程式碼後置檔案對它所參考的 XAML 頁面而言，是相依與巢狀的檔案。
 
 ## <a name="buttonclick-an-introduction-to-events-and-xaml"></a>Button.Click：事件與 XAML 的簡介
 
@@ -47,7 +47,7 @@ Windows 執行階段應用程式最常見的一項程式設計工作，是將使
   Click="ShowUpdatesButton_Click"/>
 ```
 
-**提示**  *事件連接*是一個程式設計術語。 它指的是您在表示發生某個事件時應叫用具名處理常式方法的處理程序或程式碼。 在大部分的程序性程式碼模型中，事件連接是隱含或明確的 "AddHandler" 程式碼，可以為事件和方法命名，通常包含目標物件執行個體。 在 XAML 中，"AddHandler" 是隱含的，而事件連接完全是由下列兩個動作所組成：將事件命名為物件元素的屬性名稱，以及將處理常式命名為該屬性的值。
+**提示：***事件連接*是一個程式設計術語。 它指的是您在表示發生某個事件時應叫用具名處理常式方法的處理程序或程式碼。 在大部分的程序性程式碼模型中，事件連接是隱含或明確的 "AddHandler" 程式碼，可以為事件和方法命名，通常包含目標物件執行個體。 在 XAML 中，"AddHandler" 是隱含的，而事件連接完全是由下列兩個動作所組成：將事件命名為物件元素的屬性名稱，以及將處理常式命名為該屬性的值。
 
 您是以用來撰寫所有 app 之程式碼和程式碼後置的程式設計語言，來撰寫實際的處理常式。 使用屬性 `Click="ShowUpdatesButton_Click"` 會建立一個協定，也就是當 XAML 是以標記編譯和剖析時，您的 IDE 建置動作的 XAML 標記編譯步驟和應用程式載入時的最終 XAML 剖析，都可以在應用程式的程式碼中找到名為 `ShowUpdatesButton_Click` 的方法。 `ShowUpdatesButton_Click` [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 事件的任何處理常式實作相容之方法簽章 (依據委派) 的方法。 例如，下列程式碼會定義 `ShowUpdatesButton_Click` 處理常式。
 
@@ -84,13 +84,13 @@ void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, W
 
 在此範例中，`ShowUpdatesButton_Click` 方法是以 [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) 委派為基礎。 您會知道這就是要使用的委派，因為 MSDN 參考頁面上 [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) 方法的語法中將會提及該委派。
 
-**提示**  Visual Studio 在您編輯 XAML 時，會提供一個命名事件處理常式並定義處理常式方法的便利方式。 當您在 XAML 文字編輯器中提供事件的屬性名稱時，請稍候片刻，讓 Microsoft IntelliSense 清單顯示。 如果您按一下清單中的 **\[&lt;新事件處理常式&gt;\]**，Microsoft Visual Studio 會根據元素的 **x:Name** (或類型名稱)、事件名稱以及數值尾碼來建議方法名稱。 然後，您可以在選取的事件處理常式名稱上按一下滑鼠右鍵，再按一下 [**巡覽至事件處理常式**]。 這會直接瀏覽到新插入的事件處理常式定義，如您在 XAML 頁面程式碼後置檔案的程式碼編輯器檢視中所見。 事件處理常式已經有正確的簽章，其中包含事件使用的 *sender* 參數及事件資料類別。 此外，如果您的程式碼後置中已經有正確簽章的處理常式方法，這個方法的名稱會顯示在自動完成下拉式清單中，連同顯示 **\[&lt;新事件處理常式&gt;\]** 選項。 您也可以按下 Tab 鍵做為快速鍵，以取代按一下 IntelliSense 清單項目。
+**提示：** Visual Studio 提供一個命名事件處理常式並定義處理常式方法，您編輯 XAML 時的便利方式。 當您在 XAML 文字編輯器中提供事件的屬性名稱時，請稍候片刻，讓 Microsoft IntelliSense 清單顯示。 如果您按一下清單中的 **\[&lt;新事件處理常式&gt;\]**，Microsoft Visual Studio 會根據元素的 **x:Name** (或類型名稱)、事件名稱以及數值尾碼來建議方法名稱。 然後，您可以在選取的事件處理常式名稱上按一下滑鼠右鍵，再按一下 [**巡覽至事件處理常式**]。 這會直接瀏覽到新插入的事件處理常式定義，如您在 XAML 頁面程式碼後置檔案的程式碼編輯器檢視中所見。 事件處理常式已經有正確的簽章，其中包含事件使用的 *sender* 參數及事件資料類別。 此外，如果您的程式碼後置中已經有正確簽章的處理常式方法，這個方法的名稱會顯示在自動完成下拉式清單中，連同顯示 **\[&lt;新事件處理常式&gt;\]** 選項。 您也可以按下 Tab 鍵做為快速鍵，以取代按一下 IntelliSense 清單項目。
 
 ## <a name="defining-an-event-handler"></a>定義事件處理常式
 
 對於在 XAML 中宣告的 UI 元素物件，事件處理常式程式碼是定義在做為 XAML 頁面程式碼後置的部分類別中。 事件處理常式是您撰寫為部分類別中一部分的方法，這個部分類別與您的 XAML 相關聯。 這些事件處理常式是根據特定事件使用的委派。 您的事件處理常式方法可以是公用或私用的。 使用私用存取的原因，是因為程式碼產生最終會聯結 XAML 建立的處理常式與執行個體。 一般而言，建議您在類別中將事件處理常式方法建立為私用的。
 
-**注意**  C++ 的事件處理常式不會在部分類別中定義，它們會在標頭中宣告為私用類別成員。 C++ 專案的建置動作會負責處理程式碼的產生，而這些程式碼可支援 C++ 的 XAML 類型系統和程式碼後置模型。
+**注意：** c + + 的事件處理常式不會在部分類別中定義，它們會宣告為私用類別成員的標頭中。 C++ 專案的建置動作會負責處理程式碼的產生，而這些程式碼可支援 C++ 的 XAML 類型系統和程式碼後置模型。
 
 ### <a name="the-sender-parameter-and-event-data"></a>*sender* 參數與事件資料
 
@@ -131,7 +131,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意**  還有更詳細的語法。 在 2005 年時，C# 新增一項稱為委派推斷的功能，可以讓編譯器推斷新的委派執行個體，並啟用更簡單的舊語法。 詳細語法在功能上與上一個範例相同，但會在登錄之前先明確地建立新的委派執行個體，因此不會利用委派推斷。 這個明確的語法較不常見，但是在有些程式碼範例中還是可能會看到它。
+**注意：** 還有更詳細的語法是否存在。 在 2005 年時，C# 新增一項稱為委派推斷的功能，可以讓編譯器推斷新的委派執行個體，並啟用更簡單的舊語法。 詳細語法在功能上與上一個範例相同，但會在登錄之前先明確地建立新的委派執行個體，因此不會利用委派推斷。 這個明確的語法較不常見，但是在有些程式碼範例中還是可能會看到它。
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -151,7 +151,7 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**注意**  Visual Studio 和它的 XAML 設計介面通常會升級執行個體處理技巧，而非 **Handles** 關鍵字。 這是因為在 XAML 中建立事件處理常式連接，是設計人員與開發人員之間一般工作流程的一部分，而 **Handles** 關鍵字技巧與連接 XAML 中的事件處理常式不相容。
+**注意：** Visual Studio 和它的 XAML 設計介面通常會升級執行個體處理技巧，而不是**處理**的關鍵字。 這是因為在 XAML 中建立事件處理常式連接，是設計人員與開發人員之間一般工作流程的一部分，而 **Handles** 關鍵字技巧與連接 XAML 中的事件處理常式不相容。
 
 在 C + + /CX，您也使用**+=** 語法，但與基本 C# 格式有一些差異：
 
@@ -238,7 +238,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 
 在某些情況下，*sender* 不是您感興趣的目標，您反而是想了解其他資訊，像是指標事件觸發時，指標在哪個可能的子物件上方，或當使用者按下鍵盤按鍵時，較大 UI 中的哪個物件是焦點。 在這些情況下，您可以使用 [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) 屬性的值。 在路由的所有點中，**OriginalSource** 會報告引發事件的原始物件，而非附加處理常式的物件。 不過，對於 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 輸入事件來說，該原始物件通常是無法立即在頁面層級的 UI 定義 XAML 中所能看到的物件。 該原始來源物件可能是控制項的範本組件。 例如，如果使用者將滑鼠指標停留在 [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 的邊緣，對於大多數的指標事件來說，**OriginalSource** 是 [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) 中的 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) 範本組件，而非 **Button** 本身。
 
-**提示**  如果您正在建立範本化的控制項，輸入事件將會特別有用。 控制項的取用者可以為含有範本的任一控制項套用新範本。 正嘗試重建工作範本的取用者，可能會不慎刪除在預設範本中宣告的某些事件處理。 您仍然可以提供控制項層級的事件處理，方法是將處理常式附加為類別定義中的 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) 覆寫的一部分。 接著，您可以攔截具現化時向上反昇至控制項根目錄的輸入事件。
+**提示：** 輸入事件將會特別有用，如果您正在建立範本化控制項。 控制項的取用者可以為含有範本的任一控制項套用新範本。 正嘗試重建工作範本的取用者，可能會不慎刪除在預設範本中宣告的某些事件處理。 您仍然可以提供控制項層級的事件處理，方法是將處理常式附加為類別定義中的 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) 覆寫的一部分。 接著，您可以攔截具現化時向上反昇至控制項根目錄的輸入事件。
 
 ### <a name="the-handled-property"></a>**Handled** 屬性
 
@@ -269,7 +269,7 @@ RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 -   元素的 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 屬性值是 [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006)。
 -   元素的 **Background** 或 **Fill** 屬性值不是 **null**。 **null** [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 值會導致透明而看不到點擊測試。 (若要讓元素變成透明但仍可以進行點擊測試，請使用 [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) 筆刷而不要使用 **null**)。
 
-**注意**  **Background** 和 **Fill** 不是由 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 定義的，而是由不同的衍生類別 (如 [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 和 [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)) 定義的。 不過，您為前景和背景屬性使用的筆刷含意，與點擊測試及輸入事件是相同的，無論該屬性是由哪個子類別實作。
+**注意：****背景**和**填滿**由[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)，不定義，並改為由不同的衍生類別，例如[**控制項**](https://msdn.microsoft.com/library/windows/apps/br209390)和[**形狀**](/uwp/api/Windows.UI.Xaml.Shapes.Shape)定義。 不過，您為前景和背景屬性使用的筆刷含意，與點擊測試及輸入事件是相同的，無論該屬性是由哪個子類別實作。
 
 -   如果元素是控制項，它的 [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) 屬性值必須是 **true**。
 -   元素在配置中必須具有實際的尺寸。 [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) 和 [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) 為 0 的元素不會引發輸入事件。

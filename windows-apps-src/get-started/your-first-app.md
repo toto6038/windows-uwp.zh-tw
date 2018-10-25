@@ -2,7 +2,7 @@
 author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 建立您的第一個 App
-description: 使用您最愛的程式設計語言，建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
+description: 建立適用於 windows 10 的通用 Windows 平台 (UWP) app 使用您最愛的程式設計語言。
 ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: e8e2272ab761e1fa0bc9514f226a73a66a10662b
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445825"
+ms.locfileid: "5483137"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 
@@ -42,9 +42,9 @@ ms.locfileid: "5445825"
 * [適用於 Microsoft Store 的簡單 2D UWP 遊戲，以 C# 和 MonoGame 撰寫](get-started-tutorial-game-mg2d.md)
 
 
-## <a name="visual-c-component-extensions-ccx-and-xaml"></a>Visual C++ 元件延伸 (C++/CX) 和 XAML
+## <a name="visualc-component-extensions-ccx-and-xaml"></a>VisualC + + 元件延伸 (C + + /CX) 和 XAML
 
-利用您的 C++ 程式設計專業知識，使用 Visual C++ 元件延伸 (C++/CX) 搭配 XAML 來建置 App。
+利用您 c + + 程式設計專業知識建置應用程式使用 VisualC + + 元件延伸 (C + + /CX) 搭配 XAML。
 
 * [使用 XAML 搭配 C++/CX 來建立 "Hello, world" App](create-a-basic-windows-10-app-in-cpp.md)
 

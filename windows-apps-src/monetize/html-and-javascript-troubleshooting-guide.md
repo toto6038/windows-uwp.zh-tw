@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 疑難排解, HTML, JavaScript
 ms.localizationpriority: medium
 ms.openlocfilehash: 5474ac51d57decfe2c4f4d5f1969da5b4436fd14
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5445925"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481940"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑難排解指南
 
@@ -148,7 +148,7 @@ ms.locfileid: "5445925"
 
 1.  再次檢查前述[沒有顯示 AdControl](#html-notappearing) 一節中的所有步驟。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
+2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -295,7 +295,7 @@ ms.locfileid: "5445925"
 
 1.  再次檢查[沒有顯示 AdControl](#js-adcontrolnotappearing) 一節中的所有步驟。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
+2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
     此範例示範如何實作報告錯誤訊息的錯誤處理常式。 此 HTML 程式碼片段提供如何設定顯示錯誤訊息之 UI 的範例。
 
@@ -379,6 +379,6 @@ ms.locfileid: "5445925"
 
 3.  **AdControl** 運作正常。 有時候，同樣的廣告可能連續出現超過一次，使之看起像是沒有重新整理。
 
- 
+ 
 
- 
+ 

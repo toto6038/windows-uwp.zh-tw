@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: dff7b641cad99407ce22e7a4d4b58c10e0ae94d1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435591"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480206"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -123,7 +123,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 的來源 app 可要求在 URI 啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理 URI 的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 您也可以使用 **DesiredRemainingView**，指示來源 app 在 URI 啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-**注意** Windows 在判斷來源應用程式的最終視窗大小時，會考量多種不同因素，例如來源應用程式的喜好設定、螢幕上的應用程式數目、螢幕方向等。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 App 的特定視窗行為。
+**注意：** Windows 會考量多種不同因素，在判斷來源應用程式的最終視窗大小，例如，來源 app 的喜好設定，在畫面、 螢幕方向，以及等等的應用程式數目。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 App 的特定視窗行為。
 
 ```cs
 // Set the desired remaining view.

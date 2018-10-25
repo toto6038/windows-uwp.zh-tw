@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 3042a6f52453fa4a4c50334b605f637f1dec92aa
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443431"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482320"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
@@ -156,7 +156,7 @@ namespace BackgroundTasks
 6.  按一下或點選 **\[應用程式 UI\]** 索引標籤。
 7.  將 **\[鎖定畫面通知\]** 設定成 **\[徽章與文字並排\]**。
 8.  在 **\[徽章標誌\]** 欄位中，設定 24x24 像素圖示的路徑。
-    **重要** 此圖示只能使用單色和透明像素。
+    **重要**此圖示必須使用單色和透明像素只。
 9.  在 **\[小標誌\]** 欄位中，設定 30x30 像素圖示的路徑。
 10. 在 **\[寬標誌\]** 欄位中，設定 310x150 像素圖示的路徑。
 
@@ -165,8 +165,8 @@ namespace BackgroundTasks
 
 建立 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以登錄您的工作。
 
-> **注意** 從 Windows 8.1 開始，背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 您的應用程式必須能夠處理背景工作登錄失敗的狀況，例如使用條件式陳述式來檢查登錄是否有錯誤，接著使用不同的參數值來重試已失敗的登錄。
- 
+> **注意：** 從 Windows8.1 開始，背景工作登錄參數都在驗證註冊的時間。 如果有任一個登錄參數無效，就會傳回錯誤。 您的應用程式必須能夠處理背景工作登錄失敗的狀況，例如使用條件式陳述式來檢查登錄是否有錯誤，接著使用不同的參數值來重試已失敗的登錄。
+ 
 
 在應用程式的主頁面中，新增 **RegisterBackgroundTask** 方法，然後在 **OnNavigatedTo** 事件處理常式中進行呼叫。
 
@@ -266,6 +266,6 @@ namespace ContosoApp
 * [使用背景工作支援 app](support-your-app-with-background-tasks.md)
 * [磚與徽章的指導方針和檢查清單](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
- 
+ 
 
- 
+ 

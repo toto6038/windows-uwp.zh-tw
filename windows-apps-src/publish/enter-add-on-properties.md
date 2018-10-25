@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 73a494ea1899f3a764a668ae61c1235808eff1a7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438515"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483525"
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
 
@@ -89,7 +89,7 @@ ms.locfileid: "5438515"
 若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreProduct.Keywords](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.Keywords) 屬性  (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Keywords](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.Keywords) 屬性)。
 
 > [!NOTE]
-> 關鍵字不適用於以 Windows 8 和 Windows 8.1 為目標的套件。
+> 關鍵字不是 Windows8 和 Windows8.1 為目標的套件中可供使用。
 
 <span id="custom-developer-data" />
 
@@ -102,10 +102,10 @@ ms.locfileid: "5438515"
 若要查詢這個欄位，使用 [Windows.Services.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.Services.Store)中的 [StoreSku.CustomDeveloperData](https://docs.microsoft.com/uwp/api/windows.services.store.storesku.customdeveloperdata#Windows_Services_Store_StoreSku_CustomDeveloperData) 屬性。 (或者，如果您使用的是 [Windows.ApplicationModel.Store 命名空間](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store)，則使用 [ProductListing.Tag](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.productlisting.tag#Windows_ApplicationModel_Store_ProductListing_Tag) 屬性)。
 
 > [!NOTE]
-> **\[自訂開發人員資料\]** 欄位不適合用於 Windows 8 和 Windows 8.1 為目標的套件。
+> **自訂開發人員資料**欄位不適用於以 Windows8 和 Windows8.1 為目標的套件。
 
- 
+ 
 
- 
+ 
 
- 
+ 

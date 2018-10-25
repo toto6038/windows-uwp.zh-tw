@@ -16,11 +16,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e842d6c5b8e62a9c043c97849fdf17f524ccfc7
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435511"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481117"
 ---
 # <a name="access-keys"></a>便捷鍵
 
@@ -263,16 +263,16 @@ _自動按鍵提示位置的範例_
 
     a.  Key Tip 應該**接近**擁有便捷鍵的項目（擁有者）。  
     b.  按鍵提示應該**避免遮蔽具有便捷鍵的已啟用元素**。   
-    c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
+    c.  如果按鍵提示無法接近擁有者放置，它應該與擁有者重疊。 
 
 2.  **可搜尋性**：使用者可以快速探索具有按鍵提示的控制項。
 
-    a.  按鍵提示絕不與其他按鍵提示**重疊**。  
+    a.  按鍵提示絕不與其他按鍵提示**重疊**。  
 
 3.  **輕鬆掃描：** 使用者可以輕鬆地瀏覽按鍵提示。
 
     a.  按鍵提示應該彼此**對齊**並與 UI 項目對齊。
-    b.  按鍵提示應該盡可能**分組**。 
+    b.  按鍵提示應該盡可能**分組**。 
 
 ### <a name="relative-position"></a>相對位置
 

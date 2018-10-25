@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c69edc018ae01beba50b93b7dd9f4125544a001
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443018"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483444"
 ---
 # <a name="create-a-windows-hello-login-service"></a>建立 Windows Hello 登入服務
 

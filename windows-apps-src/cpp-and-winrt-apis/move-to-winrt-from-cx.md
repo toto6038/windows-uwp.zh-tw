@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: 29144f110a76227ae6a1bc1e7d7aa9f051babc9d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431639"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483588"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 

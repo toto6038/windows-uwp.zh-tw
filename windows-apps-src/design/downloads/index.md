@@ -10,12 +10,12 @@ ms.prod: windows
 ms.technology: uwp
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
-ms.openlocfilehash: e829883ec33b5e221d0947b6f39cf6ac091a0b4a
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 21ce284af550a8a8d930af0ba9a6fca512f97f04
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432107"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482712"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP app 的工具組和範例
  
@@ -106,6 +106,11 @@ ms.locfileid: "5432107"
 
     
 ## <a name="samples"></a>範例
+
+![Fluent XAML 佈景主題編輯器影像](images/XamlThemeEditor_screenshot.png)
+**Fluent XAML 佈景主題編輯器**<br>
+Fluent XAML 佈景主題編輯器是一個工具，可協助展示 Fluent Design 系統的彈性，以及支援在應用程式開發程序是透過產生 XAML 標記為通用 Windows 平台應用程式中使用我們 ResourceDictionary 架構（uwp 一樣）。
+<a href="https://github.com/Microsoft/fluent-xaml-theme-editor/archive/master.zip">下載工具範例</a> <br><a href="https://github.com/Microsoft/fluent-xaml-theme-editor">請查看 GitHub 上的工具</a>
 
 ![VanArsdel 映像](images/VanArsdel_Screenshot.png)
 **VanArsdel**<br>

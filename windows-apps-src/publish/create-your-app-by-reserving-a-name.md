@@ -11,11 +11,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 784accda4299891fa86501236d35c0828e80cf8d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430901"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483848"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>透過保留名稱建立您的應用程式
 
@@ -68,9 +68,9 @@ ms.locfileid: "5430901"
 
 如需詳細資訊，請參閱[管理應用程式名稱](manage-app-names.md)。
 
- 
+ 
 
- 
+ 
 
 
 

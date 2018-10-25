@@ -11,16 +11,16 @@ ms.technology: uwp
 keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
 ms.localizationpriority: medium
 ms.openlocfilehash: 75a3ce152257d10fe392b3f64381b3e82bc79961
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439510"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480792"
 ---
 # <a name="acquisitions-report"></a>下載數報告
 
 
-在 Windows 開發人員中心儀表板的**下載數**報告可讓您能夠查看已取得並安裝您的應用程式、 人數統計資料及平台詳細資訊，以及顯示的相關資訊 （包括 Xbox） 的 Windows 10 的客戶如何抵達您的應用程式清單。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。 
+在 Windows 開發人員中心儀表板的**下載數**報告可讓您能夠查看已取得並安裝您的應用程式、 人數統計資料及平台詳細資訊，以及顯示的相關資訊 （包括 Xbox） 上 windows 10 客戶如何抵達您的應用程式清單。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。 
 
 您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
 
@@ -113,11 +113,11 @@ ms.locfileid: "5439510"
 > [!NOTE]
 > 部分客戶選擇不分享此資訊。 如果我們無法判斷年齡層或性別，即會將該次下載數分類為 **\[未知\]**。
 
- 
+ 
 
 ## <a name="app-page-views-and-conversions-by-channel"></a>應用程式頁面檢視次數與轉換 (依通路)
 
-**應用程式頁面檢視次數與轉換 (依通路)** 圖表可讓您查看在所選時段內使用 Windows 10 的客戶如何找到您的 App 清單。
+**應用程式頁面檢視數與轉換數依通道**圖表可讓您查看 windows 10 的客戶如何找到您的應用程式清單，在所選一段時間。
 
 在此圖表，*通路*是指客戶到達您 app 清單頁面 (例如，在市集中瀏覽及搜尋、來自外部網站的連結、來自您自訂行銷活動等等的其中一個連結) 的方法。 包含下列的管道類型：
 
@@ -125,7 +125,7 @@ ms.locfileid: "5439510"
 -   **自訂的行銷活動：** 客戶透過使用[自訂行銷活動識別碼](create-a-custom-app-promotion-campaign.md)的連結連到您的應用程式清單。
 -   **其他︰** 客戶透過網站的外部連結 (不含任何自訂行銷活動識別碼)，或是透過搜尋引擎連到您的應用程式清單。
 
-*頁面檢視*表示客戶透過網路市集或 Windows 10 上的市集 App 來檢視您 App 的市集清單頁面。 這包括未登入 Microsoft 帳戶的人員檢視。 部分客戶選擇不分享此資訊給 Microsoft。
+*頁面檢視*表示的一位客戶檢視您的應用程式市集清單頁面，透過網頁型市集或從 windows 10 上的市集 app。 這包括未登入 Microsoft 帳戶的人員檢視。 部分客戶選擇不分享此資訊給 Microsoft。
 
 *轉換*表示客戶 (使用 Microsoft 帳戶登入) 已經新獲得您 App 的授權 (不論是付費或免費取得)。
 
@@ -149,6 +149,6 @@ ms.locfileid: "5439510"
 
 
 
- 
+ 
 
- 
+ 

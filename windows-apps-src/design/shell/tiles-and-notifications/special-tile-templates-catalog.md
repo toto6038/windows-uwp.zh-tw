@@ -12,27 +12,27 @@ ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e408509f4cebbc89587237c6e0dc67bc88b1558
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430934"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481331"
 ---
 # <a name="special-tile-templates"></a>特殊的磚範本
  
 
-特殊的磚範本是獨特的範本，它們可能具有動畫效果，或只是能讓您執行使用彈性磚無法達成的工作。 除了圖示磚範本 (針對 Windows 10 更新的傳統型特殊範本) 以外，每一個特殊的磚範本都是特別針對 Windows 10 建置的。 本文涵蓋三個特殊的磚範本: 圖示、相片和連絡人。
+特殊磚範本是獨特的範本，這些範本不是呈現動畫，就不過是讓您可以執行無法透過調適型磚達成的工作。 每個特殊的磚範本是特別針對建置 windows 10，除了圖示磚範本，已針對 windows 10 更新的傳統型特殊範本。 本文涵蓋三個特殊的磚範本: 圖示、相片和連絡人。
 
 ## <a name="iconic-tile-template"></a>圖示磚範本
 
 
-圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本
+圖示範本 (也稱為「IconWithBadge」範本) 可讓您在磚的中心顯示一個小型影像。 Windows 10 支援手機和平板電腦/桌上型電腦上的範本。
 
 ![小型和中型郵件磚](images/iconic-template-mail-2sizes.png)
 
 ### <a name="how-to-create-an-iconic-tile"></a>如何建立圖示磚
 
-下列步驟說明建立適用於 Windows 10 的圖示磚必須知道的所有事。 就高層級而言，您需要您的圖示影像資產，然後使用圖示範本將通知傳送到磚，最後傳送提供要在磚上顯示的數字的徽章通知。
+下列步驟說明您需要知道要建立適用於 windows 10 圖示磚的所有項目。 就高層級而言，您需要您的圖示影像資產，然後使用圖示範本將通知傳送到磚，最後傳送提供要在磚上顯示的數字的徽章通知。
 
 ![圖示磚的開發人員流程](images/iconic-template-dev-flow.png)
 
@@ -188,7 +188,7 @@ TileContent content = new TileContent()
 ## <a name="people-tile-template"></a>連絡人磚範本
 
 
-Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂直或水平滑動的圓形中顯示影像集合。 這個磚範本自 Windows 10 組建 10572 開始提供，我們歡迎所有人在應用程式中使用。
+Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂直或水平滑動的圓形中顯示影像集合。 這個磚範本自 windows 10 組建 10572 已可以使用與任何人都是在其應用程式中使用它歡迎畫面。
 
 連絡人磚範本適用於下列大小的磚：
 
@@ -196,19 +196,19 @@ Windows 10 中的連絡人應用程式使用特殊的磚範本，會在磚上垂
 
 ![中型連絡人磚](images/people-tile-medium.png)
 
- 
+ 
 
 **寬形磚** (TileWide)
 
 ![寬形連絡人磚](images/people-tile-wide.png)
 
- 
+ 
 
 **大型磚 (僅限桌上型電腦)** (TileLarge)
 
 ![大型連絡人磚](images/people-tile-large.png)
 
- 
+ 
 
 如果您使用 [Notification 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，若要使用連絡人磚範本，只需要為您的 *TileBinding* 內容建立一個新的 *TileBindingContentPeople* 物件即可。 *TileBindingContentPeople* 類別有一個供您新增影像的 Images 屬性。
 
@@ -281,9 +281,9 @@ TileContent content = new TileContent()
 * [磚、徽章及通知](index.md)
 * [建立彈性磚](create-adaptive-tiles.md)
 * [磚內容結構描述](../tiles-and-notifications/tile-schema.md)
- 
+ 
 
- 
+ 
 
 
 

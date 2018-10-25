@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ca7949b3092b03500f25249ce1af3832a9e61ba
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443401"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481302"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -97,6 +97,6 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 
 如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising SDK 的相關問題，請造訪[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)。
 
- 
+ 
 
- 
+ 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e5db1e03ac86768e2b1b1181cd2cc416a151a80
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445254"
+ms.locfileid: "5480782"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 
@@ -46,7 +46,7 @@ ms.locfileid: "5445254"
 若要快速開始使用跨處理序背景工作，請參閱[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
 > [!TIP]
-> 從 Windows10 開始，您已不再需要將 App 放在鎖定畫面上，就可以為其註冊背景工作。
+> 您不再需要將 app 放在鎖定畫面上，做為其註冊背景工作為它從 windows 10 開始。
 
 ## <a name="background-tasks-for-system-events"></a>系統事件的背景工作
 
@@ -78,7 +78,7 @@ ms.locfileid: "5445254"
 新增 **InternetAvailable** 條件至您的背景工作 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 可延遲觸發背景工作，直到網路堆疊執行。 這個條件可以節省電源，因為背景工作將不會執行網路可供使用。 這個條件不提供即時啟動。
 
 如果您的背景工作需要網路連線，設定[IsNetworkRequested](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder)以確保，保持網路時執行背景工作。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不會設定**IsNetworkRequested**，則您的背景工作將無法存取網路時在連線待命] 模式 （例如，當手機螢幕關閉。）
- 
+ 
 如需背景工作條件的詳細資訊，請參閱[設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)。
 
 ## <a name="application-manifest-requirements"></a>應用程式資訊清單需求
@@ -95,7 +95,7 @@ ms.locfileid: "5445254"
 | **計時器** | 背景工作的執行頻率最高可達每 15 分鐘一次，而且只要使用 [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 即可設定在特定時間執行。 如需詳細資訊，請參閱[在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)。 |
 | **推播通知** | 背景工作會回應 [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) 以接收原始推播通知。 |
 
-**注意**  
+**注意**  
 
 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
 
@@ -114,7 +114,7 @@ ms.locfileid: "5445254"
 | **ControlChannelReset** | 背景工作會在控制通道重設時觸發。 |
 | **SessionConnected**    | 背景工作會在工作階段連線時觸發。   |
 
-   
+   
 下列系統事件觸發程序會在使用者將 App 移入或移出鎖定畫面時發出訊號。
 
 | 觸發程序名稱                     | 說明                                  |
@@ -122,7 +122,7 @@ ms.locfileid: "5445254"
 | **LockScreenApplicationAdded**   | App 磚已新增到鎖定畫面。     |
 | **LockScreenApplicationRemoved** | App 磚已從鎖定畫面移除。 |
 
- 
+ 
 ## <a name="background-task-resource-constraints"></a>背景工作資源限制
 
 背景工作為輕量型。 將背景執行降至最低可確保不論是在前景 App 還是電池使用時間上，使用者都能獲得最佳體驗。 這是透過將資源限制套用至背景工作來強制執行。
@@ -175,7 +175,7 @@ ms.locfileid: "5445254"
 
 ## <a name="related-topics"></a>相關主題
 
-**在 Windows10 中執行多工的概念指引**
+**在 windows 10 中的多工的概念指引**
 
 * [啟動、繼續及多工處理](index.md)
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bd0361886181d3c5a3395112c728db3bf57d58f
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443144"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481823"
 ---
 # <a name="register-a-background-task"></a>登錄背景工作
 
@@ -32,7 +32,7 @@ ms.locfileid: "5443144"
 
 本主題會逐步解說可註冊背景工作的公用程式函式。 這個公用程式函式會先檢查現有登錄，以避免多次登錄工作時可能產生的問題；也可以將系統條件套用到背景工作。 本逐步解說包括這個公用程式函式的完整工作範例。
 
-**注意**  
+**注意**  
 
 通用 Windows app 必須先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)，才能登錄任何背景觸發程序類型。
 
@@ -78,7 +78,7 @@ ms.locfileid: "5443144"
 
 您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性並逐一查看結果，以檢查現有登錄。 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。
 
-> **注意** 使用您應用程式專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
+> **注意：** 使用您的應用程式專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
 
 下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
 
@@ -151,7 +151,7 @@ ms.locfileid: "5443144"
 
 然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224786) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224772)。
 
-> **注意** 背景工作登錄參數會在登錄時受到驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
+> **注意：** 背景工作登錄參數都在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 > **注意**：如果您要登錄與您 App 在相同處理程序中執行的背景工作，請針對 `taskEntryPoint` 參數傳送 `String.Empty` 或 `null`。
 
 下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：

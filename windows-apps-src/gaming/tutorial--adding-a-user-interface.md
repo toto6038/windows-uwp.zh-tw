@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 使用者介面, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a82958f01530b84276823ea8d025d292bd664ac
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442794"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483538"
 ---
 # <a name="add-a-user-interface"></a>新增使用者介面
 
@@ -225,7 +225,7 @@ auto windowBounds = m_deviceResources->GetLogicalSize();
 
  取得遊戲視窗的大小是不可或缺的 UI 程式設計。 視窗的大小會獲得 dip （裝置獨立像素），其中 DIP 定義為 1/96 英吋度量單位。 Direct2D 會繪圖單位縮放為實際像素繪圖發生時，如此一來使用 Windows 每英吋點數 (DPI) 設定。 同樣地，當您繪製文字時，使用[**DirectWrite**](https://msdn.microsoft.com/en-us/library/windows/desktop/dd368038)，指定 Dip，而不是點大小的字型。 DIP 以浮點數表示。
 
- 
+ 
 
 ### <a name="displaying-game-state-info"></a>顯示遊戲狀態的資訊
 
@@ -479,7 +479,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 
 
 
- 
+ 
 
 
 

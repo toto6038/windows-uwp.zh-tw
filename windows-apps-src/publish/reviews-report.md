@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 檢閱、 註解，評論者
 ms.localizationpriority: medium
 ms.openlocfilehash: 4500ebe7406db45a089f3ceba10c1d1e781ea679
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434968"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5479945"
 ---
 # <a name="reviews-report"></a>評論報告
 
@@ -90,9 +90,9 @@ ms.locfileid: "5434968"
 -   評論的日期。
 -   在 Microsoft Store 中顯示的評論者名稱。
 -   評論者的國家/地區。
--   留下評論時客戶裝置上的 app 套件版本。 (此資訊不適用於線上提交的評論，或客戶在 Windows 8.1 和更早版本上所提交的評論)。
+-   留下評論時客戶裝置上的 app 套件版本。 （這項資訊不適用於線上提交或 Windows8.1 和較舊版本的客戶所提交的評論。）
 -   客戶留下評論時所使用裝置的作業系統版本。
--   客戶留下評論時所使用裝置的名稱。 (此資訊不適用於線上提交的評論，或客戶在 Windows 8.1 和更早版本上所提交的評論)。
+-   客戶留下評論時所使用裝置的名稱。 （這項資訊不適用於線上提交或 Windows8.1 和較舊版本的客戶所提交的評論。）
 -   評論的「有用程度」則仰賴其他客戶在閱讀該評論時提供的評等。 這會以兩個數字顯示：第一個數字顯示有多少客戶將該評論評為有用，而第二個數字則是對該評論進行評等的客戶總數。 例如，有用程度 4/10 代表 10 個評分者中有 4 個覺得該評論有用，6 個覺得沒有用。 (如果沒有該評論的有用票數，則不會顯示有用程度)。
 
 請注意，客戶可以針對您的 app 留下評分，但不加入任何意見，因此您看到的評論通常會比評分少。
@@ -124,8 +124,8 @@ ms.locfileid: "5434968"
 -   如果平均評等很高，但是下載數目很低，您可能需要找出[讓更多人知道您 App](attract-customers-and-promote-your-apps.md) 的方法，因為這表示試用過 App 的使用者接受度非常高。
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

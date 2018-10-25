@@ -15,11 +15,11 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 67bd984f4216be9eded51b6175829828e9c332f1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5443593"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481966"
 ---
 # <a name="reveal-highlight"></a>顯色醒目提示
 
@@ -260,7 +260,7 @@ ms.locfileid: "5443593"
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>微調自訂控制項上的顯色效果 
 
 當您在自訂或重新樣板化控制項或自訂命令介面上啟用顯色時，下列提示可以協助您將效果最佳化：
- 
+ 
 * 在高度或寬度大小不一致的相鄰項目 (特別是在清單中)：移除框線接近行為，僅保留暫留時所顯示的框線。
 * 經常切換進出停用狀態的命令項目：將框線趨近筆刷放置在元素的背板及框線以突顯其狀態。
 * 靠近到會彼此接觸的相鄰命令元素：在兩個元素之間加入 1px 的邊界。 

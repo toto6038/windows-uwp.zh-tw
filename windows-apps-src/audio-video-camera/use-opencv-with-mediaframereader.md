@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, openCV
 ms.localizationpriority: medium
 ms.openlocfilehash: 43545f2a8e1965124560479d399df79d247c5f05
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432451"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481312"
 ---
 # <a name="use-the-open-source-computer-vision-library-opencv-with-mediaframereader"></a>使用 Open Source Computer Vision Library (OpenCV) 搭配 MediaFrameReader
 
@@ -74,9 +74,9 @@ ms.locfileid: "5432451"
 * [使用 OpenCV 處理軟體點陣圖](process-software-bitmaps-with-opencv.md)
 * [相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)
 * [相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003)
- 
+ 
 
- 
+ 
 
 
 

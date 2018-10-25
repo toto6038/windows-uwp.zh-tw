@@ -1,6 +1,6 @@
 ---
 title: 安全性
-description: 本節包含與建置適用於 Windows 10 的安全通用 Windows 平台 (UWP) 應用程式相關的文章。
+description: 本節包含適用於 windows 10 建置安全的通用 Windows 平台 (UWP) 應用程式相關的文章。
 ms.assetid: 41E2EEFB-E8A9-4592-814C-72B703CD952C
 author: msatranjr
 ms.author: misatran
@@ -11,17 +11,17 @@ ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b9858be036732c2894ff3c009233e021b37da040
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5438368"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481207"
 ---
 # <a name="security"></a>安全性
 
 
 
-本節包含與建置適用於 Windows 10 的安全通用 Windows 平台 (UWP) 應用程式相關的文章。
+本節包含適用於 windows 10 建置安全的通用 Windows 平台 (UWP) 應用程式相關的文章。
 
 ## <a name="introduction"></a>簡介 
 

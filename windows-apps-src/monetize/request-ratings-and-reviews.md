@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
 ms.openlocfilehash: cc3dce673b434673f0e8a72158c2d3a593f02c52
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5431407"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483688"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -65,8 +65,8 @@ public async Task<bool> ShowRatingReviewDialog()
 以下範例展示在客戶成功提交評分或評論後該要求的傳回值。
 
 ```json
-{ 
-  "status": "success", 
+{ 
+  "status": "success", 
   "data": {
     "updated": false
   },
@@ -77,8 +77,8 @@ public async Task<bool> ShowRatingReviewDialog()
 以下範例展示在客戶選擇提交評分或評論後該要求的傳回值。
 
 ```json
-{ 
-  "status": "aborted", 
+{ 
+  "status": "aborted", 
   "errorDetails": "Navigation was unsuccessful"
 }
 ```

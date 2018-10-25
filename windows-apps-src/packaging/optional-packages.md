@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10、 uwp、 選用套件，相關的集合、 套件延伸模組、 visual studio
 ms.localizationpriority: medium
 ms.openlocfilehash: 4864bdaa1f32b980c5c8b159ca71bb6a56da4ec5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5432278"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483768"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>選用套件及相關集合的製作
 選用套件包含了可與主要套件整合的內容。 這些適合用於可下載內容 (DLC)、 將大型應用程式的大小越大，或傳送任何額外的內容與您原始應用程式分離。

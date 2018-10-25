@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
 ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433896"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481790"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
@@ -29,8 +29,7 @@ ms.locfileid: "5433896"
 
 Nokia Maps 和「Bing 地圖服務」之類的地圖服務都是將地圖切成正方形磚以便快速抓取和顯示。 這些磚的大小是 256 像素 x 256 像素，並以多個詳細層級預先轉譯。 許多協力廠商服務也會提供切成磚的地圖式資料。 您可以使用磚來源來抓取協力廠商磚，或建立您自己的自訂磚，然後在 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 中顯示的地圖上重疊顯示這些磚。
 
-**重要**  
-使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
+**重要**當您使用磚來源時，您不需要撰寫程式碼來要求或放置個別的磚。 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 會在需要磚時要求磚。 每個要求都會指定 X 和 Y 座標，以及個別磚的縮放比例。 您只需指定要用來抓取 **UriFormatString** 屬性中的磚的 URI 格式或檔案名稱。 也就是說，您需在基底 URI 或檔案名稱中插入可置換參數，以指出要將 X 和 Y 座標傳遞到哪裡，以及每個磚的縮放比例。
 
 以下是 [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) 的 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) 屬性範例，示範 X 和 Y 座標及縮放比例的可置換參數。
 
@@ -196,7 +195,7 @@ void MainPage::AddHttpMapTileSource()
 | ms-appdata:///temp | 指向 app 的暫存資料夾。 |
 |  | 這是 [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) 屬性所參考的位置。 |
 
- 
+ 
 
 下列範例會使用 `ms-appx:///` 通訊協定來載入在 app 安裝資料夾中儲存為檔案的磚。 [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) 的值是在 [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) 的建構函式中指定。 在這個範例中，只有當地圖的縮放比例是在選擇性 [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) 屬性指定的範圍內時，才會顯示磚。
 

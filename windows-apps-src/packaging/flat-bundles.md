@@ -10,11 +10,11 @@ ms.technology: uwp
 keywords: windows 10, 封裝, 套件設定, 一般套件組合
 ms.localizationpriority: medium
 ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441458"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480255"
 ---
 # <a name="flat-bundle-app-packages"></a>一般套件組合應用程式套件 
 

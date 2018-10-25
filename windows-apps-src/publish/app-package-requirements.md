@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: f3e294fdf5a9b2d98f09d839fa62499b556de3a5
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5440082"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481522"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 
@@ -30,7 +30,7 @@ ms.locfileid: "5440082"
 如果您使用 Microsoft Visual Studio 做為開發環境，則您已經擁有內建的工具可以快速並輕易地建立應用程式套件。 如需詳細資訊，請參閱[封裝 app](../packaging/index.md)。
 
 > [!NOTE]
-> 務必讓您的所有檔案名稱都使用 ANSI。 
+> 務必讓您的所有檔案名稱都使用 ANSI。 
 
 在 Visual Studio 中建立套件時，請確定您已經使用與開發人員帳戶相關聯的相同帳戶登入。 套件資訊清單的某些部分具有與您帳戶相關的特定詳細資料。 系統會自動偵測並新增此資訊。 若未新增其他資訊至資訊清單，您可能會遇到套件上傳失敗。 
 
@@ -44,7 +44,7 @@ ms.locfileid: "5440082"
 對於 UWP 應用程式，Visual Studio 可以產生應用程式套件組合 （.msixbundle 或.appxbundle） 減少使用者下載的應用程式的大小。 如果您已經定義了語言特定的資產、各種大小影像的資產，或是套用到特定 Microsoft DirectX 版本的資源，這通常很有幫助。
 
 > [!NOTE]
-> 一個應用程式套件組合可以包含所有架構的套件。
+> 一個應用程式套件組合可以包含所有架構的套件。
 
 有了 app 套件組合，使用者只需要下載相關的檔案，不需要下載所有可能的資源。 如需應用程式套件組合的詳細資訊，請參閱[封裝應用程式](../packaging/index.md)和[使用 Visual Studio 封裝 UWP app](../packaging/packaging-uwp-apps.md)。
 
@@ -58,13 +58,13 @@ ms.locfileid: "5440082"
 您的資訊清單必須包含一些關於帳戶與 app 的特定資訊。 您可以在儀表板中，查看 app 概觀頁面 **應用程式管理** 區段中的[檢視應用程式身分識別詳細資料](view-app-identity-details.md)，來找到此資訊。
 
 > [!NOTE]
-> 資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
+> 資訊清單中的值區分大小寫。 空格與其他標點符號也必須相符。 請仔細輸入相關值，並檢查以確保正確無誤。
 
 
 應用程式套件組合 （.msixbundle 或.appxbundle） 會使用不同的資訊清單。 如需應用程式套件組合資訊清單的詳細資料和需求，請檢閱[套件組合資訊清單](https://docs.microsoft.com/uwp/schemas/bundlemanifestschema/bundle-manifest)文件。 請注意，在.msixbundle 或.appxbundle 中，每個包含套件資訊清單必須使用的相同元素和屬性，除了**ProcessorArchitecture**屬性的[身分識別](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity)元素。
 
 > [!TIP]
-> 在您提交套件之前，請務必執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
+> 在您提交套件之前，請務必執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)。 這有助於協助您判斷資訊清單是否會造成認證或提交失敗的任何問題。
 
 
 ## <a name="package-format-requirements"></a>套件格式需求
@@ -90,9 +90,9 @@ UWP 應用程式的所有套件都必須以 Microsoft Store 所支援的 Windows
 
 StoreManifest.xml 是選用的組態檔，可能包含在 app 套件中。 它的用途是啟用封裝資訊清單沒有涵蓋的功能，例如將您的 app 宣告為 Microsoft Store 裝置應用程式，或是宣告套件仰賴的需求適用於某裝置。 如果使用，StoreManifest.xml 是與提交應用程式套件，且必須在您的應用程式主要專案的根資料夾。 如需詳細資訊，請參閱 [StoreManifest 結構描述](https://docs.microsoft.com/uwp/schemas/storemanifest/store-manifest-schema-portal)。
 
- 
+ 
 
- 
+ 
 
 
 

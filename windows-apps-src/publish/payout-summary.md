@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d9845fdbd9c8dad77c8599a04850a47573858e8
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445277"
+ms.locfileid: "5481663"
 ---
 # <a name="payout-summary"></a>支付摘要
 
@@ -72,7 +72,7 @@ ms.locfileid: "5445277"
 | 歷史餘額        | 來自歷史支付系統的支付餘額                                                             |
 | 通過稅              | 與韓國銷售相關的稅金調整                                                                   |
 
- 
+ 
 
 ## <a name="downloading-payment-transactions"></a>下載付款交易
 
@@ -112,11 +112,11 @@ ms.locfileid: "5445277"
 | 資格日期時間   | 交易收益變成符合支付 (UTC) 資格的日期和時間。 建立支付時，它會包含支付建立日期之前，具有資格日期時間的交易收益  (僅包含在**保留的** .csv 檔案中)。                                                                     |
 | 費用                 | 顯示 [交易金額] 欄位中所有彙總之收費詳細資料的明細 (只有 Azure Marketplace 包含；不包含在**保留的** .csv 檔案中)。          |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

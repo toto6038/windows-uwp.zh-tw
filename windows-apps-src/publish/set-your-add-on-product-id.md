@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 附加元件, iap, 耐久性, 消耗性, 訂閱, 產品類型, 產品識別碼, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 0673048fc9a1ed8fb7c439607ebc4197039699e9
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5436721"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483424"
 ---
 # <a name="set-your-add-on-product-type-and-product-id"></a>設定您的附加內容產品類型與產品識別碼
 
@@ -72,4 +72,4 @@ ms.locfileid: "5436721"
 -   產品識別碼不能包含下列任何字元：**&lt; &gt; \* % &amp; : \\ ? + ,**
 -   若要在所有作業系統版本中提供您的附加內容，您只能使用英數字元、句點和/或底線。 如果您使用任何其他類型的字元，附加內容將無法供執行 Windows Phone 8.1 或更舊版本的客戶購買。
 -   產品識別碼在 Microsoft Store 中不一定要是唯一的，但是對您的開發人員帳戶則必須是唯一的。
- 
+ 

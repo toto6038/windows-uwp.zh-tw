@@ -13,11 +13,11 @@ ms.prod: windows
 ms.technology: uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: de14d35b7a39776f43feeefc94ebe77af0c97373
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5442623"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5481367"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>將 Windows Ink 筆劃辨識為文字和圖案
 
@@ -477,8 +477,7 @@ string str = "Recognition result\n";
 
 您的應用程式可以查詢這組已安裝的手寫辨識引擎並使用其中一個，或者讓使用者選擇他們偏好的語言。
 
-**注意**  
-使用者可以移至 **\[設定\] -&gt; \[時間與語言\]**，來查看已安裝的語言清單。 **\[語言\]** 下方會列出已安裝的語言。
+**注意：** 使用者可以看到一份已安裝的語言，方式為前往**設定]-&gt;時間與語言**。 **\[語言\]** 下方會列出已安裝的語言。
 
 若要安裝新的語言套件並針對該語言啟用手寫辨識：
 
@@ -488,7 +487,7 @@ string str = "Recognition result\n";
 4.  按一下語言，然後選取 **\[選項\]**。
 5.  在 **[語言選項]** 頁面上，下載 **[手寫辨識引擎]** (他們也可以在此處下載完整的語言套件、語音辨識引擎和鍵盤配置)。
 
- 
+ 
 
 我們將在此處示範如何使用手寫辨識引擎，根據選取的辨識器來解譯 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 上的一組筆墨筆劃。
 
@@ -873,4 +872,4 @@ string str = "Recognition result\n";
 * [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)
 
 
- 
+ 

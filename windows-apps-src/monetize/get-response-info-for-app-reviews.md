@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 評論 API, 回應資訊
 ms.localizationpriority: medium
 ms.openlocfilehash: 0212d7457ab85749fd66397876144acecd5dfcf1
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5437836"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483274"
 ---
 # <a name="get-response-info-for-reviews"></a>取得評論的回應資訊
 
@@ -74,7 +74,7 @@ Authorization: Bearer <your access token>
 | CanRespond      | 布林值  | 值為 **true**，表示您可以回應指定的評論，或是您有權限可回應指定應用程式的任何評論。 否則，這個值是 **false**。       |
 | DefaultSupportEmail  | 字串 |  您的應用程式的[支援電子郵件地址](../publish/enter-app-properties.md#support-contact-info)，如同您的應用程式 Store 清單中所指定。 如果您未指定支援電子郵件地址，這個欄位是空的。    |
 
- 
+ 
 ### <a name="response-example"></a>回應範例
 
 下列範例針對此要求示範範例 JSON 回應主體。

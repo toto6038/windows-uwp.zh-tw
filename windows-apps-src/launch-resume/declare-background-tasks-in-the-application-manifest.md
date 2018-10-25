@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 00e685085c004cced24b9a42ef2261a26eef10bb
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445645"
+ms.locfileid: "5481489"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
@@ -94,7 +94,7 @@ ms.locfileid: "5445645"
 
 2.  變更 Task Type 屬性清單以表示使用這個背景工作的工作登錄類型。 如果使用多個觸發程序類型來登錄背景工作，請針對每一個觸發程序類型，新增其他 Task 元素與 Type 屬性。
 
-    **注意**  請確認列出您要使用的每一個觸發程序類型，否則背景工作將不會使用未宣告的觸發程序類型進行登錄 ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) 方法將會失敗並擲回例外狀況)。
+    **注意：** 請確定列出的每一個觸發程序類型您要使用，或使用未宣告的觸發程序類型 （[**註冊**](https://msdn.microsoft.com/library/windows/apps/br224772)方法將會失敗並擲回例外狀況） 不會登錄背景工作。
 
     這個程式碼片段範例指出系統事件觸發程序和推播通知的用法：
 

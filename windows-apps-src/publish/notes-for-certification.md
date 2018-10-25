@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 給測試人員的註解
 ms.localizationpriority: medium
 ms.openlocfilehash: 741925a3ac49273bd7ba826dfbadd2e18724f307
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441986"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5482240"
 ---
 # <a name="notes-for-certification"></a>認證注意事項
 
@@ -44,9 +44,9 @@ ms.locfileid: "5441986"
 -   **請簡潔扼要，保持簡單的指示。** 如果您真的需要詳細解釋某件事，可以加入包含詳細資訊的頁面網址。 不過，請記住，應用程式的客戶看不到這些註解。 如果您覺得需要提供複雜的指示用於測試應用程式，請考慮是否需要簡化您的應用程式，客戶 (和測試人員) 才知道如何使用。
 -   **服務和外部元件必須在線上且可以使用。** 如果您的應用程式需要連接到某服務才能運作，請確定該服務在線上且可以使用。 包含測試者所需服務的任何相關資訊，例如登入資訊。 如果測試期間 app 無法連線到所需的服務，可能會無法通過認證。
 
- 
+ 
 
- 
+ 
 
 
 

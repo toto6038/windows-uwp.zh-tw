@@ -12,11 +12,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast, 桌面, 快顯通知, 傳統型橋接器, 傳送快顯通知的選項, com 伺服器, com 啟動器, 假 com, 無 com, 沒有 com, 傳送快顯通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f54519fd0ddc975c1e57c2aebde583ef971850d
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5441800"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483253"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知:
 

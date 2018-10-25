@@ -10,16 +10,16 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ffe3f2a93642911da57d3dd94c09206dc7f5dc94
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: 18c3634912633242fdab41ea4d600ee42da80464
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5430944"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480232"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增強您的 Windows 10 傳統型應用程式
 
-您可以使用 UWP API 新增適用於 Windows 10 使用者的現代化體驗。
+您可以使用 Windows 執行階段 Api 新增適用於 Windows 10 使用者耳目一新的現代化體驗。
 
 首先，設定您的專案。 然後，新增 Windows 10 體驗。 您可以針對 Windows 10 使用者另行建置，也可以散發完全相同的二進位碼給所有使用者，無論他們執行什麼 Windows 版本。
 
@@ -27,7 +27,7 @@ ms.locfileid: "5430944"
 
 您必須對專案進行一些變更，以便使用 UWP API。
 
-### <a name="modify-a-net-project-to-use-uwp-apis"></a>修改 .NET 專案來使用 UWP API
+### <a name="modify-a-net-project-to-use-windows-runtime-apis"></a>修改.NET 專案來使用 Windows 執行階段 Api
 
 開啟 **\[參考管理員\]** 對話方塊，選擇 **\[瀏覽\]** 按鈕，然後選取 **\[所有檔案\]**。
 
@@ -48,29 +48,11 @@ ms.locfileid: "5430944"
 
 ![複製本機欄位](images/desktop-to-uwp/copy-local-field.png)
 
-### <a name="modify-a-c-project-to-use-uwp-apis"></a>修改 C++ 專案來使用 UWP API
+### <a name="modify-a-c-project-to-use-windows-runtime-apis"></a>修改 c + + 專案來使用 Windows 執行階段 Api
 
-開啟您專案的屬性頁面。
+使用[C + + /winrt](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/)以取用 Windows 執行階段 Api。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
 
-在 **\[C/C++\]** 設定群組的 **\[一般\]** 設定中，將 **\[使用 Windows 執行階段擴充功能\]** 欄位設定為 **\[是 (/ZW)\]**。
-
-   ![使用 Windows 執行階段擴充功能](images/desktop-to-uwp/consume-runtime-extensions.png)
-
-開啟 **\[其他 #using 目錄\]** 對話方塊，並新增這些目錄。
-
-* $(VSInstallDir) Common7\IDE\VC\vcpackages
-* C:\Program 檔案 (x86) \Windows Kits\10\UnionMetadata\ <*SDK 版本*> \Facade
-* C:\Program 檔案 (x86) \Windows Kits\10\References\ <*SDK 版本*> \Windows.Foundation.UniversalApiContract\ <*最新版本*>
-* C:\Program 檔案 (x86) \Windows Kits\10\References\ <*SDK 版本*> \Windows.Foundation.FoundationContract\ <*最新版本*>
-
-開啟 **\[其他 Include 目錄\]** 對話方塊，並新增此目錄 C:\Program Files (x86)\Windows Kits\10\Include\<*最新版本*>\um
-
-![其他 include 目錄](images/desktop-to-uwp/additional-include.png)
-
-在 **\[C/C++\]** 設定群組的 **\[程式碼產生\]** 設定中，將 **\[啟用最少重建\]** 設定為 **\[否 (/GM-)\]**。
-
-![啟用最少重建](images/desktop-to-uwp/disable-min-build.png)
-
+若要將您的專案設定 C + /winrt，請參閱[修改 Windows 傳統型應用程式專案新增 C + + /winrt 支援](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support)。
 
 ## <a name="add-windows-10-experiences"></a>新增 Windows 10 體驗
 
@@ -90,7 +72,7 @@ ms.locfileid: "5430944"
 
 您會經常聽到我們使用「增強」和「擴充」這些詞彙，所以我們想花一點時間來解釋這些詞彙到底是什麼意思。
 
-我們使用「增強」一詞來說明您可以直接從您的傳統型應用程式呼叫的 UWP API。 當您選擇 Windows 10 體驗後，找出您需要建立的 API，然後查看該 API 是否出現在此[清單](desktop-to-uwp-supported-api.md)中。 這是您可以直接從您的傳統型應用程式呼叫的 API 清單。 如果您的 API 未顯示在此清單中，這是因為與該 API 相關的功能只能在 UWP 處理程序中執行。 很多時候，這包括顯示現代化 UI 的 API，例如 UWP 地圖控制項或 Windows Hello 安全性提示。
+我們使用詞彙 「 增強 」 來說明您可以直接從傳統型應用程式呼叫 Windows 執行階段 Api。 當您選擇 Windows 10 體驗後，找出您需要建立的 API，然後查看該 API 是否出現在此[清單](desktop-to-uwp-supported-api.md)中。 這是您可以直接從您的傳統型應用程式呼叫的 API 清單。 如果您的 API 未顯示在此清單中，這是因為與該 API 相關的功能只能在 UWP 處理程序中執行。 很多時候，這包括顯示現代化 UI 的 API，例如 UWP 地圖控制項或 Windows Hello 安全性提示。
 
 也就是說，如果您想在您的應用程式中包含這些體驗，只需透過將 UWP 專案加入您的方案來「擴充」應用程式即可。 桌面專案仍是您應用程式的進入點，但 UWP 專案可讓您存取未出現在此[清單](desktop-to-uwp-supported-api.md)中的所有 API。 傳統型應用程式可以透過使用 App 服務來與 UWP 處理程序通訊，而且我們提供大量關於如何設定的指導方針。 如果您想要新增需要 UWP 專案的體驗，請參閱[透過 UWP 擴充](desktop-to-uwp-extend.md)。
 
@@ -187,7 +169,7 @@ void UWP::ShowToast()
 
 ![組建設定](images/desktop-to-uwp/build-config.png)
 
-對於該組建設定，請建立常數，用來識別呼叫 UWP API 的程式碼。  
+對於該組建設定，請建立常數，用來識別呼叫 Windows 執行階段 Api 的程式碼。  
 
 對於 .NET 型專案，此常數稱為**條件式編譯常數**。
 
@@ -224,9 +206,9 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>執行階段檢查
 
-您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 Windows 10 上，您的應用程式呼叫 UWP Api 使用者時，才會執行您的應用程式與已封裝的應用程式。
+您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 您的應用程式呼叫 Windows 執行階段 Api 只有當使用者在執行您的應用程式與已封裝的應用程式上的 Windows 10。
 
-將執行階段檢查新增至程式碼的最簡單方式是安裝此 Nuget 套件：[傳統型橋接器協助程式](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然後使用 ``IsRunningAsUWP()`` 方法來關閉所有 UWP 程式碼。 如需詳細資訊，請參閱此部落格文章：[傳統型橋接器 - 識別應用程式的內容](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/) (英文)。
+執行階段檢查新增至您的程式碼的最簡單方式是安裝此 Nuget 套件：[傳統型橋接器協助程式](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然後使用``IsRunningAsUWP()``方法，以關閉所有的程式碼會呼叫 Windows 執行階段 Api。 如需詳細資訊，請參閱此部落格文章：[傳統型橋接器 - 識別應用程式的內容](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/) (英文)。
 
 ## <a name="related-video"></a>相關影片
 

@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
 ms.openlocfilehash: 903a7b308c78e4ab9826ea4c46c642cb3361b462
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439983"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480871"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
@@ -79,7 +79,7 @@ ms.locfileid: "5439983"
 
         提供位置資料的裝置可以追蹤不同應用程式要求的報告間隔，並以最小要求間隔提供資料報告。 這樣最需要精確度的應用程式就會收到符合需求的資料。 因此，如果另一個 app 要求更高頻率的更新時，定位提供者可能會以比您 app 所要求之頻率還要高的頻率產生更新。
 
-        **注意**  位置來源不保證接受指定報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
+        **注意：** 不保證位置來源，將會接受指定的報告間隔的要求。 並非所有的定位提供者裝置都會追蹤報告間隔，但是您仍然應該為會追蹤的裝置提供此間隔。
 
     -   為了幫助節省電源，請設定 [**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) 屬性，向定位平台指出您的應用程式是否需要高精確度的資料。 如果沒有 app 需要高精確度的資料，系統可以藉由不開啟 GPS 提供者以便節省電源。
 
@@ -105,7 +105,7 @@ ms.locfileid: "5439983"
     -   原始感應器包括加速計、陀螺儀及磁力儀。
     -   融合感應器包括方向、傾角計及指南針。 融合感應器可從原始感應器組合取得資料。
 
-    Windows 執行階段 API 可存取上述所有感應器 (除了磁力儀之外)。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
+    Windows RuntimeAPIs 可以存取所有的這些感應器，除了磁力儀。 融合感應器比原始感應器更精確且更穩定，但較為耗電。 您應該根據用途，使用適當的感應器。 如需詳細資訊，請參閱[感應器](https://msdn.microsoft.com/library/windows/apps/mt187358)。
 
 **連線待命**
 - 當電腦處於連線待命狀態時，一律可以具現化 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件。 不過，**Geolocator** 物件將不會找到任何感應器來彙總，因此針對 [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) 的呼叫會在 7 秒後會逾時、永遠不會呼叫 [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) 事件接聽器，而 [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) 事件接聽器將會搭配 **NoData** 被呼叫一次。
@@ -170,6 +170,6 @@ ms.locfileid: "5439983"
 * [顯示 2D、3D 和 Streetside 檢視的地圖](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP 位置範例 (地理位置)](http://go.microsoft.com/fwlink/p/?linkid=533278)
- 
+ 
 
- 
+ 

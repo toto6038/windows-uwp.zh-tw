@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
 ms.openlocfilehash: 6463f6eee6d3f5ec82122cef532db8d0e9a26dc6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5435418"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480401"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>傳送要求至 Microsoft Store
 
@@ -38,7 +38,7 @@ public async Task<bool> AddUserToFlightGroup()
 {
     StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
         StoreContext.GetDefault(), 8,
-        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
+        "{ \"type\": \"AddToFlightGroup\", \"parameters\": \"{ \"flightGroupId\": \"your group ID\" }\" }");
 
     if (result.ExtendedError == null)
     {
@@ -84,9 +84,9 @@ public async Task<bool> AddUserToFlightGroup()
 下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將 *projectId* 欄位指派到專案識別碼，您在 Windows 開發人員中心儀表板中於該專案中定義遠端變數。
 
 ```json
-{ 
-    "type": "GetRemoteVariables", 
-    "parameters": "{ \"projectId\": \"your project ID\" }" 
+{ 
+    "type": "GetRemoteVariables", 
+    "parameters": "{ \"projectId\": \"your project ID\" }" 
 }
 ```
 
@@ -101,8 +101,8 @@ public async Task<bool> AddUserToFlightGroup()
 以下範例示範此要求的傳回值。
 
 ```json
-{ 
-  "anonymous": false, 
+{ 
+  "anonymous": false, 
   "name": "Insider Slow",
   "settings":
   {
@@ -127,9 +127,9 @@ public async Task<bool> AddUserToFlightGroup()
 下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *AddToFlightGroup*。 將 *flightGroupId* 欄位指派到正式發行前小眾測試版群組識別碼，您想要在此群組中新增裝置或使用者。
 
 ```json
-{ 
-    "type": "AddToFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "AddToFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 
@@ -150,9 +150,9 @@ public async Task<bool> AddUserToFlightGroup()
 下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *RemoveFromFlightGroup*。 將 *flightGroupId* 欄位指派到正式發行前小眾測試版群組識別碼，您想要從此群組中移除裝置或使用者。
 
 ```json
-{ 
-    "type": "RemoveFromFlightGroup", 
-    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
+{ 
+    "type": "RemoveFromFlightGroup", 
+    "parameters": "{ \"flightGroupId\": \"your group ID\" }" 
 }
 ```
 

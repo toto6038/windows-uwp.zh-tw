@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
 ms.openlocfilehash: a4100248857af655f388ad318bb3ae5176aaf046
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5434427"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480216"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -171,11 +171,11 @@ ms.locfileid: "5434427"
     </thead>
     <tbody>
     <tr><td align="left">    <b>下載數</b>     </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    不適用    </td><td>    不適用 （父產品的設定包含**附加元件下載數**報告）        </td><td>    不適用                         </td></tr>
-    <tr><td align="left">    <b>使用量</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    無     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    無     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>使用量</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    N/A     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    N/A     </td><td>    不適用         </td></tr>
     <tr><td align="left">    <b>客戶回函</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與<b>連絡客戶</b>權限)   </td><td>    不適用     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    無   </td><td>    無       </td><td>    不適用          </td></tr>
-    <tr><td align="left">    <b>即時</b>   </td><td>    可檢視產品的即時報告。 (注意：目前只透過<a href="dev-center-insider-program.md">開發人員中心測試人員計畫</a>提供這份報告)。      </td><td>    不適用   </td><td>    無     </td><td>    不適用                 </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    N/A   </td><td>    N/A       </td><td>    不適用          </td></tr>
+    <tr><td align="left">    <b>即時</b>   </td><td>    可檢視產品的即時報告。 (注意：目前只透過<a href="dev-center-insider-program.md">開發人員中心測試人員計畫</a>提供這份報告)。      </td><td>    不適用   </td><td>    N/A     </td><td>    不適用                 </td></tr>
     </tbody>
     </table>
 

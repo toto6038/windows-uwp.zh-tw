@@ -4,18 +4,18 @@ Description: The Usage report in the Windows Dev Center dashboard lets you see h
 title: 使用量報告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/05/2018
 ms.topic: article
 ms.prod: windows
 ms.technology: uwp
 keywords: windows 10, uwp, 使用量, 自訂事件, 報告, 遙測, 使用者工作階段
 ms.localizationpriority: medium
-ms.openlocfilehash: 96d36ebbaa2b7f1a650e2b0f794a1976c1f525a6
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.openlocfilehash: c5ef2136eaf17fc902dcfc7840ff6dbdac56ef0d
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439121"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480184"
 ---
 # <a name="usage-report"></a>使用量報告
 
@@ -48,6 +48,7 @@ Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客�
 - **使用者**：顯示在所選時段內的 **\[使用者工作階段\]** 總數。 每個使用者工作階段都代表一段不同的期間，從 App 啟動 (程序啟動) 開始，並在其終止 (程序結束) 時或一段非使用中狀態後結束。 因此，單一客戶可能會在同一天或同一週有多個使用者工作階段。 **\[作用中使用者\]** 總數（該日或該週使用應用程式的任何客戶）及 **\[新使用者\]** 總數（該日或該週第一次使用您的應用程式的客戶）也會顯示。 請注意，是否您已套用篩選至任何頁面，您不會看到此圖表中的 **\[新使用者\]**。
 - **裝置**：顯示所有使用者用來與您的應用程式互動的每日裝置數目。
 - **持續時間**：會顯示參與總時數（使用者正在使用您的應用程式的時數）。
+- **佔用**： 顯示平均參與分鐘，每位使用者 （所有的使用者工作階段的平均持續時間）。 
 - **保留**：顯示在所選時段內的 **\[DAU/MAU\]** 總數（每日作用中使用者/每月作用中使用者）。
 
 **30d**時間期間選取時，您可能會看到圓圈標記檢視**的使用者**、**裝置**或**持續時間**的索引標籤時。 這些代表大幅增加或減少我們認為您會想要知道的特定值。 圓圈會出現的日期代表我們偵測明顯增加或減少相較於前一週一週結尾。 若要查看有哪些變更的更多詳細，游標暫留在圓圈。  
@@ -90,4 +91,4 @@ Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客�
 
 
 
- 
+ 

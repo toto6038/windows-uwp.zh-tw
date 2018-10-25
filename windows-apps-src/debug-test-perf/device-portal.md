@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 08e7d8fcfbab0d0b22fffa3e3e0aecc38d5b095c
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5439209"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5483474"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 
@@ -156,7 +156,7 @@ ETW 記錄頁面管理裝置上的即時事件 Windows 追蹤 (ETW) 資訊。
 
 ![裝置入口網站裝置管理員] 頁面](images/device-portal/mob-device-portal-devices.png)
 
-### <a name="networking"></a>網路功能
+### <a name="networking"></a>網路
 
 網路功能頁面管理裝置上的網路連線。 除非您已連線到 Device Portal，透過 USB，否則變更這些設定會可能會中斷連線您從 Device Portal。
 - **可用的網路**： 會顯示可供裝置使用的 WiFi 網路。 按一下或點選網路可讓您與它連線，而且您必須視需要提供密碼。 Device Portal 還不支援企業驗證。 您也可以使用 [**設定檔**] 下拉式清單來嘗試連線到任何已知為裝置的 WiFi 設定檔。

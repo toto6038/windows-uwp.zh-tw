@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評論
 ms.localizationpriority: medium
 ms.openlocfilehash: c14b2ce6dd9fa7058ef3dbcd8e7e7a17a05fe78e
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "5433393"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "5480933"
 ---
 # <a name="get-app-reviews"></a>取得應用程式評論
 
@@ -115,7 +115,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含可以用來要求下一頁資料的 URI。 例如，如果要求的 **top** 參數被設定為 10000，但是查詢卻有超過 10000 個資料列的評論資料，就會傳回此值。 |
 | TotalCount | 整數    | 查詢之資料結果的資料列總數。  |
 
- 
+ 
 ### <a name="review-values"></a>評論數值
 
 *Value* 陣列中的元素包含下列值。

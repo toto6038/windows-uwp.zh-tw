@@ -11,11 +11,11 @@ ms.technology: uwp
 keywords: windows 10, uwp, 連結, windows 市集通訊協定, 連結到應用程式, 應用程式的連結
 ms.localizationpriority: medium
 ms.openlocfilehash: 0025321aa73a66cc0a976bd347e613de3c3c4765
-ms.sourcegitcommit: 4b97117d3aff38db89d560502a3c372f12bb6ed5
+ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/24/2018
-ms.locfileid: "5445665"
+ms.locfileid: "5482547"
 ---
 # <a name="link-to-your-app"></a>應用程式的連結
 
@@ -51,9 +51,9 @@ ms.locfileid: "5445665"
 
 如需有關使用 Microsoft Store 通訊協定的詳細資訊，請參閱[啟動 Microsoft 應用程式](../launch-resume/launch-store-app.md)。
 
- 
+ 
 
- 
+ 
 
 
 
