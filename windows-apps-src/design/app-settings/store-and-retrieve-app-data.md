@@ -12,12 +12,12 @@ ms.prod: windows
 ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 47383cd8f89e5da104ac73878b0613c364240459
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: f73a99ea4dc58880f1de517853a05aa0b0d6dd6b
+ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1817296"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5512900"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 
@@ -172,7 +172,7 @@ async void ReadTimestamp()
 -   不要漫遊裝置專屬的 app 資料。 有些資訊只與本機相關，如本機檔案資源的路徑名稱。 如果您決定漫遊本機資訊，請確認如果資訊在第二個裝置上無效時，應用程式可以復原它。
 -   不要漫遊大量應用程式資料。 應用程式可以漫遊的應用程式資料數量有限；請使用 [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) 屬性取得此最大值。 如果應用程式達到這個限制，必須等到應用程式資料存放區的大小不再超過此限制時才能漫遊資料。 設計應用程式時，請考量如何在較大型資料中放置界限，以免超過該限制。 例如，如果個別儲存遊戲狀態需要 10KB，則應用程式只能允許使用者儲存最多 10 個遊戲。
 -   不要在依賴立即同步化的資料使用漫遊。 Windows 不保證立即同步化；如果使用者處於離線狀態或使用高延遲網路，可能會嚴重延遲漫遊。 請確定您的 UI 不需要立即同步化。
--   不要漫遊經常變更的資料。 例如，如果您的應用程式追蹤經常變更的資訊，例如追蹤歌曲每秒的位置，請勿將它儲存為漫遊的應用程式資料。 請改為挑選較不頻繁但仍提供良好使用者體驗的表示法，像是目前正在播放的歌曲。
+-   不要使用漫遊經常變更的資料。 例如，如果您的應用程式追蹤經常變更的資訊，例如追蹤歌曲每秒的位置，請勿將它儲存為漫遊的應用程式資料。 請改為挑選較不頻繁但仍提供良好使用者體驗的表示法，像是目前正在播放的歌曲。
 
 ### <a name="roaming-pre-requisites"></a>漫遊的先決條件
 
