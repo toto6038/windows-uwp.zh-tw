@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b2717a482e0ea1ad80f0f13dc09bb6789863ef7e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9ce2082479261cd96fb1c5bafd5f2df06bf6f239
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044267"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558684"
 ---
 # <a name="emissive-lighting"></a>放射光源
 
@@ -33,7 +31,7 @@ ms.locfileid: "1044267"
 |-----------|---------------|----------------------------------------------------------------------|-----------------|
 | Cₑ        | (0,0,0,0)     | 紅色、綠色、藍色以及 alpha 透明度 (全都是浮點值) | 放射色彩。 |
 
- 
+ 
 
 Cₑ 的值為色彩 1 或色彩 2。 如果未提供頂點色彩，則會使用材質放射色彩。
 
@@ -57,9 +55,9 @@ Cₑ 的值為色彩 1 或色彩 2。 如果未提供頂點色彩，則會使用
 
 [光源的數學計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

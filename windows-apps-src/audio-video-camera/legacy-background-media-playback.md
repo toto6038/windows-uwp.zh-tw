@@ -6,20 +6,22 @@ title: 舊版背景媒體播放
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 68695125c2056adca8186120db7875cb3a68baf8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 319343a06eeb49fc4ec0ca2fcd340f655654f718
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209247"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554634"
 ---
 # <a name="legacy-background-media-playback"></a>舊版背景媒體播放
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文說明用來新增 UWP app 背景音訊支援的舊版雙處理序模型。 從 Windows 10 版本 1607 開始，背景音訊的單一處理程序模型變得更容易實作。 如需有關背景音訊目前建議的詳細資訊，請參閱[在背景播放媒體](background-audio.md)。 本文用來提供已使用舊版雙處理序模型開發之 app 的支援。
+
+> [!NOTE]
+> 開始使用 Windows，版本 1703 中， **BackgroundMediaPlayer**已過時，並且可能無法在未來的 Windows 版本中使用。
 
 ## <a name="background-audio-architecture"></a>背景音訊架構
 
@@ -121,9 +123,9 @@ ms.locfileid: "209247"
 | **共用的存留期**    | 已啟用  | 已停用 | 已停用 |
 
 
- 
+ 
 
- 
+ 
 
 
 

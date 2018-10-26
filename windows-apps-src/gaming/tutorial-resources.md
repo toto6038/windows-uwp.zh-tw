@@ -6,15 +6,13 @@ keywords: DirectX, XAML
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32696b739b430ecab25b5138f9aba9eb0ab40204
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: Auto
+ms.openlocfilehash: cb837965746eb1c2c7deab613eec239a83cac294
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673725"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558989"
 ---
 # <a name="extend-the-game-sample"></a>延伸遊戲範例
 
@@ -27,7 +25,7 @@ ms.locfileid: "1673725"
 ## <a name="using-xaml-for-the-overlay"></a>用於重疊的 XAML
 
 
-有一個替代方法我們沒有深入討論，那就是在重疊使用 XAML，而不使用 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)。 XAML 對於 Direct2D 有許多好處，可繪製使用者介面元素。 最重要的好處是結合 Windows 10 的外觀與感覺與 DirectX 遊戲且更便利。 許多定義 UWP 應用程式的常用元素、樣式以及行為已緊密整合到 XAML 模型，讓遊戲開發人員需要的實作的工作變得更少。 如果您的遊戲設計具有很複雜的使用者介面，請考慮使用 XAML 而不要使用 Direct2D。
+有一個替代方法我們沒有深入討論，那就是在重疊使用 XAML，而不使用 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)。 XAML 對於 Direct2D 有許多好處，可繪製使用者介面元素。 最重要的好處是它讓您將 windows 10 的外觀及操作功能整合到您的 DirectX 遊戲更方便。 許多定義 UWP 應用程式的常用元素、樣式以及行為已緊密整合到 XAML 模型，讓遊戲開發人員需要的實作的工作變得更少。 如果您的遊戲設計具有很複雜的使用者介面，請考慮使用 XAML 而不要使用 Direct2D。
 
 使用 XAML，我們可以讓遊戲介面看起來類似 Direct2D 的舊版本。
 

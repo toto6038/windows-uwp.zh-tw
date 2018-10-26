@@ -6,18 +6,17 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d3105e8ac345e1eb6f0d974f8ea29e741dae9f58
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210475"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552864"
 ---
 # <a name="xclass-attribute"></a>x:Class 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
 
@@ -35,7 +34,7 @@ ms.locfileid: "210475"
 | 詞彙 | 說明 |
 |------|-------------|
 | 命名空間 | 選用。 指定包含 _classname_ 識別的部分類別的命名空間。 如果指定 _namespace_，則會使用點 (.) 分隔 _namespace_ 與 _classname_。 如果省略 _namespace_，會假設 _classname_ 沒有命名空間。 |
-| classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 | 
+| classname | 必要。 指定連接載入的 XAML 與該 XAML 的程式碼後置的部分類別的名稱。 | 
 
 ## <a name="remarks"></a>備註
 

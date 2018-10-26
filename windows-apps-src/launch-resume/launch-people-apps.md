@@ -6,16 +6,14 @@ ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 75f0a47400acaedf57737852f5e822d7907c1d6d
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 0b87a49f24035215d44dbabcf9e401ddfefdff47
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663638"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551574"
 ---
 # <a name="launch-the-people-app"></a>啟動連絡人應用程式
 
@@ -60,7 +58,7 @@ ms.locfileid: "1663638"
 <p>參數的順序並不重要。</p>
 <p>如果有多個相符項目，我們會傳回第一個相符的連絡人。</p>
 </div>
-<div> 
+<div> 
 </div></td>
 <td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
 </tr>

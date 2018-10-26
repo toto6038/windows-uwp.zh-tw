@@ -6,16 +6,14 @@ description: 有些裝置在使用之前需要先進行配對。 Windows.Devices
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 86cac8248db896f56757dae7678d6e146835884c
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: Auto
+ms.openlocfilehash: 64f4756df37cbfaf041e432b7e4a890123f52d2f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673995"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554968"
 ---
 # <a name="pair-devices"></a>配對裝置
 
@@ -31,9 +29,9 @@ ms.locfileid: "1673995"
 -   基本配對
 -   自訂配對
 
-**提示**  有些裝置不需要配對就可以使用。 此內容將涵蓋於＜自動配對＞一節中。
+**提示：** 有些裝置不需要配對就可以使用。 此內容將涵蓋於＜自動配對＞一節中。
 
- 
+ 
 
 ## <a name="automatic-pairing"></a>自動配對
 
@@ -74,6 +72,6 @@ ms.locfileid: "1673995"
 
 若要下載示範如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的範例，可按一下[這裡](http://go.microsoft.com/fwlink/?LinkID=620536)。
 
- 
+ 
 
- 
+ 

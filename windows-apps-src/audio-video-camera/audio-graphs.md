@@ -6,16 +6,14 @@ title: 音訊圖
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 26b9f49c8f21c7c60fb99fd8eaf24156a8aed3d9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: cdd1548a4d120027afd06a178cc338c88cb5cc4b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832499"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558269"
 ---
 # <a name="audio-graphs"></a>音訊圖
 
@@ -47,7 +45,7 @@ Windows 執行階段音訊圖 API：
 -   明顯地比 XAudio2 容易使用。
 -   除了支援 C++，還可在 C# 中使用。
 -   可以直接使用包含壓縮檔案格式的音訊檔案。 XAudio2 只能在音訊緩衝區上操作，並不提供任何檔案 I/O 功能。
--   可以在 Windows 10 中使用低延遲音訊管線。
+-   可以在 windows 10 中使用低延遲音訊管線。
 -   使用預設端點參數時，支援自動端點切換。 例如，如果使用者從裝置的喇叭切換到耳機時，則音訊會自動重新導向至新的輸入。
 
 ## <a name="audiograph-class"></a>AudioGraph 類別
@@ -270,9 +268,9 @@ Windows 執行階段音訊圖 API：
 
 ## <a name="see-also"></a>另請參閱
 - [媒體播放](media-playback.md)
- 
+ 
 
- 
+ 
 
 
 

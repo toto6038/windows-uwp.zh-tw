@@ -6,16 +6,14 @@ title: 查詢已安裝的轉碼器
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 轉碼器, 編碼器, 解碼器, 查詢
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e6a44bda55fc6c01e75940d9d4446160e708627
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: b74ac269bcba6d15e7c4f5dcb4c34d53573deb5e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842345"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557107"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查詢裝置已安裝的轉碼器
 **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 類別可讓您查詢目前的裝置上已安裝的轉碼器。 Windows 10 針對不同裝置系列所隨附的轉碼器清單列在[支援的轉碼器](supported-codecs.md)文章中，但因為使用者和應用程式可以在裝置上安裝其他的轉碼器，所以您可能會想要查詢執行階段的轉碼器支援，以判斷目前裝置提供哪些轉碼器。
@@ -52,9 +50,9 @@ CodecQuery API 屬於 **[Windows.Media.Core](https://docs.microsoft.com/uwp/api/
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [轉碼媒體檔案](transcode-media-files.md)
 * [支援的轉碼器](supported-codecs.md)
- 
+ 
 
- 
+ 
 
 
 

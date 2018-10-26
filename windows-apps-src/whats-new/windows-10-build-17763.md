@@ -6,15 +6,13 @@ keywords: 新功能，新，更新，多項更新，功能，新，Windows 10，
 ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ff1db524c5c6bcaf8111573e260dc96a13a99321
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e979428191151f680f51d8d4cf2f37f70b0b369d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513367"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554112"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 

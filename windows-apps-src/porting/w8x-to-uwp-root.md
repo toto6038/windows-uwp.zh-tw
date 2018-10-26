@@ -1,39 +1,38 @@
 ---
-author: mcleblanc
-description: 如果您有通用 8.1 app&amp;\#8212;無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計&amp;\#8212;則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。
+author: stevewhims
+description: 如果您有通用 8.1 應用程式與 \#8212;whether 它針對 Windows8.1、 Windows Phone 8.1 或這兩個與 \#8212;then 您會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。
 title: 從 Windows Runtime 8.x 移至 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 37da1d6385bf18fcf44f6425b843715e1a462379
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210520"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556058"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>從 Windows Runtime 8.x 移至 UWP
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果您有通用 8.1 app (無論它是針對 Windows 8.1、Windows Phone 8.1 或這兩者設計)，則會發現您的原始程式碼和技能將可順暢地移植到 Windows 10。 您可以使用 Windows 10 來建立通用 Windows 平台 (UWP) app，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如需我們將在本移植指南中提及之 Windows 10、UWP 應用程式，以及調適型程式碼與調適型 UI 概念的詳細背景資訊，請參閱 [UWP 應用程式指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果您有通用 8.1 應用程式 — 它針對 Windows8.1、 Windows Phone 8.1，或兩者 — 則會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。 使用 windows 10，您可以建立通用 Windows 平台 (UWP) 應用程式，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如詳細背景資訊 windows 10，UWP app，以及調適型程式碼與我們將在此移植指南中，提及之調適型 UI 概念的請參閱[UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-在移植時，您將發現 Windows 10 會與先前的平台共用大部分的 API，以及 XAML 標記、UI 架構及工具，而且全都讓人非常熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
+在移植時，您會發現，windows 10 與先前的平台，以及 XAML 標記、 UI 架構和工具，共用大部分的 Api，而且您會發現它全都熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
 
 ## <a name="if-you-have-a-universal-81-app"></a>如果您有通用 8.1 應用程式
 
 通用 8.1 app是從 8.1 通用 app 專案建置的。 假設專案的名稱是 AppName\_81。 它包含這些子專案。
 
--   AppName\_81.Windows。 這是建置適用於 Windows 8.1 之應用程式套件的專案。
+-   AppName\_81.Windows。 這是針對 Windows8.1 建置應用程式套件的專案。
 -   AppName\_81.WindowsPhone。 這是建立適用於 Windows Phone 8.1 之應用程式套件的專案。
 -   AppName\_81.Shared。 這個專案當中包含其他兩個專案都會用到的原始程式碼、標記檔案及其他資產與資源。
 
-通常，8.1 通用 Windows app 會以Windows 8.1 與 Windows Phone 8.1 兩種形式—使用相同的程式碼和標記—來提供相同的功能。 這類 app 最適合移植到針對通用裝置系列設計的單一 Windows 10 應用程式 (這表示它所能安裝的裝置種類最廣泛)。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
+通常，8.1 通用 Windows app 中提供相同的功能 — — 使用相同的程式碼和標記 — 在其 Windows8.1 與 Windows Phone 8.1 的形式。 這類 app 是理想的候選項目移植到單一 windows 10 應用程式，以通用裝置系列為目標 （以及您可以將它安裝到種類的裝置）。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
 
-其他時候，Windows 8.1 和/或 Windows Phone 8.1 形式的應用程式會包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
+其他時候、 Windows8.1 和/或 Windows Phone 8.1 形式的應用程式包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
 
 1.  將共用專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 和 WindowsPhone 專案的任何其他內容，以便在應用程式中無條件地使用那些內容，或在您的應用程式當時執行所在的裝置上有條件地使用那些內容 (後者的行為稱為「調適型」** 行為)。
 2.  將 WindowsPhone 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。

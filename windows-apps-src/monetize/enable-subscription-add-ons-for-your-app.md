@@ -6,15 +6,13 @@ keywords: Windows 10, UWP, 訂閱, 附加元件, 在應用程式內購買, IAP, 
 ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3575d4d30515a3c26bf99e1cc37afa3b98f4e7dc
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: b89cad4c299f7326d0bb7d9ea4b8c6685f70f26c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514199"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551988"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 

@@ -6,16 +6,14 @@ ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, DirectX, XAML 互通性
 ms.localizationpriority: medium
-ms.openlocfilehash: 107501bb06af62035e78ef1ac65291b2bdec5c62
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 7f3a70be3dd31b0a5e4214621ab9fb4efa72cc54
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674985"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555178"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 
@@ -25,9 +23,9 @@ ms.locfileid: "1674985"
 
 如果您的 App 著重在 2D 轉譯，您可能想要使用 [Win2D](https://github.com/microsoft/win2d) Windows 執行階段程式庫。 此程式庫是由 Microsoft 維護，且採用 Direct2D 核心技術。 它能大幅簡化實作 2D 圖形的使用模式，且包含本文件中所提及之某些技術的實用抽象。 如需詳細資訊，請參閱專案頁面。 此文件涵蓋的指南適用於 *「沒有」* 使用 Win2D 的 App 開發人員。
 
-> **注意**  DirectX API 不是定義為 Windows 執行階段類型，因此您通常會使用 Visual C++ 元件延伸 (C++/CX) 來開發與 DirectX 互通的 XAMLUWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
+> **注意：** DirectX Api 不定義為 Windows 執行階段類型，因此您通常會使用 VisualC + + 元件延伸 (C + + /CX) 來開發與 DirectX 互通的 xamluwp XAML UWP 元件。 此外，如果您將 DirectX 呼叫包裝在個別的 Windows 執行階段中繼資料檔中，您就可以使用 C# 和 XAML 建立使用 DirectX 的 UWP App。
 
- 
+ 
 
 ## <a name="xaml-and-directx"></a>XAML 和 DirectX
 
@@ -386,7 +384,7 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 > **注意**   通常來說，您的 DirectX 應用程式應該橫向建立交換鏈結，並與顯示視窗大小相等 (這通常是大部分 Microsoft Store 遊戲中的原生螢幕解析度)。 這確保您的應用程式會在沒有任何可見的 XAML 重疊時使用最佳化的交換鏈結。 如果應用程式會旋轉為直向模式，則您的應用程式應該在現有的交換鏈結上呼叫 [IDXGISwapChain1::SetRotation](https://msdn.microsoft.com/library/windows/desktop/hh446801)、視需要將轉換套用到內容，然後在相同的交換鏈結上再次呼叫 [SetSwapChain](https://msdn.microsoft.com/library/windows/desktop/dn302144)。 同樣地，每當透過呼叫 [IDXGISwapChain::ResizeBuffers](https://msdn.microsoft.com/library/windows/desktop/bb174577) 調整交換鏈結大小時，您的應用程式都應該在相同的交換鏈結上再次呼叫 **SetSwapChain**。
 
 
- 
+ 
 
 下列是在程式碼後置中建立和更新 [SwapChainPanel](https://msdn.microsoft.com/library/windows/apps/dn252834) 物件的基本處理程序：
 
@@ -471,9 +469,9 @@ DirectX 可針對 2D 和 3D 圖形提供兩種強大的程式庫：Direct2D 和 
 * [ISwapChainPanelNative](https://msdn.microsoft.com/library/windows/desktop/dn302143)
 * [Direct3D 11 的程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ff476345)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -1,24 +1,23 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
 title: 將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2ccc9b0d81b69a06973feac8d554aa0ab47f2af0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209755"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557935"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 前一個主題是[移植 XAML 與 UI](w8x-to-uwp-porting-xaml-and-ui.md)。
@@ -35,18 +34,18 @@ ms.locfileid: "209755"
 ## <a name="background-audio"></a>背景音訊
 
 
-對於 [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) 屬性，適用於 Windows 10 應用程式的 **ForegroundOnlyMedia** 和 **BackgroundCapableMedia** 已過時。 請改用 Windows Phone 市集應用程式模型。 如需詳細資訊，請參閱 [背景音效](https://msdn.microsoft.com/library/windows/apps/mt282140)。
+[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352)屬性， **ForegroundOnlyMedia**和**BackgroundCapableMedia**已過時的 windows 10 應用程式。 請改用 Windows Phone 市集應用程式模型。 如需詳細資訊，請參閱 [背景音效](https://msdn.microsoft.com/library/windows/apps/mt282140)。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>偵測執行您 app 的平台
 
 
-考量應用程式設計目標的方式隨 Windows 10 而有所改變。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+思考 app 目標的變更與 windows 10 的方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 如果在您的通用 8.1 應用程式中有程式碼可偵測出其執行所在的作業系統，您可能必須根據邏輯原因來加以變更。 如果應用程式會不停傳送值卻不加以處理，您可能想要繼續收集作業系統資訊。
 
-**注意** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](w8x-to-uwp-porting-to-a-uwp-project.md))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
+**注意：** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](w8x-to-uwp-porting-to-a-uwp-project.md))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
 
- 
+ 
 
 有數項建議技術可用來針對不同的裝置量身打造您的應用程式 UI。 繼續使用自動調整大小元素與動態配置面板。 在 XAML 標記中，繼續使用以有效像素 (前身為檢視像素) 為單位的大小，讓您的 UI 可隨不同的解析度與縮放比例調整 (請參閱[有效像素、檢視距離及縮放係數](w8x-to-uwp-porting-xaml-and-ui.md))。 還有使用 Visual State Manager 的調適型觸發程序與 Setter 讓您的 UI 可隨視窗大小調整 (請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631))。
 
@@ -72,11 +71,11 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 ## <a name="location"></a>位置
 
 
-當在其應用程式套件資訊清單中宣告定位功能的應用程式於 Windows 10 上執行時，系統會提示使用者同意。 不論是 Windows Phone 市集應用程式還是 Windows 10 應用程式，都是如此。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
+當宣告定位功能在其應用程式套件資訊清單中的應用程式執行於 windows 10 時，系統會提示使用者同意。 應用程式是否是 Windows Phone 市集應用程式或 windows 10 應用程式是如此。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,19 +6,18 @@ ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, directx, port, 連接埠
-ms.openlocfilehash: e255bceae44ace0722a2df0c53d60ec0f8fa35fe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209118"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559535"
 ---
 # <a name="plan-your-directx-port"></a>計劃 DirectX 移植
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -38,9 +37,9 @@ ms.locfileid: "209118"
 
 您必須使用自己的協助程式庫或社群工具來取代 D3DX 與 DXUT 協助程式庫。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
-> **注意：** 您可以使用 [DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)或 [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)，取代先前由 D3DX 與 DXUT 所提供的部分功能。
+> **注意：** 您可以使用[DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)來取代先前由 D3DX 與 DXUT 所提供的部分功能。
 
- 
+ 
 
 以組合語言撰寫的著色器應該使用著色器模型 4 層級 9\_1 或 9\_3 功能升級到 HLSL，而針對效果程式庫所撰寫的著色器將需要升級到更新版本的 HLSL 語法。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
@@ -64,9 +63,9 @@ UWP app 的週期與傳統型 app 的週期有很大的差別。 您將需要經
 -   Managed 參考 ([**^ 運算子**](https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx)) 和 [**Managed 類別**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref 類別) 都是 Windows 執行階段的基本部分。 您需要為含有 Windows 執行階段元件的介面使用 Managed ref 類別，例如 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (逐步解說中將提供更多相關資訊)。
 -   使用 Direct3D 11 COM 介面時，請使用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 範本類型，讓 COM 指標更容易使用。
 
- 
+ 
 
- 
+ 
 
 
 

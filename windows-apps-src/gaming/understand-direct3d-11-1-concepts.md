@@ -6,19 +6,18 @@ ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, directx, direct3d 9, direct3d 11, 變更
-ms.openlocfilehash: e46bb663a5497cb17f396b410fbdcb5d0295e5fe
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 969d8f2620adbc289c1f4c89242e0282901357c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209304"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554473"
 ---
 # <a name="important-changes-from-direct3d-9-to-direct3d-11"></a>從 Direct3D 9 到 Direct3D 11 的重要變更
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -108,13 +107,13 @@ Direct3D 9 推出之後，硬體仍持續不斷地演進，而可程式化的圖
 
 著色器的 Direct3D 9 管理常數使用共用陣列搭配 SetVertexShaderConstant 和 SetPixelShaderConstant。 Direct3D 11 則使用常數緩衝區，這些是像頂點緩衝區或索引緩衝區等的資源。 常數緩衝區的設計目的是要有效率地更新。 這個做法不是將所有著色器常數組織成單一全域陣列，而是將您的常數組織為邏輯群組，並透過一或多個常數緩衝區加以管理。 當您將 Direct3D 9 遊戲移植到 Direct3D 11 時，需要先規劃如何組織您的常數緩衝區，才能適當地更新常數。 例如，將每個畫面未更新的著色器常數編組成個別常數緩衝區，所以您不必經常將該資料以及更多動態著色器常數上傳到圖形卡。
 
-> **注意** 多數 Direct3D 9 應用程式都大量使用著色器，但偶爾會混用舊版固定函式行為。 請注意，Direct3D 11 只使用可程式化的著色模型。 Direct3D 9 的舊版固定函式功能已過時。
+> **注意：** 多數 Direct3D 9 應用程式都大量使用著色器，但偶爾會混用舊版固定函式行為。 請注意，Direct3D 11 只使用可程式化的著色模型。 Direct3D 9 的舊版固定函式功能已過時。
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

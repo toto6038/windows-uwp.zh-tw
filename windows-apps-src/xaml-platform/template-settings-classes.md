@@ -6,18 +6,17 @@ ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: ff1b373e2038824c6349961b3b878f5570babceb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210543"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552455"
 ---
 # <a name="template-settings-classes"></a>範本設定類別
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -57,7 +56,7 @@ ms.locfileid: "210543"
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
+[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 範本的完整 XAML 有數百行，這裡只摘錄一小部份。 這個 XAML 定義一個控制項組件，這是六個用來描繪不確定進度之旋轉動畫的 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 元素中的其中一個。 身為開發人員，您可能不喜歡圓圈，可能會使用不同的圖形或不同的基本形狀顯示動畫進行的方式。 例如，您可以撰寫一個 **ProgressRing**，改用一組正方形排列的 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 元素。 如果是，新範本的每個個別 **Rectangle** 元件可能看起來像這樣：
 
 ```xml
 <Rectangle
@@ -98,8 +97,7 @@ ms.locfileid: "210543"
 
 同樣地，範本中有很多 XAML，所以我們只顯示摘錄。 這只是其中一種狀態和佈景主題動畫，每一種都使用相同的 [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) 屬性。 如果是 [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348)，在範本中透過繫結使用 **ComboBoxTemplateSettings** 值強制執行相關的動畫，將會在根據共用值計算的位置停止並開始，因此可以順暢地轉換。
 
-**注意**  
-當您使用 **TemplateSettings** 值做為您控制項範本的一部分時，請確定您設定的屬性符合值的類型。 如果不是，您可能需要建立繫結的值轉換器，以便繫結的目標類型可以從 **TemplateSettings** 值的不同來源類型轉換。 如需詳細資訊，請參閱 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
+**注意：** 當您使用**TemplateSettings**值做為您控制項範本的一部分時，請確定您設定的屬性符合值的類型。 如果不是，您可能需要建立繫結的值轉換器，以便繫結的目標類型可以從 **TemplateSettings** 值的不同來源類型轉換。 如需詳細資訊，請參閱 [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903)。
 
 ## <a name="related-topics"></a>相關主題
 

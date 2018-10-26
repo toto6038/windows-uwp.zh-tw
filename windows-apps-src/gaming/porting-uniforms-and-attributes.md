@@ -6,19 +6,18 @@ ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes, 遊戲, 緩衝區, 統一, 頂點屬性
-ms.openlocfilehash: d25495b282dce38c3dcad0ec996c185e64165b13
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bc0192eb4b89ef91bc895a96e46cd39524f24c44
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209297"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558233"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -41,7 +40,7 @@ ms.locfileid: "209297"
 | 框架緩衝區物件 (FBO) | 轉譯目標；請參閱 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) 與 [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)。                                       |
 | 背景緩衝區               | 含有「背景緩衝區」表面的交換鏈結；請參閱含有附加 [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) 的 [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)。                       |
 
- 
+ 
 
 ## <a name="port-buffers"></a>移植緩衝區
 
@@ -298,9 +297,9 @@ struct VertexShaderInput
 };
 ```
 
- 
+ 
 
- 
+ 
 
 
 

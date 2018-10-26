@@ -6,16 +6,14 @@ description: 您可以在選用的 microSD 記憶卡上儲存和存取非必要�
 ms.author: lahugh
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, sd 記憶卡, 儲存空間
 ms.localizationpriority: medium
-ms.openlocfilehash: 44354bbacd5ea775c8a973fe7f82aaf65b3f70db
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "301934"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552514"
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 
@@ -142,6 +140,6 @@ if (sdCard != null)
 }
 ```
 
- 
+ 
 
- 
+ 

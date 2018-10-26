@@ -6,16 +6,14 @@ description: 版面配置可說是 XAML App 中高度耗費資源的一部分&am
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bcbf9cefffe6ed71fdaa95e7847e6afe1c382e6
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: b0dcb3e49bb35902a17f829c0222c570265be8b5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "894744"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553858"
 ---
 # <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 版面配置
 
@@ -138,7 +136,7 @@ ms.locfileid: "894744"
 
 常見的 UI 需求是讓元素彼此重疊的版面配置。 通常會使用這種方式，利用邊框間距、邊界、對齊和轉換來放置元素。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 控制項已最佳化，可改善重疊元素的版面配置效能。
 
-**重要**  若要查看改進功能，請使用單一儲存格 [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
+**重要**若要查看改進功能，請使用單一儲存格[**方格**](https://msdn.microsoft.com/library/windows/apps/BR242704)。 請勿定義 [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) 或 [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions)。
 
 ### <a name="examples"></a>範例
 

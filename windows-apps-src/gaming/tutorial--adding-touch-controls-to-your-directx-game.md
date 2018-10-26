@@ -6,27 +6,26 @@ ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 觸控, 控制項, directx, 輸入
-ms.openlocfilehash: 44d5071ee0cd695351c77630d699a1a060f477d6
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 53c4a91f3ef20c11783796c3ca362f74b3f39adb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209293"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553010"
 ---
 # <a name="touch-controls-for-games"></a>適用於遊戲的觸控控制項
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在使用 DirectX 的通用 Windows 平台 (UWP) C++ 遊戲中新增基本的觸控控制項。 我們將示範如何在 Direct3D 環境中加入觸控控制項來移動固定面相機，透過拖曳手指或手寫筆來移動相機的視角。
 
 您可以將這些控制項納入遊戲，讓玩家可以在 3D 環境 (例如地圖或比賽場) 中拖曳、捲動或移動瀏覽。 例如，在策略或益智遊戲中，您可以使用這些控制項左右移動瀏覽，讓玩家檢視比螢幕還大的遊戲環境。
 
-> **注意** 我們的程式碼也適用於滑鼠移動瀏覽控制項。 Windows 執行階段 API 已將指標相關事件抽取出來，因此它們可以處理觸控或滑鼠指標事件。
+> **注意：** 我們的程式碼也適用於滑鼠移動瀏覽控制項。 Windows 執行階段 API 已將指標相關事件抽取出來，因此它們可以處理觸控或滑鼠指標事件。
 
- 
+ 
 
 ## <a name="objectives"></a>目標
 
@@ -344,14 +343,12 @@ void CameraPanController::Update( CoreWindow ^window )
 
 恭喜！ 您已經在遊戲中實作一組簡單的相機移動瀏覽觸控控制項。
 
-> **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

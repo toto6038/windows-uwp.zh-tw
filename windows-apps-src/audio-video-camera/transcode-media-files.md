@@ -6,16 +6,14 @@ title: 轉碼媒體檔案
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c13471d67033790c01a07e53af667c2a078894
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: babf91e681004942bb3b66eb43622742fa183125
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1831972"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556691"
 ---
 # <a name="transcode-media-files"></a>轉碼媒體檔案
 
@@ -86,11 +84,18 @@ ms.locfileid: "1831972"
 
 
 ## <a name="encode-a-metadata-stream"></a>編碼中繼資料串流
+從 Windows 10，版本 1803 起，您可以包含定時中繼資料時轉碼媒體檔案。 不同於視訊轉碼以上範例中，使用內建的媒體編碼設定檔建立方法，例如[**MediaEncodingProfile.CreateMp4**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4)，您必須手動建立中繼資料編碼設定檔以支援您編碼的中繼資料的類型.
 
-
+這個中建立的中繼資料 incoding 設定檔的第一個步驟是建立 [**TimedMetadataEncodingProperties**] 物件描述的中繼資料要轉碼的編碼方式。 子類型屬性會指定的中繼資料類型的 GUID。 針對每個中繼資料類型編碼的詳細資料是專屬並不由 Windows 提供。 在這個範例中，會使用 GoPro 中繼資料 (gprs) 的 GUID。 接下來， [**SetFormatUserData**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.timedmetadataencodingproperties.setformatuserdata)呼叫來設定的描述資料流格式的中繼資料格式特定資料的二進位 blob。 下一步， **TimedMetadataStreamDescriptor**(https://docs.microsoft.com/uwp/api/windows.media.core.timedmetadatastreamdescriptor)會從編碼屬性，建立和播放軌標籤和名稱是以允許應用程式讀取 endcoded 資料流，找出中繼資料串流，並選擇性地在 UI 中顯示的資料流的名稱。 
  
+[!code-cs[GetStreamDescriptor](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetStreamDescriptor)]
 
- 
+建立**TimedMetadataStreamDescriptor**之後, 您可以建立**MediaEncodingProfile**描述視訊、 音訊及中繼資料檔案中進行編碼。 **TimedMetadataStreamDescriptor**在最後一個範例中建立會傳遞到此範例協助程式函式，並藉由呼叫[**SetTimedMetadataTracks**](https://docs.microsoft.com/en-us/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)新增到**MediaEncodingProfile** 。
+
+[!code-cs[GetMediaEncodingProfile](./code/TranscodeWin10/cs/MainPage.xaml.cs#SnippetGetMediaEncodingProfile)]
+ 
+
+ 
 
 
 

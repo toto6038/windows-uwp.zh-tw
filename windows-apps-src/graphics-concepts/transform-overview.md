@@ -6,16 +6,14 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 32beeae8d2398457311a14fa53afe330acdc75f2
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 32f55b0a387221b792e37072f129edddf285195b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700844"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552687"
 ---
 # <a name="transform-overview"></a>轉換概觀
 
@@ -32,7 +30,7 @@ ms.locfileid: "1700844"
 | 投影轉換成投影空間    | 下一個階段是[投影轉換](projection-transform.md)，從檢視空間轉換為投影空間。 在管線的這部分，物件通常相對於自身與檢視者之間的距離而縮放比例，以便提供深度幻覺給場景；將近物做得比遠方物件更大。 為了簡化，本文件將是投影轉換後頂點的存在空間稱為*投影空間*。 一些圖形書籍可能將投影空間稱為*透視後同質空間*。 並非所有投影轉換都會將場景中的物件大小縮放。 這類投影有時稱為*仿射*或*正交投影*。 |
 | 螢幕空間中的裁剪                      | 在管線的最後一部分，將不會顯示在螢幕上的任何頂點移除，以便轉譯器不會花時間計算永遠不會看到之項目的色彩和陰影。 此程序稱為*裁剪*。 裁剪之後，剩餘頂點依據檢視區參數縮放，而且轉換成螢幕座標。 結果頂點 (當場景點陣化時會顯示在螢幕上) 存在於*螢幕空間*。                                                                                                                                                                                                                                                    |
 
- 
+ 
 
 轉換用於將物件幾何從某個座標轉換到另一個座標。 Direct3D 使用矩陣執行 3D 轉換。 矩陣建立 3D 轉換。 您可以結合矩陣，產生包含多個轉換的單一矩陣。
 
@@ -163,9 +161,9 @@ D3DXMATRIX Translate(const float dx, const float dy, const float dz) {
 
 [轉換](transforms.md)
 
- 
+ 
 
- 
+ 
 
 
 

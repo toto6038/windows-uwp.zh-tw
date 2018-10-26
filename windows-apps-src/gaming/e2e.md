@@ -6,16 +6,14 @@ ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ms.author: joanlee
 ms.date: 04/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: b351b5072c6bba228d81a65b51656a81bd564daf
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: d29e647b2932e1d89247da5b91d8f836d11260d6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862257"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555060"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 遊戲開發指南
 
@@ -347,7 +345,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td><a href="https://blogs.msdn.microsoft.com/appinstaller/">建置及部署 UWP 應用程式團隊部落格</a></td>
     </tr>
 </table>
- 
+ 
 
 ## <a name="concept-and-planning"></a>概念與規劃
 
@@ -370,7 +368,7 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
         <td><a href="game-development-platform-guide.md">適用於 UWP app 的遊戲技術</a></td>
     </tr>
 </table>
- 
+ 
 
 這三個 GDC 2015 影片提供 Windows10 遊戲開發與 Windows10 遊戲體驗的絕佳概觀。
 
@@ -458,7 +456,7 @@ DirectX 的廣泛功能與深度的平台整合可為要求最嚴苛的遊戲提
         <td><a href="https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA">Microsoft DirectX 12 與圖形教育訓練</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="xaml"></a>XAML
 
@@ -478,7 +476,7 @@ XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt228348">控制項、版面配置及文字</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="html-5"></a>HTML 5
 
@@ -498,7 +496,7 @@ XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例�
         <td><a href="http://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="combining-presentation-technologies"></a>結合呈現技術
 
@@ -518,7 +516,7 @@ Microsoft DirectX Graphics Infrastructure (DXGI) 可提供跨多種圖形技術�
         <td><a href="directx-and-xaml-interop.md">DirectX 與 XAML 互通性</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="c"></a>C++
 
@@ -538,7 +536,7 @@ C++/CX 是一種高效能、低額外負荷的語言，可提供結合速度、�
         <td><a href="https://docs.microsoft.com/cpp/visual-cpp-in-visual-studio">Visual Studio 2017 中的 Visual C++</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="c"></a>C#
 
@@ -554,7 +552,7 @@ C# (發音為 "C sharp") 是一種簡單、強大、型別安全且物件導向�
         <td><a href="https://msdn.microsoft.com/library/kx37x362.aspx">C# 語言參考</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="javascript"></a>JavaScript
 
@@ -592,7 +590,7 @@ Windows JavaScript 應用程式可以透過簡單且直覺化的方式 (以物�
 
 ### <a name="which-version-of-directx-should-your-game-use"></a>您的遊戲應該使用哪一個版本的 DirectX？
 
-如果您要為您的遊戲選擇 DirectX，您將需要決定要使用哪一個版本：Microsoft Direct3D 12 或 Microsoft Direct3D 11。
+如果您要為您的遊戲選擇 DirectX，您將需要決定要使用哪一個版本： Microsoft Direct3D12 或 Microsoft Direct3D11。
 
 DirectX 12 比任何之前的版本都更快速且更有效率。 Direct3D 12 可提供更豐富的場景、更多物件、更複雜得效果，以及在 Windows 10 電腦和 Xbox One 上充分運用現代的 GPU 硬體。 由於 Direct3D 12 的運作層級非常低，因此它可以提供專業的圖形開發團隊或有經驗的 DirectX 11 開發團隊所有所需的控制，以最大化圖形最佳化。
 
@@ -604,11 +602,11 @@ Direct3D 11.3 是低層級圖形 API，使用常見的 Direct3D 程式設計模�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>選擇 Direct3D 12 或 Direct3D 11</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899228">什麼是 Direct3D 12？</a></td>
+        <td>選擇 Direct3D12 或 Direct3D11</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899228">什麼是 Direct3D12？</a></td>
     </tr>
     <tr>
-        <td>Direct3D 11 概觀</td>
+        <td>Direct3D11 的概觀</td>
         <td><a href="https://msdn.microsoft.com/library/windows/desktop/ff476080">Direct3D 11 圖形</a></td>
     </tr>
     <tr>
@@ -687,7 +685,7 @@ PlayFab 現在是 Microsoft 家庭成員，它是直播遊戲的完整後端平�
         <td><a href="https://community.playfab.com/index.html">PlayFab 論壇</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="unity"></a>Unity
 
@@ -749,7 +747,7 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
         <td><a href="http://go.microsoft.com/fwlink/?LinkId=722359">搭配 Visual Studio 2015 使用 Unity</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="havok"></a>Havok
 
@@ -773,7 +771,7 @@ Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動�
         <td><a href="http://support.havok.com">Havok</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="monogame"></a>MonoGame
 
@@ -958,7 +956,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/dn894631">UWP app 指南</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="getting-started-with-uwp-development"></a>UWP 開發入門
 
@@ -1021,7 +1019,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
     </tr>
 </table>
 
-### <a name="windows-desktop-apis-to-uwp"></a>Windows 傳統型 API 到 UWP
+### <a name="windows-desktop-apisto-uwp"></a>Windows 桌面 APIsto UWP
 
 以下提供一些連結，可幫助您將 Windows 傳統型遊戲移至 UWP。
 
@@ -1047,7 +1045,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt592894.aspx">通用 Windows 平台 (UWP) 應用程式中 Windows API 的替代方法</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="process-lifetime-management"></a>處理程序生命週期管理
 
@@ -1067,7 +1065,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
         <td><a href="https://msdn.microsoft.com/library/hh974425.aspx">如何在 Visual Studio 中觸發 UWP app 的暫停、繼續及背景事件</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="designing-game-ux"></a>設計遊戲 UX
 
@@ -1099,7 +1097,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
         <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">針對 Windows Core 世界設計遊戲</a></td>
     </tr>   
 </table>
- 
+ 
 
 #### <a name="color-guideline-and-palette"></a>色彩指南與調色盤
 
@@ -1115,7 +1113,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
         <td><a href="https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip">最佳做法：色彩</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="typography"></a>印刷樣式
 
@@ -1131,7 +1129,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
         <td><a href="http://go.microsoft.com/fwlink/?LinkId=535007">最佳做法：印刷樣式</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="ui-map"></a>UI 對應
 
@@ -1179,7 +1177,7 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
     </tr>
     <tr>
         <td>了解如何將 Windows Sonic 整合到遊戲中 (影片)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">適用於 Xbox 和 Windows 的空間音訊功能簡介</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">適用於 Xbox andWindows 空間音訊功能簡介</a></td>
     </tr>
 </table>
 
@@ -1256,7 +1254,7 @@ DirectX 遊戲開發的指南與參考資料。
         <td><a href="https://msdn.microsoft.com/library/windows/desktop/dn899198.aspx">Direct3D 12 中的記憶體管理</a></td>
     </tr>
 </table>
- 
+ 
 
 #### <a name="directx-tool-kit-and-libraries"></a>DirectX 工具組和程式庫
 
@@ -1292,7 +1290,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
         <td><a href="http://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
     </tr>
     <tr>
-        <td>DirectXTK 中的 Direct3D 12 支援 (部落格文章)</td>
+        <td>DirectXTK （部落格文章） 中的 Direct3D12 支援</td>
         <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">DirectX 12 支援</a></td>
     </tr>
 </table>
@@ -1368,7 +1366,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
         <td><a href="https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/">使用 UWP Tile Generator 工具的提示</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="enable-in-app-product-iap-purchases"></a>啟用 App 內產品 (IAP) 購買
 
@@ -1396,7 +1394,7 @@ IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">IAP 下載數報告</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="debugging-performance-optimization-and-monitoring"></a>偵錯、效能最佳化及監視
 
@@ -1462,7 +1460,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>D3D12 開發的偵錯與驗證工具 (影片)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003">含 PIX 和 GPU 驗證的 D3D12 效能調整和偵錯</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-003">D3D12 效能調整和偵錯含 PIX 和 GPUValidation</a></td>
     </tr>
     <tr>
         <td>將圖形與效能最佳化 (影片)</td>
@@ -1584,7 +1582,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>了解使用串流安裝與選擇性套件 (影片)</td>
-        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Nextgen UWP 應用程式發佈：建立可延伸、能夠串流、已元件化的應用程式</a></td>
+        <td><a href="https://channel9.msdn.com/Events/Build/2017/B8093">Nextgen UWP 應用程式發佈： 建立可延伸、 能夠串流，componentizedapps</a></td>
     </tr>
     <tr>
         <td>分隔與群組內容以啟用串流安裝</td>
@@ -1643,7 +1641,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/jj657968">避免常見的認證失敗</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="store-manifest-storemanifestxml"></a>市集資訊清單 (StoreManifest.xml)
 
@@ -1659,7 +1657,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt617335">StoreManifest 結構描述 (Windows10)</a></td>
     </tr>
 </table>
- 
+ 
 
 ## <a name="game-lifecycle-management"></a>遊戲生命週期管理
 
@@ -1694,7 +1692,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
         <td><a href="https://dev.windows.com/store-promotion">推銷您的應用程式</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="visual-studio-application-insights"></a>Visual Studio Application Insights
 
@@ -1748,7 +1746,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
         <td><a href="https://v.vungle.com/sdk">取得適用於 Vungle 的 Windows SDK</a></td>
     </tr>
 </table>
- 
+ 
 
 ### <a name="creating-and-managing-content-updates"></a>建立及管理內容更新
 
@@ -1915,8 +1913,8 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
 
 
 
- 
+ 
 
- 
+ 
 
- 
+ 

@@ -6,16 +6,14 @@ description: 了解如何建立定期重複執行的工作項目。
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 定期工作項目, 執行緒, 計時器
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a278361526c0455dd09fa759d4894fd25d63ce9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4afa137b01738c42f8e15c95ef09ec921d1e44ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "665274"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558879"
 ---
 # <a name="create-a-periodic-work-item"></a>建立定期工作項目
 
@@ -33,9 +31,9 @@ ms.locfileid: "665274"
 
 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) 會傳回 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 物件。 請將這個物件儲存起來，以防需要取消計時器。
 
-> **注意**：請不要指定零值 (或任何小於 1 毫秒的值) 作為間隔值。 這會讓定期計時器變得像是單次計時器。
+> **注意：** 不要指定零值 （或任何小於 1 毫秒的值） 作為間隔。 這會讓定期計時器變得像是單次計時器。
 
-> **注意**：您可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) 從工作項目存取 UI 及顯示進度。
+> **注意：** 您可以使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)來存取 UI 及顯示進度從工作項目。
 
 下列範例會建立一個每隔 60 秒執行一次的工作項目：
 
@@ -209,4 +207,4 @@ ms.locfileid: "665274"
 * [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
 * [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
 * [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
- 
+ 

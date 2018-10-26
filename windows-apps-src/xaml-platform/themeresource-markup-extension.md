@@ -6,16 +6,14 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2b292688d05e9886851016f2d3526a1926e418
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 024e48380941c0d79eef65780396ec9b89edc3c7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675095"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557657"
 ---
 # <a name="themeresource-markup-extension"></a>{ThemeResource} 標記延伸
 
@@ -71,7 +69,7 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 您可能會在一系列的相依值中看到 **ThemeResource** 的使用。 例如，[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 使用的 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) 值同時也是索引鍵資源，可能使用 **ThemeResource** 參考。 但是，所有使用索引鍵 **SolidColorBrush** 資源的 UI 屬性也會使用 **ThemeResource** 參考，因此具體說來，在佈景主題變更時啟用動態值變更的是每個 [**Brush**](/uwp/api/Windows.UI.Xaml.Media.Brush) 類型屬性。
 
-**注意：** Windows 8.1 XAML 中支援針對佈景主題切換的 `{ThemeResource}` 和執行階段資源評估，但在以 Windows 8 為目標之應用程式的 XAML 中則不支援。
+**注意：** `{ThemeResource}`和執行階段資源評估上佈景主題切換是 Windows8.1 XAML 中支援，但 Windows8 為目標的應用程式在 XAML 中不支援。
 
 ### <a name="system-resources"></a>系統資源
 
@@ -140,13 +138,13 @@ Windows 執行階段提供專供 **ThemeResource** 參照的一組資源。 這�
 
 這裡的 [**Color**](/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color) 值是對系統資源的另一個 **ThemeResource** 參考。 如果您參考某個系統資源，並且希望它隨著佈景主題變更而改變，您應該使用 **ThemeResource** 進行參考。
 
-## <a name="windows-8-behavior"></a>Windows 8 行為
+## <a name="windows8-behavior"></a>Windows8 行為
 
-Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開始可供使用。 此外，Windows 8 不支援針對 Windows 執行階段應用程式動態切換與佈景主題相關的資源。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這並不是一個良好的使用者經驗，因此，強烈建議將應用程式重新編譯並定位為 Windows 8.1，讓它們可將樣式與 **ThemeResource** 用法搭配使用，且可在使用者進行時動態切換佈景主題。 針對 Windows 8 編譯但在 Windows 8.1 上執行的應用程式會繼續使用 Windows 8 的行為。
+Windows8 不支援**ThemeResource**標記延伸，它是從 Windows8.1 開始提供。 此外，Windows8 不支援動態切換與佈景主題相關的資源為 Windows 執行階段應用程式。 應用程式必須重新啟動，才能針對 XAML 範本和樣式挑選佈景主題變更。 這不是一個良好的使用者經驗，因此使用者可以使用樣式與**ThemeResource**使用方式，可以在使用者進行時動態切換佈景主題應用程式重新編譯和目標 Windows8.1 我們強烈建議。 針對 Windows8 但 Windows8.1 上執行繼續使用 Windows8 行為已編譯的應用程式。
 
 ## <a name="design-time-tools-support-for-the-themeresource-markup-extension"></a>**{ThemeResource}** 標記延伸的設計階段工具支援
 
-當您在 XAML 頁面中使用 **{ThemeResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)的資源索引鍵。
+Microsoft Visual Studio2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值，當您在 XAML 頁面中使用 **{ThemeResource}** 標記延伸。 例如，一旦輸入「{ThemeResource」之後，就會立即顯示所有來自 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)的資源索引鍵。
 
 一旦資源索引鍵存在於任何 **{ThemeResource}** 用法中，**[移至定義]** (F12) 功能就可以立即解析該資源，並為您顯示設計階段的 generic.xaml，這是定義佈景主題資源的位置。 因為已經多次定義佈景主題資源 (針對每個佈景主題)，所以 **[移至定義]** 會將您帶往檔案中找到的第一個定義，也就是 **Default** 的定義。 如果你需要其他定義，可以在檔案內搜尋索引鍵名稱，以尋找其他佈景主題的定義。
 
@@ -156,5 +154,5 @@ Windows 8 不支援 **ThemeResource** 標記延伸，它將從 Windows 8.1 開�
 * [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
 * [x:Key 屬性](x-key-attribute.md)
- 
+ 
 

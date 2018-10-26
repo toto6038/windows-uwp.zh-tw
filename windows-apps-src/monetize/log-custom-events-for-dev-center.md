@@ -5,17 +5,15 @@ title: 為開發人員中心記錄自訂事件
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store Services SDK, 記錄事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cf3be8755fc375eb0604e188e34d6a5afee9c1
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515858"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555938"
 ---
 # <a name="log-custom-events-for-dev-center"></a>為開發人員中心記錄自訂事件
 

@@ -6,18 +6,17 @@ title: 相機獨立閃光燈
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7777b1b3f72090667f1e75f3c9e23b6adcd9f2d5
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 913faf70531509a604cde52bb71886c128edae46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209094"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555554"
 ---
 # <a name="camera-independent-flashlight"></a>相機獨立閃光燈
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文章說明如何存取和使用裝置的燈光 (如果有的話)。 燈光功能分別從裝置的相機和閃燈功能進行管理。 除了取得燈光的參考及調整其設定以外，本文也說明如何在不使用燈光時正確地釋出燈光資源，以及如何偵測燈光的可用性何時變更以免另一個 App 正在使用它。
@@ -79,7 +78,7 @@ ms.locfileid: "209094"
 ## <a name="related-topics"></a>相關主題
 - [媒體播放](media-playback.md)
 
- 
+ 
 
 
 

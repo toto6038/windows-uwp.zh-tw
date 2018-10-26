@@ -1,6 +1,6 @@
 ---
 author: normesta
-Description: 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。
+Description: This is a hub topic covering the full developer picture of how Windows Information Protection (WIP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
 MS-HAID: dev\_enterprise.edp\_hub
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
@@ -8,15 +8,15 @@ title: Windows 資訊保護 (WIP)
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
-ms.openlocfilehash: f624d20d33f560f151b40bd1a405711d697fd4cb
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dec05e663e6ca7390dc3974b8a3cde2971b50426
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209172"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555862"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 資訊保護 (WIP)
 
@@ -63,7 +63,7 @@ WIP 搭配 MDM 可讓組織更能控制其所管理裝置上的資料處理方�
 
 如果您已經準備好啟發您的應用程式，請參閱以下指南之一︰
 
-**如果是使用 C 建置的通用 Windows 平台 (UWP) app：#**
+**您使用 C# 建置的通用 Windows 平台 (UWP) 應用程式**
 
 [Windows 資訊保護 (WIP) 開發人員指南](wip-dev-guide.md)。
 
@@ -98,4 +98,4 @@ MDM 原則不需要旗標，但 MAM 原則需要。
 
 
 
- 
+ 

@@ -4,22 +4,20 @@ Description: The Microsoft Store enforces certain rules related to version numbe
 title: 套件版本編號
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf93cf06b273605b91c31da5b6a6b8cef8dae39
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 045e44d3ba243b4c4fbf68ba37e91c06eb022d27
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470406"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558770"
 ---
 # <a name="package-version-numbering"></a>套件版本編號
 
-您提供的每個套件必須具有版本號碼 (做為 app 資訊清單之 **Package/Identity** 元素的 **Version** 屬性中的值)。 Microsoft Store 會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
+您提供的每個套件必須具有版本號碼 (做為 app 資訊清單之 [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素的 **Version** 屬性中的值)。 Microsoft Store 會強制執行某些與版本號碼相關的規則，在不同的作業系統版本中的運作方式有些不同。
 
 > [!NOTE]
 > 本主題是關於 「 套件 」，但是除非另行註明，相同的規則適用於.msix/.appx 和.msixbundle/.appxbundle 檔案兩者的版本號碼。
@@ -28,7 +26,7 @@ ms.locfileid: "5470406"
 ## <a name="version-numbering-for-windows10-packages"></a>Windows 10 套件的版本編號
 
 > [!IMPORTANT]
-> 針對 Windows 10 (UWP) 套件的版本號碼的最後一個 （第四個） 區段保留給市集使用，並當您建置您的套件 （但是市集可能會變更此區段中的值） 時，必須保留為 0。
+> 針對 Windows 10 (UWP) 套件的版本號碼的最後一個 （第四個） 區段保留給市集使用，並當您建置您的套件 （但是市集可能會變更此區段中的值） 時，必須保留為 0。 其他區段必須設為介於 0 和 65535 （除了第一個區段，不能為 0） 之間的整數。
 
 當從您發佈的提交中選擇 UWP 套件，Microsoft Store 將永遠使用適用於客戶的 Windows 10 裝置的最高版本套件。 這可讓您有更大的彈性，並讓您可以控制對於特定裝置類型的客戶提供哪個套件。 重要的是，您可以任何順序提交這些套件；您並不受限於在每個後續提交提供較高版本的套件。
 

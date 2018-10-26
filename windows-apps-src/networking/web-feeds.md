@@ -6,16 +6,14 @@ ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 82d01ab6fc70397824b4bd6b267dd5e7cdeac0ee
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975800"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559690"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
@@ -48,7 +46,7 @@ ms.locfileid: "975800"
 
 網路隔離會影響 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空間中任何想存取網路的類別元素。 Windows 會主動強制網路隔離。 如果未啟用適當的網路功能，則在 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空間中呼叫類別元素會因為網路隔離而導致網路存取失敗。
 
-建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 開發應用程式時，通常會使用 Microsoft Visual Studio 2015 來新增網路功能。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
+建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 網路功能通常會使用 Microsoft Visual Studio2015，開發應用程式時新增。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
 
 如需網路隔離和網路功能的詳細資訊，請參閱[網路功能基本知識](networking-basics.md)主題中的＜功能＞一節。
 

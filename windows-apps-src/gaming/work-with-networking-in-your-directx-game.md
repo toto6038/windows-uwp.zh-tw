@@ -6,19 +6,18 @@ ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 網路功能, directx
-ms.openlocfilehash: ce94dda0eaf156f1e09fefbd76f50bc764050970
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: cc30a66db3fb01edebf4705ecb2e85ea4dbb94d6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210863"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551339"
 ---
 # <a name="networking-for-games"></a>遊戲的網路功能
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在您的 DirectX 遊戲中開發與納入網路功能。
 
@@ -48,10 +47,10 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 
 適用於遊戲的熱門網路 API 包含：
 
--   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供可用於 Windows 市集遊戲的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
+-   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)類別提供 TCP 通訊端，可以使用 Microsoft Store 遊戲中。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
 -   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供支援 SSL 的 TCP 通訊端。
--   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) 類別提供可用於 Windows 市集遊戲的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
--   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 類別提供用於 Windows 市集遊戲的最新 HTTP 用戶端 API。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
+-   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)類別提供 UDP 通訊端，可以使用 Microsoft Store 遊戲中。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
+-   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)類別提供的現代化 HTTP 用戶端 API 使用 Microsoft Store 遊戲中。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>處理您的 DirectX 遊戲中的網路例外狀況
 

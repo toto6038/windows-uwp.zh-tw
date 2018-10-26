@@ -1,21 +1,19 @@
 ---
 title: 使用 JavaScript 建立 UWP 遊戲
-description: 對於 Microsoft 儲存區，以 JavaScript 和 CreateJS 撰寫遊戲簡單 UWP
+description: 簡單的 UWP Microsoft 網上商店，以 JavaScript 和 CreateJS 撰寫遊戲
 author: GrantMeStrength
 ms.author: jken
 ms.date: 02/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 87625c05ea13dcb8af2c06dfba7b35308200b5eb
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1018608"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558521"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -28,13 +26,13 @@ ms.locfileid: "1018608"
 ## <a name="introduction"></a>簡介
 
 
-發佈應用程式至 Microsoft 存放區表示您可以共用 （或銷售 ！） 數百萬的人員，在許多不同裝置上使用。  
+應用程式發佈至 Microsoft Store，意味著您可以分享 （或賣 ！） 給數百萬使用者，在許多不同的裝置上。  
 
-若要將您的應用程式發佈至 Microsoft 儲存它必須撰寫成 UWP （通用 Windows 平台） 應用程式。 不過 UWP 非常有彈性，可支援各種不同的語言版本及架構。 若要證明這點，此範例是以 JavaScript 撰寫的簡單遊戲，使用數個 CreateJS 程式庫，並示範如何繪圖 Sprite、建立遊戲迴圈、支援鍵盤與滑鼠，以及適應不同的螢幕大小。
+為了將您的應用程式發行至 Microsoft Store，必須撰寫為 UWP （通用 Windows 平台） 應用程式。 不過 UWP 非常有彈性，可支援各種不同的語言版本及架構。 若要證明這點，此範例是以 JavaScript 撰寫的簡單遊戲，使用數個 CreateJS 程式庫，並示範如何繪圖 Sprite、建立遊戲迴圈、支援鍵盤與滑鼠，以及適應不同的螢幕大小。
 
 這個專案是使用 Visual Studio 以 JavaScript 建置而成。 只要某些小變更，它也可以裝載於網站，或是適用於其他平台。 
 
-**附註：** 這是不完整 （或良好 ！） 遊戲;它被設計來示範使用 JavaScript 及協力廠商文件庫來進行應用程式的準備好要發佈到 Microsoft 存放區。
+**注意：** 這並非完整 （或好 ！） 的遊戲;設計目的是示範使用 JavaScript 和協力廠商程式庫，建立可發佈至 Microsoft Store 的 app。
 
 
 ## <a name="requirements"></a>需求
@@ -73,7 +71,7 @@ app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-ap
 
 ## <a name="walkthough"></a>逐步解說
 
-如果您按 F5 開始遊戲時，您可能想知道發生什麼事。 和答案是 「 不許多"許多的程式碼是目前標記為備註延展。到目前為止，所有您會看見是恐龍，並按下空格 ineffectual plea。 
+如果您按 F5 開始遊戲時，您可能想知道發生什麼事。 答案並 「 不多 」，因為許多程式碼是目前已標示註解。到目前為止，您會看到所有是恐龍，以及按下空格鍵的無力請求。 
 
 ### <a name="1-setting-the-stage"></a>1. 設定舞台
 
@@ -92,7 +90,7 @@ EaselJS 為我們提供新的物件，稱為*舞台*。 舞台連結到畫布，
 
 ### <a name="2-loading-the-bitmaps"></a>2. 載入點陣圖
 
-EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立簡單形狀（例如藍色矩形用於天空），或點陣圖（例如我們將要新增的雲朵）、文字物件和 Sprite。 小使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]： 包含多個圖像的單一點陣圖。 例如我們使用這個 SpriteSheet 儲存恐龍動畫的不同畫面：
+EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立簡單形狀（例如藍色矩形用於天空），或點陣圖（例如我們將要新增的雲朵）、文字物件和 Sprite。 Sprite 使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 包含多個影像的單一點陣圖。 例如我們使用這個 SpriteSheet 儲存恐龍動畫的不同畫面：
 
 ![Walking Dino Sprite 工作表](images/JS2D_4.png)
 
@@ -170,7 +168,7 @@ JavaScript 在載入資源時 (例如影像) 需要一點協助，所以我們�
 
 <p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">請參閱由 Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) 發佈到 <a href="http://codepen.io">CodePen</a> 的 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 以動畫顯示雲朵</a>。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
- 
+ 
 若要這樣做的程式碼已在 **main.js** 檔案中，由 CreateJS 程式庫 EaselJS 所提供的。 它的外觀如下：
 
 ```
@@ -259,9 +257,9 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 
 如果您再次執行 app 時，您現在應該可以調整視窗大小，以取得較好的結果。
 
-## <a name="publishing-to-the-microsoft-store"></a>發佈到 Microsoft 存放區
+## <a name="publishing-to-the-microsoft-store"></a>發佈至 Microsoft Store
 
-現在您有 UWP 應用程式時，有可能將它發佈至 Microsoft 存放區 （假設您已先改善 ！） 
+現在您擁有 UWP 應用程式，就可以將它發行至 Microsoft Store （假設您已先將它改進 ！） 
 
 程序有幾個步驟。
 
@@ -269,7 +267,7 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 2. 您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
-如需詳細資訊，請參閱[發佈 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。
+如需詳細資訊，請參閱[發佈您的 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能的建議。
 

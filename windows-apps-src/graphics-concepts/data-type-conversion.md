@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c7f68984274cbdb3adec0a88a0c99f7a7342380
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045111"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556411"
 ---
 # <a name="data-type-conversion"></a>資料類型轉換
 
@@ -37,7 +35,7 @@ ms.locfileid: "1045111"
 | FLOAT | Direct3D 定義的任何表示法中的浮點值。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | SRGB  | 類似 UNORM，對於 n-位元數字，所有 0 都表示 0.0f，所有 1 都表示 1.0f。 不過，與 UNORM 不同的是，若是 SRGB，介於所有 0 到所有 1 之間不帶正負號的整數編碼序列代表數字 (介於 0.0f 到 1.0f) 的浮點轉譯中的非線性數列。 大致來說，如果這個非線性數列 SRGB 顯示為色彩序列，則會顯示為相對於「平均」觀察值的線性亮度等級坡形，在「平均」檢視條件下「平均」顯示。 如需完整的詳細資訊，請參考 IEC (國際電子電機委員會) 的 SRGB 色彩標準 IEC 61996-2-1。                |
 
- 
+ 
 
 上述詞彙常做為「格式名稱修飾詞」，用來描述資料在記憶體中配置的方式，以及於傳輸路徑中要在記憶體與管線單位 (如著色器) 之間來回進行哪些轉換 (可能包括篩選)。
 
@@ -189,7 +187,7 @@ ms.locfileid: "1045111"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanspan-idfixedpointintegerconversionspanfixed-point-integer-conversion"></a><span id="Fixed_Point_Integer_Conversion"></span><span id="fixed_point_integer_conversion"></span><span id="FIXED_POINT_INTEGER_CONVERSION"></span>固定點整數轉換
 
@@ -238,22 +236,22 @@ ms.locfileid: "1045111"
 <td align="left">固定點整數</td>
 <td align="left">FLOAT</td>
 <td align="left"><p>假設要轉換成浮點數的特定固定點表示法未包含總計超過 24 個位元的資訊，則分數元件中不會超過其中的 23 個位元。 假設某個固定點數字 fxp 採用 i.f 形式 (i 位元整數，f 位元分數)。 轉換成浮點數類似下列虛擬程式碼。</p>
-<p>浮動結果 = (float) (fxp &gt; &gt; f) + / / 解壓縮整數</p>
-((float) (fxp &amp; (2<sup>f</sup> - 1)) / (2<sup>f</sup>));解壓縮分數</td>
+<p>浮點數結果 = (float) (fxp &gt; &gt; f) + / / 取整數</p>
+((float) (fxp &amp; (2 個<sup>f</sup> - 1)) / (2 個<sup>f</sup>));取分數</td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [附錄](appendix.md)
 
- 
+ 
 
- 
+ 
 
 
 

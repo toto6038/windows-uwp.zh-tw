@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: cf14efc4c4ec29c98ebebff91493623d55267db5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d7456cd773196520e066062c664f5e3073941dfe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044607"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559390"
 ---
 # <a name="primitive-topologies"></a>基本拓撲
 
@@ -68,7 +66,7 @@ Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點�
 | ![線圈方向的符號](images/d3d10-primitive-topologies-winding-direction.png) | 線圈方向 | 組合基本類型時的頂點排序。 可順時針方向或逆時鐘方向。 |
 | ![前置頂點的符號](images/d3d10-primitive-topologies-leading-vertex.png)       | 前置頂點    | 包含每個常數資料的基本類型中的第一非相鄰頂點。       |
 
- 
+ 
 
 ## <a name="span-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspanspan-idgeneratingmultiplestripsspangenerating-multiple-strips"></a><span id="Generating_Multiple_Strips"></span><span id="generating_multiple_strips"></span><span id="GENERATING_MULTIPLE_STRIPS"></span>產生多條寬帶
 
@@ -86,9 +84,9 @@ Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點�
 
 [圖形管線](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

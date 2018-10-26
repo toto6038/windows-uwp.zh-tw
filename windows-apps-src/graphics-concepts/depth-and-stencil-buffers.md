@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b06baf0eb82ab03e8e592b41159b126dbd0a6523
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e292e0c992edb26da2a92885e1f949d254d75da6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652677"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559548"
 ---
 # <a name="depth-and-stencil-buffers"></a>深度和樣板緩衝區
 
@@ -49,16 +47,16 @@ ms.locfileid: "1652677"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [Direct3D 圖形學習指南](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

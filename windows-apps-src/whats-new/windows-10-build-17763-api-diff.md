@@ -6,15 +6,13 @@ keywords: 新動向，最新動向，更新，Windows 10，最新，api，17763�
 ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aa3e586e82fc5c2da78cc201f772112699a9035
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1e51a7fb64dae42307960aa90f85463d11aecadc
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516336"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559092"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Windows 10 中的新 Api 建置 17763
 

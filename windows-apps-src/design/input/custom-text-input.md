@@ -9,15 +9,13 @@ keywords: 鍵盤, 文字, 核心文字, 自訂文字, 文字服務架構, 輸入
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 734d18d7320ecc3157fbc9896db28989e0791e8d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 14a2811f59b8de33db51b255aee8892abf553198
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655560"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555410"
 ---
 # <a name="custom-text-input"></a>自訂文字輸入
 
@@ -63,7 +61,7 @@ ms.locfileid: "1655560"
 | **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的開始位置是緊接在第一個字元之前的 ACP。 |
 | **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範圍的結束位置是緊接在最後一個字元之後的 ACP。     |
 
- 
+ 
 
 例如，在先前所示的文字範圍中，範圍 [0, 5] 指出 "Hello" 這個字。 **StartCaretPosition** 一律必須小於或等於 **EndCaretPosition**。 範圍 \[5, 0\] 無效。
 
@@ -159,7 +157,6 @@ ms.locfileid: "1655560"
 
 **範例**
 * [自訂編輯控制項範例](https://go.microsoft.com/fwlink/?linkid=831024)
- 
 **封存範例**
 * [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
 

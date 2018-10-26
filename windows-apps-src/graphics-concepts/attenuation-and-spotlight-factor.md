@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18746ef231f7d2b387866fba82e4f12a44476001
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 65b9f6700ddd11c41193820a5247a90c2382c98b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044617"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558177"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>衰減和聚光燈係數
 
@@ -39,7 +37,7 @@ Atten = 1/( att0<sub>i</sub> + att1<sub>i</sub> \* d + att2<sub>i</sub> \* d²)
 | att2<sub>i</sub> | 0.0           | 浮點數 | 二次方衰減因數                    | 0 至 +infinity |
 | d                | N/A           | 浮點數 | 頂點位置至光源位置的距離 | N/A            |
 
- 
+ 
 
 -   若光線為定向光線，則 Atten = 1。
 -   若光線與頂點之間的距離超過光線範圍，則 Atten = 0。
@@ -54,7 +52,7 @@ d = |L<sub>dir</sub> |
 |-----------------|---------------|--------------------------------------------------|-------------------------------------------------------------|
 | L<sub>dir</sub> | N/A           | 3D 向量與 x、y 和 z 浮點值 | 從頂點位置至光線位置的方向向量 |
 
- 
+ 
 
 如果 d 大於光線範圍，Direct3D 不會進一步計算衰減，且不會從光線將效果套用至頂點。
 
@@ -76,7 +74,7 @@ d = |L<sub>dir</sub> |
 | theta<sub>i</sub> | 0.0           | 浮點數 | 焦點 i 在弧度的本影角度    | \[0, pi)                 |
 | falloff           | 0.0           | 浮點數 | Falloff 因數                           | (-infinity, +infinity)   |
 
- 
+ 
 
 其中：
 
@@ -89,7 +87,7 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 | L<sub>dcs</sub> | N/A           | 3D 向量與 x、y 和 z 浮點值 | 相機空間光線方向的負值         |
 | L<sub>dir</sub> | N/A           | 3D 向量與 x、y 和 z 浮點值 | 從頂點位置至光線位置的方向向量 |
 
- 
+ 
 
 計算光線衰減後，為了計算頂點的擴散和反射元件，Direct3D 還會考慮焦點效果 (如適用)、光線從表面反射的角度，以及目前材料的反射係數。 在[[光類型](light-types.md)中，查看「焦點」。
 
@@ -98,9 +96,9 @@ rho = norm(L<sub>dcs</sub>)<sup>.</sup>norm(L<sub>dir</sub>)
 
 [光源的數學計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 887600366fdf1bf3951091df27d10f54516c2bf0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 3e1a015d5d51ad0c15f20755afcb0d324acd1f36
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674545"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556048"
 ---
 # <a name="raw-notification-overview"></a>原始通知概觀
 
@@ -28,7 +26,7 @@ ms.locfileid: "1674545"
 > [!IMPORTANT]
 > 若要了解原始通知，最好能夠熟悉 [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)中討論的概念。
 
- 
+ 
 
 至於使用快顯通知、磚及徽章推播通知時，原始通知是從您應用程式的雲端服務透過指派的通道統一資源識別元 (URI) 推播至 WNS。 然後，WNS 再將通知傳遞至與該通道關聯的裝置和使用者帳戶。 和其他推播通知不同的是，原始通知沒有特定的格式。 裝載的內容完全由應用程式定義。
 
@@ -97,7 +95,7 @@ ms.locfileid: "1674545"
 > [!IMPORTANT]
 > 應用程式必須先透過 [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_) 獲得授予背景存取權，才能使用原始通知背景工作。
 
- 
+ 
 
 您的背景工作必須使用 [**PushNotificationTrigger**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) 進行登錄。 如果沒有登錄，收到原始通知時將不會執行工作。
 
@@ -117,7 +115,7 @@ ms.locfileid: "1674545"
 ## <a name="other-resources"></a>其他資源
 
 
-若要深入了解，您可以下載適用於 Windows 8.1 的[原始通知範例](http://go.microsoft.com/fwlink/p/?linkid=241553)和適用於 Windows 8.1 的[推播與定期通知範例](http://go.microsoft.com/fwlink/p/?LinkId=231476)，並在 Windows 10 應用程式中重複使用其原始程式碼。
+您可以進一步了解透過 Windows8.1，以及[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?LinkId=231476)下載[原始通知的範例](http://go.microsoft.com/fwlink/p/?linkid=241553)，如 Windows8.1，並重複使用其原始程式碼，在 windows 10 應用程式中。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -126,9 +124,9 @@ ms.locfileid: "1674545"
 * [快速入門：攔截執行中應用程式的推播通知](https://msdn.microsoft.com/library/windows/apps/jj709908)
 * [**RawNotification**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**BackgroundExecutionManager.RequestAccessAsync**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_)
- 
+ 
 
- 
+ 
 
 
 

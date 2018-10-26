@@ -5,16 +5,14 @@ title: 開始使用 C++/WinRT
 ms.author: stwhi
 ms.date: 10/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: b8f8425fa602c844803cc632f523949b8b04d551
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483798"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558018"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
@@ -146,7 +144,7 @@ std::wcout << titleAsHstring.c_str() << std::endl;
 #include <winrt/base.h>
 ```
 
-## <a name="linking"></a>連結
+### <a name="linking"></a>連結
 
 C + + /winrt 語言投影取決於特定的 Windows 執行階段免費 （非成員） 函式和進入點，需要的連結到[WindowsApp.lib](/uwp/win32-and-com/win32-apis)傘程式庫。 本章節描述了三種方法可以滿足連結器。
 

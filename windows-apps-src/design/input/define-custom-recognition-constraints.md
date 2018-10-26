@@ -9,15 +9,13 @@ keywords: 語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fdc38c39591a63800eb5d985022bb7ee569d7203
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 86ed884c3e9811c65d414dce6c0697e20dbd4711
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653477"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559304"
 ---
 # <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
 
@@ -182,7 +180,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合全球資訊網協會 (W3C) [語音辨識適用的語意轉譯 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 規格。
+這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合全球資訊網協會 (W3C)[語意的語音辨識轉譯 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765)規格。
 
 如下，我們將接聽各種不同形式的 "yes" 和 "no"。
 
@@ -241,9 +239,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

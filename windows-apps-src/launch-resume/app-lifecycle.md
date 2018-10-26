@@ -7,15 +7,13 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 53cc58930180f5ae7c3ec661feeb42433486afca
-ms.sourcegitcommit: b0b2fa760f4699b79b02e69061d85d529d90ef0a
-ms.translationtype: HT
+ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/23/2018
-ms.locfileid: "1533763"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554958"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) app 週期
 
@@ -60,7 +58,7 @@ App 啟動時，會呼叫 [**OnLaunched**](https://msdn.microsoft.com/library/wi
 |**ClosedByUser** | 使用者在平板電腦模式中，利用關閉手勢或 Alt+F4 關閉 app。 當使用者關閉 app 時，其會遭到暫停，然後才予以終止。 | 因為 app 基本上都是經由相同步驟進入 Terminated 狀態，所以請採用和 Terminated 狀態相同的方式來處理。|
 |**Running** | 當使用者嘗試再次啟動時，app 早已開啟。 | 無。 請注意，並不會啟動另一個 app 執行個體。 只會啟用已在執行中的執行個體。 |
 
-**注意：***目前的使用者工作階段*是以 Windows 登入為基礎。 只要目前的使用者沒有登出、關機，或重新啟動 Windows，目前的使用者工作階段就會跨事件 (例如鎖定畫面驗證、切換使用者等等) 持續存在。 
+**注意：***目前的使用者工作階段*是以 Windows 登入為基礎。 只要目前的使用者沒有登出、關機，或重新啟動 Windows，目前的使用者工作階段就會跨事件 (例如鎖定畫面驗證、切換使用者等等) 持續存在。 
 
 但有一個重要的情況需要注意，如果裝置有足夠的資源，作業系統會預先啟動經常使用且已選擇加入該行為的 app，以讓回應性達到最佳。 預先啟動的 app 會在背景啟動，隨後迅速暫停，以便使用者切換至該 app 時，以比啟動 app 更快的速度繼續。
 
@@ -89,7 +87,7 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 這些方法的事件資料包括上面見到的相同 [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) 屬性，可讓您知道應用程式啟用之前的狀態。 解譯狀態以及您同樣應採取的方式，如上面的 [App 啟動](#app-launch)一節中所述。
 
-**注意：** 如果您使用電腦的 Administrator 帳戶登入，將無法啟用 UWP app。
+**注意：** 如果您使用登入電腦的 Administrator 帳戶，將無法啟用 UWP 應用程式。
 
 ## <a name="running-in-the-background"></a>在背景執行 ##
 
@@ -179,7 +177,7 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 當 app 遭到暫停時，它不會接收到原先登錄要接收的任何網路事件。 這些網路事件不會排入佇列，但是會遺失。 因此，您的 app 在繼續時必須測試網路狀態。
 
-**注意：** 因為不會從 UI 執行緒引發 [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) 事件，如果繼續執行處理常式中的程式碼會與 UI 進行通訊，則必須使用發送器。 如需如何進行的程式碼範例，請參閱[從背景執行緒更新 UI 執行緒](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)。
+**注意：** 如果您繼續執行處理常式中的程式碼會與您的 UI 進行通訊，[**繼續**](https://msdn.microsoft.com/library/windows/apps/br242339)事件不從 UI 執行緒引發，因為必須使用發送器。 如需如何進行的程式碼範例，請參閱[從背景執行緒更新 UI 執行緒](https://github.com/Microsoft/Windows-task-snippets/blob/master/tasks/UI-thread-access-from-background-thread.md)。
 
 如需一般指導方針，請參閱 [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 
@@ -187,9 +185,9 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 使用者通常不需要關閉 app，交由 Windows 管理即可。 不過，使用者可以在 Windows Phone 上，選擇使用關閉手勢，或按 Alt+F4 或使用工作切換器，來關閉 app。
 
-沒有事件可指出使用者已關閉 app。 由使用者關閉 app 時，會先予以暫停，讓您有機會儲存其狀態。 在 Windows 8.1 和更新版本中，使用者關閉 app 之後，只會從畫面和切換清單中移除該 app，但不會明確終止 app。
+沒有事件可指出使用者已關閉 app。 由使用者關閉 app 時，會先予以暫停，讓您有機會儲存其狀態。 在 Windows8.1 和更新版本，由使用者關閉應用程式之後，移除 app 從畫面和切換清單，但不是會明確終止。
 
-**由使用者關閉的行為：** 如果應用程式在由使用者關閉時所需執行的動作，不同於由 Windows 關閉時執行的動作，您可以使用啟用事件處理常式，判斷應用程式是由使用者或由 Windows 終止。 請參閱 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列舉參考資料中有關 **ClosedByUser** 與 **Terminated** 狀態的描述。
+**藉由使用者關閉的行為：** 如果您的應用程式所需動作，不同於由 Windows 關閉時使用者關閉時，您可以使用啟用事件處理常式，判斷應用程式已由使用者或由 Windows 終止。 請參閱 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列舉參考資料中有關 **ClosedByUser** 與 **Terminated** 狀態的描述。
 
 建議您除非絕對有必要，否則不要讓 app 以程式設計的方式自行關閉。 例如，如果 app 偵測到記憶體流失，就可以自行關閉以保護使用者個人資料的安全。
 
@@ -228,6 +226,6 @@ Visual Studio 專案範本中會提供與 app 週期相關的基本程式碼。 
 * [Background activity with the Single Process Model (單一處理序模型的背景活動)](https://blogs.windows.com/buildingapps/2016/06/07/background-activity-with-the-single-process-model/#tMmI7wUuYu5CEeRm.99)
 * [在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)
 
- 
+ 
 
- 
+ 

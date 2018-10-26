@@ -6,16 +6,14 @@ ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.author: kbridge
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ecce3c9e0eee30864c2777b657e9b951a8ab0b06
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 5c9234463ad011cc0b4d289bba9fe1ff1873ed46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393827"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559430"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑動的指導方針
 
@@ -60,16 +58,16 @@ ms.locfileid: "1393827"
 
 針對朝單一方向捲動的清單或集合使用交叉滑動。 如需詳細資訊，請參閱[新增 ListView 控制項](https://msdn.microsoft.com/library/windows/apps/hh465382)。
 
-**注意**  如果內容區域可以雙向移動瀏覽 (例如網頁瀏覽器或電子書閱讀程式)，就應該使用長按計時互動來叫用物件 (例如影像和超連結) 的操作功能表。
+**注意：** 在內容區域可以朝兩個路線指引，例如網頁瀏覽器或電子閱讀程式，其中的情況下應該使用-長按計時的互動來叫用操作功能表，例如影像和超連結的物件。
 
- 
+ 
 
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | ![水平移動瀏覽，二維清單](images/groupedlistview1.png)                | ![垂直移動瀏覽，一維清單](images/listviewlistlayout.png)                |
 | 一個水平移動瀏覽的二維清單。 垂直拖曳以選取或移動項目。 | 一個垂直移動瀏覽的一維清單。 水平拖曳以選取或移動項目。 |
 
- 
+ 
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
@@ -150,9 +148,9 @@ ms.locfileid: "1393827"
 * [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

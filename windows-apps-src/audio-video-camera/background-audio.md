@@ -6,16 +6,14 @@ title: 在背景播放媒體
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f8fdc99355ef5a024757cc2e415b1d259965c1ce
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: f2eb12092d27c0033563ebf8cebbe96f949eadf8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690494"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558028"
 ---
 # <a name="play-media-in-the-background"></a>在背景播放媒體
 本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
@@ -102,9 +100,9 @@ ms.locfileid: "1690494"
 * [與系統媒體傳輸控制項整合](integrate-with-systemmediatransportcontrols.md)
 * [背景音訊範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
 
- 
+ 
 
- 
+ 
 
 
 

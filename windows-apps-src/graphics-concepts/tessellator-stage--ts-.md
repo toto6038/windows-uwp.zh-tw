@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2bdcf77a9c150195a7a4c27a064d26c525472a
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 1d57c60e8cba9be75e936c55800bac93f8df3e30
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044817"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556612"
 ---
 # <a name="tessellator-ts-stage"></a>曲面細分器 (TS) 階段
 
@@ -72,7 +70,7 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
     | 整數              | TessFactor 範圍：\[1..64\] |
     | Pow2                 | TessFactor 範圍：\[1..64\] |
 
-     
+     
 
 由兩個可程式化著色器階段實作鑲嵌：[輪廓著色器](hull-shader-stage--hs-.md)和[網域著色器](domain-shader-stage--ds-.md)。 這些著色器階段是用 HLSL 程式碼 (定義在著色器模型 5 中) 程式化。 著色器目標是：hs\_5\_0 和 ds\_5\_0。 標題建立著色器，然後從已編譯著色器 (當著色器繫結至管線時傳遞至執行階段) 擷取程式碼給硬體。
 
@@ -97,9 +95,9 @@ Direct3D 圖形管線在硬體實作鑲嵌，將工作從 CPU 卸載到 GPU。 �
 
 [圖形管線](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

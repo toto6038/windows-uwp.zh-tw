@@ -6,16 +6,14 @@ ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, directx, 範本
 ms.localizationpriority: medium
-ms.openlocfilehash: e0252607fcc456a1200231b401ca47132664e9c9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: d27e4bb0d643b859958f887133a128572ca31225
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488802"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555390"
 ---
 # <a name="directx-game-project-templates"></a>DirectX 遊戲專案範本
 
@@ -28,12 +26,12 @@ DirectX 與通用 Windows 平台 (UWP) 範本可讓您快速建立做為遊戲�
 
 若要建立專案，您需要：
 
--   [下載 Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 具備圖形程式設計的工具，例如偵錯工具。 如需 DirectX 圖形與遊戲功能及工具的概觀，請參閱[適用於 DirectX 遊戲開發的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
+-   [下載 Microsoft Visual Studio2015](https://www.visualstudio.com/vs-2015-product-editions)。 視覺 Studio2015 具備圖形程式設計，例如偵錯工具的工具。 如需 DirectX 圖形與遊戲功能及工具的概觀，請參閱[適用於 DirectX 遊戲開發的 Visual Studio 工具](set-up-visual-studio-for-game-development.md)。
 
 ## <a name="choosing-a-template"></a>選擇範本
 
 
-Visual Studio 2015 包含三個 DirectX 和 UWP 範本：
+視覺 Studio2015 包含三個 DirectX 和 UWP 範本：
 
 -   DirectX 11 應用程式 (通用 Windows) - DirectX 11 應用程式 (通用 Windows) 範本會建立使用 DirectX 11 直接轉譯為應用程式視窗的 UWP 專案。
 -   DirectX 12 應用程式 (通用 Windows) - DirectX 12 應用程式 (通用 Windows) 範本會建立使用 DirectX 12 直接轉譯為應用程式視窗的 UWP 專案。

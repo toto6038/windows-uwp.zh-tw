@@ -6,18 +6,17 @@ title: 媒體組合和編輯
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 66d14ae9335edcc5535d0dcc37cca2273874f61d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f32d63bf03a469d8282262c358153140587d9033
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210790"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557349"
 ---
 # <a name="media-compositions-and-editing"></a>媒體組合和編輯
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文向您說明如何使用 [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 命名空間中的 API 來快速開發 app，讓使用者從音訊和視訊來源檔案建立媒體組合。 架構的功能包括能夠以程式設計的方式一起新增多個視訊剪輯、新增視訊與影像重疊、新增背景音訊，以及套用音訊與視訊效果。 建立之後，媒體組合可以轉譯為一般媒體檔案來播放或共用，但是組合也可以序列化至磁碟和從磁碟還原序列化，允許使用者載入和修改他們之前建立的組合。 這項功能是以方便使用的 Windows 執行階段介面提供，相較於低階 [Microsoft 媒體基礎](https://msdn.microsoft.com/library/windows/desktop/ms694197) API時，大幅減少執行這些工作所需之程式碼的數量和複雜度。
@@ -152,9 +151,9 @@ ms.locfileid: "210790"
 
 -   如果組合中的媒體檔案不是在您 app 可存取的位置，且不是在 app 的 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) 類別 [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) 屬性中，則在載入組合時會擲回錯誤。
 
- 
+ 
 
- 
+ 
 
 
 

@@ -2,24 +2,22 @@
 author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: 建立 "Hello, world" 應用程式 (JS)
-description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows10 上通用 Windows 平台 (UWP) 的簡單 &amp;\#0034;Hello, world&amp;\#0034; app。
+description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立簡單與 \#0034;Hello，world & \#0034;目標為 windows 10 上通用 Windows 平台 (UWP) 應用程式。
 ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b541f2388fd4980af4b405a89ee6a04b700a3e84
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1692739"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556852"
 ---
 # <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
 
-本教學課程會教您如何使用 JavaScript 和 HTML 來建立目標是 Windows 10 上的通用 Windows 平台 (UWP) 的簡單 Hello, world app。 只要使用 Microsoft Visual Studio 中的單一專案，您便可以建置可在任何 Windows10 裝置上執行的 App。
+本教學課程會教您如何使用 JavaScript 和 HTML 來建立簡單的"Hello，world"應用程式目標為 windows 10 上通用 Windows 平台 (UWP)。 在 Microsoft Visual Studio 中的單一專案，您可以建置在任何 windows 10 裝置執行的應用程式。
 
 > [!NOTE]
 > 本教學課程使用 Visual Studio Community 2017。 如果您使用不同版本的 Visual Studio，它的外觀可能會略有不同。
@@ -27,14 +25,14 @@ ms.locfileid: "1692739"
 
 您將在此處了解如何：
 
--   建立目標是 **Windows 10** 和 **UWP** 的新 **Visual Studio 2017** 專案。
+-   建立新的**Visual Studio 2017**專案目標為**windows 10**和**UWP**。
 -   新增 HTML 和 JavaScript 內容
 -   在本機桌面上使用 Visual Studio 執行專案
 
 ## <a name="before-you-start"></a>開始之前...
 
 -   [什麼是 UWP app？](universal-application-platform-guide.md)。
--   若要完成這個教學課程，您需要 Windows 10 與 Visual Studio 2017。 [開始設定](get-set-up.md)。
+-   若要完成這個教學課程，您需要 windows 10 與 Visual Studio2017。 [開始設定](get-set-up.md)。
 -   我們亦假設您使用的是 Visual Studio 中預設的視窗配置。 如果您變更預設配置，您可以使用 **\[視窗\]** 功能表中的 **\[重設視窗配置\]** 命令來重設它。
 
 ## <a name="step-1-create-a-new-project-in-visual-studio"></a>步驟 1：在 Visual Studio 中建立新專案
@@ -159,7 +157,7 @@ function sayHello() {
 ## <a name="summary"></a>摘要
 
 
-恭喜！您已經建立適用於 Windows 10 和 UWP 的 JavaScript App！ 這是非常簡單的範例，但是，您現在可以開始加入您最愛的 JavaScript 程式庫和架構來建立您自己的應用程式。 因為它是 UWP app，您可以將其發佈至 Microsoft Store。 如需如何新增協力廠商架構的範例，請參閱這些專案：
+恭喜，您已經完成的 JavaScript 應用程式針對 windows 10 和 UWP ！ 這是非常簡單的範例，但是，您現在可以開始加入您最愛的 JavaScript 程式庫和架構來建立您自己的應用程式。 因為它是 UWP app，您可以將其發佈至 Microsoft Store。 如需如何新增協力廠商架構的範例，請參閱這些專案：
 
 * [以 JavaScript 和 CreateJS 撰寫的適用於 Microsoft Store 的簡單 2D UWP 遊戲](get-started-tutorial-game-js2d.md)
 * [以 JavaScript 和 threeJS 撰寫的適用於 Microsoft Store 的 3D UWP 遊戲](get-started-tutorial-game-js3d.md)

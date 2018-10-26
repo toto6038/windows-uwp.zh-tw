@@ -6,23 +6,21 @@ description: 使用者會期望其應用程式保持回應性，並可自在地�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 40833b98483dc0197c651e2ab4bea259742c2858
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 3dfc4e5d3d2741cf36a1a9aae8c0c22feed5305e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894524"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5557226"
 ---
 # <a name="performance"></a>效能
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例有哪些；定義良好效能所代表的意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。 本節說明如何組織您的效能工作流程、修正動畫問題和畫面播放速率問題，以及微調您的啟動時間、頁面瀏覽時間和記憶體使用量。
 
-如果您還沒有這樣做，我們已經知道有一個能夠大幅提升效能的步驟，就是將您的 App 移植到目標 Windows 10。 數個 XAML 最佳化 (例如，[{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) 只可用於 Windows 10 app。 請參閱[移植 app 至 Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321)和 //build/ 工作階段[移至通用 Windows 平台](http://channel9.msdn.com/Events/Build/2015/3-741)。
+如果您還沒有這麼做，在步驟，我們已經看過能夠大幅提升效能的結果是只是您將 app 移植到目標 windows 10。 只在 windows 10 應用程式中提供數個 XAML 最佳化 (例如， [{X:bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783))。 請參閱[移植到 windows 10 的應用程式](https://msdn.microsoft.com/library/windows/apps/Mt238321)和 //build/ 工作階段[移動到通用 Windows 平台](http://channel9.msdn.com/Events/Build/2015/3-741)。
 
 | 主題 | 說明 |
 |-------|-------------|

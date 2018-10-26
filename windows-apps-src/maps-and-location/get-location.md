@@ -4,22 +4,20 @@ title: 取得使用者的位置
 description: 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ms.author: pafarley
-ms.date: 02/08/2017
+ms.date: 11/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 地圖, 位置, 定位功能
-ms.openlocfilehash: f5af2815783568cb234f1196e065f18b145c7e68
-ms.sourcegitcommit: 8c4d50ef819ed1a2f8cac4eebefb5ccdaf3fa898
+ms.localizationpriority: medium
+ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/27/2017
-ms.locfileid: "695742"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558058"
 ---
 # <a name="get-the-users-location"></a>取得使用者的位置
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
@@ -48,7 +46,7 @@ ms.locfileid: "695742"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步驟 1：要求使用者位置的存取權
 
-除非您的 app 具有「免許可定位」功能 (請參閱附註)，否則您必須使用 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法要求使用者位置的存取權，才能嘗試存取位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
+除非您的應用程式具有粗略定位 」 功能 （請參閱附註），您必須要求存取使用者的位置，再嘗試使用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法存取位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -60,7 +58,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
->附註：「免許可定位」功能可讓您的應用程式取得經過刻意模糊處理 (不精確) 的位置，而不需要使用者的明確權限 (但全系統的位置仍必須切換為 **\[開啟\]**)。 若要了解如何在您的 app 中使用免許可定位，請參閱 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx) 類別中的 [**AllowFallbackToConsentlessPositions**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions) 方法。
+>注意： 粗略定位 」 功能可讓您的應用程式取得經過刻意模糊處理 （不精確） 的位置，而不會收到使用者的明確權限 （全系統的位置仍必須切換為**上**，不過）。 若要了解如何利用您的應用程式中的粗略位置，請參閱[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)方法[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)類別中。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步驟 2：取得使用者的位置並登錄位置權限的變更
 
@@ -265,7 +263,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 必須先在裝置上啟用 \[**位置**\]，您的 app 才能存取使用者的位置。 在 \[**設定**\] app 中，確認已開啟下列 \[**位置隱私權設定**\]：
 
--   已將 **此裝置的位置** 設為 **開啟** \(不適用於 Windows 10 行動裝置版\)
+-   **...此裝置的位置**已**開啟 （不適用於 windows 10 行動裝置版）**
 -   已將定位服務設定的 \[**位置**\] 設為 \[**開啟**\]
 -   在 \[**選擇可以使用您的位置的應用程式**\] 底下，將您的 app 設為 \[**開啟**\]
 

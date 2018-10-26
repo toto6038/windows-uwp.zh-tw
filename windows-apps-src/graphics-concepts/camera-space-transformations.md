@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 032518fe793db99309d098b28f2f8e94bbb072ba
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9de6759fb15aef4b32a5e9022a27cab09af300f8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043927"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553493"
 ---
 # <a name="camera-space-transformations"></a>相機空間轉換
 
@@ -49,23 +47,23 @@ L<sub>dir</sub> = norm(V \* Lₚ)，其中參數在下表中定義。
 
 | 參數       | 預設值 | 類型                                          | 描述                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|
-| L<sub>dir</sub> | 無           | 3D 向量 ( x、y 和 z 浮點值) | 從物件頂點到光線的方向向量          |
+| L<sub>dir</sub> | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 從物件頂點到光線的方向向量          |
 | V               | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 相機空間的頂點位置                           |
 | wvMatrix        | 身份識別      | 浮點數值的 4 x 4 矩陣           | 複合矩陣包含全球及檢視轉換 |
-| N               | 無           | 3D 向量 ( x、y 和 z 浮點值) | 頂點標準                                             |
+| N               | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 頂點標準                                             |
 | Lₚ              | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 相機空間的光線位置                            |
 | vMatrix         | 身份識別      | 浮點數值的 4 x 4 矩陣           | 矩陣包含檢視轉換                      |
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [光源的數學計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

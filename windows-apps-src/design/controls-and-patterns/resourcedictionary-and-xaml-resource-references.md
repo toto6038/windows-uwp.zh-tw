@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 399963b0d0c9ef4d3860daf1b090af28c9cf97d0
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: 8b5d2a55610b6cec2f9026a5834b00ad7015a9c6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480624"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555155"
 ---
 # <a name="resourcedictionary-and-xaml-resource-references"></a>ResourceDictionary 與 XAML 資源參考
 
@@ -99,11 +97,13 @@ XAML 資源是從標記參考多次的物件。 資源是在 [ResourceDictionary
 
     <Page.Resources>
         <Style TargetType="Button">
-              <Setter Property="Background" Value="red"/>
+            <Setter Property="Background" Value="Red"/>
         </Style>
-    </Page.Resources> 
+    </Page.Resources>
+    <Grid>
        <!-- This button will have a red background. -->
        <Button Content="Button" Height="100" VerticalAlignment="Center" Width="100"/>
+    </Grid>
 </Page>
 ```
 
@@ -113,9 +113,10 @@ XAML 資源是從標記參考多次的物件。 資源是在 [ResourceDictionary
 
 您可以像存取任何其他字典一樣存取資源字典的成員。
 
-> **注意**&nbsp;&nbsp;當您在程式碼中執行資源查詢時，只有 `Page.Resources` 字典中的資源會被查看。 不同於 [StaticResource 標記延伸](../../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
+> [!WARNING]
+> 當您在程式碼中，只有在資源中執行資源查詢`Page.Resources`字典會被查看。 不同於 [StaticResource 標記延伸](../../xaml-platform/staticresource-markup-extension.md)，此程式碼如果在第一個字典中找不到資源，並不會退而使用 `Application.Resources` 字典。
 
- 
+ 
 
 此範例示範如何從頁面的資源字典抓取 `redButtonStyle` 資源：
 
@@ -203,29 +204,7 @@ sealed partial class App : Application
 
 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) 是控制項可從中繼承的一個基底類別，而且具備 [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 因此，您可以將本機資源字典新增至任何 **FrameworkElement**。
 
-在這裡，資源字典會新增至頁面元素。
-
-```XAML
-<Page
-    x:Class="MSDNSample.MainPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-    <Page.Resources>
-        <x:String x:Key="greeting">Hello world</x:String>
-    </Page.Resources>
-
-    <Border>
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-        <TextBlock Text="{StaticResource greeting}" Foreground="Gray" VerticalAlignment="Center"/>
-    </Border>
-</Page>
-
-```
-
-在這裡，[Page](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [Border](https://msdn.microsoft.com/library/windows/apps/br209250) 都有資源字典，而且它們都有稱為 "greeting" 的資源。 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) 位於 **Border** 內，因此其資源查詢會先查詢 **Border** 的資源，再查詢 **Page** 的資源，最後查詢 [Application](https://msdn.microsoft.com/library/windows/apps/br242324) 資源。 **TextBlock** 將會讀取 "Hola mundo"。
+在這裡，[Page](https://msdn.microsoft.com/library/windows/apps/br227503) 和 [Border](https://msdn.microsoft.com/library/windows/apps/br209250) 都有資源字典，而且它們都有稱為 "greeting" 的資源。 名為 'textBlock2' [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)是內部**框線**，因此其資源查詢會先**框線**資源，然後在**頁面**的資源，然後在[應用程式](https://msdn.microsoft.com/library/windows/apps/br242324)資源。 **TextBlock** 將會讀取 "Hola mundo"。
 
 若要從程式碼存取該元素的資源，請使用該元素的 [Resources](https://msdn.microsoft.com/library/windows/apps/br208740) 屬性。 存取程式碼而不是 XAML 中 [FrameworkElement](https://msdn.microsoft.com/library/windows/apps/br208706) 的資源時，只會在該字典中查看，而不會在父元素的字典中查看。
 
@@ -234,16 +213,25 @@ sealed partial class App : Application
     x:Class="MSDNSample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
     <Page.Resources>
         <x:String x:Key="greeting">Hello world</x:String>
     </Page.Resources>
+    
+    <StackPanel>
+        <!-- Displays "Hello world" -->
+        <TextBlock x:Name="textBlock1" Text="{StaticResource greeting}"/>
 
-    <Border x:Name="border">
-        <Border.Resources>
-            <x:String x:Key="greeting">Hola mundo</x:String>
-        </Border.Resources>
-    </Border>
+        <Border x:Name="border">
+            <Border.Resources>
+                <x:String x:Key="greeting">Hola mundo</x:String>
+            </Border.Resources>
+            <!-- Displays "Hola mundo" -->
+            <TextBlock x:Name="textBlock2" Text="{StaticResource greeting}"/>
+        </Border>
+
+        <!-- Displays "Hola mundo", set in code. -->
+        <TextBlock x:Name="textBlock3"/>
+    </StackPanel>
 </Page>
 
 ```
@@ -254,7 +242,7 @@ sealed partial class App : Application
         public MainPage()
         {
             this.InitializeComponent();
-            string str = (string)border.Resources["greeting"];
+            textBlock3.Text = (string)border.Resources["greeting"];
         }
     }
 ```
@@ -359,7 +347,7 @@ sealed partial class App : Application
 
 </ResourceDictionary>
 
-<!—Dictionary2.xaml -->
+<!-- Dictionary2.xaml -->
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -407,7 +395,7 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 > **注意**&nbsp;&nbsp;常見的做法是在頁面的根層級定義所有直接資源，這樣可以同時利用這個資源查詢行為並使用 XAML 標記樣式慣例。
 
- 
+ 
 
 如果在直接資源中找不到要求的資源，下一個查詢步驟就是檢查 [Application.Resources](https://msdn.microsoft.com/library/windows/apps/br242338) 屬性。 **Application.Resources** 是放置 app 特定資源最佳的位置，可以讓多個頁面在 app 瀏覽結構參考這些資源。
 
@@ -463,7 +451,7 @@ XAML 資源參考的查詢行為是從套用實際用法的物件和它本身的
 
 大部分適用於 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 的案例都是專門使用 XAML 來處理。 您可以在 XAML 檔案內或 UI 定義檔案的一組 XAML 節點中宣告 **ResourceDictionary** 容器和資源。 然後，您可以使用 XAML 資源參考，從 XAML 的其他部分要求這些資源。 儘管如此，還是會有一些特定狀況，是您的 app 想要在執行時使用執行的程式碼來調整 **ResourceDictionary** 的內容，或者至少查詢 **ResourceDictionary** 的內容來查看是否已經定義某個資源。 這些程式碼是在 **ResourceDictionary** 執行個體上進行呼叫的，所以您必須先擷取一個 (透過取得 [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) 擷取物件樹狀目錄某處的直接 ResourceDictionary，或 `Application.Current.Resources`)。
 
-在 C\# 或 Microsoft Visual Basic 程式碼中，可以使用索引子 ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) 在指定的 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 中參考資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 Visual C++ 元件延伸 (C++/CX) 程式碼中，請使用 [Lookup](https://msdn.microsoft.com/library/windows/apps/br208800)。
+在 C\# 或 Microsoft Visual Basic 程式碼中，可以使用索引子 ([Item](https://msdn.microsoft.com/library/windows/apps/jj603134)) 在指定的 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 中參考資源。 **ResourceDictionary** 是字串索引鍵字典，因此索引子會使用字串索引鍵而不是整數索引。 在 VisualC + + 元件延伸 (C + + /CX) 程式碼中，使用[查詢](https://msdn.microsoft.com/library/windows/apps/br208800)。
 
 使用程式碼來檢查或變更 [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794) 時，[Lookup](https://msdn.microsoft.com/library/windows/apps/br208800) 或 [Item](https://msdn.microsoft.com/library/windows/apps/jj603134) 這類 API 的行為不會從直接資源周遊到 app 資源；那是只有在載入 XAML 頁面時才會發生的 XAML 剖析器行為。 在執行階段，索引鍵的範圍與您當時使用的 **ResourceDictionary** 執行個體完全無關。 但是該範圍卻會延伸到 [MergedDictionaries](https://msdn.microsoft.com/library/windows/apps/br208801)。
 
@@ -484,7 +472,7 @@ XAML [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br2087
 
 對於進階案例，您可以實作一個行為與本主題所述之 XAML 資源參考查詢行為不同的類別。 若要這樣做，您需要實作 [CustomXamlResourceLoader](https://msdn.microsoft.com/library/windows/apps/br243327) 類別，然後就可以使用 [CustomResource 標記延伸](https://msdn.microsoft.com/library/windows/apps/mt185580) (而不是使用 [StaticResource](../../xaml-platform/staticresource-markup-extension.md) 或 [ThemeResource](../../xaml-platform/themeresource-markup-extension.md)) 進行資源參考，以存取該行為。 大部分的 app 都不包含要求此作業的案例。 如需詳細資訊，請參閱 [CustomXamlResourceLoader](https://msdn.microsoft.com/library/windows/apps/br243327)。
 
- 
+ 
 ## <a name="related-topics"></a>相關主題
 
 * [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br208794)
@@ -495,9 +483,9 @@ XAML [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/br2087
 * [設定控制項的樣式](xaml-styles.md)
 * [x:Key 屬性](https://msdn.microsoft.com/library/windows/apps/mt204787)
 
- 
+ 
 
- 
+ 
 
 
 

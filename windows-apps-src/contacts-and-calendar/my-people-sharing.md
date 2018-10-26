@@ -5,16 +5,14 @@ author: muhsinking
 ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 00cea51c673f64725c6ada4f1cfb403e2949ed12
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958561"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5554006"
 ---
 # <a name="my-people-sharing"></a>朋友圈分享
 
@@ -107,7 +105,7 @@ if (ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract
 }
 ```
 
-“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您套件系列產品名稱，開啟**Package.appxmanifest**使用預設的編輯器，並尋找"封裝"索引標籤中。Here"App"是可啟動共用目標檢視對應的類別。
+“appId” 是套件系列名稱，後面加上 ‘!’ 及可啟用類別識別碼。 若要尋找您的套件系列名稱，開啟**Package.appxmanifest**使用預設的編輯器，然後尋找 \ [封裝 \] 索引標籤。在這裡，「 應用程式 」 是對應到分享目標檢視的可啟用類別。
 
 ## <a name="running-as-a-my-people-share-target"></a>做為朋友圈分享目標執行
 

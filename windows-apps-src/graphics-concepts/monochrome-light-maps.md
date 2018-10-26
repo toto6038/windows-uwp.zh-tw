@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 67029443f59d87c7f3e38560595dca1b7b399632
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 72bea3badb19991883e2a6cc62463ab2dc58ec4a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043317"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5556320"
 ---
 # <a name="monochrome-light-maps"></a>單色光線對應
 
@@ -30,11 +28,11 @@ ms.locfileid: "1043317"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光線與紋理對應](light-mapping-with-textures.md)
+[光源與紋理對應](light-mapping-with-textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

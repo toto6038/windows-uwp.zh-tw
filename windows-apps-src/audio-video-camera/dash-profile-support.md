@@ -6,16 +6,14 @@ title: 透過 HTTP 的動態彈性資料流 (DASH) 設定檔支援
 ms.author: drewbat
 ms.date: 02/15/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c411d479430f793d85863f66c64758155b8a5758
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 7a4ec9f9e81010d39af496da156afa676f4b3714
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842335"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553284"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>透過 HTTP 的動態彈性資料流 (DASH) 設定檔支援
 
@@ -43,9 +41,9 @@ ms.locfileid: "1842335"
 
 * [媒體播放](media-playback.md)
 * [彈性資料流](adaptive-streaming.md)
- 
+ 
 
- 
+ 
 
 
 

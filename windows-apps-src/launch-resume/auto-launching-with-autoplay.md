@@ -6,22 +6,20 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2271c8029a733e1ab05c19b2110352fee5b04fc2
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 98c537ef3b2a5d002644cc554eae72b89a1799b0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1663948"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558866"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>使用自動播放功能來自動啟動
 
 當使用者將裝置連接至電腦時，您可以使用**自動播放**，讓您的應用程式成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。 當使用者使用透過近接 (輕觸) 方式在兩部電腦之間分享檔案時，您也可以使用 **「自動播放」**，讓您的 app 成為一個選項。
 
-> **注意：** 如果您是裝置製造商，而且想將您的 [Microsoft Store 裝置應用程式](http://go.microsoft.com/fwlink/p/?LinkID=301381)建立關聯為裝置的**自動播放**處理常式，可在裝置中繼資料中識別該應用程式。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的自動播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **注意：** 如果您是裝置製造商，而且您想要將您的[Microsoft Store 裝置應用程式](http://go.microsoft.com/fwlink/p/?LinkID=301381)做為您的裝置的 **「 自動播放 」** 處理常式產生關聯，您可以找出該應用程式在裝置中繼資料中的。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的自動播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
 
 ## <a name="register-for-autoplay-content"></a>登錄自動播放內容
 
@@ -36,7 +34,7 @@ ms.locfileid: "1663948"
 | 分享音樂  | PlayMusicFilesOnArrival |
 | 分享視訊 | PlayVideoFilesOnArrival |
 
- 
+ 
 使用近接感測分享檔案時，**FileActivatedEventArgs** 物件的 **Files** 屬性會包含根資料夾的參照，這個參照包含所有已分享的檔案。
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步驟 1：建立新專案以及新增自動播放宣告
@@ -110,7 +108,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意：** 下列步驟會新增 `DisplayImages` 和 `CopyImages` 方法。
+> **注意：**`DisplayImages`和`CopyImages`方法會在下列步驟新增。
 
 ### <a name="step-4-add-code-to-display-images"></a>步驟 4：新增程式碼以顯示影像
 
@@ -222,7 +220,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  按 F5 以建置和部署 app (偵錯模式)。
 2.  若要執行 app，請將相機中的相機記憶卡或其他存放裝置插入電腦。 然後從自動播放選項清單中選取您在 package.appxmanifest 檔案中指定的其中一個內容事件選項。 這個範例程式碼只會顯示或複製相機記憶卡之 [DCIM] 資料夾中的相片。 如果您的相機記憶卡將相片儲存在 [AVCHD] 或 [PRIVATE\\ACHD] 資料夾中，您必須隨之更新程式碼。
-    **注意：** 如果您沒有任何相機記憶卡，您可以使用快閃磁碟機 (如果其根目錄中有一個名為 **DCIM** 的資料夾，而且該 DCIM 資料夾有一個包含影像的子資料夾)。
+    **注意：** 如果您沒有相機記憶卡，您可以使用快閃磁碟機是否有一個名為根目錄中的 **[dcim]** 資料夾，如果 [dcim] 資料夾的子資料夾，其中包含映像。
 
 ## <a name="register-for-an-autoplay-device"></a>登錄自動播放裝置
 
@@ -231,9 +229,9 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 我們將在此處示範如何在將相機連接到電腦時，將您的 app 識別為 **\[自動播放\]** 選項。 該 app 會登錄為 **WPD\\ImageSourceAutoPlay** 事件的處理常式。 當相機及其他影像裝置通知 Windows 可攜式裝置 (WPD) 系統它們是使用 MTP 的 ImageSource 時，該系統常會引發這個事件。 如需詳細資訊，請參閱 [Windows 可攜式裝置](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
 
-**重要：**[**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API 是[電腦裝置系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 App 僅能在電腦裝置系列 (例如電腦) 中的 Windows 10 裝置上使用這些 API。
+**重要** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面裝置系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 應用程式可以使用這些 Api 只會在傳統型裝置系列，例如電腦中的 windows 10 裝置。
 
- 
+ 
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步驟 1：建立新專案以及新增自動播放宣告
 
@@ -340,7 +338,7 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **注意：** 下列步驟會新增 `ShowImages` 方法。
+> **注意：**`ShowImages`方法會在下列步驟新增。
 
 ### <a name="step-5-add-code-to-display-device-information"></a>步驟 5：新增程式碼以顯示裝置資訊
 
@@ -368,7 +366,7 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **注意：** 下列步驟會新增 `GetImageList` 和 `GetThumbnail` 方法。
+> **注意：**`GetImageList`和`GetThumbnail`方法會在下列步驟新增。
 
 ### <a name="step-6-add-code-to-display-images"></a>步驟 6：新增程式碼以顯示影像
 
@@ -411,7 +409,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 
 1.  按 F5 以建置和部署 app (偵錯模式)。
 2.  若要執行您的 app，請將相機連接到您的電腦。 然後從自動播放選項清單中選取 app。
-    **注意：** 並非所有相機都會針對 **WPD\\ImageSource** 自動播放裝置事件進行公告。
+    **注意：** 並非所有相機都都會針對**WPD\\ImageSource**自動播放裝置事件。
 
 ## <a name="configure-removable-storage"></a>設定卸除式存放裝置
 
@@ -436,8 +434,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 2.  開啟 Package.appxmanifest 檔案，然後選取 \[功能\]**** 索引標籤。選取 \[抽取式存放裝置\]**** 功能。 這可讓 app 存取抽取式存放裝置上的檔案與資料夾。
 3.  在資訊清單檔案中，選取 \[宣告\]**** 索引標籤。在 \[可用宣告\]**** 下拉式清單中選取 \[檔案類型關聯\]****，然後按一下 \[自動播放內容\]****。 選取已經新增至 **\[支援的宣告\]** 清單中的新 **\[自動播放內容\]** 項目。
 
-    **注意**  或者，您也可以選擇為您的自訂自動播放事件新增 **[自動播放裝置]** 宣告。
-    
+    **注意：** 或者，您也可以選擇新增**自動播放裝置**宣告為您自訂的 「 自動播放 」 事件。  
 4.  在您的 **\[自動播放內容\]** 事件宣告的 **\[啟動動作\]** 區段中，為第一個啟動動作輸入下表中的值。
 5.  在 **\[可用宣告\]** 下拉式清單中，選取 **\[檔案類型關聯\]**，然後按一下 **\[加入\]**。 在新 **\[檔案類型關聯\]** 宣告的 \[屬性\] 中，將 **\[顯示名稱\]** 欄位設定成 **Show .ms Files**，並將 **\[名稱\]** 欄位設定成 **ms\_association**。 在 **\[支援的檔案類型\]** 區段中，按一下 **\[加入新的\]**。 將 **\[檔案類型\]** 欄位設定成 **.ms**。 對於內容事件，「自動播放」會過濾掉未明確與您的 app 關聯的所有檔案類型。
 6.  儲存並關閉資訊清單檔案。
@@ -480,9 +477,9 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **注意：** 下列步驟會新增 `DisplayFiles` 方法。
+> **注意：**`DisplayFiles`方法會在下列步驟新增。
 
- 
+ 
 
 ### <a name="step-5-add-code-to-display-folders"></a>步驟 5：新增程式碼以顯示資料夾
 
@@ -558,6 +555,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
   </Applications>
 ```
 
- 
+ 
 
- 
+ 

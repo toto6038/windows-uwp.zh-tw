@@ -6,22 +6,19 @@ description: 透過 UI 虛擬化、減少元素以及漸進式更新項目，改
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cff6e2785434eb4fdb922d8b89b55aca242655f
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816903"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5553643"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 與 GridView UI 最佳化
 
 
-**注意**  
-如需詳細資訊，請參閱 //build/ 演講[使用者與 GridView 與 ListView 中的大量資料互動時大幅提升效能](https://channel9.msdn.com/events/build/2013/3-158)。
+**注意：** 如需詳細資訊，請參閱 //build/ 工作階段[與大量資料 GridView 與 ListView 中的使用者互動時大幅提升效能](https://channel9.msdn.com/events/build/2013/3-158)。
 
 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) 的效能和啟動時間。 如需資料虛擬化技術的資訊，請參閱 [ListView 和 GridView 資料虛擬化](listview-and-gridview-data-optimization.md)。
 
@@ -325,5 +322,5 @@ private void ListView_ChoosingItemContainer
 
 如果使用不同項目範本的項目有不平坦的分佈，很可能需要在移動瀏覽時建立新的項目範本，這會讓虛擬化提供的許多好處無效。 此外，項目範本選取器在評估特定容器是否可供目前的資料項目重複使用時，只考量五個可能的候選項目。 因此您在 app 中使用項目範本選取器之前，應該仔細考量您的資料是否適合。 如果您的集合大部分是同質的，則選取器大部分 (可能幾乎所有) 時間都會傳回相同的類型。 需要注意的是您對該同質化的極少數例外狀況要付出的代價，並考量使用 [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (或兩個項目控制項) 是否會更好。
 
- 
+ 
 

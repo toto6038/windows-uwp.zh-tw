@@ -6,16 +6,14 @@ ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a001f461f78acf79438bb15b03aac00a05f29a3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691617"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555518"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>將 DirectX 9 功能對應到 DirectX 11 API
 
@@ -240,7 +238,7 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="surface-format-mapping"></a>表面格式對應
 
@@ -346,20 +344,20 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   使用著色器中的 .r swizzle 將紅色複製到其他元件，以取得 Direct3D 9 行為。
+<strong>注意：</strong> 使用器.r swizzle 將紅色複製到其他元件，以取得 Direct3D 9 行為的著色器中。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   使用著色器中的 swizzle .rrrg 將紅色複製到 alpha 元件並將綠色移至 alpha 元件，以取得 Direct3D 9 行為。
+<strong>注意：</strong> 使用著色器中的 swizzle.rrrg 將紅色複製，並將綠色移至 alpha 元件，以取得 Direct3D 9 行為。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -402,10 +400,10 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   在 Direct3D 9 中，資料已放大為 255.0f，但這可在著色器中處理。
+<strong>注意：</strong> 在 Direct3D 9 中，資料已放大為 255.0 f，但這可在著色器中處理。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -416,10 +414,10 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   在 Direct3D 9 中，資料已放大為 255.0f，但這可在著色器中處理。
+<strong>注意：</strong> 在 Direct3D 9 中，資料已放大為 255.0 f，但這可在著色器中處理。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -430,10 +428,10 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM 與 DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong>   從 API/硬體的角度來說，DXT1 與 DXT2 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>注意：</strong> 來說，DXT1 與 DXT2 是相同的從 API/硬體的角度。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -444,10 +442,10 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM 與 DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注意</strong>   從 API/硬體的角度來說，DXT3 與 DXT4 是相同的。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
+<strong>注意：</strong> 來說，DXT3 與 DXT4 是相同的從 API/硬體的角度。 唯一的差異在於是否使用已預乘的 alpha，這可由應用程式追蹤，不需要個別格式。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -510,10 +508,10 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   使用著色器中的 .r swizzle 將紅色複製到其他 元件，以取得 D3D9 行為。
+<strong>注意：</strong> 使用器.r swizzle 將紅色複製到其他元件，以取得 D3D9 行為的著色器中。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -584,30 +582,30 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注意</strong>   著色器會取得 UINT 值，但如果需要 Direct3D 9 樣式整數浮點數 (0.0f、1.0f... 255.f)，在著色器中將 UINT 轉換為 float32 即可。
+<strong>注意：</strong> 著色器會取得 UINT 值，但需要如果 Direct3D 9 樣式整數浮點數 （0.0 f、 1.0 f...255.f)，UINT 可以只轉換為 float32 即可在著色器中。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注意</strong>   著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，在著色器中將 SINT 轉換為 float32 即可。
+<strong>注意：</strong> 著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，SINT 可以只轉換為 float32 即可在著色器中。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注意</strong>   著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，在著色器中將 SINT 轉換為 float32 即可。
+<strong>注意：</strong> 著色器會取得 SINT 值，但如果需要 Direct3D 9 樣式整數浮點數，SINT 可以只轉換為 float32 即可在著色器中。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -650,30 +648,30 @@ Microsoft DirectPlay 已過時。 如果您的遊戲使用網路服務，您必�
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   需要功能層級 10.0 或更高的層級
+<strong>注意：</strong> 需要功能層級 10.0 或更高
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注意</strong>   需要功能層級 10.0 或更高的層級
+<strong>注意：</strong> 需要功能層級 10.0 或更高
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

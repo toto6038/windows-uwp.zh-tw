@@ -6,18 +6,17 @@ ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 234d90382fb62e6f0be9683dfb7b01d9fa80a185
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210485"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555217"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 標記延伸
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 透過評估對某個已定義資源的參考，以提供任一 XAML 屬性的值。 資源是在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中定義，而 **StaticResource** 用法會參考該資源在 **ResourceDictionary** 中的索引鍵。
 
@@ -41,8 +40,7 @@ ms.locfileid: "210485"
 
 將 **StaticResource** 解析成資源字典中的項目時所依據的規則，並不屬於本主題說明的範圍。 那些規則取決於參考和資源是否同時存在於範本中，以及是否使用合併的資源字典等等。 如需有關如何定義資源及正確使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) (包括範例程式碼) 的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-**重要**  
-**StaticResource** 不得嘗試對在 XAML 檔案中進一步定義詞彙的資源做向前參考。 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
+**重要** **StaticResource**不得嘗試對做向前參考資源定義詞彙的 XAML 檔案中進一步。 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
 
 嘗試將 **StaticResource** 指定給無法解析的索引鍵，會導致在執行階段擲回 XAML 剖析例外狀況。 設計工具也可能發出警告或錯誤。
 
@@ -79,7 +77,7 @@ ms.locfileid: "210485"
 
 ## <a name="design-time-tools-support-for-the-staticresource-markup-extension"></a>**{StaticResource}** 標記延伸的設計階段工具支援
 
-當您在 XAML 頁面中使用 **{StaticResource}** 標記延伸時，Microsoft Visual Studio 2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值。 例如，一旦輸入 "{StaticResource" 之後，任何來自目前查閱範圍的資源索引鍵就會立即顯示於 IntelliSense 下拉式清單中。 除了您在頁面層級 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和 app 層級 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上擁有的典型資源之外，您也會看到 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)，以及專案正在使用之任何延伸的資源。
+Microsoft Visual Studio2013 可以在 Microsoft IntelliSense 下拉式清單中包含可能的索引鍵值，當您在 XAML 頁面中使用 **{StaticResource}** 標記延伸。 例如，一旦輸入 "{StaticResource" 之後，任何來自目前查閱範圍的資源索引鍵就會立即顯示於 IntelliSense 下拉式清單中。 除了您在頁面層級 ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) 和 app 層級 ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)) 上擁有的典型資源之外，您也會看到 [XAML 佈景主題資源](https://msdn.microsoft.com/library/windows/apps/mt187274)，以及專案正在使用之任何延伸的資源。
 
 一旦資源索引鍵存在於任何 **{StaticResource}** 用法中，**移至定義** \(F12\) 功能就可以立即解析該資源，並為您顯示其定義所在的目錄。 針對佈景主題資源，這會在設計階段移至 generic.xaml。
 

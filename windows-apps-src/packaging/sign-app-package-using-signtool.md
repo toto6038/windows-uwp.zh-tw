@@ -5,17 +5,15 @@ description: 使用 SignTool，手動簽署具憑證的應用程式套件。
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 171f332d-2a54-4c68-8aa0-52975d975fb1
 ms.localizationpriority: medium
-ms.openlocfilehash: c238855f4f018e8e3142509842221c6b9d97fae3
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: adb94257f6a978ba0b5ea56facf3894e2cfae32b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5518182"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558561"
 ---
 # <a name="sign-an-app-package-using-signtool"></a>使用 SignTool 簽署應用程式套件
 

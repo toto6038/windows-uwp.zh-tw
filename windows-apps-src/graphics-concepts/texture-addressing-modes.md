@@ -12,15 +12,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 75aa946f3a0f1259adf1207e9568ca6da783883e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0e817dcc92741ca2e738784f387cfe49399a108c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044747"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552804"
 ---
 # <a name="texture-addressing-modes"></a>紋理定址模式
 
@@ -43,7 +41,7 @@ Direct3D 允許應用程式執行紋理包裹。 請參閱[紋理包裹](texture
 | 鉗位                   | 將紋理限制在 \[0.0, 1.0\] 的範圍內。鉗位模式會套用紋理一次，並且將邊緣像素的色彩延伸。 |
 | 邊框色彩            | 為任何位於 0.0 到 1.0 (含) 範圍之外的紋理座標強制套用*邊框色彩*。                         |
 
- 
+ 
 
 ## <a name="span-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanspan-idwraptextureaddressmodespanwrap-texture-address-mode"></a><span id="Wrap_texture_address_mode"></span><span id="wrap_texture_address_mode"></span><span id="WRAP_TEXTURE_ADDRESS_MODE"></span>覆蓋紋理位址模式
 
@@ -101,9 +99,9 @@ Direct3D 允許應用程式執行紋理包裹。 請參閱[紋理包裹](texture
 
 [紋理](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

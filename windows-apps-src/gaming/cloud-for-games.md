@@ -6,16 +6,14 @@ ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.author: joanlee
 ms.date: 03/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 雲端服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a0ffc3779f604b68c699e30068e07f3461f568d
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 5d15d3e6b6beb773a8d606db7a5d8a17544270be
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700824"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5552180"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
@@ -203,7 +201,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 ## <a name="learning-resources"></a>學習資源
 
 * //組建 2016：[CodeLabs &mdash; 使用 Microsoft Azure App Service 與 Microsoft SQL Azure 後端儲存 Unity 中的遊戲分數](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* //組建 2017：[使用 Microsoft Azure提供世界級遊戲體驗：從 Halo、Hitman 和 Walking Dead 等遊戲學習的課程 (影片)](https://channel9.msdn.com/Events/Build/2017/P4062)
+* 組建 2017年:[提供世界級遊戲體驗使用 Microsoft Azure： 從 Halo、 Hitman 和 WalkingDead （影片） 學習的課程](https://channel9.msdn.com/Events/Build/2017/P4062)
 * 可重複使用的一組設計要使用 Azure GitHub 來支援一般遊戲工作負載的建置組塊、專案、服務及最佳做法：[Azure 上的遊戲建置組塊](https://github.com/MicrosoftDX/nether)
 * [Azure 上的遊戲服務 (影片)](https://channel9.msdn.com/Series/Gaming-Services-on-Azure)
 
@@ -232,6 +230,6 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 * [ID@Xbox](http://www.xbox.com/Developers/id)
 
 
- 
+ 
 
- 
+ 

@@ -5,15 +5,15 @@ description: 了解如何以程式設計方式存取資料夾上傳 API。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
-ms.openlocfilehash: d071a0ff6d228608d7f6c7acdcfd88df38f2c390
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 481ec666c327b15088d8e60577c51fa1697918fe
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210559"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5555122"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>將資料夾上傳到開發目錄
 

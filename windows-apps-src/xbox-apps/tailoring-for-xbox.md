@@ -5,16 +5,14 @@ description: 如何針對 Xbox 最佳化應用程式。
 ms.author: wdg-dev-content
 ms.date: 10/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1794e4b7ddf97b0b5c41ff29295892e512453a07
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 604e6dc5381a36d4dbda70e3435e5cd6fa44cc04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "927253"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551892"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -26,7 +24,7 @@ ms.locfileid: "927253"
 
 ### <a name="do-turn-off-mouse-mode"></a>*請務必：* 關閉滑鼠模式
 
-Xbox 使用者愛其控制站。 若要最佳化控制器輸入，請[停用滑鼠模式](how-to-disable-mouse-mode.md)並啟用方向導覽 (也稱為 [X-Y 焦點](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction))。 留意的焦點設陷] 和 [無法存取的 UI。
+Xbox 使用者喜愛他們的控制器。 若要最佳化控制器輸入，請[停用滑鼠模式](how-to-disable-mouse-mode.md)並啟用方向導覽 (也稱為 [X-Y 焦點](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction))。 注意焦點陷阱和無法存取的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*請務必：* 繪製一個適合 10 英呎體驗的焦點矩形
 
@@ -47,7 +45,7 @@ One of the unique features of Xbox One is that users can snap apps such as Corta
 
 ### <a name="consider-use-tv-safe-colors"></a>*請考慮︰* 使用電視安全色彩
 
-電視無法像電腦監視器一樣處理極端的色調。 請避免在您的 App 中使用高濃度色彩，這樣使用者才不會看到奇怪的條狀效果或褪色的影像。 此外請注意，由於電視之間的差異，在*您的*電視上看起來很棒的色彩，在使用者的電視上看起來可能會非常不同。 請閱讀以了解如何讓您查看對所有人更好的應用程式的[色彩](../design/devices/designing-for-tv.md#colors)！
+電視無法像電腦監視器一樣處理極端的色調。 請避免在您的 App 中使用高濃度色彩，這樣使用者才不會看到奇怪的條狀效果或褪色的影像。 此外請注意，由於電視之間的差異，在*您的*電視上看起來很棒的色彩，在使用者的電視上看起來可能會非常不同。 閱讀以了解如何讓您的應用程式看起來很棒，為每個人的[色彩](../design/devices/designing-for-tv.md#colors)！
 
 ### <a name="remember-you-can-disable-scaling"></a>*請記住：* 您可以停用縮放比例
 
@@ -67,12 +65,12 @@ UWP App 會自動縮放，以確保 UI 元素 (例如控制項與字型) 可在�
 - [UWP 開發 1：建置調適型 UI](https://channel9.msdn.com/Events/Build/2016/L724-R1)
 - [瀏覽器以外的 Web 應用程式：跨平台與跨裝置](https://channel9.msdn.com/Events/Build/2016/B888)
 
-## <a name="app-dev-on-xbox"></a>在 xbox 應用程式的應用程式開發
+## <a name="app-dev-on-xbox"></a>在 Xbox 上的應用程式開發
 
-**在 xbox 應用程式的應用程式開發**事件是適用於開發人員的新功能建置在 xbox 應用程式的應用程式的絕佳起點。
+**在 Xbox 上的應用程式開發人員**事件是適用於開發人員在 Xbox 上建置應用程式的絕佳起點。
 
-* [觀賞記錄工作階段](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
-* [閱讀的部落格文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
+* [觀賞錄製工作階段](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#WatchNow)
+* [閱讀部落格文章](https://developer.microsoft.com/windows/projects/campaigns/app-dev-on-xbox-event#BlogSeries)
 
 ## <a name="see-also"></a>請參閱
 

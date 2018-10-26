@@ -1,6 +1,6 @@
 ---
 title: 對應在磚集區中
-description: 建立資源為串流資源時，組成資源的磚是來自指向磚集區中的位置。 磚集區是記憶體的集區 (場景後方由一或多個配置備份 - 應用程式中看不見)。
+description: 將資源建立為串流資源時，組成資源的磚來自指向磚集區中的位置。 磚集區是記憶體的集區 (場景後方由一或多個配置備份 - 應用程式中看不見)。
 ms.assetid: 58B8DBD5-62F5-4B94-8DD1-C7D57A812185
 keywords:
 - 對應在磚集區中
@@ -8,20 +8,18 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45062f82955b1e353def2eadbeae36d1c9e81ce6
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 24c8787efd108acb2353f6705dbb65a34d358ef2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652657"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558856"
 ---
 # <a name="mappings-are-into-a-tile-pool"></a>對應在磚集區中
 
 
-建立資源為串流資源時，組成資源的磚是來自指向磚集區中的位置。 磚集區是記憶體的集區 (場景後方由一或多個配置備份 - 應用程式中看不見)。 作業系統和顯示器驅動程式管理這個記憶體集區，讓應用程式容易了解磁碟使用量。 指向磚集區中的位置，串流資源對應 64 KB 地區。 這項設定的一個附帶結果是，它可以讓多資源共用及重複使用相同的動態磚，如有需要，也讓相同的動態磚在資源內的不同位置重複使用。
+將資源建立為串流資源時，組成資源的磚來自指向磚集區中的位置。 磚集區是記憶體的集區 (場景後方由一或多個配置備份 - 應用程式中看不見)。 作業系統和顯示器驅動程式管理這個記憶體集區，讓應用程式容易了解磁碟使用量。 指向磚集區中的位置，串流資源對應 64 KB 地區。 這項設定的一個附帶結果是，它可以讓多資源共用及重複使用相同的動態磚，如有需要，也讓相同的動態磚在資源內的不同位置重複使用。
 
 從磚集區彈性填入磚的成本是，該資源必須定義和維護磚集區中的磚對應代表資源所需的動態磚。 您可以變更磚對應。 並非所有資源中的磚每次都需要對應一次。資源可以有 **NULL** 對應。 **NULL** 對應定義為從存取之資源的觀點無法使用磚。
 
@@ -35,7 +33,7 @@ ms.locfileid: "1652657"
 
 假設每個分頁表項目是 64 位元。
 
-最差情況的分頁表點擊單面，若在 Direct3D 11 中有資源限制，假設串流資源是以每一元素 128 位元格式建立 (例如，RGBA 浮點數)，64 KB 磚只包含 4096 像素。 支援的最大值 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小 16384\ * 16384\ * 2048 (但只有單一 Mipmap) 如果使用 64 位元資料表項目完整填入 (不包括 Mipmap)，則分頁表需要約 1 GB 的儲存空間。 新增 Mipmap 會增加完全對應 (最糟情況) 分頁表儲存空間約 1.3GB 的三分之一。
+最糟的分頁表點擊單一表面，指定在 Direct3D11、 有資源限制，假設串流資源是每一元素 128 位元的格式建立 （例如，RGBA 浮點數），因此 64 KB 磚只包含 4096 素。 支援的最大值 [**Texture2DArray**](https://msdn.microsoft.com/library/windows/desktop/ff471526) 大小 16384\ * 16384\ * 2048 (但只有單一 Mipmap) 如果使用 64 位元資料表項目完整填入 (不包括 Mipmap)，則分頁表需要約 1 GB 的儲存空間。 新增 Mipmap 會增加完全對應 (最糟情況) 分頁表儲存空間約 1.3GB 的三分之一。
 
 這種情形存取約 10.6 TB 可定址記憶體。 但可能會限制可定址記憶體數量，這會使數量減少至約 TB 範圍。
 
@@ -64,7 +62,7 @@ ms.locfileid: "1652657"
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="tile-pool-creation.md">建立磚集區</a></p></td>
-<td align="left"><p>應用程式可以在每一個 Direct3D 裝置建立一個或多個磚集區。 每個磚集區的大小總和限制為 Direct3D 11 的資源大小限制，也就是約 1/4 的 GPU RAM。</p></td>
+<td align="left"><p>應用程式可以在每一個 Direct3D 裝置建立一個或多個磚集區。 每個磚集區的大小總和限制為 Direct3D11 的資源大小上限，也就是約 1/4 的 GPU RAM。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="tile-pool-resizing.md">調整磚集區大小</a></p></td>
@@ -77,16 +75,16 @@ ms.locfileid: "1652657"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [建立串流資源](creating-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -5,17 +5,15 @@ description: 了解如何以程式設計方式啟用/停用 Fiddler 追蹤。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 819f039f04d1e0a7fd035b10e3cbe408645e8f4d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "409940"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5558654"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
@@ -24,7 +22,7 @@ ms.locfileid: "409940"
 
 **要求**
 
-您可以檢查是否使用下列的要求裝置上啟用 Fiddler 追蹤。
+您可以檢查以查看使用下列要求在裝置上是否已啟用 Fiddler 追蹤。
 
 方法      | 要求 URI
 :------     | :-----
@@ -44,7 +42,7 @@ GET | /ext/fiddler
 
 **回應**   
 
-- JSON bool 屬性 IsProxyEnabled 哪些規範 proxy 是否已啟用或未。
+- JSON bool 屬性 IsProxyEnabled 哪些規範無論是否啟用 proxy。
 
 **狀態碼**
 
@@ -52,7 +50,7 @@ GET | /ext/fiddler
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 個 | 成功
+200 | 成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 
