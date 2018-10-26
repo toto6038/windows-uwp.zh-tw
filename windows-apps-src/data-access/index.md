@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 資料, 資料庫, 關聯式, 表格, sqlite
 ms.localizationpriority: medium
 ms.openlocfilehash: beca20d358430ecd82cd1bc57459a6f6af36be77
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569860"
+ms.locfileid: "5621674"
 ---
 # <a name="data-access"></a>資料存取
 

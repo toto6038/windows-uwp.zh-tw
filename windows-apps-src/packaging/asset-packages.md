@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 98980e67d24eb96aa55af7fefe10b5e4c2cdfa67
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564895"
+ms.locfileid: "5599075"
 ---
 # <a name="introduction-to-asset-packages"></a>資產套件簡介
 

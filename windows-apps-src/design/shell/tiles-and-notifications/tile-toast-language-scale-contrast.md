@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 89a97342139449b6c333055ec66e8939234a9507
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543599"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5598804"
 ---
 # <a name="tile-and-toast-notification-support-for-language-scale-and-high-contrast"></a>對語言、縮放比例及高對比的磚和快顯通知支援
 

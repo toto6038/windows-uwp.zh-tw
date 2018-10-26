@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: b80eda57ff700d732ba2402582ed6402acca4fc6
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549228"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5605057"
 ---
 # <a name="resource-management-system"></a>資源管理系統
 資源管理系統有建置時間和執行階段的功能。 在建置期間，系統會建立所有不同變體 (使用您的 App 封裝) 的資源的索引。 此索引套件資源索引或 PRI，並且也會包含在您的應用程式套件中。 在執行階段，系統偵測到已生效的使用者與電腦設定，查詢 PRI 中的資訊，並自動載入最符合這些設定的資源。

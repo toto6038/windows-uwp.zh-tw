@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，回應，回應，檢閱
 ms.localizationpriority: medium
 ms.openlocfilehash: f4bad59e298ef65cc7aaf6561b77cc86eeff832e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5550393"
+ms.locfileid: "5640604"
 ---
 # <a name="respond-to-customer-reviews"></a>回應客戶評論
 

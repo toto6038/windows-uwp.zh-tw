@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 多重取樣, direct3d
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5572144"
+ms.locfileid: "5617880"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台 (UWP) app 中的多重取樣
 

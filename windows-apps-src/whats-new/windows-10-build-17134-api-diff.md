@@ -8,11 +8,11 @@ ms.date: 4/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 40a5621dbd5729d31e2b288b912b10c638ca4f36
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5569958"
+ms.locfileid: "5594459"
 ---
 # <a name="new-apis-in-windows-10-build-17134"></a>Windows10 組建 17134 的新 API
 

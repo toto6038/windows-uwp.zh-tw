@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d533f0e28161e17c3a842f6c3c4c6b6ef4a196d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5566089"
+ms.locfileid: "5622007"
 ---
 # <a name="get-daily-app-usage"></a>取得每日應用程式使用量
 

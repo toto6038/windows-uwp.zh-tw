@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5562239"
+ms.locfileid: "5611613"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 
