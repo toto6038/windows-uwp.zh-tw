@@ -6,16 +6,14 @@ ms.assetid: 25e104da-7b79-48b2-ae15-614ba41ca90c
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 遊戲, 計劃, 協助工具, 雲端, 創造營收, 封裝, 技術, 概念, 核准
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bf5a5333203e9f9246987ae22df45aad736699d
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652767"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572337"
 ---
 # <a name="planning-for-uwp-games"></a>UWP 遊戲計劃
 
@@ -59,11 +57,11 @@ ms.locfileid: "1652767"
 </tr>
 </tbody>
 </table>
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

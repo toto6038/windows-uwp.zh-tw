@@ -6,19 +6,18 @@ ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 多重取樣, direct3d
-ms.openlocfilehash: 7748bf4c2d1654dad77d5971487330d3530d9e84
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209176"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572144"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台 (UWP) app 中的多重取樣
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) app 中使用多重取樣。 多重取樣 (也稱為多重取樣消除鋸齒) 是一種用來減少鋸齒邊緣外觀的圖形技術。 這項技術的運作方式，是透過在最終的轉譯目標中繪製比實際更多的像素，然後將數值平均，以維持特定像素中「部分」邊緣的外觀。 如需多重取樣在 Direct3D 中的實際運作方式的詳細說明，請參閱[多重取樣消除鋸齒點陣化規則](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)。
 
@@ -33,7 +32,7 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
 
 1.  呼叫 [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) 以找出哪些 DXGI 格式可與多重取樣一起使用。 提供您的遊戲可用的轉譯目標格式。 轉譯目標與解析目標必須使用相同格式，因此，請同時檢查 [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) 與 **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**。
 
-    **功能層級 9：** 功能層級 9 裝置雖然[保證支援多重取樣轉譯目標格式](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)，但不保證支援多重取樣解析目標。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
+    **功能層級 9:** 雖然功能層級 9 裝置[保證支援多重取樣的轉譯目標格式](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)，多重取樣解析目標不保證支援。 因此，嘗試使用本主題中描述的多重取樣技術之前，這項檢查是必須的。
 
     下列程式碼會檢查所有 DXGI\_FORMAT 值的多重取樣支援：
 
@@ -85,9 +84,9 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     }
     ```
 
-    > **注意**如果您必須檢查區塊式資源緩衝區的多重取樣支援，請改用 [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)。
+    > **注意：** 使用[**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494)而如果您需要檢查的多重取樣支援並排資源的緩衝區。
 
-     
+     
 
 3.  建立含有所需之取樣計數的緩衝區和轉譯目標檢視。 使用相同的 DXGI\_FORMAT、寬度及高度做為交換鏈結，但指定大於 1 的取樣計數，並使用多重取樣材質維度 (例如 **D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**)。 如有需要，您可以重建含有適合多重取樣的新設定的交換鏈結。
 
@@ -206,9 +205,9 @@ Direct3D 功能層級保證支援特定的基本取樣計數功能，並且保�
     hr = m_swapChain->Present(1, 0);
     ```
 
- 
+ 
 
- 
+ 
 
 
 

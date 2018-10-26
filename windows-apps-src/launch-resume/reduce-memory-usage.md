@@ -6,16 +6,14 @@ title: 當應用程式移至背景狀態時減少記憶體使用量
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 983eb3e69e170054fcc7bc87a5f2035cd0541753
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: eef1edc4e5c725756cdef788bf555f706621741d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655490"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572467"
 ---
 # <a name="free-memory-when-your-app-moves-to-the-background"></a>當應用程式移至背景時釋出記憶體
 

@@ -9,15 +9,13 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 471f222bb22293ccb3b66f5387d43b74fc53b910
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7e042a9bbedee3ded0601eda06da8e349c4b788c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653867"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572667"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定語音辨識器語言
 
@@ -60,9 +58,9 @@ var language = SpeechRecognizer.SystemSpeechLanguage;
 
 已安裝的語言會隨著裝置而不同。 如果您要針對特定限制式來使用它，就應該確認該語言是否存在。
 
-**注意** 安裝新的語言套件之後，需要重新開機。 如果不支援或無法完成安裝指定的語言，就會引發例外狀況且錯誤碼為 SPERR\_NOT\_FOUND (0x8004503a)。
+**注意：** 安裝新的語言套件之後，是需要重新開機。 如果不支援或無法完成安裝指定的語言，就會引發例外狀況且錯誤碼為 SPERR\_NOT\_FOUND (0x8004503a)。
 
- 
+ 
 
 勾選 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 類別的這兩個靜態屬性之一，來判斷裝置上支援的語言：
 
@@ -105,9 +103,9 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 **範例**
 
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

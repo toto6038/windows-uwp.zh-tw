@@ -6,16 +6,14 @@ ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c74b05974bcfd9dd8c592d18f6f5fe4ff388f03
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 1fe2460dfc5ab11a9168f1d1d87207d2b9490026
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675345"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572597"
 ---
 # <a name="xaml-syntax-guide"></a>XAML 語法指南
 
@@ -91,7 +89,7 @@ XAML 檔案的根目錄永遠只有一個元素，其中宣告了將會做為某
 </UserControl ...>
 ```
 
-**注意** 某些結構不能被宣告為物件元素。 初始化文字不受支援並且不能當作資源使用。 您必須使用屬性語法，以便在 XAML 中將屬性設成這些值。 這些類型包含：[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 以及 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。
+**注意：** 某些結構不能被宣告為物件元素。 初始化文字不受支援並且不能當作資源使用。 您必須使用屬性語法，以便在 XAML 中將屬性設成這些值。 這些類型包含：[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) 以及 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)。
 
 ## <a name="setting-properties"></a>設定屬性
 
@@ -242,7 +240,7 @@ XAML 中的集合語法看起來像是您正在設定唯讀屬性，但實際上
 
 另一個 XAML 規則是元素的屬性必須能以任何順序設定。 例如，`<Rectangle Height="50" Width="100" />` 和 `<Rectangle Width="100"  Height="50" />` 並無差別。 使用哪個順序只是樣式上的偏好。
 
-**注意** 當您使用設計介面而非 XML 編輯器時，XAML 設計工具常常會將排序慣例升級，但是您可以稍後自由地編輯該 XAML，將屬性重新排序或引進新的排序方式。
+**注意：** XAML 設計工具常常會將排序慣例升級，如果您使用設計介面而非 XML 編輯器中，但您可以自由地編輯該 XAML 更新版本，將屬性重新排序或引進新的。
 
 ## <a name="attached-properties"></a>附加屬性
 
@@ -271,8 +269,8 @@ XAML 透過新增名為「附加屬性」** 的語法元素延伸了 XML 的功�
 
 由於左大括號符號 { 是標記延伸序列的開頭，因此您可以使用逸出序列來指定開頭是 "\{" 的常值字串值。 逸出序列為 "\{\}"。 例如，如果要指定單一左大括號的字串值，請將屬性值指定為 "\{\}\{"。 您也可以使用替代引號 (例如，在以 **""** 分隔的屬性值內使用 **'**) 來提供 "\{" 值做為字串。
 
-**注意** "\\}" 也可以在有引號的屬性內部運作。
- 
+**注意：** 在引號的屬性內時，也適用於 「 \}"。
+ 
 ## <a name="enumeration-values"></a>列舉值
 
 Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成員是讀寫屬性，您就可以提供屬性值來設定這樣的屬性。 您可以透過使用常數名稱的不完整名稱，識別要使用哪個列舉值做為屬性的值。 例如，以下是如何在 XAML 中設定 [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992)：`<Button Visibility="Visible"/>`。 這裡的 "Visible" 是當作字串使用，可直接對應到 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) 列舉的具名常數 **Visible**。
@@ -280,7 +278,7 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 -   請勿使用完整格式，這會沒有作用。 例如，下列是無效的 XAML：`<Button Visibility="Visibility.Visible"/>`。
 -   不要使用常數的值。 換句話說，無論列舉定義為明確或隱含，都不要依賴列舉整數值。 儘管看起來可行，但是這在 XAML 或程式碼中都是一個不好的做法，因為您會依賴可能是暫時性實作的詳細資料。 例如，不要這樣做：`<Button Visibility="1"/>`。
 
-**注意** 在使用 XAML 和使用列舉的 API 參考主題中，在**語法**的**屬性值**區段中按一下列舉類型的連結。 這會連結到列舉頁面，您可以在這裡探索該列舉的具名常數。
+**注意：** 中使用 XAML 和使用列舉的 Api 參考主題，按一下 [**屬性值**] 區段中的**語法**列舉類型連結。 這會連結到列舉頁面，您可以在這裡探索該列舉的具名常數。
 
 列舉可以是旗標的形式，這表示列舉具備 **FlagsAttribute** 屬性。 如果您需要為旗標形式的列舉指定一個值組合來做為 XAML 屬性值，請使用每個列舉常數的名稱，在每個名稱之間加上逗號 (,)，中間不要有空格字元。 旗標形式的屬性在 Windows 執行階段的 XAML 詞彙中並不常用，但是，[**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) 是在 XAML 中設定旗標形式列舉值的支援範例。
 
@@ -290,7 +288,7 @@ Windows 執行階段 API 中的許多屬性都使用列舉做為值。 如果成
 
 ## <a name="xaml-placeholder-conventions-in-windows-runtime-reference"></a>Windows 執行階段參考中的 XAML 預留位置慣例
 
-如果您仔細看過可使用 XAML 的 Windows 執行階段 API 參考主題的任何 **\[語法\]** 區段，可能會看到語法包含非常多的預留位置。 XAML 語法和 C#、Microsoft Visual Basic 或 Visual C++ 元件延伸 (C++/CX) 語法不同，因為 XAML 語法是一種使用語法。 這是在您自己的 XAML 檔案中給予提示的最終用法，但是不要過度限制您可以使用的值。 所以通常用法會描述一種混合常值和預留位置的文法，並在 **\[XAML 值\]** 區段中定義部分預留位置。
+如果您仔細看過可使用 XAML 的 Windows 執行階段 API 參考主題的任何 **\[語法\]** 區段，可能會看到語法包含非常多的預留位置。 XAML 語法是不同於 C#、 Microsoft Visual Basic 或 VisualC + + 元件延伸 (C + + /CX) 語法因為 XAML 語法是一種使用語法。 這是在您自己的 XAML 檔案中給予提示的最終用法，但是不要過度限制您可以使用的值。 所以通常用法會描述一種混合常值和預留位置的文法，並在 **\[XAML 值\]** 區段中定義部分預留位置。
 
 當您在屬性的 XAML 語法中看到類型名稱/元素名稱時，顯示的名稱是原來定義屬性的類型名稱。 但是 Windows 執行階段 XAML 支援以 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 為基礎之類別的類別繼承模型。 因此，您通常可以在類別上使用屬性，該類別並非實際定義類別，而是改為從最初定義屬性 (Property)/屬性 (Attribute) 的類別衍生。 例如，您可以在任何使用深度繼承的 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 衍生類別上，將 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) 設定為屬性。 例如：`<Button Visibility="Visible" />`。 因此，不要照字面解釋任何 XAML 用法語法中顯示的元素名稱；此語法或許能供代表該類別的元素使用，同時也可供代表衍生類別的元素使用。 如果類型在實際用法中極少或不可能顯示為定義元素，該類型名稱在語法中會特別以小寫顯示。 例如，您看到的 **UIElement.Visibility** 語法為：
 
@@ -320,5 +318,5 @@ XAML 用法區段也使用各種一般化的預留位置。 這些預留位置�
 * [XAML 概觀](xaml-overview.md)
 * [XAML 命名空間與命名空間對應](xaml-namespaces-and-namespace-mapping.md)
 * [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)
- 
+ 
 

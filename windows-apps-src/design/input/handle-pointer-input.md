@@ -9,15 +9,13 @@ keywords: pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆,
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a0753081af4128cf2cad3eeff9d8c919c42eb596
-ms.sourcegitcommit: 588171ea8cb629d2dd6aa2080e742dc8ce8584e5
-ms.translationtype: HT
+ms.openlocfilehash: ba685f30eb0cf94314996587073a82440cf6c951
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1895137"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572607"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
@@ -37,7 +35,7 @@ ms.locfileid: "1895137"
 
 > [!NOTE]
 > 裝置特定的資訊也會視您應用程式的需求，從原始 HID 資料升級。
- 
+ 
 
 輸入堆疊上的每個輸入點 (或接觸點) 是利用 [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) 物件來表示，此物件是透過各種不同指標事件處理常式中的 [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) 參數來公開。 如果有多個手寫筆或是多點觸控輸入，就會將每個接觸點視為不同的單一輸入指標。
 
@@ -50,7 +48,7 @@ UWP 應用程式可以接聽下列指標事件：
 
 > [!NOTE]
 > 藉由在指標事件處理常式中的該項目上呼叫 [**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) 來輸入特定 UI 項目的限制指標。 當項目擷取指標時，只有該物件會接收到指標輸入事件，即使指標移動到物件的界限區域以外也一樣。 [**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (按下滑鼠，接觸觸控或手寫筆) 必須為 true，**CapturePointer** 才會成功。
- 
+ 
 
 <table>
 <colgroup>
@@ -79,10 +77,10 @@ UWP 應用程式可以接聽下列指標事件：
 <td align="left"><p><a href="https://msdn.microsoft.com/library/windows/apps/br208965"><strong>PointerCaptureLost</strong></a></p></td>
 <td align="left"><p>在另一個 UI 元素擷取指標、指標被釋放，或另一個指標以程式設計方式被擷取時，即會發生此情況。</p>
 <div class="alert">
-<strong>注意</strong>  沒有對應的指標擷取事件。
+<strong>注意：</strong>沒有對應的指標擷取事件。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -127,7 +125,7 @@ UWP 應用程式可以接聽下列指標事件：
 <p>滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [PointerMoved](https://msdn.microsoft.com/library/windows/apps/br208970) 事件建立指標與該按鈕的次要關聯。</p></td>
 </tr>
 </tbody>
-</table> 
+</table> 
 
 ## <a name="pointer-event-example"></a>指標事件範例
 
@@ -247,8 +245,7 @@ public MainPage()
 -   這個處理常式會管理 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件。 我們將事件新增到事件記錄檔、將指標新增到作用中的指標字典，並顯示指標詳細資料。
 
     > [!NOTE]
-    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件不一定會成對出現。 您的應用程式應接聽和處理可能得出指標向下 (例如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、 以及 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)) 的任何事件。
-         
+    > [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 和 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件不一定會成對出現。 您的應用程式應接聽和處理可能得出指標向下 (例如 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、 以及 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)) 的任何事件。      
 
 ```csharp
 /// <summary>
@@ -330,7 +327,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 -   這個處理常式會管理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件。 我們將事件新增到事件記錄檔，並更新指標詳細資料。
 
     > [!Important]
-    > 滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件進行路由。     
+    > 滑鼠輸入會與第一次偵測到滑鼠輸入時指派的單一指標相關聯。 按一下滑鼠按鈕 (左鍵、滾輪或右鍵) 會透過 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) 事件建立指標與該按鈕的次要關聯。 只在放開相同的滑鼠按鈕時才會觸發 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 事件 (這個事件完成前，沒有其他按鈕可以與該指標關聯)。 由於這個專屬關聯的關係，其他滑鼠按鈕的按一下都會經由 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) 事件進行路由。     
 
 ```csharp
 /// <summary>
@@ -536,7 +533,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 -   這個處理常式會管理 [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 事件。 我們將事件新增到事件記錄檔、從指標陣列移除指標，並更新指標詳細資料。
 
     > [!NOTE]
-    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 可能會取代 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 發生。 指標擷取可能會因為各種原因遺失，包括使用者互動、使用程式設計方式擷取另一個指標、呼叫 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 等。     
+    > [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) 可能會取代 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 發生。 指標擷取可能會因為各種原因遺失，包括使用者互動、使用程式設計方式擷取另一個指標、呼叫 [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 等。     
 
 ```csharp
 /// <summary>
