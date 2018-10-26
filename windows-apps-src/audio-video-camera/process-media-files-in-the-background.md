@@ -6,18 +6,17 @@ title: 在背景處理媒體檔案
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8d3166b40120799818598300a049a4148a40d2cc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 866fedf35aa6f1f585825195b18cdd1fed4bad11
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209303"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548369"
 ---
 # <a name="process-media-files-in-the-background"></a>在背景處理媒體檔案
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) 和背景工作，在背景處理媒體檔案。
@@ -143,9 +142,13 @@ ms.locfileid: "209303"
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-呼叫 **MediaProcessingTrigger** 物件的 [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) 方法來啟動背景工作。 這個方法所傳回的 [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) 物件可讓您知道背景工作是否已順利啟動，如果沒有，則可讓您知道背景工作為什麼沒有啟動。
+當應用程式是一開始就已啟動，如所示**OnNavigatedTo**事件，例如，一般的應用程式會註冊其背景工作。
+
+呼叫 **MediaProcessingTrigger** 物件的 [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) 方法來啟動背景工作。 這個方法所傳回的 [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) 物件可讓您知道背景工作是否已順利啟動，如果沒有，則可讓您知道背景工作為什麼沒有啟動。 
 
 [!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+
+一般的應用程式將會啟動背景工作以回應使用者互動，例如中的 UI 控制項的**Click**事件。
 
 背景工作更新作業的進度時，會呼叫 **OnProgress** 事件處理常式。 您可以利用這個機會以進度資訊更新您的 UI。
 
@@ -156,9 +159,9 @@ ms.locfileid: "209303"
 [!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
 
- 
+ 
 
- 
+ 
 
 
 

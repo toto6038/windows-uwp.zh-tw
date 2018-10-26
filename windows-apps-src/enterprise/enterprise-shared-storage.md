@@ -6,14 +6,14 @@ description: 企業共用存放裝置定義本機資料位置，讓企業營運�
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3f04d00da3fce4674f344129910917e9585e8723
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5236767d4c02d873106c7b1799c8428d84cccd53
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209006"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548908"
 ---
 # <a name="enterprise-shared-storage"></a>企業共用存放裝置
 

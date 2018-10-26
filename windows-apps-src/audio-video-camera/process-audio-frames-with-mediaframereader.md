@@ -6,16 +6,14 @@ title: 使用 MediaFrameReader 處理音訊框架
 ms.author: drewbat
 ms.date: 04/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7606596937c0fa3297c049da1a313c155b1a35b9
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: Auto
+ms.openlocfilehash: d69e8d8cca3932045d4b43d727210f84e816f30b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833110"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542825"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
@@ -85,7 +83,7 @@ ms.locfileid: "1833110"
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)
 * [音訊圖](audio-graphs.md)
- 
+ 
 
 
 

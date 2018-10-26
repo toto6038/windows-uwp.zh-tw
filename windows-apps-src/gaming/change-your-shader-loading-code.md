@@ -6,19 +6,18 @@ ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D, 著色器管線
-ms.openlocfilehash: 20d02d9b9724c0cfd8120d4d38fa476b9efa3bb3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210785"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547119"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -54,7 +53,7 @@ Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.co
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | glCreateShader | 成功載入編譯的著色器物件後呼叫 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)，將 CSO 傳遞給它們做為緩衝區。 |
 
- 
+ 
 
 ## <a name="compiling-a-shader"></a>編譯著色器
 
@@ -66,7 +65,7 @@ Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編
 | glCompileShader                        | 不適用。 在 Visual Studio 中將著色器編譯為 .cso 檔案，並將它們包含在您的套件中。                                                                                     |
 | 使用 glGetShaderiv 取得編譯狀態 | 不適用。 如果編譯過程中發生任何錯誤，請參閱 Visual Studio 的 FX 編譯器 (FXC) 的編譯結果。 如果編譯成功，會建立對應的 CSO 檔案。 |
 
- 
+ 
 
 ## <a name="loading-a-shader"></a>載入著色器
 
@@ -77,7 +76,7 @@ Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ShaderSource  | 成功載入編譯的著色器物件後呼叫 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)。 |
 
- 
+ 
 
 ## <a name="setting-up-the-pipeline"></a>設定管線
 
@@ -91,7 +90,7 @@ OpenGL ES 2.0 擁有「著色器程式」物件，包含多個可執行的著色
 | glUseProgram    | 不適用。 Direct3D 11 不使用著色器程式物件抽象概念。                          |
 | glGetProgramiv  | 使用您建立至 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 的參考。 |
 
- 
+ 
 
 使用靜態 [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 方法建立 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 與 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/dn280493) 的執行個體。
 
@@ -108,7 +107,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &m_d3dContext // Returns the device's immediate context.
@@ -136,7 +135,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
 | glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722)、[**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
- 
+ 
 
 ## <a name="configuring-the-vertex-shaders"></a>設定頂點著色器
 
@@ -149,7 +148,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::VSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476489)                       |
 | glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::VSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh446793)。 |
 
- 
+ 
 
 ## <a name="configuring-the-pixel-shaders"></a>設定像素著色器
 
@@ -162,7 +161,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
 | glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645)。 |
 
- 
+ 
 
 ## <a name="generating-the-final-results"></a>產生最終結果
 
@@ -174,7 +173,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)、[**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (或 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 上的其他 Draw\* 方法)。 |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="porting-glsl-to-hlsl"></a>將 GLSL 移植到 HLSL
 
@@ -186,7 +185,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | Direct3D 11 HLSL          | ~4.30。                                                                                                                                                                                                                    | SM 5.0                |
 | 適用於 OpenGL ES 2.0 的 GLSL ES | 1.40。 適用於 OpenGL ES 2.0 的 GLSL ES 較舊實作版本可使用 1.10 到 1.30。 使用 glGetString(GL\_SHADING\_LANGUAGE\_VERSION) 或 glGetString(SHADING\_LANGUAGE\_VERSION) 檢查您的原始程式碼加以判斷。 | ~SM 2.0               |
 
- 
+ 
 
 如需這兩個著色器語言之差異與共用語法對應的詳細資訊，請閱讀 [GLSL-to-HLSL 參考](glsl-to-hlsl-reference.md)。
 
@@ -209,7 +208,7 @@ Direct3D 11 HLSL 語意是 Uniform 或屬性名稱這類字串，用來識別在
 | gl\_FragColor       | COLOR(n)，適用於提供給著色器的 RGBA 色彩資料。 請注意，此語意的處理方式與座標資料相同；該語意僅協助您識別其為色彩資料。 |
 | gl\_FragData\[n\]   | SV\_Target\[n\]，適用於從像素著色器寫入目標紋理或其他像素緩衝區。                                                                               |
 
- 
+ 
 
 您用來編寫語意程式碼的方法與在 OpenGL ES 2.0 中使用內建不同。 在 OpenGL 中，您不需要任何設定或宣告即可直接存取許多內建；但在 Direct3D，您必須宣告特定常數緩衝區中的欄位才能使用特殊語意，或者將欄位宣告為著色器的 **main()** 方法的傳回值。
 
@@ -246,9 +245,9 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 如需在 Direct3D 使用語意的詳細資訊，請閱讀 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
 
- 
+ 
 
- 
+ 
 
 
 

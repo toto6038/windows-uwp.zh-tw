@@ -6,19 +6,18 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 非同步程式設計, DirectX
-ms.openlocfilehash: fe3798e475654d4d0ae7773ac26889906d40b3df
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9f395136ff7f331f58b9c8e0ac1ee9efea296c02
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209165"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547003"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>非同步程式設計 (DirectX 和 C++)
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本主題包含搭配 DirectX 使用非同步程式設計與執行緒處理時應考量的各個重點。
 
@@ -39,9 +38,9 @@ ms.locfileid: "209165"
 
 您的 App 可以在多個並行執行緒上處理這些元件。 檔案 I/O (特別是資產載入) 可從非同步載入中獲益甚大，因為您的遊戲或 app 可以保持互動狀態，並同時載入或串流處理數 MB (或數百 MB) 的資產。 建立與管理這些執行緒最簡單的方式是使用[平行模式程式庫](https://msdn.microsoft.com/library/dd492418.aspx)和 **task** 模式，如同 PPLTasks.h 中定義之 **concurrency** 命名空間中所包含的。 使用[平行模式程式庫](https://msdn.microsoft.com/library/dd492418.aspx)可以直接利用多核心與超執行緒 CPU，也可以改善因大量 CPU 計算或網路處理所造成的感覺載入時間過長及延遲等狀況。
 
-> **注意：** 在通用 Windows 平台 (UWP) app 中，使用者介面完全在單一執行緒 Apartment (STA) 中執行。 如果您是為使用 [XAML 互通性](directx-and-xaml-interop.md)的 DirectX 遊戲建立 UI，則只能使用 STA 來存取控制項。
+> **注意：** 在通用 Windows 平台 (UWP) 應用程式中，使用者介面完全在單一執行緒 apartment (STA) 中執行。 如果您是為使用 [XAML 互通性](directx-and-xaml-interop.md)的 DirectX 遊戲建立 UI，則只能使用 STA 來存取控制項。
 
- 
+ 
 
 ## <a name="multithreading-with-direct3d-devices"></a>使用 Direct3D 裝置的多執行緒
 
@@ -64,9 +63,9 @@ ms.locfileid: "209165"
 
 * [Direct3D 11 中的多執行緒簡介](https://msdn.microsoft.com/library/windows/desktop/ff476891)
 
- 
+ 
 
- 
+ 
 
 
 

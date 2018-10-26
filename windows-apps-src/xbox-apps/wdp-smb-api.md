@@ -5,15 +5,15 @@ description: 了解如何以程式設計方式存取 SMB API。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 1f0eb76e-fe3e-4674-a27e-229beec7e63d
-ms.openlocfilehash: 1bc02780808d5b9fca09576165f428eca1cce715
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 2a337fe722d73a08c1c75a84478fc31e5bdf6b03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210463"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548142"
 ---
 # <a name="developer-folder-api-reference"></a>開發人員資料夾 API 參考   
 您可以使用標準的 &#91;檔案總管&#93; 存取您 Xbox One 上的開發相關檔案。 這可讓您從電腦針對主機輕鬆檢視並取代檔案。

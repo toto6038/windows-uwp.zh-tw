@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b24b50c18716f14c58244e52bbb77668760b042
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: b38dc50f38276fb367402b230e6199fbabdcef80
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045037"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549601"
 ---
 # <a name="swap-chains"></a>交換鏈結
 
@@ -34,7 +32,7 @@ Direct3D 實作兩個選項來避免撕裂：
 
 -   一個選項只允許垂直折返（或垂直同步）作業的監視器更新。 監視器通常藉由水平移動光針來重新整理其影像，從監視器左上角開始以 Z 字形移至監視器右下方。 當光針到達底部時，監視器會將光針移回至左上角，重新校正光針，讓此程序可以重新開始。
 
-    此重新校準稱為垂直同步處理。垂直的同步處理期間監視器不繪圖任何項目，所以直到監視器啟動重新繪製不會看到前端緩衝區任何更新。 垂直同步相當慢。不過，不會太慢而無法在等待時轉譯複雜的場景。 避免撕裂所需，並且可以呈現複雜場景的程序，稱為背景緩衝。
+    這個重新校正稱為垂直同步。在垂直同步時，監視器不繪製任何項目，所以將不會看到任何更新至前端緩衝區，直到監視器重新繪製為止。 垂直同步相當慢。不過，不會太慢而無法在等待時轉譯複雜的場景。 避免撕裂所需，並且可以呈現複雜場景的程序，稱為背景緩衝。
 
 -   一個選項使用稱為背景緩衝的技術。 背景緩衝是將場景繪製到螢幕外表面（稱為背景緩衝區）的程序。 前端緩衝區以外的任何表面都稱為螢幕外表面，因為監視器永遠不會直接檢視它。
 
@@ -54,9 +52,9 @@ Direct3D 實作兩個選項來避免撕裂：
 
 [裝置](devices.md)
 
- 
+ 
 
- 
+ 
 
 
 

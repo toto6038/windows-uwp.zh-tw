@@ -6,16 +6,14 @@ ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a4303075bb9fc8133ab40a0fb48b3742c1f2637
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656173"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546521"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空間與命名空間對應
 
@@ -65,7 +63,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 -   **d:DesignHeight 和 d:DesignWidth 屬性：** 這些屬性有時會套用到 Visual Studio 或其他 XAML 設計工具介面為您建立的 XAML 檔案的根元素。 例如，如果您將一個新的 **UserControl** 新增到您的應用程式專案，系統就會在已建立的 XAML 的 [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) 根元素上設定這些屬性。 這些屬性可以讓您更容易設計 XAML 內容的組合，讓您可以預期到一旦將該 XAML 內容用於控制項執行個體或較大 UI 頁面的其他部分時，可能會有的一些配置限制。
 
-   **注意** 如果您是要從 Microsoft Silverlight 移轉 XAML，則在呈現整個 UI 頁面的根元素上可能會有這些屬性。 在這個情況下，您可能想要移除這些屬性。 在設計能夠良好處理縮放和檢視狀態的頁面配置上，XAML 設計工具的其他功能 (例如模擬器) 比起使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小頁面配置來得有用。
+   **注意：** 如果您從 Microsoft Silverlight 移轉 XAML，呈現整個 UI 頁面的根元素上仍可能會有這些屬性。 在這個情況下，您可能想要移除這些屬性。 在設計能夠良好處理縮放和檢視狀態的頁面配置上，XAML 設計工具的其他功能 (例如模擬器) 比起使用 **d:DesignHeight** 和 **d:DesignWidth** 的固定大小頁面配置來得有用。
 
 -   **d:DataContext 屬性：** 您可以在頁面根元素或控制項上設定這個屬性，覆寫物件在其他情況下所具有的任何明確或繼承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
 -   **d:DesignSource 屬性：** 指定 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 的設計階段資料來源，會覆寫 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
@@ -118,5 +116,5 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 * [在 C# 和 Visual Basic 中建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
 * [Windows 執行階段應用程式的 C#、VB 及 C++ 專案範本](https://msdn.microsoft.com/library/windows/apps/hh768232)
 * [將 Silverlight 或 WPF XAML/程式碼移轉到 Windows 執行階段應用程式](https://msdn.microsoft.com/library/windows/apps/br229571)
- 
+ 
 

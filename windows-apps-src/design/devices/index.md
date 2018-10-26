@@ -9,15 +9,13 @@ keywords: 裝置, 輸入, 互動
 ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c36e60d0435db6536ea7bb0eee3011937668cb7
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 6f5e6c96c67052f1933bf4fb69988ae1eae27ee0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395387"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550833"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 
@@ -133,7 +131,7 @@ UI 考量
 
 所有計算裝置中最為廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-透過 Continuum 手機版 (此為適用於可相容之 Windows 10 行動裝置的新體驗)，使用者可將其手機連接到監視器，甚至使用滑鼠和鍵盤來讓手機可像膝上型電腦一樣運作 (如需詳細資訊，請參閱 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
+Continuum 手機，適用於相容的 windows 10 行動裝置，新的體驗與使用者可將其手機連接到監視器和甚至使用滑鼠和鍵盤，來讓手機可以像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
 
 螢幕大小
 -   手機 (4 吋 到 5 吋)
@@ -166,7 +164,7 @@ UI 考量
 -   動作感應器
 -   定位感應器
 
- 
+ 
 
 ## <a name="surface-hub-devices"></a>Surface Hub 裝置
 
@@ -199,7 +197,7 @@ UI 考量
 -   相機
 -   麥克風
 
- 
+ 
 
 ## <a name="windows-iot-devices"></a>Windows IoT 裝置
 

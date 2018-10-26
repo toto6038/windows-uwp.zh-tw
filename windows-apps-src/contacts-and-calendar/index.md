@@ -6,16 +6,14 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, contacts, calendar, appointments, email messages, 連絡人, 行事曆, 約會, 電子郵件訊息
 ms.localizationpriority: medium
-ms.openlocfilehash: 2224ab78d5f3424904dfc2e211d9890648080574
-ms.sourcegitcommit: c0f58410c4ff5b907176b1ffa275e2c202f099d4
-ms.translationtype: HT
+ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "1905333"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549320"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡人、朋友圈及行事曆
 
@@ -35,7 +33,7 @@ ms.locfileid: "1905333"
 | [朋友圈分享](my-people-sharing.md) | 顯示如何新增朋友圈分享的支援，讓使用者可以將內容與其釘選的連絡人分享，做法是將檔案從檔案總管拖曳到其 \[朋友圈\] 釘選。 |
 | [朋友圈通知](my-people-notifications.md) | 顯示如何建立使用朋友圈通知，這是一種新的快顯通知，是從釘選的連絡人傳送。 |
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 

@@ -8,23 +8,21 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fbd6566afeff365a91c5d2ee670c0cafcb3def0
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395007"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546240"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
 
 針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。
 
- 
+ 
 
 ![滑鼠](images/input-patterns/input-mouse.jpg)
 
@@ -69,10 +67,10 @@ ms.locfileid: "1395007"
 <td align="left"><p>按滑鼠右鍵選取與命令</p></td>
 <td align="left"><p>按滑鼠右鍵可顯示其中包含全域命令的瀏覽列 (如果有的話) 和應用程式列。 在某個元素上按一下滑鼠右鍵即可選取該元素，並且顯示其中包含所選元素之操作命令的應用程式列。</p>
 <div class="alert">
-<strong>注意</strong>  如果「選取」或「應用程式列命令」不是適當的 UI 行為，則以按滑鼠右鍵來顯示操作功能表。 我們強烈建議您針對所有命令行為使用應用程式列。
+<strong>注意：</strong>以按滑鼠右鍵來顯示操作功能表，如果選取 」 或 「 應用程式列命令 」 不是適當的 UI 行為。 我們強烈建議您針對所有命令行為使用應用程式列。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -100,7 +98,7 @@ ms.locfileid: "1395007"
 
 使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件實作基本的輸入功能，不必為每一種指標輸入裝置撰寫程式碼。 不過，您仍然可以透過使用此物件的指標、手勢及操作事件，利用每個裝置的特殊功能 (例如滑鼠滾輪事件)。
 
-**範例：** 請參閱[應用程式範例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中此功能的執行方式。
+**範例：** 請參閱我們的[應用程式範例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中的動作中此功能。
 
 
 - [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -153,10 +151,10 @@ ms.locfileid: "1395007"
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
- 
+ 
+ 
 
- 
+ 
 
 
 

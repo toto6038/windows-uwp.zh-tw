@@ -6,23 +6,19 @@ keywords: uwp app layout, universal windows platform, app design, interface, uwp
 ms.author: mijacobs
 ms.date: 3/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d092a3fe1120dc5763b5c30ed834c1902a1f8752
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 22ab5ad60ed397092e61f2c43cde4eb2e0c86c4f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842375"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550462"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP app 設計基本知識
 
 ![主角圖像](images/header-design-basics.svg)
 
 通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 這不是一份詳盡規則的清單，這份文件會隨著不斷演進的 Fluent Design 系統以及我們 app 建置社群的需求改變。 
-
-<!-- This introduction provides an overview of the Fluent Design System, UWP app design basics, and the XAML platform, helping you build user interfaces (UI) that scale beautifully across a range of devices. -->
 
 ## <a name="overview"></a>概觀
 

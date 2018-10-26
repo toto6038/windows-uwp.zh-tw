@@ -5,16 +5,14 @@ title: 管理提交選項
 ms.author: wdg-dev-content
 ms.date: 05/09/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 發佈暫停, 發佈日期, 傳送提交以發佈, 受限制的功能核准
 ms.localizationpriority: medium
-ms.openlocfilehash: 147f34c40cc5d2b612dcdd92edc0c76340cf58f7
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 51b816ece884f1464d0dbf039aef5d80e2ca7341
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470478"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548442"
 ---
 # <a name="manage-submission-options"></a>管理提交選項
 

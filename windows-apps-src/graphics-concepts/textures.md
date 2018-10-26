@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c8d48114a6d4bc7386951264a5fc94990bd0b7f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 516a15c17546d9f9b5e7cb7f8c0651f1372275ae
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653037"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545145"
 ---
 # <a name="textures"></a>紋理
 
@@ -66,11 +64,11 @@ ms.locfileid: "1653037"
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="texture-blending.md">紋理混色</a></p></td>
-<td align="left"><p>Direct3D 在單一階段中最多可以將八個紋理混合到原始物件上。 使用多重紋理混合可大幅增加 Direct3D 應用程式的畫面播放速度。 應用程式藉由使用多重紋理混合，在單一階段中套用紋理、陰影、反射光源、擴散光源等其他特殊效果。</p></td>
+<td align="left"><p>Direct3D 在一個階段中最多可以將八個紋理混合到原始物件上。 使用多重紋理混合可大幅增加 Direct3D 應用程式的畫面播放速度。 應用程式藉由使用多重紋理混合，在單一階段中套用紋理、陰影、反射光源、擴散光源等其他特殊效果。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="light-mapping-with-textures.md">光線與紋理對應</a></p></td>
-<td align="left"><p>光線貼圖是一個紋理或一組紋理，其包含了 3D 場景中的光源相關資訊。 光線對應將光線和陰影對應到基本類型。 多階段及多重紋理混合可讓您的應用程式以比著色技術更逼真的外觀，對場景進行轉譯。</p></td>
+<td align="left"><p>光線對應為紋理或紋理群組，其包含 3D 場景中的照明相關資訊。 光線對應將光線和陰影對應到基本類型。 多階段及多重紋理混合可讓您的應用程式以比著色技術更逼真的外觀，對場景進行轉譯。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><a href="compressed-texture-resources.md">壓縮紋理資源</a></p></td>
@@ -79,16 +77,16 @@ ms.locfileid: "1653037"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [Direct3D 圖形學習指南](index.md)
 
- 
+ 
 
- 
+ 
 
 
 

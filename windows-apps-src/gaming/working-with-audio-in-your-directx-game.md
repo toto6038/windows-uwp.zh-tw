@@ -6,16 +6,14 @@ ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 音訊, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 2770e48720f3024908835aa26579ea1b4b3d3903
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654487"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551041"
 ---
 # <a name="audio-for-games"></a>遊戲的音訊
 
@@ -109,7 +107,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xaudio2-how-to-resources"></a>XAudio2「使用方法」資源
 
@@ -196,7 +194,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="media-foundation-resources"></a>媒體基礎資源
 
@@ -257,7 +255,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="windows-runtime-xaml-media-types"></a>Windows 執行階段 XAML 媒體類型
 
@@ -298,7 +296,7 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="reference"></a>參考資料
 
@@ -307,16 +305,16 @@ XAudio2 是 DirectX 的音訊混合程式庫，主要用於開發高效能的遊
 -   [XAudio2 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 -   [Microsoft 媒體基礎概觀](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 
 
 -   [XAudio2 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/ee415737)
 
- 
+ 
 
- 
+ 
 
 
 

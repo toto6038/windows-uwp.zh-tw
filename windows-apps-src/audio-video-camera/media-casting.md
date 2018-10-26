@@ -6,18 +6,17 @@ title: 媒體傳播
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8ba90e1538962fdb7ef1434698ea52845713c634
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209334"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543296"
 ---
 # <a name="media-casting"></a>媒體傳播
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
@@ -80,7 +79,7 @@ ms.locfileid: "209334"
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
+在 **ErrorOccurred** 和 **StateChanged** 事件處理常式中，您應該更新 UI 讓使用者知道目前的傳播狀態。 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
@@ -148,7 +147,7 @@ In the **ErrorOccurred** and **StateChanged** event handlers, you should update 
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
+在 **ErrorOccurred** 事件的處理常式中，更新 UI 讓使用者知道發生傳播錯誤，並取消選取清單方塊中目前的 **CastingDevice** 物件。
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
@@ -156,9 +155,9 @@ In the handler for the **ErrorOccurred** event, update your UI to let the user k
 
 [!code-cs[DisconnectButton](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 
- 
+ 
 
- 
+ 
 
 
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 292adb2f06022fbb8fc063c49442cd69ccf64534
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 245581e4eb2a8526b242feadb5877590283e24f9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044137"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549925"
 ---
 # <a name="texture2d-and-texture2darray-subresource-tiling"></a>Texture2D 和 Texture2DArray 子資源拼接
 
@@ -38,7 +36,7 @@ ms.locfileid: "1044137"
 | BC1,4                       | 512 x 256                       |
 | BC2,3,5,6,7                 | 256 x 256                       |
 
- 
+ 
 
 不受串流資源支援的格式位元計算包括了 96 bpp 格式、視訊格式、DXGI\_FORMAT\_R1\_UNORM、DXGI\_FORMAT\_R8G8\_B8G8\_UNORM，以及 DXGI\_FORMAT\_R8R8\_G8B8\_UNORM。
 
@@ -55,7 +53,7 @@ ms.locfileid: "1044137"
 | 8                           | 4 x 2                           |
 | 16                          | 4 x 4                           |
 
- 
+ 
 
 只有樣本數 1 及 4 必須 (並且允許) 受到串流資源支援。 串流資源目前不支援 2、8，和 16，即使其仍會顯示。
 
@@ -68,11 +66,11 @@ ms.locfileid: "1044137"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源區域的拼接方式](how-a-streaming-resource-s-area-is-tiled.md)
+[如何拼貼串流資源區域](how-a-streaming-resource-s-area-is-tiled.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: ad1ba185e70a34a4e7bfed0609412ac7bbca2d4a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: fdaa8cd73bb2f1199e7214206ec2b0b52628a906
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653687"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550919"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>適用於 UWP 應用程式的控制項和模式
  
@@ -32,20 +30,19 @@ ms.locfileid: "1653687"
 
 以 XAML 和 C# 新增控制項並設定其樣式的一般指示。
 
-<div class="side-by-side">
-<div class="side-by-side-content">
-  <div class="side-by-side-content-left">
-   <p><b><a href="controls-and-events-intro.md">新增控制項和處理事件</a></b> <br/>
-將控制項新增到應用程式有 3 個主要步驟︰將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</li>
-</ul> 
-</p>
-  </div>
-  <div class="side-by-side-content-right">
-   <p><b><a href="xaml-styles.md">設定控制項的樣式</a></b> <br/>
+:::row:::
+    :::column:::
+      <p><b><a href="controls-and-events-intro.md">新增控制項和處理事件</a></b> <br/>
+將控制項新增到應用程式有 3 個主要步驟︰將控制項新增到應用程式 UI、在控制項上設定屬性，以及將程式碼新增到控制項的事件處理常式以便使其執行某些功能。</p>
+    :::column-end:::
+    :::column:::
+      <p><b><a href="xaml-styles.md">設定控制項的樣式</a></b> <br/>
 您可以使用 XAML 架構，以許多方式自訂 app 的外觀。 樣式可讓您設定控制項屬性，並在多個控制項重複使用這些設定來擁有一致的外觀。</p>
-  </div>
-</div>
-</div>
+    :::column-end:::
+:::row-end:::
+
+## <a name="get-the-windows-ui-library"></a>取得 Windows UI 文件庫
+有些控制項只都可在 Windows UI 文件庫中。 若要取得它，請參閱[Windows UI 文件庫概觀和安裝指示](/uwp/toolkits/winui/)。
 
 ## <a name="alphabetical-index"></a>依字母排序的索引 
 
@@ -67,7 +64,7 @@ ms.locfileid: "1653687"
 
 <li style="list-style-type: none;"><a href="date-and-time.md">日期和時間控制項</a></li>
 
-<li style="list-style-type: none;"><a href="dialogs.md">對話方塊和飛出視窗</a></li>
+<li style="list-style-type: none;"><a href="dialogs-and-flyouts/index.md">對話方塊和飛出視窗</a></li>
 
 <li style="list-style-type: none;"><a href="flipview.md">翻轉檢視</a></li>
 
@@ -89,11 +86,13 @@ ms.locfileid: "1653687"
 
 <li style="list-style-type: none;"><a href="media-playback.md">媒體播放</a></li>
 
-<li style="list-style-type: none;"><a href="menus.md">功能表和操作功能表</a></li>
+<li style="list-style-type: none;"><a href="menus.md">功能表和特色選單</a></li>
 
-<li style="list-style-type: none;"><a href="navigationview.md">導覽檢視</a></li>
+<li style="list-style-type: none;"><a href="navigationview.md">瀏覽檢視</a></li>
 
 <li style="list-style-type: none;"><a href="person-picture.md">個人圖片</a></li>
+
+<li style="list-style-type: none;"><a href="pivot.md">樞紐分析</a></li>
 
 <li style="list-style-type: none;"><a href="progress-controls.md">進度控制項</a></li>
 
@@ -112,8 +111,6 @@ ms.locfileid: "1653687"
 <li style="list-style-type: none;"><a href="slider.md">滑桿</a></li>
 
 <li style="list-style-type: none;"><a href="split-view.md">分割檢視</a></li>
-
-<li style="list-style-type: none;"><a href="tabs-pivot.md">索引標籤與樞紐</a></li>
 
 <li style="list-style-type: none;"><a href="text-controls.md">文字控制項</a></li>
 

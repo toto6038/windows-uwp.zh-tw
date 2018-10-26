@@ -6,23 +6,21 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f90821fdadea0939dbad316ad9be4424b31a926
-ms.sourcegitcommit: d780e3a087ab5240ea643346480a1427bea9e29b
-ms.translationtype: HT
+ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "1573045"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549175"
 ---
 # <a name="binding-markup-extension"></a>{Binding} 標記延伸
 
 
-**注意：** Windows 10 提供新的繫結機制，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
+**注意：** 新的繫結機制是適用於 windows 10，可針對效能與開發人員生產力最佳化。 請參閱 [{x:Bind} 標記延伸](x-bind-markup-extension.md)。
 
-**注意：** 如需有關在應用程式中搭配 **{Binding}** 使用資料繫結的一般資訊 (以及取得 **{x:Bind}** 和 **{Binding}** 的完整比較)，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意：** 一般了解使用資料繫結中您的應用程式搭配 **{Binding}** （並用於全啟動和之間的比較 **{X:bind}** **{Binding}**），請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 **{Binding}** 標記延伸是用來將控制項上的屬性資料繫結至來自資料來源的值 (例如程式碼)。 **{Binding}** 標記延伸會在 XAML 載入時間轉換成 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別的執行個體。 這個繫結物件會取得資料來源上的屬性值，並推送至控制項上的屬性。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更對它做出更新。 您也可以選擇性地設定繫結物件，以便將控制項值中的變更推回到來源屬性。 做為資料繫結目標的屬性必須是相依性屬性。 如需詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
@@ -83,7 +81,7 @@ ms.locfileid: "1573045"
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | 指定繫結來源更新的時機。 如果沒有指定，則預設為 **Default**。 |
 
-**注意：** 如果要將標記從 **{x:Bind}** 轉換成 **{Binding}**，請留意 **Mode** 屬性的預設值不同。
+**注意：** 如果您正在將轉換標記從 **{X:bind}** **{Binding}**，請留意**模式**屬性的預設值差異。
 
 [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880) 與 **ConverterLanguage** 皆與來自繫結來源的值或類型轉換成和繫結目標屬性相容的類型或值的案例相關。 如需詳細資訊和範例，請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)中的＜資料轉換＞一節。
 
@@ -92,7 +90,7 @@ ms.locfileid: "1573045"
 
 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 與 [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) 都可以指定繫結來源，因此彼此互斥。
 
-**提示：** 如果您需要為值 (例如，[**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 或 [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)) 指定單一大括號，則請在它的前面加上一個反斜線：`\{`。 或者，將整個字串括起來，以包含需要在設定的第二個引號中逸出的括號，例如 `ConverterParameter='{Mix}'`。
+**提示：** 如果您需要指定值的單一大括號，例如在[**路徑**](https://msdn.microsoft.com/library/windows/apps/br209830)或[**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827)，然後前面加上一個反斜線： `\{`。 或者，將整個字串括起來，以包含需要在設定的第二個引號中逸出的括號，例如 `ConverterParameter='{Mix}'`。
 
 ## <a name="examples"></a>範例
 
@@ -129,4 +127,4 @@ ms.locfileid: "1573045"
 
 在 XAML 標記編輯器中撰寫 **{Binding}** 時，Microsoft Visual Studio 中的 Microsoft IntelliSense 會顯示資料內容的屬性。 在您輸入 "{Binding" 後，適用於 [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 的資料內容屬性即會顯示在下拉式清單中。 IntelliSense 也可協助 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 的其他屬性。 若要讓此功能運作，您必須在標記頁面中設定資料內容或設計階段資料內容。 **移至定義** (F12) 也可以用於 **{Binding}**。 另一種方法是使用資料繫結對話方塊。
 
- 
+ 

@@ -6,19 +6,17 @@ description: 建立使用 UWP 元件和原生與 Managed 類型之間的互通�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8562454b976362ebc65884203775b3891216d8b7
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 726dc4aaa34b9b68aa198e236abcef57b78b21f4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894544"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548260"
 ---
 # <a name="uwp-components-and-optimizing-interop"></a>UWP 元件和最佳化 Interop
 
-\[ 已更新 Windows 10 上的 UWP app。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 建立使用 UWP 元件和原生與 Managed 類型之間的互通性，同時可避免互通性效能問題的通用 Windows 平台 (UWP) app。
 
@@ -34,12 +32,11 @@ UWP 具有一個類型庫，這個類型庫可從任何可撰寫 UWP 應用程�
 
 當您在 C# 或 Visual Basic 中開發 UWP app 時，您使用的兩組最常見的 API 是 UWP API 與適用於 UWP app 的 .NET API。 一般來說，在 UWP 中定義的類型位於開頭為 "Windows." 的命名空間， 而 .NET 類型則位於開頭為 "System." 的命名空間， 但還是有些例外。 使用適用於 UWP app 的 .NET API 中所列的類型時，並不需要互通性。 如果您發現在使用 UWP 時效能不佳，可以改用適用於 UWP App 的 .NET，以獲得較佳的效能。
 
-**注意**  
-大部分隨附在 Windows 10 中的 UWP 元件是以 C++ 實作，因此從 C# 或 Visual Basic 使用這些元件時，可以跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
+**注意：** 大部分與 windows 10 隨附的 UWP 元件實作在 c + + 中，因此當您從 C# 或 Visual Basic 使用時，會跨越互通性界限。 一如往常，請務必先評估您的應用程式以了解使用 UWP 元件是否會影響應用程式的效能，再花費時間和精力變更程式碼。
 
 在這個主題中，當我們提到「UWP 元件」時，是指以 C# 或 Visual Basic 以外的語言所撰寫的元件。
 
- 
+ 
 
 每次您在 UWP 元件存取屬性或是呼叫方法時，都會產生互通性成本。 事實上，建立 UWP 元件比建立 .NET 物件的成本更高。 這個問題的原因是 UWP 所執行的程式碼，是從應用程式的語言轉換到元件的語言。 另外，如果您將資料傳遞給元件，在 Managed 和 Unmanaged 類型之間必須轉換資料。
 
@@ -93,5 +90,5 @@ UWP 可讓開發人員以選擇的語言編寫使用 XAML 的應用程式，這�
 
 所有針對如何使應用程式獲得良好效能的建議，也適用於如何使元件獲得良好效能。 請評估您的元件以了解哪些 API 具有高流量模式，而且對於那些部分，請考慮提供可讓使用者以很少的呼叫執行工作的 API。 為了讓應用程式可以使用 UWP 而不需經常跨越互通性界限，在 UWP 的設計上花費了許多精力。
 
- 
+ 
 

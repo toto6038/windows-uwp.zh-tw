@@ -6,16 +6,14 @@ ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.author: normesta
 ms.date: 09/20/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 路線, 地圖, 位置, 路線指引
 ms.localizationpriority: medium
-ms.openlocfilehash: c837eac53d7063a4b70bac62b64558e3411c70cd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 69283f6b53f3a8483376e3b8fe77a4491d4b01b1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690324"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545079"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地圖上顯示路線和路線指引
 
@@ -27,7 +25,7 @@ ms.locfileid: "1690324"
 >若要深入了解如何在應用程式中使用地圖，請下載[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
 >如果地圖功能不是您 app 的核心功能，請考慮改為啟動 Windows 地圖 app。 您可以使用 `bingmaps:`、`ms-drive-to:` 和 `ms-walk-to:` URI 配置，將 Windows 地圖 app 啟動到特定的地圖和轉向建議路線。 如需詳細資訊，請參閱[啟動 Windows 地圖 app](https://msdn.microsoft.com/library/windows/apps/mt228341)。
 
- 
+ 
 ## <a name="an-intro-to-maproutefinder-results"></a>MapRouteFinder 結果簡介
 
 
@@ -64,7 +62,7 @@ ms.locfileid: "1690324"
 >[!IMPORTANT]
 >您必須指定地圖驗證金鑰，才能使用地圖服務。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
- 
+ 
 
 ```csharp
 using System;
@@ -147,7 +145,7 @@ You have reached your destination.
 >[!IMPORTANT]
 >您必須指定地圖驗證金鑰，才能使用地圖服務或地圖控制項。 如需詳細資訊，請參閱[要求地圖驗證金鑰](authentication-key.md)。
 
- 
+ 
 
 ```csharp
 using System;
@@ -218,7 +216,7 @@ private async void ShowRouteOnMap()
   BasicGeoposition point2 = new BasicGeoposition() { Latitude = 47.6205, Longitude = -122.3493 };
   BasicGeoposition point3 = new BasicGeoposition() { Latitude = 48.649693, Longitude = -122.144908 };
 
-  // Get Driving Route from point A  to point B thru point C
+  // Get Driving Route from point A  to point B thru point C
   var path = new List<EnhancedWaypoint>();
 
   path.Add(new EnhancedWaypoint(new Geopoint(point1), WaypointKind.Stop));

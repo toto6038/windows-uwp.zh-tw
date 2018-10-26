@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/07/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: c951d8aacef1a327740ca09f19bbc33caa3695df
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 48244889dd927f41d0998214cf1120377c4bb251
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1395577"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543520"
 ---
 # <a name="make-your-app-localizable"></a>讓您的應用程式可當地語系化
 
@@ -54,9 +52,9 @@ ms.locfileid: "1395577"
 
 簡而言之，請將您的字串構築為可在所有內容中使用的片段。 有時候字串可能必須是完整的句子。
 
-考量以下字串："The {0} could not be synchronized" ({0} 不能同步)。
+請考慮下列字串:"{0}無法同步。 」
 
-其中的 {0} 可能會以各種字詞來取代，例如「約會」、「工作」或「文件」。 雖然這個範例似乎對於英文沒有問題，但可能不見得適用於所有案例中的對應句子，例如德文。 請注意，在下列德文句子中，範本字串 ("Der"、"Die"、"Das") 中的部分字詞需要符合參數化的字詞：
+以各種字詞來取代{0}，例如 「 約會 」、 「 工作 」 或 「 文件 」。 雖然這個範例似乎對於英文沒有問題，但可能不見得適用於所有案例中的對應句子，例如德文。 請注意，在下列德文句子中，範本字串 ("Der"、"Die"、"Das") 中的部分字詞需要符合參數化的字詞：
 
 | 英文                                    | 德文                                           |
 |:------------------------------------------ |:------------------------------------------------ |
@@ -64,7 +62,7 @@ ms.locfileid: "1395577"
 | The task could not be synchronized. (工作不能同步。)        | Die Aufgabe konnte nicht synchronisiert werden.  |
 | The document could not be synchronized. (文件不能同步。)    | Das Dokument konnte nicht synchronisiert werden. |
 
-在另一個範例中，假設有一個句子 "Remind me in {0} minute(s)" (在 {0} 分鐘後提醒我)。 使用 "minute(s)" (分鐘) 適用於英文，但其他語言可能會使用不同的詞彙。 例如，波蘭文會根據上下文使用 "minuta"、"minuty" 或 "minut"。
+在另一個範例，假設有一個句子 「 提醒我在{0}minute。 」 使用 "minute(s)" (分鐘) 適用於英文，但其他語言可能會使用不同的詞彙。 例如，波蘭文會根據上下文使用 "minuta"、"minuty" 或 "minut"。
 
 若要解決這個問題，請將完整句子當地語系化，而不是單一字詞。 這看起來好像是額外的工作而且不是很好的解決方案，但卻是最佳解決方案，因為：
 
@@ -100,7 +98,7 @@ ms.locfileid: "1395577"
     string.Format("Every {0} {1}", monthName, dayNumber); // For example, "Every April 1".
 ```
 
-此範例中的格式化字串在英文 (美國) 中可正常運作。 但，例如，在德文 (德國) 中則不適當，因為日期和月份的顯示順序是相反的。 請確保翻譯人員了解每個參數的意圖，以便為目標語言適當的反轉格式化字串中格式化項目的順序 (例如，"{1} {0}")。
+此範例中的格式化字串在英文 (美國) 中可正常運作。 但，例如，在德文 (德國) 中則不適當，因為日期和月份的顯示順序是相反的。 確保翻譯人員知道每個參數的意圖，以便他們可以反轉格式化字串中格式化項目的順序 (例如，「{1} {0}」) 為目標語言適當的。
 
 ## <a name="dont-over-localize"></a>不要過度當地語系化
 

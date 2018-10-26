@@ -5,17 +5,15 @@ description: 了解如何存取 Xbox 開發人員設定。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: f231fb85ed5ef4f9bcee75736157bd8630a6cbfa
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "662500"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544558"
 ---
 # <a name="developer-settings-api-reference"></a>開發人員設定 API 參考   
 您可以使用這個 API 來存取適合用於開發的 Xbox One 設定。
@@ -52,12 +50,12 @@ GET | /ext/settings
 * Category - (字串) 設定的類別。
 * Type - ("Text" | "Number" | "Bool" | "Select") 這個欄位指示是設定的類型：文字輸入、布林值 ("true" 或 "false")、有最小值和最大值的數字，或有特定值清單的 select。
 
-如果設定為 [數字：
-* Min-（數字） 此欄位表示設定的最小的數字值。
-* 最大位 （數字） 此欄位表示設定的最大的數字值。
+如果設定是數字：
+* Min-(Number) 這個欄位表示設定的最小數值。
+* Max-(Number) 這個欄位表示設定的最大數值。
 
-如果設定為 [選取：
-* OptionsVariable-("Yes"|"No") 此欄位表示設定選項是否為變數，如果有效選項可以變更而重新開機。
+如果設定為 select:
+* OptionsVariable-("Yes"|"No") 這個欄位會指示設定選項是否為變數，有效選項是否可以變更而不重新開機。
 * Options - JSON 陣列，包含有效 select 選項 (為字串)。
 
 **狀態碼**
@@ -66,7 +64,7 @@ GET | /ext/settings
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 個 | 要求成功
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 
@@ -103,12 +101,12 @@ GET | /ext/settings/\&lt;設定名稱\&gt;
 * Category - (字串) 設定的類別。
 * Type - ("Text" | "Number" | "Bool" | "Select") 這個欄位指示是設定的類型：文字輸入、布林值 ("true" 或 "false")、有最小值和最大值的數字，或有特定值清單的 select。
 
-如果設定為 [數字：
-* Min-（數字） 此欄位表示設定的最小的數字值。
-* 最大位 （數字） 此欄位表示設定的最大的數字值。
+如果設定是數字：
+* Min-(Number) 這個欄位表示設定的最小數值。
+* Max-(Number) 這個欄位表示設定的最大數值。
 
-如果設定為 [選取：
-* OptionsVariable-("Yes"|"No") 此欄位表示設定選項是否為變數，如果有效選項可以變更而重新開機。
+如果設定為 select:
+* OptionsVariable-("Yes"|"No") 這個欄位會指示設定選項是否為變數，有效選項是否可以變更而不重新開機。
 * Options - JSON 陣列，包含有效 select 選項 (為字串)。
 
 **狀態碼**
@@ -117,7 +115,7 @@ GET | /ext/settings/\&lt;設定名稱\&gt;
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 個 | 要求成功
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 
@@ -154,7 +152,7 @@ Value - (字串) 設定的新值。
 
 HTTP 狀態碼      | 描述
 :------     | :-----
-200 個 | 要求成功
+200 | 要求成功
 4XX | 錯誤碼
 5XX | 錯誤碼
 

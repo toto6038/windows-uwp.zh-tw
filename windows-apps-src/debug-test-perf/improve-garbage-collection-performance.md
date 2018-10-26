@@ -6,25 +6,23 @@ description: 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 3b7dfb274c5a6d55204a467fc894bac5fd044048
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 31279de84b8f00e4489a7aae962caa231bb16dc1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894644"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543223"
 ---
 # <a name="improve-garbage-collection-performance"></a>改善記憶體回收效能
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 使用 C# 和 Visual Basic 撰寫的通用 Windows 平台 (UWP) app 會從 .NET 記憶體回收行程自動管理記憶體。 本節摘要說明 UWP app 中的 .NET 記憶體回收行程的行為和效能最佳做法。 如需 .NET 記憶體回收行程如何運作，以及用於偵錯和分析記憶體回收行程效能之工具的詳細資訊，請參閱[記憶體回收](https://msdn.microsoft.com/library/windows/apps/xaml/0xy59wtx.aspx)。
 
-**注意**  當應用程式發生一般的記憶體問題時，很可能需要介入記憶體回收行程的預設行為。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)。 本主題僅適用於 C# 和 Visual Basic。
+**注意：** 需要介入記憶體回收行程的預設行為是一般的記憶體問題與您的應用程式的強式指標。 如需詳細資訊，請參閱[在 Visual Studio 2015 偵錯時的記憶體使用量工具](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/13/memory-usage-tool-while-debugging-in-visual-studio-2015.aspx)。 本主題僅適用於 C# 和 Visual Basic。
 
- 
+ 
 
 記憶體回收行程會藉由平衡 Managed 堆積的記憶體消耗量與記憶體回收所需執行的工作量，來判斷何時執行。 記憶體回收行程執行這個動作的其中一個方法是將堆積區分成不同世代，而且大部分時間只回收部分堆積。 Managed 堆積中有三個世代：
 
@@ -46,8 +44,8 @@ ms.locfileid: "894644"
 
 您可以透過呼叫 [**GC.Collect(n)**](https://msdn.microsoft.com/library/windows/apps/xaml/y46kxc5e.aspx) 引發世代的記憶體回收，其中 n 是您要回收的世代 (0、1 或 2)。
 
-**注意**  建議您不要在應用程式中強制記憶體回收，因為記憶體回收行程使用許多啟發學習法來判斷執行回收的最佳時間，在許多情況下，強制回收會造成不必要的 CPU 使用。 但如果您知道 app 中有大量不再使用的物件，而且希望將這個記憶體還給系統，此時就適合強制記憶體回收。 例如，您可以在載入遊戲的最後階段引發回收，以便在遊戲開始前釋放記憶體。
- 
+**注意：** 建議您，您不用強制記憶體回收集合中您的應用程式因為記憶體回收行程使用許多啟發學習法來判斷執行回收的最佳時間，以及回收會造成在許多情況下使用不必要的 cpu。 但如果您知道 app 中有大量不再使用的物件，而且希望將這個記憶體還給系統，此時就適合強制記憶體回收。 例如，您可以在載入遊戲的最後階段引發回收，以便在遊戲開始前釋放記憶體。
+ 
 若要避免不慎引發太多記憶體回收，可以將 [**GCCollectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/bb495757.aspx) 設為 **Optimized**。 這樣會指示記憶體回收行程只在確定回收效能夠高時，才開始回收。
 
 ## <a name="reduce-garbage-collection-time"></a>縮短記憶體回收時間
@@ -82,9 +80,9 @@ ms.locfileid: "894644"
 
 以索引取代物件參考對您的應用程式來說會是一個具破壞性且複雜的變更，但是這種做法對於含有大量參考的大型物件非常有效。 請只在您發現應用程式中的大量記憶體回收與大量參考的物件有關時，才執行這個作業。
 
- 
+ 
 
- 
+ 
 
 
 

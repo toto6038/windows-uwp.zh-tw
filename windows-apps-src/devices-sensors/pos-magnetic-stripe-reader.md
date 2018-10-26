@@ -5,16 +5,14 @@ description: 磁條讀取器 UWP 文件的索引主題。
 ms.author: elcowle
 ms.date: 10/04/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，點的服務、 pos、 磁條讀取器
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ce34623a0af9de6e0d678052719fb02f2a9672b
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 11653c10310726c79de9deef17a570207045ec4a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5475661"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5542815"
 ---
 # <a name="magnetic-stripe-reader"></a>磁條讀取器
 

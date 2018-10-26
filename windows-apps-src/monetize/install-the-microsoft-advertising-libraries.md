@@ -6,16 +6,14 @@ title: 安裝 Microsoft Advertising SDK
 ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: e65b26006cbeb7f7fbd9bf95f83051873e6f1140
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: c08acaf3f5d4ddf59121e68782c0e8b78e8c358e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5515308"
+ms.locfileid: "5544834"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 

@@ -9,15 +9,13 @@ keywords: 觸控、指標、輸入、使用者互動
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ef67c179e691d14f3636a663a24ebbb862c35f7
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: fbb2b6e5edee47d75d7115a38f95abf5ae71529a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675185"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543478"
 ---
 # <a name="touch-interactions"></a>觸控互動
 
@@ -78,14 +76,13 @@ ms.locfileid: "1675185"
 
 
 
-**注意**  
-間接輸入的優勢在於已經過 25 年以上的技術改良。 有一些功能 (例如暫留觸發工具提示) 是專門設計來解決觸控板、滑鼠、畫筆/手寫筆以及鍵盤輸入的 UI 探索問題。 這類的 UI 功能已經針對觸控輸入提供的豐富經驗而重新設計，不會犧牲這些裝置上的使用者經驗。
+**注意：** 間接輸入已擁有 25 年以上的技術改良的好處。 有一些功能 (例如暫留觸發工具提示) 是專門設計來解決觸控板、滑鼠、畫筆/手寫筆以及鍵盤輸入的 UI 探索問題。 這類的 UI 功能已經針對觸控輸入提供的豐富經驗而重新設計，不會犧牲這些裝置上的使用者經驗。
 
- 
+ 
 
 ## <a name="use-touch-feedback"></a>使用觸控回饋
 
-與應用程式進行互動時的適當視覺化回饋，可以協助使用者辨識、學習及適應應用程式與 Windows 平台如何解譯他們的互動。 視覺化回饋可以指示互動成功、轉送系統狀態、改善控制感應、減少錯誤、協助使用者了解系統和輸入裝置，並能激發使用者互動意願。
+與您的應用程式進行互動時的適當視覺化回饋可以協助使用者辨識、 學習及適應如何解譯他們的互動的應用程式，並 Windowsplatform。 視覺化回饋可以指示互動成功、轉送系統狀態、改善控制感應、減少錯誤、協助使用者了解系統和輸入裝置，並能激發使用者互動意願。
 
 當使用者依賴觸控輸入進行要求正確與精確位置的活動時，視覺化回饋就顯得相當重要。 隨時隨地偵測到觸控輸入時便顯示回饋，可以協助使用者了解應用程式及其控制項所定義的任何自訂目標規則。
 
@@ -156,9 +153,9 @@ ms.locfileid: "1675185"
 -   互動應該支援複合式操作。 例如，在拖曳手指進行移動瀏覽時，透過捏合進行縮放。
 -   不應該以時間來辨別互動。 不論執行時間長短，相同的互動應該產生相同的結果。 以時間為基礎的啟動會對使用者造成強制性的延遲，同時對直接操作的沈浸式性質和系統回應感知功能造成減損。
 
-    **備註**  使用特定計時互動來協助學習和探索 (例如長按) 為例外的狀況。
+    **注意：** 例外的狀況是使用特定計時的互動來協助學習和探索 （例如，按下的按住不放）。
 
-     
+     
 
 -   適當的說明和視覺提示，對於進階互動的應用會產生很大的作用。
 
@@ -207,7 +204,7 @@ ms.locfileid: "1675185"
 | 捏合          | 操作手勢 | 二或多根手指觸碰螢幕後，再朝靠攏的方向移動。                         |
 | 伸展        | 操作手勢 | 二或多根手指觸碰螢幕後，再朝分開的方向移動。                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
@@ -239,7 +236,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 | [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | 當滑鼠滾輪的差異值變更時發生。         |
 | [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | 提供所有指標事件的資料。                         |
 
- 
+ 
 
 下列範例示範如何使用 [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) 及 [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 物件上的點選互動。
 
@@ -435,15 +432,15 @@ End Sub
 | [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | 描述發生操作的速度。                                                                                         |
 | [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | 提供 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件的資料。                                       |
 
- 
+ 
 
 手勢是由一系列操作事件所組成。 每個手勢都是以 [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) 事件開始，例如當使用者觸碰螢幕。
 
 接著觸發一或多個 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件。 例如，當您觸碰螢幕，然後將手指劃過螢幕時。 最後，當互動完成時，就會引發 [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) 事件。
 
-**備註**  如果您沒有觸控式螢幕監視器，可以在使用滑鼠和滑鼠滾輪介面的模擬器中測試您的操作事件程式碼。
+**注意：** 如果您不需要觸控式螢幕監視器，您可以使用滑鼠和滑鼠滾輪介面的模擬器中測試您的操作事件程式碼。
 
- 
+ 
 
 下列範例示範如何使用 [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) 事件來處理 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 上的滑動互動，並在螢幕上移動它。
 
@@ -607,9 +604,9 @@ End Sub
 * [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
 * [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
+ 
 
- 
+ 
 
 
 

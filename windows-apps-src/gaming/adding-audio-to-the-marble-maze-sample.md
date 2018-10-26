@@ -6,16 +6,14 @@ ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ms.author: elcowle
 ms.date: 10/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 音訊, 遊戲, 範例
 ms.localizationpriority: medium
-ms.openlocfilehash: 4534675395f415ccd742dff646bc6c498aa7faa6
-ms.sourcegitcommit: cceaf2206ec53a3e9155f97f44e4795a7b6a1d78
-ms.translationtype: HT
+ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "1700904"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546858"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入音訊
 
@@ -352,7 +350,7 @@ CoTaskMemFree(waveFormat);
 > [!IMPORTANT]
 > [MFCreateWaveFormatExFromMFMediaType](https://msdn.microsoft.com/library/windows/desktop/ms702177) 方法使用 **CoTaskMemAlloc** 來配置 [WAVEFORMATEX](https://msdn.microsoft.com/library/windows/hardware/ff538799) 物件。 因此，當此物件使用完畢時，請記得呼叫 **CoTaskMemFree**。
 
- 
+ 
 
 **MediaStreamer::Initialize** 方法完成時會計算資料流 **m\_maxStreamLengthInBytes** 的長度 (以位元組計)。 為了計算長度，它會呼叫 [IMFSourceReader::GetPresentationAttribute](https://msdn.microsoft.com/library/windows/desktop/dd374662) 方法來取得音訊串流的持續期間 (以 100 奈秒為單位)，將持續期間分段，然後乘以平均資料傳輸率 (每秒位元組數)。 Marble Maze 之後會使用這個值來配置用於保存每個遊戲音效的緩衝區。
 
@@ -402,7 +400,7 @@ enum SoundEvent
 | MenuChangeEvent   | MenuChange.wav | 使用者變更目前的選單項目時播放。 |
 | MenuSelectedEvent | MenuSelect.wav | 使用者選取選單項目時播放。           |
 
- 
+ 
 
 下列範例顯示 **Audio::CreateResources** 方法如何建立背景音樂的來源音。 [XAUDIO2\_SEND\_DESCRIPTOR](https://msdn.microsoft.com/library/windows/desktop/ee419244) 結構會定義其他音效的目標音效，並指定是否應該使用篩選器。 Marble Maze 會呼叫 **Audio::SetSoundEffectFilter** 方法來使用篩選器，以在彈珠滾動時變更音效。 [XAUDIO2\_VOICE\_SENDS](https://msdn.microsoft.com/library/windows/desktop/ee419246) 結構定義一組音效來接收單一輸出音效的資料。 Marble Maze 會將來源音的資料傳送至主控音 (音效播放的「原始音」或未修飾部分) 及兩個副混音 (實作音效播放的「效果音」或迴響部分)。
 

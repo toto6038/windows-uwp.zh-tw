@@ -5,16 +5,14 @@ description: 本教學課程示範如何設定 Azure 網頁伺服器，確認您
 ms.author: cdon
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, Azure web server, 應用程式安裝程式, 側載, 相關集合, 選用套件, Azure 網頁伺服器
 ms.localizationpriority: medium
-ms.openlocfilehash: b98ca6316f733210dbdbc5201178b3a89a2b5982
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b7ea002686199b992af45af775f53c96fd108a13
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474721"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546597"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>從 Azure Web 應用程式安裝 UWP app
 

@@ -7,14 +7,13 @@ ms.author: libbymc
 ms.date: 05/10/2017
 ms.topic: article
 ms.prod: Microsoft Edge, Azure, Visual Studio Code
-ms.technology: web
 ms.localizationpriority: medium
-ms.openlocfilehash: 42f11cbdd749a44c4ba0d8bc1a0397a4f2882257
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: bdaa710b1c6c776f44a570b03befd477e4e4f1ec
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5517738"
+ms.locfileid: "5542558"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 

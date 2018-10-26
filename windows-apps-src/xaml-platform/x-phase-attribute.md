@@ -6,18 +6,17 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a629fb07bfa2e3f8bb3d070e9fe4994baba4336b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 17ee99553b5713acb1917ccb697abb2387d00da2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210507"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549195"
 ---
 # <a name="xphase-attribute"></a>x:Phase 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 搭配使用 **x:Phase** 與 [{x:Bind} 標記延伸](x-bind-markup-extension.md)，可用遞增方式轉譯 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目，並改善移動瀏覽體驗。 **x:Phase** 可讓您以宣告方式，達成與使用 [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) 事件手動控制清單項目的呈現相同的效果。 另請參閱[以遞增方式更新 ListView 與 GridView 項目](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)。
 
@@ -33,7 +32,7 @@ ms.locfileid: "210507"
 
 | 詞彙 | 說明 |
 |------|-------------|
-| PhaseValue | 一個數值，指出元素的處理階段。 預設是 0。 | 
+| PhaseValue | 一個數值，指出元素的處理階段。 預設是 0。 | 
 
 ## <a name="remarks"></a>備註
 
@@ -45,23 +44,23 @@ ms.locfileid: "210507"
 
 ```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
-    <Grid Width="200" Height="80">
-        <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="75" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
-        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
-        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
-        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
-        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
-    </Grid>
+    <Grid Width="200" Height="80">
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Image Grid.RowSpan="4" Source="{x:Bind ImageData}" MaxWidth="70" MaxHeight="70" x:Phase="3"/>
+        <TextBlock Text="{x:Bind DisplayName}" Grid.Column="1" FontSize="12"/>
+        <TextBlock Text="{x:Bind prettyDate}"  Grid.Column="1"  Grid.Row="1" FontSize="12" x:Phase="1"/>
+        <TextBlock Text="{x:Bind prettyFileSize}"  Grid.Column="1"  Grid.Row="2" FontSize="12" x:Phase="2"/>
+        <TextBlock Text="{x:Bind prettyImageSize}"  Grid.Column="1"  Grid.Row="3" FontSize="12" x:Phase="2"/>
+    </Grid>
 </DataTemplate>
 ```
 
@@ -82,5 +81,5 @@ ms.locfileid: "210507"
 
 分段只會對 [{x:Bind}](x-bind-markup-extension.md) 繫結造成影響，不會影響到 [{Binding}](binding-markup-extension.md) 繫結。
 
-只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 就 Windows 10 而言，這是指 [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 和 [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
+只有使用可辨識分段功能的控制項轉譯項目範本時，才可使用分段。 Windows 10，這是指[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878)和[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705)。 分段不會套用至其他項目控制項中使用的資料範本，或是其他案例 (如 [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) 或 [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) 區段)，而在大多數的情況下，所有的 UI 元素會同時進行資料繫結。
 

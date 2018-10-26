@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c1429579ddd896d5c717968f509ddf578a79f2e0
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a5418de3646f70a815f5c482f9063ea3e48ddfa1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1043677"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549872"
 ---
 # <a name="span-iddirect3dconceptsuavbehaviorwithnon-mappedtilesspanuav-behavior-with-non-mapped-tiles"></a><span id="direct3dconcepts.uav_behavior_with_non-mapped_tiles"></span>非對應磚的 UAV 行為
 
@@ -32,9 +30,9 @@ ms.locfileid: "1043677"
 
 [串流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

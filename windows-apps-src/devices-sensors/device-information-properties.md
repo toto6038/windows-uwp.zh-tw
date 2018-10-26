@@ -6,16 +6,14 @@ description: 每個裝置都具有相關聯的 DeviceInformation 屬性，您可
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c8fe51fd98f70e6f920a7421a9932e69bba11377
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 2ad87bdfa468c98a2e10d57f81b8e8d187bfbcef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959244"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543365"
 ---
 # <a name="device-information-properties"></a>裝置資訊屬性
 
@@ -35,10 +33,10 @@ ms.locfileid: "959244"
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件擁有一些基本屬性，例如 [**Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)，但是大部分的屬性會儲存在 [**Properties**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.properties.aspx) 底下的屬性包中。 因此，屬性包會包含用來從屬性包找出屬性的屬性。 例如，使用 [System.ItemNameDisplay](https://msdn.microsoft.com/library/windows/desktop/Bb760770) 來找出 [**Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name) 屬性。 這是具有使用者易記名稱的通用和已知屬性的案例。 Windows 提供數個使用者易記的名稱，讓查詢屬性更加容易。
 
-當您正在要求屬性時，並不會受限於具有使用者易記名稱的通用屬性。 您可以指定基本的 GUID 和屬性識別碼 (PID) 來要求任何可用的屬性，甚至是個別裝置或驅動程式所提供的自訂屬性。 指定自訂屬性的格式是 "`{GUID} PID`"。 例如："`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`"。 
+當您正在要求屬性時，並不會受限於具有使用者易記名稱的通用屬性。 您可以指定基本的 GUID 和屬性識別碼 (PID) 來要求任何可用的屬性，甚至是個別裝置或驅動程式所提供的自訂屬性。 指定自訂屬性的格式是 "`{GUID} PID`"。 例如: 「`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`」。 
 
 > [!Note]
-> 您可以找到屬性 Guid 的清單中的裝置驅動程式裝置屬性索引鍵的標頭檔。
+> 您可以找到 Guid 屬性的清單中的裝置驅動程式的裝置屬性金鑰標頭檔案。
 
 某些屬性在所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 物件中是通用的，但大部分都是特定類型獨有的。 下列區段會列出一些按個別 **DeviceInformationKind** 排序的通用屬性。 如需不同類型如何彼此關聯的詳細資訊，請參閱 **DeviceInformationKind**。
 
@@ -57,7 +55,7 @@ ms.locfileid: "959244"
 | **System.Devices.Icon**               | 字串  | 圖示路徑。                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | 字串  | 裝置物件的最佳顯示名稱。                                                                                                                                                                                                                                                                                                                                                              |
 
- 
+ 
 
 ## <a name="device-properties"></a>裝置屬性
 
@@ -75,7 +73,7 @@ ms.locfileid: "959244"
 | **System.Devices.Present**            | 布林值    | 表示裝置目前是否存在並可以使用。                                                                                                                                                                                                                         |
 | **System.ItemNameDisplay**            | 字串     | 此裝置物件的最佳顯示名稱。 在此案例中，這不一定是最佳的使用者名稱。 藉由參考相關聯的 **DeviceContainer** 或 **DeviceInterface** 的 **System.ItemNameDisplay**，就能找到更有可能的使用者易記名稱候選項目。 |
 
- 
+ 
 
 ## <a name="devicecontainer-properties"></a>DeviceContainer 屬性
 
@@ -95,7 +93,7 @@ ms.locfileid: "959244"
 | **System.Devices.Paired**         | 布林值    | 表示目前已與系統配對的任何子項 **DeviceInformationKind.Device** 物件是無線還是網路裝置。             |
 | **System.ItemNameDisplay**        | 字串     | 此裝置的最佳顯示名稱。                                                                                                                             |
 
- 
+ 
 
 ## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass 屬性
 
@@ -103,7 +101,7 @@ ms.locfileid: "959244"
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | 字串 | 此裝置的最佳顯示名稱。 |
 
- 
+ 
 
 ## <a name="associationendpoint-properties"></a>AssociationEndpoint 屬性
 
@@ -124,7 +122,7 @@ ms.locfileid: "959244"
 | **System.Devices.Aep.SignalStrength** | Int32      | 裝置的訊號強度。 這個屬性僅適用於某些通訊協定。                                                                                                                                                                                                                                                                                                                                                                                                |
 | **System.ItemNameDisplay**            | 字串     | 裝置的最佳顯示名稱。                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
- 
+ 
 
 ## <a name="associationendpointcontainer-properties"></a>AssociationEndpointContainer 屬性
 
@@ -146,7 +144,7 @@ ms.locfileid: "959244"
 | **System.Devices.AepContainer.SupportsVideo**       | 布林值    | 表示此裝置是否支援視訊傳播。                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | **System.ItemNameDisplay**                          | 字串     | 裝置的最佳顯示名稱。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
- 
+ 
 
 ## <a name="associationendpointservice-properties"></a>AssociationEndpointService 屬性
 
@@ -160,8 +158,8 @@ ms.locfileid: "959244"
 | **System.Devices.AeoService.ServiceId**         | 字串  | 此服務的身分識別。 這也會是 [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 的值。 |
 | **System.ItemNameDisplay**                      | 字串  | 服務的最佳顯示名稱。                                                                           |
 
- 
+ 
 
- 
+ 
 
- 
+ 

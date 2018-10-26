@@ -6,19 +6,18 @@ ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, DirectX, 2d, 圖形
-ms.openlocfilehash: 702b47d4002e9a2d0d62cc67e71432bb630e21d4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209156"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543153"
 ---
 # <a name="2d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的 2D 圖形
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 我們要討論 2D 點陣圖圖形和效果的使用，以及如何在遊戲中使用 2D 圖形。
 
@@ -62,16 +61,3 @@ ms.locfileid: "209156"
 -   [Direct2D 概觀](https://msdn.microsoft.com/library/windows/desktop/dd370987)
 -   [Direct2D 快速入門](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Direct2D 和 Direct3D 互通性概觀](https://msdn.microsoft.com/library/windows/desktop/dd370966)
-
-> **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
-
- 
-
- 
-
- 
-
-
-
-

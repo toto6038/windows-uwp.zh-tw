@@ -6,16 +6,14 @@ description: 線性主要畫面格動畫、含 KeySpline 值的主要畫面格�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f48bdb41859fb5a2ba438d4f74143598b0e1342
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: HT
+ms.openlocfilehash: 2076866cc31f50bd7ccfc6730bca5be96ffdc7c3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1665054"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547376"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>主要畫面格動畫和 Easing 函式動畫
 

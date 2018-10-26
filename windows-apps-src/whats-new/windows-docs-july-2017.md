@@ -6,15 +6,13 @@ keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10
 ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e439c0b1c20f03c9519d29a24979e5008f3de94e
-ms.sourcegitcommit: 1eabcf511c7c7803a19eb31f600c6ac4a0067786
-ms.translationtype: HT
+ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691837"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546584"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的最新動向
 
@@ -110,7 +108,7 @@ SDK 預覽組建中有新的 TaskbarManager 類別提供給 [Windows 測試人�
 
 ### <a name="scoped-search"></a>限定範圍的搜尋
 
-「UWP」範圍已新增至 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md) 和 [API 參考](https://docs.microsoft.com/en-us/uwp/api/)文件。除非停用這個範圍，否則從這些區域中進行的搜尋只會傳回 UWP 文件。
+「UWP」範圍已新增至 docs.microsoft.com 上的 [UWP 概念](../get-started/universal-application-platform-guide.md)和 [API 參考](https://docs.microsoft.com/en-us/uwp/api/)文件。 除非停用這個範圍，否則從這些區域中進行的搜尋只會傳回 UWP 文件。
 
 ![限定範圍的搜尋](images/scoped-search.png)
 

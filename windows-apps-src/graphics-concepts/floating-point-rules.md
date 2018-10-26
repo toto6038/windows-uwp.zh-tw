@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 8706b10756eeec5d4b8a872c0d436a157ef74970
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bcfdb8f6258547ff210d80136a6113e04092aad2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044937"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545831"
 ---
 # <a name="span-iddirect3dconceptsfloating-pointrulesspanfloating-point-rules"></a><span id="direct3dconcepts.floating-point_rules"></span>浮點規則
 
@@ -33,12 +31,10 @@ Direct3D 支援數個浮點表示法。 所有浮點數計算運作都在 IEEE 7
 有些規則是單一選項，由 IEEE-754 提供選擇。
 
 -   除以 0 會產生 +/- INF，除了 0/0 得到 NaN 的結果。
--   (+/-) 0 的對數會產生 -INF。
-     
+-   (+/-) 0 的對數會產生 -INF。  
 
     負值 (-0 除外) 的對數會產生 NaN。
--   負數的反平方根 (rsq) 或平方根 (sqrt) 會產生 NaN。
-     
+-   負數的反平方根 (rsq) 或平方根 (sqrt) 會產生 NaN。  
 
     例外是 -0；sqrt(-0) 會產生 -0，而 rsq(-0) 會產生 -INF。
 -   INF - INF = NaN
@@ -159,9 +155,9 @@ float11/float10 值 (v) 遵循下列規則：
 
 [紋理](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
- 
+ 
 
- 
+ 
 
 
 

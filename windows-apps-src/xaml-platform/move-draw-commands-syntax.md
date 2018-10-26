@@ -6,16 +6,14 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a66faebf8447253cc158ea8aa2312eb61474bc08
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d77049cbaa289fe8621e8cf91883952e6edda9b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675255"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550692"
 ---
 # <a name="move-and-draw-commands-syntax"></a>移動與繪製命令語法
 
@@ -83,7 +81,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 大寫 **M** 表示 *startPoint* 是絕對座標；小寫 **m** 表示 *startPoint* 是前一個點的位移，如果沒有前一個點，則為 (0,0)。
 
-**注意：** 移動命令後可以指定多個點。 就像指定了線條命令一樣，會畫出連接到這些點的一條線。 不過，不建議採用這種樣式；請改用專用的線條命令。
+**注意：** 是合法移動命令後可以指定多個點。 就像指定了線條命令一樣，會畫出連接到這些點的一條線。 不過，不建議採用這種樣式；請改用專用的線條命令。
 
 **繪製命令**
 
@@ -141,7 +139,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 |------|-------------|
 | *controlPoint1* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第一個控制點，決定曲線的起點切線。 |
 | *controlPoint2* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線的第二個控制點，決定曲線的終點切線。 |
-| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線將繪製到的點。 | 
+| *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 曲線將繪製到的點。 | 
 
 **二次方貝茲曲線命令**
 
@@ -197,7 +195,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 | *isLargeArcFlag* | 如果弧線的角度應該等於或大於 180 度，則設定為 1；否則設定為 0。 |
 | *sweepDirectionFlag* | 如果是以正角方向繪製弧線，則設定為 1；否則設定為 0。 |
 | *endPoint* | [**點**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 弧線將繪製到的點。|
- 
+ 
 **關閉命令**
 
 結束目前的圖形，並建立一條將目前點連接至圖形起點的線。 這個命令會在圖形的最後一個線段與第一個線段之間建立一個線條聯結 (邊角)。
@@ -212,7 +210,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 | 語法 |
 |--------|
-| *x*,*y*<br/> - 或 - <br/>*x* *y* |
+| *x*,*y*<br/> - 或 - <br/>*x**y* |
 
 | 詞彙 | 說明 |
 |------|-------------|
@@ -231,7 +229,7 @@ Windows 執行階段有兩個屬性可以使用代表移動與繪製命令的字
 
 ## <a name="design-tools-that-produce-move-and-draw-commands"></a>產生移動與繪製命令的設計工具
 
-使用 Blend for Microsoft Visual Studio 2015 中的 **\[畫筆\]** 工具及其他繪圖工具通常會產生含有移動與繪製命令的 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 物件。
+Blend for Microsoft Visual Studio2015 中使用**手寫筆**工具及其他繪圖工具將通常會產生[**路徑**](/uwp/api/Windows.UI.Xaml.Shapes.Path)物件，與移動，與繪製命令。
 
 您會在 Windows 執行階段 XAML 控制項預設範本所定義的一些控制項組件中，看到現有的移動與繪製命令資料。 例如，有些控制項使用將資料定義為移動與繪製命令的 [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)。
 

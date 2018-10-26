@@ -4,23 +4,18 @@ ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: 音樂、圖片及影片媒體櫃中的檔案和資料夾
 description: 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
 ms.author: lahugh
-ms.date: 02/08/2017
+ms.date: 06/18/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f8f81f3b6abea2ceb07ab4442d0b5dc24104408
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 1859d758806b4e92758decb40b8a30d02acb254d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654437"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549742"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
-
-
-
 
 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
 
@@ -47,7 +42,7 @@ ms.locfileid: "1654437"
 
 > [!NOTE]
 > 請記得宣告適當的功能。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
- 
+ 
 
 若要取得對使用者的 [音樂]、[圖片] 或 [影片] 媒體櫃的參考，請呼叫 [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) 方法。 從 [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列舉提供對應的值。
 
@@ -147,7 +142,7 @@ private async void getSongs()
     QueryOptions queryOption = new QueryOptions
         (CommonFileQuery.OrderByTitle, new string[] { ".mp3", ".mp4", ".wma" });
 
-    queryOption.FolderDepth = FolderDepth.Deep
+    queryOption.FolderDepth = FolderDepth.Deep;
 
     Queue<IStorageFolder> folders = new Queue<IStorageFolder>();
 

@@ -6,19 +6,17 @@ description: 使用者會期望其應用程式保持回應性，並可自在地�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: d25620c0fc86f76b8c0d4de6e606250186b9ce37
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: e62e724cceb458ba922143e61058dffa8d16a0b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894784"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547880"
 ---
 # <a name="planning-for-performance"></a>規劃效能
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 使用者會期望其 app 保持回應性，並可自在地使用，而不會耗盡電池。 在技術上來說，效能是非功能的需求，但是將效能視為功能可協助您滿足使用者的期望。 指定目標和測量是主要因素。 決定您的效能關鍵案例是什麼；定義良好效能代表什麼意義。 然後在整個專案週期中及早並經常進行測量，以確保您能夠達成目標。
@@ -44,7 +42,7 @@ ms.locfileid: "894784"
 | 連續              | 不再感覺有回應      | 500 毫秒 | 5 秒        | 從網際網路下載檔案                                            |
 | 網頁驗證                 | 冗長；使用者可能切換離開    | 500 毫秒 | 10 秒       | 從市集安裝多個 app                                         |
 
- 
+ 
 
 您現在可以將互動等級指派到您的 app 效能案例。 您可以將 app 的時間點參考、一部分的使用者經驗，以及一個互動等級指派給每個案例。 以下是針對飲食 app 範例的一些建議。
 
@@ -175,7 +173,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   執行 app 多次有助於排除隨機測試變數，並確保測量結果一致。
 -   降低的電源可用性測試。 使用者裝置的電源可能遠遠小於您開發電腦的電源。 Windows 是針對低電源裝置 (例如行動裝置) 所設計。 在平台上執行的 app 應該確定可以順利在這些裝置上執行。 我們發現低電源裝置的運作速度大約是桌上型電腦的四分之一，您必須據此設定您的目標。
 -   使用工具的組合 (例如 Microsoft Visual Studio 和 Windows Performance Analyzer) 測量 app 效能。 Visual Studio 的設計是提供以 app 為主的分析，例如原始程式碼連結。 Windows Performance Analyzer 的設計則是提供以系統為主的分析，例如提供系統資訊、觸控操作事件的相關資訊，以及磁碟輸入/輸出 (I/O) 和圖形處理器 (GPU) 成本的相關資訊。 兩個工具都提供追蹤擷取和匯出，而且可以重新開啟共用追蹤和事後追蹤。
--   將 app 提交到市集進行認證之前，請務必將與效能相關的測試案例加入您的測試計劃中，如 [Windows 應用程式認證套件測試](windows-app-certification-kit-tests.md)的＜效能測試＞一節，以及 [Windows 市集應用程式測試案例](https://msdn.microsoft.com/library/windows/apps/Dn275879)的＜效能和穩定性＞一節中所述。
+-   您將 app 提交至市集進行認證之前，請務必將納入您的測試計劃效能相關的測試案例的<b0>Windows 應用程式認證套件測試</b0>及在 < 效能測試 > 一節中所述 」 的效能和<b1>UWP 應用程式測試案例</b1>的穩定性 」 一節。
 
 如需詳細資訊，請參閱這些資源和分析工具。
 

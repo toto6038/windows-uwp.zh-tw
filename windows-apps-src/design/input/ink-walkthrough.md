@@ -7,15 +7,13 @@ keywords: 筆跡, 教學
 ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 68624288ea223d0882ef0b8c33b174f000081411
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 933c3f1c4c2c57cc0a7a92334223f6c6d4bbb010
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983384"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543173"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教學︰在 UWP app 中支援筆跡
 
@@ -69,9 +67,9 @@ ms.locfileid: "1983384"
 
 | 元件 | 說明 |
 | --- | --- |
-| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAML UI 平台控制項，此控制項預設會接收來自畫筆的所有輸入，並顯示為筆墨筆劃或擦去筆劃。 |
+| [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAMLUI 平台控制項，根據預設，接收及顯示來自畫筆的所有輸入做為筆墨筆劃或擦去筆劃。 |
 | [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) | 程式碼後置物件，連同 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項 (透過 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 屬性所公開) 進行具現化。 這個物件提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公開的所有預設筆跡功能，以及一組完整的 API 來進行其他自訂和個人化。 |
-| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | 包含可自訂與可擴充的按鈕集合 (可在關聯的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 中啟用筆跡相關功能) 的 XAML UI 平台控制項。 |
+| [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) | XAMLUI 平台控制項，包含可自訂與可擴充的按鈕集合中相關聯的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)啟用筆跡相關功能。 |
 | [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱[複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 控制項。 |
 
 ## <a name="step-1-run-the-sample"></a>步驟 1：執行範例

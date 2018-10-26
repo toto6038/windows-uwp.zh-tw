@@ -6,16 +6,14 @@ author: msatranjr
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: a2c2acc8351e8b646353a05e8d408dee57e633b0
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 4bca6496498c9d7a9caaf958fdc7e74dc16ccc98
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520106"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550784"
 ---
 # <a name="common-cryptography-tasks"></a>常見的密碼編譯工作
 

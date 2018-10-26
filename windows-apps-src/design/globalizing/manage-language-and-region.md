@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 9431e1572f0b0790347a59bf76b4f4a4e672ec03
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 2215231b21700fc17b08c2149316f9a59f8d1f04
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690884"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546409"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解使用者設定檔語言和應用程式資訊清單語言
 Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** 設定慣用顯示語言的已排序清單，或單一慣用顯示語言。 語言可具有地區性的變體。 例如，您可以選取在西班牙使用的西班牙文、在墨西哥使用的西班牙文、在美國使用的西班牙文等。

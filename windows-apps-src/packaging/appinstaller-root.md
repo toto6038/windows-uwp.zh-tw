@@ -5,16 +5,14 @@ description: 本節包含或連結至關於應用程式安裝程式，以及有�
 ms.author: lahugh
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f82c319ca812af9296895711f2b546a8b0332c5
-ms.sourcegitcommit: 618741673a26bd718962d4b8f859e632879f9d61
-ms.translationtype: HT
+ms.openlocfilehash: f3da1f4f393eea1362b6e59d2ad7e9a2a97bc33b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "1992104"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545500"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>使用應用程式安裝程式安裝 UWP app
 

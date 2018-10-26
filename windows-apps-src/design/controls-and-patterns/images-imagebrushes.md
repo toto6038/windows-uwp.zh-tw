@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ee3948fc4c7ab83657e8bca127306bb037d491a8
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 7c0fcd158dac77b3b3322167b82131e51f62390f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494135"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544244"
 ---
 # <a name="images-and-image-brushes"></a>影像與影像筆刷
 
@@ -60,7 +58,7 @@ ms.locfileid: "1494135"
 
 ![影像元素範例](images/Image_Licorice.jpg)
 
-在這個範例中，[Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 屬性會指定影像的顯示位置。 您可以指定絕對 URL (例如 http://contoso.com/myPicture.jpg) 或者指定相對於應用程式封裝結構的 URL，以設定 Source。 例如，我們是將 "licorice.jpg" 影像檔放在專案的根資料夾中，然後宣告將影像檔納入做為內容的專案設定。
+在這個範例中，[Source](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) 屬性會指定影像的顯示位置。 您可以藉由指定絕對 URL 設定來源 (例如，http://contoso.com/myPicture.jpg)或藉由指定相對於應用程式封裝結構的 URL。 例如，我們是將 "licorice.jpg" 影像檔放在專案的根資料夾中，然後宣告將影像檔納入做為內容的專案設定。
 
 ### <a name="imagebrush"></a>ImageBrush
 

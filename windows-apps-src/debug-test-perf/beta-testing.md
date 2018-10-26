@@ -6,19 +6,17 @@ description: 搶鮮版 (Beta) 測試可讓您有機會根據您 App 開發小組
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 6f5a4e7f2961143f44acb533f045783fb4e4b7c1
-ms.sourcegitcommit: e8cc657d85566768a6efb7cd972ebf64c25e0628
+ms.localizationpriority: medium
+ms.openlocfilehash: 7d1e60270b43a8c14067df70ff3e8489f4af2887
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2017
-ms.locfileid: "692906"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544744"
 ---
 # <a name="beta-testing"></a>搶鮮版 (Beta) 測試
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 *搶鮮版 (Beta) 測試*可讓您有機會根據您 App 開發小組以外的個人所提供的意見反應，改進您的 App，這些個人會在他們自己的裝置上試用您尚未發行的 App。
@@ -36,7 +34,7 @@ ms.locfileid: "692906"
 -   在各種裝置上測試您的應用程式。
 -   識別效能問題，以及您可能找不到的其他錯誤。
 -   獲得真實世界的使用資訊，以改善使用者體驗。
--   收到意見反應，而不會影響 Windows 市集中的公開評分。
+-   收到意見反應，而不會影響在 Microsoft Store 中的公開評分。
 
 ## <a name="when-to-beta-test"></a>Beta 測試的時機
 
@@ -48,9 +46,9 @@ ms.locfileid: "692906"
 
 請參閱[搶鮮版 (Beta) 測試和特定對象的發佈](https://msdn.microsoft.com/library/windows/apps/Mt185377)，以了解如何將 App 提交至市集進行搶鮮版 (Beta) 測試。
 
- 
+ 
 
- 
+ 
 
 
 

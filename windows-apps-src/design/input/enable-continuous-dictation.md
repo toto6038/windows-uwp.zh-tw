@@ -9,19 +9,15 @@ keywords: 語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f39a724797ea4f35ed3d2ef88cab4e86a1336d3e
-ms.sourcegitcommit: 346b5c9298a6e9e78acf05944bfe13624ea7062e
-ms.translationtype: HT
+ms.openlocfilehash: ea7c0b92c5900e468023dd5b972942a89c2833c3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "1707299"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546094"
 ---
 # <a name="continuous-dictation"></a>連續聽寫
-
-
 
 了解如何擷取及辨識較長且連續的聽寫語音輸入。
 
@@ -31,16 +27,16 @@ ms.locfileid: "1707299"
 
 針對較長、連續語音辨識的工作階段 (例如聽寫或電子郵件) 時，請使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn913913) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn653226) 屬性來取得 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 物件。
 
-
+> [!NOTE]
+> 聽寫語言支援取決於您的應用程式執行所在的[裝置](https://docs.microsoft.com/windows/uwp/design/devices/)。 適用於電腦和膝上型電腦，只 EN-US 辨識出，雖然 Xbox 和手機可以辨識語音辨識所支援的所有語言。 如需詳細資訊，請參閱[指定語音辨識器的語言](specify-the-speech-recognizer-language.md)。
 
 ## <a name="set-up"></a>設定
 
-
 您的應用程式需要幾項物件來管理連續聽寫工作階段：
 
--   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 物件的執行個體。
--   對 UI 發送器的參照以在聽寫時更新 UI。
--   追蹤使用者說出之累計文字的方式。
+- [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 物件的執行個體。
+- 對 UI 發送器的參照以在聽寫時更新 UI。
+- 追蹤使用者說出之累計文字的方式。
 
 我們在此處宣告 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) 執行個體為程式碼後置類別的私用欄位。 如果您想要連續聽寫持續超過單一可延伸應用程式標記語言 (XAML) 頁面，您的應用程式需要將參照儲存在其他位置。
 
@@ -69,18 +65,17 @@ private StringBuilder dictatedTextBuilder;
 
 ## <a name="initialization"></a>初始化
 
-
 初始化連續語音辨識時，您必須：
 
--   擷取 UI 執行緒的發送器 (如果您在連續辨識事件處理常式中更新您應用程式的 UI)。
--   初始化語音辨識器。
--   編譯內建聽寫文法。
-    **注意**   語音辨識至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
--   設定辨識事件的事件接聽程式。
+- 擷取 UI 執行緒的發送器 (如果您在連續辨識事件處理常式中更新您應用程式的 UI)。
+- 初始化語音辨識器。
+- 編譯內建聽寫文法。
+    **注意：** 語音辨識需要至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
+- 設定辨識事件的事件接聽程式。
 
 在這個範例中，我們會在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中初始化語音辨識。
 
-1.  因為語音辨識器引發的事件是在背景執行緒中發生，所以請建立對發送器的參照以更新 UI 執行緒。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 一律會在 UI 執行緒上叫用。
+1. 因為語音辨識器引發的事件是在背景執行緒中發生，所以請建立對發送器的參照以更新 UI 執行緒。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 一律會在 UI 執行緒上叫用。
 ```csharp
 this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 ```
@@ -104,7 +99,6 @@ SpeechRecognitionCompilationResult result =
 
 ## <a name="handle-recognition-events"></a>處理辨識事件
 
-
 您可以透過呼叫 [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) 或 [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) 來擷取單一、簡短的發音或片語。 
 
 但是，若要擷取較長、連續的辨識工作階段，我們指定事件接聽程式來於使用者說話時在背景執行，並定義處理常式來建立聽寫字串。
@@ -113,18 +107,19 @@ SpeechRecognitionCompilationResult result =
 
 有兩個事件特別重要：
 
--   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，會在辨識器已經產生某些結果時發生。
--   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，會在連續辨識工作階段已經結束時發生。
+- [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)，會在辨識器已經產生某些結果時發生。
+- [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)，會在連續辨識工作階段已經結束時發生。
 
 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在使用者說話時引發。 辨識器會連續聆聽使用者說話，並定時引發傳遞語音輸入片段的事件。 您必須使用事件引數的 [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 屬性檢查語音輸入，然後在事件處理常式中採取適當動作，例如附加文字到 StringBuilder 物件。
 
 做為 [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 的執行個體，[**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) 屬性非常適合用來判斷您是否要接受語音輸入： [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) 為此提供兩個屬性：
--   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 會指示辨識是否成功。 可能造成辨識失敗的原因有很多。
--   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 會指示辨識器了解正確文字的相對信賴等級。
+
+- [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) 會指示辨識是否成功。 可能造成辨識失敗的原因有很多。
+- [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 會指示辨識器了解正確文字的相對信賴等級。
 
 以下是支援連續辨識的基本步驟：  
 
-1.  在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/dn913900) 頁面事件中註冊 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/br227508) 連續辨識事件的處理常式。
+1. 在這裡，我們在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/dn913900) 頁面事件中註冊 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/br227508) 連續辨識事件的處理常式。
 ```csharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
@@ -132,7 +127,7 @@ speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
 
 2.  然後我們檢查 [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) 屬性。 如果「信賴等級」的值是 [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 或更高，我們就會將文字附加到 StringBuilder。 我們也會在收集輸入時更新 UI 。
 
-    **注意**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在無法直接更新 UI 的背景執行緒中引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
+    **注意：** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件會在無法直接更新 UI 的背景執行緒上引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
 ```csharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -172,7 +167,7 @@ speechRecognizer.ContinuousRecognitionSession.Completed +=
 
 4.  事件處理常式會檢查 Status 數性以判斷辨識是否成功。 它也會處理使用者已經停止說話的情況。 通常，[**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) 會被視為成功辨識，因為它表示使用者已經結束說話。 您應該在您的程式碼中處理此情況，以提供良好體驗。
 
-    **注意**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 事件會在無法直接更新 UI 的背景執行緒中引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
+    **注意：** [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)事件會在無法直接更新 UI 的背景執行緒上引發。 如果處理常式需要更新 UI (就像 \[語音和 TTS 範例\] 一樣)，您就必須透過發送器的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法發送更新至 UI。
 ```csharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -268,7 +263,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 > 因為多執行緒的關係，可能會在呼叫 [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913900) 時仍於堆疊中保留 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913898) 事件。 如果是這樣，就仍會引發 **ResultGenerated** 事件。  
 > 如果您在取消辨識工作階段時設定任何私用欄位，請一律確認它們在 [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 處理常式中的值。 例如，如果您在取消工作階段時將欄位設定為 null，請勿假設您處理常式中的欄位已經初始化。
 
- 
+ 
 
 ## <a name="related-articles"></a>相關文章
 
@@ -277,9 +272,9 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

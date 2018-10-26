@@ -6,16 +6,14 @@ description: 了解如何使用指南針來判斷目前朝向何方。
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f2bddb9ae3adf8ef6cfdf1b6c078db5eb026c93d
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4af6b0fb339ba1fde3ea94f456eac98be8a1db9b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5479703"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546197"
 ---
 # <a name="use-the-compass"></a>使用指南針
 

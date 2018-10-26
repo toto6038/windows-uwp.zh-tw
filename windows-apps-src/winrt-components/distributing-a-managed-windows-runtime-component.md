@@ -6,19 +6,18 @@ ms.assetid: 80262992-89FC-42FC-8298-5AABF58F8212
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 70ef1ab7bc31fde2f0d4744394c1ae69c8caf7fd
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210399"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549019"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>發佈 Managed Windows 執行階段元件
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 您可以透過檔案複製來發佈自己的 Windows 執行階段元件。 不過，如果元件包含許多檔案，使用者就必須等待冗長的安裝過程。 此外，放置檔案時發生的錯誤或參考設定失敗都可能會造成他們的問題。 您可以將複雜元件封裝成 Visual Studio 擴充功能 SDK，方便安裝與使用。 使用者只需為整個封裝設定一個參考。 如 MSDN Library 中的[尋找及使用 Visual Studio 擴充功能](https://msdn.microsoft.com/library/vstudio/dd293638.aspx)所述，使用者可以透過 **\[擴充功能和更新\]** 對話方塊輕鬆地尋找並安裝您的元件。
 
@@ -42,13 +41,13 @@ For example: Microsoft.Cpp.Build.dll
 
 如果符合上述多個條件，擴充功能 SDK 就特別有用。
 
-> **注意**  如果是複雜元件，NuGet 封裝管理系統可提供替代性開放原始碼來取代擴充功能 SDK。 與擴充功能 SDK 一樣，NuGet 可讓您建立封裝來簡化複雜元件的安裝作業。 如需 NuGet 封裝和 Visual Studio 擴充功能 SDK 的比較，請參閱 MSDN Library 中的[使用 NuGet 和擴充功能 SDK 兩種方式新增參考](https://msdn.microsoft.com/library/jj161096.aspx)。
+> **注意：** 是複雜元件，NuGet 封裝管理系統可提供的開放原始碼替代方法，來取代擴充功能 Sdk。 與擴充功能 SDK 一樣，NuGet 可讓您建立封裝來簡化複雜元件的安裝作業。 如需 NuGet 封裝和 Visual Studio 擴充功能 SDK 的比較，請參閱 MSDN Library 中的[使用 NuGet 和擴充功能 SDK 兩種方式新增參考](https://msdn.microsoft.com/library/jj161096.aspx)。
 
 ## <a name="distribution-by-file-copy"></a>藉由檔案複製發佈
 
 如果元件是由單一 .winmd 檔案組成，或是由 .winmd 檔案和資源索引 (.pri) 檔案組成，您只需讓使用者複製 .winmd 檔案即可。 使用者可以將檔案放在專案中的任何地方、使用 **\[加入現有項目\]** 對話方塊來將 .winmd 檔案加入專案，然後使用 [參考管理員] 對話方塊來建立參考。 如果您包含 .pri 檔案或 .xml 檔案，請告知使用者將這些檔案與 .winmd 檔案放在一起。
 
-> **注意**  當您建置 Windows 執行階段元件時，Visual Studio 一律會產生 .pri 檔案，即使專案不含任何資源也一樣。 如果您有適用於元件的測試 app，則可在 bin\debug\AppX 資料夾中檢查 app 封裝的內容，以判斷是否使用了 .pri 檔案。 如果來自元件的 .pri 檔案並未出現在其中，則您就不需發佈該元件。 或者，您也可以使用 [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) 工具，傾印來自於 Windows 執行階段元件專案的資源檔。 例如，您可以在 Visual Studio 命令提示字元視窗中輸入： makepri dump /if MyComponent.pri /of MyComponent.pri.xml 如需 .pri 檔案的詳細資訊，請參閱[資源管理系統 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)。
+> **注意：** Visual Studio 一律會產生.pri 檔案當您建置 Windows 執行階段元件，即使專案不含任何資源。 如果您有適用於元件的測試 app，則可在 bin\debug\AppX 資料夾中檢查 app 封裝的內容，以判斷是否使用了 .pri 檔案。 如果來自元件的 .pri 檔案並未出現在其中，則您就不需發佈該元件。 或者，您也可以使用 [MakePRI.exe](https://msdn.microsoft.com/library/windows/apps/jj552945.aspx) 工具，傾印來自於 Windows 執行階段元件專案的資源檔。 例如，您可以在 Visual Studio 命令提示字元視窗中輸入： makepri dump /if MyComponent.pri /of MyComponent.pri.xml 如需 .pri 檔案的詳細資訊，請參閱[資源管理系統 (Windows)](https://msdn.microsoft.com/library/windows/apps/jj552947.aspx)。
 
 ## <a name="distribution-by-extension-sdk"></a>藉由擴充功能 SDK 發佈
 

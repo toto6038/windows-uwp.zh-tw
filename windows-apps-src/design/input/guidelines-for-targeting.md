@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c9feb6460512a7266dfd5d2979b89084f6487f5
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 3af31535dcdb1cb5eb8beebbbb91312adafe353a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653447"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546950"
 ---
 # <a name="guidelines-for-targeting"></a>目標預測的指導方針
 
@@ -104,7 +102,7 @@ Windows 中的觸控目標預測使用觸控數位板偵測到之每一根手指
 </tbody>
 </table>
 
- 
+ 
 
 這些建議目標大小可以根據自己的特殊情況而加以調整。 這些建議考慮到下列事項：
 
@@ -168,9 +166,9 @@ Windows 提供目標預測協助，以支援這裡所顯示的最小大小或邊
 * [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

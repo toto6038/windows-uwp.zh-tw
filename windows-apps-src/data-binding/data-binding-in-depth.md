@@ -6,19 +6,17 @@ description: 資料繫結可讓您的 App UI 顯示資料，以及選擇性地�
 ms.author: stwhi
 ms.date: 10/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 906fb2d0d5d466f4fd691afd35ed96198929225c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 9d990c206892872711626fb98f386f7b28f43543
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514448"
+ms.locfileid: "5543306"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 

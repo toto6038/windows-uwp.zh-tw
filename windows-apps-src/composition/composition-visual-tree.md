@@ -6,15 +6,14 @@ description: 「組合視覺效果」構成組合 API 的所有其他功能所�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b0d02dcc4f26ba767c4253f42a20459059829961
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.localizationpriority: medium
+ms.openlocfilehash: 8e43d5697a8fe4536e3574d93bda5836133ec8a8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2017
-ms.locfileid: "839442"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544734"
 ---
 # <a name="composition-visual"></a>組合視覺效果
 

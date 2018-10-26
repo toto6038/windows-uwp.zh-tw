@@ -6,16 +6,14 @@ ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 ms.author: elcowle
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: 91b3e37664543b57839387a187d0876f4830222c
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 7a808c36ab319d76f16c653c5812ebe4b269ec59
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488822"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543622"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)
 
@@ -30,7 +28,7 @@ ms.locfileid: "1488822"
 > [!IMPORTANT]
 > Marble Maze 說明的設計模式是我們認為建立 UWP 遊戲的最佳做法。 您可以調整許多實作細節，以符合您自己的做法和您所開發的遊戲的獨特需求。 請自行選擇使用最符合需求的各種技術或程式庫。 (不過，一定要確定您的程式碼通過 [Windows 應用程式認證套件](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit))。當我們認為某個實作是成功開發遊戲的關鍵時，我們會在此文件中強調。
 
- 
+ 
 
 ## <a name="introducing-marble-maze"></a>介紹 Marble Maze
 
@@ -47,7 +45,7 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 
 
 -   Windows 10 Creators Update
--   [Microsoft Visual Studio 2017](https://www.visualstudio.com/downloads/)
+-   [Microsoft Visual Studio2017](https://www.visualstudio.com/downloads/)
 -   C++ 程式設計知識
 -   認識 DirectX 和 DirectX 詞彙
 -   COM 基本知識
@@ -55,7 +53,7 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 ## <a name="who-should-read-this"></a>本文件的對象
 
 
-如果您有興趣建立適用於 Windows 10 的 3D 遊戲或其他需要大量圖形的應用程式，本文件正好符合您的需要。 我們希望您善用本文件概述的原則和做法，來建立您自己的 UWP 遊戲。 如果您具備 C++ 和 DirectX 程式設計背景或有強烈的興趣，將可從這份文件中得到最多的收穫。 即使您沒有使用 DirectX 的經驗，只要有使用過類似的 3D 圖形程式設計環境的經驗，仍然可以受益。
+如果您有興趣建立 3D 遊戲或其他需要大量圖形的應用程式的 windows 10，這就適合您。 我們希望您善用本文件概述的原則和做法，來建立您自己的 UWP 遊戲。 如果您具備 C++ 和 DirectX 程式設計背景或有強烈的興趣，將可從這份文件中得到最多的收穫。 即使您沒有使用 DirectX 的經驗，只要有使用過類似的 3D 圖形程式設計環境的經驗，仍然可以受益。
 
 [逐步解說：使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)文件說明另一個範例，該範例使用 DirectX 和 C++ 來實作基本的 3D 射擊遊戲。
 
@@ -101,11 +99,11 @@ Marble Maze 也會使用 [DirectXMath](https://msdn.microsoft.com/library/window
 | [在 Marble Maze 範例中加入輸入和互動](adding-input-and-interactivity-to-the-marble-maze-sample.md) | 說明 Marble Maze 如何使用加速計、觸控及 Xbox One 控制器輸入，讓使用者能夠瀏覽功能表並與遊戲板互動。 另外，描述您在處理輸入時應該牢記的一些最佳做法。 |
 | [在 Marble Maze 範例中加入音訊](adding-audio-to-the-marble-maze-sample.md)                                     | 說明 Marble Maze 如何利用音訊將音樂和音效加到遊戲體驗中。                                                                                                                                                  |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

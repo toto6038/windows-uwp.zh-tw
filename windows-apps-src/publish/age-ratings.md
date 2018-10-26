@@ -6,16 +6,14 @@ ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ms.author: wdg-dev-content
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 年齡分級, 遊戲分級, iarc, 分級, 問卷, 分級委員會, 內容分級
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cf7a3c3a57c4d892de2438967d995ee18470cae
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 53692f7d3f5ae9d4a5e6bdcc1d5909467987d264
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520349"
+ms.locfileid: "5545543"
 ---
 # <a name="age-ratings"></a>年齡分級
 

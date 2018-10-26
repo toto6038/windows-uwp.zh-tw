@@ -6,16 +6,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/02/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c01b3efe77f1933c8d9a8620a60757e14d94bd5
-ms.sourcegitcommit: dd1a2e22eadd2304afee0912fd21772a9d2d8fda
-ms.translationtype: HT
+ms.openlocfilehash: f64072f2f04b5cd45b3b75ccad908ef6906c00f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/13/2017
-ms.locfileid: "1437739"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547280"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>資源管理系統如何比對語言標記
 

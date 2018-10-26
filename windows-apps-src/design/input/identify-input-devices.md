@@ -9,15 +9,13 @@ keywords: 裝置, 數位板, 輸入, 互動
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 40abeae4048784599deadd9a1a62a995447159be
-ms.sourcegitcommit: 03a3c02c7b3b0b0a3d1b14705cc1fd73788ac034
-ms.translationtype: HT
+ms.openlocfilehash: 77d2a914147fb2cd20f8043e0b52a824ddf3710d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "1903192"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5546610"
 ---
 # <a name="identify-input-devices"></a>識別輸入裝置
 
@@ -31,9 +29,9 @@ ms.locfileid: "1903192"
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 類別，這個類別可以用來擷取由一或多個已連接滑鼠所公開的屬性。 做法是建立一個新的 **MouseCapabilities** 物件並取得您感興趣的屬性。
 
-**注意**  這裡所討論屬性傳回的值都是以所有偵測到的滑鼠為根據：只要至少有一個滑鼠支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一滑鼠所公開的最大值。
+**注意：** 這裡所討論屬性傳回的值以所有偵測到滑鼠為根據： 布林值屬性會傳回非零至少一個滑鼠支援特定的功能，而數值屬性會傳回任何一個所公開的最大值滑鼠。
 
- 
+ 
 
 下列程式碼會使用一系列的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素來顯示個別的滑鼠屬性和值。
 
@@ -69,9 +67,9 @@ private void GetKeyboardProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 類別，這個類別可以用來擷取是否已連接任何觸控數位板。 做法是建立一個新的 **TouchCapabilities** 物件並取得您感興趣的屬性。
 
-**注意**  這裡所討論屬性傳回的值是以所有偵測到的觸控數位板為根據：只要至少有一個數位板支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一數位板所公開的最大值。
+**注意：** 這裡所討論屬性傳回的值以所有偵測到的觸控數位板為根據： 布林值屬性會傳回非零至少一個數位板支援特定的功能，而數值屬性會傳回最大值任何一個數位板所公開。
 
- 
+ 
 
 下列程式碼會使用一系列的 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 元素來顯示觸控屬性和值。
 
@@ -89,7 +87,7 @@ private void GetTouchProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) 類別，這個類別可以用來擷取是否有任何裝置支援指標輸入 (觸控、觸控板、滑鼠或手寫筆)。 做法是建立一個新的 **PointerDevice** 物件並取得您感興趣的屬性。
 
-**注意**  這裡所討論屬性傳回的值是以所有偵測到的指標裝置為根據：只要至少有一個裝置支援特定的功能，布林值屬性就會傳回非零值，而數值屬性會傳回任一指標裝置所公開的最大值。
+**注意：** 這裡所討論屬性傳回的值以所有偵測到的指標裝置為根據： 布林值屬性會傳回非零至少一個裝置支援特定的功能，而數值屬性會傳回公開的最大值透過任一指標裝置。
 
 下列程式碼會使用一個表格來顯示每個指標裝置的屬性和值。
 
@@ -188,9 +186,9 @@ private void GetPointerDevices()
 
 **封存範例**
 * [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
- 
+ 
 
- 
+ 
 
 
 

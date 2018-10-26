@@ -1,31 +1,29 @@
 ---
 author: msatranjr
 title: 側載 UWP app 的代理 Windows 執行階段元件
-description: 本文件討論 Windows10 支援的以企業為目標的功能，此功能可讓方便觸控的 .NET 應用程式使用負責重要業務關鍵作業的現有程式碼。
+description: 本文件討論 windows 10，可讓方便觸控的.NET 應用程式使用負責重要業務關鍵作業的現有程式碼所支援的企業導向功能。
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fd511a109022d265d13b575bd696e8c346567b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832399"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5543589"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>側載 UWP app 的代理 Windows 執行階段元件
 
-本文章討論 Windows 10 所支援的企業導向功能，該功能允許方便觸控的 .NET 應用程式可使用負責重要業務關鍵作業的現有程式碼。
+本文討論 windows 10，可讓方便觸控的.NET 應用程式使用負責重要業務關鍵作業的現有程式碼所支援的企業導向功能。
 
 ## <a name="introduction"></a>簡介
 
->**注意**：本文隨附的範例程式碼可下載用於 [Visual Studio 2015 和 2017](https://aka.ms/brokeredsample)。 用來建置代理 Windows 執行階段元件的 Microsoft Visual Studio 範本可以於此處下載：[以適用於 Windows 10 的通用 Windows app 為目標的 Visual Studio 2015 範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
+>**注意：** 這份白皮書的範例程式碼可能會下載適用於[Visual Studio 2015 和 2017年](https://aka.ms/brokeredsample)。 用來建置代理 Windows 執行階段元件的 Microsoft Visual Studio 範本可以於此處下載：[以適用於 Windows 10 的通用 Windows app 為目標的 Visual Studio 2015 範本](https://visualstudiogallery.msdn.microsoft.com/10be07b3-67ef-4e02-9243-01b78cd27935)
 
-Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 Windows 執行階段元件*。 我們使用 IPC (處理程序間通訊) 一詞來說明在一個處理程序 (桌面元件) 執行現有桌面軟體資產，同時在 UWP App 中與此程式碼進行互動的能力。 這對企業開發人員來說是很熟悉的模型，因為資料庫應用程式和使用 Windows NT 服務的應用程式共用很類似的多個處理程序架構。
+Windows 包含了新的功能，稱為*側載應用程式的代理 Windows 執行階段元件*。 我們使用 IPC (處理程序間通訊) 一詞來說明在一個處理程序 (桌面元件) 執行現有桌面軟體資產，同時在 UWP App 中與此程式碼進行互動的能力。 這對企業開發人員來說是很熟悉的模型，因為資料庫應用程式和使用 Windows NT 服務的應用程式共用很類似的多個處理程序架構。
 
 應用程式側載是這個功能很重要的元件。
 企業特定應用程式在一般消費者 Microsoft Store 中沒有市場，而且公司對安全性、隱私權、發佈、設定和服務有非常特定的需求。 因此，側載模型不但是使用此功能之人員的必要項目，也是重要的實作詳細資料。
@@ -36,7 +34,7 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 
 ## <a name="application-components"></a>應用程式元件
 
->**注意**  這項功能專用於 .NET。 用戶端應用程式和桌面元件都必須使用 .NET 撰寫。
+>**注意：** 這項功能是專門針對.NET 的使用。 用戶端應用程式和桌面元件都必須使用 .NET 撰寫。
 
 **應用程式模型**
 
@@ -50,13 +48,13 @@ Windows 包含了一個新功能，稱為*適用於側載應用程式的代理 W
 
 我們將針對 UWP 類型系統說明側載應用程式和桌面元件間的協定。 這包括宣告可代表 UWP 的一或多個 C\# 類別。 如需使用 C\# 建立 Windows 執行階段類別的特定需求，請參閱 MSDN 主題[以 C\# 和 Visual Basic 建立 Windows 執行階段元件](https://msdn.microsoft.com/library/br230301.aspx)。
 
->**注意**  目前在桌面元件與側載應用程式之間的 Windows 執行階段元件協定中不支援列舉。
+>**注意：** 桌面元件與側載應用程式，在這個階段之間的 Windows 執行階段元件協定中不支援列舉。
 
 **側載應用程式**
 
 側載應用程式與一般 UWP app 一樣，除了一個地方不同：它使用側載而不是透過 Microsoft Store 安裝。 大部分的安裝機制都相同：資訊清單和應用程式封裝都很類似 (資訊清單還有一個相似處將在稍後詳細說明)。 一旦啟用側載，一個簡單的 PowerShell 指令碼就可以安裝所需的憑證和應用程式本身。 一般最佳做法是讓側載應用程式通過 Visual Studio [專案/市集] 功能表內含的 WACK 認證測試。
 
->**注意** 側載可以在 [設定] -&gt; [更新與安全性] -&gt; [適用於開發人員] 中開啟。
+>**注意：** 側載可以開啟在 [設定]-&gt;更新與安全性]-&gt;適用於開發人員。
 
 請特別注意，Windows10 更新隨附的應用程式代理人機制只有 32 位元版本。 桌面元件必須是 32 位元。
 側載應用程式可以是 64 位元 (前提是要同時登錄 64 位元和 32 位元 Proxy)，但這不常見。 建置使用 C\# 的側載應用程式時，使用一般「中性」設定和「建議使用 32 位元」預設值就能建立 32 位元的側載應用程式。
@@ -165,7 +163,7 @@ namespace Fabrikam
     rem erase "$(TargetPath)"
 ```
 
-參考 **winmd** 建立後 (在專案的 [目標] 資料夾底下的 [參考] 資料夾中)，會帶到 (複製到) 每個使用的側載應用程式專案並加以參考。 下節會有更詳盡的說明。 上述建置規則內含的專案結構可確保實作和參考 **winmd** 會位在建置階層完全不同的目錄中，以避免混淆。
+一次參考**winmd**會建立 （在資料夾中的專案目標資料夾下的 「 參考 」），它會帶到 （複製到） 每個使用側載應用程式專案並加以參考。 下節會有更詳盡的說明。 在上述建置規則內含的專案結構可確保實作和參考**winmd**會位在建置階層以避免混淆的目錄。
 
 ## <a name="side-loaded-applications-in-detail"></a>側載應用程式詳細資料
 如上所述，側載應用程式的建置方式與任何其他 UWP app 相同，但還有一個額外的細節：在側載應用程式資訊清單中宣告 RuntimeClass 的可用性。 這可讓應用程式只要寫新項目就能存取桌面元件中的功能。 <Extension> 區段中的新資訊清單項目說明桌面元件中實作的 RuntimeClass，以及其所在位置的資訊。 在應用程式資訊清單中的這些宣告內容與針對 Windows 10 的 App 是相同的。 例如：
@@ -181,24 +179,24 @@ namespace Fabrikam
 </Extension>
 ```
 
-類別是 inProcessServer，因為 outOfProcessServer 類別中有多個項目不適用於這個應用程式設定。 請注意，<Path> 元件一定要包含 clrhost.dll (不過，這**不是**強制性的，且指定不同的值將會以未定義的方式失敗)。
+類別是 inProcessServer，因為 outOfProcessServer 類別中有多個項目不適用於這個應用程式設定。 請注意，<Path>元件必須一律包含 clrhost.dll (不過這是**不**強制執行和未定義的方式指定不同的值將會失敗)。
 
 <ActivatableClass> 區段會和應用程式套件中 Windows 執行階段元件偏好的真正同處理序 RuntimeClass 相同。 <ActivatableClassAttribute> 是新的元素，且屬性 Name="DesktopApplicationPath" 和 Type="string" 是強制且不變的。 值屬性指向桌面元件實作 winmd 所在的位置 (下節會有更詳盡的資訊)。 桌面元件偏好的每個 RuntimeClass 都應該有自己的 <ActivatableClass> 元素樹狀結構。 ActivatableClassId 必須符合 RuntimeClass 的完整命名空間名稱。
 
-如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 手動將參考 **winmd** 複製到第二層目錄，然後使用 [專案參考] 對話方塊 (按一下 **\[瀏覽..\]** 按鈕) 尋找並參考此 **winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
+如＜定義協定＞一節所述，必須將專案參考連接到桌面元件參考 winmd。 Visual Studio 專案系統通常會建立相同名稱的兩層目錄結構。 範例中為 EnterpriseIPCApplication\\EnterpriseIPCApplication。 參考**winmd**以手動方式複製到這個第二層目錄，然後專案參考] 對話方塊 （按一下 [**瀏覽..** 按鈕) 尋找並參考此**winmd**。 之後，桌面元件的最上層命名空間 (例如 Fabrikam) 應該在專案參考部分顯示為最上層節點。
 
->**注意** 在側載應用程式中使用 **reference winmd** 非常重要。 如果您不小心將 **implementation winmd** 帶到側載應用程式目錄並參考它，很可能會收到與「找不到 IStringable」相關的錯誤。 這是參考錯誤 **winmd** 的明顯指標。 IPC 伺服器應用程式的建置後規則 (下節會有詳細說明) 很謹慎地將這兩個 **winmd** 隔離在兩個獨立的目錄中。
+>**注意：** 若要使用**參考 winmd**非常重要側載應用程式中。 如果您不小心沿用**實作 winmd**到側載應用程式目錄並參考它，很可能會收到 「 找不到 IStringable 」 相關的錯誤。 這是一個確定登入的錯誤**winmd**已參考。 IPC 伺服器應用程式中 （在下一節中加以詳述） 謹慎建置後規則有這些兩個**winmd**進獨立的目錄。
 
 環境變數 (特別是 %ProgramFiles%) 僅能在 <ActivatableClassAttribute Value="path"> 中使用。如之前所述，應用程式代理人只支援 32 位元，因此若應用程式在 64 位元的作業系統上執行，%ProgramFiles% 會解析為 C:\Program Files (x86)。
 
 ## <a name="desktop-ipc-server-detail"></a>桌面 IPC 伺服器詳細資料
 
-上面兩節說明類別宣告，以及將參考 **winmd** 傳輸到側載應用程式專案的機制。 剩下的大量桌面元件工作則牽涉到實作。 由於使用桌面元件的目的就是要能呼叫桌面程式碼 (通常用來重複使用現有的程式碼資產)，因此專案必須以特別的方式設定。
+兩節說明類別宣告和運輸參考**winmd**的機制到側載應用程式專案。 剩下的大量桌面元件工作則牽涉到實作。 由於使用桌面元件的目的就是要能呼叫桌面程式碼 (通常用來重複使用現有的程式碼資產)，因此專案必須以特別的方式設定。
 一般而言，使用 .NET 的 Visual Studio 專案使用兩種「設定檔」的其中一種。
 一個用在桌面 (".NetFramework")，另一個用在 CLR (".NetCore") 的 UWP app 部分。 這個功能的桌面元件是這兩種的混合。 因此，建構參考區段時非常謹慎，以便將這兩種設定檔融合在一起。
 
 一般 UWP app 專案不含明確的專案參考，因為隱含整個 Windows 執行個體 API 表面。
-通常只會進行其他專案間參考。 不過，桌面元件專案有一個非常特別的參考集。 它一開始是「傳統式桌面\\類別庫」專案，因此是桌面專案。 所以，必須明確參考 Windows 執行階段 API (透過參考 **winmd** 檔案)。 新增適當的參考，如下所示。
+通常只會進行其他專案間參考。 不過，桌面元件專案有一個非常特別的參考集。 它一開始是「傳統式桌面\\類別庫」專案，因此是桌面專案。 因此明確參考 Windows 執行階段 API (透過參考**winmd**檔案) 必須進行。 新增適當的參考，如下所示。
 
 ```XML
 <ItemGroup>
@@ -410,7 +408,7 @@ namespace Fabrikam
 
 上述參考非常謹慎地混合參考，對此混合式伺服器的正常運作非常重要。 通訊協定就是用來開啟 .csproj 檔案 (就像如何編輯專案 OutputType 中所述)，然後視需要新增這些參考。
 
-正確設定參考後，下一個工作是實作伺服器功能。 請參閱 MSDN 主題：[Windows 執行階段元件互通的最佳做法 (使用 C#/VB/C++ 和 XAML 的 UWP app)](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx)。
+正確設定參考後，下一個工作是實作伺服器功能。 請參閱 MSDN 主題[(使用 C# /vb/c + + 和 XAML 的 UWP app) 的 Windows 執行階段元件互通的最佳做法](https://msdn.microsoft.com/library/windows/apps/hh750311.aspx)。
 這項工作要建立 Windows 執行階段元件 dll，以便在實作時呼叫桌面程式碼。 隨附的範例包含 Windows 執行階段中使用的主要模式：
 
 -   方法呼叫
@@ -423,7 +421,7 @@ namespace Fabrikam
 
 **安裝**
 
-若要安裝應用程式，請將實作 **winmd** 複製到相關側載應用程式資訊清單指定的正確目錄：<ActivatableClassAttribute> 值="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 如果沒有將實作 **winmd** 複製到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的，且 RuntimeClass 會擲回「類別未登錄」錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常與可見例外狀況**無關**。
+若要安裝應用程式，將複製實作**winmd**到相關的側載應用程式資訊清單中指定的正確目錄：<ActivatableClassAttribute>值 ="path"。 同時，複製所有相關支援檔案及 proxy/stub dll (下方將涵蓋後者的詳細資料)。 失敗的複製實作**winmd**到伺服器目錄位置，會導致所有側載應用程式呼叫變成新的且 RuntimeClass 會擲回 「 類別未登錄 」 錯誤。 無法安裝 proxy/stub (或無法登錄) 將導致所有呼叫失敗，且不會傳回值。 後者的錯誤通常**不**是相關聯可見例外狀況。
 如果因這個設定錯誤發生例外狀況，可能會以「無效的轉型」表示。
 
 **伺服器實作考量**
@@ -457,7 +455,7 @@ return Task<int>.Run( () =>
 
 ```
 
->**注意** 寫入實作時，等待一些其他可能的長時間執行作業是很常見的。 如果是這樣，需要宣告 **Task.Run** 程式碼：
+>**注意** 寫入實作時，等待一些其他可能的長時間執行作業是很常見的。 如果是這樣，**Task.Run**程式碼需要宣告：
 
 ```csharp
 return Task<int>.Run(async () =>
@@ -480,18 +478,18 @@ return Task<int>.Run(async () =>
 
 **在 Visual Studio 建立 Proxy**
 
-建立並登錄 Proxy 和虛設常式以便在一般 UWP app 套件中使用的處理程序，在 [Windows 執行階段元件中引發事件](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx)主題中有相關說明。
+建立並登錄 proxy 和虛設常式以便在一般 UWP 應用程式套件中使用的程序說明主題中的[Windows 執行階段元件中引發事件](https://msdn.microsoft.com/library/windows/apps/dn169426.aspx)。
 本文所述的步驟比下方說明的處理程序更加複雜，因為它涉及在應用程式套件內登錄 Proxy/虛設常式 (與全域登錄不同)。
 
 **步驟 1：** 使用桌面元件專案的方案，在 Visual Studio 中建立 Proxy/虛設常式專案：
 
 **方案 &gt; 新增 &gt; 專案 &gt; Visual C++ &gt; Win32 主控台選取 DLL 選項。**
 
-針對下列步驟，我們假設伺服器元件名為 **MyWinRTComponent**。
+針對下列步驟，我們假設伺服器元件名**MyWinRTComponent**。
 
 **步驟 3：** 從專案刪除所有 CPP/H 檔案。
 
-**步驟 4：** 上面的＜定義協定＞一節包含執行 **winmdidl.exe**、**midl.exe**、**mdmerge.exe** 等的建置後命令。 這個建置後命令的其中一個 midl 步驟輸出會產生四個重要的輸出：
+<b0>步驟 4:</b0>上的 < 定義協定 > 一節包含執行<b1>winmdidl.exe</b1>、<b2>midl.exe</b2>、<b3>mdmerge.exe</b3>，以及等等的建置後命令。 這個建置後命令的其中一個 midl 步驟輸出會產生四個重要的輸出：
 
 a) Dlldata.c
 
@@ -503,7 +501,7 @@ d) 一個 *_p.c 檔案 (例如 MyWinRTComponent_p.c)
 
 **步驟 5：** 將這四個產生的檔案新增到 "MyWinRTProxy" 專案。
 
-**步驟 6：** 將定義檔新增到 "MyWinRTProxy" 專案 **(專案 &gt; 加入新項目 &gt; 程式碼 &gt; 模組定義檔案**)，並將內容更新為：
+**步驟 6:** 將檔新增到"MyWinRTProxy"專案 **(專案 > 加入新項目 > 程式碼 > 模組定義檔案**) 和內容更新為：
 
 LIBRARY MyWinRTComponent.Proxies.dll
 
@@ -539,9 +537,9 @@ MyWinRTComponent.Proxies
 
 **部署 Proxy**
 
-必須全域登錄此 Proxy。 執行這個作業最簡單的方法就是讓您的安裝處理程序呼叫 Proxy dll 上的 DllRegisterServer。 請注意，由於這個功能只支援 x86 的伺服器組建 (也就是，不支援 64 位元)，最簡單的設定是使用 32 位元伺服器、32 位元 Proxy 和 32 位元側載應用程式。 Proxy 通常會與桌面元件的實作 **winmd** 放在一起。
+必須全域登錄此 Proxy。 執行這個作業最簡單的方法就是讓您的安裝處理程序呼叫 Proxy dll 上的 DllRegisterServer。 請注意，由於這個功能只支援 x86 的伺服器組建 (也就是，不支援 64 位元)，最簡單的設定是使用 32 位元伺服器、32 位元 Proxy 和 32 位元側載應用程式。 Proxy 通常位於一起實作**winmd**適用於桌面元件。
 
-還有一個額外的設定步驟要執行。 為了讓側載處理程序載入和執行 Proxy，目錄必須將 ALL_APPLICATION_PACKAGES 標記為 "read / execute"。 這要透過 **icacls.exe** 命令列工具完成。 這個命令應該在實作 **winmd** 和 Proxy/虛設常式 dll 所在的目錄中執行：
+還有一個額外的設定步驟要執行。 為了讓側載處理程序載入和執行 Proxy，目錄必須將 ALL_APPLICATION_PACKAGES 標記為 "read / execute"。 這是透過**icacls.exe**命令列工具。 這個命令應該的目錄中執行其中實作**winmd**和 proxy/虛設常式 dll 所在：
 
 *icacls . /T /grant \*S-1-15-2-1:RX*
 
@@ -557,7 +555,7 @@ MyWinRTComponent.Proxies
 
 -   大量傳輸結果會降低跨處理程序的交談功能。 這通常是使用 Windows 執行階段陣列建構來執行。
 
--   傳回 *List<T>*，其中 *T* 是來自非同步作業或屬性擷取的物件，會產生很多跨處理程序交談。 例如，假設您傳回 *List&lt;People&gt;* 物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個傳回的 *People* 物件都以 Proxy 表示，每個個別物件方法或屬性的呼叫會產生跨處理程序呼叫。 *Count* 中單純的 *List&lt;People&gt;* 物件是大型物件，會導致大量緩慢的呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如：
+-   傳回*清單<T>* 其中*T*是來自非同步作業或屬性擷取的物件，會產生很多跨處理程序交談。 例如，假設您傳回*清單&lt;人員&gt;* 物件。 每個反覆運算傳輸都是一個跨處理程序呼叫。 每個*人員*傳回的物件會以 proxy 和每個方法的呼叫，或在該個別物件的屬性將會產生跨處理程序呼叫。 因此 「 無辜者 」*清單&lt;人員&gt;* 物件其中*計數*是大型會導致大量緩慢的呼叫。 大量傳輸陣列中的內容結構會產生較佳的效能。 例如：
 
 ```csharp
 struct PersonStruct
@@ -569,10 +567,10 @@ struct PersonStruct
 }
 ```
 
-然後會傳回 * PersonStruct\[\]* 而不是 *List&lt;PersonObject&gt;*。
+然後會傳回*PersonStruct\ [\]* 而不是*清單&lt;PersonObject&gt;*。
 這會在一個跨處理程序 "hop" 取得所有的資料。
 
-與所有效能考量一樣，測量和測試非常重要。 在理想的情況下，應該將遙測插入各種作業以判斷作業所花的時間。 務必要測量一整個範圍：例如，側載應用程式中的特定查詢實際上花了多少時間使用所有的 *People* 物件？
+與所有效能考量一樣，測量和測試非常重要。 在理想的情況下，應該將遙測插入各種作業以判斷作業所花的時間。 務必要跨一系列測量： 為例，沒有它實際上花費多久取用所有*人*物件的側載應用程式中特定查詢？
 
 另一個技巧是可變載入測試。 您可以將效能測試攔截放入應用程式，將可變延遲載入引進伺服器處理來完成此作業。 這可以模擬各種載入，以及應用程式對不同伺服器效能的反應。
 此範例說明如何使用適當的非同步技術將時間延遲放入程式碼。 要插入的實際延遲時間及要放入該人工載入的隨機範圍會因應用程式設計和應用程式預期執行環境而有所不同。
@@ -581,7 +579,7 @@ struct PersonStruct
 
 當您變更伺服器時，必須確定所有先前執行中的執行個體已不再執行。 COM 最終將清除這個處理序，但是取消計時器的時間會比反覆開發的有效時間還長。 因此，刪除先前執行中的執行個體是開發期間的一個標準步驟。 這需要開發人員持續追蹤哪一個 dllhost 執行個體正在裝載伺服器。
 
-您可以使用 [工作管理員] 或其他協力廠商應用程式，找出伺服器處理序並予以刪除。 同時也會隨附命令列工具 **TaskList.exe **，其中包含彈性語法，例如：
+您可以使用 [工作管理員] 或其他協力廠商應用程式，找出伺服器處理序並予以刪除。 命令列工具**TaskList.exe**也會包含，並有彈性語法，例如：
 
   
  | **命令** | **動作** |
@@ -590,7 +588,7 @@ struct PersonStruct
  | tasklist /FI "IMAGENAME eq dllhost.exe" /M | 列出所有 dllhost.exe 執行個體的相關資訊。 /M 參數會列出已載入的模組。 |
  | tasklist /FI "PID eq 12564" /M | 如果您知道 dllhost.exe 的 PID，就可使用這個選項來加以查詢。 |
 
-代理人伺服器的模組清單應該會在其載入模組的清單中列出 *clrhost.dll*。
+代理人伺服器的模組清單應該會列出*clrhost.dll*在其載入模組的清單中。
 
 ## <a name="resources"></a>資源
 

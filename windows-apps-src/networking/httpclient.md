@@ -6,16 +6,14 @@ ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b56d9ac156dabc17be3245a77cb6c126317aa9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c874c690826dfa74b8dcb2312204cd549db3db2b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975760"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5551031"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -62,7 +60,7 @@ ms.locfileid: "975760"
 
 ## <a name="send-a-simple-get-request-over-http"></a>透過 HTTP 傳送簡單 GET 要求
 
-如本文先前所述，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段會示範如何將傳送 GET 要求http://www.contoso.com使用[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)類別和[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)類別來讀取 GET 要求的回應。
+如本文先前所述，[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間可讓 UWP app 傳送 GET 要求。 下列程式碼片段示範如何傳送 GET 要求http://www.contoso.com使用[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)類別和[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)類別讀取 GET 要求的回應。
 
 ```csharp
 //Create an HTTP client object
@@ -108,7 +106,7 @@ catch (Exception ex)
 
 如果傳送到 [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 物件建構函式的統一資源識別項 (URI) 字串無效時，即會擲回例外狀況。
 
-**.NET：**[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型別在 C# 和 VB 中顯示為 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)。
+**.NET:** [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)類型會顯示為 C# 和 VB 中[**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx)
 
 在 C# 和 Visual Basic 中，可在建構 URI 之前，於 .NET 4.5 中使用 [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) 類別和其中一個 [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) 方法來測試接收自使用者的字串，以避免發生這個錯誤。
 
@@ -116,7 +114,7 @@ catch (Exception ex)
 
 [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 缺少便利的函式。 所以使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-在使用 C#、VB.NET 之 .NET Framework 4.5 的 app 中，[System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) 代表例外狀況發生時 app 執行期間的錯誤。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+在應用程式中使用 C#、 VB.NET、 [System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) .NET Framework4.5 代表 app 執行期間時的錯誤發生例外狀況。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) 屬性會傳回描述例外狀況的訊息。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
 在使用 Managed C++ 的 app 中，[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表例外狀況發生時 app 執行期間的錯誤。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 

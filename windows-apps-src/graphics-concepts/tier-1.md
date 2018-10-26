@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 522e2b5e9347b0b26bbd448b1d445037a3889f16
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9aab54e23d59b21901e3aa4700581d2d7eeeee8e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044667"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544824"
 ---
 # <a name="tier-1"></a>第 1 層
 
@@ -67,9 +65,9 @@ Mipmap 在所有維度中都並非標準磚大小之倍數的串流資源，其�
 
 [串流資源功能層級](streaming-resources-features-tiers.md)
 
- 
+ 
 
- 
+ 
 
 
 

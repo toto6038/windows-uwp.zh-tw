@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca3845866bafc229968e760a3f19f56df3a96cb
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9f1c2fa6a30047cb447b597213692085f4656bd2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653137"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544867"
 ---
 # <a name="add-and-delete-animations"></a>新增和刪除動畫
 
@@ -47,9 +45,9 @@ ms.locfileid: "1653137"
 * [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**AddDeleteThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
- 
+ 
 
- 
+ 
 
 
 

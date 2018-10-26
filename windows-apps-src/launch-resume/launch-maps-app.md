@@ -6,16 +6,14 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 27b458c7ec5cabdc27ebd90c9eb024df2f35e402
-ms.sourcegitcommit: 54c2cd58fde08af889093a0c85e7297e33e6a0eb
-ms.translationtype: Auto
+ms.openlocfilehash: 6fd7377294e0d460720f6a16e71981ab0924ac9a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/19/2018
-ms.locfileid: "1664951"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549278"
 ---
 # <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖應用程式
 
@@ -103,7 +101,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?cp=40.726966~-74.006076&where=New%20York            | 搜尋靠近指定中心點的紐約。                             |
 | bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&q=pizza              | 搜尋指定週框方塊 (亦即紐約市) 中的比薩店。      |
 
- 
+ 
 ## <a name="display-multiple-points"></a>顯示多個點
 
 
@@ -117,7 +115,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | 以紐約為範圍，顯示名為 Fake\_Business\_with\_Underscore 的圖釘。                                                  |
 | bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&amp;lvl=16&amp;cp=36.114902~-115.176669 | 將縮放比例設定為 16 來顯示名為 Hotel List 的清單，以及兩個代表位於拉斯維加斯之 Caesars Palace 和 The Bellagio 的圖釘。 |
 
- 
+ 
 
 ## <a name="display-directions-and-traffic"></a>顯示路線指引和交通狀況
 
@@ -251,10 +249,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </ul>
 <p>在 Windows 10 中，空照圖檢視和 3D 檢視樣式相同。</p>
 <div class="alert">
-**注意** 省略 **sty** 參數會產生與 sty=r 相同的結果。
+**注意：** 省略**sty**參數會產生相同的結果與 sty = r。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -289,10 +287,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>ss=1</p></td>
 <td align="left"><p>指出當 <code>ss=1</code> 時就顯示街景圖。 省略 <b>ss</b> 參數會產生與 <code>ss=0</code> 相同的結果。 與 <b>cp</b> 參數搭配使用來指定街景檢視的位置。</p>
 <div class="alert">
-**注意** 並非所有地區都能使用街景圖。
+**注意：** 街景圖並非所有地區。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -303,10 +301,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>trfc=1</p></td>
 <td align="left"><p>指定是否要在地圖上包含交通資訊。 省略 trfc 參數會產生與 <code>trfc=0</code> 相同的結果。</p>
 <div class="alert">
-**注意** 並非所有地區都有提供交通資料。
+**注意：** 流量資料是不所有區域中。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="even">
@@ -332,10 +330,10 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>提供的路線不完整時，不會繪製任何路線圖。</p>
 <p>與 **mode** 參數搭配使用可指定交通模式 (開車、運輸工具或步行)。 若未指定 **mode**，則會以使用者的交通喜好設定模式提供路線指引。</p>
 <div class="alert">
-**注意** 如果利用 **pos** 參數值指定位置，就能將標題當成位置使用。 系統將顯示標題，而不是緯度和經度。
+**注意：** 標題可用於位置，如果**pos**參數值指定位置，是。 系統將顯示標題，而不是緯度和經度。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 <tr class="odd">
@@ -377,7 +375,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 </tbody>
 </table>
 
-  
+  
 <span id="ms-drive-to-param-reference"/>
 
 ## <a name="ms-drive-to-parameter-reference"></a>ms-drive-to: 參數參考
@@ -387,7 +385,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 > **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#display-directions-and-traffic)。
 
- 
+ 
 
 | 參數 | 定義 | 範例 | 詳細資料 |
 |------------|-----------|---------|---------|
@@ -395,7 +393,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | **destination.longitude** | 目的地經度 | 範例：destination.longitude=-122.141964733601 | 目的地的經度。 有效的經度值介於 -180 (含) 到 +180 (含)。 |
 | **destination.name** | 目的地的名稱 | 範例：destination.name=Redmond, WA | 目的地的名稱。 您不需要編碼 **destination.name** 值。 |
 
- 
+ 
 <span id="ms-walk-to-param-reference"/>
 
 ## <a name="ms-walk-to-parameter-reference"></a>ms-walk-to: 參數參考
@@ -404,7 +402,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 啟動轉向建議步行路線要求的 URI 不需要進行編碼，並且具有下列格式。
 
 > **注意** 您並未在此 URI 配置中指定起點。 起點一律會假設為目前的位置。 如果您需要指定目前所在位置以外的起點，請參閱[顯示路線和交通狀況](#display-directions-and-traffic)。
- 
+ 
 
 | 參數 | 定義 | 範例 | 詳細資料 |
 |-----------|------------|---------|----------|
@@ -414,7 +412,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 ## <a name="ms-settings-parameter-reference"></a>ms-settings: 參數參考
 
-**ms-settings:** URI 配置的地圖應用程式特定參數的語法定義如下。 **maps-downloadmaps** 是與 **ms-settings:** URI 一起指定，格式為 **ms-settings:maps-downloadmaps?**，以指示離線地圖設定頁面。 
+**ms-settings:** URI 配置的地圖應用程式特定參數的語法定義如下。 **maps-downloadmaps** 是與 **ms-settings:** URI 一起指定，格式為 **ms-settings:maps-downloadmaps?**，以指示離線地圖設定頁面。 
 
 | 參數 | 定義 | 範例 | 詳細資料 |
 |-----------|------------|---------|----------|

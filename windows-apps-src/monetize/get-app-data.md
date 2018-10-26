@@ -6,16 +6,14 @@ title: 取得 App 資料
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 6940c1079c7973bc4fd639345c5d5e3f33b0221f
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 96f30e38a05eefe3e51f0ba632585f269b96efb8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520920"
+ms.locfileid: "5572637"
 ---
 # <a name="get-app-data"></a>取得 App 資料
 

@@ -6,16 +6,14 @@ ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
 ms.date: 05/24/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
 ms.localizationpriority: medium
-ms.openlocfilehash: 019bb410e6ac65f9951f06052c78f40e9a5f32e2
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: a1b25067104a664cb90ef068749d9e4cd00bcc80
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5477403"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547709"
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 

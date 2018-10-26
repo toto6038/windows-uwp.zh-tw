@@ -6,16 +6,14 @@ description: 列舉命名空間可讓您尋找內部連接到系統、外部連�
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1cf6e8fe3205d70479a590bf73f7a01cd7ac3848
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: df6082665136442c03273dea4132417b0fd7033c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958913"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544164"
 ---
 # <a name="enumerate-devices"></a>列舉裝置
 
@@ -72,7 +70,7 @@ async void enumerateSnapshot(){
 | **DeviceInformation.Kind**       | 這表示 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件所代表的裝置物件類型。 這不是裝置類別或裝置類型。 單一裝置可由數個不同類型的不同 **DeviceInformation** 物件來呈現。 這個屬性的可能值及其彼此關聯的方式都列於 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 中。                           |
 | **DeviceInformation.Properties** | 這個屬性包涵蓋針對 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件要求的資訊。 您可以輕鬆地將最常見的屬性當成 **DeviceInformation** 物件的屬性進行參照，例如 [**DeviceInformation.Name**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.name)。 如需詳細資訊，請參閱[裝置資訊屬性](device-information-properties.md)。                                                                |
 
- 
+ 
 
 ## <a name="devicepicker-ui"></a>DevicePicker UI
 
@@ -86,9 +84,9 @@ async void enumerateSnapshot(){
 
 顯示 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 時，UI 的內容會在新增、移除或更新裝置時自動更新。
 
-**注意**  您無法使用 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) 來指定 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx)。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
+**注意：** 不能指定使用[**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) 。 如果您想要擁有具備特定 **DeviceInformationKind** 的裝置，就需要建置 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 並提供自己的 UI。
 
- 
+ 
 
 如果您想要使用傳播媒體內容和 DIAL，它們也會各自提供自己的選擇器。 這些選擇器分別是 [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn972525) 和 [**DialDevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn946783)。
 
@@ -127,9 +125,9 @@ async void enumerateSnapshot(){
 
 以背景工作的方式監看裝置很類似上述建立 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 的方式。 事實上，您仍然需要先建立如上節所述的標準 **DeviceWatcher** 物件。 一旦建立該物件之後，您會呼叫 [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx)，而不是 [**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start)。 當您呼叫 **GetBackgroundTrigger** 時，必須指定您所感興趣的通知：新增、移除或更新。 您無法在沒有要求新增的情況下要求更新或移除。 一旦登錄觸發程序之後，**DeviceWatcher** 就會立即開始在背景中執行。 自此之後，每當收到適用於您應用程式且符合您準則的新通知時，將會觸發背景工作，並提供自從上次觸發您的應用程式之後所做的最新變更。
 
-**重要**  [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 第一次觸發您的應用程式的時機，便是在監看員達到 **EnumerationCompleted** 狀態時。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
+**重要** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)觸發您的應用程式第一次便是在監看員達到**EnumerationCompleted**狀態。 這表示它將包含所有初始結果。 當它在未來的任何時候觸發您的應用程式時，將只包含自從上次觸發之後所發生的新增、更新及移除通知。 這與前景 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) 物件有些微差異，因為初始結果不會一次傳入一個，並只會在達到 **EnumerationCompleted** 之後以套件組合形式傳遞。
 
- 
+ 
 
 某些無線通訊協定在背景進行掃描時，可能會和在前景進行掃描時擁有不一樣的行為。它們也有可能完全不支援在背景中掃描。 有三種與背景掃瞄相關的可能性。 下表列出這些可能性，以及這可能會對您的應用程式產生的效果。 例如，藍牙和 Wi-Fi Direct 不支援背景掃描，因而可推測出它們不支援 [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838)。
 
@@ -139,7 +137,7 @@ async void enumerateSnapshot(){
 | 可能在背景中的唯一被動掃描 | 裝置在等待被動掃瞄執行時，可能需要較長的時間來探索。                                                           |
 | 不支援背景掃描            | [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 將不會偵測到任何裝置，並且將不會報告任何更新。 |
 
- 
+ 
 
 如果您的 [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) 包含不支援以背景工作方式進行掃瞄的通訊協定，則觸發程序仍可運作。 不過，您將無法透過該通訊協定取得任何更新或結果。 通常仍會偵測到其他通訊協定或裝置的更新。
 
@@ -160,9 +158,9 @@ async void enumerateSnapshot(){
 任何 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件皆是由下列兩個資訊的組合來唯一識別：[**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 和 [**DeviceInformation.Kind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.kind.aspx)。 如果您保留這兩個資訊，當遺失 **DeviceInformation** 物件時，就可以將此資訊提供給 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/br225425.aspx) 來重新建立該物件。 如果您這樣做，就可以儲存與您 app 整合之裝置的使用者喜好設定。
 
 
- 
+ 
 
- 
+ 
 
 
 

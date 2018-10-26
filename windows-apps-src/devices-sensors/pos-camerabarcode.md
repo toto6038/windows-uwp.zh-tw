@@ -5,16 +5,14 @@ description: 本文列出適用於 UWP app 的相機條碼掃描器功能，以�
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: dff05e8909c2afd2bac055eead87f4b66892109b
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: c647846aaaf8f7a5cef96e267ad979dc68ee004a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1833101"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549532"
 ---
 # <a name="camera-barcode-scanner"></a>相機條碼掃描器
 相機條碼掃描器是動態建立，只要 Windows 使用軟體解碼器配對連接到您電腦的相機。  每個相機 - 解碼器配對是完全可用的條碼掃描器。   

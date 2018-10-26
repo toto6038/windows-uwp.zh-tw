@@ -6,29 +6,28 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
-ms.openlocfilehash: 9f2c15c8d4bab5a764b8973c4eecb220ed6d8f38
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665334"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548220"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖 app 啟動到特定地圖、路線或一組轉向建議導航路線指引。
 
-> **提示** 若要深入了解如何在應用程式中使用地圖和位置，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
+> [!TIP]
+> 若要深入了解您的應用程式中使用地圖和位置，請從 GitHub 上的[Windows 通用範例存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
 -   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 -   [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
- 
+ 
 
 ## <a name="display-maps"></a>顯示地圖
 
@@ -46,7 +45,7 @@ ms.locfileid: "665334"
 
 ## <a name="access-map-services"></a>存取地圖服務
 
-藉由使用來自 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間的 API，即可將路線、路線指引及地理編碼功能新增到您的 app。 您也可以將 [設定] app 直接啟動到適當的頁面，以協助使用者管理離線地圖。
+藉由使用來自 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間的 API，即可將路線、路線指引及地理編碼功能新增到您的 app。
 
 | 主題 | 說明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -54,7 +53,7 @@ ms.locfileid: "665334"
 | [在地圖上顯示興趣點 (POI)](display-poi.md) | 藉由使用圖釘、影像、形狀及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 |
 | [顯示路線和路線指引](routes-and-directions.md) | 要求路線和路線指引，並將它們顯示在您的 app 中。 |
 | [執行地理編碼和反向地理編碼](geocoding.md) | 呼叫 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。 |
-
+| [尋找並下載地圖套件以供離線使用](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在過去，您的應用程式必須將使用者引導到設定應用程式下載離線地圖。 現在，您可以使用[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空間中的類別，來尋找下載的套件中指定的區域 （根據[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint) [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)、 等等。）。 <br> 您可以也檢查和接聽下載地圖套件的狀態，以及啟動下載，而不需要使用者離開您的應用程式。 <br> 您會發現如何執行此動作參考內容和[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的範例。
 
 ## <a name="get-the-users-location"></a>取得使用者的位置
 
@@ -64,8 +63,9 @@ ms.locfileid: "665334"
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [要求地圖驗證金鑰](authentication-key.md) | 您的 App 必須經過驗證，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中的地圖服務。 若要驗證您的 App，您必須指定地圖驗證金鑰。 本文說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 App。 |
 | [定位感知 App 的設計指導方針](guidelines-and-checklist-for-detecting-location.md) | 需要存取使用者位置之 App 的效能指導方針。 |
-| [取得使用者的位置](get-location.md) | 取得使用者位置的存取權，並擷取位置。 |
-| [地理柵欄設計指導方針](guidelines-for-geofencing.md) | 使用地理柵欄功能之 App 的效能指導方針。 |
+| [取得使用者的位置](get-location.md) | 取得使用者位置的存取權，並擷取位置。 | 
+| [關於使用行止動線追蹤功能的指導方針](guidelines-for-visits.md) | 了解如何使用強大的「行止動線追蹤」(Visits Tracking) 功能，進行更切合實際的位置追蹤。 |
+| [地理柵欄設計指導方針](guidelines-for-geofencing.md) | 地理柵欄功能的應用程式的效能指導方針。 |
 | [設定地理柵欄](set-up-a-geofence.md) | 在您的 App 中設定地理柵欄，並了解如何在前景和背景中處理通知。 |
 
 ## <a name="launch-the-windows-maps-app"></a>啟動 Windows 地圖 App

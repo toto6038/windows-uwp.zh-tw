@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 title: 動畫入門
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
 description: 在這個專案中，我們會移動一個矩形，套用淡出效果，然後再將它帶回檢視中。
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: a45de584c4374afefe0fdca198eb7234351ac42d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 4822a436225bea92fdf1e981ad33378996adefe4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209887"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550876"
 ---
 # <a name="getting-started-animation"></a>開始使用：動畫
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="adding-animations"></a>新增動畫
 
@@ -129,7 +128,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您可以以手動方式編輯這個 XAML，或返回 Blend 以繼續處理工作。 Blend 會以好玩的方式建立有趣的使用者介面，而使用圖形工具來製作介面動畫的功能將會大幅縮短開發時間。 如需動畫的詳細資訊，請參閱[動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)。
 
-**注意**  如需使用 JavaScript 和 HTML 之 Windows 市集應用程式中動畫的詳細資訊，請參閱[讓 UI 產生動畫效果 (HTML)](https://msdn.microsoft.com/library/windows/apps/hh465165)。
+**注意：** 適用於<span class="legacy-term">使用 JavaScript 和 HTML 的 UWP app</span>中動畫的詳細資訊，請參閱[您的 UI (HTML) 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/hh465165)。
 
 ### <a name="next-step"></a>下一步
 

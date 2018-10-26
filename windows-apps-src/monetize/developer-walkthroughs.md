@@ -6,16 +6,14 @@ title: 在您的應用程式中實作廣告
 ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: d54a70b01f0885ccabfe90c78330a63dc98a4d23
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: eed52167655e16b3245bdb5f918244f95b378676
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5470707"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550436"
 ---
 # <a name="implement-ads-in-your-app"></a>在您的應用程式中實作廣告
 

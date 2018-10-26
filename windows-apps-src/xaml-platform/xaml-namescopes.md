@@ -6,16 +6,14 @@ ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bd7a7de4c8986bb53acd4fe18c6255086e366ca8
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 8fcbc1566d2b2b5ffc6889a57dd7656a3466d2a9
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673605"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548082"
 ---
 # <a name="xaml-namescopes"></a>XAML 命名範圍
 
@@ -34,7 +32,7 @@ XAML 命名範圍中的名稱的最典型用法，是做為物件執行個體的
 
 技術上，XAML 本身會進行標記編譯器階段，同時，XAML 與 XAML 為程式碼後置定義的部分類別會一起編譯。 在標記中定義 **Name** 或 [x:Name 屬性](x-name-attribute.md)的每個物件元素，都會產生一個含有與 XAML 名稱相符的名稱的內部欄位。 這個欄位最初是空白的。 接著，類別會產生在所有 XAML 都載入後才會呼叫的 **InitializeComponent** 方法。 在 **InitializeComponent** 邏輯中，每個內部欄位都會填入對應的名稱字串的 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 傳回值。 編譯完成後，您可以在 Windows 執行階段應用程式專案的 /obj 子資料夾中查看為每個 XAML 頁面建立的 ".g" (產生的) 檔案，以觀察這個基礎結構。 您也可以查看做為結果組件成員的欄位與 **InitializeComponent** 方法 (如果您反映它們或以其他方式檢查它們的介面語言內容的話)。
 
-**注意** 特別是 Visual C++ 元件延伸 (C++/CX) app，**x:Name** 參考的支援欄位不是為 XAML 檔案的根元素建立的。 如果您需要從 C++/CX 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**注意：** 專為 VisualC + + 元件延伸 (C + + /CX) 的應用程式， **X:name**參考的支援欄位不建立的 XAML 檔案的根元素。 如果您需要從 C++/CX 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ## <a name="creating-objects-at-run-time-with-xamlreaderload"></a>在執行階段使用 XamlReader.Load 建立物件
 
@@ -89,5 +87,5 @@ XAML 中的範本可以讓您直接重新使用和重新套用內容，但範本
 * [快速入門：控制項範本](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
- 
+ 
 

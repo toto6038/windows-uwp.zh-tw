@@ -1,48 +1,46 @@
 ---
 author: stevewhims
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: 本主題提供的案例研究會將對等運作的測驗遊戲 WinRT 8.1 應用程式範例移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式。
+description: 本主題提供的案例研究的對等運作的測驗遊戲 WinRT 8.1 範例 app 移植到 windows 10 通用 Windows 平台 (UWP) 應用程式。
 title: Windows Runtime 8.x 至 UWP 的案例研究，QuizGame 對等應用程式範例
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5513a4536f4df77be93a099cf826d85212621622
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 69aae85f4e0bb01833114ae5b2cbfab45e9dd84d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "303013"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544459"
 ---
-# <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows Runtime 8.x 至 UWP 案例研究： QuizGame 範例應用程式
+# <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 執行階段 8.x 至 UWP 案例研究： QuizGame 應用程式範例
 
 
 
 
-本主題提供的案例研究會將對等運作的測驗遊戲 WinRT 8.1 應用程式範例移植到 Windows 10 通用 Windows 平台 (UWP) 應用程式。
+本主題提供的案例研究的對等運作的測驗遊戲 WinRT 8.1 範例 app 移植到 Windows10Universal Windows 平台 (UWP) 應用程式。
 
-通用 8.1 app 會針對同一個 app 建置兩個版本：針對 Windows 8.1 建置一個應用程式套件，並針對 Windows Phone 8.1 建置另一個應用程式套件。 WinRT 8.1 版的 QuizGame 會使用通用 Windows 應用程式專案排列方式，但會採用不同的處理方式，並針對這兩個平台建置功能完全相同的應用程式。 Windows 8.1 應用程式套件可做為測驗遊戲工作階段的主機，而 Windows Phone 8.1 應用程式套件則扮演主機的用戶端角色。 這兩個測驗遊戲工作階段的部分會透過對等網路進行通訊。
+通用 8.1 應用程式是一個組建相同的應用程式的兩個版本： Windows8.1，一個應用程式套件和適用於 Windows Phone 8.1 的不同的應用程式套件。 WinRT 8.1 版的 QuizGame 會使用通用 Windows 應用程式專案排列方式，但會採用不同的處理方式，並針對這兩個平台建置功能完全相同的應用程式。 Windows8.1 應用程式套件做為主機測驗遊戲工作階段，而 Windows Phone 8.1 應用程式套件則扮演主機的用戶端的角色。 這兩個測驗遊戲工作階段的部分會透過對等網路進行通訊。
 
-分別為電腦和手機量身訂做這兩個部分，非常合理。 但是，如果您不只能在所選擇的任何裝置上執行，而且還能在主機和用戶端上執行，就更理想了吧？ 在這個案例研究中，我們會將這兩個應用程式移植到 Windows 10，它們每個都能在其中建置為單一應用程式套件，讓使用者可將其安裝到各種裝置上。
+分別為電腦和手機量身訂做這兩個部分，非常合理。 但是，如果您不只能在所選擇的任何裝置上執行，而且還能在主機和用戶端上執行，就更理想了吧？ 在此案例研究中，我們將這兩個應用程式移植到其中他們將會每個建置為單一應用程式套件，讓使用者可以安裝到各種裝置上的 windows 10。
 
 應用程式會利用使用檢視與檢視模型的模式。 誠如所見，由於這個清楚的區隔，使得適用於此 app 的移植程序變得非常簡單。
 
-**附註** 此範例假設您的網路設定為傳送及接收自訂 UDP 群組 （最多首頁是網路，但可能不到您的公司網路） 的多點傳送封包。 此範例也會傳送和接收 TCP 封包。
+**注意：** 此範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 （大部分的家用網路都，雖然可能不到您的公司網路）。 此範例也會傳送和接收 TCP 封包。
 
- 
+ 
 
-**附註**  當 Visual Studio 中開啟 QuizGame10，如果您看到 「 所需的 Visual Studio 更新 」 的訊息，然後遵循[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步驟。
+**注意：** 時在 Visual Studio 中，開啟 QuizGame10，如果您看見 「 需要 Visual Studio 更新 」，則請依照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步驟。
 
- 
+ 
 
 ## <a name="downloads"></a>下載
 
 [下載 QuizGame 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
 
-[下載 QuizGame10 Windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是應用程式的狀態之後移植。 
+[下載 QuizGame10 windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是剛移植後的應用程式的狀態。 
 
 [在 GitHub 上檢視此範例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
 
@@ -79,26 +77,26 @@ ms.locfileid: "303013"
 
 若要啟用本機測試模式，請定義 **LOCALTESTMODEON** (在專案屬性中) 做為條件式編譯符號，並進行重建。
 
-## <a name="porting-to-a-windows-10-project"></a>移植到 Windows 10 專案
+## <a name="porting-to-a-windows10-project"></a>移植到 windows 10 專案
 
 QuizGame 含有下列項目。
 
 -   P2PHelper。 這是一個可移植的類別庫，其中包含對等網路邏輯。
--   QuizGame.Windows。 這個專案會針對目標為 Windows 8.1 的主機應用程式建置應用程式套件。
+-   QuizGame.Windows。 這是建置主機應用程式，針對目標為 Windows8.1 應用程式套件的專案。
 -   QuizGame.WindowsPhone。 這個專案會針對目標為 Windows Phone 8.1 的用戶端應用程式建置應用程式套件。
 -   QuizGame.Shared。 這是包含其他兩個專案也會用到之原始程式碼、標記檔案及其他資產與資源的專案。
 
 在這個案例研究中，我們擁有[如果您有通用 8.1 App](w8x-to-uwp-root.md)中所述之與支援哪些裝置有關的常見選項。
 
-我們會根據這些選項，將 QuizGame.Windows 移植到名為 QuizGameHost 的新 Windows 10 專案。 而且會將 QuizGame.WindowsPhone 移植到名為 QuizGameClient 的新 Windows 10 專案。 這些專案會將目標設為通用裝置系列，因此它們將可在任何裝置上執行。 而我們會在它們自己的資料夾中保留 QuizGame.Shared 來源檔案等項目，並將這些共用檔案連結到這兩個新專案。 就像之前一樣，我們會將所有項目保留於單一方案中，並將它命名為 QuizGame10。
+根據這些選項，我們會 QuizGame.Windows 移植到名為 QuizGameHost 的新 windows 10 專案。 而且，我們將 QuizGame.WindowsPhone 移植到名為 QuizGameClient 的新 windows 10 專案。 這些專案會將目標設為通用裝置系列，因此它們將可在任何裝置上執行。 而我們會在它們自己的資料夾中保留 QuizGame.Shared 來源檔案等項目，並將這些共用檔案連結到這兩個新專案。 就像之前一樣，我們會將所有項目保留於單一方案中，並將它命名為 QuizGame10。
 
 **QuizGame10 方案**
 
--   建立新的解決方案 (**新專案** &gt; **其他專案類型** &gt; **Visual Studio 解決方案**) 並將其命名為 QuizGame10。
+-   建立新方案 (**新的專案** &gt; **其他專案類型** &gt; **Visual Studio 方案**)，並命名為 QuizGame10。
 
 **P2PHelper**
 
--   在解決方案中建立新的 Windows 10 類別庫專案 (**新專案** &gt; **Windows 萬用** &gt; **類別庫 （Windows 萬用）**) 並將其命名為 P2PHelper。
+-   在方案中，建立新的 windows 10 類別庫專案 (**新的專案** &gt; **Windows 通用** &gt; **類別庫 （Windows 通用）**) 並將它命名為 P2PHelper。
 -   從新專案刪除 Class1.cs。
 -   將 P2PSession.cs、P2PSessionClient.cs 及 P2PSessionHost.cs 複製到新專案的資料夾，並在新專案中包含複製的檔案。
 -   不需進一步變更即可建置專案。
@@ -110,9 +108,9 @@ QuizGame 含有下列項目。
 
 **QuizGameHost**
 
--   建立新的 Windows 10 應用程式專案 (**新增** &gt; **新專案** &gt; **Windows 萬用** &gt; **空白應用程式 （Windows 萬用）**) 並將其命名為 QuizGameHost。
--   將參照新增至 P2PHelper (**加入參考** &gt; **專案** &gt; **解決方案** &gt; **P2PHelper**)。
--   在 [方案總管] 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛建立的每個資料夾，然後按一下 [**新增** &gt; **現有項目**，並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]。
+-   建立新的 windows 10 app 專案 (**新增** &gt; **新專案** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白應用程式**) 並將它命名為 QuizGameHost。
+-   新增 P2PHelper 的參考 (**加入參考]** &gt; **專案** &gt; **方案** &gt; **命名為 P2PHelper**)。
+-   在 [方案總管] 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛建立的每個資料夾，然後按一下 [**新增**] &gt; **現有項目**和瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]。
 -   將 MainPage.xaml 從 \\QuizGame.Windows\\ 複製到 \\QuizGameHost\\，然後將命名空間變更為 QuizGameHost。
 -   將 App.xaml 從 \\QuizGame.Shared\\ 複製到 \\QuizGameHost\\，然後將命名空間變更為 QuizGameHost。
 -   我們不會覆寫 app.xaml.cs，而是在新專案中保留該版本，只需對它進行一個目標變更，就能支援本機測試模式。 在 app.xaml.cs 中，取代這行程式碼：
@@ -131,15 +129,15 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 #endif
 ```
 
--   在 [**內容** &gt; **建置** &gt; **條件式編譯符號**新增 LOCALTESTMODEON。
+-   在**屬性** &gt; **建置** &gt; **條件式編譯符號**，新增 LOCALTESTMODEON。
 -   現在可以回到您新增到 app.xaml.cs 的程式碼，並解析 TestView 類型。
 -   在 package.appxmanifest 中，將功能名稱從 internetClient 變更為 internetClientServer。
 
 **QuizGameClient**
 
--   建立新的 Windows 10 應用程式專案 (**新增** &gt; **新專案** &gt; **Windows 萬用** &gt; **空白應用程式 （Windows 萬用）**) 並將其命名為 QuizGameClient。
--   將參照新增至 P2PHelper (**加入參考** &gt; **專案** &gt; **解決方案** &gt; **P2PHelper**)。
--   在 [方案總管] 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛建立的每個資料夾，然後按一下 [**新增** &gt; **現有項目**，並瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]。
+-   建立新的 windows 10 app 專案 (**新增** &gt; **新專案** &gt; **Windows 通用** &gt; **（Windows 通用） 的空白應用程式**) 並將它命名為 QuizGameClient。
+-   新增 P2PHelper 的參考 (**加入參考]** &gt; **專案** &gt; **方案** &gt; **命名為 P2PHelper**)。
+-   在 [方案總管] 中，於磁碟上的每個共用資料夾中建立新的資料夾。 接著，以滑鼠右鍵按一下您剛建立的每個資料夾，然後按一下 [**新增**] &gt; **現有項目**和瀏覽資料夾。 開啟適當的共用資料夾，並選取所有檔案，然後按一下 [加入做為連結]。
 -   將 MainPage.xaml 從 \\QuizGame.WindowsPhone\\ 複製到 \\QuizGameClient\\，然後將命名空間變更為 QuizGameClient。
 -   將 App.xaml 從 \\QuizGame.Shared\\ 複製到 \\QuizGame.Shared\\，然後將命名空間變更為 QuizGameClient。
 -   在 package.appxmanifest 中，將功能名稱從 internetClient 變更為 internetClientServer。
@@ -148,7 +146,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="adaptive-ui"></a>彈性 UI
 
-當應用程式在寬型視窗中執行時，QuizGameHost Windows 10 應用程式看起來還不錯 (唯一可能是在配有大型螢幕的裝置上)。 若應用程式的視窗較窄 (這會發生於小型裝置上，也會發生於大型裝置上)，UI 便會受到擠壓而使其變得難以閱讀。
+應用程式 （也就是只有配有大型螢幕的裝置） 在寬型視窗中執行時，QuizGameHost windows 10 應用程式看起來就足夠。 若應用程式的視窗較窄 (這會發生於小型裝置上，也會發生於大型裝置上)，UI 便會受到擠壓而使其變得難以閱讀。
 
 我們可以使用彈性的 Visual State Manager 功能來解決這個問題，如[案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 中所述。 首先，在視覺元素上設定屬性，讓 UI 配置預設是窄型狀態。 這所有的變更都是在 \\View\\HostView.xaml 中進行。
 
@@ -158,7 +156,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 -   在註解 `<!-- Content -->` 指示的 **Grid** 上，設定 `x:Name="contentGrid"` 和 `Margin="-18,12,0,0"`。
 -   隨即在註解 `<!-- Options -->` 上的 **TextBlock**，設定 `Margin="0,0,0,24"`。
 -   在預設的 **TextBlock** 樣式 (檔案中的第一個資源) 中，將 **FontSize** setter 的值變更為 "15"。
--   在 `OptionContentControlStyle` 中，將 **FontSize** setter 的值變更為 "20"。 這個步驟和前一步驟會提供可在所有裝置上良好運作的字體坡形。 這些是比我們針對 Windows 8.1 app 所使用的 "30" 還要有彈性的大小。
+-   在 `OptionContentControlStyle` 中，將 **FontSize** setter 的值變更為 "20"。 這個步驟和前一步驟會提供可在所有裝置上良好運作的字體坡形。 這些是比我們針對 Windows8.1 應用程式所使用的"30"還要有彈性的大小。
 -   最後，將適當的 Visual State Manager 標記新增到根 **Grid**。
 
 ```xml
@@ -181,7 +179,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ## <a name="universal-styling"></a>通用樣式
 
 
-您會注意到在 Windows 10 中，按鈕在其範本中對於觸控目標沒有相同的邊框距離。 只需進行兩個小變更，就能補救這一點。 首先，將這個標記新增到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
+您會注意到在 windows 10，按鈕將不具有 padding 在其範本中相同觸控目標。 只需進行兩個小變更，就能補救這一點。 首先，將這個標記新增到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
 
 ```xml
 <Style TargetType="Button">
@@ -199,4 +197,4 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="conclusion"></a>總結
 
-我們在此研究案例中移植的應用程式相對複雜許多，因為它涉及了數個專案、一個類別庫，以及相當大量的程式碼與使用者介面。 即便如此，移植還是簡單易懂的。 某部分的輕鬆移植可直接歸因於 Windows 10 開發人員平台與 Windows 8.1 和 Windows Phone 8.1 平台間的相似性。 有些則是因為原始應用程式的設計方式是個別保留模型、檢視模型及檢視。
+我們在此研究案例中移植的應用程式相對複雜許多，因為它涉及了數個專案、一個類別庫，以及相當大量的程式碼與使用者介面。 即便如此，移植還是簡單易懂的。 部分的輕鬆移植可直接歸因 windows 10 開發人員平台及 Windows8.1 和 Windows Phone 8.1 的平台間的相似性。 有些則是因為原始應用程式的設計方式是個別保留模型、檢視模型及檢視。

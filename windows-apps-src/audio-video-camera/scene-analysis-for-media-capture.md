@@ -6,18 +6,17 @@ title: 分析相機畫面的效果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 3fc55919942c1edc82f7c2e5da2608b5f1b1445b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: d948dee234ad6c49da847324422737b1bae27e30
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209305"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5547656"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>分析相機畫面的效果
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用 [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) 和[**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 分析媒體擷取預覽串流的內容。
@@ -120,9 +119,9 @@ ms.locfileid: "209305"
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+ 
 
- 
+ 
 
 
 

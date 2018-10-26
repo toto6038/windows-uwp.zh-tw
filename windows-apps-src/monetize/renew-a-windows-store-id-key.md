@@ -6,16 +6,14 @@ title: 更新 Microsoft Store 識別碼金鑰
 ms.author: mhopkins
 ms.date: 03/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew, Microsoft Store 集合 API, Microsoft Store 購買 API, Microsoft Store 識別碼金鑰, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 70bda5022e52c0b18a43563a0492bd56d09b88a0
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 95ee20628108bd3ea8eb9e48955a356410e91b1b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513224"
+ms.locfileid: "5546359"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>更新 Microsoft Store 識別碼金鑰
 

@@ -6,19 +6,18 @@ ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, glsl, port, 遊戲, 連接埠
-ms.openlocfilehash: 7416a4dafe24f86243a3a9962d01db1dc7b61031
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209209"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548666"
 ---
 # <a name="port-the-glsl"></a>移植 GLSL
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -185,9 +184,9 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 [繪製到螢幕](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

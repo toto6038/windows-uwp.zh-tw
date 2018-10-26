@@ -6,19 +6,18 @@ description: Windows.UI.Composition API 可讓您存取架構層 (XAML) 與圖�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b292be46ccddd4355f3bef13e37da6b6cec452fa
-ms.sourcegitcommit: b42d14c775efbf449a544ddb881abd1c65c1ee86
+ms.localizationpriority: medium
+ms.openlocfilehash: 2dd8c53dad735cf1094410bf97a81f6b0247bdc7
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/20/2017
-ms.locfileid: "839482"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5545742"
 ---
 # <a name="visual-layer"></a>視覺層
 
-視覺層提供高效能、圖形的保留模式 API、效果和動畫，以及是 Windows 裝置上所有的 UI 的基礎。 您可以透過宣告方式定義 UI，而且視覺層依賴圖形硬體加速，確保以平滑且無干擾的方式轉譯您的內容、效果和動畫，並且與應用程式的 UI 執行緒無關。
+視覺層提供高效能、圖形的保留模式 API、效果和動畫，以及是 Windows 裝置上所有的 UI 的基礎。您可以透過宣告方式定義 UI，而且視覺層依賴圖形硬體加速，確保以平滑且無干擾的方式轉譯您的內容、效果和動畫，並且與應用程式的 UI 執行緒無關。
 
 值得注意的重點︰
 
@@ -41,7 +40,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 ### <a name="content"></a>內容
 
-使用視覺效果，可讓動畫和效果系統裝載、轉換和使用內容。 類別階層的基底是[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)類別，為組合器中可見狀態之應用程式處理程序中的輕量型、敏捷執行緒 Proxy。 視覺效果的子類別包含[**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)以允許子項建立視覺效果的樹狀結構，以及[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433)，內含內容而且可以使用純色、自訂繪製內容或視覺效果進行繪製。 這些視覺效果類型可一起構成 2D UI 的視覺效果樹狀結構，並且支援大部分的可見 XAML FrameworkElement。
+使用視覺效果，可讓動畫和效果系統裝載、轉換和使用內容。 類別階層的基底是[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)類別，為組合器中可見狀態之應用程式處理程序中的輕量型、敏捷執行緒 Proxy。 視覺效果的子類別包含 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) ，以允許子項建立視覺效果和[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) ，其中包含的樹狀結構的內容，而且可以使用純色、 自訂繪製內容或視覺效果進行繪製。 這些視覺效果類型可一起構成 2D UI 的視覺效果樹狀結構，並且支援大部分的可見 XAML FrameworkElement。
 
 如需詳細資訊，請參閱[組合視覺效果](composition-visual-tree.md)概觀。
 
@@ -55,7 +54,7 @@ Windows UWP app 已經使用透過其中一個 UI 架構的視覺層。 您也�
 
 ### <a name="animations"></a>動畫
 
-視覺層中的動畫系統可讓您移動視覺效果、建立效果動畫，並驅動轉換、剪輯和其他屬性。  它是無從驗證架構系統，而且在設計時都會考量效能。  它會從 UI 執行緒獨立執行，確保順暢和延展性。  雖然它可讓您使用熟悉的 KeyFrame 動畫來驅動一段時間的屬性變更，但也可讓您設定不同屬性之間的數學關係，包括使用者輸入，讓您直接製作順暢的編排體驗。
+視覺層中的動畫系統可讓您移動視覺效果、建立效果動畫，並驅動轉換、剪輯和其他屬性。它是無從驗證架構系統，而且在設計時都會考量效能。它會從 UI 執行緒獨立執行，確保順暢和延展性。雖然它可讓您使用熟悉的 KeyFrame 動畫來驅動一段時間的屬性變更，但也可讓您設定不同屬性之間的數學關係，包括使用者輸入，讓您直接製作順暢的編排體驗。
 
 如需詳細資訊，請參閱[組合動畫](composition-animation.md)概觀。
 

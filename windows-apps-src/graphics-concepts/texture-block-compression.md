@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3f3dc2c29f30c32afda71406917afeec95bbd2ec
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 46c58da3dbe425b055855423aa9e9cebaa06f929
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044787"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544956"
 ---
 # <a name="texture-block-compression"></a>紋理區塊壓縮
 
@@ -25,7 +23,7 @@ ms.locfileid: "1044787"
 
 如需關於 Direct3D 11 之前區塊壓縮演算法支援 (包括 BC1 到 BC5 格式的支援) 的相關詳細資訊，請參閱[區塊壓縮 (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb694531)。
 
-* * 檔案格式的相關附註： * * BC6H 和 BC7 材質壓縮格式的壓縮的材質資料儲存使用 DD 檔案格式。 如需詳細資訊，請參閱[DDS 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/bb943991)。
+**檔案格式有關的注意事項：** BC6H 和 BC7 紋理壓縮格式使用 DDS 檔案格式儲存壓縮的紋理的資料。 如需詳細資訊，請參閱[DDS 程式設計指南](https://msdn.microsoft.com/library/windows/desktop/bb943991)。
 
 ## <a name="span-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanspan-idblockcompressionformatssupportedindirect3d11spanblock-compression-formats-supported-in-direct3d-11"></a><span id="Block_Compression_Formats_Supported_in_Direct3D_11"></span><span id="block_compression_formats_supported_in_direct3d_11"></span><span id="BLOCK_COMPRESSION_FORMATS_SUPPORTED_IN_DIRECT3D_11"></span>Direct3D 11 支援的區塊壓縮格式
 
@@ -40,7 +38,7 @@ ms.locfileid: "1044787"
 | 三通道高動態範圍 (HDR) 色彩 | 三個「半」浮點數\*的色彩通道 (16 個位元：16 個位元：16 個位元) | BC6H               | Direct3D 11                     |
 | 三通道色彩，及選擇性的 Alpha 色板  | 帶有 0 到 8 個位元 Alpha 的三色彩通道 (每個通道 4 到 7 個位元)  | BC7                | Direct3D 11                     |
 
- 
+ 
 
 \*「半」浮點數是一種帶有 1 個選擇性正負號位元，5 個有偏指數位元，以及 10 或 11 個尾數位元的 16 位元數值。
 ## <a name="span-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanspan-idbc1bc2andb3formatsspanbc1-bc2-and-b3-formats"></a><span id="BC1__BC2__and_B3_Formats"></span><span id="bc1__bc2__and_b3_formats"></span><span id="BC1__BC2__AND_B3_FORMATS"></span>BC1、BC2，以及 B3 格式
@@ -54,7 +52,7 @@ BC1、BC2，以及 BC3 格式對等於 Direct3D 9 DXTn 紋理壓縮格式，並�
 | BC2                      | DXGI\_FORMAT\_BC2\_UNORM，DXGI\_FORMAT\_BC2\_UNORM\_SRGB，DXGI\_FORMAT\_BC2\_TYPELESS | D3DFMT\_DXT2\*，FourCC="DXT2"，D3DFMT\_DXT3，FourCC="DXT3" | 16                        |
 | BC3                      | DXGI\_FORMAT\_BC3\_UNORM，DXGI\_FORMAT\_BC3\_UNORM\_SRGB，DXGI\_FORMAT\_BC3\_TYPELESS | D3DFMT\_DXT4\*、FourCC="DXT4"，D3DFMT\_DXT5，FourCC="DXT5" | 16                        |
 
- 
+ 
 
 \*這些壓縮配置 (DXT2 及 DXT4) 無法區別 Direct3D 9 預乘 Alpha 格式及標準 Alpha 格式。 此區別必須透過可程式化著色器於轉譯時間中進行處理。
 
@@ -66,7 +64,7 @@ BC1、BC2，以及 BC3 格式對等於 Direct3D 9 DXTn 紋理壓縮格式，並�
 | BC4                      | DXGI\_FORMAT\_BC4\_UNORM，DXGI\_FORMAT\_BC4\_SNORM，DXGI\_FORMAT\_BC4\_TYPELESS | FourCC="ATI1"                | 8                         |
 | BC5                      | DXGI\_FORMAT\_BC5\_UNORM，DXGI\_FORMAT\_BC5\_SNORM，DXGI\_FORMAT\_BC5\_TYPELESS | FourCC="ATI2"                | 16                        |
 
- 
+ 
 
 ## <a name="span-idbc6hformatspanspan-idbc6hformatspanspan-idbc6hformatspanbc6h-format"></a><span id="BC6H_Format"></span><span id="bc6h_format"></span><span id="BC6H_FORMAT"></span>BC6H 格式
 
@@ -77,7 +75,7 @@ BC1、BC2，以及 BC3 格式對等於 Direct3D 9 DXTn 紋理壓縮格式，並�
 |--------------------------|----------------------------------------------------------------------------------|------------------------------|---------------------------|
 | BC6H                     | DXGI\_FORMAT\_BC6H\_UF16，DXGI\_FORMAT\_BC6H\_SF16，DXGI\_FORMAT\_BC6H\_TYPELESS | 無                          | 16                        |
 
- 
+ 
 
 BC6H 格式針對每個 4 x 4 的像素區塊可以選擇不同的編碼模式。 共計有 14 個不同的編碼模式可以使用，每一種模式對於顯示紋理的最終視覺品質都有些許不同的取捨。 根據來源內容選擇或配合的品質等級，模式的選擇可允許硬體進行更快速的解碼，然而這也會大幅增加搜尋空間的複雜度。
 
@@ -90,7 +88,7 @@ BC6H 格式針對每個 4 x 4 的像素區塊可以選擇不同的編碼模式�
 |--------------------------|---------------------------------------------------------------------------------------|------------------------------|---------------------------|
 | BC7                      | DXGI\_FORMAT\_BC7\_UNORM，DXGI\_FORMAT\_BC7\_UNORM\_SRGB，DXGI\_FORMAT\_BC7\_TYPELESS | 無                          | 16                        |
 
- 
+ 
 
 BC7 格式針對每個 4 x 4 的像素區塊可以選擇不同的編碼模式。 共計有 8 個不同的編碼模式可以使用，每一種模式對於顯示紋理的最終視覺品質都有些許不同的取捨。 根據來源內容選擇或配合的品質等級，模式的選擇可允許硬體進行更快速的解碼，然而這也會大幅增加搜尋空間的複雜度。
 
@@ -101,9 +99,9 @@ BC7 格式針對每個 4 x 4 的像素區塊可以選擇不同的編碼模式。
 
 [紋理](https://msdn.microsoft.com/library/windows/desktop/ff476902)
 
- 
+ 
 
- 
+ 
 
 
 

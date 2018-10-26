@@ -6,16 +6,14 @@ title: 取得使用者訂閱
 ms.author: mhopkins
 ms.date: 07/10/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
-ms.openlocfilehash: c08964b991b0cecaef6d994d399ce97301a7e8e7
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5520867"
+ms.locfileid: "5546930"
 ---
 # <a name="get-subscriptions-for-a-user"></a>取得使用者訂閱
 

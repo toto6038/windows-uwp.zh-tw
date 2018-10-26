@@ -6,19 +6,17 @@ ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 約會, 行事曆
-ms.openlocfilehash: d4bc4832dd489508eabbddd486f782ac8b0191a3
-ms.sourcegitcommit: 378382419f1fda4e4df76ffa9c8cea753d271e6a
+ms.localizationpriority: medium
+ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
-ms.locfileid: "665694"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5548918"
 ---
 # <a name="manage-appointments"></a>管理約會
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 您可以透過 [**Windows.ApplicationModel.Appointments**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 命名空間，在使用者的行事曆 app 建立和管理約會。 這裡，我們將示範如何建立約會、將約會新增到行事曆 app、在行事曆 app 替換約會，以及從行事曆 app 移除約會。 同時還會示範如何顯示行事曆 app 的時間範圍，以及建立約會週期物件。
@@ -286,7 +284,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意** 就 Windows Phone 市集 app 而言，[**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) 的功能就像 [**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)，相同點在於為新增約會顯示的對話方塊都是可編輯的。
+**注意：** 適用於 Windows Phone 市集應用程式， [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)功能就像[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)為新增約會顯示的對話方塊是可編輯。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>在使用者的行事曆替換約會
 
@@ -574,6 +572,6 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 ## <a name="related-topics"></a>相關主題
 
 * [約會 API 範例](http://go.microsoft.com/fwlink/p/?linkid=309836)
- 
+ 
 
- 
+ 

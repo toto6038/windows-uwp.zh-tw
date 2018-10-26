@@ -9,15 +9,13 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c82e0d77804e293176c53a9d8079e32054f9cca6
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 00923b4448d96943cf00eade46c39c42e87c4f96
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652747"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549565"
 ---
 # <a name="set-speech-recognition-timeouts"></a>設定語音辨識逾時
 
@@ -35,9 +33,9 @@ ms.locfileid: "1652747"
 -   BabbleTimeout - SpeechRecognizer 在假設語音輸入已結束並且完成辨識作業之前，繼續聆聽無法辨識音效 (babble) 的時間長度。
 -   EndSilenceTimeout - SpeechRecognizer 偵測靜音 (在產生辨識結果之前) 並且假設語音輸入已結束的時間長度。
 
-**注意** 每個辨識器都可以設定逾時。
+**注意：** 逾時可以設定每個辨識器為基礎。
 
- 
+ 
 
 ```CSharp
 // Set timeout settings.
@@ -52,9 +50,9 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 * [語音互動](speech-interactions.md)
 **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

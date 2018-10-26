@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b882c70701d2ea2f8abef14a7d3319616696ea4
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 672d7b2ddc913ea3a966fbd0a095367521a27d7c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044727"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5550190"
 ---
 # <a name="span-iddirect3dconceptsopaqueand1-bitalphatexturesspanopaque-and-1-bit-alpha-textures"></a><span id="direct3dconcepts.opaque_and_1-bit_alpha_textures"></span>不透明和 1 位元 alpha 紋理
 
@@ -70,7 +68,7 @@ else
 | 2            | 點陣圖字\_0 |
 | 3            | 點陣圖字\_1 |
 
- 
+ 
 
 Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
 
@@ -80,7 +78,7 @@ Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
 | 10:5        | 綠色元件 |
 | 15:11       | 紅色元件   |
 
- 
+ 
 
 \*least-significant 位元
 
@@ -97,7 +95,7 @@ Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
 | 13:12         | 紋素\[1\]\[2\] |
 | 15:14 (MSB\*) | 紋素\[1\]\[3\] |
 
- 
+ 
 
 \*最重要的位元 (MSB)
 
@@ -114,7 +112,7 @@ Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
 | 13:12       | 紋素\[3\]\[2\] |
 | 15:14 (MSB) | 紋素\[3\]\[3\] |
 
- 
+ 
 
 ## <a name="span-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanspan-idexampleofopaquecolorencodingspanexample-of-opaque-color-encoding"></a><span id="Example_of_Opaque_Color_Encoding"></span><span id="example_of_opaque_color_encoding"></span><span id="EXAMPLE_OF_OPAQUE_COLOR_ENCODING"></span>不透明色彩編碼的範例
 
@@ -134,9 +132,9 @@ Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
 
 這看起來像下列圖解系列色彩。
 
-**注意**影像中，像素 (0,0) 出現在左上角。
+**注意：** 影像中，像素 (0，0) 出現在左上角。
 
- 
+ 
 
 ![不透明編碼漸層圖例](images/redsquares.png)
 
@@ -167,11 +165,11 @@ Color\_0 和 Color\_1，在兩個極端的色彩配置如下︰
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[壓縮紋理資源](compressed-texture-resources.md)
+[壓縮的紋理資源](compressed-texture-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

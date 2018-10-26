@@ -6,16 +6,14 @@ title: 變更使用者訂閱的帳單狀態
 ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e6a654897efba1fa66350abaddbacf9791bbbcc
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 8daec4928867c92734fc3f6322836eb923aeda21
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521473"
+ms.locfileid: "5549660"
 ---
 # <a name="change-the-billing-state-of-a-subscription-for-a-user"></a>變更使用者訂閱的帳單狀態
 

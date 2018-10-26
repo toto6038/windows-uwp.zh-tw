@@ -6,19 +6,18 @@ ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, Direct3D, 深度緩衝區
-ms.openlocfilehash: 87e4248545288f4725e0cf0b104a75f1925ad3a3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 091ac04b2a41c54fbce7294bcf6651f4ad4aafd2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209162"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5549330"
 ---
 # <a name="create-depth-buffer-device-resources"></a>建立深度緩衝區裝置資源
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 了解如何建立必要的 Direct3D 裝置資源，以支援陰影體的深度測試。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)第一部分。
@@ -261,9 +260,9 @@ m_shadowViewport.MaxDepth = 1.f;
 
 在此逐步解說的下個部分，您將了解如何藉由[轉譯為深度緩衝區](render-the-shadow-map-to-the-depth-buffer.md)來建立陰影圖。
 
- 
+ 
 
- 
+ 
 
 
 

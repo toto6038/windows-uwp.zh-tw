@@ -8,17 +8,15 @@ title: 自訂視訊效果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: 9a1f53bb1165561865124a960940fab3f4325061
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 08d861355a235c9217f51ce6f925224a27a562ef
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843318"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "5544754"
 ---
 # <a name="custom-video-effects"></a>自訂視訊效果
 
@@ -102,7 +100,7 @@ ms.locfileid: "1843318"
 > [!NOTE] 
 > 如果您從 **SupportedEncodingProperties** 傳回 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 物件的空白清單，系統預設將會使用 ARGB32 編碼。
 
- 
+ 
 
 ### <a name="supportedmemorytypes-property"></a>SupportedMemoryTypes 屬性
 
@@ -114,7 +112,7 @@ ms.locfileid: "1843318"
 > [!NOTE]
 > 如果您指定 [**MediaMemoryTypes.GpuAndCpu**](https://msdn.microsoft.com/library/windows/apps/dn764822)，系統將會使用 GPU 或系統記憶體，視哪一項針對管線較有效率而定。 使用此值時，您必須檢查 [**ProcessFrame**](https://msdn.microsoft.com/library/windows/apps/dn764794) 方法，以查看傳遞至方法的 [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 或 [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 是否包含資料，並據此處理畫面。
 
- 
+ 
 
 ### <a name="timeindependent-property"></a>TimeIndependent 屬性
 
@@ -166,7 +164,7 @@ ms.locfileid: "1843318"
 > 2.  選取 **\[建置\]** 索引標籤。
 > 3.  選取 **\[允許 unsafe 程式碼\]** 核取方塊。
 
- 
+ 
 
 現在您可以新增 **ProcessFrame** 方法實作。 首先，此方法會同時從輸入和輸出軟體點陣圖取得 [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) 物件。 請注意，輸出畫面格會針對寫入開啟，而輸入畫面格則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
 
