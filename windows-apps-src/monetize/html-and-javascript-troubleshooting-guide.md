@@ -6,16 +6,14 @@ title: HTML 和 JavaScript 疑難排解指南
 ms.author: mhopkins
 ms.date: 08/23/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 疑難排解, HTML, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 5474ac51d57decfe2c4f4d5f1969da5b4436fd14
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 1cd19b574d6128fa1f88196c8c35f368b12c3531
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521083"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567798"
 ---
 # <a name="html-and-javascript-troubleshooting-guide"></a>HTML 和 JavaScript 疑難排解指南
 
@@ -148,7 +146,7 @@ ms.locfileid: "5521083"
 
 1.  再次檢查前述[沒有顯示 AdControl](#html-notappearing) 一節中的所有步驟。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
+2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
     > [!div class="tabbedCodeSnippets"]
     ``` html
@@ -295,7 +293,7 @@ ms.locfileid: "5521083"
 
 1.  再次檢查[沒有顯示 AdControl](#js-adcontrolnotappearing) 一節中的所有步驟。
 
-2.  Handle the **onErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
+2.  處理 **onErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 在 [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)中可以找到更多詳細資訊。
 
     此範例示範如何實作報告錯誤訊息的錯誤處理常式。 此 HTML 程式碼片段提供如何設定顯示錯誤訊息之 UI 的範例。
 
