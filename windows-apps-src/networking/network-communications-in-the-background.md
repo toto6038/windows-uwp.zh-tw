@@ -4,31 +4,31 @@ description: 若要繼續網路通訊 (不是在背景中)，應用程式可以�
 title: 背景網路通訊
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.author: stwhi
-ms.date: 3/23/2018
+ms.date: 06/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 442e2f37ab5c7c83f06ecb444e6ae79f9c2a74dd
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 34fad804bb36ad1b4ce92a56772c33318e10faa8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1691177"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561187"
 ---
 # <a name="network-communications-in-the-background"></a>背景網路通訊
-若要繼續網路通訊 (不是在背景中)，應用程式可以使用背景工作與通訊端代理程式或控制通道觸發程序。 針對長期連線使用通訊端的 App，可以在它們離開前景時，將通訊端的擁有權委派給系統通訊端代理程式。 當流量抵達通訊端時，代理程式會啟動應用程式，並將擁有權移轉回應用程式，接著應用程式會處理抵達的流量。
+若要繼續網路通訊，它不在前景時，您的應用程式可以使用背景工作與這兩個選項的其中一個。
+- 通訊端代理程式。 如果您的應用程式使用通訊端為長期連線然後，它在離開前景時，它可以將通訊端的擁有權委派給系統通訊端代理程式。 代理人然後： 當流量抵達通訊端; 啟動您的應用程式擁有權移轉回給您的應用程式;與您的應用程式，然後處理抵達的流量。
+- 控制通道觸發程序。 
 
 ## <a name="performing-network-operations-in-background-tasks"></a>在背景工作中執行網路作業
-- 收到封包且需要執行短期工作時，可使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 來啟動背景工作。 執行完工作後，背景工作應該會終止以節省電源。
-收到封包且需要執行長期工作時，可使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 來啟動背景工作。
+- 收到封包且需要執行短期工作時，可使用 [SocketActivityTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.socketactivitytrigger) 來啟動背景工作。 執行後工作，背景工作應該終止以節省電源。
+- 收到封包且需要執行長期工作時，可使用 [ControlChannelTrigger](https://docs.microsoft.com/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger) 來啟動背景工作。
 
 **網路相關條件和旗標**
 
 - 新增 **InternetAvailable** 條件至您的背景工作 [BackgroundTaskBuilder.AddCondition](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) 可延遲觸發背景工作，直到網路堆疊執行。 這個條件可以節省電源，因為直到網路連線前，背景工作都不會執行。 這個條件不提供即時啟動。
 
-無論使用哪種觸發程序，在背景工作上設定 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) 可確保在背景工作執行時保持網路連線。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不使用 **IsNetworkRequested**，則處於 [連線待命] 模式時 (例如，當手機螢幕關閉時) 背景工作將無法存取網路。
+無論使用哪種觸發程序，在背景工作上設定 [IsNetworkRequested](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) 可確保在背景工作執行時保持網路連線。 這會告訴背景工作基礎結構在工作執行時隨時保持網路連線，即使裝置已進入 [連線待命] 模式。 如果您的背景工作不會使用**IsNetworkRequested**，則您的背景工作將無法存取的網路連線待命] 模式 （例如，當手機螢幕關閉時） 時。
 
 ## <a name="socket-broker-and-the-socketactivitytrigger"></a>通訊端代理程式和 SocketActivityTrigger
 如果 app 使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 連線，則應使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 和通訊端代理程式，這樣 app 的流量於 app 不在前景時抵達就會收到通知。
@@ -157,9 +157,9 @@ case SocketActivityTriggerReason.SocketClosed:
 您可能會注意到範例一旦建立新的通訊端或取得現有通訊端就會呼叫 **TransferOwnership**，而不是像本主題所描述使用 **OnSuspending** 事件處理常式。 這是因為範例著重在示範 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)，且在執行時沒有任何其他活動使用通訊端。 您的 app 可能更複雜，且應使用 **OnSuspending** 來決定呼叫 **TransferOwnership** 的時機。
 
 ## <a name="control-channel-triggers"></a>控制通道觸發程序
-首先，請確認正確地使用控制通道 (CCT) 觸發程序。 如果您使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 連線，建議使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 您可以為 **StreamSocket** 使用 CCT，但它們使用更多資源，且可能無法在連線待命模式中運作。
+首先，請確認正確地使用控制通道 (CCT) 觸發程序。 如果您使用[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)或[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)連線，我們建議您使用[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)。 您可以為 **StreamSocket** 使用 CCT，但它們使用更多資源，且可能無法在連線待命模式中運作。
 
-如果使用 WebSockets、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、或 **Windows.Web.Http.HttpClient**，您必須使用 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+如果您使用 WebSockets、 [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、 [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)或[**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient)，您必須使用[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
 
 ## <a name="controlchanneltrigger-with-websockets"></a>ontrolChannelTrigger 搭配 WebSockets
 使用 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) 或 [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 **MessageWebSocket** 或 **StreamWebSocket** 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 **StreamWebSocket** 接收封包要求的處理方式。 在 **MessageWebSocket** 接收封包的要求不會受到影響。
@@ -432,8 +432,8 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 ## <a name="controlchanneltrigger-with-httpclient"></a>ControlChannelTrigger 搭配 HttpClient
 使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，有一些特殊考量。 在使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 **ControlChannelTrigger** 時，應遵循某些傳輸專屬的使用模式與最佳做法。 此外，這些考量也會影響在 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 接收封包要求的處理方式。
 
-**注意** 目前不支援使用 SSL 的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 使用網路觸發程序功能和 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
- 
+**注意：** 使用 SSL [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637)目前不支援使用網路觸發程序功能和[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)。
+ 
 在使用 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 搭配 [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) 時，應遵循下列使用模式與最佳做法：
 
 -   App 可能需要先在 [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) 命名空間中的 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 或 [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) 物件上設定各種屬性及標頭，然後才能將要求傳送到特定 URI。

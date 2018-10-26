@@ -6,16 +6,14 @@ title: 建立、排程與管理媒體中斷
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b8d25047435ece1c55a982e69be45fa0e6efb74
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 0feb7f6771254bf500e4b64fd0e632daad9817e4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843661"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560021"
 ---
 # <a name="create-schedule-and-manage-media-breaks"></a>建立、排程與管理媒體中斷
 
@@ -88,10 +86,6 @@ ms.locfileid: "1843661"
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## <a name="get-information-about-the-current-media-break"></a>取得目前媒體中斷的相關資訊
-如本文先前所提及，[**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) 屬性可用來判斷目前正在播放媒體中斷內的哪一個媒體項目。 您可能希望定期檢查目前播放的項目，以更新您的 UI。 請務必先檢查 [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) 屬性是否為 null。 如果該屬性為 null，就表示目前並未播放任何媒體中斷。
-
-[!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
 ## <a name="access-the-current-playback-session"></a>存取目前的播放工作階段
 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) 物件會使用 **MediaPlayer** 類別，來提供與目前播放的媒體內容相關的資料和事件。 [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) 也會有 **MediaPlaybackSession**，您可以用來取得與正在播放的媒體中斷內容明確相關的資料和事件。 您可以從播放工作階段取得的資訊包括目前的播放狀態 (播放或暫停)，以及內容中目前的播放位置。 如果媒體中斷內容的外觀比例與您的主要內容不同，您可以使用 [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) 和 [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) 屬性及 [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) 來調整視訊 UI。 您也可以接收像是 [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded) 及 [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) 等事件，這些事件可以提供關於您 app 效能的重要遙測資料。
@@ -107,9 +101,9 @@ ms.locfileid: "1843661"
 * [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
 * [系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)
 
- 
+ 
 
- 
+ 
 
 
 

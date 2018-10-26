@@ -6,16 +6,14 @@ ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 406960820edaf3e8b14e93a6d9dfe9d723a216d6
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488954"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564144"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定義 UWP app 架構
 
@@ -388,7 +386,7 @@ void GameMain::Run()
 
 當使用者最後結束遊戲工作階段時，我們需要進行清除。 這時就需要使用 **Uninitialize**。
 
-在 Windows 10 中，關閉 App 視窗並不會終止 App 的程序，而是將 App 單例的狀態寫入到記憶體。 如需在系統必須回收此記憶體時執行任何特殊的動作，包括任何特殊的資源清理，請在這個方法中放入該清理動作的程式碼。
+在 windows 10，關閉 app 視窗並不會終止應用程式的程序，但改為應用程式單例的狀態寫入到記憶體。 如需在系統必須回收此記憶體時執行任何特殊的動作，包括任何特殊的資源清理，請在這個方法中放入該清理動作的程式碼。
 
 ### <a name="app-uninitialize"></a>App:: Uninitialize
 

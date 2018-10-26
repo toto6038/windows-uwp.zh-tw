@@ -6,16 +6,14 @@ title: 支援的轉碼器
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d520437f9be9d2e2bc6fe8243c3d34b17ef2d9
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "303674"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562833"
 ---
 # <a name="supported-codecs"></a>支援的轉碼器
 
@@ -30,7 +28,7 @@ ms.locfileid: "303674"
 > [!NOTE] 
 > 指示支援 AMR-NB 時，表示在 Server SKU 上不支援這個編碼器。
 
- 
+ 
 
 ### <a name="desktop"></a>桌上型電腦
 
@@ -341,7 +339,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>行動裝置版
 
@@ -652,7 +650,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT 核心版 (x86)
 
@@ -963,7 +961,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-arm"></a>IoT 核心版 (ARM)
 
@@ -1274,7 +1272,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -1585,7 +1583,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="video-codec--format-support"></a>視訊轉碼器與支援的格式
 
@@ -1595,7 +1593,7 @@ ms.locfileid: "303674"
 > 指示支援 H.265 時，表示不是該裝置系列中的所有裝置都支援。
 > 指示支援 MPEG-2/MPEG-1 時，表示只有安裝選用的 Microsoft DVD 通用 Windows app 之後才支援。
 
- 
+ 
 
 ### <a name="desktop"></a>桌上型電腦
 
@@ -1814,7 +1812,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="mobile"></a>行動裝置版
 
@@ -2033,7 +2031,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-core-x86"></a>IoT 核心版 (x86)
 
@@ -2252,7 +2250,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="iot-arm"></a>IoT (ARM)
 
@@ -2471,7 +2469,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
- 
+ 
 
 ### <a name="xbox"></a>Xbox
 
@@ -2690,7 +2688,7 @@ ms.locfileid: "303674"
 </tbody>
 </table>
 
-## <a name="image-codec--format-support"></a>影像轉碼器與支援的格式 
+## <a name="image-codec--format-support"></a>影像轉碼器與支援的格式 
 
 <table>
 <colgroup>

@@ -6,19 +6,18 @@ ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, UWP, egl, dxgi, direct3d
-ms.openlocfilehash: 7d7e4058eccd39911bd84d3967ef07b93b6ee89d
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 64f237fd26a2ed7328e2c2264da17d3a5d7ba588
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210972"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561286"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL 程式碼與 DXGI 和 Direct3D 的比較
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -31,9 +30,9 @@ DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的
 
 DXGI 和 Direct3D 如同 EGL 都提供方法來設定圖形資源、取得著色器要繪製的轉譯內容，以及在視窗中顯示結果。 但是，DXGI 和 Direct3D 有更多的選項，而從 EGL 移植時需要投入更多心力才能正確設定。
 
-> **注意**本指導方針是以 Khronos Group 針對 EGL 1.4 所提供的開放規格為根據，請見此處的文章：[Khronos 原生平台圖形介面 (EGL 1.4 版 - 2011 年 4 月 6 日) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
+> **注意：** 本指導方針以 Khronos Group 針對 EGL 1.4，這裡的開放規格關閉： [Khronos 原生平台圖形介面 （EGL 1.4 版-2011 年 4 月 6，） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
 
- 
+ 
 
 ## <a name="how-does-dxgi-and-direct3d-compare"></a>與 DXGI 和 Direct3D 相比的結果如何？
 
@@ -50,7 +49,7 @@ EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式
 -   轉譯成特定的轉譯目標 (例如紋理)。
 -   使用圖形資源轉譯的結果來更新視窗的顯示表面。
 
-若要查看設定圖形管線的基本 Direct3D 程序，請查看 Microsoft Visual Studio 2015 中的 DirectX 11 app (通用 Windows) 範本。 該範本中的基本轉譯類別可提供設定 Direct3D 11 圖形基礎結構和在其上設定基本資源的良好基準，並且支援通用 Windows 平台 (UWP) app 功能 (例如，螢幕旋轉)。
+若要查看設定圖形管線的基本 Direct3D 程序，請查看 Microsoft Visual Studio2015 中的 DirectX 11 應用程式 (通用 Windows) 範本。 該範本中的基本轉譯類別可提供設定 Direct3D 11 圖形基礎結構和在其上設定基本資源的良好基準，並且支援通用 Windows 平台 (UWP) app 功能 (例如，螢幕旋轉)。
 
 相較於 Direct3D 11，EGL 具有很少 API，而且如果您不熟悉平台特有的命名方式與專業用語，瀏覽後者就是一項挑戰。 這裡提供可協助您找到方向的簡單概觀。
 
@@ -63,7 +62,7 @@ EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式
 | **EGLContext**  | 在 Direct3D 中，您可以使用 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 介面，設定並發出命令給圖形管線。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | **EGLConfig**   | 在 Direct3D 11 中，您可以使用 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 介面上的方法來建立和設定圖形資源，例如，緩衝區、紋理、樣板及著色器。                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
- 
+ 
 
 現在，以下是在 UWP app 的 DXGI 與 Direct3D 中設定簡易圖形顯示、資源及內容最基本的程序。
 
@@ -75,9 +74,9 @@ EGL 優於 DXGI 和 Direct3D 的最大優點是它能夠以相對簡單的方式
 6.  當管線已執行且框架繪製到背景緩衝區後，請使用 [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) 將它呈現到螢幕。
 
 如果要更詳細地檢驗此程序，請檢閱 [DirectX 圖形入門](https://msdn.microsoft.com/library/windows/desktop/hh309467)。 本文的其餘部分涵蓋許多基本圖形管線設定和管理的一般步驟。
-> **注意**Windows 傳統型應用程式用來取得 Direct3D 交換鏈結 (例如 [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)) 的 API 並不相同，因此請勿使用 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 物件。
+> **注意：**  Windows 傳統型應用程式有不同的 Api 來取得 Direct3D 交換鏈結，例如[**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083)，而且不要使用[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)物件。
 
- 
+ 
 
 ## <a name="obtaining-a-window-for-display"></a>取得要顯示的視窗
 
@@ -164,7 +163,7 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
   swapChainDesc.SampleDesc.Quality = 0;
   swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
   swapChainDesc.BufferCount = 2; // Use double-buffering to minimize latency.
-  swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // All Windows Store apps must use this SwapEffect.
+  swapChainDesc.SwapEffect = DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL; // All UWP apps must use this SwapEffect.
   swapChainDesc.Flags = 0;
 
   // ...
@@ -281,7 +280,7 @@ D3D11CreateDevice(
   creationFlags, // Set set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
-  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for Windows Store apps.
+  D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.
   &device, // Returns the Direct3D device created.
   &m_featureLevel, // Returns feature level of device created.
   &d3dContext // Returns the device immediate context.
@@ -395,7 +394,7 @@ EGLBoolean eglTerminate(eglDisplay);
 | eglDestroySurface                | 不適用。 當平台關閉 UWP app 的 CoreWindow 時，就會清理圖形資源。                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | 這是目前的 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)。 這通常會將範圍設定為您的轉譯器物件。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | 由 DirectX 介面上大部分方法所傳回的 HRESULT 來取得錯誤。 如果方法未傳回 HRESULT，請呼叫 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)。 若要將系統錯誤轉換成 HRESULT 值，請使用 [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746) 巨集。                                                                                                                                                                                                  |
+| eglGetError                      | 由 DirectX 介面上大部分方法所傳回的 HRESULT 來取得錯誤。 如果方法未傳回 HRESULT，請呼叫 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)。 若要將系統錯誤轉換成 anHRESULTvalue，請使用[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)巨集。                                                                                                                                                                                                  |
 | eglInitialize                    | 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | 使用 [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 來設定要在目前內容上繪製的轉譯目標。                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | 不適用。 但是，您可能會從 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 執行個體取得轉譯目標，以及一些設定資料 (請參閱可用方法清單的連結)。                                                                                                                                                                                                                                                                                           |
@@ -410,11 +409,11 @@ EGLBoolean eglTerminate(eglDisplay);
 | eglWaitGL                        | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](https://msdn.microsoft.com/library/windows/desktop/ff476891)。                                                                                                                                                                                                                                                                                                                                    |
 | eglWaitNative                    | 針對共用的表面，請使用 IDXGIKeyedMutex。 針對一般 GPU 多執行緒，請參閱[多執行緒](https://msdn.microsoft.com/library/windows/desktop/ff476891)。                                                                                                                                                                                                                                                                                                                                    |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
 

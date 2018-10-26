@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f59675c3feaab47ee79eaf160c5592876b7564a2
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 9babc1f96b83123cef4bf103f4d13696697cc897
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1862097"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562010"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 
@@ -68,7 +66,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 ## <a name="cortana"></a>Cortana
 
-在 Windows10 中，**Cortana** 擴充性可讓您處理使用者的語音命令，並啟動您的應用程式來執行單一動作。
+在 windows 10， **Cortana**擴充性可讓您處理使用者的語音命令，並啟動您的應用程式，實行單一動作。
 
 ### <a name="device-support"></a>裝置支援
 
@@ -91,7 +89,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 ### <a name="more-info"></a>其他資訊
 
 [Cortana 設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn974233)
- 
+ 
 
 ## <a name="speech"></a>語音
 
@@ -140,13 +138,13 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 ### <a name="more-info"></a>其他資訊
 
 [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
- 
+ 
 
 ## <a name="pen"></a>手寫筆
 
 手寫筆可以當做像素精確指標裝置 (例如滑鼠)，而且是適用於數位筆跡輸入的最佳裝置。
 
-**注意**  有兩種類型的手寫筆裝置：主動式及被動式。
+**注意：** 有兩種類型的手寫筆裝置： 主動式及被動式。
   -   被動式手寫筆不包含電子產品，可有效地模擬來自手指的觸控輸入。 它們需要基本的裝置顯示器，根據接觸點的壓力來辨識輸入。 由於使用者在輸入介面上書寫時通常會將手擱在上面，因此，輸入資料會因為未順利防手掌誤觸而受到干擾。
   -   主動式手寫筆包含電子產品，而且可與複雜的裝置顯示器一起使用，為系統和應用程式提供更廣泛的輸入資料 (包括暫留或鄰近性資料)。 防手掌誤觸的功能更加強固。
 
@@ -173,7 +171,7 @@ Windows 筆跡平台搭配手寫筆之後，使用者就可以自然的方式手
 ### <a name="more-info"></a>其他資訊
 
 [手寫筆設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456352)
- 
+ 
 
 ## <a name="touch"></a>觸控
 
@@ -208,7 +206,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 ### <a name="more-info"></a>其他資訊
 
 [觸控設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465370)
- 
+ 
 
 ## <a name="touchpad"></a>觸控板
 
@@ -232,13 +230,13 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 ### <a name="more-info"></a>其他資訊
 
 [觸控板設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456353)
- 
+ 
 
 ## <a name="keyboard"></a>鍵盤
 
 鍵盤是文字的主要輸入裝置，對於某些行動不便的使用者，或是認為鍵盤是與應用程式互動更快速且更有效率之方式的使用者來說，通常是不可或缺。
 
-透過 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431) (此為適用於可相容之 Windows10 行動裝置的新體驗)，使用者可將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
+[Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)，適用於相容的 windows 10 行動裝置，新的體驗與使用者可以將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
 
 ### <a name="device-support"></a>裝置支援
 
@@ -260,7 +258,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 觸控式鍵盤是視覺化的軟體鍵盤，使用觸控輸入來輸入文字。 觸控式鍵盤不能取代 OSK，因為它只能輸入文字 (它不會模擬硬體鍵盤)，而且只有文字欄位或其他可編輯的文字控制項得到焦點之後，才會顯示。 觸控式鍵盤不支援應用程式或系統命令。
 
-**注意**  OSK 的優先順序高於觸控式鍵盤，當顯示 OSK 時就不會顯示觸控式鍵盤。
+**注意：** OSK 的優先順序高於觸控式鍵盤，就不會顯示 OSK 是否存在。
 
 一般而言，鍵盤是：
 
@@ -272,7 +270,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 ### <a name="more-info"></a>其他資訊
 
 [鍵盤設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh972345)
- 
+ 
 
 ## <a name="mouse"></a>滑鼠
 
@@ -299,7 +297,7 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 ### <a name="more-info"></a>其他資訊
 
 [滑鼠設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn456351)
- 
+ 
 
 ## <a name="gesture"></a>手勢
 
@@ -370,6 +368,6 @@ OSK 是視覺化的軟體鍵盤，可用來取代實體鍵盤，透過觸控、�
 
 
 
- 
+ 
 
- 
+ 

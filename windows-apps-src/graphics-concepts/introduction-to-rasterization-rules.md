@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eea8810fd1fec9df405e4c16272a468d4272210
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 65522195b9729ddd4f2ebeb193f43c905359eda2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044387"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560265"
 ---
 # <a name="introduction-to-rasterization-rules"></a>點陣化規則簡介
 
@@ -77,9 +75,9 @@ Direct3D 針對填充幾何使用左上角填充慣例。 這是針對 GDI 和 O
 
 [點陣化規則](rasterization-rules.md)
 
- 
+ 
 
- 
+ 
 
 
 

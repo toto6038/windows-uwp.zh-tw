@@ -6,20 +6,18 @@ ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: 450f95e68c85a325e43127df90ffeddbaa850afa
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488862"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560481"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>轉譯架構 I：轉譯簡介
 
-我們已經在稍早的主題中討論過如何建立通用 Windows 平台 (UWP) 遊戲的結構，以及如何定義狀態電腦來處理遊戲的流程。 現在，是時候了解如何組合轉譯架構。 我們來看看範例遊戲如何使用 Direct3D 11（通常稱為 DirectX 11）轉譯遊戲場景。
+我們已經在稍早的主題中討論過如何建立通用 Windows 平台 (UWP) 遊戲的結構，以及如何定義狀態電腦來處理遊戲的流程。 現在，是時候了解如何組合轉譯架構。 讓我們看看範例遊戲如何轉譯遊戲場景使用 Direct3D11 （通常稱為 DirectX 11）。
 
 >[!Note]
 >如果您尚未下載此範例的最新遊戲程式碼，請移至 [Direct3D 遊戲範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Simple3DGameDX)。 此為 UWP 功能範例的大集合的一部分。 如需下載範例方法的指示，請參閱[從 GitHub 取得 UWP 範例](https://docs.microsoft.com/windows/uwp/get-started/get-uwp-app-samples)。
@@ -620,7 +618,7 @@ __DX::DeviceResources__類別在__DeviceResources.cpp__/__.h__檔案中且控制
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統，其在封裝部分 Direct3D 10、10.1、11 和 11.1 所需低層級工作的 Windows Vista 中引進， 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX Graphics Infrastructure (DXGI)： 最佳做法- 多執行緒](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統，封裝部分 Direct3D 10 所需低層級工作的 WindowsVista 中引進 10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX Graphics Infrastructure (DXGI)： 最佳做法- 多執行緒](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>功能層級
 
@@ -630,7 +628,7 @@ Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統，其在封�
 
 使用功能層級，當您建立裝置，您可以嘗試建立您所要求的功能層級的裝置。 如果裝置建立運作，該功能層級則存在，否則，硬體不支援該功能層級。 您可以嘗試重新建立較低功能層級的裝置，或您可以選擇離開應用程式。 例如，12\_0 功能層級需要 Direct3D 11.3 或 Direct3D 12 及著色器模型 5.1。 如需詳細資訊，請參閱[Direct3D 功能層級：每項功能層級的概觀](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx#Overview)。
 
-使用功能層級，您可以開發 Direct3D 9、Microsoft Direct3D 10 或 Direct3D 11 的應用程式，並且在 9、10 或 11 硬體（有一些例外）上執行。 如需詳細資訊，請參閱[Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
+使用功能層級，您可以開發的應用程式 Direct3D9、 Microsoft Direct3D10 或 Direct3D11，並接著在 9、 10 或 11 硬體 （有一些例外） 上執行。 如需詳細資訊，請參閱[Direct3D 功能層級](https://msdn.microsoft.com/library/windows/desktop/ff476876.aspx)。
 
 ### <a name="stereo-rendering"></a>立體著色運算
 

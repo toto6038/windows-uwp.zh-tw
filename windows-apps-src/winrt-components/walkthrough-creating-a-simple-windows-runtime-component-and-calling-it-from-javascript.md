@@ -6,33 +6,32 @@ ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 381e1d264e27d2b68e644895d0b795128540a5d7
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210682"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564657"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
 
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#、建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows 應用程式呼叫此元件。
 
-Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 執行階段元件加入至您的應用程式，以及建立可從 JavaScript 呼叫的 Windows 執行階段類型。 您的 Windows 執行階段類型可以在內部使用通用 Windows 應用程式允許的任何 .NET Framework 功能 (如需詳細資訊，請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[適用於 Windows 市集應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx))。您的類型成員在外部只能公開其參數和傳回值的 Windows 執行階段類型。 當您建置方案時，Visual Studio 會建置 .NET Framework Windows 執行階段元件專案，然後執行可建立 Windows 中繼資料 (.winmd) 檔案的建置步驟。 這是 Visual Studio 會包含在應用程式中的 Windows 執行階段元件。
+Visual Studio 可讓您輕鬆地將使用 C# 或 Visual Basic 撰寫的 Windows 執行階段元件加入至您的應用程式，以及建立可從 JavaScript 呼叫的 Windows 執行階段類型。 您的 Windows 執行階段類型可以在內部使用通用 Windows 應用程式允許的任何 .NET Framework 功能 （如需詳細資訊，請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[.NET for UWP 應用程式的概觀](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)）。外部，您的類型成員可以公開只有 Windows 執行階段類型其參數和傳回值。 當您建置方案時，Visual Studio 會建置 .NET Framework Windows 執行階段元件專案，然後執行可建立 Windows 中繼資料 (.winmd) 檔案的建置步驟。 這是 Visual Studio 會包含在應用程式中的 Windows 執行階段元件。
 
-> **備註**  .NET Framework 會將一些常用的 .NET Framework 類型 (例如，基本資料類型和集合類型)，自動對應到其 Windows 執行階段對等項目。 這些 .NET Framework 類型可用於 Windows 執行階段元件的公用介面，並且將針對元件的使用者顯示為對應的 Windows 執行階段類型。 請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
+> **注意：**.NET Framework 自動將一些常用的.NET Framework 類型，例如基本類型的資料類型和集合類型對應到其 Windows 執行階段對等項目。 這些 .NET Framework 類型可用於 Windows 執行階段元件的公用介面，並且將針對元件的使用者顯示為對應的 Windows 執行階段類型。 請參閱[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)。
 
 這個逐步解說將說明下列工作。 在您使用 JavaScript 設定 Windows 應用程式來完成第一節之後，您就能依任何順序來完成其餘各節。
 
 ## <a name="prerequisites"></a>先決條件：
 
--   Windows 10
--   Microsoft Visual Studio 2015 或 Microsoft Visual Studio Community 2015
+-   Windows10
+-   Microsoft Visual Studio2015 或 Microsoft Visual Studio Community2015
 
 ## <a name="creating-a-simple-windows-runtime-class"></a>建立簡單的 Windows 執行階段類別
 
@@ -100,14 +99,14 @@ function basics2() {
 
 請注意，每個成員名稱的第一個字母會從大寫變成小寫。 這個轉換是 JavaScript 為了方便您使用 Windows 執行階段而提供的支援。 命名空間和類別名稱都會依照 Pascal 命名法的大小寫慣例。 成員名稱會依照 Camel 命名法的大小寫慣例，但全部小寫的事件名稱除外。 請參閱[在 JavaScript 中使用 Windows 執行階段](https://msdn.microsoft.com/library/hh710230.aspx)。 Camel 命名法的大小寫慣例規則可能會造成混淆。 一系列的首字大寫字母通常會顯示為小寫，但若三個大寫字母後面緊接著一個小寫字母，則只有前兩個字母會以小寫顯示：例如，名為 IDStringKind 的成員會顯示為 idStringKind。 在 Visual Studio 中，您可以建置 Windows 執行階段元件專案，然後在 JavaScript 專案中使用 IntelliSense 以查看正確的大小寫。
 
-以類似的方式，.NET Framework 為了方便您在 Managed 程式碼中使用 Windows 執行階段而提供支援。 這會在本文的後續小節及[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[適用於 Windows 市集應用程式和 Windows 執行階段的 .NET Framework 支援](https://msdn.microsoft.com/library/hh694558.aspx)文章中加以討論。
+以類似的方式，.NET Framework 為了方便您在 Managed 程式碼中使用 Windows 執行階段而提供支援。 這與[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)和[.NET Framework 支援的 UWP 應用程式和 Windows 執行階段](https://msdn.microsoft.com/library/hh694558.aspx)的文章的本文中，後續章節中討論。
 
 ## <a name="create-a-simple-user-interface"></a>建立簡單的使用者介面
 
 
 在 JavaScript 專案中，開啟 default.html 檔案並更新內容，如下列程式碼所示。 這段程式碼包含範例應用程式的整組控制項，並指定 Click 事件的函式名稱。
 
-> **備註**  當您第一次執行應用程式時，只支援 [Basics1] 和 [Basics2] 按鈕。
+> **注意：** 當您第一次執行應用程式時，支援只 Basics1 和 Basics2 按鈕。
 
 ```html
 <body>
@@ -184,9 +183,9 @@ Visual Studio 會先編譯類別庫，然後執行可執行 [Winmdexp.exe (Windo
 
 選擇 [Basics 2] 按鈕來累加 SampleProperty 屬性的值，並將新值顯示於輸出區域中。 基本類型 (例如字串與數字) 可做為參數類型和傳回類型，而且可在 Managed 程式碼和 JavaScript 之間傳遞。 由於 JavaScript 中的數字會利用雙精度浮點數格式來儲存，因此它們會轉換為.NET Framework 數值類型。
 
-> **備註**  根據預設，您可以只在 JavaScript 程式碼中設定中斷點。 若要偵錯您的 Visual Basic 或 C# 程式碼，請參閱＜在 C# 和 Visual Basic 中建立 Windows 執行階段元件＞。
+> **注意：** 根據預設，您可以只在您的 JavaScript 程式碼中設定中斷點。 若要偵錯您的 Visual Basic 或 C# 程式碼，請參閱＜在 C# 和 Visual Basic 中建立 Windows 執行階段元件＞。
 
- 
+ 
 
 若要停止偵錯並關閉應用程式，請從應用程式切換至 Visual Studio，然後選擇 SHIFT+F5。
 
@@ -195,9 +194,9 @@ Visual Studio 會先編譯類別庫，然後執行可執行 [Winmdexp.exe (Windo
 
 Windows 執行階段可以從 JavaScript 或 Managed 程式碼呼叫。 Windows 執行階段物件可以在這兩者之間來回傳遞，而且可從任一端處理事件。 但是，因為 JavaScript 和 .NET Framework 會以不同方式支援 Windows 執行階段，所以您在這兩個環境中使用 Windows 執行階段類型的方式會有些許差異。 下列範例使用 [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) 類別來示範這些差異。 在這個範例中，您會在 Managed 程式碼中建立 PropertySet 集合的執行個體並註冊事件處理常式，以追蹤集合中的變更。 接著，加入可取得集合的 JavaScript 程式碼、註冊其擁有的事件處理常式，然後使用該集合。 最後，加入可從 Managed 程式碼對集合進行變更的方法，並顯示用於處理 Managed 例外狀況的 JavaScript。
 
-> **重要**  在這個範例中，事件會在 UI 執行緒上引發。 如果您從背景執行緒引發事件 (例如，在非同步呼叫中)，則必須執行一些額外工作，JavaScript 才能處理事件。 如需詳細資訊，請參閱[在 Windows 執行階段元件中引發事件](raising-events-in-windows-runtime-components.md)。
+> **重要**在這個範例中，事件會在 UI 執行緒上引發。 如果您從背景執行緒引發事件 (例如，在非同步呼叫中)，則必須執行一些額外工作，JavaScript 才能處理事件。 如需詳細資訊，請參閱[在 Windows 執行階段元件中引發事件](raising-events-in-windows-runtime-components.md)。
 
- 
+ 
 
 在 SampleComponent 專案中，加入名為 PropertySetStats 的新 **public sealed** 類別 (在 Visual Basic 中為 **Public NotInheritable** 類別)。 此類別會包裝 PropertySet 集合，並處理它的 MapChanged 事件。 事件處理常式會追蹤所發生的各種變更數目，而 DisplayStats 方法會產生 HTML 格式的報告。 請注意其他的 **using** 陳述式 (在 Visual Basic 中為 **Imports** 陳述式)；小心地將此陳述式加入至現有的 **using** 陳述式，而不是覆寫它們。
 
@@ -271,7 +270,7 @@ Windows 執行階段可以從 JavaScript 或 Managed 程式碼呼叫。 Windows 
 > End Class
 > ```
 
-事件處理常式會遵循熟悉的 .NET Framework 事件模式，但事件的傳送者 (在此案例中為 PropertySet 物件) 會轉型為 IObservableMap&lt;string, object&gt; 介面 (在 Visual Basic 中為 IObservableMap(Of String, Object))，也就是 Windows 執行階段介面 [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx) 的具現化。(如有需要，您可以將傳送者轉型為其類型)。此外，事件引數會呈現為介面，而不是物件。
+事件處理常式會遵循熟悉的.NET Framework 事件模式，差別只在於事件 （在此案例中，PropertySet 物件） 的寄件者會轉型為 IObservableMap&lt;字串、 物件&gt;介面 (IObservableMap （的字串，物件） 中Visual Basic)，這是 Windows 執行階段介面的具現化[IObservableMap&lt;K，V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx)。 （您可以在轉換到其類型寄件者視）。此外，事件引數會呈現為介面，而不是做為物件。
 
 在 default.js 檔案中，新增 Runtime1 函式，如下所示。 此程式碼會建立 PropertySetStats 物件、取得其 PropertySet 集合，並加入自有的事件處理常式 (onMapChanged 函式)，來處理 MapChanged 事件。 對集合進行變更之後，runtime1 會呼叫 DisplayStats 方法來顯示變更類型的摘要。
 
@@ -376,7 +375,7 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 若要執行應用程式，請選擇 F5 鍵。 依序選擇 **\[Runtime 1\]** 和 **\[Runtime 2\]**。 JavaScript 事件處理常式會將第一個變更回報至集合。 不過，第二個變更具有重複的索引鍵。 .NET Framework 字典的使用者預期 Add 方法會擲回例外狀況，而實際情況就是如此。 JavaScript 會處理 .NET Framework 例外狀況。
 
-> **備註**  您無法從 JavaScript 程式碼顯示例外狀況的訊息， 因為訊息文字會由堆疊追蹤所取代。 如需詳細資訊，請參閱＜在 C# 和 Visual Basic 中建立 Windows 執行階段元件＞中的「擲回例外狀況」一節。
+> **注意：** 您無法顯示從 JavaScript 程式碼的例外狀況的訊息。 因為訊息文字會由堆疊追蹤所取代。 如需詳細資訊，請參閱＜在 C# 和 Visual Basic 中建立 Windows 執行階段元件＞中的「擲回例外狀況」一節。
 
 相反地，當 JavaScript 以重複的索引鍵呼叫 insert 方法時，項目值就會變更。 此行為差異是由於 JavaScript 和 .NET Framework 各以不同的方式支援 Windows 執行階段，如[在 C# 和 Visual Basic 中建立 Windows 執行階段元件](creating-windows-runtime-components-in-csharp-and-visual-basic.md)中所述。
 
@@ -414,9 +413,9 @@ runtimeButton2.addEventListener("click", runtime2, false);
 
 請注意，此字典必須當做由 [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx) 實作且對應至 Windows 執行階段介面的介面傳回。 在這種情形下，此介面為 IDictionary&lt;int, string&gt; (在 Visual Basic 中為 IDictionary(Of Integer, String))。 將 Windows 執行階段類型 IMap&lt;int, string&gt; 傳遞至 Managed 程式碼時，它會顯示為 IDictionary&lt;int, string&gt;，反之，將 Managed 類型傳遞至 JavaScript 時亦然。
 
-**重要**  當 Managed 類型實作多個介面時，JavaScript 會使用清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
+**重要**當 managed 的類型實作多個介面時，JavaScript 會使用清單中第一個出現的介面。 例如，若您將 Dictionary&lt;int, string&gt; 傳回 JavaScript 程式碼，則無論您將哪個介面指定為傳回類型，其皆會顯示為 IDictionary&lt;int, string&gt;。 這表示，如果第一個介面不包含出現在後續介面上的成員，該成員即不會對 JavaScript 顯示。
 
- 
+ 
 
 若要測試新方法並使用此字典，請將 returns1 和 returns2 函式加入至 default.js：
 
@@ -473,7 +472,7 @@ returnsButton2.addEventListener("click", returns2, false);
 
 另一個非預期的行為：如果您將未指派的 JavaScript 變數當做字串引數傳遞，就會取得字串 "undefined"。 總之，當您將 .NET Framework 集合類型傳遞至 JavaScript 程式碼時，請格外小心。
 
-> **備註**  如果您有大量文字需要串連，可將程式碼移到 .NET Framework 方法並使用 StringBuilder 類別，更有效地執行串連 (如 showMap 函式所示)。
+> **注意：** 如果您有大量文字來串連，你就可以更有效率地將程式碼移到.NET Framework 方法並使用 StringBuilder 類別，如 showMap 函式中所示。
 
 雖然您無法從 Windows 執行階段元件公開自己的泛型類型，但可使用下列程式碼，傳回 Windows 執行階段類別的 .NET Framework 泛型集合：
 
@@ -675,7 +674,7 @@ GetPrimesInRangeAsync 是一個非常簡單的質數搜尋工具，而這是設�
     -   [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) 物件可提供函式來處理傳回結果、回應取消作業，以及處理進度報告。
     -   AsyncInfo.Run 方法會建立取消來源和可實作 IProgress&lt;T&gt; 介面的物件。 對此委派，它會從取消來源傳遞 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) 語彙基元和 [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) 介面。
 
-        > **備註**  如果 Promise 物件未提供函式來反應取消作業，AsyncInfo.Run 仍會傳遞可取消的語彙基元，而取消作業仍會發生。 如果 Promise 物件未提供函式來處理進度更新，AsyncInfo.Run 仍會提供物件來實作 IProgress&lt;T&gt;，但會忽略其報告。
+        > **注意：** 如果 Promise 物件未提供函式來反應取消作業，AsyncInfo.Run 仍會傳遞可取消的語彙基元，並取消仍會發生。 如果 Promise 物件未提供函式來處理進度更新，AsyncInfo.Run 仍會提供物件來實作 IProgress&lt;T&gt;，但會忽略其報告。
 
     -   此委派會使用 [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) 方法來建立已啟動的工作，該工作會使用語彙基元和進度介面。 已啟動工作的委派是由可計算所需結果的 Lambda 函式所提供。 立即深入了解。
     -   AsyncInfo.Run 方法會建立物件來實作 [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) 介面、連接 Windows 執行階段取消機制與語彙基元來源，以及連接 Promise 物件的進度報告函式與 IProgress&lt;T&gt; 介面。
@@ -738,6 +737,6 @@ asyncCancel 函式只會呼叫 WinJS.Promise 物件的 cancel 方法。
 
 ## <a name="related-topics"></a>相關主題
 
-* [適用於 Windows 市集應用程式的 .NET 概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP 應用程式的概觀](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
 * [適用於 UWP App 的 .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
 * [逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)

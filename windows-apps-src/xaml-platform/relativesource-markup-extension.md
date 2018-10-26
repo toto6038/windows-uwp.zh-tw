@@ -6,16 +6,14 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c89793dd92a458c47a33aac4f7d4c728088cf1dc
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 5bb9d241569afdbbc9df95fa11cd2261e78c077a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674355"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562724"
 ---
 # <a name="relativesource-markup-extension"></a>{RelativeSource} 標記延伸
 
@@ -43,7 +41,7 @@ ms.locfileid: "1674355"
 | 詞彙 | 說明 |
 |------|-------------|
 | {RelativeSource Self} | 產生的 [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) 值是 <strong>Self</strong>。 目標元素應做為這個繫結的來源。 在同一個元素中繫結一個元素的屬性到另一個元素時，這個值很有用。 |
-| {RelativeSource TemplatedParent} | 產生 [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)，以套用來做為這個繫結的來源。 在範本層級將執行階段資訊套用到繫結時，這個值很有用。 | 
+| {RelativeSource TemplatedParent} | 產生 [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)，以套用來做為這個繫結的來源。 在範本層級將執行階段資訊套用到繫結時，這個值很有用。 | 
 
 ## <a name="remarks"></a>備註
 
@@ -64,7 +62,7 @@ ms.locfileid: "1674355"
 
 另一個 `RelativeSource={RelativeSource Self}` 的用法，是將物件的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) 設定到其本身的做法。  例如，您可能在某些 SDK 範例中看見此技術，其中的 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) 類別已使用自訂屬性加以延伸，這個自訂屬性已經為它自己的資料繫結提供「準備就緒」檢視模型，例如： `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**注意**  **RelativeSource** 的 XAML 用法僅顯示它的預期用法：在 XAML 中設定 [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) 的值以做為繫結運算式的一部分。 理論上，如果設定值為 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) 的屬性，也可以有其他用法。
+**注意：** **RelativeSource**的 XAML 用法僅顯示的用法它為了： [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)在 XAML 中的設定值做為繫結運算式的一部分。 理論上，如果設定值為 [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) 的屬性，也可以有其他用法。
 
 ## <a name="related-topics"></a>相關主題
 

@@ -6,16 +6,14 @@ description: 關聯端點 (AEP) 服務提供特定通訊協定上裝置支援服
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e204da16edd438b045fb753dca538e7fdeaa5a5f
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 5f103ee3c281ca95abcaee76cdc6f88b74a49eb1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690274"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563223"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 
@@ -74,7 +72,7 @@ app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩
 | GATT - 使用者資料                     | **181C0000-0000-1000-8000-00805F9B34FB** |
 | GATT - 體重計                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
- 
+ 
 
 如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571)API 來取得一些常見的 GATT 服務。
 
@@ -105,7 +103,7 @@ UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba-42860
 | 內容目錄                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | 撥號                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 
- 
+ 
 
 ## <a name="wsd-services"></a>WSD 服務
 
@@ -118,7 +116,7 @@ WSD 服務會使用下列通訊協定識別碼：{782232aa-a2f9-4993-971b-aedc55
 | 印表機      | **65dca7bd-2611-583e-9a12-ad90f47749cf** |
 | 掃描器      | **56ec8b9e-0237-5cae-aa3f-d322dd2e6c1e** |
 
- 
+ 
 
 ## <a name="aqs-sample"></a>AQS 範例
 
@@ -129,6 +127,6 @@ System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" A
 System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D7-16D8EC26B29B}"
 ```
 
- 
+ 
 
- 
+ 

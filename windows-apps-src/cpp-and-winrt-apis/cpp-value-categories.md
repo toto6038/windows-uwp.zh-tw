@@ -5,16 +5,14 @@ title: 值類別，以及它們的參考
 ms.author: stwhi
 ms.date: 08/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 移動、 轉送、 值類別、 移動語意、 完美轉送、 左、 右值、 glvalue、 prvalue，xvalue
 ms.localizationpriority: medium
-ms.openlocfilehash: cbccaf78b45d85d93619977d149431c4eec9e10a
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: b600c09c3629ce52590daa42b9046fab3784a78f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513599"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563843"
 ---
 # <a name="value-categories-and-references-to-them"></a>值類別，以及它們的參考
 本主題說明存在於 c + + 的各種不同類別的值 （和值的參考）。 您將會相信有聽過*的值*和*右*，但您可能不想要它們在本主題提供的條款。 而且有一些其他類型的值，太。

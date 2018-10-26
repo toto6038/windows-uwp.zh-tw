@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: stwhi
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 485d16cb9c40769c123719f8f55e81d804f220a3
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 04a0288d0b28c12eb68cf56225747224e8df9777
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393987"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563454"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用範本和模式來設定日期和時間的格式
 
@@ -29,7 +27,7 @@ ms.locfileid: "1393987"
 
 但當您想要對所希望顯示之 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 物件的元件順序與格式有更多控制時，您可以將格式模式傳遞到建構函式的 *formatTemplate* 引數。 格式模式使用一種特殊的語法，可讓您取得 **DateTime** 物件的個別元件&mdash;例如，單純月份的名稱，或年份的值&mdash;以使用任何您選擇的自訂格式顯示他們。 此外，模式也可以當地語系化以配合其他語言和地區。
 
-**備註**：這僅只是格式模式的概觀。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
+**注意：** 這是只有格式模式的概觀。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式範本和格式模式的不同
 
@@ -63,7 +61,7 @@ Ja-JP: "{month.integer}月{day.integer}日"
 var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-上述格式器會傳回括弧 {} 內部個別元件的文化限定值。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
+上述格式器會傳回在括號內的個別元件的文化特性值{}。 但格式模式中的元件順序則不變。 您得到的就是您想要的，而這可能不見得適用每個文化： 此格式器針對英文 (美國) 有效，但針對法文 (法國) 和日文則無效。
 
 ``` syntax
 En-US: January 1
@@ -117,7 +115,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 是指向資源檔 (.resw) 中可當地語系化資源的資源識別碼。 若預設語言為英文 (美國)，則這將會設為 "{0} | {1}" 的值，並附帶註解表示 "{0}" 是日期，"{1}" 則是時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
+`CustomDateTimeFormatString` 是指向資源檔 (.resw) 中可當地語系化資源的資源識別碼。 預設語言為英文 （美國），這會設為值為 「{0} |{1}「 以及註解指出 」{0}」 是日期和 「{1}」 是時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
 
 另一種實作此範例的方法便是查詢兩個格式器以取得其格式模式，將他們結合在一起，然後使用結合後的格式模式建構第三個格式器。
 

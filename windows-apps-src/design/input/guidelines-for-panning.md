@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 27db679e653873be4aac3ed9298d7d0e59e99d2b
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 31725c6cb9a966f02f8d1f8d62ca980e72c95326
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654397"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561036"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 
@@ -36,9 +34,9 @@ ms.locfileid: "1654397"
 
 -   顯示移動瀏覽指示器和捲軸來提供位置和尺寸提示。若您要提供自訂瀏覽功能，請隱藏他們。
 
-    **備註**  與標準捲軸不同，移動瀏覽指標僅為提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
+    **注意：** 不同於標準捲軸，移動瀏覽指標僅為提供資訊。 這些指標不對輸入裝置顯示，而且完全不能以任何方式操作。
 
-     
+     
 
 **單軸移動瀏覽 (一維溢位)**
 
@@ -80,7 +78,7 @@ ms.locfileid: "1654397"
 
 ## <a name="additional-usage-guidance"></a>其他用法指導方針
 
-利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或受到某些裝置特定 Windows UI 的要求，我們都將這兩種互動稱為移動瀏覽。
+利用觸控進行移動瀏覽 (搭配單指或多指使用撥動或滑動手勢) 就像是使用滑鼠捲動。 移動瀏覽互動更像是旋轉滑鼠滾輪或滑動捲動方塊，而不是按一下捲軸。 除非在 API 中進行區別，或所需的某些裝置特定 WindowsUI，我們只需參考這兩種互動稱為移動瀏覽。
 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - 行為變更</strong>
@@ -103,7 +101,7 @@ ms.locfileid: "1654397"
 
 **移動瀏覽的類型**
 
-Windows 8 支援三種移動瀏覽類型：
+Windows8 支援三種類型的移動瀏覽：
 
 -   單軸 - 僅支援一個方向的移動瀏覽 (水平或垂直)。
 -   柵欄 - 支援所有方向的移動瀏覽。 不過，一旦使用者超出某個特定方向的距離閾值，移動瀏覽就會受限於該軸。
@@ -120,9 +118,9 @@ Windows 8 支援三種移動瀏覽類型：
 -   觸控時為移動瀏覽指標。
 -   使用其他輸入裝置 (包括滑鼠、觸控板、鍵盤以及手寫筆) 時為捲軸。
 
-**備註**  移動瀏覽指標僅在觸控觸碰點位於可移動瀏覽的區域時，才會顯示。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
+**注意：** 移動瀏覽指標是只有在可見時接觸點位於可移動瀏覽的區域。 同理，只有當滑鼠游標、畫筆/手寫筆游標或鍵盤焦點是在可捲動的區域內時，才會顯示捲軸。
 
- 
+ 
 
 **移動瀏覽指標** 移動瀏覽指標類似於捲軸中的捲動方塊。 它們指示了顯示內容佔可移動瀏覽總區域的比例，以及顯示內容在可移動瀏覽區域中的相對位置。
 
@@ -149,7 +147,7 @@ Windows 8 支援三種移動瀏覽類型：
 | ![顯示可移動瀏覽區域的影像。](images/ux-panning-snap1.png) | ![顯示可移動瀏覽區域被移動瀏覽至左側的影像。](images/ux-panning-snap2.png) | ![顯示已在某個邏輯貼齊點停止移動瀏覽之可移動瀏覽區域的影像。](images/ux-panning-snap3.png) |
 | 撥動以移動瀏覽。                                                  | 提起手指。                                                                     | 可移動瀏覽區域會在貼齊點停止，而不是提起手指的位置。                                |
 
- 
+ 
 
 **柵欄** 內容可以寬於和高於顯示裝置的維度及解析度。 基於這個理由，二維移動瀏覽 (水平和垂直) 通常是必需的。 柵欄可改進這些案例中的使用者經驗，透過沿著動作方向的軸線 (垂直或水平) 強調移動瀏覽來完成。
 
@@ -195,9 +193,9 @@ Windows 8 支援三種移動瀏覽類型：
 * [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

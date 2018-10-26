@@ -7,15 +7,13 @@ keywords: 連絡人, 電子郵件, 傳送
 ms.author: normesta
 ms.date: 10/11/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b8ce349af89dbbfe3f4f5fce869b83c38abb0e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "665384"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560930"
 ---
 # <a name="send-email"></a>傳送電子郵件
 
@@ -51,7 +49,7 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 ```
 
 >[!NOTE]
-> 使用[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)類別新增至電子郵件的附件只會出現在郵件應用程式。 使用者可設定為其預設郵件程式的任何其他郵件程式，[撰寫] 視窗會顯示不含附件。 這是已知的問題。
+> 您使用[EmailAttachment](https://docs.microsoft.com/uwp/api/windows.applicationmodel.email.emailattachment)類別新增到電子郵件的附件只會出現在 [郵件] app。 如果使用者已設定為其預設的郵件程式的任何其他郵件程式，撰寫視窗會顯示不含附件。 這是已知的問題。
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
@@ -61,6 +59,6 @@ private async Task ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 * [選取連絡人](selecting-contacts.md)
 * [如何在呼叫檔案選擇器之後繼續執行您的 Windows Phone app](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
- 
+ 
 
- 
+ 

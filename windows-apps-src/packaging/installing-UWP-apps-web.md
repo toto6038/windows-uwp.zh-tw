@@ -5,16 +5,14 @@ description: 在本節中，我們將檢閱可讓使用者直接從網頁安裝�
 ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: d0368743e3afa6e9cdb5e5ac95672430416fc824
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1434783"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560983"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>從網頁安裝 UWP app
 
@@ -31,8 +29,11 @@ ms.locfileid: "1434783"
 在此機制下，應用程式安裝程式會向作業系統器註冊以進行通訊協定啟動配置。 使用者按一下 Web 連結時，瀏覽器會與作業系統確認已註冊至該 Web 連結的應用程式。 如果配置符合應用程式安裝程式指定的通訊協定啟動配置，就會叫用應用程式安裝程式。 請務必注意，此機制與瀏覽器無關。 這對網站系統管理員很有幫助，例如，將此機制加入網頁時，不需要考慮網頁瀏覽器差異。 
 
 ### <a name="requirements-for-protocol-activation-scheme"></a>通訊協定啟動配置需求
-   - 支援位元組範圍要求 (HTTP/1.1) 的網頁伺服器
-   - 應用程式套件必須裝載於支援 HTTP/1.1 通訊協定的伺服器上   
+
+1. 需要有支援位元組範圍要求 (HTTP/1.1) 的網頁伺服器
+    - 支援 HTTP/1.1 通訊協定的伺服器應該都支援位元組範圍要求 
+2. 網頁伺服器將會需要了解 Windows 10 應用程式套件的內容類型
+    - 以下說明如何將新的內容類型宣告為[網頁設定檔](web-install-IIS.md#step-7---configure-the-web-app-for-app-package-mime-types)的一部分
 
 ### <a name="how-to-enable-this-on-a-webpage"></a>如何在網頁上啟用此支援 
 要在網站上裝載應用程式套件的應用程式開發人員需要依照這個步驟進行：

@@ -6,19 +6,18 @@ ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, input latency, 遊戲, 輸入延遲
-ms.openlocfilehash: cf83b02a6388f71f94641e7c24e011a540790fa0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a2e92dc10dbcdc3a511c1b1a1271ae759cc03c60
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209298"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564627"
 ---
 #  <a name="optimize-input-latency-for-universal-windows-platform-uwp-directx-games"></a>最佳化通用 Windows 平台 (UWP) DirectX 遊戲的輸入延遲
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 輸入延遲可能大幅影響遊戲的體驗，因此，最佳化輸入延遲可以使遊戲的感覺更完美。 此外，適當的輸入事件最佳化可以增加電池使用時間。 了解如何選擇正確的 CoreDispatcher 輸入事件處理選項，可確保您的遊戲可以盡可能順暢地處理輸入。
 
@@ -236,7 +235,7 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Microsoft Visual Studio 2015 中的 **DirectX 11 和 XAML App (通用 Windows)** 範本會以類似的方式，將遊戲迴圈分割成多個執行緒。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
+在 Microsoft Visual Studio2015 的**DirectX 11 和 XAML App (通用 Windows)** 範本會將遊戲迴圈分割成多個執行緒類似的方式。 它使用 [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) 物件啟動處理輸入專用的執行緒，同時建立與 XAML UI 執行緒無關的轉譯執行緒。 如需這些範本的詳細資訊，請參閱[從範本建立通用 Windows 平台和 DirectX 遊戲專案](user-interface.md)。
 
 ## <a name="additional-ways-to-reduce-input-latency"></a>降低輸入延遲的其他方式
 
@@ -249,7 +248,7 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 ![圖 1 Directx 的輸入延遲 ](images/input-latency1.png)
 
-在 Windows 8.1 中，DXGI 為交換鏈結引進了 **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** 旗標，讓 app 輕鬆降低這個延遲，不需要實作啟發學習法以保持 Present 佇列空白。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
+在 Windows8.1，DXGI 導入交換鏈結，讓 app 輕鬆降低這個延遲，不需要實作啟發學習法以保持 Present 佇列空白**DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT**旗的標。 使用此旗標建立的交換鏈結稱為可等候的交換鏈結。 圖 2 顯示大約的生命週期，以及使用可等候的交換鏈結時對輸入事件的回應：
 
 圖 2
 
@@ -257,9 +256,9 @@ DirectX 遊戲會透過更新使用者在畫面上看到的內容，回應使用
 
 我們從這些圖表中看到的內容就是遊戲可能可以透過兩個完整畫面降低的輸入延遲，但前提是這些遊戲可以在顯示器的重新整理頻率所定義的 16.7 毫秒預算內轉譯並呈現每個畫面。 拼圖範例透過呼叫下行來使用可等候的交換鏈結，並控制 Present 佇列的限制：` m_deviceResources->SetMaximumFrameLatency(1);`
 
- 
+ 
 
- 
+ 
 
 
 

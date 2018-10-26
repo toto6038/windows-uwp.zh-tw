@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f1014ed205c5cf0eda2c9b71c8406a98394b1463
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: d4121bd402b048ee6102ed3be30b94a66e274273
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652897"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562196"
 ---
 # <a name="texture-blending"></a>紋理混色
 
@@ -34,9 +32,9 @@ Direct3D 透過使用紋理階段來支援一階段的多重紋理混合。 紋�
 
 如上方簡圖所示，紋理階段會利用一個指定的運算子將兩個引數混合。 常見的運算包括了簡單的調節，或是增加引數的色彩或 Alpha 元件，但應用程式支援超過 24 種運算。 階段的引數可以是關聯紋理、重複色彩及 Alpha (於 Gouraud Shading 中重複)、任意色彩及 Alpha，或是前一紋理階段的結果。
 
-**注意**：Direct3D 會區分色彩混合及 Alpha 混合。 應用程式會為色彩及 Alpha 個別設定混合運算及引數，並且其結果均各自獨立。
+**注意：**  Direct3D 會區分色彩混合 alpha 混合。 應用程式會為色彩及 Alpha 個別設定混合運算及引數，並且其結果均各自獨立。
 
- 
+ 
 
 多重混合階段使用的引數及運算組合，定義了一個以流程為基礎的簡單混合語言。 一個階段的結果會流到另一個階段，並且再從該階段流至下一個階段，以此類推。 運算結果從一個階段流至另一個階段，並且最終在一個多邊形上進行點陣化的這項概念，通常稱作紋理混色串聯。 下列簡圖呈現了個別紋理階段組成紋理混色串聯的過程。
 
@@ -74,16 +72,16 @@ Direct3D 透過使用紋理階段來支援一階段的多重紋理混合。 紋�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [紋理](textures.md)
 
- 
+ 
 
- 
+ 
 
 
 

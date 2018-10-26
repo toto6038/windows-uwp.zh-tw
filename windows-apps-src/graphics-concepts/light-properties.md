@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 89a204e867b7f6b9a1c6de64345b4fd0b50a7845
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 07a465d8fdcd1d425ed62e8d83cadd261f316da2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044637"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563790"
 ---
 # <a name="light-properties"></a>光線屬性
 
@@ -75,9 +73,9 @@ Alpha/透明度值永遠只來自擴散色彩 alpha 色板。
 
 [光線和材料](lights-and-materials.md)
 
- 
+ 
 
- 
+ 
 
 
 

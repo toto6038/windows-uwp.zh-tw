@@ -5,16 +5,14 @@ description: 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件
 ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
-ms.openlocfilehash: 098ec71f2f3e487b76f9992c297ad7cba9ac5538
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1396477"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562069"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
@@ -307,7 +305,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
  * `/f` 設定要使用的對應檔案 (建立於上一個步驟) 
  * `/p` 設定輸出套件名稱
  * `/o` 如果適用則設定為覆寫輸出檔案
-0. 一旦建立套件，就必須簽署。 取得簽署憑證的最簡單方式是在 Visual Studio 中建立空白的通用 Windows 專案，並複製其建立的 `.pfx` 檔案，但您可以依照 [**有關 MSDN 之如何建立應用程式套件簽署憑證**主題] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx) 中所述，使用 `MakeCert` 和 `Pvk2Pfx` 公用程式手動建立一個專案。 
+0. 一旦建立套件，就必須簽署。 取得簽署憑證的最簡單方式是在 Visual Studio 中建立空白的通用 Windows 專案，然後將複製`.pfx`檔案，它會建立，但您可以建立一個使用手動`MakeCert`和`Pvk2Pfx`中所述的公用程式 [**如何建立應用程式套件簽署憑證**有關 MSDN 主題] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)。 
  * **重要︰** 手動建立簽署憑證，確保將檔案放置在不同於來源專案或套件來源的目錄中，否則可能會被納入為套件的一部分，包括私密金鑰！
 0. 若要登入套件，請使用下列命令。 請注意，`AppxManifest.xml` 的 `Identity` 元素中所指定的 `Publisher`，必須符合憑證的 `Subject` (這**不是**`<PublisherDisplayName>` 元素，而是對使用者顯示的當地語系化顯示名稱)。 一如往常，將 `contoso_demo...` 檔名取代為專案的適用名稱，並且 (**非常重要**) 確定 `.pfx` 檔案不在目錄的目錄中 (否則可能建立為套件的一部分，包括私用簽署金鑰！)︰
 

@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a99cb28818cd8fc3fd9057b3df72a678c2d1aca
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 9f187495568892f5b489f6e109669811f4c45ab1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044887"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561524"
 ---
 # <a name="span-iddirect3dconceptsusingsystem-generatedvaluesspanusing-system-generated-values"></a><span id="direct3dconcepts.using_system-generated_values"></span>使用系統產生的值
 
@@ -68,7 +66,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   |
 
- 
+ 
 
 三角形連環執行個體 U 有 3 個三角形基本類型，具有下列系統產生值：
 
@@ -77,7 +75,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 0   | 0   | 0   |
 
- 
+ 
 
 下表顯示執行個體 V 的系統產生值。
 
@@ -86,7 +84,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 | **VertexID**   | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   |
 | **InstanceID** | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   | 1   |
 
- 
+ 
 
 三角形連環執行個體 V 有 3 個三角形基本類型，具有下列系統產生值：
 
@@ -95,7 +93,7 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 | **PrimitiveID** | 0   | 1   | 2   |
 | **InstanceID**  | 1   | 1   | 1   |
 
- 
+ 
 
 [輸入組合語言 (IA) 階段](input-assembler-stage--ia-.md)產生識別碼 (頂點、基本類型，以及執行個體)。另請注意，每個執行個體都有唯一執行個體識別碼。 資料以區域剪切結束，分隔每個三角形連環執行個體。
 
@@ -104,9 +102,9 @@ IA 階段會將基本類型識別碼新增到每個基本類型以供[幾何著�
 
 [輸入組合語言 (IA) 階段](input-assembler-stage--ia-.md)
 
- 
+ 
 
- 
+ 
 
 
 

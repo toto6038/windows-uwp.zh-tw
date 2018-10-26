@@ -9,16 +9,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0d680ddfb1dd121d2b9763c1d8af646db6de4797
-ms.sourcegitcommit: 4b522af988273946414a04fbbd1d7fde40f8ba5e
-ms.translationtype: HT
+ms.openlocfilehash: 113acbe1f4e9bb3814b2f9b61beb79488995d3e3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "1494035"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563342"
 ---
 # <a name="media-player"></a>媒體播放器
 
@@ -101,9 +99,9 @@ Windows 10 入門 app 中的媒體播放器。
 ### <a name="set-the-media-source"></a>設定媒體來源
 若要播放位於網路上的檔案或內嵌於 app 的檔案，請將 [MediaSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.media.core.mediasource.aspx) 屬性設定為檔案的路徑。
 
-**提示：** 若要從網際網路開啟檔案，您需要在 app 資訊清單中宣告**網際網路 (用戶端)** 功能 (Package.appxmanifest)。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
+**提示：** 若要從網際網路開啟檔案，您需要宣告您的應用程式資訊清單 (Package.appxmanifest) 中的**網際網路 （用戶端）** 功能。 如需宣告功能的詳細資訊，請參閱 [App 功能宣告](https://msdn.microsoft.com/library/windows/apps/mt270968)。
 
- 
+ 
 
 此程式碼會嘗試將 XAML 中定義之 [MediaPlayerElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.source.aspx) 的 [Source](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaplayerelement.aspx) 屬性設定為在 [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) 中輸入的檔案路徑。
 

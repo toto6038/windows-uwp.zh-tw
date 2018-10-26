@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: de9b0e5d1e8e461561d228448fc1998ad4ff0fd9
-ms.sourcegitcommit: f9a4854b6aecfda472fb3f8b4a2d3b271b327800
-ms.translationtype: HT
+ms.openlocfilehash: c01b96f70bd39c43f321935aa47393ada0400319
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
-ms.locfileid: "1393957"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559920"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -96,7 +94,7 @@ App 可以使用四種機制來傳遞通知：
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="local-notifications"></a>本機通知
 
@@ -171,9 +169,9 @@ App 可以使用四種機制來傳遞通知：
 * [定期通知概觀](periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 * [GitHub 上的通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
- 
+ 
 
- 
+ 
 
 
 

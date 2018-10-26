@@ -6,16 +6,14 @@ description: 建置裝置選取器可讓您在列舉裝置時限制要搜尋的�
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c80f604e9b8dc31eec1fe684f073bceb2337d91f
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 036ea8b7d9797112dca9b6594e9bc1e33e923588
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959163"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563144"
 ---
 # <a name="build-a-device-selector"></a>建置裝置選取器
 
@@ -40,9 +38,9 @@ ms.locfileid: "959163"
 
 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 會使用標準 AQS 語法，但未支援所有的運算子。 如需可在建構篩選字串時使用的屬性清單，請參閱[裝置資訊屬性](device-information-properties.md)。
 
-**注意：** 建構 AQS 篩選字串時，無法使用利用 `{GUID} PID` 格式定義的自訂屬性。 這是因為屬性類型是衍生自已知的屬性名稱。
+**注意：** 使用定義的自訂屬性`{GUID} PID`建構 AQS 篩選字串時，無法使用的格式。 這是因為屬性類型是衍生自已知的屬性名稱。
 
- 
+ 
 
 下表列出 AQS 運算子及其支援的參數類型。
 
@@ -64,9 +62,9 @@ ms.locfileid: "959163"
 | **COP\_APPLICATION\_SPECIFIC** | 不支援                                                               |
 
 
-> **提示：** 您可以為 **COP\_EQUAL** 或 **COP\_NOTEQUAL** 指定 **NULL**。 這會轉譯為沒有值或值不存在的屬性。 在 AQS 中，您可以使用空的括號 \[\] 來指定 **NULL**。
+> **提示：** 您可以指定**NULL** **COP\_NOTEQUAL**或**COP\_EQUAL**。 這會轉譯為沒有值或值不存在的屬性。 在 AQS 中，您可以使用空的括號 \[\] 來指定 **NULL**。
 
-> **重要：** 使用 **COP\_VALUE\_CONTAINS** 和 **COP\_VALUE\_NOTCONTAINS** 運算子時，他們在字串和字串陣列中會有不同的行為方式。 如果是字串，系統會執行不區分大小寫的搜尋，以確認裝置是否包含做為子字串的指定字串。 如果是字串陣列，系統不會搜尋子字串。 在字串陣列中，系統會搜尋陣列以確認它是否包含整個指定字串。 您無法搜尋字串陣列來確認陣列中的元素是否包含子字串。
+> **重要**使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**運算子時，他們有不同的行為字串和字串陣列。 如果是字串，系統會執行不區分大小寫的搜尋，以確認裝置是否包含做為子字串的指定字串。 如果是字串陣列，系統不會搜尋子字串。 在字串陣列中，系統會搜尋陣列以確認它是否包含整個指定字串。 您無法搜尋字串陣列來確認陣列中的元素是否包含子字串。
 
 如果您無法建立單一 AQS 篩選字串以適當包含您的結果範圍，則可在收到結果之後進行篩選。 不過，如果您選擇這樣做，建議您在將初始 AQS 篩選字串提供給 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 時，盡可能限制該字串所產生的結果。 這將有助於改善應用程式的效能。
 
@@ -111,6 +109,6 @@ System.Devices.IpAddress:<>[]
 System.Devices.IpAddress:=[]
 ```
 
- 
+ 
 
- 
+ 

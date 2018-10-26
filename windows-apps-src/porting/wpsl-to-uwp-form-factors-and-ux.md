@@ -1,27 +1,26 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。
-title: 針對尺寸與 UX 移植 Windows Phone Silverlight 到 UWP
+title: 尺寸與 UX 的移植 WindowsPhone Silverlight 到 UWP
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 23afad0c6499950d13d9771a5f0286403a5fe886
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 809cf2691a2bc7b7c72d4ba031fa4c6b45335dde
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210351"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559775"
 ---
-#  <a name="porting-windows-phone-silverlight-to-uwp-for-form-factor-and-ux"></a>針對尺寸與 UX 移植 Windows Phone Silverlight 到 UWP
+#  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>尺寸與 UX 的移植 WindowsPhone Silverlight 到 UWP
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 前一個主題是[移植商務與資料層](wpsl-to-uwp-business-and-data.md)。
 
-Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。 裝置之間的實體差異 (例如實體大小、預設方向與有效像素解析度)，會決定 Windows 10 轉譯通用 Windows 平台 (UWP) 應用程式的方式。 好消息是系統會使用智慧型概念 (例如有效像素)，為您處理大部分的繁重工作。
+Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。 Windows 10 會決定轉譯裝置，例如實體大小、 預設方向與有效像素解析度到通用 Windows 平台 (UWP) 應用程式的方式有何差異。 好消息是系統會使用智慧型概念 (例如有效像素)，為您處理大部分的繁重工作。
 
 ## <a name="different-form-factors-and-user-experience"></a>不同的尺寸與使用者體驗
 
@@ -33,7 +32,7 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 客觀來說，螢幕是以英吋與實體 (原始) 像素的單位來測量。 知道這兩個計量，您就可以知道一英吋能夠容納多少像素。 這就是像素密度，也稱為 DPI (每英吋點數) 或 PPI (每英吋像素數)。 而 DPI 的倒數就是像素的實體大小 (以英吋的分數表示)。 像素密度也稱為 *「解析度」*，雖然此詞彙通常被寬鬆地用來表示像素計數。
 
-隨著檢視距離增加，所有這些客觀計量也就 *「看起來」* 變得較小，它們會解析成螢幕的「*有效大小」* 與其 *「有效解析度」*。 與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 而 Windows 10 會考慮 DPI 和對裝置的一般檢視距離，來計算 UI 元素的最適大小 (以實體像素表示)，以提供最佳檢視體驗。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
+隨著檢視距離增加，所有這些客觀計量也就 *「看起來」* 變得較小，它們會解析成螢幕的「*有效大小」* 與其 *「有效解析度」*。 與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 與 windows 10 會考慮 DPI 和的一般檢視距離的裝置，來計算您的 UI 元素，以提供最佳檢視體驗的實體像素的最佳大小。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我們還是建議您使用多種不同的裝置測試您的 app，以親自確認各種體驗。
 
@@ -53,13 +52,13 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 將應用程式做視覺縮放，使其看起來就像只是變得較大的行動裝置版本，並無法充分利用裝置與其額外的空間，而這無法為使用者提供良好的使用體驗。 我們應該要考慮顯示更多內容，而不是讓相同的內容變得更大。 即使是在平板手機上，我們也可以多顯示幾列內容。 我們可以使用額外的空間來顯示不同的內容 (例如廣告)，或是將清單方塊變更成清單檢視，並讓它在情況允許時將項目包裝在多欄中，以此方式利用空間。 請參閱[清單與格線檢視控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/mt186889)。
 
-除了新控制項 (例如清單檢視與格線檢視) 之外，大部分來自 Windows Phone Silverlight 的已確立版面配置類型在通用 Windows 平台 (UWP) 中都有對等項目。 例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 與 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。 移植使用這些類型的大部分 UI 應該相當簡單，但是請一律尋找可利用這些版面配置面板之動態配置功能的方法，以自動在不同大小的裝置上調整大小和重新配置。
+除了新控制項，例如清單檢視與格線檢視，大部分的確立版面配置類型，從 WindowsPhone Silverlight 有對等項目在通用 Windows 平台 (UWP)。 例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 與 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。 移植使用這些類型的大部分 UI 應該相當簡單，但是請一律尋找可利用這些版面配置面板之動態配置功能的方法，以自動在不同大小的裝置上調整大小和重新配置。
 
-除了系統控制項與版面配置面板內建的動態版面配置之外，我們還可以使用稱為[調適型 Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md) 的全新 Windows 10 功能。
+跳脫系統控制項與版面配置面板內建的動態版面配置，我們可以使用新的 windows 10 功能，稱為[調適型 Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 ## <a name="input-modalities"></a>輸入形式
 
-Windows Phone Silverlight 介面是觸控專屬介面。 因此，所移植之應用程式的介面也應該理所當然地支援觸控，但是您可以選擇另外支援其他輸入形式，例如滑鼠與鍵盤。 在 UWP 中，滑鼠、手寫筆與觸控輸入已整合為 *「指標輸入」*。 如需詳細資訊，請參閱[處理指標輸入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[鍵盤互動](https://msdn.microsoft.com/library/windows/apps/mt185607)。
+WindowsPhone Silverlight 介面是觸控專屬介面。 因此，所移植之應用程式的介面也應該理所當然地支援觸控，但是您可以選擇另外支援其他輸入形式，例如滑鼠與鍵盤。 在 UWP 中，滑鼠、手寫筆與觸控輸入已整合為 *「指標輸入」*。 如需詳細資訊，請參閱[處理指標輸入](https://msdn.microsoft.com/library/windows/apps/mt404610)和[鍵盤互動](https://msdn.microsoft.com/library/windows/apps/mt185607)。
 
 ## <a name="maximizing-markup-and-code-re-use"></a>將標記和程式碼做最大幅的重複使用
 

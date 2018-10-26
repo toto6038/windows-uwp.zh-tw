@@ -6,20 +6,18 @@ ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 2c78f5f43d93002b90902a7f9e5a943c7239946c
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 91de18af818113d79564ee8dfba7519a0f131246
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5516196"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560308"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 

@@ -5,17 +5,15 @@ description: 本教學課程描述如何在 Windows 10 上以使用者模式存�
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: acpi
 keywords: windows 10, uwp, acpi, gpio, i2c, spi, uefi
 ms.assetid: 2fbdfc78-3a43-4828-ae55-fd3789da7b34
 ms.localizationpriority: medium
-ms.openlocfilehash: b6a8877d2991f953853339ac8fea3efad6d735c6
-ms.sourcegitcommit: 01760b73fa8cdb423a9aa1f63e72e70647d8f6ab
-ms.translationtype: HT
+ms.openlocfilehash: 09957c19414f586a49a1a2cb9186aa027dc1de07
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "1618423"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560567"
 ---
 # <a name="enable-usermode-access-to-gpio-i2c-and-spi"></a>啟用使用者模式存取 GPIO、I2C 和 SPI
 
@@ -740,7 +738,7 @@ devcon status *msft8000
 
 現在 rhproxy 正在執行中，它應該已建立使用者模式可以存取的裝置介面。 我們會使用數個命令列工具來列舉裝置，並查看他們是否出現。
 
-複製 [https://github.com/ms-iot/samples](https://github.com/ms-iot/samples) 存放庫和組建 `GpioTestTool`、`I2cTestTool`、`SpiTestTool` 及 `Mincomm` 範例。 複製工具到進行測試的裝置，並使用下列命令列舉裝置。
+複製[https://github.com/ms-iot/samples](https://github.com/ms-iot/samples)存放庫和組建`GpioTestTool`， `I2cTestTool`， `SpiTestTool`，以及`Mincomm`範例。 複製工具到進行測試的裝置，並使用下列命令列舉裝置。
 ```
 I2cTestTool.exe -list
 SpiTestTool.exe -list
@@ -847,7 +845,7 @@ MinComm "\\?\ACPI#FSCL0007#3#{86e0d1e0-8089-11d0-9ce4-08003e301f73}\000000000000
 
 ### <a name="appendix-a---raspberry-pi-asl-listing"></a>附錄 A - Raspberry Pi ASL 清單
 
-排針針腳輸出：https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
+標頭針腳輸出：https://developer.microsoft.com/windows/iot/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1009,7 +1007,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### <a name="appendix-b---minnowboardmax-asl-listing"></a>附錄 B - MinnowBoardMax ASL 清單
 
-排針針腳輸出：https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
+標頭針腳輸出：https://developer.microsoft.com/windows/iot/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)

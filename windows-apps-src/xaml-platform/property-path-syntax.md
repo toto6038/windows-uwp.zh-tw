@@ -6,16 +6,14 @@ ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 2939150e1ca15dfc910d92ea669e794026ef8685
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: a94782165027c2194f677dfdbb9f2dec11541080
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674675"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560242"
 ---
 # <a name="property-path-syntax"></a>Property-path 語法
 
@@ -58,7 +56,7 @@ ms.locfileid: "1674675"
 
 例如，假設有一個含 "Teams" 清單 (已排序清單) 的商務物件，每一個清單都包含一個 "Players" 字典，其中每個玩家都以姓氏做為索引鍵。 則第二隊特定玩家的屬性路徑範例是："Teams\[1\].Players\[Smith\]" (您使用 1 來指出 "Teams" 中的第二個項目，因為這個清單是從 0 開始建立索引。)
 
-**注意**  對 C++ 資料來源的索引功能支援是有限的；請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
+**注意：** 對 c + + 資料來源的索引功能支援是有限的;請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
 ### <a name="attached-properties"></a>附加屬性
 
@@ -96,7 +94,7 @@ ms.locfileid: "1674675"
 
 這不是常見情況；不過，只要附加屬性具有符合動畫類型的屬性值，就可以讓它產生動畫效果。 因為附加屬性的識別名稱已經包含點，所以您必須將任何附加屬性名稱放入括號內，這樣點就不會被視為物件-屬性步驟。 例如，用來指定讓物件上 [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 附加屬性產生動畫效果的字串會使用屬性路徑 "(Grid.Row)"。
 
-**注意**  在此範例中，[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 的值是 **Int32** 屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 元件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 會設定為 "0" 或 "1" 的整數。
+**注意：** 針對此範例， [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795)的值是**Int32**屬性類型。 所以您不可以使用 **Double** 動畫讓它產生動畫效果。 您必須改為定義具有 [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) 元件的 [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)，其中 [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) 會設定為 "0" 或 "1" 的整數。
 
 ## <a name="rules-for-the-properties-in-an-animation-targeting-property-path"></a>動畫目標屬性路徑中的屬性規則
 

@@ -6,16 +6,14 @@ ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b1a993f16d2d9403f16c1f4cc15805b0c5f36a9
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488912"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5559624"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 
@@ -37,7 +35,7 @@ ms.locfileid: "1488912"
 
 ### <a name="use-directx-template-to-create-a-project"></a>使用 DirectX 範本建立專案
 
-Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio 2017 中，您將發現很多範本能夠讓遊戲和圖形應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
+Visual Studio 範本所包含的設定集合和程式碼檔案，是專門針對使用慣用語言和技術的特定應用程式類型所設計。 在 Microsoft Visual Studio2017，您會發現很多範本能夠讓遊戲和圖形的應用程式開發變得非常容易。 如果您不使用範本，就必須自己開發許多基本圖形轉譯和顯示架構，對遊戲開發初學者而言可能有點困難。
 
 用於此教學課程的範本名為 **DirectX 11 App (通用 Windows)**。 
 
@@ -155,7 +153,7 @@ void App::Run()
 | SamplePixelShader.hlsl       | 內容                | 包含最基本的像素著色器的高階著色器語言 (HLSL) 程式碼。                                            |
 | SampleVertexShader.hlsl      | 內容                | 包含最基本的頂點著色器的高階著色器語言 (HLSL) 程式碼。                                           |
 | ShaderStructures.h           | 內容                | 包含可用於傳送 MVP 矩陣及每個頂點資料至頂點著色器的著色器結構。  |
-| pch.h/.cpp                   | 主要                   | 包含針對 Direct3D 應用程式所使用之 API (包括 DirectX 11 API) 所含的所有 Windows 系統。| 
+| pch.h/.cpp                   | 主要                   | 包含針對 Direct3D 應用程式所使用之 API (包括 DirectX 11 API) 所含的所有 Windows 系統。| 
 
 ### <a name="next-steps"></a>後續步驟
 
@@ -163,9 +161,9 @@ void App::Run()
 
 下一節是[定義遊戲的 UWP 架構](tutorial--building-the-games-uwp-app-framework.md)。 我們將會檢查此遊戲如何使用和延伸許多範本提供的概念和元件。
 
- 
+ 
 
- 
+ 
 
 
 

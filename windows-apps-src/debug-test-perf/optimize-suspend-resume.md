@@ -6,19 +6,17 @@ description: 建立將處理程序生命週期系統更有效利用以在暫停�
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: f9e045c381fc6c51a769be31403114ad15cf06bd
-ms.sourcegitcommit: ec18e10f750f3f59fbca2f6a41bf1892072c3692
+ms.localizationpriority: medium
+ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/14/2017
-ms.locfileid: "894684"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562020"
 ---
 # <a name="optimize-suspendresume"></a>最佳化暫停/繼續
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 建立將處理程序生命週期系統更有效利用以在暫停或終止之後有效率地繼續執行的「通用 Windows 平台」(UWP) 應用程式。
 
@@ -90,9 +88,9 @@ UWP 處理程序生命週期系統可能會因為許多原因而暫停或終止 
 ## <a name="related-topics"></a>相關主題
 
 * [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/Hh465088)
- 
+ 
 
- 
+ 
 
 
 

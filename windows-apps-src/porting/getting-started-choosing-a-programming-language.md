@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 title: 選擇程式設計語言
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: 選擇程式設計語言
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: b20066ffbd32984d20fdbdcc0915ef10332c6f12
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209784"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561574"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="choosing-a-programming-language"></a>選擇程式設計語言
 
@@ -27,24 +26,22 @@ ms.locfileid: "209784"
 
 雖然在本文中，我們將焦點放在 C# 上，但是您可能想要探索其他語言提供的獨特優點。 例如，如果您應用程式最主要的考量是效能，特別是處理大量圖形，那麼 C++ 可能是正確的選擇。 Microsoft .NET 版本的 Visual Basic 非常適合 Visual Basic 應用程式開發人員。 JavaScript 搭配 HTML5 則適合具有網路開發背景的開發人員。 如需詳細資訊，請參閱下列各個主題：
 
--   [使用 C++ 建立您的第一個 Windows 市集應用程式](https://msdn.microsoft.com/library/windows/apps/hh974580)
--   [使用 C# 或 Visual Basic 建立您的第一個 Windows 市集應用程式](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [使用 JavaScript 建立您的第一個 Windows 市集應用程式](https://msdn.microsoft.com/library/windows/apps/br211385)
--   [使用 C# 或 Visual Basic 建立您的第一個 Windows Phone 市集應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397877)
--   [Windows Phone 8.1 的 WinJS](http://go.microsoft.com/fwlink/p/?LinkID=397879)
+-   [建立第一個 UWP app 使用 c + +](../get-started/create-a-basic-windows-10-app-in-cpp.md)
+-   [建立第一個 UWP app 使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [建立您第一次使用 JavaScript 的 UWP app](../get-started/create-a-hello-world-app-js-uwp.md)
 
-**注意**  針對使用 3D 圖形的應用程式而言，OpenGL 和 OpenGL ES 標準對於 UWP 應用程式並非原生可用。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
+**注意：** 針對使用 3D 圖形的應用程式，OpenGL 和 OpenGL ES 標準並非原生適用於 UWP 應用程式。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
 -   [角度](https://code.google.com/p/angleproject/)
--   [使用 DirectX 建立您的第一個 Windows 市集 app](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [使用 DirectX 的 Windows 市集應用程式範例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [建立您第一次使用 DirectX 的 UWP app](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [使用 DirectX 的 UWP 應用程式範例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 在哪裡？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>試看看使用 C#
 
 身為 iOS 開發人員，您習慣使用 Objective-C 和 Swift。 與兩者最接近的 Microsoft 程式設計語言是 C#。 對於大部分的開發人員及 app 而言，我們認為 C# 是最簡單且最快速學習和使用的語言，所以本文中的資訊及逐步解說會將焦點放在該語言。 若要深入了解 C#，請參閱下列主題：
 
--   [使用 C# 或 Visual Basic 建立您的第一個 Windows 市集應用程式](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [使用 C 的 Windows 市集應用程式範例#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [建立第一個 UWP app 使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
+-   [使用 C# 的 UWP app 範例](http://go.microsoft.com/fwlink/p/?LinkId=263453)
 -   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 以下是使用 Objective-C 與 C# 撰寫的類別。 首先先顯示 Objective-C 的寫法，接著是 C# 的寫法。

@@ -6,14 +6,14 @@ title: 適用於行動裝置的相機 UI 功能
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 7b9db18d83c9d4811c446f90c40ff3e0044dccf2
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 062ca589b2a63db1f56ada4e2df4f99bc7f8b0fb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "208974"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563992"
 ---
 #<a name="camera-ui-features-for-mobile-devices"></a>適用於行動裝置的相機 UI 功能
 
@@ -56,9 +56,6 @@ ms.locfileid: "208974"
 當 app 關閉或使用者離開 app 的媒體擷取頁面時，請取消登錄硬體按鈕處理常式。
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
-
-> [!NOTE]
-> 本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。                                                                                   |
 
 ## <a name="related-topics"></a>相關主題
 

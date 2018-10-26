@@ -6,16 +6,14 @@ ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
 ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 57763c25d1fe9bd4f1e55aa9083e755f7f257029
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: 610b794c0ded6791e93c14d8960366132afd973b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655117"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560435"
 ---
 # <a name="game-flow-management"></a>管理遊戲流程
 
@@ -293,7 +291,7 @@ void GameMain::SetGameInfoOverlay(GameInfoOverlayState state)
 <td align="left">OnDpiChanged</td>
 <td align="left">處理 <a href="https://docs.microsoft.com/uwp/api/windows.graphics.display.displayinformation#Windows_Graphics_Display_DisplayInformation_DpiChanged"><strong>Graphics::Display::DisplayInformation::DpiChanged</strong></a>。 已變更顯示器的 DPI，而遊戲會隨之調整其資源。
 <div class="alert">
-<strong>注意</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 座標是為 [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) 的 DIP (裝置獨立像素)。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
+<strong>注意：</strong>[<strong>CoreWindow</strong>] (https://msdn.microsoft.com/library/windows/desktop/hh404559)座標是在[direct2d](https://msdn.microsoft.com/library/windows/desktop/dd370987)的 Dip （裝置獨立像素）。 因此，您必須通知 Direct2D 已變更 DPI，才能正確顯示任何 2D 資產或基本類型。
 </div>
 <div>
 </div></td>

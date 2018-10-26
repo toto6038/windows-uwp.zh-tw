@@ -6,19 +6,17 @@ description: 在此處了解如何使用平台、送紙器或自動設定的掃�
 ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: c1db020b242c43808d356076641e375cb1581ed3
-ms.sourcegitcommit: d2ec178103f49b198da2ee486f1681e38dcc8e7b
+ms.localizationpriority: medium
+ms.openlocfilehash: f9128056cbb3b9218d164b243948d9dd16af0786
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2017
-ms.locfileid: "696155"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563213"
 ---
 # <a name="scan-from-your-app"></a>從您的 app 掃描
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **重要 API**
 
@@ -28,7 +26,7 @@ ms.locfileid: "696155"
 
 在此處了解如何使用平台、送紙器或自動設定的掃描來源，來掃描 app 的內容。
 
-**重要**  [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API 是桌面[裝置系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 app 只能在桌面版的 Windows 10 上使用這些 API。
+**重要** [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) Api 是桌面[裝置系列](https://msdn.microsoft.com/library/windows/apps/Dn894631)的一部分。 應用程式可以只在 windows 10 傳統型版本上使用這些 Api。
 
 如果要從 app 掃描，您必須先透過宣告新的 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) 物件並取得 [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 類型以列出可用的掃描器。 只有在本機連同 WIA 驅動程式一起安裝的掃描器會列出，並且可供您的 app 使用。
 
@@ -102,8 +100,8 @@ Windows 不會自動偵測掃描器。 您必須執行此步驟，應用程式�
 
 為使用預設值掃描，您的應用程式需要 [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 命名空間才能選取掃描器並從該來源掃描。 掃描設定不會變更。 可能的掃描器有自動設定、平台或送紙器。 此類型的掃描最有可能產生成功的掃描作業，即使是從錯誤的來源 (例如平台而非送紙器) 掃描也一樣。
 
-**注意**  如果使用者在送紙器中放入要掃描的文件，掃描器會改從平台進行掃描。 如果使用者嘗試從空白的送紙器掃描，掃瞄工作將不會產生任何掃描的檔案。
- 
+**注意：** 如果使用者放入要掃描的送紙器中的文件，掃描器會改從掃描平台進行。 如果使用者嘗試從空白的送紙器掃描，掃瞄工作將不會產生任何掃描的檔案。
+ 
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
         folder).AsTask(cancellationToken.Token, progress);
@@ -113,7 +111,7 @@ Windows 不會自動偵測掃描器。 您必須執行此步驟，應用程式�
 
 您可以使用裝置的[自動設定的掃描](https://msdn.microsoft.com/library/windows/hardware/Ff539393)，以最佳的掃描設定執行掃描。 使用此選項時，裝置本身可依據正在掃描的內容來判斷最佳的掃描設定，例如色彩模式與掃描解析度。 裝置會在執行階段為每個新的掃描工作選取掃描設定。
 
-**注意**  並非所有掃描器都支援此功能，因此，app 在使用此設定之前，必須先檢查掃描器是否支援此功能。
+**注意：** 並非所有掃描器都支援此功能，，因此應用程式必須先檢查掃描器是否支援此功能，才能使用這項設定。
 
 在此範例中，app 會先檢查掃描器是否可以自動設定，然後再進行掃描。 如果要指定平台或送紙器掃描器，只要將 **AutoConfigured** 取代成 **Flatbed** 或 **Feeder**。
 

@@ -6,21 +6,20 @@ description: 您可以將項目控制項繫結到已繫結成一個鏈的 Collec
 ms.author: markl
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 9f297cdb3fdc90ab7c024bce3aa93db69465c5d3
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 60d283f41c495f9612311e4b9b9da3df1a44d498
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209018"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564022"
 ---
 # <a name="bind-hierarchical-data-and-create-a-masterdetails-view"></a>繫結階層式資料並建立主要/詳細資料檢視
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-> **注意**  另請參閱[主要/詳細資料範例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
+> **注意：** 另請參閱[主要/詳細資料範例](http://go.microsoft.com/fwlink/p/?linkid=619991)。
 
 您可以將項目控制項繫結到已繫結成一個鏈的 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 執行個體，以建立階層式資料的多層主要/詳細資料 (又稱為清單/詳細資料) 檢視。 在本主題中，我們儘可能使用 [{x:Bind} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204783)，必要時也使用更有彈性 (但效能較低) 的 [{Binding} 標記延伸](https://msdn.microsoft.com/library/windows/apps/Mt204782)。
 
@@ -225,7 +224,7 @@ namespace MasterDetailsBinding
 
 請注意，直接繫結到 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) 時，就意味著您想要繫結到在集合本身找不到路徑之繫結中的目前項目。 不需要指定 **CurrentItem** 屬性做為繫結的路徑 (但如果情況模稜兩可，您可以這樣做)。 例如，代表小組檢視之 [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 屬性是繫結到 `Teams`**CollectionViewSource**。 不過，[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 中的控制項則是繫結到 `Team` 類別的屬性，因為必要時，**CollectionViewSource** 會自動提供團隊清單中目前選取的團隊。
 
- 
+ 
 
- 
+ 
 

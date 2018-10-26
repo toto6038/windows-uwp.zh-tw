@@ -6,16 +6,14 @@ description: 了解如何繪製圖形，例如橢圓形、矩形、多邊形以�
 ms.author: jimwalk
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b89f90abc0930c8f57e14cd112a3c7834bace1
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675205"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561964"
 ---
 # <a name="draw-shapes"></a>繪製形狀
 
@@ -106,7 +104,7 @@ layoutRoot.Children.Add(rectangle1);
 
 ![經過轉譯的矩形。](images/shapes-rectangle.jpg)
 
-**提示**  在某些情況下，UI 定義使用 [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 會比使用 [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 更恰當。 如果您要在其他內容的周圍建立矩形，使用 **Border** 較合適，因為可以包含子內容，並且會自動沿著內容調整大小，不像 **Rectangle** 使用固定的高度與寬度。 如果設定 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 屬性，則 **Border** 也有包含圓角的選項。
+**提示：** 有某些情況下，UI 定義，而不是使用一個[**矩形**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle)，[**框線**](https://msdn.microsoft.com/library/windows/apps/BR209250)可能更適合。 如果您要在其他內容的周圍建立矩形，使用 **Border** 較合適，因為可以包含子內容，並且會自動沿著內容調整大小，不像 **Rectangle** 使用固定的高度與寬度。 如果設定 [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.border.cornerradius) 屬性，則 **Border** 也有包含圓角的選項。
 
 另一方面，[**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) 或許是控制項組合較佳的選擇。 **Rectangle** 形狀在很多控制項範本都看得到，因為它可以做為能取得焦點之控制項的 "FocusVisual" 組件。 只要控制項處於「取得焦點」的視覺狀態，這個矩形就會顯示，在其他狀態則會隱藏。
 
@@ -145,7 +143,7 @@ layoutRoot.Children.Add(polygon1);
 
 ![經過轉譯的多邊形。](images/shapes-polygon.jpg)
 
-**提示**  在宣告圖形頂點以外的 XAML 中，[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 值通常會用來做為類型。 例如，**Point** 屬於觸控事件的事件資料，因此您可以知道觸控動作在座標空間發生的確切位置。 如需有關 **Point** 以及如何將其使用於 XAML 或程式碼的詳細資訊，請參閱 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 參考主題。
+**提示：**[**點**](https://msdn.microsoft.com/library/windows/apps/BR225870)值通常會用來做為類型在 XAML 中宣告圖形頂點以外的案例。 例如，**Point** 屬於觸控事件的事件資料，因此您可以知道觸控動作在座標空間發生的確切位置。 如需有關 **Point** 以及如何將其使用於 XAML 或程式碼的詳細資訊，請參閱 [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 的 API 參考主題。
 
 ## <a name="line"></a>線條
 
@@ -173,7 +171,7 @@ layoutRoot.Children.Add(line1);
 
 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 與 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon) 類似，都是由一組點定義圖形的界限，不過 **Polyline** 的最後一點並不會連接第一個點。
 
-**注意**   您可以在設定給 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 的 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 中明確指定相同的起點與終點，但在該情況下，您大可改用 [**Polygon**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)。
+**注意：** 您明確可能會有相同的起點和終點，以[**點**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx)設定為[**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline)，但在該情況下您可能無法使用[**多邊形**](/uwp/api/Windows.UI.Xaml.Shapes.Polygon)改為。
 
 如果指定 [**Polyline**](/uwp/api/Windows.UI.Xaml.Shapes.Polyline) 的 [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill)，**Fill** 就會繪製圖形的內部空間，即使設定給 **Polyline** 之 [**Points**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) 的起點與終點未交叉也一樣。 如果未指定 **Fill**，**Polyline** 會與指定數個個別 [**Line**](/uwp/api/Windows.UI.Xaml.Shapes.Line) 元素的轉譯結果一樣，即連續線條的起點與終點會交叉。
 

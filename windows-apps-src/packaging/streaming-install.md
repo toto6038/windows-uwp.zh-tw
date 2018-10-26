@@ -6,23 +6,21 @@ description: 通用 Windows 平台 (UWP) 應用程式串流安裝，讓您可以
 ms.author: lahugh
 ms.date: 04/05/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10、 uwp、 資料流安裝、 資料流的 uwp 應用程式安裝
+keywords: windows 10，uwp，串流安裝，uwp app 串流安裝
 ms.localizationpriority: medium
-ms.openlocfilehash: 087226cad4bcf7ea0294d8878564c345d6cfb9d0
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e4915d2fb4d1133cd190d766d38c79934d9f3956
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "304628"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563494"
 ---
 # <a name="uwp-app-streaming-install"></a>UWP app 串流安裝
 通用 Windows 平台 (UWP) 應用程式串流安裝，讓您可以指定您應用程式中 Microsoft Store 需要優先下載的部分。 當應用程式的必要檔案獲得優先下載時，使用者可以直接啟動並與應用程式進行互動，同時讓剩餘的檔案在背景完成下載。 
 
-若要使用 UWP 應用程式串流安裝您需要將您的應用程式的檔案分割成區段。 為達成此目的，您將建立內容的群組對應，也就是與您的應用程式封裝的 XML 檔案，讓您設定下載優先順序及順序。 請參閱如需詳細資訊連結下方的主題。
+若要使用 UWP App 串流安裝，您將需要將您的應用程式檔案分節。 若要這樣做，您將會建立內容群組對應，也就是一個 XML 檔案，會與您的應用程式封裝，可讓您將設定下載優先順序和順序。 請參閱下列連結，如需詳細資訊的主題。
 
-新增應用程式串流安裝 UWP UWP app 完整的指南，查看此[一系列部落格](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
+如上將 UWP 應用程式串流安裝加入您的 UWP 應用程式的完整指南，請參閱此[部落格系統](https://blogs.msdn.microsoft.com/appinstaller/2017/03/15/uwp-streaming-app-installation/)。
 
 | 主題 | 描述 | 
 |-------|-------------|

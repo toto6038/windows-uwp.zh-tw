@@ -5,16 +5,14 @@ description: 要使用 Windows.Devices.PointOfService 命名空間需要具備 P
 ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos, 服務點
 ms.localizationpriority: medium
-ms.openlocfilehash: 564c7686cef4815e9ca1bfd0af82c4577852b8a4
-ms.sourcegitcommit: 633dd07c3a9a4d1c2421b43c612774c760b4ee58
-ms.translationtype: HT
+ms.openlocfilehash: dbed55af1a9fa3df14f0a7e3e7c6d1f599b40fd3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1976721"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5560781"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService device 功能
 您透過在您的應用程式套件資訊清單中宣告功能，來要求存取 PointOfService API] 您可以使用 Microsoft Visual Studio 中的資訊清單設計工具宣告大部分的功能，或是手動新增功能。  

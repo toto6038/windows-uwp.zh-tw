@@ -6,16 +6,14 @@ title: 視訊擷取的手動相機控制項
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e4bad8d38676c8298026e66be31e2493ae7d4117
-ms.sourcegitcommit: 91511d2d1dc8ab74b566aaeab3ef2139e7ed4945
-ms.translationtype: HT
+ms.openlocfilehash: 91f9d21f6df09bf8f3cad3e5a43f3ed94049338e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2018
-ms.locfileid: "1816033"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562540"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>視訊擷取的手動相機控制項
 
@@ -94,7 +92,7 @@ HDR 視訊控制項支援開啟、關閉和自動三種模式，這表示裝置�
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
 *  [**VideoTemporalDenoisingControl**](https://docs.microsoft.com/uwp/api/windows.media.devices.videotemporaldenoisingcontrol)
- 
+ 
 
 
 

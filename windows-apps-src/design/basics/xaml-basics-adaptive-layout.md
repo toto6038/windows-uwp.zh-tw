@@ -6,15 +6,13 @@ keywords: XAML, UWP, 開始使用
 ms.author: mukin
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fee97ecefd2d0c0694bd50ef7255488f3fb567f3
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 000aa2d8f3684aa813b85076d9124a87a71b6a8c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639715"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5563299"
 ---
 # <a name="tutorial-create-adaptive-layouts"></a>教學課程：建立調適型配置
 
@@ -32,19 +30,19 @@ ms.locfileid: "1639715"
 
 ## <a name="prerequisites"></a>必要條件
 
-* Visual Studio 2017：[下載 Visual Studio 2017 社群 (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10SDK (10.0.15063.468 或更新版本)：[下載最新的 Windows SDK（免費）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Windows 行動裝置模擬器：[下載 Windows 10 行動裝置模擬器（免費）](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
+* Visual Studio 2017:[下載 Visual Studio 2017 社群 (免費) ](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10SDK (10.0.15063.468 或更新版本)：[下載最新的 Windows SDK (免費) ](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Windows 行動裝置模擬器：[下載 Windows 10 行動裝置模擬器 (免費) ](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：從 github 取得起始程式碼
 
 針對此教學課程，您將從簡化版的 PhotoLab 範例開始著手。 
 
-1. 移至 [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
+1. 移至[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
 2. 下一步，您將需要複製或下載範例。 按一下 **\[複製或下載\]** 按鈕。 子功能表會出現。
     <figure>
         <img src="../basics/images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
-        <figcaption>Photolab 範例的 GitHub 頁面上的<b>複製或下載</b>功能表。</figcaption>
+        <figcaption>Photolab 範例的 GitHub 頁面上的 <b>複製或下載</b>功能表。</figcaption>
     </figure>
 
     **如果您不熟悉 GitHub：**

@@ -6,18 +6,17 @@ title: 設定 MediaCapture 的格式、解析度和畫面播放速率
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: cf46cefc6491178444a13917a3ce2b0ffb73c19a
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: ba07f897111e27dc895aa187172841cac4b44f73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209155"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5561865"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>設定 MediaCapture 的格式、解析度和畫面播放速率
 
-\[ 針對 Windows 10 上的 UWP 應用程式更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文說明如何使用 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 介面來設定相機預覽資料流及所擷取之相片和視訊的解析度和畫面播放速率。 它也會說明如何確保預覽資料流的外觀比例符合所擷取的媒體。
@@ -33,8 +32,7 @@ ms.locfileid: "209155"
 
 建立簡單的 Helper 類別來包裝 [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 介面的功能，就能更輕易地選取一組符合特定準則的編碼屬性。 這個 Helper 類別因編碼屬性功能的下列行為而特別有用：
 
-**警告**  
-[**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) 方法會取得 [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 列舉的成員 (例如 **VideoRecord** 或 **Photo**)，然後傳回 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 物件的清單，這類物件會傳遞資料流編碼設定，例如，擷取的相片或視訊的解析度。 呼叫 **GetAvailableMediaStreamProperties** 的結果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，而不論指定的是哪一個 **MediaStreamType** 值。 基於這個原因，您應該一律檢查每個傳回值的類型，並將其轉換為適當的類型，然後才嘗試存取任何屬性值。
+**警告** [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994)方法接受[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640)列舉，例如**VideoRecord**或**相片**、 的成員，並會傳回任一[**清單ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993)或[**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217)物件的傳達資料流編碼設定，例如擷取的相片或視訊的解析度。 呼叫 **GetAvailableMediaStreamProperties** 的結果可能包括 **ImageEncodingProperties** 或 **VideoEncodingProperties**，而不論指定的是哪一個 **MediaStreamType** 值。 基於這個原因，您應該一律檢查每個傳回值的類型，並將其轉換為適當的類型，然後才嘗試存取任何屬性值。
 
 下列定義的 Helper 類別會處理 [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) 或 [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) 的類型檢查和轉換，如此一來，您的 app 程式碼就不需要區分這兩種類型。 此外，Helper 類別所公開的屬性適用於屬性的外觀比例、畫面播放速率 (僅適用於視訊編碼屬性)，以及更容易在 app UI 中顯示編碼屬性的易記名稱。
 
@@ -78,17 +76,16 @@ ms.locfileid: "209155"
 
 -   選取與 [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 的大小最接近的預覽解析度，讓多餘的像素無法通過預覽串流管線。
 
-**重要**  
-在某些裝置上，可以將相機的預覽串流和擷取串流的外觀比例設定成不同。 因為這個不相符而引發的框架剪裁，可能會在擷取的媒體中顯示內容，而此內容不會顯示於預覽中，這會導致負面使用者經驗。 強烈建議您在小型容錯視窗內，針對預覽和擷取資料流使用相同的外觀比例。 啟用完全不同的解析度進行擷取和預覽是正常的，只要外觀比例非常接近即可。
+**重要**可能，某些裝置上，設定不同的外觀比例的相機預覽資料流和擷取串流。 因為這個不相符而引發的框架剪裁，可能會在擷取的媒體中顯示內容，而此內容不會顯示於預覽中，這會導致負面使用者經驗。 強烈建議您在小型容錯視窗內，針對預覽和擷取資料流使用相同的外觀比例。 啟用完全不同的解析度進行擷取和預覽是正常的，只要外觀比例非常接近即可。
 
 
 為了確保相片或視訊擷取資料流符合預覽串流的外觀比例，這個範例會呼叫 [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) 並傳入 **VideoPreview** 列舉值，以要求預覽資料流目前的資料流屬性。 接著會定義一個小型外觀比例的容錯視窗，讓我們能夠包含未與預覽資料流完全相同的外觀比例 (儘管它們非常相近)。 接下來，會使用 Linq 擴充方法，僅選取外觀比例在已定義的預覽資料流容許範圍內的 **StreamPropertiesHelper** 物件。
 
 [!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
 
- 
+ 
 
- 
+ 
 
 
 

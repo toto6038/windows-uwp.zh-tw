@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: c70293960947070a0a6b94d7a63fd55f503c8e18
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 70380dd0bd07cfe0c81e8339f8606029663b47d4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1045067"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5562849"
 ---
 # <a name="bc7-format"></a>BC7 格式
 
@@ -65,7 +63,7 @@ BC7 區塊可能包含多個端點配對。 對應至端點配對的索引集可
 | 色彩 + Alpha 合併    | 必要  | N/A           | N/A                | 選用       | 必要             | 選用 | 必要           |
 | 色彩和 Alpha 分隔 | 必要  | 必要      | 選用           | N/A            | 必要             | N/A      | 必要           |
 
- 
+ 
 
 BC7 在兩個端點之間的大約行定義調色盤。 模式值判斷每個區塊的端點配對插入數量。 BC7 在每個材質上儲存一個調色盤索引。
 
@@ -356,9 +354,9 @@ BC7 模式 7 的特性如下︰
 
 [紋理區塊壓縮](texture-block-compression.md)
 
- 
+ 
 
- 
+ 
 
 
 
