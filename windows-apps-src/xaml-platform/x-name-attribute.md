@@ -6,18 +6,17 @@ ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 9fa472869ed3b81a9f688652a487b1b93986b777
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 43b4b7e6ba9e251a5907154125eff08e8d92a713
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210364"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571985"
 ---
 # <a name="xname-attribute"></a>x:Name 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一識別用於從程式碼後置或一般程式碼中存取具現化物件的物件元素。 一旦套用到支援程式撰寫模型，在建構函示傳回時，**x:Name** 可以視為等同於含有物件參考的變數。
 
@@ -60,7 +59,7 @@ CombiningCharacter::= none
 
 **x:Name** 不能設定在 XAML 屬性元素語法中，或是使用 [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 的程式碼中。 **x:Name** 只能使用 XAML 屬性語法設定在元素中。
 
-**注意** 特別是 C++/CX app，**x:Name** 參考的支援欄位不是為 XAML 檔案或頁面的根元素建立的。 如果您需要從 C++ 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
+**注意：** 特別針對 C + + /CX app， **X:name**參考的支援欄位不建立的 XAML 檔案或頁面的根元素。 如果您需要從 C++ 程式碼後置參考根物件，請使用其他 API 或樹狀目錄周遊。 例如，您可以呼叫 [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 以取得已知名稱的子元素，然後再呼叫 [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739)。
 
 ### <a name="xname-and-other-name-properties"></a>x:Name 和其他 Name 屬性
 
@@ -68,7 +67,7 @@ UWP XAML 中使用的一些類型也具有名為 **Name** 的屬性。 例如，
 
 如果 **Name** 可做為元素上的可設定屬性，則在 XAML 中就可以交替使用 **Name** 和 **x:Name**，但如果在同一個元素上同時指定這兩個屬性，就會發生錯誤。 也有情況是有 **Name** 屬性，但是為唯讀屬性 (例如 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031))。 如果是這種情況，請一律使用 **x:Name** 在 XAML 中命名該元素，而唯讀 **Name** 則是用於一些較不常見的程式碼案例。
 
-**注意** 一般而言，不應該使用 [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) 來變更原先由 **x:Name** 所設定的值，雖然有些案例是這項一般規則的例外。 在典型的案例中，建立與定義 XAML 命名範圍屬於 XAML 處理器作業。 在執行階段修改 **FrameworkElement.Name** 會導致 XAML 命名範圍/私用欄位命名無法對齊，這會讓您的程式碼後置難以記錄。
+**注意：**[**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)通常不應做為來變更原先**X:name**，所設定的值，雖然有些案例是這項一般規則的例外狀況。 在典型的案例中，建立與定義 XAML 命名範圍屬於 XAML 處理器作業。 在執行階段修改 **FrameworkElement.Name** 會導致 XAML 命名範圍/私用欄位命名無法對齊，這會讓您的程式碼後置難以記錄。
 
 ### <a name="xname-and-xkey"></a>x:Name 和 x:Key
 

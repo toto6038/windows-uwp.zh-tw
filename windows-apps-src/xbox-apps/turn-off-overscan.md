@@ -5,18 +5,18 @@ description: 若要關閉畫面有效呈現區域的自動縮放功能。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.assetid: 1adb221f-6f70-4255-9329-2046a486ca45
-ms.openlocfilehash: 30fc3e357eaea0d36a5deba1b0ea85c2d9bc990e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 32932845db47ed47b7e80f68cf4e424ba97e85c0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210385"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565201"
 ---
 # <a name="how-to-draw-ui-to-the-edge-of-the-screen"></a>如何在螢幕邊緣繪製 UI   
-根據預設，應用程式會針對電視安全區域，將邊框放在檢視區的邊緣 (如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](../input-and-devices/designing-for-tv.md#tv-safe-area))。 
+根據預設，應用程式會針對電視安全區域，將邊框放在檢視區的邊緣 (如需詳細資訊，請參閱[針對 Xbox 和電視進行設計](../design/devices/designing-for-tv.md#tv-safe-area))。 
 
 我們建議您關閉此功能，並繪製到螢幕邊緣。 您可以在應用程式啟動時，加入下列程式碼來繪製到螢幕邊緣：
    

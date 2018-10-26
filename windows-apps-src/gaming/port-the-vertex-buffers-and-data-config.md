@@ -6,19 +6,18 @@ ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, port, vertex buffers, data, direct3d, 遊戲, 連接埠, 頂點緩衝區, 資料, 移植
-ms.openlocfilehash: 85e8a47da525c0f5de7e957a0048e245e374dedc
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: b32747a4e11d258f71d4e55e41b7f54bb5e99246
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209277"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568437"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>移植頂點緩衝區與資料
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -314,9 +313,9 @@ m_d3dContext->DrawIndexed(
 * [移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md)
 * [移植 GLSL](port-the-glsl.md)
 
- 
+ 
 
- 
+ 
 
 
 

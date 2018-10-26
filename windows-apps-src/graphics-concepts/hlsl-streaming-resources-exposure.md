@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: aa775262fa6c3da499693ac41fbf5fb0348c7de9
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: a8523f4895c541ffb3b92ee00d5b62c57343ae00
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653597"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571377"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL 串流資源曝光
 
@@ -112,16 +110,16 @@ clamp 值為 0.0f，表示不會執行 clamp；因此，驅動程式編譯器可
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [串流資源的存取管線](pipeline-access-to-streaming-resources.md)
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,19 +6,18 @@ ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows, 遊戲, 轉譯, 場景, 深度測試, 陰影
-ms.openlocfilehash: 538ebe9a604daaa5a444b0f7f1764770eec8ce7c
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209041"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569020"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>使用深度測試轉譯場景
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第三部分。
@@ -161,9 +160,9 @@ return float4(input.color * ambient, 1.f);
 
 在這個逐步解說的下一個部分，您將了解如何[支援各種硬體上的陰影圖](target-a-range-of-hardware.md)。
 
- 
+ 
 
- 
+ 
 
 
 

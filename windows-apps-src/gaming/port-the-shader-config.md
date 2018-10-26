@@ -6,19 +6,18 @@ ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, port, shader, direct3d, opengl, 遊戲, 連接埠, 著色器, 移植
-ms.openlocfilehash: f683e8b6ad04b1350adae1c962da09e2f15f5cec
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209249"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567220"
 ---
 # <a name="port-the-shader-objects"></a>移植著色器物件
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -28,9 +27,9 @@ ms.locfileid: "209249"
 
 從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。
 
-> **注意**   您是否已建立新的 Direct3D 專案？ 如果沒有，請依照[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)中的指示執行。 這個逐步解說假設您已建立可用來繪製到螢幕的 DXGI 與 Direct3D 資源，而這些是在範本中提供。
+> **注意：** 您已建立新的 Direct3D 專案？ 如果沒有，請依照[建立適用於通用 Windows 平台 (UWP) 的新 DirectX 11 專案](user-interface.md)中的指示執行。 這個逐步解說假設您已建立可用來繪製到螢幕的 DXGI 與 Direct3D 資源，而這些是在範本中提供。
 
- 
+ 
 
 與 OpenGL ES 2.0 非常類似，在 Direct3D 中編譯好的著色器必須和繪圖內容產生關聯。 但是，Direct3D 本身並未提供著色器程式物件的概念；而是必須由您直接將著色器指派給 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)。 這個步驟遵循可用來建立和繫結著色器物件的 OpenGL ES 2.0 程序，並為您提供 Direct3D 中相對應的 API 行為。
 
@@ -81,9 +80,9 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 在 Direct3D 中，著色器不會在執行階段期間編譯；它們一律是在編譯程式的剩餘部分時編譯成 CSO 檔案。 當您使用 Microsoft Visual Studio 編譯應用程式時，HLSL 檔案會編譯成應用程式必須載入的 CSO (.cso) 檔案。 封裝應用程式時，請務必將這些 CSO 檔案包含在內！
 
-> **注意**   下列範例使用 **auto** 關鍵字和 Lambda 語法，以非同步方式執行著色器載入與編譯。 ReadDataAsync() 是針對 CSO 檔案中讀取來做為位元組資料陣列 (fileData) 的範本所實作的方法。
+> **注意：** 下列範例執行著色器載入與編譯使用**auto**關鍵字和 lambda 語法，以非同步方式。 ReadDataAsync() 是針對 CSO 檔案中讀取來做為位元組資料陣列 (fileData) 的範本所實作的方法。
 
- 
+ 
 
 Direct3D 11：編譯著色器
 
@@ -319,9 +318,9 @@ m_d3dContext->UpdateSubresource(
 
 [繪製到螢幕](draw-to-the-screen.md)
 
- 
+ 
 
- 
+ 
 
 
 

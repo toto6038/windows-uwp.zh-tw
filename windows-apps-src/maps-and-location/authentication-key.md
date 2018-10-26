@@ -6,16 +6,14 @@ ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
 ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: 74a72ac3a309ab7ee1590d40c8e8f415558ef9b1
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "665594"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571023"
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
 
@@ -35,7 +33,7 @@ ms.locfileid: "665594"
 
 建立新的金鑰
 
-1.  在瀏覽器中，瀏覽至 [Bing 地圖服務開發人員中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
+1.  在您的瀏覽器中，瀏覽到 「 Bing 地圖服務開發人員中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
 2.  如果系統要求您登入，請輸入您的 Microsoft 帳戶，然後按一下 **\[登入\]**。
 

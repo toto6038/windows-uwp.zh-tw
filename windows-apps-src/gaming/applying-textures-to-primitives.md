@@ -6,19 +6,18 @@ ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 紋理, DirectX
-ms.openlocfilehash: cc25d7bcc5809dd10b43418ccd42f78c10d1336e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209312"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567329"
 ---
 # <a name="apply-textures-to-primitives"></a>將紋理套用到原始物件
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 以下我們將使用[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 基本型別。 我們還會介紹一個簡單的內積光源模型，其中立方體的表面會根據它們與光源的相對距離和角度呈現較淺或較深的顏色。
 
@@ -523,9 +522,9 @@ private:
 
 我們載入了原始紋理資料並將該資料套用到 3D 基本型別。
 
- 
+ 
 
- 
+ 
 
 
 

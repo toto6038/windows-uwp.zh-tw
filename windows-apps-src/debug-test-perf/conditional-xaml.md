@@ -5,16 +5,14 @@ description: 在 XAML 標記中使用新的 API 並同時維持與先前版本�
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bb295bfb203a09d64491563bec7ba01cd31b4227
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 46954968f11f000025ee352676d3f0d17ecb9621
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689594"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566523"
 ---
 # <a name="conditional-xaml"></a>條件式 XAML
 

@@ -1,27 +1,25 @@
 ---
 author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: 此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 之 concurrency 命名空間中所定義的 task 類別)。
+description: 本文說明的建議的方式取用非同步方法，在 VisualC + + 元件延伸 (C + + /CX) 使用在 ppltasks.h 中的並行命名空間中定義的 task 類別。
 title: C++ 中的非同步程式設計
 ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 執行緒, 非同步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 869ba45929e015f27c5342af57da450f0b99b607
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921206"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571206"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX 中的非同步程式設計
 > [!NOTE]
 > 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
 
-此文章說明在 Visual C++ 元件延伸 (C++/CX) 中取用非同步方法的建議方式 (使用在 ppltasks.h 的 `concurrency` 命名空間中所定義的 `task` 類別)。
+本文章說明 VisualC + + 元件延伸中運用非同步方法的建議的方式 (C + + /CX) 使用`task`中定義的類別`concurrency`ppltasks.h 中的命名空間。
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>通用 Windows 平台 (UWP) 非同步類型
 通用 Windows 平台 (UWP) 功能是一種設計完善的模型，適用於呼叫非同步方法，並提供取用該方法所需的類型。 如果您不熟悉 UWP 非同步模型，請先閱讀[非同步程式設計][AsyncProgramming] ，然後閱讀本文的其他部分。
@@ -116,7 +114,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   因為第二個是數值型接續，所以如果呼叫 [**DeleteAsync**][deleteAsync] 所啟動的作業擲回例外狀況，則第二個接續不會執行。
 
-**注意：** 建立工作鏈結只是使用 **task** 類別編寫非同步作業的其中一種方法。 您也可以使用 join 和 choice 運算子 **&&** 以及 **||** 來編寫作業。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。
+**注意：** 建立工作鏈結只是其中之一的方式來使用**task**類別編寫非同步作業。 您也可以使用 join 和 choice 運算子 **&&** 以及 **||** 來編寫作業。 如需詳細資訊，請參閱[工作平行處理原則 (並行執行階段)][taskParallelism]。
 
 ## <a name="lambda-function-return-types-and-task-return-types"></a>Lambda 函式傳回類型和工作傳回類型
 在工作接續中，Lambda 函式的傳回類型會包裝在 **task** 物件中。 如果 Lambda 傳回 **double**，則接續工作類型為 **task<double>**。 不過，工作物件的設計不會讓它產生不必要的巢狀傳回類型。 若 Lambda 傳回 **IAsyncOperation&lt;SyndicationFeed^&gt;^**，接續會傳回 **task&lt;SyndicationFeed^&gt;**，而非 **task&lt;task&lt;SyndicationFeed^&gt;&gt;** 或 **task&lt;IAsyncOperation&lt;SyndicationFeed^&gt;^&gt;^**。 這個處理程序稱為 *「非同步解除包裝」*，它也可以保證接續內的非同步作業會在完成時才呼叫下一個接續。

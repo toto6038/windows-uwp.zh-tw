@@ -6,16 +6,14 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, directx, 載入資源
 ms.localizationpriority: medium
-ms.openlocfilehash: 12dd2fd39ff0b39e747488952779cfeb180f06fa
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983551"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565326"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 遊戲中載入資源
 
@@ -73,7 +71,7 @@ ms.locfileid: "1983551"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="instructions"></a>指示
 
@@ -216,7 +214,7 @@ void ResourceLoading::CreateDeviceResources()
 -   在那之後，後續的 (numVertices \* sizeof(**BasicVertex**)) 位元則包含頂點資料。
 -   資料最後的 (numIndices \* 16) 位元包含索引資料，以一連串的 uint16 值表示。
 
-重點在於：了解您載入的網格資料的位元層級版面配置。 此外，也請確定使用一致的位元組順序。 所有 Windows 8 平台均是位元組由小到大排列。
+重點在於：了解您載入的網格資料的位元層級版面配置。 此外，也請確定使用一致的位元組順序。 所有 Windows8 平台都均是位元組由小到大。
 
 在範例中，您從 **LoadMeshAsync** 方法中呼叫方法 CreateMesh 以執行此位元層級的解譯。
 
@@ -707,9 +705,9 @@ task<void> BasicLoader::LoadShaderAsync(
 * [BasicReaderWriter 的完整程式碼](complete-code-for-basicreaderwriter.md)
 * [DDSTextureLoader 的完整程式碼](complete-code-for-ddstextureloader.md)
 
- 
+ 
 
- 
+ 
 
 
 

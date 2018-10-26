@@ -6,16 +6,14 @@ ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 ms.author: twhitney
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b6cff7ce434e219b0d502f384d202c3b708479a
-ms.sourcegitcommit: 3500825bc2e5698394a8b1d2efece7f071f296c1
-ms.translationtype: HT
+ms.openlocfilehash: 143b96171091406fb91954685143e4f86c036ffb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "1861887"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570897"
 ---
 # <a name="add-a-splash-screen"></a>新增啟動顯示畫面
 
@@ -41,11 +39,11 @@ ms.locfileid: "1861887"
 
 4. 若要為 UWP app 選取新的啟動顯示畫面影像，請按顯示在 **\[縮放的資產\]** 下方 **\[1240 x 600 px\]** 標籤旁含有省略符號的按鈕。 選擇要當作啟動顯示畫面影像的 1240 x 600 像素影像 (.png、.jpg 或 .jpeg)。
 
-    **重要**：您選擇的啟動顯示畫面影像必須使用 1x 縮放比例的 620 x 300 像素。 此外，設計您的啟動顯示畫面時，請注意它將小於螢幕，並且置中對齊。 它並不像 Windows Phone 市集應用程式的啟動顯示畫面會填滿螢幕。
+    **重要**您選擇的啟動顯示畫面影像必須使用 1x 縮放比例的 620 x 300 像素。 此外，設計您的啟動顯示畫面時，請注意它將小於螢幕，並且置中對齊。 它並不像 Windows Phone 市集應用程式的啟動顯示畫面會填滿螢幕。
 
 5. 若要為 Windows Phone 市集應用程式選取新的啟動顯示畫面影像，請按 **\[縮放的資產\]** 下方顯示在 **\[1152 x 1920 px\]** 標籤旁具有省略符號的按鈕。 選擇要當作啟動顯示畫面影像的 1152 x 1920 像素影像 (.png、.jpg 或 .jpeg)。
 
-    **重要**：您所選擇的啟動顯示畫面影像必須是 1152 x 1920 像素，這是 2.4x 縮放比例的正確大小。 如果這是您所提供的唯一資產，它將會針對 1.4x 和 1x 的縮放比例縮小。
+    **重要**您選擇的啟動顯示畫面影像必須是 1152 x 1920 像素這是 2.4 x 縮放比例的正確大小。 如果這是您所提供的唯一資產，它將會針對 1.4x 和 1x 的縮放比例縮小。
 
 6. 在 **\[啟動顯示畫面\]** 區段的 **\[背景色彩\]** 欄位中，設定與您的啟動顯示畫面影像一起顯示的背景色彩。 您可以輸入色彩名稱，或是輸入 '\#' 與色彩的十六進位值。 如需可用色彩的名稱清單，請參閱 [**SplashScreen element**](https://msdn.microsoft.com/library/windows/apps/br211467)。 您不一定要設定啟動顯示畫面的背景色彩。 如果您沒有為 UWP app 指定色彩，啟動顯示畫面背景色彩預設會是淺灰色 (十六進位值 \#464646)。 這個色彩與預設的 **\[磚\]** 背景色彩相同 (請參閱 **\[視覺資產\]** 索引標籤中 **\[磚影像和標誌\]** 區段的 **\[背景色彩\]** 欄位)。 如果您沒有為 Windows Phone 指定色彩，或是將它設定成「透明」，啟動顯示畫面背景色彩就會是透明的。
 

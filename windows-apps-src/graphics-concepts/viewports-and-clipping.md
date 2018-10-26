@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: defea1e9adbb4d0f9edb24c936069191944b94be
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 4dd319c686bebf2a30431017f399f48b08618cb6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044717"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569214"
 ---
 # <a name="viewports-and-clipping"></a>檢視區和裁剪
 
@@ -49,9 +47,9 @@ ms.locfileid: "1044717"
 
 Direct3D 假設檢視區裁剪體積的範圍是從 -1.0 到 1.0 (在 X 中) 以及從 1.0 到 -1.0 (在 Y 中)。這些是應用程式過去最常使用的設定。 裁剪之前，您可以使用[投影轉換](projection-transform.md)調整檢視區的長寬比例。
 
-**注意**   MinZ 和 MaxZ 表示場景轉譯到的深度範圍，並不會用於裁剪。 大部分的應用程式將這些值設為 0.0 和 1.0，以讓系統轉譯到深度緩衝區中深度值的整個範圍。 有時候，您可以使用其他深度範圍達成特殊效果。 例如，若要在遊戲中轉譯平視顯示器，您可以將這兩個值設定為 0.0，強迫在場景的前景中轉譯物件，或者您可以將這兩個值設定為 1.0，轉譯永遠應該會在背景中的物件。
+**注意：**  MinZ 和 MaxZ 表示場景轉譯到此的深度範圍並不會用於裁剪。 大部分的應用程式將這些值設為 0.0 和 1.0，以讓系統轉譯到深度緩衝區中深度值的整個範圍。 有時候，您可以使用其他深度範圍達成特殊效果。 例如，若要在遊戲中轉譯平視顯示器，您可以將這兩個值設定為 0.0，強迫在場景的前景中轉譯物件，或者您可以將這兩個值設定為 1.0，轉譯永遠應該會在背景中的物件。
 
- 
+ 
 
 檢視區結構的 X、Y、寬度、高度成員所使用的維度，會定義轉譯目標表面上檢視區的位置和維度。 這些值是在螢幕座標中，相對於表面左上角。
 
@@ -61,9 +59,9 @@ Direct3D 使用檢視區位置和維度來縮放頂點，讓轉譯的場景放�
 
 這個矩陣依據檢視區維度和您想要的深度範圍縮放頂點，並將它們轉移到轉譯目標表面上的適當位置。 矩陣也翻轉 y 座標，隨著 y 向下漸增，以反映左上角的螢幕原點。 套用此矩陣之後，頂點仍然是同質 - 也就是它們仍是 \[x,y,z,w\] 頂點 - 而且在傳送到轉譯器之前，必須轉換成非同質座標。
 
-**注意**  應用程式通常將 MinZ 和 MaxZ 分別設定為 0.0 和 1.0，以便讓系統轉譯到整個深度範圍。 不過，您可以使用其他值達到特定效果。 例如，您可以將這兩個值設為 0.0，強制所有物件到前景，或都設為 1.0 將所有物件轉譯到背景。
+**注意：** 應用程式通常將 MinZ 和 MaxZ 為 0.0 和 1.0，分別，以便讓系統轉譯到整個深度範圍。 不過，您可以使用其他值達到特定效果。 例如，您可以將這兩個值設為 0.0，強制所有物件到前景，或都設為 1.0 將所有物件轉譯到背景。
 
- 
+ 
 
 ## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>清除檢視區
 
@@ -88,9 +86,9 @@ Direct3D 使用檢視區位置和維度來縮放頂點，讓轉譯的場景放�
 
 [座標系統與幾何](coordinate-systems-and-geometry.md)
 
- 
+ 
 
- 
+ 
 
 
 

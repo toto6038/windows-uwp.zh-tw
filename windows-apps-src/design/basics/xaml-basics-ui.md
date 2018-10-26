@@ -6,15 +6,13 @@ keywords: XAML, UWP, 開始使用
 ms.author: jimwalk
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ddf4bacbc07eb6d7faccc1a4de2638f7219b562
-ms.sourcegitcommit: ef5a1e1807313a2caa9c9b35ea20b129ff7155d0
-ms.translationtype: HT
+ms.openlocfilehash: 5d54df07cd5f2ccc32098b17fd7c656900cba978
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "1639138"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570937"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
 
@@ -36,18 +34,18 @@ ms.locfileid: "1639138"
 
 ## <a name="prerequisites"></a>必要條件
 
-* Visual Studio 2017：[下載 Visual Studio 2017 社群 (免費)](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Visual Studio 2017:[下載 Visual Studio 2017 社群 (免費) ](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
 * Windows 10SDK (10.0.15063.468 或更新版本)：[下載最新的 Windows SDK (免費)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：從 github 取得起始程式碼
 
 針對此教學課程，您將從簡化版的 PhotoLab 範例開始著手。 
 
-1. 移至 [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
+1. 移至[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
 2. 下一步，您將需要複製或下載範例。 按一下 **\[複製或下載\]** 按鈕。 子功能表會出現。
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
-        <figcaption>Photolab 範例的 GitHub 頁面上的<b>複製或下載</b>功能表。</figcaption>
+        <figcaption>Photolab 範例的 GitHub 頁面上的 <b>複製或下載</b>功能表。</figcaption>
     </figure>
 
     **如果您不熟悉 GitHub：**

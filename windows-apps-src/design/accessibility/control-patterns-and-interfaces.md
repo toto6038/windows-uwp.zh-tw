@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cd6f279505a960be0b9e1e2e5918a769ff56930
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: e48045e27e8ee7796f5dda2afb691a9f6e5371b2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1655057"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565336"
 ---
 # <a name="control-patterns-and-interfaces"></a>控制項模式和介面  
 
@@ -63,7 +61,7 @@ ms.locfileid: "1655057"
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | 用於可調整大小、移動和旋轉的控制項。 Transform 控制項模式通常用於設計工具、表單、圖形編輯器以及繪圖應用程式。 |
 | **值** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 允許用戶端對不支援範圍值的控制項，取得或設定一個值。 |
 | **VirtualizedItem** | [**IVirtualizedItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242668) | 公開容器內被虛擬化且必須當做使用者介面自動化元素被完全存取的項目。 |
-| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 公開視窗特定的資訊 (Microsoft Windows 作業系統的基本概念)。 例如子視窗和對話方塊，就是本身為視窗的控制項。 |
+| **Window** | [**IWindowProvider**](https://msdn.microsoft.com/library/windows/apps/BR242670) | 會公開 windows 的特定資訊拷貝作業系統的基本概念。 例如子視窗和對話方塊，就是本身為視窗的控制項。 |
 
 > [!NOTE]
 > 您將不需要在現有的 XAML 控制項中尋找所有這類模式的實作。 部分模式單獨擁有介面，利用模式的一般使用者介面自動化架構定義來支援同位，以及支援自動化對等案例，這類案例需要完全自訂的實作以支援該模式。

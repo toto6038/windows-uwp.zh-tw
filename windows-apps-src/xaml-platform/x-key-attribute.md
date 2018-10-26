@@ -6,18 +6,17 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 4b76c16d276af295a1b2eed292ebeffc56b2e604
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 8d48ccb93a411e92b57059192de38366f27353a3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210509"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569174"
 ---
 # <a name="xkey-attribute"></a>x:Key 屬性
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 唯一識別建立和參照為資源的元素，存在 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 中。
 
@@ -42,7 +41,7 @@ ms.locfileid: "210509"
 | 詞彙 | 說明 |
 |------|-------------|
 | object | 可共用的任何物件。 請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。 |
-| stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 | 
+| stringKeyValue | 做為索引鍵的合法字串，必須符合 _XamlName_ 文法。 請參閱下面的＜XamlName 文法＞。 | 
 
 ##  <a name="xamlname-grammar"></a>XamlName 文法
 

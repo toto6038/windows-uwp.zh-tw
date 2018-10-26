@@ -5,16 +5,14 @@ description: 了解如何在您的應用程式 UI 中使用輸入動畫。
 ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10、uwp、動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 79fae5c890757ebe5daf27734a059bbbe4f693ee
-ms.sourcegitcommit: 67cb03db41556cf0d58993073654cd0706aede84
-ms.translationtype: HT
+ms.openlocfilehash: 04eabb4c70143a08f5b850e6444f7f3d21a9dd4a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "1480594"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566910"
 ---
 # <a name="input-driven-animations"></a>輸入導向動畫
 

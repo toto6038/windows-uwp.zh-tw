@@ -5,16 +5,14 @@ title: C++/WinRT 的簡介
 ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 7848a0b00e2f6a2bbaa84c413dc26f1ea7238e8e
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5474241"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568457"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;
@@ -90,7 +88,7 @@ IDL 檔案中，在您的元件、其預設的介面，以及任何其實作的�
 將已建置的 Windows 執行階段元件二進位與其 `.winmd` 和使用它們的 UWP 應用程式搭配一起。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT 投影中的自訂類型
-在您的 C++/WinRT 程式設計中，您可以使用標準 C++ 語言功能和[標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)&mdash;包括一些 C++ 標準程式庫資料類型&mdash。 但也您會注意到投影中的某些自訂資料類型，且您可以選擇使用它們。 例如，我們會使用[開始使用 C++/WinRT](get-started.md) 中快速程式碼範例的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
+在您 C + + /winrt 程式設計中，您可以使用標準 c + + 語言功能和[標準 c + + 資料類型與 C + + WinRT](std-cpp-data-types.md)&mdash;包括部分 c + + 標準程式庫資料類型。 但也您會注意到投影中的某些自訂資料類型，且您可以選擇使用它們。 例如，我們會使用[開始使用 C++/WinRT](get-started.md) 中快速程式碼範例的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) 是您在某些時候可能會使用的另一種類型。 但是您比較不會直接使用例如[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view)的類型。 或者，您可以選擇不想使用它，如果且當 C++ 標準程式庫中出現對等項目類型時，才不會變更任何程式碼。
 

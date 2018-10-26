@@ -6,16 +6,14 @@ description: 了解如何使用方向感應器來判斷裝置方向。
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a9270ba675b0797344d3370aec433de90d80d5
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 49199a91f6713b3f18928eaafb6875a49deaf451
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958883"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570672"
 ---
 # <a name="use-the-orientation-sensor"></a>使用方向感應器
 
@@ -48,7 +46,7 @@ ms.locfileid: "958883"
 
 ## <a name="prerequisites"></a>先決條件
 
-您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
+您應該熟悉 Extensible Application Markup 語言 (XAML)、 Microsoft VisualC # 及事件。
 
 您使用的裝置或模擬器必須支援方向感應器。
 

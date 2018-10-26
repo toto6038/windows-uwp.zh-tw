@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: af0c9c7013b663bceb5c3747ff5d5250f62c54c7
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: d32d5a77fe9bc840ea676c7156c1b59e498d07e1
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044567"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571637"
 ---
 # <a name="texture-filtering-with-mipmaps"></a>使用 Mipmap 進行紋理篩選
 
@@ -51,9 +49,9 @@ Direct3D 可評估 Mipmap 組中哪一張紋理的解析度最接近所需要的
 
 Mipmap 紋理在 3D 場景中作為減少轉譯場景所需時間的用途使用。 其也能強化場景的擬真度。 然而，其通常需要大量的記憶體。
 
-**注意**：Mipmap 鏈結中每個表面都有著鏈結內前一個表面一半的維度。 如果最上層的 Mipmap 有著 256 x 128 的維度大小，第二層 Mipmap 的維度大小即為 128 x 64，第三層則為 64 x 32，以此類推，直到 1 x 1 為止。 您無法請求可能會使鏈結中任何一個 Mipmap 的寬度或高度小於 1 的 Mipmap 級數。 簡單舉例來說，若最上層 Mipmap 表面為 4 x 2，最大容許級數即為 3。 最上層維度為 4 x 2，第二層維度為 2 x 1，第三層的維度即為 1 x 1。 由於超過第三層後即會產生第二層 Mipmap 高度的分數值，因此程式並不允許。
+**注意：**  mipmap 鏈結中的每個表面有都有著鏈結中前一個表面的維度。 如果最上層的 Mipmap 有著 256 x 128 的維度大小，第二層 Mipmap 的維度大小即為 128 x 64，第三層則為 64 x 32，以此類推，直到 1 x 1 為止。 您無法請求可能會使鏈結中任何一個 Mipmap 的寬度或高度小於 1 的 Mipmap 級數。 簡單舉例來說，若最上層 Mipmap 表面為 4 x 2，最大容許級數即為 3。 最上層維度為 4 x 2，第二層維度為 2 x 1，第三層的維度即為 1 x 1。 由於超過第三層後即會產生第二層 Mipmap 高度的分數值，因此程式並不允許。
 
- 
+ 
 
 Direct3D 可以自動執行 Mipmap 紋理篩選。 應用程式也可以手動在一串 Mipmap 鏈結上周遊，並且將點陣圖資料載入每個鏈結上的表面。 這通常也是周遊鏈結的唯一理由。 在紋理建立時間中自動產生 Mipmap 可以利用硬體篩選，因為 Mipmap 位於視訊記憶體中。
 
@@ -62,9 +60,9 @@ Direct3D 可以自動執行 Mipmap 紋理篩選。 應用程式也可以手動�
 
 [紋理篩選](texture-filtering.md)
 
- 
+ 
 
- 
+ 
 
 
 

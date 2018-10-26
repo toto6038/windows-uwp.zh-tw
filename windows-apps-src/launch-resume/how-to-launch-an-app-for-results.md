@@ -6,19 +6,18 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: 8aa2070606f7ef077dfa4392d576f212b2f8ea84
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210759"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564439"
 ---
 # <a name="launch-an-app-for-results"></a>啟動應用程式以取得結果
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 **重要 API**
@@ -28,7 +27,7 @@ ms.locfileid: "210759"
 
 了解如何從某個 app 啟動另一個 app，以及在這兩者間交換資料的方式。 這稱為 *「啟動 App 以取得結果」*。 下列範例示範如何使用 [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) 來啟動 App 以取得結果。
 
-在 Windows 10 中，新的 App 間通訊 API 讓 Windows App (以及 Windows Web App) 能夠使用它，來啟動某個 App 並交換資料與檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
+新的應用程式-應用程式通訊 windows 10 中的 Api 讓 Windows 應用程式 （及 Windows Web 應用程式） 來啟動某個 app 並交換資料和檔案。 這讓您能夠從多個 App 建置混搭式解決方案。 使用這些新的 API，就能流暢地立即處理需要使用者使用多個 App 的複雜工作。 例如，您的 App 可以啟動社交網路 App 來選擇連絡人，或啟動結帳 App 來完成付款程序。
 
 您將啟動以取得結果的 App 將稱為啟動的 App。 啟動該 App 的 App 將稱為呼叫的 App。 您將針對此範例撰寫呼叫的 app 和啟動的 app。
 
@@ -204,6 +203,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 * [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
 * [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
- 
+ 
 
- 
+ 

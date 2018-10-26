@@ -6,16 +6,14 @@ description: 取得由 StorageFile 物件所表示檔案的屬性 &amp;\#8212;�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3edb012f04026251d151da99f34accb9e1848c3
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: 8fc44300376efb5b56f390457e516f35a3ec4202
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662728"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565458"
 ---
 # <a name="get-file-properties"></a>取得檔案屬性
 
@@ -32,7 +30,7 @@ ms.locfileid: "1662728"
 > [!NOTE]
 > 另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
- 
+ 
 
 
 ## <a name="prerequisites"></a>先決條件
@@ -49,9 +47,9 @@ ms.locfileid: "1662728"
 
 許多最上層檔案屬性都可當成 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 類別的成員來存取。 這些屬性包含檔案屬性、內容類型、建立日期、顯示名稱及檔案類型等。
 
-**注意**  請記得宣告 **picturesLibrary** 功能。
+**注意：** 請記得宣告**picturesLibrary**功能。
 
- 
+ 
 
 此範例會列舉圖片庫中的所有檔案，存取每個檔案的一些最上層屬性。
 
@@ -142,6 +140,6 @@ foreach (Windows.Storage.StorageFile file in files)
 }
 ```
 
- 
+ 
 
- 
+ 

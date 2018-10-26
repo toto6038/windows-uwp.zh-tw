@@ -6,16 +6,14 @@ title: 取得每日應用程式使用量
 ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
-ms.openlocfilehash: 5060c24df7242d62e2895231d7441e904987d522
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 5d533f0e28161e17c3a842f6c3c4c6b6ef4a196d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5514262"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566089"
 ---
 # <a name="get-daily-app-usage"></a>取得每日應用程式使用量
 

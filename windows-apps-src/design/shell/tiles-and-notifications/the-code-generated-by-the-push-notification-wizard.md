@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 43c90d3d32876bdfd6b91f597ad94eba33907e90
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 6b39211c4b21a68fc0e563f73805805dcf1f4641
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1675195"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570364"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
@@ -211,9 +209,9 @@ function sendNotifications(request) {
 
 sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也可以使用其他類型的推播通知。
 
-**提示**  如需如何在編輯指令碼時取得協助的詳細資訊，請參閱[針對伺服器端 JavaScript 啟用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示：** 如何在編輯指令碼時取得協助的相關資訊，請參閱[針對伺服器端 JavaScript 啟用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
 
- 
+ 
 
 ## <a name="push-notification-types"></a>推播通知類型
 
@@ -237,9 +235,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](http://go.microsoft.com/fwlink/p/?linkid=301694)。
 
-**警告**  當您執行一次推播通知精靈之後，請勿因為要針對其他行動服務新增註冊碼，而再次執行精靈。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以將精靈在 push.register.\* 中產生的註冊碼 (包括對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫) 移到 OnLaunched 事件外以達到這個目的，但其中的細節將取決於您應用程式的架構。
+**警告**當您一次執行推播通知精靈時，不會執行精靈來針對其他行動服務新增註冊碼第二次。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以將精靈在 push.register.\* 中產生的註冊碼 (包括對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫) 移到 OnLaunched 事件外以達到這個目的，但其中的細節將取決於您應用程式的架構。
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 
@@ -249,9 +247,9 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 * [連線到 Microsoft Azure 行動服務 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263160)
 * [連線到 Microsoft Azure 行動服務 (C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/dn263175)
 * [快速入門：為行動服務加入推播通知 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/dn263163)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,16 +6,14 @@ description: 使用 Windows 執行階段動畫庫的動畫，可以將 Windows �
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 23af2883e0e1bc4fe8aa67bb72a8690082369ab4
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: d7c3c4a9e46ce38298d7dcdd50477c4de0e9960c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1656273"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570059"
 ---
 # <a name="animations-in-xaml"></a>XAML 中的動畫
 
@@ -138,7 +136,7 @@ Windows 執行階段動畫系統與動畫庫的目標更為遠大，也就是讓
 | 任何 UI 容器的內容 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
 | 用於控制項，或者沒有其他適用的動畫 | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) 和 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
- 
+ 
 
 ## <a name="transition-animation-examples"></a>轉換動畫範例
 
@@ -307,7 +305,7 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 | [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) | 提供清單檢視控制項項目變更順序時的動畫轉換行為。 通常會在拖放作業時產生這種情況。 不同的控制項和佈景主題會具備不同的動畫特性。 |
 | [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) | 提供控制項變更位置時的動畫轉換行為。 |
 
- 
+ 
 
 ## <a name="theme-animation-examples"></a>佈景主題動畫範例
 
@@ -353,9 +351,9 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 與轉換動畫不同，佈景主題動畫沒有自動執行的內建觸發程序 (轉換)。 當您以 XAML 定義佈景主題動畫時，必須使用 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 以包含該佈景主題動畫。 您也可以變更動畫的預設行為。 例如，可藉由提高 [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) 上的 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) 時間值，使淡出的速度變慢。
 
-**注意：** 基於說明基本動畫技術的目的，我們將使用應用程式程式碼呼叫 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 的方法來啟動動畫。 您可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 與 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主題的一部分。
+**注意：** 基於說明基本動畫技術的目的，我們使用應用程式程式碼來啟動動畫，藉由呼叫[**腳本**](https://msdn.microsoft.com/library/windows/apps/BR210490)的方法。 您可以使用 [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) 與 [**Resume**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) **Storyboard** 方法，控制如何執行 **Storyboard** 動畫。 不過，那通常不是您將動畫庫加入應用程式的方法。 但是，您經常要將動畫庫整合到套用至控制項或元素的 XAML 樣式和範本中。 了解範本和視覺狀態有一點複雜。 但是我們的確涵蓋了您在視覺狀態中使用動畫庫的方式，做為[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)主題的一部分。
 
- 
+ 
 
 您可以在 UI 元素套用數個其他佈景主題動畫，以建立動畫效果。 這些 API 的名稱都包含 "ThemeAnimation"：
 
@@ -376,7 +374,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**DrillInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | 顯示使用者在邏輯階層中正向瀏覽時執行的預先設定動畫，例如從主要頁面瀏覽至詳細資料頁面。 |
 | [**DrillOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 顯示使用者在邏輯階層中反向瀏覽時執行的預先設定動畫，例如從詳細資料頁面瀏覽至主要頁面。 |
 
- 
+ 
 
 ## <a name="create-your-own-animations"></a>建立自己的動畫
 
@@ -386,9 +384,9 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 您以 XAML 定義控制項之視覺狀態的一個狀況是，您將定義自訂腳本動畫所在 XAML 中最大的應用程式 UI 定義區域。 這麼做的原因是，您要建立新的控制項類別，或是您要在其控制項範本中，為具有視覺狀態的現有控制項重新建立範本。 如需詳細資訊，請參閱[視覺狀態的腳本動畫](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)。
 
- 
+ 
 
- 
+ 
 
 
 

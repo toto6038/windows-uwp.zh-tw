@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b44ae8348e7b9d1d8dff0b98e5f1c553ec79b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87b5c72ef99e3802a348ddfd28951bc2865891e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044127"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565221"
 ---
 # <a name="ambient-lighting"></a>環境光線
 
@@ -37,10 +35,10 @@ ms.locfileid: "1044127"
 | Gₐ                | (0,0,0,0)     | D3DCOLORVALUE | 全域環境色彩                                                                                              |
 | Atten<sub>i</sub> | (0,0,0,0)     | D3DCOLORVALUE | 第 i 個光線的光衰減。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。 |
 | Spot<sub>i</sub>  | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的聚光燈係數。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。  |
-| 加總               | 無           | N/A           | 環境光線的加總                                                                                          |
+| 加總               | N/A           | N/A           | 環境光線的加總                                                                                          |
 | L<sub>ai</sub>    | (0,0,0,0)     | D3DVECTOR     | 第 i 個光線的環境光線色彩                                                                              |
 
- 
+ 
 
 Cₐ 的值為︰
 
@@ -48,9 +46,9 @@ Cₐ 的值為︰
 -   頂點 color2，如果 AMBIENTMATERIALSOURCE = D3DMCS\_COLOR2，且頂點宣告中提供第二個頂點色彩。
 -   材料環境色彩。
 
-**注意**：如果使用任一個 AMBIENTMATERIALSOURCE 選項，且未提供頂點色彩，則會使用材料環境色彩。
+**注意：** 如果使用任一個 AMBIENTMATERIALSOURCE 選項時，並且未提供頂點色彩，則會使用材料環境色彩。
 
- 
+ 
 
 若要使用材料環境色彩，請使用下方範例程式碼所示的 SetMaterial。
 
@@ -89,9 +87,9 @@ Ambient.a = 0.0f;
 
 [光源的數學計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

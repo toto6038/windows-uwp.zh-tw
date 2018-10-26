@@ -6,19 +6,18 @@ ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, directx, 資源, 影像
-ms.openlocfilehash: 1aeb4ef581254ae914efae4bc38853611dbde488
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209278"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567703"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>設定 DirectX 資源及顯示影像
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 我們將在此處示範如何建立 Direct3D 裝置、交換鏈結和轉譯目標檢視，以及如何將轉譯的影像呈現到顯示器。
 
@@ -233,7 +232,7 @@ ms.locfileid: "209278"
 由於我們之前已將最大框架延遲設定為 1，因此 Windows 通常會將轉譯迴圈速度減慢到螢幕的重新整理頻率，一般大約為 60 Hz。 Windows 會在應用程式呼叫 [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) 時，讓應用程式進入睡眠模式，以減慢轉譯迴圈速度。 Windows 會讓應用程式保持在睡眠模式，直到螢幕重新整理為止。
 
 ```cpp
-        // Enter the render loop.  Note that Windows Store apps should never exit.
+        // Enter the render loop.  Note that UWP apps should never exit.
         while (true)
         {
             // Process events incoming to the window.
@@ -288,9 +287,9 @@ ms.locfileid: "209278"
 
 [建立著色器及繪製基本型別](creating-shaders-and-drawing-primitives.md)
 
- 
+ 
 
- 
+ 
 
 
 

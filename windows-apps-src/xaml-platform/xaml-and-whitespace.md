@@ -6,24 +6,23 @@ ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 88d4b155acb38a3ab11cc180d112fb3434af87a0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 560f820ec2ecc7f28145ec29c31a60c1e4573d7e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210352"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565425"
 ---
 # <a name="xaml-and-whitespace"></a>XAML 與空格
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解 XAML 使用的空格處理規則。
 
 ## <a name="whitespace-processing"></a>空格處理
 
-與 XML 一樣，XAML 中的空格字元為空格、換行字元及 Tab。 這些分別對應於 Unicode 值 0020、000A 以及 0009。 根據預設值，當 XAML 處理器處理在 XAML 檔案的元素之間發現的任何內部文字時，會執行下列空格正規化：
+與 XML，在 XAML 中的空格字元為空格、 換行字元及 tab。這些分別對應於 Unicode 值 0020、 000A 以及 0009。 根據預設值，當 XAML 處理器處理在 XAML 檔案的元素之間發現的任何內部文字時，會執行下列空格正規化：
 
 -   東亞字元之間的換行字元會被移除。
 -   所有空格字元 (空格、換行字元及 Tab) 會轉換成空格。

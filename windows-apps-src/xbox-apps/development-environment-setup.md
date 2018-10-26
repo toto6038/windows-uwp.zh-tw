@@ -5,17 +5,15 @@ description: 在 Xbox 開發環境上設定並測試 UWP 的步驟。
 ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: f2b8792832bd4014732ee0535ccaa74b2a3e00d3
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689864"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568660"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 開發環境上設定 UWP
 
@@ -27,7 +25,7 @@ Xbox 開發環境上的通用 Windows 平台 (UWP) 包含透過區域網路連�
 
 ## <a name="visual-studio-setup"></a>Visual Studio 安裝
 
-1. 安裝 Visual Studio 2017 或 Visual Studio 2015 Update 3。 如需詳細資訊及如何安裝，請參閱[適用於 Windows 10 的下載項目與工具](https://dev.windows.com/downloads)。
+1. 安裝 Visual Studio 2017、 Visual Studio 2015 Update 3 或最新版本的 Visual Studio。 如需詳細資訊及如何安裝，請參閱[適用於 Windows 10 的下載項目與工具](https://dev.windows.com/downloads)。 我們建議您使用最新版的 Visual Studio，以便您可以接收最新的更新適用於開發人員和安全性。
 
 2. 如果要安裝 Visual Studio 2017，請確定您選擇 **\[通用 Windows 平台開發\]** 工作負載。 如果您是 C++ 開發人員，請務必也選取右側**\[摘要\]** 中的**\[C++ 通用 Windows 平台工具\]** 核取方塊 (在**\[通用 Windows 平台開發\]** 底下)。 這不是預設安裝的一部分。
 

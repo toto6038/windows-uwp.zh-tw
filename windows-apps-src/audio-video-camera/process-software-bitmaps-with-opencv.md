@@ -6,16 +6,14 @@ title: 使用 OpenCV 處理點陣圖
 ms.author: lahugh
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: f92d9765febab1252a954d0aebd634235a699561
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: b9f1f2050590267d0a98779eba11bbe0b363da0c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1689714"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565973"
 ---
 # <a name="process-bitmaps-with-opencv"></a>使用 OpenCV 處理點陣圖
 
@@ -103,9 +101,9 @@ ms.locfileid: "1689714"
 
 * [BitmapEncoder 選項參考](bitmapencoder-options-reference.md)
 * [影像中繼資料](image-metadata.md)
- 
+ 
 
- 
+ 
 
 
 

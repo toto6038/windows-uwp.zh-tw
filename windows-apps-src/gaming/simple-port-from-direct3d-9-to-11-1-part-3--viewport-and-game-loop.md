@@ -6,16 +6,14 @@ ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 移植, 遊戲迴圈, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: baf230559ebeb285d5faa3e2de8e38b355638070
-ms.sourcegitcommit: 842ddba19fa3c028ea43e7922011515dbeb34e9c
-ms.translationtype: HT
+ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/05/2018
-ms.locfileid: "1488842"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569418"
 ---
 # <a name="port-the-game-loop"></a>移植遊戲迴圈
 
@@ -37,9 +35,9 @@ ms.locfileid: "1488842"
 
 UWP 環境現在提供一個更簡單的系統。 使用 DirectX 的 Microsoft Store 遊戲會實作 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)，而不是設定傳統視窗。 為了 DirectX App 與遊戲存在的這個介面，可直接在應用程式容器內的 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 中執行。
 
-> **注意**  Windows 會將受管理的指標提供給諸如來源應用程式物件與 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 的資源。 請參閱[**物件控制代碼運算子 (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
+> **注意：**  Windows 會提供受管理的指標，例如來源應用程式物件和[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)的資源。 請參閱 [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx。
 
- 
+ 
 
 您的 "main" 類別需要繼承自 [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)，並實作五種 **IFrameworkView** 方法：[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 及 [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)。 除了建立 **IFrameworkView** (這 (基本上) 將是您遊戲所在的位置)，您還需要實作 Factory 類別，以建立 **IFrameworkView** 的執行個體。 您的遊戲仍含有名稱為 **main()** 方法的可執行檔，但是所有的 main 都會使用 Factory 來建立 **IFrameworkView** 執行個體。
 
@@ -141,9 +139,9 @@ DirectX UWP 範本包含可靠的 Direct3D 裝置基礎結構，且已準備好�
 -   [遊戲的音訊](working-with-audio-in-your-directx-game.md)
 -   [適用於遊戲的移動視角控制項](tutorial--adding-move-look-controls-to-your-directx-game.md)
 
- 
+ 
 
- 
+ 
 
 
 

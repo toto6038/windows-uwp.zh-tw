@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cc30dbd9fd501d310bb037726414356354af294
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 9bffed44921df05a72025e86917901a65fe7ea82
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653417"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565438"
 ---
 # <a name="rotation"></a>旋轉
 
@@ -48,8 +46,7 @@ ms.locfileid: "1653417"
 
 ![示範旋轉所支援的各種手指姿勢的圖。](images/ux-rotate-positions.png)
 
-**注意**  
-在直覺上，以及在大部分情況下，旋轉點是指兩個觸碰點的其中一點，除非使用者能夠指定一個與接觸點不相關的旋轉點 (例如，在繪圖或配置應用程式中)。 下列影像示範未以這樣的方式限制旋轉點時，會如何對使用者經驗產生負面影響。
+**注意：** 直覺，以及在大部分情況下，旋轉點是兩個觸控點的其中一個除非使用者可以指定一個與接觸點 （例如，在繪圖或配置應用程式） 不相關的旋轉點。 下列影像示範未以這樣的方式限制旋轉點時，會如何對使用者經驗產生負面影響。
 
 第一張圖片顯示初始 (拇指) 和次要 (食指) 觸碰點：食指觸碰一顆樹，而拇指觸碰一段木材。
 
@@ -64,9 +61,9 @@ ms.locfileid: "1653417"
 
 ![顯示旋轉後圖片的影像，其中旋轉點被限制為圖片最左邊的中心，而非兩個初始觸碰點的其中一點。](images/ux-rotate-points4.png)
 
- 
+ 
 
-Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
+Windows8 支援三種旋轉類型： 自由式、 限制式以及組合式。
 
 <table>
 <colgroup>
@@ -93,16 +90,16 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 <td align="left">組合式旋轉</td>
 <td align="left"><p>組合式旋轉支援依區域 (類似於<a href="guidelines-for-panning.md">移動瀏覽的指導方針</a>中的柵欄) 進行自由式旋轉，每個區域皆使用限制式旋轉所強制的 90 度貼齊點。 如果使用者在其中一個 90 度區域之外放開物件，物件會留在該位置；否則，物件會自動旋轉到一個貼齊點。</p>
 <div class="alert">
-<strong>注意</strong>  使用者介面滑軌是項功能，其中目標周遭的區域會限制對部分特定值或位置的移動，以影響其選取範圍。
+<strong>注意：</strong>使用者介面滑軌是項的功能，其中目標周遭的區域會限制對部分特定值或位置，以影響其選取範圍移動。
 </div>
 <div>
- 
+ 
 </div></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 
@@ -122,9 +119,9 @@ Windows 8 支援三種旋轉類型：自由式、限制式以及組合式。
 * [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

@@ -9,15 +9,13 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e8abeb4cb690f39a5d9145c3975edbb5a5252765
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: 7ce8146cc952d22eb0aa365be707cbd2cef7aabf
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1654517"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567788"
 ---
 # <a name="speech-recognition"></a>語音辨識
 
@@ -53,7 +51,7 @@ ms.locfileid: "1654517"
 
     網頁搜尋文法類似聽寫文法，包含大量使用者可能說出的字詞與片語。 不過，已將它最佳化，可辨識使用者在搜尋 Web 時常用的詞彙。
 
-    **注意** 由於預先定義的聽寫和網頁搜尋文法可能相當龐大，且因為是在線上 (並非在裝置上)，因此，效能可能不及安裝在裝置上的自訂文法快速。     
+    **注意：** 因為預先定義的聽寫和網頁搜尋文法可能很大，且因為是在線上 （不在裝置上），效能可能不一樣的裝置上安裝自訂文法快速。     
 
     這些預先定義的文法可用來辨識最多 10 秒鐘的語音輸入，而您不需要花費任何編寫的精力。 但是，它們需要連線到網路。
 
@@ -104,10 +102,10 @@ ms.locfileid: "1654517"
 
     使用語音命令定義 (VCD) XML 檔案，定義使用者在啟用您 app 時可以說出以起始動作的命令。 如需詳細資訊，請參閱[利用 Cortana 語音命令啟動前景 app](https://msdn.microsoft.com/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana)。
 
-**注意** 要使用哪種類型的限制式，取決於您想建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
+**注意：** 您使用哪種類型的限制式，取決於您想要建立的辨識體驗的複雜度。 任一種都可能是特定辨識工作的最佳選擇，您也許會找到所有限制式類型在您 app 中的用途。
 若要開始使用條件約束，請參閱[定義自訂辨識條件約束](define-custom-recognition-constraints.md)。
 
- 
+ 
 
 預先定義的通用 Windows app 聽寫文法可以辨識一個語言中大部分的字詞和簡短片語。 將語音辨識器物件具現化而沒有搭配自訂限制式時，預設會啟用該預先定義的聽寫文法。
 
@@ -201,9 +199,9 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 * [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
 **範例**
 * [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+ 
 
- 
+ 
 
 
 

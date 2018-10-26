@@ -5,15 +5,15 @@ description: 了解如何以程式設計方式存取 Xbox Live 沙箱。
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
-ms.openlocfilehash: d31c943336b36c325218b0b2a8830daf54ed25ca
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210312"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569619"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙箱 API 參考   
 您可以使用此 REST API 取得並設定您的 Xbox Live 沙箱。

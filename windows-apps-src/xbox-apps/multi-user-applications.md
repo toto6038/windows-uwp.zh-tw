@@ -2,18 +2,18 @@
 author: Mtoepke
 title: 多使用者應用程式的簡介
 description: Xbox 多使用者模型的簡單高階簡介。
-ms.author: mtoepke
+ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 2dde6ed3-7f53-48a6-aebe-2605230decb8
-ms.openlocfilehash: b150b50c1072a96ae0017bae848eeff94bb07ce0
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 7534b6764bc98c415b557d100d869df186453626
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210436"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568107"
 ---
 # <a name="introduction-to-multi-user-applications"></a>多使用者應用程式的簡介
 

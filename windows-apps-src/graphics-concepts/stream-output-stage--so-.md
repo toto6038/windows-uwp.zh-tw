@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c3ed335360d7b259c045722b65bb08a71b6e0c
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: a86aa5a78bc4df9deaeea239356345c33736d942
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044037"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568841"
 ---
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 
@@ -47,7 +45,7 @@ ms.locfileid: "1044037"
 
 資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段（例如幾何著色器 (GS) 階段）輸出（串流）到記憶體中的一或多個緩衝區。 如果幾何著色器 (GS) 階段非使用中，資料流輸出 (SO) 階段會持續將頂點資料從網域著色器 (DS) 階段輸出到記憶體中的緩衝區（如果 DS 也是非使用中，則從頂點著色器 (VS) 階段輸出）。
 
-當三角形或線條的區域有繫結至輸入 Assembler (IA-64) 階段時，每個區域就會轉換成清單才會進行資料流處理它們取出。頂點永遠以完成基本項目 （例如 3 個頂點三角形一次）; 撰寫不完整的基本出會永遠不進行資料流處理。具有相鄰關係的基本類型捨棄相鄰關係資料前資料流出的資料。
+當三角形或帶狀繫結至輸入組合語言 (IA) 階段時，每個連環轉換為清單在串流輸出之前。頂點永遠寫為完整的基本類型 (例如，3 個頂點的三角形，一次）;不完整的基本類型永遠不會串流輸出。具相鄰關係的基本類型資料流輸出資料之前，會先捨棄相鄰資料。
 
 資料流輸出階段同時支援最多 4 個緩衝區。
 
@@ -59,9 +57,9 @@ ms.locfileid: "1044037"
 
 [圖形管線](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

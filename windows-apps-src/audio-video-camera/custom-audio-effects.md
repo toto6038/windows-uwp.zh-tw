@@ -5,17 +5,15 @@ title: 自訂音訊效果
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.assetid: 360faf3f-7e73-4db4-8324-3391f801d827
 ms.localizationpriority: medium
-ms.openlocfilehash: 576277ab4bf3d2ea3bfe679da4039da194aabb70
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: a9c62dac489be07a08acc4ad17ecb79bcc54f57a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843258"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565106"
 ---
 # <a name="custom-audio-effects"></a>自訂音訊效果
 
@@ -88,7 +86,7 @@ ms.locfileid: "1843258"
 > 2.  選取 **\[建置\]** 索引標籤。
 > 3.  選取 **\[允許 Unsafe 程式碼\]** 核取方塊。
 
- 
+ 
 
 現在您可以將 **ProcessFrame** 方法實作新增到效果。 首先，此方法會同時從輸入和輸出音訊框架取得 [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.AudioBuffer) 物件。 請注意，輸出框架會針對寫入開啟，而輸入框架則會針對讀取開啟。 接下來，將會透過呼叫 [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn949046) 來為每個緩衝區取得 [**IMemoryBufferReference**](https://msdn.microsoft.com/library/windows/apps/dn921671)。 然後，透過將 **IMemoryBufferReference** 物件轉型為 **IMemoryByteAccess** (於上方定義的 COM interop 介面)，然後呼叫 **GetBuffer**，來取得實際的資料緩衝區。
 
@@ -157,7 +155,7 @@ ms.locfileid: "1843258"
 * [Win2D 文件](http://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒體播放](media-playback.md)
 
- 
+ 
 
 
 

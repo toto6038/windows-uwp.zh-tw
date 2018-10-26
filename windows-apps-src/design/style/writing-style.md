@@ -6,15 +6,13 @@ keywords: UWP, Windows 10, text, writing, voice, tone, design, UI, UX, 文字, �
 ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a2feb7f21f9a307632b08714ff617a4ce3aa649
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 8022b3bb5ca312be259c554f46dc9f432ea3caeb
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843288"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571483"
 ---
 # <a name="writing-style"></a>撰寫方式
 
@@ -42,25 +40,46 @@ ms.locfileid: "1843288"
 
 使用者必須在一瞥之下就能閱讀並了解您的文字。 不要用不必要的介紹來裝填文字。 讓關鍵要點最顯而易見，一律最先呈現概念的核心。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) 選取 **\[濾鏡]\** 在您的影像加入效果。
-:::欄結束::: :::欄::: ![禁止事項](images/dont.svg) 如果您想要新增視覺效果或改變影像，請選取 **\[濾鏡\]**。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        Select **filters** to add effects to your image.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        If you want to add visual effects or alterations to your image, select **filters.**
+    :::column-end:::
+:::row-end:::
 
 ## <a name="emphasize-action"></a>強調動作
 
 應用程式由動作來定義。 使用者在使用應用程式時會採取動作，而應用程式會採取動作來回應使用者。 請確定您的文字在整個應用程式中都使用*主動語態*。 應該將人物和功能描述為正在執行動作，而不是這些動作由他們完成。
 
-:::列::: :::欄::: ![可行事項](images/do.svg)重新啟動應用程式以查看您的變更。
-:::欄結束::: :::欄::: ![禁止事項](images/dont.svg) 當應用程式重新啟動時，將會套用所做的變更。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        Restart the app to see your changes.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        The changes will be applied when the app is restarted.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="short-and-sweet"></a>短而甜
 
 使用者會掃視文字，通常會整個忽略較大的文字區塊。 不需犧牲必要的資訊和呈現，但不要使用超過所需的文字量。 有時候，這表示傾向採用許多短句子或片段。 其他時候，這表示要對較長句子的文字和結構更加挑剔。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) 我們無法上傳圖片。 如果再度發生這種情況，請嘗試重新啟動應用程式。 但請不要擔心 — 當您回來時，您的圖片已經準備好了。
-:::欄結束::: :::欄::: ![禁止事項](images/dont.svg)發生錯誤，我們無法上傳圖片。 請再試一次，如果再次遇到這個問題，您可能需要重新啟動應用程式。 但不用擔心 — 我們已經將您的工作儲存在本機上，當您回來時，它已經準備好了。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        We couldn't upload the picture. If this happens again, try restarting the app. But don't worry — your picture will be waiting when you come back.
+    :::column-end:::
+    :::column:::
+        ![Don't](images/dont.svg)
+        An error occured, and we weren't able to upload the picture. Please try again, and if you encounter this problem again, you may need to restart the app. But don't worry — we've saved your work locally, and it'll be waiting for you when you come back.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="style-conventions"></a>風格慣例
 
@@ -73,8 +92,14 @@ ms.locfileid: "1843288"
 * 使用「我們」代表您自己的觀點。 語氣應該是熱情的，並且可讓使用者感受屬於體驗的一部份。
 * 不要使用「我」來指稱應用程式的觀點，即使應用程式的創作者只有您一人。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) 我們無法將您的檔案儲存到該位置。
-:::欄結束::: :::欄::: :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        We couldn't save your file to that location.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="abbreviations"></a>縮寫 (Abbreviations)
 
@@ -84,8 +109,14 @@ ms.locfileid: "1843288"
 * 不要使用與其他縮寫太過類似的縮寫。
 * 如果您當地語系化了您的應用程式，或者如果您的使用者使用英文為第二個語言，則請勿使用縮寫。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) 通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 運用每個 UWP app 中所包含的設計功能，您可以建置可在一系列裝置上縮放的使用者介面 (UI)。
-:::欄結束::: :::欄::: :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        The Universal Windows Platform (UWP) design guidance is a resource to help you design and build beautiful, polished apps. With the design features that are included in every UWP app, you can build user interfaces (UI) that scale across a range of devices.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="contractions"></a>縮寫 (Contractions)
 
@@ -93,8 +124,14 @@ ms.locfileid: "1843288"
 * 請依使用習慣，自然使用縮寫即可。
 * 不要為了節省空間而使用不常見的縮寫，或讓您的措辭感覺不自然。
 
-:::列::: :::欄::: ![可行事項](images/do.svg)當您滿意您的影像，請按 **\[儲存\]** 將它新增到您的影像中心。 在那裡，您可以將它分享給朋友。
-:::欄結束::: :::欄::: :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        When you're happy with your image, select **save** to add it to your gallery. From there, you'll be able to share it with friends.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="periods"></a>句點
 
@@ -102,12 +139,18 @@ ms.locfileid: "1843288"
 * 在工具提示、錯誤訊息和對話方塊中，使用句點來結束完整的句子。
 * 按鈕、選項按鈕、標籤或核取方塊的文字不要使用句點。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) <b>您未連接。</b>
-* 請檢查網路纜線是否插上。
-* 請確定您不是處於飛航模式。
-* 查看無線開關是否已開啟。
-* 將路由器重新開機。
-:::欄結束::: :::欄::: :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>You’re not connected.</b>
+        * Check that your network cables are plugged in.
+        * Make sure you're not in airplane mode.
+        * See if your wireless switch is turned on.
+        * Restart your router.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ### <a name="capitalization"></a>大寫
 
@@ -115,11 +158,17 @@ ms.locfileid: "1843288"
 * 專有名詞應大寫。
 * 應用程式中每個文字字串的開頭 - 每個句子、標籤和標題的開頭 - 要大寫。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) <b>哪個部分發生問題？</b>
-* 我忘記密碼。
-* 系統不接受密碼。
-* 可能有其他人正在使用我的帳戶。
-:::欄結束::: :::欄::: :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>Which part is giving you trouble?</b>
+        * I forgot your password.
+        * It won't accept password.
+        * Someone else might be using my account.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 ## <a name="error-messages"></a>錯誤訊息
 
@@ -133,16 +182,24 @@ ms.locfileid: "1843288"
 
 * **簡潔而清楚**，排除無關的資訊。
 
-:::列::: :::欄::: ![可行事項](images/do.svg) <b>您未連接。</b>
-* 請檢查網路纜線是否插上。
-* 請確定您不是處於飛航模式。
-* 查看無線開關是否已開啟。
-* 將路由器重新開機。
-:::欄結束::: :::欄::: :::欄結束::: :::列結束::: 
+:::row:::
+    :::column:::
+        ![Do](images/do.svg)
+        <b>You’re not connected.</b>
+        * Check that your network cables are plugged in.
+        * Make sure you're not in airplane mode.
+        * See if your wireless switch is turned on.
+        * Restart your router.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end::: 
 
 ## <a name="dialogs"></a>對話方塊
 
-:::列::: :::欄::: 撰寫錯誤訊息的許多建議也同樣適用於為您的應用程式建立任何對話方塊的文字。 即使使用者已預期會出現對話方塊，但對話方塊仍會中斷應用程式的一般流程，因此內容必須精簡有幫助，讓使用者能夠返回原本所進行的活動。
+:::row:::
+    :::column:::
+        Many of the same advice for writing error messages also applies when creating the text for any dialogs in your app. While dialogs are expected by the user, they still interrupt the normal flow of the app, and need to be helpful and concise so the user can get back to what they were doing.
 
         But most important is the "call and response" between the title of a dialog and its buttons. Make sure that your buttons are clear answers to the question posed by the title, and that their format is consistent across your app.
     :::column-end:::
@@ -153,13 +210,21 @@ ms.locfileid: "1843288"
         2. It won't accept my password
         3. Someone else might be using my account
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
 ## <a name="buttons"></a>按鈕
 
-:::列::: :::欄::: 按鈕上的文字必須夠簡潔，讓使用者一眼就能讀完，也必須夠清楚，讓按鈕的功能顯而易見。 按鈕上文字的長度上限應該只是幾組簡短文字，大部分時候應該更短。
-撰寫按鈕的文字時，請記住每個按鈕代表一個動作。 按鈕的文字請務必使用*主動語態*，並使用代表動作 (而非反應) 的文字。
-:::欄結束::: :::欄::: ![可行事項](images/do.svg) * 立即安裝 * 共用 :::欄結束:: :::列結束:::
+:::row:::
+    :::column:::
+        Text on buttons needs to be concise enough that users can read it all at a glance and clear enough that the button's function is immediately obvious. The longest the text on a button should ever be is a couple short words, and many should be shorter than that.
+        When writing the text for buttons, remember that every button represents an action. Be sure to use the *active voice* in button text, to use words that represent actions rather than reactions.
+    :::column-end:::
+    :::column:::
+        ![Do](images/do.svg)
+        * Install now
+        * Share
+    :::column-end:::
+:::row-end:::
 
 ## <a name="spoken-experiences"></a>口語體驗
 

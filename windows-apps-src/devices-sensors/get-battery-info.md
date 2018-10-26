@@ -6,16 +6,14 @@ description: 了解如何使用 Windows.Devices.Power 命名空間中的 API 取
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c191a9f2da29f0ad10d0ba61507873b4fd652ddc
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: c745b99104495b4d0b3c60202c378285dbfdd7b6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959073"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565349"
 ---
 # <a name="get-battery-information"></a>取得電池資訊
 
@@ -32,7 +30,7 @@ ms.locfileid: "959073"
 
 有些裝置有一個以上的電池，每個電池對裝置整體電源容量貢獻多少電力不一定顯而易見。 這時就需要使用 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) 類別。 *彙總電池*代表所有連接到裝置的電池控制器，可以提供單一整體的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件。
 
-**注意**  [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) 類別實際上對應到電池控制器。 根據裝置而定，控制器有時連接到實體電池，有時連接到裝置外殼。 因此，即使沒有電池，也有可能可以建立電池物件。 但有些時候，電池物件可能是 **Null**。
+**注意：**[**電池**](https://msdn.microsoft.com/library/windows/apps/Dn895004)類別實際上對應到電池控制器。 根據裝置而定，控制器有時連接到實體電池，有時連接到裝置外殼。 因此，即使沒有電池，也有可能可以建立電池物件。 但有些時候，電池物件可能是 **Null**。
 
 一旦您有彙總電池物件，請呼叫 [**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) 取得對應的 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)。
 
@@ -340,7 +338,7 @@ namespace App1
 
 最後，若要執行此基本電池 app：在 [**偵錯**] 功能表中，按一下 [**開始偵錯**] 來測試方案。
 
-**提示**  若要從 [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) 物件接收數值，請在**本機電腦**或外部**裝置** (例如 Windows Phone) 偵錯您的應用程式。 在裝置模擬器上偵錯時，**BatteryReport** 物件會傳回 **Null** 到容量和速率屬性。
+**提示：** 若要從[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)物件接收數值，偵錯您的應用程式在**本機電腦**或外部**裝置**（例如 Windows Phone) 上。 在裝置模擬器上偵錯時，**BatteryReport** 物件會傳回 **Null** 到容量和速率屬性。
 
- 
+ 
 

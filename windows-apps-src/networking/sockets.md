@@ -6,16 +6,14 @@ ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ms.author: stwhi
 ms.date: 06/03/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 31d05f57c674b7b882cf3494e8fb29611963f83c
-ms.sourcegitcommit: ce45a2bc5ca6794e97d188166172f58590e2e434
-ms.translationtype: HT
+ms.openlocfilehash: 9e0e73f4224b1577a5219d239f8c11bf5ecc0b73
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "1983479"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565669"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
@@ -1206,7 +1204,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-下一個範例適用於任何 UWP 語言，不只適用於 C#。 它依賴[**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)和[**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream)中一起批次傳送的行為。 此技巧在該輸出資料流上呼叫[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)，在 Windows 10，這保證只在輸出資料流上的所有作業都完成之後傳回。
+下一個範例適用於任何 UWP 語言，不只適用於 C#。 它依賴[**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)和[**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream)中一起批次傳送的行為。 技術上該輸出資料流，在 windows 10，這保證只在輸出資料流上的所有作業都完成之後傳回呼叫[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) 。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1280,7 +1278,7 @@ private:
 
 -   在非同步寫入完成之前，您無法對正在寫入的 **IBuffer** 執行個體修改內容。
 -   **FlushAsync** 模式只適用於 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
--   **FlushAsync** 模式只適用於 Windows 10 和後續版本。
+-   **FlushAsync**模式只適用於 windows 10 和後續版本。
 -   在其他情況下，請改用 [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___)，而不要使用 **FlushAsync** 模式。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的連接埠共用

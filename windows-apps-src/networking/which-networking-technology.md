@@ -6,16 +6,14 @@ title: 哪一種網路功能技術？
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ac6eb26c13d8fca3196fa64bfce2bb76f9d1b2
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 3c617f3ec6d189f3ee75fcf2fd0ff96d386ec32c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "975600"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570483"
 ---
 # <a name="which-networking-technology"></a>哪一種網路功能技術？
 
@@ -73,7 +71,7 @@ ms.locfileid: "975600"
 
 當您想要可靠地透過網路傳輸檔案時，請使用[背景傳輸 API](background-transfers.md)。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 當您的應用程式執行於行動裝置或電池供電的裝置時，會用到這些功能。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
 
-Windows 10 中新增的背景傳輸功能，是能夠在檔案傳輸完成時觸發後續處理，以便您更新本機目錄、啟用其他應用程式，或在下載完成時通知使用者。
+Windows 10 中的新背景傳輸功能是能夠在檔案傳輸完成時，以便您可以更新本機目錄、 啟用其他應用程式，或在下載完成時通知使用者時觸發後續處理。
 
 ### <a name="when-to-use-background-transfers"></a>使用背景傳輸的時機
 
@@ -131,7 +129,7 @@ Windows 10 中新增的背景傳輸功能，是能夠在檔案傳輸完成時觸
 
 ### <a name="mobile-operators"></a>電信業者
 
-Windows 10 為廣泛的開發人員對象公開了一些先前僅公開給裝置製造商和電信業者的 API。 請注意，雖然這些 API 現已公開，但仍受控於在應用程式發行之前必須先由 Microsoft 核准的特定應用程式功能。 這些 API 的實際使用，主要仍將受限於裝置製造商和電信業者。
+Windows 10 為廣泛的開發人員對象公開先前僅公開給裝置製造商和電信業者的某些 Api。 請注意，雖然這些 API 現已公開，但仍受控於在應用程式發行之前必須先由 Microsoft 核准的特定應用程式功能。 這些 API 的實際使用，主要仍將受限於裝置製造商和電信業者。
 
 ### <a name="network-operations"></a>網路作業
 

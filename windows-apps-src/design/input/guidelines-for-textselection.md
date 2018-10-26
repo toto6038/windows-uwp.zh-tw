@@ -9,15 +9,13 @@ keywords: 鍵盤、文字、輸入、使用者互動
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d90cdac94f4eafa153de161a338b9d4c7bf5e
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: c0bc236fd3e9e37a759f83e3f24bfcad4817f068
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653887"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564366"
 ---
 # <a name="selecting-text-and-images"></a>選取文字和影像
 
@@ -51,20 +49,20 @@ ms.locfileid: "1653887"
 
 **考量與建議**
 
-使用 Windows 語言架構公開的內建控制項，建立提供完整平台使用者互動經驗 (包括選取和操作行為) 的應用程式。 您會發現內建控制項的互動功能足以滿足絕大多數的 UWP 應用程式。
+使用內建控制項提供完整平台使用者互動體驗，包括選取和操作行為 Windowsto 建置應用程式中的語言架構公開。 您會發現內建控制項的互動功能足以滿足絕大多數的 UWP 應用程式。
 
 使用標準 UWP 文字控制項時，將無法自訂本主題中所描述的選取行為和視覺效果。
 
 **文字選取**
 
-如果應用程式需要可支援文字選取的自訂 UI，建議您依循此處描述的 Windows 選取行為。
+如果您的應用程式需要可支援文字選取的自訂 UI，我們建議您依循此處所述 Windowsselection 行為。
 
 **可編輯和不可編輯的內容**
 
 
-使用觸控時，選取互動主要是透過手勢來執行的，例如點選來設定插入游標，或選取一個文字並滑動來修改選取範圍。 就像其他 Windows 觸控互動，計時互動也僅限於顯示資訊 UI 的長按手勢。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
+使用觸控時，選取互動主要是透過手勢來執行的，例如點選來設定插入游標，或選取一個文字並滑動來修改選取範圍。 如同其他 Windowstouch 的互動，計時的互動會被限制在按下按住不放以顯示資訊 UI 的手勢。 如需詳細資訊，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
-Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯；然後可以根據狀態來調整選取 UI、回饋以及功能。
+Windowsrecognizes 兩個可能的選取項目互動，可編輯和不可編輯; 狀態，並據此調整選取 UI、 回饋以及功能。
 
 **可編輯的內容**
 
@@ -82,9 +80,9 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 
 ![在選取範圍內或在移駐夾上進行點選 (或長按)，以叫用操作功能表。](images/textselection-show-context.png)
 
-**備註** 針對文字拼錯的情況，這些互動會表現得有些不同。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
+**注意：** 這些互動有些文字拼錯的情況不同。 點選標示為拼錯的文字會將整個文字反白，並叫用建議拼法操作功能表。
 
- 
+ 
 
 **不可編輯的內容**
 
@@ -130,9 +128,9 @@ Windows 可以辨識兩種可能的選取互動狀態：可編輯和不可編輯
 * [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

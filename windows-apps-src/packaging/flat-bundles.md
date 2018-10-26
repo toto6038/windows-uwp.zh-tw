@@ -5,16 +5,14 @@ description: 描述如何建立一般套件組合，使用應用程式套件的�
 ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, 封裝, 套件設定, 一般套件組合
 ms.localizationpriority: medium
-ms.openlocfilehash: 63206619d75bedb92ad6c6d05c3188272c0760de
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: b877996dd5fa32ac764fb587092f501320931527
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5480255"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567011"
 ---
 # <a name="flat-bundle-app-packages"></a>一般套件組合應用程式套件 
 

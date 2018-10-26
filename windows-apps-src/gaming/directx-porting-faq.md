@@ -6,19 +6,18 @@ ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, DirectX 11
-ms.openlocfilehash: 7dda21925e31785e0ce7c3dfc72ba173b8686743
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209236"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567200"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常見問題集
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 將遊戲移植到通用 Windows 平台 (UWP) 的常見問題集解答。
@@ -47,10 +46,10 @@ Direct3D 11 是 Direct3D 9 的重要升級。 當中有很多範例改變，包�
 
 [DirectX 工具組 (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) 社群專案提供可搭配 Direct3D 11 使用的協助程式類別。
 
-##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-windows-store"></a>要如何維護傳統型與 Windows 市集的程式碼路徑？
+##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>我要如何維護傳統型與 Microsoft Store 的程式碼路徑？
 
 
-Chuck Walbourn 的系列文章[遊戲的兩用程式碼編寫技巧](http://go.microsoft.com/fwlink/p/?LinkID=286210) (英文) 提供在傳統型與 Windows 市集程式碼路徑間共用程式碼的指引。
+Chuck Walbourn 的系列文章[適用於遊戲的雙用途撰寫程式碼技術](http://go.microsoft.com/fwlink/p/?LinkID=286210)提供在傳統型與 Microsoft Store 的程式碼路徑間共用程式碼的指導方針。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP app 中載入影像資源？
 
@@ -124,7 +123,7 @@ DirectX 10.x 與 11 傳統型遊戲能夠輕易地移植到 UWP。 請參閱 [�
 ## <a name="how-do-i-debug-my-shaders"></a>如何偵錯著色器？
 
 
-Microsoft Visual Studio 2015 包含 DirectX 圖形的診斷工具。 請參閱[偵錯 DirectX 圖形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
+Microsoft Visual Studio2015 包含 DirectX 圖形診斷工具。 請參閱[偵錯 DirectX 圖形](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)。
 
 ##  <a name="what-is-the-direct3d-11-equivalent-for-x-function"></a>*x* 函式的 Direct3D 11 對應功能是什麼？
 
@@ -136,9 +135,9 @@ Microsoft Visual Studio 2015 包含 DirectX 圖形的診斷工具。 請參閱[�
 
 請參閱＜將 DirectX 9 功能對應到 DirectX 11 API＞中的[表面格式對應](feature-mapping.md#surface-format-mapping)。
 
- 
+ 
 
- 
+ 
 
 
 

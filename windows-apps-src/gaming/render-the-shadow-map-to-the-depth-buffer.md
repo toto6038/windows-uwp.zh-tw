@@ -6,19 +6,18 @@ ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d, 遊戲, 轉譯, 陰影圖, 深度緩衝區
-ms.openlocfilehash: 27b7c9a5fb69a19eed5941bf06068d5237ec101e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a73754fef6d87505751460ec134d853c6bca0530
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209040"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570473"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>將陰影圖轉譯為深度緩衝區
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 從光線的視角轉譯，以建立代表陰影體的二維深度圖。 深度圖會為要在陰影中轉譯的空間設定遮罩。 [逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體](implementing-depth-buffers-for-shadow-mapping.md)的第二部分。
@@ -153,9 +152,9 @@ PixelShaderInput main(VertexShaderInput input)
 
 在這個逐步解說的下一個部分，您將了解如何透過[使用深度測試進行轉譯](render-the-scene-with-depth-testing.md)來新增陰影。
 
- 
+ 
 
- 
+ 
 
 
 

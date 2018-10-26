@@ -6,16 +6,14 @@ title: 與系統媒體傳輸控制項整合
 ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 044d8aa8f777f6cb159c3488fdcf81c2b2c48d2d
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: 15d7e3b3e822081a751aa791a76e674b07af8d9d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690294"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569749"
 ---
 # <a name="integrate-with-the-system-media-transport-controls"></a>與系統媒體傳輸控制項整合
 
@@ -84,9 +82,9 @@ ms.locfileid: "1690294"
 * [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
 * [系統媒體傳輸控制項的手動控制項](system-media-transport-controls.md)
 * [Github 上的系統媒體傳輸控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
- 
+ 
 
- 
+ 
 
 
 

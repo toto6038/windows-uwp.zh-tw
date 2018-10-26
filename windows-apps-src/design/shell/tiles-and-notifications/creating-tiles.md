@@ -8,22 +8,20 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bf07375b3ff27f87fb3f19db3f1f33c26c194e6
-ms.sourcegitcommit: eead3c00b27d9f66f79ec08c81a97e91dc1fdb3c
-ms.translationtype: HT
+ms.openlocfilehash: f4388b67335bce497987ab22e3b281cf86e029af
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2018
-ms.locfileid: "1523137"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566169"
 ---
 # <a name="tiles-for-uwp-apps"></a>適用於 UWP app 的磚
 
  
 
-App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。 Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
+App 在 [開始] 功能表上以*磚*的形式顯示。 每個 app 都會有一個磚。 當您在 Microsoft Visual Studio 中建立新的通用 Windows 平台 (UWP) app 專案時，它會包含顯示 app 名稱和標誌的預設磚。Windows 會在第一次安裝 app 時顯示這個磚。 安裝 app 之後，您可以透過通知變更磚的內容。例如，您可以變更磚以傳遞新的資訊 (例如新聞頭條或最新未讀郵件的主旨) 給使用者。
 
 ## <a name="configure-the-default-tile"></a>設定預設磚
 

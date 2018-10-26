@@ -6,16 +6,14 @@ description: 使用 StorageFile.IsAvailable 屬性判斷 Microsoft OneDrive 檔�
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5de157d320b401fdc0e542eb0f1bdc241e2f21
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 87eb93fbc100d143ab9fe75d34bb9c4d2caaf01d
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "459757"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569709"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
 
@@ -51,7 +49,7 @@ ms.locfileid: "459757"
 | 標示為僅限線上存取的 OneDrive 檔案       | True   | 以使用者設定為基礎 | False   |
 | 網路檔案                              | True   | 以使用者設定為基礎 | False   |
 
- 
+ 
 
 下列步驟說明如何判斷檔案目前是否可用。
 

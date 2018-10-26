@@ -1,35 +1,33 @@
 ---
 author: stevewhims
-description: 本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。
-title: Windows Phone Silverlight 和 UWP 命名空間與類別對應
+description: 本主題提供 WindowsPhone Silverlight Api 與其通用 Windows 平台 (UWP) 對等的完整對應。
+title: WindowsPhone Silverlight 至 UWP 命名空間與類別對應
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f7bd31b8157af00817738cb1d224c827acb6ca6
-ms.sourcegitcommit: 929fa4b3273862dcdc76b083bf6c3b2c872dd590
-ms.translationtype: HT
+ms.openlocfilehash: 54118b41fc1f3036dddba9a0cfb8ecd860c1e233
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1935808"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566159"
 ---
-# <a name="windows-phone-silverlight-to-uwp-api-mappings"></a>Windows Phone Silverlight UWP API 對應
+# <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight UWP API 對應
 
 
-本主題提供 Windows Phone Silverlight API 與其通用 Windows 平台 (UWP) 對等 API 的完整對應。 不過，通常沒有一對一的功能對應：這兩個平台在命名空間與類別中都可能有比對方多或少的功能。
+本主題提供 WindowsPhone Silverlight Api 與其通用 Windows 平台 (UWP) 對等的完整對應。 不過，通常沒有一對一的功能對應：這兩個平台在命名空間與類別中都可能有比對方多或少的功能。
 
-當您在 UWP 專案中工作，並重複使用來自 Windows Phone Silverlight 專案的原始程式碼時，對應表格將會對您有幫助。 兩個平台之間的命名空間和類別 (包括 UI 控制項) 的名稱有所不同。 在許多情況下，相當簡單，只要變更命名空間名稱，您的程式碼就會進行編譯。 有時候，除了命名空間名稱之外，類別或 API 名稱也會變更。 其他時候，則需要更費工夫來進行對應，而只有在少數情況下會需要變更方法。
+當您使用 UWP 專案中，當您重新使用來自 WindowsPhone Silverlight 專案的原始程式碼時，對應表格有助於您。 兩個平台之間的命名空間和類別 (包括 UI 控制項) 的名稱有所不同。 在許多情況下，相當簡單，只要變更命名空間名稱，您的程式碼就會進行編譯。 有時候，除了命名空間名稱之外，類別或 API 名稱也會變更。 其他時候，則需要更費工夫來進行對應，而只有在少數情況下會需要變更方法。
 
-如何使用此表格：首先，搜尋您目前使用之類別的名稱。 當只變更命名空間名稱無法達成對應時，就會列出類別。 如果未列出您的類別，則表示只需要變更命名空間即可達成對應。 因此，請尋找您類別的命名空間名稱，然後您就可以找到對等的 UWP 命名空間名稱。 您的類別會在該命名空間中。 如果未列出您的命名空間，則表示它的名稱未變更。
+**如何使用此表格：** 首先，搜尋您目前使用之類別的名稱。 當只變更命名空間名稱無法達成對應時，就會列出類別。 如果未列出您的類別，則表示只需要變更命名空間即可達成對應。 因此，請尋找您類別的命名空間名稱，然後您就可以找到對等的 UWP 命名空間名稱。 您的類別會在該命名空間中。 如果未列出您的命名空間，則表示它的名稱未變更。
 
-**注意** 相較於 Windows Phone 市集 app，Windows 10 支援更多 .NET Framwork 功能。 例如，Windows 10 具有數個 System.ServiceModel.\* 命名空間，以及 System.Net、System.Net.NetworkInformation 與 System.Net.Sockets。
-此外，在 Windows 10 app 中，您將可以從 .NET 原生 (一種事先編譯技術，其將 MSIL 轉換為原生可執行機器碼) 獲得助益。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。
+**注意：** windows 10 支援更多的.NET Framework 比 Windows Phone 市集 app 的功能。 例如，windows 10 具有數個 System.ServiceModel.\* 命名空間，以及 System.Net、 System.Net.NetworkInformation 與 System.Net.Sockets。
+此外，在 windows 10 app 中，您將可以從.NET 原生，其中的事先編譯技術，其將 MSIL 轉換成原生可執行的機器程式碼。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。
 
-| Windows Phone Silverlight | Windows 執行階段 |
+| WindowsPhone Silverlight | Windows 執行階段 |
 | ------------------------- | --------------- |
 | 廣告 | |
 | **Microsoft.Advertising.Mobile.UI.AdControl** 類別 | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 類別 |

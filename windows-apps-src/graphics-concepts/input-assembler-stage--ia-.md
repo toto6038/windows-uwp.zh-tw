@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f2127fb58d3af6015316bb714685159f572d013a
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: def755f868c7ea30679f19877cec84b20faa44f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1652847"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564730"
 ---
 # <a name="input-assembler-ia-stage"></a>輸入組合語言 (IA) 階段
 
@@ -70,16 +68,16 @@ IA 階段將資料組合到基元，並附加系統產生的值，而如同基�
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
 [圖形管線](graphics-pipeline.md)
 
- 
+ 
 
- 
+ 
 
 
 

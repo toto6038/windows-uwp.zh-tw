@@ -6,16 +6,14 @@ ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, DirectX, 陰影體, 深度緩衝區, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 369fd133ffba2947b06a3fc9391979c17973ea52
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653697"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565750"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體
 
@@ -54,12 +52,12 @@ ms.locfileid: "1653697"
 </tbody>
 </table>
 
- 
+ 
 
 ## <a name="shadow-mapping-application-to-direct3d-9-desktop-porting"></a>從陰影貼圖應用程式移植到 Direct3D 9 傳統型應用程式
 
 
-Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在，您可以將轉譯程式碼與陰影體移轉至 DirectX 11，而 Direct3D 11 轉譯器將降級以相容於功能層級 9 的裝置。 此逐步解說示範任何 Direct3D 11 應用程式或遊戲如何使用深度測試來實作傳統的陰影體。 程式碼包含下列程序：
+Windows8 已到功能層級 9 \_1 與 9 \_3 深度比較功能。 現在，您可以將轉譯程式碼與陰影體移轉至 DirectX 11，而 Direct3D 11 轉譯器將降級以相容於功能層級 9 的裝置。 此逐步解說示範任何 Direct3D 11 應用程式或遊戲如何使用深度測試來實作傳統的陰影體。 程式碼包含下列程序：
 
 1.  建立陰影對應的 Direct3D 裝置資源。
 2.  新增轉譯階段以建立深度對應。
@@ -72,7 +70,7 @@ Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在�
 ## <a name="prerequisites"></a>先決條件
 
 
-您應該[為通用 Windows 平台 (UWP) DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要用到範本，但是需要 Microsoft Visual Studio 2015 來建置此逐步解說中的程式碼範例。
+您應該[為通用 Windows 平台 (UWP) DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要範本，但您將需要 Microsoft Visual Studio2015 來建置此逐步解說的程式碼範例。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -87,9 +85,9 @@ Windows 8 已將深度比較功能新增到功能層級 9\_1 與 9\_3。 現在�
 * [改善陰影深度圖的常見技術](https://msdn.microsoft.com/library/windows/desktop/ee416324)
 * [重疊的陰影圖](https://msdn.microsoft.com/library/windows/desktop/ee416307)
 
- 
+ 
 
- 
+ 
 
 
 

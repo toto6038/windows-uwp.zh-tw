@@ -5,16 +5,14 @@ title: UWP app 中的印刷樣式
 ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 505167775b61908be7f47068dbf3221c293f6112
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 62f5aa7d1089b38131c742c588ae741e88197533
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843368"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5565008"
 ---
 # <a name="typography"></a>印刷樣式
 
@@ -30,9 +28,16 @@ ms.locfileid: "1843368"
 
 若要顯示非英文語言或為應用程式選取不同字型，請參閱[語言](#Languages)和[字型](#Fonts)以了解我們對 UWP app 的建議使用字型。
 
-:::列::: :::欄::: ![要](images/do.svg) 為 UI 選擇一種字型。
-:::欄結束::: :::欄::: ![不要](images/dont.svg) 不要混用多種字型。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Pick one font for your UI.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Don't mix multiple fonts.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="size-and-scaling"></a>大小和縮放比例
 
@@ -42,14 +47,27 @@ UWP app 的字型大小會在所有裝置上自動縮放。 此縮放演算法�
 
 因為縮放比例系統的運作方式，您是以有效像素進行設計，而不是實際實體像素，而且您不應根據不同的螢幕大小或解析度來變更字型大小。
 
-:::列::: :::欄::: ![要](images/do.svg) 遵循 UWP [字體坡形](#type-ramp)調整大小。
-:::欄結束::: :::欄::: ![不要](images/dont.svg) 使用小於 12 像素的字型大小。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Follow the UWP [type ramp](#type-ramp) sizing.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use a font size smaller than 12 px.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="hierarchy"></a>階層
 
-:::列::: :::欄::: 使用者在掃視頁面時依賴視覺階層：標頭摘要顯示內容，本文提供更多詳細資料。 若要在應用程式中建立清楚階層，請遵循下列 UWP 字體坡形。
-:::欄結束::: :::欄::: ![文字區塊樣式](images/type/type-hierarchy.svg) :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the UWP type ramp.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/type-hierarchy.svg)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="type-ramp"></a>字體坡形
 
@@ -59,8 +77,14 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
 ### <a name="using-the-type-ramp"></a>使用字體坡形
 
-:::列::: :::欄::: 您可以存取 XAML [靜態資源](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp)形式的字體坡形層級。 樣式遵循 `*TextBlockStyle` 命名慣例。
-:::欄結束::: :::欄::: ![文字區塊樣式](images/type/text-block-type-ramp.svg) :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        You can access levels of the type ramp as XAML [static resources](../controls-and-patterns/xaml-theme-resources.md#the-xaml-type-ramp). The styles follow the `*TextBlockStyle` naming convention.
+    :::column-end:::
+    :::column:::
+        ![text block styles](images/type/text-block-type-ramp.svg)
+    :::column-end:::
+:::row-end:::
 
 ```XAML
 <TextBlock Text="Header" Style="{StaticResource HeaderTextBlockStyle}"/>
@@ -72,7 +96,10 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 ```
 
-:::列::: :::欄::: ![要](images/do.svg) 對大部分文字使用 "Body"。
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Use "Body" for most text.
 
         Use "Base" for titles when space is constrained.
     :::column-end:::
@@ -82,7 +109,7 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
         Use "Header" or "Subheader" if text needs to wrap.
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
 ## <a name="alignment"></a>對齊方式
 
@@ -96,9 +123,16 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 
 ## <a name="character-count"></a>字元計數
 
-:::列::: :::欄::: ![do](images/do.svg) 每行維持 50–60 個字母以利閱讀。
-:::欄結束::: :::欄::: ![不要](images/dont.svg) 每行少於 20 個字元或超過 60 個字元會阻礙閱讀。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Keep to 50–60 letters per line for ease of reading.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Less than 20 characters or more than 60 characters per line is difficult to read.
+    :::column-end:::
+:::row-end:::
 
 ## <a name="clipping-and-ellipses"></a>裁剪和省略符號
 
@@ -110,9 +144,16 @@ UWP 字體坡形可在頁面的類型之間建立重要關係，協助使用者�
 <TextBlock TextWrapping="WrapWholeWords" TextTrimming="Clip"/>
 ```
 
-:::列::: :::欄::: ![要](images/do.svg) 裁剪文字，如果啟用多行則換行。
-:::欄結束::: :::欄::: ![不要](images/dont.svg) 使用省略符號以避免視覺干擾。
-:::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![do](images/do.svg)
+        Clip text, and wrap if multiple lines are enabled.
+    :::column-end:::
+    :::column:::
+        ![don't](images/dont.svg)
+        Use ellipses to avoid visual clutter.
+    :::column-end:::
+:::row-end:::
 
 **注意**：如果容器未明確定義 (例如，沒有區別的背景色彩)，或是有連結可顯示更多文字，則請使用省略符號。
 

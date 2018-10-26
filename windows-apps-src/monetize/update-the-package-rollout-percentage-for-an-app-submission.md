@@ -5,17 +5,15 @@ title: 更新 App 提交的推出百分比
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, Microsoft Store 提交 API, 套件推出, App 提交, 更新, 百分比
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
-ms.openlocfilehash: d39507af310c34621d7a4951e426bc6596284234
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: e943e27275f5938960f673ac68572593cf4ece57
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5513646"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567379"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>更新 App 提交的推出百分比
 

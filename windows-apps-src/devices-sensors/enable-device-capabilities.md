@@ -6,16 +6,14 @@ description: 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝
 ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 693a33bc212f6fe1b35414a20f2a6c44393c0b87
-ms.sourcegitcommit: cd91724c9b81c836af4773df8cd78e9f808a0bb4
-ms.translationtype: HT
+ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "1989442"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566269"
 ---
 # <a name="enable-device-capabilities"></a>啟用裝置功能
 
@@ -28,8 +26,7 @@ ms.locfileid: "1989442"
 
 當您使用特定類型的裝置時，Windows app 需要您在 app 套件資訊清單中指定。 在 Visual Studio 中，您可以使用[資訊清單設計工具](https://msdn.microsoft.com/library/windows/apps/xaml/br230259.aspx)宣告大多數的功能，或是如同[如何在套件資訊清單中指定裝置功能 (手動)](https://msdn.microsoft.com/library/windows/apps/Dn263092) 中所述的方式，手動新增它們。 本教學課程假設您使用的是資訊清單設計工具。
 
-**注意**  
-有些裝置類型 (例如印表機、掃描器和感應器) 不需要在 app 套件資訊清單中宣告。
+**注意：** 某些類型的裝置，例如印表機、 掃描器和感應器，不需要在應用程式套件資訊清單中進行宣告。
 
 -   在 Visual Studio [方案總管] 中，按兩下套件資訊清單檔案 **Package.appxmanifest**。
 -   開啟 **\[功能\]** 索引標籤。

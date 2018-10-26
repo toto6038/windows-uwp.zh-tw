@@ -1,23 +1,22 @@
 ---
-author: mcleblanc
+author: stevewhims
 title: 開始使用，後續動作
 ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
 description: 利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) 應用程式。
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 2ca600085c14c43d9d9d37e80efbae30bae650ef
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f8a6165df7bf839154ede4db3fda8a5e1662880
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209932"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568756"
 ---
 # <a name="getting-started-what-next"></a>開始使用：後續動作？
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 ## <a name="next-steps"></a>後續步驟
 
@@ -32,7 +31,7 @@ ms.locfileid: "209932"
 
 此外，請務必造訪我們的[社群資源](https://developer.microsoft.com/en-us/windows/support)，了解如何取得協助，以及透過開發人員論壇、部落格、開發人員群體及工作室以及當地的 Microsoft 活動和連絡人保持聯繫。
 
-我們認為 Windows 10 將會為您開啟一個新的建置 app 的機會。 我們對於所有您即將建置的絕佳 app 感到非常期待！
+我們認為 windows 10 會開啟一個新為您的建置應用程式的機會。 我們對於所有您即將建置的絕佳 app 感到非常期待！
 
 ## <a name="related-topics"></a>相關主題
 

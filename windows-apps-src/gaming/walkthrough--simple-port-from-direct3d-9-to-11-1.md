@@ -6,16 +6,14 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, directx, 移植, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 97cb8341497ad72ab6b4b4f50a7cfbd7bdb4afb7
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: HT
+ms.openlocfilehash: bd0a8c07be58d670e60aa3a23504d3f5119e6b50
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653097"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569134"
 ---
 # <a name="walkthrough-port-a-simple-direct3d-9-app-to-directx-11-and-universal-windows-platform-uwp"></a>逐步解說：將簡單的 Direct3D 9 app 移植到 DirectX 11 和通用 Windows 平台 (UWP)
 
@@ -50,7 +48,7 @@ ms.locfileid: "1653097"
 </tbody>
 </table>
 
- 
+ 
 
 本主題將逐步解說兩個執行相同基本圖形工作的程式碼路徑：顯示旋轉的頂點著色立方體。 在這兩個案例中，程式碼會涵蓋下列程序：
 
@@ -72,7 +70,7 @@ ms.locfileid: "1653097"
 ## <a name="prerequisites"></a>先決條件
 
 
-您應[為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要用到範本，但是需要 Microsoft Visual Studio 2015 載入這個逐步解說的程式碼範例。
+您應[為 UWP DirectX 遊戲開發準備開發環境](prepare-your-dev-environment-for-windows-store-directx-game-development.md)。 您還不需要範本，但您將需要 Microsoft Visual Studio2015 載入這個逐步解說的程式碼範例。
 
 如需進一步了解這個逐步解說中說明的 DirectX 11 和 UWP 程式設計概念，請瀏覽[移植概念和考量](porting-considerations.md)。
 

@@ -6,16 +6,14 @@ ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 技術, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 496e0f8386b60247090035d4c4d1f7aa986f8560
-ms.sourcegitcommit: 6618517dc0a4e4100af06e6d27fac133d317e545
-ms.translationtype: HT
+ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "1690754"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567577"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>適用於UWP app的遊戲技術
 
@@ -23,12 +21,12 @@ ms.locfileid: "1690754"
 
 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
 
-##  <a name="benefits-of-windows-10-for-game-development"></a>Windows 10 的遊戲開發優勢
+##  <a name="benefits-of-windows10-for-game-development"></a>Windows 10 的遊戲開發優勢
 
 
-在 Windows 10 中引入 UWP，您的 Windows 10 標題將能夠橫跨所有的 Microsoft 平台。 經由從舊版 Windows 免費移轉，Windows 10 用戶端數目將會穩定增加。 組合上述兩項，表示您的 Windows 10 標題將可透過 Microsoft Store 吸引大量的客戶。
+UWP，windows 10 中引進，您的 windows 10 標題將能夠橫跨所有的 Microsoft 平台。 從舊版 Windows 免費移轉，沒有 windows 10 用戶端數目將穩定增加。 組合上述兩項，表示您的 windows 10 標題將能夠吸引大量的客戶透過 Microsoft Store。
 
-此外，Windows 10 提供了許多對遊戲特別實用的新功能：
+此外，windows 10 提供了許多對遊戲特別實用的新功能：
 
 -   減少的記憶體分頁和減少的整體記憶體系統大小
 -   改進的圖形記憶體管理會主動為前景遊戲配置更多的記憶體並提供保護
@@ -41,7 +39,7 @@ ms.locfileid: "1690754"
 ## <a name="development-environment"></a>開發環境
 
 
-若要建立 UWP 遊戲，您需要安裝 Visual Studio 2015 或更高版本以便設定您的開發環境。 Visual Studio 2015 可讓您建立 UWP 應用程式並提供遊戲開發的工具：
+若要建立 UWP 遊戲，您將需要藉由安裝 Visual Studio 2015 或更新版本，設定您的開發環境。 我們建議您安裝最新版的 Visual Studio 中，提供最新的開發和安全性更新您的存取。 Visual Studio 可讓您建立 UWP 應用程式，並提供遊戲開發工具：
 
 -   可供 DX 遊戲程式設計的 Visual Studio 工具 - Visual Studio 提供的工具可用來建立、編輯、預覽及匯出影像、模型及著色器資源。 同時還有工具可讓您在建置期間用來轉換資源和偵錯 DirectX 圖形程式碼。 如需詳細資訊，請參閱[使用 Visual Studio 工具進行遊戲程式設計](set-up-visual-studio-for-game-development.md)。
 -   Visual Studio 圖形診斷功能 - 圖形診斷工具目前已在 Windows 內做為選用功能提供。 診斷工具讓您 進行圖形偵錯、圖形框架分析以及即時監視 GPU 使用量。 如需詳細資訊，請參閱[使用 DirectX 執行階段與 Visual Studio 圖形診斷功能](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)。
@@ -95,7 +93,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 -   2D 圖形與 UI - 與 2D 圖形相關的 API，例如文字和使用者介面。 所有 2D 圖形與 UI API 都是選用的。
 
@@ -138,7 +136,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 -   音訊 - 與播放音訊和套用音訊效果相關的 API。 如需在您的遊戲中使用音訊 API 的詳細資訊，請參閱[遊戲的音訊](working-with-audio-in-your-directx-game.md)。
 
@@ -173,7 +171,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 -   輸入 - 有關從鍵盤、滑鼠、遊戲板及其他使用者輸入來源輸入的 API。
 
@@ -224,7 +222,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 -   數學 - 與簡化常用數學運算相關的 API。
 
@@ -251,7 +249,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 -   網路功能 - 有關透過網際網路或私人網路與其他電腦或裝置通訊的 API。
 
@@ -286,7 +284,7 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 -   支援公用程式 - 見置於 Windows 10 API 上的程式庫。
 
@@ -321,13 +319,13 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
     </tbody>
     </table>
 
-     
+     
 
 ## <a name="xbox-live-services"></a>Xbox Live 服務
 
-[Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 允許任何開發人員將 Xbox Live 整合至其 UWP 遊戲中，並發佈到 Xbox One 和 Windows 10。 用最少的開發時間，將 Xbox Live 社交體驗 (例如登入、顯示線上狀態、排行榜等) 整合到您的遊戲中。 Xbox Live 社交功能的設計旨在自然地逐漸擴大您的目標客群，向超過 5 千 5 百萬戶的使用中玩家展開宣傳。
+[Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator)允許任何開發人員將 Xbox Live 整合至其 UWP 遊戲並發佈到 Xbox One 和 windows 10。 用最少的開發時間，將 Xbox Live 社交體驗 (例如登入、顯示線上狀態、排行榜等) 整合到您的遊戲中。 Xbox Live 社交功能的設計旨在自然地逐漸擴大您的目標客群，向超過 5 千 5 百萬戶的使用中玩家展開宣傳。
 
-如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One Microsoft Store 的推薦，您可以申請加入 [ID@Xbox](http://www.xbox.com/developers/id) 計畫。 若要了解哪些功能適用於 Xbox Live 創作者計畫與 ID@Xbox 計畫，請參閱[功能表格](../xbox-live/developer-program-overview.md#feature-table)。
+如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](http://www.xbox.com/developers/id) 計畫。 若要了解哪些功能適用於 Xbox Live 創作者計畫與 ID@Xbox 計畫，請參閱[功能表格](../xbox-live/developer-program-overview.md#feature-table)。
 
 如需詳細資訊，請移至[將 Xbox Live 新增到您的遊戲](e2e.md#adding-xbox-live-to-your-game)。
 
@@ -356,9 +354,9 @@ Windows 10 提供適合用於遊戲開發的廣泛 API 集合。 裡面幾乎包
 
 如需將遊戲提交至 Microsoft Store 的相關資訊，請參閱[提交及發行您的遊戲](e2e.md#submitting-and-publishing-your-game)。
 
- 
+ 
 
- 
+ 
 
 
 

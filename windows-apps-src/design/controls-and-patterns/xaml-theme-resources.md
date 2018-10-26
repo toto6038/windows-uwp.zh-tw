@@ -11,16 +11,14 @@ template: detail.hbs
 ms.author: jimwalk
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f7e92f1652b4c67ef63ca3cf3b536126e3c995
-ms.sourcegitcommit: ab92c3e0dd294a36e7f65cf82522ec621699db87
-ms.translationtype: HT
+ms.openlocfilehash: e576814617204749a37963ac5f2724f290520349
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "1832706"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567650"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -96,29 +94,58 @@ XAML 架構提供一組已命名的 [Color](/uwp/api/Windows.UI.Color) 資源，
 | SystemListLowColor              | ListLow                | \#19000000 | \#19FFFFFF |
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
-:::列::: :::欄:::
+:::row:::
+    :::column:::
         #### Light theme
     :::column-end:::
     :::column:::
         #### Dark theme
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
 #### <a name="base"></a>Base
 
-:::列::: :::欄::: ![基本淺色佈景主題](images/themes/light-base.png) :::欄結束::: :::欄::: ![基本深色佈景主題](images/themes/dark-base.png) :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![The base light theme](images/themes/light-base.png)
+    :::column-end:::
+    :::column:::
+        ![The base dark theme](images/themes/dark-base.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="alt"></a>Alt
 
-:::列::: :::欄::: ![替代淺色佈景主題](images/themes/light-alt.png) :::欄結束::: :::欄::: ![替代深色佈景主題](images/themes/dark-alt.png) :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![The alt light theme](images/themes/light-alt.png)
+    :::column-end:::
+    :::column:::
+        ![The alt dark theme](images/themes/dark-alt.png)
+    :::column-end:::
+:::row-end:::
 
-#### <a name="list"></a>List
+#### <a name="list"></a>清單
 
-:::列::: :::欄::: ![清單淺色佈景主題](images/themes/light-list.png) :::欄結束::: :::欄::: ![清單深色佈景主題](images/themes/dark-list.png) :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![The list light theme](images/themes/light-list.png)
+    :::column-end:::
+    :::column:::
+        ![The list dark theme](images/themes/dark-list.png)
+    :::column-end:::
+:::row-end:::
 
 #### <a name="chrome"></a>Chrome
 
-:::列::: :::欄::: ![組件區塊淺色佈景主題](images/themes/light-chrome.png) :::欄結束::: :::欄::: ![組件區塊深色佈景主題](images/themes/dark-chrome.png) :::欄結束::: :::列結束:::
+:::row:::
+    :::column:::
+        ![The chrome light theme](images/themes/light-chrome.png)
+    :::column-end:::
+    :::column:::
+        ![The chrome dark theme](images/themes/dark-chrome.png)
+    :::column-end:::
+:::row-end:::
 
 ### <a name="windows-system-high-contrast-colors"></a>Windows 系統的高對比色彩
 
@@ -350,7 +377,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 </Style>
 ```
 
-**注意**：[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565) 樣式並沒有 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) 擁有的所有文字坡形樣式，主要是因為 **RichTextBlock** 的區塊型文件物件模型讓您能夠更容易針對個別的文字元素設定屬性。 此外，使用 XAML 內容屬性來設定 [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
+**注意**： [RichTextBlock](https://msdn.microsoft.com/library/windows/apps/br227565)樣式沒有[TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)執行程序，所有文字坡形樣式，主要是因為**RichTextBlock**的區塊型文件物件模型可以更容易針對個別的文字設定屬性項目。 此外，使用 XAML 內容屬性來設定 [TextBlock.Text](https://msdn.microsoft.com/library/windows/apps/br209676) 會導致一種情況，即沒有文字元素可供設定樣式，因此您必須設定容器的樣式。 這對 **RichTextBlock** 來說並不是問題，因為它的文字內容一律必須位於特定的文字元素 (例如 [Paragraph](https://msdn.microsoft.com/library/windows/apps/br244503)) 中，這是您可能為頁首、子頁首及類似文字坡形定義套用 XAML 樣式的地方。
 
 ## <a name="miscellaneous-named-styles"></a>其他具名樣式
 

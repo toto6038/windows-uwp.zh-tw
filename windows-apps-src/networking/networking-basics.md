@@ -6,16 +6,14 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ms.author: stwhi
 ms.date: 06/01/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e68d674ecb3ab29170036d1dff6c69ab3ba759c
-ms.sourcegitcommit: ee77826642fe8fd9cfd9858d61bc05a96ff1bad7
-ms.translationtype: HT
+ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "2018554"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569689"
 ---
 # <a name="networking-basics"></a>網路功能基本知識
 您對於任何具備網路功能的 app 所需執行的動作。
@@ -40,7 +38,7 @@ ms.locfileid: "2018554"
 | **sharedUserCertificates** | 這個功能可讓 app 存取軟體和硬體憑證，例如智慧卡憑證。 在執行階段叫用這個功能時，使用者必須採取行動，例如插入卡片或是選取憑證。 <br/> 透過這個功能，您的軟體與硬體憑證或智慧卡可供應用程式識別身分。 您的員工、銀行或政府服務單位可使用這個功能來識別身分。 |
 
 ## <a name="communicating-when-your-app-is-not-in-the-foreground"></a>App 不在前景時進行通訊
-[使用背景工作支援應用程式](https://msdn.microsoft.com/library/windows/apps/mt299103)包含當 app 不在前景時，使用背景工作執行工作的一般資訊。 具體而言，如果 app 不是目前的前景 app，您的程式碼必須執行特殊步驟，才可在資料透過網路送達時接收通知。 在 Windows 8 中，您使用「控制通道觸發程序」來達到此目的，這在 Windows 10 中仍受支援。 如需使用控制通道觸發程序的完整資訊，請參閱 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032)。 在某些情況下，Windows 10 的新技術可提供更好的功能與較低的額外負荷，例如啟用推播的資料流通訊端：通訊端代理程式與通訊端活動觸發程序。
+[使用背景工作支援應用程式](https://msdn.microsoft.com/library/windows/apps/mt299103)包含當 app 不在前景時，使用背景工作執行工作的一般資訊。 具體而言，如果 app 不是目前的前景 app，您的程式碼必須執行特殊步驟，才可在資料透過網路送達時接收通知。 您使用控制通道觸發程序中 Windows8，此目的，仍受支援在 windows 10。 如需使用控制通道觸發程序的完整資訊，請參閱 [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032)。 在 windows 10 中的新技術可提供更好的功能與較低的額外負荷，在某些情況下，例如啟用推播的資料流通訊端： 通訊端代理程式和通訊端活動觸發程序。
 
 如果您的 app 使用 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906)，則您的 app 可以將開啟之通訊端的擁有權轉換給系統所提供的通訊端代理程式，然後離開前景，或甚至終止。 當轉換的通訊端建立連線，或流量到達該通訊端時，表示您的 app 或其指定的背景工作已啟用。 如果您的 app 未執行，將在此時啟動。 接著，通訊端代理程式會使用 [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) 通知您的 app 有新流量到達。 您的 app 會從通訊端代理程式回收通訊端，並處理通訊端上的流量。 這表示當您的 app 未主動處理網路流量時，所耗用的系統資源會大幅降低。
 
@@ -468,7 +466,7 @@ using Windows::Storage::Streams;
 如何在透過網路連線時提供驗證認證。
 
 ### <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
-[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 Windows 10 中，您可以在 [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) 物件上提供用戶端憑證 (這必須在 TLS 交握啟動之前設定)。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別支援使用 SSL/TLS 來驗證與 app 交談的伺服器。 在某些情況下，app 也必須使用 TLS 的用戶端憑證向伺服器驗證本身。 在 windows 10，您可以提供用戶端憑證 （這必須設定 TLS 交握開始前） [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893)物件上。 如果伺服器要求用戶端憑證，Windows 會使用提供的憑證來回應。
 
 以下程式碼片段說明其實作方式：
 

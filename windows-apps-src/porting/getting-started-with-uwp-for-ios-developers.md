@@ -1,33 +1,32 @@
 ---
-author: mcleblanc
+author: stevewhims
 description: 開始使用適用於 iOS 開發人員的 UWP
 title: 適用於 iOS 開發人員的 UWP 入門
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
-ms.author: markl
+ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: 8b1d7259d16ba963d19c7656ff2572fa659a1710
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 485dc6f93cb0fd83601b3202ef9965e625b2a0b4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209747"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566036"
 ---
 # <a name="getting-started-with-uwp-for-ios-developers"></a>適用於 iOS 開發人員的 UWP 入門
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-如果您是 iOS 開發人員，且正在考慮為 Windows 10 開發程式，這些文件是很好的切入點。 文件中也會介紹在開始撰寫應用程式之前，您需要知道的部分概念，並涵蓋您如何在 Windows 市集上發佈您的作品。
+如果您是 iOS 開發人員考慮開發適用於 windows 10，這些文件是很好的開始。 他們將會為您介紹一些概念，您將需要知道的開始撰寫應用程式，並涵蓋您如何發佈您的工作，在 Microsoft Store 上。
 
 在本節中，我們將漸進式開始並檢查如何使用 Microsoft Visual Studio 和 C# 程式設計語言來建立簡單的 app，特別是您目前使用之工具的程序可能會有哪些不同。 (不喜歡 C#？ 別擔心，您可以使用其他程式設計語言和工具，我們將會在[開始使用：選擇程式設計語言](getting-started-choosing-a-programming-language.md)中稍做說明)。
 
-Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、平板電腦、手機裝置及其他裝置上建立吸引目光的 App。 由於通用 Windows 平台 (UWP) 應用程式提供許多獨特的功能，因此單純移植您的 iOS 應用程式將會失去這些功能。 建議您嘗試新的控制項和功能，看看它們如何讓您的開發工作更加容易，以及如何開發新的 app。
+Windows 10 引進了新的平台，以建立吸引目光的 app 在桌上型電腦、 膝上型電腦、 平板電腦、 手機裝置等。 由於通用 Windows 平台 (UWP) 應用程式提供許多獨特的功能，因此單純移植您的 iOS 應用程式將會失去這些功能。 建議您嘗試新的控制項和功能，看看它們如何讓您的開發工作更加容易，以及如何開發新的 app。
 
-最重要的是：不要只是移植您的 app，而是**重新構想**您的 app，並充分利用這些新的功能和裝置。 不要僅將及格邊緣當成您的目標，並建立能運用 Windows 10 獨特功能的豐富體驗，例如動態磚、通知及與 Cortana 互動。
+最重要的是：不要只是移植您的 app，而是**重新構想**您的 app，並充分利用這些新的功能和裝置。 不要僅將及格邊緣，但建立唯一的 windows 10 功能，例如動態磚、 通知及互動搭配使用 Cortana 的豐富體驗。
 
-為了開始進行這些逐步解說，您需要一部已安裝 Windows 10 與 Microsoft Visual Studio 的電腦。 您可以從[程式設計 Windows 市集應用程式的開發人員下載](https://developer.microsoft.com/en-us/windows/downloads)下載它們。 沒有 Windows 電腦嗎？ 不用擔心，您可以使用您的 Mac：請參閱[在 Mac 上安裝 Windows 和開發工具](setting-up-your-mac-with-windows-10.md)。
+若要開始進行這些逐步解說，您將需要與 windows 10 和 Microsoft Visual Studio 安裝的電腦。 您可以下載這些從[程式設計 UWP 應用程式開發人員下載](https://developer.microsoft.com/en-us/windows/downloads)。 沒有 Windows 電腦嗎？ 不用擔心，您可以使用您的 Mac：請參閱[在 Mac 上安裝 Windows 和開發工具](setting-up-your-mac-with-windows-10.md)。
 
 | 主題 | 說明 |
 |-------|-------------|
@@ -40,8 +39,8 @@ Windows 10 引入一種新的平台，可在桌上型電腦、筆記型電腦、
 | [開始使用：後續動作？](getting-started-what-next.md) | 利用這個基本資訊，您現在可以開始撰寫更多好玩的通用 Windows 平台 (UWP) app。 在後續步驟中，請仔細閱讀下列主題，然後啟動 Visual Studio 並開始撰寫一些程式碼！ |
 | [Windows app 概念對應](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | 如何以 iOS 概念思考 Windows (與 Android) 功能 |
 
- 
+ 
 
- 
+ 
 
- 
+ 

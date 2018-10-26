@@ -6,16 +6,14 @@ author: mijacobs
 ms.author: mijacobs
 ms.date: 08/10/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: 4df395d2-f10e-4e0e-9bf2-660f82b8a9fa
 ms.localizationpriority: medium
-ms.openlocfilehash: d1b9620907c3d5852db35d62f3d971031f3122c4
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 378841414f97abb313584e6bcd033914440713a6
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1842405"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564852"
 ---
 # <a name="style-for-uwp-apps"></a>適用於 UWP app 的樣式
 
@@ -23,18 +21,22 @@ ms.locfileid: "1842405"
 
 樣式可以讓您的應用程式脫穎而出，本節的樣式指導方針協助您透過色彩、印刷樣式以及壓克力材質和顯色醒目提示等新功能，來建立 Fluent Design。
 
-::: 列:::::: 欄:::![主角圖像](images/header-color.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-color.svg)
         ### [Color](color.md)
         Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
     :::column-end:::
     :::column:::
         ![hero image](images/header-typography.svg)
         ### [Typography](typography.md)
-       As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. The following guidelines focus on how to use typography to help users understand content easily. 
+       如同語言的視覺呈現，印刷格式的主要任務就是清晰呈現。 其樣式絕對不能阻礙這項目標。 下列指導方針著重於如何使用印刷樣式，以協助使用者輕鬆地了解內容。 
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
-::: 列:::::: 欄:::![主角圖像](images/header-icons.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-icons.svg)
         ### [Icons](icons.md)
         Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible.
     :::column-end:::
@@ -43,9 +45,11 @@ ms.locfileid: "1842405"
         ### [Acrylic](acrylic.md)
         Create a sense of depth with acrylic, a brush that creates stunning, translucent surfaces.
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
-::: 列:::::: 欄:::![主角圖像](images/header-reveal-highlight.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-reveal-highlight.svg)
         ### [Reveal highlight](reveal.md)
         Use light to illuminate important elements.
     :::column-end:::
@@ -54,9 +58,11 @@ ms.locfileid: "1842405"
         ### [Reveal focus](reveal-focus.md)
         Reveal focus is a lighting effect for 10 foot experiences, such as Xbox One and television screens, and animates the border of focusable elements.
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
-::: 列:::::: 欄:::![主角圖像](images/header-sound.svg)
+:::row:::
+    :::column:::
+        ![hero image](images/header-sound.svg)
         ### [Sound](sound.md)
         Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
     :::column-end:::
@@ -65,12 +71,13 @@ ms.locfileid: "1842405"
         ### [Writing style](writing-style.md)
         Writing style can make a big difference between an awful user experience and a better one.
     :::column-end:::
-:::列結束:::
+:::row-end:::
 
-:::列::: :::欄:::
+:::row:::
+    :::column:::
         ### [XAML styles](../controls-and-patterns/xaml-styles.md)
         You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
     :::column-end:::
     :::column:::
     :::column-end:::
-:::列結束:::
+:::row-end:::

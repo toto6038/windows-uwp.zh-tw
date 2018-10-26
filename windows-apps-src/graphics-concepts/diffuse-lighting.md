@@ -8,15 +8,13 @@ author: michaelfromredmond
 ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 84036edd2071d9545b3a492ea5cf0b397d9e722e
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "1044427"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5572164"
 ---
 # <a name="diffuse-lighting"></a>擴散光源
 
@@ -33,7 +31,7 @@ ms.locfileid: "1044427"
 
 | 參數       | 預設值 | 類型          | 描述                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| 總和             | 無           | 無           | 每道光的擴散元件的總和。                                                     |
+| 總和             | N/A           | 無           | 每道光的擴散元件的總和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 擴散色彩。                                                                                   |
 | L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 光線擴散色彩。                                                                             |
 | N               | 無           | D3DVECTOR     | 頂點垂直                                                                                    |
@@ -41,7 +39,7 @@ ms.locfileid: "1044427"
 | Atten           | 無           | FLOAT         | 光線衰減。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。 |
 | Spot            | 無           | FLOAT         | 聚光燈係數。 參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。  |
 
- 
+ 
 
 若要計算衰減 (Atten) 或聚光燈特性 (Spot)，請參閱[衰減和聚光燈係數](attenuation-and-spotlight-factor.md)。
 
@@ -73,9 +71,9 @@ ms.locfileid: "1044427"
 
 [光源的數學計算](mathematics-of-lighting.md)
 
- 
+ 
 
- 
+ 
 
 
 

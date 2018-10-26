@@ -6,16 +6,14 @@ title: 使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試
 ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: bb2c242ea4b7e3881751874c096165279854aa5e
-ms.sourcegitcommit: 2c4daa36fb9fd3e8daa83c2bd0825f3989d24be8
+ms.openlocfilehash: 330631afed95c3b0082de69d9369a62aad5a66d5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5521618"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571493"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 

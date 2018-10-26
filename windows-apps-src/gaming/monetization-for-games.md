@@ -6,15 +6,14 @@ ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
 ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 獲利
-ms.openlocfilehash: c2dde3a4f9796b02c969017533b0092b0deaa860
-ms.sourcegitcommit: 0ebc8dca2fd9149ea163b7db9daa14520fc41db4
+ms.localizationpriority: medium
+ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2017
-ms.locfileid: "877734"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571202"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -23,14 +22,14 @@ ms.locfileid: "877734"
 在過去，您會為遊戲標上價格，然後等著客人在商店購買它。 但現在您有其他選項。 您可以選擇在實體店面上架遊戲、線上銷售遊戲 (不論是實體版或軟體版)，或是讓每個人都能免費玩該遊戲，但加入一些廣告或可購買的遊戲內項目。 遊戲也不再只是獨立產品。 除了主要遊戲之外，它們通常還伴隨可購買的額外內容。
 
 您可以用下列其中一個或多個方法來宣傳 UWP 遊戲並透過它獲利：
-* 將您的遊戲放在 Windows 市集，它是安全且提供[全球發佈](#worldwide-distribution-channel)的線上商店。 全世界的玩家都能[以您設定的價格](#set-a-price-for-your-game)在線上購買您的遊戲。
+* 將您的遊戲放在 Microsoft Store，也就是安全的線上存放區供應項目[全球發佈](#worldwide-distribution-channel)。 全世界的玩家都能[以您設定的價格](#set-a-price-for-your-game)在線上購買您的遊戲。
 * 使用 Windows SDK 中的 API 建立[遊戲內購買](#in-game-purchases)。 玩家可以在您的遊戲內購買項目，或購買其他內容，例如額外的裝備、外觀、地圖或遊戲關卡。
 * 使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 中的 API 顯示來自廣告網路的廣告。 您可以在[遊戲中顯示廣告](#display-ads-in-your-game)，並提供選項讓玩家選擇以觀看影片廣告來交換遊戲內獎勵。
 * [透過廣告活動將遊戲的潛力最大化](#maximize-your-games-potential-through-ad-campaigns)。 使用付費、社群 (免費)，或自家 (免費) 廣告活動來讓使用者數量成長。
 
 ## <a name="worldwide-distribution-channel"></a>全球的通路
 
-Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下載，且支援各種付款方式，包括 Visa、MasterCard 和 PayPal。 如需國家與地區的完整清單，請參閱[市場和自訂價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
+Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區全球，且支援透過各種不同形式的付款方式，包括 Visa、 Mastercard 和 PayPal 的計費。 如需國家與地區的完整清單，請參閱[市場和自訂價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
 
 ## <a name="set-a-price-for-your-game"></a>為您的遊戲設定價格
 
@@ -50,13 +49,13 @@ Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下�
 
 ## <a name="in-game-purchases"></a>遊戲內購買
 
-遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Windows 市集中，這些產品稱為_附加元件_。 您可以透過 Windows 開發人員中心儀表板[發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 您也會需要在遊戲的程式碼中啟用附加元件。
+遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store，這些產品稱為_附加元件_。 您可以透過 Windows 開發人員中心儀表板[發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 您也會需要在遊戲的程式碼中啟用附加元件。
 
 ### <a name="types-of-add-ons"></a>附加元件的類型
 
 您在市集中可建立的附加元件有兩種：_耐久品_或_消費性產品_。 耐久品是可以持續一段指定時間的項目，且在它到期之前只能購買一次。 消費性產品是可以不斷重複購買的項目。
 
-在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows10 版本 1607 開始可供使用)。 對於開發人員管理的消費性產品，您有責任為玩家追蹤項目的餘額；對於市集管理的消費性產品，Windows 市集會為您追蹤項目的餘額。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows10 版本 1607 開始可供使用)。 使用開發人員管理的消費性產品，您必須負責為追蹤玩家; 項目的餘額使用市集管理的消費性產品，Microsoft Store 會追蹤的項目的餘額為您。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>建立遊戲內購買
 
@@ -93,7 +92,7 @@ Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下�
 
 1. 在 Visual Studio 中開啟您的遊戲方案。
 2. 在 Visual Studio 中，移至 __\[專案\]__ > __\[市集\]__ > __\[建立應用程式套件\]__
-3. 針對 __\[您要建置套件以上傳到 Windows 市集嗎?\]__ 選取 __\[是\]__。
+3. 適用於__您是否要建置套件以上傳到 Microsoft Store？__ 選項，選取 __[是]__。
 4. 登入您的「開發人員中心」的開發人員帳戶。 如果您還沒有開發人員帳戶，可以[註冊](https://developer.microsoft.com/store/register)一個。
 5. 選取一個要建立上傳套件的 App。 如果您尚未建立 App 提交，請提供新的 App 名稱以建立新的提交。 如需詳細資訊，請參閱[透過保留名稱建立您的 App](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功建立套件之後，按一下 __\[啟動 Windows 應用程式認證套件\]__ 以開始測試程序。
@@ -105,7 +104,7 @@ Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下�
 2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要處理的 App。 如果您尚未建立 App 提交，按一下 __\[建立新應用程式\]__ 並保留名稱。
 3. 在 __\[應用程式概觀\]__ 頁面上，按一下 __\[開始您的提交\]__。
 4. 設定這個新的提交。 在提交頁面上：
-    * 按一下 __\[定價和可用性\]__。 在 __\[可見度\]__ 區段中，選擇 __\[隱藏此應用程式並防止被取得\]__ 以確保只有您的開發團隊有該遊戲的存取權。 如需詳細資訊，請移至[配送和可見性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
+    * 按一下 __\[定價和可用性\]__。 在 [__可見度__] 區段中，選擇 [__隱藏這個 app 並防止被取得...__ \] 以確保只有您的開發團隊有遊戲的存取權。 如需詳細資訊，請移至[配送和可見性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
     * 按一下 __\[屬性\]__。 在 __\[類別和子類別\]__ 區段中，選擇 __\[遊戲\]__，再選取適合您遊戲的子類別。
     * 按一下 __\[年齡分級\]__。 準確地填寫問卷。
     * 按一下 __\[套件\]__。 上傳在先前步驟中建立的遊戲套件。
@@ -141,7 +140,7 @@ Windows 市集可讓您的遊戲在全球超過 200 個國家與地區提供下�
 * [定價和可用性](https://msdn.microsoft.com/windows/uwp/publish/set-add-on-pricing-and-availability)
 * [市集清單](https://msdn.microsoft.com/windows/uwp/publish/create-add-on-store-listings)
 
-如果您的遊戲有很多附加元件，您可以使用 __Windows 市集提交 API__ 以程式設計的方式建立它們。 如需詳細資訊，請參閱[使用 Windows 市集服務建立和管理提交](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)。
+如果您的遊戲有很多附加元件，可以使用__Microsoft Store 提交 API__以程式設計方式建立它們。 如需詳細資訊，請參閱[建立和管理提交使用 Microsoft Store 服務](https://msdn.microsoft.com/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services)。
 
 ## <a name="display-ads-in-your-game"></a>在您的遊戲中顯示廣告
 
@@ -158,11 +157,11 @@ Microsoft Advertising SDK 中的程式庫和工具可協助您在遊戲中設定
 
 ### <a name="which-ads-are-displayed"></a>顯示那些廣告？
 
-根據預設，您的應用程式會顯示 Microsoft 付款廣告網路中的廣告。 若要讓您有最佳的廣告收入，您可以為您的廣告單元啟用廣告流量分配，以顯示其他付費廣告網路的廣告。 如需目前供應內容的詳細資訊，請參閱我們的[廣告流量分配](../publish/monetize-with-ads.md#ad-mediation)指導方針。
+根據預設，您的應用程式會顯示 Microsoft 付款廣告網路中的廣告。 若要讓您有最佳的廣告收入，您可以為您的廣告單元啟用廣告流量分配，以顯示其他付費廣告網路的廣告。 如需目前供應內容的詳細資訊，請參閱我們的[廣告流量分配](../publish/in-app-ads.md#mediation)指導方針。
 
 ### <a name="which-markets-allow-ads-to-be-displayed"></a>哪些市場允許顯示廣告？
 
-如需支援廣告之國家與地區的完整清單，請參閱[支援的廣告網路市場](../publish/monetize-with-ads.md#network-markets)。
+如需支援廣告之國家與地區的完整清單，請參閱[支援的廣告網路市場](../publish/in-app-ads.md#network-markets)。
 
 ### <a name="apis-for-displaying-ads"></a>用來顯示廣告的 API
 

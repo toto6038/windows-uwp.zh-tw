@@ -6,16 +6,14 @@ description: 了解如何使用傾角計來決定俯仰、翻滾及偏擺。
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 82e7b6446306d85af036bf49d05c14db79eaf388
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: dd335d56fb2a01ed1b9255f974bcaacd47f623f5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958673"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571073"
 ---
 # <a name="use-the-inclinometer"></a>使用傾角計
 
@@ -35,7 +33,7 @@ ms.locfileid: "958673"
 
  ## <a name="prerequisites"></a>先決條件
 
-您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
+您應該熟悉 Extensible Application Markup 語言 (XAML)、 Microsoft VisualC # 及事件。
 
 您使用的裝置或模擬器必須支援傾角計。
 

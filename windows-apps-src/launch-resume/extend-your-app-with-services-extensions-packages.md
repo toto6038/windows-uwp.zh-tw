@@ -5,16 +5,14 @@ description: 了解如何在更新通用 Windows 平台 (UWP) 市集應用程式
 ms.author: twhitney
 ms.date: 05/7/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 延伸, 組件化, app 服務, 套件, 擴充功能
 ms.localizationpriority: medium
-ms.openlocfilehash: 6920b448146f25433335234ec67fde473e096cbd
-ms.sourcegitcommit: 517c83baffd344d4c705bc644d7c6d2b1a4c7e1a
-ms.translationtype: HT
+ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "1843651"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5564770"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>透過服務、擴充功能和套件延伸您的 App
 

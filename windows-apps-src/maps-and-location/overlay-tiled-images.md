@@ -6,16 +6,14 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ms.author: normesta
 ms.date: 07/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
-ms.openlocfilehash: ba1f7d52a1b16fbb421202229ce724dab384ffa0
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 7e01b115d3e2b2a305468357440acff50a06f3fd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5481790"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567670"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 

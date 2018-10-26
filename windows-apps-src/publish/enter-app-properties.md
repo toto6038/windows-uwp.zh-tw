@@ -6,16 +6,14 @@ ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, 遊戲設定, 顯示模式, 系統需求, 硬體需求, 基本硬體, 建議的硬體, 隱私權原則, 支援連絡資訊, 應用程式網站, 支援資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: d23fb0cb3fb4668682df1957cbf0c88bcf8649c1
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 3b7fffe4c687009f71c9908ca9391278a172209a
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5472082"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567309"
 ---
 # <a name="enter-app-properties"></a>輸入應用程式屬性
 

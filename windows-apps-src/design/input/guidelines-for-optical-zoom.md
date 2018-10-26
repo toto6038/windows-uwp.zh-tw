@@ -8,16 +8,14 @@ template: detail.hbs
 ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b49afdd4a9fe1db28c8195bdf166d6a74e153020
-ms.sourcegitcommit: 0ab8f6fac53a6811f977ddc24de039c46c9db0ad
-ms.translationtype: Auto
+ms.openlocfilehash: f1643638eaf7eb625defe1f25b44cae20faf0a5c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "1653797"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568264"
 ---
 # <a name="optical-zoom-and-resizing"></a>視覺化縮放和調整大小
 
@@ -41,10 +39,9 @@ ms.locfileid: "1653797"
 
 ![將手指靠攏會縮小物件，將手指分開會放大物件。](images/objectresize.png)
 
-**注意**  
-請勿將視覺化縮放與[語意式縮放](../controls-and-patterns/semantic-zoom.md)混淆。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
+**注意：** 光學縮放混淆使用[語意式縮放](../controls-and-patterns/semantic-zoom.md)。 雖然這兩個互動使用相同的手勢，但語意式縮放是指呈現和瀏覽在單一檢視內 (例如，電腦的資料夾結構、文件庫或相簿) 組織的內容。
 
- 
+ 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -70,10 +67,9 @@ ms.locfileid: "1653797"
     -   繪圖應用程式，可調整大小的項目可以顯示在可調整大小的畫布或製圖板上。
     -   包含內嵌物件 (如地圖) 的網頁。
 
-    **注意**  
-    在所有的情況下都會調整內容區域的大小，除非所有觸控點都位於可調整大小的物件內。
+    **注意：** 在所有情況下，內容區域調整大小，除非所有觸控點都都位於可調整大小的物件內。
 
-     
+     
 
 ## <a name="related-articles"></a>相關文章
 
@@ -93,9 +89,9 @@ ms.locfileid: "1653797"
 * [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
 * [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
 * [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
- 
+ 
 
- 
+ 
 
 
 

@@ -6,18 +6,17 @@ title: BitmapEncoder 選項參考
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
-ms.openlocfilehash: adfd360c22fd6737d9e95e6e3153f4e2767a4c99
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 13f19ce909703b6748ab00aec1026e30d5c70a64
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "208992"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570576"
 ---
 # <a name="bitmapencoder-options-reference"></a>BitmapEncoder 選項參考
 
-\[ 針對 Windows10 上的 UWP app 更新。 如需 Windows8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 本文列出可搭配 [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) 使用的編碼選項。 編碼選項是由它的名稱和值所定義，其中的名稱是一個字串，而值則是特定資料類型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871))。 如需使用影像的資訊，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。
 
@@ -35,14 +34,14 @@ ms.locfileid: "208992"
 | SuppressApp0            | 布林值      | 是否抑制建立 App0 中繼資料區塊                                        | JPEG          |
 | EnableV5Header32bppBGRA | 布林值      | 是否編碼為支援 Alpha 的版本 5 BMP                                         | BMP           |
 
- 
+ 
 
 ## <a name="related-topics"></a>相關主題
 
 * [建立、編輯和儲存點陣圖影像](imaging.md)
 * [支援的轉碼器](supported-codecs.md)
 
- 
+ 
 
 
 

@@ -6,19 +6,18 @@ ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, 移動視角, 控制項
-ms.openlocfilehash: 40af05538aa6a6fff6e159fe8aa8812090e8b44b
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 219d014eb03803ace440dc1c1773043a9ecbc99f
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210784"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566139"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 了解如何將傳統的滑鼠和鍵盤移動視角控制項 (也稱為用滑鼠視角 (mouselook) 控制項) 加入到您的 DirectX 遊戲。
 
@@ -580,14 +579,11 @@ myFirstPersonCamera->SetViewParameters(
 
 恭喜！ 您已經在遊戲中實作觸控式螢幕和鍵盤/滑鼠輸入觸控控制項的基本移動視角控制項！
 
-> **注意**  
-本文章適用於撰寫通用 Windows 平台 (UWP) app 的 Windows 10 開發人員。 如果您是為 Windows 8.x 或 Windows Phone 8.x 進行開發，請參閱[封存文件](http://go.microsoft.com/fwlink/p/?linkid=619132)。
 
- 
 
- 
+ 
 
- 
+ 
 
 
 

@@ -6,15 +6,13 @@ keywords: XAML, UWP, 開始使用
 ms.author: mijacobs
 ms.date: 08/31/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 45510b8129a69641fdb64c13939ccb9b4376a654
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: 11f279de206a84e61144789ba43a268f2b896fee
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1674945"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5570186"
 ---
 # <a name="tutorial-create-custom-styles"></a>教學課程：建立自訂樣式
 
@@ -64,8 +62,7 @@ PhotoLab 應用程式有兩個主要頁面：
 
     [Windows.XAML.Ui.Shapes 命名空間](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.Shapes)提供七個可以選擇的圖形。 有橢圓形、矩形，以及所謂「路徑」的項目，這可建立任何類型的圖形；是的，甚至獨角獸都行！ 
     
-    <!-- TODO reduce size -->
-    ![獨角獸](../basics/images/xaml-basics/unicorn.png)
+    <!-- TODO reduce size --> ![獨角獸](../basics/images/xaml-basics/unicorn.png)
     
     > **請參閱：**[繪製圖形](https://docs.microsoft.com/en-us/windows/uwp/graphics/drawing-shapes)文章告訴您一切您需要知道關於 XAML 圖形的所有內容。 
     

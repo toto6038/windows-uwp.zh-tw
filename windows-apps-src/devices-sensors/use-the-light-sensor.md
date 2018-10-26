@@ -6,16 +6,14 @@ description: 了解如何使用周遭環境光感應器來偵測光線的變化�
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bfb0fe768651e76d18c9c88a2dd36032be21977d
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: e6f7f838e5640f873593ac2e08c6a9b30f5258e5
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "958723"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5568417"
 ---
 # <a name="use-the-light-sensor"></a>使用光感應器
 
@@ -35,7 +33,7 @@ ms.locfileid: "958723"
 
 ## <a name="prerequisites"></a>先決條件
 
-您應該熟悉 Extensible Application Markup Language (XAML)、Microsoft Visual C# 及事件。
+您應該熟悉 Extensible Application Markup 語言 (XAML)、 Microsoft VisualC # 及事件。
 
 您使用的裝置或模擬器必須支援周遭環境光感應器。
 

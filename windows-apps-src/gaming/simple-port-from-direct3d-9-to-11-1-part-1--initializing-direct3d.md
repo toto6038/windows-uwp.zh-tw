@@ -6,19 +6,18 @@ ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, uwp, 遊戲, direct3d 11, 初始設定, 移植, direct3d 9
-ms.openlocfilehash: d4c4c905ad7d7452251ad13d95cbdc53b137c6c8
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209136"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571919"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 **摘要**
 
@@ -76,9 +75,9 @@ m_pD3D->CreateDevice(
 
 建立 Direct3D 11 裝置與內容之後，我們可以利用 COM 指標功能來取得包含額外功能的最新介面版本 (一律建議您取得最新版本)。
 
-> **注意**   D3D\_FEATURE\_LEVEL\_9\_1 (對應到著色器模型 2.0) 是 Windows 市集遊戲必須支援的最低層級 (如果您不支援 9_1，遊戲的 ARM 套件將無法通過認證)。如果您的遊戲也包含著色器模型 3 功能的轉譯路徑，則應該在陣列中包含 D3D\_FEATURE\_LEVEL\_9\_3。
+> **注意：**  D3D\_FEATURE\_LEVEL\_9\_1 (對應到著色器模型 2.0） 是您的 Microsoft Store 遊戲必須支援的最低層級。 (如果您不支援 9_1，遊戲的 ARM 套件將無法通過認證)。如果您的遊戲也包含著色器模型 3 功能的轉譯路徑，則應該在陣列中包含 D3D\_FEATURE\_LEVEL\_9\_3。
 
- 
+ 
 
 Direct3D 11
 
@@ -109,7 +108,7 @@ D3D11CreateDevice(
     creationFlags,
     featureLevels,
     ARRAYSIZE(featureLevels),
-    D3D11_SDK_VERSION, // Windows Store apps must set this to D3D11_SDK_VERSION.
+    D3D11_SDK_VERSION, // UWP apps must set this to D3D11_SDK_VERSION.
     &device, // Returns the Direct3D device created.
     nullptr,
     &context // Returns the device immediate context.
@@ -128,9 +127,9 @@ Direct3D 11 包含稱為 DirectX Graphics Infrastructure (DXGI) 的裝置 API。
 
 Direct3D 裝置會實作 DXGI 的 COM 介面。 首先，我們需要取得該介面，並使用它來要求裝載裝置的 DXGI 介面卡。 接著，使用 DXGI 介面卡來建立 DXGI Factory。
 
-> **注意**   這些都是 COM 介面，因此，您的第一個回應應該是要使用 [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 您應該改用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智慧型指標。 接著，只需呼叫 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，提供正確介面類型的空 COM 指標。
+> **注意：** 這些都是 COM 介面，因此您的第一個回應應該是要使用[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)。 您應該改用 [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 智慧型指標。 接著，只需呼叫 [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) 方法，提供正確介面類型的空 COM 指標。
 
- 
+ 
 
 **Direct3D 11**
 
@@ -152,9 +151,9 @@ dxgiAdapter->GetParent(
 
 現在，我們已經有 DXGI Factory，可以使用它來建立交換鏈結。 讓我們來定義交換鏈結參數。 我們需要指定表面格式；並且將選擇 [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059)，因為它與 Direct2D 相容。 我們關閉顯示縮放比例、多重取樣及立體著色運算，因為這個範例中並未用到它們。 由於我們是直接在 CoreWindow 中執行，所以能夠讓寬度與高度保留為 0 的設定，並自動取得全螢幕值。
 
-> **注意**   針對 UWP app，一律將 *SDKVersion* 參數設為 D3D11\_SDK\_VERSION。
+> **注意：** 一律設為 D3D11\_SDK\_VERSION *SDKVersion*參數設定適用於 UWP app。
 
- 
+ 
 
 **Direct3D 11**
 
@@ -172,9 +171,9 @@ swapChain.As(&m_swapChain);
 
 為了確定我們轉譯的頻率不會高於螢幕實際顯示的頻率，所以將框架延遲設為 1 並使用 [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077)。 這樣就能節省電源，而且這是一項市集憑證需求；我們將在這個逐步解說的第二部分中深入了解如何在螢幕上顯示。
 
-> **注意**   您可以使用多執行緒 (例如，[**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 工作項目)，在封鎖轉譯執行緒的同時繼續執行其他工作。
+> **注意：** 您可以使用多執行緒 （例如， [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642)工作項目） 封鎖轉譯執行緒的同時繼續執行其他工作。
 
- 
+ 
 
 **Direct3D 11**
 
@@ -227,9 +226,9 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 現在我們有裝置控制代碼與全螢幕轉譯目標，所以已經準備好載入與繪製幾何圖形。 繼續進行[第二部分：轉譯](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)。
 
- 
+ 
 
- 
+ 
 
 
 

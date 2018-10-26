@@ -3,19 +3,17 @@ author: mijacobs
 layout: LandingPage
 description: 通用 Windows 平台 (UWP) 可讓您建置適用於任何 Windows 裝置 (電腦、手機、Xbox One、HoloLens 等等) 的應用程式，並將它們發佈到市集。
 title: UWP 文件 - UWP 應用程式開發人員 | Microsoft 文件
-ms.prod: windows
 ms.topic: landing-page
 ms.author: mijacobs
 ms.date: 08/4/2017
-ms.technology: uwp
 keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp, 通用 windows 平台, Windows Runtime API, windows api 參照, uwp api, uwp api 參照, 開發 uwp, 設計 uwp, 發佈 uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 48c5dc7352a44e3e07b78e78ae0b5e099660ec4f
-ms.sourcegitcommit: e4627686138ec8c885696c4c511f2f05195cf8ff
-ms.translationtype: HT
+ms.openlocfilehash: 9e7cd5a012204b5b9ccab4e87993273f65c3849c
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "1893863"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569369"
 ---
 # <a name="universal-windows-platform-documentation"></a>通用 Windows 平台文件
 通用 Windows 平台 (UWP) 可讓您建置適用於任何 Windows 裝置 (電腦、手機、Xbox One、HoloLens 等等) 的應用程式，並將它們發佈到 Microsoft Store。
@@ -260,4 +258,29 @@ ms.locfileid: "1893863"
             </div>
         </div>
     </li>
+    <li>
+        <div class="cardSize">
+            <div class="cardPadding">
+                <div class="card">
+                    <div class="cardImageOuter">
+                        <div class="cardImage">
+                            <img src="/media/common/i_support.svg" alt=" " />
+                        </div>
+                    </div>
+                    <div class="cardText">
+                        <h3>社群與支援</h3>
+                        <p>
+                            <a href="https://twitter.com/WindowsDocs">@WindowsDocs在 Twitter 上</a>
+                        </p>
+                        <p>
+                            <a href="http://aka.ms/OneDevMinute">OneDevMinute YouTube 上</a>
+                        </p>
+                        <p>
+                            <a href="https://developer.microsoft.com/windows/support">Windows 開發人員支援</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>    
 </ul>

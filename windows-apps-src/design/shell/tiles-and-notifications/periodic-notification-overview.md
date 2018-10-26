@@ -7,16 +7,14 @@ template: detail.hbs
 ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4525cf151d53790a44995bd8a8dd77a88332cdd0
-ms.sourcegitcommit: 2470c6596d67e1f5ca26b44fad56a2f89773e9cc
-ms.translationtype: HT
+ms.openlocfilehash: d02bfb8b8bd112a969895d4f2bd5d324fce9d6b8
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "1673445"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567640"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概觀
  
@@ -29,9 +27,9 @@ ms.locfileid: "1673445"
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 定期通知是將相同內容散佈給廣大群眾的理想方式。
 
-**注意：** 若要深入了解，您可以下載適用於 Windows 8.1 的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並在 Windows 10 應用程式中重複使用其原始程式碼。
+**注意：** 您可以了解更多的 Windows8.1 下載的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並重複使用其原始程式碼，在 windows 10 應用程式中。
 
- 
+ 
 
 ## <a name="how-it-works"></a>運作方式
 
@@ -110,4 +108,4 @@ ms.locfileid: "1673445"
 * [定期通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761461)
 * [如何設定徽章的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
 * [如何設定磚的定期通知](https://msdn.microsoft.com/library/windows/apps/hh761476)
- 
+ 

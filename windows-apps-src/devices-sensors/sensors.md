@@ -6,16 +6,14 @@ description: 感應器可讓 app 得知裝置與周遭實際環境之間的關�
 ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bf1d905874fc420dc0a39c1082e213e4ea4c327
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: 0e05c18bd2c8fa2ddd7d6a9bc8e474d02f27a93e
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "959173"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5567369"
 ---
 # <a name="sensors"></a>感應器
 
@@ -112,7 +110,7 @@ ms.locfileid: "959173"
 
 本身會變更檢視方式以符合裝置指向的應用程式，都可以使用傾角計感應器。 再者，本身會根據裝置偏擺、俯仰及翻滾而顯示飛機動作的 app，也可以使用傾角計讀數。
 
-範例實作，請參閱 inclinometer 範例[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
+如需範例實作，請參閱傾角計範例[https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Inclinometer)。
 
 ## <a name="light-sensor"></a>光感應器
 

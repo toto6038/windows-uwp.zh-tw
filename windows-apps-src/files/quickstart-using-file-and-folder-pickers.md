@@ -6,16 +6,14 @@ description: 讓使用者與選擇器互動以存取檔案和資料夾。 您可
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f025504d8024a23810a7d5dd2b0b28414fe5a62
-ms.sourcegitcommit: 1773bec0f46906d7b4d71451ba03f47017a87fec
-ms.translationtype: HT
+ms.openlocfilehash: b79bfa9ecdf76d2d59e3c0991240d88599dbe6dd
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "1662588"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569399"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用選擇器開啟檔案和資料夾
 
@@ -28,7 +26,7 @@ ms.locfileid: "1662588"
 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 類別來存取檔案，使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)(英文)。
+> 如需完整範例，請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)(英文)。
 
 ## <a name="prerequisites"></a>先決條件
 

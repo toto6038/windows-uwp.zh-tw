@@ -6,16 +6,14 @@ ms.assetid: 2DD0B384-8776-4599-9E52-4FC0AA682735
 ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: Windows 10, UWP, 遊戲, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 26510cac6e4d42ee5eb36a7ae09c9c1518b47089
-ms.sourcegitcommit: 897a111e8fc5d38d483800288ad01c523e924ef4
+ms.openlocfilehash: bb7d70c20aeb2b91d8a6db863e165e017810e924
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "300174"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5571182"
 ---
 # <a name="input-for-games"></a>遊戲的輸入
 
@@ -45,19 +43,19 @@ ms.locfileid: "300174"
 
 如需如何在 UWP 遊戲中使用賽車方向盤的詳細資訊，請參閱[賽車方向盤與力回饋](racing-wheel-and-force-feedback.md)。
 
-### <a name="flight-sticks"></a>航班黏
+### <a name="flight-sticks"></a>飛行桿
 
-航班黏是遊戲輸入的裝置的重現會在平面或太空船的空間中找到的航班黏風格。 它們是快速且準確控制飛行的完美輸入裝置。
+飛行桿是遊戲輸入的裝置，重現飛機或太空船駕駛艙中的飛行桿的感覺。 它們是快速且準確控制飛行的完美輸入裝置。
 
-如需如何使用 UWP 遊戲中的航班黏的詳細資訊，請參閱[航班固定](flight-stick.md)。
+如需如何使用您的 UWP 遊戲中的飛行桿的詳細資訊，請參閱[飛行桿](flight-stick.md)。
 
-### <a name="raw-game-controllers"></a>原始的遊戲控制器
+### <a name="raw-game-controllers"></a>原始遊戲控制器
 
 原始遊戲控制器是遊戲控制器的一般呈現，具有在許多不同類型的常見遊戲控制器上找到的輸入。 這些輸入作為未命名的按鈕、切換裝置和軸的簡單陣列而公開。 您可以使用原始遊戲控制器，讓客戶建立自訂輸入的對應，不論使用哪種類型的控制器。
 
-如需如何使用原始的遊戲控制器 UWP 遊戲中的詳細資訊，請參閱[原始的遊戲控制器](raw-game-controller.md)。
+如需如何在您的 UWP 遊戲中使用原始遊戲控制器的詳細資訊，請參閱[原始遊戲控制器](raw-game-controller.md)。
 
-### <a name="ui-navigation-controllers"></a>UI 導覽控制站
+### <a name="ui-navigation-controllers"></a>UI 瀏覽控制器
 
 UI 瀏覽控制器是邏輯輸入裝置，存在目的是為 UI 瀏覽命令提供通用詞彙，促使在各種不同遊戲和實體輸入裝置間能夠一致的使用者經驗。 遊戲的使用者介面應使用 UINavigationController 介面，而不是裝置特定的介面。
 

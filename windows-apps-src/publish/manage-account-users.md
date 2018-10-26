@@ -6,16 +6,14 @@ ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ms.author: wdg-dev-content
 ms.date: 07/11/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10，uwp，帳戶使用者，管理使用者、 azure ad，多使用者、 多個使用者
 ms.localizationpriority: medium
-ms.openlocfilehash: bef703958f8f04cd55d887dfa8840d1ed3fbeba5
-ms.sourcegitcommit: 82c3fc0b06ad490c3456ad18180a6b23ecd9c1a7
+ms.openlocfilehash: 4b659a12d972612d07f78504d46af396617513b4
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "5483434"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5566424"
 ---
 # <a name="manage-account-users"></a>管理帳戶使用者
 

@@ -6,18 +6,17 @@ title: 影像中繼資料
 ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
-ms.openlocfilehash: e69508ae558d93281e0170913fa0ccdc5891cc64
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: a3e2f10174412b49ce60f3da6a4bb73b2efc4411
+ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "209139"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5569484"
 ---
 # <a name="image-metadata"></a>影像中繼資料
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 本文示範如何讀取和寫入影像中繼資料屬性，以及如何使用 [**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) 公用程式類別以標記檔案的地理位置。
@@ -88,9 +87,9 @@ GeotagHelper 是公用程式類別，可讓您直接使用 [**Windows.Devices.Ge
 ## <a name="related-topics"></a>相關主題
 
 * [影像處理](imaging.md)
- 
+ 
 
- 
+ 
 
 
 
