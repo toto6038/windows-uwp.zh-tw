@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 0482c9a770d23ccebb094c00de7cab08cd6ab1cb
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5547046"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5641148"
 ---
 # <a name="package-a-desktop-application-manually"></a>手動封裝的傳統型應用程式
 
@@ -158,7 +158,7 @@ ms.locfileid: "5547046"
 
 ## <a name="optional-add-target-based-unplated-assets"></a>(選用) 新增以目標為基礎的 Unplated 資產
 
-以目標為基礎的資產適用於圖示和磚，會顯示在 Windows 工作列、工作檢視、ALT + TAB 及貼齊小幫手上，以及開始畫面磚的右下角。 您也可以在[這裡](https://docs.microsoft.com/windows/uwp/shell/tiles-and-notifications/app-assets#target-based-assets)閱讀更多資訊。
+以目標為基礎的資產適用於圖示和磚，會顯示在 Windows 工作列、工作檢視、ALT + TAB 及貼齊小幫手上，以及開始畫面磚的右下角。 您也可以在[這裡](https://docs.microsoft.com/windows/uwp/design/style/app-icons-and-logos#unplated-assets)閱讀更多資訊。
 
 1. 取得正確的 44x44 影像，並將它們複製到包含您的影像 (也就是資產) 的資料夾。
 

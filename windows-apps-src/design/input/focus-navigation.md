@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f4c86847e02c4ba987f8b1dcc42016145b175193
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5618321"
+ms.locfileid: "5642692"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
 

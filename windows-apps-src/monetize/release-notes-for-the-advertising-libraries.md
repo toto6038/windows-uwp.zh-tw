@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, ads, advertising, release notes, 廣告, 版本資訊
 ms.localizationpriority: medium
 ms.openlocfilehash: dbe932eb9391a4de0304b4be42944b2bced3287a
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5564637"
+ms.locfileid: "5641322"
 ---
 # <a name="release-notes-for-the-advertising-libraries"></a>Advertising 程式庫的版本資訊
 

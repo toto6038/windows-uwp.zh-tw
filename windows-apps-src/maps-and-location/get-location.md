@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 定位功能
 ms.localizationpriority: medium
 ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/26/2018
-ms.locfileid: "5597548"
+ms.locfileid: "5642722"
 ---
 # <a name="get-the-users-location"></a>取得使用者的位置
 
