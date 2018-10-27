@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: a078d096a9cffe26e9b342250726dd75cdf48817
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5543566"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "5711425"
 ---
 # <a name="enhance-existing-scrollviewer-experiences"></a>美化現有的 ScrollViewer 體驗
 

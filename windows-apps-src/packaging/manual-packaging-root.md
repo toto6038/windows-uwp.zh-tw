@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
 ms.openlocfilehash: 0268e858ecbcaaee95796fa590d4a9994dcfb505
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5549832"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5688427"
 ---
 # <a name="manual-app-packaging"></a>手動封裝 App
 
