@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store reviews API, respond to reviews, Microsoft Store 評論 API, 回應評論
 ms.localizationpriority: medium
 ms.openlocfilehash: 2398dad84f43a624bd8e833f2032d8857a90f36e
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5557813"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5706622"
 ---
 # <a name="respond-to-reviews-using-store-services"></a>使用Microsoft Store 服務回應評論
 

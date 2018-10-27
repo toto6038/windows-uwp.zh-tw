@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 約會, 行事曆
 ms.localizationpriority: medium
 ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5604827"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710121"
 ---
 # <a name="manage-appointments"></a>管理約會
 

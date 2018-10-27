@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d7b08138ab22d4cf2cbf4fb5273759f000a7c94
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5666614"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5708857"
 ---
 # <a name="template-settings-classes"></a>範本設定類別
 

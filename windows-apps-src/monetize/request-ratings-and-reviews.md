@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
 ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
-ms.sourcegitcommit: b7e3d222e229cdbf04e837fcb94fb7d84a93de09
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5592933"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709788"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 

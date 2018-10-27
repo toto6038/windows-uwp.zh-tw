@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項
 ms.localizationpriority: medium
 ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5571023"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5705574"
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
 

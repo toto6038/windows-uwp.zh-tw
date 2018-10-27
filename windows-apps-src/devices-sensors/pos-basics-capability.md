@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, point of service, pos, 服務點
 ms.localizationpriority: medium
 ms.openlocfilehash: dbed55af1a9fa3df14f0a7e3e7c6d1f599b40fd3
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5560781"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5709113"
 ---
 # <a name="pointofservice-device-capability"></a>PointOfService device 功能
 您透過在您的應用程式套件資訊清單中宣告功能，來要求存取 PointOfService API] 您可以使用 Microsoft Visual Studio 中的資訊清單設計工具宣告大部分的功能，或是手動新增功能。  

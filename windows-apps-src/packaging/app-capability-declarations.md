@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c17c802e77d13e6e980ed5046c19bfc106d5cff
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.openlocfilehash: 451a8041e0a81d43d91692e92046c32d458e0982
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5563269"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5710611"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -211,6 +211,8 @@ ms.locfileid: "5563269"
 | **提高權限** | **AllowElevation**受限制的功能可讓您建立的 Microsoft 合作夥伴和企業可以保留現有桌面的功能需要自動提高 app 生命週期期間或在啟動應用程式。<br/><br/>我們不建議在提交到 Microsoft Store 的應用程式中宣告這項功能。 大部分的開發人員都不會獲得核准使用這項功能。 只會針對特定業務的應用程式部署企業能夠透過商務用 Microsoft 網上商店它們的私人市集的核准。  |
 | **Windows 小組裝置認證** | **TeamEditionDeviceCredentials**受限制的功能讓 app 能夠存取要求執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的裝置帳戶認證的 Api。<br/><br/>我們不建議在提交到 Microsoft Store 的應用程式中宣告這項功能。 大部分的開發人員都不會獲得核准使用這項功能。 |
 | **Windows 小組應用程式檢視** | **TeamEditionView**受限制的功能讓 app 能夠存取裝載在執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的應用程式檢視的 Api。<br/><br/>我們不建議在提交到 Microsoft Store 的應用程式中宣告這項功能。 大部分的開發人員都不會獲得核准使用這項功能。 |
+| **相機處理延伸模組** | **CameraProcessingExtension**受限制的功能讓 app 能夠處理從無須直接存取相機控制相機擷取的影像。<br /><br />這項功能，才能呼叫[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)命名空間中的 Api。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
+| **數據使用量管理*** | **NetworkDataUsageManagement**受限制的功能讓 app 能夠收集網路資料使用量資訊。<br /><br />這項功能，才能呼叫[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
 
 ## <a name="custom-capabilities"></a>自訂的功能
 
