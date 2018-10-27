@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: 894bc6f657f4a65072056a14171bf86b92cced38
-ms.sourcegitcommit: d0e836dfc937ebf7dfa9c424620f93f3c8e0a7e8
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5637689"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5694705"
 ---
 # <a name="xbox-device-portal-rest-api"></a>Xbox 裝置入口網站 REST API
 
