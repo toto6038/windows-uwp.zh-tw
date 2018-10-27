@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可正式發行前小眾測試版提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 7388e18f70cef0000d354536b0c78244f51f756d
-ms.sourcegitcommit: 6cc275f2151f78db40c11ace381ee2d35f0155f9
+ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "5542647"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "5700763"
 ---
 # <a name="commit-a-package-flight-submission"></a>認可套件正式發行前小眾測試版提交
 
