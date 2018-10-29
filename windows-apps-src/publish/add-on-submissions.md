@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, iap, App 內購買, 應用程式內產品, iap 提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d7045c09dfa56c15027fda94eeb21e5d744aa45
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5687648"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5759072"
 ---
 # <a name="add-on-submissions"></a>附加元件提交
 

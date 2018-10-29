@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件轉換, 通道
 ms.localizationpriority: medium
 ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5687352"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5748860"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>依通道取得附加元件轉換
 

@@ -3,16 +3,16 @@ author: stevewhims
 description: 有關於使用 C++/WinRT 撰寫及使用 Windows 執行階段 API 您可能會有的問題的解答。
 title: 有關 C++/WinRT 的常見問題集
 ms.author: stwhi
-ms.date: 05/07/2018
+ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a2ea3dddc592379199017408652cab0a2a68fbb
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: 612eb6ced57fb2a8ca5d855ef9c156b0b9ae4440
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5696473"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5742521"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 您很可能有撰寫和使用 Windows 執行階段 Api 使用的相關的問題的解答[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -51,7 +51,7 @@ ms.locfileid: "5696473"
 #pragma comment(lib, "windowsapp")
 ```
 
-我們建議您先解決問題，您可以藉由連結**WindowsApp.lib**任何連結器錯誤。 但是，如果您不需要您的應用程式通過 Visual Studio 和 Microsoft Store 使用來驗證提交 （亦即，因此無法它可能是成功的應用程式的[Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試內嵌到 Microsoft Store，），然後您可以改為連結替代的靜態連結程式庫。 例如，如果您的連結器錯誤是指**CoIncrementMTAUsage** （或**WINRT_CoIncrementMTAUsage**），然後可以解決的連結 Ole32.lib 絕對必要時 （例如，如果您的**WindowsApp.lib**版本不會匯出函式）。
+它很重要，解決任何連結器錯誤，您可以藉由連結**WindowsApp.lib**而不替代的靜態連結程式庫，否則您的應用程式將不會通過 Visual Studio 和使用的[Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)測試若要驗證提交 （亦即，因此無法它可能會成功內嵌到 Microsoft Store 的應用程式） 在 Microsoft Store。
 
 ## <a name="should-i-implement-windowsfoundationiclosableuwpapiwindowsfoundationiclosable-and-if-so-how"></a>我是否應該實作 [**Windows::Foundation::IClosable**](/uwp/api/windows.foundation.iclosable)，如果是，該如何進行？
 如果在其解構程式中您有釋出資源的執行階段類別，且設計該執行階段類別從其實作編譯單位之外使用 (它是 Windows 執行階段元件，旨在供給 Windows 執行階段用戶端應用程式的一般使用)，我們建議您也實作 **IClosable** 以便支援不確定完成的語言使用您的執行階段類別。 請確定不論是否解構函式都會釋出您的資源，[**IClosable::Close**](/uwp/api/windows.foundation.iclosable.Close)，或兩者都呼叫。 可以任意呼叫 **IClosable::Close** 數次。

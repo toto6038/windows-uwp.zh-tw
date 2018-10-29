@@ -1,6 +1,6 @@
 ---
 author: c-don
-title: 部署應用程式通過鬆散檔案註冊
+title: 透過鬆散檔案註冊部署應用程式
 description: 本指南會示範如何使用鬆散檔案配置來驗證和共用 Windows 10 應用程式，而不需要進行封裝。
 ms.author: cdon
 ms.date: 6/1/2018
@@ -8,13 +8,13 @@ ms.topic: article
 keywords: windows 10、 uwp、 裝置入口網站、 應用程式管理員、 部署、 sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 16dc7c3d8182e249134be941d466574cddc36157
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5705728"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5743035"
 ---
-# <a name="deploy-an-app-through-loose-file-registration"></a>部署應用程式通過鬆散檔案註冊 
+# <a name="deploy-an-app-through-loose-file-registration"></a>透過鬆散檔案註冊部署應用程式 
 
 本指南會示範如何使用鬆散檔案配置來驗證和共用 Windows 10 應用程式，而不需要進行封裝。 登錄鬆散檔案版面配置可讓開發人員快速驗證其應用程式，而不需要以封裝及安裝應用程式。 
 

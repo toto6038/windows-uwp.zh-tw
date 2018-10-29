@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable, Microsoft Store 集合, 執行, 消費性產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 69795a40ae5e46f95330cd6a6d2738adc9a74686
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5704502"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5768904"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>將消費性產品回報為已完成
 

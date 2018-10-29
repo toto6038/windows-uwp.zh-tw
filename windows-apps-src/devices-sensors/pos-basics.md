@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, point of service, pos, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 46dd1f615e42f6e89ee9a92cb980299e9a0e5205
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5704029"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5741735"
 ---
 # <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
