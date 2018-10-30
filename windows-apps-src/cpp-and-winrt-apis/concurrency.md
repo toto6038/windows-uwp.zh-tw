@@ -3,16 +3,16 @@ author: stevewhims
 description: 本主題中顯示的方式，您可以使用 C++/WinRT，同時建立及使用 Windows 執行階段非同步物件
 title: 透過 C++/WinRT 的並行和非同步作業。
 ms.author: stwhi
-ms.date: 10/21/2018
+ms.date: 10/27/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: b1a45ba0bd362c07c27516ef18c11c326d747b1f
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.openlocfilehash: d7807b71f1c775493e525284e61c093081eb2c2b
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5702222"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5754841"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -460,7 +460,57 @@ co_await static_cast<no_switch>(async);
 
 ## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消非同步作業，並取消回呼
 
-在 Windows 執行階段功能進行非同步程式設計可讓您取消 「 執行中 」 的非同步動作或作業。 讓我們開始使用簡單的範例。
+在 Windows 執行階段功能進行非同步程式設計可讓您取消 「 執行中 」 的非同步動作或作業。 以下是範例會呼叫[**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)来擷取的檔案，可能很大集合，它會產生非同步作業物件儲存在資料成員。 使用者也可選擇取消作業。
+
+```cppwinrt
+// MainPage.xaml
+...
+<Button x:Name="workButton" Click="OnWork">Work</Button>
+<Button x:Name="cancelButton" Click="OnCancel">Cancel</Button>
+...
+
+// MainPage.h
+...
+#include <winrt/Windows.Storage.Search.h>
+...
+struct MainPage : MainPageT<MainPage>
+{
+    MainPage()
+    {
+        InitializeComponent();
+    }
+
+    IAsyncAction OnWork(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        workButton().Content(winrt::box_value(L"Working..."));
+
+        // Enable the Pictures Library capability in the app manifest file.
+        StorageFolder picturesLibrary{ KnownFolders::PicturesLibrary() };
+
+        m_async = picturesLibrary.GetFilesAsync(CommonFileQuery::OrderByDate, 0, 1000);
+
+        IVectorView<StorageFile> filesInFolder{ co_await m_async };
+
+        workButton().Content(box_value(L"Done!"));
+
+        // Process the files in some way.
+    }
+
+    void OnCancel(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    {
+        if (m_async.Status() != AsyncStatus::Completed)
+        {
+            m_async.Cancel();
+            workButton().Content(winrt::box_value(L"Canceled"));
+        }
+    }
+
+private:
+    IAsyncOperation<::IVectorView<StorageFile>> m_async;
+};
+```
+
+取消的實作端，讓我們開始使用簡單的範例。
 
 ```cppwinrt
 // pch.h
