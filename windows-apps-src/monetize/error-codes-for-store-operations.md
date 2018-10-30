@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，應用程式內購買，Iap，附加元件，錯誤碼
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5709030"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5762569"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 作業的錯誤碼
 

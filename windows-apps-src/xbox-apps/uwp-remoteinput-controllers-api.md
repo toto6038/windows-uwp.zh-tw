@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5e0b85293ada8619246c3c23ef2103ead5f40c23
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5682800"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5763202"
 ---
 # <a name="controller-api-reference"></a>控制器 API 參考   
 您可以使用此 REST API 取得附加實體控制器數目，並以程式設計方式將它們關閉。
