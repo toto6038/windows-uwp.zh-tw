@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
 ms.openlocfilehash: 49f67fe9078d9dc3b73f771f64ee26ce0486f990
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5697226"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5768601"
 ---
 # <a name="code-your-app-for-experimentation"></a>編寫實驗用的 app 程式碼
 

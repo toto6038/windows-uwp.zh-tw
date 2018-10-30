@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cfc3d1947b65412749539916e2776288db363df8
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "5687401"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5766131"
 ---
 # <a name="enable-consumable-in-app-product-purchases"></a>啟用消費性應用程式內產品購買
 
