@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ad78c282231d2f7ae7b3261fec0b0c1b59abc45
-ms.sourcegitcommit: 086001cffaf436e6e4324761d59bcc5e598c15ea
+ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "5704999"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "5757864"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 
@@ -89,9 +89,9 @@ ms.locfileid: "5704999"
 
 1.  再次檢查前述[沒有顯示 AdControl](#xaml-notappearing) 一節中的所有步驟。
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
+2.  處理 **ErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
 
-    This example demonstrates an **ErrorOccurred** event handler. 第一個程式碼片段是 XAML UI 標記。
+    此範例示範 **ErrorOccurred** 事件處理常式。 第一個程式碼片段是 XAML UI 標記。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -226,7 +226,7 @@ ms.locfileid: "5704999"
 
 1.  再次檢查上方[沒有顯示 AdControl](#csharp-adcontrolnotappearing) 一節中的所有步驟。
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
+2.  處理 **ErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
 
     下列範例顯示實作錯誤呼叫所需的基本程式碼。 這個 XAML 程式碼會定義用來顯示錯誤訊息的 **TextBlock**。
 
