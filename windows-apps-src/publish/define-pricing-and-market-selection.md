@@ -4,16 +4,16 @@ Description: The Microsoft Store reaches customers in over 200 countries and reg
 title: 定義市場選取項目
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.author: wdg-dev-content
-ms.date: 06/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 市場, 國家, 地區
 ms.localizationpriority: medium
-ms.openlocfilehash: c50f20b3e86f1868732be74b0d35933658dc3ceb
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ef7136868fc9c212640c142db2751bd6e9a0b179
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752816"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835438"
 ---
 # <a name="define-market-selection"></a>定義市場選取項目
 
@@ -36,12 +36,12 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 請注意，您在這裡選取的項目只會套用至新的取得項目；如果某人已在特定市場中擁有您的應用程式，而您之後移除該市場，該市場中已擁有應用程式的人仍可繼續使用，但是無法取得您提交的更新，而且該市場中沒有新客戶可取得您的應用程式。
 
 > [!IMPORTANT]
-> 遵循當地的任何法規要求是您的責任，即使這裡或 Windows 開發人員中心儀表板並未列出這些要求。
+> 它是任何當地法律要求，您必須負責，即使這裡或合作夥伴中心並未列出這些要求。
 
 請記住，即使您選取全部的市場，當地法律限制或其他因素都可能造成某些 App 無法在部分國家/地區中列出。 此外，某些市場可能會有與年齡分級相關的特定需求。 如果您的 app 不符合這些需求，我們將無法在該市場中提供您的 app。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
 
 > [!NOTE]
-> 對於目標為 Windows8 或 Windows8.1 應用程式，某些個別市場會被視為一個單獨的 「 世界其他地方 」 市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8x)。
+> 如先前發佈的 app，包括 Windows8 或 Windows8.1 為目標的套件，某些個別市場會被視為一個單獨的 「 世界其他地方 」 市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8x)。
 
 您也會看到一個核取方塊，讓您指定是否要在市集未來可能新增的市場中提供您的應用程式。 若您讓此方塊保持核取狀態，而我們之後新增市場，則在這些市場中會針對您的應用程式使用您的提交項目的基本價格和一般可用性日期。 如果您不希望這種情況發生，可以取消核取此方塊，如此我們就不會將您的應用程式列在未來任何市場中 (不過您之後可以隨時自行新增)。
  
@@ -478,12 +478,11 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>針對 Windows 8.x 的「世界其他地方」市場
 
-如果您的應用程式內容包含套件目標為 Windows 8.x，請務必注意數個市場會被視為單一 「 世界其他地方 」 市場的客戶在 Windows 上使用 microsoft Store 8.x，即使它們會顯示為 Windows 開發人員中心中的個別市場儀表板 (而不是較舊版本的市集儀表板，其中有已所有這些市場群組的其中一個 「 世界其他地方 」 市場選項)。
+如果您先前發佈的應用程式會包含套件目標為 Windows 8.x，請務必注意數個市場會被視為單一 「 世界其他地方 」 市場的客戶在 Windows 上使用 microsoft Store 8.x，即使它們會顯示為個別市場在合作夥伴中心。
 
-如果提交您 app 時保留預設的選項，則您不需要擔心這些事，且所有可能的市場都將能使用您的 app。 不過，如果您想要排除特定市場，請記住，即使其中一個這些 「 世界其他地方 」 市場中排除表示您的應用程式不會提供任何上 Windows8 或 Windows8.1 的客戶的 「 世界其他地方 」 市場中。
+如果您保留預設市場選取項目，提交您的應用程式時，您不需要擔心這個，和您的應用程式將其提供給所有可能的市場。 不過，如果您想要排除特定市場，請記住，排除甚至上述其中一個 「 世界其他地方 」 市場中*任何*的 「 世界其他地方 」 市場上 Windows8 或 Windows8.1 的客戶就不會提供您的應用程式。
 
 所謂 Windows 8.x「世界其他地方」的市場包括：
-
 
 <table>
   <tr>

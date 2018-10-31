@@ -10,12 +10,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: b1e57d5c8ae4d1586de9f16455dc178c5e154fbf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760525"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836690"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>將 UI 及應用程式套件資訊清單中的字串當地語系化
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
@@ -259,7 +259,7 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>從類別庫或 Windows 執行階段媒體櫃載入字串
 參照之類別庫 (通用 Windows) 或[Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 的字串資源，通常加入到在建置程序期間包含它們的套件的子資料夾。 這類字串的資源識別碼通常採用表單 *LibraryName/ResourcesFileName/ResourceIdentifier*。
 
-類別庫可以為它自己的資源取得 ResourceLoader。 例如，下列程式碼說明參照的類別庫或 App 如何可為類別庫的字串資源取得 ResourceLoader。
+類別庫可以為它自己的資源取得 ResourceLoader。 例如，下列程式碼說明如何媒體櫃或參考它的應用程式可取得 ResourceLoader 的程式庫的字串資源。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");

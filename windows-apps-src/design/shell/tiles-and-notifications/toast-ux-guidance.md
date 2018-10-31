@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，集合、 群組、 ux，ux 指導方針，指導方針、 動作、 快顯通知，控制中心、 noninterruptive、 有效的通知、 干擾通知，可採取動作，管理，組織
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ee3431681f3d9fba5c50759e822d78c09826957
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 3c77719bd45c3169ec02a280099d27e10099a25c
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767919"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828757"
 ---
 # <a name="toast-notification-ux-guidance"></a>快顯通知的 UX 指導方針
 通知是必要的新式生命;它們能協助使用者生產力與預約與應用程式和網站，以及掌握目前使用的任何更新。 不過，從有用 overbearing 和覺得受干擾，如果不是設計的使用者為中心的方式可以快速關閉通知。 通知有一個以滑鼠右鍵按一下離正在關閉，並不太可能會關閉後，他們將會開啟一次。  因此請確定您的通知是公開的使用者的螢幕空間和時間，因此您可以保留這個佔用通道開啟。
@@ -42,7 +42,7 @@ ctionable 通知是一個很強大的工具，可協助您的使用者感覺生�
 
 **原始通知：** 使用[原始通知](raw-notification-overview.md)將實用有許多原因，尤其是最小化干擾使用者的選單鍵。  傳送原始通知將喚醒您的應用程式在背景中，因此您可以評估是否通知會立即提供您的應用程式內容中的比較合理。 如果它是您感覺起來應顯示給使用者立即，便能在要快顯從該處[本機快顯通知](send-local-toast.md)。  如果這是使用者不需要查看現在，您就可以建立在稍後將會引發[排程快顯通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/)。
 
-**幽靈車快顯通知：** 您也可以引發會略過彈出在右下角的畫面，並改為直接與重要訊息中心傳送通知的通知。 這被透過[SupressPopup 屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)設定為 True。 可能有一些周圍不在控制中心以外彈出通知的態度，雖然我們看到 2-3 次更高版本透過 live 在控制中心的快顯通知的佔用取出快顯通知。  使用者可更具回應性，當它們準備好接收 notificaitons 且可以控制它們會中斷時，這是控制中心中的內容可以是適用於非侵入式通知使用者更有效的原因。
+**幽靈車快顯通知：** 您也可以引發會略過彈出在右下角的畫面，並改為直接與重要訊息中心傳送通知的通知。 這被透過[SuppressPopup 屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)設定為 True。 可能有一些周圍不在控制中心以外彈出通知的態度，雖然我們看到 2-3 次更高版本透過 live 在控制中心的快顯通知的佔用取出快顯通知。  使用者可更具回應性，當它們準備好接收 notificaitons 且可以控制它們會中斷時，這是控制中心中的內容可以是適用於非侵入式通知使用者更有效的原因。
 
 ## <a name="3-clear-out-the-clutter"></a>3.清除出雜亂度
 通知可以保留在控制中心中，相當長的時間 （預設值的三天）。  請務必確定將位於這裡的內容是最新狀態及相關每次使用者開啟控制中心。 您是浪費使用者的螢幕空間，且佔用可能會使用於項更保持最新狀態的插槽。  假設使用者安裝您的電子郵件管理應用程式，而會接收十個電子郵件和十個通知，以及這些電子郵件。  根據您所需的體驗，您可以考慮清除這些通知，如果使用者已讀取相對應的電子郵件，或開啟應用程式的方式，從重要訊息中心移除舊的雜亂度。

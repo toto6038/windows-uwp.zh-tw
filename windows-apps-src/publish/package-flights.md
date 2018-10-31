@@ -4,16 +4,16 @@ Description: You can use package flights to distribute packages that are only gi
 title: 套件正式發行前小眾測試版
 ms.assetid: 5B094822-A8DE-4EE3-B55D-3E306C04EE79
 ms.author: wdg-dev-content
-ms.date: 6/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 正式發行前小眾測試
 ms.localizationpriority: medium
-ms.openlocfilehash: c34aa5f060671341900e25095ee8dc1d2d45a657
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a873b6f6c0d1a35667b47109f5cc2205e5a02158
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757923"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5838909"
 ---
 # <a name="package-flights"></a>套件正式發行前小眾測試版
 
@@ -21,7 +21,7 @@ ms.locfileid: "5757923"
 
 使用套件正式僅有套件是不同的。市集清單詳細資料將會與您的所有客戶的相同。 在您的正式群組中的任何人都將會收到您包含的套件飛行，而不在正式群組中的客戶仍繼續收到一般 （非正式） 套件的套件。  如果您稍後決定您想要將套件從套件正式提供給您所有客戶，您可以輕鬆地使用那些相同的套件，在非正式的提交。 請注意，套件正式必須通過[認證程序](the-app-certification-process.md)，只是相同任何提交。
 
-當您設定新的套件提交時，您可以指定應取得特定套件新增到**已知的使用者群組**（有時稱為飛行群組） 的人員。 正式發行前小眾測試版群組中正在使用執行 Windows 10 某一版本且支援套件正式發行前小眾測試版 (Windows.Desktop build 10586 或更新版本；Windows.Mobile build 10586.63 或更新版本；或 Xbox One) 之裝置的任何人，都能夠從您為該特定群組指定的套件正式發行前小眾測試版取得套件。 (您的套件正式發行前小眾測試版可包含以任何作業系統版本 (包括 Windows 8.1/Windows Phone 8.1 或更新版本) 為目標的套件。) 尚未新增至您其中一個正式發行前小眾測試版群組，或正在使用的裝置不支援套件正式發行前小眾測試版的任何人員，則將從非正式發行前小眾測試版提交取得套件。
+當您設定新的套件提交時，您可以指定應取得特定套件新增到**已知的使用者群組**（有時稱為飛行群組） 的人員。 正式發行前小眾測試版群組中正在使用執行 Windows 10 某一版本且支援套件正式發行前小眾測試版 (Windows.Desktop build 10586 或更新版本；Windows.Mobile build 10586.63 或更新版本；或 Xbox One) 之裝置的任何人，都能夠從您為該特定群組指定的套件正式發行前小眾測試版取得套件。 （您的套件正式可以包含任何作業系統版本，包括 Windows 8.1 / Windows Phone 8.1 或更早版本，如果您先前發佈的應用程式已經支援為目標的套件）。任何人不已新增到正式群組的成員，或正使用不支援套件正式的裝置會從非正式提交取得套件。
 
 > [!IMPORTANT] 
 > 在桌上型電腦和行動裝置上，每當您提供更新時，正式發行前小眾測試版群組中的人員就會自動取得正式發行前小眾測試版中的套件。 不過，**正式發行前小眾測試版群組中，使用 Xbox 裝置的人員將需要手動檢查更新**，才能取得最新的套件，方法是，確認他們已經使用他們的 Microsoft 帳戶 (以您在已知的使用者群組中加入的相關聯電子郵件地址) 登入他們的裝置。
@@ -51,7 +51,7 @@ ms.locfileid: "5757923"
 
 ## <a name="specify-packages-to-include-in-your-package-flight"></a>指定要包含在您套件正式發行前小眾測試版中的套件
 
-在您儲存套件正式發行前小眾測試版詳細資料之後，您會看到其概觀頁面。 按一下 **\[套件\]** 來指定您想要包含在正式發行前小眾測試版中的套件。 您可以包含以任何作業系統版本 (包括 Windows 10、Windows 8.x 和 Windows Phone 8.x 或更舊版本) 為目標的套件。
+在您儲存套件正式發行前小眾測試版詳細資料之後，您會看到其概觀頁面。 按一下 **\[套件\]** 來指定您想要包含在正式發行前小眾測試版中的套件。 您可以包含您的應用程式支援任何作業系統版本為目標的套件。
 
 您可以選取與之前發行的提交 (非正式發行前小眾測試版提交，或如果您有多個其他套件正式發行前小眾測試版，可選取其中之一) 相關聯的套件。 如果您需要上傳要用於此套件正式的新套件，您可以上傳它們以下 （使用[您上傳應用程式套件至一般非正式提交時相同的程序](upload-app-packages.md)）。 當您完成指定此套件正式發行前小眾測試版中要包含的套件時，按一下 **\[儲存\]**。
 

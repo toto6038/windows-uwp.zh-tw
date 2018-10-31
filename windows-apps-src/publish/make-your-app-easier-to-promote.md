@@ -4,16 +4,16 @@ Description: Get your app noticed! Aside from making your app the best it can be
 title: 讓您的應用程式更容易促銷
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ms.author: wdg-dev-content
-ms.date: 3/13/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 促銷, 宣傳, 精選, 展示, store
 ms.localizationpriority: medium
-ms.openlocfilehash: ede4cc948b20ee90b9d2e3866e7c342caa1e2be8
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 43970ce024408032f0e2e9891eaae34efa68e014
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752489"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5830128"
 ---
 # <a name="make-your-app-easier-to-promote"></a>讓您的應用程式更容易促銷
 
@@ -29,7 +29,7 @@ Microsoft Store 會依類別或主題分組展示不同的應用程式。 因為
 
     推薦應用程式時，Microsoft Store 可能在各種配置中使用您的[應用程式螢幕擷取畫面與影像](app-screenshots-and-images.md)。 務必設計能夠充分展現您 app 的螢幕擷取畫面，並確認第一個螢幕擷取畫面特別具有代表性和吸引力。 您可以提供數組不同的螢幕擷取畫面，以顯示應用程式在支援的每個裝置類型上的外觀。
 
-    為了將您的應用程式在 Microsoft Store 中獲得大力推薦的機會發揮到極致，請在 Store 清單的 **\[Microsoft Store 標誌\]** 和 **\[其他美工圖案資產\]** 區段中提供所有適用的影像。 **9:16 海報美工圖案 (720 x 1080 或 1440 x 2160 像素)** 和 **16:9 超級主角美工圖案 (1920 x 1080 或 3840 x 2160 像素)** 影像對於 Windows 10 (包括 Xbox) 尤其重要。 如果您的應用程式支援 Xbox 和/或 Holographic 裝置系列，我們建議也為這些裝置系列提供所有適用的影像。 如需更多詳細資料與指導方針，請參閱[應用程式螢幕擷取畫面、影像及預告片](app-screenshots-and-images.md)。
+    為了將您的應用程式在 Microsoft Store 中獲得大力推薦的機會發揮到極致，請在 Store 清單的 **\[Microsoft Store 標誌\]** 和 **\[其他美工圖案資產\]** 區段中提供所有適用的影像。 **9:16 海報美工圖案 （720 x 1080 或 1440 x 2160 像素）** 和**16:9 超級主角美工圖案 （1920 x 1080 或 3840 x 2160 像素）** 的影像是特別重要。 如果您的應用程式支援 Xbox 和/或 Holographic 裝置系列，我們建議也為這些裝置系列提供所有適用的影像。 如需更多詳細資料與指導方針，請參閱[應用程式螢幕擷取畫面、影像及預告片](app-screenshots-and-images.md)。
 
 -   **只建置一個版本的應用程式，不要建置免費版本和另一個付費版本**
 

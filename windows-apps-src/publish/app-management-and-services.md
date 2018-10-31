@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: Manage and view details related to each of your apps in the Windows Dev Center dashboard, and configure services such as A/B testing and maps.
+Description: Manage and view details related to each of your apps in Partner Center, and configure services such as A/B testing and maps.
 title: 應用程式管理與服務
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ms.author: wdg-dev-content
-ms.date: 07/18/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f1bb8202613385a9ffc3e48ec95873d3270c10a8
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 112f69704c502f1aa394aa1dd8d544aa0728477d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766904"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835368"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
-在 Windows 開發人員中心儀表板中，您可以管理和檢視與每個 App 相關的詳細資料，並設定像是通知、A/B 測試和地圖等服務。
+您可以管理和檢視與每個 app 的相關詳細資料 [合作夥伴中心，並設定服務，例如通知、 A / B 測試和地圖。
 
-當您在儀表板中使用 app 時，將會在 **\[服務\]** 與 **\[App 管理\]** 的左導覽功能表中看見一些區段。 您可以展開這些區段來存取如下所述的功能。
+使用合作夥伴中心中的 app 時，您會看到在左方的導覽功能表中的章節**服務**與**應用程式管理**。 您可以展開這些區段來存取如下所述的功能。
 
 ## <a name="services"></a>服務
 
@@ -39,7 +39,7 @@ ms.locfileid: "5766904"
 
 ## <a name="maps"></a>地圖
 
-若要在適用於 Windows Phone 8.1 和較舊版本的 app 中使用地圖服務，您需要在 app 程式碼中包含地圖服務 app 識別碼和權杖。 您可以在 **\[地圖\]** 頁面的 **\[服務\]** 區段中取得這個權杖。
+若要在先前發佈應用程式適用於 Windows Phone 8.1 和較舊版本中使用地圖服務，您需要在您的應用程式程式碼中包含地圖服務應用程式識別碼和權杖。 您可以在 **\[地圖\]** 頁面的 **\[服務\]** 區段中取得這個權杖。
 
 > [!NOTE]
 > 若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)。
@@ -90,7 +90,7 @@ f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式
 **WNS/MPNS**區段會提供選項以協助您建立和傳送通知給您的應用程式客戶。 
 
 > [!TIP]
-> 對於 UWP 應用程式，我們建議您在儀表板中使用**通知**選項。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您的 Windows 10 客戶符合條件的特定對象子集您所定義在[客戶區隔](create-customer-segments.md)中。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
+> 對於 UWP 應用程式，我們建議使用合作夥伴中心的**通知**功能。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您的 Windows 10 客戶符合條件的特定對象子集您所定義在[客戶區隔](create-customer-segments.md)中。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
 
 根據您的應用程式套件類型和及其特定需求，您也可以使用其中一個下列選項： 
 
@@ -98,7 +98,7 @@ f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式
 
 -   **Microsoft Azure Mobile Apps** 讓您能夠傳送推播通知、驗證和管理應用程式使用者，以及在雲端中儲存應用程式資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推播通知服務 (MPNS)** 可以與您適用於 Windows Phone 的 .xap 套件搭配使用。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳至 \ [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推播通知服務 (MPNS)** 可以搭配用於 Windows Phone 先前已發佈的.xap 套件。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳至 \ [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

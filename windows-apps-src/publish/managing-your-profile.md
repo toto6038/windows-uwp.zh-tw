@@ -2,29 +2,29 @@
 author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: 管理帳戶設定與設定檔資訊
-description: 您可以在整合的 Windows 開發人員中心儀表板中的 [帳戶設定] 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。
+description: 您可以檢視並更新您的開發人員帳戶設定與合作夥伴中心的帳戶設定] 區段中的設定檔資訊。
 ms.author: wdg-dev-content
-ms.date: 03/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: medium
-ms.openlocfilehash: b17281d597ea484c81896abd7efdc7d31fdc8add
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744004"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5837406"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 
-您可以在[Windows 開發人員中心儀表板](using-the-windows-dev-center-dashboard.md)中的 **\[帳戶設定\]** 區塊檢視並更新您的開發人員帳戶設定與個人檔案資訊。 
+您可以檢視並更新您的開發人員帳戶設定與[合作夥伴中心](https://partner.microsoft.com/dashboard)的**帳戶設定**\] 區段中的設定檔資訊。 
 
 > [!NOTE]
-> 通知喜好設定 (例如接收的通知類型，以及接收方式) 可以在 **\[訊息中心\]** 管理 (您可以透過選取靠近儀表板頂端的訊息圖示來存取)。
+> 通知喜好設定 （例如哪種類型的通知，以接收和接收方式） 可以管理**訊息中心**（您可以透過選取合作夥伴中心的頂端附近的訊息圖示來存取）。
 
 ## <a name="account-settings"></a>帳戶設定
 
-若要檢視您的帳戶設定，按一下您儀表板右上角的齒輪圖示，然後選取 [**開發人員設定**。 您可以在此處找到關於您的帳戶和連結至其他頁面，您可以在此檢視資訊以及執行各種帳戶相關工作的詳細資料。
+若要檢視您的帳戶設定，請按一下合作夥伴中心右上角的齒輪圖示，然後選取 [**開發人員設定**。 您可以在此處找到關於您的帳戶和連結至其他頁面，您可以在此檢視資訊以及執行各種帳戶相關工作的詳細資料。
 
 在 **\[帳戶詳細資料\]** 區段中，您可以查看帳戶的狀態和類型。 您也可以查看您的賣方識別碼及其他的發行者識別碼資訊以下。 這些值由 Microsoft 指派用以唯一識別您的開發人員帳戶，並無法編輯。
 
@@ -50,8 +50,8 @@ ms.locfileid: "5744004"
 - **開發人員中心測試人員計畫**： 入或移出主要從 「[開發人員中心測試人員計畫](dev-center-insider-program.md)，您可以選擇**帳戶設定**\] 頁面。
 - **支付帳戶**與**稅務設定檔**：這是您[設定支付帳戶和稅單](setting-up-your-payout-account-and-tax-forms.md)的地方。 您需要先完成這個部分，才能為 App 或附加元件收取款項。
 - **企業關聯**：接受企業的邀請，這些企業希望您發行其專用的應用程式。 如需詳細資訊，請參閱[向企業散發企業營運應用程式](distribute-lob-apps-to-enterprises.md)。
-- **使用者**：將使用者新增到您的開發人員中心帳戶，並為他們指派角色和權限。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
-- **租用戶**： 管理您的 Azure AD 租用戶關聯。 如需詳細資訊，請參閱[將 Azure AD 與您的開發人員中心帳戶建立關聯](associate-azure-ad-with-dev-center.md)。
+- **使用者**： 將使用者新增至您的帳戶，並為他們指派角色與權限。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
+- **租用戶**： 管理您的 Azure AD 租用戶關聯。 如需詳細資訊，請參閱[將 Azure AD 與您的合作夥伴中心帳戶建立關聯](associate-azure-ad-with-dev-center.md)。
 - **計畫**：檢視您所參與之計畫的詳細資料，並了解其他感興趣的計畫。
 - **合約**：檢視您的帳戶已接受的合約。
 - **開發人員的裝置**： 檢視及管理[您已解鎖用於測試的 Windows Phone 8.x 裝置](http://go.microsoft.com/fwlink/p/?LinkId=533897)和[為開發啟用 Xbox One 主機](../xbox-apps/devkit-activation.md)。 

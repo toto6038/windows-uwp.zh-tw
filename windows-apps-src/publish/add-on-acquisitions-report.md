@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Add-on acquisitions report in the Windows Dev Center dashboard lets you see how many add-ons you've sold, along with demographic and platform details.
+Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: 附加元件下載數報告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
 ms.author: wdg-dev-content
-ms.date: 05/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
 ms.localizationpriority: medium
-ms.openlocfilehash: a1b25067104a664cb90ef068749d9e4cd00bcc80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761858"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829795"
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 
 
-在 Windows 開發人員中心儀表板的**附加元件下載數**報告可讓您查看有多個附加元件，您所銷售、 人數統計資料及平台詳細資訊，並顯示對於 windows 10 的客戶 （包括 Xbox） 的轉換資訊。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)的**附加元件下載數**報告可讓您查看有多個附加元件，您所銷售、 人數統計資料及平台詳細資訊，並顯示對於 windows 10 的客戶 （包括 Xbox） 的轉換資訊。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。
 
-您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得附加元件下載數](../monetize/get-in-app-acquisitions.md)方法來擷取此資料。
+您可以在合作夥伴中心，或[下載報告](download-analytic-reports.md)，以便離線檢視中檢視此資料。 或者，您可透過程式設計方式使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得附加元件下載數](../monetize/get-in-app-acquisitions.md)方法來擷取此資料。
 
 在此報告中，附加元件下載數表示客戶已經向您購買附加元件（或取得而不需付費，如果您免費提供附加元件）。 同一位客戶購買多個相同的消耗型附加元件會當作個別的附加元件下載數來計算。
 

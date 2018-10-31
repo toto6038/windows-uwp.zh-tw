@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
+Description: The Feedback report in Partner Center lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
 title: 意見反應報告
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ms.author: wdg-dev-content
-ms.date: 11/3/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eb8958adaeb78a068ae2baad30b7bc9fa96561a2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ab5e5f3fe533568079869c4fbd62530504544bf7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5744050"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828974"
 ---
 # <a name="feedback-report"></a>意見反應報告
 
-Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 Windows 10 客戶已透過意見反應中樞提交的問題、建議和附議。 您可以在儀表板中檢視此資料，或匯出資料以便離線檢視。
+合作夥伴中心中的**意見反應報告**可讓您查看問題、 建議及附議您的 Windows 10 客戶已透過意見反應中樞提交。 您可以在合作夥伴中心中檢視此資料，或匯出資料以便離線檢視。
 
 > [!NOTE]
 > 您也可以從此報告直接[回應意見反應](respond-to-customer-feedback.md)，讓客戶知道您正在聆聽。
@@ -26,7 +26,7 @@ Windows 開發人員中心儀表板中的**意見反應報告**可讓您查看 W
 
 您可以使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的意見反應 API，讓客戶[直接從您的 App 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md)。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您 App 的所有客戶，都可以使用意見反應中樞 App 留下意見反應。 基於這個原因，您可能會看到此報告中的客戶意見反應，即使您未明確要求意見反應在您的應用程式內。
 
-使用[套件正式發行前小眾測試](package-flights.md)，意見反應也會有所幫助，因為意見反應報告會顯示每個客戶在留下意見反應時已安裝在其裝置的特定套件。
+使用[套件正式發行前小眾](package-flights.md)，因為**意見反應**報告會顯示您每個客戶在留下意見反應時已安裝在其裝置的特定套件時，意見反應也會很有幫助。
 
 > [!TIP]
 > 如需快速查看評論、 評分，並在所有您的應用程式的使用者意見反應過去 30 天內，展開左側瀏覽功能表中的**互動**，然後選取**評論和意見反應。** 

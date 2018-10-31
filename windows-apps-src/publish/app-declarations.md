@@ -4,16 +4,16 @@ Description: Product declarations help make sure your app is displayed appropria
 title: 產品宣告
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ms.author: wdg-dev-content
-ms.date: 12/05/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c1fc444dbd106f4eeb0996903f71701a96a9735
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: de519f37c5eacfa64f23d0f438701d4ae9dbc934
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747826"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831157"
 ---
 # <a name="product-declarations"></a>產品宣告
 
@@ -46,16 +46,14 @@ ms.locfileid: "5747826"
 
 ## <a name="customers-can-install-this-app-to-alternate-drives-or-removable-storage"></a>客戶可將此 app 安裝至備用磁碟機或抽取式存放裝置。
 
-根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
+根據預設，讓客戶能夠安裝您的應用程式至外部或卸除式存放裝置媒體 （例如 sd 記憶卡），或非系統磁碟區磁碟機，例如外部磁碟機，會勾選此方塊。
 
-如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部硬碟在其裝置上安裝，請取消選取核取此方塊。
-
-請注意，是沒有選項可用來限制，讓應用程式*只*可以安裝到抽取式存放裝置媒體。
+如果您想要防止您的應用程式安裝至備用磁碟機或抽取式存放裝置，並只允許在內部硬碟在其裝置上安裝，請取消選取核取此方塊。 （請注意，是沒有選項可用來限制，讓應用程式*只*可以安裝到抽取式存放裝置媒體）。
 
 
 ## <a name="windows-can-include-this-apps-data-in-automatic-backups-to-onedrive"></a>Windows 可以在自動備份至 OneDrive 時包含此 app 的資料。
 
-預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。 （適用於 Windows Phone 8.1，這先前指出透過 StoreManifest.xml。）
+預設會勾選此方塊，以便在客戶選擇讓 Windows 自動備份至 OneDrive 時包含您應用程式的資料。
 
 如果您想要防止 app 的資料包含於自動備份中，請取消選取此方塊。
 

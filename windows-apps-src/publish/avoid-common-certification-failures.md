@@ -4,16 +4,16 @@ Description: Review this list to help avoid issues that frequently prevent apps 
 title: 避免常見的認證失敗
 ms.assetid: 9E9E3841-2F9B-42D4-B5F8-4C7C31E42E3D
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 17a3c3cd5d7b75408a368c6b5fbc0b4a8bfe2839
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7f37412ac88b001f412a1495f2b4efa029cf4d3a
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762124"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835248"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
@@ -33,7 +33,7 @@ ms.locfileid: "5762124"
 
 -   [提供任何所需的資訊](notes-for-certification.md)來使用應用程式，例如測試帳戶的使用者名稱和密碼 (若您的應用程式需要使用者登入服務)，或存取隱藏或鎖定功能的任何所需步驟。
 
--   您的應用程式需要時包含[隱私權原則](create-app-store-listings.md#privacy-policy)。例如，如果您的應用程式以任何方式存取任何類型的個人資訊或若法律要求時。 若要協助判斷您的應用程式是否需要隱私權原則，檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」 和 「 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
+-   如果您的應用程式需要一個;，包括[隱私權原則 URL](enter-app-properties.md#privacy-policy-url)例如，如果您的應用程式存取任何類型的任何方式個人資訊或若法律要求時。 若要協助判斷您的應用程式是否需要隱私權原則，檢閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)」 和 「 [Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies)。
 
 -   確定應用程式描述可清楚說明應用程式的功能。 如需說明，請參閱[撰寫一份出色的應用程式介紹](write-a-great-app-description.md)的指導方針。
 

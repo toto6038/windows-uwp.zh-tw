@@ -4,38 +4,38 @@ Description: Set roles or custom permissions for account users.
 title: 設定帳戶使用者的角色或自訂權限
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
 ms.author: wdg-dev-content
-ms.date: 07/11/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 753b71d409fd660687af77410f7f5796aa3c8a5c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748646"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835701"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
-當您[將使用者新增到您的開發人員中心帳戶](add-users-groups-and-azure-ad-applications.md)，您將需要指定帳戶使用者存取權。 您可以指派他們[標準角色](#roles) (套用至整個帳戶)，或是[自訂其權限](#custom)以提供適當層級的存取權。 某些自訂權限適用於整個帳戶，某些權限可限制為一或多個特定產品 (如果您想要，可針對所有產品授與)。
+當您[將使用者新增至您的合作夥伴中心帳戶](add-users-groups-and-azure-ad-applications.md)，您將需要指定的存取權帳戶內。 您可以指派他們[標準角色](#roles) (套用至整個帳戶)，或是[自訂其權限](#custom)以提供適當層級的存取權。 某些自訂權限適用於整個帳戶，某些權限可限制為一或多個特定產品 (如果您想要，可針對所有產品授與)。
 
 > [!NOTE] 
 > 不論您是新增使用者、群組或 Azure AD 應用程式，都適用相同的角色和權限。
 
 當判斷要套用哪個角色或權限，請牢記： 
--   使用者 (包括群組和 Azure AD 應用程式) 將能夠使用與其獲指派角色相關聯的權限來存取完整的開發人員中心帳戶，除非您[自動權限](#custom)並指派[產品層級權限](#product-level-permissions)，讓他們只能使用特定應用程式和/或附加元件。
+-   使用者 （包括群組和 Azure AD 應用程式） 將能夠存取其受指派的角色相關聯的權限的完整的合作夥伴中心帳戶，除非您[自訂權限](#custom)並指派[產品層級權限](#product-level-permissions)這樣他們只能使用特定應用程式和/或附加元件。
 -   您可以藉由選取多個角色，來允許使用者、群組或 Azure AD 應用程式具備一個以上之角色功能的存取權，或使用自訂權限授與您想要的存取權。
 -   具有特定角色 (或一組自訂權限) 的使用者也可以是具有不同角色 (或一組權限) 之群組的一部分。 在此情況下，使用者將具備與群組和個別帳戶相關聯之所有功能的存取權。
 
 > [!TIP]
-> 本主題專屬於 Windows 應用程式開發人員計畫。 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 如需有關 Windows 傳統型應用程式計畫中使用者角色的詳細資訊，請參閱 [Windows 傳統型應用程式計畫](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
+> 本主題是針對 Windows 應用程式開發人員計畫，在[合作夥伴中心](https://partner.microsoft.com/dashboard)。 如需硬體開發人員計畫中使用者角色的相關資訊，請參閱[管理使用者角色](https://docs.microsoft.com/windows-hardware/drivers/dashboard/managing-user-roles)。 如需有關 Windows 傳統型應用程式計畫中使用者角色的詳細資訊，請參閱 [Windows 傳統型應用程式計畫](https://docs.microsoft.com/windows/desktop/appxpkg/windows-desktop-application-program#add-and-manage-account-users)。
 
 
 <span id="roles" />
 
 ## <a name="assign-roles-to-account-users"></a>指派角色給帳戶使用者
 
-根據預設，當您新增使用者、群組或 Azure AD 應用程式至您的開發人員中心帳戶，會呈現一組標準角色供您選擇。 每個角色都具備一組特定權限，以便在帳戶內執行特定功能。 
+根據預設，會呈現一組標準角色，供您選擇從，當您新增使用者、 群組或 Azure AD 應用程式到您的合作夥伴中心帳戶。 每個角色都具備一組特定權限，以便在帳戶內執行特定功能。 
 
 除非選取 **\[自訂權限\]** 來選擇定義[自訂權限](#custom)，否則您新增到帳戶的每個使用者、群組或 Azure AD 應用程式至少必須被指派下列其中一個標準角色。 
 
@@ -45,7 +45,7 @@ ms.locfileid: "5748646"
 
 | 角色                 | 說明              |
 |----------------------|--------------------------|
-| 管理員              | 具備帳戶的完整存取權，但變更稅務和支付設定例外。 這包括管理開發人員中心的使用者，但請注意，在 Azure AD 租用戶中建立和刪除使用者的能力，取決於帳戶在 Azure AD 中的權限。 也就是，如果為使用者指派管理員角色，但其不具組織 Azure AD 中的全域管理員權限，則他們將無法建立新的使用者或從目錄刪除使用者 (但他們可以變更使用者的開發人員中心角色)。 <p> 請注意，如果開發人員中心帳戶關聯至多個 Azure AD 租用戶，則除非管理員使用擁有該租用戶之全域系統管理員權限的帳戶來登入該租用戶，否則他看不到使用者的完整詳細資料 (包括名字、姓氏、密碼復原電子郵件，以及他們是否為 Azure AD 全域管理員)。 不過，他們可以新增和移除與開發人員中心帳戶相關聯之租用戶中的使用者。 |
+| 管理員              | 具備帳戶的完整存取權，但變更稅務和支付設定例外。 這包括管理使用者在合作夥伴中心，但請注意，建立和刪除使用者，Azure AD 租用戶中的能力取決於帳戶在 Azure AD 中的權限。 也就是，如果為使用者指派管理員角色，但沒有組織的全域系統管理員權限 Azure AD，他們將無法建立新的使用者或從目錄刪除使用者 （但他們可以變更使用者的合作夥伴中心角色）。 <p> 注意： 如果一個以上的 Azure AD 租用戶相關聯的合作夥伴中心帳戶，管理員無法看到使用者的完整詳細資料 (包括名字、 姓氏、 密碼復原電子郵件，以及他們是否為 Azure AD 全域管理員) 除非它們登入為該使用者的帳戶，該租用戶的全域系統管理員權限的相同租用戶。 不過，他們可以新增和移除合作夥伴中心帳戶相關聯之租用戶中的使用者。 |
 | 開發人員            | 可以上傳套件並提交 App 和附加元件，而且可以檢視[使用方式報告](usage-report.md)來取得遙測詳細資料。 可以存取[跨裝置體驗](https://go.microsoft.com/fwlink/?linkid=874042)功能。 無法檢視財務資訊或帳戶設定。   |
 | 商務參與者 | 可檢視[健康情況](health-report.md)與[使用量](usage-report.md)報告。 無法建立或提交產品、 變更帳戶設定或檢視財務資訊。   |
 | 財務參與者  | 可檢視[支付報告](payout-summary.md)、財務資訊及下載數報告。 無法對 App、附加元件或帳戶設定進行任何變更。    |
@@ -173,7 +173,6 @@ ms.locfileid: "5748646"
     <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    N/A     </td><td>    不適用         </td></tr>
     <tr><td align="left">    <b>客戶回函</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與<b>連絡客戶</b>權限)   </td><td>    不適用     </td><td>    不適用         </td></tr>
     <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    N/A   </td><td>    N/A       </td><td>    不適用          </td></tr>
-    <tr><td align="left">    <b>即時</b>   </td><td>    可檢視產品的即時報告。 (注意：目前只透過<a href="dev-center-insider-program.md">開發人員中心測試人員計畫</a>提供這份報告)。      </td><td>    不適用   </td><td>    N/A     </td><td>    不適用                 </td></tr>
     </tbody>
     </table>
 

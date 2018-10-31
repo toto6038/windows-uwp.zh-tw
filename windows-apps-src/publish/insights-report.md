@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Insights report in the Windows Dev Center dashboard
+Description: The Insights report in Partner Center highlights significant changes about your apps.
 title: 見解報告
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、 uwp、 見解、 趨勢、 異常、 異常、 資料變更
 ms.localizationpriority: medium
-ms.openlocfilehash: 082f6e133217061d319301ec3f65ed035a3eef23
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745038"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5837997"
 ---
 # <a name="insights-report"></a>見解報告
 
 
-在 Windows 開發人員中心儀表板**見解**報告醒目提示我們在您的下載數、 健康情況，和/或使用方式資料過去 30 天偵測到的重大變更 （增加或減少在特定的衡量標準）。 這可讓您取得快速查看潛在的重要變更而不需要在每個這些報告中檢視所有圖表。
+在[合作夥伴中心](https://partner.microsoft.com/dashboard)**見解**報告醒目提示我們在您的下載數、 健康情況，和/或使用方式資料過去 30 天偵測到的重大變更 （增加或減少在特定的衡量標準）。 這可讓您取得快速查看潛在的重要變更而不需要在每個這些報告中檢視所有圖表。
 
 > [!NOTE]
 > 在此報告中的資料涵蓋過去 30 天。 您無法選取不同的時間期間，這份報告。

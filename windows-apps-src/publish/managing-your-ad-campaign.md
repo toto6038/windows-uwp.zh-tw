@@ -1,6 +1,6 @@
 ---
 author: jnHs
-Description: Manage ad campaigns for your apps in the Windows Dev Center dashboard.
+Description: Manage ad campaigns for your apps in Partner Center.
 title: 管理您的廣告活動
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ms.author: wdg-dev-content
@@ -8,17 +8,17 @@ ms.date: 06/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 77271d75b29cb13c1d3d1948a9f06a42e940bcb9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748401"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835533"
 ---
 # <a name="manage-your-ad-campaign"></a>管理您的廣告活動
 
 
-若要管理您的應用程式的廣告活動，請展開儀表板左側導覽功能表的 **\[吸引\]**，然後選取 **\[廣告活動\]**。 您會看到所有與您的 App 相關聯的廣告活動，以及每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)中這些詞彙的定義。
+若要管理您的應用程式，在[合作夥伴中心](https://partner.microsoft.com/dashboard)的廣告行銷活動，展開**吸引**左邊的導覽功能表中，然後選取**廣告行銷活動**。 您會看到所有與您的 App 相關聯的廣告活動，以及每一個廣告活動的曝光數、點擊數和安裝數。 如需曝光數、點擊數和安裝數的詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)中這些詞彙的定義。
 
 若要篩選廣告活動的清單，請按一下 [**區段篩選器**] 下拉式清單，然後從下列篩選器中進行選擇：
 

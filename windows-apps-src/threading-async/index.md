@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, asynchronous, threads, threading, 非同步, 執行緒
 ms.localizationpriority: medium
 ms.openlocfilehash: f01142695b676ebadea2f227cf5f8beb65ba6f9c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5765114"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836720"
 ---
 # <a name="threading-and-async-programming"></a>執行緒和非同步程式設計
 執行緒和非同步程式設計可讓您的 App 在平行執行緒中以非同步方式完成工作。

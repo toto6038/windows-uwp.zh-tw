@@ -1,23 +1,23 @@
 ---
 author: jnHs
-Description: The Health report in the Windows Dev Center dashboard lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
+Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: 健康情況報告
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ms.author: wdg-dev-content
-ms.date: 06/01/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 健康情況, 當機, 無回應事件, 應用程式健康情況, 健康情況資料, 堆疊追蹤, cab 檔案, 失敗, 失效, pdb, 符號
 ms.localizationpriority: medium
-ms.openlocfilehash: d1c32468bfa933ea0d9d56150f0b2610eb1668e5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766196"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829762"
 ---
 # <a name="health-report"></a>健康情況報告
 
-Windows 開發人員中心儀表板的 **\[健康情況\]** 報告可讓您取得與您 app 效能與品質相關的資料，包括當機和無回應事件。 您可以在儀表板檢視此資料，或[下載報告](download-analytic-reports.md)來離線檢視。 如果適用，您可以檢視堆疊追蹤和/或 CAB 檔案以進一步偵錯。
+在[合作夥伴中心](https://partner.microsoft.com/dashboard)**健康情況**報告可讓您取得與效能與您的應用程式，包括當機和無回應事件的品質相關資料。 您可以在合作夥伴中心，或[下載報告](download-analytic-reports.md)，以便離線檢視中檢視此資料。 如果適用，您可以檢視堆疊追蹤和/或 CAB 檔案以進一步偵錯。
 
 或者，您可透過程式設計方式使用 [Microsoft Store 分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此報告中的資料。
 

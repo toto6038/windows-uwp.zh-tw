@@ -1,24 +1,24 @@
 ---
 author: jnHs
-Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+Description: The Usage report in Partner Center lets you see how customers are using your app.
 title: 使用量報告
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ms.author: wdg-dev-content
-ms.date: 10/05/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用量, 自訂事件, 報告, 遙測, 使用者工作階段
 ms.localizationpriority: medium
-ms.openlocfilehash: 3998e8c5b207d8484a621db16d2e72a136f22c80
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f07f107a5136ee50cd87032fa3911ab65d33b7c1
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766570"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831055"
 ---
 # <a name="usage-report"></a>使用量報告
 
 
-Windows 開發人員中心儀表板中的**使用量**報告可讓您查看客戶在 Windows 10 (包括 Xbox) 上使用您 App 的方式，以及顯示您所定義之自訂事件的相關資訊。 您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)的**使用方式**] 報告可讓您查看客戶在 Windows 10 （包括 Xbox） 上的使用您的應用程式，並顯示您所定義的自訂事件的相關資訊。 您可以在合作夥伴中心，或[下載報告](download-analytic-reports.md)，以便離線檢視中檢視此資料。
 
 
 ## <a name="apply-filters"></a>套用篩選

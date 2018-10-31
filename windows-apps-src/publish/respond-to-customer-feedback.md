@@ -3,17 +3,17 @@ title: 回應客戶意見反應
 description: 您可以直接回應您的客戶在 [意見反應中樞] 中留下的意見反應。
 author: JnHs
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: d75eb60de1af031bbda4e5bdb37cf1fc17fe6ee0
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 5da9e96bace29dc33874d5b8c3e4ac846eddeb63
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5761679"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829210"
 ---
 # <a name="respond-to-customer-feedback"></a>回應客戶意見反應
 
@@ -24,7 +24,7 @@ ms.locfileid: "5761679"
 
 若要提供對任何意見反應的回應，按一下您的 **\[意見反應報告\]** 中意見反應旁顯示的 **\[回應意見反應\]** 連結。
 
-Windows 開發人員中心支援三種選項以用於回應提供您 App 相關意見反應的客戶，。 不論您選擇哪一個選項，請記住每則回應有 1000 個字元的限制。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)支援三種選項以用於回應提供您的應用程式相關意見反應的客戶。 不論您選擇哪一個選項，請記住每則回應有 1000 個字元的限制。
 
 ## <a name="public-comments-in-feedback-hub"></a>意見反應中樞中的公開留言
 

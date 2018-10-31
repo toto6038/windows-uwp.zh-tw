@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 註冊, 開發人員帳戶
 ms.localizationpriority: medium
 ms.openlocfilehash: dc7f887018dc550ff28101acc6187c9b06235f1f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767404"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5835787"
 ---
 # <a name="create-a-developer-account"></a>建立開發人員帳戶
 

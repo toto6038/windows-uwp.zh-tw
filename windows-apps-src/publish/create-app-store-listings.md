@@ -4,28 +4,28 @@ Description: The Store listings section of the app submission process is where y
 title: 建立應用程式 Store 清單
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ms.author: wdg-dev-content
-ms.date: 06/18/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 清單, 描述, Store 頁面, 版本資訊, 標題
 ms.localizationpriority: medium
-ms.openlocfilehash: 237642897beb51c9b685068ee714182fa1fe1bb5
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec1867e747f3458e3a9cffabe9a45535d4c27489
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766530"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829998"
 ---
 # <a name="create-app-store-listings"></a>建立應用程式 Store 清單
 
 
 您可以在[應用程式提交程序](app-submissions.md)的 **\[Store 清單\]** 區段中，提供客戶在 Microsoft Store 中檢視您應用程式清單時會看到的文字和[影像](app-screenshots-and-images.md)。
 
-**Store 清單**中的許多欄位都是選填的，但我們建議盡可能地提供多個影像及更多資訊，讓您的清單更為出色。完成 **Store 清單**步驟的最低需求是一段文字描述，以及至少一張[螢幕擷取畫面](app-screenshots-and-images.md#screenshots). 對於某些提交，[隱私權原則](#privacy-policy)和[支援連絡資訊](#support-contact-info)也是必要欄位。 
+**Store 清單**中的許多欄位都是選填的，但我們建議盡可能地提供多個影像及更多資訊，讓您的清單更為出色。完成 **Store 清單**步驟的最低需求是一段文字描述，以及至少一張[螢幕擷取畫面](app-screenshots-and-images.md#screenshots).
 
 > [!TIP]
-> 如果您想要在 .csv 檔案中離線輸入清單資訊，而不直接在儀表板中提供這項資訊並上傳檔案，則也可以[匯入及匯出 Store 清單](import-and-export-store-listings.md)。 如果您有多種語言的清單版本，使用匯入及匯出選項就很方便，因為您可以一次進行多個更新。 
+> 您可以選擇性地[匯入及匯出市集清單](import-and-export-store-listings.md)如果您想要在.csv 檔案，而不是提供的資訊和直接在合作夥伴中心中的上傳檔案中輸入清單資訊離線。 如果您有多種語言的清單版本，使用匯入及匯出選項就很方便，因為您可以一次進行多個更新。 
 
-根據預設，我們會對所有目標作業系統使用相同的 Store 清單 (每個語言)。 如果想要針對您的提交支援的特定作業系統使用自訂 Store 清單，您可以[建立平台專屬的 Store 清單](create-platform-specific-store-listings.md)。 您的預設清單一律會對使用 Windows 10 的客戶顯示。
+如果您先前發佈的應用程式支援 Windows 8.x 和/或 Windows Phone 8.x 或更早版本，您可以對這些客戶顯示的 [[建立平台專屬的市集清單](create-platform-specific-store-listings.md)。 
 
 ## <a name="store-listing-languages"></a>Microsoft Store清單語言
 
@@ -38,19 +38,19 @@ ms.locfileid: "5766530"
 
 在 **\[其他Microsoft Store清單語言\]** 區段中，您可以按一下 **\[管理其他語言\]** 以新增或移除您套件*未*包含的語言。 針對您想要新增的語言核取其方塊，然後按一下 **\[更新\]**。 您已經選取的語言將會顯示在 **\[其他Microsoft Store清單語言\]** 區段中。 若要移除其中一或多個語言，按一下 **\[移除\]** (或按一下 **\[管理其他語言\]**，然後針對想要移除的語言取消核取其方塊)。
 
-完成選擇後，按一下 **\[儲存\]**，以返回提交概觀頁面。
+完成選擇後，按一下 **\[儲存\]**，以返回提交概觀頁面。 
 
 ## <a name="add-and-edit-store-listing-info"></a>新增和編輯市集清單資訊
 
-若要編輯市集清單，請從提交概觀頁面中選取的語言名稱。
+若要編輯市集清單，請從提交概觀頁面中選取的語言名稱。 另外，除非您選擇要匯出您的市集清單並離線工作，然後匯入清單資料的所有一次，您必須編輯每一種語言。 如需詳細資訊的運作方式，請參閱[匯入及匯出市集清單](import-and-export-store-listings.md)。
 
-在 [**Microsoft Store清單**] 頁面的最上方是與所選語言的預設Microsoft Store清單相關聯的欄位。 除非您有以先前作業系統版本 (Windows 8.x 或更舊版本；Windows Phone 8.x 或更舊版本) 為目標的套件，而且建立了平台專屬的Microsoft Store清單以包含不同的螢幕擷取畫面或向客戶顯示的指定作業系統版本相關資訊，否則您的所有客戶都會看見這些欄位。 如需詳細資訊，請參閱[建立平台專屬的Microsoft Store清單](create-platform-specific-store-listings.md)。
+以下是可用欄位。
 
 ## <a name="product-name"></a>產品名稱
 
 這個下拉式方塊可讓您指定 （如果您沒有保留多個應用程式名稱），應該在市集清單中使用的名稱。
 
-如果您已經上傳相同的語言，做為您正在使用的市集清單中的套件，會選取這些套件中使用的名稱。 如果您需要重新[命名應用程式](manage-app-names.md#rename-an-app-that-has-already-been-published)，它已經發佈之後，您可以選取不同保留的名稱這裡，當您建立新的提交以使用新的名稱的套件。
+如果您已經上傳正在進行中相同的語言的市集清單，您的套件，會選取這些套件中使用的名稱。 如果您需要重新[命名應用程式](manage-app-names.md#rename-an-app-that-has-already-been-published)，它已經發佈之後，您可以選取不同保留的名稱這裡，當您建立新的提交，您已上傳套件，使用新的名稱。
 
 如果您尚未上傳套件的語言，您使用和您已經保留多個名稱，您將需要選取其中一個已保留的 app 名稱，因為沒有該語言可從中提取名稱且相關聯的套件。
 
@@ -67,14 +67,14 @@ ms.locfileid: "5766530"
 
 ## <a name="whats-new-in-this-version"></a>此版本中的新功能
 
-如果這是您第一次提交應用程式，請將此欄位保留空白。 如果是現有應用程式的更新，您就可以在此處讓客戶了解最新版本中有哪些變更。 這個欄位有 1500 個字元的限制。 (此欄位之前稱為「**版本資訊**」)。
+如果這是您第一次提交應用程式，請將此欄位保留空白。 現有的應用程式的更新，這是您可以在此讓客戶知道什麼最新版本中變更。 這個欄位有 1500 個字元的限制。 (此欄位之前稱為「**版本資訊**」)。
 
-## <a name="app-features"></a>應用程式功能
+## <a name="product-features"></a>產品功能
 
 這些是您應用程式重要功能的簡短摘要。 它們會在您的應用程式 Store 清單的 [**功能**] 區段中，以項目符號清單的形式讓客戶看見，除了**描述**之外。 讓它們保持簡潔有力，每個功能只使用數個文字來說明 (不超過 200 個字元)。 您最多可包含 20 個功能。
 
 > [!NOTE]
-> 您的應用程式功能將會在 Store 清單中以項目符號的形式顯示，所以不要再新增您自己的項目符號。
+> 這些功能會顯示項目符號中您的市集清單，所以不要再新增您自己的項目符號。
 
 ## <a name="screenshots"></a>螢幕擷取畫面
 
@@ -93,11 +93,11 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 如需詳細資訊，請參閱[Microsoft Store標誌](app-screenshots-and-images.md#store-logos)。
 
 
-## <a name="additional-art-assets"></a>其他美工圖案資產
+## <a name="trailers-and-additional-assets"></a>預告片和其他資產
 
-您可以針對產品提交其他資產，包括預告片和宣傳影像。 這些都是選用，但我們建議您上傳越多越好。 這些影像有助於客戶更了解您的產品，製作更吸引人的清單。
+您可以為您的產品，包括預告片和宣傳影像提交其他資產。 這些都是選用，但我們建議您上傳越多越好。 這些影像有助於客戶更了解您的產品，製作更吸引人的清單。
 
-如需詳細資訊，請參閱[其他美工圖案資產](app-screenshots-and-images.md#additional-art-assets)。
+如需詳細資訊，請參閱[預告片和其他資產](app-screenshots-and-images.md#trailers-and-additional-assets)。
 
 <a id="supplemental-information" />
 
@@ -149,7 +149,7 @@ Microsoft Store標誌是選用影像，您可以上傳以強化應用程式對�
 
 ## <a name="additional-information"></a>其他資訊
 
-下述項目可幫助客戶探索及了解您的產品。 您在這裡輸入的資訊將套用至指定語言的所有Microsoft Store清單，而且不論作業系統為何，即使您[建立平台專屬的Microsoft Store清單](create-platform-specific-store-listings.md)也一樣。 (本節先前稱為「**共用欄位**」)。
+下述項目可幫助客戶探索及了解您的產品。 (本節先前稱為「**共用欄位**」)。
 
 ### <a name="search-terms"></a>搜尋詞彙
 

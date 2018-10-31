@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 檔案, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: e2f63e848820361a64a2a96348a8e1cc2419f233
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749053"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836870"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速存取 UWP 中的檔案屬性 
 

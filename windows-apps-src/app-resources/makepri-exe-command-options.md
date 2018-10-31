@@ -8,12 +8,12 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: c6c71cf98d9720cc5bfea219f565529b3308c49c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f5d47bbe87e9319def2e8c6500fd954f2a291e18
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5756784"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5829908"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
@@ -22,9 +22,11 @@ ms.locfileid: "5756784"
 > [!NOTE]
 > 當您檢查**適用於 UWP 受管理的應用程式的 Windows SDK**選項，在安裝 Windows 軟體開發套件，MakePri.exe 會安裝。 它安裝至路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及名為其他架構的套件的資料夾中）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
-## <a name="makepri-commands"></a>MakePri 命令
+## <a name="getting-help-from-the-command-line"></a>取得協助從命令列
 
-執行 `MakePri.exe help` 以查看您可以搭配 MakePri.exe 使用的命令。
+您可以執行`MakePri.exe help`或`MakePri.exe /?`以查看您可以搭配 MakePri.exe 使用的命令。 您也可以發出`MakePri.exe <command> /?`若要查看有關一個命令，以及在非常少數案例的特性，甚至是`MakePri.exe <command> <option>`以查看有關選項的細節。
+
+## <a name="makepri-commands"></a>MakePri 命令
 
 ```
 C:\>makepri help

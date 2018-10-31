@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: To view performance data for the ad units in your apps, use the advertising performance report on the Windows Dev Center dashboard.
+Description: To view performance data for the ad units in your apps, use the advertising performance report in Partner Center.
 title: 廣告績效報告
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ms.author: wdg-dev-content
-ms.date: 05/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 562348d5077f29af9a0d0776cb421455d45444dc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2cc47e934ca75eb581808483f7875fea901943b3
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742258"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5836647"
 ---
 # <a name="advertising-performance-report"></a>廣告績效報告
 
 
-**廣告效益報告**會顯示如何您的[廣告單元](in-app-ads.md)廣告成效，包括社群廣告。 此報告會包含來自 UWP 應用程式中多個使用[廣告流量分配](in-app-ads.md#mediation)的廣告提供者的資料。
+在[合作夥伴中心](https://partner.microsoft.com/dashboard)**的廣告績效報告**顯示您的[廣告單元](in-app-ads.md)的表現，包括社群廣告。 此報告會包含來自 UWP 應用程式中多個使用[廣告流量分配](in-app-ads.md#mediation)的廣告提供者的資料。
 
-若要檢視這份報告，請展開左側瀏覽功能表的 **\[分析\]**，然後選取 **\[廣告效益\]**。 您可以在儀表板中檢視這項資料，或按一下頁面中的箭號圖示下載報告資料以便離線檢視。 或者，您也可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得廣告效益資料](../monetize/get-ad-performance-data.md)方法來擷取此資料。
+若要檢視這份報告，請展開左側瀏覽功能表的 **\[分析\]**，然後選取 **\[廣告效益\]**。 您可以在合作夥伴中心中檢視此資料，或下載報告資料以便離線檢視按一下頁面上的箭號圖示。 或者，您也可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 中的[取得廣告效益資料](../monetize/get-ad-performance-data.md)方法來擷取此資料。
 
 檢視廣告效益報告時，請注意過去三天的報告資料可能會隨著我們從不同來源接收並處理新的資料而有所變更。 此外，過去 90 天的資料都可能發生資料明細重列。
 

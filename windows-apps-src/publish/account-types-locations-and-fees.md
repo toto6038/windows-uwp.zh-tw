@@ -4,23 +4,23 @@ ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
 title: 帳戶類型、位置和費用
 description: 我們在許多國家與地區提供個人開發人員帳戶及公司開發人員帳戶。
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
-ms.openlocfilehash: 619b245ed6037192fe8b846a20d9fe0fe97baa24
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741619"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5831573"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
-我們在許多[國家與地區](#developer-account-and-app-submission-markets)提供個人帳戶及公司帳戶。 任一種類型的帳戶都會為您提供存取權來將 App 發佈到Microsoft Store，以及參與其他的 Microsoft 開發人員計劃。
+Windows 程式[合作夥伴中心](https://partner.microsoft.com/dashboard)供應項目在這兩個個人與公司帳戶許多[國家和地區](#developer-account-and-app-submission-markets)。 任一種類型的帳戶可讓您存取應用程式發行至市集，並參與其他的 Microsoft 計劃中。
 
 > [!NOTE]
-> 註冊帳戶時，請務必使用要用於開發人員帳戶的 Microsoft 帳戶登入。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
+> 當開啟您的開發人員帳戶，請確定您想要針對您的開發人員帳戶使用的 Microsoft 帳戶登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
 
 當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
 
