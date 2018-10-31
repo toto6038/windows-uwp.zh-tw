@@ -4,21 +4,21 @@ Description: You can generate promotional codes for an app or add-on that you ha
 title: 產生促銷碼
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.author: wdg-dev-content
-ms.date: 08/24/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 促銷代碼, 促銷碼, 預付碼, 預付代碼
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a29b38ebb0e00e2c65b9050868ad1e11cc2ab2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2fe89f65ff4f3278b0ba88ef4c5ca9d22bc67817
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5762647"
+ms.locfileid: "5817960"
 ---
 # <a name="generate-promotional-codes"></a>產生促銷代碼
 
 
-您可以為您在 Microsoft Store 中發佈的 App 或附加元件產生促銷代碼。 促銷代碼是讓有影響力使用者可以免費存取您的 App 或附加元件的簡單方式。 您也可能會提供使用者免費存取您的應用程式或附加元件，或適用於使用 windows 10 進行[beta 測試](beta-testing-and-targeted-distribution.md)，以使用促銷碼來處理客戶服務案例。 
+[合作夥伴中心](https://partner.microsoft.com/dashboard)可讓您的應用程式或您在 Microsoft Store 中發佈的附加元件產生促銷碼。 促銷代碼是讓有影響力使用者可以免費存取您的 App 或附加元件的簡單方式。 您也可能會提供使用者免費存取您的應用程式或附加元件，或適用於使用 windows 10 進行[beta 測試](beta-testing-and-targeted-distribution.md)，以使用促銷碼來處理客戶服務案例。 
 
 每個促銷碼都有對應獨特可兌換 URL，客戶可以按一下才能兌換代碼，並從 Microsoft Store 安裝您的應用程式或附加元件。  請注意，您的應用程式必須通過 [應用程式認證程序](the-app-certification-process.md)的最終發佈階段，客戶才能兌換促銷碼以安裝它。
 
@@ -45,7 +45,7 @@ ms.locfileid: "5762647"
 
 訂購促銷碼的應用程式或附加元件：
 
-1.  在 Windows 開發人員中心儀表板的左側瀏覽功能表，展開 **\[吸引\]**，然後選取 **\[促銷代碼\]**。
+1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)的左方的導覽功能表中，展開**吸引**，然後選取 [**促銷代碼**。
 
 2.   在 **\[促銷碼\]** 頁面上，按一下 **\[訂購代碼\]**。
 
@@ -64,7 +64,7 @@ ms.locfileid: "5762647"
 
 若要下載完成的促銷碼訂單並發佈代碼給客戶：
 
-1.  在 Windows 開發人員中心儀表板的左側瀏覽功能表，展開 **\[吸引\]**，然後選取 **\[促銷碼\]**。
+1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)的左方的導覽功能表中，展開**吸引**，然後選取**促銷代碼。**
 2.  按一下您的促銷碼訂單的 **\[下載\]** 連結，然後將所產生的檔案儲存到您的電腦。 這個檔案包含您促銷碼訂單的相關資訊，採定位字元分隔值 (.tsv) 格式。
 3.  在您選擇的編輯器中開啟 .tsv 檔案。 為獲得最佳體驗，請在可以使用表格結構顯示資料的應用程式中開啟 .tsv 檔案，如 Microsoft Excel。 不過，您可以在任何文字編輯器中開啟檔案。
 
@@ -103,7 +103,7 @@ ms.locfileid: "5762647"
 
 ## <a name="review-your-promotional-codes"></a>檢閱您的促銷碼
 
-若要檢閱應用程式及其附加元件的促銷代碼訂單的詳細摘要，請瀏覽至應用程式的 **\[促銷代碼\]** 頁面 (在開發人員中心儀表板的左側瀏覽功能表中，展開 **\[吸引\]**，然後選取 **\[促銷代碼\]**)。 您可以檢閱下列有關您所有目前和非使用中促銷碼的詳細資料：
+若要檢閱您的應用程式和附加元件的促銷碼訂單的詳細的摘要，瀏覽到 \ [**促銷碼**] 頁面 （在合作夥伴中心的左方的導覽功能表中，展開**吸引**，然後選取 [**促銷代碼**）。 您可以檢閱下列有關您所有目前和非使用中促銷碼的詳細資料：
 -   訂單名稱
 -   應用程式或附加元件
 -   開始日期

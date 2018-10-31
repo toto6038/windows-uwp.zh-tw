@@ -13,24 +13,20 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e27bdd3d5c57b9d45f86c25f0bce0ae1c4a5e999
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1ce72c40d3b97942612fc2979d026c965727512e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760804"
+ms.locfileid: "5822477"
 ---
 # <a name="control-templates"></a>控制項範本
-
- 
 
 您可以藉由在 XAML 架構中建立控制項範本，自訂控制項的視覺結構和視覺行為。 控制項有許多屬性 (例如 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) 及 [**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404))，您可以設定它們來指定控制項外觀的不同方面。 但是可以透過設定這些屬性來進行的變更有限。 您可以使用 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 類別來建立範本，以指定其他自訂項目。 這裡為您示範如何建立 **ControlTemplate** 來自訂 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項的外觀。
 
 > **重要 API**：[**ControlTemplate 類別**](https://msdn.microsoft.com/library/windows/apps/br209391)、[**Control.Template 屬性**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
-
 ## <a name="custom-control-template-example"></a>自訂控制項範本的範例
-
 
 根據預設，[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項會將其內容 (**CheckBox** 旁邊的字串或物件) 放到選取方塊的右側，而核取記號則表示使用者已選取 **CheckBox**。 這些特性代表 **CheckBox** 的視覺結構和視覺行為。
 
@@ -52,7 +48,6 @@ ms.locfileid: "5760804"
 
 ## <a name="specify-the-visual-structure-of-a-control"></a>指定控制項的視覺結構
 
-
 在建立 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 時，您可以合併各個 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 物件來建置單一控制項。 **ControlTemplate** 只能有一個 **FrameworkElement** 做為其根元素。 根元素通常包含其他 **FrameworkElement** 物件。 物件組合起來就形成控制項的視覺結構。
 
 這個 XAML 為 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209391) 建立一個 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209316)，指出控制項的內容位於選取方塊的下方。 根元素是 [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250)。 此範例指定 [**Path**](/uwp/api/Windows.UI.Xaml.Shapes.Path) 建立 **X**，指出使用者已選取 **CheckBox**，並建立 [**Ellipse**](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) 指出尚未決定的狀態。 請注意，**Path** 與 **Ellipse** 的 [**Opacity**](/uwp/api/Windows.UI.Xaml.UIElement.Opacity) 都是設定為 0，因此預設兩者都不會顯示。
@@ -60,36 +55,36 @@ ms.locfileid: "5760804"
 [TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md) 是特殊的繫結，這會將控制項範本中的屬性值連結至範本化控制項上一些其他已公開屬性的值。 TemplateBinding 只能在 XAML 的 ControlTemplate 定義中使用。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
 
 > [!NOTE]
-> 從開始到 Windows 10 的下一個主要更新，您可以使用[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)標記延伸的位置，您使用[TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
+> 從 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk))，您可以使用[**X:bind**](https://msdn.microsoft.com/library/windows/apps/Mt204783)標記延伸的位置，您使用[TemplateBinding](../../xaml-platform/templatebinding-markup-extension.md)。 如需詳細資訊，請參閱 [TemplateBinding 標記延伸](../../xaml-platform/templatebinding-markup-extension.md)。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
-    <Border BorderBrush="{TemplateBinding BorderBrush}" 
-            BorderThickness="{TemplateBinding BorderThickness}" 
+    <Border BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
             Background="{TemplateBinding Background}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
-            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20" 
-                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
-                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}" 
+            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20"
+                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}"
                        UseLayoutRounding="False"/>
             <!-- Create an X to indicate that the CheckBox is selected. -->
-            <Path x:Name="CheckGlyph" 
-                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z" 
-                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
-                  FlowDirection="LeftToRight" 
+            <Path x:Name="CheckGlyph"
+                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z"
+                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
+                  FlowDirection="LeftToRight"
                   Height="14" Width="16" Opacity="0" Stretch="Fill"/>
-            <Ellipse x:Name="IndeterminateGlyph" 
-                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
+            <Ellipse x:Name="IndeterminateGlyph"
+                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
                      Height="8" Width="8" Opacity="0" UseLayoutRounding="False" />
-            <ContentPresenter x:Name="ContentPresenter" 
-                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                              Content="{TemplateBinding Content}" 
-                              Margin="{TemplateBinding Padding}" Grid.Row="1" 
-                              HorizontalAlignment="Center" 
+            <ContentPresenter x:Name="ContentPresenter"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Content="{TemplateBinding Content}"
+                              Margin="{TemplateBinding Padding}" Grid.Row="1"
+                              HorizontalAlignment="Center"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Grid>
     </Border>
@@ -97,7 +92,6 @@ ms.locfileid: "5760804"
 ```
 
 ## <a name="specify-the-visual-behavior-of-a-control"></a>指定控制項的視覺行為
-
 
 視覺行為會指定控制項處於特定狀態時的外觀。 [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 控制項有 3 種核取狀態：`Checked`、`Unchecked` 以及 `Indeterminate`。 [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) 屬性的值決定 **CheckBox** 的狀態，而其狀態決定方塊中顯示的項目。
 
@@ -110,7 +104,6 @@ ms.locfileid: "5760804"
 | **false**           | `Unchecked`        | 空白。                  |
 | **null**            | `Indeterminate`    | 包含一個圓形。      |
 
- 
 
 您可以使用 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) 物件來指定控制項處於特定狀態時的外觀。 **VisualState** 包含可變更 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br208817) 中元素外觀的 [**Setter**](https://msdn.microsoft.com/library/windows/apps/br243053) 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br209391)。 當控制項進入 [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) 屬性指定的狀態時，會套用 **Setter** 或 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 中的屬性變更。 當控制項結束該狀態，變更就會移除。 將 **VisualState** 物件新增至 [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) 物件。 將 **VisualStateGroup** 物件新增至 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 附加屬性 (您可以在 **ControlTemplate** 的根 [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 上設定)。
 
@@ -118,10 +111,10 @@ ms.locfileid: "5760804"
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
-    <Border BorderBrush="{TemplateBinding BorderBrush}" 
-            BorderThickness="{TemplateBinding BorderThickness}" 
+    <Border BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
             Background="{TemplateBinding Background}">
-            
+
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="CheckStates">
                 <VisualState x:Name="Checked">
@@ -130,7 +123,7 @@ ms.locfileid: "5760804"
                     </VisualState.Setters>
                     <!-- This Storyboard is equivalent to the Setter. -->
                     <!--<Storyboard>
-                        <DoubleAnimation Duration="0" To="1" 
+                        <DoubleAnimation Duration="0" To="1"
                          Storyboard.TargetName="CheckGlyph" Storyboard.TargetProperty="Opacity"/>
                     </Storyboard>-->
                 </VisualState>
@@ -153,24 +146,24 @@ ms.locfileid: "5760804"
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
-            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20" 
-                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
-                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}" 
+            <Rectangle x:Name="NormalRectangle" Fill="Transparent" Height="20" Width="20"
+                       Stroke="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+                       StrokeThickness="{ThemeResource CheckBoxBorderThemeThickness}"
                        UseLayoutRounding="False"/>
             <!-- Create an X to indicate that the CheckBox is selected. -->
-            <Path x:Name="CheckGlyph" 
-                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z" 
-                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
-                  FlowDirection="LeftToRight" 
+            <Path x:Name="CheckGlyph"
+                  Data="M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z"
+                  Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
+                  FlowDirection="LeftToRight"
                   Height="14" Width="16" Opacity="0" Stretch="Fill"/>
-            <Ellipse x:Name="IndeterminateGlyph" 
-                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}" 
+            <Ellipse x:Name="IndeterminateGlyph"
+                     Fill="{ThemeResource CheckBoxForegroundThemeBrush}"
                      Height="8" Width="8" Opacity="0" UseLayoutRounding="False" />
-            <ContentPresenter x:Name="ContentPresenter" 
-                              ContentTemplate="{TemplateBinding ContentTemplate}" 
-                              Content="{TemplateBinding Content}" 
-                              Margin="{TemplateBinding Padding}" Grid.Row="1" 
-                              HorizontalAlignment="Center" 
+            <ContentPresenter x:Name="ContentPresenter"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              Content="{TemplateBinding Content}"
+                              Margin="{TemplateBinding Padding}" Grid.Row="1"
+                              HorizontalAlignment="Center"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
         </Grid>
     </Border>
@@ -210,10 +203,6 @@ ms.locfileid: "5760804"
 針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的應用程式可以使用適用於該佈景主題的資源集，所以應用程式 UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
 
  # # 取得的範例程式碼
-* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+
+* [XAML 控制項庫範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [自訂文字編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
-
- 
-
-
-

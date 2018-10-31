@@ -4,20 +4,20 @@ Description: You can promote your app or add-on in the Microsoft Store by puttin
 title: 促銷 App 和附加元件
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a815a5ba233808abb0c6159893ed306ddc96c51e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6c1c646e1e60c6b71559cfde1280a09d380298ed
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749907"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814499"
 ---
 # <a name="put-apps-and-add-ons-on-sale"></a>促銷 App 和附加元件
 
-您可以在限定時間內降價銷售您的 App 或附加元件，以便在 Microsoft Store 進行促銷。 您可以選擇以較低價格區間或百分比計算的折扣提供產品。
+您可以在限定時間內降價銷售您的 App 或附加元件，以便在 Microsoft Store 進行促銷。 您可以選擇以較低價格區間或百分比計算的折扣提供產品。 您可以選擇是否要提供特價給每一個人，或讓您專屬的供應項目給擁有您其他產品其中的客戶。
 
 > [!NOTE]
 > 訂閱附加元件不支援銷售定價。
@@ -27,7 +27,7 @@ ms.locfileid: "5749907"
 降價促銷產品期間，客戶將能在您選取的期間以較低價格購買。 如果您將價格調降為 **\[免費\]**，則客戶在銷售期間完全不需付費即可下載。
 
 > [!IMPORTANT]
-> 銷售定價只會對您在 windows 10 裝置，包括 Xbox One 上的客戶顯示。 提供給擁有您其他產品之客戶的特價，只會對 Windows 10 版 1607 或更新版本的客戶顯示。
+> 銷售定價只會對您在 windows 10 裝置，包括 Xbox One 上的客戶顯示。 Windows 10 版本 1607年或更新版本的客戶只會顯示您僅提供給擁有者的其中一個您其他產品的銷售。
 > 
 > 在其他作業系統上，客戶將會看到您應用程式或附加元件的正常價格，無法以特價購買。 您可以隨時變更價格，方法是在新提交中選擇不同的價格區間，但是不會顯示為限定時間銷售。
 

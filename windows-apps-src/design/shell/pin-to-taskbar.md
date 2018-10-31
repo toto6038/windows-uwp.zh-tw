@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile, 工作列, 工作列管理員, 釘選到工作列, 主要磚
 ms.localizationpriority: medium
 ms.openlocfilehash: 47fcd1f9d090c49ecbd49e05696b33f789973160
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748090"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815096"
 ---
 # <a name="pin-your-app-to-the-taskbar"></a>將應用程式釘選到工作列
 

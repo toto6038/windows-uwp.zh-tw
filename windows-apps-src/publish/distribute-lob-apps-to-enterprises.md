@@ -4,16 +4,16 @@ Description: You can publish line-of-business (LOB) apps directly to enterprises
 title: 將 LOB app 發佈到企業
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: c491e5db7b5cea0a1b2a6bb9387f1432d007bed2
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d90a3b3b0eb216dbc07bbc331d7d461ed0f825c4
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758142"
+ms.locfileid: "5816477"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB app 發佈到企業
 
@@ -24,7 +24,7 @@ ms.locfileid: "5758142"
 > 目前只有免費的應用程式可透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，單獨發佈到企業。 若您提交付費 app 做為 LOB，則無法將其提供給企業使用。 
 
 > [!IMPORTANT]
-> 您無法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，直接將 LOB 應用程式發佈到企業。 所有 LOB 應用程式提交都必須使用 Windows 開發人員中心儀表板來進行。
+> 您無法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，直接將 LOB 應用程式發佈到企業。 您必須透過合作夥伴中心發佈所有 LOB 應用程式提交。
 
 
 ## <a name="set-up-the-enterprise-association"></a>設定企業關聯
@@ -94,7 +94,7 @@ ms.locfileid: "5758142"
 
 透商務用 Microsoft 網上商店或教育用 Microsoft 網上商店使 app 可供企業使用，可確保該 app 已經過 Store 簽署，並且遵守標準的 Store 原則。
 
-在某些情況下，公司可能不想透過 Windows 開發人員中心來提交它們的 LOB app (例如，規範的原因或需要其他功能的 app)。 在此情況下，企業可以透過側載將應用程式直接部署到電腦，而不需使用商務用 Microsoft 網上商店或教育用 Microsoft 網上商店。
+在某些情況下，公司可能不想要透過 （例如與規範的原因，或需要其他功能的應用程式） 的合作夥伴中心提交其 LOB 應用程式。 在此情況下，企業可以透過側載將應用程式直接部署到電腦，而不需使用商務用 Microsoft 網上商店或教育用 Microsoft 網上商店。
 
 如需詳細資訊，請參閱[在 Windows10 中側載 LOB 應用程式](http://go.microsoft.com/fwlink/p/?LinkId=623433)。
 

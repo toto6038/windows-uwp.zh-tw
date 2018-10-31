@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ae98a3fdea561179b6cd76035715d53521143d35
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5766670"
+ms.locfileid: "5818901"
 ---
 # <a name="exclude-or-limit-features-in-a-trial-version"></a>在試用版本中排除或限制某些功能
 

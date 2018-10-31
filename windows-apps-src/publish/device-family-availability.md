@@ -3,16 +3,16 @@ author: jnHs
 Description: After your packages have been successfully uploaded, you'll see a table that indicates which packages will be offered to specific Windows 10 device families (and earlier OS versions, if applicable), in ranked order.
 title: 裝置系列可用性
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 套件, 上傳, 裝置系列可用性
 ms.localizationpriority: medium
-ms.openlocfilehash: e575c3315411b7be0af14316e8063aa592b2920f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 543b5c519e7514ccef397c2bb78eadcc5e3692f5
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740411"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815650"
 ---
 # <a name="device-family-availability"></a>裝置系列可用性
 
@@ -50,21 +50,22 @@ Windows.Universal 套件唯一不會預設核取的 Windows 10 裝置系列是 *
 
 如果您提交適用於 Windows 10 IoT 核心版的 UWP app，在上傳套件之後您不應變更預設選項。針對 Windows 10 IoT 沒有不同的核取方塊。 如需發佈 IoT 核心版 UWP app 的詳細資訊，請參閱[適用於 IoT 核心版 UWP app 的 Microsoft Store 支援](https://docs.microsoft.com/windows/iot-core/commercialize-your-device/installingandservicing)。
 
-如果您的提交包含可在 **Windows 8/8.1** 和 **Windows Phone 8.x 及更新版本**上執行的套件，將會提供這些套件給客戶使用，如表中所示。 這些 OS 版本沒有對應的核取方塊。 若要停止將您的 App 提供給這些客戶，請從您的提交移除對應的套件。
+如果您先前已發佈之 app 的提交包含可在**Windows 8/8.1**執行的套件並**Windows Phone 8.x 及更早版本**，這些套件將會提供給這些 OS 版本的客戶。 若要停止將您的 App 提供給這些客戶，請從您的提交移除對應的套件。
 
 > [!IMPORTANT]
 > 若要完全防止特定的 Windows 10 裝置系列取得您的提交，更新您只想要支援的裝置系列為目標的資訊清單中的[**TargetDeviceFamily**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily)項目 （也就是 Windows.Mobile 或 Windows.Desktop），而是比讓它做為 Windows.Universal 值 （適用於通用裝置系列），Microsoft Visual Studio 資訊清單中包含預設。
 
-請務必注意您在 **\[裝置系列可用性\]** 區段所做的選擇僅會套用至新擷取。 已經有您的 App 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除其裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 App 的客戶。 例如，如果您有具有 Windows Phone 8.1 套件的已發佈 App，您稍後將 Windows 10 (UWP) 套件新增至目標為通用裝置系列的相同 App，具有您的 Windows Phone 8.1 套件的 Windows 10 行動裝置客戶就會取得這個 Windows 10 (UWP) 套件的更新，即使您已經取消選取 **\[Windows 10 行動裝置版\]** 方塊 (因為這不是新購買而是更新)。 但是，如果您未提供目標為通用或行動裝置系列的任何 Windows 10 (UWP) 套件，則您的 Windows 10 行動裝置客戶仍然保持為 Windows Phone 8.1 套件。
+請務必注意您在 **\[裝置系列可用性\]** 區段所做的選擇僅會套用至新擷取。 已經有您的 App 的任何人都能繼續使用並取得您提交的任何更新，即使您在這裡移除其裝置系列也一樣。 甚至會套用至在升級至 Windows 10 之前就取得您的 App 的客戶。 例如，如果您擁有已發佈的應用程式與 Windows Phone 8.1 套件，並新增針對 Windows.Universal 裝置系列設計的 Windows 10 (UWP) 套件，Windows 10 行動裝置客戶就擁有您的 Windows Phone 8.1 套件將提供更新到這個 Windows10 (UWP) 套件，即使您已經未核取方塊， **Windows 10 行動裝置**版。
 
 如需裝置系列的詳細資訊，請參閱[**裝置系列概觀**](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
+
 ## <a name="understanding-ranking"></a>了解排行
 
-除了讓您指出那些 Windows 10 裝置系列可以下載您的提交，**\[裝置系列可用性\]** 區段也顯示您的哪些特定套件可以提供不同裝置系列使用。 如果您有多個套件可在特定裝置系列上執行，資料表會根據套件的版本號碼，指出提供套件的順序。 如需有關 Store 如何根據版本號碼排序套件的詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。 
+除了讓您指出那些 Windows 10 裝置系列可以下載您的提交，[**裝置系列可用性**] 區段會顯示的特定套件，將會提供不同裝置系列。 如果您有多個套件可在特定裝置系列上執行，資料表會根據套件的版本號碼，指出提供套件的順序。 如需有關 Store 如何根據版本號碼排序套件的詳細資訊，請參閱[套件版本編號](package-version-numbering.md)。 
 
-例如，假設您有兩個套件︰Package_A.appxupload 與 Package_B.appxupload。 針對特定的裝置系列，如果 Package_A.Appxupload 排序為 1 而 Package_B.Appxupload 排序為 2，則表示當該裝置類型上的使用者取得您的 App 時，Store 會先嘗試傳遞 Package_A.Appxupload。 如果客戶的裝置無法執行 Package_A.appxupload，則 Store 會提供 Package_B.appxupload。 如果客戶的裝置無法執行任何適用於該裝置系列的套件—例如，如果您的 App 支援的 **MinVersion** 高於客戶裝置上的版本—客戶就無法在該裝置上下載 App。
+例如，假設您有兩個套件︰Package_A.appxupload 與 Package_B.appxupload。 針對特定的裝置系列，如果 Package_A.Appxupload 排序為 1 而 Package_B.Appxupload 排序為 2，則表示當該裝置類型上的使用者取得您的 App 時，Store 會先嘗試傳遞 Package_A.Appxupload。 如果客戶的裝置無法執行 Package_A.appxupload，則 Store 會提供 Package_B.appxupload。 如果客戶的裝置無法執行任何適用於該裝置系列的套件 （例如，如果**MinVersion**您的應用程式支援是高於客戶裝置上的版本） 則客戶將無法下載該裝置上的應用程式。
 
 > [!NOTE]
-> 在決定要提供給指定客戶哪一個套件時，不會考量 .xap 套件中的版本號碼。 基於這個原因，如果您有多個同樣順位的 .xap 套件，您會看到星號而非號碼，而客戶可能會收到任一套件。 若要將客戶從一個 .xap 套件更新為較新的套件，請務必在新的提交中移除較舊的 .xap。
+> 決定要為特定的客戶提供哪一個套件時，不會被視為 （適用於先前已發佈的應用程式） 的.xap 套件中的版本號碼。 基於這個原因，如果您有多個同樣順位的 .xap 套件，您會看到星號而非號碼，而客戶可能會收到任一套件。 若要將客戶從一個 .xap 套件更新為較新的套件，請務必在新的提交中移除較舊的 .xap。
 

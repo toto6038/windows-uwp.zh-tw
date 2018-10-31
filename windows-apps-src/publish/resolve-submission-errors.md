@@ -4,16 +4,16 @@ Description: If you encounter errors after submitting your app to the Store, you
 title: 解決提交錯誤
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9d997d2523012588348512311980f9bb4a7160b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5758439"
+ms.locfileid: "5811975"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -31,6 +31,9 @@ ms.locfileid: "5758439"
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 和更舊版本
 
+> [!IMPORTANT]
+> 截至 2018 年 10 月 31 剛建立的產品不能包含套件目標為 Windows Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+
 在前置處理期間，當偵測到 Windows Phone 套件有問題時，您可能會看到**錯誤 2001**。 在大部分的情況下，您必須重建您的 app 套件來更正錯誤。 一旦完成，在您再次按一下 **\[提交至市集\]** 前，請先在提交的 [[套件](upload-app-packages.md)] 頁面上使用新套件取代舊套件。
 
 造成此錯誤的問題有幾種。 請檢閱下列清單，判斷可能適用於您套件的問題。
@@ -45,7 +48,7 @@ ms.locfileid: "5758439"
 
 ## <a name="nameidentity-errors"></a>名稱/身分識別錯誤
 
-如果您看到 **「在套件中找到的名稱不是其中一個保留的應用程式名稱。請保留應用程式名稱和/或使用此語言的正確應用程式名稱更新您的套件」** 錯誤，可能是因為您在套件中輸入的名稱不正確。 如果您在開發人員中心使用您尚未保留的應用程式名稱，也會發生這個錯誤。 您通常可以依照下列步驟解決這個錯誤：
+如果您看到 **「在套件中找到的名稱不是其中一個保留的應用程式名稱。請保留應用程式名稱和/或使用此語言的正確應用程式名稱更新您的套件」** 錯誤，可能是因為您在套件中輸入的名稱不正確。 如果您使用的應用程式保留的名稱，您還沒有在合作夥伴中心，也會發生這個錯誤。 您通常可以依照下列步驟解決這個錯誤：
 
 - 移至您 App 的 [應用程式身分識別](view-app-identity-details.md) 頁面 (在 **應用程式管理** 下)，確認您的 App 是否有指派的身分識別。 如果沒有，您會看到建立選項。 您必須保留您的應用程式名稱，才能建立身分識別。 請確定這是您在您的套件中使用的名稱。
 - 如果您的 App 已經有身分識別，您可能仍需要保留您想在您的套件中使用的名稱。 在 **應用程式管理** 下，按一下 [管理應用程式名稱](manage-app-names.md)。 輸入您想要使用的名稱，然後按一下 **\[保留應用程式名稱\]**。

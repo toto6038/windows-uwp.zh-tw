@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting, 永遠連線, ARM 上的 x86 模擬, 疑難排解
 ms.localizationpriority: medium
 ms.openlocfilehash: 01ef13f6f27b45a4cc41244e4ebed0a54804fc8e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5743801"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5817535"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>疑難排解 x86 傳統型應用程式
 >[!IMPORTANT]

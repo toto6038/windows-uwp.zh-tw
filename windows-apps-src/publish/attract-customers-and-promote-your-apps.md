@@ -3,20 +3,20 @@ author: jnHs
 Description: Attract customers and promote your apps
 title: 吸引客戶以及促銷您的應用程式
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 783531d3663f14ffbeb5b0fad950e41b14e39ddf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 0880105fccca297204c27e80099f0cfc6d016a27
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759118"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5815428"
 ---
 # <a name="attract-customers-and-promote-your-apps"></a>吸引客戶以及促銷您的應用程式
 
-一旦您的應用程式在 Microsoft Store 中，是時候儘可能更多客戶看到取得它。 我們提供了許多功能，協助您促銷您的產品和拓展您的客戶基底，包括廣告活動、促銷代碼、銷售定價，以及更多。
+一旦您的應用程式在 Microsoft Store 中，是時候儘可能更多客戶看到取得它。 [合作夥伴中心](https://partner.microsoft.com/dashboard)提供許多功能，可協助您促銷您的產品和拓展您的客戶基底，包括廣告行銷活動、 促銷代碼、 銷售定價，以及更多。
 
 -   [產生促銷碼](generate-promotional-codes.md)
 -   [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)

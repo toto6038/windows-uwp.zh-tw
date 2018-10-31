@@ -3,16 +3,16 @@ author: JnHs
 Description: Learn how to create known user groups to use for package flighting and more.
 title: 建立已知的使用者群組
 ms.author: wdg-dev-content
-ms.date: 03/28/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 目標群組, 客戶, 正式發行前小眾測試版群組, 使用者群組, 已知的使用者
 ms.localizationpriority: medium
-ms.openlocfilehash: eec9c214bcd4ac63406ec7681e66762356a0c1cf
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 44f0ea17d1034ae617b4b8c96cf61cc4829a6704
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764691"
+ms.locfileid: "5818739"
 ---
 # <a name="create-known-user-groups"></a>建立已知的使用者群組
 
@@ -22,7 +22,7 @@ ms.locfileid: "5764691"
 
 ## <a name="to-create-a-known-user-group"></a>若要建立已知的使用者群組
 
-1. 在 Windows 開發人員中心儀表板中，展開左側瀏覽功能表的 **\[互動\]**，然後選取 **\[客戶群組\]**。 
+1. 在[合作夥伴中心](https://partner.microsoft.com/dashboard)，展開左側瀏覽功能表中的**互動**，然後選取**客戶群組**。 
 2. 在 **\[我的客戶群組\]** 區段，選取 **\[建立新群組\]**。
 3. 在下一頁的 **\[群組名稱\]** 方塊中，輸入群組的名稱。
 4. 請務必選取 **\[已知的使用者群組\]** 選項按鈕。
@@ -38,7 +38,7 @@ ms.locfileid: "5764691"
 
 ## <a name="to-edit-a-known-user-group"></a>若要編輯已知的使用者群組
 
-建立後，您無法從儀表板移除已知的使用者群組（或變更其名稱），但您可以隨時編輯成員資格。
+您無法從合作夥伴中心移除已知的使用者群組 （或變更其名稱） 已建立，但您可以隨時編輯成員資格之後。
 
 若要檢閱和編輯已知的使用者群組，請展開左側瀏覽功能表的 **\[互動\]**，然後選取 **\[客戶群組\]**。 在 **\[我的客戶群組\]**，選取您想要編輯的群組名稱。 您也可以從套件正式發行前小眾測試版建立頁面編輯已知的使用者群組，方法是在建立新的正式發行前小眾測試版時，選取 **\[檢視和管理現有的群組\]**，或從套件正式發行前小眾測試版的概觀頁面選取群組名稱。 
 

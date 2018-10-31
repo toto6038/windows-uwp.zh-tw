@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 821a28109c511bb2bd96bf5cbccb190cbe928abc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f7e211ebfa28421340e716c0176cab80a9511671
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741573"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818452"
 ---
 #<a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -300,7 +300,7 @@ ms.locfileid: "5741573"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>App 週期。</strong> <br><br>處理 app 啟動、暫停、繼續和關閉的事件，讓您可以儲存/還原應用程式狀態並執行其他工作。</td>
-<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼 (例如 <strong>onResume</strong>)</strong> 是在 <strong>activity 類別</strong>中實作。</td>
+<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼</strong>，例如<strong>onResume</strong>在您的<strong>活動類別</strong>中實作。</td>
 <td align="left"><strong>應用程式週期</strong>具有<strong>已暫停</strong>之類的狀態。 <strong>applicationDidEnterBackground:</strong> 之類的方法是在<strong>應用程式委派物件</strong>中實作，可在狀態變更時執行程式碼。</td>
 <td align="left">您的 app 具有 NotRunning、Activated、Running、Suspending、Suspended 及 Resuming 的 <strong>app 執行狀態</strong>。<br/><br/>您可以在 app 中實作 OnLaunched、OnActivated、Suspending 或 Resuming 等 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application 類別</a></strong>方法，以在狀態變更時執行程式碼。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App 週期</a></td>
 </tr>

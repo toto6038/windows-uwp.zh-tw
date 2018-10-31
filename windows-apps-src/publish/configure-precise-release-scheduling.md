@@ -3,16 +3,16 @@ author: jnHs
 Description: You can set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 title: 設定精確發行時間表
 ms.author: wdg-dev-content
-ms.date: 05/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 排程, 發行日期, 日期, 推出
 ms.localizationpriority: medium
-ms.openlocfilehash: 910f0aea10e763316bedab7b96b21705c537282c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 6474fc334922d49489c377a0c29841fc45889e1d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5749033"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816922"
 ---
 # <a name="configure-precise-release-scheduling"></a>設定精確發行時間表
 
@@ -30,7 +30,7 @@ ms.locfileid: "5749033"
 > [!IMPORTANT]
 > 您在 [排程] 區段中指定的日期只適用於使用 Windows 10 的客戶。
 >
->如果您的應用程式支援舊版作業系統，使用這些作業系統版本的客戶將在應用程式通過認證並完成發行程序後，看見您的應用程式清單，即使您已選取較晚的發行日期。 您選取的任何 [**停止取得**] 日期將不適用這些客戶；他們仍可以取得應用程式 (除非您在[可見度](choose-visibility-options.md#discoverability)區段中選取新選項來提交更新，或您從 [**應用程式概觀**] 頁面選取 [**停止提供應用程式**])。
+>如果您先前發佈的應用程式支援舊版作業系統，您選取任何**停止取得**日期將不會套用到這些客戶;他們仍然能夠取得應用程式 （除非您提交新的選取範圍中 [[可見度](choose-visibility-options.md#discoverability)] 區段中，更新，或從**應用程式概觀**頁面選取 [**讓應用程式無法使用**）。
 
 
 ## <a name="base-schedule"></a>基本時間表
@@ -60,7 +60,7 @@ ms.locfileid: "5749033"
 
 根據預設，[**停止取得**] 設定為永不。 若要變更此項，請在下拉式清單中選取 [**於**]，然後指定日期和時間，如上所述。 在您選取的日期和時間，客戶將不再能取得應用程式。
 
-務必了解此選項與選取[可見度](choose-visibility-options.md#discoverability)區段中的 [**此應用程式可供搜尋，但不提供**] 選項，並選擇 [**停止取得：擁有直接連結的任何客戶可以看到產品的Microsoft Store清單，但除非他們已擁有該產品，或是有促銷碼而且使用 Windows 10 裝置，才能下載**] 的效果相同。 若要完全停止為新客戶提供某個應用程式，請按一下 [應用程式概觀] 頁面的 [**停止提供應用程式**]。 如需詳細資訊，請參閱[從Microsoft Store移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
+請務必了解此選項會有相同的影響，和[可見度](choose-visibility-options.md#discoverability)\] 區段中選取 [**可搜尋的但無法使用推出此應用程式**，並選擇**停止取得： 擁有直接連結的任何客戶可以看到產品的市集清單，但它們只可以下載它已擁有該產品，或具備促銷碼而且使用 Windows 10 裝置。** 若要完全停止為新客戶提供某個應用程式，請按一下 [應用程式概觀] 頁面的 [**停止提供應用程式**]。 如需詳細資訊，請參閱[從Microsoft Store移除應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)。
 
 > [!TIP]
 > 如果您選取 [**停止取得**] 的日期，且之後決定要再次提供應用程式，您可以建立新的提交項目，並將 [**停止取得**] 變更回 [**永不**]。 在您將更新的提交項目發行後，應用程式將再次提供。

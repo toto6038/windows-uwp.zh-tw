@@ -4,16 +4,16 @@ Description: You can cross-promote your app with apps published by other develop
 title: 關於社群廣告
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ms.author: wdg-dev-content
-ms.date: 10/04/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 20f0f06d0927d61c062a0514d84bef993da6e932
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748474"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5819335"
 ---
 # <a name="about-community-ads"></a>關於社群廣告
 
@@ -30,19 +30,15 @@ ms.locfileid: "5748474"
 
 ### <a name="opt-in-to-community-ads"></a>選擇加入社群廣告
 
-您可以為您的應用程式的其中一個建立社群廣告行銷活動之前，您必須在**獲利**上選擇加入&gt;在 Windows 開發人員中心儀表板中的**應用程式內廣告**頁面。
+您可以為您的應用程式的其中一個建立社群廣告行銷活動之前，您必須在**獲利**上選擇加入&gt;在[合作夥伴中心](https://partner.microsoft.com/dashboard)的**應用程式內廣告**頁面。
 
 若要選擇加入社群廣告的 UWP 應用程式：
 
-1. 在**流量分配設定**\] 區段**中應用程式內廣告**頁面上，選取您應用程式中使用廣告單元。
-2. **讓 Microsoft 選擇最佳流量分配設定您的應用程式**選取該選項是，如果社群廣告將會自動為您的廣告單元啟用。 否則，在**目標**下拉式清單中選取基準設定或市場特定設定，然後檢查 [**其他廣告網路**清單中的 [ **Microsoft Community 廣告**] 方塊。
+1. 選取您使用中的應用程式和捲軸向下進行**流量分配設定**廣告單元。
+2. 如果選取**讓 Microsoft 最佳化我的設定**時，社群廣告將會自動為您的廣告單元啟用。 否則，在**目標**下拉式清單中選取基準設定或市場特定設定，然後檢查 [**其他廣告網路**清單中的 [ **Microsoft Community 廣告**] 方塊。
 
     > [!NOTE]
     > 您可以使用**加權**欄位來指定您想要顯示來自付費的網路和其他廣告網路，包括社群廣告的廣告比率。
-
-若要選擇加入社群廣告適用於 Windows 8.x 或 Windows Phone 8.x 應用程式，
-
-1. 在**應用程式內廣告**頁面上，檢查**顯示我的 app 中社群廣告**] 方塊。
 
 完成選擇後，您不需要重新發行應用程式。 一旦您已選擇加入，您可以在[建立廣告活動](create-an-ad-campaign-for-your-app.md)時選取**\[社群廣告 (免費)\]** 做為行銷活動類型。
 

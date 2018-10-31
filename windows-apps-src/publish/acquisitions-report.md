@@ -1,26 +1,26 @@
 ---
 author: jnHs
-Description: The Acquisitions report in the Windows Dev Center dashboard lets you see who has acquired and installed your app, along with demographic and platform details.
+Description: The Acquisitions report in Partner Center lets you see who has acquired and installed your app, along with demographic and platform details.
 title: 下載數報告
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ms.author: wdg-dev-content
-ms.date: 09/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
 ms.localizationpriority: medium
-ms.openlocfilehash: c2ccb3088d0ef241f950a5f5fcf3f40969bc0531
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5769224"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813305"
 ---
 # <a name="acquisitions-report"></a>下載數報告
 
 
-在 Windows 開發人員中心儀表板的**下載數**報告可讓您能夠查看已取得並安裝您的應用程式、 人數統計資料及平台詳細資訊，以及顯示的相關資訊 （包括 Xbox） 上 windows 10 客戶如何抵達您的應用程式清單。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。 
+在[合作夥伴中心](https://partner.microsoft.com/dashboard)的**下載數**報告可讓您能夠查看已取得並安裝您的應用程式、 人數統計資料及平台詳細資訊，以及顯示的相關資訊 （包括 Xbox） 上 windows 10 客戶如何抵達您的應用程式清單。 您也可以檢視的最後一個小時或 seventy 兩小時期間接近即時的下載數資料。 
 
-您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。 或者，您可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
+您可以在合作夥伴中心，或[下載報告](download-analytic-reports.md)，以便離線檢視中檢視此資料。 或者，您可透過程式設計方式使用我們的[分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) 擷取此資料。
 
 在此報告中，一個**下載數**表示一位新客戶已取得您 app 的授權 (不論是付費或免費取得)。 **安裝**指的是安裝在 Windows 10 裝置上的 app。
 

@@ -4,16 +4,16 @@ Description: Common questions about ad campaigns
 title: 關於廣告活動的常見問題
 ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ms.author: wdg-dev-content
-ms.date: 06/19/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c73e51cac3823be7c1abcce223c9d7fecfc58ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745914"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5811922"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
@@ -63,10 +63,3 @@ ms.locfileid: "5745914"
 
 移至<http://commerce.microsoft.com>，您的 Microsoft 帳戶認證，登入，並進行必要的變更。
 
-### <a name="related-topics"></a>相關主題
-
-* [為您的 app 建立廣告活動](create-an-ad-campaign-for-your-app.md)
-* [管理您的廣告活動](managing-your-ad-campaign.md)
-* [關於自家廣告](about-house-ads.md)
-* [關於社群廣告](about-community-ads.md)
-* [App 安裝廣告報告](app-install-ads-reports.md)

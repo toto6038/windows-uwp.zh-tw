@@ -3,16 +3,16 @@ author: jnHs
 Description: Manage submission options such as publishing hold options, notes for certification, and more.
 title: 管理提交選項
 ms.author: wdg-dev-content
-ms.date: 05/09/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 發佈暫停, 發佈日期, 傳送提交以發佈, 受限制的功能核准
 ms.localizationpriority: medium
-ms.openlocfilehash: 51b816ece884f1464d0dbf039aef5d80e2ca7341
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 8f7d58989035db1a14aba685c8951d23d2f94b52
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755958"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5814294"
 ---
 # <a name="manage-submission-options"></a>管理提交選項
 

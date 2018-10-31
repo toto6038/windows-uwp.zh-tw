@@ -1,25 +1,25 @@
 ---
 author: JnHs
-Description: Learn how to send notifications from Windows Dev Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
+Description: Learn how to send notifications from Partner Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.
 title: 傳送特定對象的推播通知給您的 App 客戶
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 目標式通知, 推播通知, 快顯通知, 磚
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 51da748b1f28a658886543fbf0eaab01e3f74394
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 7c2cf6c9cbd4aa0b25afea47a2fe82774c3c87a7
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748199"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813452"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 
 在對的時間以適當的訊息和客戶互動，是您身為 App 開發人員的致勝關鍵。 通知可以鼓勵您的客戶採取行動，例如為應用程式評分、購買附加元件、嘗試新功能或下載另一個應用程式 (或許可透過您提供的[促銷代碼](generate-promotional-codes.md)免費取得)。
 
-Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳送通知給 App 的所有客戶，或只鎖定符合您在[客戶區隔](create-customer-segments.md)中定義之條件的 App 的 Windows 10 客戶子集。 <!-- You can also send a single notification to all of the customers for multiple apps. -->
+[合作夥伴中心](https://partner.microsoft.com/dashboard)提供資料導向的客戶交流平台，您可以使用傳送通知給所有應用程式的客戶，或只鎖定符合您在[客戶所定義之條件應用程式的 Windows 10 客戶子集區隔](create-customer-segments.md)。 您也可以建立通知傳送到一個以上的應用程式的客戶。
 
 > [!IMPORTANT]
 > 這些通知只能用於 UWP app。
@@ -37,19 +37,19 @@ Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳
 
 有三件重要的事必須執行，您才能使用通知和客戶互動。
 
-1. **登錄您的 app 以接收推播通知。** 您要在您的 app 中加入 Microsoft Store Services 的引用，然後再新增幾行於開發人員中心和您的 app 之間登錄通知通道的程式碼。 我們將使用該管道傳遞您的通知給您的客戶。 如需詳細資訊，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+1. **登錄您的 app 以接收推播通知。** 在您的應用程式中新增對 Microsoft Store Services SDK 的參考，然後再新增幾行程式登錄通知通道合作夥伴中心和您的應用程式之間的程式碼執行此動作。 我們將使用該管道傳遞您的通知給您的客戶。 如需詳細資訊，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 2. **決定要設定為目標的客戶。** 您可以將通知傳送給 App 所有的客戶或 (針對單一 App 所建立的通知) 稱為*區隔*的客戶群組 (您可以根據人口統計資料或營收準則定義此群組)。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
 3. **建立您的通知內容並將其送出。** 例如，您可能會建立鼓勵新客戶為您的 App 評等的通知，或傳送促進購買附加元件之特殊交易的通知。
 
 
 ## <a name="to-create-and-send-a-notification"></a>若要建立並傳送通知
 
-請依照下列步驟，在儀表板中建立通知，並傳送至特定的消費者區隔。
+請依照下列步驟來建立在合作夥伴中心的通知，並將它傳送給特定客戶區隔。
 
 > [!NOTE]
-> 您必須先在應用程式中呼叫 [RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync) 方法註冊應用程式以接收通知，您的應用程式才能從開發人員中心收到通知。 這個方法適用於 [Microsoft Store服務 SDK](http://aka.ms/store-em-sdk)。 如需如何呼叫這個方法的詳細資訊 (包括程式碼範例)，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+> 應用程式可以從合作夥伴中心收到通知之前，您必須先呼叫[RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)方法，在您的應用程式註冊您的應用程式以接收通知。 這個方法適用於 [Microsoft Store服務 SDK](http://aka.ms/store-em-sdk)。 如需如何呼叫這個方法的詳細資訊 (包括程式碼範例)，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
-1. 在[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard/)，展開 **\[互動\]** 區段，然後選取 **\[通知\]**。
+1. 在[合作夥伴中心](https://partner.microsoft.com/dashboard)，展開 [**互動**] 區段，然後選取**通知**。
 2. 在 **\[通知\]** 頁面上，選取 **\[新通知\]**。
 3. 在**選取範本**] 區段中，選擇您想要傳送，然後按一下 **[確定]** 的[通知類型](#notification-template-types)。
 4. 在下一個頁面上，使用下拉式功能表選擇您想要產生通知的**\[單一應用程式\]** 或**\[多個應用程式\]**。 您可以只選取應用程式已[設定為使用 Microsoft Store Services SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
@@ -111,20 +111,20 @@ Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳
 ### <a name="to-measure-notification-performance"></a>測量通知效能
 
 1.  當您建立通知時，請在 **\[通知內容\]** 區段選取 **\[追蹤 app 啟動速率\]** 核取方塊。
-2.  在您的應用程式中呼叫 [ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch) 方法，即可通知開發人員中心您的應用程式已啟動，以回應特定對象的通知。 這個方法由 Microsoft Store Services SDK 提供。 如需如何呼叫這個方法的詳細資訊，請參閱[設定您的應用程式以接收開發人員中心通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+2.  在您的應用程式中呼叫[ParseArgumentsAndTrackAppLaunch](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch)方法，以通知合作夥伴中心，您的應用程式已啟動來回應特定對象的通知。 這個方法由 Microsoft Store Services SDK 提供。 如需如何呼叫這個方法的詳細資訊，請參閱[設定您的應用程式會接收到合作夥伴中心的通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
 
 ### <a name="to-view-notification-performance"></a>檢視通知效能
 
-當您依上述方式設定通知和 app 以測量通知效能後，可以使用儀表板來查看通知執行狀況。
+當您設定好通知和您的應用程式以測量通知效能，如上文所述時，您可以看到您的通知執行狀況。
 
 若要檢閱每個通知的詳細的資料：
 
-1.  在 Windows 開發人員中心儀表板，展開 [**互動**] 區段，然後選取 [**通知**]。
+1.  在合作夥伴中心，展開**互動**區段，然後選取**通知**。
 2.  在表格中的現有的通知，選取 [**進行中**或**已完成**，並再看看 [**傳遞速率**和**應用程式啟動速率**欄來查看每個通知的整體效能。
 3.  若要查看更詳細的效能詳細資料，請選取通知名稱。 在 **\[傳遞統計資料\]** 區段中，您可以檢視下列通知 **\[狀態\]** 類型的 **\[計數\]** 和 **\[百分比\]** 資訊︰
     * **失敗**︰通知因為某些原因未傳遞。 例如，如果 Windows 通知服務中發生問題，這個情況就會發生。
-    * **通道到期失敗**︰無法傳遞通知，因為應用程式與開發人員中心之間的通道已到期。 例如，如果客戶長時間未開啟您的 app，這個情況就會發生。
+    * **通道到期失敗**： 無法傳遞通知，因為應用程式與合作夥伴中心之間的通道已到期。 例如，如果客戶長時間未開啟您的 app，這個情況就會發生。
     * **傳送中**︰通知在待傳送的佇列中。
     * **已傳送**︰已傳送通知。
     * **啟動**︰通知已傳送、客戶按一下通知，因此開啟您的應用程式。 請注意，這只會追蹤 app 啟動。 這個狀態不包括邀請客戶採取其他行動 (例如啟動Microsoft Store以留下評等) 的通知。
@@ -132,7 +132,7 @@ Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳
 
 分析您的通知的使用者活動資料：
 
-1.  在 Windows 開發人員中心儀表板，展開 [**互動**] 區段，然後選取 [**通知**]。
+1.  在合作夥伴中心，展開**互動**區段，然後選取**通知**。
 2.  在**通知**頁面上，按一下 [**分析**] 索引標籤。此索引標籤會顯示下列資料：
     * 為您的快顯通知和控制中心通知各種不同的使用者動作狀態的圖形檢視。
     * 世界地圖檢視的按一下-透過-率為您的快顯通知和控制中心通知。
@@ -140,7 +140,7 @@ Windows 開發人員中心提供資料導向的客戶交流平台，可供您傳
 
 ## <a name="translate-your-notifications"></a>翻譯您的通知
 
-為使通知發揮最大的影響力，請考慮將它們翻譯成您客戶偏好的語言。 開發人員中心利用 [Microsoft Translator](https://www.microsoft.com/translator/home.aspx) 服務，讓您可以輕鬆地自動翻譯您的通知。
+為使通知發揮最大的影響力，請考慮將它們翻譯成您客戶偏好的語言。 合作夥伴中心可讓您更輕鬆地自動翻譯您的通知，利用[Microsoft Translator](https://www.microsoft.com/translator/home.aspx)服務的強大功能。
 
 1.  當您以您的預設語言撰寫通知後，請選取 **\[新增語言\]** (在 **\[通知內容\]** 區段的 **\[語言\]** 功能表之下)。
 2.  在 **\[新增語言\]** 視窗中選取顯示通知的他種語言，然後選取 **\[更新\]**。

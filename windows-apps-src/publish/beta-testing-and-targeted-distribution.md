@@ -1,25 +1,25 @@
 ---
 author: jnHs
-Description: The Windows Dev Center dashboard gives you the option to make your app available only to specified people so that you can have testers try it out before you offer it to the public.
+Description: Partner Center gives you several options to let testers try out your app before you offer it to the public.
 title: 搶鮮版 (Beta) 測試和特定對象的發佈
 ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ms.author: wdg-dev-content
-ms.date: 05/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 搶鮮版 (Beta) 測試, 限量發行, 搶鮮版, beta, 測試, 測試人員
 ms.localizationpriority: medium
-ms.openlocfilehash: e57490e2ad9c3991baf40b6c4d15d35def59f94f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746741"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5813866"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
 無論您測試應用程式時多麼謹慎，都比不上讓他人實際使用來得真切。 測試人員可能會發現您沒注意到的問題，例如拼字錯誤、令人混淆的應用程式流程，或甚至是導致應用程式當機的錯誤。 這樣您就有機會能夠在提交正式發行之前修正問題，進而產生更完美的最終產品。 
 
-Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式提交僅供指定人員使用，這樣您就可以在公開提供之前，讓測試人員試試看。 
+合作夥伴中心提供您數個選項，讓測試人員在公開提供之前試用您的應用程式。
 
 無論您選擇哪種方法，以下是當您對您的應用程式進行搶鮮版 (Beta) 測試時應該牢記的一些事項。
 
@@ -33,7 +33,7 @@ Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式
 
 如果您在將應用程式提供給其他人使用之前想先讓測試人員使用，並想確定其他人都看不到應用程式清單，請使用 [\[可見度\]](choose-visibility-options.md) 下方的 **\[私人對象\]** 選項 (位在您提交的 **\[定價和可用性\]** 頁面上)。 這是唯一可讓您散發應用程式給測試人員，同時完全防止其他人看到應用程式 Store 清單 (即使他們可以輸入直接連結) 的方式。 
 
-**私人對象**選項可以只可用時不已發佈您的應用程式給公開對象。 您可以使用此選項以任何作業系統版本中，為目標的應用程式，但您的測試人員必須執行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，且必須登入您所提供之電子郵件地址相關聯的 Microsoft 帳戶。
+**私人對象**選項只可用時不已發佈您的應用程式給公開對象。 您可以使用此選項以任何作業系統版本中，為目標的應用程式，但您的測試人員必須執行 Windows 10 版本 1607年或更高版本 （包括 Xbox One)，且必須登入您所提供之電子郵件地址相關聯的 Microsoft 帳戶。
 
 如需詳細資訊，請參閱[私人對象](choose-visibility-options.md#audience)。
 
@@ -71,6 +71,8 @@ Windows 開發人員中心儀表板會提供數個選項，讓您的應用程式
 - 在您發佈產品之後，將連結 ([應用程式身分識別頁面](view-app-identity-details.md)上的 **URL**) 散發給您的測試人員，讓他們可以試用。
 - 當您準備好公開提供您的應用程式時，請建立新的提交，並將 **\[可見度\]** 選項變更為 **\[在 Microsoft Store 推出此產品並可供搜尋\]** (以及您想要的其他任何變更) 即可。
 
+> [!IMPORTANT]
+> 截至 2018 年 10 月 31 剛建立的產品不能包含套件目標為 Windows Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 ## <a name="targeted-distribution-to-windows-phone-customers-with-specified-email-addresses"></a>以具備指定的電子郵件地址的 Windows Phone 客戶為散佈目標
 

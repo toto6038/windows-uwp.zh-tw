@@ -4,16 +4,16 @@ Description: Follow these guidelines to prepare your app's packages for submissi
 title: 應用程式套件需求
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 套件需求, 套件, 套件格式, 支援的版本, 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 5270215e1f4834a7e7c86ed4b3052ed4f791d57e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 1c76cb26d91ecd1f72b71f90b9ef464cdf52ba55
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5764572"
+ms.locfileid: "5815511"
 ---
 # <a name="app-package-requirements"></a>應用程式套件需求
 
@@ -74,6 +74,8 @@ ms.locfileid: "5764572"
 | 套件大小         | .msixbundle 或.appxbundle： 每個套件組合上限為 25 GB <br>目標為 Windows 10: 25.msix 或.appx 套件每個套件上限為 GB<br>以 Windows 8.1 為目標的 .appx 套件：每個套件上限為 8 GB <br> 以 Windows 8 為目標的 .appx 套件：每個套件上限為 2 GB <br> 以 Windows Phone 8.1 為目標的 .appx 套件：每個套件上限為 4 GB <br> .xap 套件：每個套件上限為 1 GB                                                                           |
 | 區塊對應雜湊     | SHA2-256 演算法                                                   |
 
+> [!IMPORTANT]
+> 截至 2018 年 10 月 31 剛建立的產品不能包含目標為 Windows 8.x/Windows 套件 Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 ## <a name="supported-versions"></a>支援版本
 

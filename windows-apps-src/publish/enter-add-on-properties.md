@@ -4,19 +4,18 @@ Description: When submitting an add-on, the options on the Properties page help 
 title: 輸入附加元件屬性
 ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 附加元件, 屬性, 訂閱期間, 產品存留期, 內容類型, iap, App 內購買, 應用程式內產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f616e4da96c1a2c59822d1370b49016dbca1bb7
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: fa0559c79b758373347427c0aa88b351c0fbddf0
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745554"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5816467"
 ---
 # <a name="enter-add-on-properties"></a>輸入附加元件屬性
-
 
 提交附加元件時，**\[屬性\]** 頁面上的選項有助於決定提供給客戶時附加元件的行為。
 
@@ -32,7 +31,7 @@ ms.locfileid: "5745554"
 
 ## <a name="product-lifetime"></a>產品存留期
 
-如果您選取的產品類型是 **\[耐久性\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]**，這表示附加元件永久有效。 若有需要，您可以設定 **\[產品存留期\]**，讓附加元件在設定的期間後到期 (可選擇 1-365 天)。
+如果您選取的產品類型是 **\[耐久性\]**，則此處會顯示 **\[產品存留期\]**。 耐久型附加元件的預設 **\[產品存留期\]** 為 **\[永久\]**，這表示附加元件永久有效。 如果您想要的話，您可以變更 [**產品存留期**，讓附加元件 （可選擇 1-365 天） 設定的期間後到期。
 
 
 ## <a name="quantity"></a>數量

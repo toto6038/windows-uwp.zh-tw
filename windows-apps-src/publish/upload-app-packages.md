@@ -8,22 +8,26 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10，uwp，套件上, 傳，套件上傳
 ms.localizationpriority: medium
-ms.openlocfilehash: 535706cc0627dc89ce96981ad40faafbf242e80e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: f02ca7c43443289ef9d2d0562be25f277068685b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748321"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5818043"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 
-**套件**頁面是為您上傳其中的所有您提交應用程式套件檔案 （.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap）。 您可以在此步驟中，為您的 App 對象上傳適用於任何作業系統的套件。 當客戶下載您的 App 時，[市集] 會自動提供每位客戶最適合他們的裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
+**套件**頁面是為您上傳其中的所有您提交應用程式套件檔案 （.msix、.msixupload、.msixbundle、.appx、.appxupload 和/或.appxbundle）。 您可以上傳所有您的套件相同的應用程式，在此頁面上，並在市集中當客戶下載您的應用程式時，會自動提供每個客戶最適合他們的裝置的套件。 在您上傳套件之後，您會看到一個資料表以排序方式指出[哪個套件將提供給特定的 Windows 10 裝置系列](#device-family-availability) (以及舊版 OS，如果適用的話)。
 
-如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要深入了解[如何版本號碼可能會影響哪個套件傳遞給特定的客戶](package-version-numbering.md)，以及[如何將套件發佈到不同的作業系統](guidance-for-app-package-management.md)。
+> [!IMPORTANT]
+> 截至 2018 年 10 月 31 剛建立的產品不能包含目標為 Windows 8.x/Windows 套件 Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+
+如需有關套件內容及其建構方式的詳細資訊，請參閱[應用程式套件需求](app-package-requirements.md)。 您也會想要深入了解[的版本號碼會如何影響哪個套件傳遞給特定的客戶](package-version-numbering.md)，以及[如何管理各種案例適用的套件](guidance-for-app-package-management.md)。
+
 
 ## <a name="uploading-packages-to-your-submission"></a>將套件上傳到您的提交
 
-若要上傳套件，請將套件拖曳到欄位內，或按一下以瀏覽您的檔案。 **套件**頁面可讓您上傳.msix、.msixupload、.msixbundle、.appx、.appxupload、.appxbundle 和/或.xap 檔案。
+若要上傳套件，請將套件拖曳到欄位內，或按一下以瀏覽您的檔案。 **套件**頁面可讓您上傳.msix、.msixupload、.msixbundle、.appx、.appxupload 和/或.appxbundle 檔案。
 
 > [!IMPORTANT]
 > 適用於 windows 10，我們建議您上傳.msixupload 或.appxupload 檔案，而非.msix、.appx、.msixbundle 或.appxbundle。  如需針對市集封裝 UWP 應用程式的詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](../packaging/packaging-uwp-apps.md)。

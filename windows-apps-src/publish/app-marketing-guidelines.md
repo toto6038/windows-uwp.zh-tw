@@ -4,16 +4,16 @@ Description: Learn how to promote your apps and content in the Microsoft Store. 
 title: Microsoft Store 行銷的應用程式的指導方針
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d065504385a5e7a743bd4936e9240565d3207a36
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 38dfdbc94112caa5e3fff7c1605fecece83b202d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5745268"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5821092"
 ---
 # <a name="microsoft-store-marketing-guidelines-for-apps"></a>Microsoft Store 行銷的應用程式的指導方針
 
@@ -47,9 +47,9 @@ ms.locfileid: "5745268"
 
 -   在 Microsoft Store 中, 擁有您的應用程式或提供其他內容，或者是[Microsoft 加盟計畫](http://go.microsoft.com/fwlink/p/?LinkId=624463)的一部分。
 
--   如果您已註冊開發人員中心，請遵守「應用程式開發人員合約」的[授與 Microsoft 商標權限](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)區段。
+-   如果您已註冊合作夥伴中心中成為 app 開發人員，符合應用程式開發人員合約的[「 授權至 Microsoft 的標記 」](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement#license_to_mark)一節。
 
--   如果您未註冊 Windows 開發人員中心，Microsoft 會授與您的全球、 非專屬、 免、 免費的 Microsoft 市集徽章的指導方針中所述的單獨使用徽章，授權。 Microsoft 得變更這些指導方針，若有變更，Microsoft 將使用合理的方式將您導向到張貼這些規格的任何新 URL。 Microsoft 保留此處未明確授與的所有權利。
+-   如果您未註冊成為 app 開發人員，在合作夥伴中心，Microsoft 會授與您的全球、 非專屬、 免、 免費的 Microsoft 市集徽章的指導方針中所述的單獨使用徽章，授權。 Microsoft 得變更這些指導方針，若有變更，Microsoft 將使用合理的方式將您導向到張貼這些規格的任何新 URL。 Microsoft 保留此處未明確授與的所有權利。
 
 -   請遵循[Microsoft 市集徽章的指導方針](http://go.microsoft.com/fwlink/p/?LinkId=529769)中所述的標誌使用規範。
 
