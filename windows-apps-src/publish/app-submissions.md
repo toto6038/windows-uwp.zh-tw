@@ -5,15 +5,15 @@ title: 應用程式提交
 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
 keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b3aed7c5fe912155904b3b0da666427e6727d19d
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 55235c78df29513e8d7b28e7643aec5c3a256f1d
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742318"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833635"
 ---
 # <a name="app-submissions"></a>App 提交
 
@@ -23,12 +23,15 @@ ms.locfileid: "5742318"
 您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 您對您的提交的更新會儲存，因此您可以回來，並在其上運作，每當您準備好。
 
 > [!NOTE]
-> 您必須有[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)才能存取[Windows 開發人員中心](https://partner.microsoft.com/dashboard)，並提交到 Microsoft Store 的應用程式。
+> 您必須在[合作夥伴中心](https://partner.microsoft.com/dashboard)有使用中的[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能提交到 Microsoft Store 的應用程式。
 
-發佈您的 app 之後，就可以在儀表板中建立其他提交來發佈更新版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要為已發行的應用程式建立新的提交，請按一下 [應用程式概觀] 頁面上所顯示最新提交旁的 [**更新**]。 您也可以[移除從 microsoft Store 應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （，然後使其可再次更新的版本，如果您想要）。
+您的應用程式發佈之後，您可以在合作夥伴中心建立其他提交來發佈更新的版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要建立新的提交發佈的應用程式，按一下 [其**概觀**頁面上所顯示最新提交旁的**更新**。 您也可以[移除從 microsoft Store 應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （，然後使其可再次更新的版本，如果您想要）。
 
 > [!NOTE]
-> 本文件章節描述如何在開發人員中心儀表板上建立應用程式提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。
+> 文件的這一節說明如何在合作夥伴中心建立 app 提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。
+
+> [!IMPORTANT]
+> 截至 2018 年 10 月 31 剛建立的產品不能包含目標為 Windows 8.x/Windows 套件 Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 ## <a name="app-submission-checklist"></a>App 提交檢查清單
 
@@ -91,17 +94,20 @@ ms.locfileid: "5742318"
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **說明**               | 必要                                    | [撰寫一份出色的應用程式介紹](write-a-great-app-description.md) |
 | **此版本中的新功能**   | 選用                                 | [版本資訊](create-app-store-listings.md#whats-new-in-this-version)       |
-| **應用程式功能**              | 選用                                    | [應用程式功能](create-app-store-listings.md#app-features)         |
+| **應用程式功能**              | 選用                                    | [產品功能](create-app-store-listings.md#product-features)         |
 | **螢幕擷取畫面**               | 必要 (至少一個螢幕擷取畫面，建議提供四個或更多)          | [螢幕擷取畫面](app-screenshots-and-images.md#screenshots)          |
 | **Microsoft Store 標誌**               | 建議使用；某些 OS 版本為必要 | [Microsoft Store 標誌](app-screenshots-and-images.md#store-logos)             |
-| **其他美工圖案資產**     | 建議使用 (尤其對某些 OS 版本)         | [其他美工圖案資產](app-screenshots-and-images.md#additional-art-assets) |
 | **預告片**                  | 選用                                    | [預告片](app-screenshots-and-images.md#trailers)                | 
-| **補充的欄位**  | 選用                                    | [補充資訊](create-app-store-listings.md#supplemental-fields) 
+| **Windows 10 和 Xbox 影像 (16:9 超級主角美工圖案)**     | 建議執行        | [Windows 10 和 Xbox 影像 （16:9 超級主角美工圖案）
+] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
+| **Xbox 影像**     | 如果您發佈到 Xbox 以正確顯示所需        | [Xbox 影像
+] (應用程式的螢幕擷取畫面-和-images.md #xbox 影像) |
+| **補充的欄位**  | 選擇性                                    | [補充的欄位](create-app-store-listings.md#supplemental-fields) 
 | **搜尋詞彙**              | 選用                                    | [搜尋詞彙](create-app-store-listings.md#search-terms)         |
 | **著作權與商標資訊** | 選用                                 | [著作權與商標資訊](create-app-store-listings.md#copyright-and-trademark-info) |
 | **其他授權條款**  | 選用                                    | [其他授權條款](create-app-store-listings.md#additional-license-terms) |
 | **開發者**              | 選用                                    | [開發者](create-app-store-listings.md#developed-by)                   |
-| **平台專屬的 Store 清單** | 選用                               | [建立平台專屬的 Store 清單](create-platform-specific-store-listings.md)  |
+
 
 <span/>
 

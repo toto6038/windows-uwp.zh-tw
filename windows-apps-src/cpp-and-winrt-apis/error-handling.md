@@ -7,12 +7,12 @@ ms.date: 05/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, 錯誤, 處理, 例外狀況
 ms.localizationpriority: medium
-ms.openlocfilehash: 36f6248452d97d10b6004067b6c0a973973443db
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 15432202e61322191e27e89920f7791878177c8b
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752641"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5832447"
 ---
 # <a name="error-handling-with-cwinrt"></a>使用 C++/WinRT 的錯誤處理
 
@@ -77,7 +77,7 @@ winrt::check_bool(::SetEvent(h.get()));
 如果您傳遞至 [**winrt::check_bool**](/uwp/cpp-ref-for-winrt/error-handling/check-bool) 的值是 false，則執行下列一系列動作。
 
 - **winrt::check_bool** 呼叫 [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) 函式。
-- **winrt::throw_last_error** 呼叫 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360) 來擷取呼叫執行緒的最後一個錯誤碼值，並再呼叫 [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult) 函式。
+- **winrt:: throw_last_error**呼叫[**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)來擷取呼叫執行緒的最後一個錯誤碼值，並接著會呼叫[**winrt:: throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult)函式。
 - **winrt::throw_hresult** 使用 [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) 物件（或標準物件）擲回例外狀況，代表該錯誤碼。
 
 Windows Api 報告執行階段錯誤使用各種傳回值類型，因此除了 **winrt::check_bool** 之外，還有少數其他實用的協助程式函式，適用於檢查值與擲回例外狀況。

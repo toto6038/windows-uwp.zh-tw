@@ -1,34 +1,34 @@
 ---
 author: JnHs
-Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+Description: You can create ad campaigns in Partner Center to help promote your app and grow your app's user base.
 title: 為您的應用程式建立廣告活動
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 行銷活動, 促銷
 ms.localizationpriority: medium
-ms.openlocfilehash: 33c6388902322357d27918b6e4b95555785288bc
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5751524"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833338"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立廣告活動
 
-您可以使用開發人員中心儀表板建立廣告行銷活動，以協助您促銷 app 及擴大 app 的使用者基礎。 依照預設，我們將會依據您在開發人員中心儀表板中針對 app 所做的設定，為您選擇目標廣告對象，但是您可以選擇定義您的廣告對象。 您也可以使用一組預設的廣告範本或上傳自己的廣告設計。 如需廣告行銷活動的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md)。
+您可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)來協助推銷您的應用程式，並拓展其使用者數量建立廣告行銷活動。 根據預設，我們會選擇根據您的應用程式，在合作夥伴中心，設定您的廣告的目標對象，但您可以選擇定義您自己的對象。 您也可以使用一組預設的廣告範本或上傳自己的廣告設計。 如需廣告行銷活動的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md)。
 
 您可以只針對已通過[應用程式認證程序](the-app-certification-process.md)最後發佈階段的應用程式建立廣告行銷活動。
 
 > [!NOTE]
-> 本文件章節描述如何在開發人員中心儀表板上建立廣告行銷活動。 或者，您也可以使用 [Microsoft Store 促銷 API](../monetize/run-ad-campaigns-using-windows-store-services.md)，以程式設計方式建立和管理廣告行銷活動。
+> 文件的這一節說明如何在合作夥伴中心建立廣告行銷活動。 或者，您也可以使用 [Microsoft Store 促銷 API](../monetize/run-ad-campaigns-using-windows-store-services.md)，以程式設計方式建立和管理廣告行銷活動。
 
 ## <a name="instructions"></a>指示
 
 以下說明如何建立廣告活動來促銷 App。
 
-1.  在儀表板的左方導覽功能表中，展開 **\[吸引\]**，然後選取 **\[廣告活動\]**。
+1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)的左方的導覽功能表中，展開**吸引**，然後選取 [**廣告活動**。
 2.  選取 **\[建立廣告活動\]** (或者如果您已經建立廣告活動，請選取 **\[新廣告活動\]**)。
 3.  在下一頁的 **\[目標類型\]** 區段中，選擇其中一項︰
     * **增加 app 安裝次數**。 如果您的廣告活動是要吸引人安裝您的 app，請選取此選項。
@@ -48,7 +48,7 @@ ms.locfileid: "5751524"
 
         每月預算是依建立廣告活動的月份按比例分配。 換句話說，如果您在行事曆月份的中途建立廣告活動，您將需要支付該月份每月預算的一半。
 
-    * 按一下 **\[新增付款方式\]** 並填寫您的帳戶詳細資料，以指定廣告行銷活動的付款方式。 如果您已經提供付費方式，需要進行更新時可以選取 **\[選擇其他付款方式\]**。 付款方式帳單地址的國家/地區必須符合與開發人員中心帳戶相關聯的國家/地區。
+    * 按一下 **\[新增付款方式\]** 並填寫您的帳戶詳細資料，以指定廣告行銷活動的付款方式。 如果您已經提供付費方式，需要進行更新時可以選取 **\[選擇其他付款方式\]**。 您的付款方式帳單地址國家/地區必須符合您的開發人員帳戶相關聯的國家/地區。
 
     * 如果您收到 Microsoft 代表提供的優惠券並用來支付廣告活動費用，請按一下 **[Use a coupon]** (使用優待券)、輸入優待券代碼，然後按一下 **[套用]** 以將優待券套用至廣告活動。
 
@@ -103,10 +103,3 @@ ms.locfileid: "5751524"
 若要了解行銷活動執行情況，請返回 **\[廣告活動\]** 頁面。 選取 **\[區段篩選器\]**，依 **\[日期\]**、**\[行銷活動目標\]**、**\[應用程式名稱\]**、**\[行銷活動類型\]** 或 **\[狀態\]** 來設定報告中內容的範圍。 除了查看您行銷活動的 **\[曝光數\]**、**\[點擊次數\]**、**\[轉換\]** 與 **\[花費\]** 等資訊之外，您可以使用報告來 **\[暫停\]** 或 **\[繼續\]** 行銷活動。 如需詳細資訊，請參閱[廣告活動報告](promote-your-app-report.md)。
 
 若要編輯行銷活動，請選取清單中的名稱。
-
-## <a name="related-topics"></a>相關主題
-
-* [管理您的廣告活動](managing-your-ad-campaign.md)
-* [關於自家廣告](about-house-ads.md)
-* [宣傳您的應用程式報告](promote-your-app-report.md)
-* [關於廣告活動的常見問題](common-questions.md)

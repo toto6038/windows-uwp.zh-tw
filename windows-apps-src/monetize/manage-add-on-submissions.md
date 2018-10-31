@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bf15f71071355ddf61d820fc33949b10d42cdfa
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d8e3ab04c2842fc08fb8b0aa298660bfbd0cfd7f
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5741291"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5833192"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
@@ -336,7 +336,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值           | 類型    | 描述               |
 |-----------------|---------|------|
-|     日期            |    字串     |  以 ISO 8601 格式產生報告的日期和時間。    |
+|     日期            |    字串     |  日期和時間產生報告，格式為 ISO 8601。    |
 |     reportUrl            |    字串     |  您可以存取報告的 URL。    |
 
 ## <a name="enums"></a>列舉
