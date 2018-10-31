@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 12aabff66fc116f510dced78aa56f3df5f84c850
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840181"
+ms.locfileid: "5868848"
 ---
 # <a name="getting-started-with-a-camera-barcode-scanner"></a>開始使用相機條碼掃描器
 ## <a name="step-1-add-capability-declarations-to-your-app-manifest"></a>步驟 1：將功能宣告加入至 App 資訊清單

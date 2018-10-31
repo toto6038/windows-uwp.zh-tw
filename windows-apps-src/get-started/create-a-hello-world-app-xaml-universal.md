@@ -8,12 +8,12 @@ ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: b28d0237deda78291816a52affd1fa7b4768640b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: d6fa9fa708df376edc94d34ea14d8dad4aed10df
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839786"
+ms.locfileid: "5864912"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 
@@ -85,7 +85,7 @@ ms.locfileid: "5839786"
 -   App.xaml 是宣告整個應用程式使用資源的檔案。
 -   App.xaml.cs 是 App.xaml 的程式碼後置檔案。 它就像所有程式碼後置頁面一樣，包含一個呼叫 `InitializeComponent` 方法的建構函式。 您不需要撰寫 `InitializeComponent` 方法。 它是由 Visual Studio 產生的，而且主要用途是初始化 XAML 檔案中宣告的元素。
 -   App.xaml.cs 是您 App 的進入點。
--   App.xaml.cs 也包含處理應用程式啟用和暫停的方法。
+-   App.xaml.cs 也包含方法來處理[啟用](../launch-resume/activate-an-app.md)和[暫停](../launch-resume/suspend-an-app.md)的應用程式。
 
 *MainPage.xaml*
 
@@ -95,12 +95,14 @@ ms.locfileid: "5839786"
 
 *Package.appxmanifest*
 -   一個描述您 App 的資訊清單檔案：其名稱、描述、磚、開始頁面等。
--   包括您 App 所含的檔案清單。
+-   包含一份相依性、 資源及檔案，其中包含您的應用程式。
 
 *一組標誌影像*
--   Assets/Square150x150Logo.scale-200.png 代表 [開始] 選單中您的 App。
+-   Assets/Square150x150Logo.scale-200.png 和 Wide310x150Logo.scale 200.png 代表您的應用程式 （中型或全大小） 在 [開始] 功能表中。
+-   Assets/Square44x44Logo.png 代表您的應用程式的應用程式清單中的 [開始] 功能表、 工作列和工作管理員。
 -   Assets/StoreLogo.png 代表 Microsoft Store 中您的 App。
 -   Assets/SplashScreen.scale-200.png 是您 App 啟動時顯示的啟動顯示畫面。
+-   Assets/LockScreenLogo.scale-200.png 可用來代表在鎖定畫面上，應用程式，當系統鎖定時。
 
 ## <a name="step-2-adding-a-button"></a>步驟 2：新增按鈕
 

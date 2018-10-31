@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 8499f64e265cfeaa0a21c111c1aec1e2d3adb8ff
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5819649"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5861040"
 ---
 # <a name="thumbnail-images"></a>縮圖影像
 

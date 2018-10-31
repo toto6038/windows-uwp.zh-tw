@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, directx, 載入資源
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bea3f515ba8ff810fc6dfd6281f0488c4f3e235
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833486"
+ms.locfileid: "5861232"
 ---
 # <a name="load-resources-in-your-directx-game"></a>在 DirectX 遊戲中載入資源
 

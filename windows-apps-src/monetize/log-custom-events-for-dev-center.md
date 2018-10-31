@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, 記錄事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817844"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862425"
 ---
 # <a name="log-custom-events-for-dev-center"></a>為開發人員中心記錄自訂事件
 

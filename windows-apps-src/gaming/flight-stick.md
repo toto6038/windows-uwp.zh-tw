@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入, 飛行桿
 ms.localizationpriority: medium
 ms.openlocfilehash: ebe7695b3f16271f3adedae658c0d62d38d7c078
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5818429"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5863267"
 ---
 # <a name="flight-stick"></a>飛行桿
 

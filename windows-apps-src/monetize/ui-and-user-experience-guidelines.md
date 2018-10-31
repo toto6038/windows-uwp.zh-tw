@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: 323190b01cad8a0832d57386f6bde9fde4f2180c
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831147"
+ms.locfileid: "5863978"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評論
 ms.localizationpriority: medium
 ms.openlocfilehash: 61ce463be2ef2d5e3328c132302704f50c336105
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5815998"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5866455"
 ---
 # <a name="get-app-reviews"></a>取得應用程式評論
 

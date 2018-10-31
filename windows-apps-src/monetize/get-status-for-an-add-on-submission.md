@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 狀態
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a656d06c2be720e4231ccf4ee0e5626466b5fd8
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814852"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5861447"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>取得附加元件提交的狀態
 

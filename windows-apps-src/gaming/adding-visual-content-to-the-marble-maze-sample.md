@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 圖形
 ms.localizationpriority: medium
 ms.openlocfilehash: 5171578b844829ec590b654194639ed6c8ebbfe1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5818646"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5861027"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入視覺化內容
 

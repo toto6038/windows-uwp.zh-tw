@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 60060bb3ec7a644d29523483d0d31c0497c543d1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817631"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865793"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -63,7 +63,7 @@ app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-ap
 
 現在您可以執行遊戲！
 
-按 **F5** 以開始執行 app。 您應該會看到視窗開啟，以及我們熟悉的恐龍站在田園 (或稀疏) 風景中。 我們現在將會檢查 app、解釋一些重要的部分，並在過程中解除鎖定其餘部分功能。
+按 **F5** 以開始執行 app。 您應該會看到視窗開啟，以及我們熟悉的恐龍站在田園 （或稀疏） 風景中。 我們現在將會檢查 app、解釋一些重要的部分，並在過程中解除鎖定其餘部分功能。
 
 ![只是日常的恐龍與坐在其背上的忍者貓](images/JS2D_3.png)
 

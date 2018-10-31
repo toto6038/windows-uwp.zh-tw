@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5814532"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5862975"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66704daaca67dae2ba4f5a3882f5885ff333d2ce
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831632"
+ms.locfileid: "5861530"
 ---
 # <a name="optimize-animations-media-and-images"></a>最佳化動畫、媒體及影像
 

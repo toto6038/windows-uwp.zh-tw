@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式轉換, 通道
 ms.localizationpriority: medium
 ms.openlocfilehash: 60e166b70c6a2aacf20673b30461002f3aa61305
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5820343"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5865866"
 ---
 # <a name="get-app-conversions-by-channel"></a>依通道取得應用程式轉換
 
