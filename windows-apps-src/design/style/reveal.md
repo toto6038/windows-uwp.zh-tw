@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bcbd1dfceb0dc51addfe9572fba746680745b26
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: db71916c9297296c4d3bb89e05032c5f413f332e
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5752209"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824870"
 ---
 # <a name="reveal-highlight"></a>顯色醒目提示
 
@@ -115,7 +115,7 @@ ms.locfileid: "5752209"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>在自訂控制項上啟用顯色
 
-您可以將顯色新增至自訂控制項。 執行此動作之前，多了解一點顯色效果運作方式會很有幫助。 顯色由兩個不同的效果所組成︰**\[顯色框線\]** 和 **\[顯色暫留\]**。
+您可以將顯色新增至自訂控制項。 進行之前，會有幫助更了解顯色效果運作方式。 顯色由兩個不同的效果所組成︰**\[顯色框線\]** 和 **\[顯色暫留\]**。
 
 - **\[框線\]** 會在指標靠近時顯示互動式元素的框線。 這個效果會告訴您這些附近的物件可以採取類似於目前焦點所在物件的動作。
 - **\[暫留\]** 會在暫留或焦點所在項目周圍套用柔和的光暈形狀，並在按一下時播放按下動畫。 

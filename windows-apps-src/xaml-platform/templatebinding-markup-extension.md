@@ -4,19 +4,18 @@ description: 連結控制項範本中的屬性值和範本化控制項中的其�
 title: TemplateBinding 標記延伸
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ms.author: jimwalk
-ms.date: 02/08/2017
+ms.date: 10/29/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 842f1bf1642e79d4bd2651560fdf7208cfb1877d
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5739839"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5823651"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
-
 
 連結控制項範本中的屬性值和範本化控制項中的其他公開屬性值。 **TemplateBinding** 只能在 XAML 的 [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義中使用。
 
@@ -59,18 +58,21 @@ ms.locfileid: "5739839"
 
 ### <a name="xbind-in-controltemplate"></a>X:bind ControlTemplate 中
 
-從開始到 Windows 10 的下一個主要更新，您可以使用**X:bind**標記延伸[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中所使用**TemplateBinding**的任何位置。 
+> [!NOTE]
+> ControlTemplate 中使用 X:bind，需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。 如需目標版本的相關詳細資訊，請參閱[版本調適型程式碼](https://msdn.microsoft.com/windows/uwp/debug-test-perf/version-adaptive-code)。
 
-[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype#Windows_UI_Xaml_Controls_ControlTemplate_TargetType)屬性將需要 （不是選用的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**時。
+從 Windows 10 版本 1809，您可以使用**X:bind**標記延伸任何使用**TemplateBinding** [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)中。 
 
-**X:bind**的支援，您現在可以使用這兩個[函式繫結](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中的良好為雙向繫結
+[TargetType](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.controltemplate.targettype)屬性必要屬性 （不是選用的） 上[ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)使用**X:bind**時。
 
-在下列範例中，TextBlock.Text 評估 Button.Content.ToString()。 ControlTemplate 上的 TargetType 做為資料來源，並達到目標與父項 TemplateBinding 相同的結果。
+您可以使用**X:bind**支援這兩個[函式繫結](../data-binding/function-bindings.md) [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/br209391)中的良好為雙向繫結。
+
+在此範例中， **TextBlock.Text**屬性評估**Button.Content.ToString**。 ControlTemplate 上的 TargetType 做為資料來源，並達到目標與父項 TemplateBinding 相同的結果。
 
 ```xaml
 <ControlTemplate TargetType="Button">
     <Grid>
-        <TextBlock Text="{x:Bind Content}" />
+        <TextBlock Text="{x:Bind Content, Mode=OneWay}"/>
     </Grid>
 </ControlTemplate>
 ```

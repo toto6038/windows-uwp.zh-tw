@@ -1,25 +1,25 @@
 ---
 author: JnHs
-Description: Get detailed analytics for your Windows apps, in the dashboard or via other methods.
+Description: Get detailed analytics for your Windows apps, in Partner Center or via other methods.
 title: 分析應用程式效能
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ms.author: wdg-dev-content
-ms.date: 07/17/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、 uwp、 分析、 報告、 儀表板，應用程式、 資料、 計量
 ms.localizationpriority: medium
-ms.openlocfilehash: e31ae50a1895c5878a2183b7f63ce3080623f7e9
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5768442"
+ms.locfileid: "5824963"
 ---
 # <a name="analyze-app-performance"></a>分析應用程式效能
 
-您可以在 Windows 開發人員中心儀表板中，檢視 App 的詳細分析。 統計資料和圖表讓您能夠了解 App 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 App 的方式以及他們給該 App 的評價。 您也可以找到應用程式健康情況、廣告使用量等的計量。
+您可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)的應用程式檢視詳細的分析。 統計資料和圖表讓您能夠了解 App 的受歡迎程度範圍 — 可從您已接觸到多少位客戶，到他們使用您 App 的方式以及他們給該 App 的評價。 您也可以找到應用程式健康情況、廣告使用量等的計量。
 
-您可以在儀表板中檢視分析報告，或者[下載所需的報告](download-analytic-reports.md)以便離線分析資料。 我們也提供數種讓您[不使用儀表板即可存取分析資料](#no-dashboard)的方法。
+您可以檢視分析報告向右在合作夥伴中心或[下載所需的報告](download-analytic-reports.md)來離線分析資料。 我們也提供數種方式讓您存取[合作夥伴中心外部您分析資料](#outside)。
 
 ## <a name="view-key-analytics-for-all-your-apps"></a>檢視您所有 App 的關鍵分析
 
@@ -45,11 +45,11 @@ ms.locfileid: "5768442"
 > [!NOTE]
 > 您可能無法在所有報告中都能夠看到資料，這會依據您應用程式的特定功能和實作而定。
 
-<span id="no-dashboard"/>
+<span id="outside"/>
 
-## <a name="access-analytics-data-without-using-the-dev-center-dashboard"></a>不使用開發人員中心儀表板存取分析資料
+## <a name="access-analytics-data-outside-of-partner-center"></a>合作夥伴中心外部存取分析資料
 
-除了檢視儀表板中的報告，您還可以用數個不同方式存取您的應用程式分析。
+除了在合作夥伴中心檢視報告，您可以有數種不同方式存取您的應用程式分析。
 
 ### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
@@ -57,7 +57,7 @@ ms.locfileid: "5768442"
 
 ### <a name="windows-dev-center-content-pack-for-power-bi"></a>適用於 Power BI 的 Windows 開發人員中心內容封裝
 
-使用 [適用於 Power BI 的 Windows 開發人員中心內容封裝](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/) 在 Power BI 探索及監視開發人員中心分析資料。 Power BI 是一項雲端型業務分析服務，可提供您業務資料的單一檢視。
+使用[Windows 開發人員中心內容封裝適用於 Power BI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)探索及監視您在 Power BI 的合作夥伴中心分析資料。 Power BI 是一項雲端型業務分析服務，可提供您業務資料的單一檢視。
 
 使用下列資源來開始使用 Power BI 存取您的分析資料。
 
@@ -66,7 +66,7 @@ ms.locfileid: "5768442"
 * [了解如何使用適用於 Power BI 的 Windows 開發人員中心內容封裝，以連接到您的分析資料](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> 若要連接到適用於 Power BI 的 Windows 開發人員中心內容封裝，我們建議您從與您的開發人員中心帳戶關聯的 Azure AD 目錄指定認證。 如果您使用您的 Microsoft 帳戶認證，您在 Power BI 中的分析資料不會自動重新整理，且您將需要登入 Power BI，才能重新整理資料。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以[免費取得它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 如需如何設定關聯的詳細資訊，請參閱[將 Azure Active Directory 與您的開發人員中心帳戶產生關聯](associate-azure-ad-with-dev-center.md)。
+> 若要連線到適用於 Power BI 的 Windows 開發人員中心內容封裝，我們建議您指定的認證，從您的合作夥伴中心帳戶相關聯的 Azure AD 目錄。 如果您使用您的 Microsoft 帳戶認證，您在 Power BI 中的分析資料不會自動重新整理，且您將需要登入 Power BI，才能重新整理資料。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以[免費取得它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 如需有關設定關聯的詳細資訊，請參閱[建立關聯 Azure Active Directory 與您的合作夥伴中心帳戶](associate-azure-ad-with-dev-center.md)。
 
 ### <a name="dev-center-app"></a>開發人員中心 App
 

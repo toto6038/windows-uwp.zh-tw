@@ -1,27 +1,27 @@
 ---
 author: jnHs
-Description: The Xbox analytics report in the Windows Dev Center dashboard shows you statistics about how your customers are engaging with the Xbox features in your product.
+Description: The Xbox analytics report in Partner Center shows you statistics about how your customers are engaging with the Xbox features in your product.
 title: Xbox 分析報告
 ms.author: wdg-dev-content
-ms.date: 06/04/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, xbox 分析, xbox live 分析, xbox 統計資料
 ms.localizationpriority: medium
-ms.openlocfilehash: e3a5ec3c81b9cddce4c38ad7f764d35bd6f34f86
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: c2c1f54a402fc4ae7184f1d588cc255525f762c2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5748008"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827391"
 ---
 # <a name="xbox-analytics-report"></a>Xbox 分析報告
 
-Windows 開發人員中心儀表板中的 **Xbox 分析**報告向您顯示有關客戶在您的產品中如何與 Xbox 功能互動的統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
+**Xbox 分析**報告，在[合作夥伴中心](https://partner.microsoft.com/dashboard)會顯示有關您的客戶的方式與您的遊戲中 Xbox 功能互動的統計資料。 還會提供服務健康狀況資訊來協助您處理用戶端錯誤。
 
 > [!IMPORTANT]
 > 如果您要發佈適用於 Xbox 的遊戲或使用 Xbox Live 服務的遊戲，您就要查看這份報告。 若要這樣做，您必須瀏覽[概念核准程序](../gaming/concept-approval.md)，其中包括[Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)所發佈的遊戲和透過提交的遊戲[ID@Xbox計畫](../xbox-live/developer-program-overview.md#id)。 透過[Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)發行的遊戲不會在此報告中目前顯示的。
 
-您可以展開 **\[分析\]** 並選取 **\[Xbox 分析\]**，從遊戲的左側導覽功能表檢視 **Xbox 分析**報告。  您可以在儀表板中檢視此資料，或是[下載報告](download-analytic-reports.md)來離線檢視。
+您可以檢視為您的遊戲的**Xbox 分析**報告，從左瀏覽功能表，展開 [**分析]** ，選取**Xbox 分析**。  您可以在合作夥伴中心，或[下載報告](download-analytic-reports.md)，以便離線檢視中檢視此資料。
 
 
 ## <a name="overview-tab"></a>概觀索引標籤

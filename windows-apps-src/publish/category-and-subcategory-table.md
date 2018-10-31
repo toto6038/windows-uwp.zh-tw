@@ -4,16 +4,16 @@ Description: Listing your app in the right category and subcategory helps custom
 title: 類別與子類別表格
 ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ms.author: wdg-dev-content
-ms.date: 10/26/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 類別, 子類別, 內容類型, 分類, 類型
 ms.localizationpriority: medium
-ms.openlocfilehash: a4e85542793fff34609817995fb213eb4f3b7d54
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 2c3ea799d030b64c5b4cc67f75cbdd664a8b83da
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5750419"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840813"
 ---
 # <a name="category-and-subcategory-table"></a>類別與子類別表格
 
@@ -22,7 +22,7 @@ ms.locfileid: "5750419"
 
 您必須選擇最能說明您 app 的類別。 您可以選擇子類別 (如果有的話)  如果您不確定要使用哪個類別或子類別，或找不到完全符合的類別，請選擇您認為客戶在嘗試搜尋類似您的 app 時最可能搜尋的類別。
 
-如果您選擇 **\[遊戲\]** 類別，則需要選取至少一個子分類 (也稱為遊戲的 *\[內容類型\]*)。 您可以選擇適合您的遊戲的多個內容類型。 請注意，為了發佈遊戲給 Xbox 上的客戶，您必須啟用 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或通過[概念核准](../gaming/concept-approval.md)程序)。 
+如果您選擇的類別的**遊戲**，您需要選取至少一個子類別 （稱為適用於遊戲的*內容類型*）。 您可以選擇適合您的遊戲的多個內容類型。 請注意，為了發佈遊戲給 Xbox 上的客戶，您必須啟用 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)或通過[概念核准](../gaming/concept-approval.md)程序)。 
 
 > [!IMPORTANT] 
 > 如果您以 **\[遊戲\]** 類別發佈應用程式，您將無法在新提交中選擇不同的類別，必須繼續以 **\[遊戲\]** 類別發佈 (不過您可以在新提交中變更內容類型選項)。 同樣地，更新先前以不同類別發佈的應用程式時，您也不能選擇 **\[遊戲\]** 類別。
@@ -149,38 +149,6 @@ Microsoft Store 可以組織應用程式，分成下列類別與子類別。
   </tr>
 </tbody>
 </table>
-
-
-<!--
-| Category                    | Subcategory                                       |
-|-----------------------------|---------------------------------------------------|
-| Books + reference           | E-reader <br> Fiction <br> Nonfiction <br> Reference |
-| Business                    | Accounting + finance <br> Collaboration <br> CRM <br> Data + analytics <br> File management <br> Inventory + logistics <br> Legal + HR <br> Project management <br> Remote desktop <br> Sales + marketing <br> Time + expenses |
-| Developer tools             | Database <br> Design tools <br> Development kits <br> Networking <br> Reference + training <br> Servers <br> Utilities <br> Web hosting |
-| Education                   | Books + reference <br> Early learning <br> Instructional tools <br> Language <br> Study aids |
-| Entertainment               | (None)                                            |
-| Food + dining               | (None)                                            |
-| Games                       | Action + adventure <br> Card + board <br> Casino <br> Classics <br> Educational <br> Family + kids <br> Fighting <br> Multi-Player Online Battle Arena <br> Music <br> Other <br> Platformer <br> Puzzle + trivia <br> Racing + flying <br> Role playing <br> Shooter <br> Simulation <br> Sports <br> Strategy <br> Tools <br> Word |
-| Government + politics       | (None)                                            |
-| Health + fitness            | (None)                                            |
-| Kids + family               | Books + reference <br> Entertainment <br> Hobbies + toys <br> Sports + activities <br> Travel |
-| Lifestyle                   | Automotive <br> DIY <br> Home + garden <br> Relationships <br> Special interest <br> Style + fashion |
-| Medical                     | (None)                                            |
-| Multimedia design           | Illustration + graphic design <br> Music production <br> Photo + video production |
-| Music                       | (None)                                            |
-| Navigation + maps           | (None)                                            |
-| News + weather              | News <br> Weather                                 |
-| Personal finance            | Banking + investments <br> Budgeting + taxes      |
-| Personalization             | Ringtones + sounds <br> Themes <br> Wallpaper + lock screens |
-| Photo + video               | (None)                                            |
-| Productivity                | (None)                                            |
-| Security                    | PC protection <br> Personal security              |
-| Shopping                    | (None)                                            |
-| Social                      | (None)                                            |
-| Sports                      | (None)                                            |
-| Travel                      | City guides <br> Hotels                           |
-| Utilities + tools           | Backup + manage <br> File managers                |
--->
 
 > [!NOTE] 
 > 適用於 Windows 8.x 和 Windows Phone 8.x 及較舊版本之客戶的 Microsoft Store 的某些類別和子類別，可能會不同於上面所列的類別。 

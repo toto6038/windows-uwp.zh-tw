@@ -4,16 +4,16 @@ Description: You can download .tsv files that contain your analytics data so tha
 title: 下載分析報告
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ms.author: wdg-dev-content
-ms.date: 01/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ec447eaf971fecc46e8c84395d8bf6f69942ace
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 371fbed113af10c8e5b388a8f271d99df4b4c4e9
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767784"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828331"
 ---
 # <a name="download-analytics-reports"></a>下載分析報告
 
@@ -22,7 +22,7 @@ ms.locfileid: "5767784"
 
 當您檢視分析報告，您會看到每個區段中的箭號圖示，可供下載資料。 按一下箭號，產生可下載的 .tsv 檔案，該檔案可在 Microsoft Excel 或支援定位字元分隔值 (TSV) 檔案的另一個程式中開啟。
 
-您也可以下載所有應用程式或特定應用程式的報告，方法是展開左側瀏覽功能表的 **\[分析\]**，然後選取 **\[下載報告\]**。 從 **\[選取應用程式\]** 下拉式清單選取 **\[所有應用程式\]** 或特定應用程式。 選取要下載的報告，然後選擇所需的彙總層級和日期範圍。 按一下 **\[下載報告\]** 按鈕以產生可下載的 .tsv 檔案，該檔案可在 Microsoft Excel 或支援定位字元分隔值 (TSV) 檔案的另一個程式中開啟。
+您也可以下載報告的所有應用程式，或針對特定的應用程式，透過在左邊的導覽功能表中的[合作夥伴中心](https://partner.microsoft.com/dashboard)，展開 [**分析]** ，然後選取 [**下載報告**。 從 **\[選取應用程式\]** 下拉式清單選取 **\[所有應用程式\]** 或特定應用程式。 選取要下載的報告，然後選擇所需的彙總層級和日期範圍。 按一下 **\[下載報告\]** 按鈕以產生可下載的 .tsv 檔案，該檔案可在 Microsoft Excel 或支援定位字元分隔值 (TSV) 檔案的另一個程式中開啟。
 
 > [!NOTE]
 > 廣告效能資料目前無法透過**下載報告**頁面取得。 若要下載此資料以供離線使用，請瀏覽至[廣告效能報告](advertising-performance-report.md)，然後按一下該頁面上的箭號圖示。 

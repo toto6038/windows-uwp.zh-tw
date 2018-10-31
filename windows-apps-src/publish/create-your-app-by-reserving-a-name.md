@@ -1,35 +1,35 @@
 ---
 author: jnHs
-Description: The first step in creating a new app in your Windows Dev Center dashboard is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
+Description: The first step in creating a new app in Partner Center is reserving an app name. See how to reserve app names and find suggestions for choosing a great name for your app.
 title: 透過保留名稱建立您的 App
 keywords: windows 10, uwp, 名稱保留, app 名稱, 應用程式名稱, 名稱, 產品名稱, 命名, 保留名稱, 標題
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ms.author: wdg-dev-content
-ms.date: 10/02/2018
+ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b8666d478b59bfb5975150903cf08fc2a43e938c
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: a94a07eb80e0b181e49a74beba7690d8a57bfaa6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5755762"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5827317"
 ---
 # <a name="create-your-app-by-reserving-a-name"></a>透過保留名稱建立您的應用程式
 
-在您[Windows 開發人員中心儀表板](https://partner.microsoft.com/dashboard)中建立新的應用程式的第一個步驟即為保留應用程式名稱。 每個保留名稱 (有時稱為您應用程式的*標題*) 必須在 Microsoft Store 中是唯一的。
+在您的[合作夥伴中心](https://partner.microsoft.com/dashboard)中建立新的應用程式的第一個步驟即為保留應用程式名稱。 每個保留名稱 (有時稱為您應用程式的*標題*) 必須在 Microsoft Store 中是唯一的。
 
 即使您尚未開始建置應用程式，也能保留名稱給您的應用程式。 我們建議儘速，這樣讓人可以使用的名稱。 請注意，您需要在 3 個月內提交應用程式，該名稱才能保留給您使用。
 
 [上傳應用程式套件](upload-app-packages.md)時，[**Package/Properties/DisplayName**](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-displayname) 值必須符合您為應用程式保留的名稱。 如果您使用 Microsoft Visual Studio 建立應用程式套件，則系統將會幫您填入此屬性。
 
 > [!IMPORTANT]
-> 您可以保留其他名稱用於應用程式，以及您可能會選擇其中一個已發佈您的應用程式的版本中使用而不是您保留您先在儀表板中建立您的應用程式時的一個。 不過，請注意您的應用程式的[身分識別詳細資料](view-app-identity-details.md)，例如**套件系列名稱 (PFN)** 部分中，會使用您在這裡輸入的名字。 這些值可能會看到某些使用者，而且不能變更，因此請確定您保留的名稱是適用於這種使用。
+> 您可以保留其他名稱用於應用程式，以及您可能會選擇其中一個已發佈您的應用程式的版本中使用而不是您保留您先在合作夥伴中心建立您的應用程式時的一個。 不過，請注意您的應用程式的[身分識別詳細資料](view-app-identity-details.md)，例如**套件系列名稱 (PFN)** 部分中，會使用您在這裡輸入的名字。 這些值可能會看到某些使用者，而且不能變更，因此請確定您保留的名稱是適用於這種使用。
 
 
 ## <a name="create-your-app-by-reserving-a-new-name"></a>透過保留新名稱建立您的應用程式
 
-保留名稱是在儀表板中建立應用程式的第一個步驟。 
+保留名稱是在合作夥伴中心中建立應用程式的第一個步驟。 
 
 1.  從 **\[概觀\]** 頁面，按一下 **\[建立新的應用程式\]**。
 2.  在文字方塊中，輸入要使用的名稱，然後選取 **\[檢查可用性\]**。 如果名稱可供使用，您將會看見綠色勾號 (如果輸入的名稱已被其他開發人員保留或使用，您將看見一則訊息，指出無法使用該名稱)。
@@ -58,7 +58,7 @@ ms.locfileid: "5755762"
 
 ## <a name="manage-additional-app-names"></a>管理其他的 app 名稱
 
-您可以在 **\[管理應用程式名稱\]** 頁面的 **\[應用程式管理\]** 區段中，為 Windows 開發人員中心儀表板中的每個 app 新增及管理其他名稱。
+您可以新增和管理您的應用程式，在合作夥伴中心中的每個**應用程式管理**] 區段中的 [**管理應用程式名稱**] 頁面上的其他名稱。
 
 在某些情況下，您可能想要保留多個名稱用於相同的 app，例如，當您想以多個語言提供 app 並且想要針對每一種語言使用不同的名稱時。 如果您想要完全變更 app 的名稱，您將需要保留其他名稱。
 

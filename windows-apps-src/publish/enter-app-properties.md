@@ -4,16 +4,16 @@ Description: The App properties page of the app submission process lets you defi
 title: 輸入應用程式屬性
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ms.author: wdg-dev-content
-ms.date: 08/07/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 遊戲設定, 顯示模式, 系統需求, 硬體需求, 基本硬體, 建議的硬體, 隱私權原則, 支援連絡資訊, 應用程式網站, 支援資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b7fffe4c687009f71c9908ca9391278a172209a
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5746053"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5823414"
 ---
 # <a name="enter-app-properties"></a>輸入應用程式屬性
 
@@ -60,7 +60,7 @@ ms.locfileid: "5746053"
 
 ## <a name="game-settings"></a>遊戲設定
 
-您選取 [**遊戲**] 做為產品類別時，此區段才會出現。 您可在此指定遊戲支援的功能。 您在此區段中提供的所有資訊，都將在產品的市集清單中顯示。
+您選取 [**遊戲**] 做為產品類別時，此區段才會出現。 您可在此指定遊戲支援的功能。 您在此區段中提供的資訊將會顯示在產品的市集清單。
 
 如果您的遊戲支援任何多人遊戲選項，請務必指出一場遊戲可參與的玩家人數下限和上限。 您無法輸入超過 1,000 名玩家下限或上限。
 

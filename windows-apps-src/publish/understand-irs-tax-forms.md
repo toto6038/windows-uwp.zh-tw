@@ -3,17 +3,17 @@ author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: 了解 Microsoft 寄發的 IRS 稅單
 ms.author: wdg-dev-content
-ms.date: 10/25/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: e16333b061c3f50d4c0d66b0704bf0977570595e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5742148"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5836066"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -25,8 +25,8 @@ ms.locfileid: "5742148"
 
 | IRS 稅單 | 說明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本表單將於 **1 月 31 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
-|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 紙本表單將於 **3 月 15 日** (含) 前寄出 (以郵戳為憑)，與此同時 .pdf 複本可於開發人員中心 (**\[儀表板\] > \[帳戶設定\] > \[稅務設定檔\]**) 取得。 |
+|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本的表單將於**年 1 月 31**日之前和.pdf 複本可在[合作夥伴中心](https://partner.microsoft.com/dashboard)(在**帳戶設定 > 稅務設定檔**) 在同一時間 |
+|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 紙本的表單將於**3 月 15**日之前和.pdf 複本可在合作夥伴中心 (在**帳戶設定 > 稅務設定檔**) 在同一時間 |
 
 > [!NOTE]
 > 我們在 IRS 稅單所使用的地址來自於[稅金設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
@@ -106,7 +106,7 @@ ms.locfileid: "5742148"
     <td valign="top"><b>為何我完成 W8 表單時，款項有扣繳稅款？</b></td>
     <td valign="top">下列任一情況即會產生扣繳稅款：<br>
      1. 您未正確完成 W8 的稅務協定一節，或是<br>
-     2. 您所居住的國家/地區與美國並無稅務協定。<br><br>您可以隨時將提交更新的 W8 表單造訪開發人員中心。<br><br><b>注意</b>： 並非所有的收入是受扣繳稅款限制。</td>
+     2. 您所居住的國家/地區與美國並無稅務協定。<br><br>您可以隨時提交更新的 W8 表單，請造訪合作夥伴中心。<br><br><b>注意</b>： 並非所有的收入是受扣繳稅款限制。</td>
   </tr>
   <tr>
     <td valign="top"><b>我已提交更新的 W8 表單及有效的協定資訊。 Microsoft 可將扣繳稅款退還給我嗎？</b></td>

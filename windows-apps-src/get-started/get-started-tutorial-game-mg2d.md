@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: ed2d84d6892f25dd37ae9a8992238f2fc8fe6a53
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 37d43094ba679ebe5439996373626522590e3fcc
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5767131"
+ms.locfileid: "5826371"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>使用 MonoGame 2D 建立 UWP 遊戲
 
@@ -68,7 +68,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 
 **protected override void UnloadContent()** 此方法用來卸除非內容管理員內容。 我們完全不會使用此方法。
 
-**protected override void Update(GameTime gameTIme)** 針對每個遊戲迴圈循環，呼叫這個方法一次。 我們在這裡更新遊戲中所使用之任何物件或變數的狀態。 這包含像是物件的位置、速度或色彩。 這也是處理使用者輸入的地方。 簡言之，除了在螢幕上繪製物件，這個方法處理遊戲邏輯的所有部分。
+**受保護的 override void Update (GameTime gameTime)** 針對每個遊戲迴圈循環一次呼叫這個方法。 我們在這裡更新遊戲中所使用之任何物件或變數的狀態。 這包含像是物件的位置、速度或色彩。 這也是處理使用者輸入。 簡言之，除了在螢幕上繪製物件，這個方法處理遊戲邏輯的所有部分。
 **protected override void Draw(GameTime gameTime)** 這是在螢幕上繪製物件的地方，使用 Update 方法所提供的位置。
 
 ## <a name="draw-a-sprite"></a>繪製 Sprite
@@ -82,7 +82,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 - 開啟 **\[方案總管\]**
 - 以滑鼠右鍵按一下 **Content** 資料夾中的 **Content.mgcb**，然後選取 **\[開啟方式\]**。 從快顯功能表中選取 **\[Monogame Pipeline\]**，然後選取 **\[確定\]**。
 - 在新視窗中，以滑鼠右鍵按一下 **Content** 項目，然後選取 **\[加入\] -> \[現有項目\]**。
-- 在檔案瀏覽器中找出並選取綠色矩形
+- 找出並選取綠色矩形在檔案瀏覽器中。
 - 將此項目命名為 “grass.png”，然後選取 **\[加入\]**。
 
 ### <a name="3-add-class-variables"></a>3. 新增類別變數
@@ -263,7 +263,7 @@ public void Draw (SpriteBatch spriteBatch)
 
 現在，對於玩家需要避免的障礙， 忍者貓與肉食恐龍這兩個最討厭什麼？ 吃蔬菜！ [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
-Just as before with the green rectangle, add these images to **Content.mgcb** via the **MonoGame Pipeline**, naming them “ninja-cat-dino.png” and “broccoli.png” respectively.
+如同之前的綠色矩形，透過**MonoGame Pipeline** 新增這些影像至 **Content.mgcb**，將它們分別命名為 “ninja-cat-dino.png” 和 “broccoli.png”。
 
 ### <a name="2-add-class-variables"></a>2. 新增類別變數
 將下列程式碼新增到 **Game1.cs** 中的類別變數清單：
@@ -284,13 +284,13 @@ float score;
 Random random;
 ```
 
-**dino** and **broccoli** are our SpriteClass variables. **dino** will hold the player avatar, while **broccoli** holds the broccoli obstacle.
+**dino** 和 **broccoli** 是我們的 SpriteClass 變數。 **dino** 會保留玩家虛擬人偶，而 **broccoli** 保留花椰菜障礙。
 
 **spaceDown** 追蹤空格鍵是否正在按住，而非按下並放開。
 
 **gameStarted** 告訴我們使用者是否第一次開始遊戲。
 
-**broccoliSpeedMultiplier** determines how fast the broccoli obstacle moves across the screen.
+**broccoliSpeedMultiplier** 決定花椰菜障礙在螢幕上移動的速度。
 
 **gravitySpeed** 決定玩家虛擬人偶在跳躍後加速向下的速度。
 
@@ -325,8 +325,8 @@ broccoli = new SpriteClass(GraphicsDevice, "Content/broccoli.png", ScaleToHighDP
 
 花椰菜影像比遊戲中所需顯示大小大很多，所以我們會將它縮小為原始大小的 0.2 倍。
 
-### <a name="5-program-obstacle-behavior"></a>5. 設計障礙行為
-我們想要花椰菜從螢幕外某處冒出，並瞄準玩家虛擬人偶，因此玩家必須躲它。 若要完成這些工作，新增這個方法至 **Game1.cs** 類別：
+### <a name="5-program-obstacle-behaviour"></a>5.設計障礙行為
+我們想要花椰菜從螢幕外某處冒出，並瞄準玩家虛擬人偶，因此玩家必須躲它。 若要這樣做，加入這個方法在**Game1.cs**類別：
 
 ```CSharp
 public void SpawnBroccoli()
@@ -381,7 +381,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7.處理鍵盤輸入
-接下來，我們需要新的方法來處理透過鍵盤使用者輸入。 將這個方法新增至 **Game1.cs**：
+接下來，我們需要新的方法來處理透過鍵盤使用者輸入。 將這個方法新增到**Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
@@ -430,7 +430,7 @@ void KeyboardHandler()
 
 第二個在按下**空格鍵**而且遊戲尚未開始時開始遊戲。
 
-第三個在按下**空格鍵**時，藉由變更其 **dY** 屬性，讓恐龍虛擬人偶跳躍。 請注意，除非在地面 (dino.y = screenHeight * SKYRATIO)，否則玩家無法跳躍，如果按住 (而不是按一次) 空格鍵玩家也無法跳躍。 這會阻止恐龍在遊戲一開始立即跳躍 (利用開始遊戲的相同按鍵動作搭順風車)。
+第三個在按下**空格鍵**時，藉由變更其 **dY** 屬性，讓恐龍虛擬人偶跳躍。 請注意，玩家無法跳躍，除非在 「 地面 」 (dino.y = screenHeight * SKYRATIO)，將會也無法跳躍如果空格鍵正在按住，而不是按一次。 這會阻止恐龍在遊戲一開始立即跳躍 (利用開始遊戲的相同按鍵動作搭順風車)。
 
 最後，最後一個 if/else 子句會檢查正在按下向左或向右鍵，從而變更恐龍的 **dX** 屬性。
 
@@ -484,9 +484,9 @@ broccoli.Draw(spriteBatch);
 dino.Draw(spriteBatch);
 ```
 
-在 MonoGame，**spriteBatch.Draw** 的新呼叫將會在任何先前呼叫上繪圖。 這表示該花椰菜和恐龍 Sprite 都會在現有草地 Sprite 上繪製，讓它們無論其位置都永遠不會隱藏在草地背後。
+在 MonoGame，**spriteBatch.Draw** 的新呼叫將會在任何先前呼叫上繪圖。 這表示，該花椰菜和恐龍 sprite 會在現有草地 sprite 上繪製，讓它們都永遠不會隱藏它後方無論其位置。
 
-現在請嘗試執行遊戲，並使用方向鍵與空格鍵來移動恐龍。 如果您依照上述步驟執行，您應該可以讓您的虛擬人偶在遊戲視窗中移動，而且花椰菜的速度應該不斷增加。
+現在請嘗試執行遊戲，並使用方向鍵與空格鍵來移動恐龍。 如果您依照上述步驟，您應該可以讓您在遊戲的視窗中移動的虛擬人偶和花椰菜應該繁衍不斷增加的速度。
 
 ![玩家虛擬人偶和障礙](images/monogame-tutorial-2.png)
 
@@ -602,7 +602,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 }
 ```
 
-這個方法會偵測兩個矩形物件是否已碰撞。 演算法運作方式是，測試查看矩形的任何側邊之間是否有間距。 如果有任何間距，表示沒有碰撞，如果無間距存在，表示必定有碰撞。
+這個方法會偵測兩個矩形物件是否已碰撞。 演算法運作方式是，測試查看是否有任何矩形的側邊之間的間距。 如果有任何間距，表示沒有碰撞，如果無間距存在，表示必定有碰撞。
 
 ### <a name="2-load-new-textures"></a>2. 載入新紋理
 
@@ -650,7 +650,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 這會呼叫我們在 **SpriteClass** 建立的 **RectangleCollision**方法，並在傳回 true 時將遊戲標示為結束。
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. 新增使用者輸入以重設遊戲
-新增此程式碼至 **KeyboardHandler** 方法，讓使用者按 Enter 鍵重設遊戲：
+將此程式碼新增到**KeyboardHandler**方法，以允許使用者重設遊戲，如果他們按下 Enter:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))

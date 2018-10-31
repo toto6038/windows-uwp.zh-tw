@@ -2,22 +2,22 @@
 author: jnHs
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
 title: 開立開發人員帳戶
-description: 這份關於如何註冊 Microsoft Store 和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。
+description: 以下是如何 The 開發人員帳戶註冊的 Microsoft Store 和其他的 Microsoft 程式在合作夥伴中心的概觀。
 ms.author: wdg-dev-content
-ms.date: 08/14/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 935e628bb285adea8e515f6192d7f2654c05022e
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b34bdfae8faf7fee2b2eae373483eb9e4dea1972
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757628"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828223"
 ---
 # <a name="opening-a-developer-account"></a>開立開發人員帳戶
 
-這份關於如何註冊 Microsoft Store 和其他的 Microsoft 程式開發人員帳戶的概觀，將協助您了解設定帳戶的程序。
+以下是如何在[合作夥伴中心](https://partner.microsoft.com/dashboard)中的 Windows 開發人員帳戶註冊的概觀。
 
 > [!NOTE]
 > 當您註冊開發人員帳戶時，我們會使用您在連絡資訊中提供的電子郵件地址，寄送與您帳戶相關的電子郵件通訊。 有時也會包含與程式相關的資訊性電子郵件。 如果您透過[退出宣告](http://go.microsoft.com/fwlink/p/?LinkId=533280)選擇不要收到這些資訊性電子郵件，請注意，我們仍然會寄送交易性電子郵件給您 (例如，讓您知道您的 app 已通過認證，或即將進行付款)。 這些電子郵件是您帳戶的必要部分，除非您關閉帳戶，否則將持續收到這些交易式電子郵件。
@@ -57,11 +57,11 @@ ms.locfileid: "5757628"
 ## <a name="additional-guidelines-for-company-accounts"></a>公司帳戶的其他指導方針
 
 > [!IMPORTANT]
-> 若要允許多個使用者存取您的開發人員中心帳戶，我們建議使用 Azure Active Directory 來指派角色給個別的使用者 （而非共用存取權的 Microsoft 帳戶）。 每一位使用者即可使用其個別的 Azure AD 認證來登入及存取該開發人員中心帳戶。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
+> 若要允許多個使用者存取您的開發人員帳戶，我們建議使用 Azure Active Directory 來指派角色給個別的使用者 （而非共用存取權的 Microsoft 帳戶）。 每個使用者可以再存取開發人員帳戶來登入合作夥伴中心使用其個別的 Azure AD 認證。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。
 
-當建立公司帳戶時，這些指導方針可能可以協助如果一個以上的人員將需要存取該帳戶來登入開啟該帳戶的 Microsoft 帳戶 （而不做為個別新增到開發人員中心帳戶的使用者)。
+如果您將需要有多個使用者存取公司帳戶來登入開啟它的 Microsoft 帳戶 （而不以個別使用者新增至帳戶)，遵循下列指導方針可能會很有幫助：
 
--   使用還不屬於您或其他人的電子郵件地址建立您的 Microsoft 帳戶，例如 MyCompany_DevCenter@outlook.com。 不要在您的公司網域使用電子郵件地址，尤其是當您的公司已使用 Azure AD。 (如上文所述，您可以新增額外的使用者從您公司的 Azure AD 稍後。)
+-   建立使用還不屬於您或其他人，例如電子郵件地址的 Microsoft 帳戶MyCompany_PartnerCenter@outlook.com。 不要在您的公司網域使用電子郵件地址，尤其是當您的公司已使用 Azure AD。 (如上文所述，您可以新增額外的使用者從您公司的 Azure AD 稍後。)
 -   將可以存取此 Microsoft 帳戶的使用者人數限制在最少。
 -   設定公司的電子郵件通訊群組清單，其中包含需要存取開發人員帳戶的人，並新增到此電子郵件地址 [Microsoft 帳戶相關聯的安全性資訊 [(https://account.microsoft.com/security)。 這可讓所有員工在收到安全密碼傳送給此別名清單上。 如果設定通訊清單不可行，您可以將個別的電子郵件地址新增到您的安全性資訊，但該電子郵件地址的擁有者會是唯一的人可存取和共用安全的程式碼系統提示時 （例如，當有新的安全性資訊新增到 t他帳戶，或存取從新的裝置時）。
 -   使用 Microsoft 帳戶的安全性資訊新增公司電話號碼。 請嘗試使用不需要延伸模組分機而且主要小組成員的數字。
@@ -76,7 +76,7 @@ ms.locfileid: "5757628"
 
 您的 Microsoft 帳戶必須至少有兩個電子郵件地址和/或電話號碼。 建議您新增的越多越好。 請記住，部分安全性資訊需要經過確認才能生效。 同時，務必經常檢閱您的安全性資訊，以確保是最新的資訊。 前往 https://account.microsoft.com/security，然後使用您的 Microsoft 帳戶登入，可以管理您的安全性資訊。 如需詳細資訊，請參閱[安全性資訊與安全密碼](https://support.microsoft.com/help/12428/microsoft-account-security-info-and-security-codes)。
 
-當您登入 Windows 開發人員中心儀表板中使用您的 Microsoft 帳戶時，系統可能會要求您驗證身分，藉由傳送來完成登入程序，您必須提供的安全性程式碼。 我們建議您指定為*信任的裝置*經常使用的電腦。 當您從信任的裝置登入時，通常不會提示您的程式碼中，雖然可能偶爾會提示您在特定情況下，或如果您還沒有登入該裝置上中很長的時間。 如需詳細資訊，請參閱[新增到您的 Microsoft 帳戶信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
+當您登入合作夥伴中心使用您的 Microsoft 帳戶時，系統可能會要求您驗證身分，藉由傳送來完成登入程序，您必須提供的安全性程式碼。 我們建議您指定為*信任的裝置*經常使用的電腦。 當您從信任的裝置登入時，通常不會提示您的程式碼中，雖然可能偶爾會提示您在特定情況下，或如果您還沒有登入該裝置上中很長的時間。 如需詳細資訊，請參閱[新增到您的 Microsoft 帳戶信任的裝置](https://support.microsoft.com/help/12369/microsoft-account-add-a-trusted-device)。
 
 
 ## <a name="closing-your-account"></a>關閉您的帳戶

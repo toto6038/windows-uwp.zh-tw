@@ -4,26 +4,26 @@ Description: You can select the screenshots, logos, and other art assets (such a
 title: 應用程式螢幕擷取畫面、影像及預告片
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ms.author: wdg-dev-content
-ms.date: 8/20/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
-ms.openlocfilehash: 81c8c5df94d6dc1ba4dc0820942c07e8768a50ae
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 8bd5a92f1e8dfe762ac3433bf64f9fe705644a9f
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757290"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5840913"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
 完善設計的影像是您在Microsoft Store中向潛在客戶呈現您的應用程式的主要方式。
 
-您可以提供[螢幕擷取畫面](#screenshots)、[標誌](#store-logos)及其他美工圖案資產 (例如[預告片](#trailers)和[促銷影像](##additional-art-assets))，加入您應用程式的Microsoft Store清單中。 有些是必要的，有些則是選擇性的（雖然為了最佳的Microsoft Store顯示效果，包含一些選擇性影像是重要的）。 
+您可以提供[螢幕擷取畫面](#screenshots)、[標誌](#store-logos)、[預告片](#trailers)，以及在您的應用程式市集清單中包含其他美工圖案資產。 有些是必要的，有些則是選擇性的（雖然為了最佳的Microsoft Store顯示效果，包含一些選擇性影像是重要的）。
 
 在[應用程式提交程序](app-submissions.md)中，您會在[Microsoft Store清單](create-app-store-listings.md)步驟中提供這些美工圖案資產。 請注意，根據客戶的作業系統和其他因素而定，在Microsoft Store中使用的影像以及顯示影像的方式可能有所差異。
 
-Microsoft Store可能也會使用您的應用程式磚以及應用程式套件中包含的其他影像。 在您提交應用程式之前，執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)，以判斷您是否缺少任何必要影像。 如需關於這些影像的指導方針和建議，請參閱[磚和圖示資產](../design/shell/tiles-and-notifications/app-assets.md)。
+市集可能也會使用您的應用程式圖示和您的應用程式套件中包含的其他影像。 在您提交應用程式之前，執行 [Windows 應用程式認證套件](../debug-test-perf/windows-app-certification-kit.md)，以判斷您是否缺少任何必要影像。 如需指導方針和建議關於這些影像，請參閱[應用程式圖示及標誌](../design/style/app-icons-and-logos.md)。
 
 ## <a name="screenshots"></a>螢幕擷取畫面
 
@@ -54,7 +54,7 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 > [!TIP]
 > 螢幕擷取畫面會依序顯示在您的清單中。 上傳螢幕擷取畫面之後，您可以進行拖放將它們重新排列。 
 
-請注意，如果您為[多種語言](supported-languages.md)建立Microsoft Store清單，則對於每個語言您都會有一個 [**Microsoft Store清單**] 頁面。 您必須針對每種語言個別上傳影像 (即使您使用相同影像)，並提供每種語言使用的標題。
+請注意，如果您為[多種語言](supported-languages.md)建立Microsoft Store清單，則對於每個語言您都會有一個 [**Microsoft Store清單**] 頁面。 您必須針對每種語言個別上傳影像 (即使您使用相同影像)，並提供每種語言使用的標題。 （如果您有許多語言的市集清單時，您可能會發現它藉由[匯出清單資料，及離線](import-and-export-store-listings.md)更新它們變得更容易。）
 
 
 ## <a name="store-logos"></a>Microsoft Store 標誌
@@ -81,11 +81,13 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 
 ### <a name="11-app-tile-icon-300-x-300-pixels"></a>1:1 應用程式磚圖示 (300 x 300 像素)
 
-必須要有此影像，才能在 Windows Phone 8.1 與較舊版本上正確顯示。 如果您的應用程式支援 Windows Phone 8.1 或較舊版本但您未提供這個影像，這些客戶將會在應用程式清單中看到空白圖示。 (這也適用於使用 Windows 10 的客戶，如果您的應用程式只有以 Windows Phone 8.1 或更舊版本為目標的套件)。如果您的提交內容*僅*包含 UWP 套件，則不需要提供這個影像。 (請注意，如果您提交的內容同時包含 Windows Phone 8.x 套件和 UWP 套件，而且您提供此影像，在某些 Microsoft Store 配置中它可能會用在 Windows 10 上。 若要避免此情況，您可以建立適用於您應用程式支援之 Windows Phone 版本的[平台專屬清單](create-platform-specific-store-listings.md)，並且僅在那裡包含應用程式磚圖示)。
+必須要有此影像，才能在 Windows Phone 8.1 與較舊版本上正確顯示。 如果您先前發佈的 app 支援 Windows Phone 8.1 或更早版本，且您未提供此影像，這些客戶會看到與您的應用程式清單以空白圖示。 （這也適用於 Windows 10 的客戶如果您的應用程式只擁有目標為 Windows Phone 8.1 或較舊版本的套件。）
+
+如果您提交*只*包含 UWP 套件，您不需要提供這個影像 （除非您核取方塊適用於**Windows 10 和 Xbox 上的客戶顯示上傳的標誌影像，而不是我的套件中的影像**，請在下一節中所述一節）。
 
 ### <a name="display-only-uploaded-logo-images-in-the-store"></a>僅顯示上傳的標誌影像，在市集中
 
-您可以選擇防止在市集中對 （包括 Xbox） 的 Windows 10 的客戶顯示清單時使用您的應用程式套件中的標誌影像，並改為讓 microsoft Store 使用您上傳的影像。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您的產品支援較舊版本的作業系統版本，這些客戶可能仍然看到映像從您的套件，即使您使用此選項）。
+您可以選擇防止在市集中對 （包括 Xbox） 的 Windows 10 的客戶顯示清單時使用您的應用程式套件中的標誌影像，並改為讓 microsoft Store 使用您上傳的影像。 如此您更能為 Windows 10 (包含 Xbox) 的客戶，在整個 Microsoft Store 中掌控各種不同顯示的應用程式外觀。 （如果您先前發佈的應用程式支援舊版作業系統，這些客戶可能仍然看到映像從您的套件）。
 
 有適用於 Windows 10 和 Xbox 上的客戶在市集中使用您上傳 （適用於客戶的 Windows 10，包括 Xbox） 的映像，並不使用任何映像從您的套件，核取方塊，指出 **，顯示上傳的標誌影像，而不是我的套件中的影像**.
 
@@ -94,74 +96,17 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 
 <span id="promotional-images" />
 
-## <a name="additional-art-assets"></a>其他美工圖案資產
+## <a name="trailers-and-additional-assets"></a>預告片和其他資產
 
 此區段讓您提供圖稿，幫助您更有效率地在 Microsoft Store 中顯示產品。 我們建議您提供這些影像，建立更具吸引力的 Store 清單。
 
 > [!TIP]
-> 如果您想要將[預告影片](#trailers)包含在 Store 清單中，尤其建議使用 **16:9 超級主角美工圖案**。如果未包含，預告片不會顯示在清單頂端。
-
-若要新增這些影像，請選取 **\[其他美工圖案資產\]** 區段中的 **\[顯示詳細資料\]**。
+> [16:9 超級主角美工圖案](#windows-10-and-xbox-image-169-super-hero-art)影像尤其建議如果您計劃[預告片](#trailers)納入您的市集清單;如果您未包含，預告片不會顯示在您的清單的頂端。
 
 
+### <a name="trailers"></a>預告片
 
-### <a name="windows-10-and-xbox-image-169-super-hero-art"></a>Windows 10 和 Xbox 影像 (16:9 超級主角美工圖案)
-
-**16:9 超級主角美工圖案 (1920 x 1080 或 3840 x 2160 像素)** 影像用於所有 Windows 10 裝置類型 (包括 Xbox) 的 Microsoft Store 中各種不同的配置。 我們建議您提供此影像，無論您的應用程式是以哪個作業系統版本或裝置類型為目標。
-
-如果您的清單包含[預告影片](#trailers)，*需要*這個影像以正確顯示。 對於 Windows 10 1607 版或更新版本 (包括 Xbox) 的客戶，它做為您的 Store 清單頂端的主要影像 (或在任何預告片播放完畢之後出現)。 它也可能在整個 Microsoft Store 的促銷配置中用於展示您的應用程式。 請注意，此影像不能包含產品的標題或其他文字。
-
-以下提供一些您在設計影像時應記住的秘訣：
-
-- 影像必須是 .png 且是 1920 x 1080 像素或 3840 x 2160 像素。
-- 選取與應用程式相關的動態影像，以促進辨識和區分。 避免使用圖庫影像或通用視覺效果。
-- 不要在影像中包含文字。
-- 避免在影像的底部三分之一處放置關鍵視覺元素 (因為在某些版面配置中，我們可能會在這個部分套用漸層)。
-- 將最重要的詳細資料放置在影像中心 (因為在某些版面配置中，我們可能會裁剪映像)。
-- 將空白空間縮至最小。
-- 避免顯示您的應用程式 UI，而且請勿使用任何裝置特定的圖像。
-- 避免政治性和國家/地區的佈景主題、旗標或宗教象徵。
-- 請勿包含敏感性手勢、裸露、賭博、貨幣、藥品、菸草或酒類的影像。
-- 請勿使用武器指向觀看者或過度暴力和血腥。
-
-提供此影像可讓我們考慮將您的應用程式納入精選促銷商機，但不保證一定會展示您的應用程式。 如需詳細資訊，請參閱[讓您的應用程式更容易宣傳](make-your-app-easier-to-promote.md)。
-
-
-### <a name="xbox-images"></a>Xbox 影像
-
-如果您將應用程式發行至 Xbox，則需要這些影像以便正確顯示。 
-
-您可以上傳 3 種不同的大小：
-- **品牌主要美工圖案，584 x 800 像素**︰必須包含產品的標題。 此影像上需要有商標列。 請將標題和所有重要圖像放在影像的上方四分之三處，因為底部四分之一處可能會出現重疊。
-- **主角美工圖案，1920 x 1080 像素**︰必須包含產品的標題。 請將標題和所有重要圖像放在影像的上方四分之三處，因為底部四分之一處可能會出現重疊。
-- **精選促銷正方形美工圖案，1080 x 1080 像素**：*不能*包括產品的標題。
-
-> [!NOTE]
-> 為確保 Xbox 上的最佳顯示，您必須也在[Microsoft Store標誌](#store-logos) 區段中提供 **9:16（720 x 1080 或 1440 x 2160 像素）** 影像。
-
-
-### <a name="holographic-image"></a>全像影像
-
-如果您的應用程式支援全像攝影裝置系列，才會使用 **2:1 (2400 x 1200)** 影像。 如果支援，我們建議提供此影像。
-
-
-<span id="optional-promotional-images" />
-
-### <a name="images-only-for-windows-8x-andor-windows-phone-8x"></a>僅適用於 Windows 8.x 和/或 Windows Phone 8.x 的影像 
-
-如果您的應用程式支援舊版作業系統版本 (Windows 8.x 和/或 Windows Phone 8.x)，則必須提供這些影像，我們才能考慮將您的應用程式納入促銷配置中 (但不保證您的應用程式會是精選應用程式)。 如果您的應用程式不支援這些舊版的作業系統，您可以略過本節。 (本節先前稱為「**選用宣傳影像**」。)
-
-**若是 Windows Phone 8.1 和較舊版本**，有兩種影像大小可用於促銷配置：**1000 x 800 像素 (5:4)** 和 **358 x 358 像素 (1:1)**。 如果您的應用程式是在 Windows Phone 8.1 或較舊版本上執行，建議您基於促銷考量來提供這兩個大小的影像。  
-
-> [!TIP]
-> 請務必在[Microsoft Store標誌](#store-logos)區段中提供 300 x 300 應用程式磚圖示，針對任何支援 Windows Phone 8.1 或較舊版本的任何提交。 這樣可確保您的應用程式在Microsoft Store中不會顯示空白圖示。  
-
-**若是 Windows 8.1 和較舊版本**，某些促銷配置可能使用 **414 x 180** 像素大小的影像。 如果您的應用程式是在 Windows 8.1 或較舊版本上執行，建議您基於促銷考量來提供這個大小的影像。
-
-
-## <a name="trailers"></a>預告片
-
-預告片是短片，讓客戶能夠看見產品的實際使用情形，幫助他們更了解產品。 它們會在應用程式的Microsoft Store清單頂端顯示 (只要您在[宣傳影像](#promotional-images)區段中包含 **1920 x 1080 像素影像 (16:9)**)。 
+預告片是短片，讓客戶能夠看見產品的實際使用情形，幫助他們更了解產品。 它們會顯示在頂端您的應用程式 Store 清單 （只要您包含[16:9 超級主角美工圖案](#windows-10-and-xbox-image-169-super-hero-art)映像）。 
 
 預告片是以[平滑串流](http://www.iis.net/downloads/microsoft/smooth-streaming)編碼，會根據可用的頻寬和 CPU 資源對用戶端提供即時的視訊串流品質。
 
@@ -175,7 +120,7 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 對於您提供的每支預告片，您必須上傳視訊檔案 (.mp4 或 .mov)、縮圖影像和標題。
 
 > [!IMPORTANT]
-> 當使用預告片時，您還必須在[宣傳影像](#promotional-images) 區段中提供 **1920 x 1080 像素影像 (16:9)**，讓您的預告片顯示在Microsoft Store清單頂端。 在您的預告片播放完畢後，會顯示此影像。
+> 當使用預告片，您也必須提供[16:9 超級主角美工圖案](#windows-10-and-xbox-image-169-super-hero-art)映像的區段，為了讓您的預告片顯示在您的市集清單的頂端。 在您的預告片播放完畢後，會顯示此影像。
 
 依照這些建議讓您的預告片生效：
 - 預告片應品質良好且符合最短長度 (建議 60 秒以內或小於 2 GB)。 
@@ -194,7 +139,7 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 > [!TIP]
 > 如果您已建立多種語言的 Microsoft Store 清單，您可以選取 **\[從現有預告片中選擇\]** 以重複使用已上傳的預告片。 您不需要為每一種語個別上傳預告片。
 
-若要從清單中移除預告片，請按一下其檔案名稱旁的 **\[X\]**。 您可以選擇只要將它從目前使用的 Microsoft Store 清單中移除，或是從產品的所有 Microsoft Store 清單中移除 (所有語言中)。
+若要從清單中移除預告片，請按一下其檔案名稱旁的 **\[X\]**。 您可以選擇是否要移除只目前的市集清單中，您正在處理，或移除的所有產品的市集清單 （每個語言）。
 
 
 ### <a name="trailer-requirements"></a>預告片需求
@@ -275,4 +220,60 @@ Microsoft Store可能也會使用您的應用程式磚以及應用程式套件�
 - 容器：MP4
 - 無編輯清單 (否則可能喪失 AV 同步)
 - 檔案前面 Moov atom (快速開始)
+
+### <a name="windows-10-and-xbox-image-169-super-hero-art"></a>Windows 10 和 Xbox 影像 (16:9 超級主角美工圖案)
+
+在**Windows 10 和 Xbox 影像**] 區段中，在所有 Windows 10 裝置類型 （包括 Xbox） 上的 Microsoft Store 中各種不同的配置中會使用**16:9 超級主角美工圖案 （1920 x 1080 或 3840 x 2160 像素）** 映像。 我們建議您提供此影像，無論您的應用程式是以哪個作業系統版本或裝置類型為目標。
+
+如果您的清單包含[預告影片](#trailers)，*需要*這個影像以正確顯示。 對於 Windows 10 1607 版或更新版本 (包括 Xbox) 的客戶，它做為您的 Store 清單頂端的主要影像 (或在任何預告片播放完畢之後出現)。 它也可能在整個 Microsoft Store 的促銷配置中用於展示您的應用程式。 請注意，此影像不能包含產品的標題或其他文字。
+
+以下提供一些您在設計影像時應記住的秘訣：
+
+- 影像必須是 .png 且是 1920 x 1080 像素或 3840 x 2160 像素。
+- 選取與應用程式相關的動態影像，以促進辨識和區分。 避免使用圖庫影像或通用視覺效果。
+- 不要在影像中包含文字。
+- 避免在影像的底部三分之一處放置關鍵視覺元素 (因為在某些版面配置中，我們可能會在這個部分套用漸層)。
+- 將最重要的詳細資料放置在影像中心 (因為在某些版面配置中，我們可能會裁剪映像)。
+- 將空白空間縮至最小。
+- 避免顯示您的應用程式 UI，而且請勿使用任何裝置特定的圖像。
+- 避免政治性和國家/地區的佈景主題、旗標或宗教象徵。
+- 請勿包含敏感性手勢、裸露、賭博、貨幣、藥品、菸草或酒類的影像。
+- 請勿使用武器指向觀看者或過度暴力和血腥。
+
+提供此影像可讓我們考慮將您的應用程式納入精選促銷商機，但不保證一定會展示您的應用程式。 如需詳細資訊，請參閱[讓您的應用程式更容易宣傳](make-your-app-easier-to-promote.md)。
+
+
+### <a name="xbox-images"></a>Xbox 影像
+
+如果您將應用程式發行至 Xbox，則需要這些影像以便正確顯示。 
+
+您可以上傳 3 種不同的大小：
+- **品牌主要美工圖案，584 x 800 像素**︰必須包含產品的標題。 此影像上需要有商標列。 請將標題和所有重要圖像放在影像的上方四分之三處，因為底部四分之一處可能會出現重疊。
+- **主角美工圖案，1920 x 1080 像素**︰必須包含產品的標題。 請將標題和所有重要圖像放在影像的上方四分之三處，因為底部四分之一處可能會出現重疊。
+- **精選促銷正方形美工圖案，1080 x 1080 像素**：*不能*包括產品的標題。
+
+> [!NOTE]
+> 為確保 Xbox 上的最佳顯示，您必須也在[Microsoft Store標誌](#store-logos) 區段中提供 **9:16（720 x 1080 或 1440 x 2160 像素）** 影像。
+
+
+### <a name="holographic-image"></a>全像影像
+
+如果您的應用程式支援全像攝影裝置系列，才會使用 **2:1 (2400 x 1200)** 影像。 如果支援，我們建議提供此影像。
+
+
+<span id="optional-promotional-images" />
+
+### <a name="images-only-for-windows-8x-andor-windows-phone-8x"></a>僅適用於 Windows 8.x 和/或 Windows Phone 8.x 的影像 
+
+如果您先前提交的應用程式支援舊版作業系統 (Windows 8.x 和/或 Windows Phone 8.x)，必須提供這些影像，我們才能考慮推薦您的應用程式的促銷配置中 （但不保證會展示您的應用程式）。 如果您的應用程式不支援這些舊版的作業系統，請略過本節。 (本節先前稱為「**選用宣傳影像**」。)
+
+**若是 Windows Phone 8.1 和較舊版本**，有兩種影像大小可用於促銷配置：**1000 x 800 像素 (5:4)** 和 **358 x 358 像素 (1:1)**。 如果您的應用程式是執行 Windows Phone 8.1 或更舊版本，我們建議提供這兩個大小的影像。  
+
+> [!TIP]
+> 請務必在[Microsoft Store標誌](#store-logos)區段中提供 300 x 300 應用程式磚圖示，針對任何支援 Windows Phone 8.1 或較舊版本的任何提交。 這樣可確保您的應用程式在Microsoft Store中不會顯示空白圖示。  
+
+**若是 Windows 8.1 和較舊版本**，某些促銷配置可能使用 **414 x 180** 像素大小的影像。 如果您的應用程式是執行 Windows 8.1 或更舊版本，我們建議提供這個 sizen 的影像。
+
+
+
 

@@ -4,22 +4,22 @@ description: 除了為您的應用程式建立將在 Windows 應用程式中執�
 title: 建立自訂應用程式促銷活動
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ms.author: wdg-dev-content
-ms.date: 09/27/2017
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 自訂, 應用程式, 促銷, 行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 0349833c012789b55d33575702390f264335aa2f
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5747459"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824840"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>建立自訂應用程式促銷活動
 
 除了為您的 app 建立將在 Windows app 中執行的[廣告活動](create-an-ad-campaign-for-your-app.md)之外，您也可以使用其他管道促銷您的 app。 例如，您可以使用第三方 app 行銷提供者促銷您的 app，或可以在社交媒體網站上張貼 app 的連結。 這些活動稱為*自訂行銷活動*。
 
-如果為您的應用程式執行自訂行銷活動，可以追蹤每個行銷活動相關的效能，方法是為每個自訂行銷活動建立不同的 URL，其中每個 URL 包含不同的*行銷活動識別碼*。 當執行 windows 10 客戶按一下包含行銷活動識別碼的 URL 時，Microsoft 會按一下與對應的自訂行銷活動產生關聯，並讓您使用此資料。
+如果為您的應用程式執行自訂行銷活動，可以追蹤每個行銷活動相關的效能，方法是為每個自訂行銷活動建立不同的 URL，其中每個 URL 包含不同的*行銷活動識別碼*。 當執行 windows 10 客戶按一下包含行銷活動識別碼的 URL 時，Microsoft 會按一下與對應的自訂行銷活動產生關聯，並可將此資料提供給您在[合作夥伴中心](https://partner.microsoft.com/dashboard)。
 
 > [!IMPORTANT]
 > 這項資料只能追蹤的客戶在 windows 10 上。 使用其他作業系統的客戶仍可以透過連結連到您的 app 清單，但不包含有關這些客戶的活動相關資料。
@@ -28,7 +28,7 @@ ms.locfileid: "5747459"
 
 您可以使用下列方式擷取 App 的自訂行銷活動成效資料：
 
-* 您可以從開發人員中心儀表板上的[下載數報告](acquisitions-report.md)的**應用程式頁面檢視數與轉換數 (依行銷活動識別碼)** 和**行銷活動轉換總計**圖表，檢視有關您 App 或附加元件頁面檢視和轉換的資料。
+* 您可以[下載數報告](acquisitions-report.md)中檢視頁面檢視數與轉換為您的應用程式或附加元件的**應用程式頁面檢視數與轉換數依行銷活動識別碼**和**行銷活動轉換總計**圖表的相關資料。
 * 如果您的 App 是通用 Windows 平台 (UWP) app，您可以使用 Windows SDK 中的 API，以程式設計方式擷取導致轉換的自訂行銷活動識別碼。
 
 ## <a name="example-custom-campaign-scenario"></a>自訂行銷活動案例的範例
@@ -47,9 +47,9 @@ ms.locfileid: "5747459"
 
 ## <a name="understanding-how-acquisitions-qualify-as-conversions"></a>了解下載數如何符合轉換的資格
 
-自訂行銷活動 *「轉換」* 即是指客戶透過按下您藉由自訂行銷活動促銷的 URL，並且取得您的應用程式。 透過開發人員中心儀表板上的[下載數報告](acquisitions-report.md)的**應用程式頁面檢視數與轉換數 (依行銷活動識別碼)** 和**行銷活動轉換總計**圖表符合轉換的資格，以及[以程式設計方式擷取行銷活動識別碼](#programmatically)符合轉換的資格，兩者有不同的條件。
+自訂行銷活動 *「轉換」* 即是指客戶透過按下您藉由自訂行銷活動促銷的 URL，並且取得您的應用程式。 有不同的案例符合轉換的**應用程式頁面檢視數與轉換數依行銷活動識別碼**和**行銷活動轉換總計**圖表中[下載數報告](acquisitions-report.md)和符合轉換的[以程式設計方式擷取行銷活動識別碼](#programmatically)。
 
-### <a name="qualifying-conversions-in-the-dashboard-report"></a>儀表板報告中的合格轉換
+### <a name="qualifying-conversions-in-the-acquisitions-report"></a>下載數報告中的合格轉換
 
 對於開發人員中心儀表板上的[下載數報告](acquisitions-report.md)的**應用程式頁面檢視數與轉換數 (依行銷活動識別碼)** 和**行銷活動轉換總計**圖表，下列案例符合轉換的資格：
 
@@ -195,4 +195,4 @@ public async Task<string> GetCampaignId()
 
 3.  按一下 URL 數次，在每次瀏覽到您的應用程式頁面後關閉 UWP app 或瀏覽器頁面。 在對應用程式頁面的**其中一次**瀏覽中，取得您的應用程式以產生轉換。 計算您點選 URL 的總次數。
 
-4. 確認預期的頁面檢視及轉換是否出現在開發人員中心儀表板上的[下載數報告](acquisitions-report.md)的**應用程式頁面檢視數與轉換數 (依行銷活動識別碼)** 和**行銷活動轉換總計**圖表，然後測試 App 程式碼以確認其是否可以使用上述 API 順利擷取行銷活動識別碼。
+4. 確認是否預期的頁面檢視和轉換會出現在**應用程式頁面檢視數與轉換數依行銷活動識別碼**和**行銷活動轉換總計**圖表中[下載數報告](acquisitions-report.md)，並測試您的應用程式碼，以確認它是否可以順利擷取行銷活動識別碼使用上文所述的 Api。

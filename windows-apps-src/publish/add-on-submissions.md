@@ -1,30 +1,30 @@
 ---
 author: jnHs
-Description: Add-ons are published through the Windows Dev Center dashboard.
+Description: Add-ons (or in-app products) are published through Partner Center.
 title: 附加元件提交
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ms.author: wdg-dev-content
-ms.date: 05/09/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, iap, App 內購買, 應用程式內產品, iap 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d7045c09dfa56c15027fda94eeb21e5d744aa45
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 28fd2e104de12cc297ce5d28ddd18b0ce550a5d0
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5759072"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5828406"
 ---
 # <a name="add-on-submissions"></a>附加元件提交
 
 附加元件 (有時也稱為應用程式內產品) 是可供客戶購買之 App 的補充項目。 附加元件可以是的有趣的新功能，新的遊戲等級，或任何您認為將能持續吸引使用者。 附加元件不僅是賺錢的絕佳方式，也可以協助促進客戶的互動和投入。
 
-您要透過 Windows 開發人員中心儀表板發佈附加元件。 您也需要在您的 App 程式碼中[啟用附加元件](../monetize/in-app-purchases-and-trials.md)。
+附加元件透過[合作夥伴中心](https://partner.microsoft.com/dashboard)，發行，需要您擁有使用中的[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)。 您也需要在您的 App 程式碼中[啟用附加元件](../monetize/in-app-purchases-and-trials.md)。
 
-附加元件提交程序的第一步是透過[定義產品類型及產品識別碼](set-your-add-on-product-id.md)來於儀表板中建立附加元件。 之後，您將會建立提交，讓您的附加元件可透過 Microsoft Store 購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到 Store 之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
+附加元件提交程序的第一個步驟是在合作夥伴中心建立附加元件，方法是[定義其產品類型和產品識別碼](set-your-add-on-product-id.md)。 之後，您將會建立提交，讓您的附加元件可透過 Microsoft Store 購買。 您在[提交 App](app-submissions.md) 的同時就可以提交附加元件，也可以分別處理。 App 進到 Store 之後，您可以對附加元件[進行更新](#updating-an-add-on-after-publication)，不需要重新提交 App。
 
 > [!NOTE]
-> 本文件章節描述如何在開發人員中心儀表板上提交附加元件。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
+> 文件的這一節說明如何在合作夥伴中心的附加元件提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將附加元件提交自動化。
 
 
 ## <a name="checklist-for-submitting-an-add-on"></a>提交附加元件的檢查清單
@@ -85,9 +85,9 @@ ms.locfileid: "5759072"
 
 您可以隨時對已發佈的附加元件進行變更。 附加元件變更會提交與發佈獨立於您的應用程式之外，因此您通常不需要更新整個應用程式，就可以對附加元件，例如更新 app 的價格或描述進行變更。
 
+若要提交更新，移至附加的頁面，在合作夥伴中心並按一下 [**更新]**。 這將會建立新的提交之附加元件，使用您先前提交的資訊做為起點。 進行的變更，您會喜歡，然後再按一下 [**提交至市集**。
+
+如果您想要移除先前提供的附加元件，請建立新的提交並且將 [\[配送和可見性\]](set-add-on-pricing-and-availability.md) 選項變更為 **\[在 Microsoft Store 中隱藏\]** 以及 **\[停止取得\]** 選項。 請務必更新您的應用程式程式碼，視需要以同時移除附加元件的參考 （尤其是當您先前發佈的應用程式支援 Windows 8.1 較舊版本; 這個可見性設定不會套用到這些客戶）。
+
 > [!IMPORTANT]
-> 如果您的應用程式可供 Windows 8.x 的客戶使用，您必須建立並發佈新的應用程式提交作業，這些客戶才能看見附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。
-
-若要提交更新，請移至儀表板的附加元件頁面，然後按一下 **\[更新\]**。 這將會建立新的提交之附加元件，使用您先前提交的資訊做為起點。 進行的變更，您會喜歡，然後再按一下 [**提交至市集**。
-
-如果您想要移除先前提供的附加元件，請建立新的提交並且將 [\[配送和可見性\]](set-add-on-pricing-and-availability.md) 選項變更為 **\[在 Microsoft Store 中隱藏\]** 以及 **\[停止取得\]** 選項。 請務必視需要更新您的程式碼，以同時移除附加元件的參考 (尤其是當您的應用程式支援 Windows 8.1 和較舊版本；這個可見性設定不會套用到這些客戶)。
+> 如果您先前發佈的應用程式是提供給客戶的 Windows 8.x，您必須建立並發佈新的應用程式提交作業，才能看見這些客戶附加元件的更新。 同樣地，如果您在以 Windows8.x 為目標的 App 發佈後，將新的附加元件新增到 App，您必須更新您的 App 程式碼以參考這些附加元件，然後重新提交 App。 否則，Windows8.x 的客戶將無法看見新的附加元件。

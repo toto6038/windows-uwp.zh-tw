@@ -3,16 +3,16 @@ author: jnHs
 Description: Set restrictions on how your app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: 選擇可見度選項
 ms.author: wdg-dev-content
-ms.date: 08/10/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 可見度, 私人對象, 可用, 可搜尋
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a83f1ea4547e60547e427cedd5ad5338e450762
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: ec6bc85c15ccf9926939c3bc2e208289c8dc4bcc
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5757983"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5826600"
 ---
 # <a name="choose-visibility-options"></a>選擇可見度選項
 
@@ -60,7 +60,7 @@ ms.locfileid: "5757983"
 - 您的應用程式無法透過商務用 Microsoft Store 和/或教育用 Microsoft Store 提供 (即使是提供給私人對象中的人員)，無論您的組織授權設定為何。
 - 雖然 Microsoft Store 可以確保您的應用程式只顯示且提供給您已新增到私人對象並以 Microsoft 帳戶登入的人員，但我們無法防止這些人將資訊或螢幕擷取畫面分享到私人對象外部。 如果您很重視機密性，請確定您的私人對象只包含您信任他們不會與其他人分享應用程式相關詳細資訊的人員。
 - 請務必讓您的測試人員了解如何提供意見反應給您。 您可能不會希望他們透過 \[意見反應中樞\] 留下意見反應，因為任何其他客戶可能會看到該意見反應。 請考慮提供讓他們傳送電子郵件或以其他方式提供意見反應的連結。
-- 私人對象中的人員所撰寫的任何評論可供您檢視。 不過，即使您的提交移至 **\[公開對象\]** 後，這些評論仍不會發佈至您應用程式的 Store 清單。 您可以在開發人員中心檢視[評論報告](reviews-report.md)，讀取私人對象所撰寫的評論，但您無法下載此資料或使用[Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以程式設計方式存取這些評論。
+- 私人對象中的人員所撰寫的任何評論可供您檢視。 不過，即使您的提交移至 **\[公開對象\]** 後，這些評論仍不會發佈至您應用程式的 Store 清單。 您可以讀取私人對象所撰寫的檢視[評論報告](reviews-report.md)、 評論，但您無法下載此資料，或使用 「 [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md)以程式設計方式存取這些評論。
 - 當您將應用程式從 **\[私人對象\]** 移動至 **\[公開對象\]**，Microsoft Store 清單中顯示的 **\[發行日期\]** 將是它首次發行給公開對象的日期。
 
 ## <a name="discoverability"></a>可搜尋性

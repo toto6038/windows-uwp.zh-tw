@@ -4,29 +4,28 @@ Description: When submitting an add-on, the info you provide in the Store listin
 title: 建立附加元件 Store 清單
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ms.author: wdg-dev-content
-ms.date: 01/12/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b03984bf858d805142ac768ecf8ddd69a6232db
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 811c2c978d04e7636bb5f52a2ebf7587193c4786
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5760927"
+ms.locfileid: "5826982"
 ---
 # <a name="create-add-on-store-listings"></a>建立附加元件 Store 清單
 
-
-如果提交附加元件，您在 **Store 清單**步驟中提供的資訊將會在客戶看到取得您附加元件的選項時，向他們顯示。 請務必謹慎考量 Store 清單資訊，讓您的附加元件能夠精確地吸引客戶。 您可以針對不同語言提供自訂的 Store 清單。
+提交時附加元件在[合作夥伴中心](https://partner.microsoft.com/dashboard)，您在**市集清單**步驟中提供的資訊將會顯示給您的客戶，當他們看到取得您的附加元件的選項。 請務必謹慎考量 Store 清單資訊，讓您的附加元件能夠精確地吸引客戶。 您可以針對不同語言提供自訂的 Store 清單。
 
 > [!TIP]
-> 如果您想要在 .csv 檔案中離線輸入清單資訊，而不直接在儀表板中提供這項資訊，也可以為附加元件[匯入及匯出 Store 清單](import-and-export-store-listings.md)。 建立許多語言的清單時，這可能尤其便利。 不過，您永遠可以直接在儀表板中輸入您的資訊，而不使用匯入/匯出功能。
+> 您也可以[匯入及匯出市集清單](import-and-export-store-listings.md)針對您的附加元件如果您想要在.csv 檔案，而不是提供這項資訊在合作夥伴中心中直接輸入清單資訊離線。 建立許多語言的清單時，這可能尤其便利。 不過，您永遠可以直接在[合作夥伴中心](https://partner.microsoft.com/dashboard)，而不是使用匯入/匯出功能中輸入您的資訊。
 
 
-## <a name="store-listing-languages"></a>Store 清單語言
+## <a name="store-listing-languages"></a>市集清單語言
 
-輸入 Store 清單資訊之前，您需要指定一或多種[語言](supported-languages.md)。 您必須完成至少一種語言的 **\[市集清單\]** 頁面。 我們建議針對 App 支援的每個語言提供 Store 清單。
+輸入 Store 清單資訊之前，您需要指定一或多種[語言](supported-languages.md)。 您必須完成至少一種語言的 **\[市集清單\]** 頁面。 我們建議您的應用程式建立每種語言的市集清單支援。
 
 在您附加元件提交的 **\[Store 清單\]** 區段底下，按一下 **\[新增/移除語言\]**，然後在下一個頁面按一下 **\[管理語言\]**。 針對您想要新增的語言核取其方塊，然後按一下 **\[更新\]**。 您已選取的語言將會顯示在該頁面的 **\[Store 清單語言\]** 區段中。
 

@@ -11,12 +11,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 03e590f140cfa86fed0b3beccce9b39ce284c076
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: b7c80ed7521d797602cde15607f966a1fc3665cd
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/30/2018
-ms.locfileid: "5763850"
+ms.locfileid: "5823304"
 ---
 # <a name="reveal-focus"></a>顯色焦點
 
@@ -74,7 +74,7 @@ ms.locfileid: "5763850"
 
 您可以自訂顯色焦點效果，方法是修改每個控制項的焦點視覺效果屬性： [FocusVisualPrimaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryThickness)、 [FocusVisualSecondaryThickness](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryThickness)、 [FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)，以及[FocusVisualSecondaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)。 這些屬性可讓您自訂焦點矩形的色彩和粗細 (這些屬性是您用於建立[高可見度焦點視覺效果](https://docs.microsoft.com/windows/uwp/design/input/guidelines-for-visualfeedback#high-visibility-focus-visuals)的相同屬性)。 
 
-但在您開始構成會很有幫助一點多了解構成顯色焦點的元件。
+但在您開始構成會很有幫助多了一點構成顯色焦點的元件的相關。
 
 有三個預設顯色焦點視覺效果部分︰ 主要框線、 次要框線和顯色光暈。 主要框線的粗細為 **2px**，圍繞在次要框線 *「外」*。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」*。 顯色焦點光暈粗細為主要框線粗細成比例，圍繞*以外*的主要框線。
 

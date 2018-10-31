@@ -7,12 +7,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: d7807b71f1c775493e525284e61c093081eb2c2b
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: d59fec17c1e8cc340f630ba236f7361325046ea2
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5754841"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "5824485"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -258,7 +258,7 @@ IASyncAction DoWorkAsync(Param const value);
 
 協同程式很像任何其他函式，因為呼叫者會遭到封鎖，直到函式將執行傳回給它。 和協同程式，傳回的第一個機會是第一個`co_await`， `co_return`，或`co_yield`。
 
-因此，您才開始計算繫結工作在協同程式中，您需要將執行傳回給呼叫者 （亦即，導致暫停點），以便呼叫者便未遭到封鎖。 如果您正在您尚未透過`co-await`-來執行此其他作業，則您可以`co-await` [**winrt:: resume_background**](/uwp/cpp-ref-for-winrt/resume-background)函式。 其將控制項傳回給呼叫者，並立即恢復執行緒集區執行緒的執行。
+因此，您才開始計算繫結工作在協同程式中，您需要將執行傳回給呼叫者 （亦即，導致暫停點），以便呼叫者便未遭到封鎖。 如果您正在您尚未透過`co_await`-來執行此其他作業，則您可以`co_await` [**winrt:: resume_background**](/uwp/cpp-ref-for-winrt/resume-background)函式。 其將控制項傳回給呼叫者，並立即恢復執行緒集區執行緒的執行。
 
 實作中使用的執行緒集區是低層級的 [Windows 執行緒集區](https://msdn.microsoft.com/library/windows/desktop/ms686766)，所以是最有效的。
 
@@ -309,7 +309,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 只要從建立 **TextBlock** 的 UI 執行緒呼叫上述的協同程式，然後這項技術便可運作。 在您確定的應用程式中將有許多案例。
 
-如需更多一般解決方案來更新 UI，其中包含在您不確定有關呼叫執行緒的情況下，您可以`co-await` [**winrt:: resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)函式，以切換至特定前景執行緒。 在下列程式碼範例中，我們透過傳遞與 **TextBlock** (透過存取其[**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 屬性) 相關聯的發送器物件，來指定前景執行緒。 **winrt::resume_foreground** 的實作在發送器物件上呼叫 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，來執行協同程式中之後的工作。
+如需更多一般解決方案來更新 UI，其中包含在您不確定有關呼叫執行緒的情況下，您可以`co_await` [**winrt:: resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)函式，以切換至特定前景執行緒。 在下列程式碼範例中，我們透過傳遞與 **TextBlock** (透過存取其[**發送器**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) 屬性) 相關聯的發送器物件，來指定前景執行緒。 **winrt::resume_foreground** 的實作在發送器物件上呼叫 [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync)，來執行協同程式中之後的工作。
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
@@ -328,7 +328,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 廣泛地說，在協同程式在暫停點之後, 在原始的執行緒可能會消失，並且回復也可能發生任何執行緒上 （亦即，任何執行緒可能會將**Completed**方法呼叫非同步作業）。
 
-但如果您`co-await`任何四個 Windows 執行階段非同步作業類型 (**IAsyncXxx**)，然後 C + + /winrt 會擷取呼叫內容的某個點您`co-await`。 它可確保您是仍在該內容，則接續繼續執行時。 C + + /winrt 的運作方式檢查是否您已經在呼叫內容，而如果不是，改用它。 如果您已在前一個單一執行緒 apartment (STA) 執行緒上`co-await`，然後，您就會在同一個之後;如果您已在多執行緒的 apartment (MTA) 執行緒之前`co-await`，則您將會在同一個之後。
+但如果您`co_await`任何四個 Windows 執行階段非同步作業類型 (**IAsyncXxx**)，然後 C + + /winrt 會擷取呼叫內容的某個點您`co_await`。 它可確保您是仍在該內容，則接續繼續執行時。 C + + /winrt 的運作方式檢查是否您已經在呼叫內容，而如果不是，改用它。 如果您已在前一個單一執行緒 apartment (STA) 執行緒上`co_await`，然後，您就會在同一個之後;如果您已在多執行緒的 apartment (MTA) 執行緒之前`co_await`，則您將會在同一個之後。
 
 ```cppwinrt
 IAsyncAction ProcessFeedAsync()
