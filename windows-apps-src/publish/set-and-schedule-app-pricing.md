@@ -3,16 +3,16 @@ author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: 設定與排程應用程價格
 ms.author: wdg-dev-content
-ms.date: 05/08/2018
+ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 定價, App 定價, App 價格, 銷售應用程式, 價格變更, 自訂價格, 價格, 定價, 成本, 覆寫基本價格, 自由格式價格, 自由格式
 ms.localizationpriority: medium
-ms.openlocfilehash: 99e11e29c5625d528777046075f01a824f1b0b37
-ms.sourcegitcommit: 753e0a7160a88830d9908b446ef0907cc71c64e7
+ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
+ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5740537"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5839333"
 ---
 # <a name="set-and-schedule-app-pricing"></a>設定與排程應用程價格
 
@@ -37,23 +37,18 @@ ms.locfileid: "5740537"
 請記住，您選取的價格區間可以包含客戶必須支付的銷售或增值稅。 若要深入了解您的應用程式在選取市場中的稅務關連相關資訊，請參閱[付費應用程式的稅務詳細資料](tax-details-for-paid-apps.md)。 另外建議您檢閱[特定市場的定價考量](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
-> 如果您在[可見度](choose-visibility-options.md#discoverability)區段中，選擇 **\[在 Microsoft Store 推出此產品，但不供搜尋\]** 下方的 **\[停止擷取\]** 選項，您將無法為提交設定定價 (因為除非獲得可免費取得應用程式的促銷碼，否則沒有人可以取得應用程式)。
+> 如果您選擇下的 [**停止取得**選項**推出此產品，但供不在市集中搜尋**[[可見度](choose-visibility-options.md#discoverability)] 區段中），您將無法設定您的提交定價 （因為沒有人將無法取得應用程式除非他們使用的促銷代碼免費取得應用程式）。
 
 ## <a name="schedule-price-changes"></a>排程價格變更
 
 如果您想要在特定日期和時間變更應用程式的基本價格，可以選擇性地排程一次或多次價格變更。 
 
 > [!IMPORTANT]
-> 價格變更只會對使用 Windows 10 裝置 (包括 Xbox) 的客戶顯示。 如果您的應用程式支援舊版作業系統，則不適用價格變更。 
->
-> - 對於使用 Windows 8 的客戶，應用程式一律以 [**基本價格**] 提供 (而非任何市場特定價格)，即使您排程額外的價格變更。 
-> - 對於使用 Windows 8.1 及 Windows Phone 8.1 和較舊版本的客戶，應用程式將一律以客戶市場的第一個價格區間，即使您在該市場中排程額外的價格變更。
-> 
-> 排程價格變更時務必記得這點。 例如，如果一開始以較低價格區間發行應用程式，然後排程在某一天調高價格，使用舊版作業系統且購買應用程式的客戶會支付較低 (原始) 價格。
+> 價格變更只會對使用 Windows 10 裝置 (包括 Xbox) 的客戶顯示。 如果您先前發佈的應用程式支援舊版作業系統，這些客戶將不會套用的價格變更。 對於使用 Windows 8 的客戶，應用程式一律以 [**基本價格**] 提供 (而非任何市場特定價格)，即使您排程額外的價格變更。 對於 Windows 8.1 和 Windows Phone 8.1 和較舊版本的客戶，應用程式將一律提供客戶的市場的第一個價格區間。
 
 按一下 **\[排程價格變更\]** 查看價格變更選項。 選擇您想要使用的價格區間 (或輸入單一市場基本價格覆寫的自由格式價格)，然後選取日期、時間和時區。
 
-您可以按一下 **\[再次排程價格變更\]**，依您想要的次數排程後續變更。
+您可以按一下 [再次**排程價格變更**的次數排程後續變更為您想要。
 
 > [!NOTE]
 > 排程的價格變更與[銷售定價](put-apps-and-add-ons-on-sale.md)運作方式不同。 當您降價促銷 App 時，價格會在 Microsoft Store 中以刪除線顯示，而客戶便可以在您選取的期間用廉售價格購買該 App。 廉售期間結束後，廉售價格就不再適用，App 將以其基本價格 (或是您為該市場所指定的不同價格，如果適用的話) 提供。
@@ -66,7 +61,7 @@ ms.locfileid: "5740537"
 根據預設，您在上方選取的選項將適用於提供應用程式所在的所有市場。 您也可以選擇不同的價格區間，或輸入以市場當地貨幣表示的自由格式價格，選擇性變更一個或多個市場的價格。
 
 > [!IMPORTANT]
-> 使用 Windows 8 的客戶看到的一律是應用程式的 **\[基本價格\]**，即使您針對其市場選取不同價格。
+> 如果您先前發佈的應用程式支援 Windows 8，這些客戶一律會看到應用程式在其**基本價格**，即使您選取不同價格針對其市場。
 
 若要變更特定市場的價格，請按一下 **\[選取市場以進行基本價格覆寫\]**。 **\[選擇市場\]** 快顯視窗將會出現，列出您選擇提供應用程式的所有市場。 (如果您在 **\[市場\]** 區段中排除任何市場，就不會有這些市場)。 
 
