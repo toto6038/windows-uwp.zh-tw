@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, 取得, 漏斗
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c07425542c207c2289c6b512102e10f64bab66
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5875728"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5924295"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>取得應用程式取得漏斗圖資料
 
