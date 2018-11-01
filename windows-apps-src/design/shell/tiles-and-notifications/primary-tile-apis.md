@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, StartScreenManager, pin primary tile, primary tile apis, check if tile pinned, live tile, 釘選主要磚, 主要磚 api, 檢查是否釘選, 動態磚
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d5c65881552199fce6f90bbf15e4bb2bac950ce
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833288"
+ms.locfileid: "5877403"
 ---
 # <a name="primary-tile-apis"></a>主要磚 API
  

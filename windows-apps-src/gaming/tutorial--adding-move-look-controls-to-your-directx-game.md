@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移動視角, 控制項
 ms.localizationpriority: medium
 ms.openlocfilehash: 219d014eb03803ace440dc1c1773043a9ecbc99f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5822798"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5877863"
 ---
 # <a name="span-iddevgamingtutorialaddingmove-lookcontrolstoyourdirectxgamespanmove-look-controls-for-games"></a><span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>適用於遊戲的移動視角控制項
 

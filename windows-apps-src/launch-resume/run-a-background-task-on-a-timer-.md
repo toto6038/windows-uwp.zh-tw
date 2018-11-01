@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: a03a26262d03d93ea2f23f2a61ba1ee603a2d507
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5832207"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884095"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 

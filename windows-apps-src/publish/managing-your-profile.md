@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: medium
 ms.openlocfilehash: 90bf81f23bcffe05278d12bab7abb2425f7eb773
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5837406"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5881599"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 

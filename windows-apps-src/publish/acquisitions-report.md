@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 下載數, 應用程式銷售, 應用程式下載, 安裝, 漏斗圖, 取得, 轉換, 通道, 應用程式頁面檢視次數
 ms.localizationpriority: medium
 ms.openlocfilehash: bbd84b32a4e94687ff50f553137a86885094a7d6
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813305"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882243"
 ---
 # <a name="acquisitions-report"></a>下載數報告
 

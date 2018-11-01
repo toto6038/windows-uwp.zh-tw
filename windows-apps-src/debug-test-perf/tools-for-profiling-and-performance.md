@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 21b51e50415e85f8cb1ddca6c358c8d27aa5f0fe
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5817053"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884259"
 ---
 # <a name="tools-for-profiling-and-performance"></a>分析和效能的工具
 

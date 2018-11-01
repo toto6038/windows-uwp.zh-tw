@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: be2cfb94c68ed3431199428c87aef4bf038ccbb9
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836710"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883711"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 

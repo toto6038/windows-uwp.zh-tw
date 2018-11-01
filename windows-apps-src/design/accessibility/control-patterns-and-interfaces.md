@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e48045e27e8ee7796f5dda2afb691a9f6e5371b2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827463"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883636"
 ---
 # <a name="control-patterns-and-interfaces"></a>控制項模式和介面  
 

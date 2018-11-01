@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 使用量, 自訂事件, 報告, 遙測, 使用者工作階段
 ms.localizationpriority: medium
 ms.openlocfilehash: f07f107a5136ee50cd87032fa3911ab65d33b7c1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5831055"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5882065"
 ---
 # <a name="usage-report"></a>使用量報告
 

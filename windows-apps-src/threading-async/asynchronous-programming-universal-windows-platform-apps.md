@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 04d91fc7166812f53e8b2238b1a47c8aeb9c425f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833000"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5880263"
 ---
 # <a name="asynchronous-programming"></a>非同步程式設計
 本主題描述通用 Windows 平台 (UWP) 和其在 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示法中的非同步程式設計。

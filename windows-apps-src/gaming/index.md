@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
 ms.openlocfilehash: 1642251ac7019d8bdf0216487eb7085d616863cf
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5840309"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5883003"
 ---
 # <a name="game-programming"></a>遊戲程式設計
 

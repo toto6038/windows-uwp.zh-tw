@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 自訂, 應用程式, 促銷, 行銷活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5824840"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5877423"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>建立自訂應用程式促銷活動
 

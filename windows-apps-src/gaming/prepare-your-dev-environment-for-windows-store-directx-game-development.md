@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, templates, tools, directx, 遊戲, 範本, 工具
 ms.localizationpriority: medium
 ms.openlocfilehash: ac33b242e2351c21ea22aa9bbb6bf74693e8d4ef
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5829137"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884318"
 ---
 # <a name="project-templates-and-tools-for-games"></a>遊戲的專案範本與工具
 

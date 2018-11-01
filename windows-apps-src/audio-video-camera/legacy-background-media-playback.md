@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 319343a06eeb49fc4ec0ca2fcd340f655654f718
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827615"
+ms.locfileid: "5877760"
 ---
 # <a name="legacy-background-media-playback"></a>舊版背景媒體播放
 

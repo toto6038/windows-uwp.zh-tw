@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 著色器, 原始物件, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5819302"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5877803"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>建立著色器及繪製原始物件
 

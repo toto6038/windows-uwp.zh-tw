@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69d316ad48645d8995e602b270a5615322c8b43f
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 02c856fd697bef958eb45a0f0f133e06f63a7f51
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813989"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5878147"
 ---
 # <a name="binding-markup-extension"></a>{Binding} 標記延伸
 
@@ -22,7 +22,7 @@ ms.locfileid: "5813989"
 
 **注意：** 一般了解使用資料繫結中您的應用程式搭配 **{Binding}** （並用於全啟動和之間的比較 **{X:bind}** **{Binding}**），請參閱[深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)。
 
-**{Binding}** 標記延伸是用來將控制項上的屬性資料繫結至來自資料來源的值 (例如程式碼)。 **{Binding}** 標記延伸會在 XAML 載入時間轉換成 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別的執行個體。 這個繫結物件會取得資料來源上的屬性值，並推送至控制項上的屬性。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更對它做出更新。 您也可以選擇性地設定繫結物件，以便將控制項值中的變更推回到來源屬性。 做為資料繫結目標的屬性必須是相依性屬性。 如需詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
+**{Binding}** 標記延伸用來來自資料來源，例如程式碼值的控制項上的資料繫結屬性。 **{Binding}** 標記延伸會在 XAML 載入時間轉換成 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 類別的執行個體。 這個繫結物件會取得資料來源上的屬性值，並推送至控制項上的屬性。 您可以選擇性地設定繫結物件，以便觀察資料來源屬性值的變更，並根據這些變更對它做出更新。 您也可以選擇性地設定繫結物件，以便將控制項值中的變更推回到來源屬性。 做為資料繫結目標的屬性必須是相依性屬性。 如需詳細資訊，請參閱[相依性屬性概觀](dependency-properties-overview.md)。
 
 **{Binding}** 具有與本機值相同的相依性屬性優先順序，並且在命令式程式碼中設定本機值將會移除標記中任何 **{Binding}** 設定的效果。
 
