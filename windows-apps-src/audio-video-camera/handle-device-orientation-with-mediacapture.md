@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1367c880bd6dde573ab4fc30733ed9d1fefa6b0b
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836657"
+ms.locfileid: "5874797"
 ---
 # <a name="handle-device-orientation-with-mediacapture"></a>使用 MediaCapture 處理裝置方向
 當您的 app 擷取要在 app 以外檢視的相片或影片時 (例如，儲存到使用者裝置上的檔案或線上分享)，請務必使用正確的方向中繼資料來為影像編碼，如此一來，當其他 app 或裝置顯示該影像時，就能以正確方向顯示它。 判斷要在媒體檔案中包含的正確方向資料是一項複雜的工作，因為有數個變數需要考量，包括裝置底座的方向、顯示器的方向，以及相機在底座上的位置 (其為前方或後方相機)。 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10 s, 永遠連線, 相容性疑難排解員, ARM 上的 windows
 ms.localizationpriority: medium
 ms.openlocfilehash: 4765ad324e90167c7279c9245bccd840bce1163d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5839522"
+ms.locfileid: "5875582"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程式相容性疑難排解員
 模擬支援 x86 應用程式，是為 ARM64 上的 Windows 10 建立的新功能。 有時候模擬執行的最佳化不會造成最佳體驗。 您可以使用程式相容性疑難排解員，為您的 x86 應用程式切換模擬設定，減少預設最佳化並可能增加相容性。

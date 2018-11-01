@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f1729f07734b181dc5e0e8c97d702d8592302c2
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5834782"
+ms.locfileid: "5875858"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙箱 API 參考   
 您可以使用此 REST API 取得並設定您的 Xbox Live 沙箱。

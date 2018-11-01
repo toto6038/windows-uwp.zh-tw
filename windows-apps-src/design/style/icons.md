@@ -12,12 +12,12 @@ keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d5f1ded66ce9d41c386fb55ba8a4e609450d20d
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 31bc1d33bccbf2d1948a119ea42bfef2599f3336
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5826713"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5874094"
 ---
 # <a name="icons-for-uwp-apps"></a>適用於 UWP 應用程式的圖示
 
@@ -137,7 +137,7 @@ ms.locfileid: "5826713"
 
 ## <a name="make-the-icon-do-something"></a>讓圖示執行項目
 
-一旦您有一個圖示，下一個步驟便是讓它執行一些與命令或瀏覽動作相關的項目。 若要這樣做，最好是將圖示新增到按鈕或命令列。 
+一旦您有一個圖示下, 一個步驟是讓它執行一些動作與命令或瀏覽動作關聯，藉此。 若要這樣做，最好是將圖示新增到按鈕或命令列。 
 
 ![命令列影像](images/icons/app-bar-desktop.svg)
 

@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bbb07da7fa28aed6e45c97d128f9bd04ca986fe7
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: db2b4a74b5b40060779dd82764dcf2ed2799b285
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5836780"
+ms.locfileid: "5869990"
 ---
 # <a name="getting-started-common-controls"></a>開始使用：常用控制項
 
 
 ## <a name="common-controls-list"></a>常用控制項清單
 
-在上一個小節中，您只使用了兩個控制項：按鈕和文字區塊。 當然，還有非常多的控制項可以使用。 以下是一些您會在 app 及其 iOS 對等項目中使用的常用控制項。 這裡依字母順序列出 iOS 控制項，旁邊是最相似的通用 Windows 平台 (UWP) 控制項。
+在上一個小節中，您只使用了兩個控制項：按鈕和文字區塊。 有，當然，您可以使用非常多的控制項。 以下是一些您會在 app 及其 iOS 對等項目中使用的常用控制項。 這裡依字母順序列出 iOS 控制項，旁邊是最相似的通用 Windows 平台 (UWP) 控制項。
 
 UWP 控制項的好處是它們可以感應正在執行的所在裝置類型，並適當地變更其外觀和功能。 例如，如果您的專案使用 [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) 控制項，它會有足夠的智慧自行最佳化，以便在桌上型電腦與手機 (舉例) 上有不同的外觀和行為。 您不需要執行任何動作：控制項會在執行階段自我調整。
 

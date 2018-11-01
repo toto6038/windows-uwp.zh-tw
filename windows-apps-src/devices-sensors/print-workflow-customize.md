@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: f58c0c8397831595c237b7bd9fe4eafb25594ab3
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5812352"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5871305"
 ---
 # <a name="customize-the-print-workflow"></a>自訂列印工作流程
 

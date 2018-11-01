@@ -9,11 +9,11 @@ keywords: windows 10, uwp, 目標式通知, 推播通知, 快顯通知, 磚
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c2cf6c9cbd4aa0b25afea47a2fe82774c3c87a7
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813452"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5870168"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 

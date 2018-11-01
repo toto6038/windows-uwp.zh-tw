@@ -14,12 +14,12 @@ doc-status: Published
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 36b81cf07b92760235a18f4474a14b7b55e0a7be
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 73f6d8f9c42a632383d52194c83a4fe68261f9a7
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5828508"
+ms.locfileid: "5869769"
 ---
 # <a name="treeview"></a>TreeView
 
@@ -289,7 +289,7 @@ public class ExplorerItemTemplateSelector : DataTemplateSelector
 
 您可能需要在樹狀檢視中顯示大量節點，或者您無法事先知道其中會有多少節點。 TreeView 控制項並未虛擬化，因此您可以透過在每個節點展開時填滿該節點，或在其摺疊時移除子節點這樣的方式來管理資源。
 
-處理 [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) 事件，並在節點正在展開時，使用 [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) 屬性將子系新增至該節點。 HasUnrealizedChildren 屬性會指出節點是否需要加以填滿，或是否已填入其 Children 集合。 請務必記住，TreeViewNode 不會設定這個值，您必須在應用程式的程式碼中管理該值。
+處理 [Expanding](/uwp/api/windows.ui.xaml.controls.treeview.expand) 事件，並在節點正在展開時，使用 [HasUnrealizedChildren](/uwp/api/windows.ui.xaml.controls.treeviewnode.hasunrealizedchildren) 屬性將子系新增至該節點。 HasUnrealizedChildren 屬性會指出節點是否需要加以填滿，或是否已填入其 Children 集合。 請務必記住，TreeViewNode 不會設定這個值，您需要在您的應用程式程式碼中管理它。
 
 以下是這些使用中 API 的範例。 請參閱本文結尾的完整範例程式碼，以了解相關內容，包括「FillTreeNode」的實作。
 

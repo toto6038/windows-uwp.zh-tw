@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 繼續, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 1149bebfd837e3d4051b5e0fca10aac248d909c5
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5826882"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5872162"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>如何繼續應用程式 (DirectX 和 C++)
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 2d, 圖形
 ms.localizationpriority: medium
 ms.openlocfilehash: 8628588cdc20179e9505e45694d43788eb1d7cb6
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 10/31/2018
-ms.locfileid: "5833589"
+ms.locfileid: "5874312"
 ---
 # <a name="2d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的 2D 圖形
 

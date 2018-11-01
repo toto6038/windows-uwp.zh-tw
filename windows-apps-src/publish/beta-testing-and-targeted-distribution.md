@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 搶鮮版 (Beta) 測試, 限量發行, 搶鮮版, beta, 測試, 測試人員
 ms.localizationpriority: medium
 ms.openlocfilehash: 49641007f939faf333ea5aca357266225f8484c8
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5813866"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "5871655"
 ---
 # <a name="beta-testing-and-targeted-distribution"></a>搶鮮版 (Beta) 測試和特定對象的發佈
 
