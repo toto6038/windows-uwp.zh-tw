@@ -8,12 +8,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bb29a50ef4fc8c5a56e410a59802b217c033cbc
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: f17bb6bbefb2fd3266edac20ca1f23af76eb0a3c
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5827871"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5884479"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段修正套用至 MSIX 封裝
 
@@ -65,13 +65,13 @@ PSF 包含您可以使用這個時候，例如檔案重新導向修復的執行�
 
 ### <a name="file-redirection-fixup"></a>檔案重新導向修復
 
-您可以使用[檔案重新導向修復](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)重新導向嘗試寫入或讀取不是從 MSIX 容器中執行的應用程式存取目錄中的資料。
+您可以使用[檔案重新導向修復](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)重新導向嘗試寫入或讀取不是從 MSIX 容器中執行的應用程式存取目錄中的資料。
 
-例如，如果您的應用程式寫入的記錄檔是在您的應用程式可執行檔相同的目錄，然後您可以使用[檔案重新導向修復](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop/FileRedirectionShim)在另一個位置，例如本機應用程式資料存放區中建立該記錄檔。
+例如，如果您的應用程式寫入的記錄檔是在您的應用程式可執行檔相同的目錄，然後您可以使用[檔案重新導向修復](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/fixups/FileRedirectionFixup)在另一個位置，例如本機應用程式資料存放區中建立該記錄檔。
 
 ### <a name="runtime-fixes-from-the-community"></a>從社群的執行階段修正
 
-請務必檢閱社群比重被到我們的[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/develop)頁面。 它是可能的其他開發人員已解決類似於補足您的問題，並有共用的執行階段修正。
+請務必檢閱社群比重被到我們的[GitHub](https://github.com/Microsoft/MSIX-PackageSupportFramework)頁面。 它是可能的其他開發人員已解決類似於補足您的問題，並有共用的執行階段修正。
 
 ## <a name="apply-a-runtime-fix"></a>套用執行階段修正
 
@@ -88,7 +88,7 @@ PSF 包含您可以使用這個時候，例如檔案重新導向修復的執行�
 
 ### <a name="create-the-package-layout-folder"></a>建立套件配置資料夾
 
-如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾，將會做為預備區域為您的封裝解壓縮其內容。  您可以從執行此操作**x64 適用於 VS 2017 原生工具的命令提示字元中**，或手動使用 SDK bin 路徑中的可執行檔的搜尋路徑。
+如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾，將會做為預備區域為您的封裝解壓縮其內容。 您可以從命令提示字元使用 makemsix 工具，根據 SDK 的安裝路徑，這是您將在其中您的 Windows 10 電腦上找到 makemsix.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makemsix.exe
 
 ```
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -103,11 +103,7 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 ### <a name="get-the-package-support-framework-files"></a>取得套件支援的架構檔案
 
-您可以透過使用 Visual Studio 取得 PSF Nuget 套件。 您也可以使用獨立 Nuget 命令列工具來取得它。
-
-#### <a name="get-the-package-by-using-visual-studio"></a>透過使用 Visual Studio 以取得套件
-
-在 Visual Studio 中，您的方案或專案節點上按一下滑鼠右鍵並選擇其中一個管理 Nuget 套件命令。  搜尋**Microsoft.PackageSupportFramework**或**PSF**尋找 Nuget.org 套件。然後，安裝它。
+使用獨立 Nuget 命令列工具，或透過 Visual Studio，您可以取得 PSF Nuget 套件。
 
 #### <a name="get-the-package-by-using-the-command-line-tool"></a>透過使用命令列工具，以取得套件
 
@@ -117,15 +113,20 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 nuget install Microsoft.PackageSupportFramework
 ```
 
+#### <a name="get-the-package-by-using-visual-studio"></a>透過使用 Visual Studio 以取得套件
+
+在 Visual Studio 中，您的方案或專案節點上按一下滑鼠右鍵並選擇其中一個管理 Nuget 套件命令。  搜尋**Microsoft.PackageSupportFramework**或**PSF**尋找 Nuget.org 套件。然後，安裝它。
+
+
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>將套件支援的架構檔案新增到您的套件
 
 將所需的 32 位元和 64 位元 PSF Dll 和可執行檔新增到套件目錄中。 使用下表做為指引。 您也會想要包含您需要任何執行階段修正程式。 在我們的範例，我們需要的檔案重新導向執行階段修正。
 
 | 應用程式可執行檔是 x64 | 應用程式可執行檔是 x86 |
 |-------------------------------|-----------|
-| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimLauncher/readme.md) |
-| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRuntime/readme.md) |
-| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/ShimRunDll/readme.md) |
+| [PSFLauncher64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |  [PSFLauncher32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfLauncher/readme.md) |
+| [PSFRuntime64.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) | [PSFRuntime32.dll](https://github.com/Microsoft/MSIX-PackageSupportFramework/tree/master/PsfRuntime/readme.md) |
+| [PSFRunDll64.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) | [PSFRunDll32.exe](https://github.com/Microsoft/MSIX-PackageSupportFramework/blob/master/PsfRunDll/readme.md) |
 
 現在您套件的內容應該看起來像這樣。
 

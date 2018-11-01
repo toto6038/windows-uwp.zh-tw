@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, metadata, cue, speech, chapter, 中繼資料, 提示, 語音, 章節
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e97c913764db24c68ce7becdba0fc283e1a3b73
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5830008"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5885402"
 ---
 # <a name="system-supported-timed-metadata-cues"></a>系統支援的定時中繼資料提示
 本文描述如何充分利用可嵌入到媒體檔案或資料流的數種定時中繼資料格式。 UWP app 可以註冊只要發現這些中繼資料提示，媒體管線就會在播放期間引發的事件。 使用 [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) 類別，應用程式可以實作其專屬自訂中繼資料提示，但本文著重在媒體管線自動偵測到的數種中繼資料標準，包括︰
