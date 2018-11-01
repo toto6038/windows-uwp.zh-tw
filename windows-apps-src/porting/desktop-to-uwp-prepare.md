@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 9abd10a352243e7c7ca7e665b3fb5ee774e0346e
-ms.sourcegitcommit: ca96031debe1e76d4501621a7680079244ef1c60
+ms.openlocfilehash: 3a0b3a9f5ce7c03b8add9cc459bade684b9daf21
+ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "5840873"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5886683"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>準備封裝傳統型應用程式
 
@@ -103,7 +103,7 @@ ms.locfileid: "5840873"
 
 + __您的應用程式啟動時執行工作的公用程式__。 避免啟動命令公用程式，例如 PowerShell 和 Cmd.exe。 事實上，如果使用者安裝至執行 Windows 10 S 的系統上的應用程式，則您的應用程式將無法完全啟動他們。 這可能會使得您的應用程式無法提交至 Microsoft Store，因為提交到 Microsoft Store 的所有應用程式必須與 Windows 10 S 相容
 
-啟動公用程式通常可以提供一個便利的方式來取得作業系統資訊、存取登錄，或存取系統功能。 然而，您也可以改用 UWP API 來完成這類工作。 這些 Api 是效能，因為他們不需要個別的可執行檔，若要執行，但更重要的是，他們會禁止從達套件的外部應用程式。 應用程式的設計與隔離、 信任，以及隨附的應用程式，您已封裝您，和您的應用程式將會如預期般在執行 Windows 10 S 的系統上的安全性維持一致
+啟動公用程式通常可以提供一個便利的方式來取得作業系統資訊、存取登錄，或存取系統功能。 然而，您也可以改用 UWP API 來完成這類工作。 這些 Api 是效能，因為他們不需要個別的可執行檔，若要執行，但更重要的是，他們會禁止從達套件的外部應用程式。 應用程式的設計與隔離、 信任，以及隨附的應用程式，您已封裝的且您的應用程式將會如預期般在執行 Windows 10 S 的系統上的安全性維持一致
 
 + __您的應用程式主機增益集、 外掛程式、 增益集或擴充功能__。   很多時候，只要延伸模組尚未封裝，且其本身是以完全信任的模式安裝的，COM 式的延伸模組都會繼續運作。 這是因為那些安裝程式可以使用其完全信任的功能修改登錄和主機應用程式能找到他們的任何地方放置副檔名的檔案。
 
