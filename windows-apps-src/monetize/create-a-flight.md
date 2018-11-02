@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立套件正式發行前小眾測試版。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立套件正式，針對已登錄到您的合作夥伴中心帳戶的 app。
 title: 建立套件正式發行前小眾測試版
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: 57ad1847e8989cb6aed20024d1c13d36e154d834
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933508"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5977558"
 ---
 # <a name="create-a-package-flight"></a>建立套件正式發行前小眾測試版
 
-使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立套件正式發行前小眾測試版。
+在 Microsoft Store 提交 API 中使用這個方法，來建立套件正式，針對已登錄到您的合作夥伴中心帳戶的 app。
 
 > [!NOTE]
 > 這個方法會建立一個套件正式發行前小眾測試版但不含任何提交。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
@@ -100,7 +100,7 @@ Content-Type: application/json
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 此值由開發人員中心提供。  |
+| flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 這個值是由合作夥伴中心提供。  |
 | friendlyName           | 字串  | 要求中指定的套件正式發行前小眾測試版名稱。   |  
 | groupIds           | 陣列  | 此字串陣列包含要求中指定，與套件正式發行前小眾測試版相關聯的正式發行前小眾測試版群組的識別碼。 如需有關正式發行前小眾測試版群組的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。   |
 | rankHigherThan           | 字串  | 要求中指定，排名位於目前套件正式發行前小眾測試版之下的套件正式發行前小眾測試版易記名稱。 如需有關正式發行前小眾測試版群組排名的詳細資訊，請參閱[套件正式發行前小眾測試版](https://msdn.microsoft.com/windows/uwp/publish/package-flights)。  |
@@ -113,7 +113,7 @@ Content-Type: application/json
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 400  | 要求無效。 |
-| 409  | 無法建立套件正式發行前小眾測試版，因為其目前的狀態，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 無法建立套件正式，因為其目前的狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題

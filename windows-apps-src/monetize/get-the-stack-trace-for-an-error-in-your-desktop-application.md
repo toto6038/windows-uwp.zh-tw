@@ -7,16 +7,16 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤, 詳細資料, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: b9b26f36d7fe2dc553e211ae48f7bd66651c5827
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 024c903ea43d9fabc90b2f6b7891f6de4e92b1d5
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931604"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5976098"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-desktop-application"></a>取得傳統型應用程式中錯誤的堆疊追蹤
 
-在 Microsoft Store 分析 API 使用此方法，取得已加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)之傳統型應用程式的錯誤堆疊追蹤。 這個方法只可以下載最近 30 天發生之錯誤的堆疊追蹤。 「Windows 開發人員中心」儀表板中傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)也提供堆疊追蹤。
+在 Microsoft Store 分析 API 使用此方法，取得已加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)之傳統型應用程式的錯誤堆疊追蹤。 這個方法只可以下載最近 30 天發生之錯誤的堆疊追蹤。 堆疊追蹤也會在合作夥伴中心的傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中提供的。
 
 使用這個方法之前，您必須先使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法來擷取與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼雜湊。
 
@@ -50,7 +50,7 @@ ms.locfileid: "5931604"
 
 | 參數        | 類型   |  說明      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要取得堆疊追蹤的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
+| applicationId | 字串 | 您想要取得堆疊追蹤的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，開啟任何 （例如**健康情況報告**） 的[傳統型應用程式在合作夥伴中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)，並從 URL 擷取產品識別碼。 |  是  |
 | cabIdHash | string | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼雜湊。 若要取得此值，請使用[取得傳統型應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-desktop-application.md)方法，以擷取您的應用程式中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabIdHash** 值。 |  是  |
 
  

@@ -4,19 +4,19 @@ description: 連接動畫可讓兩個不同檢視之間元素的轉換有動畫�
 title: 連接動畫
 template: detail.hbs
 ms.author: jimwalk
-ms.date: 10/25/2017
+ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 77050103bb78788a5c1868a41d315edd6832a5fe
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 51cf9dd0d28590d86bf05cc16634e465e260626c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5938845"
+ms.locfileid: "5977080"
 ---
 # <a name="connected-animation-for-uwp-apps"></a>UWP 應用程式適用的連接動畫
 
@@ -55,9 +55,9 @@ ms.locfileid: "5938845"
 ## <a name="configure-connected-animation"></a>設定連接的動畫
 
 > [!IMPORTANT]
-> 這項功能可讓您要求您的應用程式目標版本為 RS5 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 或更高。 設定屬性不適用於較舊版本的 Sdk。 您可以以 RS5 較低的最小版本為目標 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM) 使用調適型程式碼或條件式 XAML。 如需詳細資訊，請參閱[版本調適型應用程式](/debug-test-perf/version-adaptive-apps)。
+> 此功能需要，您的應用程式目標版本是 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。 設定屬性不適用於較舊版本的 Sdk。 您可以為目標 SDK 17763 較低的最小版本使用調適型程式碼或條件式 XAML。 如需詳細資訊，請參閱[版本調適型應用程式](/debug-test-perf/version-adaptive-apps)。
 
-從開始 RS5，進一步連接的動畫只限 Fluent design 藉由提供動畫設定量身訂做的專為向前和向後頁面瀏覽。
+從 Windows 10 版本 1809，進一步連接的動畫只限 Fluent design 藉由提供動畫設定量身訂做的專為向前和向後頁面瀏覽。
 
 您可以指定動畫組態設定 ConnectedAnimation 上設定屬性。 （我們將在下一節中說明的範例）。
 
@@ -74,7 +74,7 @@ ms.locfileid: "5938845"
 
 | [BasicConnectedAnimationConfiguration]() |
 | - |
-| 這是預設值 （和僅） RS5 之前的 SDK 版本中使用的動畫 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM)。 |
+| 這是預設值 （和僅） 在 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 之前的版本中使用的動畫。 |
 
 ### <a name="connectedanimationservice-configuration"></a>ConnectedAnimationService 組態
 

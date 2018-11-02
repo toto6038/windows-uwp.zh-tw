@@ -1,32 +1,32 @@
 ---
 author: Xansky
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
-description: 在 Microsoft Store 提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理套件正式發行前小眾測試版提交。
+description: 在 Microsoft Store 提交 API 中使用這些方法，管理套件正式提交來為登錄到您的合作夥伴中心帳戶的應用程式。
 title: 管理套件正式發行前小眾測試版提交
 ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 31b3379d66485fcd5ab417ecb2782b06f6e80e67
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926955"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973311"
 ---
 # <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
 
 Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套件正式發行前小眾測試版，包括漸進式套件推出。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果您使用 Microsoft Store 提交 API 以建立套件正式發行前小眾測試版的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> 如果您使用 Microsoft Store 提交 API 來建立套件正式的提交，請確定進一步變更提交只能透過使用 API，而不是合作夥伴中心。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 <span id="methods-for-package-flight-submissions" />
 
 ## <a name="methods-for-managing-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交的方法
 
-使用下列方法取得、建立、更新、認可或刪除套件正式發行前小眾測試版提交。 使用這些方法之前，套件正式發行前小眾測試版必須已經存在於開發人員中心帳戶中。 您可以[使用開發人員中心儀表板](https://msdn.microsoft.com/windows/uwp/publish/package-flights)或使用[管理套件正式發行前小眾測試版](manage-flights.md)中所述的 Microsoft Store 提交 API 方法，來建立套件正式發行前小眾測試版。
+使用下列方法取得、建立、更新、認可或刪除套件正式發行前小眾測試版提交。 您可以使用這些方法之前，套件正式必須已經存在於合作夥伴中心上。 您可以建立套件飛行[在合作夥伴中心](https://msdn.microsoft.com/windows/uwp/publish/package-flights)，或使用中的 Microsoft Store 提交 API 方法中所述[管理套件正式](manage-flights.md)。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 若要建立套件正式發行前小眾測試版的提交，請遵循此程序。
 
-1. 如果您尚未執行此動作，請先完成[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先決條件，包括將 Azure AD 應用程式關聯至您的 Windows 開發人員中心帳戶，並取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
+1. 如果您尚未執行此動作，完成必要條件中所述[建立和管理提交使用 Microsoft Store 服務](create-and-manage-submissions-using-windows-store-services.md)，包括 Azure AD 應用程式關聯至您的合作夥伴中心帳戶，並取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
 
 2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Microsoft Store 提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
@@ -121,7 +121,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 執行下列方法來[認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)。 這會向「開發人員中心」發出警示，指出您已完成提交，而現在應該將更新套用至您的帳戶。
+5. 執行下列方法來[認可套件正式發行前小眾測試版提交](commit-a-flight-submission.md)。 這會警示合作夥伴中心，您已完成您的提交，現在應該會將更新套用到您的帳戶。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/flights/{flightId}/submissions/{submissionId}/commit
@@ -135,7 +135,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
     若要確認提交狀態，請檢閱回應主體中的 *「狀態」* 值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
+7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以繼續使用先前的方法，或造訪合作夥伴中心監視提交進度。
 
 <span/>
 
@@ -157,7 +157,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 
 ## <a name="manage-a-gradual-package-rollout-for-a-package-flight-submission"></a>管理套件正式發行前小眾測試版提交的漸進式套件推出
 
-您可以將套件正式發行前小眾測試版提交中的已更新套件，以漸進方式推出給 Windows 10 上的一部分應用程式客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊 (包括如何在「開發人員中心」儀表板中啟用和管理漸進式套件推出的指示)，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
+您可以將套件正式發行前小眾測試版提交中的已更新套件，以漸進方式推出給 Windows 10 上的一部分應用程式客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊，包括如何啟用和管理漸進式套件推出，在合作夥伴中心中的指示，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
 
 若要以程式設計方式啟用和管理套件正式發行前小眾測試版提交的漸進式套件推出，請使用 Microsoft Store 提交 API 中的方法，遵照此程序執行。
 
@@ -333,13 +333,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 此資源具有下列值。
 
 > [!NOTE]
-> 在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
+> 在呼叫[更新套件正式發行前小眾測試版提交](update-a-flight-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由合作夥伴中心填入。
 
 | 值           | 類型    | 描述              |
 |-----------------|---------|------|
 | fileName   |   字串      |  套件的名稱。    |  
 | fileStatus    | 字串    |  套件的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  字串   |  唯一識別套件的識別碼。 此值由開發人員中心所使用。   |     
+| id    |  字串   |  唯一識別套件的識別碼。 這個值會使用合作夥伴中心。   |     
 | version    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  字串   |  應用程式套件的架構 (例如，ARM)。   |     
 | languages    | 陣列    |  應用程式所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
@@ -391,7 +391,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的套�
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
 
 > [!NOTE]
-> *packageRolloutStatus* 和 *fallbackSubmissionId* 值是由開發人員中心指派，並不是供開發人員設定。 如果您將這些包含在要求主體中，將會忽略這些值。
+> *PackageRolloutStatus*和*fallbackSubmissionId*值由合作夥伴中心指派，並不是由開發人員設定。 如果您將這些包含在要求主體中，將會忽略這些值。
 
 <span/>
 

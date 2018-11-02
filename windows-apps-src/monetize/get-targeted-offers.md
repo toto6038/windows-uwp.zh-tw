@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 取得針對性優惠
 ms.localizationpriority: medium
-ms.openlocfilehash: e6a0e9237c7c803a64ec20df0c501773f690f5e9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 87d59a4b5dabbc76c231e84034d701fccfe36fcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5931864"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972450"
 ---
 # <a name="get-targeted-offers"></a>取得針對性優惠
 
@@ -57,7 +57,7 @@ Authorization: Bearer <Microsoft Account token>
 
 | 欄位      | 類型   | 描述         |
 |------------|--------|------------------|
-| offers      | array  | 附加元件的產品識別碼陣列，這些附加元件與適用於目前使用者的針對性優惠相關聯。 這些產品識別碼是在 Windows 開發人員中心儀表板中 app 的 **\[針對性優惠\]** 頁面中指定。            |
+| offers      | array  | 附加元件的產品識別碼陣列，這些附加元件與適用於目前使用者的針對性優惠相關聯。 這些產品識別碼是在您的應用程式，在合作夥伴中心中的**特定對象提供了**頁面中指定。            |
 | trackingId  | 字串 | 您可選擇使用 GUID 來追蹤您自己代碼或服務內的針對性優惠。 |
 
 

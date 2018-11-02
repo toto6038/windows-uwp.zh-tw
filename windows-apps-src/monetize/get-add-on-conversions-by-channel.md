@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件轉換, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: d64af06acb730160f7f9f7f0e9eda96074b3eac7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940264"
+ms.locfileid: "5974672"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>依通道取得附加元件轉換
 
@@ -21,9 +21,9 @@ ms.locfileid: "5940264"
 * *轉換*表示客戶 (使用 Microsoft 帳戶登入) 已經新獲得您附加元件的授權 (不論是付費或免費取得)。
 * *通道*是客戶到達您應用程式清單頁面的方法 (例如，透過 Microsoft Store 或[自訂應用程式促銷活動](../publish/create-a-custom-app-promotion-campaign.md))。
 
-「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id)也有提供這項資訊。
+這項資訊也會在合作夥伴中心中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md#add-on-page-views-and-conversions-by-campaign-id)中提供的。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 

@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10 , UWP, 廣告, AdControl, 廣告控制項, XAML, .NET, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 600939c91b67b57e3c900d33cebe659bcae6ef7a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: b2346fceaae3996de8aa54640c206b5fcd8c4a87
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932767"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5976131"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
@@ -80,7 +80,7 @@ ms.locfileid: "5932767"
 5. 在 **Grid** 標籤中，加入 **AdControl** 程式碼。 將 [AdUnitId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.adunitid) 和 [ApplicationId](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol.applicationid) 屬性指派給[測試廣告單元值](set-up-ad-units-in-your-app.md#test-ad-units)。 同時調整控制項的**高度**與**寬度**，使其成為[橫幅廣告支援的廣告大小](supported-ad-sizes-for-banner-ads.md)。
 
     > [!NOTE]
-    > 每個 **AdControl** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 在您發行應用程式到 Microsoft Store 之前，您必須[以 Windows 開發人員中心的實際值取代這些測試值](#release)。
+    > 每個 **AdControl** 都有對應的*廣告單元*，由我們的服務用來提供廣告給控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 您將您的應用程式發行至市集之前，您必須[取代這些測試值，請以實際值](#release)從合作夥伴中心。
 
     完整的 **Grid** 標籤就像這個程式碼。
 
@@ -126,17 +126,17 @@ ms.locfileid: "5932767"
 
 1. 請確定您在應用程式中使用橫幅廣告的方式遵循我們的[橫幅廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)。
 
-2.  在開發人員中心儀表板中，移至[應用程式內廣告](../publish/in-app-ads.md)頁面，並且[建立廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[橫幅\]**。 記下廣告單元識別碼與應用程式識別碼。
+2.  在合作夥伴中心，移至[應用程式內廣告](../publish/in-app-ads.md)頁面，並[建立廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[橫幅\]**。 記下廣告單元識別碼與應用程式識別碼。
     > [!NOTE]
-    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在儀表板中建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式的 Microsoft Store 識別碼 (Microsoft Store 識別碼值範例類似於 9NBLGGH4R315)。
+    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式 （microsoft Store 識別碼值範例類似於 9NBLGGH4R315） 的 「 市集識別碼。
 
 3. 您可以選擇為 **AdControl** 啟用廣告流量分配，方法是在 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面的 [\[利用廣告獲利\]](../publish/in-app-ads.md#mediation) 區段進行設定。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路如 Taboola 和 Smaato 的廣告，以及 Microsoft 應用程式促銷活動廣告。
 
-4.  在您的程式碼中，將測試的廣告單位值 (**ApplicationId** 和 **AdUnitId**)，用在開發人員中心產生的實際值取代。
+4.  在程式碼，請在合作夥伴中心產生的實際值取代測試的廣告單元值 （**ApplicationId**和**AdUnitId**）。
 
-5.  使用開發人員中心儀表板將[您的應用程式提交](../publish/app-submissions.md)至 Microsoft Store。
+5.  [您的應用程式提交](../publish/app-submissions.md)至市集使用合作夥伴中心。
 
-6.  在開發人員中心儀表板中檢閱您的[廣告效益報表](../publish/advertising-performance-report.md)。
+6.  檢閱您的[廣告績效報告](../publish/advertising-performance-report.md)合作夥伴中心。
 
 <span id="manage" />
 

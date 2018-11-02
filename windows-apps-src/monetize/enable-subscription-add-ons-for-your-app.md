@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b89cad4c299f7326d0bb7d9ea4b8c6685f70f26c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933110"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5973703"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 
@@ -35,7 +35,7 @@ UWP app 的訂閱附加元件支援下列功能：
 
 若要在您的應用程式中啟用購買訂閱附加元件，請執行下列步驟。
 
-1. 在開發人員中心儀表板中為您的訂閱[建立附加元件提交](../publish/add-on-submissions.md)並發佈提交。 當您依照附加元件提交程序執行時，請密切注意下列屬性：
+1. 為您的訂閱，在合作夥伴中心[建立附加元件提交](../publish/add-on-submissions.md)與發佈提交。 當您依照附加元件提交程序執行時，請密切注意下列屬性：
 
     * [產品類型](../publish/set-your-add-on-product-id.md#product-type)：請務必選取**訂閱**。
 
@@ -70,8 +70,8 @@ UWP app 的訂閱附加元件支援下列功能：
 
 這些範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您已在 Windows 開發人員中心儀表板中[建立 App 提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，而且已在 Microsoft Store 中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
-* 您已在開發人員中心儀表板中[為應用程式建立訂閱附加元件](../publish/add-on-submissions.md)。
+* 您必須在合作夥伴中心的 [[建立應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
+* 在合作夥伴中心已[建立應用程式的訂閱附加元件](../publish/add-on-submissions.md)。
 
 這些範例中的程式碼假設：
 * 程式碼檔案含有適用於 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。

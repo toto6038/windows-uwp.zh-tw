@@ -8,16 +8,16 @@ ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox One 遊戲下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 86ca46903e581922cc571a854d9fa110fa261ece
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 1bf37fa03209561540d63dd4f63a76878f9d813c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941028"
+ms.locfileid: "5976589"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>取得 Xbox One 遊戲下載數
 
-在 Microsoft Store 分析 API 中使用此方法可取得用於 Xbox One 遊戲的 JSON 格式彙整下載資料，此 Xbox One 遊戲是透過 Xbox 開發人員入口網站 (XDP) 取得，並可用於 XDP 分析開發人員中心儀表板。
+在 Microsoft Store 分析 API，取得彙總下載數資料的 JSON 格式的 Xbox One 遊戲是透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析儀表板中使用此方法。
 
 ## <a name="prerequisites"></a>必要條件
 
