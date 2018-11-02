@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b85f40fc391df764515d21ba3b334bfe068725c
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5867683"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5945577"
 ---
 # <a name="package-resource-indexing-pri-apis-and-custom-build-systems"></a>套件資源索引 (PRI) API 和自訂建置系統
 您可以使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，開發適用於您的 UWP app 資源的自訂組建系統。 建置系統可以依據 UWP app 所需的任何複雜層級，建立套件資源索引 (PRI) 檔案並對這些檔案進行版本控制和傾印 (為 XML)。 如果您的自訂建置系統目前使用 MakePri.exe 命令列工具 (請參閱[使用 MakePri.exe 來手動編譯資源](makepri-exe-command-options.md))，為了提高效能和控制，建議您改為呼叫 PRI API，而不呼叫 MakePri.exe。
