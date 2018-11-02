@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式提交, 刪除
 ms.localizationpriority: medium
-ms.openlocfilehash: 4f23bebd196cb28088bf68e673a17a4c0aebf5a3
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: da2533eb8b6e45e4426a1d25931638466547e01b
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922442"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972004"
 ---
 # <a name="delete-an-app-submission"></a>刪除 App 提交
 
@@ -47,10 +47,10 @@ ms.locfileid: "5922442"
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 包含要刪除提交之 App 的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | 字串 | 必要。 要刪除之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 對於開發人員中心儀表板中所建立的提交，這個 ID 也適用於儀表板中提交頁面的 URL。  |
+| submissionId | 字串 | 必要。 要刪除之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
-| 409  | 找到指定的提交，但無法以其目前的狀態刪除，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |
+| 409  | 找到指定的提交，但無法刪除以其目前的狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相關主題

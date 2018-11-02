@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、 uwp、 xbox 裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 4b0e2bab0ce7d5525e8032809954ff656a74a61c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919891"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971537"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 資訊 API 參考   
 您可以存取 Xbox One 裝置的資訊，請使用此 API。

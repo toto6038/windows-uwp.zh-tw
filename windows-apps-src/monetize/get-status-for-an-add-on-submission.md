@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 狀態
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a656d06c2be720e4231ccf4ee0e5626466b5fd8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e2013a081898dbf46958190da1df01adaac9d820
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929746"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5972064"
 ---
 # <a name="get-the-status-of-an-add-on-submission"></a>取得附加元件提交的狀態
 
@@ -25,7 +25,7 @@ ms.locfileid: "5929746"
 
 * 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
-* 針對您開發人員中心帳戶中的 App 建立附加元件提交。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件提交](create-an-add-on-submission.md)方法進行。
+* 建立適用於您的應用程式的其中一個附加元件提交。 您可以在合作夥伴中心，或者您可以藉由使用[建立附加元件提交](create-an-add-on-submission.md)的方法。
 
 ## <a name="request"></a>要求
 
@@ -47,11 +47,11 @@ ms.locfileid: "5929746"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字串 | 必要。 包含您想取得狀態之提交的附加元件的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板上取得。  |
-| submissionId | 字串 | 必要。 您想取得狀態之提交的識別碼。 在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中有提供此識別碼。 對於開發人員中心儀表板中所建立的提交，這個 ID 也適用於儀表板中提交頁面的 URL。  |
+| inAppProductId | 字串 | 必要。 包含您想取得狀態之提交的附加元件的 Store 識別碼。 「 市集識別碼 」 是可在合作夥伴中心。  |
+| submissionId | 字串 | 必要。 您想取得狀態之提交的識別碼。 在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中有提供此識別碼。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -94,7 +94,7 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到提交。 |
-| 409  | 附加元件使用[目前 Microsoft Store 提交 API 不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。  |
+| 409  | 附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。  |
 
 
 ## <a name="related-topics"></a>相關主題

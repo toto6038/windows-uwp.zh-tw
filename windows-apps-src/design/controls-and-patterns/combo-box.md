@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: f641ec3333ed0eda1fdfa5ff82ef236b5ec186ba
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927102"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971891"
 ---
 # <a name="combo-box"></a>下拉式方塊
 
@@ -169,15 +169,15 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 #### <a name="selected-item-behavior-change"></a>選取的項目行為變更
 
-在 RS5 (Windows SDK 版本 10.0.NNNNN.0 (Windows 10，版本 YYMM)，選取的項目行為會更新以支援可編輯的下拉式方塊。
+在 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本，行為的選取項目會更新以支援可編輯的下拉式方塊。
 
-之前 RS5，SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 才能能在下拉式方塊的項目集合中。 使用上一個範例中，設定`colorComboBox.SelectedItem = "Pink"`會導致：
+在 SDK 17763，SelectedItem 屬性的值之前 (因此 SelectedValue 和 SelectedIndex) 才能能在下拉式方塊的項目集合中。 使用上一個範例中，設定`colorComboBox.SelectedItem = "Pink"`會導致：
 
 - SelectedItem = null
 - SelectedValue = null
 - SelectedIndex =-1
 
-在 RS5 和更新版本，SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 並不需要是下拉式方塊的項目集合中。 使用上一個範例中，設定`colorComboBox.SelectedItem = "Pink"`會導致：
+在 SDK 17763 和更新版本，SelectedItem 屬性的值 (因此 SelectedValue 和 SelectedIndex) 並不需要是下拉式方塊的項目集合中。 使用上一個範例中，設定`colorComboBox.SelectedItem = "Pink"`會導致：
 
 - SelectedItem = 粉紅
 - SelectedValue = 粉紅
@@ -192,7 +192,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 ## <a name="make-a-combo-box-editable"></a>讓下拉式方塊可編輯
 
 > [!IMPORTANT]
-> 這項功能需要[最新的 Windows 10 Insider Preview 組建和 SDK](https://insider.windows.com/for-developers/)。
+> 此功能需要 Windows 10 版本 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) 或更新版本。
 
 根據預設，下拉式方塊可讓使用者選取從預先定義的選項清單。 不過，有許多的情況，其中的清單包含有效的值的子集，而使用者應該能夠輸入並未列出的其他值。 若要支援這種情況，您可以讓下拉式方塊可編輯。
 
