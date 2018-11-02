@@ -8,19 +8,19 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，回應，回應，檢閱
 ms.localizationpriority: medium
-ms.openlocfilehash: 823ca28618540dbaab1f4e5711ee59d277b0c894
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 32ded7cc66cda75fbb6edb9ab9d84c21c2d02cff
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5877162"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930807"
 ---
 # <a name="respond-to-customer-reviews"></a>回應客戶評論
 
 
 您可以回應的評論您的應用程式，讓客戶知道您正在聆聽其意見反應。 透過評論回應功能，您可以告訴您的客戶您根據其意見新增的功能或修正的錯誤 (Bug)，或取得更特定的意見反應以改進您的 App。 若要查看所有 windows 10 客戶在 Microsoft Store 中，將會顯示您的回應。 您也可以選擇將傳送您的回應透過電子郵件給客戶 （如果它們尚未退出，且使用執行 Windows 10，版本 1803年或更高版本的裝置）。
 
-若要檢視您的應用程式評論並提供回應，請在[合作夥伴中心](https://partner.microsoft.com/dashboard)中尋找應用程式。 在左方的導覽功能表中，展開 [**分析]** ，然後按一下顯示的 [[評論] 報告](reviews-report.md)的**評論**。 選取**要檢閱回應**提供您的回應。
+若要檢視您的應用程式評論並提供回應，請在[合作夥伴中心](https://partner.microsoft.com/dashboard)中尋找應用程式。 在左方的導覽功能表中，展開 [*分析**，然後按一下 [顯示[評論] 報告](reviews-report.md)的**評論**。 選取**要檢閱回應**提供您的回應。
 
 > [!TIP]
 > 除了使用合作夥伴中心，以回應評論外，您可以回應評論[以程式設計方式](../monetize/submit-responses-to-app-reviews.md)，或使用[開發人員中心應用程式](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。

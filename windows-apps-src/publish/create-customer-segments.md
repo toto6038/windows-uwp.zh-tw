@@ -8,12 +8,12 @@ ms.topic: article
 keywords: windows 10, uwp, 區段, 目標群組, 客戶
 ms.assetid: 58185f6c-d61f-478b-ab24-753d8986cd5a
 ms.localizationpriority: medium
-ms.openlocfilehash: b53c3c3480a986e77ad44f95831b1be5ce016808
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 8aa61056a25fca4193cf325c8573813bf1f6a560
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5882774"
+ms.locfileid: "5929602"
 ---
 # <a name="create-customer-segments"></a>建立客戶區隔
 
@@ -43,7 +43,7 @@ ms.locfileid: "5882774"
 4.  在 **\[包含這個 app 中的客戶\]** 清單中，選取您的其中一個 app 做為目標。
 5.  在 **\[定義包含條件\]** 區段中，指定區隔的篩選條件。
 
-    您可以從各種篩選條件中選擇，包括 **\[下載數\]**、**\[下載來源\]**、**\[使用量\]**、**\[人口統計\]**、**\[分級\]**、**\[客戶流失預測\]**、**\[市集購買\]**、**\[市集下載\]** 和 **\[市集花費\]**。
+    您可以選擇從各種篩選條件，包括**下載數**、**下載來源**、**人口統計**、**評等**、**客戶流失預測**、**市集購買**、**市集下載數**，以及**存放區花費**。
 
     例如，如果您想建立只包含 18 到 24 歲 app 客戶的區隔，請從下拉式清單中選取 [**人口統計**] [**年齡群組**] [**是**] [**18 到 24**] 篩選條件。
 
