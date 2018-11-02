@@ -8,12 +8,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, StoreRequestHelper, SendRequestAsync
 ms.localizationpriority: medium
-ms.openlocfilehash: 71247b8e04e63e5f792a872256dd79447c4d36cd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6762d31ea7ebaeb966cd60f121591ba1534517a3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927961"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969068"
 ---
 # <a name="send-requests-to-the-microsoft-store"></a>傳送要求至 Microsoft Store
 
@@ -79,7 +79,7 @@ public async Task<bool> AddUserToFlightGroup()
 |  *requestKind*                   |  指定 7，傳回裝置所屬最高排名之正式發行前小眾測試版群組，或指定 8 傳回目前使用者與裝置所屬最高排名之正式發行前小眾測試版群組。 我們建議 *requestKind* 參數使用值 8，因為這個值會跨目前使用者及裝置的成員資格，傳回最高排名之正式發行前小眾測試版群組。  |
 |  *parametersAsJson*                   |  傳遞 JSON 格式化字串，包含下列範例中顯示的資料。  |
 
-下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將 *projectId* 欄位指派到專案識別碼，您在 Windows 開發人員中心儀表板中於該專案中定義遠端變數。
+下列範例示範傳送至 *parametersAsJson* 的 JSON 資料格式。 *type* 欄位必須指派給字串 *GetRemoteVariables*。 將*projectId*欄位指派到您已定義在合作夥伴中心的遠端變數的專案識別碼。
 
 ```json
 { 

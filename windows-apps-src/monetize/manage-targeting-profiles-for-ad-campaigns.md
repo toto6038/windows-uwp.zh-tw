@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 50960a079e2c38d52d3a15403aef091ea99d7696
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925452"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5980999"
 ---
 # <a name="manage-targeting-profiles"></a>管理目標設定檔
 
@@ -145,7 +145,7 @@ Authorization: Bearer <your access token>
 |--------------|--------|---------------|------|-------------|------------|
 |  id   |  整數   |  目標設定檔的識別碼。     |   是    |       |   否      |       
 |  name   |  字串   |   目標設定檔的名稱。    |    否   |      |  是     |       
-|  targetingType   |  字串   |  下列其中一個值： <ul><li>**自動**︰指定這個值，允許 Microsoft 根據應用程式開發人員中心應用程式的設定來選擇目標設定檔。</li><li>**手動**︰指定這個值以定義您自己的目標設定檔。</li></ul>     |  否     |  自動    |   是    |       
+|  targetingType   |  字串   |  下列其中一個值： <ul><li>**自動**： 指定這個值，允許 Microsoft 來選擇根據您的應用程式，在合作夥伴中心設定的目標設定檔。</li><li>**手動**︰指定這個值以定義您自己的目標設定檔。</li></ul>     |  否     |  自動    |   是    |       
 |  年齡   |  陣列   |   一或多個整數，識別目標使用者的年齡範圍。 如需整數的完整清單，請參閱本篇文章中的[年齡值](#age-values)。    |    否    |  null    |     否    |       
 |  性別   |  陣列   |  一或多個整數，識別目標使用者的性別。 如需整數的完整清單，請參閱本篇文章中的[性別值](#gender-values)。       |  否    |  null    |     否    |       
 |  國家/地區   |  陣列   |  一或多個整數，識別目標使用者的國碼 (地區碼)。 如需整數的完整清單，請參閱本篇文章中的[國碼 (地區碼) 值](#country-code-values)。    |  否    |  null   |      否   |       

@@ -7,12 +7,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 123934c911f342dd57033c8e204e58bc00a5f18f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 36b96add3aa785ad20ddd1c42cd46e498d0264a6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933896"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969409"
 ---
 # <a name="native-ads"></a>原生廣告
 
@@ -49,7 +49,7 @@ ms.locfileid: "5933896"
 
 5.  在您的應用程式的適當位置中 (例如，在 ```MainPage``` 中或部分其他頁面)，為您的插播式廣告宣告 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2) 物件和代表原生廣告的應用程式識別碼和廣告單元識別碼的幾個字串欄位。 以下程式碼範例指派 `myAppId` 和 `myAdUnitId` 欄位至原生廣告的[測試值](set-up-ad-units-in-your-app.md#test-ad-units)。
     > [!NOTE]
-    > 每個 **NativeAdsManagerV2** 都有對應的*廣告單元*，由我們的服務用來提供廣告給原生廣告控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 在您發行應用程式到 Microsoft Store 之前，您必須[以 Windows 開發人員中心的實際值取代這些測試值](#release)。
+    > 每個 **NativeAdsManagerV2** 都有對應的*廣告單元*，由我們的服務用來提供廣告給原生廣告控制項，且每個廣告單元都包含*廣告單元 ID* 和*應用程式 ID*。 在這些步驟中，您將指派測試廣告單元 ID 和應用程式 ID 值到您的控制項。 這些測試值只能在您應用程式的測試版本中使用。 您將您的應用程式發行至市集之前，您必須[取代這些測試值，請以實際值](#release)從合作夥伴中心。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
@@ -97,7 +97,7 @@ ms.locfileid: "5933896"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
-9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
+9.  定義 **ErrorOccurred** 事件的事件處理常式來處理原生廣告的相關錯誤。 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
@@ -111,17 +111,17 @@ ms.locfileid: "5933896"
 
 1.  請確定您的原生廣告實作遵循我們的[原生廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-native-ads)。
 
-2.  在開發人員中心儀表板中，移至[應用程式內廣告](../publish/in-app-ads.md)頁面，並且[建立廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[原生\]**。 記下廣告單元識別碼與應用程式識別碼。
+2.  在合作夥伴中心，移至[應用程式內廣告](../publish/in-app-ads.md)頁面，並[建立廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。 廣告單元類型請指定 **\[原生\]**。 記下廣告單元識別碼與應用程式識別碼。
     > [!NOTE]
-    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在儀表板中建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式的 Microsoft Store 識別碼 (Microsoft Store 識別碼值範例類似於 9NBLGGH4R315)。
+    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式 （microsoft Store 識別碼值範例類似於 9NBLGGH4R315） 的 「 市集識別碼。
 
 3. 您可以選擇為原生廣告啟用廣告流量分配，方法是在 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面的 [\[利用廣告獲利\]](../publish/in-app-ads.md#mediation) 區段進行設定。 廣告流量分配可以透過顯示來自多個廣告網路的廣告，讓您獲得最大的廣告收益並充分發揮應用程式促銷功能。
 
-4.  在您的程式碼中，將測試的廣告單元值 (也就是 [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor) 建構函式的 *applicationId* 和 *adUnitId* 參數)，更換為在開發人員中心產生的實際值。
+4.  在程式碼，請在合作夥伴中心產生的實際值取代測試的廣告單元值 （也就是*applicationId*和*adUnitId*的參數[NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)建構函式）。
 
-5.  使用開發人員中心儀表板[提交您的應用程式](../publish/app-submissions.md)到 Microsoft Store。
+5.  [您的應用程式提交](../publish/app-submissions.md)至市集使用合作夥伴中心。
 
-6.  在開發人員中心儀表板中檢閱您的[廣告效益報表](../publish/advertising-performance-report.md)。
+6.  檢閱您的[廣告績效報告](../publish/advertising-performance-report.md)合作夥伴中心。
 
 ## <a name="manage-ad-units-for-multiple-native-ads-in-your-app"></a>管理您應用程式中多個原生廣告的廣告單元
 

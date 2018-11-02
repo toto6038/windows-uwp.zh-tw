@@ -8,12 +8,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 41e1437e8b55474d3fcc0c34919e23d14a86ea89
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940925"
+ms.locfileid: "5991614"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 
@@ -32,7 +32,7 @@ ms.locfileid: "5940925"
 下列步驟描述使用 Microsoft Store 集合 API 和購買 API 的端對端程序：
 
 1.  [設定 Azure AD 中的應用程式](#step-1)。
-2.  [將您的 Azure AD 應用程式識別碼與您的 app 在 Windows 開發人員中心儀表板中建立關聯](#step-2)。
+2.  [將您的 Azure AD 應用程式識別碼與您在合作夥伴中心的 app 產生關聯](#step-2)。
 3.  在您的服務中，[建立代表您發行者身分識別的 Azure AD 存取權杖](#step-3)。
 4.  在您用戶端的 Windows 應用程式，[建立 Microsoft Store 識別碼金鑰](#step-4)，代表目前的使用者，並傳遞此金鑰的身分識別回您的服務。
 5.  在您擁有必要的 Azure AD 存取權杖和 Microsoft Store 識別碼金鑰之後，[從您的服務呼叫 Microsoft Store 集合 API 或購買 API](#step-5)。
@@ -72,14 +72,14 @@ ms.locfileid: "5940925"
 
 <span id="step-2"/>
 
-## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-windows-dev-center"></a>步驟 2： 您的 Azure AD 應用程式識別碼關聯至您的用戶端應用程式在 Windows 開發人員中心
+## <a name="step-2-associate-your-azure-ad-application-id-with-your-client-app-in-partner-center"></a>步驟 2： 您的 Azure AD 應用程式識別碼關聯至您的用戶端應用程式，在合作夥伴中心
 
-您可以使用 「 Microsoft Store 集合 API 或購買 API 」 來設定的擁有權和您的應用程式或附加元件購買之前，您必須關聯至您的 Azure AD 應用程式識別碼應用程式 （或包含附加元件的應用程式） 在開發人員中心儀表板。
+您可以使用 「 Microsoft Store 集合 API 或購買 API 」 來設定的擁有權和您的應用程式或附加元件購買之前，您必須關聯至您的 Azure AD 應用程式識別碼應用程式 （或包含附加元件的應用程式） 在合作夥伴中心。
 
 > [!NOTE]
 > 您只需要執行此工作一次。
 
-1.  登入[開發人員中心儀表板](https://dev.windows.com/overview)，然後選取您的應用程式。
+1.  登入[合作夥伴中心](https://partner.microsoft.com/dashboard)，並選取您的應用程式。
 2.  移至**服務** &gt; **產品集合與購買**頁面，並在其中一個可用的**用戶端識別碼**欄位中輸入您的 Azure AD 應用程式識別碼。
 
 <span id="step-3"/>

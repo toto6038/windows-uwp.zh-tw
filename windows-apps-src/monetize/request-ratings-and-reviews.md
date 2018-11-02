@@ -7,12 +7,12 @@ ms.date: 06/15/2018
 ms.topic: article
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
-ms.openlocfilehash: d736fa47251c85491a29b324a3ed59181a5060c8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c00e69ed7d5057db4f835f3d91320806067d86e1
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935092"
+ms.locfileid: "5981187"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -20,7 +20,7 @@ ms.locfileid: "5935092"
 * 您可以直接在應用程式的環境中顯示評等與評論對話方塊。
 * 您可以以以程式設計方式在 Microsoft Store 中打開您的應用程式的評等與評論頁面。
 
-當您準備好分析評等與評論資料後，您可以在 Windows 開發人員中心儀表板中檢視資料，或使用 Microsoft Store 分析 API 以程式設計方式擷取這些資料。
+當您準備好分析評等與評論資料時，您可以在合作夥伴中心中檢視資料，或使用 「 Microsoft Store 分析 API 以程式設計方式擷取此資料。
 
 > [!IMPORTANT]
 > 當您新增您的應用程式內的評等函式，所有評論必須在市集中評分機制，無論/星級評等所選傳送都給使用者。 如果您從使用者收集意見反應或註解，它必須是清除它不相關的應用程式評等或評論存放區中的，但會直接傳送到應用程式開發人員。 請參閱 「 開發人員管理辦法[Fraudulent](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)或誠實活動的相關資訊。
@@ -102,7 +102,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 ## <a name="analyze-your-ratings-and-reviews-data"></a>分析您的評分與評論資料
 
 要分析客戶的評分與評論資料，您有數個選項：
-* 您可以在 Windows 開發人員中心儀表板中使用[評論](../publish/reviews-report.md) 報告來查看客戶的評分與評論。 您也可以下載此報告來離線檢視。
+* 您可以使用合作夥伴中心中的 [[評論](../publish/reviews-report.md)] 報告，以查看從您的客戶的評分與評論。 您也可以下載此報告來離線檢視。
 * 您可以使用 Microsoft Store 分析 API 中的[取得應用程式評分](get-app-ratings.md) 和 [取得應用程式評論](get-app-reviews.md) 方法以程式設計方式擷取 JSON 格式的客戶的評分與評論。
 
 ## <a name="related-topics"></a>相關主題

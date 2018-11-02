@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fdfe811a90eae1e67ef7f626815be1ef78a4c61
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5928589"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970112"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 
@@ -23,7 +23,7 @@ ms.locfileid: "5928589"
 當客戶提交評論時，他們可以選擇不收到評論的回應。 如果您嘗試回應到客戶選擇不收到回應的評論，這個方法的回應主體會指出回應嘗試已失敗。 呼叫這個方法之前，您可以使用[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)方法，選擇判斷是否允許您回應特定評論。
 
 > [!NOTE]
-> 除了使用此方法以程式設計方式回應評論，您也可以[使用 Windows 開發人員中心儀表板](../publish/respond-to-customer-reviews.md)回應評論。
+> 除了使用此方法，以程式設計方式回應評論，或者您可以回應評論[使用合作夥伴中心](../publish/respond-to-customer-reviews.md)。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -67,7 +67,7 @@ ms.locfileid: "5928589"
 
 | 值        | 類型   | 描述           |  必要  |
 |---------------|--------|-----------------------------|-----|
-| ApplicationId | 字串 |  您想要回應評論之 App 的「Store 識別碼」。  Store 識別碼可在開發人員中心儀表板的 [App 身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
+| ApplicationId | 字串 |  您想要回應評論之 App 的「Store 識別碼」。 在合作夥伴中心的[應用程式身分識別頁面](../publish/view-app-identity-details.md)上使用 「 市集識別碼 」。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。   |  是  |
 | ReviewId | 字串 |  您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。   |  是  |
 | ResponseText | 字串 | 您想要提交的回應。 您的回應必須依照[這些指導方針](../publish/respond-to-customer-reviews.md#guidelines-for-responses)。   |  是  |
 | SupportEmail | 字串 | 您 app 的支援電子郵件地址，客戶可以用來直接連絡您。 這必須是有效的電子郵件地址。     |  是  |
@@ -146,7 +146,7 @@ Content-Type: application/json
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用開發人員中心儀表板回應客戶評論](../publish/respond-to-customer-reviews.md)
+* [回應客戶評論使用合作夥伴中心](../publish/respond-to-customer-reviews.md)
 * [使用 Microsoft Store 服務回應評論](respond-to-reviews-using-windows-store-services.md)
 * [取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)
 * [取得應用程式評論](get-app-reviews.md)

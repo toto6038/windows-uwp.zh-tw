@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fdd7dce766e2d1804c5b0973dcf3e51cbae99c0
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 34d686b8e20d384da4a3db1ea3805ad082d5f8a8
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924367"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968692"
 ---
 # <a name="python-sample-submissions-for-apps-add-ons-and-flights"></a>Python 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
@@ -54,13 +54,13 @@ ms.locfileid: "5924367"
 
 ## <a name="create-an-app-submission"></a>建立應用程式提交
 
-下列範例示範如何使用 Microsoft Store 提交 API 中的幾個方法來建立應用程式提交。 若要這樣做，程式碼會建立新的提交當做最後一個已發佈之提交的複製，然後更新複製的提交，並認可至 Windows 開發人員中心。 具體來說，此範例會執行以下工作：
+下列範例示範如何使用 Microsoft Store 提交 API 中的幾個方法來建立應用程式提交。 若要這樣做，程式碼會建立新的提交當做複製的最後一個已發佈提交，然後更新，並將其認可至合作夥伴中心複製的提交。 具體來說，此範例會執行以下工作：
 
 1. 一開始，此範例會[為指定的應用程式取得資料](get-an-app.md)。
 2. 接下來，它會[刪除應用程式的擱置中提交](delete-an-app-submission.md) (如果有的話)。
 3. 然後它會[為此應用程式建立新的提交](create-an-app-submission.md) (新的提交是最後一個已發佈提交的複本)。
 4. 它會變更新提交的部分詳細資料，並將此提交的新套件上傳到 Azure Blob 儲存體。
-5. 接下來，它會[更新](update-an-app-submission.md)新的提交，然後將其[認可](commit-an-app-submission.md)至 Windows 開發人員中心。
+5. 接下來，它[更新](update-an-app-submission.md)，然後[將其認可](commit-an-app-submission.md)至合作夥伴中心新的提交。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-app-submission.md)，直到此提交認可成功為止。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L93-L166)]
@@ -69,13 +69,13 @@ ms.locfileid: "5924367"
 
 ## <a name="create-an-add-on-submission"></a>建立附加元件提交
 
-下列範例示範如何使用 Microsoft Store 提交 API 中的幾個方法來建立附加元件提交。 若要這樣做，程式碼會建立新的提交當做最後一個已發佈之提交的複製，然後更新複製的提交，並認可至 Windows 開發人員中心。 具體來說，此範例會執行以下工作：
+下列範例示範如何使用 Microsoft Store 提交 API 中的幾個方法來建立附加元件提交。 若要這樣做，程式碼會建立新的提交當做複製的最後一個已發佈提交，然後更新，並將其認可至合作夥伴中心複製的提交。 具體來說，此範例會執行以下工作：
 
 1. 一開始，此範例會[為指定的附加元件取得資料](get-an-add-on.md)。
 2. 接下來，它會[刪除附加元件的擱置中提交](delete-an-add-on-submission.md) (如果有的話)。
 3. 然後它會[為此附加元件建立新的提交](create-an-add-on-submission.md) (新的提交是最後一個已發佈提交的複本)。
 4. 它會將包含此提交圖示的 ZIP 封存上傳到 Azure Blob 儲存體。 如需詳細資訊，請參閱[建立附加元件提交](manage-add-on-submissions.md#create-an-add-on-submission)中有關上傳 ZIP 封存到 Azure Blob 儲存體的相關指示。
-5. 接下來，它會[更新](update-an-add-on-submission.md)新的提交，然後將其[認可](commit-an-add-on-submission.md)至 Windows 開發人員中心。
+5. 接下來，它[更新](update-an-add-on-submission.md)，然後[將其認可](commit-an-add-on-submission.md)至合作夥伴中心新的提交。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-an-add-on-submission.md)，直到此提交認可成功為止。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L172-L245)]
@@ -84,13 +84,13 @@ ms.locfileid: "5924367"
 
 ## <a name="create-a-package-flight-submission"></a>建立套件正式發行前小眾測試版提交
 
-下列範例示範如何使用 Microsoft Store 提交 API 中的幾個方法來建立套件正式發行前小眾測試版提交。 若要這樣做，程式碼會建立新的提交當做最後一個已發佈之提交的複製，然後更新複製的提交，並認可至 Windows 開發人員中心。 具體來說，此範例會執行以下工作：
+下列範例示範如何使用 Microsoft Store 提交 API 中的幾個方法來建立套件正式發行前小眾測試版提交。 若要這樣做，程式碼會建立新的提交當做複製的最後一個已發佈提交，然後更新，並將其認可至合作夥伴中心複製的提交。 具體來說，此範例會執行以下工作：
 
 1. 一開始，此範例會[為指定的套件正式發行前小眾測試版取得資料](get-a-flight.md)。
 2. 接下來，它會[刪除套件正式發行前小眾測試版的擱置中提交](delete-a-flight-submission.md) (如果有的話)。
 3. 然後它會[為套件正式發行前小眾測試版建立新的提交](create-a-flight-submission.md) (新的提交是最後一個已發佈提交的複本)。
 4. 它會將此提交的新套件上傳到 Azure Blob 儲存體。 如需詳細資訊，請參閱[建立套件正式發行前小眾測試版提交](manage-flight-submissions.md#create-a-package-flight-submission)中有關上傳 ZIP 封存到 Azure Blob 儲存體的相關指示。
-5. 接下來，它會[更新](update-a-flight-submission.md)新的提交，然後將其[認可](commit-a-flight-submission.md)至 Windows 開發人員中心。
+5. 接下來，它[更新](update-a-flight-submission.md)，然後[將其認可](commit-a-flight-submission.md)至合作夥伴中心新的提交。
 6. 最後，它會定期[檢查新提交的狀態](get-status-for-a-flight-submission.md)，直到此提交認可成功為止。
 
 [!code[SubmissionApi](./code/StoreServicesExamples_Submission/python/Examples.py#L251-L325)]

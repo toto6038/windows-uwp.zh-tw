@@ -7,16 +7,16 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, 取得, 漏斗
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c07425542c207c2289c6b512102e10f64bab66
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 8aaceb9af3eed04039148bdd863ca3e473c7c245
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924295"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970205"
 ---
 # <a name="get-app-acquisition-funnel-data"></a>取得應用程式取得漏斗圖資料
 
-在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的取得漏斗資料。 「Windows 開發人員中心」儀表板中的[下載數報告](../publish/acquisitions-report.md#acquisition-funnel)也有提供這項資訊。
+在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的取得漏斗資料。 這項資訊也會在合作夥伴中心[下載數報告](../publish/acquisitions-report.md#acquisition-funnel)中提供的。
 
 ## <a name="prerequisites"></a>先決條件
 

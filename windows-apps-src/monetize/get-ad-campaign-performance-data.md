@@ -8,19 +8,19 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 337342378fc42b33c0bddb980b143ab195305458
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c9d348ffc0895d5adb16886c5a66af14a1884b8b
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943211"
+ms.locfileid: "5991253"
 ---
 # <a name="get-ad-campaign-performance-data"></a>取得廣告活動效益資料
 
 
 使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式促銷廣告行銷活動效益資料的彙總摘要。 這個方法會傳回 JSON 格式的資料。
 
-這個方法所傳回的資料與「Windows 開發人員中心」儀表板上的 [App 安裝廣告報告](../publish/app-install-ads-reports.md)所提供的資料相同。 如需有關廣告行銷活動的詳細資訊，請參閱[為您的 App 建立廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)。
+這個方法會傳回相同的資料所提供的合作夥伴中心中的[廣告行銷活動報告](../publish/app-install-ads-reports.md)。 如需有關廣告行銷活動的詳細資訊，請參閱[為您的 App 建立廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)。
 
 若要建立、更新或擷取廣告活動的詳細資料，您可以使用 [Microsoft Store 促銷 API](run-ad-campaigns-using-windows-store-services.md) 中的[管理廣告活動](manage-ad-campaigns.md)方法。
 

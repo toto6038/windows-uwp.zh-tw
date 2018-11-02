@@ -12,12 +12,12 @@ pm-contact: miguelrb
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bbf7bdf1f41b1dff1049674f3b4463bac6ccb80
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5929612"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969174"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 
@@ -164,7 +164,7 @@ Uri 屬性的作用很像超連結的 NavigateUri 屬性。 當使用者按一�
 - 如果 LinkContentKind 不是 "People"，則會開啟 **\[連絡人\]** App。 例如，如果您在 ContentLinkChanged 事件處理常式中修改了 LinkContentKind，就會發生這種情況。
 
 > [!TIP]
-> 如需有關從您的應用程式開啟其他應用程式和網站的詳細資訊，請參閱[使用 URI 啟動應用程式](/windows/uwp/launch-resume/launch-app-with-uri)之下的主題。
+> 如需從您的應用程式開啟其他應用程式和網站的詳細資訊，請參閱下[啟動 uri 的應用程式](/windows/uwp/launch-resume/launch-app-with-uri)的主題。
 
 #### <a name="invoked"></a>Invoked
 

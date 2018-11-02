@@ -1,32 +1,32 @@
 ---
 author: Xansky
-Description: You can log custom events from your UWP app and review those events in the Usage report on the Windows Dev Center dashboard.
-title: 為開發人員中心記錄自訂事件
+Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
+title: 為合作夥伴中心記錄自訂事件
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK, 記錄事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c4dcb11b46b50677b87f9feea6db8b87bfb29d4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921464"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5970341"
 ---
-# <a name="log-custom-events-for-dev-center"></a>為開發人員中心記錄自訂事件
+# <a name="log-custom-events-for-partner-center"></a>為合作夥伴中心記錄自訂事件
 
-「Windows 開發人員中心」儀表板中的[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)可讓您取得已在「通用 Windows 平台」(UWP) app 中定義之自訂事件的相關資訊。 自訂事件是代表您 App 中事件或活動的任意字串。 例如，遊戲可能會定義名為 *firstLevelPassed*、*secondLevelPassed* 等等的自訂事件，當使用者通過遊戲中的每個層級時，便會記錄這些事件。
+合作夥伴中心中的[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)可讓您取得您已經在您的通用 Windows 平台 (UWP) 應用程式中定義的自訂事件的相關資訊。 自訂事件是代表您 App 中事件或活動的任意字串。 例如，遊戲可能會定義名為 *firstLevelPassed*、*secondLevelPassed* 等等的自訂事件，當使用者通過遊戲中的每個層級時，便會記錄這些事件。
 
-若要記錄來自您 App 的自訂事件，請將自訂事件字串傳遞給 Microsoft Store Services SDK 所提供的 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 您可以在「開發人員中心」儀表板中[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的 **\[自訂事件\]** 區段中，檢閱自訂事件的發生次數總計。
+若要記錄來自您 App 的自訂事件，請將自訂事件字串傳遞給 Microsoft Store Services SDK 所提供的 [Log](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 方法。 為您的自訂事件[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作夥伴中心中的**自訂事件**] 區段中，您可以檢閱總計。
 
 > [!NOTE]
-> 自訂事件，您登入開發人員中心與 [Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)無關，它們不會出現在**事件檢視器**中。
+> 您登入合作夥伴中心的自訂事件是與[Windows 事件](https://msdn.microsoft.com/library/windows/desktop/aa964766.aspx)、 無關，它們不會出現在**事件檢視器**。
 
 ## <a name="prerequisites"></a>必要條件
 
-您必須先在「市集」中發佈應用程式，才能在儀表板中應用程式的 **「使用方式報告」** 中檢閱自訂記錄事件。
+您可以檢閱自訂記錄事件的**使用方式報告**中，在合作夥伴中心的應用程式之前，必須在市集中發行您的應用程式。
 
 ## <a name="how-to-log-custom-events"></a>如何記錄自訂事件
 

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 評論 API, 回應資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 71497a858060109eaac0f593ce03f2ba3cbf03cc
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919535"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5968642"
 ---
 # <a name="get-response-info-for-reviews"></a>取得評論的回應資訊
 
@@ -49,7 +49,7 @@ ms.locfileid: "5919535"
 
 | 參數        | 類型   | 描述                                     |  必要  |
 |---------------|--------|--------------------------------------------------|--------------|
-| applicationId | 字串 | 包含您想知道是否可回應之評論的應用程式 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的[應用程式身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
+| applicationId | 字串 | 包含您想知道是否可回應之評論的應用程式 Store 識別碼。 在合作夥伴中心的[應用程式身分識別頁面](../publish/view-app-identity-details.md)上使用 「 市集識別碼 」。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | reviewId | 字串 | 您想要回應評論的 ID（這是 GUID）。 評論識別碼是在 Microsoft Store 分析 API [取得 app 評論](get-app-reviews.md)方法的回應資料中，以及[評論報告](../publish/reviews-report.md)的[離線下載](../publish/download-analytic-reports.md)中。 <br/>如果您省略此參數，這個方法的回應本文將會指示您是否有權限可回應指定應用程式的任何評論。 |  否  |
 
 
@@ -87,6 +87,6 @@ Authorization: Bearer <your access token>
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Microsoft Store 分析 API 提交評論的回應](submit-responses-to-app-reviews.md)
-* [使用開發人員中心儀表板回應客戶評論](../publish/respond-to-customer-reviews.md)
+* [回應客戶評論使用合作夥伴中心](../publish/respond-to-customer-reviews.md)
 * [使用 Microsoft Store 服務回應評論](respond-to-reviews-using-windows-store-services.md)
 * [取得應用程式評論](get-app-reviews.md)

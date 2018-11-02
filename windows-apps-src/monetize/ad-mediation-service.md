@@ -7,12 +7,12 @@ ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, uwp, ads, advertising, ad mediation, 廣告, 廣告流量分配
 ms.localizationpriority: medium
-ms.openlocfilehash: f8ebffbd7a2fa209289c99780e0bbbea94afac2e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920627"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5971244"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 廣告流量分配服務
 
@@ -30,7 +30,7 @@ ms.locfileid: "5920627"
 
 ## <a name="manage-complexity-of-ad-network-relationships"></a>管理廣告網路關係的複雜性  
 
-廣告流量分配服務會整合各種廣告網路，因此您不需要執行這項工作。 在您使用 Microsoft Advertising SDK 在您的 App 中顯示廣告之後，您可以[使用開發人員中心儀表板](../publish/in-app-ads.md#mediation-settings)修改您的廣告流量分配設定，以顯示多個廣告網路的廣告。 您可以從新的廣告網路取得的廣告獲益，而不需要變更您的程式碼。
+廣告流量分配服務會整合各種廣告網路，因此您不需要執行這項工作。 在您的應用程式中顯示廣告的情況下，您在使用 Microsoft Advertising SDK 之後，您可以修改您的廣告流量分配設定[在合作夥伴中心](../publish/in-app-ads.md#mediation-settings)來顯示來自多個廣告網路的廣告。 您可以從新的廣告網路取得的廣告獲益，而不需要變更您的程式碼。
 
 我們代表您管理與廣告網路的端對端關係。 透過廣告網路整合以提供廣告、報告和支付的所有事項均由我們負責處理，您無須額外費心。
 
@@ -49,7 +49,7 @@ ms.locfileid: "5920627"
 
 新的廣告網路會自動包含在內並透過學習預算評估效能。 在很短時間內，它們會在瀑布中找到它們的位置。 這會讓廣告網路更具競爭力，並協助開發人員透過 App 充分運用獲利。
 
-我們高度建議使用我們[建議的流量分配設定](../publish/in-app-ads.md#mediation-settings)以最大化從應用程式中的廣告獲得的收益。 這可讓我們的演算法，得以為您的應用程式產生最佳利潤。 不過，您也可以在開發人員中心儀表板中選擇您自己的流量分配設定，對提供廣告和訂單的廣告網路有更多的控制權。
+我們高度建議使用我們[建議的流量分配設定](../publish/in-app-ads.md#mediation-settings)以最大化從應用程式中的廣告獲得的收益。 這可讓我們的演算法，得以為您的應用程式產生最佳利潤。 不過，您也可以自由選擇您自己的流量分配設定，在合作夥伴中心，若要進一步控制廣告網路，做廣告和他們執行的順序。
 
 ## <a name="rich-data-and-signals"></a>豐富的資料和訊號
 

@@ -1,24 +1,24 @@
 ---
 author: Xansky
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
-description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的附加元件提交。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立新的附加元件提交，針對已登錄到合作夥伴中心的 app。
 title: 建立附加元件提交
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 32e5c803600d0b56e421ae87a5514f6c70cc8d11
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: c4aecb07034b7c8a161546fc9d8001247e9234cb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924865"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5981246"
 ---
 # <a name="create-an-add-on-submission"></a>建立附加元件提交
 
 
-使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的附加元件 (也稱為應用程式內產品或 IAP) 提交。 使用這個方法成功建立新提交之後，請[更新提交](update-an-add-on-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-add-on-submission.md)供擷取和發佈。
+在 Microsoft Store 提交 API 中使用這個方法，來建立新的附加元件 （也稱為應用程式內產品或 IAP） 提交，針對已登錄到您的合作夥伴中心帳戶的 app。 使用這個方法成功建立新提交之後，請[更新提交](update-an-add-on-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-add-on-submission.md)供擷取和發佈。
 
 如需這個方法如何在使用 Microsoft Store 提交 API 建立附加元件提交的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "5924865"
 
 * 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
-* 在您的開發人員中心帳戶中為 App 建立附加元件。 您可以在開發人員中心儀表板中進行，或者可以使用[建立附加元件](create-an-add-on.md)方法進行。
+* 建立您的應用程式的其中一個附加元件。 您可以在合作夥伴中心，或者您可以藉由使用[建立附加元件](create-an-add-on.md)的方法。
 
 ## <a name="request"></a>要求
 
@@ -53,10 +53,10 @@ ms.locfileid: "5924865"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字串 | 必要。 您想要建立提交之附加元件的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板上取得，並且包含在[建立附加元件](create-an-add-on.md)或[取得附加元件詳細資料](get-all-add-ons.md)要求的回應資料中。  |
+| inAppProductId | 字串 | 必要。 您想要建立提交之附加元件的 Store 識別碼。 在合作夥伴中心，是使用 「 市集識別碼 」，並且包含在[建立附加元件](create-an-add-on.md)，或[取得附加元件的詳細資料](get-all-add-ons.md)的要求的回應資料中。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -153,7 +153,7 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 400  | 無法建立提交，因為要求無效。 |
-| 409  | 無法建立提交，因為 App 的目前狀態，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 無法建立提交，因為應用程式的目前狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題

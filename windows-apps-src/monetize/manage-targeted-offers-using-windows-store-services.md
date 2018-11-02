@@ -8,16 +8,16 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 針對性優惠
 ms.localizationpriority: medium
-ms.openlocfilehash: 706f48e64fb8e7534686b8fd7e9666b98dffd9b7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: dbfefefdb7f7b96dbe99b35656b610b393ab3afa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5942020"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5969154"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用Microsoft Store 服務管理針對性優惠
 
-如果您在 Windows 開發人員中心儀表板中的 **\[互動\] > \[針對性優惠\]** 頁面建立適用於 app 的*針對性優惠*，請在 app 程式碼中使用 *Microsoft Store 針對性優惠 API* 擷取可幫您實作針對性優惠 App 內體驗的資訊。 如需有關針對性優惠，以及如何在儀表板中建立它們的詳細資訊，請參閱[使用針對性優惠提高吸引力與轉換數](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
+如果您建立內的*針對性的優惠***互動 > 針對性優惠**您在合作夥伴中心，使用*Microsoft Store 針對性優惠 API*在您的應用程式程式碼來抓取資訊，可協助您實作的應用程式內體驗的應用程式頁面針對性的優惠。 如需有關針對性優惠，以及如何在儀表板中建立它們的詳細資訊，請參閱[使用針對性優惠提高吸引力與轉換數](../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md)。
 
 性優惠 App 是簡單的 REST API，可根據使用者是不是針對性優惠客戶區隔的一部分，取得適用於目前使用者的針對性優惠。 若要在 app 程式碼中使用這個 API，請依照下列步驟執行：
 

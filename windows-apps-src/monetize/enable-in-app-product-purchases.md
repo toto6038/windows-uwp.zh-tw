@@ -8,19 +8,19 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e0d2bed4f2da49596a4859916637225bbbfd97
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945620"
+ms.locfileid: "5968712"
 ---
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 
 無論您的 app 是否免費，都可以直接從 app 內銷售內容、其他 app 或新的 app 功能 (例如解除鎖定遊戲的下一個關卡)。 以下示範如何在 App 中啟用這些產品。
 
 > [!IMPORTANT]
-> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來啟用在應用程式內產品購買。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 **Windows.Services.Store** 命名空間支援最新的附加元件類型 (例如 Microsoft Store 管理的消費性附加元件及訂閱)，並且設計成與 Windows 開發人員中心和 Microsoft Store 所支援的未來產品與功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需有關啟用使用**Windows.Services.Store**命名空間的應用程式內產品購買的詳細資訊，請參閱[這篇文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
+> 這篇文章示範如何使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間的成員來啟用在應用程式內產品購買。 此命名空間不再提供新功能更新，建議您改為使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 **Windows.Services.Store**命名空間支援最新的附加元件類型，例如市集管理的消費性附加元件和訂閱，並設計成與未來產品與合作夥伴中心和市集所支援的功能類型相容。 **Windows.Services.Store** 命名空間在 Windows 10 (版本 1607) 中引進，只適用於目標為 Visual Studio 中 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的專案。 如需有關啟用使用**Windows.Services.Store**命名空間的應用程式內產品購買的詳細資訊，請參閱[這篇文章](enable-in-app-purchases-of-apps-and-add-ons.md)。
 
 > [!NOTE]
 > 試用版的 App 無法提供應用程式內產品。 使用試用版 App 的客戶只有在購買 App 的完整版本後，才能購買應用程式內產品。
@@ -54,7 +54,7 @@ ms.locfileid: "5945620"
     * "RainbowThemePack"
 
   > [!NOTE]
-  > 您在程式碼中使用的應用程式內購買選項權杖，必須符合當您[在應用程式開發人員中心儀表板中為應用程式定義對應的附加元件](../publish/add-on-submissions.md)時指定的[產品識別碼](../publish/set-your-add-on-product-id.md#product-id)值。
+  > 您在您的程式碼中使用的應用程式內購買選項權杖，必須符合您指定何時的[產品識別碼](../publish/set-your-add-on-product-id.md#product-id)值您[定義對應的附加元件，在合作夥伴中心的應用程式](../publish/add-on-submissions.md)。
 
 2.  **以條件性區塊來撰寫功能的程式碼**
 
@@ -80,10 +80,10 @@ ms.locfileid: "5945620"
 
 ## <a name="step-4-configure-the-in-app-product-offer-in-the-store"></a>步驟 4：在市集中設定應用程式內產品購買選項
 
-在開發人員中心儀表板中，瀏覽到您的應用程式並建立符合應用程式內產品購買選項的[附加元件](../publish/add-on-submissions.md)。 定義產品識別碼、類型、價格與附加元件的其他屬性。 請確定在測試時，將它設定為與 WindowsStoreProxy.xml 相同的設定。
+在合作夥伴中心，瀏覽至您的應用程式，並[建立附加元件](../publish/add-on-submissions.md)符合您的應用程式內產品購買選項。 定義產品識別碼、類型、價格與附加元件的其他屬性。 請確定在測試時，將它設定為與 WindowsStoreProxy.xml 相同的設定。
 
   > [!NOTE]
-  > 您在程式碼中使用的應用程式內購買選項權杖，必須符合當您在應用程式開發人員中心儀表板中為應用程式定義對應的附加元件時指定的[產品識別碼](../publish/set-your-add-on-product-id.md#product-id)值。
+  > 您在您的程式碼中使用的應用程式內購買選項權杖，必須符合您指定在合作夥伴中心中對應的附加元件的[產品識別碼](../publish/set-your-add-on-product-id.md#product-id)值。
 
 ## <a name="remarks"></a>備註
 

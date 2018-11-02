@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: c1fb44457b8589c9e1525de9c8dca2801c0c47bf
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940317"
+ms.locfileid: "5969689"
 ---
 # <a name="get-add-on-acquisitions"></a>取得附加元件下載數
 
-使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式之附加元件的彙總下載數資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)也有提供這項資訊。
+使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得您應用程式之附加元件的彙總下載數資料 (JSON 格式)。 這項資訊也會在合作夥伴中心中的[附加元件下載數報告](../publish/add-on-acquisitions-report.md)中提供的。
 
 ## <a name="prerequisites"></a>先決條件
 
