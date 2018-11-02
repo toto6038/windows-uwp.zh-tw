@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 升階, Microsoft Store 服務
 ms.localizationpriority: medium
 ms.openlocfilehash: d35aa246c1eb26751f11132ee5681052ad6e8c2a
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5885488"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935747"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 

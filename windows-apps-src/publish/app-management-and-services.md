@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 112f69704c502f1aa394aa1dd8d544aa0728477d
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.openlocfilehash: 7ffac7fa77191bbe56e7aa3870c71c3c02254d72
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5881420"
+ms.locfileid: "5933941"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -39,12 +39,9 @@ ms.locfileid: "5881420"
 
 ## <a name="maps"></a>地圖
 
-若要在先前發佈應用程式適用於 Windows Phone 8.1 和較舊版本中使用地圖服務，您需要在您的應用程式程式碼中包含地圖服務應用程式識別碼和權杖。 您可以在 **\[地圖\]** 頁面的 **\[服務\]** 區段中取得這個權杖。
+若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 了解如何從 Bing 地圖開發人員中心要求地圖驗證金鑰，並將它新增到您的應用程式，請參閱[要求地圖驗證金鑰](../maps-and-location/authentication-key.md)如需詳細資訊。 
 
-> [!NOTE]
-> 若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 如需詳細資訊，請參閱[要求地圖驗證金鑰](https://docs.microsoft.com/windows/uwp/maps-and-location/authentication-key)。
-
-如需詳細資訊，請參閱[使用地圖服務](use-map-services.md)。
+僅針對先前發佈應用程式適用於 Windows Phone 8.1 和較舊版本中使用 [**地圖**] 頁面。 若要在這些應用程式中使用地圖服務，您將需要以要求在您的應用程式程式碼中包含地圖服務應用程式識別碼和權杖。 當您按一下**取得權杖**時，我們將會產生地圖服務應用程式識別碼 (**ApplicationID**) 與地圖驗證語彙基元 (**AuthenticationToken**) 的服務，您的應用程式。 請務必將這些值新增到您的程式碼之前您套件並提交您的應用程式。 如需詳細資訊，請參閱[如何新增地圖控制項到頁面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
 ## <a name="product-collections-and-purchases"></a>產品集合與購買
 

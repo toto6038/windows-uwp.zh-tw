@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7327304e2b42ff5ff71be136220b58e99c6228d2
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5872832"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5935102"
 ---
 # <a name="rasterizer-ordered-view-rov"></a>轉譯器排序檢視 (ROV)
 
