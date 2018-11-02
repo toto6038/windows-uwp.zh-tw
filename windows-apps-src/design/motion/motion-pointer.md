@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10、uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c54218582b3ef31df07a5969ad5e83be7af2952
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5884410"
+ms.locfileid: "5933379"
 ---
 # <a name="pointer-click-animations"></a>指標按一下動畫
 

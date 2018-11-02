@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
 ms.openlocfilehash: 481ec666c327b15088d8e60577c51fa1697918fe
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/01/2018
-ms.locfileid: "5888496"
+ms.locfileid: "5934079"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>將資料夾上傳到開發目錄
 

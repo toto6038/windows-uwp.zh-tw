@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, java
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a3280b6b9c0f012f36588d6eb0297b415e07f78
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5863178"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5930734"
 ---
 # <a name="java-sample-submissions-for-apps-add-ons-and-flights"></a>Java 範例：提交應用程式、附加元件與正式發行前小眾測試版
 

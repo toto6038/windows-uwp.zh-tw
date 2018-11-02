@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
 ms.openlocfilehash: 123934c911f342dd57033c8e204e58bc00a5f18f
-ms.sourcegitcommit: cd00bb829306871e5103db481cf224ea7fb613f0
+ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "5861407"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "5933896"
 ---
 # <a name="native-ads"></a>原生廣告
 
@@ -53,7 +53,7 @@ ms.locfileid: "5861407"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#Variables)]
 
-6.  In code that runs on startup (for example, in the constructor for the page), instantiate the **NativeAdsManagerV2** object and wire up event handlers for the **AdReady** and **ErrorOccurred** events of the object.
+6.  在啟動時執行的程式碼中 (例如，頁面的建構函式中)，起始 **NativeAdsManagerV2** 物件並為物件的 **AdReady** 和 **ErrorOccurred** 事件連結事件處理常式。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ConfigureNativeAd)]
 
@@ -97,7 +97,7 @@ ms.locfileid: "5861407"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
-9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
+9.  定義 **ErrorOccurred** 事件的事件處理常式來處理原生廣告的相關錯誤。 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
