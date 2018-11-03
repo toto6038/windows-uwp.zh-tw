@@ -7,12 +7,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, python
 ms.localizationpriority: medium
-ms.openlocfilehash: 53267caadcb903ad7eebe31d3a38c5be57a34036
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 86c753e51d15b142cdcd7e54b3ed0304d13169b6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5941229"
+ms.locfileid: "5983896"
 ---
 # <a name="python-sample-app-submission-with-game-options-and-trailers"></a>Python 範例：提交含遊戲選項與預告片的應用程式
 
@@ -30,7 +30,7 @@ ms.locfileid: "5941229"
 
 此程式碼會呼叫其他範例類別和函式，以使用 Microsoft Store 提交 API 來建立並認可包含遊戲選項和預告片的 App 提交。 若要自行調整這個程式碼：
 
-* 將 ```tenant``` 變數指派給應用程式的租用戶識別碼，並指派 ```client``` 和 ```secret``` 變數給應用程式的用戶端識別碼和金鑰。 如需詳細資訊，請參閱[如何將 Azure AD 應用程式與您的 Windows 開發人員中心帳戶產生關聯](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-windows-dev-center-account)。
+* 將 ```tenant``` 變數指派給應用程式的租用戶識別碼，並指派 ```client``` 和 ```secret``` 變數給應用程式的用戶端識別碼和金鑰。 如需詳細資訊，請參閱[如何將 Azure AD 應用程式，您的合作夥伴中心帳戶產生關聯](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 * 將 ```application_id``` 變數指派給您要建立提交之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。
 
 > [!div class="tabbedCodeSnippets"]

@@ -8,18 +8,18 @@ ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評分
 ms.localizationpriority: medium
-ms.openlocfilehash: 892e3ae8ffcc8277f09afe8d1aef41e9905c2f85
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5922855"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5983702"
 ---
 # <a name="get-app-ratings"></a>取得應用程式評分
 
-使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得彙總評分資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[評論報告](../publish/reviews-report.md)也有提供這項資訊。
+使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得彙總評分資料 (JSON 格式)。 這項資訊也會在合作夥伴中心中的[評論] 報告](../publish/reviews-report.md)中提供的。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 若要使用這個方法，您必須先進行下列動作：

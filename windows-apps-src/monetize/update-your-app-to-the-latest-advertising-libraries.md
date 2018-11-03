@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e57cc24554f851ba79cfc47e917b92b3ad3047e
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 48fc818c1ae7a9a46912ff52c2b00b07f19c366e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5936521"
+ms.locfileid: "5985661"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
 
@@ -27,9 +27,9 @@ ms.locfileid: "5936521"
 
 * 將不會再為您應用程式中的任何 **AdControl** 提供橫幅廣告，您將無法再從這些控制項賺取廣告收入。
 
-* When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
+* 當您應用程式中的 **AdControl** 要求新的廣告時，將會引發控制項的 **ErrorOccurred** 事件，而事件引數的 **ErrorCode** 屬性值將會是 **NoAdAvailable**。
 
-* 與您應用程式相關的任何廣告單元將會被停用。 您無法從您的開發人員中心帳戶移除這些停用的廣告單元。 如果您更新應用程式為使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
+* 與您應用程式相關的任何廣告單元將會被停用。 您無法從您 DePartnerv 中心帳戶移除這些停用的廣告單元。 如果您更新應用程式為使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
 
 * 也不再提供橫幅廣告給多個 app 中使用的任何廣告單元。 請確定您的每個廣告單元只在單一 app 中使用。
 
@@ -88,4 +88,4 @@ ms.locfileid: "5936521"
 
 請測試您的應用程式以確定它如預期般顯示橫幅廣告。
 
-如果「Microsoft Store」中已經有您的舊版應用程式，請在「開發人員中心」儀表板中，為已更新的應用程式[建立新的提交項目](../publish/app-submissions.md)來重新發佈您的應用程式。
+如果[建立新的提交](../publish/app-submissions.md)在合作夥伴中心來重新發佈您的應用程式的應用程式已更新的 「 市集 」 中已經有您的應用程式的先前版本。

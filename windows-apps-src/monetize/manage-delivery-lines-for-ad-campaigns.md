@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 346383504abd7927cf863afa59bcb574ddd2495d
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: e3d4a09524f1ebc0e944036bd9458b1b32ee04d3
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939313"
+ms.locfileid: "5980187"
 ---
 # <a name="manage-delivery-lines"></a>管理廣告播送行
 
@@ -21,7 +21,7 @@ ms.locfileid: "5939313"
 
 如需有關播送行和廣告行銷活動、目標設定檔及廣告素材之間關聯性的詳細資訊，請參閱[使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
->**注意**&nbsp;&nbsp;使用此 API 成功地建立廣告行銷活動的廣告播送行之前，您必須先[在開發人員中心儀表板中使用 **\[宣傳您的應用程式\]** 頁面建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且必須在此頁面上至少新增一個付款方式。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 使用此 API 所建立的廣告行銷活動將會自動向儀表板中 **\[宣傳您的應用程式\]** 頁面上所選擇預設付款方式收取費用。
+>**注意：**&nbsp;&nbsp;成功，您可以建立使用此 API 的廣告行銷活動的播送行，您必須先[建立一個付費的廣告行銷活動使用合作夥伴中心**廣告行銷活動**] 頁面](../publish/create-an-ad-campaign-for-your-app.md)，而且必須新增至少一個付款之前在此頁面上收取費用。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 使用 API 所建立的廣告行銷活動將會自動向合作夥伴中心**廣告行銷活動**] 頁面上所選擇預設付款方式收取費用。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -30,7 +30,7 @@ ms.locfileid: "5939313"
 * 如果您尚未完成，請先完成 Microsoft Store 促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
   > [!NOTE]
-  > 做為必要條件的一部分，請務必[在開發人員中心儀表板中至少建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且在儀表板中為此廣告行銷活動至少新增一個付款方式。 使用此 API 所建立的廣告播送行將會自動向儀表板中 **\[宣傳您的應用程式\] **頁面上所選擇預設付款方式收取費用。
+  > 做為必要條件的一部分，請確定該您[建立合作夥伴中心中的至少一個付費的廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且，您將新增至少一個廣告行銷活動的付款方式在合作夥伴中心。 使用此 API 所建立的廣告播送行將會自動向合作夥伴中心**廣告行銷活動**] 頁面上所選擇預設付款方式收取費用。
 
 * [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 

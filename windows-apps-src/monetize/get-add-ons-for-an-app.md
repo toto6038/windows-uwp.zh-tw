@@ -1,25 +1,25 @@
 ---
 author: Xansky
 ms.assetid: E59FB6FE-5318-46DF-B050-73F599C3972A
-description: 在 Microsoft Store 提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的 App 擷取 App 內購買相關資訊。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來擷取已登錄到您的合作夥伴中心的應用程式的應用程式內購買相關資訊。
 title: 取得 App 的附加元件
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9924bf749499318c257001eafffabd902cddaa9
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3689a4fe16d016bb23bb7141630fd1f6a7b83142
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932675"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5978561"
 ---
 # <a name="get-add-ons-for-an-app"></a>取得 App 的附加元件
 
-使用 Microsoft Store 提交 API 中的這個方法，為註冊到您 Windows 開發人員中心帳戶的應用程式列出附加元件。
+在 Microsoft Store 提交 API 中使用這個方法，來列出附加元件，針對已登錄到您的合作夥伴中心帳戶的 app。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -111,7 +111,7 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到任何附加元件。 |
-| 409  | 附加元件使用[目前 Microsoft Store 提交 API 不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。  |
+| 409  | 附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。  |
 
 
 ## <a name="related-topics"></a>相關主題

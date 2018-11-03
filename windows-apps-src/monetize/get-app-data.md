@@ -1,25 +1,25 @@
 ---
 author: Xansky
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: 在 Microsoft Store 提交 API 中使用這些方法，針對已登錄到您 Windows 開發人員中心帳戶的應用程式擷取資料。
+description: 在 Microsoft Store 提交 API 中使用這些方法，來擷取資料來為登錄到您的合作夥伴中心帳戶的應用程式。
 title: 取得 App 資料
 ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f30e38a05eefe3e51f0ba632585f269b96efb8
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ecda61bff6fac407dbde175f584a09d6b871d989
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945118"
+ms.locfileid: "5985978"
 ---
 # <a name="get-app-data"></a>取得 App 資料
 
-在 Microsoft Store 提交 API 中使用下列方法，取得您開發人員中心帳戶中現有應用程式的資料。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+在 Microsoft Store 提交 API 中使用下列方法，取得您的合作夥伴中心帳戶中現有應用程式的資料。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
-使用這些方法之前，應用程式必須已經存在於開發人員中心帳戶中。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
+您可以使用這些方法之前，則應用程式必須已經存在於您的合作夥伴中心帳戶中。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
 
 <table>
 <colgroup>
@@ -102,7 +102,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 | primaryName   | 字串  | 應用程式的主要名稱。      |
 | packageFamilyName | 字串  | 應用程式的套件系列名稱      |
 | packageIdentityName          | 字串  | 應用程式的套件識別資料名稱。                       |
-| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到 Windows 開發人員中心儀表板中應用程式的[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details) 頁面上顯示的 **Package/Identity/Publisher** 值。       |
+| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到合作夥伴中心中的應用程式的[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)頁面顯示的**Package/Identity/Publisher**值。       |
 | firstPublishedDate      | 字串  | 第一次發佈應用程式的日期 (格式為 ISO 8601)。   |
 | lastPublishedApplicationSubmission       | 物件 | [提交資源](#submission_object)，其提供應用程式最新發行提交的資訊。    |
 | pendingApplicationSubmission        | 物件  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   
@@ -157,7 +157,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 | 值           | 類型    | 描述           |
 |-----------------|---------|------------------------|
-| flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 此值由開發人員中心提供。  |
+| flightId            | 字串  | 套件正式發行前小眾測試版的識別碼。 這個值是由合作夥伴中心提供。  |
 | friendlyName           | 字串  | 開發人員指定的套件正式發行前小眾測試版名稱。   |
 | lastPublishedFlightSubmission       | 物件 | [提交資源](#submission_object)，其提供套件正式發行前小眾測試版最新發行提交的資訊。   |
 | pendingFlightSubmission        | 物件  |  [提交資源](#submission_object)，其提供套件正式發行前小眾測試版目前擱置提交的資訊。  |    

@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, view products, Microsoft Store 集合, 檢視產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 1dded9b66fbae4f65b936335eda406d8773420c4
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920052"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5979103"
 ---
 # <a name="query-for-products"></a>查詢產品
 
@@ -134,7 +134,7 @@ CollectionItemContractV6 物件包含下列參數。
 | devOfferId           | 字串             | 來自 App 內購買的優惠識別碼。              | 否       |
 | endDate              | datetime           | 項目的結束日期。              | 是      |
 | fulfillmentData      | 字串             | 不適用         | 否       |
-| inAppOfferToken      | 字串             | 指派給 Windows 開發人員中心儀表板中項目的開發人員特定產品識別碼字串。 例如，產品識別碼是 *「product123」*。 | 否       |
+| inAppOfferToken      | 字串             | 開發人員指定產品識別碼字串，會指派給合作夥伴中心中的項目。 舉例來說，產品識別碼是 *「 product123 」*。 | 否       |
 | itemId               | 字串             | 能將此集合項目與使用者擁有的其他項目區別的識別碼。 每個產品的此識別碼都是唯一的。   | 是      |
 | localTicketReference | 字串             | 要求本文中先前所提供 *localTicketReference* 的識別碼。                  | 是      |
 | modifiedDate         | datetime           | 此項目上次修改的日期。              | 是      |

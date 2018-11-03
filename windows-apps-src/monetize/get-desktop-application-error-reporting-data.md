@@ -7,16 +7,16 @@ ms.date: 09/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: fb48efb2a1792d1c6691dfd38d0a5e36faac6e0b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: eb0081024f59af5180f5018664934277e7fad835
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5919328"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5983137"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>取得傳統型應用程式的錯誤報告資料
 
-在 Microsoft Store 分析 API 使用此方法，取得傳統型應用程式之彙總錯誤報告資料，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 這個方法只能擷取過去 30 天內發生的錯誤。 「Windows 開發人員中心」儀表板中傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)也提供此資訊。
+在 Microsoft Store 分析 API 使用此方法，取得傳統型應用程式之彙總錯誤報告資料，而您已將其加入到 [Windows 傳統型應用程式](https://msdn.microsoft.com/library/windows/desktop/mt826504)。 這個方法只能擷取過去 30 天內發生的錯誤。 這項資訊也會在合作夥伴中心的傳統型應用程式的[健康情況報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)中提供的。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -46,7 +46,7 @@ ms.locfileid: "5919328"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要擷取其錯誤報告資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，請開啟任何[傳統型應用程式的開發人員中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504) (例如**健康報告**)，並從 URL 擷取產品識別碼。 |  是  |
+| applicationId | 字串 | 您想要擷取其錯誤報告資料的傳統型應用程式的產品識別碼。 若要取得傳統型應用程式的產品識別碼，開啟任何 （例如**健康情況報告**） 的[傳統型應用程式在合作夥伴中心分析報告](https://msdn.microsoft.com/library/windows/desktop/mt826504)，並從 URL 擷取產品識別碼。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期，格式為 ```mm/dd/yyyy```。 預設為目前的日期。<p/><p/>**注意：**&nbsp;&nbsp;這個方法只能擷取過去 30 天內發生的錯誤。  |  否  |
 | endDate | 日期 | 要擷取錯誤報告資料之日期範圍的結束日期，格式為 ```mm/dd/yyyy```。 預設為目前的日期。   |  否  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |

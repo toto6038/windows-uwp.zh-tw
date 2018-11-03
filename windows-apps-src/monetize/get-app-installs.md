@@ -8,17 +8,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式安裝數
 ms.localizationpriority: medium
-ms.openlocfilehash: 902ff653d0c573ba5ab094fa81607796b4f01aae
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 72efc20e218cdf718b67c949bd7c71108921bf9c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939210"
+ms.locfileid: "5978212"
 ---
 # <a name="get-app-installs"></a>取得 App 安裝
 
 
-在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總安裝資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[下載數報告](../publish/acquisitions-report.md)也有提供這項資訊。
+在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總安裝資料 (JSON 格式)。 這項資訊也會在合作夥伴中心[下載數報告](../publish/acquisitions-report.md)中提供的。
 
 ## <a name="prerequisites"></a>先決條件
 

@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: AC74B4FA-5554-4C03-9683-86EE48546C05
-description: 使用 Microsoft Store 提交 API 中的這個方法，將新的或或更新的附加元件提交認可到 Windows 開發人員中心。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來將新的或或更新的附加元件提交認可到合作夥伴中心。
 title: 認可附加元件提交
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 52dce19410741c0ac7b006b14d572ec7280a5e2c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6f0d7ed15d3328ceffa9aa65a38c129f735c41ba
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926245"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5985497"
 ---
 # <a name="commit-an-add-on-submission"></a>認可附加元件提交
 
-使用 Microsoft Store 提交 API 中的這個方法，將新的或或更新的附加元件 (也稱為應用程式內產品或 IAP) 提交認可到 Windows 開發人員中心。 認可動作會警示開發人員中心提交資料已上傳 (包括任何相關的圖示)。 在回應中，開發人員中心會認可對提交資料所做的變更以供擷取和發佈。 認可作業成功之後，提交的變更會顯示在開發人員中心儀表板中。
+在 Microsoft Store 提交 API 中使用這個方法，來將新的或或更新附加元件 （也稱為應用程式內產品或 IAP） 提交認可到合作夥伴中心。 認可動作會警示合作夥伴中心，對提交資料已上傳 （包括任何相關的圖示）。 在回應中，合作夥伴中心會針對擷取和發佈對提交資料認可變更。 認可作業成功之後，提交，變更就會顯示在合作夥伴中心。
 
 如需認可作業如何在使用 Microsoft Store 提交 API 提交附加元件的程序中進行的詳細資訊，請參閱[管理附加元件提交](manage-add-on-submissions.md)。
 
@@ -49,11 +49,11 @@ ms.locfileid: "5926245"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字串 | 必要。 包含您想要認可提交之附加元件的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板上取得，並且包含在[取得所有附加元件](get-all-add-ons.md)和[建立附加元件](create-an-add-on.md)要求的回應資料中。 |
-| submissionId | 字串 | 必要。 您想要認可之提交的識別碼。 在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中有提供此識別碼。 對於開發人員中心儀表板中所建立的提交，這個 ID 也適用於儀表板中提交頁面的 URL。  |
+| inAppProductId | 字串 | 必要。 包含您想要認可提交之附加元件的 Store 識別碼。 在合作夥伴中心，是使用 「 市集識別碼 」，並且包含在[取得所有附加元件](get-all-add-ons.md)，並[建立附加元件](create-an-add-on.md)的要求的回應資料中。 |
+| submissionId | 字串 | 必要。 您想要認可之提交的識別碼。 在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中有提供此識別碼。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -91,7 +91,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
-| 409  | 找到指定的提交，但無法以其目前的狀態認可，或附加元件使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |
+| 409  | 找到指定的提交，但無法認可以其目前的狀態，或附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相關主題

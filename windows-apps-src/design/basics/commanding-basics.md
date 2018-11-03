@@ -11,32 +11,40 @@ ms.date: 10/01/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cf3b107ad24b34ed5eeb836fbab5b83d6d2f80b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 028cc9586180f2d94337282c3ed0cd58317b539b
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5943231"
+ms.locfileid: "5983275"
 ---
-#  <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
+# <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
-在通用 Windows 平台 (UWP) app 中，*命令元素*是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。 本文說明通用命令元素、支援的互動，以及裝載命令的命令介面。
+在通用 Windows 平台 (UWP) app 中，*命令元素*是讓使用者執行動作，例如傳送電子郵件、 刪除項目，或提交表單的互動式 UI 元素。 *命令介面*都被組成通用命令元素、 裝載它們的命令表面、 它們支援的互動，以及它們所提供的體驗。
 
-## <a name="provide-the-right-type-of-interactions"></a>提供正確的互動類型
+## <a name="provide-the-best-command-experience"></a>提供最佳的命令體驗
 
-設計命令介面時，最重要的是決定使用者應該可以做甚麼事情。 若要規劃正確的互動類型，請專注於您的 App - 考慮您要實現的使用者體驗，以及使用者需執行的步驟。 一旦您決定希望使用者完成的事，就可以為他們提供做事所需的工具。
+最重要的命令介面是哪些您嘗試讓使用者完成。 當您計劃您的應用程式的功能，請考慮要完成這些工作與您想要啟用的使用者體驗的必要步驟。 一旦您已完成的初始草稿的這些體驗，您可以進行決策的工具和互動來實作它們。
 
-以下是您可能想要提供 App 的一些互動：
+以下是一些常見的應用程式體驗：
 
-- 傳送或提交資訊 
+- 傳送或提交資訊
 - 選取設定和選擇
 - 搜尋和篩選內容
 - 開啟、儲存和刪除檔案
 - 編輯或建立內容
 
-## <a name="use-the-right-command-element-for-the-interaction"></a>針對互動使用正確的命令元素
+發揮創意與您的命令體驗的設計。 選擇裝置的輸入您的應用程式支援，以及每個裝置的應用程式會如何回應。 藉由支援廣泛的功能和喜好設定中，您可以讓您的應用程式做為可用性、 可攜性，並盡可能無障礙。
 
-使用正確的元素實現命令互動，可以讓人感覺出 app 是直覺易用的，還是混亂難用的 app。 通用 Windows 平台 (UWP) 提供許多可在您 App 中使用的命令元素。 以下是一些最常見的控制項清單以及它們可啟用的互動摘要。
+
+
+<!--
+When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
+-->
+
+## <a name="choose-the-right-command-elements"></a>選擇正確的命令元素
+
+使用正確的元素中的命令介面，可以讓 app 是直覺方便使用與難以、 令人混淆的應用程式之間的差異。 在通用 Windows 平台 (UWP) 提供一組完整的命令元素。 以下是一些最常見的 UWP 命令元素的清單。
 
 :::row:::
     :::column:::
@@ -92,11 +100,13 @@ ms.locfileid: "5943231"
 
 ## <a name="place-commands-on-the-right-surface"></a>在正確介面上放置命令
 
-在您的應用程式，包括 app 畫布或特殊命令容器，例如命令列、 命令列飛出視窗、 功能表列和對話方塊中，您可以在數個表面放置命令元素。
+在您的應用程式，包括 app 畫布或特殊命令容器，例如命令列、 命令列飛出視窗、 功能表列或對話方塊中，您可以在數個表面放置命令元素。
 
-請注意，可能的話，您應該讓使用者操作直接內容，而不是使用命令來處理內容。 例如，讓使用者拖放清單項目來重新排列清單，而不要使用向上和向下命令按鈕。
+一律嘗試讓使用者直接操作內容，而非透過命令，該內容，例如拖放功能以重新排列清單項目，而不是向上和向下命令按鈕上的動作。 
 
-如果使用者無法直接操作內容，則在您 App 中的命令介面上放置下列命令元素。 以下是一些常用的命令介面的清單。
+不過，這可能無法使用某些輸入裝置，或當儘特定使用者的能力和喜好設定。 在這些情況下，提供多個命令能供性資料，並在您的應用程式中的命令介面上放置下列命令元素。
+
+以下是一些常用的命令介面的清單。
 
 :::row:::
     :::column:::
@@ -132,9 +142,12 @@ ms.locfileid: "5943231"
         <p>UWP also provides a set of traditional menus and context menus; for more info, see the <a href="../controls-and-patterns/menus.md">menus and context menus overview</a>.</p>
 :::row-end:::
 
-## <a name="provide-feedback-for-interactions"></a>提供有關互動的意見反應
+## <a name="provide-command-feedback"></a>提供命令意見反應 
 
-意見反應可溝通命令結果，並讓使用者了解他們完成的操作以及後續動作。 意見反應最好能自然整合在 UI 中，除非絕對必要，否則不讓使用者被打斷，或是執行其他動作。 
+命令的意見反應會傳達給使用者，互動或命令已偵測到、 它已在如何解譯和處理，和是否它是否成功。 這可協助使用者了解他們完成，以及它們可以後續動作。 意見反應最好能自然整合在 UI 中，除非絕對必要，否則不讓使用者被打斷，或是執行其他動作。
+
+> [!NOTE]
+> 沒有提供意見反應，除非絕對必要，意見反應沒有可用的其他地方。 簡潔、 整齊除非您要新增的值，讓您的應用程式 UI。
 
 以下是在 App 中提供意見反應的一些方式。
 
@@ -174,7 +187,7 @@ ms.locfileid: "5943231"
 
 ### <a name="when-to-confirm-or-undo-actions"></a>確認或復原動作的時機
 
-無論是設計多良好的使用者介面和多細心的使用者，在有些時候使用者還是會執行意料外的動作而想取消。 在這些情況下，應用程式透過要求使用者確認執行動作，或提供復原最近動作的功能會十分有幫助。
+無論是設計多良好應用程式的 UI 時，所有使用者都執行動作，而想細心。 您的應用程式可協助在這些情況下，透過要求確認的動作，或提供復原最近動作的方式。
 
 :::row:::
     :::column:::

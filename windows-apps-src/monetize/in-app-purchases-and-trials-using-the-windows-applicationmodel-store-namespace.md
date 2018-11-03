@@ -8,12 +8,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 330631afed95c3b0082de69d9369a62aad5a66d5
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 28fe27cc4464598414fec11d6812e2e9ea377aff
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5945845"
+ms.locfileid: "5978953"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 
@@ -22,7 +22,7 @@ ms.locfileid: "5945845"
 本節中的文章針對數個常見的案例，提供使用 **Windows.ApplicationModel.Store** 命名空間中成員的深入指引及程式碼範例。 如需 UWP app 中 App 內購買相關基本概念的概觀，請參閱 [App 內購買和試用版](in-app-purchases-and-trials.md)。 如需示範如何使用 **Windows.ApplicationModel.Store** 命名空間來實作試用版和 App 內購買的完整範例，請參閱[ Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/win10-1507/Samples/Store)。
 
 > [!IMPORTANT]
-> **Windows.ApplicationModel.Store**命名空間不再以新功能更新。 如果您專案的目標為 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本 (也就是，您以 Windows 10 版本 1607 或更新版本為目標)，建議您改用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 **Windows.ApplicationModel.Store** 命名空間不受支援於使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)之 Windows 傳統型應用程式，或應用程式，或使用開發人員中心之開發沙箱遊戲的應用程式或遊戲 (例如與 Xbox Live 整合的任何遊戲)。 這些產品必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
+> **Windows.ApplicationModel.Store**命名空間不再以新功能更新。 如果您專案的目標為 Visual Studio 中的 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本 (也就是，您以 Windows 10 版本 1607 或更新版本為目標)，建議您改用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間。 如需詳細資訊，請參閱 [App 內購買和試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。 使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)的 Windows 傳統型應用程式中，或使用合作夥伴中心開發沙箱的遊戲或應用程式不支援**Windows.ApplicationModel.Store**命名空間 （例如，這種情況的任何遊戲，與 Xbox Live 整合）。 這些產品必須使用 **Windows.Services.Store** 命名空間來實作 App 內購買和試用版。
 
 ## <a name="get-started-with-the-currentapp-and-currentappsimulator-classes"></a>開始使用 CurrentApp 和 CurrentAppSimulator 類別
 
@@ -390,7 +390,7 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 |  **AppId**  |    是   |  1   |   識別 Microsoft Store 中 App 的 GUID。 測試時可以是任何 GUID。        |
 |  **LinkUri**  |    是  |  1   |    Microsoft Store 清單頁面的 URI。 測試時可以是任何有效的 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客戶的國家/地區。         |
-|  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 此值與您在提交 App 時在開發人員中心儀表板中指定的值相同。 Microsoft Store 所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
+|  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是您在合作夥伴中心提交時指定您應用程式相同的值。 Microsoft Store 所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
 |  [MarketData](#marketdata-child-of-app)  |    是  |  1 或以上      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
 
 <span id="marketdata-child-of-app"/>

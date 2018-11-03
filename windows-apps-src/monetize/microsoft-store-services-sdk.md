@@ -8,16 +8,16 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: d53e5ced4468d104d2b60174c7fc4cd6c30cf0c7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933823"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5984907"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>透過 Microsoft Store Services SDK 與客戶互動
 
-Microsoft Store Services SDK 提供可協助您在「通用 Windows 平台」(UWP) app 中進行客戶業務開發的功能，例如將開發人員中心目標式通知傳送到您的 App，以及在您的 App 中執行 A/B 實驗。 此 SDK 是適用於 Visual Studio 2015 及後續 Visual Studio 版本的擴充功能。
+Microsoft Store Services SDK 提供功能，協助您吸引客戶在您的通用 Windows 平台 (UWP) 應用程式，例如將目標式的通知傳送到您的應用程式和執行 A / B 實驗中您的應用程式。 此 SDK 是適用於 Visual Studio 2015 及後續 Visual Studio 版本的擴充功能。
 
 > [!NOTE]
 > 若要在您的 UWP app 中顯示廣告，請使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 而非 Microsoft Store Services SDK。 Advertising 程式庫已從 Microsoft Store Services SDK 移至 Microsoft Advertising SDK。 如需詳細資訊，請參閱[在您的應用程式中顯示廣告](display-ads-in-your-app.md)。
@@ -30,14 +30,14 @@ Microsoft Store Services SDK 目前支援下列 UWP app 案例。 如需 API 參
 
 |  案例  |  描述   |
 |------------|----------------|
-|  [在您的 UWP app 中使用 A/B 測試來執行實驗](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 在您於「開發人員中心」儀表板中定義實驗之後，請使用 [StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation) 類別來取得您 App 中實驗的變化、使用此資料來修改您正在測試的功能行為，然後使用 [LogForVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation) 方法將檢視事件和轉換事件傳送至「開發人員中心」。 最後，使用您的儀表板來檢視結果並管理實驗。  |
-|  [從您的 UWP app 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，在「開發人員中心」儀表板的[意見反應報告](../publish/feedback-report.md)中管理此意見反應。 |
-|  [設定您的 UWP app 以接收開發人員中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)    |  在您的 UWP app 中使用 [StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager) 類別來登錄 App，以接收您使用「Windows 開發人員中心」儀表板傳送給您客戶的目標式推播通知。  |
-|   [在開發人員中心中針對使用方式報告記錄您 UWP app 中的自訂事件](log-custom-events-for-dev-center.md)   |  在您的 UWP app 中使用 [StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) 類別，以在「開發人員中心」中記錄與您 App 關聯的自訂事件。 然後，在「開發人員中心」儀表板中[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)的 **\[自訂事件\]** 區段中，檢閱自訂事件的發生次數總計。  |
+|  [在您的 UWP app 中使用 A/B 測試來執行實驗](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 您在合作夥伴中心中定義實驗之後，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)類別來取得實驗變化中您的應用程式、 使用此資料來修改您測試，此功能的行為，然後使用 LogForVariation [](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法將檢視事件和轉換事件傳送至合作夥伴中心。 最後，使用合作夥伴中心來檢視結果並管理實驗。  |
+|  [從您的 UWP app 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，管理此[意見反應報告](../publish/feedback-report.md)合作夥伴中心中的意見反應。 |
+|  [設定您的 UWP app 以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)    |  在您的 UWP app 中使用[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)類別，來註冊您的應用程式以接收目標式推播通知您傳送給您使用合作夥伴中心的客戶。  |
+|   [在您的 UWP 應用程式的使用方式報告，在合作夥伴中心記錄自訂事件](log-custom-events-for-dev-center.md)   |  在您的 UWP app 中使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)類別，來與您在合作夥伴中心的應用程式相關聯的自訂事件記錄。 然後，檢閱自訂事件[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作夥伴中心中的**自訂事件**] 區段中的次數總計。  |
 
 <span id="prerequisites" />
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 Microsoft Store Services SDK 需要：
 
@@ -143,5 +143,5 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 程�
 * [Microsoft Store Services SDK API 參考](https://docs.microsoft.com/uwp/api/overview/engagement)
 * [使用 A/B 測試執行實驗](run-app-experiments-with-a-b-testing.md)
 * [從您的 App 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)
-* [設定您的 App 以接收開發人員中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
-* [為開發人員中心記錄自訂事件](log-custom-events-for-dev-center.md)
+* [設定您的應用程式會接收到合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
+* [為合作夥伴中心記錄自訂事件](log-custom-events-for-dev-center.md)

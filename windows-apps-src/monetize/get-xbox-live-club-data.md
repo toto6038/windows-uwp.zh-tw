@@ -7,16 +7,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、俱樂部
 ms.localizationpriority: medium
-ms.openlocfilehash: b7a37b30634006f0865d0ba1c1c2844a7acf4139
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: fd28e6877f5b2bb3fa7d85f9dbc7c82672b7ea2f
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5946367"
+ms.locfileid: "5980038"
 ---
 # <a name="get-xbox-live-club-data"></a>取得 Xbox Live 俱樂部資料
 
-在 Microsoft Store 分析 API 中使用此方法取得[已啟用 Xbox Live 遊戲](../xbox-live/index.md) 的俱樂部資料。 「Windows 開發人員中心」儀表板中的 [Xbox 分析報告](../publish/xbox-analytics-report.md)也有提供這項資訊。
+在 Microsoft Store 分析 API 中使用此方法取得[已啟用 Xbox Live 遊戲](../xbox-live/index.md) 的俱樂部資料。 這項資訊也會在合作夥伴中心中的[Xbox 分析報告](../publish/xbox-analytics-report.md)中提供的。
 
 > [!IMPORTANT]
 > 此方法僅支援 Xbox 遊戲，或使用 Xbox Live 服務的遊戲。 這些遊戲必須通盤了解[概念核准程序](../gaming/concept-approval.md)，包括 [Microsoft 合作夥伴](../xbox-live/developer-program-overview.md#microsoft-partners)發行的遊戲，以及透過 [ [ID@Xbox程式](../xbox-live/developer-program-overview.md#id)提交的遊戲。 此方法目前不支援透過 [Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md) 發佈遊戲。

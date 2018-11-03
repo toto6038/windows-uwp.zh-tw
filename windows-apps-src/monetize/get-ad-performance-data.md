@@ -8,21 +8,21 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告, 效益
 ms.localizationpriority: medium
-ms.openlocfilehash: 30f24b2494470f60371e466bb4d1e1878475d963
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7310eeb04915933adc149165fa6774ed2f413814
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5927582"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5982800"
 ---
 # <a name="get-ad-performance-data"></a>取得廣告效益資料
 
 
 使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得應用程式的彙總廣告績效資料。 這個方法會傳回 JSON 格式的資料。
 
-這個方法所傳回的資料與「Windows 開發人員中心」儀表板上的[廣告績效報告](../publish/advertising-performance-report.md)所提供的資料相同。
+這個方法會傳回相同的資料所提供的合作夥伴中心中的[廣告績效報告](../publish/advertising-performance-report.md)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 若要使用這個方法，您必須先進行下列動作：
@@ -118,12 +118,12 @@ Authorization: Bearer <your access token>
 | applicationId       | 字串 | 您要擷取廣告績效資料之 App 的「Store 識別碼」。     |
 | applicationName     | 字串 | App 的顯示名稱。                         |
 | adUnitId           | 字串 | 廣告單位的識別碼。        |
-| adUnitName           | 字串 | 開發人員在「開發人員中心」儀表板中指定的廣告單位名稱。              |
+| adUnitName           | 字串 | 廣告單位，做為在合作夥伴中心開發人員指定的名稱。              |
 | adProvider           |  字串  |  廣告提供者的名稱   |
 | deviceType          | 字串 | 廣告刊登裝置的類型。 如需支援的字串清單，請參閱上方的[篩選欄位](#filter-fields)一節。                              |
 | market              | 字串 | 廣告刊登市場的 ISO 3166 國家/地區代碼。             |
 | accountCurrencyCode     | 字串 | 帳戶的貨幣代碼。        |
-| pubCenterAppName       |  字串  |   與「開發人員中心」中的 App 關聯的 pubCenter App 名稱。   |
+| pubCenterAppName       |  字串  |   合作夥伴中心中的應用程式相關聯的 pubCenter app 名稱。   |
 | adProviderRequests        | 整數 | 指定之廣告提供者的廣告要求次數。                 |
 | impressions           | 整數 | 廣告曝光次數。        |
 | clicks            | 整數 | 廣告點按次數。       |

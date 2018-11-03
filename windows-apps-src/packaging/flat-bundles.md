@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, 封裝, 套件設定, 一般套件組合
 ms.localizationpriority: medium
 ms.openlocfilehash: b877996dd5fa32ac764fb587092f501320931527
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5924308"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5984356"
 ---
 # <a name="flat-bundle-app-packages"></a>一般套件組合應用程式套件 
 

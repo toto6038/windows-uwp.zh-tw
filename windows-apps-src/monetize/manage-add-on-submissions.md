@@ -1,32 +1,32 @@
 ---
 author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
-description: 在 Microsoft Store 提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理附加元件提交。
+description: 在 Microsoft Store 提交 API 中使用這些方法，來管理附加元件提交，針對已登錄到您的合作夥伴中心帳戶的應用程式。
 title: 管理附加元件提交
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: d8e3ab04c2842fc08fb8b0aa298660bfbd0cfd7f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930399"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5981585"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 
 Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱為應用程式內產品或 IAP) 提交的應用程式。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果您使用 Microsoft Store 提交 API 以建立附加元件的提交，請確定僅使用 API 變更提交，而不是開發人員中心儀表板。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> 如果您使用 Microsoft Store 提交 API 建立附加元件提交，請務必透過進一步變更提交僅使用 API，而不是在合作夥伴中心中進行變更。 如果您使用合作夥伴中心來變更最初使用 API 所建立的提交，您將不再能夠變更或是認可該提交使用 API。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 <span id="methods-for-add-on-submissions" />
 
 ## <a name="methods-for-managing-add-on-submissions"></a>管理附加元件提交的方法
 
-使用下列方法取得、建立、更新、認可或刪除附加元件提交。 使用這些方法之前，附加元件必須已經存在於開發人員中心帳戶中。 您可以在儀表板中藉由[定義其產品類型和產品識別碼](../publish/set-your-add-on-product-id.md)，或使用[管理附加元件](manage-add-ons.md)中所述的 Microsoft Store 提交 API 方法來建立附加元件。
+使用下列方法取得、建立、更新、認可或刪除附加元件提交。 您可以使用這些方法之前，附加元件必須已經存在於您的合作夥伴中心帳戶。 藉由[定義其產品類型和產品識別碼](../publish/set-your-add-on-product-id.md)，或使用 Microsoft Store 提交 API 方法中所述的[管理附加元件](manage-add-ons.md)中，您可以在合作夥伴中心建立附加元件。
 
 <table>
 <colgroup>
@@ -81,7 +81,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 若要建立附加元件的提交，請遵循此程序。
 
-1. 如果您尚未執行此動作，請先完成[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)中所述的先決條件，包括將 Azure AD 應用程式關聯至您的 Windows 開發人員中心帳戶，並取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
+1. 如果您尚未執行此動作，完成必要條件中所述[建立和管理提交使用 Microsoft Store 服務](create-and-manage-submissions-using-windows-store-services.md)，包括 Azure AD 應用程式關聯至您的合作夥伴中心帳戶，並取得您的用戶端識別碼和金鑰。 您只需執行此動作一次；有了用戶端識別碼和金鑰之後，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。  
 
 2. [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)。 您必須將此存取權杖傳遞至 Microsoft Store 提交 API 中的方法。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 
@@ -121,7 +121,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 執行下列方法來認可提交。 這將警示開發人員中心，您已經完成提交，而現在應該將更新套用至您的帳戶。 如需詳細資訊，請參閱[認可附加元件提交](commit-an-add-on-submission.md)。
+5. 執行下列方法來認可提交。 這會警示合作夥伴中心，您已完成您的提交，現在應該會將更新套用到您的帳戶。 如需詳細資訊，請參閱[認可附加元件提交](commit-an-add-on-submission.md)。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/{id}/submissions/{submissionId}/commit
@@ -135,7 +135,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
     若要確認提交狀態，請檢閱回應主體中的 *「狀態」* 值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
+7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以繼續使用先前的方法，或造訪合作夥伴中心監視提交進度。
 
 <span/>
 
@@ -232,7 +232,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 | 值      | 類型   | 描述        |
 |------------|--------|----------------------|
-| id            | 字串  | 提交的識別碼。 在回應資料中可將此識別碼用於要求，以[建立附加元件提交](create-an-add-on-submission.md)、[取得所有的附加元件](get-all-add-ons.md)，以及[取得附加元件](get-an-add-on.md)。 對於開發人員中心儀表板中所建立的提交，這個 ID 也適用於儀表板中提交頁面的 URL。  |
+| id            | 字串  | 提交的識別碼。 在回應資料中可將此識別碼用於要求，以[建立附加元件提交](create-an-add-on-submission.md)、[取得所有的附加元件](get-all-add-ons.md)，以及[取得附加元件](get-an-add-on.md)。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 | contentType           | 字串  |  附加元件中提供的[內容類型](../publish/enter-add-on-properties.md#content-type)。 這可以是下列其中一個值： <ul><li>NotSet</li><li>BookDownload</li><li>EMagazine</li><li>ENewspaper</li><li>MusicDownload</li><li>MusicStream</li><li>OnlineDataStorage</li><li>VideoDownload</li><li>VideoStream</li><li>Asp</li><li>OnlineDownload</li></ul> |  
 | keywords           | array  | 這個字串陣列可針對附加元件包含最多 10 個[關鍵字](../publish/enter-add-on-properties.md#keywords)。 您的 App 可以使用這些關鍵字查詢附加元件。   |
 | lifetime           | 字串  |  附加元件的存留期。 這可以是下列其中一個值： <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
@@ -245,7 +245,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 | status  | 字串  |  提交的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>Canceled</li><li>PendingCommit</li><li>CommitStarted</li><li>CommitFailed</li><li>PendingPublication</li><li>Publishing</li><li>Published</li><li>PublishFailed</li><li>PreProcessing</li><li>PreProcessingFailed</li><li>Certification</li><li>CertificationFailed</li><li>Release</li><li>ReleaseFailed</li></ul>   |
 | statusDetails           | 物件  |  [狀態詳細資料資源](#status-details-object)包含其他有關提交狀態的詳細資料，包括任何錯誤的資訊。 |
 | fileUploadUrl           | 字串  | 共用存取簽章 (SAS) URI，可用於上傳任何適用於提交的套件。 如果您要新增提交的新套件，請將包含套件的 ZIP 封存上傳至這個 URI。 如需詳細資訊，請參閱[建立附加元件提交](#create-an-add-on-submission)。  |
-| friendlyName  | 字串  |  提交的易記名稱，如開發人員中心儀表板所示。 當您建立提交時，也會為您產生此值。  |
+| friendlyName  | 字串  |  合作夥伴中心中所示之提交的易記名稱。 當您建立提交時，也會為您產生此值。  |
 
 <span id="listing-object" />
 
@@ -292,8 +292,8 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 > [!IMPORTANT]
 > **「銷售」** 資源不再支援，目前您無法使用 Microsoft Store 提交 API 取得或修改附加元件提交的銷售資料。 我們將來會更新「Microsoft Store 提交 API」來導入新的方法，以程式設計方式存取附加元件提交的銷售資訊。
->    * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得附加元件提交的銷售資料。
->    * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更附加元件提交的銷售資料。
+>    * 在呼叫 [GET 方法以取得附加元件提交](get-an-add-on-submission.md)之後，*sales* 值將會空白。 您可以繼續使用合作夥伴中心取得您的附加元件提交的銷售資料。
+>    * 呼叫 [PUT 方法以更新附加元件提交](update-an-add-on-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用合作夥伴中心來變更您的附加元件提交的銷售資料。
 
 此資源具有下列值。
 
@@ -354,7 +354,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 |  Base               |   未設定價格區間；使用附加元件的基本價格。      |     
 |  NotAvailable              |   特定區域中無法使用此附加元件。    |     
 |  Free              |   附加元件是免費的。    |    
-|  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整價格區表，包括與每一層相關聯的市場特定價格，請移至適用於開發人員中心儀表板中的應用程式提交的任何**價格與可用性**網頁，並按一下 **\[市場和自訂價格\]** 區段的**檢視表格**連結 (對於某些開發人員帳戶，此連結為**價格**區段)。     |
+|  層*xxxx*               |   指定附加元件的價格區間的字串，格式為**第 <em>xxxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看完整的價格表可供您的開發人員帳戶，包括與每個層，相關聯的特定市場的價格區間，請移至任何您在合作夥伴中心的應用程式提交的**定價和可用性**頁面和按一下 [**市場和自訂價格**] 區段中的**檢視表**連結 （對於某些開發人員帳戶，此連結是**價格**] 區段中）。     |
 
 <span id="submission-status-code" />
 
@@ -385,4 +385,4 @@ Microsoft Store 提交 API 提供方法讓您使用於管理附加元件 (也稱
 
 * [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Microsoft Store 提交 API 管理附加元件](manage-add-ons.md)
-* [開發人員中心儀表板中的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
+* [在合作夥伴中心的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/iap-submissions)
