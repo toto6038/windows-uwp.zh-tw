@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 3adbc12b0e891461a97bb90575141517b280be76
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941812"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992557"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -42,7 +42,7 @@ ms.locfileid: "5941812"
 
 有很多原因會使您看不見廣告，包括網路錯誤。 其他原因可能包含：
 
-* 在 Windows 開發人員中心選取大小大於或小於您 App 程式碼之 **AdControl** 大小的廣告單位。
+* 廣告單元合作夥伴中心選取大小大於或小於您的應用程式程式碼中的**AdControl**的大小。
 
 * 如果您在執行實際 App 時使用[測試模式值](set-up-ad-units-in-your-app.md#test-ad-units)做為您的廣告單位識別碼，則廣告將不會出現。
 
@@ -60,7 +60,7 @@ ms.locfileid: "5941812"
 
 * 側載 App 或在模擬器中執行的 App 將不會顯示實際廣告。
 
-當實際廣告單位正在提供測試廣告時，廣告單位的狀態會在 Windows 開發人員中心中顯示 **\[作用中並正在提供測試廣告\]**。 目前這並不適用於手機 App。
+當即時廣告單位正在提供測試廣告時，廣告單位的狀態會顯示**作用中並正在提供測試廣告**在合作夥伴中心。 目前這並不適用於手機 App。
 
 
 <span id="reference_errors"/>
