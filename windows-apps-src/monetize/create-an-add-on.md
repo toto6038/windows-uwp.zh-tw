@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: 5BD650D2-AA26-4DE9-8243-374FDB7D932B
-description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立附加元件，已登錄到您 PartnerCenter 帳戶的應用程式。
 title: 建立附加元件
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 36b6be05d1efc1cbc23f26a509230750c8896c87
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d262a86c4a177095015c3f1391b19f1a7719d0a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939293"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992606"
 ---
 # <a name="create-an-add-on"></a>建立附加元件
 
-使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立附加元件 (也稱為應用程式內產品或 IAP)。
+在 Microsoft Store 提交 API 中使用這個方法，來建立附加元件 （也稱為應用程式內產品或 IAP） 針對已登錄到您的合作夥伴中心帳戶的 app。
 
 > [!NOTE]
 > 這個方法會建立一個附加元件但不含任何提交。 若要為附加元件建立提交，請參閱[管理附加元件提交](manage-add-on-submissions.md)中的方法。
@@ -99,7 +99,7 @@ Content-Type: application/json
 | 錯誤碼 |  描述                                                                                                                                                                           |
 |--------|------------------|
 | 400  | 要求無效。 |
-| 409  | 無法建立附加元件，因為其目前的狀態，或附加元件使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 無法建立附加元件，因為其目前的狀態，或附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題

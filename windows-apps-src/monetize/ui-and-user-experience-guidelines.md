@@ -8,12 +8,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 指導方針, 最佳做法
 ms.localizationpriority: medium
-ms.openlocfilehash: 323190b01cad8a0832d57386f6bde9fde4f2180c
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4d502c721f98269c1256510a6f91f8c6dc8cd0fb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5942437"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994396"
 ---
 # <a name="ui-and-user-experience-guidelines-for-ads"></a>廣告的 UI 和使用者體驗指導方針
 
@@ -73,7 +73,7 @@ ms.locfileid: "5942437"
 
 * 用任何方式略過橫幅廣告的內建最小重新整理計時器，包括但不限於交換 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 物件，或強制頁面在沒有使用者互動的情況下重新整理。
 
-* 於開發及測試期間或模擬器中使用即時廣告單位 (意即您自 Windows 開發人員中心儀表板所取得的廣告單位)。
+* 使用即時廣告單位 （也就是，廣告單位您從合作夥伴中心取得） 於開發與測試，或在模擬器中。
 
 * 撰寫或散發的程式碼透過您應用程式中執行的 Microsoft 廣告程式庫以外的方式呼叫廣告服務。
 
@@ -105,13 +105,13 @@ ms.locfileid: "5942437"
 
 * 在您需要顯示廣告前，預先擷取廣告 (藉由呼叫 [InterstitialAd.RequestAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.requestad))，理想的情況為 30 秒到 60 秒。
 
-* Subscribe to all four events exposed in the [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) class (**Canceled**, **Completed**, **AdReady**, and **ErrorOccurred**) and use them to make the right decisions for your app.
+* 訂閱在 [InterstitialAd](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad) 類別中公開的四個事件 (**Canceled**、**Completed**、**AdReady** 和 **ErrorOccurred**) 並使用它們來為應用程式做出正確的決策。
 
 * 有一些內建的體驗可以用來取代伺服器比對的廣告。 您會在以下的一些範例中發現這很有用：
 
     * 離線模式 (當無法連線到廣告伺服器時)。
 
-    * When the **ErrorOccurred** event fires.
+    * 當引發 **ErrorOccurred** 事件時。
 
     * 如果您選擇根據 [ConnectionProfile](https://docs.microsoft.com/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) 儲存使用者的頻寬時，在 **ConnectionProfile** 類別中有 API 可協助您。
 
@@ -153,11 +153,11 @@ ms.locfileid: "5942437"
 
 * 使用插入式廣告來取得任何可當作貨幣來消費或可與其他使用者交易的項目。
 
-* Requesting a new interstitial ad in the context of the event handler for the [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) event. 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
+* 在 [InterstitialAd.ErrorOccurred](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.erroroccurred) 事件的事件處理常式內容中要求新的插入式廣告。 這可能導致無限迴圈，而可能造成廣告服務發生操作問題。
 
 * 僅為了讓瀑布式廣告序列有備用廣告而要求插入式廣告。 如果您要求插入式廣告，然後收到 [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) 事件，在應用程式中顯示的下一個插入式廣告就必須是已經準備好透過 [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) 方法顯示的廣告。
 
-* 於開發及測試期間或模擬器中使用即時廣告單位 (意即您自 Windows 開發人員中心儀表板所取得的廣告單位)。
+* 使用即時廣告單位 （也就是，廣告單位您從合作夥伴中心取得） 於開發與測試，或在模擬器中。
 
 * 撰寫或散發的程式碼透過您應用程式中執行的 Microsoft 廣告程式庫以外的方式呼叫廣告服務。
 

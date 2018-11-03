@@ -8,16 +8,16 @@ ms.date: 06/16/2017
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: af32a994f8dbfc7563c56f853bc0226f0da45940
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 047340d180e3de9f963dc76c85edaa6abea67327
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921424"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5994467"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-app"></a>下載應用程式中錯誤的 CAB 檔案
 
-在 Microsoft Store 分析 API 中使用此方法，以下載您應用程式中回報至開發人員中心之特定錯誤的相關聯 CAB 檔案。 這個方法只可以下載最近 30 天發生之應用程式錯誤的 CAB 檔案。 「Windows 開發人員中心」儀表板中[健康情況報告](../publish/health-report.md)的 **\[失敗\]** 區段也提供 CAB 檔案下載。
+使用 Microsoft Store 分析 API 中的這個方法，以下載已報告合作夥伴中心的應用程式中特定錯誤相關聯的 CAB 檔案。 這個方法只可以下載最近 30 天發生之應用程式錯誤的 CAB 檔案。 [健康情況報告](../publish/health-report.md)合作夥伴中心中的 [**失敗**] 區段中並也提供 CAB 檔案下載。
 
 使用此方法之前，您必須先使用[取得應用程式中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法，擷取要下載之 CAB 檔案的識別碼。
 
@@ -51,7 +51,7 @@ ms.locfileid: "5921424"
 
 | 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | 字串 | 您想要下載 CAB 檔案之應用程式的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板的[應用程式身分識別頁面](../publish/view-app-identity-details.md)取得。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
+| applicationId | 字串 | 您想要下載 CAB 檔案之應用程式的 Store 識別碼。 在合作夥伴中心的[應用程式身分識別頁面](../publish/view-app-identity-details.md)上使用 「 市集識別碼 」。 舉例來說，Store 識別碼可以是「9WZDNCRFJ3Q8」。 |  是  |
 | cabId | 字串 | 要下載之 CAB 檔案的唯一識別碼。 若要取得此識別碼，請使用[取得 App 中錯誤的詳細資料](get-details-for-an-error-in-your-app.md)方法以擷取您的 App 中特定錯誤的詳細資料，並在該方法的回應主體中使用 **cabId** 值。 |  是  |
 
  

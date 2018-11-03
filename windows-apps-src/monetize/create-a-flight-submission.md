@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: CD866083-EB7F-4389-A907-FC43DC2FCB5E
-description: 使用 Microsoft Store 提交 API 中的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新的套件正式發行前小眾測試版提交。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立新套件正式發行前小眾針對已登錄到您的合作夥伴中心帳戶的 app。
 title: 建立套件正式發行前小眾測試版提交
 ms.author: mhopkins
 ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 1b06f922de1de1dd9943d460672fab218b51a5eb
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 4cdcc0f06820600523be111d67d3cad5e38b6ceb
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5925855"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989976"
 ---
 # <a name="create-a-package-flight-submission"></a>建立套件正式發行前小眾測試版提交
 
@@ -30,7 +30,7 @@ ms.locfileid: "5925855"
 
 * 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[先決條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 * [取得 Azure AD 存取權杖](create-and-manage-submissions-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這個方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
-* 在您的開發人員中心帳戶中為 App 建立套件正式發行前小眾測試版。 您可以在開發人員中心儀表板中進行，或者可以使用[建立套件正式發行前小眾測試版](create-a-flight.md)方法進行。
+* 建立套件正式的應用程式。 您可以在合作夥伴中心，或者您可以藉由[建立套件正式](create-a-flight.md)的方法。
 
 ## <a name="request"></a>要求
 
@@ -119,7 +119,7 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 400  | 無法建立套件正式發行前小眾測試版提交，因為要求無效。 |
-| 409  | 無法建立套件正式發行前小眾測試版提交，因為 App 的目前狀態，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 無法建立套件正式發行前小眾，因為應用程式的目前狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題

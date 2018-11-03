@@ -1,24 +1,23 @@
 ---
 author: Xansky
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: 在儀表板中定義您的實驗
+Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in Partner Center.
+title: 在合作夥伴中心中定義您的實驗
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
-ms.openlocfilehash: 2acbeb0f67985537524a352507910f5e526ae0bd
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 98c1d48524bcc525f57f42e5364d27611602ab52
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5939856"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995097"
 ---
-# <a name="define-your-experiment-in-the-dashboard"></a>在儀表板中定義您的實驗
+# <a name="define-your-experiment-in-partner-center"></a>在合作夥伴中心中定義您的實驗
 
-
-            [在開發人員中心儀表板中建立專案和定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)，並且[編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)之後，您就已經準備好在專案中建立實驗。 當您建立實驗時，您將會定義目標及使用者將接收的變化。
+在您[建立專案與定義遠端變數在合作夥伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)並[編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)之後，您準備好在專案中建立實驗。 當您建立實驗時，您將會定義目標及使用者將接收的變化。
 
 如需示範建立及執行實驗的端對端處理程序的逐步解說，請參閱[利用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)。
 
@@ -27,7 +26,7 @@ ms.locfileid: "5939856"
 
 ## <a name="create-your-experiment"></a>建立實驗
 
-1. 登入[開發人員中心儀表板](https://dev.windows.com/overview)。
+1. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。
 2. 在 **您的應用程式**下方，選取您要建立實驗的 app。
 3. 在瀏覽窗格中，選取 **[服務]**，然後選取 **[實驗]**。
 4. 在 **[實驗]** 頁面上，在專案表格中找出您要新增實驗的專案，然後對該專案按一下 **[新增實驗]** 連結。
@@ -37,7 +36,7 @@ ms.locfileid: "5939856"
     > 如果您建立的實驗將會發行給客戶 (也就是實驗與專案識別碼相關聯，而該識別碼是在提供給客戶的應用程式版本中使用)，請勿選取此方塊。 編輯作用中的實驗，將會使實驗結果無效。
 
 7. 在 **[專案名稱]** 下拉式清單中，會自動選取目前的專案。 如果您想要將新實驗新增到不同專案，可以在此處選取該專案。 否則，請不要變更此選項。
-8.   請記下[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)值。 當您[編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)時，必須在您的程式碼中參考此識別碼，讓您能夠接收變化資料，並向開發人員中心報告檢視和轉換事件。
+8.   請記下[專案識別碼](run-app-experiments-with-a-b-testing.md#terms)值。 當您[編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)，您必須參考此識別碼在程式碼中讓您能夠接收變化資料並向合作夥伴中心報告檢視和轉換事件。
 9. 在 **[檢視事件]** 區塊中，在 **[檢視事件名稱]** 欄位中輸入適用於您實驗的[檢視事件](run-app-experiments-with-a-b-testing.md#terms)名稱。
 10. 在 **[目標和轉換事件]** 區段中，至少為您的實驗定義一個目標：
   * 在 **[目標名稱]** 欄位中，輸入您目標的描述性名稱。 您執行實驗後，此名稱會出現在實驗的結果摘要中。
@@ -45,7 +44,7 @@ ms.locfileid: "5939856"
   * 在 **[目標]** 欄位中，根據您是否要將轉換事件發生次數最大化或最小化，選擇 **[最大化]** 或 **[最小化]**。 此資訊會在實驗的結果摘要中使用。
 
 > [!NOTE]
-> 開發人員中心僅會回報 24 小時內每個使用者檢視的第一個轉換事件。 如果使用者在 24 小時內觸發您 App 中多個轉換事件，則只會回報第一個轉換事件。 這是為了防止當目標設為將執行轉換之使用者人數最大化時，單一使用者會扭曲一組範例使用者的實驗結果。
+> 合作夥伴中心僅會回報第一個轉換事件每個使用者檢視在 24 小時內。 如果使用者在 24 小時內觸發您 App 中多個轉換事件，則只會回報第一個轉換事件。 這是為了防止當目標設為將執行轉換之使用者人數最大化時，單一使用者會扭曲一組範例使用者的實驗結果。
 
 <span id="define-the-variations-and-settings-for-the-experiment" />
 
@@ -67,7 +66,7 @@ ms.locfileid: "5939856"
 
 完成輸入您實驗的必要欄位後，按一下 **[儲存]** 以儲存您的實驗。
 
-若您滿意實驗參數且已準備將其啟用，則可開始從您的 App 收集實驗資料，然後按一下 **[啟用]**。 實驗進行中，您的 App 可以擷取變化變數，並且向開發人員中心回報檢視和轉換事件。 如需詳細資訊，請參閱[在開發人員中心儀表板中執行和管理您的實驗](manage-your-experiment.md)。
+若您滿意實驗參數且已準備將其啟用，則可開始從您的 App 收集實驗資料，然後按一下 **[啟用]**。 實驗作用中時，您的應用程式可以擷取變化變數，並向合作夥伴中心報告檢視和轉換事件。 如需詳細資訊，請參閱[執行和管理您的實驗，在合作夥伴中心](manage-your-experiment.md)。
 
 > [!IMPORTANT]
 > 一個專案一次僅能包含一個作用中的實驗。 啟用實驗之後，您就無法再修改實驗參數，除非您在建立實驗時選取 **[可編輯的實驗]** 核取方塊。 我們建議您在啟用實驗之前，先在您的 App 中編寫實驗程式碼。
@@ -90,12 +89,12 @@ ms.locfileid: "5939856"
 
 ## <a name="next-steps"></a>後續步驟
 
-在開發人員儀表板中定義實驗並在 app 中編寫實驗用的程式碼之後，就已經準備好[在開發人員儀表板中執行和管理您的實驗](manage-your-experiment.md)。
+您在合作夥伴中心中定義您的實驗，並在您的應用程式中程式碼實驗之後，您已經準備好[執行和管理您的實驗，在合作夥伴中心](manage-your-experiment.md)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [在開發人員中心儀表板中建立專案與定義遠端變數](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
-* [編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)
-* [在開發人員中心儀表板中管理您的實驗](manage-your-experiment.md)
+* [建立專案與定義遠端變數在合作夥伴中心](create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md)
+* [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)
+* [管理您的實驗，在合作夥伴中心](manage-your-experiment.md)
 * [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)

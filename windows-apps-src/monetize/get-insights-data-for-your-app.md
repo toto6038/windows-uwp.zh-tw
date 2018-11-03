@@ -7,16 +7,16 @@ ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
-ms.openlocfilehash: ff70f38ff636b0b1d885981fb9e353ac9afe69c2
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 3d74d1f9cbdd374dfd363e6da1e98aafcb226d5e
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5933259"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5997140"
 ---
 # <a name="get-insights-data"></a>取得深入解析資料
 
-使用此方法來取得深入解析資料在 Microsoft Store 分析 API 中的與相關的下載數、 健康情況，以及做為應用程式的使用方式計量期間以針對特定的日期範圍與其他選擇性篩選器。 這項資訊也會在 Windows 開發人員中心儀表板[見解報告](../publish/insights-report.md)中提供的。
+使用此方法來取得深入解析資料在 Microsoft Store 分析 API 中的與相關的下載數、 健康情況，以及做為應用程式的使用方式計量期間以針對特定的日期範圍與其他選擇性篩選器。 這項資訊也會在合作夥伴中心[見解報告](../publish/insights-report.md)中提供的。
 
 ## <a name="prerequisites"></a>必要條件
 

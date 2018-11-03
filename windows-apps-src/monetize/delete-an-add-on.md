@@ -1,25 +1,25 @@
 ---
 author: Xansky
 ms.assetid: 16D4C3B9-FC9B-46ED-9F87-1517E1B549FA
-description: 使用 Microsoft Store 提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的 App 刪除附加元件。
+description: 在 Microsoft Store 提交 API 中使用這個方法，刪除附加元件，已登錄到您的合作夥伴中心帳戶的應用程式。
 title: 刪除附加元件
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 刪除, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: db8c394cac29afabba5229e21712320c82b89364
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 53c7125b48c32c8e39861f933f80fb88d6d904be
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935062"
+ms.locfileid: "5989767"
 ---
 # <a name="delete-an-add-on"></a>刪除附加元件
 
-使用 Microsoft Store 提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的 App 刪除附加元件 (也稱為應用程式內產品或 IAP)。
+在 Microsoft Store 提交 API 中使用這個方法，刪除附加元件 （也稱為應用程式內產品或 IAP） 針對已登錄到您的合作夥伴中心帳戶的 app。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -46,10 +46,10 @@ ms.locfileid: "5935062"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | 字串 | 必要。 要刪除的附加元件 Store 識別碼。  Store 識別碼可在開發人員中心儀表板上取得。  |
+| id | 字串 | 必要。 要刪除的附加元件 Store 識別碼。 「 市集識別碼 」 是可在合作夥伴中心。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -75,7 +75,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求無效。 |
 | 404  | 找不到指定的附加元件。  |
-| 409  | 找到指定的附加元件，但無法以其目前的狀態刪除，或附加元件使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 找到指定的附加元件，但它無法以其目前的狀態刪除，或附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題

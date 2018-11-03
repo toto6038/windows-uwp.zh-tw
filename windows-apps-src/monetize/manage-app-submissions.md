@@ -1,36 +1,36 @@
 ---
 author: Xansky
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
-description: 在 Microsoft Store 提交 API 中使用這些方法，來為登錄到您 Windows 開發人員中心帳戶的應用程式管理提交。
+description: 在 Microsoft Store 提交 API 中使用這些方法，管理適用於已登錄到您的合作夥伴中心帳戶的 app 提交。
 title: 管理 App 提交
 ms.author: mhopkins
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 提交 API、App 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f95e91c1ef9e47ab3371a1481237dc510eddae7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5921076"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5996671"
 ---
 # <a name="manage-app-submissions"></a>管理 App 提交
 
 Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提交，包括漸進式套件推出。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
 > [!IMPORTANT]
-> 如果您使用 Microsoft Store 提交 API 為應用程式建立提交，請確保只透過使用 API​​ 而不是開發人員中心儀表板對提交做出進一步變更。 如果您使用儀表板變更最初使用 API 所建立的提交，您將無法再使用 API 變更或是認可該提交。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> 如果您使用 Microsoft Store 提交 API 來建立應用程式的提交，請確定進一步變更提交只能透過使用 API，而不是合作夥伴中心。 如果您使用合作夥伴中心來變更最初使用 API 所建立的提交，您將不再能夠變更或是認可該提交使用 API。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 > [!IMPORTANT]
-> 您無法使用此 API 來發佈 [透過商務用 Microsoft Store 和教育用 Microsoft Store 大量購買](../publish/organizational-licensing.md) 的提交或直接向企業發佈 [LOB 應用程式](../publish/distribute-lob-apps-to-enterprises.md) 的提交。 對於這些案例，您必須使用 Windows 開發人員中心儀表板發佈提交。
+> 您無法使用此 API 來發佈 [透過商務用 Microsoft Store 和教育用 Microsoft Store 大量購買](../publish/organizational-licensing.md) 的提交或直接向企業發佈 [LOB 應用程式](../publish/distribute-lob-apps-to-enterprises.md) 的提交。 對於這些案例中，您必須使用合作夥伴中心來發佈提交。
 
 
 <span id="methods-for-app-submissions" />
 
 ## <a name="methods-for-managing-app-submissions"></a>管理應用程式提交的方法
 
-使用下列方法取得、建立、更新、認可或刪除應用程式提交。 使用這些方法之前，應用程式必須存在於您的開發人員中心帳戶，而且您必須先在儀表板中建立一個應用程式提交。 如需詳細資訊，請參閱[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
+使用下列方法取得、建立、更新、認可或刪除應用程式提交。 您可以使用這些方法之前，應用程式必須已經存在於您的合作夥伴中心帳戶，您必須先在合作夥伴中心建立一個應用程式提交。 如需詳細資訊，請參閱[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)。
 
 <table>
 <colgroup>
@@ -127,7 +127,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
     await blockBob.UploadFromStreamAsync(stream);
     ```
 
-5. 執行下列方法來[認可應用程式提交](commit-an-app-submission.md)。 這會向「開發人員中心」發出警示，指出您已完成提交，而現在應該將更新套用至您的帳戶。
+5. 執行下列方法來[認可應用程式提交](commit-an-app-submission.md)。 這會警示合作夥伴中心，您已完成您的提交，現在應該會將更新套用到您的帳戶。
 
     ```
     POST https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/commit
@@ -141,13 +141,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
     若要確認提交狀態，請檢閱回應主體中的 *「狀態」* 值。 這個值應該從 **CommitStarted** 變更為 **PreProcessing** (如果要求成功) 或 **CommitFailed** (如果要求中出現錯誤)。 如果出現錯誤，*statusDetails* 欄位會包含關於錯誤的進一步詳細資料。
 
-7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以繼續使用先前的方法，或瀏覽開發人員中心儀表板來監視提交進度。
+7. 順利完成提交之後，即會將提交傳送到 Microsoft Store 以供擷取。 您可以繼續使用先前的方法，或造訪合作夥伴中心監視提交進度。
 
 <span id="manage-gradual-package-rollout">
 
 ## <a name="methods-for-managing-a-gradual-package-rollout"></a>管理漸進式套件推出的方法
 
-您可以將應用程式提交中的已更新套件以漸進方式推出給 Windows10 上的一部分應用程式客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊 (包括如何在「開發人員中心」儀表板中啟用和管理漸進式套件推出的指示)，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
+您可以將應用程式提交中的已更新套件以漸進方式推出給 Windows10 上的一部分應用程式客戶。 這可讓您監視特定套件的意見反應和分析資料，以確保您對該項更新信心十足之後，再更廣泛地推出該項更新。 您可以變更所發佈之提交的推出百分比 (或停止更新)，而不需建立新的提交。 如需詳細資訊，包括如何啟用和管理漸進式套件推出，在合作夥伴中心中的指示，請參閱[這篇文章](../publish/gradual-package-rollout.md)。
 
 若要以程式設計方式啟用和管理應用程式提交的漸進式套件推出，請使用 Microsoft Store 提交 API 中的方法，遵照此程序執行。
 
@@ -339,7 +339,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 | 值      | 類型   | 描述      |
 |------------|--------|-------------------|
-| id            | 字串  | 提交的識別碼。 此識別碼可用於要求 [建立 App 提交](create-an-app-submission.md)、 [取得所有 App](get-all-apps.md) 和 [取得 App](get-an-app.md) 的回應資料中。 對於在開發人員中心儀表板中建立的提交，此 ID 也可可用於儀表板中的提交頁面的 URL 中。  |
+| id            | 字串  | 提交的識別碼。 此識別碼可用於要求 [建立 App 提交](create-an-app-submission.md)、 [取得所有 App](get-all-apps.md) 和 [取得 App](get-an-app.md) 的回應資料中。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 | applicationCategory           | 字串  |   指定 App [類別和/或子類別](https://msdn.microsoft.com/windows/uwp/publish/category-and-subcategory-table)的字串。 類別與子類別會使用底線 '_' 字元結合為單一字串，例如 **BooksAndReference_EReader**。      |  
 | pricing           |  物件  | [定價資源](#pricing-object)包含應用程式的定價資訊。        |   
 | 可見度           |  字串  |  App 的可見度。 這可以是下列其中一個值： <ul><li>Hidden</li><li>Public</li><li>Private</li><li>NotSet</li></ul>       |   
@@ -362,7 +362,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | enterpriseLicensing           |  字串  |  其中一個[企業授權值](#enterprise-licensing)，可指出應用程式適用的企業授權行為。  |    
 | allowMicrosoftDecideAppAvailabilityToFutureDeviceFamilies           |  布林值   |  指出是否允許 Microsoft [讓 App 可供未來的 Windows10 裝置系列使用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)。    |    
 | allowTargetFutureDeviceFamilies           | 物件   |  索引鍵/值組的字典，其中每個索引鍵都是一個 [Windows10 裝置系列](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#windows-10-device-families)，而每個值都是一個布林值，可指出您的應用程式是否允許將目標設為指定的裝置系列。     |    
-| friendlyName           |   字串  |  提交的易記名稱，如開發人員中心儀表板所示。 當您建立提交時，也會為您產生此值。       |  
+| friendlyName           |   字串  |  合作夥伴中心中所示之提交的易記名稱。 當您建立提交時，也會為您產生此值。       |  
 | trailers           |  陣列 |   包含高達 15 個 [預告片資源](#trailer-object) 陣列，代表應用程式清單的視訊預告片。<br/><br/>   |  
 
 
@@ -389,8 +389,8 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 > [!IMPORTANT]
 > **銷售**資源不再支援，目前您無法使用 Microsoft Store 提交 API 取得或修改應用程式提交的銷售資料。 我們將來會更新「Microsoft Store 提交 API」來導入新的方法，以程式設計方式存取應用程式提交的銷售資訊。
->    * 在呼叫 [GET 方法以取得應用程式提交](get-an-app-submission.md)之後，*sales* 值將會空白。 您可以繼續使用「開發人員中心」儀表板來取得應用程式提交的銷售資料。
->    * 呼叫 [PUT 方法以更新應用程式提交](update-an-app-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用「開發人員中心」儀表板來變更應用程式提交的銷售資料。
+>    * 在呼叫 [GET 方法以取得應用程式提交](get-an-app-submission.md)之後，*sales* 值將會空白。 您可以繼續使用合作夥伴中心取得您的應用程式提交的銷售資料。
+>    * 呼叫 [PUT 方法以更新應用程式提交](update-an-app-submission.md)時，會忽略 *sales* 值中的資訊。 您可以繼續使用合作夥伴中心來變更您的應用程式提交的銷售資料。
 
 此資源具有下列值。
 
@@ -425,9 +425,9 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |  copyrightAndTrademarkInfo                |   字串      |  選擇性的[著作權及/或商標資訊](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#copyright-and-trademark-info)。  |
 |  keywords                |  陣列       |  [關鍵字](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#keywords)陣列，可協助讓您的應用程式出現在搜尋結果中。    |
 |  licenseTerms                |    字串     | 適用於您應用程式的選擇性[授權條款](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#additional-license-terms)。     |
-|  privacyPolicy                |   字串      |   該值已過時。 若要設定或變更您的應用程式的隱私權原則 URL，您必須在開發人員中心儀表板的[屬性](../publish/enter-app-properties.md#privacy-policy-url)頁面上執行此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。       |
-|  supportContact                |   字串      |  該值已過時。 若要設定或變更您的應用程式的支援連絡人 URL 或電子郵件地址，您必須在開發人員中心儀表板的[屬性](../publish/enter-app-properties.md#support-contact-info)頁面上執行此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。        |
-|  websiteUrl                |   字串      |  該值已過時。 若要設定或變更您的應用程式的網頁 URL，您必須在開發人員中心儀表板的[屬性](../publish/enter-app-properties.md#website)頁面上執行此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。      |    
+|  privacyPolicy                |   字串      |   該值已過時。 若要設定或變更您的應用程式的隱私權原則 URL，您必須在合作夥伴中心的 [[屬性](../publish/enter-app-properties.md#privacy-policy-url)] 頁面上將此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。       |
+|  supportContact                |   字串      |  該值已過時。 若要設定或變更的支援連絡人 URL 或電子郵件地址您的應用程式，您必須在合作夥伴中心的 [[屬性](../publish/enter-app-properties.md#support-contact-info)] 頁面上將此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。        |
+|  websiteUrl                |   字串      |  該值已過時。 若要設定或變更您的應用程式的網頁 URL，您必須在合作夥伴中心的 [[屬性](../publish/enter-app-properties.md#website)] 頁面上將此動作。 您可以在呼叫提交 API 時省略這個值。 如果您設定這個值，將會忽略它。      |    
 |  描述               |    字串     |   應用程式清單的[描述](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#description)。   |     
 |  features               |    陣列     |  此陣列最多包含 20 個字串，可列出您應用程式的[功能](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#app-features)。     |
 |  releaseNotes               |  字串       |  適用於您應用程式的[版本資訊](https://msdn.microsoft.com/windows/uwp/publish/create-app-descriptions#release-notes)。    |
@@ -451,7 +451,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |-----------------|---------|------|
 |  fileName               |    字串     |   影像檔的名稱，位於您針對提交所上傳的 ZIP封存中。    |     
 |  fileStatus               |   字串      |  影像檔的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>   |
-|  id  |  字串  | 影像的識別碼。 此值由開發人員中心提供。  |
+|  id  |  字串  | 影像的識別碼。 這個值是由合作夥伴中心提供。  |
 |  description  |  字串  | 影像的描述。  |
 |  imageType  |  字串  | 指出影像的類型。 以下是目前支援的字串。 <p/>[螢幕擷取畫面影像](../publish/app-screenshots-and-images.md#screenshots)： <ul><li>Screenshot (此值適用於桌面螢幕擷取畫面)</li><li>MobileScreenshot</li><li>XboxScreenshot</li><li>SurfaceHubScreenshot</li><li>HoloLensScreenshot</li></ul><p/>[Microsoft Store 標誌](../publish/app-screenshots-and-images.md#store-logos)：<ul><li>StoreLogo9x16 </li><li>StoreLogoSquare</li><li>Icon (此值適用於 1:1 300 x 300 像素標誌)</li></ul><p/>[宣傳影像](../publish/app-screenshots-and-images.md#promotional-images)： <ul><li>PromotionalArt16x9</li><li>PromotionalArtwork2400X1200</li></ul><p/>[Xbox 影像](../publish/app-screenshots-and-images.md#xbox-images)： <ul><li>XboxBrandedKeyArt</li><li>XboxTitledHeroArt</li><li>XboxFeaturedPromotionalArt</li></ul><p/>[選用宣傳影像](../publish/app-screenshots-and-images.md#optional-promotional-images)： <ul><li>SquareIcon358X358</li><li>BackgroundImage1000X800</li><li>PromotionalArtwork414X180</li></ul><p/> <!-- The following strings are also recognized for this field, but they correspond to image types that are no longer for listings in the Store.<ul><li>PromotionalArtwork846X468</li><li>PromotionalArtwork558X756</li><li>PromotionalArtwork414X468</li><li>PromotionalArtwork558X558</li><li>WideIcon358X173</li><li>Unknown</li></ul> -->   |
 
@@ -460,7 +460,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 ### <a name="gaming-options-resource"></a>遊戲選項資源
 
-此資源包含應用程式的遊戲相關設定。 在此資源的值對應至開發人員中心儀表板中所提交的[遊戲設定](../publish/enter-app-properties.md#game-settings)。
+此資源包含應用程式的遊戲相關設定。 此資源中的值對應到合作夥伴中心中提交的[遊戲設定](../publish/enter-app-properties.md#game-settings)。
 
 ```json
 {
@@ -567,13 +567,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 此資源具有下列值。  
 
 > [!NOTE]
-> 在呼叫[更新應用程式提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由開發人員中心所填入。
+> 在呼叫[更新應用程式提交](update-an-app-submission.md)方法時，要求主體中只需要這個物件的 *fileName*、*fileStatus*、*minimumDirectXVersion* 及 *minimumSystemRam* 值。 其他值均是由合作夥伴中心填入。
 
 | 值           | 類型    | 描述                   |
 |-----------------|---------|------|
 | fileName   |   字串      |  套件的名稱。    |  
 | fileStatus    | 字串    |  套件的狀態。 這可以是下列其中一個值： <ul><li>None</li><li>PendingUpload</li><li>Uploaded</li><li>PendingDelete</li></ul>    |  
-| id    |  字串   |  唯一識別套件的識別碼。 此值由開發人員中心提供。   |     
+| id    |  字串   |  唯一識別套件的識別碼。 這個值是由合作夥伴中心提供。   |     
 | version    |  字串   |  應用程式套件的版本。 如需詳細資訊，請參閱[套件版本編號](https://msdn.microsoft.com/windows/uwp/publish/package-version-numbering)。   |   
 | architecture    |  字串   |  套件的架構 (例如，ARM)。   |     
 | languages    | 陣列    |  應用程式所支援之語言的語言代碼陣列。 如需詳細資訊，請參閱[支援的語言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
@@ -639,13 +639,13 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | fallbackSubmissionId    |  字串   |  未取得漸進式推出套件的客戶將收到的提交識別碼。   |          
 
 > [!NOTE]
-> *packageRolloutStatus* 和 *fallbackSubmissionId* 值是由開發人員中心指派，並不是供開發人員設定。 如果您將這些值包含在要求本文中，則會忽略這些值。
+> *PackageRolloutStatus*和*fallbackSubmissionId*值由合作夥伴中心指派，並不是由開發人員設定。 如果您將這些值包含在要求本文中，則會忽略這些值。
 
 <span id="trailer-object" />
 
 ### <a name="trailers-resource"></a>預告片資源
 
-此資源代表應用程式清單的視訊預告片。 此資源中的值對應至開發人員中心儀表板中提交的[預告片](../publish/app-screenshots-and-images.md#trailers)選項。
+此資源代表應用程式清單的視訊預告片。 此資源中的值對應至合作夥伴中心中提交的[預告片](../publish/app-screenshots-and-images.md#trailers)選項。
 
 您可新增高達 15 個預告片資源至 [App 提交資源](#app-submission-object)中的 *trailers* 陣列。 若要上傳提交的預告片影片檔案和縮圖影像，請將這些檔案新增至包含提交的套件和清單影像的同一個 ZIP 封存中，然後將此 ZIP 封存上傳到提交的共用存取簽章 (SAS) URI。 如需有關將 ZIP 封存上傳到 SAS URI 的詳細資訊，請參閱 [建立應用程式提交](#create-an-app-submission)。
 
@@ -677,9 +677,9 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 | 值           | 類型    | 描述        |
 |-----------------|---------|------|
-|  id               |    字串     |   預告片的識別碼。 此值由開發人員中心提供。   |
+|  id               |    字串     |   預告片的識別碼。 這個值是由合作夥伴中心提供。   |
 |  videoFileName               |    字串     |    ZIP 封存中預告片影片檔的名稱，包含提交的檔案。    |     
-|  videoFileId               |   字串      |  預告片影片檔的識別碼。 此值由開發人員中心提供。   |     
+|  videoFileId               |   字串      |  預告片影片檔的識別碼。 這個值是由合作夥伴中心提供。   |     
 |  trailerAssets               |   物件      |  機碼和值組的字典，其中每個機碼都是語言代碼，而每個值都是[預告片資產資源](#trailer-assets-object)，其中包含預告片的其他地區設定資產。 如需有關支援的語言代碼的詳細資訊，請參閱 [支援的語言](https://msdn.microsoft.com/windows/uwp/publish/supported-languages)。    |     
 
 > [!NOTE]
@@ -706,7 +706,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 | 值           | 類型    | 描述           |
 |-----------------|---------|------|
 |  fileName               |    字串     |   縮圖影像檔的名稱，位於您針對提交所上傳的 ZIP 封存中。    |     
-|  id  |  字串  | 縮圖影像的識別碼。 此值由開發人員中心提供。  |
+|  id  |  字串  | 縮圖影像的識別碼。 這個值是由合作夥伴中心提供。  |
 |  description  |  字串  | 縮圖影像的描述。 這個值僅是中繼資料，並不會對使用者顯示。   |
 
 <span/>
@@ -726,7 +726,7 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 |  Base               |   未設定價格區間；使用應用程式的基本價格。      |     
 |  NotAvailable              |   指定的區域中無法使用此應用程式。    |     
 |  Free              |   應用程式是免費的。    |    
-|  第 *xxx* 層               |   指定應用程式的價格區間的字串，格式為**第 <em>xxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看您的開發人員帳戶可用的完整價格區表，包括與每一層相關聯的市場特定價格，請移至適用於開發人員中心儀表板中的應用程式提交的任何**價格與可用性**網頁，並按一下 **\[市場和自訂價格\]** 區段的**檢視表格**連結 (對於某些開發人員帳戶，此連結為**價格**區段)。    |
+|  第 *xxx* 層               |   指定應用程式的價格區間的字串，格式為**第 <em>xxx</em> 層**。 目前支援下列價格區間範圍︰<br/><br/><ul><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**true**，您帳戶的可用價格區間值是 **Tier1012** - **Tier1424**。</li><li>如果[價格資源](#pricing-object) 的 *isAdvancedPricingModel* 值為**false**，您帳戶的可用價格區間值是 **Tier2** - **Tier96**。</li></ul>若要查看完整的價格表可供您的開發人員帳戶，包括與每個層，相關聯的特定市場的價格區間，請移至任何您在合作夥伴中心的應用程式提交的**定價和可用性**頁面和按一下 [**市場和自訂價格**] 區段中的**檢視表**連結 （對於某些開發人員帳戶，此連結是**價格**] 區段中）。    |
 
 
 <span id="enterprise-licensing" />
@@ -736,10 +736,10 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 下列值代表應用程式適用的組織授權行為。 如需這些選項的詳細資訊，請參閱[組織授權選項](https://msdn.microsoft.com/windows/uwp/publish/organizational-licensing)。
 
 > [!NOTE]
-> 雖然您可以透過提交 API 為應用程式提交來設定組織授權選項，但您無法使用此 API 來發佈[透過商務用 Microsoft Store 和教育用 Microsoft Store 大量購買](../publish/organizational-licensing.md)提交。 若要發佈提交到商務用 Microsoft Store 和教育用 Microsoft Store，您必須使用 Windows 開發人員中心儀表板。
+> 雖然您可以透過提交 API 為應用程式提交來設定組織授權選項，但您無法使用此 API 來發佈[透過商務用 Microsoft Store 和教育用 Microsoft Store 大量購買](../publish/organizational-licensing.md)提交。 若要發佈提交到商務用 Microsoft Store 和教育用 Microsoft Store，您必須使用合作夥伴中心。
 
 
-| 價值           |  描述      |
+| 值           |  描述      |
 |-----------------|---------------|
 | None            |     請勿利用 Microsoft Store 管理 (線上) 大量授權提供企業使用您的應用程式。         |     
 | Online        |     利用 Microsoft Store 管理 (線上) 大量授權提供企業使用您的應用程式。  |
@@ -775,4 +775,4 @@ Microsoft Store 提交 API 提供方法讓您使用於管理應用程式的提�
 
 * [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
 * [使用 Microsoft Store 提交 API 取得應用程式資料](get-app-data.md)
-* [開發人員中心儀表板中的應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)
+* [在合作夥伴中心的應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)

@@ -1,23 +1,23 @@
 ---
 author: Xansky
 ms.assetid: D34447FF-21D2-44D0-92B0-B3FF9B32D6F7
-description: 使用 Microsoft Store 提交 API 的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新提交。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立新的提交，針對已登錄到您的合作夥伴中心帳戶的 app。
 title: 建立 App 提交
 ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立應用程式提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 740e65d79636c9e5451e68fa84ce2eae4e3252c6
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: fd97efca42049fd9f5adc4d051688074d91132fa
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5935691"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5992062"
 ---
 # <a name="create-an-app-submission"></a>建立 App 提交
 
-使用 Microsoft Store 提交 API 的這個方法為登錄到您 Windows 開發人員中心帳戶的 App 建立新提交。 使用這個方法成功建立新提交之後，請[更新提交](update-an-app-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-app-submission.md)供擷取和發佈。
+在 Microsoft Store 提交 API 中使用這個方法，來建立新的提交，針對已登錄到您的合作夥伴中心帳戶的 app。 使用這個方法成功建立新提交之後，請[更新提交](update-an-app-submission.md)對提交的資料進行任何必要的變更，然後[認可提交](commit-an-app-submission.md)供擷取和發佈。
 
 如需這個方法如何在使用 Microsoft Store 提交 API 建立 App 提交的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
@@ -188,7 +188,7 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 400  | 無法建立提交，因為要求無效。 |
-| 409  | 無法建立提交，因為 App 的目前狀態，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 無法建立提交，因為應用程式的目前狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題
