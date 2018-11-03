@@ -8,16 +8,16 @@ ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d42cf9f0ed0827b1d5c451ad9fed077ef6acc6b
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5946109"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995826"
 ---
 # <a name="get-monthly-app-usage"></a>取得每月應用程式使用量
 
-在 Microsoft Store 分析 API 中使用這個方法，以針對特定的日期範圍 （過去 90 天只） 與其他選擇性篩選器應用程式取得 JSON 格式 （不包括多人遊戲的 Xbox） 的彙總的使用狀況資料。 這項資訊也會在 Windows 開發人員中心儀表板中的[使用方式報告](../publish/usage-report.md)中提供的。
+在 Microsoft Store 分析 API 中使用這個方法，以針對特定的日期範圍 （過去 90 天只） 與其他選擇性篩選器應用程式取得 JSON 格式 （不包括多人遊戲的 Xbox） 的彙總的使用狀況資料。 這項資訊也會在合作夥伴中心中的[使用方式報告](../publish/usage-report.md)中提供的。
 
 ## <a name="prerequisites"></a>必要條件
 

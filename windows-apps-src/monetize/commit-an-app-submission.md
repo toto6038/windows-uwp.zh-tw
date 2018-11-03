@@ -1,24 +1,24 @@
 ---
 author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
-description: 使用 Microsoft Store 提交 API 中的這個方法，將新的或或更新的 App 提交認可到 Windows 開發人員中心。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來將新的或或更新 app 提交認可到合作夥伴中心。
 title: 認可 App 提交
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可應用程式提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 594fb7bdbf1e56243837d2e9e3ebe1aced7eceff
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932104"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995038"
 ---
 # <a name="commit-an-app-submission"></a>認可 App 提交
 
 
-使用 Microsoft Store 提交 API 中的這個方法，將新的或或更新的 App 提交認可到 Windows 開發人員中心。 認可動作會警示開發人員中心提交資料已上傳 (包括任何相關的套件和影像)。 在回應中，開發人員中心會認可對提交資料所做的變更以供擷取和發佈。 認可作業成功之後，提交的變更會顯示在開發人員中心儀表板中。
+在 Microsoft Store 提交 API 中使用這個方法，來將新的或或更新 app 提交認可到合作夥伴中心。 認可動作會警示合作夥伴中心，對提交資料已上傳 （包括任何相關的套件和影像）。 在回應中，合作夥伴中心會針對擷取和發佈對提交資料認可變更。 認可作業成功之後，提交，變更就會顯示在合作夥伴中心。
 
 如需認可作業如何在使用 Microsoft Store 提交 API 提交 App 的程序中進行的詳細資訊，請參閱[管理 App 提交](manage-app-submissions.md)。
 
@@ -51,10 +51,10 @@ ms.locfileid: "5932104"
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
 | applicationId | 字串 | 必要。 包含您想要認可提交之 App 的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
-| submissionId | 字串 | 必要。 您想要認可之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 對於開發人員中心儀表板中所建立的提交，這個 ID 也適用於儀表板中提交頁面的 URL。  |
+| submissionId | 字串 | 必要。 您想要認可之提交的識別碼。 在[建立 App 提交](create-an-app-submission.md)要求的回應資料中有提供此識別碼。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -92,7 +92,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
-| 409  | 找到指定的提交，但無法以其目前的狀態認可，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |
+| 409  | 找到指定的提交，但無法認可以其目前的狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相關主題

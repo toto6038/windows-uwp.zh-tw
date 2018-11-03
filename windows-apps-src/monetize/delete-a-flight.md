@@ -1,26 +1,26 @@
 ---
 author: Xansky
 ms.assetid: AD80F9B3-CED0-40BD-A199-AB81CDAE466C
-description: 使用 Microsoft Store 提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的 App 刪除套件正式發行前小眾測試版。
+description: 在 Microsoft Store 提交 API 中使用這個方法，刪除套件正式，針對已登錄到您的合作夥伴中心帳戶的 app。
 title: 刪除套件正式發行前小眾測試版
 ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 刪除正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: 56f7c4fa55620d4c5be8baddc6323a9c7482e02f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 23e90a322f347375cfdb33eca9315a5ca538fd4c
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5940618"
+ms.lasthandoff: 11/03/2018
+ms.locfileid: "5995271"
 ---
 # <a name="delete-a-package-flight"></a>刪除套件正式發行前小眾測試版
 
-使用 Microsoft Store 提交 API 中的這個方法為註冊到您 Windows 開發人員中心帳戶的 App 刪除套件正式發行前小眾測試版。
+在 Microsoft Store 提交 API 中使用這個方法，刪除套件正式，針對已登錄到您的合作夥伴中心帳戶的 app。
 
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -47,11 +47,11 @@ ms.locfileid: "5940618"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 包含您想要刪除套件正式發行前小眾測試版之 App 的 Store 識別碼。 App 的 Store 識別碼可在開發人員中心儀表板上取得。  |
-| flightId | 字串 | 必要。 要刪除的套件正式發行前小眾測試版識別碼。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。 對於開發人員中心儀表板中所建立的正式發行前小眾測試版，這個 ID 也適用於儀表板中正式發行前小眾測試版頁面的 URL。  |
+| applicationId | 字串 | 必要。 包含您想要刪除套件正式發行前小眾測試版之 App 的 Store 識別碼。 應用程式的市集識別碼是可在合作夥伴中心。  |
+| flightId | 字串 | 必要。 要刪除的套件正式發行前小眾測試版識別碼。 識別碼可從[建立套件正式發行前小眾測試版](create-a-flight.md)和[取得 App 套件正式發行前小眾測試版](get-flights-for-an-app.md)要求的回應資料中取得。 飛行合作夥伴中心中所建立，這個 ID 也是適用於合作夥伴中心中飛行頁面的 URL。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -77,7 +77,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的套件正式發行前小眾測試版。  |
-| 409  | 找到指定的套件正式發行前小眾測試版，但無法以其目前的狀態刪除，或 App 使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |   
+| 409  | 找不到指定的套件正式，但它無法以其目前的狀態刪除，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
 
 
 ## <a name="related-topics"></a>相關主題
