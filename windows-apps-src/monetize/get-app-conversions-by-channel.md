@@ -7,12 +7,12 @@ ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式轉換, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: 60e166b70c6a2aacf20673b30461002f3aa61305
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ecb5d5dfbfcbabbd3fa3004c84e2a1a5fff9f2d6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5947649"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987331"
 ---
 # <a name="get-app-conversions-by-channel"></a>依通道取得應用程式轉換
 
@@ -21,9 +21,9 @@ ms.locfileid: "5947649"
 * *轉換*表示客戶 (使用 Microsoft 帳戶登入) 已經新獲得您 App 的授權 (不論是付費或免費取得)。
 * *通道*是客戶到達您應用程式清單頁面的方法 (例如，透過 Microsoft Store 或[自訂應用程式促銷活動](../publish/create-a-custom-app-promotion-campaign.md))。
 
-「Windows 開發人員中心」儀表板中的[下載數報告](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel)也有提供這項資訊。
+這項資訊也會在合作夥伴中心[下載數報告](../publish/acquisitions-report.md#app-page-views-and-conversions-by-channel)中提供的。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
 若要使用這個方法，您必須先進行下列動作：

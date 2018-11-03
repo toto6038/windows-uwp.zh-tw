@@ -1,26 +1,26 @@
 ---
 author: Xansky
 ms.assetid: 2BCFF687-DC12-49CA-97E4-ACEC72BFCD9B
-description: 在 Microsoft Store 提交 API 中使用這個方法，針對登錄到您 Windows 開發人員中心帳戶的所有 App 擷取相關資訊。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來為登錄到您的合作夥伴中心帳戶的所有 app 都擷取相關資訊。
 title: 取得所有 App
 ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: b0f7307e424cebcf52f56e17ad3630f6111bee21
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: a689f540cb939cea3549b6660f2daf9a70f9b1f6
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926991"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988106"
 ---
 # <a name="get-all-apps"></a>取得所有 App
 
 
-在 Microsoft Store 提交 API 中使用這個方法，針對已登錄到您 Windows 開發人員中心帳戶的所有 App 擷取資料。
+在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的所有應用程式資料。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -127,7 +127,7 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到任何 App。 |
-| 409  | App 使用[目前 Microsoft Store 提交 API 不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。  |
+| 409  | 應用程式使用合作夥伴中心功能， [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相關主題

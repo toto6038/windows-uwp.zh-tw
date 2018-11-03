@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 36df4e7d8060b9e4420a5fe1a2144ad29520c7f7
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 6c86c0d5d1a10442c7addeed11cdbfc37846f337
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5920898"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988096"
 ---
 # <a name="manage-ad-campaigns"></a>管理廣告行銷活動
 
 使用這些方法在 [Microsoft Store 促銷 API](run-ad-campaigns-using-windows-store-services.md)，為您的應用程式建立、編輯及取得促銷廣告活動。 您使用此方法建立的每個活動，只能和一個應用程式相關聯。
 
->**注意**&nbsp;&nbsp;，您也可以使用 Windows 開發人員中心儀表板建立和管理廣告活動，而以程式設計方式所建立的活動可以在儀表板中存取。 如需有關在儀表板中管理廣告行銷活動的詳細資訊，請參閱[為您的 App 建立廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)。
+>**注意：**&nbsp;&nbsp;您也可以建立和管理廣告行銷活動使用合作夥伴中心和您以程式設計方式建立的活動可以在合作夥伴中心存取。 如需有關如何管理合作夥伴中心中的廣告行銷活動的詳細資訊，請參閱 <<c0>建立您的應用程式的廣告活動。
 
 當您使用這些方法建立或更新活動時，通常也呼叫下列一或多個管理方法*播送行*、*目標設定檔*及*廣告素材*相關的活動。 如需有關播送行、目標設定檔及廣告素材之間關聯性的詳細資訊，請參閱[使用 Microsoft Store 服務執行廣告行銷活動](run-ad-campaigns-using-windows-store-services.md#call-the-windows-store-promotions-api)。
 
@@ -33,7 +33,7 @@ ms.locfileid: "5920898"
 
 * 如果您尚未完成，請先完成 Microsoft Store 促銷交 API 的所有[先決條件](run-ad-campaigns-using-windows-store-services.md#prerequisites)。
 
-  >**注意**&nbsp;&nbsp;做為必要條件的一部分，請務必[在開發人員中心儀表板中至少建立一個付費廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且在儀表板中為此廣告行銷活動至少新增一個付款方式。 使用此 API 所建立廣告行銷活動的廣告播送行將會自動向儀表板中 **\[宣傳您的應用程式\] **頁面上所選擇預設付款方式收取費用。
+  >**注意：**&nbsp;&nbsp;做為必要條件的一部分，請確定該您[建立合作夥伴中心中的至少一個付費的廣告行銷活動](../publish/create-an-ad-campaign-for-your-app.md)，而且，您將新增至少一個廣告行銷活動的付款方式在合作夥伴中心。 使用此 API 所建立的廣告行銷活動的播送行將會自動向合作夥伴中心**廣告行銷活動**] 頁面上所選擇預設付款方式收取費用。
 
 * [取得 Azure AD 存取權杖](run-ad-campaigns-using-windows-store-services.md#obtain-an-azure-ad-access-token)以便用於這些方法的要求標頭。 在您取得存取權杖之後，您在權杖到期之前有 60 分鐘的時間可以使用權杖。 權杖到期之後，您可以取得新的權杖。
 

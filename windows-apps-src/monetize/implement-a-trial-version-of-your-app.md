@@ -8,16 +8,16 @@ ms.author: mhopkins
 ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b078f0573d94e80b590f473f7c9a9b0395115ee
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: d428128430a6d7743ebdf94fb8d9aff8286d8d77
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5930863"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988212"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>實作應用程式的試用版
 
-如果您將 App [在 Windows 開發人員中心儀表板中設定為免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶可在試用期間免費使用您的 App，您將可藉由在試用期間排除或限制某些功能，來吸引客戶升級成完整版的 App。 開始撰寫程式碼之前，請先決定哪些功能應受到限制，然後確定只有在客戶購買完整授權後，App 才會允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
+如果您在[設定為免費試用在合作夥伴中心的您應用程式](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶能夠免費使用您的應用程式，在試用期間，您可以吸引客戶升級成完整版的應用程式排除或限制某些功能，在試用期間。 開始撰寫程式碼之前，請先決定哪些功能應受到限制，然後確定只有在客戶購買完整授權後，App 才會允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
 
 本文顯示如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您應用程式的試用授權，而且如果授權狀態在應用程式執行期間變更，則會收到通知。 
 
@@ -63,7 +63,7 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 
 這個範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您已在 Windows 開發人員中心儀表板中建立應用程式，並將其設定為沒有時間限制的[免費試用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)，而且已在 Microsoft Store 中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在 Microsoft Store 中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
+* 您已設定為沒有時間限制的[免費試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)的合作夥伴中心中建立應用程式，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在 Microsoft Store 中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
 
 這個範例中的程式碼假設：
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。

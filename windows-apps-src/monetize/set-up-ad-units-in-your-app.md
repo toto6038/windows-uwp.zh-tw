@@ -1,19 +1,19 @@
 ---
 author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
-description: 了解在提交 app 到市集之前，如何從 Windows 開發人員中心儀表板新增應用程式識別碼和廣告單元識別碼。
+description: 了解如何新增應用程式識別碼和廣告單元識別碼值從合作夥伴中心，您的應用程式送出 app 到市集之前，先。
 title: 在您的應用程式中設定廣告單元
 ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告單元, 測試
 ms.localizationpriority: medium
-ms.openlocfilehash: 4af8dd64a8d096e41febab53b4fea2d38988d08a
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926626"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988397"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在您的應用程式中設定廣告單元
 
@@ -21,7 +21,7 @@ ms.locfileid: "5926626"
 
 我們提供[測試廣告單元值](#test-ad-units)，您可以在測試期間用來確認您的應用程式可以顯示測試廣告。 這些測試值只能在您應用程式的測試版本中使用。 如果您嘗試在應用程式發佈後使用測試值，您的實際應用程式將不會收到廣告。
 
-完成測試 UWP app 且準備好提交至 Windows 開發人員中心時，您必須從 Windows 開發人員中心儀表板的 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面[建立即時廣告單元](#live-ad-units)，然後更新您的 App 程式碼來使用此廣告單元的應用程式識別碼和廣告單元識別碼值。
+當您完成測試您的 UWP app 且準備好將 app 提交至合作夥伴中心後，您必須從[應用程式內廣告](../publish/in-app-ads.md)頁面，在合作夥伴中心的 [[建立即時廣告單元](#live-ad-units)，並更新您的應用程式程式碼，使用此廣告單元的應用程式識別碼和廣告單元識別碼值。
 
 如需有關在您的應用程式程式碼中指派應用程式識別碼和廣告單元識別碼值，請參閱下列文件：
 * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)
@@ -52,15 +52,15 @@ ms.locfileid: "5926626"
 
 ## <a name="live-ad-units"></a>即時廣告單元
 
-若要從開發人員中心儀表板取得即時廣告單元並在您的應用程式中使用：
+若要從合作夥伴中心取得即時廣告單元並在您的應用程式中使用：
 
-1.  在儀表板中的 **\[應用程式內廣告\]** 頁面，[建立廣告單元](../publish/in-app-ads.md#create-ad-unit)。 請務必指定您的應用程式中正在使用的正確廣告控制項的廣告單元類型。
+1.  在**應用程式內廣告**頁面上，在合作夥伴中心[建立廣告單元](../publish/in-app-ads.md#create-ad-unit)。 請務必指定您的應用程式中正在使用的正確廣告控制項的廣告單元類型。
     > [!NOTE]
     > 您可以選擇為廣告單元啟用廣告流量分配，方法是在 [\[流量分配設定\]](../publish/in-app-ads.md#mediation) 區段進行設定。 廣告流量分配可讓您獲得最大的廣告收益並充分發揮應用程式促銷功能，透過顯示來自多個廣告網路的廣告，包括其他付費廣告網路的廣告，以及 Microsoft 應用程式促銷活動的廣告。 根據預設，我們會使用機器學習演算法自動設定廣告流量分配，來協助您的 app 在支援的所有市場，將您的廣告收入最大化，但是您可以選擇手動設定廣告流量分配。
 
 2.  建立新的廣告單元之後，在**獲利**&gt;**應用程式中廣告**頁面中擷取可用的廣告單元表格中廣告單元的**應用程式識別碼**和**廣告單元識別碼**。
     > [!NOTE]
-    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在儀表板中建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式的 Microsoft Store 識別碼 (Microsoft Store 識別碼值範例類似於 9NBLGGH4R315)。
+    > 測試廣告單元和即時 UWP 廣告單元的應用程式識別碼值有不同的格式。 測試應用程式識別碼值為 GUID。 當您在合作夥伴中心建立即時 UWP 廣告單元時，廣告單元的應用程式識別碼值一律符合您應用程式 （microsoft Store 識別碼值範例類似於 9NBLGGH4R315） 的 「 市集識別碼。
 
 3.  在您的應用程式代碼中，指派應用程式識別碼和廣告單元識別碼值。 如需詳細資訊，請參閱下列文章：
     * [XAML 和 .NET 中的 AdControl](adcontrol-in-xaml-and--net.md)

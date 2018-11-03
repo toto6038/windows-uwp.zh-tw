@@ -8,12 +8,12 @@ ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 刪除, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c5d9e905f6b3d8acffc53e943d946f6ac7c3c68
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5941621"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5987815"
 ---
 # <a name="delete-an-add-on-submission"></a>刪除附加元件提交
 
@@ -46,11 +46,11 @@ ms.locfileid: "5941621"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| inAppProductId | 字串 | 必要。 包含要刪除提交之附加元件的 Store 識別碼。  Store 識別碼可在開發人員中心儀表板上取得。  |
-| submissionId | 字串 | 必要。 要刪除之提交的識別碼。 在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中有提供此識別碼。 對於開發人員中心儀表板中所建立的提交，這個 ID 也適用於儀表板中提交頁面的 URL。  |
+| inAppProductId | 字串 | 必要。 包含要刪除提交之附加元件的 Store 識別碼。 「 市集識別碼 」 是可在合作夥伴中心。  |
+| submissionId | 字串 | 必要。 要刪除之提交的識別碼。 在[建立附加元件提交](create-an-add-on-submission.md)要求的回應資料中有提供此識別碼。 對於在合作夥伴中心中建立的提交，這個 ID 也是適用於在合作夥伴中心提交頁面的 URL。  |
 
 
-### <a name="request-body"></a>要求本文
+### <a name="request-body"></a>要求主體
 
 不提供此方法的要求主體。
 
@@ -76,7 +76,7 @@ Authorization: Bearer <your access token>
 |--------|------------------|
 | 400  | 要求參數無效。 |
 | 404  | 找不到指定的提交。 |
-| 409  | 找到指定的提交，但無法以其目前的狀態刪除，或附加元件使用 [Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的開發人員中心儀表板功能。 |
+| 409  | 找到指定的提交，但它無法以其目前的狀態刪除，或附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |
 
 
 ## <a name="related-topics"></a>相關主題

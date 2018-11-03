@@ -8,12 +8,12 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, AdControl,疑難排解, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ad78c282231d2f7ae7b3261fec0b0c1b59abc45
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 12789767694e4ab3fa13efec4a31c8db4acd5420
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932268"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5989191"
 ---
 # <a name="xaml-and-c-troubleshooting-guide"></a>XAML 和 C# 的疑難排解指南
 
@@ -39,7 +39,7 @@ ms.locfileid: "5932268"
 
 1.  確定已在 Package.appxmanifest 中選取 **\[網際網路 (用戶端)\]** 功能。
 
-2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+2.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和廣告單位識別碼，您在合作夥伴中心中取得。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -89,9 +89,9 @@ ms.locfileid: "5932268"
 
 1.  再次檢查前述[沒有顯示 AdControl](#xaml-notappearing) 一節中的所有步驟。
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
+2.  處理 **ErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
 
-    This example demonstrates an **ErrorOccurred** event handler. 第一個程式碼片段是 XAML UI 標記。
+    此範例示範 **ErrorOccurred** 事件處理常式。 第一個程式碼片段是 XAML UI 標記。
 
     > [!div class="tabbedCodeSnippets"]
     ``` xml
@@ -175,7 +175,7 @@ ms.locfileid: "5932268"
     > [!div class="tabbedCodeSnippets"]
     [!code-cs[AdControl](./code/AdvertisingSamples/AdControlSamples/cs/MiscellaneousSnippets.cs#Snippet1)]
 
-3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合從 Windows 開發人員中心取得的應用程式識別碼和廣告單位識別碼。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+3.  檢查應用程式識別碼和廣告單位識別碼。 這些識別碼必須符合應用程式識別碼和廣告單位識別碼，您在合作夥伴中心中取得。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
     > [!div class="tabbedCodeSnippets"]
     ``` cs
@@ -226,7 +226,7 @@ ms.locfileid: "5932268"
 
 1.  再次檢查上方[沒有顯示 AdControl](#csharp-adcontrolnotappearing) 一節中的所有步驟。
 
-2.  Handle the **ErrorOccurred** event, and use the message that is passed to the event handler to determine whether an error occurred and what type of error was thrown. 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
+2.  處理 **ErrorOccurred** 事件，並以傳遞到事件處理常式的訊息來判斷是否發生問題及擲回的問題類型為何。 如需詳細資訊，請參閱 [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
 
     下列範例顯示實作錯誤呼叫所需的基本程式碼。 這個 XAML 程式碼會定義用來顯示錯誤訊息的 **TextBlock**。
 

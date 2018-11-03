@@ -8,17 +8,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評論
 ms.localizationpriority: medium
-ms.openlocfilehash: 61ce463be2ef2d5e3328c132302704f50c336105
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.openlocfilehash: 656f00ec8a7711a43c44790b04ea01dace4c4ee2
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5926656"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "5988738"
 ---
 # <a name="get-app-reviews"></a>取得應用程式評論
 
 
-使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得評論資料 (JSON 格式)。 「Windows 開發人員中心」儀表板中的[評論報告](../publish/reviews-report.md)也有提供這項資訊。
+使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得評論資料 (JSON 格式)。 這項資訊也會在合作夥伴中心中的[評論] 報告](../publish/reviews-report.md)中提供的。
 
 在擷取評論之後，您可以使用 Microsoft Store 評論 API 中的[取得應用程式評論的回應資訊](get-response-info-for-app-reviews.md)和[提交應用程式評論的回應](submit-responses-to-app-reviews.md)方法，以程式設計的方式回應評論。
 
