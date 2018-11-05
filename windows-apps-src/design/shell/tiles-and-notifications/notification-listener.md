@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5972812"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6031080"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 

@@ -14,11 +14,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: d4ff66e988634cf1ba48809688ea6535e6e95b03
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5973218"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6033826"
 ---
 # <a name="dialogs-and-flyouts"></a>對話方塊和飛出視窗
 

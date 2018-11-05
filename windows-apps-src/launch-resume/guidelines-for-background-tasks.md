@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: fd98a3019efc8f2774fb7a1b52f5dcd27778cd2a
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5969396"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6033389"
 ---
 # <a name="guidelines-for-background-tasks"></a>背景工作的指導方針
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 211bd4ce660726030f8b90d29c4ea4d8a14564de
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5974489"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6034088"
 ---
 # <a name="get-a-preview-frame"></a>取得預覽框架
 

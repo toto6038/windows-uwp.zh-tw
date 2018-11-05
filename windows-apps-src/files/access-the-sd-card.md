@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, sd 記憶卡, 儲存空間
 ms.localizationpriority: medium
 ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5997058"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032228"
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 

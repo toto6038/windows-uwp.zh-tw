@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b79edc5499343498801081dd00554128c3b57eae
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 3ec0f99f069950776ab934c82bd3197bdd6c9dd6
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970165"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032922"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
@@ -98,14 +98,14 @@ ms.locfileid: "5970165"
 
 使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件實作基本的輸入功能，不必為每一種指標輸入裝置撰寫程式碼。 不過，您仍然可以透過使用此物件的指標、手勢及操作事件，利用每個裝置的特殊功能 (例如滑鼠滾輪事件)。
 
-**範例：** 請參閱我們的[應用程式範例](http://go.microsoft.com/fwlink/p/?LinkID=264996)中的動作中此功能。
+**範例：** 請參閱我們的[應用程式範例](https://go.microsoft.com/fwlink/p/?LinkID=264996)中的動作中此功能。
 
 
-- [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
 
-- [輸入範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
+- [輸入範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
 
-- [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+- [輸入：使用 GestureRecognizer 處理手勢與操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
 
 ## <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
@@ -141,16 +141,16 @@ ms.locfileid: "5970165"
 * [識別輸入裝置](identify-input-devices.md)
 
 **範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **封存範例**
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：使用 GestureRecognizer 處理手勢與操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 

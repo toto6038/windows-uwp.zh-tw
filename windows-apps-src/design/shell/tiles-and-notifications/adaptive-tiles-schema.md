@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ed938ec247f308559566ad299bec8eb8ea75674
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5983578"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032088"
 ---
 # <a name="adaptive-tile-templates-schema-and-guidance"></a>彈性磚範本：結構描述和指導方針
 

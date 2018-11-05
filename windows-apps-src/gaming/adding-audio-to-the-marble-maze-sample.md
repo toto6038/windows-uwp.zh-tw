@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 音訊, 遊戲, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: 89612e3fbc4ef2ccb855f7709820f9445d0fd77c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5976780"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6033902"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入音訊
 

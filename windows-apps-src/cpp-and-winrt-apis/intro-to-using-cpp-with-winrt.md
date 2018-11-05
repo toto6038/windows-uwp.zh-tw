@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5975049"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6032130"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;
