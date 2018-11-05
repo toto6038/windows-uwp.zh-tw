@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, racing wheel, force feedback, 遊戲, 賽車方向盤, 動力回饋
 ms.localizationpriority: medium
 ms.openlocfilehash: 20b4b35bb729ee49dbfd3f2b2b2a029a4319521c
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5972664"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6029934"
 ---
 # <a name="racing-wheel-and-force-feedback"></a>賽車方向盤與動力回饋
 
