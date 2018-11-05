@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a5d3ab7b50721b969859006831b33e9b00e300f
-ms.sourcegitcommit: 70ab58b88d248de2332096b20dbd6a4643d137a4
+ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "5932189"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "5994086"
 ---
 #  <a name="troubleshooting-porting-windowsphone-silverlight-to-uwp"></a>將 WindowsPhone Silverlight 移植到 UWP 的疑難排解
 
