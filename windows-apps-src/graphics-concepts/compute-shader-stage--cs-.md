@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e842a6720725552885f83e1b019eebb5c33ba407
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5988169"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6025495"
 ---
 # <a name="compute-shader-cs-stage"></a>計算著色器 (CS) 階段
 

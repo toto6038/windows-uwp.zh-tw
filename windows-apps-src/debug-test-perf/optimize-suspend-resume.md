@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5977729"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6023091"
 ---
 # <a name="optimize-suspendresume"></a>最佳化暫停/繼續
 
