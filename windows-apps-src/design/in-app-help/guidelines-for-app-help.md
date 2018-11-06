@@ -11,11 +11,11 @@ keywords: windows 10, uwp
 ms.assetid: c3e73f9b-4839-4804-b379-c95b0ca4fbe8
 ms.localizationpriority: medium
 ms.openlocfilehash: 6e4cb60526fda9495249cd310ad434878941a97d
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5972832"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049320"
 ---
 # <a name="guidelines-for-app-help"></a>應用程式說明的指導方針
 

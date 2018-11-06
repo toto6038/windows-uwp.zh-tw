@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 591ba592d1c17b03ae29c6fb98ef546bc18b8bdc
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5976813"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6050154"
 ---
 # <a name="pointofservice-device-sharing"></a>PointOfService 裝置共用
 

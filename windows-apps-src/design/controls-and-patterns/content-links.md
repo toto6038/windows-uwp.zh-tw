@@ -13,11 +13,11 @@ design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 3939995aa2f29f4590c8c71a877b69f0cb81d2ec
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5969174"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6049797"
 ---
 # <a name="content-links-in-text-controls"></a>文字控制項中的內容連結
 

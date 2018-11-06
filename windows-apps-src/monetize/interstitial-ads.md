@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
 ms.openlocfilehash: 27ef8173db2976d58f9ccd0422a1217e2bd91d13
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5980682"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "6050840"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
