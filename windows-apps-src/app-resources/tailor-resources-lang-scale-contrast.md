@@ -8,12 +8,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 563807798cefe083fa1de85dc1f7e4c3ae679211
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: 018740b9ceaa10425ec71f6a2775d547b7c30e82
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5992514"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6048477"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -39,7 +39,7 @@ ms.locfileid: "5992514"
 
 以下是使用限定詞來命名包含資產檔案之資料夾的範例。 如果每個限定詞有數個資產檔案，請在資料夾名稱中使用限定詞。 如此一來，您在資料夾層級設定限定詞一次，限定詞就會套用至資料夾中的所有項目。
 
-```
+```console
 \Assets\Images\contrast-standard\<logo.png, and other image files>
 \Assets\Images\contrast-high\<logo.png, and other image files>
 \Assets\Images\contrast-black\<logo.png, and other image files>
@@ -52,7 +52,7 @@ ms.locfileid: "5992514"
 
 您不必建立和命名資料夾，反而可以使用限定詞來命名資源檔案本身。 如果每個限定詞只有一個資源檔案，您可能會想要這樣做。 範例如下。
 
-```
+```console
 \Assets\Images\logo.contrast-standard.png
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.contrast-black.png
@@ -68,7 +68,7 @@ ms.locfileid: "5992514"
 ## <a name="actual-and-neutral-qualifier-matches"></a>實際和中性限定詞相符項目
 您不需要為*每個*限定詞值提供資源檔案。 例如，若您發現高對比和標準對比都分別只需使用一個視覺資產，您可以像這樣來命名這些資產。
 
-```
+```console
 \Assets\Images\logo.contrast-high.png
 \Assets\Images\logo.png
 ```
@@ -81,7 +81,7 @@ ms.locfileid: "5992514"
 
 如果高對比或標準對比分別都只需要一組資產，則可以使用資料夾名稱，而不使用檔案名稱。 在這種情況下，完全省略資料夾名稱就會為您提供中性相符項目。
 
-```
+```console
 \Assets\Images\contrast-high\<logo.png, and other images to load when high contrast theme is not None>
 \Assets\Images\<logo.png, and other images to load when high contrast theme is None>
 ```
@@ -92,7 +92,7 @@ ms.locfileid: "5992514"
 
 您可以在資料夾及檔案名稱中結合限定詞。 例如，您可能會想要在高對比模式為開啟狀態*且*顯示縮放比例為 400 時載入影像資產。 其中一個這樣做的方式是巢狀資料夾。
 
-```
+```console
 \Assets\Images\contrast-high\scale-400\<logo.png, and other image files>
 ```
 
@@ -100,7 +100,7 @@ ms.locfileid: "5992514"
 
 另一個方式是將多個限定詞結合成一個資料夾名稱。
 
-```
+```console
 \Assets\Images\contrast-high_scale-400\<logo.png, and other image files>
 ```
 
@@ -108,7 +108,7 @@ ms.locfileid: "5992514"
 
 您可以在檔案名稱中，以相同的格式來結合多個限定詞。
 
-```
+```console
 \Assets\Images\logo.contrast-high_scale-400.png
 ```
 
@@ -160,14 +160,14 @@ public void SetLicenseLevel(BrandID brand)
 
 但在不得已時，還是可以使用 devicefamily 限定詞來命名含有 XAML 檢視表 (XAML 檢視表是一個包含 UI 版面配置及控制項的 XAML 檔案) 的資料夾。
 
-```
+```console
 \devicefamily-desktop\<MainPage.xaml, and other markup files to load when running on a desktop computer>
 \devicefamily-mobile\<MainPage.xaml, and other markup files to load when running on a phone>
 ```
 
 或者，也可以命名檔案。
 
-```
+```console
 \MainPage.devicefamily-desktop.xaml
 \MainPage.devicefamily-mobile.xaml
 ```
@@ -203,21 +203,21 @@ public void SetLicenseLevel(BrandID brand)
 
 您通常會使用 `language` 限定詞來命名包含資源檔案 (`.resw`) 的資料夾。
 
-```
+```console
 \Strings\language-en\Resources.resw
 \Strings\language-ja\Resources.resw
 ```
 
 您可以省略 `language` 限定詞的 `language-` 部分 (也就是，限定詞名稱)。 您不可使用其他類型的限定詞這樣做，而且也只有在資料夾名稱中才做得到。
 
-```
+```console
 \Strings\en\Resources.resw
 \Strings\ja\Resources.resw
 ```
 
 您不必命名資料夾，反而可以使用 `language` 限定詞來命名資源檔案本身。
 
-```
+```console
 \Strings\Resources.language-en.resw
 \Strings\Resources.language-ja.resw
 ```
@@ -234,7 +234,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 以下是在資料夾層級設定限定詞的範例。
 
-```
+```console
 \Assets\Images\scale-100\<logo.png, and other image files>
 \Assets\Images\scale-200\<logo.png, and other image files>
 \Assets\Images\scale-400\<logo.png, and other image files>
@@ -242,7 +242,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 而此範例則是在檔案層級進行設定。
 
-```
+```console
 \Assets\Images\logo.scale-100.png
 \Assets\Images\logo.scale-200.png
 \Assets\Images\logo.scale-400.png
