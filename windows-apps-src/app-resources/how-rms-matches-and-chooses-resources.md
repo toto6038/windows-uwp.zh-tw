@@ -8,12 +8,12 @@ ms.date: 10/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: d31c9fd3a6f8f57f3e78d88d3ad754d4848a9cad
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996853"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045275"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>資源管理系統如何比對和選擇資源
 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 做法是為所有的候選項目排名時將所有限定詞列入考慮。
@@ -41,7 +41,7 @@ ms.locfileid: "5996853"
 ## <a name="example-of-choosing-a-resource-candidate"></a>選擇資源候選項目的範例
 請考慮這些檔案。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -53,7 +53,7 @@ de/images/logo.jpg
 
 並假設這些都是目前內容中的設定。
 
-```
+```console
 Application language: en-US; fr-FR;
 Scale: 400
 Contrast: Standard
@@ -61,7 +61,7 @@ Contrast: Standard
 
 資源管理系統會排除三個檔案，因為高對比以及德文語言與設定所定義的內容不相符。 剩下這些候選項目。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -70,7 +70,7 @@ fr/images/logo.scale-100.jpg
 
 對於剩餘的候選項目，資源管理系統會使用的最高優先順序內容限定詞，也就是語言。 英文資源是比法文資源更接近，因為在設定中英文列在法文之前。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -78,13 +78,13 @@ en/images/logo.scale-100.jpg
 
 接下來，資源管理系統使用下一個最高優先順序內容限定詞，也就是縮放。 因此，這是傳回的資源。
 
-```
+```console
 en/images/logo.scale-400.jpg
 ```
 
 您可以使用進階的 [**NamedResource.ResolveAll**](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live) 方法，以符合內容設定的順序來擷取所有候選項目。 對於我們剛剛瀏覽過的範例，**ResolveAll** 是以此順序傳回候選項目。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -94,7 +94,7 @@ fr/images/logo.scale-100.jpg
 ## <a name="example-of-producing-a-fallback-choice"></a>遞補選擇的範例
 請考慮這些檔案。
 
-```
+```console
 en/images/logo.scale-400.jpg
 en/images/logo.scale-200.jpg
 en/images/logo.scale-100.jpg  
@@ -105,7 +105,7 @@ de/images/contrast-standard/logo.jpg
 
 並假設這些都是目前內容中的設定。
 
-```
+```console
 User language: de-DE;
 Scale: 400
 Contrast: High
@@ -113,7 +113,7 @@ Contrast: High
 
 所有檔案因為與內容不相符而都被排除。 所以我們輸入預設輪次，其中在建立 PRI 檔案期間的預設值 (請參閱[手動以 MakePri.exe 編譯資源](compile-resources-manually-with-makepri.md)) 是這個。
 
-```
+```console
 Language: fr-FR;
 Scale: 400
 Contrast: Standard
@@ -121,7 +121,7 @@ Contrast: Standard
 
 這會留下與目前的使用者或預設值相符的所有資源。
 
-```
+```console
 fr/images/contrast-standard/logo.scale-400.jpg
 fr/images/contrast-standard/logo.scale-100.jpg
 de/images/contrast-standard/logo.jpg
@@ -129,7 +129,7 @@ de/images/contrast-standard/logo.jpg
 
 資源管理系統會使用最高優先順序內容限定詞，也就是語言來傳回分數最高的具名資源。
 
-```
+```console
 de/images/contrast-standard/logo.jpg
 ```
 

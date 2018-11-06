@@ -8,12 +8,12 @@ ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: f5d47bbe87e9319def2e8c6500fd954f2a291e18
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.openlocfilehash: c777996dceeb443c25fcf526e3a029fca00047c1
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996335"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6043481"
 ---
 # <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
@@ -28,7 +28,7 @@ ms.locfileid: "5996335"
 
 ## <a name="makepri-commands"></a>MakePri 命令
 
-```
+```console
 C:\>makepri help
 
 Usage:
@@ -67,7 +67,7 @@ Help:
 
 `createconfig` 命令會建立的新初始化的 PRI 設定檔，定義您指定的限定詞預設值。 執行 `MakePri.exe createconfig /?` 以查看此命令的詳細說明。
 
-```
+```console
 C:\>makepri createconfig /?
 
 Usage:
@@ -119,7 +119,7 @@ Help:
 > [!NOTE]
 > 無結構描述資源套件是在 PRI 設定檔中使用 *omitSchemaFromResourcePacks* 參數所建立的套件。 若要傾印無結構描述資源套件，請使用 `/es <main_package_PRI_file>` 參數。 如果您沒有指定主要檔案，就會收到錯誤訊息「*套件中的 resources.pri 已損毀，因此加密失敗 (錯誤 PRI222: 0xdef0000f - 發生未指定的錯誤)*」。
 
-```
+```console
 C:\>makepri dump /?
 
 Usage:
@@ -168,7 +168,7 @@ Help:
 
 `new` 命令會依照您的設定檔的指示，在專案中編製檔案的索引，以建立新的 PRI 檔案。 執行 `MakePri.exe new /?` 以查看此命令的詳細說明。
 
-```
+```console
 C:\>makepri new /?
 
 Usage:
@@ -240,7 +240,7 @@ Help:
 
 `resourcepack` 命令會依照您的設定檔的指示，在專案中編製檔案的索引，以建立新的 PRI 檔案。 資源套件 PRI 檔案只包含已經在現有 PRI 檔案中指定的資源的其他變體。 執行 `MakePri.exe resourcepack /?` 以查看此命令的詳細說明。
 
-```
+```console
 C:\>makepri resourcepack /?
 
 Usage:
@@ -307,7 +307,7 @@ Help:
 
 `versioned` 命令會依照您的設定檔的指示，在專案中編製檔案的索引，以建立已版本化的 PRI 檔案。 執行 `MakePri.exe versioned /?` 以查看此命令的詳細說明。
 
-```
+```console
 C:\>makepri versioned /?
 
 Usage:
@@ -412,7 +412,7 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 對於 `resourcepack` 與 `versioned`，不提供 PRI 檔案做為 IndexFile(if) 的輸入參數，可以改為提供結構描述檔案。
 
-```
+```console
 /IndexFile(if) <FILEPATH>
 ```
 
@@ -422,7 +422,7 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 您使用索引選項選項 (/ io) 使用`new`， `resourcepack`，和`versioned`來指定選項可提供詳細的控制權資源的索引子的行為。 根據預設，會停用索引選項。
 
-```
+```console
 /IndexOptions(io) <OPTIONS>
 ```
 
@@ -435,25 +435,25 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 您使用的對應檔案選項 (/mf) 搭配 `new`、`resourcepack` 和 `versioned` 來產生對應檔案。 [MakeAppx.exe](../packaging/create-app-package-with-makeappx-tool.md) 使用對應檔案來產生應用程式套件。
 
-```
+```console
 /MappingFile(mf) <MAPPINGFILETYPE>
 ```
 
 **MAPPINGFILETYPE** 是指定對應檔案格式的權杖。 目前僅支援 `appx` 格式。
 
-```
+```console
 /mf appx
 ```
 
 這是主要對應檔案的範例內容。
 
-```
+```console
 "ResourceDimensions"                   "language-de-de"
 ```
 
 並且這是資源套件對應檔案的範例內容。
 
-```
+```console
 "ResourceId"                           "Resources184.la5decaf08"
 "ResourceDimensions"                   "language-de-de"
 ```
@@ -462,7 +462,7 @@ MakePri 可以在索引子中繼資料檔案中包含資源套件特定的資訊
 
 如果建立資源套件，MakePRI.exe 的輸出摘要是更多詳細資訊的形式。 範例如下。
 
-```
+```console
 Index Pass Completed: ResourcePackTests\TestApp_ResourcePack
 Language Qualifiers: fr-FR, de-DE
 
@@ -489,7 +489,7 @@ Successfully Completed
 
 如果未提供覆寫選項 (/o)，並且指定的輸出檔案已存在，則 MakePri.exe 需要在覆寫之前進行確認。
 
-```
+```console
 Following file(s) already exist at output location:
 <file(s)>
 Overwrite these file(s)? [Y]es (any other key to cancel):
@@ -515,7 +515,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 對於 `resourcepack` 與 `versioned`，不提供 PRI 檔案做為 IndexFile(if) 的輸入參數，可以改為提供結構描述檔案。
 
-```
+```console
 /SchemaFile(sf) <FILEPATH>
 ```
 
@@ -545,7 +545,7 @@ Overwrite these file(s)? [Y]es (any other key to cancel):
 
 主要版本 (/vma) 選項 (適用於 `new` 命令) 已過時，使用它會導致出現此警告訊息。
 
-```
+```console
 'VersionMajor (vma)' input parameter has been deprecated. Please specify major version in the configuration file using 'majorVersion' attribute on 'resources' node.
 ```
 

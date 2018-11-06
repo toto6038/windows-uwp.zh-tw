@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a8523f4895c541ffb3b92ee00d5b62c57343ae00
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5970828"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6046541"
 ---
 # <a name="hlsl-streaming-resources-exposure"></a>HLSL 串流資源曝光
 

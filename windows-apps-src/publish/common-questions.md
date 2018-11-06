@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1455dd832a41e2783d6df8b4470ad8a94c5c40
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "5996094"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6040173"
 ---
 # <a name="common-questions-about-ad-campaigns"></a>關於廣告活動的常見問題
 
@@ -43,7 +43,7 @@ ms.locfileid: "5996094"
 
 目前下列國家與地區支援廣告活動：
 
-Algeria, Argentina, Australia, Austria, Bahamas, Bahrain, Barbados, Belgium, Belize, Bolivia, Brazil, Canada, Chile, China, Colombia, Denmark, Dominican Republic, Ecuador, Egypt, El Salvador, Finland, France, Germany, Guatemala, Haiti, Honduras, Hong Kong SAR, India, Indonesia, Iraq, Ireland, Italy, Jamaica, Jordan, Kuwait, Lebanon, Malaysia, Mexico, Morocco, New Zealand, Netherlands, Nicaragua, Norway, Oman, Panama, Paraguay, Peru, Philippines, Puerto Rico, Qatar, Saudi Arabia, Singapore, Spain, South Africa, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Tunisia, United Arab Emirates, United Kingdom, United States, Uruguay, Venezuela, Vietnam.
+阿爾及利亞、阿根廷、澳洲、奧地利、巴哈馬、巴林、巴貝多、比利時、貝里斯、玻利維亞、巴西、加拿大、智利、中國、哥倫比亞、丹麥、多明尼加、厄瓜多、埃及、薩爾瓦多、芬蘭、法國、德國、瓜地馬拉、海地、宏都拉斯、香港特別行政區、印度、印尼、伊拉克、愛爾蘭、義大利、牙買加、約旦、科威特市、黎巴嫩、馬來西亞、墨西哥、摩洛哥、紐西蘭、荷蘭、尼加拉瓜、挪威、阿曼、巴拿馬、巴拉圭、秘魯、菲律賓、波多黎各、卡達、沙烏地阿拉伯、新加坡、西班牙、南非、瑞典、瑞士、台灣、泰國、千里達及托巴哥、突尼西亞、阿拉伯聯合大公國、英國、美國、烏拉圭、委內瑞拉、越南。
 
 ### <a name="what-languages-are-supported-for-ad-campaigns"></a>廣告活動支援哪些語言？
 

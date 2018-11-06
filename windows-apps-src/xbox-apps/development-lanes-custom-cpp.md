@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c954efde29603b0f1d8fef2c80378c87b954e02
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5997597"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6041960"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>將自訂的 c + + 遊戲 UWP 在 Xbox 上
 

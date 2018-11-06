@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: medium
 ms.openlocfilehash: ff02cfc287bc1d88485a713390e233fc7a742a01
-ms.sourcegitcommit: 144f5f127fc4fbd852f2f6780ef26054192d68fc
+ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "5991220"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "6045518"
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 
@@ -49,7 +49,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 西班牙           | Orange                           |
 | 瑞典          | Telenor、3                       |
 | 瑞士     | Swisscom、Sunrise                |
-| Taiwan          | FarEasTone                       |
+| 台灣          | FarEasTone                       |
 | 土耳其          | Turkcell                         |
 | 阿拉伯聯合大公國 | Etisalat                    |
 | 美國   | Sprint、Verizon                  |
