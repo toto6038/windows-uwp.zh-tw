@@ -8,12 +8,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 59cd664e268e9e62786728aeb122ec52acd721c0
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 75ba42674ca1ea460698fcce6e67bb3528589797
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031350"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251607"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
@@ -253,9 +253,9 @@ ms-resource://john:password@contoso.myapp:8080/Resources/String1
 
 如需範例及詳細資訊，請參閱[將 UI 及應用程式套件資訊清單中的字串當地語系化](localize-strings-ui-manifest.md)和[對語言、縮放比例及高對比的磚和快顯通知支援](../design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)。
 
-`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，當存取資源的基礎檔案系統不區分大小寫時，則會執行 [CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)，並將 *ignoreCase* 設為 `true`，以不區分大小寫的方式進行擷取。
+`ms-resource` 的路徑元件和一般 URI 一樣會區分大小寫。 不過，基礎擷取會[CompareStringOrdinal](https://msdn.microsoft.com/library/windows/apps/br224628)與*ignoreCase*設為`true`。
 
-標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 路徑中的字元「?」、「#」、「/」、「*」和「"」(雙引號字元) 必須以百分比編碼來表示檔案名稱或資料夾名稱等資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從名為 Hello#World.resw 的資源檔案擷取字串資源，請使用這個 URI。
+標準化形式的 URI 會維持大小寫，並對 RFC 3986 非保留字元進行百分比解碼 ("%" 符號後面加上兩位數十六進位表示)。 路徑中的字元「?」、「#」、「/」、「*」和「"」(雙引號字元) 必須以百分比編碼來表示檔案名稱或資料夾名稱等資料。 所有百分比編碼字元都會在擷取前進行解碼。 因此，若要從資源檔案擷取字串資源名稱為`Hello#World.resw`，使用這個 URI。
 
 ```xml
 ms-resource:///Hello%23World/String1

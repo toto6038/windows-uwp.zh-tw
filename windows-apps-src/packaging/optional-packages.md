@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10、 uwp、 選用套件，相關的集合、 套件延伸模組、 visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a782ba90fbf350d9a18098d342c05c75dca6ceb
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: c21b84467151493836186d1d55ab5e4e542899ec
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6192199"
+ms.locfileid: "6259120"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>選用套件及相關集合的製作
 選用套件包含了可與主要套件整合的內容。 這些適合用於可下載內容 (DLC)、 將大型應用程式的大小越大，或傳送任何額外的內容與您原始應用程式分離。
@@ -29,7 +29,7 @@ ms.locfileid: "6192199"
 若要取得所有最新的開發工具，請參閱[下載項目和適用於 Windows 10 的工具](https://developer.microsoft.com/windows/downloads)。
 
 > [!NOTE]
-> 若要提交到 Microsoft Store 中使用選用套件和/或相關的集合的應用程式，您將需要權限。 選用套件和相關集合可在沒有開發人員中心的許可下用於企業營運 (LOB) 或企業應用程式，只要沒有提交到 Microsoft Store 即可。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
+> 若要提交到 Microsoft Store 中使用選用套件和/或相關的集合的應用程式，您將需要權限。 如果不提交至市集，可以沒有合作夥伴中心的許可下線 (LOB) 或企業應用程式使用選用套件及相關的集合。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
 
 ### <a name="code-sample"></a>程式碼範例
 雖然您正在閱讀這篇文章，建議您依照[選用套件的程式碼範例](https://github.com/AppInstaller/OptionalPackageSample)GitHub 上的實機操作的了解如何選用套件的及相關集合工作，在 Visual Studio 內。
