@@ -7,12 +7,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f454c7e7386ba829cf6c99edc0b5b8f2d831f00
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025188"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268833"
 ---
 # <a name="optional-packages-with-executable-code"></a>具可執行程式碼的選用套件
  
@@ -26,7 +26,7 @@ ms.locfileid: "6025188"
 若要取得最新的開發工具，請參閱[適用於 Windows 10 的下載項目與工具](https://developer.microsoft.com/windows/downloads)。 
 
 > [!NOTE]
-> 若要提交使用了選用套件和/或相關集合的 App 至 Microsoft Store，您將需要權限。 選用套件和相關集合可在沒有開發人員中心的許可下用於企業營運 (LOB) 或企業應用程式，只要沒有提交到 Microsoft Store 即可。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
+> 若要提交使用了選用套件和/或相關集合的 App 至 Microsoft Store，您將需要權限。 如果不提交至市集，可以沒有合作夥伴中心的許可下線 (LOB) 或企業應用程式使用選用套件及相關的集合。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
 
 ## <a name="c-optional-packages-with-executable-code"></a>具可執行程式碼的 C++ 選用套件
 
