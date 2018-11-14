@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6467023"
+ms.locfileid: "6646770"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>建立"Hello world"應用程式在 C + + /CX
 

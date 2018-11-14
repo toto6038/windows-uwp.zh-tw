@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f7b4addf2a7bdc2d93cbcf64f13a640a4ef5b12a
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6252759"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6463293"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>偵測及回應音訊狀態變更
 從 Windows 10 版本 1803 開始，您的應用程式可偵測系統何時將您應用程式使用之音訊的音量降低或設為靜音。 您可以收到關於擷取和轉譯串流、特定音訊裝置和音訊類別，或您的應用程式用於播放媒體之 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 物件的相關通知。 例如，系統可能會在鬧鈴響起時，降低 (或者「迴避」) 音訊播放音量。 如果您的應用程式未在應用程式資訊清單中宣告 *backgroundMediaPlayback* 功能，當您的應用程式進入背景時，系統會將其設為靜音。 

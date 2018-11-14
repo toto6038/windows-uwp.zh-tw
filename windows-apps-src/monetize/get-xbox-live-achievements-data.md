@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、成就
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b635a659a8516184998b5f0b05d2d7692a42af1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6051651"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458682"
 ---
 # <a name="get-xbox-live-achievements-data"></a>取得 Xbox Live 成就資料
 

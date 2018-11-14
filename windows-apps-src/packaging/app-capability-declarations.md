@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4be90230407c3d539c55dc05d1272fbaaa2ae10e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6190069"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6658259"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -108,7 +108,7 @@ ms.locfileid: "6190069"
 
 ### <a name="restricted-capability-approval-process"></a>受限制的功能核准程序
 
-在過去，我們要求您連絡支援服務以取得使用功能的核准。 我們現在可讓您在開發人員中心儀表板中提供這項資訊，做為[提交程序](../publish/app-submissions.md)的一部分。
+在過去，我們要求您連絡支援服務以取得使用功能的核准。 我們現在可讓您提供這項資訊在[合作夥伴中心](https://partner.microsoft.com/dashboard/)[提交程序](../publish/app-submissions.md)。
 
 當您上傳您的提交的套件時，我們將偵測是否宣告受限制的功能。 如果我們這樣做，您將需要在[提交選項](../publish/manage-submission-options.md#restricted-capabilities)頁面提供有關您的產品如何使用每項功能的詳細資訊。 請務必提供詳細資料以協助我們了解您的產品需要宣告功能的原因。 請注意，提交可能需要更多時間以完成認證程序。
 
@@ -117,7 +117,7 @@ ms.locfileid: "6190069"
 如果我們不核准您使用功能，您的提交無法通過認證，以及我們將提供認證報告中的意見反應。 然後，您可以選擇建立新的提交和上傳不宣告功能的套件，或 (如果適用) 解決有關您使用功能的任何問題，並在新提交中要求核准。
 
 > [!NOTE]
-> 如果您的提交使用開發人員中心開發沙箱（例如，與 Xbox Live 整合的任何遊戲案例），您必須預先要求核准，而不是在**提交選項**頁面提供資訊。 若要這樣做，請瀏覽 [Windows 開發人員支援頁面](https://developer.microsoft.com/windows/support)。 選取 [開發人員支援主題**儀表板的問題**、**應用程式提交**的問題類型，和子類別**其他**。 然後描述您如何使用此功能，以及為何需要為您的產品。 如果您未提供所有必要資訊，您的要求將會遭到拒絕。 您可能還需要提供更多資訊。 請注意，此程序通常會需要 5 個工作天或更長，所以請事前提交您的要求。
+> 如果您的提交會使用合作夥伴中心的開發沙箱 （例如，這種情況與 Xbox Live 整合的任何遊戲），您必須要求預先核准，而不是在**提交選項**頁面上提供資訊。 若要這樣做，請瀏覽 [Windows 開發人員支援頁面](https://developer.microsoft.com/windows/support)。 選取 [開發人員支援主題**儀表板的問題**、**應用程式提交**的問題類型，和子類別**其他**。 然後描述您如何使用此功能，以及為何需要為您的產品。 如果您未提供所有必要資訊，您的要求將會遭到拒絕。 您可能還需要提供更多資訊。 請注意，此程序通常會需要 5 個工作天或更長，所以請事前提交您的要求。
 >
 > 您也可以使用這個方法的要求核准 （而不提供這項資訊在您提交過程中），是否您使用開發沙箱，如果您想要確認您已獲准使用受限制的功能，您開始之前您提交。
 

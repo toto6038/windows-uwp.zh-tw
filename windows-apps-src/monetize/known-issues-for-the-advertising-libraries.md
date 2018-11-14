@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
 ms.openlocfilehash: d1b3b1fb68ed246d6a5a8334c5cf4d1c0754b719
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6463257"
+ms.locfileid: "6652934"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 

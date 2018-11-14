@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 922ab18bfebfbe539788ade3caa7626919d6b19a
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6466489"
+ms.locfileid: "6661486"
 ---
 # <a name="get-details-for-an-error-in-your-desktop-application"></a>取得傳統型應用程式中錯誤的詳細資料
 

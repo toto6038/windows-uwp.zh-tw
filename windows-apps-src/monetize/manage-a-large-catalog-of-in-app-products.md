@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, app 內購買, IAP, 附加元件, 目錄, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: f57adf62939c28794e3ecdf6e59f2c4763de9c21
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6449793"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6649065"
 ---
 # <a name="manage-a-large-catalog-of-in-app-products"></a>管理大型的應用程式內產品型錄
 

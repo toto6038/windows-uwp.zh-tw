@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 連結, windows 市集通訊協定, 連結到應用程式, 應用程式的連結
 ms.localizationpriority: medium
 ms.openlocfilehash: d0d0a9fc862734611167e5118392126cb42687f2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6455885"
+ms.locfileid: "6664071"
 ---
 # <a name="link-to-your-app"></a>應用程式的連結
 

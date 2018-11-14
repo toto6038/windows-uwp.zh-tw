@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，教育版
 ms.localizationpriority: medium
 ms.openlocfilehash: eaf4c8e2641359e6d9a92444f66a1b6d4e5e5881
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6274382"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6660055"
 ---
 # <a name="troubleshoot-microsoft-take-a-test-with-the-event-viewer"></a>使用事件檢視器對「Microsoft 進行測驗」進行疑難排解
 

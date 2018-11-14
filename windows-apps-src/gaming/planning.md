@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, 計劃, 協助工具, 雲端, 創造營收, 封裝, 技術, 概念, 核准
 ms.localizationpriority: medium
 ms.openlocfilehash: 6d350077e3199bdc875d4ad89559cb88ae8950c9
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257761"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6651829"
 ---
 # <a name="planning-for-uwp-games"></a>UWP 遊戲計劃
 

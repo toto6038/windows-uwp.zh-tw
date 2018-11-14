@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，連接裝置、 遠端系統、 rome、 專案 rome、 背景工作、 應用程式服務
 ms.localizationpriority: medium
 ms.openlocfilehash: 044197ebae111e9300f06783f02de7f0636d4a11
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6265230"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6649275"
 ---
 # <a name="communicate-with-a-remote-app-service"></a>與遠端 App 服務通訊
 

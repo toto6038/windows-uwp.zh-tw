@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, 廣告網路, 應用程式中繼資料
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ms.openlocfilehash: 9533b244174cc5770a68f866c722db1781fdd544
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471330"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6658875"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>廣告網路的應用程式中繼資料 API
 
