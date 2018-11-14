@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 4ce80e0ce4eb51876a0a0ecf632a7c47e8894aac
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043886"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6202553"
 ---
 # <a name="alignment-margin-padding"></a>對齊、邊界、邊框間距
 

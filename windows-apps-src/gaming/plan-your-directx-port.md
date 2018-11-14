@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, directx, port, 連接埠
 ms.localizationpriority: medium
 ms.openlocfilehash: dea6455b4e9aaef2a4239ef70d0919a4b8841bc5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030755"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6268408"
 ---
 # <a name="plan-your-directx-port"></a>計劃 DirectX 移植
 

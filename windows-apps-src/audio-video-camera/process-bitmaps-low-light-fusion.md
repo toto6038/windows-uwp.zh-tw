@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 弱光融合, 點陣圖, 影像處理
 ms.localizationpriority: medium
 ms.openlocfilehash: aa1fa0ae298bf9f0403a3a565f44010b022ba1f6
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6202709"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6281468"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>使用 LowLightFusion API 處理點陣圖
 

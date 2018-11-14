@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 1fb6a552686e35f319d9624ba4c4663dad966f23
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029737"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6195104"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝的傳統型應用程式
 
@@ -23,7 +23,7 @@ ms.locfileid: "6029737"
 最新版的 Visual Studio 提供新版的封裝專案，讓您不必執行以往封裝應用程式過程中需要執行的所有手動步驟。 只需加入封裝專案、參考桌面專案，然後按 F5 對您的應用程式進行偵錯。 不需進行任何手動調整。 這個有效率的全新體驗可以大幅改善舊版 Visual Studio 中所提供的體驗。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （傳統型橋接器，稱為 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>在 Windows 10，版本 1607 開始，引進了建立 Windows 應用程式套件 （否則稱為傳統型橋接器） 的傳統型應用程式的能力，它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 

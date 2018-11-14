@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 8503c8cde942129c4e7ad6994afb6cd9b29f19a1
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 9eef1616625ca30b1887e7f317c59f7a75abfeea
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025357"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164634"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -473,7 +473,7 @@ private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventA
     throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
 }
 
-// List of ValueTuple holding the Navigation Tag and the relative Navigation Page 
+// List of ValueTuple holding the Navigation Tag and the relative Navigation Page
 private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
 {
     ("home", typeof(HomePage)),
@@ -623,6 +623,73 @@ private void On_Navigated(object sender, NavigationEventArgs e)
             ((muxc.NavigationViewItem)NavView.SelectedItem)?.Content?.ToString();
     }
 }
+```
+
+## <a name="navigation-view-customization"></a>瀏覽檢視自訂項目
+
+### <a name="pane-backgrounds"></a>窗格背景
+
+根據預設，NavigationView 窗格使用不同的背景，根據顯示模式：
+
+- 窗格是灰色純色展開左側，以 （在左邊的模式） 的內容並排時。
+- 窗格會使用應用程式內壓克力開啟時，作為 （在頂端、 最少，或 Compact 模式） 的內容上面的覆疊。
+
+若要修改窗格背景，您可以覆寫用來轉譯的背景中每個模式的 XAML 佈景主題資源。 （這項技術會使用而不是單一 PaneBackground 屬性才能支援不同的顯示模式的不同的背景）。
+
+下表顯示每個顯示模式中使用哪個佈景主題資源。
+
+| 顯示模式 | 佈景主題資源 |
+| ------------ | -------------- |
+| 向左 | NavigationViewExpandedPaneBackground |
+| LeftCompact<br/>LeftMinimal | NavigationViewDefaultPaneBackground |
+| Top | NavigationViewTopPaneBackground |
+
+這個範例示範如何覆寫 App.xaml 中的佈景主題資源。 當您覆寫佈景主題資源時，您應該一律提供"Default"和"HighContrast"資源字典中的至少和字典的 「 增強 」 或"Dark"資源視。 如需詳細資訊，請參閱[ResourceDictionary.ThemeDictionaries](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries)。
+
+> [!IMPORTANT]
+> 這個程式碼說明如何使用[Windows UI 文件庫](https://docs.microsoft.com/uwp/toolkits/winui/)的版本 AcrylicBrush。 如果您改為使用 AcrylicBrush 的平台版本，為您的應用程式專案的最低版本必須是 SDK 16299 或更高。 若要使用平台版本，移除所有參考`muxm:`。
+
+```xaml
+<Application
+    <!-- ... -->
+    xmlns:muxm="using:Microsoft.UI.Xaml.Media">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
+                <ResourceDictionary>
+                    <ResourceDictionary.ThemeDictionaries>
+                        <ResourceDictionary x:Key="Default">
+                            <!-- The "Default" theme dictionary is used unless a specific
+                                 light, dark, or high contrast dictionary is provided. These
+                                 resources should be tested with both the light and dark themes,
+                                 and specific light or dark resources provided as needed. -->
+                            <muxm:AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
+                                   BackgroundSource="Backdrop"
+                                   TintColor="LightSlateGray"
+                                   TintOpacity=".6"/>
+                            <muxm:AcrylicBrush x:Key="NavigationViewTopPaneBackground"
+                                   BackgroundSource="Backdrop"
+                                   TintColor="{ThemeResource SystemAccentColor}"
+                                   TintOpacity=".6"/>
+                            <LinearGradientBrush x:Key="NavigationViewExpandedPaneBackground"
+                                     StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="LightSlateGray" Offset="0.0" />
+                                <GradientStop Color="White" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </ResourceDictionary>
+                        <ResourceDictionary x:Key="HighContrast">
+                            <!-- Always include a "HighContrast" dictionary when you override
+                                 theme resources. This empty dictionary ensures that the 
+                                 default high contrast resources are used when the user
+                                 turns on high contrast mode. -->
+                        </ResourceDictionary>
+                    </ResourceDictionary.ThemeDictionaries>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
 ```
 
 ## <a name="related-topics"></a>相關主題

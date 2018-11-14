@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地理柵欄
 ms.localizationpriority: medium
 ms.openlocfilehash: 86104f00ed0189290fd0cd718042573d9d592cc3
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6144703"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6276145"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>地理柵欄應用程式的指導方針
 
