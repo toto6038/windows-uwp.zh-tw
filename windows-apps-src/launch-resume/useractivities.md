@@ -7,12 +7,12 @@ ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 37b7ed35edecb95deb4b3ba568227f4cd8e32d9a
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6267434"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654048"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 ## <a name="summary"></a>摘要
 
 您可以使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 讓您的應用程式顯示在時間軸與 Cortana 中。
-* 深入了解 [Windows 開發人員中心](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) 上的 **UserActivity** API
+* 深入了解[**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 請查看[範例程式碼](https://github.com/Microsoft/project-rome)。
 * 請參閱[更複雜的調適型卡片](http://adaptivecards.io/)。
 * 透過 [Microsoft Graph](https://developer.microsoft.com/graph/) 從 iOS、Android 或您的 Web 服務發佈 **UserActivity**。

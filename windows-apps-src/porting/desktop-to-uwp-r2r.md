@@ -8,19 +8,19 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10，編譯器的原生映像
 ms.localizationpriority: medium
-ms.openlocfilehash: 231d5aa895cb4cf63ade01660df61e32424e67c7
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b7965c42a5d8ff99fc0dc9e28213d92bdcf715b2
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444722"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6656786"
 ---
 # <a name="optimize-your-net-desktop-apps-with-native-images"></a>最佳化您的.NET 傳統型應用程式使用原生映像
 
 > [!NOTE]
 > 正式發行前可能會進行大幅度修改之發行前版本產品的一些相關資訊。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
 
-您可以預先編譯您的二進位檔，以改善您的.NET Framework 應用程式的啟動時間。 您可以使用這項技術上您套件，並透過 Windows 市集發佈的大型應用程式。 在某些情況下，我們已經觀察到 20%的效能改進。 您可以深入了解[技術概觀](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)中這項技術。
+您可以預先編譯您的二進位檔，以改善您的.NET Framework 應用程式的啟動時間。 您可以使用這項技術的大型應用程式套件，並透過 Microsoft 網上商店散布。 在某些情況下，我們已經觀察到 20%的效能改進。 您可以深入了解[技術概觀](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/readytorun-overview.md)中這項技術。
 
 我們已發行原生映像編譯器的預覽的版本做為的[NuGet 套件](https://www.nuget.org/packages/Microsoft.DotNet.Framework.NativeImageCompiler)。 您可以將此套件套用至任何以.NET Framework 版本 4.6.2 為目標的.NET Framework 應用程式或更新版本。 此套件新增 post 建置步驟，其中包含您的應用程式所使用的所有二進位檔的原生承載。 當應用程式和以上版本.NET 4.7.2 中時執行舊版仍然會載入的 MSIL 程式碼時，將會載入這個最佳化的承載。
 
@@ -59,7 +59,7 @@ ms.locfileid: "6444722"
 
 1. 以滑鼠右鍵按一下您的方案，然後選取 [**組態管理員**。
 
-2. 選取 **< 新.>** 在**平台**] 下拉式清單功能表中的專案，會產生可執行檔名稱旁邊。
+2. 選取 **<New.>** 在**平台**] 下拉式清單功能表中的專案，會產生可執行檔名稱旁邊。
 
 3. 在**新專案平台**] 對話方塊中，請確定**複製設定，從**下拉式清單會設定為 [**任何 CPU**。
 

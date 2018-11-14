@@ -8,11 +8,11 @@ ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c70d696c1211cfa4f929178f0cf0d9da76ae74c2
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257751"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6657350"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 

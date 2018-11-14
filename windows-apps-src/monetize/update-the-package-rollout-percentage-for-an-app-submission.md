@@ -9,11 +9,11 @@ keywords: windows 10, uwp, Microsoft Store 提交 API, 套件推出, App 提交,
 ms.assetid: 4c82d837-7a25-4f3a-997e-b7be33b521cc
 ms.localizationpriority: medium
 ms.openlocfilehash: ee7657a1ebd08e70e6b5dac8a9a723637539066e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451778"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6656941"
 ---
 # <a name="update-the-rollout-percentage-for-an-app-submission"></a>更新 App 提交的推出百分比
 
