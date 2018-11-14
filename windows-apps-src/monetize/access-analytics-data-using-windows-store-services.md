@@ -8,12 +8,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 80ca7d66489f936e8097e9466f74032fbfb78eaf
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.openlocfilehash: a5d2689f5041035ba78cd9aef1f0610f0e1619dd
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6257977"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6458672"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -116,6 +116,7 @@ grant_type=client_credentials
 | 案例       | 方法      |
 |---------------|--------------------|
 | 下載數 |  <ul><li>[取得 Xbox One 遊戲下載數](get-xbox-one-game-acquisitions.md)</li><li>[取得 Xbox One 附加內容下載數](get-xbox-one-add-on-acquisitions.md)</li></ul> |
+| 錯誤 |  <ul><li>[取得錯誤報告資料 Xbox One 遊戲](get-error-reporting-data-for-your-xbox-one-game.md)</li><li>[取得您的 Xbox One 中錯誤的詳細資料遊戲](get-details-for-an-error-in-your-xbox-one-game.md)</li><li>[取得您的 Xbox One 中錯誤的堆疊追蹤遊戲](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)</li><li>[下載您的 Xbox One 遊戲中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)</li></ul> |
 
 ### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
 
