@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 市集服務
 ms.localizationpriority: medium
 ms.openlocfilehash: 0d13c5c9428a38dd212e59688d2b4b5eae187ea4
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6266801"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6471693"
 ---
 # <a name="microsoft-store-services"></a>Microsoft Store 服務
 

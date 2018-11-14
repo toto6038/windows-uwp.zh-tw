@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 773216dc392f7bb234e232f3dd3e7c2190a22de1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 79c1cd5b83c013bdf601022aa7fec9e661b80857
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450986"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6660475"
 ---
 # <a name="playready-drm"></a>PlayReady DRM
 
@@ -513,10 +513,10 @@ mediaProtectionManager.Properties["Windows.Media.Protection.MediaProtectionConta
 
 ## <a name="use-playready-drm-on-xbox-one"></a>在 Xbox One 上使用 PlayReady DRM
 
-若要在 Xbox One 上的 UWP App 中使用 PlayReady DRM，您必須先註冊您正在使用的開發人員中心帳戶以針對 PlayReady 的使用授權發佈 App。 若要執行這項作業，您可以使用兩種方法：
+若要在 Xbox One 上 UWP app 中使用 PlayReady DRM，您首先需要註冊您的[合作夥伴中心](https://partner.microsoft.com/dashboard)帳戶，您將使用 PlayReady 授權的應用程式發行使用。 若要執行這項作業，您可以使用兩種方法：
 
 * 請您在 Microsoft 的連絡人要求權限。
-* 透過將開發人員中心帳戶和公司名稱傳送到 [pronxbox@microsoft.com](mailto:pronxbox@microsoft.com) 來請求授權。
+* 藉由將合作夥伴中心帳戶和公司名稱傳送到來請求授權[pronxbox@microsoft.com](mailto:pronxbox@microsoft.com)。
 
 當您收到授權之後，您必須將額外的 `<DeviceCapability>` 新增到應用程式資訊清單。 您必須手動新增這個項目，因為目前在應用程式資訊清單設計工具中無法使用此設定。 執行下列步驟以進行設定：
 

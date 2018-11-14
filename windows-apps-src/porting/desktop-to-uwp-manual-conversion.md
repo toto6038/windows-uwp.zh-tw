@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b063bf5997bbb1fc082c8d9fefcf0f435262bf1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b309064c0110084d5445e8680d65f9935a3f69fe
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6445177"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6654402"
 ---
 # <a name="package-a-desktop-application-manually"></a>手動封裝的傳統型應用程式
 
@@ -85,11 +85,11 @@ ms.locfileid: "6445177"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果您已經保留了您在 Windows 市集中的應用程式名稱，您可以使用 Windows 開發人員中心儀表板取得名稱和發行者。 如果您打算側載至其他系統應用程式，您可以提供您自己的這些名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
+> 如果您已經保留您的應用程式名稱，在 Microsoft Store 中，您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)來取得名稱和發行者。 如果您打算側載至其他系統應用程式，您可以提供您自己的這些名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
 
 ### <a name="properties"></a>屬性
 
-[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素有 3 個必要的子元素。 以下是以預留位置文字填上元素的 **Properties** 節點範例。 **DisplayName**是您上傳至 microsoft store 的應用程式市集中，保留的應用程式的名稱。
+[Properties](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-properties) 元素有 3 個必要的子元素。 以下是以預留位置文字填上元素的 **Properties** 節點範例。 **DisplayName**是您上傳至 microsoft Store 的應用程式市集中，保留的應用程式的名稱。
 
 ```XML
 <Properties>

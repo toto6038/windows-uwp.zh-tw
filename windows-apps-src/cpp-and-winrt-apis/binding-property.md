@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結, 屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b7c20e0e6cf56afa7e2193739401bf49e0403a2
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6467225"
+ms.locfileid: "6654982"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題示範如何實作中的可觀察屬性[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何將 XAML 控制項繫結至它們。
@@ -208,7 +208,7 @@ namespace Bookstore
 
 儲存檔案。 將不會完成時刻，來建置專案，但現在建置很有用，是以執行步驟，因為它會重新產生原始碼檔案中實作**MainPage**執行階段類別 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`)。 因此，根源，現在建置。 若要查看在這個階段，您可以預期的建置錯誤是 **'MainViewModel': 不是 'winrt::Bookstore::implementation::MainPage' 的成員**。
 
-如果您省略所包含的`BookstoreViewModel.idl`(看到的清單`MainPage.idl`上方)，則您會看到錯誤**預期 \ < 附近 「 MainViewModel 」**。 另一個提示是確定您在相同的命名空間中保留所有類型： 會顯示在程式碼清單中的命名空間。
+如果您省略所包含的`BookstoreViewModel.idl`(看到的清單`MainPage.idl`上方)，則您會看到**預期 \< 附近 「 MainViewModel 」** 的錯誤。 另一個提示是確定您在相同的命名空間中保留所有類型： 會顯示在程式碼清單中的命名空間。
 
 若要解決的錯誤，我們會看見，您將現在需要複製存取子虛設常式適用於**MainViewModel**屬性，從產生的檔案 (`\Bookstore\Bookstore\Generated Files\sources\MainPage.h`和`MainPage.cpp`) 到`\Bookstore\Bookstore\MainPage.h`和`MainPage.cpp`。
 
