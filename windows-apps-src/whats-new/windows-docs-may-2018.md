@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 74fc017453472b515e597b73ee8bb582376f6b12
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6464369"
+ms.locfileid: "6650548"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>在 2018 年 Windows 開發人員文件的最新動向
 
@@ -114,11 +114,11 @@ Project Rome 小組有徹底檢查，其 iOS 和 Android 的 Sdk，新增新的�
 
 ### <a name="advertising-performance-report"></a>廣告績效報告
 
-在開發人員中心儀表板中的[廣告績效報告](../publish/advertising-performance-report.md)現在提供可見性計量。 我們也會新增[最佳化您的廣告單元的可見性](../monetize/optimize-ad-unit-viewability.md)文章提供最佳化您的廣告的可見性的建議。
+合作夥伴中心中的[廣告績效報告](../publish/advertising-performance-report.md)現在提供可見性計量。 我們也會新增[最佳化您的廣告單元的可見性](../monetize/optimize-ad-unit-viewability.md)文章提供最佳化您的廣告的可見性的建議。
 
 ### <a name="targeted-push-notifications"></a>目標式推播通知
 
-在開發人員中心儀表板的 [[通知](../publish/send-push-notifications-to-your-apps-customers.md)] 頁面現在提供其他分析資料，為您在圖表和世界地圖檢視中的所有通知。
+在合作夥伴中心的 [[通知](../publish/send-push-notifications-to-your-apps-customers.md)] 頁面現在提供額外的分析資料，為您在圖表和世界地圖檢視中的所有通知。
 
 ## <a name="videos"></a>影片
 

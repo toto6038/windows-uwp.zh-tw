@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 3eb26a8e4939ade3b12e4527b7452a9c6b535a77
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197604"
+ms.locfileid: "6254886"
 ---
 # <a name="compile-resources-manually-with-makepriexe"></a>手動以 MakePri.exe 編譯資源
 

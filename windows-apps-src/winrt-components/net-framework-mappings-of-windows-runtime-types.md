@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f1869038ad98b8b4103b9706534a2d456f17e734
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6471869"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6266414"
 ---
 # <a name="net-framework-mappings-of-windows-runtime-types"></a>Windows 執行階段類型的 .NET Framework 對應
 

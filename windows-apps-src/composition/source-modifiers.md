@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 997082d2ed7375d99a7be1543901d1dd854be1a0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6189435"
+ms.locfileid: "6252126"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用來源修飾詞拖動以重新整理
 

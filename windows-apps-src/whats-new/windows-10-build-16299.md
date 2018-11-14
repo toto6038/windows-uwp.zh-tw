@@ -8,11 +8,11 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: be084091f041d574445080cd7976318a35fedcea
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6200545"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6269507"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 的新功能
 

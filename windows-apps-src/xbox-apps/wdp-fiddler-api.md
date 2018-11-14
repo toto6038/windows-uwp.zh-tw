@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183169"
+ms.locfileid: "6253613"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。
