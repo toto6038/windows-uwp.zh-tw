@@ -1,19 +1,19 @@
 ---
-author: normesta
+author: hickeys
 Description: Fix issues that prevent your desktop application from running in an MSIX container
 Search.Product: eADQiWindows 10XVcnh
 title: 修正防止從容器中執行的 MSIX 傳統型應用程式的問題
-ms.author: normesta
+ms.author: hickeys
 ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f17bb6bbefb2fd3266edac20ca1f23af76eb0a3c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: fe869cee0d59eb099e3cb828dfee4eccd27a56ae
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6030967"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6194709"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段修正套用至 MSIX 封裝
 
@@ -90,7 +90,7 @@ PSF 包含您可以使用這個時候，例如檔案重新導向修復的執行�
 
 如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾，將會做為預備區域為您的封裝解壓縮其內容。 您可以從命令提示字元使用 makemsix 工具，根據 SDK 的安裝路徑，這是您將在其中您的 Windows 10 電腦上找到 makemsix.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makemsix.exe
 
-```
+```ps
 makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
@@ -109,14 +109,13 @@ makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContent
 
 安裝 Nuget 命令列工具從這個位置： https://www.nuget.org/downloads。 然後，從 Nuget 命令列中，執行下列命令：
 
-```
+```ps
 nuget install Microsoft.PackageSupportFramework
 ```
 
 #### <a name="get-the-package-by-using-visual-studio"></a>透過使用 Visual Studio 以取得套件
 
 在 Visual Studio 中，您的方案或專案節點上按一下滑鼠右鍵並選擇其中一個管理 Nuget 套件命令。  搜尋**Microsoft.PackageSupportFramework**或**PSF**尋找 Nuget.org 套件。然後，安裝它。
-
 
 ### <a name="add-the-package-support-framework-files-to-your-package"></a>將套件支援的架構檔案新增到您的套件
 
@@ -186,6 +185,7 @@ nuget install Microsoft.PackageSupportFramework
     ]
 }
 ```
+
 下列是 config.json 結構描述的指南：
 
 | 陣列 | key | 值 |
@@ -199,18 +199,17 @@ nuget install Microsoft.PackageSupportFramework
 
 `applications`， `processes`，以及`fixups`鍵是陣列。 這表示您可以指定多個應用程式、 處理程序，以及修復 DLL 使用 config.json 檔案。
 
-
 ### <a name="package-and-test-the-app"></a>套件和測試應用程式
 
 接下來，建立套件。
 
-```
+```ps
 makeappx pack /d PackageContents /p PSFSamplePackageFixup.msix
 ```
 
 然後，登入。
 
-```
+```ps
 signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackageFixup.msix
 ```
 
@@ -221,7 +220,7 @@ signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackag
 >[!NOTE]
 > 請記得要先解除安裝套件。
 
-```
+```ps
 powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 ```
 
@@ -277,7 +276,6 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 讓我們逐步解說建立並設定您的方案中的每個這些專案的步驟。
 
-
 ### <a name="create-a-package-solution"></a>建立封裝解決方案
 
 如果您還沒有一個解決方案適用於傳統型應用程式，請在 Visual Studio 中建立新的**空白方案**。
@@ -296,7 +294,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 
 在 [**方案總管]** 中，封裝專案上按一下滑鼠右鍵，選取 [**編輯**]，然後新增這到底部的專案檔案：
 
-```
+```xml
 <Target Name="PSFRemoveSourceProject" AfterTargets="ExpandProjectReferences" BeforeTargets="_ConvertItems">
 <ItemGroup>
   <FilteredNonWapProjProjectOutput Include="@(_FilteredNonWapProjProjectOutput)">
@@ -400,6 +398,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
     ]
 }
 ```
+
 提供每個索引鍵的值。 使用此表格做為指引。
 
 | 陣列 | key | 值 |
@@ -460,6 +459,7 @@ powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
 #define FIXUP_DEFINE_EXPORTS
 #include <fixup_framework.h>
 ```
+
 >[!IMPORTANT]
 >請確定`FIXUP_DEFINE_EXPORTS`巨集出現之前包含陳述式。
 
@@ -524,25 +524,27 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 若要偵錯目標為子處理程序的應用程式啟動時，開始``WinDbg``。
 
-```
+```ps
 windbg.exe -plmPackage PSFSampleWithFixup_1.0.59.0_x86__7s220nvg1hg3m -plmApp PSFSample
 ```
 
 在``WinDbg``提示、 啟用偵錯的子系，並設定適當的中斷點。
 
-```
+```ps
 .childdbg 1
 g
 ```
+
 （執行，直到目標應用程式啟動和中斷偵錯）
 
-```
+```ps
 sxe ld fixup.dll
 g
 ```
+
 （執行直到 DLL 載入的修復）
 
-```
+```ps
 bp ...
 ```
 
@@ -554,4 +556,3 @@ bp ...
 **尋找您的問題解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
-

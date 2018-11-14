@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10,UWP, Microsoft Store 提交 API, 應用程式提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 66c220e76cd032f4cf36f0d4ae88c01485f31163
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6050515"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6159245"
 ---
 # <a name="get-an-app-submission"></a>取得 App 提交
 

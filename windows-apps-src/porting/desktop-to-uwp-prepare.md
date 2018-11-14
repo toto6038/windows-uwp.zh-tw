@@ -9,19 +9,19 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a0b3a9f5ce7c03b8add9cc459bade684b9daf21
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: ba89ab06062f5ba40bb96f4d558bd89a16e591d1
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034171"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205183"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>準備封裝傳統型應用程式
 
 本文列出封裝傳統型應用程式之前，您需要知道的事項。 您可能沒有做太多準備使用您的應用程式的封裝程序，但如果任何下方的項目適用於您的應用程式，您需要先處理之後才能封裝。 請記住，Microsoft Store 會為您處理授權和自動更新，因此您可以從程式碼基底中移除與那些工作有關的任何功能。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （傳統型橋接器，稱為 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>在 Windows 10，版本 1607 開始，引進了建立 Windows 應用程式套件 （否則稱為傳統型橋接器） 的傳統型應用程式的能力，它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 + __您的應用程式需要使用 4.6.2.NET 的版本__。 您需要確定您的應用程式在.NET 4.6.2 上執行。 您無法要求或轉散發 4.6.2 之前的版本。 這是隨附於 Windows 10 年度更新版的 .NET 版本。 確認您的應用程式在此版本上的運作方式，可確保您的應用程式將會繼續相容於 Windows 10 的未來更新。  如果您的應用程式的目標是.NET Framework 4.0 或更新版本，它應該可在.NET 4.6.2 上執行，但您仍然應該測試它。
 

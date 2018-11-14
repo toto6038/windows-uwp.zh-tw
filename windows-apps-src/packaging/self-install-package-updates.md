@@ -2,22 +2,22 @@
 author: mcleanbyron
 ms.assetid: 414ACC73-2A72-465C-BD15-1B51CB2334F2
 title: 從 Microsoft Store 下載與安裝套件更新
-description: 了解如何在開發人員中心儀表板中將套件標記為強制性，以及在您的 app 中撰寫程式碼來下載並安裝套件更新。
+description: 了解如何將套件標記為強制性在合作夥伴中心以及下載並安裝套件更新的應用程式中撰寫程式碼。
 ms.author: mcleans
 ms.date: 04/04/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d5a6cc57a7af63d9aee3685d5bfc3e3fd72fac0a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: a2bc0cfbdd722a4842758be0f3b794aafe808bc3
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052063"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6255328"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>從 Microsoft Store 下載與安裝套件更新
 
-從 Windows 10 版本 1607 開始，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 類別的方法，以程式設計方式檢查 Microsoft Store 中目前 app 的套件更新，以及下載並安裝更新的套件。 您也可以查詢已在 Windows 開發人員中心儀表板上標記為強制性的套件，並在安裝強制更新之前停用 app 中的功能。
+從 Windows 10 版本 1607 開始，您可以使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中 [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 類別的方法，以程式設計方式檢查 Microsoft Store 中目前 app 的套件更新，以及下載並安裝更新的套件。 您也可以查詢的套件，您在合作夥伴中心已標記為強制性應用程式中停用功能，並在安裝強制更新之前。
 
 在 Windows 10 版本 1803 中導入的其他[StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext)方法可讓您下載及以無訊息方式安裝套件更新（不向使用者顯示 UI 通知）、解除安裝[選用套件](optional-packages.md)，以及取得 app 下載和安裝佇列中套件的資訊。
 
@@ -195,14 +195,14 @@ private async Task InstallUpdate(IReadOnlyList<StorePackageUpdate> storePackageU
 
 ## <a name="mandatory-package-updates"></a>強制性套件更新
 
-當您針對目標為 Windows 10 版本 1607 或更新版本的 app 建立套件提交時，可以將[套件標記為強制性](../publish/upload-app-packages.md#mandatory-update)，並標記其成為強制性的日期/時間。 當設定此屬性，且 App 發現有套件更新可供使用時，App 就可以判斷更新套件是否為強制，並變更其行為，直到安裝更新為止 (例如，App 可以停用功能)。
+當您在合作夥伴中心建立套件提交應用程式目標為 Windows 10，版本 1607年或更新版本，您可以[將標記為強制性套件](../publish/upload-app-packages.md#mandatory-update)和的日期和時間它成為強制性。 當設定此屬性，且 App 發現有套件更新可供使用時，App 就可以判斷更新套件是否為強制，並變更其行為，直到安裝更新為止 (例如，App 可以停用功能)。
 
 > [!NOTE]
 > Microsoft 並未強迫建立套件更新的強制狀態，作業系統也不會提供 UI 來指示使用者必須安裝強制性應用程式更新。 開發人員必須刻意使用強制性設定，以便在程式碼中實施強制性應用程式更新。  
 
 將套件提交標記為強制性：
 
-1. 登入[開發人員中心儀表板](https://dev.windows.com/overview)並瀏覽到 app 的概觀頁面。
+1. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard)，並瀏覽至您的應用程式的概觀頁面。
 2. 按一下提交的名稱，其中包含您想要變成強制性的套件更新。
 3. 瀏覽到提交的 **\[套件\]** 頁面。 在此頁面底部附近選取 **\[使此更新變成強制性\]**，然後選擇套件更新變成強制性的日期和時間。 這個選項適用於提交中的所有 UWP 套件。
 

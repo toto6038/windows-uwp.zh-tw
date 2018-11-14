@@ -4,20 +4,19 @@ description: 區塊壓縮是一種失真紋理壓縮技術，主要用於減少�
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - 區塊壓縮
-author: michaelfromredmond
-ms.author: mithom
+author: hickeys
+ms.author: hickeys
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c959ced5ada9145ca494dd023c9aa802d7dccc2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 8ff4c88a46c1e89df96b48d82da333432790e461
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024326"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205869"
 ---
 # <a name="block-compression"></a>區塊壓縮
-
 
 區塊壓縮是一種失真紋理壓縮技術，主要用於減少紋理的大小和磁碟使用量並提升效能。 區塊壓縮的紋理可以比每個色彩 32 位元的紋理更小。
 
@@ -29,13 +28,12 @@ ms.locfileid: "6024326"
 
 ## <a name="span-idbasicsspanspan-idbasicsspanspan-idbasicsspanhow-block-compression-works"></a><span id="Basics"></span><span id="basics"></span><span id="BASICS"></span>區塊壓縮的運作方式
 
-
 區塊壓縮是一種用以減少儲存色彩資料所需記憶體的技術。 藉由將某些色彩儲存為其原始大小，並在其他色彩上使用編碼配置，您可以大幅減少儲存圖片所需的記憶體。 因為硬體會自動解碼壓縮過的資料，所以就不會有使用壓縮紋理而造成效能降低的情形。
 
 若要查看壓縮的運作方式，請查看下列兩個範例。 第一個範例描述儲存未壓縮的資料時使用的記憶體量；第二個範例描述儲存壓縮資料時使用的記憶體量。
 
--   [儲存未壓縮的資料](#storing-uncompressed-data)
--   [儲存經壓縮的資料](#storing-compressed-data)
+- [儲存未壓縮的資料](#storing-uncompressed-data)
+- [儲存經壓縮的資料](#storing-compressed-data)
 
 ### <a name="span-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoringuncompresseddataspanspan-idstoring-uncompressed-dataspanstoring-uncompressed-data"></a><span id="Storing_Uncompressed_Data"></span><span id="storing_uncompressed_data"></span><span id="STORING_UNCOMPRESSED_DATA"></span><span id="storing-uncompressed-data"></span>儲存未壓縮的資料
 
@@ -61,14 +59,13 @@ ms.locfileid: "6024326"
 
 ## <a name="span-idusingblockcompressionspanspan-idusingblockcompressionspanspan-idusingblockcompressionspanusing-block-compression"></a><span id="Using_Block_Compression"></span><span id="using_block_compression"></span><span id="USING_BLOCK_COMPRESSION"></span>使用區塊壓縮
 
-
 建立區塊壓縮紋理就像建立未壓縮紋理一樣，不過您必須指定區塊壓縮的格式。
 
 接下來，請建立一個檢視來將紋理繫結至管線，這是因為區塊壓縮紋理只能作為著色器階段的輸入，所以您會想要建立一個著色器資源檢視。
 
 依您使用未壓縮紋理的相同方式來使用區塊壓縮紋理。 如果您的應用程式會取得記憶體指標來顯示區塊壓縮資料，你需要處理造成宣告大小和實際大小不同的 Mipmap 內記憶體填補。
 
--   [虛擬大小與實體大小](#virtual-size-versus-physical-size)
+- [虛擬大小與實體大小](#virtual-size-versus-physical-size)
 
 ### <a name="span-idvirtualsizespanspan-idvirtualsizespanspan-idvirtualsizespanspan-idvirtual-size-versus-physical-sizespanvirtual-size-versus-physical-size"></a><span id="Virtual_Size"></span><span id="virtual_size"></span><span id="VIRTUAL_SIZE"></span><span id="virtual-size-versus-physical-size"></span>虛擬大小與實體大小
 
@@ -86,7 +83,6 @@ ms.locfileid: "6024326"
 
 ## <a name="span-idcompressionalgorithmsspanspan-idcompressionalgorithmsspanspan-idcompressionalgorithmsspancompression-algorithms"></a><span id="Compression_Algorithms"></span><span id="compression_algorithms"></span><span id="COMPRESSION_ALGORITHMS"></span>壓縮演算法
 
-
 在 Direct3D 內的區塊壓縮技術，會將未壓縮紋理資料切割為 4×4 的區塊、壓縮每個區塊，並儲存該資料。 基於這個原因，需要壓縮之材質的紋理維度必須要為 4 的倍數。
 
 ![區塊壓縮](images/d3d10-compression-1.png)
@@ -103,13 +99,11 @@ Direct3D 實作多種壓縮配置，其個別實作以下三種不同折衷之�
 | 單元件色彩             | 單元件 (8)                     | [BC4](#bc4)                    |
 | 雙元件色彩             | 雙元件 (8:8)                  | [BC5](#bc5)                    |
 
- 
-
--   [BC1](#bc1)
--   [BC2](#bc2)
--   [BC3](#bc3)
--   [BC4](#bc4)
--   [BC5](#bc5)
+- [BC1](#bc1)
+- [BC2](#bc2)
+- [BC3](#bc3)
+- [BC4](#bc4)
+- [BC5](#bc5)
 
 ### <a name="span-idbc1spanspan-idbc1spanbc1"></a><span id="BC1"></span><span id="bc1"></span>BC1
 
@@ -121,14 +115,14 @@ Direct3D 實作多種壓縮配置，其個別實作以下三種不同折衷之�
 
 色彩索引 (a 至 p) 是用來從色彩表查看原始的色彩。 色彩表包含 4 個色彩。 前兩個色彩，color\_0 和 color\_1 為色彩的下限和上限。 其他兩個色彩，color\_2 和 color\_3，是以線性插補計算出的中繼色彩。
 
-```
+```cpp
 color_2 = 2/3*color_0 + 1/3*color_1
 color_3 = 1/3*color_0 + 2/3*color_1
 ```
 
 四個色彩都被指派了 2 位元索引值，這些值將會儲存在 a 至 p 區塊。
 
-```
+```cpp
 color_0 = 00
 color_1 = 01
 color_2 = 10
@@ -139,7 +133,7 @@ color_3 = 11
 
 此演算法也適用於包含 1 位元 Alpha 的資料。 唯一不同的是，color\_3 設為 0 (表示透明色彩)，而且 color\_2 是 color\_0 和 color\_1 的線性混合。
 
-```
+```cpp
 color_2 = 1/2*color_0 + 1/2*color_1;
 color_3 = 0;
 ```
@@ -166,7 +160,7 @@ BC3 格式使用 Alpha 索引 (a 至 p)，從包含 8 個值的查閱資料表�
 
 此演算法藉由檢查兩個 Alpha 參考值來判斷插入的 Alpha 值數目。 如果 alpha\_0 大於 alpha\_1，BC3 會插入 6 個 Alpha 值；否則會插入 4 個 Alpha 值。 當 BC3 僅插入 4 個 Alpha 值時，它就會設定兩個額外 Alpha 值 (0 為完全透明，而 255 為完全不透明)。 BC3 藉由儲存對應插補 Alpha 值的位元程式碼，以壓縮 4×4 材質區域中的 Alpha 值，插補進的 Alpha 值最符合特定材質的原始 Alpha。
 
-```
+```cpp
 if( alpha_0 > alpha_1 )
 {
   // 6 interpolated alpha values.
@@ -201,14 +195,14 @@ else
 
 此演算法藉由檢查兩個參考值來判斷插入的色彩值數目。 如果 red\_0 大於 red\_1，則 BC4 會插入 6 個色彩值；否則會插入 4 個色彩值。 當 BC4 僅插入 4 個色彩值時，它會設定兩個額外的色彩值 (0.0f 為完全透明，而 1.0f 為完全不透明)。 BC4 藉由儲存對應插補 Alpha 值的位元程式碼，以壓縮 4×4 材質區域中的 Alpha 值，插補進的 Alpha 值最符合特定材質的原始 Alpha。
 
--   [BC4\_UNORM](#bc4-unorm)
--   [BC4\_SNORM](#bc4-snorm)
+- [BC4\_UNORM](#bc4-unorm)
+- [BC4\_SNORM](#bc4-snorm)
 
 ### <a name="span-idbc4unormspanspan-idbc4unormspanspan-idbc4-unormspanbc4unorm"></a><span id="BC4_UNORM"></span><span id="bc4_unorm"></span><span id="bc4-unorm"></span>BC4\_UNORM
 
 單一元件資料的內插補點方式如下列程式碼範例所示。
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -239,7 +233,7 @@ else
 
 DXGI\_FORMAT\_BC4\_SNORM 也完全一樣，差別只在於資料會在 SNORM 範圍內及插入 4 個資料值時進行編碼。 單一元件資料的內插補點方式如下列程式碼範例所示。
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -259,8 +253,8 @@ else
   red_3 = (3*red_0 + 2*red_1)/5.0f; // bit code 011
   red_4 = (2*red_0 + 3*red_1)/5.0f; // bit code 100
   red_5 = (1*red_0 + 4*red_1)/5.0f; // bit code 101
-  red_6 = -1.0f;                     // bit code 110
-  red_7 =  1.0f;                     // bit code 111
+  red_6 = -1.0f;                    // bit code 110
+  red_7 =  1.0f;                    // bit code 111
 }
 ```
 
@@ -270,8 +264,8 @@ else
 
 以 BC5 格式儲存每個色彩都使用 8 位元的雙元件色彩資料。 由於正確性增加 (相較於 [BC1](#bc1))，BC5 適用於使用 DXGI\_FORMAT\_BC5\_UNORM 格式將浮點資料儲存到 \[0 至 1\] 的範圍內，以及使用 DXGI\_FORMAT\_BC5\_SNORM 將浮點資料儲存到 \[-1 至 +1\] 的範圍內。 假設 4×4 紋理使用所能使用的最大資料格式，此壓縮技術會將所需的記憶體從 32 位元組 (16 色 × 2 元件/色彩 × 1 位元組/元件) 降低至 16 位元組。
 
--   [BC5\_UNORM](#bc5-unorm)
--   [BC5\_SNORM](#bc5-snorm)
+- [BC5\_UNORM](#bc5-unorm)
+- [BC5\_SNORM](#bc5-snorm)
 
 此演算法適用於 4×4 材質區塊上。 演算法不是為兩個元件儲存 16 種色彩，而是為每個元件儲存 2 種參考色彩 (red\_0、red\_1、green\_0，以及 green\_1)，並為每個元件儲存 16 種 3 位元色彩索引 (從紅色 a 到紅色 p，及綠色 a 到綠色 p)，如下圖所示。
 
@@ -285,7 +279,7 @@ else
 
 單一元件資料的內插補點方式如下列程式碼範例所示。 綠色元件的計算方法都很相似。
 
-```
+```cpp
 unsigned word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -316,7 +310,7 @@ else
 
 DXGI\_FORMAT\_BC5\_SNORM 也完全一樣，差別只在於資料會編碼至 SNORM 範圍內，而且在插入 4 個資料值時，兩個額外的值為 -1.0f 和 1.0f。 單一元件資料的內插補點方式如下列程式碼範例所示。 綠色元件的計算方法都很相似。
 
-```
+```cpp
 signed word red_0, red_1;
 
 if( red_0 > red_1 )
@@ -345,19 +339,18 @@ else
 
 ## <a name="span-iddifferencesspanspan-iddifferencesspanspan-iddifferencesspanformat-conversion"></a><span id="Differences"></span><span id="differences"></span><span id="DIFFERENCES"></span>格式轉換
 
-
 Direct3D 可讓您在預先結構類型紋理與位元寬度相同的區塊壓縮紋理之間進行複製。
 
 您可以在一些格式類型之間複製資源。 此類型的複製作業會執行一種格式轉換，將資源資料重新解譯為不同的格式類型。 請將此範例納入考慮，它用更典型的轉換行為方式來顯示重新解譯資料之間的不同︰
 
-```
+```cpp
 FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
 若要將 'f' 重新解譯為 'u' 類型，請使用 [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx)：
 
-```
+```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
@@ -365,7 +358,7 @@ memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 
 若要執行更常見的轉換類型，請使用下列設定︰
 
-```
+```cpp
 u = f; // 'u' becomes 1.
 ```
 
@@ -415,9 +408,6 @@ u = f; // 'u' becomes 1.
 </tbody>
 </table>
 
- 
-
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
-
 
 [壓縮的紋理資源](compressed-texture-resources.md)

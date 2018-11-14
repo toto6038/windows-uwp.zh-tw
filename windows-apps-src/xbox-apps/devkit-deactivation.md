@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 244124dd-d80a-4a72-91db-1c9c2fbc7c3c
 ms.localizationpriority: medium
-ms.openlocfilehash: 72ff0c79a12e6f9726abda638dfe02aa30ee54e6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 8708e127eb7cb7f1654b2911457074e20c82b665
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047945"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6209390"
 ---
 # <a name="xbox-one-developer-mode-deactivation"></a>停用 Xbox One 開發人員模式
 
@@ -72,11 +72,11 @@ ms.locfileid: "6047945"
    
     ![重設並移除所有項目](images/devkit-deactivation-4.png)
 
-## <a name="deactivate-your-console-using-windows-dev-center"></a>使用 Windows 開發人員中心停用您的主機
+## <a name="deactivate-your-console-using-partner-center"></a>停用您的主機使用合作夥伴中心
 
-如果基於任何原因，使您無法存取您的主機，您也可以透過 Windows 開發人員中心來停用主機上的開發人員模式。
+如果您是無法存取您的主機，因為任何原因，您可以也透過停用開發人員模式在您的主機上使用合作夥伴中心。
 
-1. 瀏覽至開發人員中心的[管理 Xbox One 主機](https://partner.microsoft.com/xboxdevices)頁面。 系統可能會提示您使用開發人員帳戶登入。
+1. 瀏覽至合作夥伴中心[管理 Xbox One 主機](https://partner.microsoft.com/xboxdevices)] 頁面。 系統可能會提示您登入。
 
 2. 在主機清單上，藉由比對序號、主機 ID 或裝置識別碼來尋找您想要停用的主機。  
 

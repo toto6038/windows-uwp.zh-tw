@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: d29e647b2932e1d89247da5b91d8f836d11260d6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031557"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6186579"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 遊戲開發指南
 
@@ -104,26 +104,16 @@ ms.locfileid: "6031557"
     </tr>        
 </table>
 
-### <a name="windows-dev-center"></a>Windows 開發人員中心
+### <a name="partner-center"></a>合作夥伴中心
 
-在「Windows 開發人員中心」註冊開發人員帳戶是邁向發行 Windows 遊戲的第一步。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交到 Microsoft Store。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。 
+[註冊在合作夥伴中心開發人員帳戶](https://developer.microsoft.com/store/register)是邁向發行 Windows 遊戲的第一個步驟。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交到 Microsoft Store。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。 
 
-Microsoft 也提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 建議您先了解是否有任何適合您的項目，再註冊開發人員中心帳戶。 如需詳細資訊，請移至[開發人員計畫](#developer-programs)
+Microsoft 也提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 我們建議您查看如果有任何適合您之前先註冊合作夥伴中心帳戶。 如需詳細資訊，請移至[開發人員計畫](#developer-programs)
 
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>註冊開發人員帳戶</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/bg124287">準備好註冊了嗎？</a></td>
-    </tr> 
-</table>
 
 ### <a name="developer-programs"></a>開發人員計畫
 
-Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 如果您想要為 Xbox One 開發遊戲，並將 Xbox Live 功能整合到遊戲中，請考慮加入開發人員計畫。 若要在 Microsoft Store 中發佈遊戲，您也必須在 Windows 開發人員中心建立開發人員帳戶。
+Microsoft 提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 如果您想要為 Xbox One 開發遊戲，並將 Xbox Live 功能整合到遊戲中，請考慮加入開發人員計畫。 若要在 Microsoft Store 中發佈遊戲，您將也需要在[合作夥伴中心](https://partner.microsoft.com/dashboard)建立開發人員帳戶。
 
 #### <a name="xbox-live-creators-program"></a>Xbox Live 創作者計畫
 
@@ -146,7 +136,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 建議您先申請 ID@Xbox，再到 Windows 開發人員中心註冊開發人員帳戶。
+ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 我們建議您將套用到ID@Xbox第一次，再註冊開發人員帳戶在合作夥伴中心。
 
 <table>
     <colgroup>
@@ -1368,9 +1358,9 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
 </table>
  
 
-### <a name="enable-in-app-product-iap-purchases"></a>啟用 App 內產品 (IAP) 購買
+### <a name="enable-in-app-product-add-on-purchases"></a>啟用 （附加元件） 的應用程式內產品購買
 
-IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP 可以是新的附加元件、遊戲關卡、項目或您玩家可能喜歡的任何其他東西。 如果使用得當，IAP 便可既改善遊戲體驗，又提供收益。 您需透過「Windows 開發人員中心」儀表板來定義和發行您遊戲的 IAP， 並且需在遊戲程式碼中啟用 App 內購買。
+附加元件 （應用程式內產品） 是玩家可購買的遊戲中的補充項目。 附加元件可以是遊戲關卡、 項目，或您玩家可能喜歡的任何人。 如果使用得當，附加元件可以提供營收，同時改善遊戲體驗。 定義和發佈您的遊戲附加元件，透過合作夥伴中心，並啟用您的遊戲程式碼中的應用程式內購買。
 
 <table>
     <colgroup>
@@ -1378,20 +1368,20 @@ IAP (應用程式內產品) 是玩家可在遊戲內購買的補充項目。 IAP
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>耐久性應用程式內產品</td>
+        <td>耐久性附加元件</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219684">啟用應用程式內產品購買</a></td>
     </tr>
     <tr>
-        <td>消費性應用程式內產品</td>
+        <td>消費性附加元件</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt219683">啟用消費性應用程式內產品購買</a></td>
     </tr>
     <tr>
-        <td>應用程式內產品詳細資料與提交</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">IAP 提交</a></td>
+        <td>附加元件的詳細資料與提交</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">附加元件提交</a></td>
     </tr>
     <tr>
-        <td>監視您遊戲的 IAP 銷售與人口統計</td>
-        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">IAP 下載數報告</a></td>
+        <td>監視附加元件銷售與人口統計為您的遊戲</td>
+        <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">附加元件下載數報告</a></td>
     </tr>
 </table>
  
@@ -1548,7 +1538,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 
 ### <a name="publishing"></a>發行
 
-您將使用新的整合式「Windows 開發人員中心」儀表板來發行及管理您的遊戲套件。
+您需要透過[合作夥伴中心](https://partner.microsoft.com/dashboard)來發佈和管理您的遊戲套件。
 
 <table>
     <colgroup>
@@ -1556,15 +1546,15 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows 開發人員中心發行</td>
+        <td>合作夥伴中心的應用程式發佈</td>
         <td><a href="https://dev.windows.com/publish">發行 Windows 應用程式</a></td>
     </tr>
     <tr>
-        <td>Windows 開發人員中心進階發行 (GDN)</td>
-        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">Windows 開發人員中心儀表板進階發行指南</a></td>
+        <td>合作夥伴中心進階發行 (GDN)</td>
+        <td><a href="https://developer.xboxlive.com/en-us/windows/documentation/Pages/home.aspx">合作夥伴中心進階發行指南</a></td>
     </tr>
     <tr>
-        <td>使用 Azure Active Directory (AAD) 將使用者新增到您的開發人員中心帳戶</td>
+        <td>使用 Azure Active Directory (AAD) 將使用者新增到您的合作夥伴中心帳戶</td>
         <td><a href="https://docs.microsoft.com/windows/uwp/publish/manage-account-users">管理帳戶使用者</a></td>
     </tr>   
     <tr>
@@ -1664,7 +1654,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 
 在完成遊戲開發並傳送您的遊戲之後，還不算「遊戲結束」。 您可能已完成第一版的開發，但是您的遊戲在市場上的旅程才剛剛開始。 您將會想要監視使用狀況和錯誤報告、回應使用者的意見反應，以及發行遊戲更新。
 
-### <a name="windows-dev-center-analytics-and-promotion"></a>Windows 開發人員中心分析與推銷
+### <a name="partner-center-analytics-and-promotion"></a>合作夥伴中心分析與促銷方案
 
 <table>
     <colgroup>
@@ -1673,10 +1663,10 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </colgroup>
     <tr>
         <td>開發人員中心 App</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">開發人員中心 Windows10 App 可檢視已發行 App 的效能</a></td>
+        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">取得應用程式來檢視您已發佈的應用程式的效能</a></td>
     </tr>  
     <tr>
-        <td>Windows 開發人員中心分析</td>
+        <td>合作夥伴中心分析</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">分析應用程式效能</a></td>
     </tr>
     <tr>

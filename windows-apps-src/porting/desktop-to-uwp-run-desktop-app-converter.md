@@ -9,18 +9,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c05cbf2ce0b2f6288e6beb9c84df9d2b42bd6f2
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: f964c8ac4a579fe4c360967c6bc9e613659a668b
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6026490"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6154240"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>封裝傳統型應用程式使用 Desktop App Converter
 
 [取得 Desktop App Converter](https://aka.ms/converter)
 
-您可以使用 Desktop App Converter (DAC) 將您的傳統型應用程式移至通用 Windows 平台 (UWP)。 這包括 Win32 應用程式，以及您使用 .NET 4.6.1 建立的應用程式。
+Desktop App Converter (DAC) 建立封裝的傳統型應用程式來整合最新的 Windows 功能，包括發佈和維護透過 Microsoft Store。 這包括 Win32 應用程式，以及您使用 .NET 4.6.1 建立的應用程式。
 
 ![DAC 圖示](images/desktop-to-uwp/dac.png)
 
@@ -31,7 +31,7 @@ ms.locfileid: "6026490"
 這個轉換器會在隔離的 Windows 環境中，使用全新基礎映像 (當作轉換器下載的一部分來提供) 來執行桌面安裝程式。 它會擷取桌面安裝程式所製作的任何登錄與檔案系統 I/O，並將它重新封裝為輸出的一部分。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （傳統型橋接器，稱為 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>在 Windows 10，版本 1607 開始，引進了建立 Windows 應用程式套件 （否則稱為傳統型橋接器） 的傳統型應用程式的能力，它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 > [!NOTE]
 > 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片會帶領您逐步操作並探索一些常見的 Desktop App Converter 使用方式。

@@ -7,12 +7,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: d943a43629860f666c9ec9eb7f0b3bb406b1b1b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 18eddbc9356f126e887ae2731ea87381352ea061
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040365"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6208940"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -282,7 +282,7 @@ IAsyncOperation<uint32_t> DoWorkOnThreadPoolAsync()
 從前一個案例展開此案例。 您將一些工作卸載至執行緒集區，但您想在使用者介面 (UI) 中顯示進度。
 
 ```cppwinrt
-IAsyncAction DoWorkAsync(TextBlock const& textblock)
+IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
     // Do compute-bound work here.
@@ -294,7 +294,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 上方的程式碼擲回一個 [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) 例外，因為 **TextBlock** 必須從建立它的執行緒進行更新，也就是 UI 執行緒。 一種解決方案就是擷取我們最初呼叫的協同程式的執行緒內容。 若要這樣做， [**winrt:: apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context)物件具現化、 執行背景工作，然後`co_await` **apartment_context**切換回呼叫內容。
 
 ```cppwinrt
-IAsyncAction DoWorkAsync(TextBlock const& textblock)
+IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     winrt::apartment_context ui_thread; // Capture calling context.
 
@@ -313,7 +313,7 @@ IAsyncAction DoWorkAsync(TextBlock const& textblock)
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
-IAsyncAction DoWorkAsync(TextBlock const& textblock)
+IAsyncAction DoWorkAsync(TextBlock textblock)
 {
     co_await winrt::resume_background();
     // Do compute-bound work here.
@@ -361,7 +361,7 @@ IAsyncOperation<int> return_123_after_5s()
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
-IAsyncAction MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
 
@@ -387,7 +387,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEven
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
-IAsyncAction MainPage::ClickHandler(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
 {
     // We begin in the UI context.
 
@@ -480,7 +480,7 @@ struct MainPage : MainPageT<MainPage>
         InitializeComponent();
     }
 
-    IAsyncAction OnWork(IInspectable const& /* sender */, RoutedEventArgs const& /* args */)
+    IAsyncAction OnWork(IInspectable /* sender */, RoutedEventArgs /* args */)
     {
         workButton().Content(winrt::box_value(L"Working..."));
 
