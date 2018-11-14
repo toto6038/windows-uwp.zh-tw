@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、ABI
 ms.localizationpriority: medium
 ms.openlocfilehash: 40d2c29dcab1a54046cb0def882cfa5f80b1f1f6
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6209112"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671911"
 ---
 # <a name="interop-between-cwinrt-and-the-abi"></a>C++/WinRT 與 ABI 之間的互通性
 

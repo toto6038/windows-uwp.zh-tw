@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: f0fed79f57b383640a087a5f22f0b7565bb66a34
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6461685"
+ms.locfileid: "6661215"
 ---
 # <a name="credential-locker"></a>認證保險箱
 

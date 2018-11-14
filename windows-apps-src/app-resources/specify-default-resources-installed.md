@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: daa40656c72812e19c7f6f5fa71e50c2206670af
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6040262"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6251650"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定您的應用程式使用的預設資源
 

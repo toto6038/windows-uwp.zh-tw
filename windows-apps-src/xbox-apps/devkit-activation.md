@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e497eb404129a7d8cc8ce9784c2e28a9c9456fc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bf9bbc2962bc0d11f9969bf41840be515c9c0881
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052203"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6279512"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>啟用 Xbox One 開發人員模式
 
@@ -42,9 +42,9 @@ Xbox One 有兩種模式，*零售*模式 (**1**) 和*開發人員*模式 (**2**
     
 5.  移至[partner.microsoft.com/xboxactivate](https://partner.microsoft.com/xboxactivate)。
 
-6.  以您的開發人員中心帳戶登入開發人員中心。
+6.  使用您的帳戶認證登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。
 
-7.  輸入在「啟用開發人員模式」App 中顯示的啟用代碼。 您的帳戶具備有限的啟用次數。 啟用開發人員模式之後，開發人員中心將會指出與您帳戶相關連的啟用次數已使用一次。
+7.  輸入在「啟用開發人員模式」App 中顯示的啟用代碼。 您的帳戶具備有限的啟用次數。 啟用開發人員模式之後，合作夥伴中心會指出您已經使用其中一個與您帳戶相關聯的啟用。
 
     ![啟用步驟 8](images/activation-step-8-rs2.png)    
     

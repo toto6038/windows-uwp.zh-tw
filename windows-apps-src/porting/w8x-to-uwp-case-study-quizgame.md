@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 69aae85f4e0bb01833114ae5b2cbfab45e9dd84d
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6278344"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6447322"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 執行階段 8.x 至 UWP 案例研究： QuizGame 應用程式範例
 

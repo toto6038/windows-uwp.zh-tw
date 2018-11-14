@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cec8171b381a607616e2054784fa888074d3f90e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6189295"
+ms.locfileid: "6251720"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 執行階段 8.x 至 UWP 的案例研究：Bookstore1
 

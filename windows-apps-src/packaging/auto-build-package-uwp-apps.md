@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 78cb7240fd11cee77556078f10500ca1a2087f0e
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6194842"
+ms.locfileid: "6258181"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 
@@ -293,7 +293,7 @@ $(Build.ArtifactStagingDirectory)\AppxPackages\MyUWPApp_$(AppxVersion)_Test\MyUW
 
 Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的檔案，其中包含 Microsoft Store 關聯資訊。 如果您在公用儲存機制 (例如 GitHub) 儲存您的原始程式碼，此檔案將包含該帳戶所有保留的應用程式名稱。 您可以在公開之前，先排除或刪除此檔案。
 
-如果您沒有用來發行 App 之開發人員中心帳戶的存取權，您可以依照以下文件中的指示執行作業：[要針對協力廠商建置 App 嗎？如何封裝其 Microsoft Store 應用程式](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
+如果您沒有用來發行應用程式的合作夥伴中心帳戶的存取權，您可以依照本文件中的指示：[第 3 方建置 app 嗎？如何封裝其市集應用程式](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/#e35YzR5aRG6uaBqK.97)。
 
 然後，您需要確認建置步驟包含下列參數︰
 
@@ -307,11 +307,11 @@ Microsoft Store 關聯精靈會產生名稱為 Package.StoreAssociation.xml 的�
 
 使用適用於 Microsoft Store 的 Visual Studio Team Services 擴充功能來整合 Microsoft Store API，並將應用程式套件傳送到 Microsoft Store。
 
-您需要將開發人員中心帳戶與 Azure Active Directory (AD) 連接，然後在您的 AD 中建立 App 以驗證要求。 您可以依照 [擴充功能] 頁面中的指示來完成該作業。
+您需要連接您的合作夥伴中心帳戶與 Azure Active Directory (AD)，然後在您的廣告，以驗證要求建立應用程式。 您可以依照 [擴充功能] 頁面中的指示來完成該作業。
 
 一旦您設定好擴充功能，您可以新增建置工作，並使用您的應用程式識別碼和上傳檔案的位置進行設定。
 
-![設定開發人員中心](images/building-screen17.png)
+![設定合作夥伴中心](images/building-screen17.png)
 
 其中 `Package File` 參數的值會是：
 

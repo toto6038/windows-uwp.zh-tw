@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50ac9fcf984fa6c4ebad7e480ebfc2d002256e26
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6205412"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6262556"
 ---
 # <a name="networking-basics"></a>網路功能基本知識
 您對於任何具備網路功能的 app 所需執行的動作。

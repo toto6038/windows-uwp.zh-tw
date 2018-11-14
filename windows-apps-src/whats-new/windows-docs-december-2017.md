@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 112e9f60e38bc5a665d9011f35b9e92189f15f80
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6460901"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671964"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的最新動向
 
@@ -48,7 +48,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [進一步瞭解](https://docs.microsoft.com/en-us/collaborate)。
 
-![開發人員中心儀表板中的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
+![合作夥伴中心中的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>將傳統型應用程式與 UWP 專案封裝在一起
 

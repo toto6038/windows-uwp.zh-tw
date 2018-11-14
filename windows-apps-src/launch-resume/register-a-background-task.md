@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: faed3f762594ae46b617831615df2448391e1c7d
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6455935"
+ms.locfileid: "6658161"
 ---
 # <a name="register-a-background-task"></a>登錄背景工作
 

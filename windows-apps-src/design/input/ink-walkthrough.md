@@ -9,11 +9,11 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042248"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6250234"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教學︰在 UWP app 中支援筆跡
 

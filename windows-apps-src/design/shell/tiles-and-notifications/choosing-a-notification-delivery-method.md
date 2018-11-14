@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c01b96f70bd39c43f321935aa47393ada0400319
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6045840"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6447789"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 

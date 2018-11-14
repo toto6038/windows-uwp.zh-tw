@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲設定, 顯示模式, 系統需求, 硬體需求, 基本硬體, 建議的硬體, 隱私權原則, 支援連絡資訊, 應用程式網站, 支援資訊
 ms.localizationpriority: medium
 ms.openlocfilehash: 9356c536946508c4531170cde8982e7b79c6e4f6
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6263152"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6453419"
 ---
 # <a name="enter-app-properties"></a>輸入應用程式屬性
 

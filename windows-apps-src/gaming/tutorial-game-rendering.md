@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
 ms.openlocfilehash: 134c9005a796f52fb61ba628c0a85c8dbd875442
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199178"
+ms.lasthandoff: 11/12/2018
+ms.locfileid: "6454020"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>轉譯架構 II：遊戲轉譯
 

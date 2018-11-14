@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: ce80bc0f64e1aba8328880203f22ea3909fdb3e3
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6201389"
+ms.locfileid: "6256702"
 ---
 # <a name="texture-filtering"></a>紋理篩選
 

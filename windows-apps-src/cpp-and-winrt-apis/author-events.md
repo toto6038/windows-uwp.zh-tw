@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event, 標準, 投影, 撰寫, 事件
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c4d36fa22953bc4745b631303aae62985a5aa05
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6444595"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6671612"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中撰寫事件 
 
@@ -148,7 +148,7 @@ struct App : implements<App, IFrameworkViewSource, IFrameworkView>
 
 ## <a name="parameterized-delegates-and-simple-signals-across-an-abi"></a>參數化的委派和簡單的訊號，跨 ABI
 
-如果您的事件必須可以透過應用程式二進位介面 (ABI)&mdash;類元件和其使用的應用程式&mdash;，然後您的事件必須使用 Windows 執行階段委派類型。 上述範例使用[**Windows::Foundation::EventHandler\ < T\ >**](/uwp/api/windows.foundation.eventhandler) Windows 執行階段委派類型。 [**TypedEventHandler\ < TSender，TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 執行階段委派類型的另一個範例。
+如果您的事件必須可以透過應用程式二進位介面 (ABI)&mdash;類元件和其使用的應用程式&mdash;，然後您的事件必須使用 Windows 執行階段委派類型。 上述範例使用[**Windows::Foundation::EventHandler\<T\ >**](/uwp/api/windows.foundation.eventhandler) Windows 執行階段委派類型。 [**TypedEventHandler\<TSender、 TResult\ >**](/uwp/api/windows.foundation.eventhandler)是 Windows 執行階段委派類型的另一個範例。
 
 這些兩個委派類型的類型參數必須跨 ABI 類型參數必須是 Windows 執行階段類型，也因此。 這包括第一方和第三方執行階段類別，以及基本類型，例如數字和字串。 編譯器可協助您與 「*必須為 WinRT 類型*」 錯誤如果您忘記密碼該限制。
 
