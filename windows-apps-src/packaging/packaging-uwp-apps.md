@@ -11,33 +11,33 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: ba0ed6cb2fe2b932dcb3011ff7cf9cf7ce197182
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: 03d656d7a79dfa2a09e98f0fd54d9d0a4924559e
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6197063"
+ms.lasthandoff: 11/10/2018
+ms.locfileid: "6261176"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
 若要銷售通用 Windows 平台 (UWP) app 或將其散發給其他使用者，您必須封裝應用程式。 如果不想透過 Microsoft Store 散發應用程式，您可以直接將應用程式套件側載至裝置或透過 [Web 安裝](installing-UWP-apps-web.md)散發。 本文描述使用 Visual Studio 設定、建立和測試 UWP app 套件的程序。 如需管理和部署線 (LOB) 應用程式的相關資訊，請查看[企業應用程式管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案至 Windows 開發人員中心。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。 
+在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案到[合作夥伴中心](https://partner.microsoft.com/dashboard)。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。 
 
 ## <a name="types-of-app-packages"></a>應用程式套件類型
 
 - **應用程式套件 （.appx 或.msix）**  
-    檔案，包含可側載在裝置上的格式的應用程式。 Visual Studio 建立的任何單一應用程式套件檔案是**不**打算提交至開發人員中心，應用於側載和測試之用。 如果您想要提交應用程式至開發人員中心，請使用應用程式套件上傳檔案。  
+    檔案，包含可側載在裝置上的格式的應用程式。 Visual Studio 建立的任何單一應用程式套件檔案是**不**打算提交到合作夥伴中心，應用於側載和測試之用。 如果您想要將 app 提交至合作夥伴中心，使用應用程式套件上傳檔案。  
 
 - **應用程式套件組合 （.appxbundle 或.msixbundle）**  
     應用程式套件組合是一種套件，可以包含多個應用程式套件，每一個為了支援特定裝置架構而建置。 例如應用程式套件組合可以包含適用於 x86、x64 及 ARM 設定的三個不同的應用程式套件。 應該盡可能產生應用程式套件組合，因為它們允許您的應用程式用於最多種類的裝置。  
 
 - **應用程式套件上傳檔案 (.appxupload)**  
-    單一檔案，可以包含多個應用程式套件或單一應用程式套件組合以支援各種處理器架構。 上傳檔案也包含符號檔案，可在應用程式發佈到 Microsoft Store 之後[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果您使用 Visual Studio 封裝應用程式，以便提交至開發人員中心進行發佈，將會為您自動建立此檔案。 請務必注意，這是**唯一**可使用 Visual Studio 建立、有效的應用程式套件開發人員中心提交項。
+    單一檔案，可以包含多個應用程式套件或單一應用程式套件組合以支援各種處理器架構。 上傳檔案也包含符號檔案，可在應用程式發佈到 Microsoft Store 之後[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果您封裝您的應用程式與 Visual Studio，以便提交至合作夥伴中心進行發佈，此檔案，將會自動建立為您。 請務必注意，這些是**僅**有效的應用程式套件合作夥伴中心提交可以使用 Visual Studio 中建立的。
 
 以下是準備與建立應用程式套件的步驟概觀：
 
-1.  [封裝您的應用程式之前](#before-packaging-your-app)。 請依照這些步驟執行，確認您的應用程式已可封裝以提交至開發人員中心。
+1.  [封裝您的應用程式之前](#before-packaging-your-app)。 請依照下列步驟，確保您的應用程式已準備好可封裝以提交至合作夥伴中心。
 2.  [設定應用程式套件](#configure-an-app-package)。 請使用 Visual Studio 資訊清單設計工具來設定套件。 例如，新增磚影像，然後選擇您的應用程式支援的方向。
 3.  [建立應用程式套件上傳檔案](#create-an-app-package-upload-file)。 使用 Visual Studio 應用程式套件精靈，接著使用 Windows 應用程式認證套件認證您的套件。
 4.  [側載您的應用程式套件](#sideload-your-app-package)。 將您的應用程式側載到裝置後，您可以測試它是否如預期運作。
@@ -46,7 +46,7 @@ ms.locfileid: "6197063"
 
 ## <a name="before-packaging-your-app"></a>封裝您的應用程式之前
 
-1.  **測試您的應用程式。** 封裝您的應用程式以提交到開發人員中心之前，請確定它在您計畫支援的所有裝置系列上可如預期般運作。 這些裝置系列可能包含桌上型電腦、行動裝置、Surface Hub、Xbox、IoT 裝置或其他等。
+1.  **測試您的應用程式。** 封裝您的應用程式，合作夥伴中心提交之前，請確定它如預期般在您計劃支援的所有裝置系列上運作。 這些裝置系列可能包含桌上型電腦、行動裝置、Surface Hub、Xbox、IoT 裝置或其他等。
 2.  **最佳化您的應用程式。** 您可以使用 Visual Studio 的分析與偵錯工具來最佳化您的 UWP 應用程式的效能。 例如，UI 回應性時間軸工具、記憶體使用量工具及 CPU 使用量工具等。 如需這些工具的詳細資訊，請參閱[程式碼剖析功能之旅](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主題。
 3.  **檢查 .NET Native 相容性 (適用於 VB 和 C# 應用程式)。** 在通用 Windows 平台中，有原生編譯器可改善您的應用程式的執行階段效能。 由於這項變更，您應該在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 [偵錯 .NET Native Windows 通用 app](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)詳細說明一些使用 .NET Native 可能會發生的常見偵錯問題。
 
@@ -78,12 +78,12 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
 ## <a name="create-an-app-package-upload-file"></a>建立應用程式套件上傳檔案
 
-若要透過 Microsoft 網上商店應用程式發佈，您必須建立應用程式套件 （.appx 或.msix）、 應用程式套件組合 （.appxbundle 或.msixbundle），或上傳套件 (.appxupload) 並[提交到開發人員中心已封裝的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以只提交應用程式套件或應用程式套件組合至開發人員中心，但建議提交上傳套件。
+若要透過 Microsoft 網上商店應用程式發佈，您必須建立應用程式套件 （.appx 或.msix）、 應用程式套件組合 （.appxbundle 或.msixbundle），或上傳套件 (.appxupload) 並[提交到合作夥伴中心已封裝的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以提交到合作夥伴中心單獨應用程式套件或應用程式套件組合，您會建議提交上傳套件。
 
 >[!NOTE]
-> 應用程式套件上傳檔案 (.appxupload) 是**唯一**可使用 Visual Studio 建立、可提交至開發人員中心的有效應用程式套件類型。 其他有效[應用程式套件可以手動建立](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，而不使用 Visual Studio。 
+> 應用程式套件上傳檔案 (.appxupload) 是**僅**的類型可以使用 Visual Studio 中建立的合作夥伴中心的有效應用程式套件。 其他有效[應用程式套件可以手動建立](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，而不使用 Visual Studio。 
 
-您可以使用 **\[建立應用程式套件\]** 精靈來執行這項操作。 請依照下列步驟使用 Visual Studio 建立適合提交至開發人員中心的套件。
+您可以使用 **\[建立應用程式套件\]** 精靈來執行這項操作。 請依照下列步驟來建立適用於使用 Visual Studio 的合作夥伴中心提交的套件。
 
 **若要建立應用程式套件上傳檔案**
 
@@ -93,23 +93,23 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
     **\[建立應用程式套件\]** 精靈便會出現。
 
-3.  在詢問您是否要建置套件以上傳到開發人員中心的第一個對話方塊中，選取 [是]，然後按一下 [下一步]。  
+3.  選取 [是] 中的第一個對話方塊，詢問您是否要建置套件以上傳至合作夥伴中心，然後按一下 [下一步。  
     ![顯示的 [建立您的套件] 對話方塊視窗](images/packaging-screen3.jpg)
 
-    如果您在此選擇 [否]，Visual Studio 將不會產生提交至開發人員中心所需的應用程式套件上傳檔案 (.appxupload)。 如果您只想側載您的應用程式以在內部裝置上執行或做為測試目的，您可以選取此選項。 如需側載的詳細資訊，請參閱[啟用您的裝置以用於開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
-4.  使用您的開發人員帳戶登入 Windows 開發人員中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
-5.  選取您套件的 App 名稱，或如果您還沒有在 Windows 開發人員中心入口網站保留一個名稱，則保留一個新的名稱。  
+    如果您選擇 [否]，Visual Studio 將不會產生合作夥伴中心提交應用程式套件上傳 (.appxupload) 檔案。 如果您只想側載您的應用程式以在內部裝置上執行或做為測試目的，您可以選取此選項。 如需側載的詳細資訊，請參閱[啟用您的裝置以用於開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
+4.  使用您開發人員帳戶登入合作夥伴中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
+5.  選取您的套件的應用程式名稱，或如果您還沒有保留在合作夥伴中心中的其中一個保留一個新。  
     ![顯示選取 App 名稱的 [建立應用程式套件] 視窗](images/packaging-screen4.jpg)
 6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 (.appxbundle) 是慣用透過單一應用程式套件檔案因為它包含了為每種處理器架構設定的應用程式套件的集合。 當您選擇產生應用程式套件組合時，將會最終應用程式套件上傳 (.appxupload) 檔案中包含應用程式套件組合，以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![顯示套件設定的 [建立應用程式套件] 視窗](images/packaging-screen5.jpg)
 
 
-7.  包含完整 PDB 符號檔案，可在發佈應用程式之後[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics) (從 Windows 開發人員中心)。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
-9.  按一下 **\[建立\]** 產生應用程式套件。 如果您在步驟 3 中選取 **\[是\]** 而且針對開發人員中心提交建立套件，精靈將會建立套件上傳 (.appxupload) 檔案。 如果您在步驟 3 中選取 **\[否\]**，精靈會根據您在步驟 6 中的選擇建立單一應用程式套件或應用程式套件組合。
+7.  包含完整 PDB 符號檔案[分析應用程式](https://docs.microsoft.com/windows/uwp/publish/analytics)效能從合作夥伴中心發佈您的應用程式之後。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
+9.  按一下 **\[建立\]** 產生應用程式套件。 如果您在步驟 3 中選取的**是**，要建立合作夥伴中心提交的套件，精靈會建立套件上傳 (.appxupload) 檔案。 如果您在步驟 3 中選取 **\[否\]**，精靈會根據您在步驟 6 中的選擇建立單一應用程式套件或應用程式套件組合。
 10. 已成功封裝應用程式時，您會看到此對話方塊。  
     ![顯示驗證選項的 [套件建立完成] 視窗](images/packaging-screen6.jpg)
 
-    在您將 App 提交至開發人員中心之前，請先在本機或遠端電腦上驗證您的 App 以取得認證。 您只能驗證您的應用程式套件的發行組建，而非偵錯組建。
+    驗證您的應用程式，才能送出至合作夥伴中心進行本機或遠端電腦上的認證。 您只能驗證您的應用程式套件的發行組建，而非偵錯組建。
 
 11. 若要在本機驗證 App，請將 **\[本機電腦\]** 保持在選取的選項，然後按一下 **\[啟動 Windows 應用程式認證套件\]**。 如需使用 Windows 應用程式認證套件測試應用程式的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
 
@@ -117,9 +117,9 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
     如果您有您想要用來測試的遠端 windows 10 裝置，您將需要在該裝置上手動安裝 Windows 應用程式認證套件。 下一節會帶您逐步完成下列步驟。 完成此動作之後，接著您可以選取 **\[遠端電腦\]**，按一下 **\[啟動 Windows 應用程式認證套件\]** 以連線到遠端裝置並執行驗證測試。
 
-12. 完成 WACK 且您的 app 已通過認證後，您可以準備將應用程式提交至開發人員中心。 請確定您上傳的是正確的檔案。 您可以在方案的根資料夾 `\[AppName]\AppPackages` 找到檔案預設位置，它會以 .appxupload 的副檔名結尾。 如果您選擇應用程式套件組合並選取全部套件架構，名稱的形式為 `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`。
+12. Wack 且您的 app 已通過認證之後，您已經準備好將 app 提交至合作夥伴中心。 請確定您上傳的是正確的檔案。 您可以在方案的根資料夾 `\[AppName]\AppPackages` 找到檔案預設位置，它會以 .appxupload 的副檔名結尾。 如果您選擇應用程式套件組合並選取全部套件架構，名稱的形式為 `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`。
 
-如需有關提交應用程式至開發人員中心的詳細資訊，請查看[App 提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+如需提交 app 到合作夥伴中心的詳細資訊，請參閱[應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
 **驗證遠端 windows 10 裝置上的應用程式套件**
 
