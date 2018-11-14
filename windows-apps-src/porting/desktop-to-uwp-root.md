@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: e08856006bc3ed6348a6ded69421ef0be9fc69e5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 184cd246019bacc6419580cd47d2904374606031
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036948"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145116"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>封裝傳統型應用程式 （傳統型橋接器）
 
@@ -27,7 +27,7 @@ ms.locfileid: "6036948"
 除了您用來增強 Windows 10 體驗的程式碼，您的應用程式會保持不變，您可以繼續將其提供給您現有的 Windows 7、 Windows Vista 或 Windows XP 使用者基礎。 在 Windows 10，您的應用程式會繼續執行完全信任使用者模式，就像往常。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （傳統型橋接器，稱為 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>在 Windows 10，版本 1607 開始，引進了建立 Windows 應用程式套件 （否則稱為傳統型橋接器） 的傳統型應用程式的能力，它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 > [!NOTE]
 > 請查看<a href="https://mva.microsoft.com/en-US/training-courses/developers-guide-to-the-desktop-bridge-17373?l=oZG0B1WhD_8406218965/">此系列</a>由 Microsoft Virtual Academy 發行的簡短影片。 這些影片逐步引導您完成將移至通用 Windows 平台 (UWP) 您傳統型應用程式的整個程序。

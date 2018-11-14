@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 0ba47bdf964cab66182aadc6dafb0ae6d34c3ea7
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052003"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6145024"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 

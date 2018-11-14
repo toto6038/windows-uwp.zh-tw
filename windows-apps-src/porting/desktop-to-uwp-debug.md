@@ -10,11 +10,11 @@ keywords: Windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
 ms.openlocfilehash: 041bf37072b595c0889bd1493857e508e27c510c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6043587"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6149758"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>執行、 偵錯以及測試封裝的傳統型應用程式
 

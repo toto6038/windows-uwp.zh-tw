@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e98b9942dfc14604c061a036cd3c9803abaf3915
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046083"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6155604"
 ---
 # <a name="shader-resource-view-srv-and-unordered-access-view-uav"></a>著色器資源檢視 (SRV) 和未排序存取檢視 (UAV)
 

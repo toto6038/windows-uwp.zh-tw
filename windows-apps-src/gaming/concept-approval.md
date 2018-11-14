@@ -8,12 +8,12 @@ ms.date: 06/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 概念核准
 ms.localizationpriority: medium
-ms.openlocfilehash: a14a9b3f1e059019afa042a47dcaeb9373a69934
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 9b63e3002d6816b30a71c775cfcf87817d4f9879
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025003"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183959"
 ---
 # <a name="concept-approval"></a>概念核准
 
@@ -23,7 +23,7 @@ ms.locfileid: "6025003"
 
 只有在您透過 [ID@Xbox](http://www.xbox.com/Developers/id) 或以受管理合作夥伴的身分將遊戲發佈至 Xbox 時，才需要此程序。 如果您加入 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 並製作通用 Windows 平台 (UWP) 遊戲，則不需要完成此程序；您之後可以自發發佈至 Xbox。 但透過此計畫製作的遊戲將會放在市集的另外區段中。 如果您想要您的遊戲與大型 AAA 遊戲放在一起，或如果您想要使用 Xbox 開發套件 (XDK) 建立更密集的遊戲，您必須完成概念核准。
 
-如果您正在為 Windows 傳統型或行動裝置開發 UWP (或者您正在針對任何裝置發佈*不*是遊戲的 UWP 應用程式)，您也不需要概念核准。 您只需要[開發人員帳戶](https://go.microsoft.com/fwlink/?LinkId=817223)，便能自由地透過儀表板設定應用程式並提交到市集。
+如果您正在為 Windows 傳統型或行動裝置開發 UWP (或者您正在針對任何裝置發佈*不*是遊戲的 UWP 應用程式)，您也不需要概念核准。 您只需要是[開發人員帳戶](https://go.microsoft.com/fwlink/?LinkId=817223)，以及您可以自由地設定並提交您的應用程式在市集中透過合作夥伴中心。
 
 ## <a name="submit-your-concept-for-approval"></a>提交您的概念進行核准
 

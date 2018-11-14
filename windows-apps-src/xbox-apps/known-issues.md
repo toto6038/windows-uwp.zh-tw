@@ -9,11 +9,11 @@ keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
 ms.openlocfilehash: 798192dd898af5a7107087b4a9708e1a1d0cb9b5
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031130"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6144516"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
