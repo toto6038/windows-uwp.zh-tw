@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 作者，COM、 元件
 ms.localizationpriority: medium
 ms.openlocfilehash: 82ff87e4621d7dda3c3fd37d95d3d8d7812024e6
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6199358"
+ms.locfileid: "6252113"
 ---
 # <a name="author-com-components-with-cwinrt"></a>使用 C++/WinRT 撰寫 COM 元件
 
