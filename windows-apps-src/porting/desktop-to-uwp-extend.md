@@ -1,19 +1,19 @@
 ---
-author: normesta
+author: hickeys
 Description: Extend your desktop application with Windows UIs and components
 Search.Product: eADQiWindows 10XVcnh
 title: 使用 Windows UI 和元件擴充您的傳統型應用程式
-ms.author: normesta
+ms.author: hickeys
 ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1806a24d2f84b5d3e1eeff6c5b3f7900360de3e4
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: d76d93f496f86e63027cff9e7adb64251074ba57
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6051893"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164311"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -138,8 +138,8 @@ ms.locfileid: "6051893"
     <maps:MapControl x:Name="myMap" Grid.Column="0" Width="500" Height="500"
                      ZoomLevel="{Binding ElementName=zoomSlider,Path=Value, Mode=TwoWay}"
                      Heading="{Binding ElementName=headingSlider,Path=Value, Mode=TwoWay}"
-                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"    
-                     HorizontalAlignment="Left"               
+                     DesiredPitch="{Binding ElementName=desiredPitchSlider,Path=Value, Mode=TwoWay}"
+                     HorizontalAlignment="Left"
                      MapServiceToken="<Your Key Goes Here" />
     <Grid Grid.Column="1" Margin="12">
         <StackPanel>
@@ -160,7 +160,7 @@ ms.locfileid: "6051893"
   <uap:Extension Category="windows.protocol" Executable="MapUI.exe" EntryPoint="MapUI.App">
     <uap:Protocol Name="xamluidemo" />
   </uap:Extension>
-</Extensions>    
+</Extensions>
 ```
 
 為通訊協定命名，提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。
@@ -330,6 +330,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
     }
 }
 ```
+
 在這個程式碼中，我們將儲存已被使用者分享到應用程式本機存放裝置資料夾的影像。 稍後，我們將會修改到提取映像的傳統型應用程式從該相同的資料夾。 傳統型應用程式可以這麼做，因為它包含做為 UWP 應用程式在相同套件中。
 
 <a id="desktop-extensions" />
@@ -365,6 +366,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
+
 使用者開啟的傳統型應用程式已經的執行個體，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並將路徑中傳遞至檔案的位置。 如此一來任何開啟的執行個體的傳統型應用程式將會顯示共用的相片。
 
 ```csharp
@@ -499,11 +501,12 @@ public void RegisterBackgroundTask(String triggerName)
     }
 }
 ```
+
 ## <a name="support-and-feedback"></a>支援與意見反應
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

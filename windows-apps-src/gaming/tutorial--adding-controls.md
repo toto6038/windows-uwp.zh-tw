@@ -8,12 +8,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 4aaacee011b3732b8d1456935239d7a4a5405a4d
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: bc5873486bdd9c4adf4ea74b10a240617143ad23
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6035165"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6193612"
 ---
 # <a name="add-controls"></a>新增控制項
 
@@ -401,7 +401,7 @@ window->PointerReleased +=
 
 
 
-以下 **MoveLookController** 指派指標 ID 給觸發事件到對應至視角區域的特定變數的指標。 在視角區域中發生觸控的狀況中，**m\_movePointerID** 變數是設定為引發事件的指標 ID。 布林值變數 **m\_lookInUse** 也會設定，以指出控制項尚未釋放。
+以下 **MoveLookController** 指派指標 ID 給觸發事件到對應至視角區域的特定變數的指標。 對於觸控，視角區域中發生， **m\_lookPointerID**變數會設定成引發事件的指標 ID。 布林值變數 **m\_lookInUse** 也會設定，以指出控制項尚未釋放。
 
 現在，我們來看看遊戲範例如何處理 [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) 觸控螢幕事件。
 

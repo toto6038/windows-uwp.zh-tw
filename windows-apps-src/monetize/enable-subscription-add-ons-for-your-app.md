@@ -7,12 +7,12 @@ ms.author: mhopkins
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 207203805dfee0fd54a9d6d6fd4987b098710f4c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 971e828f4642a0a9c47994b1c7c0bfdbc5f01ad3
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024832"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183575"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 
@@ -126,7 +126,7 @@ UWP app 的訂閱附加元件支援下列功能：
 訂閱附加元件目前不支援下列案例。
 
 * 目前不支援透過市集直接銷售訂閱給客戶。 訂閱僅適用於數位產品的 App 內購買。
-* 客戶無法使用其 Microsoft 帳戶的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 頁面切換訂閱期限。 若要切換到不同的訂閱週期，客戶必須先取消目前訂閱，然後使用不同訂閱週期從您的應用程式購買訂閱。
+* 客戶無法使用其 Microsoft 帳戶的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 頁面切換訂閱期限。 若要切換至不同的訂閱週期，客戶必須先取消目前訂閱，並再購買訂閱，包含不同訂閱週期從您的應用程式。
 * 訂閱附加元件目前不支援切換層級 (例如從基本訂閱切換至功能更多的優質訂閱)。
 * 訂閱附加元件目前不支援[銷售](../publish/put-apps-and-add-ons-on-sale.md)與[促銷代碼](../publish/generate-promotional-codes.md)。
 

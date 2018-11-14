@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 獲利
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dd225f25162035b1bb65677c3bd4a7f7503b14
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6046991"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189112"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -29,7 +29,7 @@ ms.locfileid: "6046991"
 
 ## <a name="worldwide-distribution-channel"></a>全球的通路
 
-Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區全球，且支援透過各種不同形式的付款方式，包括 Visa、 Mastercard 和 PayPal 的計費。 如需國家與地區的完整清單，請參閱[市場和自訂價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。
+Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區全球，且支援透過各種不同形式的付款方式，包括 Visa、 Mastercard 和 PayPal 的計費。 如需國家和地區的完整清單，請參閱[定義市場選取項目](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ## <a name="set-a-price-for-your-game"></a>為您的遊戲設定價格
 
@@ -39,8 +39,8 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 ### <a name="base-price"></a>基本價格
 
-遊戲的基本價格會決定您的遊戲是歸類為_付費_或_免費_。 您可以使用[開發人員中心儀表板](https://developer.microsoft.com/windows)來根據國家與地區設定基本價格。
-決定價格的程序可能包括您[在不同國家銷售時的納稅義務](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)，以及[特定市場的成本考量](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 您也可以[針對特定市場設定自訂價格](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#markets-and-custom-prices)。 如需詳細資訊，請參閱[制定價格和選擇市場](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+遊戲的基本價格會決定您的遊戲是歸類為_付費_或_免費_。 您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)設定根據國家與地區的基本價格。
+決定價格的程序可能包括您[在不同國家銷售時的納稅義務](https://msdn.microsoft.com/windows/uwp/publish/tax-details-for-paid-apps)，以及[特定市場的成本考量](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection#price-considerations-for-specific-markets)。 您也可以[針對特定市場設定自訂價格](../publish/set-and-schedule-app-pricing.md#override-base-price-for-specific-markets)。
 
 ### <a name="sale-price"></a>銷售價格
 
@@ -49,7 +49,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 ## <a name="in-game-purchases"></a>遊戲內購買
 
-遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store，這些產品稱為_附加元件_。 您可以透過 Windows 開發人員中心儀表板[發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。 您也會需要在遊戲的程式碼中啟用附加元件。
+遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store，這些產品稱為_附加元件_。 [發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)透過合作夥伴中心。 您也會需要在遊戲的程式碼中啟用附加元件。
 
 ### <a name="types-of-add-ons"></a>附加元件的類型
 
@@ -60,7 +60,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 ### <a name="create-in-game-purchases"></a>建立遊戲內購買
 
 最新的 App 內購買和授權資訊 API 是 Windows SDK 中 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間的一部分 (自 Windows10 版本 1607 開始)。 如果您正在開發的新遊戲其目標是 1607 或更新版本，則我們建議您使用 __Windows.Services.Store__ 命名空間，因為它支援最新的附加元件類型且效能更好。
-它也被設計成與未來的 Windows 開發人員中心和市集所支援的產品類型及功能相容。 當針對舊版的 Windows10 開發時，請改為使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間。
+它也設計成與未來產品與合作夥伴中心和市集所支援的功能類型相容。 當針對舊版的 Windows10 開發時，請改為使用 [Windows.ApplicationModel.Store](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.store.aspx) 命名空間。
 
 如需詳細資訊，請移至 [App 內購買和試用版](https://msdn.microsoft.com/windows/uwp/monetize/in-app-purchases-and-trials)。
 
@@ -93,14 +93,14 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 1. 在 Visual Studio 中開啟您的遊戲方案。
 2. 在 Visual Studio 中，移至 __\[專案\]__ > __\[市集\]__ > __\[建立應用程式套件\]__
 3. 適用於__您是否要建置套件以上傳到 Microsoft Store？__ 選項，選取 __[是]__。
-4. 登入您的「開發人員中心」的開發人員帳戶。 如果您還沒有開發人員帳戶，可以[註冊](https://developer.microsoft.com/store/register)一個。
+4. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard)開發人員帳戶。 如果您還沒有開發人員帳戶，可以[註冊](https://developer.microsoft.com/store/register)一個。
 5. 選取一個要建立上傳套件的 App。 如果您尚未建立 App 提交，請提供新的 App 名稱以建立新的提交。 如需詳細資訊，請參閱[透過保留名稱建立您的 App](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功建立套件之後，按一下 __\[啟動 Windows 應用程式認證套件\]__ 以開始測試程序。
 7. 修正任何錯誤以建立遊戲套件。
 
 #### <a name="publish-the-game-as-hidden"></a>將遊戲以隱藏的方式發佈
 
-1. 移至[開發人員中心](https://developer.microsoft.com/store)並登入。
+1. 移至[合作夥伴中心](https://partner.microsoft.com/dashboard)，並登入。
 2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要處理的 App。 如果您尚未建立 App 提交，按一下 __\[建立新應用程式\]__ 並保留名稱。
 3. 在 __\[應用程式概觀\]__ 頁面上，按一下 __\[開始您的提交\]__。
 4. 設定這個新的提交。 在提交頁面上：
@@ -120,7 +120,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 在 Visual Studio 中開啟您的遊戲方案：
 
 1. 移至 __\[專案\]__ > __\[市集\]__ > __\[將應用程式與市集建立關聯\]__
-2. 登入您的「開發人員中心」的開發人員帳戶，並選取要與這個方案關聯的 App 名稱。
+2. 登入合作夥伴中心開發人員帳戶，並選取要與這個方案關聯的應用程式名稱。
 3. 按兩下 __Package.appxmanifest.xml file__ 然後移至 __\[套件\]__ 索引標籤以檢查遊戲已正確建立關聯。
 
 如果您已經將方案與已經在市集上架的遊戲建立關聯，您的方案將會有使用中的授權，且離為遊戲建立附加元件又更近一些。 如需詳細資訊，請參閱[封裝 App](https://msdn.microsoft.com/windows/uwp/packaging/index)。
@@ -129,7 +129,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 在建立附加元件的時候，請確認您將他們與正確的遊戲提交建立關聯。 如需設定與附加元件關聯之各資訊的方法，請參閱[附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
-1. 移至[開發人員中心](https://developer.microsoft.com/store)並登入。
+1. 移至[合作夥伴中心](https://partner.microsoft.com/dashboard)，並登入。
 2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要建立附加元件的 App。
 3. 在 __\[應用程式概觀\]__ 頁面上，於 __\[附加元件\]__ 區段中，選取 __\[建立新的附加元件\]__。
 4. 選取附加元件的產品類型：__\[開發人員管理的消費性產品\]__、__\[市集管理的消費性產品\]__，或 __\[耐久品\]__。
