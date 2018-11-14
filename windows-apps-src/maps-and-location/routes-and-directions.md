@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 路線, 地圖, 位置, 路線指引
 ms.localizationpriority: medium
 ms.openlocfilehash: 69283f6b53f3a8483376e3b8fe77a4491d4b01b1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458642"
+ms.locfileid: "6654214"
 ---
 # <a name="display-routes-and-directions-on-a-map"></a>在地圖上顯示路線和路線指引
 

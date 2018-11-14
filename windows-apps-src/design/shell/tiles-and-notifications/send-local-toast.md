@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
 ms.openlocfilehash: 95f72180038b6ccbed5f399c2cd58081915baf2c
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023232"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6646538"
 ---
 # <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
 

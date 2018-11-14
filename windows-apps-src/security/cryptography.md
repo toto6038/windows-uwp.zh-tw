@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 0caa3f63d8a92c75bdce10cdb277967dca21fafb
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6252205"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6668400"
 ---
 # <a name="cryptography"></a>密碼編譯
 

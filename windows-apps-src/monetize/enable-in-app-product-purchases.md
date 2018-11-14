@@ -9,11 +9,11 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 89e9fff8f041c4beb2a897c7be75b2f6e009f809
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6034839"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6646393"
 ---
 # <a name="enable-in-app-product-purchases"></a>啟用應用程式內產品購買
 

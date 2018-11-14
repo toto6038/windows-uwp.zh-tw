@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 刪除, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6268684"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6650211"
 ---
 # <a name="delete-an-add-on-submission"></a>刪除附加元件提交
 

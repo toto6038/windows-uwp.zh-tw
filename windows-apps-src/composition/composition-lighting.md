@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c5c7bfcb06eb673b0516cef7882685ebd19ddb97
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6036978"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6664019"
 ---
 # <a name="using-lights-in-windows-ui"></a>使用 Windows UI 中的光源
 

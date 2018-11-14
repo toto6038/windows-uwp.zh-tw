@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，應用程式安裝程式，AppInstaller，側載，相關設定，選用套件，IIS 伺服器
 ms.localizationpriority: medium
 ms.openlocfilehash: 2898a3450f75379492bae1ade5c85581cc8e5a4e
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6259699"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6655828"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>從 IIS 伺服器上安裝 UWP 應用程式
 

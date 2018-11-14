@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e0e73f4224b1577a5219d239f8c11bf5ecc0b73
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6032972"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6646046"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。

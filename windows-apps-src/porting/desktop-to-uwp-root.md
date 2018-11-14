@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
-ms.openlocfilehash: 184cd246019bacc6419580cd47d2904374606031
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: b5ebbb628add9474412441ff507e7429f3bfd3ab
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6451692"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6661175"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>封裝傳統型應用程式 （傳統型橋接器）
 
@@ -90,7 +90,7 @@ Desktop App Converter 會將轉譯的虛擬檔案及登錄系統，您的應用�
 
 :heavy_check_mark: 使用精靈產生您的套件。
 
-: heavy_check_mark： 從您已在 Windows 開發人員中心儀表板保留名稱輕鬆指派給您的應用程式的身分識別。
+: heavy_check_mark： 從的名稱，您已保留在[合作夥伴中心](https://partner.microsoft.com/dashboard)輕鬆指派給您的應用程式的身分識別。
 
 請參閱[使用 Visual Studio 的傳統型應用程式套件](desktop-to-uwp-packaging-dot-net.md)
 

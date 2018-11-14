@@ -13,11 +13,11 @@ design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: dcbb27a87b48a124fe4463578bc32d908f399ccb
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "6261798"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6646790"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 

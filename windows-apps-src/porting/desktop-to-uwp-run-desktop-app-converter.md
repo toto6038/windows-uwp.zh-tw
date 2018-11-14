@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 74c84eb6-4714-4e12-a658-09cb92b576e3
 ms.localizationpriority: medium
-ms.openlocfilehash: f964c8ac4a579fe4c360967c6bc9e613659a668b
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 7fc8c8e68e4b20498f84b4d20d84eca0dbfa7237
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469791"
+ms.locfileid: "6650896"
 ---
 # <a name="package-a-desktop-application-using-the-desktop-app-converter"></a>封裝傳統型應用程式使用 Desktop App Converter
 
@@ -122,7 +122,7 @@ Desktop App Converter (DAC) 建立封裝的傳統型應用程式來整合最新�
 您將會使用參數來指定應用程式的套件名稱、 發行者和版本號碼。
 
 > [!NOTE]
-> 若您已經在 Microsoft Store中保留了您應用程式的名稱，您可以使用 Windows 開發人員中心儀表板取得套件和發行者的名稱。 若您想要在其他系統上側載您的應用程式，您可以為他們提供您自己的名稱，只要其發行者名稱與您選擇用來簽署您應用程式之憑證上的名稱相同即可。
+> 如果您已經保留您的應用程式名稱，在 Microsoft Store 中，您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)來取得套件和發行者的名稱。 若您想要在其他系統上側載您的應用程式，您可以為他們提供您自己的名稱，只要其發行者名稱與您選擇用來簽署您應用程式之憑證上的名稱相同即可。
 
 ### <a name="a-quick-look-at-command-parameters"></a>快速查看命令參數
 
@@ -145,7 +145,7 @@ DesktopAppConverter.exe
 * [封裝有安裝程式 (.msi) 檔案的應用程式](#installer-conversion)
 * [封裝有安裝程式的可執行檔的應用程式](#setup-conversion)
 * [封裝沒有安裝程式的應用程式](#no-installer-conversion)
-* [封裝應用程式、簽署應用程式，並準備提交Microsoft Store](#optional-parameters)
+* [封裝應用程式、 簽署應用程式，並準備提交市集](#optional-parameters)
 
 <a id="installer-conversion" />
 
@@ -158,7 +158,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 ```
 
 > [!IMPORTANT]
-> 以下是應該牢記的兩件重要的事： 首先，確定您的安裝程式位於一個獨立的資料夾中，且相同的資料夾中只有其他與安裝程式相關的檔案。 轉換器會將該資料夾中的所有內容複製到隔離 Windows 環境中。 <br> 其次，如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。  
+> 以下是應該牢記的兩件重要的事： 首先，確定您的安裝程式位於一個獨立的資料夾中，且相同的資料夾中只有其他與安裝程式相關的檔案。 轉換器會將該資料夾中的所有內容複製到隔離 Windows 環境中。 <br> 其次，如果合作夥伴中心指派到您的套件，以數字開頭的身分識別，請確定您也傳入<i>-AppId</i>參數，並使用只有字串尾碼 （句點分隔符號之後） 為參數值。  
 
 **影片**
 
@@ -176,7 +176,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.msi -Destination C:\O
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1
 ```
 >[!IMPORTANT]
->如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
+>如果合作夥伴中心指派到您的套件，以數字開頭的身分識別，請確定您也傳入<i>-AppId</i>參數，並使用只有字串尾碼 （句點分隔符號之後） 為參數值。
 
 ``InstallerArguments`` 是一項選擇性參數。 不過，由於 Desktop App Converter 需要您在自動安裝模式中執行的安裝程式，您可能會有使用它，如果您的應用程式需要以無訊息方式執行的無訊息旗標。 ``/S`` 旗標是一個相當常見的無訊息旗標，但您使用的旗幟可能會因您所使用的安裝技術而有所不同。
 
@@ -197,7 +197,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 ```
 
 >[!IMPORTANT]
->如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
+>如果合作夥伴中心指派到您的套件，以數字開頭的身分識別，請確定您也傳入<i>-AppId</i>參數，並使用只有字串尾碼 （句點分隔符號之後） 為參數值。
 
 **影片**
 
@@ -213,7 +213,7 @@ DesktopAppConverter.exe -Installer C:\Installer\MyApp\ -AppExecutable MyApp.exe 
 DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" -Publisher "CN=MyPublisher" -Version 0.0.0.1 -MakeAppx -Sign -Verbose -Verify
 ```
 >[!IMPORTANT]
->如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。
+>如果合作夥伴中心指派到您的套件，以數字開頭的身分識別，請確定您也傳入<i>-AppId</i>參數，並使用只有字串尾碼 （句點分隔符號之後） 為參數值。
 
 ``Sign``參數會產生憑證，然後簽署您的應用程式使用它。 若要執行您的應用程式，您必須先安裝該產生的憑證。 若要了解如何執行，請參閱本文中[執行封裝後的應用程式](#run-app)一節。
 
@@ -271,13 +271,13 @@ DesktopAppConverter.exe -Installer C:\Installer\MyAppSetup.exe -InstallerArgumen
 |-MakeAppx [&lt;SwitchParameter&gt;]  |選用 |一個參數，如果顯示，即會通知這個指令碼呼叫輸出上的 MakeAppx。 |
 |-MakeMSIX [&lt;SwitchParameter&gt;]  |選擇性 |一個參數，如果存在，會告訴這個指令碼來封裝 MSIX 封裝為輸出。 |
 |<a id="identity-params" /><strong>套件識別資料參數</strong>||
-|-PackageName &lt;String&gt; |必要 |通用 Windows app 套件的名稱。 如果開發人員中心為您的套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。 |
+|-PackageName &lt;String&gt; |必要 |通用 Windows app 套件的名稱。 如果合作夥伴中心指派到您的套件，以數字開頭的身分識別，請確定您也傳入<i>-AppId</i>參數，並使用只有字串尾碼 （句點分隔符號之後） 為參數值。 |
 |-Publisher &lt;String&gt; |必要 |通用 Windows app 套件的發行者 |
 |-Version &lt;Version&gt; |必要 |通用 Windows app 套件的版本號碼 |
 |<a id="manifest-params" /><strong>封裝資訊清單參數</strong>||
 |-AppExecutable &lt;String&gt; |選用 |應用程式主要可執行檔 (例如 "MyApp.exe") 的名稱。 此參數是無安裝程式轉換的必要參數。 |
 |-AppFileTypes &lt;String&gt;|選用 |以逗號分隔的檔案類型清單，應用程式將會與其產生關聯。 使用範例：-AppFileTypes "'.md', '.markdown'"。|
-|-AppId &lt;String&gt; |選用 |在 Windows 應用程式套件資訊清單中指定要為應用程式識別碼所設定的值。 如果未指定，它將會設定為針對 *PackageName* 傳入的值。 在很多時候，使用*PackageName*即可。 不過，如果開發人員中心為您套件指定以數字開頭的身分識別，請確定您也傳入 <i>-AppId</i> 參數，並只使用字串尾碼（句點分隔符號之後）為參數值。 |
+|-AppId &lt;String&gt; |選用 |在 Windows 應用程式套件資訊清單中指定要為應用程式識別碼所設定的值。 如果未指定，它將會設定為針對 *PackageName* 傳入的值。 在很多時候，使用*PackageName*即可。 不過，如果合作夥伴中心指派到您的套件，以數字開頭的身分識別，請確定您也傳入<i>-AppId</i>參數，並使用只有字串尾碼 （句點分隔符號之後） 為參數值。 |
 |-AppDisplayName &lt;String&gt;  |選用 |指定要在 Windows 應用程式套件資訊清單中設定應用程式顯示名稱的值。 如果未指定，它將會設定為針對 *PackageName* 傳入的值。 |
 |-AppDescription &lt;String&gt; |選用 |在 Windows 應用程式套件資訊清單中指定要為應用程式描述所設定的值。 如果未指定，它將會設定為針對 *PackageName* 傳入的值。|
 |-PackageDisplayName &lt;String&gt; |選用 |指定要在 Windows 應用程式套件資訊清單中設定套件顯示名稱的值。 如果未指定，它將會設定為針對 *PackageName* 傳入的值。 |

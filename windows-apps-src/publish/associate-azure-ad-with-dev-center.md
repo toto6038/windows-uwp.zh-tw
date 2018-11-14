@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: medium
 ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
-ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6250776"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6470936"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>將 Azure Active Directory 與您的合作夥伴中心帳戶產生關聯
 

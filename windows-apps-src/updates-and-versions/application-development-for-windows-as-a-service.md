@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
 ms.openlocfilehash: 536679068d66a279e158790bf0fcc0f8757709cc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6029350"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6471019"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 

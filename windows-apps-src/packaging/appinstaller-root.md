@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
 ms.openlocfilehash: f3da1f4f393eea1362b6e59d2ad7e9a2a97bc33b
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "6181431"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6648690"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>使用應用程式安裝程式安裝 UWP app
 
