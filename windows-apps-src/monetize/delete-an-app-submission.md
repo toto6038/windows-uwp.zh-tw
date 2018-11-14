@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式提交, 刪除
 ms.localizationpriority: medium
 ms.openlocfilehash: da2533eb8b6e45e4426a1d25931638466547e01b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033640"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191123"
 ---
 # <a name="delete-an-app-submission"></a>刪除 App 提交
 

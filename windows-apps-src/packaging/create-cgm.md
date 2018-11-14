@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 內容群組對應, 串流安裝, uwp app 串流安裝, 來源內容群組對應
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a2922d6d3f54d693a9fe9c0982ea06cc5f2caae
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6037967"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6189800"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>建立和轉換來源內容群組對應
 

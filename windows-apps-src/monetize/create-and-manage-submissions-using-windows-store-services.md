@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
 ms.openlocfilehash: c91c7b42642df9a03aab1324f074799b63157e62
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6041986"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6197693"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 

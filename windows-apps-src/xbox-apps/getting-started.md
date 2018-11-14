@@ -7,12 +7,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b45386d93d37d00b8448a4f4a3548be6de7f685b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 4761b668877af6380ad176e56fb84410a4f509fc
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6042449"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185018"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>開始使用 Xbox One 上的 UWP 應用程式開發
 
@@ -50,7 +50,7 @@ ms.locfileid: "6042449"
 
 ## <a name="setting-up-your-xbox-one-console"></a>設定 Xbox One 主機
 
-1.  在 Xbox One上啟用開發人員模式。 下載應用程式、 取得啟用程式碼，然後輸入它在您的開發人員中心帳戶[管理 Xbox One 主機](https://partner.microsoft.com/xboxactivate)頁面中。 如需詳細資訊，請參閱[啟用 Xbox One 開發人員模式](devkit-activation.md)頁面。 
+1.  在 Xbox One上啟用開發人員模式。 下載應用程式、 取得啟用程式碼，然後輸入它在您的合作夥伴中心帳戶[管理 Xbox One 主機](https://partner.microsoft.com/xboxactivate)頁面中。 如需詳細資訊，請參閱[啟用 Xbox One 開發人員模式](devkit-activation.md)頁面。 
 
 2.  開啟**開發人員模式啟用**應用程式，然後選取 [**切換並重新啟動**。 恭喜，您現在已經有處於開發人員模式的 Xbox One 了！
   

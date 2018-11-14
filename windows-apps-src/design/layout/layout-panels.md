@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 623ca1484091f9f15b5a6dbedb85ed9d5149154e
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6150256"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6196677"
 ---
 # <a name="layout-panels"></a>版面配置面板
 

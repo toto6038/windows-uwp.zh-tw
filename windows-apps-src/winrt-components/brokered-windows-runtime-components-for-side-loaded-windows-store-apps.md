@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
 ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6052303"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252258"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>側載 UWP app 的代理 Windows 執行階段元件
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx 9, directx 11, port, 遊戲, 連接埠
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e867129b5f684c7e77aebefcbe9a3f68b47b031
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6155392"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183067"
 ---
 # <a name="moving-from-directx-9-to-directx-11-and-universal-windows-platform-uwp"></a>從 DirectX 9 移到 DirectX 11 和通用 Windows 平台 (UWP)
 

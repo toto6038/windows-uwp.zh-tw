@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d4aaca880caf30b46cb1ed26d66700bb12d76404
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049972"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205750"
 ---
 # <a name="templatebinding-markup-extension"></a>{TemplateBinding} 標記延伸
 

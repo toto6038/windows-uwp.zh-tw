@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, 著色器
 ms.localizationpriority: medium
 ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6033995"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183559"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL-to-HLSL 參考
 

@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-ms.openlocfilehash: 9d990c206892872711626fb98f386f7b28f43543
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 0d7f6667aeb2f6c7c07f8f4c2d5944f559ebe0d8
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027562"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6208260"
 ---
 # <a name="data-binding-in-depth"></a>深入了解資料繫結
 
@@ -32,7 +32,7 @@ ms.locfileid: "6027562"
 
 資料繫結可讓您的 App UI 顯示資料，以及選擇性地與該資料保持同步。 資料繫結可讓您將資料與 UI 分開考量，為 app 建構更簡單的概念模型，以及更好的可讀性、測試性和維護性。
 
-資料繫結可讓您在 UI 最初顯示時，單純地顯示資料來源的值，而不是要回應這些值的變更。 這是一種模式的繫結稱為*一次性*，以及適用於執行階段期間不會變更的值。 或者，您可以選擇 「 觀察 」 值，並變更時，更新 UI。 這更多稱為*單向*，以及適用於唯讀資料。 最後，您可以選擇同時觀察和更新，將使用者對 UI 中的值所做的變更，自動推回到資料來源。 這個模式會呼叫*雙向*，以及適用於讀寫資料。 以下是一些範例。
+資料繫結可讓您在 UI 最初顯示時，單純地顯示資料來源的值，而不是要回應這些值的變更。 這是一種模式的繫結稱為*一次性*，以及適用於執行階段期間不會變更的值。 或者，您可以選擇 「 觀察 」 值，並變更時，更新 UI。 此模式稱為*單向*，以及適用於唯讀資料。 最後，您可以選擇同時觀察和更新，將使用者對 UI 中的值所做的變更，自動推回到資料來源。 這個模式會呼叫*雙向*，以及適用於讀寫資料。 以下是一些範例。
 
 -   您可以使用一次性模式來將[**影像**](https://msdn.microsoft.com/library/windows/apps/BR242752)繫結到目前使用者的相片。
 -   您可以使用單向模式來將[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)繫結到依新聞區段分組的即時新聞文章集合。

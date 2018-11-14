@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e292e0c992edb26da2a92885e1f949d254d75da6
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023358"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6252792"
 ---
 # <a name="depth-and-stencil-buffers"></a>深度和樣板緩衝區
 

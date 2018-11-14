@@ -15,11 +15,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d9856d564ffd36226a841c38eba65df0b62ee306
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6024376"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6185657"
 ---
 # <a name="xaml-custom-panels-overview"></a>XAML 自訂面板概觀
 

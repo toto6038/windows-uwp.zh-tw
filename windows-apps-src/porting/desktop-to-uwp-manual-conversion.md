@@ -9,12 +9,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
-ms.openlocfilehash: 29fd7faec6f78b5f01469e7bfa6c01a8831f07eb
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: 6b063bf5997bbb1fc082c8d9fefcf0f435262bf1
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023002"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6198151"
 ---
 # <a name="package-a-desktop-application-manually"></a>手動封裝的傳統型應用程式
 
@@ -27,7 +27,7 @@ ms.locfileid: "6023002"
 若您不確定您的安裝程式會對系統做出什麼變更，或者您想要使用自動化的工具產生您的封裝資訊清單，請考慮[這些](desktop-to-uwp-root.md#convert)選項。
 
 >[!IMPORTANT]
->若要建立 Windows 應用程式套件的傳統型應用程式的能力 （傳統型橋接器，稱為 Windows 10，版本 1607 開始，引進了否則和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>在 Windows 10，版本 1607 開始，引進了建立 Windows 應用程式套件 （否則稱為傳統型橋接器） 的傳統型應用程式的能力，它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 

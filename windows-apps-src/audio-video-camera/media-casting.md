@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6155814"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6210079"
 ---
 # <a name="media-casting"></a>媒體傳播
 

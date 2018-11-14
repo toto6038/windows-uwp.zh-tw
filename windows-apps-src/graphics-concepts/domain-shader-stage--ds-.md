@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3bcad4a5e22249d4d7faed08fe9cc9af4c3fb338
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6051963"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6205488"
 ---
 # <a name="domain-shader-ds-stage"></a>網域著色器 (DS) 階段
 

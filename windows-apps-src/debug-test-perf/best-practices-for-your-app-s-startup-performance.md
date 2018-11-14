@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
-ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "6152407"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6199541"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 

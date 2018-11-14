@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
 ms.openlocfilehash: 8bd5a92f1e8dfe762ac3433bf64f9fe705644a9f
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6023295"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6256775"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 

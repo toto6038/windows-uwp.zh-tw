@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6461b6889f110bde8929e1f370f9197caa33e5f3
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6047935"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6183836"
 ---
 # <a name="distributing-a-managed-windows-runtime-component"></a>發佈 Managed Windows 執行階段元件
 

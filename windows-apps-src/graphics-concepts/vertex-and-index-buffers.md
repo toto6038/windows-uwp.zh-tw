@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2327036eb53ac34c406aef53163be642468fbddc
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: bdc40b08cbcd46fc379feeda3c63204290e055af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6025928"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "6164794"
 ---
 # <a name="vertex-and-index-buffers"></a>頂點和索引緩衝區
 

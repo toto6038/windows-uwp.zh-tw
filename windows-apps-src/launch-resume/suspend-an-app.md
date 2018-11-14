@@ -14,11 +14,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 7cb93c410f583884f75f21d9beda03db87c024f9
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6027798"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6191266"
 ---
 # <a name="handle-app-suspend"></a>處理應用程式暫停
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6031490"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184216"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual studio 建立應用程式安裝程式檔案
 

@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 4b2ea47f819d3a187621615ee3a85be5af895d3b
-ms.sourcegitcommit: e814a13978f33654d8e995584f4b047cb53e0aef
+ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
+ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "6049383"
+ms.lasthandoff: 11/09/2018
+ms.locfileid: "6184821"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -61,15 +61,15 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至Microsoft S
 
 ### <a name="i-sold-my-xbox-one-and-left-it-in-developer-mode-how-do-i-deactivate-developer-mode"></a>我將處於開發人員模式的 Xbox One 賣掉了。 如何停用開發人員模式？
 
-如果您已無法存取 Xbox One，可以在 Windows 開發人員中心停用它。 如需詳細資料，請參閱[停用 Xbox One 開發人員模式](devkit-deactivation.md#deactivate-your-console-using-windows-dev-center)主題的**使用 Windows 開發人員中心停用您的主機**一節。 
+如果您不再需要存取 Xbox One，您可以在 Windows 合作夥伴中心停用它。 如需詳細資訊，請參閱**停用您的主機使用合作夥伴中心**主題中的[Xbox One 開發人員模式](devkit-deactivation.md#deactivate-your-console-using-partner-center)。 
 
-### <a name="i-left-the-developer-program-using-windows-dev-center-but-im-in-still-developer-mode-what-do-i-do"></a>我使用 Windows 開發人員中心離開開發人員計畫，但我仍然處於開發人員模式。 我該怎麼做？
+### <a name="i-left-the-developer-program-using-partner-center-but-im-in-still-developer-mode-what-do-i-do"></a>我離開開發人員計畫使用合作夥伴中心，但我仍然處於開發人員模式。 我該怎麼做？
 
 啟動 [開發首頁]，然後選取 [**離開開發人員模式**] 按鈕。 這會將您的主機重新啟動為零售模式。 
 
 ### <a name="can-i-publish-my-app"></a>我是否可以發佈我的 App？
 
-如果您擁有[開發人員帳戶](https://developer.microsoft.com/store/register)，便可以透過開發人員中心[發佈 App](../publish/index.md)。 在零售 Xbox One 主機上建立和測試的 UWP App，必須接受 Windows 目前所執行的擷取、檢閱和發佈程序，並需要接受額外的檢閱以符合目前的 Xbox One 標準。
+您可以透過合作夥伴中心的 [[將應用程式發佈](../publish/index.md)如果您有[開發人員帳戶](https://developer.microsoft.com/store/register)。 在零售 Xbox One 主機上建立和測試的 UWP App，必須接受 Windows 目前所執行的擷取、檢閱和發佈程序，並需要接受額外的檢閱以符合目前的 Xbox One 標準。
 
 ### <a name="can-i-publish-my-game"></a>我是否可以發佈我的遊戲？
 
