@@ -8,12 +8,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
-ms.openlocfilehash: d8728094292f1de81eb90752ee496090df4cb6e0
-ms.sourcegitcommit: 38f06f1714334273d865935d9afb80efffe97a17
+ms.openlocfilehash: fa18ff3c5910dfb3a0f4c2f89407cda1fc736146
+ms.sourcegitcommit: f2c9a050a9137a473f28b613968d5782866142c6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/09/2018
-ms.locfileid: "6183490"
+ms.locfileid: "6250786"
 ---
 # <a name="packaging-apps"></a>封裝應用程式
 
@@ -34,4 +34,4 @@ ms.locfileid: "6183490"
 | [使用 WinAppDeployCmd.exe 工具安裝 App](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows 應用程式部署 (WinAppDeployCmd.exe) 是一個命令列工具，可以用來部署到任何 windows 10 行動裝置版裝置從 windows 10 電腦的 UWP 應用程式。 您可以使用此工具來部署應用程式套件，windows 10 行動裝置版裝置是透過 USB 連接或可在相同的子網路上使用而不需要該 app 適用的 Microsoft Visual Studio 或解決方案時。 本文章說明如何使用此工具安裝 UWP app。 |
 | [為您的 UWP app 設定自動化組建](auto-build-package-uwp-apps.md) | 如果您要在自動化建置程序中封裝您的 App，本主題示範如何使用 Visual Studio Team Services (VSTS) 來完成。 |
 | [App 功能宣告](app-capability-declarations.md) | 功能必須在您的 UWP app 的[套件資訊清單](https://msdn.microsoft.com/library/windows/apps/BR211474)中進行宣告，才能存取特定的 API 或資源 (如圖片、音樂)，或是相機或麥克風等裝置。 |
-| [從 Microsoft Store 下載與安裝套件更新](self-install-package-updates.md) | 您的 UWP app 可以程式設計方式檢查套件更新並安裝更新。 您的 app 也可以在 Windows 開發人員中心儀表板上查詢已標示為強制性的套件，並在安裝強制更新之前停用功能。  |
+| [從 Microsoft Store 下載與安裝套件更新](self-install-package-updates.md) | 您的 UWP app 可以程式設計方式檢查套件更新並安裝更新。 您的應用程式也可以查詢已在合作夥伴中心中標記為強制性的套件，以及在安裝強制更新之前停用功能。  |
