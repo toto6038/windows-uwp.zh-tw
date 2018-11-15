@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 1a304df30986c904f19cc2401c9a1fb468514f6f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6666876"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6860981"
 ---
 # <a name="pop-up-ui-animations"></a>快顯 UI 動畫
 

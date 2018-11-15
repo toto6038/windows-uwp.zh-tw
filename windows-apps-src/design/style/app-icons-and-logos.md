@@ -10,12 +10,12 @@ keywords: Windows 10, UWP
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c389aa207b0756a222c1c82ea99ea007b451b1e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: d31916c4db51d278c294de56a7ec8a56d2178a91
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450113"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6663657"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -52,7 +52,7 @@ ms.locfileid: "6450113"
 | 應用程式圖示 | 在 [開始] 功能表、 工作列、 工作管理員中的應用程式清單 | Square44x44Logo.png |
 | 啟動顯示畫面 | 應用程式的啟動顯示畫面 | SplashScreen.png  |
 | 徽章標誌 | 您的應用程式磚 | BadgeLogo.png  |
-| 套件標誌/microsoft Store 標誌 | 應用程式安裝程式，開發人員中心，在市集中存放區中的 「 撰寫評論 「 選項 」 報告應用程式 」 選項 | StoreLogo.png  |
+| 套件標誌/microsoft Store 標誌 | 應用程式安裝程式，合作夥伴中心，在市集中存放區中的 「 撰寫評論 「 選項 」 報告應用程式 」 選項 | StoreLogo.png  |
 
 \ * 使用，除非您選擇[只顯示上傳的存放區中的影像](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store)。 
 

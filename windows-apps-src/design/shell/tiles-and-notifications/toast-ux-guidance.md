@@ -9,12 +9,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，集合、 群組、 ux，ux 指導方針，指導方針、 動作、 快顯通知，控制中心、 noninterruptive、 有效的通知、 干擾通知，可採取動作，管理，組織
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ac7eab73f2bcfa57ac37ea6da99e1da6b235159
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 849c8ffc66661546a088a3d89747e6690a763e71
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6463478"
+ms.locfileid: "6666581"
 ---
 # <a name="toast-notification-ux-guidance"></a>快顯通知的 UX 指導方針
 通知是必要的新式生命;它們能協助使用者生產力與預約與應用程式和網站，以及掌握目前使用的任何更新。 不過，從有用 overbearing 和覺得受干擾，如果不是設計的使用者為中心的方式可以快速關閉通知。 通知有一個以滑鼠右鍵按一下離正在關閉，並不太可能會關閉後，他們將會開啟一次。  因此請確定您的通知是公開的使用者的螢幕空間和時間，因此您可以保留這個佔用通道開啟。
@@ -59,7 +59,7 @@ ctionable 通知是一個很強大的工具，可協助您的使用者感覺生�
 ## <a name="other-resources"></a>其他資源
 上述這些四個點是遙測的我們有找到有效透過自己，分析，以及透過第一個和第三方實驗的指導方針。 請記住，不過，這些指導方針就只是： 指導方針。  我們有信心這些規則將會協助提高吸引力與您的通知，生產力，但任何項目可以以使用者為中心 thinking，和了解可以從您自己的資料。  
 
-如果您傳送通知給您的 UWP app 目前，您可以檢視分析您在[開發人員中心](https://developer.microsoft.com/en-us/windows)的通知發生了什麼事 ！ 使用[Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)或[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)時，這項資料來自免費。 這些計量會提供您更深入您在 windows 平台上的通知會發生什麼事以及如何通知正在互動的使用者。 在左側互動上移至功能表中存取此儀表板 > 通知，然後按一下 [通知] 頁面中的 「 分析 」] 索引標籤上。  這會位於同一個位置，您會移至傳送通知，從開發人員中心入口網站中。
+如果您傳送通知給您的 UWP app 目前，您可以檢視分析您在[合作夥伴中心](https://partner.microsoft.com/dashboard)的通知發生了什麼事 ！ 使用[Store Services SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK)或[WNS Api](https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview)時，這項資料來自免費。 這些計量會提供您更深入您在 windows 平台上的通知會發生什麼事以及如何通知正在互動的使用者。 在左側互動上移至功能表中存取此資料 > 通知，然後按一下 [通知] 頁面中的 「 分析 」] 索引標籤上。  這位於相同的位置，您會移至從合作夥伴中心傳送通知。
 
 ## <a name="related-topics"></a>相關主題
 

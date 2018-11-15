@@ -7,12 +7,12 @@ ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be084091f041d574445080cd7976318a35fedcea
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 458a5999c1f56a3bc9f445f260d1d294c395b850
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/13/2018
-ms.locfileid: "6461060"
+ms.locfileid: "6674369"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-16299"></a>適用於開發人員的 Windows 10 (組建 16299) 的新功能
 
@@ -80,7 +80,7 @@ EdgeHTML 16 | 為 Microsoft Edge 和 JS 型通用 Windows 平台應用程式提�
 
 功能 | 描述
  :------ | :------
-帳戶管理 | [將 Azure AD 租用戶關聯至開發人員中心帳戶](../publish/associate-azure-ad-with-dev-center.md)來新增多個帳戶使用者時，我們現在提供更大彈性。 您可以將多個 Azure AD 租用戶與單一開發人員中心帳戶產生關聯，或將單一 Azure AD 租用戶與多個開發人員中心帳戶產生關聯。
+帳戶管理 | 我們現在提供更多彈性時若要新增多個帳戶使用者的 [[將 Azure AD 租用戶與您的合作夥伴中心帳戶產生關聯](../publish/associate-azure-ad-with-dev-center.md)。 您可以將多個 Azure AD 租用戶與單一的合作夥伴中心帳戶，或建立關聯單一與多個合作夥伴中心帳戶的 Azure AD 租用戶。
 廣告 | Microsoft Advertising SDK 現已可讓您在應用程式中顯示[原生廣告](../monetize/native-ads.md)。 原生廣告是以元件為基礎的廣告格式，其中每一項廣告創意 (例如標題、影像、描述和喚起行動文字) 都會當做個別元素傳送到您的應用程式。 原生廣告則目前僅供加入試驗計劃的開發人員使用，但我們很快就要將這項功能提供給所有的開發人員。
 定價和可用性 |  新的價格與可用性選項可讓您[排程價格變更](../publish/set-and-schedule-app-pricing.md)和[設定精確的發行日期](../publish/configure-precise-release-scheduling.md)。
 Store 分析 API | [Microsoft Store 分析 API](../monetize/access-analytics-data-using-windows-store-services.md) 現在提供一個方法，您可用來[下載 CAB 檔案以取得 App 中的錯誤](../monetize/download-the-cab-file-for-an-error-in-your-app.md)。

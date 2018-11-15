@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 70380dd0bd07cfe0c81e8339f8606029663b47d4
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6469010"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6673041"
 ---
 # <a name="bc7-format"></a>BC7 格式
 

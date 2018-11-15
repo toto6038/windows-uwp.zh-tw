@@ -9,11 +9,11 @@ keywords: windows 10, uwp, games, mouse, input,遊戲, 滑鼠, 輸入
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
 ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6445655"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6665452"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>相對滑鼠移動和 CoreWindow
 

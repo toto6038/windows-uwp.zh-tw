@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，點的服務、 pos、 磁條讀取器
 ms.localizationpriority: medium
 ms.openlocfilehash: a130243fb5a77277e4e8a326316cd30bab2cd96e
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6443449"
+ms.lasthandoff: 11/13/2018
+ms.locfileid: "6664637"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>取得並了解磁條資料
 
