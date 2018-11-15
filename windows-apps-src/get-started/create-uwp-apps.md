@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 開始使用
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bc64b0a6919180b6041bdbf4f81463019d274eb
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6453632"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6861251"
 ---
 # <a name="start-coding"></a>開始程式設計
 
