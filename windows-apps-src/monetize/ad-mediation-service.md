@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, ads, advertising, ad mediation, 廣告, 廣告流量分配
 ms.localizationpriority: medium
 ms.openlocfilehash: 9adae5b000277b774536c8b307cc1bc055ce3bc4
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6652152"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6837678"
 ---
 # <a name="microsoft-ad-mediation-service"></a>Microsoft 廣告流量分配服務
 

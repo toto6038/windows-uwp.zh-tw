@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d1224c1707d3e86c9ddd309ecf06bd0c0767fb83
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861141"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6969013"
 ---
 # <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>WindowsPhone Silverlight 將專案移植到 UWP 專案
 

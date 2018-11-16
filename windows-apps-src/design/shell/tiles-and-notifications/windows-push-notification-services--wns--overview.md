@@ -9,12 +9,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b7d9adfd9e058d4364470b07ef3e9129ade88b3
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: 633fd26a7dfc799f9b9c9058f88ba6b1fa40ac57
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6458543"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6842284"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
  
@@ -38,7 +38,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 ## <a name="registering-your-app-and-receiving-the-credentials-for-your-cloud-service"></a>註冊您的應用程式與接收雲端服務認證
 
 
-您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，請移至 [Windows 開發人員中心](http://go.microsoft.com/fwlink/p/?linkid=511146)，並選取 **\[儀表板\]**。 建立您的應用程式之後，您可以依照**應用程式管理 - WNS/MPNS** 頁面的指示來擷取認證。 如果您想要使用 Live 服務解決方案，請遵循此頁面的 **Live 服務網站**連結。
+您的應用程式必須先在市集儀表板註冊，您才能夠使用 WNS 傳送通知。 這樣做會將您應用程式的認證提供給您，您的雲端服務向 WNS 進行驗證時要使用該認證。 這些認證由套件安全性識別碼 (SID) 與祕密金鑰組成。 若要執行這項註冊，登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 建立您的應用程式之後，您可以依照**應用程式管理 - WNS/MPNS** 頁面的指示來擷取認證。 如果您想要使用 Live 服務解決方案，請遵循此頁面的 **Live 服務網站**連結。
 
 每個應用程式都有自己雲端服務的一組認證。 這些認證無法用於傳送通知給任何其他應用程式。
 

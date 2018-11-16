@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: fb7ff4b23f9735347ce75e2e565c1b420ec936d6
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6660140"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6843188"
 ---
 # <a name="depth-buffers"></a>深度緩衝區
 

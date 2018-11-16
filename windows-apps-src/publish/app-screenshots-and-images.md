@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 預告片, 影片, 螢幕擷取畫面, 影像, 圖示, Store 清單, Store 清單影像
 ms.localizationpriority: medium
-ms.openlocfilehash: 8bd5a92f1e8dfe762ac3433bf64f9fe705644a9f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 4899e117096cf6d03c497fec79038e6d96aca3fd
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6669073"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6840955"
 ---
 # <a name="app-screenshots-images-and-trailers"></a>應用程式螢幕擷取畫面、影像及預告片
 
@@ -65,7 +65,7 @@ ms.locfileid: "6669073"
 
 ### <a name="916-poster-art-720-x-1080-or-1440-x-2160-pixels"></a>9:16 海報美工圖案 (720 x 1080 或 1440 x 2160 像素)
 
-這是用於 Windows 10 和 Xbox 裝置客戶的主要標誌影像，因此我們**強烈建議**提供這個影像以確保正確顯示。 如果未提供此項目，您的清單可能不美觀，當客戶瀏覽 Microsoft Store 時也無法與他們看到的其他清單保持一致。 此影像也會用於搜尋結果或編輯精選集錦。
+這是用於 Windows 10 和 Xbox 裝置客戶的主要標誌影像，因此我們**強烈建議**提供這個影像以確保正確顯示。 您的清單可能不美觀，如果您未包含，也無法保持一致的其他客戶在市集中瀏覽時看到的清單。 此影像也會用於搜尋結果或編輯精選集錦。
 
 此影像應包含您的應用程式名稱，而且影像上的任何文字都應符合可存取易讀需求 (4.51 對比率)。 請注意，文字重疊會出現此影像的下方四分之一處，因此請不要在此處加入文字或重要圖案。
 
