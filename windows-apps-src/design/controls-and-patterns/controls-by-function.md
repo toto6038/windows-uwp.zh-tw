@@ -10,18 +10,18 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50d2d5d6dd53ffcb14ed6223e2fd0f85324a8438
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 933ca3f6d683d5a58e10f87059527038e7b696d1
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665709"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "6833756"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
 Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式庫。 部分控制項以視覺方式呈現；其餘控制項則當做其他控制項或內容 (例如影像與媒體) 的容器。 
 
-您可以下載 [XAML UI 基本知識範例](http://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。
+您可以下載 [XAML UI 基本知識範例](https://go.microsoft.com/fwlink/p/?LinkId=619992)，以查看許多 Windows UI 控制項。
 
 <table>
 <th align="left">XAML 控制項庫<th>
@@ -56,21 +56,21 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[應用程式列和命令列控制項指南](app-bars.md) 
 
-範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+範例程式碼：[XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-separator"></a>應用程式列分隔符號
 在視覺上分隔命令列中的命令群組。
 
 參考：[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+範例程式碼：[XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="app-bar-toggle-button"></a>應用程式列切換按鈕
 用於在命令列中切換命令的按鈕。
 
 參考：[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+範例程式碼：[XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ### <a name="command-bar"></a>命令列
 一個處理應用程式列按鈕元素大小調整的特殊化應用程式列。
@@ -88,7 +88,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[應用程式列和命令列控制項指南](app-bars.md)
 
-範例程式碼：[XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+範例程式碼：[XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="buttons"></a>按鈕
 
@@ -116,7 +116,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" 
-                 NavigateUri="http://www.microsoft.com"/>
+                 NavigateUri="https://www.microsoft.com"/>
 ```
 
 參考：[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -168,7 +168,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[Lists](lists.md) 
 
-範例程式碼：[ListView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+範例程式碼：[ListView 範例](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ### <a name="items-control"></a>項目控制項
 在資料範本指定的 UI 中顯示項目集合的控制項。 
@@ -193,7 +193,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[Lists](lists.md) 
 
-範例程式碼：[ListView 範例](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+範例程式碼：[ListView 範例](https://go.microsoft.com/fwlink/p/?LinkId=619900)
 
 ## <a name="date-and-time-controls"></a>日期和時間控制項
 
@@ -290,7 +290,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法：[功能表和操作功能表](menus.md) 
 
-範例程式碼：[XAML 操作功能表範例](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+範例程式碼：[XAML 操作功能表範例](https://go.microsoft.com/fwlink/p/?LinkId=620021)
 
 ### <a name="popup-menu"></a>快顯功能表
 顯示您所指定命令的自訂功能表。
@@ -326,7 +326,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法：[Image 和 ImageBrush](images-imagebrushes.md) 
 
-範例程式碼：[XAML 影像範例](http://go.microsoft.com/fwlink/p/?linkid=226867)
+範例程式碼：[XAML 影像範例](https://go.microsoft.com/fwlink/p/?linkid=226867)
 
 ## <a name="graphics-and-ink"></a>圖形與筆墨
 
@@ -355,7 +355,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 作法：[繪製形狀](../../graphics/drawing-shapes.md) 
 
-範例程式碼：[XAML 向量繪製範例](http://go.microsoft.com/fwlink/p/?linkid=226866)
+範例程式碼：[XAML 向量繪製範例](https://go.microsoft.com/fwlink/p/?linkid=226866)
 
 ## <a name="layout-controls"></a>配置控制項
 
@@ -455,7 +455,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[捲動和移動瀏覽控制項指南](scroll-controls.md) 
 
-範例程式碼：[XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=238577)
+範例程式碼：[XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=238577)
 
 ### <a name="stack-panel"></a>堆疊面板
 可以將子元素按水平或垂直方向排列到單行中的配置面板。
@@ -544,7 +544,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[媒體元素控制項指南](media-playback.md) 
 
-範例程式碼：[媒體傳輸控制項範例](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+範例程式碼：[媒體傳輸控制項範例](https://go.microsoft.com/fwlink/p/?LinkId=620023)
 
 ### <a name="video"></a>影片
 請參閱＜媒體元素＞。
@@ -585,7 +585,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 裝載網頁內容的容器控制項。
 
 ```xaml
-<WebView x:Name="webView1" Source="http://dev.windows.com" 
+<WebView x:Name="webView1" Source="https://developer.microsoft.com" 
          Height="400" Width="800"/>
 ```
 
@@ -593,7 +593,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法：網頁檢視的指導方針 
 
-範例程式碼：[XAML WebView 控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238582)
+範例程式碼：[XAML WebView 控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238582)
 
 ### <a name="semantic-zoom"></a>語意式縮放
 
@@ -614,7 +614,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[語意式縮放控制項指南](semantic-zoom.md)
 
-範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](http://go.microsoft.com/fwlink/p/?linkid=226564)
+範例程式碼：[XAML GridView 群組和 SemanticZoom 範例](https://go.microsoft.com/fwlink/p/?linkid=226564)
 
 ## <a name="progress-controls"></a>進度控制項
 
@@ -665,7 +665,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[自動建議方塊控制項指南](auto-suggest-box.md)
 
-範例程式碼：[AutoSuggestBox 移轉範例](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+範例程式碼：[AutoSuggestBox 移轉範例](https://go.microsoft.com/fwlink/p/?LinkId=619996)
 
 ### <a name="multi-line-text-box"></a>多行文字方塊
 請參閱＜文字方塊＞。
@@ -684,7 +684,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[密碼方塊控制項指南](password-box.md) 
 
-範例程式碼：[XAML 文字顯示範例](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?linkid=251417)
+範例程式碼：[XAML 文字顯示範例](https://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?linkid=251417)
 
 ### <a name="rich-edit-box"></a>Rich Edit 方塊
 讓使用者能夠編輯 RTF 文件 (內容包括格式化文字、超連結及影像等) 的控制項。
@@ -697,7 +697,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[Rich Edit 方塊控制項指南](rich-edit-box.md)
 
-範例程式碼：[XAML 文字範例](http://go.microsoft.com/fwlink/p/?linkid=238578)
+範例程式碼：[XAML 文字範例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="search-box"></a>搜尋方塊
 請參閱＜自動建議方塊＞。
@@ -721,7 +721,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[文字區塊控制項指南](text-block.md)、[RTF 區塊控制項指南](rich-text-block.md)
 
-範例程式碼：[XAML 文字範例](http://go.microsoft.com/fwlink/p/?linkid=238578)
+範例程式碼：[XAML 文字範例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ### <a name="text-box"></a>文字方塊
 單行或多行純文字欄位。
@@ -737,7 +737,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 設計和作法︰[文字控制項](text-controls.md)、[文字方塊控制項指南](text-box.md) 
 
-範例程式碼：[XAML 文字範例](http://go.microsoft.com/fwlink/p/?linkid=238578)
+範例程式碼：[XAML 文字範例](https://go.microsoft.com/fwlink/p/?linkid=238578)
 
 ## <a name="selection-controls"></a>選取控制項
 

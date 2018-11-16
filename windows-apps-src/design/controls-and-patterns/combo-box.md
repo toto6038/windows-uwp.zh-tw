@@ -12,12 +12,12 @@ pm-contact: stmoy
 design-contact: ''
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: cf3a69de36f1292dd6ccabb945a33a893064bd02
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 0c34dda3039a9b6a66428266e37f81b41695fbc0
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6647510"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6849510"
 ---
 # <a name="combo-box"></a>下拉式方塊
 
@@ -224,7 +224,7 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 
 ### <a name="sample---validate-input-and-use-locally"></a>範例-驗證輸入，並在本機使用
 
-在此 examle，字型大小選擇包含一組值對應到字型大小坡形，但是使用者可以輸入不是在清單中的字型大小。
+在此範例中，字型大小選擇包含一組值對應到字型大小坡形，但是使用者可以輸入不是在清單中的字型大小。
 
 當使用者加入不在清單中，字型大小更新，但值的值不會新增到清單的字型大小。
 

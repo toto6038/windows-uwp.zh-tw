@@ -170,7 +170,6 @@
 ### [對語言、縮放比例及高對比的磚與快顯通知支援](shell/tiles-and-notifications/tile-toast-language-scale-contrast.md)
 ## [將應用程式釘選到工作列](shell/pin-to-taskbar.md)
 ## [標題列自訂](shell/title-bar.md)
-## [針對集合的設計](shell/design-for-sets.md)
 
 ## 通知
 ### 快顯通知

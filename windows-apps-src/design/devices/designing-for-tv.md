@@ -8,19 +8,19 @@ template: detail.hbs
 isNew: true
 keywords: Xbox, 電視, 10 英呎體驗, 遊戲台, 遙控器, 輸入, 互動
 ms.author: elcowle
-ms.date: 12/5/2017
+ms.date: 11/13/2018
 ms.topic: article
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 098bc97de27d58fdc1d582e0db264ef04f0d3e61
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 8d9598b53b257d5d45c96b472c5c2110c9fe4478
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656031"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6845849"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -833,6 +833,54 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com
 
 > [!NOTE]
 > 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 屬性都設定為 `GridView`。
+
+更多更精細地控制如何項目會被帶入檢視中，如果您的應用程式的目標是版本 1803年或更新版本，您可以使用[UIElement.BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放在[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ， **ListView**的/**GridView**攔截它之前沒有內部**ScrollViewer** ，如下列程式碼片段所示：
+
+```xaml
+<GridView x:Name="gridView">
+    <GridView.ItemsPanel>
+        <ItemsPanelTemplate>
+            <ItemsWrapGrid Orientation="Horizontal"
+                           BringIntoViewRequested="ItemsWrapGrid_BringIntoViewRequested"/>
+        </ItemsPanelTemplate>
+    </GridView.ItemsPanel>
+</GridView>
+```
+
+```cs
+// The BringIntoViewRequested event is raised by the framework when items receive keyboard (or Narrator) focus or 
+// someone triggers it with a call to UIElement.StartBringIntoView.
+private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoViewRequestedEventArgs args)
+{
+    if (args.VerticalAlignmentRatio != 0.5)  // Guard against our own request
+    {
+        args.Handled = true;
+        // Swallow this request and restart it with a request to center the item.  We could instead have chosen
+        // to adjust the TargetRect’s Y and Height values to add a specific amount of padding as it bubbles up, 
+        // but if we just want to center it then this is easier.
+
+        // (Optional) Account for sticky headers if they exist
+        var headerOffset = 0.0;
+        var itemsWrapGrid = sender as ItemsWrapGrid;
+        if (gridView.IsGrouping && itemsWrapGrid.AreStickyGroupHeadersEnabled)
+        {
+            var header = gridView.GroupHeaderContainerFromItemContainer(args.TargetElement as GridViewItem);
+            if (header != null)
+            {
+                headerOffset = ((FrameworkElement)header).ActualHeight;
+            }
+        }
+
+        // Issue a new request
+        args.TargetElement.StartBringIntoView(new BringIntoViewOptions()
+        {
+            AnimationDesired = true,
+            VerticalAlignmentRatio = 0.5, // a normalized alignment position (0 for the top, 1 for the bottom)
+            VerticalOffset = headerOffset, // applied after meeting the alignment ratio request
+        });
+    }
+}
+```
 
 ## <a name="colors"></a>色彩 
 
