@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
 ms.openlocfilehash: b5f29062e00701f578b63f79935d17b1203afc0f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6856589"
+ms.locfileid: "6978967"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>透過 Microsoft Store Services SDK 與客戶互動
 
@@ -144,4 +144,4 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 程�
 * [使用 A/B 測試執行實驗](run-app-experiments-with-a-b-testing.md)
 * [從您的 App 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)
 * [設定您的應用程式會接收到合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
-* [為合作夥伴中心記錄自訂事件](log-custom-events-for-dev-center.md)
+* [記錄合作夥伴中心的自訂事件](log-custom-events-for-dev-center.md)
