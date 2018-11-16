@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, 大小, 橫幅
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f23be9a58a138a82cc4510039a1c0899ef092a2
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6849090"
+ms.locfileid: "6974477"
 ---
 # <a name="supported-banner-ad-sizes"></a>支援的橫幅廣告大小
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、字串
 ms.localizationpriority: medium
 ms.openlocfilehash: 72032c3c522a8434d266842a83c443889e8efc19
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6859282"
+ms.locfileid: "6986245"
 ---
 # <a name="string-handling-in-cwinrt"></a>C++/WinRT 中的字串處理
 

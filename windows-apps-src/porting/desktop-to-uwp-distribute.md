@@ -2,23 +2,23 @@
 author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
-title: 發佈您已封裝的傳統型應用程式至 Windows 市集，或是側載至一或多個裝置。
+title: 發佈您已封裝的傳統型應用程式至 Microsoft Store 或側載至一或多個裝置。
 ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b16e06c81eeb90e500e40fc9b4d7ab709651091
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: f79e641b377f0e34ece8f0be434fae11cba621a6
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6452737"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6987999"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>散佈封裝的傳統型應用程式
 
-發佈您已封裝的傳統型應用程式至 Windows 市集，或是側載至一或多個裝置。  
+發佈您已封裝的傳統型應用程式至 Microsoft Store 或側載至一或多個裝置。  
 
 > [!NOTE]
 > 您有計畫如何您可能會將使用者轉換至您已封裝的應用程式嗎？ 在您散布您的應用程式之前，請參閱本文中[轉換使用者至您的已封裝應用程式](#transition-users)一節，以取得一些靈感。
@@ -27,7 +27,7 @@ ms.locfileid: "6452737"
 
 [Microsoft Store](https://www.microsoft.com/store/apps)是讓客戶取得您應用程式的一種簡便方式。
 
-發佈您的應用程式到該存放區到達廣的對象。 同時，組織客戶也可以取得內部進行散布他們的組織透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)的應用程式。
+發佈至 Microsoft Store 應用程式將適用範圍擴及廣的對象。 同時，組織客戶也可以取得內部進行散布他們的組織透過[商務用 Microsoft Store](https://www.microsoft.com/business-store)的應用程式。
 
 如果您打算發佈至 Microsoft Store，提交程序中您會被要求詢問一些額外的問題。 這是因為您的封裝資訊清單宣告名為 **runFullTrust** 的受限功能，以及我們需要核准您的應用程式使用該功能。 您可以在這裡閱讀更多關於此需求的資訊：[受限制的功能](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations#restricted-capabilities)。
 
@@ -44,7 +44,7 @@ ms.locfileid: "6452737"
 
 在您想要進一步控制散布體驗，或是您不想要參與 Microsoft Store 的認證程序時，這將會是一個合理的作法。
 
-若要集散透過市集散布您的應用程式到其他裝置，您必須取得憑證、 簽署應用程式使用該憑證，然後側載您的應用程式到那些裝置。
+若要將散發您的應用程式到其他裝置，而將它放在市集中，您必須取得憑證、 簽署應用程式使用該憑證，然後側載您的應用程式到那些裝置。
 
 您可以[建立憑證](../packaging/create-certificate-package-signing.md)或從受歡迎的供應商，例如 [Verisign](https://www.verisign.com/) 取得憑證。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 269d51ec6005bcd61ac01a66d72c34bdb2901add
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6837280"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6990729"
 ---
 <a name="sample-data-on-the-design-surface-and-for-prototyping"></a>設計介面上適用於原型設計的範例資料
 =============================================================================================

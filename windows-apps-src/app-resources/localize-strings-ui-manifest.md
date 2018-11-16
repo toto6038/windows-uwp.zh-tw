@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: c9789e21bd4d2a598db292721cabfe58d7c12ebe
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6833154"
+ms.locfileid: "6988154"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>將 UI 及應用程式套件資訊清單中的字串當地語系化
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。

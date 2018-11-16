@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: You can log custom events from your UWP app and review those events in the Usage report in Partner Center.
-title: 為合作夥伴中心記錄自訂事件
+title: 記錄合作夥伴中心的自訂事件
 ms.author: mhopkins
 ms.date: 06/01/2018
 ms.topic: article
@@ -9,13 +9,13 @@ keywords: Windows 10, UWP, Microsoft Store Services SDK, 記錄事件
 ms.assetid: 4aa591e0-c22a-4c90-b316-0b5d0410af19
 ms.localizationpriority: medium
 ms.openlocfilehash: 47c1eb02434dc71cb7da949d58ec38cf3b4cf65a
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861131"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6978367"
 ---
-# <a name="log-custom-events-for-partner-center"></a>為合作夥伴中心記錄自訂事件
+# <a name="log-custom-events-for-partner-center"></a>記錄合作夥伴中心的自訂事件
 
 合作夥伴中心中的[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)可讓您取得您已經在您的通用 Windows 平台 (UWP) 應用程式中定義的自訂事件的相關資訊。 自訂事件是代表您 App 中事件或活動的任意字串。 例如，遊戲可能會定義名為 *firstLevelPassed*、*secondLevelPassed* 等等的自訂事件，當使用者通過遊戲中的每個層級時，便會記錄這些事件。
 

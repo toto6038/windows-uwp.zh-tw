@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 177332515db26eca7cef7a7be75c5752a239a8f1
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6463164"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6971871"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指導方針
 

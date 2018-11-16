@@ -1,7 +1,7 @@
 ---
 author: Xansky
 Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must create a project and define your remote variables in Partner Center.
-title: 在合作夥伴中心中建立實驗專案
+title: 在合作夥伴中心建立實驗專案
 ms.assetid: C3809FF1-0A6A-4715-B989-BE9D0E8C9013
 ms.author: mhopkins
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK A/B 測試, 實驗
 ms.localizationpriority: medium
 ms.openlocfilehash: 19a59110fa094aeae3d40dca1372fde9889c108e
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6849266"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992375"
 ---
-# <a name="create-an-experiment-project-in-partner-center"></a>在合作夥伴中心中建立實驗專案
+# <a name="create-an-experiment-project-in-partner-center"></a>在合作夥伴中心建立實驗專案
 
 若要開始進行實驗，在合作夥伴中心中建立實驗[專案](run-app-experiments-with-a-b-testing.md#terms)以供您的應用程式並定義您的應用程式可以存取的遠端變數。
 
@@ -44,8 +44,8 @@ ms.locfileid: "6849266"
 
 ## <a name="related-topics"></a>相關主題
 
-* [編寫實驗用的 app 程式碼](code-your-experiment-in-your-app.md)
-* [在合作夥伴中心中定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
-* [管理您的實驗，在合作夥伴中心](manage-your-experiment.md)
+* [編寫實驗用的 App 程式碼](code-your-experiment-in-your-app.md)
+* [在合作夥伴中心定義您的實驗](define-your-experiment-in-the-dev-center-dashboard.md)
+* [在合作夥伴中心管理您的實驗](manage-your-experiment.md)
 * [使用 A/B 測試建立和執行您的第一個實驗](create-and-run-your-first-experiment-with-a-b-testing.md)
 * [使用 A/B 測試執行 app 實驗](run-app-experiments-with-a-b-testing.md)

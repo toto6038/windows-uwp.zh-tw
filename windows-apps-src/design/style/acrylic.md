@@ -12,12 +12,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f9d56090e8fc1de83eeb4e8a68ca1830692c5b2f
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.openlocfilehash: c116a6131889e1d87642165f4e1d9883d78add33
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854938"
+ms.locfileid: "6981154"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -85,7 +85,6 @@ ms.locfileid: "6854938"
 
 如果您的應用程式無法利用 NavigationView，且您打算增壓克力自己，我們建議使用相對透明壓克力色調不透明度 60%。
  - 當窗格以重疊於其他應用程式內容之上的方式開啟時，則應為 [60% 應用程式內壓克力](#acrylic-theme-resources)
- - 當窗格以與主要應用程式內容並排的方式開啟時，則應為 [60% 背景壓克力](#acrylic-theme-resources)
 
 ![使用應用程式內水平命令功能的地圖應用程式](images/Maps_In_App_Acrylic_1.png)
 
@@ -93,7 +92,7 @@ ms.locfileid: "6854938"
 
 ### <a name="vertical-panes"></a>垂直窗格
 
-對於垂直窗格或表面，可協助您的應用程式關閉內容區段，我們建議您使用不透明的背景，而不是壓克力。 如果您的垂直窗格開啟在內容上方，像是在 NavigationView 的**Collapsed**或**最少**的模式中，我們建議您使用來協助維持在頁面的內容，當使用者開啟這個窗格的應用程式內壓克力。
+對於垂直窗格或表面，可協助您的應用程式關閉內容區段，我們建議您使用不透明的背景，而不是壓克力。 如果您的垂直窗格開啟在內容上方，就 NavigationView 的**精簡**或**最少**模式中，我們建議您以協助維持在頁面的內容，當使用者開啟這個窗格使用應用程式內壓克力。
 
 ### <a name="transient-surfaces"></a>暫時性表面
 

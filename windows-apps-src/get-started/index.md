@@ -9,11 +9,11 @@ ms.topic: article
 keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
 ms.openlocfilehash: 0193209c1a603bb253b07b084dd62d29c91009a3
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6861191"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6987754"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式 
  

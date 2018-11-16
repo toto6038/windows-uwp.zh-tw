@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 載入, 點陣化, 網格, 點陣圖, 2D, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 7947f1e0684bc76c95fe8099f5ef123f2a32566e
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6854970"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992336"
 ---
 # <a name="fundamentals-of-directx-programming"></a>DirectX 程式設計的基礎
 

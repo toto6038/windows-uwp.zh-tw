@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、boxing、純量、數值
 ms.localizationpriority: medium
 ms.openlocfilehash: f4b99f587fbd517b677d85b50abb26fdf072b359
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6470555"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6859236"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing 和 unboxing 純量數值到使用 C++/WinRT 的 IInspectable 
  

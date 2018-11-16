@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e8df200e8e989015834608d38cb8dfb0d36917b
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6839543"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6992924"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>轉譯架構 I：轉譯簡介
 

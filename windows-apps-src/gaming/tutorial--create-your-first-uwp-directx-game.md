@@ -9,11 +9,11 @@ ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1c589eeb71d93619b92254207ddc5eb1b1494a55
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6848602"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6991550"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
 

@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 7cf8b634cfc7ba66cde107150b54ecec76b2861d
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6834255"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6995791"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 

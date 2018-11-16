@@ -8,11 +8,11 @@ ms.date: 4/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b25df0a8445322ceb422fd6485f7d08c1c49a25
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6850161"
+ms.locfileid: "6968884"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 的新功能
 

@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
 ms.openlocfilehash: 2fa129a60c7dfcc170a9ddeec318a062fb8cbe56
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6858963"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "6993851"
 ---
 # <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
 

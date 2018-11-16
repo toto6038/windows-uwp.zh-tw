@@ -10,11 +10,11 @@ ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 擱置中的更新, pendingupdate, 多步驟互動性, 多步驟互動
 ms.localizationpriority: medium
 ms.openlocfilehash: 4d21c96676eec1b8b1a1f4397880af937dd8f4b6
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/15/2018
-ms.locfileid: "6833357"
+ms.locfileid: "6979258"
 ---
 # <a name="toast-with-pending-update-activation"></a>具有擱置中更新啟用的快顯通知
 
