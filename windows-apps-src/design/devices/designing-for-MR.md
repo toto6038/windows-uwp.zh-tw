@@ -15,12 +15,12 @@ design-contact: jeffarn
 dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f392d1d6c8eaa309e1774e8a98671a7743fdc9d
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: e6bba6c22b7f0055a93bfd1826bc3a2acc0f2164
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6665018"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6968382"
 ---
 # <a name="designing-for-mixed-reality"></a>設計混合實境
 
@@ -86,7 +86,7 @@ HoloLens 和 Windows Mixed Reality 頭戴式裝置皆支援 UWP 平台上執行�
 * [Clicker 裝置](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories)(僅限 HoloLens)
 * [運動控制器](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (僅限混合實境裝置，上述所示。) 
 
-這些控制器與虛擬物件進行互動，看起來自然且精確。 您可取得部分免費的互動。 例如，HoloLens 選取手勢，或按一下運動控制器的 Windows 鍵，或觸發程序會產生您預期的輸入回應，再試一次，不需在您的部分程式設計。
+這些控制器與虛擬物件進行互動，看起來自然且精確。 您可取得部分免費的互動。 例如，HoloLens 選取手勢，或按一下運動控制器的 Windows 鍵或觸發程序會產生您預期，同樣地，在您的部分未編碼的輸入的回應。
 
 其他時候，您會想要新增程式碼，善加利用額外的資訊及可用的輸入。 例如，運動控制器可用於執行具有精細層級控制的物件，如果您撰寫程式碼，考慮其位置和按鈕的按壓動作。
 

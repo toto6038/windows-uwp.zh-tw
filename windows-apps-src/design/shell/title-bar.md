@@ -10,11 +10,11 @@ keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
 ms.openlocfilehash: 2ebe590f98afef031ab183589fc7dcfc29cd9493
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6674049"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6852026"
 ---
 # <a name="title-bar-customization"></a>標題列自訂
 

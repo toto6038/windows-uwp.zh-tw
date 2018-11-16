@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126755dfb6f5f0e117d10daef85a83e8a171f1f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6656300"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853387"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
