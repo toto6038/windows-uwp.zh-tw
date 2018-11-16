@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: 4adb202df2806caeb0dc88469521b0f373886c43
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6833271"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6975810"
 ---
 # <a name="get-add-on-acquisitions"></a>取得附加元件下載數
 

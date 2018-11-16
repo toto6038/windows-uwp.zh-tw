@@ -9,16 +9,16 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f87b17ff4452417a06817ee5128d66af4b0e53b
-ms.sourcegitcommit: 4d88adfaf544a3dab05f4660e2f59bbe60311c00
+ms.openlocfilehash: cc71a58594c8794369bedd7f415518100892ff67
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "6450459"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6855201"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝的傳統型應用程式
 
-您可以使用 Visual Studio 為您的傳統型應用程式產生套件。 然後，您可以將套件發行到 Microsoft Store或將其側載至一部以上的電腦。
+您可以使用 Visual Studio 為您的傳統型應用程式產生套件。 然後，您可以將套件發行到 Microsoft Store 或側載它到一或多個電腦上。
 
 最新版的 Visual Studio 提供新版的封裝專案，讓您不必執行以往封裝應用程式過程中需要執行的所有手動步驟。 只需加入封裝專案、參考桌面專案，然後按 F5 對您的應用程式進行偵錯。 不需進行任何手動調整。 這個有效率的全新體驗可以大幅改善舊版 Visual Studio 中所提供的體驗。
 
@@ -66,7 +66,7 @@ ms.locfileid: "6450459"
 
 7. 使用[建立應用程式套件](../packaging/packaging-uwp-apps.md)精靈來產生 appxupload 檔案。
 
-   您可以將該檔案直接上傳至 Microsoft Store。
+   您可以將該檔案上傳直接到市集。
 
 **影片**
 
