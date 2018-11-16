@@ -12,11 +12,11 @@ keywords: Windows 10, uwp, Windows 資訊保護, 企業資料, 企業資料保�
 ms.assetid: 08f0cfad-f15d-46f7-ae7c-824a8b1c44ea
 ms.localizationpriority: medium
 ms.openlocfilehash: dec05e663e6ca7390dc3974b8a3cde2971b50426
-ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
+ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "6834848"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6980781"
 ---
 # <a name="windows-information-protection-wip"></a>Windows 資訊保護 (WIP)
 
