@@ -7,12 +7,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: medium
-ms.openlocfilehash: a76021f53417d30b91db282a194f6dc6ca268c1f
-ms.sourcegitcommit: 71e8eae5c077a7740e5606298951bb78fc42b22c
+ms.openlocfilehash: 9f44d5bc0e07ab40a396c103d2a8ba6db5427ae8
+ms.sourcegitcommit: e38b334edb82bf2b1474ba686990f4299b8f59c7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6648263"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "6853633"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>將 Azure Active Directory 與您的合作夥伴中心帳戶產生關聯
 
@@ -47,7 +47,7 @@ ms.locfileid: "6648263"
 
 如果您需要將新的 Azure AD 設定為與您的合作夥伴中心帳戶連結，請依照下列步驟。
 
-1.  從[合作夥伴中心](https://partner.microsoft.com/dashboard)中，選取齒輪圖示 （靠近儀表板右上角），然後選取 [**開發人員設定**。 在 [**設定**] 功能表中，選取**租用戶**。
+1.  從[合作夥伴中心](https://partner.microsoft.com/dashboard)，選取齒輪圖示 （靠近儀表板右上角），然後選取 [**開發人員設定**。 在 [**設定**] 功能表中，選取**租用戶**。
 2.  選取 **\[建立新的 Azure AD\]**。
 3.  輸入新 Azure AD 的目錄資訊︰
     - **網域名稱**︰我們會連同 “.onmicrosoft.com” 針對您的 Azure AD 網域使用的唯一名稱。 例如，如果您輸入 “example”，您的 Azure AD 網域就是 “example.onmicrosoft.com”。
