@@ -8,11 +8,11 @@ ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6981635"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7100069"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>在 2018 年 Windows 開發人員文件的最新動向
 
@@ -101,7 +101,7 @@ Project Rome 小組有徹底檢查，其 iOS 和 Android 的 Sdk，新增新的�
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="get-started"></a>開始使用
+### <a name="get-started"></a>入門
 
 我們已經 revitalized 我們取得啟動具有新的學習追蹤的內容。 這些新主題力求提供新的 Windows 10 開發人員它們可能會想要完成一些常見的工作資訊。 它們不教學課程和未提供手持的逐步解說中，但是改為為止現有的文件存在於的位置，以及如何使用它。 請查看改頭換面[開始撰寫程式碼](../get-started/create-uwp-apps.md)的頁面上，或探索每個個別的學習曲目：
 

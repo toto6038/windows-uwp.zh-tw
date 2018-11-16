@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 070cb8929ac7a3b0f5041abc0383afb71182223d
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 45e494b3e93e2dd6ac23ef1562c32485bf2e7ddb
+ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6980840"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7099955"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>取得錯誤報告資料 Xbox One 遊戲
 
-使用此方法，取得彙總錯誤報告資料 Xbox One 遊戲在 Microsoft Store 分析 API 中的已透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析開發人員中心儀表板。
+使用此方法，取得彙總錯誤報告資料 Xbox One 遊戲在 Microsoft Store 分析 API 中的已透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析合作夥伴中心儀表板。
 
 您可以藉由[取得遊戲的 Xbox One 中錯誤的詳細資料](get-details-for-an-error-in-your-xbox-one-game.md)、[取得您的 Xbox One 中錯誤的堆疊追蹤遊戲](get-the-stack-trace-for-an-error-in-your-xbox-one-game.md)，以及[下載您的 Xbox One 遊戲中錯誤的 CAB 檔案](download-the-cab-file-for-an-error-in-your-xbox-one-game.md)的方法，擷取其他錯誤資訊。
 
@@ -49,7 +49,7 @@ ms.locfileid: "6980840"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | string | 您正在擷取錯誤報告資料之 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 開發人員中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
+| applicationId | string | 您正在擷取錯誤報告資料之 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 合作夥伴中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。  |  不可以  |
 | endDate | 日期 | 要擷取錯誤報告資料之日期範圍的結束日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。 |  不可以  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
