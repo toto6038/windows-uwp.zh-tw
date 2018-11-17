@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a86aa5a78bc4df9deaeea239356345c33736d942
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6982931"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7161085"
 ---
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 

@@ -8,12 +8,13 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10 , UWP, Microsoft Store 服務, Microsoft Store 分析 API
 ms.localizationpriority: medium
-ms.openlocfilehash: a5d2689f5041035ba78cd9aef1f0610f0e1619dd
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: aaf1675d102a714b32d2e59483f6c10ad704284f
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968478"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7162550"
 ---
 # <a name="access-analytics-data-using-store-services"></a>使用 Microsoft Store 服務存取分析資料
 
@@ -120,7 +121,7 @@ grant_type=client_credentials
 
 ### <a name="methods-for-hardware-and-drivers"></a>硬體與驅動程式的方法
 
-屬於[Windows 硬體開發人員中心計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶可以存取另一組適用於擷取分析資料的硬體和驅動程式的方法。 如需詳細資訊，請參閱[硬體儀表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
+屬於[Windows 硬體儀表板計畫](https://msdn.microsoft.com/windows/hardware/drivers/dashboard/get-started-with-the-hardware-dashboard)的開發人員帳戶可以存取另一組適用於擷取分析資料的硬體和驅動程式的方法。 如需詳細資訊，請參閱[硬體儀表板 API](https://docs.microsoft.com/windows-hardware/drivers/dashboard/dashboard-api)。
 
 ## <a name="code-example"></a>程式碼範例
 
