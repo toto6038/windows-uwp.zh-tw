@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7105701"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7172784"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 

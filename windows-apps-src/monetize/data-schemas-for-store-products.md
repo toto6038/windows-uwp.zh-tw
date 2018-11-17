@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 產品, 結構描述
 ms.localizationpriority: medium
 ms.openlocfilehash: 980fde1a222b5fb7ba2d4524469a9b6673cbabd3
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6996831"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7173379"
 ---
 # <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 

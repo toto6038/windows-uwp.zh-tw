@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
 ms.openlocfilehash: d65faebfc2be0e9ed254185d00932da9a57f718b
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6975862"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7172967"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
