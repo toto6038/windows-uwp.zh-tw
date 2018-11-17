@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB
 ms.localizationpriority: medium
-ms.openlocfilehash: 517a1cbb8ec2cafe49ded53bce34e17537bc5efc
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: ad1e3339fe50087c3a3d8cdcf3a99f27c1c868df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968212"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147012"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>下載您的 Xbox One 遊戲中錯誤的 CAB 檔案
 
-在 Microsoft Store 分析 API 中使用這個方法，下載 CAB 檔案的已內嵌透過 Xbox 開發人員入口網站 (XDP) 在 Xbox One 遊戲中特定錯誤相關聯，並可用於 XDP 分析開發人員中心儀表板。 這個方法只可以下載最近 30 天發生錯誤的 CAB 檔案。
+在 Microsoft Store 分析 API 中使用這個方法，下載 CAB 檔案的已內嵌透過 Xbox 開發人員入口網站 (XDP) 在 Xbox One 遊戲中特定錯誤相關聯，並可用於 XDP 分析合作夥伴中心儀表板。 這個方法只可以下載最近 30 天發生錯誤的 CAB 檔案。
 
 您可以使用此方法之前，您必須先使用[取得您的 Xbox One 遊戲中錯誤的詳細資料](get-details-for-an-error-in-your-xbox-one-game.md)的方法，擷取要下載之 CAB 檔案的識別碼。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6968212"
 
 | 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | string | 您下載之 CAB 檔案的 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 開發人員中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
+| applicationId | string | 您下載之 CAB 檔案的 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 合作夥伴中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
 | cabId | 字串 | 要下載之 CAB 檔案的唯一識別碼。 若要取得此識別碼，使用[取得遊戲的 Xbox One 中錯誤的詳細資料](get-details-for-an-error-in-your-xbox-one-game.md)的方法來擷取您的應用程式中特定錯誤的詳細資料並使用該方法回應主體中的**cabId**值。 |  是  |
 
  

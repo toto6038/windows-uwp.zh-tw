@@ -7,17 +7,19 @@ ms.date: 09/21/2018
 ms.topic: article
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ba64e32a25feaee9245bbfe2b598c756b29df98
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 69eb9f72d6b4cf01185f7e4886a7ed5c30a669df
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6972426"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7145338"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 
 > [!NOTE]
-> UWP XAML 裝載 API 是目前提供開發人員預覽。 雖然我們鼓勵您立即試用這個 API 在您自己的原型程式碼中，我們不建議您的使用中實際執行程式碼在此階段。 此 API 會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+> 目前提供做為開發人員預覽 UWP XAML 裝載 API 與 XAML 群島。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些功能將會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+>
+> 如果您有關於裝載 API 與 XAML 群島 XAML 的意見反應，傳送意見反應給XamlIslandsFeedback@microsoft.com。 您的見解和案例是非常重要給我們。
 
 在 Windows 10 Insider Preview SDK 中開始建置 17709、 非 UWP 傳統型應用程式 （包括 WPF、 Windows Forms 和 c + + Win32 應用程式） 可以使用*UWP XAML 裝載 API*來裝載 UWP 控制項中任何的視窗控制代碼 （相關聯的 UI 元素HWND)。 這個 API 可讓非 UWP 傳統型應用程式使用的最新的 Windows 10 UI 功能，只可透過 UWP 控制項。 例如，非 UWP 傳統型應用程式可以使用此 API 來使用[Fluent 設計系統](../design/fluent-design-system/index.md)和支援[Windows Ink](../design/input/pen-and-stylus-interactions.md)裝載 UWP 控制項。
 
