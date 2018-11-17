@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
 ms.openlocfilehash: f38604ea7fc25038bdd4b07b952e4dbab151bf56
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6979143"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7159360"
 ---
 # <a name="optional-packages-with-executable-code"></a>具可執行程式碼的選用套件
  

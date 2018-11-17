@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
 ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6982280"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7159502"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 
