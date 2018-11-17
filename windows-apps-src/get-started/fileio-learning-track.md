@@ -7,12 +7,13 @@ ms.date: 05/01/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ac4d3f157343182097e67dc8825dde940302c3
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 68240e5b3d2fb476b731853e6a7d020ecd9e2887
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6996771"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7167853"
 ---
 # <a name="work-with-files"></a>使用檔案
 

@@ -12,12 +12,13 @@ pm-contact: Jake Cohen
 dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: de3c1875063d40daa2ad9cfb490dfb00fd0bddd2
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 758678a7fb65e32d4d3d411956aadfdab515df43
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6987285"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166287"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 應用程式中的注視互動與眼球追蹤
 

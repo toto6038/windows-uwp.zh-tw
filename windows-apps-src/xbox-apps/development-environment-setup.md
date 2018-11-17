@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
 ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7129038"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7166300"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 開發環境上設定 UWP
 

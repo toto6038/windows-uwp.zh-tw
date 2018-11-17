@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 市場, 國家, 地區
 ms.localizationpriority: medium
 ms.openlocfilehash: ef7136868fc9c212640c142db2751bd6e9a0b179
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6975663"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163265"
 ---
 # <a name="define-market-selection"></a>定義市場選取項目
 
@@ -302,7 +302,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   <tr>
     <td>巴基斯坦</td>
     <td>帛琉</td>
-    <td>Palestinian Authority</td>
+    <td>巴勒斯坦民族權力機構</td>
     <td>巴拿馬</td>
   </tr>
   <tr>
@@ -368,7 +368,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   <tr>
     <td>瑞典 *</td>
     <td>瑞士 *</td>
-    <td>Taiwan *</td>
+    <td>台灣 *</td>
     <td>塔吉克</td>
   </tr>
   <tr>
@@ -410,7 +410,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   <tr>
     <td>越南</td>
     <td>瓦利斯及福杜納</td>
-    <td>Western Sahara (Disputed)</td>
+    <td>西撒哈拉 (爭議)</td>
     <td>葉門</td>
   </tr>
   <tr>
@@ -468,7 +468,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 | 西班牙                | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 瑞典               | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 瑞士          | 禮品卡       | 2.24%                         | 2016 年 3 月     |
-| Taiwan               | 禮品卡       | 2.24%                         | 2016 年 3 月     |
+| 台灣               | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 土耳其               | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 阿拉伯聯合大公國 | 禮品卡       | 2.24%                         | 2016 年 3 月     |
 | 英國       | 禮品卡       | 2.24%                         | 2016 年 3 月     |
@@ -661,7 +661,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>帛琉</td>
-    <td>Palestinian Authority</td>
+    <td>巴勒斯坦民族權力機構</td>
     <td>巴拿馬</td>
     <td>巴布亞紐幾內亞</td>
   </tr>

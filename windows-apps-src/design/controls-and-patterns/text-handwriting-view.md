@@ -12,12 +12,13 @@ pm-contact: sewen
 design-contact: minah.kim
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: aa235086f2410fb97ea60e35fb03c586824928a2
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: dd0031affaf5ae48553479660d91ae610e7f1acb
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6980711"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7169774"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>文字輸入使用手寫檢視
 
@@ -318,6 +319,7 @@ private double GetPopupVerticalOffset()
 如同所有的 XAML 架構控制項，您可以自訂的視覺結構和視覺行為[HandwritingView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.handwritingview)同時適用於您的特定需求。
 
 若要建立自訂範本簽出[建立自訂傳輸控制項](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/custom-transport-controls)的作法或[自訂編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)的完整範例，請參閱。
+
 
 
 

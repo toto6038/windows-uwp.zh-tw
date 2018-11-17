@@ -8,11 +8,11 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7e5923176f5f9fff1a6e4f30a7ba2419e99c074b
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119259"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7163778"
 ---
 # <a name="create-a-universal-windows-platform-console-app"></a>建立通用 Windows 平台主控台應用程式
 
