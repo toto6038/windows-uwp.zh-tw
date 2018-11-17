@@ -7,12 +7,13 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習追蹤, 資料繫結, 清單
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e58231d644616a088eb06f24a2465c240e10c16
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: 6f9710e613a1fa7abc1793e016c7bbebdbd2cda3
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6978117"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7171366"
 ---
 # <a name="display-customers-in-a-list"></a>顯示清單中的客戶
 
