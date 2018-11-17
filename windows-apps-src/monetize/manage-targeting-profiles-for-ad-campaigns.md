@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
 ms.openlocfilehash: 271d60e6fbc0bd6336aa8aa8ec9edbb2b965c7f4
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7111737"
+ms.locfileid: "7172008"
 ---
 # <a name="manage-targeting-profiles"></a>管理目標設定檔
 

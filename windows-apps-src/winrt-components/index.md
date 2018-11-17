@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: b93b3028c7968c417d4476a6f183805cdec797b0
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6985119"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155330"
 ---
 # <a name="windows-runtime-components"></a>Windows 執行階段元件
 Windows 執行階段元件是可讓您具現化並從任何語言 (包括 C#、Visual Basic、JavaScript 和 C++) 使用的獨立物件。

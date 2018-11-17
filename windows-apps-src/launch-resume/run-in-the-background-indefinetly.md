@@ -9,11 +9,11 @@ ms.date: 10/3/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: eb6e0735620c4a940d3414f22aaa4f09bb608424
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6974843"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7153891"
 ---
 # <a name="run-in-the-background-indefinitely"></a>在背景無限期執行
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 行銷活動, 促銷
 ms.localizationpriority: medium
 ms.openlocfilehash: c6df022cbd474c9e73a84b86b245511d23293b0e
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119618"
+ms.locfileid: "7172654"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立廣告活動
 

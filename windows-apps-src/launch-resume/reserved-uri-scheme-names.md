@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 91732a6c4abc082283dc397fb87ad38d9de452b8
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7119064"
+ms.locfileid: "7144142"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>保留檔案和 URI 配置名稱
 

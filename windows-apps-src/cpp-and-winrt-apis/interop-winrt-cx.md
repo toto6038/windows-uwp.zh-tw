@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、互通性、C++/CX
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3cc69065ef2898aebafc832da1639985231d60
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6985159"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7148004"
 ---
 # <a name="interop-between-cwinrt-and-ccx"></a>C++/WinRT 與 C++/CX 之間的互通性
 

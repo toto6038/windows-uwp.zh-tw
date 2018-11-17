@@ -12,11 +12,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 49ad096389c27fb65970424569c7c1d2ea0cb097
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6983297"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7147626"
 ---
 # <a name="how-a-streaming-resources-area-is-tiled"></a>串流資源區域的拼接方式
 

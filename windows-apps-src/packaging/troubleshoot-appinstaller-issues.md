@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
 ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7100108"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155350"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>疑難排解應用程式安裝程式檔案的安裝問題
 

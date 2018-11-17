@@ -7,12 +7,13 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d1018857d727d1cc96ded813390a397c6d94e44
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.custom: RS5
+ms.openlocfilehash: c624a3c666dcc405ee2375738c605ae147b7d9d3
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6970790"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7151868"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 

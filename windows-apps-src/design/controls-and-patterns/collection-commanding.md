@@ -15,11 +15,11 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: f06d7015fcb208b55fe0cb57b96eaecbc99317cc
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/16/2018
-ms.locfileid: "7111845"
+ms.locfileid: "7172156"
 ---
 # <a name="contextual-commanding-for-collections-and-lists"></a>集合和清單的關聯式命令功能
 

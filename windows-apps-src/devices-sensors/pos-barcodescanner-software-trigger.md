@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 03fbed5a0145a093b1e7a2535012077644aaf2e2
-ms.sourcegitcommit: 9f8010fe67bb3372db1840de9f0be36097ed6258
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7128888"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7150200"
 ---
 # <a name="use-a-software-trigger"></a>使用軟體觸發器
 
