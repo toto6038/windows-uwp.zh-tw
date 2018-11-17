@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 33733af7f323817bc82d49800c2dc17c5f7b9887
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 6f665b99b7f64e41597a5767d58b86ac8e85c6bd
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6978347"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7155534"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>取得您的 Xbox One 中錯誤的詳細資料遊戲
 
-在 Microsoft Store 分析 API 以取得詳細的資料的特定錯誤的 Xbox One 遊戲是透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析開發人員中心儀表板中使用此方法。 這個方法只能擷取最近 30 天內發生的錯誤的詳細資料。
+在 Microsoft Store 分析 API 以取得詳細的資料的特定錯誤的 Xbox One 遊戲是透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析合作夥伴中心儀表板中使用此方法。 這個方法只能擷取最近 30 天內發生的錯誤的詳細資料。
 
 您可以使用此方法之前，您必須先使用[取得錯誤報告資料為您的 Xbox One 遊戲](get-error-reporting-data-for-your-xbox-one-game.md)的方法來擷取您要取得詳細的資訊之錯誤的識別碼。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6978347"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | string | 您正在擷取錯誤詳細資料 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 開發人員中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
+| applicationId | string | 您正在擷取錯誤詳細資料 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 合作夥伴中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
 | failureHash | 字串 | 您想要取得詳細資訊之錯誤的唯一識別碼。 若要取得您感興趣之錯誤的此值，使用[取得錯誤報告資料，Xbox one 遊戲](get-error-reporting-data-for-your-xbox-one-game.md)的方法，並使用該方法回應主體中的**failureHash**值。 |  是  |
 | startDate | 日期 | 要擷取詳細錯誤資料之日期範圍的開始日期。 預設為目前日期的前 30 天。 |  否  |
 | endDate | 日期 | 要擷取詳細錯誤資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |

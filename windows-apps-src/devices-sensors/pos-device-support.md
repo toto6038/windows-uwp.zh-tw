@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: df6e2c15260759f164a37b68365e0268633b22d5
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6968728"
+ms.lasthandoff: 11/17/2018
+ms.locfileid: "7156554"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支援的服務點週邊設備
 
@@ -77,7 +77,7 @@ ms.locfileid: "6968728"
 ### <a name="windows-devices-with-built-in-barcode-scanner"></a>使用內建的條碼掃描器的 Windows 裝置
 | 製造商   | 型號 | 作業系統 |
 |----------------|-------|------------------|
-| Innowi         | ChecOut M | Windows10   |
+| Innowi         | ChecOut M | Windows 10   |
 
 ### <a name="windows-mobile-devices-with-built-in-barcode-scanner"></a>使用內建的條碼掃描器的 Windows 行動裝置版裝置
 | 製造商   | 型號 | 作業系統 |

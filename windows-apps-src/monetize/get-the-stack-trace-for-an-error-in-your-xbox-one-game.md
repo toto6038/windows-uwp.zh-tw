@@ -7,16 +7,16 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: df3af90bda9d972a891dce67730f8f320b7607c1
-ms.sourcegitcommit: e2fca6c79f31e521ba76f7ecf343cf8f278e6a15
+ms.openlocfilehash: 78e65ad78079762ea5aabb95ddcaf4ce508b89bc
+ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "6976819"
+ms.lasthandoff: 11/16/2018
+ms.locfileid: "7173541"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-xbox-one-game"></a>取得您的 Xbox One 中錯誤的堆疊追蹤遊戲
 
-在 Microsoft Store 分析 API 來取得您的 Xbox One 中錯誤的堆疊追蹤遊戲是透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析開發人員中心儀表板中使用此方法。 這個方法只可以下載最近 30 天發生之錯誤的堆疊追蹤。
+在 Microsoft Store 分析 API 來取得您的 Xbox One 中錯誤的堆疊追蹤遊戲是透過 Xbox 開發人員入口網站 (xdp)，並可用於 XDP 分析合作夥伴中心儀表板中使用此方法。 這個方法只可以下載最近 30 天發生之錯誤的堆疊追蹤。
 
 您可以使用此方法之前，您必須先使用[取得您的 Xbox One 遊戲中錯誤的詳細資料](get-details-for-an-error-in-your-xbox-one-game.md)的方法來擷取與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的識別碼。
 
@@ -50,7 +50,7 @@ ms.locfileid: "6976819"
 
 | 參數        | 類型   |  描述      |  必要  |
 |---------------|--------|---------------|------|
-| applicationId | string | 您正在擷取堆疊追蹤 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 開發人員中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
+| applicationId | string | 您正在擷取堆疊追蹤 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 合作夥伴中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
 | cabId | 字串 | 與您想要擷取堆疊追蹤的錯誤相關聯之 CAB 檔案的唯一識別碼。 若要取得此識別碼，使用[取得遊戲的 Xbox One 中錯誤的詳細資料](get-details-for-an-error-in-your-xbox-one-game.md)的方法來擷取您的應用程式中特定錯誤的詳細資料並使用該方法回應主體中的**cabId**值。 |  是  |
 
  
