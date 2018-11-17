@@ -632,7 +632,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
+    <td>Macedonia (FYROM)</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -954,7 +954,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台灣</td>
+    <td>Taiwan</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>25 美元</td>
@@ -1694,7 +1694,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
+    <td>Macedonia (FYROM)</td>
     <td>50 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -2016,7 +2016,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台灣</td>
+    <td>Taiwan</td>
     <td>50 美元</td>
     <td>電匯</td>
     <td>50 美元</td>
@@ -2749,7 +2749,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
+    <td>Macedonia (FYROM)</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -3064,7 +3064,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>台灣</td>
+    <td>Taiwan</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>25 美元</td>
@@ -3754,7 +3754,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>前南斯拉夫馬其頓共和國</td>
+    <td>Macedonia (FYROM)</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -4055,7 +4055,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>台灣</td>
+    <td>Taiwan</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>25 美元</td>
