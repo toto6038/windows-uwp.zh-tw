@@ -8,12 +8,12 @@ ms.date: 03/16/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, view products, Microsoft Store 集合, 檢視產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e5d6376420a1ee4ac166330371cf6e058d3476e
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: 2ed5e4b34f3ad46daaaac8310b6eced8639bde27
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7306771"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7441677"
 ---
 # <a name="query-for-products"></a>查詢產品
 
@@ -61,7 +61,7 @@ ms.locfileid: "7306771"
 | modifiedAfter     | datetime     | 如果已指定，該服務只會傳回在此日期之後修改過的產品。        | 否       |
 | parentProductId   | 字串       | 如果已指定，該服務只會傳回對應到特定 App 的附加元件。      | 否       |
 | productSkuIds     | list&lt;ProductSkuId&gt; | 如果已指定，該服務只會傳回適用於所提供產品/SKU 組的產品。 如需詳細資訊，請參閱下表。      | 否       |
-| productTypes      | 字串       | 如果已指定，該服務只會傳回符合特定產品類型的產品。 支援的產品類型為 **Application**、**Durable** 及 **UnmanagedConsumable**。     | 否       |
+| productTypes      | 清單&lt;字串&gt;       | 指定查詢結果中要傳回哪一個產品類型。 支援的產品類型為 **Application**、**Durable** 及 **UnmanagedConsumable**。     | 是       |
 | validityType      | 字串       | 設定為 **All** 時，會傳回某使用者的所有產品，包括已過期的項目。 設定為 **Valid** 時，只會傳回在當下有效的產品 (也就是該產品的狀態為使用中、開始日期 &lt; 目前時間，以及結束日期 &gt; 目前時間)。 | 否       |
 
 
