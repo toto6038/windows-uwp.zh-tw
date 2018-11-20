@@ -11,11 +11,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3440a0c64c0546b12c7f2c1bf1ea30168886d1db
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7164927"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7306947"
 ---
 # <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 

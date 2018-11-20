@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，回應，回應，檢閱
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ded7cc66cda75fbb6edb9ab9d84c21c2d02cff
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 9552e9dede62d4d89b71f031cd2ff2c76964d0cb
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158555"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305029"
 ---
 # <a name="respond-to-customer-reviews"></a>回應客戶評論
 
@@ -23,7 +23,7 @@ ms.locfileid: "7158555"
 若要檢視您的應用程式評論並提供回應，請在[合作夥伴中心](https://partner.microsoft.com/dashboard)中尋找應用程式。 在左方的導覽功能表中，展開 [*分析**，然後按一下 [顯示[評論] 報告](reviews-report.md)的**評論**。 選取**要檢閱回應**提供您的回應。
 
 > [!TIP]
-> 除了使用合作夥伴中心，以回應評論外，您可以回應評論[以程式設計方式](../monetize/submit-responses-to-app-reviews.md)，或使用[開發人員中心應用程式](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)。
+> 除了使用合作夥伴中心，以回應評論外，您可以回應評論[以程式設計方式](../monetize/submit-responses-to-app-reviews.md)。
 
 根據預設，您的回應將會被張貼在市集中，原始的客戶評論的正下方。 這些回應會顯示給 Windows 10 裝置上檢視市集的任何客戶。 如果留下此評論的客戶會使用執行 Windows 10 版本 1803年或以上版本的裝置，而且它們還沒有選擇退出接收電子郵件回應，一份您的回應將也會傳送到該客戶透過電子郵件。  您將需要提供有效的電子郵件地址，才能提交您的回應，我們將會包含在電子郵件給客戶。 然後，他們可以使用此電子郵件地址來直接連絡您。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 授權, 應用程式, 附加元件, App 內購買, IAP, Windows.Services.Store
 ms.localizationpriority: medium
 ms.openlocfilehash: 545e052794a8649daa62872cf74b0986cb7bf4b9
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7168932"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7303278"
 ---
 # <a name="get-license-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的授權資訊
 

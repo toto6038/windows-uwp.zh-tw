@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版, 套件正式發行前小眾測試版
 ms.localizationpriority: medium
 ms.openlocfilehash: f67bb76e1d964dd246be16870a7c76591eb1e7d6
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7144538"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302541"
 ---
 # <a name="get-package-flights-for-an-app"></a>取得 App 套件正式發行前小眾測試版
 

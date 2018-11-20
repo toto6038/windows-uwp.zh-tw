@@ -8,11 +8,11 @@ ms.topic: article
 keywords: 背景工作觸發程序，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 6846cfe77272a78eff7ddc05c9a7e48dddd21fc2
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7159340"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302647"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>從您的應用程式觸發背景工作
 

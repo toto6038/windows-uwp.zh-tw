@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，Xbox One 的附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158953"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305977"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>取得 Xbox One 附加內容下載數
 

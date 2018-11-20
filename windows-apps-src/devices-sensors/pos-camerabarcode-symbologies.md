@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: c74e72c826687c2b21284c169c345e145505e104
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7170550"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7302751"
 ---
 # <a name="symbologies"></a>碼制
 本主題提供 Windows 10 隨附之軟體條碼解碼器所支援的每個碼制的範例條碼包括：UPC/EAN、Code 39、Code 128、Interleaved 2 of 5、Databar Omnidirectional、Databar Stacked、QR 代碼和 GS1DWCode。

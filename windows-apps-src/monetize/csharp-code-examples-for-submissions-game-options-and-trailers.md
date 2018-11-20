@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 61d2a919d6bebcb1807d8084dda39a2e6d660ca5
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7156924"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7305749"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\# 範例：提交含遊戲選項與預告片的應用程式
 
