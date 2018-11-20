@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: f695e281c754eaa81f9851ab814520f57fc249ab
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 7481c1d0f64ccb25168200cdf5e6ccc068f769b9
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7155396"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7291632"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 遊戲開發指南
 
@@ -247,8 +247,8 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>Windows 應用程式開發人員論壇</td>
-        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">Windows 市集與應用程式論壇</a></td>
+        <td>發佈應用程式和遊戲的開發人員論壇</td>
+        <td><a href="https://social.msdn.microsoft.com/Forums/en-us/home?category=windowsapps">發佈與應用程式廣告</a></td>
     </tr>
     <tr>
         <td>UWP app 開發人員論壇</td>
@@ -1661,10 +1661,6 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     <col width="50%" />
     <col width="50%" />
     </colgroup>
-    <tr>
-        <td>開發人員中心 App</td>
-        <td><a href="https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws">取得應用程式來檢視您已發佈的應用程式的效能</a></td>
-    </tr>  
     <tr>
         <td>合作夥伴中心分析</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148522">分析應用程式效能</a></td>

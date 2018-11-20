@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: d82276d8-f094-4d60-90f6-f836ce90e823
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a62d08d540479daf77d532afa1b97ae128d2c1f
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7173521"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7290166"
 ---
 # <a name="payment-thresholds-methods-and-timeframes"></a>付款門檻、方式和時間範圍
 
@@ -632,7 +632,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>前南斯拉夫馬其頓共和國</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -954,7 +954,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>台灣</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>25 美元</td>
@@ -1694,7 +1694,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>前南斯拉夫馬其頓共和國</td>
     <td>50 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -2016,7 +2016,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>台灣</td>
     <td>50 美元</td>
     <td>電匯</td>
     <td>50 美元</td>
@@ -2749,7 +2749,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>前南斯拉夫馬其頓共和國</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -3064,7 +3064,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
  <tr>
-    <td>Taiwan</td>
+    <td>台灣</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>25 美元</td>
@@ -3754,7 +3754,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Macedonia (FYROM)</td>
+    <td>前南斯拉夫馬其頓共和國</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>不適用</td>
@@ -4055,7 +4055,7 @@ ms.locfileid: "7173521"
     <td>PayPal</td>
   </tr>
   <tr>
-    <td>Taiwan</td>
+    <td>台灣</td>
     <td>200 美元</td>
     <td>電匯</td>
     <td>25 美元</td>
