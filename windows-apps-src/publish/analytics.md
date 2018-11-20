@@ -8,12 +8,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、 uwp、 分析、 報告、 儀表板，應用程式、 資料、 計量
 ms.localizationpriority: medium
-ms.openlocfilehash: 22d9a4d4b66091148bbb078abfb89237ab14ea87
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 8d7998366d484c95b90b765eb9227a7c3df41b6f
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7167314"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7289862"
 ---
 # <a name="analyze-app-performance"></a>分析應用程式效能
 
@@ -49,7 +49,7 @@ ms.locfileid: "7167314"
 
 ## <a name="access-analytics-data-outside-of-partner-center"></a>合作夥伴中心外部存取分析資料
 
-除了在合作夥伴中心檢視報告，您可以有數種不同方式存取您的應用程式分析。
+除了在合作夥伴中心檢視報告，您可以存取的應用程式分析以其他方式。
 
 ### <a name="microsoft-store-analytics-api"></a>Microsoft Store 分析 API
 
@@ -67,8 +67,3 @@ ms.locfileid: "7167314"
 
 > [!NOTE]
 > 若要連線到適用於 Power BI 的 Windows 開發人員中心內容封裝，我們建議您指定的認證，從您的合作夥伴中心帳戶相關聯的 Azure AD 目錄。 如果您使用您的 Microsoft 帳戶認證，您在 Power BI 中的分析資料不會自動重新整理，且您將需要登入 Power BI，才能重新整理資料。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以[免費取得它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 如需有關設定關聯的詳細資訊，請參閱[建立關聯 Azure Active Directory 與您的合作夥伴中心帳戶](associate-azure-ad-with-dev-center.md)。
-
-### <a name="dev-center-app"></a>開發人員中心 App
-
-安裝[開發人員中心](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) App，以便在任何 Windows10 裝置上快速檢視 App 的健康狀況與效能的詳細資料。
-

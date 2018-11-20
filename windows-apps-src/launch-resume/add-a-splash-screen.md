@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 143b96171091406fb91954685143e4f86c036ffb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158279"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282064"
 ---
 # <a name="add-a-splash-screen"></a>新增啟動顯示畫面
 

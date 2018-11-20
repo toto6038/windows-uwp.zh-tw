@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx 9, directx 11, porting 遊戲, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 05549b0f3696067689f7e8fbd05dfb0f8f1bb528
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7144761"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7282863"
 ---
 # <a name="port-from-directx-9-to-universal-windows-platform-uwp"></a>從 DirectX 9 移植到通用 Windows 平台 (UWP)
 

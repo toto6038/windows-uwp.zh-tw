@@ -11,11 +11,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 41c5e018ee56b6a0d26bf2159f62801aa4ab5c3c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7164792"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7288626"
 ---
 # <a name="keyboard-accessibility"></a>鍵盤協助工具  
 

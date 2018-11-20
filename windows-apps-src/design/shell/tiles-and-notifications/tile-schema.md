@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp, 磚, 磚通知, 磚內容, 結構描述, 磚裝載
 ms.localizationpriority: medium
 ms.openlocfilehash: 3cdcf8b609b76283ba680ec9ca4d2502624e2024
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7164528"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7307156"
 ---
 # <a name="tile-content-schema"></a>磚內容結構描述
 

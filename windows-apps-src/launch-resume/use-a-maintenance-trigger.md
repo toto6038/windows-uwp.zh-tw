@@ -12,12 +12,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 5f11afbafc424a4ed7f2c973f0417c792ab7da65
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 08bf867b6690a84f89b61cac9942b8ad6c27cd99
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160176"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7280626"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用維護觸發程序
 
@@ -35,7 +35,7 @@ ms.locfileid: "7160176"
 
 如需有關撰寫背景工作類別的詳細資訊，請參閱[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)或[建立及註冊跨處理序背景工作](create-and-register-a-background-task.md)。
 
-建立新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) 物件。 第二個參數 *OneShot* 會指定維護工作將只執行一次，還是要繼續定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (以分鐘為單位)。 如果 *OneShot* 設定成 False，則 *FreshnessTime* 會指定背景工作的執行頻率。
+建立新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 物件。 第二個參數 *OneShot* 會指定維護工作將只執行一次，還是要繼續定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (以分鐘為單位)。 如果 *OneShot* 設定成 False，則 *FreshnessTime* 會指定背景工作的執行頻率。
 
 > [!NOTE]
 > 如果*FreshnessTime*設定為少於 15 分鐘，嘗試登錄背景工作時，會擲回例外狀況。

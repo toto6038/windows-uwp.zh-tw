@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
 ms.openlocfilehash: 3444c71b4e4c610be0b7d92ac6d761340c5dd5c2
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7145368"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7290291"
 ---
 #  <a name="define-the-uwp-app-framework"></a>定義 UWP app 架構
 
