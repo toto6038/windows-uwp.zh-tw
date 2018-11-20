@@ -9,19 +9,19 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10，uwp，通知，集合、 群組、 ux，ux 指導方針，指導方針、 動作、 快顯通知，控制中心、 noninterruptive、 有效的通知、 干擾通知，可採取動作，管理，組織
 ms.localizationpriority: medium
-ms.openlocfilehash: 849c8ffc66661546a088a3d89747e6690a763e71
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: 4d9c33a4fa4b9c408927292b7def38f42d53b816
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7158545"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7294398"
 ---
 # <a name="toast-notification-ux-guidance"></a>快顯通知的 UX 指導方針
 通知是必要的新式生命;它們能協助使用者生產力與預約與應用程式和網站，以及掌握目前使用的任何更新。 不過，從有用 overbearing 和覺得受干擾，如果不是設計的使用者為中心的方式可以快速關閉通知。 通知有一個以滑鼠右鍵按一下離正在關閉，並不太可能會關閉後，他們將會開啟一次。  因此請確定您的通知是公開的使用者的螢幕空間和時間，因此您可以保留這個佔用通道開啟。
 
 > **重要 Api**: [Windows Community Toolkit Notifications nuget 套件](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 
-我們已經分析我們 Windows 遙測後，以及其他第一個和第三方案例研究，來想出周圍得以絕佳通知故事的四個規則。  我們有信心這些規則通用適用於，無論平台，並將協助您 notificaitons 對於您的使用者有正面影響。
+我們已經分析我們 Windows 遙測後，以及其他第一個和第三方案例研究，來想出周圍得以絕佳通知故事的四個規則。  我們有信心這些規則通用適用於，無論平台，並將協助您在您的使用者上有正面影響的通知。
 
 ## <a name="1-actionable-notifications"></a>1.可採取動作的通知
 可採取動作的通知可讓您的使用者不需要開啟您的應用程式可提高生產力。  雖然它非常有應用程式啟動、 這不是成功的唯一的量值，以及啟用使用者才會完成小型工作，而不需要移至您的應用程式可以是成功的非常強大的工具 delighting 您的使用者。
@@ -42,7 +42,7 @@ ctionable 通知是一個很強大的工具，可協助您的使用者感覺生�
 
 **原始通知：** 使用[原始通知](raw-notification-overview.md)將實用有許多原因，尤其是最小化干擾使用者的選單鍵。  傳送原始通知將喚醒您的應用程式在背景中，因此您可以評估是否通知會立即提供您的應用程式內容中的比較合理。 如果它是您感覺起來應顯示給使用者立即，便能在要快顯從該處[本機快顯通知](send-local-toast.md)。  如果這是使用者不需要查看現在，您就可以建立在稍後將會引發[排程快顯通知](https://blogs.msdn.microsoft.com/tiles_and_toasts/2016/09/30/quickstart-sending-an-alarm-in-windows-10/)。
 
-**幽靈車快顯通知：** 您也可以引發會略過彈出在右下角的畫面，並改為直接與重要訊息中心傳送通知的通知。 這被透過[SuppressPopup 屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)設定為 True。 可能有一些周圍不在控制中心以外彈出通知的態度，雖然我們看到 2-3 次更高版本透過 live 在控制中心的快顯通知的佔用取出快顯通知。  使用者可更具回應性，當它們準備好接收 notificaitons 且可以控制它們會中斷時，這是控制中心中的內容可以是適用於非侵入式通知使用者更有效的原因。
+**幽靈車快顯通知：** 您也可以引發會略過彈出在右下角的畫面，並改為直接與重要訊息中心傳送通知的通知。 這被透過[SuppressPopup 屬性](https://docs.microsoft.com/en-us/uwp/api/windows.ui.notifications.toastnotification.suppresspopup)設定為 True。 可能有一些周圍不在控制中心以外彈出通知的態度，雖然我們看到 2-3 次更高版本透過 live 在控制中心的快顯通知的佔用取出快顯通知。  使用者可更具回應性，當它們準備好接收通知，並可以控制它們會中斷時，這是控制中心中的內容可以是適用於非侵入式通知使用者更有效的原因。
 
 ## <a name="3-clear-out-the-clutter"></a>3.清除出雜亂度
 通知可以保留在控制中心中，相當長的時間 （預設值的三天）。  請務必確定將位於這裡的內容是最新狀態及相關每次使用者開啟控制中心。 您是浪費使用者的螢幕空間，且佔用可能會使用於項更保持最新狀態的插槽。  假設使用者安裝您的電子郵件管理應用程式，而會接收十個電子郵件和十個通知，以及這些電子郵件。  根據您所需的體驗，您可以考慮清除這些通知，如果使用者已讀取相對應的電子郵件，或開啟應用程式的方式，從重要訊息中心移除舊的雜亂度。
@@ -54,7 +54,7 @@ ctionable 通知是一個很強大的工具，可協助您的使用者感覺生�
 
 ![快顯通知標頭使用的範例標示為 'Camping!!'](images/toast-headers-action-center.png)
 
-這兩個這些 gorup 通知，因此相關的內容保持在一起的方式 （亦即想像分開的運動應用程式，在不同的運動聯盟或排序群組聊天訊息）。 集合是群組 notificaitons 更明顯方式，而標頭是更細微的但同時允許使用者分級，以及更快速挑選出通知。 
+這兩個這些 gorup 通知，因此相關的內容保持在一起的方式 （亦即想像分開的運動應用程式，在不同的運動聯盟或排序群組聊天訊息）。 集合是更明顯的方式，群組通知，而標頭是更細微的但同時允許使用者分級，以及更快速挑選出通知。 
 
 ## <a name="other-resources"></a>其他資源
 上述這些四個點是遙測的我們有找到有效透過自己，分析，以及透過第一個和第三方實驗的指導方針。 請記住，不過，這些指導方針就只是： 指導方針。  我們有信心這些規則將會協助提高吸引力與您的通知，生產力，但任何項目可以以使用者為中心 thinking，和了解可以從您自己的資料。  

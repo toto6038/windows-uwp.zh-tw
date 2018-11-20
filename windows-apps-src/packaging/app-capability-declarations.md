@@ -8,12 +8,12 @@ ms.date: 09/20/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f0270ca3f1fac959f2ccc49352739e9ccd0f41cb
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.openlocfilehash: bb692aaada7296f230e1243a3ce515b471f1ba98
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7152676"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7296963"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -208,7 +208,7 @@ ms.locfileid: "7152676"
 | **系統韌體和 BIOS** | **smbios** 功能讓 app 能夠存取 BIOS 資料和系統韌體資料。 |
 | **完全信任的權限層級** | **RunFullTrust**受限制的功能讓 app 能夠在使用者的電腦上執行在完全信任的權限層級。 這項功能，才能使用[FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API。<br /><br />這項功能也是必要項目會傳遞為 appx 或 msix 封裝的傳統型應用程式 （如同使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)），以及當封裝這些應用程式使用 Desktop App Converter (DAC) 時，它會自動在資訊清單中顯示或Visual Studio。 |
 | **提高權限** | **AllowElevation**受限制的功能可讓您建立的 Microsoft 合作夥伴和企業可以保留現有桌面的功能需要自動提高 app 生命週期期間或在啟動應用程式。<br/><br/>我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 只會針對特定業務的應用程式部署企業能夠透過商務用 Microsoft 網上商店它們的私人市集的核准。  |
-| **Windows 小組裝置認證** | **TeamEditionDeviceCredentials**受限制的功能讓 app 能夠存取要求執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的裝置帳戶認證的 Api。<br/><br/>我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
+| **Windows 小組裝置認證** | **TeamEditionDeviceCredential**受限制的功能讓 app 能夠存取要求執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的裝置帳戶認證的 Api。<br/><br/>我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
 | **Windows 小組應用程式檢視** | **TeamEditionView**受限制的功能讓 app 能夠存取裝載在執行 Windows 10 版本 1703年或更新版本的 Surface Hub 裝置上的應用程式檢視的 Api。<br/><br/>我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
 | **相機處理延伸模組** | **CameraProcessingExtension**受限制的功能讓 app 能夠處理從無須直接存取相機控制相機擷取的影像。<br /><br />這項功能，才能呼叫[Windows.Devices.PointOfService.Provider](/uwp/api/windows.devices.pointofservice.provider)命名空間中的 Api。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
 | **數據使用量管理*** | **NetworkDataUsageManagement**受限制的功能讓 app 能夠收集網路資料使用量資訊。<br /><br />這項功能，才能呼叫[GetAttributedNetworkUsageAsync](/uwp/api/windows.networking.connectivity.connectionprofile.getattributednetworkusageasync)。<br /><br />任何人都可能要求存取這個功能以進行市集提交。 |
