@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows, 遊戲, 轉譯, 場景, 深度測試, 陰影
 ms.localizationpriority: medium
 ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7304554"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7418553"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>使用深度測試轉譯場景
 

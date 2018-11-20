@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D, 著色器管線
 ms.localizationpriority: medium
 ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7279038"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7419756"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 

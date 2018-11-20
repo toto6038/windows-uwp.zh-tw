@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 陰影體, 深度緩衝區, DirectX 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 269f8423795d7c2515ce555cf8e65f14a8c63431
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305527"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7416794"
 ---
 # <a name="walkthrough-implement-shadow-volumes-using-depth-buffers-in-direct3d-11"></a>逐步解說：使用 Direct3D 11 中的深度緩衝區實作陰影體
 
