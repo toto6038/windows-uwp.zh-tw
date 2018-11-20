@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式安裝數
 ms.localizationpriority: medium
 ms.openlocfilehash: 72efc20e218cdf718b67c949bd7c71108921bf9c
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7162394"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7292115"
 ---
 # <a name="get-app-installs"></a>取得 App 安裝
 

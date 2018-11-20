@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox One 遊戲下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: 200f18e443e8a130a7e5c673b03c146b73c9083b
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7172684"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7291848"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>取得 Xbox One 遊戲下載數
 

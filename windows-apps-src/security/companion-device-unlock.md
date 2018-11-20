@@ -9,11 +9,11 @@ keywords: windows 10，uwp 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bf1ae02a1c1937c02b6c750872dc784d28cd8e0
-ms.sourcegitcommit: 3257416aebb5a7b1515e107866806f8bd57845a8
+ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "7160457"
+ms.lasthandoff: 11/19/2018
+ms.locfileid: "7292626"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
