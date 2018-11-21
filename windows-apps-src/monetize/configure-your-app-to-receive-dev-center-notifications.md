@@ -9,11 +9,11 @@ keywords: windows 10，uwp，Microsoft Store Services SDK，目標式推播通�
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1281436ce0fe8c7b04429cea897eedc58b15d9
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7420723"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7553512"
 ---
 # <a name="configure-your-app-for-targeted-push-notifications"></a>設定您的應用程式以接收目標式推播通知
 

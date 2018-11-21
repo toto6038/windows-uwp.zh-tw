@@ -9,11 +9,11 @@ keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 68240e5b3d2fb476b731853e6a7d020ecd9e2887
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7420052"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7556950"
 ---
 # <a name="work-with-files"></a>使用檔案
 
