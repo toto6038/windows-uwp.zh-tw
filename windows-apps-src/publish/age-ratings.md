@@ -41,7 +41,7 @@ ms.locfileid: "7436392"
 > 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](http://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您將提交遊戲，而您想要在南韓提供使用時，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
 
 > [!NOTE]
-> 如果您要提交會在台灣上市的遊戲，法律規定您必須使用[此表單](https://go.microsoft.com/fwlink/?linkid=867281)來登錄提供的 CSRR 分級。 
+> If you are submitting a game that will be available in Taiwan, you are required by law to register the provided CSRR rating using [this form](https://go.microsoft.com/fwlink/?linkid=867281). 
 
 <span id="appeal" />
 

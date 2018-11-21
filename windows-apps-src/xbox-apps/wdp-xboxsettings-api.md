@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7292327"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7442517"
 ---
 # <a name="developer-settings-api-reference"></a>開發人員設定 API 參考   
 您可以使用這個 API 來存取適合用於開發的 Xbox One 設定。
