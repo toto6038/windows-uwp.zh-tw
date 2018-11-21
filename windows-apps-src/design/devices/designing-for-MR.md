@@ -16,11 +16,11 @@ dev-contact: ''
 doc-status: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: e6bba6c22b7f0055a93bfd1826bc3a2acc0f2164
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7305375"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7426792"
 ---
 # <a name="designing-for-mixed-reality"></a>設計混合實境
 

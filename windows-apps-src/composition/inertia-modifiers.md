@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、uwp、動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 20c10b1cc621da834a8a7c411e75eb92b1944b5a
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7287477"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7427044"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用慣性修飾詞建立貼齊點
 
