@@ -9,11 +9,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ff1f4327b82e2b81cc1ec3d64b352e4e85e7bb12
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7442527"
+ms.locfileid: "7560301"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 

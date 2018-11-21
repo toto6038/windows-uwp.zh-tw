@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a6ceb1e779f8622d3e358bc131b21f6ec66ac2f8
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417921"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7555587"
 ---
 # <a name="data-type-conversion"></a>資料類型轉換
 
