@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cd4e1b6d807437adbdd7428ae35d26915c48713
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7294258"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7439341"
 ---
 # <a name="calibrate-sensors"></a>校正感應器
 

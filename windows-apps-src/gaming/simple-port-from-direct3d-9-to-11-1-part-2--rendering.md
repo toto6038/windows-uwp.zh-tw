@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯架構, 轉換, direct3d 9, direct3d 11
 ms.localizationpriority: medium
 ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7289548"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436220"
 ---
 # <a name="convert-the-rendering-framework"></a>轉換轉譯架構
 

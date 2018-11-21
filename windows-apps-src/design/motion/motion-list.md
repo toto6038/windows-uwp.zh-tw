@@ -11,11 +11,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f1c2fa6a30047cb447b597213692085f4656bd2
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7295010"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7438126"
 ---
 # <a name="add-and-delete-animations"></a>新增和刪除動畫
 

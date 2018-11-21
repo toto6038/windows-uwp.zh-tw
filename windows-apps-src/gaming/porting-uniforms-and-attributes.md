@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes, 遊戲, 緩衝區, 統一, 頂點屬性
 ms.localizationpriority: medium
 ms.openlocfilehash: bc0192eb4b89ef91bc895a96e46cd39524f24c44
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7278866"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7440366"
 ---
 # <a name="compare-opengl-es-20-buffers-uniforms-and-vertex-attributes-to-direct3d"></a>OpenGL ES 2.0 緩衝區、Uniform 及頂點屬性與 Direct3D 的比較
 

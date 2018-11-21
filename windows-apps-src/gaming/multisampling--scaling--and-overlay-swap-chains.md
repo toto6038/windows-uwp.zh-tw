@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 交換鏈縮放比例, 覆疊, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7304780"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7437181"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>交換鏈結縮放和覆疊
 

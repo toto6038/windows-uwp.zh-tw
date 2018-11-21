@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 80c6292c12568d7f1017ca67707689ce9539c804
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7278803"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7437473"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 

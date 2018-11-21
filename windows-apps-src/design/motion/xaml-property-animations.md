@@ -11,11 +11,11 @@ design-contact: jeffarn
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 2a7e2c3a08fc925c57e19b9c51011854b947a52d
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7288104"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7440509"
 ---
 # <a name="animating-xaml-elements-with-composition-animations"></a>使用組合動畫產生動畫效果的 XAML 元素
 

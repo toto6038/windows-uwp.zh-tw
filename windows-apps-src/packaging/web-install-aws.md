@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，Windows 10，UWP，應用程式安裝程式，AppInstaller，側載，相關設定，選用套件，AWS
 ms.localizationpriority: medium
 ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7281823"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7438423"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>在 AWS 上裝載 UWP 應用程式套件以進行 Web 安裝
 
