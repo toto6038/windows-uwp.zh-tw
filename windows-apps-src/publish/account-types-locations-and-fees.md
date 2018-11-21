@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
 ms.openlocfilehash: 7600f8a6bef19ca2d7b301931d0198638f91dc1b
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7299313"
+ms.lasthandoff: 11/20/2018
+ms.locfileid: "7428901"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
@@ -164,7 +164,7 @@ Windows 程式[合作夥伴中心](https://partner.microsoft.com/dashboard)供�
 |  立陶宛 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 否 | 
 |  盧森堡 | 14 歐元 | 75 歐元 | 歐元 (已支付給銀行) | 是 | 
 |  澳門特別行政區 | 19 美元 | 99 美元 | 不支付 | 否 | 
-|  Macedonia (FYROM) | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
+|  前南斯拉夫馬其頓共和國 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  馬達加斯加 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  馬拉威 | 19 美元 | 99 美元 | 馬拉威克瓦查 (已支付給銀行) | 否 | 
 |  馬來西亞 | 62 MYR (馬來西亞林吉特) | 300 MYR (馬來西亞林吉特) | 美元 (已支付給銀行) | 否 | 
@@ -228,7 +228,7 @@ Windows 程式[合作夥伴中心](https://partner.microsoft.com/dashboard)供�
 |  史瓦濟蘭 | 19 美元 | 99 美元 | 不支付 | 否 | 
 |  瑞典 | 123 瑞典克朗 | 700 瑞典克朗 | 瑞典克朗 (已支付給銀行) | 是 | 
 |  瑞士 | 17 CHF (瑞士法郎) | 90 CHF (瑞士法郎) | 瑞士法郎 (已支付給銀行) | 是 | 
-|  Taiwan | 568 新臺幣 | 2840 新臺幣 | 美元 (已支付給銀行) | 是 | 
+|  台灣 | 568 新臺幣 | 2840 新臺幣 | 美元 (已支付給銀行) | 是 | 
 |  塔吉克 | 19 美元 | 99 美元 | 美元 (已支付給銀行) | 否 | 
 |  坦尚尼亞 | 19 美元 | 99 美元 | 坦尚尼亞先令 (已支付給銀行) | 否 | 
 |  泰國 | 601 泰銖 | 3000 泰銖 | 泰銖 (已支付給銀行) | 是 | 
