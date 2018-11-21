@@ -7,12 +7,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, 封裝, 套件設定, 一般套件組合
 ms.localizationpriority: medium
-ms.openlocfilehash: b877996dd5fa32ac764fb587092f501320931527
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.openlocfilehash: 8d95591f12b61054a654b9b1284bdd90d74a937b
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7293898"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436797"
 ---
 # <a name="flat-bundle-app-packages"></a>一般套件組合應用程式套件 
 
@@ -36,7 +36,7 @@ ms.locfileid: "7293898"
 以下是命令語法的範例：
 
 ```syntax
-MakeAppx bundle [options] /d <content directory> /fb <output flat bundle name>
+MakeAppx bundle [options] /d <content directory> /fb /p <output flat bundle name>
 ```
 
 如需有關使用 MakeAppx.exe 的詳細資訊，請參閱[使用 MakeAppx.exe 工具建立應用程式套件](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)。

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e7fec507497784849bdda76ed0fdd4993181731
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7284081"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7434575"
 ---
 # <a name="create-a-package-flight"></a>建立套件正式發行前小眾測試版
 

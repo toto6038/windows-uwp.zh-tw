@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, port, vertex buffers, data, direct3d, 遊戲, 連接埠, 頂點緩衝區, 資料, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: b32747a4e11d258f71d4e55e41b7f54bb5e99246
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7289335"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7436435"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>移植頂點緩衝區與資料
 

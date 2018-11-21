@@ -10,11 +10,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 通知, 集合, 集合, 群組通知, 群組通知, 群組, 組織, 重要訊息中心, 快顯通知
 ms.localizationpriority: medium
 ms.openlocfilehash: be7c4ec2e9a47eeeb00663ae94f89e44c6751352
-ms.sourcegitcommit: ed0304b8a214c03b8aab74b8ef12c9f82b8e3c5f
+ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "7300186"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7435054"
 ---
 # <a name="grouping-toast-notifications-with-collections"></a>使用集合來群組快顯通知
 使用集合來組織應用程式在重要訊息中心的快顯通知。 集合有助於使用者更容易在重要訊息中心找出資訊，並讓開發人員更好管理他們的通知。  下列 API 允許移除、建立和更新通知集合。
