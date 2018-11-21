@@ -49,7 +49,7 @@ Microsoft Store 提供 [電信業者帳單] 做為執行 Windows 10 的裝置、
 | 西班牙           | Orange                           |
 | 瑞典          | Telenor、3                       |
 | 瑞士     | Swisscom、Sunrise                |
-| 台灣          | FarEasTone                       |
+| Taiwan          | FarEasTone                       |
 | 土耳其          | Turkcell                         |
 | 阿拉伯聯合大公國 | Etisalat                    |
 | 美國   | Sprint、Verizon                  |
