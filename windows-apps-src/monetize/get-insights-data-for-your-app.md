@@ -9,11 +9,11 @@ keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: fbca074cffba64067b22d94aea6e0476c10480af
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7434777"
+ms.locfileid: "7572754"
 ---
 # <a name="get-insights-data"></a>取得深入解析資料
 

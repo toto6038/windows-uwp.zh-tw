@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，發佈，前置處理，認證，發行，擱置中，提交，發佈，狀態，時間
 ms.localizationpriority: medium
 ms.openlocfilehash: 161a95141511bc00b1d1a707e893d85dccfa8409
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7444096"
+ms.locfileid: "7573551"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 

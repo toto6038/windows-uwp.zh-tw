@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: 818e1338a1d36d24990f22316dc2072c2c0d7cc5
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7445734"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7574401"
 ---
 # <a name="3d-printing-from-your-app"></a>從應用程式進行 3D 列印
 

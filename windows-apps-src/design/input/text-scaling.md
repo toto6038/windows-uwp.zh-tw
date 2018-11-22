@@ -11,11 +11,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3110615e43ffa4839d9be6ebf5113fc9d8b7c05f
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438443"
+ms.locfileid: "7571430"
 ---
 # <a name="text-scaling"></a>文字大小調整
 

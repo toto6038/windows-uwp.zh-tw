@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2076866cc31f50bd7ccfc6730bca5be96ffdc7c3
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7438367"
+ms.locfileid: "7571217"
 ---
 # <a name="key-frame-animations-and-easing-function-animations"></a>主要畫面格動畫和 Easing 函式動畫
 

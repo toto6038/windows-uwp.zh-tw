@@ -9,11 +9,11 @@ keywords: Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
 ms.openlocfilehash: 48fc818c1ae7a9a46912ff52c2b00b07f19c366e
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7439622"
+ms.locfileid: "7571610"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
 
@@ -27,7 +27,7 @@ ms.locfileid: "7439622"
 
 * 將不會再為您應用程式中的任何 **AdControl** 提供橫幅廣告，您將無法再從這些控制項賺取廣告收入。
 
-* When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
+* 當您應用程式中的 **AdControl** 要求新的廣告時，將會引發控制項的 **ErrorOccurred** 事件，而事件引數的 **ErrorCode** 屬性值將會是 **NoAdAvailable**。
 
 * 與您應用程式相關的任何廣告單元將會被停用。 您無法從您 DePartnerv 中心帳戶移除這些停用的廣告單元。 如果您更新應用程式為使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, BasicLoader
 ms.localizationpriority: medium
 ms.openlocfilehash: cde8d7b368fb3ee660bd5696f983070738397b6f
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7417287"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7572570"
 ---
 # <a name="complete-code-for-basicloader"></a>BasicLoader 的完整程式碼
 

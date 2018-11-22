@@ -9,11 +9,11 @@ keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project ro
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c462bb28de23db735b957870cf456d3649282ae
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/21/2018
-ms.locfileid: "7432950"
+ms.locfileid: "7574228"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (專案 Rome)
 

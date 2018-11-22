@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, contacts, calendar, appointments, email messages, 連絡人, 行事曆, 約會, 電子郵件訊息
 ms.localizationpriority: medium
 ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7429218"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7571400"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡人、朋友圈及行事曆
 

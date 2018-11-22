@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: cca90c705c7bb4dd1c7e283a9c3ed267cd282b56
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7416874"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7572288"
 ---
 # <a name="constant-buffer-view-cbv"></a>常數緩衝區檢視 (CBV)
 
