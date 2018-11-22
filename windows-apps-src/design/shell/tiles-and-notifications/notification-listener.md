@@ -10,12 +10,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 635ee4cbdd0139ec9e431726ea5b040713abe97d
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: c67f3531d248ef46a162b992850d0240c37ba21a
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7416824"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7568091"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
@@ -259,7 +259,7 @@ foreach (UserNotification userNotification in userNotifications)
         toBeRemoved.Remove(userNotification.Id);
     }
  
-    // Othwerise it's a new notification
+    // Otherwise it's a new notification
     else
     {
         // Display it on the Wearable
@@ -296,4 +296,4 @@ private void Listener_NotificationChanged(UserNotificationListener sender, UserN
 
 ## <a name="howto-fixdelays-in-the-background-task"></a>背景工作中如何 fixdelays
 
-在測試應用程式時，您可能會注意到背景工作有時會延遲，且可能有幾分鐘的時間不會觸發。 若要修正這個問題，您會想要提示的使用者多哥系統設定]-> [系統]-> [電池]-> [依 app 的電池使用情況，在清單中找到您的應用程式、 選取它，然後將它變更為 \ [一律允許在背景中 」。之後，背景工作應該一律會觸發內在收到通知的一秒。
+當測試您的應用程式，您可能會注意到背景工作有時會延遲，且不會有幾分鐘的觸發程序。 若要修正延遲，提示使用者多哥系統設定]-> [系統]-> [電池]-> [依 app 的電池使用情況，在清單中找到您的應用程式、 選取它，並將其設為 \ [一律允許在背景中 」。之後，背景工作應該一律會觸發內在收到通知的一秒。

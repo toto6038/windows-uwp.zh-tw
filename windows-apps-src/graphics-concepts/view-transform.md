@@ -10,11 +10,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 40f9312b4b85e9f6e54a8bf02c6d07df35b8b626
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "7424941"
+ms.lasthandoff: 11/21/2018
+ms.locfileid: "7562321"
 ---
 # <a name="view-transform"></a>檢視轉換
 
