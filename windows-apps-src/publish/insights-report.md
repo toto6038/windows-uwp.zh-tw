@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10、 uwp、 見解、 趨勢、 異常、 異常、 資料變更
 ms.localizationpriority: medium
 ms.openlocfilehash: 324666095c26eb8d05732ce7e1ad3217b210d406
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7440165"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "7573953"
 ---
 # <a name="insights-report"></a>見解報告
 
