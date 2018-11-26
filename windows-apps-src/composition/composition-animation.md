@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
 title: 組合動畫
 description: 許多組合物件和效果屬性都可藉由使用主要畫面格和運算式動畫來製作動畫效果，這些動畫可允許隨時間或根據計算來變更 UI 元素的屬性。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f9d0daf230007d1d32a7d2187d54baa90986e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b94f14b32c5dd74e0aefb9b9a99f64bbd905a05d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566074"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712757"
 ---
 # <a name="composition-animations"></a>組合動畫
 

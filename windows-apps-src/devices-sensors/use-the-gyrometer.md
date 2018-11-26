@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
 title: 使用陀螺儀
 description: 了解如何使用陀螺儀來偵測使用者的移動變化。
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 84c27e35e7e9cc3763a4d1d86348da14f3a18910
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8257a8a0c6b8ca320adb04bfb64b0308a4cbefd3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562100"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698237"
 ---
 # <a name="use-the-gyrometer"></a>使用陀螺儀
 

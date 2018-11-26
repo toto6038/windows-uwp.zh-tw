@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 在傳遞至期待 **IInspectable** 的函式之前，需要將純量數值包裝在參考資料類別物件中。 該包裝處理程序稱為*boxing*值。
 title: 'Boxing 和 unboxing 純量數值到使用 C++/WinRT 的 IInspectable '
-ms.author: stwhi
 ms.date: 04/10/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、boxing、純量、數值
 ms.localizationpriority: medium
-ms.openlocfilehash: f4b99f587fbd517b677d85b50abb26fdf072b359
-ms.sourcegitcommit: cbe7cf620622a5e4df7414f9e38dfecec1cfca99
+ms.openlocfilehash: 5c86d1ac8ce83ea092ce0e2730ea0e9d4a201b94
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7437929"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720264"
 ---
 # <a name="boxing-and-unboxing-scalar-values-to-iinspectable-with-cwinrt"></a>Boxing 和 unboxing 純量數值到使用 C++/WinRT 的 IInspectable 
  

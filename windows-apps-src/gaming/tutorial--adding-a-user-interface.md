@@ -1,19 +1,17 @@
 ---
-author: abbycar
 title: 新增使用者介面
 description: 了解如何將 2D 使用者介面重疊新增至 DirectX UWP 遊戲。
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
-ms.author: abigailc
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 使用者介面, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9962cc9043bd650390721715ca73b2e85a219c25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 09005eb12997126a9cad68c388beb0473b19fda3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571177"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696614"
 ---
 # <a name="add-a-user-interface"></a>新增使用者介面
 

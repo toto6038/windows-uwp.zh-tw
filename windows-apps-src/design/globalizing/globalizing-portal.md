@@ -1,22 +1,20 @@
 ---
-author: stevewhims
 Description: Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.
 Search.SourceType: Video
 title: 全球化和當地語系化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: b437055704c307dc3e3fa506a9885ff892585503
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 49ee09374db54678dbe0152b996537771fd1bfd1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564760"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720064"
 ---
 # <a name="globalization-and-localization"></a>全球化和當地語系化
 

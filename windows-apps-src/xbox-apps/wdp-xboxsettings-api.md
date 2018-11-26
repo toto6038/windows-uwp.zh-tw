@@ -1,19 +1,17 @@
 ---
-author: m-stahl
 title: 裝置入口網站 Xbox 開發人員設定 API 參考
 description: 了解如何存取 Xbox 開發人員設定。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 6ab12b99-2944-49c9-92d9-f995efc4f6ce
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f3d0c09b242f8d60b06ee0dc510ad9a756466c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 402d535bf6ff9ced24bc642c17d13b2d48d79681
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561781"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707373"
 ---
 # <a name="developer-settings-api-reference"></a>開發人員設定 API 參考   
 您可以使用這個 API 來存取適合用於開發的 Xbox One 設定。

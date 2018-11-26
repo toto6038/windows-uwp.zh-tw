@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 title: xDeferLoadStrategy 屬性
 description: xDeferLoadStrategy 會延遲建立元素及其子系而縮短啟動時間，但記憶體使用量會略為增加。每個受影響的元素會增加約 600 個位元組的記憶體使用量。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cd958ba5f9025430be2736329c5a909233461039
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4432362db74f830774a2c4f74401c472c128a120
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565423"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719380"
 ---
 # <a name="xdeferloadstrategy-attribute"></a>x:DeferLoadStrategy 屬性
 

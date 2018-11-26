@@ -4,17 +4,15 @@ description: 樣板緩衝區用於影像中遮罩像素，製作特殊效果。
 ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
 keywords:
 - 樣板緩衝區
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 090dcab3b46b031a16be35973e1183220d5b1da0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 285e4a70062c57c957530aa1e548c22c4cf7711e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566916"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707172"
 ---
 # <a name="stencil-buffers"></a>樣板緩衝區
 

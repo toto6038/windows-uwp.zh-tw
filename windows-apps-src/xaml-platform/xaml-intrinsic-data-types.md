@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 列出 Windows 執行階段的 XAML 中，針對 Common Language Runtime (CLR) 及其他程式設計語言 (例如 C++) 中特定資料類型的語言層級支援。
 title: XAML 內建資料類型
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 18cf7a63dea7a1913293e5cd174b8f6c69b5baf6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26f4153b59c618a4559549ba7fa9ca0f99c4ab64
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556897"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694224"
 ---
 # <a name="xaml-intrinsic-data-types"></a>XAML 內建資料類型
 

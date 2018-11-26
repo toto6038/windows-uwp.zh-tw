@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相同的外觀及操作方式。 使用者介面、輸入及互動模式皆非常相似，而在裝置之間移動的使用者會欣然感受到熟悉的體驗。
 title: 尺寸與 UX 的移植 WindowsPhone Silverlight 到 UWP
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 809cf2691a2bc7b7c72d4ba031fa4c6b45335dde
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555340"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706875"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>尺寸與 UX 的移植 WindowsPhone Silverlight 到 UWP
 

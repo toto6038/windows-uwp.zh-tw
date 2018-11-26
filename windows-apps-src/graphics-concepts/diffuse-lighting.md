@@ -4,17 +4,15 @@ description: 擴散光源取決於光方向和物件表面法向。
 ms.assetid: 8AF78742-76B1-4BBB-86E3-94AE6F48B847
 keywords:
 - 擴散光源
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5846edda167823b7ae161d332fbde450ccf20d72
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581638"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706822"
 ---
 # <a name="diffuse-lighting"></a>擴散光源
 
@@ -31,7 +29,7 @@ ms.locfileid: "7581638"
 
 | 參數       | 預設值 | 類型          | 描述                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| 總和             | N/A           | 無           | 每道光的擴散元件的總和。                                                     |
+| 總和             | 無           | 無           | 每道光的擴散元件的總和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 擴散色彩。                                                                                   |
 | L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 光線擴散色彩。                                                                             |
 | N               | 無           | D3DVECTOR     | 頂點垂直                                                                                    |

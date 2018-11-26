@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.
 title: 產生促銷碼
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 促銷代碼, 促銷碼, 預付碼, 預付代碼
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fe89f65ff4f3278b0ba88ef4c5ca9d22bc67817
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ce8fb38ee26beadc68eb8e5829549f69e2d11d16
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555663"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719576"
 ---
 # <a name="generate-promotional-codes"></a>產生促銷代碼
 

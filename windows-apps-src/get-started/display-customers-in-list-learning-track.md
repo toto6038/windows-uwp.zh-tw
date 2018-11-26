@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 學習追蹤 - 顯示清單中的客戶
 description: 了解您需要如何做來顯示清單中 Customer 物件的收藏。
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習追蹤, 資料繫結, 清單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6f9710e613a1fa7abc1793e016c7bbebdbd2cda3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bd4a1f6747ea68623039b7eac22ac08aaa15d9ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581088"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712144"
 ---
 # <a name="display-customers-in-a-list"></a>顯示清單中的客戶
 

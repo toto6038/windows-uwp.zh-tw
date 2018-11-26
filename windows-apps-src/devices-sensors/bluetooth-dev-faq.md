@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 藍牙開發人員常見問題集
 description: 本文包含有關 UWP 藍牙 API 常見問題的解答。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 03ee8074a64b210d33498c8de135a76900d968f0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 03b72b5722a3ece0165fc63e7ce4abc1238bc135
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553306"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718858"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 

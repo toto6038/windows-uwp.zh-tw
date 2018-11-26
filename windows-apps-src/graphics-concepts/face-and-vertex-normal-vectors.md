@@ -4,17 +4,15 @@ description: 每個網格中的平面都有一個垂直單位一般向量。 向
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
 - 面和頂點法向量
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2081e8c09a6f6fd75f460af3f339902bcb80bac6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560980"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718899"
 ---
 # <a name="face-and-vertex-normal-vectors"></a>面和頂點法向量
 

@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: 67934477-337a-5235-b0de-8ac038177267
 title: 媒體擷取頁面 （開發人員首頁）
 description: 提供針對 Xbox One 開發人員首頁應用程式的媒體擷取頁面的相關資訊。
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-capture.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 1866c4f94c5ef681080ae2a5658c6edba11ec44b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 348b937b7967cbde80c0bc25a502e727a04e8af0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572986"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719350"
 ---
 # <a name="media-capture-page-dev-home"></a>媒體擷取頁面 （開發人員首頁）
    

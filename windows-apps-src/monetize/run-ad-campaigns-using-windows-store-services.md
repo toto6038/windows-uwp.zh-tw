@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 8e6c3d3d-0120-40f4-9f90-0b0518188a1a
 description: 使用 Microsoft Store 促銷 API 以程式設計方式管理登錄到您或您組織的合作夥伴中心帳戶的應用程式促銷廣告行銷活動。
 title: 使用Microsoft Store 服務執行廣告行銷活動
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 81e77fb01347c2a6ec2630e08f3a00ee6cf47de7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 038003714d6543580f618b381ac7f4ecbde22da9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575260"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698347"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用Microsoft Store 服務執行廣告行銷活動
 

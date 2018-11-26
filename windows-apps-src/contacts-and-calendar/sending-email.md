@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: 示範如何啟動 [撰寫電子郵件] 對話方塊，讓使用者傳送電子郵件訊息。 您可以在顯示該對話方塊之前，使用資料預先填入電子郵件的欄位。 在使用者點選 [傳送] 按鈕之前，不會將訊息傳送出去。
 title: 傳送電子郵件
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: 連絡人, 電子郵件, 傳送
-ms.author: normesta
 ms.date: 10/11/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a28809210f71bf523e3cc5f9c8da1db9fbcc90c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1593ab8b547a464492a35aa7d49d38f667a8210b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565569"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695275"
 ---
 # <a name="send-email"></a>傳送電子郵件
 

@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 設定遊戲專案
 description: 組合遊戲的第一步是在 Microsoft Visual Studio 中設定一個專案，透過這種方式可以將所需的程式碼基礎結構數量減到最少。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 設定, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9100e80e0b4ac436ae872698e94fe29e5c8cab46
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 252d7ccb8e50e773a19282afaf19bb18d4c5d5a6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560828"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696462"
 ---
 # <a name="set-up-the-game-project"></a>設定遊戲專案
 

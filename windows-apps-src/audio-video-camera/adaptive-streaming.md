@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: 本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能目前支援 HTTP 即時資料流 (HLS) 與 HTTP 動態資料流 (DASH) 內容播放。
 title: 彈性資料流
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8e3ab4abd9ee9159dc7d5aa757f55e00817a51
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d983de8f9f58e5c9fe6b048b98ea00ebef7197c0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563813"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696011"
 ---
 # <a name="adaptive-streaming"></a>彈性資料流
 

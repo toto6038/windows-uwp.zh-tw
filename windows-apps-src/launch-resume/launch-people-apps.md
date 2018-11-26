@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 啟動連絡人 app
 description: 本主題描述 ms-people URI 配置。 您的應用程式可以使用此 URI 配置來啟動連絡人應用程式，以執行特定動作。
 ms.assetid: 1E604599-26EF-421C-932F-E9935CDB248E
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b87a49f24035215d44dbabcf9e401ddfefdff47
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569108"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706928"
 ---
 # <a name="launch-the-people-app"></a>啟動連絡人應用程式
 

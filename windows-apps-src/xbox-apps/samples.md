@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: Xbox One 上的 UWP 範例
 description: 範例和程式庫，可協助您建置絕佳的 Xbox One 與電視體驗。
-ms.author: scotmi
 ms.date: 10/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9ef40050-7df6-49bd-8563-1bd58bb6e3f0
 ms.localizationpriority: medium
-ms.openlocfilehash: 3be6cfbc40fc645bfb66ef2f0fb9b8b5f2976da8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b0f793dfb1c261ed967e79ab2a64e09306a57917
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555251"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706970"
 ---
 # <a name="uwp-on-xbox-one-samples"></a>Xbox One 上的 UWP 範例
 

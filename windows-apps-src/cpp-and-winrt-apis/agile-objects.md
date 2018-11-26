@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 敏捷式物件是可以從任何執行緒中存取的一種物件。 C++/WinRT 預設為敏捷式，但您可以選擇退出。
 title: 使用 C++/WinRT 的敏捷式物件
-ms.author: stwhi
 ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fa129a60c7dfcc170a9ddeec318a062fb8cbe56
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574248"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720444"
 ---
 # <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
 

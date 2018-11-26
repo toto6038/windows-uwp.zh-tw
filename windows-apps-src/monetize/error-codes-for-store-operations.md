@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 本文章說明市集作業的應用程式和附加元件，包括應用程式內購買、 授權和自我安裝應用程式更新的常見錯誤的代碼。
 title: Microsoft Store 作業的錯誤碼
-ms.author: mhopkins
 ms.date: 08/24/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式內購買，Iap，附加元件，錯誤碼
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a4eff890da48bd60405cadee2d7ecb92bb1b2fa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ba505b30076c356a39ae195e1d187cbc49d8a66a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582188"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720304"
 ---
 # <a name="error-codes-for-store-operations"></a>Microsoft Store 作業的錯誤碼
 

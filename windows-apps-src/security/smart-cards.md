@@ -2,18 +2,16 @@
 title: 智慧卡
 description: 本主題說明通用 Windows 平台 (UWP) 應用程式如何使用智慧卡將使用者連接到安全的網路服務，包括如何存取實體智慧卡讀卡機、建立虛擬智慧卡、與智慧卡通訊、驗證使用者、重設使用者 PIN 和移除或中斷智慧卡的連線。
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5c416fff63ba5a14480f804b9382c27f7e53a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 47a4ceef2603d7b0178431c93fb6c271b24c506a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555723"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696091"
 ---
 # <a name="smart-cards"></a>智慧卡
 

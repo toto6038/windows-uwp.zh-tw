@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Learn about the tax forms issued by Microsoft, including who will receive them and when they are made available.
 title: 了解 Microsoft 寄發的 IRS 稅單
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 326de9b3160f492566306b18252bbc3bacf58531
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568629"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696166"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 

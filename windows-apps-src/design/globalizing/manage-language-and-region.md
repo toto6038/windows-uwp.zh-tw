@@ -1,20 +1,18 @@
 ---
-author: stevewhims
 Description: This topic defines the terms user profile language list, app manifest language list, and app runtime language list. We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean.
 title: 了解使用者設定檔語言和應用程式資訊清單語言
 ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 2215231b21700fc17b08c2149316f9a59f8d1f04
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1443730e343bc00563142e937d534282b9b34524
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577387"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720074"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解使用者設定檔語言和應用程式資訊清單語言
 Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** 設定慣用顯示語言的已排序清單，或單一慣用顯示語言。 語言可具有地區性的變體。 例如，您可以選取在西班牙使用的西班牙文、在墨西哥使用的西班牙文、在美國使用的西班牙文等。

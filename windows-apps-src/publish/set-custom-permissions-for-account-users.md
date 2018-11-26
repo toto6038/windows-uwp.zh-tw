@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Set roles or custom permissions for account users.
 title: 設定帳戶使用者的角色或自訂權限
 ms.assetid: 99f3aa18-98b4-4919-bd7b-d78356b0bf78
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
-ms.openlocfilehash: 2af203ae78ae34a0a6bc9884cbaeaa730ee83e9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580432"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719618"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -169,10 +167,10 @@ ms.locfileid: "7580432"
     </thead>
     <tbody>
     <tr><td align="left">    <b>下載數</b>     </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    不適用    </td><td>    不適用 （父產品的設定包含**附加元件下載數**報告）        </td><td>    不適用                         </td></tr>
-    <tr><td align="left">    <b>使用量</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    N/A     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    N/A     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>使用量</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    無     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    無     </td><td>    不適用         </td></tr>
     <tr><td align="left">    <b>客戶回函</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與<b>連絡客戶</b>權限)   </td><td>    不適用     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    N/A   </td><td>    N/A       </td><td>    不適用          </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    無   </td><td>    無       </td><td>    不適用          </td></tr>
     </tbody>
     </table>
 

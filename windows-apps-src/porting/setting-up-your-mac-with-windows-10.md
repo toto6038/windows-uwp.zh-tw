@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 使用目前的 Mac 電腦開發適用於 Windows 的 app。
 title: 使用 Windows 10 設定 Mac
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 661c324fbe7a80a6ff150da06536879a25c0c0c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 61918f8f81137dad4db9bf627b7c87e0c05ace8d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570867"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719530"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>設定 Mac 的 Windows 10
 

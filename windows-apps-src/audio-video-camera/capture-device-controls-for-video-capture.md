@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
 description: 本文示範如何使用手動裝置控制項來啟用美化的視訊擷取案例，包括 HDR 視訊和曝光優先順序。
 title: 視訊擷取的手動相機控制項
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 91f9d21f6df09bf8f3cad3e5a43f3ed94049338e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f144ef398fc55e79d2f0190c61214cdf1aa93b68
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576076"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696071"
 ---
 # <a name="manual-camera-controls-for-video-capture"></a>視訊擷取的手動相機控制項
 

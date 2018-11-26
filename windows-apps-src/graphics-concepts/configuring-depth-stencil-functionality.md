@@ -4,17 +4,15 @@ description: 本章節涵蓋的步驟，內容為設定深度樣板緩衝區及�
 ms.assetid: B3F6CDAA-93ED-4DC1-8E69-972C557C7920
 keywords:
 - 設定深度樣板功能
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c15ff6aa43540b61b410525e6bb20a0de3da821
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98cb6c62248fbf273a9d7ca1ef0d1d82293122eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562031"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694967"
 ---
 # <a name="span-iddirect3dconceptsconfiguringdepth-stencilfunctionalityspanconfiguring-depth-stencil-functionality"></a><span id="direct3dconcepts.configuring_depth-stencil_functionality"></span>設定深度樣板功能
 

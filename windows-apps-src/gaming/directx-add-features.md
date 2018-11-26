@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 在 DirectX 遊戲中新增功能
 description: 將功能新增至您的 DirectX 遊戲。
 ms.assetid: 78e17048-a4a5-47d3-b250-19375b6f186c
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, xaml, 螢幕旋轉, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: be3f8e57a592512335a826c142876d1ff3c53e5b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 432e7716363f6a51254e1476dac38f713c94fb69
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557218"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712214"
 ---
 # <a name="add-features-to-directx-games"></a>在 DirectX 遊戲中新增功能
 

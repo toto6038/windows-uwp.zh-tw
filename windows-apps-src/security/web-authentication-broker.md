@@ -2,18 +2,16 @@
 title: Web 驗證代理人
 description: 本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 88210182f46fa8149e4b2d0278d7df89033e62b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8781cbffcb8d5c433c58865fba38cd65369b5c49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557824"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707360"
 ---
 # <a name="web-authentication-broker"></a>Web 驗證代理人
 

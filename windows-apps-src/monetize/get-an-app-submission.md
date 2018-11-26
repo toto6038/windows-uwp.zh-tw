@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: BF296C25-A2E6-48E4-9D08-0CCDB5FAE0C8
 description: 在 Microsoft Store 提交 API 中使用這個方法，取得現有 App 提交的資料。
 title: 取得 App 提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10,UWP, Microsoft Store 提交 API, 應用程式提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 66c220e76cd032f4cf36f0d4ae88c01485f31163
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca13ff36db823bfea44fa9e31c20a621c5b8aa2e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558502"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692213"
 ---
 # <a name="get-an-app-submission"></a>取得 App 提交
 

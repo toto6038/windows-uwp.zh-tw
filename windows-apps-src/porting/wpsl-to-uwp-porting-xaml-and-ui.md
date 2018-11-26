@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從 WindowsPhone Silverlight 轉譯至通用 Windows 平台 (UWP) 應用程式。
 title: 移植 WindowsPhone Silverlight XAML 與 UI 到 UWP
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d219a09ccca74c9fc513b7510c40ce0b90ad9f52
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 153d73a75b48d61cb490a903c6657c42638c6674
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553805"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707139"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>移植 WindowsPhone Silverlight XAML 與 UI 到 UWP
 

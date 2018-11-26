@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: 如何在 UWP app 中使用連絡人和行事曆資訊。
 title: 連絡人和行事曆
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
-ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, contacts, calendar, appointments, email messages, 連絡人, 行事曆, 約會, 電子郵件訊息
 ms.localizationpriority: medium
-ms.openlocfilehash: c020a871863df6fac3dabc3ffab4bafc57227b50
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2ccf75796140723270e49a7b967ce234d41baf1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571400"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720294"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡人、朋友圈及行事曆
 

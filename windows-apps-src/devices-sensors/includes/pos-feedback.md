@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: 支援與意見反應
 description: 支援和意見反應包含檔案
-ms.author: jken
 ms.date: 06/12/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: 6decdd4325a1c3cf854e340799b9d2f4a3272e6c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 869ee88eea6161f8d308f2e5cd72773dc7162b0b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7583954"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7721844"
 ---
 ## <a name="support-and-feedback"></a>支援與意見反應
 

@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 description: 了解如何在您的應用程式中使用印刷樣式，以協助使用者輕鬆了解內容。
 title: UWP app 中的印刷樣式
-ms.author: mijacobs
 ms.date: 04/06/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3763581c06ef9dc416fde41599e8b041b3c32096
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0943273dab239669be75b30070222d698246aa41
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557324"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698667"
 ---
 # <a name="typography"></a>印刷樣式
 

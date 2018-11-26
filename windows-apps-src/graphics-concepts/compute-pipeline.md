@@ -2,18 +2,16 @@
 title: 計算管線
 description: Direct3D 計算管線主要設計用來處理大部分可與圖形管線平行進行的計算。
 ms.assetid: 355B66C6-C0DF-47BA-A9C9-7AFA50B5B614
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 91c95019c327f39a58a7397a66f9d4bbc88f843d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 911546f1c2973a79aea4b597a47352149a4e4210
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575514"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720314"
 ---
 # <a name="compute-pipeline"></a>計算管線
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: 本文示範如何從通用 Windows app 將媒體傳播到遠端裝置。
 title: 媒體傳播
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: da0bb4d25166dd62372d5902ff89221d20189c22
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562740"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698517"
 ---
 # <a name="media-casting"></a>媒體傳播
 
@@ -79,7 +77,7 @@ ms.locfileid: "7562740"
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
+在 **ErrorOccurred** 和 **StateChanged** 事件處理常式中，您應該更新 UI 讓使用者知道目前的傳播狀態。 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
@@ -147,7 +145,7 @@ In the **ErrorOccurred** and **StateChanged** event handlers, you should update 
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
+在 **ErrorOccurred** 事件的處理常式中，更新 UI 讓使用者知道發生傳播錯誤，並取消選取清單方塊中目前的 **CastingDevice** 物件。
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 

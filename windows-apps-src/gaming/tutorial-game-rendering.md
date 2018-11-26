@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 設定
 description: 了解如何組合轉譯管線來顯示圖形。 遊戲轉譯、設定及準備資料。
 ms.assetid: 7720ac98-9662-4cf3-89c5-7ff81896364a
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: 134c9005a796f52fb61ba628c0a85c8dbd875442
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567282"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712893"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>轉譯架構 II：遊戲轉譯
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: 本文說明如何在通用 Windows 平台 (UWP) 應用程式中的 XAML 頁面快速顯示相機預覽串流。
 title: 顯示相機預覽
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b258569b707f50051eaa266e2cae5b9971894cf3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 24b2885597599607ca405e858a9f713f5a6af4c7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559144"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720384"
 ---
 # <a name="display-the-camera-preview"></a>顯示相機預覽
 

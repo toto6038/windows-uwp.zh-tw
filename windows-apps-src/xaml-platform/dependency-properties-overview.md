@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 這個主題說明當您使用 C++、C# 或 Visual Basic 搭配 UI 的 XAML 定義來撰寫 Windows 執行階段應用程式時，可供使用的相依性屬性系統。
 title: 相依性屬性概觀
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5fbf6e7ee8a224a6957428fddd11a2922adbecf4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566257"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712184"
 ---
 # <a name="dependency-properties-overview"></a>相依性屬性概觀
 

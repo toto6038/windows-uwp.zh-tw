@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 使用慣性修飾詞建立貼齊點
 description: 了解如何使用 InteractionTracker 的 InertiaModifier 功能來建立貼齊至指定點的動作體驗。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10、uwp、動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 20c10b1cc621da834a8a7c411e75eb92b1944b5a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f99ebc4b98c87a4bc6d77fd2c626f481563e50c5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562407"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712343"
 ---
 # <a name="create-snap-points-with-inertia-modifiers"></a>使用慣性修飾詞建立貼齊點
 

@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: Select the base price for an app and schedule price changes. You can also customize these options for specific markets.
 title: 設定與排程應用程價格
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 定價, App 定價, App 價格, 銷售應用程式, 價格變更, 自訂價格, 價格, 定價, 成本, 覆寫基本價格, 自由格式價格, 自由格式
 ms.localizationpriority: medium
-ms.openlocfilehash: 372abfdb0de5567b7c7d262b298d264b086fe339
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d901ec630c680adfaa637d5555fc2182749bec89
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579516"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720274"
 ---
 # <a name="set-and-schedule-app-pricing"></a>設定與排程應用程價格
 

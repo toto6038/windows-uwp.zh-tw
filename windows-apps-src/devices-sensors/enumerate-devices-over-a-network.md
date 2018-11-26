@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: E0B9532F-1195-4927-99BE-F41565D891AD
 title: 列舉網路上的裝置
 description: 除了探索本機連線的裝置，您也可以使用 Windows.Devices.Enumeration API 來列舉無線及網路通訊協定上的裝置。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f8d4314d67828fa30007d3b8af4c4e1d06c154
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e80d16b3338291c756b543018812e9db1370a4ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567534"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698327"
 ---
 # <a name="enumerate-devices-over-a-network"></a>列舉網路上的裝置
 

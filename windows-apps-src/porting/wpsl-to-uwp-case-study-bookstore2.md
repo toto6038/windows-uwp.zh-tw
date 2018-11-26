@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
 description: 這個案例研究，根據 Bookstore 中提供的資訊，顯示分組資料在 LongListSelector 中的 WindowsPhone Silverlight 應用程式的開頭。
 title: WindowsPhone Silverlight 至 UWP 案例研究： Bookstore2
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e518439ddd4e131c2d045f4467670b42a392fca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577489"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719540"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight 至 UWP 案例研究： Bookstore2
 
@@ -275,8 +273,8 @@ ms.locfileid: "7577489"
 當我們將 **CollectionViewSource.Source** 繫結至 Authors 時，我們唯一要傳達的就是 Authors 中的每個 Author 都是一個 *「某種東西」* 的群組。 我們將它留給 **CollectionViewSource** 去判斷，而在此案例中，Author 是一個 BookSku 群組。 這樣行得通：但是不具彈性。 如果我們希望 Author 能夠 *「既是」* 一個 BookSku 群組 *「也是」* 該作者居住過之地址的群組，該怎麼辦？ Author 無法同時 *「是」* 這兩個群組。 但是 Author 可以 *「有」* 任何數目的群組。 而這就是方案：使用 *「有一個群組」* 模式來取代或補充我們目前使用的 *「是一個群組」* 模式。 方法如下：
 
 -   變更 Author，讓它不再衍生自 **List&lt;T&gt;**。
--   將下列欄位新增至 Author：`private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
--   將下列屬性新增至 Author：`public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
+-   新增到此欄位 
+-   新增到這個屬性 
 -   當然，我們可以重複上述兩個步驟，依所需的數目將多個群組新增至 Author。
 -   將 AddBookSku 方法的實作變更為 `this.BookSkus.Add(bookSku);`。
 -   既然 Author 已至少 *「有」* 一個群組，我們需要向 **CollectionViewSource** 傳達它應該使用這些群組當中的哪一個群組。 若要這樣做，請將這個屬性新增至 **CollectionViewSource**： `ItemsPath="BookSkus"`

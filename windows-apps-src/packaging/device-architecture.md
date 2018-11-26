@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 應用程式套件架構
 description: 深入了解在建置 UWP app 套件時您應使用哪種處理器架構。
-ms.author: lahugh
 ms.date: 7/13/2017
 ms.topic: article
 keywords: Windows 10, uwp, 封裝, 架構, 套件設定
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e265df32a8c4168cddced905e7b0712e4601264
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 15b1b8531390cf1b83c15e0aec1d371266417a87
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573292"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712688"
 ---
 # <a name="app-package-architectures"></a>應用程式套件架構
 

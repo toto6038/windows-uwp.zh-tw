@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 移植頂點緩衝區與資料
 description: 在這個步驟中，您將定義包含網格的頂點緩衝區，以及允許著色器以特定順序周遊頂點的索引緩衝區。
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, port, vertex buffers, data, direct3d, 遊戲, 連接埠, 頂點緩衝區, 資料, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: b32747a4e11d258f71d4e55e41b7f54bb5e99246
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c961a8852fb1e03e4e86209f62bda821b980f8c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558588"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712265"
 ---
 # <a name="port-the-vertex-buffers-and-data"></a>移植頂點緩衝區與資料
 

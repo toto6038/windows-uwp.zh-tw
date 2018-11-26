@@ -1,18 +1,16 @@
 ---
-author: WilliamsJason
 title: 裝置入口網站控制器 API 參考
 description: 了解如何取得附加實體控制器數目，並以程式設計方式將它們關閉。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5e0b85293ada8619246c3c23ef2103ead5f40c23
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561962"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707045"
 ---
 # <a name="controller-api-reference"></a>控制器 API 參考   
 您可以使用此 REST API 取得附加實體控制器數目，並以程式設計方式將它們關閉。

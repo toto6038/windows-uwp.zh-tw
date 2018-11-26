@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
 title: App 啟動效能的最佳做法
 description: 透過改善處理啟動和啟用的方式，建立具有最佳啟動時間的通用 Windows 平台 (UWP) app。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 25ddcc6c9ceaecd858733a0222c22c18682041b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9d0fdee4ba9f44f15c461e5a53dad28700023a4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575936"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720144"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 

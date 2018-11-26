@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: 了解如何處理 Microsoft Advertising 程式庫中 AdControl 類別所產生的錯誤。
 title: 處理廣告錯誤
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript, XAML, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: a9fa05ed2ee946fcec9ffb5ff21abd9011db0f2a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a6c14ecf8e8909ab6cd95a54ca8144fbf8a8d912
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577374"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712482"
 ---
 # <a name="handle-ad-errors"></a>處理廣告錯誤
 
@@ -29,7 +27,7 @@ ms.locfileid: "7577374"
 
 2. 為事件處理常式委派撰寫程式碼，以使其使用兩個參數：一個適用於寄件者的 **Object** 和一個 [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) 物件。
 
-Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.
+以下範例會將名為 **OnAdError** 的委派指派給名為 *myBannerAdControl* 的 **AdControl** 物件之 **ErrorOccurred** 事件。
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -53,13 +51,13 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 ## <a name="javascripthtml-apps"></a>JavaScript/HTML app
 
-To handle **ErrorOccur** errors in a JavaScript app:
+處理 JavaScript 應用程式中的 **ErrorOccur** 錯誤：
 
-1.  Assign the **onErrorOccurred** event to an event handler.
+1.  指派 **onErrorOccurred** 事件給事件處理常式。
 
 2.  為事件處理常式撰寫程式碼。
 
-Here is an example that assigns an event handler named **errorLogger** to the **ErrorOccurred** event of an **AdControl** object.
+以下範例會將名為 **errorLogger** 的事件處理常式指派給 **AdControl** 物件的 **ErrorOccurred** 事件。
 
 > [!div class="tabbedCodeSnippets"]
 ``` html
@@ -73,7 +71,7 @@ Here is an example that assigns an event handler named **errorLogger** to the **
 
 錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
 
-Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.
+以下是處理 **onErrorOccurred** 事件且名為 **errorLogger** 之錯誤處理函式的範例。
 
 > [!div class="tabbedCodeSnippets"]
 ``` javascript

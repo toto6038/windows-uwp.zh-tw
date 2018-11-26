@@ -4,17 +4,15 @@ description: 光線屬性描述光線類型 (點、方向、聚光燈)、衰減�
 ms.assetid: E832C3FD-9921-41C4-87B8-056E16B61B77
 keywords:
 - 光線屬性
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 07a465d8fdcd1d425ed62e8d83cadd261f316da2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 86b8627461251a5d43762facc18c8a414a117fc9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553615"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695288"
 ---
 # <a name="light-properties"></a>光線屬性
 

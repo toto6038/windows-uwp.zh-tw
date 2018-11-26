@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: EE0C1B28-EF9C-4BD9-A3C0-BDF11E75C752
 description: 本文說明 UWP app 如何偵測及回應音訊資料流層級的系統起始變更。
 title: 偵測及回應音訊狀態變更
-ms.author: drewbat
 ms.date: 04/03/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f7b4addf2a7bdc2d93cbcf64f13a640a4ef5b12a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 69eeb82fd9a1e043e99b7fe0d635ca750779eda5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572874"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706679"
 ---
 # <a name="detect-and-respond-to-audio-state-changes"></a>偵測及回應音訊狀態變更
 從 Windows 10 版本 1803 開始，您的應用程式可偵測系統何時將您應用程式使用之音訊的音量降低或設為靜音。 您可以收到關於擷取和轉譯串流、特定音訊裝置和音訊類別，或您的應用程式用於播放媒體之 [**MediaPlayer**](https://docs.microsoft.com/en-us/uwp/api/Windows.Media.Playback.MediaPlayer) 物件的相關通知。 例如，系統可能會在鬧鈴響起時，降低 (或者「迴避」) 音訊播放音量。 如果您的應用程式未在應用程式資訊清單中宣告 *backgroundMediaPlayback* 功能，當您的應用程式進入背景時，系統會將其設為靜音。 

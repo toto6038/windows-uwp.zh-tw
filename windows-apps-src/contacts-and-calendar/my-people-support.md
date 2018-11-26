@@ -1,18 +1,16 @@
 ---
 title: 新增朋友圈支援至應用程式
 description: 說明如何將朋友圈支援新增至應用程式，及如何釘選與取消釘選連絡人
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 33e567db01916367c8ea30d98e59f421581ac7aa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9a486f27d390a651cec0dcad82246a858bab2f33
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574723"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720244"
 ---
 # <a name="adding-my-people-support-to-an-application"></a>新增朋友圈支援至應用程式
 

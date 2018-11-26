@@ -4,17 +4,15 @@ description: 要進行 Direct3D 應用程式的程式設計，就需要在工作
 ms.assetid: E82EB0A9-0678-496B-96B3-8993BA580099
 keywords:
 - 座標系統與幾何
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ce3b1ebfc2f18a06ff4fa960c91749f61f5011d9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 962002d635c3e6edbf1f9581a4cbc57fbd5b1d96
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553159"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696724"
 ---
 # <a name="coordinate-systems-and-geometry"></a>座標系統與幾何
 

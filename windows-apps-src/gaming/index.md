@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 遊戲程式設計
 description: 通用 Windows 平台 (UWP) 提供建立遊戲、發佈遊戲以及從遊戲中獲利的嶄新商機。 了解開始新的遊戲或移植現有的遊戲。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.author: mtoepke
 ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, games, directx, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 1642251ac7019d8bdf0216487eb7085d616863cf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2dddead7dcc2eedbe4e32fa4bfd749bed60ba796
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565549"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712863"
 ---
 # <a name="game-programming"></a>遊戲程式設計
 

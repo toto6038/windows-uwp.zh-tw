@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
 title: 將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e15014e39ed6d980cbe80daa0a129ff83a021b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574431"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694095"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 

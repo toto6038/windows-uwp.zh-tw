@@ -1,19 +1,17 @@
 ---
-author: Karl-Bridge-Microsoft
 ms.assetid: ''
 title: UWP 應用程式中的支援連結
 description: 在您的 UWP 應用程式中新增筆跡支援的逐步教學課程。
 keywords: 筆跡, 教學
-ms.author: kbridge
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 62c62aacd894163ef2c65b9ddfe6d8299733a2e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc650c1f81fbcac5b62b090a6dc58b5f8709cd7a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579106"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720404"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教學︰在 UWP app 中支援筆跡
 

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 使用本節的 C# 程式碼範例，深入了解如何使用 Microsoft Store 提交 API 來提交遊戲選項和預告片。
 title: C# 範例 - 提交含遊戲選項與預告片的應用程式
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 61d2a919d6bebcb1807d8084dda39a2e6d660ca5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 041f07fd6b24af3658bc9cfffe07117e4b353831
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567052"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7720094"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\# 範例：提交含遊戲選項與預告片的應用程式
 

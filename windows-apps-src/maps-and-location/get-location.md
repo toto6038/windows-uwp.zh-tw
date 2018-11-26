@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 取得使用者的位置
 description: 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
-ms.author: pafarley
 ms.date: 11/28/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 定位功能
 ms.localizationpriority: medium
-ms.openlocfilehash: 2187bafa9fd2b4fdce049f3ef11d4e6766613de3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564325"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706855"
 ---
 # <a name="get-the-users-location"></a>取得使用者的位置
 

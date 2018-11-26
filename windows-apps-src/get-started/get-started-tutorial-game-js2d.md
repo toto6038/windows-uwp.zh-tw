@@ -1,19 +1,17 @@
 ---
 title: 使用 JavaScript 建立 UWP 遊戲
 description: 簡單的 UWP Microsoft 網上商店，以 JavaScript 和 CreateJS 撰寫遊戲
-author: GrantMeStrength
-ms.author: jken
 ms.date: 02/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 597451826958c355dad9f9380dbdc1264bc87883
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574168"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696512"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 

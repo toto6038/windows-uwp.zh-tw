@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 通用 Windows 平台 (UWP) app 中的多重取樣
 description: 了解如何在以 Direct3D 建立的通用 Windows 平台 (UWP) 應用程式中使用多重取樣。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 多重取樣, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b967ae1709849bbe5bc944b00d9e30f22052aeb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0c1634af8589a97f5070ff85909fe12ab16bf8d6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558785"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712903"
 ---
 # <a name="span-iddevgamingmultisamplingmulti-sampleantialiasinginwindowsstoreappsspan-multisampling-in-universal-windows-platform-uwp-apps"></a><span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span>通用 Windows 平台 (UWP) app 中的多重取樣
 

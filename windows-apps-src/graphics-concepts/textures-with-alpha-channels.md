@@ -4,17 +4,15 @@ description: 有兩種方式可以對呈現較複雜透明度的紋理貼圖進�
 ms.assetid: 768A774A-4F21-4DDE-B863-14211DA92926
 keywords:
 - 使用 Alpha 色板的紋理
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: eef41642d371f3a8be451c2687eee007608c3b2e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88d150383d2be219e7f382e0e690771acbc9d2ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580253"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719517"
 ---
 # <a name="textures-with-alpha-channels"></a>使用 Alpha 色板的紋理
 

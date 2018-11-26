@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 開發教育用 App。
 description: 本節說明可供您撰寫 Windows10 平台教育用 App 的通用 Windows App 資源。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，教育版
 ms.assetid: 2431f253-efe3-4895-b131-34653b61f13c
 ms.localizationpriority: medium
-ms.openlocfilehash: d55aaab22ff51112ca69d1ead72e31468d7fb1ab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7696cd785b4a8720f6eefb7bc897d13ffb0c7115
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569604"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694321"
 ---
 # <a name="develop-universal-windows-apps-for-education"></a>開發教育用通用 Windows App
 ![「 進行測驗應用程式螢幕擷取畫面](images/take-a-test-screen-small.png)

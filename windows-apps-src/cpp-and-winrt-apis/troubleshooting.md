@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 無論您是剪下新的程式碼或移植現有的應用程式，本主題中的疑難排解問題和解決方式表格可能對您會很有幫助。
 title: 疑難排解 C++/WinRT 問題
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: f1a25b606def215defb8be0e0a38c628349f2440
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 120d5c8014ce9ac3cab9b2dfb1d778173f2434c4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569373"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695007"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>疑難排解 C++/WinRT 問題
 

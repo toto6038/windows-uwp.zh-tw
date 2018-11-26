@@ -1,19 +1,17 @@
 ---
-author: jnHs
 ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
 title: 管理帳戶設定與設定檔資訊
 description: 您可以檢視並更新您的開發人員帳戶設定與合作夥伴中心的帳戶設定] 區段中的設定檔資訊。
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: medium
-ms.openlocfilehash: 0acbf8378d2cffa7c083e1da06ed0775df69d60e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f1b1b5a5a575df5874e6942a8eff27632cb49921
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570258"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7719847"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 

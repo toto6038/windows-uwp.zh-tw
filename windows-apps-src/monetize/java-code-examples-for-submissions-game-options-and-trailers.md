@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 使用本節的 Java 程式碼範例，深入了解如何使用 Microsoft Store 提交 API 來提交遊戲選項和預告片。
 title: Java 範例 - 提交含遊戲選項與預告片的應用程式
-ms.author: mhopkins
 ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, java
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e8c9c18840b15efa3aeea7e04ea0546c623fd37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 974bbc4c864edb9450f9ba677c60349b5e1f8ece
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561471"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712635"
 ---
 # <a name="java-sample-app-submission-with-game-options-and-trailers"></a>Java 範例：提交含遊戲選項與預告片的應用程式
 

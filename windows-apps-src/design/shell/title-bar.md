@@ -1,20 +1,18 @@
 ---
-author: jwmsft
 description: 自訂傳統型應用程式的標題列以符合應用程式的特質。
 title: 標題列自訂
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 標題列
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ebe590f98afef031ab183589fc7dcfc29cd9493
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 88c613456525648883735850fe831cb3b67f145c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557360"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698487"
 ---
 # <a name="title-bar-customization"></a>標題列自訂
 

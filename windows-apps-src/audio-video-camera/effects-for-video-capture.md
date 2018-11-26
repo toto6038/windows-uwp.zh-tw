@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: 本主題說明如何將效果套用到相機預覽和錄製中的視訊串流，並示範如何使用影像防震效果。
 title: 視訊擷取的效果
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d427a532e9821b81b6f23d08babecd692c8c95e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e9960e66c6bcdd7105e201d48e2317de4a39a19a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557069"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695981"
 ---
 # <a name="effects-for-video-capture"></a>視訊擷取的效果
 

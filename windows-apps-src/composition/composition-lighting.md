@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: 組合光源
 description: 組合光源 Api 可用來將動態 3D 光源新增到您的應用程式。
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c5c7bfcb06eb673b0516cef7882685ebd19ddb97
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d8c33504fcc785aa2f1fc94796e47fe097fbea96
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573072"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706718"
 ---
 # <a name="using-lights-in-windows-ui"></a>使用 Windows UI 中的光源
 

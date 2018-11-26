@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 設定 XAML 編譯，以在標記與程式碼後置之間加入部分類別。 程式碼部分類別定義在獨立的程式碼檔案中，標記部分類別則是在 XAML 編譯期間透過程式碼產生所建立的。
 title: xClass 屬性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6746969b1b717183894d6b941be41c9aca452960
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8eb1238499355cf37b3f5113dbb10c456de55961
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573746"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694787"
 ---
 # <a name="xclass-attribute"></a>x:Class 屬性
 

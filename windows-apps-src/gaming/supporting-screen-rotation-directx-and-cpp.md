@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 支援螢幕方向 (DirectX 和 C++)
 description: 在這裡，我們將討論您的 UWP DirectX app 中處理螢幕旋轉的最佳做法，以便在 windows 10 裝置的圖形硬體使用有效且更有效率。
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 螢幕方向, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ed8739f8ba7b2049af154d458ccaa831b8526a5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574013"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712542"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>支援螢幕方向 (DirectX 和 C++)
 
