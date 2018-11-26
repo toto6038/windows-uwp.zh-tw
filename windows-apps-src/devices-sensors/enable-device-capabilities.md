@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
 title: 啟用裝置功能
 description: 本教學課程描述如何在 Microsoft Visual Studio 中宣告裝置功能。 這可以讓您的應用程式使用相機、麥克風、定位感應器及其他裝置。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a7250c41795373b089f7a4c76b603c169b1e4dc3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e1a2884cd3db458685ebdd393c31aed88ee36a35
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553545"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693089"
 ---
 # <a name="enable-device-capabilities"></a>啟用裝置功能
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: App 物件和 DirectX
 description: 使用 DirectX 的通用 Windows 平台 (UWP) 遊戲不會使用很多 Windows UI 使用者介面元素和物件。
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, DirectX 應用程式物件
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e29a19410915836be3c54c0dc04a6d7dc29ceeb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e12ad6ce221440e8840006b3883980721b899ae6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555753"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693149"
 ---
 # <a name="the-app-object-and-directx"></a>App 物件和 DirectX
 

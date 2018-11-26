@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
 title: 感應器
 description: 感應器可讓 app 得知裝置與周遭實際環境之間的關係。 感應器會將裝置的方向、指向及動作告知您的 app。
-ms.author: mukin
 ms.date: 06/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e05c18bd2c8fa2ddd7d6a9bc8e474d02f27a93e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c29673a0b41b4f071d438f0c03255c2d73831dc5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578899"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693269"
 ---
 # <a name="sensors"></a>感應器
 

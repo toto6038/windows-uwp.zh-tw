@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 這個主題說明在大多數 XAML 檔案的根元素中找到的 XML/XAML 命名空間 (xmlns) 對應。 它也說明如何為自訂類型和組件產生類似的對應。
 title: XAML 命名空間與命名空間對應
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a1aebe3d9aac460d444a5dffcd63142300c022b7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582208"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693189"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空間與命名空間對應
 

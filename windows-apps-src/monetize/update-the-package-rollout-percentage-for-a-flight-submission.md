@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來更新套件正式發行前小眾測試版提交的套件推出百分比。
 title: 更新正式發行前小眾測試版提交的推出百分比
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 提交 API, 套件推出, 正式發行前小眾測試版提交, 更新, 百分比
 ms.assetid: ee9aa223-e945-4c11-b430-1f4b1e559743
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b65f4071fb9a05754ef68d98b8e2da1435c0153
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 025db5cb0beb36a5b4a3ca1b765b5da3434c9d7a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559297"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692459"
 ---
 # <a name="update-the-rollout-percentage-for-a-flight-submission"></a>更新正式發行前小眾測試版提交的推出百分比
 

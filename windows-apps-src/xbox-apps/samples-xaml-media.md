@@ -1,10 +1,11 @@
 ---
-author: Mtoepke
-ms.openlocfilehash: 387732c923f67fec75ce3944cc05d39224892db4
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 346efcc8f6c6992fa7cbfa6dd5c842f15df8a069
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210344"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694416"
 ---
 #<a name="xaml-samples-for-media-apps"></a>媒體應用程式的 XAML 範例
 

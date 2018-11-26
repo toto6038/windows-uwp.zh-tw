@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 追蹤最近使用的檔案和資料夾
 description: 將使用者經常存取的檔案新增到您應用程式的最近使用清單 (MRU) 中，以追蹤這些檔案。
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 12b8a6462f6cc39ba85cddfaa7a92212955a79f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a810c097b4f162395106e74b68d5e9cdb2f8538
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559654"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691769"
 ---
 # <a name="track-recently-used-files-and-folders"></a>追蹤最近使用的檔案和資料夾
 

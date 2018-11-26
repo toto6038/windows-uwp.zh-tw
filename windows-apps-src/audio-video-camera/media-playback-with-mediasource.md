@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: 本文示範如何使用 MediaSource 提供一個常見的方法來參考和播放來自不同來源 (例如本機或遠端檔案) 的媒體，並且公開一個常見的模型來存取媒體資料 (不論使用什麼基礎媒體格式)。
 title: 媒體項目、播放清單與曲目
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 73b6a19e2385f1a9b8afa4672df50d17ac16ec97
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3c3929c2b3765bd90dbe0be687834e94b4f222fc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557460"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695951"
 ---
 # <a name="media-items-playlists-and-tracks"></a>媒體項目、播放清單與曲目
 

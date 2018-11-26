@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
 title: 關於使用行止動線追蹤功能的指導方針
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
-ms.author: pafarley
 ms.date: 05/18/2017
 ms.topic: article
 keywords: windows 10, uwp, 地圖, 位置, geovisit, geovisits
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a78b2689a10dff50696e5e65cc44f79a6f1ea7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575488"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691479"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>關於使用行止動線追蹤功能的指導方針
 

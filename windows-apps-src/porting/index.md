@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: 本章節描述如何將您現有的應用程式至通用 Windows 平台 (UWP) 您可以在其中建立單一的 windows 10 應用程式套件，可供客戶安裝至各種類型的裝置。 您的 app 將可受益於令人興奮的新硬體、絕佳的賺錢機會、現代化 API 集、彈性 UI 控制項，以及各種輸入形式 (包括滑鼠/鍵盤、觸控及語音)。
 title: 將 app 移植到 windows 10
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5c6ae373e4e35e640223fe08a5a49f2e7a5dd3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: eefebbd7087070f85ead09e562f154f43ed49e37
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580847"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692789"
 ---
 # <a name="porting-apps-to-windows10"></a>將 app 移植到 windows 10
 

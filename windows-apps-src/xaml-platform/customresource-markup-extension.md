@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 透過評估源自於自訂資源查詢實作的資源參考，為所有 XAML 屬性提供一個值。 資源查詢由 CustomXamlResourceLoader 類別實作執行。
 title: CustomResource 標記延伸
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fb88fc3a764a89dfe7ac8a9c399149b6b98eca5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7eabcb188aa1687d36d4b4e6f432783aa68969de
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579655"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696413"
 ---
 # <a name="customresource-markup-extension"></a>{CustomResource} 標記延伸
 

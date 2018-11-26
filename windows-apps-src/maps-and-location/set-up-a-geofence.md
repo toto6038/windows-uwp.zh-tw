@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 設定地理柵欄
 description: 在您的 app 中設定地理柵欄，並了解如何在前景和背景中處理通知。
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e9fa71b3d6ae002aa37e14e23b55793876156c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556000"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691327"
 ---
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 

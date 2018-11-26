@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 建立和顯示基本網格
 description: 3D 通用 Windows 平台 (UWP) 遊戲一般會使用多邊形來呈現遊戲中的物件與表面。
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 網格, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: e3ae6416217efa16d70b65b8ff55e36654a11557
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3b6717c0b2d9d85e9c81e78fcaa1df1abbea23b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555320"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693608"
 ---
 # <a name="create-and-display-a-basic-mesh"></a>建立和顯示基本網格
 

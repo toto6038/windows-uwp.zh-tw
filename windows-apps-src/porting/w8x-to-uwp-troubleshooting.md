@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 強烈建議您將此移植指南從頭到尾讀一遍，但是我們也了解您急著想要儘快進入建置及執行專案的階段。
 title: 將 Windows 執行階段 8.x 移植到 UWP 的疑難排解
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 98bb74f2c37e91d5b7d9b02a5733b42877769c54
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7c31d414bab1e551b418a1ff653678665d66aea5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566509"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694115"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>將 Windows 執行階段 8.x 移植到 UWP 的疑難排解
 

@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: 4c03e06b-c12c-f64f-c53f-b38716101822
 title: Xbox Live 頁面 （開發人員首頁）
 description: 提供有關 Xbox Live 開發人員首頁應用程式的頁面的 Xbox One 的資訊。
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-live.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 96f22cb971f5c8266653a6b3c3f4bcc7dd61546d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c72137b8419526b65dc3c6cb75a511a7a6f50a82
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574494"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693975"
 ---
 # <a name="xbox-live-page-dev-home"></a>Xbox Live 頁面 （開發人員首頁）
    

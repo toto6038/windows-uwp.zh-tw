@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
 title: 檔案、資料夾和媒體櫃
 description: 了解如何讀取和寫入應用程式設定、檔案和資料夾選擇器，以及特殊的沙箱式位置，例如影片/音樂媒體櫃。
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 80c6292c12568d7f1017ca67707689ce9539c804
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 241ee0de885dd1b2e40b6ce51c21312dbcb9f655
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566742"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692137"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 

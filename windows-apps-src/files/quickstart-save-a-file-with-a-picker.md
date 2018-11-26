@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: 使用選擇器儲存檔案
 description: 使用 FileSavePicker，讓使用者指定想要您的應用程式儲存檔案的名稱和位置。
-ms.author: lahugh
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2a053047324fcb795a30951d70c5e0e78fbb5547
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a7e278df29a531e5bf1d0d92946cd0199f85515d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556877"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691549"
 ---
 # <a name="save-a-file-with-a-picker"></a>使用選擇器儲存檔案
 

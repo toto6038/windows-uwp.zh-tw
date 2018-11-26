@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: 建立 Hello World 應用程式，在 C + + /CX (windows 10)
 description: 透過 Microsoft Visual Studio2017，您可以使用 C + + /CX 來開發上 windows 10，包括在執行 windows 10 手機上執行的應用程式。 這些應用程式具有使用 Extensible Application Markup Language (XAML) 所定義的 UI。
-ms.author: jken
 ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: bc2258557c492956130424069e6e0c4b73f28056
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574298"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7712383"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>建立"Hello world"應用程式在 C + + /CX
 

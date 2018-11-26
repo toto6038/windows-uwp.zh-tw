@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: 了解如何新增應用程式識別碼和廣告單元識別碼值從合作夥伴中心，您的應用程式送出 app 到市集之前，先。
 title: 在您的應用程式中設定廣告單元
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告單元, 測試
 ms.localizationpriority: medium
-ms.openlocfilehash: 11c66756d95e041a45fbc075b02eb744bf542871
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b2d01434e508d4a5067ffd66bdf86b3083b43016
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575250"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692429"
 ---
 # <a name="set-up-ad-units-in-your-app"></a>在您的應用程式中設定廣告單元
 

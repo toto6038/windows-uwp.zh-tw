@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 使用應用程式安裝程式檔案安裝相關集合
 description: 在本節中，我們將檢閱您允許透過應用程式安裝程式安裝相關集合所需採取的步驟。 我們還會逐步完成建構定義相關集合之 *.appinstaller 檔案的步驟。
-ms.author: lahugh
 ms.date: 1/4/2018
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 4caf4333bb3d442779aedac2028b0996cbd17645
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c90fffeee7003159f58cf2e108286f4fe7732fd6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576462"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692589"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用應用程式安裝程式檔案安裝相關集合
 

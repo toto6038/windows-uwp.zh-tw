@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 設計無障礙遊戲
 description: 了解如何設計無障礙遊戲。 使用包容性遊戲設計原則來取得遊戲協助工具。
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
-ms.author: joanlee
 ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, 協助工具, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 79426a302be59af73536081cd13e14cad4facbe3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 489804c4645c8e6d1c4926e362f81926c8b2f3c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556667"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691749"
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 

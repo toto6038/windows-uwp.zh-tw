@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 選擇 UWP 版本
 description: 在 Microsoft Visual Studio 中撰寫 UWP app 時，您可以選擇要以哪個版本為目標。 了解不同 UWP 版本之間的差異，以及如何在新的及現有的專案中設定您的選項。
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e2b241d0369d50e600a5497811ac7d4bbb823bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582228"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691892"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 

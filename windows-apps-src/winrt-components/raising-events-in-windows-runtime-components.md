@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 在 Windows 執行階段元件中引發事件
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 如何引發使用者定義的委派類型在背景執行緒上的事件，如此 JavaScript 能夠接收事件。
-ms.author: misatran
 ms.date: 07/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dddd170f5f056de18c4729b6b6b5b4b6cbcea7b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 851f8a25055c90dfd592d5a68c733258bcd5f7b5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570178"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692819"
 ---
 # <a name="raising-events-in-windows-runtime-components"></a>在 Windows 執行階段元件中引發事件
 > [!NOTE]

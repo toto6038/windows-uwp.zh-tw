@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 處理 app 暫停
 description: 了解如何在系統暫停您的應用程式時，儲存重要的應用程式資料。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 7cb93c410f583884f75f21d9beda03db87c024f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e765faeabc754581efc769804e2daf4bfe7f9671
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561695"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695097"
 ---
 # <a name="handle-app-suspend"></a>處理應用程式暫停
 

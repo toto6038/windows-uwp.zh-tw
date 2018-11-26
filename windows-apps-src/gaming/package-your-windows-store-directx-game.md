@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
 description: 大型通用 Windows 平台 (UWP) 遊戲很容易會膨脹成更大型的遊戲，尤其是支援多國語言，並具有特定區域資產或功能選用高解析度資產的遊戲。
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, directx, package, 遊戲, 套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 252f67a3cb307f10b1a973a17144f211c9c676b0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555600"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692167"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
 

@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 啟動遠端裝置上的 App
 description: 了解如何使用專案 Rome 啟動遠端裝置上的應用程式。
-ms.author: pafarley
 ms.date: 02/12/2018
 ms.topic: article
 keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
-ms.openlocfilehash: cbd548e0c591c679ecfbee88793c51e2a2ca2b37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565857"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691709"
 ---
 # <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
 

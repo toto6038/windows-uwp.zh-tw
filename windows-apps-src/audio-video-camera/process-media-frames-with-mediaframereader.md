@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: a128edc8-8a80-4645-ac29-908ede2d1c72
 description: 本文章示範如何使用 MediaFrameReader 搭配 MediaCapture，從一或多個可用來源取得媒體畫面。來源包括色彩、深度及紅外線相機、音訊裝置，甚至是自訂畫面來源 (例如，能產生骨骼追蹤畫面的來源)。
 title: 使用 MediaFrameReader 處理媒體畫面
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d4c752438af3425fffc69ecf71ff0dc8abe5963
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554709"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706669"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 

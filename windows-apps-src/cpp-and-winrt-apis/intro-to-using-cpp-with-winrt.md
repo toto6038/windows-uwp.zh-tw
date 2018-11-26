@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: C++/ WinRT&mdash;Windows 執行階段 API 的標準 C++ 語言投影的簡介。
 title: C++/WinRT 的簡介
-ms.author: stwhi
 ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b88eac972cd65b771827d7e3125476265cf671e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b92d0def08267c36497f0afd24d23308bc4a2e85
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554603"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695130"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;

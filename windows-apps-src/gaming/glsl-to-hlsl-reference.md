@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: GLSL-to-HLSL 參考
 description: 當您將圖形架構從 OpenGL ES 2.0 移植到 Direct3D 11 以建立通用 Windows 平台 (UWP) 遊戲時，也必須將 OpenGL 著色器語言 (GLSL) 程式碼移植到 Microsoft 高階著色器語言 (HLSL) 程式碼。
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, GLSL, HLSL, OpenGL, DirectX, 著色器
 ms.localizationpriority: medium
-ms.openlocfilehash: 30c925f9ebb07d578147dfba373fdeb3baa364fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f468584d995de40ff14df1527ab1df8275c36a8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580575"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691952"
 ---
 # <a name="glsl-to-hlsl-reference"></a>GLSL-to-HLSL 參考
 

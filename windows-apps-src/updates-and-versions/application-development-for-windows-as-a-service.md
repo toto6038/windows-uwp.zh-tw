@@ -1,19 +1,17 @@
 ---
 title: 「Windows 即服務」應用程式開發
 description: 將 App 發行與支援從特定的 Windows 組建中分離。
-author: GrantMeStrength
-ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
 ms.localizationpriority: medium
-ms.openlocfilehash: 536679068d66a279e158790bf0fcc0f8757709cc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0a0bef4496e9b6aa327a8da404e88bcbd791e70
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579357"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694689"
 ---
 # <a name="application-development-for-windows-as-a-service"></a>「Windows 即服務」應用程式開發
 

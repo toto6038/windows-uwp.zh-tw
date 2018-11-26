@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 啟動 app 以取得結果
 description: 了解如何從某個應用程式啟動另一個應用程式，以及在這兩者間交換資料的方式。 這稱為「啟動應用程式以取得結果」。
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fbbe1978cc59afcc7d681331dadc9a06e3eb2d0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f627cf2a897de32aea0e35faf66f5ea70695efd5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557701"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694997"
 ---
 # <a name="launch-an-app-for-results"></a>啟動應用程式以取得結果
 

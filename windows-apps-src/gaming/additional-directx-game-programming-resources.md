@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 遊戲程式設計資源
 description: 如需關於 Windows 遊戲程式設計的詳細資訊，請查看下列資源。
 ms.assetid: b84dd17a-756b-2369-8fee-f1ec7d865239
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 程式設計
 ms.localizationpriority: medium
-ms.openlocfilehash: d201caefedca0d810f78d893ea779bd6b814f007
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d75495f75459122f5a5b01d7a82450c72cd2bb1c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557168"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692959"
 ---
 # <a name="game-programming-resources"></a>遊戲程式設計資源
 

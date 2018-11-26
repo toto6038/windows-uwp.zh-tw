@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 title: 為您的 UWP app 設定自動化組建
 description: 如何設定您的自動化組建以產生側載及/或儲存套件。
-ms.author: hickeys
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
-ms.openlocfilehash: 775e780be823b6e7b80eda9f488d69fe4fc29edf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566192"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693069"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 

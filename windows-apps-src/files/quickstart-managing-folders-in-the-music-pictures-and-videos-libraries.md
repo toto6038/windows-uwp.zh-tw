@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: 音樂、圖片及影片媒體櫃中的檔案和資料夾
 description: 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。
-ms.author: lahugh
 ms.date: 06/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1859d758806b4e92758decb40b8a30d02acb254d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8e04170fb8952ecd5802b6190816d44012f56d8a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567812"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692296"
 ---
 # <a name="files-and-folders-in-the-music-pictures-and-videos-libraries"></a>音樂、圖片及影片媒體櫃中的檔案和資料夾
 

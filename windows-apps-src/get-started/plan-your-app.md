@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 title: 建置複雜的通用 Windows 平台 (UWP) 應用程式
 description: 在 Microsoft 設計團隊中，我們建立 app 的程序包含五個不同階段 -- 概念、結構、動態、視覺化，以及原型。 我們鼓勵您採用類似的程序，享受開發的樂趣，為全球使用者打造前所未有的全新體驗。
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
-ms.author: jken
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ce5e0d272e14b9c69f660c8c7de6a838fa7956ac
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 05a69cfdf96d6c7d3426b8d1ba414a42ff48a117
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559780"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691839"
 ---
 #  <a name="building-a-complex-universal-windows-platform-uwp-app"></a>建置複雜的通用 Windows 平台 (UWP) 應用程式
 

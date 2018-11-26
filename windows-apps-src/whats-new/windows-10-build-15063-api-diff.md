@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 Creators Update API 變更
 description: 開發人員可以使用下列清單識別 Windows 10 組建 15063 中新增或變更的命名空間
 keywords: 新功能, 新功能, 更新, Windows 10, 1703, creators, 15063
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: d1f6739d-eaea-4c5d-b79a-9f7214e42727
 ms.localizationpriority: medium
-ms.openlocfilehash: e82c05acb80cee443db983d4f6d7f911d01748b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fb258c23e38fb2aee5f6f5194371bb72940e51b5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566808"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694807"
 ---
 # <a name="new-apis-in-windows-10-build-15063"></a>Windows10 組建 15063 的新 API
 

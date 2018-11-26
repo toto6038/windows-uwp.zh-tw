@@ -1,19 +1,17 @@
 ---
-author: mithom
 title: 耳機
 description: 使用 Windows.Gaming.Input 耳機 API，偵測耳機、擷取播放程式語音和播放音訊。
 ms.assetid: 021CCA26-D339-4C8B-B084-0D499BD83ABE
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 耳機
 ms.localizationpriority: medium
-ms.openlocfilehash: f5097af13d0714f30eefd7771f798036d069cdea
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b3de68cc59c9928a52eba5caeb840e9e825eecf0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557648"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691912"
 ---
 # <a name="headset"></a>耳機
 

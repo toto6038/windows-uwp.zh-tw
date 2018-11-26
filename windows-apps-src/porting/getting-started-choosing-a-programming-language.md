@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: 選擇程式設計語言
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
 description: 選擇程式設計語言
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 24b374a007bf562b2a1c8ba0afe42e75e04bc63e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a9544c1eecc4c1a86552d053694872743a17142c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563531"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693910"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 

@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 中適合開發人員的新功能、工具與特色
 description: Windows 10 組建 17763 和新的開發人員工具提供提供工具、 功能以及由通用 Windows 平台的體驗。
 keywords: 新功能，新，更新，多項更新，功能，新，Windows 10，最新，開發人員，17763
-ms.author: quradic
 ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: ff1f4327b82e2b81cc1ec3d64b352e4e85e7bb12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc18577015db5384c2a1f13e8a48758634a053a5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560301"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691689"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 

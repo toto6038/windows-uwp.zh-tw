@@ -1,19 +1,17 @@
 ---
-author: Xansky
 Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
 title: 從您的 App 啟動意見反應中樞
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a92f839d122f6dbdf45693c99f984317421961d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b4e11b8dfffd7e749a31f052545bfbdfc4449126
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576362"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693389"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 

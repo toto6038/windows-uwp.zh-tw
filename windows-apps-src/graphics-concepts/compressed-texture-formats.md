@@ -4,17 +4,15 @@ description: 本章節包含了壓縮紋理格式內部組織的相關資訊。
 ms.assetid: 24D17B9F-8CA7-4006-9E0F-178C6B3CAEC9
 keywords:
 - 壓縮紋理格式
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dd0ff85198107263fba458bd97c0323a7049d20
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3171eba376911157a6ad2687fe3879df751615ac
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569088"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7695027"
 ---
 # <a name="compressed-texture-formats"></a>壓縮紋理格式
 

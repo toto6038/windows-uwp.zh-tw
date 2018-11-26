@@ -1,18 +1,16 @@
 ---
-author: JoshuaPartlow
 description: Photo Editor 是 UWP 範例應用程式，展示使用 C++/WinRT 語言投影進行開發。 範例應用程式可讓您從圖片庫擷取相片，然後以混合的相片效果編輯所選的影像。
 title: Photo Editor C++/WinRT 範例應用程式
-ms.author: wdg-dev-content
 ms.date: 06/08/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, sample, application, photo, editor, 標準, 投影, 範例, 應用程式, 相片, 編輯器
 ms.localizationpriority: medium
-ms.openlocfilehash: 60bfcd79ed2d659aff8d435bd397df05eb45af72
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8c6f668ef3d92f968e75659b0ba1937abadb079c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578839"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694907"
 ---
 # <a name="photo-editor-cwinrt-sample-application"></a>Photo Editor C++/WinRT 範例應用程式
 您可以從 [Photo Editor C++/WinRT 範例應用程式](https://github.com/Microsoft/Windows-appsample-photo-editor) GitHub 存放庫複製或下載範例應用程式。

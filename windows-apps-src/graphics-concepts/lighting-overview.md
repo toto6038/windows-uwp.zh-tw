@@ -2,18 +2,16 @@
 title: 光源概觀
 description: 當您使用 Direct3D 照明時，您可以允許 Direct3D 為您處理照明細節。 如有需要，進階使用者可以自行執行照明。
 ms.assetid: FCBF6A92-4EAC-4CCC-A76C-79985AF348AE
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6eca73beae6634d1809c0e9e779d80a43b495a65
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e90e460cf5f5bda7d90447440d76cf6898a83747
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563061"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694987"
 ---
 # <a name="lighting-overview"></a>光源概觀
 

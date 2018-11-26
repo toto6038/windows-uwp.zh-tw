@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: DirectX 11 移植常見問題集
 description: 將遊戲移植到通用 Windows 平台 (UWP) 的常見問題集解答。
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 06a4c9b434afedabc17a48e9929da8dc4460fe03
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 31c165d47beea8ee0e31a3213bdd0dbf0c2bc3d7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574684"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692639"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常見問題集
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4e7c2388-b94e-4828-a104-14fa33f6eb2d
 description: 了解如何在 Windows 10 的 XAML 應用程式 (UWP) 中使用 AdControl 類別來顯示橫幅廣告。
 title: XAML 和 .NET 中的 AdControl
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10 , UWP, 廣告, AdControl, 廣告控制項, XAML, .NET, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: b2346fceaae3996de8aa54640c206b5fcd8c4a87
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572770"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691162"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 

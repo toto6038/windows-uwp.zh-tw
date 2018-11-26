@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 如果您有通用 8.1 應用程式與 \#8212;whether 它針對 Windows8.1、 Windows Phone 8.1 或這兩個與 \#8212;then 您會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。
 title: 從 Windows Runtime 8.x 移至 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: eebd0467696b78458835425f7feac903ba435f42
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c94b2a9a1ad13db4051d276aaff9a082f95f33fb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573092"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7693746"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>從 Windows Runtime 8.x 移至 UWP
 

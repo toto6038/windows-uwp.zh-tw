@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: Windows premium 廣告發行者計畫所組成之 ad 啟用的應用程式的協力廠商廣告網路可以針對 premium，搭配策劃集合高利潤廣告。 此計畫中的應用程式是最佳使用方式、 參與和體驗的類別中。
 title: Windows Premium 廣告發行者計畫
-ms.author: mhopkins
 ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: 0975749e07d8bdc625820d694d08a6d8f8e29932
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 638854066c02edb923c8d4153f2125142d6b966b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571755"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692609"
 ---
 # <a name="windows-premium-ads-publishers-program"></a>Windows Premium 廣告發行者計畫
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 支援各種硬體上的陰影圖
 description: 在更快速的裝置上轉譯逼真度更高的陰影，在功能較弱的裝置上轉譯更快速的陰影。
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 陰影圖, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: a9c53578fc67c13aafa1c8e39ad1d2910981081d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d0e661065f86ac173a6ce323281c80fc964d0a4c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575240"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7692286"
 ---
 # <a name="support-shadow-maps-on-a-range-of-hardware"></a>支援各種硬體上的陰影圖
 

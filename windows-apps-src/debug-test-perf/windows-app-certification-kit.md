@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
 title: Windows 應用程式認證套件
 description: 若要讓您的應用程式能順利在 Microsoft Store 上發行或成為 Windows 認證，驗證和測試在本機送出以進行認證之前。 本主題示範如何安裝和執行 Windows 應用程式認證套件。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: f228cb4783c33bc0ea2acecba79893939cadd91e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 614f59fe06528d7b5bac36290eae14f0d7d49653
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559959"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696041"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 

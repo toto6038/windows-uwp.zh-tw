@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 在基本型別上使用深度和效果
 description: 在這裡，我們將示範如何在基本型別上使用深度、透視、色彩及其他效果。
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 深度, 效果, 基本類型, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f81c441910cd0d0205641a119c243cb22d0b695e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02911338da858e3718235736cee7969a7bdebae2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558317"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7691499"
 ---
 # <a name="use-depth-and-effects-on-primitives"></a>在基本型別上使用深度和效果
 
@@ -34,7 +32,6 @@ ms.locfileid: "7558317"
 
 <a name="instructions"></a>指示
 ------------
-
 ### <a name="1-defining-cube-variables"></a>1. 定義立方體變數
 
 首先，我們需要為立方體定義 **SimpleCubeVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置和色彩，以及檢視立方體的方式。 我們會使用 [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) 來宣告 [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) 和 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351)，並宣告 **ConstantBuffer** 的執行個體。

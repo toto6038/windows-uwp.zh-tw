@@ -2,18 +2,16 @@
 title: 建立 Windows Hello 登入應用程式
 description: 這是一份完整逐步解說的第 1 部分，將說明如何建立會利用 Windows Hello 來取代傳統的使用者名稱及密碼驗證系統的 Windows 10 UWP (通用 Windows 平台) 應用程式。
 ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: caa0063c0aa919e094abedd96b6205e83467e0e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8319d4a0975e209edea7cb70b22910e8124f16c1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565026"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7694065"
 ---
 # <a name="create-a-windows-hello-login-app"></a>建立 Windows Hello 登入應用程式
 
