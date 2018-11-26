@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: D677E126-C3D6-46B6-87A5-6237EBEDF1A9
 description: 使用 Microsoft Store 提交 API 中的這個方法，刪除現有的附加元件提交。
 title: 刪除附加元件提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 刪除, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca534cfc7c38dba9d77749e17f15dd66766de7ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cdcd74b86ce846f19f8a4eb912781762adb66a2d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581562"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700323"
 ---
 # <a name="delete-an-add-on-submission"></a>刪除附加元件提交
 

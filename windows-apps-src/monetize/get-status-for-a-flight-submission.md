@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C78176D6-47BB-4C63-92F8-426719A70F04
 description: 在 Microsoft Store 提交 API 中使用這個方法，取得套件正式發行前小眾測試版提交的狀態。
 title: 取得套件正式發行前小眾測試版提交的狀態
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交, 狀態
 ms.localizationpriority: medium
-ms.openlocfilehash: 4378df5333e29dfe570ff50efd37b0361b9a6ca9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1cd898c51d694d2dd60185623126c7f566af0f55
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560599"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697391"
 ---
 # <a name="get-the-status-of-a-package-flight-submission"></a>取得套件正式發行前小眾測試版提交的狀態
 

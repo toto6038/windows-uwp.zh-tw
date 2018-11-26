@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 版本調適型應用程式
 description: 了解如何利用新的 API 並維持與先前版本的相容性
-ms.author: jimwalk
 ms.date: 09/17/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: b96fafe380c08c74c4e411c7d559cc961c6da1ed
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8bbe7875fcd35003b1ec35b02da0f1a86a54ef31
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568899"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701978"
 ---
 # <a name="version-adaptive-apps-use-new-apis-while-maintaining-compatibility-with-previous-versions"></a>版本調適型應用程式：使用新的 API 並同時維持與先前版本的相容性
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 使用 Windows.Web.Syndication 命名空間中的功能，以 RSS 和 Atom 標準為依據產生的同步發佈摘要，來抓取或建立最新最熱門的網頁內容。
 title: RSS/Atom 摘要
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 309dd2aedb2195362652da93c13648d07e5ea9f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562577"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697271"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 

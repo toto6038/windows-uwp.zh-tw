@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 了解追蹤建構和設定表單
 description: 了解您需要執行什麼來建立應用程式中健全的表單。
-ms.author: quradic
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c624a3c666dcc405ee2375738c605ae147b7d9d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0cb42552139fd706dd9e87d61c24f8fe2c2d51f7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575230"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697078"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 

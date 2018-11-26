@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: 在 Microsoft Store 提交 API 中使用這些方法，管理適用於已登錄到您的合作夥伴中心帳戶的 app 提交。
 title: 管理 App 提交
-ms.author: mhopkins
 ms.date: 04/30/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 提交 API、App 提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 76bc7932665e3f9893c6f0aa9644b9edc07a6dcf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7aabaa932c8bd21baf81970564b15421931ad39f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575425"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698004"
 ---
 # <a name="manage-app-submissions"></a>管理 App 提交
 

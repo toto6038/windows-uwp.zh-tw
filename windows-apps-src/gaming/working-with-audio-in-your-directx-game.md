@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 遊戲的音訊
 description: 了解如何開發音樂和聲音，並將它們納入您的 DirectX 遊戲，以及如何處理音訊訊號來建立動態和聲音定位。
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 音訊, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: a0b0ae219ea7fd014b39eb8eb7a09049f7c632a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: fd106e07e6359e9289074cb62cec6bf7458ac5bc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582358"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697431"
 ---
 # <a name="audio-for-games"></a>遊戲的音訊
 

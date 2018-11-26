@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: PointOfService 裝置宣告和啟用模型
 description: 深入了解 PointOfService 宣告並啟用模型
-ms.author: jken
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos, 服務點
 ms.localizationpriority: medium
-ms.openlocfilehash: df9c4764b8f7d752a132d6759054660f481cce55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582308"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698962"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服務點裝置宣告和啟用模型
 

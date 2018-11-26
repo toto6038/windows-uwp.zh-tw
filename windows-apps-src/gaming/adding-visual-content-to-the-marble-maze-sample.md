@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 在 Marble Maze 範例中加入視覺化內容
 description: 本文件說明 Marble Maze 遊戲如何在通用 Windows 平台 (UWP) app 環境中使用 Direct3D 和 Direct2D，讓您能夠了解各種模式，以在編寫您的遊戲內容時運用這些模式。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
-ms.author: elcowle
 ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 圖形
 ms.localizationpriority: medium
-ms.openlocfilehash: 5171578b844829ec590b654194639ed6c8ebbfe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60dd12c3e18b82118053d72d0983e13008dd8a0e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558825"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696779"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入視覺化內容
 

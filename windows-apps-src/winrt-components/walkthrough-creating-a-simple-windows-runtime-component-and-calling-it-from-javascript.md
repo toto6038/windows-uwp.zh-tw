@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
 description: 本逐步解說示範如何使用 .NET Framework 搭配 Visual Basic 或 C#，建立您自己的 Windows 執行階段類型 (封裝於 Windows 執行階段元件中)，以及如何從使用 JavaScript 為 Windows 建置的通用 Windows 應用程式呼叫此元件。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 49b9fe0833151155b11b7d7b796e395bb6a2ca7f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b177a7741cae0fe786d095c26a6be08ec598bcbb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571968"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696889"
 ---
 # <a name="walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript"></a>逐步解說：建立簡單的 Windows 執行階段元件，並從 JavaScript 呼叫該元件
 

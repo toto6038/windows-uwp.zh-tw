@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 在 AWS 上裝載 UWP 應用程式套件以進行 Web 安裝
 description: 教學課程，來驗證應用程式安裝應用程式安裝程式應用程式透過設定 AWS 網頁伺服器
-ms.author: cdon
 ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10，Windows 10，UWP，應用程式安裝程式，AppInstaller，側載，相關設定，選用套件，AWS
 ms.localizationpriority: medium
-ms.openlocfilehash: f24abac93e2444a3c9f454c8883902e5db4d31be
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 53fe01a1c1a825377e886e042b4eef3868cbf5eb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579083"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696195"
 ---
 # <a name="hosting-uwp-app-packages-on-aws-for-web-install"></a>在 AWS 上裝載 UWP 應用程式套件以進行 Web 安裝
 

@@ -4,17 +4,15 @@ description: 全域照明方程式的擴散和聚光燈型光源元件內含描�
 ms.assetid: F61D4ACB-09AB-4087-9E2D-224E472D6196
 keywords:
 - 衰減和聚光燈係數
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 65b9f6700ddd11c41193820a5247a90c2382c98b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581714"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701901"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>衰減和聚光燈係數
 

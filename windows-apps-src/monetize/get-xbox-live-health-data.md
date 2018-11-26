@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法取得 Xbox Live 健康情況資料。
 title: 取得 Xbox Live 健康情況資料
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、健康情況、用戶端錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d08e081491a93a753c2ba0790eec352a9e2ea85
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575916"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697461"
 ---
 # <a name="get-xbox-live-health-data"></a>取得 Xbox Live 健康情況資料
 

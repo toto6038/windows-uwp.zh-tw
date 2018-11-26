@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: 建立您的第一個 App
 description: 建立適用於 windows 10 的通用 Windows 平台 (UWP) app 使用您最愛的程式設計語言。
-ms.author: quradic
 ms.date: 1/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 64da4418e25f77f49854c054d9cb468f0d89f16c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577548"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703312"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 

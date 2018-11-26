@@ -4,17 +4,15 @@ description: 計算著色器 (CS) 提供高速一般用途運算，並且利用�
 ms.assetid: 300D4C0C-5450-45F8-9F29-E1A101D38F73
 keywords:
 - 計算著色器 (CS) 階段
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: e842a6720725552885f83e1b019eebb5c33ba407
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8ed63b3a22329fcf65aa20fc994037aeea2e86be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562923"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696684"
 ---
 # <a name="compute-shader-cs-stage"></a>計算著色器 (CS) 階段
 

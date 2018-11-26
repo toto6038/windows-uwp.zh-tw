@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: 裝置入口網站資料夾上傳 API 參考
 description: 了解如何以程式設計方式存取資料夾上傳 API。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e1a2c7f0-0040-4ce7-94de-17224736e20b
 ms.localizationpriority: medium
-ms.openlocfilehash: 481ec666c327b15088d8e60577c51fa1697918fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0805dbeedcf66bc3596f3d284f51e8f177608396
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557791"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699743"
 ---
 # <a name="upload-a-folder-to-the-development-directory"></a>將資料夾上傳到開發目錄
 

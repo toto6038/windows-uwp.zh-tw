@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 診斷 Windows 執行階段元件錯誤狀況
 description: 本文提供關於以 Managed 程式碼撰寫的 Windows 執行階段元件有何限制的其他資訊。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 833dd0a6447e9d0bb49c21a18d17bd7b0dc3455d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4733edba06b7042c436918e882556f86dfa00071
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570514"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699909"
 ---
 # <a name="diagnosing-windows-runtime-component-error-conditions"></a>診斷 Windows 執行階段元件錯誤狀況
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 description: 在 Microsoft Store 中使用此方法來判斷您是否能回應特定評論，或是否可以回應特定應用程式的所有評論。
 title: 取得評論的回應資訊
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 評論 API, 回應資訊
 ms.localizationpriority: medium
-ms.openlocfilehash: 466455a5e8da9364206245f1e0ac10acfed07ee7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0497b5eec67f9204139cd10d4523b534d6c8779f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553994"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698207"
 ---
 # <a name="get-response-info-for-reviews"></a>取得評論的回應資訊
 

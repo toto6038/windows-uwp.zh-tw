@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 快速存取 UWP 中的檔案屬性
 description: 有效收集程式庫的檔案和其屬性清單以便用於 UWP app。
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 檔案, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: e2f63e848820361a64a2a96348a8e1cc2419f233
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578354"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702972"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速存取 UWP 中的檔案屬性 
 

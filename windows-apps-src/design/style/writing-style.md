@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: 撰寫方式
 description: 使用正確的語氣和語調，是讓您應用程式的文字與設計融為一體的關鍵。
 keywords: UWP, Windows 10, text, writing, voice, tone, design, UI, UX, 文字, 書寫, 語氣, 語調, 設計
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 500eb490083dfa631f9ff84195ec3ae86027e3ab
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b09265164ccd922ab310c06e6c2bd14b6d7a841c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576096"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697058"
 ---
 # <a name="writing-style"></a>撰寫方式
 

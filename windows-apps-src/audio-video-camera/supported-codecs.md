@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: 本文列出 UWP app 支援的音訊與視訊轉碼器和格式。
 title: 支援的轉碼器
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 57a604b1b3996019bcf6e39bc88c9a59a74cb51c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 02d8c67c92a070fbeaaab81ef6c5145dec90e411
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570055"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701056"
 ---
 # <a name="supported-codecs"></a>支援的轉碼器
 

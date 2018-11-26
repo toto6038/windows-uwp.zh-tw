@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 934F2DBF-2C7E-4B77-997D-17B9B0535D51
 description: 在 Microsoft Store 提交 API 中使用這個方法，來將新的或或更新 app 提交認可到合作夥伴中心。
 title: 認可 App 提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可應用程式提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a61fb1568cf85d01a31e5921fa757d3e8c767ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582075"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697361"
 ---
 # <a name="commit-an-app-submission"></a>認可 App 提交
 

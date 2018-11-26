@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 開發跨平台 app 時有哪些選擇？
 title: 選取 iOS 和 UWP 應用程式開發的方式
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c62624e83d1e8334cce711869088817e2f9dc5e0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6b87ee76481492de0dfb23394e0aef7f017f3305
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559634"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699395"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP 應用程式開發的方式
 

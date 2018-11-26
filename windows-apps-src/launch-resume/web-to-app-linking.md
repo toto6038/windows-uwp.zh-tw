@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 啟用使用應用程式 URI 處理常式的網站的應用程式
 description: 使用者持續使用您的應用程式藉由支援網站] 功能的應用程式。
 keywords: 深層連結 Windows
-ms.author: twhitney
 ms.date: 08/25/2017
 ms.topic: article
 ms.assetid: 260cf387-88be-4a3d-93bc-7e4560f90abc
 ms.localizationpriority: medium
-ms.openlocfilehash: 7f6438b8d1d7b8a8ce47ed4e5baddcb59285e660
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 66284538c97aee1a11c27beaa483dcfe109b6615
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561583"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699326"
 ---
 # <a name="enable-apps-for-websites-using-app-uri-handlers"></a>啟用使用應用程式 URI 處理常式的網站的應用程式
 

@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: 組合陰影
 description: 陰影 Api 可讓您將動態可自訂的陰影新增至 UI 內容。
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c2f42235e6a74747059723841d3082037b558c7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9541ea1c00d473bc4881a80d8597625592e278f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572238"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703172"
 ---
 # <a name="shadows-in-windows-ui"></a>Windows UI 中的陰影
 

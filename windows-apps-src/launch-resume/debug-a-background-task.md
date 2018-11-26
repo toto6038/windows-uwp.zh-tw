@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 偵錯背景工作
 description: 了解如何偵錯背景工作，包括 Windows 事件記錄檔中的背景工作啟用和偵錯追蹤。
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 03b1e6a5fce559e9e6bf900bae3e3f83921567e6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0ae12bbb2bad1fbcd663f5be8f26656d640afc8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566456"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696789"
 ---
 # <a name="debug-a-background-task"></a>偵錯背景工作
 

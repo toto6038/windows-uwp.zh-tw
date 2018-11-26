@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: 在 Microsoft Store 分析 API 中使用這個方法，以針對特定的日期範圍與其他選擇性篩選器取得每日應用程式使用狀況資料。
 title: 取得每日應用程式使用量
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
-ms.openlocfilehash: 24542f165c0caa2c07db1866c96603916c6ac750
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d3460b61e6a9a7c36be6fd87c4dc7fcc1ab811d1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563645"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703342"
 ---
 # <a name="get-daily-app-usage"></a>取得每日應用程式使用量
 

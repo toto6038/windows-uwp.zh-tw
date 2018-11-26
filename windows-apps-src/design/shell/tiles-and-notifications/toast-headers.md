@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Learn how to use headers to visually group your toast notifications in Action Center.
 title: 快顯通知標頭
 label: Toast headers
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 12/7/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 標頭, 快顯通知標頭, 通知, 群組快顯通知, 控制中心
 ms.localizationpriority: medium
-ms.openlocfilehash: fcc515b811a11be045ce80ed816708d230720a29
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 361b161b8cf323596a3b07665819300c78f1dcc5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560549"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703585"
 ---
 # <a name="toast-headers"></a>快顯通知標頭
 

@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
 title: 裝置、感應器及電源
 description: 為提供使用者豐富的使用經驗，您可能會發現有必要將外部裝置或感應器與您的應用程式整合。
-ms.author: mukin
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5ca78338b501b8c24549b1348c051a02ea62a501
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 06dd8355cd0afd3889c0db2c337c93b5fbedf0fa
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571470"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703918"
 ---
 # <a name="devices-sensors-and-power"></a>裝置、感應器及電源
 

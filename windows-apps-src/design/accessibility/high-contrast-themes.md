@@ -1,20 +1,18 @@
 ---
-author: Xansky
 description: 描述使用高對比佈景主題時，確保通用 Windows 平台 (UWP) App 可以正常運作所需的步驟。
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: 高對比佈景主題
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cf8b634cfc7ba66cde107150b54ecec76b2861d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e4e8d5f49d10219a06a36fdfbe7ec3abe236109a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577689"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700466"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 

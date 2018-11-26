@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A26A287C-B4B0-49E9-BB28-6F02472AE1BA
 description: 使用「Microsoft Store 分析 API」中的這個方法，以針對特定日期範圍及其他選擇性篩選，取得所指定應用程式的彙總廣告行銷活動績效資料。
 title: 取得廣告活動效益資料
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 廣告活動
 ms.localizationpriority: medium
-ms.openlocfilehash: c9d348ffc0895d5adb16886c5a66af14a1884b8b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1190ec43c5b98eabd897a3bed3788aaf6eb0cb7d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569028"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697591"
 ---
 # <a name="get-ad-campaign-performance-data"></a>取得廣告活動效益資料
 

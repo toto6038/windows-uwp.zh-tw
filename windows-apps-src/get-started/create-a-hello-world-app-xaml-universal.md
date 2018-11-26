@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: 了解如何建立 "Hello, world" 應用程式 (XAML)
 description: 使用可延伸應用程式標記語言 (XAML) 搭配 C# 來建立 windows 10 上的簡單 Hello，world 應用程式針對目標為通用 Windows 平台 (UWP)。
-ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, hello world
 ms.localizationpriority: medium
-ms.openlocfilehash: 28b30a592951017fb4a0b3803261cb0258be6ae3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 433536673efb9d2f17d822599051030b219ed02f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563335"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700476"
 ---
 # <a name="create-a-hello-world-app-xaml"></a>建立 Hello, world 應用程式 (XAML)
 

@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: 5aeb009c-1f2f-7c04-4477-cbe92c473174
 title: 網路功能頁面 （開發人員首頁）
 description: 提供針對 Xbox One 開發人員首頁應用程式的網路功能頁面的相關資訊。
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-networking.html
 ms.localizationpriority: medium
-ms.openlocfilehash: 5968a2dad76343a1aa589caadf62ec3cd823aed0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 06d82b350cccfd90509f3b9f031de2785e91e0dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580897"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702286"
 ---
 # <a name="networking-page-dev-home"></a>網路功能頁面 （開發人員首頁）
    

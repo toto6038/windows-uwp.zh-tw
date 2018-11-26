@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 94B5B2E9-BAEE-4B7F-BAF1-DA4D491427D7
 description: 在 Microsoft Store 購買 API 使用此方法，取得特定使用者有使用權利的訂閱。
 title: 取得使用者訂閱
-ms.author: mhopkins
 ms.date: 07/10/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 購買 API, 訂閱
 ms.localizationpriority: medium
-ms.openlocfilehash: b8fe6262ca6ef52ca94ade2c56b18f5e71951f07
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b568531ce0807ebc5be0d27a78b94547e8473ae6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579446"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698187"
 ---
 # <a name="get-subscriptions-for-a-user"></a>取得使用者訂閱
 

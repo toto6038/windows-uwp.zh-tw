@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: 組合效果
 description: 效果 API 可讓開發人員自訂其 UI 的轉譯方式。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b943807f6102c80af76fecb650087f4f2e91b9c6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75af433d80364485b0c12a9540c0d7bb471c4e28
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563757"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697341"
 ---
 # <a name="composition-effects"></a>組合效果
 

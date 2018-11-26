@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 如何繼續應用程式 (DirectX 和 C++)
 description: 這個主題示範如何在系統恢復通用 Windows 平台 (UWP) DirectX 應用程式時，還原重要的應用程式資料。
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 繼續, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 1149bebfd837e3d4051b5e0fca10aac248d909c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f0aa60061ae9fc14392bfe4beb0693ba50fda0df
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576522"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702579"
 ---
 # <a name="how-to-resume-an-app-directx-and-c"></a>如何繼續應用程式 (DirectX 和 C++)
 

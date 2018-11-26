@@ -1,19 +1,17 @@
 ---
 title: 取得 UWP app 範例
 description: 了解如何下載 GitHub 中的 UWP 程式碼範例
-author: JoshuaPartlow
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, sample code, code samples, 範例程式碼, 程式碼範例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: ef8f99ade3fa5e4d9f12b8670bf22242e7c4e585
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581812"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696426"
 ---
 # <a name="get-uwp-app-samples"></a>取得 UWP app 範例
 

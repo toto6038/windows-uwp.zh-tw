@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 建立 DirectX 通用 Windows 平台 (UWP) 遊戲
 description: 在這組教學課程中，您會了解如何使用 DirectX 和 C++ 建立基本的通用 Windows 平台 (UWP) 遊戲。
 ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
 keywords: DirectX 遊戲範例, 遊戲範例, 通用 Windows 平台 (UWP), Direct3D 11 遊戲
-ms.author: joanlee
 ms.date: 12/01/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c589eeb71d93619b92254207ddc5eb1b1494a55
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc602e2dd29231c1e6554d7ef55e9666a373fa31
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575448"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702506"
 ---
 # <a name="create-a-simple-universal-windows-platform-uwp-game-with-directx"></a>使用 DirectX 建立簡單的通用 Windows 平台 (UWP) 遊戲
 

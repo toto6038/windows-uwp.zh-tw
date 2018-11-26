@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 設定 DirectX 資源及顯示影像
 description: 我們將在此處示範如何建立 Direct3D 裝置、交換鏈結和轉譯目標檢視，以及如何將轉譯的影像呈現到顯示器。
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, directx, 資源, 影像
 ms.localizationpriority: medium
-ms.openlocfilehash: 24fd038bdd447491da43e5d5803445d00147ba2d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b650f77627e02427b2861a2e6d0df7d1fc86831a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564484"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697621"
 ---
 # <a name="set-up-directx-resources-and-display-an-image"></a>設定 DirectX 資源及顯示影像
 

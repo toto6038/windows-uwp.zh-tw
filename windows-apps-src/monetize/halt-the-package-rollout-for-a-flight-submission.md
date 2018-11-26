@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來停止套件正式發行前小眾測試版的套件推出。
 title: 停止正式發行前小眾測試版的推出
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 正式發行前小眾測試版提交, 停止
 ms.assetid: f8ee0687-a421-48e7-a6eb-3fd5633c352b
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ca3b457158ee1f509591c89ee6ac2819c819326
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74c95e36d0bc4c9848be1e336b2e34c41dc0631f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571078"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703292"
 ---
 # <a name="halt-the-rollout-for-a-flight"></a>停止正式發行前小眾測試版的推出
 

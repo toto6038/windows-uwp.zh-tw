@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 遊戲的獲利
 description: 在 Windows10 上針對通用 Windows 平台 (UWP) 遊戲實作橫幅廣告、插入式影片廣告，及在應用程式內購買。
 ms.assetid: 79f4e177-d8e7-45d3-8a78-31d4c2fe298a
-ms.author: joanlee
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 獲利
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d31aac20454536c6c25d0a8e2dc2f768ea9aabc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561761"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697118"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 

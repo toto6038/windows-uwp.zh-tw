@@ -1,19 +1,17 @@
 ---
-author: KarlErickson
 ms.assetid: F46306EC-DFF3-4FF0-91A8-826C1F8C4A52
 title: 資料繫結和 MVVM
 description: 資料繫結的模型-檢視-ViewModel (MVVM) UI 架構設計模式，核心，可 UI 和非 UI 程式碼之間的鬆散結合。
-ms.author: karler
 ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a70603c26c7123af50fc920d327ccef332b7ed6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 931f2fcbcdbf58b9dc2ca40403d7466b620a8991
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564634"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700091"
 ---
 # <a name="data-binding-and-mvvm"></a>資料繫結和 MVVM
 

@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 在計時器上執行背景工作
 description: 了解如何排程一次性的背景工作，或執行定期的背景工作。
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: a03a26262d03d93ea2f23f2a61ba1ee603a2d507
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b64ca35e47044cbc2320ca77c1d1ba2e3d66fcb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553359"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698837"
 ---
 # <a name="run-a-background-task-on-a-timer"></a>在計時器上執行背景工作
 

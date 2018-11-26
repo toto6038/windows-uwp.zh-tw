@@ -1,18 +1,16 @@
 ---
-author: ridomin
 title: 疑難排解應用程式安裝程式檔案的安裝問題
 description: 使用應用程式安裝程式檔案側載應用程式時的常見問題。
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
-ms.openlocfilehash: 499bb0b32e494441e547421094f42fbc6156044a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d4c3aa690dd45a50e6f33d664fbc6cc4503e93f8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579635"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701569"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>疑難排解應用程式安裝程式檔案的安裝問題
 

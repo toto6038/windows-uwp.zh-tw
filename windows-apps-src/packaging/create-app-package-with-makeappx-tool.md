@@ -1,20 +1,18 @@
 ---
-author: laurenhughes
 title: 使用 MakeAppx.exe 工具建立應用程式套件
 description: MakeAppx.exe 建立、加密、解密應用程式套件與套件組合，並從應用程式套件與套件組合中擷取檔案。
-ms.author: lahugh
 ms.date: 06/21/2018
 ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: aad7244d90b9025dbbec37013edfb31b068a8abc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563041"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697181"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具建立應用程式套件
 

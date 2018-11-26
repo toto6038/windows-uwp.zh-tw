@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來完成套件正式發行前小眾測試版提交的套件推出。
 title: 完成正式發行前小眾測試版提交的推出
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 正式發行前小眾測試版提交, 完成
 ms.assetid: e4a645f6-1f00-4af5-80d6-d2ee179acc8a
 ms.localizationpriority: medium
-ms.openlocfilehash: 560576dd60c42f48c625b8c4c55a2b0c85ce511c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 29ac212e0549e754c0865aab5d497fa6d51f075f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578984"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702922"
 ---
 # <a name="finalize-the-rollout-for-a-flight-submission"></a>完成正式發行前小眾測試版提交的推出
 

@@ -1,19 +1,17 @@
 ---
-author: scottmill
 title: 相對滑鼠移動
 description: 使用相對滑鼠控制項，這種控制項不使用系統游標，也不會傳回絕對螢幕座標，以追蹤遊戲中滑鼠移動間的像素差異。
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, mouse, input,遊戲, 滑鼠, 輸入
 ms.assetid: 08c35e05-2822-4a01-85b8-44edb9b6898f
 ms.localizationpriority: medium
-ms.openlocfilehash: adf3b629095f633521b99133ce1961e5c8408ef5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 71985841e6c0fa764201c179fb12408581823e5e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575095"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697641"
 ---
 # <a name="relative-mouse-movement-and-corewindow"></a>相對滑鼠移動和 CoreWindow
 

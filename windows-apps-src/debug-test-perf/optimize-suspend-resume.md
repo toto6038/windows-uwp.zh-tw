@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: 最佳化暫停/繼續
 description: 建立將處理程序生命週期系統更有效利用以在暫停或終止之後有效率地繼續執行的「通用 Windows 平台」(UWP) 應用程式。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cbaa56f9c25c0e4ea1f10c79b4f7d1100748532
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565705"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700506"
 ---
 # <a name="optimize-suspendresume"></a>最佳化暫停/繼續
 

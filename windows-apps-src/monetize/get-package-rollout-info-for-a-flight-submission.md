@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 使用「Microsoft Store 提交 API」中的這個方法，來取得套件正式發行前小眾測試版提交的套件推出資訊。
 title: 取得正式發行前小眾測試版提交的推出資訊
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 套件推出, 正式發行前小眾測試版提交
 ms.assetid: 397f1b99-2be7-4f65-bcf1-9433a3d496ad
 ms.localizationpriority: medium
-ms.openlocfilehash: 97051f3953b215dcf2ae2a2af00b55b435b726c8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4e60ecfccecda850a5c83e5840626e1b789a068d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572110"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697561"
 ---
 # <a name="get-rollout-info-for-a-flight-submission"></a>取得正式發行前小眾測試版提交的推出資訊
 

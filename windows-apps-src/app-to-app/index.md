@@ -2,18 +2,16 @@
 ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
 description: 本節說明如何在通用 Windows 平台 (UWP) 應用程式之間分享資料，包括如何使用分享協定、複製並貼上，以及拖放。
 title: 應用程式間通訊
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 52e8479febb2134365bab6c68486d9e284366535
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9dfd86d53805573d002984aaf33ba5f1bf17241c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554739"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701086"
 ---
 # <a name="app-to-app-communication"></a>應用程式間通訊
 

@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 使用 InteractionTracker 自訂操作
 description: 使用 InteractionTracker API 來建立自訂操作體驗。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a991d692b4ba4c7a221932218a7d25e48fe16ca
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567623"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697048"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>使用 InteractionTracker 自訂操作體驗
 

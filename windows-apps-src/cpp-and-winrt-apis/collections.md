@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: C + + /winrt 提供函式和您節省很多時間和精力當您想要實作和/或傳遞集合的基底類別。
 title: 使用 C++/WinRT 的集合
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 集合
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9c5cbf5c7709c70d2eb47c57009bbd264a6d2c20
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a50ab5f70faa0c8f8b73eada38444bcafd444d8b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567381"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700416"
 ---
 # <a name="collections-with-cwinrt"></a>使用 C++/WinRT 的集合
 

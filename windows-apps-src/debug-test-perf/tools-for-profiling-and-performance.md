@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: 分析和效能的工具
 description: Microsoft 提供數個工具來協助您提升通用 Windows 平台 (UWP) app 的效能。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 21b51e50415e85f8cb1ddca6c358c8d27aa5f0fe
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 30be8d13c7e549f8ed75060f614de5bbcdb6284f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560559"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699935"
 ---
 # <a name="tools-for-profiling-and-performance"></a>分析和效能的工具
 

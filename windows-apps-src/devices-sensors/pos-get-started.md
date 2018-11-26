@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: 開始使用服務點
 description: 本文包含有關如何開始使用服務點 UWP API 的資訊
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f3959254787ce22bea27495520805485e0ea179b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0e537e40d5224f2522cb5ecebd92664d1794dd06
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561632"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699045"
 ---
 # <a name="getting-started-with-point-of-service"></a>開始使用服務點
 

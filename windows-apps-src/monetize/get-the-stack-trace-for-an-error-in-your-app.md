@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: 在 Microsoft Store 分析 API 中使用此方法，以取得 App 中錯誤的堆疊追蹤。
 title: 取得應用程式中錯誤的堆疊追蹤
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 0befb91175690576b4c0b44fe6e701d4c4efd7df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561033"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697801"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 

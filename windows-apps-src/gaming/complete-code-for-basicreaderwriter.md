@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: BasicReaderWriter 的完整程式碼
 description: 讀取和寫入二進位資料檔的一般類別與方法的完整程式碼。
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, BasicReaderWriter
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a5d644a2a141a83316575a235805fa56657bf3a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 60c2bf74de1e56004f1f705f317bc6bd1bb34b26
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558775"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696945"
 ---
 # <a name="complete-code-for-basicreaderwriter"></a>BasicReaderWriter 的完整程式碼
 

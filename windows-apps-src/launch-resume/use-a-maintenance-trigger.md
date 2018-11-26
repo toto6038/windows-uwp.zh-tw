@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 使用維護觸發程序
 description: 了解如何在裝置使用 AC 電源時，使用 MaintenanceTrigger 類別於背景中執行輕量型程式碼。
 ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 08bf867b6690a84f89b61cac9942b8ad6c27cd99
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 87df67c480c18ef2c75a9c63d538f0107908ca10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573348"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698992"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用維護觸發程序
 

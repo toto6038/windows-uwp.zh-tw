@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 登錄背景工作
 description: 了解如何建立可重複用來安全登錄大多數背景工作的函式。
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: faed3f762594ae46b617831615df2448391e1c7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f940b0433c5cf7818102f92c9e61a6fe012bf4b9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575478"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700376"
 ---
 # <a name="register-a-background-task"></a>登錄背景工作
 

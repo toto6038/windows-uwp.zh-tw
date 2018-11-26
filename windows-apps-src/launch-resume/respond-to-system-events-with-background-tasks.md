@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 使用背景工作回應系統事件
 description: 了解如何建立回應 SystemTrigger 事件的背景工作。
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10，uwp，背景工作
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: f65751e894d45bab5b39382c7bec43d5f06f18b2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c3773a486a1b7a29fc2a171c473edf38f6f3a7f1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557671"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699283"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>使用背景工作回應系統事件
 

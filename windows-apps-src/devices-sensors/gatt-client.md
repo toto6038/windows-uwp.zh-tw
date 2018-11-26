@@ -1,18 +1,16 @@
 ---
-author: msatranjr
 title: 藍牙 GATT 用戶端
 description: 本文提供針對通用 Windows 平台 (UWP) 應用程式，以及針對常見使用案例的範例程式碼的藍牙泛型屬性設定檔 (GATT) 用戶端的概觀。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 345e6f82ddf97c2595dad0029ca432f075a6190b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3ae656b473a4dd5999588057b0ec970645703eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572701"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703595"
 ---
 # <a name="bluetooth-gatt-client"></a>藍牙 GATT 用戶端
 

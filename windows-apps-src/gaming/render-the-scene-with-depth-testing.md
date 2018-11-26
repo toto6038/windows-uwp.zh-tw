@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 使用深度測試轉譯場景
 description: 將深度測試新增到您的頂點 (或幾何) 著色器與像素著色器，以建立陰影效果。
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows, 遊戲, 轉譯, 場景, 深度測試, 陰影
 ms.localizationpriority: medium
-ms.openlocfilehash: dc776a60e771cc8d5961e8c7b9c67eb99fabea3a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 237da82ef51466ae2460c3be27486091bf4066f3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568336"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696664"
 ---
 # <a name="render-the-scene-with-depth-testing"></a>使用深度測試轉譯場景
 

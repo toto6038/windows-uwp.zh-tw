@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 關聯式動畫
 description: 根據其他物件上的屬性建立動作。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: cde3868d1a554396bfda7c13ea0c71bd037416bc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572410"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701407"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 

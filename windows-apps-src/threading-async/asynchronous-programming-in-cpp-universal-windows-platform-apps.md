@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: 本文說明的建議的方式取用非同步方法，在 VisualC + + 元件延伸 (C + + /CX) 使用在 ppltasks.h 中的並行命名空間中定義的 task 類別。
 title: C++ 中的非同步程式設計
-ms.author: normesta
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 非同步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 33b110e713608260cd5c19544292e9211904a730
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582118"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7699869"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX 中的非同步程式設計
 > [!NOTE]

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: 在 Microsoft Store 分析 API 中使用此方法，以取得 App 特定錯誤的詳細資料。
 title: 取得應用程式中錯誤的詳細資料
-ms.author: mhopkins
 ms.date: 06/05/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料
 ms.localizationpriority: medium
-ms.openlocfilehash: e947314da1309c3f31af292bc70addbad8b0d4d9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5176e123d57b8bcc5d4981acc91b22329ad4c643
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566038"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702952"
 ---
 # <a name="get-details-for-an-error-in-your-app"></a>取得應用程式中錯誤的詳細資料
 

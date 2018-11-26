@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
 description: 如果您有應用程式及附加元件的型錄，就能使用「Microsoft Store 集合 API」及「Microsoft Store 購買 API」，從您的服務存取這些產品的擁有權資訊。
 title: 管理服務的產品權利
-ms.author: mhopkins
 ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: 21be5f50a78dd1bd1ef7c549add04a3b7c494dd1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582248"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697721"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 

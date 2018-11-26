@@ -1,10 +1,8 @@
 ---
-author: mijacobs
 description: 顯示個人的虛擬人偶影像 (如果有的話)。要是沒有，則顯示個人的縮寫名或一般字符。
 title: 個人圖片控制項
 template: detail.hbs
 label: Parallax View
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
@@ -13,12 +11,12 @@ design-contact: kimsea
 dev-contact: kefodero
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: eadc0763e7f99930bee3d2a388a881c52e89f609
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 43c570fc3e0187fbf6e559ad794a2a63e608a252
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559581"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697901"
 ---
 # <a name="person-picture-control"></a>個人圖片控制項
 

@@ -2,18 +2,16 @@
 layout: LandingPage
 description: 開始使用通用 Windows 平台 (UWP) 與適用於 Windows 10 的應用程式開發。
 title: 通用 Windows 平台 (UWP) 入門
-author: QuinnRadich
-ms.author: quradic
 ms.date: 03/23/2018
 ms.topic: article
 keywords: 開始使用, windows 10, uwp, xaml, c#
 ms.localizationpriority: medium
-ms.openlocfilehash: 0193209c1a603bb253b07b084dd62d29c91009a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a2a1452de6fe602c8fd21e510de070f49d806eec
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572050"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702406"
 ---
 # <a name="get-started-with-windows-10-apps"></a>開始使用 Windows 10 應用程式 
  
@@ -209,7 +207,6 @@ ms.locfileid: "7572050"
 </div>
 
 ---
-
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">

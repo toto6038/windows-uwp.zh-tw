@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: ff2523cb-8109-42be-9dfc-cb5d09002574
 title: 建立和轉換來源內容群組對應
 description: 若要讓您的通用 Windows 平台 (UWP) 應用程式準備就緒以使用 UWP App 串流安裝，您需要建立內容群組對應。 此文章將協助您了解建立和轉換內容群組對應時所需要的詳細資訊，以及提供一些過程中的秘訣與技巧。
-ms.author: lahugh
 ms.date: 9/30/2018
 ms.topic: article
 keywords: Windows 10, uwp, 內容群組對應, 串流安裝, uwp app 串流安裝, 來源內容群組對應
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a2922d6d3f54d693a9fe9c0982ea06cc5f2caae
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ea6e83521007572449b28e65bdff56d9d2c11186
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560173"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697521"
 ---
 # <a name="create-and-convert-a-source-content-group-map"></a>建立和轉換來源內容群組對應
 

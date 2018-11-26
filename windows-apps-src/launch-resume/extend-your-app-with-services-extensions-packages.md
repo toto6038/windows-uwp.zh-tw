@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 透過服務、擴充功能和套件延伸您的 App
 description: 了解如何在更新通用 Windows 平台 (UWP) 市集應用程式時執行背景工作。
-ms.author: twhitney
 ms.date: 05/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 延伸, 組件化, app 服務, 套件, 擴充功能
 ms.localizationpriority: medium
-ms.openlocfilehash: 624d52ff96fb2537afa3affb2d842aa29e1e6667
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 110fa8ec9feba1f54155d41b4c726ffb28f71630
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579496"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703072"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>透過服務、擴充功能和套件延伸您的 App
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 移植著色器物件
 description: 從 OpenGL ES 2.0 移植簡單的轉譯器時，第一個步驟是在 Direct3D 11 中設定對等的頂點和片段著色器物件，以及確定主程式可以在著色器物件編譯完成之後與這些物件通訊。
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, port, shader, direct3d, opengl, 遊戲, 連接埠, 著色器, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: bbf7e05a93ccce4188d62f9800a5f225be713cc6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571833"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7696819"
 ---
 # <a name="port-the-shader-objects"></a>移植著色器物件
 

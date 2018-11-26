@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 08b4ae43-69e8-4424-b3c0-a07c93d275c3
 description: 了解如何在您的 app 中抓取 AdControl 錯誤。
 title: JavaScript 錯誤處理的逐步解說
-ms.author: mhopkins
 ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 錯誤處理, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 65887bba125d8d7db1b224c1842da8c9ab34f117
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 68f49cd97e8b4e2ef5e20502909a7dc8cb4ab676
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572189"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697331"
 ---
 # <a name="error-handling-in-javascript-walkthrough"></a>JavaScript 錯誤處理的逐步解說
 
@@ -21,14 +19,14 @@ ms.locfileid: "7572189"
 
 這些範例假設您有包含 **AdControl** 的 JavaScript 應用程式。 如需示範如何將 **AdControl** 新增到應用程式的逐步指示，請參閱 [HTML 5 和 Javascript 中的 AdControl](adcontrol-in-html-5-and-javascript.md)。 如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
 
-1.  In the default.html file, add a value for the **onErrorOccurred** event where you define the **data-win-options** in the **div** for the **AdControl**. 請在 default.html 檔案中尋找以下程式碼。
+1.  在 default.html 檔案中，為 **onErrorOccurred** 事件新增一個值，該事件是您為 **AdControl** 定義 **div** 中之 **data-win-options** 的所在位置。 請在 default.html 檔案中尋找以下程式碼。
     ``` HTML
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"
       data-win-options="{applicationId: '3f83fe91-d6be-434d-a0ae-7351c5a997f1', adUnitId: 'test'}">
     </div>
     ```
-    Following the **adUnitId** attribute, add the value for the **onErrorOccurred** event.
+    在 **adUnitId** 屬性後方，新增 **onErrorOccurred** 事件的值。
     ``` HTML
     <div id="myAd" style="position: absolute; top: 53px; left: 0px; width: 300px; height: 250px; z-index: 1"
       data-win-control="MicrosoftNSJS.Advertising.AdControl"

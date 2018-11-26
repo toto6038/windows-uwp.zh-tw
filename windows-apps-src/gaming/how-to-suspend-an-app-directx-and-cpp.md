@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 如何暫停 app (DirectX 和 C++)
 description: 這個主題示範如何在系統暫停通用 Windows 平台 (UWP) DirectX 應用程式時，儲存重要的系統狀態與應用程式資料。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 暫停, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 204d61430f59c820e9ef9ef36832cd1c24ee7f9c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567078"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697881"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>如何暫停 app (DirectX 和 C++)
 

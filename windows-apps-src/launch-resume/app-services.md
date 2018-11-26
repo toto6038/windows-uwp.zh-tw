@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 使用應用程式服務與延伸模組
 description: 本節說明如何將應用程式服務整合到您的 UWP app，以允許在應用程式之間共用資料和功能。
 ms.assetid: 30003e60-492b-4511-b426-24b97d70694a
-ms.author: pafarley
 ms.date: 10/04/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a2fd10df36954b611745135b77872fa3597ac55d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b6e85c47c569f1a4a0a39a8ce12bc7c091316c10
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568649"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698942"
 ---
 # <a name="use-app-services-and-extensions"></a>使用應用程式服務與延伸模組
 

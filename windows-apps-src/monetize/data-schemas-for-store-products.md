@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 描述 Windows.Services.Store 命名空間中 Microsoft Store 產品的延伸 JSON 資料結構描述。
 title: Microsoft Store 產品的資料結構描述
-ms.author: mhopkins
 ms.date: 09/26/2017
 ms.topic: article
 keywords: windows 10, uwp, ExtendedJsonData, Microsoft Store 產品, 結構描述
 ms.localizationpriority: medium
-ms.openlocfilehash: 980fde1a222b5fb7ba2d4524469a9b6673cbabd3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8f51f0fffae3fa8e9a54214f78aa93fe39eab080
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565509"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700134"
 ---
 # <a name="data-schemas-for-store-products"></a>Microsoft Store 產品的資料結構描述
 

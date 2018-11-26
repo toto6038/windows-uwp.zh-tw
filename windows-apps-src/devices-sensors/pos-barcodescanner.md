@@ -1,19 +1,17 @@
 ---
-author: TerryWarwick
 title: 條碼掃描器
 description: 本文列出適用於 UWP app 的條碼掃描器，以及示範如何使用它們的操作說明文章的連結。
-ms.author: jken
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 3a58062ba3908287f9009288136814e7e26d3127
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7a4021a2a0fb6c84755730e4f0e9917b10e94ec8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580306"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703951"
 ---
 # <a name="barcode-scanner"></a>條碼掃描器
 

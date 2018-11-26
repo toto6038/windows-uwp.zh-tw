@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
 title: Windows Device Portal 概觀
 description: 了解 Windows Device Portal 如何讓您從遠端透過網路或 USB 連線來設定及管理您的裝置。
-ms.author: pafarley
 ms.date: 12/12/2017
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 240cbb84713fb09b0bc51d70ca93b640797f2752
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2bffdb31e9001bd0b2abe873780ef507c2073b46
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580193"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7700456"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 

@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: 2017 年 12 月 Windows 文件的最新動向 - 開發 UWP app
 description: 新功能、影片及開發人員指引已加入 2017 年 12 月的 Windows 10 開發人員文件中
 keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 12 月
-ms.author: quradic
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 394dbdb5ae9065aa9424a470ad2e9295ddd63c8d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560899"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701033"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的最新動向
 

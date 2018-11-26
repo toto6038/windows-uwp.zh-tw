@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
 description: 每個 Microsoft Store 交易只要結果為產品購買成功，都可依選擇傳回交易收據。
 title: 使用收據來驗證產品購買
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: ed79a3ac50fb3a6cbe735e0ea713256845d39441
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563154"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702742"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 

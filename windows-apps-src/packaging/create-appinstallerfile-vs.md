@@ -1,18 +1,16 @@
 ---
-author: ridomin
 title: 使用 Visual studio 建立應用程式安裝程式檔案
 description: 了解如何使用 Visual Studio，以便啟用透過 .appinstaller 檔案的自動更新。
-ms.author: rmpablos
 ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d4740c132f274cb3eeee5776790d077d2cbec47
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567696"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697771"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual studio 建立應用程式安裝程式檔案
 

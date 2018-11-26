@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: F94AF8F6-0742-4A3F-938E-177472F96C00
 description: 認可全新或更新的套件正式發行前小眾到合作夥伴中心，Microsoft Store 提交 API 中使用這個方法。
 title: 認可套件正式發行前小眾測試版提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 58293a73589c7d2780360df24bcc24f38335f1e5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 820e10695cce2d6242a51b0017d2fe3981cf77b1
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581487"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702652"
 ---
 # <a name="commit-a-package-flight-submission"></a>認可套件正式發行前小眾測試版提交
 

@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 使用應用程式安裝程式安裝 UWP app
 description: 本節包含或連結至關於應用程式安裝程式，以及有關如何使用應用程式安裝程式功能的文章。
-ms.author: lahugh
 ms.date: 06/05/2018
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: f3da1f4f393eea1362b6e59d2ad7e9a2a97bc33b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ca72f9570c5ecef4a93b03f297ecb1d5064c5bef
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565952"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7703242"
 ---
 # <a name="install-uwp-apps-with-app-installer"></a>使用應用程式安裝程式安裝 UWP app
 

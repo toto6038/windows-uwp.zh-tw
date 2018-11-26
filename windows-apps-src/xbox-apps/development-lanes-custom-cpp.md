@@ -1,19 +1,17 @@
 ---
-author: JordanEllis6809
 title: 使用通用 Windows 平台 (UWP) 在 Xbox 上進行 C++ 遊戲開發
 description: 在 Xbox 上進行 C++ UWP 遊戲開發。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 6ae36021-94d3-43df-9e96-69a93cfe8b56
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c954efde29603b0f1d8fef2c80378c87b954e02
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 23dfb8843ed8e70fc6f979bd778a517d0c30327a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556346"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7701588"
 ---
 # <a name="bring-custom-c-games-to-uwp-on-xbox"></a>將自訂的 c + + 遊戲 UWP 在 Xbox 上
 

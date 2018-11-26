@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 設定執行背景工作的條件
 description: 了解如何設定條件以控制背景工作的執行時間。
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: windows 10，uwp，背景工作
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: e64f36eb400d683da1cb52a819da5aa245a41ac4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560702"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7698896"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>設定執行背景工作的條件
 

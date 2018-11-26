@@ -1,9 +1,7 @@
 ---
-author: jwmsft
 description: 說明如何將 XAML 附加屬性當作相依性屬性來實作，以及如何定義讓附加屬性可以在 XAML 中使用所需的存取子慣例。
 title: 自訂附加屬性
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
-ms.author: jimwalk
 ms.date: 07/18/2017
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: de2d319f536b2c9d25d53e0b1ec2886831c66e12
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573202"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7702722"
 ---
 # <a name="custom-attached-properties"></a>自訂附加屬性
 

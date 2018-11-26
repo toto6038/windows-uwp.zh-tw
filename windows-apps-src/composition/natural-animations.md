@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 自然運動動畫
 description: 深入了解自然動作動畫以及如何在您的應用程式 UI 中使用之。
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 537e722917f00d590428dd2b5ee2d24e023e52b6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fde0cbf5335b4f5c3da2f21f692fc2c23455776
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580973"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7697711"
 ---
 # <a name="natural-motion-animations"></a>自然運動動畫
 
