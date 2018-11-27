@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: Windows 執行階段是計算參考次數系統;請務必讓您了解的重要性和區別，這類系統在強式和弱式參考。
 title: C++/WinRT 中的弱式參考資料
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 強式弱式、 參考
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: a27f0e6868826e88069e3ffd1fbdcd87242ec216
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579615"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710919"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>強式和弱式參考，在 C + + /winrt
 

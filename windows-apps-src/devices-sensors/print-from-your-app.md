@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: 從您的 app 列印
 description: 了解如何從通用 Windows 應用程式列印文件。 本主題也示範如何列印特定頁面。
-ms.author: pafarley
 ms.date: 01/29/2018
 ms.topic: article
 keywords: windows 10，uwp 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: b35d11e9dcf1e79296e0eeaff85c975c24d65920
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b0c2993900721fc2020bb998f3db6ffd9106c8e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7577629"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709375"
 ---
 # <a name="print-from-your-app"></a>從您的應用程式列印
 

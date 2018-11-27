@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: Manage ad campaigns for your apps in Partner Center.
 title: 管理您的廣告活動
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
-ms.author: wdg-dev-content
 ms.date: 06/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c53ae429e4cb912ce0ed2480c8cab814cbfaf96
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ead654573d16628e5dd07c58c937d4f71cb7f84c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582428"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711356"
 ---
 # <a name="manage-your-ad-campaign"></a>管理您的廣告活動
 

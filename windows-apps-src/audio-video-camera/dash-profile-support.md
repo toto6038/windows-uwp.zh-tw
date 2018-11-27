@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: 3E0FBB43-F6A4-4558-AA89-20E7760BA73F
 description: 本文列出 UWP app 支援的透過 HTTP 的動態彈性資料流 (DASH) 設定檔。
 title: 透過 HTTP 的動態彈性資料流 (DASH) 設定檔支援
-ms.author: drewbat
 ms.date: 02/15/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a4ec9f9e81010d39af496da156afa676f4b3714
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d680f7d4a3510f66cba74d1c8b30d8883b07369a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556827"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711291"
 ---
 # <a name="dynamic-adaptive-streaming-over-http-dash-profile-support"></a>透過 HTTP 的動態彈性資料流 (DASH) 設定檔支援
 

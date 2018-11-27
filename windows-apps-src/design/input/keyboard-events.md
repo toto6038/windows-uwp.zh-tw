@@ -1,12 +1,10 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.
 title: 鍵盤事件
 ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down, 鍵盤, 遊戲台, 遠端, 協助工具, 瀏覽, 焦點, 文字, 輸入, 使用者互動, 向上鍵, 向下鍵
-ms.author: kbridge
 ms.date: 03/29/2017
 ms.topic: article
 pm-contact: chigy
@@ -14,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a9abc16a4992dedead598f96061811c82c5a5c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563557"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710073"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 

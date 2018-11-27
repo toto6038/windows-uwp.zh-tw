@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法取得 Xbox Live 分析資料。
 title: 取得 Xbox Live 分析資料
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析
 ms.localizationpriority: medium
-ms.openlocfilehash: 70a1e5d2105c73e76b974a888e3edb1bcb009aa6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 74c898630641e8b0d53a181d1874c6df62baaa78
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559918"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710270"
 ---
 # <a name="get-xbox-live-analytics-data"></a>取得 Xbox Live 分析資料
 

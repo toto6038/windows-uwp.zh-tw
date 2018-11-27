@@ -1,10 +1,8 @@
 ---
-author: jwmsft
 Description: Command bar flyouts give users inline access to your app's most common tasks.
 title: 命令列飛出視窗
 label: Command bar flyout
 template: detail.hbs
-ms.author: jimwalk
 ms.date: 10/2/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -14,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4b92b74ba65a683143e273961ed25ce478a6e81f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ef472863550b7d17836dc7f47e2fe789c9ca7fbc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553205"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709879"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 

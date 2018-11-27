@@ -2,18 +2,16 @@
 title: 在應用程式之間共用憑證
 description: 針對需要比使用者識別碼和密碼組合更安全之驗證方式的通用 Windows 平台 (UWP) 應用程式，即可使用憑證來進行驗證。
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 044b1b60b80cec1fc40adda6b9b6d44bee34ce7c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1caa7361011b535a0dd63da53e0aba2eadff72be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570351"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711395"
 ---
 # <a name="share-certificates-between-apps"></a>在應用程式之間共用憑證
 

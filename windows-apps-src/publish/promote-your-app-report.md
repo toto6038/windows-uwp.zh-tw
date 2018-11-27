@@ -1,19 +1,17 @@
 ---
-author: JnHs
 title: 廣告活動報告
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 在合作夥伴中心的廣告活動報告可讓您查看您的應用程式促銷廣告行銷活動的表現。
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, promote, app, campaign, report, installs, 促銷, 應用程式, 行銷活動, 報告, 安裝
 ms.localizationpriority: medium
-ms.openlocfilehash: d4cbc467ae864ecd5314eedfbf54b2c3de9a3ed8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f99c9af9fd3f8c9a94b79b3324fea6ebbd710c5b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7573657"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711458"
 ---
 # <a name="ad-campaign-report"></a>廣告活動報告
 

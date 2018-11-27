@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: 組合原生交互操作
 description: Windows.UI.Composition API 提供可將內容直接移到撰寫器中的原生交互操作介面。
-ms.author: jimwalk
 ms.date: 06/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c5ba97e8e4a3f875e3afbc5a9067ab19b34a35d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2f5eabfaf8e526899c17b2d0da688a5135133f65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554838"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711304"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>組合 DirectX 與 Direct2D 的原生交互操作
 

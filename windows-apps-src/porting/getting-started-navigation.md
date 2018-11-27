@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 title: 瀏覽入門
 description: 瀏覽入門
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cb4550a7da3b9b547a1d723d5ae8da260149ba2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 63a39dfcfaab8b42afc98b7fe786a05908d49d16
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567792"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711208"
 ---
 # <a name="getting-started-navigation"></a>開始使用：瀏覽
 

@@ -1,21 +1,19 @@
 ---
 description: 取得對您的 UWP 應用程式新增控制項和模式的設計指導方針 &amp; 程式碼撰寫指示。 尋找 45 種以上的實用控制項來用於您的應用程式。
 title: UWP 控制項和模式 - Windows 應用程式開發
-author: mijacobs
 keywords: uwp 控制項, 使用者介面,應用程式控制項
 label: Controls & patterns
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: e28d557280ab253a09d5697f369c694e490d3c7d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c2f1a2b5ae514222ed6ef06cc7099a0261747dbc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564572"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709837"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>適用於 UWP 應用程式的控制項和模式
  

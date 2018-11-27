@@ -4,17 +4,15 @@ description: 可以建立為串流資源的 Direct3D 資源類型上有一些限
 ms.assetid: 6FC5AD93-6F47-479E-947C-895C99B427BC
 keywords:
 - 串流資源建立參數
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0129b44b6f1c6c8b18555e3e0e0b350a695cabe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1ddb150e570e25af7162a50309b9b0fc30cedf60
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576282"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711178"
 ---
 # <a name="streaming-resource-creation-parameters"></a>串流資源建立參數
 

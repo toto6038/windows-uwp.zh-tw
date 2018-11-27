@@ -1,9 +1,7 @@
 ---
-author: stevewhims
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: 資料繫結概觀
 description: 本主題示範如何在通用 Windows 平台 (UWP) app 中將控制項 (或其他 UI 元素) 繫結到單一項目，或將項目的控制項繫結到項目集合。
-ms.author: stwhi
 ms.date: 10/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -12,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cppcx
-ms.openlocfilehash: 581c2bc4204a7eab002ef2680e335a4109716d74
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc8e4d1753333579b016a44adf9429d355d29fb6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558895"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710710"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 
