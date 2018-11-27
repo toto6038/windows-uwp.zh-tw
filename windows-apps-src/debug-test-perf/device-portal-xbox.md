@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Xbox 的 Device Portal
 description: 了解如何啟用 Xbox One 的 Device Portal。
-ms.author: pafarley
 ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 7182f67a7bffc303b9c3067d8b746f1b4f27b809
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554452"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710118"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 

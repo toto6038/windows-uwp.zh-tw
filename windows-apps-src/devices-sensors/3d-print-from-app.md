@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 從 app 進行 3D 列印
 description: 了解如何將 3D 列印功能加入通用 Windows 應用程式。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 818e1338a1d36d24990f22316dc2072c2c0d7cc5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574401"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708508"
 ---
 # <a name="3d-printing-from-your-app"></a>從應用程式進行 3D 列印
 

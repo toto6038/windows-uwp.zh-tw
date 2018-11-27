@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 Description: This topic describes performance guidelines for apps that require access to a user's location.
 title: 定位感知應用程式的指導方針
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: d0101124febc52da379d2e829e86bdbba7583851
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e5150188c99bfc448bf85df6a6dabbbb4c60bd49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582268"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709596"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 

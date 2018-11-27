@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 2A454057-FF14-40D2-8ED2-CEB5F27E0226
 description: 在 Microsoft Store 提交 API 中使用這些方法，管理套件正式提交來為登錄到您的合作夥伴中心帳戶的應用程式。
 title: 管理套件正式發行前小眾測試版提交
-ms.author: mhopkins
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f2a643aa80a59dd64ec1e7b829c02470aaed8bd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 19ddd43d4e61480764882f1b10e6240aa2afeb8c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576642"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710326"
 ---
 # <a name="manage-package-flight-submissions"></a>管理套件正式發行前小眾測試版提交
 

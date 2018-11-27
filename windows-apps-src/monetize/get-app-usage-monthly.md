@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4E4CB1E3-D213-4324-91E4-7D4A0EA19C53
 description: 在 Microsoft Store 分析 API 中使用這個方法，以針對特定的日期範圍與其他選擇性篩選器取得每月應用程式使用狀況資料。
 title: 取得每月應用程式使用量
-ms.author: mhopkins
 ms.date: 08/15/2018
 ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
-ms.openlocfilehash: 585e44a884bc90c5c7e69458ad5d024d7f26a79f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567183"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710697"
 ---
 # <a name="get-monthly-app-usage"></a>取得每月應用程式使用量
 

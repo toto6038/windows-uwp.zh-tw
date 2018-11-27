@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 建立和取用 App 服務
 description: 了解如何撰寫可為其他通用 Windows 平台 (UWP) app 提供服務的 UWP app，以及如何取用這些服務。
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: 應用程式通訊，處理序間通訊，IPC，背景傳訊，背景通訊，以應用程式的應用程式的應用程式服務
-ms.author: twhitney
 ms.date: 09/18/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1407187f9883f44bb9fdc56fd3ae80820b5920f8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 34414d20a25e59a2569417c75ebfae90727d830d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556327"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7710507"
 ---
 # <a name="create-and-consume-an-app-service"></a>建立和取用 App 服務
 

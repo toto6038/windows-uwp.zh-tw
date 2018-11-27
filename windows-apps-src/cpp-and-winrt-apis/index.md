@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: C++/WinRT 是 Windows 執行階段 (WinRT) API 的全新完全標準現代 C++17 語言投影，實作為標頭檔式的程式庫。
 title: C++/WinRT
-ms.author: stwhi
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f711ebc8d0d2e8dda87355a7894c9d311c6bbc2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 664fd22fc954403776e1becc31563a06d5fdd15b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574759"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710144"
 ---
 # <a name="cwinrt"></a>C++/WinRT
 

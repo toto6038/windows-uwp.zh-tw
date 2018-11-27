@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 從您的應用程式觸發背景工作
 description: 說明如何觸發背景工作從應用程式
-ms.author: twhitney
 ms.date: 07/06/2018
 ms.topic: article
 keywords: 背景工作觸發程序，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 6846cfe77272a78eff7ddc05c9a7e48dddd21fc2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 237f342029f8d9bc0bbec1fcef5c7059cbf09840
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571058"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710454"
 ---
 # <a name="trigger-a-background-task-from-within-your-app"></a>從您的應用程式觸發背景工作
 

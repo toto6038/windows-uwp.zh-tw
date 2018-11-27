@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 處理 App 預先啟動
 description: 了解如何透過覆寫 OnLaunched 方法及呼叫 CoreApplication.EnablePrelaunch(true) 來處理應用程式預先啟動。
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a13ec942080d7fe517a10b837bea9ae8fae27750
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 11f68d9dd912c92ff7de8b861f576e8f0c4b4dde
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554004"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710743"
 ---
 # <a name="handle-app-prelaunch"></a>處理應用程式預先啟動
 

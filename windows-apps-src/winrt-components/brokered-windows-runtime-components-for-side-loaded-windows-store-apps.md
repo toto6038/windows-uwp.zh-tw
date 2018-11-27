@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 title: 側載 UWP app 的代理 Windows 執行階段元件
 description: 本文件討論 windows 10，可讓方便觸控的.NET 應用程式使用負責重要業務關鍵作業的現有程式碼所支援的企業導向功能。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 81b3930c-6af9-406d-9d1e-8ee6a13ec38a
 ms.localizationpriority: medium
-ms.openlocfilehash: 3228cd80e7a9e8efb5dca1ec3a2d469e40a52c8a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d9665ba3af10091ddc652198d5340e00456a65a7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575860"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711098"
 ---
 # <a name="brokered-windows-runtime-components-for-a-side-loaded-uwp-app"></a>側載 UWP app 的代理 Windows 執行階段元件
 

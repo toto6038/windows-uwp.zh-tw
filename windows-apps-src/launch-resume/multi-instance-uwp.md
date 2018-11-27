@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 建立多執行個體通用 Windows 應用程式
 description: 本主題描述如何撰寫支援多執行個體的 UWP 應用程式。
 keywords: 多重執行個體 uwp
-ms.author: twhitney
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c70d696c1211cfa4f929178f0cf0d9da76ae74c2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6cceac0cf4b9cc4c13c0e99ce5beffad70787256
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582458"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710620"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 

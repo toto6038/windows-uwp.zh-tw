@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Add-on acquisitions report in Partner Center lets you see how many add-ons you've sold, along with demographic and platform details.
 title: 附加元件下載數報告
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
 ms.localizationpriority: medium
-ms.openlocfilehash: 63884d9cce24e6b85f3001ac4c6eb1a07141bfd4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8027276779dac59f0745dd8053ee73cf1615e630
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7557291"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709503"
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 

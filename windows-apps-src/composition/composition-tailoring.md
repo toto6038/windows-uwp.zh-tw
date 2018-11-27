@@ -1,18 +1,16 @@
 ---
-author: daneuber
 title: 量身訂做的組合
 description: 使用組合 Api 量身打造您的 UI、 最佳化的效能，以及容納使用者設定和裝置特性。
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e6060e8da2ab4308deb3896b3ad209ab1093b056
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e6252ce3d2e213602250f6c24f8867767accecbe
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561053"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707453"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>量身訂做的效果與使用 Windows UI 體驗
 

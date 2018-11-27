@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 將跨處理序背景工作移植到同處理序背景工作
 description: 跨處理序背景工作移植到您的前景 app 處理序內執行的同處理序背景工作。
-ms.author: twhitney
 ms.date: 09/19/2018
 ms.topic: article
 keywords: windows 10、 uwp、 背景工作、 應用程式服務
 ms.assetid: 5327e966-b78d-4859-9b97-5a61c362573e
 ms.localizationpriority: medium
-ms.openlocfilehash: 47008fd7ba0b7724aa8fbdc2dd6cbd55288faea0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 97dd249165877591743892a136d51e0969dd902a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574318"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709119"
 ---
 # <a name="port-an-out-of-process-background-task-to-an-in-process-background-task"></a>將跨處理序背景工作移植到同處理序背景工作
 

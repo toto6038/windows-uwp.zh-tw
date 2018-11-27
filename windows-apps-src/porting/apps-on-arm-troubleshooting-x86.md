@@ -1,17 +1,16 @@
 ---
 title: 疑難排解 x86 傳統型應用程式
 description: 在 ARM 上執行 x86 應用程式的一般問題，以及修正這些問題。
-ms.author: misatran
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, always connected, x86 emulation on ARM, troubleshooting, 永遠連線, ARM 上的 x86 模擬, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 01ef13f6f27b45a4cc41244e4ebed0a54804fc8e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 396bb0bf2c5ba5236e0e46e7b474867ffacb8c75
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566061"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711108"
 ---
 # <a name="troubleshooting-x86-desktop-apps"></a>疑難排解 x86 傳統型應用程式
 >[!IMPORTANT]

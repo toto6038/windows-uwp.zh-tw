@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 在 UWP 中儲存和載入設定
 description: 了解如何在通用 Windows 平台應用程式中儲存和載入應用程式設定。
-ms.author: twhitney
 ms.date: 05/07/2018
 ms.topic: article
 keywords: 開始設定, uwp, windows 10, 了解曲目, 設定, 儲存設定, 載入設定
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 63af8aa4ab4d12a3a4aa69bd7d870106e21844f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562018"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7710210"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 中儲存和載入設定
 
