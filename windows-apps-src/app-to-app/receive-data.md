@@ -2,18 +2,16 @@
 description: 本文說明如何使用分享協定，在您的通用 Windows 平台 (UWP) app 中接收從另一個應用程式分享的內容。 分享協定可以在使用者叫用分享時，讓您的應用程式成為一個選項。
 title: 接收資料
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d64e4a2d4251aca6bbce39b5f24e3e5f35295b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e17b9ddd5833899a83e24d24c74f9c620a28f5c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563269"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716746"
 ---
 # <a name="receive-data"></a>接收資料
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
 description: 本主題提供的案例研究的對等運作的測驗遊戲 WinRT 8.1 範例 app 移植到 windows 10 通用 Windows 平台 (UWP) 應用程式。
 title: Windows Runtime 8.x 至 UWP 的案例研究，QuizGame 對等應用程式範例
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 69aae85f4e0bb01833114ae5b2cbfab45e9dd84d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ce39e87f3c5c9e11f3e9ddb1424d606356ee3c8
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567998"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717472"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 執行階段 8.x 至 UWP 案例研究： QuizGame 應用程式範例
 

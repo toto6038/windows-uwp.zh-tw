@@ -1,20 +1,18 @@
 ---
-author: normesta
 Description: Distribute a packaged desktop application (Desktop Bridge)
 Search.Product: eADQiWindows 10XVcnh
 title: 發佈您已封裝的傳統型應用程式至 Microsoft Store 或側載至一或多個裝置。
-ms.author: normesta
 ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: edff3787-cecb-4054-9a2d-1fbefa79efc4
 ms.localizationpriority: medium
-ms.openlocfilehash: f79e641b377f0e34ece8f0be434fae11cba621a6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9fe216b70b7c10f254c0e3b7b18275a72d46215c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555482"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717147"
 ---
 # <a name="distribute-a-packaged-desktop-application"></a>散佈封裝的傳統型應用程式
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 37F2C162-4910-4336-BEED-8536C88DCA65
 description: 在 Microsoft Store 提交 API 中使用這些方法，來管理套件正式，針對已登錄到您的合作夥伴中心帳戶的應用程式。
 title: 管理套件正式發行前小眾測試版
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f1300151d8b50a0a9e192c2090e9a3d72afa86e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8678ee4d73f13e241a2c72d6dac532289af13ced
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560915"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718058"
 ---
 # <a name="manage-package-flights"></a>管理套件正式發行前小眾測試版
 

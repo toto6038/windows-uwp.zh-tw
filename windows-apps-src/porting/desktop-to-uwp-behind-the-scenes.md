@@ -1,19 +1,17 @@
 ---
-author: normesta
 Description: This article provides a deeper dive on how the Desktop Bridge works under the covers.
 title: 傳統型橋接器的幕後作業
-ms.author: normesta
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ff5cd40cad43a73a8ba51a25710e2f2cbaf2a7b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f5320d4d6a4f43ee8d94a55e46333821656adb20
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578384"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717117"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>您已封裝的傳統型應用程式的幕後作業
 

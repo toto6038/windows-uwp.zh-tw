@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 建立著色器及繪製基本型別
 description: 以下我們將示範如何使用 HLSL 來源檔案，以編譯及建立您可以接著用來在顯示器上繪製基本型別的著色器。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 著色器, 原始物件, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 475a69837796b0b64be27c96f10b42d5b61390c1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5173adc26e0730ccb80f93fe0c12af286b0c1a49
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558426"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717681"
 ---
 # <a name="create-shaders-and-drawing-primitives"></a>建立著色器及繪製原始物件
 

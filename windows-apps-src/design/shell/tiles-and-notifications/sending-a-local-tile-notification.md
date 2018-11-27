@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: 傳送本機磚通知
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 76af980aeb759905259a043fdb9b4b828a90d819
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5752a7bf18d785121258ea3fe75afe8383be2aff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563544"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716828"
 ---
 # <a name="send-a-local-tile-notification"></a>傳送本機磚通知
  

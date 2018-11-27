@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 9F0A59A1-FAD7-4AD5-B78B-C1280F215D23
 description: 使用 Microsoft Store 針對性優惠 API，取得目前可用於您的應用程式的針對性優惠。
 title: 使用Microsoft Store 服務管理針對性優惠
-ms.author: mhopkins
 ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10 uwp, Microsoft Store 服務, Microsoft Store 針對性優惠 API, 針對性優惠
 ms.localizationpriority: medium
-ms.openlocfilehash: dbfefefdb7f7b96dbe99b35656b610b393ab3afa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 27d99d2008352ff291f0cb620afab8ccb8f6977c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576542"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718509"
 ---
 # <a name="manage-targeted-offers-using-store-services"></a>使用Microsoft Store 服務管理針對性優惠
 

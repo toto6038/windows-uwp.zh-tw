@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
 description: Microsoft Visual Studio 對 Windows 來說就像是 Xcode 與 iOS 和 Mac OS 的關係。 在此逐步解說中，我們會協助您能順利使用 Visual Studio。
 title: 在 Visual Studio 中建立專案
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3b10d615146c8989231c4fe36ad9588716c59c34
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b6ea9fdf2e504e1ceee71658eab308751e1745c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566335"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716932"
 ---
 # <a name="getting-started-creating-a-project"></a>開始使用：建立專案
 

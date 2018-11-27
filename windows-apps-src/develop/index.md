@@ -1,19 +1,17 @@
 ---
 description: 了解如何開發 UWP 應用程式。
 title: 開發 UWP app
-author: mijacobs
 layout: LandingPage
 keywords: uwp 應用程式開發執行緒 async 平台概觀入口網站開發開發人員
-ms.author: mijacobs
 ms.date: 3/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d4b775901fbb5140b63a76676705f2d2f2ba5f68
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558974"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718639"
 ---
 <div> 
 <h1>開發 UWP app</h1>

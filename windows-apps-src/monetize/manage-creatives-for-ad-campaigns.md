@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: c5246681-82c7-44df-87e1-a84a926e6496
 description: 在 Microsoft Store 促銷 API 中使用此方法，管理適用於廣告行銷活動的廣告素材。
 title: 管理廣告素材
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 97a7ac89585cbcf7a4609aee16978d36be027a24
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 41c11ee9c5decffff57a2d443e1385398ce40d89
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572947"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718048"
 ---
 # <a name="manage-creatives"></a>管理廣告素材
 

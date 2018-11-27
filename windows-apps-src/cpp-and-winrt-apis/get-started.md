@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 為了加快使用 C + + / WinRT，本主題逐步解說一個簡單的程式碼範例。
 title: 開始使用 C++/WinRT
-ms.author: stwhi
 ms.date: 10/19/2018
 ms.topic: article
 keywords: windows 10, uwp, 標準, c++, cpp, winrt, 投影, 取得, 取得, 開始
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cb8e18904f61976103689c8d83475ec248eb38b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: cc98f61acc3b5dccdc4869b646337fdf9a6e701a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570966"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716227"
 ---
 # <a name="get-started-with-cwinrt"></a>開始使用 C++/WinRT
 

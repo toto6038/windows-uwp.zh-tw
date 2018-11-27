@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得應用程式的彙總下載數資料。
 title: 取得應用程式下載數
-ms.author: mhopkins
 ms.date: 03/23/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 應用程式下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c2e972b46c830dd6c9ea778e525f0abceda3e99
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4ef5c9cedcb828f6c7df8a294fc4aad87e9f74ae
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562587"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718313"
 ---
 # <a name="get-app-acquisitions"></a>取得應用程式下載數
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: Windows SDK、Microsoft Advertising SDK、Microsoft Store Services SDK 及 Microsoft Store 提供許多功能，可讓您透過應用程式賺更多的錢，並讓客戶透過吸引您的使用者來獲利。
 title: 營利、參與和 Microsoft Store 服務
-ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, 營利, 參與, 升階, Microsoft Store 服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 9eca34975217bace912ee06b967e028f30155452
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 747dbf7951a9db20bb8a1063757b88320fcc3f43
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566765"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718672"
 ---
 # <a name="monetization-engagement-and-store-services"></a>營利、參與和 Microsoft Store 服務
 

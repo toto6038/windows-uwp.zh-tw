@@ -1,18 +1,16 @@
 ---
 title: 針對 ARM32 UWP app 問題進行疑難排解
-author: msatranjr
 description: 在 ARM 上執行 ARM32 應用程式的一般問題，以及修正這些問題。
-ms.author: misatran
 ms.date: 05/09/2018
 ms.topic: article
 keywords: windows 10 s, 永遠連線, ARM 上的 ARM32 應用程式, ARM 上的 windows 10, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eaeccb8b4003bb835ee4700d1df57cd8cefcda0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6858f9add2430dc83d468b98d4147cc205dd372e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553276"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716342"
 ---
 # <a name="troubleshooting-arm32-uwp-apps"></a>針對 ARM32 UWP app 問題進行疑難排解
 >[!IMPORTANT]

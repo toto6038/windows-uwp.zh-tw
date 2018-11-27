@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用這個方法，取得彙總附加元件下載數資料。
 title: 取得 Xbox One 附加內容下載數
-ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，Xbox One 的附加元件下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: e703c0c07e981ebf21ad3388ad178eabdd5c068d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f102d2d692a2307c25dcb95e66d612fc561dec70
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569498"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717978"
 ---
 # <a name="get-xbox-one-add-on-acquisitions"></a>取得 Xbox One 附加內容下載數
 

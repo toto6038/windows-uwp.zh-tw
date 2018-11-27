@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 以宣告式 XAML 標記形式定義 UI 的做法可以極順利地從通用 8.1 app 轉譯至通用 Windows 平台 (UWP) app。
 title: 將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b5a3425c49a30ddb96fcb7a8a2c8b83fbb6dff3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5ddeee438e946dd28a78d59d163f59cb1114aa65
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568456"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717834"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 

@@ -1,19 +1,17 @@
 ---
-author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: SystemMediaTransportControls 類別可讓您的 App 使用內建於 Windows 的系統媒體傳輸控制項，以及更新控制項顯示您 App 目前正在播放之媒體的相關中繼資料。
 title: 系統媒體傳輸控制項的手動控制項
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ece9a25a2fd2892553d66847c39637e7faae70
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6be1680d1ce843c1fbe7105dc2027e764095495a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554944"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7717223"
 ---
 # <a name="manual-control-of-the-system-media-transport-controls"></a>系統媒體傳輸控制項的手動控制項
 

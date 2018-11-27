@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 資產套件簡介
 description: 資產套件是一種套件，做為應用程式的常見檔案的集中位置 – 有效免除架構套件中的重複檔案。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 98980e67d24eb96aa55af7fefe10b5e4c2cdfa67
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b7ae65d13f92f5ab28f2f5eda468032bb7f83793
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566176"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718098"
 ---
 # <a name="introduction-to-asset-packages"></a>資產套件簡介
 

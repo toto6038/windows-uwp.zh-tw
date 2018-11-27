@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 實驗 API
 description: 了解實驗 API
-ms.author: twhitney
 ms.date: 11/13/2017
 ms.topic: article
 keywords: Windows 10, uwp, 實驗, API
 ms.localizationpriority: medium
-ms.openlocfilehash: fe5fa437c5a1e564be07b7277de0f190d6eab862
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9d6e236368134086081141e220088358f4897033
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570341"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717001"
 ---
 # <a name="experimental-apis"></a>實驗 API
 

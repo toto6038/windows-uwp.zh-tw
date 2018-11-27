@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: Windows 10 UWP App 週期
 description: 本主題描述 Windows 10 通用 Windows 平台 (UWP) app 從啟用到關閉為止的整個週期。
 keywords: app 週期暫停繼續啟動啟用
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.author: twhitney
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cf8496393c5b500ab30d08608e90a0e156422ce3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574278"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718426"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) app 週期
 

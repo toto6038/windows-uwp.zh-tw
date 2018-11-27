@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 description: 與裝置本身及其感應器整合的程式碼牽涉到從使用者輸入和輸出到使用者。
 title: I/O、 裝置與 app 模型的移植到 UWP 的 WindowsPhone Silverlight'
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
-ms.author: stwhi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a0041fd154a4ce32930e10e21175706e8e7ad988
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559810"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717515"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、 裝置和應用程式模型的移植 WindowsPhone Silverlight 到 UWP
 

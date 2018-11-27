@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 將紋理套用到基本型別
 description: 以下我們將使用「在基本型別上使用深度和效果」中建立的立方體，以載入原始紋理資料並將該資料套用到 3D 基本型別。
 ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 紋理, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: 252613bbea7f4cdb720758d3435cf0920dd93efa
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 437c861e6d3017d83b520732dd0e279d882835c5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577742"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717651"
 ---
 # <a name="apply-textures-to-primitives"></a>將紋理套用到原始物件
 
@@ -34,7 +32,6 @@ ms.locfileid: "7577742"
 
 <a name="instructions"></a>指示
 ------------
-
 ### <a name="1-defining-variables-for-a-textured-cube"></a>1. 為紋理立方體定義變數
 
 首先，我們需要為紋理立方體定義 **BasicVertex** 和 **ConstantBuffer** 結構。 這些結構指定了立方體的頂點位置、方向及紋理，以及檢視立方體的方式。 否則，我們就需要使用類似先前[在基本型別上使用深度和效果](using-depth-and-effects-on-primitives.md)教學課程中的方式宣告變數。

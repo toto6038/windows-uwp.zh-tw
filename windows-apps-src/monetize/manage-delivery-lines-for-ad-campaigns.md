@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: 在 Microsoft Store 促銷 API 中使用此方法，管理適用於廣告行銷活動的播送行。
 title: 管理廣告播送行
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: e3d4a09524f1ebc0e944036bd9458b1b32ee04d3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 363f7034d7e353d9ee110637971e7b848dbca1bb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555241"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718250"
 ---
 # <a name="manage-delivery-lines"></a>管理廣告播送行
 

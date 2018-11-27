@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 description: 在概念上來說，Direct3D 11 著色器管線與 OpenGL ES 2.0 中的著色器管線非常相似。
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D, 著色器管線
 ms.localizationpriority: medium
-ms.openlocfilehash: f8e3671b5d3490cf565db34ec891c203ee1f7c7a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f02b365175909b5038e5eb117f12851be9f14e3a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572334"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717906"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 

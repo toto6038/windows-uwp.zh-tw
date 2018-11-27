@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得 Xbox One 遊戲的彙總下載數資料。
 title: 取得 Xbox One 遊戲下載數
-ms.author: mhopkins
 ms.date: 10/18/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 分析 API, Xbox One 遊戲下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 200f18e443e8a130a7e5c673b03c146b73c9083b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 348430f7ceee66a9c4e82f258a70e57d8f344943
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559508"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717893"
 ---
 # <a name="get-xbox-one-game-acquisitions"></a>取得 Xbox One 遊戲下載數
 

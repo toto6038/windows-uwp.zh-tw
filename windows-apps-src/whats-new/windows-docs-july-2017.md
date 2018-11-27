@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: 2017 年 7 月 Windows 文件的最新動向 - 開發 UWP app
 description: 新功能、範例及開發人員指引已加入 2017 年 7 月的 Windows 10 開發人員文件中
 keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10
-ms.author: quradic
 ms.date: 07/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 62afbef1cc1f47bbc88c45a166572deca28d47a4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: dd00d1aba0e6a58cd2128c90b2c7f714d3f8f802
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579536"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717348"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-july-2017"></a>2017 年 7 月 Windows 開發人員文件的最新動向
 

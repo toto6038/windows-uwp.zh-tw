@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
 title: 什麼是 windows 10 組建 10240-2015 年 7 月中的新功能
 keywords: 新功能, 新功能, 更新, 多項更新, 功能, 新, Windows 10, 1507, 10240
-ms.author: quradic
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: c38fe989bd854d44bb7dc3c0cba36a4ae145854c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578052"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7717754"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>什麼是 windows 10 中適用於開發人員的新 (組建 10240）
 

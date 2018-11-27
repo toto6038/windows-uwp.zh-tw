@@ -1,14 +1,13 @@
 ---
-author: WilliamsJason
 title: 裝置入口網站遠端輸入 API 參考
 description: 了解如何在 Xbox 上從遠端傳送控制器、鍵盤和滑鼠輸入。
 ms.localizationpriority: medium
-ms.openlocfilehash: a2217b87d840bc95010e2e1ce47ea72e991e8fa3
-ms.sourcegitcommit: c104b653601d9b81cfc8bb6032ca434cff8fe9b1
-ms.translationtype: HT
+ms.openlocfilehash: e0db86ad50bfb1cb27f516243542a554e710c3ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "1921232"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7719631"
 ---
 # <a name="remote-input-api-reference"></a>遠端輸入 API 參考   
 您可以透過此 API 即時從遠端傳送控制器、鍵盤和滑鼠輸入。

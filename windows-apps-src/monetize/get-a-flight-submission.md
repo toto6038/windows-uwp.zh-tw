@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: 在 Microsoft Store 提交 API 中使用這個方法，取得現有套件正式發行前小眾測試版提交的資料。
 title: 取得套件正式發行前小眾測試版提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交
 ms.localizationpriority: medium
-ms.openlocfilehash: f9f40219503c0a57f76fcee81858acf51f59b1df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fcbdaa90f09ba1a813612d6104268c4930c9a6d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562497"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718270"
 ---
 # <a name="get-a-package-flight-submission"></a>取得套件正式發行前小眾測試版提交
 

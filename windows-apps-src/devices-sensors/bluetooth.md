@@ -1,19 +1,17 @@
 ---
-author: msatranjr
 ms.assetid: 404783BA-8859-4BFB-86E3-3DD2042E66F5
 title: 藍牙
 description: 本節包含如何將藍牙整合至通用 Windows 平台 (UWP) 應用程式的文章，包括如何使用 RFCOMM、GATT 及低功耗 (LE) 廣告。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 19f381b7fbd53ee50d4589201edf74ac1f241d40
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d6b5c95b59c1542df743ecc1f53bf3c3fc90aa1b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553399"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7718662"
 ---
 # <a name="bluetooth"></a>藍牙
 本節包含如何將藍牙整合到通用 Windows 平台 (UWP) app 的文章。 有兩個不同的藍芽技術，您可以選擇在您的應用程式中實作。

@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 使用封裝配置的套件建立
 description: 封裝配置是一份描述應用程式封裝結構的文件。 它會指定應用程式套件組合（主要和選用）、套件組合中的套件，和套件中的檔案。
-ms.author: lahugh
 ms.date: 04/30/2018
 ms.topic: article
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 9342b4ce35cb50037813ed2210e2d7246411ad92
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574935"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7718376"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用封裝配置的套件建立  
 
