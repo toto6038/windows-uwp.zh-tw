@@ -4,17 +4,15 @@ description: 在整個 Direct3D 中，頂點描述位置及方向。 基本類�
 ms.assetid: 94EC3D59-43FC-4509-A233-916E9FA8381E
 keywords:
 - 向量、頂點和四元數
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2373d18b51015652bc1ef3035402e1da95a54abf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8942e53b7372e2e8b3cf4ed05f89b4187bdfc4be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563492"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704346"
 ---
 # <a name="vectors-vertices-and-quaternions"></a>向量、頂點和四元數
 

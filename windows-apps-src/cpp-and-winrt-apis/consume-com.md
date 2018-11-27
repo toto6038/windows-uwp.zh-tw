@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 本主題使用完整的 Direct2D 程式碼範例，示範如何使用 C + + /winrt 取用 COM 類別和介面。
 title: 使用 C++/WinRT 來使用 COM 元件
-ms.author: stwhi
 ms.date: 07/23/2018
 ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 COM、 元件、 類別、 介面
 ms.localizationpriority: medium
-ms.openlocfilehash: a07c9877a6d6d953e578d927959b1202444ede21
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9000cad79e12a645689d90ef37a8ff43b9fc95b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578567"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706309"
 ---
 # <a name="consume-com-components-with-cwinrt"></a>使用 C++/WinRT 來使用 COM 元件
 

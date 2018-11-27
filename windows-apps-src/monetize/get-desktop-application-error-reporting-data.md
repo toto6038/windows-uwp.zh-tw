@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得傳統型應用程式的彙總錯誤報告資料。
 title: 取得傳統型應用程式的錯誤報告資料
-ms.author: mhopkins
 ms.date: 09/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 傳統型應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: eb0081024f59af5180f5018664934277e7fad835
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d7a017f2b9530a88b76a9d374b92e9cfd8890b51
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576222"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708638"
 ---
 # <a name="get-error-reporting-data-for-your-desktop-application"></a>取得傳統型應用程式的錯誤報告資料
 

@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 我們將說明在 Windows 執行階段 app 中，事件的程式設計概念時使用 C#、 Visual Basic 或 VisualC + + 元件延伸 (C + + /CX) 做為程式設計語言，並使用 XAML 定義 UI。
 title: 事件與路由事件概觀
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.author: jimwalk
 ms.date: 07/12/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ec2986594b043fa088450609e655f4b56b95e25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7f24543c1afcd9c154788cc4be03434384f00f0c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570584"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708025"
 ---
 # <a name="events-and-routed-events-overview"></a>事件與路由事件概觀
 

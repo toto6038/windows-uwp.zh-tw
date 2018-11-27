@@ -1,19 +1,17 @@
 ---
-author: normesta
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: 在 C# 或 Visual Basic 中呼叫非同步 API
 description: 通用 Windows 平台 (UWP) 包含許多非同步 API，可以確保即使 app 執行需要花一段時間才能完成的工作，還是能保持回應。
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, C#, Visual Basic, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 2d9bd5265d72a7a478de8c094cd900072e46a143
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571636"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704887"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 

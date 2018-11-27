@@ -4,17 +4,15 @@ description: 不同類型的資源會有不同的配置 (或記憶體使用量)�
 ms.assetid: BCDDF227-1837-44DA-ABD4-E39BCFF2B8EF
 keywords:
 - 資源類型
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c23cc07c84e9a77b36c812c6f273f518e98838e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4138fd7275f7e1f9addb7685ff0846e756701003
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561076"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704359"
 ---
 # <a name="resource-types"></a>資源類型
 

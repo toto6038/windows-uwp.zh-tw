@@ -1,19 +1,17 @@
 ---
-author: jaster
 ms.assetid: b7a4ac8a-d91e-461b-a060-cc6fcea8e778
 title: 使用視覺層搭配 XAML
 description: 了解使用視覺層 API 搭配現有 XAML 內容來建立進階動畫及效果的技術。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f25cda10d5fde88bbe2cff75406cc0454780a5b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae9bc0f6d53181a88b02ecda19b3aed745febe40
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569874"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706188"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>使用視覺層搭配 XAML
 

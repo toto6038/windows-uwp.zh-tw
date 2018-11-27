@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Health report in Partner Center lets you get data related to the performance and quality of your app, including crashes and unresponsive events.
 title: 健康情況報告
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 健康情況, 當機, 無回應事件, 應用程式健康情況, 健康情況資料, 堆疊追蹤, cab 檔案, 失敗, 失效, pdb, 符號
 ms.localizationpriority: medium
-ms.openlocfilehash: 06cf6a7050f7598e86582393a92b92d1bdd877d1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c547cc933247e69fd208e8d3c297572815a5f2ea
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554782"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704715"
 ---
 # <a name="health-report"></a>健康情況報告
 

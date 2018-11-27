@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 title: 從網頁安裝 UWP app
 description: 在本節中，我們將檢閱可讓使用者直接從網頁安裝應用程式所需採取的步驟。
-ms.author: lahugh
 ms.date: 11/16/2017
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a761bf04b56d13745f2505b8d0806fc4fdf3e1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 515beebd55049ecb4d0c6747fa7d37e76577ef7f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582198"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708118"
 ---
 # <a name="installing-uwp-apps-from-a-web-page"></a>從網頁安裝 UWP app
 

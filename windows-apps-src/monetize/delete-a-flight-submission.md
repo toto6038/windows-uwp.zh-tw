@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1A69A388-B1CC-4D2C-886B-EA07E6E60252
 description: 使用 Microsoft Store 提交 API 中的這個方法，刪除現有的套件正式發行前小眾測試版提交。
 title: 刪除套件正式發行前小眾測試版提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 正式發行前小眾測試版提交, 刪除, 套件正式發行前小眾測試版
 ms.localizationpriority: medium
-ms.openlocfilehash: 2196a6b7023a062905ae721ebdb536e2c8044057
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1222c730f4e7819037ee42fc0897cf2924586b25
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564148"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707889"
 ---
 # <a name="delete-a-package-flight-submission"></a>刪除套件正式發行前小眾測試版提交
 

@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
 title: 資源管理系統如何比對和選擇資源
 template: detail.hbs
-ms.author: stwhi
 ms.date: 10/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: c7576f98045bce3bcfcee093aa8d61059354d45a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569465"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706378"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>資源管理系統如何比對和選擇資源
 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 做法是為所有的候選項目排名時將所有限定詞列入考慮。

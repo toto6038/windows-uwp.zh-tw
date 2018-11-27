@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: 相機條碼掃描器碼制
 description: 相機條碼掃描器支援的碼制
-ms.author: jken
 ms.date: 05/1/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: c74e72c826687c2b21284c169c345e145505e104
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ecb40528ee0104a2e25b5e95499c4404057eba1f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576768"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708098"
 ---
 # <a name="symbologies"></a>碼制
 本主題提供 Windows 10 隨附之軟體條碼解碼器所支援的每個碼制的範例條碼包括：UPC/EAN、Code 39、Code 128、Interleaved 2 of 5、Databar Omnidirectional、Databar Stacked、QR 代碼和 GS1DWCode。

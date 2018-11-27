@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: 6AA037C0-35ED-4B9C-80A3-5E144D7EE94B
 title: 使用 WinAppDeployCmd.exe 工具安裝 App
 description: Windows 應用程式部署 (WinAppDeployCmd.exe) 是一個命令列工具，可以用來部署到任何 windows 10 裝置從 windows 10 電腦的通用 Windows 平台 (UWP) 應用程式。
-ms.author: lahugh
 ms.date: 09/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 13468ce3b74992c026d94223b5e67aea99d79991
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ec673236f41d4128e6aa5702f4d54f43c55890ab
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570371"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707813"
 ---
 # <a name="install-apps-with-the-winappdeploycmdexe-tool"></a>使用 WinAppDeployCmd.exe 工具安裝應用程式
 

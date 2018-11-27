@@ -4,17 +4,15 @@ description: 除了第 2 層功能外，第 3 層還新增 Texture3D 的串流�
 ms.assetid: 86E2F311-A221-4C87-BA89-642FF388FAEB
 keywords:
 - 第 3 層
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 02eb9179cbc4a5fed5d1f6dc37622491859a7552
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 019899df18831167f0744d5274aa120cc7dd2096
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561290"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708588"
 ---
 # <a name="tier-3"></a>第 3 層
 

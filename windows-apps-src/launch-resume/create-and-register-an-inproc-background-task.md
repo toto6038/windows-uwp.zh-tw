@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 建立及註冊同處理序的背景工作
 description: 建立及註冊與前景應用程式在相同處理序中執行的同處理序工作。
-ms.author: twhitney
 ms.date: 11/03/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.assetid: d99de93b-e33b-45a9-b19f-31417f1e9354
 ms.localizationpriority: medium
-ms.openlocfilehash: 1eeac0239bd0c6df38f82fa185c1ed6f7eb3f9dc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2a59fe6056661289726fdaa6c2dd26e90d5e3fad
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577914"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7709017"
 ---
 # <a name="create-and-register-an-in-process-background-task"></a>建立及註冊同處理序的背景工作
 

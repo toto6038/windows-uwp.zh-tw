@@ -1,20 +1,18 @@
 ---
-author: mijacobs
 Description: The universal design features included in every UWP app help you build apps that scale beautifully across a range of devices.
 title: 通用 Windows 平台 (UWP) 應用程式設計簡介 (Windows 應用程式)
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-ms.author: mijacobs
 ms.date: 05/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0168ae8d5058b6dde7cd137e95560008d2a4973d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0006d20c1db7da16b885e82fb3f066b081e27349
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574824"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706104"
 ---
 # <a name="introduction-to-uwp-app-design"></a>UWP app 設計簡介
 

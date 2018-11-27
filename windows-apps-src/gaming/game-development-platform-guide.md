@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 適用於通用 Windows 平台 (UWP) app 的遊戲技術
 description: 在本指南中，您將深入了解可用於開發通用 Windows 平台 (UWP) 遊戲的技術。
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 技術, DirectX
 ms.localizationpriority: medium
-ms.openlocfilehash: c6896bda0498483efb4d77e1fa2a6ef82e0f8789
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c6d2ebad640849cd81d6a2704f89ca1f05cc1b27
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576833"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707671"
 ---
 # <a name="game-technologies-for-uwp-apps"></a>適用於UWP app的遊戲技術
 

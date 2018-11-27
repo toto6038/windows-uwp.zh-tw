@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 title: Windows 10 組建 17763 API 變更
 description: 開發人員可以使用下列清單識別 Windows 10 組建 17763 中新增或變更的命名空間
 keywords: 新動向，最新動向，更新，Windows 10，最新，api，17763，10 月
-ms.author: quradic
 ms.date: 10/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bce94f47f91237c8a9e8222e5862ffdbffaec91f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8fd6d2c41cd2f632f22819f452b2f203fd8ac309
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575976"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704867"
 ---
 # <a name="new-apis-in-windows-10-build-17763"></a>Windows 10 中的新 Api 建置 17763
 

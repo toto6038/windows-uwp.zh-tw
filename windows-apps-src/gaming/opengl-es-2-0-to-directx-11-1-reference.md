@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 從 OpenGL ES 2.0 到 Direct3D 11 的參考
 description: 從 OpenGL ES 2.0 移植到 Direct3D 11 時，可以使用這些參考主題來查詢 API 對應和簡短的程式碼範例。
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 14259fb6949eaa100d51fbdbda6f96bd07a4fa80
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e3b86054048aaa6aa80f37f66ebc57ab9b8e6b50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563938"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707754"
 ---
 # <a name="opengl-es-20-to-direct3d-11-reference"></a>從 OpenGL ES 2.0 到 Direct3D 11 的參考
 

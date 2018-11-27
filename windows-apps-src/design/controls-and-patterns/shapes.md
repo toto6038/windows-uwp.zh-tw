@@ -1,19 +1,17 @@
 ---
-author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: 繪製圖形
 description: 了解如何繪製圖形，例如橢圓形、矩形、多邊形以及路徑。 Path 類別是在 XAML UI 中將極複雜向量繪製語言視覺化的一種方法，例如，您可繪製貝茲曲線。
-ms.author: jimwalk
 ms.date: 11/16/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 984653ad20fc40035528ab7e32b904e64d6ff8c5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a576add7a080874fb0f042748bef7472e04ac817
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562900"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706029"
 ---
 # <a name="draw-shapes"></a>繪製形狀
 

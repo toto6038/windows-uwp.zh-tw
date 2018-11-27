@@ -1,18 +1,16 @@
 ---
-author: stevewhims
 description: 本主題示範如何直接或間接使用 **winrt::implements** 基礎結構撰寫 C++/WinRT API。
 title: '使用 C++/WinRT 撰寫 API '
-ms.author: stwhi
 ms.date: 10/03/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 21670e0908a212341d401b4cbca314a9242b26a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7fd543d7c3ad9dec878cc02b14a79c254d91b4be
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580814"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706003"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 

@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: Windows 10 中適合開發人員的新功能、工具與特色
 description: Windows 10 組建 17134 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
 keywords: 新功能, 最新動向, 更新, 多項更新, 功能, 新, Windows 10, 最新, 開發人員, 17134
-ms.author: quradic
 ms.date: 4/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b25df0a8445322ceb422fd6485f7d08c1c49a25
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 72319e7d97bfaaff4595c56a09fb7d3a874faa50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567141"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705080"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 的新功能
 

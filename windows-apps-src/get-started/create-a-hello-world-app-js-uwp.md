@@ -1,19 +1,17 @@
 ---
-author: GrantMeStrength
 ms.assetid: 3a17e682-40be-41b4-8bd3-fbf0b15259d6
 title: 建立 "Hello, world" 應用程式 (JS)
 description: 本教學課程會教您如何使用 JavaScript 和 HTML 來建立簡單與 \#0034;Hello，world & \#0034;目標為 windows 10 上通用 Windows 平台 (UWP) 應用程式。
-ms.author: jken
 ms.date: 03/06/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d8fb1dc486c039007c3ea0d4ee36d72c0c511f9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c5b99c95167940c1ae51dbe96a3e43dc6fb0af34
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7575996"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705799"
 ---
 # <a name="create-a-hello-world-app-js"></a>建立 "Hello, world" 應用程式 (JS)
 

@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 初始化 Direct3D 11
 description: 示範如何將 Direct3D 9 初始化程式碼轉換成 Direct3D 11，包含如何取得 Direct3D 裝置的控制代碼與裝置內容，以及如何使用 DXGI 來設定交換鏈結。
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, direct3d 11, 初始設定, 移植, direct3d 9
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f6aa5bca3ecc242e90b42081a0111358afdfa9b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2aaf6dcc001a09e33588ac18898767b9cf92819c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580422"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707573"
 ---
 # <a name="initialize-direct3d-11"></a>初始化 Direct3D 11
 

@@ -1,24 +1,22 @@
 ---
-author: Karl-Bridge-Microsoft
 title: 適用於鍵盤、遊戲台、遙控器與協助工具的焦點瀏覽
 Description: ''
 label: ''
 template: detail.hbs
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 方向內部瀏覽, 方向區域, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
 ms.date: 03/02/2018
-ms.author: kbridge
 ms.topic: article
 pm-contact: miguelrb
 design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: f4c86847e02c4ba987f8b1dcc42016145b175193
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4c76e62a4fcccec91fc6b3a083671ff68af2202e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580598"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705060"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
 

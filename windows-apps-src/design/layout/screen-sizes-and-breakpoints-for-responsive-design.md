@@ -1,19 +1,17 @@
 ---
-author: mijacobs
 title: 回應式設計的螢幕大小與中斷點
 description: 除了最佳化 UI，我們建議針對幾個稱為中斷點的重要寬度類別，設計許多跨 Windows 10 生態系統的裝置。
-ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dbe71805ac0607a974374fb7a4f50a1d3f4d6811
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 0959c9bc09782538cdb15a68c46b0797d4b7d230
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7574474"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708913"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 

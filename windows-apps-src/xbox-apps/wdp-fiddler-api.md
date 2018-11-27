@@ -1,19 +1,17 @@
 ---
-author: WilliamsJason
 title: Device Portal Fiddler API 參考
 description: 了解如何以程式設計方式啟用/停用 Fiddler 追蹤。
-ms.author: wdg-dev-content
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7d4225e-ac2c-41dc-aca7-9b1a95ec590b
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e0faf3a0b6a4f13c0fce24aa093cf94a1e7ee7e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f60f3fc8678208f694a9ffabde06fa60de759a45
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570594"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705150"
 ---
 # <a name="fiddler-settings-api-reference"></a>Fiddler 設定 API 參考   
 您可以使用這個 REST API，啟用和停用開發套件的 Fiddler 網路追蹤。

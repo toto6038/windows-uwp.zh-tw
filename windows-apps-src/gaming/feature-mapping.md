@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 將 DirectX 9 功能對應到 DirectX 11 API
 description: 了解 Direct3D 9 遊戲使用的功能如何轉譯到 Direct3D 11 與通用 Windows 平台 (UWP)。
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX 9, DirectX 11, 移植
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dcf1749f1e7db4d514466d6a753d6f8cace5713
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 56bb86706795e773d21e45263f640f9fc0aa596a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567832"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708328"
 ---
 # <a name="map-directx-9-features-to-directx-11-apis"></a>將 DirectX 9 功能對應到 DirectX 11 API
 

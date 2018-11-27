@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 1f970d38-2338-470e-b5ba-811402752fc4
 description: 了解如何使用 Microsoft Advertising SDK，在適用於 Windows 10 的 UWP app 中加入插播式廣告。
 title: 插播式廣告
-ms.author: mhopkins
 ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: 27ef8173db2976d58f9ccd0422a1217e2bd91d13
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573693"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708388"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 

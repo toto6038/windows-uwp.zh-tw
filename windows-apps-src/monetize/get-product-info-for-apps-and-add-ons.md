@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 89178FD9-850B-462F-9016-1AD86D1F6F7F
 description: 了解如何使用 Windows.Services.Store 命名空間，來取得目前 app 或其中一個附加元件的 Microsoft Store 相關產品資訊。
 title: 取得應用程式和附加元件的產品資訊
-ms.author: mhopkins
 ms.date: 02/08/2018
 ms.topic: article
 keywords: Windows 10, UWP, App 內購買, IAP, 附加元件, Windows.Services.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: f1544ee3404e77ec7565c626a6ca96e439832c90
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9b923764c6374e403d2652db715f65a80c48bacf
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561603"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705391"
 ---
 # <a name="get-product-info-for-apps-and-add-ons"></a>取得應用程式和附加元件的產品資訊
 

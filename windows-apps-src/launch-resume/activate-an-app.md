@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 處理 app 啟用
 description: 了解如何透過覆寫 OnLaunched 方法來處理應用程式啟用。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
-ms.author: twhitney
 ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 4d69680df1684da756219c180bbe6d47263801b9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a75136f26aa6cfa330e4118e6709b0b4d4be4054
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7559770"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705291"
 ---
 # <a name="handle-app-activation"></a>處理應用程式啟用
 

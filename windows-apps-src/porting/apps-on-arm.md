@@ -1,18 +1,16 @@
 ---
 title: ARM 上的 Windows 10
-author: msatranjr
 description: 這篇文章概述體驗和 app 如何在 ARM 上執行、有哪些限制，以及可以前往哪裡了解更多。
-ms.author: misatran
 ms.date: 02/15/2018
 ms.topic: article
 keywords: windows 10 s, 永遠連線, ARM, ARM64, x86 模擬
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f62a873e84f200a019bde23038ae10b21150072
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bdbd0e4f3ab2d060cdb0b2519117e4f14725347f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7558257"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706290"
 ---
 # <a name="windows-10-on-arm"></a>ARM 上的 Windows 10
 原本 Windows 10 (與 Windows 10 行動裝置版有所區別) 只能在搭載 x86 與 x64 處理器的電腦上執行。 現在，Windows 10 Desktop（專業版和 S 版）可以在搭載 ARM64 處理器並已安裝 Fall Creators Update 的電腦上執行。 ARM CPU 架構的省電本質可讓這些電腦擁有全天候的電池使用時間及行動數據網路支援。 這些電腦會提供極佳的應用程式相容性，可讓您執行現有未修改狀態的 x86 win32 應用程式。 例如 Adobe Reader。 更多的資訊或示範，請查看[永遠連線電腦的 Channel 9 影片](https://channel9.msdn.com/Events/Build/2017/P4171)。 

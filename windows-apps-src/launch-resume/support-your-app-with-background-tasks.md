@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 使用背景工作支援 App
 description: 本節中的主題將示範如何在背景中執行輕量型程式碼來回應觸發程序。
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
-ms.author: twhitney
 ms.date: 08/21/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: a72d13689b278c1048cab6b1fcb4fd788658602c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2413a27c12a9b36f0fd57482492414e7b5a379b6
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568939"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705602"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 

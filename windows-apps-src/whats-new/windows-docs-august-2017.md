@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: 2017 年 8 月 Windows 文件的最新動向 - 開發 UWP app
 description: 新功能、影片及開發人員指引已加入 2017 年 8 月的 Windows 10 開發人員文件中
 keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 1708
-ms.author: quradic
 ms.date: 08/03/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6dcb5c9044cd74f26c06253f22b6672bc5e727dd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aeb6f60396b270a78df5203106635436fe2dabe5
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570158"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708608"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2017"></a>2017 年 8 月 Windows 開發人員文件的最新動向
 

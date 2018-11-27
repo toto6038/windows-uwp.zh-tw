@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: 您可以透過 Windows.ApplicationModel.Appointments 命名空間，在使用者的行事曆 app 建立和管理約會。
 title: 管理約會
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 約會, 行事曆
 ms.localizationpriority: medium
-ms.openlocfilehash: 345bbabb2bd80f0cbb8465941bec07c7172156e8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 805383d243008f839b04c98906edd3beb52d581a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562123"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706143"
 ---
 # <a name="manage-appointments"></a>管理約會
 

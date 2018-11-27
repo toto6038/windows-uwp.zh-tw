@@ -4,17 +4,15 @@ description: 深度樣板檢視提供保留深度和樣板資訊的格式及緩�
 ms.assetid: 2E8BFF7F-76F8-408E-B8E6-A71B9DF46281
 keywords:
 - 深度樣板檢視 (DSV)
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a64af02bc62a5e7d605f752504027c66f5dc7f7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 69e726291cc9bd79cb96b1b1460c4027aee9c0b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568709"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705437"
 ---
 # <a name="depth-stencil-view-dsv"></a>深度樣板檢視 (DSV)
 

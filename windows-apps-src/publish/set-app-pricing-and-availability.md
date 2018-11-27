@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
 title: 設定 App 價格與可用性
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 價格, 提供, 可搜尋的, 免費試用, 試用, 試用版, 應用程式, 發行日期
 ms.localizationpriority: medium
-ms.openlocfilehash: a21cc94dd9b22304c715cc0e6b038ffdac6da02b
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562487"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705770"
 ---
 # <a name="set-app-pricing-and-availability"></a>設定應用程式價格與可用性
 

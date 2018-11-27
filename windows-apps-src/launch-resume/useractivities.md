@@ -1,18 +1,16 @@
 ---
-author: TylerMSFT
 title: 繼續使用者活動，甚至是在各個裝置之間
 description: 本主題描述如何協助使用者繼續使用您的應用程式執行作業，甚至是在多個裝置之間作業。
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome, 使用者活動, 時間軸, cortana 從先前離開的地方開始, cortana 接續未完成的部分, project rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e99796decfa5ed434fddee3be4340380e2376a2
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561850"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708055"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 

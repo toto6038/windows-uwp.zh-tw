@@ -1,19 +1,17 @@
 ---
-author: muhsinking
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: 感應器方向
 description: 取自 Accelerometer、Gyrometer、Compass、Inclinometer 以及 OrientationSensor 類別的感應器資料是由它們的參考軸線定義的。 這些軸線是由裝置的橫式方向定義，並在使用者轉動裝置時隨著旋轉。
-ms.author: mukin
 ms.date: 05/24/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f3205bfa2da1b83fe2c341b1c810f155e796b804
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a4c7f1ad75e1e0544486049f9bd721d8a82edf03
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554122"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704589"
 ---
 # <a name="sensor-orientation"></a>感應器方向
 

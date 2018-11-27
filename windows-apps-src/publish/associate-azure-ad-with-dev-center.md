@@ -1,18 +1,16 @@
 ---
-author: jnHs
 Description: In order to add and manage account users, you must first associate your Partner Center account with your organization's Azure Active Directory.
 title: 將 Azure Active Directory 與您的合作夥伴中心帳戶產生關聯
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, azure ad, azure 租用戶, 新增租用戶, azure ad 租用戶, 租用戶管理, 租用戶
 ms.localizationpriority: medium
-ms.openlocfilehash: 9f44d5bc0e07ab40a396c103d2a8ba6db5427ae8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9f807799740d7e832da2f6a6fa3ea63e00deaee4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578544"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704399"
 ---
 # <a name="associate-azure-active-directory-with-your-partner-center-account"></a>將 Azure Active Directory 與您的合作夥伴中心帳戶產生關聯
 

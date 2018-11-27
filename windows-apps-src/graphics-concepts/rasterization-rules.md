@@ -4,17 +4,15 @@ description: 點陣化規則定義向量資料對應至點陣資料的方式。
 ms.assetid: B604725F-96A5-4DB6-B597-9EC57FBBC024
 keywords:
 - 點陣化規則
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 72be66c3bf7b0e58092ae3a7e1baf82c9e686f0c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c622c037f878d1ad34cdadf897dde10683532832
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565082"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704469"
 ---
 # <a name="rasterization-rules"></a>點陣化規則
 

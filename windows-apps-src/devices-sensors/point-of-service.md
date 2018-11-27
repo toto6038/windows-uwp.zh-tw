@@ -1,18 +1,16 @@
 ---
-author: TerryWarwick
 title: 服務點
 description: 本節包含有關如何使用各種「服務點」命名空間功能的文章。
-ms.author: jken
 ms.date: 10/04/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9450a5980ee83c41c60e630c616ba620e0ac4930
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a0c55f1b739ef88ec65b7fd44655406415bc0468
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7567958"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7708728"
 ---
 # <a name="point-of-service"></a>服務點
 這一節包含有關如何使用 [Windows.Devices.PointOfService](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice) 與通用 Windows 應用程式的零售和餐旅環境中找到的周邊設備互動。

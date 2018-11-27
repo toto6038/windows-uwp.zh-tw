@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 移植遊戲迴圈
 description: 說明如何為通用 Windows 平台 (UWP) 遊戲實作視窗，以及如何帶入遊戲迴圈，其中包含如何建置 IFrameworkView 以控制全螢幕的 CoreWindow。
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移植, 遊戲迴圈, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 4db2ed74144ead22643ece17a7496b6267f7e6b8
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563731"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707612"
 ---
 # <a name="port-the-game-loop"></a>移植遊戲迴圈
 

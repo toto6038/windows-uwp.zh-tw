@@ -1,18 +1,16 @@
 ---
-author: ptorr-msft
 title: 針對轉換後的傳統型應用程式和遊樂場使用 MRT
 description: 將您的 .NET 或 Win32 應用程式或遊戲封裝成 AppX 套件，即可利用「資源管理系統」載入為執行階段內容量身打造的 App 資源。 這個深入主題說明技術。
-ms.author: ptorr
 ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
-ms.openlocfilehash: 927e0c5438ea11b751fba40cb76210d0bce112d4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576807"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706163"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 

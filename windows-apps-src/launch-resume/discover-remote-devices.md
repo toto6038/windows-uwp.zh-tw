@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 title: 探索遠端裝置
 description: 了解如何使用專案 Rome 從應用程式探索遠端裝置。
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e6d3d4a549c5e815464ef696a938b44dbe6128c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 7788cb546eddf77292210b5b1e8268239504a843
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561125"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7706221"
 ---
 # <a name="discover-remote-devices"></a>探索遠端裝置
 您的 App 可以使用和探索裝置相同的 Microsoft 帳戶登入，使用無線網路、藍牙及雲端連線來探索 Windows 裝置。 遠端裝置不需要安裝任何特殊的軟體即可以搜尋。

@@ -1,18 +1,16 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得附加元件的依通道彙總轉換資料。
 title: 依通道取得附加元件轉換
-ms.author: mhopkins
 ms.date: 08/04/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 附加元件轉換, 通道
 ms.localizationpriority: medium
-ms.openlocfilehash: 0cf4e0f2cad0ea497e7d97c9b415ab385703c5c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1b1cbc33b2ce53ea7f851e78433b74b103e5a035
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568509"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705262"
 ---
 # <a name="get-add-on-conversions-by-channel"></a>依通道取得附加元件轉換
 

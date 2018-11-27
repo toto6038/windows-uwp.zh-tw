@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 使用檔案
 description: 了解如何使用通用 Windows 平台中的檔案。
-ms.author: twhitney
 ms.date: 05/01/2018
 ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 68240e5b3d2fb476b731853e6a7d020ecd9e2887
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556950"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707869"
 ---
 # <a name="work-with-files"></a>使用檔案
 

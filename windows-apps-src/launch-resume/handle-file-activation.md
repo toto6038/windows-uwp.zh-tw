@@ -1,9 +1,7 @@
 ---
-author: TylerMSFT
 title: 處理檔案啟用
 description: 應用程式可以登錄為特定檔案類型的預設處理常式。
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
@@ -13,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: 9f1e41c3e09d9a711ce9174a5a658a55c7c44abd
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571038"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705552"
 ---
 # <a name="handle-file-activation"></a>處理檔案啟用
 

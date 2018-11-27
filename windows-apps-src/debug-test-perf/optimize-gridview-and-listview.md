@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: ListView 與 GridView UI 最佳化
 description: 透過 UI 虛擬化、減少元素以及漸進式更新項目，改善 ListView 和 GridView 的效能和啟動時間。
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 25eeea58e1e03eedfca3aaafda1cee13cac1f3c4
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5f8ddbdd1e8079e4b5bf945455bfa2efe7094203
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563421"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7705674"
 ---
 # <a name="listview-and-gridview-ui-optimization"></a>ListView 與 GridView UI 最佳化
 

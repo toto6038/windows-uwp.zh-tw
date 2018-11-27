@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: DAF92881-6AF6-44C7-B466-215F5226AE04
 description: 在 Microsoft Store 提交 API 中使用這個方法，來擷取已登錄到您的合作夥伴中心帳戶的特定應用程式的相關資訊。
 title: 取得 App
-ms.author: mhopkins
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c43a946234c738198e7ab929171051e4bafff63
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ccb5473f85cba08c170af2334b0894a11e27a15a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569736"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7707909"
 ---
 # <a name="get-an-app"></a>取得 App
 

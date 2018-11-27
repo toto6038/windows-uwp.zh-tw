@@ -1,19 +1,17 @@
 ---
-author: JnHs
 description: 除了為您的應用程式建立將在 Windows 應用程式中執行的廣告行銷活動之外，您也可以使用其他管道促銷您的應用程式。
 title: 建立自訂應用程式促銷活動
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 自訂, 應用程式, 促銷, 行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 643c6c70b4482e7069c1254e27a5688f81bf7e07
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 407a34294155e688e672db392c262e1607c01a39
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578813"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7704615"
 ---
 # <a name="create-a-custom-app-promotion-campaign"></a>建立自訂應用程式促銷活動
 
