@@ -1,21 +1,19 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Ink tools described
 title: 筆跡控制項
 label: Inking Controls
 template: detail.hbs
-ms.author: kbridge
 ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: ed358f88470dfe1ba1c48cd3daf1ed54135ed987
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a76a03eaff3d831b48e7b86c0b70ff2cbae7360a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7574664"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716106"
 ---
 # <a name="inking-controls"></a>筆跡控制項
 

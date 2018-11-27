@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step.
 title: 應用程式認證程序
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，發佈，前置處理，認證，發行，擱置中，提交，發佈，狀態，時間
 ms.localizationpriority: medium
-ms.openlocfilehash: 161a95141511bc00b1d1a707e893d85dccfa8409
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 733d5ff882d7ed7c574f6fe6fedd28b79c3913d9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573551"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715282"
 ---
 # <a name="the-app-certification-process"></a>應用程式認證程序
 

@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: 在 Microsoft Store 分析 API 中使用此方法，以針對特定日期範圍與其他選擇性篩選器，取得彙總評分資料。
 title: 取得應用程式評分
-ms.author: mhopkins
 ms.date: 11/29/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 評分
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b118abe32fe350277e02ed1f1f1d721e4c1690e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 32f32d3389a340c25d99ec0f0a68e0c20af89c2b
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561405"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715743"
 ---
 # <a name="get-app-ratings"></a>取得應用程式評分
 

@@ -1,18 +1,16 @@
 ---
 title: 朋友圈分享
 description: 說明如何新增朋友圈分享的支援
-author: muhsinking
-ms.author: mukin
 ms.date: 06/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 7084c4dde7bdf2d59842a04fe9fd52bc029c264a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 91d88dc78fd02ae3f16e1d980aa207d1dd458417
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569340"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716063"
 ---
 # <a name="my-people-sharing"></a>朋友圈分享
 

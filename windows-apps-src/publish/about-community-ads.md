@@ -1,19 +1,17 @@
 ---
-author: jnHs
 Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
 title: 關於社群廣告
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 745be156d36e1fb15594d839b0b06d87425ae914
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8acf83e2b39ece5fcd46c3d89d921e4f3013b67
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570464"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714336"
 ---
 # <a name="about-community-ads"></a>關於社群廣告
 

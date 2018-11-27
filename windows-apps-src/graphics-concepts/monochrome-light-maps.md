@@ -4,17 +4,15 @@ description: 當較舊的 3D 加速板不支援使用目的地像素 alpha 值�
 ms.assetid: 60F8F8F6-9DB7-452B-8DC0-407FFAA4BFE1
 keywords:
 - 單色光線對應
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 72bea3badb19991883e2a6cc62463ab2dc58ec4a
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b81838393d7b2692e6fd04b7ce535f58dc773780
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561504"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714760"
 ---
 # <a name="monochrome-light-maps"></a>單色光線對應
 

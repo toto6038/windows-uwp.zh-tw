@@ -1,19 +1,17 @@
 ---
-author: stevewhims
 Description: Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.
 title: 將您的應用程式設計為支援雙向文字
 template: detail.hbs
-ms.author: stwhi
 ms.date: 11/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化, rtl, ltr
 ms.localizationpriority: medium
-ms.openlocfilehash: 24e4c5dfce4aa3e773ab8c334ca732ac5ed53030
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 66a158a96fcab5391030f4517b6420ba4585bf04
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580183"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714955"
 ---
 # <a name="design-your-app-for-bidirectional-text"></a>將您的應用程式設計為支援雙向文字
 

@@ -2,18 +2,16 @@
 title: 密碼編譯金鑰
 description: 本文說明如何使用標準金鑰衍生函式來衍生金鑰，以及如何使用對稱和非對稱金鑰來加密內容。
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: d9a47ba36c84176e83a81dd234d05315aa1e2525
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573242"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714617"
 ---
 # <a name="cryptographic-keys"></a>密碼編譯金鑰
 

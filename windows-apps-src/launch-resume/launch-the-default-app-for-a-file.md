@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 啟動檔案的預設 app
 description: 了解如何啟動檔案的預設應用程式。
 ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
-ms.author: twhitney
 ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 736018fbf966b547c3dd41e245149d498c1231e3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f8e59ae5fb20ce8e1a900f7c1415a699715215e0
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566150"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7712012"
 ---
 # <a name="launch-the-default-app-for-a-file"></a>啟動檔案的預設應用程式
 

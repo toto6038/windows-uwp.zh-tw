@@ -1,19 +1,17 @@
 ---
-author: jwmsft
 description: 透過評估對某個已定義資源的參考，以提供任一 XAML 屬性的值。 資源是在 ResourceDictionary 中定義，而 StaticResource 用法會參考該資源在 ResourceDictionary 中的索引鍵。
 title: StaticResource 標記延伸
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 83919cc46694279bc35e046c97acf27c64a196f5
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573604"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715154"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 標記延伸
 

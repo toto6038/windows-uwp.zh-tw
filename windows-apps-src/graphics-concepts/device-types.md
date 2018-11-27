@@ -4,17 +4,15 @@ description: Direct3D 裝置類型包括硬體抽象層 (hal) 裝置和軟體模
 ms.assetid: 64084B23-10C0-4541-8E93-FB323385D2F0
 keywords:
 - 裝置類型
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cbf7d984226984391da340c74791dad4a6c0d8fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 5ddb1dc0e42f88cf65464841388b9addfb4b5748
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7553905"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715753"
 ---
 # <a name="device-types"></a>裝置類型
 

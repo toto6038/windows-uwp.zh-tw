@@ -1,19 +1,17 @@
 ---
-author: eliotcowley
 title: 取得並了解條碼資料
 description: 了解如何取得和您掃描條碼資料解譯。
-ms.author: elcowle
 ms.date: 08/29/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 6b1f7ea02a67d2219dc5d1f2cbb4e55adf60272d
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ece246ffd369ee21c089598f07b2566424757f55
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562235"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714104"
 ---
 # <a name="obtain-and-understand-barcode-data"></a>取得並了解條碼資料
 

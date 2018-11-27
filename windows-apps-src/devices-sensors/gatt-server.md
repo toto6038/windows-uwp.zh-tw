@@ -1,18 +1,16 @@
 ---
-author: msatranjr
 title: 藍牙 GATT 伺服器
 description: 本文提供針對通用 Windows 平台 (UWP) 應用程式，以及針對常見使用案例的範例程式碼的藍牙泛型屬性設定檔 (GATT) 伺服器的概觀。
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a941b7b80bd5d34e88798ec586d9c1d52e2887
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: a68e78bef540717d4f4c33d3132748fa727b4068
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560400"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7714084"
 ---
 # <a name="bluetooth-gatt-server"></a>藍牙 GATT 伺服器
 

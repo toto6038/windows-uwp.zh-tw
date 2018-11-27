@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 轉換轉譯架構
 description: 示範如何將簡單的轉譯架構從 Direct3D 9 轉換到 Direct3D 11，包含如何移植幾何緩衝區、如何編譯和載入 HLSL 著色器程式，以及如何在 Direct3D 11 中實作轉譯鏈結。
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯架構, 轉換, direct3d 9, direct3d 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 044a0dc7bf264a82b849623a53d00268d7b30fd9
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aba723a5ee2443664d6d640adc124b991ff0da7e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7575619"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713811"
 ---
 # <a name="convert-the-rendering-framework"></a>轉換轉譯架構
 

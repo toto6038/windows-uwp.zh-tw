@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 title: 使用來源修飾詞執行拖動以重新整理
 description: 使用 SourceModifiers 建立自訂的拖動以重新整理控制項
-ms.author: jimwalk
 ms.date: 10/10/2017
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 997082d2ed7375d99a7be1543901d1dd854be1a0
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566660"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715000"
 ---
 # <a name="pull-to-refresh-with-source-modifiers"></a>使用來源修飾詞拖動以重新整理
 

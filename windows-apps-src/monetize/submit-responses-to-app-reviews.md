@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 038903d6-efab-4da6-96b5-046c7431e6e7
 description: 使用 Microsoft Store 評論 API 中的此方法，針對您 app 的評論提交回應。
 title: 提交評論的回應
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a8a336d477e7d66222632821f0fa0855faae6f7
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7568101"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713242"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 

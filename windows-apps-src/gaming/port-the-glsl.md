@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 移植 GLSL
 description: 一旦將建立和設定緩衝區與著色器物件的程式碼移過去之後，就可以將這些著色器內部的程式碼從 OpenGL ES 2.0 的 GL 著色器語言 (GLSL) 移植到 Direct3D 11 的高階著色器語言 (HLSL)。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, games, glsl, port, 遊戲, 連接埠
 ms.localizationpriority: medium
-ms.openlocfilehash: 47fa601a7e0ff307108713a0a6fcd7a5468b0468
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 809440f9e77af19c01f4a050eee3b6f8d1c709b7
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554027"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713079"
 ---
 # <a name="port-the-glsl"></a>移植 GLSL
 
@@ -60,7 +58,6 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 
 <a name="instructions"></a>指示
 ------------
-
 ### <a name="step-1-port-the-vertex-shader"></a>步驟 1：移植頂點著色器
 
 在我們的簡單 OpenGL ES 2.0 範例中，頂點著色器會有三個輸入：常數模型-檢視-投影 4x4 矩陣，以及兩個 4 座標的向量。 這兩個向量包含頂點位置及其色彩。 著色器會將位置向量轉換成透視座標，並將它指派給 gl\_Position 內建函式以進行點陣化。 同時也會將頂點色彩複製到一個變化變數，以便在點陣化期間進行插補。
@@ -160,10 +157,8 @@ float4 main(PixelShaderInput input) : SV_TARGET
 
 [移植頂點緩衝區與資料](port-the-vertex-buffers-and-data-config.md) 下一步
 ---------
-
 [繪製到螢幕](draw-to-the-screen.md) 備註
 -------
-
 了解 HLSL 語意與常數緩衝區的封裝，除了可為您省掉一些令人頭痛的偵錯工作，還能提供最佳化的時機。 如果有機會，請完整閱讀[變數語法 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)、[Direct3D 11 中的緩衝區簡介](https://msdn.microsoft.com/library/windows/desktop/ff476898)以及[使用方法：建立常數緩衝區](https://msdn.microsoft.com/library/windows/desktop/ff476896)。 如果沒有機會，那麼此處提供一些有關語意與常數緩衝區的入門提示，請謹記在心。
 
 -   總是重複檢查轉譯器的 Direct3D 設定程式碼，以確定常數緩衝區的結構符合 HLSL 中的 cbuffer struct 宣告，且這兩個宣告中的元件純量類型是相符的。

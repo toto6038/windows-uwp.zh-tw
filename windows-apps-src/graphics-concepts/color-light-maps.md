@@ -4,17 +4,15 @@ description: 彩色光線對應使用光線對應中的 RGB 資料，作為光�
 ms.assetid: 6116D7C0-D614-4CF4-952E-A987ED9BD9D7
 keywords:
 - 色彩光線對應
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 757fbf93aa364e4143af0b5d5f2fc3f63a2f9c0c
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e866b3841a610d4027ba9e91005591ef18c707e3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7582258"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711780"
 ---
 # <a name="color-light-maps"></a>色彩光線對應
 

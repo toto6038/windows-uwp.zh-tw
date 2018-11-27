@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: 在 Microsoft Store 提交 API 中使用這些方法，來管理附加元件提交，針對已登錄到您的合作夥伴中心帳戶的應用程式。
 title: 管理附加元件提交
-ms.author: mhopkins
 ms.date: 04/17/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件提交, 應用程式內產品, IAP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ae0e07b588415094281683ff762c02ed5242654
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 45fc2274ac22eee4a4c249397f25c1b0405cb856
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576755"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713179"
 ---
 # <a name="manage-add-on-submissions"></a>管理附加元件提交
 

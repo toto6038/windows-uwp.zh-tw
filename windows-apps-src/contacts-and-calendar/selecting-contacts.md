@@ -1,19 +1,17 @@
 ---
-author: normesta
 description: 在整個 Windows.ApplicationModel.Contacts 命名空間中，有好幾種方法可以用來選取連絡人。
 title: 選取連絡人
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
 keywords: contacts, selecting select single contact select multiple contacts contacts, select multiple select specific contact data contact, selecting specific data contact, selecting specific fields, 連絡人, 選取, 選取單一連絡人, 選取多個連絡人, 連絡人, 選取多個, 選取特定連絡人, 資料連絡人, 選取特定資料連絡人, 選取特定欄位
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: a721e618864155e4eec66d222e8eeafa2e0ca038
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 28943c5ff60ebf2326193e4c3f90a02111f4aec2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579705"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716159"
 ---
 # <a name="select-contacts"></a>選取連絡人
 

@@ -1,19 +1,17 @@
 ---
 title: 開發人員中心測試人員計畫
 description: 在向所有開發人員提供之前，讓我們搶先體驗全新的開發人員中心功能，並讓我們了解您的想法。
-author: JnHs
-ms.author: wdg-dev-content
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 測試人員, 開發人員中心測試人員, 預覽功能
 ms.assetid: 6fa470dd-e46e-4af1-b278-54bb501a69b0
 ms.localizationpriority: medium
-ms.openlocfilehash: 950c80967851c858212fecc6999c93b55dd439de
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ad70e986a35767c687d863a7db0754bd980be5db
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7576612"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715206"
 ---
 # <a name="dev-center-insider-program"></a>開發人員中心測試人員計畫
 

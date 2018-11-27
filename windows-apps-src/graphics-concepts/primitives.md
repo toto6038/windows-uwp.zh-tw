@@ -4,17 +4,15 @@ description: 3D 基本類型是形成單一 3D 實體的頂點集合。
 ms.assetid: A1FE6F49-B0D4-4665-90E1-40AD98E668B1
 keywords:
 - 基本類型
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 349d4aa4fbf35bd7dccbd48b0251f5bb9e90a779
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c2bf3aa2f421efa7061f3003e6cab8c9f7b8c58
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573498"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7714518"
 ---
 # <a name="primitives"></a>基本類型
 

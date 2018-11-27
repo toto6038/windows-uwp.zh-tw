@@ -1,20 +1,18 @@
 ---
-author: v-angraf
 ms.assetid: 94bb7ad9-cf50-61a8-ad42-48b9bdb9ed36
 title: 首頁 （開發人員首頁）
 description: 提供相關資訊首頁頁面的開發人員首頁應用程式針對 Xbox One。
-ms.author: v-angraf@microsoft.com
 ms.date: 08/09/2017
 ms.topic: article
 keywords: Windows 10, UWP
 permalink: en-us/docs/xdk/devhome-home.html
 ms.localizationpriority: medium
-ms.openlocfilehash: b95637b38aafeb4111ecb25279dcec448ca3c30f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 2be7bdfc04fdd09636251000347499e2f2a37ce4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7555078"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714498"
 ---
 # <a name="home-page-dev-home"></a>首頁 （開發人員首頁）
    

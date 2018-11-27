@@ -1,19 +1,17 @@
 ---
 title: Web 帳戶管理員
 description: 本文章說明如何利用 Windows10 Web 帳戶管理員 API，使用 AccountsSettingsPane 將您的通用 Windows 平台 (UWP) 應用程式連線到外部身份識別提供者 (例如 Microsoft 或 Facebook)。
-author: PatrickFarley
-ms.author: pafarley
 ms.date: 12/6/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 71a5cddcd5ccb5185cda422c3df16797f5765688
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7569937"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7711849"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 

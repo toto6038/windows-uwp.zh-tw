@@ -4,17 +4,15 @@ description: 有些 mips 數量 (每一陣列配量) 可以封裝為部分磚數
 ms.assetid: 906C3CAC-4E84-4947-B508-06788551BE85
 keywords:
 - Mipmap 封裝
-author: michaelfromredmond
-ms.author: mithom
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: ec3d091d7cc5aca82aeef9a3e7f29a8d363705a3
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 8b2733da1f843062a1fa7f2b4a7969326523d54e
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571820"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713761"
 ---
 # <a name="mipmap-packing"></a>Mipmap 封裝
 

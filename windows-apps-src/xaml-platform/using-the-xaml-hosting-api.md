@@ -1,18 +1,16 @@
 ---
-author: mcleanbyron
 description: 本文章說明如何在您的傳統型應用程式中裝載 UWP XAML UI。
 title: 使用 UWP XAML 中的傳統型應用程式裝載 API
-ms.author: mcleans
 ms.date: 09/21/2018
 ms.topic: article
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
-ms.openlocfilehash: 69eb9f72d6b4cf01185f7e4886a7ed5c30a669df
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b6883b605bed0b259cd70d1f6dc0264476eddd40
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571918"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711979"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 

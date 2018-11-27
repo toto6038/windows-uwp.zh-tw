@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: 在 Xbox 開發環境上設定 UWP
 description: 在 Xbox 開發環境上設定並測試 UWP 的步驟。
-ms.author: scotmi
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 8801c0d9-94a5-41a2-bec3-14f523d230df
 ms.localizationpriority: medium
-ms.openlocfilehash: 2234b7d39f130da03562176f0df878701d524635
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 54bc87e007cc42cb4abe1ca8e01d0c8f3b76792f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7554066"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711660"
 ---
 # <a name="set-up-your-uwp-on-xbox-development-environment"></a>在 Xbox 開發環境上設定 UWP
 

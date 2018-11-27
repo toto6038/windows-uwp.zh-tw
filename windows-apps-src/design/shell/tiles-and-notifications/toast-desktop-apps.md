@@ -1,20 +1,18 @@
 ---
-author: andrewleader
 Description: Discover the different options desktop Win32 apps have for sending toast notifications
 title: 傳統型應用程式的快顯通知
 label: Toast notifications from desktop apps
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/01/2018
 ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast, 桌面, 快顯通知, 傳統型橋接器, 傳送快顯通知的選項, com 伺服器, com 啟動器, 假 com, 無 com, 沒有 com, 傳送快顯通知
 ms.localizationpriority: medium
-ms.openlocfilehash: 2ee44d990ef29fa8281a14c8ad03b6c6ff16a4cf
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7561257"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713751"
 ---
 # <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知:
 

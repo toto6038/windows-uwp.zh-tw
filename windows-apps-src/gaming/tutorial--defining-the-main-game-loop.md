@@ -1,19 +1,17 @@
 ---
-author: joannaleecy
 title: 定義主要遊戲物件
 description: 現在，我們要詳細看看遊戲範例主要物件的詳細資料，以及如何將主要物件實作的規則轉譯為與遊戲世界的互動。
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
-ms.author: joanlee
 ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 主要物件
 ms.localizationpriority: medium
-ms.openlocfilehash: b94d7139f35b3a18edd66af9959a0958d0bdcbc1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 96aefc8b053dd7490f47910ca5bb79989855e1a3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7573806"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713119"
 ---
 # <a name="define-the-main-game-object"></a>定義主要遊戲物件
 

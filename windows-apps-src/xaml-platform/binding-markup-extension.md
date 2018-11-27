@@ -1,20 +1,18 @@
 ---
-author: jwmsft
 description: Binding 標記延伸會在 XAML 載入時間轉換成 Binding 類別的執行個體。
 title: Binding 標記延伸'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
-ms.author: jimwalk
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: c35f8794cb77d7a05f2861e1d4d45023dc216129
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: b197ea668ec73711b7a9c63e516b4ec9a5f54d62
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572640"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713984"
 ---
 # <a name="binding-markup-extension"></a>{Binding} 標記延伸
 

@@ -2,18 +2,16 @@
 title: 在字串與二進位資料間轉換
 description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) app 的字串與二進位資料間轉換。
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 030fe81685fbc6caea0b9847b366384476f6298f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: ae2de8f009da1873c9aebf4f60ef315b36c7d744
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7565049"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715055"
 ---
 # <a name="convert-between-strings-and-binary-data"></a>在字串與二進位資料間轉換
 

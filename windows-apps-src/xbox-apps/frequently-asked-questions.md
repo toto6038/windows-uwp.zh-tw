@@ -1,19 +1,17 @@
 ---
-author: Mtoepke
 title: 常見問題集
 description: Xbox 上 UWP 的常見問題集。
-ms.author: mstahl
 ms.date: 03/29/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: a5ac814dfb86259791de2632587a1cfd0d456a37
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564464"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714154"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 

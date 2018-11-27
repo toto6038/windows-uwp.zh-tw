@@ -1,18 +1,16 @@
 ---
-author: laurenhughes
 description: 本文說明如何使用 LowLightFusion 類別來處理點陣圖。
 title: 使用 Low Light Fusion API 處理點陣圖
-ms.author: lahugh
 ms.date: 03/22/2018
 ms.topic: article
 keywords: windows 10, uwp, 弱光融合, 點陣圖, 影像處理
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1fa0ae298bf9f0403a3a565f44010b022ba1f6
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0677d2e4ce5e412c158b8a00da3a6338bae6c46
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7562913"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713372"
 ---
 # <a name="process-bitmaps-with-the-lowlightfusion-api"></a>使用 LowLightFusion API 處理點陣圖
 

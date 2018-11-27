@@ -1,19 +1,17 @@
 ---
-author: laurenhughes
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: 存取 SD 記憶卡
 description: 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。
-ms.author: lahugh
 ms.date: 03/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, sd 記憶卡, 儲存空間
 ms.localizationpriority: medium
-ms.openlocfilehash: 498b43dc82100102c90fc7a920bed1538a164afc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 9ef97ed489f2dc35aece83821633a583dfba77e2
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578504"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713069"
 ---
 # <a name="access-the-sd-card"></a>存取 SD 記憶卡
 

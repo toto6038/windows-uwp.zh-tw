@@ -2,18 +2,16 @@
 title: 常見的密碼編譯工作
 description: 下列文章提供常見的通用 Windows 平台 (UWP) 密碼編譯工作範例程式碼，例如建立隨機數字、比較緩衝區、在字串與二進位資料間轉換、複製到位元組陣列和從位元組陣列中複製，以及編碼和解碼資料。
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bca6496498c9d7a9caaf958fdc7e74dc16ccc98
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: d52943ab28ba9cb7544db827528985746585e361
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7570188"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715249"
 ---
 # <a name="common-cryptography-tasks"></a>常見的密碼編譯工作
 

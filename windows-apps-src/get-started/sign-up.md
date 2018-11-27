@@ -1,19 +1,17 @@
 ---
-author: QuinnRadich
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: 建立開發人員帳戶
 description: 立即註冊開發人員帳戶，就可以讓您的 App 出現在 Microsoft Store 中並參與其他的 Microsoft 計畫。
-ms.author: quradic
 ms.date: 4/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 註冊, 開發人員帳戶
 ms.localizationpriority: medium
-ms.openlocfilehash: dc7f887018dc550ff28101acc6187c9b06235f1f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 6c15f6df30477f11c8b20afd08fa1c1cd55b34b3
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7563051"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715846"
 ---
 # <a name="create-a-developer-account"></a>建立開發人員帳戶
 

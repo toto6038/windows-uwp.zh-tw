@@ -1,12 +1,13 @@
 ---
-author: JordanEllis6809
 title: Unity：針對您的 UWP 專案進行版本控制
 description: 管理您 Unity UWP 專案的版本。
-ms.openlocfilehash: 3b796c31e6b284cea628ba68a34799cf9317ee2e
-ms.sourcegitcommit: 909d859a0f11981a8d1beac0da35f779786a6889
+ms.localizationpriority: medium
+ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.locfileid: "210592"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711630"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：針對您的 UWP 專案進行版本控制
 
@@ -48,19 +49,19 @@ ms.locfileid: "210592"
 
 ## <a name="folders"></a>資料夾  
 
-`Assets` | ***包含*** | 包含 Windows 市集影像  
-`Data`   | ***忽略*** | Unity 編譯您專案的目標位置 (場景、著色器、指令碼、Prefabs 等等)  
-`Dependencies` | ***包含*** | 此資料夾是我建立來保留所有的 UWP 相依性 (例如 XboxLiveSDK.dll)  
-`Properties` | ***包含*** | 包含可由開發人員修改的進階設定  
-`Unprocessed` | ***忽略*** | 包含 Unity `.dll` 和 `.pdb` 檔案  
+`Assets` | ***包含***|包含 Microsoft Store 的影像  
+`Data`   | ***忽略***|其中 Unity 編譯您的專案 （場景、 著色器、 指令碼、 Prefab 等等。）  
+`Dependencies` | ***包含***|此資料夾是我建立來保留所有的 UWP 相依性 (例如 XboxLiveSDK.dll)  
+`Properties` | ***包含***|包含可由開發人員修改的更多進階的設定  
+`Unprocessed` | ***忽略***|包含 Unity`.dll`和`.pdb`檔案  
 
 ## <a name="files"></a>檔案  
 
-`App.cs` | ***包含*** | 您 UWP 應用程式的進入點。此檔案可以透過其他來源檔案進行修改和擴充  
-`Package.appxmanifest` | ***包含*** | 您 AppX 的套件資訊清單  
-`project.json` | ***包含*** | 描述您的 `*.csproj` 所依存的 NuGet 套件  
-`ScrapyardPhoenix.csproj` | ***包含*** | 描述您的 UWP 建置目標。如果您將其他相依性新增到 UWP 專案，此 `*.csproj` 檔案將會包含該資訊  
-`ScrapyardPhoenix.csproj.user` | ***忽略*** | 此檔案包含本機使用者資訊
+`App.cs` | ***包含***|您的 UWP 應用程式; 進入點這可以修改和延伸透過其他來源檔案  
+`Package.appxmanifest` | ***包含***|針對您的 AppX 應用程式套件資訊清單來源檔案  
+`project.json` | ***包含***|描述的 NuGet 套件您`*.csproj`取決於  
+`ScrapyardPhoenix.csproj` | ***包含***|描述您的 UWP 建置目標;如果您將其他相依性新增到您的 UWP 專案，此`*.csproj`檔案將會包含該資訊  
+`ScrapyardPhoenix.csproj.user` | ***忽略***|這個檔案包含本機使用者資訊
 
 ## <a name="resulting-gitignore"></a>產生的 .gitignore
 

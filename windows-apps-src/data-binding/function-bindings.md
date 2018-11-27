@@ -1,18 +1,16 @@
 ---
-author: jwmsft
 description: XBind 標記延伸可讓函式，以在標記中使用。
 title: x:Bind 中的函式
-ms.author: jimwalk
 ms.date: 04/26/2018
 ms.topic: article
 keywords: windows 10，uwp xBind
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e00762f389791fb3972b6f224759d35bf547e38
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 371b64a6161911242acd5b9abf97cfa7d2f05358
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7560004"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715474"
 ---
 # <a name="functions-in-xbind"></a>x:Bind 中的函式
 

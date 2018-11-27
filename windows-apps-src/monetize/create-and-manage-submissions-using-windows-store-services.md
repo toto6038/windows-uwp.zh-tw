@@ -1,19 +1,17 @@
 ---
-author: Xansky
 ms.assetid: 7CC11888-8DC6-4FEE-ACED-9FA476B2125E
 description: 使用 Microsoft Store 提交 API 以程式設計方式建立和管理來為登錄到您的合作夥伴中心帳戶的應用程式的提交。
 title: 建立及管理提交
-ms.author: mhopkins
 ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: c91c7b42642df9a03aab1324f074799b63157e62
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 3aec7ed4f97a0ce4733cfba450770de86a84d6ee
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7577798"
+ms.lasthandoff: 11/26/2018
+ms.locfileid: "7715786"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 

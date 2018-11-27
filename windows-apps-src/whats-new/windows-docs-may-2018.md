@@ -1,18 +1,16 @@
 ---
-author: QuinnRadich
 title: 在 2018 年 Windows 文件的最新動向-開發 UWP app
 description: 新功能、 影片及開發人員指引已新增至 2018 年的 Windows 10 開發人員文件及 Microsoft Build 會議。
 keywords: 新動向，更新，功能，開發人員指引，Windows 10 年，組建
-ms.author: quradic
 ms.date: 5/7/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2dc2f8e65ec9ed4e05b6b62e9fc28bbc75f28075
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 20bb514a15963befb5b96a1b01a6c057e8f27482
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581828"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711610"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>在 2018 年 Windows 開發人員文件的最新動向
 

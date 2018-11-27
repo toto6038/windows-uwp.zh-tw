@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 要求地圖驗證金鑰
 description: 您的通用 Windows app 必須經過驗證，才能使用 MapControl 和 Windows.Services.Maps 命名空間中的地圖服務。
 ms.assetid: 13B400D7-E13F-4F07-ACC3-9C34087F0F73
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: c42255ec42432d0674533492e141c4a48f3bb9ff
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e986880ccedfdb4648b1554c35c23a8a841fe820
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7571270"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715015"
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
 

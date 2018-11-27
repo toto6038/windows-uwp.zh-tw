@@ -1,18 +1,16 @@
 ---
-author: Mtoepke
 title: 開始使用 Xbox One 上的 UWP 應用程式開發
 description: 如何設定您的電腦和 Xbox One 以進行 UWP 開發。
-ms.author: scotmi
 ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4761b668877af6380ad176e56fb84410a4f509fc
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 4a8f217322d6d10b91ebc82c3434c88e9d11128f
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7579010"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7711806"
 ---
 # <a name="getting-started-with-uwp-app-development-on-xbox-one"></a>開始使用 Xbox One 上的 UWP 應用程式開發
 

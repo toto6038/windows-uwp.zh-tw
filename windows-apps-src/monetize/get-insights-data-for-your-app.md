@@ -1,19 +1,17 @@
 ---
-author: Xansky
 description: 在 Microsoft Store 分析 API 中使用這個方法，取得您的應用程式的深入解析資料。
 title: 取得深入解析資料
-ms.author: mhopkins
 ms.date: 07/31/2018
 ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，深入解析
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: fbca074cffba64067b22d94aea6e0476c10480af
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1847f22f52eb066115b5681e745e74ec74f77f7d
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7572754"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715503"
 ---
 # <a name="get-insights-data"></a>取得深入解析資料
 

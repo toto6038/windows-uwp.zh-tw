@@ -1,19 +1,17 @@
 ---
-author: TylerMSFT
 title: 啟動 Microsoft Store 應用程式
 description: 本主題描述 ms-windows-store URI 配置。 您的應用程式可以使用此 URI 配置來啟動 Microsoft Store 應用程式在市集中的特定頁面。
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
-ms.author: twhitney
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ecb99c16d413e5e9869215f2d048ad6d9d52206f
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578444"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714810"
 ---
 # <a name="launch-the-microsoft-store-app"></a>啟動 Microsoft Store 應用程式
 

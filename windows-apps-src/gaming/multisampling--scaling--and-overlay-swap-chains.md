@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 交換鏈結縮放和覆疊
 description: 了解如何在行動裝置上建立縮放的交換鏈結以加快轉譯速度，以及使用重疊交換鏈結 (可供使用時) 來提高視覺品質。
 ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 交換鏈縮放比例, 覆疊, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: 9d159a78412bea528c1a12428288daebe31d1fe1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 12aede6c4af61c4b86d1f1090a2ec3d0e5ecce68
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7564552"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7713139"
 ---
 # <a name="swap-chain-scaling-and-overlays"></a>交換鏈結縮放和覆疊
 

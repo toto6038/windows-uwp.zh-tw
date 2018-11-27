@@ -1,19 +1,17 @@
 ---
-author: PatrickFarley
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: 用來設定格式的 Epson ESC/POS
 description: 了解如何使用 ESC/POS 命令語言，針對您的服務點印表機來格式化文字，例如粗體和雙倍大小字元。
-ms.author: pafarley
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ecc1a61b7db339c7c0c46168255d32bfbc241a1
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 11467a45021da7898c2b617e3b1b01312c795c4c
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7556837"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714224"
 ---
 # <a name="epson-escpos-with-formatting"></a>用來設定格式的 Epson ESC/POS
 

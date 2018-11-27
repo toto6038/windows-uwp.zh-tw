@@ -2,18 +2,16 @@
 title: 密碼編譯的出口限制
 description: 使用這項資訊判斷您的 app 使用密碼編譯的方式，是否會使它無法被刊登於 Microsoft Store 中。
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
-author: msatranjr
-ms.author: misatran
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: a29c4aeb5a5928e04e0018d68884fdb4a4876332
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "7566755"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715308"
 ---
 # <a name="export-restrictions-on-cryptography"></a>密碼編譯的出口限制
 

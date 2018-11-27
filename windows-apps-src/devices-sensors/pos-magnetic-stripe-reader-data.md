@@ -1,18 +1,16 @@
 ---
-author: eliotcowley
 title: 取得並了解磁條資料
 description: 了解如何取得並解譯從磁條讀取資料。
-ms.author: elcowle
 ms.date: 10/04/2018
 ms.topic: article
 keywords: windows 10，uwp，點的服務、 pos、 磁條讀取器
 ms.localizationpriority: medium
-ms.openlocfilehash: a130243fb5a77277e4e8a326316cd30bab2cd96e
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: 1805213c7c30ccbc67fb96098f11480703589bb4
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7578251"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7714284"
 ---
 # <a name="obtain-and-understand-magnetic-stripe-data"></a>取得並了解磁條資料
 

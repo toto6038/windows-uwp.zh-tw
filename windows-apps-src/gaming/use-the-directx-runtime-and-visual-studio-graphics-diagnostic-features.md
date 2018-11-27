@@ -1,19 +1,17 @@
 ---
-author: mtoepke
 title: 圖形診斷工具
 description: 了解如何取得與使用圖形診斷功能，包括 Visual Studio 中的圖形偵錯、圖形畫面格分析，以及 GPU 使用量。
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
-ms.author: mtoepke
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 圖形, 診斷工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: aa1c14d15a966f23b86753cf8e5e62e067d10310
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7581297"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7716646"
 ---
 # <a name="graphics-diagnostics-tools"></a>圖形診斷工具
 

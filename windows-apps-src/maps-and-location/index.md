@@ -1,19 +1,17 @@
 ---
-author: normesta
 title: 地圖和位置概觀
 description: 本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖應用程式啟動到特定地圖、路線或一組轉向建議導航路線指引。
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.author: normesta
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 17d123b440b6ec7892c84a9a6bca9177799ad0fb
-ms.sourcegitcommit: 93c0a60cf531c7d9fe7b00e7cf78df86906f9d6e
+ms.openlocfilehash: aea553a46357a26028848db5ff0e9b5debbeae56
+ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "7580555"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7715114"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 
