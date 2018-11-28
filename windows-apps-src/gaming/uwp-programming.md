@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 音訊, 輸入, 網路
 ms.localizationpriority: medium
 ms.openlocfilehash: c3e2a03b1302fcf5690e653cbf07efad8ef14fe8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712224"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7854709"
 ---
 # <a name="uwp-programming"></a>UWP 程式設計
 

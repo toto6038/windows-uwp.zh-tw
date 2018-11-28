@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 自訂, 清單, 描述, 舊版
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb21d56df357640734e9e5026783cc398468f0a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714922"
+ms.locfileid: "7841237"
 ---
 # <a name="create-platform-specific-store-listings"></a>建立平台專屬的 Store 清單
 

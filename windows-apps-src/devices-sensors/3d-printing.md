@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d0bfaa06c749567fb38254be06ac9e8fd01fe61
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692999"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7847393"
 ---
 # <a name="3d-printing"></a>3D 列印
 

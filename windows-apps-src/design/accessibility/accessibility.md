@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f9cdfb8a20e273d5d9e5819fc1e28aba97e4296
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699713"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7845612"
 ---
 # <a name="accessibility"></a>協助工具  
 

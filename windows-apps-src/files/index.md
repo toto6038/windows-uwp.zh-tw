@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 241ee0de885dd1b2e40b6ce51c21312dbcb9f655
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 811a9b42efe83cf89fd3df89e5c43c72274af36f
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692137"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7844085"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 
@@ -29,6 +29,7 @@ ms.locfileid: "7692137"
 | [判斷 Microsoft OneDrive 檔案的可用性](quickstart-determining-availability-of-microsoft-onedrive-files.md) | 使用 [StorageFile.IsAvailable](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性判斷 Microsoft OneDrive 檔案是否可供使用。 |
 | [音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 將現有的音樂、圖片或視訊資料夾新增到對應的媒體櫃中。 您也可以從媒體櫃中移除資料夾、取得媒體櫃中的資料夾清單，以及尋找已儲存的相片、音樂和影片。 |
 | [追蹤最近使用的檔案和資料夾](how-to-track-recently-used-files-and-folders.md) | 將使用者經常存取的檔案新增到您 app 的最近使用清單中 (MRU)，以追蹤這些檔案。 平台會根據項目上次存取的時間來排序項目，並在達到清單的 25 個項目數限制時移除最舊的項目，為您管理 MRU。 所有 app 都有自己的 MRU。 |
+| [追蹤在背景中的檔案系統變更](change-tracking-filesystem.md) | 即使在應用程式未執行時，對檔案系統，追蹤變更。|
 | [存取 SD 記憶卡](access-the-sd-card.md) | 您可以在選用的 microSD 記憶卡上儲存和存取非必要的資料，尤其是內部儲存空間有限的低價行動裝置。 |
 | [檔案存取權限](file-access-permissions.md) | App 預設可以存取特定的檔案系統位置。 應用程式也可以透過檔案選擇器或宣告功能存取其他位置。 |
 | [快速存取 UWP 中的檔案屬性](fast-file-properties.md) | 有效收集程式庫的檔案和其屬性清單以便用於 UWP app。 |
