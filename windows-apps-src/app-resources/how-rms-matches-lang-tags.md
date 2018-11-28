@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 4914a448432206e2418fe110c0b49517a7145e0b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715174"
+ms.locfileid: "7828359"
 ---
 # <a name="how-the-resource-management-system-matches-language-tags"></a>資源管理系統如何比對語言標記
 

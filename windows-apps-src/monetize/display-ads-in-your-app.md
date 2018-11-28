@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
 ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695037"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848016"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 

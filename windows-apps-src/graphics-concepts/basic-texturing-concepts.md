@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2124c9e620694f62414c865e6d3247cd25ce70d0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715826"
+ms.locfileid: "7834129"
 ---
 # <a name="basic-texturing-concepts"></a>添加紋理基本概念
 

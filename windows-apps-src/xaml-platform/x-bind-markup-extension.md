@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5407849c15da25adc29fa97c0215b9734a5d3258
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 1c0eb1eb798cceb5c7a534c3aed1b8988bd1a42b
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694847"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7855396"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
@@ -143,7 +143,7 @@ _注意：C# 風格的轉換語法比附加的屬性語法更具彈性，且是�
 | **模式** | 指定繫結模式，如下列其中一個字串："OneTime"、"OneWay" 或 "TwoWay"。 預設值是 "OneTime"。 請注意，此與 **{Binding}** 的預設值 (通常為 "OneWay") 不同。 |
 | **TargetNullValue** | 指定當來源值解析結果明確為 **null** 時，所要顯示的值。 |
 | **BindBack** | 指定要針對雙向繫結的相反方向使用的函式。 |
-| **UpdateSourceTrigger** | 指定何時將變更從控制項推送回 TwoWay 繫結中的模型。 除了 TextBox.Text 之外，所有屬性的預設值都是 PropertyChanged，TextBox.Text 的預設值為 LostFocus。|
+| **UpdateSourceTrigger** | 指定何時將變更從控制項推送回 TwoWay 繫結中的模型。 除了 TextBox.Text 之外的所有屬性的預設值是 PropertyChanged;TextBox.Text 值為 LostFocus。|
 
 > [!NOTE]
 > 如果要將標記從 **{Binding}** 轉換成 **{x:Bind}**，請留意 **Mode** 屬性的預設值不同。
@@ -154,7 +154,7 @@ _注意：C# 風格的轉換語法比附加的屬性語法更具彈性，且是�
 
 由於 **{x:Bind}** 會使用產生的程式碼來達成其效益，因此在編譯時需要使用類型資訊。 這表示您無法繫結至您未事先得知類型的屬性。 因此，您無法搭配使用 **{x:Bind}** 與 **DataContext** 屬性，因為後者屬於 **Object** 類型，也可能在執行階段有所變更。
 
-在使用 **{x:Bind}** 與資料範本時，您必須設定 **x:DataType** 值以指出要繫結到的類型，如下列範例所示。 您也可以將類型設為介面或基底類別類型，然後在必要時使用轉換來編寫完整的運算式。
+搭配使用時 **{X:bind}** 資料範本時，您必須指出要繫結到設定**X:datatype**值，如[範例](#examples)」 一節中所示的類型。 您也可以將類型設為介面或基底類別類型，然後在必要時使用轉換來編寫完整的運算式。
 
 已編譯的繫結取決於程式碼產生。 因此，如果您在資源字典中使用 **{x:Bind}**，則資源字典需要具備程式碼後製類別。 如需程式碼範例，請參閱[資源字典搭配 {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind)。
 

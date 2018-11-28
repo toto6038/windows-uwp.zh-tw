@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 50c9e80296510d327e60f8c7dba5e38f19b95b7f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7717170"
+ms.locfileid: "7833079"
 ---
 # <a name="walkthrough-creating-a-windows-runtime-component-in-ccx-and-calling-it-from-javascript-or-c"></a>逐步解說：在 C++/CX 中建立 Windows 執行階段元件，然後從 JavaScript 或 C# 呼叫該元件
 > [!NOTE]

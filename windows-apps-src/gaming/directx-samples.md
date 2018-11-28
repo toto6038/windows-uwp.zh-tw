@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, directx, 範例, 3D
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d31c6e5b7307c7d93d7c06a0c4ae915ea788655
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702426"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830999"
 ---
 # <a name="directx-samples"></a>DirectX 範例
 

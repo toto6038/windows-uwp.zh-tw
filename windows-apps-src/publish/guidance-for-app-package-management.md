@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 0548ae9f9b3b33808cd7420eb542bcbac6a1a431
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704788"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828853"
 ---
 # <a name="guidance-for-app-package-management"></a>應用程式套件管理指導方針
 

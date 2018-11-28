@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 類別, 子類別, 內容類型, 分類, 類型
 ms.localizationpriority: medium
 ms.openlocfilehash: f8c28db9b0ca4437579e98ae156392c7b7b383ea
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693628"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826251"
 ---
 # <a name="category-and-subcategory-table"></a>類別與子類別表格
 

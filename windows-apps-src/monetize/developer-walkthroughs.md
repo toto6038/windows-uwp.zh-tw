@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 逐步解說
 ms.localizationpriority: medium
 ms.openlocfilehash: 423b005028ca7796dbab81d2c26a68c3d74fc922
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7700250"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833109"
 ---
 # <a name="implement-ads-in-your-app"></a>在您的應用程式中實作廣告
 

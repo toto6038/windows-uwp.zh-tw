@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 機台搖桿, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f9e3ff29dfb17b6e2a07df52153013b5266206e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7692799"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830886"
 ---
 # <a name="arcade-stick"></a>機台搖桿
 

@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: eb6cde0c3c31f0116c65e5d5dc4a0d8ae4a1b540
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7704539"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832228"
 ---
 # <a name="create-and-register-an-out-of-process-background-task"></a>建立和註冊跨處理序背景工作
 

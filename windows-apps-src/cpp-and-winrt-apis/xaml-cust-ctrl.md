@@ -7,11 +7,11 @@ keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 XAML
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: e929f217c71a90540803b180e6e79b98802f9c7a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715490"
+ms.locfileid: "7840658"
 ---
 # <a name="xaml-custom-templated-controls-with-cwinrt"></a>使用 C++/WinRT 的 XAML 自訂 (範本化) 控制項
 

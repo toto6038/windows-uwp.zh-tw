@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6727c22631a9536a0ed8d04e7c88602bba890284
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703492"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830132"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>傳統型應用程式與 UWP app 之間共用程式碼
 

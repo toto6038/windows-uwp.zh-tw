@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可當地語系化性, 當地語系化, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694669"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830252"
 ---
 # <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型及支援 RTL
 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。 流程方向是文字書寫和顯示，以及使用者的眼睛掃過頁面上 UI 元素的方向。

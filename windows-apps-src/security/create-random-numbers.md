@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: f36e50f2de36df39177370d688b9add5591403e1
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693955"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7852083"
 ---
 # <a name="create-random-numbers"></a>建立隨機數字
 

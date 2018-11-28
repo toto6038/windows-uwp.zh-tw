@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b9535cd8c2dd82b0c209919080df9a88bb80ccc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698567"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831238"
 ---
 # <a name="toast-content-xml-schema"></a>快顯通知內容 XML 結構描述
 

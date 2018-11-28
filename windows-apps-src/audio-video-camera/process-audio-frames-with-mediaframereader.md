@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7716606"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7846265"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 

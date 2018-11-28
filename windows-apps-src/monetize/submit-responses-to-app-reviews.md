@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 服務, Microsoft Store 評論 API, 附加元件下載數
 ms.localizationpriority: medium
 ms.openlocfilehash: c08dcda52940f0218b6fdb5be147f058eca7479a
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7713242"
+ms.locfileid: "7828659"
 ---
 # <a name="submit-responses-to-reviews"></a>提交評論的回應
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 120d5c8014ce9ac3cab9b2dfb1d778173f2434c4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695007"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831248"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>疑難排解 C++/WinRT 問題
 

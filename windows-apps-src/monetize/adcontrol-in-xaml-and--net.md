@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10 , UWP, 廣告, AdControl, 廣告控制項, XAML, .NET, 逐步解說
 ms.localizationpriority: medium
 ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7691162"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826627"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 

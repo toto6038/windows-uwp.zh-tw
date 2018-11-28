@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 9ac96766-df89-4403-89f2-200549436921
 ms.localizationpriority: medium
 ms.openlocfilehash: 11af5f09d9c66fc9103b36dc80eae8b8bbc88854
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707443"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7850193"
 ---
 # <a name="bringing-existing-games-to-xbox"></a>將現有的遊戲移到 Xbox
 

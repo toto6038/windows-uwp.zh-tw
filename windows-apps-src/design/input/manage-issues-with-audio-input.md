@@ -9,11 +9,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c33e2890ce962f1321ef40ca0e0605e0f4e1f5f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694977"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7831799"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音訊輸入的問題
 

@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a86d0b29b39ecb4d2793e641c8c53f6c2a4e3c0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705173"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830362"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用範本和模式來設定日期和時間的格式
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
 ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706163"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832545"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 

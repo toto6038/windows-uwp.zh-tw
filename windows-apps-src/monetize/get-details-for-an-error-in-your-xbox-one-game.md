@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712602"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827772"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>取得您的 Xbox One 中錯誤的詳細資料遊戲
 

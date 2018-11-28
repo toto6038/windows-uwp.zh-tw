@@ -7,11 +7,11 @@ keywords: 開始設定, uwp, windows 10, 了解曲目, 設定, 儲存設定, 載
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 4aa56bf24d2dfa1fd4ae1947a5b0edf7f312ea2f
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7710210"
+ms.locfileid: "7826743"
 ---
 # <a name="save-and-load-settings-in-a-uwp-app"></a>在 UWP 中儲存和載入設定
 

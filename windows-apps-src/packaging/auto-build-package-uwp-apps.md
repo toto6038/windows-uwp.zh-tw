@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: f9b0d6bd-af12-4237-bc66-0c218859d2fd
 ms.localizationpriority: medium
 ms.openlocfilehash: 4208fd56b16d5130f218492428eb459364b8ada9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693069"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827449"
 ---
 # <a name="set-up-automated-builds-for-your-uwp-app"></a>設定您的 UWP app 的自動化組建
 

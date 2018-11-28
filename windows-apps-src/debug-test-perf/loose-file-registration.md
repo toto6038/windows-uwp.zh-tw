@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10、 uwp、 裝置入口網站、 應用程式管理員、 部署、 sdk
 ms.localizationpriority: medium
 ms.openlocfilehash: 928c07bd23228f0fefd78be6019a0d116b2e6e4b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7694827"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827620"
 ---
 # <a name="deploy-an-app-through-loose-file-registration"></a>透過鬆散檔案註冊部署應用程式 
 

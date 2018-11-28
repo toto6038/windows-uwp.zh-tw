@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 排程, 發行日期, 日期, 推出
 ms.localizationpriority: medium
 ms.openlocfilehash: a1477a426a9cdf240e694efb19bd7521fcd734cb
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7693756"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829119"
 ---
 # <a name="configure-precise-release-scheduling"></a>設定精確發行時間表
 

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, point of service, pos, 服務點
 ms.localizationpriority: medium
 ms.openlocfilehash: aba44cec7081d05f66e90b2540f0e9609b87ab83
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698577"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838019"
 ---
 # <a name="pointofservice-device-objects"></a>PointOfService device objects
 

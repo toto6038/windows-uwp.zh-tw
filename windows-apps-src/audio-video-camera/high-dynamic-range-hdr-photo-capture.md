@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c5005885d150fdd4f6a41b3fb2586e2728bbd5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695865"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828456"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高動態範圍 (HDR) 和弱光相片擷取
 

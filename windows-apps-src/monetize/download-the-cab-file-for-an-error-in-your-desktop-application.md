@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e3535f18b8127ea18bca234cdcc9b695e89ebfd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712522"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826045"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-desktop-application"></a>下載傳統型應用程式中錯誤的 CAB 檔案
 

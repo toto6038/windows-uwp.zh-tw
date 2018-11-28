@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, XAML 互通性
 ms.localizationpriority: medium
 ms.openlocfilehash: 058a1458f8990e5f70e7ed0ea4ef1a2b5f4a4956
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7702466"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842565"
 ---
 # <a name="directx-and-xaml-interop"></a>DirectX 與 XAML 互通性
 

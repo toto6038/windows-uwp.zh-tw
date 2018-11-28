@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 地圖, 地圖樣式表
 ms.localizationpriority: medium
 ms.openlocfilehash: 9ecf83b25a8f448cb0ac22bbad0aa2d4f687c721
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7715134"
+ms.locfileid: "7833135"
 ---
 # <a name="map-style-sheet-reference"></a>地圖樣式表參考
 

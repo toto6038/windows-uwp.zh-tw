@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 附加元件銷售, 附加元件下載數, iap 銷售, 應用程式內產品, iap, 附加元件
 ms.localizationpriority: medium
 ms.openlocfilehash: 8027276779dac59f0745dd8053ee73cf1615e630
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7709503"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828936"
 ---
 # <a name="add-on-acquisitions-report"></a>附加元件下載數報告
 

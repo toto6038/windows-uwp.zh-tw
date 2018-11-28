@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f88b376dca80043f88260700bb7ef4168b3a445
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703758"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827934"
 ---
 # <a name="configure-a-barcode-scanner"></a>設定條碼掃描器
 

@@ -6,11 +6,11 @@ ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708248"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836416"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 

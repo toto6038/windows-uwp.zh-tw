@@ -6,26 +6,18 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b3106df6d8a1fd85b92aa06dd5c5cf7a7f79ded5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 6cce98591cdaa78a887d7a5fb495e999a4ffc453
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7696704"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833158"
 ---
 # <a name="enterprise"></a>企業版
 
-此藍圖概述的重要企業功能 Windows10Universal Windows 平台 (UWP) 應用程式。
+這篇文章提供 Windows 10 應用程式提供由通用 Windows 平台 (UWP) 中的重要企業功能的概觀。
 
-**注意：** 這篇文章對象是撰寫企業 UWP app 開發人員。 針對一般 UWP 開發，請參閱 [Windows 10 app 使用方法指南](https://msdn.microsoft.com/library/windows/apps/mt244352)。 針對 WPF、Windows Form 或 Win32 開發，請瀏覽[傳統型開發人員中心](https://dev.windows.com/desktop)。 針對 IT 專業人員資源 (例如部署 Windows 10 或管理企業安全性功能)，請參閱 [TechNet 上的 Windows 10](https://msdn.microsoft.com/library/dn986868)。
-
-有顯示一些已建置在其中顯示在此簡報[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)期間已大幅提升這個應用程式的版本
-
-值得呼叫在前端的幾件事︰
-
-## <a name="whats-new-for-enterprise-applications"></a>什麼是企業應用程式的新功能
-
-以下是一些工具、 程式庫，以及相當已建立的功能最近。
+## <a name="whats-new-and-recent-for-enterprise-applications"></a>什麼是新的和新的企業應用程式
 
 > [!div class="checklist"]
 > * [Windows Template Studio](#template-studio)
@@ -36,6 +28,8 @@ ms.locfileid: "7696704"
 > * [.NET Standard 2.0](#standard)
 > * [SQL Server 連線](#sql-server)
 > * [MSIX 部署](#MSIX)
+
+影片示範一些這些功能的詳細資料，請參閱[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)。
 
 <a id="template-studio" />
 
@@ -110,7 +104,7 @@ MSIX 是提供現代化的封裝體驗，以所有 Windows 應用程式的 Windo
 
 MSIX 是安全、 安全且可靠，內建的封裝格式根據.msi、.appx、 APP-V 和 ClickOnce 安裝技術的組合。
 
-![MSIX 圖示](images/WinUI_MSIX_2col_740x417.png)
+![MSIX 圖示](images/MSIX-App-Package.ico)
 
 請參閱[MSIX 文件](https://docs.microsoft.com/windows/msix/)。
 
@@ -181,14 +175,10 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們
 
 ## <a name="enterprise-uwp-samples"></a>企業 UWP 範例
 
-在此處出現簡介文字。
-
-動作-通話處理器和/或卡爾一起取得更多企業為主的範例。
-
 | 主題 |  描述 |
 |------ |--------------|
-| [VanArsdel 詳細目錄範例](https://github.com/Microsoft/InventorySample) | 範例 Windows 10 應用程式 （使用通用 Windows 平台） 將焦點放在特定的業務案例中，顯示如何在傳統型應用程式中使用最新的 Windows 功能。 範例是以建立和管理客戶、 訂單及產品為虛構公司 VanArsdel 為基礎。
-在 MVVM 中，會反白顯示的 SQL 資料庫，Entity Framework。 列出其他人。|
+| [VanArsdel 詳細目錄範例](https://github.com/Microsoft/InventorySample) | UWP 範例應用程式，展示特定業務的案例。 範例是以建立和管理客戶、 訂單及產品為虛構公司 VanArsdel 為基礎。 |
+| [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | UWP 範例應用程式，展示對企業開發人員，例如 Azure Active Directory (AAD) 驗證、 UI 控制項 （包括資料格）、 Sqlite 和 SQL Azure 資料庫整合、 Entity Framework 和 API 的雲端服務很有用的功能。 範例是以建立和管理客戶帳戶、 訂單及產品為虛構公司 Contoso 為基礎。 |
 
 ## <a name="patterns-and-practices"></a>模式和做法
 

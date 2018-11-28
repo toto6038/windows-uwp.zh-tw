@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8126ac8fa738a2b8a9680d215179fe23f77c5d44
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701901"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7849228"
 ---
 # <a name="attenuation-and-spotlight-factor"></a>衰減和聚光燈係數
 

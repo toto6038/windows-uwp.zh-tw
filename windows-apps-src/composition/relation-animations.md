@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: b6fdc59e8a7203a3bb8c6ad79adabd446b884639
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7701407"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827156"
 ---
 # <a name="relation-based-animations"></a>關聯式動畫
 

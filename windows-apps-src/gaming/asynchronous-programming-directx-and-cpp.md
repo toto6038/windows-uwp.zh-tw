@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 非同步程式設計, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 8551a49512d4b17ab1bab704596d9e5389de3eb6
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712926"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827792"
 ---
 # <a name="asynchronous-programming-directx-and-c"></a>非同步程式設計 (DirectX 和 C++)
 

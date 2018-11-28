@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f6348cc713d4fb93dfed9310eea9d3fd1025a2de
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7708708"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7829747"
 ---
 # <a name="enumerate-devices"></a>列舉裝置
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720114"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7830099"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 

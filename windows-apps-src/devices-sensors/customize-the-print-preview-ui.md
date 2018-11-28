@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7718519"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7848659"
 ---
 # <a name="customize-the-print-preview-ui"></a>自訂預覽列印 UI
 

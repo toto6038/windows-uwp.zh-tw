@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 340289c16cfd9c63f578c63827b1c0b35162cdfd
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699680"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7827436"
 ---
 # <a name="guidelines-for-panning"></a>移動瀏覽的指導方針
 

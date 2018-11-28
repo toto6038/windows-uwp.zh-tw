@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、XAML、控制項、繫結、集合
 ms.localizationpriority: medium
 ms.openlocfilehash: 9df7c96549254ab8318fd9a7c8224c6e87701747
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705684"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832071"
 ---
 # <a name="xaml-items-controls-bind-to-a-cwinrt-collection"></a>XAML 項目控制項；繫結至一個 C++/WinRT 集合
 

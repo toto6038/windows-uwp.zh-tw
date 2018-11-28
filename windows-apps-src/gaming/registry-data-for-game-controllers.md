@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, input, registry, custom, 遊戲, 輸入, 登錄, 自訂
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7717919"
+ms.locfileid: "7831474"
 ---
 # <a name="registry-data-for-game-controllers"></a>遊戲控制器的登錄資料
 

@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 40335c70-46cc-40fd-9fe0-3cc8e6200482
 ms.localizationpriority: medium
 ms.openlocfilehash: 1635ab0d7043057c09a3e9ac451ccdba1410b471
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7706240"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828956"
 ---
 # <a name="new-apis-in-windows-10-build-14393"></a>Windows10 組建 14393 的新 API
 

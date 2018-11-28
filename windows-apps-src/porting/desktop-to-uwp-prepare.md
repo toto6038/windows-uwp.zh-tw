@@ -8,11 +8,11 @@ keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
 ms.openlocfilehash: b58ba8122d5db6cb898c5e6258794960cdc1c1f9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7719390"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832492"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>準備封裝傳統型應用程式
 

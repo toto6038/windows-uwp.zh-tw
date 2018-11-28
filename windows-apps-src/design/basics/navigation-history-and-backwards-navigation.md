@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7695693"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7842758"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 

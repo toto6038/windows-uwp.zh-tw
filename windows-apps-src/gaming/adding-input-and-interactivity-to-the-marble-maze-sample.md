@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10 , UWP, 遊戲, 輸入, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714044"
+ms.locfileid: "7830632"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入輸入和互動
 

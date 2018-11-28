@@ -9,11 +9,11 @@ ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 99657899615a5d485af788004589c2bc53a0a0e8
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703818"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832585"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>封裝傳統型應用程式 （傳統型橋接器）
 

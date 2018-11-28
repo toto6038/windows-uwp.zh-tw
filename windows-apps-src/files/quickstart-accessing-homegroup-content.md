@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7712767"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7828573"
 ---
 # <a name="accessing-homegroup-content"></a>存取 HomeGroup 內容
 

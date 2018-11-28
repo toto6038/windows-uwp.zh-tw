@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 非同步, C++
 ms.localizationpriority: medium
 ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7699869"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7834726"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX 中的非同步程式設計
 > [!NOTE]

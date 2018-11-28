@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e73452cdcb02798d4ebd225b48272ab77c40fef9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720174"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826354"
 ---
 # <a name="download-and-install-package-updates-from-the-store"></a>從 Microsoft Store 下載與安裝套件更新
 

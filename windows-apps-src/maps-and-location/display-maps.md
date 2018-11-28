@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
 ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714850"
+ms.locfileid: "7831812"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>用 2D、3D 和 Streetside 檢視顯示地圖
 

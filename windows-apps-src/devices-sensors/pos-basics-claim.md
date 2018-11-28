@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, point of service, pos, 服務點
 ms.localizationpriority: medium
 ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698962"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7826637"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服務點裝置宣告和啟用模型
 

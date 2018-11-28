@@ -2,16 +2,16 @@
 ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
 title: app 功能宣告
 description: 功能必須在您的通用 Windows 平台 (UWP) app 的套件資訊清單中進行宣告，才能存取特定 API、資源 (例如圖片或音樂) 或裝置 (例如相機或麥克風)。
-ms.date: 09/20/2018
+ms.date: 11/26/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca3a56d97a77ef5a377d8d7b0c22bb94e4ab34a9
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: f31381dd4bfcecd33d4934b4bcd1a9af0ff8411a
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7698054"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7832373"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -142,7 +142,7 @@ ms.locfileid: "7698054"
 | **觀察輸入**\* | **inputObservation** 受限制的功能讓 app 能夠觀察系統所接收到的各種不同形式的原始輸入 (例如，HID、觸控、手寫筆、鍵盤或滑鼠)，而不論其最終目的地為何。  |
 | **隱藏輸入** | **inputSuppression** 受限制的功能讓 app 能夠隱藏系統所接收到的各種不同形式的原始輸入 (例如，HID、觸控、手寫筆、鍵盤或滑鼠)。
 | **VPN 應用程式** | **networkingVpnProvider** 受限制的功能讓 app 能夠具備 VPN 功能的完整存取權，包括管理連線的能力，以及提供 VPN 外掛程式功能。<br /><br />需要具備這個功能，才能使用 [**Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040) 命名空間中的某些 API。 |
-| **其他 App 管理** | **packageManagement** 受限制的功能讓 app 能夠直接管理其他 app。<br /><br />**packageQuery** 裝置功能讓 app 能夠收集其他 app 的相關資訊。<br /><br />需要具備這個功能，才能使用存取 [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960) 類別中的某些方法和屬性。 |
+| **其他應用程式管理** | **packageManagement** 受限制的功能讓 app 能夠直接管理其他 app。<br /><br />**packageQuery** 裝置功能讓 app 能夠收集其他 app 的相關資訊。<br /><br />需要具備這個功能，才能使用存取 [**PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960) 類別中的某些方法和屬性。 |
 | **畫面投影** | **screenDuplication** 受限制的功能讓 app 能將畫面投影到其他裝置。<br /><br />需要具備這個功能，才能使用 DirectX 命名空間中的 API。 <br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
 | **使用者主體名稱** | **userPrincipalName** 受限制的功能讓 app 能夠修改和存取相片的縮圖快取。<br /><br />需要具備這個功能，才能呼叫 [**GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) 函式。 <br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
 | **電子錢包** | **walletSystem** 受限制的功能讓 app 能完整存取儲存式電子錢包卡。<br /><br />需要具備這個功能，才能使用 [**Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 命名空間中的 API。 <br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
@@ -187,8 +187,9 @@ ms.locfileid: "7698054"
 | **UI 自動化**| **uiAutomation** 功能可讓 UI 自動化用戶端 (例如朗讀程式) 來連接至 UI 自動化伺服器或提供者。<br /><br />必須具備這項功能，才能使用 **Windows.Xbox.Media.Capture.Broadcaster** 命名空間中的某些 API。 |
 |**遊戲列服務**| **gameBarServices** 僅限第一方Microsoft Store可更新收件匣的 UWA。<br /><br />必須具備這項功能，才能使用 [**Windows.Media.Capture.GameBarsSrvices**](https://docs.microsoft.com/uwp/api/windows.media.capture.gamebarservices) 類別。<br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
 |**App 擷取服務**| **appCaptureServices** 容量僅限於與 Microsoft 具有契約關係之對象。 這些關係會根據由 Xbox 服務及 bizdev 支援推動的夥伴協議進行授與。<br /><br />必須具備這項功能，才能使用 [**Windows.Media.Capture.AppCaptureServices**](https://docs.microsoft.com/uwp/api/windows.media.capture.appcaptureservices) 類別。 |
-|**App 廣播服務**| **appBroadcastServices** 功能僅限於與 Microsoft 具有契約關係之對象。 這些關係會根據由 Xbox 服務支援推動的夥伴協議進行授與。<br /> <br /><br />必須具備這項功能，才能使用 [**Windows.Media.capture.AppBroadcastServices**](https://docs.microsoft.com/uwp/api/windows.media.capture.appbroadcastservices) 類別。<br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
+|**App 廣播服務**| **appBroadcastServices** 功能僅限於與 Microsoft 具有契約關係之對象。 這些關係會根據由 Xbox 服務支援推動的夥伴協議進行授與。<br /> <br />必須具備這項功能，才能使用 [**Windows.Media.capture.AppBroadcastServices**](https://docs.microsoft.com/uwp/api/windows.media.capture.appbroadcastservices) 類別。<br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
 |**音訊裝置設定**| **audioDeviceConfiguration** 這項功能可以讓應用程式查詢、設定、啟用，以及停用音訊驅動程式公開的音訊效果。 <br /> <br />必須具備這項功能，才能使用 [**Windows.Media.Devices.AudioDeviceModulesManager**](https://docs.microsoft.com/uwp/api/windows.media.devices.audiodevicemodulesmanager) 類別。<br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 這是因為 **AudioDeviceModulesManager** 可讓應用程式存取特定系統上所有的音訊效果。 而音訊效果可能會用於造成裝置上音訊效能的負面影響。 |
+| **背景媒體錄製** | **BackgroundMediaRecording**功能會變更媒體特定 Api 像[**MediaCapture**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture)和[**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/windows.media.audio.audiograph.aspx)類別以啟用媒體錄製您的應用程式在背景時的行為。 |
 |**預覽 Ink 工作區**| **previewInkWorkspace** 功能可讓 app 存取裝載在 ink 工作區的預覽 Ink 命名空間。 一般而言，OEM 會使用這項功能來取代裝置上的白板應用程式。<br /> <br />必須具備這項功能，才能使用 [**Windows.ApplicationModel.Preview.InkWorkspace**](https://docs.microsoft.com/uwp/api/windows.applicationmodel.preview.inkworkspace) 命名空間中的 API。 |
 |**開始畫面管理**| **startScreenManagement** 功能可讓 app 直接將磚釘選至開始畫面。 App 也可以從背景進行釘選。 不具備 **startScreenManagement** 功能時並不會封鎖任何 API。然而，使用 **startScreenManagement** 表示殼層不會在任何 app 使用釘選 API 時顯示任何 UI。 |
 |**Cortana 權限**| **cortanaPermissions** 功能可讓 app 列舉使用者授與裝置上 Cortana 的權限。 此功能同時也允許 app 授與或撤銷裝置上 Cortana 的權限。 請注意：使用 **cortanaPermissions** 需要裝置在授與權限前顯示法律聲明文字。 因此，app 應負起責任，告知使用者修改權限可能造成的法律後果。<br /> <br /><br />必須有這項功能，才能取得 **HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Search\(*)** 登錄設定的讀取存取權限。<br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |

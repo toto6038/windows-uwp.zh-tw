@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf, 傳統型橋接器, 次要磚, 釘選, 快速入門, 程式碼範例, 範例, 次要磚, 傳統型應用程式
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e713f37cd5e5fbf4b2771e76fb7e132b5976629
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7703728"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7838138"
 ---
 # <a name="pin-secondary-tiles-from-desktop-application"></a>從傳統型應用程式釘選次要磚
 

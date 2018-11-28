@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dec176206aacb946bfd65341c483d8ba61558ad
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/27/2018
-ms.locfileid: "7714310"
+ms.locfileid: "7834471"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>危險追蹤與磚集區資源
 

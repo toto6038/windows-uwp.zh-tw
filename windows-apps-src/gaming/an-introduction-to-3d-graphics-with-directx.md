@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊樂場, DirectX, 圖形
 ms.localizationpriority: medium
 ms.openlocfilehash: 5dbdf6072f57d12d424f0787cfa2e8993a1624af
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7707651"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7833197"
 ---
 # <a name="basic-3d-graphics-for-directx-games"></a>適用於 DirectX 遊戲的基本 3D 圖形
 
