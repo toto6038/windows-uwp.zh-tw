@@ -5,12 +5,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a68e78bef540717d4f4c33d3132748fa727b4068
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 551f8b925ffd56950ba893da7b81fefb4579f558
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7714084"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7840011"
 ---
 # <a name="bluetooth-gatt-server"></a>藍牙 GATT 伺服器
 
@@ -31,7 +31,7 @@ ms.locfileid: "7714084"
 Windows 通常會以用戶端角色運作。 不過，許多案例發生，這樣做需要以做為藍牙 LE GATT 伺服器以及 Windows。 適用於 IoT 裝置，以及大部分的跨平台 BLE 通訊幾乎所有的案例需要 Windows GATT 伺服器。 此外，將通知傳送到附近穿戴式裝置的裝置已成為需要這項技術的常見案例。  
 > 請確定[GATT 用戶端文件](gatt-client.md)中的所有概念都都會清除再繼續。  
 
-伺服器作業將會為中心服務提供者和 GattLocalCharacteristic。 這兩個類別都可提供宣告、 實作和公開階層的資料到遠端裝置所需的功能。
+伺服器作業將會為中心服務提供者和 GattLocalCharacteristic。 這兩個類別都可提供宣告、 實作和公開到遠端裝置的資料階層所需的功能。
 
 ## <a name="define-the-supported-services"></a>定義支援的服務
 您的應用程式可能會宣告要發佈的 Windows 的一或多個服務。 每個服務是以 UUID 唯一識別。 
@@ -68,7 +68,7 @@ Windows 通常會以用戶端角色運作。 不過，許多案例發生，這�
 
 > 在此階段不支援廣播的注意。  指定廣播 GattCharacteristicProperty 將導致例外狀況。
 
-### <a name="build-up-the-heirarchy-of-services-and-characteristics"></a>建置服務與特性的階層
+### <a name="build-up-the-hierarchy-of-services-and-characteristics"></a>建置服務與特性的階層
 GattServiceProvider 用來建立及通告根主要服務定義。  每個服務需要它是在 GUID 中採用自己 ServiceProvider 物件： 
 
 ```csharp
