@@ -3,11 +3,11 @@ title: 裝置入口網站網路認證的 API 參考
 description: 了解如何新增、 移除或以程式設計方式更新網路憑證。
 ms.localizationpriority: medium
 ms.openlocfilehash: 2da8dae554a0dcbb84d3d3fc3873e2fb035175dc
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7705100"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "7836233"
 ---
 # <a name="network-credentials-api-reference"></a>網路認證 API 參考
 您可以新增、 移除或更新您使用此 REST API 的 devkit 上儲存的網路認證。
