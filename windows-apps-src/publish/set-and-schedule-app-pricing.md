@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 定價, App 定價, App 價格, 銷售應用程式, 價格變更, 自訂價格, 價格, 定價, 成本, 覆寫基本價格, 自由格式價格, 自由格式
 ms.localizationpriority: medium
 ms.openlocfilehash: d901ec630c680adfaa637d5555fc2182749bec89
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985758"
+ms.locfileid: "8197885"
 ---
 # <a name="set-and-schedule-app-pricing"></a>設定與排程應用程價格
 
