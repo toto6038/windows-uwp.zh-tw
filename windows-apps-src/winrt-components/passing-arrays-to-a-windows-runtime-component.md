@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 60c2e2221cd174ffd75a45d6fe8e2f66744d67a0
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7993066"
+ms.locfileid: "8191913"
 ---
 # <a name="passing-arrays-to-a-windows-runtime-component"></a>將陣列傳遞到 Windows 執行階段元件
 

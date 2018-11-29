@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: b81838393d7b2692e6fd04b7ce535f58dc773780
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7982916"
+ms.locfileid: "8188798"
 ---
 # <a name="monochrome-light-maps"></a>單色光線對應
 

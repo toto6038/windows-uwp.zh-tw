@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, rendering, shadow map, depth buffer, direct3d, 遊戲, 轉譯, 陰影圖, 深度緩衝區
 ms.localizationpriority: medium
 ms.openlocfilehash: 27cd535dc51a330937c345acf352677a42c652eb
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985102"
+ms.locfileid: "8193366"
 ---
 # <a name="render-the-shadow-map-to-the-depth-buffer"></a>將陰影圖轉譯為深度緩衝區
 

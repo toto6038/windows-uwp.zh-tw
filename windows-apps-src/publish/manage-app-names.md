@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，應用程式名稱，變更應用程式名稱、 更新應用程式名稱、 遊戲名稱、 產品名稱
 ms.localizationpriority: medium
 ms.openlocfilehash: a27955f64a36fadde9b0f1781337929ce6871a9c
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7973432"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8191973"
 ---
 # <a name="manage-app-names"></a>管理應用程式名稱
 

@@ -6,11 +6,11 @@ ms.date: 08/14/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: da8bc3b441a1b619e086934f277cb14be6bcc37a
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7980643"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8196044"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-august-2018"></a>在 2018 年 8 月 Windows 開發人員文件的最新動向
 

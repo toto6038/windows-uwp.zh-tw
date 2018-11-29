@@ -6,11 +6,11 @@ ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7964221"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8189829"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 

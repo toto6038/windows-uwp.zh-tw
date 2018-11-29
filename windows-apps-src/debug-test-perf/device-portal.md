@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: 2bffdb31e9001bd0b2abe873780ef507c2073b46
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7975440"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8195572"
 ---
 # <a name="windows-device-portal-overview"></a>Windows Device Portal 概觀
 

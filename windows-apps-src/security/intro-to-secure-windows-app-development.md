@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 38318e7f97c8eba7d0137a865f5025fb9a77fa55
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7992270"
+ms.locfileid: "8193841"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows 應用程式的簡介
 

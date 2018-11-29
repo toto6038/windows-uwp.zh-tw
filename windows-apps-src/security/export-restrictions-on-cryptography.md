@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7989156"
+ms.locfileid: "8190552"
 ---
 # <a name="export-restrictions-on-cryptography"></a>密碼編譯的出口限制
 

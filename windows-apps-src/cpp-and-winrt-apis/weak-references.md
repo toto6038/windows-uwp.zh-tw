@@ -7,11 +7,11 @@ keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 強�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 507b3cee71819df1d0163380a494e6a15936109f
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7993344"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8190836"
 ---
 # <a name="strong-and-weak-references-in-cwinrt"></a>強式和弱式參考，在 C + + /winrt
 

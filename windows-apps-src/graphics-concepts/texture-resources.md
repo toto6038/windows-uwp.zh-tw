@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f52a032b7fe61df67aaf35c57b2ca64ac8eef6a
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7980184"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8191794"
 ---
 # <a name="texture-resources"></a>紋理資源
 
