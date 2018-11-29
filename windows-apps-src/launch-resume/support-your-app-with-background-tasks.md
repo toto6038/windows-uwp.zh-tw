@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: 2413a27c12a9b36f0fd57482492414e7b5a379b6
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7849825"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987772"
 ---
 # <a name="support-your-app-with-background-tasks"></a>使用背景工作支援 App
 

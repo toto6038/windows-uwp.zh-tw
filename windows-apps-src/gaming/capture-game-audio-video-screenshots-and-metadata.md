@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, 遊戲, 擷取, 音訊, 影片, 元資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bdc5c210c466d6065fbcf1c856276bbb485788a
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: c4d4d764395d7f383e9cefcb9d8b1121db098780
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7839796"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992230"
 ---
 # <a name="capture-game-audio-video-screenshots-and-metadata"></a>擷取遊戲音訊、元資料、螢幕擷取畫面和元資料
 本文說明如何擷取遊戲影片、音訊和螢幕擷取畫面，以及如何提交系統將會嵌入所擷取和廣播的媒體中的元資料，讓您的 App 和其他人可建立與遊戲活動同步的動態遊戲體驗。 
@@ -152,7 +152,7 @@ ms.locfileid: "7839796"
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### <a name="receive-notifications-when-the-system-purges-metadata"></a>當系統清除元資料時收到通知
-您可以註冊在系統開始清除 App 的元資料時接收通知，方法是註冊 **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件的處理常式。
+您可以註冊在系統開始清除您的應用程式的中繼資料登錄**[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** 事件的處理常式時收到通知。
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

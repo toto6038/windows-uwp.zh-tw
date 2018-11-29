@@ -8,16 +8,16 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
-ms.openlocfilehash: c0717fb3d1db42483214e8396d436c47c23744ee
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7833688"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7983890"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
-通知接聽程式可供存取使用者的通知。 智慧手錶與其他穿戴式裝置可以使用通知接聽程式來傳送手機通知給穿戴式裝置。 家庭自動化應用程式可以使用通知接聽程式，在收到通知時執行特定動作，例如在接到電話時讓燈光閃爍。 
+通知接聽程式可供存取使用者的通知。 智慧手錶與其他穿戴式裝置可以使用通知接聽程式來傳送手機通知給穿戴式裝置。 家庭自動化應用程式可以使用通知接聽程式來執行特定動作時收到通知，例如在接到電話時收到呼叫讓。 
 
 > [!IMPORTANT]
 > **需要年度更新版**：您的目標必須是 SDK 14393 並執行組建 14393 或更新版本，才能使用通知接聽程式。
