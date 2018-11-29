@@ -1,16 +1,16 @@
 ---
 description: 本文章說明如何在您的傳統型應用程式中裝載 UWP XAML UI。
 title: 使用 UWP XAML 中的傳統型應用程式裝載 API
-ms.date: 09/21/2018
+ms.date: 11/27/2018
 ms.topic: article
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
-ms.openlocfilehash: b6883b605bed0b259cd70d1f6dc0264476eddd40
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: df6c47fd93c3f42721fd072d6406a2d32f7889db
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7837560"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990115"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 
@@ -46,8 +46,8 @@ UWP XAML 裝載 API 提供低階的基礎結構裝載 UWP 控制項，傳統型�
 
 Windows 社群工具組中的[WindowsXamlHost](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)控制項做為參考範例適用於使用 UWP 裝載在 WPF 和 Windows Form 應用程式中的 API。 在下列位置，可供使用的原始程式碼：
 
-  * 針對 WPF 控制項，[請移至這裡](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost)的版本。 WPF 版本衍生自[**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)。
-  * Windows Forms 控制項，[請移至這裡](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost)的版本。 Windows Forms 版本衍生自[**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
+  * 針對 WPF 控制項，[請移至這裡](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost)的版本。 WPF 版本衍生自[**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)。
+  * Windows Forms 控制項，[請移至這裡](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost)的版本。 Windows Forms 版本衍生自[**System.Windows.Forms.Control**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -161,8 +161,8 @@ UWP XAML 裝載 API 包含[**DesktopWindowXamlSource**](https://docs.microsoft.c
 如需示範這些工作的工作範例應用程式內容中的完整範例，請參閱下列程式碼檔案：
 
   * **C + + Win32:** 請參閱[Main.cpp](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting/blob/master/XamlHostingSample/Main.cpp)範例中的檔案[XamlHostingSample](https://github.com/Microsoft/Windows-appsample-Xaml-Hosting)或[Desktop.cpp](https://github.com/clarkezone/cppwinrt/blob/master/Desktop/XamlIslandsWin32/Desktop.cpp)範例中的檔案[XamlIslands32](https://github.com/clarkezone/cppwinrt/tree/master/Desktop/XamlIslandsWin32) 。
-  * **WPF:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)檔案。  
-  * **Windows Forms:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs)檔案。
+  * **WPF:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs)檔案。  
+  * **Windows Forms:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs)和[WindowsXamlHost.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs)檔案。
 
 
 ## <a name="how-to-host-custom-uwp-xaml-controls"></a>如何自訂主機 UWP XAML 控制項
@@ -174,11 +174,11 @@ UWP XAML 裝載 API 包含[**DesktopWindowXamlSource**](https://docs.microsoft.c
 
 1. 定義衍生自[**Windows.UI.Xaml.Application**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application)並也會實作[**IXamlMetadataProvider**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider)的自訂類型。 這種類型做為根中繼資料提供者載入組件，在目前的目錄中自訂的 UWP XAML 類型，您的應用程式的中繼資料。
 
-    如需範例，示範如何執行此動作，請參閱 Windows 社群工具組中的[XamlApplication.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/XamlApplication.cs)程式碼檔案。 這個檔案是針對 WPF 和 Windows Form，說明如何使用 UWP XAML 裝載在這些類型的應用程式中的 API 的共用**WindowsXamlHost**類別實作的一部分。
+    如需範例，示範如何執行此動作，請參閱 Windows 社群工具組中的[XamlApplication.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/XamlApplication.cs)程式碼檔案。 這個檔案是針對 WPF 和 Windows Form，說明如何使用 UWP XAML 裝載在這些類型的應用程式中的 API 的共用**WindowsXamlHost**類別實作的一部分。
 
 2. UWP XAML 控制項的型別名稱指派時，呼叫[**GetXamlType**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.markup.ixamlmetadataprovider.getxamltype)方法根中繼資料提供者 （這無法在執行階段，指派給在程式碼中，或您可能會選擇啟用這個選項可在 Visual Studio 的 [屬性] 視窗中指派）。
 
-    如需範例，示範如何執行此動作，請參閱 Windows 社群工具組中的[UWPTypeFactory.cs](https://github.com/Microsoft/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Win32/Microsoft.Windows.Interop.WindowsXamlHost.Shared/UWPTypeFactory.cs)程式碼檔案。 這個檔案是針對 WPF 和 Windows Form 的共用**WindowsXamlHost**類別實作的一部分。
+    如需範例，示範如何執行此動作，請參閱 Windows 社群工具組中的[UWPTypeFactory.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Win32.UI.XamlHost/UWPTypeFactory.cs)程式碼檔案。 這個檔案是針對 WPF 和 Windows Form 的共用**WindowsXamlHost**類別實作的一部分。
 
 3. 將自訂的 UWP XAML 控制項的原始碼整合到您的主機應用程式方案、 建置自訂控制項，並由下列[這些指示](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost#add-a-custom-uwp-control)應用程式中使用。
 
@@ -193,8 +193,8 @@ UWP XAML 裝載 API 提供數個類型和成員，可協助您完成這些工作
 2. 當使用者在您**DesktopWindowXamlSource**中的最後一個可設定焦點項目上，並按下**Tab**鍵或方向鍵時， [**TakeFocusRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested)會引發的事件。 處理此事件，並以程式設計方式將焦點移至主應用程式中的下一個可設定焦點項目。 例如，在 WPF 應用程式中裝載**DesktopWindowXamlSource** [**System.Windows.Interop.HwndHost**](https://docs.microsoft.com/dotnet/api/system.windows.interop.hwndhost)中，您可以使用[**MoveFocus**](https://docs.microsoft.com/dotnet/api/system.windows.frameworkelement.movefocus)方法傳輸到主機應用程式中的下一個可設定焦點元素的焦點。
 
 如需範例，示範如何使用範例應用程式的內容中執行此動作，請參閱下列程式碼檔案：
-  * **WPF:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)檔案。  
-  * **Windows Forms:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs)檔案。
+  * **WPF:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.Focus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs)檔案。  
+  * **Windows Forms:** 請參閱 Windows 社群工具組中的[WindowsXamlHostBase.KeyboardFocus.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs)檔案。
 
 ## <a name="how-to-handle-layout-changes"></a>如何處理版面配置變更
 
@@ -209,8 +209,8 @@ UWP XAML 裝載 API 提供數個類型和成員，可協助您完成這些工作
     * 在 Windows Forms 應用程式就可以這麼的[**控制項**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control)在[**SizeChanged**](https://docs.microsoft.com/dotnet/api/system.windows.forms.control.sizechanged)事件的處理常式從該主機**DesktopWindowXamlSource**。
 
 如需範例，示範如何使用範例應用程式的內容中執行此動作，請參閱下列程式碼檔案：
-  * **WPF:** 請參閱 Windows 社群工具組中的[WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。  
-  * **Windows Forms:** 請參閱 Windows 社群工具組中的[WindowsXamlHost.Layout.cs](https://github.com/Microsoft/WindowsCommunityToolkit/blob/master/Microsoft.Toolkit.Win32/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。
+  * **WPF:** 請參閱 Windows 社群工具組中的[WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。  
+  * **Windows Forms:** 請參閱 Windows 社群工具組中的[WindowsXamlHost.Layout.cs](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs)檔案。
 
 ## <a name="how-to-handle-dpi-changes"></a>如何處理 DPI 變更
 
