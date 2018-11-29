@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
 ms.openlocfilehash: 3163b4c89cc1d0bf3e4adfdea39222dfcb5a3ee1
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7988754"
+ms.locfileid: "8204018"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
