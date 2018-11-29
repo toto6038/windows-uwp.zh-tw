@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 正式發行前小眾測試
 ms.localizationpriority: medium
 ms.openlocfilehash: 568fbff28d6c57acb6214bf274becc9cbc7f8830
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7849208"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7990688"
 ---
 # <a name="package-flights"></a>套件正式發行前小眾測試版
 

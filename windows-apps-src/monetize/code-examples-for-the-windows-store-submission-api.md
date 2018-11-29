@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，Microsoft Store 提交 API，程式碼範例
 ms.localizationpriority: medium
 ms.openlocfilehash: f60668ba81bbaefe2c190f7212618684797366bf
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7843449"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7991082"
 ---
 # <a name="code-examples-for-the-submission-api"></a>提交 API 的程式碼範例
 

@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 312729c25d5d9f34471c7154a84273bcbf844da4
-ms.sourcegitcommit: 681c70f964210ab49ac5d06357ae96505bb78741
+ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "7720224"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7992383"
 ---
 # <a name="get-app-data"></a>取得 App 資料
 
@@ -109,7 +109,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 <span id="add-on-object" />
 
-### <a name="add-on-resouce"></a>附加元件資源
+### <a name="add-on-resource"></a>附加元件資源
 
 此資源提供附加元件的相關資訊。
 

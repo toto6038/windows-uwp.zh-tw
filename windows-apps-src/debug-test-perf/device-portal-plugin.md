@@ -6,12 +6,12 @@ ms.date: 03/24/2017
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e6177cb3b948c44943753f7ae45c72a76d4a1d5
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7832525"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7989037"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>撰寫 Device Portal 的自訂外掛程式
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-應用程式必須處理兩個事件才能完成要求處理迴圈︰**Closed** (適用於 Device Portal 服務關閉時)，以及[**RequestRecieved**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，其具有連入 HTTP 要求，並提供 Device Portal 提供者的主要功能。 
+有兩個必須由應用程式以完成要求處理迴圈處理的事件：**已關閉**，每當適用於 Device Portal 服務關閉時，並[**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，呈現連入 HTTP 要求，並提供主要Device Portal 提供者的功能。 
 
 ## <a name="handle-the-requestreceived-event"></a>處理 RequestReceived 事件
 針對在外掛程式的指定「處理常式路徑」上提出的每個要求，將會引發**RequestReceived**事件一次。 Device Portal 提供者的要求處理迴圈與 NodeJS Express 中的要求處理迴圈類似︰要求和回應物件會與事件一起提供，而且處理常式透過填入回應物件來回應。 在 Device Portal 提供者中，**RequestReceived**事件和其處理常式使用[**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage)和[**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage)物件。   

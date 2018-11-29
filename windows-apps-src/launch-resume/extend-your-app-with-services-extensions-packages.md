@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 延伸, 組件化, app 服務, 套件, 擴充功能
 ms.localizationpriority: medium
 ms.openlocfilehash: 110fa8ec9feba1f54155d41b4c726ffb28f71630
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7829721"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "7987792"
 ---
 # <a name="extend-your-app-with-services-extensions-and-packages"></a>透過服務、擴充功能和套件延伸您的 App
 
