@@ -1,20 +1,20 @@
 ---
-Description: Learn how to pin a secondary tile from your UWP app.
-title: 釘選次要磚
-label: Pin secondary tiles
+Description: Learn how to pin a secondary tile to Start from your UWP app.
+title: 釘選到 [開始] 的次要磚
+label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
 ms.topic: article
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, 次要磚, 釘選, 快速入門, 程式碼範例, 範例
 ms.localizationpriority: medium
-ms.openlocfilehash: 6fda249e38ddc9126816b0ea479ec0339fc6202b
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7977048"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8218011"
 ---
-# <a name="pin-secondary-tiles"></a>釘選次要磚
+# <a name="pin-secondary-tiles-to-start"></a>釘選到 [開始] 的次要磚
 
 
 本主題會引導您完成為 UWP 應用程式建立次要磚並釘選到 \[開始\] 功能表的步驟。
