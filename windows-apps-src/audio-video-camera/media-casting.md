@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e4b794e560c213e5c3796b11dd1a5fd77a98506
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7968846"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8198176"
 ---
 # <a name="media-casting"></a>媒體傳播
 
@@ -77,7 +77,7 @@ ms.locfileid: "7968846"
 
 [!code-cs[CastingDeviceSelected](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
+在 **ErrorOccurred** 和 **StateChanged** 事件處理常式中，您應該更新 UI 讓使用者知道目前的傳播狀態。 下節的建立自訂傳播裝置選擇器中，將詳細討論這些事件。
 
 [!code-cs[EmptyStateHandlers](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
@@ -145,7 +145,7 @@ In the **ErrorOccurred** and **StateChanged** event handlers, you should update 
 
 [!code-cs[StateChanged](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
+在 **ErrorOccurred** 事件的處理常式中，更新 UI 讓使用者知道發生傳播錯誤，並取消選取清單方塊中目前的 **CastingDevice** 物件。
 
 [!code-cs[ErrorOccurred](./code/MediaCasting_RS1/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
