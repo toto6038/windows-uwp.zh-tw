@@ -4,11 +4,11 @@ description: 這系列主題提供一些不同複雜程度的 OpenGL ES 2.0 圖�
 ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ms.localizationpriority: medium
 ms.openlocfilehash: 7aefd725c1a73bac3212bf80036462c9bcb7dcc9
-ms.sourcegitcommit: b11f305dbf7649c4b68550b666487c77ea30d98f
+ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "7830602"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "7977225"
 ---
 # <a name="walkthrough-sample-ports-from-opengl-es-20"></a>逐步解說來自 OpenGL ES 2.0 的移植範例
 
