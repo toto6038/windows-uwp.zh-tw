@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, porting, direct3d 11, 遊戲, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: 6eaa057c700c69621fd66090618ca7c945522d57
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8211604"
+ms.locfileid: "8324686"
 ---
 # <a name="game-porting-guides"></a>遊戲移植指南
 
