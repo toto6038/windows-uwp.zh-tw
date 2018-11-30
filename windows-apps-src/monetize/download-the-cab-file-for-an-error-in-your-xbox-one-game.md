@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, Microsoft Store 分析 API, 下載 CAB
 ms.localizationpriority: medium
 ms.openlocfilehash: 736219533a254e6380c10600e97f707f15e37de6
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985225"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8204500"
 ---
 # <a name="download-the-cab-file-for-an-error-in-your-xbox-one-game"></a>下載您的 Xbox One 遊戲中錯誤的 CAB 檔案
 

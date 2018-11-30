@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: e1f7e787f2ee80a3168d38a9afd9a249dc0e6de0
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7985738"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8206321"
 ---
 # <a name="pixel-shader-ps-stage"></a>像素著色器 (PS) 階段
 
