@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, 概觀, 程式設計, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 83ac401892761e1e6433d337babbce00dc559b98
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7971570"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8216331"
 ---
 # <a name="directx-programming"></a>DirectX 程式設計
 

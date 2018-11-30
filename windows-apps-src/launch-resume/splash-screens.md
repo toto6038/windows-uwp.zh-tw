@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: df3fc8f54a4174006fd28f319d7cab09142a81fd
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7984787"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8211869"
 ---
 # <a name="splash-screens"></a>啟動顯示畫面
 

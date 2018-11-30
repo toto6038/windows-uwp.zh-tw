@@ -8,11 +8,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: a5af904c099b92e399f169221cae3122f358be19
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7981663"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8212385"
 ---
 # <a name="app-resources-and-the-resource-management-system"></a>App 資源和資源管理系統
 

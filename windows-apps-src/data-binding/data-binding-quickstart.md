@@ -11,11 +11,11 @@ dev_langs:
 - cppwinrt
 - cppcx
 ms.openlocfilehash: cc8e4d1753333579b016a44adf9429d355d29fb6
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7968322"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8216826"
 ---
 # <a name="data-binding-overview"></a>資料繫結概觀
 

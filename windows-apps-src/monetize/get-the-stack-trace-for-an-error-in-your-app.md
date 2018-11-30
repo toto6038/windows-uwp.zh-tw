@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 堆疊追蹤, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: ceffc7622f756eb17c8475208852e013df814554
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7986602"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8213323"
 ---
 # <a name="get-the-stack-trace-for-an-error-in-your-app"></a>取得應用程式中錯誤的堆疊追蹤
 

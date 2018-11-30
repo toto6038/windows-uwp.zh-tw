@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 擷取, 視訊
 ms.localizationpriority: medium
 ms.openlocfilehash: a654739490043b9f821e7906fa8cf9e3e7259fed
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7975960"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8212871"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>使用 MediaFrameSourceGroup 從多個來源擷取
 

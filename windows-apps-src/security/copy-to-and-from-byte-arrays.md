@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: b3ce63ca1780f9ed1ecd32f3ab1c029a1a92e1b5
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7970221"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8214574"
 ---
 # <a name="copy-to-and-from-byte-arrays"></a>複製到位元組陣列和從位元組陣列中複製
 
