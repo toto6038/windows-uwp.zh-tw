@@ -8,11 +8,11 @@ keywords: Windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.openlocfilehash: c89c3ace4b85852f93bb0d5edf4c520403f39b44
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7972364"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "8200779"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP Api 適用於已封裝的傳統型應用程式
 

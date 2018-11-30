@@ -3,11 +3,11 @@ title: 裝置入口網站 SSH Pin API 參考
 description: 了解如何以程式設計方式移除所有信任的 SSH Pin 碼。
 ms.localizationpriority: medium
 ms.openlocfilehash: 1ddf15d3cdb4089a8ef010a4ae46d247a06a10d7
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/29/2018
-ms.locfileid: "7991241"
+ms.locfileid: "8201269"
 ---
 # <a name="ssh-pins-api-reference"></a>SSH Pin API 參考
 您可以使用此 REST API 在您的 devkit 上移除所有受信任的 SSH Pin 碼。

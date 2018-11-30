@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7972542"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8208804"
 ---
 # <a name="light-mapping-with-textures"></a>光線與紋理對應
 
