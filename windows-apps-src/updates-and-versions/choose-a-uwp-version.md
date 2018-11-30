@@ -7,11 +7,11 @@ keywords: windows 10, uwp, 版本, 組建, windows, 選擇, 更新
 ms.assetid: a8b7830f-4929-44c6-90be-91f38be5f364
 ms.localizationpriority: medium
 ms.openlocfilehash: 3461170110a4ca4391c41bee815a83b6d45cee75
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "7990852"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8216865"
 ---
 # <a name="choose-a-uwp-version"></a>選擇 UWP 版本
 
