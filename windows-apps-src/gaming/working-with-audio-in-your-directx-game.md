@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 音訊, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: fd106e07e6359e9289074cb62cec6bf7458ac5bc
-ms.sourcegitcommit: b5c9c18e70625ab770946b8243f3465ee1013184
+ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7980882"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8215989"
 ---
 # <a name="audio-for-games"></a>遊戲的音訊
 
