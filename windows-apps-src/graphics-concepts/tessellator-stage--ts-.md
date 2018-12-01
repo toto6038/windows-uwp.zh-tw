@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7768d63405281d3155affc6c9f09c62568761718
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8217981"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8335549"
 ---
 # <a name="tessellator-ts-stage"></a>曲面細分器 (TS) 階段
 

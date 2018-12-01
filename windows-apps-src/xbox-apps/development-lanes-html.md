@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: edd40cc4-2604-4bc6-bd81-f671389a70fa
 ms.localizationpriority: medium
 ms.openlocfilehash: 60642016e5924c554534775a6576b61e935eaf1e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8205503"
+ms.locfileid: "8339929"
 ---
 # <a name="bringing-html-games-to-uwp-on-xbox"></a>將 HTML 遊戲移到 Xbox 上的 UWP
 Xbox One 是 HTML 5 遊戲的絕佳平台。 HTML 5 遊戲是在 [Edge](https://developer.microsoft.com/microsoft-edge/) 瀏覽器引擎上執行。 Edge 非常快速，並且完全支援 HTML 5 和 CSS 3 功能，例如 WebGL 和畫布。
