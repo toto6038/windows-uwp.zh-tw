@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp, 傳送快顯通知, 通知, 傳送通知, 快顯通知, 如何, 快速入門, 開始使用, 程式碼範例, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: dd7dfb621d84a3ce1d934c358ab60683caee9238
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 410e8121aecfe13805586c9287f62444f80a1b1b
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8215682"
+ms.locfileid: "8343849"
 ---
 # <a name="send-a-local-toast-notification"></a>傳送本機快顯通知
 
@@ -361,7 +361,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 
 當您在快顯通知 (或快顯通知內的按鈕) 上指定背景啟用時，將會執行背景工作，而不是啟用前景 App。
 
-如需背景工作的詳細資訊，請參閱[使用背景工作支援 App](/launch-resume/support-your-app-with-background-tasks.md)。
+如需背景工作的詳細資訊，請參閱[使用背景工作支援 App](/windows/uwp/launch-resume/support-your-app-with-background-tasks)。
 
 如果您的目標組建為 14393 或更高版本，則可以同處理序背景工作，這將情況大幅簡化了。 請注意，同處理序背景工作無法在舊版 Windows 上執行。 我們會在此程式碼範例中使用同處理序背景工作。
 

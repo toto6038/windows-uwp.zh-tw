@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e6252ce3d2e213602250f6c24f8867767accecbe
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8188663"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8349247"
 ---
 # <a name="tailoring-effects--experiences-using-windows-ui"></a>量身訂做的效果與使用 Windows UI 體驗
 
@@ -18,7 +18,7 @@ Windows UI 提供許多的美觀效果、 動畫以及表示區分。 不過，�
 
 量身訂做的 UI 是一種廣泛類別，巨大適用於高效能，美觀的 UI，相對於下列幾個方面：
 
-- Respecting and adapting to user settings for effects
+- 遵守以及適應效果的使用者設定
 - 協調動畫的使用者設定
 - 最佳化特定的硬體功能的 UI
 
@@ -119,7 +119,7 @@ API 可以新增至現有的程式碼，在幾個簡單步驟中。
 根據意見反應提供[AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported)和[AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast)方法中 CompositionCapabilities API，應用程式可以決定要為其所選擇的其他效果最佳化的交換昂貴或不受支援的效果適用於裝置。 某些效果已知為以一致的方式較大量的資源比其他人應謹慎，使用與其他效果可以使用更自由地。 所有的效果，不過，小心應該使用時鏈結，並產生動畫效果做為某些案例或組合可能會變更效果圖形的效能特性。 以下是一些法則的效能特性個別的效果：
 
 - 有高效能的影響已知的效果如下所示 – 高斯模糊、 陰影遮罩、 BackDropBrush、 HostBackDropBrush，和視覺層。 這些不建議使用的低階裝置[（功能層級 9.1 9.3）](https://msdn.microsoft.com/library/windows/desktop/ff476876(v=vs.85).aspx)，並在高階裝置上應該謹慎使用。
-- 中型效能影響的效果包含色彩矩陣，某些混合效果 BlendModes （亮度、 色彩、 飽和，以及色調） 焦點、 SceneLightingEffect，以及 （取決於案例） BorderEffect。 這些效果可能與某些案例低階裝置上運作，但鏈結，並產生動畫效果時，應該使用小心。 Recommend restricting use to two or less and animating on transitions only.
+- 中型效能影響的效果包含色彩矩陣，某些混合效果 BlendModes （亮度、 色彩、 飽和，以及色調） 焦點、 SceneLightingEffect，以及 （取決於案例） BorderEffect。 這些效果可能與某些案例低階裝置上運作，但鏈結，並產生動畫效果時，應該使用小心。 建議限制為兩個或更少的使用，並建立只轉換動畫。
 - 所有其他效果有低效能的影響，且在所有合理的案例時產生動畫效果和鏈結中運作。
 
 ## <a name="related-articles"></a>相關文章

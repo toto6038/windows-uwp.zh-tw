@@ -3,11 +3,11 @@ title: 自動化啟動 Windows 10 通用 Windows 平台 (UWP) 應用程式
 description: 開發人員可以使用通訊協定啟用和啟動啟用來自動化啟動他們的 UWP app 或遊戲，以自動進行測試。
 ms.localizationpriority: medium
 ms.openlocfilehash: 123e2dfff909265673a711f480f5fe636590afa4
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8203205"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8350759"
 ---
 # <a name="automate-launching-windows-10-uwp-apps"></a>自動化啟動 Windows 10 UWP App
 
