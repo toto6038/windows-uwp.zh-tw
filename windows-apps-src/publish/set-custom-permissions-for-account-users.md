@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 使用者角色, 使用者權限, 自訂角色, 使用者存取, 自訂權限, 標準角色
 ms.localizationpriority: medium
 ms.openlocfilehash: 5a76dd85343ddf81baceb4946515c869083b839e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8212077"
+ms.locfileid: "8341378"
 ---
 # <a name="set-roles-or-custom-permissions-for-account-users"></a>設定帳戶使用者的角色或自訂權限
 
@@ -167,10 +167,10 @@ ms.locfileid: "8212077"
     </thead>
     <tbody>
     <tr><td align="left">    <b>下載數</b>     </td><td>    可檢視產品的<a href="acquisitions-report.md">下載數</a>和<a href="add-on-acquisitions-report.md">附加元件下載數</a>報告。        </td><td>    不適用    </td><td>    不適用 （父產品的設定包含**附加元件下載數**報告）        </td><td>    不適用                         </td></tr>
-    <tr><td align="left">    <b>使用量</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    無     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    無     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>使用量</b> </td><td>    可檢視產品的<a href="usage-report.md">使用量報告</a>。     </td><td>    不適用       </td><td>    N/A     </td><td>    不適用         </td></tr>
+    <tr><td align="left">    <b>健康情況</b> </td><td>    可檢視產品的<a href="health-report.md">健康情況報告</a>。    </td><td>    不適用     </td><td>    N/A     </td><td>    不適用         </td></tr>
     <tr><td align="left">    <b>客戶回函</b>    </td><td>    可檢視產品的<a href="reviews-report.md">評論</a>及<a href="feedback-report.md">意見反應</a>報告。       </td><td>    不適用 (若要回應意見反應或評論，必須授與<b>連絡客戶</b>權限)   </td><td>    不適用     </td><td>    不適用         </td></tr>
-    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    無   </td><td>    無       </td><td>    不適用          </td></tr>
+    <tr><td align="left">    <b>Xbox 分析</b> </td><td>    可檢視產品的[Xbox 分析報告](xbox-analytics-report.md)。    </td><td>    N/A   </td><td>    N/A       </td><td>    不適用          </td></tr>
     </tbody>
     </table>
 

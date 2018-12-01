@@ -27,7 +27,7 @@ ms.locfileid: "8325162"
 
 2. 為事件處理常式委派撰寫程式碼，以使其使用兩個參數：一個適用於寄件者的 **Object** 和一個 [AdErrorEventArgs](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.aderroreventargs) 物件。
 
-以下範例會將名為 **OnAdError** 的委派指派給名為 *myBannerAdControl* 的 **AdControl** 物件之 **ErrorOccurred** 事件。
+Here is an example that assigns a delegate named **OnAdError** to the **ErrorOccurred** event of an **AdControl** object named *myBannerAdControl*.
 
 > [!div class="tabbedCodeSnippets"]
 ``` csharp
@@ -51,13 +51,13 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 ## <a name="javascripthtml-apps"></a>JavaScript/HTML app
 
-處理 JavaScript 應用程式中的 **ErrorOccur** 錯誤：
+To handle **ErrorOccur** errors in a JavaScript app:
 
-1.  指派 **onErrorOccurred** 事件給事件處理常式。
+1.  Assign the **onErrorOccurred** event to an event handler.
 
 2.  為事件處理常式撰寫程式碼。
 
-以下範例會將名為 **errorLogger** 的事件處理常式指派給 **AdControl** 物件的 **ErrorOccurred** 事件。
+Here is an example that assigns an event handler named **errorLogger** to the **ErrorOccurred** event of an **AdControl** object.
 
 > [!div class="tabbedCodeSnippets"]
 ``` html
@@ -71,7 +71,7 @@ private void OnAdError(object sender, AdErrorEventArgs e)
 
 錯誤處理常式會在發生錯誤時抓取 JavaScript 錯誤物件。 錯誤物件會提供兩個引數給錯誤處理常式。 如需詳細資訊，請參閱[非同步 Windows 執行階段方法中的特殊錯誤屬性](http://msdn.microsoft.com/library/windows/apps/hh994690.aspx)。
 
-以下是處理 **onErrorOccurred** 事件且名為 **errorLogger** 之錯誤處理函式的範例。
+Here is an example of an error handling function named **errorLogger** that handles the **onErrorOccurred** event.
 
 > [!div class="tabbedCodeSnippets"]
 ``` javascript

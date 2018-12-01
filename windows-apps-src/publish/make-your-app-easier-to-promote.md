@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 促銷, 宣傳, 精選, 展示, store
 ms.localizationpriority: medium
 ms.openlocfilehash: ea7c7d8a132d1c2996d023f1413523f806d0b5bf
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8204530"
+ms.locfileid: "8335326"
 ---
 # <a name="make-your-app-easier-to-promote"></a>讓您的應用程式更容易促銷
 

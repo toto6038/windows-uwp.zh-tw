@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 52745a4fcd6b5a6b33982595f8c7c65c0bee3c32
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216305"
+ms.locfileid: "8331150"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼自行建立封裝在 Windows 執行階段元件中的 Windows 執行階段類型。 您可以在通用 Windows 平台 (UWP) app 中，將元件與 C++、JavaScript、Visual Basic 或 C# 搭配使用。 本主題概述建立元件，規則，並討論.NET Framework 支援的 Windows 執行階段中的某些層面。 一般而言，該支援依設計應可讓 .NET Framework 程式設計人員清楚理解。 但是，當您建立要與 JavaScript 或 C++ 搭配使用的元件時，必須了解這些語言對於 Windows 執行階段的支援方式有何差異。

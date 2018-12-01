@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，背景工作，應用程式服務連線的裝置，遠端系統
 ms.localizationpriority: medium
 ms.openlocfilehash: d12113329381c6602edf87a11fc1cc6b822dab4e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8208453"
+ms.locfileid: "8333164"
 ---
 # <a name="launching-resuming-and-background-tasks"></a>啟動、繼續和背景工作
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，microsoft Store 服務，Microsoft Store 分析 API，使用方式
 ms.localizationpriority: medium
 ms.openlocfilehash: 48ad049b3f310f8b375a28d9695dd9280d686c43
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8204666"
+ms.locfileid: "8333006"
 ---
 # <a name="get-monthly-app-usage"></a>取得每月應用程式使用量
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 健康情況, 當機, 無回應事件, 應用程式健康情況, 健康情況資料, 堆疊追蹤, cab 檔案, 失敗, 失效, pdb, 符號
 ms.localizationpriority: medium
 ms.openlocfilehash: c547cc933247e69fd208e8d3c297572815a5f2ea
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8201531"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8330563"
 ---
 # <a name="health-report"></a>健康情況報告
 

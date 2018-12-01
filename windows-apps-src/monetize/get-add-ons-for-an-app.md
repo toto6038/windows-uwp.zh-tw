@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: ec065eef5d411e35515837b169fd57d71e4ef6ac
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8216796"
+ms.locfileid: "8339029"
 ---
 # <a name="get-add-ons-for-an-app"></a>取得 App 的附加元件
 

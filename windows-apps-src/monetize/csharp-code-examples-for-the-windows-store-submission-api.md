@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8217951"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8336797"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
