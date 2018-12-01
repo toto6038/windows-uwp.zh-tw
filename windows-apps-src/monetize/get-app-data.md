@@ -6,12 +6,12 @@ ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 54f5989f0aa2fb5eeed26f16ab9e07671e26832c
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8198751"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8348820"
 ---
 # <a name="get-app-data"></a>取得 App 資料
 
@@ -19,44 +19,12 @@ ms.locfileid: "8198751"
 
 您可以使用這些方法之前，則應用程式必須已經存在於您的合作夥伴中心帳戶中。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
 
-<table>
-<colgroup>
-<col width="10%" />
-<col width="30%" />
-<col width="60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">方法</th>
-<th align="left">URI</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications</td>
-<td align="left"><a href="get-all-apps.md">取得您所有應用程式的資料</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}</td>
-<td align="left"><a href="get-an-app.md">取得特定應用程式的資料</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts</td>
-<td align="left"><a href="get-add-ons-for-an-app.md">取得應用程式的附加元件</a></td>
-</tr>
-<tr>
-<td align="left">GET</td>
-<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights</td>
-<td align="left"><a href="get-flights-for-an-app.md">取得應用程式套件正式發行前小眾測試版</a></td>
-</tr>
-</tbody>
-</table>
-
-<span/>
+| 方法 | URI                                                                                             | 描述                                                 |
+|------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [取得您所有應用程式的資料](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [取得特定應用程式的資料](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [取得應用程式的附加元件](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md) |
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -180,13 +148,12 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 此資源具有下列值。
 
-| 值           | 類型    | 描述                 |
-|-----------------|---------|------------------------------|
-| id            | 字串  | 提交的識別碼。    |
-| resourceLocation   | 字串  | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。            |
- 
-<span/>
+| 值              | 類型   | 描述               |
+|--------------------|--------|---------------------------|
+| id                 | 字串 | 提交的識別碼。 |
+| resourceLocation   | 字串 | 您可以附加到基底 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 以抓取提交完整資料的相對路徑。 |
 
+ 
 ## <a name="related-topics"></a>相關主題
 
 * [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)

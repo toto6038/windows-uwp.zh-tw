@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b32b390cc4ca6af5b03a22e30323ded5aeac516
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 11/30/2018
-ms.locfileid: "8217283"
+ms.locfileid: "8344644"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -46,7 +46,7 @@ ms.locfileid: "8217283"
 
 * 如果您在過去半個小時之內建立新的廣告單位識別碼，在伺服器將新資料傳播至整個系統之前，您可能看不見廣告。 先前已顯示過廣告的現有識別碼應該會立即顯示廣告。
 
-如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/en-us/windows/support)。 在該頁面上，請選擇 **\[應用程式內廣告\]**。
+如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/en-us/windows/support)。 在該頁面上，選擇 [**與我們連絡**。
 
 您也可以在[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)中張貼問題。
 
