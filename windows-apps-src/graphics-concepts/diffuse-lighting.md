@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1785b06aa2217e8ec15aeaa560bd98a65522df2e
-ms.sourcegitcommit: 89ff8ff88ef58f4fe6d3b1368fe94f62e59118ad
+ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8197653"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "8335469"
 ---
 # <a name="diffuse-lighting"></a>擴散光源
 
@@ -29,7 +29,7 @@ ms.locfileid: "8197653"
 
 | 參數       | 預設值 | 類型          | 描述                                                                                      |
 |-----------------|---------------|---------------|--------------------------------------------------------------------------------------------------|
-| 總和             | 無           | 無           | 每道光的擴散元件的總和。                                                     |
+| 總和             | N/A           | 無           | 每道光的擴散元件的總和。                                                     |
 | C<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 擴散色彩。                                                                                   |
 | L<sub>d</sub>   | (0,0,0,0)     | D3DCOLORVALUE | 光線擴散色彩。                                                                             |
 | N               | 無           | D3DVECTOR     | 頂點垂直                                                                                    |
