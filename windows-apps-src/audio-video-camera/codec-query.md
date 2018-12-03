@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 轉碼器, 編碼器, 解碼器, 查詢
 ms.localizationpriority: medium
 ms.openlocfilehash: 4241aad5a01617d6a002c6f5d6da0a4bb1455616
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328685"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8460420"
 ---
 # <a name="query-for-codecs-installed-on-a-device"></a>查詢裝置已安裝的轉碼器
 **[CodecQuery](https://docs.microsoft.com/uwp/api/windows.media.core.codecquery)** 類別可讓您查詢目前的裝置上已安裝的轉碼器。 Windows 10 針對不同裝置系列所隨附的轉碼器清單列在[支援的轉碼器](supported-codecs.md)文章中，但因為使用者和應用程式可以在裝置上安裝其他的轉碼器，所以您可能會想要查詢執行階段的轉碼器支援，以判斷目前裝置提供哪些轉碼器。

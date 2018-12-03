@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d2c965bcfbf81efe73ce8aff93cdb8b31163fbd
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8349481"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8461986"
 ---
 # <a name="custom-manipulation-experiences-with-interactiontracker"></a>使用 InteractionTracker 自訂操作體驗
 
