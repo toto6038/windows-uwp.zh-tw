@@ -2,16 +2,16 @@
 title: 螢幕擷取
 description: Windows.Graphics.Capture 命名空間提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。
 ms.assetid: 349C959D-9C74-44E7-B5F6-EBDB5CA87B9F
-ms.date: 10/09/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: 14273f919cacfb27671ba72022ab6c8ff0a2f0ef
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8328454"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8470762"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -383,6 +383,10 @@ namespace WindowsGraphicsCapture
     }
 }
 ```
+
+## <a name="record-a-video"></a>錄製視訊
+
+如果您想要您的應用程式的視訊錄製，您可以更輕鬆[Windows.Media.AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是屬於傳統型擴充功能 SDK，因此只適用於桌上型電腦，且需要您新增到它的參考，從您的專案。 如需詳細資訊，請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 ## <a name="see-also"></a>請參閱
 
