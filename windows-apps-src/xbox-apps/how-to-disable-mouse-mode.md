@@ -7,11 +7,11 @@ keywords: windows 10, uwp
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337951"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8464009"
 ---
 # <a name="how-to-disable-mouse-mode"></a>如何停用滑鼠模式
 滑鼠模式針對所有應用程式預設皆為開啟，這代表所有未選擇不使用的應用程式都將會看到滑鼠指標 (類似於主機上 Edge 瀏覽器的指標)。 我們強烈建議您關閉此功能，並針對方向控制器瀏覽進行最佳化。   
