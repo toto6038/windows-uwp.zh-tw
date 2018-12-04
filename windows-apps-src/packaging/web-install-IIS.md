@@ -5,12 +5,12 @@ ms.date: 05/30/2018
 ms.topic: article
 keywords: windows 10，uwp，應用程式安裝程式，AppInstaller，側載，相關設定，選用套件，IIS 伺服器
 ms.localizationpriority: medium
-ms.openlocfilehash: b447093ba54f2c979d35793a6a4eaa7538ee4892
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 6a4512229a29a7adc59d6b61edd596eaeb56a5a8
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8352132"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469368"
 ---
 # <a name="install-a-uwp-app-from-an-iis-server"></a>從 IIS 伺服器上安裝 UWP 應用程式
 
@@ -119,7 +119,7 @@ ms.locfileid: "8352132"
 
 網路隔離，因為 UWP 應用程式，例如應用程式安裝程式會受到限制使用 IP 回送位址，例如http://localhost/。 使用本機 IIS 伺服器時，應用程式安裝程式必須將新增到回送豁免清單。 
 
-若要這樣做，請開啟**命令提示字元中**，系統**管理員**的身分，並輸入下列: '' 命令列 CheckNetIsolation.exe LoopbackExempt--n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+若要這樣做，請開啟**命令提示字元中**，系統**管理員**的身分，並輸入下列: '' 命令列 CheckNetIsolation.exe LoopbackExempt--n="microsoft.desktopappinstaller_8wekyb3d8bbwe 」
 ```
 
 To verify that the app is added to the exempt list, use the following command to display the apps in the loopback exempt list: 
@@ -131,7 +131,7 @@ CheckNetIsolation.exe LoopbackExempt -s
 
 透過應用程式安裝程式的應用程式安裝本機驗證完成後，您可以移除您在此步驟中所新增回送豁免：
 
-'' 命令列 CheckNetIsolation.exe LoopbackExempt-d-n=microsoft.desktopappinstaller_8wekyb3d8bbwe
+'' 命令列 CheckNetIsolation.exe LoopbackExempt-d-n="microsoft.desktopappinstaller_8wekyb3d8bbwe 」
 ```
 
 ## Step 9 - Run the Web App 

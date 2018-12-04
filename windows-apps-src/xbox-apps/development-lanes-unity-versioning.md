@@ -3,11 +3,11 @@ title: Unity：針對您的 UWP 專案進行版本控制
 description: 管理您 Unity UWP 專案的版本。
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fe59b0c63f536822ec50a225bbdc11e68b97713
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8337424"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8465575"
 ---
 # <a name="unity-version-control-your-uwp-project"></a>Unity：針對您的 UWP 專案進行版本控制
 
