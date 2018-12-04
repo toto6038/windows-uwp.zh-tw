@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知
 ms.localizationpriority: medium
 ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8338876"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484292"
 ---
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 

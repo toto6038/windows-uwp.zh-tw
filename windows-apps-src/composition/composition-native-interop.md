@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f5eabfaf8e526899c17b2d0da688a5135133f65
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8335020"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8484355"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>組合 DirectX 與 Direct2D 的原生交互操作
 
