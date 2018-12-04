@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 定期工作項目, 執行緒, 計時器
 ms.localizationpriority: medium
 ms.openlocfilehash: 92142bcf084b6504e4c694ca33d2dc8532f1acca
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8344150"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8485124"
 ---
 # <a name="create-a-periodic-work-item"></a>建立定期工作項目
 
