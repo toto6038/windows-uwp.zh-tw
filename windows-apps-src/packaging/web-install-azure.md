@@ -1,24 +1,22 @@
 ---
 title: 從 Azure 網頁伺服器安裝 UWP app
 description: 本教學課程示範如何設定 Azure 網頁伺服器，確認您 Web 應用程式可以裝載應用程式套件，以及有效叫用和使用應用程式安裝程式。
-ms.date: 09/30/2018
+ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, Azure web server, 應用程式安裝程式, 側載, 相關集合, 選用套件, Azure 網頁伺服器
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f0e4fe6cd2b05c2de4648a410ba43ce27e48922
-ms.sourcegitcommit: d2517e522cacc5240f7dffd5bc1eaa278e3f7768
+ms.openlocfilehash: 074a8e9941d4314bb35c28b0ee296e9d86fa23a5
+ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "8325630"
+ms.lasthandoff: 12/03/2018
+ms.locfileid: "8469209"
 ---
 # <a name="install-a-uwp-app-from-an-azure-web-app"></a>從 Azure Web 應用程式安裝 UWP app
 
 應用程式安裝程式可讓開發人員和 IT 專業人員透過在他們自己的內容傳遞網路 (CDN) 上，散發 Windows 10 應用程式。 這對於不想要或不需要發佈其應用程式至 Microsoft Store ，但仍然想要利用 Windows 10 封裝與部署平台的企業而言，是很實用的。
 
 本主題概述設定 Azure 網頁伺服器以裝載 UWP app 套件的步驟，以及如何使用應用程式安裝程式安裝應用程式套件。
-
-本教學課程中，我們會透過在本機設定 IIS 伺服器，確認 Web 應用程式可以正確裝載應用程式套件，以及有效叫用和使用應用程式安裝程式 App。 我們也有教學課程教導在領域 (Azure 和 AWS) 中熱門雲端 Web 服務上適當裝載您的 Web 應用程式，以確保符合應用程式安裝程式 Web 安裝需求。 這個逐步教學課程不需要任何專業知識，並且很容易遵循。 
 
 ## <a name="setup"></a>設定
 
