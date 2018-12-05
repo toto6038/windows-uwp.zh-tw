@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: fe876b362f09eaca68d84516d413d3f458edf0a6
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8703646"
+ms.locfileid: "8758738"
 ---
 # <a name="discover-and-select-camera-capabilities-with-camera-profiles"></a>使用相機設定檔探索並選取相機功能
 

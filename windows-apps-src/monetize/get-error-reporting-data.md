@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 69504fd8d670158a35e5afd5dcd035acd296f084
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8691659"
+ms.locfileid: "8738279"
 ---
 # <a name="get-error-reporting-data-for-your-app"></a>取得 App 的錯誤報告資料
 

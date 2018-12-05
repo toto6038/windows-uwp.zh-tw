@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b72b5722a3ece0165fc63e7ce4abc1238bc135
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8706508"
+ms.locfileid: "8739050"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 

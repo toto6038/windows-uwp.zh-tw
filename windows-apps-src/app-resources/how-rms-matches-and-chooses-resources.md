@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8695712"
+ms.locfileid: "8741133"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>資源管理系統如何比對和選擇資源
 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 做法是為所有的候選項目排名時將所有限定詞列入考慮。

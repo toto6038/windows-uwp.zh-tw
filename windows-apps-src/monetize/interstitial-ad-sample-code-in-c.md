@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, c#, 範例程式碼
 ms.localizationpriority: medium
 ms.openlocfilehash: a8276e1a9639b23a965c5a608fb951d1e1035133
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8702712"
+ms.locfileid: "8741494"
 ---
 # <a name="interstitial-ad-sample-code-in-c"></a>使用 C\# 的插播式廣告範例程式碼 #  
 

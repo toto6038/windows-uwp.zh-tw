@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f206700360b6590a88b76f04531c9c6b1e94414f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8685782"
+ms.locfileid: "8730035"
 ---
 # <a name="network-communications-in-the-background"></a>背景網路通訊
 若要繼續網路通訊，它不在前景時，您的應用程式可以使用背景工作與這兩個選項的其中一個。

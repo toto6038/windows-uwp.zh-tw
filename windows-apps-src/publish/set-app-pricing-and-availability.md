@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 價格, 提供, 可搜尋的, 免費試用, 試用, 試用版, 應用程式, 發行日期
 ms.localizationpriority: medium
 ms.openlocfilehash: d5fa6c3e23516a5255f8bd3252f6ded233101625
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690967"
+ms.locfileid: "8737295"
 ---
 # <a name="set-app-pricing-and-availability"></a>設定應用程式價格與可用性
 
