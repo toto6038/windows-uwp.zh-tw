@@ -7,11 +7,11 @@ keywords: windows 10, uwp, sample code, code samples, 範例程式碼, 程式碼
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
 ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709065"
+ms.locfileid: "8750583"
 ---
 # <a name="get-uwp-app-samples"></a>取得 UWP app 範例
 

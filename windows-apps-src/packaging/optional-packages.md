@@ -6,12 +6,12 @@ ms.date: 09/30/2018
 ms.topic: article
 keywords: windows 10、 uwp、 選用套件，相關的集合、 套件延伸模組、 visual studio
 ms.localizationpriority: medium
-ms.openlocfilehash: e19f9673090501d59e260a698f9968a8f98f1cd5
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.openlocfilehash: f62d6c99acc75033403fac7a498308cea6f7d3f8
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699040"
+ms.locfileid: "8750244"
 ---
 # <a name="optional-packages-and-related-set-authoring"></a>選用套件及相關集合的製作
 選用套件包含了可與主要套件整合的內容。 這些適合用於可下載內容 (DLC)、 將大型應用程式的大小越大，或傳送任何額外的內容與您原始應用程式分離。
@@ -34,7 +34,7 @@ ms.locfileid: "8699040"
 
 ## <a name="optional-packages"></a>選用套件
 若要在 Visual Studio 中建立的選用套件，您將需要：
-1. 請確定您的應用程式的**目標平台最小版本**設定為： 10.0.15063.0。
+1. 請確定您的應用程式的**目標平台最小版本**設定為： 10.0.15063.0 或更高版本。
 2. 從您**的主要套件**的專案，開啟`Package.appxmanifest`檔案。 瀏覽至 [封裝 \] 索引標籤，然後記下您的**套件系列名稱**，這是"_"字元之前的所有項目。
 3. 從**選用套件**專案，以滑鼠右鍵按一下`Package.appxmanifest`，然後選取**開啟 > XML （文字） 編輯器**。
 4. 找出`<Dependencies>`檔案中的項目。 新增下列內容：
@@ -62,6 +62,7 @@ Visual Studio 可以設定為您部署的選用套件每次重新部署您的主
 2. 在視窗中，搜尋 「.txt 」 已安裝的範本並加入新的文字檔案。
 > [!IMPORTANT]
 > 新的文字檔案必須命名為： `Bundle.Mapping.txt`。
+
 3. 在`Bundle.Mapping.txt`檔案，您可以指定任何選用套件專案或套件外部的相對路徑。 範例`Bundle.Mapping.txt`檔案應該看起來像這樣：
 
 ```syntax
@@ -75,7 +76,7 @@ Visual Studio 可以設定為您部署的選用套件每次重新部署您的主
 
 您的方案設定時如此一來，Visual Studio 會建立主要套件的套件組合資訊清單與所有必要的中繼資料相關集合。 
 
-請注意，像是選用套件，`Bundle.Mapping.txt`相關集合的檔案只會在 Windows 10，1703年版上運作。 此外，您的應用程式的目標平台最小版本應設為 10.0.15063.0。
+請注意，像是選用套件，`Bundle.Mapping.txt`相關集合的檔案只會在 Windows 10 版本 1703年或更新版本上運作。 此外，您的應用程式的目標平台最小版本應該必須設定為 10.0.15063.0 或更高版本。
 
 ## 已知問題<a name="known_issues"></a>
 
