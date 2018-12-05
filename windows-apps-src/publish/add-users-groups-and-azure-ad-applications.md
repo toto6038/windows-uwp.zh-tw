@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10，uwp，azure ad 應用程式，aad，使用者、 群組、 多個使用者，多使用者
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd300aa6a37c205e01c6f73d95ef1818d516fc0
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 0ecdcf2b148f53fefb5edc7e1f2df0d6bab58475
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8461397"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8685802"
 ---
 # <a name="add-users-groups-and-azure-ad-applications-to-your-partner-center-account"></a>新增使用者、 群組及 Azure AD 應用程式至您的合作夥伴中心帳戶
 
@@ -19,11 +19,11 @@ ms.locfileid: "8461397"
 新增使用者到帳戶之後，您可以[編輯帳戶詳細資料](#edit)、變更[角色與權限](set-custom-permissions-for-account-users.md)，或[移除使用者](#remove)。
 
 > [!IMPORTANT]
-> 若要將使用者新增至您的帳戶，您必須[與您組織的 Azure Active Directory 租用戶將合作夥伴中心帳戶產生關聯](associate-azure-ad-with-dev-center.md)的第一個。 
+> 若要將使用者新增至您的帳戶，您必須[與您組織的 Azure Active Directory 租用戶將合作夥伴中心帳戶產生關聯](associate-azure-ad-with-partner-center.md)的第一個。 
 
 新增使用者時，您必須將它們指派的[角色或一組自訂權限](set-custom-permissions-for-account-users.md)來指定您的合作夥伴中心帳戶的存取。 
 
-請記住，所有的合作夥伴中心使用者 （包括群組和 Azure AD 應用程式）[與您的合作夥伴中心帳戶相關聯的 Azure AD 租用戶](associate-azure-ad-with-dev-center.md)中必須有使用中的帳戶。 使用者管理是一次在一個租用戶上進行；您必須使用要在其中新增或編輯使用者的租用戶的管理員帳戶登入。 合作夥伴中心中建立新的使用者也會建立該使用者帳戶在 Azure AD 租用戶，您已登入，並對使用者的名稱，在合作夥伴中心進行的變更將會在您組織的 Azure AD 租用戶中進行相同變更。
+請記住，所有的合作夥伴中心使用者 （包括群組和 Azure AD 應用程式）[與您的合作夥伴中心帳戶相關聯的 Azure AD 租用戶](associate-azure-ad-with-partner-center.md)中必須有使用中的帳戶。 使用者管理是一次在一個租用戶上進行；您必須使用要在其中新增或編輯使用者的租用戶的管理員帳戶登入。 合作夥伴中心中建立新的使用者也會建立該使用者帳戶在 Azure AD 租用戶，您已登入，並對使用者的名稱，在合作夥伴中心進行的變更將會在您組織的 Azure AD 租用戶中進行相同變更。
 
 > [!NOTE]
 > 如果您的組織會使用[目錄整合](http://go.microsoft.com/fwlink/p/?LinkID=724033)，來進行同步處理內部部署目錄服務和您的 Azure AD，您將無法在合作夥伴中心建立新的使用者、 群組或 Azure AD 應用程式。 您 （或您內部部署目錄中的另一個系統管理員） 將會需要之前，您將無法看見和新增它們在合作夥伴中心的內部部署目錄中直接建立它們。
@@ -92,7 +92,7 @@ ms.locfileid: "8461397"
 如果您需要重新傳送邀請，請在 **\[使用者\]** 頁面上尋找使用者，然後選取其電子郵件地址 (或選取表示**邀請擱置中**的文字)。 然後，按一下頁面底部的 **\[重新傳送邀請\]**。
 
 > [!IMPORTANT]
-> 外部使用者，您邀請加入您的合作夥伴中心帳戶可以指派相同的角色與權限與其他使用者。 不過，外部使用者無法在 Visual Studio 中執行某些工作，例如將關聯應用程式至 Microsoft Store，或是建立套件以上傳至 Microsoft Store。 如果使用者需要執行這些工作，請選擇 **\[建立新的使用者\]** 而不是 **\[邀請外部使用者\]**。 (如果您不想將這些使用者新增至您現有的 Azure AD 租用戶，您可以[建立新的租用戶](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)，然後在該租用戶中為他們建立新的使用者帳戶)。 
+> 外部使用者，您邀請加入您的合作夥伴中心帳戶可以指派相同的角色與權限與其他使用者。 不過，外部使用者無法在 Visual Studio 中執行某些工作，例如將關聯應用程式至 Microsoft Store，或是建立套件以上傳至 Microsoft Store。 如果使用者需要執行這些工作，請選擇 **\[建立新的使用者\]** 而不是 **\[邀請外部使用者\]**。 (如果您不想將這些使用者新增至您現有的 Azure AD 租用戶，您可以[建立新的租用戶](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)，然後在該租用戶中為他們建立新的使用者帳戶)。 
 
 
 ### <a name="changing-a-users-directory-password"></a>變更使用者的目錄密碼

@@ -7,11 +7,11 @@ ms.assetid: 43ffd28c-c4df-405c-bf5c-29c94e0d142b
 keywords: windows 10, uwp, timer, threads, Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
 ms.openlocfilehash: 82e1431a6689ef9ece91cef7e2b018e24f834039
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467761"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8688639"
 ---
 # <a name="using-windows-runtime-objects-in-a-multithreaded-environment"></a>在多執行緒環境中使用 Windows 執行階段物件
 本文討論 .NET Framework 如何處理從 C# 與 Visual Basic 程式碼對 Windows 執行階段或 Windows 執行階段元件所提供物件的呼叫。

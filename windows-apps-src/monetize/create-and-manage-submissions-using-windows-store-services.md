@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 3aec7ed4f97a0ce4733cfba450770de86a84d6ee
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8469846"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8688278"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 
@@ -41,9 +41,9 @@ ms.locfileid: "8469846"
 
 開始撰寫程式碼以呼叫 Microsoft Store 提交 API 之前，請先確定您已完成下列先決條件。
 
-* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[建立新的 Azure AD，在合作夥伴中心中](../publish/associate-azure-ad-with-dev-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)沒有額外費用。
+* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[建立新的 Azure AD，在合作夥伴中心中](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)沒有額外費用。
 
-* 您必須[將 Azure AD 應用程式，您的合作夥伴中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-dev-center-account)，並取得您的租用戶識別碼、 用戶端識別碼和金鑰。 您需要這些值才能取得 Azure AD 存取權杖，您將會在呼叫 Microsoft Store 提交 API 時使用權杖。
+* 您必須[將 Azure AD 應用程式，您的合作夥伴中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-partner-center-account)，並取得您的租用戶識別碼、 用戶端識別碼和金鑰。 您需要這些值才能取得 Azure AD 存取權杖，您將會在呼叫 Microsoft Store 提交 API 時使用權杖。
 
 * 準備您的 App 與 Microsoft Store 提交 API 搭配使用︰
 
@@ -57,7 +57,7 @@ ms.locfileid: "8469846"
 
   * 如果您要建立或更新附加元件提交，而且必須包含圖示，請[準備圖示](https://msdn.microsoft.com/windows/uwp/publish/create-iap-descriptions#icon)。
 
-<span id="associate-an-azure-ad-application-with-your-windows-dev-center-account" />
+<span id="associate-an-azure-ad-application-with-your-windows-partner-center-account" />
 
 ### <a name="how-to-associate-an-azure-ad-application-with-your-partner-center-account"></a>如何將 Azure AD 應用程式與您的合作夥伴中心帳戶產生關聯
 
@@ -66,7 +66,7 @@ ms.locfileid: "8469846"
 > [!NOTE]
 > 您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
-1.  在合作夥伴中心，[您組織的合作夥伴中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-dev-center.md)。
+1.  在合作夥伴中心，[您組織的合作夥伴中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-partner-center.md)。
 
 2.  接下來，從合作夥伴中心、[加入 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，代表應用程式或服務，您將會用來存取您的合作夥伴中心帳戶提交的**帳戶設定**\] 區段中的**使用者**頁面。 請確定您指派此應用程式 **[管理員]** 角色。 如果尚未應用程式不會存在於您的 Azure AD 目錄，您可以[建立新的 Azure AD 應用程式，在合作夥伴中心](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
 

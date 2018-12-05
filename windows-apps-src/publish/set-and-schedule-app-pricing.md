@@ -5,12 +5,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 定價, App 定價, App 價格, 銷售應用程式, 價格變更, 自訂價格, 價格, 定價, 成本, 覆寫基本價格, 自由格式價格, 自由格式
 ms.localizationpriority: medium
-ms.openlocfilehash: d901ec630c680adfaa637d5555fc2182749bec89
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: ea873d2c1f78762741d6272fafe1496d6b3a71ea
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8462218"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696774"
 ---
 # <a name="set-and-schedule-app-pricing"></a>設定與排程應用程價格
 
@@ -32,7 +32,7 @@ ms.locfileid: "8462218"
 
 在 **\[價格\]** 區段中，按一下 **\[檢視轉換表\]** 查看所有貨幣的相對價格。 這也會顯示與每個價區間相關聯的識別碼，如果您使用 [Microsoft Store 提交 API](../monetize/manage-app-submissions.md#price-tiers) 輸入價格就會需要此識別碼。 您可以按一下 **\[下載\]**，下載 .csv 檔案格式的價格區間表複本。
 
-請記住，您選取的價格區間可以包含客戶必須支付的銷售或增值稅。 若要深入了解您的應用程式在選取市場中的稅務關連相關資訊，請參閱[付費應用程式的稅務詳細資料](tax-details-for-paid-apps.md)。 另外建議您檢閱[特定市場的定價考量](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)。
+請記住，您選取的價格區間可以包含客戶必須支付的銷售或增值稅。 若要深入了解您的應用程式在選取市場中的稅務關連相關資訊，請參閱[付費應用程式的稅務詳細資料](tax-details-for-paid-apps.md)。 另外建議您檢閱[特定市場的定價考量](define-market-selection.md#price-considerations-for-specific-markets)。
 
 > [!NOTE]
 > 如果您選擇下的 [**停止取得**選項**推出此產品，但供不在市集中搜尋**[[可見度](choose-visibility-options.md#discoverability)] 區段中），您將無法設定您的提交定價 （因為沒有人將無法取得應用程式除非他們使用的促銷代碼免費取得應用程式）。

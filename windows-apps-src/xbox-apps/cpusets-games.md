@@ -3,11 +3,11 @@ title: CPUSets 遊戲開發
 description: 本文章提供通用 Windows 平台 (UWP) 新功能 CPUSets API 的概觀，並涵蓋遊戲與應用程式開發的相關核心資訊。
 ms.localizationpriority: medium
 ms.openlocfilehash: 942c6b79d3b26e620ebb6e1318e1f7ffd75f929c
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8467097"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8696669"
 ---
 # <a name="cpusets-for-game-development"></a>CPUSets 遊戲開發
 

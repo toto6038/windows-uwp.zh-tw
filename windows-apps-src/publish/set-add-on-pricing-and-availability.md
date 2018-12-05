@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 附加元件, iap, 價格
 ms.localizationpriority: medium
 ms.openlocfilehash: 062337c82d2567d15b0eff1767ab157618da257e
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8463580"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8687161"
 ---
 # <a name="set-add-on-pricing-and-availability"></a>設定附加內容價格與可用性
 
