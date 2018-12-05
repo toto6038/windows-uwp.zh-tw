@@ -7,11 +7,11 @@ ms.topic: article
 ms.assetid: 0d6c65c5-2ad5-46c7-964e-a3a9833c94ce
 ms.localizationpriority: medium
 ms.openlocfilehash: 6557648e3998cedee2a6eb0bcc9e58ca2f4c27d9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8464151"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8712364"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-10586"></a>適用於開發人員的 Windows 10 (組建 10586) 的新功能
 
