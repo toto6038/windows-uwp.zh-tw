@@ -7,11 +7,11 @@ keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 移�
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 1860f562233ceefa6d9ebb3741378b3265b4c3a9
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8483933"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8698319"
 ---
 # <a name="value-categories-and-references-to-them"></a>值類別，以及它們的參考
 本主題說明存在於 c + + 的各種不同類別的值 （和值的參考）。 您將會相信有聽過*的值*和*右*，但您可能不想要它們在本主題提供的條款。 而且有一些其他類型的值，太。

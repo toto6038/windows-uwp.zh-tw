@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b8ef16d9fe789c2c386b27ffe221aa797a3b5ef
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 62c99c159ff68201919fa15baded999e3b6a2477
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8472425"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8700126"
 ---
 # <a name="avoid-common-certification-failures"></a>避免常見的認證失敗
 
@@ -37,7 +37,7 @@ ms.locfileid: "8472425"
 
 -   在[年齡分級](age-ratings.md)區段中，針對所有的問題提供完整且準確的回應。
 
--   請勿[將您的 app 宣告為無障礙應用程式](app-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines)，除非您特別針對協助工具案例建置 app 並進行測試。
+-   請勿[將您的 app 宣告為無障礙應用程式](product-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines)，除非您特別針對協助工具案例建置 app 並進行測試。
 
 -   如果您的 app 使用來自 [**Windows.ApplicationModel.Store**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store) 命名空間的商務 API，請務必測試 app，確認它可以處理一般的例外狀況。 另外，請確定您的應用程式使用 [**CurrentApp**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentApp) 類別，而不是 [**CurrentAppSimulator**](https://docs.microsoft.com/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) 類別 (這僅供測試使用)  (請注意，如果您 App 的目標是 Windows 10 版本 1607 或更新版本，建議您使用 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間 (而不是 Windows.ApplicationModel.Store 命名空間) 的成員)。
 
