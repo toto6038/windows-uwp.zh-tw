@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6e212e16039d49e3ffd08aa5886d48c61ee24e9e
-ms.sourcegitcommit: b4c502d69a13340f6e3c887aa3c26ef2aeee9cee
+ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
+ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/03/2018
-ms.locfileid: "8479567"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "8710548"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
@@ -139,7 +139,7 @@ ms.locfileid: "8479567"
 
 ### <a name="supported-markets-for-ad-networks"></a>廣告網路支援的市場
 
-可用的廣告網路會在所有[支援的市場](define-pricing-and-market-selection.md#microsoft-store-consumer-markets)中提供廣告，但有下列例外。
+可用的廣告網路會在所有[支援的市場](define-market-selection.md#microsoft-store-consumer-markets)中提供廣告，但有下列例外。
 
 |  廣告網路  |  支援的市場  |
 |--------------|---------------------|
