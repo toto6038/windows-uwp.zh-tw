@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，釘選到工作列，次要磚，釘選到工作列，次要磚捷徑
 ms.localizationpriority: medium
 ms.openlocfilehash: 7ad322fe371b0e1f3605ffb4c29108a15bb28e0c
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8700172"
+ms.locfileid: "8733379"
 ---
 # <a name="pin-secondary-tiles-to-taskbar"></a>釘選到工作列的次要磚
 
