@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a5e3a29a252b091b1e52dbea5fa7af5058488ed5
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8689384"
+ms.locfileid: "8747058"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 

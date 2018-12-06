@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10、uwp、Microsoft Store 服務、Microsoft Store 分析 API、Xbox Live 分析、健康情況、用戶端錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 3b996d85776cb49d45cc5b699709b4eb107e7086
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709585"
+ms.locfileid: "8751072"
 ---
 # <a name="get-xbox-live-health-data"></a>取得 Xbox Live 健康情況資料
 

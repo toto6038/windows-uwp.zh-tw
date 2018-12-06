@@ -8,11 +8,11 @@ keywords: Windows 10, UWP, 連絡人, 連絡人卡片, 註解
 ms.assetid: 0edabd9c-ecfb-4525-bc38-53f219d744ff
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a3485635a49b1690116e7cb271435e63bee2151
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704104"
+ms.locfileid: "8744543"
 ---
 # <a name="connect-your-app-to-actions-on-a-contact-card"></a>將應用程式連結到連絡人卡片上的動作
 

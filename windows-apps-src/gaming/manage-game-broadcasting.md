@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, 遊戲, 廣播
 ms.localizationpriority: medium
 ms.openlocfilehash: c906551fd626dec726498ded9a7995007230504f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699120"
+ms.locfileid: "8755164"
 ---
 # <a name="manage-game-broadcasting"></a>管理遊戲廣播
 本文顯示如何管理 UWP app 的遊戲廣播。 使用者必須使用內建到 Windows 的系統 UI 起始遊戲廣播，但是開始使用 Windows 10 版本 1709，App 可以啟動系統廣播 UI 並且可以在廣播開始和停止時收到通知。

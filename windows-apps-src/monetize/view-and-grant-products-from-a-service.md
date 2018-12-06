@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
 ms.openlocfilehash: 68bcee02c07ea8c998927d558521084cb49e9e24
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8695862"
+ms.locfileid: "8745183"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 
