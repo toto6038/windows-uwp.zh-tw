@@ -3,11 +3,11 @@ title: 裝置入口網站部署資訊 API 參考
 description: 了解如何以程式設計方式存取部署資訊 API。
 ms.localizationpriority: medium
 ms.openlocfilehash: c44089313b100880b419e9b55a26101e877496f3
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8712174"
+ms.locfileid: "8758238"
 ---
 # <a name="requests-deployment-information-for-one-or-more-installed-packages"></a>對於一或多個安裝的套件要求部署資訊。
 

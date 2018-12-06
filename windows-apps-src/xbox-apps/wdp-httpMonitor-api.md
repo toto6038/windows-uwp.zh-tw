@@ -3,11 +3,11 @@ title: 裝置入口網站 HTTP 監視 API 參考
 description: 了解如何在 Xbox 主機上存取來自焦點應用程式的 HTTP 流量。
 ms.localizationpriority: medium
 ms.openlocfilehash: 81de2a2a3194384e9c5de1c5c45a827e4d965c91
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/05/2018
-ms.locfileid: "8690692"
+ms.locfileid: "8751927"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 監視 API 參考   
 您可以使用此 API 存取焦點應用程式的即時 HTTP 流量，如果 Xbox 主機上已啟用 HTTP 監視 (開發人員首頁中核取方塊)。
