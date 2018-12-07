@@ -8,12 +8,12 @@ ms.date: 06/13/2017
 ms.topic: article
 keywords: windows 10, uwp, 通知接聽程式, usernotificationlistener, 文件, 存取通知
 ms.localizationpriority: medium
-ms.openlocfilehash: ad17f4a6f568bcd10d03d7fa07c9dadd24f2f75f
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: de1032eb3d0d364a62beff0a1af8f84240c11d87
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755274"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807460"
 ---
 # <a name="notification-listener-access-all-notifications"></a>通知接聽程式：存取所有通知
 
@@ -91,7 +91,7 @@ switch (accessStatus)
 }
 ```
 
-使用者隨時可以透過 Windows 設定撤銷存取權。 因此，您的應用程式在執行使用通知接聽程式的程式碼之前，應該一律透過 [GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus) 方法檢查存取狀態。 如果使用者撤銷存取權，API 將會失敗且不顯示訊息，而非擲回例外狀況 (例如，取得所有通知的 API 只會傳回空的清單)。
+使用者隨時可以透過 Windows 設定撤銷存取權。 因此，您的應用程式應該永遠執行使用通知接聽程式的程式碼之前，先檢查存取狀態透過[GetAccessStatus](https://docs.microsoft.com/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus)方法。 如果使用者撤銷存取權，API 將會失敗且不顯示訊息，而非擲回例外狀況 (例如，取得所有通知的 API 只會傳回空的清單)。
 
 
 ## <a name="access-the-users-notifications"></a>存取使用者的通知
