@@ -6,12 +6,12 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
-ms.openlocfilehash: 7242bdcedd4380c5593dba2788706ed0fbbc94a4
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750789"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8780112"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>用 2D、3D 和 Streetside 檢視顯示地圖
 
@@ -421,7 +421,7 @@ private async void display3DLocation()
 
 藉由呼叫下列 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 方法，即可取得地圖上位置的相關資訊。
 
--   [**GetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016) 方法 - 取得與地圖控制項檢視區中指定的點對應的地理位置。
+-   [**TryGetLocationFromOffset**](https://msdn.microsoft.com/library/windows/apps/dn637016)方法-取得地圖控制項檢視區中指定的點對應的地理位置。
 -   [**GetOffsetFromLocation**](https://msdn.microsoft.com/library/windows/apps/dn637018) 方法 - 取得與指定的地理位置對應的地圖控制項檢視區中的點。
 -   [**IsLocationInView**](https://msdn.microsoft.com/library/windows/apps/dn637022) 方法 - 決定目前是否能在地圖控制項的檢視區中看見指定的地理位置。
 -   [**FindMapElementsAtOffset**](https://msdn.microsoft.com/library/windows/apps/dn637014) 方法 - 取得地圖上位於地圖控制項檢視區中指定點的元素。

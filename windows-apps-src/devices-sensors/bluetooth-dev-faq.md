@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: e7dee32d-3756-430d-a026-32c1ee288a85
 ms.localizationpriority: medium
-ms.openlocfilehash: 03b72b5722a3ece0165fc63e7ce4abc1238bc135
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 4cc1bafb90b20083d55a622873dea7be5efbf5b7
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8739050"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8789509"
 ---
 # <a name="bluetooth-developer-faq"></a>藍牙開發人員常見問題集
 
@@ -68,7 +68,7 @@ RFCOMM Api 提供開發人員來執行 bi 方向序列連接埠樣式通訊的�
 **（15030 和以上版本）** 不再需要配對藍牙裝置。 使用新的非同步 Api 才能查詢遠端裝置的目前狀態，例如 GetGattServicesAsync 及 GetCharacteristicsAsync。 [用戶端文件](gatt-client.md)如需詳細資訊，請參閱。 
 
 ## <a name="when-should-i-pair-with-a-device-before-communicating-with-it"></a>何時應該我配對某個裝置與其通訊之前？
-一般而言，如果您需要信任性的長期證券與裝置時，將它進行配對 （引導使用者設定 \] 頁面或使用裝置列舉與配對 Api）。 如果您只需要關閉讀取資訊的裝置，是可公開公開 （溫度感應器或指標），然後連線或接聽的廣告，而不需要讓任何心力來與裝置配對。 這會防止互通性問題，長期因為裝置的主機不支援配對。 
+一般而言，如果您需要信任性的長期證券與裝置時，將它進行配對 （引導使用者設定 \] 頁面或使用裝置列舉與配對 Api）。 如果您只需要關閉讀取資訊的裝置公開公開 （溫度感應器或指標），然後連線或接聽的廣告，而不需要讓任何心力來與裝置配對。 這會防止互通性問題，長期因為裝置的主機不支援配對。 
 
 ## <a name="do-all-windows-devices-support-peripheral-role"></a>所有 Windows 裝置是否都支援周邊角色？
 

@@ -7,12 +7,12 @@ keywords:
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 12a0c59942eefd2ab9625b1b442043a1868230a1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 87eb6562c6ee66ca1d409d3748e688861d5f3920
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755897"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783506"
 ---
 # <a name="stream-output-so-stage"></a>資料流輸出 (SO) 階段
 
@@ -41,7 +41,7 @@ ms.locfileid: "8755897"
 ## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
 
 
-資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段（例如幾何著色器 (GS) 階段）輸出（串流）到記憶體中的一或多個緩衝區。 如果幾何著色器 (GS) 階段非使用中，資料流輸出 (SO) 階段會持續將頂點資料從網域著色器 (DS) 階段輸出到記憶體中的緩衝區（如果 DS 也是非使用中，則從頂點著色器 (VS) 階段輸出）。
+資料流輸出 (SO) 階段會持續將頂點資料從上一個作用中階段 (例如幾何著色器 (GS) 階段) 輸出 (或串流) 到記憶體中的一或多個緩衝區。 如果幾何著色器 (GS) 階段非使用中，資料流輸出 (SO) 階段會持續將頂點資料從網域著色器 (DS) 階段到記憶體 （或者，如果 DS 也是非使用中，從頂點著色器 (VS) 階段） 中的緩衝區。
 
 當三角形或帶狀繫結至輸入組合語言 (IA) 階段時，每個連環轉換為清單在串流輸出之前。頂點永遠寫為完整的基本類型 (例如，3 個頂點的三角形，一次）;不完整的基本類型永遠不會串流輸出。具相鄰關係的基本類型資料流輸出資料之前，會先捨棄相鄰資料。
 
