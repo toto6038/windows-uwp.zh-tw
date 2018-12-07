@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 674f5977a69855ff51cbc579ca66085aa133eb5b
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 11f9912abb954592cd2a467008cc427cac833f35
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8734206"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8783455"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段修正套用至 MSIX 封裝
 
@@ -86,10 +86,10 @@ PSF 包含您可以使用這個時候，例如檔案重新導向修復的執行�
 
 ### <a name="create-the-package-layout-folder"></a>建立套件配置資料夾
 
-如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾，將會做為預備區域為您的封裝解壓縮其內容。 您可以從命令提示字元使用 makemsix 工具，根據 SDK 的安裝路徑，這是您將在其中您的 Windows 10 電腦上找到 makemsix.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makemsix.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makemsix.exe
+如果您已經有.msix （或.appx） 檔案，您可以到配置資料夾，將會做為預備區域為您的封裝解壓縮其內容。 您可以從命令提示字元使用 makemsix 工具，根據 SDK 的安裝路徑，這是您將在其中您的 Windows 10 電腦上找到 makeappx.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
-makemsix unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
+makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
 
 ```
 
@@ -219,7 +219,7 @@ signtool sign /a /v /fd sha256 /f ExportedSigningCertificate.pfx PSFSamplePackag
 > 請記得要先解除安裝套件。
 
 ```ps
-powershell Add-MSIXPackage .\PSFSamplePackageFixup.msix
+powershell Add-AppPackage .\PSFSamplePackageFixup.msix
 ```
 
 執行應用程式，並觀察行為的執行階段修正套用。  重複執行診斷與封裝為所需的步驟。

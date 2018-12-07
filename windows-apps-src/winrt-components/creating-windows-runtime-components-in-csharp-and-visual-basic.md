@@ -4,17 +4,17 @@ description: 從 .NET Framework 4.5 開始，您可以使用 Managed 程式碼�
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ms.date: 12/04/2018
 ms.topic: article
-keywords: Windows 10, UWP
-ms.localizationpriority: medium
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7dde2fb0411686294ebb8abc17192b2e45c61d7a
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+keywords: Windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: b4f5a2de5c3fa5564b4e4389cfc0806fd5d2844f
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736493"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8807080"
 ---
 # <a name="creating-windows-runtime-components-in-c-and-visual-basic"></a>在 C# 和 Visual Basic 中建立 Windows 執行階段元件
 從.NET Framework 4.5 開始，您可以使用 managed 程式碼來建立您自己的 Windows 執行階段類型，並在 Windows 執行階段元件中包裝它們。 您可以使用您的元件以 c + +、 JavaScript、 Visual Basic 或 C# 撰寫的通用 Windows 平台 (UWP) 應用程式中。 本主題概述建立元件，規則，並討論.NET Framework 支援的 Windows 執行階段中的某些層面。 一般而言，該支援依設計應可讓 .NET Framework 程式設計人員清楚理解。 但是，當您建立要與 JavaScript 或 C++ 搭配使用的元件時，必須了解這些語言對於 Windows 執行階段的支援方式有何差異。

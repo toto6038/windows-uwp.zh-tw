@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 輸入
 ms.localizationpriority: medium
 ms.openlocfilehash: 03b3c48fedcc99d2d667712bfdd51ad1d75f7fbd
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8699409"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8788524"
 ---
 # <a name="game-broadcast-and-capture"></a>遊戲廣播及擷取
 

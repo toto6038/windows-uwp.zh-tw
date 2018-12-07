@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: f81ab1ef635bf4cfb20c289d6998c242f7aa47fc
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8736884"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8787414"
 ---
 # <a name="set-format-resolution-and-frame-rate-for-mediacapture"></a>設定 MediaCapture 的格式、解析度和畫面播放速率
 
