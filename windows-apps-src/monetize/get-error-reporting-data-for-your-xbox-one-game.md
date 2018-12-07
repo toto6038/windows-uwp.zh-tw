@@ -5,12 +5,12 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: f9ae7c75fb332e910aa1b63712cf0d230172afd3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 22dff391e787e1763cb730272ba9cea029758c99
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8750023"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8791279"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>取得錯誤報告資料 Xbox One 遊戲
 
@@ -47,7 +47,7 @@ ms.locfileid: "8750023"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | string | 您正在擷取錯誤報告資料之 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 合作夥伴中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
+| applicationId | string | 您正在擷取錯誤報告資料之 Xbox One 遊戲**市集識別碼**。 在合作夥伴中心的應用程式身分識別頁面上使用 「**市集識別碼**。 範例 「**市集識別碼**是 「 9wzdncrfj3q8 」。 |  是  |
 | startDate | 日期 | 要擷取錯誤報告資料之日期範圍的開始日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。  |  不可以  |
 | endDate | 日期 | 要擷取錯誤報告資料之日期範圍的結束日期。 預設為目前的日期。 如果 *aggregationLevel* 是**日**、**星期**或**月份**，則此參數應該指定格式為 ```mm/dd/yyyy``` 的日期。 如果 *aggregationLevel* 是**小時**，則此參數可以指定 ```mm/dd/yyyy``` 格式的日期，或 ```yyyy-mm-dd hh:mm:ss``` 格式的日期和時間。 |  不可以  |
 | top | 整數 | 在要求中傳回的資料列數目。 最大值及未指定的預設值為 10000。 如果查詢中有更多資料列，回應主體將會包含您可以用來要求下一頁資料的下一頁連結。 |  否  |
@@ -60,7 +60,7 @@ ms.locfileid: "8750023"
 
 ### <a name="request-example"></a>要求範例
 
-下列範例示範數個取得 Xbox One 遊戲的錯誤報告資料的要求。 *ApplicationId*值取代為您的遊戲的產品識別碼。
+下列範例示範數個取得 Xbox One 遊戲的錯誤報告資料的要求。 *ApplicationId*值取代為您的遊戲的**市集識別碼**。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failurehits?applicationId=BRRT4NJ9B3D1&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -89,7 +89,7 @@ Authorization: Bearer <your access token>
 | 值           | 類型    | 描述        |
 |-----------------|---------|---------------------|
 | 日期            | 字串  | 錯誤資料之日期範圍中的第一個日期，格式為 ```yyyy-mm-dd```。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一個較長的日期範圍，此值便會是該日期範圍的第一個日期。 指定的**一小時** *aggregationLevel*值的要求，這個值也包括時間值的格式```hh:mm:ss```中發生錯誤的本地時區。  |
-| applicationId   | string  | 您想要擷取錯誤資料之 Xbox One 遊戲的產品識別碼。   |
+| applicationId   | string  | 您想要擷取錯誤資料之 Xbox One 遊戲**市集識別碼**。   |
 | applicationName | 字串  | 遊戲的顯示名稱。   |
 | failureName     | 字串  | 失敗的名稱，由四個部分組成：一個或多個問題類別、例外狀況/錯誤檢查碼、失敗發生位置映像名稱，以及相關函式名稱。  |
 | failureHash     | 字串  | 錯誤的唯一識別碼。   |

@@ -5,12 +5,12 @@ ms.date: 9/30/2018
 ms.topic: article
 keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
-ms.openlocfilehash: 795155ab38be11987d978d8c3843a73b7d359277
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 465253be7ebf8cf7794004c0a6832a78cb0ced69
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755044"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8792627"
 ---
 # <a name="optional-packages-with-executable-code"></a>具可執行程式碼的選用套件
  
@@ -25,6 +25,9 @@ ms.locfileid: "8755044"
 
 > [!NOTE]
 > 若要提交使用了選用套件和/或相關集合的 App 至 Microsoft Store，您將需要權限。 如果不提交至市集，可以沒有合作夥伴中心的許可下線 (LOB) 或企業應用程式使用選用套件及相關的集合。 請參閱 [Windows 開發人員支援](https://developer.microsoft.com/windows/support)，以取得提交使用選用套件和相關集合應用程式的權限。
+
+> [!NOTE]
+> 包含可執行程式碼的選用套件必須是一[組相關](https://docs.microsoft.com/windows/uwp/packaging/optional-packages#related-sets)的一部分。 您無法從選用套件執行程式碼，除非它是一組相關的一部分。
 
 ## <a name="c-optional-packages-with-executable-code"></a>具可執行程式碼的 C++ 選用套件
 

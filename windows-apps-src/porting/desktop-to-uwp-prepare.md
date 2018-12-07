@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71a57ca2-ca00-471d-8ad9-52f285f3022e
 ms.localizationpriority: medium
-ms.openlocfilehash: b58ba8122d5db6cb898c5e6258794960cdc1c1f9
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: c85624cec36d3e782b0c97ad810062e9b817eb98
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8754246"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790185"
 ---
 # <a name="prepare-to-package-a-desktop-application"></a>準備封裝傳統型應用程式
 
@@ -71,7 +71,7 @@ ms.locfileid: "8754246"
     <tr><td>2015 和 2017 (VC 14)</td><td>支援</td><td>支援</td>
     </table>
 
-    注意：在任何情況下，您都必須連結到最新可公開取得的 CRT。
+    注意： 在所有情況下，您都必須連結到最新可公開取得的 CRT。
 
 + __您的應用程式安裝與載入組件給來自 Windows 並排顯示資料夾__。 例如，您的應用程式使用 C 執行階段程式庫 VC8 或 VC9 和動態連結它們從 Windows 並排顯示資料夾，這表示您的程式碼使用一般 DLL 檔案來自共用資料夾。 不支援此連結方式。 您必須以靜態方式連結它們，方法是直接將可轉散發的程式庫檔案連結到您的程式碼。
 

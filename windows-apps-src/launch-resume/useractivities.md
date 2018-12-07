@@ -5,12 +5,12 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 98a7697715b456498db3ee5642e2743ae228b3cb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8749973"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8790827"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -99,7 +99,7 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 就一個簡單的應用程式而言，此應用程式的唯一活動就是在應用程式啟動時將您放在第二頁。
+此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 經過簡單的應用程式，此應用程式繼續執行的唯一活動放置您次要頁面上時，應用程式可以。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用調適型卡片改善時間軸體驗
 
