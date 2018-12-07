@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 0eb7b1b620fcfa16576d84eaa2564408394d59de
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8730598"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797794"
 ---
 # <a name="hosting-a-camera-barcode-scanner-preview-in-your-application"></a>在您的應用程式中主控預覽相機條碼掃描器
 ## <a name="step-1-setup-your-camera-preview"></a>步驟 1：設定您的相機預覽

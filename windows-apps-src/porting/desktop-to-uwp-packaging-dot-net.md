@@ -8,11 +8,11 @@ keywords: Windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8709800"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794975"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝的傳統型應用程式
 

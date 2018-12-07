@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 實驗, API
 ms.localizationpriority: medium
 ms.openlocfilehash: 9d6e236368134086081141e220088358f4897033
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8733990"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8794879"
 ---
 # <a name="experimental-apis"></a>實驗 API
 

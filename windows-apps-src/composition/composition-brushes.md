@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c995c5a9513bea44664bcb395cd604ba2668c3
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732827"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8797115"
 ---
 # <a name="composition-brushes"></a>組合筆刷
 從 UWP 應用程式顯示在螢幕上的所有項目都是可見的因為它已由筆刷繪製。 筆刷可讓您與內容涵蓋範圍可從簡單、 純色色彩影像或繪圖到複雜的效果鏈繪製使用者介面 (UI) 物件。 本主題介紹使用 CompositionBrush 繪製的概念。

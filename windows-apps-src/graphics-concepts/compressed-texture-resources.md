@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9318479fffc415e94407166bd1be20a93691a179
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8713335"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795893"
 ---
 # <a name="compressed-texture-resources"></a>壓縮紋理資源
 

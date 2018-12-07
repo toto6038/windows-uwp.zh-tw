@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，列印，3dprinting，3d 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: 5cfc91ae6f74117c6c3414691137b334cfd0dc4f
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8704909"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795095"
 ---
 # <a name="printing-and-scanning"></a>列印與掃描
 

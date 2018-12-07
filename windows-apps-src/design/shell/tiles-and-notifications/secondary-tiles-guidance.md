@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, secondary tiles, guidance, guidelines, best practices, 次要磚. 指導方針, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732331"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8795906"
 ---
 # <a name="secondary-tile-guidance"></a>次要磚指導方針
 

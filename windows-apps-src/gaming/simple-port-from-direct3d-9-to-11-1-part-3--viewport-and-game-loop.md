@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 移植, 遊戲迴圈, direct3d 9, directx 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b0cf6352d400371b54a54d71176c4d8e1dc457d
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: 2087959bc29d2b2b02cdc9a2f373a8b62ea8c25a
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8732973"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8793799"
 ---
 # <a name="port-the-game-loop"></a>移植遊戲迴圈
 

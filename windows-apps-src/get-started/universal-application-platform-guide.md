@@ -6,12 +6,12 @@ ms.date: 5/7/2018
 ms.topic: article
 keywords: windows 10, uwp, universal, 通用
 ms.localizationpriority: medium
-ms.openlocfilehash: c174bb81deb84d3638a948555e045168c89f02a7
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: b54c33ab3807c26faba6a8cadd5318b4365f9ded
+ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8737662"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "8796933"
 ---
 # <a name="whats-a-universal-windows-platform-uwp-app"></a>何謂通用 Windows 平台 (UWP) app？
 
@@ -145,7 +145,7 @@ Microsoft 設計系統命名為 Fluent。 Fluent Design 系統是一組與最佳
 - 如需可用於 UWP app 之 Win32 API 的完整清單，請參閱[適用於 UWP app 的 API 集合](https://msdn.microsoft.com/library/windows/desktop/mt186421)和[適用於 UWP app 的 Dll](https://msdn.microsoft.com/library/windows/desktop/mt186422)。
 - 如需撰寫 .NET UWP app 的概觀，請參閱 [.NET 中的通用 Windows 應用程式](https://blogs.msdn.microsoft.com/dotnet/2015/07/30/universal-windows-apps-in-net)。
 - 如需您可以在 UWP app 中使用的 .NET 類型的清單，，請參閱[適用於 UWP app 的 .NET](https://msdn.microsoft.com/library/mt185501.aspx)
-- [.NET Native - 它對「通用 Windows 平台」(UWP) 開發人員有何意義](https://blogs.windows.com/buildingapps/2015/08/20/net-native-what-it-means-for-universal-windows-platform-uwp-developers/#TYsD3tJuBJpK3Hc7.97)
+- [使用.NET Native 編譯的應用程式](https://docs.microsoft.com/dotnet/framework/net-native/)
 - 了解如何新增 Windows 10 使用者的現代體驗到現有的傳統型應用程式，以及使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)在 Microsoft Store 中散發其功能。
 
 ## <a name="how-the-universal-windows-platform-relates-to-windows-runtime-apis"></a>通用 Windows 平台如何與 Windows 執行階段 Api 建立關聯
