@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, C#, Visual Basic, 非同步
 ms.localizationpriority: medium
 ms.openlocfilehash: 899af2ffd26419d4c8906d703d6708d202f8c150
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8790086"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878309"
 ---
 # <a name="call-asynchronous-apis-in-c-or-visual-basic"></a>在 C# 或 Visual Basic 中呼叫非同步 API
 

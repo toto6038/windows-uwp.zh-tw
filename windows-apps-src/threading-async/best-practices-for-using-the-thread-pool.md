@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
 ms.openlocfilehash: 6c004feabf561c5a94fadba858762bf683c9ff0e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8789912"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8875888"
 ---
 # <a name="best-practices-for-using-the-thread-pool"></a>使用執行緒集區的最佳做法
 

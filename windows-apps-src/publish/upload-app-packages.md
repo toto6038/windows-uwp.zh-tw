@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10，uwp，套件上, 傳，套件上傳
 ms.localizationpriority: medium
 ms.openlocfilehash: 6a77cb67891b3cfcb814e66fd14db9e79a0bff1c
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800649"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8876177"
 ---
 # <a name="upload-app-packages"></a>上傳應用程式套件
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, port, shader, direct3d, opengl, 遊戲, 連接埠, 著色器, 移植
 ms.localizationpriority: medium
 ms.openlocfilehash: f061d31ca779cb4c6cbe76f163e190996a6985cb
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8755334"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8878033"
 ---
 # <a name="port-the-shader-objects"></a>移植著色器物件
 

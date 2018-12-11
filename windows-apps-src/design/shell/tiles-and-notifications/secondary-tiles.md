@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, secondary tiles, 次要磚
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8789645"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877416"
 ---
 # <a name="secondary-tiles"></a>次要磚
 

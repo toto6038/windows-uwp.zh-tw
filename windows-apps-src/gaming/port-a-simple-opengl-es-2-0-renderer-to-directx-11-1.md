@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, opengl, direct3d 11, port, 遊戲, 連接埠
 ms.localizationpriority: medium
 ms.openlocfilehash: 78bcf3c2cae53fba4e67ecd4b3bcc44adddde1bf
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797502"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8875590"
 ---
 # <a name="port-a-simple-opengl-es-20-renderer-to-direct3d-11"></a>將簡單的 OpenGL ES 2.0 轉譯器移植到 Direct3D 11
 

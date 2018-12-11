@@ -8,11 +8,11 @@ keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ms.openlocfilehash: 8f18c7f20673b7875c60c8797bb1e92410cda8fe
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8705361"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8875948"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
  

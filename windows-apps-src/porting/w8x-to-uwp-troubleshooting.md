@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c31d414bab1e551b418a1ff653678665d66aea5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8801389"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877358"
 ---
 # <a name="troubleshooting-porting-windows-runtime-8x-to-uwp"></a>將 Windows 執行階段 8.x 移植到 UWP 的疑難排解
 

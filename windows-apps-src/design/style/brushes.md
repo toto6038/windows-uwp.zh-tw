@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e46ef0e459ede5fd1185d78186968735d886e63
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8708790"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877937"
 ---
 # <a name="using-brushes-to-paint-backgrounds-foregrounds-and-outlines"></a>使用筆刷繪製背景、前景和輪廓
 

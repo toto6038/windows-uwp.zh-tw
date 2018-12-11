@@ -6,11 +6,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤
 ms.localizationpriority: medium
 ms.openlocfilehash: 22dff391e787e1763cb730272ba9cea029758c99
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8791279"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8877568"
 ---
 # <a name="get-error-reporting-data-for-your-xbox-one-game"></a>取得錯誤報告資料 Xbox One 遊戲
 
