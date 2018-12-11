@@ -11,12 +11,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0f881c470d92ea1eafb08f24e6cf1fd06f4fc75e
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: fb97f69ccdffcec86dfdaf5fa6c5f817644ebd61
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8746959"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8873491"
 ---
 # <a name="icons-for-uwp-apps"></a>適用於 UWP 應用程式的圖示
 
@@ -81,7 +81,7 @@ ms.locfileid: "8746959"
 
 ## <a name="using-the-right-type-of-icon"></a>使用正確的圖示類型
 
-有許多的方式可建立圖示。 您可以使用像是 Segoe MDL2 Assets 的符號字型。 您可以建立自己的向量影像。 您甚至可以使用點陣圖影像，雖然我們不建議使用它。 以下是您可以將的圖示新增到您應用程式的不同方式摘要。 
+有許多的方式可建立圖示。 您可以使用像是 Segoe MDL2 Assets 的符號字型。 您可以建立您自己的向量影像。 您甚至可以使用點陣圖影像，雖然我們不建議使用它。 以下是您可以將的圖示新增到您應用程式的不同方式摘要。 
 
 ### <a name="use-a-predefined-icon"></a>使用預先定義的圖示。
 :::row:::
