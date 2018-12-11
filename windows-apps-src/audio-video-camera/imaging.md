@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 287079bf7195ebcadc3543d9369a0567f197b10c
-ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8829741"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8894240"
 ---
 # <a name="create-edit-and-save-bitmap-images"></a>建立、編輯和儲存點陣圖影像
 

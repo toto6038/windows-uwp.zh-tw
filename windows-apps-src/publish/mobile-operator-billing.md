@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 電信業者, 電信費用帳單, 電信業者帳單
 ms.localizationpriority: medium
 ms.openlocfilehash: ca3d362267aabc6120173a029db2b48c65b7d249
-ms.sourcegitcommit: c01c29cd97f1cbf050950526e18e15823b6a12a0
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8693154"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8893538"
 ---
 # <a name="mobile-operator-billing"></a>電信業者帳單
 

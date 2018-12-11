@@ -5,16 +5,16 @@ title: 全球化和當地語系化
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
-ms.date: 10/18/2017
+ms.date: 12/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 49ee09374db54678dbe0152b996537771fd1bfd1
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8738842"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8892351"
 ---
 # <a name="globalization-and-localization"></a>全球化和當地語系化
 
@@ -65,3 +65,4 @@ ms.locfileid: "8738842"
 | [將您的應用程式設計為支援雙向文字](design-for-bidi-text.md) | 設計您的應用程式，使其提供雙向文字支援 (BiDi)，組合由左至右和由右至左書寫系統的文字。 |
 | [使用多語應用程式工具組 4.0](use-mat.md) | 多語應用程式工具組 (MAT) 4.0 與 Microsoft Visual Studio 2017 整合，提供 UWP app 翻譯支援、翻譯檔案管理及編輯器工具。 |
 | [多語應用程式工具組 4.0 常見問題集與疑難排解](mat-faq-troubleshooting.md) | 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。 |
+| [準備您的應用程式，年曆變更](japanese-era-change.md) | 深入了解 2019年年曆變更，以及如何準備您的應用程式。 |
