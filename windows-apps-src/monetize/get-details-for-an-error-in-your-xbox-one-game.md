@@ -5,12 +5,12 @@ ms.date: 11/06/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 服務, Microsoft Store 分析 API, 錯誤, 詳細資料
 ms.localizationpriority: medium
-ms.openlocfilehash: 6b713e3c6c2f7b82e5779e4785cc6b2e320b24f0
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.openlocfilehash: da3252c42a0c2e2bd02465985737125cc053a616
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8741163"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8880877"
 ---
 # <a name="get-details-for-an-error-in-your-xbox-one-game"></a>取得您的 Xbox One 中錯誤的詳細資料遊戲
 
@@ -48,7 +48,7 @@ ms.locfileid: "8741163"
 
 | 參數        | 類型   |  描述      |  必要  
 |---------------|--------|---------------|------|
-| applicationId | string | 您正在擷取錯誤詳細資料 Xbox One 遊戲的產品識別碼。 要取得遊戲的產品識別碼，請在 Xbox 開發人員入口網站 (XDP) 中巡覽遊戲並從網址中擷取產品識別碼。 或者，如果您從 Windows 合作夥伴中心分析報告下載您的健康情況資料，產品識別碼包含在.tsv 檔案中。 |  是  |
+| applicationId | string | 您正在擷取錯誤詳細資料的 Xbox One 遊戲**市集識別碼**。 在合作夥伴中心的應用程式身分識別頁面上使用 「**市集識別碼**。 範例 「**市集識別碼**是 「 9wzdncrfj3q8 」。 |  是  |
 | failureHash | 字串 | 您想要取得詳細資訊之錯誤的唯一識別碼。 若要取得您感興趣之錯誤的此值，使用[取得錯誤報告資料，Xbox one 遊戲](get-error-reporting-data-for-your-xbox-one-game.md)的方法，並使用該方法回應主體中的**failureHash**值。 |  是  |
 | startDate | 日期 | 要擷取詳細錯誤資料之日期範圍的開始日期。 預設為目前日期的前 30 天。 |  否  |
 | endDate | 日期 | 要擷取詳細錯誤資料之日期範圍的結束日期。 預設為目前的日期。 |  否  |
@@ -60,7 +60,7 @@ ms.locfileid: "8741163"
 
 ### <a name="request-example"></a>要求範例
 
-下列範例示範取得詳細的錯誤資料的 Xbox One 遊戲的數個要求。 *ApplicationId*值取代為您的遊戲的產品識別碼。
+下列範例示範取得詳細的錯誤資料的 Xbox One 遊戲的數個要求。 *ApplicationId*值取代為您的遊戲的**市集識別碼**。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/xbox/failuredetails?applicationId=BRRT4NJ9B3D1&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
@@ -90,7 +90,7 @@ Authorization: Bearer <your access token>
 
 | 值           | 類型    | 描述     |
 |-----------------|---------|----------------------------|
-| applicationId   | string  | 您已擷取詳細的錯誤資料之 Xbox One 遊戲的產品識別碼。      |
+| applicationId   | string  | 您已擷取詳細的錯誤資料之 Xbox One 遊戲**市集識別碼**。      |
 | failureHash     | 字串  | 錯誤的唯一識別碼。     |
 | failureName     | 字串  | 失敗的名稱，由四個部分組成：一個或多個問題類別、例外狀況/錯誤檢查碼、失敗發生位置映像名稱，以及相關函式名稱。           |
 | 日期            | 字串  | 錯誤資料之日期範圍中的第一個日期。 如果要求指定單一天數，此值便會是該日期。 如果要求指定一週、一個月或其他日期範圍，此值便會是該日期範圍的第一個日期。 |
