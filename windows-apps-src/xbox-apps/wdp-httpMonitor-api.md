@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8883621"
+ms.locfileid: "8927484"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 監視 API 參考   
 您可以使用此 API 存取焦點應用程式的即時 HTTP 流量，如果 Xbox 主機上已啟用 HTTP 監視 (開發人員首頁中核取方塊)。

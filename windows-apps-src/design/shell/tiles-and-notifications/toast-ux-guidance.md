@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10，uwp，通知，集合、 群組、 ux，ux 指導方針，指導方針、 動作、 快顯通知，控制中心、 noninterruptive、 有效的通知、 干擾通知，可採取動作，管理，組織
 ms.localizationpriority: medium
 ms.openlocfilehash: 878df85db9ab0e33db06a86ddb726f07dc28f013
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8891570"
+ms.locfileid: "8918847"
 ---
 # <a name="toast-notification-ux-guidance"></a>快顯通知的 UX 指導方針
 通知是必要的新式生命;它們能協助使用者生產力與預約與應用程式和網站，以及掌握目前使用的任何更新。 不過，從有用 overbearing 和覺得受干擾，如果不是設計的使用者為中心的方式可以快速關閉通知。 通知有一個以滑鼠右鍵按一下離正在關閉，並不太可能會關閉後，他們將會開啟一次。  因此請確定您的通知是公開的使用者的螢幕空間和時間，因此您可以保留這個佔用通道開啟。

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability, 廣告, 指導方針, 可見性
 ms.localizationpriority: medium
 ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "8872944"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8919347"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>最佳化您的廣告單元的可見性
 
