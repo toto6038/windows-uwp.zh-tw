@@ -12,11 +12,11 @@ doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 3660586b856205721bfa8e9cbb3e72df4fd3ad43
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8805600"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827510"
 ---
 # <a name="text-input-with-the-handwriting-view"></a>文字輸入使用手寫檢視
 

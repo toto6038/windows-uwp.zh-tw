@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 882e84c5126e4f67e246dd479008133c979c06b1
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8793070"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825301"
 ---
 # <a name="remote-input-api-reference"></a>遠端輸入 API 參考   
 您可以透過此 API 即時從遠端傳送控制器、鍵盤和滑鼠輸入。

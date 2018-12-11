@@ -13,11 +13,11 @@ dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 368454e32ba2c88994161f6c7deb554fff73972a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8801577"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8827712"
 ---
 # <a name="scroll-viewer-controls"></a>捲動檢視器控制項
 

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ab894a9ba9c51b091e593503be2db57ba3b1a913
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785519"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8825518"
 ---
 # <a name="optimize-your-xaml-layout"></a>最佳化您的 XAML 版面配置
 

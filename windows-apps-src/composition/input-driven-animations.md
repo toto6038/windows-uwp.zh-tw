@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10、uwp、動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 94d15fc7f2443475020aa7e134c076b833db46a8
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 231065c899d0de285584d41e6335251e0c2c4048
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8797406"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "8826313"
 ---
 # <a name="input-driven-animations"></a>輸入導向動畫
 
