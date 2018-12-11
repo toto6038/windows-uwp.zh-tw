@@ -9,11 +9,11 @@ keywords: Windows 10, UWP
 ms.assetid: c87e2f06-339d-4413-b585-172752964f56
 ms.localizationpriority: medium
 ms.openlocfilehash: b39507fb1333fdb642601c6b4828c3d160c6ceb5
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8800459"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891912"
 ---
 # <a name="instructional-ui-guidelines"></a>指示性 UI 指導方針
 

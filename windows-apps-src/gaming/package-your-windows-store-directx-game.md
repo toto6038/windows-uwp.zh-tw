@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, directx, package, 遊戲, 套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 631ba2c278c72f406a0fdd8a6d6d8d8a14c9eb05
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785029"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8890970"
 ---
 #  <a name="package-your-universal-windows-platform-uwp-directx-game"></a>封裝您的通用 Windows 平台 (UWP) DirectX 遊戲
 

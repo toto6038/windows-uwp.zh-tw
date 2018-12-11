@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, javascript, 範例程式碼
 ms.localizationpriority: medium
 ms.openlocfilehash: 98ba09b88c96b0f0afb4ba5a786d31442fd9da05
-ms.sourcegitcommit: d7613c791107f74b6a3dc12a372d9de916c0454b
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "8758628"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891175"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>使用 JavaScript 的插播式廣告範例程式碼
 

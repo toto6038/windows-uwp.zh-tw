@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 認可應用程式提交
 ms.localizationpriority: medium
 ms.openlocfilehash: 3a860239bcd266f577abca3af1cfc994393cae8e
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8785406"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8891451"
 ---
 # <a name="commit-an-app-submission"></a>認可 App 提交
 

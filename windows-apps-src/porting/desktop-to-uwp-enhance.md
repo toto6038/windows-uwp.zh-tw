@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: a3dc929858415b933943bba5aa7487ffa721899f
+ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "8788656"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8893203"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增強您的 Windows 10 傳統型應用程式
 
