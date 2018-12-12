@@ -6,16 +6,18 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 大小, 橫幅
 ms.localizationpriority: medium
-ms.openlocfilehash: 6bc59026f8e2ba9b736db8514508ca9ccfad62f8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8cd21be7f0e1f05e1fe4de07053cb18ee5048c6a
+ms.sourcegitcommit: 05335f65dfe497ef4027b7249c0119fc59e355e2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924537"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "8964681"
 ---
 # <a name="supported-banner-ad-sizes"></a>支援的橫幅廣告大小
 
-通用 Windows 平台 (UWP) 應用程式支援下列橫幅廣告大小。 當您將具現化您的應用程式中**的 AdControl**物件時，請確定您設定的 height 和 width 屬性，以符合其中一個這些支援的大小。
+通用 Windows 平台 (UWP) 應用程式支援下列橫幅廣告大小。 當您將具現化您的應用程式中**的 AdControl**物件時，請確定您設定寬度和高度的屬性，以符合其中一個這些支援的大小。
+
+大小皆寬 x 高。
 
 * 160x600
 * 300x50
