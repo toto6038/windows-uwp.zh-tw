@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 9b14e413a5629dfb5447750e32c42c4efafef8fa
-ms.sourcegitcommit: 8921a9cc0dd3e5665345ae8eca7ab7aeb83ccc6f
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/11/2018
-ms.locfileid: "8886774"
+ms.locfileid: "8931445"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>案例 1：從字串資源和資產檔案建立 PRI 檔案
 在本案例中，我們會使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，建立新的應用程式來表示我們的自訂建置系統。 請記住，這個自訂建置系統的目的是建立適用於目標 UWP app 的 PRI 檔案。 因此在這個逐步解說過程中，我們會建立一些範例資源檔案 (包含字串以及其他種類的資源) 來代表該目標 UWP app 的資源。
