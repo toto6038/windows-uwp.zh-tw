@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c909e707d25e4add534ce89319abe71c2557b59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 267e1d4de3917ae332cdfe15309f3871ef7b6647
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919078"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968562"
 ---
 # <a name="get-all-apps"></a>取得所有 App
 
 
-在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的所有應用程式資料。
+在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的應用程式資料。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -31,7 +31,7 @@ ms.locfileid: "8919078"
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/applications``` |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications` |
 
 
 ### <a name="request-header"></a>要求的標頭
@@ -43,7 +43,7 @@ ms.locfileid: "8919078"
 
 ### <a name="request-parameters"></a>要求參數
 
-對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含已登錄到您帳戶之所有 App 的資料。
+對於此方法而言，所有的要求參數都是選用的。 如果您呼叫這個不含參數的方法，回應會包含第一個 10 資料來為登錄到您帳戶的應用程式。
 
 |  參數  |  類型  |  描述  |  必要  |
 |------|------|------|------|
@@ -57,19 +57,44 @@ ms.locfileid: "8919078"
 
 ### <a name="request-examples"></a>要求範例
 
-下列範例示範如何擷取已登錄到您帳戶之所有 App 的相關資訊。
+下列範例示範如何擷取已登錄到您帳戶的前 10 個 App。
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
-下列範例示範如何擷取已登錄到您帳戶的前 10 個 App。
+下列範例示範如何擷取已登錄到您帳戶之所有 App 的相關資訊。 首先，取得的前 10 應用程式：
 
-```
+```http
 GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=10 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
+
+然後以遞迴方式呼叫`GET https://manage.devcenter.microsoft.com/v1.0/my/{@nextLink}`之前`{@nextlink}`會是 null，或在回應中不存在。 例如：
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+  
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=20&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=30&top=10 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
+如果您已經知道您有在您的帳戶的應用程式的總數，您可以只需傳入該號碼**頂端**參數，以取得您的應用程式的相關資訊。
+
+```http
+GET https://manage.devcenter.microsoft.com/v1.0/my/applications?top=23 HTTP/1.1
+Authorization: Bearer <your access token>
+```
+
 
 ## <a name="response"></a>回應
 
@@ -114,7 +139,7 @@ Authorization: Bearer <your access token>
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | value      | 陣列  | 包含已登錄到您帳戶之每個 App 相關資訊的物件陣列。 如需有關每個物件中資料的詳細資訊，請參閱[應用程式資源](get-app-data.md#application_object)。                                                                                                                           |
-| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 ```https://manage.devcenter.microsoft.com/v1.0/my/``` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 20 個登錄到您帳戶的 App，回應本文會包含 ```applications?skip=10&top=10``` 的 @nextLink 值，這指出您可以呼叫 ```https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10``` 來要求接下來的 10 個 App。 |
+| @nextLink  | 字串 | 如果還有其他資料頁面，此字串包含您可以附加到基本 `https://manage.devcenter.microsoft.com/v1.0/my/` 要求 URI 的相對路徑以要求下一頁資料。 例如，如果初始要求主體的 *top* 參數設為 10，但是 App 有 20 個登錄到您帳戶的 App，回應本文會包含 `applications?skip=10&top=10` 的 @nextLink 值，這指出您可以呼叫 `https://manage.devcenter.microsoft.com/v1.0/my/applications?skip=10&top=10` 來要求接下來的 10 個 App。 |
 | totalCount | 整數    | 查詢的資料結果中的列數總計 (也就是已登錄到您帳戶的 App 總數目)。                                                |
 
 

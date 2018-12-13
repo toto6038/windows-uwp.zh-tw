@@ -1,16 +1,16 @@
 ---
 title: 時間動畫
 description: 使用 KeyFrameAnimation 類別隨時間變更您的 UI。
-ms.date: 10/10/2017
+ms.date: 12/12/2018
 ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a1fe8c1fcb641c3bc79f1f058befe6f4b44044a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 838a8c3a6dfe89de49fddefd28c53cea563408cf
+ms.sourcegitcommit: dcff44885956094e0a7661b69d54a8983921ce62
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934367"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8968572"
 ---
 # <a name="time-based-animations"></a>以時間為基礎的動畫
 
@@ -62,22 +62,22 @@ ms.locfileid: "8934367"
 1. 使用動畫範本，開始新增 KeyFrames 並定義動畫的屬性。
     - 至少需要一個 KeyFrame (100% 或 1f KeyFrame)。
     - 建議也定義持續時間。
-1. 準備好執行此動畫後，在 CompositionObject 上呼叫 StartAnimation(...)，以您想要產生動畫效果的屬性為目標。 具體而言：
-    - `Visual.StartAnimation("targetProperty", CompositionAnimation animation);`
-    - `Visual.StartAnimationGroup(AnimationGroup animationGroup);`
-1. 如果您有執行中的動畫，而且您想要停止動畫或動畫群組，您可以使用這些 API：
-    - `Visual.StopAnimation("targetProperty");`
-    - `Visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
+1. 一旦您已經準備好執行此動畫，則在 CompositionObject，您想要產生動畫效果的屬性為目標上呼叫 StartAnimation(...)。 具體而言：
+    - `visual.StartAnimation("targetProperty", CompositionAnimation animation);`
+    - `visual.StartAnimationGroup(AnimationGroup animationGroup);`
+1. 如果您有執行中的動畫，而且您想要停止動畫或動畫群組，您可以使用這些 Api:
+    - `visual.StopAnimation("targetProperty");`
+    - `visual.StopAnimationGroup(AnimationGroup AnimationGroup);`
 
 讓我們看看一個範例，了解這個公式如何以動作呈現。
 
 ## <a name="example"></a>範例
 
-在此範例中，您想要建立在 1 秒內從 <0,0,0> 位移至 <20,20,20> 的視覺效果動畫。 此外，您想以 10 倍查看這些位置之間的視覺動畫。
+在此範例中，您會想要產生動畫效果的位移至 < 200,0,0 > 從 < 0,0,0 > 視覺超過 1 秒。 此外，您想以 10 倍查看這些位置之間的視覺動畫。
 
 ![主要畫面格動畫](images/animation/animated-rectangle.gif)
 
-首先，識別您要產生動畫效果的 CompositionObject 及屬性。 在此例中，紅色正方形由名為 `redSquare` 的組合視覺效果代表。 從此物件開始您的動畫。
+首先，識別您要產生動畫效果的 CompositionObject 及屬性。 在此例中，紅色正方形由名為 `redVisual` 的組合視覺效果代表。 從此物件開始您的動畫。
 
 接下來，因為您想要為 Offset 屬性產生動畫效果，您必須建立 Vector3KeyFrameAnimation (Offset 是 Vector3 類型)。 您也可以定義 KeyFrameAnimation 的對應 KeyFrames。
 
@@ -86,7 +86,7 @@ ms.locfileid: "8934367"
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
 ```
 
-接著，我們將會定義 KeyFrameAnimation 的屬性來描述它的持續時間以及以 10 倍描述兩個位置 (目前和 <200,0,0>) 之間的動畫行為。
+然後您可以定義來描述它的持續時間以動畫顯示兩個位置 （目前和 < 200,0,0 >） 10 倍之間的行為以及 KeyFrameAnimation 的屬性。
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
@@ -98,13 +98,13 @@ ms.locfileid: "8934367"
 最後，為了執行動畫，您需要在 CompositionObject 的屬性上開始。
 
 ```csharp
-redVisual.StartAnimation("Offset.X", animation);
+redVisual.StartAnimation("Offset", animation);
 ```
 
 以下是完整程式碼。
 
 ```csharp
-private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
+private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
 { 
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
@@ -112,6 +112,6 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redSquare)
     animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
-    visual.StartAnimation("Offset.X", animation);
+    redVisual.StartAnimation("Offset", animation);
 } 
 ```
