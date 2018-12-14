@@ -7,12 +7,12 @@ ms.date: 12/7/2017
 ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 進度列, 快顯通知進度列, 通知, 快顯通知資料繫結
 ms.localizationpriority: medium
-ms.openlocfilehash: 853e9c1672f1933789c961838734a67b3e816b6a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f955f2a71fed6444c65f9550e1f4fa3baeabe092
+ms.sourcegitcommit: 88265a8c9f6a77a0508a0c9d89b6ab0a6238a1da
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921313"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "8969055"
 ---
 # <a name="toast-progress-bar-and-data-binding"></a>快顯通知進度列和資料繫結
 
@@ -21,7 +21,7 @@ ms.locfileid: "8921313"
 > [!IMPORTANT]
 > **需要 Creators Update 和 Notifications 程式庫 1.4.0**：您的目標必須是 SDK 15063 並執行組建 15063 或更高版本，才能在快顯通知上使用進度列。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容中建構進度列。
 
-快顯通知中的進度列可以是「不定的」(無特定值，由動畫點指出正在發生作業) 或「確定的」(填入列的特定百分比，例如 60%)。
+快顯通知進度列可以是 「 不確定 」 （無特定值，由動畫的點指出正在發生作業） 或 「 確定的 」 （列的填入的特定百分比，例如 60%）。
 
 > **重要 API**：[NotificationData 類別](https://docs.microsoft.com/uwp/api/windows.ui.notifications.notificationdata)、[ToastNotifier.Update 方法](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)、[ToastNotification 類別](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.ToastNotification)
 
