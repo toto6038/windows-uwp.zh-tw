@@ -6,12 +6,12 @@ ms.date: 11/26/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f31381dd4bfcecd33d4934b4bcd1a9af0ff8411a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ce1f6b394608ab86e8a384d3d1de8c6da31d6754
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936819"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970943"
 ---
 # <a name="app-capability-declarations"></a>應用程式功能宣告
 
@@ -203,7 +203,7 @@ ms.locfileid: "8936819"
 | **自動接受 VoIP 通話** | **BackgroundVoIP**功能可讓您自動接收並接受 VoIP 來電，而不需要使用者明確接受通話。 使用這項功能的應用程式獲得攝影機及麥克風的完整控制權，並且可以在背景使用這些資源。<br /><br />我們不建議宣告這項功能在應用程式提交到 Microsoft Store 中。 大部分的開發人員，將不會獲得核准使用這項功能。 |
 | **保留資源的 VoIP 通話** | **OneProcessVoIP**功能可讓您保留 VoIP 通話在單一處理程序的應用程式所需的 CPU 和記憶體資源。<br /><br />我們不建議宣告這項功能在應用程式提交到 Microsoft Store 中。 大部分的開發人員，將不會獲得核准使用這項功能。 |
 | **開發模式網路** | 呼叫 C++/CX UWP app 或 C++ Windows 執行階段元件中的 OpenFile Win32 API 時，**developmentModeNetwork** 功能可讓應用程式使用已登入使用者的認證存取網路路徑。 <br /><br />我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 |
-| **廣泛的檔案系統存取** | **broadFileSystemAccess** 功能可讓應用程式在沒有任何其他檔案選擇器樣式提示的情況下，於執行階段期間取得和目前正在執行應用程式的使用者同樣的檔案系統存取權。 請務必注意的不需要具備這個功能來存取檔案，使用者已選擇使用 FilePicker 或 FolderPicker。<br/><br/>這項功能適用於 [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API。 請務必注意，在應用程式封裝資訊清單中宣告此功能，第一次使用任何 **Windows.Storage** API 時，將會觸發使用者可在其中授與或拒絕權限的使用者內容提示。 使用者也可以藉由切換 [設定]，隨時授與或拒絕權限。 同樣重要的是，請勿宣告任何使用這項功能的特殊資料夾功能，例如 **\[文件\]**、**\[圖片\]** 或 **\[影片\]**。 |
+| **廣泛的檔案系統存取** | **broadFileSystemAccess** 功能可讓應用程式在沒有任何其他檔案選擇器樣式提示的情況下，於執行階段期間取得和目前正在執行應用程式的使用者同樣的檔案系統存取權。 請務必注意的不需要具備這個功能來存取檔案，使用者已選擇使用 FilePicker 或 FolderPicker。<br/><br/>這項功能適用於 [Windows.Storage](https://docs.microsoft.com/uwp/api/windows.storage) API。 因為使用者可以授與或拒絕權限設定中的任何時候，您應該確定您的應用程式是這些變更具彈性。 在 2018 年 4 月更新之後，在權限預設為啟用。 在 2018 年 10 月更新之後，預設為關閉。 同樣重要的是，請勿宣告任何使用這項功能的特殊資料夾功能，例如 **\[文件\]**、**\[圖片\]** 或 **\[影片\]**。 您可以在您的應用程式中啟用這項功能，透過將**broadFileSystemAccess**新增到您的資訊清單。 如需範例，請參閱[檔案存取權限](/windows/uwp/files/file-access-permissions)文章。 |
 | **系統韌體和 BIOS** | **smbios** 功能讓 app 能夠存取 BIOS 資料和系統韌體資料。 |
 | **完全信任的權限層級** | **RunFullTrust**受限制的功能讓 app 能夠在使用者的電腦上執行在完全信任的權限層級。 這項功能，才能使用[FullTrustProcessLauncher](https://docs.microsoft.com/uwp/api/windows.applicationmodel.fulltrustprocesslauncher) API。<br /><br />這項功能也是必要項目會傳遞為 appx 或 msix 封裝的傳統型應用程式 （如同使用[傳統型橋接器](https://developer.microsoft.com/windows/bridges/desktop)），以及當封裝這些應用程式使用 Desktop App Converter (DAC) 時，它會自動在資訊清單中顯示或Visual Studio。 |
 | **提高權限** | **AllowElevation**受限制的功能可讓您建立的 Microsoft 合作夥伴和企業可以保留現有桌面的功能需要自動提高 app 生命週期期間或在啟動應用程式。<br/><br/>我們不建議您宣告此功能，在您提交到 Microsoft Store 的應用程式中。 在大部分情況下，將不會獲得核准使用這項功能。 只會針對特定業務的應用程式部署企業能夠透過商務用 Microsoft 網上商店它們的私人市集的核准。  |

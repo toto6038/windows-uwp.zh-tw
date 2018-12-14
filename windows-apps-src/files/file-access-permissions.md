@@ -6,12 +6,12 @@ ms.date: 06/28/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d960235e73ea9172fb966f227af9440923f3553e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 05ff8dd78f58910512291b819d59d68f682cc93c
+ms.sourcegitcommit: 23748871459931fc838c5e259e4822bffcf3cdea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940019"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970933"
 ---
 # <a name="file-access-permissions"></a>檔案存取權限
 
@@ -254,7 +254,7 @@ createFolderTask.then([](StorageFolder^ newFolder)
 
 | 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載項目、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>這是受限的功能。 第一次使用時，系統會提示使用者允許存取。 存取可在 [設定] > [隱私權] > [檔案系統] 中設定。 如果您將 app 送出至宣告此功能的 Microsoft Store，則須提供其他描述，說明您的 app 為什麼需要此功能，以及它打算如何使用此功能。<br>此功能適用於 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間中的 API | 不適用 |
+| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載項目、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>這是受限的功能。 存取權是以可在**設定**中設定 > **隱私權** > **檔案系統**。 因為使用者可以授與或拒絕權限**設定**中的任何時候，您應該確定您的應用程式是這些變更具彈性。 如果您發現您的應用程式無法存取，您可以選擇提示使用者變更設定，藉由提供[Windows 10 的檔案系統存取權 」 和 「 隱私權](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)文章的連結。 請注意，使用者必須關閉應用程式、 切換設定，並重新啟動應用程式。 如果應用程式正在執行時，他們可以切換設定，平台將會暫停您的應用程式，以便您可以儲存狀態，然後再強制終止應用程式，才能套用新的設定。 在 2018 年 4 月更新之後，在權限預設為啟用。 在 2018 年 10 月更新之後，預設為關閉。<br /><br />如果您將 app 送出至宣告此功能的 Microsoft Store，則須提供其他描述，說明您的 app 為什麼需要此功能，以及它打算如何使用此功能。<br>這個功能適合[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346)命名空間中的 Api。 請參閱 「**範例**」 區段如何啟用這項功能，在您的應用程式中的範例，這篇文章的結尾。 | 不適用 |
 | 文件 | DocumentsLibrary <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>如果您的 app 符合下列條件，則可使用此功能：<br>- 使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取<br>-開啟的檔案到使用者的 OneDrive 時自動儲存離線 | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | 音樂     | MusicLibrary <br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | 圖片  | PicturesLibrary<br> 另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
