@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4960f6eb18fe4cffe34b8167a328521e9038c684
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4878ce99d449674243c8a3f7360a9e9b0dd6db19
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930729"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970991"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -51,7 +51,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 
 ## <a name="template-structure"></a>範本結構
 
-[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是預設樣式的一部分。 傳輸控制項的預設樣式如 [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 類別參考頁中所示。 您可以將這個預設樣式複製到您的專案以進行修改。 ControlTemplate 可分割為類似其他 XAML 控制項範本的區段。
+[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) 是預設樣式的一部分。 您可以將這個預設樣式複製到您的專案以進行修改。 ControlTemplate 可分割為類似其他 XAML 控制項範本的區段。
 - 範本的第一個區段包含適用於 MediaTransportControls 的各種元件的 [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) 定義。
 - 第二個區段定義 MediaTransportControls 所使用的各種視覺狀態。
 - 第三個區段包含 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)，其可一併容納各種 MediaTransportControls 元素，並定義元件的版面配置方式。

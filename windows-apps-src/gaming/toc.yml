@@ -1,0 +1,651 @@
+items:
+- name: 開始使用
+  href: ../gaming/getting-started.md
+- name: Windows 10 遊戲開發指南
+  href: ../gaming/e2e.md
+- name: 遊戲程式設計
+  href: ../gaming/index.md
+  items:
+  - name: 規劃
+    href: ../gaming/planning.md
+    items:
+    - name: 遊戲技術
+      href: ../gaming/game-development-platform-guide.md
+    - name: 遊戲的協助工具
+      href: ../gaming/accessibility-for-games.md
+    - name: 遊戲的雲端
+      href: ../gaming/cloud-for-games.md
+    - name: 遊戲的獲利
+      href: ../gaming/monetization-for-games.md
+    - name: 概念核准
+      href: ../gaming/concept-approval.md
+    - name: 封裝您的遊戲
+      href: ../gaming/package-your-windows-store-directx-game.md
+  - name: UWP 程式設計
+    href: ../gaming/uwp-programming.md
+    items:
+    - name: 遊戲的音訊
+      href: ../gaming/working-with-audio-in-your-directx-game.md
+    - name: 遊戲廣播及擷取
+      href: ../gaming/game-broadcast-and-capture.md
+      items:
+      - name: 管理遊戲廣播
+        href: ../gaming/manage-game-broadcasting.md
+      - name: 擷取遊戲音訊、影片、螢幕擷取畫面和中繼資料
+        href: ../gaming/capture-game-audio-video-screenshots-and-metadata.md
+    - name: 遊戲的輸入
+      href: ../gaming/input-for-games.md
+      items:
+      - name: 遊戲台與震動
+        href: ../gaming/gamepad-and-vibration.md
+      - name: 機台搖桿
+        href: ../gaming/arcade-stick.md
+      - name: 賽車方向盤與動力回饋
+        href: ../gaming/racing-wheel-and-force-feedback.md
+      - name: 飛行桿
+        href: ../gaming/flight-stick.md
+      - name: 原始遊戲控制器
+        href: ../gaming/raw-game-controller.md
+      - name: 耳機
+        href: ../gaming/headset.md
+      - name: UI 瀏覽控制器
+        href: ../gaming/ui-navigation-controller.md
+      - name: 遊戲的輸入練習
+        href: ../gaming/input-practices-for-games.md
+      - name: 遊戲控制器的登錄資料
+        href: ../gaming/registry-data-for-game-controllers.md
+    - name: Unity 和 UWP 中遺失 .NET API
+      href: ../gaming/missing-dot-net-apis-in-unity-and-uwp.md
+    - name: 遊戲的網路功能
+      href: ../gaming/work-with-networking-in-your-directx-game.md
+  - name: 遊戲開發影片
+    href: ../gaming/game-development-videos.md
+- name: DirectX 程式設計
+  href: ../gaming/directx-programming.md
+  items:
+  - name: 入門
+    href: ../gaming/directx-getting-started.md
+    items:
+    - name: App 物件
+      href: ../gaming/about-the-uwp-user-interface-and-directx.md
+    - name: 專案範本與工具
+      href: ../gaming/prepare-your-dev-environment-for-windows-store-directx-game-development.md
+      items:
+      - name: 遊戲專案範本
+        href: ../gaming/user-interface.md
+      - name: Visual Studio 工具
+        href: ../gaming/set-up-visual-studio-for-game-development.md
+      - name: 圖形診斷工具
+        href: ../gaming/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md
+    - name: 啟動和繼續 App
+      href: ../gaming/launching-and-resuming-apps-directx-and-cpp.md
+      items:
+      - name: 啟動 app
+        href: ../gaming/how-to-activate-an-app-directx-and-cpp.md
+      - name: 暫停 app
+        href: ../gaming/how-to-suspend-an-app-directx-and-cpp.md
+      - name: 繼續 app
+        href: ../gaming/how-to-resume-an-app-directx-and-cpp.md
+  - name: 範例
+    href: ../gaming/directx-samples.md
+    items:
+    - name: 簡易 UWP 遊戲
+      href: ../gaming/tutorial--create-your-first-uwp-directx-game.md
+      items:
+      - name: 設定專案
+        href: ../gaming/tutorial--setting-up-the-games-infrastructure.md
+      - name: UWP 架構
+        href: ../gaming/tutorial--building-the-games-uwp-app-framework.md
+      - name: 管理遊戲流程
+        href: ../gaming/tutorial-game-flow-management.md
+      - name: 主要遊戲物件
+        href: ../gaming/tutorial--defining-the-main-game-loop.md
+      - name: 轉譯架構 I
+        href: ../gaming/tutorial--assembling-the-rendering-pipeline.md
+      - name: 轉譯架構 II
+        href: ../gaming/tutorial-game-rendering.md
+      - name: 新增 UI
+        href: ../gaming/tutorial--adding-a-user-interface.md
+      - name: 新增控制項
+        href: ../gaming/tutorial--adding-controls.md
+      - name: 加入聲音
+        href: ../gaming/tutorial--adding-sound.md
+      - name: 延伸遊戲
+        href: ../gaming/tutorial-resources.md
+    - name: Marble Maze
+      href: ../gaming/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md
+      items:
+      - name: 基礎
+        href: ../gaming/marble-maze-sample-fundamentals.md
+      - name: App 結構
+        href: ../gaming/marble-maze-application-structure.md
+      - name: 新增視覺內容
+        href: ../gaming/adding-visual-content-to-the-marble-maze-sample.md
+      - name: 加入輸入和互動
+        href: ../gaming/adding-input-and-interactivity-to-the-marble-maze-sample.md
+      - name: 新增音訊
+        href: ../gaming/adding-audio-to-the-marble-maze-sample.md
+  - name: Direct3D 圖形概念
+    href: ../graphics-concepts/index.md
+    items:
+    - name: 座標系統與幾何
+      href: ../graphics-concepts/coordinate-systems-and-geometry.md
+      items:
+      - name: 座標系統
+        href: ../graphics-concepts/coordinate-systems.md
+      - name: 基本型別
+        href: ../graphics-concepts/primitives.md
+        items:
+        - name: 點清單
+          href: ../graphics-concepts/point-lists.md
+        - name: 線清單
+          href: ../graphics-concepts/line-lists.md
+        - name: 帶狀線
+          href: ../graphics-concepts/line-strips.md
+        - name: 三角形清單
+          href: ../graphics-concepts/triangle-lists.md
+        - name: 三角形連環
+          href: ../graphics-concepts/triangle-strips.md
+      - name: 面和頂點一般向量
+        href: ../graphics-concepts/face-and-vertex-normal-vectors.md
+      - name: 矩形
+        href: ../graphics-concepts/rectangles.md
+      - name: 三角形內插補點
+        href: ../graphics-concepts/triangle-interpolation.md
+      - name: 向量、頂點和四元數
+        href: ../graphics-concepts/vectors--vertices--and-quaternions.md
+      - name: 轉換
+        href: ../graphics-concepts/transforms.md
+        items:
+        - name: 轉換概觀
+          href: ../graphics-concepts/transform-overview.md
+        - name: '世界矩陣轉換 '
+          href: ../graphics-concepts/world-transform.md
+        - name: 檢視轉換
+          href: ../graphics-concepts/view-transform.md
+        - name: 投影轉換
+          href: ../graphics-concepts/projection-transform.md
+      - name: 檢視區和裁剪
+        href: ../graphics-concepts/viewports-and-clipping.md
+    - name: 頂點和索引緩衝區
+      href: ../graphics-concepts/vertex-and-index-buffers.md
+      items:
+      - name: 緩衝區簡介
+        href: ../graphics-concepts/introduction-to-buffers.md
+      - name: 索引緩衝區
+        href: ../graphics-concepts/index-buffers.md
+    - name: 裝置
+      href: ../graphics-concepts/devices.md
+      items:
+      - name: 裝置類型
+        href: ../graphics-concepts/device-types.md
+      - name: 視窗與全螢幕模式
+        href: ../graphics-concepts/windowed-vs--full-screen-mode.md
+      - name: 遺失裝置
+        href: ../graphics-concepts/lost-devices.md
+      - name: 交換鏈結
+        href: ../graphics-concepts/swap-chains.md
+      - name: 點陣化規則簡介
+        href: ../graphics-concepts/introduction-to-rasterization-rules.md
+    - name: 光源
+      href: ../graphics-concepts/lights-and-materials.md
+      items:
+      - name: 光源概觀
+        href: ../graphics-concepts/lighting-overview.md
+      - name: 光源類型
+        href: ../graphics-concepts/light-types.md
+      - name: 光源屬性
+        href: ../graphics-concepts/light-properties.md
+      - name: 光源的數學計算
+        href: ../graphics-concepts/mathematics-of-lighting.md
+        items:
+        - name: 環境光源
+          href: ../graphics-concepts/ambient-lighting.md
+        - name: 擴散光源
+          href: ../graphics-concepts/diffuse-lighting.md
+        - name: 反射光源
+          href: ../graphics-concepts/specular-lighting.md
+        - name: 放射光源
+          href: ../graphics-concepts/emissive-lighting.md
+        - name: 相機空間轉換
+          href: ../graphics-concepts/camera-space-transformations.md
+        - name: 衰減和聚光燈係數
+          href: ../graphics-concepts/attenuation-and-spotlight-factor.md
+    - name: 深度和樣板緩衝區
+      href: ../graphics-concepts/depth-and-stencil-buffers.md
+      items:
+      - name: 深度緩衝區
+        href: ../graphics-concepts/depth-buffers.md
+      - name: 樣板緩衝區
+        href: ../graphics-concepts/stencil-buffers.md
+    - name: 紋理
+      href: ../graphics-concepts/textures.md
+      items:
+      - name: 紋理簡介
+        href: ../graphics-concepts/introduction-to-textures.md
+      - name: 添加紋理基本概念
+        href: ../graphics-concepts/basic-texturing-concepts.md
+      - name: 紋理定址模式
+        href: ../graphics-concepts/texture-addressing-modes.md
+      - name: 紋理篩選
+        href: ../graphics-concepts/texture-filtering.md
+        items:
+        - name: 最接近點取樣
+          href: ../graphics-concepts/nearest-point-sampling.md
+        - name: 雙線性紋理篩選
+          href: ../graphics-concepts/bilinear-texture-filtering.md
+        - name: 非等向性紋理篩選
+          href: ../graphics-concepts/anisotropic-texture-filtering.md
+        - name: 使用 Mipmap 進行紋理篩選
+          href: ../graphics-concepts/texture-filtering-with-mipmaps.md
+      - name: 紋理資源
+        href: ../graphics-concepts/texture-resources.md
+      - name: 紋理包裝
+        href: ../graphics-concepts/texture-wrapping.md
+      - name: 紋理混合
+        href: ../graphics-concepts/texture-blending.md
+        items:
+        - name: 混合階段
+          href: ../graphics-concepts/blending-stages.md
+        - name: 多重紋理混合
+          href: ../graphics-concepts/multipass-texture-blending.md
+      - name: 光源與紋理對應
+        href: ../graphics-concepts/light-mapping-with-textures.md
+        items:
+        - name: 單色光源對應
+          href: ../graphics-concepts/monochrome-light-maps.md
+        - name: 色彩光源對應
+          href: ../graphics-concepts/color-light-maps.md
+        - name: 反射光源對應
+          href: ../graphics-concepts/specular-light-maps.md
+        - name: 擴散光源對應
+          href: ../graphics-concepts/diffuse-light-maps.md
+      - name: 壓縮的紋理資源
+        href: ../graphics-concepts/compressed-texture-resources.md
+        items:
+        - name: 不透明和 1 位元 alpha 紋理
+          href: ../graphics-concepts/opaque-and-1-bit-alpha-textures.md
+        - name: 使用 alpha 色板的紋理
+          href: ../graphics-concepts/textures-with-alpha-channels.md
+        - name: 區塊壓縮
+          href: ../graphics-concepts/block-compression.md
+        - name: 壓縮的紋理格式
+          href: ../graphics-concepts/compressed-texture-formats.md
+    - name: 圖形管線
+      href: ../graphics-concepts/graphics-pipeline.md
+      items:
+      - name: 輸入組譯工具 (IA) 階段
+        href: ../graphics-concepts/input-assembler-stage--ia-.md
+        items:
+        - name: 基本拓撲
+          href: ../graphics-concepts/primitive-topologies.md
+        - name: 使用系統產生的值
+          href: ../graphics-concepts/using-system-generated-values.md
+      - name: 頂點著色器 (VS)階段
+        href: ../graphics-concepts/vertex-shader-stage--vs-.md
+      - name: 輪廓著色器 (HS)階段
+        href: ../graphics-concepts/hull-shader-stage--hs-.md
+      - name: 曲面細分器 (TS) 階段
+        href: ../graphics-concepts/tessellator-stage--ts-.md
+      - name: 網域著色器 (DS) 階段
+        href: ../graphics-concepts/domain-shader-stage--ds-.md
+      - name: 幾何著色器 (GS) 階段
+        href: ../graphics-concepts/geometry-shader-stage--gs-.md
+      - name: 資料流輸出 (SO) 階段
+        href: ../graphics-concepts/stream-output-stage--so-.md
+      - name: 轉譯器 (RS) 階段
+        href: ../graphics-concepts/rasterizer-stage--rs-.md
+      - name: 像素著色器 (PS) 階段
+        href: ../graphics-concepts/pixel-shader-stage--ps-.md
+      - name: 輸出合併 (OM) 階段
+        href: ../graphics-concepts/output-merger-stage--om-.md
+        items:
+        - name: 設定深度樣板功能
+          href: ../graphics-concepts/configuring-depth-stencil-functionality.md
+      - name: 狀態物件
+        href: ../graphics-concepts/state-objects.md
+    - name: 檢視
+      href: ../graphics-concepts/views.md
+      items:
+      - name: 常數緩衝區檢視 (CBV)
+        href: ../graphics-concepts/constant-buffer-view--cbv-.md
+      - name: 頂點緩衝區檢視 (VBV) 和索引緩衝區檢視 (IBV)
+        href: ../graphics-concepts/vertex-buffer-view--vbv-.md
+      - name: 著色器資源檢視 (SRV) 和未排序存取檢視 (UAV)
+        href: ../graphics-concepts/shader-resource-view--srv-.md
+      - name: 取樣器
+        href: ../graphics-concepts/sampler.md
+      - name: 轉譯目標檢視 (RTV)
+        href: ../graphics-concepts/render-target-view--rtv-.md
+      - name: 深度樣板檢視 (DSV)
+        href: ../graphics-concepts/depth-stencil-view--dsv-.md
+      - name: 資料流輸出檢視 (SOV)
+        href: ../graphics-concepts/stream-output-view--sov-.md
+      - name: 轉譯器排序檢視 (ROV)
+        href: ../graphics-concepts/rasterizer-ordered-view--rov-.md
+    - name: 計算管線
+      href: ../graphics-concepts/compute-pipeline.md
+      items:
+      - name: 計算著色器 (CS) 階段
+        href: ../graphics-concepts/compute-shader-stage--cs-.md
+    - name: 資源
+      href: ../graphics-concepts/resources.md
+      items:
+      - name: 資源類型
+        href: ../graphics-concepts/resource-types.md
+      - name: 選擇資源
+        href: ../graphics-concepts/choosing-a-resource.md
+      - name: 複製和存取資源資料
+        href: ../graphics-concepts/copying-and-accessing-resource-data.md
+      - name: 紋理檢視
+        href: ../graphics-concepts/texture-views.md
+    - name: 串流資源
+      href: ../graphics-concepts/streaming-resources.md
+      items:
+      - name: 串流資源的需求
+        href: ../graphics-concepts/the-need-for-streaming-resources.md
+      - name: 建立串流資源
+        href: ../graphics-concepts/creating-streaming-resources.md
+        items:
+        - name: 對應在磚集區中
+          href: ../graphics-concepts/mappings-are-into-a-tile-pool.md
+          items:
+          - name: 建立磚集區
+            href: ../graphics-concepts/tile-pool-creation.md
+          - name: 調整磚集區大小
+            href: ../graphics-concepts/tile-pool-resizing.md
+          - name: 危險追蹤與磚集區資源
+            href: ../graphics-concepts/hazard-tracking-versus-tile-pool-resources.md
+        - name: 串流資源建立參數
+          href: ../graphics-concepts/streaming-resource-creation-parameters.md
+          items:
+          - name: 串流資源可使用的位址空間
+            href: ../graphics-concepts/address-space-available-for-streaming-resources.md
+        - name: 磚集區建立參數
+          href: ../graphics-concepts/tile-pool-creation-parameters.md
+        - name: 串流資源跨處理序和裝置共用
+          href: ../graphics-concepts/streaming-resource-cross-process-and-device-sharing.md
+          items:
+          - name: 串流資源不支援的樣板格式
+            href: ../graphics-concepts/stencil-formats-not-supported-with-streaming-resources.md
+        - name: 串流資源可用的作業
+          href: ../graphics-concepts/operations-available-on-streaming-resources.md
+        - name: 磚集區可用的作業
+          href: ../graphics-concepts/operations-available-on-tile-pools.md
+        - name: 如何拼貼串流資源區域
+          href: ../graphics-concepts/how-a-streaming-resource-s-area-is-tiled.md
+          items:
+          - name: Texture2D 和 Texture2DArray 子資源拼貼
+            href: ../graphics-concepts/texture2d-and-texture2darray-subresource-tiling.md
+          - name: Texture3D 子資源拼貼
+            href: ../graphics-concepts/texture3d-subresource-tiling.md
+          - name: 緩衝區拼貼
+            href: ../graphics-concepts/buffer-tiling.md
+          - name: Mipmap 封裝
+            href: ../graphics-concepts/mipmap-packing.md
+      - name: 串流資源的存取管線
+        href: ../graphics-concepts/pipeline-access-to-streaming-resources.md
+        items:
+        - name: 非對應磚的 SRV 行為
+          href: ../graphics-concepts/srv-behavior-with-non-mapped-tiles.md
+        - name: 非對應磚的 UAV 行為
+          href: ../graphics-concepts/uav-behavior-with-non-mapped-tiles.md
+        - name: 非對應磚的轉譯器行為
+          href: ../graphics-concepts/rasterizer-behavior-with-non-mapped-tiles.md
+        - name: 重複對應的磚存取限制
+          href: ../graphics-concepts/tile-access-limitations-with-duplicate-mappings.md
+        - name: 串流資源紋理取樣功能
+          href: ../graphics-concepts/streaming-resources-texture-sampling-features.md
+        - name: HLSL 串流資源曝光
+          href: ../graphics-concepts/hlsl-streaming-resources-exposure.md
+      - name: 串流資源功能層級
+        href: ../graphics-concepts/streaming-resources-features-tiers.md
+        items:
+        - name: 第 1 層
+          href: ../graphics-concepts/tier-1.md
+        - name: 第 2 層
+          href: ../graphics-concepts/tier-2.md
+        - name: 第 3 層
+          href: ../graphics-concepts/tier-3.md
+    - name: 附錄
+      href: ../graphics-concepts/appendix.md
+      items:
+      - name: 浮點規則
+        href: ../graphics-concepts/floating-point-rules.md
+      - name: 資料型別轉換
+        href: ../graphics-concepts/data-type-conversion.md
+      - name: 點陣化規則
+        href: ../graphics-concepts/rasterization-rules.md
+      - name: 紋理區塊壓縮
+        href: ../graphics-concepts/texture-block-compression.md
+        items:
+        - name: BC6H 格式
+          href: ../graphics-concepts/bc6h-format.md
+        - name: BC7 格式
+          href: ../graphics-concepts/bc7-format.md
+  - name: 基礎
+    href: ../gaming/directx-fundamentals.md
+    items:
+    - name: 2D 圖形
+      href: ../gaming/working-with-2d-graphics-in-your-directx-game.md
+    - name: 基本 3D 圖形
+      href: ../gaming/an-introduction-to-3d-graphics-with-directx.md
+      items:
+      - name: 設定資源
+        href: ../gaming/setting-up-directx-resources.md
+      - name: 繪製基本型別
+        href: ../gaming/creating-shaders-and-drawing-primitives.md
+      - name: 使用深度和效果
+        href: ../gaming/using-depth-and-effects-on-primitives.md
+      - name: 套用紋理
+        href: ../gaming/applying-textures-to-primitives.md
+      - name: 建立基本網格
+        href: ../gaming/create-a-basic-mesh.md
+    - name: 載入資源
+      href: ../gaming/load-a-game-asset.md
+      items:
+      - name: BasicLoader
+        href: ../gaming/complete-code-for-basicloader.md
+      - name: BasicReaderWriter
+        href: ../gaming/complete-code-for-basicreaderwriter.md
+      - name: DDSTextureLoader
+        href: ../gaming/complete-code-for-ddstextureloader.md
+  - name: 新增功能
+    href: ../gaming/directx-add-features.md
+    items:
+    - name: DirectX 與 XAML 互通性
+      href: ../gaming/directx-and-xaml-interop.md
+    - name: 遊戲輸入
+      href: ../gaming/directx-game-input.md
+      items:
+      - name: 移動視角控制項
+        href: ../gaming/tutorial--adding-move-look-controls-to-your-directx-game.md
+      - name: 相對滑鼠移動
+        href: ../gaming/relative-mouse-movement.md
+      - name: 觸控控制項
+        href: ../gaming/tutorial--adding-touch-controls-to-your-directx-game.md
+    - name: 支援螢幕方向
+      href: ../gaming/supporting-screen-rotation-directx-and-cpp.md
+  - name: 最佳化與進階主題
+    href: ../gaming/directx-optimization-and-advanced-topics.md
+    items:
+    - name: 非同步程式設計
+      href: ../gaming/asynchronous-programming-directx-and-cpp.md
+    - name: 裝置已移除案例
+      href: ../gaming/handling-device-lost-scenarios.md
+    - name: 多重取樣
+      href: ../gaming/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.md
+    - name: 最佳化輸入和轉譯迴圈
+      href: ../gaming/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.md
+    - name: 透過交換鏈結減少延遲
+      href: ../gaming/reduce-latency-with-dxgi-1-3-swap-chains.md
+    - name: 交換鏈結縮放和覆疊
+      href: ../gaming/multisampling--scaling--and-overlay-swap-chains.md
+  - name: 從 DirectX 9 移植到 UWP
+    href: ../gaming/porting-your-directx-9-game-to-windows-store.md
+    items:
+    - name: 從 DirectX 9 移到 DirectX 11.1
+      href: ../gaming/porting-considerations.md
+      items:
+      - name: 計劃移植
+        href: ../gaming/plan-your-directx-port.md
+      - name: 重要差異
+        href: ../gaming/understand-direct3d-11-1-concepts.md
+      - name: 對應功能
+        href: ../gaming/feature-mapping.md
+    - name: 簡單逐步解說
+      href: ../gaming/walkthrough--simple-port-from-direct3d-9-to-11-1.md
+      items:
+      - name: 初始化 Direct3D 11
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md
+      - name: 轉換轉譯架構
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-2--rendering.md
+      - name: 移植遊戲迴圈
+        href: ../gaming/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md
+    - name: 實作陰影體
+      href: ../gaming/implementing-depth-buffers-for-shadow-mapping.md
+      items:
+      - name: 建立深度緩衝區
+        href: ../gaming/create-depth-buffer-resource--view--and-sampler-state.md
+      - name: 將陰影圖轉譯為深度緩衝區
+        href: ../gaming/render-the-shadow-map-to-the-depth-buffer.md
+      - name: 使用深度測試轉譯場景
+        href: ../gaming/render-the-scene-with-depth-testing.md
+      - name: 支援各種不同的硬體
+        href: ../gaming/target-a-range-of-hardware.md
+    - name: 常見問題集
+      href: ../gaming/directx-porting-faq.md
+  - name: 將 Direct3D 移植到 OpenGL
+    href: ../gaming/port-from-opengl-es-2-0-to-directx-11-1.md
+    items:
+    - name: 將 OpenGL ES 對應到 Direct3D
+      href: ../gaming/map-concepts-and-infrastructure.md
+      items:
+      - name: 計劃移植
+        href: ../gaming/compare-opengl-es-2-0-api-design-to-directx.md
+      - name: EGL 與 DXGI
+        href: ../gaming/moving-from-egl-to-dxgi.md
+      - name: 緩衝區、Uniform、頂點
+        href: ../gaming/porting-uniforms-and-attributes.md
+      - name: 著色器管線
+        href: ../gaming/change-your-shader-loading-code.md
+    - name: 將 OpenGL 轉譯器移植到 Direct3D
+      href: ../gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md
+      items:
+      - name: 著色器物件
+        href: ../gaming/port-the-shader-config.md
+      - name: 頂點緩衝區與資料
+        href: ../gaming/port-the-vertex-buffers-and-data-config.md
+      - name: GLSL
+        href: ../gaming/port-the-glsl.md
+      - name: 繪製到螢幕
+        href: ../gaming/draw-to-the-screen.md
+    - name: 從 OpenGL 到 Direct3D 的參考
+      href: ../gaming/opengl-es-2-0-to-directx-11-1-reference.md
+      items:
+      - name: 從 GLSL 移到 HLSL
+        href: ../gaming/glsl-to-hlsl-reference.md
+- name: Xbox One 上的 UWP
+  href: ../xbox-apps/index.md
+  items:
+  - name: 開始使用
+    href: ../xbox-apps/getting-started.md
+  - name: 最新動向
+    href: ../xbox-apps/whats-new.md
+  - name: 啟用 Xbox One 開發人員模式
+    href: ../xbox-apps/devkit-activation.md
+  - name: 在 Xbox One 上停用開發人員模式
+    href: ../xbox-apps/devkit-deactivation.md
+  - name: 開發環境設定
+    href: ../xbox-apps/development-environment-setup.md
+  - name: 範例
+    href: ../xbox-apps/samples.md
+  - name: 已知問題
+    href: ../xbox-apps/known-issues.md
+  - name: 常見問題
+    href: ../xbox-apps/frequently-asked-questions.md
+  - name: 工具
+    href: ../xbox-apps/introduction-to-xbox-tools.md
+    items:
+    - name: 開發人員首頁
+      href: ../xbox-apps/dev-home.md
+      items:
+      - name: 首頁
+        href: ../xbox-apps/devhome-home.md
+      - name: Xbox Live 頁面
+        href: ../xbox-apps/devhome-live.md
+      - name: 設定頁面
+        href: ../xbox-apps/devhome-settings.md
+      - name: 媒體擷取頁面
+        href: ../xbox-apps/devhome-capture.md
+      - name: 網路功能頁面
+        href: ../xbox-apps/devhome-networking.md
+      - name: 效能頁面
+        href: ../xbox-apps/devhome-performance.md
+    - name: Xbox 開發人員模式小幫手
+      href: ../xbox-apps/xbox-dev-mode-companion.md
+    - name: Fiddler
+      href: ../xbox-apps/uwp-fiddler.md
+  - name: Xbox 最佳做法
+    href: ../xbox-apps/tailoring-for-xbox.md
+    items:
+    - name: 如何停用滑鼠模式
+      href: ../xbox-apps/how-to-disable-mouse-mode.md
+    - name: 如何關閉縮放比例
+      href: ../xbox-apps/disable-scaling.md
+    - name: 如何關閉溢出掃描
+      href: ../xbox-apps/turn-off-overscan.md
+  - name: 系統資源配置
+    href: ../xbox-apps/system-resource-allocation.md
+  - name: 多使用者應用程式的簡介
+    href: ../xbox-apps/multi-user-applications.md
+  - name: 將現有的遊戲移到 Xbox
+    href: ../xbox-apps/development-lanes-landing.md
+    items:
+    - name: 自訂 C++
+      href: ../xbox-apps/development-lanes-custom-cpp.md
+    - name: Unity
+      href: ../xbox-apps/development-lanes-unity.md
+    - name: HTML / JS
+      href: ../xbox-apps/development-lanes-html.md
+  - name: Xbox 裝置入口網站 REST API
+    href: ../xbox-apps/reference.md
+    items:
+    - name: /api/app/packagemanager/register
+      href: ../xbox-apps/wdp-loose-folder-register-api.md
+    - name: /api/app/packagemanager/upload
+      href: ../xbox-apps/wdp-folder-upload.md
+    - name: /ext/app/deployinfo
+      href: ../xbox-apps/uwp-deployinfo-api.md
+    - name: /ext/app/sshpins
+      href: ../xbox-apps/uwp-sshpins-api.md
+    - name: /ext/fiddler
+      href: ../xbox-apps/wdp-fiddler-api.md
+    - name: /ext/httpmonitor/sessions
+      href: ../xbox-apps/wdp-httpMonitor-api.md
+    - name: /ext/networkcredential
+      href: ../xbox-apps/uwp-networkcredentials-api.md
+    - name: /ext/remoteinput
+      href: ../xbox-apps/uwp-remoteinput-api.md
+    - name: /ext/remoteinput/controllers
+      href: ../xbox-apps/uwp-remoteinput-controllers-api.md
+    - name: /ext/screenshot
+      href: ../xbox-apps/wdp-media-capture-api.md
+    - name: /ext/settings
+      href: ../xbox-apps/wdp-xboxsettings-api.md
+    - name: /ext/smb/developerfolder
+      href: ../xbox-apps/wdp-smb-api.md
+    - name: /ext/user
+      href: ../xbox-apps/wdp-user-management.md
+    - name: /ext/xbox/info
+      href: ../xbox-apps/wdp-xboxinfo-api.md
+    - name: /ext/xboxlive/sandbox
+      href: ../xbox-apps/wdp-sandbox-api.md
+- name: Xbox Live
+  href: ../xbox-live/TOC.md
+ms.openlocfilehash: 0d44f8286586f3019864097357051e43fa88fbae
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962580"

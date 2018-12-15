@@ -10,12 +10,12 @@ design-contact: rybick
 dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 336e4e64cc0b1819081a7e42b6e3e2d099355248
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92c08971ee498e93e5a974ef8bd63d00dd27fc7d
+ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947840"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "8970981"
 ---
 # <a name="acrylic-material"></a>壓克力材質
 
@@ -72,7 +72,7 @@ ms.locfileid: "8947840"
 
 ## <a name="when-to-use-acrylic"></a>使用壓克力的時機
 
-* 針對支援的 UI，例如 NavigationView 或命令列中的元素使用應用程式內壓克力。 
+* 針對支援的 UI，例如 NavigationView 或命令列中的元素使用應用程式內壓克力。
 * 針對暫時性 UI 元素，例如操作功能表、 飛出視窗，以及光線 dimsissable UI 使用背景壓克力。<br />使用壓克力暫時性的案例中，有助於維持與已觸發暫時性 UI 之內容的視覺關係。
 
 如果您使用應用程式內壓克力上瀏覽的表面，請考慮擴充下方以改善您的應用程式上流程的壓克力窗格的內容。 使用 NavigationView 會這麼做為您自動。 不過，若要避免產生條紋效果，不要嘗試進行放置多個部分壓克力邊緣到邊緣-這會產生兩個模糊表面之間不想要的接縫。 壓克力工具可讓您的設計的視覺違，但是當使用不正確，可能會導致視覺雜訊。
@@ -192,6 +192,7 @@ ms.locfileid: "8947840"
 您可以選擇將色彩色調新增到您的應用程式壓克力，以顯示品牌或與頁面上的其他元素產生視覺平衡。 若要顯示彩色而非灰階，您必須使用下列屬性定義自己的壓克力筆刷。
  - **TintColor**︰色彩/色調重疊層。 考慮指定 RGB 色彩值與 Alpha 色板不透明度。
  - **TintOpacity**︰色調層不透明度。 雖然不同色彩可能看起來更具其他 translucencies，我們建議做為起點，80%不透明度。
+ - **TintLuminosityOpacity**： 控制允許透過從背景壓克力表面的飽和度的量。
  - **BackgroundSource**︰此旗標可指定您要背景壓克力或應用程式內壓克力。
  - **FallbackColor**： 在省電模式中的壓克力的單色。 對於背景壓克力，當您的應用程式不是使用中桌面視窗，或當應用程式在手機與 Xbox 上執行時，回復色彩也會取代壓克力。
 
@@ -199,7 +200,12 @@ ms.locfileid: "8947840"
 
 ![深色佈景主題壓克力色樣](images/CustomAcrylic_Swatches_DarkTheme.png)
 
+![相較於色調不透明度的亮度 opactity](images/LuminosityVersusTint.png)
+
 若要新增壓克力筆刷，請為深色、淺色及高對比佈景主題定義三個資源。 請注意在高對比中，我們建議使用 x:Key 與深色/淺色 AcrylicBrush 相同的 SolidColorBrush。
+
+> [!Note] 
+> 如果您沒有指定 TintLuminosityOpacity 值，系統會自動調整其值，根據您 TintColor 和 TintOpacity。
 
 ```xaml
 <ResourceDictionary.ThemeDictionaries>
@@ -208,6 +214,7 @@ ms.locfileid: "8947840"
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FF7F0000"/>
     </ResourceDictionary>
 
@@ -221,6 +228,7 @@ ms.locfileid: "8947840"
             BackgroundSource="HostBackdrop"
             TintColor="#FFFF0000"
             TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
             FallbackColor="#FFFF7F7F"/>
     </ResourceDictionary>
 </ResourceDictionary.ThemeDictionaries>
@@ -249,10 +257,9 @@ else
 
 ## <a name="extend-acrylic-into-the-title-bar"></a>將壓克力延伸至標題列
 
-若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力風格。 此範例透過設定 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 以及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 屬性為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)，將壓克力風格延伸到標題列。 
+若要讓您的應用程式視窗呈現順暢的外觀，您可以在標題列區域中使用壓克力風格。 此範例透過設定 [ApplicationViewTitleBar](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar) 物件的 [ButtonBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonBackgroundColor) 以及 [ButtonInactiveBackgroundColor](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.ApplicationViewTitleBar.ButtonInactiveBackgroundColor) 屬性為 [Colors.Transparent](https://docs.microsoft.com/uwp/api/Windows.UI.Colors.Transparent)，將壓克力風格延伸到標題列。
 
 ```csharp
-/// Extend acrylic into the title bar. 
 private void ExtendAcrylicIntoTitleBar()
 {
     CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
@@ -262,11 +269,10 @@ private void ExtendAcrylicIntoTitleBar()
 }
 ```
 
-您可以將這段程式碼放在應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中，對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的呼叫之後 (如這裡所示)，或放在應用程式的第一個頁面中。 
-
+您可以將這段程式碼放在應用程式的 [OnLaunched](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) 方法 (_App.xaml.cs_) 中，對 [Window.Activate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.window.Activate) 的呼叫之後 (如這裡所示)，或放在應用程式的第一個頁面中。
 
 ```csharp
-// Call your extend acrylic code in the OnLaunched event, after 
+// Call your extend acrylic code in the OnLaunched event, after
 // calling Window.Current.Activate.
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
