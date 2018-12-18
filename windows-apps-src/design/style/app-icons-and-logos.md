@@ -9,12 +9,12 @@ design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7083152efb4cf871f8abebf6d2970d2da4ba06e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b755e8d165d58ce4303d9fefe6d051abce6c9765
+ms.sourcegitcommit: 3433d0c7e70e00df0418887f71c2d094e9c30476
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926090"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "8973939"
 ---
 # <a name="app-icons-and-logos"></a>應用程式圖示及標誌 
 
@@ -71,7 +71,7 @@ ms.locfileid: "8926090"
 :::row-end:::  
 
 
-因為應用程式圖示資產為點陣圖，而且不正常調整點陣圖，建議您提供一個版本，每個圖示資產的每個縮放係數： 100%、 125%、 150%、 200%及 400%。 這就是許多圖示 ！ Fortunatly，Visual Studio 提供的工具，可讓您輕鬆產生並更新這些圖示。 
+因為應用程式圖示資產為點陣圖，而且不正常調整點陣圖，建議您提供一個版本，每個圖示資產的每個縮放係數： 100%、 125%、 150%、 200%及 400%。 這就是許多圖示 ！ 幸運的是，Visual Studio 提供的工具，可讓您輕鬆產生並更新這些圖示。 
 
 ## <a name="microsoft-store-listing-image"></a>Microsoft Store 清單影像
 
