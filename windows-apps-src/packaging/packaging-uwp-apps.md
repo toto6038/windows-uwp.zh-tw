@@ -9,18 +9,18 @@ f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: eaee9d28d8e927e3fbc9d56c8aa7c24422d1484a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f11fa421fe5bcbf8f37098df91344abdb9915890
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928077"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976885"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
 若要銷售通用 Windows 平台 (UWP) app 或將其散發給其他使用者，您必須封裝應用程式。 如果不想透過 Microsoft Store 散發應用程式，您可以直接將應用程式套件側載至裝置或透過 [Web 安裝](installing-UWP-apps-web.md)散發。 本文描述使用 Visual Studio 設定、建立和測試 UWP app 套件的程序。 如需管理和部署線 (LOB) 應用程式的相關資訊，請查看[企業應用程式管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案到[合作夥伴中心](https://partner.microsoft.com/dashboard)。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。 
+在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案到[合作夥伴中心](https://partner.microsoft.com/dashboard)。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。
 
 ## <a name="types-of-app-packages"></a>應用程式套件類型
 
@@ -30,7 +30,7 @@ ms.locfileid: "8928077"
 - **應用程式套件組合 （.appxbundle 或.msixbundle）**  
     應用程式套件組合是一種套件，可以包含多個應用程式套件，每一個為了支援特定裝置架構而建置。 例如應用程式套件組合可以包含適用於 x86、x64 及 ARM 設定的三個不同的應用程式套件。 應該盡可能產生應用程式套件組合，因為它們允許您的應用程式用於最多種類的裝置。  
 
-- **應用程式套件上傳檔案 (.appxupload)**  
+- **應用程式套件上傳檔案 （.appxupload 或.msixupload）**  
     單一檔案，可以包含多個應用程式套件或單一應用程式套件組合以支援各種處理器架構。 上傳檔案也包含符號檔案，可在應用程式發佈到 Microsoft Store 之後[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果您封裝您的應用程式與 Visual Studio，以便提交至合作夥伴中心進行發佈，此檔案，將會自動建立為您。 請務必注意，這些是**僅**有效的應用程式套件合作夥伴中心提交可以使用 Visual Studio 中建立的。
 
 以下是準備與建立應用程式套件的步驟概觀：
@@ -63,23 +63,23 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
     在 **\[視覺資產\]** 索引標籤上確認您擁有 UWP app 需要的所有影像。
 
-    從 **\[封裝\]** 索引標籤中，您可以輸入發佈資料。 從此處您可以選擇要用來登入您的 app 的憑證。 所有 UWP 應用程式都必須以憑證簽署。 
-    
+    從 **\[封裝\]** 索引標籤中，您可以輸入發佈資料。 從此處您可以選擇要用來登入您的 app 的憑證。 所有 UWP 應用程式都必須以憑證簽署。
+
     >[!IMPORTANT]
-    >如果您要在 Microsoft Store 發佈應用程式，將會為您以受信任的憑證簽署應用程式。 這可讓使用者安裝及執行您的應用程式，而不需安裝相關聯的應用程式簽署憑證。 
-    
+    >如果您要在 Microsoft Store 發佈應用程式，將會為您以受信任的憑證簽署應用程式。 這可讓使用者安裝及執行您的應用程式，而不需安裝相關聯的應用程式簽署憑證。
+
     如果您不要發佈應用程式，只是想要側載應用程式套件，首先需要信任套件。 憑證必須安裝在該使用者裝置上，才能信任該套件。 如需側載的詳細資訊，請參閱[啟用您的裝置以用於開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 
 4.  在對您的 app 進行必要的編輯之後，請儲存 **Package.appxmanifest** 檔案。
 
-如果要透過 Microsoft Store 散發應用程式，Visual Studio 可以將套件與 Microsoft Store 建立關聯。 建立應用程式關聯時，會自動更新資訊清單設計工具的 [封裝] 索引標籤中的一些欄位。
+如果您要將發佈您的應用程式，透過 Microsoft Store，Visual Studio 可以與市集建立關聯您的套件。 若要這樣做，以滑鼠右鍵按一下 [方案總管] 中您專案的名稱，然後選擇 [**市集**->**與市集建立關聯的應用程式**。 您也可以執行這在**建立應用程式套件**精靈中下, 一節中所述。 建立應用程式關聯時，會自動更新資訊清單設計工具的 [封裝] 索引標籤中的一些欄位。
 
 ## <a name="create-an-app-package-upload-file"></a>建立應用程式套件上傳檔案
 
 若要透過 Microsoft 網上商店應用程式發佈，您必須建立應用程式套件 （.appx 或.msix）、 應用程式套件組合 （.appxbundle 或.msixbundle），或上傳套件 (.appxupload) 並[提交到合作夥伴中心已封裝的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以提交到合作夥伴中心單獨應用程式套件或應用程式套件組合，您會建議提交上傳套件。
 
 >[!NOTE]
-> 應用程式套件上傳檔案 (.appxupload) 是**僅**的類型可以使用 Visual Studio 中建立的合作夥伴中心的有效應用程式套件。 其他有效[應用程式套件可以手動建立](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，而不使用 Visual Studio。 
+> 應用程式套件上傳檔案 （.appxupload 或.msixupload） 是**僅**的類型可以使用 Visual Studio 中建立的合作夥伴中心的有效應用程式套件。 其他有效[應用程式套件可以手動建立](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，而不使用 Visual Studio。
 
 您可以使用 **\[建立應用程式套件\]** 精靈來執行這項操作。 請依照下列步驟來建立適用於使用 Visual Studio 的合作夥伴中心提交的套件。
 
@@ -91,19 +91,17 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
     **\[建立應用程式套件\]** 精靈便會出現。
 
-3.  選取 [是] 中的第一個對話方塊，詢問您是否要建置套件以上傳至合作夥伴中心，然後按一下 [下一步。  
+3.  第一個對話方塊中，選取**我想要建立套件以上傳到 Microsoft Store 使用新的應用程式名稱**，然後按一下 [**下一步**。  
     ![顯示的 [建立您的套件] 對話方塊視窗](images/packaging-screen3.jpg)
 
-    如果您選擇 [否]，Visual Studio 將不會產生合作夥伴中心提交應用程式套件上傳 (.appxupload) 檔案。 如果您只想側載您的應用程式以在內部裝置上執行或做為測試目的，您可以選取此選項。 如需側載的詳細資訊，請參閱[啟用您的裝置以用於開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
-4.  使用您開發人員帳戶登入合作夥伴中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
-5.  選取您的套件的應用程式名稱，或如果您還沒有保留在合作夥伴中心中的其中一個保留一個新。  
+    如果您已經有關聯您的專案，在市集中的應用程式，您也可以建立適用於相關聯的市集應用程式套件的選項。 如果您選擇**我想要建立側載套件**，Visual Studio 將不會產生應用程式套件上傳 （.msixupload 或.appxupload） 檔案的合作夥伴中心提交。 如果您只想側載您的應用程式以在內部裝置上執行或做為測試目的，您可以選取此選項。 如需側載的詳細資訊，請參閱[啟用您的裝置以用於開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
+4.  在下一個頁面上，使用您開發人員帳戶登入合作夥伴中心。 如果您還沒有開發人員帳戶，精靈會幫助您建立一個。
     ![顯示選取 App 名稱的 [建立應用程式套件] 視窗](images/packaging-screen4.jpg)
-6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 (.appxbundle) 是慣用透過單一應用程式套件檔案因為它包含了為每種處理器架構設定的應用程式套件的集合。 當您選擇產生應用程式套件組合時，將會最終應用程式套件上傳 (.appxupload) 檔案中包含應用程式套件組合，以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
+5.  從目前已登錄到您帳戶的應用程式的清單中選取您的套件的應用程式名稱，或如果您還沒有保留在合作夥伴中心中的其中一個保留一個新。  
+6.  確定您在 **\[選取並設定套件\]** 對話方塊中選取全部的三種架構設定 (x86、x64 及 ARM)，以確保 app 部署到最多種類的裝置。 在 **\[產生應用程式套件組合\]** 清單方塊中，選取 **\[一律\]**。 應用程式套件組合 （.appxbundle 或.msixbundle） 是慣用透過單一應用程式套件檔案因為它包含了為每種處理器架構設定的應用程式套件的集合。 當您選擇產生應用程式套件組合時，應用程式套件組合將會包含在最終應用程式套件上傳 （.appxupload 或.msixupload） 檔案中以及偵錯和當機分析資訊。 如果您不確定選擇哪些架構，或想要深入了解各種裝置所使用的架構，請查看[應用程式套件架構](https://docs.microsoft.com/windows/uwp/packaging/device-architecture)。  
     ![顯示套件設定的 [建立應用程式套件] 視窗](images/packaging-screen5.jpg)
-
-
 7.  包含完整 PDB 符號檔案[分析應用程式](https://docs.microsoft.com/windows/uwp/publish/analytics)效能從合作夥伴中心發佈您的應用程式之後。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
-9.  按一下 **\[建立\]** 產生應用程式套件。 如果您在步驟 3 中選取的**是**，要建立合作夥伴中心提交的套件，精靈會建立套件上傳 (.appxupload) 檔案。 如果您在步驟 3 中選取 **\[否\]**，精靈會根據您在步驟 6 中的選擇建立單一應用程式套件或應用程式套件組合。
+9.  按一下 **\[建立\]** 產生應用程式套件。 如果您在步驟 3 中選取其中一個**我想要建立套件以上傳到 Microsoft Store**選項，並要建立合作夥伴中心提交的套件，精靈會建立套件上傳 （.appxupload 或.msixupload） 檔案。 如果在步驟 3 中選取**我想要建立側載套件**，精靈會建立單一應用程式套件或應用程式套件組合，根據您在步驟 6 中的選項。
 10. 已成功封裝應用程式時，您會看到此對話方塊。  
     ![顯示驗證選項的 [套件建立完成] 視窗](images/packaging-screen6.jpg)
 
@@ -115,7 +113,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
     如果您有您想要用來測試的遠端 windows 10 裝置，您將需要在該裝置上手動安裝 Windows 應用程式認證套件。 下一節會帶您逐步完成下列步驟。 完成此動作之後，接著您可以選取 **\[遠端電腦\]**，按一下 **\[啟動 Windows 應用程式認證套件\]** 以連線到遠端裝置並執行驗證測試。
 
-12. Wack 且您的 app 已通過認證之後，您已經準備好將 app 提交至合作夥伴中心。 請確定您上傳的是正確的檔案。 您可以在方案的根資料夾 `\[AppName]\AppPackages` 找到檔案預設位置，它會以 .appxupload 的副檔名結尾。 如果您選擇應用程式套件組合並選取全部套件架構，名稱的形式為 `[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`。
+12. Wack 且您的 app 已通過認證之後，您已經準備好將 app 提交至合作夥伴中心。 請確定您上傳的是正確的檔案。 可以在您的方案的根資料夾中找到之檔案的預設位置`\[AppName]\AppPackages`，它會以.appxupload 或.msixupload 的副檔名結尾。 名稱將會是表單的`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`或`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果您選擇並選取套件架構的所有應用程式套件組合。
 
 如需提交 app 到合作夥伴中心的詳細資訊，請參閱[應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
 
@@ -133,7 +131,7 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
 ## <a name="sideload-your-app-package"></a>側載您的應用程式套件
 
-Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件檔案即可安裝應用程式套件。 若要使用這種情況，瀏覽至您的應用程式套件或應用程式套件組合檔案，然後按兩下它。 應用程式安裝程式會啟動並提供基本的應用程式資訊，以及安裝按鈕、安裝進度列和任何相關的錯誤訊息。 
+Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件檔案即可安裝應用程式套件。 若要使用這種情況，瀏覽至您的應用程式套件或應用程式套件組合檔案，然後按兩下它。 應用程式安裝程式會啟動並提供基本的應用程式資訊，以及安裝按鈕、安裝進度列和任何相關的錯誤訊息。
 
 ![應用程式安裝程式顯示安裝稱為 Contoso 的範例應用程式](images/appinstaller-screen.png)
 

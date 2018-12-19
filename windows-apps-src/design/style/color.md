@@ -7,12 +7,12 @@ keywords: Windows 10, UWP
 design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 55e93cdbeec5aad487d7c03c1877095dc13955b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e6547267a1d0b478fdda8698bd1dcf89523442b
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947860"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976895"
 ---
 # <a name="color"></a>色彩
 
@@ -213,7 +213,7 @@ Windows 殼層中的輔色演算法會產生輔色的淺色和深色色調。
 
 下圖顯示輔色的各種淺色/深色色調範例，以及如何在彩色表面上套用彩色類型。
 
-![色彩上的色彩](images/color/color-on-color.svg)
+![色彩上的色彩](images/color/color-on-color.png)
 
 如需控制項樣式設定的詳細資訊，請參閱 [XAML 樣式](../controls-and-patterns/xaml-styles.md)。
 

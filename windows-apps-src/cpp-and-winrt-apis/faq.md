@@ -5,12 +5,12 @@ ms.date: 10/26/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, frequently, asked, questions, faq, 標準, 投影, 常見, 提問, 問題, 常見問題集
 ms.localizationpriority: medium
-ms.openlocfilehash: b162fbaaeda8e1ded1f0d3e1d75c840dfa543f4c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a0018047b74ffa385cdd758578f3bdad9078c03
+ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934803"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "8976905"
 ---
 # <a name="frequently-asked-questions-about-cwinrt"></a>有關 C++/WinRT 的常見問題集
 您很可能有撰寫和使用 Windows 執行階段 Api 使用的相關的問題的解答[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。
@@ -149,6 +149,10 @@ a.f();
 ```
 
 上述的建議的模式適用於而不只是 C + + /winrt，但所有的 Windows 執行階段語言投影。
+
+## <a name="how-do-i-turn-a-string-into-a-typemdashfor-navigation-for-example"></a>如何成類型開啟字串&mdash;瀏覽，例如？
+
+在[瀏覽檢視程式碼範例](/windows/uwp/design/controls-and-patterns/navigationview#code-example)（也就是大部分是在 C#） 結束時，還有 C + + /winrt 程式碼片段顯示如何執行此動作。
 
 > [!NOTE]
 > 如果本主題未能回答您的問題，也許則造訪[Visual Studio c + + 開發人員社群](https://developercommunity.visualstudio.com/spaces/62/index.html)中，或使用，您可能會發現說明[`c++-winrt`標記 Stack Overflow 上](https://stackoverflow.com/questions/tagged/c%2b%2b-winrt)。
