@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp, 發佈, 銷售, 散發, store, 儀表板
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f18c7f20673b7875c60c8797bb1e92410cda8fe
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3b9d78014b2416cae7d387261ec1732b1f8932ad
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941558"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980306"
 ---
 # <a name="publish-windows-apps-and-games"></a>發佈 Windows 應用程式與遊戲  
  
@@ -213,7 +213,7 @@ ms.locfileid: "8941558"
 <div class="container">
     <ul class="cardsY panelContent featuredContent">
        <li>
-            <a href="dev-center-insider-program.md">
+            <a href="account-types-locations-and-fees.md">
                 <div class="cardSize">
                     <div class="cardPadding">
                         <div class="card">
@@ -223,7 +223,7 @@ ms.locfileid: "8941558"
                                 </div>
                             </div>
                             <div class="cardText">
-                                <h3>開發人員中心測試人員計畫</h3>
+                                <h3>帳戶類型、位置和費用</h3>
                             </div>
                         </div>
                     </div>

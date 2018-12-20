@@ -2,16 +2,16 @@
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: 存取 HomeGroup 內容
 description: 存取儲存在使用者 HomeGroup 資料夾中的內容，包括圖片、音樂及視訊。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 422d02b8797bef8ea4f793ba652e9e4e34421a9b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 06c42cff51852f7d0456d533af60455d7d1b9caf
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932225"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980296"
 ---
 # <a name="accessing-homegroup-content"></a>存取 HomeGroup 內容
 
@@ -34,7 +34,7 @@ ms.locfileid: "8932225"
     若要存取 HomeGroup 內容，使用者的電腦必須設定 HomeGroup，而且您的 app 必須至少具有下列其中一項功能：**picturesLibrary**、**musicLibrary** 或 **videosLibrary**。 當您的 app 存取 HomeGroup 資料夾時，它將只會看到與您在 app 資訊清單中宣告之功能對應的媒體櫃。 若要深入了解，請參閱[檔案存取權限](file-access-permissions.md)。
 
     > [!NOTE]
-    >  無論應用程式資訊清單中是否宣告了這些功能，或者無論使用者是否使用分享設定，您的應用程式均看不到 HomeGroup 的「文件」媒體櫃中的內容。     
+    > 無論應用程式資訊清單中是否宣告了這些功能，或者無論使用者是否使用分享設定，您的應用程式均看不到 HomeGroup 的「文件」媒體櫃中的內容。     
 
 -   **了解如何使用檔案選擇器**
 

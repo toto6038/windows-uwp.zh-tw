@@ -2,7 +2,7 @@
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: 列舉和查詢檔案和資料夾
 description: 存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢，來查詢位置中的檔案和資料夾。
-ms.date: 06/28/2018
+ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: 47680b97bacaa34570daf2a14dc9bb6a551d4443
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e964650e90870ef09d8d1b142917f96b61002544
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931581"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980276"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
@@ -25,7 +25,7 @@ ms.locfileid: "8931581"
 如需如何儲存通用 Windows 平台應用程式資料的指導方針，請參閱 [ApplicationData](/uwp/api/windows.storage.applicationdata) 類別。
 
 > [!NOTE]
-> 另請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)(英文)。
+> 如需完整範例，請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
 
 ## <a name="prerequisites"></a>先決條件
 

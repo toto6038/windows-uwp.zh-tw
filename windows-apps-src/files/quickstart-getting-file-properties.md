@@ -2,20 +2,18 @@
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: 取得檔案屬性
 description: 取得由 StorageFile 物件所表示檔案的屬性 &amp;\#8212;最上層、基本及延伸&amp;\#8212;。
-ms.date: 02/08/2017
+ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b0747dd3b8992ab456bdb00a4dc7157211eb8ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
+ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932980"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "8980356"
 ---
 # <a name="get-file-properties"></a>取得檔案屬性
-
-
 
 **重要 API**
 
@@ -26,10 +24,7 @@ ms.locfileid: "8932980"
 取得由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。
 
 > [!NOTE]
-> 另請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
-
- 
-
+> 如需完整範例，請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -45,9 +40,8 @@ ms.locfileid: "8932980"
 
 許多最上層檔案屬性都可當成 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 類別的成員來存取。 這些屬性包含檔案屬性、內容類型、建立日期、顯示名稱及檔案類型等。
 
-**注意：** 請記得宣告**picturesLibrary**功能。
-
- 
+> [!NOTE]
+> 請記得宣告 **picturesLibrary** 功能。
 
 此範例會列舉圖片庫中的所有檔案，存取每個檔案的一些最上層屬性。
 
