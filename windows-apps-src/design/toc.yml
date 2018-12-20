@@ -1,0 +1,572 @@
+items:
+- name: 設計基本知識
+  items:
+  - name: 概觀
+    href: basics/index.md
+  - name: 應用程式設計簡介
+    href: basics/design-and-ui-intro.md
+  - name: Fluent Design 系統
+    href: fluent-design-system/index.md
+  - name: 瀏覽基本知識
+    items:
+    - name: 概觀
+      href: basics/navigation-basics.md
+    - name: 實作基本瀏覽
+      href: basics/navigate-between-two-pages.md
+    - name: 瀏覽歷程記錄和向後瀏覽
+      href: basics/navigation-history-and-backwards-navigation.md
+  - name: 命令基本知識
+    href: basics/commanding-basics.md
+  - name: 內容基本知識
+    href: basics/content-basics.md
+  - name: 教學課程
+    items:
+    - name: 建立使用者介面
+      href: basics/xaml-basics-ui.md
+    - name: 建立調適型配置
+      href: basics/xaml-basics-adaptive-layout.md
+    - name: 設定控制項樣式
+      href: basics/xaml-basics-style.md
+- name: 版面配置
+  items:
+  - name: 概觀
+    href: layout/index.md
+  - name: 頁面配置
+    href: layout/page-layout.md
+  - name: 螢幕大小與中斷點
+    href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
+  - name: 回應式設計技術
+    href: layout/responsive-design.md
+  - name: 使用 XAML 定義的版面配置
+    href: layout/layouts-with-xaml.md
+  - name: 顯示多重檢視
+    href: layout/show-multiple-views.md
+  - name: 對齊、邊界及邊框間距
+    href: layout/alignment-margin-padding.md
+  - name: 版面配置面板
+    items:
+    - name: 概觀
+      href: layout/layout-panels.md
+    - name: 教學課程：使用版面配置面板
+      href: layout/grid-tutorial.md
+    - name: 分割檢視
+      href: controls-and-patterns/split-view.md
+    - name: 自訂面板
+      href: layout/custom-panels-overview.md
+    - name: 自訂面板範例：BoxPanel
+      href: layout/boxpanel-example-custom-panel.md
+  - name: 轉換
+    items:
+    - name: 概觀
+      href: layout/transforms.md
+    - name: 3D 透視效果
+      href: layout/3-d-perspective-effects.md
+- name: 控制項
+  items:
+  - name: 概觀
+    href: controls-and-patterns/index.md
+  - name: 控制項與事件簡介
+    href: controls-and-patterns/controls-and-events-intro.md
+  - name: 依功能排序的控制項索引
+    href: controls-and-patterns/controls-by-function.md
+  - name: 基本輸入
+    items:
+    - name: 按鈕
+      href: controls-and-patterns/buttons.md
+    - name: 核取方塊
+      href: controls-and-patterns/checkbox.md
+    - name: 下拉式方塊
+      href: controls-and-patterns/combo-box.md
+    - name: 超連結
+      href: controls-and-patterns/hyperlinks.md
+    - name: 選項按鈕
+      href: controls-and-patterns/radio-button.md
+    - name: 評分控制項
+      href: controls-and-patterns/rating.md
+    - name: 滑桿
+      href: controls-and-patterns/slider.md
+    - name: 切換
+      href: controls-and-patterns/toggles.md
+  - name: 集合
+    items:
+    - name: 概觀
+      href: controls-and-patterns/lists.md
+    - name: 翻轉檢視
+      href: controls-and-patterns/flipview.md
+    - name: 清單檢視和方格檢視
+      href: controls-and-patterns/listview-and-gridview.md
+      items:
+      - name: 項目容器與範本
+        href: controls-and-patterns/item-containers-templates.md
+      - name: 清單檢視的項目範本
+        href: controls-and-patterns/item-templates-listview.md
+      - name: 方格檢視的項目範本
+        href: controls-and-patterns/item-templates-gridview.md
+    - name: 反轉清單
+      href: controls-and-patterns/inverted-lists.md
+    - name: 拖動以重新整理
+      href: controls-and-patterns/pull-to-refresh.md
+    - name: 巢狀 UI
+      href: controls-and-patterns/nested-ui.md
+    - name: 集合命令
+      href: controls-and-patterns/collection-commanding.md
+    - name: 撥動
+      href: controls-and-patterns/swipe.md
+    - name: 樹狀檢視
+      href: controls-and-patterns/tree-view.md
+  - name: 對話方塊和飛出視窗
+    items:
+    - name: 概觀
+      href: controls-and-patterns/dialogs-and-flyouts/index.md
+    - name: 對話方塊
+      href: controls-and-patterns/dialogs-and-flyouts/dialogs.md
+    - name: 飛出視窗
+      href: controls-and-patterns/dialogs-and-flyouts/flyouts.md
+  - name: 表單
+    href: controls-and-patterns/forms.md
+  - name: 媒體、 圖形及圖形
+    items:
+    - name: 影像與影像筆刷
+      href: controls-and-patterns/images-imagebrushes.md
+    - name: 筆跡
+      href: controls-and-patterns/inking-controls.md
+    - name: 媒體播放
+      href: controls-and-patterns/media-playback.md
+    - name: 自訂傳輸控制項
+      href: controls-and-patterns/custom-transport-controls.md
+    - name: 形狀
+      href: controls-and-patterns/shapes.md
+    - name: 網頁檢視
+      href: controls-and-patterns/web-view.md
+  - name: 功能表和工具列
+    items:
+    - name: 應用程式列與命令列
+      href: controls-and-patterns/app-bars.md
+    - name: 命令列飛出視窗
+      href: controls-and-patterns/command-bar-flyout.md
+    - name: 功能表和特色選單
+      href: controls-and-patterns/menus.md
+  - name: 瀏覽
+    items:
+    - name: 中樞
+      href: controls-and-patterns/hub.md
+    - name: 主要/詳細資料
+      href: controls-and-patterns/master-details.md
+    - name: 瀏覽檢視
+      href: controls-and-patterns/navigationview.md
+    - name: 樞紐
+      href: controls-and-patterns/pivot.md
+  - name: 連絡人
+    items:
+    - name: 連絡人卡片
+      href: controls-and-patterns/contact-card.md
+    - name: 個人圖片
+      href: controls-and-patterns/person-picture.md
+  - name: 選擇器
+    items:
+    - name: 色彩選擇器
+      href: controls-and-patterns/color-picker.md
+    - name: 日期和時間控制項
+      href: controls-and-patterns/date-and-time.md
+    - name: 行事曆日期選擇器
+      href: controls-and-patterns/calendar-date-picker.md
+    - name: 行事曆檢視
+      href: controls-and-patterns/calendar-view.md
+    - name: 日期選擇器
+      href: controls-and-patterns/date-picker.md
+    - name: 時間選擇器
+      href: controls-and-patterns/time-picker.md
+  - name: 捲動
+    items:
+    - name: 捲動和移動瀏覽控制項
+      href: controls-and-patterns/scroll-controls.md
+    - name: 語意式縮放
+      href: controls-and-patterns/semantic-zoom.md
+  - name: 搜尋
+    href: controls-and-patterns/search.md
+  - name: 狀態與資訊
+    items:
+    - name: 進度
+      href: controls-and-patterns/progress-controls.md
+    - name: 工具提示
+      href: controls-and-patterns/tooltips.md
+  - name: 文字
+    items:
+    - name: 概觀
+      href: controls-and-patterns/text-controls.md
+    - name: 自動建議方塊
+      href: controls-and-patterns/auto-suggest-box.md
+    - name: 文字區塊
+      href: controls-and-patterns/text-block.md
+    - name: RTF 區塊
+      href: controls-and-patterns/rich-text-block.md
+    - name: 文字方塊
+      href: controls-and-patterns/text-box.md
+    - name: 可編輯對話方塊
+      href: controls-and-patterns/rich-edit-box.md
+    - name: 密碼方塊
+      href: controls-and-patterns/password-box.md
+    - name: 標籤
+      href: controls-and-patterns/labels.md
+    - name: 內容連結
+      href: controls-and-patterns/content-links.md
+    - name: 手寫檢視
+      href: controls-and-patterns/text-handwriting-view.md
+- name: 樣式
+  items:
+  - name: 概觀
+    href: style/index.md
+  - name: 色彩
+    href: style/color.md
+  - name: 印刷樣式
+    href: style/typography.md
+  - name: 圖示
+    items:
+    - name: 概觀
+      href: style/icons.md
+    - name: 應用程式圖示及標誌
+      href: style/app-icons-and-logos.md
+    - name: Segoe MDL2 圖示
+      href: style/segoe-ui-symbol-font.md
+  - name: 壓克力
+    href: style/acrylic.md
+  - name: 顯色顯目提示
+    href: style/reveal.md
+  - name: 顯色焦點
+    href: style/reveal-focus.md
+  - name: 音效
+    href: style/sound.md
+  - name: 撰寫樣式
+    href: style/writing-style.md
+  - name: XAML 筆刷
+    href: style/brushes.md
+  - name: XAML 樣式
+    href: controls-and-patterns/xaml-styles.md
+    items:
+    - name: XAML 控制項範本
+      href: controls-and-patterns/control-templates.md
+    - name: ResourceDictionary 與 XAML 資源參考
+      href: controls-and-patterns/resourcedictionary-and-xaml-resource-references.md
+    - name: XAML 佈景主題資源
+      href: controls-and-patterns/xaml-theme-resources.md
+- name: 動作
+  items:
+  - name: 概觀
+    href: motion/index.md
+  - name: 計時和加/減速
+    href: motion/timing-and-easing.md
+  - name: 方向性和重力
+    href: motion/directionality-and-gravity.md
+  - name: 執行中動作
+    href: motion/motion-in-practice.md
+  - name: 頁面轉換
+    href: motion/page-transitions.md
+  - name: 連接動畫
+    href: motion/connected-animation.md
+  - name: 視差
+    href: motion/parallax.md
+  - name: XAML 中的動畫
+    href: motion/xaml-animation.md
+    items:
+    - name: 屬性動畫
+      href: motion/xaml-property-animations.md
+    - name: 腳本動畫
+      href: motion/storyboarded-animations.md
+    - name: 主要畫面格和 Easing 函式動畫
+      href: motion/key-frame-and-easing-function-animations.md
+- name: 命令介面
+  items:
+  - name: 磚
+    href: shell/tiles-and-notifications/creating-tiles.md
+    items:
+    - name: 次要磚
+      href: shell/tiles-and-notifications/secondary-tiles.md
+      items:
+      - name: 指引
+        href: shell/tiles-and-notifications/secondary-tiles-guidance.md
+      - name: '[釘選到 [開始]] '
+        href: shell/tiles-and-notifications/secondary-tiles-pinning.md
+      - name: 釘選到工作列
+        href: shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md
+      - name: 傳統型應用程式
+        href: shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md
+    - name: 磚內容
+      href: shell/tiles-and-notifications/create-adaptive-tiles.md
+    - name: 磚內容結構描述
+      href: shell/tiles-and-notifications/tile-schema.md
+    - name: 特殊磚範本
+      href: shell/tiles-and-notifications/special-tile-templates-catalog.md
+    - name: 傳送本機磚通知
+      href: shell/tiles-and-notifications/sending-a-local-tile-notification.md
+    - name: 可追蹤式磚通知
+      href: shell/tiles-and-notifications/chaseable-tile-notifications.md
+    - name: 主要磚 API
+      href: shell/tiles-and-notifications/primary-tile-apis.md
+    - name: 對語言、縮放比例及高對比的磚與快顯通知支援
+      href: shell/tiles-and-notifications/tile-toast-language-scale-contrast.md
+  - name: 將應用程式釘選到工作列
+    href: shell/pin-to-taskbar.md
+  - name: 標題列自訂
+    href: shell/title-bar.md
+  - name: 通知
+    items:
+    - name: 快顯通知
+      items:
+      - name: UX 指引
+        href: shell/tiles-and-notifications/toast-ux-guidance.md
+      - name: 快顯通知內容
+        href: shell/tiles-and-notifications/adaptive-interactive-toasts.md
+      - name: 快顯通知內容結構描述
+        href: shell/tiles-and-notifications/toast-schema.md
+      - name: 傳送本機快顯通知
+        href: shell/tiles-and-notifications/send-local-toast.md
+        items:
+        - name: 傳統型應用程式
+          href: shell/tiles-and-notifications/toast-desktop-apps.md
+          items:
+          - name: C# 應用程式
+            href: shell/tiles-and-notifications/send-local-toast-desktop.md
+          - name: C++ WRL 應用程式
+            href: shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md
+      - name: 自訂音效
+        href: shell/tiles-and-notifications/custom-audio-on-toasts.md
+      - name: 進度列
+        href: shell/tiles-and-notifications/toast-progress-bar.md
+      - name: 擱置中更新
+        href: shell/tiles-and-notifications/toast-pending-update.md
+      - name: 自訂時間戳記
+        href: shell/tiles-and-notifications/custom-timestamps-on-toasts.md
+      - name: 集合
+        href: shell/tiles-and-notifications/toast-collections.md
+      - name: 標頭
+        href: shell/tiles-and-notifications/toast-headers.md
+      - name: 通知接聽程式
+        href: shell/tiles-and-notifications/notification-listener.md
+      - name: 通知鏡像
+        href: shell/tiles-and-notifications/notification-mirroring.md
+      - name: 通用關閉
+        href: shell/tiles-and-notifications/universal-dismiss.md
+    - name: 徽章通知
+      href: shell/tiles-and-notifications/badges.md
+    - name: 通知視覺化工具
+      href: shell/tiles-and-notifications/notifications-visualizer.md
+    - name: 通知傳遞方法
+      href: shell/tiles-and-notifications/choosing-a-notification-delivery-method.md
+      items:
+      - name: 通知通道類型
+        href: shell/tiles-and-notifications/channel-types.md
+      - name: Webpush 與 VAPID 的替代通道
+        href: shell/tiles-and-notifications/alternate-channel-vapid-webpush.md
+      - name: 定期通知
+        href: shell/tiles-and-notifications/periodic-notification-overview.md
+    - name: Windows 推播通知服務 (WNS)
+      href: shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md
+      items:
+      - name: WNS 優先順序
+        href: shell/tiles-and-notifications/wns-notification-priorities.md
+      - name: 由推播通知精靈產生的程式碼
+        href: shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md
+    - name: 原始通知
+      href: shell/tiles-and-notifications/raw-notification-overview.md
+- name: 輸入與互動
+  items:
+  - name: 概觀
+    href: input/index.md
+  - name: 輸入基本資訊
+    href: input/input-primer.md
+  - name: 指標輸入
+    href: input/handle-pointer-input.md
+  - name: 注視
+    href: input/gaze-interactions.md
+  - name: 手寫筆與 Windows Ink
+    href: input/pen-and-stylus-interactions.md
+    items:
+    - name: 教學課程：在您的應用程式中新增筆跡支援
+      href: input/ink-walkthrough.md
+    - name: 辨識筆墨筆劃
+      href: input/convert-ink-to-text.md
+    - name: 儲存和擷取筆墨筆劃
+      href: input/save-and-load-ink.md
+    - name: 新增 InkToolbar
+      href: input/ink-toolbar.md
+  - name: 觸控
+    href: input/touch-interactions.md
+  - name: 滑鼠
+    href: input/mouse-interactions.md
+  - name: 鍵盤
+    href: input/keyboard-interactions.md
+    items:
+    - name: 便捷鍵
+      href: input/access-keys.md
+    - name: 鍵盤快速操作
+      href: input/keyboard-accelerators.md
+    - name: 使用鍵盤、遊戲台、遙控器和協助工具進行的焦點瀏覽
+      href: input/focus-navigation.md
+    - name: 程式設計焦點瀏覽
+      href: input/focus-navigation-programmatic.md
+    - name: 鍵盤事件
+      href: input/keyboard-events.md
+    - name: 回應觸控式鍵盤的出現
+      href: input/respond-to-the-presence-of-the-touch-keyboard.md
+    - name: 使用輸入範圍來變更觸控式鍵盤
+      href: input/use-input-scope-to-change-the-touch-keyboard.md
+  - name: 遊戲台與遙控器
+    href: input/gamepad-and-remote-interactions.md
+  - name: 觸控板
+    href: input/touchpad-interactions.md
+  - name: Surface Dial
+    href: input/windows-wheel-interactions.md
+    items:
+    - name: 教學課程：在您的應用程式中 Surface Dial 支援
+      href: input/radialcontroller-walkthrough.md
+  - name: 語音互動
+    href: input/speech-interactions.md
+    items:
+    - name: 語音辨識
+      href: input/speech-recognition.md
+    - name: 指定語音辨識器語言
+      href: input/specify-the-speech-recognizer-language.md
+    - name: 定義自訂辨識限制式
+      href: input/define-custom-recognition-constraints.md
+    - name: 連續聽寫
+      href: input/enable-continuous-dictation.md
+    - name: 音訊輸入問題
+      href: input/manage-issues-with-audio-input.md
+    - name: 語音辨識逾時
+      href: input/set-speech-recognition-timeouts.md
+  - name: Cortana
+    href: input/cortana-interactions.md
+    items:
+    - name: 設計指導方針
+      href: https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines
+    - name: 啟用前景應用程式
+      href: https://docs.microsoft.com/cortana/voice-commands/launch-a-foreground-app-with-voice-commands-in-cortana
+    - name: 修改 VCD 片語清單
+      href: https://docs.microsoft.com/cortana/voice-commands/dynamically-modify-voice-command-definition-vcd-phrase-lists
+    - name: 啟動背景應用程式
+      href: https://docs.microsoft.com/cortana/voice-commands/launch-a-background-app-with-voice-commands-in-cortana
+    - name: 與背景應用程式互動
+      href: https://docs.microsoft.com/cortana/voice-commands/interact-with-a-background-app-in-cortana
+    - name: 背景應用程式的深層連結
+      href: https://docs.microsoft.com/cortana/voice-commands/deep-link-into-your-app-from-cortana
+    - name: 支援自然語言語音命令
+      href: https://docs.microsoft.com/cortana/voice-commands/support-natural-language-voice-commands-in-cortana
+  - name: 多重輸入
+    href: input/multiple-input-design-guidelines.md
+  - name: 輸入插入
+    href: input/input-injection.md
+  - name: 識別輸入裝置
+    href: input/identify-input-devices.md
+  - name: 自訂文字輸入
+    href: input/custom-text-input.md
+  - name: 文字大小調整
+    href: input/text-scaling.md
+  - name: 拖放
+    href: input/drag-and-drop.md
+  - name: 視覺化縮放和調整大小
+    href: input/guidelines-for-optical-zoom.md
+  - name: 移動瀏覽
+    href: input/guidelines-for-panning.md
+  - name: 旋轉
+    href: input/guidelines-for-rotation.md
+  - name: 選取文字和影像
+    href: input/guidelines-for-textselection.md
+  - name: 目標預測
+    href: input/guidelines-for-targeting.md
+  - name: 視覺回饋
+    href: input/guidelines-for-visualfeedback.md
+- name: 裝置
+  items:
+  - name: 概觀
+    href: devices/index.md
+  - name: 針對 Xbox 和電視進行設計
+    href: devices/designing-for-tv.md
+  - name: 混合實境
+    href: devices/designing-for-MR.md
+- name: 可用性
+  items:
+  - name: 概觀
+    href: usability/index.md
+  - name: 協助工具
+    href: accessibility/accessibility.md
+    items:
+    - name: 概觀
+      href: accessibility/accessibility-overview.md
+    - name: 設計全人軟體
+      href: accessibility/designing-inclusive-software.md
+    - name: 開發全人 Windows 應用程式
+      href: accessibility/developing-inclusive-windows-apps.md
+    - name: 協助工具測試
+      href: accessibility/accessibility-testing.md
+    - name: 市集中的協助工具
+      href: accessibility/accessibility-in-the-store.md
+    - name: 協助工具檢查清單
+      href: accessibility/accessibility-checklist.md
+    - name: 公開基本的協助工具資訊
+      href: accessibility/basic-accessibility-information.md
+    - name: 鍵盤協助工具
+      href: accessibility/keyboard-accessibility.md
+    - name: 地標和標題
+      href: accessibility/landmarks-and-headings.md
+    - name: 高對比佈景主題
+      href: accessibility/high-contrast-themes.md
+    - name: 協助工具文字的需求
+      href: accessibility/accessible-text-requirements.md
+    - name: 協助工具應避免的做法
+      href: accessibility/practices-to-avoid.md
+    - name: 自訂自動化對等
+      href: accessibility/custom-automation-peers.md
+      items:
+      - name: 控制項模式和介面
+        href: accessibility/control-patterns-and-interfaces.md
+  - name: 應用程式設定
+    href: app-settings/app-settings-and-data.md
+    items:
+    - name: 指導方針
+      href: app-settings/guidelines-for-app-settings.md
+    - name: 儲存和擷取應用程式設定及資料
+      href: app-settings/store-and-retrieve-app-data.md
+  - name: 全球化和當地語系化
+    href: globalizing/globalizing-portal.md
+    items:
+    - name: 全球化指導方針
+      href: globalizing/guidelines-and-checklist-for-globalizing-your-app.md
+    - name: 了解使用者設定檔與應用程式資訊清單語言
+      href: globalizing/manage-language-and-region.md
+    - name: 全球化您的日期/時間/數字格式
+      href: globalizing/use-global-ready-formats.md
+    - name: 使用範本和模式來設定日期和時間的格式
+      href: globalizing/use-patterns-to-format-dates-and-times.md
+    - name: 調整配置和字型以及支援 RTL
+      href: globalizing/adjust-layout-and-fonts--and-support-rtl.md
+    - name: NumeralSystem 值
+      href: globalizing/glob-numeralsystem-values.md
+    - name: 讓您的應用程式可當地語系化
+      href: globalizing/prepare-your-app-for-localization.md
+    - name: 國際字型
+      href: globalizing/loc-international-fonts.md
+    - name: 將您的應用程式設計為支援雙向文字
+      href: globalizing/design-for-bidi-text.md
+    - name: 使用多語應用程式工具組 4.0
+      href: globalizing/use-mat.md
+    - name: 多語應用程式工具組 4.0 常見問題與疑難排解
+      href: globalizing/mat-faq-troubleshooting.md
+    - name: 針對日本紀元變更準備您的應用程式
+      href: globalizing/japanese-era-change.md
+  - name: 應用程式說明的指導方針
+    href: in-app-help/guidelines-for-app-help.md
+    items:
+    - name: 指示性 UI
+      href: in-app-help/instructional-ui.md
+    - name: 應用程式內說明
+      href: in-app-help/in-app-help.md
+    - name: 外部說明
+      href: in-app-help/external-help.md
+- name: 設計工具組
+  href: downloads/index.md
+ms.openlocfilehash: 410998c21e9351062118d63328c8e580a52b4c08
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962600"

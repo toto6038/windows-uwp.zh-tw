@@ -1,0 +1,185 @@
+items:
+- name: 文件
+  tocHref: /
+  topicHref: /
+  items:
+  - name: Windows
+    tocHref: /windows/
+    topicHref: /windows/
+    items:
+    - name: UWP
+      tocHref: /windows/uwp/
+      topicHref: /windows/uwp/index
+      items:
+      - name: 最新動向
+        tocHref: /windows/uwp/whats-new/
+        topicHref: /windows/uwp/whats-new/windows-10-version-latest
+      - name: 入門
+        tocHref: /windows/uwp/get-started/
+        topicHref: /windows/uwp/get-started/
+      - name: 設計與 UI
+        tocHref: /windows/uwp/design/
+        topicHref: /windows/uwp/design/basics/index
+        items:
+        - name: 設計基本知識
+          tocHref: /windows/uwp/design/basics/
+          topicHref: /windows/uwp/design/basics/index
+        - name: 設計基本知識
+          tocHref: /windows/uwp/design/fluent-design-system/
+          topicHref: /windows/uwp/design/basics/index
+        - name: 版面配置
+          tocHref: /windows/uwp/design/layout/
+          topicHref: /windows/uwp/design/layout/index
+        - name: 樣式
+          tocHref: /windows/uwp/design/style/
+          topicHref: /windows/uwp/design/style/index
+        - name: 動作
+          tocHref: /windows/uwp/design/motion/
+          topicHref: /windows/uwp/design/motion/index
+        - name: 控制項
+          tocHref: /windows/uwp/design/controls-and-patterns/
+          topicHref: /windows/uwp/design/controls-and-patterns/index
+        - name: 輸入與互動
+          tocHref: /windows/uwp/design/input/
+          topicHref: /windows/uwp/design/input/index
+        - name: 裝置
+          tocHref: /windows/uwp/design/devices/
+          topicHref: /windows/uwp/design/devices/index
+        - name: 可用性
+          tocHref: /windows/uwp/design/usability/
+          topicHref: /windows/uwp/design/usability/index
+          items:
+          - name: 協助工具
+            tocHref: /windows/uwp/design/accessibility/
+            topicHref: /windows/uwp/design/accessibility/accessibility
+          - name: 應用程式設定和資料
+            tocHref: /windows/uwp/design/app-settings/
+            topicHref: /windows/uwp/design/app-settings/app-settings-and-data
+          - name: 全球化和當地語系化
+            tocHref: /windows/uwp/design/globalizing/
+            topicHref: /windows/uwp/design/globalizing/globalizing-portal
+          - name: 應用程式說明的指導方針
+            tocHref: /windows/uwp/design/guidelines-for-app-help/
+            topicHref: /windows/uwp/design/guidelines-for-app-help/index
+        - name: 設計工具組
+          tocHref: /windows/uwp/design/downloads/
+          topicHref: /windows/uwp/design/downloads/index
+      - name: 開發
+        tocHref: /windows/uwp/develop/
+        topicHref: /windows/uwp/develop/index
+        items:
+        - name: 應用程式資源
+          tocHref: /windows/uwp/app-resources/
+          topicHref: /windows/uwp/app-resources/index
+        - name: 應用程式間通訊
+          tocHref: /windows/uwp/app-to-app/
+          topicHref: /windows/uwp/app-to-app/index
+        - name: 音訊、視訊和相機
+          tocHref: /windows/uwp/audio-video-camera/
+          topicHref: /windows/uwp/audio-video-camera/index
+        - name: 連絡人、朋友圈及行事曆
+          tocHref: /windows/uwp/contacts-and-calendar/
+          topicHref: /windows/uwp/contacts-and-calendar/index
+        - name: 資料存取
+          tocHref: /windows/uwp/data-access/
+          topicHref: /windows/uwp/data-access/index
+        - name: 資料繫結
+          tocHref: /windows/uwp/data-binding/
+          topicHref: /windows/uwp/data-binding/index
+        - name: 偵錯、測試及效能
+          tocHref: /windows/uwp/debug-test-perf/
+          topicHref: /windows/uwp/debug-test-perf/index
+        - name: 教育應用程式
+          tocHref: /windows/uwp/apps-for-education/
+          topicHref: /windows/uwp/apps-for-education/index
+        - name: 裝置、感應器及電源
+          tocHref: /windows/uwp/devices-sensors/
+          topicHref: /windows/uwp/devices-sensors/index
+        - name: 企業版
+          tocHref: /windows/uwp/enterprise/
+          topicHref: /windows/uwp/enterprise/index
+        - name: 檔案、資料夾和媒體櫃
+          tocHref: /windows/uwp/files/
+          topicHref: /windows/uwp/files/index
+        - name: 圖形
+          tocHref: /windows/uwp/graphics/
+          topicHref: /windows/uwp/graphics/index
+        - name: 託管的 web 應用程式
+          tocHref: /windows/uwp/bridges/
+          topicHref: /windows/uwphttps://developer.microsoft.com/en-us/windows/bridges/hosted-web-apps
+        - name: 啟動、繼續和背景工作
+          tocHref: /windows/uwp/launch-resume/
+          topicHref: /windows/uwp/launch-resume/index
+        - name: 機器學習
+          tocHref: /windows/uwp/machine-learning/
+          topicHref: /windows/uwp/machine-learning/index
+        - name: 地圖和位置
+          tocHref: /windows/uwp/maps-and-location/
+          topicHref: /windows/uwp/maps-and-location/index
+        - name: 營利、參與和 Microsoft Store 服務
+          tocHref: /windows/uwp/monetize/
+          topicHref: /windows/uwp/monetize/index
+        - name: 網路和 Web 服務
+          tocHref: /windows/uwp/networking/
+          topicHref: /windows/uwp/networking/index
+        - name: 封裝應用程式
+          tocHref: /windows/uwp/packaging/
+          topicHref: /windows/uwp/packaging/index
+        - name: 將應用程式移植到 Windows 10
+          tocHref: /windows/uwp/porting/
+          topicHref: /windows/uwp/porting/index
+        - name: 安全性
+          tocHref: /windows/uwp/security/
+          topicHref: /windows/uwp/security/index
+        - name: 執行緒和非同步程式設計
+          tocHref: /windows/uwp/threading-async/
+          topicHref: /windows/uwp/threading-async/index
+        - name: 視覺層
+          tocHref: /windows/uwp/visual-layer/
+          topicHref: /windows/uwp/visual-layer/index
+        - name: Windows 執行階段元件
+          tocHref: /windows/uwp/winrt-components/
+          topicHref: /windows/uwp/winrt-components//index
+        - name: XAML 平台
+          tocHref: /windows/uwp/xaml-platform/
+          topicHref: /windows/uwp/xaml-platform/index
+        - name: API 參考
+          tocHref: /windows/uwp/api/
+          topicHref: https://docs.microsoft.com/en-us/uwp/
+        - name: Windows 即服務
+          tocHref: /windows/uwp/application-development-for-windows-as-a-service/
+          topicHref: /windows/uwp/application-development-for-windows-as-a-service/index
+        - name: 選擇 UWP 版本
+          tocHref: /windows/uwp/choose-a-uwp-version/
+          topicHref: /windows/uwp/choose-a-uwp-version/index
+        - name: 服務
+          tocHref: /windows/uwp/microsoft-services/
+          topicHref: /windows/uwp/microsoft-services/index
+      - name: 開發遊戲
+        tocHref: /windows/uwp/gaming/
+        topicHref: /windows/uwp/gaming/e2e
+        items:
+        - name: Xbox One 上的 UWP
+          tocHref: /windows/uwp/xbox-apps/
+          topicHref: /windows/uwp/xbox-apps/index
+        - name: 遊戲程式設計
+          tocHref: /windows/uwp/gaming/
+          topicHref: /windows/uwp/gaming/index
+        - name: DirectX 程式設計
+          tocHref: /windows/uwp/directx-programming/
+          topicHref: /windows/uwp/directx-programming/index
+        - name: Direct3D 圖形學習指南
+          tocHref: /windows/uwp/graphics-concepts/
+          topicHref: /windows/uwp/graphics-concepts/index
+        - name: Xbox Live
+          tocHref: /windows/uwp/xbox-live/
+          topicHref: /windows/uwp/xbox-live/index
+      - name: 發佈
+        tocHref: /windows/uwp/publish/
+        topicHref: /windows/uwp/publish/index
+ms.openlocfilehash: 1d79038daa4f2a50dd287da879fa8153ca3fb118
+ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "8962500"
