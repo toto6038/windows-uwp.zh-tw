@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 56586e3c26c2adc07bad58e3ee072b4dc57db2ba
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946406"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981412"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
 
@@ -106,7 +106,7 @@ ms.locfileid: "8946406"
 <td align="left"><p><a href="../controls-and-patterns/text-block.md">文字區塊</a>、<a href="../controls-and-patterns/text-box.md">文字方塊</a>、<a href="../controls-and-patterns/rich-edit-box.md">可編輯對話方塊</a></p>
 </td>
 <td align="left">顯示文字。 某些元素可讓使用者編輯文字。 如需詳細資訊，請參閱<a href="../controls-and-patterns/text-controls.md">文字控制項</a>。
-<p>如需如何掩飾文字的指導方針，請參閱[印刷樣式](../style/typography.md)。</p>
+<p>如需如何掩飾文字的指導方針，請參閱<a href="../style/typography.md">印刷樣式</a>。</p>
 </td>
 </tr>
 <tr class="odd">

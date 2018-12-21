@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: d8ea08cd02314fb566680d8f5b249eaf735b977a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a86c3f2662c036dea5dcebf4726a0463d623a3ac
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938204"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981512"
 ---
 # <a name="lists"></a>清單
 
@@ -37,7 +37,7 @@ ms.locfileid: "8938204"
 > <strong>Windows 10 Fall Creators Update - 行為變更</strong>
 > </div>
 > 根據預設，主動式手寫筆現在可在 UWP app 中捲動/移動瀏覽 (例如觸控、觸控板和被動式手寫筆)，而不用執行選擇。
-> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 請參閱 [ [ScrollViewer 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer)API 參考主題，如需詳細資訊。
+> 如果您的應用程式取決於先前的行為，您可以覆寫手寫筆捲動並還原回先前的行為。 如需詳細資訊，請參閱 [ <a href="https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer 類別</a>的 API 參考主題。
 
 ## <a name="list-views"></a>清單檢視
 

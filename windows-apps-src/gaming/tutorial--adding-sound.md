@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 聲音
 ms.localizationpriority: medium
-ms.openlocfilehash: 94044e3d10df15cb1cb256d86ced798395e6af6f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7ceef2da582f5d825949afdf2e116862c990165c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923769"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981382"
 ---
 # <a name="add-sound"></a>加入聲音
 
@@ -337,7 +337,7 @@ void SoundEffect::Initialize(
 
 因為物件之間的互動有兩點不同大幅，根據遊戲，我們不會討論的遊戲物件。 如果您有興趣，若要了解它的實作，請移至[Simple3DGame::UpdateDynamics](#simple3dgameupdatedynamics-method)方法。
 
-原則，在發生衝突時，它會觸發音效播放藉由呼叫 [SoundEffect::PlaySound]((soundeffectplaysound-method)。 這個方法會阻止任何音效目前正在播放，且排入佇列所需的聲音資料的記憶體緩衝區。 它會使用來源音來設定磁碟區、 送出音效的資料，並開始播放。
+原則上，發生衝突時，它會觸發藉由呼叫**soundeffect:: Playsound**播放的音效。 這個方法會阻止任何音效目前正在播放，且排入佇列所需的聲音資料的記憶體緩衝區。 它會使用來源音來設定磁碟區、 送出音效的資料，並開始播放。
 
 ### <a name="soundeffectplaysound-method"></a>Soundeffect:: Playsound 方法
 

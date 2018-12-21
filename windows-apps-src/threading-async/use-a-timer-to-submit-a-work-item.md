@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 2537bad82fc4a17b964f5871ab6ae1434c417f66
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9cad23f5f82ce70b3a9920726d054b59446925b8
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940084"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981522"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
 
-** 重要 API **
+<b>重要 API</b>
 
 -   [**Windows.UI.Core 命名空間**](https://msdn.microsoft.com/library/windows/apps/BR208383)
 -   [**Windows.System.Threading 命名空間**](https://msdn.microsoft.com/library/windows/apps/BR229642)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f64a290443ed5e45a5379b13f70dcc1ea2f57fa9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cda37ee9964a3e7e02f4e4ce3829a8b55e823692
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930139"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981532"
 ---
 # <a name="launch-the-microsoft-store-app"></a>啟動 Microsoft Store 應用程式
 
@@ -41,7 +41,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td rowspan="4">啟動產品的產品詳細資料頁面 (PDP)。 <p>建議針對 Windows 10 的客戶使用市集識別碼，此識別碼將適用於所有作業系統版本，但仍支援先前執行它的方式 (例如︰PFN)。</p>
-<p>每個應用程式的應用程式管理] 區段中的<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">應用程式身分識別</a>頁面上，可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)中找到這些值。</p>
+<p>每個應用程式的應用程式管理] 區段中的<a href="https://msdn.microsoft.com/library/windows/apps/mt148561.aspx">應用程式身分識別</a>頁面上，可以在<a href="https://partner.microsoft.com/dashboard">合作夥伴中心</a>中找到這些值。</p>
 </td>
 <td>
 市集識別碼 <p>(建議使用)</p>
@@ -57,7 +57,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-windows-s
 </tr>
 <tr>
 <td>產品識別碼 (Windows Phone 7.x/8.x)</td>
-<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d </td>
+<td>ms-windows-store://pdp/?PhoneAppId=ca05b3ab-f157-450c-8c49-a1f127f5e71d</td>
 </tr>
 <tr>
 <td>產品識別碼 (Windows 8.x)</td>

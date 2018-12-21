@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4878ce99d449674243c8a3f7360a9e9b0dd6db19
-ms.sourcegitcommit: 1cf04b0b1bd7623cd7f6067b8392dce4372f2c69
+ms.openlocfilehash: 26f47f3175802191a866bcd77e4cc7a95ffdbbe4
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "8970991"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981472"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -215,9 +215,10 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
               VerticalAlignment="Center" />
 ```
 
-    You must add it to the CommandBar in the appropriate location. (For more info, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
+您必須將它新增到適當位置中的 CommandBar。 （如需詳細資訊，請參閱工作溢位功能表 > 一節）。如何定位在 UI 中取決於其中的按鈕都是在標記中。 例如，如果您想要顯示主要命令中的最後一個項目為這個按鈕時，將它新增結尾非常的主要命令清單。
 
-    You can also customize the icon for the button. For more info, see the [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) reference.
+您也可以自訂按鈕的圖示。 如需詳細資訊，請參閱<a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx"><b>AppBarButton</b></a>參考。
+    
 
 2. 在 [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) 覆寫中，從範本中取得按鈕，並註冊適用於其 [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) 事件的處理常式。 這個程式碼位於 `CustomMediaTransportControls` 類別中。
 

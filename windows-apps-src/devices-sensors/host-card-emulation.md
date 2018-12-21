@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: ed6d9e21f3fed4a5f1d02a3b45fa08917a96117f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bc39c3aa59ca9624cc4664136b6294c07ed56083
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933761"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981422"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>建立 NFC 智慧卡應用程式
 
@@ -382,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-* * 重要 * *在 Windows Phone 8.1 的舊版二進位 SMS 攔截支援已移除並取代為新的範圍更廣 SMS 支援在 windows 10 行動裝置版，但任何依賴該的舊版 Windows Phone 8.1 app 必須更新，以使用新的 windows 10 行動裝置版 SMSApi。
+<b>重要</b>在 Windows Phone 8.1 的舊版二進位 SMS 攔截支援已移除並取代為新的範圍更廣 SMS 支援在 windows 10 行動裝置版，但任何依賴該的舊版 Windows Phone 8.1 app 必須更新，以使用新的 windows 10 行動裝置版 SMSApi。

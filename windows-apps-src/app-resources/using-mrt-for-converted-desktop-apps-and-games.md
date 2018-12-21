@@ -5,12 +5,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, uwp, mrt, pri。 資源, 遊戲, centennial, Desktop App Converter, mui, 衛星組件
 ms.localizationpriority: medium
-ms.openlocfilehash: 620efc73502c741e415d210170ea53deefd4e974
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 287c22cbd50f1b69f505bbddd445740fe9422c31
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927951"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981452"
 ---
 # <a name="use-the-windows-10-resource-management-system-in-a-legacy-app-or-game"></a>在舊版應用程式或遊戲中使用 Windows 10 資源管理系統
 
@@ -158,7 +158,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
 
 最後，如果您使用 Visual Studio 建立新專案與移轉您現有的驗證碼，請參閱[用於建立新 UWP 專案的 MSDN 文件](https://msdn.microsoft.com/en-us/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)。 您可以加入現有的程式碼至新專案中，但您可能需要進行明顯的程式碼變更 (尤其是在使用者介面)，以當成單純的 UWP 來執行。 這些變更不在本文件範圍內。
 
-***
+---
 
 ## <a name="phase-1-localize-the-application-manifest"></a>階段 1︰ 當地語系化應用程式資訊清單
 
@@ -178,7 +178,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
  * 如果您的預設語言不是美式英文，請使用適當的 BCP-47 代碼 
 0. 在 XML 檔案中加入下列內容，其中<span style="background-color: yellow">醒目提示文字</span>部分會以您的預設語言的適當 App 文字取代。
 
-**注意**部分這些字串有長度的限制。 如需詳細資訊，請參閱 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)。
+[!Note] 有這些字串的有些長度限制。 如需詳細資訊，請參閱 [VisualElements](/uwp/schemas/appxpackage/appxmanifestschema/element-visualelements?branch=live)。
 
 <blockquote>
 <pre>
@@ -303,7 +303,7 @@ MRT 結合 AppX 架構 (例如，從 Microsoft Store) 的部署，MRT 可自動�
  * `/f` 設定要使用的對應檔案 (建立於上一個步驟) 
  * `/p` 設定輸出套件名稱
  * `/o` 如果適用則設定為覆寫輸出檔案
-0. 一旦建立套件，就必須簽署。 取得簽署憑證的最簡單方式是在 Visual Studio 中建立空白的通用 Windows 專案，然後將複製`.pfx`檔案，它會建立，但您可以建立一個使用手動`MakeCert`和`Pvk2Pfx`中所述的公用程式 [**如何建立應用程式套件簽署憑證**有關 MSDN 主題] (https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832(v=vs.85).aspx)。 
+0. 一旦建立套件，就必須簽署。 取得簽署憑證的最簡單方式是在 Visual Studio 中建立空白的通用 Windows 專案，然後將複製`.pfx`檔案，它會建立，但您可以建立一個使用手動`MakeCert`和`Pvk2Pfx`中所述<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx">如何建立的公用程式應用程式套件簽署憑證</a>，MSDN 上的主題。 
  * **重要︰** 手動建立簽署憑證，確保將檔案放置在不同於來源專案或套件來源的目錄中，否則可能會被納入為套件的一部分，包括私密金鑰！
 0. 若要登入套件，請使用下列命令。 請注意，`AppxManifest.xml` 的 `Identity` 元素中所指定的 `Publisher`，必須符合憑證的 `Subject` (這**不是**`<PublisherDisplayName>` 元素，而是對使用者顯示的當地語系化顯示名稱)。 一如往常，將 `contoso_demo...` 檔名取代為專案的適用名稱，並且 (**非常重要**) 確定 `.pfx` 檔案不在目錄的目錄中 (否則可能建立為套件的一部分，包括私用簽署金鑰！)︰
 

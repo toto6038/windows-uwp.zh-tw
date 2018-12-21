@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 音訊, 輸入, 網路
 ms.localizationpriority: medium
-ms.openlocfilehash: c3e2a03b1302fcf5690e653cbf07efad8ef14fe8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a7cbe5cfbc2146feaefb40cee8ca96ddfa11705c
+ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924590"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "8981402"
 ---
 # <a name="uwp-programming"></a>UWP 程式設計
 
@@ -40,7 +40,7 @@ ms.locfileid: "8924590"
 </tr>
 <tr class="odd">
     <td align="left">
-        <p>[Unity 和 UWP 中遺失 .NET API](missing-dot-net-apis-in-unity-and-uwp.md)</p>
+        <p><a href="missing-dot-net-apis-in-unity-and-uwp.md">Unity 和 UWP 中遺失 .NET API</a></p>
     </td>
     <td align="left">
         <p>深入了解在 Unity 中建置 UWP 遊戲時遺失 .NET API 的問題，以及常見問題的因應措施。</p>
