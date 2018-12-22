@@ -10,12 +10,12 @@ pm-contact: chigy
 design-contact: miguelrb
 doc-status: Draft
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f764d15c1bf5a52a6a48a45856daf9031bbd346
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e898b0552a9485cd15079a37940a2151e4bc9f9
+ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921592"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "8981877"
 ---
 # <a name="keyboard-accelerators"></a>鍵盤快速操作
 
@@ -193,9 +193,9 @@ MenuFlyoutItem.KeyboardAccelerators 元素的 ScopeOwner 會將快速鍵標示�
 
 ## <a name="invoke-a-keyboard-accelerator"></a>叫用鍵盤快速鍵 
 
-[KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 物件利用[使用者介面自動化 (UIA) 控制項模式](https://msdn.microsoft.com/library/windows/desktop/ee671194(v=vs.85).aspx)，在叫用快速鍵時執行動作 。
+[KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 物件利用[使用者介面自動化 (UIA) 控制項模式](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-controlpatternsoverview)，在叫用快速鍵時執行動作 。
 
-UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控制項實作[叫用](https://msdn.microsoft.com/library/windows/desktop/ee671279(v=vs.85).aspx)控制項模式來支援 Click 事件 (控制項通常是藉由按一下、按兩下，或是按下 Enter、預先定義的鍵盤快速鍵或一些其他按鍵輸入組合來叫用)。 使用鍵盤快速鍵時叫用控制項時，XAML 架構會查詢控制項是否實作叫用控制項模式，若是如此則加以啟動 (不需要接聽 KeyboardAcceleratorInvoked 事件)。
+UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控制項實作[叫用](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-implementinginvoke)控制項模式來支援 Click 事件 （通常控制項叫用藉由按一下、 按兩下，或是按下 Enter、 預先定義的鍵盤快速鍵或一些其他按鍵輸入組合）。 使用鍵盤快速鍵時叫用控制項時，XAML 架構會查詢控制項是否實作叫用控制項模式，若是如此則加以啟動 (不需要接聽 KeyboardAcceleratorInvoked 事件)。
 
 在下列範例中，因為按鈕實作叫用模式，Control+S 會觸發 Click 事件按一下。
 
@@ -218,10 +218,12 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控�
 ## <a name="custom-keyboard-accelerator-behavior"></a>自訂鍵盤快速鍵行為
 
 執行快速鍵時會引發 [KeyboardAccelerator](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardaccelerator) 物件的 Invoked 事件。 [KeyboardAcceleratorInvokedEventArgs](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs) 事件物件包含下列屬性：
-- **Handled** (布林值)：將此屬性設定為 true 可防止事件觸發控制項模式，並停止加速鍵執行事件反昇。 預設值為 false。
-- **Element** (DependencyObject)：包含快速鍵的物件。
 
-以下示範如何定義鍵盤快速鍵的集合，以及如何處理 Invoked 事件。
+- [**處理**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.handled)（布林值）： 將此設定為 true 可防止事件觸發控制項模式，並停止快速鍵事件反昇。 預設值為 false。
+- [**項目**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.element)(DependencyObject): 與快速鍵相關聯的物件。
+- [**KeyboardAccelerator**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.keyboardacceleratorinvokedeventargs.keyboardaccelerator)： 用來引發 Invoked 事件的鍵盤快速鍵。
+
+在這裡我們示範如何定義的鍵盤快速鍵的項目集合中 ListView 的資訊，以及如何處理 Invoked 事件的每個快速鍵。
 
 ``` xaml
 <ListView x:Name="MyListView">
@@ -229,19 +231,20 @@ UIA [控制項模式] 會公開常見的控制項功能。 例如，Button 控�
     <KeyboardAccelerator Key="A" Modifiers="Control,Shift" Invoked="SelectAllInvoked" />
     <KeyboardAccelerator Key="F5" Invoked="RefreshInvoked"  />
   </ListView.KeyboardAccelerators>
-</ListView>   
+</ListView>
 ```
 
 ``` csharp
-void SelectAllInvoked (KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
+void SelectAllInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  CustomSelectAll(MyListView);
+  MyListView.SelectAll();
   args.Handled = true;
 }
 
 void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventArgs args)
 {
-  Refresh(MyListView);
+  MyListView.SelectionMode = ListViewSelectionMode.None;
+  MyListView.SelectionMode = ListViewSelectionMode.Multiple;
   args.Handled = true;
 }
 ```
@@ -257,7 +260,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 ``` xaml
 <ListView >
   <ListView.KeyboardAccelerators>
-    <KeyboardAccelerator Key="A" 
+    <KeyboardAccelerator Key="A"
       Modifiers="Control"
       Invoked="CustomListViewSelecAllInvoked" />
   </ListView.KeyboardAccelerators>
@@ -487,7 +490,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 ### <a name="when-an-accelerator-is-invoked"></a>叫用快速鍵時
 
-加速鍵由兩種類型的按鍵組成：輔助按鍵和非輔助按鍵。 輔助按鍵包括 Shift、Menu、Control 以及 Windows 鍵，這些按鍵透過 [VirtualKeyModifiers](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.System.VirtualKeyModifiers) 來公開。 非輔助按鍵是任何虛擬按鍵，例如 Delete、F3、空格鍵、Esc，以及所有英數字元與標點符號按鍵。 當使用者按住一個或多個輔助按鍵不放再按下非輔助按鍵時，會叫用鍵盤快速鍵。 例如，如果使用者按下 Ctrl+Shift+M，當使用者按 M 時，架構會檢查輔助按鍵 (Ctrl 和 Shift)，若有，即引發快速鍵。
+加速鍵由兩種類型的按鍵組成：輔助按鍵和非輔助按鍵。 輔助按鍵包括 Shift、Menu、Control 以及 Windows 鍵，這些按鍵透過 [VirtualKeyModifiers](https://docs.microsoft.com/uwp/api/Windows.System.VirtualKeyModifiers) 來公開。 非輔助按鍵是任何虛擬按鍵，例如 Delete、F3、空格鍵、Esc，以及所有英數字元與標點符號按鍵。 當使用者按住一個或多個輔助按鍵不放再按下非輔助按鍵時，會叫用鍵盤快速鍵。 例如，如果使用者按下 Ctrl+Shift+M，當使用者按 M 時，架構會檢查輔助按鍵 (Ctrl 和 Shift)，若有，即引發快速鍵。
 
 > [!NOTE]
 > 依設計，快速鍵會自動重複 (例如，當使用者按下 Ctrl+Shift 後再按住 M 時，快速鍵重複叫用直到放開 M 為止)。 無法修改這種行為。
@@ -499,7 +502,7 @@ void RefreshInvoked(KeyboardAccelerator sender, KeyboardAcceleratorInvokedEventA
 
 在 XAML 中，處理按鍵輸入就好像只有一個輸入反昇管線一樣。 KeyDown/KeyUp 事件和字元輸入使用這個輸入管線。 例如，如果元素具有焦點且使用者按下按鍵，就會在元素上引發 KeyDown 事件，後面跟著引發元素的上層，繼而依此沿樹狀結構向上類推，直到 args.Handled 屬性是 true 為止。
 
-有些控制項也會使用 KeyDown 事件實作內建控制項快速鍵。 當控制項有鍵盤快速鍵時，會處理 KeyDown 事件，這表示不會有 KeyDown 事件反昇。 例如，RichEditBox 支援使用 Ctrl+C 複製。 按下 Ctrl 時，會引發 KeyDown 事件並執行事件反昇，但使用者又同時按 C 時，反而會將 KeyDown 事件標示為 Handled 並且不加以引發 (除非 [UIElement.AddHandler](http://msdn.microsoft.com/library/windows/apps/xaml/Windows.UI.Xaml.UIElement.AddHandler) 的 handledEventsToo 參數設定為 true)。
+有些控制項也會使用 KeyDown 事件實作內建控制項快速鍵。 當控制項有鍵盤快速鍵時，會處理 KeyDown 事件，這表示不會有 KeyDown 事件反昇。 例如，RichEditBox 支援使用 Ctrl+C 複製。 按下 Ctrl 時，會引發 KeyDown 事件並執行事件反昇，但使用者又同時按 C 時，反而會將 KeyDown 事件標示為 Handled 並且不加以引發 (除非 [UIElement.AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler) 的 handledEventsToo 參數設定為 true)。
 
 #### <a name="the-characterreceived-event"></a>CharacterReceived 事件
 
