@@ -8,12 +8,12 @@ ms.date: 08/02/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: f81c435690c7bf17066be5f49de4994f146fc5c9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 22ad7a1ac6160fd8b1cfb70c69f299c5d89192d3
+ms.sourcegitcommit: 17896441726714fa66b5ca4f9df2cdb2259f360e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945177"
+ms.lasthandoff: 12/26/2018
+ms.locfileid: "8988237"
 ---
 # <a name="text-scaling"></a>文字大小調整
 
@@ -128,7 +128,7 @@ DirectWrite、 GDI，以及 XAML SwapChainPanels 原本不支援文字縮放比�
 
 ### <a name="specify-text-trimming-behavior"></a>指定文字修剪行為
 
-如果文字換行並不是慣用的行為，請裁剪文字，或指定的文字修剪行為的刪節號，可讓大部分文字控制項。 裁剪是慣用省略符號以省略符號佔用空間本身。
+如果文字換行並不是慣用的行為，大部分的文字控制項可讓您裁剪文字，或指定文字修剪行為的省略符號。 裁剪是慣用省略符號以省略符號佔用空間本身。
 
 > [!NOTE]
 > 如果您需要裁剪文字，裁剪的字串不開頭的結尾。

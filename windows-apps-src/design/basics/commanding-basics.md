@@ -10,12 +10,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 7ef7927af7acc8f437a323f374ae7dbf8a36d452
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0f78ffb01bf29076733af40b365e91592c71e9c8
+ms.sourcegitcommit: 17896441726714fa66b5ca4f9df2cdb2259f360e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939026"
+ms.lasthandoff: 12/26/2018
+ms.locfileid: "8988247"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
@@ -23,7 +23,7 @@ ms.locfileid: "8939026"
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳的命令體驗
 
-最重要的命令介面是哪些您嘗試讓使用者完成。 當您計劃您的應用程式的功能，請考慮要完成這些工作與您想要啟用的使用者體驗的必要步驟。 一旦您已完成的初始草稿的這些體驗，您可以進行決策的工具和互動來實作它們。
+最重要的命令介面是您正嘗試讓使用者完成。 當您計劃您的應用程式的功能，請考慮要完成這些工作與您想要啟用的使用者體驗的必要步驟。 一旦您已完成的初始草稿的這些體驗，您可以進行決策的工具和互動來實作它們。
 
 以下是一些常見的應用程式體驗：
 
