@@ -5,12 +5,12 @@ keywords: 多重執行個體 uwp
 ms.date: 09/21/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cceac0cf4b9cc4c13c0e99ce5beffad70787256
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 89ffa2f3480664131af6664988bd9fb31687fe32
+ms.sourcegitcommit: 616adaaf15ae1b41e867181326c094f42ba6ec07
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940879"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "8990204"
 ---
 # <a name="create-a-multi-instance-universal-windows-app"></a>建立多執行個體通用 Windows 應用程式
 
@@ -25,7 +25,7 @@ ms.locfileid: "8940879"
 
 如果您正在建立新的多重執行個體應用程式，您可以安裝 **Multi-Instance App Project Templates.VSIX** (可從 [Visual Studio Marketplace](https://aka.ms/E2nzbv) 取得)。 在安裝範本後，便可從 \[Visual C#\] > \[Windows Universal\]**** (或 \[其他語言\] > \[Visual C++\] > \[Windows Universal\]****) 下的 \[新專案\] **** 對話方塊中取得這些範本。
 
-這會安裝兩個範本：一是**多重執行個體 UWP 應用程式**，可提供用於建立多重執行個體應用程式的範本；另一是**多重執行個體重新導向 UWP 應用程式**，可提供額外的邏輯作為建置的基礎，以啟動新的執行個體，或選擇性地啟用已啟動的執行個體。 例如，或許您在編輯相同文件時只想要一個執行個體，因此您帶入會讓該檔案對前端開啟的執行個體，而非啟動新的執行個體。
+這會安裝兩個範本：一是**多重執行個體 UWP 應用程式**，可提供用於建立多重執行個體應用程式的範本；另一是**多重執行個體重新導向 UWP 應用程式**，可提供額外的邏輯作為建置的基礎，以啟動新的執行個體，或選擇性地啟用已啟動的執行個體。 為例，或許您只想編輯相同文件一次一個執行個體，因此您帶入有該檔案的執行個體開啟到前景，而非啟動新的執行個體。
 
 這兩個範本新增`SupportsMultipleInstances`到`package.appxmanifest`檔案。 請注意命名空間前置詞`desktop4`和`iot2`： 只有目標為桌面或物聯網 (IoT) 專案，支援多重執行個體。
 
