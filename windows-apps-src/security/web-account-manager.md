@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: b0a052d08c6b0816d977d3e86881540194075818
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
+ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941276"
+ms.lasthandoff: 12/31/2018
+ms.locfileid: "8990326"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
@@ -74,6 +74,9 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 ![帳戶設定窗格](images/tb-1.png)
 
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
+
+> [!TIP]
+> 或者，您可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[顯示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，這樣將會傳回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，來查詢作業的狀態。 
 
 ## <a name="register-for-accountcommandsrequested"></a>註冊 AccountCommandsRequested
 
