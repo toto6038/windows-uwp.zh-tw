@@ -2,25 +2,25 @@
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
 title: 封裝 UWP 應用程式
 description: 若要發佈或銷售您的通用 Windows 平台 (UWP) 應用程式，您必須為其建立應用程式套件。
-ms.date: 09/30/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows 10, uwp
 f1_keywords:
 - vs.packagewizard
 - vs.storeassociationwizard
 ms.localizationpriority: medium
-ms.openlocfilehash: f11fa421fe5bcbf8f37098df91344abdb9915890
-ms.sourcegitcommit: 8ac3818db796a144b44f848b6211bc46a62ab544
+ms.openlocfilehash: dc5f033737e36bd5a891543fbad6b3eba933f052
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976885"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991624"
 ---
 # <a name="package-a-uwp-app-with-visual-studio"></a>使用 Visual studio 封裝 UWP app
 
 若要銷售通用 Windows 平台 (UWP) app 或將其散發給其他使用者，您必須封裝應用程式。 如果不想透過 Microsoft Store 散發應用程式，您可以直接將應用程式套件側載至裝置或透過 [Web 安裝](installing-UWP-apps-web.md)散發。 本文描述使用 Visual Studio 設定、建立和測試 UWP app 套件的程序。 如需管理和部署線 (LOB) 應用程式的相關資訊，請查看[企業應用程式管理](https://docs.microsoft.com/windows/client-management/mdm/enterprise-app-management)。
 
-在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案到[合作夥伴中心](https://partner.microsoft.com/dashboard)。 在這些選項中，提交套件上傳檔案將會提供最佳體驗。
+在 Windows 10 中，您可以提交應用程式套件、 應用程式套件組合或完整的應用程式套件上傳檔案到[合作夥伴中心](https://partner.microsoft.com/dashboard)。 這些選項，提交應用程式套件上傳檔案將會提供最佳體驗。
 
 ## <a name="types-of-app-packages"></a>應用程式套件類型
 
@@ -31,7 +31,7 @@ ms.locfileid: "8976885"
     應用程式套件組合是一種套件，可以包含多個應用程式套件，每一個為了支援特定裝置架構而建置。 例如應用程式套件組合可以包含適用於 x86、x64 及 ARM 設定的三個不同的應用程式套件。 應該盡可能產生應用程式套件組合，因為它們允許您的應用程式用於最多種類的裝置。  
 
 - **應用程式套件上傳檔案 （.appxupload 或.msixupload）**  
-    單一檔案，可以包含多個應用程式套件或單一應用程式套件組合以支援各種處理器架構。 上傳檔案也包含符號檔案，可在應用程式發佈到 Microsoft Store 之後[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果您封裝您的應用程式與 Visual Studio，以便提交至合作夥伴中心進行發佈，此檔案，將會自動建立為您。 請務必注意，這些是**僅**有效的應用程式套件合作夥伴中心提交可以使用 Visual Studio 中建立的。
+    單一檔案，可以包含多個應用程式套件或單一應用程式套件組合以支援各種處理器架構。 在 Microsoft Store 中發佈您的應用程式之後，應用程式套件上傳檔案也包含符號檔案，來[分析應用程式效能](https://docs.microsoft.com/windows/uwp/publish/analytics)。 如果您封裝您的應用程式與 Visual Studio，以便提交至合作夥伴中心進行發佈，此檔案，將會自動建立為您。
 
 以下是準備與建立應用程式套件的步驟概觀：
 
@@ -44,7 +44,7 @@ ms.locfileid: "8976885"
 
 ## <a name="before-packaging-your-app"></a>封裝您的應用程式之前
 
-1.  **測試您的應用程式。** 封裝您的應用程式，合作夥伴中心提交之前，請確定它如預期般在您計劃支援的所有裝置系列上運作。 這些裝置系列可能包含桌上型電腦、行動裝置、Surface Hub、Xbox、IoT 裝置或其他等。
+1.  **測試您的應用程式。** 封裝您的應用程式，合作夥伴中心提交之前，請確定它如預期般在您計劃支援的所有裝置系列上運作。 這些裝置系列可能包含桌上型電腦、行動裝置、Surface Hub、Xbox、IoT 裝置或其他等。 如需有關部署和測試您的應用程式使用 Visual Studio 的詳細資訊，請參閱[部署和偵錯 UWP 應用程式](../debug-test-perf/deploying-and-debugging-uwp-apps.md)。
 2.  **最佳化您的應用程式。** 您可以使用 Visual Studio 的分析與偵錯工具來最佳化您的 UWP 應用程式的效能。 例如，UI 回應性時間軸工具、記憶體使用量工具及 CPU 使用量工具等。 如需這些工具的詳細資訊，請參閱[程式碼剖析功能之旅](https://docs.microsoft.com/visualstudio/profiling/profiling-feature-tour)主題。
 3.  **檢查 .NET Native 相容性 (適用於 VB 和 C# 應用程式)。** 在通用 Windows 平台中，有原生編譯器可改善您的應用程式的執行階段效能。 由於這項變更，您應該在此編譯環境中測試您的 app。 根據預設，**Release** 組建組態可啟用 .NET 原生工具鏈，因此請務必使用這個 **Release** 組態測試您的 app，確認您的 app 是否如預期般運作。 [偵錯 .NET Native Windows 通用 app](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx)詳細說明一些使用 .NET Native 可能會發生的常見偵錯問題。
 
@@ -76,14 +76,12 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
 
 ## <a name="create-an-app-package-upload-file"></a>建立應用程式套件上傳檔案
 
-若要透過 Microsoft 網上商店應用程式發佈，您必須建立應用程式套件 （.appx 或.msix）、 應用程式套件組合 （.appxbundle 或.msixbundle），或上傳套件 (.appxupload) 並[提交到合作夥伴中心已封裝的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以提交到合作夥伴中心單獨應用程式套件或應用程式套件組合，您會建議提交上傳套件。
+若要透過 Microsoft 網上商店應用程式發佈，您必須建立應用程式套件 （.appx 或.msix）、 應用程式套件組合 （.appxbundle 或.msixbundle），或應用程式套件上傳檔案 （.appxupload 或.msixupload） 並[提交到合作夥伴中心已封裝的應用程式](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 雖然可以提交到合作夥伴中心單獨應用程式套件或應用程式套件組合，我們建議您提交應用程式套件上傳檔案。 您可以在 Visual Studio 中，使用 \ [**建立應用程式套件**精靈來建立應用程式套件上傳檔案，或您可以建立一個以手動方式從現有的應用程式套件或應用程式套件組合。
 
 >[!NOTE]
-> 應用程式套件上傳檔案 （.appxupload 或.msixupload） 是**僅**的類型可以使用 Visual Studio 中建立的合作夥伴中心的有效應用程式套件。 其他有效[應用程式套件可以手動建立](https://docs.microsoft.com/windows/uwp/packaging/create-app-package-with-makeappx-tool)，而不使用 Visual Studio。
+> 如果您想要手動建立應用程式套件 （.appx 或.msix） 或應用程式套件組合 （.appxbundle 或.msixbundle），請參閱 <<c0>建立應用程式套件使用 MakeAppx.exe 工具。
 
-您可以使用 **\[建立應用程式套件\]** 精靈來執行這項操作。 請依照下列步驟來建立適用於使用 Visual Studio 的合作夥伴中心提交的套件。
-
-**若要建立應用程式套件上傳檔案**
+### <a name="to-create-your-app-package-upload-file-using-visual-studio"></a>若要建立使用 Visual Studio 您的應用程式套件上傳檔案
 
 1.  在 **\[方案總管\]** 中，開啟您的 UWP app 專案的方案。
 2.  在專案上按一下滑鼠右鍵，然後選擇 **\[Microsoft Store\]** -> **\[建立應用程式套件\]**。 如果此選項停用或未顯示，請確定專案是通用 Windows 專案。  
@@ -102,34 +100,54 @@ Visual Studio 資訊清單設計工具可讓您輕鬆更新資訊清單檔案而
     ![顯示套件設定的 [建立應用程式套件] 視窗](images/packaging-screen5.jpg)
 7.  包含完整 PDB 符號檔案[分析應用程式](https://docs.microsoft.com/windows/uwp/publish/analytics)效能從合作夥伴中心發佈您的應用程式之後。 設定任何其他詳細資料，例如版本編號或套件輸出位置。
 9.  按一下 **\[建立\]** 產生應用程式套件。 如果您在步驟 3 中選取其中一個**我想要建立套件以上傳到 Microsoft Store**選項，並要建立合作夥伴中心提交的套件，精靈會建立套件上傳 （.appxupload 或.msixupload） 檔案。 如果在步驟 3 中選取**我想要建立側載套件**，精靈會建立單一應用程式套件或應用程式套件組合，根據您在步驟 6 中的選項。
-10. 已成功封裝應用程式時，您會看到此對話方塊。  
+10. 當已成功封裝您的應用程式時，您會看到這個對話方塊，您可以擷取您的應用程式套件上傳檔案從指定的輸出位置。 到目前為止，您可以[驗證本機電腦或遠端電腦上的應用程式套件](#validate-your-app-package)。
     ![顯示驗證選項的 [套件建立完成] 視窗](images/packaging-screen6.jpg)
 
-    驗證您的應用程式，才能送出至合作夥伴中心進行本機或遠端電腦上的認證。 您只能驗證您的應用程式套件的發行組建，而非偵錯組建。
+### <a name="to-create-your-app-package-upload-file-manually"></a>若要手動建立您的應用程式套件上傳檔案
 
-11. 若要在本機驗證 App，請將 **\[本機電腦\]** 保持在選取的選項，然後按一下 **\[啟動 Windows 應用程式認證套件\]**。 如需使用 Windows 應用程式認證套件測試應用程式的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
+1. 將資料夾中的下列檔案：
+    - 一或多個應用程式套件 （.msix 或.appx） 或應用程式套件組合 （.msixbundle 或.appxbundle）。
+    - .appxsym 檔案。 這是壓縮的.pdb 檔案，包含您的應用程式使用合作夥伴中心內的[損毀分析](../publish/health-report.md)的公用符號。 您可以省略這個檔案，但如果您這麼做，任何損毀分析或偵錯資訊將會供您的應用程式。
+2. 壓縮資料夾。
+3. 將壓縮的資料夾副檔名從.zip 變更.msixupload 或.appxupload。
+
+### <a name="validate-your-app-package"></a>驗證您的應用程式套件
+
+驗證您的應用程式，才能送出至合作夥伴中心進行本機或遠端電腦上的認證。 您只能驗證您的應用程式套件的發行組建，而非偵錯組建。 如需提交 app 到合作夥伴中心的詳細資訊，請參閱[應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
+
+**若要驗證您的應用程式套件在本機**
+
+1. 在 [**建立應用程式套件**] 精靈的最終**套件建立完成**] 頁面，請保留選取**本機電腦**選項，然後按一下**啟動 Windows 應用程式認證套件**。 如需使用 Windows 應用程式認證套件測試應用程式的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
 
     Windows 應用程式認證套件會執行各種測試並傳回結果。 如需更具體的資訊，請參閱 [Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/mt186450)。
 
     如果您有您想要用來測試的遠端 windows 10 裝置，您將需要在該裝置上手動安裝 Windows 應用程式認證套件。 下一節會帶您逐步完成下列步驟。 完成此動作之後，接著您可以選取 **\[遠端電腦\]**，按一下 **\[啟動 Windows 應用程式認證套件\]** 以連線到遠端裝置並執行驗證測試。
 
-12. Wack 且您的 app 已通過認證之後，您已經準備好將 app 提交至合作夥伴中心。 請確定您上傳的是正確的檔案。 可以在您的方案的根資料夾中找到之檔案的預設位置`\[AppName]\AppPackages`，它會以.appxupload 或.msixupload 的副檔名結尾。 名稱將會是表單的`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`或`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果您選擇並選取套件架構的所有應用程式套件組合。
+2. Wack 且您的 app 已通過認證之後，您已經準備好將 app 提交至合作夥伴中心。 請確定您上傳的是正確的檔案。 可以在您的方案的根資料夾中找到之檔案的預設位置`\[AppName]\AppPackages`，它會以.appxupload 或.msixupload 的副檔名結尾。 名稱將會是表單的`[AppName]_[AppVersion]_x86_x64_arm_bundle.appxupload`或`[AppName]_[AppVersion]_x86_x64_arm_bundle.msixupload`如果您選擇並選取套件架構的所有應用程式套件組合。
 
-如需提交 app 到合作夥伴中心的詳細資訊，請參閱[應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。
-
-**驗證遠端 windows 10 裝置上的應用程式套件**
+**若要驗證的遠端 windows 10 裝置上的應用程式套件**
 
 1.  [啟用您的裝置以進行開發](https://msdn.microsoft.com/library/windows/apps/Dn706236)的指示來啟用 windows 10 裝置，以進行開發。
-    **重要**您無法驗證在遠端 ARM 裝置上的應用程式套件是否適用於 windows 10。
+    >[!IMPORTANT]
+    > 您無法驗證在遠端 ARM 裝置上的應用程式套件適用於 windows 10。
 2.  下載和安裝 Visual Studio 遠端工具。 這些工具可用來以遠端方式執行 Windows 應用程式認證套件。 您可以瀏覽[在遠端電腦上執行 UWP app](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)，以取得關於這些工具的詳細資訊 (包括下載位置)。
 3.  下載必要的[Windows 應用程式認證套件](http://go.microsoft.com/fwlink/p/?LinkID=309666)，然後再將它安裝在您的遠端 windows 10 裝置上。
 4.  在精靈的 **\[套件建立完成\]** 頁面上，選擇 **\[遠端電腦\]** 選項按鈕，然後選擇 **\[測試連線\]** 按鈕旁的省略符號按鈕。
-    **注意：** 是只有當您選取至少一個支援驗證的方案設定時，才可使用 [**遠端電腦**] 選項按鈕。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
+    >[!NOTE]
+    > [**遠端電腦**] 選項按鈕是只有當您選取至少一個支援驗證的方案設定時，才可使用。 如需使用 WACK 測試 app 的詳細資訊，請參閱 [Windows 應用程式認證套件](https://msdn.microsoft.com/library/windows/apps/Mt186449)。
 5.  指定您的子網路內的裝置種類，或提供子網路以外的裝置的網域名稱伺服器 (DNS) 名稱或 IP 位址。
 6.  如果您的裝置不需要您使用 Windows 認證登入，請在 **\[驗證模式\]** 清單中選擇 **\[無\]**。
 7.  選擇 **\[選取\]** 按鈕，然後再選擇 **\[啟動 Windows 應用程式認證套件\]** 按鈕。 如果遠端工具在該裝置上執行，Visual Studio 會與裝置連線，接著執行驗證測試。 請參閱 [Windows 應用程式認證套件測試](https://msdn.microsoft.com/library/windows/apps/mt186450)。
 
 ## <a name="sideload-your-app-package"></a>側載您的應用程式套件
+
+使用 UWP 應用程式套件，應用程式未安裝到裝置，因為它們是使用傳統型應用程式。 一般而言，您從 Microsoft Store 下載 UWP app 時，也會同時將應用程式安裝到您的裝置。 應用程式不需要發佈到 Microsoft Store 即可安裝 (側載)。 這可讓您安裝和使用應用程式套件的測試應用程式檔案所建立。 如果您不想在 Microsoft Store 中銷售某個應用程式，例如企業營運 (LOB) 應用程式，您可以側載該應用程式，讓您公司中的其他使用者可以使用它。
+
+您可以側載您的目標裝置上的應用程式之前，您必須[啟用裝置來進行開發](../get-started/enable-your-device-for-development.md)。
+
+側載您的應用程式在 windows 10 行動裝置版裝置上，使用[WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)工具。 針對桌上型電腦、 膝上型電腦和平板電腦，請依照下列指示。
+
+### <a name="sideload-your-app-package-on-windows-10-anniversary-update-or-later"></a>側載您的應用程式封裝在 Windows 10 年度更新版或更新版本
 
 Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件檔案即可安裝應用程式套件。 若要使用這種情況，瀏覽至您的應用程式套件或應用程式套件組合檔案，然後按兩下它。 應用程式安裝程式會啟動並提供基本的應用程式資訊，以及安裝按鈕、安裝進度列和任何相關的錯誤訊息。
 
@@ -138,15 +156,7 @@ Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件
 > [!NOTE]
 > 應用程式安裝程式假設應用程式已受到裝置的信任。 如果要側載開發人員或企業應用程式，您必須在裝置的受信任的人或受信任的發行者憑證授權單位存放區安裝簽署憑證。 如果您不確定如何執行此動作，請參閱[安裝測試憑證](https://docs.microsoft.com/windows-hardware/drivers/install/installing-test-certificates)。
 
-### <a name="sideload-your-app-on-previous-versions-of-windows"></a>在舊版 Windows 上側載您的應用程式
-使用 UWP app 套件時，因為它們是使用傳統型應用程式，所以應用程式不會安裝到裝置上。 一般而言，您從 Microsoft Store 下載 UWP app 時，也會同時將應用程式安裝到您的裝置。 應用程式不需要發佈到 Microsoft Store 即可安裝 (側載)。 這可讓您安裝和使用應用程式套件的測試應用程式檔案所建立。 如果您不想在 Microsoft Store 中銷售某個應用程式，例如企業營運 (LOB) 應用程式，您可以側載該應用程式，讓您公司中的其他使用者可以使用它。
-
-下列清單提供您的應用程式的側載需求。
-
--   您必須[啟用您的裝置以進行開發](https://msdn.microsoft.com/library/windows/apps/Dn706236)。
--   側載您的應用程式在 windows 10 行動裝置版裝置上，使用[WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md)工具。
-
-**側載應用程式到桌上型電腦、膝上型電腦或平板電腦**
+### <a name="sideload-your-app-package-on-previous-versions-of-windows"></a>您的應用程式套件的舊版 Windows 側載
 
 1.  複製要安裝至目標裝置的應用程式版本的資料夾。
 
@@ -165,6 +175,7 @@ Windows 10 年度更新版引進了新功能，只需按兩下應用程式套件
     ![顯示瀏覽到 PowerShell 指令碼的檔案總管](images/packaging-screen7.jpg)
 
     安裝完應用程式套件時，PowerShell 視窗會顯示此訊息：**您的應用程式已順利安裝。**
+    >[!TIP]
+    > 若要開啟快顯功能表在平板電腦上的，觸控式的螢幕您要以滑鼠右鍵按一下，暫停直到完整的圓形顯示，然後提起手指。 提起手指後，就會開啟捷徑功能表。
 
-    **提示**︰ 若要開啟平板電腦上的捷徑功能表，觸碰的螢幕您要以滑鼠右鍵按一下，暫停直到完整的圓形顯示，然後提起手指。 提起手指後，就會開啟捷徑功能表。
 4.  按一下 [開始] 按鈕以依據名稱搜尋應用程式，然後啟動它。

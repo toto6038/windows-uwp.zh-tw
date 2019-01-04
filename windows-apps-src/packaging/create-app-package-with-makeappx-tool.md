@@ -1,35 +1,29 @@
 ---
 title: 使用 MakeAppx.exe 工具建立應用程式套件
 description: MakeAppx.exe 建立、加密、解密應用程式套件與套件組合，並從應用程式套件與套件組合中擷取檔案。
-ms.date: 06/21/2018
+ms.date: 01/02/2019
 ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.assetid: 7c1c3355-8bf7-4c9f-b13b-2b9874b7c63c
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc109fe2e684dd3bc1fef62cece5cac3ab50d246
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c6958491092498451743085af38b2d0fa6bdf8a
+ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943009"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991604"
 ---
 # <a name="create-an-app-package-with-the-makeappxexe-tool"></a>使用 MakeAppx.exe 工具建立應用程式套件
 
 
-**MakeAppx.exe** 會建立應用程式套件和應用程式套件組合。 **MakeAppx.exe** 也會從應用程式套件或套件組合中擷取檔案，以及加密或解密應用程式套件與套件組合。 此工具包含在 Windows 10 SDK，而且可以從命令提示字元或指令碼檔案使用。
+**MakeAppx.exe**建立同時應用程式套件 （.msix 或.appx） 與應用程式套件組合 （.msixbundle 或.appxbundle）。 **MakeAppx.exe** 也會從應用程式套件或套件組合中擷取檔案，以及加密或解密應用程式套件與套件組合。 此工具包含在 Windows 10 SDK，而且可以從命令提示字元或指令碼檔案使用。
 
-> [!IMPORTANT] 
-> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](https://msdn.microsoft.com/windows/uwp/packaging/packaging-uwp-apps)。
+> [!IMPORTANT]
+> 如果您使用 Visual Studio 來開發 App，建議您使用 Visual Studio 精靈建立應用程式套件。 如需詳細資訊，請參閱[使用 Visual Studio 封裝 UWP app](packaging-uwp-apps.md)。
 
-請注意，**MakeAppx.exe** 不會建立 .appxupload 檔案。 .Appxupload 檔案會建立為 Visual Studio 封裝程序的一部分，並包含其他兩個檔案：.msix 或.appx 和.appxsym。 .Appxsym 檔案是包含用於合作夥伴中心內的[損毀分析](../publish/health-report.md)您 app 的公用符號的壓縮的.pdb 檔案。 一般的 .appx 檔案也可以一起提交，但不會有任何損毀分析或偵錯資訊。 如需有關將套件提交到Microsoft Store的詳細資訊，請參閱[上傳應用程式套件](../publish/upload-app-packages.md)。 
-
- 此工具的最新版本的 Windows 10 中的更新不會影響.appx 套件使用方式。 您可以繼續使用.appx 套件，使用此工具，或使用工具的支援，針對.msix 套件如下所述。
-
-手動建立 .appxupload 檔案︰
-- 將.msix 和.appxsym 放在資料夾中
-- 壓縮資料夾
-- 將壓縮的資料夾副檔名從 .zip 變更為 .appxupload
+> [!IMPORTANT]
+> 請注意**MakeAppx.exe**不會建立[應用程式套件上傳檔案 （.appxupload 或.msixupload）](packaging-uwp-apps.md#types-of-app-packages)，也就是建議的[提交至合作夥伴中心](../publish/upload-app-packages.md)的有效應用程式套件的類型。 應用程式套件上傳檔案通常是[建立做為 Visual Studio 封裝程序的一部分](packaging-uwp-apps.md#create-an-app-package-upload-file)，雖然它也可以建立以手動方式。
 
 ## <a name="using-makeappxexe"></a>使用 MakeAppx.exe
 
@@ -111,7 +105,7 @@ MakeAppx <command> [options]
 
 下列使用方式範例顯示 **pack** 命令一些可能的語法選項︰
 
-``` syntax 
+``` syntax
 MakeAppx pack [options] /d <content directory> /p <output package name>
 MakeAppx pack [options] /f <mapping file> /p <output package name>
 MakeAppx pack [options] /m <app package manifest> /f <mapping file> /p <output package name>
@@ -200,7 +194,7 @@ MakeAppx unbundle /v /ep MyBundle.emsixbundle /d "C:\My Files" /kt
 
 **MakeAppx.exe** 工具也可以加密或解密現有的套件或套件組合。 您必須提供套件名稱、輸出套件名稱，以及加密或解密要使用金鑰檔案 (/kf) 或全域測試金鑰 (/kt)。
 
-透過 Visual Studio 封裝精靈無法使用加密和解密。 
+透過 Visual Studio 封裝精靈無法使用加密和解密。
 
 **encrypt** 和 **decrypt** 命令專用的選項︰
 
@@ -251,7 +245,7 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 "\\MyServer\path\icon.png"              "icon.png"
 "my app files\readme.txt"               "my app files\readme.txt"
 "CustomManifest.xml"                    "AppxManifest.xml"
-``` 
+```
 
 使用對應檔案時，您可以選擇是否要使用 /m 選項。 /m 選項可讓使用者指定對應檔案中的資源中繼資料要包含在產生的資訊清單中。 如果您使用 /m 選項，對應檔案就必須包含一個以 "[ResourceMetadata]" 為開頭的區段，後面接著指定 "ResourceDimensions" 和 "ResourceId" 的行。 應用程式套件可能會包含多個 "ResourceDimensions"，但只能有一個 "ResourceId"。
 
@@ -269,11 +263,11 @@ MakeAppx.exe decrypt p MyPackage.msix /ep MyEncryptedPackage.emsix /kf MyKeyFile
 
 ## <a name="semantic-validation-performed-by-makeappxexe"></a>MakeAppx.exe 所執行的語意式驗證
 
-**MakeAppx.exe** 會執行有限的語意式驗證，這種驗證專門設計來攔截最常見的部署錯誤，並協助確保應用程式套件是有效的。 如果您在使用 **MakeAppx.exe** 時想要略過驗證，請參閱 /nv 選項。 
+**MakeAppx.exe** 會執行有限的語意式驗證，這種驗證專門設計來攔截最常見的部署錯誤，並協助確保應用程式套件是有效的。 如果您在使用 **MakeAppx.exe** 時想要略過驗證，請參閱 /nv 選項。
 
 此驗證可確保︰
 - 在套件資訊清單中參考的所有檔案都包含在應用程式套件中。
 - 應用程式不會有兩個相同的金鑰。
-- 應用程式不會針對此清單中禁止的通訊協定進行註冊︰SMB、FILE、MS-WWA-WEB、MS-WWA。 
+- 應用程式不會針對此清單中禁止的通訊協定進行註冊︰SMB、FILE、MS-WWA-WEB、MS-WWA。
 
 這不是完整的語意式驗證，只是設計來攔截常見的錯誤。 透過 **MakeAppx.exe** 建置的套件不保證能夠安裝。
