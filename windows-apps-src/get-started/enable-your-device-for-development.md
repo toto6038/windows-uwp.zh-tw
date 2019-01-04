@@ -6,12 +6,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 1338373226b30c3126782a62f3b5260a47e86d63
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 802555f6b1e6f928edf43806226ac497a437b4ff
+ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943468"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "8991756"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -44,23 +44,19 @@ ms.locfileid: "8943468"
 
 ![請移至 \[設定\] 並選擇 \[更新與安全性\]，然後選擇 \[開發人員專用\] 以檢視您的選項](images/devmode-pc-options.png)
 
-以下是在行動裝置系列上的 \[設定\] 頁面：
-
-![從手機上的 \[設定\]，選擇 \[更新與安全性\]](images/devmode-mob.png)
-
 ## <a name="which-setting-should-i-choose-sideload-apps-or-developer-mode"></a>應該選擇哪一個設定：側載應用程式或開發人員模式？
 
  您可以啟用裝置來進行開發，或直接用於側載。
 
 -   *Microsoft Store 應用程式*是預設的設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
 -   *「側載」* 是安裝並執行或測試未經 Microsoft Store 認證的應用程式。 例如，僅供公司內部使用的 app。
--   *「開發人員模式」* 可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。 
+-   *「開發人員模式」* 可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。
 
 根據預設，您只能從 Microsoft Store 安裝通用 Windows 平台 (UWP) app。 變更這些設定來使用開發人員功能，可以變更裝置的安全性層級。 您不應該從未驗證的來源安裝 app。
 
 ### <a name="sideload-apps"></a>側載 app
 
-通常是需要在受管理裝置上安裝自訂應用程式而不透過 Microsoft Store 的公司或學校，才會使用 [側載應用程式] 設定。 在此案例中，組織強制執行會停用 *UWP apps* 設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
+通常用於側載應用程式設定的公司或學校需要在受管理的裝置上安裝自訂應用程式，而不透過 Microsoft Store，或其他人需要執行應用程式從非 Microsoft 的來源。 在此案例中，組織強制執行會停用 *UWP apps* 設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
 
 裝置系列特定的資訊
 
@@ -90,20 +86,20 @@ ms.locfileid: "8943468"
 
 下圖顯示適用於 Windows 10 的開發人員功能：
 
-![開發人員模式選項](images/devmode-mob-options.png) 
+![開發人員模式選項](images/devmode-mob-options.png)
 
 ### <a name="span-iddevice-discovery-and-pairingspandevice-portal"></a><span id="device-discovery-and-pairing"></span>裝置入口網站
 
 若要深入了解裝置入口網站，請參閱 [Windows 裝置入口網站概觀](../debug-test-perf/device-portal.md)。
 
 如需裝置特定的安裝指示，請參閱︰
-- [傳統型裝置的裝置入口網站](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
+- [傳統型裝置的 Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-desktop)
 - [HoloLens 的裝置入口網站](https://developer.microsoft.com/windows/holographic/using_the_windows_device_portal)
 - [IoT 的裝置入口網站](https://developer.microsoft.com/windows/iot/docs/DevicePortal)
-- [行動裝置的裝置入口網站](../debug-test-perf/device-portal-mobile.md)
-- [Xbox 的裝置入口網站](../debug-test-perf/device-portal-xbox.md)
+- [行動裝置的 Device Portal](../debug-test-perf/device-portal-mobile.md)
+- [Xbox 的 Device Portal](../debug-test-perf/device-portal-xbox.md)
 
-如果您遇到啟用開發人員模式或裝置入口網站方面的問題，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)論壇，以尋找這些問題的因應措施，或造訪[無法安裝開發人員模式套件或啟動裝置入口網站](#failure-to-install-developer-mode-package) ，以取得其他詳細資訊及了解要允許哪些 WSUS KB 才能將開發人員模式套件解除封鎖。 
+如果您遇到啟用開發人員模式或裝置入口網站方面的問題，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)論壇，以尋找這些問題的因應措施，或造訪[無法安裝開發人員模式套件或啟動裝置入口網站](#failure-to-install-developer-mode-package) ，以取得其他詳細資訊及了解要允許哪些 WSUS KB 才能將開發人員模式套件解除封鎖。
 
 ### <a name="ssh"></a>SSH
 
@@ -114,7 +110,7 @@ ms.locfileid: "8943468"
 
 為了利用 SSH 服務，您可以啟用裝置探索來允許 PIN 配對。 如果您想要執行另一個 SSH 服務，您可以在不同的連接埠上進行設定，或是關閉 [開發人員模式] SSH 服務。 若要關閉 SSH 服務，請關閉 [裝置探索]。  
 
-SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  這個密碼就是在按下裝置探索的 [配對] 按鈕之後，在裝置上顯示的 PIN 碼，而且僅在 PIN 碼顯示期間才有效。  對於手動管理的 DevelopmentFiles 資料夾，其中從 Visual studio 安裝檔案鬆散部署，也會啟用 SFTP 子系統。 
+SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  這個密碼就是在按下裝置探索的 [配對] 按鈕之後，在裝置上顯示的 PIN 碼，而且僅在 PIN 碼顯示期間才有效。  對於手動管理的 DevelopmentFiles 資料夾，其中從 Visual studio 安裝檔案鬆散部署，也會啟用 SFTP 子系統。
 
 #### <a name="caveats-for-ssh-usage"></a>SSH 使用方式的注意事項
 在 Windows 所用的現有 SSH 伺服器尚未與通訊協定相容，因此使用 SFTP 或 SSH 用戶端可能需要特殊的設定。  尤其是 SFTP 子系統執行第 3 版或更舊版本，因此任何連接用戶端都應設定為預期使用舊的伺服器。  舊款裝置上的 SSH 伺服器使用 `ssh-dss` 來進行公開金鑰驗證，而 OpenSSH 已棄用此項目。  若要連接至這類裝置，必須將 SSH 用戶端手動設定為接受 `ssh-dss`。  
@@ -129,7 +125,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 ### <a name="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only"></a>Windows 檔案總管、遠端桌面及 PowerShell 的最佳化 (僅限傳統型裝置)
 
- 在傳統型裝置系列上，\[開發人員專用\]**** 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 \[套用\]****，或按一下 \[顯示設定\]**** 連結來開啟該選項的設定頁面。 
+ 在傳統型裝置系列上，\[開發人員專用\]**** 設定頁面含有您可用來將電腦最佳化以進行開發工作的設定捷徑。 針對每個設定，您都可以選取核取方塊並按一下 \[套用\]****，或按一下 \[顯示設定\]**** 連結來開啟該選項的設定頁面。
 
 
 ## <a name="notes"></a>備註
@@ -141,9 +137,9 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 -   您可以使用[裝置入口網站](../debug-test-perf/device-portal.md)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用裝置入口網站中的**[應用程式](../debug-test-perf/device-portal.md#apps-manager)** 頁面來上傳應用程式套件 (.appx)，並將它安裝在裝置上。
 
 ## <a name="failure-to-install-developer-mode-package"></a>無法安裝開發人員模式套件
-有時會因網路或系統管理方面的問題，致使開發人員模式無法正確安裝。 必須有開發人員模式套件，才能**遠端**部署至此電腦上 (從瀏覽器使用裝置入口網站或使用 \[裝置探索\] 來啟用 SSH)，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 在本機部署您的應用程式，或從此裝置部署到另一個裝置。 
+有時會因網路或系統管理方面的問題，致使開發人員模式無法正確安裝。 必須有開發人員模式套件，才能**遠端**部署至此電腦上 (從瀏覽器使用裝置入口網站或使用 \[裝置探索\] 來啟用 SSH)，但本機開發則不需要。  即使您遇到這些問題，您仍可使用 Visual Studio 在本機部署您的應用程式，或從此裝置部署到另一個裝置。
 
-若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。 
+若要尋找這些問題及其他問題的因應措施，請參閱[已知問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22)。
 
 > [!NOTE]
 > 如果沒有正確地安裝開發人員模式，我們鼓勵您提出的意見反應要求。 在 [**意見反應中樞**] app 中，選取**新增新的意見反應**，然後選擇 [**開發人員平台**類別，以及 [**開發人員模式**] 子類別。 提交意見反應將 Microsoft 以協助解決您遇到的問題。
@@ -152,23 +148,24 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 「在 Windows Update 中找不到開發人員模式套件。 錯誤程式碼 0x80004005 深入了解」   
 
-發生此錯誤的原因，可能在於網路連線問題、企業設定或是套件已遺失。 
+發生此錯誤的原因，可能在於網路連線問題、企業設定或是套件已遺失。
 
 解決此問題：
 
-1. 確認您的電腦是否已連線至網際網路。 
-2. 若您位於加入網域的電腦上，請說出您的網路系統管理員。 在 WSUS 中預設會封鎖開發人員模式套件，如所有的「功能隨選安裝」。 2.1. 為了解除封鎖目前與先前版本中的開發人員模式套件，在 WSUS 中應允許下列 KB：4016509、3180030、3197985  
+1. 確認您的電腦是否已連線至網際網路。
+2. 若您位於加入網域的電腦上，請說出您的網路系統管理員。 在 WSUS 中預設會封鎖開發人員模式套件，如所有的「功能隨選安裝」。
+2.1. 為了解除封鎖目前與先前版本中的開發人員模式套件，在 WSUS 中應允許下列 KB：4016509、3180030、3197985  
 3. 在 \[設定\] &gt; \[更新與安全性\] &gt; Windows Updates 中，檢查 Windows 更新。
-4. 確認 Windows 開發人員模式套件顯示於 [設定] &gt; [系統] &gt; [應用程式與功能] &gt; 管理選用功能 &gt; [新增功能]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。 
+4. 確認 Windows 開發人員模式套件顯示於 [設定] &gt; [系統] &gt; [應用程式與功能] &gt; 管理選用功能 &gt; [新增功能]。 若該套件遺失，Windows 即無法找到適用於您電腦的正確套件。
 
-執行上述步驟之後，停用和重新啟用開發人員模式確認已修正問題。 
+執行上述步驟之後，停用和重新啟用開發人員模式確認已修正問題。
 
 
 ### <a name="failed-to-install-the-package"></a>無法安裝套件
 
 「無法安裝開發人員模式套件。 錯誤程式碼 0x80004005 深入了解」
 
-由於您的 Windows 組建與開發人員模式套件不相容，因此發生此錯誤。 
+由於您的 Windows 組建與開發人員模式套件不相容，因此發生此錯誤。
 
 解決此問題：
 
@@ -178,7 +175,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 ## <a name="use-group-policies-or-registry-keys-to-enable-a-device"></a>使用群組原則或登錄機碼來啟用裝置
 
-對大多數開發人員來說，您會想要使用 [設定] App 來啟用您的裝置以進行偵錯。 在某些案例 (例如自動化測試) 中，您可以使用其他方法來啟用您的 Windows 10 傳統型裝置以進行開發。  請注意，下列步驟不會啟用 SSH 伺服器或允許遠端部署及偵錯將裝置視為目標。 
+對大多數開發人員來說，您會想要使用 [設定] App 來啟用您的裝置以進行偵錯。 在某些案例 (例如自動化測試) 中，您可以使用其他方法來啟用您的 Windows 10 傳統型裝置以進行開發。  請注意，下列步驟不會啟用 SSH 伺服器或允許遠端部署及偵錯將裝置視為目標。
 
 除非您擁有的是「Windows 10 家用版」，否則請使用 gpedit.msc 來設定群組原則以啟用您的裝置。 如果您確實擁有「Windows 10 家用版」，則需要使用 regedit 或 PowerShell 命令來直接設定登錄機碼，以啟用您的裝置。
 
