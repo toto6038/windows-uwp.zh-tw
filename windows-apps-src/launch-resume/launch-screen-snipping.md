@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 uri、 剪取、 草圖
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0a90772e01885a7361cd51b54fc6e5ea9930bfbd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 07c095e661327ba1b64c4ba897937c8e3e905140
+ms.sourcegitcommit: d705a79d037baa764790d3d8daa9321ed0ac9ebc
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920557"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992188"
 ---
 # <a name="launch-screen-snipping"></a>啟動螢幕剪取
 
@@ -49,7 +49,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-screenske
 
 ```
 
-下列範例說明**secondaryFileAccessToken**參數的**ms 螢幕擷取畫面**所指定的檔案可能包含：
+下列範例說明的**ms screensketch** **secondarySharedAccessToken**參數所指定的檔案可能包含：
 
 ```json
 {
