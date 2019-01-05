@@ -5,12 +5,12 @@ ms.date: 07/18/2018
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event, 標準, 投影, 撰寫, 事件
 ms.localizationpriority: medium
-ms.openlocfilehash: 31f076ca259d10cc5bd49daea66741ead6e117c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bbc9fcd2b29183352fd06a7d7403aad2d0f011d9
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945302"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992251"
 ---
 # <a name="author-events-in-cwinrt"></a>在 C++/WinRT 中撰寫事件 
 
@@ -43,7 +43,7 @@ namespace BankAccountWRC
 
 儲存檔案。 將不會完成時刻，來建置專案，但現在建置很有用，是因為它會產生原始碼檔案，您將會在其中實作**BankAccount**執行階段類別。 因此根源和現在建置 (若要查看在這個階段，您可以預期的建置錯誤都與`Class.h`和`Class.g.h`找不到)。 在建置過程中，`midl.exe`工具建立元件的 Windows 執行階段中繼資料檔案執行時 (也就是`\BankAccountWRC\Debug\BankAccountWRC\BankAccountWRC.winmd`)。 然後，執行 `cppwinrt.exe` 工具 (有 `-component` 選項) 產生原始碼檔案在撰寫您的元件中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的**BankAccount**執行階段類別。 這些虛設常式為 `\BankAccountWRC\BankAccountWRC\Generated Files\sources\BankAccount.h` 與 `BankAccount.cpp`。
 
-在檔案總管] 中，複製的虛設常式檔案`BankAccount.h`和`BankAccount.cpp`資料夾從`\BankAccountWRC\BankAccountWRC\Generated Files\sources\`到包含您的專案檔案的資料夾，也就是`\BankAccountWRC\BankAccountWRC\`，並取代目的地中的檔案。 現在，我們開啟 `BankAccount.h` 與 `BankAccount.cpp` 並實作我們的執行階段類別。 在 `BankAccount.h` 中，將兩個私用成員新增至 (*不*是原廠實作) BankAccount 的實作。
+以滑鼠右鍵按一下專案節點，然後按一下 [**檔案總管] 中開啟資料夾**。 這會在檔案總管] 中開啟專案資料夾。 那里，複製的虛設常式檔案`BankAccount.h`和`BankAccount.cpp`資料夾從`\BankAccountWRC\BankAccountWRC\Generated Files\sources\`和到包含您的專案檔案的資料夾，也就是`\BankAccountWRC\BankAccountWRC\`，並取代目的地中的檔案。 現在，我們開啟 `BankAccount.h` 與 `BankAccount.cpp` 並實作我們的執行階段類別。 在 `BankAccount.h` 中，將兩個私用成員新增至 (*不*是原廠實作) BankAccount 的實作。
 
 ```cppwinrt
 // BankAccount.h

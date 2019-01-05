@@ -5,12 +5,12 @@ ms.date: 08/21/2018
 ms.topic: article
 keywords: Windows 10, uwp, 標準, c++, cpp, winrt, 投影, XAML, 控制, 繫結, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: fc38dfff99e5bef9de686d754444ee93375c7895
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0eccacb4d99437a482faceb7825a3cc3dbcc475
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943703"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992241"
 ---
 # <a name="xaml-controls-bind-to-a-cwinrt-property"></a>XAML 控制項；繫結至一個 C++/WinRT 屬性
 可有效地繫結至 XAML 控制項屬性稱為*可觀察的*屬性。 這個主意是以軟體設計模式為基礎稱為*觀察者模式*。 本主題示範如何實作中的可觀察屬性[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，以及如何將 XAML 控制項繫結至它們。
@@ -53,7 +53,7 @@ namespace Bookstore
 
 儲存檔案並建置專案。 在建置程序期間，執行 `midl.exe` 工具建立描述執行階段類別的 Windows 執行階段中繼資料檔案 (`\Bookstore\Debug\Bookstore\Unmerged\BookSku.winmd`)。 然後，執行 `cppwinrt.exe` 工具產生原始碼檔案在撰寫和使用執行階段類別中支援您。 這些檔案包含虛設常式，可協助您開始實作您在 IDL 中宣告的 **BookSku** 執行階段類別。 這些虛設常式為 `\Bookstore\Bookstore\Generated Files\sources\BookSku.h` 與 `BookSku.cpp`。
 
-從 `\Bookstore\Bookstore\Generated Files\sources\` 將虛設常式檔案 `BookSku.h` 和 `BookSku.cpp` 複製到專案資料夾中，也就是 `\Bookstore\Bookstore\`。 在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 **\[加入至專案\]**。
+以滑鼠右鍵按一下專案節點，然後按一下 [**檔案總管] 中開啟資料夾**。 這會在檔案總管] 中開啟專案資料夾。 那里，複製的虛設常式檔案`BookSku.h`和`BookSku.cpp`從`\Bookstore\Bookstore\Generated Files\sources\`資料夾和到專案資料夾中，也就是`\Bookstore\Bookstore\`。 在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 按一下滑鼠右鍵您複製的虛設常式檔案，然後按一下 **\[加入至專案\]**。
 
 ## <a name="implement-booksku"></a>執行 **BookSku**
 現在，我們開啟 `\Bookstore\Bookstore\BookSku.h` 與 `BookSku.cpp` 並實作我們的執行階段類別。 在 `BookSku.h` 中，新增一個採用 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) 的建構函式，一個儲存標題字串的私用成員，以及另一個用於標題變更時，我們會引發的事件。 進行這些變更之後, 您`BookSku.h`看起來像這樣。

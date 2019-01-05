@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: a92e1ad1c5bfb3960950b976da46ca16490d097e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 12aabe7a17a9bc62c5e6da27fe019e540db725df
+ms.sourcegitcommit: 557257fb792f0b04b013d3507b3ebe5b0f6aa6c4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923006"
+ms.lasthandoff: 01/05/2019
+ms.locfileid: "8992231"
 ---
 # <a name="custom-attached-properties"></a>自訂附加屬性
 
@@ -120,19 +120,21 @@ End Class
 // GameService.idl
 namespace UserAndCustomControls
 {
+    [default_interface]
     runtimeclass GameService : Windows.UI.Xaml.DependencyObject
     {
         GameService();
         static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        Boolean IsMovable;
+        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    bool IsMovable(){ return winrt::unbox_value<bool>(GetValue(m_IsMovableProperty)); }
-    void IsMovable(bool value){ SetValue(m_IsMovableProperty, winrt::box_value(value)); }
-    Windows::UI::Xaml::DependencyProperty IsMovableProperty(){ return m_IsMovableProperty; }
+    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
     static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
@@ -204,7 +206,10 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## <a name="using-your-custom-attached-property-in-xaml"></a>在 XAML 中使用您的自訂附加屬性
+## <a name="setting-your-custom-attached-property-from-xaml-markup"></a>從 XAML 標記中設定自訂附加的屬性
+
+> [!NOTE]
+> 如果您使用 C + + /winrt，則請跳至下一節 ([設定自訂附加的屬性強制使用 C + + WinRT](#setting-your-custom-attached-property-imperatively-with-cwinrt))。
 
 定義您的附加屬性並將它的支援成員包含為自訂類型的一部分之後，您接著必須讓 XAML 可以使用定義。 若要這樣做，您必須對應將要參考包含相關類別程式碼命名空間的 XAML 命名空間。 在已經將附加屬性定義為程式庫一部分的情況中，您必須包含這個程式庫，讓它成為應用程式之應用程式套件的一部分。
 
@@ -230,7 +235,32 @@ XAML 的 XML 命名空間對應通常會放置在 XAML 頁面的根元素中。 
 ```
 
 > [!NOTE]
-> 如果您正在撰寫 XAML UI 搭配 c + +，您必須包含定義附加的屬性，任何時間的自訂類型的標頭 XAML 頁面使用該類型。 每個 XAML 頁面都有一個相關聯的 .xaml.h 程式碼後置標頭。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
+> 如果您正在撰寫 XAML UI 使用 C + + /CX，則您必須包含的標頭定義附加的屬性，任何時間的自訂類型 XAML 頁面使用該類型。 每個 XAML 頁面具有相關聯的程式碼後置標頭 (。.xaml.h)。 這裡是您應該包含 (使用 **\#include**) 附加屬性擁有者類型定義標頭的地方。
+
+## <a name="setting-your-custom-attached-property-imperatively-with-cwinrt"></a>設定您的自訂附加的屬性強制使用 C + + /winrt
+
+如果您使用 C + + /winrt，則您可以存取自訂附加的屬性從命令式程式碼，但不是能從 XAML 標記。 以下程式碼示範如何。
+
+```xaml
+<Image x:Name="gameServiceImage"/>
+```
+
+```cppwinrt
+// MainPage.h
+...
+#include "GameService.h"
+...
+
+// MainPage.cpp
+...
+MainPage::MainPage()
+{
+    InitializeComponent();
+
+    GameService::SetIsMovable(gameServiceImage(), true);
+}
+...
+```
 
 ## <a name="value-type-of-a-custom-attached-property"></a>自訂附加屬性的值類型
 
