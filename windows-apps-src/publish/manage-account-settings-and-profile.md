@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員中心, 帳戶設定, 設定檔, 帳戶設定檔, 開發人員帳戶, 開發人員帳戶設定
 ms.localizationpriority: medium
-ms.openlocfilehash: b3a95e4e9eddbe47feb513f66856949baecdab8b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c4f7bd6d7aa085c3d5066d3b486583c5b3f37182
+ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931323"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992602"
 ---
 # <a name="manage-account-settings-and-profile-info"></a>管理帳戶設定與設定檔資訊
 
@@ -45,7 +45,6 @@ ms.locfileid: "8931323"
 以下是一些您將會在 **\[帳戶設定\]** 區段中找到的其他項目。
 
 - **驗證狀態**： 當您的帳戶正在進行驗證程序 （例如，當您第一次註冊或之後您大幅更新連絡資訊） 時，您可以檢閱您的驗證狀態。
-- **開發人員中心測試人員計畫**： 入或移出主要從 「[開發人員中心測試人員計畫](dev-center-insider-program.md)，您可以選擇**帳戶設定**\] 頁面。
 - **支付帳戶**與**稅務設定檔**：這是您[設定支付帳戶和稅單](setting-up-your-payout-account-and-tax-forms.md)的地方。 您需要先完成這個部分，才能為 App 或附加元件收取款項。
 - **企業關聯**：接受企業的邀請，這些企業希望您發行其專用的應用程式。 如需詳細資訊，請參閱[向企業散發企業營運應用程式](distribute-lob-apps-to-enterprises.md)。
 - **使用者**： 將使用者新增至您的帳戶，並為他們指派角色與權限。 如需詳細資訊，請參閱[管理帳戶使用者](manage-account-users.md)。

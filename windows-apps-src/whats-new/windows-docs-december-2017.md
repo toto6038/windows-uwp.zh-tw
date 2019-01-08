@@ -5,12 +5,12 @@ keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 12 月
 ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c9b4c834c646aed7953dc2b0f992dea579d8b9fd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52a60189d7fba39709aa679dbff79551b151e5a4
+ms.sourcegitcommit: b66c5ccbf519b99a432c83c890436a044fc891df
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937217"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "8992612"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的最新動向
 
@@ -58,7 +58,7 @@ Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>訂閱附加元件現已在 Windows 開發人員中心測試人員計畫開放給測試人員取得
 
-已加入[開發人員中心測試人員計畫](../publish/dev-center-insider-program.md)的所有開發人員，現在都可以使用訂閱附加元件，在其應用程式中運用自動週期性計費期間來銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
+已加入開發人員中心測試人員計畫的所有開發人員，現在都可以使用訂閱附加元件，在其應用程式中運用自動週期性計費期間來銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
