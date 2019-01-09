@@ -6,16 +6,16 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8f75fae686763f3d79cea2f02c3208993cb723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
+ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937962"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8997393"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
-您可以管理和檢視與每個 app 的相關詳細資料 [合作夥伴中心，並設定服務，例如通知、 A / B 測試和地圖。
+您可以管理和檢視與每個在[合作夥伴中心](https://partner.microsoft.com/dashboard/)，您的應用程式相關的詳細資料和設定服務，例如通知、 A / B 測試和地圖。
 
 使用合作夥伴中心中的 app 時，您會看到在左方的導覽功能表中的章節**服務**與**應用程式管理**。 您可以展開這些區段來存取如下所述的功能。
 
@@ -49,7 +49,7 @@ ms.locfileid: "8937962"
 
 ## <a name="administrator-consent"></a>系統管理員同意
 
-f 與 Azure AD 整合您的產品，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意下，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品其組織授與同意取得的應用程式的系統管理員。
+如果您的產品與 Azure AD 整合，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員同意，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品其組織授與同意取得的應用程式的系統管理員。
 
 如需詳細資訊，請參閱[整個的租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
