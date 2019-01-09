@@ -2,16 +2,16 @@
 title: 啟動 Windows 設定 app
 description: 了解如何從您的應用程式啟動 Windows 設定應用程式。 本主題描述 ms-settings URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 03/20/2018
+ms.date: 1/8/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ff9510b65bd635b5b10e0cbea551c12b29ef8f37
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
+ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937892"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "8996073"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -62,6 +62,17 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 > 請注意，設定頁面是否可用因 Windows SKU 而異。 Windows 10 桌面版上所有的設定頁面不一定皆在 Windows 10 行動裝置版上，反之亦然。 附註欄也會擷取必須符合頁面才可供使用的其他需求。
 
+<!-- TODO: 
+* ms-settings:controlcenter
+* ms-settings:cortana-windowssearch
+* ms-settings:holographic
+* ms-settings:keyboard-advanced
+* ms-settings:regionlanguage-adddisplaylanguage (crashed)
+* ms-settings:regionlanguage-setdisplaylanguage (crashed)
+* ms-settings:signinoptions-launchpinenrollment
+* ms-settings:storagecleanup
+* ms-settings:update-security -->
+
 ## <a name="accounts"></a>帳戶
 
 |設定頁面| URI |
@@ -69,6 +80,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 存取工作或學校帳戶 | ms-settings:workplace |
 | 電子郵件與應用程式帳戶  | ms-settings:emailandaccounts |
 | 家人與其他使用者 | ms-settings:otherusers |
+| 設定 kiosk | ms-assignedaccess 設定： |
 | 登入選項 | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
 | 同步您的設定 | ms-settings:sync |
 | Windows Hello 設定 | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
@@ -83,7 +95,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 網站的應用程式 | ms-settings:appsforwebsites |
 | 預設應用程式 | ms-settings:defaultapps |
 | 管理選用功能 | ms-settings:optionalfeatures |
-| 離線地圖 | ms-settings:maps |
+| 離線地圖 | ms-settings:maps<br/>ms-設定： 地圖-maps-downloadmaps （下載地圖） |
 | 啟動應用程式 | ms-settings:startupapps |
 | 視訊播放 | ms-settings:videoplayback |
 
@@ -94,7 +106,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 權限與歷程記錄 | ms-settings:cortana-permissions |
 | 更多詳細資料 | ms-settings:cortana-moredetails |
 | 我的裝置上的 Cortana | ms-settings:cortana-notifications |
-| 向 Cortana 講話 | ms-settings:cortana-language |
+| 向 Cortana 講話 | ms-settings:cortana-language<br/>ms-cortana 設定：<br/>ms-設定： cortana-talktocortana |
 
 > [!NOTE] 
 > 在桌面上此設定 \] 區段時將會呼叫搜尋電腦設定為其中沒有目前可用的 Cortana，或已停用 Cortana 的區域。 在此情況下不會列 (跨我的裝置，Cortana) 和 Cortana 與交談，Cortana 特定頁面。 
@@ -107,7 +119,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 自動播放 | ms-settings:autoplay |
 | 藍牙 | ms-settings:bluetooth |
 | 連線的裝置 | ms-settings:connecteddevices |
-| 預設相機 | ms-settings:camera |
+| 預設相機 | ms-設定： 相機 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 滑鼠與觸控板 | ms-settings:mousetouchpad (觸控板設定僅適用於具有觸控板的裝置上) |
 | 手寫筆與 Windows Ink | ms-settings:pen |
 | 印表機與掃描器 | ms-settings:printers |
@@ -124,6 +136,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 音效 | ms-settings:easeofaccess-audio |
 | 隱藏式輔助字幕 | ms-settings:easeofaccess-closedcaptioning |
 | 色彩篩選器 | ms-設定： easeofaccess-colorfilter |
+| 游標和指標的大小 | ms-設定： easeofaccess-cursorandpointersize |
 | 顯示器 | ms-settings:easeofaccess-display |
 | 眼球控制 | ms-settings:easeofaccess-eyecontrol |
 | 字型 | ms-settings:fonts |
@@ -133,7 +146,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 放大鏡 | ms-settings:easeofaccess-magnifier |
 | 滑鼠 | ms-settings:easeofaccess-mouse |
 | 朗讀程式 | ms-settings:easeofaccess-narrator |
-| 其他選項 | ms-settings:easeofaccess-otheroptions |
+| 其他選項 | ms-設定： easeofaccess-otheroptions (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 語音 | ms-settings:easeofaccess-speechrecognition |
 
 ## <a name="extras"></a>其他
@@ -151,7 +164,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 遊戲 DVR | ms-settings:gaming-gamedvr |
 | 遊戲模式 | ms-settings:gaming-gamemode |
 | 玩遊戲全螢幕 | ms-settings:quietmomentsgame |
-| TruePlay | ms-settings:gaming-trueplay |
+| TruePlay | ms-設定： 遊戲-trueplay (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | Xbox 網路 | ms-settings:gaming-xboxnetworking |
 
 ## <a name="home-page"></a>首頁
@@ -165,7 +178,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| 飛航模式 | ms-settings:network-airplanemode (在 Windows 8.x 上使用 ms-settings:proximity) |
+| 飛航模式 | ms-settings:network-airplanemode<br/>ms-settings:proximity |
 | 行動數據與 SIM 卡 | ms-settings:network-cellular |
 | 數據使用量 | ms-settings:datausage |
 | 撥號 | ms-settings:network-dialup |
@@ -175,7 +188,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 行動熱點 | ms-settings:network-mobilehotspot |
 | NFC | ms-settings:nfctransactions |
 | Proxy | ms-settings:network-proxy |
-| 狀態 | ms-settings:network-status |
+| 狀態 | ms-settings:network-status<br/>ms-網路設定： |
 | VPN | ms-settings:network-vpn |
 | Wi-Fi | ms-settings:network-wifi (僅適用於裝置有 Wi-Fi 介面卡時) |
 | Wi-Fi 通話 | ms-settings:network-wificalling (僅適用於 Wi-Fi 通話已啟用時) |
@@ -186,10 +199,10 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 背景 | ms-settings:personalization-background |
 | 選擇要顯示在 \[開始\] 上的資料夾 | ms-settings:personalization-start-places |
-| 色彩 | ms-settings:personalization-colors |
-| 瀏覽 | ms-settings:personalization-glance |
+| 色彩 | ms-settings:personalization-colors<br/>ms-設定： 色彩 |
+| 瀏覽 | ms-個人化設定: \]-眼 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 鎖定畫面 | ms-settings:lockscreen |
-| 瀏覽列 | ms-settings:personalization-navbar |
+| 瀏覽列 | ms-個人化設定: \]-瀏覽列 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 個人化 (類別) | ms-settings:personalization |
 | 開始 | ms-settings:personalization-start |
 | 工作列 | ms-settings:taskbar |
@@ -199,16 +212,16 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| 您的手機 | ms-settings:mobile-devices  |
+| 您的手機 | ms-settings:mobile-devices<br/>ms-行動裝置版設定:-裝置-addphone<br/>ms-行動裝置版設定:-裝置-addphone-直接 （開啟**您的電話**應用程式） |
 
 ## <a name="privacy"></a>隱私權
 
 |設定頁面| URI |
 |-------------|-----|
-| 配件專屬應用程式 | ms-settings:privacy-accessoryapps |
+| 配件專屬應用程式 | ms-隱私權設定:-accessoryapps (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 帳戶資訊 | ms-settings:privacy-accountinfo |
 | 活動歷程記錄 | ms-settings:privacy-activityhistory |
-| 廣告識別碼 | ms-settings:privacy-advertisingid |
+| 廣告識別碼 | ms-隱私權設定:-廣告識別碼 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 應用程式診斷 | ms-settings:privacy-appdiagnostics |
 | 自動檔案下載 | ms-settings:privacy-automaticfiledownloads |
 | 背景應用程式 | ms-settings:privacy-backgroundapps |
@@ -229,7 +242,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 通知 | ms-settings:privacy-notifications |
 | 其他裝置 | ms-settings:privacy-customdevices |
 | 圖片 | ms-settings:privacy-pictures |
-| 通話 | ms-settings:privacy-phonecall |
+| 通話 | ms-隱私權設定:-phonecall (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 無線通訊 | ms-settings:privacy-radios |
 | 語音、筆跡與輸入 |ms-settings:privacy-speechtyping |
 | 工作 | ms-settings:privacy-tasks |
@@ -254,7 +267,8 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 省電模式 | ms-settings:batterysaver (僅適用於具有電池的裝置上，例如平板電腦) |
 | 省電模式設定 | ms-settings:batterysaver-settings (僅適用於具有電池的裝置上，例如平板電腦) |
 | 電池使用情況 | ms-settings:batterysaver-usagedetails (僅適用於具有電池的裝置上，例如平板電腦) |
-| 顯示器 | ms-settings:display |
+| 剪貼簿 | ms-剪貼簿設定： |
+| 顯示 | ms-settings:display |
 | 預設儲存位置 | ms-settings:savelocations |
 | 顯示器 | ms-settings:screenrotation |
 | 複製我的顯示器 | ms-settings:quietmomentspresentation |
@@ -272,7 +286,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 工作列 | ms-settings:taskbar |
 | 通知與動作 | ms-settings:notifications |
 | 遠端桌面 | ms-settings:remotedesktop |
-| 電話 | ms-settings:phone |
+| 電話 | ms-設定： 手機 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 電源與睡眠 | ms-settings:powersleep |
 | 音效 | ms-settings:sounds |
 | 儲存空間 | ms-settings:storagesense |
@@ -284,9 +298,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 日期和時間 | ms-settings:dateandtime |
 | 日文 IME 設定 | ms-settings:regionlanguage-jpnime (適用於 Microsoft 日文輸入法編輯器有安裝時) |
+| Language | ms-鍵盤設定：<br/>ms-settings:regionlanguage<br/>ms-: regionlanguage-chsime-pinyin-bpmfime<br/>ms-: regionlanguage-chsime-pinyin-cangjieime<br/>ms-: regionlanguage-chsime-pinyin-用於-拼音-domainlexicon<br/>ms-: regionlanguage-chsime-pinyin-用於-拼音-keyconfig<br/>ms-: regionlanguage-chsime-pinyin-用於-拼音-udp<br/>ms-: regionlanguage-chsime-pinyin-用於-五筆-udp<br/>ms-: regionlanguage-chsime-pinyin-quickime |
 | 拼音輸入法設定 | ms-settings:regionlanguage-chsime-pinyin (適用於 Microsoft 拼音輸入法編輯器有安裝時) |
-| 地區及語言 | ms-settings:regionlanguage |
-| 語音功能的語言 | ms-settings:speech |
+| 語音 | ms-settings:speech |
 | 五筆輸入法設定  | ms-settings:regionlanguage-chsime-wubi (適用於 Microsoft 五筆輸入法編輯器有安裝時) |
 
 ## <a name="update--security"></a>更新與安全性
@@ -301,7 +315,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 修復 | ms-settings:recovery |
 | 疑難排解 | ms-settings:troubleshoot |
 | Windows 安全性 | ms-settings:windowsdefender |
-| Windows 測試人員計畫 | ms-settings:windowsinsider (僅適用於使用者已在 WIP 中註冊時) |
+| Windows 測試人員計畫 | ms-settings:windowsinsider (僅適用於使用者已在 WIP 中註冊時)<br/>ms-設定： windowsinsider-optin |
 | Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
 | Windows Update-進階選項 | ms-settings:windowsupdate-options |
 | Windows Update-重新啟動選項 | ms-settings:windowsupdate-restartoptions |
