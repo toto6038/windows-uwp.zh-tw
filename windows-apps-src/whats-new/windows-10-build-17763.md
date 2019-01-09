@@ -6,12 +6,12 @@ ms.date: 10/03/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc18577015db5384c2a1f13e8a48758634a053a5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 75cde09068bcc310bcd5be2033227fa620b96f53
+ms.sourcegitcommit: 1322dd5478026176d7b3e635ea0046de3f744656
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937102"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "8996566"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17763"></a>適用於開發人員，組建 17763 的 Windows 10 中的新功能
 
@@ -33,7 +33,7 @@ Fluent Design 更新 | 下列的 Fluent Design 頁面已經做視覺更新和次
 頁面轉換 | 使用者在應用程式中的頁面之間瀏覽的[頁面轉換](../design/motion/page-transitions.md)。 它們能協助使用者了解它們的瀏覽階層中的位置，並提供有關在頁面之間關聯性的意見反應。
 文字大小調整 | 新的[文字縮放指南](../design/input/text-scaling.md)說明如何更新您的應用程式，以容納的新文字縮放比例行為，這提供使用者變更相對字型大小跨作業系統和個別應用程式的能力。 而不是使用放大鏡 app （這通常只會放大螢幕的區域內的所有項目，並引進了自己的可用性問題）、 變更顯示器解析度，或依賴 DPI 縮放比例 （這會調整大小，根據顯示和一般檢視的所有項目距離），使用者可以快速存取調整大小只是文字，涵蓋範圍可從 100%（預設大小） 的設定 225%。
 工具組 | [Adobe XD 和 Adobe Illustrator 工具組](../design/downloads/index.md)已更新為新的功能。 這些設計工具組提供控制項與版面配置範本可用於設計 UWP 應用程式。
-UI 命令功能 | [UWP 命令基礎結構](../design/basics/commanding-basics.md)的更新包含更好的命令物件 （行為、 標籤、 圖示、 鍵盤快速鍵、 便捷鍵和描述） 封裝和一組標準的常用的命令，包括剪下、 複製、 貼上、 結束、 等。，這不需要手動設定這些屬性。 </br> 新的[XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand)類別提供基底類別 deveining 命令行為的執行動作時叫用的互動式 UI 元素。 這是[StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand)，這會公開一組預先定義的屬性的標準的平台命令的父類別。 
+UI 命令功能 | [UWP 命令基礎結構](../design/basics/commanding-basics.md)的更新包含更好的命令物件 （行為、 標籤、 圖示、 鍵盤快速鍵、 便捷鍵和描述） 封裝和一組標準的常用的命令，包括剪下、 複製、 貼上、 結束、 等。，這不需要手動設定這些屬性。 </br> 新的[XamlUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.xamluicommand)類別提供基底類別定義的互動式 UI 元素的執行動作時叫用命令行為。 這是[StandardUICommand](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.input.standarduicommand)，這會公開一組預先定義的屬性的標準的平台命令的父類別。 
 Windows UI 文件庫 | [Windows UI 文件庫](https://aka.ms/winui-docs)是一組提供控制項與其他使用者介面元素用於 UWP 應用程式的 NuGet 套件。 這些套件也是使用較舊版本的 Windows 10 相容的所以您的應用程式運作方式，即使您的使用者沒有最新的 OS 版本。 </br> 如需什麼是 Windows UI 文件庫中的詳細資訊，請參閱[NuGet 套件中包含的 API 命名空間的這份清單。](https://docs.microsoft.com/uwp/api/overview/winui/)
 
 ## <a name="develop-windows-apps"></a>開發 Windows 應用程式
@@ -64,7 +64,7 @@ AssignedAccessSettings | [\ [Assignedaccesssettings\] 類別](https://docs.micro
 儀表板 | [Windows 10 Iot 核心版儀表板](https://docs.microsoft.com/windows/iot-core/tutorials/quickstarter/devicesetup)現在可讓開發人員使用 Dragonboard 410 C 或 NXP 閃爍自訂 FFUs 到他們的裝置上。
 螢幕小鍵盤 | [螢幕小鍵盤適用於 IoT 裝置](https://docs.microsoft.com/windows/iot-core/develop-your-app/onscreenkeyboard)現在會使用相同的觸控式鍵盤元件作為 Windows 桌面版本。 這可讓功能，例如聽寫模式、 輸入法支援，以及一組完整的輸入範圍。
 登入對話方塊的標題列 | Windows 10 IoT 核心版現在可設定[的系統對話方塊的標題列](https://docs.microsoft.com/windows/iot-core/develop-your-app/signindialogtitlebars)的選項。
-觸控喚醒 | [喚醒觸控](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/wakeontouch)可讓您的裝置螢幕關閉時不在使用中，同時快速開啟當使用者觸碰螢幕。 
+觸控喚醒 | [喚醒觸控](https://docs.microsoft.com/windows/iot-core/learn-about-hardware/wakeontouch)可讓您的裝置螢幕關閉時不在使用中，同時快速開啟當使用者觸碰螢幕。
 Windows.System.Update | 新的[Windows.System.Update 命名空間](https://docs.microsoft.com/uwp/api/windows.system.update)可讓系統更新的互動式控制項。 此命名空間是僅適用於 Windows 10 IoT 核心版。
 
 ## <a name="web-development"></a>Web 開發
