@@ -8,23 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad801dee43607b4fb6e75bd30f612682e1214ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f81634fdb0f9382b1f660394764e5555189783e4
+ms.sourcegitcommit: 444fd387c55618f9afdac115264c85b14fd8b826
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921131"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "8999911"
 ---
 # <a name="mouse-interactions"></a>滑鼠互動
 
-
-針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。
-
- 
+針對觸控輸入最佳化您的通用 Windows 平台 (UWP) app，獲得預設的基本滑鼠支援。 
 
 ![滑鼠](images/input-patterns/input-mouse.jpg)
-
-
 
 滑鼠輸入最適合在指向及點選方面要求精確的使用者互動。 Windows 的 UI 已針對觸控的不精確本質進行最佳化，可自然地支援這種固有的精確度。
 
@@ -33,7 +28,6 @@ ms.locfileid: "8921131"
 這個主題說明滑鼠互動的設計考量。
 
 ## <a name="the-uwp-app-mouse-language"></a>UWP app 滑鼠語言
-
 
 一組可用於整個系統的簡單滑鼠互動。
 
@@ -90,36 +84,64 @@ ms.locfileid: "8921131"
 </tbody>
 </table>
 
-## <a name="mouse-events"></a>滑鼠事件
+## <a name="mouse-input-events"></a>滑鼠輸入的事件
 
-處理用於觸控和手寫筆輸入的相同基本指標事件，即可在 app 中回應滑鼠輸入。
+透過[**UIElement**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.UIElement)的所有物件所支援的常見路由輸入事件，就可以處理大部分的滑鼠輸入。 其中包括：
 
-使用 [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 事件實作基本的輸入功能，不必為每一種指標輸入裝置撰寫程式碼。 不過，您仍然可以透過使用此物件的指標、手勢及操作事件，利用每個裝置的特殊功能 (例如滑鼠滾輪事件)。
+- [**BringIntoViewRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)
+- [**CharacterReceived**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.characterreceived)
+- [**ContextCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextcanceled)
+- [**ContextRequested**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.contextrequested)
+- [**DoubleTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.doubletapped)
+- [**DragEnter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragenter)
+- [**DragLeave**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragleave)
+- [**DragOver**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragover)
+- [**DragStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**Drop**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.drop)
+- [**DropCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**GettingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gettingfocus)
+- [**GotFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.gotfocus)
+- [**Holding**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.holding)
+- [**KeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keydown)
+- [**KeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.keyup)
+- [**LosingFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.losingfocus)
+- [**LostFocus**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.lostfocus)
+- [**ManipulationCompleted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)
+- [**ManipulationDelta**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationdelta)
+- [**ManipulationInertiaStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting)
+- [**ManipulationStarted**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarted)
+- [**ManipulationStarting**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.manipulationstarting)
+- [**NoFocusCandidateFound**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.nofocuscandidatefoundeventargs)
+- [**PointerCanceled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercanceled)
+- [**PointerCaptureLost**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointercapturelost)
+- [**PointerEntered**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerentered)
+- [**PointerExited**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerexited)
+- [**PointerMoved**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointermoved)
+- [**PointerPressed**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerpressed)
+- [**PointerReleased**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerreleased)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**PreviewKeyDown**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeydown.md)
+- [**PreviewKeyUp**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.previewkeyup.md)
+- [**PointerWheelChanged**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)
+- [**RightTapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.righttapped)
+- [**Tapped**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.tapped)
 
-**範例：** 請參閱我們的[應用程式範例](https://go.microsoft.com/fwlink/p/?LinkID=264996)中的動作中此功能。
+不過，您也可以利用每個裝置 （例如滑鼠滾輪事件） 中[Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input)使用指標、 手勢及操作事件的特定能力。
 
-
-- [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-
-- [輸入範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-
-- [輸入：使用 GestureRecognizer 處理手勢與操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
+**範例：** 請參閱我們的[BasicInput 範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)。
 
 ## <a name="guidelines-for-visual-feedback"></a>視覺化回饋的指導方針
 
-
--   偵測到滑鼠時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果滑鼠有一段時間沒有移動，或者使用者起始觸控互動，讓滑鼠 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
--   請勿為暫留回饋使用游標，元素提供的回饋已經足夠 (請參閱下方的游標說明)。
--   如果元素不支援互動 (例如靜態文字)，請勿顯示視覺化回饋。
--   請勿搭配滑鼠互動使用焦點矩形。 請保留這些給鍵盤互動。
--   如果所有元素均代表相同的輸入目標，請同時顯示視覺化回饋。
--   提供模擬觸控式操作 (例如移動瀏覽、旋轉、縮放等等) 的按鈕 (例如 + 和 -)。
+- 偵測到滑鼠時 (透過移動或暫留事件)，顯示滑鼠特定 UI，指示元素公開的功能。 如果滑鼠有一段時間沒有移動，或者使用者起始觸控互動，讓滑鼠 UI 逐漸淡出。 這可以讓 UI 保持整齊、不凌亂。
+- 請勿為暫留回饋使用游標，元素提供的回饋已經足夠 (請參閱下方的游標說明)。
+- 如果元素不支援互動 (例如靜態文字)，請勿顯示視覺化回饋。
+- 請勿搭配滑鼠互動使用焦點矩形。 請保留這些給鍵盤互動。
+- 如果所有元素均代表相同的輸入目標，請同時顯示視覺化回饋。
+- 提供模擬觸控式操作 (例如移動瀏覽、旋轉、縮放等等) 的按鈕 (例如 + 和 -)。
 
 如需視覺化回饋的詳細一般指導方針，請參閱[視覺化回饋的指導方針](guidelines-for-visualfeedback.md)。
 
-
 ## <a name="cursors"></a>游標
-
 
 我們提供了一組可用於滑鼠指標的標準游標。 它們可用來指示元素的主要動作。
 
@@ -127,33 +149,21 @@ ms.locfileid: "8921131"
 
 如果您需要自訂滑鼠游標：
 
--   一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
--   使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
--   使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
--   請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png), ![調整水平大小游標](images/cursor-horizontal.png), ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png), ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
--   使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png), ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
+- 一律使用箭頭游標 (![箭頭游標](images/cursor-arrow.png)) 於可點選的元素。 請勿使用指向手型游標 (![指向手型游標](images/cursor-pointinghand.png)) 於連結或其他互動式元素。 請改為使用暫留效果 (描述如前)。
+- 使用文字游標 (![文字游標](images/cursor-text.png)) 於可選取的文字。
+- 使用移動游標 (![移動游標](images/cursor-move.png)) 於主要動作為移動時 (例如拖曳或裁剪時)。 對於主要動作為瀏覽的元素 (例如 [開始] 畫面磚)，請勿使用移動游標。
+- 請使用水平、垂直及對角線調整游標 (![調整垂直大小游標](images/cursor-vertical.png), ![調整水平大小游標](images/cursor-horizontal.png), ![對角線調整游標 (左下右上)](images/cursor-diagonal2.png), ![對角線調整游標 (左上右下)](images/cursor-diagonal1.png)) 於物件可調整時。
+- 使用握拳游標 (![握拳游標 (打開)](images/cursor-pan1.png), ![握拳游標 (握緊)](images/cursor-pan2.png)) 於固定畫布 (例如地圖) 內移動瀏覽內容時。
 
 ## <a name="related-articles"></a>相關文章
 
-* [處理指標輸入](handle-pointer-input.md)
-* [識別輸入裝置](identify-input-devices.md)
+- [處理指標輸入](handle-pointer-input.md)
+- [識別輸入裝置](identify-input-devices.md)
+- [事件與路由事件概觀](https://docs.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)
 
-**範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
+### <a name="samples"></a>範例
 
-**封存範例**
-* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：使用 GestureRecognizer 處理手勢與操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
- 
-
- 
-
-
-
-
+- [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+- [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+- [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+- [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
