@@ -6,12 +6,12 @@ ms.date: 12/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a24e038dc2645b0aea7b1e7e516886af9a9e6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 81aa15892bf39209c31238878e0ca19a996d0b3e
+ms.sourcegitcommit: 322e1ae259ba0480b816a004d7a52bb0d1618b90
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930258"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "9000273"
 ---
 # <a name="set-up-your-payout-account-and-tax-forms"></a>設定您的支付及稅收表格
 
@@ -42,8 +42,8 @@ ms.locfileid: "8930258"
  
 **設定您的支付帳戶**
 
-1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)，在右上角，選取 [**帳戶設定**] 圖示，然後選取 [**開發人員設定**。
-2.  在左方的導覽功能表中，選取 [**支付帳戶**。
+1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)，選取右上角，在**設定**齒輪圖示，然後選取 [**開發人員設定**。
+2.  在 [設定] 頁面的左方的導覽功能表中，選取 [**支付帳戶**。
 
    > [!NOTE]
    > 這是機密資訊，所以會提示您再次登入。
