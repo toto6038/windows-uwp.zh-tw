@@ -1,23 +1,23 @@
 ---
 description: 本文章說明如何在您的傳統型應用程式中裝載 UWP XAML UI。
 title: 使用 UWP XAML 中的傳統型應用程式裝載 API
-ms.date: 11/27/2018
+ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
-ms.openlocfilehash: df6c47fd93c3f42721fd072d6406a2d32f7889db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ff5df91c860ab0e063f9a4ff5ed8beb64409e876
+ms.sourcegitcommit: 9df81996628359ad6af4227339a2ce01c2d804e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939013"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001792"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 
 > [!NOTE]
 > 目前提供做為開發人員預覽 UWP XAML 裝載 API 與 XAML 群島。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些功能將會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
 >
-> 如果您有關於裝載 API 與 XAML 群島 XAML 的意見反應，傳送意見反應給XamlIslandsFeedback@microsoft.com。 您的見解和案例是非常重要給我們。
+> 如果您有相關的意見反應 XAML 群島、 [WindowsCommunityToolkit 存放庫](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues)中建立新的問題，並那里離開您的註解。 如果您想要私下提交意見反應，您可以傳送到它XamlIslandsFeedback@microsoft.com。 您的見解和案例是非常重要給我們。
 
 在 Windows 10 Insider Preview SDK 中開始建置 17709、 非 UWP 傳統型應用程式 （包括 WPF、 Windows Forms 和 c + + Win32 應用程式） 可以使用*UWP XAML 裝載 API*來裝載 UWP 控制項中任何的視窗控制代碼 （相關聯的 UI 元素HWND)。 這個 API 可讓非 UWP 傳統型應用程式使用的最新的 Windows 10 UI 功能，只可透過 UWP 控制項。 例如，非 UWP 傳統型應用程式可以使用此 API 來使用[Fluent 設計系統](../design/fluent-design-system/index.md)和支援[Windows Ink](../design/input/pen-and-stylus-interactions.md)裝載 UWP 控制項。
 

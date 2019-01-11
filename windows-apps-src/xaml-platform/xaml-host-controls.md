@@ -1,24 +1,24 @@
 ---
 description: 本指南可協助您直接在 WPF 和 Windows Forms 應用程式中建立 Fluent 型 UWP UI
 title: 傳統型應用程式中的 UWP 控制項
-ms.date: 09/21/2018
+ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 43cdb19e791726732f564ffea1b03af53a4a1ffe
-ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
+ms.openlocfilehash: bf25fea6ca6e8809c12324ae57a42cc712ded2a5
+ms.sourcegitcommit: 9df81996628359ad6af4227339a2ce01c2d804e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001554"
+ms.locfileid: "9001782"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
 > [!NOTE]
 > 目前提供做為開發人員預覽 XAML 群島。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
 >
-> 如果您有關於 XAML 群島的意見反應，傳送意見反應給XamlIslandsFeedback@microsoft.com。 您的見解和案例是非常重要給我們。
+> 如果您有相關的意見反應 XAML 群島、 [WindowsCommunityToolkit 存放庫](https://github.com/windows-toolkit/WindowsCommunityToolkit/issues)中建立新的問題，並那里離開您的註解。 如果您想要私下提交意見反應，您可以傳送到它XamlIslandsFeedback@microsoft.com。 您的見解和案例是非常重要給我們。
 
 Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項，以便您可以提升外觀、 感覺與您現有的傳統型應用程式與最新的 Windows 10 UI 功能只會透過 UWP 控制項可用的功能。 這表示您可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 設計系統](../design/fluent-design-system/index.md)支援在您的現有 WPF、 Windows Forms 和 c + + Win32 應用程式中的控制項。 這個案例中開發人員有時稱為*XAML 群島*。
 
