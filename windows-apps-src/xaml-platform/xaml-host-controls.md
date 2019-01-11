@@ -6,17 +6,19 @@ ms.topic: article
 keywords: windows 10, uwp, windows forms, wpf
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: bd22aa761d4a9a79c95c7bc424ab1d2a31ca6cdf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 43cdb19e791726732f564ffea1b03af53a4a1ffe
+ms.sourcegitcommit: 1294275b5044ef8878d54bf4fd7aa8e0203e6fac
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923990"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "9001554"
 ---
 # <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
 > [!NOTE]
-> Api 與這篇文章中討論的控制項是目前可為開發人員預覽。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+> 目前提供做為開發人員預覽 XAML 群島。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 Microsoft 對此處提供的資訊，不做任何明確或隱含的瑕疵擔保。
+>
+> 如果您有關於 XAML 群島的意見反應，傳送意見反應給XamlIslandsFeedback@microsoft.com。 您的見解和案例是非常重要給我們。
 
 Windows 10 現在可讓您在非 UWP 傳統型應用程式中使用 UWP 控制項，以便您可以提升外觀、 感覺與您現有的傳統型應用程式與最新的 Windows 10 UI 功能只會透過 UWP 控制項可用的功能。 這表示您可以使用 UWP 功能，例如[Windows Ink](../design/input/pen-and-stylus-interactions.md)和[Fluent 設計系統](../design/fluent-design-system/index.md)支援在您的現有 WPF、 Windows Forms 和 c + + Win32 應用程式中的控制項。 這個案例中開發人員有時稱為*XAML 群島*。
 
@@ -35,8 +37,9 @@ WPF 和 Windows Form 應用程式可以使用包裝 UWP 控制項的選取[Windo
 |-----------------|-------------------------------|-------------|
 | [WebView](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webview) | Windows10 (版本 1803) | 使用 Microsoft Edge 轉譯引擎來顯示網頁內容。 |
 | [WebViewCompatible](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible) | Windows 7 | 提供**WebView**與多個作業系統版本相容的版本。 這個控制項使用 Microsoft Edge 轉譯引擎，以顯示在 Windows 10 版本 1803年或更新版本上的網頁內容和 Internet Explorer 的轉譯引擎，以顯示 web 內容，在先前版本的 Windows 10、 Windows 8.x 和 Windows 7。 |
-| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 Insider Preview SDK 組建 17709 | Surface 和相關的工具列提供 Windows Forms 或 WPF 傳統型應用程式中的 Windows Ink 為基礎的使用者互動。 |
-| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 Insider Preview SDK 組建 17709 | 將檢視嵌入串流，並轉譯媒體內容，例如 Windows Forms 或 WPF 傳統型應用程式中的影片。 |
+| [InkCanvas](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inkcanvas)<br>[InkToolbar](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/inktoolbar) | Windows 10 版本 1809年 （組建 17763） | Surface 和相關的工具列提供 Windows Forms 或 WPF 傳統型應用程式中的 Windows Ink 為基礎的使用者互動。 |
+| [MediaPlayerElement](https://docs.microsoft.com/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement) | Windows 10 版本 1809年 （組建 17763） | 將檢視嵌入串流，並轉譯媒體內容，例如 Windows Forms 或 WPF 傳統型應用程式中的影片。 |
+| [MapControl](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) | Windows 10 版本 1809年 （組建 17763） | 可讓您在您 Windows Forms 或 WPF 傳統型應用程式中顯示或真實感地圖。 |
 
 ## <a name="host-controls"></a>主控制項
 
