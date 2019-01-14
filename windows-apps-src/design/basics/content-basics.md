@@ -9,12 +9,12 @@ ms.date: 12/1/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: fc27a2c24128553b7c1449bd8e724e2097213b80
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: b2d85d97fa704b4fb79e93cf95fdd1bfcc41f8ca
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981412"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004604"
 ---
 # <a name="content-design-basics-for-uwp-apps"></a>UWP app 的內容設計基本知識
 
@@ -38,11 +38,6 @@ ms.locfileid: "8981412"
 
 集合可讓使用者瀏覽內容或資料群組。 [方格檢視](../controls-and-patterns/item-templates-gridview.md)是相片或媒體為主內容的理想選擇，而[清單檢視](../controls-and-patterns/item-templates-listview.md)是文字為主內容或資料的理想選擇。
 
-### <a name="hub"></a>中樞
-
-![中樞](images/content-basics/hub.png)
-
-[中樞](../controls-and-patterns/hub.md)的設計在於提供櫥窗購物。 使用者能夠一覽提供的內容；主要目的是呈現內容的多元性，同時保持精簡的資料量。 例如，中樞區 1 可包含主題畫面，中樞區 2 可包含某個集合，中樞區 3 可包含另一個集合，諸如此類。
 
 ### <a name="masterdetail"></a>主要/詳細資料
 

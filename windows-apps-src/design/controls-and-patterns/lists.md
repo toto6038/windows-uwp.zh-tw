@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: ranjeshj
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a86c3f2662c036dea5dcebf4726a0463d623a3ac
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: eb9c600e58be04d8ce967eb119777d6746507fbe
+ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981512"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004584"
 ---
 # <a name="lists"></a>清單
 
@@ -262,7 +262,6 @@ ms.locfileid: "8981512"
 
 ## <a name="related-articles"></a>相關文章
 
-- [中樞](hub.md)
 - [主要/詳細資料](master-details.md)
 - [瀏覽窗格](navigationview.md)
 - [語意式縮放](semantic-zoom.md)
