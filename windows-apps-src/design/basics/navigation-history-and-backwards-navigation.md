@@ -7,12 +7,12 @@ ms.date: 06/21/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d5ca79220bf2f5c93f7b8f04a787662470f87a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 192c5f4be7496b3fe47238c4965d6854f06d21b4
+ms.sourcegitcommit: 2e47a0d047e6ca8d3f473434a2b07b6216b55d17
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945950"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "9004501"
 ---
 # <a name="navigation-history-and-backwards-navigation-for-uwp-apps"></a>適用於 UWP app 的瀏覽歷程記錄和向後瀏覽
 
@@ -284,15 +284,9 @@ bool App::On_BackRequested()
 
 之前 UWP app 是使用 [AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility) 提供返回瀏覽。 API 將會繼續支援以確保回溯相容性，但我們不再建議依賴[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)。 您的 App 應設置自己的應用程式內返回按鈕。
 
-如果您的應用程式會繼續使用[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，的系統 UI 會轉譯系統返回按鈕：
+如果您的應用程式會繼續使用[AppViewBackButtonVisibility](https://docs.microsoft.com/uwp/api/windows.ui.core.appviewbackbuttonvisibility)，的系統 UI 會轉譯系統返回按鈕在標題列內。 （[返回] 按鈕的外觀與使用者互動並不會從先前的組建。）
 
-- 如果您的應用程式**不具有索引標籤**，在標題列內轉譯返回按鈕。 [上一頁] 按鈕的視覺體驗與使用者互動並不會變更從先前的組建。
-
-    ![標題列返回按鈕](images/nav-back-pc.png)
-
-- 如果應用程式是**索引標籤式**，則返回按鈕會呈現在新的系統返回列。
-
-    ![系統繪製返回按鈕列](images/back-nav/tabs.png)
+![標題列返回按鈕](images/nav-back-pc.png)
 
 ### <a name="system-back-bar"></a>系統背面列
 
