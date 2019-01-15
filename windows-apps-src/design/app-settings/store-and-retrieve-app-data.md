@@ -8,12 +8,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a5e3a29a252b091b1e52dbea5fa7af5058488ed5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3c4f8de32be13f9de776a1c2d0ba0f6af2797329
+ms.sourcegitcommit: be52da74f0b3f24973286792afa4f5e80799161b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946594"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "9009515"
 ---
 # <a name="store-and-retrieve-settings-and-other-app-data"></a>儲存及擷取設定和其他 app 資料
 
@@ -172,7 +172,7 @@ async void ReadTimestamp()
 
 ### <a name="roaming-pre-requisites"></a>漫遊的先決條件
 
-如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶或停用漫遊資料功能，還是可以使用您的應用程式，但是應用程式只有每個裝置的本機資料。
+如果使用者使用 Microsoft 帳戶登入裝置，便能享有漫遊應用程式資料的好處。 不過，使用者和群組原則系統管理員可以隨時關閉裝置上的漫遊應用程式資料。 如果使用者選擇不使用 Microsoft 帳戶或停用漫遊資料功能，她仍然能夠使用您的應用程式，但會每個裝置的本機應用程式資料。
 
 只有在使用者將裝置設成「受信任」時，才會轉換儲存在 [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) 中的資料。 如果裝置不受信任，保存在此保存庫中的資料將不會漫遊。
 
