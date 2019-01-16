@@ -6,19 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: ccffc523dd1196c208c2fe0abdb7297c19892279
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b317ba9280baef885bf6487d4bc0745112575dce
+ms.sourcegitcommit: 061de8e92935b5e438aa26ef63a6fac4acc4109d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933422"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "9009905"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-
-
-
-本文章說明隨附在 Windows 10 作業系統中的新 Windows Hello 技術，然後討論開發人員可如何使用這項技術，來保護自己的通用 Windows 平台 (UWP) 應用程式和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
+本文章說明新 Windows Hello 技術，隨附於 Windows 10 作業系統，然後討論開發人員可以如何實作這項技術來保護自己的通用 Windows 平台 (UWP) 應用程式和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
 
 請注意，本文著重在應用程式開發上。 如需 Windows Hello 的結構與實作的詳細資訊，請參閱 [TechNet 上的 Windows Hello 指南](https://technet.microsoft.com/library/mt589441.aspx)。
 
@@ -28,30 +25,23 @@ ms.locfileid: "8933422"
 
 ## <a name="1-introduction"></a>1 簡介
 
-
 對於資訊安全的基本假設，就是系統可以識別正在使用它的人員。 識別使用者的功能，可讓系統判斷是否已適當地識別使用者的身分 (此程序稱為驗證)，然後決定已適當地經過驗證的使用者應該能夠執行哪些動作 (授權)。 世界各地絕大多數的電腦系統，都依賴使用者認證來做出驗證及授權的決定，這代表這些系統在安全性方面，依賴由使用者自行建立，且可重複使用的密碼。 有句經常被引用的名言，指出驗證牽涉到「您知道的事情、您擁有的東西，或是您扮演的角色」，這巧妙地點出下列問題：可重複使用的密碼是本身就是驗證因素，因此任何知道密碼的人，都能冒充擁有該密碼的使用者。
 
-## <a name="11-problems-with-traditional-credentials"></a>1.1 傳統認證的問題
-
+### <a name="11-problems-with-traditional-credentials"></a>1.1 傳統認證的問題
 
 自從 1960 年代中期，Fernando Corbató 和他在麻省理工學院的團隊積極引進密碼之後，使用者和系統管理員就必須處理使用密碼來進行使用者驗證和授權的工作。 隨著時間過去，先進的密碼儲存及使用方式已經有所進步 (例如安全雜湊、Salt)，但我們仍面臨了兩個問題。 要複製密碼很容易，要竊取密碼也很容易。 此外，實作錯誤可能會使它們變得不安全，且使用者會很難在便利性與安全性之間取得平衡。
 
-## <a name="111-credential-theft"></a>1.1.1 認證竊取
-
+#### <a name="111-credential-theft"></a>1.1.1 認證竊取
 
 使用密碼最大的風險很簡單，就是攻擊者能輕鬆地竊取密碼。 每個輸入、處理或儲存密碼的位置都很容易受到攻擊。 舉例來說，攻擊者可以從驗證伺服器竊取一組密碼或雜湊，方法有竊聽傳送至應用程式伺服器的網路傳輸、在應用程式或裝置中置入惡意程式碼、記錄使用者在裝置上的按鍵動作，或是觀察使用者輸入了哪些字元。 這些都還只是最常見的攻擊方法而已。
 
 此外，另一個相關的風險就認證重新執行，也就是攻擊者藉由竊聽不安全的網路來取得有效的認證，然後稍後重新執行該認證來模仿有效的使用者。 大部分的驗證通訊協定 (包括 Kerberos 和 OAuth) 都會在認證交換過程中納入時間戳記來提供保護，以防止重新執行的攻擊，但這種方法只保護由驗證系統發出的權杖，而非使用者一開始為取得票證所提供的密碼。
 
-## <a name="112-credential-reuse"></a>1.1.2 認證重複使用
-
-
-
+#### <a name="112-credential-reuse"></a>1.1.2 認證重複使用
 
 把電子郵件地址當做使用者名稱的常見作法，只會讓問題雪上加霜。 如果攻擊者成功從遭破解的系統中取得使用者名稱/密碼組，接著就能在其他系統上嘗試使用該資料。 令人驚訝的是，這種方法通常能讓攻擊者從遭破解的系統跳到其他的系統上。 而把電子郵件地址當做使用者名稱，會導致其他問題 (我們稍後將在本指南探討)。
 
-## <a name="12-solving-credential-problems"></a>1.2 解決認證問題
-
+### <a name="12-solving-credential-problems"></a>1.2 解決認證問題
 
 要解決密碼造成的問題，需要一些技巧。 強化密碼使用原則並無法解決問題，因為使用者可能就只是重複使用、共用，或寫下密碼。 雖然驗證安全性相關的使用者教育是非常重要的，但僅僅只是教育，並無法消除這個問題。
 
@@ -60,41 +50,35 @@ Windows Hello 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證�
 
 ## <a name="2-what-is-windows-hello"></a>2 什麼是 Windows Hello？
 
-
 Windows Hello 是 Microsoft 提供給 Windows10 內建的新生物特徵辨識登入系統的名稱。 因為此功能是直接內建於作業系統，所以 Windows Hello 讓使用者能夠使用臉部或指紋辨識來解除鎖定使用者的裝置。 當使用者提供了自己的唯一生物特徵辨識識別碼來存取裝置特定的認證時即會進行驗證，這表示除非竊取裝置的攻擊者具備 PIN，否則該攻擊者無法登入裝置。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。 使用 Windows Hello 解除鎖定裝置之後，授權的使用者就能取得自己的所有 Windows 體驗、App、資料、網站及服務的存取權。
 
 Windows Hello 的驗證器被稱為 Hello。 Hello 對於單一裝置與特定使用者的組合來說是唯一的， 它不會在裝置之間漫遊、不會與伺服器或呼叫中的應用程式分享，也無法輕易從裝置中取出。 如果有多位使用者共用一個裝置，每位使用者都需要設定自己的帳戶， 而每個帳戶都會取得該裝置專有的唯一 Hello。 您可以把 Hello 想像成可用來解除鎖定 (或釋放) 已儲存認證的權杖。 Hello 本身不會對應用程式或服務驗證您的身分，但它釋放認證可以這麼做。 換句話說，Hello 不是使用者認證，但它是驗證程序可使用的第二因素。
 
-## <a name="21-windows-hello-authentication"></a>2.1 Windows Hello 驗證
-
+### <a name="21-windows-hello-authentication"></a>2.1 Windows Hello 驗證
 
 Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也就是使用者與所要求服務或資料項目之間路徑的第一個部分。 裝置在成功辨識使用者之後，仍然需要驗證使用者的身分，才能決定是否要授與所要求資源的存取權。 Windows Hello 提供與 Windows 完全整合的增強式 2FA，利用特定裝置和生物特徵辨識技術或 PIN 的組合，來取代可重複使用的密碼。
 
 不過，Windows Hello 不只是用來取代傳統的 2FA 系統。 它在概念上與智慧卡類似：使用密碼編譯基本類型來執行驗證，而非使用字串比較，且使用者的金鑰內容安全地存放無法竄改的硬體中。 Windows Hello 不需要智慧卡部署所需的額外基礎結構元件。 特別的是，您並不需要公開金鑰基礎結構 (PKI) 來管理憑證 (如果您目前沒有 PKI)。 Windows Hello 結合智慧卡的主要優點，有虛擬智慧卡的部署彈性及實體智慧卡的強大安全性，卻沒有兩者的任何缺點。
 
-## <a name="22-how-windows-hello-works"></a>2.2 Windows Hello 的運作方式
-
+### <a name="22-how-windows-hello-works"></a>2.2 Windows Hello 的運作方式
 
 當使用者在自己的電腦上設定 Windows Hello 之後，它會在裝置上產生新的公開/私密金鑰組。 [信賴平台模組](https://technet.microsoft.com/itpro/windows/keep-secure/trusted-platform-module-overview) (TPM) 會產生並保護這個私密金鑰。 如果裝置沒有 TPM 晶片，私密金鑰則由軟體來加密並保護。 此外，已啟用 TPM 的裝置會產生可用來證明金鑰已繫結至 TPM 的資料區塊。 舉例來說，此證明資訊可以用在您的解決方案中，來決定是否要授與使用者不同的授權層級。
 
 如要啟用裝置上的 Windows Hello，使用者在 Windows 設定中必須已與 Azure Active Directory 帳戶連接，或是已與 Microsoft 帳戶連接。
 
-## <a name="221-how-keys-are-protected"></a>2.2.1 保護金鑰的方式
-
+#### <a name="221-how-keys-are-protected"></a>2.2.1 保護金鑰的方式
 
 在任何時間產生金鑰內容時，都必須提供保護來防止攻擊。 而保護金鑰最好的方式，就是透過專用的硬體。 人類在使用硬體安全性模組 (HSM) 來產生、儲存及處理適用於安全性關鍵應用程式的金鑰方面，有很長的歷史。 智慧卡是一種特殊類型的 HSM，它們都是符合信賴運算群組 TPM 標準規範的裝置。 如果可行，Windows Hello 實作會充分利用內建的 TPM 硬體來產生、儲存及處理金鑰。 不過，Windows Hello 和 Windows Hello 工作不需要將 TPM 上線。
 
 但 Microsoft 會在任何合適的時機建議您使用 TPM 硬體。 TPM 會提供保護來對抗各種已知及潛在的攻擊，包括 PIN 暴力密碼破解攻擊。 TPM 在帳戶鎖定之後，也會提供額外的保護。 當 TPM 鎖定金鑰內容時，使用者必須重設 PIN。 重設 PIN 表示將移除所有使用舊的金鑰內容加密的金鑰與憑證。
 
-## <a name="222-authentication"></a>2.2.2 驗證
-
+#### <a name="222-authentication"></a>2.2.2 驗證
 
 當使用者想要存取受保護的金鑰內容時，驗證程序首先會要求使用者輸入 PIN 或生物特徵辨識手勢來解除裝置的鎖定，這個程序有時也稱為「釋出金鑰」。
 
 應用程式永遠無法使用另一個應用程式的金鑰，而使用者也永遠無法使用另一位使用者的金鑰。 當有尋求特定資源存取權的要求傳送到識別提供者 (或 IDP) 時，這些金鑰可用來簽署該要求。 應用程式可以使用特定的 API，來要求需要適用於特定行動之金鑰內容的操作。 透過這些 API 要求的存取權確實需要透過使用者手勢進行明確的驗證，且不會向提出要求的應用程式公開金鑰內容。 更確切地說，應用程式會要求進行特定的動作 (例如簽署資料片段)，而 Windows Hello 層級會處理實際的工作，並傳回結果。
 
-## <a name="23-getting-ready-to-implement-windows-hello"></a>2.3 準備實作 Windows Hello
-
+### <a name="23-getting-ready-to-implement-windows-hello"></a>2.3 準備實作 Windows Hello
 
 現在我們對 Windows Hello 的運作方式已經有基本的了解，那就來看看如何在自己的應用程式中使用它們。
 
@@ -104,13 +88,11 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 
 ## <a name="3-implementing-windows-hello"></a>3 實作 Windows Hello
 
-
 在此章節中，我們將從沒有現存驗證系統的嶄新案例開始，然後我們將說明如何實作 Windows Hello。
 
 下一個章節的內容是如何從現有的使用者名稱/密碼系統移轉到新的系統。 不過，即使您對那個章節比較有興趣，建議您還是看看這個章節，以便對處理程序及所需程式碼有基本的了解。
 
-## <a name="31-enrolling-new-users"></a>3.1 為新的使用者註冊
-
+### <a name="31-enrolling-new-users"></a>3.1 為新的使用者註冊
 
 我們要從將會使用 Windows Hello 的全新服務開始，然後有個假想的新使用者準備要在新的裝置上註冊。
 
@@ -120,12 +102,12 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 
 下列幾行程式碼是查看使用者是否已設定 Windows Hello 的簡單方式。
 
-```cs
+```csharp
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 if (!keyCredentialAvailable)
 {
-   // User didn't set up PIN yet
-   return;
+    // User didn't set up PIN yet
+    return;
 }
 ```
 
@@ -137,9 +119,9 @@ if (!keyCredentialAvailable)
 
 以下是建立 [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) 的程式碼範例：
 
-```cs
-var keyCreationResult = await KeyCredentialManager
-    .RequestCreateAsync(AccountId, KeyCredentialCreationOption.ReplaceExisting);
+```csharp
+var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
+    AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
 [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
@@ -158,7 +140,7 @@ var keyCreationResult = await KeyCredentialManager
 
 當然，您所收集註冊資訊中的身分辨識資訊，可能比我們在這簡單案例中包含的多出許多。 舉例來說，如果您的應用程式存取某個受保護的服務 (例如銀行服務)，您必須要求身分識別證明及其他項目，做為註冊程序的一部分。 當所有條件都符合之後，這位使用者的公開金鑰將會儲存在後端，讓該使用者下次使用服務時可用來進行驗證。
 
-```cs
+```csharp
 using System;
 using System.Runtime;
 using System.Threading.Tasks;
@@ -214,48 +196,44 @@ static async void RegisterUser(string AccountId)
 }
 ```
 
-## <a name="311-attestation"></a>3.1.1 證明
-
+#### <a name="311-attestation"></a>3.1.1 證明
 
 在建立金鑰組時，還可以選擇要求由 TPM 晶片產生的證明資訊。 這個選用的資訊可以傳送到伺服器，做為註冊程序的一部分。 TPM 金鑰證明是能以密碼編譯方式證明金鑰與 TPM 繫結的通訊協定。 這種類型的證明可用來保證，某些密碼編譯作業確實曾發生在特定電腦的 TPM 中。
 
 當伺服器收到產生的 RSA 金鑰、證明聲明，以及 AIK 憑證時，它需要確認下列條件：
 
--   AIK 憑證簽章是有效的。
--   AIK 憑證鏈結至受信任的根。
--   AIK 憑證和其鏈結啟用「EKU OID 2.23.133.8.3」(易記名稱為「證明識別金鑰憑證」)。
--   AIK 憑證是有效的時限。
--   鏈結中所有簽發的 CA 憑證都是有效的時限而且未被撤銷。
--   證明聲明的格式正確。
--   [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
--   [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
+- AIK 憑證簽章是有效的。
+- AIK 憑證鏈結至受信任的根。
+- AIK 憑證和其鏈結啟用「EKU OID 2.23.133.8.3」(易記名稱為「證明識別金鑰憑證」)。
+- AIK 憑證是有效的時限。
+- 鏈結中所有簽發的 CA 憑證都是有效的時限而且未被撤銷。
+- 證明聲明的格式正確。
+- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
+- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
 
 根據以上這些條件，您的應用程式可能會把不同的授權層級指派給使用者。 舉例來說，如果這些檢查項目中有一個檢查失敗，應用程式可能不會讓使用者註冊，或是可能會限制使用者能執行的功能。
 
-## <a name="32-logging-on-with-windows-hello"></a>3.2 使用 Windows Hello 登入
-
+### <a name="32-logging-on-with-windows-hello"></a>3.2 使用 Windows Hello 登入
 
 使用者在您的系統中註冊之後，就能夠使用應用程式。 視情況而定，您可以要求使用者必須先經過驗證才能開始使用應用程式，或是只要求使用者在開始使用您的後端服務時才進行驗證。
 
-## <a name="33-force-the-user-to-sign-in-again"></a>3.3 強迫使用者再次登入
-
+### <a name="33-force-the-user-to-sign-in-again"></a>3.3 強迫使用者再次登入
 
 在某些情況下，您可能會想要求使用者在存取應用程式之前，或是有時在您的應用程式中進行特定動作之前，證明自己的確就是目前登入的那個人。 舉例來說，在銀行應用程式傳送轉帳命令給伺服器之前，您想要確定這的確是正確的使用者，而不是某個找到已登入裝置，且嘗試要執行交易的人。 您可以使用 [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) 來強迫使用者再次登入您的應用程式。 下列程式碼會強迫使用者輸入自己的認證。
 
 下列程式碼會強迫使用者輸入自己的認證。
 
-```cs
+```csharp
 UserConsentVerificationResult consentResult = await UserConsentVerifier.RequestVerificationAsync("userMessage");
 if (consentResult.Equals(UserConsentVerificationResult.Verified))
 {
-   // continue
+    // continue
 }
 ```
 
 當然，您也可以從伺服器使用查問回應機制，要求使用者輸入自己的 PIN 碼或生物特徵辨識認證。 這完全根據身為開發人員的您需要實作的案例而定。 下一節將會說明這種機制。
 
-## <a name="34-authentication-at-the-backend"></a>3.4 在後端進行驗證
-
+### <a name="34-authentication-at-the-backend"></a>3.4 在後端進行驗證
 
 當應用程式想要存取受保護的後端服務時，服務會傳送查問給應用程式。 應用程式會利用使用者的私密金鑰來簽署查問，然後將查問傳送回伺服器。 因為伺服器已儲存使用者的公開金鑰，它會使用標準的密碼編譯 API，來確定訊息確實是以正確的私密金鑰簽署的。 在用戶端上，簽署是由 Windows Hello API 來完成的；開發人員永遠沒有任何使用者私密金鑰的存取權。
 
@@ -269,7 +247,7 @@ if (consentResult.Equals(UserConsentVerificationResult.Verified))
 
 當 app 呼叫在後端的服務時，伺服器會傳送查問。 查問可以用下列程式碼來簽署：
 
-```cs
+```csharp
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 
 if (openKeyResult.Status == KeyCredentialStatus.Success)
@@ -277,14 +255,14 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
     var userKey = openKeyResult.Credential;
     var publicKey = userKey.RetrievePublicKey();
     var signResult = await userKey.RequestSignAsync(message);
-    
+
     if (signResult.Status == KeyCredentialStatus.Success)
     {
         return signResult.Result;
     }
     else if (signResult.Status == KeyCredentialStatus.UserPrefersPassword)
     {
-        
+
     }
 }
 ```
@@ -297,14 +275,16 @@ API 會要求作業系統利用私密金鑰來簽署查問。 然後系統會要
 
 ![Windows Hello 挑戰回應](images/passport-challenge-response.png)
 
-接下來，伺服器必須驗證簽章。 當您要求公開金鑰並傳送至伺服器以供未來驗證之用時，則是 ASN.1 編碼的 publicKeyInfo Blob。如果您查看 [GitHub 上的 Windows Hello 程式碼範例](http://go.microsoft.com/fwlink/?LinkID=717812)，您會看到有用來包裝 Crypt32 函式的協助程式類別，以將 ASN.1 編碼的 Blob 轉譯成較常使用的 CNG Blob。 該 Blob 包含公開金鑰演算法，也就是 RSA 和 RSA 公開金鑰。
+接下來，伺服器必須驗證簽章。 當您要求公開金鑰並傳送至伺服器以供未來驗證時，則會處於 ASN.1 編碼的 publicKeyInfo blob。 如果您查看[Windows Hello 程式碼範例 GitHub 上的](http://go.microsoft.com/fwlink/?LinkID=717812)時，您會看到有來包裝 Crypt32 函式將 ASN.1 編碼的 blob 較常使用的 CNG blob 來協助程式類別。 該 Blob 包含公開金鑰演算法，也就是 RSA 和 RSA 公開金鑰。
+
+在範例中，我們將 ASN.1 編碼的 blob 轉換成的 CNG blob 的原因是，這樣它可以使用與 CNG （/windows/桌面/SecCNG/cng-入口網站） 與 BCrypt API。 如果您查詢 CNG blob 時，它會將您指向相關[BCRYPT_KEY_BLOB 結構](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 這個 API 表面可以用於驗證及 Windows 應用程式中的加密。 ASN.1 是記載於文件的標準通訊可以序列化的資料結構，它通常用於公開金鑰密碼編譯和使用憑證。 這就是為什麼公開金鑰的資訊傳回以這種方式。 公開金鑰是 RSA 金鑰;而這就是 Windows Hello 會使用它登資料時的演算法。
 
 當您擁有 CNG Blob 之後，就必須根據該使用者的公開金鑰，來驗證已簽署的查問。 由於每個人都使用自己的系統或後端技術，因此沒有任何常用來實作該邏輯的方法。 我們使用 SHA256 做為雜湊演算法，並針對 SignaturePadding 使用 Pkcs1，因此當您驗證來自用戶端的已簽署回應時，請確定那就是您所使用的項目。 同樣地，請參考範例以尋找在 .NET 4.6 中於您的伺服器上執行的方式，但通常來說會類似：
 
-```cs
+```csharp
 using (RSACng pubKey = new RSACng(publicKey))
 {
-   retval = pubKey.VerifyData(originalChallenge, responseSignature,  HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1); 
+    retval = pubKey.VerifyData(originalChallenge, responseSignature, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
 }
 ```
 
@@ -312,7 +292,7 @@ using (RSACng pubKey = new RSACng(publicKey))
 
 以下為完整的程式碼範例：
 
-```cs
+```csharp
 using System;
 using System.Runtime;
 using System.Threading.Tasks;
@@ -356,8 +336,7 @@ static async Task<IBuffer> GetAuthenticationMessageAsync(IBuffer message, String
 
 實作正確的查問/回應機制不在本文的討論範圍，但為了要建立安全的機制來防止重新執行或攔截式攻擊等狀況，這個主題是需要多加留意的。
 
-## <a name="35-enrolling-another-device"></a>3.5 為另一個裝置註冊
-
+### <a name="35-enrolling-another-device"></a>3.5 為另一個裝置註冊
 
 使用者擁有多個裝置，但都安裝了相同的應用程式，在今日是很普遍的現象。 搭配多個裝置來使用 Windows Hello 時，會如何運作呢？
 
@@ -369,15 +348,14 @@ static async Task<IBuffer> GetAuthenticationMessageAsync(IBuffer message, String
 
 註冊新裝置所用的程式碼，就跟 (從應用程式內) 第一次為使用者註冊所用的程式碼完全相同。
 
-```cs
+```csharp
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
 為了讓使用者能更輕易地辨識哪個裝置已經註冊，您可以選擇在註冊過程中傳送裝置名稱或另一個識別碼。 這也是很有用的方法；舉例來說，如果您想在後端實作可以讓使用者在遺失裝置時能取消註冊裝置的服務，這方法就很有用。
 
-## <a name="36-using-multiple-accounts-in-your-app"></a>3.6 在您的應用程式中使用多個帳戶
-
+### <a name="36-using-multiple-accounts-in-your-app"></a>3.6 在您的應用程式中使用多個帳戶
 
 除了支援在多個裝置上擁有單一帳戶之外，支援在單一應用程式中使用多個帳戶的情況也是很常見的。 舉例來說，或許您在應用程式中連線到多個 Twitter 帳戶。 只要使用 Windows Hello，您就能建立多個金鑰組，以及支援在您的應用程式中使用多個帳戶。
 
@@ -385,14 +363,13 @@ var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
 
 在應用程式的使用者介面中，您可以讓使用者選擇使用某個先前建立的帳戶，或是註冊新的帳戶。 建立新帳戶的流程，跟我們之前說明的相同。 而選擇某個帳戶，就是在螢幕上列出儲存的帳戶清單。 當使用者選取帳戶之後，請使用帳戶識別碼讓該使用者登入您的應用程式：
 
-```cs
+```csharp
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 ```
 
 流程剩下的部分，跟我們之前說明的相同。 明確地說，所有這些帳戶都會被相同的 PIN 或生物特徵辨識手勢保護，因為在這個案例中，這些帳號全都搭配相同的 Windows 帳戶在單一裝置上使用。
 
 ## <a name="4-migrating-an-existing-system-to-windows-hello"></a>4 將現有的系統移轉到 Windows Hello
-
 
 在簡短的這一節中，我們會提到某個現有的通用 Windows 平台應用程式，以及使用資料庫來儲存使用者名稱及雜湊密碼的後端系統。 當應用程式啟動時，這些應用程式就會收集使用者的認證，並在後端系統傳回驗證查問時使用這些認證。
 
@@ -402,7 +379,7 @@ var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 
 有個方法是讓使用者選擇何時升級。 當使用者登入應用程式，且您偵測到該應用程式及作業系統都能夠支援 Windows Hello 之後，您可以詢問使用者是否想要升級認證，來使用這個更現代化、更安全的系統。 您可以使用下列程式碼，來查看使用者是否能夠使用 Windows Hello。
 
-```cs
+```csharp
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 ```
 
@@ -418,7 +395,6 @@ UI 看起來如下：
 
 ## <a name="5-summary"></a>5 總結
 
-
 Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows Hello 提供新的生物特徵識別登入系統來辨識使用者，以及主動防禦規避適當身分識別程序的攻擊。 然後會提供多層按鍵及不可以洩露或在信賴平台模組外部使用的憑證。 此外，您可以選擇使用證明識別金鑰和憑證，來進一步提高安全性。
 
 身為開發人員的您，可以使用這個指導方針來設計和部署這些技術，讓您能輕鬆地為您的 Windows 10 首度發行新增安全驗證，來保護應用程式與後端服務。 您需要用到的程式碼很少，而且容易了解。 繁重的工作就讓 Windows 10 來做吧。
@@ -429,25 +405,22 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 
 ## <a name="6-resources"></a>6 資源
 
-
 ### <a name="61-articles-and-sample-code"></a>6.1 文章與範例程式碼
 
--   [Windows Hello 概觀](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
--   [適用於 Windows Hello 的實作詳細資料](https://msdn.microsoft.com/library/mt589441)
--   [GitHub 上的 Windows Hello 程式碼樣本](http://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows Hello 概觀](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [適用於 Windows Hello 的實作詳細資料](https://msdn.microsoft.com/library/mt589441)
+- [GitHub 上的 Windows Hello 程式碼樣本](http://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 詞彙
 
-|                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AIK                 | 證明識別金鑰是用來提供密碼編譯證明 (TPM 金鑰證明)，方法是簽署不可移轉金鑰的屬性，然後將屬性和簽章提供給信賴憑證者來進行驗證。 所產生的簽章稱為「證明聲明」。 因為簽章是使用 AIK 私密金鑰 (只能用在建立它的 TPM 中) 所建立的，信賴憑證者可以信任證明金鑰是真的無法移轉，且無法在該 TPM 以外的地方使用。 |
-| AIK 憑證     | AIK 憑證用來證明 AIK 存在 TPM 內。 它也用來證明經過 AIK 認證的其他金鑰源自於該特定 TPM。                                                                                                                                                                                                                                                                                                                                              |
-| IDP                 | IDP 是識別提供者。 其中一個例子，就是 Microsoft 為 Microsoft 帳戶所建立的 IDP。 應用程式每次需要利用 MSA 來驗證時，可以呼叫 MSA IDP。                                                                                                                                                                                                                                                                                                                                        |
-| PKI                 | 公開金鑰基礎結構，通常用來指向組織本身裝載的環境，且負責建立金鑰和撤銷金鑰等。                                                                                                                                                                                                                                                                                                                                                           |
-| TPM                 | 信賴平台模組 (TPM) 可用來建立密碼編譯的公開/私密金鑰組，讓私密金鑰無法在 TPM 以外的地方顯示或使用 (亦即金鑰是不可移轉的)。                                                                                                                                                                                                                                                                                                               |
-| TPM 金鑰證明 | 以密碼編譯的方式證明金鑰與 TPM 繫結的通訊協定。 這種類型的證明可用來保證，某些密碼編譯作業確實曾發生在特定電腦的 TPM 中                                                                                                                                                                                                                                                                                                                       |
-
- 
+| | |
+|-|-|
+| AIK | 證明識別金鑰是用來提供密碼編譯證明 (TPM 金鑰證明)，方法是簽署不可移轉金鑰的屬性，然後將屬性和簽章提供給信賴憑證者來進行驗證。 所產生的簽章稱為「證明聲明」。 因為簽章是使用 AIK 私密金鑰 (只能用在建立它的 TPM 中) 所建立的，信賴憑證者可以信任證明金鑰是真的無法移轉，且無法在該 TPM 以外的地方使用。 |
+| AIK 憑證 | AIK 憑證用來證明 AIK 存在 TPM 內。 它也用來證明經過 AIK 認證的其他金鑰源自於該特定 TPM。 |
+| IDP | IDP 是識別提供者。 其中一個例子，就是 Microsoft 為 Microsoft 帳戶所建立的 IDP。 應用程式每次需要利用 MSA 來驗證時，可以呼叫 MSA IDP。 |
+| PKI | 公開金鑰基礎結構，通常用來指向組織本身裝載的環境，且負責建立金鑰和撤銷金鑰等。 |
+| TPM | 信賴平台模組 (TPM) 可用來建立密碼編譯的公開/私密金鑰組，讓私密金鑰無法在 TPM 以外的地方顯示或使用 (亦即金鑰是不可移轉的)。 |
+| TPM 金鑰證明 | 以密碼編譯的方式證明金鑰與 TPM 繫結的通訊協定。 這種類型的證明可用來保證，某些密碼編譯作業確實曾發生在特定電腦的 TPM 中 |
 
 ## <a name="related-topics"></a>相關主題
 
