@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows Inking, Windows 筆跡, DirectInk, InkPresenter, 
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2451606ccb9dfb604dd9f8aaffe245016776c1e7
-ms.sourcegitcommit: 906b494aa190e6e5b46e7b73d4a900b2cc7d53ef
+ms.openlocfilehash: 0a548c7311042be52d90cad8594c3085614a8cda
+ms.sourcegitcommit: 575fb85387ade0e1ddfc50efdf613938f37f4037
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9010992"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014547"
 ---
 # <a name="pen-interactions-and-windows-ink-in-uwp-apps"></a>UWP app 中的手寫筆互動與 Windows Ink
 
@@ -64,7 +64,8 @@ Windows Ink 平台搭配手寫筆裝置之後，使用者就可以自然的方�
 在這個範例中，[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) 會重疊背景影像。
 
 > [!NOTE]
-> InkCanvas 具有預設[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)和[**寬度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)的零屬性，除非它是自動調整大小及其子元素，例如[StackPanel](stackpanel.md)或[格線](grid.md)控制項元素的子項。
+> InkCanvas 具有預設[**高度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Height)和[**寬度**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.Width)的零屬性，除非它是自動調整大小及其子元素，例如[StackPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.stackpanel
+)或[格線](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.grid)控制項元素的子項。
 
 ```xaml
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
