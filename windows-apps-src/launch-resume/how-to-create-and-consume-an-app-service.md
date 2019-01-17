@@ -6,12 +6,12 @@ keywords: 應用程式通訊，處理序間通訊，IPC，背景傳訊，背景�
 ms.date: 1/16/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 9029c8ee3a930e66ebdbd0c4d0681d87486a8393
-ms.sourcegitcommit: 6e2027f8ebc1d891d27ea6b2e4676d592871bcc7
+ms.openlocfilehash: 5239bff53bb0e5383bce28b4d781a0ab6a41c3af
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "9011258"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013957"
 ---
 # <a name="create-and-consume-an-app-service"></a>建立和取用 App 服務
 
@@ -214,17 +214,9 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 
 ## <a name="deploy-the-service-app-and-get-the-package-family-name"></a>部署服務 app，並取得套件系列名稱
 
-必須先部署應用程式服務提供者，您可以從用戶端呼叫它。 您也需要應用程式服務的套件系列名稱才能呼叫它。
+必須先部署應用程式服務提供者，您可以從用戶端呼叫它。 您可以在 Visual Studio 中選取 [**建置 > 部署解決方案**部署。
 
-取得套件系列名稱，應用程式服務應用程式的一種方式是從[appserviceprovider](https://msdn.microsoft.com/library/windows/apps/br224670)呼叫**AppServiceProvider**專案中，（例如，從**應用程式**建構函式中**App.xaml.cs**)，並注意結果。 若要在 Visual Studio 中執行**AppServiceProvider** ，在 [**方案總管**] 視窗中將它設定為啟始專案並執行專案。
-
-若要取得套件系列名稱的另一種方法是部署方案 (**建置&gt;部署方案**)，並記下**輸出**視窗中的完整套件名稱 (**檢視&gt;輸出**)。 您必須移除平台資訊從以衍生套件名稱的 [**輸出**] 視窗中的字串。 例如，如果在**輸出**視窗中回報的完整套件名稱所示：
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_1.0.0.0_x86__8wekyb3d8bbwe`
-
-然後您會擷取`1.0.0.0\_x86\_\_`，離開套件系列名稱如下：
-
-`Microsoft.SDKSamples.AppServicesProvider.CPP_8wekyb3d8bbwe`
+您也需要應用程式服務提供者的套件系列名稱才能呼叫它。 您可以藉由開啟**AppServiceProvider**專案的**Package.appxmanifest**檔案中的設計工具檢視來取得它 （將它按兩下**方案總管]** 中）。 選取 [**封裝**] 索引標籤、**套件系列名稱**，旁邊的值複製和貼上它某處記事本之類現在。
 
 ## <a name="write-a-client-to-call-the-app-service"></a>撰寫呼叫應用程式服務的用戶端
 
