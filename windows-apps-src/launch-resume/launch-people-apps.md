@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 46a297c3a611882724b18242d1c6272c3345ffc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ab10acab42ab3f03121a7c5a462cb651b0f3f31b
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935613"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014703"
 ---
 # <a name="launch-the-people-app"></a>啟動連絡人應用程式
 
@@ -58,7 +58,7 @@ ms.locfileid: "8935613"
 </div>
 <div> 
 </div></td>
-<td align="left">ms-people:viewcontact:?ContactId=&lt;contactid&gt;&amp;AggregatedId=&lt;aggid&gt;&amp;PhoneNumber= &lt;phonenum&gt;&amp;Email=&lt;email&gt;&amp;ContactName=&lt;name&gt;&amp;Contact=&lt;contactobj&gt;</td>
+<td align="left">ms-人： viewcontact?ContactId =&lt;contactid&gt;&amp;AggregatedId =&lt;aggid&gt;&amp;PhoneNumber = &lt;phonenum&gt;&amp;電子郵件 =&lt;電子郵件&gt;&amp;ContactName =&lt;名稱&gt;&amp;Contact =&lt;contactobj&gt;</td>
 </tr>
 <tr class="odd">
 <td align="left">啟動到連絡人應用程式內的儲存連絡人頁面，以提供的電話號碼或電子郵件地址與儲存指定的連絡人。

@@ -6,12 +6,12 @@ ms.date: 10/03/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6727c22631a9536a0ed8d04e7c88602bba890284
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: abc2ba7287541d97208899b51e81110b464b6cdd
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932584"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014713"
 ---
 # <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>傳統型應用程式與 UWP app 之間共用程式碼
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932584"
 
 以下是一部告訴您更多相關資訊的不錯影片。
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/YI4MurjfMn8]
+> [!VIDEO https://www.youtube-nocookie.com/embed/YI4MurjfMn8?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=1]
 
 ### <a name="add-net-standard-libraries"></a>新增 .NET Standard 程式庫
 
@@ -53,7 +53,7 @@ ms.locfileid: "8932584"
 
 您也可以使用這些工具來分析程式碼。 從這裡下載工具 ([dotnet-apiport](https://github.com/Microsoft/dotnet-apiport/releases))，然後觀看此影片以了解如何使用這些工具。
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/rzs_FGPyAlY]
+> [!VIDEO https://www.youtube-nocookie.com/embed/rzs_FGPyAlY?list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY&amp;ecver=2]
 
 如果您的程式碼與標準不相容，請考慮其他可以實作該程式碼的方式。 一開始先開啟 [.NET API 瀏覽器](https://docs.microsoft.com/dotnet/api/?view=netstandard-2.0)。 您可以使用該瀏覽器來檢閱 .NET Standard 2.0 中提供的 API。 請務必將清單範圍限定為 .NET Standard 2.0。
 

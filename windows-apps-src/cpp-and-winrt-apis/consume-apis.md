@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 59b056e160a1d7782e054ad4dbf1b63e91be42e9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cd26bfe2643b7130227e758083d820ce6be7d24e
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919951"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014743"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
@@ -122,6 +122,20 @@ private:
 ```
 
 所有投影類型的預設建構函式*除了* `nullptr_t` 建構函式，皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 它預期在後續次數會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
+
+這項考量會影響其中您正在叫用的預設建構函式，例如向量和地圖中的其他位置。 請考慮此程式碼範例。
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup[2] = value;
+```
+
+指派會建立新的**TextBlock**，並接著立即覆寫它與`value`。 以下是解決問題的方式。
+
+```cppwinrt
+std::map<int, TextBlock> lookup;
+lookup.insert_or_assign(2, value);
+```
 
 ## <a name="if-the-api-is-implemented-in-a-windows-runtime-component"></a>如果在 Windows 執行階段元件中實作 API
 不論您是自己撰寫元件，或由廠商提供，本節皆適用。

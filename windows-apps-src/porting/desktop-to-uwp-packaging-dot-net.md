@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
-ms.openlocfilehash: e867377c5961277d140173ab0de86d9f89197086
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e4d39690223d01a6ac553d33357c7714b2f0dca
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944148"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014723"
 ---
 # <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝的傳統型應用程式
 
@@ -69,7 +69,7 @@ ms.locfileid: "8944148"
 **影片**
 
 &nbsp;
-> [!VIDEO https://www.youtube.com/embed/fJkbYPyd08w]
+> [!VIDEO https://www.youtube-nocookie.com/embed/fJkbYPyd08w]
 
 ## <a name="next-steps"></a>後續步驟
 

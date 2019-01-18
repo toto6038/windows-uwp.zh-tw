@@ -1,16 +1,16 @@
 ---
 description: 本主題示範如何將 C++/CX 程式碼移植到其在 C++/WinRT 中的對等項目。
 title: 從 C++/CX 移到 C++/WinRT
-ms.date: 10/18/2018
+ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a6a778f1efe16d56c24e437a0c25a8b8c5e3bc7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4dc1d63451e1c344e4dd6bb2aeac31c814bd294a
+ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927233"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9014733"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -45,7 +45,7 @@ ms.locfileid: "8927233"
 ## <a name="parameter-passing"></a>參數傳遞
 撰寫 C++/CX 原始碼時，您傳遞 C++/CX 類型做為控制帽 (\^) 參考的函式參數。
 
-```cpp
+```cppcx
 void LogPresenceRecord(PresenceRecord^ record);
 ```
 
@@ -61,7 +61,7 @@ C++/WinRT 物件基本上是保留介面指標以返回 Windows 執行階段物�
 ## <a name="variable-and-field-references"></a>變數和欄位參考資料
 撰寫 C++/CX 原始碼時，使用控制帽 (\^) 變數參考 Windows 執行階段物件，以及箭號 (-&gt;) 運算子以取值控制帽變數。
 
-```cpp
+```cppcx
 IVectorView<User^>^ userList = User::Users;
 
 if (userList != nullptr)
@@ -70,7 +70,7 @@ if (userList != nullptr)
     ...
 ```
 
-當移植到對等的 C + + WinRT 程式碼中，您基本上要移除控制帽和變更箭號運算子 (-&gt;) 為點運算子 （.），因為 C + + /winrt 投影類型是值，而不是指標。
+當移植到對等的 C + + /winrt 程式碼中，您可以透過移除控制帽，及變更箭號運算子取得較長的方式 (-&gt;) 為點運算子 （.）。 C + + /winrt 投影類型是值，而不是指標。
 
 ```cppwinrt
 IVectorView<User> userList = User::Users();
@@ -81,6 +81,19 @@ if (userList != nullptr)
     ...
 ```
 
+預設建構函式的 C + /CX 控制帽指標將它初始化為 null。 以下是 C + + /CX 程式碼範例，我們會在其中建立變數/欄位的正確的類型，但有未初始化的一個。 換句話說，它不會一開始參照**TextBlock**;我們想要稍後指定的參考。
+
+```cppcx
+TextBlock^ textBlock;
+
+class MyClass
+{
+    TextBlock^ textBlock;
+};
+```
+
+對等項目在 C + + /winrt，請參閱[延遲初始化](consume-apis.md#delayed-initialization)。
+
 ## <a name="properties"></a>屬性
 C++/CX 語言擴充功能包括屬性的概念。 當撰寫 C++/CX 原始碼，如果它就像個欄位時，您可以存取屬性。 標準 C++ 不具屬性的概念，因此在 C++/WinRT 中，您要呼叫 get 並設定函式。
 
@@ -89,7 +102,7 @@ C++/CX 語言擴充功能包括屬性的概念。 當撰寫 C++/CX 原始碼，�
 ### <a name="retrieving-a-value-from-a-property"></a>從屬性擷取一個值
 以下是您如何在 C+/CX 取得屬性值的方法。
 
-```cpp
+```cppcx
 void Sample::LogPresenceRecord(PresenceRecord^ record)
 {
     auto id = record->XboxUserId;
@@ -114,7 +127,7 @@ void Sample::LogPresenceRecord(PresenceRecord const& record)
 ### <a name="setting-a-property-to-a-new-value"></a>將屬性設定給新的值
 將屬性設定給新的值，按照類似的模式。 首先，在 C++/CX 中
 
-```cpp
+```cppcx
 record->UserState = newValue;
 ```
 
@@ -127,7 +140,7 @@ record.UserState(newValue);
 ## <a name="creating-an-instance-of-a-class"></a>建立類別的執行個體
 透過一個控制代碼使用 C++/CX 物件，通常稱它為控制帽 (\^) 參考資料。 透過 `ref new` 關鍵字建立一個新的物件，依序呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 啟動一個新的執行階段類別執行個體。
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -151,7 +164,7 @@ private:
 
 如果初始化資源的成本高，則常延遲直到有實際需求時才將它初始化。
 
-```cpp
+```cppcx
 using namespace Windows::Storage::Streams;
 
 class Sample
@@ -189,7 +202,7 @@ private:
 ## <a name="converting-from-a-base-runtime-class-to-a-derived-one"></a>轉換為衍生的一個基底的執行階段類別
 它是通常有參考-為基底您知道是指衍生類型的物件。 在 C + + /CX，您使用`dynamic_cast`來*轉型*以基礎參考到參考衍生。 `dynamic_cast`是[**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521)實際上只是隱藏的呼叫。 以下是典型範例&mdash;您正在處理相依性屬性變更事件，以及您想要從**DependencyObject**轉換回是相依性屬性的擁有者的實際型別。
 
-```cpp
+```cppcx
 void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject^ d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e)
 {
     BgLabelControl^ theControl{ dynamic_cast<BgLabelControl^>(d) };
@@ -226,19 +239,21 @@ void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d
 ## <a name="event-handling-with-a-delegate"></a>使用委派的事件處理
 以下是在 C++/CX 中處理事件的一般範例，這種情形下，使用 lambda 函式做為委派。
 
-```cpp
-auto token = myButton->Click += ref new RoutedEventHandler([&](Platform::Object^ sender, RoutedEventArgs^ args)
+```cppcx
+auto token = myButton->Click += ref new RoutedEventHandler([=](Platform::Object^ sender, RoutedEventArgs^ args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
 這是 C++/WinRT 中的對等項目。
 
 ```cppwinrt
-auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs const& args)
+auto token = myButton().Click([=](IInspectable const& sender, RoutedEventArgs const& args)
 {
     // Handle the event.
+    // Note: locals are captured by value, not reference, since this handler is delayed.
 });
 ```
 
@@ -249,7 +264,7 @@ auto token = myButton().Click([&](IInspectable const& sender, RoutedEventArgs co
 ## <a name="revoking-a-delegate"></a>撤銷委派
 您在 C++/CX 中使用 `-=` 運算子撤銷前一個事件註冊。
 
-```cpp
+```cppcx
 myButton->Click -= token;
 ```
 
@@ -277,7 +292,7 @@ C++/CX 在 **平台** 命名空間中提供幾種資料類型。 這些類型不
 
 在 C++/CX 中
 
-```cpp
+```cppcx
 Platform::Agile<Windows::UI::Core::CoreWindow> m_window;
 ```
 
@@ -294,7 +309,7 @@ Windows 執行階段 API 傳回非 S\_OK HRESULT 時，C++/CX 中產生 **Platfo
 
 在 C++/CX 中
 
-```cpp
+```cppcx
 catch (Platform::Exception^ ex)
 ```
 
@@ -326,7 +341,7 @@ C++/WinRT 提供這些例外類別。
 
 以下是在 C++/CX 中擲回一個例外狀況的範例。
 
-```cpp
+```cppcx
 throw ref new Platform::InvalidArgumentException(L"A valid User is required");
 ```
 
@@ -348,21 +363,21 @@ winrt::Windows::Foundation::IInspectable var{ nullptr };
 
 使用 C++/CX，您可以存取 [**Platform::String::Data**](https://docs.microsoft.com/en-us/cpp/cppcx/platform-string-class#data) 屬性來擷取字串做為 C-style **const wchar_t\*** 陣列 (例如，將它傳遞至 **std::wcout**)。
 
-```C++
-auto var = titleRecord->TitleName->Data();
+```cppcx
+auto var{ titleRecord->TitleName->Data() };
 ```
 
 若要使用 C++/WinRT 進行相同的動作，您可以使用 [**hstring::c_str**](/uwp/api/windows.foundation.uri#hstringcstr-function) 函式，取得 null 終止的 C 式字串版本，就如同您可以從 **std::wstring** 取得一樣。
 
-```C++
-auto var = titleRecord.TitleName().c_str();
+```cppwinrt
+auto var{ titleRecord.TitleName().c_str() };
 ```
 
 實作採用或傳回字串的 API 時，您通常會變更任何使用 **Platform::String\^** 來使用 **winrt::hstring** 的 C++/CX 程式碼。
 
 以下是採用字串的 C++/CX API 範例。
 
-```cpp
+```cppcx
 void LogWrapLine(Platform::String^ str);
 ```
 
@@ -377,6 +392,22 @@ void LogWrapLine(String str);
 
 ```cppwinrt
 void LogWrapLine(winrt::hstring const& str);
+```
+
+#### <a name="tostring"></a>Tostring （)
+
+C + + /CX 提供[Object::ToString](/cpp/cppcx/platform-object-class?view=vs-2017#tostring)方法。
+
+```cppcx
+int i{ 2 };
+auto s{ i.ToString() }; // s is a Platform::String^ with value L"2".
+```
+
+C + + WinRT 不會直接提供此功能，但您可以關閉以的替代方法。
+
+```cppwinrt
+int i{ 2 };
+auto s{ std::to_wstring(i) }; // s is a std::wstring with value L"2".
 ```
 
 ## <a name="important-apis"></a>重要 API
