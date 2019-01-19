@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: c0df06458bf70599be657fe2812b2fb3e2b44ed6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 23343ea88b0347ac3e8cb5d41812a24d619be986
+ms.sourcegitcommit: 28fa37c2106ceb0ebe2c06ec74198b7ee97a9b88
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938295"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "9015419"
 ---
 # <a name="make-your-app-localizable"></a>讓您的應用程式可當地語系化
 
@@ -79,6 +79,16 @@ ms.locfileid: "8938295"
 ## <a name="pseudo-localization"></a>虛擬當地語系化
 
 虛擬當地語系化您的應用程式，以發現任何可當地語系化性問題。 虛擬當地語系化是一種當地語系化的測試執行，或公開測試。 您會產生一組並未真正翻譯的資源。他們只是看起來像是已翻譯而已。 您的字串長度會比預設語言要長 40% (舉例)，當中還帶有分隔符號，讓您可以瞥見他們在 UI 中是否遭到截斷。
+
+## <a name="deployment-considerations"></a>部署考量
+
+當您安裝您的應用程式，其中包含當地語系化的語言資料時，您可能會發現預設語言是適用於應用程式，即使您一開始包含多種語言的資源。 這起因安裝程序最佳化，以將只能安裝語言資源符合目前的語言和文化特性的裝置的方式。 這表示如果您的裝置已設定為 en-我們當您安裝應用程式只 en-我們語言資源將會安裝。 如果您變更預設語言的作業系統應用程式仍然只會顯示 en-我們資源因為它是唯一安裝的應用程式的語言。 在這個階段沒有任何方式在初始安裝之後安裝您的應用程式的其他語言支援。 
+
+如果您想要確定，所有的語言資源都可在安裝之後您可以 cerate 組態檔，指定在安裝期間的特定資源所需的應用程式套件。 在此設定檔中，您可以要求的語言資源包括安裝任何資源。 針對已安裝在保證資源的詳細資訊，請參閱這份文件：[確保無論裝置是否需要它們在裝置上已安裝資源](https://docs.microsoft.com/en-us/previous-versions/dn482043(v=vs.140))
+ 
+當您的應用程式產生 appxbundle 封裝期間，會自動啟用此最佳化的安裝功能。 選擇性地以確保已安裝所有資源可以停用 appxbundle 世代，當您封裝您的應用程式。 建議您不要不過因為它可能會增加應用程式的安裝時間。 請改為建立封裝的設定檔根據前一段而且您應該只需要允許繼續最佳化離開不需要的資源的安裝程式所需的資源。 
+ 
+您可以停用 appxbundle 產生，並藉由 「 產生應用程式套件組合 」 將屬性設定為 「 永遠不會 」 包含所有已封裝的資源。 
 
 ## <a name="geopolitical-awareness"></a>地緣政治感知
 
