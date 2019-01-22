@@ -5,16 +5,16 @@ ms.date: 5/2/2018
 ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c7055748eb8905341d9f90c47e6141c9c9c599e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b547394657fc992474ac0ef9e79719e3ab8f31e1
+ms.sourcegitcommit: 58783d1ea22e632b9c50dcfbaa1cc57686bcdd8e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929665"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024225"
 ---
 # <a name="create-an-app-installer-file-with-visual-studio"></a>使用 Visual studio 建立應用程式安裝程式檔案
 
-從 Windows 10 版本 1804 與 Visual Studio 2017 更新 15.7 開始，側載應用程式可以設定為使用`.appinstaller`檔案自動接收更新。 Visual Studio 支援啟用這些更新。
+從 Windows 10 版本 1803 起，和 Visual Studio 2017 更新 15.7 開始，側載應用程式可以設定為自動接收更新使用`.appinstaller`檔案。 Visual Studio 支援啟用這些更新。
 
 ## <a name="app-installer-file-location"></a>應用程式安裝程式檔案位置
 `.appinstaller`檔案可以裝載於共用位置 (例如 HTTP 端點或 UNC 共用資料夾)，並包含了應用程式套件的安裝路徑。 使用者從共用位置安裝應用程式以及啟用新更新的定期檢查。 
@@ -25,7 +25,7 @@ ms.locfileid: "8929665"
 您可以在建立專案時設定`TargetPlatformMinVersion`屬性，或稍後從專案屬性變更屬性。 
 
 >[!IMPORTANT]
-> 只有在`TargetPlatformMinVersion`是 Windows 10 版本 1804 或更高版本時，才會產生應用程式安裝程式檔案。
+> 只是在應用程式安裝程式檔案時產生`TargetPlatformMinVersion`是 Windows 10 版本 1803年或更高。
 
 
 ### <a name="create-packages"></a>建立套件
