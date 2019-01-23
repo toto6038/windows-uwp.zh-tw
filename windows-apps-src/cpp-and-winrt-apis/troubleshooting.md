@@ -5,17 +5,17 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、移難排解、HRESULT、錯誤
 ms.localizationpriority: medium
-ms.openlocfilehash: 120d5c8014ce9ac3cab9b2dfb1d778173f2434c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8b82fa3e8c5aa222f18c67fa0679374ef3d58a67
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927017"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024527"
 ---
 # <a name="troubleshooting-cwinrt-issues"></a>疑難排解 C++/WinRT 問題
 
 > [!NOTE]
-> 如需有關安裝和使用資訊[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C + + /winrt MSBuild 屬性和目標) 看到[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)。
+> 如需有關安裝和使用資訊[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C + + /winrt MSBuild 屬性和目標) 看到[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
 
 本主題是預先準備，這樣您就會立即知道；即使您還不需要。 無論您是剪下新的程式碼或移植現有的應用程式，下述疑難排解問題和解決方式表格可能對您會很有幫助。 如果您正在移植，且您急著想要儘快進入建置及執行專案的階段，您可以暫時將任何非必要的程式碼標成註解或移除，稍後再回來清償該負債。
 
@@ -37,7 +37,7 @@ XAML 剖析例外狀況可能難以診斷&mdash;特別是如果例外狀況中�
 | C++ 編譯器產生一個錯誤的表單「*' MyImplementationType_base&lt;MyImplementationType&gt;'；沒有適當的預設建構函式可使用*」。|您已從有一個非小型建構函式衍生時，這可能會發生。 您衍生的類型建構函式需要與需要基本類型建構函式的參數一起傳遞。 如需一個已執行的範例，請參閱 [從一個不小的建構函式衍生](author-apis.md#deriving-from-a-type-that-has-a-non-default-constructor)。|
 | C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;std::wstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*」。|您將 std::wstring 的 std::vector 傳遞到除了一個集合之外的 Windows 執行階段 API，便可能會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
 | C++ 編譯器產生錯誤「*無法從 'const std::vector&lt;winrt::hstring,std::allocator&lt;_Ty&gt;&gt;' 轉換至 'const winrt::param::async_iterable&lt;winrt::hstring&gt; &'*」。|當您將 winrt::hstring 的 std::vector 傳遞至除了一個集合之外的 Windows 執行階段 API，且您已沒有將向量複製或移動到非同步被呼叫者，便會發生此情況。 如需詳細資訊，請參閱 [標準 C++ 資料類型與 C++/WinRT](std-cpp-data-types.md)。|
-| 打開一個專案時，Visual Studio 產生此錯誤「*未安裝此專案的應用程式*」。|如果您尚未開始，您需要從 Visual Studio 的**新專案**對話方塊中安裝 **C++ 開發 Windows 通用工具**。 如果無法解決問題，則此專案可能取決於 C++/WinRT Visual Studio 擴充功能 (VSIX) (請查閱[適用於 C++/WinRT 的 Visual Studio 支援，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。|
+| 打開一個專案時，Visual Studio 產生此錯誤「*未安裝此專案的應用程式*」。|如果您尚未開始，您需要從 Visual Studio 的**新專案**對話方塊中安裝 **C++ 開發 Windows 通用工具**。 如果無法解決問題，則此專案可能取決於 C++/WinRT Visual Studio 擴充功能 (VSIX) (請查閱[適用於 C++/WinRT 的 Visual Studio 支援，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。|
 | Windows 應用程式認證套件測試產生執行階段類別的錯誤之一「*不是從 Windows 的基底類別衍生。所有可組合類別必須最終從 Windows 命名空間中的類別衍生*」。|任何執行階段類別 （在您的應用程式中宣告） 衍生自基底類別，稱為 「*可組合*類別。 可組合類別的最終基底類別必須是來自 windows.* 命名空間; 的類型例如， [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject)。 請參閱[XAML 控制項; 繫結至 C + + /winrt 屬性](binding-property.md)如需詳細資訊。|
 | C++ 編譯器產生一個 EventHandler 或 TypedEventHandler 特定委派的「*必須為 WinRT 類型*」錯誤。|請考慮改用 **winrt::delegate&lt;...T&gt;**。 請參閱 [在 C++/WinRT 中撰寫事件](author-events.md)。|
 | C++ 編譯器產生一個特定 Windows 執行階段非同步作業的「*必須為 WinRT 類型*」錯誤。|請考慮改傳回平行模式程式庫 (PPL) [**工作**](https://msdn.microsoft.com/library/hh750113)。 請查閱[並行和非同步作業](concurrency.md)。|

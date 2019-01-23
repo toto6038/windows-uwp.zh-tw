@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 新聞、 什麼的、 新的
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 87ab438de08ed5d6165343e7b9c4a559f37b351e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 986b0e896ca00e1fc15a6ed265ea1e98103524f3
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927007"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024577"
 ---
 # <a name="whats-new-in-cwinrt"></a>有何新在 C + + /winrt
 
@@ -44,7 +44,7 @@ ms.locfileid: "8927007"
 - 強化智慧型指標。 先前，撤銷時失敗事件 revokers 移動-指派新的值。 這有助於發現的問題，其中智慧型指標類別無法可靠地處理自我指派;[**winrt:: com_ptr 結構範本**](/uwp/cpp-ref-for-winrt/com-ptr)中的根目錄。 **winrt:: com_ptr**已經修正，並修正來處理事件 revokers 移動語意正確，讓它們撤銷時指派。
 
 > [!NOTE]
-> 版本 1.0.181002.2 （或更新版本） 的[C + + /winrt Visual Studio 擴充功能 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)安裝，請建立一個新的 C + + WinRT 專案會自動安裝該專案的[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 套件提供更高的 C + + WinRT 專案建置支援，讓您的專案可攜式開發電腦之間 （僅限 NuGet 套件，以及不 VSIX，安裝所在） 的組建代理程式。
+> 版本 1.0.181002.2 （或更新版本） 的[C + + /winrt Visual Studio 擴充功能 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)安裝，請建立一個新的 C + + WinRT 專案會自動安裝該專案的[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 套件提供更高的 C + + WinRT 專案建置支援，讓您的專案可攜式開發電腦之間 （僅限 NuGet 套件，以及不 VSIX，安裝所在） 的組建代理程式。
 >
 > 現有的專案的&mdash;您已安裝的版本 1.0.181002.2 之後 （或更新版本） 的 VSIX&mdash;我們建議您在 Visual Studio 中開啟專案，按一下 [**專案**] \> **管理 NuGet 套件...** \> **瀏覽**，請輸入或貼上**Microsoft.Windows.CppWinRT**在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [**安裝**安裝該專案的套件。
 

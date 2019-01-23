@@ -5,12 +5,12 @@ ms.date: 01/11/2019
 ms.topic: article
 keywords: windows 10、 uwp、 windows forms、 wpf、 win32
 ms.localizationpriority: medium
-ms.openlocfilehash: ff5df91c860ab0e063f9a4ff5ed8beb64409e876
-ms.sourcegitcommit: 9df81996628359ad6af4227339a2ce01c2d804e3
+ms.openlocfilehash: 999a990dbbc98f4f1224ce55f48d99889afbb89a
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "9001792"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024627"
 ---
 # <a name="using-the-uwp-xaml-hosting-api-in-a-desktop-application"></a>使用 UWP XAML 中的傳統型應用程式裝載 API
 
@@ -57,7 +57,7 @@ UWP XAML 裝載 API 有這些先決條件。
 
 * 若要使用 UWP XAML 裝載傳統型應用程式中的 API，您將需要設定您的專案，因此您可以呼叫 UWP Api:
 
-    * **C + + Win32:** 我們建議您設定您的專案使用[C + + /winrt](../cpp-and-winrt-apis/index.md)。 下載並安裝[C + + /winrt Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)從 Visual Studio Marketplace，然後新增```<CppWinRTEnabled>true</CppWinRTEnabled>```屬性設為所述[此處](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix)您.vcxproj 檔案。
+    * **C + + Win32:** 我們建議您設定您的專案使用[C + + /winrt](../cpp-and-winrt-apis/index.md)。 下載並安裝[C + + /winrt Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)從 Visual Studio Marketplace，然後新增```<CppWinRTEnabled>true</CppWinRTEnabled>```屬性設為所述[此處](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)您.vcxproj 檔案。
 
     * **Windows Form 及 WPF:** 請依照[下列指示](../porting/desktop-to-uwp-enhance.md)。
 

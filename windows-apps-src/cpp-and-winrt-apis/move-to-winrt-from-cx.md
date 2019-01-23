@@ -5,12 +5,12 @@ ms.date: 01/17/2019
 ms.topic: article
 keywords: Windows 10，uwp、標準、c++、cpp、winrt、投影、連接埠、移轉、C++/CX
 ms.localizationpriority: medium
-ms.openlocfilehash: 4dc1d63451e1c344e4dd6bb2aeac31c814bd294a
-ms.sourcegitcommit: 8db07db70d7630f322e274ab80dfa09980fc8d52
+ms.openlocfilehash: a2735d233b26b605a3ec964d3264a3698d2b2173
+ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "9014733"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "9024607"
 ---
 # <a name="move-to-cwinrt-from-ccx"></a>從 C++/CX 移到 C++/WinRT
 
@@ -21,14 +21,14 @@ ms.locfileid: "9014733"
 如果您想要逐漸移植您 C + + /CX 程式碼為 C + + /winrt，則您可以。 C + + /CX 與 C + + /winrt 程式碼可以同時存在於在同一個專案中，使用 XAML 編譯器支援和 Windows 執行階段元件的例外狀況。 這些兩個例外狀況，您將需要為目標的 C + + /CX 或 C + + WinRT 相同的專案中。
 
 > [!IMPORTANT]
-> 如果您的專案會建置一個 XAML 應用程式，然後一個建議的工作流程是第一次建立新的專案，在 Visual Studio 中使用其中一個 C + + /winrt 專案範本 (請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 接著，開始將複製的原始程式碼與標記從 C + + /CX 專案。 您可以新增新的 XAML 頁面使用**專案** \> **加入新項目** \>  **Visual c + +** > **空白頁面 (C + + /winrt)**。
+> 如果您的專案會建置一個 XAML 應用程式，然後一個建議的工作流程是第一次建立新的專案，在 Visual Studio 中使用其中一個 C + + /winrt 專案範本 (請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。 接著，開始將複製的原始程式碼與標記從 C + + /CX 專案。 您可以新增新的 XAML 頁面使用**專案** \> **加入新項目** \>  **Visual c + +** > **空白頁面 (C + + /winrt)**。
 >
 > 或者，您可以使用 Windows 執行階段元件因數的程式碼不使用 XAML C + + /CX 專案，因為您將其移植。 無論是移動簽定 C + + /CX 程式碼，因為您可以到元件，並接著將 XAML 專案變更為 C + + /winrt。 或其他留下的 XAML 專案為 C + + /CX，建立一個新的 C + + WinRT 元件，並開始移植 C + + /CX 程式碼不使用 XAML 專案和元件。 您可能也會有 C + + /CX 元件專案旁邊的 C + + 在同一個方案中，內的 WinRT 元件專案參考這兩個從您的應用程式專案，並逐漸移植從另一個。 請參閱[互通性之間 C + + /winrt 與 C + + /CX](interop-winrt-cx.md)如需有關在同一個專案中使用兩種語言專案的詳細資訊。
 
 > [!NOTE]
 > [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) 以及根命名空間 **Windows** 的 Windows SDK 宣告類型。 投影到 C++/WinRT 的 Windows 類型有與 Windows 類型相同的完整名稱，但它放在 C++ **winrt** 命名空間。 這些不同的命名空間，可讓您以自己的速度從 C++/CX 移植至 C++/WinRT。
 
-請記住如上方所述的例外狀況，第一個步驟中移植 C + + CX 專案至 C + + WinRT 是手動新增 C + + /winrt 支援 (請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 該項變更的一個效果是專案中支援的 C++/CX 為關閉。 它是不錯的想法讓支援保持關閉，建置訊息會協助您尋找 （和連接埠），讓您相依性的所有 C + /CX，或者您可以將支援重新開啟 (專案屬性中， **C/c + +** \> **一般** \> **取用 Windows 執行階段延伸模組** \> **是 (/ZW)**)，並逐漸移植。
+請記住如上方所述的例外狀況，第一個步驟中移植 C + + CX 專案至 C + + WinRT 是手動新增 C + + /winrt 支援 (請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix))。 若要這樣做，請編輯您的 `.vcxproj` 檔案、尋找 `<PropertyGroup Label="Globals">`，然後在群組屬性裡設定屬性 `<CppWinRTEnabled>true</CppWinRTEnabled>`。 該項變更的一個效果是專案中支援的 C++/CX 為關閉。 它是不錯的想法讓支援保持關閉，建置訊息會協助您尋找 （和連接埠），讓您相依性的所有 C + /CX，或者您可以將支援重新開啟 (專案屬性中， **C/c + +** \> **一般** \> **取用 Windows 執行階段延伸模組** \> **是 (/ZW)**)，並逐漸移植。
 
 請確定該專案屬性**一般** \> **目標平台版本**設為 10.0.17134.0 (Windows 10，版本 1803年) 或更高。
 
