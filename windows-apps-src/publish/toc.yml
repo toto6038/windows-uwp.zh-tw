@@ -1,222 +1,213 @@
-items:
 - name: 概觀
   href: ../publish/index.md
 - name: 開啟開發人員帳戶
   href: ../publish/opening-a-developer-account.md
   items:
-  - name: 帳戶類型、位置和費用
-    href: ../publish/account-types-locations-and-fees.md
-  - name: 管理帳戶設定與設定檔資訊
-    href: ../publish/manage-account-settings-and-profile.md
-  - name: 商標與著作權保護
-    href: ../publish/trademark-and-copyright-protection.md
-  - name: 開發人員中心測試人員計畫
-    href: ../publish/dev-center-insider-program.md
+    - name: 帳戶類型、位置和費用
+      href: ../publish/account-types-locations-and-fees.md
+    - name: 管理帳戶設定與設定檔資訊
+      href: ../publish/manage-account-settings-and-profile.md
+    - name: 商標與著作權保護
+      href: ../publish/trademark-and-copyright-protection.md
 - name: 管理帳戶使用者
   href: ../publish/manage-account-users.md
   items:
-  - name: 將 Azure AD 與您的合作夥伴中心帳戶產生關聯
-    href: ../publish/associate-azure-ad-with-partner-center.md
-  - name: 新增使用者、群組及 Azure AD 應用程式
-    href: ../publish/add-users-groups-and-azure-ad-applications.md
-  - name: 設定規則與自訂權限
-    href: ../publish/set-custom-permissions-for-account-users.md
+    - name: 將 Azure AD 與您的合作夥伴中心帳戶產生關聯
+      href: ../publish/associate-azure-ad-with-partner-center.md
+    - name: 新增使用者、群組及 Azure AD 應用程式
+      href: ../publish/add-users-groups-and-azure-ad-applications.md
+    - name: 設定規則與自訂權限
+      href: ../publish/set-custom-permissions-for-account-users.md
 - name: 透過保留名稱建立您的應用程式
   href: ../publish/create-your-app-by-reserving-a-name.md
 - name: 應用程式提交
   href: ../publish/app-submissions.md
   items:
-  - name: 設定應用程式價格與可用性
-    href: ../publish/set-app-pricing-and-availability.md
-    items:
-    - name: 定義市場選取項目
-      href: ../publish/define-market-selection.md
-    - name: 選擇可見度選項
-      href: ../publish/choose-visibility-options.md
-    - name: 設定精確發行時間表
-      href: ../publish/configure-precise-release-scheduling.md
-    - name: 設定與排程應用程價格
-      href: ../publish/set-and-schedule-app-pricing.md
-    - name: 組織授權選項
-      href: ../publish/organizational-licensing.md
-  - name: 輸入應用程式屬性
-    href: ../publish/enter-app-properties.md
-    items:
-    - name: 類別與子類別表格
-      href: ../publish/category-and-subcategory-table.md
-    - name: 產品宣告
-      href: ../publish/product-declarations.md
-  - name: 年齡分級
-    href: ../publish/age-ratings.md
-  - name: 上傳應用程式套件
-    href: ../publish/upload-app-packages.md
-    items:
-    - name: 裝置系列可用性
-      href: ../publish/device-family-availability.md
-    - name: 應用程式套件需求
-      href: ../publish/app-package-requirements.md
-    - name: 套件版本編號
-      href: ../publish/package-version-numbering.md
-    - name: 支援的語言
-      href: ../publish/supported-languages.md
-    - name: 應用程式套件管理指引
-      href: ../publish/guidance-for-app-package-management.md
-  - name: 建立應用程式 Store 清單
-    href: ../publish/create-app-store-listings.md
-    items:
-    - name: 撰寫一份出色的應用程式介紹
-      href: ../publish/write-a-great-app-description.md
-    - name: 應用程式螢幕擷取畫面、影像及預告片
-      href: ../publish/app-screenshots-and-images.md
-    - name: 匯入及匯出市集清單
-      href: ../publish/import-and-export-store-listings.md
-    - name: 建立平台專屬的 Store 清單
-      href: ../publish/create-platform-specific-store-listings.md
-  - name: 管理提交選項
-    href: ../publish/manage-submission-options.md
-    items:
-    - name: 認證注意事項
-      href: ../publish/notes-for-certification.md
-  - name: 應用程式認證程序
-    href: ../publish/the-app-certification-process.md
-    items:
-    - name: 解決提交錯誤
-      href: ../publish/resolve-submission-errors.md
-    - name: 避免常見的認證失敗
-      href: ../publish/avoid-common-certification-failures.md
-  - name: 套件正式發行前小眾測試版
-    href: ../publish/package-flights.md
-  - name: 漸進式套件推出
-    href: ../publish/gradual-package-rollout.md
-  - name: 搶鮮版 (Beta) 測試和特定對象的發佈
-    href: ../publish/beta-testing-and-targeted-distribution.md
-  - name: 將 LOB 應用程式發佈到企業
-    href: ../publish/distribute-lob-apps-to-enterprises.md
+    - name: 設定應用程式價格與可用性
+      href: ../publish/set-app-pricing-and-availability.md
+      items:
+        - name: 定義市場選取項目
+          href: ../publish/define-market-selection.md
+        - name: 選擇可見度選項
+          href: ../publish/choose-visibility-options.md
+        - name: 設定精確發行時間表
+          href: ../publish/configure-precise-release-scheduling.md
+        - name: 設定與排程應用程價格
+          href: ../publish/set-and-schedule-app-pricing.md
+        - name: 組織授權選項
+          href: ../publish/organizational-licensing.md
+    - name: 輸入應用程式屬性
+      href: ../publish/enter-app-properties.md
+      items:
+        - name: 類別與子類別表格
+          href: ../publish/category-and-subcategory-table.md
+        - name: 產品宣告
+          href: ../publish/product-declarations.md
+    - name: 年齡分級
+      href: ../publish/age-ratings.md
+    - name: 上傳應用程式套件
+      href: ../publish/upload-app-packages.md
+      items:
+        - name: 裝置系列可用性
+          href: ../publish/device-family-availability.md
+        - name: 應用程式套件需求
+          href: ../publish/app-package-requirements.md
+        - name: 套件版本編號
+          href: ../publish/package-version-numbering.md
+        - name: 支援的語言
+          href: ../publish/supported-languages.md
+        - name: 應用程式套件管理指引
+          href: ../publish/guidance-for-app-package-management.md
+    - name: 建立應用程式 Store 清單
+      href: ../publish/create-app-store-listings.md
+      items:
+        - name: 撰寫一份出色的應用程式介紹
+          href: ../publish/write-a-great-app-description.md
+        - name: 應用程式螢幕擷取畫面、影像及預告片
+          href: ../publish/app-screenshots-and-images.md
+        - name: 匯入及匯出市集清單
+          href: ../publish/import-and-export-store-listings.md
+        - name: 建立平台專屬的 Store 清單
+          href: ../publish/create-platform-specific-store-listings.md
+    - name: 管理提交選項
+      href: ../publish/manage-submission-options.md
+      items:
+        - name: 認證注意事項
+          href: ../publish/notes-for-certification.md
+    - name: 應用程式認證程序
+      href: ../publish/the-app-certification-process.md
+      items:
+        - name: 解決提交錯誤
+          href: ../publish/resolve-submission-errors.md
+        - name: 避免常見的認證失敗
+          href: ../publish/avoid-common-certification-failures.md
+    - name: 套件正式發行前小眾測試版
+      href: ../publish/package-flights.md
+    - name: 漸進式套件推出
+      href: ../publish/gradual-package-rollout.md
+    - name: 搶鮮版 (Beta) 測試和特定對象的發佈
+      href: ../publish/beta-testing-and-targeted-distribution.md
+    - name: 將 LOB 應用程式發佈到企業
+      href: ../publish/distribute-lob-apps-to-enterprises.md
 - name: 附加元件提交
   href: ../publish/add-on-submissions.md
   items:
-  - name: 設定您的附加內容產品類型與產品識別碼
-    href: ../publish/set-your-add-on-product-id.md
-  - name: 輸入附加元件屬性
-    href: ../publish/enter-add-on-properties.md
-  - name: 設定附加元件價格與可用性
-    href: ../publish/set-add-on-pricing-and-availability.md
-  - name: 建立附加元件 Store 清單
-    href: ../publish/create-add-on-store-listings.md
+    - name: 設定您的附加內容產品類型與產品識別碼
+      href: ../publish/set-your-add-on-product-id.md
+    - name: 輸入附加元件屬性
+      href: ../publish/enter-add-on-properties.md
+    - name: 設定附加元件價格與可用性
+      href: ../publish/set-add-on-pricing-and-availability.md
+    - name: 建立附加元件 Store 清單
+      href: ../publish/create-add-on-store-listings.md
 - name: 應用程式內廣告
   href: ../publish/in-app-ads.md
 - name: App 管理與服務
   href: ../publish/app-management-and-services.md
   items:
-  - name: 檢視應用程式身分識別詳細資料
-    href: ../publish/view-app-identity-details.md
-  - name: 管理應用程式名稱
-    href: ../publish/manage-app-names.md
-  - name: 產生 OEM 的預先安裝套件
-    href: ../publish/generate-preinstall-packages-for-oems.md
+    - name: 檢視應用程式身分識別詳細資料
+      href: ../publish/view-app-identity-details.md
+    - name: 管理應用程式名稱
+      href: ../publish/manage-app-names.md
+    - name: 產生 OEM 的預先安裝套件
+      href: ../publish/generate-preinstall-packages-for-oems.md
 - name: 吸引關注與宣傳
   href: ../publish/attract-customers-and-promote-your-apps.md
   items:
-  - name: 產生促銷碼
-    href: ../publish/generate-promotional-codes.md
-  - name: 為您的應用程式建立廣告活動
-    href: ../publish/create-an-ad-campaign-for-your-app.md
-    items:
-    - name: 管理您的廣告活動
-      href: ../publish/managing-your-ad-campaign.md
-    - name: 關於自家廣告
-      href: ../publish/about-house-ads.md
-    - name: 關於社群廣告
-      href: ../publish/about-community-ads.md
-    - name: 關於廣告活動的常見問題
-      href: ../publish/common-questions.md
-  - name: 建立自訂應用程式促銷活動
-    href: ../publish/create-a-custom-app-promotion-campaign.md
-  - name: 促銷應用程式和附加元件
-    href: ../publish/put-apps-and-add-ons-on-sale.md
-  - name: 應用程式行銷指導方針
-    href: ../publish/app-marketing-guidelines.md
-  - name: 應用程式的連結
-    href: ../publish/link-to-your-app.md
-  - name: 讓您的應用程式更容易促銷
-    href: ../publish/make-your-app-easier-to-promote.md
+    - name: 產生促銷碼
+      href: ../publish/generate-promotional-codes.md
+    - name: 為您的應用程式建立廣告活動
+      href: ../publish/create-an-ad-campaign-for-your-app.md
+      items:
+        - name: 管理您的廣告活動
+          href: ../publish/managing-your-ad-campaign.md
+        - name: 關於自家廣告
+          href: ../publish/about-house-ads.md
+        - name: 關於社群廣告
+          href: ../publish/about-community-ads.md
+        - name: 關於廣告活動的常見問題
+          href: ../publish/common-questions.md
+    - name: 建立自訂應用程式促銷活動
+      href: ../publish/create-a-custom-app-promotion-campaign.md
+    - name: 促銷應用程式和附加元件
+      href: ../publish/put-apps-and-add-ons-on-sale.md
+    - name: 應用程式行銷指導方針
+      href: ../publish/app-marketing-guidelines.md
+    - name: 應用程式的連結
+      href: ../publish/link-to-your-app.md
+    - name: 讓您的應用程式更容易促銷
+      href: ../publish/make-your-app-easier-to-promote.md
 - name: 與您的客戶互動
   href: ../publish/engage-with-your-customers.md
   items:
-  - name: 建立客戶群組
-    href: ../publish/create-customer-groups.md
-    items:
-    - name: 建立客戶區隔
-      href: ../publish/create-customer-segments.md
-    - name: 建立已知的使用者群組
-      href: ../publish/create-known-user-groups.md
-  - name: 回應客戶評論
-    href: ../publish/respond-to-customer-reviews.md
-  - name: 回應客戶意見反應
-    href: ../publish/respond-to-customer-feedback.md
-  - name: 傳送通知給您的應用程式客戶
-    href: ../publish/send-push-notifications-to-your-apps-customers.md
-  - name: 使用針對性優惠
-    href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
+    - name: 建立客戶群組
+      href: ../publish/create-customer-groups.md
+      items:
+        - name: 建立客戶區隔
+          href: ../publish/create-customer-segments.md
+        - name: 建立已知的使用者群組
+          href: ../publish/create-known-user-groups.md
+    - name: 回應客戶評論
+      href: ../publish/respond-to-customer-reviews.md
+    - name: 回應客戶意見反應
+      href: ../publish/respond-to-customer-feedback.md
+    - name: 傳送通知給您的應用程式客戶
+      href: ../publish/send-push-notifications-to-your-apps-customers.md
+    - name: 使用針對性優惠
+      href: ../publish/use-targeted-offers-to-maximize-engagement-and-conversions.md
 - name: 分析應用程式效能
   href: ../publish/analytics.md
   items:
-  - name: 下載數報告
-    href: ../publish/acquisitions-report.md
-  - name: 附加元件下載數報告
-    href: ../publish/add-on-acquisitions-report.md
-  - name: 使用方式報告
-    href: ../publish/usage-report.md
-  - name: 健康情況報告
-    href: ../publish/health-report.md
-  - name: 評分報告
-    href: ../publish/ratings-report.md
-  - name: 評論報告
-    href: ../publish/reviews-report.md
-  - name: 意見反應報告
-    href: ../publish/feedback-report.md
-  - name: Xbox 分析報告
-    href: ../publish/xbox-analytics-report.md
-  - name: 見解報告
-    href: ../publish/insights-report.md
-  - name: 廣告績效報告
-    href: ../publish/advertising-performance-report.md
-  - name: 廣告行銷活動報告
-    href: ../publish/ad-campaign-report.md
-  - name: 下載分析報告
-    href: ../publish/download-analytic-reports.md
+    - name: 下載數報告
+      href: ../publish/acquisitions-report.md
+    - name: 附加元件下載數報告
+      href: ../publish/add-on-acquisitions-report.md
+    - name: 使用方式報告
+      href: ../publish/usage-report.md
+    - name: 健康情況報告
+      href: ../publish/health-report.md
+    - name: 評分報告
+      href: ../publish/ratings-report.md
+    - name: 評論報告
+      href: ../publish/reviews-report.md
+    - name: 意見反應報告
+      href: ../publish/feedback-report.md
+    - name: Xbox 分析報告
+      href: ../publish/xbox-analytics-report.md
+    - name: 見解報告
+      href: ../publish/insights-report.md
+    - name: 廣告績效報告
+      href: ../publish/advertising-performance-report.md
+    - name: 廣告行銷活動報告
+      href: ../publish/ad-campaign-report.md
+    - name: 下載分析報告
+      href: ../publish/download-analytic-reports.md
 - name: 獲得報酬
   href: ../publish/getting-paid-apps.md
   items:
-  - name: 設定您的支出及稅收表格
-    href: ../publish/setting-up-your-payout-account-and-tax-forms.md
-  - name: 支付臨界值、方法和時間範圍
-    href: ../publish/payment-thresholds-methods-and-timeframes.md
-  - name: 支付摘要
-    href: ../publish/payout-summary.md
-  - name: 付費應用程式的稅務詳細資料
-    href: ../publish/tax-details-for-paid-apps.md
-  - name: 了解 IRS 稅單
-    href: ../publish/understand-irs-tax-forms.md
-  - name: 電信業者帳單
-    href: ../publish/mobile-operator-billing.md
-  - name: VAT 資訊
-    href: ../publish/vat-info.md
+    - name: 設定您的支出及稅收表格
+      href: ../publish/setting-up-your-payout-account-and-tax-forms.md
+    - name: 支付臨界值、方法和時間範圍
+      href: ../publish/payment-thresholds-methods-and-timeframes.md
+    - name: 支付摘要
+      href: ../publish/payout-summary.md
+    - name: 付費應用程式的稅務詳細資料
+      href: ../publish/tax-details-for-paid-apps.md
+    - name: 了解 IRS 稅單
+      href: ../publish/understand-irs-tax-forms.md
+    - name: 電信業者帳單
+      href: ../publish/mobile-operator-billing.md
+    - name: VAT 資訊
+      href: ../publish/vat-info.md
 - name: Microsoft Store 原則與管理辦法
-  href: https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct
+  href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies-and-code-of-conduct'
   items:
-  - name: Microsoft Store 原則
-    href: https://docs.microsoft.com/legal/windows/agreements/store-policies
-    items:
-    - name: 變更歷程記錄
-      href: https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history
-  - name: 應用程式品質
-    href: https://docs.microsoft.com/legal/windows/agreements/store-app-quality
-  - name: 開發人員管理辦法
-    href: https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct
-ms.openlocfilehash: 53ac86d707ecbf117e4fc2852ca476dc73cc9525
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962480"
+    - name: Microsoft Store 原則
+      href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies'
+      items:
+        - name: 變更歷程記錄
+          href: 'https://docs.microsoft.com/legal/windows/agreements/store-policies-change-history'
+    - name: 應用程式品質
+      href: 'https://docs.microsoft.com/legal/windows/agreements/store-app-quality'
+    - name: 開發人員管理辦法
+      href: 'https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct'
