@@ -5,12 +5,12 @@ ms.date: 10/27/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、並行、async、非同步的、非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f49d630d20c9f21f67baa4824b2d52ae3bcb446
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0c9a0912b0287d45633aeec4dbb643e7959c215
+ms.sourcegitcommit: 4ee300bfa6a238d3ce7674036ec1c574bb025210
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927263"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "9029931"
 ---
 # <a name="concurrency-and-asynchronous-operations-with-cwinrt"></a>透過 C++/WinRT 的並行和非同步作業
 
@@ -66,7 +66,7 @@ int main()
 C++/WinRT 與 C++ 協同程式整合為程式設計模型，提供以自然的方式合作等待結果。 您可以藉由撰寫協同程式產生自己的 Windows 執行階段非同步作業。 下列程式碼範例中，**ProcessFeedAsync** 是協同程式。
 
 > [!NOTE]
-> **取得**函式存在於 C + + /winrt 投影類型**winrt::Windows::Foundation::IAsyncAction**，，因此您可以呼叫的函式內任何 C + + /winrt 專案。 因為**取得**不是實際的 Windows 執行階段類型**IAsyncAction**的應用程式二進位介面 (ABI) 表面的一部分，您不會找到列為[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)介面的成員函式。
+> **取得**函式存在於 C + + /winrt 投影輸入**winrt::Windows::Foundation::IAsyncAction**，，因此您可以呼叫函式的內任何 C + + /winrt 專案。 因為**取得**不是實際的 Windows 執行階段類型**IAsyncAction**的應用程式二進位介面 (ABI) 表面的一部分，您不會找到列為[**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction)介面的成員函式。
 
 ```cppwinrt
 // main.cpp
@@ -256,7 +256,7 @@ IASyncAction DoWorkAsync(Param const value);
 
 協同程式很像任何其他函式，因為呼叫者會遭到封鎖，直到函式將執行傳回給它。 和協同程式，傳回的第一個機會是第一個`co_await`， `co_return`，或`co_yield`。
 
-因此，您才開始計算繫結工作在協同程式中，您需要將執行傳回給呼叫者 （亦即，導致暫停點），以便呼叫者便未遭到封鎖。 如果您正在您尚未透過`co_await`-來執行此其他作業，則您可以`co_await` [**winrt:: resume_background**](/uwp/cpp-ref-for-winrt/resume-background)函式。 其將控制項傳回給呼叫者，並立即恢復執行緒集區執行緒的執行。
+因此，您才開始計算繫結工作，在協同程式中，您需要將執行傳回給呼叫者 （亦即，導致暫停點），以便呼叫者便未遭到封鎖。 如果您正在您尚未透過`co_await`-來執行此其他作業，則您可以`co_await` [**winrt:: resume_background**](/uwp/cpp-ref-for-winrt/resume-background)函式。 其將控制項傳回給呼叫者，並立即恢復執行緒集區執行緒的執行。
 
 實作中使用的執行緒集區是低層級的 [Windows 執行緒集區](https://msdn.microsoft.com/library/windows/desktop/ms686766)，所以是最有效的。
 
@@ -289,7 +289,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-上方的程式碼擲回一個 [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) 例外，因為 **TextBlock** 必須從建立它的執行緒進行更新，也就是 UI 執行緒。 一種解決方案就是擷取我們最初呼叫的協同程式的執行緒內容。 若要這樣做， [**winrt:: apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context)物件具現化、 執行背景工作，然後`co_await` **apartment_context**切換回呼叫內容。
+上方的程式碼擲回一個 [**winrt::hresult_wrong_thread**](/uwp/cpp-ref-for-winrt/hresult-wrong-thread) 例外，因為 **TextBlock** 必須從建立它的執行緒進行更新，也就是 UI 執行緒。 一種解決方案就是擷取我們最初呼叫的協同程式的執行緒內容。 若要這樣做， [**winrt:: apartment_context**](/uwp/cpp-ref-for-winrt/apartment-context)物件具現化，請執行背景工作，然後`co_await` **apartment_context**切換回呼叫內容。
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -322,11 +322,11 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 }
 ```
 
-## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>執行內容，繼續執行，並在協同程式中切換
+## <a name="execution-contexts-resuming-and-switching-in-a-coroutine"></a>執行內容、 繼續及在協同程式中切換
 
-廣泛地說，在協同程式在暫停點之後, 在原始的執行緒可能會消失，並且回復也可能發生任何執行緒上 （亦即，任何執行緒可能會將**Completed**方法呼叫非同步作業）。
+廣泛地說，在協同程式中暫停點之後, 在原始的執行緒可能會消失，並回復可能會發生任何執行緒上 （亦即，任何執行緒可能會將**已完成**方法呼叫非同步作業）。
 
-但如果您`co_await`任何四個 Windows 執行階段非同步作業類型 (**IAsyncXxx**)，然後 C + + /winrt 會擷取呼叫內容的某個點您`co_await`。 它可確保您是仍在該內容，則接續繼續執行時。 C + + /winrt 的運作方式檢查是否您已經在呼叫內容，而如果不是，改用它。 如果您已在前一個單一執行緒 apartment (STA) 執行緒上`co_await`，然後，您就會在同一個之後;如果您已在多執行緒的 apartment (MTA) 執行緒之前`co_await`，則您將會在同一個之後。
+但如果您`co_await`任何四個 Windows 執行階段非同步作業類型 (**IAsyncXxx**)，然後 C + + WinRT 會擷取呼叫內容的某個點您`co_await`。 和它可確保您是仍在該內容，則接續繼續執行時。 C + + /winrt 的運作方式檢查是否您已經在呼叫內容，而如果不是，改用它。 如果您已在單一執行緒 apartment (STA) 執行緒之前`co_await`，則您可以在同一個之後;如果您已在多執行緒的 apartment (MTA) 執行緒之前`co_await`，則您將會在同一個之後。
 
 ```cppwinrt
 IAsyncAction ProcessFeedAsync()
@@ -353,7 +353,7 @@ IAsyncOperation<int> return_123_after_5s()
 }
 ```
 
-如果您`co_await`一些其他類型&mdash;即使在 C + + /winrt 協同程式實作&mdash;則另一個文件庫提供介面卡，且您將需要了解這些介面卡執行思考回復與內容。
+如果您`co_await`一些其他類型&mdash;即使在 C + + /winrt 協同程式實作&mdash;則另一個文件庫提供介面卡，且您必須了解這些介面卡執行思考回復與內容。
 
 若要保留，最小內容切換，您可以使用的一些我們已經看過本主題中的技術。 我們來看看一些執行此作業的圖例。 在下一個虛擬程式碼範例，我們會示範事件處理常式，呼叫 Windows 執行階段 API 載入影像、 collect 到背景執行緒來處理該映像，然後傳回至 UI 執行緒來在 UI 中顯示影像的外框。
 
@@ -381,7 +381,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 }
 ```
 
-在這個案例中，沒有一點 ineffiency 周圍**StorageFile::OpenAsync**呼叫。 沒有必要內容切換為背景執行緒 （因此，在處理常式可以將執行傳回給呼叫者） 上回復之後的 C +, + /winrt 會還原的 UI 執行緒內容。 但是，在此情況下，沒有必要將會在 UI 執行緒上，直到我們即將更新 UI。 我們會呼叫*之前*我們呼叫**winrt:: resume_background**，我們會帶來更不必要背面往來內容切換多個 Windows 執行階段 Api。 解決方案不是*任何*Windows 執行階段 Api 之前，先呼叫然後。 **Winrt:: resume_background**之後的所有移動。
+在這個案例中，沒有 ineffiency **StorageFile::OpenAsync**呼叫周圍的一點。 沒有必要內容切換為背景執行緒 （因此，在處理常式可以將執行傳回給呼叫者） 上回復後的 C +, + /winrt 會還原的 UI 執行緒內容。 但是，在此情況下，沒有必要將會在 UI 執行緒上，直到我們即將更新 UI。 我們會呼叫*之前*我們呼叫**winrt:: resume_background**，我們會造成不必要更背面往來內容切換多個 Windows 執行階段 Api。 解決方案不是*任何*Windows 執行階段 Api 之前，先呼叫然後。 **Winrt:: resume_background**之後的所有移動。
 
 ```cppwinrt
 #include <winrt/Windows.UI.Core.h> // necessary in order to use winrt::resume_foreground.
@@ -405,10 +405,10 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 }
 ```
 
-如果您想要執行某些更進階的則您可以撰寫您自己，await 介面卡。 例如，如果您想要`co_await`非同步動作完成的相同執行緒上繼續 （因此，沒有任何內容切換），則您可以藉由撰寫開始 await 介面卡類似如下所示。
+如果您想要執行更進階的則您可以撰寫您自己，等待介面卡。 例如，如果您想要`co_await`繼續完成的非同步動作的相同執行緒上 （因此，沒有任何內容切換），則您可以藉由撰寫開始 await 介面卡類似如下所示。
 
 > [!NOTE]
-> 下列程式碼範例是教育僅用以提供;它是可協助您開始了解如何 await 介面卡的工作。 如果您想要使用這項技術，在您自己的程式碼基底，我們建議您開發和測試您自己 await struct(s) 介面卡。 例如，您可以撰寫**complete_on_any**、 **complete_on_current**，以及**complete_on(dispatcher)**。 也請考慮讓它們變成採取**IAsyncXxx**類型做為範本參數的範本。
+> 下列程式碼範例是教育僅用以提供;它是可協助您開始了解如何 await 介面卡的工作。 如果您想要使用此技巧在您自己的程式碼基底，我們建議您開發和測試您自己 await struct(s) 介面卡。 例如，您可以撰寫**complete_on_any**、 **complete_on_current**，以及**complete_on(dispatcher)**。 也請考慮讓它們變成**IAsyncXxx**類型做為範本參數的範本。
 
 ```cppwinrt
 struct no_switch
@@ -454,11 +454,11 @@ IAsyncAction async{ ProcessFeedAsync() };
 co_await static_cast<no_switch>(async);
 ```
 
-然後，而不是尋找符合**IAsyncXxx**的三個**await_xxx**函式，c + + 編譯器會尋找符合**no_switch**的函式。
+然後，而不是尋找符合**IAsyncXxx**的三個**await_xxx**函式，c + + 編譯器會尋找符合**no_switch**函式。
 
 ## <a name="canceling-an-asychronous-operation-and-cancellation-callbacks"></a>取消非同步作業，並取消回呼
 
-在 Windows 執行階段功能進行非同步程式設計可讓您取消 「 執行中 」 的非同步動作或作業。 以下是範例會呼叫[**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)来擷取的檔案，可能很大集合，它會產生非同步作業物件儲存在資料成員。 使用者也可選擇取消作業。
+在 Windows 執行階段功能進行非同步程式設計可讓您取消 「 執行中 」 的非同步動作或作業。 以下是範例會呼叫[**StorageFolder::GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)來擷取可能很大集合的檔案，並且以儲存資料成員中產生非同步作業物件。 使用者已選擇取消作業。
 
 ```cppwinrt
 // MainPage.xaml
@@ -545,11 +545,11 @@ int main()
 }
 ```
 
-如果您執行上述範例，則您會看到**ImplicitCancellationAsync**列印一則訊息每秒後的三秒的時間就會自動終止帶來被取消。 因為在遇到`co_await`運算式，協同程式會檢查是否已取消。 如果有，則它 short-circuits 出;如果未指定，則它就會暫停為一般。
+如果您執行上述範例，則您會看到**ImplicitCancellationAsync**列印一則訊息每秒後的三秒的時間就會自動終止帶來被取消。 因為在遇到`co_await`運算式，協同程式會檢查是否已取消。 如果有，則它 short-circuits 出;此外，若未指定，則它會暫停為一般。
 
-協同程式暫停時，取消可以當然，會發生。 只有當協同程式恢復時，碰到另一部或`co_await`，它會檢查的取消。 問題是其中一個可能太--粗糙的延遲時間以回應取消作業。
+協同程式暫停時，取消，當然，會發生。 只有當協同程式恢復時，或叫用另一個`co_await`，它會檢查的取消。 問題是其中一個可能太--粗糙的延遲時間以回應取消作業。
 
-因此，另一個選項是明確地輪詢取消從您的協同程式中。 更新，上述範例使用下列清單中的程式碼。 在這個新的範例中， **ExplicitCancellationAsync**擷取[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函式所傳回的物件，並使用它來定期檢查是否已取消協同程式。 協同程式，只要不取消，迴圈無限期;一旦取消，迴圈，並將函式正常的結束。 因為先前範例中，但此處離開會發生明確，並控制下，結果會相同。
+因此，另一個選項是從您的協同程式中的取消明確輪詢。 使用下列清單中的程式碼來更新，上述範例。 在這個新的範例中， **ExplicitCancellationAsync**擷取[**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token)函式所傳回的物件，並使用它來定期檢查是否已取消協同程式。 協同程式，只要不取消，迴圈無限期;一旦取消，迴圈，並將函式正常的結束。 因為先前範例中，但此處離開會發生明確，並控制下，結果會相同。
 
 ```cppwinrt
 ...
@@ -573,11 +573,11 @@ IAsyncAction MainCoroutineAsync()
 ...
 ```
 
-等候**winrt::get_cancellation_token**擷取代表您的協同程式便會產生**IAsyncAction**知識與取消語彙基元。 您可以在該權杖使用函式呼叫運算子來查詢取消狀態&mdash;基本上輪詢取消。 如果您正在執行某些計算繫結的作業，或逐一查看大型集合，這是合理的技術。
+等候**winrt::get_cancellation_token**擷取代表您的協同程式產生**IAsyncAction**知識與取消語彙基元。 您可以在該權杖使用函式呼叫運算子來查詢取消狀態&mdash;基本上輪詢取消。 如果您正在執行某些計算繫結的作業，或逐一查看大型的集合，這是合理的技術。
 
 ### <a name="register-a-cancellation-callback"></a>登錄取消回呼
 
-在 Windows 執行階段取消不會自動流向其他非同步物件。 但是&mdash;版本 10.0.17763.0 (Windows 10 版本 1809年) 的 Windows sdk 中導入&mdash;您可以登錄取消回呼。 這是預先勾點取消可以被傳播，並讓您使用現有的並行處理程式庫整合。
+在 Windows 執行階段取消不會自動流向其他非同步物件。 但是&mdash;版本 10.0.17763.0 (Windows 10 版本 1809) 的 Windows sdk 中導入&mdash;您可以登錄取消回呼。 這是預先勾點取消可以被傳播，並讓您使用現有的並行處理程式庫整合。
 
 在下一個程式碼範例， **NestedCoroutineAsync**負責運作，但它有任何特殊的取消邏輯中它。 **CancellationPropagatorAsync**是基本上是巢狀的協同程式; 上的包裝函式包裝函式會聯合國轉送取消。
 
@@ -607,7 +607,7 @@ IAsyncAction CancellationPropagatorAsync()
     auto cancellation_token{ co_await winrt::get_cancellation_token() };
     auto nested_coroutine{ NestedCoroutineAsync() };
 
-    cancellation_token.callback([&]
+    cancellation_token.callback([=]
     {
         nested_coroutine.Cancel();
     });
@@ -629,7 +629,7 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync**登錄它自己的取消回呼，lambda 函式，並在它的等待然後 （它會暫停） 除非巢狀的工作完成。 當或取消**CancellationPropagatorAsync** ，它傳播到巢狀的協同程式取消。 不需要為輪詢取消;也不會取消封鎖無限期。 這種機制是有足夠的彈性，您可以使用它來與其互通的協同程式或並行處理的媒體櫃知道執行任何動作的 C + + /winrt。
+**CancellationPropagatorAsync**登錄它自己的取消回呼，lambda 函式，並在它的等待然後 （它會暫停） 除非巢狀的工作完成。 當或取消**CancellationPropagatorAsync** ，它傳播到巢狀的協同程式取消。 不需要為輪詢取消;也不會取消封鎖無限期。 這種機制是有足夠的彈性，您可以使用它來互通性的協同程式或並行處理的媒體櫃之知道執行任何動作的 C + + /winrt。
 
 ## <a name="reporting-progress"></a>報告進度
 
@@ -693,7 +693,7 @@ int main()
 ```
 
 > [!NOTE]
-> 不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。 任一種下列兩種完成處理常式的其中一個是適當;不同時針對相同的非同步物件。
+> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，第二個將會失敗。 任一種其中一項下列兩種完成處理常式是適當;不同時針對相同的非同步物件。
 
 ```cppwinrt
 auto async_op_with_progress{ CalcPiTo5DPs() };
@@ -712,7 +712,7 @@ double pi{ co_await async_op_with_progress };
 
 ## <a name="fire-and-forget"></a>引發及忘記
 
-有時候，您有一個和其他工作，同時可以完成的工作，而且您不需要等待完成該工作 （任何其他工作相依性，） 也不需要它傳回一個值。 在此情況下，您可以關閉工作觸發，且忘記它。 您可以藉由撰寫協同程式，其傳回類型是[**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) （而不是其中一個 Windows 執行階段非同步作業類型，或是**concurrency:: task**）。
+有時候，您有一個和其他工作，同時可以完成的工作，而且您不需要等待完成該工作 （任何其他工作相依性，） 也不需要它傳回一個值。 在此情況下，您可以關閉工作觸發，且忘記密碼。 您可以藉由撰寫協同程式，其傳回類型是[**winrt::fire_and_forget**](/uwp/cpp-ref-for-winrt/fire-and-forget) （而不是其中一個 Windows 執行階段非同步作業類型，或是**concurrency:: task**）。
 
 ```cppwinrt
 // pch.h
