@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
 ms.assetid: 7f39d080-1fff-478c-8c51-526472c1326a
 ms.localizationpriority: medium
-ms.openlocfilehash: 79decdcb420e7d1b5cb732a354ccddb1ce5b7404
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c785e6d2a8021148f572df88a6d9e6ba07c4a457
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929250"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031364"
 ---
 # <a name="connected-apps-and-devices-project-rome"></a>已連線的應用程式與裝置 (專案 Rome)
 
-本節說明如何使用專案 Rome 跨裝置與平台與 App 連線。 了解如何探索遠端裝置、啟動遠端裝置上的 App，以及與遠端裝置上的 App 服務通訊。
+本節說明如何跨裝置與平台使用[專案 Rome](https://developer.microsoft.com/en-us/windows/project-rome)連線的應用程式。 若要了解如何實作專案 Rome 跨平台案例中，請瀏覽[的 Project Rome 的主要文件頁面](https://docs.microsoft.com/en-us/windows/project-rome/)。
 
-大部分的使用者擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，App 需要跨越裝置與平台。
+大部分的使用者擁有多部裝置，而且經常是在一部裝置上開始活動，卻在另一部上完成。 若要做到這一點，App 需要跨越裝置與平台。 Project Rome 可讓您探索遠端裝置、 啟動遠端裝置上的應用程式，以及與遠端裝置上的應用程式服務通訊。
 
 Windows 10 (版本 1607) 中引進的[遠端系統 API](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)，可讓您撰寫 App，允許使用者在一部裝置上啟動工作，並在另一部上完成。 工作仍是中心焦點，而且使用者能在最方便使用的裝置上執行工作。 例如，使用者可能會在車內聆聽手機上的收音機，但當到家時，可能會想要換到和家庭立體聲系統連結的 Xbox One 上播放。
 

@@ -6,16 +6,18 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
-ms.openlocfilehash: b33cf07ef10d0891f2747a06caf098b7d37b62f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb1ff6431b3ccf609b7362db819569c2f6cebc48
+ms.sourcegitcommit: 9448348d7bc6590849db3a41e988dff9470ec111
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938818"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "9031384"
 ---
 # <a name="windows-unlock-with-windows-hello-companion-iot-devices"></a>使用 Windows Hello 隨附 (IoT) 裝置的 Windows 解除鎖定
 
 Windows Hello 隨附裝置是可與您的 Windows 10 Desktop 搭配使用，以增強使用者驗證體驗的裝置。 透過 Windows Hello 隨附裝置架構，即使無法使用生物特徵辨識技術 (例如，如果 Windows 10 Desktop 缺少可進行臉部驗證的相機或指紋辨識器裝置)，隨附裝置還是可以提供豐富的 Windows Hello 體驗。
+
+> **注意：** Microsoft 將會取代掉 Windows Hello 隨附裝置架構在未來，並將會發佈日期早確保客戶有足夠的前置時間來部署的替代方案。
 
 > **注意** Windows Hello 隨附裝置架構是無法供所有 app 開發人員使用的特殊功能。 若要使用這個架構，您的 app 必須由 Microsoft 特別佈建，並在其資訊清單中列出受限制的 *secondaryAuthenticationFactor* 功能。 若要取得核准，請連絡 [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com)。
 
