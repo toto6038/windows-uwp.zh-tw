@@ -1,16 +1,16 @@
 ---
 description: C++/ WinRT&mdash;Windows 執行階段 API 的標準 C++ 語言投影的簡介。
 title: C++/WinRT 的簡介
-ms.date: 05/07/2018
+ms.date: 01/29/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: a79302b13b45bf2319c4db2e527d8ef2b293d5f2
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: 34505416e46a04a577a83eac5310ba0769c4741b
+ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024617"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035713"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;
@@ -18,7 +18,7 @@ ms.locfileid: "9024617"
 
 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 Windows 執行階段 API。 Windows SDK 包含 C++/WinRT；其在版本 10.0.17134.0 (Windows 10，版本 1803 ) 中引進。
 
-C + + /winrt 是 Microsoft 的建議替代方案為[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)語言投影，與[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整的清單[主題有關 C + + WinRT](index.md#topics-about-cwinrt)包含的資訊是有關同時互通，並從移植，C + + /CX 與 WRL。
+C + + /winrt 是 Microsoft 的建議替代方案，如[C + + /CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live)語言投影，以及[Windows 執行階段 c + + 範本庫 (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live)。 完整的清單[主題有關 C + + WinRT](index.md#topics-about-cwinrt)包含的資訊是有關同時互通，並從移植，C + + /CX 與 WRL。
 
 > [!IMPORTANT]
 > 最重要的兩個 C++/WinRT 項目會在 [C++/WinRT 的 SDK 支援](#sdk-support-for-cwinrt) 和 [C++/WinRT 的支援，以及 VSIX](#visual-studio-support-for-cwinrt-xaml-and-the-vsix) 等章節中說明。
@@ -38,13 +38,13 @@ Windows 執行階段根據元件物件模型 (COM) API，且設計它透過*語�
 適用於 Visual Studio 中的 C++/WinRT 專案範本，以及 C++/WinRT MSBuild 屬性及目標，從 [Visual Studio Marketplace](https://marketplace.visualstudio.com/) 下載並安裝 [C + + / WinRT Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)。
 
 > [!NOTE]
-> 版本 1.0.181002.2 （或更新版本） 的 VSIX 安裝，請建立一個新的 C + + /winrt 專案會自動安裝[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)針對該專案。 Microsoft.Windows.CppWinRT NuGet 套件提供更高的 C + + WinRT 專案建置支援，讓您的專案可攜式開發電腦之間 （僅限 NuGet 套件，以及不 VSIX，安裝所在） 的組建代理程式。
+> 1.0.181002.2 版本 （或更新版本） 的[VSIX 擴充功能](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)安裝，請建立一個新的 C + + /winrt 專案自動安裝該專案的[Microsoft.Windows.CppWinRT NuGet 套件](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/)。 Microsoft.Windows.CppWinRT NuGet 套件提供更高的 C + + WinRT 專案建置支援，讓您的專案可攜式開發電腦之間的組建代理程式 （只有 NuGet 套件，而非 VSIX 副檔名，安裝所在）。
 >
-> 現有的專案的&mdash;您已安裝的版本 1.0.181002.2 之後 （或更新版本） 的 VSIX&mdash;我們建議您在 Visual Studio 中開啟專案，按一下 [**專案**] \> **管理 NuGet 套件...** \> **瀏覽**，請輸入或貼上**Microsoft.Windows.CppWinRT**在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [**安裝**安裝該專案的套件。
+> 現有專案&mdash;您已安裝版本 1.0.181002.2 之後 （或更新版本） 的 VSIX 擴充功能&mdash;我們建議您在 Visual Studio 中開啟專案，按一下 [**專案**] \> **...管理 NuGet 套件** \> **瀏覽**，請輸入或貼上**Microsoft.Windows.CppWinRT** ，在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [安裝該專案的套件的**安裝**。 這個步驟是安裝版本 1.0.190128.4 後強制性 （或更新版本） 的 VSIX 擴充功能。
 
-您將需要 Visual Studio 2017 (您必須至少版本 15.6，但我們建議至少 15.7)，和 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)。 如果您在尚未安裝它，您將需要安裝 Visual Studio 安裝程式內從**c + + 通用 Windows 平台工具**選項。 與 Windows**設定**中 > **更新 \& 安全性** > **適用於開發人員**，選擇 [**開發人員模式**] 選項，而不是 [**側載應用程式**] 選項。
+您將需要 Visual Studio 2017 (您必須至少版本 15.6，但我們建議至少 15.7) 或 Visual Studio 2019 和 Windows SDK 版本 10.0.17134.0 (Windows 10，版本 1803年)。 如果您在尚未安裝它，您將需要安裝 Visual Studio 安裝程式內從**c + + 通用 Windows 平台工具**選項。 和在 Windows**設定**中 > **更新 \& 安全性** > **適用於開發人員**，選擇 [**開發人員模式**] 選項，而不是 [**側載應用程式**] 選項。
 
-您將會接著能夠建立和建置，或開啟，C + + /winrt 專案中 Visual Studio 中，並將它部署。 或者，您可以轉換現有的專案，藉由新增`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性，以其`.vcxproj`檔案。
+您將會接著能夠建立和建置，或開啟，C + + /winrt Visual Studio 中，在專案，並將它部署。 或者，您可以轉換現有的專案，藉由新增`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性，以其`.vcxproj`檔案。
 
 ```xml
 <Project ...>
@@ -71,7 +71,7 @@ VSIX 也會提供您 C++/WinRT 投影類型的 Visual Studio 原生偵錯視覺�
 
 Visual Studio 提供 XAML 編譯器支援，並從位於每個 XAML 標記檔案後面的介面定義語言 (IDL) (`.idl`) 產生實作與標頭虛設常式。 IDL 檔案中，定義任何您想要在應用程式 XAML 網頁中參考的本機執行階段類別，然後見一次專案，在 `Generated Files` 中產生實作範本，以及 `Generated Files\sources` 中的虛設常式類型定義。 然後使用這些適用於參考資料的虛設類型定義，實作您的本機執行階段類別。 我們建議您在其自身的 IDL 檔案中，宣告每個執行階段類別。
 
-Visual Studio 的 XAML 設計表面支援 C + + WinRT 是接近搭配 C# 的同位。 一個例外是 [**事件**] 索引標籤的 [**屬性**] 視窗。 使用 C# 專案中，您可以使用該索引標籤，新增事件處理常式;使用 C + + /winrt 專案中，該功能不存在。 但請參閱[處理事件，藉由使用委派在 C + + WinRT](handle-events.md)如需如何將事件處理常式新增到您的程式碼的資訊。
+Visual Studio XAML 設計表面支援 C + + /winrt 是接近搭配 C# 的同位。 一個例外是 [**事件**] 索引標籤的 [**屬性**] 視窗。 使用 C# 專案中，您可以使用該索引標籤，新增事件處理常式;使用 C + + /winrt 專案中，該功能不存在。 但請參閱[處理事件，藉由使用委派，在 C + + WinRT](handle-events.md)如需如何將事件處理常式新增到您的程式碼的資訊。
 
 ### <a name="core-app-cwinrt"></a>核心應用程式 (C++/WinRT)
 適用於不使用 XAML 的通用 Windows 平台 (UWP) 的應用程式範本。
@@ -88,7 +88,7 @@ IDL 檔案中，在您的元件、其預設的介面，以及任何其實作的�
 將已建置的 Windows 執行階段元件二進位與其 `.winmd` 和使用它們的 UWP 應用程式搭配一起。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT 投影中的自訂類型
-在您 C + + /winrt 程式設計中，您可以使用標準 c + + 語言功能和[標準 c + + 資料類型與 C + + WinRT](std-cpp-data-types.md)&mdash;包括部分 c + + 標準程式庫資料類型。 但也您會注意到投影中的某些自訂資料類型，且您可以選擇使用它們。 例如，我們會使用[開始使用 C++/WinRT](get-started.md) 中快速程式碼範例的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
+在您 C + + /winrt 程式設計時，您可以使用標準 c + + 語言功能和[標準 c + + 資料類型與 C + + WinRT](std-cpp-data-types.md)&mdash;包括部分 c + + 標準程式庫資料類型。 但也您會注意到投影中的某些自訂資料類型，且您可以選擇使用它們。 例如，我們會使用[開始使用 C++/WinRT](get-started.md) 中快速程式碼範例的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) 是您在某些時候可能會使用的另一種類型。 但是您比較不會直接使用例如[**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view)的類型。 或者，您可以選擇不想使用它，如果且當 C++ 標準程式庫中出現對等項目類型時，才不會變更任何程式碼。
 
