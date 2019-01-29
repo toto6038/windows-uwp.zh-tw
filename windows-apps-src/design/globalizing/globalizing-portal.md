@@ -9,12 +9,12 @@ ms.date: 12/7/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: b7b4452bb242bb7679d37036ccda5e27912a2505
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6e9e0f6305a99b6e3ab83cb3b560754f2e4d310f
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944339"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035419"
 ---
 # <a name="globalization-and-localization"></a>全球化和當地語系化
 
@@ -36,6 +36,10 @@ ms.locfileid: "8944339"
 - 日期和時間格式
 - 數字，貨幣、重量和度量慣例
 - 排序規則
+
+>[!NOTE]
+> Microsoft 使用標準的國家/地區代碼的清單，請參閱[正式的國家/地區清單](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
+
 
 **可當地語系化性**是為全球化應用程式準備當地語系化，和/或驗證該應用程式已準備好進行當地語系化的過程。 正確的使應用程式可當地語系化，表示之後的當地語系化過程不會在應用程式中發現任何功能缺失。 可當地語系化應用程式最重要的屬性，便是其可執行的程式碼和應用程式的可當地語系化資源完全分離。
 
@@ -65,4 +69,4 @@ ms.locfileid: "8944339"
 | [將您的應用程式設計為支援雙向文字](design-for-bidi-text.md) | 設計您的應用程式，使其提供雙向文字支援 (BiDi)，組合由左至右和由右至左書寫系統的文字。 |
 | [使用多語應用程式工具組 4.0](use-mat.md) | 多語應用程式工具組 (MAT) 4.0 與 Microsoft Visual Studio 2017 整合，提供 UWP app 翻譯支援、翻譯檔案管理及編輯器工具。 |
 | [多語應用程式工具組 4.0 常見問題集與疑難排解](mat-faq-troubleshooting.md) | 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。 |
-| [準備您的應用程式，年曆變更](japanese-era-change.md) | 深入了解 2019年年曆變更，以及如何準備您的應用程式。 |
+| [針對日本紀元變更準備您的應用程式](japanese-era-change.md) | 深入了解 2019年紀元變更，以及如何準備您的應用程式。 |

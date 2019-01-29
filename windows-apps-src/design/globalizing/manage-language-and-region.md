@@ -7,12 +7,12 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 43aeccecee5b4b2d7a2d5fa1082fb619e87e7268
-ms.sourcegitcommit: 51ea7eae59684400e7813a9dd3376d5e7bfb3635
+ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
+ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "8972042"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "9035399"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解使用者設定檔語言和應用程式資訊清單語言
 Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** 設定慣用顯示語言的已排序清單，或單一慣用顯示語言。 語言可具有地區性的變體。 例如，您可以選取在西班牙使用的西班牙文、在墨西哥使用的西班牙文、在美國使用的西班牙文等。
@@ -93,13 +93,13 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 **注意**：若使用者設定檔語言和應用程式資訊清單語言為彼此的地區性變體，則會使用使用者的地區性變體作為應用程式執行階段語言。 例如，如果使用者慣用的是 en-GB，同時應用程式支援 en-US，則應用程式執行階段語言便會是 en-GB。 這確保日期、時間及數字的格式化方式會更貼近使用者的預期 (en-GB)，但是仍然會在應用程式支援的語言 (en-US) 中載入當地語系化資源 (由於語言比對的緣故)。
 
 ## <a name="qualify-resource-files-with-their-language"></a>使用他們的語言限定資源檔案
-使用語言資源限定詞命名您的資源檔案或其資料夾。 若要深入了解資源限定詞，請參閱[針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md))。 資源檔案可以是影像 （或其他資產），或資源容器檔案，例如 *.resw* ，其中包含的文字字串。
+使用語言資源限定詞命名您的資源檔案或其資料夾。 若要深入了解資源限定詞，請參閱[針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md))。 資源檔案可以是影像 （或其他資產），或資源容器檔案，例如 *.resw*包含文字字串。
 
 **注意：** 即使您的應用程式預設語言的資源都必須指定語言限定詞。 例如，如果您的應用程式預設語言為英文 （美國），然後限定資產的`\Assets\Images\en-US\logo.png`。
 
-- Windows 會執行複雜的比對，包括跨地區變體，例如 EN-US 和 EN-GB。 因此包含做為適當的地區子標記。 請參閱[資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)。
-- 沒有語言定義的隱藏字集值時，指定語言的指令碼子標記中的限定詞。 例如，而不是 ZH-CN 或 ZH-TW，使用 zh-hant 與 Zh-hans、 zh-hant 與 Zh-hans ZH-TW 或 Zh-hans （如需詳細資訊，請參閱[IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)）。
-- 如果語言只有單一標準方言，則包含地區限定詞不需要。 例如，而非 JA-JP 使用 ja。
+- Windows 會執行複雜的比對，包括跨地區變體，像是 EN-US 和 EN-GB。 因此，包含做為適當的地區子標記。 請參閱[資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)。
+- 沒有語言所定義的隱藏字集值時，請指定語言的指令碼子標記中的限定詞。 例如，而不是 ZH-CN 或 ZH-TW，使用 zh-hant 與 Zh-hans、 zh-hant 與 Zh-hans ZH-TW 或 Zh-hans （如需詳細資訊，請參閱[IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)）。
+- 如果語言只有單一標準方言，沒有需要包含地區限定詞。 例如，而非 JA-JP 使用 ja。
 - 某些工具和其他元件 (如電腦翻譯工具) 可能會找到特定語言標記 (如地區方言資訊)，這有助於了解資料。
 
 ### <a name="not-all-resources-need-to-be-localized"></a>並非所有的資源需要當地語系化
@@ -107,9 +107,9 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 當地語系化可能不需要的所有資源。
 
 - 至少，請確定所有資源都存在於預設語言。
-- 某些資源的子集可能已足夠密切相關的語言 （部分當地語系化）。 例如，若您的應用程式含有西班牙文的完整資源集合，則您可能並未將您應用程式所有的 UI 都當地語系化成卡達隆尼亞文。 對於優先卡達隆尼亞西班牙文的使用者，未達隆尼亞文提供的資源會以西班牙文顯示。
-- 一些資源，可能需要進行特定語言，在大部分的其他資源則對應至常見的資源時的例外狀況。 在此情況下，標示適用於所有以未定的語言標記 'und' 語言的資源。 Windows 會將 'und' 語言標記解譯為萬用字元 (類似 '\*')，即它會比對任何其他特定的相符項目後的最上層應用程式語言。 例如，如果芬蘭文的少數資源不相同，但所有語言的其餘資源均相同，則芬蘭文資源應以芬蘭文語言標記標示，其餘則應以 'und' 標示。
-- 對於以語言的指令碼，例如字型或文字，高度為基礎的資源使用未定的語言標記含有指定之指令碼: ' und-&lt;指令碼&gt;'。 例如，拉丁字型使用 `und-Latn\\fonts.css`，斯拉夫字型則使用 `und-Cryl\\fonts.css`。
+- 密切相關的語言 （部分當地語系化） 可能可以滿足一些資源的子集。 例如，若您的應用程式含有西班牙文的完整資源集合，則您可能並未將您應用程式所有的 UI 都當地語系化成卡達隆尼亞文。 對於優先卡達隆尼亞西班牙文的使用者，未達隆尼亞文提供的資源會以西班牙文顯示。
+- 一些資源可能需要針對特定的語言，大部分的其他資源則對應至常見的資源時的例外狀況。 在此情況下，標示適用於以未定的語言標記 'und' 的所有語言的資源。 Windows 會將 'und' 語言標記解譯為萬用字元 (類似 '\*')，即它會比對任何其他特定的相符項目後的最上層應用程式語言。 例如，如果芬蘭文的少數資源不相同，但所有語言的其餘資源均相同，則芬蘭文資源應以芬蘭文語言標記標示，其餘則應以 'und' 標示。
+- 對於資源為基礎的語言的指令碼，例如字型或文字高度，使用含有指定之指令碼的未定的語言標記: ' und-&lt;指令碼&gt;'。 例如，拉丁字型使用 `und-Latn\\fonts.css`，斯拉夫字型則使用 `und-Cryl\\fonts.css`。
 
 ## <a name="set-the-http-accept-language-request-header"></a>設定 HTTP Accept-Language 要求標頭
 請考慮您呼叫的 Web 服務是否擁有與您應用程式相同程度的當地語系化。 在典型 Web 要求和 XMLHttpRequest (XHR) 中，從 UWP app 和傳統型應用程式提出的 HTTP 要求，會使用標準的 HTTP Accept-Language 要求標頭。 根據預設，HTTP 標頭會設為使用者設定檔語言清單。 清單中的每個語言都可進一步展開，以包含中性語言和加權 (q)。 例如，fr-FR 和 en-US 的使用者語言清單會產生 fr-FR、fr、en-US、en ("fr-FR,fr;q=0.8,en-US;q=0.5,en;q=0.3") 的 HTTP Accept-Language 要求標頭。 但如果您的天氣應用程式 (舉例) 以法文 (法國) 顯示 UI，但使用者喜好設定清單中的第一個語言為德文，您便需要向服務明確要求法文 (法國)，以和您的應用程式保持一致。
@@ -191,6 +191,9 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 </tr>
 </tbody>
 </table>
+
+>[!NOTE]
+> Microsoft 使用標準的國家/地區代碼的清單，請參閱[正式的國家/地區清單](https://globalready.azurewebsites.net/marketreadiness/OfficialCountryregion)。
 
 ## <a name="important-apis"></a>重要 API
 * [GlobalizationPreferences.Languages](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages)
