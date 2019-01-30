@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 520f4bdd72c51cd1508c9e655107ae909f6e4243
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f3fd2173296c433015fa30b81c0d90e32d2d4b0
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940266"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9036940"
 ---
 ## <a name="dialog-controls"></a>對話方塊控制項
 
@@ -32,7 +32,7 @@ ms.locfileid: "8940266"
 
 使用對話方塊來通知使用者重要的資訊，或是在完成動作之前要求確認或其他資訊。
 
-如需使用的時機建議[對話方塊和飛出視窗](index.md)，請參閱對話方塊與飛出視窗 （類似控制項），使用的時機。 
+如需何時使用與使用飛出視窗 （類似的控制項），請參閱[對話方塊和飛出視窗](index.md)的時機 \] 對話方塊的建議。 
 
 ## <a name="examples"></a>範例
 
@@ -44,7 +44,7 @@ ms.locfileid: "8940266"
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡開啟應用程式並查看 <a href="xamlcontrolsgallery:/item/ContentDialog">ContentDialog</a> 或 <a href="xamlcontrolsgallery:/item/Flyout">Flyout</a> 運作情形。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -256,7 +256,7 @@ private async void DisplaySubscribeDialog()
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - 以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-articles"></a>相關文章
 - [工具提示](../tooltips.md)

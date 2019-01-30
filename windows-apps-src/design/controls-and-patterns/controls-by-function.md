@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e38803c8cbe8b9bdee9a9365127d5f7e7866f7d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a0a267385668a276fc776c5f5d495b27ae72a2b3
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920082"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037300"
 ---
 # <a name="controls-by-function"></a>依功能分類的控制項
 
@@ -29,7 +29,7 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
     <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/NavigationView">開啟應用程式並查看 NavigationView 情形</a> </p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -551,9 +551,9 @@ Windows 的 XAML UI 架構提供一個支援 UI 開發的龐大控制項程式�
 
 ### <a name="navigationview"></a>NavigationView
 
-適應，以容器和彈性的瀏覽模型實作的左瀏覽窗格、 頂端瀏覽和索引標籤模式。
+適應，以容器和彈性的瀏覽模型來實作的左瀏覽窗格、 頂端瀏覽和索引標籤模式。
 
-參考： [NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)
+[NavigationView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.navigationview)的參考：
 
 設計和作法： [NavigationView 控制項指南](navigationview.md)
 

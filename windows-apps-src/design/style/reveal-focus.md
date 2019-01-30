@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 311e5714c5428fac6509564fd00784299a02f630
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
+ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938136"
+ms.lasthandoff: 01/30/2019
+ms.locfileid: "9037350"
 ---
 # <a name="reveal-focus"></a>顯色焦點
 
@@ -22,7 +22,7 @@ ms.locfileid: "8938136"
 
 顯色焦點是一種光源效果，針對[10 英呎體驗](/windows/uwp/design/devices/designing-for-tv)，例如 Xbox One 和電視螢幕。 這會在使用者將遊戲台或鍵盤焦點移近可設定焦點元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。 預設會關閉此效果，但要啟用，也很簡單 
 
-（顯色醒目提示效果，光源造成的影響，反白顯示互動式元素，請參閱[顯色醒目提示文章](/windows/uwp/design/style/reveal)）。
+（顯色醒目提示效果，光源造成的影響，會反白顯示互動式元素，請參閱[顯色醒目提示文章](/windows/uwp/design/style/reveal)）。
 
 
 > **重要 API**：[Application.FocusVisualKind property](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.FocusVisualKind)、[FocusVisualKind enum](https://docs.microsoft.com/uwp/api/windows.ui.xaml.focusvisualkind)、[Control.UseSystemFocusVisuals property](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)
@@ -41,10 +41,10 @@ ms.locfileid: "8938136"
 <tr>
 <td><img src="images/xaml-controls-gallery-sm.png" alt="XAML controls gallery"></img></td>
 <td>
-    <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/RevealFocus">開啟應用程式</a>並查看顯色焦點情形。</p>
+    <p>如果您已安裝的<strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，按一下這裡<a href="xamlcontrolsgallery:/item/RevealFocus">開啟應用程式</a>並查看顯色焦點放在動作。</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">取得原始碼 (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -66,7 +66,7 @@ ms.locfileid: "8938136"
 設定**Reveal**屬性之後，系統會自動套用顯色焦點效果至其[UseSystemFocusVisuals](/uwp/api/Windows.UI.Xaml.Controls.Control.UseSystemFocusVisuals)屬性設為**True** （大多數控制項的預設值） 的所有控制項。 
 
 ## <a name="why-isnt-reveal-focus-on-by-default"></a>為什麼不開啟顯色焦點預設？ 
-如您所見，它是很容易就能開啟顯色焦點，當應用程式偵測到它在 Xbox 上執行。 因此，為什麼系統不直接為您開啟它？ 因為顯色焦點會增加焦點視覺效果的大小，可能導致 UI 配置發生問題。 在某些情況下，您會想要自訂顯色焦點效果，將它最佳化您的應用程式。
+如您所見，它是很容易就能開啟顯色焦點，當應用程式偵測到它在 Xbox 上執行。 因此，為什麼系統不直接為您開啟它？ 因為顯色焦點會增加焦點視覺效果的大小，可能導致 UI 配置發生問題。 在某些情況下，您會想要自訂顯色焦點效果，並將它最佳化您的應用程式。
 
 ## <a name="customizing-reveal-focus"></a>自訂顯色焦點
 
@@ -74,7 +74,7 @@ ms.locfileid: "8938136"
 
 但在您開始構成會很有幫助多了一點構成顯色焦點的元件的相關。
 
-有三個預設顯色焦點視覺效果部分︰ 主要框線、 次要框線和顯色光暈。 主要框線的粗細為 **2px**，圍繞在次要框線 *「外」*。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」*。 顯色焦點光暈粗細為主要框線粗細成比例，圍繞*以外*的主要框線。
+有三個預設顯色焦點視覺效果部分︰ 主要框線、 次要框線和顯色光暈。 主要框線的粗細為 **2px**，圍繞在次要框線 *「外」*。 次要框線的粗細為 **1px**，圍繞在主要框線 *「內」*。 顯色焦點光暈粗細與主要框線的粗細成比例，圍繞*以外*的主要框線。
 
 除了靜態元素，顯色焦點視覺效果功能規律波動、 時依焦點方向移動焦點移動的動畫的光源。
 
@@ -108,7 +108,7 @@ ms.locfileid: "8938136"
 
 ## <a name="customize-the-color"></a>自訂色彩
 
-若要變更的顯色焦點視覺效果色彩，使用[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)和[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)屬性。
+若要變更的顯色焦點視覺效果的色彩，請使用的[FocusVisualPrimaryBrush](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualPrimaryBrush)和[FocusVisualSecondaryBrush](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.frameworkelement.FocusVisualSecondaryBrush)屬性。
 
 | 屬性 | 預設資源 | 預設資源值 |
 | ---- | ---- | --- | 
@@ -168,7 +168,7 @@ ms.locfileid: "8938136"
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>顯色焦點和 Fluent 設計系統
 
-顯色焦點是將光源加入您的應用程式中的 Fluent 設計系統元件。 若要深入了解 Fluent Design 系統及其他元件，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
+顯色焦點是將光源加入您的應用程式的 Fluent 設計系統元件。 若要深入了解 Fluent Design 系統及其他元件，請參閱[適用於 UWP 的 Fluent Design 概觀](../fluent-design-system/index.md)。
 
 ## <a name="related-articles"></a>相關文章
 
