@@ -1,6 +1,6 @@
 ---
 title: 適用於鍵盤、遊戲台、遙控器與協助工具的焦點瀏覽
-Description: ''
+Description: Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your UWP apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 label: ''
 template: detail.hbs
 keywords: 鍵盤, 遊戲控制器, 遙控器, 瀏覽, 方向內部瀏覽, 方向區域, 瀏覽策略, 輸入, 使用者互動, 協助工具, 可用性
@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c76e62a4fcccec91fc6b3a083671ff68af2202e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
+ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934035"
+ms.lasthandoff: 01/31/2019
+ms.locfileid: "9041046"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
 
@@ -28,7 +28,7 @@ ms.locfileid: "8934035"
 
 焦點瀏覽指的是讓使用者能使用鍵盤、遊戲台或遙控器，透過 UWP 應用程式的 UI 瀏覽和互動的基礎機制。
 
-> [!NOTE] 
+> [!NOTE]
 > 輸入裝置通常會分類為指標裝置 (例如觸控、觸控板、手寫筆和滑鼠)，以及非指標裝置 (例如鍵盤、遊戲台和遙控器)。
 
 本主題描述如何為倚賴非指標輸入類型的使用者最佳化 UWP 應用程式和建置自訂互動體驗。 
@@ -40,14 +40,16 @@ ms.locfileid: "8934035"
 如需更多為鍵盤建置應用程式和體驗的一般資訊，請參閱[鍵盤互動](keyboard-interactions.md)。
 
 ## <a name="general-guidance"></a>一般指導方針
+
 只有需要使用者互動的 UI 元素才需要支援焦點瀏覽。不需要採取動作的元素，例如靜態圖片，則不需要鍵盤焦點。 螢幕助讀程式和相似的協助工具仍會宣讀這些靜態元素，即使他們並未包含在焦點瀏覽中。 
 
 請務必記得，焦點瀏覽和使用指標裝置 (例如滑鼠或觸控) 瀏覽的不同之處，在於焦點瀏覽是線性的。 實作焦點瀏覽時，請考慮您的使用者與應用程式互動的方式，以及什麼樣的瀏覽才是合乎邏輯的方式。 在大部分的案例中，我們建議您遵循使用者文化的慣用閱讀模式來自訂焦點瀏覽。
 
 其他焦點瀏覽考量項目包括：
+
 - 控制項是依照邏輯分組的嗎？
-- 有任何重要性更高的控制項群組嗎？ 
-   - 如果有，那些群組是否包含子群組？
+- 有任何重要性更高的控制項群組嗎？
+  - 如果有，那些群組是否包含子群組？
 - 配置需要自訂方向瀏覽 (方向鍵) 和定位順序嗎？
 
 [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)電子書，針對*設計邏輯階層*有一篇絕佳章節。
@@ -57,13 +59,12 @@ ms.locfileid: "8934035"
 控制項或控制項群組的 2D 內部瀏覽區域，稱為其「方向區域」。 當焦點移動到此物件時，鍵盤方向鍵 (左、右、上、下) 可用來瀏覽方向區域內的子元素。
 
 ![方向區域](images/keyboard/directional-area-small.png)
-
-*控制項群組的 2D 內部瀏覽區域，或方向區域*
+*2D 內部瀏覽區域或控制項群組的方向區域*
 
 您可以使用 [XYFocusKeyboardNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) 屬性 (其可能值為 [Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)、[Enabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) 或 [Disabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) 管理鍵盤方向鍵的 2D 內部瀏覽。
 
-> [!NOTE]  
-> 定位順序不會受到此屬性影響。 若要避免產生混亂的瀏覽體驗，我們建議「不要」** 在您應用程式的 Tab 瀏覽順序中明確指定方向區域的子元素。 請參閱 [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以取得元素定位行為的詳細資訊。  
+> [!NOTE]
+> 定位順序不會受到此屬性影響。 若要避免產生混亂的瀏覽體驗，我們建議「不要」** 在您應用程式的 Tab 瀏覽順序中明確指定方向區域的子元素。 請參閱 [UIElement.TabFocusNavigation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) 和 [TabIndex](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) 屬性以取得元素定位行為的詳細資訊。
 
 ### <a name="autohttpsdocsmicrosoftcomuwpapiwindowsuixamlinputxyfocuskeyboardnavigationmode-default-behavior"></a>[Auto](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (預設行為)
 
@@ -74,7 +75,6 @@ ms.locfileid: "8934035"
 將 **XYFocusKeyboardNavigation** 設為 **Disabled** 則會封鎖控制項及其子元素的方向瀏覽。
 
 ![XYFocusKeyboardNavigation 停用行為](images/keyboard/xyfocuskeyboardnav-disabled.gif)
-
 *XYFocusKeyboardNavigation 停用行為*
 
 在此範例中，主要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 但是，B3 和 B4 元素則位於次要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其 **XYFocusKeyboardNavigation** 已設為 **Disabled**，因此會覆寫主要容器並停用自身和其子元素間的方向鍵瀏覽。
@@ -132,7 +132,6 @@ ms.locfileid: "8934035"
 當設定時，使用方向鍵瀏覽會限制在方向區域內的元素。 Tab 瀏覽不會受到影響，因為所有控制項仍然可透過其定位順序階層進行存取。
 
 ![XYFocusKeyboardNavigation 啟用行為](images/keyboard/xyfocuskeyboardnav-enabled.gif)
-
 *XYFocusKeyboardNavigation 啟用行為*
 
 在此範例中，主要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) 已將 **XYFocusKeyboardNavigation** 設為 **Enabled**。 所有子元素都會繼承此設定，可使用方向鍵進行瀏覽。 B3 和 B4 元素位於次要 [StackPanel](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) 中，其中並未設定 **XYFocusKeyboardNavigation**，因此會繼承主要容器設定。 B5 元素並未位於宣告的方向區域中，因此不支援方向鍵瀏覽，但支援 Tab 瀏覽行為。
@@ -196,7 +195,6 @@ ms.locfileid: "8934035"
 以下是位於不明確支援 2D 方向瀏覽元素中兩個巢狀方向區域的範例。 在此案例中，兩個巢狀區域間不支援方向瀏覽。
 
 ![XYFocusKeyboardNavigation 啟用及巢狀行為](images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif)
-
 *XYFocusKeyboardNavigation 啟用及巢狀行為*
 
 以下是三個巢狀方向區域更複雜的範例，其中：
