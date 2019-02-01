@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c7334711debf87d8834213af39ba384166404e1
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
+ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042370"
+ms.locfileid: "9042602"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;
@@ -98,15 +98,19 @@ IDL 檔案中，在您的元件、其預設的介面，以及任何其實作的�
 ...
 ```
 
-您可以藉由手動安裝**Microsoft.Windows.CppWinRT** NuGet 套件升級您的專案。 之後安裝 （或升級至） 最新版的 VSIX 延伸模組，在 Visual Studio 中開啟您的專案，按一下 [**專案**] \> **管理 NuGet 套件...** \> **瀏覽**，請輸入或貼上**Microsoft.Windows.CppWinRT** ，在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [安裝套件，為您的專案中**安裝**。 然後，編輯您`.vcxproj`檔案，並移除`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性。
+您可以藉由手動安裝**Microsoft.Windows.CppWinRT** NuGet 套件升級您的專案。 之後安裝 （或升級至） 最新版的 VSIX 延伸模組，在 Visual Studio 中開啟您的專案，按一下 [**專案**] \> **管理 NuGet 套件...** \> **瀏覽**，請輸入或貼上**Microsoft.Windows.CppWinRT** ，在搜尋方塊中，在搜尋結果中選取的項目，然後按一下 [安裝套件，為您的專案中**安裝**。
 
 ### <a name="created-with-or-upgraded-to-between-101810022-and-101901283"></a>使用建立 （或升級至） 1.0.181002.2 和 1.0.190128.3 之間
 如果使用 VSIX 延伸模組 1.0.181002.2 和 1.0.190128.3 之間的版本建立您的專案，（含），然後**Microsoft.Windows.CppWinRT** NuGet 套件已安裝在專案中自動專案範本所。 您可能也升級較舊的專案，這個範圍內使用 VSIX 延伸模組的版本。 如果您未，然後&mdash;建置支援以來也仍會出現在這個範圍內 VSIX 延伸模組的版本&mdash;可能會升級您的專案，或可能沒有**Microsoft.Windows.CppWinRT** NuGet 套件安裝。
 
-若要升級您的專案，請依照上一節中的指示，並確保您的專案沒有**Microsoft.Windows.CppWinRT** NuGet 套件安裝。 然後，同時移除`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性。
+若要升級您的專案，請依照上一節中的指示，並確保您的專案沒有**Microsoft.Windows.CppWinRT** NuGet 套件安裝。
 
 ### <a name="invalid-upgrade-configurations"></a>無效的升級設定
 VSIX 擴充功能的最新版本，它不是有效值專案有`<CppWinRTEnabled>true</CppWinRTEnabled>`屬性，如果它也不會有安裝**Microsoft.Windows.CppWinRT** NuGet 套件。 使用此設定中的專案會產生組建錯誤訊息中，「 C + + /winrt VSIX 不再提供專案建置的支援。  請請將專案參考加入 Microsoft.Windows.CppWinRT Nuget 套件。 」
+
+如前面所述，C + + /winrt 專案現在需要有在其中安裝 NuGet 套件。
+
+因為`<CppWinRTEnabled>`項目現已過時，您可以選擇性地編輯您`.vcxproj`，並刪除項目。 它不是絕對必要，但它是一個選項。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT 投影中的自訂類型
 在您 C + + /winrt 程式設計時，您可以使用標準 c + + 語言功能和[標準 c + + 資料類型與 C + + WinRT](std-cpp-data-types.md)&mdash;包括部分 c + + 標準程式庫資料類型。 但也您會注意到投影中的某些自訂資料類型，且您可以選擇使用它們。 例如，我們會使用[開始使用 C++/WinRT](get-started.md) 中快速程式碼範例的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
