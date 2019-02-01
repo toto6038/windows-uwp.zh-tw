@@ -4,9 +4,11 @@ items:
   items:
   - name: Windows 10 (組建 17763) 中的 API 新增項目
     href: ../whats-new/windows-10-build-17763-api-diff.md
-- name: 2018 年 9 月 Windows 文件的最新動向
-  href: ../whats-new/windows-docs-september-2018.md
+- name: 2019 年 1 月 Windows 文件的最新動向
+  href: ../whats-new/windows-docs-january-2019.md
   items:
+  - name: 2018 年 9 月 Windows 文件的最新動向
+    href: ../whats-new/windows-docs-september-2018.md
   - name: 2018 年 8 月 Windows 文件的最新動向
     href: ../whats-new/windows-docs-august-2018.md
   - name: 2018 年 7 月 Windows 文件的最新動向
@@ -51,9 +53,9 @@ items:
     href: ../whats-new/windows-10-build-10240.md
 - name: 實驗 API
   href: ../whats-new/experimental-apis.md
-ms.openlocfilehash: 167336081b680deecb9781c36e51da1559d1f91f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 136c6bd34dd3358d3f089aa06a664029a446b368
+ms.sourcegitcommit: cfdc854fede8e586202523cdb59d3d0a2f5b4b36
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8962560"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "9013937"
