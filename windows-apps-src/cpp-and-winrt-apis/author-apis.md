@@ -5,12 +5,12 @@ ms.date: 01/10/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation, 標準, 投影的, 投影, 實作, 可實作, 執行階段類別, 啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 3c79c51c355a2d3ccf1d7f3604a5f89c7a4f8fa2
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: e4ca6946df327dbe6697a71d1050e6401ed531fe
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024597"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042400"
 ---
 # <a name="author-apis-with-cwinrt"></a>使用 C++/WinRT 撰寫 API
 
@@ -28,7 +28,7 @@ ms.locfileid: "9024597"
 您正為本機使用量實作 的Windows 執行階段介面，是最簡單的案例。 您不需要執行階段類別；只需要一般 C++ 類別。 例如，您可能會根據 [**CoreApplication**](/uwp/api/windows.applicationmodel.core.coreapplication) 撰寫應用程式。
 
 > [!NOTE]
-> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> 如需資訊有關安裝和使用 C + + /winrt Visual Studio 擴充功能 (VSIX) （可提供專案範本的支援） 看到[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 在 Visual Studio 中， **Visual c + +** > **Windows 通用** > **核心應用程式 (C + + /winrt)** 專案範本說明**CoreApplication**模式。 此模式以傳遞 [**Windows::ApplicationModel::Core::IFrameworkViewSource**](/uwp/api/windows.applicationmodel.core.iframeworkviewsource)的實作給 [**CoreApplication::Run**](/uwp/api/windows.applicationmodel.core.coreapplication.run)，做為開始。
 
@@ -281,7 +281,7 @@ iclosable.Close();
 在案例中，您有介面物件，並知道這是您實作上的介面，然後您可以回到使用[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)函式範本的實作。 再試一次，這是一種技術，避免虛擬功能通話，並讓您直接在實作中取得。
 
 > [!NOTE]
-> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10 版本 1809年)，或更新版本，則您需要呼叫[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
+> 如果您還沒有安裝 Windows SDK 版本 10.0.17763.0 (Windows 10，版本 1809年)，或更新版本，則您需要呼叫[**winrt:: from_abi**](/uwp/cpp-ref-for-winrt/from-abi)而不是[**winrt::get_self**](/uwp/cpp-ref-for-winrt/get-self)。
 
 這裡提供一個範例。 [實作**BgLabelControl**自訂控制項類別](xaml-cust-ctrl.md#implement-the-bglabelcontrol-custom-control-class)沒有另一個範例。
 
@@ -311,7 +311,7 @@ myimpl.Close();
 IClosable ic1 = myimpl.as<IClosable>(); // error
 ```
 
-如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子存在於您實作類型 (但前提是由產生實作類型`cppwinrt.exe`工具)，讓這能夠進行。 您可以實作類型值直接傳遞給預期對應投影類型的值的方法。 從實作類型成員函式中，您可以傳遞`*this`方法，以預期對應投影類型的值。
+如果您有實作類型的執行個體，且您需要將它傳遞給預期對應投影類型的函式，則您可以進行。 轉換運算子存在於您實作類型 (但前提是由產生實作類型`cppwinrt.exe`工具)，讓這能夠進行。 您可以直接將預期對應投影類型的值的方法傳遞的實作類型值。 您可以傳遞的實作類型成員函式中，從`*this`方法，以預期對應投影類型的值。
 
 ```cppwinrt
 // MyProject::MyType is the projected type; the implementation type would be MyProject::implementation::MyType.

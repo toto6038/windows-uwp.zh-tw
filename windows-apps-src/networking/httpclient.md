@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: fd921782571082ee696c26480f1c55c96c30d7c2
-ms.sourcegitcommit: 7bea35c5a35c78e65f822313962c4b1579b163b2
+ms.openlocfilehash: b753b9e93a0cd2abae089f9d53915e0c109f6b63
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035442"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042420"
 ---
 # <a name="httpclient"></a>HttpClient
 
@@ -158,7 +158,7 @@ int main()
 
 ## <a name="post-binary-data-over-http"></a>透過 HTTP POST 二進位資料
 
-[C + + /winrt](/windows/uwp/cpp-and-winrt-apis)下列的程式碼範例說明傳送少量 POST 要求，使用[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)類別與二進位資料。
+[C + + /winrt](/windows/uwp/cpp-and-winrt-apis)下列的程式碼範例說明傳送少量 POST 要求，使用[HttpBufferContent](/uwp/api/windows.web.http.httpbuffercontent)類別與二進位資料。 您不適合 UI 執行緒呼叫**取得**（如下列程式碼範例所示）。 若要在此情況下使用正確的技術，請參閱[並行和非同步作業，使用 C + + /winrt](/windows/uwp/cpp-and-winrt-apis/concurrency)。
 
 ```cppwinrt
 // pch.h

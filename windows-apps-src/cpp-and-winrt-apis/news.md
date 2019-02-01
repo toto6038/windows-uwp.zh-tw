@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10、 uwp、 標準、 c + +、 cpp、 winrt、 投影、 新聞、 什麼的、 新
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b46aaf9948587ef79a9c5bf73064b1a70c0e9c3a
-ms.sourcegitcommit: a71122082947b4cc3d157465e402746760d1d5c2
+ms.openlocfilehash: cb624a93a010dfe9784cf8c26beed12c6cf2f77d
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035703"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042430"
 ---
 # <a name="whats-new-in-cwinrt"></a>有何新在 C + + /winrt
 
@@ -43,8 +43,8 @@ ms.locfileid: "9035703"
 - 移除不必要的遞迴。 當命令列指的是資料夾，而不是特定的`.winmd`、`cppwinrt.exe`工具不會再搜尋適用於以遞迴方式`.winmd`檔案。 `cppwinrt.exe`工具現在也會處理重複的項目更有效地使它更有彈性的使用者錯誤，且為不良形成`.winmd`檔案。
 - 強化的智慧型指標。 先前，撤銷時失敗事件 revokers 移動-指派新的值。 這有助於發現的問題，其中智慧型指標類別無法可靠地處理自我指派;[**winrt:: com_ptr 結構範本**](/uwp/cpp-ref-for-winrt/com-ptr)中的根目錄。 **winrt:: com_ptr**已經修復，再固定來處理事件 revokers 移動語意正確，讓它們撤銷時指派。
 
-> [!NOTE]
-> 重要變更[C + + /winrt Visual Studio 擴充功能 (VSIX)](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)，同時版本 1.0.181002.2，並在版本 1.0.190128.4。 這些變更，以及它們如何影響您的專案的詳細資訊，請參閱[Visual Studio 支援 C + + /winrt，以及 VSIX](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> [!IMPORTANT]
+> 重要變更[C + + /winrt Visual Studio 擴充功能 (VSIX)](https://aka.ms/cppwinrt/vsix)，兩者中版本 1.0.181002.2，之後再 1.0.190128.4 版本中。 如需詳細資訊的這些變更，以及它們如何影響您現有的專案[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)及[舊版 VSIX 延伸模組](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension)。
 
 ## <a name="isolation-from-windows-sdk-header-files"></a>Windows SDK 標頭檔案從隔離
 

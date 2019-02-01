@@ -5,19 +5,19 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10、uwp、一般、c++、cpp、winrt、投影、投射、控點、事件、委派
 ms.localizationpriority: medium
-ms.openlocfilehash: 93a6a11a84b6b5131d0cf9a524c11116d21b2ecd
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: 193d821b44722e150f38da7430504f5d528770a4
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024487"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042390"
 ---
 # <a name="handle-events-by-using-delegates-in-cwinrt"></a>藉由在 C++/WinRT 使用委派來處理事件
 
 本主題示範如何註冊和撤銷使用的事件處理委派[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)。 您可以使用任何標準 C++ 類函式的物件處理事件。
 
 > [!NOTE]
-> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> 如資訊有關安裝和使用 C + + /winrt Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C + + /winrt MSBuild 屬性和目標) 看到[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 ## <a name="register-a-delegate-to-handle-an-event"></a>註冊委派，處理事件
 
@@ -49,7 +49,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> 註冊委派，上述程式碼範例會將傳遞原始*這個*指標 （指向目前的物件）。 若要了解如何建立強式或弱式參考目前的物件，請參閱**如果您使用成員函式做為委派**子[安全地存取*此*指標事件處理委派與](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一節中。
+> 註冊委派，上述程式碼範例會將傳遞原始*此*指標 （指向目前的物件）。 若要了解如何建立強式或弱式參考目前的物件，請參閱**如果您使用成員函式做為委派**子[安全地存取*此*指標事件處理委派與](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)一節中。
 
 有其他方式可建構 **RoutedEventHandler**。 以下是從文件主題取得的語法區塊適用於 [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (從頁面中 **語言** 下拉式清單選擇 *C++/WinRT*)。 請注意的各種建構函式：一種是 lambda；另一種是可用函式；以及另一種是 (上述中我們使用的) 物件和指標成員函式。
 
@@ -157,7 +157,7 @@ Button::Click_revoker Click(winrt::auto_revoke_t,
 ```
 
 > [!NOTE]
-> 在程式碼上述範例中，`Button::Click_revoker`是類型別名`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`。 一個類似的模式適用於所有 C++/WinRT 事件。 每個 Windows 執行階段事件已撤銷函式多載傳回事件撤銷，並撤銷的類型是事件來源的成員。 已啟用，若要進行另一個範例， [**corewindow:: Sizechanged**](/uwp/api/windows.ui.core.corewindow.sizechanged)事件傳回的值類型**CoreWindow::SizeChanged_revoker**登錄函式多載。
+> 在程式碼上述範例中，`Button::Click_revoker`是類型別名`winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`。 一個類似的模式適用於所有 C++/WinRT 事件。 每個 Windows 執行階段事件已撤銷函式多載傳回事件撤銷，並撤銷的類型是事件來源的成員。 因此，若要充分另一個範例， [**corewindow:: Sizechanged**](/uwp/api/windows.ui.core.corewindow.sizechanged)事件有傳回的值類型**CoreWindow::SizeChanged_revoker**登錄函式多載。
 
 
 您可能要考慮在網頁瀏覽的案例中撤銷處理常式。 如果您正重複瀏覽網頁並返回，您離開網頁時，可以撤銷任何處理常式。 或者，如果您重新使用相同的網頁執行個體，然後檢查您的權證值，且如果尚未設定 (`if (!m_token){ ... }`)，，只有註冊。 第三個選項是將事件撤銷儲存在網頁上做為資料成員。 本主題稍後說明，第四個選項是在您的 lambda 函式中擷取*this*物件的強式或弱式參考。
@@ -200,7 +200,7 @@ void ProcessFeedAsync()
 如上述「協同程式」意見建議，不使用已完成的非同步動作和作業的委派，您可能會發現它使用協同程序會更自然。 如需詳細資訊和程式碼範例，請參閱[使用 C++/WinRT 的並行和非同步作業](concurrency.md)。
 
 > [!NOTE]
-> 不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，則第二個將會失敗。
+> 您不正確實作一個以上的非同步動作或作業*完成處理常式*。 您可以讓任一單一委派的已完成的事件，或者您可以`co_await`它。 如果您有兩者，第二個將會失敗。
 
 如果您堅持使用委派，而不是協同程式，您可以選擇簡單的語法。
 
@@ -228,9 +228,9 @@ winrt::hstring f(ListView listview)
 }
 ```
 
-## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地存取*此*指標與事件處理委派
+## <a name="safely-accessing-the-this-pointer-with-an-event-handling-delegate"></a>安全地存取*此*指標事件處理委派
 
-如果您處理事件的物件的成員函式，或從 lambda 函式內物件的成員函式，則您需要考量事件收件者 （處理事件的物件） 和事件來源 （該物件的相對存留時間引發事件）。 如需詳細資訊和程式碼範例，請參閱[強式和弱式參考，在 C + + /winrt](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
+如果您處理事件的物件的成員函式，或從 lambda 函式內物件的成員函式，則您需要考量事件收件者 （處理事件的物件） 和事件來源 （的物件的相對存留時間引發事件）。 如需詳細資訊和程式碼範例，請參閱[強式和弱式參考，在 C + + /winrt](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate)。
 
 ## <a name="important-apis"></a>重要 API
 * [winrt:: auto_revoke_t 標記結構](/uwp/cpp-ref-for-winrt/auto-revoke-t)

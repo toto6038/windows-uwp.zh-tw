@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bb0b5f0f30ff13815eece466b678df7cbfbd4a0
-ms.sourcegitcommit: 4a359aecafb73d73b5a8e78f7907e565a2a43c41
+ms.openlocfilehash: 531bd349fca825a8bb80630192698b647db3129a
+ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "9024537"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042320"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
@@ -42,7 +42,7 @@ int main()
 
 上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
-事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影的值成員的呼叫確實委派，透過智慧型指標，以支援物件;這是發生狀態變更的位置。
+事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影的值成員的呼叫確實委派，透過智慧型指標，以支援物件;這是在發生狀態變更。
 
 ![投影 Windows::Foundation::Uri 類型](images/uri.png)
 
@@ -123,7 +123,7 @@ private:
 
 所有投影類型的預設建構函式*除了* `nullptr_t` 建構函式，皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 它預期在後續次數會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
 
-這項考量會影響其中您正在叫用的預設建構函式，例如向量和地圖中的其他位置。 請考慮此程式碼範例。
+這項考量會影響其中您正在叫用的預設建構函式，例如向量和地圖中的其他位置。 此程式碼範例，請考慮。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 不論您是自己撰寫元件，或由廠商提供，本節皆適用。
 
 > [!NOTE]
-> 如需有關安裝和使用 C++/WinRT Visual Studio 擴充功能 (VSIX) (提供專案範本的支援，以及 C++/WinRT MSBuild 屬性和目標) 的資訊，請參閱 [C++/WinRT 和 VSIX 的 Visual Studio 支援](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-and-the-vsix)。
+> 如需資訊有關安裝和使用 C + + /winrt Visual Studio 擴充功能 (VSIX) （可提供專案範本的支援） 看到[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生完整描述的標準 C++ 程式庫&mdash;或 *投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
 
