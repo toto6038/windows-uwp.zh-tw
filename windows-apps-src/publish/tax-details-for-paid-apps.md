@@ -1,30 +1,31 @@
 ---
 Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
-title: 付費應用程式的稅務詳細資料
+title: 稅務詳細資料
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
-ms.date: 01/02/2019
+ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 稅, 應用程式稅金, 稅金要求, 商務擴展, 稅率
 ms.localizationpriority: medium
-ms.openlocfilehash: 896a92e009b7d9c33554f77d8da56730625f1f85
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: cf57fa923297b8e4a57d7c5ca4668868bfae7038
+ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990336"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042488"
 ---
-# <a name="tax-details-for-paid-apps"></a>付費應用程式的稅務詳細資料
+# <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>適用於 Windows 應用程式/遊戲開發人員和 Azure Marketplace 發行者的稅務詳細資料
 
 
-若要了解您在價格選擇、支付關連及稅責等方面的稅務考量，請參閱下表您發行應用程式的國家/地區。
+若要了解您的稅務考量價格選擇及稅責底下的應用程式開發人員合約 」 或 「 現代化的發行者合約，請參閱下表發佈您國家/地區。
 
 > [!NOTE]
 > 「商業拓展調整」在某些國家/地區可能有支付關連。 如需「商業拓展調整」與適用市場的進一步詳細資料，請參閱 [應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)以及[受影響的國家/地區](define-market-selection.md#price-considerations-for-specific-markets)清單。
 
 > [!IMPORTANT]
-> 稅率隨時可能變更。 Microsoft 不保證下表的稅率永遠正確。
-> 
-> 除了下表中的資訊，經銷商國家/地區和環境的稅責 (如[下方](#reseller-countriesregions)所述) 於[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的附件 C 中說明
+> [應用程式開發人員合約](https://docs.microsoft.com/en-us/legal/windows/agreements/app-developer-agreement)，儘管下表中的資訊的附件 c 涵蓋轉銷商國家/地區和環境的稅責 （如所述[下方](#reseller-countriesregions))。
+> 請注意，**支付關連**欄只適用於 Windows 應用程式/遊戲開發人員。 此欄中所述稅率隨時會變更，也可以隨時和 Microsoft 無法保證下表的稅率永遠將會正確無誤。
+
+
 
  
 
@@ -262,9 +263,16 @@ ms.locfileid: "8990336"
 | 尚比亞                           | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 辛巴威                         | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 
- 
+下列僅適用於 Azure Marketplace 發行者，儘管有任何項目相反上方： 
 
-## <a name="mixed-remittance-countriesregions"></a>混合免稅國家/地區
+| 國家/地區                   | 價格選擇方面的稅務考量                                                                                                             | 稅金管理                    | 
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| 澳大利亞 （適用於透過企業合約以外的所有客戶購買案例所進行的購買） | 所選價格是最終銷售價格且包含所有相關稅金。 | Microsoft |
+| 澳大利亞 （僅適用於透過企業合約客戶購買案例中進行的購買） | 所選價格是最終銷售價格且包含所有相關稅金。 | Publisher |
+| 巴西 | 所選價格是最終銷售價格且包含所有相關稅金。 | 發行者 **（請參閱轉銷商國家/地區）** |
+| 墨西哥 | 所選價格是最終銷售價格且包含所有相關稅金。 | 發行者 **（請參閱轉銷商國家/地區）** |
+
+## <a name="mixed-remittance-countriesregions-for-windows-appgame-developers"></a>Windows 應用程式/遊戲開發人員的混合的免稅國家/地區
 
 
 特定 Microsoft 帳單合作夥伴可能會在下列國家/地區，代收和代繳因為將您的應用程式或應用程式內產品透過市集提供給客戶使用，可能產生的銷售、使用、商品和服務、增值稅或類似稅金。 Microsoft 提供給　貴用戶的[報告](payout-summary.md#downloading-payment-transactions)將可識別帳單合作夥伴已代收下列稅金的交易：將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 除了這類報告中所描述的交易外，Microsoft 與其帳單合作夥伴均不會代收和代繳將　貴用戶的應用程式或應用程式內產品透過市集提供給客戶使用所產生的銷售、使用、商品和服務、增值稅或類似稅金。 　貴用戶須負責檢閱提供給　貴用戶的報告，並且判斷和遵守義務 (如果有)，以註冊、收取和支付　貴用戶應用程式或應用程式內產品交易所產生的稅金。
@@ -274,20 +282,23 @@ ms.locfileid: "8990336"
 | 南非                       |
 | 越南                            |
 
- 
-
 ## <a name="reseller-countriesregions"></a>轉銷商國家/地區
 
-
 在特定國家/地區，Microsoft 於「市集」中提供您的應用程式與應用程式內產品的身分為轉銷商，而非您的代理商。 如需轉銷商國家/地區之條款及條件的進一步詳細資訊，請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。
+
+下列僅適用於 Windows 應用程式/遊戲開發人員：   
 
 |                    轉銷商國家/地區                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
 | 中國 (執行 Windows Phone 7.x 的行動通訊裝置與執行 Windows8.x 的個人電腦除外) |
 | 巴西 (僅適用於透過執行 Windows 10 的裝置進行的購買)     |
 
- 
+下列僅適用於 Azure Marketplace 發行者： 
 
+|                    轉銷商國家/地區                                                                          |
+|------------------------------------------------------------------------------------------------------------------------|
+| 巴西 （適用於透過雲端解決方案提供者以外的所有客戶購買案例所進行的購買） |
+| 墨西哥 （僅適用於透過企業合約客戶購買案例中進行的購買） |
 
 
  
