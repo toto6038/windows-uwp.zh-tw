@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 19ae09190b916fdaae68a67a2b9c11caa20d30e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1c0dcb40e4e70fc28dc0ccdbbf4aa329b00c71cf
+ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922349"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042644"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>您已封裝的傳統型應用程式整合至 Windows 10
 
-使用擴充功能來整合您已封裝的傳統型應用程式與 Windows 10 中預先定義的方式。
+若要將您已封裝的傳統型應用程式與 Windows 10 整合預先定義的方式使用擴充功能。
 
 例如，使用延伸模組建立防火牆例外、 檔案類型的預設應用程式，讓您的應用程式或開始畫面磚指向您的應用程式的已封裝版本。 若要使用延伸模組，您只需要將一些 XML 加入您應用程式的封裝資訊清單檔案。 不需要程式碼。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8922349"
 
 * [將現有的開始畫面磚和工作列按鈕指向您已封裝的應用程式](#point)
 * [請開啟檔案，而非您傳統型應用程式的已封裝的應用程式](#make)
-* [將您已封裝的應用程式與一組檔案類型產生關聯](#associate)
+* [您已封裝的應用程式關聯至一組檔案類型](#associate)
 * [將選項新增至具有特定檔案類型的檔案操作功能表](#add)
 * [使用 URL 直接開啟特定類型的檔案](#open)
 
@@ -152,9 +152,9 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 <a id="associate" />
 
-### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>將您已封裝的應用程式與一組檔案類型產生關聯
+### <a name="associate-your-packaged-application-with-a-set-of-file-types"></a>您已封裝的應用程式關聯至一組檔案類型
 
-您可以使用檔案類型副檔名產生關聯您已封裝的應用程式。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [**開啟**] 選項，您的應用程式會出現在建議清單。
+您可以將您已封裝的應用程式關聯的檔案類型副檔名。 如果使用者以滑鼠右鍵按一下檔案，然後選取 [**開啟**] 選項，您的應用程式出現在建議清單。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -242,7 +242,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |類別 | 總是 ``windows.fileTypeAssociation``。
 |名稱 |您應用程式的唯一識別碼。 |
 |Verb |在檔案總管操作功能表中出現的名稱。 此字串可使用 ```ms-resource``` 進行當地語系化。|
-|Id |指令動詞的唯一識別碼。 如果您的應用程式是 UWP app，這被傳遞至您的應用程式做為其啟用事件引數的一部分讓它能夠適當處理使用者的選擇。 如果您的應用程式為完全信任的已封裝應用程式，它參數會改為接收 （請參閱下一個項目符號）。 |
+|Id |指令動詞的唯一識別碼。 如果您的應用程式是 UWP app，這被傳遞至您的應用程式，做為其啟用事件引數的一部分讓它能夠適當處理使用者的選擇。 如果您的應用程式為完全信任的已封裝應用程式，它參數會改為接收 （請參閱下一個項目符號）。 |
 |Parameters |與指令動詞關聯的引數參數與值清單。 如果您的應用程式為完全信任的已封裝應用程式，這些參數會傳遞至應用程式做為事件引數，應用程式啟動時。 您可以自訂您的應用程式根據不同的啟用動詞的行為。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 如果您的應用程式是 UWP app，您無法傳送參數。 應用程式會改為接收識別碼 (請參閱上一個項目符號)。|
 |Extended |指定是否僅在使用者以滑鼠右鍵按一下檔案顯示操作功能表前按住 **Shift** 鍵，才會顯示指令動詞。 此屬性為選擇性，若未列出則其預設值為 **False** (一律顯示動詞)。 您會針對每個動詞個別指定此行為 (不包括「開啟」，其一律設定為 **False**)。|
 
@@ -305,7 +305,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 |-------|-------------|
 |類別 |總是 ``windows.fileTypeAssociation``。
 |名稱 |您應用程式的唯一識別碼。 |
-|UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您沒有設定此值，會嘗試透過您的應用程式使用的 URL 原因先將檔案下載到系統在本機開啟的檔案。 |
+|UseUrl |指出是否要直接從 URL 目標開啟檔案。 如果您沒有設定此值，就會嘗試透過您的應用程式使用的 URL 原因先將檔案下載到系統在本機開啟的檔案。 |
 |Parameters |選用參數。 |
 |FileType |相關的檔案副檔名。 |
 
@@ -342,7 +342,7 @@ http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabi
 
 ### <a name="create-firewall-exception-for-your-app"></a>為您的應用程式建立防火牆例外
 
-如果您的應用程式需要透過連接埠進行通訊，您可以新增應用程式清單的防火牆例外狀況。
+如果您的應用程式需要透過連接埠進行通訊，您可以新增到清單應用程式的防火牆例外狀況。
 
 #### <a name="xml-namespace"></a>XML 命名空間
 
@@ -502,9 +502,9 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 已封裝的傳統型應用程式具有與一般傳統型應用程式相同的三個選項。
 
-* ``Player``： 您的應用程式會啟動一次。 所有選取的檔案都會傳遞至您的應用程式做為引數參數。
-* ``Single``： 您的應用程式會啟動一次，針對第一個選取的檔案。 系統會忽略其他的檔案。
-* ``Document``： 針對每個所選檔案啟用新，個別的執行個體應用程式。
+* ``Player``： 您的應用程式會啟動一次。 所有選取的檔案都會傳遞至您的應用程式，做為引數參數。
+* ``Single``： 您的應用程式會啟動一次針對第一個選取的檔案。 系統會忽略其他的檔案。
+* ``Document``: 新，個別啟用的執行個體應用程式是針對每個所選檔案。
 
  您可針對不同的檔案類型和動作，設定不同的喜好設定。 例如：您可能會想要在 *Documents* 模式中開啟 *「文件」*，以及在 *Player* 模式中開啟 *「影像」*。
 
@@ -812,7 +812,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 
 ```
 
-|名稱 |描述 |
+|Name |描述 |
 |-------|-------------|
 |類別 |總是 ``windows.cloudfiles``。
 |iconResource |圖示，表示您的雲端檔案提供者服務。 在 [檔案總管] 瀏覽窗格中，會顯示此圖示。  使用者選擇此圖示，以顯示您的雲端服務中的檔案。 |
@@ -854,7 +854,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/6
 ## <a name="start-your-application-in-different-ways"></a>以不同方式啟動您的應用程式
 
 * [使用通訊協定啟動您的應用程式](#protocol)
-* [透過使用別名啟動您的應用程式](#alias)
+* [使用別名啟動您的應用程式](#alias)
 * [在使用者登入 Windows 時執行可執行檔](#executable)
 * [讓使用者將裝置連接至電腦時，啟動您的應用程式](#autoplay)
 * [從 Microsoft Store 接收更新後自動重新開機](#updates)
@@ -885,8 +885,8 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 |名稱 |描述 |
 |-------|-------------|
 |類別 |總是 ``windows.protocol``。
-|Name |通訊協定的名稱。 |
-|Parameters |之參數與值，以啟動應用程式時，您的應用程式做為事件引數傳遞的清單。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 |
+|名稱 |通訊協定的名稱。 |
+|Parameters |之參數與值，以啟動應用程式時，您的應用程式，做為事件引數傳遞的清單。 若變數包含了檔案路徑，請以引號包圍參數。 這將可避免路徑中包含空格時可能發生的任何問題。 |
 
 ### <a name="example"></a>範例
 
@@ -897,11 +897,13 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
   <Applications>
     <Application>
       <Extensions>
-        <uap3:Extension
-          Category="windows.protocol">
-          <uap3:Protocol
-            Name="myapp-cmd"
-            Parameters="/p &quot;%1&quot;" />
+         <uap3:Extension
+                Category="windows.appExecutionAlias"
+                Executable="exes\launcher.exe"
+                EntryPoint="Windows.FullTrustApplication">
+            <uap3:AppExecutionAlias>
+                <desktop:ExecutionAlias Alias="Contoso.exe" />
+            </uap3:AppExecutionAlias>
         </uap3:Extension>
       </Extensions>
     </Application>
@@ -911,7 +913,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 
 <a id="alias" />
 
-### <a name="start-your-application-by-using-an-alias"></a>透過使用別名啟動您的應用程式
+### <a name="start-your-application-by-using-an-alias"></a>使用別名啟動您的應用程式
 
 使用者和其他處理程序可以使用別名啟動您的應用程式，而不必指定您的應用程式的完整路徑。 您可以指定別名名稱。
 
@@ -933,7 +935,7 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
 </Extension>
 ```
 
-|名稱 |描述 |
+|Name |描述 |
 |-------|-------------|
 |類別 |總是 ``windows.appExecutionAlias``。
 |Executable |叫用別名時欲啟動之可執行檔的相對路徑。 |
@@ -947,15 +949,20 @@ http://schemas.microsoft.com/appx/manifest/uap/windows10/3
   xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
   xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   IgnorableNamespaces="uap3, desktop">
-  ...
-  <uap3:Extension
-        Category="windows.appExecutionAlias"
-        Executable="exes\launcher.exe"
-        EntryPoint="Windows.FullTrustApplication">
-      <uap3:AppExecutionAlias>
-        <desktop:ExecutionAlias Alias="Contoso.exe" />
-      </uap3:AppExecutionAlias>
-  </uap3:Extension>
+  <Applications>
+    <Application>
+      <Extensions>
+        <uap3:Extension
+          Category="windows.protocol">
+          <uap3:Protocol
+            Name="myapp-cmd"
+            Parameters="/p &quot;%1&quot;" />
+        </uap3:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>
+ 
 ...
 </Package>
 ```
@@ -993,7 +1000,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 </Extension>
 ```
 
-|名稱 |描述 |
+|Name |描述 |
 |-------|-------------|
 |類別 |總是 ``windows.startupTask``。|
 |Executable |欲啟動之可執行檔檔案的相對路徑。 |
@@ -1048,7 +1055,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
   </AutoPlayHandler>
 ```
 
-|名稱 |描述 |
+|Name |描述 |
 |-------|-------------|
 |類別 |總是 ``windows.autoPlayHandler``。
 |ActionDisplayName |字串，表示使用者可以在連接到電腦的裝置上執行的動作 (例如：「匯入檔案」或「播放影片」)。 |
@@ -1088,11 +1095,11 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/3
 
 ### <a name="restart-automatically-after-receiving-an-update-from-the-microsoft-store"></a>從 Microsoft Store 接收更新後自動重新開機
 
-如果您的應用程式開啟時使用者安裝更新它，就會關閉應用程式。
+如果您的應用程式已開啟，當使用者安裝更新給它，就會關閉應用程式。
 
 如果您想要完成更新之後重新啟動該應用程式，請在每個您想要重新啟動的處理序中呼叫[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
 
-您的應用程式中每個使用中視窗收到[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)的訊息。 到目前為止，您的應用程式可以呼叫一次以更新命令列，如有必要的[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
+在您的應用程式中每個使用中視窗收到[WM_QUERYENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376890.aspx)的訊息。 到目前為止，您的應用程式可以呼叫一次，以更新命令列，如有必要的[RegisterApplicationRestart](https://msdn.microsoft.com/library/windows/desktop/aa373347.aspx)函式。
 
 當您的應用程式中每個使用中視窗收到[WM_ENDSESSION](https://msdn.microsoft.com/library/windows/desktop/aa376889.aspx)訊息時，您的應用程式應該儲存資料，並關閉。
 
@@ -1264,9 +1271,9 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10
 </Package>
 ```
 
-此延伸模組可能會很有用，如果您想要建立在所有裝置執行的通用 Windows 平台使用者介面，但您想要的 Win32 應用程式繼續執行，完全信任的元件。
+這個擴充功能可能會很有用，如果您想要建立在所有裝置執行的通用 Windows 平台使用者介面，但您想要的 Win32 應用程式繼續執行，完全信任的元件。
 
-只需要建立您的 Win32 應用程式的 Windows 應用程式套件。 然後，將此延伸模組新增至您 UWP app 的套件檔案。 此延伸模組表示您想要在 Windows 應用程式套件中啟動之可執行檔。  若您想要讓您的 UWP app 和 Win32 應用程式互相通訊，您可以設定一或多個[應用程式服務](../launch-resume/app-services.md)。 您可以在[這裡](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)閱讀更多關於此案例的資訊。
+只需要建立您的 Win32 應用程式的 Windows 應用程式套件。 然後，將此延伸模組新增至您 UWP app 的套件檔案。 此延伸模組表示您想要啟動之可執行檔的 Windows 應用程式套件中。  若您想要讓您的 UWP app 和 Win32 應用程式互相通訊，您可以設定一或多個[應用程式服務](../launch-resume/app-services.md)。 您可以在[這裡](https://blogs.msdn.microsoft.com/appconsult/2016/12/19/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app/)閱讀更多關於此案例的資訊。
 
 ## <a name="next-steps"></a>後續步驟
 

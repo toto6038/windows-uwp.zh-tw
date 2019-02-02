@@ -1,16 +1,16 @@
 ---
 Description: Learn about several ways you can programmatically enable customers to rate and review your app.
 title: 為您的應用程式作評等與評論
-ms.date: 06/15/2018
+ms.date: 01/22/2019
 ms.topic: article
 keywords: Windows 10、uwp、評分、評論
 ms.localizationpriority: medium
-ms.openlocfilehash: 377b71dba2fb62dfc562b56d40e65e43b0bd49c9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b167f4cc40ee72e6405436bacee28f2f20b4623c
+ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946859"
+ms.lasthandoff: 02/01/2019
+ms.locfileid: "9042634"
 ---
 # <a name="request-ratings-and-reviews-for-your-app"></a>為您的應用程式作評等與評論
 
@@ -21,42 +21,91 @@ ms.locfileid: "8946859"
 當您準備好分析評等與評論資料時，您可以在合作夥伴中心中檢視資料，或使用 「 Microsoft Store 分析 API 以程式設計方式擷取此資料。
 
 > [!IMPORTANT]
-> 當您新增您的應用程式內的評等函式，所有評論必須在市集中評分機制，無論/星級評等所選傳送都給使用者。 如果您從使用者收集意見反應或註解，它必須是清除它不相關的應用程式評等或評論存放區中的，但會直接傳送到應用程式開發人員。 請參閱 「 開發人員管理辦法[Fraudulent](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)或誠實活動的相關資訊。
+> 當您新增您的應用程式內的評等函式，所有評論必須傳送都給使用者，在市集中評分機制，無論/星級評等的選擇。 如果您從使用者收集意見反應或註解，它必須是清除它不相關的應用程式評等或評論存放區中的，但會直接傳送到應用程式開發人員。 請參閱 「 開發人員管理辦法[Fraudulent](https://docs.microsoft.com/legal/windows/agreements/store-developer-code-of-conduct#3-fraudulent-or-dishonest-activities)或誠實活動的相關資訊。
 
 ## <a name="show-a-rating-and-review-dialog-in-your-app"></a>在您的應用程式中顯示評等與評論對話方塊
 
-要以程式設計方式顯示應用程式中的對話方塊，要求客戶評分應用程式並提交評論，請在 [Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store) 命名空間中呼叫 [SendRequestAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storerequesthelper.sendrequestasync) 方法。 如此程式碼範例所示，將整數 16 傳送到 *requestKind* 參數，並將空白字串傳送到  *parametersAsJson* 參數。 這個範例需要 Newtonsoft 的 [Json.NET](http://www.newtonsoft.com/json) 程式庫，需要使用**Windows.Services.Store**、**System.Threading.Tasks** 和 **Newtonsoft.Json.Linq** 命名空間的陳述式。
+若要以程式設計方式顯示您要求客戶評分應用程式並提交評論的應用程式中的對話方塊，呼叫[RequestRateAndReviewAppAsync](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.requestrateandreviewappasync)方法[Windows.Services.Store](https://docs.microsoft.com/uwp/api/windows.services.store)命名空間中。 
 
 > [!IMPORTANT]
 > 必須在您的應用程式 UI 執行緒上呼叫顯示評等與評論對話方塊的要求。
 
 ```csharp
-public async Task<bool> ShowRatingReviewDialog()
-{
-    StoreSendRequestResult result = await StoreRequestHelper.SendRequestAsync(
-        StoreContext.GetDefault(), 16, String.Empty);
+using Windows.ApplicationModel.Store;
 
-    if (result.ExtendedError == null)
+private StoreContext _storeContext;
+
+public async Task Initialize()
+{
+    if (App.IsMultiUserApp) // pseudo-code
     {
-        JObject jsonObject = JObject.Parse(result.Response);
-        if (jsonObject.SelectToken("status").ToString() == "success")
-        {
-            // The customer rated or reviewed the app.
-            return true;
-        }
+        IReadOnlyList<User> users = await User.FindAllAsync();
+        User firstUser = users[0];
+        _storeContext = StoreContext.GetForUser(firstUser);
+    }
+    else
+    {
+        _storeContext = StoreContext.GetDefault();
+    }
+}
+
+private async Task PromptUserToRateApp()
+{
+    // Check if we’ve recently prompted user to review, we don’t want to bother user too often and only between version changes
+    if (HaveWePromptedUserInPastThreeMonths())  // pseudo-code
+    {
+        return;
     }
 
-    // There was an error with the request, or the customer chose not to
-    // rate or review the app.
-    return false;
+    StoreRateAndReviewResult result = await 
+        _storeContext.RequestRateAndReviewAppAsync();
+
+    // Check status
+    switch (result.Status)
+    { 
+        case StoreRateAndReviewStatus.Succeeded:
+            // Was this an updated review or a new review, if Updated is false it means it was a users first time reviewing
+            if (result.UpdatedExistingRatingOrReview)
+            {
+                // This was an updated review thank user
+                ThankUserForReview(); // pseudo-code
+            }
+            else
+            {
+                // This was a new review, thank user for reviewing and give some free in app tokens
+                ThankUserForReviewAndGrantTokens(); // pseudo-code
+            }
+            // Keep track that we prompted user and don’t do it again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+            break;
+
+        case StoreRateAndReviewStatus.CanceledByUser:
+            // Keep track that we prompted user and don’t prompt again for a while
+            SetUserHasBeenPrompted(); // pseudo-code
+
+            break;
+
+        case StoreRateAndReviewStatus.NetworkError:
+            // User is probably not connected, so we’ll try again, but keep track so we don’t try too often
+            SetUserHasBeenPromptedButHadNetworkError(); // pseudo-code
+
+            break;
+
+        // Something else went wrong
+        case StoreRateAndReviewStatus.OtherError:
+        default:
+            // Log error, passing in ExtendedJsonData however it will be empty for now
+            LogError(result.ExtendedError, result.ExtendedJsonData); // pseudo-code
+            break;
+    }
 }
 ```
 
-**SendRequestAsync** 方法使用簡單整數型要求系統和以 JSON 為基礎的資料參數將其他 Store 作業公開給應用程式。 當您將整數 16 傳送至 *requestKind* 參數時，您將發出要求以顯示評等與評論對話方塊，並將資料傳送至 Microsoft Store。 此方法在 Windows 10 版本 1607 中導入，並且只能在 Visual Studio 中以 **Windows 10 年度更新版 (10.0; 組建 14393)** 或更新版本為目標的專案中使用。 有關此方法的一般概述，請參閱 [傳送要求至 Microsoft Store ](send-requests-to-the-store.md)。
+**RequestRateAndReviewAppAsync**方法引進了 Windows 10 版本 1809，以及它只能在專案中為目標**Windows 10 年 10 月 2018 年 Update (10.0;組建 17763）** 或更新版本在 Visual Studio 中的。
 
 ### <a name="response-data-for-the-rating-and-review-request"></a>評等與評論要求的回應資料
 
-提交要求以顯示評等與評論話方塊後，[StoreSendRequestResult](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult) 傳回值的[回應](https://docs.microsoft.com/uwp/api/windows.services.store.storesendrequestresult.Response) 屬性包含一個 JSON 格式的字串，該字串表示要求是否成功。
+您提交要求以顯示評等與評論話之後， [ExtendedJsonData](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult.extendedjsondata) [StoreRateAndReviewResult](https://docs.microsoft.com/uwp/api/windows.services.store.storerateandreviewresult)類別的屬性包含 JSON 格式字串，表示要求是否成功。
 
 以下範例展示在客戶成功提交評分或評論後該要求的傳回值。
 
@@ -81,11 +130,11 @@ public async Task<bool> ShowRatingReviewDialog()
 
 下表描述 JSON 格式的資料字串中的欄位。
 
-|  欄位  |  描述  |
-|----------------------|---------------|
-|  *狀態*                   |  表示客戶是否成功提交評等或評論的字串。 支援的值為**成功**和**中止**。   |
-|  *資料*                   |  此物件包含名為*已更新*的單一布林值。 此值表示客戶是否更新現有評等或評論。 *資料*物件只包含在成功回應中。   |
-|  *errorDetails*                   |  字串包含要求的錯誤詳細資料。 |
+| 欄位          | 描述                                                                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| *狀態*       | 表示客戶是否成功提交評等或評論的字串。 支援的值為**成功**和**中止**。 |
+| *資料*         | 此物件包含名為*已更新*的單一布林值。 此值表示客戶是否更新現有評等或評論。 *資料*物件只包含在成功回應中。 |
+| *errorDetails* | 字串包含要求的錯誤詳細資料。                                                                                     |
 
 ## <a name="launch-the-rating-and-review-page-for-your-app-in-the-store"></a>在 Microsoft Store 中啟動您的應用程式的評等與評論頁面
 
