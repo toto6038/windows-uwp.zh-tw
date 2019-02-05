@@ -9,12 +9,12 @@ pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 88dc22a11f88bbf0945340729722ea434345b205
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037350"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049113"
 ---
 # <a name="reveal-focus"></a>顯色焦點
 
@@ -163,7 +163,7 @@ ms.locfileid: "9037350"
 
 ## <a name="use-your-own-focus-visuals"></a>使用您自己的焦點視覺效果
 
-若要自訂顯色焦點的另一種方式是使用視覺狀態自行繪製選擇不使用系統提供的焦點視覺效果。 若要深入了解，請參閱[焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)。
+若要自訂顯色焦點的另一種方式是使用視覺狀態自行繪製選擇不使用系統提供的焦點視覺效果。 若要深入了解，請參閱[焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)。
 
 
 ## <a name="reveal-focus-and-the-fluent-design-system"></a>顯色焦點和 Fluent 設計系統
@@ -175,7 +175,7 @@ ms.locfileid: "9037350"
 - [顯色醒目提示](https://docs.microsoft.com/windows/uwp/design/style/reveal)
 - [針對 Xbox 和電視進行設計](/windows/uwp/design/devices/designing-for-tv)
 - [遊戲台與遙控器的互動](https://docs.microsoft.com/windows/uwp/design/input/gamepad-and-remote-interactions)
-- [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+- [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 - [組合效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
 - [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
 - [系統中的科學：Fluent Design 和光源](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

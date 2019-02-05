@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ae9bc0f6d53181a88b02ecda19b3aed745febe40
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66b61b9db88392c7ca7370f06fb2150deba7c8c3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921705"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047533"
 ---
 # <a name="using-the-visual-layer-with-xaml"></a>使用視覺層搭配 XAML
 
@@ -283,7 +283,7 @@ void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Wi
 
 ### <a name="frosted-glass"></a>毛玻璃
 
-建立可將背景內容模糊及濃淡的效果。 請注意，開發人員必須安裝 Win2D NuGet 套件才能使用效果。 如需安裝指示，請參閱 [Win2D 首頁](http://microsoft.github.io/Win2D/html/Introduction.htm)。
+建立可將背景內容模糊及濃淡的效果。 請注意，開發人員必須安裝 Win2D NuGet 套件才能使用效果。 如需安裝指示，請參閱 [Win2D 首頁](https://microsoft.github.io/Win2D/html/Introduction.htm)。
 
 #### <a name="implementation-overview"></a>實作概觀
 

@@ -1,30 +1,30 @@
 ---
-title: 2018 年 7 月 Windows 文件的最新動向-開發 UWP app
-description: 新功能、 影片、 範例及開發人員指引已加入 2018 年 7 月的 Windows 10 開發人員文件。
+title: 在 2018 年 7 月 Windows 文件中新動向-開發 UWP app
+description: 新功能、 影片、 範例及開發人員指引已新增至 2018 年 7 月的 Windows 10 開發人員文件。
 keywords: 新動向，更新，功能，開發人員指引，Windows 10 年 7 月
 ms.date: 7/11/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: d445f31d22baaafeb16c004543770cf5d6df05a7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 83d890983cfe32aaf1204b21552a7d72d89d9675
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935862"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049635"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>在 2018 年 7 月 Windows 開發人員文件的最新動向
+# <a name="whats-new-in-the-windows-developer-docs-in-july-2018"></a>在 2018 年 7 月 Windows 開發人員文件中新動向
 
-Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、 開發人員指引、 影片及範例已可供年 7 月。
+Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、 開發人員指引、 影片及範例已可供年 7 月月份中。
 
-在 Windows10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
 ### <a name="progressive-web-apps-on-windows"></a>在 Windows 上的漸進式 Web 應用程式
 
-[漸進式 Web 應用程式 (Pwa)](https://developer.microsoft.com/windows/pwa)是只是使用原生應用程式類似的功能上支援的平台和瀏覽器引擎，例如啟動從 homescreen 安裝、 離線支援，以及推播進行[逐漸增強](https://wikipedia.org/wiki/Progressive_enhancement)web 應用程式通知。 在 Windows 10 與 Microsoft Edge (EdgeHTML) 引擎，Pwa 享受正在執行的已新增的優點[考慮為 UWP 應用程式的瀏覽器視窗。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
+[漸進式 Web 應用程式 (Pwa)](https://developer.microsoft.com/windows/pwa)是只是使用原生應用程式類似的功能上支援的平台和瀏覽器引擎，例如啟動從 homescreen 安裝、 離線支援和推播進行[逐漸增強](https://wikipedia.org/wiki/Progressive_enhancement)web 應用程式通知。 在 Windows 10 與 Microsoft Edge (EdgeHTML) 引擎，Pwa 享受正在執行的已新增的優點[考慮為 UWP app 的瀏覽器視窗。](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)
 
-![Pwa 的動作中的影像](images/progressive-web-apps.jpg)
+![Pwa 映像中動作](images/progressive-web-apps.jpg)
 
 請查看我們 PWA 指南：
 
@@ -34,13 +34,13 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="notepad"></a>記事本
 
-適用於 Windows 10 Insider Preview 組建 17713， [「 記事本 」 已更新為使用許多新的功能](http://aka.ms/ant-man)。 縮放、 迴繞尋找/取代和支援的 Unix/Linux (LF) 和 Mac (CR) 行尾目前已提供給[Windows 測試人員](https://insider.windows.com/)。 
+適用於 Windows 10 Insider Preview 組建 17713， [「 記事本 」 已更新為使用許多新的功能](https://aka.ms/ant-man)。 縮放、 迴繞尋找/取代和支援的 Unix/Linux (LF) 和 Mac (CR) 行尾目前已提供給[Windows 測試人員](https://insider.windows.com/)。 
 
 ## <a name="developer-guidance"></a>開發人員指引
 
 ### <a name="design-landing-page"></a>設計登陸頁面
 
-請查看[更新登陸頁面的設計](https://developer.microsoft.com/windows/apps/design)的 UWP 設計區域和 Fluent 設計最新新增項目上的資訊在快速概觀。
+請查看[更新登陸頁面的設計](https://developer.microsoft.com/windows/apps/design)適用於 UWP 的設計區域，與 Fluent Design 到最新新增項目上的資訊在快速概觀。
 
 ### <a name="design-toolkits"></a>設計工具組
 
@@ -48,35 +48,35 @@ Adobe XD 和 Adobe Illustrator 工具組已更新的新功能。 這些設計工
 
 ### <a name="webvr"></a>WebVR
 
-我們已新增數個新的主題以[WebVR 文件](https://docs.microsoft.com/microsoft-edge/webvr/
+我們已經新增新的幾個主題，到[WebVR 文件](https://docs.microsoft.com/microsoft-edge/webvr/
 )：
 
 * [什麼是 WebVR？](https://docs.microsoft.com/microsoft-edge/webvr/what-is-webvr
-) 說明 WebVR 的是，為什麼您應該使用它，以及如何開始針對它進行開發。
+) 說明 WebVR 的是，為什麼您應該使用它，以及如何開始使用它進行開發。
 
 * [漸進式 Web 應用程式中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-pwas)： 了解如何新增 WebVR 至漸進式 Web 應用程式 (PWA)。
 
-* [WebView 中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)： 了解如何新增 WebVR 至 WebView 控制項，在 Windows 10 的應用程式。
+* [WebView 中的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-in-webview)： 了解如何新增 WebVR 至 WebView 控制項，在 Windows 10 應用程式。
 
-* [WebVR 示範](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 請查看某些 WebVR 示範使用 Microsoft Edge 與 Windows Mixed Reality 沉浸式頭戴式裝置。
+* [WebVR 示範](https://docs.microsoft.com/microsoft-edge/webvr/demos)： 請查看某些 WebVR 示範，使用 Microsoft Edge 與 Windows Mixed Reality 沉浸式頭戴式裝置。
 
 此外，我們已經有些更新現有的頁面：
 
-* 目錄現在更清楚地組織成四個不同的最上層桶：**基礎知識**、**開發**、**資源**，以及**示範**。
+* 目錄中現在更清楚地組織為四個不同的最上層桶：**基礎知識**、**開發**、**資源**，以及**示範**。
 
 * [WebVR 開發人員指南 （登陸頁面）](https://docs.microsoft.com/microsoft-edge/webvr/)： 重新整理的外觀及操作方式，較大的影像和圖示與新的示範。
 
-* [使用 WebVR 與 Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge)： 已更新以包含有關 Windows 10 2018 年更新。
+* [與 Microsoft Edge 搭配使用的 WebVR](https://docs.microsoft.com/microsoft-edge/webvr/webvr-with-edge)： 更新以包含有關 Windows 10 2018 年更新。
 
 ## <a name="videos"></a>影片
 
 ### <a name="get-started-for-devs-create-and-customize-a-form-on-windows-10"></a>開始使用適用於開發人員： 建立和自訂 Windows 10 上的表單
 
-我們[要開始使用的文件](../get-started/index.md)給 Windows 開發人員現在提供基本的應用程式開發工作的實機操作體驗。 這段影片會逐步引導您透過其中一個這些主題中，並說明在您的應用程式中建立表單的 UI 的基本知識。 [觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)以查看程式碼的動作，然後[自行查看本主題。](http://aka.ms/CreateForms)
+我們[要開始使用的文件](../get-started/index.md)給 Windows 開發人員現在提供基本的應用程式開發工作的實機操作體驗。 這段影片會逐步引導您透過其中一個這些主題中，並說明在您的應用程式中建立表單的 UI 的基本知識。 若要查看動作，然後中的程式碼的[觀看影片](https://www.youtube.com/watch?v=AgngKzq4hKI&feature=youtu.be)[自行查看本主題。](https://aka.ms/CreateForms)
 
 ### <a name="enhance-your-bot-with-project-personality-chat"></a>增強您使用專案特質聊天 Bot
 
-特質聊天專案可讓您將可自訂的角色新增到您的聊天 bot。 整合至 Microsoft Bot 架構 SDK，您可以新增更交談的方式與客戶互動的小型通話功能。 若要了解如何實作它，然後[嘗試互動示範](http://aka.ms/PersonalityChat)實機操作體驗，[觀看影片](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)。
+特質聊天專案可讓您將可自訂的角色新增到您的聊天 bot。 整合至 Microsoft Bot 架構 SDK，您可以新增更交談的方式與客戶互動的小型通話功能。 若要了解如何實作它，然後[嘗試互動示範](https://aka.ms/PersonalityChat)實機操作體驗，[觀看影片](https://www.youtube.com/watch?v=5C_uD8g2QKg&feature=youtu.be)。
 
 ### <a name="one-dev-question"></a>一個開發人員問題
 

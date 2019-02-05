@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 006507d4665f5578310b8d3e31fb8f7fba4117a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f9e1f285f53f2f4c9f160b573141666609560c00
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934743"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049755"
 ---
 # <a name="enterprise-shared-storage"></a>企業共用存放裝置
 
-企業共用存放裝置包含兩個位置，其中，具有受限制功能 **enterpriseDeviceLockdown** 和一個企業憑證的應用程式具有完整讀取與寫入權。 請注意，**enterpriseDeviceLockdown** 功能讓應用程式能夠使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 如需 API 的詳細資訊，請參閱 [**Windows.Embedded.DeviceLockdown**](http://go.microsoft.com/fwlink/?LinkId=699331) 命名空間。  
+企業共用存放裝置包含兩個位置，其中，具有受限制功能 **enterpriseDeviceLockdown** 和一個企業憑證的應用程式具有完整讀取與寫入權。 請注意，**enterpriseDeviceLockdown** 功能讓應用程式能夠使用裝置鎖定 API，以及存取企業共用存放裝置資料夾。 如需 API 的詳細資訊，請參閱 [**Windows.Embedded.DeviceLockdown**](https://go.microsoft.com/fwlink/?LinkId=699331) 命名空間。  
 
 這些位置設定於本機磁碟機︰
 - \Data\SharedData\Enterprise\Persistent
@@ -27,7 +27,7 @@ ms.locfileid: "8934743"
 
 - 您可以在應用程式執行個體內、相同應用程式的執行個體之間或甚至在假設它們具有適當功能和憑證的應用程式之間共用資料。
 - 您可以將資料儲存至本機硬碟的 \Data\SharedData\Enterprise\Persistent 資料夾，而且即使重設裝置之後仍會保存資料。
-- 操作檔案，包括透過行動裝置管理 (MDM) 服務讀取、寫入和刪除裝置上的檔案。 如需如何透過 MDM 服務使用企業共用存放裝置的詳細資訊，請參閱 [EnterpriseExtFileSystem CSP](http://go.microsoft.com/fwlink/?LinkId=699333)。
+- 操作檔案，包括透過行動裝置管理 (MDM) 服務讀取、寫入和刪除裝置上的檔案。 如需如何透過 MDM 服務使用企業共用存放裝置的詳細資訊，請參閱 [EnterpriseExtFileSystem CSP](https://go.microsoft.com/fwlink/?LinkId=699333)。
 
 ## <a name="access-enterprise-shared-storage"></a>存取企業共用存放裝置
 

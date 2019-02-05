@@ -6,12 +6,12 @@ ms.date: 10/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 114524294a5b77165167601c1479b6c3894bb29b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e108d603a623e3b9e41d7ced3c0fafc80f006b8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937819"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050005"
 ---
 # <a name="view-app-identity-details"></a>檢視應用程式身分識別詳細資料
 
@@ -46,7 +46,7 @@ ms.locfileid: "8937819"
 
 您可以分享連至您 app 頁面的直接連結，以協助您的客戶在市集中找到該 app。 這個連結的格式為 **`https://www.microsoft.com/store/apps/<your app's Store ID>`**。 當客戶按一下此連結時，會開啟您 App 的網頁清單頁面。 在 Windows 裝置上，市集應用程式也將啟動並顯示您的應用程式清單。
 
-您 App 的**市集識別碼**也會在此區段中顯示。 這個市集識別碼可用來[產生市集徽章](http://go.microsoft.com/fwlink/p/?LinkId=534236)，或識別您的 App。
+您 App 的**市集識別碼**也會在此區段中顯示。 這個市集識別碼可用來[產生市集徽章](https://go.microsoft.com/fwlink/p/?LinkId=534236)，或識別您的 App。
 
 **市集通訊協定連結**可以用來直接連接至您在市集中的應用程式，而不開啟瀏覽器，例如當您從應用程式連結時。 如需詳細資訊，請參閱[應用程式的連結](link-to-your-app.md)。
 

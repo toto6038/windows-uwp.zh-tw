@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 樣本, directx, 結構
 ms.localizationpriority: medium
-ms.openlocfilehash: d19fe1a81a193baf7fe6b7b86865dfb7ea65c00b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936171"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049875"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 應用程式結構
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936171"
 DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程式結構不同。 Windows 執行階段提供介面 (例如 [[Windows::UI::Core::ICoreWindow](https://msdn.microsoft.com/library/windows/desktop/aa383751)](https://msdn.microsoft.com/library/windows/apps/br208296))，讓您能夠使用更現代化的物件導向方式來開發 UWP 應用程式，而不是使用控制代碼類型 (例如 [HWND](https://msdn.microsoft.com/library/windows/desktop/ms632679)) 和函式 (例如 CreateWindow) 來進行開發。 文件的這一節示範如何建構 Marble Maze App 程式碼。
 
 > [!NOTE]
-> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 ## 

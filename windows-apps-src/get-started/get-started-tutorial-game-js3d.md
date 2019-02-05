@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: fb4249b2-f93c-4993-9e4d-57a62c04be66
 ms.localizationpriority: medium
-ms.openlocfilehash: 5f707e72e73398ae21cd391da16a0f2b40dcd7ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c7d40765e0d12e3543f198aebd5acd15ed3aff3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942785"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047772"
 ---
 # <a name="creating-a-3d-javascript-game-using-threejs"></a>使用 three.js 建立 3D JavaScript 遊戲
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942785"
 
 若要試用這個專案，您將需要下列各項：
 -   執行 Windows 10 目前版本的 Windows 的電腦（或虛擬機器）。
--   一份 Visual Studio 複本。 您可以從 [Visual Studio 首頁](http://visualstudio.com/)下載免費的 Visual Studio Community Edition。
+-   一份 Visual Studio 複本。 您可以從 [Visual Studio 首頁](https://visualstudio.com/)下載免費的 Visual Studio Community Edition。
 這個專案使用 **three.js** JavaScript 程式庫。 **three.js** 是根據 MIT 授權發行。 這個程式庫已經在專案中 (在方案總管檢視中尋找 `js/libs`)。 您可以在 [**three.js**](https://threejs.org/) 首頁找到這個程式庫的詳細資訊。
 
 ## <a name="getting-started"></a>開始使用
@@ -1086,5 +1086,5 @@ function lockChange() {
 1.  您必須[註冊](https://developer.microsoft.com/store/register)為 Windows 開發人員。
 2.  您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3.  必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
-如需詳細資訊，請參閱[發佈您的 UWP 應用程式](https://developer.microsoft.com/store/publish-apps)。
+如需詳細資訊，請參閱[發佈您的 UWP app](https://developer.microsoft.com/store/publish-apps)。
 

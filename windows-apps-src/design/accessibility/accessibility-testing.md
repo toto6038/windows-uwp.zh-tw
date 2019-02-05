@@ -8,12 +8,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a06859d6580720150383f2995505e671c0a31a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d84683544628a9b6df0eafb2999fabb134465ea8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947233"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049625"
 ---
 # <a name="accessibility-testing"></a>協助工具測試  
 
@@ -79,7 +79,7 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"/>
 
 ## <a name="verify-the-contrast-ratio-of-visible-text"></a>驗證顯示文字的對比率  
-使用色彩對比工具確定可見文字的對比率是否可被接受。 例外狀況包括非作用中的 UI 元素、標誌，以及不會傳達任何資訊且在重新排列後，意思仍然不變的修飾性文字。 如需對比率與例外狀況的詳細資訊，請參閱[協助工具文字需求](accessible-text-requirements.md)。 請參閱 [WCAG 2.0 G18 的技術 (資源小節)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)，了解可以測試對比率的工具。
+使用色彩對比工具確定可見文字的對比率是否可被接受。 例外狀況包括非作用中的 UI 元素、標誌，以及不會傳達任何資訊且在重新排列後，意思仍然不變的修飾性文字。 如需對比率與例外狀況的詳細資訊，請參閱[協助工具文字需求](accessible-text-requirements.md)。 請參閱 [WCAG 2.0 G18 的技術 (資源小節)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources)，了解可以測試對比率的工具。
 
 > [!NOTE]
 > 《WCAG 2.0 的技術》中 G18 列出的一些工具不能與 UWP App 互動使用。 您可能需要在工具中手動輸入前景和背景色彩值，擷取應用程式 UI 的螢幕，然後透過螢幕擷取影像執行對比率工具，或在影像編輯程式中開啟來源點陣圖檔案時 (而非應用程式載入影像時) 執行此工具。
@@ -163,5 +163,5 @@ Windows 軟體開發套件 (SDK) 包含多種協助工具測試工具，例如 [
 * [協助工具](accessibility.md)
 * [應避免的做法](practices-to-avoid.md)
 * [UI 自動化](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Windows 中的協助工具](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [Windows 中的協助工具](https://go.microsoft.com/fwlink/p/?LinkId=320802)
 * [開始使用朗讀程式](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

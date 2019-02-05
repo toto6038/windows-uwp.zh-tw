@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, UWP, egl, dxgi, direct3d
 ms.localizationpriority: medium
-ms.openlocfilehash: 1279d5100aa00e1b94d7d56b472a0574d22c3416
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19c857ae5274be70d19a14d5bbf47adb595b5676
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929823"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049695"
 ---
 # <a name="compare-egl-code-to-dxgi-and-direct3d"></a>EGL 程式碼與 DXGI 和 Direct3D 的比較
 
@@ -28,7 +28,7 @@ DirectX 圖形介面 (DXGI) 和數個 Direct3D API 都可提供與 EGL 相同的
 
 DXGI 和 Direct3D 如同 EGL 都提供方法來設定圖形資源、取得著色器要繪製的轉譯內容，以及在視窗中顯示結果。 但是，DXGI 和 Direct3D 有更多的選項，而從 EGL 移植時需要投入更多心力才能正確設定。
 
-> **注意：** 本指導方針以 Khronos Group 針對 EGL 1.4，這裡的開放規格關閉： [Khronos 原生平台圖形介面 （EGL 1.4 版-2011 年 4 月 6，） \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
+> **注意：** 本指導方針以 Khronos Group 針對 EGL 1.4，這裡找到的開放規格為基礎： [Khronos 原生平台圖形介面 （EGL 1.4 版-2011 年 4 月 6 日） \[PDF\]](https://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)。 本指導方針中未涵蓋其他平台與開發語言特定的語法差異。
 
  
 
@@ -392,7 +392,7 @@ EGLBoolean eglTerminate(eglDisplay);
 | eglDestroySurface                | 不適用。 當平台關閉 UWP app 的 CoreWindow 時，就會清理圖形資源。                                                                                                                                                                                                                                                                                                                                                                                                 |
 | eglGetCurrentDisplay             | 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
 | eglGetCurrentSurface             | 這是目前的 [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)。 這通常會將範圍設定為您的轉譯器物件。                                                                                                                                                                                                                                                                                                                                                         |
-| eglGetError                      | 由 DirectX 介面上大部分方法所傳回的 HRESULT 來取得錯誤。 如果方法未傳回 HRESULT，請呼叫 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)。 若要將系統錯誤轉換成 anHRESULTvalue，請使用[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)巨集。                                                                                                                                                                                                  |
+| eglGetError                      | 由 DirectX 介面上大部分方法所傳回的 HRESULT 來取得錯誤。 如果方法未傳回 HRESULT，請呼叫 [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360)。 若要將系統錯誤轉換成 anHRESULTvalue 中，請使用[**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746)巨集。                                                                                                                                                                                                  |
 | eglInitialize                    | 呼叫 [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) 以取得目前主應用程式視窗的參考。                                                                                                                                                                                                                                                                                                                                                         |
 | eglMakeCurrent                   | 使用 [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) 來設定要在目前內容上繪製的轉譯目標。                                                                                                                                                                                                                                                                                                                                  |
 | eglQueryContext                  | 不適用。 但是，您可能會從 [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) 執行個體取得轉譯目標，以及一些設定資料 (請參閱可用方法清單的連結)。                                                                                                                                                                                                                                                                                           |

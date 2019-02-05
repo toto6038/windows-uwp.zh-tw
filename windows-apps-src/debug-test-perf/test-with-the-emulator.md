@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3ee38abfb28aad8d6a3ce073a947580b3df29593
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df03c6f10f106868213fe812b2f303d7675c567b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942592"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050125"
 ---
 # <a name="test-with-the-microsoft-emulator-for-windows-10-mobile"></a>使用適用於 Windows 10 行動裝置版的 Microsoft 模擬器進行測試
 
@@ -25,7 +25,7 @@ ms.locfileid: "8942592"
 
 您的電腦必須符合下列需求：
 
-CPU （這些設定，如果有的話，可以啟用在 BIOS 中）
+CPU （這些設定，如果有的話，可以啟用 BIOS 中）
 
 -   硬體協助虛擬化 （[檢查的相容性](https://www.microsoft.com/download/details.aspx?id=592)）。
 -   第二層位址轉譯 (SLAT)。
@@ -64,7 +64,7 @@ RAM
 
 ### <a name="running"></a>Running
 
-若要在模擬器中執行應用程式，只是模擬的裝置從功能表中選取**執行**下拉式在 Visual Studio 中。
+若要在模擬器中執行應用程式，只要選取模擬的裝置從 Visual Studio 中**執行**下拉式功能表。
 
 ![可以用於解析度、大小及記憶體的模擬器](images/em-list.png)
 
@@ -193,7 +193,7 @@ NFC 索引標籤支援三種模式：
 
 -   在 **\[對等裝置\]** 清單中選取要做為目標的模擬器。
 -   選取 **\[傳送到對等裝置\]** 選項按鈕。
--   按一下 **\[輕觸\]** 按鈕。 這樣會模擬兩部裝置彼此輕觸，而且您應該會聽到 NFC 輕觸通知音效
+-   按一下 [輕觸]**** 按鈕。 這樣會模擬兩部裝置彼此輕觸，而且您應該會聽到 NFC 輕觸通知音效
 -   若要將 2 個裝置中斷連線，只要按一下 **\[取消輕觸\]** 按鈕。
 
 或者，您可以啟用 **\[在 (秒) 後自動取消輕觸\]** 核取方塊，並在其中指定您要讓裝置輕觸的秒數，這樣裝置將會在指定的秒數過後自動取消輕觸 (模擬使用者實際操作時會遇到的情況，他們只需要短暫地輕觸手機)。 請注意，連線取消輕觸之後，目前的訊息記錄檔無法使用。
@@ -237,7 +237,7 @@ Windows 8 驅動程式套件 (WDK) 包含驅動程式範例，此範例公開與
 -   選取指令碼編輯器視窗下方的 **\[啟用 MasterCard\]** 接聽程式核取方塊，然後啟動 MasterCard 的模擬器。
 -   使用該工具時，您可以產生轉送到您應用程式 (透過 NFC 工具在模擬器上執行) 的命令。
 
-若要深入了解 HCE 支援以及如何在 Windows 10 行動裝置版中開發 HCE 應用程式，請參閱 [Microsoft NFC 小組部落格](http://go.microsoft.com/fwlink/?LinkId=534749)。
+若要深入了解 HCE 支援以及如何在 Windows 10 行動裝置版中開發 HCE 應用程式，請參閱 [Microsoft NFC 小組部落格](https://go.microsoft.com/fwlink/?LinkId=534749)。
 
 ### <a name="how-to-create-scripts-for-hce-testing"></a>如何針對 HCE 測試建立指令碼
 
@@ -656,7 +656,7 @@ Microsoft 模擬器包含 XDECleanup.exe，這是一個工具，可刪除所有�
 
 ## <a name="support-resources"></a>支援資源
 
-若要尋找使用 Windows 10 工具遇到的問題及解決問題，請瀏覽 [Windows 10 工具論壇](http://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看所有 Windows 10 開發論壇，請瀏覽[此連結](http://go.microsoft.com/fwlink/?LinkId=535000)。
+若要尋找使用 Windows 10 工具遇到的問題及解決問題，請瀏覽 [Windows 10 工具論壇](https://go.microsoft.com/fwlink/?LinkId=534765)。 若要查看所有 Windows 10 開發論壇，請瀏覽[此連結](https://go.microsoft.com/fwlink/?LinkId=535000)。
 
 ## <a name="related-topics"></a>相關主題
 

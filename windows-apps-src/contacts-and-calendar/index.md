@@ -6,12 +6,12 @@ ms.date: 05/18/2018
 ms.topic: article
 keywords: windows 10, uwp, contacts, calendar, appointments, email messages, 連絡人, 行事曆, 約會, 電子郵件訊息
 ms.localizationpriority: medium
-ms.openlocfilehash: a2ccf75796140723270e49a7b967ce234d41baf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 239dbaa7799d9991a63223d1cd8706d34445a16b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945677"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048235"
 ---
 # <a name="contacts-my-people-and-calendar"></a>連絡人、朋友圈及行事曆
 
@@ -35,8 +35,8 @@ ms.locfileid: "8945677"
 
 ## <a name="related-topics"></a>相關主題
 
-* [約會 API 範例](http://go.microsoft.com/fwlink/p/?linkid=309836)
-* [連絡人管理員 API 範例](http://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [連絡人選擇器應用程式範例](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [處理連絡人動作範例](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [約會 API 範例](https://go.microsoft.com/fwlink/p/?linkid=309836)
+* [連絡人管理員 API 範例](https://go.microsoft.com/fwlink/p/?LinkID=310079)
+* [連絡人選擇器應用程式範例](https://go.microsoft.com/fwlink/p/?linkid=231575)
+* [處理連絡人動作範例](https://go.microsoft.com/fwlink/p/?LinkID=320151)
 * [連絡人卡片整合範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)

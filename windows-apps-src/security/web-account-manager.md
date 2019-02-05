@@ -6,19 +6,19 @@ ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.assetid: ec9293a1-237d-47b4-bcde-18112586241a
 ms.localizationpriority: medium
-ms.openlocfilehash: 14f5139f5fe2c3d5d1f97040ee3bec33ea48d6ac
-ms.sourcegitcommit: ffad7cfb5d5c099f9f559e966fd93b705b47d2bd
+ms.openlocfilehash: e2c1be80ada3e337a4bf7353b854ae4cbe5bd99a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/31/2018
-ms.locfileid: "8990326"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050981"
 ---
 # <a name="web-account-manager"></a>Web 帳戶管理員
 
 本文章說明如何利用 Windows10 Web 帳戶管理員 API，使用 **[AccountsSettingsPane](https://docs.microsoft.com/uwp/api/Windows.UI.ApplicationSettings.AccountsSettingsPane)** 將您的通用 Windows 平台 (UWP) 應用程式連線到外部身分識別提供者 (例如 Microsoft 或 Facebook)。 您將了解如何要求使用者的權限以使用其 Microsoft 帳戶，取得存取權杖，並利用它來執行基本操作 (例如取得個人檔案資料，或上傳檔案到他們的 OneDrive 帳戶)。 取得使用者權限的步驟，與透過任何支援 Web 帳戶管理員的身分識別提供者存取類似。
 
 > [!NOTE]
-> 如需完整的程式碼範例，請參閱 [GitHub 上的 WebAccountManagement 範例](http://go.microsoft.com/fwlink/p/?LinkId=620621)。
+> 如需完整的程式碼範例，請參閱 [GitHub 上的 WebAccountManagement 範例](https://go.microsoft.com/fwlink/p/?LinkId=620621)。
 
 ## <a name="get-set-up"></a>開始設定
 
@@ -76,7 +76,7 @@ private void LoginButton_Click(object sender, RoutedEventArgs e)
 窗格之所以為空白，是因為系統僅提供 UI 殼層 - 開發人員必須以程式設計方式將身分識別提供者填入窗格。 
 
 > [!TIP]
-> 或者，您可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** 而不是**[顯示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，這樣將會傳回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，來查詢作業的狀態。 
+> 或者，您可以使用**[ShowAddAccountAsync](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.showaddaccountasync)** ，而不是**[顯示](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings.accountssettingspane.show#Windows_UI_ApplicationSettings_AccountsSettingsPane_Show)**，這樣將會傳回**[IAsyncAction](https://docs.microsoft.com/uwp/api/Windows.Foundation.IAsyncAction)**，來查詢作業的狀態。 
 
 ## <a name="register-for-accountcommandsrequested"></a>註冊 AccountCommandsRequested
 
@@ -178,7 +178,7 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 * 若為 OneDrive 範圍，請參閱 [OneDrive 驗證與登入](https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes)。 
 
 > [!TIP]
-> 或者，如果您的應用程式使用 （若要填入使用者欄位使用預設的電子郵件地址） 登入提示或其他特殊的登入體驗的相關的屬性，列出它**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統當快取 web 帳戶，這會防止在快取帳戶不符會忽略此屬性。
+> 或者，如果您的應用程式使用 （若要填入使用者欄位使用預設的電子郵件地址） 登入提示或特殊的登入體驗的相關的其他屬性，列出它**[WebTokenRequest.AppProperties](https://docs.microsoft.com/uwp/api/windows.security.authentication.web.core.webtokenrequest.appproperties#Windows_Security_Authentication_Web_Core_WebTokenRequest_AppProperties)** 屬性中。 這會導致系統當快取 web 帳戶，以防止在快取帳戶不符會忽略此屬性。
 
 如果您是在開發企業應用程式，您可以連線 Azure Active Directory (AAD) 執行個體，並使用 Microsoft Graph API，而不是使用一般的 MSA 服務。 在這個案例中，請改為使用以下程式碼： 
 
@@ -430,6 +430,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 [Web 驗證代理人](web-authentication-broker.md)
 
-[Web 帳戶管理範例](http://go.microsoft.com/fwlink/p/?LinkId=620621)
+[Web 帳戶管理範例](https://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 [Lunch Scheduler (午餐排程器) app](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)

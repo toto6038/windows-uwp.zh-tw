@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, sample code, code samples, 範例程式碼, 程式碼範例
 ms.assetid: 393c5a81-ee14-45e7-acd7-495e5d916909
 ms.localizationpriority: medium
-ms.openlocfilehash: 64eb0d13db1fbcf49d9da28e57eb85ff84823bf1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cdf38a4bd77c4f6affb813c9e1de68463c43100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946293"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049715"
 ---
 # <a name="get-uwp-app-samples"></a>取得 UWP app 範例
 
@@ -28,7 +28,7 @@ ms.locfileid: "8946293"
 
 
 > [!NOTE]
-> UWP 範例需 Visual Studio 2015 或更新版本和 Windows SDK 才能開啟、建置及執行。 您可以取得免費的 Visual Studio 社群支援以在[此處](http://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows 開發工具下載")建置 UWP app。  
+> UWP 範例需 Visual Studio 2015 或更新版本和 Windows SDK 才能開啟、建置及執行。 您可以取得免費的 Visual Studio 社群支援以在[此處](https://go.microsoft.com/fwlink/p/?LinkID=280676 "Windows 開發工具下載")建置 UWP app。  
 >
 > 此外，請務必將整個封存而不只是個別的範例解壓縮。 所有相關的範例都在封存的 SharedContent 資料夾中。 UWP 功能範例在 Visual Studio 中使用連結的檔案，以減少重複的常見檔案，包括範例範本檔案與影像資產。 這些常見的檔案都會儲存在存放庫根目錄的 SharedContent 資料夾中，而且使用連結指向專案檔案。
 

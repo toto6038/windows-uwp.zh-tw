@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e7526ec4f32f641f152709e6968f3dc442c2a06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8320b2b4abb5e49bbf589b360cc9cc2e0e033f79
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934553"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050328"
 ---
 # <a name="expose-basic-accessibility-information"></a>公開基本的協助工具資訊  
 
@@ -141,7 +141,7 @@ XAML
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 
 ## <a name="accessible-names-from-dynamic-data"></a>動態資料的無障礙名稱  
-Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」** 的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)的＜案例 4＞。
+Windows 支援許多控制項，而這些控制項可以透過名為「資料繫結」** 的功能來顯示相關資料來源的值。 將資料項目填入清單時，您可能需要使用一種技術，在填入初始清單之後為這些資料繫結的清單項目設定無障礙名稱。 如需詳細資訊，請參閱 [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)的＜案例 4＞。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
@@ -157,5 +157,5 @@ Windows 支援許多控制項，而這些控制項可以透過名為「資料繫
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
 * [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具測試](accessibility-testing.md)

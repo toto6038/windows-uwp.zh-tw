@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 約會, 行事曆
 ms.localizationpriority: medium
-ms.openlocfilehash: 805383d243008f839b04c98906edd3beb52d581a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ece137fafc2fdcca7ce41839aa4614456973cf40
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938778"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049515"
 ---
 # <a name="manage-appointments"></a>管理約會
 
@@ -282,7 +282,7 @@ private async void Add-Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**注意：** 適用於 Windows Phone 市集應用程式， [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)功能就像[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)為新增約會顯示的對話方塊是可編輯。
+**注意：** 適用於 Windows Phone 市集應用程式， [**ShowAddAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync)功能就像[**ShowEditNewAppointment**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync)為新增約會顯示的對話方塊都是可編輯。
 
 ## <a name="replace-an-appointment-in-the-users-calendar"></a>在使用者的行事曆替換約會
 
@@ -565,11 +565,11 @@ private async void ShowAppointmentDetails-Click(object sender, RoutedEventArgs e
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-現在，您對於如何管理約會已經有基本的了解。 請從 GitHub 下載[通用 Windows app 範例](http://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何管理約會的範例。
+現在，您對於如何管理約會已經有基本的了解。 請從 GitHub 下載[通用 Windows app 範例](https://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何管理約會的範例。
 
 ## <a name="related-topics"></a>相關主題
 
-* [約會 API 範例](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [約會 API 範例](https://go.microsoft.com/fwlink/p/?linkid=309836)
  
 
  

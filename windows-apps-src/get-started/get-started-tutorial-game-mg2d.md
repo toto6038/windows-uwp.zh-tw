@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: 95fa9e8ef9c508846443e04e23184c03e38ce9a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939323"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050651"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>使用 MonoGame 2D 建立 UWP 遊戲
 
@@ -43,7 +43,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 **注意：** 這個範例中建立的遊戲並不完整（也根本談不上有趣）。 其唯一目的是要示範 MonoGame 中 2D 開發的所有核心概念。 歡迎將此程式碼做成更好的遊戲，或在您已經掌握基本知識之後從頭開始！
 
 ## <a name="set-up-monogame-project"></a>設定 MonoGame 專案
-1. 從 [MonoGame.net](http://www.monogame.net/) 安裝適用於 Visual Studio 的 **MonoGame 3.6**
+1. 從 [MonoGame.net](https://www.monogame.net/) 安裝適用於 Visual Studio 的 **MonoGame 3.6**
 
 2. 啟動 Visual Studio 2017。
 
@@ -80,7 +80,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 - 開啟 **\[方案總管\]**
 - 以滑鼠右鍵按一下 **Content** 資料夾中的 **Content.mgcb**，然後選取 **\[開啟方式\]**。 從快顯功能表中選取 **\[Monogame Pipeline\]**，然後選取 **\[確定\]**。
 - 在新視窗中，以滑鼠右鍵按一下 **Content** 項目，然後選取 **\[加入\] -> \[現有項目\]**。
-- 找出並選取綠色矩形在檔案瀏覽器中。
+- 尋找並選取綠色矩形在檔案瀏覽器中。
 - 將此項目命名為 “grass.png”，然後選取 **\[加入\]**。
 
 ### <a name="3-add-class-variables"></a>3. 新增類別變數
@@ -261,7 +261,7 @@ public void Draw (SpriteBatch spriteBatch)
 
 現在，對於玩家需要避免的障礙， 忍者貓與肉食恐龍這兩個最討厭什麼？ 吃蔬菜！ [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
-Just as before with the green rectangle, add these images to **Content.mgcb** via the **MonoGame Pipeline**, naming them “ninja-cat-dino.png” and “broccoli.png” respectively.
+如同之前的綠色矩形，透過**MonoGame Pipeline** 新增這些影像至 **Content.mgcb**，將它們分別命名為 “ninja-cat-dino.png” 和 “broccoli.png”。
 
 ### <a name="2-add-class-variables"></a>2. 新增類別變數
 將下列程式碼新增到 **Game1.cs** 中的類別變數清單：
@@ -282,13 +282,13 @@ float score;
 Random random;
 ```
 
-**dino** and **broccoli** are our SpriteClass variables. **dino** will hold the player avatar, while **broccoli** holds the broccoli obstacle.
+**dino** 和 **broccoli** 是我們的 SpriteClass 變數。 **dino** 會保留玩家虛擬人偶，而 **broccoli** 保留花椰菜障礙。
 
 **spaceDown** 追蹤空格鍵是否正在按住，而非按下並放開。
 
 **gameStarted** 告訴我們使用者是否第一次開始遊戲。
 
-**broccoliSpeedMultiplier** determines how fast the broccoli obstacle moves across the screen.
+**broccoliSpeedMultiplier** 決定花椰菜障礙在螢幕上移動的速度。
 
 **gravitySpeed** 決定玩家虛擬人偶在跳躍後加速向下的速度。
 
@@ -324,7 +324,7 @@ broccoli = new SpriteClass(GraphicsDevice, "Content/broccoli.png", ScaleToHighDP
 花椰菜影像比遊戲中所需顯示大小大很多，所以我們會將它縮小為原始大小的 0.2 倍。
 
 ### <a name="5-program-obstacle-behaviour"></a>5.設計障礙行為
-我們想要花椰菜從螢幕外某處冒出，並瞄準玩家虛擬人偶，因此玩家必須躲它。 若要這樣做，加入這個方法在**Game1.cs**類別：
+我們想要花椰菜從螢幕外某處冒出，並瞄準玩家虛擬人偶，因此玩家必須躲它。 若要這樣做，加入**Game1.cs**類別中的這個方法：
 
 ```CSharp
 public void SpawnBroccoli()
@@ -379,7 +379,7 @@ public void StartGame()
 ```
 
 ### <a name="7-handle-keyboard-input"></a>7.處理鍵盤輸入
-接下來，我們需要新的方法來處理透過鍵盤使用者輸入。 將這個方法新增到**Game1.cs**:
+接下來，我們需要新的方法來處理透過鍵盤使用者輸入。 這個方法加入**Game1.cs**:
 
 ```CSharp
 void KeyboardHandler()
@@ -484,7 +484,7 @@ dino.Draw(spriteBatch);
 
 在 MonoGame，**spriteBatch.Draw** 的新呼叫將會在任何先前呼叫上繪圖。 這表示，該花椰菜和恐龍 sprite 會在現有草地 sprite 上繪製，讓它們都永遠不會隱藏它後方無論其位置。
 
-現在請嘗試執行遊戲，並使用方向鍵與空格鍵來移動恐龍。 如果您依照上述步驟，您應該可以讓您在遊戲的視窗中移動的虛擬人偶和花椰菜應該繁衍不斷增加的速度。
+現在請嘗試執行遊戲，並使用方向鍵與空格鍵來移動恐龍。 如果您依照上述步驟，您應該可以讓您在遊戲的視窗中移動的虛擬人偶和花椰菜應該不斷增加的速度會繁衍。
 
 ![玩家虛擬人偶和障礙](images/monogame-tutorial-2.png)
 
@@ -648,7 +648,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 這會呼叫我們在 **SpriteClass** 建立的 **RectangleCollision**方法，並在傳回 true 時將遊戲標示為結束。
 
 ### <a name="4-add-user-input-for-resetting-the-game"></a>4. 新增使用者輸入以重設遊戲
-將此程式碼新增到**KeyboardHandler**方法，以允許使用者重設遊戲，如果他們按下 Enter:
+新增此程式碼至**KeyboardHandler**的方法，以允許使用者重設遊戲，如果他們按下 Enter:
 
 ```CSharp
 if (gameOver && state.IsKeyDown(Keys.Enter))
@@ -692,4 +692,4 @@ if (gameOver)
 
 必須提交 App 以取得[認證](https://docs.microsoft.com/en-us/windows/uwp/publish/the-app-certification-process)。
 
-如需詳細資訊，請參閱[發佈您的 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。
+如需詳細資訊，請參閱[發佈您的 UWP app](https://developer.microsoft.com/en-us/store/publish-apps)。

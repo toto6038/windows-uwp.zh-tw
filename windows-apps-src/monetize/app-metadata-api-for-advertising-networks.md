@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告網路, 應用程式中繼資料
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2fd0381d9ec8917f381cfeb045d58bfa3436de74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0122c2fbe1e0e9905a8509694c4a589e04e33247
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934417"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049425"
 ---
 # <a name="app-metadata-api-for-advertising-networks"></a>廣告網路的應用程式中繼資料 API
 
@@ -77,7 +77,7 @@ ms.locfileid: "8934417"
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------|
-| app_id | 字串 | 必要。 您想要擷取中繼資料之 App 的識別碼。 這可以是下列其中一個值：<br/><br/><ul><li>App 的「Store 識別碼」。 範例「Store 識別碼」如 9NBLGGH29DM8。</li><li>原始建置的 Windows 8.x 或 Windows Phone 8.x App「產品識別碼」(有時稱為 *「App 識別碼」*)。 「產品識別碼」是 GUID。</li></ul> |
+| app_id | 字串 | 必要。 您想要擷取中繼資料之 App 的識別碼。 這可以是下列其中一個值：<br/><br/><ul><li>App 的「Store 識別碼」。 範例「市集識別碼」如 9NBLGGH29DM8。</li><li>原始建置的 Windows 8.x 或 Windows Phone 8.x App「產品識別碼」(有時稱為 *「App 識別碼」*)。 「產品識別碼」是 GUID。</li></ul> |
 
 <span/>
 
@@ -128,14 +128,14 @@ Ocp-Apim-Subscription-Key: <subscription key>
 
 | 值      | 類型   | 描述    |
 |------------|--------|--------------------|
-| storeId           | 字串  | App 的「Store 識別碼」。 範例「Store 識別碼」如 9NBLGGH29DM8。     |  
-| name           | 字串  | App 的名稱。   |
-| description           | 字串  | 來自 App 之 Store 清單的描述。  |
-| phoneStoreGuid           | 字串  | App 的「產品識別碼」(Windows Phone 8.x)。 這是 GUID。  |
-| windowsStoreGuid           | 字串  | App 的「產品識別碼」(Windows 8.x)。 這是 GUID。 |
-| storeCategory           | 字串  | 「Microsoft Store」中 App 的類別。 如需了解有哪些支援的值，請參閱 Microsoft Store 中 App 的[類別與子類別表格](../publish/category-and-subcategory-table.md)。  |
-| iabCategory           | 字串  | 美國互動廣告局 (Interactive Advertising Bureau, IAB) 所定義的 App 內容類別。 例如，**News** (新聞) 或 **Sports** (體育)。 如需內容類別的清單，請參閱 IAB 網站上的 [IAB Tech Lab Content Taxonomy (IAB 科技實驗室內容分類)](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) 頁面。   |
-| iabCategoryId           | 字串  | App 的內容類別識別碼。 例如，**IAB12** 是 News (新聞) 類別的識別碼，**IAB17** 是 Sports (體育) 類別的識別碼。 如需內容類別識別碼的清單，請參閱 [OpenRTB API Specification (OpenRTB API 規格)](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) 頁面上的 5.1 節。 |
+| storeId           | string  | App 的「Store 識別碼」。 範例「Store 識別碼」如 9NBLGGH29DM8。     |  
+| name           | string  | App 的名稱。   |
+| description           | string  | 來自 App 之 Store 清單的描述。  |
+| phoneStoreGuid           | string  | App 的「產品識別碼」(Windows Phone 8.x)。 這是 GUID。  |
+| windowsStoreGuid           | string  | App 的「產品識別碼」(Windows 8.x)。 這是 GUID。 |
+| storeCategory           | string  | 「Microsoft Store」中 App 的類別。 如需了解有哪些支援的值，請參閱 Microsoft Store 中 App 的[類別與子類別表格](../publish/category-and-subcategory-table.md)。  |
+| iabCategory           | string  | 美國互動廣告局 (Interactive Advertising Bureau, IAB) 所定義的 App 內容類別。 例如，**News** (新聞) 或 **Sports** (體育)。 如需內容類別的清單，請參閱 IAB 網站上的 [IAB Tech Lab Content Taxonomy (IAB 科技實驗室內容分類)](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) 頁面。   |
+| iabCategoryId           | 字串  | App 的內容類別識別碼。 例如，**IAB12** 是 News (新聞) 類別的識別碼，**IAB17** 是 Sports (體育) 類別的識別碼。 如需內容類別識別碼的清單，請參閱 [OpenRTB API Specification (OpenRTB API 規格)](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf) 頁面上的 5.1 節。 |
 | coppa           | 布林值  | 如果 App 的目標對象是 13 歲以下的兒童，則為 true，也因此需受「兒童線上隱私權保護法」(Children's Online Privacy Protection Act, COPPA) 約束；否則，為 false。  |
 | downloadUrl           | 字串  | 「Microsoft Store」中 App 清單的連結。 這個連結的格式為 ```https://www.microsoft.com/store/apps/<Store ID>```。  |
 | isLive           | 布林值  | 如果 app 目前在 Microsoft Store 中可用，則為 true，否則為 false。  |

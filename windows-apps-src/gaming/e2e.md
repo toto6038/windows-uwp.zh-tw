@@ -6,19 +6,19 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: 58044fba24450c397ee58b1034429f2af8d23ed6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9b11f927eca82e2c068f0210022893905b1503db
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940039"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049965"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 遊戲開發指南
 
 
 歡迎使用 Windows10 遊戲開發指南！
 
-本指南說明有關您開發通用 Windows 平台 (UWP) 遊戲所需的端對端資源與資訊集合。 本指南有 [PDF](http://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf) 格式的英文 (美國) 版本。
+本指南說明有關您開發通用 Windows 平台 (UWP) 遊戲所需的端對端資源與資訊集合。 本指南有 [PDF](https://download.microsoft.com/download/9/C/9/9C9D344F-611F-412E-BB01-259E5C76B17F/Windev_Game_Dev_Guide_Oct_2017.pdf) 格式的英文 (美國) 版本。
 
 ## <a name="introduction-to-game-development-for-the-universal-windows-platform-uwp"></a>通用 Windows 平台 (UWP) 的遊戲開發簡介
 
@@ -106,7 +106,7 @@ ms.locfileid: "8940039"
 
 [註冊在合作夥伴中心開發人員帳戶](https://developer.microsoft.com/store/register)是邁向發行 Windows 遊戲的第一個步驟。 開發人員帳戶可讓您保留您遊戲的名稱，以及將適用於所有 Windows 裝置的免費或付費遊戲提交到 Microsoft Store。 您可以使用開發人員帳戶來管理您的遊戲與遊戲內產品、取得詳細的分析，以及啟用可為您的全球玩家創造絕佳體驗的服務。 
 
-Microsoft 也提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 我們建議您查看如果有任何適合您之前先註冊合作夥伴中心帳戶。 如需詳細資訊，請移至[開發人員計畫](#developer-programs)
+Microsoft 也提供數個可協助您開發及發行 Windows 遊戲的開發人員計畫。 我們建議您查看如果有任何適合您再註冊合作夥伴中心帳戶。 如需詳細資訊，請移至[開發人員計畫](#developer-programs)
 
 
 ### <a name="developer-programs"></a>開發人員計畫
@@ -119,7 +119,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
 
 您可以只使用零售硬體在創作者計畫中部署、設計和發佈您的遊戲，不需要專用的開發套件。 若要開始使用，請在您的 Xbox 在One 上下載[啟用開發人員模式 App](https://docs.microsoft.com/windows/uwp/xbox-apps/devkit-activation)。
 
-如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](http://www.xbox.com/Developers/id) 計畫。
+如果您想要存取其他 Xbox Live 功能、專用的行銷和開發支援，以及有機會獲得主要 Xbox One 市集的推薦，您可以申請加入 [ID@Xbox](https://www.xbox.com/Developers/id) 計畫。
 
 <table>
     <colgroup>
@@ -134,7 +134,7 @@ Xbox Live 創作者計畫允許任何人將 Xbox Live 整合至其遊戲中，�
 
 #### <a name="idxbox"></a>ID@Xbox
 
-ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 我們建議您將套用到ID@Xbox第一次，再註冊開發人員帳戶在合作夥伴中心。
+ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上自行發行遊戲。 如果您想要為 Xbox One 開發遊戲，或是在您的 Windows10 遊戲中新增 Xbox Live 功能 (例如玩家分數、成就及排行榜)，請向 ID@Xbox 註冊。 成為 ID@Xbox 開發人員以取得所需的工具與支援，讓您可以充分發揮您的創意並獲得最大的成功。 我們建議您將套用到ID@Xbox第一次，再註冊開發人員在合作夥伴中心帳戶。
 
 <table>
     <colgroup>
@@ -143,11 +143,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </colgroup>
     <tr>
         <td>ID@Xbox 開發人員計畫</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkID=526271">適用於 Xbox One 的獨立開發人員計畫</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkID=526271">適用於 Xbox One 的獨立開發人員計畫</a></td>
     </tr>
     <tr>
         <td>ID@Xbox 消費者網站</td>
-        <td><a href="http://www.idatxbox.com/">ID@Xbox</a></td>
+        <td><a href="https://www.idatxbox.com/">ID@Xbox</a></td>
     </tr>
 </table>
 
@@ -194,15 +194,15 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Direct2D 自訂影像效果範例</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkId=620531">D2DCustomEffects</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620531">D2DCustomEffects</a></td>
     </tr>
     <tr>
         <td>Direct2D 漸層網格範例</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkId=620532">D2DGradientMesh</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620532">D2DGradientMesh</a></td>
     </tr>
     <tr>
         <td>Direct2D 相片調整範例</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?LinkId=620533">D2DPhotoAdjustment</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?LinkId=620533">D2DPhotoAdjustment</a></td>
     </tr>
     <tr>
         <td>Xbox Advanced Technology Group 公開範例</td>
@@ -262,11 +262,11 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </tr>
     <tr>
         <td>Windows10 受管理的合作夥伴開發人員論壇</td>
-        <td><a href="http://aka.ms/win10devforums">XBOX 開發人員論壇：Windows10</a></td>
+        <td><a href="https://aka.ms/win10devforums">XBOX 開發人員論壇：Windows10</a></td>
     </tr>
     <tr>
         <td>DirectX 論壇</td>
-        <td><a href="http://forums.directxtech.com/index.php">DirectX 12 論壇</a></td>
+        <td><a href="https://forums.directxtech.com/index.php">DirectX 12 論壇</a></td>
     </tr>
     <tr>
         <td>Azure 平台論壇</td>
@@ -294,35 +294,35 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </colgroup>
     <tr>
         <td>建置適用於 Windows 的應用程式部落格</td>
-        <td><a href="http://blogs.windows.com/buildingapps/">建置適用於 Windows 的應用程式</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/">建置適用於 Windows 的應用程式</a></td>
     </tr>
     <tr>
         <td>Windows10 部落格 (部落格文章)</td>
-        <td><a href="http://blogs.windows.com/blog/tag/windows-10/">Windows10 文章</a></td>
+        <td><a href="https://blogs.windows.com/blog/tag/windows-10/">Windows10 文章</a></td>
     </tr>
     <tr>
         <td>Visual Studio 工程小組部落格</td>
-        <td><a href="http://blogs.msdn.com/b/visualstudio/">Visual Studio 部落格</a></td>
+        <td><a href="https://blogs.msdn.com/b/visualstudio/">Visual Studio 部落格</a></td>
     </tr>
     <tr>
         <td>Visual Studio 開發人員工具部落格</td>
-        <td><a href="http://blogs.msdn.com/b/developer-tools/">開發人員工具部落格</a></td>
+        <td><a href="https://blogs.msdn.com/b/developer-tools/">開發人員工具部落格</a></td>
     </tr>
     <tr>
         <td>Somasegar 開發人員工具部落格</td>
-        <td><a href="http://blogs.msdn.com/b/somasegar/">Somasegar 部落格</a></td>
+        <td><a href="https://blogs.msdn.com/b/somasegar/">Somasegar 部落格</a></td>
     </tr>
     <tr>
         <td>DirectX 開發人員部落格</td>
-        <td><a href="http://blogs.msdn.com/b/directx">DirectX 開發人員部落格</a></td>
+        <td><a href="https://blogs.msdn.com/b/directx">DirectX 開發人員部落格</a></td>
     </tr>
     <tr>
         <td>DirectX 12 簡介 (部落格文章)</td>
-        <td><a href="http://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx">DirectX 12</a></td>
+        <td><a href="https://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx">DirectX 12</a></td>
     </tr>
     <tr>
         <td>Visual C++ 工具小組部落格</td>
-        <td><a href="http://blogs.msdn.com/b/vcblog/">Visual C++ 小組部落格</a></td>
+        <td><a href="https://blogs.msdn.com/b/vcblog/">Visual C++ 小組部落格</a></td>
     </tr>
     <tr>
         <td>PIX 小組部落格</td>
@@ -367,15 +367,15 @@ ID@Xbox 計畫可協助合格的遊戲開發人員在 Windows 和 Xbox One 上�
     </colgroup>
     <tr>
         <td>Windows10 遊戲開發概觀 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">開發適用於 Windows10 的遊戲</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10">開發適用於 Windows10 的遊戲</a></td>
     </tr>
     <tr>
         <td>Windows10 遊戲體驗 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10">Windows10 上的遊戲消費者體驗</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10">Windows10 上的遊戲消費者體驗</a></td>
     </tr>
     <tr>
         <td>遊戲在整個 Microsoft 生態系統的發展 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">遊戲在 Microsoft 生態圈的未來</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem">遊戲在 Microsoft 生態圈的未來</a></td>
     </tr>
 </table>
 
@@ -481,7 +481,7 @@ XAML 是一種容易使用的宣告式 UI 語言，擁有便利的功能，例�
     </tr>
     <tr>
         <td>HTML5 W3C 建議</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=221374">HTML5</a></td>
     </tr>
 </table>
  
@@ -688,15 +688,15 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
     </colgroup>
     <tr>
         <td>Unity 遊戲引擎</td>
-        <td><a href="http://unity3d.com/">Unity - 遊戲引擎</a></td>
+        <td><a href="https://unity3d.com/">Unity - 遊戲引擎</a></td>
     </tr>
     <tr>
         <td>取得 Unity</td>
-        <td><a href="http://unity3d.com/get-unity">取得 Unity</a></td>
+        <td><a href="https://unity3d.com/get-unity">取得 Unity</a></td>
     </tr>
     <tr>
         <td>適用於 Windows 的 Unity 文件</td>
-        <td><a href="http://docs.unity3d.com/Manual/Windows.html">Unity 手冊 / Windows</a></td>
+        <td><a href="https://docs.unity3d.com/Manual/Windows.html">Unity 手冊 / Windows</a></td>
     </tr>
     <tr>
         <td>使用 PlayFab 新增 LiveOps</td>
@@ -732,7 +732,7 @@ Unity 提供一個平台建立美麗而吸引人的 2D、3D、VR 和 AR 遊戲�
     </tr>
     <tr>
         <td>使用 Visual Studio (影片系列) 開發 Unity 遊戲</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=722359">搭配 Visual Studio 2015 使用 Unity</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=722359">搭配 Visual Studio 2015 使用 Unity</a></td>
     </tr>
 </table>
  
@@ -748,15 +748,15 @@ Havok 的工具與技術模組套件可協助遊戲建立者達到新的互動�
     </colgroup>
     <tr>
         <td>Havok 網站</td>
-        <td><a href="http://www.havok.com/">Havok</a></td>
+        <td><a href="https://www.havok.com/">Havok</a></td>
     </tr>
     <tr>
         <td>Havok 工具套件</td>
-        <td><a href="http://www.havok.com/products/">Havok 產品概觀</a></td>
+        <td><a href="https://www.havok.com/products/">Havok 產品概觀</a></td>
     </tr>
     <tr>
         <td>Havok 支援論壇</td>
-        <td><a href="http://support.havok.com">Havok</a></td>
+        <td><a href="https://support.havok.com">Havok</a></td>
     </tr>
 </table>
  
@@ -772,15 +772,15 @@ MonoGame 是開放原始碼的跨平台遊戲開發架構，最初是以 Microso
     </colgroup>
     <tr>
         <td>MonoGame</td>
-        <td><a href="http://www.monogame.net">MonoGame 網站</a></td>
+        <td><a href="https://www.monogame.net">MonoGame 網站</a></td>
     </tr>
     <tr>
         <td>MonoGame 文件</td>
-        <td><a href="http://www.monogame.net/documentation/">MonoGame 文件 (最新)</a></td>
+        <td><a href="https://www.monogame.net/documentation/">MonoGame 文件 (最新)</a></td>
     </tr>
     <tr>
         <td>Monogame 的下載項目</td>
-        <td><a href="http://www.monogame.net/downloads/">從 MonoGame 網站下載發行版、開發版組建和原始程式碼</a>，或透過 <a href="https://www.nuget.org/profiles/MonoGame">NuGet 取得最新發行的版本</a>。
+        <td><a href="https://www.monogame.net/downloads/">從 MonoGame 網站下載發行版、開發版組建和原始程式碼</a>，或透過 <a href="https://www.nuget.org/profiles/MonoGame">NuGet 取得最新發行的版本</a>。
     </tr>
     <tr>
         <td>MonoGame 2D UWP 遊戲範例</td>
@@ -800,11 +800,11 @@ Cocos2d-x 是一個跨平台的開放原始碼遊戲開發引擎與工具套件�
     </colgroup>
     <tr>
         <td>Cocos2d-x</td>
-        <td><a href="http://www.cocos2d-x.org/">什麼是 Cocos2d-x？</a></td>
+        <td><a href="https://www.cocos2d-x.org/">什麼是 Cocos2d-x？</a></td>
     </tr>
     <tr>
         <td>Cocos2d-x 程式設計人員指南</td>
-        <td><a href="http://www.cocos2d-x.org/programmersguide/">Cocos2d-x 程式設計人員指南</a></td>
+        <td><a href="https://www.cocos2d-x.org/programmersguide/">Cocos2d-x 程式設計人員指南</a></td>
     </tr>
     <tr>
         <td>Windows10 上的 Cocos2d-x (部落格文章)</td>
@@ -851,7 +851,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </colgroup>
     <tr>
         <td>BabylonJS</td>
-        <td><a href="http://www.babylonjs.com/">BabylonJS</a></td>
+        <td><a href="https://www.babylonjs.com/">BabylonJS</a></td>
     </tr>
     <tr>
         <td>WebGL 3D 搭配 HTML5 和 BabylonJS (系列影片)</td>
@@ -910,7 +910,7 @@ BabylonJS 是完整的 JavaScript 架構，可用於搭配 HTML5、WebGL、WebVR
     </tr>
     <tr>
         <td>使用 ANGLE 將 OpenGL ES 轉譯成 Direct3D 11</td>
-        <td><a href="http://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/p/?linkid=618387">ANGLE</a></td>
     </tr>
     <tr>
         <td>UWP 中的傳統型 Windows API 對應項</td>
@@ -978,7 +978,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
     </tr>
     <tr>
         <td>發佈使用 XAML 的 Windows10 初學者系列 (部落格文章)</td>
-        <td><a href="http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/">初學者的 Windows10 開發入門</a></td>
+        <td><a href="https://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/">初學者的 Windows10 開發入門</a></td>
     </tr>
 </table>
 
@@ -1082,7 +1082,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
     </tr>
     <tr>
         <td>以多種裝置尺寸規格為目標 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">針對 Windows Core 世界設計遊戲</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World">針對 Windows Core 世界設計遊戲</a></td>
     </tr>   
 </table>
  
@@ -1114,7 +1114,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
     </colgroup>
     <tr>
         <td>印刷樣式指南</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=535007">最佳做法：印刷樣式</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535007">最佳做法：印刷樣式</a></td>
     </tr>
 </table>
  
@@ -1130,7 +1130,7 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
     </colgroup>
     <tr>
         <td>UI 對應指南</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI 對應</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=535008">最佳做法：UI 對應</a></td>
     </tr>
 </table>
 
@@ -1165,7 +1165,7 @@ UI 對應是以流程圖方式呈現的遊戲導覽及功能表版面配置。 U
     </tr>
     <tr>
         <td>了解如何將 Windows Sonic 整合到遊戲中 (影片)</td>
-        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">適用於 Xbox andWindows 空間音訊功能簡介</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2017/GDC2017-002">針對 Xbox andWindows 的空間的音訊功能簡介</a></td>
     </tr>
 </table>
 
@@ -1204,7 +1204,7 @@ DirectX 遊戲開發的指南與參考資料。
     </tr>
     <tr>
         <td>DirectX 12 基礎 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">功能更強、效能更佳：DirectX 12 的遊戲</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12">功能更強、效能更佳：DirectX 12 的遊戲</a></td>
     </tr>
 </table>
 
@@ -1255,30 +1255,30 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
     </colgroup>
     <tr>
         <td>取得適用於 DirectX 11 的 DirectX 工具組</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=248929">DirectXTK</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248929">DirectXTK</a></td>
     </tr>
     <tr>
         <td>取得適用於 DirectX 12 的 DirectX 工具組</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=615561">DirectXTK 12</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615561">DirectXTK 12</a></td>
     </tr>
     <tr>
         <td>DirectX 紋理處理程式庫</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=248926">DirectXTex</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=248926">DirectXTex</a></td>
     </tr>
     <tr>
         <td>取得 DirectXMesh 幾何處理程式庫</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=324981">DirectXMesh</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=324981">DirectXMesh</a></td>
     </tr>
     <tr>
         <td>取得可建立和封裝 Isochart 紋理地圖集的 UVAtlas</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=512686">UVAtlas</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=512686">UVAtlas</a></td>
     </tr>
     <tr>
         <td>取得 DirectXMath 程式庫</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkID=615560">DirectXMath</a></td>
     </tr>
     <tr>
-        <td>DirectXTK （部落格文章） 中的 Direct3D12 支援</td>
+        <td>DirectXTK （部落格文章） （英文） 中的 Direct3D12 支援</td>
         <td><a href="https://github.com/Microsoft/DirectXTK/issues/2">DirectX 12 支援</a></td>
     </tr>
 </table>
@@ -1335,7 +1335,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
     </tr>
     <tr>
         <td>彈性磚範本 (部落格文章)</td>
-        <td><a href="http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx">彈性磚範本 - 結構描述和文件</a></td>
+        <td><a href="https://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx">彈性磚範本 - 結構描述和文件</a></td>
     </tr>
     <tr>
         <td>設計磚與徽章</td>
@@ -1358,7 +1358,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
 
 ### <a name="enable-in-app-product-add-on-purchases"></a>啟用 （附加元件） 的應用程式內產品購買
 
-附加元件 （應用程式內產品） 是玩家可購買的遊戲中的補充項目。 附加元件可以是遊戲關卡、 項目，或您玩家可能喜歡的任何人。 如果使用得當，附加元件可以提供營收，同時改善遊戲體驗。 定義和發佈您的遊戲附加元件，透過合作夥伴中心，並啟用您的遊戲程式碼中的應用程式內購買。
+附加元件 （應用程式內產品） 是玩家可購買的遊戲中的補充項目。 附加元件可以是遊戲關卡、 項目，或您玩家可能喜歡的任何人。 如果使用得當，附加元件可以提供營收，同時改善遊戲體驗。 定義和發行您遊戲的附加元件，透過合作夥伴中心，並啟用您的遊戲程式碼中的應用程式內購買。
 
 <table>
     <colgroup>
@@ -1378,7 +1378,7 @@ DirectX 工具組、DirectX 紋理處理程式庫、DirectXMesh 幾何處理程�
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148551">附加元件提交</a></td>
     </tr>
     <tr>
-        <td>監視附加元件銷售與人口統計為您的遊戲</td>
+        <td>監視附加元件銷售與人口統計，為您的遊戲</td>
         <td><a href="https://msdn.microsoft.com/library/windows/apps/mt148538">附加元件下載數報告</a></td>
     </tr>
 </table>
@@ -1452,11 +1452,11 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>將圖形與效能最佳化 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">進階 DirectX 12 圖形與效能</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance">進階 DirectX 12 圖形與效能</a></td>
     </tr>
     <tr>
         <td>DirectX 圖形偵錯 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">使用 DirectX 工具解決遊戲難纏的圖形問題</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools">使用 DirectX 工具解決遊戲難纏的圖形問題</a></td>
     </tr>
     <tr>
         <td>適用於偵錯 DirectX 12 的 Visual Studio 2015 工具 (影片)</td>
@@ -1511,7 +1511,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
     </tr>
     <tr>
         <td>橋接語言、文化及技術</td>
-        <td><a href="http://www.microsoft.com/Language/Default.aspx">語言慣例與標準 Microsoft 詞彙的線上資源</a></td>
+        <td><a href="https://www.microsoft.com/Language/Default.aspx">語言慣例與標準 Microsoft 詞彙的線上資源</a></td>
     </tr>
 </table>
 
@@ -1680,7 +1680,7 @@ Windows Performance Toolkit (WPT) 是一組效能監視工具，可產生深入�
 
 ### <a name="visual-studio-application-insights"></a>Visual Studio Application Insights
 
-Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙測及使用狀況分析。 Application Insights 可協助您在發行遊戲之後偵測及解決問題、持續監視及改善使用狀況，以及了解玩家與您遊戲的持續互動情況。 Application Insights 的運作方式是將 SDK 新增到您的應用程式中，以將遙測數據傳送給 [Azure 入口網站](http://portal.azure.com/)。
+Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙測及使用狀況分析。 Application Insights 可協助您在發行遊戲之後偵測及解決問題、持續監視及改善使用狀況，以及了解玩家與您遊戲的持續互動情況。 Application Insights 的運作方式是將 SDK 新增到您的應用程式中，以將遙測數據傳送給 [Azure 入口網站](https://portal.azure.com/)。
 
 <table>
     <colgroup>
@@ -1707,7 +1707,7 @@ Visual Studio Application Insights 可為您已發行的遊戲提供效能、遙
     </colgroup>
     <tr>
         <td>了解使用 GameAnalytics 的播放程式行為</td>
-        <td><a href="http://www.gameanalytics.com/">GameAnalytics</a></td>
+        <td><a href="https://www.gameanalytics.com/">GameAnalytics</a></td>
     </tr>
     <tr>
         <td>將 UWP 遊戲與 Google Analytics 連接</td>
@@ -1845,7 +1845,7 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     </tr>
     <tr>
         <td>使用 Xbox Live 之遊戲的需求 (GDN)</td>
-        <td><a href="http://go.microsoft.com/fwlink/?LinkId=533217">Windows10 上 Xbox Live 的 Xbox 需求</a></td>
+        <td><a href="https://go.microsoft.com/fwlink/?LinkId=533217">Windows10 上 Xbox Live 的 Xbox 需求</a></td>
     </tr>
     <tr>
         <td>範例</td>
@@ -1853,19 +1853,19 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     </tr>  
     <tr>
         <td>Xbox Live 遊戲開發概觀 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">使用適用於 Windows10 的 Xbox Live 進行開發</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10">使用適用於 Windows10 的 Xbox Live 進行開發</a></td>
     </tr>
     <tr>
         <td>跨平台配對 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live 多人遊戲：跨平台配對和遊戲服務簡介</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay">Xbox Live 多人遊戲：跨平台配對和遊戲服務簡介</a></td>
     </tr>
     <tr>
         <td>「神鬼寓言：傳奇」(Fable Legends) 中的跨裝置遊戲 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">「神鬼寓言：傳奇」(Fable Legends)：使用 Xbox Live 進行跨裝置遊戲</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live">「神鬼寓言：傳奇」(Fable Legends)：使用 Xbox Live 進行跨裝置遊戲</a></td>
     </tr>
     <tr>
         <td>Xbox Live 統計資料與成就 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">利用 Xbox Live 中雲端使用者統計資料與成就的最佳做法</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live">利用 Xbox Live 中雲端使用者統計資料與成就的最佳做法</a></td>
     </tr>
 </table>
 
@@ -1883,15 +1883,15 @@ Xbox Live 是連接世界各地數以百萬計的玩家的首要遊戲網路。 
     </tr>
     <tr>
         <td>獨立製作遊戲開發 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">獨立開發人員的新機會</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers">獨立開發人員的新機會</a></td>
     </tr>
     <tr>
         <td>多核心行動裝置的考量 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">多核心行動裝置中持續的遊戲效能</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices">多核心行動裝置中持續的遊戲效能</a></td>
     </tr>
     <tr>
         <td>開發 Windows10 傳統型遊戲 (影片)</td>
-        <td><a href="http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">適用於 Windows10 的電腦遊戲</a></td>
+        <td><a href="https://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10">適用於 Windows10 的電腦遊戲</a></td>
     </tr>
 </table>
 

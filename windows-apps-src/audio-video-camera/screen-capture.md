@@ -6,12 +6,12 @@ ms.date: 11/30/2018
 ms.topic: article
 keywords: windows 10, uwp, 螢幕擷取
 ms.localizationpriority: medium
-ms.openlocfilehash: db32db6b293dce4210bebee139e05447da996b42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dfed365e097b6f0d3816477513202b2693127ade
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946499"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049975"
 ---
 # <a name="screen-capture"></a>螢幕擷取
 
@@ -20,7 +20,7 @@ ms.locfileid: "8946499"
 使用螢幕擷取，開發人員可以為終端使用者叫用安全的系統 UI，選取要擷取的顯示或應用程式視窗，系統會在主動擷取項目周圍繪製黃色通知邊框。 在多個同時擷取工作階段中，會在每個擷取項目周圍繪製黃色邊框。
 
 > [!NOTE]
-> 在傳統型應用程式和 Windows Mixed Reality 沉浸式頭戴式裝置上才支援螢幕擷取 Api。
+> 傳統型應用程式和 Windows Mixed Reality 沉浸式頭戴式裝置上才支援螢幕擷取 Api。
 
 ## <a name="add-the-screen-capture-capability"></a>新增螢幕擷取功能
 
@@ -163,10 +163,10 @@ _framePool.FrameArrived += (s, a) =>
 
 ## <a name="putting-it-all-together"></a>總結
 
-下列程式碼片段是如何在 UWP 應用程式中實作擷取螢幕的端對端範例。 在此範例中，我們有在前端按鈕，按下，會呼叫**Button_ClickAsync**方法。
+下列程式碼片段是如何在 UWP 應用程式中實作擷取螢幕的端對端範例。 在此範例中，新增按鈕前端中，按一下時，會呼叫**Button_ClickAsync**方法。
 
 > [!NOTE]
-> 此程式碼片段會使用[Win2D](http://microsoft.github.io/Win2D/html/Introduction.htm)，2D 圖形轉譯的程式庫。 如需有關如何將它設定您的專案進行資訊其文件，請參閱。
+> 此程式碼片段會使用[Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm)，2D 圖形轉譯的程式庫。 如需有關如何設定以供您的專案資訊其文件，請參閱。
 
 ```cs
 using Microsoft.Graphics.Canvas;
@@ -384,9 +384,9 @@ namespace WindowsGraphicsCapture
 }
 ```
 
-## <a name="record-a-video"></a>錄製視訊
+## <a name="record-a-video"></a>視訊錄製
 
-如果您想要您的應用程式的視訊錄製，您可以更輕鬆[Windows.Media.AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是屬於傳統型擴充功能 SDK，因此只適用於桌上型電腦，且需要您新增到它的參考，從您的專案。 如需詳細資訊，請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
+如果您想要您的應用程式的視訊錄製，您可以更輕鬆[Windows.Media.AppRecording 命名空間](https://docs.microsoft.com/uwp/api/windows.media.apprecording)。 這是傳統型擴充功能 SDK 的一部分，因此只適用於桌上型電腦，且需要您新增到它的參考，從您的專案。 如需詳細資訊，請參閱[裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)。
 
 ## <a name="see-also"></a>請參閱
 

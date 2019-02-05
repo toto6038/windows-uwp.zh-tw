@@ -8,12 +8,12 @@ ms.date: 11/01/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 6740e6ce35277fa7f7f088c312f8b9ee1f5281c3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 321f8efc1475bc153102f3f8157cd2d094b37077
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923967"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049050"
 ---
 # <a name="localize-strings-in-your-ui-and-app-package-manifest"></a>將 UI 及應用程式套件資訊清單中的字串當地語系化
 如需有關將您的 App 當地語系化的價值主張的詳細資訊，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)。
@@ -33,7 +33,7 @@ ms.locfileid: "8923967"
     1. 在您的專案節點下，建立新的資料夾，並將其命名為「Strings」。
     2. 在 `Strings` 下，建立新的子資料夾，並命名為「en-US」。
     3. 在 `en-US` 下，建立新的資源檔案 (.resw)，並確認其命名為「Resources.resw」。
-    <br>**注意：** 如果您有您想要連接埠的.NET 資源檔案 (.resx)，請參閱[移植 XAML 與 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
+    <br>**注意：** 如果您有您想要移植的.NET 資源檔案 (.resx)，請參閱[移植 XAML 與 UI](../porting/wpsl-to-uwp-porting-xaml-and-ui.md#localization-and-globalization)。
 3.  開啟 `Resources.resw`，並新增這些字串資源。
 
     `Strings/en-US/Resources.resw`
@@ -88,13 +88,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("Farewell");
 
 您可以使用類別庫 (通用 Windows) 或 [Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 專案中的此相同程式碼。 在執行階段，會載入裝載媒體櫃的 App 的資源。 建議從裝載媒體櫃的 App 載入資源，因為 App 可能有較大程度當地語系化。 如果媒體櫃確實需要提供資源，則它應該提供其裝載的 App 選項以取代那些做為輸入的資源。
 
-如果區隔的資源名稱 (包含 「。 」 字元)，然後取代點線使用正斜線 （"/"） 中的資源名稱的字元。 屬性識別碼，例如，包含句點;因此，您必須執行此 substition 才能載入其中一個從程式碼。
+如果區隔的資源名稱 (包含 「。 」 字元)，然後取代點線使用正斜線 （"/"） 中的資源名稱的字元。 屬性識別碼，例如，包含句點;因此，您必須執行此 substition 才能載入其中一個，從程式碼。
 
 ```csharp
 this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <data name="Fare.Well" ...> ...
 ```
 
-如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的應用程式 PRI 檔案傾印。 每個資源`uri`傾印檔案所示。
+如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md)來傾印您的應用程式 PRI 檔案。 每個資源的`uri`傾印檔案所示。
 
 ```xml
 <ResourceMapSubtree name="Fare"><NamedResource name="Well" uri="ms-resource://<GUID>/Resources/Fare/Well">...
@@ -116,7 +116,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("Fare/Well"); // <da
 ## <a name="localize-the-string-resources"></a>當地語系化字串資源
 1. 為其他語言製作一份資源檔案 (.resw) 的複本。
     1. 在「Strings」下，對於德文 (德國) 建立新的子資料夾並命名為「de-DE」。
-   <br>**注意：** 的資料夾名稱，您可以使用任何[bcp-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言限定詞的詳細資訊和常見語言標記的清單，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
+   <br>**注意：** 做為資料夾名稱，您可以使用任何[bcp-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言限定詞的詳細資訊和常見語言標記的清單，請參閱[針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)。
    2. 在 `Strings/de-DE` 資料夾中製作一份 `Strings/en-US/Resources.resw` 的複本。
 2. 翻譯字串。
     1. 開啟 `Strings/de-DE/Resources.resw` 並翻譯 \[值\] 欄位中的值。 您不需要翻譯註解。
@@ -171,13 +171,13 @@ this->myXAMLTextBlockElement->Text = resourceLoader->GetString("MismatchedPasswo
 
 如果您已將您的「AppDisplayName」資源移出 `Resources.resw` 到 `ManifestResources.resw`，然後到您要變更 `ms-resource:AppDisplayName` 為 `ms-resource:/ManifestResources/AppDisplayName` 的應用程式套件資訊清單中。
 
-如果區隔的資源檔案名稱 (包含 「。 」 字元)，然後離開英名稱中，當您參考它。 **不要**使用正斜線 （"/"） 個字元，就像資源名稱取代點。
+如果區隔的資源檔案名稱 (包含 「。 」 字元)，然後離開英名稱中，當您參考它。 **不要**使用正斜線 （"/"） 字元，就像資源名稱取代點。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Err.Msgs");
 ```
 
-如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的應用程式 PRI 檔案傾印。 每個資源`uri`傾印檔案所示。
+如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md)來傾印您的應用程式 PRI 檔案。 每個資源的`uri`傾印檔案所示。
 
 ```xml
 <ResourceMapSubtree name="Err.Msgs"><NamedResource name="MismatchedPasswords" uri="ms-resource://<GUID>/Err.Msgs/MismatchedPasswords">...
@@ -257,7 +257,7 @@ private void RefreshUIText()
 ## <a name="loading-strings-from-a-class-library-or-a-windows-runtime-library"></a>從類別庫或 Windows 執行階段媒體櫃載入字串
 參照之類別庫 (通用 Windows) 或[Windows 執行階段媒體櫃 (通用 Windows)](../winrt-components/index.md) 的字串資源，通常加入到在建置程序期間包含它們的套件的子資料夾。 這類字串的資源識別碼通常採用表單 *LibraryName/ResourcesFileName/ResourceIdentifier*。
 
-類別庫可以為它自己的資源取得 ResourceLoader。 例如，下列程式碼說明如何媒體櫃或參考它的應用程式可取得 ResourceLoader 的程式庫的字串資源。
+類別庫可以為它自己的資源取得 ResourceLoader。 例如，下列程式碼說明如何媒體櫃或參考它的應用程式可取得 ResourceLoader 的媒體櫃中的字串資源。
 
 ```csharp
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("ContosoControl/Resources");
@@ -270,7 +270,7 @@ this.myXAMLTextBlockElement.Text = resourceLoader.GetString("exampleResourceName
 var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView("Contoso.Control/Resources");
 ```
 
-您不需要執行此作業的類別庫 (通用 Windows)。 如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的元件或程式庫的 PRI 檔案傾印。 每個資源`uri`傾印檔案所示。
+您不需要執行此作業的類別庫 (通用 Windows)。 如果有疑問，您可以使用[MakePri.exe](makepri-exe-command-options.md) ，您的元件或程式庫的 PRI 檔案傾印。 每個資源的`uri`傾印檔案所示。
 
 ```xml
 <NamedResource name="exampleResourceName" uri="ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName">...
@@ -291,6 +291,6 @@ var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCur
 * [x:Uid 指示詞](../xaml-platform/x-uid-directive.md)
 * [附加屬性](../xaml-platform/attached-properties-overview.md)
 * [可當地語系化的資訊清單項目](/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10?branch=live)
-* [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
 * [如何載入字串資源](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)

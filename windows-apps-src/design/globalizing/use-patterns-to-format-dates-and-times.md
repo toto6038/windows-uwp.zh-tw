@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: a8e68242647204dfbf8ba23c45d881066c88900b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3849ccf0f129b65dc44f549a37859fe38ac71562
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918893"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048685"
 ---
 # <a name="use-templates-and-patterns-to-format-dates-and-times"></a>使用範本和模式來設定日期和時間的格式
 
@@ -25,7 +25,7 @@ ms.locfileid: "8918893"
 
 但當您想要對所希望顯示之 [**DateTime**](/uwp/api/windows.foundation.datetime?branch=live) 物件的元件順序與格式有更多控制時，您可以將格式模式傳遞到建構函式的 *formatTemplate* 引數。 格式模式使用一種特殊的語法，可讓您取得 **DateTime** 物件的個別元件&mdash;例如，單純月份的名稱，或年份的值&mdash;以使用任何您選擇的自訂格式顯示他們。 此外，模式也可以當地語系化以配合其他語言和地區。
 
-**注意：** 這是只有格式模式的概觀。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
+**注意：** 這是只是格式模式的概觀。 如需格式範本和格式模式更完整的討論，請參閱 [**DateTimeFormatter**](/uwp/api/windows.globalization.datetimeformatting?branch=live) 類別的＜備註＞一節。
 
 ## <a name="the-difference-between-format-templates-and-format-patterns"></a>格式範本和格式模式的不同
 
@@ -98,7 +98,7 @@ Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
 June 25 | 1:38 PM
 ```
 
-日期部分會對應 "month day" 格式範本，而時間部分則會對應 "hour minute" 格式範本。 因此，您可以相關日期和時間的格式範本建構格式器，然後結合它們使用可當地語系化的格式字串的輸出。
+日期部分會對應 "month day" 格式範本，而時間部分則會對應 "hour minute" 格式範本。 因此，您可以相關日期和時間的格式範本建構格式器，然後結合它們的輸出一起使用當地語系化的格式字串。
 
 ```csharp
 var dateToFormat = System.DateTime.Now;
@@ -113,7 +113,7 @@ var time = timeFormatter.Format(dateToFormat);
 string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
 ```
 
-`CustomDateTimeFormatString` 是指向資源檔 (.resw) 中可當地語系化資源的資源識別碼。 預設語言為英文 （美國），這會設為值為 「{0} |{1}「 以及註解指出 」{0}」 是日期和 「{1}」 是時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
+`CustomDateTimeFormatString` 是指向資源檔 (.resw) 中可當地語系化資源的資源識別碼。 預設語言為英文 （美國），這會設定的值設為 「{0} |{1}「 以及註解指出 」{0}」 是日期和 「{1}」 是時間。 如此一來，翻譯人員便可以視需要調整格式項目。 例如，如果在某些語言或地區中，時間在日期之前是較自然的樣式，他們就可以變更項目的順序。 或者，他們可以使用某種其他分隔字元來取代 "|"。
 
 另一種實作此範例的方法便是查詢兩個格式器以取得其格式模式，將他們結合在一起，然後使用結合後的格式模式建構第三個格式器。
 
@@ -141,4 +141,4 @@ string output = patternFormatter.Format(System.DateTime.Now);
 
 ## <a name="related-topics"></a>相關主題
 
-* [日期和時間格式化範例](http://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [日期和時間格式化範例](https://go.microsoft.com/fwlink/p/?LinkId=231618)

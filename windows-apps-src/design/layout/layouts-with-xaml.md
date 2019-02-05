@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10、uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 82a528b3ec98f56e1079e11ec1123d86de15d50f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 691ce1cc0c49154142a52f329af6f2a1df4ae027
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919983"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049395"
 ---
 # <a name="responsive-layouts-with-xaml"></a>搭配 XAML 的回應式版面配置
 
@@ -117,7 +117,7 @@ Column_4 | **2**\* | 計算 Auto 欄之後，這個欄會分配到一部分的�
 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) |<li>元素以垂直或水平方式堆疊到單行中。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值會以與 Orientation 屬性相反的方向來採用。 如果沒有明確設定元素的大小，它會向兩邊延伸以填滿可用的寬度 (或高度，如果 Orientation 是 Horizontal)。 利用 Orientation 屬性指定的方向，元素會調整大小來符合其內容。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小不會以 Orientation 屬性指定的方向受限於面板的範圍內，因此，可捲動內容向兩邊延伸的範圍會超過面板的範圍且不會顯示捲軸。 您必須明確限制子內容的高度 (或寬度)，讓它能夠顯示捲軸。</li>
 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) |<li>在列或欄中排列的元素，達到 MaximumRowsOrColumns 值時會自動換行到新列或新欄。</li><li>Orientation 屬性會指定以列或欄排列元素。</li><li>您可以使用 VariableSizedWrapGrid.RowSpan 與 VariableSizedWrapGrid.ColumnSpan 附加屬性，讓元素橫跨多個列與欄。</li><li>適用於 HorizontalAlignment/VerticalAlignment 的 Stretch 值都會遭到忽略。 元素的大小是由 ItemHeight 與 ItemWidth 屬性所指定。 如果未設定這些屬性，則第一個儲存格中的項目會調整大小以符合其內容，而所有其他的儲存格會繼承這個大小。</li><li>如果子內容大於面板，就會以視覺化方式進行剪裁。</li><li>內容大小受限於面板的範圍，因此可捲動的內容會視需要顯示捲軸。</li>
 
-如需這些面板的詳細資訊和範例，請參閱[版面配置面板](layout-panels.md)。 另請參閱[回應技術範例](http://go.microsoft.com/fwlink/p/?LinkId=620024)。
+如需這些面板的詳細資訊和範例，請參閱[版面配置面板](layout-panels.md)。 另請參閱[回應技術範例](https://go.microsoft.com/fwlink/p/?LinkId=620024)。
 
 版面配置面板可讓您將 UI 組織成控制項的邏輯群組。 將它們與適當的屬性設定搭配使用時，您可以取得自動調整大小、重新置放及自動重排 UI 元素的一些支援。 不過，大部分的 UI 版面配置需要在視窗大小有大幅變更時進一步修改。 為此，您可以使用視覺狀態。
 
@@ -254,13 +254,13 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 ### <a name="custom-state-triggers"></a>自訂狀態觸發程序
 
-您可以擴充 [**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) 類別，針對各種案例建立自訂觸發程序。 例如，可以建立 StateTrigger，根據輸入類型來觸發不同狀態，然後在輸入類型為觸控時，增加控制項四周的邊界。 或是建立 StateTrigger，以根據應用程式執行所在的裝置系列來套用不同的狀態。 如需如何建置自訂觸發程序並使用它們從單一 XAML 檢視中建立最佳化 UI 體驗的範例，請參閱[狀態觸發程序範例](http://go.microsoft.com/fwlink/p/?LinkId=620025)。
+您可以擴充 [**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) 類別，針對各種案例建立自訂觸發程序。 例如，可以建立 StateTrigger，根據輸入類型來觸發不同狀態，然後在輸入類型為觸控時，增加控制項四周的邊界。 或是建立 StateTrigger，以根據應用程式執行所在的裝置系列來套用不同的狀態。 如需如何建置自訂觸發程序並使用它們從單一 XAML 檢視中建立最佳化 UI 體驗的範例，請參閱[狀態觸發程序範例](https://go.microsoft.com/fwlink/p/?LinkId=620025)。
 
 ### <a name="visual-states-and-styles"></a>視覺狀態與樣式
 
 您可以在視覺狀態中使用 Style 資源，將一組屬性變更套用到多個控制項。 如需有關使用樣式的詳細資訊，請參閱[設定控制項的樣式](../controls-and-patterns/xaml-styles.md)。
 
-在這個來自狀態觸發程序範例的簡化 XAML 中，Style 資源被套用到 Button，以調整滑鼠或觸控輸入的大小和邊界。 如需自訂狀態觸發程序的完整程式碼和定義，請參閱[狀態觸發程序範例](http://go.microsoft.com/fwlink/p/?LinkId=620025)。
+在這個來自狀態觸發程序範例的簡化 XAML 中，Style 資源被套用到 Button，以調整滑鼠或觸控輸入的大小和邊界。 如需自訂狀態觸發程序的完整程式碼和定義，請參閱[狀態觸發程序範例](https://go.microsoft.com/fwlink/p/?LinkId=620025)。
 
 ```xaml
 <Page ... >
@@ -389,7 +389,7 @@ else
 }
 ```
 
-您也可以使用不同的準則來判斷要瀏覽到哪一個頁面。 如需更多範例，請參閱[量身打造的多個檢視](http://go.microsoft.com/fwlink/p/?LinkId=620636)範例，它會使用 [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) 函式來檢查整合式顯示器的實體大小。
+您也可以使用不同的準則來判斷要瀏覽到哪一個頁面。 如需更多範例，請參閱[量身打造的多個檢視](https://go.microsoft.com/fwlink/p/?LinkId=620636)範例，它會使用 [**GetIntegratedDisplaySize**](https://msdn.microsoft.com/library/windows/apps/xaml/dn904185.aspx) 函式來檢查整合式顯示器的實體大小。
 
 ## <a name="related-topics"></a>相關主題
 - [教學課程：建立調適型配置](../basics/xaml-basics-adaptive-layout.md)

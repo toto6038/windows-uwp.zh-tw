@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 通知, 已知問題, 疑難排解
 ms.localizationpriority: medium
-ms.openlocfilehash: 3df88af638886e6bbda9b2f2f2065809da319532
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 029d595c41301e62f74c9b08b633bb22bfb12786
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939376"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049176"
 ---
 # <a name="known-issues-and-troubleshooting-for-ads-in-apps"></a>應用程式內廣告的已知問題與疑難排解
 
@@ -48,7 +48,7 @@ ms.locfileid: "8939376"
 
 如果您可以在 App 中看見測試廣告，便代表您的程式碼運作正常並可以顯示廣告。 如果您遭遇到問題，請連絡[產品支援](https://developer.microsoft.com/en-us/windows/support)。 在該頁面上，選擇 [**與我們連絡**。
 
-您也可以在[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)中張貼問題。
+您也可以在[論壇](https://go.microsoft.com/fwlink/p/?LinkId=401266)中張貼問題。
 
 ## <a name="test-ads-are-showing-in-your-app-instead-of-live-ads"></a>您的 App 中顯示測試廣告而不是實際廣告
 
@@ -91,7 +91,7 @@ JavaScript/HTML App 不能將元素置於 Z 軸順序的保留 MAX-10 範圍內�
 
 ## <a name="more-information"></a>其他資訊
 
-如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising SDK 的相關問題，請造訪[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)。
+如需最新已知問題的詳細資訊，或是張貼 Microsoft Advertising SDK 的相關問題，請造訪[論壇](https://go.microsoft.com/fwlink/p/?LinkId=401266)。
 
  
 

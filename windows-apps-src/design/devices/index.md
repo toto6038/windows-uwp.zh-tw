@@ -8,12 +8,12 @@ keywords: 裝置, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: de67a61b4d5982675d32e0446b67d7cf70051923
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 127c01321c0341e7125e8c6da955c789c4c65f2f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936363"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049905"
 ---
 #  <a name="device-primer-for-universal-windows-platform-uwp-apps"></a>通用 Windows 平台 (UWP) 應用程式的裝置基本資訊
 
@@ -129,7 +129,7 @@ UI 考量
 
 所有計算裝置中最為廣泛使用的裝置，手機透過有限的螢幕空間和基本輸入，就可以執行很多功能。 手機有各種不同的大小。較大的手機稱為 平板手機。 平板手機上的 app 體驗類似智慧型手機，但因為平板手機有更大的螢幕實際可用空間，所以在內容使用的方式有一些重要變更。
 
-Continuum 手機，適用於相容的 windows 10 行動裝置，新的體驗與使用者可將其手機連接到監視器和甚至使用滑鼠和鍵盤，來讓手機可以像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
+Continuum 手機，適用於相容的 windows 10 行動裝置，新的體驗與使用者可將其手機連接到監視器和甚至使用滑鼠和鍵盤，來讓手機可以像膝上型電腦一樣運作。 (如需詳細資訊，請參閱 [Continuum 手機版](https://go.microsoft.com/fwlink/p/?LinkID=699431)一文)。
 
 螢幕大小
 -   手機 (4 吋 到 5 吋)

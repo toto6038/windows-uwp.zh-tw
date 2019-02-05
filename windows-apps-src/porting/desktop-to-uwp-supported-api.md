@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
-ms.openlocfilehash: c89c3ace4b85852f93bb0d5edf4c520403f39b44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c3131207c04b421a6d8ab6aeeb16aa3107bbf21d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928004"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048848"
 ---
 # <a name="uwp-apis-available-to-a-packaged-desktop-app"></a>UWP Api 適用於已封裝的傳統型應用程式
 
@@ -26,7 +26,7 @@ ms.locfileid: "8928004"
 <tr><td>背景工作</td><td>雖然已封裝的應用程式可以登錄背景工作，但只有完整的 UWP app 可以<i>做為</i>背景工作執行。 如需詳細資訊，請參閱 <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample">GitHub 上的背景工作範例</a>。</td></tr>
 <tr><td>藍牙</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>聊天和通話</td><td>已封裝的應用程式在完全移植到 UWP 之前，無法在行動裝置上執行。</td></tr>
-<tr><td>協定啟用</td><td>只有完整的 UWP 應用程式可以由協定啟用。</td></tr>
+<tr><td>協定啟用</td><td>只有完整的 UWP 應用程式可以透過協定啟用。</td></tr>
 <tr><td>密碼編譯</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>地理位置</td><td>已封裝的應用程式目前並未支援所有的 API。</td></tr>
 <tr><td>檔案和資料夾選擇器</td><td>已封裝的應用程式具有完整的檔案系統存取權，因此不需要 UWP 選擇器。</td></tr>
@@ -1050,7 +1050,7 @@ ms.locfileid: "8928004"
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

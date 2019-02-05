@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: cd6f6a6fb638069dba58c62eca91b74868816d2a
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.openlocfilehash: d6261a7cce86c82b4865d7ca1d68c082cba9ccca
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997393"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049475"
 ---
 # <a name="app-management-and-services"></a>應用程式管理與服務
 
@@ -25,7 +25,7 @@ ms.locfileid: "8997393"
 
 ## <a name="xbox-live"></a>Xbox Live
 
-如果您正在發佈遊戲，您可以啟用此頁面上的[Xbox Live 創作者計畫](http://xbox.com/developers/creators-program)。 這可讓您啟動設定並測試 Xbox Live 功能，及最後發佈您的 Xbox Live 創作者計畫遊戲。
+如果您正在發佈遊戲，您可以啟用此頁面上的[Xbox Live 創作者計畫](https://xbox.com/developers/creators-program)。 這可讓您開始設定並測試 Xbox Live 功能，及最後發佈您的 Xbox Live 創作者計畫遊戲。
 
 如需詳細資訊，請參閱[開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)，並[建立新的 Xbox Live 創作者計畫遊戲並發佈至測試環境](../xbox-live/get-started-with-creators/create-and-test-a-new-creators-title.md)。
 
@@ -37,9 +37,9 @@ ms.locfileid: "8997393"
 
 ## <a name="maps"></a>地圖
 
-若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](http://go.microsoft.com/fwlink/p/?LinkId=614880)。 了解如何從 Bing 地圖開發人員中心要求地圖驗證金鑰，並將它新增到您的應用程式，請參閱[要求地圖驗證金鑰](../maps-and-location/authentication-key.md)如需詳細資訊。 
+若要在目標為 Windows 10 或 Windows 8.x 的應用程式中使用地圖服務，請瀏覽 [Bing 地圖開發人員中心](https://go.microsoft.com/fwlink/p/?LinkId=614880)。 了解如何從 Bing 地圖開發人員中心中要求地圖驗證金鑰，並將它新增到您的應用程式，請參閱[要求地圖驗證金鑰](../maps-and-location/authentication-key.md)如需詳細資訊。 
 
-僅針對先前發佈應用程式適用於 Windows Phone 8.1 和較舊版本中使用 [**地圖**] 頁面。 若要在這些應用程式中使用地圖服務，您將需要以要求在您的應用程式程式碼中包含地圖服務應用程式識別碼和權杖。 當您按一下**取得權杖**時，我們將會產生地圖服務應用程式識別碼 (**ApplicationID**) 與地圖驗證語彙基元 (**AuthenticationToken**) 的服務，您的應用程式。 請務必將這些值新增到您的程式碼之前您套件並提交您的應用程式。 如需詳細資訊，請參閱[如何新增地圖控制項到頁面 (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882)。
+只使用先前發佈應用程式適用於 Windows Phone 8.1 和較舊版本的 [**地圖**] 頁面。 這些應用程式中使用地圖服務，您將需要以要求在您的應用程式碼中包含的地圖服務應用程式識別碼和權杖。 當您按一下**取得權杖**時，我們會產生地圖服務應用程式識別碼 (**ApplicationID**)，並對應驗證語彙基元 (**AuthenticationToken**) 的服務，您的應用程式。 請務必將這些值新增到您的程式碼，在您的套件之前，並提交您的應用程式。 如需詳細資訊，請參閱[如何新增地圖控制項到頁面 (Windows Phone 8.1)](https://go.microsoft.com/fwlink/p/?LinkId=614882)。
 
 ## <a name="product-collections-and-purchases"></a>產品集合與購買
 
@@ -49,9 +49,9 @@ ms.locfileid: "8997393"
 
 ## <a name="administrator-consent"></a>系統管理員同意
 
-如果您的產品與 Azure AD 整合，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員同意，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品其組織授與同意取得的應用程式的系統管理員。
+如果您的產品與 Azure AD 整合，並呼叫的 Api，要求一個[應用程式的權限或委派權限](https://developer.microsoft.com/graph/docs/concepts/permissions_reference)需要系統管理員的同意，輸入您的 Azure AD 用戶端識別碼。 這可讓您以使它代表租用戶中的所有使用者的產品其組織授與同意取得的應用程式的系統管理員。
 
-如需詳細資訊，請參閱[整個的租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
+如需詳細資訊，請參閱[的整個租用戶同意的要求](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-scopes#requesting-consent-for-an-entire-tenant)。
 
 ## <a name="app-management"></a>應用程式管理
 
@@ -85,15 +85,15 @@ ms.locfileid: "8997393"
 **WNS/MPNS**區段會提供選項以協助您建立和傳送通知給您的應用程式客戶。 
 
 > [!TIP]
-> 對於 UWP 應用程式，我們建議使用合作夥伴中心的**通知**功能。 這項功能可讓您傳送通知給所有您的應用程式的客戶，或您的 Windows 10 客戶符合條件的特定對象子集您所定義在[客戶區隔](create-customer-segments.md)中。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
+> 適用於 UWP app 中，我們建議使用合作夥伴中心的**通知**功能。 這項功能可讓您傳送通知給所有應用程式的客戶，或您定義[客戶區隔](create-customer-segments.md)中特定對象的符合條件 Windows 10 客戶子集。 如需詳細資訊，請參閱[傳送通知給您的應用程式客戶](send-push-notifications-to-your-apps-customers.md)。
 
-根據您的應用程式套件類型和及其特定需求，您也可以使用其中一個下列選項： 
+根據您的應用程式套件類型及其特定需求，您也可以使用其中一個下列選項： 
 
 -   **Windows 推播通知服務 (WNS)** 讓您能夠從自己的雲端服務傳送快顯通知、磚、徽章及原始更新。 如需詳細資訊，請參閱 [Windows 推播通知服務 (WNS) 概觀](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md)。
 
--   **Microsoft Azure Mobile Apps** 讓您能夠傳送推播通知、驗證和管理應用程式使用者，以及在雲端中儲存應用程式資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](http://go.microsoft.com/fwlink/p/?LinkId=221116)。
+-   **Microsoft Azure Mobile Apps** 讓您能夠傳送推播通知、驗證和管理應用程式使用者，以及在雲端中儲存應用程式資料。 如需詳細資訊，請參閱 [Mobile Apps 文件](https://go.microsoft.com/fwlink/p/?LinkId=221116)。
 
--   **Microsoft 推播通知服務 (MPNS)** 可以搭配用於 Windows Phone 先前已發佈的.xap 套件。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳至 \ [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](http://go.microsoft.com/fwlink/p/?LinkId=528736)。
+-   **Microsoft 推播通知服務 (MPNS)** 可以搭配用於 Windows Phone 先前已發佈的.xap 套件。 儘管我們建議使用已授權的通知以避免發生節流限制，但您不需在此處進行任何設定，就能傳送有限數量的未授權通知。 如果您使用的是 MPNS，您將需要將憑證上傳至 \ [ **WNS/MPNS\** ] 頁面上提供的欄位。 如需詳細資訊，請參閱[設定已驗證的 Web 服務來傳送適用於 Windows Phone 8 的推播通知](https://go.microsoft.com/fwlink/p/?LinkId=528736)。
  
 
  

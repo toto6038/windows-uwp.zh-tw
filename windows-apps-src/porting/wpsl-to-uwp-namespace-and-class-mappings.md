@@ -1,34 +1,34 @@
 ---
 description: 本主題提供 WindowsPhone Silverlight Api 與其通用 Windows 平台 (UWP) 對等的完整對應。
-title: WindowsPhone Silverlight 至 UWP 命名空間與類別對應
+title: WindowsPhone Silverlight UWP 命名空間與類別對應
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 0072aa814e0bcb22806cad764b5f365770961ac3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9acd42f57117fb01eef4ba8f87d35664be21cf32
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926208"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048818"
 ---
 # <a name="windowsphone-silverlight-to-uwp-api-mappings"></a>WindowsPhone Silverlight UWP API 對應
 
 
 本主題提供 WindowsPhone Silverlight Api 與其通用 Windows 平台 (UWP) 對等的完整對應。 不過，通常沒有一對一的功能對應：這兩個平台在命名空間與類別中都可能有比對方多或少的功能。
 
-當您使用 UWP 專案中，當您重新使用來自 WindowsPhone Silverlight 專案的原始程式碼時，對應表格有助於您。 兩個平台之間的命名空間和類別 (包括 UI 控制項) 的名稱有所不同。 在許多情況下，相當簡單，只要變更命名空間名稱，您的程式碼就會進行編譯。 有時候，除了命名空間名稱之外，類別或 API 名稱也會變更。 其他時候，則需要更費工夫來進行對應，而只有在少數情況下會需要變更方法。
+當您使用 UWP 專案中，當您重新使用從 WindowsPhone Silverlight 專案的原始程式碼，對應表格有助於您。 兩個平台之間的命名空間和類別 (包括 UI 控制項) 的名稱有所不同。 在許多情況下，相當簡單，只要變更命名空間名稱，您的程式碼就會進行編譯。 有時候，除了命名空間名稱之外，類別或 API 名稱也會變更。 其他時候，則需要更費工夫來進行對應，而只有在少數情況下會需要變更方法。
 
 **如何使用此表格：** 首先，搜尋您目前使用之類別的名稱。 當只變更命名空間名稱無法達成對應時，就會列出類別。 如果未列出您的類別，則表示只需要變更命名空間即可達成對應。 因此，請尋找您類別的命名空間名稱，然後您就可以找到對等的 UWP 命名空間名稱。 您的類別會在該命名空間中。 如果未列出您的命名空間，則表示它的名稱未變更。
 
-**注意：** windows 10 支援更多的.NET Framework 比 Windows Phone 市集 app 的功能。 例如，windows 10 具有數個 System.ServiceModel.\* 命名空間，以及 System.Net、 System.Net.NetworkInformation 與 System.Net.Sockets。
-此外，在 windows 10 app 中，您將可以從.NET 原生，其中的事先編譯技術，其將 MSIL 轉換成原生可執行的機器程式碼。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。
+**注意：** windows 10 支援更多的.NET Framework 比 Windows Phone 市集應用程式。 例如，windows 10 具有數個 System.ServiceModel.\* 命名空間，以及 System.Net、 System.Net.NetworkInformation 與 System.Net.Sockets。
+此外，在 windows 10 app 中，您將可以從.NET 原生，其將 MSIL 轉換成原生可執行機器碼的事先編譯技術。 .NET 原生 app 比其對應的 MSIL 啟動更快、使用更少的記憶體，而且消耗較少的電池電力。
 
 | WindowsPhone Silverlight | Windows 執行階段 |
 | ------------------------- | --------------- |
 | 廣告 | |
-| **Microsoft.Advertising.Mobile.UI.AdControl** 類別 | [AdControl](http://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 類別 |
+| **Microsoft.Advertising.Mobile.UI.AdControl** 類別 | [AdControl](https://msdn.microsoft.com/library/advertising-windows-sdk-api-reference-adcontrol.aspx) 類別 |
 | 鬧鐘、提醒及背景代理程式 | |
 | **Microsoft.Phone.BackgroundAgent** 類別 | [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 類別 |
 | **Microsoft.Phone.Scheduler** 命名空間 | [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847) 命名空間 |
@@ -52,11 +52,11 @@ ms.locfileid: "8926208"
 | (SWT = **System.Windows.Threading**) <br/> **SWT.DispatcherTimer** 類別 | [**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) 類別 |
 | Blend for Visual Studio | |
 | (MEDC = **Microsoft.Expression.Drawing.Core**) <br/> **MEDC.GeometryHelper** 類別 | 沒有直接的對等項目 |
-| **Microsoft.Expression.Interactivity** 命名空間 | [Microsoft.Xaml.Interactivity](http://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空間 |
-| **Microsoft.Expression.Interactivity.Core** 命名空間 | [Microsoft.Xaml.Interactions.Core](http://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空間 |
+| **Microsoft.Expression.Interactivity** 命名空間 | [Microsoft.Xaml.Interactivity](https://go.microsoft.com/fwlink/p/?LinkId=328776) 命名空間 |
+| **Microsoft.Expression.Interactivity.Core** 命名空間 | [Microsoft.Xaml.Interactions.Core](https://go.microsoft.com/fwlink/p/?LinkId=328773) 命名空間 |
 | (MEIC = **Microsoft.Expression.Interactivity.Core**) <br/> **MEIC.ExtendedVisualStateManager** 類別 | 沒有直接的對等項目 |
 | **Microsoft.Expression.Interactivity.Input** 命名空間 | 沒有直接的對等項目 |
-| **Microsoft.Expression.Interactivity.Media** 命名空間 | [Microsoft.Xaml.Interactions.Media](http://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空間 |
+| **Microsoft.Expression.Interactivity.Media** 命名空間 | [Microsoft.Xaml.Interactions.Media](https://go.microsoft.com/fwlink/p/?LinkId=328775) 命名空間 |
 | **Microsoft.Expression.Shapes** 命名空間 | 沒有直接的對等項目 |
 | (MI = **Microsoft.Internal**) <br/> **MI.IManagedFrameworkInternalHelper** 介面 | 沒有直接的對等項目 |
 | 連絡人和行事曆資料 | |
@@ -109,7 +109,7 @@ ms.locfileid: "8926208"
 | **Microsoft.Devices.Camera**、**Microsoft.Devices.PhotoCamera** 類別 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別。 還有 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) 類別 (僅限 Windows)。 |
 | **Microsoft.Devices.CameraButtons** 類別 | [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別 |
 | **Microsoft.Devices.CameraVideoBrushExtensions** 類別 | [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) 類別 |
-| **Microsoft.Devices.Environment** 類別 | 沒有直接的對等項目。 為了因應此情況，請使用條件式編譯並定義自訂符號。 或者，您也可以使用 [IsAttached](http://msdn.microsoft.com/library/e299w87h.aspx) 屬性來設計一個因應措施。 |
+| **Microsoft.Devices.Environment** 類別 | 沒有直接的對等項目。 為了因應此情況，請使用條件式編譯並定義自訂符號。 或者，您也可以使用 [IsAttached](https://msdn.microsoft.com/library/e299w87h.aspx) 屬性來設計一個因應措施。 |
 | **Microsoft.Devices.MediaHistory** 類別 | 沒有直接的對等項目 |
 | **Microsoft.Devices.VibrateController** 類別 | [**VibrationDevice**](https://msdn.microsoft.com/library/windows/apps/jj207230) 類別 |
 | **Microsoft.Devices.Radio.FMRadio** 類別 | 沒有直接的對等項目 |
@@ -121,7 +121,7 @@ ms.locfileid: "8926208"
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentCulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentCulture** 屬性 |
 | (ST = **System.Threading**) <br/> **ST.Thread.CurrentUICulture** 屬性 | (SG = **System.Globalization**) <br/> **S.CultureInfo.CurrentUICulture** 屬性 |
 | 圖形和動畫 | |
-| **Microsoft.Xna.Framework.\*** 命名空間、[XNA Framework 類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263769)、[內容管線類別庫](http://go.microsoft.com/fwlink/p/?LinkId=263770) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 搭配 C++。 請參閱[開發遊戲](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 與 XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
+| **Microsoft.Xna.Framework.\*** 命名空間、[XNA Framework 類別庫](https://go.microsoft.com/fwlink/p/?LinkId=263769)、[內容管線類別庫](https://go.microsoft.com/fwlink/p/?LinkId=263770) | 沒有直接的對等項目。 一般而言，請使用 [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) 搭配 C++。 請參閱[開發遊戲](https://msdn.microsoft.com/library/windows/apps/hh452744)和 [DirectX 與 XAML 互通性](https://msdn.microsoft.com/library/windows/apps/hh825871)。 |
 | **Microsoft.Xna.Framework.Audio.Microphone** 類別 | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) 類別 |
 | **Microsoft.Xna.Framework.Audio.SoundEffect** 類別 | [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) 類別 |
 | **Microsoft.Xna.Framework.GamerServices** 命名空間 | (WPS = **Windows.Phone.System**) <br/> [**WPS.UserProfile.GameServices.Core**](https://msdn.microsoft.com/library/windows/apps/jj207609) 命名空間 |

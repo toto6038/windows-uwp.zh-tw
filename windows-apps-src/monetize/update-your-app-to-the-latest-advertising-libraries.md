@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, AdControl, AdMediatorControl, 移轉
 ms.assetid: f8d5b2ad-fcdb-4891-bd68-39eeabdf799c
 ms.localizationpriority: medium
-ms.openlocfilehash: adac5cfdb1b4a10674fb7173e5b84a86b509f130
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ff0ea54f55803e652964203899f429faf196805e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920165"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048675"
 ---
 # <a name="update-your-app-to-the-latest-advertising-libraries-for-banner-ads"></a>將您的應用程式更新到橫幅廣告的最新 Advertising 程式庫
 
@@ -19,22 +19,22 @@ ms.locfileid: "8920165"
 
 ## <a name="overview"></a>概觀
 
-顯示橫幅廣告的 UWP app 必須使用在 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 中散佈，來自 Advertising 程式庫的 **AdControl**。 此 SDK 支援一組最基本的廣告功能，包括透過來自美國互動廣告局 (Interactive Advertising Bureau, IAB) 的[行動多媒體廣告介面定義 (Mobile Rich-media Ad Interface Definitions, MRAID) 1.0 規格](http://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 多媒體的功能。 許多我們的廣告商都尋求這些功能，而且我們要求 App 開發人員使用這些 SDK 版本，來協助讓我們的應用程式生態體系對廣告商更具吸引力，並最終為您賺取更多收入。
+顯示橫幅廣告的 UWP app 必須使用在 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 中散佈，來自 Advertising 程式庫的 **AdControl**。 此 SDK 支援一組最基本的廣告功能，包括透過來自美國互動廣告局 (Interactive Advertising Bureau, IAB) 的[行動多媒體廣告介面定義 (Mobile Rich-media Ad Interface Definitions, MRAID) 1.0 規格](https://www.iab.com/wp-content/uploads/2015/08/IAB_MRAID_VersionOne.pdf)提供 HTML5 多媒體的功能。 許多我們的廣告商都尋求這些功能，而且我們要求 App 開發人員使用這些 SDK 版本，來協助讓我們的應用程式生態體系對廣告商更具吸引力，並最終為您賺取更多收入。
 
 在此 SDK 發行前，我們在數個舊版廣告 SDK 中提供 **AdControl** 類別。 因為不支援上述最基本的廣告功能，已不再支援這些舊版的廣告 SDK。 從 2017 年 4 月 1 日，我們停止提供橫幅廣告至使用未受支援廣告 SDK 版本的 app。 如果您有仍然使用未受支援廣告 SDK 版本的 app，您將會看到以下行為：
 
 * 將不會再為您應用程式中的任何 **AdControl** 提供橫幅廣告，您將無法再從這些控制項賺取廣告收入。
 
-* When the **AdControl** in your app requests a new ad, the **ErrorOccurred** event of the control will be raised and the **ErrorCode** property of the event args will have the value **NoAdAvailable**.
+* 當您應用程式中的 **AdControl** 要求新的廣告時，將會引發控制項的 **ErrorOccurred** 事件，而事件引數的 **ErrorCode** 屬性值將會是 **NoAdAvailable**。
 
-* 與您應用程式相關的任何廣告單元將會被停用。 您無法從您 DePartnerv 中心帳戶移除這些停用的廣告單元。 如果您更新應用程式為使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
+* 與您應用程式相關的任何廣告單元將會被停用。 您無法從您 DePartnerv 中心帳戶移除這些停用的廣告單元。 如果您更新應用程式為使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)，請忽略這些廣告單元，並建立新的廣告單元。
 
 * 也不再提供橫幅廣告給多個 app 中使用的任何廣告單元。 請確定您的每個廣告單元只在單一 app 中使用。
 
-如果您的現有應用程式 (已經在 Microsoft Store 中，或仍在開發) 顯示橫幅廣告使用 **AdControl**，但您不確定應用程式使用哪個廣告 SDK，請依照本文中的指示，判斷您是否需要更新應用程式為使用支援的 SDK。 如果您遭遇任何問題或需要協助，請[連絡客戶支援](http://go.microsoft.com/fwlink/?LinkId=393643)。
+如果您的現有應用程式 (已經在 Microsoft Store 中，或仍在開發) 顯示橫幅廣告使用 **AdControl**，但您不確定應用程式使用哪個廣告 SDK，請依照本文中的指示，判斷您是否需要更新應用程式為使用支援的 SDK。 如果您遭遇任何問題或需要協助，請[連絡客戶支援](https://go.microsoft.com/fwlink/?LinkId=393643)。
 
 > [!NOTE]
-> 如果您的應用程式已使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) (適用於 UWP app)，則不需要進一步變更您的應用程式。
+> 如果您的應用程式已使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) (適用於 UWP app)，則不需要進一步變更您的應用程式。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -76,7 +76,7 @@ ms.locfileid: "8920165"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。
+3.  安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。
 
 ## <a name="part-3-update-your-project"></a>第 3 部分：更新您的專案
 
@@ -86,4 +86,4 @@ ms.locfileid: "8920165"
 
 請測試您的應用程式以確定它如預期般顯示橫幅廣告。
 
-如果[建立新的提交](../publish/app-submissions.md)在合作夥伴中心來重新發佈您的應用程式的應用程式已更新的 「 市集 」 中已經有您的應用程式的先前版本。
+如果[建立新的提交](../publish/app-submissions.md)在合作夥伴中心來重新發佈您的應用程式的應用程式已更新的 「 市集 」 中已經有舊版的應用程式。

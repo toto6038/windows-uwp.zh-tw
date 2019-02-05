@@ -1,24 +1,24 @@
 ---
 title: 安全開發 Windows app 的簡介
-description: 這篇簡介文章將協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。
+description: 這篇簡介文章可協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 38318e7f97c8eba7d0137a865f5025fb9a77fa55
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5c3c57653899ce7d849eec72ad36f14f7806652c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930689"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049865"
 ---
 # <a name="intro-to-secure-windows-app-development"></a>安全開發 Windows 應用程式的簡介
 
 
 
 
-這篇簡介文章將協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
+這篇簡介文章可協助應用程式設計師和開發人員更清楚地了解建立安全的通用 Windows 平台 (UWP) 應用程式的各種 windows 10 平台功能。 文章會詳細說明如何在每個階段 (驗證、傳輸中資料及靜態資料) 中使用可用的 Windows 安全性功能。 如需深入了解每個主題，請檢視包含在每個章節中的額外資源。
 
 ## <a name="1-introduction"></a>1 簡介
 
@@ -96,7 +96,7 @@ app 會擔任代理人，透過 app 中的 [**WebView**](https://msdn.microsoft.
 
 如果通訊成功，則處理識別提供者傳回的回應字串。 如果失敗，則處理錯誤。
 
-下列為這個處理程序的 C# 程式碼範例。 如需資訊和詳細的逐步解說，請參閱 [WebAuthenticationBroker](web-authentication-broker.md)。 如需完整的程式碼範例，請查看 [GitHub 上的 WebAuthenticationBroker 範例](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
+下列為這個處理程序的 C# 程式碼範例。 如需資訊和詳細的逐步解說，請參閱 [WebAuthenticationBroker](web-authentication-broker.md)。 如需完整的程式碼範例，請查看 [GitHub 上的 WebAuthenticationBroker 範例](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>";
@@ -286,7 +286,7 @@ Azure API Management 也能減少針對某個服務的 API 呼叫數量 (稱為�
 
 Windows 過去從來沒有為應用程式下過定義。 它之前最常被稱為可執行檔 (.exe)，且從未包含安裝、儲存體狀態、執行長度、版本設定、作業系統整合，或是 app 之間的通訊。 通用 Windows 平台模型為應用程式模型下了定義，其定義涵蓋安裝、執行階段環境、資源管理、更新、資料模型，以及解除安裝。
 
-Windows 10 應用程式執行中的容器，這表示，他們的權限有限 （額外的權限可以要求並授與使用者） 的預設值。 舉例來說，如果應用程式要存取系統中的檔案，則必須使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間的檔案選擇器 ，來讓使用者挑選檔案 (而非啟用直接存取檔案的權限)。 我們再舉一個範例，如果應用程式要存取使用者的位置資料，它必須讓裝置的定位功能需求受到宣告，讓使用者在下載應用程式時，提示使用者該應用程式需要存取使用者的位置資訊。 除此之外，應用程式第一次要存取使用者的位置時，系統會顯示額外的同意提示，要求存取該資料的權限。
+在容器中，這表示，他們的權限有限 （額外的權限可以要求並授與使用者） 的預設，執行 windows 10 應用程式。 舉例來說，如果應用程式要存取系統中的檔案，則必須使用 [**Windows.Storage.Pickers**](https://msdn.microsoft.com/library/windows/apps/br207928) 命名空間的檔案選擇器 ，來讓使用者挑選檔案 (而非啟用直接存取檔案的權限)。 我們再舉一個範例，如果應用程式要存取使用者的位置資料，它必須讓裝置的定位功能需求受到宣告，讓使用者在下載應用程式時，提示使用者該應用程式需要存取使用者的位置資訊。 除此之外，應用程式第一次要存取使用者的位置時，系統會顯示額外的同意提示，要求存取該資料的權限。
 
 請注意，這個應用程式模型就像是應用程式的「監獄」，代表應用程式無法接觸外界，但它並非無法從外界接觸的「城堡」(擁有系統管理員權限的應用程式當然仍舊可以向內接觸)。 Windows 10 中的 Device Guard，可讓組織/IT 人員指定可執行的 (Win32) app，能進一步協助限制這項存取權。
 

@@ -8,12 +8,12 @@ keywords: Windows Ink, Windows 筆跡, DirectInk, InkPresenter, InkCanvas, 手�
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 07ed74af3ebe558c6a82cd799cb6aa1efa035e46
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 9bdd122f438cc9584b5e1eff2236c625adea9c2b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980376"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048981"
 ---
 # <a name="recognize-windows-ink-strokes-as-text-and-shapes"></a>將 Windows Ink 筆劃辨識為文字和圖案
 
@@ -369,7 +369,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
             new InkRecognizerContainer();
     ```
 
-    [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446)呼叫來擷取一組的[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)物件。
+    若要擷取一組[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)物件稱為[**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/br208446) 。
 
     針對每個[**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478)偵測到的文字產生辨識結果。
 
@@ -381,9 +381,9 @@ private void DrawText(string recognizedText, Rect boundingRect)
                 InkRecognitionTarget.All);
     ```
 
-    每個[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)物件包含一組文字候選項目。 這份清單中的最上層項目會被視為由辨識引擎是最佳相符項，後面接著遞減信賴等級的順序剩餘的候選項目。
+    每個[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)物件包含一組文字的候選項目。 在此清單中的最上層項目會被視為由辨識引擎是最佳相符項，後面接著遞減信賴等級的順序剩餘的候選項目。
 
-    我們會逐一查看每個[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464)並編譯的候選項目清單。 然後會顯示候選項目，並且[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)清除 （這也會清除[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)）。
+    我們會逐一查看每個[**InkRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/br208464) ，及編譯的候選項目清單。 然後會顯示候選項目，並且[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492)清除 （這也會清除[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)）。
 
     ```csharp
     string str = "Recognition result\n";
@@ -475,7 +475,7 @@ private void DrawText(string recognizedText, Rect boundingRect)
 
 您的應用程式可以查詢這組已安裝的手寫辨識引擎並使用其中一個，或者讓使用者選擇他們偏好的語言。
 
-**注意：** 使用者可以看到一份已安裝的語言，方式為前往**設定]-&gt;時間與語言**。 **\[語言\]** 下方會列出已安裝的語言。
+**注意：** 使用者可以看到一份已安裝的語言，方式為前往**設定]-&gt;時間 & 語言**。 **\[語言\]** 下方會列出已安裝的語言。
 
 若要安裝新的語言套件並針對該語言啟用手寫辨識：
 
@@ -862,9 +862,9 @@ string str = "Recognition result\n";
 * [筆跡手寫辨識範例 (C#)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-handwriting-reco.zip)
 
 **其他範例**
-* [簡單的筆跡範例 (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆跡範例 (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [筆跡範例 (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [簡單的筆跡範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雜的筆跡範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [筆跡範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [入門教學課程：UWP 應用程式中的支援筆跡](https://aka.ms/appsample-ink)
 * [著色本範例](https://aka.ms/cpubsample-coloringbook)
 * [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)

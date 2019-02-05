@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ad00090fdfc3ce7be34ef6271d16e76541b584bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 606cc68aafa4de110f034336cd5d18bd1426a0a7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920675"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047350"
 ---
 # <a name="raw-notification-overview"></a>原始通知概觀
 
@@ -113,7 +113,7 @@ ms.locfileid: "8920675"
 ## <a name="other-resources"></a>其他資源
 
 
-您可以進一步了解透過 Windows8.1，以及[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?LinkId=231476)下載[原始通知的範例](http://go.microsoft.com/fwlink/p/?linkid=241553)，如 Windows8.1，並重複使用其原始程式碼，在 windows 10 應用程式中。
+您可以進一步了解藉由下載適用於 windows 8.1，以及[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?LinkId=231476)的[原始通知的範例](https://go.microsoft.com/fwlink/p/?linkid=241553)，適用於 windows 8.1，並重複使用其原始程式碼，在 windows 10 應用程式中。
 
 ## <a name="related-topics"></a>相關主題
 

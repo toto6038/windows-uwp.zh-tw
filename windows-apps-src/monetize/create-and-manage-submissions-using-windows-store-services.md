@@ -6,12 +6,12 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API
 ms.localizationpriority: medium
-ms.openlocfilehash: 2122c259e78ce96c4553dd676c0c1ed78e4e7123
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 82e5ba10b8f0480f4d996840df26817e324111d8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922798"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049465"
 ---
 # <a name="create-and-manage-submissions"></a>建立及管理提交
 
@@ -27,13 +27,13 @@ ms.locfileid: "8922798"
 <span id="not_supported" />
 
 > [!IMPORTANT]
-> 如果您使用此 API 來建立應用程式的提交，套件正式或附加元件，請務必只透過使用 API，而不是在合作夥伴中心，對提交進行進一步的變更。 如果您使用合作夥伴中心來變更最初使用 API 所建立的提交，您將不再能夠變更或是認可該提交使用 API。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
+> 如果您使用此 API 建立的應用程式、 套件飛行，或附加元件提交，請務必提交進行進一步的變更，只能透過使用 API，而不是在合作夥伴中心。 您可以使用合作夥伴中心來變更最初使用 API 所建立的提交，您將無法再無法變更或是認可該提交使用 API。 有時候提交可能會處於錯誤狀態，而無法繼續提交過程。 若發生這種情形，您必須刪除提交並建立新的提交。
 
 > [!IMPORTANT]
 > 您無法使用此 API 來發佈 [透過商務用 Microsoft Store 和教育用 Microsoft Store 大量購買](../publish/organizational-licensing.md) 的提交或直接向企業發佈 [LOB 應用程式](../publish/distribute-lob-apps-to-enterprises.md) 的提交。 對於這些案例中，您必須使用在合作夥伴中心發佈提交。
 
 > [!NOTE]
-> 此 API 無法搭配應用程式或使用強制性應用程式更新以及 Microsoft Store 管理的可消耗附加元件的附加元件來使用。 如果您將 Microsoft Store 提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用合作夥伴中心來管理應用程式或附加元件提交。
+> 此 API 無法搭配應用程式或使用強制性應用程式更新以及 Microsoft Store 管理的可消耗附加元件的附加元件來使用。 如果您將 Microsoft Store 提交 API 用於使用上述其中一個功能的 App 或附加元件，API 將會傳回 409 錯誤碼。 在此情況下，您必須使用合作夥伴中心來管理應用程式或附加元件的提交。
 
 <span id="prerequisites" />
 
@@ -41,13 +41,13 @@ ms.locfileid: "8922798"
 
 開始撰寫程式碼以呼叫 Microsoft Store 提交 API 之前，請先確定您已完成下列先決條件。
 
-* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[建立新的 Azure AD，在合作夥伴中心中](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)沒有額外費用。
+* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](https://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[建立新的 Azure AD，在合作夥伴中心中](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)沒有額外費用。
 
 * 您必須[將 Azure AD 應用程式，您的合作夥伴中心帳戶產生關聯](#associate-an-azure-ad-application-with-your-windows-partner-center-account)，並取得您的租用戶識別碼、 用戶端識別碼和金鑰。 您需要這些值才能取得 Azure AD 存取權杖，您將會在呼叫 Microsoft Store 提交 API 時使用權杖。
 
 * 準備您的 App 與 Microsoft Store 提交 API 搭配使用︰
 
-  * 如果您的應用程式不在合作夥伴中心尚未存在，您必須[建立您的應用程式透過保留在合作夥伴中心中的其名稱](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 您無法使用 Microsoft Store 提交 API 來建立應用程式在合作夥伴中心;您必須使用合作夥伴中心建立它，並再之後，您可以使用 API 來存取 app，並以程式設計方式建立提交。 不過，您可以使用 API 以程式設計方式建立附加元件和套件正式發行前小眾測試版，再建立提交。
+  * 如果您的應用程式不在合作夥伴中心尚未存在，您必須[建立您的應用程式透過保留其名稱，在合作夥伴中心](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。 您無法使用 Microsoft Store 提交 API 來建立應用程式在合作夥伴中心;您必須使用合作夥伴中心建立它，並再之後，您可以使用 API 來存取 app，並以程式設計方式建立提交。 不過，您可以使用 API 以程式設計方式建立附加元件和套件正式發行前小眾測試版，再建立提交。
 
   * 您可以建立特定應用程式使用此 API 的提交之前，您必須第一次[建立一個合作夥伴中心中的應用程式提交](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，包括回答[年齡分級](https://msdn.microsoft.com/windows/uwp/publish/age-ratings)問卷。 執行這個動作之後，您就能夠使用 API 以程式設計方式建立此 App 的新提交。 您不需要先建立附加元件提交或套件正式發行前小眾測試版提交，才能使用 API 進行這些類型的提交。
 
@@ -66,9 +66,9 @@ ms.locfileid: "8922798"
 > [!NOTE]
 > 您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
-1.  在合作夥伴中心，[您組織的合作夥伴中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-partner-center.md)。
+1.  在合作夥伴中心，[將您組織的合作夥伴中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  接下來，從合作夥伴中心、[加入 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，代表應用程式或服務，您將會用來存取您的合作夥伴中心帳戶提交的**帳戶設定**\] 區段中的**使用者**頁面。 請確定您指派此應用程式 **[管理員]** 角色。 如果尚未應用程式不會存在於您的 Azure AD 目錄，您可以[建立新的 Azure AD 應用程式，在合作夥伴中心](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
+2.  接下來，從合作夥伴中心、[加入 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，代表應用程式或服務，您將用來存取您的合作夥伴中心帳戶提交的**帳戶設定**\] 區段中的 [**使用者**] 頁面。 請確定您指派此應用程式 **[管理員]** 角色。 如果尚未應用程式不會存在於您的 Azure AD 目錄，您可以[建立新的 Azure AD 應用程式，在合作夥伴中心](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。  
 
 3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
@@ -110,7 +110,7 @@ grant_type=client_credentials
 
 | 案例       | 描述                                                                 |
 |---------------|----------------------------------------------------------------------|
-| App |  擷取所有應用程式已登錄到您的合作夥伴中心帳戶，並建立應用程式提交的資料。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得 App 資料](get-app-data.md)</li><li>[管理 App 提交](manage-app-submissions.md)</li></ul> |
+| App |  擷取之所有 app 的已登錄到您的合作夥伴中心帳戶，並建立應用程式提交的資料。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[取得 App 資料](get-app-data.md)</li><li>[管理 App 提交](manage-app-submissions.md)</li></ul> |
 | 附加元件 | 取得、建立或刪除您 App 的附加元件，然後取得、建立或刪除附加元件的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[管理附加元件](manage-add-ons.md)</li><li>[管理附加元件提交](manage-add-on-submissions.md)</li></ul> |
 | 套件正式發行前小眾測試版 | 取得、建立或刪除您 App 的套件正式發行前小眾測試版，然後取得、建立或刪除套件正式發行前小眾測試版的提交。 如需這些方法的詳細資訊，請參閱下列文章： <ul><li>[管理套件正式發行前小眾測試版](manage-flights.md)</li><li>[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)</li></ul> |
 
@@ -144,7 +144,7 @@ grant_type=client_credentials
 如果您有 Microsoft Store 提交 API 的相關問題，或需要使用這個 API 管理提交的協助，請使用下列資源︰
 
 * 在我們的[論壇](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit)發問。
-* 請造訪我們的[支援頁面](https://developer.microsoft.com/windows/support)並要求一個合作夥伴中心的協助的支援選項。 如果系統提示您選擇問題類型以及類別，請分別選擇 **App 提交和認證**以及**提交 App**。  
+* 請造訪我們的[支援頁面](https://developer.microsoft.com/windows/support)，並要求一個協助的支援選項的合作夥伴中心。 如果系統提示您選擇問題類型以及類別，請分別選擇 **App 提交和認證**以及**提交 App**。  
 
 ## <a name="related-topics"></a>相關主題
 

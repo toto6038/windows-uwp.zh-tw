@@ -6,12 +6,12 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10 , UWP, 廣告, AdControl, 廣告控制項, XAML, .NET, 逐步解說
 ms.localizationpriority: medium
-ms.openlocfilehash: 161718bb88d7588db345f3de26de2a955ca6620e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8784de7025a2e9efa8e9e02be14c94579730a1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920406"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050185"
 ---
 # <a name="adcontrol-in-xaml-and-net"></a>XAML 和 .NET 中的 AdControl
 
@@ -19,11 +19,11 @@ ms.locfileid: "8920406"
 本文會逐步說明如何在使用 C# 實作的適用於 Windows 10 的通用 Windows 平台 (UWP) XAML 應用程式中，使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別來顯示橫幅廣告。
 
 > [!NOTE]
-> Microsoft Advertising SDK 也支援使用 C++ 實作的 XAML 應用程式。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+> Microsoft Advertising SDK 也支援使用 C++ 實作的 XAML 應用程式。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
 
 ## <a name="prerequisites"></a>必要條件
 
-* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="integrate-a-banner-ad-into-your-app"></a>將橫幅廣告整合至您的應用程式
 
@@ -149,5 +149,5 @@ ms.locfileid: "8920406"
 
 * [橫幅廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
 * [XAML/C# 錯誤處理的逐步解說](error-handling-in-xamlc-walkthrough.md)。
-* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [GitHub 上的廣告範例](https://aka.ms/githubads)
 * [為您的 App 設定廣告單元](set-up-ad-units-in-your-app.md)

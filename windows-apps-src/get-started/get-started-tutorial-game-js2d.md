@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: ae8daa6141eadaac699fc49b8ec4796f1dde5c91
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3527cae294f2268b2457b9fe9a6593cf1b539ee8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923812"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050145"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -26,11 +26,11 @@ ms.locfileid: "8923812"
 
 應用程式發佈至 Microsoft Store，意味著您可以分享 （或賣 ！） 給數百萬使用者，在許多不同的裝置上。  
 
-為了將您的應用程式發行至 Microsoft Store，必須撰寫為 UWP （通用 Windows 平台） 應用程式。 不過 UWP 非常有彈性，可支援各種不同的語言版本及架構。 若要證明這點，此範例是以 JavaScript 撰寫的簡單遊戲，使用數個 CreateJS 程式庫，並示範如何繪圖 Sprite、建立遊戲迴圈、支援鍵盤與滑鼠，以及適應不同的螢幕大小。
+為了將您的應用程式發佈至 Microsoft Store，必須撰寫為 UWP （通用 Windows 平台） app。 不過 UWP 非常有彈性，可支援各種不同的語言版本及架構。 若要證明這點，此範例是以 JavaScript 撰寫的簡單遊戲，使用數個 CreateJS 程式庫，並示範如何繪圖 Sprite、建立遊戲迴圈、支援鍵盤與滑鼠，以及適應不同的螢幕大小。
 
 這個專案是使用 Visual Studio 以 JavaScript 建置而成。 只要某些小變更，它也可以裝載於網站，或是適用於其他平台。 
 
-**注意：** 這並非完整 （或好 ！） 的遊戲;設計目的是示範使用 JavaScript 和協力廠商程式庫，建立可發佈至 Microsoft Store 的 app。
+**附註：** 這並非完整 （或好 ！） 的遊戲;設計目的是示範使用 JavaScript 和協力廠商程式庫，建立可發佈至 Microsoft Store 的 app。
 
 
 ## <a name="requirements"></a>需求
@@ -38,9 +38,9 @@ ms.locfileid: "8923812"
 若要試用這個專案，您將需要下列各項：
 
 * 執行 Windows 10 目前版本的 Windows 的電腦（或虛擬機器）。
-* 一份 Visual Studio 複本。 您可以從 [Visual Studio 首頁](http://visualstudio.com)下載免費的 Visual Studio Community Edition。
+* 一份 Visual Studio 複本。 您可以從 [Visual Studio 首頁](https://visualstudio.com)下載免費的 Visual Studio Community Edition。
 
-這個專案利用 CreateJS JavaScript 架構。 CreateJS 是一套免費工具，根據 MIT 授權，可讓您輕鬆地建立以 Sprite 為基礎的遊戲。 CreateJS 程式庫已存在專案中 (在方案總管檢視中尋找 *js/easeljs-0.8.2.min.js*，以及 *js/preloadjs-0.6.2.min.js*)。 您可以在 [CreateJS 首頁](http://www.createjs.com)找到有關 CreateJS 的資訊。
+這個專案利用 CreateJS JavaScript 架構。 CreateJS 是一套免費工具，根據 MIT 授權，可讓您輕鬆地建立以 Sprite 為基礎的遊戲。 CreateJS 程式庫已存在專案中 (在方案總管檢視中尋找 *js/easeljs-0.8.2.min.js*，以及 *js/preloadjs-0.6.2.min.js*)。 您可以在 [CreateJS 首頁](https://www.createjs.com)找到有關 CreateJS 的資訊。
 
 
 ## <a name="getting-started"></a>開始使用
@@ -69,7 +69,7 @@ app 的完整原始碼儲存在 [GitHub](https://github.com/Microsoft/Windows-ap
 
 ## <a name="walkthough"></a>逐步解說
 
-如果您按 F5 開始遊戲時，您可能想知道發生什麼事。 答案並 「 不多 」，因為許多程式碼是目前已標示註解。到目前為止，您會看到所有是恐龍，以及按下空格鍵的無力請求。 
+如果您按 F5 開始遊戲時，您可能想知道發生什麼事。 並答案 「 不多 」，因為許多程式碼目前已標示註解。到目前為止，您會看到所有是恐龍，以及按下空格鍵的無力請求。 
 
 ### <a name="1-setting-the-stage"></a>1. 設定舞台
 
@@ -134,7 +134,7 @@ EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立�
     ];
 ```
 
-JavaScript 在載入資源時 (例如影像) 需要一點協助，所以我們使用可以預先載入影像的 CreateJS 程式庫功能，稱為 [LoadQueue](http://www.createjs.com/docs/preloadjs/classes/LoadQueue.html)。 我們無法確定載入影像需要多久，所以我們使用 LoadQueue 來處理它。 當有可用的影像時，佇列會告訴我們影像已就緒。 若要這樣做，我們先建立可列出所有影像的新物件，然後我們建立 LoadQueue 物件。 在下面的程式碼，您會看到如何設定此物件，以便在一切已準備就緒時呼叫 **loadingComplete()** 函式。
+JavaScript 在載入資源時 (例如影像) 需要一點協助，所以我們使用可以預先載入影像的 CreateJS 程式庫功能，稱為 [LoadQueue](https://www.createjs.com/docs/preloadjs/classes/LoadQueue.html)。 我們無法確定載入影像需要多久，所以我們使用 LoadQueue 來處理它。 當有可用的影像時，佇列會告訴我們影像已就緒。 若要這樣做，我們先建立可列出所有影像的新物件，然後我們建立 LoadQueue 物件。 在下面的程式碼，您會看到如何設定此物件，以便在一切已準備就緒時呼叫 **loadingComplete()** 函式。
 
 ```
     // Now we create a special queue, and finally a handler that is
@@ -162,9 +162,9 @@ JavaScript 在載入資源時 (例如影像) 需要一點協助，所以我們�
 
 ### <a name="3-moving-the-clouds"></a>3. 移動雲朵
 
-現在我們要讓雲朵移動。 移動雲朵 - 事實上移動任何項目 - 的秘密是，設定每秒重複呼叫多次的 [ticker](http://www.createjs.com/docs/easeljs/classes/Ticker.html) 函式。 每次呼叫這個函式，它便會在稍微不同的地方重新繪製圖形。
+現在我們要讓雲朵移動。 移動雲朵 - 事實上移動任何項目 - 的秘密是，設定每秒重複呼叫多次的 [ticker](https://www.createjs.com/docs/easeljs/classes/Ticker.html) 函式。 每次呼叫這個函式，它便會在稍微不同的地方重新繪製圖形。
 
-<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">請參閱由 Microsoft Edge Docs (<a href="http://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) 發佈到 <a href="http://codepen.io">CodePen</a> 的 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 以動畫顯示雲朵</a>。</p>
+<p data-height="500" data-theme-id="23761" data-slug-hash="vxZVRK" data-default-tab="result" data-user="MicrosoftEdgeDocumentation" data-embed-version="2" data-pen-title="CreateJS - Animating clouds" data-preview="true" data-editable="true" class="codepen">請參閱由 Microsoft Edge Docs (<a href="https://codepen.io/MicrosoftEdgeDocumentation">@MicrosoftEdgeDocumentation</a>) 發佈到 <a href="https://codepen.io">CodePen</a> 的 Pen <a href="https://codepen.io/MicrosoftEdgeDocumentation/pen/vxZVRK/">CreateJS - 以動畫顯示雲朵</a>。</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
  
 若要這樣做的程式碼已在 **main.js** 檔案中，由 CreateJS 程式庫 EaselJS 所提供的。 它的外觀如下：
@@ -217,7 +217,7 @@ function animate_clouds()
 
 現在，我們有兩個函式，當玩家按下鍵盤按鍵或按一下滑鼠時呼叫它們。 這兩個事件都會呼叫 **userDidSomething()**，這個函式會查看 gamestate 變數，決定遊戲目前執行的動作，以及因此接下來需要發生的動作。
 
-Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都是在 ticker 計時器所呼叫的 **gameLoop()** 函式中發生。 gameLoop() 追蹤正在玩遊戲狀態中、處於「遊戲結束狀態」或「準備玩遊戲狀態」或作者使用變數定義的其他狀態。 這個 state 變數在切換陳述式中進行測試，它會定義要呼叫哪些其他的功能。 因此如果狀態設定為 "playing"，就會呼叫可讓恐龍跳躍以及讓桶子移動的函式。 如果恐龍被殺死，gamestate 變數將設為 "game over state"，而且「遊戲結束！」 訊息將會顯示。 如果您對遊戲設計模式感興趣，[遊戲程式設計模式](http://gameprogrammingpatterns.com/)這本書非常有幫助。
+Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都是在 ticker 計時器所呼叫的 **gameLoop()** 函式中發生。 gameLoop() 追蹤正在玩遊戲狀態中、處於「遊戲結束狀態」或「準備玩遊戲狀態」或作者使用變數定義的其他狀態。 這個 state 變數在切換陳述式中進行測試，它會定義要呼叫哪些其他的功能。 因此如果狀態設定為 "playing"，就會呼叫可讓恐龍跳躍以及讓桶子移動的函式。 如果恐龍被殺死，gamestate 變數將設為 "game over state"，而且「遊戲結束！」 訊息將會顯示。 如果您對遊戲設計模式感興趣，[遊戲程式設計模式](https://gameprogrammingpatterns.com/)這本書非常有幫助。
 
 請再次嘗試執行 app，最後您就可以開始玩遊戲。 按空格鍵（或按一下滑鼠，或輕觸螢幕）即可開始遊戲。 
 
@@ -265,13 +265,13 @@ Gamestate 是遊戲中使用的常見設計模式。 發生的所有項目，都
 2. 您必須使用 App 提交[檢查清單](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)。
 3. 必須提交 App 以取得[認證](https://msdn.microsoft.com/windows/uwp/publish/the-app-certification-process)。
 
-如需詳細資訊，請參閱[發佈您的 UWP 應用程式](https://developer.microsoft.com/en-us/store/publish-apps)。
+如需詳細資訊，請參閱[發佈您的 UWP app](https://developer.microsoft.com/en-us/store/publish-apps)。
 
 ## <a name="suggestions-for-other-features"></a>其他功能的建議。
 
 接下來該怎麼辦？ 以下是幾個功能建議，可新增至您的（即將）獲獎的應用程式。
 
-1. 音效。 CreateJS 程式庫在 [SoundJS](http://www.createjs.com/soundjs) 程式庫中包含對音效的支援。
+1. 音效。 CreateJS 程式庫在 [SoundJS](https://www.createjs.com/soundjs) 程式庫中包含對音效的支援。
 2. 遊戲台支援。 有 [API 可用](https://gamedevelopment.tutsplus.com/tutorials/using-the-html5-gamepad-api-to-add-controller-support-to-browser-games--cms-21345)。
 3. 讓您的遊戲變得更更好！ 這個部分操之在您，但有許多線上資源可以使用。 
 
