@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地圖服務
 ms.localizationpriority: medium
-ms.openlocfilehash: aea553a46357a26028848db5ff0e9b5debbeae56
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3482370719a658f303964204661f1fb5d69ae5b4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930903"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044808"
 ---
 # <a name="maps-and-location-overview"></a>地圖和位置概觀
 
@@ -21,9 +21,9 @@ ms.locfileid: "8930903"
 本節說明如何在您的 app 中顯示地圖、使用地圖服務、尋找位置，以及設定地理柵欄。 本節也示範如何將 Windows 地圖 app 啟動到特定地圖、路線或一組轉向建議導航路線指引。
 
 > [!TIP]
-> 若要深入了解您的應用程式中使用地圖和位置，請從 GitHub 上的[Windows 通用範例存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
--   [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
+> 若要深入了解使用地圖和位置，您的應用程式中，請從 GitHub 上的[Windows 通用範例存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
+-   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 
  
 
@@ -51,7 +51,7 @@ ms.locfileid: "8930903"
 | [在地圖上顯示興趣點 (POI)](display-poi.md) | 藉由使用圖釘、影像、形狀及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 |
 | [顯示路線和路線指引](routes-and-directions.md) | 要求路線和路線指引，並將它們顯示在您的 app 中。 |
 | [執行地理編碼和反向地理編碼](geocoding.md) | 呼叫 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中 [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) 類別的方法，將地址轉換成地理位置 (地理編碼) 以及將地理位置轉換成地址 (反向地理編碼)。 |
-| [尋找並下載地圖套件以供離線使用](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在過去，您的應用程式必須將使用者引導到設定應用程式下載離線地圖。 現在，您可以使用[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空間中的類別，來尋找下載的套件中指定的區域 （根據[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint) [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)、 等等。）。 <br> 您可以也檢查和接聽下載地圖套件的狀態，以及啟動下載，而不需要使用者離開您的應用程式。 <br> 您會發現如何執行此動作參考內容和[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)中的範例。
+| [尋找並下載地圖套件以供離線使用](https://docs.microsoft.com/uwp/api/windows.services.maps.offlinemaps)| 在過去，您的應用程式必須將使用者引導到設定應用程式下載離線地圖。 現在，您可以使用[Windows.Services.Maps.OfflineMaps](https://docs.microsoft.com/en-us/uwp/api/windows.services.maps.offlinemaps)命名空間中的類別，來尋找下載的套件 （根據[Geopoint](https://docs.microsoft.com/uwp/api/Windows.Devices.Geolocation.Geopoint) [GeoboundingBox](https://docs.microsoft.com/en-us/uwp/api/windows.devices.geolocation.geoboundingbox)、 等等。） 在指定區域中。 <br> 您可以也檢查和接聽下載地圖套件的狀態，以及啟動下載，而不需要使用者離開您的應用程式。 <br> 您會發現如何執行此動作參考內容和[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)中的範例。
 
 ## <a name="get-the-users-location"></a>取得使用者的位置
 
@@ -74,12 +74,12 @@ ms.locfileid: "8930903"
 
 ## <a name="related-topics"></a>相關主題
 
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
 * [取得目前的位置](get-location.md)
 * [定位感知 app 的設計指導方針](guidelines-and-checklist-for-detecting-location.md)
 * [地圖的設計指導方針](controls-map.md)
 * [隱私權感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh768223)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

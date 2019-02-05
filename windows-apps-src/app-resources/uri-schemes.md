@@ -6,12 +6,12 @@ ms.date: 10/16/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 345a41a45e28843161e65ecb04f0083f1a71269a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b449179468d26c357e69ad1d8868004cadd6e2fa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942844"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048345"
 ---
 # <a name="uri-schemes"></a>URI 配置
 
@@ -19,9 +19,9 @@ ms.locfileid: "8942844"
 
 ## <a name="common-features-of-the-uri-schemes"></a>URI 配置的一般功能
 
-本主題說明的所有配置都遵循正規化及資源擷取的一般 URI 配置規則。 如需了解 URI 的一般語法，請參閱 [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444)。
+本主題說明的所有配置都遵循正規化及資源擷取的一般 URI 配置規則。 如需了解 URI 的一般語法，請參閱 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444)。
 
-所有的 URI 配置都會根據 [RFC 3986](http://go.microsoft.com/fwlink/p/?LinkId=263444) 將階層式組件定義為 URI 的授權單位及路徑元件。
+所有的 URI 配置都會根據 [RFC 3986](https://go.microsoft.com/fwlink/p/?LinkId=263444) 將階層式組件定義為 URI 的授權單位及路徑元件。
 
 ```syntax
 URI         = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
@@ -267,7 +267,7 @@ ms-resource:///Hello%23World/String1
 
 ## <a name="related-topics"></a>相關主題
 
-* [統一資源識別項 (URI)：一般語法](http://go.microsoft.com/fwlink/p/?LinkId=263444)
+* [統一資源識別項 (URI)：一般語法](https://go.microsoft.com/fwlink/p/?LinkId=263444)
 * [封裝應用程式](../packaging/index.md)
 * [從 XAML 標記和程式碼參考影像或其他資產](images-tailored-for-scale-theme-contrast.md#reference-an-image-or-other-asset-from-xaml-markup-and-code)
 * [儲存和擷取設定及其他應用程式資料](../design/app-settings/store-and-retrieve-app-data.md)

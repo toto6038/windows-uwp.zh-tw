@@ -6,17 +6,17 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: windows 10, uwp, 網路功能, websocket, messagewebsocket, streamwebsocket
 ms.localizationpriority: medium
-ms.openlocfilehash: 05f56f07aed0c9f97daffe3842952ce142f8159a
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: 8af1f478bc466719eef3c5e19d055ac6073a0b11
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035409"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045404"
 ---
 # <a name="websockets"></a>WebSocket
 WebSocket 提供了一項機制，可讓用戶端與伺服器之間透過使用 HTTP(S) 的 Web 快速且安全地進行雙向通訊，並支援 UTF-8 和二進位訊息。
 
-在 [WebSocket 通訊協定](http://tools.ietf.org/html/rfc6455)下，資料會立即透過全雙工單一通訊端連線來傳輸，因此能即時從這兩個端點傳送與接收訊息。 WebSocket 十分適用於多人遊戲 (即時和回合制)、立即社交網路通知、最新股價或天氣資訊顯示，以及需要安全和快速資料傳輸的其他應用程式。
+在 [WebSocket 通訊協定](https://tools.ietf.org/html/rfc6455)下，資料會立即透過全雙工單一通訊端連線來傳輸，因此能即時從這兩個端點傳送與接收訊息。 WebSocket 十分適用於多人遊戲 (即時和回合制)、立即社交網路通知、最新股價或天氣資訊顯示，以及需要安全和快速資料傳輸的其他應用程式。
 
 要建立 WebSocket 連線，用戶端和伺服器之間會交換以 HTTP 為基礎的特定交握。 如果成功，應用程式層通訊協定會從 HTTP「升級」為 WebSockets，使用先前建立的 TCP 連線。 當發生這種情形時，HTTP 會完全退場；端點使用 WebSocket 通訊協定傳送或接收資料，直到 WebSocket 連線關閉為止。
 
@@ -834,8 +834,8 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相關主題
-* [WebSocket 通訊協定](http://tools.ietf.org/html/rfc6455)
+* [WebSocket 通訊協定](https://tools.ietf.org/html/rfc6455)
 * [通訊端](sockets.md)
 
 ## <a name="samples"></a>範例
-* [WebSocket 範例](http://go.microsoft.com/fwlink/p/?LinkId=620623)
+* [WebSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620623)

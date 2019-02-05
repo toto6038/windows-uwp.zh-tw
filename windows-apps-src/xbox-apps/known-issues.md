@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a7b82570-1f99-4bc3-ac78-412f6360e936
 ms.localizationpriority: medium
-ms.openlocfilehash: 55068ef3f0a0a0d01c61746bde02ddb7aa4ef885
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 01bc72051e9efa69adbbab574b932da829c83e72
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923564"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046531"
 ---
 # <a name="known-issues-with-uwp-on-xbox-developer-program"></a>Xbox 開發人員計畫上的 UWP 已知問題
 
 本主題說明 Xbox One 開發人員計畫上的 UWP 已知問題。 如需此計畫的詳細資訊，請參閱 [Xbox 上的 UWP](index.md)。 
 
-\[如果您是透過 API 參考主題中的連結來到這裡，並在尋找通用裝置系列 API 的資訊，請參閱[尚未在 Xbox 上支援的 UWP 功能](http://go.microsoft.com/fwlink/?LinkID=760755) (英文)。\]
+\[如果您是透過 API 參考主題中的連結來到這裡，並在尋找通用裝置系列 API 的資訊，請參閱[尚未在 Xbox 上支援的 UWP 功能](https://go.microsoft.com/fwlink/?LinkID=760755) (英文)。\]
 
 下列清單將針對您可能遇到的一些已知問題進行重點提示，但這並不是完整的清單。 
 
@@ -56,11 +56,11 @@ System.UnauthorizedAccessException: Access is denied. (Excep_FromHResult 0x80070
 
 ## <a name="blocked-networking-ports-on-xbox-one"></a>Xbox One 上的已封鎖網路連接埠
 
-Xbox One 裝置上的通用 Windows 平台 (UWP) 應用程式具有無法繫結至 [57344, 65535] (包含此項) 範圍中之連接埠的限制。 雖然於執行階段期間繫結至這些連接埠時，看起來可能已成功，不過網路流量在抵達應用程式之前可能便已無訊息地被捨棄。 您的應用程式應該在可行的情況下繫結至連接埠 0，這將能允許系統選取本機連接埠。 如果您需要使用特定的連接埠，連接埠號碼必須位於 [1025, 49151] 的範圍內，而您也應該檢查並避免與 IANA 登錄發生衝突。 如需詳細資訊，請參閱[服務名稱與傳輸通訊協定連接埠號碼登錄 (英文)](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
+Xbox One 裝置上的通用 Windows 平台 (UWP) 應用程式具有無法繫結至 [57344, 65535] (包含此項) 範圍中之連接埠的限制。 雖然於執行階段期間繫結至這些連接埠時，看起來可能已成功，不過網路流量在抵達應用程式之前可能便已無訊息地被捨棄。 您的應用程式應該在可行的情況下繫結至連接埠 0，這將能允許系統選取本機連接埠。 如果您需要使用特定的連接埠，連接埠號碼必須位於 [1025, 49151] 的範圍內，而您也應該檢查並避免與 IANA 登錄發生衝突。 如需詳細資訊，請參閱[服務名稱與傳輸通訊協定連接埠號碼登錄 (英文)](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)。
 
 ## <a name="uwp-api-coverage"></a>UWP API 涵蓋範圍
 
-並非所有的 UWP API 都在 Xbox 上受到支援。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](http://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果您發現其他 API 問題，請在論壇上報告它們。 
+並非所有的 UWP API 都在 Xbox 上受到支援。 如需取得已知無法運作的 API 清單，請參閱[尚未在 Xbox 上支援的 UWP 功能 (英文)](https://go.microsoft.com/fwlink/p/?LinkId=760755)。 如果您發現其他 API 問題，請在論壇上報告它們。 
 
 
 ## <a name="navigating-to-wdp-causes-a-certificate-warning"></a>瀏覽到 WDP 會導致憑證警告

@@ -7,12 +7,12 @@ ms.date: 11/07/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: e8a2b0125944a8a4db66b41d26fcd4a0aa35b5b2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d641bcff48b830c56a1d03ee861ec2a4c5f433b6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933748"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048605"
 ---
 # <a name="globalize-your-datetimenumber-formats"></a>全球化您的日期/時間/數字格式
 
@@ -173,7 +173,7 @@ ms.locfileid: "8933748"
 
 ## <a name="samples"></a>範例
 
-* [行事曆詳細資料及數學範例](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [日期和時間格式化範例](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [全球化喜好設定範例](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [數字格式化及剖析範例](http://go.microsoft.com/fwlink/p/?linkid=231620)
+* [行事曆詳細資料及數學範例](https://go.microsoft.com/fwlink/p/?linkid=231636)
+* [日期和時間格式化範例](https://go.microsoft.com/fwlink/p/?linkid=231618)
+* [全球化喜好設定範例](https://go.microsoft.com/fwlink/p/?linkid=231608)
+* [數字格式化及剖析範例](https://go.microsoft.com/fwlink/p/?linkid=231620)

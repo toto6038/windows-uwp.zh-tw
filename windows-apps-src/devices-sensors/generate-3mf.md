@@ -9,12 +9,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ac71b1fd876c5fec67bcdc292f407a04211de88c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a3615dac98c5bc8469c8c8ebc47ef718c0131844
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927684"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048435"
 ---
 # <a name="generate-a-3mf-package"></a>產生 3MF 套件
 
@@ -29,7 +29,7 @@ ms.locfileid: "8927684"
 3D 製造格式 (3MF) 是一組慣例，基於製造 (3D 列印) 而使用 XML 來描述 3D 模型的外觀和結構。
  它定義一組組件 (一些是必要組件，一些是選用組件) 與其關係，目標是將所有必要資訊提供給 3D 製造裝置。 遵守 3D 製造格式的資料集可以儲存為副檔名為 .3mf 的檔案。
 
-在 windows 10， **Windows.Graphics.Printing3D**命名空間中的[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)類別是單一.3mf 檔案類似，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。
+Windows 10 的**Windows.Graphics.Printing3D**命名空間中的[**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx)類別類似與單一.3mf 檔案，而其他類別則對應到檔案中的特定 XML 元素。 本指南描述如何透過程式設計方式建立和設定 3MF 文件的每個主要組件、如何使用 3MF 材質延伸，以及 **Printing3D3MFPackage** 物件如何轉換和儲存為 .3mf 檔案。 如需 3MF 或 3MF 材質延伸標準的詳細資訊，請參閱 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
@@ -44,7 +44,7 @@ ms.locfileid: "8927684"
 
 ## <a name="metadata"></a>中繼資料
 
-3MF 文件的模型組件可以保留中繼資料，並以字串的機碼/值組形式儲存在 **Metadata** 屬性中。 會有一些預先定義的中繼資料名稱，但其他組可以新增為延伸的一部分 (詳述於 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)中)。 是由套件的接收者 (3D 製造裝置) 判斷是否處理中繼資料和其作法，但最好在 3MF 套件中包括最多的基本資訊：
+3MF 文件的模型組件可以保留中繼資料，並以字串的機碼/值組形式儲存在 **Metadata** 屬性中。 會有一些預先定義的中繼資料名稱，但其他組可以新增為延伸的一部分 (詳述於 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)中)。 是由套件的接收者 (3D 製造裝置) 判斷是否處理中繼資料和其作法，但最好在 3MF 套件中包括最多的基本資訊：
 
 [!code-cs[Metadata](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetMetadata)]
 

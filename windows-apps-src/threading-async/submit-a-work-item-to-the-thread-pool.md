@@ -6,16 +6,16 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
-ms.openlocfilehash: 08608bc5715031f9ddf5b6bec05e7c86737f7e10
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981372"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048615"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 <b>重要 API</b>
 
@@ -350,7 +350,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-您可以進一步了解從中[建立 ThreadPool 工作項目範例](http://go.microsoft.com/fwlink/p/?LinkID=328569)為 Windows8.1，撰寫此快速入門下載程式碼並重複使用原始程式碼在 win\_unap windows 10 應用程式。
+您可以進一步了解從中[建立 ThreadPool 工作項目範例](https://go.microsoft.com/fwlink/p/?LinkID=328569)撰寫的適用於 windows 8.1，此快速入門下載程式碼並重複使用在 win\_unap windows 10 應用程式中的原始碼。
 
 ## <a name="related-topics"></a>相關主題
 

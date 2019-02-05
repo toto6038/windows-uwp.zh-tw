@@ -6,21 +6,21 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 開發人員帳戶, 個人, 公司, 商務
 ms.localizationpriority: medium
-ms.openlocfilehash: 3163b4c89cc1d0bf3e4adfdea39222dfcb5a3ee1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9fda6fc33ab82283047e4bdf4b78d21f78a577c9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934633"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045707"
 ---
 # <a name="account-types-locations-and-fees"></a>帳戶類型、位置和費用
 
-Windows 程式[合作夥伴中心](https://partner.microsoft.com/dashboard)供應項目在這兩個個人與公司帳戶許多[國家和地區](#developer-account-and-app-submission-markets)。 任一種類型的帳戶可讓您存取應用程式發行至市集，並參與其他的 Microsoft 計劃中。
+Windows 程式[合作夥伴中心](https://partner.microsoft.com/dashboard)供應項目在這兩個個人和公司帳戶，在許多[國家與地區](#developer-account-and-app-submission-markets)。 任一種類型的帳戶可讓您存取應用程式發行至市集，並參與其他的 Microsoft 計劃中。
 
 > [!NOTE]
 > 當開啟您的開發人員帳戶，請確定您想要針對您的開發人員帳戶使用的 Microsoft 帳戶登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。 您將可以選擇稍後[將其他使用者新增至帳戶](manage-account-users.md)。
 
-當您[開始註冊程序](http://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
+當您[開始註冊程序](https://go.microsoft.com/fwlink/p/?LinkId=615100)時，必須選擇要建立個人帳戶或公司帳戶。 兩種帳戶類型都允許您提交應用程式、遊戲、增益集與服務。
 
 公司帳戶則適用於組織與企業。 對於公司帳戶，我們會要求較高的[驗證](#account-verification)，以確認您已獲授權進行公司的帳戶設定。 個人帳戶通常適用於獨立作業的單一開發人員，雖然您可以選擇將其他帳戶使用者新增至任一種類型的帳戶。
 
@@ -33,7 +33,7 @@ Windows 程式[合作夥伴中心](https://partner.microsoft.com/dashboard)供�
 |--------------------|-----------------|
 | <ul><li>需花費約 $19 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>較短的帳戶驗證程序</li></ul> | <ul><li>需花費約 $99 美元 (一次性註冊費用；確切金額需視您國家或地區的貨幣而定)</li><li>要求較高的帳戶驗證</li><li>需要您的公司在所在的國家或地區是已被認可的公司</li><li>能夠提交有限功能的應用程式 (如[Microsoft Store 原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)中所述)</li></ul> |
 
-公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個 「[市集原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，應用程式，某些功能，例如存取金融帳戶資訊或需要存取主要功能 （而不使用安全專用的第三方驗證提供者）、 驗證只可以發行的公司帳戶。
+公司帳戶的費用稍微高一些，主要是因為我們採取一些額外步驟來確保您已獲得授權代表您的公司設定帳戶。 每個 「[市集原則](https://docs.microsoft.com/legal/windows/agreements/store-policies#1014-account-type)，應用程式，某些功能，例如存取金融帳戶資訊或需要存取主要功能 （而不使用安全專用的第三方驗證提供者）、 驗證只可以發佈的公司帳戶。
 
 ## <a name="account-verification"></a>帳戶驗證
 

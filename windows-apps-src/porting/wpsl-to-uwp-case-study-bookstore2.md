@@ -1,34 +1,34 @@
 ---
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: 這個案例研究，根據 Bookstore 中提供的資訊，顯示分組資料在 LongListSelector 中的 WindowsPhone Silverlight 應用程式的開頭。
+description: 這個案例研究，Bookstore 中提供的資訊為基礎，是從 WindowsPhone Silverlight 應用程式顯示分組資料在 LongListSelector 中的開始。
 title: WindowsPhone Silverlight 至 UWP 案例研究： Bookstore2
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b75da7d50135ee8d40f8ed44f0239edb54dcf65
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ae1b0c272af5939deba73ff7a07797207d7caaa4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945880"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048175"
 ---
 # <a name="windowsphone-silverlight-to-uwp-case-study-bookstore2"></a>WindowsPhone Silverlight 至 UWP 案例研究： Bookstore2
 
 
-這個案例研究 — 根據[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)中的資訊來建置 — 是從開始顯示分組資料在**LongListSelector**中的 WindowsPhone Silverlight 應用程式。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們逐步解說將 app 移植到 Windows10Universal Windows 平台 (UWP) 應用程式的步驟。
+這個案例研究 — 根據[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)中的資訊來建置 — 是從 WindowsPhone Silverlight 應用程式顯示分組資料在**LongListSelector**中的開始。 在檢視模型中，每個 **Author** 類別執行個體都代表該作者所著之書籍的群組，而在 **LongListSelector** 中，我們可以檢視依作者分組的書籍清單，或是縮小來查看作者的捷徑清單。 與捲動書籍清單相比，捷徑清單可提供更快速的瀏覽。 我們逐步解說將 app 移植到 Windows10Universal Windows 平台 (UWP) 應用程式的步驟。
 
-**注意：** 時在 Visual Studio 中開啟 Bookstore2Universal\_10，如果您看見 「 需要 Visual Studio 更新 」，則請依照目標平台版本設定[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步驟。
+**注意：** 時在 Visual Studio 中開啟 Bookstore2Universal\_10，如果您看見 「 需要 Visual Studio 更新 」，則請依照設定目標平台版本[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步驟。
 
 ## <a name="downloads"></a>下載
 
-[下載 Bookstore2WPSL8 WindowsPhone Silverlight 應用程式](http://go.microsoft.com/fwlink/p/?linkid=522601)。
+[下載 Bookstore2WPSL8 WindowsPhone Silverlight 應用程式](https://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-[下載 Bookstore2Universal\_10 windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532952)。
+[下載 Bookstore2Universal\_10 windows 10 應用程式](https://go.microsoft.com/fwlink/?linkid=532952)。
 
 ##  <a name="the-windowsphone-silverlight-app"></a>WindowsPhone Silverlight 應用程式
 
-下圖示範 Bookstore2WPSL8 (我們即將移植的 app 看起來的樣子)。 它是依作者分組的書籍垂直捲動 **LongListSelector**。 您可以縮小至捷徑清單，然後從該處往回瀏覽至任何群組。 此應用程式有兩個主要部分：提供分組資料來源的檢視模型，以及繫結至該檢視模型的使用者介面。 如同我們將看到的這兩個部分都可輕鬆從 WindowsPhone Silverlight 技術的移植到通用 Windows 平台 (UWP)。
+下圖示範 Bookstore2WPSL8 (我們即將移植的 app 看起來的樣子)。 它是依作者分組的書籍垂直捲動 **LongListSelector**。 您可以縮小至捷徑清單，然後從該處往回瀏覽至任何群組。 此應用程式有兩個主要部分：提供分組資料來源的檢視模型，以及繫結至該檢視模型的使用者介面。 如我們所見，這兩個部分都可輕鬆從 WindowsPhone Silverlight 技術的移植到通用 Windows 平台 (UWP)。
 
 ![bookstore2wpsl8 的外觀](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "8945880"
 編輯您剛才複製的原始程式碼與標記檔案，並將對 Bookstore2WPSL8 命名空間的任何參考變更為參考 Bookstore2Universal\_10。 執行此作業的快速方法是使用 **\[檔案中取代\]** 功能。 在檢視模型原始程式檔的命令式程式碼中，需要進行下列移植變更。
 
 -   將 `System.ComponentModel.DesignerProperties` 變更為 `DesignMode`，然後對其使用 **\[解析\]** 命令。 刪除 `IsInDesignTool` 屬性，然後使用 IntelliSense 來新增正確的屬性名稱：`DesignModeEnabled`。
--   對 `ImageSource` 使用 **\[解析\]** 命令。
+-   對 `ImageSource` 使用 [解析] 命令。
 -   對 `BitmapImage` 使用 **\[解析\]** 命令。
 -   刪除 `using System.Windows.Media;` 和 `using System.Windows.Media.Imaging;`。
 -   將 **Bookstore2Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE2WPSL8" 變更為 "BOOKSTORE2UNIVERSAL"。
@@ -120,7 +120,7 @@ ms.locfileid: "8945880"
 
 ![行動裝置上包含初始原始程式碼變更的 UWP app](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-雖然檢視模型和放大和縮小檢視正常運作，我們還需要處理一些樣式與範本方面的工作。 例如，正確的樣式和筆刷尚未用不，因此看不見您可以按一下來放大的群組標頭上的文字。如果您在桌面裝置上執行應用程式，您會看到第二個問題，也就是應用程式還不會調整它的使用者介面以提供最佳體驗和較大的裝置上的空間視窗可能會比行動裝置的螢幕還要大的使用。 因此在接下來的幾個小節 ([初始設定樣式和範本](#initial-styling-and-templating)、[彈性 UI](#adaptive-ui) 與[最終的樣式](#final-styling))，我們將會解決這些問題。
+雖然檢視模型和放大和縮小檢視正常運作，我們還需要處理一些樣式與範本方面的工作。 例如，正確的樣式和筆刷是沒有尚未使用，因此看不見您可以按一下來放大的群組標頭上的文字。如果您在傳統型裝置上執行的應用程式，您會看到第二個問題，也就是 app 還不會調整它的使用者介面以提供最佳體驗和較大的裝置上的空間在視窗可能會比行動裝置的螢幕還要大的使用。 因此在接下來的幾個小節 ([初始設定樣式和範本](#initial-styling-and-templating)、[彈性 UI](#adaptive-ui) 與[最終的樣式](#final-styling))，我們將會解決這些問題。
 
 ## <a name="initial-styling-and-templating"></a>初始設定樣式和範本
 
@@ -301,4 +301,4 @@ ms.locfileid: "8945880"
 
 ## <a name="conclusion"></a>總結
 
-與前一個案例研究相比，這個案例研究涉及更酷炫的使用者介面。 所有的設備和 WindowsPhone Silverlight **LongListSelector**概念 — 及其他 — 找不到可供 UWP app 中的**SemanticZoom**、 **ListView**、 **GridView**及**CollectionViewSource**形式。 我們示範了如何同時重複使用 (或複製和編輯) UWP app 中的命令式程式碼和標記，以完成自訂符合最窄到最寬的 Windows 裝置尺寸和之間所有大小的功能、UI 和互動。
+與前一個案例研究相比，這個案例研究涉及更酷炫的使用者介面。 所有功能和概念 WindowsPhone Silverlight **LongListSelector**— 及其他 — 找不到可供 UWP app 中的**SemanticZoom**、 **ListView**、 **GridView**及**CollectionViewSource**形式。 我們示範了如何同時重複使用 (或複製和編輯) UWP app 中的命令式程式碼和標記，以完成自訂符合最窄到最寬的 Windows 裝置尺寸和之間所有大小的功能、UI 和互動。

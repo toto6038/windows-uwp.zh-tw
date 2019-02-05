@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 970fbcef984f28e779ea7c133de95f7f7f99be8d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fdeb3f18e6500cc0a907e725f34c0eb96d33876e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923521"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045929"
 ---
 # <a name="detect-faces-in-images-or-videos"></a>偵測影像或影片中的臉部
 
@@ -23,7 +23,7 @@ ms.locfileid: "8923521"
 
 如需使用 [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) 追蹤臉部的替代方法，請參閱[媒體擷取的場景分析](scene-analysis-for-media-capture.md)。
 
-本文中的程式碼是採用[基本臉部偵測](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本臉部追蹤](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)範例的程式碼。 您可以下載這些範例來查看內容中使用的程式碼，或是使用此範例做為自己 app 的起點。
+本文中的程式碼是採用[基本臉部偵測](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)和[基本臉部追蹤](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)範例的程式碼。 您可以下載這些範例來查看內容中使用的程式碼，或是使用此範例做為自己 app 的起點。
 
 ## <a name="detect-faces-in-a-single-image"></a>偵測單一影像中的臉部
 
@@ -98,8 +98,8 @@ ms.locfileid: "8923521"
 ## <a name="related-topics"></a>相關主題
 
 * [媒體擷取的場景分析](scene-analysis-for-media-capture.md)
-* [基本臉部偵測範例](http://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
-* [基本臉部追蹤範例](http://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
+* [基本臉部偵測範例](https://go.microsoft.com/fwlink/p/?LinkId=620512&clcid=0x409)
+* [基本臉部追蹤範例](https://go.microsoft.com/fwlink/p/?LinkId=620513&clcid=0x409)
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
 * [媒體播放](media-playback.md)

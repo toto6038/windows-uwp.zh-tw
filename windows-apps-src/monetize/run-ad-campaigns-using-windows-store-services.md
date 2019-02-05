@@ -6,16 +6,16 @@ ms.date: 06/04/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 促銷 API, 廣告行銷活動
 ms.localizationpriority: medium
-ms.openlocfilehash: 35b2df09bcac553eeb939f516e950150cf2ee40d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 58325074a2f59dcd146a9534054b302b3ce9956b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929408"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044675"
 ---
 # <a name="run-ad-campaigns-using-store-services"></a>使用Microsoft Store 服務執行廣告行銷活動
 
-使用*Microsoft Store 促銷 API*以程式設計方式管理登錄到您或您組織的合作夥伴中心帳戶的應用程式促銷廣告行銷活動。 這個 API 可讓您用來建立、更新及監視您的行銷活動，以及其他相關資產，例如目標和廣告素材。 此 API 是特別適用於開發人員建立大量行銷活動，而且想要這樣做不需要使用合作夥伴中心。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
+使用*Microsoft Store 促銷 API*以程式設計方式管理登錄到您或您組織的合作夥伴中心帳戶的應用程式促銷廣告行銷活動。 這個 API 可讓您用來建立、更新及監視您的行銷活動，以及其他相關資產，例如目標和廣告素材。 這個 API 非常特別適用於開發人員建立大量行銷活動，而且想要這樣做不需要使用合作夥伴中心。 這個 API 使用 Azure Active Directory (Azure AD) 來驗證您應用程式或服務的呼叫。
 
 下列步驟說明端對端的程序：
 
@@ -34,19 +34,19 @@ ms.locfileid: "8929408"
 
 開始撰寫程式碼以呼叫 Microsoft Store 促銷 API 之前，請先確定您已完成下列先決條件。
 
-* 您已成功建立並開始廣告行銷活動使用此 API 之前，您必須先[建立一個付費的廣告行銷活動使用合作夥伴中心**廣告行銷活動**] 頁面](../publish/create-an-ad-campaign-for-your-app.md)，和您必須在此頁面上新增至少一個付款方式。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 使用此 API 所建立的廣告行銷活動的播送行將會自動向合作夥伴中心**廣告行銷活動**] 頁面上所選擇預設付款方式收取費用。
+* 您可以成功建立並開始廣告行銷活動使用此 API 之前，您必須先[建立一個付費的廣告行銷活動使用合作夥伴中心**廣告行銷活動**] 頁面](../publish/create-an-ad-campaign-for-your-app.md)，和此頁面上，您必須新增至少一個付款方式。 執行此動作之後，您就可以使用此 API 成功地建立廣告行銷活動的可計費廣告播送行。 使用此 API 所建立的廣告行銷活動的播送行將會自動向合作夥伴中心**廣告行銷活動**] 頁面上所選擇預設付款方式收取費用。
 
-* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](http://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[建立新的 Azure AD，在合作夥伴中心中](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)沒有額外費用。
+* 您 (或您的組織) 必須擁有 Azure AD 目錄，而且您必須具備目錄的[全域系統管理員](https://go.microsoft.com/fwlink/?LinkId=746654)權限。 如果您已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經擁有 Azure AD 目錄。 否則，您可以[建立新的 Azure AD，在合作夥伴中心中](../publish/associate-azure-ad-with-partner-center.md#create-a-brand-new-azure-ad-to-associate-with-your-partner-center-account)沒有額外費用。
 
-* 您必須將 Azure AD 應用程式與您的合作夥伴中心帳戶產生關聯，擷取的租用戶識別碼和應用程式的用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Microsoft Store 促銷 API 的 App 或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
+* 您必須與您的合作夥伴中心帳戶產生關聯的 Azure AD 應用程式、 擷取的租用戶識別碼和應用程式的用戶端識別碼，並產生金鑰。 Azure AD 應用程式代表您要呼叫 Microsoft Store 促銷 API 的 App 或服務。 您需要租用戶識別碼、用戶端識別碼和金鑰，才能取得傳遞給 API 的 Azure AD 存取權杖。
     > [!NOTE]
     > 您只需要執行此工作一次。 有了租用戶識別碼、用戶端識別碼和金鑰，每當您必須建立新的 Azure AD 存取權杖時，就可以重複使用它們。
 
 若要將 Azure AD 應用程式與您的合作夥伴中心帳戶產生關聯並擷取需要的值：
 
-1.  在合作夥伴中心，[您組織的合作夥伴中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-partner-center.md)。
+1.  在合作夥伴中心，[將您組織的合作夥伴中心帳戶與組織的 Azure AD 目錄產生關聯](../publish/associate-azure-ad-with-partner-center.md)。
 
-2.  接下來，從合作夥伴中心、[加入 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，代表應用程式或服務，您將用來管理您的合作夥伴中心帳戶促銷廣告行銷活動的**帳戶設定**\] 區段中的**使用者**頁面。 請確定您指派此應用程式 **[管理員]** 角色。 如果尚未應用程式不會存在於您的 Azure AD 目錄，您可以[建立新的 Azure AD 應用程式，在合作夥伴中心](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
+2.  接下來，從合作夥伴中心、[加入 Azure AD 應用程式](../publish/add-users-groups-and-azure-ad-applications.md#add-azure-ad-applications-to-your-partner-center-account)，代表應用程式或服務，您將用來管理您的合作夥伴中心帳戶促銷廣告行銷活動的**帳戶設定**\] 區段中的 [**使用者**] 頁面。 請確定您指派此應用程式 **[管理員]** 角色。 如果尚未應用程式不會存在於您的 Azure AD 目錄，您可以[建立新的 Azure AD 應用程式，在合作夥伴中心](../publish/add-users-groups-and-azure-ad-applications.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account)。 
 
 3.  返回 **\[使用者\]** 頁面，按一下您 Azure AD 應用程式的名稱來移至應用程式設定，然後複製 **\[租用戶識別碼\]** 和 **\[用戶端識別碼\]** 的值。
 
@@ -100,7 +100,7 @@ grant_type=client_credentials
 
 ## <a name="code-example"></a>程式碼範例
 
-下列程式碼範例示範如何取得 Azure AD 存取權杖，並從 C# 主控台應用程式呼叫 Microsoft Store 促銷 API。 若要使用此程式碼範例，請針對您的案例將 *tenantId*、*clientId*、*clientSecret* 和 *appID* 變數指定為適當的值。 此範例需要 Newtonsoft 的 [Json.NET 套件](http://www.newtonsoft.com/json)，以還原序列化 Microsoft Store 促銷 API 傳回的 JSON 資料。
+下列程式碼範例示範如何取得 Azure AD 存取權杖，並從 C# 主控台應用程式呼叫 Microsoft Store 促銷 API。 若要使用此程式碼範例，請針對您的案例將 *tenantId*、*clientId*、*clientSecret* 和 *appID* 變數指定為適當的值。 此範例需要 Newtonsoft 的 [Json.NET 套件](https://www.newtonsoft.com/json)，以還原序列化 Microsoft Store 促銷 API 傳回的 JSON 資料。
 
 [!code-cs[PromotionsApi](./code/StoreServicesExamples_Promotions/cs/Program.cs#PromotionsApiExample)]
 

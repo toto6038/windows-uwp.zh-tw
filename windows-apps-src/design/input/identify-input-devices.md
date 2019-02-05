@@ -8,12 +8,12 @@ keywords: 裝置, 數位板, 輸入, 互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: c45ad71643b0d75efcb130c1175952822197a161
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d37a830ffd0735d69046aa7e9495cfe6fa943f97
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932937"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048495"
 ---
 # <a name="identify-input-devices"></a>識別輸入裝置
 
@@ -27,7 +27,7 @@ ms.locfileid: "8932937"
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) 類別，這個類別可以用來擷取由一或多個已連接滑鼠所公開的屬性。 做法是建立一個新的 **MouseCapabilities** 物件並取得您感興趣的屬性。
 
-**注意：** 這裡所討論屬性傳回的值以所有偵測到滑鼠為根據： 布林值屬性會傳回非零至少一個滑鼠支援特定的功能，而數值屬性會傳回任何一個所公開的最大值滑鼠。
+**注意：** 這裡所討論屬性傳回的值以所有偵測到滑鼠為根據： 布林值屬性會傳回非零至少一個滑鼠支援特定的功能，而數值屬性會傳回任一所公開的最大值滑鼠。
 
  
 
@@ -65,7 +65,7 @@ private void GetKeyboardProperties()
 
 [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 命名空間包含 [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) 類別，這個類別可以用來擷取是否已連接任何觸控數位板。 做法是建立一個新的 **TouchCapabilities** 物件並取得您感興趣的屬性。
 
-**注意：** 這裡所討論屬性傳回的值以所有偵測到的觸控數位板為根據： 布林值屬性會傳回非零至少一個數位板支援特定的功能，而數值屬性會傳回最大值任何一個數位板所公開。
+**注意：** 這裡所討論屬性傳回的值以所有偵測到的觸控數位板為根據： 布林值屬性會傳回非零至少一個數位板支援特定的功能，而數值屬性會傳回最大值任一數位板所公開。
 
  
 
@@ -178,12 +178,12 @@ private void GetPointerDevices()
 
 
 **範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 
 **封存範例**
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 偵錯, 測試, 效能
 ms.localizationpriority: medium
-ms.openlocfilehash: 8f58485b6f6829b9eec0495cce088304b181a2b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 606ab4489b86b1fbba7346b4a503339c4c19f7d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940670"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048315"
 ---
 # <a name="deploying-and-debugging-uwp-apps"></a>部署和偵錯 UWP app
 
@@ -30,7 +30,7 @@ Microsoft Visual Studio 可讓您部署和偵錯您的通用 Windows 平台 (UWP
 -   **\[本機電腦\]** 會將 App 部署到您目前的開發電腦。 只有當您 App 的 **「目標平台最小版本」** 小於或等於您開發電腦上的作業系統時，才能使用此選項。
 -   **\[遠端電腦\]** 會讓您指定用來部署 App 的遠端目標。 如需有關部署到遠端電腦的詳細資訊，請參閱[指定遠端裝置](#specifying-a-remote-device)。
 -   **\[裝置\]** 會將 App 部署到已透過 USB 連接的裝置。 裝置必須已由開發人員解除鎖定，並且畫面已解除鎖定。
--   **\[模擬器\]** 目標會開機，並以名稱中指定的設定將 App 部署到模擬器。 模擬器是 HYPER-V 上可用的啟用執行 Windows8.1 機器僅限或之外。
+-   **\[模擬器\]** 目標會開機，並以名稱中指定的設定將 App 部署到模擬器。 模擬器是僅提供 HYPER-V 上啟用執行 windows 8.1 的電腦或之外。
 
 
 ## <a name="debugging-deployed-apps"></a>偵錯已部署的 App
@@ -123,7 +123,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 - **無**：此驗證模式只適用於執行 Visual Studio 遠端工具的遠端電腦 (桌上型電腦或膝上型電腦)。 當您在已有測試帳戶登入的環境中安裝了測試電腦，但無法輸入認證時，請使用這個驗證模式。 請確定遠端偵錯工具設定已設定為接受非驗證。
 
 ## <a name="advanced-remote-deployment-options"></a>進階遠端部署選項
-像發行版本的 Visual Studio 2015 Update 3，以及 Windows 10 年度更新版，會有新的進階遠端部署選項，針對特定 Windows 10 裝置。 您可以在專案屬性的 **\[偵錯\]** 功能表上找到進階遠端部署選項。
+像發行版本的 Visual Studio 2015 Update 3，以及 Windows 10 年度更新版，會有新的進階遠端部署選項針對特定 Windows 10 裝置。 您可以在專案屬性的 **\[偵錯\]** 功能表上找到進階遠端部署選項。
 
 新屬性包括：
 * 部署類型
@@ -132,7 +132,7 @@ UWP app 可在 Windows 8.1 或更新版本上開發及編譯，但需要 Windows
 
 ### <a name="requirements"></a>需求
 若要利用進階遠端部署選項，您必須滿足下列需求：
-* 有 Visual Studio 2015 Update 3 或部分更新 Visual Studio 版本 Windows 10 工具 1.4.1 已安裝或更新版本 （其中包含 Windows 10 年度更新版 SDK） 我們建議使用更新使用最新版的 Visual Studio，以確保您取得所有最新的開發和安全性功能。
+* 有 Visual Studio 2015 Update 3 或部分更新 Visual Studio 版本 Windows 10 工具 1.4.1 已安裝或更新版本 （其中包含 Windows 10 年度更新版 SDK） 建議使用更新使用最新版的 Visual Studio，以確保您取得所有最新的開發和安全性功能。
 * 以 Windows 10 年度更新版 Xbox 遠端裝置或 Windows 10 Creators Update 電腦為目標 
 * 使用通用驗證模式
 
@@ -177,14 +177,14 @@ C++ UWP app 的屬性頁面會看起來如下。
 > [!NOTE]
 > 執行 Windows 10 年度更新版的 Xbox 以及執行 Windows 10 Creators Update 的電腦目前支援 **\[從網路登錄配置\]**。
 
-在遠端裝置上，會將配置登錄到下列預設位置，根據裝置系列： `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` -這是符號連結到**封裝註冊路徑**電腦不會使用符號連結，而是直接登錄**套件註冊路徑**
+在遠端裝置上，會將配置登錄到下列預設位置，根據裝置系列： `Xbox: \\MY-DEVKIT\DevelopmentFiles\XrfsFiles` -這是符號連結至**封裝註冊路徑**電腦不會使用符號連結，而是直接登錄**套件註冊路徑**
 
 
 ## <a name="debugging-options"></a>偵錯選項
 
 在 windows 10，UWP 應用程式的啟動效能改進主動啟動並 app 再予以暫停稱為[預先啟動](https://msdn.microsoft.com/library/windows/apps/Mt593297)的技術。 許多 App 將不需要特別執行任何動作即可在此模式下工作，但某些 App 可能需要調整它們的行為。 若要協助針對這些程式碼路徑中的任何問題進行偵錯，您可以在預先啟動模式下，從 Visual Studio 開始針對 App 進行偵錯。
 
-從 Visual Studio 專案 (**\[偵錯\]** -&gt; **\[其他偵錯目標\]** -&gt; **\[偵錯通用 Windows 應用程式試營運\]**)，以及針對已安裝在電腦上的 App (**\[偵錯\]** -&gt; **\[其他偵錯目標\]** -&gt; **\[偵錯已安裝的應用程式套件\]**，透過選取 **\[使用「預先啟動」啟用應用程式\]** 核取方塊)，都支援偵錯。 如需詳細資訊，請參閱[偵錯 UWP 預先啟動](http://go.microsoft.com/fwlink/p/?LinkId=717245)。
+從 Visual Studio 專案 (**\[偵錯\]** -&gt; **\[其他偵錯目標\]** -&gt; **\[偵錯通用 Windows 應用程式試營運\]**)，以及針對已安裝在電腦上的 App (**\[偵錯\]** -&gt; **\[其他偵錯目標\]** -&gt; **\[偵錯已安裝的應用程式套件\]**，透過選取 **\[使用「預先啟動」啟用應用程式\]** 核取方塊)，都支援偵錯。 如需詳細資訊，請參閱[偵錯 UWP 預先啟動](https://go.microsoft.com/fwlink/p/?LinkId=717245)。
 
 您可以在啟始專案的 **\[偵錯\]** 屬性頁面上，設定下列部署選項：
 
@@ -206,7 +206,7 @@ C++ UWP app 的屬性頁面會看起來如下。
 
 ## <a name="symbols"></a>符號
 
-偵錯程式碼時，符號檔案包含各種非常有用的資料，例如變數、函式名稱和進入點位址，可讓您更清楚地了解意外狀況和呼叫堆疊執行順序。 大多數各種不同 Windows 版本的符號您都可以透過 [Microsoft 符號伺服器](http://msdl.microsoft.com/download/symbols)取得，或從[下載 Windows 符號套件](http://aka.ms/winsymbols)下載以進行更快速的離線查閱。
+偵錯程式碼時，符號檔案包含各種非常有用的資料，例如變數、函式名稱和進入點位址，可讓您更清楚地了解意外狀況和呼叫堆疊執行順序。 大多數各種不同 Windows 版本的符號您都可以透過 [Microsoft 符號伺服器](https://msdl.microsoft.com/download/symbols)取得，或從[下載 Windows 符號套件](https://aka.ms/winsymbols)下載以進行更快速的離線查閱。
 
 若要設定 Visual Studio 的符號選項，請選取 **\[工具\] > \[選項\]**，然後在對話方塊視窗中移至 **\[偵錯\] > \[符號\]**。
 
@@ -223,7 +223,7 @@ C++ UWP app 的屬性頁面會看起來如下。
 
 ## <a name="windbg"></a>WinDbg
 
-WinDbg 是功能強大的偵錯工具，隨附於 Windows 偵錯工具套件，此套件包含在 [Windows SDK](http://go.microsoft.com/fwlink/p/?LinkID=271979) 中。 Windows SDK 安裝可讓您將 Windows 偵錯工具安裝為獨立產品。 雖然 WinDbg 在進行原生程式碼偵錯時非常有用，但我們並不建議將 WinDbg 用於以 Managed 程式碼或 HTML 5 撰寫的 App。
+WinDbg 是功能強大的偵錯工具，隨附於 Windows 偵錯工具套件，此套件包含在 [Windows SDK](https://go.microsoft.com/fwlink/p/?LinkID=271979) 中。 Windows SDK 安裝可讓您將 Windows 偵錯工具安裝為獨立產品。 雖然 WinDbg 在進行原生程式碼偵錯時非常有用，但我們並不建議將 WinDbg 用於以 Managed 程式碼或 HTML 5 撰寫的 App。
 
 若要將 WinDbg 與 UWP app 搭配使用，您必須先使用 PLMDebug 將您應用程式套件的「處理程序生命週期管理」(PLM) 停用，如[處理程序生命週期管理 (PLM) 的測試與偵錯工具](testing-debugging-plm.md)所述。
 

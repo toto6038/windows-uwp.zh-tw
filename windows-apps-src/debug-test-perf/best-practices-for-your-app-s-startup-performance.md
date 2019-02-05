@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e9d0fdee4ba9f44f15c461e5a53dad28700023a4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e50d3613e5f7058e99f2e71ba023fb4191e5c734
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947038"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051101"
 ---
 # <a name="best-practices-for-your-apps-startup-performance"></a>應用程式啟動效能的最佳做法
 
@@ -103,7 +103,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 -   UserControl 和控制項範本將會擴充，因此也應將這些納入考量。
 -   如果您建立任何不會顯示在螢幕上的 XAML，則您應該要有正當的理由確定這些 XAML 片段是否應該在啟動時建立。
 
-[Visual Studio 即時視覺化樹狀結構](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)視窗會顯示樹狀結構中每個節點的子元素計數。
+[Visual Studio 即時視覺化樹狀結構](https://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx)視窗會顯示樹狀結構中每個節點的子元素計數。
 
 ![即時視覺化樹狀結構。](images/live-visual-tree.png)
 
@@ -323,7 +323,7 @@ XAML App 中的啟動效能與您在啟動期間建立的元素數目直接相�
 > End Class
 > ```
 
-如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
+如需使用延長式啟動顯示畫面的範例，請參閱[啟動顯示畫面範例](https://go.microsoft.com/fwlink/p/?linkid=234889)。
 
 ### <a name="phase-3"></a>階段 3
 
@@ -339,7 +339,7 @@ app 對每個啟動階段的反應方式完全取決於您，但是請盡可能�
 
 可重複使用的程式碼通常會以專案中包含的模組 (DLL) 形式出現。 載入這些模組需要存取磁碟，因此您可以想像這樣做會增加大量負擔。 這不但對冷啟動有非常大的影響，也會影響暖啟動。 如果是 C# 和 Visual Basic，CLR 會視需要載入組件，嘗試將這類負擔盡可能延後。 也就是說，CLR 只會在執行方法參照模組時載入模組。 因此，請僅在啟動程式碼中參照啟動應用程式所需的必要組件，讓 CLR 不要載入不必要的模組。 如果啟動路徑中有含有非必要參照的未使用程式碼路徑，您可以將這些程式碼路徑移到其他方法以避免不必要的載入。
 
-減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。
+減少模組載入的另外一個方法是合併您的應用程式模組。 載入一個大組件所需的時間通常比載入兩個小組件的時間短。 但這並非永遠可行，只有在不會對開發人員生產力或重複使用程式碼造成實質差異的情況下，才可以合併模組。 您可以使用工具 (例如 [PerfView](https://go.microsoft.com/fwlink/p/?linkid=251609) 或 [Windows 效能分析程式 (WPA)](https://msdn.microsoft.com/library/windows/apps/xaml/ff191077.aspx)) 來找出啟動時載入的模組。
 
 ### <a name="make-smart-web-requests"></a>聰明的 Web 要求
 

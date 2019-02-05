@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e964650e90870ef09d8d1b142917f96b61002544
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: b561e08227664f723802ffc0ee3f0e16bc34a5cc
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980276"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045094"
 ---
 # <a name="enumerate-and-query-files-and-folders"></a>列舉和查詢檔案和資料夾
 
@@ -25,7 +25,7 @@ ms.locfileid: "8980276"
 如需如何儲存通用 Windows 平台應用程式資料的指導方針，請參閱 [ApplicationData](/uwp/api/windows.storage.applicationdata) 類別。
 
 > [!NOTE]
-> 如需完整範例，請參閱[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)。
+> 如需完整範例，請參閱[資料夾列舉範例](https://go.microsoft.com/fwlink/p/?linkid=619993)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -42,7 +42,7 @@ ms.locfileid: "8980276"
 > [!NOTE]
 > 請記得宣告 **picturesLibrary** 功能。
 
-在此範例中我們第一次使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法來取得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的所有檔案 （不在子資料夾），並列出每個檔案的名稱。 接下來，我們會使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法來取得所有的子資料夾中**PicturesLibrary**並列出每個子資料夾的名稱。
+在此範例中我們第一次使用[**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync)方法以取得[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的所有檔案 （不在子資料夾），並列出每個檔案的名稱。 接下來，我們會使用[**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync)方法來取得**PicturesLibrary**中的所有子資料夾，並列出每個子資料夾的名稱。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -177,7 +177,7 @@ Next folder
 > [!NOTE]
 > 在 C# 或 Visual Basic 中，請務必在您使用 **await** 運算子的任何方法的方法宣告中放置 **async** 關鍵字。
 
-或者，您可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法以取得特定位置中的所有項目 （檔案與子資料夾）。 下列範例會使用**GetItemsAsync**方法，以取得所有檔案與[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中的子資料夾 （不在子資料夾）。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
+或者，您可以使用[**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync)方法以取得特定位置中的所有項目 （檔案與子資料夾）。 下列範例會使用**GetItemsAsync**方法，以取得所有檔案與子[**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary)的根資料夾中 （不在子資料夾）。 接著範例會列出每個檔案或子資料夾的名稱。 如果項目是子資料夾，範例會將 `"folder"` 附加到名稱。
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

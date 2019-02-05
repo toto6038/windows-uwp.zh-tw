@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cce98591cdaa78a887d7a5fb495e999a4ffc453
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4517d3fc917cb306281e9050f8554119ff987007
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945374"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044502"
 ---
 # <a name="enterprise"></a>企業版
 
@@ -21,7 +21,7 @@ ms.locfileid: "8945374"
 
 > [!div class="checklist"]
 > * [Windows Template Studio](#template-studio)
-> * [建立桌面樣式 Ui 控制項](#desktop-style-UI)
+> * [若要建立桌面樣式 Ui 控制項](#desktop-style-UI)
 > * [控制項，以支援企業案例](#enterprise)
 > * [Windows UI 文件庫](#UI-library)
 > * [傳統型應用程式中的 UWP 控制項](#xaml-islands)
@@ -35,7 +35,7 @@ ms.locfileid: "8945374"
 
 ### <a name="windows-template-studio"></a>Windows Template Studio
 
-Windows Template Studio 是加速建立新的通用 Windows 平台 (UWP) 應用程式使用精靈為基礎的體驗的 Visual Studio 2017 擴充功能。 產生的 UWP 專案的格式正確、 可讀性的程式碼會同時實作經證實的模式與最佳做法結合的最新的 Windows 10 功能。
+Windows Template Studio 是 Visual Studio 2017 擴充功能，加速建立新的通用 Windows 平台 (UWP) 應用程式使用精靈為基礎的體驗。 產生的 UWP 專案的格式正確、 判讀的程式碼會同時實作經證實的模式與最佳做法結合的最新的 Windows 10 功能。
 
 ![Windows Template Studio](images/windows-template-studio.png)
 
@@ -43,11 +43,11 @@ Windows Template Studio 是加速建立新的通用 Windows 平台 (UWP) 應用�
 
 <a id="desktop-style-UI" />
 
-### <a name="controls-to-create-desktop-style-uis"></a>建立桌面樣式 Ui 控制項
+### <a name="controls-to-create-desktop-style-uis"></a>若要建立桌面樣式 Ui 控制項
 
 我們已發行新的 UWP XAML 控制項，填滿傳統桌面應用程式 UI 和 UWP UI 之間的差距。
 
-例如，新的[功能表列](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar)、 [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、 [SplitButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)，以及[CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout)控制項提供您更具彈性的方式來公開命令，並[EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable)讓我們在使用者輸入並未列出的值在預先定義的選項清單。
+例如，新的[功能表列](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar)、 [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、 [SplitButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)，以及[CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout)控制項提供您更具彈性的方式來公開命令，而[EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable)讓我們在使用者輸入的值並未列出在預先定義的選項清單。
 
 ![功能表列](images/menu-bar.png)
 
@@ -74,7 +74,7 @@ Windows UI 文件庫是一組提供控制項與其他使用者介面元素用於
 
 ### <a name="uwp-controls-in-desktop-applications"></a>傳統型應用程式中的 UWP 控制項
 
-Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以提升外觀、 感覺與您現有的傳統型應用程式與最新的 Windows 10 UI 功能只會透過 UWP 控制項，例如 Windows Ink 和 Fluent 設計系統支援的控制項可用的功能。 此功能稱為 XAML 群島。
+Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應用程式中使用 UWP 控制項。 這表示您可以提升外觀、 感覺和功能的最新的 Windows 10 的 UI 功能只會透過 UWP 控制項，例如 Windows Ink 和支援 Fluent Design 系統控制項與您現有的傳統型應用程式。 此功能稱為 XAML 群島。
 
 請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)。
 
@@ -82,7 +82,7 @@ Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應�
 
 ### <a name="net-standard-20"></a>.NET Standard 2.0
 
-.NET Standard 包含超過 20000 更多的 Api，比.NET Standard 1.x。 這可讓因此更容易移轉現有的.NET Framework 程式庫，然後將它們使用跨不同包括您的 UWP 應用程式的.NET 應用程式。
+.NET Standard 包含超過 20000 更多的 Api，比.NET Standard 1.x。 這可讓您因此更容易移轉現有的.NET Framework 程式庫，然後將它們使用跨不同包括您的 UWP 應用程式的.NET 應用程式。
 
 ![net 標準](images/dot-net-standard-project-template.png)
 
@@ -100,9 +100,9 @@ Windows 10 現在可讓您在 WPF、 Windows Forms 和 c + + Win32 傳統型應�
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-MSIX 是提供現代化的封裝體驗，以所有 Windows 應用程式的 Windows 應用程式套件格式。 MSIX 封裝格式會保留現有的應用程式套件的功能，並安裝除了啟用新的現代封裝及部署功能 Win32、 WPF 及 Windows Forms 應用程式的檔案。
+MSIX 是提供現代化的封裝體驗，以所有 Windows 應用程式的 Windows 應用程式套件格式。 MSIX 封裝格式會保留現有的應用程式套件的功能，並安裝除了啟用新的現代化封裝及部署功能 Win32、 WPF 及 Windows Forms 應用程式的檔案。
 
-MSIX 是安全、 安全且可靠，內建的封裝格式根據.msi、.appx、 APP-V 和 ClickOnce 安裝技術的組合。
+MSIX 是安全、 安全且可靠，內建的封裝格式根據.msi、.appx、 APP-V 和 ClickOnce 安裝技術組合。
 
 ![MSIX 圖示](images/MSIX-App-Package.ico)
 
@@ -117,7 +117,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們
 | 主題 | 描述 |
 |-------|-------------|
 | [安全開發 Windows app 的簡介](https://msdn.microsoft.com/library/windows/apps/mt622741) | 這篇簡介文章說明不同驗證階段 (包括傳輸中資料和靜態資料) 的各種 Windows 安全功能。 它也描述如何將這些階段整合到您的 app。 它涵蓋大範圍的主題，並主要目的是協助應用程式設計師，更清楚地了解可快速且簡單地讓建立通用 Windows 平台 app 的 Windows 功能。 |
-| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼是驗證現有的認證，並建立的裝置特定認證，生物特徵辨識或 PIN 式使用者手勢所保護，導致兩者便利和高度安全的體驗。 |
+| [驗證和使用者識別](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP app 有本文所述的數個使用者驗證選項。 若要用於企業，則強烈建議選用新的 Microsoft Passport 功能。 Microsoft Passport 以增強式雙因素驗證 (2FA) 取代密碼是驗證現有的認證，並建立的裝置特定認證，生物特徵辨識或 PIN 式使用者手勢所保護，導致同時便利和高度安全的體驗。 |
 | [密碼編譯](https://msdn.microsoft.com/library/windows/apps/mt270191) | 密碼編譯一節概述 UWP app 所提供的密碼編譯功能。 文章的範圍包括從如何輕鬆加密機密商業資料的簡介逐步解說，到操作密碼編譯金鑰，以及使用 MAC、雜湊和簽章這類進階主題。 |
 | [Windows 資訊保護 (WIP)](wip-hub.md) | 這是一個中樞主題，從開發人員角度來探討 Windows 資訊保護 (WIP) 與檔案、緩衝區、剪貼簿、網路、背景工作的關聯，以及資料鎖定時的保護。 |
 
@@ -127,8 +127,8 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們
 
 | 主題 | 描述 |
 |-------|-------------|
-| [資料繫結概觀](https://msdn.microsoft.com/library/windows/apps/mt269383) | 本主題示範如何將控制項 （或其他 UI 元素） 繫結到單一項目，或將項目控制項繫結至通用 Windows 平台 (UWP) 應用程式中的項目集合。 此外，還會示範如何控制項目的呈現、根據選擇來實作詳細資料檢視，以及轉換資料以供顯示。 |
-| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | 對大型資料集執行複雜查詢，可使用支援 UWP 的 Entity Framework 7 進行大幅簡化。 在這個逐步解說中，您將建置對本機 SQLite 資料庫使用 Entity Framework 執行基本資料存取的 UWP 應用程式。 |
+| [資料繫結概觀](https://msdn.microsoft.com/library/windows/apps/mt269383) | 本主題示範如何將控制項 （或其他 UI 元素） 繫結到單一項目，或將項目控制項繫結到通用 Windows 平台 (UWP) 應用程式中的項目集合。 此外，還會示範如何控制項目的呈現、根據選擇來實作詳細資料檢視，以及轉換資料以供顯示。 |
+| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | 對大型資料集執行複雜查詢，可使用支援 UWP 的 Entity Framework 7 進行大幅簡化。 在本逐步解說，您將建置對使用 Entity Framework 本機 SQLite 資料庫執行基本資料存取的 UWP 應用程式。 |
 | [SQLite 本機資料庫](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | 這個影片是使用 SQLite 的完整開發人員指南，而 SQLite 是本機 app 資料庫的建議方案。 請瀏覽 [SQLite](https://www.sqlite.org/download.html) 以下載 UWP 的最新版本，或使用 Windows 10 SDK 已隨附的版本。 |
 
 ## <a name="networking-and-data-serialization"></a>網路功能和資料序列化
@@ -140,7 +140,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們
 | [網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233) | 這個逐步解說說明與所有 UWP app 相關的基本網路概念，而不管使用中的通訊協定為何。  |
 | [哪一種網路功能技術？](https://msdn.microsoft.com/library/windows/apps/mt280235) | 適用於 UWP app 的網路功能技術快速概觀，並建議您如何選擇最適合您的 app 的技術。 |
 | [XML 和 SOAP 序列化](https://msdn.microsoft.com/library/90c86ass.aspx) | XML 序列化會將物件轉換成符合特定 XML 結構描述定義語言 (XSD) 的 XML 資料流。 若要在 XML 與強型別類別之間進行轉換，您可以使用原生 [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) 類別或外部程式庫。 |
-| [JSON 序列化](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON （JavaScript 物件標記法） 序列化是與 REST Api 進行通訊的常用格式。 UWP app 完全支援的 [Newtonsoft Json.NET](http://www.newtonsoft.com/json)。 |
+| [JSON 序列化](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON （JavaScript 物件標記法） 序列化是與 REST Api 進行通訊的常用格式。 UWP app 完全支援的 [Newtonsoft Json.NET](https://www.newtonsoft.com/json)。 |
 
 ## <a name="devices"></a>裝置
 
@@ -160,25 +160,25 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們
 | 主題 | 描述 |
 |-------|-------------|
 | [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631) | 在本簡介指南中，您將了解 Windows 10UWP 平台，包括︰裝置系列為何以及如何決定要設為目標的裝置系列、新的 UI 控制項和面板以讓您將 UI 調整為不同的裝置板型規格，以及如何了解與控制可供您的 app 使用的 API 表面。 |
-| [彈性 XAML UI 程式碼範例](http://go.microsoft.com/fwlink/p/?LinkId=619992) | 這個程式碼範例顯示所有可能版面配置選項與您的應用程式，不論裝置類型的控制項，並可讓您能夠與顯示如何達成您正在尋找的任何版面配置面板互動。 除了顯示每個控制項如何回應不同的板型規格之外，app 本身也具有回應，並顯示達成彈性 UI 的各種方法。 |
+| [彈性 XAML UI 程式碼範例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 這個程式碼範例示範所有可能版面配置選項和您的應用程式，不論裝置類型的控制項，並可讓您與顯示如何達成您正在尋找的任何版面配置面板互動。 除了顯示每個控制項如何回應不同的板型規格之外，app 本身也具有回應，並顯示達成彈性 UI 的各種方法。 |
 | [Xamarin 主題]() | 適用於目標手機 Xamarin |
 
 ## <a name="deployment"></a>部署
 
-您有許多將 app 發佈至組織使用者的選項。 您可以使用現有的行動裝置管理商務用 Microsoft 網上商店，或您可以側載到裝置的應用程式。 您也可以讓您的應用程式提供給一般公用發佈至 Microsoft Store。
+您有許多將 app 發佈至組織使用者的選項。 您可以使用現有的行動裝置管理商務用 Microsoft 網上商店，或您可以將 app 側載至裝置。 您也可以讓您的應用程式提供給一般公用發佈至 Microsoft Store。
 
 | 主題 | 描述 |
 |-------|-------------|
-| [將 LOB 應用程式發佈到企業](https://msdn.microsoft.com/library/windows/apps/mt608995) | 您可以直接到企業來進行大量取得，透過企業版，Microsoft Store 發佈特定業務的應用程式，而不需要讓大眾廣泛提供應用程式。 |
+| [將 LOB 應用程式發佈到企業](https://msdn.microsoft.com/library/windows/apps/mt608995) | 您可以直接到企業來進行大量取得，透過企業版，Microsoft Store 中發佈特定業務的應用程式，而不需要讓大眾廣泛提供應用程式。 |
 | [側載 app](https://technet.microsoft.com/library/mt269549) | 當您側載 app 時，您要將簽署的 app 套件部署到裝置。 您要維護這些 app 的簽署、裝載和部署。 用於側載 app 的程序已經簡化成適用於 Windows 10。             |
-| [將應用程式發佈到 Microsoft 網上商店](https://dev.windows.com/publish) | 整合的 Microsoft Store 可讓您發佈與管理所有您的應用程式，適用於所有 Windows 裝置。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您 app 的可用性。 |
+| [將應用程式發佈到 Microsoft 網上商店](https://dev.windows.com/publish) | 整合的 Microsoft 網上商店可讓您發佈和管理所有應用程式適用於所有 Windows 裝置。 透過每個市場價格、發佈和可見性控制項，以及其他選項來自訂您 app 的可用性。 |
 
 ## <a name="enterprise-uwp-samples"></a>企業 UWP 範例
 
 | 主題 |  描述 |
 |------ |--------------|
-| [VanArsdel 詳細目錄範例](https://github.com/Microsoft/InventorySample) | UWP 範例應用程式，展示特定業務的案例。 範例是以建立和管理客戶、 訂單及產品為虛構公司 VanArsdel 為基礎。 |
-| [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | UWP 範例應用程式，展示對企業開發人員，例如 Azure Active Directory (AAD) 驗證、 UI 控制項 （包括資料格）、 Sqlite 和 SQL Azure 資料庫整合、 Entity Framework 和 API 的雲端服務很有用的功能。 範例是以建立和管理客戶帳戶、 訂單及產品為虛構公司 Contoso 為基礎。 |
+| [VanArsdel 詳細目錄範例](https://github.com/Microsoft/InventorySample) | UWP 範例應用程式，展示的特定業務的案例。 此範例是以建立和管理客戶、 訂單及產品為虛構公司 VanArsdel 為基礎。 |
+| [客戶訂單資料庫範例](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | UWP 範例應用程式，展示對企業開發人員，例如 Azure Active Directory (AAD) 驗證、 UI 控制項 （包括資料格）、 Sqlite 與 SQL Azure 資料庫整合，Entity Framework 和 API 的雲端服務很有用的功能。 此範例是以建立和管理客戶帳戶、 訂單及產品為虛構公司 Contoso 為基礎。 |
 
 ## <a name="patterns-and-practices"></a>模式和做法
 

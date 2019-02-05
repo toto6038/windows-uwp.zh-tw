@@ -5,12 +5,12 @@ ms.date: 07/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 041f07fd6b24af3658bc9cfffe07117e4b353831
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939634"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044259"
 ---
 # <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\# 範例：提交含遊戲選項與預告片的應用程式
 
@@ -29,7 +29,7 @@ ms.locfileid: "8939634"
 這些範例包含下列必要條件：
 
 * 新增參考至您專案中的 System.Web 組件。
-* 從 Newtonsoft 安裝 [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet 套件到您的專案。
+* 從 Newtonsoft 安裝 [Newtonsoft.Json](https://www.newtonsoft.com/json) NuGet 套件到您的專案。
 
 <span id="create-app-submission" />
 

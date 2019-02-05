@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 插播式, javascript, 範例程式碼
 ms.localizationpriority: medium
-ms.openlocfilehash: 98ba09b88c96b0f0afb4ba5a786d31442fd9da05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 641a3bfc2c2869cab6f3bbf480aa599cadd955a2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928117"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047107"
 ---
 # <a name="interstitial-ad-sample-code-in-javascript"></a>使用 JavaScript 的插播式廣告範例程式碼
 
-本主題提供顯示插播式廣告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 應用程式的完整範例程式碼。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插播式廣告](interstitial-ads.md)。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+本主題提供顯示插播式廣告的基本 JavaScript 和 HTML 通用 Windows 平台 (UWP) 應用程式的完整範例程式碼。 如需示範如何設定專案以使用此程式碼的逐步指示，請參閱[插播式廣告](interstitial-ads.md)。 如需完整的範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
 
 ## <a name="code-example"></a>程式碼範例
 
@@ -45,6 +45,6 @@ ms.locfileid: "8928117"
 
 ## <a name="related-topics"></a>相關主題
 
-* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [GitHub 上的廣告範例](https://aka.ms/githubads)
 
  

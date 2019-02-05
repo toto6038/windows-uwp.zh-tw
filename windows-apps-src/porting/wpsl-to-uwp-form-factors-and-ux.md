@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0897bd2636f13cfb02568847c0ba40b2d6b218f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dbba9dbdf6bc3df02657cc03b9264e74664318b4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936462"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045161"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>尺寸與 UX 的移植 WindowsPhone Silverlight 到 UWP
 
@@ -30,7 +30,7 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 客觀來說，螢幕是以英吋與實體 (原始) 像素的單位來測量。 知道這兩個計量，您就可以知道一英吋能夠容納多少像素。 這就是像素密度，也稱為 DPI (每英吋點數) 或 PPI (每英吋像素數)。 而 DPI 的倒數就是像素的實體大小 (以英吋的分數表示)。 像素密度也稱為 *「解析度」*，雖然此詞彙通常被寬鬆地用來表示像素計數。
 
-隨著檢視距離增加，所有這些客觀計量也就 *「看起來」* 變得較小，它們會解析成螢幕的「*有效大小」* 與其 *「有效解析度」*。 與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 與 windows 10 會考慮 DPI 和的一般檢視距離的裝置，來計算您的 UI 元素，以提供最佳檢視體驗的實體像素的最佳大小。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
+隨著檢視距離增加，所有這些客觀計量也就 *「看起來」* 變得較小，它們會解析成螢幕的「*有效大小」* 與其 *「有效解析度」*。 與您眼睛保持的距離最接近的通常是您的手機，其次是您的平板電腦，接著是您的電腦監視器，而最遠的是 [Surface Hub](https://www.microsoft.com/microsoft-surface-hub) 裝置與電視。 為了做為補償，裝置傾向於隨著檢視距離的增加而在客觀上變得較大。 當您設定 UI 元素大小時，您是使用稱為有效像素 (epx) 的單位設定大小。 與 windows 10 會考慮 DPI 和一般檢視距離，從裝置，來計算 UI 元素，以提供最佳檢視體驗的實體像素的最佳大小。 請參閱[檢視/有效像素、檢視距離與縮放比例](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
 即便如此，我們還是建議您使用多種不同的裝置測試您的 app，以親自確認各種體驗。
 
@@ -50,7 +50,7 @@ Windows app 在電腦、行動裝置與任何其他類型的裝置，都有相�
 
 將應用程式做視覺縮放，使其看起來就像只是變得較大的行動裝置版本，並無法充分利用裝置與其額外的空間，而這無法為使用者提供良好的使用體驗。 我們應該要考慮顯示更多內容，而不是讓相同的內容變得更大。 即使是在平板手機上，我們也可以多顯示幾列內容。 我們可以使用額外的空間來顯示不同的內容 (例如廣告)，或是將清單方塊變更成清單檢視，並讓它在情況允許時將項目包裝在多欄中，以此方式利用空間。 請參閱[清單與格線檢視控制項的指導方針](https://msdn.microsoft.com/library/windows/apps/mt186889)。
 
-除了新控制項，例如清單檢視與格線檢視，大部分的確立版面配置類型，從 WindowsPhone Silverlight 有對等項目在通用 Windows 平台 (UWP)。 例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 與 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。 移植使用這些類型的大部分 UI 應該相當簡單，但是請一律尋找可利用這些版面配置面板之動態配置功能的方法，以自動在不同大小的裝置上調整大小和重新配置。
+除了新控制項，例如清單檢視與格線檢視，從 WindowsPhone Silverlight 確立版面配置類型的大部分會有對等項目在通用 Windows 平台 (UWP)。 例如 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 與 [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635)。 移植使用這些類型的大部分 UI 應該相當簡單，但是請一律尋找可利用這些版面配置面板之動態配置功能的方法，以自動在不同大小的裝置上調整大小和重新配置。
 
 跳脫系統控制項與版面配置面板內建的動態版面配置，我們可以使用新的 windows 10 功能，稱為[調適型 Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md)。
 
@@ -64,7 +64,7 @@ WindowsPhone Silverlight 介面是觸控專屬介面。 因此，所移植之應
 
 ## <a name="more-info-and-design-guidelines"></a>更多資訊及設計指導方針
 
--   [設計 UWP App](http://dev.windows.com/design)
+-   [設計 UWP App](https://dev.windows.com/design)
 -   [字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394)
 -   [針對不同的尺寸規格做規劃](https://msdn.microsoft.com/library/windows/apps/dn958435)
 

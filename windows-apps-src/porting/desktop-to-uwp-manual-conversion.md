@@ -8,12 +8,12 @@ keywords: windows 10, uwp
 ms.assetid: e8c2a803-9803-47c5-b117-73c4af52c5b6
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4b9b5f08be695d803e9254e5801ac63b2889e1c9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1dd159b7cd04a7641bf3f89605e054a00a0bad58
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945810"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051111"
 ---
 # <a name="package-a-desktop-application-manually"></a>手動封裝的傳統型應用程式
 
@@ -26,7 +26,7 @@ ms.locfileid: "8945810"
 若您不確定您的安裝程式會對系統做出什麼變更，或者您想要使用自動化的工具產生您的封裝資訊清單，請考慮[這些](desktop-to-uwp-root.md#convert)選項。
 
 >[!IMPORTANT]
->在 Windows 10，版本 1607 開始，引進了建立 Windows 應用程式套件 （否則稱為傳統型橋接器） 的傳統型應用程式的能力，它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>在 Windows 10，版本 1607 開始，引進了能夠建立 （亦稱為傳統型橋接器） 的傳統型應用程式的 Windows 應用程式套件和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
@@ -84,7 +84,7 @@ ms.locfileid: "8945810"
                 ProcessorArchitecture="x64">
 ```
 > [!NOTE]
-> 如果您已經保留您的應用程式名稱，在 Microsoft Store 中，您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)來取得名稱和發行者。 如果您打算側載至其他系統應用程式，您可以提供您自己的這些名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
+> 如果您已經保留您的應用程式名稱，在 Microsoft Store 中，您可以使用[合作夥伴中心](https://partner.microsoft.com/dashboard)來取得名稱和發行者。 如果您打算側載至其他系統應用程式，您可以提供這些適用於您自己的名稱，只要您用來簽署您的應用程式的發行者名稱，依您選擇符合憑證的名稱。
 
 ### <a name="properties"></a>屬性
 
@@ -109,7 +109,7 @@ ms.locfileid: "8945810"
 ```
 ### <a name="dependencies"></a>相依性
 
-針對您建立的封裝的傳統型應用程式，一律設定``Name``屬性``Windows.Desktop``。
+針對您建立的封裝的傳統型應用程式，一律設定``Name``屬性設定為``Windows.Desktop``。
 
 ```XML
 <Dependencies>
@@ -118,7 +118,7 @@ ms.locfileid: "8945810"
 ```
 
 ### <a name="capabilities"></a>功能
-針對傳統型應用程式，您建立的封裝，如您必須新增``runFullTrust``功能。
+針對您所建立的您必須新增封裝的傳統型應用程式``runFullTrust``功能。
 
 ```XML
 <Capabilities>
@@ -211,7 +211,7 @@ ms.locfileid: "8945810"
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

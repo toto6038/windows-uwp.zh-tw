@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 地理柵欄
 ms.localizationpriority: medium
-ms.openlocfilehash: e29bcdb8c36cc8cbbb5de11d669da1249e10d706
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3fe7cb84d4ae265ed20a6a74b76e4f08dd4c1dd
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924831"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047403"
 ---
 # <a name="guidelines-for-geofencing-apps"></a>地理柵欄應用程式的指導方針
 
@@ -129,7 +129,7 @@ function onVisibilityChanged() {
 
 * [設定地理柵欄](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [取得目前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [UWP 位置範例 (地理位置)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置範例 (地理位置)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

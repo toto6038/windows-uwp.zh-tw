@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: e5150188c99bfc448bf85df6a6dabbbb4c60bd49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d7004f579bb8bb60b1f9585e49319e278770700a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921101"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048155"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
@@ -47,7 +47,7 @@ ms.locfileid: "8921101"
 
     如果使用者透過 [設定] 關閉位置資訊的存取，則釋放 [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) 物件。 然後，針對任何定位 API 呼叫，app 將會收到 **ACCESS\_DENIED** 結果。 如果您的 app 會儲存或快取位置資料，請在使用者撤銷存取位置資訊時清除所有快取資料。 在無法透過定位服務使用位置資訊時，提供手動輸入位置的替代方法。
 
--   提供用來重新啟用定位服務的 UI。 例如，提供重新整理] 按鈕，reinstantiates [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)物件，並嘗試再次取得位置資訊。
+-   提供用來重新啟用定位服務的 UI。 例如，提供重新整理] 按鈕，以重新具現化[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)物件，並嘗試再次取得位置資訊。
 
     讓您的 app 提供可重新啟用定位服務的 UI—
 
@@ -165,7 +165,7 @@ ms.locfileid: "8921101"
 * [取得目前的位置](https://msdn.microsoft.com/library/windows/apps/mt219698)
 * [顯示 2D、3D 和 Streetside 檢視的地圖](https://msdn.microsoft.com/library/windows/apps/mt219695)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP 位置範例 (地理位置)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 位置範例 (地理位置)](https://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  

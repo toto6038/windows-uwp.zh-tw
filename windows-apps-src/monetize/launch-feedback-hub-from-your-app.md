@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 意見反應中樞, 啟動
 ms.localizationpriority: medium
-ms.openlocfilehash: b4e11b8dfffd7e749a31f052545bfbdfc4449126
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9f5d5c12deed9fffc3d2515529aa5bba5fbffc47
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947870"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045271"
 ---
 # <a name="launch-feedback-hub-from-your-app"></a>從您的應用程式啟動意見反應中樞
 
-您可以鼓勵客戶將控制項 (例如按鈕) 新增到啟動意見反應中樞的通用 Windows 平台 (UWP) 應用程式，來留下意見反應。 意見反應中樞是預先安裝的應用程式，提供單一位置來收集 Windows 和已安裝應用程式的意見反應。 您的應用程式透過意見反應中樞提交的所有客戶意見反應是收集並向您呈現在[意見反應報告](../publish/feedback-report.md)在合作夥伴中心，因此您可以看到問題、 建議及附議您的客戶已提交在一份報告。
+您可以鼓勵客戶將控制項 (例如按鈕) 新增到啟動意見反應中樞的通用 Windows 平台 (UWP) 應用程式，來留下意見反應。 意見反應中樞是預先安裝的應用程式，提供單一位置來收集 Windows 和已安裝應用程式的意見反應。 透過意見反應中樞應用程式提交的所有客戶意見反應是收集並向您呈現在合作夥伴中心中的[意見反應報告](../publish/feedback-report.md)讓您可以看到問題、 建議及附議您的客戶已提交在一份報告。
 
-若要從您的應用程式啟動意見反應中樞，請使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 所提供的 API。 建議您使用這個 API，在遵循我們設計指導方針的應用程式中，從 UI 元素啟動「意見反應中樞」。
+若要從您的應用程式啟動意見反應中樞，請使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 所提供的 API。 建議您使用這個 API，在遵循我們設計指導方針的應用程式中，從 UI 元素啟動「意見反應中樞」。
 
 > [!NOTE]
 > 「意見反應中樞」僅適用於執行以傳統型和行動[裝置系列](https://msdn.microsoft.com/windows/uwp/get-started/universal-application-platform-guide#device-families)為基礎之 Windows10 OS 10.0.14271 版或更新版本的裝置。 建議您只在使用者裝置上可以使用「意見反應中樞」的情況下，才在您的應用程式中顯示意見反應控制項。 本主題中的程式碼示範操作方法。

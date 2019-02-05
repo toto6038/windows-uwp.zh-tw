@@ -6,12 +6,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: 84e3c74171c619fd59e272e539fd9a4e5428e258
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74ad832d5516a4fa9bef849c5f691e2909c6c3d4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925577"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047613"
 ---
 # <a name="use-the-multilingual-app-toolkit-40"></a>使用多語應用程式工具組 4.0
 
@@ -63,13 +63,13 @@ ms.locfileid: "8925577"
 
 工具組會反映並執行下列作業。
 
-- 針對每個您新增的語言，會使用該語言的 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)建立新的資料夾。 在該資料夾中，會建立新的資源檔 (.resw)，對應每個包含預設語言字串的檔案。
+- 針對每個您新增的語言，會使用該語言的 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)建立新的資料夾。 在該資料夾中，會建立新的資源檔 (.resw)，對應每個包含預設語言字串的檔案。
 - 若這次您第一次新增語言，名為 `MultilingualResources` 的新資料夾便會新增到專案中。 在該資料夾中，會為每個語言新增一個 .xlf 檔案。 .xlf 檔案包含您專案中每個資源檔 (.resw) 中每個字串的翻譯單位。
 - \[輸出\] 視窗會確認您新增的語言。
 
 每當您新增/移除預設語言資源檔 (.resw) 時，或是在預設語言資源檔 (.resw) 中新增/移除字串時，請重新建置專案以重新同步 .xlf 檔案。 這可確保 .xlf 檔案包含預設語言中字串的聯集。
 
-已安裝的翻譯提供者&mdash;例如 [Microsoft 語言入口網站](http://go.microsoft.com/fwlink/p/?LinkId=330295)和 [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)&mdash;可用來翻譯您應用程式的資源。 當提供者支援特定語言時，提供者的圖示便會顯示在 \[翻譯語言\] 對話方塊中語言名稱的旁邊。
+已安裝的翻譯提供者&mdash;例如 [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)和 [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)&mdash;可用來翻譯您應用程式的資源。 當提供者支援特定語言時，提供者的圖示便會顯示在 \[翻譯語言\] 對話方塊中語言名稱的旁邊。
 
 在 \[翻譯語言\] 對話方塊中，任何工具組找到的現有 .xlf 式語言的選取方塊都會預先勾選，表示該語言已包含在專案中。
 
@@ -149,8 +149,8 @@ ms.locfileid: "8925577"
 
 兩個提供者都隨附於多語應用程式工具組中。
 
-- [Microsoft 語言入口網站](http://go.microsoft.com/fwlink/p/?LinkId=330295)提供者可根據 Microsoft 產品及服務的使用者介面文字翻譯，啟用翻譯回收並提供術語比對支援。
-- [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220) 提供者可啟用隨選機器翻譯服務。
+- [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)提供者可根據 Microsoft 產品及服務的使用者介面文字翻譯，啟用翻譯回收並提供術語比對支援。
+- [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220) 提供者可啟用隨選機器翻譯服務。
 
 您和您的翻譯人員可以在多語編輯器中管理翻譯狀態，並在稍後檢閱不確定的翻譯。 您可以在 **\[屬性\]** 索引標籤中設定每個字串的狀態。狀態值為：**\[新字串\]**、**\[需要檢閱\]**、**\[已翻譯\]**、**\[最終版本\]** 及 **\[已完結\]**。 資料列左側的指標會顯示狀態。 當所有資料列在多語編輯器中都已顯示為綠色時，您的翻譯工作便已完成。
 
@@ -166,7 +166,7 @@ ms.locfileid: "8925577"
 * [全球化和當地語系化](globalizing-portal.md)
 * [全球化指導方針](guidelines-and-checklist-for-globalizing-your-app.md)
 * [讓您的應用程式可當地語系化](prepare-your-app-for-localization.md)
-* [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 
 ## <a name="downloads"></a>下載
 
@@ -175,5 +175,5 @@ ms.locfileid: "8925577"
 
 ## <a name="translation-services"></a>翻譯服務
 
-* [Microsoft 語言入口網站](http://go.microsoft.com/fwlink/p/?LinkId=330295)
-* [Microsoft Translator](http://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [Microsoft 語言入口網站](https://go.microsoft.com/fwlink/p/?LinkId=330295)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)

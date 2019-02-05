@@ -6,12 +6,12 @@ ms.date: 02/12/2017
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 0930e970af943329cac60d02a4bfe5986c21757a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42077756beff4269cc91624502fb9958c580bbc0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932667"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047270"
 ---
 # <a name="device-portal-for-xbox"></a>Xbox 的 Device Portal
 
@@ -43,7 +43,7 @@ ms.locfileid: "8932667"
 
 Xbox 裝置入口網站提供一組標準頁面，類似 Windows 裝置入口網站上提供的，另外還有幾個特殊的頁面。 如需前者的詳細描述，請參閱 [Windows 裝置入口網站概觀](device-portal.md)。 下列章節描述 Xbox 裝置入口網站專有的頁面。
 
-### <a name="home"></a>首頁
+### <a name="home"></a>家庭
 
 類似 Windows 裝置入口網站的 **\[應用程式管理員\]** 頁面，Xbox 裝置入口網站的 **\[首頁\]** 頁面也會顯示已安裝遊戲和 app 的清單，位於 **\[我的遊戲與 app\]** 底下。 按一下遊戲或 app 名稱，即可查看與其相關的詳細資料，例如 **\[套件系列名稱\]**。 在 **\[動作\]** 下拉式清單中，您可以對遊戲或 app 執行動作，例如將它 **\[啟動\]**。
 
@@ -165,7 +165,7 @@ Kinect 感應器必須連接至主機，才能變更這些設定。
 
 * **閒置時，關閉前經過的時間 (分鐘)**：裝置閒置超過這段時間後將會關閉。
 
-* **電源模式**：裝置的電源模式。 如需詳細資訊，請參閱[關於省電和立即開啟模式](http://support.xbox.com/xbox-one/console/learn-about-power-modes)。
+* **電源模式**：裝置的電源模式。 如需詳細資訊，請參閱[關於省電和立即開啟模式](https://support.xbox.com/xbox-one/console/learn-about-power-modes)。
 
 * **連接電源時主機自動開機**：裝置連接電源時將自動開啟。
 
@@ -195,7 +195,7 @@ Kinect 感應器必須連接至主機，才能變更這些設定。
 
 ### <a name="game-event-data"></a>遊戲的事件資料
 
-在**遊戲的事件資料**頁面上，您可以檢視即時圖形該資料流中的事件 Windows 追蹤 (ETW) 遊戲您 Xbox One 上目前記錄的事件數目。 如果沒有記錄系統上的遊戲事件，您也可以檢視詳細資料 （事件名稱、 事件發生，以及遊戲的標題） 描述資料表格的資料圖形中每個事件。 表格僅適用於有事件記錄。
+在**遊戲的事件資料**頁面上，您可以檢視即時圖形該資料流中事件追蹤 Windows (ETW) 遊戲您 Xbox One 上目前記錄的事件數目。 如果沒有記錄系統上的遊戲事件，您也可以檢視詳細資料 （事件名稱、 事件發生，以及遊戲的標題） 描述資料表格的資料圖形中每個事件。 表才會記錄事件時。
 
 ![遊戲的事件資料](images/device-portal-xbox-22.PNG)
 

@@ -6,12 +6,12 @@ ms.date: 11/09/2017
 ms.topic: article
 keywords: Windows 10, UWP, 協助工具, 遊戲
 ms.localizationpriority: medium
-ms.openlocfilehash: 489804c4645c8e6d1c4926e362f81926c8b2f3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e1d9d25fc63dd2fbb8d258fdaee692ccdfdc911
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937596"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046331"
 ---
 #  <a name="making-games-accessible"></a>設計無障礙遊戲
 
@@ -33,7 +33,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 可以進行遊戲的使用者數目 x 棒透了的遊戲內容 = 遊戲銷售
 
-如果您製作了令人驚嘆的遊戲，但是內容過於複雜難懂，以致於只有少數玩家可以進行，您就限制了您的銷售。 同樣地，如果您製作的遊戲不適合有肢體障礙、感官障礙或認知障礙的玩家進行，您也會錯過潛在的銷售。 例如，考慮到在[美國有 19% 的人口有某種形式的身心障礙](http://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[預估美國 14% 的成人有閱讀困難](https://nces.ed.gov/naal/estimates/overview.aspx)，並且[預估 10% 的男性有某種形式的色覺辨認障礙](https://www.aao.org/eye-health/diseases/color-blindness-risk)，這對於您作品的收益可能會有很大的影響。 
+如果您製作了令人驚嘆的遊戲，但是內容過於複雜難懂，以致於只有少數玩家可以進行，您就限制了您的銷售。 同樣地，如果您製作的遊戲不適合有肢體障礙、感官障礙或認知障礙的玩家進行，您也會錯過潛在的銷售。 例如，考慮到在[美國有 19% 的人口有某種形式的身心障礙](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html)，[預估美國 14% 的成人有閱讀困難](https://nces.ed.gov/naal/estimates/overview.aspx)，並且[預估 10% 的男性有某種形式的色覺辨認障礙](https://www.aao.org/eye-health/diseases/color-blindness-risk)，這對於您作品的收益可能會有很大的影響。 
 
 如需更詳細的商業理由，請參閱[如何設計無障礙遊戲](https://msdn.microsoft.com/library/windows/desktop/ee415219)。
 
@@ -158,7 +158,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ## <a name="game-accessibility-features"></a>遊戲協助工具功能
 
-本節會概述一些可讓遊戲變得更容易存取的功能。 這些功能衍生自[遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)內的指導方針，這些指導方針源自由製作公司、專家及學術界人員組成的團隊所共同提出的研究結果。 如需詳細資訊，請參閱[遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)。 
+本節會概述一些可讓遊戲變得更容易存取的功能。 這些功能衍生自[遊戲協助工具指導方針](https://gameaccessibilityguidelines.com/)內的指導方針，這些指導方針源自由製作公司、專家及學術界人員組成的團隊所共同提出的研究結果。 如需詳細資訊，請參閱[遊戲協助工具指導方針](https://gameaccessibilityguidelines.com/)。 
 
 ### <a name="colorblind-friendly-graphics-and-user-interface"></a>色盲能易於辨識的圖形和使用者介面
 
@@ -175,7 +175,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
     
   + 不要僅仰賴要傳達或區分遊戲物件的色彩。 也使用形狀和圖案。
   + 如果您必須只單獨依賴色彩，可組合預設和自由選擇的色彩，以便可由需要的玩家充分進行自訂，而不用針對不需要它們的玩家建立額外的工作。
-  + 使用色盲模擬器測試您的設計，讓您可以透過色盲的眼睛檢視您的設計。 這可協助您避免發生常見的對比問題。 [Color Oracle](http://www.colororacle.org) 是免費的色盲模擬器，可模擬三種最常見類型的色覺辨認障礙 – 綠色盲、紅色盲及藍色盲。
+  + 使用色盲模擬器測試您的設計，讓您可以透過色盲的眼睛檢視您的設計。 這可協助您避免發生常見的對比問題。 [Color Oracle](https://www.colororacle.org) 是免費的色盲模擬器，可模擬三種最常見類型的色覺辨認障礙 – 綠色盲、紅色盲及藍色盲。
   
 ### <a name="closed-captioning-and-subtitles"></a>隱藏式輔助字幕與字幕
 
@@ -209,13 +209,13 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ### <a name="fully-mappable-controls"></a>完全可對應的控制項
 
-有些公司和組織 (例如 [Special Effect](http://www.specialeffect.org.uk/)) 設計了可以用於不同遊戲系統 (例如 Windows 和 Xbox One) 的自訂遊戲控制器。 這個自訂項目可讓不同類型的身心障礙人士接觸本來可能無法進行遊戲。 如需透過自訂控制器而能夠獨立進行遊戲的身心障礙人士詳細資訊，請參閱[他們協助的對象](http://www.specialeffect.org.uk/who-we-helped)。
+有些公司和組織 (例如 [Special Effect](https://www.specialeffect.org.uk/)) 設計了可以用於不同遊戲系統 (例如 Windows 和 Xbox One) 的自訂遊戲控制器。 這個自訂項目可讓不同類型的身心障礙人士接觸本來可能無法進行遊戲。 如需透過自訂控制器而能夠獨立進行遊戲的身心障礙人士詳細資訊，請參閱[他們協助的對象](https://www.specialeffect.org.uk/who-we-helped)。
 
 身為遊戲開發人員，您可以藉由允許完全可對應的控制項，讓玩家可選擇插入他們的自訂控制器，並根據需求重新對應按鍵，使遊戲更易於進行。
 
 使用標準控制器的人也受益於擁有可完全對應的控制項。 您的玩家可以設計適合他們個人的獨特需求的版面配置。
 
-標準的 Xbox One 和 Xbox Elite 控制器皆提供控制器自訂項目，以進行精確的遊戲。 若要完全運用其重新對應的功能，__建議開發人員直接在遊戲中包重新對應__。 如需詳細資訊，請參閱 [Xbox One](http://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](http://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
+標準的 Xbox One 和 Xbox Elite 控制器皆提供控制器自訂項目，以進行精確的遊戲。 若要完全運用其重新對應的功能，__建議開發人員直接在遊戲中包重新對應__。 如需詳細資訊，請參閱 [Xbox One](https://support.xbox.com/xbox-one/accessories/customize-standard-controller-with-accessories-app) 和 [Xbox Elite](https://support.xbox.com/xbox-one/accessories/use-accessories-app-configure-elite-controller)。
 
 ### <a name="wider-selection-of-difficulty-levels"></a>更多的難度等級選項
 
@@ -225,7 +225,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 
 ### <a name="photosensitivity-epilepsy-testing"></a>光敏性癲癇症測試
 
-光敏性癲癇症 (PSE) 是由視覺刺激 (包括閃爍的光線，或特定的活動式視覺形式與模式) 觸發而導致的症狀。 大約有三個百分比的人會發生這種症狀，並在兒童和青少年族群中較為常見。 就數字來說的話，大約是[ 4000 位年齡在 5 到 24 歲的人當中有 1 位](http://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)。
+光敏性癲癇症 (PSE) 是由視覺刺激 (包括閃爍的光線，或特定的活動式視覺形式與模式) 觸發而導致的症狀。 大約有三個百分比的人會發生這種症狀，並在兒童和青少年族群中較為常見。 就數字來說的話，大約是[ 4000 位年齡在 5 到 24 歲的人當中有 1 位](https://www.epilepsy.com/information/professionals/about-epilepsy-seizures/reflex-seizures-and-related-epileptic-syndromes-3)。
 
 進行電玩遊戲時，有許多的因素可能造成光敏性反應，包括遊戲的持續期間、閃光的頻率、光線強度、背景與光線的對比、螢幕與玩家之間的距離，以及光線的波長。
 
@@ -241,7 +241,7 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 * 五個以上平均間隔的高對比重複條狀、列或行，例如方格和棋盤式方格，可構成較小的規則元素，例如原點花紋
 * 5 行以上的僅大寫字母的文字格式，字母間的間距不大，行距則為行本身的高度，有效率地將其轉換成高對比且平均替換列
 
-使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：由 Cambridge Research System Ltd 與 Graham Harding 教授開發的 [The Harding Test](http://www.hardingtest.com/index.php?page=test) 和 [Harding Flash and Pattern Analyzer (FPA) G2](http://www.hardingfpa.com/harding-fpa-for-games/)。) 
+使用自動化系統檢查遊戲可能會觸發光敏性癲癇的刺激。 (範例：由 Cambridge Research System Ltd 與 Graham Harding 教授開發的 [The Harding Test](https://www.hardingtest.com/index.php?page=test) 和 [Harding Flash and Pattern Analyzer (FPA) G2](https://www.hardingfpa.com/harding-fpa-for-games/)。) 
 
 包含做為設定選項的 **\[閃爍開啟/關閉\]**，預設是將 **\[閃爍\]** 設為 **\[關閉\]**。 如此一來，您即保護還不知道他們很容易癲癇發作的玩家。
 
@@ -252,21 +252,21 @@ Microsoft 相信遊戲應該是每個人都能享樂。 我們覺得不得不更
 以下是一些提供遊戲協助工具其他資訊的外部網站。
 
 ### <a name="game-accessibility-guidelines"></a>遊戲協助工具指導方針
-* [遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指導方針](http://www.includification.com/)
-* [設計通用無障礙 (UA) 遊戲](http://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
+* [遊戲協助工具指導方針](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation 指導方針](https://www.includification.com/)
+* [設計通用無障礙 (UA) 遊戲](https://www.ics.forth.gr/hci/ua-games/index_main.php?l=e&c=555)
 
 ### <a name="custom-input-controllers"></a>自訂輸入控制器
-* [Special effect](http://www.specialeffect.org.uk/)
-* [War fighter engaged](http://www.warfighterengaged.org/)
+* [Special effect](https://www.specialeffect.org.uk/)
+* [War fighter engaged](https://www.warfighterengaged.org/)
 
 ## <a name="references-used"></a>引用參考資料
-* [遊戲協助工具指導方針](http://gameaccessibilityguidelines.com/)
-* [AbleGamers Foundation 指導方針](http://www.includification.com/)
-* [Color Blind Awareness，一間以社群利益為重的公司](http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
-* [如何製作優質字幕 - 一篇由 Ian Hamilton 所撰寫的 Gamasutra 部落格文章](http://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [適用所有程式的創新](http://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
-* [癲癇症基本知識](http://www.epilepsy.com/)
+* [遊戲協助工具指導方針](https://gameaccessibilityguidelines.com/)
+* [AbleGamers Foundation 指導方針](https://www.includification.com/)
+* [Color Blind Awareness，一間以社群利益為重的公司](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
+* [如何製作優質字幕 - 一篇由 Ian Hamilton 所撰寫的 Gamasutra 部落格文章](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
+* [適用所有程式的創新](https://www.inclusivedesign.no/practical-tools/definitions-article56-127.html)
+* [癲癇症基本知識](https://www.epilepsy.com/)
 
 ## <a name="related-links"></a>相關連結
 * [包容性設計](https://www.microsoft.com/design/inclusive)

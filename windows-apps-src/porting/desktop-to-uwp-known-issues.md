@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 71f8ffcb-8a99-4214-ae83-2d4b718a750e
 ms.localizationpriority: medium
-ms.openlocfilehash: d56482ee036eaadbd759de9af22fdd10c652aceb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9c437e30db7007a6889a822d7d2219f1647bb3d8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932634"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051031"
 ---
 # <a name="known-issues-with-packaged-desktop-applications"></a>已封裝的傳統型應用程式的已知的問題
 
@@ -34,7 +34,7 @@ ms.locfileid: "8932634"
 
 若要修正此問題，請嘗試在提升權限的命令提示字元中執行命令 `Netsh int ipv4 reset`，並重新啟動您的電腦。
 
-### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>您的.NET 應用程式以 「 AnyCPU"組建選項編譯並無法安裝
+### <a name="your-net-application-is-compiled-with-the-anycpu-build-option-and-fails-to-install"></a>使用"AnyCPU"組建選項編譯您的.NET 應用程式，並無法安裝
 
 若主要可執行檔或任何相依性檔案是存放於 **Program Files** 或 **Windows\System32** 資料夾階層底下，就有可能會發生此問題。
 
@@ -69,7 +69,7 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
             **WIN_CERTIFICATE** 項目的大小必須是正值
 - 32 位元可執行檔的 **WIN_CERTIFICATE** 項目必須在 **IMAGE_NT_HEADERS32** 結構之後開始，64 位元可執行檔則是在 IMAGE_NT_HEADERS64 結構之後開始
 
-如需詳細資訊，請參閱 [Authenticode 可攜式可執行檔規格](http://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 檔格式規格](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。
+如需詳細資訊，請參閱 [Authenticode 可攜式可執行檔規格](https://download.microsoft.com/download/9/c/5/9c5b2167-8017-4bae-9fde-d599bac8184a/Authenticode_PE.docx)和 [PE 檔格式規格](https://msdn.microsoft.com/windows/hardware/gg463119.aspx)。
 
 請注意，嘗試簽署 Windows 應用程式套件時，SignTool.exe 可以輸出損毀或格式錯誤之二進位檔案的清單。 若要這樣做，請將環境變數 APPXSIP_LOG 設定為 1 (如 ```set APPXSIP_LOG=1```) 以啟用詳細資訊記錄，然後重新執行 SignTool.exe。
 
@@ -93,7 +93,7 @@ PE 檔的 Authenticode 簽章的位置是由「選用標頭資料目錄」中的
 
 如果更新無法修正問題，或您不確定如何復原電腦，請連絡 [Microsoft 支援服務](https://support.microsoft.com/contactus/)。
 
-如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，如此您的應用程式不會提供給尚未安裝更新的使用者。 若要限制您已安裝此更新的使用者的應用程式的可用性，如下所示修改您的 AppxManifest.xml 檔案：
+如果您是開發人員，建議您避免在不包含此更新的 Windows 版本上安裝已封裝應用程式。 請注意，如此您的應用程式不會提供給尚未安裝更新的使用者。 若要限制使用者已安裝此更新您的應用程式的可用性，如下所示修改您的 AppxManifest.xml 檔案：
 
 ```<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.351" MaxVersionTested="10.0.14393.351"/>```
 
@@ -137,11 +137,11 @@ certutil -dump <cert_file.pfx>
 
 * 憑證的大小不是正面。
 
-* 憑證開始不之後`IMAGE_NT_HEADERS32`結構的 32 位元可執行檔或之後`IMAGE_NT_HEADERS64`結構的 64 位元可執行檔。
+* 憑證開始不之後`IMAGE_NT_HEADERS32`針對 32 位元的可執行檔或之後的結構`IMAGE_NT_HEADERS64`64 位元的可執行檔的結構。
 
 * 憑證指標不正確對齊 WIN_CERTIFICATE 結構。
 
-若要尋找包含錯誤的 PE 憑證的檔案，開啟**命令提示字元**，並設定環境變數，名為`APPXSIP_LOG`設為 1 的值。
+若要尋找包含錯誤的 PE 憑證檔案，開啟**命令提示字元**，並設定環境變數，名為`APPXSIP_LOG`設為 1 的值。
 
 ```
 set APPXSIP_LOG=1
@@ -153,7 +153,7 @@ set APPXSIP_LOG=1
 signtool.exe sign /a /v /fd SHA256 /f APPX_TEST_0.pfx C:\Users\Contoso\Desktop\pe\VLC.appx
 ```
 
-包含錯誤的 PE 憑證的檔案的資訊會出現在**主控台視窗**。 例如：
+在**主控台視窗**中，會顯示包含錯誤的 PE 憑證的檔案的相關資訊。 例如：
 
 ```
 ...
@@ -166,7 +166,7 @@ ERROR: [AppxSipCustomLoggerCallback] File has malformed certificate: uninstall.e
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

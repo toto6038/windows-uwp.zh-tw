@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: a399fae9-122c-46c4-a1dc-a1a241e5547a
 ms.localizationpriority: medium
-ms.openlocfilehash: f5320d4d6a4f43ee8d94a55e46333821656adb20
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 644139f800caa2ead61ce19d63d4408c01575025
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941181"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044901"
 ---
 # <a name="behind-the-scenes-of-your-packaged-desktop-application"></a>您已封裝的傳統型應用程式的幕後作業
 
 這篇文章提供的深入解析為傳統型應用程式建立 Windows 應用程式套件時，檔案與登錄項目會發生什麼事。
 
-現代化套件的主要目標是將應用程式狀態分離與系統狀態盡可能同時維持與其他應用程式的相容性。 橋接器會透過將應用程式放入通用 Windows 平台 (UWP) 套件中，然後偵測它在執行階段對檔案系統與登錄所做的某些變更並重新導向，來達到此目標。
+現代化套件的主要目標是將應用程式狀態分離與系統狀態儘可能同時維持與其他應用程式的相容性。 橋接器會透過將應用程式放入通用 Windows 平台 (UWP) 套件中，然後偵測它在執行階段對檔案系統與登錄所做的某些變更並重新導向，來達到此目標。
 
 您為傳統型應用程式建立的套件為桌面專用、 完全信任的應用程式並且無法虛擬化或沙箱化。 這可讓它們以和傳統桌面應用程式的相同方式與其他 App 互動。
 
@@ -31,7 +31,7 @@ ms.locfileid: "8941181"
 
 為了包含應用程式狀態，擷取應用程式對 appdata 所做的變更。 所有寫入到使用者 [AppData] 資料夾 (例如 *C:\Users\user_name\AppData*) 的動作 (包括建立、刪除和更新) 都會在寫入時複製到私人的各個使用者、各個 App 位置。 這會建立時實際上修改的是私人複本的已封裝的應用程式正在編輯實際 AppData 的錯覺效果。 透過這種方式將寫入重新導向，系統就可以追蹤 App 執行的所有檔案修改。 這可讓系統在解除安裝應用程式時清理那些檔案，因此減少系統 「 垃圾 」，並提供更好的應用程式移除使用者體驗。
 
-除了重新導向 AppData 與應用程式套件中相對應的目錄動態合併 Windows 的已知資料夾 （System32、 Program Files (x86) 等等）。 每個套件在其根目錄都會包含名為「VFS」的資料夾。 在 VFS 目錄中讀取的任何目錄或檔案，都會在執行階段與各自的原生對應項目合併。 例如，應用程式可包含*C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll*做為其應用程式套件的一部分，但檔案會顯示為安裝在*C:\Windows\System32\vc10.dll*。  這樣可維持與可能預期檔案位於非套件位置的傳統型應用程式的相容性。
+除了重新導向 AppData 與應用程式套件中相對應的目錄動態合併 Windows 的已知資料夾 （System32、 Program Files (x86) 等等）。 每個套件在其根目錄都會包含名為「VFS」的資料夾。 在 VFS 目錄中讀取的任何目錄或檔案，都會在執行階段與各自的原生對應項目合併。 例如，應用程式可能包含*C:\Program Files\WindowsApps\package_name\VFS\SystemX86\vc10.dll*做為其應用程式套件的一部分，但檔案會顯示為安裝在*C:\Windows\System32\vc10.dll*。  這樣可維持與可能預期檔案位於非套件位置的傳統型應用程式的相容性。
 
 不允許在應用程式套件中對檔案/資料夾進行寫入。 只要使用者具有權限，橋接器就會略過並允許對不屬於套件的檔案和資料夾進行的寫入作業。
 
@@ -90,13 +90,13 @@ FOLDERID_System\spool | AppVSystem32Spool | x86、amd64
 
 ## <a name="uninstallation"></a>解除安裝
 
-由使用者解除安裝套件時，所有的檔案和資料夾位於*C:\Program Files\WindowsApps\package_name*移除，以及在封裝程序期間所擷取對 AppData 或登錄任何重新導向寫入。
+由使用者解除安裝套件時，所有檔案與資料夾位於*C:\Program Files\WindowsApps\package_name*都移除，以及在封裝程序期間所擷取對 AppData 或登錄任何重新導向寫入。
 
 ## <a name="next-steps"></a>後續步驟
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

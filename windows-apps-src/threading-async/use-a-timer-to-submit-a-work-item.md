@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 計時器, 執行緒
 ms.localizationpriority: medium
-ms.openlocfilehash: 9cad23f5f82ce70b3a9920726d054b59446925b8
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 0ee5142997e3d4824152adf6d0b26bccb8a30f7f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981522"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044133"
 ---
 # <a name="use-a-timer-to-submit-a-work-item"></a>使用計時器提交工作項目
 
@@ -27,7 +27,7 @@ ms.locfileid: "8981522"
 
 使用 [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 方法建立工作項目的計時器。 提供完成工作的 Lambda，以及使用 *delay* 參數指定執行緒集區需要等待多久的時間，才能將工作項目指派給可用的執行緒。 延遲使用 [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 結構指定。
 
-> **注意：** 您可以使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)來存取 UI 及顯示進度從工作項目。
+> **注意：** 您可以使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI 及顯示進度從工作項目。
 
 下列範例會建立一個在三分鐘內執行的工作項目：
 
@@ -221,7 +221,7 @@ ms.locfileid: "8981522"
 
 通用 Windows 平台 (UWP) app 無法使用 **Thread.Sleep**，因為它會封鎖 UI 執行緒。 您可以改為使用 [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) 來建立工作項目，這將會延遲由該工作項目完成的工作，而且不會封鎖 UI 執行緒。
 
-如需示範工作項目、計時器工作項目以及定期工作項目的完整程式碼範例，請參閱[執行緒集區範例](http://go.microsoft.com/fwlink/p/?linkid=255387)。 針對 Windows8.1 原本是撰寫程式碼範例中，但程式碼可以在 windows 10 中重複使用。
+如需示範工作項目、計時器工作項目以及定期工作項目的完整程式碼範例，請參閱[執行緒集區範例](https://go.microsoft.com/fwlink/p/?linkid=255387)。 原本是針對 windows 8.1 撰寫程式碼範例中，但可在 windows 10 中重複使用程式碼。
 
 如需重複計時器的詳細資訊，請參閱[建立定期工作項目](create-a-periodic-work-item.md)。
 

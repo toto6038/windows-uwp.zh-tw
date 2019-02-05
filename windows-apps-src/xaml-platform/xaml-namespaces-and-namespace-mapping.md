@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6178e2072721ad8514ba7ddfc0ae8f99ab59d34c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4332bd0b19d381937e477efc472634d6d81afd58
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920580"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046491"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping"></a>XAML 命名空間與命名空間對應
 
@@ -65,7 +65,7 @@ XAML 語言會指定特定語言元素，這些元素中的每個元素都應該
 
 -   **d:DataContext 屬性：** 您可以在頁面根元素或控制項上設定這個屬性，覆寫物件在其他情況下所具有的任何明確或繼承的 [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)。
 -   **d:DesignSource 屬性：** 指定 [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) 的設計階段資料來源，會覆寫 [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835)。
--   **d:DesignInstance 和 d:DesignData 標記延伸：** 這些標記延伸是用來為 **d:DataContext** 或 **d:DesignSource** 提供設計階段資料資源。 我們將不會在這裡完全載明如何使用設計階段資料資源。 如需詳細資訊，請參閱[設計階段屬性](http://go.microsoft.com/fwlink/p/?LinkId=272504)。 如需一些使用範例，請參閱[設計介面上適用於原型設計的範例資料](https://msdn.microsoft.com/library/windows/apps/mt517866)。
+-   **d:DesignInstance 和 d:DesignData 標記延伸：** 這些標記延伸是用來為 **d:DataContext** 或 **d:DesignSource** 提供設計階段資料資源。 我們將不會在這裡完全載明如何使用設計階段資料資源。 如需詳細資訊，請參閱[設計階段屬性](https://go.microsoft.com/fwlink/p/?LinkId=272504)。 如需一些使用範例，請參閱[設計介面上適用於原型設計的範例資料](https://msdn.microsoft.com/library/windows/apps/mt517866)。
 
 ### **<a name="mc-httpschemasopenxmlformatsorgmarkup-compatibility2006"></a>mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 

@@ -4,14 +4,14 @@ title: 列印與掃描
 description: 本節描述如何從您的通用 Windows 應用程式列印與掃描。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，列印，3dprinting，3d 列印
+keywords: windows 10，uwp，列印、 3dprinting，3d 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 5cfc91ae6f74117c6c3414691137b334cfd0dc4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 99272c4e9ffd461901b4b2f2d2aa93b416a1b100
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935646"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044685"
 ---
 # <a name="printing-and-scanning"></a>列印與掃描
 
@@ -29,6 +29,6 @@ ms.locfileid: "8935646"
 
 * [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: a9544c1eecc4c1a86552d053694872743a17142c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 48cea8c1a3a3c35a53a3376c48e3192c94caf709
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926221"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049285"
 ---
 # <a name="getting-started-choosing-a-programming-language"></a>開始使用：選擇程式設計語言
 
@@ -31,7 +31,7 @@ ms.locfileid: "8926221"
 **注意：** 針對使用 3D 圖形的應用程式，OpenGL 和 OpenGL ES 標準並非原生適用於 UWP 應用程式。 如果您不希望將您的 OpenGL ES 程式碼重新撰寫成 Microsoft DirectX，則您可能會想要了解 **Angle**。 Angle 是一個正在進行中的專案，設計目的是透過將 OpenGL API 呼叫轉譯成 DirectX API 呼叫，來將 OpenGL 轉換成 DirectX。 若要深入了解，請參閱下列主題：
 -   [角度](https://code.google.com/p/angleproject/)
 -   [建立您第一次使用 DirectX 的 UWP app](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [使用 DirectX 的 UWP 應用程式範例](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [使用 DirectX 的 UWP app 範例](https://go.microsoft.com/fwlink/p/?LinkId=263603)
 -   [DirectX SDK 在哪裡？](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
 ## <a name="giving-c-a-go"></a>試看看使用 C#
@@ -39,8 +39,8 @@ ms.locfileid: "8926221"
 身為 iOS 開發人員，您習慣使用 Objective-C 和 Swift。 與兩者最接近的 Microsoft 程式設計語言是 C#。 對於大部分的開發人員及 app 而言，我們認為 C# 是最簡單且最快速學習和使用的語言，所以本文中的資訊及逐步解說會將焦點放在該語言。 若要深入了解 C#，請參閱下列主題：
 
 -   [建立第一個 UWP app 使用 C# 或 Visual Basic](../get-started/create-a-hello-world-app-xaml-universal.md)
--   [使用 C# 的 UWP app 範例](http://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [使用 C# 的 UWP app 範例](https://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#](https://go.microsoft.com/fwlink/p/?LinkId=263450)
 
 以下是使用 Objective-C 與 C# 撰寫的類別。 首先先顯示 Objective-C 的寫法，接著是 C# 的寫法。
 

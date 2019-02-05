@@ -6,12 +6,12 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ms.date: 01/23/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8555f9594ac3d2e7ea1b9f7006750c1084db3d9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f70d768ad6589e210826f94f73249ed1ea272e1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944095"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045607"
 ---
 # <a name="windows-10-universal-windows-platform-uwp-app-lifecycle"></a>Windows 10 通用 Windows 平台 (UWP) app 週期
 
@@ -56,7 +56,7 @@ App 啟動時，會呼叫 [**OnLaunched**](https://msdn.microsoft.com/library/wi
 |**ClosedByUser** | 使用者在平板電腦模式中，利用關閉手勢或 Alt+F4 關閉 app。 當使用者關閉 app 時，其會遭到暫停，然後才予以終止。 | 因為 app 基本上都是經由相同步驟進入 Terminated 狀態，所以請採用和 Terminated 狀態相同的方式來處理。|
 |**Running** | 當使用者嘗試再次啟動時，app 早已開啟。 | 無。 請注意，並不會啟動另一個 app 執行個體。 只會啟用已在執行中的執行個體。 |
 
-**注意：***目前的使用者工作階段*是以 Windows 登入為基礎。 只要目前的使用者沒有登出、關機，或重新啟動 Windows，目前的使用者工作階段就會跨事件 (例如鎖定畫面驗證、切換使用者等等) 持續存在。 
+**注意：***目前的使用者工作階段*根據 Windows 登入。 只要目前的使用者沒有登出、關機，或重新啟動 Windows，目前的使用者工作階段就會跨事件 (例如鎖定畫面驗證、切換使用者等等) 持續存在。 
 
 但有一個重要的情況需要注意，如果裝置有足夠的資源，作業系統會預先啟動經常使用且已選擇加入該行為的 app，以讓回應性達到最佳。 預先啟動的 app 會在背景啟動，隨後迅速暫停，以便使用者切換至該 app 時，以比啟動 app 更快的速度繼續。
 
@@ -64,7 +64,7 @@ App 啟動時，會呼叫 [**OnLaunched**](https://msdn.microsoft.com/library/wi
 
 Windows 會在 app 啟動時顯示啟動顯示畫面。 如果要設定啟動顯示畫面，請參閱[新增啟動顯示畫面](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)。
 
-顯示啟動顯示畫面時，app 應登錄事件處理常式，並設定初始頁面所需的任何自訂 UI。 查看這些工作是否在應用程式的建構函式中執行，而且 **OnLaunched()** 會在數秒 內完成，否則系統可能會認為 app 已停止回應而予以終止。 如果 app 必須從網路取得資料，或必須從磁碟抓取大量資料，那麼您應該在啟動以外的時間完成這些動作。 App 可以使用自己的自訂載入 UI 或是延長式啟動顯示畫面，同時等待長時間執行的操作完成。 如需詳細資訊，請參閱[延長顯示啟動顯示畫面](create-a-customized-splash-screen.md)和[啟動顯示畫面範例](http://go.microsoft.com/fwlink/p/?linkid=234889)。
+顯示啟動顯示畫面時，app 應登錄事件處理常式，並設定初始頁面所需的任何自訂 UI。 查看這些工作是否在應用程式的建構函式中執行，而且 **OnLaunched()** 會在數秒 內完成，否則系統可能會認為 app 已停止回應而予以終止。 如果 app 必須從網路取得資料，或必須從磁碟抓取大量資料，那麼您應該在啟動以外的時間完成這些動作。 App 可以使用自己的自訂載入 UI 或是延長式啟動顯示畫面，同時等待長時間執行的操作完成。 如需詳細資訊，請參閱[延長顯示啟動顯示畫面](create-a-customized-splash-screen.md)和[啟動顯示畫面範例](https://go.microsoft.com/fwlink/p/?linkid=234889)。
 
 App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消失，並會清除所有啟動顯示畫面資源和物件。
 
@@ -131,7 +131,7 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 ### <a name="asynchronous-work-and-deferrals"></a>非同步工作和延遲
 
-如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](http://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](http://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 物件呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法之後。
+如果您在處理常式內進行非同步呼叫，控制權會立即從該非同步呼叫交回。 這表示執行可隨後從事件處理常式傳回，即使非同步呼叫尚未完成，app 也會移至下一個狀態。 針對會傳送給事件處理常式的 [**EnteredBackgroundEventArgs**](https://aka.ms/Ag2yh4) 物件使用 [**GetDeferral**](https://aka.ms/Kt66iv) 方法以延遲暫停，一直到您針對傳回的 [**Windows.Foundation.Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) 物件呼叫 [**Complete**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.complete.aspx) 方法之後。
 
 延遲不會提高在應用程式終止之前所需執行的程式碼數量。 其只會延遲終止，直到呼叫延遲的 *Complete* 方法或期限到期 (*視何者先發生*) 為止。
 
@@ -183,9 +183,9 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 使用者通常不需要關閉 app，交由 Windows 管理即可。 不過，使用者可以在 Windows Phone 上，選擇使用關閉手勢，或按 Alt+F4 或使用工作切換器，來關閉 app。
 
-沒有事件可指出使用者已關閉 app。 由使用者關閉 app 時，會先予以暫停，讓您有機會儲存其狀態。 在 Windows8.1 和更新版本，由使用者關閉應用程式之後，移除 app 從畫面和切換清單，但不是會明確終止。
+沒有事件可指出使用者已關閉 app。 由使用者關閉 app 時，會先予以暫停，讓您有機會儲存其狀態。 在 windows 8.1 和更新版本，由使用者關閉 app 之後，移除 app 從畫面和切換清單，但不是會明確終止。
 
-**藉由使用者關閉的行為：** 如果您的應用程式所需動作，不同於由 Windows 關閉時使用者關閉時，您可以使用啟用事件處理常式，判斷應用程式已由使用者或由 Windows 終止。 請參閱 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列舉參考資料中有關 **ClosedByUser** 與 **Terminated** 狀態的描述。
+**藉由使用者關閉的行為：** 如果您的應用程式需要執行動作，不同於由 Windows 關閉時使用者關閉時，您可以使用啟用事件處理常式，判斷應用程式已由使用者或由 Windows 終止。 請參閱 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列舉參考資料中有關 **ClosedByUser** 與 **Terminated** 狀態的描述。
 
 建議您除非絕對有必要，否則不要讓 app 以程式設計的方式自行關閉。 例如，如果 app 偵測到記憶體流失，就可以自行關閉以保護使用者個人資料的安全。
 
@@ -193,7 +193,7 @@ App 完成啟動之後會進入 **Running** 狀態，啟動顯示畫面隨之消
 
 系統毀損經驗的設計旨在讓使用者儘快返回原先正在進行的作業。 您不應該提供警告對話方塊或其他通知，因為這會造成使用者的延遲。
 
-如果您的 app 毀損、停止回應或產生例外狀況，系統將會依據使用者的[意見反應與診斷設定](http://go.microsoft.com/fwlink/p/?LinkID=614828)將問題報告傳送給 Microsoft。 Microsoft 會在給您的問題報告中提供錯誤資料的子集，讓您用來改善 app。 您可以在您的儀表板中 app 的 \[品質\] 頁面上看到這些資料。
+如果您的 app 毀損、停止回應或產生例外狀況，系統將會依據使用者的[意見反應與診斷設定](https://go.microsoft.com/fwlink/p/?LinkID=614828)將問題報告傳送給 Microsoft。 Microsoft 會在給您的問題報告中提供錯誤資料的子集，讓您用來改善 app。 您可以在您的儀表板中 app 的 \[品質\] 頁面上看到這些資料。
 
 當使用者在 app 毀損之後再次啟用，其啟用事件處理常式會收到 **NotRunning** 的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 值，而且應該顯示其初始 UI 和資料。 損毀之後，請不要依照之前針對 **Resuming** 和 **Suspended** 的方式使用 app 資料，因為該資料可能已經損毀，請參閱 [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465088)。
 

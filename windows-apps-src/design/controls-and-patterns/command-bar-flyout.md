@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: dc4adf5002858b394c6908b91f14557c3e1eed7b
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037340"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050951"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -406,7 +406,7 @@ TextCommandBarFlyout 無法自訂，並由每個文字控制項自動管理。 �
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
 - [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
-- [XAML 命令範例](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+- [XAML 命令範例](https://go.microsoft.com/fwlink/p/?LinkId=620019)
 
 ## <a name="related-articles"></a>相關文章
 

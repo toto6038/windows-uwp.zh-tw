@@ -6,27 +6,27 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 行銷活動, 促銷
 ms.localizationpriority: medium
-ms.openlocfilehash: 8ece97d2e2cf96d2905902fd563f1de9027aa64a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c198bf9ebb8eb6f409277bfe09af6881530d5a7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919993"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047087"
 ---
 # <a name="create-an-ad-campaign-for-your-app"></a>為您的應用程式建立廣告活動
 
-您可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)來協助推銷您的應用程式，並拓展其使用者數量建立廣告行銷活動。 根據預設，我們會選擇根據您的應用程式，在合作夥伴中心，設定您的廣告的目標對象，但您可以選擇定義您自己的對象。 您也可以使用一組預設的廣告範本或上傳自己的廣告設計。 如需廣告行銷活動的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md)。
+您可以在[合作夥伴中心](https://partner.microsoft.com/dashboard)來協助推銷您的應用程式，並拓展其使用者數量建立廣告行銷活動。 根據預設，我們會選擇根據您的應用程式，在合作夥伴中心設定您的廣告的目標對象，但您可以選擇定義您自己的對象。 您也可以使用一組預設的廣告範本或上傳自己的廣告設計。 如需廣告行銷活動的詳細資訊，請參閱[廣告行銷活動的常見問題](common-questions.md)。
 
 您可以只針對已通過[應用程式認證程序](the-app-certification-process.md)最後發佈階段的應用程式建立廣告行銷活動。
 
 > [!NOTE]
-> 文件的這一節說明如何在合作夥伴中心建立廣告行銷活動。 或者，您也可以使用 [Microsoft Store 促銷 API](../monetize/run-ad-campaigns-using-windows-store-services.md)，以程式設計方式建立和管理廣告行銷活動。
+> 文件的這一節會說明如何在合作夥伴中心建立廣告行銷活動。 或者，您也可以使用 [Microsoft Store 促銷 API](../monetize/run-ad-campaigns-using-windows-store-services.md)，以程式設計方式建立和管理廣告行銷活動。
 
 ## <a name="instructions"></a>指示
 
 以下說明如何建立廣告活動來促銷 App。
 
-1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)的左方的導覽功能表中，展開**吸引**，然後選取 [**廣告活動**。
+1.  在[合作夥伴中心](https://partner.microsoft.com/dashboard)的左方的導覽功能表中，展開**吸引**，然後選取**廣告行銷活動**。
 2.  選取 **\[建立廣告活動\]** (或者如果您已經建立廣告活動，請選取 **\[新廣告活動\]**)。
 3.  在下一頁的 **\[目標類型\]** 區段中，選擇其中一項︰
     * **增加 app 安裝次數**。 如果您的廣告活動是要吸引人安裝您的 app，請選取此選項。
@@ -74,7 +74,7 @@ ms.locfileid: "8919993"
         * 在 **\[語言\]** 下拉式清單中選取廣告的語言。 Microsoft Store 徽章的文字會以您選取的語言顯示。
         * 若要新增額外的標語文字到廣告中，在 **\[自訂標語\]** 欄位中輸入文字。
             > [!NOTE]
-            > 您在此輸入的文字必須當地語系化成選取的語言。 如果文字未符合 [Bing 廣告原則](http://go.microsoft.com/fwlink?LinkId=398341)，將會拒絕自訂標語。 如需樣式與禁止內容的指導方針，請參閱此頁面。
+            > 您在此輸入的文字必須當地語系化成選取的語言。 如果文字未符合 [Bing 廣告原則](https://go.microsoft.com/fwlink?LinkId=398341)，將會拒絕自訂標語。 如需樣式與禁止內容的指導方針，請參閱此頁面。
         * 若要進一步自訂廣告，請展開 **\[自訂廣告設計/看見所有廣告大小\]** 並選擇下列任一項︰
             * **背景色彩**。 從可用的選項中選擇。
             * **影像**。 選擇其中一個可用影像（取自您的應用程式市集清單）。
@@ -84,13 +84,13 @@ ms.locfileid: "8919993"
 
     * **自訂**。 選擇此選項以使用您自己的廣告設計。 請注意，是否您稍早選取一個客戶區隔，您必須使用自訂素材。 您可以針對每個可用的廣告尺寸上傳不同的檔案。 檔案必須符合下列需求與指導方針：
         * 每個檔案都必須是小於或等於 40 KB 的 .png 或 .jpg 檔案。
-        * 您的廣告設計必須符合 [Microsoft 創意接受原則](http://go.microsoft.com/fwlink?LinkId=532595)中指定的需求。
+        * 您的廣告設計必須符合 [Microsoft 創意接受原則](https://go.microsoft.com/fwlink?LinkId=532595)中指定的需求。
         * 您廣告設計中的內容必須與宣傳的應用程式相關。 與應用程式無關的廣告設計將不會發佈給其他應用程式中的廣告。
         * 您廣告設計中的所有內容都應該清晰易懂。 例如，內容不應該模糊不清、像素不足或延展。
 
 12.  如果您有 [Premium 帳戶](common-questions.md#how-can-i-increase-the-maximum-monthly-budget-amount-allowed-for-my-ad-campaign)，您可以使用 **\[連結網址\]** 方塊來控制客戶按一下您的廣告時會發生的事。
     * 如果方塊保留空白，當客戶按一下您的廣告時，會顯示您的應用程式市集清單。
-    * 如果您使用 Kochava 或 Tune 來測量您應用程式的安裝分析，請從 Kochava 或 Tune 輸入您的安裝追蹤 URL。 當您儲存活動時，系統會驗證該追蹤 URL 以確保它會解析至您應用程式在Microsoft Store 中的清單頁面。 如需使用 Kochava 和 Tune 的安裝追蹤的詳細資訊，請參閱 [Kochava](http://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文件。
+    * 如果您使用 Kochava 或 Tune 來測量您應用程式的安裝分析，請從 Kochava 或 Tune 輸入您的安裝追蹤 URL。 當您儲存活動時，系統會驗證該追蹤 URL 以確保它會解析至您應用程式在Microsoft Store 中的清單頁面。 如需使用 Kochava 和 Tune 的安裝追蹤的詳細資訊，請參閱 [Kochava](https://support.kochava.com/) 和 [Tune](https://help.tune.com/) 文件。
     * 如果您選擇 **\[增加與 App 的互動\]** 做為您的行銷活動目標，您可以指定[深層連結 URI](../launch-resume/handle-uri-activation.md)，將選取區隔中的客戶重新導向到您應用程式內的指定頁面。
     * 如果您指定了任何不是您應用程式說明頁面或應用程式內頁面的目的地，您的行銷活動將會自動暫停。
 

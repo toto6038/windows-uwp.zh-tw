@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: b888bf1373dfb0cac80881117570eb23e8802142
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929438"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044472"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 
@@ -36,7 +36,7 @@ ms.locfileid: "8929438"
 撰寫方法以處理取消事件。
 
 > [!NOTE]
-> 針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外，或應用程式不會處理它，然後在背景工作將會終止沒有警告也沒有引發 OnCanceled 事件。 這有助於確保前景應用程式的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
+> 針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外，或應用程式不會處理，則沒有警告也沒有引發 OnCanceled 事件情況下，將會終止背景工作。 這有助於確保前景應用程式的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
 
 依下列方式建立名為 **OnCanceled** 的方法。 這個方法是當針對您的背景工作提出取消要求時，由「Windows 執行階段」呼叫的進入點。
 
@@ -83,9 +83,9 @@ private:
     volatile bool CancelRequested;
 ```
 
-您在步驟 1 中建立的**OnCanceled**方法中設定旗標變數**\_CancelRequested**為**true**。
+在您在步驟 1 中建立的**OnCanceled**方法，將旗標變數**\_CancelRequested** **，則為 true**。
 
-完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法會**\_CancelRequested**設為**true** ，並將潛在的實用偵錯輸出。
+完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法將**\_CancelRequested**設**為 true** ，並將潛在的實用偵錯輸出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
@@ -135,7 +135,7 @@ taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &Exam
 
 修改背景工作類別的程式碼，以便在旗標變數運作時檢查旗標變數。 如果**\_cancelRequested**變得設定為 true，便會阻止工作繼續。
 
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)包含取消背景工作時，會停止定期計時器回呼的檢查。
+[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)包含，如果取消背景工作時停止定期計時器回呼的檢查。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -181,7 +181,7 @@ else
 
 修改**Run**方法，以便讓工作停止後，記錄工作已完成還是被取消。 此步驟適用於跨處理序背景工作，因為您需要一個當背景工作被取消時，可在處理序之間通訊的方法。 針對同處理序背景工作，您只能與應用程式分享狀態以指出工作已被取消。
 
-[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態。
+[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)會在 LocalSettings 中記錄狀態。
 
 ```csharp
 if ((_cancelRequested == false) && (_progress < 100))
@@ -255,13 +255,13 @@ else
 
 ## <a name="remarks"></a>備註
 
-您可以下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)，查看方法內容中的這些程式碼範例。
+您可以下載[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)，查看方法內容中的這些程式碼範例。
 
-為了便於說明，範例程式碼僅顯示的**Run**方法 （以及回呼計時器） 從[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。
+為了便於說明，範例程式碼僅顯示的**Run**方法 （以及回呼計時器） 從[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
 ## <a name="run-method-example"></a>Run 方法範例
 
-完成**Run**方法，以及回呼計時器程式碼，請從[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)如下所示的內容。
+完成**Run**方法，以及回呼計時器程式碼，請從[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)如下所示的內容。
 
 ```csharp
 // The Run method is the entry point of a background task.
@@ -414,4 +414,4 @@ void ExampleBackgroundTask::Run(IBackgroundTaskInstance^ taskInstance)
 - [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
 - [使用維護觸發程序](use-a-maintenance-trigger.md)
 - [偵錯背景工作](debug-a-background-task.md)
-- [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+- [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)

@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 888de987d507f0a1a21458c299605ebcc7b1bc70
-ms.sourcegitcommit: 393180e82e1f6b95b034e99c25053d400e987551
+ms.openlocfilehash: 3f474ec0c3017c3834d3eadb6f1caa989fc188a7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "8990471"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050741"
 ---
 # <a name="accessible-text-requirements"></a>協助工具文字的需求  
 
@@ -28,13 +28,13 @@ ms.locfileid: "8990471"
 ## <a name="contrast-ratios"></a>對比率  
 雖然使用者一直都可以選擇切換至高對比模式，但是您 App 對文字的設計應該將該選項視為最後的手段。 更好的做法是確定 App 文字符合專門為文字與背景間的對比層級所制定的指導方針。 對比層級的評估是根據各種不考慮色調的決定性技術。 例如，如果是綠色背景上的紅色文字，那麼患有色盲的使用者可能就看不清楚文字。 檢查並更正對比率可以防止這些類型的協助工具問題。
 
-此處記載的文字對比建議是以網頁協助工具標準為基礎，[G18：確定文字 (和文字的圖像) 和文字背景之間的對比率至少是 4.5:1](http://go.microsoft.com/fwlink/p/?linkid=221823)。 此指導方針位於 *WCAG 2.0 的 W3C 技術*規格中。
+此處記載的文字對比建議是以網頁協助工具標準為基礎，[G18：確定文字 (和文字的圖像) 和文字背景之間的對比率至少是 4.5:1](https://go.microsoft.com/fwlink/p/?linkid=221823)。 此指導方針位於 *WCAG 2.0 的 W3C 技術*規格中。
 
 為了提供無障礙功能，顯示的文字與背景的亮度對比率至少必須是 4.5:1。 例外的情況包括標誌以及不重要的文字，例如非作用中 UI 元素的文字。
 
 也排除修飾性文字與沒有傳達任何意義的文字。 例如，如果使用隨機文字來建立背景，而且文字可以重新排列或替換，而不會破壞含意，則此類的文字視為修飾性文字，可以不用符合這項規定。
 
-使用色彩對比工具確定可見文字的對比率是否可被接受。 請參閱 [WCAG 2.0 的技術 G18 (資源一節)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) (英文)，了解可以測試對比率的工具。
+使用色彩對比工具確定可見文字的對比率是否可被接受。 請參閱 [WCAG 2.0 的技術 G18 (資源一節)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) (英文)，了解可以測試對比率的工具。
 
 > [!NOTE]
 > 《WCAG 2.0 的技術》中 G18 列出的一些工具不能與 UWP App 互動使用。 您可能需要手動在工具中輸入前景和背景的色彩值，或擷取 App UI 的螢幕畫面，然後針對螢幕擷取的影像執行對比率工具。
@@ -122,21 +122,21 @@ _沒有預設選取項目的範例_
 <span id="text_font_size"/>
 <span id="TEXT_FONT_SIZE"/>
 
-## <a name="text-font-size-and-scale"></a>文字字型大小和縮放比例
+## <a name="text-font-size-and-scale"></a>文字字型大小與縮放比例
 
-使用者可以有難以閱讀的字型使用，只應用程式中的文字太小，因此請確定您的應用程式中的任何文字一開始是合理的大小。
+使用者可以有難以閱讀的字型用途，只應用程式中的文字太小，因此請確定您的應用程式中的任何文字一開始是合理的大小。
 
 一旦您完成此明顯，Windows 會包含各種協助工具和設定，使用者可以充分利用並調整自己的需求和喜好設定來閱讀文字。 其中包括：
 
-* 放大鏡工具，可以放大 UI 的選取的區域。 您應該確定應用程式中文字的版面配置不會讓很難使用放大鏡供閱讀。
-* 中的全域縮放及解析度設定**設定]-> [系統]-> [顯示]-> [縮放與版面配置**。 確切哪些大小設定選項可供使用時可能會有所不同，因為這會根據顯示裝置的功能。
-* 中的文字大小設定**設定]-> [輕鬆存取]-> [顯示**。 調整**大的文字，使**設定，來支援在所有應用程式和 （所有 UWP 文字控制項都支援縮放體驗不需要任何的自訂項目或範本化的文字） 的螢幕上的控制項中指定的文字大小。 
+* 放大鏡工具，可以放大 UI 的選取的區域。 您應該確定應用程式中文字的版面配置不會讓很難使用放大鏡針對讀取。
+* 全域縮放和解析度設定中**設定 >System->Display >Scale 和配置**。 確切哪些大小設定選項可供使用時可能會有所不同，因為這會根據顯示裝置的功能。
+* **設定->Ease 的存取權 >Display**中的文字大小設定。 調整**大的文字，使**設定，來支援在所有應用程式和 （所有 UWP 文字控制項都支援縮放體驗不需要任何的自訂項目或範本化的文字） 的螢幕上的控制項中指定的文字大小。 
 > [!NOTE]
-> **讓全部放大**設定可讓使用者指定其慣用的大小，對於文字與應用程式在一般情況下只其主要畫面上。
+> **讓全部放大**設定可讓使用者只其主要畫面上的一般情況下指定其慣用的大小，對於文字與應用程式。
 
-各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 當則為**true**，該元素中的文字大小可以縮放。 縮放比例會影響具有小型**FontSize**比它會有大型的**FontSize**的文字的影響程度的文字。 您可以停用自動調整大小的項目**IsTextScaleFactorEnabled**屬性設定為**false**。 
+各種文字元素和控制項都有 [**IsTextScaleFactorEnabled**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled) 屬性。 這個屬性的預設值是 **true** 。 當 **，則為 true**，該元素中的文字大小可以縮放。 縮放比例會影響具有小型**FontSize**比它會有大型的**FontSize**的文字的影響程度的文字。 您可以停用自動調整大小的項目**IsTextScaleFactorEnabled**屬性設定為**false**。 
 
-如需詳細資訊，請參閱[文字縮放比例](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)。
+如需詳細資訊，請參閱[文字大小調整](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)。
 
 將下列標記新增至應用程式，並執行它。 調整**文字大小**設定，並查看每個**TextBlock**會發生什麼事。
 
@@ -149,7 +149,7 @@ XAML
     Style="{StaticResource BodyTextBlockStyle}" IsTextScaleFactorEnabled="False"/>
 ```  
 
-我們不建議您停用文字縮放比例，通用跨所有應用程式的縮放 UI 文字是重要的無障礙的使用者體驗。
+我們不建議您停用文字大小調整，通用跨所有應用程式的縮放 UI 文字是重要的無障礙的使用者體驗。
 
 您也可以使用 [**TextScaleFactorChanged**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) 事件與 [**TextScaleFactor**](https://docs.microsoft.com/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) 屬性，了解手機上 **\[文字大小\]** 設定的變更相關資訊。 方法如下：
 
@@ -186,6 +186,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [文字大小調整](https://docs.microsoft.com/windows/uwp/design/input/text-scaling)
 * [協助工具](accessibility.md)
 * [基本協助工具資訊](basic-accessibility-information.md)
-* [XAML 文字顯示範例](http://go.microsoft.com/fwlink/p/?linkid=238579)
-* [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?linkid=251417)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570) 
+* [XAML 文字顯示範例](https://go.microsoft.com/fwlink/p/?linkid=238579)
+* [XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?linkid=251417)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570) 

@@ -6,12 +6,12 @@ ms.date: 03/23/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d67bb7c7fd2173e1406669367935efdb09967ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2535818d5362b1ffe4b7b35c7b4079bee73a511f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932521"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046052"
 ---
 # <a name="background-transfers"></a>背景傳輸
 使用背景傳輸 API 在網路上可靠地複製檔案。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
@@ -28,7 +28,7 @@ ms.locfileid: "8932521"
 > [!NOTE]
 > 由於每個 app 的資源限制，因此應用程式在任何時候都不應有超過 200 個傳輸 (DownloadOperations + UploadOperations)。 超過該限制可能會使得應用程式的傳輸佇列處於無法復原狀態。
 
-啟動應用程式時，它必須在所有的現有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)物件上呼叫[**Downloadoperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync) 。 未執行此動作會導致已經完成傳輸流失，並將最終轉譯您使用背景傳輸功能都毫無用處。
+應用程式啟動時，它必須呼叫[**Downloadoperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation.AttachAsync)上所有的現有[**DownloadOperation**](/uwp/api/windows.networking.backgroundtransfer.downloadoperation?branch=live)和[**UploadOperation**](/uwp/api/windows.networking.backgroundtransfer.uploadperation?branch=live)物件。 未執行此動作會導致已經完成傳輸流失，並將最終轉譯您使用背景傳輸功能都毫無用處。
 
 ### <a name="performing-authenticated-file-requests-with-background-transfer"></a>使用背景傳輸來執行已驗證的檔案要求
 背景傳輸提供的方法，支援基本伺服器與 Proxy 認證、Cookie，並且支援在每個傳輸作業使用自訂的 HTTP 標頭 (透過 [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146))。
@@ -40,7 +40,7 @@ ms.locfileid: "8932521"
 
 儘管背景傳輸功能有它自己的網路狀態變更處理機制，網路連線的應用程式還有其他一般連線考量。 請參閱[利用可用的網路連線資訊](https://msdn.microsoft.com/library/windows/apps/hh452983)來取得其他資訊。
 
-> **注意：** 的行動裝置上執行的應用程式，有些功能讓使用者來監視和限制傳輸的資料是根據連線類型、 漫遊狀態數量及使用者資料的計劃。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
+> **注意：** 的行動裝置上執行的應用程式，有些功能，讓使用者在來監視和限制傳輸根據連線類型、 漫遊狀態的資料量及使用者資料的計劃。 因此，即使 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 指示傳輸應該繼續，手機上的背景傳輸還是可能被暫停。
 
 下表說明每個 [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) 值何時可在手機上允許背景傳輸 (根據手機的目前狀態)。 您可以使用 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) 類別來判定電話的目前狀態。
 
@@ -82,7 +82,7 @@ ms.locfileid: "8932521"
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-非同步呼叫後面跟著一個指示方法的 then 陳述式，由應用程式定義，會在非同步方法呼叫傳回結果時呼叫它。 如需這種程式設計模式的詳細資訊，請參閱[使用 Promise 在 JavaScript 的非同步程式設計](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
+非同步呼叫後面跟著一個指示方法的 then 陳述式，由應用程式定義，會在非同步方法呼叫傳回結果時呼叫它。 如需這種程式設計模式的詳細資訊，請參閱[使用 Promise 在 JavaScript 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
 
 ### <a name="uploading-multiple-files"></a>上傳多個檔案
 **識別上傳的檔案和目的地**
@@ -178,7 +178,7 @@ function uploadFiles() {
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-非同步呼叫後面跟著一個指示方法的 then 陳述式，由應用程式定義，會在非同步方法呼叫傳回結果時呼叫它。 如需這種程式設計模式的詳細資訊，請參閱[使用 Promise 在 JavaScript 的非同步程式設計](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
+非同步呼叫後面跟著一個指示方法的 then 陳述式，由應用程式定義，會在非同步方法呼叫傳回結果時呼叫它。 如需這種程式設計模式的詳細資訊，請參閱[使用 Promise 在 JavaScript 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/hh464930.aspx)。
 
 ### <a name="adding-additional-operation-control-methods"></a>新增其他的操作控制項方法
 可以藉由實作額外的 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) 方法來增加控制層級。 例如，將下列程式碼新增至上述範例將引進取消下載的功能。
@@ -260,7 +260,7 @@ public class BackgroundDownloadProcessingTask : IBackgroundTask
 
 -   建立連線之後，將中止任何在兩分鐘內未收到回應的 HTTP 要求訊息。
 
-> **注意：** 在任一種情況下，假設有網際網路連線，背景傳輸會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
+> **注意：** 中的任一種情況下，假設有網際網路連線，背景傳輸會自動重試要求三次。 在偵測不到網際網路連線的事件中，其他要求將等到偵測到連線為止。
 
 ## <a name="debugging-guidance"></a>偵錯指導方針
 在 Microsoft Visual Studio 中停止偵錯工作階段就等同於關閉 app；PUT 上傳會被暫停，POST 上傳會被終止。 即使在偵錯時，應用程式應該列舉然後重新啟動或取消任何之前仍然存在的下載。 例如，如果偵錯工作階段與之前的操作無關，您可以在應用程式啟動時，讓應用程式取消已列舉的持續上傳作業。

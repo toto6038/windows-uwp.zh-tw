@@ -6,12 +6,12 @@ keywords: contacts, selecting select single contact select multiple contacts con
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 28943c5ff60ebf2326193e4c3f90a02111f4aec2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c44f05b5d67fe094859ea0eacfb57c0012004d14
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927329"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047593"
 ---
 # <a name="select-contacts"></a>選取連絡人
 
@@ -230,4 +230,4 @@ public class ContactItemAdapter
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-現在您已基本了解如何使用連絡人選擇器來抓取連絡人資訊。 請從 GitHub 下載[通用 Windows app 範例](http://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何使用連絡人和連絡人選擇器的範例。
+現在您已基本了解如何使用連絡人選擇器來抓取連絡人資訊。 請從 GitHub 下載[通用 Windows app 範例](https://go.microsoft.com/fwlink/p/?linkid=619979)，以查看更多如何使用連絡人和連絡人選擇器的範例。

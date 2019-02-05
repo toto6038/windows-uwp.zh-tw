@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e431694f3f0effb6fd5e7688b146109dfc1f5dc7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 26eb371e767f0c1e7f3d5855cf68728958c0cda3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946020"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044991"
 ---
 # <a name="determining-availability-of-microsoft-onedrive-files"></a>判斷 Microsoft OneDrive 檔案的可用性
 
@@ -53,7 +53,7 @@ ms.locfileid: "8946020"
 
 1.  宣告某項功能適用於您想要存取的媒體櫃。
 2.  包含 [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 命名空間。 這個命名空間包含管理檔案、資料夾及應用程式設定的類型。 其中也會包含所需的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 類型。
-3.  針對所需的檔案取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) 物件的 [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
+3.  針對所需的檔案取得 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件。 如果您正在列舉媒體櫃，通常可呼叫 [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) 方法，然後呼叫所產生之 [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) 物件的 [**GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276.aspx) 方法，來完成這個步驟。 **GetFilesAsync** 方法會傳回 **StorageFile** 物件的 [IReadOnlyList](https://go.microsoft.com/fwlink/p/?LinkId=324970) 集合。
 4.  一旦您具備代表所需檔案之 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件的存取權後，[**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的值就會反映檔案是否可供使用。
 
 下列泛型方法說明如何列舉任意資料夾，並傳回該資料夾的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 物件集合。 接著，呼叫方法會在參考每個檔案之 [**StorageFile.IsAvailable**](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.isavailable.aspx) 屬性的傳回集合上重複執行。

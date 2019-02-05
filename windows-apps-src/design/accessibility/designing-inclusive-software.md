@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 52504855a83b8fdf30de311028c39e30ddd2b026
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 88d2377f95efbe79853b1416213a25e22ed7d5f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921141"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044745"
 ---
 # <a name="designing-inclusive-software-for-windows-10"></a>設計適用於 Windows 10 的全人軟體  
 
@@ -104,7 +104,7 @@ Windows 的其中一個內建協助工具功能便是高對比模式，此模式
 7.  將您完成的產品與實作文件提供給之後可能會處理專案的人員。  
 
 ## <a name="related-topics"></a>相關主題  
-* [通用設計](http://design.microsoft.com/inclusive)
+* [通用設計](https://design.microsoft.com/inclusive)
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://developer.microsoft.com/windows/accessible-apps)
 * [開發全人 Windows 應用程式](developing-inclusive-windows-apps.md) 

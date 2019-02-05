@@ -5,19 +5,19 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ffb8ea583aade51ae1cc5049a423d734359722c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946899"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050931"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支援的服務點週邊設備
 
 ## <a name="barcode-scanner"></a>條碼掃描器
 | 連線能力 | 支援 |
 | -------------|-------------|
-| USB          | <p>Windows 包含連接 USB 之條碼掃描器的預設類別驅動程式，而此預設類別驅動程式以 [USB.org](http://www.usb.org/developers/hidpage/)所定義的 HID POS 掃描器使用表格 (8c) 規格為基礎。請查看下列表格，以了解已知相容裝置的清單。  請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[USB.HID.POS 掃描器\]** 模式下進行設定。 </p><p>Windows 也支援實作供應商特定驅動程式，以支援不支援 USB.HID.POS 掃描器標準的其他條碼掃描器。 請與條碼掃描器製造商連絡，以了解供應商特定驅動程式可用性。</p><p>條碼掃描器製造商如需有關建立自訂條碼掃描器驅動程式的資訊，請參閱[條碼掃描器驅動程式設計指南](https://aka.ms/pointofservice-drv)</p> |
+| USB          | <p>Windows 包含連接 USB 之條碼掃描器的預設類別驅動程式，而此預設類別驅動程式以 [USB.org](https://www.usb.org/developers/hidpage/)所定義的 HID POS 掃描器使用表格 (8c) 規格為基礎。請查看下列表格，以了解已知相容裝置的清單。  請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[USB.HID.POS 掃描器\]** 模式下進行設定。 </p><p>Windows 也支援實作供應商特定驅動程式，以支援不支援 USB.HID.POS 掃描器標準的其他條碼掃描器。 請與條碼掃描器製造商連絡，以了解供應商特定驅動程式可用性。</p><p>條碼掃描器製造商如需有關建立自訂條碼掃描器驅動程式的資訊，請參閱[條碼掃描器驅動程式設計指南](https://aka.ms/pointofservice-drv)</p> |
 | 藍牙    | <p>Windows 支援序列埠通訊協定 - 簡單序列介面 (SPP SSI) 藍牙條碼掃描器。 請查看下列表格，以了解已知相容裝置的清單。 請參閱條碼掃描器的手冊，或連絡製造商以決定如何在 **\[SPP-SSI\]** 模式下進行設定。</p> |
 | 網路攝影機       | <p>從 Windows 10 版本 1803 開始，您可以從通用 Windows 應用程式透過標準攝影機鏡頭讀取條碼。 建議您使用支援自動對焦的相機，並且最低解析度為 1920 x 1440。  如果條碼列印夠大的話，部分解析度較低的相機可讀取標準條碼。  元素較細的條碼可能需要解析度較高的相機。</p>| 
 |
@@ -35,7 +35,7 @@ ms.locfileid: "8946899"
 | Honeywell     | N5680                          | 2D         | 內部     | 元件    | HID 的 POS 掃描器           |
 | Honeywell     | N3680                          | 2D         | 內部     | 元件    | HID 的 POS 掃描器           |
 | Honeywell     | Orbit 7190g                    | 2D         | USB          | 簡報 | HID 的 POS 掃描器           |
-| Honeywell     | Stratos 2700                   | 2D         | USB          | 計數器中   | HID 的 POS 掃描器           |
+| Honeywell     | Stratos 2700                   | 2D         | USB          | 計數器   | HID 的 POS 掃描器           |
 | Honeywell     | Voyager 1200g                  | 1D         | USB          | 手持     | HID 的 POS 掃描器           |
 | Honeywell     | Voyager 1202g                  | 1D         | USB          | 手持     | HID 的 POS 掃描器           |
 | Honeywell     | Voyager 1202-bf                | 1D         | USB          | 手持     | HID 的 POS 掃描器           |
@@ -66,8 +66,8 @@ ms.locfileid: "8946899"
 |
 
 
-若要支援透過 Honeywell 2D 條碼 ¹ Upgradable <br/>
-² 最小值韌體需要 016 (2018.01.18)。 可升級使用 Zebra [123Scan](http://www.zebra.com/123Scan)。 
+支援透過 Honeywell 2D 條碼 ¹ Upgradable <br/>
+² 最小值韌體需要 016 (2018.01.18)。 可升級使用 Zebra [123Scan](https://www.zebra.com/123Scan)。 
 
 
 <hr>

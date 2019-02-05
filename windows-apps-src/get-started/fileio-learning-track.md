@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 學習曲目, 檔案, 檔案 io, 讀取檔案, 撰寫檔案, 建立檔案, 寫入文字, 閱讀文字
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 9350228585ec8108c41bd15de6179de0294140dc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e0abc146820ca27ee83662ba5f8b79a1daf90bab
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921078"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045527"
 ---
 # <a name="work-with-files"></a>使用檔案
 
@@ -130,7 +130,7 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 | [建立、寫入和讀取檔案](https://docs.microsoft.com/windows/uwp/files/quickstart-reading-and-writing-files) | 涵蓋建立、讀取和寫入文字、二進位資料以及串流。 |
 | [開始使用儲存本機應用程式資料](https://blogs.windows.com/buildingapps/2016/05/10/getting-started-storing-app-data-locally/#pCbJKGjcShh5DTV5.97) | 除了涵蓋儲存本機資料的最佳做法，還涵蓋了 LocalSettings 和 LocalCache 資料夾的用途。 |
 | [開始使用漫遊應用程式資料](https://blogs.windows.com/buildingapps/2016/05/03/getting-started-with-roaming-app-data/#RgjgLt5OkU9DbVV8.97) | 有關如何使用漫遊應用程式資料的兩個系列。 |
-| [漫遊應用程式資料的指導方針](http://msdn.microsoft.com/library/windows/apps/hh465094) | 設計應用程式時，請遵循這些資料漫遊指導方針。 |
+| [漫遊應用程式資料的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465094) | 設計應用程式時，請遵循這些資料漫遊指導方針。 |
 | [儲存和擷取設定及其他應用程式資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data) | 提供各種應用程式資料存放區的概觀，例如本機、漫遊，以及暫存資料夾。 如需指導方針與寫入裝置間漫遊的資料的其他相關資訊，請參閱 [漫遊資料](https://docs.microsoft.com/windows/uwp/design/app-settings/store-and-retrieve-app-data#roaming-data) 章節。 |
 | [檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions) | 應用程式可以存取的檔案系統位置之相關資訊。 |
 | [使用選擇器開啟檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-using-file-and-folder-pickers) | 透過讓使用者藉由選擇器 UI 決定，來示範如何存取檔案和資料夾。 |
@@ -143,6 +143,6 @@ UWP 應用程式必須宣告它要透過將對應功能新增至資訊清單來�
 |-----------------|---------------|
 | [應用程式資料範例](https://code.msdn.microsoft.com/windowsapps/ApplicationData-sample-fb043eb2) | 透過使用應用程式資料 API 來示範如何儲存和擷取每個使用者的特定資料。 |
 | [檔案存取範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) | 示範如何建立、讀取、寫入、複製和刪除檔案。 |
-| [檔案選擇器範例](http://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
+| [檔案選擇器範例](https://code.msdn.microsoft.com/windowsapps/File-picker-sample-9f294cba) | 透過讓使用者使用 UI 選擇，來示範如何存取檔案和資料夾，以及如何儲存檔案，讓使用者可以指定要儲存的名稱、檔案類型和檔案的位置。 |
 | [JSON 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Json) | 使用 [Windows.Data.Json 命名空間](https://docs.microsoft.com/uwp/api/Windows.Data.Json) 來示範如何編碼和解碼 JavaScript 物件標記法 (JSON) 物件、陣列、字串、數字和布林。 |
 | [其他程式碼範例](https://developer.microsoft.com//windows/samples) | 在分類下拉式清單中選擇 **檔案、資料夾和媒體櫃**。 |

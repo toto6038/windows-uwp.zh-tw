@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, uwp,app 內購買, IAPs, 收據, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: b71d55d71a63060a66265051fafc8bdf7313e77b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9449a2dd265128a83f7840872ce4995df05a4e78
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923299"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047250"
 ---
 # <a name="use-receipts-to-verify-product-purchases"></a>使用收據來驗證產品購買
 
@@ -108,11 +108,11 @@ App 收據看起來如下。
 |-------------|------------|--------|--------|
 |  [AppReceipt](#appreceipt)  |    否        |  0 或 1  |  包含目前 App 的購買資訊。            |
 |  [ProductReceipt](#productreceipt)  |     否       |  0 或以上    |   包含目前 App 之 App 內購買的相關資訊。     |
-|  Signature  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](http://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
+|  Signature  |      是      |  1   |   此元素是標準的 [XML-DSIG 建構](https://go.microsoft.com/fwlink/p/?linkid=251093)。 它包含一個 **SignatureValue** 元素，其中包含您可用來驗證收據的簽章，以及一個 **SignedInfo** 元素。      |
 
 **Receipt** 具有下列屬性。
 
-|  屬性  |  描述   |
+|  屬性  |  說明   |
 |-------------|-------------------|
 |  **Version**  |    收據的版本號碼。            |
 |  **CertificateId**  |     用來簽署收據的憑證指紋。          |

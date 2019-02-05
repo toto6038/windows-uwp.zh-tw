@@ -6,12 +6,12 @@ keywords: 開始使用開發人員授權 Visual Studio, 開發人員授權啟用
 ms.date: 05/30/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 802555f6b1e6f928edf43806226ac497a437b4ff
-ms.sourcegitcommit: 67cc4153dac48a2633d93c954eaad61be8600fa8
+ms.openlocfilehash: 90ff8e8c0d11e58d251e9c2f5bfb00f3b8aedf1a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991756"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044941"
 ---
 # <a name="enable-your-device-for-development"></a>啟用您的裝置以用於開發
 
@@ -48,7 +48,7 @@ ms.locfileid: "8991756"
 
  您可以啟用裝置來進行開發，或直接用於側載。
 
--   *Microsoft Store 應用程式*是預設的設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
+-   *Microsoft Store 應用程式*為預設設定。 如果您不開發應用程式，或使用您的公司所發行的特殊內部應用程式，請讓此設定保持作用中狀態。
 -   *「側載」* 是安裝並執行或測試未經 Microsoft Store 認證的應用程式。 例如，僅供公司內部使用的 app。
 -   *「開發人員模式」* 可讓您側載應用程式，也可從 Visual Studio 以偵錯模式執行應用程式。
 
@@ -56,7 +56,7 @@ ms.locfileid: "8991756"
 
 ### <a name="sideload-apps"></a>側載 app
 
-通常用於側載應用程式設定的公司或學校需要在受管理的裝置上安裝自訂應用程式，而不透過 Microsoft Store，或其他人需要執行應用程式從非 Microsoft 的來源。 在此案例中，組織強制執行會停用 *UWP apps* 設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
+通常用於側載應用程式設定的公司或學校需要在受管理的裝置上安裝自訂應用程式，而不透過 Microsoft Store，或其他人需要執行的應用程式從非 Microsoft 的來源。 在此案例中，組織強制執行會停用 *UWP apps* 設定的原則相當常見，如先前設定頁面的圖中所示。 組織也會提供側載應用程式所需的憑證和安裝位置。 如需詳細資訊，請參閱 TechNet 文章[在 Windows 10 中側載 App](https://technet.microsoft.com/library/mt269549.aspx) 和[在 Microsoft Intune 中開始使用 App 部署](https://technet.microsoft.com/library/dn646955.aspx)。
 
 裝置系列特定的資訊
 
@@ -68,7 +68,7 @@ ms.locfileid: "8991756"
 因為您無法在不具受信任憑證的裝置上安裝應用程式，所以 \[側載應用程式\]**** 會是比 [開發人員模式] 更安全的選項。
 
 > [!NOTE]
-> 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](http://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; Microsoft Store 小節。
+> 如果您要側載應用程式，您應該仍然只安裝來自受信任來源的應用程式。 當您安裝未經 Microsoft Store 認證的側載應用程式時，即表示您同意您已具備側載該應用程式所需的一切權限，並且為安裝和執行該應用程式所造成的任何損害負全責。 請參閱這份[隱私權聲明](https://go.microsoft.com/fwlink/?LinkId=521839)的 Windows &gt; Microsoft Store 小節。
 
 
 ### <a name="developer-mode"></a>開發人員模式
@@ -133,7 +133,7 @@ SSH 登入透過 "DevToolsUser" 帳戶完成，可接受密碼用以驗證。  �
 
 有數個工具可讓您用來將應用程式從 Windows 10 電腦部署到 Windows 10 裝置。 這兩個裝置都必須透過有線或無線連線連接到網路的同一個子網路，或者必須透過 USB 來連接它們。 列出的方法都只會安裝應用程式套件 (.appx/.appxbundle)；它們不會安裝憑證。
 
--   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)。
+-   使用 Windows 10 應用程式部署 (WinAppDeployCmd) 工具。 深入了解 [WinAppDeployCmd 工具](https://msdn.microsoft.com/library/windows/apps/mt203806.aspx)。
 -   您可以使用[裝置入口網站](../debug-test-perf/device-portal.md)，從您的瀏覽器部署到執行 Windows 10 版本 1511 或更新版本的行動裝置。 使用裝置入口網站中的**[應用程式](../debug-test-perf/device-portal.md#apps-manager)** 頁面來上傳應用程式套件 (.appx)，並將它安裝在裝置上。
 
 ## <a name="failure-to-install-developer-mode-package"></a>無法安裝開發人員模式套件

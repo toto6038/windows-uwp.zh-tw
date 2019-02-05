@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 79b1889167f3c13aea78c31ec189cfeb7a6f17bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bf89810f67e16bcfabfc80de48d2dee82c9e0f92
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925683"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048921"
 ---
 # <a name="toast-content-schema"></a>快顯通知內容結構描述
 
@@ -162,7 +162,7 @@ ToastContent 是描述通知內容 (包括視覺效果、動作和音效) 的最
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | 年度更新版的新功能：控制影像所需的裁剪。 |
 | **HintRemoveMargin** | bool? | false | 群組/子群組內的影像周圍預設會有 8px 邊界。 您可將此屬性設定為 true 以移除此邊界。 |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | 影像的水平對齊。 僅適用於群組/子群組內的影像。 |
@@ -263,9 +263,9 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 Http 影像的大小必須是 200 KB 或更少。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 Http 影像的大小必須是 200 KB 或更少。 |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | 指定想要裁剪影像的方式。 |
-| **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
+| **AlternateText** | string | false | 描述影像的替代文字，用於協助工具用途。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
@@ -284,8 +284,8 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 Http 影像的大小必須是 200 KB 或更少。 |
-| **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 Http 影像的大小必須是 200 KB 或更少。 |
+| **AlternateText** | string | false | 描述影像的替代文字，用於協助工具用途。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
@@ -295,7 +295,7 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **Text** | 字串 | true | 要顯示的文字。 |
-| **Language** | 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 如果未提供，則改用系統地區設定。 |
+| **Language** | string | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 如果未提供，則改用系統地區設定。 |
 
 
 ## <a name="itoastactions"></a>IToastActions
@@ -335,10 +335,10 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **Title** | 字串 | false | 要顯示在文字方塊上方的標題文字。 |
-| **PlaceholderContent** | 字串 | false | 使用者尚未輸入任何文字時，要顯示在文字方塊中的預留位置文字。 |
-| **DefaultInput** | 字串 | false | 要放在文字方塊中的初始文字。 如需空白文字方塊，請保持為 null。 |
+| **Id** | string | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
+| **Title** | string | false | 要顯示在文字方塊上方的標題文字。 |
+| **PlaceholderContent** | string | false | 使用者尚未輸入任何文字時，要顯示在文字方塊中的預留位置文字。 |
+| **DefaultInput** | string | false | 要放在文字方塊中的初始文字。 如需空白文字方塊，請保持為 null。 |
 
 
 ## <a name="toastselectionbox"></a>ToastSelectionBox
@@ -348,8 +348,8 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | Id 為必要項。 如果使用者選取此項目，這個 Id 將會傳回到 App 的程式碼，表示他們選擇了哪些選取項目。 |
-| **Content** | 字串 | true | Content 為必要項，並且是顯示在選取項目上的字串。 |
+| **Id** | string | true | Id 為必要項。 如果使用者選取此項目，這個 Id 將會傳回到 App 的程式碼，表示他們選擇了哪些選取項目。 |
+| **Content** | string | true | Content 為必要項，並且是顯示在選取項目上的字串。 |
 
 
 ### <a name="toastselectionboxitem"></a>ToastSelectionBoxItem
@@ -357,8 +357,8 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
-| **Title** | 字串 | false | 要顯示在選擇方塊上方的標題文字。 |
+| **Id** | string | true | Id 是必要項，用來將使用者輸入的文字對應到 App 稍後取用之識別碼/值的索引鍵/值組。 |
+| **Title** | string | false | 要顯示在選擇方塊上方的標題文字。 |
 | **DefaultSelectionBoxItemId** | 字串 | false | 這會控制預設選取哪些項目，並且參考 [ToastSelectionBoxItem](#toastselectionboxitem) 的的 Id 屬性。 如果沒有提供這個屬性，預設選取項目會是空白 (使用者看不到任何項目)。 |
 | **Items** | IList<[ToastSelectionBoxItem](#toastselectionboxitem)> | false | 使用者可以從這個 SelectionBox 中挑選的選取項目。 只能新增 5 個項目。 |
 
@@ -380,8 +380,8 @@ Creators Update 中的新功能：進度列。 僅支援桌上型電腦組建 15
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **內容** | 字串 | true | 必要。 要在按鈕上顯示的文字。 |
-| **Arguments** | 字串 | true | 必要。 App 定義的引數字串，如果使用者按一下此按鈕，App 稍後會收到該字串。 |
+| **內容** | string | true | 必要。 要在按鈕上顯示的文字。 |
+| **Arguments** | string | true | 必要。 App 定義的引數字串，如果使用者按一下此按鈕，App 稍後會收到該字串。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 控制此按鈕在使用者按一下時使用什麼類型的啟用。 預設為 Foreground。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Creators Update 的新功能：取得或設定與快顯通知按鈕啟用相關的其他選項。 |
 
@@ -402,7 +402,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | Fall Creators Update 的新功能：取得或設定當使用者叫用此動作時，快顯通知應該使用的行為。 這只適用於桌上型電腦、[ToastButton](#toastbutton) 和 [ToastContextMenuItem](#toastcontextmenuitem)。 |
-| **ProtocolActivationTargetApplicationPfn** | 字串 | false | 如果您要使用 *ToastActivationType.Protocol*，則可以選擇性指定目標 PFN，因此無論是否已註冊多個 App 來處理相同的通訊協定 URI，都一律會啟動您想要的 App。 |
+| **ProtocolActivationTargetApplicationPfn** | string | false | 如果您要使用 *ToastActivationType.Protocol*，則可以選擇性指定目標 PFN，因此無論是否已註冊多個 App 來處理相同的通訊協定 URI，都一律會啟動您想要的 App。 |
 
 
 ### <a name="toastafteractivationbehavior"></a>ToastAfterActivationBehavior
@@ -449,7 +449,7 @@ Creators Update 的新功能：與啟用相關的其他選項。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **內容** | 字串 | true | 必要。 要顯示的文字。 |
+| **內容** | string | true | 必要。 要顯示的文字。 |
 | **Arguments** | 字串 | true | 必要。 this button.
 App 定義的引數字串，當使用者按一下功能表項目時，只要 App 已啟用，稍後即可收到該字串。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 控制此功能表項目在使用者按一下時使用什麼類型的啟用。 預設為 Foreground。 |
@@ -471,8 +471,8 @@ Creators Update 的新功能：將控制中心內多個通知群組一起的自�
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Id** | 字串 | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
-| **Title** | 字串 | true | 標頭的標題。 |
+| **Id** | string | true | 開發人員所建立唯一辨識此標頭的識別碼。 如果兩個通知標頭識別碼相同，這些通知將會在控制中心顯示於相同標頭下方。 |
+| **Title** | string | true | 標頭的標題。 |
 | **Arguments**| 字串 | true | 取得或設定開發人員定義的引數字串，當使用者按下此標頭時會傳回至應用程式。 不可為 null。 |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | 取得或設定此標頭在使用者按一下時要使用的啟用類型。 預設為 Foreground。 請注意，只支援 Foreground 和 Protocol。 |
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | 取得或設定與快顯通知標頭啟用相關的其他選項。 |
@@ -480,5 +480,5 @@ Creators Update 的新功能：將控制中心內多個通知群組一起的自�
 
 ## <a name="related-topics"></a>相關主題
 
-* [快速入門：傳送本機快顯通知及處理啟用](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
+* [快速入門：傳送本機快顯通知及處理啟用](https://blogs.msdn.com/b/tiles_and_toasts/archive/2015/07/08/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10.aspx)
 * [GitHub 上的 Notifications 程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)

@@ -1,17 +1,17 @@
 ---
-title: 廣告活動報告
+title: 廣告行銷活動報告
 ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
 description: 在合作夥伴中心的廣告活動報告可讓您查看您的應用程式促銷廣告行銷活動的表現。
 ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP, promote, app, campaign, report, installs, 促銷, 應用程式, 行銷活動, 報告, 安裝
 ms.localizationpriority: medium
-ms.openlocfilehash: 0e44374d56796ea2151424a11df1652892f247b6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7b798abf88805ef3c693149149be958ba0cc1de9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947478"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046837"
 ---
 # <a name="ad-campaign-report"></a>廣告活動報告
 
@@ -48,7 +48,7 @@ ms.locfileid: "8947478"
 
 ## <a name="install-tracking"></a>安裝追蹤
 
-透過合作夥伴中心執行安裝廣告活動提供打遭受宣傳您的應用程式。 廣告曝光會向最可能對應用程式感興趣的客戶顯示廣告，這些客戶就可能會點擊廣告並從市集安裝應用程式。 以前，我們很難區分使用者安裝應用程式時是因為廣告活動而安裝，或是從其他來源安裝。
+透過合作夥伴中心執行安裝廣告活動提供通告您的應用程式打必要的曝光。 廣告曝光會向最可能對應用程式感興趣的客戶顯示廣告，這些客戶就可能會點擊廣告並從市集安裝應用程式。 以前，我們很難區分使用者安裝應用程式時是因為廣告活動而安裝，或是從其他來源安裝。
 
 這份報告會顯示您透過舉辦廣告活動賺取到多少次安裝。 這只能代表因為廣告活動而直接產生的下載次數，並不包括從其他來源下載的次數。
 
@@ -65,7 +65,7 @@ ms.locfileid: "8947478"
 
 1.  客戶尚未從目標使用者範圍中退出。
 2.  客戶已經登入 Microsoft 帳戶。
-3.  客戶需符合 [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 需求 (無法追蹤不符合 COPPA 需求的客戶)。
+3.  客戶需符合 [COPPA](https://go.microsoft.com/fwlink?LinkId=536558) 需求 (無法追蹤不符合 COPPA 需求的客戶)。
 
 因此，app 安裝追蹤記錄到的數字可能低於因為廣告活動所產生的安裝次數。 請注意，您可以檢視的應用程式的安裝總數 (透過活動或其他方式) 在合作夥伴中心的[下載數](acquisitions-report.md)報告。
 

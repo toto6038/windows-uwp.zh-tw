@@ -1,23 +1,23 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: 本章節描述了如何修改 PlayReady web app，以支援從舊版 Windows8.1 到 windows 10 版本所做的變更。
+description: 本章節描述了如何修改 PlayReady web app，以支援從舊版 windows 8.1 到 windows 10 版本所做的變更。
 title: PlayReady 加密媒體延伸
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b324cbca6d5e36193c057a6d1473ff1aad7be095
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c598868610e42e0f2ad64ef2d4fedfb48c4d91e9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945072"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047290"
 ---
 # <a name="playready-encrypted-media-extension"></a>PlayReady 加密媒體延伸
 
 
 
-本章節描述了如何修改 PlayReady web app，以支援從舊版 Windows8.1 到 windows 10 版本所做的變更。
+本章節描述了如何修改 PlayReady web app，以支援從舊版 windows 8.1 到 windows 10 版本所做的變更。
 
 使用 Internet Explorer 中的 PlayReady 媒體元素讓開發人員可以建立 Web App，能夠為使用者提供 PlayReady 內容，同時強制執行內容提供者所定義的存取規則。 本節說明如何只使用 HTML5 和 JavaScript，將 PlayReady 媒體元素新增到現有的 Web app。
 
@@ -25,7 +25,7 @@ ms.locfileid: "8945072"
 
 本章節提供一份啟用 PlayReady 內容保護 windows 10 上的以 PlayReady 加密媒體延伸 (EME) 所做的變更。
 
-下列清單說明的新功能和 windows 10 的 PlayReady 加密媒體延伸所做的變更：
+下列清單說明適用於 windows 10 的 PlayReady 加密媒體延伸到所做的變更的新功能：
 
 -   已新增硬體數位版權管理 (DRM)。
 
@@ -34,10 +34,10 @@ ms.locfileid: "8945072"
 -   提供主動取得非永久性授權。
 -   提供在一則訊息中取得多個授權的功能。
 
-    您可以使用 PlayReady 物件搭配多個金鑰識別碼 （keyid） （就像 Windows8.1，或使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)搭配多個 Keyid。
+    您可以使用 PlayReady 物件搭配多個金鑰識別碼 （keyid） （就像在 windows 8.1，或使用[內容解密模型資料 (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819)搭配多個 Keyid。
 
     > [!NOTE]
-    > 在 windows 10，下方支援多個金鑰識別碼&lt;KeyID&gt; CDMData 中。
+    > Windows 10 的下方支援多個金鑰識別碼&lt;KeyID&gt; CDMData 中。
 
 -   已新增即時到期支援或限時授權 (LDL)。
 
@@ -61,7 +61,7 @@ ms.locfileid: "8945072"
 
 本節說明 PlayReady 支援的 W3C 加密媒體延伸版本。
 
-適用於 Web apps 的 PlayReady 目前已繫結至 [2013 年 5 月 10 日的 W3C 加密媒體延伸 (EME) 草稿](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)。 在未來的 Windows 版本中，此支援將變更為更新的 EME 規格。
+適用於 Web apps 的 PlayReady 目前已繫結至 [2013 年 5 月 10 日的 W3C 加密媒體延伸 (EME) 草稿](https://www.w3.org/TR/2013/WD-encrypted-media-20130510/)。 在未來的 Windows 版本中，此支援將變更為更新的 EME 規格。
 
 ## <a name="use-hardware-drm"></a>使用硬體 DRM
 
@@ -266,7 +266,7 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 
 ## <a name="programming-considerations-for-encrypted-media-extension"></a>適用於加密媒體延伸的程式設計考量
 
-此區段會列出您應納入考慮建立已啟用 PlayReady 的 web 應用程式適用於 windows 10 時的程式設計考量。
+此區段會列出適用於 windows 10 建立已啟用 PlayReady 的 web 應用程式時，您應該考慮到的程式設計考量。
 
 在您的 app 關閉之前，該 app 建立的 **MSMediaKeys** 和 **MSMediaKeySession** 物件必須保持運作。 確保這些物件會保持運作的一種方式，是將它們指派為全域變數 (如果將變數宣告為函式內的區域變數，變數就會變成超出範圍且受限於記憶體回收)。 例如，下列範例會將變數 *g\_msMediaKeys* 和 *g\_mediaKeySession* 指派為全域變數，接著將其指派給函式中的 **MSMediaKeys** 和 **MSMediaKeySession** 物件。
 

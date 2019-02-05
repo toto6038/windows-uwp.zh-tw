@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: e0e57e28fe36ae506d29e2b51a31c756513fdd08
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6d445e5164d542a7e10f136a5fb238c575f35c2d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942489"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048808"
 ---
 # <a name="export-restrictions-on-cryptography"></a>密碼編譯的出口限制
 
@@ -25,9 +25,9 @@ ms.locfileid: "8942489"
 
  
 
-如需美國商務部與工業安全局的詳細資訊，請參閱[關於工業安全局](http://go.microsoft.com/fwlink/p/?LinkID=245644)。
+如需美國商務部與工業安全局的詳細資訊，請參閱[關於工業安全局](https://go.microsoft.com/fwlink/p/?LinkID=245644)。
 
-如需規範技術 (包含加密) 出口的出口管制條例 (EAR) 詳細資訊，請參閱 [EAR 管制使用密碼編譯的項目](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
+如需規範技術 (包含加密) 出口的出口管制條例 (EAR) 詳細資訊，請參閱 [EAR 管制使用密碼編譯的項目](https://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
 ## <a name="governed-uses"></a>受規範的使用方式
 
@@ -43,7 +43,7 @@ ms.locfileid: "8942489"
 -   複製保護或數位版權管理 (DRM)
 -   防毒保護
 
-如需密碼編譯 app 的最新完整清單，請參閱[使用加密之項目的 EAR 控制項](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
+如需密碼編譯 app 的最新完整清單，請參閱[使用加密之項目的 EAR 控制項](https://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
 ## <a name="non-restricted-uses"></a>非限制的使用方式
 
@@ -55,8 +55,8 @@ ms.locfileid: "8942489"
 -   數位版權管理
 -   使用數位簽章
 
-如需密碼編譯 app 的最新完整清單，請參閱[使用加密之項目的 EAR 控制項](http://go.microsoft.com/fwlink/p/?LinkID=245645)。
+如需密碼編譯 app 的最新完整清單，請參閱[使用加密之項目的 EAR 控制項](https://go.microsoft.com/fwlink/p/?LinkID=245645)。
 
 如果您的 app 會呼叫、支援、包含或使用密碼編譯或加密來進行未列在此清單中的任何工作，則必須提供出口管制分類號碼 (ECCN)。
 
-如果您沒有 ECCN，請參閱 [ECCN 問答集](http://go.microsoft.com/fwlink/p/?LinkID=245646)。
+如果您沒有 ECCN，請參閱 [ECCN 問答集](https://go.microsoft.com/fwlink/p/?LinkID=245646)。

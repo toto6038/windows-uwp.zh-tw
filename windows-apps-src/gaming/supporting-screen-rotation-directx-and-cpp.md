@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 螢幕方向, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: eb86cfaefe7112d408a17a54bf4f4b482c218be8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4e2cf915e510c3d6e3d702417b72c097a293f03c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924320"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051071"
 ---
 # <a name="supporting-screen-orientation-directx-and-c"></a>支援螢幕方向 (DirectX 和 C++)
 
@@ -25,14 +25,14 @@ ms.locfileid: "8924320"
 
 Windows 10 定義了四個特定的顯示方向模式：
 
--   橫向 — 預設顯示方向為 windows 10，並會被視為基礎或識別旋轉角度 （0 度）。
+-   橫向 — 預設顯示方向，適用於 windows 10，並會被視為基礎或識別旋轉角度 （0 度）。
 -   直向 — 顯示器已經順時鐘旋轉 90 度 (或逆時鐘旋轉 270 度)。
 -   橫向翻轉 — 顯示器已經旋轉 180 度 (上下顛倒)。
 -   直向翻轉 — 顯示器已經順時鐘旋轉 270 度 (或逆時鐘旋轉 90 度)。
 
-當顯示器從一個方向旋轉至另一個時，windows 10 在內部執行旋轉操作來對齊以新的方向繪製的影像，而使用者在畫面上看到直立的影像。
+當顯示器從一個方向旋轉至另一個時，windows 10 會在內部執行旋轉操作來對齊以新的方向繪製的影像，以及使用者在畫面上看到直立的影像。
 
-此外，windows 10 會顯示自動轉換動畫以建立順暢的使用者經驗，當從一個方向轉移到另一個。 當顯示方向轉移時，使用者所看到的這些轉移會以所顯示之螢幕影像的固定大小及旋轉動畫呈現。 Windows 10 會配置時間，以進行新方向的配置應用程式。
+此外，windows 10 會顯示自動轉換動畫以建立順暢的使用者經驗，當從一個方向轉移到另一個。 當顯示方向轉移時，使用者所看到的這些轉移會以所顯示之螢幕影像的固定大小及旋轉動畫呈現。 Windows 10 會配置時間給應用程式進行新方向的配置。
 
 整體說來，處理螢幕方向變更的大致程序如下：
 
@@ -330,7 +330,7 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 您可以增加 0.5f 來確保四捨五入到最接近的整數值。
 
-題外話，[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 座標一律是以 DIP 定義。 如需 windows 10 和舊版 Windows，DIP 定義為 1/96 英吋，並且對齊到*最高*的 OS 的定義。 當顯示方向旋轉成直向模式時，app 會翻轉 **CoreWindow** 的寬度和高度，而轉譯目標大小 (界限) 必須跟著變更。 由於 Direct3D 的座標一律使用實體像素，因此您必須先從 **CoreWindow** 的 DIP 值轉換成整數像素值，再將這些值傳送給 Direct3D 來設定交換鏈結。
+題外話，[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 座標一律是以 DIP 定義。 適用於 windows 10 和舊版 Windows，DIP 被定義為 1/96 英吋，並且對齊到*最高*的 OS 的定義。 當顯示方向旋轉成直向模式時，app 會翻轉 **CoreWindow** 的寬度和高度，而轉譯目標大小 (界限) 必須跟著變更。 由於 Direct3D 的座標一律使用實體像素，因此您必須先從 **CoreWindow** 的 DIP 值轉換成整數像素值，再將這些值傳送給 Direct3D 來設定交換鏈結。
 
 按照處理程序，您所做的工作會比只調整交換鏈結大小來得多一些：您實際上是先旋轉影像的 Direct2D 和 Direct3D 元件，再結合它們來進行呈現，並且告知交換鏈結您已經以新方向轉譯結果。 以下是這個處理程序更多的細節，如 **DX::DeviceResources::CreateWindowSizeDependentResources** 的程式碼範例所示：
 
@@ -386,12 +386,12 @@ resizeManager->NotifyLayoutCompleted();
 -   Windows 10 會將映像保留重建新配置所花的時間。 這是您會想要縮減的時間範圍，因為您的應用程式可能不需要全部的時間。
 -   當配置時間範圍過了之後，或收到配置完成的通知時，Windows 會旋轉影像，然後淡入與淡出至新方向。
 
-做為建議第三個項目符號中，當應用程式呼叫[**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605)，windows 10 會停止逾時時間、 完成旋轉動畫，並傳回控制項至您的應用程式，這以新的顯示方向繪製。 整體的影響就是您的應用程式現在感覺比較有彈性和有回應，並且運作起來較有效率。
+做為第三個項目符號中建議，當應用程式呼叫[**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605)，windows 10 會停止逾時長度、 完成旋轉動畫，並傳回控制項至您應用程式，現在以新的顯示方向繪製。 整體的影響就是您的應用程式現在感覺比較有彈性和有回應，並且運作起來較有效率。
 
 ## <a name="appendix-a-applying-matrices-for-screen-rotation-2-d"></a>附錄 A：套用螢幕旋轉的矩陣 (2D)
 
 
-在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](http://go.microsoft.com/fwlink/p/?linkid=257600)) 的範例程式碼中，您可能已經注意到 Direct2D 輸出與 Direct3D 輸出有個別的旋轉矩陣。 讓我們先來看看 2D 矩陣。
+在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](https://go.microsoft.com/fwlink/p/?linkid=257600)) 的範例程式碼中，您可能已經注意到 Direct2D 輸出與 Direct3D 輸出有個別的旋轉矩陣。 讓我們先來看看 2D 矩陣。
 
 不能在 Direct2D 和 Direct3D 內容套用相同旋轉矩陣的理由有兩個：
 
@@ -488,7 +488,7 @@ default:
 ## <a name="appendix-b-applying-matrices-for-screen-rotation-3-d"></a>附錄 B：套用螢幕旋轉的矩陣 (3D)
 
 
-在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](http://go.microsoft.com/fwlink/p/?linkid=257600)) 的範例程式碼中，我們為每個可能的螢幕方向定義了特定的轉換矩陣。 現在，讓我們看看旋轉 3D 場景的矩陣。 如先前一樣，您需要為 4 個可能方向中的每個方向建立一組矩陣。 為了防止進位誤差以至於輕微的視覺不自然感，請在程式碼中明確宣告這些矩陣。
+在[重新調整交換鏈結的大小並預先旋轉其內容](#resizing-the-swap-chain-and-pre-rotating-its-contents) (以及 [DXGI 交換鏈結旋轉範例](https://go.microsoft.com/fwlink/p/?linkid=257600)) 的範例程式碼中，我們為每個可能的螢幕方向定義了特定的轉換矩陣。 現在，讓我們看看旋轉 3D 場景的矩陣。 如先前一樣，您需要為 4 個可能方向中的每個方向建立一組矩陣。 為了防止進位誤差以至於輕微的視覺不自然感，請在程式碼中明確宣告這些矩陣。
 
 您需要按照下列方式設定這些 3D 旋轉矩陣。 下列程式碼範例中示範的矩陣是標準的旋轉矩陣，用於 0、90、180 及 270 度的頂點 (定義相機 3D 場景空間中的各點) 旋轉。 計算 2D 場景投影時，會將場景中每個頂點的 \[x, y, z\] 座標值乘以這個旋轉矩陣。
 

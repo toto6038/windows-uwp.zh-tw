@@ -7,12 +7,12 @@ ms.topic: article
 ms.assetid: 88da6d1a-379c-4173-a56d-d8b9a4eab5da
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 09fa50319defd90479ca93e4ba1b920948fbb9d3
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: cbe17d8e7093a15c66e482acd935974bc57074ec
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036920"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050871"
 ---
 # <a name="design-toolkits-and-samples-for-uwp-apps"></a>設計 UWP app 的工具組和範例
  
@@ -95,10 +95,10 @@ ms.locfileid: "9036920"
 
 :::row:::
     :::column:::
-        <a href="http://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
+        <a href="https://go.microsoft.com/fwlink/p/?LinkId=760394"><img src="images/tile-icon-generator.png" alt="Download the tile and icon generator"/></a>
     :::column-end:::
     :::column span="2":::
-      **適用於 Adobe Photoshop 的磚與圖示產生器**這組適用於 Adobe Photoshop 的動作會產生 68 建議的磚和圖示資產，只是 7 個檔案。 <br/><a href="http://go.microsoft.com/fwlink/p/?LinkId=760394">下載磚與圖示產生器</a></p>
+      **適用於 Adobe Photoshop 的磚與圖示產生器**這組適用於 Adobe Photoshop 的動作會產生 68 建議的磚和圖示資產，只是 7 個檔案。 <br/><a href="https://go.microsoft.com/fwlink/p/?LinkId=760394">下載磚與圖示產生器</a></p>
     :::column-end:::
 :::row-end:::
 

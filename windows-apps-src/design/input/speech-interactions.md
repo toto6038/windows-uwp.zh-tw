@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: dfd829881892eece08c30fcd665bdf21a1f43471
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 09787d5a83415b65b8946860edb5b7cad09a5846
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945059"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050811"
 ---
 # <a name="speech-interactions"></a>語音互動
 
@@ -80,9 +80,9 @@ Windows 應用程式中的 **Cortana** 使用自訂語音命令 (口說或鍵入
 
 -   預先定義的文法 (聽寫或網頁搜尋)
 
-    -   **\[正在聆聽\]** 畫面。
+    -   [正在聆聽] 畫面。
     -   **[正在思考]** 畫面。
-    -   **\[聽到您說\]** 畫面或錯誤畫面。
+    -   [聽到您說] 畫面或錯誤畫面。
 -   字詞或片語的清單或 SRGS 文法檔案
 
     -   **\[正在聆聽\]** 畫面。
@@ -157,14 +157,14 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 自訂文法是由您設計及編寫，並隨著應用程式安裝。 使用自訂限制式的語音辨識是在裝置上執行的。
 
 -   程式設計的清單限制式提供使用字詞或片語清單來建立簡易文法的輕量型方法。 清單限制式非常適合用來辨識簡短的明確片語。 明確指定所有符合文法的文字也可以提高辨識準確度，因為語音辨識引擎只需處理確認相符的語音。 清單也可透過程式設計方式更新。
--   SRGS 文法是一個靜態文件，與程式設計清單限制式不同，使用 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 所定義的 XML 格式來編輯該文件。 SRGS 文法透過讓您在單一辨識中擷取多個語意意義，提供控制整個語音辨識的最佳體驗。
+-   SRGS 文法是一個靜態文件，與程式設計清單限制式不同，使用 [SRGS 版本 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) 所定義的 XML 格式來編輯該文件。 SRGS 文法透過讓您在單一辨識中擷取多個語意意義，提供控制整個語音辨識的最佳體驗。
 
     以下是一些編寫 SRGS 文法的祕訣：
 
     -   讓每個文法精簡。 包含較少的片語的文法通常會比包含許多片語的較大文法提供更準確的辨識。 針對特定案例設定數個較小的文法是較好的作法，而不是為整個應用程式設定單一文法。
     -   讓使用者了解對於每個應用程式內容要說的項目，並視需要啟用和停用文法。
     -   設計各種文法，讓使用者可以以不同的方式說出命令。 例如，您可以使用 **GARBAGE** 規則來比對文法未定義的語音輸入。 這可以讓使用者說出在 app 中沒有意義的其他字詞。 例如，「給我」、「和」、「呃」、「或許」等等。
-    -   嘗試使用 [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 元素來協助比對語音輸入。 這是對 SRGS 規格的 Microsoft 擴充，協助比對部分片語。
+    -   嘗試使用 [sapi:subset](https://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) 元素來協助比對語音輸入。 這是對 SRGS 規格的 Microsoft 擴充，協助比對部分片語。
     -   盡量避免在文法中定義只包含一個音節的片語。 包含兩個或多個音節的片語可以更正確地辨識。
     -   避免使用聽起來相似的片語。 例如，"hello"、"bellow"，和 "fellow" 之類的片語可能混淆辨識引擎，導致不佳的辨識準確度。
 
@@ -175,9 +175,9 @@ App 在啟動之後即可聆聽並辨識語音輸入，不需要使用者操作�
 
 如果您的應用程式包含專門詞彙使用生僻、虛構或特殊發音的單字，則可定義自訂發音以改進這些單字的辨識效能。
 
-對於小型的字詞和片語清單，或不常使用的字詞和片語清單，您可以在 SRGS 文法中建立自訂發音。 如需詳細資訊，請參閱 [token 元素](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)。
+對於小型的字詞和片語清單，或不常使用的字詞和片語清單，您可以在 SRGS 文法中建立自訂發音。 如需詳細資訊，請參閱 [token 元素](https://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx)。
 
-對於較大的字詞和片語，或經常使用的字詞和片語清單，您可以另外建立發音字典文件。 如需詳細資訊，請參閱[關於字典和語音字母](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
+對於較大的字詞和片語，或經常使用的字詞和片語清單，您可以另外建立發音字典文件。 如需詳細資訊，請參閱[關於字典和語音字母](https://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx)。
 
 ## <a name="testing"></a>測試
 
@@ -200,7 +200,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 -   將字詞或說話部分的數字或標點符號以不常用的順序串連，可能會導致片語變得無法理解。
 -   當語調或抑揚頓挫不同於母語使用者說出片語的方式，語音聽起來可能會不自然。
 
-只要改用 SSML 而不是純文字輸入到語音合成程式，即可解決這兩個問題。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[語音合成標記語言參考](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
+只要改用 SSML 而不是純文字輸入到語音合成程式，即可解決這兩個問題。 如需有關 SSML 的詳細資訊，請參閱[使用 SSML 控制合成語音](https://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)和[語音合成標記語言參考](https://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)。
 
 ## <a name="other-articles-in-this-section"></a>本節中的其他文章 
 
@@ -220,7 +220,7 @@ TTS 從純文字或 SSML 產生語音輸出。
 
  **範例**
 
-* [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

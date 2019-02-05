@@ -6,16 +6,16 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: c1860fe51035699aaa55d014c2f76a95c7622061
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9abf761aa141ef3d0c19d6d5401b6815542d4172
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943265"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047729"
 ---
 # <a name="interstitial-ads"></a>插播式廣告
 
-本逐步解說示範如何在通用 Windows 平台 (UWP) App 和 Windows 10 遊戲中包含插播式廣告。 如需示範如何使用 C# 和 C++ 將插播式廣告新增到 JavaScript/HTML 應用程式及 XAML 應用程式的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+本逐步解說示範如何在通用 Windows 平台 (UWP) App 和 Windows 10 遊戲中包含插播式廣告。 如需示範如何使用 C# 和 C++ 將插播式廣告新增到 JavaScript/HTML 應用程式及 XAML 應用程式的完整範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
 
 <span id="whatareinterstitialads10"/>
 
@@ -36,7 +36,7 @@ ms.locfileid: "8943265"
 
 ## <a name="prerequisites"></a>必要條件
 
-* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="integrate-an-interstitial-ad-into-your-app"></a>將插播式廣告整合至您的應用程式
 
@@ -113,7 +113,7 @@ ms.locfileid: "8943265"
 
     1. 在 **\[方案總管\]** 視窗中的 **\[參考\]** 上按一下滑鼠右鍵，然後選取 **\[加入參考\]**。
     2.  在 **\[參考管理員\]** 中，展開 **\[通用 Windows\]**、按一下 **\[擴充功能\]**，然後選取 **\[Microsoft Advertising SDK for JavaScript\]** (Version 10.0) 旁邊的核取方塊。
-    3.  在 **\[參考管理員\]** 中，按一下 \[確定\]。
+    3.  在 [參考管理員]**** 中，按一下 [確定]。
 
 3.  在專案的 HTML 檔案的 **&lt;head&gt;** 區段中，在專案的 default.css 和 default.js JavaScript 參考後面新增 ad.js 的參考。
 
@@ -239,5 +239,5 @@ ms.locfileid: "8943265"
 * [插播式廣告指南](ui-and-user-experience-guidelines.md#interstitialbestpractices10)
 * [使用 C# 的插播式廣告範例程式碼](interstitial-ad-sample-code-in-c.md)
 * [使用 JavaScript 的插播式廣告範例程式碼](interstitial-ad-sample-code-in-javascript.md)
-* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [GitHub 上的廣告範例](https://aka.ms/githubads)
 * [為您的 App 設定廣告單元](set-up-ad-units-in-your-app.md)

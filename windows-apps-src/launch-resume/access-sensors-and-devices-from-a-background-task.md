@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 13bc8f2558b3e3f15d7329697a41b177777b6e7a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 26b665f68932f7a90127ee99414f984f5d9f2005
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918989"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046777"
 ---
 # <a name="access-sensors-and-devices-from-a-background-task"></a>從背景工作存取感應器和裝置
 
@@ -20,7 +20,7 @@ ms.locfileid: "8918989"
 
 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 可讓您的通用 Windows app 在背景存取感應器和周邊裝置，即使您的前景 App 已暫停也一樣。 例如，根據您的 App 在何處執行而定，它能夠使用背景工作，將資料與裝置或監視感應器同步。 為了協助延長電池使用時間並確保可適當取得使用者同意，[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的用法受限於本主題中所述的原則。
 
-若要在背景中存取感應器或周邊裝置，請建立使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
+若要在背景中存取感應器或周邊裝置，請建立使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
 
 > [!Important]
 > **DeviceUseTrigger** 無法與同處理序背景工作搭配使用。 本主題中的資訊僅適用於在跨處理序中執行的背景工作。
@@ -29,11 +29,11 @@ ms.locfileid: "8918989"
 
 當使用者已看不到您的 App 時，Windows 會將您的 App 暫停或終止，以回收記憶體和 CPU 資源。 這可讓其他 App 在前景中執行，並減少電池耗電量。 發生這個情況時，如果沒有背景工作的協助，所有進行中的資料事件都將遺失。 Windows 提供背景工作觸發程序 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)，讓您的 App 能夠在背景中於裝置和感應器上安全地執行長時間執行的同步和監視操作，即使您的 App 暫停也一樣。 如需 App 週期的詳細資訊，請參閱[啟動、繼續和背景工作](index.md)。 如需背景工作的詳細資訊，請參閱[使用背景工作支援 App](support-your-app-with-background-tasks.md)。
 
-**注意：** 在通用 Windows 應用程式，同步處理在背景中的裝置需要您的使用者已核准您的應用程式的背景同步處理。 裝置也必須透過作用中的 I/O 連接到電腦或與電腦配對，並允許最多 10 分鐘的背景活動。 本主題後續將說明有關原則強制執行的詳細資訊。
+**注意：** 在通用 Windows 應用程式中，同步處理在背景中的裝置需要您的使用者已核准您的應用程式的背景同步處理。 裝置也必須透過作用中的 I/O 連接到電腦或與電腦配對，並允許最多 10 分鐘的背景活動。 本主題後續將說明有關原則強制執行的詳細資訊。
 
 ### <a name="limitation-critical-device-operations"></a>限制：重要裝置操作
 
-部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個應用程式 (如果有的話) 指定為裝置的具有特殊權限的應用程式。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的裝置同步和更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)。
+部分重要裝置操作 (例如長時間執行的韌體更新) 無法使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 來執行。 這類操作只能在電腦上執行，而且只能由使用 [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) 且具有特殊權限的 App 來執行。 「*具有特殊權限的 App*」是裝置製造商授權執行這些操作的 App。 裝置中繼資料可用來指定要將哪個應用程式 (如果有的話) 指定為裝置的具有特殊權限的應用程式。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的裝置同步和更新](https://go.microsoft.com/fwlink/p/?LinkId=306619)。
 
 ## <a name="protocolsapis-supported-in-a-deviceusetrigger-background-task"></a>DeviceUseTrigger 背景工作中支援的通訊協定/API
 
@@ -81,9 +81,9 @@ ms.locfileid: "8918989"
 8.  Windows 會監視系統條件和工作執行階段，若其不再符合必要條件，即會在必要時取消該工作。
 9.  當背景工作報告進度或完成時，您的 App 將透過已登錄工作上的進度和已完成的事件來接收這些事件。
 
-**重要**時使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)請考量下列重點：
+**重要**使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)時，請考量下列重點：
 
--   Windows8.1 和 Windows Phone 8.1 中首次引入能夠以程式設計方式觸發使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)的背景工作。
+-   在 windows 8.1 和 Windows Phone 8.1 中首次引入能夠以程式設計方式觸發使用[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337)的背景工作。
 
 -   更新電腦上的周邊裝置時，Windows 會強制執行某些原則，以確保能取得使用者同意。
 
@@ -91,7 +91,7 @@ ms.locfileid: "8918989"
 
 -   Windows 可能會在不再符合某些原則需求時，取消使用 [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) 的背景工作，其中包含背景時間量的上限 (實際執行時間)。 使用這些背景工作來與周邊裝置進行互動時，請務必將這些原則需求納入考量。
 
-**提示：** 若要查看這些背景工作的運作方式，請下載範例。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](http://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](http://go.microsoft.com/fwlink/p/?LinkId=393307)。
+**提示：** 若要查看這些背景工作的運作方式，請下載範例。 如需示範如何在電腦上完成這個動作的範例，請參閱[自訂 USB 裝置範例](https://go.microsoft.com/fwlink/p/?LinkId=301975 )。 如需手機上的範例，請參閱[背景感應器範例](https://go.microsoft.com/fwlink/p/?LinkId=393307)。
  
 ## <a name="frequency-and-foreground-restrictions"></a>頻率與前景限制
 

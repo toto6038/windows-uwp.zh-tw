@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: bdde349c09b08efcbc18857f67444bb990b25421
-ms.sourcegitcommit: 0373a2021c1b7144f28b08778d6a3b3dc64aa10c
+ms.openlocfilehash: 59da5dd5866fe79f4420e1e895af74f976526f27
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "8997403"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046258"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>啟用 Xbox One 開發人員模式
 
@@ -46,7 +46,7 @@ Xbox One 有兩種模式，*零售*模式 (**1**) 和*開發人員*模式 (**2**
 
     ![啟用步驟 8](images/activation-step-8-rs2.png)    
     
-8.  按一下 **\[同意並啟用\]**。 這會導致頁面重新整理，您將會看見您的裝置填入表格當中。 您可在[Xbox One 開發人員模式啟用計畫](http://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 開發人員模式啟用計畫合約。
+8.  按一下 **\[同意並啟用\]**。 這會導致頁面重新整理，您將會看見您的裝置填入表格當中。 您可在[Xbox One 開發人員模式啟用計畫](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 開發人員模式啟用計畫合約。
 
 9.  在您輸入啟用代碼之後，您的主機將會顯示啟用程序的進度畫面。  
     

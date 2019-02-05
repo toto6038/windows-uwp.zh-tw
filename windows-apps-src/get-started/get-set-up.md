@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f3d14467856aee733f2e11d057db0deb873269ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920632"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047935"
 ---
 # <a name="get-set-up"></a>開始設定
 
@@ -21,7 +21,7 @@ ms.locfileid: "8920632"
 
 ## <a name="1-download-or-update-visual-studio"></a>1. 下載或更新 Visual Studio
 
-Microsoft Visual Studio2017 可協助您設計、 程式碼、 測試和偵錯您的應用程式。
+Microsoft Visual Studio2017 可協助您設計、 撰寫程式碼、 測試和偵錯您的應用程式。
 
 如果您還沒有 Visual Studio2017，您可以安裝免費 Microsoft Visual Studio Community2017。 此下載包含用來測試應用程式的裝置模擬器：
 
@@ -64,7 +64,7 @@ Microsoft Visual Studio2017 可協助您設計、 程式碼、 測試和偵錯�
 
 ## <a name="want-more-tools-and-downloads"></a>想要更多工具和下載？
 
-如需工具和下載的完整清單，請參閱[下載](http://go.microsoft.com/fwlink/p/?linkid=285935)。
+如需工具和下載的完整清單，請參閱[下載](https://go.microsoft.com/fwlink/p/?linkid=285935)。
 
 ## <a name="see-also"></a>請參閱
 

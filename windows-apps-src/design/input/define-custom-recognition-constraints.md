@@ -8,12 +8,12 @@ keywords: 語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 53539c73137b40d154db00fa9e340d81412764da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539acb242cfe6ee70d1311133a3f1a193860541a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942177"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047553"
 ---
 # <a name="define-custom-recognition-constraints"></a>定義自訂辨識限制式
 
@@ -144,7 +144,7 @@ SRGS 文法提供完整的功能集，可幫助您為應用程式建構複雜的
 -   使用語意，定義語音識別對您應用程式的意義。
 -   以內嵌於文法或透過語彙連結的方式指定發音。
 
-如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](http://go.microsoft.com/fwlink/p/?LinkID=269886)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](http://go.microsoft.com/fwlink/p/?LinkID=269887)。
+如需 SRGS 元素與屬性的詳細資料，請參閱 [SRGS 文法 XML 參考](https://go.microsoft.com/fwlink/p/?LinkID=269886)。 如果要開始建立 SRGS 文法，請參閱[如何建立基本 XML 文法](https://go.microsoft.com/fwlink/p/?LinkID=269887)。
 
 請記住下列重點：
 
@@ -178,7 +178,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合全球資訊網協會 (W3C)[語意的語音辨識轉譯 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765)規格。
+這個 SRGS 檔案 (srgs.grxml) 包含語意轉譯標記。 這些標記提供一個將文法相符資料傳回給 app 的機制。 文法必須符合全球資訊網協會 (W3C)[語意的語音辨識轉譯 (SISR) 1.0](https://go.microsoft.com/fwlink/p/?LinkID=201765)規格。
 
 如下，我們將接聽各種不同形式的 "yes" 和 "no"。
 
@@ -236,7 +236,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 * [語音互動](speech-interactions.md)
 
 **範例**
-* [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

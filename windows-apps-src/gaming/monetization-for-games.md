@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 獲利
 ms.localizationpriority: medium
-ms.openlocfilehash: 91545116b0d7eae107021cc52ee05d299257518c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 92d85f81be25eed5f0a43cafb4bb34d9f879c827
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929754"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050921"
 ---
 #  <a name="monetization-for-games"></a>遊戲的獲利
 
@@ -20,14 +20,14 @@ ms.locfileid: "8929754"
 在過去，您會為遊戲標上價格，然後等著客人在商店購買它。 但現在您有其他選項。 您可以選擇在實體店面上架遊戲、線上銷售遊戲 (不論是實體版或軟體版)，或是讓每個人都能免費玩該遊戲，但加入一些廣告或可購買的遊戲內項目。 遊戲也不再只是獨立產品。 除了主要遊戲之外，它們通常還伴隨可購買的額外內容。
 
 您可以用下列其中一個或多個方法來宣傳 UWP 遊戲並透過它獲利：
-* 將您的遊戲放在 Microsoft Store，也就是安全的線上存放區供應項目[全球發佈](#worldwide-distribution-channel)。 全世界的玩家都能[以您設定的價格](#set-a-price-for-your-game)在線上購買您的遊戲。
+* 將遊戲放在 Microsoft Store，也就是安全的線上存放區供應項目[全球發佈](#worldwide-distribution-channel)。 全世界的玩家都能[以您設定的價格](#set-a-price-for-your-game)在線上購買您的遊戲。
 * 使用 Windows SDK 中的 API 建立[遊戲內購買](#in-game-purchases)。 玩家可以在您的遊戲內購買項目，或購買其他內容，例如額外的裝備、外觀、地圖或遊戲關卡。
-* 使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 中的 API 顯示來自廣告網路的廣告。 您可以在[遊戲中顯示廣告](#display-ads-in-your-game)，並提供選項讓玩家選擇以觀看影片廣告來交換遊戲內獎勵。
+* 使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 中的 API 顯示來自廣告網路的廣告。 您可以在[遊戲中顯示廣告](#display-ads-in-your-game)，並提供選項讓玩家選擇以觀看影片廣告來交換遊戲內獎勵。
 * [透過廣告活動將遊戲的潛力最大化](#maximize-your-games-potential-through-ad-campaigns)。 使用付費、社群 (免費)，或自家 (免費) 廣告活動來讓使用者數量成長。
 
 ## <a name="worldwide-distribution-channel"></a>全球的通路
 
-Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區全球，且支援透過各種不同形式的付款方式，包括 Visa、 Mastercard 和 PayPal 的計費。 如需國家和地區的完整清單，請參閱[定義市場選取項目](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
+Microsoft 網上商店可以讓您的遊戲可供下載超過 200 個國家與地區全球，且支援透過各種不同形式的付款方式，包括 Visa、 Mastercard 和 PayPal 計費。 如需國家和地區的完整清單，請參閱[定義市場選取項目](https://msdn.microsoft.com/windows/uwp/publish/define-pricing-and-market-selection)。
 
 ## <a name="set-a-price-for-your-game"></a>為您的遊戲設定價格
 
@@ -47,13 +47,13 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 ## <a name="in-game-purchases"></a>遊戲內購買
 
-遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store，這些產品稱為_附加元件_。 [發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)透過合作夥伴中心。 您也會需要在遊戲的程式碼中啟用附加元件。
+遊戲內購買是在遊戲中購買的產品。 它們一般通稱為 _App 內購買_。 在 Microsoft Store，這些產品稱為_附加元件_。 [發佈附加元件](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)，透過合作夥伴中心。 您也會需要在遊戲的程式碼中啟用附加元件。
 
 ### <a name="types-of-add-ons"></a>附加元件的類型
 
 您在市集中可建立的附加元件有兩種：_耐久品_或_消費性產品_。 耐久品是可以持續一段指定時間的項目，且在它到期之前只能購買一次。 消費性產品是可以不斷重複購買的項目。
 
-在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows10 版本 1607 開始可供使用)。 使用開發人員管理的消費性產品，您必須負責為追蹤玩家; 項目的餘額使用市集管理的消費性產品，Microsoft Store 會追蹤的項目的餘額為您。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
+在建立消費性產品的時候，可以決定您想要追蹤它們的方式 &mdash; 亦即它們是_開發人員管理_或是_市集管理_(此功能自 Windows10 版本 1607 開始可供使用)。 使用開發人員管理的消費性產品，您必須負責持續追蹤的玩家; 項目的餘額使用市集管理的消費性產品，Microsoft Store 會追蹤的項目的餘額為您。 如需詳細資訊，請參閱[消費性附加元件的概觀](https://msdn.microsoft.com/windows/uwp/monetize/enable-consumable-add-on-purchases#overview-of-consumable-add-ons)。
 
 ### <a name="create-in-game-purchases"></a>建立遊戲內購買
 
@@ -90,7 +90,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 1. 在 Visual Studio 中開啟您的遊戲方案。
 2. 在 Visual Studio 中，移至 __\[專案\]__ > __\[市集\]__ > __\[建立應用程式套件\]__
-3. 適用於__您是否要建置套件以上傳到 Microsoft Store？__ 選項，選取 __[是]__。
+3. 適用於__您要建置套件以上傳至 Microsoft Store 嗎？__ 選項，選取 __[是]__。
 4. 登入[合作夥伴中心](https://partner.microsoft.com/dashboard)開發人員帳戶。 如果您還沒有開發人員帳戶，可以[註冊](https://developer.microsoft.com/store/register)一個。
 5. 選取一個要建立上傳套件的 App。 如果您尚未建立 App 提交，請提供新的 App 名稱以建立新的提交。 如需詳細資訊，請參閱[透過保留名稱建立您的 App](https://msdn.microsoft.com/windows/uwp/publish/create-your-app-by-reserving-a-name)。
 6. 成功建立套件之後，按一下 __\[啟動 Windows 應用程式認證套件\]__ 以開始測試程序。
@@ -98,11 +98,11 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 #### <a name="publish-the-game-as-hidden"></a>將遊戲以隱藏的方式發佈
 
-1. 移至[合作夥伴中心](https://partner.microsoft.com/dashboard)，並登入。
+1. 請移至[合作夥伴中心](https://partner.microsoft.com/dashboard)並登入。
 2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要處理的 App。 如果您尚未建立 App 提交，按一下 __\[建立新應用程式\]__ 並保留名稱。
 3. 在 __\[應用程式概觀\]__ 頁面上，按一下 __\[開始您的提交\]__。
 4. 設定這個新的提交。 在提交頁面上：
-    * 按一下 __\[定價和可用性\]__。 在 [__可見度__] 區段中，選擇 [__隱藏這個 app 並防止被取得...__ \] 以確保只有您的開發團隊有遊戲的存取權。 如需詳細資訊，請移至[配送和可見性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
+    * 按一下 __\[定價和可用性\]__。 在 [__可見度__] 區段中，選擇 [__隱藏這個 app 並防止被取得...__] 以確保只有您的開發團隊有遊戲的存取權。 如需詳細資訊，請移至[配送和可見性](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability#distribution-and-visibility)。
     * 按一下 __\[屬性\]__。 在 __\[類別和子類別\]__ 區段中，選擇 __\[遊戲\]__，再選取適合您遊戲的子類別。
     * 按一下 __\[年齡分級\]__。 準確地填寫問卷。
     * 按一下 __\[套件\]__。 上傳在先前步驟中建立的遊戲套件。
@@ -118,7 +118,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 在 Visual Studio 中開啟您的遊戲方案：
 
 1. 移至 __\[專案\]__ > __\[市集\]__ > __\[將應用程式與市集建立關聯\]__
-2. 登入合作夥伴中心開發人員帳戶，並選取要與這個方案關聯的應用程式名稱。
+2. 您的合作夥伴中心開發人員帳戶登入，並選取要與這個方案關聯的 app 名稱。
 3. 按兩下 __Package.appxmanifest.xml file__ 然後移至 __\[套件\]__ 索引標籤以檢查遊戲已正確建立關聯。
 
 如果您已經將方案與已經在市集上架的遊戲建立關聯，您的方案將會有使用中的授權，且離為遊戲建立附加元件又更近一些。 如需詳細資訊，請參閱[封裝 App](https://msdn.microsoft.com/windows/uwp/packaging/index)。
@@ -127,7 +127,7 @@ Microsoft Store 可以讓您的遊戲可供下載超過 200 個國家與地區�
 
 在建立附加元件的時候，請確認您將他們與正確的遊戲提交建立關聯。 如需設定與附加元件關聯之各資訊的方法，請參閱[附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
-1. 移至[合作夥伴中心](https://partner.microsoft.com/dashboard)，並登入。
+1. 請移至[合作夥伴中心](https://partner.microsoft.com/dashboard)並登入。
 2. 從 __\[儀表板總覽\]__ 或 __\[所有應用程式\]__ 頁面，按一下您要建立附加元件的 App。
 3. 在 __\[應用程式概觀\]__ 頁面上，於 __\[附加元件\]__ 區段中，選取 __\[建立新的附加元件\]__。
 4. 選取附加元件的產品類型：__\[開發人員管理的消費性產品\]__、__\[市集管理的消費性產品\]__，或 __\[耐久品\]__。
@@ -165,7 +165,7 @@ Microsoft Advertising SDK 中的程式庫和工具可協助您在遊戲中設定
 
 Microsoft Advertising SDK 中的 [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx)、[InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) 和 [NativeAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.nativead.aspx) 類別用於協助在遊戲中顯示廣告。
 
-若要開始使用，請下載並安裝隨附 Visual Studio 2015 或更新版本的 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 如需詳細資訊，請參閱[安裝 Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md)。
+若要開始使用，請下載並安裝隨附 Visual Studio 2015 或更新版本的 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需詳細資訊，請參閱[安裝 Microsoft Advertising SDK](../monetize/install-the-microsoft-advertising-libraries.md)。
 
 #### <a name="implementation-guides"></a>實作指南
 

@@ -5,12 +5,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 107c904dc4b89941c0f453efd830504d2d032534
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7ed69dc912e916f7964c125550621c22dfcd9555
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929121"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049060"
 ---
 # <a name="show-multiple-views-for-an-app"></a>顯示 app 的多重檢視
 
@@ -75,7 +75,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 2.  追蹤新檢視的 [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120)。 您將在稍後使用它來顯示檢視。
 
-    您可能會考慮在 app 中建立一些基礎結構，以協助追蹤您所建立的檢視。 如需範例，請參閱 [MultipleViews 範例](http://go.microsoft.com/fwlink/p/?LinkId=620574)中的 `ViewLifetimeControl` 類別。
+    您可能會考慮在 app 中建立一些基礎結構，以協助追蹤您所建立的檢視。 如需範例，請參閱 [MultipleViews 範例](https://go.microsoft.com/fwlink/p/?LinkId=620574)中的 `ViewLifetimeControl` 類別。
 
     ```csharp
     int newViewId = 0;
@@ -83,7 +83,7 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 
 3.  在新的執行緒上，填入視窗。
 
-    您可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法，在 UI 執行緒上為新檢視排定工作。 您可以使用 [Lambda 運算式](http://go.microsoft.com/fwlink/p/?LinkId=389615)，將函式當成引數傳送給 **RunAsync** 方法。 您在 Lamdba 函式中進行的工作會在新檢視的執行緒上發生。
+    您可以使用 [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) 方法，在 UI 執行緒上為新檢視排定工作。 您可以使用 [Lambda 運算式](https://go.microsoft.com/fwlink/p/?LinkId=389615)，將函式當成引數傳送給 **RunAsync** 方法。 您在 Lamdba 函式中進行的工作會在新檢視的執行緒上發生。
 
     在 XAML 中，您通常會將 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 新增到 [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) 的 [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) 屬性，然後將 **Frame** 導覽到您已定義應用程式內容的 XAML [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)。 如需詳細資訊，請參閱[兩個頁面之間的對等瀏覽](../basics/navigate-between-two-pages.md)。
 

@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 圖形, 診斷工具, directx
 ms.localizationpriority: medium
-ms.openlocfilehash: f9fc1f6fa28fa36c876517eb0653693c670282ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6e3c48e69dd1ad991a2a04017d4e262e45430504
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945840"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047915"
 ---
 # <a name="graphics-diagnostics-tools"></a>圖形診斷工具
 
 
 
-使用 windows 10，圖形診斷工具目前已提供從 Windows 內做為選用功能。 若要使用執行階段與 Visual Studio 中所提供的圖形診斷功能來開發 DirectX App 或遊戲，請安裝「圖形工具」選用功能：
+在 windows 10 中的圖形診斷工具目前已提供從 Windows 內做為選用功能。 若要使用執行階段與 Visual Studio 中所提供的圖形診斷功能來開發 DirectX App 或遊戲，請安裝「圖形工具」選用功能：
 
 1.  移至 [**設定**、 選取**應用程式**，並再按一下 [**管理選用功能**。
 2.  按一下 **\[新增功能\]**   
@@ -32,7 +32,7 @@ ms.locfileid: "8945840"
 ## <a name="related-topics"></a>相關主題
 
 
-[Visual Studio 中的圖形診斷概觀](http://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Visual Studio 中的圖形診斷概觀](https://go.microsoft.com/fwlink/p/?LinkID=526382)
 
  
 

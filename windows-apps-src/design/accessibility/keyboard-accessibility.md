@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 938b5b3cdd2e23995a1031875a28f178e0c97a26
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ad64c2a0d4d7569ec2c0c0a44f9236fc4b2819f
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931129"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045517"
 ---
 # <a name="keyboard-accessibility"></a>鍵盤協助工具  
 
@@ -148,7 +148,7 @@ XAML
 
 為了簡化，上面的範例省略了字串的資源使用，例如 "Ctrl+A"。 不過當地語系化時，也必須考慮快速鍵。 因為選擇做為快速鍵的按鍵時，通常取決於元素的可見文字標籤，所以這也涉及快速鍵的當地語系化。
 
-如需實作快速鍵的指引，請參閱《Windows 使用者體驗互動指導方針》中的[快速鍵](http://go.microsoft.com/fwlink/p/?linkid=221825)。
+如需實作快速鍵的指引，請參閱《Windows 使用者體驗互動指導方針》中的[快速鍵](https://go.microsoft.com/fwlink/p/?linkid=221825)。
 
 <span id="Implementing_a_key_event_handler"/>
 <span id="implementing_a_key_event_handler"/>
@@ -249,5 +249,5 @@ Windows Phone 裝置通常不會配備專屬硬體鍵盤。 不過，軟體輸�
 * [協助工具](accessibility.md)
 * [鍵盤互動](https://msdn.microsoft.com/library/windows/apps/Mt185607)
 * [觸控式鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 

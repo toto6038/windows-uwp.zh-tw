@@ -1,23 +1,23 @@
 ---
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
-description: 本文說明的建議的方式取用非同步方法，在 VisualC + + 元件延伸 (C + + /CX) 使用在 ppltasks.h 中的並行命名空間中定義的 task 類別。
+description: 本文說明的建議的方式中取用非同步方法，在 VisualC + + 元件延伸 (C + + /CX) 使用在 ppltasks.h 中的並行命名空間中定義的 task 類別。
 title: C++ 中的非同步程式設計
 ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 非同步, C++
 ms.localizationpriority: medium
-ms.openlocfilehash: 84f0da2f0b9642a817f4efb5b6d30a968c0803ff
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: beab78415ab36fc7bc0659af1b3466b2c3601d88
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920507"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045962"
 ---
 # <a name="asynchronous-programming-in-ccx"></a>C++/CX 中的非同步程式設計
 > [!NOTE]
 > 本主題是為協助您維護您 C++/CX 應用程式。 但我們建議您將 [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) 用於新的應用程式。 C++/WinRT 是完全標準現代的 Windows 執行階段 (WinRT) API 的 C++17 語言投影，僅實作為標頭檔案式程式庫，以及設計用來提供您現代化 Windows API 的第一級存取。
 
-本文章說明 VisualC + + 元件延伸中運用非同步方法的建議的方式 (C + + /CX) 使用`task`中定義的類別`concurrency`ppltasks.h 中的命名空間。
+本文章說明 VisualC + + 元件擴充功能中運用非同步方法的建議的方式 (C + + /CX) 使用`task`中定義的類別`concurrency`ppltasks.h 中的命名空間。
 
 ## <a name="universal-windows-platform-uwp-asynchronous-types"></a>通用 Windows 平台 (UWP) 非同步類型
 通用 Windows 平台 (UWP) 功能是一種設計完善的模型，適用於呼叫非同步方法，並提供取用該方法所需的類型。 如果您不熟悉 UWP 非同步模型，請先閱讀[非同步程式設計][AsyncProgramming] ，然後閱讀本文的其他部分。
@@ -289,7 +289,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## <a name="related-topics"></a>相關主題
 * [使用 C++/CX 建立 UWP app 的非同步作業](https://msdn.microsoft.com/library/hh750082)
-* [Visual C++ 語言參考](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [Visual C++ 語言參考](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
 * [非同步程式設計][AsyncProgramming]
 * [工作平行處理原則 (並行執行階段)][taskParallelism]
 * [concurrency::task](/cpp/parallel/concrt/reference/task-class)

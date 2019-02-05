@@ -6,18 +6,18 @@ ms.topic: article
 keywords: windows 10, uwp, 目標式通知, 推播通知, 快顯通知, 磚
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
-ms.openlocfilehash: 902a8d84c2a0cfa1549c4c3926e838e9bb8ed9c4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9858665eaf36f5cd261dd1098b23aeecccf9179c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923135"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045777"
 ---
 # <a name="send-notifications-to-your-apps-customers"></a>傳送通知給您的應用程式客戶
 
 在對的時間以適當的訊息和客戶互動，是您身為 App 開發人員的致勝關鍵。 通知可以鼓勵您的客戶採取行動，例如為應用程式評分、購買附加元件、嘗試新功能或下載另一個應用程式 (或許可透過您提供的[促銷代碼](generate-promotional-codes.md)免費取得)。
 
-[合作夥伴中心](https://partner.microsoft.com/dashboard)提供資料導向的客戶交流平台，您可以使用傳送通知給所有應用程式的客戶，或只鎖定符合您在[客戶所定義之條件應用程式的 Windows 10 客戶子集區隔](create-customer-segments.md)。 您也可以建立通知傳送到一個以上的應用程式的客戶。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)提供資料導向的客戶交流平台，您可以使用傳送通知給所有應用程式的客戶，或只鎖定符合您所[客戶中定義之條件應用程式的 Windows 10 客戶子集區隔](create-customer-segments.md)。 您也可以建立通知傳送到您的應用程式的一個以上的客戶。
 
 > [!IMPORTANT]
 > 這些通知只能用於 UWP app。
@@ -45,11 +45,11 @@ ms.locfileid: "8923135"
 請依照下列步驟來建立在合作夥伴中心的通知，並將它傳送給特定客戶區隔。
 
 > [!NOTE]
-> 應用程式可以從合作夥伴中心收到通知之前，您必須先呼叫[RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)方法，在您的應用程式註冊您的應用程式以接收通知。 這個方法適用於 [Microsoft Store服務 SDK](http://aka.ms/store-em-sdk)。 如需如何呼叫這個方法的詳細資訊 (包括程式碼範例)，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
+> 應用程式可以從合作夥伴中心收到通知之前，您必須先呼叫[RegisterNotificationChannelAsync](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync)方法來登錄 app 以接收通知的應用程式中。 這個方法適用於 [Microsoft Store服務 SDK](https://aka.ms/store-em-sdk)。 如需如何呼叫這個方法的詳細資訊 (包括程式碼範例)，請參閱[設定您的應用程式以接收目標式推播通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 
-1. 在[合作夥伴中心](https://partner.microsoft.com/dashboard)，展開 [**互動**] 區段，然後選取**通知**。
+1. 在[合作夥伴中心](https://partner.microsoft.com/dashboard)中，展開 [**互動**] 區段中，然後選取**通知**。
 2. 在 **\[通知\]** 頁面上，選取 **\[新通知\]**。
-3. 在**選取範本**] 區段中，選擇您想要傳送，然後按一下 **[確定]** 的[通知類型](#notification-template-types)。
+3. 在**選取範本**區段中，選擇您想要傳送，然後按一下 **[確定]** 的[通知類型](#notification-template-types)。
 4. 在下一個頁面上，使用下拉式功能表選擇您想要產生通知的**\[單一應用程式\]** 或**\[多個應用程式\]**。 您可以只選取應用程式已[設定為使用 Microsoft Store Services SDK 接收通知](../monetize/configure-your-app-to-receive-dev-center-notifications.md)。
 5. 在 **\[通知設定\]** 區段中選擇 **\[通知\]** 的名稱，然後 (如果適用) 選擇您想要將通知傳送到的 **\[客戶群組\]**。 （傳送至多個應用程式的通知只能傳送到這些 app 的所有客戶。）如果您想要使用尚未建立的客戶區隔，請選取**\[建立新的客戶群組\]**。 請注意，這需要 24 小時才能將新區隔用於通知。 如需詳細資訊，請參閱[建立客戶區隔](create-customer-segments.md)。
 6. 如果您想要指定何時傳送通知，請清除 **\[立即傳送通知\]** 核取方塊，然後選擇特定的日期和時間 (除非您指定要使用每個客戶的當地時區，否則對所有客戶皆以 UTC 顯示)。
@@ -114,12 +114,12 @@ ms.locfileid: "8923135"
 
 ### <a name="to-view-notification-performance"></a>檢視通知效能
 
-當您設定好通知和您的應用程式以測量通知效能，如上文所述時，您可以看到您的通知執行狀況。
+當您設定好通知和 app 以測量通知效能，如上文所述時，您可以看到您的通知執行狀況。
 
 若要檢閱每個通知的詳細的資料：
 
-1.  在合作夥伴中心，展開**互動**區段，然後選取**通知**。
-2.  在表格中的現有的通知，選取 [**進行中**或**已完成**，並再看看 [**傳遞速率**和**應用程式啟動速率**欄來查看每個通知的整體效能。
+1.  在合作夥伴中心中，展開**互動**區段，然後選取**通知**。
+2.  在表格中的現有的通知，選取 [**進行中**或**已完成**，並再看看 [**傳遞速率**和**應用程式啟動率**的欄位，以查看每個通知的整體效能。
 3.  若要查看更詳細的效能詳細資料，請選取通知名稱。 在 **\[傳遞統計資料\]** 區段中，您可以檢視下列通知 **\[狀態\]** 類型的 **\[計數\]** 和 **\[百分比\]** 資訊︰
     * **失敗**︰通知因為某些原因未傳遞。 例如，如果 Windows 通知服務中發生問題，這個情況就會發生。
     * **通道到期失敗**： 無法傳遞通知，因為應用程式與合作夥伴中心之間的通道已到期。 例如，如果客戶長時間未開啟您的 app，這個情況就會發生。
@@ -128,17 +128,17 @@ ms.locfileid: "8923135"
     * **啟動**︰通知已傳送、客戶按一下通知，因此開啟您的應用程式。 請注意，這只會追蹤 app 啟動。 這個狀態不包括邀請客戶採取其他行動 (例如啟動Microsoft Store以留下評等) 的通知。
     * **不明**︰我們無法判斷這個通知的狀態。
 
-分析您的通知的使用者活動資料：
+分析您的通知使用者活動資料：
 
-1.  在合作夥伴中心，展開**互動**區段，然後選取**通知**。
+1.  在合作夥伴中心中，展開**互動**區段，然後選取**通知**。
 2.  在**通知**頁面上，按一下 [**分析**] 索引標籤。此索引標籤會顯示下列資料：
     * 為您的快顯通知和控制中心通知各種不同的使用者動作狀態的圖形檢視。
-    * 世界地圖檢視的按一下-透過-率為您的快顯通知和控制中心通知。
+    * 世界地圖檢視的按一下透過-率為您的快顯通知和控制中心通知。
 3. 在頁面頂端附近，您可以選取您想要顯示資料的時間週期。 預設選項是 30D（30 天），但您可以選擇在 3、6 或 12 個月期間顯示資料，或指定自訂的日期範圍。 您也可以展開**篩選器**來篩選的所有應用程式和市場的資料。
 
 ## <a name="translate-your-notifications"></a>翻譯您的通知
 
-為使通知發揮最大的影響力，請考慮將它們翻譯成您客戶偏好的語言。 合作夥伴中心可讓您更輕鬆地自動翻譯您的通知，利用[Microsoft Translator](https://www.microsoft.com/translator/home.aspx)服務的強大功能。
+為使通知發揮最大的影響力，請考慮將它們翻譯成您客戶偏好的語言。 合作夥伴中心，讓您輕鬆地利用強大的[Microsoft Translator](https://www.microsoft.com/translator/home.aspx)服務來自動翻譯您的通知。
 
 1.  當您以您的預設語言撰寫通知後，請選取 **\[新增語言\]** (在 **\[通知內容\]** 區段的 **\[語言\]** 功能表之下)。
 2.  在 **\[新增語言\]** 視窗中選取顯示通知的他種語言，然後選取 **\[更新\]**。

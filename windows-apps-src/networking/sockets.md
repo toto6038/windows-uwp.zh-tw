@@ -6,12 +6,12 @@ ms.date: 06/03/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7d75afd17d5aa7edf64fda36b3a35b3a101c1d89
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924821"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046754"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
@@ -521,7 +521,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-從**StreamSocket**的角度，在執行接續主體之前完成處理常式會完成執行（而且通訊端可供處置）。 因此，如果您想要在接續中使用通訊端，不要處置通訊端，您需要直接（透過 lambda 擷取）或間接 (透過在接續中繼續存取`args->Socket`) 參考通訊端並使用它，或強制內嵌接續工作。 您可以在[StreamSocket 範例](http://go.microsoft.com/fwlink/p/?LinkId=620609)中看到第一項技巧（lambda 擷取）的運作情形。 [建置基本 TCP 通訊端用戶端和伺服器](#build-a-basic-tcp-socket-client-and-server)上一節中的 C++/CX 程式碼使用第二項技巧&mdash;它將要求當做回應 echo 回來，並從其中一個最內層的接續存取`args->Socket`。
+從**StreamSocket**的角度，在執行接續主體之前完成處理常式會完成執行（而且通訊端可供處置）。 因此，如果您想要在接續中使用通訊端，不要處置通訊端，您需要直接（透過 lambda 擷取）或間接 (透過在接續中繼續存取`args->Socket`) 參考通訊端並使用它，或強制內嵌接續工作。 您可以在[StreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620609)中看到第一項技巧（lambda 擷取）的運作情形。 [建置基本 TCP 通訊端用戶端和伺服器](#build-a-basic-tcp-socket-client-and-server)上一節中的 C++/CX 程式碼使用第二項技巧&mdash;它將要求當做回應 echo 回來，並從其中一個最內層的接續存取`args->Socket`。
 
 當您不要 echo 回應時適用第三項技巧。 您可以使用`task_continuation_context::use_synchronous_execution()`選項強制 PPL 內嵌執行接續主體。 以下程式碼範例示範如何做。
 
@@ -1384,4 +1384,4 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 ## <a name="samples"></a>範例
-* [StreamSocket 範例](http://go.microsoft.com/fwlink/p/?LinkId=620609)
+* [StreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620609)

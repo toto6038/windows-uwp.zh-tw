@@ -8,12 +8,12 @@ keywords: Cortana, Cortana 畫布, Cortana 設計, 使用者介面, 語音命令
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cf8b8c095f96217375eb05d0128a31fc28ab47df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 49290d0e0ba96a5dce562ca4148b0ebf53bf0ff5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921111"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051121"
 ---
 # <a name="cortana-interactions-in-uwp-apps"></a>UWP 應用程式中的 Cortana 互動
 
@@ -36,7 +36,7 @@ Cortana 提供了健全且全方位的可擴充架構，讓您能夠將您應用
 * [Cortana 語音命令的設計指導方針](https://docs.microsoft.com/cortana/voice-commands/voicecommand-design-guidelines)
 
 **範例**
-* [Cortana 語音命令範例](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+* [Cortana 語音命令範例](https://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  

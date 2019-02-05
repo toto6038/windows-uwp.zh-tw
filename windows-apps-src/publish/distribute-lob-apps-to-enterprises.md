@@ -1,17 +1,17 @@
 ---
 Description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
-title: 將 LOB app 發佈到企業
+title: 將 LOB 應用程式發佈到企業
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, lob, 企業營運, 企業應用程式, 商務用 store, 教育用 store, 企業
 ms.localizationpriority: medium
-ms.openlocfilehash: eecd7a3ff86de5db9693bf6ce597e2b1e00bb4ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c6e1eafbce5eca1570161da1656c0242228ff7de
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947602"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044585"
 ---
 # <a name="distribute-lob-apps-to-enterprises"></a>將 LOB app 發佈到企業
 
@@ -22,7 +22,7 @@ ms.locfileid: "8947602"
 > 目前只有免費的應用程式可透過商務用 Microsoft 網上商店或教育用 Microsoft 網上商店，單獨發佈到企業。 若您提交付費 app 做為 LOB，則無法將其提供給企業使用。 
 
 > [!IMPORTANT]
-> 您無法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，直接將 LOB 應用程式發佈到企業。 您必須透過合作夥伴中心發佈所有 LOB 應用程式提交。
+> 您無法使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，直接將 LOB 應用程式發佈到企業。 透過合作夥伴中心，您必須發佈所有 LOB 應用程式提交。
 
 
 ## <a name="set-up-the-enterprise-association"></a>設定企業關聯
@@ -30,7 +30,7 @@ ms.locfileid: "8947602"
 單獨將 LOB app 發佈到企業的第一個步驟是在您的帳戶與企業的私人市集之間建立關聯。
 
 > [!IMPORTANT]
-> 此關聯程序必須由企業起始，而且必須使用與用來建立開發人員帳戶之 Microsoft 帳戶相關聯的電子郵件地址。 如需詳細資訊，請參閱[使用企業營運 app](http://go.microsoft.com/fwlink/p/?LinkId=698846)。
+> 此關聯程序必須由企業起始，而且必須使用與用來建立開發人員帳戶之 Microsoft 帳戶相關聯的電子郵件地址。 如需詳細資訊，請參閱[使用企業營運 app](https://go.microsoft.com/fwlink/p/?LinkId=698846)。
 
 當企業選擇邀請您發佈 app 以供他們專用時，您將會收到一封電子郵件，其中包含確認關聯的連結。 您也可以前往 **\[帳戶設定\]** 的 **\[企業關聯\]** 區段確認這些關聯 (只要您使用用來開啟開發人員帳戶的 Microsoft 帳戶登入)。
 
@@ -73,7 +73,7 @@ ms.locfileid: "8947602"
 > [!NOTE]
 > 若要取得 LOB 應用程式，組織必須位於[支援的市場](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)，且提交您的應用程式時不能[排除該市場](define-pricing-and-market-selection.md)。 
 
-如需詳細資訊，請參閱[使用企業營運應用程式](http://go.microsoft.com/fwlink/p/?LinkId=698846) 和[使用私人市集散布應用程式](http://go.microsoft.com/fwlink/p/?LinkId=698847)。
+如需詳細資訊，請參閱[使用企業營運應用程式](https://go.microsoft.com/fwlink/p/?LinkId=698846) 和[使用私人市集散布應用程式](https://go.microsoft.com/fwlink/p/?LinkId=698847)。
 
 
 ## <a name="update-lob-apps"></a>更新 LOB 應用程式
@@ -94,7 +94,7 @@ ms.locfileid: "8947602"
 
 在某些情況下，公司可能不想要透過 （例如與規範的原因，或需要其他功能的應用程式） 的合作夥伴中心提交其 LOB 應用程式。 在此情況下，企業可以透過側載將應用程式直接部署到電腦，而不需使用商務用 Microsoft 網上商店或教育用 Microsoft 網上商店。
 
-如需詳細資訊，請參閱[在 Windows10 中側載 LOB 應用程式](http://go.microsoft.com/fwlink/p/?LinkId=623433)。
+如需詳細資訊，請參閱[在 Windows10 中側載 LOB 應用程式](https://go.microsoft.com/fwlink/p/?LinkId=623433)。
 
  
 

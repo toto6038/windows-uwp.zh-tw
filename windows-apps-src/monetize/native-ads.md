@@ -5,12 +5,12 @@ ms.date: 05/11/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告控制項, 原生廣告
 ms.localizationpriority: medium
-ms.openlocfilehash: c978a07ceb30aaf9c2d0df3d38ff7ee9abbb5b2a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 89e9df87cd214d3d03f25c674ec80a73fedf53d6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939542"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045241"
 ---
 # <a name="native-ads"></a>原生廣告
 
@@ -23,7 +23,7 @@ ms.locfileid: "8939542"
 
 ## <a name="prerequisites"></a>必要條件
 
-* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="integrate-a-native-ad-into-your-app"></a>將原生廣告整合至您的應用程式
 
@@ -95,7 +95,7 @@ ms.locfileid: "8939542"
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#AdReady)]
 
-9.  Define an event handler for the **ErrorOccurred** event to handle errors related to the native ad. 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
+9.  定義 **ErrorOccurred** 事件的事件處理常式來處理原生廣告的相關錯誤。 下列範例會在測試期間將錯誤資訊寫入 Visual Studio **\[輸出\]** 視窗。
 
     [!code-cs[NativeAd](./code/AdvertisingSamples/NativeAdSamples/cs/MainPage.xaml.cs#ErrorOccurred)]
 
@@ -115,7 +115,7 @@ ms.locfileid: "8939542"
 
 3. 您可以選擇為原生廣告啟用廣告流量分配，方法是在 [\[應用程式內廣告\]](../publish/in-app-ads.md) 頁面的 [\[利用廣告獲利\]](../publish/in-app-ads.md#mediation) 區段進行設定。 廣告流量分配可以透過顯示來自多個廣告網路的廣告，讓您獲得最大的廣告收益並充分發揮應用程式促銷功能。
 
-4.  在程式碼，請在合作夥伴中心產生的實際值取代測試的廣告單元值 （也就是*applicationId*和*adUnitId*的參數[NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)建構函式）。
+4.  在程式碼，請在合作夥伴中心產生的實際值取代測試的廣告單元值 （也就是*applicationId*和*adUnitId* [NativeAdsManagerV2](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.nativeadsmanagerv2.-ctor)建構函式參數）。
 
 5.  [您的應用程式提交](../publish/app-submissions.md)至市集使用合作夥伴中心。
 

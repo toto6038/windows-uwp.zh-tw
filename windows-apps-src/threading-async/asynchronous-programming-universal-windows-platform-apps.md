@@ -6,22 +6,22 @@ ms.date: 05/14/2018
 ms.topic: article
 keywords: Windows 10, UWP, 非同步
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e8bae0db888b947c568deb50fa5f2fc227e734
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a8349b9a96dd67d64abb368f0fdadd822af2fe84
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924738"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048075"
 ---
 # <a name="asynchronous-programming"></a>非同步程式設計
 本主題描述通用 Windows 平台 (UWP) 和其在 C#、 Microsoft Visual Basic.NET、 c + + 和 JavaScript 中的表示法中的非同步程式設計。
 
 使用非同步程式設計可協助 app 在執行需要花一段時間才能完成的工作，還是能保持回應。 例如，從網際網路下載內容的應用程式可能需要花費一些時間來等候內容。 如果您在 UI 執行緒使用同步方法抓取內容，則應用程式會遭到封鎖，直到該方法傳回為止。 應用程式將不會回應使用者的互動，而因為應用程式似乎沒有回應，使用者就會感到失望。 比較好的做法是使用非同步程式設計，如此一來，app 可以在等候某項作業完成的同時，繼續執行以及回應 UI。
 
-對於需要較長時間才能完成的方法，使用非同步程式設計是標準做法，而不是 UWP 的特例。 JavaScript、 C#、 Visual Basic 和 c + + 每個提供非同步方法的語言支援。
+對於需要較長時間才能完成的方法，使用非同步程式設計是標準做法，而不是 UWP 的特例。 JavaScript、 C#、 Visual Basic 和 c + + 每個語言支援提供非同步方法。
 
 ## <a name="asynchronous-programming-in-the-uwp"></a>UWP 的非同步程式設計
-許多 UWP 功能，例如[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) Api 以及[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) Api 會公開為非同步 Api。 根據慣例，非同步 Api 的名稱結尾"Async"，以表示部分的執行可能會控制已傳回給呼叫者後才進行。
+許多 UWP 功能，例如[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) Api 以及[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) Api 會公開為非同步 Api。 依照慣例，非同步 Api 名稱的結尾"Async"，以表示部分的執行可能控制項傳回給呼叫者後才進行。
 
 在通用 Windows 平台 (UWP) app 中使用非同步 API 時，程式碼會以一致的方式發出非封鎖性呼叫。 因此當您在自己的 API 定義中實作這些非同步模式時，呼叫者就可理解並以可預測的方式來使用您的程式碼。
 
@@ -63,7 +63,7 @@ ms.locfileid: "8924738"
 [**create\_async function**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) 可以提供產生非同步 API 的相關支援，讓開發人員能夠使用 JavaScript 或支援 UWP 的任何其他語言來取用非同步 API。 如需詳細資訊，請參閱[建立非同步作業 C + + /CX](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)。
 
 ## <a name="asynchronous-patterns-in-uwp-using-javascript"></a>使用 JavaScript 的 UWP 中的非同步模式
-在 JavaScript 中，非同步程式設計採用 [Common JS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) 建議的標準，讓非同步方法傳回 Promise 物件。 Promise 可用於 UWP 以及適用於 JavaScript 的 Windows Library。
+在 JavaScript 中，非同步程式設計採用 [Common JS Promises/A](https://wiki.commonjs.org/wiki/Promises/A) 建議的標準，讓非同步方法傳回 Promise 物件。 Promise 可用於 UWP 以及適用於 JavaScript 的 Windows Library。
 
 Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 函式取得 Promise 物件，按慣例它的名稱結尾會是 "Async"。
 
@@ -71,5 +71,5 @@ Promise 物件代表會在未來完成的值。 在 UWP 中，您會從 Factory 
 
 ## <a name="related-topics"></a>相關主題
 * [在 C# 或 Visual Basic 中呼叫非同步 API](call-asynchronous-apis-in-csharp-or-visual-basic.md)
-* [使用 Async 和 Await 進行非同步程式設計 (C# 和 Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
+* [使用 Async 和 Await 進行非同步程式設計 (C# 和 Visual Basic)](https://msdn.microsoft.com/library/hh191443(vs.110).aspx)
 * [黑白棋範例功能案例：非同步程式碼](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)

@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: acd8b06c98c95750b6d047cda96b8c2884a9d7a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9e23cb9c01178640bfa1519d8df369ec76ed2a6c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937912"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046551"
 ---
 # <a name="specify-the-speech-recognizer-language"></a>指定語音辨識器語言
 
@@ -100,7 +100,7 @@ SRGS 文法是一種可透過 [**SpeechRecognitionGrammarFileConstraint**](https
 
 **範例**
 
-* [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

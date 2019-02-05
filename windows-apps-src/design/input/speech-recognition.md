@@ -8,12 +8,12 @@ keywords: speech, voice, speech recognition, natural language, dictation, input,
 ms.date: 10/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b6e0c6a751116ad03c4e8d69cb02e7147938097
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1b7eec51044a70b0738e246d3aa516c37643cf68
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927342"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048545"
 ---
 # <a name="speech-recognition"></a>語音辨識
 
@@ -26,15 +26,15 @@ ms.locfileid: "8927342"
 
 ## <a name="configure-speech-recognition"></a>設定語音辨識
 
-若要支援使用您的應用程式的語音辨識，使用者必須連線和啟用的麥克風他們在裝置上，並接受 Microsoft 隱私權原則授與您的應用程式的權限才能使用。
+若要支援使用您的應用程式的語音辨識，使用者必須連線並啟用麥克風他們在裝置上，並接受 Microsoft 隱私權原則授與您的應用程式的權限才能使用。
 
-自動與系統對話方塊，要求存取和使用麥克風的權限提示使用者的音訊饋送 （範例中的[語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)如下所示），只是設定**的麥克風**[裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)中的[應用程式套件資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
+自動與系統對話方塊，要求存取和使用麥克風的權限提示使用者的音訊饋送 （範例中的[語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)如下所示），只是組**麥克風**[裝置功能](https://docs.microsoft.com/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability)中的[應用程式套件資訊清單](https://docs.microsoft.com/uwp/schemas/appxpackage/appx-package-manifest)。 如需詳細資訊，請參閱[應用程式功能宣告](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)。
 
 ![用於存取麥克風的隱私權原則](images/speech/privacy.png)
 
-如果使用者按一下 [是] 來授與存取權麥克風，您的應用程式會新增到清單，核准的應用程式在 \ [設定]-> [隱私權]-> [麥克風] 頁面。 不過，因為使用者可以選擇在任何時候關閉這項設定，您應該確認您的 app 有存取麥克風，再嘗試使用它。
+如果使用者按一下 [是] 來授與存取麥克風，您的應用程式新增到一份核准的應用程式，在 \ [設定-> 隱私權-> 麥克風頁面。 不過，因為使用者可以選擇在任何時候關閉這項設定，您應該確認您的 app 有存取麥克風，再嘗試使用它。
 
-如果您也想要支援聽寫，Cortana，或其他語音辨識服務 （例如[預先定義的文法](#predefined-grammars)定義中的主題限制式），您必須也確認**線上語音辨識**(設定]-> [隱私權]-> [語音) 是啟用。
+如果您也想要支援 Cortana、 聽寫或其他語音辨識服務 （例如[預先定義的文法](#predefined-grammars)定義中的主題限制式），您必須也確認**線上語音辨識**(設定-> 隱私權-> 語音) 是啟用。
 
 此程式碼片段顯示如何您的應用程式可以檢查麥克風是否存在，以及如果已使用它的權限。
 
@@ -269,7 +269,7 @@ catch (Exception exception)
 
 ### <a name="srgs-grammars"></a>SRGS 文法
 
-語音辨識文法規格 (SRGS) 文法是一份靜態文件，與程式設計的清單限制式不同，您可以使用 [SRGS 版本 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) 所定義的 XML 格式來編輯該文件。 SRGS 文法透過讓您可在單一辨識中擷取多個語意意義，來提供控制整個語音辨識的最佳體驗。
+語音辨識文法規格 (SRGS) 文法是一份靜態文件，與程式設計的清單限制式不同，您可以使用 [SRGS 版本 1.0](https://go.microsoft.com/fwlink/p/?LinkID=262302) 所定義的 XML 格式來編輯該文件。 SRGS 文法透過讓您可在單一辨識中擷取多個語意意義，來提供控制整個語音辨識的最佳體驗。
 
  請參閱[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)。
 
@@ -373,7 +373,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 **設計人員**
 * [語音設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596121)
 **範例**
-* [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

@@ -8,12 +8,12 @@ ms.date: 11/16/2017
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
-ms.openlocfilehash: bceb36516d542503fe665f0b793cd960bb6171e2
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 417f9b72c5708a85fa570476de2829bf6217c165
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037280"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044279"
 ---
 # <a name="controls-and-patterns-for-uwp-apps"></a>適用於 UWP 應用程式的控制項和模式
  
@@ -132,6 +132,6 @@ ms.locfileid: "9037280"
 
 ## <a name="additional-controls"></a>其他控制項
 
-<a href="http://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="http://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> 及 <a href="http://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等各家公司所推出適用於 UWP 開發的其他控制項。 這些控制項，透過擴大標準系統控制項與自訂控制和服務，為企業與 .NET 開發人員提供額外的支援。  
+<a href="https://www.telerik.com/">Telerik</a>、<a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>、<a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>、<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>、<a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a> 及 <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a> 等各家公司所推出適用於 UWP 開發的其他控制項。 這些控制項，透過擴大標準系統控制項與自訂控制和服務，為企業與 .NET 開發人員提供額外的支援。  
 
 如果您想要深入了解這些控制項，請查看 GitHub 上的<a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">客戶訂單資料庫</a>範例。 這個範例使用資料格和 Telerik 的資料項驗證，這是其 UWP 套件的部分 UI。 UWP 套件的 UI 是超過 20 個控制項的集合，透過 .NET Foundation 以開放原始碼專案形式提供。

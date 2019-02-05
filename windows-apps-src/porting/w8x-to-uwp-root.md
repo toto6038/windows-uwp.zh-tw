@@ -1,36 +1,36 @@
 ---
-description: 如果您有通用 8.1 應用程式與 \#8212;whether 它針對 Windows8.1、 Windows Phone 8.1 或這兩個與 \#8212;then 您會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。
+description: '如果您有通用 8.1 app&\ #8212; 無論它針對 windows 8.1、 Windows Phone 8.1 或 both&\ #8212; 您會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。'
 title: 從 Windows Runtime 8.x 移至 UWP
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: c94b2a9a1ad13db4051d276aaff9a082f95f33fb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7d0a75ae4306535d37c5c2d776fda2cbdc3a0634
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938619"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047686"
 ---
 # <a name="move-from-windows-runtime-8x-to-uwp"></a>從 Windows Runtime 8.x 移至 UWP
 
 
-如果您有通用 8.1 應用程式 — 它針對 Windows8.1、 Windows Phone 8.1，或兩者 — 則會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。 使用 windows 10，您可以建立通用 Windows 平台 (UWP) 應用程式，這是可供客戶安裝至各種類型裝置的單一應用程式套件。 如詳細背景資訊 windows 10，UWP app，以及調適型程式碼與我們將在此移植指南中，提及之調適型 UI 概念的請參閱[UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+如果您有通用 8.1 應用程式 — 它針對 windows 8.1、 Windows Phone 8.1，或兩者，則會發現，您的原始程式碼和技能將可順暢地移植到 windows 10。 在 windows 10 中，您可以建立通用 Windows 平台 (UWP) 應用程式，也就是可供客戶安裝至各種類型裝置的單一應用程式套件。 如詳細背景資訊 windows 10，UWP app，以及調適型程式碼與我們將在此移植指南中，提及之調適型 UI 概念的請參閱[UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
-在移植時，您會發現，windows 10 與先前的平台，以及 XAML 標記、 UI 架構和工具，共用大部分的 Api，而且您會發現它全都熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
+在移植時，您會發現，windows 10 與先前的平台，以及 XAML 標記、 UI 架構和工具，共用大部分的 Api，您會發現它全都熟悉。 就像以前一樣，您還是可以選擇 C++、C# 或 Visual Basic 做為與 XAML UI 架構搭配使用的程式設計語言。 當您計劃目前的應用程式將執行哪些工作時，第一個步驟將視您的應用程式類型與專案類型而定。 下列小節中會加以說明。
 
 ## <a name="if-you-have-a-universal-81-app"></a>如果您有通用 8.1 應用程式
 
 通用 8.1 app是從 8.1 通用 app 專案建置的。 假設專案的名稱是 AppName\_81。 它包含這些子專案。
 
--   AppName\_81.Windows。 這是針對 Windows8.1 建置應用程式套件的專案。
+-   AppName\_81.Windows。 這是建置適用於 windows 8.1 的應用程式套件的專案。
 -   AppName\_81.WindowsPhone。 這是建立適用於 Windows Phone 8.1 之應用程式套件的專案。
 -   AppName\_81.Shared。 這個專案當中包含其他兩個專案都會用到的原始程式碼、標記檔案及其他資產與資源。
 
-通常，8.1 通用 Windows app 中提供相同的功能 — — 使用相同的程式碼和標記 — 在其 Windows8.1 與 Windows Phone 8.1 的形式。 這類 app 是理想的候選項目移植到單一 windows 10 應用程式，以通用裝置系列為目標 （以及您可以將它安裝到種類的裝置）。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
+通常，8.1 通用 Windows app 中提供相同的功能 — — 使用相同的程式碼和標記 — 在其 windows 8.1 與 Windows Phone 8.1 的形式。 這類的移植到針對通用裝置系列 （和您可以將它安裝到種類的裝置） 的單一 windows 10 app 是理想的候選項目。 基本上，您將會移植共用專案的內容，還需要使用來自其他兩個專案的少數內容 (或完全不使用)，因為其他兩個專案中只有少數內容適用 (或完全不適用) 。
 
-其他時候、 Windows8.1 和/或 Windows Phone 8.1 形式的應用程式包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
+其他時候，windows 8.1 和/或 Windows Phone 8.1 形式的應用程式會包含獨特的功能。 或者它們包含相同的功能，但它們使用不同的技巧或不同的技術來實作它們。 使用這樣的應用程式時，您可以選擇將它移植到針對通用裝置系列設計的單一應用程式 (在這種情況下，您會希望應用程式能針對不同的裝置自我調整)，或者您可以選擇將它移植到多個應用程式 (例如一個應用程式針對傳統型裝置系列，另一個針對行動裝置系列)。 通用 8.1 應用程式的特性將決定哪一項選擇最適合您的案例。
 
 1.  將共用專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 和 WindowsPhone 專案的任何其他內容，以便在應用程式中無條件地使用那些內容，或在您的應用程式當時執行所在的裝置上有條件地使用那些內容 (後者的行為稱為「調適型」** 行為)。
 2.  將 WindowsPhone 專案的內容移植到針對通用裝置系列設計的應用程式。 如果可以的話，請回收 Windows 專案中的任何其他內容，以便無條件或以調適型方式使用那些內容。
@@ -55,9 +55,9 @@ ms.locfileid: "8938619"
 
 -   **檢視**。 檢視 (連同檢視模型) 會構成您的應用程式 UI。 在理想的情況下，檢視是由繫結至檢視模型之可觀察屬性的標記所組成。 另一種模式 (常見且方便，但僅限短期) 是針對程式碼後置檔案中要直接操作 UI 元素的命令式程式碼。 不論是哪一種情況，您的 UI 標記和設計—甚至是操作 UI 元素的命令式程式碼—都會直接移植。
 -   **檢視模型和資料模型**。 即使您沒有正式遵守關注點分離模式 (例如 MVVM)，您的應用程式中也無法避免會有執行檢視模型和資料模型的函式。 檢視模型程式碼會利用 UI 架構命名空間中的類型。 檢視模型和資料模型程式碼也都使用非視覺作業系統和 .NET Framework API (包括用於資料存取的 API)。 而且那些 API 也都[適用於 UWP 應用程式](https://msdn.microsoft.com/library/windows/apps/br211369)，所以此程式碼大部分 (如果不是全部的話) 都將在沒有任何改變的情況下移植。
--   **雲端服務**。 您的應用程式某些部分 (也許佔相當大的部分) 可能是在雲端以服務的形式執行。 在用戶端裝置上執行的應用程式部分則會連線到那些服務。 這是分散式 app 中最有可能在移植用戶端部分時保持不變的部分。 如果您還沒有雲端服務，[Microsoft Azure 行動服務](http://azure.microsoft.com/services/mobile-services/)會是您 UWP 應用程式的一個絕佳雲端服務選項，它提供強大的後端元件，可供您的應用程式呼叫以取得服務，服務涵蓋範圍可從簡單的動態磚更新，一直到伺服器陣列可提供的那種高難度延展性。
+-   **雲端服務**。 您的應用程式某些部分 (也許佔相當大的部分) 可能是在雲端以服務的形式執行。 在用戶端裝置上執行的應用程式部分則會連線到那些服務。 這是分散式 app 中最有可能在移植用戶端部分時保持不變的部分。 如果您還沒有雲端服務，[Microsoft Azure 行動服務](https://azure.microsoft.com/services/mobile-services/)會是您 UWP 應用程式的一個絕佳雲端服務選項，它提供強大的後端元件，可供您的應用程式呼叫以取得服務，服務涵蓋範圍可從簡單的動態磚更新，一直到伺服器陣列可提供的那種高難度延展性。
 
-在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
+在移植之前或在移植期間，請考量是否可藉由重構來改善您的 app，以便將目的類似的程式碼一起收集在一些分層中，而不是任意散佈。 將應用程式分解為如上所述的分層，可讓您更容易更正應用程式、加以測試，並進行後續的讀取和維護。 您可以遵循 Model-View-ViewModel ([MVVM](https://msdn.microsoft.com/magazine/dd419663.aspx)) 模式，讓功能具備更高的可重複使用性。 這種模式會將您 app 的資料、商務及 UI 部分彼此分開。 即便是在 UI 中，它也能將狀態和行為分開，以及個別地將可測試項目從視覺效果分離。 使用 MVVM 時，您可以只撰寫一次您的資料與商務邏輯，然後在所有裝置上使用，而不需要擔心 UI 的問題。 您可能也可以在不同的裝置上重複使用大部分的檢視模型與檢視組件。
 
 | 主題 | 說明 |
 |-------|-------------|
@@ -73,5 +73,5 @@ ms.locfileid: "8938619"
 
 **文件**
 * [Windows 執行階段參考](https://msdn.microsoft.com/library/windows/apps/br211377)
-* [建置適用於所有 Windows 裝置的通用 Windows 應用程式](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [建置適用於所有 Windows 裝置的通用 Windows 應用程式](https://go.microsoft.com/fwlink/p/?LinkID=397871)
 * [設計 app 的 UX](https://msdn.microsoft.com/library/windows/apps/hh767284)

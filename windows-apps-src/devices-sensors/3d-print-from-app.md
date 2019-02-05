@@ -1,17 +1,17 @@
 ---
 title: 從 app 進行 3D 列印
-description: 了解如何將 3D 列印功能加入通用 Windows 應用程式。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。
+description: 了解如何將 3D 列印功能加入通用 Windows app。 本主題涵蓋如何在確保 3D 模型為可列印且為正確的格式之後，啟動 3D 列印對話方塊。
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，3dprinting，3d 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: a51312cc9be466c6847ec7f2d98b29da1c8e5c9f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4013341a3e4e44d6ac2df66d58d4114313573d2a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918777"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048265"
 ---
 # <a name="3d-printing-from-your-app"></a>從應用程式進行 3D 列印
 
@@ -65,7 +65,7 @@ ms.locfileid: "8918777"
 這時，您就可以將 3D 資料檔案載入 app 的記憶體。 不過，3D 幾何資料有許多不同格式，且對 3D 列印並非都有效率。 Windows 10 對於所有的 3D 列印工作皆使用 3D 製造格式 (.3mf) 檔案類型。
 
 > [!NOTE]  
-> .3mf 檔案類型提供多於本教學課程可涵蓋的功能。 若要深入了解 3MF 及它提供給 3D 產品生產者與消費者的功能，請參閱 [3MF 規格](http://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何以 Windows 10 API 運用這些功能，請參閱[產生 3MF 套件](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教學課程。
+> .3mf 檔案類型提供多於本教學課程可涵蓋的功能。 若要深入了解 3MF 及它提供給 3D 產品生產者與消費者的功能，請參閱 [3MF 規格](https://3mf.io/what-is-3mf/3mf-specification/)。 若要了解如何以 Windows 10 API 運用這些功能，請參閱[產生 3MF 套件](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)教學課程。
 
 [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) App 可以開啟大部分熱門的 3D 格式，並另存為 .3mf 檔案。 在這個範例中，當檔案類型有所不同時，一種非常簡單的解決方案是開啟 3D Builder App 並提示使用者將匯入的資料另存為 .3mf 檔案，然後重新載入。
 

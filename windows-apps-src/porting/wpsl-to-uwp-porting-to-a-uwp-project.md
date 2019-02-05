@@ -1,30 +1,30 @@
 ---
-description: 您在 Visual Studio 中建立新的 windows 10 專案，然後將您的檔案複製到它開始移植程序。
+description: 您在 Visual Studio 中建立新的 windows 10 專案，並將您的檔案複製到此開始移植程序。
 title: WindowsPhone Silverlight 將專案移植到 UWP 專案
 ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c4347b85d94d183d44599f7d34bc750d34d181
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fe07e19a66bb7fc85a69a3bd542894e0b22aba9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927898"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045384"
 ---
 # <a name="porting-windowsphone-silverlight-projects-to-uwp-projects"></a>WindowsPhone Silverlight 將專案移植到 UWP 專案
 
 
 前一個主題是[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)。
 
-您在 Visual Studio 中建立新的 windows 10 專案，然後將您的檔案複製到它開始移植程序。
+您在 Visual Studio 中建立新的 windows 10 專案，並將您的檔案複製到此開始移植程序。
 
 ## <a name="create-the-project-and-copy-files-to-it"></a>建立專案並將檔案複製到其中
 
-1.  啟動 Microsoft Visual Studio2015 並建立新的空白應用程式 （Windows 通用） 專案。 如需詳細資訊，請參閱[快速建立您的 Windows 執行階段 8.x 應用程式使用範本 （C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
+1.  啟動 Microsoft Visual Studio2015 並建立新的空白應用程式 （Windows 通用） 專案。 如需詳細資訊，請參閱[快速建立您的 Windows 執行階段 8.x 應用程式使用的範本 （C#、 c + +、 Visual Basic）](https://msdn.microsoft.com/library/windows/apps/hh768232)。 新專案建置的應用程式套件 (appx 檔案) 將在所有裝置系列執行。
 2.  在 WindowsPhone Silverlight 應用程式專案中，找出所有原始程式碼檔案及視覺資產檔案，您想要重複使用。 使用 [檔案總管]，將資料模型、檢視模型、視覺資產、資源字典、資料夾結構，以及任何您想要重複使用的其他項目複製到新專案。 視需要在磁碟上複製或建立子資料夾。
-3.  將檢視 (例如 MainPage.xaml 與 MainPage.xaml.cs) 一併複製到新專案節點。 同樣地，請視需要建立新的子資料夾，然後從專案移除現有的檢視。 但是在您覆寫或移除 Visual Studio 產生的檢視之前，請保留一份複本，因為可能稍後可用來供參考。 移植 WindowsPhone Silverlight 應用程式的第一個階段著重在美化外觀以及能運作良好一部裝置系列上。 稍後，您會將重點放在確認檢視能隨所有尺寸規格適當調整，也可以新增任何調適型程式碼，以充分利用特定的裝置系列。
+3.  將檢視 (例如 MainPage.xaml 與 MainPage.xaml.cs) 一併複製到新專案節點。 同樣地，請視需要建立新的子資料夾，然後從專案移除現有的檢視。 但是在您覆寫或移除 Visual Studio 產生的檢視之前，請保留一份複本，因為可能稍後可用來供參考。 移植 WindowsPhone Silverlight 應用程式的第一個階段著重在美化外觀以及能運作良好在一部裝置系列上。 稍後，您會將重點放在確認檢視能隨所有尺寸規格適當調整，也可以新增任何調適型程式碼，以充分利用特定的裝置系列。
 4.  在 **\[方案總管\]** 中，確定 **\[顯示所有檔案\]** 已切換成開啟。 選取您複製的檔案，在這些檔案上按一下滑鼠右鍵，然後按一下 **\[加入至專案\]**。 這將會自動包含它們的容器資料夾。 然後您可以視需要將 [**顯示所有檔案**] 切換成關閉。 如果您想要的話，也可以選擇替代的工作流程，就是先在 Visual Studio [**方案總管**] 中建立任何必要的子資料夾，然後使用 [**加入現有項目**]命令。 仔細檢查您視覺資產的 **\[建置動作\]** 是否已設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是否已設定為 **\[不要複製\]**。
 5.  在這個階段，命名空間和類別名稱的差異將會產生大量的建置錯誤。 例如，如果您開啟 Visual Studio 產生的檢視，您會看到它們的類型為 [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503)，而非 **PhoneApplicationPage**。 有許多 XAML 標記和命令式程式碼差異，在本移植指南接下來的主題中將會有詳細說明。 但是只要依照下列一般步驟，您也可以進展快速：在 XAML 標記中，將您命名空間前置詞宣告中的 "clr-namespace" 變更為 "using"；使用[命名空間與類別對應](wpsl-to-uwp-namespace-and-class-mappings.md)主題和 Visual Studio 的 **\[尋找和取代\]** 命令來對您的原始程式碼進行大量變更 (例如以 "Windows.UI.Xaml" 取代 "System.Windows")；然後在 Visual Studio 的命令式程式碼編輯器中，使用內容功能表上的 **\[解析\]** 和 **\[組合管理 Using\]** 命令，進行更多目標性變更。
 
@@ -62,12 +62,12 @@ ms.locfileid: "8927898"
 -   您的應用程式能夠偵測到執行的裝置系列，並瀏覽到專為該裝置系列設計的檢視。 如需詳細資訊，請參閱[偵測執行您 app 的平台](wpsl-to-uwp-input-and-sensors.md)。
 -   有項可能很有用的類似技術，就是在別無他法時，為標記檔案或 **ResourceDictionary** 檔案 (或包含該檔案的資料夾) 指定特殊名稱，如此一來，只有在特定裝置系列執行您的 App 時，才會於執行階段自動載入。 此技術會在 [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md) 案例研究中說明。
 -   若要使用並非所有裝置系列都適用的功能 (例如，印表機、掃描器或相機按鈕)，您可以撰寫調適型程式碼。 請參閱本主題中[條件式編譯與調適型程式碼](#conditional-compilation-and-adaptive-code)的第三個範例。
--   如果您想要同時支援 WindowsPhone Silverlight 和 windows 10，則您可能會能夠共用專案間的原始程式碼檔案。 做法如下：在 Visual Studio 中，於 **\[方案總管\]** 中的專案上按一下滑鼠右鍵，選取 **\[加入現有項目\]**，選取要共用的檔案，然後按一下 **\[加入做為連結\]**。 將您的原始程式碼檔案儲存在檔案系統上的通用資料夾中，這是連結到那些檔案的專案可看見它們的資料夾，並記得將它們新增到原始檔控制。 如果您可以分解您的必要原始程式碼，讓大部分 (如果非全部) 檔案都能夠在這兩個平台上運作，您就不需要有兩份程式碼。 您可以儘可能將任何平台專屬邏輯，包裝在檔案中條件式編譯指示詞內，或包裝在執行階段條件內 (如有必要)。 請參閱下一節和 [C# 前置處理器指示詞](http://msdn.microsoft.com/library/ed8yd1ha.aspx)。
--   針對在二進位層級，而不是原始程式碼等級的重複使用，總共有 「 可攜式類別庫，支援 WindowsPhone Silverlight 中可用的.NET Api 子集和子集的 windows 10 應用程式 (.NET Core)。 「可攜式類別庫」組件與這些平台皆二進位相容。 請使用 Visual Studio 來建立針對「可攜式類別庫」設計的專案。 請參閱[使用可攜式類別庫進行跨平台開發](http://msdn.microsoft.com/library/gg597391.aspx)。
+-   如果您想要支援 WindowsPhone Silverlight 與 windows 10，則您可能會能夠共用專案間的原始程式碼檔案。 做法如下：在 Visual Studio 中，於 **\[方案總管\]** 中的專案上按一下滑鼠右鍵，選取 **\[加入現有項目\]**，選取要共用的檔案，然後按一下 **\[加入做為連結\]**。 將您的原始程式碼檔案儲存在檔案系統上的通用資料夾中，這是連結到那些檔案的專案可看見它們的資料夾，並記得將它們新增到原始檔控制。 如果您可以分解您的必要原始程式碼，讓大部分 (如果非全部) 檔案都能夠在這兩個平台上運作，您就不需要有兩份程式碼。 您可以儘可能將任何平台專屬邏輯，包裝在檔案中條件式編譯指示詞內，或包裝在執行階段條件內 (如有必要)。 請參閱下一節和 [C# 前置處理器指示詞](https://msdn.microsoft.com/library/ed8yd1ha.aspx)。
+-   對於在二進位層級，而不是原始程式碼等級的重複使用，有 「 可攜式類別庫，支援 WindowsPhone Silverlight 中可用的.NET Api 子集和子集的 windows 10 應用程式 (.NET Core)。 「可攜式類別庫」組件與這些平台皆二進位相容。 請使用 Visual Studio 來建立針對「可攜式類別庫」設計的專案。 請參閱[使用可攜式類別庫進行跨平台開發](https://msdn.microsoft.com/library/gg597391.aspx)。
 
 ## <a name="conditional-compilation-and-adaptive-code"></a>條件式編譯與調適型程式碼
 
-如果您想要同時 WindowsPhone Silverlight 和 windows 10 支援單一程式碼檔案中，則您可以這麼做。 如果您查看您的 windows 10 專案，在專案屬性頁面中，您會看到該專案 windows\_uap 定義為條件式編譯符號。 一般而言，您可以使用下列邏輯來執行條件式編譯。
+如果您想要同時 WindowsPhone Silverlight 和 windows 10 支援單一程式碼檔案中，您可以執行這個。 如果您查看您的 windows 10 專案，在專案屬性頁面中，您會看到該專案 windows\_uap 定義為條件式編譯符號。 一般而言，您可以使用下列邏輯來執行條件式編譯。
 
 ```csharp
 #if WINDOWS_UAP
@@ -87,7 +87,7 @@ ms.locfileid: "8927898"
 #endif // NETFX_CORE
 ```
 
-如果是這樣，而您現在想要另外支援 windows 10，則您可以這麼做，太。
+如果是這樣，而您現在想要支援 windows 10，此外，然後您可以這樣做，太。
 
 ```csharp
 #if WINDOWS_UAP
@@ -101,7 +101,7 @@ ms.locfileid: "8927898"
 #endif // WINDOWS_UAP
 ```
 
-您可能已經使用條件式編譯來限制對 Windows Phone 硬體返回按鈕的處理。 在 windows 10，返回按鈕事件是通用的概念。 實作於硬體或軟體的返回按鈕都會引發 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件，因此要處理的就是這個事件。
+您可能已經使用條件式編譯來限制對 Windows Phone 硬體返回按鈕的處理。 Windows 10 的返回按鈕事件是通用的概念。 實作於硬體或軟體的返回按鈕都會引發 [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) 事件，因此要處理的就是這個事件。
 
 ```csharp
        Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -116,7 +116,7 @@ ms.locfileid: "8927898"
 
 ```
 
-您可能已經使用條件式編譯來限制對 Windows Phone 硬體相機按鈕的處理。 在 windows 10，硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此，請小心並只將下列程式碼用於存在的功能，雖然它達到效果的方式與條件式編譯不同。
+您可能已經使用條件式編譯來限制對 Windows Phone 硬體相機按鈕的處理。 Windows 10 的硬體相機按鈕是行動裝置系列專屬的概念。 因為應用程式套件將在所有裝置上執行，所以我們將編譯階段條件變更為使用調適型程式碼的執行階段條件。 為此，我們使用 [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) 類別查詢執行階段是否有 [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) 類別存在。 **HardwareButtons** 定義在行動裝置的擴充功能 SDK，因此我們必須將該 SDK 的參照新增到專案，以供編譯這個程式碼。 不過請注意，處理常式只會在實作行動裝置擴充功能 SDK 中定義的裝置類型上執行，那就是行動裝置系列。 因此，請小心並只將下列程式碼用於存在的功能，雖然它達到效果的方式與條件式編譯不同。
 
 ```csharp
        // Note: Cache the value instead of querying it more than once.

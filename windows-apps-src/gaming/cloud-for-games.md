@@ -6,12 +6,12 @@ ms.date: 03/27/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 雲端服務
 ms.localizationpriority: medium
-ms.openlocfilehash: 12f9125b4a128b754fc90c48e6a289cec40a7f54
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5781d8f8606f68360018cfa17d5cfe5719ed31a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925312"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045587"
 ---
 #  <a name="using-cloud-services-for-uwp-games"></a>針對 UWP 遊戲使用雲端服務
 
@@ -81,7 +81,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
         </td>
     </tr>
     <tr>
-        <td><a href="http://web.ageofascent.com/">Illyriad Games</a></td>
+        <td><a href="https://web.ageofascent.com/">Illyriad Games</a></td>
         <td>Illyriad Games 建立了 <b>Age of Ascent</b>，一款大型多人線上 (MMO) 史詩 3D 太空遊戲，可在具有現代化瀏覽器的裝置上進行。 因此這款遊戲可在電腦、膝上型電腦、手機和其他行動裝置上進行，而不需要外掛程式。遊戲使用 ASP.NET Core、HTML5、WebGL 及 Azure。</td>
         <td>
             <ul>
@@ -96,7 +96,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.nextgames.com/">Next Games</a></td>
+        <td><a href="https://www.nextgames.com/">Next Games</a></td>
         <td>Next Games 是 <b>The Walking Dead: No Man's Land</b> 電玩遊戲的製作者，此遊戲是根據 AMC 的原創影集改編。 The Walking Dead 遊戲使用 Azure 做為後端。 它在首個週末便達到 1,000,000 次的下載次數，並在首週便拿下美國 App Store 中 iPhone 與 iPad 免費 App 的第 1 名、12 個國家中免費 App 的第 1 名，以及 13 個國家中免費遊戲的第 1 名。
         </td>
         <td>
@@ -111,7 +111,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
         </td>
     </tr>
     <tr>
-        <td><a href="http://www.crimecoast.com/">Pixel Squad</a></td>
+        <td><a href="https://www.crimecoast.com/">Pixel Squad</a></td>
         <td>Pixel Squad 使用 Unity 遊戲引擎與 Azure 開發 <b>Crime Coast</b>。 <b>Crime Coast</b> 是一款社交策略遊戲，可在 Android、iOS 和 Windows 平台上取得。 他們在遊戲中使用 Azure Blob 儲存體、受管理的 Azure Redis Cache、負載平衡的 IIS VM 陣列，以及 Microsoft 通知中樞。 了解他們如何管理調整，並處理同時湧入的 5000 名玩家。
         </td>
         <td>
@@ -130,7 +130,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 ### <a name="other-links"></a>其他連結
 
 * [Hitman 和 Azure：建立像 Elusive Target 一樣的遊戲功能，只有使用雲端才可能實現這些功能](https://channel9.msdn.com/Series/Hitman)
-* [Azure 是 Hitcents、Game Troopers 及 InnoSpark 的幕後秘訣](http://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
+* [Azure 是 Hitcents、Game Troopers 及 InnoSpark 的幕後秘訣](https://news.microsoft.com/features/game-developers-use-microsoft-azure-as-secret-sauce-for-scale-and-growth-2/)
 * [使用 Azure 的 Bizspark 計畫遊戲新創公司](https://blogs.technet.microsoft.com/bizspark_featured_startups/2015/09/25/azure-open-for-gaming-startups/)
 
 
@@ -194,7 +194,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
     
 * [開發人員計畫](e2e.md#developer-programs)
 
-    Microsoft 提供數個可協助您開發及發行遊戲的開發人員計畫，例如 [ID@Xbox](http://www.xbox.com/Developers/id) 和 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator)。
+    Microsoft 提供數個可協助您開發及發行遊戲的開發人員計畫，例如 [ID@Xbox](https://www.xbox.com/Developers/id) 和 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator)。
 
 ## <a name="learning-resources"></a>學習資源
 
@@ -225,7 +225,7 @@ Windows10 中的通用 Windows 平台 (UWP) 提供一組 API，可用來在 Micr
 * [用於遊戲的 Azure](https://azure.microsoft.com/solutions/gaming/)
 * [Playfab](https://playfab.com/)
 * [Microsoft for Startups 新創火花計畫](https://startups.microsoft.com)
-* [ID@Xbox](http://www.xbox.com/Developers/id)
+* [ID@Xbox](https://www.xbox.com/Developers/id)
 
 
  

@@ -6,12 +6,12 @@ ms.date: 07/05/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: aaaf7e6b13a3ce05bd30dd0ebf3e1d7d98915d6e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3d8cbb3d7e245b747a7637726df9559f5fa87a6d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946060"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046411"
 ---
 # <a name="handle-uri-activation"></a>處理 URI 啟用
 
@@ -134,7 +134,7 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 ```
 
 > [!NOTE]
-> 當透過通訊協定協定 」 啟動，請確定返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是 app 先前內容。
+> 當透過通訊協定協定 」 啟動，請確定 [返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是應用程式先前的內容。
 
 下列程式碼透過其 URI 以程式設計方式啟動 App：
 
@@ -155,10 +155,10 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 任何 app 或網站都可以使用您的 URI 配置名稱，包含惡意 app 或網站。 因此您透過 URI 取得的任何資料都可能來自不受信任的來源。 建議您絕對不要採用透過 URI 接收的參數來執行永久動作。 例如，URI 參數可以用來啟動 app 進入使用者的帳戶頁面，但是建議您絕對不要使用它們直接修改使用者的帳戶。
 
 > [!NOTE]
-> 如果您要建立新的 URI 配置名稱的您的應用程式，請務必遵循[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550)中的指導方針。 這樣可確保您的名稱符合 URI 配置的標準。
+> 如果您正在建立新的 URI 配置名稱為您的應用程式，請務必遵循[RFC 4395](https://go.microsoft.com/fwlink/p/?LinkID=266550)中的指引。 這樣可確保您的名稱符合 URI 配置的標準。
 
 > [!NOTE]
-> 當透過通訊協定協定 」 啟動，請確定返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是 app 先前內容。
+> 當透過通訊協定協定 」 啟動，請確定 [返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是應用程式先前的內容。
 
 建議 app 針對每個開啟新 URI 目標的啟用事件建立新的 XAML [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682)。 透過這種方式，新 XAML **Frame** 的瀏覽上一頁堆疊將不會包含 app 在暫停時任何先前可能存在於目前視窗上的內容。
 

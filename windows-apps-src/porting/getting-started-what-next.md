@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ab12f79670428fa2b6affa91240787f75bc51bc2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e5b273df8120d982f263c4411012baa715b2820c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921260"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044239"
 ---
 # <a name="getting-started-what-next"></a>開始使用：後續動作？
 
@@ -24,12 +24,12 @@ ms.locfileid: "8921260"
 -   [使用磚、徽章以及快顯通知](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)：如何建立磚、更新磚及其徽章、傳送快顯通知，以及顯示和更新鎖定畫面上的磚與徽章更新。
 -   [啟動、繼續及多工處理](https://msdn.microsoft.com/library/windows/apps/hh770837)：如何自動啟動、啟用、暫停及繼續 app，以及如何處理背景工作。
 -   [應用程式資料漫遊的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465094)：如何為使用多個裝置 (例如工作時使用電腦，在家時使用 Tablet PC) 的使用者，提供出色的 app 使用者經驗。
--   [使用 C# 或 Visual Basic 建立您的第一個 Windows 執行階段 app](http://go.microsoft.com/fwlink/p/?LinkID=394138)：著重在 Windows Phone 開發的主題。
+-   [使用 C# 或 Visual Basic 建立您的第一個 Windows 執行階段 app](https://go.microsoft.com/fwlink/p/?LinkID=394138)：著重在 Windows Phone 開發的主題。
 -   [適用於 iOS 與 Android 開發人員的影片](https://msdn.microsoft.com/library/windows/apps/dn393982)：更多相關說明，而且採用視覺方式。
 
 此外，請務必造訪我們的[社群資源](https://developer.microsoft.com/en-us/windows/support)，了解如何取得協助，以及透過開發人員論壇、部落格、開發人員群體及工作室以及當地的 Microsoft 活動和連絡人保持聯繫。
 
-我們認為 windows 10 會開啟一個新為您的建置應用程式的機會。 我們對於所有您即將建置的絕佳 app 感到非常期待！
+我們認為 windows 10 會開啟一個新的建置應用程式的機會，為您。 我們對於所有您即將建置的絕佳 app 感到非常期待！
 
 ## <a name="related-topics"></a>相關主題
 

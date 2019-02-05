@@ -6,17 +6,17 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 控制項, 輸入
 ms.localizationpriority: medium
-ms.openlocfilehash: 09bda2bda5f6f8731b64321d3282f540e6c50db4
-ms.sourcegitcommit: 4e12e820141fa5c3e61052ec78452b4032a974da
+ms.openlocfilehash: 369aa076184f79aa1e43c3aac11706982a6be268
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "8999753"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045637"
 ---
 # <a name="add-controls"></a>新增控制項
 
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 一個好的通用 Windows 平台 (UWP) 遊戲可以支援多種介面。 潛在玩家可能會有 windows 10 上沒有實體按鈕連接，Xbox 控制器的電腦與平板電腦或最新傳統型遊戲也許有高效能滑鼠和遊戲鍵盤。 在我們的遊戲中，控制項是在 [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) 類別中實作。 這個類別彙總三種輸入 (滑鼠和鍵盤、觸控板及遊戲台) 到單一控制器。 最後的結果是第一人稱射擊遊戲使用可搭配多個裝置運作的一般標準移動視角控制項。
 

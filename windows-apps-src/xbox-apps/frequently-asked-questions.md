@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 265fe827-bd4a-48d4-b362-8793b9b25705
 ms.localizationpriority: medium
-ms.openlocfilehash: 036c3c1832bbb3e27a93671f399a9a97c7afaba3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 38b5144d9b70e6e2825ef11a64be8873ec5b7d63
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922263"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046947"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -67,11 +67,11 @@ Xbox 不再支援 x86 應用程式開發或 x86 應用程式提交至Microsoft S
 
 ### <a name="can-i-publish-my-app"></a>我是否可以發佈我的 App？
 
-您可以透過合作夥伴中心的 [[將應用程式發佈](../publish/index.md)如果您有[開發人員帳戶](https://developer.microsoft.com/store/register)。 在零售 Xbox One 主機上建立和測試的 UWP App，必須接受 Windows 目前所執行的擷取、檢閱和發佈程序，並需要接受額外的檢閱以符合目前的 Xbox One 標準。
+您可以透過合作夥伴中心中[發佈應用程式](../publish/index.md)如果您有[開發人員帳戶](https://developer.microsoft.com/store/register)。 在零售 Xbox One 主機上建立和測試的 UWP App，必須接受 Windows 目前所執行的擷取、檢閱和發佈程序，並需要接受額外的檢閱以符合目前的 Xbox One 標準。
 
 ### <a name="can-i-publish-my-game"></a>我是否可以發佈我的遊戲？
 
-您可以使用 UWP 和開發人員模式的 Xbox One，以在 Xbox One 上建置並測試您的遊戲。 若要發行 UWP 遊戲，您必須向 [ID@XBOX](http://www.xbox.com/Developers/id) 註冊，或是加入 [Xbox Live Creators 計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)。 如需詳細資訊，請參閱[開發人員計劃概觀](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
+您可以使用 UWP 和開發人員模式的 Xbox One，以在 Xbox One 上建置並測試您的遊戲。 若要發行 UWP 遊戲，您必須向 [ID@XBOX](https://www.xbox.com/Developers/id) 註冊，或是加入 [Xbox Live Creators 計劃](https://developer.microsoft.com/games/xbox/xboxlive/creator)。 如需詳細資訊，請參閱[開發人員計劃概觀](https://developer.microsoft.com/games/xbox/docs/xboxlive/get-started/developer-program-overview.html)。
 
 ### <a name="will-the-standard-game-engines-work"></a>標準遊戲引擎是否可以運作？
 

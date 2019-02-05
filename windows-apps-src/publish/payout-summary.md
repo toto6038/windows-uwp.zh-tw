@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 支付摘要, 聲明, 付款, 收入, 支付, 付帳, 收益
 ms.localizationpriority: medium
-ms.openlocfilehash: fa35ac4961b64379ee8a50ec192f5cebad5720d6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e9ab2d2d096c6c0a639a831bb7d09f6d1d044a0c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919878"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046238"
 ---
 # <a name="payout-summary"></a>支付摘要
 
@@ -20,14 +20,14 @@ ms.locfileid: "8919878"
 
 如果您使用廣告來獲利，您可以在 **\[支付摘要\]** 中看到廣告收益的付款資訊。 我們將顯示賺取這些收益的 App，若是在多個 App 中使用的廣告單位或是無法對應至特定 App 的收益則會顯示「未對應」。 
 
-如果您在 Azure Marketplace 銷售產品，您也會在 **\[支付摘要\]** 中看到成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](http://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](http://go.microsoft.com/fwlink/p/?LinkID=699560 )。 您可以在[這裡](http://go.microsoft.com/fwlink/p/?LinkID=722439)檢視 Azure Marketplace 支付報告的詳細資訊。
+如果您在 Azure Marketplace 銷售產品，您也會在 **\[支付摘要\]** 中看到成功支付的相關資訊。 如需 Azure Marketplace 付款的相關詳細資料，請參閱 [Microsoft Azure Marketplace 參與原則](https://go.microsoft.com/fwlink/p/?LinkId=722436)及 [Microsoft Azure Marketplace 發行者合約](https://go.microsoft.com/fwlink/p/?LinkID=699560 )。 您可以在[這裡](https://go.microsoft.com/fwlink/p/?LinkID=722439)檢視 Azure Marketplace 支付報告的詳細資訊。
 
 > [!NOTE]
 > 為符合支付資格，您的收益必須達到適用的[付款門檻](payment-thresholds-methods-and-timeframes.md)。 如果收益少於付款門檻，將會維持在 **\[保留\]** 類別中，直到達到門檻為止。 如需 App 收益付款門檻的相關詳細資料，請參閱 [App 開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 廣告收益的付款門檻是 50 美元 (或等值的當地貨幣)。 
 >
 > 付款是每月進行一次 (假設已符合任何適用的付款門檻)。 我們通常會在某個指定月份，於該月份的 15 日之前傳送任何應付款項。 請注意，付款通常需要 3 到 10 個額外工作天，才能送達您的支付帳戶。 如需詳細資訊，請參閱[付款門檻、方法和時間範圍](payment-thresholds-methods-and-timeframes.md)。
 
-若要檢視您的**支付摘要**，按一下 \ [合作夥伴中心右上角附近顯示**支付**圖示，然後選取 [**支付摘要**。
+若要檢視您的**支付摘要**，請按一下**支付**圖示出現在合作夥伴中心右上角附近，然後選取 [**支付摘要**。
 
 ## <a name="current-proceeds-and-payments"></a>目前的收益與付款
 

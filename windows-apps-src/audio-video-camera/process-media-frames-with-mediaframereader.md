@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9940367054ae8771355012492434e12aa97d43ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: a1d5a15bd88b7adc23ccc835001c384a91e65a31
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921784"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050701"
 ---
 # <a name="process-media-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理媒體畫面
 
@@ -23,7 +23,7 @@ ms.locfileid: "8921784"
 > 本文中所討論的功能只從 Windows 10 版本 1607 開始提供。
 
 > [!NOTE] 
-> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)。
+> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)。
 
 > [!NOTE] 
 > 使用 **MediaFrameReader** 搭配音訊資料的一組全新 API 在 Windows 10 版本 1803 中引進。 如需詳細資訊，請參閱[使用 MediaFrameReader 處理音訊框架](process-audio-frames-with-mediaframereader.md)。
@@ -48,7 +48,7 @@ ms.locfileid: "8921784"
 
 [!code-cs[FindAllAsync](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetFindAllAsync)]
 
-您也可以建立[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和[**Devicewatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)從傳回的值，在裝置上的可用畫面來源群組時收到通知變更，例如當插入外部相機時。 如需詳細資訊，請參閱[**列舉裝置**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
+您也可以建立[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceWatcher)使用[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427)和[**Devicewatcher**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup.GetDeviceSelector)從傳回的值，在裝置上的可用的畫面來源群組時收到通知變更，例如當插入外部相機時。 如需詳細資訊，請參閱[**列舉裝置**](https://msdn.microsoft.com/windows/uwp/devices-sensors/enumerate-devices)。
 
 [**MediaFrameSourceGroup**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceGroup) 有一個 [**MediaFrameSourceInfo**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameSourceInfo) 物件的集合，可描述群組中包含的畫面來源。 在擷取裝置上可用的畫面來源群組之後，您可以選取公開您感興趣的畫面來源群組。
 
@@ -151,7 +151,7 @@ ms.locfileid: "8921784"
 如需有關在您的應用程式暫停時清理媒體擷取物件的詳細資訊，請參閱[**顯示相機預覽**](simple-camera-preview-access.md)。
 
 ## <a name="the-framerenderer-helper-class"></a>FrameRenderer 協助程式類別
-通用 Windows [相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)提供了一個協助程式類別，可讓顯示來自您 App 中色彩、紅外線與深度來源的畫面變得更容易。 一般來說，您可能會想針對深度或紅外線資料多執行一些動作，而不僅是在螢幕上顯示，但是這個協助程式類別對於示範畫面讀取程式功能以及偵錯您自己的畫面讀取程式實作而言，是很有幫助的工具。
+通用 Windows [相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)提供了一個協助程式類別，可讓顯示來自您 App 中色彩、紅外線與深度來源的畫面變得更容易。 一般來說，您可能會想針對深度或紅外線資料多執行一些動作，而不僅是在螢幕上顯示，但是這個協助程式類別對於示範畫面讀取程式功能以及偵錯您自己的畫面讀取程式實作而言，是很有幫助的工具。
 
 **FrameRenderer** 協助程式類別會實作下列方法。
 
@@ -253,7 +253,7 @@ ms.locfileid: "8921784"
 
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)
  
 
  

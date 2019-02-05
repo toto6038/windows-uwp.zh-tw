@@ -6,18 +6,18 @@ ms.date: 08/11/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 圖釘
 ms.localizationpriority: medium
-ms.openlocfilehash: f67c93a6f56fd466d981bce10eb41c16ff8da1f3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bfb307093889c5a40a452d2d406f02224ab5eab1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930248"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050641"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地圖上顯示感興趣的地點
 
 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 POI 是地圖上代表感興趣項目的特定點。 例如，公司、城市或朋友的位置。
 
-若要深入了解如何在應用程式中顯示 POI，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979) 下載下列範例：[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
+若要深入了解如何在應用程式中顯示 POI，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979) 下載下列範例：[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 藉由將 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)、 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)、[**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 和 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 物件新增到 [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) 物件的 **MapElements** 集合，即可在地圖上顯示圖釘、影像及圖形。 然後，將該層物件新增到地圖控制項的 **層** 集錦中。
 
@@ -92,7 +92,7 @@ public void AddSpaceNeedleIcon()
 
 ## <a name="add-a-3d-pushpin"></a>新增 3D 圖釘
 
-您可以將三維物件新增到地圖。 使用 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 類別以從 [3D 製造格式 (3MF)](http://3mf.io/specification/) 檔案中匯入 3D 物件。
+您可以將三維物件新增到地圖。 使用 [MapModel3D](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapmodel3d) 類別以從 [3D 製造格式 (3MF)](https://3mf.io/specification/) 檔案中匯入 3D 物件。
 
 此影像使用 3D 咖啡杯標示附近咖啡店的位置。
 
@@ -186,7 +186,7 @@ public void AddLandmarkPhoto()
 
 ## <a name="add-a-shape"></a>加上圖形
 
-藉由使用 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 類別，即可在地圖上顯示多點圖形。 下列範例 (取自 [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)) 會在地圖上顯示帶有藍色邊框的紅色方塊。
+藉由使用 [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 類別，即可在地圖上顯示多點圖形。 下列範例 (取自 [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)) 會在地圖上顯示帶有藍色邊框的紅色方塊。
 
 ```csharp
 public void HighlightArea()
@@ -229,7 +229,7 @@ public void HighlightArea()
 ## <a name="add-a-line"></a>新增線條
 
 
-藉由使用 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 類別，即可在地圖上顯示線條。 下列範例 (取自 [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)) 會在地圖上顯示虛線。
+藉由使用 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 類別，即可在地圖上顯示線條。 下列範例 (取自 [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)) 會在地圖上顯示虛線。
 
 ```csharp
 public void DrawLineOnMap()
@@ -474,10 +474,10 @@ public myMapPage()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)

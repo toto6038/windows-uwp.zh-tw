@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d9b2a894746cc9f26a0ebb3df90c967a73914c3c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 80c834257e883d3aeb8594001344abd6ef14682c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947800"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051091"
 ---
 # <a name="interaction-primer"></a>互動基本資訊
 
@@ -64,7 +64,7 @@ Surface Dial 使用根據旋轉動作 (或手勢) 的形狀規格，做為次要
 
 ## <a name="cortana"></a>Cortana
 
-在 windows 10， **Cortana**擴充性可讓您處理使用者的語音命令，並啟動您的應用程式，實行單一動作。
+Windows 10 的**Cortana**擴充性可讓您處理使用者的語音命令，並啟動您的應用程式來執行單一動作。
 
 ### <a name="device-support"></a>裝置支援
 
@@ -234,7 +234,7 @@ Surface Hub 裝置可辨識 100 個獨特的並行處理觸控點。
 
 鍵盤是文字的主要輸入裝置，對於某些行動不便的使用者，或是認為鍵盤是與應用程式互動更快速且更有效率之方式的使用者來說，通常是不可或缺。
 
-[Continuum 手機版](http://go.microsoft.com/fwlink/p/?LinkID=699431)，適用於相容的 windows 10 行動裝置，新的體驗與使用者可以將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
+[Continuum 手機版](https://go.microsoft.com/fwlink/p/?LinkID=699431)，適用於相容的 windows 10 行動裝置，新的體驗與使用者可以將其手機連接到滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。
 
 ### <a name="device-support"></a>裝置支援
 

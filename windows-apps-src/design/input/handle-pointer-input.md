@@ -8,12 +8,12 @@ keywords: pen, mouse, touchpad, touch, pointer, input, user interaction, 畫筆,
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8c8f670a5139d4969489bede3b0b4bbf72de2d55
-ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
+ms.openlocfilehash: 596e9221fac686964b4faaa8a75f112dbb8ddf5a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "8981867"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048395"
 ---
 # <a name="handle-pointer-input"></a>處理指標輸入
 
@@ -572,7 +572,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### <a name="get-pointer-properties"></a>取得指標屬性
 
-如稍早所述，您必須從透過[**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)與 [**GetIntermediatePoints**] 取得[**pointerroutedeventargs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)物件取得最延伸的指標資訊https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)的方法。 下列程式碼片段顯示取得的方式。
+如稍早所述，您必須取得最延伸的指標資訊[**pointerroutedeventargs**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.PointerPoint)物件取得透過[**GetCurrentPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint)和 [**GetIntermediatePoints**]https://docs.microsoft.com/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) [**PointerRoutedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs)的方法。 下列程式碼片段顯示取得的方式。
 
 -   首先，為每個指標建立一個新的 [**TextBlock**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.TextBlock)。
 
@@ -954,15 +954,15 @@ namespace UWP_Pointers
 * [指標輸入範例 (附帶動畫的 UserControl)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip)
 
 **其他範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **封存範例**
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [輸入：觸控點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的筆跡範例](https://go.microsoft.com/fwlink/p/?linkid=246570)

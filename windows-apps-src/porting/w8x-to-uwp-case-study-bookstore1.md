@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 88a5492116eaf48f72d512a093001a5c3835f0d2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5e0b8ffbebdca920bc6cc584dd735062a364d1d9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920062"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048115"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-bookstore1"></a>Windows 執行階段 8.x 至 UWP 的案例研究：Bookstore1
 
 
-本主題提供的案例研究的移植一個非常簡單的通用 8.1 app 到 Windows10Universal Windows 平台 (UWP) 應用程式。 通用 8.1 應用程式會建置一個應用程式套件，供 Windows8.1，以及適用於 Windows Phone 8.1 的不同的應用程式套件。 透過 windows 10，您可以建立單一應用程式套件，可供客戶安裝至各種裝置，而這就是我們將在這個案例研究中執行。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+本主題提供的案例研究的移植一個非常簡單的通用 8.1 app Windows10Universal Windows 平台 (UWP) 應用程式。 通用 8.1 應用程式會建置一個應用程式套件適用於 windows 8.1，以及適用於 Windows Phone 8.1 的不同的應用程式套件。 在 windows 10，您可以建立單一應用程式套件，可供客戶安裝至各種裝置，而這就是我們將在這個案例研究中執行。 請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 我們將移植的 app 包含繫結到檢視模型的 **ListBox**。 此檢視模型有一個顯示書名、作者及封面的書籍清單。 書籍封面影像的 **\[建置動作\]** 是設定為 **\[內容\]**，而 **\[複製到輸出目錄\]** 是設定為 **\[不要複製\]**。
 
@@ -26,9 +26,9 @@ ms.locfileid: "8920062"
 
 ## <a name="downloads"></a>下載
 
-[下載 Bookstore1\_81 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532946)。
+[下載 Bookstore1\_81 通用 8.1 應用程式](https://go.microsoft.com/fwlink/?linkid=532946)。
 
-[下載 Bookstore1Universal\_10 windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532950)。
+[下載 Bookstore1Universal\_10 windows 10 應用程式](https://go.microsoft.com/fwlink/?linkid=532950)。
 
 ## <a name="the-universal-81-app"></a>通用 8.1 應用程式
 
@@ -46,11 +46,11 @@ Windows Phone 上的 Bookstore1\_81
 
 Bookstore1\_81 方案是 8.1 通用 App 專案，其中包含這些專案。
 
--   Bookstore1\_81.Windows。 這是針對 Windows8.1 建置應用程式套件的專案。
+-   Bookstore1\_81.Windows。 這是建置適用於 windows 8.1 的應用程式套件的專案。
 -   Bookstore1\_81.WindowsPhone。 這是建立適用於 Windows Phone 8.1 之應用程式套件的專案。
 -   Bookstore1\_81.Shared。 這是包含其他兩個專案也會用到之原始程式碼、標記檔案及其他資產與資源的專案。
 
-在這個案例研究中，我們擁有[如果您有通用 8.1 App](w8x-to-uwp-root.md)中所述之與支援哪些裝置有關的常見選項。 此處的決定很簡單： 這個應用程式具有相同的功能，並因此大部分會使用相同的程式碼，在其 Windows8.1 與 Windows Phone 8.1 的形式。 因此，我們會將共用專案 （及其他項目我們需要來自其他專案） 的內容移植到目標為通用裝置系列 （您可以安裝到種類的裝置） 的 windows 10。
+在這個案例研究中，我們擁有[如果您有通用 8.1 App](w8x-to-uwp-root.md)中所述之與支援哪些裝置有關的常見選項。 此處的決定很簡單： 這個應用程式具有相同的功能，並因此大部分會使用相同的程式碼，在其 windows 8.1 與 Windows Phone 8.1 的形式。 因此，將共用專案 （及其他項目我們需要來自其他專案） 的內容移植到針對通用裝置系列 （一個您可以將它安裝到種類的裝置） 的 windows 10。
 
 這是一項非常快速的工作，可在 Visual Studio 中建立新專案、從 Bookstore1\_81 將檔案複製到其中，以及在新專案中包含複製的檔案。 一開始先建立新的空白應用程式 (Windows 通用) 專案。 將它命名為 Bookstore1Universal\_10。 這些是從 Bookstore1\_81 複製到 Bookstore1Universal\_10 的檔案。
 
@@ -62,11 +62,11 @@ Bookstore1\_81 方案是 8.1 通用 App 專案，其中包含這些專案。
 
 **從 Windows 專案**
 
--   複製 BookstoreStyles.xaml。 因為這個檔案中的所有資源索引鍵將會都解決在 windows 10 應用程式; 我們會使用這其中一個很好的起點相等 WindowsPhone 檔案中的部分將不會。
+-   複製 BookstoreStyles.xaml。 因為這個檔案中的所有資源索引鍵將會都解決在 windows 10 應用程式; 我們會使用這一個良好的起點相等 WindowsPhone 檔案中的部分將不會。
 
 編輯您剛才複製的來源程式碼與標記檔案，並將對 Bookstore1\_81 命名空間的任何參考變更為參考 Bookstore1Universal\_10。 執行此作業的快速方法是使用 **\[檔案中取代\]** 功能。 在檢視模型中，或在任何其他非常重要的程式碼中，都不需要變更任何程式碼。 但是為了讓您更容易地查看正在執行哪一個版本的 app，請將 **Bookstore1Universal\_10.BookstoreViewModel.AppName** 屬性傳回的值從 "BOOKSTORE1\_81" 變更為 "BOOKSTORE1UNIVERSAL\_10"。
 
-您可以立即建置並執行。 以下是我們新的 UWP 應用程式之後沒有明確執行工作尚未將它移植到 windows 10 的外觀。
+您可以立即建置並執行。 以下是我們新的 UWP 應用程式之後有明確執行任何工作尚未將它移植到 windows 10 的外觀。
 
 ![已變更初始來源程式碼的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
@@ -74,13 +74,13 @@ Bookstore1\_81 方案是 8.1 通用 App 專案，其中包含這些專案。
 
 ![已變更初始來源程式碼的 Windows 10 應用程式](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
-行動裝置上執行已變更初始來源程式碼與 windows 10 應用程式
+在行動裝置上執行已變更初始來源程式碼與 windows 10 應用程式
 
 檢視與檢視模型一起正常運作，而 **ListBox** 也功能正常。 我們只需要修正樣式。 在淺色佈景主題中的行動裝置上，我們可以看到清單方塊的框線，但是很容易就能隱藏。 而且，印刷樣式太大，所以我們將改變正在使用的樣式。 此外，如果我們想要讓應用程式看起來像預設的應用程式，應用程式在桌上型裝置上執行時，其顏色應該是淺色的。 因此，我們將會變更顏色。
 
 ## <a name="universal-styling"></a>通用樣式
 
-Bookstore1\_81 app 使用兩個不同的資源字典 (BookstoreStyles.xaml) 若要量身打造其樣式 Windows8.1 和 Windows Phone 8.1 作業系統。 這些兩個 BookstoreStyles.xaml 檔案都不包含所有我們的 windows 10 應用程式所需的樣式。 但是，好消息是我們需要的實際上比它們任何一個都更簡單。 所以接下來的步驟大部分將會涉及移除及簡化我們的專案檔案和標記。 步驟如下。 而且您可以使用此主題頂端的連結來下載專案，並查看這裡和案例研究結束時所有變更的結果。
+Bookstore1\_81 app 使用兩個不同的資源字典 (BookstoreStyles.xaml)，若要量身打造其樣式在 windows 8.1 和 Windows Phone 8.1 作業系統。 這些兩個 BookstoreStyles.xaml 檔案都不包含所有我們的 windows 10 應用程式所需的樣式。 但是，好消息是我們需要的實際上比它們任何一個都更簡單。 所以接下來的步驟大部分將會涉及移除及簡化我們的專案檔案和標記。 步驟如下。 而且您可以使用此主題頂端的連結來下載專案，並查看這裡和案例研究結束時所有變更的結果。
 
 -   若要盡可能縮短項目之間的間距，請找出 MainPage.xaml 中的 `BookTemplate` 資料範本，並將 `Margin="0,0,0,8"` 從根目錄 **Grid** 中刪除。
 -   此外，在 `BookTemplate` 中，有 `BookTemplateTitleTextBlockStyle` 和 `BookTemplateAuthorTextBlockStyle` 的參考。 Bookstore1\_81 會使用那些索引鍵做為間接取值，這樣一來，單一索引鍵就會在兩個應用程式中具有不同的實作。 我們已經不再需要該間接取值，我們可以直接參照系統樣式。 因此請個別使用 `TitleTextBlockStyle` 和 `SubtitleTextBlockStyle` 取代那些參照。

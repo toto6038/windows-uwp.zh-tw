@@ -6,12 +6,12 @@ keywords: 筆跡, 教學
 ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8affb83195e1e9048e0a363a34893ae04561dd14
-ms.sourcegitcommit: 2ef3d22a30afe853de891280e11d96e5e1ab62d1
+ms.openlocfilehash: 3bc28a4b1cb8afd70ef68a2e297b51ad0a5a0fc5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "8981887"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046581"
 ---
 # <a name="tutorial-support-ink-in-your-uwp-app"></a>教學︰在 UWP app 中支援筆跡
 
@@ -38,7 +38,7 @@ ms.locfileid: "8981887"
 * 執行目前版本的 Windows 10 的電腦 (或虛擬機器)
 * [Visual Studio 2017 和 RS2 SDK](https://developer.microsoft.com/windows/downloads)
 * [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* 根據您的設定，您可能會有安裝[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並在您的系統設定中啟用**開發人員模式**（設定]-> [更新與安全性]-> [針對開發人員->使用開發人員功能）。
+* 根據您的設定，您可能會有安裝[Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet 套件，並在您的系統設定中啟用**開發人員模式**(設定-> 更新 & 安全性-適用於開發人員 >->使用開發人員功能）。
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
     * [建立 Hello, world 應用程式 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
@@ -68,8 +68,8 @@ ms.locfileid: "8981887"
 | --- | --- |
 | [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) | XAMLUI 平台控制項，根據預設，接收及顯示來自畫筆的所有輸入做為筆墨筆劃或擦去筆劃。 |
 | [**InkPresenter**](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Inking.InkPresenter) | 程式碼後置物件，連同 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項 (透過 [**InkCanvas.InkPresenter**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas.InkPresenter) 屬性所公開) 進行具現化。 這個物件提供 [**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas) 公開的所有預設筆跡功能，以及一組完整的 API 來進行其他自訂和個人化。 |
-| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | XAMLUI 平台控制項，包含可自訂與可擴充的按鈕集合中相關聯的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)啟用筆跡相關功能。 |
-| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱[複雜的筆跡範例](http://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項。 |
+| [**InkToolbar**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) | XAMLUI 平台控制項，包含可自訂和可擴充的按鈕集合相關聯的[**InkCanvas**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inkcanvas)中啟用筆跡-相關功能。 |
+| [**IInkD2DRenderer**](https://docs.microsoft.com/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱[複雜的筆跡範例](https://go.microsoft.com/fwlink/p/?LinkID=620314)。 | 可讓筆墨筆劃轉譯到通用 Windows app 的指定 Direct2D 裝置內容，而不是預設的 [**InkCanvas**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) 控制項。 |
 
 ## <a name="step-1-run-the-sample"></a>步驟 1：執行範例
 
@@ -474,9 +474,9 @@ Windows 筆跡也支援從剪貼簿複製並貼上筆墨筆劃或複製並貼到
 * [儲存和從剪貼簿載入筆墨筆劃](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)
 * [筆跡工具列位置和方向範例 (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)
 * [筆跡工具列位置和方向範例 (動態)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)
-* [簡單的筆跡範例 (C#/C++)](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [複雜的筆跡範例 (C++)](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [筆跡範例 (JavaScript)](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [簡單的筆跡範例 (C#/C++)](https://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雜的筆跡範例 (C++)](https://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [筆跡範例 (JavaScript)](https://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [入門教學課程：UWP 應用程式中的支援筆跡](https://aka.ms/appsample-ink)
 * [著色本範例](https://aka.ms/cpubsample-coloringbook)
 * [家庭記事本範例](https://aka.ms/cpubsample-familynotessample)

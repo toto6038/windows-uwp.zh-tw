@@ -6,18 +6,18 @@ ms.date: 08/03/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 程式碼範例, C#
 ms.localizationpriority: medium
-ms.openlocfilehash: 27325938ef159dfcb29de174064314ee21d3a3f5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 19cfec890d6a434a392ce08257cad6bbeee4cda1
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924234"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044981"
 ---
 # <a name="c-sample-submissions-for-apps-add-ons-and-flights"></a>C\# 範例：提交應用程式、附加元件與正式發行前小眾測試版
 
 本文提供 C# 程式碼範例，示範如何使用 [Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md)來執行這些任務：
 
-* [建立 App 提交](#create-app-submission)
+* [建立應用程式提交](#create-app-submission)
 * [建立附加元件提交](#create-add-on-submission)
 * [更新附加元件提交](#update-add-on-submission)
 * [建立套件正式發行前小眾測試版提交](#create-flight-submission)
@@ -29,7 +29,7 @@ ms.locfileid: "8924234"
 這些範例使用下列程式庫：
 
 * Microsoft.WindowsAzure.Storage.dll。 此程式庫位於[適用於 .NET 的 Azure SDK](https://azure.microsoft.com/downloads/) 中，或者您也可以安裝 [WindowsAzure.Storage NuGet 套件](https://www.nuget.org/packages/WindowsAzure.Storage)來取得。
-* 來自 Newtonsoft 的 [Newtonsoft.Json](http://www.newtonsoft.com/json) NuGet 套件。
+* 來自 Newtonsoft 的 [Newtonsoft.Json](https://www.newtonsoft.com/json) NuGet 套件。
 
 ## <a name="main-program"></a>主要程式
 

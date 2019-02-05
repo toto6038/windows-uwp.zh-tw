@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: c3773a486a1b7a29fc2a171c473edf38f6f3a7f1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: de8d585d7178a277d1df248858f69a5a5705fb1d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935782"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044532"
 ---
 # <a name="respond-to-system-events-with-background-tasks"></a>使用背景工作回應系統事件
 
@@ -88,7 +88,7 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
  
 ## <a name="remarks"></a>備註
 
-若要查看背景工作登錄的執行方式，請下載[背景工作範例](http://go.microsoft.com/fwlink/p/?LinkId=618666)。
+若要查看背景工作登錄的執行方式，請下載[背景工作範例](https://go.microsoft.com/fwlink/p/?LinkId=618666)。
 
 背景工作可以執行來回應 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 和 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 事件，但是您還是必須 [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)。 您也必須在登錄任何背景工作類型之前先呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。
 
@@ -108,4 +108,4 @@ App 可以登錄會回應 [**TimeTrigger**](https://msdn.microsoft.com/library/w
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10 , UWP, 遊戲, 輸入, 範例
 ms.localizationpriority: medium
-ms.openlocfilehash: aee239f76c3d4431426f0bc9fe519a59f8f48838
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d545f696a93bfa8416e1a772ecc015867a3615c2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923438"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045444"
 ---
 # <a name="adding-input-and-interactivity-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入輸入和互動
 
@@ -21,7 +21,7 @@ ms.locfileid: "8923438"
 通用 Windows 平台 (UWP) 遊戲可在各種裝置上執行，例如桌上型電腦、膝上型電腦和平板電腦。 裝置可以具備需多輸入和控制機制。 本文件說明使用輸入裝置時需要牢記的重要做法，並示範 Marble Maze 如何運用這些做法。
 
 > [!NOTE]
-> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 以下是本文件所討論在遊戲中使用輸入時的一些重點：

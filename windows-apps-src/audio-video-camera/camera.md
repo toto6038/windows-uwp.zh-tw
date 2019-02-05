@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e28a4a7abaacd8b2de60c6163055bd9d667ba412
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e190a6d5134cc1fba4ac8be970bb8d90847700e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946909"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044412"
 ---
 # <a name="camera"></a>相機
 
@@ -19,7 +19,7 @@ ms.locfileid: "8946909"
 
 ## <a name="use-the-windows-built-in-camera-ui"></a>使用 Windows 內建的相機 UI
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [使用 Windows 內建相機 UI 來擷取相片和視訊](capture-photos-and-video-with-cameracaptureui.md) | 示範如何使用 [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) 類別，透過 Windows 內建的相機 UI 來擷取相片或視訊。 如果您只想讓使用者能夠擷取相片或影片，並將結果傳回給您的 app，這會是最快速且最簡單的方法。  |
 
@@ -50,14 +50,14 @@ ms.locfileid: "8946909"
 
 ## <a name="uwp-app-samples-for-camera"></a>相機的 UWP app 範例
 
-* [相機臉部偵測範例](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
-* [相機預覽畫面範例](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
-* [相機 HDR 範例](http://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
-* [相機手動控制項範例](http://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
-* [相機設定檔範例](http://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
-* [相機解析度範例](http://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
-* [相機入門套件](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
-* [相機影像防震範例](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
+* [相機臉部偵測範例](https://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
+* [相機預覽畫面範例](https://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
+* [相機 HDR 範例](https://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
+* [相機手動控制項範例](https://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
+* [相機設定檔範例](https://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
+* [相機解析度範例](https://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
+* [相機入門套件](https://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
+* [相機影像防震範例](https://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
 ## <a name="related-topics"></a>相關主題
 

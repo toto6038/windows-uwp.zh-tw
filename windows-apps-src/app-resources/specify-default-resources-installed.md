@@ -6,12 +6,12 @@ ms.date: 11/14/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: f18a1db19c3a8c6632a8cbc3104dc1328f97fdb4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b11f6dfec2941ae4eaa277f37de66965bd1ea4aa
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919734"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048901"
 ---
 # <a name="specify-the-default-resources-that-your-app-uses"></a>指定您的應用程式使用的預設資源
 
@@ -44,7 +44,7 @@ ms.locfileid: "8919734"
    </default>
    ```
    
-   **注意**：`LANGUAGE-TAG(S)` 這個值必須與您的應用程式預設語言保持同步。 如果這是單一 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)，則應用程式的預設語言必須是相同的標記。 如果是以逗號分隔的語言標記清單，則應用程式的預設語言必須是清單中的第一個標記。 您可以在應用程式封裝資訊清單來源檔案 (`Package.appxmanifest`) 的 **\[應用程式\]** 索引標籤上的 **\[預設語言\]** 中的，設定應用程式的預設語言。
+   **注意**：`LANGUAGE-TAG(S)` 這個值必須與您的應用程式預設語言保持同步。 如果這是單一 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)，則應用程式的預設語言必須是相同的標記。 如果是以逗號分隔的語言標記清單，則應用程式的預設語言必須是清單中的第一個標記。 您可以在應用程式封裝資訊清單來源檔案 (`Package.appxmanifest`) 的 **\[應用程式\]** 索引標籤上的 **\[預設語言\]** 中的，設定應用程式的預設語言。
 
 4. 每個 `<qualifier>` 元素都會指定 Visual Studio 要使用什麼值做為每個限定詞名稱的預設值。 就您到目前為止所處理的檔案內容來看，您還沒有實際改變 Visual Studio 的行為表現。 換言之，Visual Studio *已經表現得好像*此檔案已經存在這些內容，因為這是預設值。 因此要將預設值覆寫成您自己的預設值，就必須變更檔案中的值。 以下是檔案在您編輯了前三個值的情況下可能呈現的外觀範例。
    ```xml
@@ -103,5 +103,5 @@ Visual Studio 在幕後啟動名為 `MakePri.exe` 的工具來產生所謂套件
 ## <a name="related-topics"></a>相關主題
 
 * [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
-* [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)

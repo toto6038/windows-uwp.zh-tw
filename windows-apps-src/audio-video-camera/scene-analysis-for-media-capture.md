@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9714488473bf4bdc118fd56129ea67e00019dcb1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3359c3e7d7841e68dd00dc318eb1de9f1418df06
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934763"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047340"
 ---
 # <a name="effects-for-analyzing-camera-frames"></a>分析相機畫面的效果
 
@@ -97,7 +97,7 @@ ms.locfileid: "8934763"
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-在事件處理常式中，您可以取得框架中偵測到的所有臉部的清單，方法是存取 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 屬性。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 屬性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 結構，以預覽串流維度相對的單位來描述包含所偵測臉部的矩形。 若要檢視會將預覽串流座標轉換成畫面座標的範例程式碼，請參閱[臉部偵測 UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619486)。
+在事件處理常式中，您可以取得框架中偵測到的所有臉部的清單，方法是存取 [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) 的 [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) 屬性。 [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) 屬性是 [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 結構，以預覽串流維度相對的單位來描述包含所偵測臉部的矩形。 若要檢視會將預覽串流座標轉換成畫面座標的範例程式碼，請參閱[臉部偵測 UWP 範例](https://go.microsoft.com/fwlink/?LinkId=619486)。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 

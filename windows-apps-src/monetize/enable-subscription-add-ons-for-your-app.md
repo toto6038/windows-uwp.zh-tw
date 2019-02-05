@@ -5,12 +5,12 @@ keywords: Windows 10, UWP, 訂閱, 附加元件, 在應用程式內購買, IAP, 
 ms.date: 12/06/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f46c566712f7f0c2bca45db5a107738c4104e037
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 44553d2a772dcfe3b46ea196d6f6bb7c20fdfec0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930334"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046684"
 ---
 # <a name="enable-subscription-add-ons-for-your-app"></a>啟用應用程式的訂閱附加元件
 
@@ -27,7 +27,7 @@ UWP app 的訂閱附加元件支援下列功能：
 * 您可以將 1 週或 1 個月的免費試用期新增到您訂用帳戶。
 * Windows SDK [提供 API](#code-examples) 供您用於應用程式中，以取得應用程式的可用訂閱附加元件相關資訊並可啟用購買訂閱附加元件。 我們也提供 REST API，您可以從您的服務呼叫以[管理使用者的訂閱](#manage-subscriptions)。
 * 您可以檢視分析報告，這些報告提供特定時間內的訂閱數、使用中訂閱者數以及取消訂閱數。
-* 客戶可以在其 Microsoft 帳戶的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 頁面上管理其訂閱。 客戶可以使用此頁面來檢視他們已取得的所有訂閱、取消訂閱，以及變更與其訂閱相關聯的付款形式。
+* 客戶可以在其 Microsoft 帳戶的 [http://account.microsoft.com/services](https://account.microsoft.com/services) 頁面上管理其訂閱。 客戶可以使用此頁面來檢視他們已取得的所有訂閱、取消訂閱，以及變更與其訂閱相關聯的付款形式。
 
 ## <a name="steps-to-enable-a-subscription-add-on-for-your-app"></a>在應用程式中啟用訂閱附加元件的步驟
 
@@ -69,7 +69,7 @@ UWP app 的訂閱附加元件支援下列功能：
 這些範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
 * 您必須在合作夥伴中心的 [[建立應用程式提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱[測試指導方針](in-app-purchases-and-trials.md#testing)。
-* 在合作夥伴中心已[建立應用程式的訂閱附加元件](../publish/add-on-submissions.md)。
+* 在合作夥伴中心已[建立訂閱附加元件，應用程式](../publish/add-on-submissions.md)。
 
 這些範例中的程式碼假設：
 * 程式碼檔案含有適用於 **Windows.Services.Store** 和 **System.Threading.Tasks** 命名空間的 **using** 陳述式。
@@ -109,7 +109,7 @@ UWP app 的訂閱附加元件支援下列功能：
 
 ## <a name="cancellations"></a>取消
 
-客戶可以使用他們的 Microsoft 帳戶的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 頁面檢視他們已取得的所有訂閱，取消訂閱並更改與訂閱關聯的付款方式。 當客戶使用此頁面取消訂閱時，他們在目前計費期間繼續存取訂閱。 他們無法取得目前計費期間的任何部分的退款。 在目前計費期間結束後，其訂閱被停用。
+客戶可以使用他們的 Microsoft 帳戶的 [http://account.microsoft.com/services](https://account.microsoft.com/services) 頁面檢視他們已取得的所有訂閱，取消訂閱並更改與訂閱關聯的付款方式。 當客戶使用此頁面取消訂閱時，他們在目前計費期間繼續存取訂閱。 他們無法取得目前計費期間的任何部分的退款。 在目前計費期間結束後，其訂閱被停用。
 
 您也可以使用 REST API 來代表使用者取消訂閱，[變變更特定使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)。
 
@@ -124,7 +124,7 @@ UWP app 的訂閱附加元件支援下列功能：
 訂閱附加元件目前不支援下列案例。
 
 * 目前不支援透過市集直接銷售訂閱給客戶。 訂閱僅適用於數位產品的 App 內購買。
-* 客戶無法使用其 Microsoft 帳戶的 [http://account.microsoft.com/services](http://account.microsoft.com/services) 頁面切換訂閱期限。 若要切換至不同的訂閱週期，客戶必須先取消目前訂閱，並再購買訂閱，包含不同訂閱週期從您的應用程式。
+* 客戶無法使用其 Microsoft 帳戶的 [http://account.microsoft.com/services](https://account.microsoft.com/services) 頁面切換訂閱期限。 若要切換至不同的訂閱週期，客戶必須先取消目前訂閱，並再購買訂閱，包含不同訂閱週期從您的應用程式。
 * 訂閱附加元件目前不支援切換層級 (例如從基本訂閱切換至功能更多的優質訂閱)。
 * 訂閱附加元件目前不支援[銷售](../publish/put-apps-and-add-ons-on-sale.md)與[促銷代碼](../publish/generate-promotional-codes.md)。
 

@@ -6,20 +6,20 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: b317ba9280baef885bf6487d4bc0745112575dce
-ms.sourcegitcommit: 061de8e92935b5e438aa26ef63a6fac4acc4109d
+ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "9009905"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049445"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-本文章說明新 Windows Hello 技術，隨附於 Windows 10 作業系統，然後討論開發人員可以如何實作這項技術來保護自己的通用 Windows 平台 (UWP) 應用程式和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
+本文章說明新 Windows Hello 技術，隨附於 Windows 10 作業系統，然後討論開發人員可以如何實作這項技術來保護自己的通用 Windows 平台 (UWP) app 和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
 
 請注意，本文著重在應用程式開發上。 如需 Windows Hello 的結構與實作的詳細資訊，請參閱 [TechNet 上的 Windows Hello 指南](https://technet.microsoft.com/library/mt589441.aspx)。
 
-如需完整的程式碼範例，請參閱 [GitHub 上的 Windows Hello 程式碼範例](http://go.microsoft.com/fwlink/?LinkID=717812)。
+如需完整的程式碼範例，請參閱 [GitHub 上的 Windows Hello 程式碼範例](https://go.microsoft.com/fwlink/?LinkID=717812)。
 
 如需如何使用 Windows Hello 及支援驗證服務來建立 UWP app 的逐步解說，請參閱 [Windows Hello 登入應用程式](microsoft-passport-login.md)及 [Windows Hello 登入服務](microsoft-passport-login-auth-service.md)這兩篇文章。
 
@@ -275,9 +275,9 @@ API 會要求作業系統利用私密金鑰來簽署查問。 然後系統會要
 
 ![Windows Hello 挑戰回應](images/passport-challenge-response.png)
 
-接下來，伺服器必須驗證簽章。 當您要求公開金鑰並傳送至伺服器以供未來驗證時，則會處於 ASN.1 編碼的 publicKeyInfo blob。 如果您查看[Windows Hello 程式碼範例 GitHub 上的](http://go.microsoft.com/fwlink/?LinkID=717812)時，您會看到有來包裝 Crypt32 函式將 ASN.1 編碼的 blob 較常使用的 CNG blob 來協助程式類別。 該 Blob 包含公開金鑰演算法，也就是 RSA 和 RSA 公開金鑰。
+接下來，伺服器必須驗證簽章。 當您要求公開金鑰並將它傳送至伺服器以供未來驗證時，它是 ASN.1 編碼的 publicKeyInfo blob 中。 如果您查看[Windows Hello 程式碼範例 GitHub 上的](https://go.microsoft.com/fwlink/?LinkID=717812)時，您會看到有來包裝 Crypt32 函式將 ASN.1 編碼的 blob 較常使用的 CNG blob 來協助程式類別。 該 Blob 包含公開金鑰演算法，也就是 RSA 和 RSA 公開金鑰。
 
-在範例中，我們將 ASN.1 編碼的 blob 轉換成的 CNG blob 的原因是，這樣它可以使用與 CNG （/windows/桌面/SecCNG/cng-入口網站） 與 BCrypt API。 如果您查詢 CNG blob 時，它會將您指向相關[BCRYPT_KEY_BLOB 結構](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 這個 API 表面可以用於驗證及 Windows 應用程式中的加密。 ASN.1 是記載於文件的標準通訊可以序列化的資料結構，它通常用於公開金鑰密碼編譯和使用憑證。 這就是為什麼公開金鑰的資訊傳回以這種方式。 公開金鑰是 RSA 金鑰;而這就是 Windows Hello 會使用它登資料時的演算法。
+在範例中，我們將 ASN.1 編碼的 blob 轉換成的 CNG blob 的原因是，這樣可能會與 CNG 使用 （/windows/桌面/SecCNG/cng-入口網站） 與 BCrypt API。 如果您查詢 CNG blob 時，它會將您指向相關[BCRYPT_KEY_BLOB 結構](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 這個 API 表面可以用於驗證及 Windows 應用程式中的加密。 ASN.1 是記載於文件的標準進行通訊，可以序列化資料結構，它通常用於公開金鑰密碼編譯和使用憑證。 這就是為什麼公開金鑰的資訊傳回以這種方式。 公開金鑰是 RSA 金鑰;而這就是 Windows Hello 會使用它登資料時的演算法。
 
 當您擁有 CNG Blob 之後，就必須根據該使用者的公開金鑰，來驗證已簽署的查問。 由於每個人都使用自己的系統或後端技術，因此沒有任何常用來實作該邏輯的方法。 我們使用 SHA256 做為雜湊演算法，並針對 SignaturePadding 使用 Pkcs1，因此當您驗證來自用戶端的已簽署回應時，請確定那就是您所使用的項目。 同樣地，請參考範例以尋找在 .NET 4.6 中於您的伺服器上執行的方式，但通常來說會類似：
 
@@ -407,9 +407,9 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 
 ### <a name="61-articles-and-sample-code"></a>6.1 文章與範例程式碼
 
-- [Windows Hello 概觀](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+- [Windows Hello 概觀](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
 - [適用於 Windows Hello 的實作詳細資料](https://msdn.microsoft.com/library/mt589441)
-- [GitHub 上的 Windows Hello 程式碼樣本](http://go.microsoft.com/fwlink/?LinkID=717812)
+- [GitHub 上的 Windows Hello 程式碼樣本](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 詞彙
 

@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 012827165aaa4067c9844af0491afb77a53c5f50
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4f8c723dee8e943351d268ac678c8acc77efcbf4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936343"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051131"
 ---
 # <a name="staticresource-markup-extension"></a>{StaticResource} 標記延伸
 
@@ -38,7 +38,7 @@ ms.locfileid: "8936343"
 
 將 **StaticResource** 解析成資源字典中的項目時所依據的規則，並不屬於本主題說明的範圍。 那些規則取決於參考和資源是否同時存在於範本中，以及是否使用合併的資源字典等等。 如需有關如何定義資源及正確使用 [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) (包括範例程式碼) 的詳細資訊，請參閱 [ResourceDictionary 與 XAML 資源參考](https://msdn.microsoft.com/library/windows/apps/mt187273)。
 
-**重要** **StaticResource**不得嘗試對做向前參考資源定義詞彙的 XAML 檔案中進一步。 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
+**重要** **StaticResource**不得嘗試對做向前參考資源定義 XAML 檔案中進一步的詞彙。 不支援嘗試這樣的做法。 即使向前參考並未失敗，但是嘗試這樣做會導致效能降低。 為獲得最佳結果，請調整您資源字典的組合以避免向前參考。
 
 嘗試將 **StaticResource** 指定給無法解析的索引鍵，會導致在執行階段擲回 XAML 剖析例外狀況。 設計工具也可能發出警告或錯誤。
 
@@ -50,7 +50,7 @@ ms.locfileid: "8936343"
 
 ### <a name="an-example-staticresource-usage"></a>{StaticResource} 用法範例
 
-這個 XAML 範例來自 [XAML 資料繫結範例](http://go.microsoft.com/fwlink/p/?linkid=226854)。
+這個 XAML 範例來自 [XAML 資料繫結範例](https://go.microsoft.com/fwlink/p/?linkid=226854)。
 
 ```xml
 <StackPanel Margin="5">

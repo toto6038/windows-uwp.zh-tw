@@ -6,22 +6,22 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 78d825adf023b3c27ba6535f4cfdcc3a99be2d6c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cfdc4bd81a96d3bbdb2dd369cbdd0444ca22ea4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947790"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048475"
 ---
 # <a name="in-app-ads"></a>應用程式內廣告
 
-使用**創造營收** &gt; **應用程式內廣告**頁面，在[合作夥伴中心](https://partner.microsoft.com/dashboard)建立和管理廣告單元：
+使用 [**創造營收**] &gt; **應用程式內廣告**頁面，在[合作夥伴中心](https://partner.microsoft.com/dashboard)建立和管理廣告單元：
 
-* 使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 的通用 Windows 平台 (UWP) 應用程式。
-* 先前發佈之 Windows 8.x 和 Windows Phone 8.x 應用程式使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](http://aka.ms/store-8-sdk)。
+* 使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 的通用 Windows 平台 (UWP) 應用程式。
+* 先前發佈之 Windows 8.x 和 Windows Phone 8.x 應用程式使用[Microsoft Advertising SDK for Windows 和 Windows Phone 8.x](https://aka.ms/store-8-sdk)。
 
 > [!IMPORTANT]
-> 截至 2018 年 10 月 31 剛建立的產品不能包含目標為 Windows 8.x/Windows 套件 Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 截至 2018 年 10 月 31 剛建立的產品不能包含套件目標為 Windows 8.x/Windows Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 如需有關如何將這些 SDK 與應用程式整合來顯示廣告的詳細資訊，請參閱[使用 Microsoft Advertising SDK 在您的應用程式中顯示廣告](../monetize/display-ads-in-your-app.md)。
 
@@ -37,7 +37,7 @@ ms.locfileid: "8947790"
 4.  在 **\[廣告單元類型\]** 下拉式清單中選取廣告類型。
 
     * 如果您要在您的應用程式中顯示橫幅廣告，選取 [**橫幅**]。
-    * 如果您要在您的應用程式中顯示插播式影片廣告或插播式橫幅廣告，選取 [**插播式影片**或**插播式橫幅**（請務必選取適合您想要顯示的插播式廣告類型的選項）。
+    * 如果您要在您的應用程式中顯示插播式影片廣告或插播式橫幅廣告，請選取**插播式影片**或**插播式橫幅**（請務必選取適合您想要顯示的插播式廣告類型的選項）。
     * 如果您要在您的應用程式中顯示原生廣告，請選取 [**原生**。
 
 5. 在 **\[裝置系列\]** 下拉式清單中，選取使用廣告單元所在應用程式的目標裝置系列。 可用的選項包括：**\[UWP (Windows 10)\]**、**\[電腦/平板電腦 (Windows 8.1)\]** 或 **\[行動裝置 (Windows Phone 8.x)\]**。
@@ -70,7 +70,7 @@ ms.locfileid: "8947790"
 若要編輯 UWP 廣告單元的[流量分配設定](#mediation)或使用廣告單元所在應用程式的 [COPPA 合規性](#coppa)，請按一下廣告單元名稱。
 
 > [!NOTE]
-> 如果廣告單元過去 6 個月都沒有活動，我們將其標示為**非使用中**，並最後會將它移除從合作夥伴中心。 您可以使用篩選，只顯示**使用中**或**非使用中**廣告單元。 如果您看到任何您認為不正確標示為**非使用中**的廣告單元時，請[連絡客戶支援](http://aka.ms/storesupport)。
+> 如果廣告單元過去 6 個月都沒有活動，我們將其標示為**非使用中**，並最後會將它移除從合作夥伴中心。 您可以使用篩選，只顯示**使用中**或**非使用中**廣告單元。 如果您看到任何您認為不正確標示為**非使用中**的廣告單元時，請[連絡客戶支援](https://aka.ms/storesupport)。
 
 <span id="mediation" />
 
@@ -110,14 +110,14 @@ ms.locfileid: "8947790"
 
 |  廣告網路  |  描述  |  支援的廣告類型  |
 |--------------|---------------|---------------------|
-| \ [Oath 和 AppNexus |  這是透過我們的合作夥伴網路，\ [Oath 和 AppNexus 提供廣告的 Microsoft 管理廣告網路。<p/>**注意**: \ [Oath 和 AppNexus 始終排在第一次**付費廣告網路**清單中的橫幅廣告單元，且它無法變更至這類廣告的較低排名。 | 橫幅、插播式影片 |
+| \ [Oath 和 AppNexus |  這是透過我們的合作夥伴網路，\ [Oath 和 AppNexus 提供廣告的 Microsoft 管理廣告網路。<p/>**注意**: \ [Oath 和 AppNexus 始終排在第一次**付費廣告網路**清單中橫幅廣告單位，並將它無法變更至這類廣告的較低排名。 | 橫幅、插播式影片 |
 | AppNexus (直接) | 選取此選項可從[AppNexus](https://www.appnexus.com)提供廣告。 | 插播式影片、原生  |
 | Microsoft 應用程式安裝廣告 | 選取此選項可提供 Windows 生態系統中其他[為自己的 App 建立促銷廣告活動](create-an-ad-campaign-for-your-app.md)的開發人員建立的應用程式安裝廣告或應用程式重新佔用廣告。  |  橫幅、插播式橫幅、原生  |
-| 代表 MSN 內容建議 |  選取此選項可從 MSN 內容建議提供廣告。 |  橫幅、插播式橫幅  |
+| 代表 MSN 內容的建議 |  選取此選項可從 MSN 內容建議提供廣告。 |  橫幅、插播式橫幅  |
 | Outbrain |  選取此選項可從 [Outbrain](https://www.outbrain.com/) 提供廣告。 |  橫幅、插播式橫幅  |
-| Revcontent |  選取此選項可從 [Revcontent](http://www.revcontent.com/) 提供廣告。 |  橫幅、原生  |
+| Revcontent |  選取此選項可從 [Revcontent](https://www.revcontent.com/) 提供廣告。 |  橫幅、原生  |
 | Smaato |  選取此選項可從 [Smaato](https://www.smaato.com/) 提供廣告。 |  橫幅  |
-| smartclip |  選取此選項可從 [smartclip](http://www.smartclip.com/) 提供廣告。 |  插播式影片  |
+| smartclip |  選取此選項可從 [smartclip](https://www.smartclip.com/) 提供廣告。 |  插播式影片  |
 | SpotX |  選取此選項可從 [SpotX](https://www.spotx.tv/) 提供廣告。 |  插播式影片  |
 | Taboola |  選取此選項可從 [Taboola](https://www.taboola.com/) 提供廣告。 |  橫幅  |
 | Undertone | 選取此選項可從[Undertone](https://www.undertone.com/)提供廣告。 | 插播式橫幅 |
@@ -159,4 +159,4 @@ ms.locfileid: "8947790"
 您選擇的 **\[COPPA 合規性\]** 設定會自動套用到所選應用程式的所有廣告單元。
 
 > [!IMPORTANT]
-> 如果您的 app 是針對 13 歲以下的兒童，基於 COPPA 的規範，您必須承擔某些義務。 如需有關您的義務的詳細資訊，請參閱[此頁面](http://go.microsoft.com/fwlink/p/?linkid=536558)。
+> 如果您的 app 是針對 13 歲以下的兒童，基於 COPPA 的規範，您必須承擔某些義務。 如需有關您的義務的詳細資訊，請參閱[此頁面](https://go.microsoft.com/fwlink/p/?linkid=536558)。

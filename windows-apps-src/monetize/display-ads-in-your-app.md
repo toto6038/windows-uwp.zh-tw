@@ -6,12 +6,12 @@ ms.date: 06/20/2018
 ms.topic: article
 keywords: Windows 10, uwp, 廣告, 橫幅, 廣告控制項, 插播式
 ms.localizationpriority: medium
-ms.openlocfilehash: baf26335ccdf34c8403cc15ecc1e68527d92e90e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 84ed7f5f1eb65f06a47e92de962777ca9d3c50c7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941425"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044852"
 ---
 # <a name="display-ads-in-your-app-with-the-microsoft-advertising-sdk"></a>使用 Microsoft Advertising SDK 停用應用程式中的廣告
 
@@ -32,7 +32,7 @@ ms.locfileid: "8941425"
 <tr>
 <td align="left"><img src="images/install-sdk.png" alt="Install SDK icon" /></td>
 <td align="left"><b>開始使用</b><br/><br/>
-    <a href="http://aka.ms/ads-sdk-uwp">安裝 Microsoft Advertising SDK</a>
+    <a href="https://aka.ms/ads-sdk-uwp">安裝 Microsoft Advertising SDK</a>
 </td>
 <td align="left"><img src="images/write-code.png" alt="Develop icon" /></td>
 <td align="left"><b>開發人員指南</b><br/><br/>
@@ -56,7 +56,7 @@ ms.locfileid: "8941425"
 
 ## <a name="step-1-install-the-microsoft-advertising-sdk"></a>步驟 1：安裝 Microsoft Advertising SDK
 
-若要開始，請在您用來建立應用程式的開發電腦上安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
+若要開始，請在您用來建立應用程式的開發電腦上安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
 ## <a name="step-2-implement-ads-in-your-app"></a>步驟 2：在您的應用程式中實作廣告
 
@@ -90,7 +90,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 ## <a name="step-3-create-an-ad-unit-and-configure-mediation"></a>步驟 3：建立廣告單元和設定流量分配
 
-當您完成測試您的應用程式且準備好將 app 提交至市集之後，請在[應用程式內廣告](../publish/in-app-ads.md)頁面上，在合作夥伴中心建立廣告單元。 然後，更新您的應用程式程式碼為使用此廣告單元，讓您的應用程式可以收到即時廣告。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
+當您完成測試您的應用程式，而且您已準備好將 app 提交至市集之後，請在[應用程式內廣告](../publish/in-app-ads.md)頁面上，在合作夥伴中心建立廣告單元。 然後，更新您的應用程式程式碼為使用此廣告單元，讓您的應用程式可以收到即時廣告。 如需詳細資訊，請參閱[在您的應用程式中設定廣告單元](set-up-ad-units-in-your-app.md#live-ad-units)。
 
 根據預設，您的應用程式會顯示 Microsoft 付款廣告網路中的廣告。 若要讓您有最佳的廣告收入，您可以為您的廣告單元啟用[廣告流量分配](ad-mediation-service.md)，以顯示其他付費廣告網路如 Taboola 和 Smaato 的廣告。 您也可以提供來自 Microsoft 應用程式促銷活動的廣告，提高您應用程式的促銷功能。
 
@@ -98,7 +98,7 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 
 ## <a name="step-4-submit-your-app-and-review-performance"></a>步驟 4：提交您的應用程式，並檢閱績效
 
-當您完成開發包含廣告的應用程式之後，您可以在合作夥伴中心，以使其可在市集中 [[將已更新的 app 提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的額外要求。
+當您完成開發包含廣告的應用程式之後，您可以在合作夥伴中心，以使其可在市集中的[應用程式更新提交](https://docs.microsoft.com/windows/uwp/publish/app-submissions)。 顯示廣告的應用程式必須符合 [Microsoft Store 原則 10.10 節](https://docs.microsoft.com/legal/windows/agreements/store-policies#1010-advertising-conduct-and-content)和[＜應用程式開發人員合約＞中＜附件 E＞](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)的額外要求。
 
 您的應用程式已發行且可在市集中之後，您可以檢閱您在合作夥伴中心的[廣告績效報告](../publish/advertising-performance-report.md)，並繼續進行變更，您的流量分配設定，以最佳化您的廣告的績效。 您的廣告收益包含在[付款摘要](../publish/payout-summary.md)中。
 
@@ -111,16 +111,16 @@ Microsoft Advertising SDK 提供數種不同的廣告控制項類型，供您用
 |  工作    | 資源 |               
 |----------|-------|
 | 回報錯誤或取得針對廣告的支援。     | 請造訪[支援頁面](https://developer.microsoft.com/en-us/windows/support)，然後選擇 **\[用程式內廣告\]**。        |
-| 取得社群支援     | 造訪[論壇](http://go.microsoft.com/fwlink/p/?LinkId=401266)。       |
-| 下載示範如何將橫幅廣告和插入式廣告新增到應用程式的範例專案。     | 請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。       |
+| 取得社群支援     | 造訪[論壇](https://go.microsoft.com/fwlink/p/?LinkId=401266)。       |
+| 下載示範如何將橫幅廣告和插入式廣告新增到應用程式的範例專案。     | 請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。       |
 | 了解最新的 Windows App 獲利機會     | 瀏覽[從您的應用程式獲利](https://developer.microsoft.com/store/monetize)。        |
 
 ## <a name="windows-81-and-windows-phone-8x-apps"></a>Windows 8.1 和 Windows Phone 8.x 應用程式
 
-對於 Windows 8.1 和 Windows Phone 8.x 應用程式，我們提供 [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](http://aka.ms/store-8-sdk)。 如需有關如何在 Windows 8.1 和 Windows Phone 8.x 應用程式中使用此 SDK 顯示廣告的詳細資訊，請參閱[本文](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))。
+對於 Windows 8.1 和 Windows Phone 8.x 應用程式，我們提供 [適用於 Windows 和 Windows Phone 8.x 的 Microsoft Advertising SDK](https://aka.ms/store-8-sdk)。 如需有關如何在 Windows 8.1 和 Windows Phone 8.x 應用程式中使用此 SDK 顯示廣告的詳細資訊，請參閱[本文](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792120(v=win.10))。
 
 ## <a name="related-topics"></a>相關主題
 
-* [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)
+* [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)
 * [廣告績效報告](../publish/advertising-performance-report.md)
 * [Windows Premium 廣告發行者計畫](windows-premium-ads-publishers-program.md)

@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10、 uwp、 分析、 報告、 儀表板，應用程式、 資料、 計量
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a6d79745ec98af2c7f562297092eea3feda659
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f76b1f897c345fb71beec8e37e592165922b2ed
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945730"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047709"
 ---
 # <a name="analyze-app-performance"></a>分析應用程式效能
 
@@ -64,4 +64,4 @@ ms.locfileid: "8945730"
 * [了解如何使用適用於 Power BI 的 Windows 開發人員中心內容封裝，以連接到您的分析資料](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
 > [!NOTE]
-> 若要連線到適用於 Power BI 的 Windows 開發人員中心內容封裝，我們建議您指定的認證，從您的合作夥伴中心帳戶相關聯的 Azure AD 目錄。 如果您使用您的 Microsoft 帳戶認證，您在 Power BI 中的分析資料不會自動重新整理，且您將需要登入 Power BI，才能重新整理資料。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以[免費取得它](http://go.microsoft.com/fwlink/p/?LinkId=703757)。 如需有關設定關聯的詳細資訊，請參閱[建立關聯 Azure Active Directory 與您的合作夥伴中心帳戶](associate-azure-ad-with-dev-center.md)。
+> 若要連線到適用於 Power BI 的 Windows 開發人員中心內容封裝，我們建議您指定的認證，從您的合作夥伴中心帳戶相關聯的 Azure AD 目錄。 如果您使用您的 Microsoft 帳戶認證，您在 Power BI 中的分析資料不會自動重新整理，且您將需要登入 Power BI，才能重新整理資料。 如果您的組織已經使用 Office 365 或其他 Microsoft 所提供的商務服務，您就已經具備 Azure AD。 否則，您可以[免費取得它](https://go.microsoft.com/fwlink/p/?LinkId=703757)。 如需有關設定關聯的詳細資訊，請參閱[建立關聯 Azure Active Directory 與您的合作夥伴中心帳戶](associate-azure-ad-with-dev-center.md)。

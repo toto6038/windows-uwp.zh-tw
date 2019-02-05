@@ -6,12 +6,12 @@ ms.date: 12/18/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: df80fda8cf8b8c2f33a8ed0155363141fc299655
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42ec5c1e91fbeebcaad68f346f317893fdfb2e1c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932874"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046807"
 ---
 # <a name="windows-desktop-bridge-app-tests"></a>Windows 傳統型橋接器應用程式測試
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932874"
 ## <a name="current-optional-tests"></a>目前選擇性測試
 
 ### <a name="1-digitally-signed-file-test"></a>1.數位簽署的檔案測試 
-**背景 **  
+**背景**  
 這項測試會確認所有可攜式執行檔 (PE) 都包含有效的簽章。 如果有數位簽署的檔案，即可讓使用者知道軟體是正版。
 
 **測試詳細資料**  
@@ -33,7 +33,7 @@ ms.locfileid: "8932874"
 一律建議具有數位簽署的檔案。 如需詳細資訊，請參閱[程式碼簽署簡介](https://msdn.microsoft.com/en-us/library/ms537361(v=vs.85).aspx)。
 
 ### <a name="2-file-association-verbs"></a>2. 檔案關聯動詞 
-**背景 **  
+**背景**  
 此測試會掃描套件登錄，確認是否登錄任何檔案關聯動詞。 
 
 **測試詳細資料**  
@@ -45,7 +45,7 @@ ms.locfileid: "8932874"
 ### <a name="3-debug-configuration-test"></a>3. 偵錯組態測試
 這項測試會確認 appx 不是偵錯組建。
  
-**背景 **  
+**背景**  
 若要通過 Microsoft Store 認證，應用程式必須不可以針對編譯偵錯，而且不可以參照可執行檔的偵錯版本。 此外，您必須針對您的應用程式建置最佳化的程式碼以便通過此測試。
  
 **測試詳細資料**  
@@ -121,7 +121,7 @@ ms.locfileid: "8932874"
 影像至少必須定義一個不含 TargetSize 限定詞的變數。 它必須定義 Scale 限定詞，或不指定 Scale 和 TargetSize，預設值為 Scale-100。  | 如需詳細資訊，請參閱[回應式設計](https://msdn.microsoft.com/library/windows/apps/xaml/dn958435.aspx)和[應用程式資源](https://docs.microsoft.com/en-us/windows/uwp/app-settings/store-and-retrieve-app-data)的指南。 
 套件缺少 "resources.pri" 檔案。  | 如果您的 app 資訊清單中有可當地語系化的內容，app 套件中務必包含有效的 resources.pri 檔案。 
 "resources.pri" 檔案必須包含資源對應，且名稱符合套件名稱 {package full name}  | 如果資訊清單已變更，而 resources.pri 中的資源對應名稱不再符合資訊清單中的套件名稱，就會發生這個錯誤。 在實際訊息中，{package full name} 包含 resources.pri 必須包含的套件名稱。 若要更正此錯誤，您需要重建 resources.pri，最簡單的方式就是重建 app 的套件。 
-"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這針對您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft Store 散發應用程式的 resources.pri 必須是應用程式套件的根目錄中，而且包含應用程式支援的所有語言參考。 
+"resources.pri" 檔案不能啟用 AutoMerge。  | MakePRI.exe 支援一個稱為 AutoMerge 的選項。 AutoMerge 的預設值為 off。 啟用時，AutoMerge 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這針對您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft 網上商店散發 app 的 resources.pri 必須是應用程式套件的根目錄中，且包含應用程式支援的所有語言參考。 
 字串 {string} 不符合 {number} 個字元的長度上限限制。  | 請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 在實際訊息中，{string} 會以發生錯誤的字串取代，而 {number} 包含長度上限。 
 字串 {string} 的開頭/結尾不得具有空白字元。  | 應用程式資訊清單中的元素結構描述不允許前後有空白字元。 在實際訊息中，{string} 會以有錯誤的字串取代。 確定 resources.pri 中的資訊清單欄位沒有任何當地語系化的值前後有空白字元。 
 字串必須為非空白 (長度大於零)  | 如需詳細資訊，請參閱 [app 套件需求](https://docs.microsoft.com/en-us/windows/uwp/publish/app-package-requirements)。 
@@ -133,7 +133,7 @@ ms.locfileid: "8932874"
 
 
 #### <a name="22-branding-validation"></a>2.2 商標驗證
-**背景 **  
+**背景**  
 傳統型橋接器應用程式應該要完整且功能正常。 使用預設影像 (來自範本或 SDK 範例) 的應用程式會呈現不佳的使用者經驗，而且在市集型錄中也不容易識別。
 
 **測試詳細資料**  
@@ -165,7 +165,7 @@ ms.locfileid: "8932874"
 #### <a name="32-application-count"></a>3.2 應用程式計數
 這項測試會確認一個應用程式套件 (.appx、應用程式套件組合) 包含一個應用程式。 
 
-**背景 **  
+**背景**  
 這項測試是根據「市集原則」而實作。 
 
 **測試詳細資料**  
@@ -176,7 +176,7 @@ ms.locfileid: "8932874"
 
 
 #### <a name="33-registry-checks"></a>3.3 登錄檢查
-**背景 **  
+**背景**  
 這項測試會檢查應用程式安裝還是更新任何新的服務或驅動程式。
 
 **測試詳細資料**  
@@ -205,7 +205,7 @@ ms.locfileid: "8932874"
 ### <a name="5-supported-api-test"></a>5. 支援的 API 測試
 檢查應用程式是否使用不相容的 API。 
 
-**背景 **  
+**背景**  
 傳統型橋接器應用程式可以使用某些舊版的 Win32 API 與現代化 API (UWP 元件)。 這項測試會識別可使用不受支援之 API 的受管理二進位檔案。
  
 **測試詳細資料**  
@@ -217,14 +217,14 @@ ms.locfileid: "8932874"
 確保應用程式已編譯為發行組建，而非偵錯組建，即可進行修正。 
 
 > [!NOTE]
-> 應用程式的偵錯組建無法通過這個測試，即使應用程式會使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
+> 偵錯組建的 app 無法通過這個測試，即使 app 使用[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。 檢閱錯誤訊息，找出 API 有哪些不允許的 API 適用於 UWP app。 
 
 > [!NOTE]
 > 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 如需詳細資訊，請參閱[UWP 應用程式中的 Windows Api 的替代方法](https://msdn.microsoft.com/library/windows/apps/hh464945.aspx)。
 
 ### <a name="6-user-account-control-uac-test"></a>6. 使用者帳戶控制 (UAC) 測試  
 
-**背景 **  
+**背景**  
 確保應用程式不會在執行階段要求使用者帳戶控制。
 
 **測試詳細資料**  
@@ -235,7 +235,7 @@ ms.locfileid: "8932874"
 
  
 ### <a name="7-windows-runtime-metadata-validation"></a>7. Windows 執行階段中繼資料驗證
-**背景 **  
+**背景**  
 確保應用程式隨附的元件符合 UWP 類型系統。
 
 **測試詳細資料**  
@@ -269,7 +269,7 @@ Windows 應用程式認證套件中的「禁止的檔案檢查」目前會檢查
 如果應用程式要使用檔案的「發行預覽」版本，而非最新正式發行，則這項檢查通常會失敗。 
 
 **修正動作**  
-若要修正這個問題，使用最新版的[Bing Maps SDK](http://go.microsoft.com/fwlink/p/?linkid=614880)適用於 UWP app。
+若要修正這個問題，使用最新版的[Bing Maps SDK](https://go.microsoft.com/fwlink/p/?linkid=614880)適用於 UWP app。
 
 #### <a name="82-private-code-signing"></a>8.2 私用程式碼簽署
 測試私用程式碼簽署二進位檔是否存在於應用程式套件。 

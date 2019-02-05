@@ -8,12 +8,12 @@ keywords: 語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 839dc024204ec9b76ffe621a35cbbbaffc248d02
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0865b229faad646901ab76f46982e738b2830035
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939644"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046641"
 ---
 # <a name="continuous-dictation"></a>連續聽寫
 
@@ -26,7 +26,7 @@ ms.locfileid: "8939644"
 針對較長、連續語音辨識的工作階段 (例如聽寫或電子郵件) 時，請使用 [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn913913) 的 [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn653226) 屬性來取得 [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) 物件。
 
 > [!NOTE]
-> 聽寫語言支援取決於您的應用程式執行所在的[裝置](https://docs.microsoft.com/windows/uwp/design/devices/)。 適用於電腦和膝上型電腦，只 EN-US 辨識出，雖然 Xbox 和手機可以辨識語音辨識所支援的所有語言。 如需詳細資訊，請參閱[指定語音辨識器的語言](specify-the-speech-recognizer-language.md)。
+> 聽寫語言支援取決於您的應用程式執行所在的[裝置](https://docs.microsoft.com/windows/uwp/design/devices/)。 適用於電腦和膝上型電腦，只 EN-US 辨識出，而 Xbox 和手機可以辨識語音辨識所支援的所有語言。 如需詳細資訊，請參閱[指定語音辨識器的語言](specify-the-speech-recognizer-language.md)。
 
 ## <a name="set-up"></a>設定
 
@@ -68,7 +68,7 @@ private StringBuilder dictatedTextBuilder;
 - 擷取 UI 執行緒的發送器 (如果您在連續辨識事件處理常式中更新您應用程式的 UI)。
 - 初始化語音辨識器。
 - 編譯內建聽寫文法。
-    **注意：** 語音辨識需要至少需要一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
+    **注意：** 語音辨識需要至少一個限制式來定義可辨識的詞彙。 如果沒有指定任何限制式，則會使用預先定義的聽寫文法。 請參閱[語音辨識](speech-recognition.md)。
 - 設定辨識事件的事件接聽程式。
 
 在這個範例中，我們會在 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) 頁面事件中初始化語音辨識。
@@ -269,7 +269,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 * [語音互動](speech-interactions.md)
 
 **範例**
-* [語音辨識和語音合成範例](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

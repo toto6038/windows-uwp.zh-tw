@@ -6,12 +6,12 @@ ms.date: 06/11/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 6954f935440f75a728c3f3601ade884bbee7b6bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7acf2715ff4b6328beaae017722fc58d5788fe1d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919029"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047862"
 ---
 # <a name="create-a-hello-world-app-in-ccx"></a>建立"Hello world"應用程式在 C + + /CX
 
@@ -25,7 +25,7 @@ ms.locfileid: "8919029"
 
 ## <a name="before-you-start"></a>開始之前
 
--   若要完成這個教學課程，您必須使用 Visual StudioCommunity 2017，或是某一個非 Community 版本的 Visual Studio2017，正在執行 windows 10 的電腦上。 若要下載，請參閱[取得工具](http://go.microsoft.com/fwlink/p/?LinkId=532666)。
+-   若要完成這個教學課程，您必須使用 Visual StudioCommunity 2017，或是某一個非 Community 版本的 Visual Studio2017，正在執行 windows 10 的電腦上。 若要下載，請參閱[取得工具](https://go.microsoft.com/fwlink/p/?LinkId=532666)。
 -   我們假設您已經有基本的了解 C + + /CX，XAML，以及[XAML 概觀](https://msdn.microsoft.com/library/windows/apps/Mt185595)中的概念。
 -   我們假設您在 Visual Studio 中使用預設的視窗配置。 若要重設為預設配置，在功能表列上選擇 \[視窗\]**** >  \[重設視窗配置\]****。
 
@@ -61,7 +61,7 @@ ms.locfileid: "8919029"
 
 ## <a name="hello-world-store-app-in-ccx"></a>Hello World 市集應用程式，在 C + + /CX
 
-我們的第一個應用程式是 "Hello World"，將示範互動功能、配置及樣式的某些基本功能。 我們將從 Windows 通用 app 專案範本建立應用程式。 如果您已針對 Windows8.1 和之前的 Windows Phone 8.1 開發應用程式，您可能記得必須在 Visual Studio 中，一個用於 Windows 應用程式、 一個用於手機 app，另一個包含共用程式碼中有三個專案。 Windows 10 通用 Windows 平台 (UWP) 讓您只需一個專案，在所有裝置，包括桌上型電腦和膝上型電腦等等執行 windows 10，例如平板電腦、 行動電話、 VR 裝置的裝置上執行。
+我們的第一個應用程式是 "Hello World"，將示範互動功能、配置及樣式的某些基本功能。 我們將從 Windows 通用 app 專案範本建立應用程式。 如果您的應用程式開發適用於 windows 8.1 和 Windows Phone 8.1 之前，您可能記得必須在 Visual Studio 中，一個用於 Windows app、 一個用於手機 app，另一個則包含共用程式碼中擁有三個專案。 Windows 10 通用 Windows 平台 (UWP) 讓您只需一個專案，就會在所有裝置，包括桌上型電腦和膝上型電腦執行 windows 10 的裝置，例如平板電腦、 行動電話、 VR 裝置等裝置上執行。
 
 我們將從基礎開始：
 
@@ -69,7 +69,7 @@ ms.locfileid: "8919029"
 
 -   如何了解建立的專案和檔案。
 
--   如何了解延伸會在 VisualC + + 元件延伸 (C + + /CX)，以及何時使用它們。
+-   如何了解擴充功能，在 VisualC + + 元件延伸 (C + + /CX)，以及何時使用它們。
 
 **首先，在 Visual Studio 中建立方案**
 
@@ -238,7 +238,7 @@ MainPage::MainPage()
 
 若要停止偵錯並關閉 app，請返回 Visual Studio 並按 Shift+F5。
 
-如需詳細資訊，請參閱[從 Visual Studio 執行市集 app](http://go.microsoft.com/fwlink/p/?LinkId=619619)。
+如需詳細資訊，請參閱[從 Visual Studio 執行市集 app](https://go.microsoft.com/fwlink/p/?LinkId=619619)。
 
 您可以在應用程式的 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 輸入文字，但按一下 [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) 不會有任何反應。 在之後的步驟中，您要為按鈕的 [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) 事件建立事件處理常式，以顯示個人化的問候語。
 
@@ -307,7 +307,7 @@ MainPage::MainPage()
 
 您應該使用哪個佈景主題？ 隨您的喜愛選擇。 以下是我們的想法：對於主要顯示影像或視訊的應用程式，建議您使用深色佈景主題；對於包含大量文字的應用程式，則建議使用淺色佈景主題。 如果您要使用自訂色彩配置，請使用與您 app 外觀及操作方式最搭配的佈景主題。 在本教學課程的其餘部分，我們會在螢幕擷取畫面使用淺色佈景主題。
 
-**注意：** 佈景主題會套用應用程式會啟動，並且無法在 app 執行時進行變更。
+**注意：** 佈景主題套用應用程式會啟動，並且無法在 app 執行時進行變更。
 
 ### <a name="using-system-styles"></a>使用系統樣式
 
@@ -404,7 +404,7 @@ MainPage::MainPage()
 
 ## <a name="next-steps"></a>後續步驟
 
-如果您有 Windows8.1 和/或 Windows Phone 8.1 為目標的通用 Windows 應用程式專案，您可以將其移植到 windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)。
+如果您有 windows 8.1 和/或 Windows Phone 8.1 為目標的通用 Windows 應用程式專案時，您可以將其移植到 windows 10。 沒有任何自動處理程序可用來進行此動作，但您可以手動完成此動作。 開始使用新的 Windows 通用專案，以取得最新的專案系統結構與資訊清單檔案、將程式碼檔案複製到專案的目錄結構、將項目新增到專案，然後根據本主題中的指導方針，使用 [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) 重新撰寫您的 XAML。 如需詳細資訊，請參閱[將 Windows Runtime 8 專案移植到通用 Windows 平台 (UWP) 專案](https://msdn.microsoft.com/library/windows/apps/Mt188203)和[移植到通用 Windows 平台 (C++)](https://go.microsoft.com/fwlink/p/?LinkId=619525)。
 
-如果您有想要與 UWP app 整合的現有 C++ 程式碼，例如為現有應用程式建立新的 UWP UI，請參閱[如何：在通用 Windows 專案中使用現有的 C++ 程式碼](http://go.microsoft.com/fwlink/p/?LinkId=619623)。
+如果您有想要與 UWP app 整合的現有 C++ 程式碼，例如為現有應用程式建立新的 UWP UI，請參閱[如何：在通用 Windows 專案中使用現有的 C++ 程式碼](https://go.microsoft.com/fwlink/p/?LinkId=619623)。
 

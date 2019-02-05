@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 安全性
 ms.localizationpriority: medium
-ms.openlocfilehash: 8781cbffcb8d5c433c58865fba38cd65369b5c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 473b7ef9f4efacbbe78e1fdb5563695f8211bca8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930073"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050901"
 ---
 # <a name="web-authentication-broker"></a>Web 驗證代理人
 
@@ -21,7 +21,7 @@ ms.locfileid: "8930073"
 本文章說明如何將您的通用 Windows 平台 (UWP) 應用程式連線到使用授權通訊協定 (如 OpenID 或 OAuth) 的線上身分識別提供者，例如 Facebook、Twitter、Flickr、Instagram 等。 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 方法會將要求傳送到線上身分識別提供者，然後取得說明 app 存取之提供者資源的存取權杖。
 
 >[!NOTE]
->如需完整的有效程式碼範例，請複製 [GitHub 上的 WebAuthenticationBroker 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=620622)。
+>如需完整的有效程式碼範例，請複製 [GitHub 上的 WebAuthenticationBroker 儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=620622)。
 
  
 
@@ -87,7 +87,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->除了 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 以外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空間還包含 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 請不要呼叫此方法。 它設計來只以 Windows Phone 8.1 為目標的應用程式，並開始使用 windows 10 已過時。
+>除了 [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) 以外，[**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) 命名空間還包含 [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) 方法。 請不要呼叫此方法。 它設計來只有目標為 Windows Phone 8.1 的應用程式，並開始使用 windows 10 已過時。
 
 ## <a name="connecting-with-single-sign-on-sso"></a>使用單一登入 (SSO) 連線。
 

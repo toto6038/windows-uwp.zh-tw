@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 75af433d80364485b0c12a9540c0d7bb471c4e28
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947886"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045311"
 ---
 # <a name="composition-effects"></a>組合效果
 
 [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
-為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
+為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
 
 筆刷效果可用來將效果套用到一組現有的影像，以繪製應用程式的部分區域。 Windows 10 組合效果 API 著重在 SpriteVisual 上。 SpriteVisual 在色彩、影像和效果建立上提供彈性和相互作用。 SpriteVisual 是一種可利用筆刷填滿 2D 矩形的視覺化組合類型。 視覺化定義矩形的界線，筆刷則定義用來繪製矩形的像素。
 
@@ -39,11 +39,11 @@ ms.locfileid: "8947886"
 
 | 效果               | 說明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
-| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](http://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
-| 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)的 21 種。        |
+| 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](https://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
+| 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](https://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
+| 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)的 21 種。        |
 | 色彩來源         | 產生包含單色的影像。                                                                                                                                                                               |
-| 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
+| 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
 | 對比             | 增加或減少影像的對比。                                                                                                                                                                           |
 | 曝光             | 增加或減少影像的曝光。                                                                                                                                                                           |
 | 灰階            | 將影像轉換為灰色。                                                                                                                                                                                   |
@@ -54,7 +54,7 @@ ms.locfileid: "8947886"
 | 懷舊                | 將影像轉換成懷舊色調。                                                                                                                                                                                          |
 | 色溫和色調 | 調整影像的色溫和/或色調。                                                                                                                                                                           |
 
-如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
+如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
 
 ### <a name="chaining-effects"></a>鏈結效果
 
@@ -123,11 +123,11 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-請參閱[去飽和度 - 動畫範例](http://go.microsoft.com/fwlink/?LinkId=785342)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](http://go.microsoft.com/fwlink/?LinkId=785343)來了解效果和運算式的使用方式。
+請參閱[去飽和度 - 動畫範例](https://go.microsoft.com/fwlink/?LinkId=785342)來了解使用主要畫面格以動畫顯示的效果屬性，以及參閱 [AlphaMask 範例](https://go.microsoft.com/fwlink/?LinkId=785343)來了解效果和運算式的使用方式。
 
 ### <a name="multiple-effect-instances-with-independent-properties"></a>使用獨立屬性的多個效果執行個體
 
-藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](http://go.microsoft.com/fwlink/?LinkId=785344)。
+藉由在效果編譯期間將參數指定為動態，該參數則可以在各效果執行個體的基礎上進行變更。 這可讓兩個視覺效果使用相同的效果，但是以不同的效果屬性呈現。 如需詳細資訊，請參閱 ColorSource 和 Blend [範例](https://go.microsoft.com/fwlink/?LinkId=785344)。
 
 ## <a name="getting-started-with-composition-effects"></a>開始使用組合效果
 
@@ -168,7 +168,7 @@ Win2D 是以 Nuget.org 套件發行，且必須安裝後才可以使用效果。
 ![來源影像](images/composition-cat-source.png)
 ### <a name="setting-your-composition-basics"></a>設定您的組合基本知識
 
-如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](http://go.microsoft.com/fwlink/?LinkId=785345)。
+如需如何設定 Windows.UI.Composition 撰寫器、根 ContainerVisual，並與 Core Window 產生關聯的範例，請參閱 GitHub 上的[組合視覺化樹狀結構範例](https://go.microsoft.com/fwlink/?LinkId=785345)。
 
 ```cs
 _compositor = new Compositor();

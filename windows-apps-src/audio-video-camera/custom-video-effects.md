@@ -9,12 +9,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 40a6bd32-a756-400f-ba34-2c5f507262c0
 ms.localizationpriority: medium
-ms.openlocfilehash: a9e796eee76025e7697c08669e6942e0d69206f7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1e48febb3fb49a35fe256e58cf7c80b4abe93267
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923488"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045567"
 ---
 # <a name="custom-video-effects"></a>自訂視訊效果
 
@@ -174,7 +174,7 @@ ms.locfileid: "8923488"
 ## <a name="implement-the-ibasicvideoeffect-interface-using-hardware-processing"></a>使用硬體處理實作 IBasicVideoEffect 介面
 
 
-使用硬體 (GPU) 處理建立自訂視訊效果，與上述使用軟體處理的方式幾乎相同。 本節將說明使用硬體處理之效果的一些差異。 此範例使用 Win2D Windows 執行階段 API。 如需使用 Win2D 的詳細資訊，請參閱 [Win2D 文件](http://go.microsoft.com/fwlink/?LinkId=519078)。
+使用硬體 (GPU) 處理建立自訂視訊效果，與上述使用軟體處理的方式幾乎相同。 本節將說明使用硬體處理之效果的一些差異。 此範例使用 Win2D Windows 執行階段 API。 如需使用 Win2D 的詳細資訊，請參閱 [Win2D 文件](https://go.microsoft.com/fwlink/?LinkId=519078)。
 
 使用下列步驟，將 Win2D NuGet 套件新增到您依照本文開頭的**將自訂效果新增到您的 App** 一節建立的專案。
 
@@ -254,5 +254,5 @@ ms.locfileid: "8923488"
 ## <a name="related-topics"></a>相關主題
 * [簡單的相機預覽存取](simple-camera-preview-access.md)
 * [媒體組合和編輯](media-compositions-and-editing.md)
-* [Win2D 文件](http://go.microsoft.com/fwlink/p/?LinkId=519078)
+* [Win2D 文件](https://go.microsoft.com/fwlink/p/?LinkId=519078)
 * [媒體播放](media-playback.md)

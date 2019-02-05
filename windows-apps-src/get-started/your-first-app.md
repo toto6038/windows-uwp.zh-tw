@@ -6,12 +6,12 @@ ms.date: 1/25/2017
 ms.topic: article
 keywords: windows 10, uwp, 第一個應用程式, c#, c++, JavaScript
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cd4d60e6eb3eee7253997938882e6fbdf9fba69
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ef6e364f8c6c88400d2d47a0591d4b7432c33215
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923739"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048015"
 ---
 # <a name="create-your-first-app"></a>建立您的第一個 App
 
@@ -30,7 +30,7 @@ ms.locfileid: "8923739"
 * [適用於初學者的 C# 基礎知識](https://go.microsoft.com/fwlink/?linkid=850801)
 * [適用於初學者的 VB 基礎知識](https://go.microsoft.com/fwlink/?linkid=850802)
 * [Windows 10 開發人員指南](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [Microsoft Virtual Academy](https://www.microsoftvirtualacademy.com/)
 
 如果您已準備好要嘗試比 "Hello, World!" 更有趣的內容，請嘗試下列教學課程︰
 
@@ -46,8 +46,8 @@ ms.locfileid: "8923739"
 
 在這裡深入了解 C++：
 
-* [C++：一般用途語言和程式庫入門](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++：一般用途語言和程式庫入門](https://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 如果您已準備好要嘗試比 "Hello, World!" 更有趣的內容，請嘗試下列教學課程︰
 
@@ -71,9 +71,9 @@ Web 應用程式很容易就可以在 UWP 架構中封裝成 Web 應用程式，
 
 需要重新學習 Web 技能嗎？
 
-* [適用於初學者的 JavaScript 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [適用於初學者的 HTML5 與 CSS3 基礎知識](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [適用於初學者的 JavaScript 基礎知識](https://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+* [適用於初學者的 HTML5 與 CSS3 基礎知識](https://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+* [Microsoft Virtual Academy](https://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## <a name="see-also"></a>另請參閱
 

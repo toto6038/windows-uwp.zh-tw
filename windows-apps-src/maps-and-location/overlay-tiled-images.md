@@ -6,18 +6,18 @@ ms.date: 07/19/2018
 ms.topic: article
 keywords: windows 10, uwp, map, location, images, overlay, 地圖, 位置, 影像, 重疊
 ms.localizationpriority: medium
-ms.openlocfilehash: 47b9c4335a99e7b0f17da0fb9ddb520cc917e398
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c0c2f07a364980b67a34a519eb5dd8b4da1a18f0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942300"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046431"
 ---
 # <a name="overlay-tiled-images-on-a-map"></a>在地圖上重疊顯示並排影像
 
 藉由使用磚來源，即可在地圖上重疊顯示協力廠商或自訂的並排影像。 您可以使用磚來源來重疊顯示專業資訊，例如氣象資料、人口資料或地震資料，或是使用磚來源完全取代預設的地圖。
 
-**提示**若要深入了解如何在應用程式中使用地圖，請到 Github 下載[通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)。
+**提示**若要深入了解如何在應用程式中使用地圖，請到 Github 下載[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 <a id="tileintro" />
 
@@ -35,7 +35,7 @@ http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
 
 (X 和 Y 座標代表具指定詳細層級之世界地圖內個別磚的位置。 磚編號系統從地圖左上角的 {0, 0} 開始。 例如，位於 {1, 2} 的磚是在磚格線之第三列的第二欄中。)
 
-如需有關地圖服務所使用之磚系統的詳細資訊，請參閱 [Bing 地圖服務磚系統](http://go.microsoft.com/fwlink/p/?LinkId=626692)。
+如需有關地圖服務所使用之磚系統的詳細資訊，請參閱 [Bing 地圖服務磚系統](https://go.microsoft.com/fwlink/p/?LinkId=626692)。
 
 ### <a name="overlay-tiles-from-a-tile-source"></a>重疊顯示來自磚來源的磚
 
@@ -421,7 +421,7 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessStream::get()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

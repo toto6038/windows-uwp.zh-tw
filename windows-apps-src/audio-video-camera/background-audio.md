@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b8a859f27ff24dba15f7e4fde66a8d54a84a8bf4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f5fe7cad12193b409c4923f876b47cae0852aa9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925782"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045557"
 ---
 # <a name="play-media-in-the-background"></a>在背景播放媒體
 本文說明如何設定您的 app，當 app 從前景移至背景時，該媒體仍能繼續播放。 這表示即使使用者已最小化您的 App、回到主畫面，或以其他方式從您的 App 離開之後，您的 App 仍可繼續播放音訊。 
@@ -27,7 +27,7 @@ ms.locfileid: "8925782"
 本文中描述的背景音訊實作可讓您的 app 在所有 Windows 裝置上執行，包括行動裝置、桌上型電腦及 Xbox。
 
 > [!NOTE]
-> 本文中的程式碼是從 UWP [背景音訊範例](http://go.microsoft.com/fwlink/p/?LinkId=800141)改編而來。
+> 本文中的程式碼是從 UWP [背景音訊範例](https://go.microsoft.com/fwlink/p/?LinkId=800141)改編而來。
 
 ## <a name="explanation-of-one-process-model"></a>單處理序模型的說明
 從 Windows10 版本 1607 開始，引進了新的單一處理序模型，可大幅簡化啟用背景音訊的處理序。 之前，除了前景 app 之外還要求您的 app 能夠管理背景處理程序，然後在這兩個處理程序之間手動傳遞狀態變更。 在新模型中，您只需將背景音訊功能新增到您的應用程式資訊清單，而您的 app 將會在移至背景時自動繼續播放音訊。 有兩個新的應用程式週期事件 ([**EnteredBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.EnteredBackground) 和 [**LeavingBackground**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.CoreApplication.LeavingBackground)) 可讓您的 app 知道它進入和離開背景的時機。 當您的 app 移到轉換為背景或轉換為前景的處理程序時，系統強制執行的記憶體限制可能會變更，讓您能夠使用這些事件來檢查您目前的記憶體耗用量並釋出資源，以維持在限制之下。

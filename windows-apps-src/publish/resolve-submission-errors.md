@@ -6,12 +6,12 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9911323010f691d1fa59c35306a7173cd08a0faa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: df7c1bbbc77374b8afb4272e1d9618c8294a4b6e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920708"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047985"
 ---
 # <a name="resolve-submission-errors"></a>解決提交錯誤
 
@@ -19,13 +19,13 @@ ms.locfileid: "8920708"
 
 ## <a name="uwp-apps"></a>UWP app
 
-如果您提交 UWP 應用程式，您可能會看到錯誤，如果您的套件檔案不是由 Visual Studio 針對市集所產生的.msixupload 或.appxupload 檔案前置處理期間。 請務必依照[套件與 Visual Studio 的 UWP 應用程式](../packaging/packaging-uwp-apps.md)中的步驟，在建立您的應用程式套件檔案，並只上傳.msixupload 或.appxupload 檔案不是.msix/appx 或.msixbundle/appxbundle 之提交的[套件](upload-app-packages.md)頁面上.
+如果您提交 UWP 應用程式，您可能會看到錯誤，如果您的套件檔案不是由 Visual Studio 針對市集所產生的.msixupload 或.appxupload 檔案，前置處理期間。 請務必依照[與 Visual Studio 的 UWP 應用程式套件](../packaging/packaging-uwp-apps.md)中的步驟，在建立您的應用程式套件檔案，並只上傳.msixupload 或.appxupload 檔案不是.msix/appx 或.msixbundle/appxbundle 之提交的[套件](upload-app-packages.md)頁面上.
 
-如果出現編譯錯誤，請確認您可以成功在釋出模式中建置您的應用程式。 如需詳細資訊，請參閱 [.NET 原生內部編譯器錯誤](http://go.microsoft.com/fwlink/p/?LinkID=613098)。
+如果出現編譯錯誤，請確認您可以成功在釋出模式中建置您的應用程式。 如需詳細資訊，請參閱 [.NET 原生內部編譯器錯誤](https://go.microsoft.com/fwlink/p/?LinkID=613098)。
 
 ## <a name="desktop-application"></a>傳統型應用程式
 
-如果您計劃提交的套件，其中包含 UWP 和 Win32 二進位檔，請確定您使用 Visual Studio 2017 更新 4 中可用的 Windows 封裝專案來建立該套件。 如果您使用 UWP 專案範本來建立套件，您可能無法提交的市集或側載將其封裝到其他電腦上。 即使成功發佈套件，可能會在使用者的電腦上有非預期的方式運作。 如需詳細資訊，請參閱[封裝應用程式使用 Visual Studio （傳統型橋接器）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
+如果您打算提交的套件，其中包含 UWP 和 Win32 二進位檔，請確定您在使用 Windows 封裝專案，在 Visual Studio 2017 更新 4 中可用來建立該套件。 如果您使用 UWP 專案範本來建立套件，您可能無法送出該存放區或側載將其封裝到其他電腦上。 即使會成功發佈套件，可能會在使用者的電腦上有非預期的方式運作。 如需詳細資訊，請參閱[封裝應用程式使用 Visual Studio （傳統型橋接器）]( https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)。
 
 ## <a name="windows-phone-8x-and-earlier"></a>Windows Phone 8.x 和更舊版本
 
@@ -52,7 +52,7 @@ ms.locfileid: "8920708"
 - 如果您的 App 已經有身分識別，您可能仍需要保留您想在您的套件中使用的名稱。 在 **應用程式管理** 下，按一下 [管理應用程式名稱](manage-app-names.md)。 輸入您想要使用的名稱，然後按一下 **\[保留應用程式名稱\]**。
 
 > [!IMPORTANT]
->  如果您想要使用的名稱無法使用，另一個應用程式可能已經保留該名稱。 如果您的應用程式已發佈該名稱，或如果您認為您有權使用它，[請連絡客戶支援](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  
+>  如果您想要使用的名稱無法使用，另一個應用程式可能已經保留該名稱。 如果您的應用程式發佈該名稱，或如果您認為您有權使用它，[請連絡客戶支援](https://go.microsoft.com/fwlink/p/?LinkId=331509)。  
 
  
 

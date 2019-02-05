@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10 , UWP, 地圖驗證金鑰, 地圖控制項
 ms.localizationpriority: medium
-ms.openlocfilehash: e986880ccedfdb4648b1554c35c23a8a841fe820
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 620566036dc5aa9357d10e60ec92067ba0faf130
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945611"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046158"
 ---
 # <a name="request-a-maps-authentication-key"></a>要求地圖驗證金鑰
 
@@ -20,9 +20,9 @@ ms.locfileid: "8945611"
 
 您的[通用 Windows app](https://msdn.microsoft.com/library/windows/apps/dn894631) 必須經過驗證，才能使用 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) 和 [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 命名空間中的地圖服務。 若要驗證您的 app，您必須指定地圖驗證金鑰。 本主題說明如何從 [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)要求地圖驗證金鑰，然後將它新增到您的 app。
 
-**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
+**提示**：若要深入了解如何在 app 中使用地圖，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例：
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="get-a-key"></a>取得金鑰
 
@@ -31,7 +31,7 @@ ms.locfileid: "8945611"
 
 建立新的金鑰
 
-1.  在您的瀏覽器中，瀏覽到 「 Bing 地圖服務開發人員中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
+1.  在瀏覽器中，瀏覽到 「 Bing 地圖服務開發人員中心 ([https://www.bingmapsportal.com](https://www.bingmapsportal.com/))。
 
 2.  如果系統要求您登入，請輸入您的 Microsoft 帳戶，然後按一下 **\[登入\]**。
 
@@ -90,7 +90,7 @@ ms.locfileid: "8945611"
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)

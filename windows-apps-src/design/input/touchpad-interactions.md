@@ -8,12 +8,12 @@ keywords: 觸控板、PTP、觸控、指標、輸入、使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dfc98127133790deba9274ddba7801bea34f9cd
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 895bf1ffe4fc79a65fdf452235ee9466e91b7215
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935892"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046704"
 ---
 # <a name="touchpad-design-guidelines"></a>觸控板設計指導方針
 
@@ -155,15 +155,15 @@ ms.locfileid: "8935892"
 * [處理指標輸入](handle-pointer-input.md)
 * [識別輸入裝置](identify-input-devices.md)
 **範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **封存範例**
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：使用 GestureRecognizer 處理手勢與操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：使用 GestureRecognizer 處理手勢與操作](https://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 

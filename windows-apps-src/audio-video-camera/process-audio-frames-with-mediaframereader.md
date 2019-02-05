@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f85570d5c66db1641ec6352526d4db6213e199b4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944893"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050831"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
@@ -21,7 +21,7 @@ ms.locfileid: "8944893"
 > 本文中所討論的功能只從 Windows 10 版本 1803 開始提供。
 
 > [!NOTE] 
-> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)。
+> 還有一個通用 Windows app 範例，示範使用 **MediaFrameReader** 顯示來自不同畫面來源 (包括色彩、深度與紅外線相機) 的畫面。 如需詳細資訊，請參閱[相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)。
 
 ## <a name="setting-up-your-project"></a>設定您的專案
 擷取音訊框架的程序與取得其他媒體框架類型的程序大致相同。 就像任何使用 **MediaCapture** 的 App 一樣，您必須在嘗試存取任何相機裝置之前，宣告您的 App 是使用*網路攝影機*功能。 如果您的應用程式會從音訊裝置擷取，您也應該宣告*麥克風*裝置功能。 
@@ -79,7 +79,7 @@ ms.locfileid: "8944893"
 * [使用 MediaFrameReader 處理媒體畫面](process-media-frames-with-mediaframereader.md)
 * [相機](camera.md)
 * [使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)
-* [相機畫面範例](http://go.microsoft.com/fwlink/?LinkId=823230)
+* [相機畫面範例](https://go.microsoft.com/fwlink/?LinkId=823230)
 * [音訊圖](audio-graphs.md)
  
 

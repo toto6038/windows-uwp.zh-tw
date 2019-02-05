@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e38b57deb7101dcf0476bd3d952fc01ffd605db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942210"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047965"
 ---
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
@@ -82,7 +82,7 @@ XAML
 
 ## <a name="related-topics"></a>相關主題  
 * [設計通用軟體](designing-inclusive-software.md)  
-* [通用設計](http://design.microsoft.com/inclusive)
+* [通用設計](https://design.microsoft.com/inclusive)
 * [協助工具應避免的做法](practices-to-avoid.md)
 * [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)

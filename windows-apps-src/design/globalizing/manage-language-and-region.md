@@ -7,26 +7,26 @@ ms.date: 11/08/2017
 ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
-ms.openlocfilehash: d70dbc0dffc3763855924b8f7faca61ca2fb18f2
-ms.sourcegitcommit: 1901a43b9e40a05c28c7799e0f9b08ce92f8c8a8
+ms.openlocfilehash: d782e8cd64cb976df964c72199964c1d349d527e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035399"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045657"
 ---
 # <a name="understand-user-profile-languages-and-app-manifest-languages"></a>了解使用者設定檔語言和應用程式資訊清單語言
 Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** 設定慣用顯示語言的已排序清單，或單一慣用顯示語言。 語言可具有地區性的變體。 例如，您可以選取在西班牙使用的西班牙文、在墨西哥使用的西班牙文、在美國使用的西班牙文等。
 
 此外在 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** 中 (與語言分離)，使用者可指定自身位於全球的位置 (稱為地區)。 請注意，顯示語言 (及地區性變體) 設定不會決定地區設定，反之亦然。 例如，使用者目前可以居住在法國，但選擇其慣用的 Windows 顯示語言為西班牙文 (墨西哥)。
 
-針對 UWP app，語言是以 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)表示的。 例如，BCP-47 語言標記 "en-US" 會對應到 **\[設定\]** 中的英文 (美國)。 適當的 UWP API 會接受並傳回 BCP-47 語言標記的字串表示。
+針對 UWP app，語言是以 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)表示的。 例如，BCP-47 語言標記 "en-US" 會對應到 **\[設定\]** 中的英文 (美國)。 適當的 UWP API 會接受並傳回 BCP-47 語言標記的字串表示。
 
-另請參閱 [IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)。
+另請參閱 [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)。
 
 以下三節會定義「使用者設定檔語言清單」、「應用程式資訊清單語言清單」及「應用程式執行階段語言清單」等三個術語。 我們會在本主題及位於此功能區域的其他主題中使用這些術語，因此請務必了解他們的意義。
 
 ## <a name="user-profile-language-list"></a>使用者設定檔語言清單
-使用者設定檔語言清單是由使用者在 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** > **\[語言\]** 中設定之清單的名稱。 在程式碼中，您可以使用 [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) 屬性將使用者設定檔語言清單作為唯讀字串清單存取，其中每個字串都是單一 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)，例如 "en-US" 或 "ja-JP"。
+使用者設定檔語言清單是由使用者在 **\[設定\]** > **\[時間與語言\]** > **\[地區與語言\]** > **\[語言\]** 中設定之清單的名稱。 在程式碼中，您可以使用 [**GlobalizationPreferences.Languages**](/uwp/api/windows.system.userprofile.globalizationpreferences.Languages) 屬性將使用者設定檔語言清單作為唯讀字串清單存取，其中每個字串都是單一 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)，例如 "en-US" 或 "ja-JP"。
 
 ```csharp
     IReadOnlyList<string> userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
@@ -70,7 +70,7 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 
 更具體而言，應用程式執行階段語言清單是由這些項目組成的。
 
-1.  **(選擇性) 主要語言覆寫**。 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) 是給予使用者自身獨立語言選擇之應用程式，或是因具備某些強力理由而需要覆寫預設語言選擇之應用程式的簡易覆寫設定。 若要深入了解，請參閱[應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)。
+1.  **(選擇性) 主要語言覆寫**。 [**PrimaryLanguageOverride**](/uwp/api/Windows.Globalization.ApplicationLanguages.PrimaryLanguageOverride) 是給予使用者自身獨立語言選擇之應用程式，或是因具備某些強力理由而需要覆寫預設語言選擇之應用程式的簡易覆寫設定。 若要深入了解，請參閱[應用程式資源和當地語系化範例](https://go.microsoft.com/fwlink/p/?linkid=231501)。
 2.  **受應用程式支援的使用者語言**。 這是經過應用程式資訊清單語言清單篩選後的使用者設定檔語言清單。 依應用程式支援的語言篩選使用者的語言可在軟體開發套件 (SDK)、類別庫、相依架構套件及應用程式之間維持一致性。
 3.  **如果第 1 項和第 2 項為空白，則為預設語言或應用程式所支援的第一個語言。**。 如果使用者設定檔語言清單並未包含任何應用程式支援的語言，則應用程式執行階段語言會是應用程式支援的第一個語言。
 
@@ -98,7 +98,7 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 **注意：** 即使您的應用程式預設語言的資源都必須指定語言限定詞。 例如，如果您的應用程式預設語言為英文 （美國），然後限定資產的`\Assets\Images\en-US\logo.png`。
 
 - Windows 會執行複雜的比對，包括跨地區變體，像是 EN-US 和 EN-GB。 因此，包含做為適當的地區子標記。 請參閱[資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)。
-- 沒有語言所定義的隱藏字集值時，請指定語言的指令碼子標記中的限定詞。 例如，而不是 ZH-CN 或 ZH-TW，使用 zh-hant 與 Zh-hans、 zh-hant 與 Zh-hans ZH-TW 或 Zh-hans （如需詳細資訊，請參閱[IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)）。
+- 沒有語言所定義的隱藏字集值時，請指定語言的指令碼子標記中的限定詞。 例如，而不是 ZH-CN 或 ZH-TW，使用 zh-hant 與 Zh-hans、 zh-hant 與 Zh-hans ZH-TW 或 Zh-hans （如需詳細資訊，請參閱[IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)）。
 - 如果語言只有單一標準方言，沒有需要包含地區限定詞。 例如，而非 JA-JP 使用 ja。
 - 某些工具和其他元件 (如電腦翻譯工具) 可能會找到特定語言標記 (如地區方言資訊)，這有助於了解資料。
 
@@ -150,21 +150,21 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 <tr>
 <td align="left">英文 (英國) (預設值)； 德文 (德國)</td>
 <td align="left">英文 (英國)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">英文 (英國)</td>
 <td align="left">UI：英文 (英國)<br>日期/時間/數字：英文 (英國)</td>
 </tr>
 <tr>
 <td align="left">德文 (德國) (預設值)；法文 (法國)；義大利文 (義大利)</td>
 <td align="left">法文 (奧地利)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">法文 (奧地利)</td>
 <td align="left">UI：法文 (法國) (從法文 (奧地利) 後援)<br>日期/時間/數字：法文 (奧地利)</td>
 </tr>
 <tr>
 <td align="left">英文 (美國) (預設值)；法文 (法國)；英文 (英國)</td>
 <td align="left">英文 (加拿大)；法文 (加拿大)</td>
-<td align="left">無</td>
+<td align="left">無 (none)</td>
 <td align="left">英文 (加拿大)；法文 (加拿大)</td>
 <td align="left">UI：英文 (美國) (從英文 (加拿大) 後援)<br>日期/時間/數字：英文 (加拿大)</td>
 </tr>
@@ -208,12 +208,12 @@ Windows 使用者可使用 **\[設定\]** > **\[時間與語言\]** > **\[地區
 * [GeographicRegion](/uwp/api/windows.globalization.geographicregion?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [針對語言、縮放比例、高對比及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
 * [支援的語言](../../publish/supported-languages.md)
 * [全球化您的日期/時間/數字格式](use-global-ready-formats.md)
 * [資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)
 
 ## <a name="samples"></a>範例
-* [應用程式資源和當地語系化範例](http://go.microsoft.com/fwlink/p/?linkid=231501)
+* [應用程式資源和當地語系化範例](https://go.microsoft.com/fwlink/p/?linkid=231501)

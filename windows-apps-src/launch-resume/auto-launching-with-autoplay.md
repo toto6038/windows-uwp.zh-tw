@@ -6,18 +6,18 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 714da78a8860eec92bce9389185f52a58e45b44e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f49d70ceadad8309419846aa26cb9f97df1c82ff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947121"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047433"
 ---
 # <a name="span-iddevlaunchresumeauto-launchingwithautoplayspanauto-launching-with-autoplay"></a><span id="dev_launch_resume.auto-launching_with_autoplay"></span>使用自動播放功能來自動啟動
 
 當使用者將裝置連接至電腦時，您可以使用**自動播放**，讓您的應用程式成為一個選項。 這些裝置包含非磁碟區型裝置 (例如相機或媒體播放裝置) 或磁碟區型裝置 (例如 USB 隨身碟、SD 記憶卡或 DVD)。 當使用者使用透過近接 (輕觸) 方式在兩部電腦之間分享檔案時，您也可以使用 **「自動播放」**，讓您的 app 成為一個選項。
 
-> **注意：** 如果您是裝置製造商，而且您想要將您的[Microsoft Store 裝置應用程式](http://go.microsoft.com/fwlink/p/?LinkID=301381)做為您的裝置的 **「 自動播放 」** 處理常式產生關聯，您可以找出該應用程式在裝置中繼資料中的。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的自動播放](http://go.microsoft.com/fwlink/p/?LinkId=306684)。
+> **注意：** 如果您是裝置製造商，而且您想要將您的[Microsoft Store 裝置應用程式](https://go.microsoft.com/fwlink/p/?LinkID=301381)做為您的裝置的 **「 自動播放 」** 處理常式產生關聯，您可以找出該應用程式在裝置中繼資料中的。 如需詳細資訊，請參閱 [Microsoft Store 裝置應用程式的自動播放](https://go.microsoft.com/fwlink/p/?LinkId=306684)。
 
 ## <a name="register-for-autoplay-content"></a>登錄自動播放內容
 
@@ -218,7 +218,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 1.  按 F5 以建置和部署 app (偵錯模式)。
 2.  若要執行 app，請將相機中的相機記憶卡或其他存放裝置插入電腦。 然後從自動播放選項清單中選取您在 package.appxmanifest 檔案中指定的其中一個內容事件選項。 這個範例程式碼只會顯示或複製相機記憶卡之 [DCIM] 資料夾中的相片。 如果您的相機記憶卡將相片儲存在 [AVCHD] 或 [PRIVATE\\ACHD] 資料夾中，您必須隨之更新程式碼。
-    **注意：** 如果您沒有相機記憶卡，您可以使用快閃磁碟機是否有一個名為根目錄中的 **[dcim]** 資料夾，如果 [dcim] 資料夾的子資料夾，其中包含映像。
+    **注意：** 如果您沒有相機記憶卡，您可以使用快閃磁碟機是否有一個名為根目錄中的 **[dcim]** 資料夾，如果在 [dcim] 資料夾的子資料夾，其中包含映像。
 
 ## <a name="register-for-an-autoplay-device"></a>登錄自動播放裝置
 
@@ -227,17 +227,17 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 我們將在此處示範如何在將相機連接到電腦時，將您的 app 識別為 **\[自動播放\]** 選項。 該 app 會登錄為 **WPD\\ImageSourceAutoPlay** 事件的處理常式。 當相機及其他影像裝置通知 Windows 可攜式裝置 (WPD) 系統它們是使用 MTP 的 ImageSource 時，該系統常會引發這個事件。 如需詳細資訊，請參閱 [Windows 可攜式裝置](https://msdn.microsoft.com/library/windows/hardware/ff597729)。
 
-**重要** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是[桌面裝置系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 應用程式可以使用這些 Api 只會在傳統型裝置系列，例如電腦中的 windows 10 裝置。
+**重要** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) Api 是在[傳統型裝置系列](https://msdn.microsoft.com/library/windows/apps/dn894631)的一部分。 應用程式可以使用這些 Api 只會在傳統型裝置系列，例如電腦中的 windows 10 裝置。
 
  
 
 ### <a name="step-1-create-a-new-project-and-add-autoplay-declarations"></a>步驟 1：建立新專案以及新增自動播放宣告
 
-1.  開啟 Visual Studio，然後選取 **\[檔案\]** 功能表的 **\[新增專案\]**。 在 **Visual C#** 區段中，在 **Windows** 下，選取 **\[空白的 App (通用 Windows)\]**。 將 app 命名為 **AutoPlayDevice\_Camera**，然後按一下 **\[確定\]**。
+1.  開啟 Visual Studio，然後選取 [檔案]**** 功能表的 [新增專案]****。 在 **Visual C#** 區段中，在 **Windows** 下，選取 [空白的 App (通用 Windows)]****。 將 app 命名為 **AutoPlayDevice\_Camera**，然後按一下 **\[確定\]**。
 2.  開啟 Package.appxmanifest 檔案，然後選取 \[功能\]**** 索引標籤。選取 \[抽取式存放裝置\]**** 功能。 這可讓 app 存取做為卸除式存放磁碟區裝置的相機中的資料。
 3.  在資訊清單檔案中，選取 \[宣告\]**** 索引標籤。在 \[可用宣告\]**** 下拉式清單中，選取 \[自動播放裝置\]****，然後按一下 \[新增\]****。 選取已經新增至 **\[支援的宣告\]** 清單中的新 **\[自動播放裝置\]** 項目。
 4.  當自動播放引發已知事件的裝置事件時，**\[自動播放裝置\]** 宣告可以將您的 app 識別為選項。 在 **\[啟動動作\]** 區段中，為第一個啟動動作輸入下表的值。
-5.  在 **\[可用宣告\]** 下拉式清單中，選取 **\[檔案類型關聯\]**，然後按一下 **\[加入\]**。 在新 **\[檔案類型關聯\]** 宣告的 \[屬性\] 中，將 **\[顯示名稱\]** 欄位設定成 **Show Images from Camera**，並將 **\[名稱\]** 欄位設定成 **camera\_association1**。 在 **\[支援的檔案類型\]** 區段中，如果有需要請按一下 **\[加入新的\]**。 將 **\[檔案類型\]** 欄位設定成 **.jpg**。 在 **\[支援的檔案類型\]** 區段中，再次按一下 **\[加入新的\]**。 將新檔案關聯的 **\[檔案類型\]** 欄位設定成 **.png**。 對於內容事件，自動播放會篩選掉未明確地與您 app 關聯的所有檔案類型。
+5.  在 [可用宣告]**** 下拉式清單中，選取 [檔案類型關聯]****，然後按一下 [加入]****。 在新 **\[檔案類型關聯\]** 宣告的 \[屬性\] 中，將 **\[顯示名稱\]** 欄位設定成 **Show Images from Camera**，並將 **\[名稱\]** 欄位設定成 **camera\_association1**。 在 **\[支援的檔案類型\]** 區段中，如果有需要請按一下 **\[加入新的\]**。 將 **\[檔案類型\]** 欄位設定成 **.jpg**。 在 **\[支援的檔案類型\]** 區段中，再次按一下 **\[加入新的\]**。 將新檔案關聯的 **\[檔案類型\]** 欄位設定成 **.png**。 對於內容事件，自動播放會篩選掉未明確地與您 app 關聯的所有檔案類型。
 6.  儲存並關閉資訊清單檔案。
 
 | 設定             | 值            |

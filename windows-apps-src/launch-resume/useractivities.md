@@ -5,12 +5,12 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f35882af5ed7f66f59eb4e7fc4410223c4424e92
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941792"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046198"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -34,7 +34,7 @@ ms.locfileid: "8941792"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用於以特定的內容繼續應用程式。 一般而言，此連結所採用的格式為配置的通訊協定處理常式 (例如「my-app://page2?action=edit」) 或 AppUriHandler (例如 http://constoso.com/page2?action=edit)。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 會公開一個類別，讓使用者能夠依照標題、描述或調適型卡片元素目測識別活動。
-3. 最後，[Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) 是您可以儲存活動中繼資料的位置，可用於群組與擷取特定內容下的活動。 通常，會採用 [http://schema.org](http://schema.org) 資料的格式。
+3. 最後，[Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) 是您可以儲存活動中繼資料的位置，可用於群組與擷取特定內容下的活動。 通常，會採用 [http://schema.org](https://schema.org) 資料的格式。
 
 若要將 **UserActivity** 新增至應用程式：
 
@@ -99,11 +99,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 經過簡單的應用程式，此應用程式繼續執行的唯一活動放置您次要頁面上時，應用程式可以。
+此程式碼的功能就是偵測是否是透過通訊協定啟用應用程式。 如果是，它會進一步瞭解應用程式應執行什麼動作，以繼續進行系統啟用此程式碼所針對的工作。 經過簡單的應用程式，此應用程式繼續執行的唯一活動放置您次要頁面上出現在應用程式時。
 
 ## <a name="use-adaptive-cards-to-improve-the-timeline-experience"></a>使用調適型卡片改善時間軸體驗
 
-使用者活動會顯示在 Cortana 與時間軸中。 當活動顯示在時間軸中時，我們會使用[調適型卡片](http://adaptivecards.io/)架構顯示活動。 如果您沒有為每個活動提供調適型卡片，則時間軸會自動根據您的應用程式名稱與圖示、標題欄位及選用的描述欄位建立一個簡單的活動卡。 以下是調適型卡片承載與其所產生卡片的範例。
+使用者活動會顯示在 Cortana 與時間軸中。 當活動顯示在時間軸中時，我們會使用[調適型卡片](https://adaptivecards.io/)架構顯示活動。 如果您沒有為每個活動提供調適型卡片，則時間軸會自動根據您的應用程式名稱與圖示、標題欄位及選用的描述欄位建立一個簡單的活動卡。 以下是調適型卡片承載與其所產生卡片的範例。
 
 ![調適型卡片](images/adaptivecard.png)]
 
@@ -157,7 +157,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 您可以使用 [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API 讓您的應用程式顯示在時間軸與 Cortana 中。
 * 深入了解[**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * 請查看[範例程式碼](https://github.com/Microsoft/project-rome)。
-* 請參閱[更複雜的調適型卡片](http://adaptivecards.io/)。
+* 請參閱[更複雜的調適型卡片](https://adaptivecards.io/)。
 * 透過 [Microsoft Graph](https://developer.microsoft.com/graph/) 從 iOS、Android 或您的 Web 服務發佈 **UserActivity**。
 * 深入了解 [GitHub 上的 Project Rome](https://github.com/Microsoft/project-rome)。
 
@@ -169,7 +169,7 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 * [使用者活動 （專案 Rome 文件）](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [調適型卡片](https://docs.microsoft.com/adaptive-cards/)
-* [調適型卡片視覺化工具範例](http://adaptivecards.io/)
+* [調適型卡片視覺化工具範例](https://adaptivecards.io/)
 * [處理 URI 啟用](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [使用 Microsoft Graph、活動摘要及調適型卡片在任何平台上與您的客戶互動](https://channel9.msdn.com/Events/Connect/2017/B111)
 * [Microsoft Graph](https://developer.microsoft.com/graph/)

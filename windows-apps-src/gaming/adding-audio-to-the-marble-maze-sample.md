@@ -6,12 +6,12 @@ ms.date: 10/18/2017
 ms.topic: article
 keywords: Windows 10, UWP, 音訊, 遊戲, 範例
 ms.localizationpriority: medium
-ms.openlocfilehash: 666ea75f1d4f18121b7ae9fa3def3b455ae3e7a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 40fa8b1c23d591453308c3ad066967ed65902917
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924708"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050891"
 ---
 # <a name="adding-audio-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入音訊
 
@@ -20,7 +20,7 @@ ms.locfileid: "8924708"
 Marble Maze 會播放背景音樂，也會使用遊戲音效來表示遊戲事件，例如當彈珠碰到圍牆時。 實作的一個重點是Marble Maze 使用殘響或回音效果來模擬彈珠彈跳的音效。 殘響效果實作會讓回音在小房間裡更快到達聽者的位置、更大聲，房間較大時則會比較小聲，且較慢到達聽者的位置。
 
 > [!NOTE]
-> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
 以下是本文件所討論在遊戲中使用音訊時的一些重點：
 

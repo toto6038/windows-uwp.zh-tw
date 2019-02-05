@@ -1,8 +1,22 @@
 ---
-<<<<<<< HEAD 作者： 卡爾橋接器 Microsoft 描述： 最佳化您的應用程式從 Xbox 遊戲台與遙控器輸入。
-=== 描述： TODO
->>>>>>> 主要標題： 遊戲台與遙控器的互動 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47 標籤： 遊戲台與遠端互動範本： detail.hbs isNew： 則為 true <<<<<<< HEAD ms.author: kbridge=======
-主要ms.date: 2017/02/08 ms.topic： 文章關鍵字： windows 10，uwp ms.localizationpriority： 媒體
+author: Karl-Bridge-Microsoft
+Description: Optimize your app for input from Xbox gamepad and remote control.
+title: 遊戲台與遙控器的互動
+ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
+label: Gamepad and remote interactions
+template: detail.hbs
+isNew: true
+ms.author: kbridge
+ms.date: 02/08/2017
+ms.topic: article
+keywords: Windows 10, UWP
+ms.localizationpriority: medium
+ms.openlocfilehash: 022724064ad1e7f5551b6676bf256ca5cf6e4b8e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048555"
 ---
 # <a name="gamepad-and-remote-control-interactions"></a>遊戲台與遙控器的互動
 

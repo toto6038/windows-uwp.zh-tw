@@ -6,19 +6,19 @@ ms.date: 08/21/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store Services SDK
 ms.localizationpriority: medium
-ms.openlocfilehash: c0c283f9edd33b8c39ebccd0a71019741a0d1448
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 24ec2013735597efae73aee31bb4aee1a8e1413e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921009"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044299"
 ---
 # <a name="engage-customers-with-the-microsoft-store-services-sdk"></a>透過 Microsoft Store Services SDK 與客戶互動
 
-Microsoft Store Services SDK 提供功能，協助您吸引客戶在您的通用 Windows 平台 (UWP) 應用程式，例如將目標式的通知傳送到您的應用程式和執行 A / B 實驗中您的應用程式。 此 SDK 是適用於 Visual Studio 2015 及後續 Visual Studio 版本的擴充功能。
+Microsoft Store Services SDK 提供功能，可協助您吸引客戶在您的通用 Windows 平台 (UWP) 應用程式，例如目標式的通知傳送到您的應用程式和執行 A / B 實驗中您的應用程式。 此 SDK 是適用於 Visual Studio 2015 及後續 Visual Studio 版本的擴充功能。
 
 > [!NOTE]
-> 若要在您的 UWP app 中顯示廣告，請使用 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 而非 Microsoft Store Services SDK。 Advertising 程式庫已從 Microsoft Store Services SDK 移至 Microsoft Advertising SDK。 如需詳細資訊，請參閱[在您的應用程式中顯示廣告](display-ads-in-your-app.md)。
+> 若要在您的 UWP app 中顯示廣告，請使用 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 而非 Microsoft Store Services SDK。 Advertising 程式庫已從 Microsoft Store Services SDK 移至 Microsoft Advertising SDK。 如需詳細資訊，請參閱[在您的應用程式中顯示廣告](display-ads-in-your-app.md)。
 
 
 
@@ -28,10 +28,10 @@ Microsoft Store Services SDK 目前支援下列 UWP app 案例。 如需 API 參
 
 |  案例  |  描述   |
 |------------|----------------|
-|  [在您的 UWP app 中使用 A/B 測試來執行實驗](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 您在合作夥伴中心中定義實驗之後，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)類別來取得實驗變化中您的應用程式、 使用此資料來修改您測試，此功能的行為，然後使用 LogForVariation [](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法將檢視事件和轉換事件傳送至合作夥伴中心。 最後，使用合作夥伴中心來檢視結果並管理實驗。  |
+|  [在您的 UWP app 中使用 A/B 測試來執行實驗](run-app-experiments-with-a-b-testing.md)    |  在「通用 Windows 平台」(UWP) app 中執行 A/B 測試，以在將功能釋出給每個人之前，先對部分客戶測量功能是否有效。 在合作夥伴中心中定義實驗之後，使用[StoreServicesExperimentVariation](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesexperimentvariation)類別來取得實驗變化中您的應用程式、 使用此資料來修改您測試之功能的行為，然後使用 LogForVariation [](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.logforvariation)方法將檢視事件和轉換事件傳送至合作夥伴中心。 最後，使用合作夥伴中心，來檢視結果並管理實驗。  |
 |  [從您的 UWP app 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)    |  在您的 UWP app 中使用 [StoreServicesFeedbackLauncher](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesfeedbacklauncher) 類別將您的 Windows10 客戶引導至「意見反應中樞」，以便他們在其中提交問題、建議及附議。 然後，管理此[意見反應報告](../publish/feedback-report.md)合作夥伴中心中的意見反應。 |
 |  [設定您的 UWP app 以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)    |  在您的 UWP app 中使用[StoreServicesEngagementManager](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager)類別，來註冊您的應用程式以接收目標式推播通知您傳送給您使用合作夥伴中心的客戶。  |
-|   [在您的 UWP 應用程式的使用方式報告，在合作夥伴中心記錄自訂事件](log-custom-events-for-dev-center.md)   |  在您的 UWP app 中使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)類別，來與您在合作夥伴中心的應用程式相關聯的自訂事件記錄。 然後，檢閱自訂事件[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作夥伴中心中的**自訂事件**] 區段中的次數總計。  |
+|   [在您的 UWP 應用程式的使用方式報告，在合作夥伴中心記錄自訂事件](log-custom-events-for-dev-center.md)   |  在您的 UWP app 中使用[StoreServicesCustomEventLogger](https://docs.microsoft.com/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log)類別，以記錄您的應用程式，在合作夥伴中心與相關聯的自訂事件。 然後，檢閱自訂事件[使用方式報告](https://msdn.microsoft.com/windows/uwp/publish/usage-report)合作夥伴中心中的**自訂事件**] 區段中的發生次數總計。  |
 
 <span id="prerequisites" />
 
@@ -48,7 +48,7 @@ Microsoft Store Services SDK 需要：
 
 在開發電腦上安裝 Microsoft Store Services SDK 有兩個選項：
 
-* **MSI 安裝程式**&nbsp;&nbsp;您可以透過[這裡](http://aka.ms/store-em-sdk)提供的 MSI 安裝程式來安裝 SDK。
+* **MSI 安裝程式**&nbsp;&nbsp;您可以透過[這裡](https://aka.ms/store-em-sdk)提供的 MSI 安裝程式來安裝 SDK。
 * **NuGet 套件**&nbsp;&nbsp;您可將 SDK 安裝為 NuGet 套件。
 
 Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store Services SDK。 如果您現有的專案使用此 SDK，而您想要使用最新的版本，則您只需在開發電腦上下載並安裝最新版的 SDK 即可。
@@ -68,7 +68,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  下載並安裝 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
+3.  下載並安裝 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
 
 4.  重新啟動 Visual Studio。
 
@@ -99,7 +99,7 @@ Microsoft 會定期發行具有效能改進與新功能的新版 Microsoft Store
 
 5. 在搜尋方塊中，輸入 **Microsoft.Services.Store.Engagement** 並安裝 Microsoft.Services.Store.Engagement 套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
-    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 ```repositoryPath``` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。 由您的通用套件路徑太長，可能也被造成問題。 在此情況下，新增```globalPackagesFolder```到您的 nuget.config 檔案的值。
+    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 ```repositoryPath``` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。 由您的通用套件路徑太長，可能也被造成問題。 在此情況下，新增```globalPackagesFolder```到您的 nuget.config 檔案的值。
 
 6. 關閉包含您專案的 Visual Studio 方案，然後重新開啟方案。
 
@@ -141,5 +141,5 @@ Microsoft Store Services SDK 中的 Microsoft.Services.Store.Engagement.dll 程�
 * [Microsoft Store Services SDK API 參考](https://docs.microsoft.com/uwp/api/overview/engagement)
 * [使用 A/B 測試執行實驗](run-app-experiments-with-a-b-testing.md)
 * [從您的 App 啟動意見反應中樞](launch-feedback-hub-from-your-app.md)
-* [設定您的應用程式會接收到合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
+* [設定您的 app 以接收合作夥伴中心推播通知](configure-your-app-to-receive-dev-center-notifications.md)
 * [記錄合作夥伴中心的自訂事件](log-custom-events-for-dev-center.md)

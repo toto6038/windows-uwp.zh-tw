@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 21e0516e3de4085e9ad2f3b67cb5ed497d907f5c
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: c0eb2b6e668baec9f5ad1ef859b7213f20748beb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980366"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049575"
 ---
 # <a name="track-recently-used-files-and-folders"></a>追蹤最近使用的檔案和資料夾
 
@@ -25,7 +25,7 @@ ms.locfileid: "8980366"
 從靜態 [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) 屬性取得的 [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) 類別，代表您的 app 的 MRU。 MRU 項目會儲存為 [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) 物件，所以 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件 (代表檔案) 和 [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) 物件 (代表資料夾) 都可以新增到 MRU。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)和[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整的範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)和[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先決條件
 

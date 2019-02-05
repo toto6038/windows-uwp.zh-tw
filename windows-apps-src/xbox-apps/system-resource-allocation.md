@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
-ms.openlocfilehash: f2aad1b4d6abf9a05af9b9a938188c69d9cae7c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941319"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048365"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>適用於 Xbox One 上 UWP 應用程式和遊戲的系統資源
 
@@ -44,7 +44,7 @@ ms.locfileid: "8941319"
 
 對於**應用程式開發**，相較於標準電腦，資源可能有限且會因系統上執行的應用程式和遊戲數目而異。
 
-對於 **「遊戲開發」**，Xbox One (如同其他遊戲主機) 是需要特定硬體型開發套件來存取其完整功能的特殊化硬體。 如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲，請考慮向 [ID@Xbox](http://www.xbox.com/Developers/id) 計畫註冊來存取該 Xbox One 開發套件。
+對於 **「遊戲開發」**，Xbox One (如同其他遊戲主機) 是需要特定硬體型開發套件來存取其完整功能的特殊化硬體。 如果您正在處理需要存取 Xbox One 硬體的最大潛力的遊戲，請考慮向 [ID@Xbox](https://www.xbox.com/Developers/id) 計畫註冊來存取該 Xbox One 開發套件。
 
 
 如需稍多一些關於 Xbox One 上 UWP app 系統資源的詳細資訊，請觀看這部影片的第一部分。

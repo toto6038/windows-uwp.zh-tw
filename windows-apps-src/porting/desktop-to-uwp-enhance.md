@@ -6,12 +6,12 @@ ms.date: 10/15/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 42229212a0f54e307eaa841849c1a279c4354d2a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e06de7d33604981e0055d9d57f774d280753db2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941865"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051051"
 ---
 # <a name="enhance-your-desktop-application-for-windows-10"></a>增強您的 Windows 10 傳統型應用程式
 
@@ -55,11 +55,11 @@ ms.locfileid: "8941865"
 
 :white_check_mark: **首先，決定您要新增哪些體驗**
 
-您有許多選擇。 例如，您可以使用創造營收 Api 或直接注意到您的應用程式，當您有一些有趣共用，例如另一位使用者張貼的新圖片簡化採購訂單流程。
+您有許多選擇。 例如，您也可以使用創造營收 Api 或直接注意到您的應用程式，當您有一些有趣共用，例如另一位使用者張貼的新圖片簡化採購訂單流程。
 
 ![快顯通知](images/desktop-to-uwp/toast.png)
 
-即使使用者忽略或關閉您的訊息，他們仍可以在控制中心再次看到這些訊息，按一下即可開啟您的應用程式。 這會增加持續使用您的應用程式，並獲得在於能夠讓您的應用程式與作業系統整合的額外好處。 我們稍後會顯示該體驗的程式碼。
+即使使用者忽略或關閉您的訊息，他們仍可以在控制中心再次看到這些訊息，按一下即可開啟您的應用程式。 這可提高持續使用您的應用程式，並讓您的應用程式與作業系統深度整合的獲得新增。 我們稍後會顯示該體驗的程式碼。
 
 請造訪我們的[開發人員中心](https://developer.microsoft.com/windows)以尋找靈感。
 
@@ -201,7 +201,7 @@ void UWP::ShowToast()
 
 ### <a name="runtime-checks"></a>執行階段檢查
 
-您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 您的應用程式呼叫 Windows 執行階段 Api 只有當使用者在執行您的應用程式與已封裝的應用程式上的 Windows 10。
+您可以為所有 Windows 使用者編譯一組二進位檔，不考慮他們執行什麼 Windows 版本。 您的應用程式呼叫 Windows 執行階段 Api 只有當使用者是執行您的應用程式與已封裝的應用程式上的 Windows 10。
 
 執行階段檢查新增至您的程式碼的最簡單方式是安裝此 Nuget 套件：[傳統型橋接器協助程式](https://www.nuget.org/packages/DesktopBridge.Helpers/)，然後使用``IsRunningAsUWP()``方法，以關閉所有的程式碼會呼叫 Windows 執行階段 Api。 如需詳細資訊，請參閱此部落格文章：[傳統型橋接器 - 識別應用程式的內容](https://blogs.msdn.microsoft.com/appconsult/2016/11/03/desktop-bridge-identify-the-applications-context/) (英文)。
 
@@ -222,7 +222,7 @@ void UWP::ShowToast()
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

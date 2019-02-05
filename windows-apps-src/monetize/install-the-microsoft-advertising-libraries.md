@@ -6,16 +6,16 @@ ms.date: 08/23/2017
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 安裝, SDK, 廣告庫
 ms.localizationpriority: medium
-ms.openlocfilehash: 2066d055f7abf0e9a34e245d9c6a95e14596d362
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 121accdfc8996c609c616838f645f19e2377c7c5
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939336"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047749"
 ---
 # <a name="install-the-microsoft-advertising-sdk"></a>安裝 Microsoft Advertising SDK
 
-若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
+若要在您的適用於 Windows 10 的 UWP app 中顯示廣告，請安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 這個 SDK 是 Visual Studio 2015 和更新版本的擴充功能。
 
 > [!NOTE]
 > 如果您正在開發 JavaScript/HTML UWP app 且已經安裝 Windows 10 SDK 版本 10.0.14393 （年度更新版） 或更新版本，則也須安裝[WinJS](https://github.com/winjs/winjs)程式庫。 這個程式庫原本包含在舊版的 Windows 10 SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。
@@ -35,7 +35,7 @@ ms.locfileid: "8939336"
     MsiExec.exe /x{6AC81125-8485-463D-9352-3F35A2508C11}
     ```
 
-3.  下載並安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
+3.  下載並安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 可能需要幾分鐘的時間來安裝。 請務必等到程序完成為止。
 
 4.  重新啟動 Visual Studio。
 
@@ -66,7 +66,7 @@ ms.locfileid: "8939336"
 
 5. 在搜尋方塊中，輸入 **Microsoft.Advertising.XAML** (適用於 XAML 專案) 或 **Microsoft.Advertising.JS** (適用於 JavaScript/HTML 專案) 並安裝對應的套件。 套件完成安裝後，儲存您的方案。
     > [!NOTE]
-    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 ```repositoryPath``` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](http://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。
+    > 如果 **\[輸出\]** 視窗回報 *Install-Package* 錯誤，指出指定的路徑太長，您可能需要設定讓 NuGet 將套件解壓縮至路徑比預設位置短的替代位置。 若要這樣做，請將 ```repositoryPath``` 值新增到您電腦上的 nuget.config 檔案中，然後將它指派至可解壓縮 NuGet 套件的較短資料夾路徑。 如需詳細資訊，請參閱 NuGet 文件中的[這篇文章](https://docs.nuget.org/ndocs/consume-packages/configuring-nuget-behavior)。 或者，您也可以嘗試將您的 Visual Studio 專案移至路徑較短的替代資料夾。
 
 6. 關閉您的方案，然後重新開啟它。
 
@@ -101,7 +101,7 @@ ms.locfileid: "8939336"
 
 ## <a name="understanding-framework-packages-in-the-microsoft-advertising-sdk"></a>了解 Microsoft Advertising SDK 中的架構套件
 
-適用於 UWP App 的 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 程式庫是設定為*架構套件*。 這個程式庫包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空間中的廣告 API。
+適用於 UWP App 的 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp) 中的 Microsoft.Advertising.dll 程式庫是設定為*架構套件*。 這個程式庫包含 [Microsoft.Advertising](https://docs.microsoft.com/uwp/api/microsoft.advertising) 和 [Microsoft.Advertising.WinRT.UI](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui) 命名空間中的廣告 API。
 
 因為這個程式庫是架構套件，這意謂著在使用者安裝使用這個程式庫的 App 版本之後，每當我們發佈具有修正程式和效能改進的新程式庫版本時，便會在其裝置上透過 Windows Update 自動更新這個程式庫。 這有助於確保您客戶的裝置上一律會安裝最新的可用程式庫版本。
 

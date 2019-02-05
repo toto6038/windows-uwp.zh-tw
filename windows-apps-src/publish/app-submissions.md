@@ -6,30 +6,30 @@ keywords: 檢查清單, windows, uwp, 提交項目, 提交, 遊戲, 應用程式
 ms.date: 10/31/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 444243bdb1d50146ba54af4f1417103566f97f93
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b98ea7f1d28c4fcd63cd2d4706905578b240e126
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944359"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044911"
 ---
 # <a name="app-submissions"></a>App 提交
 
 
 一旦您已[透過保留名稱來建立您的 app](create-your-app-by-reserving-a-name.md)，您就可以開始進行發行。 第一個步驟是建立**提交**。
 
-您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 您對您的提交的更新會儲存，因此您可以回來，並在其上運作，每當您準備好。
+您可以在您的 app 完成並準備好發行時開始提交，或您可以開始輸入資訊，甚至是在撰寫一行程式碼之前。 您對您的提交更新會儲存，因此您可以回來，並在其上運作，每當您準備好。
 
 > [!NOTE]
-> 您必須在[合作夥伴中心](https://partner.microsoft.com/dashboard)有使用中的[開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkId=615100)，才能提交到 Microsoft Store 的應用程式。
+> 您必須在[合作夥伴中心](https://partner.microsoft.com/dashboard)有使用中的[開發人員帳戶](https://go.microsoft.com/fwlink/p/?LinkId=615100)，才能提交到 Microsoft Store 的應用程式。
 
-您的應用程式發佈之後，您可以在合作夥伴中心建立其他提交來發佈更新的版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要建立新的提交發佈的應用程式，按一下 [其**概觀**頁面上所顯示最新提交旁的**更新**。 您也可以[移除從 microsoft Store 應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （，然後使其可再次更新的版本，如果您想要）。
+您的應用程式發佈之後，您可以在合作夥伴中心中建立其他提交來發佈更新的版本。 建立新的提交，讓您能夠在需要時進行變更並加以發佈，而不論您正在上傳的是新套件，或只是變更像是價格或類別等詳細資料。 若要建立新的提交發佈的應用程式，按一下 [其**概觀**頁面上所顯示最新提交旁的**更新**。 您也可以[移除從 microsoft Store 應用程式](guidance-for-app-package-management.md#removing-an-app-from-the-store)若要這樣做 （，然後使其可再次更新的版本，如果您想要）。
 
 > [!NOTE]
-> 文件的這一節說明如何在合作夥伴中心建立 app 提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。
+> 文件的這一節會說明如何在合作夥伴中心建立 app 提交。 或者，您可以使用 [Microsoft Store 提交 API](../monetize/create-and-manage-submissions-using-windows-store-services.md)，將應用程式提交自動化。
 
 > [!IMPORTANT]
-> 截至 2018 年 10 月 31 剛建立的產品不能包含目標為 Windows 8.x/Windows 套件 Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
+> 截至 2018 年 10 月 31 剛建立的產品不能包含套件目標為 Windows 8.x/Windows Phone 8.x 或更舊版本。 如需詳細資訊，請參閱此[部落格文章](https://blogs.windows.com/buildingapps/2018/08/20/important-dates-regarding-apps-with-windows-phone-8-x-and-earlier-and-windows-8-8-1-packages-submitted-to-microsoft-store/#SzKghBbqDMlmAO4c.97)。
 
 ## <a name="app-submission-checklist"></a>App 提交檢查清單
 
@@ -46,7 +46,7 @@ ms.locfileid: "8944359"
 | **排程**                  | 預設：儘速發行        | [設定精確發行時間表](configure-precise-release-scheduling.md) |
 | **基本價格**                | 必要                                    | [設定與排程應用程價格](set-and-schedule-app-pricing.md)              |
 | **免費試用**                | 預設：沒有免費試用                      | [免費試用](set-app-pricing-and-availability.md#free-trial)              |
-| **銷售定價**              | 選用                                    | [促銷應用程式和附加元件](put-apps-and-add-ons-on-sale.md)           |
+| **銷售定價**              | 選擇性                                    | [促銷應用程式和附加元件](put-apps-and-add-ons-on-sale.md)           |
 | **組織授權**    | 預設：允許組織大量取得 | [組織授權選項](organizational-licensing.md)        |
       |
 
@@ -58,11 +58,11 @@ ms.locfileid: "8944359"
 | **類別與子類別**  | 必要                                    | [類別與子類別表格](category-and-subcategory-table.md)       |
 | **隱私權原則 URL**            | 對許多應用程式為必要項目。 請參閱[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)和 [Microsoft Store 原則](https://docs.microsoft.com/en-us/legal/windows/agreements/store-policies#105-personal-information) | [隱私權原則 URL](enter-app-properties.md#privacy-policy-url)        |
 | **網站**                   | 選用                                    | [網站](enter-app-properties.md#website)                   |
-| **支援連絡資訊**      | 如果您的產品要在 Xbox 上提供則為必要項目，否則為選用 (但建議使用)                                   | [支援連絡資訊](enter-app-properties.md#support-contact-info)              |
+| **支援連絡方式的資訊**      | 如果您的產品要在 Xbox 上提供則為必要項目，否則為選用 (但建議使用)                                   | [支援連絡資訊](enter-app-properties.md#support-contact-info)              |
 | **遊戲設定**             | 選用 (僅適用於遊戲)         | [遊戲設定](enter-app-properties.md#game-settings) |
 | **顯示模式**             | 選用                   | [顯示模式](enter-app-properties.md#display-mode) |
 | **產品宣告**          | 預設：客戶可將此應用程式安裝至備用磁碟機或抽取式存放裝置；Windows 可將此應用程式的資料自動備份至 OneDrive。 | [產品宣告](app-declarations.md) |
-| **系統需求**      | 選用                                    | [系統需求](enter-app-properties.md#system-requirements)      |
+| **系統需求**      | 選擇性                                    | [系統需求](enter-app-properties.md#system-requirements)      |
 
 <span/>
 
@@ -91,17 +91,17 @@ ms.locfileid: "8944359"
 | 欄位名稱                    | 注意事項                                       | 如需詳細資訊                                                     |
 |-------------------------------|---------------------------------------------|-------------------------------------------------------------------|
 | **說明**               | 必要                                    | [撰寫一份出色的應用程式介紹](write-a-great-app-description.md) |
-| **此版本中的新功能**   | 選用                                 | [版本資訊](create-app-store-listings.md#whats-new-in-this-version)       |
-| **應用程式功能**              | 選用                                    | [產品功能](create-app-store-listings.md#product-features)         |
+| **此版本中的新功能**   | 選擇性                                 | [版本資訊](create-app-store-listings.md#whats-new-in-this-version)       |
+| **應用程式功能**              | 選擇性                                    | [產品功能](create-app-store-listings.md#product-features)         |
 | **螢幕擷取畫面**               | 必要 (至少一個螢幕擷取畫面，建議提供四個或更多)          | [螢幕擷取畫面](app-screenshots-and-images.md#screenshots)          |
 | **Microsoft Store 標誌**               | 建議使用；某些 OS 版本為必要 | [Microsoft Store 標誌](app-screenshots-and-images.md#store-logos)             |
-| **預告片**                  | 選用                                    | [預告片](app-screenshots-and-images.md#trailers)                | 
+| **預告片**                  | 選擇性                                    | [預告片](app-screenshots-and-images.md#trailers)                | 
 | **Windows 10 和 Xbox 影像 (16:9 超級主角美工圖案)**     | 建議執行        | [Windows 10 和 Xbox 影像 （16:9 超級主角美工圖案）
 ] (app-screenshots-and-images.md#windows-10-and-xbox-image-169-super-hero-art) |
 | **Xbox 影像**     | 如果您發佈到 Xbox 以正確顯示所需        | [Xbox 影像
 ] (應用程式的螢幕擷取畫面-和-images.md #xbox 影像) |
 | **補充的欄位**  | 選擇性                                    | [補充的欄位](create-app-store-listings.md#supplemental-fields) 
-| **搜尋詞彙**              | 選用                                    | [搜尋詞彙](create-app-store-listings.md#search-terms)         |
+| **搜尋詞彙**              | 選擇性                                    | [搜尋詞彙](create-app-store-listings.md#search-terms)         |
 | **著作權與商標資訊** | 選用                                 | [著作權與商標資訊](create-app-store-listings.md#copyright-and-trademark-info) |
 | **其他授權條款**  | 選用                                    | [其他授權條款](create-app-store-listings.md#additional-license-terms) |
 | **開發者**              | 選用                                    | [開發者](create-app-store-listings.md#developed-by)                   |

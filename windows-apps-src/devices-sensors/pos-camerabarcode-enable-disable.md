@@ -5,12 +5,12 @@ ms.date: 05/1/2018
 ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
-ms.openlocfilehash: f3e1d955ce7e70f2f2a454823020df38db66e47d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6b802dfa44f36768dc2446ee1d15bf9ca6d4f9f3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930426"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9051041"
 ---
 # <a name="enable-or-disable-the-software-decoder-that-ships-with-windows"></a>啟用或停用隨附於 Windows 10 的軟體解碼器
 在 Windows 10 版本 1803 中，安裝有軟體解碼器並且預設為啟用。  如果您不想使用相機條碼掃描器，或者如果您已經取得協力廠商的解碼器搭配 Windows.Devices.PointOfService.BarcodeScanner API，並且兩者都不想使用，您可以停用 Windows 隨附的軟體解碼器。
@@ -46,7 +46,7 @@ Windows Registry Editor Version 5.00
 ```  
 
 > [!Warning] 
-> 如果您未正確修改登錄，可能會發生嚴重問題。  若要增加保護，請在修改前備份登錄。  之後如果發生問題，您還可以還原登錄。  如需如何備份和還原登錄的詳細資訊，請按一下以下文章編號，以檢視 Microsoft 知識庫中的文章： <br/><br/> [322756](http://support.microsoft.com/kb/322756)如何備份及還原 Windows 中的登錄。
+> 如果您未正確修改登錄，可能會發生嚴重問題。  若要增加保護，請在修改前備份登錄。  之後如果發生問題，您還可以還原登錄。  如需如何備份和還原登錄的詳細資訊，請按一下以下文章編號，以檢視 Microsoft 知識庫中的文章： <br/><br/> [322756](https://support.microsoft.com/kb/322756)如何備份及還原 Windows 中的登錄。
 
 > [!NOTE]
 > 內建於 Windows 10 的軟體解碼器由 [**Digimarc Corporation**](https://www.digimarc.com/) 提供。

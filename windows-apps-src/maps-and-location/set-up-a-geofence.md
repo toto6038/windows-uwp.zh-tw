@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp, 地圖, 位置, 地理柵欄, 通知
 ms.localizationpriority: medium
-ms.openlocfilehash: adcce5716a2982cf2c08e98ee337dbad20bddf28
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7e00a3db8890183f50efad6caa31bd573707c6a6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924665"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9045687"
 ---
 # <a name="set-up-a-geofence"></a>設定地理柵欄
 
@@ -20,9 +20,9 @@ ms.locfileid: "8924665"
 
 在您的 app 中設定[**地理柵欄**](https://msdn.microsoft.com/library/windows/apps/dn263587)，並了解如何在前景和背景中處理通知。
 
-**提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**提示**：若要深入了解如何在 app 中存取位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>啟用定位功能
 
@@ -456,7 +456,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 1.  在 Visual Studio 中建立您的 app。
 2.  在 Visual Studio 模擬器中啟動您的應用程式。
-3.  使用這些工具來模擬地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 屬性指定的時間才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。 如需有關模擬位置的詳細資訊，請參閱[設定裝置的模擬地理位置](http://go.microsoft.com/fwlink/p/?LinkID=325245)。
+3.  使用這些工具來模擬地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 屬性指定的時間才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。 如需有關模擬位置的詳細資訊，請參閱[設定裝置的模擬地理位置](https://go.microsoft.com/fwlink/p/?LinkID=325245)。
 4.  您也可以使用模擬器來 預估柵欄的大小，以及要在不同速度被偵測到時所需的大約暫留時間。
 
 ### <a name="test-and-debug-a-geofencing-app-that-is-running-in-the-background"></a>針對在背景執行的地理柵欄 app 進行測試和偵錯
@@ -468,7 +468,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 3.  關閉目前正在本機執行的應用程式。
 4.  在 Visual Studio 模擬器中啟動您的應用程式。 請注意，在模擬器中，一次只支援在一個應用程式上進行背景地理柵欄模擬。 請勿在模擬器中啟動多個地理柵欄應用程式。
 5.  在模擬器中，模擬您地理柵欄區域內外的不同位置。 請確定等待的時間夠長，應超過 [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) 才能觸發事件。 請注意，您必須接受為 app 啟用位置權限的提示。
-6.  使用 Visual Studio 觸發位置背景工作。 如需有關在 Visual Studio 中觸發背景工作的詳細資訊，請參閱[如何觸發背景工作](http://go.microsoft.com/fwlink/p/?LinkID=325378)。
+6.  使用 Visual Studio 觸發位置背景工作。 如需有關在 Visual Studio 中觸發背景工作的詳細資訊，請參閱[如何觸發背景工作](https://go.microsoft.com/fwlink/p/?LinkID=325378)。
 
 ## <a name="troubleshoot-your-app"></a>針對您的 app 進行疑難排解
 
@@ -481,6 +481,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>相關主題
 
-* [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理柵欄的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)

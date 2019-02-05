@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp 列印
 ms.localizationpriority: medium
-ms.openlocfilehash: 16fca2fc98450375ec2dcf7a0d10775b2bba1bf2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3783105c054e5d956ab64aabe9971bb952d6cae6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926261"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046381"
 ---
 # <a name="customize-the-print-preview-ui"></a>自訂預覽列印 UI
 
@@ -25,7 +25,7 @@ ms.locfileid: "8926261"
 
 本節說明如何在預覽列印 UI 中自訂列印選項和設定。 如需列印的詳細資訊，請參閱[從您的 app 進行列印](print-from-your-app.md)。
 
-**提示：** 大部分的本主題中的範例以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)。
+**提示：** 大部分的本主題中的範例以列印範例為基礎。 若要查看完整程式碼，請從 GitHub 的 [Windows-universal-samples 儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載[通用 Windows 平台 (UWP) 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)。
 
  
 
@@ -96,7 +96,7 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**重要**呼叫[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 會移除所有列印選項從預覽列印 UI，包括 [**更多設定**] 連結。 務必在預覽列印 UI 上附加要顯示的選項。
+**重要**呼叫[**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)（） 會移除所有的列印選項從預覽列印 UI，包括 [**更多設定**] 連結。 務必在預覽列印 UI 上附加要顯示的選項。
 
 ### <a name="specify-default-options"></a>指定預設選項
 
@@ -187,4 +187,4 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 * [列印的設計指導方針](https://msdn.microsoft.com/library/windows/apps/Hh868178)
 * [//2015 建置影片：開發在 Windows 10 中列印的 app](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP 列印範例](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [UWP 列印範例](https://go.microsoft.com/fwlink/p/?LinkId=619984)

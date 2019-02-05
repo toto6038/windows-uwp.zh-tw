@@ -6,17 +6,17 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: windows 10, uwp, 年齡分級, 遊戲分級, iarc, 分級, 問卷, 分級委員會, 內容分級
 ms.localizationpriority: medium
-ms.openlocfilehash: f8268e4f3fa6517da480c2ab220863de9523e845
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3582328a0f013c2f7b4ccc9affb5b61ca643761c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927193"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049080"
 ---
 # <a name="age-ratings"></a>年齡分級
 
 
-[App 提交程序](app-submissions.md) 的 **\[年齡分級\]** 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
+[App 提交程序](app-submissions.md) 的 **\[年齡分級\]** 頁面讓您能夠提供 App 的相關資訊，因此，它可以接收到[國際年齡分級聯盟 (IARC)](https://go.microsoft.com/fwlink/p/?LinkId=716854) 分級系統所管理的適當年齡與內容分級。 這些分級與 App 內容的適切性有關，而非 App 目標群眾的年齡。
 
 ## <a name="answering-the-age-ratings-questionnaire"></a>回答年齡分級問卷
 
@@ -27,7 +27,7 @@ ms.locfileid: "8927193"
 
 您必須準確地回答問題。 如需任何問題的詳細資訊，請按一下其旁邊的資訊圖示。 在此程序中，我們會將您的發行者顯示名稱及電子郵件地址與 IARC 共享。 當您完成問卷之後，IARC 分級系統將會根據您的回應，提供年齡和內容分級資訊。 在不同的市場中向客戶顯示您的 App 時，我們將會使用這個分級資訊。 您也將收到來自 IARC 的電子郵件，其中包含您的 App 發佈時，App 分級的確認。
 
-第一個問題會要求您選擇最適合描述您 App (及其中繼資料) 的類別。 選取之後，您將會看到其他問題。 依據您先前的答案，您看到的特定問題會有所不同。 若要取得更多詳細資料，可能有幫助您了解如何回答任何問題，按一下資訊圖示旁邊的問題。 如果您填錯，可以返回或重新開始問卷，以提供正確的答案。
+第一個問題會要求您選擇最適合描述您 App (及其中繼資料) 的類別。 選取之後，您將會看到其他問題。 依據您先前的答案，您看到的特定問題會有所不同。 若要取得更多詳細資料，可能有幫助您了解如何回應任何問題，請按一下該問題旁邊的資訊圖示。 如果您填錯，可以返回或重新開始問卷，以提供正確的答案。
 
 當您完成回答問卷後，按一下 **\[儲存並產生\]**。 接著您會看到 App 獲指派的所有分級，而且可以繼續進行提交。 您也可以按一下 **\[編輯\]**，更正您在問卷上填寫的任何答案。
 
@@ -36,7 +36,7 @@ ms.locfileid: "8927193"
 <span id="boards" />
 
 > [!NOTE]
-> 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](http://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您將提交遊戲，而您想要在南韓提供使用時，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
+> 南韓的法律要求遊戲必須經過南韓[遊戲分級委員會](https://go.microsoft.com/fwlink/p/?LinkId=228256)分級之後，才可在南韓提供使用。 如果您將提交遊戲，而您想要在南韓提供使用時，您必須填寫這個額外區段，並上傳您的分級憑證。 請注意，如果您的 app 不是遊戲，或您不想在南韓提供 app，您可以將此區塊保留空白。
 
 > [!NOTE]
 > 如果您要提交會在台灣上市的遊戲，法律規定您必須使用[此表單](https://go.microsoft.com/fwlink/?linkid=867281)來登錄提供的 CSRR 分級。 

@@ -1,18 +1,18 @@
 ---
 title: 區塊壓縮
-description: 區塊壓縮是一種失真紋理壓縮技術，主要用於減少紋理的大小和磁碟使用量並提升效能。 區塊壓縮的紋理可以比每個色彩 32 位元的紋理更小。
+description: 區塊壓縮是一種失真紋理壓縮技術，主要用於減少紋理的大小和磁碟使用量並提升效能。 區塊壓縮紋理可以比每個色彩 32 位元的紋理更小。
 ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - 區塊壓縮
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: b7726067055b92ae51c01d4d056a2a11624204db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3f6a1277dbb2d756f0d3a4ffc1fd545f892a2096
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934347"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047207"
 ---
 # <a name="block-compression"></a>區塊壓縮
 
@@ -346,13 +346,13 @@ FLOAT32 f = 1.0f;
 UINT32 u;
 ```
 
-若要將 'f' 重新解譯為 'u' 類型，請使用 [memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx)：
+若要將 'f' 重新解譯為 'u' 類型，請使用 [memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx)：
 
 ```cpp
 memcpy( &u, &f, sizeof( f ) ); // 'u' becomes equal to 0x3F800000.
 ```
 
-在上述重新解譯中，資料的基礎值不會變更。[memcpy](http://msdn.microsoft.com/library/dswaw1wk.aspx) 會將浮點數重新解譯為不帶正負號的整數。
+在上述重新解譯中，資料的基礎值不會變更。[memcpy](https://msdn.microsoft.com/library/dswaw1wk.aspx) 會將浮點數重新解譯為不帶正負號的整數。
 
 若要執行更常見的轉換類型，請使用下列設定︰
 

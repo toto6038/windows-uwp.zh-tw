@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 63a39dfcfaab8b42afc98b7fe786a05908d49d16
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 682a743e45626939242af963fba47ca82a13a90e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923627"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048505"
 ---
 # <a name="getting-started-navigation"></a>開始使用：瀏覽
 
@@ -79,7 +79,7 @@ public BlankPage()
 
 您也可以取得或設定 **Frame** 類別的 [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) 屬性，以管理瀏覽記錄可以快取的頁面數。
 
-如需瀏覽的詳細資訊，請參閱[瀏覽](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 個人特質動畫範例](http://go.microsoft.com/fwlink/p/?LinkID=242401)。
+如需瀏覽的詳細資訊，請參閱[瀏覽](https://msdn.microsoft.com/library/windows/apps/mt187344)和 [XAML 個人特質動畫範例](https://go.microsoft.com/fwlink/p/?LinkID=242401)。
 
 **注意：** 了解適用於使用 JavaScript 和 HTML 的 UWP app 的瀏覽，請參閱[快速入門： 使用單頁瀏覽](https://msdn.microsoft.com/library/windows/apps/hh452768)。
  

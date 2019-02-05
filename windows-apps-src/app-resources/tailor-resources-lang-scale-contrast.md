@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: ac61d57a965e3a35c6eb7cfaf17d0f4ef2a02501
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1ab8dde9984ed0e4f7d99e7809361d928bebb718
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943304"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045424"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -191,11 +191,11 @@ public void SetLicenseLevel(BrandID brand)
 
 ## <a name="homeregion"></a>HomeRegion
 
-`homeregion` 限定詞對應於使用者的國家或地區設定。 這代表使用者的住家位置。 值包括任何有效 [BCP-47 區域標記](http://go.microsoft.com/fwlink/p/?linkid=227302)。 也就是，任何兩個字母的 **ISO 3166-1 alpha-2** 區域代碼，加上一組代表組成區域的三位數 **ISO 3166-1 數字**地理代碼 (請參閱[聯合國統計司 M49 區域分類編碼](http://go.microsoft.com/fwlink/p/?linkid=247929))。 「選取的經濟及其他群組」的代碼無效。
+`homeregion` 限定詞對應於使用者的國家或地區設定。 這代表使用者的住家位置。 值包括任何有效 [BCP-47 區域標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 也就是，任何兩個字母的 **ISO 3166-1 alpha-2** 區域代碼，加上一組代表組成區域的三位數 **ISO 3166-1 數字**地理代碼 (請參閱[聯合國統計司 M49 區域分類編碼](https://go.microsoft.com/fwlink/p/?linkid=247929))。 「選取的經濟及其他群組」的代碼無效。
 
 ## <a name="language"></a>Language
 
-`language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](http://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言清單，請參閱 [IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)。
+`language` 限定詞對應於顯示語言設定。 值包括任何有效 [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)。 如需語言清單，請參閱 [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)。
 
 如果希望應用程式支援不同的顯示語言，而且您的程式碼或 XAML 標記也含有字串常值時，請將這些字串從程式碼/標記中移入資源檔案 (`.resw`)。 您可以接著針對應用程式支援的每一種語言建立該資源檔案的翻譯複本。
 
@@ -273,7 +273,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 * [偵測執行您 app 的平台](../porting/wpsl-to-uwp-input-and-sensors.md#detecting-the-platform-your-app-is-running-on)
 * [裝置系列概觀](https://docs.microsoft.com/uwp/extension-sdks/device-families-overview)
 * [當地語系化您的 UI 字串](localize-strings-ui-manifest.md)
-* [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302)
-* [聯合國統計司 M49 區域分類編碼](http://go.microsoft.com/fwlink/p/?linkid=247929)
-* [IANA 語言子標記登錄](http://go.microsoft.com/fwlink/p/?linkid=227303)
+* [BCP-47](https://go.microsoft.com/fwlink/p/?linkid=227302)
+* [聯合國統計司 M49 區域分類編碼](https://go.microsoft.com/fwlink/p/?linkid=247929)
+* [IANA 語言子標記登錄](https://go.microsoft.com/fwlink/p/?linkid=227303)
 * [調整配置和字型並支援 RTL](../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)

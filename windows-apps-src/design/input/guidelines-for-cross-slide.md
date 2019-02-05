@@ -6,12 +6,12 @@ ms.date: 10/25/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: f6a37af19c9e3e9beaebbadfcc71f3ad01e3087c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918509"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045191"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑動的指導方針
 
@@ -133,19 +133,19 @@ ms.locfileid: "8918509"
 
 
 **範例**
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [使用者互動模式範例](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **封存範例**
-* [輸入：XAML 使用者輸入事件範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：觸控點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的筆跡範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [輸入：Windows 8 手勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 觸控輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

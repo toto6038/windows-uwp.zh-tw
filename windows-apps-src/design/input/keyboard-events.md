@@ -12,12 +12,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 1e7453d3973cef31ae8143f3ecff31fffeb763a3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9ff4e7d01d907112558993f52c8a214c91f7d499
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942549"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047067"
 ---
 # <a name="keyboard-events"></a>鍵盤事件
 
@@ -391,16 +391,16 @@ public class CustomGridView : GridView
 
 **範例**
 * [觸控式鍵盤範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
-* [基本輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [焦點視覺效果範例](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 
 **封存範例**
-* [輸入範例](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控式鍵盤範例](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [回應螢幕小鍵盤外觀的範例](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XAML 文字編輯範例](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [輸入範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：觸控式鍵盤範例](https://go.microsoft.com/fwlink/p/?linkid=246019)
+* [回應螢幕小鍵盤外觀的範例](https://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML 文字編輯範例](https://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

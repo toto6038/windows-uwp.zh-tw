@@ -1,27 +1,27 @@
 ---
 Description: Windows 10 build 10240 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: 什麼是 windows 10 組建 10240-2015 年 7 月中的新功能
+title: 什麼是 windows 10 組建 10240-2015 年 7 月的新功能
 keywords: 新功能, 新功能, 更新, 多項更新, 功能, 新, Windows 10, 1507, 10240
 ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: 4853e55b-2232-4589-903a-ccb60e07aeb8
 ms.localizationpriority: medium
-ms.openlocfilehash: 75c5c34f3dec48bbee2feccde5b60cde45a241f9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9a1f3c95169842f7c9bc00a662b4498ed12df32c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941723"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045727"
 ---
 # <a name="whats-new-in-windows10-for-developers-build-10240"></a>什麼是 windows 10 中適用於開發人員的新 (組建 10240）
 
-Windows 10 組建 10240 與更新的 SDK 提供提供工具、功能及體驗來造就不凡的通用 Windows 平台 app。 在 Windows 10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或探索如何使用您在 [Windows 上的現有應用程式程式碼](../porting/index.md)。
+Windows 10 組建 10240 與更新的 SDK 提供提供工具、功能及體驗來造就不凡的通用 Windows 平台 app。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，您已經準備好可以[建立新的通用 Windows 應用程式](../get-started/create-uwp-apps.md)，或探索如何使用您在 [Windows 上的現有應用程式程式碼](../porting/index.md)。
 
 以下是您在 windows 10 組建 10240 （也稱為 Windows 10 版本 1507年） 的新看的功能。
 
 ## <a name="adaptive-layouts"></a>彈性配置
 
-功能 | 說明
+功能 | 描述
  :---- | ----:
 訂製內容的多重檢視 | XAML 提供了新的支援，支援定義可共用相同程式碼檔的訂製檢視 (.xaml 檔案)。 這可以讓您更容易建立及維護針對特定裝置系列或狀況所訂製的不同檢視。 如果您的應用程式針對不同的狀況具有完全不同的 UI 內容、配置或導覽模型，請建置多重檢視。 例如，對於您的行動應用程式上針對單手使用最佳化的導覽功能，您可以搭配使用 [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx)，但對於您的桌面應用程式上針對滑鼠最佳化的導覽功能，則可以搭配使用 [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx)。
 StateTriggers | 使用新的 [VisualState.StateTriggers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.statetriggers.aspx) 功能，您就可以視情況依據視窗高度/寬度，或依據自訂觸發程序來設定屬性。 之前，您必須使用程式碼來處理 Window [SizeChanged](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.window.sizechanged.aspx) 活動，並呼叫 [VisualStateManager.GotoState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager.gotostate.aspx)。
@@ -30,7 +30,7 @@ Setters | 使用新的 [VisualState.Setters](https://msdn.microsoft.com/library/
 
 ## <a name="xaml-features"></a>XAML 功能
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 已編譯的資料繫結 (x:Bind) | 在通用 Windows app 中，您可以使用因 x:Bind 屬性而實現的以編譯器為基礎的新繫結機制。 以編譯器為基礎的繫結會在編譯時期被強力設定類型及處理處理，這不只速度更快，且可以在繫結類型不符時提供編譯時期錯誤。 而且因為繫結會轉譯為已編譯的應用程式程式碼，所以您現在可以透過在 Visual Studio 中逐步執行程式碼來為繫結偵錯，以診斷特定繫結問題。 您也可以使用 x:Bind 來繫結到方法，就像這樣︰<textblock text="{x:Bind Customer.Address.ToString()}" /> 針對典型的繫結案例，您可以使用 x:Bind 取代 Binding，並取得更佳的效能和可維護性。
 清單的宣告式增量轉譯 (x:Phase) | 在通用 Windows app 中，新的 x:Phase 屬性可讓您使用 XAML 代替程式碼來執行增量 (或階段式) 清單轉譯。 在移動瀏覽包含複雜項目的長清單時，您的應用程式轉譯項目的速度可能會跟不上移動瀏覽的速度，而產生不好的使用者經驗。 階段式轉譯可讓您指定清單項目中個別元素的轉譯優先順序，藉此在快速移動瀏覽情況下只轉譯清單項目中最重要的部分。 這可以為您的使用者提供較順暢的移動瀏覽經驗。 <br /><br /> 在 Windows 8.1 中，您可以處理 [ContainerContentChanging](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging.aspx) 活動，並撰寫程式碼來以階段方式轉譯清單項目。 在 UWP app 中，您可以使用 x:Phase 屬性來以宣告方式完成階段式轉譯。 搭配已編譯的繫結 x:Bind 使用時，x:Phase 可讓您很容易地指定資料範本中每個繫結元素的轉譯優先順序。 在移動瀏覽時，轉譯項目的工作是以階段式時間分段方式執行，以提供增量項目轉譯能力。
@@ -85,7 +85,7 @@ Windows 核心文字 API | 新的 [Windows.UI.Text.Core](https://msdn.microsoft.
 
 ## <a name="application-model"></a>應用程式模型
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 Cortana | 使用可在外部應用程式中啟動及執行單一動作的語音命令，來延伸 Cortana 的基本功能。 透過整合您 App 的基本功能，以及透過提供中央進入點讓使用者能在不直接開啟您的 App 的情況下完成大部分工作，Cortana 可以成為您的 App 與使用者之間的連絡橋樑。 在許多情況下，這可以讓使用者節省大量時間與精力。 了解如何[將您的應用程式整合到 Cortana 畫布中](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230.aspx)。 如果您需要一些想法，您可以參考 [Universal Windows app 設計基本知識](https://developer.microsoft.com/windows/design/layout)中，Cortana 特定的設計建議與 UX 指導方針。
 檔案總管 | 新的 [Windows.System.Launcher.LaunchFolderAsync](https://msdn.microsoft.com/library/windows/apps/windows.system.launcher.launchfolderasync.aspx) 方法可讓您啟動 \[檔案總管\] 並顯示您指定的資料夾內容。
@@ -97,7 +97,7 @@ Cortana | 使用可在外部應用程式中啟動及執行單一動作的語音�
 
 ## <a name="devices"></a>裝置
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 Microsoft Surface Hub | Microsoft Surface Hub 是功能強大的小組共同作業裝置和大型螢幕平台，適用於從 Surface Hub 或是您已連接的裝置原生執行的通用 Windows app。 利用大型螢幕、觸控及手寫輸入，以及各種內建硬體 (例如攝影機與感應器) 的優點，針對您的商務特性設計及建立您自己的 App。<br /><br />請參考[通用 Windows App 設計基本知識](https://developer.microsoft.com/windows/design/layout)中 Surface Hub 特定的設計建議與 UX 指導方針。 這些文件會說明通用 Windows app 的回應式設計技術。 <br /><br />如需支援公用的共用應用程式的相關詳細資料，請參閱 [SharedModeSettings](https://msdn.microsoft.com/library/windows/apps/windows.system.profile.sharedmodesettings.aspx)。 如需新的 [InkCanvas](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控制項之手寫輸入與多點手寫輸入支援的相關詳細資料，請參閱 [Windows.UI.Input.Inking](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.aspx) 與 [Windows.UI.Input.Inking.Core](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.core.aspx)。 如需如何處理感應器輸入的資訊，請參閱[整合裝置、印表機以及感應器](https://msdn.microsoft.com/library/windows/apps/xaml/br229563.aspx)。
 位置 | Windows 10 導入了新方法 [RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.requestaccessasync.aspx)，可以詢問使用者是否可存取其位置。 使用者可以利用 **\[設定\]** App 中的 **\[位置隱私權設定\]**，來設定其位置資料的隱私權。 只有在下列情況，您的應用程式才可以存取使用者的位置：**\[此裝置的位置\]** 已開啟 *(Windows 10 手機版不適用)*，定位服務設定 **\[位置\]** 已開啟，且 **\[選擇可以使用您的位置的應用程式\]** 底下，您的 App 設定為 [開啟]。 <br /><br />請務必先呼叫 **RequestAccessAsync**，才能存取使用者的位置。 此時，您的 app 必須在前景，且 **RequestAccessAsync** 必須是從 UI 執行緒呼叫。 在使用者授與您的應用程式存取其位置的權限之前，您的應用程式無法存取位置資料。
@@ -110,7 +110,7 @@ Host-based Card Emulation (HCE) | Host Card Emulation 可讓您實作作業系�
 
 ## <a name="graphics"></a>圖形
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 DirectX | Windows 10 中的 DirectX 12 引進了下一版的 Microsoft Direct3D，也就是位於 DirectX 核心的 3D 圖形 API。 [Direct3D 12 圖形](https://msdn.microsoft.com/library/windows/desktop/dn903821(v=vs.85).aspx)可支援低層級、類似主控台 API 的效率與效能。 Direct3D 12 比以往更快更有效率。 支援更豐富的場景、更多的物件、更複雜的效果，且能夠更有效地使用現代化圖形硬體。
 SoftwareBitmapSource | 在通用 Windows app 中，您可以使用新的 [SoftwareBitmapSource](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.softwarebitmapsource.aspx) 類型做為 XAML 影像來源。 這可以讓您繞過由 XAML 架構的影像解碼，將要立即在螢幕上顯示的未編碼影像傳遞給 XAML 架構。 您可以達到更快速的映象轉譯速度，例如直接從相機轉譯低遲滯相片、使用自訂影像解碼器、從 DirectX 介面擷取畫格，或甚至從頭開始建立記憶體內部影像，然後在低延遲與低記憶體額外負荷的情況下，直接在 XAML 中轉譯它們。
@@ -133,7 +133,7 @@ MediaElement 媒體失敗事件 | 在通用 Windows app 中，[MediaElement](htt
 
 ## <a name="networking"></a>網路功能
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 通訊端 | 通訊端更新包括： <br /><br />**通訊端代理程式：** 通訊端代理程式可以代表處於應用程式週期中任何狀態的 App 來建立及關閉通訊端連線。 這可以讓應用程式和應用程式提供的服務更容易被找到。 例如，透過通訊端代理程式，Win32 服務甚至在未執行時仍可接受連入通訊端連線。 <br /><br />**改進輸送量：** 通訊端輸送量已針對使用 Windows.Networking.Sockets 命名空間的 App 最佳化。
 背景傳輸後續處理工作 | [Windows.Networking.BackgroundTransfer](https://msdn.microsoft.com/library/windows/apps/windows.networking.backgroundtransfer.aspx) 命名空間中新的 API 可讓您註冊後續處理工作的群組。 因此，即使您的應用程式不在前景，也可在背景傳輸成功或失敗時立即採取動作，而不是等到下次使用者繼續執行應用程式時才採取動作。
@@ -143,7 +143,7 @@ JSON 支援改良功能 | [Windows.Data.Json](https://msdn.microsoft.com/library
 
 ## <a name="security"></a>安全性
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 ECC 加密 | [Windows.Security.Cryptography](https://msdn.microsoft.com/library/windows/apps/windows.security.cryptography.aspx) 命名空間中新的 API 支援了橢圓曲線加密法 (ECC)，這是以有限體上橢圓曲線為基礎的公開金鑰密碼編譯實作。 ECC 演算方式比 RSA 更複雜，提供較小的金鑰大小、減少記憶體耗用量，並改善效能。 它提供了 Microsoft 服務與客戶一種 RSA 金鑰和 NIST 核准曲線參數的替代方法。
 Microsoft Passport | Microsoft Passport 是驗證的替代方法，可以使用非對稱加密和手勢取代密碼。 Credentials 命名空間內的類別 (例如 [KeyCredentialManger](https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.keycredentialmanager.aspx)) 可以讓開發人員更輕鬆地使用 Microsoft Passport，而不需要複雜的加密或生物特徵。
@@ -152,7 +152,7 @@ Microsoft Passport for Work | Microsoft Passport for Work 是使用 Azure Active
 
 ## <a name="system-services"></a>系統服務
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 電源 | 現在在執行或停止執行省電模式時，會通知您的 Windows 傳統型應用程式。 藉由回應電源條件變更，您的應用程式有機會可以協助延長電池使用時間。 <br /><br />[GUID_POWER_SAVING_STATUS](https://msdn.microsoft.com/library/windows/desktop/hh448380.aspx)：使用這個新的 GUID 與 [PowerSettingRegisterNotification](https://msdn.microsoft.com/library/windows/desktop/hh769082(v=vs.85).aspx) 函數，即可在執行或停止執行省電模式時收到通知。 <br /><br />[SYSTEM_POWER_STATUS](https://msdn.microsoft.com/library/windows/desktop/aa373232.aspx)：此結構已更新，以支援省電模式。 第四個成員 *SystemStatusFlag* (先前稱為 Reserved1) 現在可指示省電模式是否已經執行。 使用 [GetSystemPowerStatus](https://msdn.microsoft.com/library/windows/desktop/aa372693(v=vs.85).aspx) 函式來抓取這個結構的指標。
 版本 | 您可以使用 [Version Helper 函式](https://msdn.microsoft.com/library/windows/desktop/dn424972.aspx)判斷作業系統版本。 針對 Windows 10，這些 Helper 函式包含新的函式 [IsWindows10OrGreater](https://msdn.microsoft.com/library/windows/desktop/dn905474(v=vs.85).aspx)。 當您想要判斷系統版本時，您應該使用 Helper 函數，而不是已過時的 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 與 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函數。 如需如何取得系統版本的相關詳細資訊，請參閱[取得系統版本](https://msdn.microsoft.com/library/windows/desktop/ms724429.aspx)。 <br /><br />如果您是使用已過時的 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 或 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函數來取得 [OSVERSIONINFOEX](https://msdn.microsoft.com/library/windows/desktop/ms724833(v=vs.85).aspx) 或 [OSVERSIONINFO](https://msdn.microsoft.com/library/windows/desktop/ms724834.aspx) 結構中的版本資訊，請注意這些結構包含的版本號碼會從 6.3 (適用於 Windows 8.1 與 Windows Server 2012 R2) 增加到 10.0 (適用於 Windows 10)。 如需作業系統版本號碼的相關詳細資訊，請參閱[作業系統版本](https://msdn.microsoft.com/library/windows/desktop/ms724832.aspx)。 <br /><br />在您的應用程式中，您也需要特別以 Windows 8.1 或 Windows 10 為目標，以取得這些利用 [GetVersionEx](https://msdn.microsoft.com/library/windows/desktop/ms724451.aspx) 或 [GetVersion](https://msdn.microsoft.com/library/windows/desktop/ms724439.aspx) 函數取得之版本的正確版本資訊。 如需如何讓您的應用程式以這些 Windows 版本為目標的相關資訊，請參閱[讓您的應用程式以 Windows 為目標](https://msdn.microsoft.com/library/windows/desktop/dn481241.aspx)。
@@ -174,7 +174,7 @@ Visual Studio 中的即時視覺化樹狀結構 | Visual Studio 具有新的「�
 
 ## <a name="user-experience"></a>使用者體驗
 
-功能 | 說明
+功能 | 描述
  :---- | :----
 語音辨識 | 通用 Windows 平台現在支援長篇聽寫情況的連續語音辨識。 請參閱「語音互動文件」中有關如何啟用連續聽寫功能的內容。
 不同的應用程式平台之間的拖放功能 | 新的 [Windows.ApplicationModel.DataTransfer.DragDrop](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.dragdrop.aspx) 命名空間將拖放功能帶入通用 Windows app。 之前，一般的傳統型程式拖放案例 (例如將資料夾中的文件拖曳到 Outlook 電子郵件訊息中以加入附件) 在通用 Windows app 是不可能的。 使用這些新的 API，您的 app 就可以讓使用者輕易地在不同的通用 Windows app 和桌面之間移動資料。 <br /><br />為了支援在 App 之間拖放，已新增下列新的 API 至 XAML：[ListViewBase.DragItemsCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.dragitemscompleted.aspx)； <br />UIElement：[CanDrag](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.candrag.aspx)、[DragStarting](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.dragstarting.aspx)、[StartDragAsync](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.startdragasync.aspx)、[DropCompleted](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.dropcompleted.aspx)；  <br />[DragOperationDeferral](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragoperationdeferral.aspx)、[DragUI](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragui.aspx)、[DragUIOverride](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.draguioverride.aspx)； <br />DragEventArgs：[AcceptedOperation](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.acceptedoperation.aspx)、[DataView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.dataview.aspx)、[DragUIOverride](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.draguioverride.aspx)、[GetDeferral](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.getdeferral.aspx)、[Modifiers](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.drageventargs.modifiers.aspx)； <br />[DragItemsCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.dragitemscompletedeventargs.aspx)、[DropCompletedEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dropcompletedeventargs.aspx)、[DragStartingEventArgs](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dragstartingeventargs.aspx)

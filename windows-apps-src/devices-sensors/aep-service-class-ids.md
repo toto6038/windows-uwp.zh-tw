@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: faa9e3f8936e8650af905678ce7434c4b9967be0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939836"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048295"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 
@@ -72,7 +72,7 @@ app 開發人員應該根據類別識別碼使用進階的查詢語法 (AQS) 篩
 
  
 
-如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619586)和[這裡](http://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571)API 來取得一些常見的 GATT 服務。
+如需可用藍芽服務的更完整清單，請參閱藍芽的通訊協定和服務頁面[這裡](https://go.microsoft.com/fwlink/p/?LinkID=619586)和[這裡](https://go.microsoft.com/fwlink/p/?LinkID=619587)。 您也可以使用 [**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571)API 來取得一些常見的 GATT 服務。
 
 ## <a name="custom-bluetooth-le-services"></a>自訂藍芽 LE 服務
 

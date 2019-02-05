@@ -6,12 +6,12 @@ ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f69c86ac8f7d13970eca8d1bbb50d4859b95f6a6
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 6cde9d8753248614603ee49fb1415ec18ec4669b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980356"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044186"
 ---
 # <a name="get-file-properties"></a>取得檔案屬性
 
@@ -24,7 +24,7 @@ ms.locfileid: "8980356"
 取得由 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整範例，請參閱[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -88,9 +88,9 @@ foreach (Windows.Storage.StorageFile file in files)
 
 ## <a name="getting-a-files-extended-properties"></a>取得檔案的延伸屬性
 
-除了最上層和基本檔案屬性之外，還提供許多與檔案內容相關聯的屬性。 這些延伸屬性可藉由呼叫 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 方法來存取 ([**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 物件可藉由呼叫 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性來取得)。當最上層和基本檔案屬性可以分別當成類別屬性 ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **BasicProperties**) 來存取時，您可以將 [String](http://go.microsoft.com/fwlink/p/?LinkID=325032) 物件 (代表要擷取之屬性的名稱) 的 [IEnumerable](http://go.microsoft.com/fwlink/p/?LinkID=313091) 集合傳送到 **BasicProperties.RetrievePropertiesAsync** 方法，來取得延伸屬性。 這個方法接著會傳回 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然後，系統會從集合中依名稱或索引擷取每個延伸屬性。
+除了最上層和基本檔案屬性之外，還提供許多與檔案內容相關聯的屬性。 這些延伸屬性可藉由呼叫 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 方法來存取 ([**BasicProperties**](https://msdn.microsoft.com/library/windows/apps/br212113) 物件可藉由呼叫 [**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) 屬性來取得)。當最上層和基本檔案屬性可以分別當成類別屬性 ([**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 和 **BasicProperties**) 來存取時，您可以將 [String](https://go.microsoft.com/fwlink/p/?LinkID=325032) 物件 (代表要擷取之屬性的名稱) 的 [IEnumerable](https://go.microsoft.com/fwlink/p/?LinkID=313091) 集合傳送到 **BasicProperties.RetrievePropertiesAsync** 方法，來取得延伸屬性。 這個方法接著會傳回 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 集合。 然後，系統會從集合中依名稱或索引擷取每個延伸屬性。
 
-此範例會列舉圖片媒體櫃中的所有檔案、指定 [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) 物件中所需屬性 (**DataAccessed** 和 **FileOwner**) 的名稱、將該 [List](http://go.microsoft.com/fwlink/p/?LinkID=325246) 物件傳送到 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 以擷取這些屬性，然後從傳回的 [IDictionary](http://go.microsoft.com/fwlink/p/?LinkId=325238) 物件中依名稱擷取這些屬性。
+此範例會列舉圖片媒體櫃中的所有檔案、指定 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 物件中所需屬性 (**DataAccessed** 和 **FileOwner**) 的名稱、將該 [List](https://go.microsoft.com/fwlink/p/?LinkID=325246) 物件傳送到 [**BasicProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br212124) 以擷取這些屬性，然後從傳回的 [IDictionary](https://go.microsoft.com/fwlink/p/?LinkId=325238) 物件中依名稱擷取這些屬性。
 
 請查看 [Windows 核心屬性](https://msdn.microsoft.com/library/windows/desktop/mt805470) 以取得檔案延伸屬性的完整清單。
 

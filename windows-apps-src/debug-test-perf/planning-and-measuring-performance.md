@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6388158a7b1c4fd3fa3e0ab17dcc86b7ef2d7c0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3bfe034ed697661c81b2f01b67fafeee1941832d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921562"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050761"
 ---
 # <a name="planning-for-performance"></a>規劃效能
 
@@ -104,7 +104,7 @@ app 的特定可測量效率目標可能包含：
 
 **啟動和繼續 app**
 
--   延遲 app 的啟動顯示畫面，而且除非必要，否則不要延長 app 的啟動顯示畫面。 如需詳細資料，請參閱[建立快速而流暢的 app 啟動經驗](http://go.microsoft.com/fwlink/p/?LinkId=317595)和[延長顯示啟動顯示畫面](https://msdn.microsoft.com/library/windows/apps/Mt187309)。
+-   延遲 app 的啟動顯示畫面，而且除非必要，否則不要延長 app 的啟動顯示畫面。 如需詳細資料，請參閱[建立快速而流暢的 app 啟動經驗](https://go.microsoft.com/fwlink/p/?LinkId=317595)和[延長顯示啟動顯示畫面](https://msdn.microsoft.com/library/windows/apps/Mt187309)。
 -   停用啟動顯示畫面關閉之後立即出現的動畫，原因是它們會給人延遲 app 啟動時間的印象。
 
 **彈性 UI 和方向**
@@ -152,7 +152,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
 // ...
 ```
 
-另請參閱[記錄範例](http://go.microsoft.com/fwlink/p/?LinkId=529576)。
+另請參閱[記錄範例](https://go.microsoft.com/fwlink/p/?LinkId=529576)。
 
 檢測 app 之後，您可以測試及測量 app 的效能。
 
@@ -171,7 +171,7 @@ using (myLoggingActivity = new LoggingActivity("MyLoggingActivity"), myLoggingCh
     -   執行 app 多次有助於排除隨機測試變數，並確保測量結果一致。
 -   降低的電源可用性測試。 使用者裝置的電源可能遠遠小於您開發電腦的電源。 Windows 是針對低電源裝置 (例如行動裝置) 所設計。 在平台上執行的 app 應該確定可以順利在這些裝置上執行。 我們發現低電源裝置的運作速度大約是桌上型電腦的四分之一，您必須據此設定您的目標。
 -   使用工具的組合 (例如 Microsoft Visual Studio 和 Windows Performance Analyzer) 測量 app 效能。 Visual Studio 的設計是提供以 app 為主的分析，例如原始程式碼連結。 Windows Performance Analyzer 的設計則是提供以系統為主的分析，例如提供系統資訊、觸控操作事件的相關資訊，以及磁碟輸入/輸出 (I/O) 和圖形處理器 (GPU) 成本的相關資訊。 兩個工具都提供追蹤擷取和匯出，而且可以重新開啟共用追蹤和事後追蹤。
--   您將 app 提交至市集進行認證之前，請務必將納入您的測試計劃效能相關的測試案例的<b0>Windows 應用程式認證套件測試</b0>及在 < 效能測試 > 一節中所述 」 的效能和<b1>UWP 應用程式測試案例</b1>的穩定性 」 一節。
+-   您將 app 提交至市集進行認證之前，請務必將納入您的測試計劃效能相關的測試案例的<b0>Windows 應用程式認證套件測試</b0>及在 < 效能測試 > 一節中所述 」 效能和<b1>UWP 應用程式測試案例</b1>穩定性 」 一節。
 
 如需詳細資訊，請參閱這些資源和分析工具。
 

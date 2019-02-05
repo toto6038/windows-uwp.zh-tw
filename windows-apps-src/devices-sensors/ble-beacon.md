@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
-ms.openlocfilehash: e9eafde0596ad3156f52a7a2f0a1566444a9836a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918956"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046787"
 ---
 # <a name="bluetooth-le-advertisements"></a>藍牙 LE 廣告
 
@@ -29,7 +29,7 @@ ms.locfileid: "8918956"
 -   [Advertisement Watcher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx)：接聽附近的指標並根據承載或鄰近性篩選出指標。  
 -   [Advertisement Publisher](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx)：定義 Windows 承載，以代表開發人員宣傳。  
 
-在 Github 上的[藍牙廣告範例](http://go.microsoft.com/fwlink/p/?LinkId=619990)中可以找到完整的範例程式碼
+在 Github 上的[藍牙廣告範例](https://go.microsoft.com/fwlink/p/?LinkId=619990)中可以找到完整的範例程式碼
 
 ## <a name="basic-setup"></a>基本設定
 
@@ -43,7 +43,7 @@ ms.locfileid: "8918956"
 
 藍牙 LE 廣告可讓您的裝置持續發出特定承載的指標 (稱為「廣告」)。 附近任何支援藍牙 LE 功能的裝置，如果有設定為接聽此特定廣告，就都能看見此廣告。
 
-> **注意**： 基於使用者隱私權，您的廣告的存留期間繫結到該應用程式。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**： 基於使用者隱私權，您的廣告的壽命繫結到該應用程式。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本發佈
 

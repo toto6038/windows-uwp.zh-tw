@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - vb
-ms.openlocfilehash: e3e18bc5ec683e6c7a8aab18321f4b98511faa62
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: d60dcb60d8628822d7597ad25268aae5e7a7ae6a
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980336"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044575"
 ---
 # <a name="create-write-and-read-a-file"></a>建立、寫入和讀取檔案
 
@@ -29,7 +29,7 @@ ms.locfileid: "8980336"
 使用 [**StorageFile**](/uwp/api/windows.storage.storagefile) 物件讀取和寫入檔案。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)。
+> 如需完整範例，請參閱[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)。
 
 ## <a name="prerequisites"></a>先決條件
 
@@ -254,7 +254,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  接下來，透過呼叫從[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法，以取得輸出資料流`stream`。 如果您使用 C#，然後括住這即可管理輸出資料流的存留期的**using**陳述式。 如果您使用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則您可以控制其存留期封入它在區塊中，或將它設定為`nullptr`當您完成使用它。
+2.  接下來，透過呼叫從[**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat)方法，以取得輸出資料流`stream`。 如果您使用 C#，然後括住這即可管理輸出資料流的存留期的**using**陳述式。 如果您使用[C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)，則您可以控制其存留期括在區塊中，或將它設定為`nullptr`當您完成使用它。
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -280,7 +280,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     End Using
     ```
 
-3.  現在將此新增到寫入輸出資料流，方法是建立新的[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)物件，並呼叫[**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)方法的程式碼 （如果您使用 C# 中，在現有的**using**陳述式內）。
+3.  現在新增這個程式碼 （如果您使用 C# 中，現有的**using**陳述式中），以寫入輸出資料流，方法是建立新的[**DataWriter**](/uwp/api/windows.storage.streams.datawriter)物件，並呼叫[**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring)方法。
 
     ```csharp
     using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -306,7 +306,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  最後，將此新增到您的檔案，內含[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)儲存文字，並關閉[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)與資料流的程式碼 （如果您使用 C# 中，**使用**內部陳述式中）。
+4.  最後，新增這個程式碼 （如果您使用 C# 中，**使用**內部陳述式中），以將文字儲存到您的檔案，內含[**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync)和關閉[**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync)與資料流。
 
     ```csharp
     await dataWriter.StoreAsync();

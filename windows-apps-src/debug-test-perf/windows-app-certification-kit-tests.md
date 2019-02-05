@@ -6,17 +6,17 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: 55c11232847e2e7aa4827da0e3816f0cc34e9bed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: ecb7cb68b57e3d9b30a25237a63410d3bfa319b3
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923125"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047157"
 ---
 # <a name="windows-app-certification-kit-tests"></a>Windows 應用程式認證套件測試
 
 
-[Windows 應用程式認證套件](windows-app-certification-kit.md)包含一些可協助確保您的應用程式已準備好發佈至 Microsoft Store 的測試。 測試使用其條件，詳細資料，以下列出，並建議的動作在失敗。
+[Windows 應用程式認證套件](windows-app-certification-kit.md)包含一些可協助確保您的應用程式已準備好發佈至 Microsoft Store 的測試。 測試如下所示使用他們的條件的詳細資訊，並建議在失敗的動作。
 
 ## <a name="deployment-and-launch-tests"></a>部署和啟動測試
 
@@ -315,11 +315,11 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 
 確定 app 是編譯為發行組建而不是偵錯組建。
 
-> **注意：** 應用程式的偵錯組建無法通過這個測試，即使應用程式會使用僅[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
+> **注意：** 應用程式的偵錯組建無法通過這個測試，即使 app 使用[適用於 UWP app 的 Api](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)。
 
-檢閱錯誤訊息，找出 API 不是[適用於 UWP app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)應用程式使用。
+檢閱錯誤訊息，找出 API 不是[適用於 UWP app 的 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx)的應用程式使用。
 
-> **注意：** 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 請參閱，如需詳細資訊的[UWP 應用程式中的 Windows Api 的替代方法](http://go.microsoft.com/fwlink/p/?LinkID=244022)。
+> **注意：** 在偵錯組態中內建的 c + + app 無法通過這個測試，即使組態只使用來自 Windows SDK 的 Api，適用於 UWP app。 請參閱，如需詳細資訊的[UWP 應用程式中的 Windows Api 的替代方法](https://go.microsoft.com/fwlink/p/?LinkID=244022)。
 
 ## <a name="performance-tests"></a>效能測試
 
@@ -429,7 +429,7 @@ AppContainerCheck 會確認可執行二進位檔的可攜式執行檔 (PE) 標�
 <tr><td>
 <p>"resources.pri" 檔案不能啟用 AutoMerge。</p>
 </td><td>
-<p>MakePRI.exe 支援一個稱為 <strong>AutoMerge</strong> 的選項。 <strong>AutoMerge</strong> 的預設值為 <strong>off</strong>。 啟用時，<strong>AutoMerge</strong> 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這針對您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft Store 散發應用程式的 resources.pri 必須是應用程式套件的根目錄中，而且包含應用程式支援的所有語言參考。</p>
+<p>MakePRI.exe 支援一個稱為 <strong>AutoMerge</strong> 的選項。 <strong>AutoMerge</strong> 的預設值為 <strong>off</strong>。 啟用時，<strong>AutoMerge</strong> 會在執行期間將 app 的語言套件資源合併到單一 resources.pri 中。 我們不建議這針對您要透過 Microsoft 網上商店散發的應用程式。 透過 Microsoft 網上商店散發 app 的 resources.pri 必須是應用程式套件的根目錄中，且包含應用程式支援的所有語言參考。</p>
 </td></tr>
 <tr><td>
 <p>字串 {string} 不符合 {number} 個字元的長度上限限制。</p>
@@ -533,7 +533,7 @@ UWP 應用程式應該要完整且功能正常。 使用預設影像 (來自範�
 
 ### <a name="background"></a>背景
 
-Microsoft Store 需要使用 Direct3D 正確呈現，或正常功能層級 9 \-1 圖形卡上的所有應用程式。
+Microsoft Store 需要使用 Direct3D 正確呈現，或正常關閉功能層級 9 \-1 圖形卡上的所有應用程式。
 
 因為使用者可以在安裝 app 之後變更裝置中的圖形硬體，如果您選擇高於 9\-1 的最低功能層級，您的 app 必須在啟動時偵測目前的硬體是否符合最低需求。 若不符合最低需求，該 app 必須向使用者顯示訊息，以詳細說明 Direct3D 的需求。 此外，如果客戶在不相容的裝置上下載 app，該 app 必須在啟動時偵測執行環境，並顯示訊息給客戶，以詳細說明需求。
 
@@ -543,11 +543,11 @@ Microsoft Store 需要使用 Direct3D 正確呈現，或正常功能層級 9 \-1
 
 ### <a name="corrective-action"></a>修正動作
 
-請確保您的 app 正確顯示在 Direct3D 功能層級 9\-1 上，即使您希望它在更高層級上執行。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](http://go.microsoft.com/fwlink/p/?LinkID=253575)。
+請確保您的 app 正確顯示在 Direct3D 功能層級 9\-1 上，即使您希望它在更高層級上執行。 如需詳細資訊，請參閱[針對不同的 Direct3D 功能層級進行開發](https://go.microsoft.com/fwlink/p/?LinkID=253575)。
 
 ### <a name="direct3d-trim-after-suspend"></a>暫停後的 Direct3D 修剪
 
-> **注意：** 這項測試只適用於 UWP 應用程式開發的 Windows8.1 和更新版本。
+> **注意：** 這項測試只適用於 UWP app 開發適用於 windows 8.1 和更新版本。
 
 ### <a name="background"></a>背景
 

@@ -6,23 +6,23 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 04983b80-2a18-4ace-93d3-e8c33c04bfb9
 ms.localizationpriority: medium
-ms.openlocfilehash: 626b2ce36d8abc4798d39a89af540c61b26b5ed1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 93d4da26dbb4c5eee1856b3a594214aabbbbaa00
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938517"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047563"
 ---
 # <a name="respond-to-customer-feedback"></a>回應客戶意見反應
 
 您可以使用 [意見反應報告](feedback-report.md)檢閱 [意見反應中樞] 中由 Windows 10 客戶所留下，和您的 App 有關的意見反應，然後直接回應該意見反應。 您可以在 [意見反應中樞] 中張貼您的回應讓每個人都能看見 (無論是個別註解，或者更新某意見反應的狀態並新增說明)，以告知客戶有關新功能或或錯誤修正的相關資訊，或是要求更多和如何改進您的 App 有關的特定意見反應。 您也可以將您的回應以電子郵件直接傳送給留下意見反應的客戶。
 
 > [!TIP]
-> 您可以透過使用 [Microsoft Store Services SDK](http://aka.ms/store-em-sdk) 中的 Feedback API，來新增一個可讓客戶直接從[您的 UWP app 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md) 的控制項，鼓勵客戶留下意見反應。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您應用程式的所有客戶，都可以直接透過意見反應中樞應用程式留下意見反應。 因此，您可能會在此報告中看到客戶的意見反應，即使您未在應用程式內明確要求意見反應也是一樣。
+> 您可以透過使用 [Microsoft Store Services SDK](https://aka.ms/store-em-sdk) 中的 Feedback API，來新增一個可讓客戶直接從[您的 UWP app 啟動意見反應中樞](../monetize/launch-feedback-hub-from-your-app.md) 的控制項，鼓勵客戶留下意見反應。 請記住，在支援意見反應中樞的 Windows 10 裝置下載您應用程式的所有客戶，都可以直接透過意見反應中樞應用程式留下意見反應。 因此，您可能會在此報告中看到客戶的意見反應，即使您未在應用程式內明確要求意見反應也是一樣。
 
 若要提供對任何意見反應的回應，按一下您的 **\[意見反應報告\]** 中意見反應旁顯示的 **\[回應意見反應\]** 連結。
 
-[合作夥伴中心](https://partner.microsoft.com/dashboard)支援三種選項以用於回應提供您的應用程式相關意見反應的客戶。 不論您選擇哪一個選項，請記住每則回應有 1000 個字元的限制。
+[合作夥伴中心](https://partner.microsoft.com/dashboard)支援三種選項適用於回應提供您的應用程式相關意見反應的客戶。 不論您選擇哪一個選項，請記住每則回應有 1000 個字元的限制。
 
 ## <a name="public-comments-in-feedback-hub"></a>意見反應中樞中的公開留言
 
@@ -66,4 +66,4 @@ ms.locfileid: "8938517"
 > [!NOTE]
 > 如果客戶收到不適當的意見反應回應，他們可以向 Microsoft 舉報開發人員。 他們也可以選擇退出透過電子郵件收到意見反應回應。
 
-您需全權負責您與客戶之間的關係。 Microsoft 不會介入開發人員和客戶之間的糾紛。 不過，如果您認為客戶在您產品上的意見反應內容不適當，請提交[支援票證](http://go.microsoft.com/fwlink/p/?LinkID=401178)。
+您需全權負責您與客戶之間的關係。 Microsoft 不會介入開發人員和客戶之間的糾紛。 不過，如果您認為客戶在您產品上的意見反應內容不適當，請提交[支援票證](https://go.microsoft.com/fwlink/p/?LinkID=401178)。

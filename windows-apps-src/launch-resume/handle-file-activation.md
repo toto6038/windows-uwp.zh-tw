@@ -11,12 +11,12 @@ dev_langs:
 - vb
 - cppwinrt
 - cpp
-ms.openlocfilehash: abe77526a7ac12bc905839065913dd59d70fdf62
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: eaf6118720ab77931decf93113a13341ab4f51d0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925895"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046511"
 ---
 # <a name="handle-file-activation"></a>處理檔案啟用
 
@@ -121,21 +121,21 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 ```
 
 > [!NOTE]
-> 當透過檔案協定 」 啟動，請確定返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是 app 先前內容。
+> 當透過檔案協定 」 啟動，請確定 [返回] 按鈕會將使用者帶回到啟動應用程式的畫面，而不是應用程式先前的內容。
 
 我們建議您建立新的 XAML**框架**針對每個開啟新頁面的啟用事件。 如此一來，新 XAML 框架的瀏覽上一頁堆疊不包含在應用程式可能會存在於目前視窗暫停時任何先前的內容。 如果您決定針對啟動和檔案協定使用單一 XAML**框架**，然後您應該**框架**的瀏覽日誌中的頁面之前先清除瀏覽到新頁面。
 
-您的應用程式透過檔案啟用啟動時，您應該考慮包含能讓使用者能夠返回頁面頂端的應用程式 UI。
+透過檔案啟用啟動您的應用程式時，您應該考慮包含能讓使用者能夠返回頁面頂端的應用程式 UI。
 
 ## <a name="remarks"></a>備註
 
-您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。 如需輸入驗證的詳細資訊，請參閱[撰寫安全程式碼](http://go.microsoft.com/fwlink/p/?LinkID=142053)
+您接收的檔案可能來自不受信任的來源。 建議您先驗證檔案內容，然後才在上面執行動作。 如需輸入驗證的詳細資訊，請參閱[撰寫安全程式碼](https://go.microsoft.com/fwlink/p/?LinkID=142053)
 
 ## <a name="related-topics"></a>相關主題
 
 ### <a name="complete-example"></a>完整範例
 
-* [關聯啟動範例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+* [關聯啟動範例](https://go.microsoft.com/fwlink/p/?LinkID=231484)
 
 ### <a name="concepts"></a>概念
 

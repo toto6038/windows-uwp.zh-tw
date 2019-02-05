@@ -6,16 +6,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0959c9bc09782538cdb15a68c46b0797d4b7d230
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fce2c9230add569c4494b01546f1b3ced81d488b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925650"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048135"
 ---
 #  <a name="screen-sizes-and-breakpoints"></a>螢幕大小與中斷點
 
-UWP app 可在執行 Windows 10，包括手機、平板電腦、桌面、電視，以及更多的任何裝置上執行。 吸引大量的裝置目標和跨 windows 10 生態系統，而不是最佳化您的 UI，為每個裝置的螢幕大小，我們建議設計用於幾個重要的寬度類別 （也稱為 「 中斷點 」）： 
+UWP app 可在執行 Windows 10，包括手機、平板電腦、桌面、電視，以及更多的任何裝置上執行。 大量裝置目標與跨 windows 10 生態系統中，而不是最佳化您的 UI，為每個裝置的螢幕大小，我們建議使用幾個重要的寬度類別 （也稱為 「 中斷點 」） 的設計： 
 - 小型 (小於 640px) 
 - 中型 (641px 到 1007px)
 - 大型 (1008px 和更大的)
@@ -90,7 +90,7 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 - 使用最多 2 個欄位/區域。
 - 顯示搜尋方塊。
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以窄條模式放置，以便讓圖示帶狀線永遠顯示。
-- 請考慮進一步自訂[電視體驗](http://go.microsoft.com/fwlink/?LinkId=760736)。
+- 請考慮進一步自訂[電視體驗](https://go.microsoft.com/fwlink/?LinkId=760736)。
 
 ### <a name="large"></a>大型
 - 設定左右視窗邊界為 24px，以在應用程式視窗左右邊緣建立視覺區隔。
@@ -100,6 +100,6 @@ UWP app 會自動調整您的 UI 以確保應用程式在所有 Windows 10 裝�
 - 將[瀏覽窗格](../controls-and-patterns/navigationview.md)以停駐模式放置，以便讓它永遠顯示。
 
 >[!TIP] 
-> 使用[**Continuum 手機版**](http://go.microsoft.com/fwlink/p/?LinkID=699431)，使用者可以將相容之 windows 10 行動裝置連線到監視器、 滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在大小類別中。
+> 使用[**Continuum 手機版**](https://go.microsoft.com/fwlink/p/?LinkID=699431)，使用者可以將相容之 windows 10 行動裝置連線到監視器、 滑鼠和鍵盤，讓手機可以像膝上型電腦一樣運作。 針對特定中斷點進行設計時，請記住這項新功能- 行動電話不會永遠留在大小類別中。
 
 

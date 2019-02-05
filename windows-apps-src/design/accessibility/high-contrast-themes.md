@@ -7,12 +7,12 @@ ms.date: 09/28/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e4e8d5f49d10219a06a36fdfbe7ec3abe236109a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b58eb4b6e3f3f02bb1f72fcba9da3710f08a72da
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931455"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045992"
 ---
 # <a name="high-contrast-themes"></a>高對比佈景主題  
 
@@ -46,7 +46,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 當您需要變更系統預設色彩時，請針對您的 App 建立 ThemeDictionaries 集合。
 
 1. 由建立適當的配置開始 (如果尚未存在)。 在 App.xaml 中，建立 **ThemeDictionaries** 集合，其中至少包含 **Default** 與 **HighContrast**。
-2. 在 **Default** 中，建立您需要的 [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 類型 (通常是 **SolidColorBrush**)。 針對它的用途來指定 *x:Key* 名稱。
+2. 在 **Default** 中，建立您需要的 [Brush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) 類型 (通常是 **SolidColorBrush**)。 針對它的用途來指定 *x:Key* 名稱。
 3. 指派您想要的**色彩**。
 4. 將該 **Brush** 標記複製到 **HighContrast** 中。
 
@@ -235,7 +235,7 @@ Windows 支援使用者可選擇啟用的作業系統和 App 高對比佈景主�
 
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
-* [UI 對比和設定範例](http://go.microsoft.com/fwlink/p/?linkid=231539)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
-* [XAML 高對比範例](http://go.microsoft.com/fwlink/p/?linkid=254993)
+* [UI 對比和設定範例](https://go.microsoft.com/fwlink/p/?linkid=231539)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 高對比範例](https://go.microsoft.com/fwlink/p/?linkid=254993)
 * [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237)

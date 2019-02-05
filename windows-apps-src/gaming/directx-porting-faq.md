@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX 11
 ms.localizationpriority: medium
-ms.openlocfilehash: 31c165d47beea8ee0e31a3213bdd0dbf0c2bc3d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d2f883e62cf7c61560295673cf48cf891befed91
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927772"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044452"
 ---
 # <a name="directx-11-porting-faq"></a>DirectX 11 移植常見問題集
 
@@ -42,12 +42,12 @@ Direct3D 11 是 Direct3D 9 的重要升級。 當中有很多範例改變，包�
 ## <a name="my-game-code-is-based-on-d3dx-and-dxut-is-there-anything-available-that-can-help-me-migrate-my-code"></a>我的遊戲程式碼是以 D3DX 與 DXUT 為基礎。 有任何方法可幫助我移轉程式碼嗎？
 
 
-[DirectX 工具組 (DirectXTK)](http://go.microsoft.com/fwlink/p/?LinkID=248929) 社群專案提供可搭配 Direct3D 11 使用的協助程式類別。
+[DirectX 工具組 (DirectXTK)](https://go.microsoft.com/fwlink/p/?LinkID=248929) 社群專案提供可搭配 Direct3D 11 使用的協助程式類別。
 
 ##  <a name="how-do-i-maintain-code-paths-for-the-desktop-and-the-microsoft-store"></a>我要如何維護傳統型與 Microsoft Store 的程式碼路徑？
 
 
-Chuck Walbourn 的系列文章[適用於遊戲的雙用途撰寫程式碼技術](http://go.microsoft.com/fwlink/p/?LinkID=286210)提供在傳統型與 Microsoft Store 的程式碼路徑間共用程式碼的指導方針。
+Chuck Walbourn 的系列文章[適用於遊戲的雙用途撰寫程式碼技術](https://go.microsoft.com/fwlink/p/?LinkID=286210)提供在傳統型與 Microsoft Store 的程式碼路徑間共用程式碼的指導方針。
 
 ##  <a name="how-do-i-load-image-resources-in-my-directx-uwp-app"></a>如何在 DirectX UWP app 中載入影像資源？
 
@@ -57,7 +57,7 @@ Chuck Walbourn 的系列文章[適用於遊戲的雙用途撰寫程式碼技術]
 -   內容管線可將影像轉換為當作 Direct3D 紋理資源使用的 DDS 檔案。 請參閱[在您的遊戲或應用程式中使用 3D 資產](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)。
 -   可使用 [Windows 影像處理元件](https://msdn.microsoft.com/library/windows/desktop/ee719902)載入各種格式的影像，並可用於 Direct2D 點陣圖與 Direct3D 紋理資源。
 
-您也可使用 [DirectXTK](http://go.microsoft.com/fwlink/p/?LinkID=248929) 或 [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) 中的 DDSTextureLoader 與 WICTextureLoader。
+您也可使用 [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) 或 [DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926) 中的 DDSTextureLoader 與 WICTextureLoader。
 
 ## <a name="where-is-the-directx-sdk"></a>DirectX SDK 在哪裡？
 
@@ -74,7 +74,7 @@ Win32 傳統型 app 仍然使用 DirectSetup，因此如果您也要升級遊戲
 ## <a name="is-there-any-way-i-can-update-my-desktop-code-to-directx-11-before-moving-away-from-effects"></a>從 Effects 移轉前，有任何方法可將傳統型程式碼更新為 DirectX 11 嗎？
 
 
-請參閱[適用於 Direct3D 11 更新的 Effects](http://go.microsoft.com/fwlink/p/?LinkId=271568)。 Effects 11 可協助移除傳統 DirectX SDK 標頭上的相依性；它可用於協助移植，並且只能用在傳統型應用程式上。
+請參閱[適用於 Direct3D 11 更新的 Effects](https://go.microsoft.com/fwlink/p/?LinkId=271568)。 Effects 11 可協助移除傳統 DirectX SDK 標頭上的相依性；它可用於協助移植，並且只能用在傳統型應用程式上。
 
 ##  <a name="is-there-a-path-for-porting-my-directx-8-game-to-uwp"></a>有任何方法可將 DirectX 8 遊戲移植到 UWP 嗎？
 
@@ -116,7 +116,7 @@ DirectX 10.x 與 11 傳統型遊戲能夠輕易地移植到 UWP。 請參閱 [�
 ## <a name="what-should-i-use-instead-of-the-x-file-format-for-my-models"></a>我的模型應該使用哪種格式代替 .x 檔案格式？
 
 
-雖然我們並未提供 .x 檔案格式的正式替代格式，但是許多範例都使用 SDKMesh 格式。 Visual Studio 也有[內容管線](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)，可將數個常用格式編譯至 CMO 檔案，並可使用 Visual Studio 3D 初學者套件的程式碼或使用 [DirectXTK](http://go.microsoft.com/fwlink/p/?LinkID=248929) 載入。
+雖然我們並未提供 .x 檔案格式的正式替代格式，但是許多範例都使用 SDKMesh 格式。 Visual Studio 也有[內容管線](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)，可將數個常用格式編譯至 CMO 檔案，並可使用 Visual Studio 3D 初學者套件的程式碼或使用 [DirectXTK](https://go.microsoft.com/fwlink/p/?LinkID=248929) 載入。
 
 ## <a name="how-do-i-debug-my-shaders"></a>如何偵錯著色器？
 

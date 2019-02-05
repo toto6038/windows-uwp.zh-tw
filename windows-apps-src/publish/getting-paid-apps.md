@@ -6,22 +6,22 @@ ms.date: 10/31/2018
 ms.topic: article
 keywords: windows 10, uwp, 付款, 應用程式銷售, 應用程式收益, 支出, Microsoft Store 費用, 支付保留, 百分比
 ms.localizationpriority: medium
-ms.openlocfilehash: 91289948f2f4745456b9cebe587cf75366a4877b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0d59519e23955b53b32d2178e37e75f195fd54eb
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941155"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044359"
 ---
 # <a name="getting-paid"></a>獲得報酬
-以下是一些關於接收適用於您的應用程式、 附加元件，以及廣告營收之付款的重要資訊。
+以下是一些有關的詳細資料適用於您的應用程式、 附加元件，以及廣告營收之付款的重要資訊。
 
 > [!IMPORTANT]
 > 您可以接收來自 Microsoft Store 中的應用程式銷售的金額之前，您需要[設定支付帳戶](setting-up-your-payout-account-and-tax-forms.md)並填寫所需的納稅申報表。
 
 ## <a name="store-fee"></a>市集費用
 
-當您[註冊開發人員帳戶](http://go.microsoft.com/fwlink/p/?LinkID=615100)時，會接受[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 本合約說明當您在 Microsoft Store 銷售 App 時您與 Microsoft 之間的關係，其中包含 Microsoft 針對每筆銷售收取的 Microsoft Store 費用。
+當您[註冊開發人員帳戶](https://go.microsoft.com/fwlink/p/?LinkID=615100)時，會接受[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)。 本合約說明當您在 Microsoft Store 銷售 App 時您與 Microsoft 之間的關係，其中包含 Microsoft 針對每筆銷售收取的 Microsoft Store 費用。
 
 在大部分情況下，市集費用為 30%。 費用在[應用程式開發人員合約](https://docs.microsoft.com/legal/windows/agreements/app-developer-agreement)中有正式的定義。 如果您有任何問題，請一律檢閱該文件。
 
@@ -46,7 +46,7 @@ Microsoft Store 費用適用於 Windows 市集收取的所有 App 銷售金額�
 
 ## <a name="payout-reporting"></a>支付報告
 
-您可以存取您付款資訊的詳細資料，並下載報告[合作夥伴中心](https://partner.microsoft.com/dashboard)**支付摘要**中。 如需此處所顯示的詳細資訊，以及我們將您所賺取金額分類的方式，請參閱[支付摘要](payout-summary.md)。
+您可以存取您付款資訊的詳細資料，並下載報告[合作夥伴中心](https://partner.microsoft.com/dashboard)的**支付摘要**中。 如需此處所顯示的詳細資訊，以及我們將您所賺取金額分類的方式，請參閱[支付摘要](payout-summary.md)。
 
 
 ## <a name="payout-timeframe"></a>支付時間範圍

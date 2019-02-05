@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c5005885d150fdd4f6a41b3fb2586e2728bbd5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: dde7f966e47aa6c35e3bc4e508eddabf13e313ee
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921882"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9045909"
 ---
 # <a name="high-dynamic-range-hdr-and-low-light-photo-capture"></a>高動態範圍 (HDR) 和弱光相片擷取
 
@@ -39,7 +39,7 @@ ms.locfileid: "8921882"
 > [!NOTE] 
 > 本文是以[使用 MediaCapture 進行基本相片、視訊和音訊的擷取](basic-photo-video-and-audio-capture-with-MediaCapture.md)中討論的概念和程式碼為基礎，其中說明實作基本相片和視訊擷取的步驟。 我們建議您先熟悉該文章中的基本媒體擷取模式，然後再移到更多進階的擷取案例。 本文中的程式碼假設您的 app 已有正確初始化的 MediaCapture 執行個體。
 
-有一個通用 Windows 範例可示範如何使用 **AdvancedPhotoCapture** 類別，您可以使用此類別來查看內容中使用的 API，或做為您 app 的起點。 如需詳細資訊，請參閱[相機進階擷取範例](http://go.microsoft.com/fwlink/?LinkID=620517)。
+有一個通用 Windows 範例可示範如何使用 **AdvancedPhotoCapture** 類別，您可以使用此類別來查看內容中使用的 API，或做為您 app 的起點。 如需詳細資訊，請參閱[相機進階擷取範例](https://go.microsoft.com/fwlink/?LinkID=620517)。
 
 ## <a name="advanced-photo-capture-namespaces"></a>進階相片擷取命名空間
 

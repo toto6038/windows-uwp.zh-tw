@@ -1,32 +1,32 @@
 ---
-title: 2018 年 9 月 Windows 文件的最新動向-開發 UWP app
-description: 新功能、 影片、 範例及開發人員指引已加入 2018 年 9 月的 Windows 10 開發人員文件。
+title: 在 2018 年 9 月 Windows 文件中新動向-開發 UWP app
+description: 新功能、 影片、 範例及開發人員指引已新增至 2018 年 9 月的 Windows 10 開發人員文件。
 keywords: 新動向，更新，功能，開發人員指引，Windows 10 年 9 月
 ms.date: 09/10/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 16ddf00e88842bc6a83ecf759427984a50f5b4a9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0876b2d9b65143cde2387a42e221460cc617cf0b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931857"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046734"
 ---
-# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>在 2018 年 9 月 Windows 開發人員文件的最新動向
+# <a name="whats-new-in-the-windows-developer-docs-in-september-2018"></a>在 2018 年 9 月 Windows 開發人員文件中新動向
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 下列功能概觀、 開發人員指引和影片已可供月份 9 月。
 
-在 Windows10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
 ### <a name="windows-machine-learning"></a>Windows 機器學習
 
-[Windows 機器學習文件](https://docs.microsoft.com/windows/ai/)現在位於自己的網站，並會針對最新的 Windows 測試人員 SDK 進行更新。 有桌面與 UWP 教學課程以 c + + 和 C# 可協助您開始將 WinML 新增到您的應用程式。
+[Windows 機器學習文件](https://docs.microsoft.com/windows/ai/)現在位於自己的網站，並會針對最新的 Windows 測試人員 SDK 進行更新。 有桌面與 UWP 教學課程以 c + + 和 C# 來協助您開始將 WinML 新增到您的應用程式。
 
 [Windows.AI.MachineLearning API 參考](https://docs.microsoft.com/uwp/api/windows.ai.machinelearning)已更新的最新的 Windows 測試人員 SDK。
 
-[Windows 機器學習 GitHub 存放庫](https://github.com/Microsoft/Windows-Machine-Learning)已經更新與新的範例與最新的 SDK 搭配運作。
+[Windows 機器學習 GitHub 存放庫](https://github.com/Microsoft/Windows-Machine-Learning)已更新使用新的樣本可搭配最新的 SDK。
 
 ![Windows 機器學習圖形](images/winml-graphic.png)
 
@@ -40,7 +40,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 ### <a name="how-blur-effects-work"></a>如何模糊效果工作
 
-我們的技巧，esteemed Mike Jacobs，其中已開始的系列文章中中型有關模糊，從應用程式和遊戲設計的攝影的願景。 如果您有興趣深入了解此普遍的視覺效果，請查看[願景和攝影上的第一個文章](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)並[消除鋸齒，在圖形上的第二。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
+其中一個我們的 writers esteemed Mike Jacobs 中，已開始一連串的媒體中有關模糊，從應用程式和遊戲設計的攝影願景的文件。 如果您有興趣深入了解此普遍的視覺效果，請查看[上攝影及願景的第一個文件](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-8b0590996e09)及[消除鋸齒，在圖形上的第二個。](https://medium.com/microsoft-design/science-in-the-system-how-blur-effects-work-part-2-c5589a738515)
 
 ![模糊情形](images/blur-example.jpg)
 
@@ -64,4 +64,4 @@ Chris Heilmann
 
 Larry Osterman:
 
-* [在 Windows 執行階段中有哪些部分 COM？](https://youtu.be/_nsMjHqRn1w)
+* [在 Windows 執行階段中，有哪些部分 COM？](https://youtu.be/_nsMjHqRn1w)

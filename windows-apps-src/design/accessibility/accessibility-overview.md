@@ -8,12 +8,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 50e6c68841440120b783713ef0a591e39a7c7eec
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d0c3bea228cae8d9482a8e0cb24c958e36992848
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942821"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046571"
 ---
 # <a name="accessibility-overview"></a>協助工具概觀  
 
@@ -188,11 +188,11 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 <span id="ASSISTIVE_TECHNOLOGY_SUPPORT_IN_APPS_THAT_SUPPORT_XAML___MICROSOFT_DIRECTX_INTEROP"/>
 
 ## <a name="assistive-technology-support-in-apps-that-support-xaml--microsoft-directx-interop"></a>應用程式中可支援 XAML / Microsoft DirectX 互通性的輔助技術支援  
-以 XAML UI (使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) 或 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](http://go.microsoft.com/fwlink/p/?LinkID=309155)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
+以 XAML UI (使用 [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) 或 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041)) 裝載的 Microsoft DirectX 內容預設並非無障礙內容。 [XAML SwapChainPanel DirectX 互通性範例](https://go.microsoft.com/fwlink/p/?LinkID=309155)說明如何針對裝載的 DirectX 內容建立使用者介面自動化對等。 這項技術可透過使用者介面自動化讓裝載的內容成為無障礙內容。
 
 ## <a name="related-topics"></a>相關主題  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 * [協助工具設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [協助工具](accessibility.md)
 * [開始使用朗讀器](https://support.microsoft.com/help/22798/windows-10-narrator-get-started)

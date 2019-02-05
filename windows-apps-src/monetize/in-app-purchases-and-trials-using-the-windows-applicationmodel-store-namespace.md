@@ -6,12 +6,12 @@ ms.date: 08/25/2017
 ms.topic: article
 keywords: UWP, App 內購買, IAP, 附加元件, 試用版, Windows.ApplicationModel.Store
 ms.localizationpriority: medium
-ms.openlocfilehash: 72f5875721d17bda79842989c1ac22475a06e938
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 96260b0fb2aa0818dd6df52f88bd0c63d56c35b7
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946123"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046977"
 ---
 # <a name="in-app-purchases-and-trials-using-the-windowsapplicationmodelstore-namespace"></a>使用 Windows.ApplicationModel.Store 命名空間的 App 內購買和試用版
 
@@ -155,7 +155,7 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 5. 在 Visual Studio 中切換到您的 WindowsStoreProxy.xml 檔案。
 6. 在 **\[XML\]** 功能表中，按一下 **\[結構描述\]**，然後在清單中找出 WindowsStoreProxy.xsd 檔案的那一列。 如果檔案的位置不是您想要的位置 (例如，如果仍然顯示暫存檔案)，請按一下 **\[加入\]**。 導覽到正確的檔案，然後按一下 **\[確定\]**。 現在，您應該會在清單中看到該檔案。 確認該結構描述的 **\[使用\]** 欄中出現核取記號。
 
-完成這個動作之後，您對 WindowsStoreProxy.xml 進行的編輯就會依照結構描述。 如需詳細資訊，請參閱[做法︰選取要使用的 XML 結構描述](http://go.microsoft.com/fwlink/p/?LinkId=403014)。
+完成這個動作之後，您對 WindowsStoreProxy.xml 進行的編輯就會依照結構描述。 如需詳細資訊，請參閱[做法︰選取要使用的 XML 結構描述](https://go.microsoft.com/fwlink/p/?LinkId=403014)。
 
 > [!div class="tabbedCodeSnippets"]
 ```xml
@@ -388,7 +388,7 @@ WindowsStoreProxy.xml 檔案預設會建立在下列位置︰%UserProfile%\AppDa
 |  **AppId**  |    是   |  1   |   識別 Microsoft Store 中 App 的 GUID。 測試時可以是任何 GUID。        |
 |  **LinkUri**  |    是  |  1   |    Microsoft Store 清單頁面的 URI。 測試時可以是任何有效的 URI。         |
 |  **CurrentMarket**  |    是  |  1   |    客戶的國家/地區。         |
-|  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是您在合作夥伴中心提交時指定您應用程式相同的值。 Microsoft Store 所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
+|  **AgeRating**  |    是  |  1   |     表示 App 最小年齡分級的整數。 這是您在合作夥伴中心中指定當您提交應用程式相同的值。 Microsoft Store 所使用的值為︰3、7、12 和 16。 如需這些分級的詳細資訊，請參閱[年齡分級](../publish/age-ratings.md)。        |
 |  [MarketData](#marketdata-child-of-app)  |    是  |  1 或以上      |    包含特定國家/地區的 App 相關資訊。 對於列出 App 的每個國家/地區，您必須各包含一個 **MarketData** 元素。       |    |
 
 <span id="marketdata-child-of-app"/>

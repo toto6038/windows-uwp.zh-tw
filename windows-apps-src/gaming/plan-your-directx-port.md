@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, directx, port, 連接埠
 ms.localizationpriority: medium
-ms.openlocfilehash: abbcd688df01b779a1cb3ab9e30bd13709926be4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6779fd95d4fd1964a8ca19aa4a7a9f9c29a6179b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942509"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044379"
 ---
 # <a name="plan-your-directx-port"></a>計劃 DirectX 移植
 
@@ -35,7 +35,7 @@ ms.locfileid: "8942509"
 
 您必須使用自己的協助程式庫或社群工具來取代 D3DX 與 DXUT 協助程式庫。 如需詳細資訊，請參閱[功能對應](feature-mapping.md)一節。
 
-> **注意：** 您可以使用[DirectX 工具組](http://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926)來取代先前由 D3DX 與 DXUT 所提供的部分功能。
+> **注意：** 您可以使用[DirectX 工具組](https://go.microsoft.com/fwlink/p/?LinkID=248929)或[DirectXTex](https://go.microsoft.com/fwlink/p/?LinkID=248926)取代先前由 D3DX 與 DXUT 所提供的部分功能。
 
  
 

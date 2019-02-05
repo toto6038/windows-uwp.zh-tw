@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 811a9b42efe83cf89fd3df89e5c43c72274af36f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 517302b7db1e7b65ca7a181a8c766ce1e71737ac
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928532"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9044542"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 
@@ -35,11 +35,11 @@ ms.locfileid: "8928532"
 | [快速存取 UWP 中的檔案屬性](fast-file-properties.md) | 有效收集程式庫的檔案和其屬性清單以便用於 UWP app。 |
 
 ## <a name="related-samples"></a>相關範例
-[資料夾列舉範例](http://go.microsoft.com/fwlink/p/?linkid=619993)
+[資料夾列舉範例](https://go.microsoft.com/fwlink/p/?linkid=619993)
 
-[檔案存取範例](http://go.microsoft.com/fwlink/p/?linkid=619995)
+[檔案存取範例](https://go.microsoft.com/fwlink/p/?linkid=619995)
 
-[檔案選擇器範例](http://go.microsoft.com/fwlink/p/?linkid=619994)
+[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)
  
 
  

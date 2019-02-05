@@ -6,18 +6,18 @@ ms.date: 03/14/2018
 ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
-ms.openlocfilehash: 7713c1664018a1875d80f70fb75da2afe6104c3c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 03c864a6e8bc6191f63a2b6fd55d8eb23ad965e4
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924360"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046987"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>用 2D、3D 和 Streetside 檢視顯示地圖
 
 您可以在一個叫地圖*placecard*的淺色可關閉視窗中顯示一張地圖，或者在一個完整精選地圖控制項中顯示。
 
-下載 [地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977) 以嘗試本指南中描述的一些功能。
+下載 [地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977) 以嘗試本指南中描述的一些功能。
 
 <a id="placecard" />
 
@@ -455,10 +455,10 @@ private async void display3DLocation()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 * [取得目前的位置](get-location.md)
 * [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)
 * [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
 * [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004)

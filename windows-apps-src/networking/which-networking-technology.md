@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: e418e5a159df44d6ff6e15e4faa972164447f5ee
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b64ddadd0e543930fa72d0c44a6cacf0a873df89
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944513"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050681"
 ---
 # <a name="which-networking-technology"></a>哪一種網路功能技術？
 
@@ -69,7 +69,7 @@ ms.locfileid: "8944513"
 
 當您想要可靠地透過網路傳輸檔案時，請使用[背景傳輸 API](background-transfers.md)。 背景傳輸 API 提供進階的上傳和下載功能，這些功能會在 app 暫停期間於背景執行，並在 app 終止後保留。 API 會監視網路狀態，並自動在連線中斷時暫停和繼續傳輸，傳輸作業會是數據用量感知和電池用量感知，這表示下載活動會根據您目前的連線能力與裝置電池狀態進行調整。 當您的應用程式執行於行動裝置或電池供電的裝置時，會用到這些功能。 API 適用於上傳和下載使用 HTTP(S) 的大型檔案。 也支援 FTP，但只限於下載項目。
 
-Windows 10 中的新背景傳輸功能是能夠在檔案傳輸完成時，以便您可以更新本機目錄、 啟用其他應用程式，或在下載完成時通知使用者時觸發後續處理。
+在 windows 10 中的新背景傳輸功能是能夠在檔案傳輸完成時，以便您可以更新本機目錄、 啟用其他應用程式，或在下載完成時通知使用者時觸發後續處理。
 
 ### <a name="when-to-use-background-transfers"></a>使用背景傳輸的時機
 
@@ -91,7 +91,7 @@ Windows 10 中的新背景傳輸功能是能夠在檔案傳輸完成時，以便
 
 ### <a name="dns-service-discovery"></a>DNS 服務探索
 
-[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 可讓您使用 IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158) 中所述的 DNS-SD 通訊協定，將網路服務通告到網路上的其他裝置。
+[**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API 可讓您使用 IETF [RFC 2782](https://go.microsoft.com/fwlink/?LinkId=524158) 中所述的 DNS-SD 通訊協定，將網路服務通告到網路上的其他裝置。
 
 ### <a name="communicating-over-bluetooth"></a>透過藍牙通訊
 

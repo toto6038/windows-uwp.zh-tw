@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, uwp, wip, Windows 資訊保護, 企業資料, 企業資料保護, edp, 啟發式應用程式
 ms.assetid: 913ac957-ea49-43b0-91b3-e0f6ca01ef2c
 ms.localizationpriority: medium
-ms.openlocfilehash: 229d97c137344de26be0168be437825bea8e9700
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6f022045787512f6baea679633d5327b6ba4caf8
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932541"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9048355"
 ---
 # <a name="windows-information-protection-wip-developer-guide"></a>Windows 資訊保護 (WIP) 開發人員指南
 
@@ -21,7 +21,7 @@ ms.locfileid: "8932541"
 
 在本指南中，我們將說明如何建置啟發式應用程式。 當您完成後，原則系統管理員將會信任並允許您的應用程式使用其組織資料。 而員工最愛的是，就算他們從組織的行動裝置管理 (MDM) 取消註冊或是完全離該組織，其裝置上的個人資料也能完好如初。
 
-__注意__：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Windows 傳統型應用程式，請參閱 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](http://go.microsoft.com/fwlink/?LinkId=822192)。
+__注意__：本指南可協助您啟發 UWP app。 如果您想要啟發 C++ Windows 傳統型應用程式，請參閱 [Windows 資訊保護 (WIP) 開發人員指南 (C++)](https://go.microsoft.com/fwlink/?LinkId=822192)。
 
 如需 WIP 與啟發式應用程式的詳細資訊，請參閱︰[Windows 資訊保護 (WIP)](wip-hub.md)。
 
@@ -1167,4 +1167,4 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 
 ## <a name="related-topics"></a>相關主題
 
-[Windows 資訊保護 (WIP) 範例](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[Windows 資訊保護 (WIP) 範例](https://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)

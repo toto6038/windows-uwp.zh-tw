@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 2d935f53-84db-4108-86dc-cb6a0749782f
 ms.localizationpriority: medium
-ms.openlocfilehash: 1bcffedfea6903c5e62222529b5e7fb8f6f8366e
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: c2689218c8e3885815585424901453b9fc07f2d6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981462"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050961"
 ---
 # <a name="uwp-on-xbox-one"></a>Xbox One 上的 UWP
 
 在 Xbox One 上建置通用 Windows 平台 (UWP) App 的入門。
 
-Xbox One 上的 UWP 支援開發應用程式和遊戲。 您要實驗、建立和測試 Xbox 上的遊戲或 Apps，並不需要是開發人員計畫的一份子。 您只需要是在[合作夥伴中心](https://partner.microsoft.com/dashboard)中的[開發人員帳戶](https://developer.microsoft.com/en-us/store/register)。 當您準備好要在 Xbox One 上發行和銷售遊戲，或是在 Windows 10 上運用 Xbox Live 時，您必須加入 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 或成為 [ID@Xbox](http://www.xbox.com/Developers/id) 開發人員。 如果您想要成為 ID@Xbox 開發人員，建議您先申請參加計劃，再註冊開發人員帳戶。 如需詳細資訊，請參閱[開發人員計劃概觀](../xbox-live/developer-program-overview.md)。
+Xbox One 上的 UWP 支援開發應用程式和遊戲。 您要實驗、建立和測試 Xbox 上的遊戲或 Apps，並不需要是開發人員計畫的一份子。 您只需要是在[合作夥伴中心](https://partner.microsoft.com/dashboard)中的[開發人員帳戶](https://developer.microsoft.com/en-us/store/register)。 當您準備好要在 Xbox One 上發行和銷售遊戲，或是在 Windows 10 上運用 Xbox Live 時，您必須加入 [Xbox Live 創作者計畫](https://developer.microsoft.com/games/xbox/xboxlive/creator) 或成為 [ID@Xbox](https://www.xbox.com/Developers/id) 開發人員。 如果您想要成為 ID@Xbox 開發人員，建議您先申請參加計劃，再註冊開發人員帳戶。 如需詳細資訊，請參閱[開發人員計劃概觀](../xbox-live/developer-program-overview.md)。
 
 本節包括設定步驟，透過驗證程序的指南、安裝所需版本的 Visual Studio 和 Windows 10 工具的相關資訊，以及建置、執行和偵錯您第一個簡單應用程式的步驟。 
 
@@ -40,7 +40,7 @@ Xbox One 上的 UWP 支援開發應用程式和遊戲。 您要實驗、建立�
 |[多使用者應用程式的簡介](multi-user-applications.md)| 描述 Xbox One 上的多使用者應用程式 (MUA)。 |
 | [自動化 Xbox One 開發工作](https://github.com/Microsoft/WindowsDevicePortalWrapper/tree/v0.9.4) | GitHub 上的 WindowsDevicePortalWrapper 專案提供程式庫，可讓您將部署或啟動應用程式等常見的開發工作自動化。 專案包括範例 XboxWdpDriver.exe，示範如何使用 API 進行一般工作。 |
 |[將現有的遊戲移到 Xbox](development-lanes-landing.md)|根據您建置遊戲時所使用的技術，我們可以引導您使用逐步指示，以加快使用 UWP 將遊戲移到 Xbox 的程序。|
-|[Xbox One 上尚未支援的 UWP 功能](http://go.microsoft.com/fwlink/p/?LinkId=760755)|  描述 Xbox One 上尚未完全運作的 UWP 功能區域。|
+|[Xbox One 上尚未支援的 UWP 功能](https://go.microsoft.com/fwlink/p/?LinkId=760755)|  描述 Xbox One 上尚未完全運作的 UWP 功能區域。|
 
 ## <a name="videos"></a>影片
 

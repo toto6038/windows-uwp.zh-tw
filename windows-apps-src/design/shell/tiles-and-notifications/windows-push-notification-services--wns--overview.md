@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f131ad229b4ba22f7fa4652aa302e3596819f206
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 267e6e1cf9a004b6703e000b694274b802220f60
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926182"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047523"
 ---
 # <a name="windows-push-notification-services-wns-overview"></a>Windows 推播通知服務 (WNS) 概觀
  
@@ -51,7 +51,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 
 ### <a name="important-notes"></a>重要事項
 
--   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 windows 10 應用程式會定期更新其通道在背景中的，則您可以下載的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)如 Windows8.1 並重複使用其原始程式碼和/或其示範的模式。
+-   我們不保證應用程式的通知通道 URI 一律保持相同。 我們建議每次執行應用程式時要求新通道，並在 URI 變更時更新本身的服務。 開發人員不得修改通道 URI，而是要將它視為黑箱字串。 在這個時候，通道 URI 會在 30 天後到期。 如果您的 windows 10 應用程式會定期更新其通道，在背景中的，則您可以下載的[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?linkid=231476)適用於 windows 8.1，並重複使用其原始程式碼和/或其示範的模式。
 -   雲端服務與用戶端應用程式之間的介面要由您 (開發人員) 實作。 我們建議應用程式完成與本身服務的驗證程序，並透過安全通訊協定 (像是 HTTPS) 傳輸資料。
 -   雲端服務務必確定通道 URI 使用「notify.windows.com」網域，這一點非常重要。 在任何情況下服務都不可以將通知推播至其他任何網域的通道。 如果應用程式的回呼遭到竄改，惡意攻擊者可能會提交通道 URI 來詐騙 WNS。 如果不檢查網域，您的雲端服務可能會不知不覺地將資訊曝露給攻擊者。
 -   如果您的雲端服務嘗試將通知傳遞到已過期的通道，WNS 將傳回[回應碼 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes)。 您回應這該代碼的方式為讓您的服務不繼續嘗試傳送通知到該 URI。
@@ -61,7 +61,7 @@ Windows 推播通知服務 (WNS) 可以讓協力廠商開發人員從自己的�
 
 若要傳送通知，雲端服務必須透過 WNS 進行驗證。 當您向 Microsoft Store 儀表板註冊您的應用程式時，便會發生這個程序的第一個步驟。 進行註冊期間，將會提供應用程式套件安全性識別碼 (SID) 與祕密金鑰。 您的雲端服務會使用這個資訊向 WNS 進行驗證。
 
-WNS 驗證配置使用 [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787) 通訊協定的用戶端認證設定檔進行實作。 雲端服務提供本身的認證 (套件 SID 與祕密金鑰) 向 WNS 進行驗證。 然後會收到傳回的存取權杖。 這個存取權杖可讓雲端服務傳送通知。 每個傳送至 WNS 的通知要求都需要有權杖。
+WNS 驗證配置使用 [OAuth 2.0](https://go.microsoft.com/fwlink/p/?linkid=226787) 通訊協定的用戶端認證設定檔進行實作。 雲端服務提供本身的認證 (套件 SID 與祕密金鑰) 向 WNS 進行驗證。 然後會收到傳回的存取權杖。 這個存取權杖可讓雲端服務傳送通知。 每個傳送至 WNS 的通知要求都需要有權杖。
 
 高階資訊鏈結如下所示：
 
@@ -72,7 +72,7 @@ WNS 驗證配置使用 [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=2267
 
 在向 WNS 進行驗證時，雲端服務會透過安全通訊端階層 (SSL) 提交 HTTP 要求。 參數使用「application/x-www-for-urlencoded」格式提供。 在「client_id」欄位中提供您的套件 SID，並在「client_secret」欄位中提供您的祕密金鑰。 如需語法詳細資訊，請參閱[存取權杖要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)參考。
 
-**注意：** 這是只是範例，您可以成功使用您自己的程式碼中的不剪下-和貼上程式碼。
+**注意：** 這是只是範例，您可以成功使用自己的程式碼中的不剪下-和貼上程式碼。
 
  
 
@@ -162,18 +162,18 @@ WNS 驗證雲端服務，如果成功，便傳送「200 確定」回應。 存�
 
 省電模式會限制裝置上的背景活動，藉以延長電池使用時間。 Windows 10 可讓使用者設定省電模式，以便在電池電力低於指定的閾值時自動開啟。 開啟省電模式時，便會停用推播通知的接收，以節省能源。 但是有一些例外狀況。 下列 windows 10 省電模式設定 （[**設定**] app 中找到） 可讓您的應用程式甚至省電模式開啟時接收推播通知。
 
--   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定僅適用於 windows 10 桌面版本 （家用版、 專業版、 企業版和教育版）。
+-   **允許在省電模式中接收來自任何應用程式的推播通知**：此設定可讓所有應用程式在省電模式開啟時接收推播通知。 請注意，此設定只適用於 windows 10 桌面版本 （家用版、 專業版、 企業版和教育版）。
 -   **一律允許**：此設定可讓特定應用程式在省電模式開啟時，於背景執行，包括接收推播通知。 此清單是由使用者手動維護。
 
 沒有任何方式檢查這兩個設定的狀態，無法您可以檢查省電模式的狀態。 在 windows 10，使用[**EnergySaverStatus**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus)屬性檢查省電模式狀態。 您的應用程式也可以使用 [**EnergySaverStatusChanged**](https://docs.microsoft.com/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) 事件接聽省電模式的變更。
 
-如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 在 windows 10，使用省電模式設定 URI 配置`ms-settings:batterysaver-settings`，您可以提供設定應用程式的便利連結。
+如果您的應用程式非常依賴推播通知，建議通知使用者，他們在省電模式開啟時可能不會收到通知，並讓他們可以輕鬆地調整**省電模式設定**。 使用省電模式設定 URI 配置，windows 10 的`ms-settings:batterysaver-settings`，您可以提供方便的連結至 [設定] app。
 
 **提示：** 時向使用者通知省電模式設定，建議您提供要在未來隱藏訊息的方式。 例如，以下範例中的 `dontAskMeAgainBox` 核取方塊會在 [**LocalSettings**](https://docs.microsoft.com/uwp/api/Windows.Storage.ApplicationData.LocalSettings) 中保存使用者的喜好設定。
 
  
 
-以下是如何檢查省電模式開啟 windows 10 中的範例。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
+以下是如何檢查省電模式開啟在 windows 10 中的範例。 此範例會通知使用者並啟動 [設定] 應用程式以進入**省電模式設定**。 如果使用者不想再收到通知，`dontAskAgainSetting` 可讓他們隱藏訊息。
 
 ```cs
 using System;

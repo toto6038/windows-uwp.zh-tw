@@ -8,12 +8,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 97eae5f3-c16b-4aa5-b4a1-dd892cf32ead
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a969c0dfbfd08b5cc29651e2ad295c2bdd60ee0
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: fcbed8400b31616f92f20aa3a64a4dd8603dc7b0
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037010"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047892"
 ---
 # <a name="inking-controls"></a>筆跡控制項
 
@@ -84,7 +84,7 @@ InkCanvas 與 InkToolbar 也會用於 **Windows Ink 工作區**中的**繪圖板
 ```
 
 > [!NOTE]
-> 如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱 [UWP 應用程式中的畫筆和手寫筆互動](http://windowsstyleguide/input/pen-and-stylus-interactions/)一文。
+> 如需使用 InkPresenter 自訂 InkCanvas 的詳細說明，請參閱 [UWP 應用程式中的畫筆和手寫筆互動](https://windowsstyleguide/input/pen-and-stylus-interactions/)一文。
 
 InkToolbar 控制項必須與 InkCanvas 搭配使用。 將 InkToolbar (與所有內建工具) 併入您的應用程式時需要額外的一行標記︰
 
@@ -170,6 +170,6 @@ InkToolbar 包含兩個不同群組的按鈕類型︰
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式中的畫筆和手寫筆互動](http://windowsstyleguide/input/pen-and-stylus-interactions/)
-- [辨識筆墨筆劃](http://windowsstyleguide/input/convert-ink-to-text/)
-- [儲存和擷取筆墨筆劃](http://windowsstyleguide/input/save-and-load-ink/)
+- [UWP 應用程式中的畫筆和手寫筆互動](https://windowsstyleguide/input/pen-and-stylus-interactions/)
+- [辨識筆墨筆劃](https://windowsstyleguide/input/convert-ink-to-text/)
+- [儲存和擷取筆墨筆劃](https://windowsstyleguide/input/save-and-load-ink/)

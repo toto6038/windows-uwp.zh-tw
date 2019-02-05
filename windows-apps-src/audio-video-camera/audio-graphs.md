@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b360425755a7dc2249a284d9f68761ce3c783ef
-ms.sourcegitcommit: 92ce837841ae8f16d203e919dbf5c4436bee56e5
+ms.openlocfilehash: da1dc2ab7444bf65074d9c7ccc615aaee07fdcff
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/18/2019
-ms.locfileid: "9015253"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046351"
 ---
 # <a name="audio-graphs"></a>音訊圖
 
@@ -32,7 +32,7 @@ ms.locfileid: "9015253"
 將音訊效果加入至音訊圖，促成其他案例。 音訊圖中的每個節點可以填入零個或多個效果，以對透過節點傳遞的音訊執行音訊處理。 內建效果有好幾個：例如等化器、限制，以及可利用少數幾行程式碼附加到音訊節點的殘響效果。 您也可以建立自己的自訂音訊效果，其運作方式與內建效果完全相同。
 
 > [!NOTE]
-> [AudioGraph UWP 範例](http://go.microsoft.com/fwlink/?LinkId=619481)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
+> [AudioGraph UWP 範例](https://go.microsoft.com/fwlink/?LinkId=619481)實作本概觀文章中所討論的程式碼。 您可以下載範例以查看內容中的程式碼，或做為您自己 app 的初期基礎。
 
 ## <a name="choosing-windows-runtime-audiograph-or-xaudio2"></a>選擇 Windows 執行階段 AudioGraph 或 XAudio2
 
@@ -43,7 +43,7 @@ Windows 執行階段音訊圖 API：
 -   明顯地比 XAudio2 容易使用。
 -   除了支援 C++，還可在 C# 中使用。
 -   可以直接使用包含壓縮檔案格式的音訊檔案。 XAudio2 只能在音訊緩衝區上操作，並不提供任何檔案 I/O 功能。
--   可以在 windows 10 中使用低延遲音訊管線。
+-   在 windows 10 中，可以使用低延遲音訊管線。
 -   使用預設端點參數時，支援自動端點切換。 例如，如果使用者從裝置的喇叭切換到耳機時，則音訊會自動重新導向至新的輸入。
 
 ## <a name="audiograph-class"></a>AudioGraph 類別

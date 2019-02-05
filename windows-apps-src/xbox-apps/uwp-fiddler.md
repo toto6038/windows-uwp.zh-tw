@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 9c133c77-fe9d-4b81-b4b3-462936333aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: c27891b47bb9f7774799c912cc6f4cae3cea92bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fae6caf73cb8a5b569193a17e65e5d8b4f582ff2
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944654"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9046724"
 ---
 # <a name="how-to-use-fiddler-with-xbox-one-when-developing-for-uwp"></a>如何在針對 UWP 進行開發時使用 Fiddler 搭配 Xbox One
 
@@ -19,14 +19,14 @@ Fiddler 是 Web 偵錯 Proxy，它會記錄您的 Xbox One 開發人員套件與
 
 在一般作業中，透過 Proxy 通訊的主機有通訊遭到 Proxy 修改的風險，並可能使玩家得以作弊。 因此，主機被設計為不允許透過 Proxy 通訊。 您必須在開發人員套件上執行一些特殊的設定步驟來讓它可以使用 Fiddler Proxy，才能搭配 Xbox One 開發人員套件使用 Fiddler。 
 
-Fiddler 是免費軟體，可以從 [Fiddler 網站](http://www.fiddler2.com/fiddler2/)下載。 
+Fiddler 是免費軟體，可以從 [Fiddler 網站](https://www.fiddler2.com/fiddler2/)下載。 
 
 Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler 的電腦停用上游連線，直到主機的驗證到期之前，主機可能無法偵測到這個中斷連線。 如果您正在使用 Fiddler，請務必中斷主機與執行 Fiddler 電腦之間的連線，而不要使用 Fiddler 模擬中斷連線。
 
 ### <a name="to-install-and-enable-fiddler-on-your-development-pc"></a>在開發電腦上安裝並啟用 Fiddler
 請依照以下步驟安裝並啟用 Fiddler 來監視您的開發人員套件流量：
 
-1. 依照 [Fiddler 網站](http://www.fiddler2.com/fiddler2/)上的指示，在您的開發電腦上安裝 Fiddler。 
+1. 依照 [Fiddler 網站](https://www.fiddler2.com/fiddler2/)上的指示，在您的開發電腦上安裝 Fiddler。 
 2. 啟動 Fiddler 並從 **\[工具\]** 功能表選取 **\[Fiddler 選項\]**。 
 3. 選取 **\[連線\]** 索引標籤，然後確定已選取 **\[允許遠端電腦連線\]**。 
 4. 按一下 **\[確定\]** 接受對設定的變更。 您會看到顯示 Fiddler 必須重新啟動，變更才會生效，且您必須手動設定防火牆的對話方塊。 按一下對話方塊上的 **\[確定\]** 對話方塊，但*還不要重新啟動 Fiddler*。
@@ -41,11 +41,11 @@ Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler �
   | 動作            | 允許                          |
   | 覆寫          | 否                             |
   | 程式           | *fiddler.exe 的路徑*          |
-  | 本機位址      | 任一                            |
-  | 遠端位址     | 任一                            |
+  | 本機位址      | 任何值                            |
+  | 遠端位址     | 任何值                            |
   | 通訊協定          | TCP                            |
-  | 本機連接埠         | 任一                            |
-  | 遠端連接埠        | 任一                            |
+  | 本機連接埠         | 任何值                            |
+  | 遠端連接埠        | 任何值                            |
   | 允許的使用者      | 任一                            |
   | 允許的電腦  | 任一                            |
 
@@ -59,7 +59,7 @@ Fiddler 可能會影響主機所報告的網路狀態。 如果執行 Fiddler �
 
 ### <a name="to-configure-a-dev-kit-to-use-fiddler-as-its-proxy-to-the-internet"></a>設定開發人員套件使用 Fiddler 作為其網際網路的 Proxy
 
-1. 瀏覽至 Xbox 裝置入口網站 UI 中的 **\[網路\]** 工具。
+1. 瀏覽至 Xbox 裝置入口網站 UI 中的 [網路]**** 工具。
 2. 瀏覽您匯出到桌面的 Fiddler 根憑證。 
 3. 輸入執行 Fiddler 的開發電腦 IP 位址或主機名稱。
 4. 輸入 Fiddler 正在接聽的連接埠號碼 (根據預設，Fiddler 會使用連接埠 8888)。 

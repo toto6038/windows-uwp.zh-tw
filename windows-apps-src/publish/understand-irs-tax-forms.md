@@ -6,12 +6,12 @@ ms.topic: article
 keywords: windows 10, uwp, 課稅, irs, 美國國稅局, 稅賦, 所得稅, 1099
 ms.assetid: 1e475b96-f953-457c-864f-b6f4cb4c309f
 ms.localizationpriority: medium
-ms.openlocfilehash: 3a5e70278d655bce4ced48b33c4711762a7cce7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fb25887d9bc40bd9c596cd437b7d2d6d06047020
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918539"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9047310"
 ---
 # <a name="understand-irs-tax-forms-issued-by-microsoft"></a>了解 Microsoft 寄發的 IRS 稅單
 
@@ -23,11 +23,11 @@ ms.locfileid: "8918539"
 
 | IRS 稅單 | 說明 | 可用性 |
 |--------------|-------------|--------------|
-|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本的表單將於**年 1 月 31**日之前和.pdf 複本可在[合作夥伴中心](https://partner.microsoft.com/dashboard)(在**帳戶設定 > 稅務設定檔**) 在同一時間 |
-|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 紙本的表單將於**3 月 15**日之前和.pdf 複本可在合作夥伴中心 (在**帳戶設定 > 稅務設定檔**) 在同一時間 |
+|1099-MISC, 1099-K | 與銷售活動及 (或) 您參與 Microsoft 市集所獲得的款項相關 | 紙本的表單將於**年 1 月 31**日之前和.pdf 複本可在[合作夥伴中心](https://partner.microsoft.com/dashboard)（在 [**帳戶設定 > 稅金設定檔**) 在同一時間 |
+|1042-S | 與您收到的款項相關 (受美國扣繳稅款限制) | 紙本的表單將於**3 月 15**日之前和.pdf 複本可在合作夥伴中心 （在 [**帳戶設定 > 稅金設定檔**) 在同一時間 |
 
 > [!NOTE]
-> 我們在 IRS 稅單所使用的地址來自於[稅金設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
+> 我們 IRS 稅單所使用的地址來自於[稅金設定檔](setting-up-your-payout-account-and-tax-forms.md#tax-forms)中的地址。 若您的地址有所變更，請務必更新您**稅務設定檔**中的地址。
 
 納稅申報表將會傳送給您，從下列位址：
 
@@ -41,7 +41,7 @@ ms.locfileid: "8918539"
 **非美國市民：**
 <table>
 <tr><th>商務群組</th><th>合法的實體</th><th>Address</th></tr>
-<tr><td>Windows、 Office、 Azure</td><td>Microsoft 愛爾蘭作業有限 （付款藉由 Microsoft Corporation 透過 Microsoft 愛爾蘭做為合格的 Microsoft Corporation 的媒介）</td><td>一個 Microsoft 地點<br>南韓&nbsp;郡&nbsp;商務&nbsp;Park<br>Leopardstown，都柏林 18 愛爾蘭</td></tr>
+<tr><td>Windows、 Office、 Azure</td><td>Microsoft 愛爾蘭作業有限 （付款藉由 Microsoft Corporation 透過 Microsoft 愛爾蘭做為合格 Microsoft corporation 的媒介）</td><td>一個 Microsoft 地點<br>南韓&nbsp;郡&nbsp;商務&nbsp;Park<br>Leopardstown，都柏林 18 愛爾蘭</td></tr>
 <tr><td>廣告 *</td><td>Microsoft 愛爾蘭作業有限 （付款藉由透過 Microsoft 愛爾蘭 Microsoft 線上 Inc.做為 Microsoft 線上 Inc.支付代理程式）</td><td>一個 Microsoft 地點<br>南韓&nbsp;郡&nbsp;商務&nbsp;Park<br>Leopardstown，都柏林 18 愛爾蘭</td></tr>
 <tr><td>廣告</td><td>Microsoft Online inc.</td><td>6100 Neil 道路<br>89511 Reno，NV USA</td></tr>
 <tr><td colspan="3">* 將支付收益的廣告收益下列國家/地區的居民，透過 Microsoft 愛爾蘭作業有限： 奧地利、 比利時、 保加利亞、 克羅埃西亞、 賽普勒斯、 捷克共和國、 丹麥、 愛沙尼亞、 芬蘭、 法國、 德國、 希臘、 匈牙利、 愛爾蘭、曼城島、 義大利、 拉脫維亞、 列支敦斯登、 立陶宛、 盧森堡、 馬爾他、 摩納哥、 荷蘭、 挪威、 波蘭、 葡萄牙、 羅馬尼亞、 斯洛伐克、 斯洛維尼亞、 南非、 西班牙、 瑞典、 瑞士、 英國</td></tr>
@@ -127,4 +127,4 @@ ms.locfileid: "8918539"
 
 
 > [!NOTE]
-> 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](http://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。
+> 如您有與 **IRS 稅單**相關的其他問題或疑慮，請建立[支援票證](https://aka.ms/storesupport)。 Microsoft 無法回答與您特定稅務狀況相關的問題；請向您的稅務專業人員洽詢建議。

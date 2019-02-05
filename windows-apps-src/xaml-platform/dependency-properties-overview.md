@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 92e8b0b0d68b1dc4110818977024d3040194a376
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 52ab0dfba6261a5e278a42f38ea13c632df400f9
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928459"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050771"
 ---
 # <a name="dependency-properties-overview"></a>相依性屬性概觀
 
@@ -21,7 +21,7 @@ ms.locfileid: "8928459"
 
 相依性屬性是特殊化的屬性類型。 更明確地說，這個屬性會追蹤屬性值，並受到專用屬性系統 (Windows 執行階段的一部分) 所影響。
 
-為了支援相依性屬性，定義屬性的物件必須是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (也就是在其繼承中包含了 **DependencyObject** 基底類別的類別)。 許多您使用適用於您使用 XAML 的 UWP 應用程式的 UI 定義的類型將會是**DependencyObject**的子類別，並將支援相依性屬性。 但是，任何來自其名稱內不含 "XAML" 的 Windows 執行階段命名空間的類型將不支援相依性屬性；這類型的屬性是一般屬性，將不會擁有屬性系統的相依性行為。
+為了支援相依性屬性，定義屬性的物件必須是 [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (也就是在其繼承中包含了 **DependencyObject** 基底類別的類別)。 許多您使用適用於您使用 XAML 的 UWP 應用程式的 UI 定義的類型將會是**DependencyObject**的子類別，並且將支援相依性屬性。 但是，任何來自其名稱內不含 "XAML" 的 Windows 執行階段命名空間的類型將不支援相依性屬性；這類型的屬性是一般屬性，將不會擁有屬性系統的相依性行為。
 
 相依性屬性的目的是提供一個系統方法，以根據其他輸入 (當您的 app 執行時，於該應用程式內發生的其他屬性、事件及狀態) 來計算屬性值。 這些其他輸入可能包括：
 
@@ -74,7 +74,7 @@ public bool IsSpinning
 ```
 
 > [!NOTE]
-> 上述範例並非如何建立自訂相依性屬性的完整範例性。 而是為了顯示相依性屬性概念，讓使用者藉由程式碼具體了解概念。 如需更完整的範例，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
+> 上述範例並非如何建立自訂相依性屬性的完整範例性中。 而是為了顯示相依性屬性概念，讓使用者藉由程式碼具體了解概念。 如需更完整的範例，請參閱[自訂相依性屬性](custom-dependency-properties.md)。
 
 ## <a name="dependency-property-value-precedence"></a>相依性屬性值優先順序
 
@@ -149,7 +149,7 @@ public bool IsSpinning
 您也可以使用程式碼建立繫結，而不要使用 XAML。 請參閱 [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)。
 
 > [!NOTE]
-> 就像這樣的繫結會被視為本機值的相依性屬性值優先順序的用途。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
+> 就像這樣的繫結會被視為本機值基於相依性屬性值優先順序的緣故。 如果您將另一個本機值設成原先擁有 [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 值的屬性，將會完全覆寫該繫結，而不只是繫結的執行階段值。 {x:Bind} 繫結會使用產生的程式碼 (將會為屬性設定本機值) 來實作。 如果您針對使用 {x:Bind} 的屬性設定了本機值，那麼下一次評估繫結時 (例如當繫結在其來源物件上觀察到屬性變更時) 將會取代該值。
 
 ### <a name="binding-sources-binding-targets-the-role-of-frameworkelement"></a>繫結來源、繫結目標、FrameworkElement 的角色
 
@@ -207,7 +207,7 @@ Windows 10 引進了 [**RegisterPropertyChangedCallback**](https://msdn.microsof
 - [深入了解資料繫結](https://msdn.microsoft.com/library/windows/apps/mt210946)
 - [腳本動畫](https://msdn.microsoft.com/library/windows/apps/mt187354)
 - [建立 Windows 執行階段元件](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-- [XAML 使用者和自訂控制項範例](http://go.microsoft.com/fwlink/p/?linkid=238581)
+- [XAML 使用者和自訂控制項範例](https://go.microsoft.com/fwlink/p/?linkid=238581)
 
 ## <a name="apis-related-to-dependency-properties"></a>與相依性屬性相關的 Api
 

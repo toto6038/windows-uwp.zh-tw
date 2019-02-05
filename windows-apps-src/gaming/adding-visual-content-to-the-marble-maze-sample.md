@@ -6,12 +6,12 @@ ms.date: 09/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 圖形
 ms.localizationpriority: medium
-ms.openlocfilehash: 60dd12c3e18b82118053d72d0983e13008dd8a0e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b8ad6b9a46993dc1121703e820c924b113120e51
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918903"
+ms.lasthandoff: 02/04/2019
+ms.locfileid: "9046471"
 ---
 # <a name="adding-visual-content-to-the-marble-maze-sample"></a>在 Marble Maze 範例中加入視覺化內容
 
@@ -33,18 +33,18 @@ ms.locfileid: "8918903"
 在開發過程中，我們也需要多次反覆執行其中的一些步驟。 例如，當我們變更網格和彈珠模型，我們也必須變更一些支援這些模型的著色器程式碼。
 
 > [!NOTE]
-> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](http://go.microsoft.com/fwlink/?LinkId=624011)中找到。
+> 與本文件對應的範例程式碼可以在 [DirectX Marble Maze 遊戲範例](https://go.microsoft.com/fwlink/?LinkId=624011)中找到。
 
  
 針對處理 DirectX 和視覺化遊戲內容方面，也就是初始化 DirectX 圖庫、載入場景資源及更新和呈現場景，以下是本文件討論的一些重點：
 
--   新增遊戲內容通常需要許多步驟。 往往也需要反覆執行這些步驟。 遊戲開發人員通常先專注在新增 3D 遊戲內容，然後再新增 2D 內容。
+-   新增遊戲內容通常需要許多步驟。 往往也需要反覆執行這些步驟。 遊戲開發人員通常先專注在新增 3D 遊戲內容，然後新增 2D 內容。
 -   盡可能支援各種圖形硬體來吸引更多客戶，讓他們盡情享受。
 -   清楚區隔設計階段和執行階段格式。 建構您的設計階段資產來發揮最大彈性和快速反覆處理內容。 格式化和壓縮您的資產，盡可能在執行階段有效率地載入並呈現。
 -   在 UWP App 中建立 Direct3D 和 Direct2D 裝置的方式，和在 Windows 傳統型應用程式中進行的方式很像。 有個重要的差別在於交換鏈結與輸出視窗關聯的方式。
 -   當您設計遊戲時，請確定您選擇的網格格式支援您的主要案例。 例如，如果遊戲需要碰撞，請確定您可以從網格中取得碰撞資料。
 -   先更新所有場景物件再呈現物件，將遊戲邏輯和呈現邏輯區分開來。
--   您通常會繪製 3D 場景物件，並再任何 2D 物件，會出現在場景最前面。
+-   您通常會繪製 3D 場景物件，然後任何 2D 物件，會出現在場景最前面。
 -   同步處理繪圖到垂直空白，以確定遊戲不浪費時間繪製事實上永遠不會出現在顯示器上的畫面。 *垂直空白*是一個畫面完成到監視器繪製之後的時間和下一個畫面開始。
 
 ## <a name="getting-started-with-directx-graphics"></a>DirectX 圖形入門
@@ -54,23 +54,23 @@ ms.locfileid: "8918903"
 
 Marble Maze 使用 Direct3D 11.1 來呈現 3D 遊戲資產，也就是彈珠和迷宮。 Marble Maze 也使用 Direct2D、 DirectWrite 及 Windows 影像處理元件 (WIC) 來繪製 2D 遊戲資產，例如功能表和計時器。
 
-遊戲開發需要規劃。 如果您是 DirectX 圖形的新手，我們建議您閱讀[DirectX： 入門](directx-getting-started.md)來自行熟悉建立 UWP DirectX 遊戲的基本概念。 當您閱讀本文件和研究 Marble Maze 原始程式碼時，您可以參考 DirectX 圖形更深入資訊的下列資源：
+遊戲開發需要規劃。 如果您是 DirectX 圖形的新手，我們建議您閱讀[DirectX： 入門](directx-getting-started.md)來自行熟悉建立 UWP DirectX 遊戲的基本概念。 當您閱讀這份文件和研究 Marble Maze 原始程式碼時，您可以參考 DirectX 圖形更深入資訊的下列資源：
 
--   [Direct3D 11 圖形](https://msdn.microsoft.com/library/windows/desktop/ff476080)： 描述 Direct3D 11，一種功能強大、 硬體加速 3D 圖形 API 來轉譯 3D 幾何在 Windows 平台。
+-   [Direct3D 11 圖形](https://msdn.microsoft.com/library/windows/desktop/ff476080)： 描述 Direct3D 11，一種功能強大、 硬體加速 3D 圖形 API 適用於轉譯 3D 幾何在 Windows 平台。
 -   [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)： 描述 Direct2D，這是硬體加速的 2D 圖形 API，其提供高效能和高品質來呈現 2D 幾何、 點陣圖和文字。
 -   [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)： 描述支援轉譯高品質文字的 DirectWrite。
 -   [Windows 影像處理元件](https://msdn.microsoft.com/library/windows/desktop/ee719902)： 描述 wic，一種可延伸的平台，提供數位影像的低階 API。
 
 ### <a name="feature-levels"></a>功能層級
 
-Direct3D 11 引進了名為*功能層級*」 的開發架構。 功能層級是一組妥善定義的 GPU 功能。 使用功能層級將遊戲的目標設定在舊版 Direct3D 硬體上執行。 Marble Maze 支援功能層級 9.1，原因是它不需要較高層級的進階功能。 建議您盡可能擴大硬體支援範圍，並調整遊戲內容，讓使用高階或低階電腦的客戶，都能盡情享受您的遊戲。 如需功能層級的詳細資訊，請參閱[舊版硬體上的 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)。
+Direct3D 11 引進名為*功能層級*」 的開發架構。 功能層級是一組妥善定義的 GPU 功能。 使用功能層級將遊戲的目標設定在舊版 Direct3D 硬體上執行。 Marble Maze 支援功能層級 9.1，原因是它不需要較高層級的進階功能。 建議您盡可能擴大硬體支援範圍，並調整遊戲內容，讓使用高階或低階電腦的客戶，都能盡情享受您的遊戲。 如需功能層級的詳細資訊，請參閱[舊版硬體上的 Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476872)。
 
 ## <a name="initializing-direct3d-and-direct2d"></a>初始化 Direct3D 和 Direct2D
 
 
 「裝置」代表顯示卡。 在 UWP App 中建立 Direct3D 和 Direct2D 裝置的方式，和在 Windows 傳統型應用程式中進行的方式很像。 主要差異是如何將 Direct3D 交換鏈結連接至視窗系統。
 
-**DeviceResources** 類別是管理 Direct3D 和 Direct2D 的基礎。 這個類別處理一般基礎結構，而不是遊戲特定資產。 Marble Maze 會定義**MarbleMazeMain**類別來處理遊戲特定資產，它包含可讓它存取 Direct3D 和 Direct2D 的**DeviceResources**物件的參考。
+**DeviceResources** 類別是管理 Direct3D 和 Direct2D 的基礎。 這個類別處理一般基礎結構，而不是遊戲特定資產。 Marble Maze 會定義**MarbleMazeMain**類別來處理遊戲特定資產，其中具有可讓它存取 Direct3D 和 Direct2D 的**DeviceResources**物件的參考。
 
 在初始化期間， **DeviceResources**建構函式會建立與裝置無關的資源及 Direct3D 和 Direct2D 裝置。
 
@@ -144,7 +144,7 @@ void DX::DeviceResources::CreateDeviceIndependentResources()
 
 ###  <a name="creating-the-direct3d-and-direct2d-devices"></a>建立 Direct3D 和 Direct2D 裝置
 
-**DeviceResources::CreateDeviceResources** 方法會呼叫 [D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082) 來建立代表 Direct3D 顯示卡的裝置物件。 因為 Marble Maze 支援功能層級 9.1 及以上的**deviceresources:: Createdeviceresources**方法**featureLevels**陣列指定層級 9.1 到 11.1。 Direct3D 會依序瀏覽清單，並將第一個可用的功能層級提供給 App。 因此**D3D\_FEATURE\_LEVEL**陣列項目會從最高列到最低，以便在應用程式將會取得可用的最高功能層級。 **DeviceResources::CreateDeviceResources** 方法會查詢從 **D3D11CreateDevice** 傳回的 Direct3D 11 裝置，以取得 Direct3D 11.1 裝置。
+**DeviceResources::CreateDeviceResources** 方法會呼叫 [D3D11CreateDevice](https://msdn.microsoft.com/library/windows/desktop/ff476082) 來建立代表 Direct3D 顯示卡的裝置物件。 因為 Marble Maze 支援功能層級 9.1 及以上的**deviceresources:: Createdeviceresources**方法**featureLevels**陣列指定層級 9.1 到 11.1。 Direct3D 會依序瀏覽清單，並將第一個可用的功能層級提供給 App。 因此**D3D\_FEATURE\_LEVEL**陣列項目會從最高列到最低，讓 app 取得可用的最高功能層級。 **DeviceResources::CreateDeviceResources** 方法會查詢從 **D3D11CreateDevice** 傳回的 Direct3D 11 裝置，以取得 Direct3D 11.1 裝置。
 
 ```cpp
 // This flag adds support for surfaces with a different color channel ordering
@@ -263,7 +263,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-為了將耗電量降到最低，這在由電池供電的裝置上很重要 (例如膝上型電腦和平板電腦)，**DeviceResources::CreateWindowSizeDependentResources** 方法會呼叫 [IDXGIDevice1::SetMaximumFrameLatency](https://msdn.microsoft.com/library/windows/desktop/ff471334) 方法，以確保只在垂直空白之後才呈現遊戲。 與垂直空白進行同步處理會進一步說明此文件中[顯示場景](#presenting-the-scene)的區段中所述。
+為了將耗電量降到最低，這在由電池供電的裝置上很重要 (例如膝上型電腦和平板電腦)，**DeviceResources::CreateWindowSizeDependentResources** 方法會呼叫 [IDXGIDevice1::SetMaximumFrameLatency](https://msdn.microsoft.com/library/windows/desktop/ff471334) 方法，以確保只在垂直空白之後才呈現遊戲。 這份文件的區段[顯示場景](#presenting-the-scene)中進一步說明會說明與垂直空白進行同步處理。
 
 ```cpp
 // Ensure that DXGI does not queue more than one frame at a time. This both 
@@ -286,13 +286,13 @@ DX::ThrowIfFailed(
 ## <a name="loading-scene-resources"></a>載入場景資源
 
 
-Marble Maze 使用**BasicLoader.h**中宣告， **BasicLoader**類別，來載入紋理和著色器。 Marble Maze 使用**SDKMesh**類別來載入迷宮和彈珠的 3D 網格。
+Marble Maze 使用**BasicLoader.h**中宣告， **BasicLoader**類別，來載入紋理和著色器。 Marble Maze 會使用**SDKMesh**類別來載入迷宮和彈珠的 3D 網格。
 
 為了確保應用程式具有好的回應能力，Marble Maze 會以非同步方式或在背景載入場景資源。 當資產在背景中載入時，您的遊戲可以回應視窗事件。 這個程序會在本指南的[在背景中載入遊戲資產](marble-maze-application-structure.md#loading-game-assets-in-the-background)中詳細說明。
 
 ###  <a name="loading-the-2d-overlay-and-user-interface"></a>載入 2D 覆疊和使用者介面
 
-在 Marble Maze 中，覆疊是出現在螢幕最上面的影像。 覆疊一律出現在場景的最前面。 在 Marble Maze 中，覆疊包含 Windows 標誌和文字字串**DirectX Marble Maze 遊戲範例**。 重疊的管理是由**SampleOverlay.h**中定義**SampleOverlay**類別，來執行。 雖然我們在 Direct3D 範例中使用覆疊，但您可以調整這段程式碼，在場景最前面顯示任何影像。
+在 Marble Maze 中，覆疊是出現在螢幕最上面的影像。 覆疊一律出現在場景的最前面。 在 Marble Maze 中，覆疊包含 Windows 標誌和文字字串**DirectX Marble Maze 遊戲範例**。 重疊的管理是由**SampleOverlay.h**中定義**SampleOverlay**類別，執行。 雖然我們在 Direct3D 範例中使用覆疊，但您可以調整這段程式碼，在場景最前面顯示任何影像。
 
 覆疊有一個重要概念，因為內容不會變更，所以 **SampleOverlay** 類別在初始化期間會將內容繪製 (或快取) 到 [ID2D1Bitmap1](https://msdn.microsoft.com/library/windows/desktop/hh404349) 物件。 在繪製階段，**SampleOverlay** 類別只需要將點陣圖繪製到螢幕。 如此一來，就不必為每一個畫面執行高度耗費資源的常式 (例如文字繪製)。
 
@@ -337,7 +337,7 @@ protected:
 **UserInterface** 類別 (可管理使用者介面) 提供 UI 元素的通用基底類別，因此只需要保留 **ElementBase** 物件的集合，簡化 UI 管理並提供可重複使用的使用者介面管理員。 Marble Maze 會定義衍生自 **ElementBase** 的類別，以實作遊戲特有的行為。 例如，**HighScoreTable** 會定義計分排行榜的行為。 如需這些類別的詳細資訊，請參閱原始程式碼。
 
 > [!NOTE]
-> 由於 XAML 可讓您更輕鬆地建立複雜的使用者介面，例如模擬和戰略遊戲中的介面，請考慮是否要使用 XAML 來定義您的 UI。 如需如何使用 XAML 開發使用者介面的 DirectX UWP 遊戲中的資訊，請參閱[延伸遊戲範例中](tutorial-resources.md)，指的是 DirectX 3D 射擊遊戲範例。
+> 由於 XAML 可讓您更輕鬆地建立複雜的使用者介面，例如模擬和戰略遊戲中的介面，請考慮是否要使用 XAML 來定義您的 UI。 如需有關如何使用 XAML 開發使用者介面的 DirectX UWP 遊戲中的資訊，請參閱[延伸遊戲範例中](tutorial-resources.md)，指的是 DirectX 3D 射擊遊戲範例。
 
  
 
@@ -345,7 +345,7 @@ protected:
 
 Marble Maze 使用 **BasicLoader::LoadShader** 方法從檔案載入著色器。
 
-著色器是現今遊戲中 GPU 程式設計的基本單位。 幾乎所有 3D 圖形處理都是透過著色器，不論是模型轉換和場景光源，還是更複雜的幾何處理，範圍從人物膚色到鑲嵌驅動。 如需著色器程式設計模型的相關資訊，請參閱 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)。
+著色器是現今遊戲中 GPU 程式設計的基本單位。 幾乎所有 3D 圖形處理是透過著色器，不論是模型轉換和場景光源，還是更複雜的幾何處理，範圍從人物膚色到鑲嵌驅動。 如需著色器程式設計模型的相關資訊，請參閱 [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)。
 
 Marble Maze 使用頂點和像素著色器。 頂點著色器一律在一個輸入頂點上運算，然後產生一個頂點做為輸出。 像素著色器接受數值、紋理資料、內插的各頂點值和其他資料，以產生像素色彩做為輸出。 因為著色器一次只轉換一個元素，如果圖形硬體提供多個著色器管線，則可以平行處理多組元素。 GPU 可用的平行管線數目可能明顯大於 CPU 可用的數目。 因此，即使是基本著色器，也可以大幅改進輸送量。
 
@@ -414,7 +414,7 @@ float4 main(sPSInput input) : SV_TARGET
 
  
 
-**Marblemazemain:: Loaddeferredresources**方法使用**basicloader:: Loadshader**方法來載入著色器。 下列範例載入的是頂點著色器。 這個著色器的執行階段格式為**BasicVertexShader.cso**。 **m\_vertexShader** 成員變數是 [ID3D11VertexShader](https://msdn.microsoft.com/library/windows/desktop/ff476641) 物件。
+**Marblemazemain:: Loaddeferredresources**方法會使用**basicloader:: Loadshader**方法來載入著色器。 下列範例載入的是頂點著色器。 這個著色器的執行階段格式為**BasicVertexShader.cso**。 **m\_vertexShader** 成員變數是 [ID3D11VertexShader](https://msdn.microsoft.com/library/windows/desktop/ff476641) 物件。
 
 ```cpp
 BasicLoader^ loader = ref new BasicLoader(m_deviceResources->GetD3DDevice());
@@ -442,7 +442,7 @@ loader->LoadShader(
 
 使用 [ID3D11Device::CreateInputLayout](https://msdn.microsoft.com/library/windows/desktop/ff476512) 方法，從輸入元素描述的陣列來建立輸入配置。 這個陣列包含一或多個輸入元素，每個輸入元素描述來自一個端點緩衝區的一個頂點資料元素。 整組輸入元素描述會描述所有將繫結至 IA 階段的端點緩衝區中的所有頂點資料元素。 
 
-**layoutDesc**上述的程式碼片段示範 Marble Maze 使用配置描述。 配置描述會描述包含四個頂點資料元素的頂點緩衝區。 陣列中每一個項目最重要的部分就是語意名稱、日期格式和位元組位移。 例如，**POSITION** 元素指定物件空間中的頂點位置。 它以位元組位移 0 為起點，且包含三個浮點元件 (總計 12 個位元組)。 **NORMAL** 元素指定標準向量。 它以位元組位移 12 為起點，因為在配置中它會緊接著 **POSITION** 出現，而這需要 12 個位元組。 **NORMAL** 元素包含一個四元件、32 位元不帶正負號的整數。
+**layoutDesc**上述的程式碼片段示範 Marble Maze 使用的配置描述。 配置描述會描述包含四個頂點資料元素的頂點緩衝區。 陣列中每一個項目最重要的部分就是語意名稱、日期格式和位元組位移。 例如，**POSITION** 元素指定物件空間中的頂點位置。 它以位元組位移 0 為起點，且包含三個浮點元件 (總計 12 個位元組)。 **NORMAL** 元素指定標準向量。 它以位元組位移 12 為起點，因為在配置中它會緊接著 **POSITION** 出現，而這需要 12 個位元組。 **NORMAL** 元素包含一個四元件、32 位元不帶正負號的整數。
 
 比較輸入配置與頂點著色器所定義的 **sVSInput** 結構，如下列範例所示。 **sVSInput** 結構定義 **POSITION**、**NORMAL** 及 **TEXCOORD0** 元素。 DirectX 執行階段會將配置中的每個元素對應至著色器所定義的輸入結構。
 
@@ -518,7 +518,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-**Marblemazemain:: Update**方法之後會更新**ConstantBuffer**物件，一個用於迷宮，另一個用於彈珠。 **Marblemazemain:: Render**方法接著會繫結每個**ConstantBuffer**物件的常數緩衝區呈現每個物件之前。 下列範例示範**ConstantBuffer**結構，也就是在**MarbleMazeMain.h**。
+**Marblemazemain:: Update**方法之後會更新**ConstantBuffer**物件，一個用於迷宮，另一個用於彈珠。 **Marblemazemain:: Render**方法則每個**ConstantBuffer**會物件繫結至常數緩衝區，再呈現每個物件。 下列範例示範**ConstantBuffer**結構，也就是在**MarbleMazeMain.h**。
 
 ```cpp
 // Describes the constant buffer that draws the meshes.
@@ -556,9 +556,9 @@ cbuffer ConstantBuffer : register(b0)
 
 Marble Maze 使用 SDK 網格做為執行階段格式，原因是此格式提供基本方法來載入範例應用程式的網格資料。 在實際用途上，您應該使用符合遊戲特定需求的網格格式。
 
-**Marblemazemain:: Loaddeferredresources**方法在載入頂點和像素著色器之後，會載入網格資料。 網格是一組頂點資料，通常包含位置、標準資料、色彩、材質和紋理座標等資訊。 網格通常是在 3D 製作軟體中建立及維護個別應用程式程式碼從檔案中。 彈珠和迷宮便是遊戲使用的兩個網格例子。
+**Marblemazemain:: Loaddeferredresources**方法在載入頂點和像素著色器之後會載入網格資料。 網格是一組頂點資料，通常包含位置、標準資料、色彩、材質和紋理座標等資訊。 網格通常是在 3D 製作軟體中建立及維護個別應用程式程式碼從檔案中。 彈珠和迷宮便是遊戲使用的兩個網格例子。
 
-Marble Maze 使用 **SDKMesh** 類別來管理網格。 這個類別是在**SDKMesh.h**中宣告的。 **SDKMesh** 提供方法來載入、轉譯及終結網格資料。
+Marble Maze 使用 **SDKMesh** 類別來管理網格。 這個類別是在**SDKMesh.h**中宣告。 **SDKMesh** 提供方法來載入、轉譯及終結網格資料。
 
 > [!IMPORTANT]
 > Marble Maze 使用 SDK 網格格式，並提供僅供說明**SDKMesh**類別。 雖然 SDK 網格格式有助於學習及建立原型，但卻是很基本的格式，可能不符合大多數遊戲開發的需求。 建議您使用符合遊戲特定需求的網格格式。
@@ -744,7 +744,7 @@ m_mazeConstantBufferData.view = view;
 m_marbleConstantBufferData.view = view;
 ```
 
-**Marblemazemain:: Update**方法如何讀取使用者輸入和模擬彈珠動作的相關資訊，請參閱[加入輸入和互動 Marble Maze 範例](adding-input-and-interactivity-to-the-marble-maze-sample.md)。
+**Marblemazemain:: Update**方法如何讀取使用者輸入和模擬彈珠動作的相關資訊，請參閱[中加入輸入和互動性 Marble Maze 範例](adding-input-and-interactivity-to-the-marble-maze-sample.md)。
 
 ## <a name="rendering-the-scene"></a>呈現場景
 
@@ -758,7 +758,7 @@ m_marbleConstantBufferData.view = view;
 5.  呈現您想要在場景最前面顯示任何 2D 物件。
 6.  將所呈現的影像顯示到監視器。
 
-**Marblemazemain:: Render**方法會繫結呈現目標和深度樣板檢視、 清除這些檢視、 繪製場景，以及然後繪製覆疊。
+**Marblemazemain:: Render**方法會繫結的轉譯目標和深度樣板檢視、 清除這些檢視、 繪製場景，以及然後繪製覆疊。
 
 ###  <a name="preparing-the-render-targets"></a>準備呈現目標
 
@@ -927,7 +927,7 @@ void UserInterface::Render(D2D1::Matrix3x2F orientation2D)
 
 在繪製所有 2D 與 3D 場景物件之後, Marble Maze 會將轉譯的影像呈現到監視器。 它會將繪圖同步處理到垂直空白，以確定不浪費時間繪製事實上永遠不會出現在顯示器上的畫面。 Marble Maze 在顯示場景時也會處理裝置變更。
 
-**Marblemazemain:: Render**方法會傳回之後，遊戲迴圈會呼叫**DX::DeviceResources::Present**方法來將轉譯的影像傳送到監視器或顯示器。 **DX::DeviceResources::Present**方法會呼叫[idxgiswapchain::](https://msdn.microsoft.com/library/windows/desktop/bb174576)來執行顯示作業，如下列範例所示：
+**Marblemazemain:: Render**方法會傳回之後，遊戲迴圈會呼叫**DX::DeviceResources::Present**方法以將轉譯的影像傳送到監視器或顯示器。 **DX::DeviceResources::Present**方法會呼叫[idxgiswapchain::](https://msdn.microsoft.com/library/windows/desktop/bb174576)執行顯示作業，如下列範例所示：
 
 ```cpp
 // The first argument instructs DXGI to block until VSync, putting the application
