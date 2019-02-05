@@ -7,12 +7,12 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0dcb40e4e70fc28dc0ccdbbf4aa329b00c71cf
-ms.sourcegitcommit: 7a1899358cd5ce9d2f9fa1bd174a123740f98e7a
+ms.openlocfilehash: 8e1f40d527d4bc7b5773b885f35ed87c3866449e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042644"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058729"
 ---
 # <a name="integrate-your-packaged-desktop-application-with-windows-10"></a>您已封裝的傳統型應用程式整合至 Windows 10
 
@@ -1190,7 +1190,7 @@ http://schemas.microsoft.com/appx/manifest/desktop/windows10/2
   </Extension>
 ```
 
-您可以在[這裡](https://review.docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts)找到完整的結構描述參考。
+您可以在[這裡](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts)找到完整的結構描述參考。
 
 |名稱 |描述 |
 |-------|-------------|

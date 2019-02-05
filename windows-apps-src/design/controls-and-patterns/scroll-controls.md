@@ -12,12 +12,12 @@ design-contact: ksulliv
 dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 88b35c4ebc7e3b3f5c047ed5e1cef9d46a011909
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037020"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058609"
 ---
 # <a name="scroll-viewer-controls"></a>捲動檢視器控制項
 
@@ -143,7 +143,7 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 - 如果您希望使用者能夠在大型區域雙向移動瀏覽，還能予以縮放，例如，您想讓使用者在完整大小的影像 (而不是根據畫面來調整影像大小) 移動瀏覽和縮放，請將影像放在捲動檢視器內。
 - 如果使用者將捲動很冗長的文字訊息，請將捲動檢視器設定為只能垂直捲動。
 - 使用捲動檢視器以只限包含一個物件。 請注意，這一個物件可以是配置面板，其本身可以包含數目不拘的物件。
-- 請不要將 [Pivot](tabs-pivot.md) 控制項放入捲動檢視器內，以避免與樞紐的捲動邏輯發生衝突。
+- 請不要將 [Pivot](pivot.md) 控制項放入捲動檢視器內，以避免與樞紐的捲動邏輯發生衝突。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 

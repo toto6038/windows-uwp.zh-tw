@@ -6,12 +6,12 @@ ms.date: 07/02/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: b0ed1c7f01e8cb06f6950f2ad23a42605e97c1a0
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 80f9c8bad9445bd9cfef9b09c00f99929fda37aa
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050731"
+ms.locfileid: "9058659"
 ---
 # <a name="apply-runtime-fixes-to-an-msix-package-by-using-the-package-support-framework"></a>使用套件支援架構來執行階段修正套用至 MSIX 封裝
 
@@ -86,7 +86,7 @@ PSF 包含您可以使用這個時候，例如檔案重新導向修復的執行�
 
 ### <a name="create-the-package-layout-folder"></a>建立套件配置資料夾
 
-如果您已經有.msix （或.appx） 檔案，您可以 unpack 其內容到配置資料夾，將會做為您的套件臨時區域。 您可以從命令提示字元使用 makemsix 工具，根據 SDK 的安裝路徑，這是您將在其中您的 Windows 10 電腦上找到 makeappx.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
+如果您已經有.msix （或.appx） 檔案，您可以 unpack 其內容到配置資料夾，將會做為您的套件臨時區域。 您可以從命令提示字元使用 MakeAppx 工具，根據 SDK 的安裝路徑，這是您將在其中您的 Windows 10 電腦上找到 makeappx.exe 工具： x86: C:\Program Files (x86) \Windows Kits\10\bin\x86\makeappx.exe x64: C:\Program Files (x86) \Windows Kits\10\bin\x64\makeappx.exe
 
 ```ps
 makeappx unpack /p PSFSamplePackage_1.0.60.0_AnyCPU_Debug.msix /d PackageContents
@@ -514,7 +514,7 @@ if (auto configRoot = ::FixupQueryCurrentDllConfig())
 
 首先，F5 偵錯執行應用程式的部署鬆散檔案從封裝配置資料夾路徑，而不是從.msix 安裝 /.appx 套件。  配置資料夾通常沒有相同的安全性限制為已安裝的套件資料夾。 如此一來，它可能無法重現之前套用的執行階段修正套件路徑存取拒絕錯誤。
 
-若要解決此問題，請使用.msix /.appx 套件部署，而不是 F5 鬆散檔案部署。  若要建立.msix /.appx 套件檔案中，使用 Windows SDK 中，從[MakeMSIX](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)公用程式，如上文所述。 或者，從 Visual Studio 中，您的應用程式的專案節點上按一下滑鼠右鍵，然後選取**市集**->**建立應用程式套件**。
+若要解決此問題，請使用.msix /.appx 套件部署，而不是 F5 鬆散檔案部署。  若要建立.msix /.appx 套件檔案中，使用 Windows SDK 中，從[MakeAppx](https://docs.microsoft.com/en-us/windows/desktop/appxpkg/make-appx-package--makeappx-exe-)公用程式，如上文所述。 或者，從 Visual Studio 中，您的應用程式的專案節點上按一下滑鼠右鍵，然後選取**市集**->**建立應用程式套件**。
 
 使用 Visual Studio 的另一個問題是它沒有附加至任何子處理程序啟動偵錯工具的內建支援。   這會讓您難以偵錯目標應用程式，必須以手動方式附加由 Visual Studio 啟動後啟動路徑中的邏輯。
 

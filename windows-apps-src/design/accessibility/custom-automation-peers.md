@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 18d3affe5f142c56314d132ba488d87c6f285723
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 13bf5d60b547f71d0cd83e5790236534d05d2544
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920132"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050531"
 ---
 # <a name="custom-automation-peers"></a>自訂自動化對等  
 
@@ -318,7 +318,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 
 對等可以報告它支援多個模式。 如果可支援多個模式，則此覆寫應該包含每個支援之 [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 值的傳回路徑邏輯，並傳回每個相符的對等。 呼叫者一次將只能要求一個介面，而且由呼叫者決定是否轉換成正確的介面。
 
-以下範例示範自訂對等的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 覆寫。 它報告兩種模式的支援：[**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 和 [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653)。 這裡的控制項是一個媒體顯示控制項，它可以顯示全螢幕 (切換模式)，而且有一個可以讓使用者在其中選取位置 (範圍控制項) 的進度列。 這個程式碼來自 [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)。
+以下範例示範自訂對等的 [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.peers.automationpeer.getpatterncore) 覆寫。 它報告兩種模式的支援：[**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) 和 [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653)。 這裡的控制項是一個媒體顯示控制項，它可以顯示全螢幕 (切換模式)，而且有一個可以讓使用者在其中選取位置 (範圍控制項) 的進度列。 這個程式碼來自 [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)。
 
 
 ```csharp
@@ -538,7 +538,7 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 
 ## <a name="related-topics"></a>相關主題  
 * [協助工具](accessibility.md)
-* [XAML 協助工具範例](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [XAML 協助工具範例](https://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/ibrary/windows/apps/windows.ui.xaml.uielement.oncreateautomationpeer)

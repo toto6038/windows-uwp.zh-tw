@@ -6,12 +6,12 @@ ms.date: 05/07/2018
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b14e413a5629dfb5447750e32c42c4efafef8fa
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0ccb9447e9594f71907f0da5d0e15f9c6c65bb6b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931445"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058839"
 ---
 # <a name="scenario-1-generate-a-pri-file-from-string-resources-and-asset-files"></a>案例 1：從字串資源和資產檔案建立 PRI 檔案
 在本案例中，我們會使用[套件資源索引 (PRI) API](https://msdn.microsoft.com/library/windows/desktop/mt845690)，建立新的應用程式來表示我們的自訂建置系統。 請記住，這個自訂建置系統的目的是建立適用於目標 UWP app 的 PRI 檔案。 因此在這個逐步解說過程中，我們會建立一些範例資源檔案 (包含字串以及其他種類的資源) 來代表該目標 UWP app 的資源。
@@ -119,7 +119,7 @@ std::wstring filePathPRIDumpBasic{ generatedPRIsFolder + L"\\resources-pri-dump-
 ::CreateDirectory(generatedPRIsFolder.c_str(), nullptr);
 ```
 
-緊接初始化 COM 的呼叫之後，宣告資源索引子控制代碼，然後呼叫 [**MrmCreateResourceIndexer**]() 以建立資源索引子。
+緊接初始化 COM 的呼叫之後，宣告資源索引子控制代碼，然後呼叫 [**MrmCreateResourceIndexer**](/windows/desktop/menurc/mrmcreateresourceindexer) 以建立資源索引子。
 
 ```cppwinrt
 MrmResourceIndexerHandle indexer;
@@ -139,7 +139,7 @@ MrmResourceIndexerHandle indexer;
 - 預設資源限定詞的清單。
 - 可供函式設定之資源索引子控制代碼的指標。
 
-下一個步驟是將我們的資源新增至剛建立的資源索引子。 `resources.resw` 是包含目標 UWP app 中性字串的資源檔案 (.resw)。 如果您想要查看其內容，請向上捲動 (在本主題中)。 `de-DE\resources.resw` 包含德文字串，而 `en-US\resources.resw` 包含英文字串。 為了將資源檔案中的字串資源新增至資源索引子，您呼叫 [**MrmIndexResourceContainerAutoQualifiers**]()。 第三，我們對包含中性影像資源的檔案呼叫資源索引子的 [**MrmIndexFile**]() 函式。
+下一個步驟是將我們的資源新增至剛建立的資源索引子。 `resources.resw` 是包含目標 UWP app 中性字串的資源檔案 (.resw)。 如果您想要查看其內容，請向上捲動 (在本主題中)。 `de-DE\resources.resw` 包含德文字串，而 `en-US\resources.resw` 包含英文字串。 為了將資源檔案中的字串資源新增至資源索引子，您呼叫 [**MrmIndexResourceContainerAutoQualifiers**](/windows/desktop/menurc/mrmindexresourcecontainerautoqualifiers)。 第三，我們對包含中性影像資源的檔案呼叫資源索引子的 [**MrmIndexFile**](/windows/desktop/menurc/mrmindexfile) 函式。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmIndexResourceContainerAutoQualifiers(indexer, L"resources.resw"));
@@ -150,19 +150,19 @@ MrmResourceIndexerHandle indexer;
 
 在對 **MrmIndexFile** 的呼叫中，"ms-resource:///Files/sample-image.png" 這個值是資源 URI。 第一個路徑區段是「Files」，而就是在我們稍後從此資源索引子產生 PRI 檔案時做為資源對應樹狀子目錄名稱的部分。
 
-簡單介紹資源檔案的資源索引子之後，這就呼叫 [**MrmCreateResourceFile**]() 函式，讓它在磁碟上為我們產生 PRI 檔案。
+簡單介紹資源檔案的資源索引子之後，這就呼叫 [**MrmCreateResourceFile**](/windows/desktop/menurc/mrmcreateresourcefile) 函式，讓它在磁碟上為我們產生 PRI 檔案。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmCreateResourceFile(indexer, MrmPackagingModeStandaloneFile, MrmPackagingOptionsNone, generatedPRIsFolder.c_str()));
 ```
 
-此時，名為 `Generated PRIs` 資料夾中已建立名為 `resources.pri` 的 PRI 檔案。 現在已完成資源索引子，我們會呼叫 [**MrmDestroyIndexerAndMessages**]() 來終結其控制代碼，並釋放所配置的任何電腦資源。
+此時，名為 `Generated PRIs` 資料夾中已建立名為 `resources.pri` 的 PRI 檔案。 現在已完成資源索引子，我們會呼叫 [**MrmDestroyIndexerAndMessages**](/windows/desktop/menurc/mrmdestroyindexerandmessages) 來終結其控制代碼，並釋放所配置的任何電腦資源。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDestroyIndexerAndMessages(indexer));
 ```
 
-由於 PRI 檔案是二進位檔，如果我們將二進位 PRI 檔案傾印成其對應的 XML 檔案，就更容檢視我們剛才產生的內容。 呼叫 [**MrmDumpPriFile**]() 所做的就是這個工作。
+由於 PRI 檔案是二進位檔，如果我們將二進位 PRI 檔案傾印成其對應的 XML 檔案，就更容檢視我們剛才產生的內容。 [**MrmDumpPriFile**](/windows/desktop/menurc/mrmdumpprifile)呼叫的作用就是如此。
 
 ```cppwinrt
 ::ThrowIfFailed(::MrmDumpPriFile(filePathPRI.c_str(), nullptr, MrmDumpType::MrmDumpType_Basic, filePathPRIDumpBasic.c_str()));

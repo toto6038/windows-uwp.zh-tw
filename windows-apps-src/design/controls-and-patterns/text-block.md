@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: b109dff2896d2db01892d2b62a511d392f8054b3
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 692b8837f3bd74dfc5f74bee02786213c9a898f2
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037160"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058519"
 ---
 # <a name="text-block"></a>文字區塊
 
@@ -80,7 +80,7 @@ textBlock1.Text = "Hello, world!";
     <Italic>italic</Italic>, or a <Bold><Italic>combination</Italic></Bold>.</TextBlock>
 ```
 
-衍生自 Inline 類別的元素 (例如 Bold、Italic、Run、Span 和 LineBreak) 會針對不同的文字部分啟用不同的格式設定。 如需詳細資訊，請參閱[格式化文字]()一節。 內嵌的 Hyperlink 元素讓您能夠在文字中新增超連結。 不過，使用 Inlines 也會停用文字轉譯的快速路徑，如下一節所述。
+衍生自 Inline 類別的元素 (例如 Bold、Italic、Run、Span 和 LineBreak) 會針對不同的文字部分啟用不同的格式設定。 如需詳細資訊，請參閱[格式化文字](#formatting-text)一節。 內嵌的 Hyperlink 元素讓您能夠在文字中新增超連結。 不過，使用 Inlines 也會停用文字轉譯的快速路徑，如下一節所述。
 
 
 ## <a name="performance-considerations"></a>效能考量

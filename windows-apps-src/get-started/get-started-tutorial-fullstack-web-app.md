@@ -5,12 +5,12 @@ keywords: hosted web app, HWA, REST API, single-page app, SPA, 託管的 Web 應
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 601478e2479dddc06b6f8f55bc607fd58f07a3b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932614"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049545"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -20,7 +20,7 @@ ms.locfileid: "8932614"
 
 這個兩部分教學課程提供快速導覽現代化的全端 Web 開發，讓您建置可在瀏覽器中運作以及做為 Microsoft Store 適用的託管 Web 應用程式的簡單記憶遊戲。 在部分 I 中，您將建置遊戲後端的簡易 REST API 服務。 藉由在做為 API 服務的雲端中裝載遊戲邏輯，您可保留遊戲狀態，讓您的使用者能夠跨不同裝置接續玩相同的遊戲執行個體。 在部分 II 中，您將建置前端 UI 為回應式配置的單頁 Web 應用程式。
 
-我們會使用一些最受歡迎的 Web 技術，包括 [Node.js](https://nodejs.org/en/) 執行階段和用於伺服器端開發的 [Express](http://expressjs.com/)、[Bootstrap](http://getbootstrap.com/) UI 架構、[Pug](https://www.npmjs.com/package/pug) 範本引擎和用於建置 RESTful API 的 [Swagger](http://swagger.io/tools/)。 您也可以體驗 [Azure 入口網站](https://ms.portal.azure.com/)的雲端裝載以及使用 [Visual Studio Code](https://code.visualstudio.com/) 編輯器。
+我們會使用一些最受歡迎的 Web 技術，包括 [Node.js](https://nodejs.org/en/) 執行階段和用於伺服器端開發的 [Express](https://expressjs.com/)、[Bootstrap](https://getbootstrap.com/) UI 架構、[Pug](https://www.npmjs.com/package/pug) 範本引擎和用於建置 RESTful API 的 [Swagger](https://swagger.io/tools/)。 您也可以體驗 [Azure 入口網站](https://ms.portal.azure.com/)的雲端裝載以及使用 [Visual Studio Code](https://code.visualstudio.com/) 編輯器。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -28,7 +28,7 @@ ms.locfileid: "8932614"
 
  - [Node.js](https://nodejs.org/en/download/) - 務必要選取選項以新增 Node 到您的 PATH。
 
- - [Express 產生器](http://expressjs.com/en/starter/generator.html)- 在您安裝 Node 後，透過執行下列來安裝 Express： `npm install express-generator -g`
+ - [Express 產生器](https://expressjs.com/en/starter/generator.html)- 在您安裝 Node 後，透過執行下列來安裝 Express： `npm install express-generator -g`
 
  - [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -38,7 +38,7 @@ ms.locfileid: "8932614"
 
 ## <a name="part-i-build-a-rest-api-backend"></a>部分 I︰建置 REST API 後端
 
-我們將第一次建置簡單的記憶遊戲 API 以啟動我們的記憶遊戲 Web 應用程式。 我們將使用 [Swagger](http://swagger.io/) 來定義我們 API，並產生 Scaffolding 程式碼和 Web UI 以進行手動測試。
+我們將第一次建置簡單的記憶遊戲 API 以啟動我們的記憶遊戲 Web 應用程式。 我們將使用 [Swagger](https://swagger.io/) 來定義我們 API，並產生 Scaffolding 程式碼和 Web UI 以進行手動測試。
 
 如果您想要略過此部分並直接移至[部分 II︰建置單頁 Web 應用程式](#part-ii-build-a-single-page-web-appl)，以下是[部分 I 已完成的程式碼](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)。請依照 *README* 指示安裝程式碼並在本機執行，或查看 *5. 在 Azure 上裝載 API 服務，並啟用 CORS* 從 Azure 執行它。
 
@@ -78,7 +78,7 @@ ms.locfileid: "8932614"
 #### <a name="post-new"></a>POST /new
 初始化指定大小 (相符項目數) 的新遊戲板。
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |-----------|-------------|
 | int *size* |要洗牌到遊戲板的配對數。 範例： `http://memorygameapisample/new?size=2`|
 
@@ -100,7 +100,7 @@ ms.locfileid: "8932614"
 #### <a name="put-guess"></a>PUT /guess
 指定要顯示的卡片，並檢查先前已經翻過的相符卡片。
 
-| 參數 | 說明 |
+| 參數 | 描述 |
 |-----------|-------------|
 | int *card* | 要顯示之卡片的卡片 ID (遊戲板陣列中的索引)。 每個完成的「猜測」包含兩個指定的卡片 (亦即，使用有效且唯一的 *card* 值兩次呼叫 **/guess**)。 範例： `http://memorygameapisample/guess?card=0`|
 
@@ -111,11 +111,11 @@ ms.locfileid: "8932614"
 
 ### <a name="1-spec-out-the-api-and-generate-code-stubs"></a>1. 指出 API 並產生程式碼端
 
-我們將使用 [Swagger](http://swagger.io/) 將我們的記憶遊戲 API 設計轉換為有用的 Node.js 伺服器程式碼。 以下是您可以定義我們的[記憶遊戲 API 為 Swagger 中繼資料](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json)的方式。 我們會使用這個來產生伺服器程式碼端。
+我們將使用 [Swagger](https://swagger.io/) 將我們的記憶遊戲 API 設計轉換為有用的 Node.js 伺服器程式碼。 以下是您可以定義我們的[記憶遊戲 API 為 Swagger 中繼資料](https://github.com/Microsoft/Windows-tutorials-web/blob/master/Single-Page-App-with-REST-API/backend/api.json)的方式。 我們會使用這個來產生伺服器程式碼端。
 
 1. 建立新資料夾 (例如您的本機 *GitHub* 目錄)，然後下載包含我們的記憶遊戲 API 定義的 [**api.json**](https://raw.githubusercontent.com/Microsoft/Windows-tutorials-web/master/Single-Page-App-with-REST-API/backend/api.json?token=ACEfklXAHTeLkHYaI5plV20QCGuqC31cks5ZFhVIwA%3D%3D) 檔。 請確定您的資料夾名稱未包含任何空格。
 
-2. 開啟您最愛的殼層 ([或使用 Visual Studio Code 的整合式終端機！](https://code.visualstudio.com/docs/editor/integrated-terminal)) 到該資料夾，然後為您的全域 (**-g**) Node 環境執行下列 Node Package Manager (NPM) 命令，以安裝 [Yeoman](http://yeoman.io/) (yo) 程式碼 Scaffolding 工具和 Swagger 產生器︰
+2. 開啟您最愛的殼層 ([或使用 Visual Studio Code 的整合式終端機！](https://code.visualstudio.com/docs/editor/integrated-terminal)) 到該資料夾，然後為您的全域 (**-g**) Node 環境執行下列 Node Package Manager (NPM) 命令，以安裝 [Yeoman](https://yeoman.io/) (yo) 程式碼 Scaffolding 工具和 Swagger 產生器︰
 
     ```
     npm install -g yo
@@ -135,14 +135,14 @@ ms.locfileid: "8932614"
 
     依您的喜好回答一切；資訊是大部分是提供 *package.json* 檔與您的連絡人資訊，以便您可以發佈您的程式碼為 NPM 套件。
 
-5. 最後，為您的新專案和 [Swagger UI](http://swagger.io/swagger-ui/) 支援安裝所有相依性 (在 *package.json* 中列出)。
+5. 最後，為您的新專案和 [Swagger UI](https://swagger.io/swagger-ui/) 支援安裝所有相依性 (在 *package.json* 中列出)。
 
     ```
     npm install
     npm install swaggerize-ui
     ```
 
-    立即啟動 VS Code 與 **\[檔案\]** > **\[開啟資料夾...\]**，並移至 MemoryGameAPI 目錄。 這是您剛建立的 Node.js API 伺服器！ 它使用受歡迎的 [ExpressJS](http://expressjs.com/en/4x/api.html) Web 應用程式架構來構建和執行您的專案。
+    立即啟動 VS Code 與 **\[檔案\]** > **\[開啟資料夾...\]**，並移至 MemoryGameAPI 目錄。 這是您剛建立的 Node.js API 伺服器！ 它使用受歡迎的 [ExpressJS](https://expressjs.com/en/4x/api.html) Web 應用程式架構來構建和執行您的專案。
 
 ### <a name="2-customize-the-server-code-and-setup-debugging"></a>2. 自訂伺服器程式碼與設定偵錯
 
@@ -209,7 +209,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 ]
 ```
 
-現在按下 F5 並將您的瀏覽器開啟至 [http://localhost:8000](http://localhost:8000)。 頁面應會為我們的記憶遊戲 API 開啟至 Swagger UI，而您可以從該處為每個方法展開詳細資料和輸入欄位。 您甚至可以嘗試呼叫 API，雖然其回應將只包含模擬的資料 (由 [Swagmock](https://www.npmjs.com/package/swagmock) 模組提供)。 是時候加入我們的遊戲邏輯，讓這些 API 成真。
+現在按下 F5 並將您的瀏覽器開啟至 [http://localhost:8000](https://localhost:8000)。 頁面應會為我們的記憶遊戲 API 開啟至 Swagger UI，而您可以從該處為每個方法展開詳細資料和輸入欄位。 您甚至可以嘗試呼叫 API，雖然其回應將只包含模擬的資料 (由 [Swagmock](https://www.npmjs.com/package/swagmock) 模組提供)。 是時候加入我們的遊戲邏輯，讓這些 API 成真。
 
 ### <a name="3-set-up-your-route-handlers"></a>3. 設定您的路由處理常式
 
@@ -235,7 +235,7 @@ Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各�
 
 為清楚明瞭，我們將我們的遊戲板儲存在我們的 Node 伺服器上的全域變數 (`global.board`) 中。 但實際上，您會使用雲端儲存空間 (像是 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/))，讓此加入同時支援多個遊樂和玩家的可用記憶遊戲 API 服務。
 
-請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [http://localhost:8000](http://localhost:8000)) 來測試遊戲 API。
+請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [http://localhost:8000](https://localhost:8000)) 來測試遊戲 API。
 
 每次您按下 **\[試試看！\]**  按鈕 (**/game**、**/guess** 或 **/new** 作業之一)，檢查以下產生的**回應本文**和**回應碼**以確認一切是否如預期般運作。
 
@@ -284,7 +284,7 @@ Azure 文件將逐步引導您完成：
 
 ### <a name="going-further"></a>更進一步
 
-為了讓記憶遊戲 API 成為生產應用程式可用的後端服務，您會想要延伸程式碼為支援多個玩家和遊戲。 因此，您可能需要為您的 API 探查[驗證](http://swagger.io/docs/specification/authentication/) (用於管理玩家身分識別)、[NoSQL 資料庫](https://docs.microsoft.com/en-us/azure/documentdb/) (用於追蹤遊戲和玩家)，以及一些基本[單元測試](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis)。
+為了讓記憶遊戲 API 成為生產應用程式可用的後端服務，您會想要延伸程式碼為支援多個玩家和遊戲。 因此，您可能需要為您的 API 探查[驗證](https://swagger.io/docs/specification/authentication/) (用於管理玩家身分識別)、[NoSQL 資料庫](https://docs.microsoft.com/en-us/azure/documentdb/) (用於追蹤遊戲和玩家)，以及一些基本[單元測試](https://apigee.com/about/blog/developer/swagger-test-templates-test-your-apis)。
 
 以下是一些可讓您更進一步的實用資源︰
 
@@ -296,15 +296,15 @@ Azure 文件將逐步引導您完成：
 
 ## <a name="part-ii-build-a-single-page-web-application"></a>部分 II︰ 建置單頁 web 應用程式
 
-既然您已經從部分 I 建置 (或[下載](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) [REST API 後端](#part-i-build-a-rest-api-backend)，您就可以開始使用 [Node](https://nodejs.org/en/)、[Express](http://expressjs.com/) 和 [Bootstrap](http://getbootstrap.com/) 建立單頁記憶遊戲前端。
+既然您已經從部分 I 建置 (或[下載](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)) [REST API 後端](#part-i-build-a-rest-api-backend)，您就可以開始使用 [Node](https://nodejs.org/en/)、[Express](https://expressjs.com/) 和 [Bootstrap](https://getbootstrap.com/) 建立單頁記憶遊戲前端。
 
 本教學課程的部分 II 可讓您的體驗︰ 
 
 * [Node.js](https://nodejs.org/en/)︰建立託管您的遊戲的伺服器
-* [jQuery](http://jquery.com/)：JavaScript 程式庫
-* [Express](http://expressjs.com/)︰用於應用程式 Web 架構
+* [jQuery](https://jquery.com/)：JavaScript 程式庫
+* [Express](https://expressjs.com/)︰用於應用程式 Web 架構
 * [Pug](https://pugjs.org/)：(之前為 Jade) 用於範本化引擎
-* [Bootstrap](http://getbootstrap.com/)︰用於回應式配置
+* [Bootstrap](https://getbootstrap.com/)︰用於回應式配置
 * [Visual Studio Code](https://code.visualstudio.com/)︰用於程式碼編寫、Markdown 檢視及偵錯
 
 ### <a name="1-create-a-nodejs-application-by-using-express"></a>1. 使用 Express 建立 Node.js 應用程式
@@ -333,7 +333,7 @@ Azure 文件將逐步引導您完成：
     npm start
     ```
 
-5. 移至 [http://localhost:3000/](http://localhost:3000/) 檢視您的應用程式。
+5. 移至 [http://localhost:3000/](https://localhost:3000/) 檢視您的應用程式。
 
     ![http://localhost:3000/ 的螢幕擷取畫面](./images/express.png)
 
@@ -464,14 +464,14 @@ Azure 文件將逐步引導您完成：
 > [!TIP] 
 > 如果您使用 Visual Studio Code，請選取您想要取消註解的所有程式碼行，並按下 Crtl + K、U
 
-在此我們使用部分 I 建立的 [`jQuery.ajax()`](http://api.jquery.com/jQuery.ajax/) 和 **PUT** [`/guess`](#part-i-build-a-rest-api-backend) 方法。 
+在此我們使用部分 I 建立的 [`jQuery.ajax()`](https://api.jquery.com/jQuery.ajax/) 和 **PUT** [`/guess`](#part-i-build-a-rest-api-backend) 方法。 
 
 此程式碼以下列順序執行。
 
 * 使用者選取的第一個卡片的 `id` 新增至 selectedCards[] 陣列做為第一個值︰ `selectedCards[0]` 
 * 使用 [`/guess`](#part-i-build-a-rest-api-backend) 方法將 `selectedCards[0]` 中的值 (`id`) 張貼到伺服器
 * 伺服器會以該卡的 `value` (整數) 回應
-* [Bootstrap glyphicon](http://getbootstrap.com/components/) 會新增到卡片的背面，而卡片的 `id` 是 `selectedCards[0]`
+* [Bootstrap glyphicon](https://getbootstrap.com/components/) 會新增到卡片的背面，而卡片的 `id` 是 `selectedCards[0]`
 * 第一個卡片的 `value` (從伺服器) 會儲存在 `selectedCardsValues[]` 陣列中︰`selectedCardsValues[0]`。 
 
 使用者的第二個猜測會遵照相同的邏輯。 如果使用者選取的卡片有相同的識別碼 (例如，`selectedCards[0] == selectedCards[1]`)，則卡片相符！ CSS 類別`.matched` 會新增至相符的卡片 (將其轉為綠色)，而卡片會維持翻轉狀態。
@@ -540,7 +540,7 @@ becomes
 > 記住︰Pug 會區分空白字元。 請確定您的所有縮排都正確！
 
 ### <a name="4-use-bootstraps-grid-system-to-create-a-responsive-layout"></a>4. 使用 Bootstrap 的格線系統來建立回應式配置
-Bootstrap 的[方格系統](http://getbootstrap.com/css/#grid)是可變式方格系統，可縮放方格為裝置的檢視區變更。 此遊戲中的卡片使用 Bootstrap 預先定義的方格系統類別配置，包括︰
+Bootstrap 的[方格系統](https://getbootstrap.com/css/#grid)是可變式方格系統，可縮放方格為裝置的檢視區變更。 此遊戲中的卡片使用 Bootstrap 預先定義的方格系統類別配置，包括︰
 * `.container-fluid`︰指定方格的可變式容器
 * `.row-fluid`︰指定可變式列
 * `.col-xs-3`︰指定欄數
@@ -607,7 +607,7 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
     transform: rotateY(180deg);
     ```
 
-    使用 [`.toggleClass()`](http://api.jquery.com/toggleClass/) 在 `flipCard` 函式中切換開啟和關閉 `cards.flip` 中定義的樣式。 
+    使用 [`.toggleClass()`](https://api.jquery.com/toggleClass/) 在 `flipCard` 函式中切換開啟和關閉 `cards.flip` 中定義的樣式。 
 
     ``` javascript
     $(card).toggleClass("flip");
@@ -620,9 +620,9 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
 1. 在您的記憶目錄中開啟命令提示字元，並輸入下列命令︰ `npm start`
 
-2. 在您的瀏覽器中，移至 [http://localhost:3000/](http://localhost:3000/) 並玩遊戲！
+2. 在您的瀏覽器中，移至 [http://localhost:3000/](https://localhost:3000/) 並玩遊戲！
 
-3. 如果您遇到任何錯誤，您可以在鍵盤上按下 F5 鍵並輸入 `Node.js`，使用 Visual Studio Code 的 Node.js 偵錯工具。 如需在 Visual Studio Code 中偵錯的詳細資訊，請參閱此[文章](http://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。 
+3. 如果您遇到任何錯誤，您可以在鍵盤上按下 F5 鍵並輸入 `Node.js`，使用 Visual Studio Code 的 Node.js 偵錯工具。 如需在 Visual Studio Code 中偵錯的詳細資訊，請參閱此[文章](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。 
 
     您也可以比較您的程式碼與最終資料夾中提供的程式碼。
 

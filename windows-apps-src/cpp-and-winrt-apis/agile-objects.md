@@ -5,12 +5,12 @@ ms.date: 10/20/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影、敏捷式、物件、敏捷性、IAgileObject
 ms.localizationpriority: medium
-ms.openlocfilehash: 2711779f2f5fc13be19a4a10224b110564716477
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2481396d9348250e14ebfc2d1f940b663b405f77
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945243"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058619"
 ---
 # <a name="agile-objects-in-cwinrt"></a>在 C++/WinRT 的敏捷式物件
 
@@ -63,7 +63,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 ## <a name="opting-out-of-agile-object-support"></a>選擇退出敏捷式物件支援
 
-您可以藉由傳遞 [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non_agile) 標記結構做為您基底類別的範本引數，明確地選擇退出敏捷式物件支援。
+您可以藉由傳遞 [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) 標記結構做為您基底類別的範本引數，明確地選擇退出敏捷式物件支援。
 
 如果您直接從 **winrt::implements** 衍生。
 
@@ -85,7 +85,7 @@ struct MyRuntimeClass: MyRuntimeClassT<MyRuntimeClass, winrt::non_agile>
 
 不論標記結構在 variadic 參數套件中出現的位置。
 
-不論您選擇退出敏捷性，您可以自行實作**IMarshal** 。 例如，您可以使用**winrt:: non_agile**標記避免預設敏捷性實作，並親自實作**IMarshal** &mdash;或許可以支援依照值封送處理的語意。
+無論您選擇退出敏捷性，您可以自行實作**IMarshal** 。 例如，您可以使用**winrt:: non_agile**標記避免預設敏捷性實作，並親自實作**IMarshal** &mdash;或許可來支援依照值封送處理的語意。
 
 ## <a name="agile-references-winrtagileref"></a>敏捷式參考資訊 (winrt::agile_ref)
 
@@ -120,7 +120,7 @@ winrt::hstring message{ nonagile_obj_again.Message() };
 * [winrt::agile_ref 結構範本](/uwp/cpp-ref-for-winrt/agile-ref)
 * [winrt::implements 結構範本](/uwp/cpp-ref-for-winrt/implements)
 * [winrt::make_agile 函式範本](/uwp/cpp-ref-for-winrt/make-agile)
-* [winrt::non_agile 標記結構](/uwp/cpp-ref-for-winrt/non_agile)
+* [winrt::non_agile 標記結構](/uwp/cpp-ref-for-winrt/non-agile)
 * [winrt::Windows::Foundation::IUnknown::as 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
 * [winrt::Windows::Foundation::IUnknown::try_as 函式](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntryas-function)
 

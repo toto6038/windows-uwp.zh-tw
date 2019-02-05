@@ -8,12 +8,12 @@ ms.date: 01/23/2018
 ms.topic: article
 keywords: windows 10，uwp，win32，傳統型，快顯通知，傳送快顯通知，傳送本機快顯通知，傳統型橋接器，C#、 c 銳利，快顯通知，wpf
 ms.localizationpriority: medium
-ms.openlocfilehash: 3436433c8086c2801f1ee2174a51525e48c2f7c9
-ms.sourcegitcommit: fae67a53ab1468a31120293653ade9541085bdd7
+ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992309"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058699"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
@@ -386,7 +386,7 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="step-10-deploying-and-debugging"></a>步驟 10：部署和偵錯
 
-若要部署和偵錯您的傳統型橋接器應用程式，請參閱[執行、偵錯以及測試封裝的傳統型應用程式](/porting/desktop-to-uwp-debug.md)。
+若要部署和偵錯您的傳統型橋接器應用程式，請參閱[執行、偵錯以及測試封裝的傳統型應用程式](/windows/uwp/porting/desktop-to-uwp-debug)。
 
 若要部署和偵錯您的傳統型 Win32 應用程式，在正常偵錯前，您必須透過安裝程式安裝一次您的應用程式，以便顯示包含您的 AUMID 與 CLSID 的 [開始] 畫面捷徑。 [開始] 畫面捷徑出現後，您可以使用 Visual Studio 的 F5 來偵錯。
 

@@ -6,12 +6,12 @@ ms.date: 09/12/2017
 ms.topic: article
 keywords: windows 10, uwp, 擷取, 視訊
 ms.localizationpriority: medium
-ms.openlocfilehash: a654739490043b9f821e7906fa8cf9e3e7259fed
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: c474221769bf3aec6e32c80f21386ac1ca2620ea
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919931"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058629"
 ---
 # <a name="capture-from-multiple-sources-using-mediaframesourcegroup"></a>使用 MediaFrameSourceGroup 從多個來源擷取
 
@@ -56,7 +56,7 @@ ms.locfileid: "8919931"
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-呼叫 [MediaEncodingProfile.SetTimedMetadataTracks](**https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks**) 以新增中繼資料串流描述項至編碼設定檔。 下列範例顯示的協助程式方法會取得兩個視訊串流描述項、一個音訊串流描述項與一個定時中繼資料串流描述項，並傳回可用於編碼串流的 **MediaEncodingProfile**。
+呼叫[**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks)以新增中繼資料串流描述元編碼設定檔。 下列範例顯示的協助程式方法會取得兩個視訊串流描述項、一個音訊串流描述項與一個定時中繼資料串流描述項，並傳回可用於編碼串流的 **MediaEncodingProfile**。
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 

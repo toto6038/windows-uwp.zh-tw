@@ -7,22 +7,22 @@ ms.topic: article
 keywords: Windows 10, uwp
 ms.assetid: f45d8b14-02d1-42e1-98df-6c03ce397fd3
 ms.localizationpriority: medium
-ms.openlocfilehash: 2180551f48a728a9b426bc7e35b2dac388ff56ef
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: 8b2350c8164548121baec231335e747166f1c082
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981572"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050045"
 ---
 # <a name="run-debug-and-test-a-packaged-desktop-application"></a>執行、 偵錯以及測試封裝的傳統型應用程式
 
-執行您的已封裝應用程式，並查看外觀，而不需要簽署它。 然後，設定中斷點和逐步執行程式碼。 當您準備好在生產環境中測試您的應用程式時，簽署您的應用程式，然後再安裝它。 此主題將會告訴您如何執行每個項目。
+執行您的已封裝應用程式並查看外觀，而不需要簽署它。 然後，設定中斷點和逐步執行程式碼。 當您準備好在生產環境中測試您的應用程式時，請登入您的應用程式，然後再安裝它。 此主題將會告訴您如何執行每個項目。
 
 <a id="run-app" />
 
 ## <a name="run-your-application"></a>執行您的應用程式
 
-您可以執行您的應用程式進行測試，在本機而不需要取得憑證和進行簽署。 應用程式的執行方式取決於您工具用來建立套件。
+您可以執行您的應用程式進行測試，在本機而不需要取得憑證和進行簽署。 應用程式的執行方式取決於您工具可用來建立套件。
 
 ### <a name="you-created-the-package-by-using-visual-studio"></a>使用 Visual Studio 建立套件
 
@@ -44,13 +44,13 @@ Add-AppxPackage –Register AppxManifest.xml
 
 ## <a name="debug-your-app"></a>偵錯您的應用程式
 
-偵錯應用程式的方式取決於您工具用來建立套件。
+偵錯應用程式的方式取決於您工具可用來建立套件。
 
 若您是使用 Visual Studio 2017 15.4 版中的[新封裝專案](desktop-to-uwp-packaging-dot-net.md#new-packaging-project)建立套件，您只需將封裝專案設定為啟始專案，然後按下 F5 即可偵錯應用程式。
 
 如果使用任何其他工具建立套件，請依照下列步驟執行。
 
-1. 請確定您啟動已封裝的應用程式至少一次，使它安裝在您的本機電腦上。
+1. 請確定您，讓它安裝在您的本機電腦上啟動已封裝的應用程式至少一次。
 
    請參閱上述[執行您的應用程式](#run-app)一節。
 
@@ -80,7 +80,7 @@ Add-AppxPackage –Register AppxManifest.xml
 
 ### <a name="test-an-application-that-you-packaged-by-using-visual-studio"></a>測試使用 Visual Studio 封裝的應用程式
 
-Visual Studio 使用測試憑證來簽署您的應用程式。 您會在輸出資料夾中找到**建立應用程式套件**精靈產生的憑證。 憑證檔案有 *.cer*擴充功能，您必須將該憑證安裝到您想要測試您的應用程式上的電腦上**受信任的根憑證授權單位**存放區。 請參閱[側載您的套件](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
+Visual Studio 使用測試憑證簽署您的應用程式。 您會在輸出資料夾中找到**建立應用程式套件**精靈產生的憑證。 憑證檔案有 *.cer*擴充功能，您必須將該憑證安裝到您想要測試您的應用程式上的電腦上**受信任的根憑證授權單位**存放區。 請參閱[側載您的套件](../packaging/packaging-uwp-apps.md#sideload-your-app-package)。
 
 ### <a name="test-an-application-that-you-packaged-by-using-the-desktop-app-converter-dac"></a>測試使用 Desktop App Converter (DAC) 封裝的應用程式
 
@@ -124,7 +124,7 @@ Invoke-CommandInDesktopPackage [-PackageFamilyName] <string> [-AppId] <string> [
 
 **尋找您的問題解答**
 
-有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](http://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
+有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
 **提供意見反應或功能建議**
 

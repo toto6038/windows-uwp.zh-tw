@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b307814c834d656b05ceb7208c4bd0788078061
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: a0c36430c6dd993c86ae1833631e55e1a8bdca4c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036970"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050318"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -192,7 +192,7 @@ rootGrid.Children.Add(textBox);
 全選 | TextBox 包含文字。
 復原 | 已變更文字。
 
-若要修改操作功能表中顯示的命令，請處理 [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) 事件。 如需此範例，請參閱案例 2 的 [ContextMenu 範例](http://go.microsoft.com/fwlink/p/?linkid=234891)。 如需設計資訊，請參閱操作功能表指導方針。
+若要修改操作功能表中顯示的命令，請處理 [ContextMenuOpening](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.contextmenuopening.aspx) 事件。 如需此範例，請參閱案例 2 的 [ContextMenu 範例](https://go.microsoft.com/fwlink/p/?linkid=234891)。 如需設計資訊，請參閱操作功能表指導方針。
 
 ### <a name="select-copy-and-paste"></a>選取、複製以及貼上
 

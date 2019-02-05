@@ -6,14 +6,14 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ef1814443b3831e514eafb3f5a0c58b7703126b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2235e8781d8a795145c7080bfd846c58b6253629
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947920"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049222"
 ---
-#  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、 裝置和應用程式模型的移植 WindowsPhone Silverlight 到 UWP
+#  <a name="porting-windowsphone-silverlight-to-uwp-for-io-device-and-app-model"></a>I/O、 裝置與 app 模型的移植 WindowsPhone Silverlight 到 UWP
 
 
 前一個主題是[移植 XAML 與 UI](wpsl-to-uwp-porting-xaml-and-ui.md)。
@@ -22,7 +22,7 @@ ms.locfileid: "8947920"
 
 ## <a name="application-lifecycle-process-lifetime-management"></a>應用程式週期 (處理程序生命週期管理)
 
-WindowsPhone Silverlight 應用程式包含可儲存和還原其應用程式狀態及其檢視狀態以支援被標記並進行後續重新啟用程式碼。 應用程式生命週期的通用 Windows 平台 (UWP) 應用程式極為擁有與 WindowsPhone Silverlight 應用程式，因為它們兩者設計最大化可用的資源相同目標使用者選擇在中有何種應用程式任何時刻前景。 您會發現您的程式碼會相當容易地適應新系統。
+WindowsPhone Silverlight 應用程式包含可儲存和還原其應用程式狀態及其檢視狀態以支援被標記並進行後續重新啟用程式碼。 應用程式生命週期的通用 Windows 平台 (UWP) 應用程式極為擁有與 WindowsPhone Silverlight 應用程式，因為它們兩者設計的可用的資源為相同的目標使用者選擇在中有何種應用程式任何時刻前景。 您會發現您的程式碼會相當容易地適應新系統。
 
 **注意：** 按下硬體 [**上一頁**] 按鈕會自動終止 WindowsPhone Silverlight app。 按下行動裝置上的硬體 **\[返回\]** 按鈕 *「不會」* 自動終止 UWP app。 相反地，UWP app 會暫停，然後可能會被終止。 但這些細節對適當地回應應用程式週期事件的應用程式來說是透明的。
 
@@ -40,7 +40,7 @@ UWP app 不支援鏡頭 app。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>偵測執行您 app 的平台
 
-思考 app 目標的變更與 windows 10 的方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+思考 app 目標的變更，在 windows 10 的方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 **注意：** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](wpsl-to-uwp-porting-to-a-uwp-project.md))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
 
@@ -72,7 +72,7 @@ WindowsPhone Silverlight 應用程式可以使用**Microsoft.Phone.Info.DeviceSt
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **ApplicationCurrentMemoryUsage** 和 **ApplicationCurrentMemoryUsageLimit** 屬性 | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) 和 [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) 屬性                                                                                                                                    |
-| **ApplicationPeakMemoryUsage** 屬性                                                 | 使用 Visual Studio 中的記憶體分析工具。 如需詳細資訊，請參閱[分析記憶體使用狀況](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)。                                                                                                                                                                          |
+| **ApplicationPeakMemoryUsage** 屬性                                                 | 使用 Visual Studio 中的記憶體分析工具。 如需詳細資訊，請參閱[分析記憶體使用狀況](https://msdn.microsoft.com/library/windows/apps/dn645469.aspx)。                                                                                                                                                                          |
 | **DeviceFirmwareVersion** 屬性                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) 屬性 (僅電腦裝置系列)                                                                                                                                                                             |
 | **DeviceHardwareVersion** 屬性                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) 屬性 (僅電腦裝置系列)                                                                                                                                                                             |
 | **DeviceManufacturer** 屬性                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) 屬性 (僅電腦裝置系列)                                                                                                                                                                                |
@@ -86,7 +86,7 @@ WindowsPhone Silverlight 應用程式可以使用**Microsoft.Phone.Info.DeviceSt
 
 ## <a name="location"></a>位置
 
-當宣告定位功能在其應用程式套件資訊清單中的應用程式執行於 windows 10 時，系統會提示使用者同意。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
+當中宣告定位功能在其應用程式套件資訊清單中的應用程式執行於 windows 10 時，系統會提示使用者同意。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
 
 ## <a name="orientation"></a>方向
 

@@ -8,12 +8,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 2101eba9c78c87339af5f1bd46e6afc81eacf6af
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: d4b9e82b0ab5e798bb0b29c4d5127cfe773db5f7
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047423"
+ms.locfileid: "9058649"
 ---
 # <a name="create-custom-transport-controls"></a>建立自訂傳輸控制項
 
@@ -57,7 +57,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 - 第三個區段包含 [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)，其可一併容納各種 MediaTransportControls 元素，並定義元件的版面配置方式。
 
 > [!NOTE]
-> 如需修改範本的詳細資訊，請參閱[控制項範本]()。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
+> 如需修改範本的詳細資訊，請參閱[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)。 您可以使用文字編輯器或 IDE 中的類似編輯器，來開啟 \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic 中的 XAML 檔案。 每個控制項的預設樣式與範本都是在 **generic.xaml** 檔案中定義。 您可以在 generic.xaml 中搜尋 "MediaTransportControls"，以尋找 MediaTransportControls 範本。
 
 在下列各節中，您將了解如何為傳輸控制項自訂數個主要元素：
 - [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx)：允許使用者拖曳他們的媒體，同時顯示進度
@@ -91,7 +91,7 @@ MediaPlayerElement 具有可自訂的 XAML 傳輸控制項，以管理通用 Win
 </MediaPlayerElement>
 ```
 
-如需修改樣式與範本的詳細資訊，請參閱[設定控制項的樣式]()和[控制項範本]()。
+如需修改樣式與範本的詳細資訊，請參閱[設定控制項的樣式](/windows/uwp/design/controls-and-patterns/xaml-styles)和[控制項範本](/windows/uwp/design/controls-and-patterns/control-templates)。
 
 ### <a name="create-a-derived-control"></a>建立衍生的控制項
 

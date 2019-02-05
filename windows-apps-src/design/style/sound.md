@@ -12,12 +12,12 @@ design-contact: mattben
 dev-contact: joyate
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 9dd47ce2acf78a76ad413d70ce8c3e7f39a793ea
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f04d364aac79ed232f35cbdd8378bc50393d2c74
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048195"
+ms.locfileid: "9058509"
 ---
 # <a name="sound"></a>音效
 
@@ -118,7 +118,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### <a name="navigation-within-a-page"></a>頁面內的瀏覽
 
-面板或檢視內應用程式的頁面之間瀏覽時 （請參閱[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)），通常是雙向移動。 這表示您可以移至下一個或上一個檢視/面板，而不需離開您目前所在的應用程式頁面。
+面板或檢視內應用程式的頁面之間瀏覽時 （請參閱[索引標籤和樞紐](../controls-and-patterns/pivot.md)），通常是雙向移動。 這表示您可以移至下一個或上一個檢視/面板，而不需離開您目前所在的應用程式頁面。
 
 **MovePrevious** 和 **MoveNext** 音效可達成以此瀏覽概念為主的音訊體驗。
 

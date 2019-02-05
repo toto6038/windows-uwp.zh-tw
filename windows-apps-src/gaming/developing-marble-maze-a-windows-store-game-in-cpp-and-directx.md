@@ -6,12 +6,12 @@ ms.date: 08/10/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 範例, DirectX, 3D
 ms.localizationpriority: medium
-ms.openlocfilehash: e61c96a1b4deb7dd1beb0233814f86ce1b5fb42c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 39f915ad9cf200a5c2c762976ab3c39c2ef85410
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936025"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050085"
 ---
 # <a name="developing-marble-maze-a-uwp-game-in-c-and-directx"></a>使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)
 
@@ -21,7 +21,7 @@ ms.locfileid: "8936025"
 本主題說明如何使用 DirectX 和 Visual C++ 來建立 3D 通用 Windows 平台 (UWP) 遊戲。 名為 Marble Maze 的遊戲適用於多種裝置，例如平板電腦及傳統的桌上型電腦與筆記型電腦。
 
 > [!NOTE]
-> 若要下載 Marble Maze 原始程式碼。請參閱[GitHub 上的範例](http://go.microsoft.com/fwlink/?LinkId=624011) (英文)。
+> 若要下載 Marble Maze 原始程式碼。請參閱[GitHub 上的範例](https://go.microsoft.com/fwlink/?LinkId=624011) (英文)。
 
 > [!IMPORTANT]
 > Marble Maze 說明的設計模式是我們認為建立 UWP 遊戲的最佳做法。 您可以調整許多實作細節，以符合您自己的做法和您所開發的遊戲的獨特需求。 請自行選擇使用最符合需求的各種技術或程式庫。 (不過，一定要確定您的程式碼通過 [Windows 應用程式認證套件](https://docs.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit))。當我們認為某個實作是成功開發遊戲的關鍵時，我們會在此文件中強調。
@@ -51,7 +51,7 @@ Marble Maze 提供許多方式讓使用者與遊戲板互動。 如果您有觸�
 ## <a name="who-should-read-this"></a>本文件的對象
 
 
-如果您有興趣建立 3D 遊戲或其他需要大量圖形的應用程式的 windows 10，這就適合您。 我們希望您善用本文件概述的原則和做法，來建立您自己的 UWP 遊戲。 如果您具備 C++ 和 DirectX 程式設計背景或有強烈的興趣，將可從這份文件中得到最多的收穫。 即使您沒有使用 DirectX 的經驗，只要有使用過類似的 3D 圖形程式設計環境的經驗，仍然可以受益。
+如果您有興趣建立 3D 遊戲或其他需要大量圖形的應用程式，適用於 windows 10，這就很適合您。 我們希望您善用本文件概述的原則和做法，來建立您自己的 UWP 遊戲。 如果您具備 C++ 和 DirectX 程式設計背景或有強烈的興趣，將可從這份文件中得到最多的收穫。 即使您沒有使用 DirectX 的經驗，只要有使用過類似的 3D 圖形程式設計環境的經驗，仍然可以受益。
 
 [逐步解說：使用 DirectX 建立簡單的 UWP 遊戲](tutorial--create-your-first-uwp-directx-game.md)文件說明另一個範例，該範例使用 DirectX 和 C++ 來實作基本的 3D 射擊遊戲。
 

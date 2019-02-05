@@ -6,17 +6,17 @@ ms.topic: article
 keywords: windows 10 s, 永遠連線, 限制, ARM 上的 windows 10
 ms.localizationpriority: medium
 redirect_url: https://docs.microsoft.com/en-us/windows/uwp/porting/apps-on-arm-troubleshooting-x86
-ms.openlocfilehash: 5fa05e1dfd04208ba547a692473fc3df136e6e4f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 42a2866642d11d1d97cc7b0b663486723499a5cf
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919274"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058669"
 ---
 # <a name="limitations-of-apps-and-experiences-on-arm"></a>ARM 上應用程式和體驗的限制
 ARM 上的 Windows 10 有下列必要限制：
 
-- **僅支援 ARM64 驅動程式**。 如同所有架構，核心模式驅動程式、[使用者模式驅動程式架構 (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf)驅動程式和印表機驅動程式必須編譯以符合作業系統的架構。 雖然 ARM 作業系統有模擬 x86 使用者模式 app 的功能，但是目前不會模擬為其他架構（例如 x64 或 x86）實作的驅動程式，因此在此平台上不受支援。 有專屬自訂驅動程式的任何應用程式都需要移植到 ARM64。 在有限案例中，應用程式可在模擬下執行為 x86，但是應用程式的驅動程式部分必須移植到 ARM64。 針對 ARM64 編譯驅動程式的詳細資訊，請查看[使用 WDK 建置 ARM64 驅動程式](https://review.docs.microsoft.com/en-us/windows-hardware/drivers/develop/building-arm64-drivers?branch=rs4-arm64)。
+- **僅支援 ARM64 驅動程式**。 如同所有架構，核心模式驅動程式、[使用者模式驅動程式架構 (UMDF)](https://docs.microsoft.com/en-us/windows-hardware/drivers/wdf/overview-of-the-umdf)驅動程式和印表機驅動程式必須編譯以符合作業系統的架構。 雖然 ARM 作業系統有模擬 x86 使用者模式 app 的功能，但是目前不會模擬為其他架構（例如 x64 或 x86）實作的驅動程式，因此在此平台上不受支援。 有專屬自訂驅動程式的任何應用程式都需要移植到 ARM64。 在有限案例中，應用程式可在模擬下執行為 x86，但是應用程式的驅動程式部分必須移植到 ARM64。 針對 ARM64 編譯驅動程式的詳細資訊，請查看[使用 WDK 建置 ARM64 驅動程式](/windows-hardware/drivers/develop/building-arm64-drivers)。
 
 - **不支援 x64 應用程式**。 ARM 上的 Windows 10 不支援模擬 x64 應用程式。
 

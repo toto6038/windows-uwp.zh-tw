@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ce39e87f3c5c9e11f3e9ddb1424d606356ee3c8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: d2d1b2b4e6875730d5a6bfa8dd711e11ac5d049c
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918870"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049305"
 ---
 # <a name="windows-runtime-8x-to-uwp-case-study-quizgame-sample-app"></a>Windows 執行階段 8.x 至 UWP 案例研究： QuizGame 應用程式範例
 
@@ -20,25 +20,25 @@ ms.locfileid: "8918870"
 
 本主題提供的案例研究的對等運作的測驗遊戲 WinRT 8.1 範例 app 移植到 Windows10Universal Windows 平台 (UWP) 應用程式。
 
-通用 8.1 應用程式是一個組建相同的應用程式的兩個版本： Windows8.1，一個應用程式套件和適用於 Windows Phone 8.1 的不同的應用程式套件。 WinRT 8.1 版的 QuizGame 會使用通用 Windows 應用程式專案排列方式，但會採用不同的處理方式，並針對這兩個平台建置功能完全相同的應用程式。 Windows8.1 應用程式套件做為主機測驗遊戲工作階段，而 Windows Phone 8.1 應用程式套件則扮演主機的用戶端的角色。 這兩個測驗遊戲工作階段的部分會透過對等網路進行通訊。
+通用 8.1 應用程式是一個組建相同的應用程式的兩個版本： windows 8.1，一個應用程式套件和適用於 Windows Phone 8.1 的不同的應用程式套件。 WinRT 8.1 版的 QuizGame 會使用通用 Windows 應用程式專案排列方式，但會採用不同的處理方式，並針對這兩個平台建置功能完全相同的應用程式。 Windows 8.1 應用程式套件做為主機測驗遊戲工作階段，而 Windows Phone 8.1 應用程式套件則扮演主機的用戶端角色。 這兩個測驗遊戲工作階段的部分會透過對等網路進行通訊。
 
 分別為電腦和手機量身訂做這兩個部分，非常合理。 但是，如果您不只能在所選擇的任何裝置上執行，而且還能在主機和用戶端上執行，就更理想了吧？ 在此案例研究中，我們將這兩個應用程式移植到其中他們將會每個建置為單一應用程式套件，讓使用者可以安裝到各種裝置上的 windows 10。
 
 應用程式會利用使用檢視與檢視模型的模式。 誠如所見，由於這個清楚的區隔，使得適用於此 app 的移植程序變得非常簡單。
 
-**注意：** 此範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 （大部分的家用網路都，雖然可能不到您的公司網路）。 此範例也會傳送和接收 TCP 封包。
+**注意：** 此範例假設您的網路已設定為傳送和接收自訂 UDP 群組多點傳送封包 （大部分的家用網路都，雖然可能不是您的公司網路）。 此範例也會傳送和接收 TCP 封包。
 
  
 
-**注意：** 時在 Visual Studio 中，開啟 QuizGame10，如果您看見 「 需要 Visual Studio 更新 」，則請依照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步驟。
+**注意：** 時在 Visual Studio 中開啟 QuizGame10，如果您看見 「 需要 Visual Studio 更新 」，則請依照[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md)中的步驟。
 
  
 
 ## <a name="downloads"></a>下載
 
-[下載 QuizGame 通用 8.1 應用程式](http://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
+[下載 QuizGame 通用 8.1 應用程式](https://go.microsoft.com/fwlink/?linkid=532953)。 這是應用程式移植之前的初始狀態。 
 
-[下載 QuizGame10 windows 10 應用程式](http://go.microsoft.com/fwlink/?linkid=532954)。 這是剛移植後的應用程式的狀態。 
+[下載 QuizGame10 windows 10 應用程式](https://go.microsoft.com/fwlink/?linkid=532954)。 這是剛移植後的應用程式的狀態。 
 
 [在 GitHub 上檢視此範例的最新版本](https://github.com/Microsoft/Windows-appsample-quizgame)。
 
@@ -80,17 +80,17 @@ ms.locfileid: "8918870"
 QuizGame 含有下列項目。
 
 -   P2PHelper。 這是一個可移植的類別庫，其中包含對等網路邏輯。
--   QuizGame.Windows。 這是建置主機應用程式，針對目標為 Windows8.1 應用程式套件的專案。
+-   QuizGame.Windows。 這是建置主機應用程式，針對目標為 windows 8.1 的應用程式套件的專案。
 -   QuizGame.WindowsPhone。 這個專案會針對目標為 Windows Phone 8.1 的用戶端應用程式建置應用程式套件。
 -   QuizGame.Shared。 這是包含其他兩個專案也會用到之原始程式碼、標記檔案及其他資產與資源的專案。
 
 在這個案例研究中，我們擁有[如果您有通用 8.1 App](w8x-to-uwp-root.md)中所述之與支援哪些裝置有關的常見選項。
 
-根據這些選項，我們會 QuizGame.Windows 移植到名為 QuizGameHost 的新 windows 10 專案。 而且，我們將 QuizGame.WindowsPhone 移植到名為 QuizGameClient 的新 windows 10 專案。 這些專案會將目標設為通用裝置系列，因此它們將可在任何裝置上執行。 而我們會在它們自己的資料夾中保留 QuizGame.Shared 來源檔案等項目，並將這些共用檔案連結到這兩個新專案。 就像之前一樣，我們會將所有項目保留於單一方案中，並將它命名為 QuizGame10。
+根據這些選項，我們將 QuizGame.Windows 移植到名為 QuizGameHost 的新 windows 10 專案。 而且，將 QuizGame.WindowsPhone 移植到名為 QuizGameClient 的新 windows 10 專案。 這些專案會將目標設為通用裝置系列，因此它們將可在任何裝置上執行。 而我們會在它們自己的資料夾中保留 QuizGame.Shared 來源檔案等項目，並將這些共用檔案連結到這兩個新專案。 就像之前一樣，我們會將所有項目保留於單一方案中，並將它命名為 QuizGame10。
 
 **QuizGame10 方案**
 
--   建立新方案 (**新的專案** &gt; **其他專案類型** &gt; **Visual Studio 方案**)，並命名為 QuizGame10。
+-   建立新方案 (**新的專案** &gt; **其他專案類型** &gt; **Visual Studio 方案**) 並將它命名為 QuizGame10。
 
 **P2PHelper**
 
@@ -144,7 +144,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="adaptive-ui"></a>彈性 UI
 
-應用程式 （也就是只有配有大型螢幕的裝置） 在寬型視窗中執行時，QuizGameHost windows 10 應用程式看起來就足夠。 若應用程式的視窗較窄 (這會發生於小型裝置上，也會發生於大型裝置上)，UI 便會受到擠壓而使其變得難以閱讀。
+應用程式 （也就是只配有大型螢幕的裝置） 在寬型視窗中執行時，QuizGameHost windows 10 應用程式看起來就足夠。 若應用程式的視窗較窄 (這會發生於小型裝置上，也會發生於大型裝置上)，UI 便會受到擠壓而使其變得難以閱讀。
 
 我們可以使用彈性的 Visual State Manager 功能來解決這個問題，如[案例研究：Bookstore2](w8x-to-uwp-case-study-bookstore2.md) 中所述。 首先，在視覺元素上設定屬性，讓 UI 配置預設是窄型狀態。 這所有的變更都是在 \\View\\HostView.xaml 中進行。
 
@@ -154,7 +154,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 -   在註解 `<!-- Content -->` 指示的 **Grid** 上，設定 `x:Name="contentGrid"` 和 `Margin="-18,12,0,0"`。
 -   隨即在註解 `<!-- Options -->` 上的 **TextBlock**，設定 `Margin="0,0,0,24"`。
 -   在預設的 **TextBlock** 樣式 (檔案中的第一個資源) 中，將 **FontSize** setter 的值變更為 "15"。
--   在 `OptionContentControlStyle` 中，將 **FontSize** setter 的值變更為 "20"。 這個步驟和前一步驟會提供可在所有裝置上良好運作的字體坡形。 這些是比我們針對 Windows8.1 應用程式所使用的"30"還要有彈性的大小。
+-   在 `OptionContentControlStyle` 中，將 **FontSize** setter 的值變更為 "20"。 這個步驟和前一步驟會提供可在所有裝置上良好運作的字體坡形。 這些是比我們針對 windows 8.1 應用程式所使用的"30"還要有彈性的大小。
 -   最後，將適當的 Visual State Manager 標記新增到根 **Grid**。
 
 ```xml
@@ -177,7 +177,7 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ## <a name="universal-styling"></a>通用樣式
 
 
-您會注意到在 windows 10，按鈕將不具有 padding 在其範本中相同觸控目標。 只需進行兩個小變更，就能補救這一點。 首先，將這個標記新增到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
+您會注意到 windows 10 的按鈕將不具有 padding 在其範本中相同觸控目標。 只需進行兩個小變更，就能補救這一點。 首先，將這個標記新增到 QuizGameHost 和 QuizGameClient 中的 app.xaml。
 
 ```xml
 <Style TargetType="Button">
@@ -195,4 +195,4 @@ rootFrame.Navigate(typeof(MainPage), e.Arguments);
 
 ## <a name="conclusion"></a>總結
 
-我們在此研究案例中移植的應用程式相對複雜許多，因為它涉及了數個專案、一個類別庫，以及相當大量的程式碼與使用者介面。 即便如此，移植還是簡單易懂的。 部分的輕鬆移植可直接歸因 windows 10 開發人員平台及 Windows8.1 和 Windows Phone 8.1 的平台間的相似性。 有些則是因為原始應用程式的設計方式是個別保留模型、檢視模型及檢視。
+我們在此研究案例中移植的應用程式相對複雜許多，因為它涉及了數個專案、一個類別庫，以及相當大量的程式碼與使用者介面。 即便如此，移植還是簡單易懂的。 部分的輕鬆移植可直接歸因 windows 10 開發人員平台和 windows 8.1 和 Windows Phone 8.1 平台間的相似性。 有些則是因為原始應用程式的設計方式是個別保留模型、檢視模型及檢視。

@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f7a5054fde1a1a24945b193f578b8389519dc2d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 7a3bf2ce69105787b7ca9e83c7f7fe5db8ae1038
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918624"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050511"
 ---
 # <a name="periodic-notification-overview"></a>定期通知概觀
  
@@ -25,7 +25,7 @@ ms.locfileid: "8918624"
 
 定期通知可以讓您使用最少的雲端服務與用戶端投資設備來提供動態磚更新。 定期通知是將相同內容散佈給廣大群眾的理想方式。
 
-**注意：** 您可以了解更多的 Windows8.1 下載的[推播和定期通知範例](http://go.microsoft.com/fwlink/p/?linkid=231476)，並重複使用其原始程式碼，在 windows 10 應用程式中。
+**注意：** 您可以進一步了解適用於 windows 8.1 下載的[推播和定期通知範例](https://go.microsoft.com/fwlink/p/?linkid=231476)，並重複使用其原始程式碼，在 windows 10 應用程式中。
 
  
 
@@ -77,7 +77,7 @@ ms.locfileid: "8918624"
 
 根據預設，定期磚和徽章通知會在下載的三天後到期。 當通知到期的時候，會從徽章、磚或佇列中移除內容，不再對使用者顯示。 最佳做法是使用一個對您的 app 或通知有意義的時間，在所有的定期磚和徽章通知上設定明確的到期時間，以確保內容不超過內容的時效性。 明確的到期時間對於已定義存留時間的內容而言很重要。 如果您的雲端服務無法使用，或使用者在一段時間從網路中斷連線時，它也可以確保會移除過時內容。
 
-您的雲端服務會在回應承載中包含 X-WNS-Expires HTTP 標頭，以設定通知的到期日期和時間。 X-WNS-Expires HTTP 標頭必須符合 [HTTP-date 格式](http://go.microsoft.com/fwlink/p/?linkid=253706)。 如需詳細資訊，請參閱 [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) 或 [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)。
+您的雲端服務會在回應承載中包含 X-WNS-Expires HTTP 標頭，以設定通知的到期日期和時間。 X-WNS-Expires HTTP 標頭必須符合 [HTTP-date 格式](https://go.microsoft.com/fwlink/p/?linkid=253706)。 如需詳細資訊，請參閱 [**StartPeriodicUpdate**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdate_Windows_Foundation_Uri_Windows_Foundation_DateTime_Windows_UI_Notifications_PeriodicUpdateRecurrence_) 或 [**StartPeriodicUpdateBatch**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_StartPeriodicUpdateBatch_Windows_Foundation_Collections_IIterable_1_Windows_UI_Notifications_PeriodicUpdateRecurrence_)。
 
 例如，在股市交易日，您可以將股價更新到期時間設定為輪詢間隔時間的兩倍 (例如，如果是每半小時輪詢一次，則是接收後的一小時)。 另一個範例是新聞應用程式可能決定每日新聞磚更新的適當到期時間為一天。
 

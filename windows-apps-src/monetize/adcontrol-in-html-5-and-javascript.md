@@ -6,22 +6,22 @@ ms.date: 03/22/2018
 ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, AdControl, 廣告控制項, JavaScript, HTML
 ms.localizationpriority: medium
-ms.openlocfilehash: 08b834343aafb91fee1e75f9df7ed2a752992fa2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 556493ffc901021310036cfb417c3c3b815c529e
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936247"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049595"
 ---
 # <a name="adcontrol-in-html-5-and-javascript"></a>HTML 5 和 JavaScript 中的 AdControl
 
 本文會逐步說明如何在 Windows 10 的通用 Windows 平台 (UWP) JavaScript/HTML 應用程式中使用 [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) 類別來顯示橫幅廣告。
 
-如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](http://aka.ms/githubads)。
+如需示範如何將橫幅廣告新增到 JavaScript/HTML app 的完整範例專案，請參閱 [GitHub 上的廣告範例](https://aka.ms/githubads)。
 
 ## <a name="prerequisites"></a>先決條件
 
-* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](http://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
+* 使用 Visual Studio 2015 或更新版本的 Visual Studio 來安裝 [Microsoft Advertising SDK](https://aka.ms/ads-sdk-uwp)。 如需安裝指示，請參閱[本文](install-the-microsoft-advertising-libraries.md)。
 
 > [!NOTE]
 > 如果您已安裝 Windows 10 SDK 版本 10.0.14393 （年度更新版） 或更新版本的 Windows SDK，您還必須安裝[WinJS](https://github.com/winjs/winjs)程式庫。 這個程式庫原本包含在舊版的適用於 Windows 10 的 Windows SDK 中，但是從 Windows 10 SDK 版本 10.0.14393 (年度更新版) 起必須另外安裝。 
@@ -139,6 +139,6 @@ ms.locfileid: "8936247"
 ## <a name="related-topics"></a>相關主題
 
 * [橫幅廣告指南](ui-and-user-experience-guidelines.md#guidelines-for-banner-ads)
-* [GitHub 上的廣告範例](http://aka.ms/githubads)
+* [GitHub 上的廣告範例](https://aka.ms/githubads)
 * [為您的 App 設定廣告單元](set-up-ad-units-in-your-app.md)
 * [JavaScript 錯誤處理的逐步解說](error-handling-in-javascript-walkthrough.md)

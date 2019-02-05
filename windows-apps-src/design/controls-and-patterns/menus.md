@@ -1,6 +1,6 @@
 ---
 Description: Menus and context menus display a list of commands or options when the user requests them.
-title: 功能表和操作功能表
+title: 功能表和特色選單
 label: Menus and context menus
 template: detail.hbs
 ms.date: 01/08/2019
@@ -13,12 +13,12 @@ dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 93aee51ae558009827f755f759c4bb587564d1cd
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 194e8578244fee72d0f122ee96caaf22bf2b8807
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036880"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058689"
 ---
 # <a name="menus-and-context-menus"></a>功能表和操作功能表
 
@@ -32,7 +32,7 @@ ms.locfileid: "9036880"
 
 | **平台 Api** | **Windows UI 程式庫 Api** |
 | - | - |
-| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)，[功能表列的類別](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 屬性](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout) | [功能表列類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
+| [MenuFlyout 類別](/uwp/api/windows.ui.xaml.controls.menuflyout)，[功能表列的類別](/uwp/api/windows.ui.xaml.controls.menubar)， [ContextFlyout 屬性](/uwp/api/windows.ui.xaml.uielement.contextflyout)， [FlyoutBase.AttachedFlyout 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout.aspx) | [功能表列類別](/uwp/api/microsoft.ui.xaml.controls.menubar) |
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 

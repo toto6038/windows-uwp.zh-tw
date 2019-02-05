@@ -6,12 +6,12 @@ ms.date: 06/22/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: f4f68481078d7265ee11ba2b7147d28990081e80
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: cab06db098312531a488731fb50bae99d8f2c8f6
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042410"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058829"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>組合 DirectX 與 Direct2D 的原生交互操作
 
@@ -43,7 +43,7 @@ Windows.UI.Composition API 提供可將內容直接移到撰寫器中的 [**ICom
 
 有兩個下列程式碼範例所示。 首先， [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) （也就是完成） 的範例，然後 C + + /CX 程式碼範例 （可省略 DirectWrite 和 Direct2D 的部分範例）。
 
-若要使用 C + + /winrt 程式碼範例所示，請先建立新**核心應用程式 (C + + WinRT)** 在 Visual Studio 中的專案 (如需相關需求，請參閱[Visual Studio 支援 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 建立專案，時選取做為目標版本**Windows 10 版本 1803 (10.0;組建 17134）**。 這是針對此程式碼已建置和測試的版本。 的內容取代成您`App.cpp`來源的程式碼檔案，使用下列程式碼清單，然後建置並執行。 應用程式呈現字串 「 Hello，World ！" 透明背景的黑色文字。
+若要使用 C + + /winrt 程式碼範例所示，請先建立新**核心應用程式 (C + + WinRT)** 在 Visual Studio 中的專案 (如需相關需求，請參閱[Visual Studio 支援 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 建立專案，時選取做為目標版本**Windows 10 版本 1803 (10.0;組建 17134）**。 這是針對此程式碼已建置和測試的版本。 的內容取代成您`App.cpp`來源的程式碼檔案，使用下列程式碼清單，然後建置並執行。 應用程式呈現字串 「 Hello，World ！" 透明背景的黑色文字。
 
 ```cppwinrt
 // App.cpp

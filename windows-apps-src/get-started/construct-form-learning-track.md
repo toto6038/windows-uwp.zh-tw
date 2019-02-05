@@ -6,12 +6,12 @@ ms.topic: article
 keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 1c316ac97211e85b782bdbf8f5642889a7726a95
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037043"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058529"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
@@ -135,7 +135,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 歡迎回到我們已經連結您並做實驗的表單，新增新的 UI 功能，並進一步修改使用者體驗與文件。 如果您想要透過更詳細的版面配置功能的逐步指導方針，請參閱我們的[調適型配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md)
 
-表單也不一定要與世隔絕，您可以往前一個步驟，將您的表單嵌入 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [樞紐控制項](../design/controls-and-patterns/tabs-pivot.md)。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的 [事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
+表單也不一定要與世隔絕，您可以往前一個步驟，將您的表單嵌入 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [樞紐控制項](../design/controls-and-patterns/pivot.md)。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的 [事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 
 ## <a name="useful-apis-and-docs"></a>實用的 API 和文件
 
@@ -161,7 +161,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 | [表單](../design/controls-and-patterns/forms.md) | 建立表單的整體指導方針。 |
 | [版面配置面板](../design/layout/layout-panels.md) | 提供版面配置面板類型的概觀，以及使用這些類型的位置。 |
 | [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) | 設計模式可在一個或多個表單中實作。 |
-| [Pivot 控制項](../design/controls-and-patterns/tabs-pivot.md) | 一個控制項可包含一個或多個表單。 |
+| [Pivot 控制項](../design/controls-and-patterns/pivot.md) | 一個控制項可包含一個或多個表單。 |
 | [回應式設計](../design/layout/responsive-design.md) | 大型回應式設計原則的概觀。 | 
 | [搭配 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md) | 視覺狀態和其他回應式設計實作的特定資訊。 |
 | [回應式設計的螢幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 哪些螢幕大小應將回應式版面配置的範圍限制在哪個範圍內的指導方針。 |

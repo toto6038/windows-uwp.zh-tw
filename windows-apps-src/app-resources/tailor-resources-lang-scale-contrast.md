@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ab8dde9984ed0e4f7d99e7809361d928bebb718
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 82dd3d20aa39ea471618e7707d066c67a6547f9f
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045424"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058749"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -258,7 +258,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 
 ## <a name="theme"></a>Theme
 
-`theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application?branch=master.RequestedTheme) 的覆寫。
+`theme` 限定詞用來提供最符合預設應用程式模式設定的資源，或是應用程式使用 [Application.RequestedTheme](/uwp/api/windows.ui.xaml.application.requestedtheme) 的覆寫。
 
 ## <a name="important-apis"></a>重要 API
 

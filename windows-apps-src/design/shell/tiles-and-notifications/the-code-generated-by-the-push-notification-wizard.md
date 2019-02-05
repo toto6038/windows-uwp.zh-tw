@@ -7,12 +7,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 957c4cf2e9e9fc4a32327ec29a96019609ebdfe5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 1ac5ca785eab39612bb3a9c6ccd58779c6241059
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923243"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049915"
 ---
 # <a name="code-generated-by-the-push-notification-wizard"></a>由推播通知精靈產生的程式碼
  
@@ -174,9 +174,9 @@ void mymobileservice1234Push::HandleExceptionsComingFromTheServer()
 ## <a name="server-side-scripts-javascript-backend-only"></a>伺服器端指令碼 (僅限 JavaScript 後端)
 
 
-如果是使用 JavaScript 後端的行動服務，則會在進行刪除、插入、讀取或更新操作時執行伺服器端指令碼。 指令碼不會實作這些操作，但是當用戶端呼叫 Windows Mobile REST API 觸發這些事件時，就會執行指令碼。 然後指令碼會呼叫 request.execute 或 request.respond 向呼叫內容發出回應，將控制權傳遞給操作本身。 請參閱 [Azure 行動服務 REST API 參考](http://go.microsoft.com/fwlink/p/?linkid=511139)。
+如果是使用 JavaScript 後端的行動服務，則會在進行刪除、插入、讀取或更新操作時執行伺服器端指令碼。 指令碼不會實作這些操作，但是當用戶端呼叫 Windows Mobile REST API 觸發這些事件時，就會執行指令碼。 然後指令碼會呼叫 request.execute 或 request.respond 向呼叫內容發出回應，將控制權傳遞給操作本身。 請參閱 [Azure 行動服務 REST API 參考](https://go.microsoft.com/fwlink/p/?linkid=511139)。
 
-伺服器端指令碼提供各種不同函式。 請參閱[在 Azure 行動服務中登錄資料表操作](http://go.microsoft.com/fwlink/p/?linkid=511140)。 如需所有可用函式的參考，請參閱[行動服務伺服器指令碼參考](http://go.microsoft.com/fwlink/p/?linkid=257676)。
+伺服器端指令碼提供各種不同函式。 請參閱[在 Azure 行動服務中登錄資料表操作](https://go.microsoft.com/fwlink/p/?linkid=511140)。 如需所有可用函式的參考，請參閱[行動服務伺服器指令碼參考](https://go.microsoft.com/fwlink/p/?linkid=257676)。
 
 系統也會在 Notifyallusers.js 中建立下列自訂 API 程式碼：
 
@@ -207,7 +207,7 @@ function sendNotifications(request) {
 
 sendNotifications 函式會以快顯通知的方式傳送單一通知。 您也可以使用其他類型的推播通知。
 
-**提示：** 如何在編輯指令碼時取得協助的相關資訊，請參閱[針對伺服器端 JavaScript 啟用 IntelliSense](http://go.microsoft.com/fwlink/p/?LinkId=309275)。
+**提示：** 如何在編輯指令碼時取得協助的相關資訊，請參閱[針對伺服器端 JavaScript 啟用 IntelliSense](https://go.microsoft.com/fwlink/p/?LinkId=309275)。
 
  
 
@@ -231,7 +231,7 @@ Windows 可支援推播通知以外的通知。 如需有關通知的一般資�
 
 若行動服務提供的彈性不足、您想要以 C# 或 Visual Basic 撰寫伺服器程式碼，或是您已經有雲端服務並想要透過它傳送推播通知，則可以直接呼叫 Windows 推播通知服務 (WNS)。 直接呼叫 WNS 時，可以從您自己的雲端服務 (例如，監視來自資料庫或其他 Web 服務之資料的工作者角色) 傳送推播通知。 您的雲端服務必須透過 WNS 進行驗證，才能將推播通知傳送到您的應用程式。 請參閱[如何使用 Windows 推播通知服務進行驗證 (JavaScript)](https://msdn.microsoft.com/library/windows/apps/hh465407) 或 [(C#/C++/VB)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868206)。
 
-您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](http://go.microsoft.com/fwlink/p/?linkid=301694)。
+您也可以在行動服務中執行排定的工作，以傳送推播通知。 請參閱[在行動服務中排程週期性工作](https://go.microsoft.com/fwlink/p/?linkid=301694)。
 
 **警告**當您一次執行推播通知精靈時，不會執行精靈來針對其他行動服務新增註冊碼第二次。 針對單一專案多次執行精靈時，所產生的註冊碼會造成重複呼叫 [**CreatePushNotificationChannelForApplicationAsync**](https://docs.microsoft.com/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync) 方法，進而導致發生執行階段例外狀況。 如果您想要為多個行動服務註冊推播通知，請執行一次精靈，然後重新寫入註冊碼，以確保不會同時執行對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫。 例如，您可以將精靈在 push.register.\* 中產生的註冊碼 (包括對 **CreatePushNotificationChannelForApplicationAsync** 的呼叫) 移到 OnLaunched 事件外以達到這個目的，但其中的細節將取決於您應用程式的架構。
 

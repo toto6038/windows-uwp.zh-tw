@@ -6,12 +6,12 @@ ms.date: 08/30/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4517d3fc917cb306281e9050f8554119ff987007
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044502"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058579"
 ---
 # <a name="enterprise"></a>企業版
 
@@ -47,7 +47,7 @@ Windows Template Studio 是 Visual Studio 2017 擴充功能，加速建立新的
 
 我們已發行新的 UWP XAML 控制項，填滿傳統桌面應用程式 UI 和 UWP UI 之間的差距。
 
-例如，新的[功能表列](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/menus?branch=jimwalk%2Frs5-menu-bar)、 [DropDownButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、 [SplitButton](https://docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)，以及[CommandBarFlyout](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/command-bar-flyout?branch=jimwalk%2Frs5-command-bar-flyout)控制項提供您更具彈性的方式來公開命令，而[EditableComboBox](https://review.docs.microsoft.com/en-us/windows/uwp/design/controls-and-patterns/combo-box?branch=rs5#make-a-combo-box-editable)讓我們在使用者輸入的值並未列出在預先定義的選項清單。
+例如，新的[功能表列](/windows/uwp/design/controls-and-patterns/menus)、 [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button)、 [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button)，以及[CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout)控制項提供您更具彈性的方式來公開命令，而[EditableComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable)讓我們在使用者輸入的值並未列出在預先定義的選項清單。
 
 ![功能表列](images/menu-bar.png)
 
@@ -68,7 +68,7 @@ Windows UI 文件庫是一組提供控制項與其他使用者介面元素用於
 
 ![Windows UI 文件庫](images/win-ui.png)
 
-請參閱[Windows UI 程式庫 （預覽版本）](https://docs.microsoft.com/en-us/uwp/toolkits/winui/)。
+請參閱[Windows UI 程式庫 （預覽版本）](https://docs.microsoft.com/uwp/toolkits/winui/)。
 
 <a id="xaml-islands" />
 
@@ -161,7 +161,7 @@ Windows 10 提供一套安全性功能，讓應用程式開發人員保護他們
 |-------|-------------|
 | [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631) | 在本簡介指南中，您將了解 Windows 10UWP 平台，包括︰裝置系列為何以及如何決定要設為目標的裝置系列、新的 UI 控制項和面板以讓您將 UI 調整為不同的裝置板型規格，以及如何了解與控制可供您的 app 使用的 API 表面。 |
 | [彈性 XAML UI 程式碼範例](https://go.microsoft.com/fwlink/p/?LinkId=619992) | 這個程式碼範例示範所有可能版面配置選項和您的應用程式，不論裝置類型的控制項，並可讓您與顯示如何達成您正在尋找的任何版面配置面板互動。 除了顯示每個控制項如何回應不同的板型規格之外，app 本身也具有回應，並顯示達成彈性 UI 的各種方法。 |
-| [Xamarin 主題]() | 適用於目標手機 Xamarin |
+| [Xamarin 主題](/xamarin/) | 適用於目標手機 Xamarin |
 
 ## <a name="deployment"></a>部署
 

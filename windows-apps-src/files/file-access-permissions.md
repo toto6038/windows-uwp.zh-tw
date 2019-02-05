@@ -11,12 +11,12 @@ dev_langs:
 - cppwinrt
 - cpp
 - javascript
-ms.openlocfilehash: 5c3732927c59cb768ef522a847f79f82994852b7
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.openlocfilehash: 4845b20ed74642f6fb34ea40dd774c91ae378e7b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980396"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050278"
 ---
 # <a name="file-access-permissions"></a>檔案存取權限
 
@@ -27,7 +27,7 @@ ms.locfileid: "8980396"
 當您建立新的 app 時，預設可以存取下列檔案系統位置：
 
 ### <a name="application-install-directory"></a>應用程式安裝目錄
-您的應用程式在使用者的系統的安裝所在的資料夾。
+您的應用程式在使用者的系統安裝資料夾。
 
 有兩種主要方式，來存取檔案和資料夾，在您的應用程式安裝目錄：
 
@@ -90,7 +90,7 @@ ms.locfileid: "8980396"
     
     URI 中的「ms-appx:///」前置詞是指 app 的安裝目錄。 您可以在[如何使用 URI 來參考內容](https://msdn.microsoft.com/library/windows/apps/hh781215)中，深入了解如何使用 app URI。
 
-此外，與其他位置不同的是，您也可以使用[通用 Windows 平台 (UWP) app 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 及 [Microsoft Visual Studio 的 C/C++ 標準程式庫功能](http://msdn.microsoft.com/library/hh875057.aspx)，來存取 app 安裝目錄中的檔案。
+此外，與其他位置不同的是，您也可以使用[通用 Windows 平台 (UWP) app 的 Win32 和 COM](https://msdn.microsoft.com/library/windows/apps/br205757) 及 [Microsoft Visual Studio 的 C/C++ 標準程式庫功能](https://msdn.microsoft.com/library/hh875057.aspx)，來存取 app 安裝目錄中的檔案。
 
 app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目錄的存取權。
 
@@ -259,7 +259,7 @@ app 安裝目錄是唯讀位置。 您無法透過檔案選擇器取得安裝目
 
 | 位置 | 功能 | Windows.Storage API |
 |----------|------------|---------------------|
-| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載項目、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>這是受限的功能。 存取權是以可在**設定**中設定 > **隱私權** > **檔案系統**。 因為使用者可以授與或拒絕權限**設定**中的任何時候，您應該確定您的應用程式是這些變更具彈性。 如果您發現您的應用程式無法存取，您可以選擇提示使用者變更設定，藉由提供[Windows 10 的檔案系統存取權 」 和 「 隱私權](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)文章的連結。 請注意，使用者必須關閉應用程式、 切換設定，並重新啟動應用程式。 如果應用程式正在執行時，他們可以切換設定，平台將會暫停您的應用程式，以便您可以儲存狀態，然後再強制終止應用程式，才能套用新的設定。 在 2018 年 4 月更新之後，在權限預設為啟用。 在 2018 年 10 月更新之後，預設為關閉。<br /><br />如果您將 app 送出至宣告此功能的 Microsoft Store，則須提供其他描述，說明您的 app 為什麼需要此功能，以及它打算如何使用此功能。<br>這個功能適合[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346)命名空間中的 Api。 請參閱 「**範例**」 區段如何啟用這項功能，在您的應用程式中的範例，這篇文章的結尾。 | 不適用 |
+| 使用者可存取的所有檔案。 例如：文件、圖片、相片、下載項目、桌面、OneDrive 等。 | broadFileSystemAccess<br><br>這是受限的功能。 存取權是以可在**設定**中設定 > **隱私權** > **檔案系統**。 因為使用者可以授與或拒絕權限**設定**中的任何時候，您應該確定您的應用程式是這些變更具彈性。 如果您發現您的應用程式無法存取，您可以選擇提示使用者變更設定，藉由提供[Windows 10 的檔案系統存取權 」 和 「 隱私權](https://privacy.microsoft.com/en-US/windows-10-file-system-access-and-privacy)文章的連結。 請注意，使用者必須關閉應用程式、 切換設定，並重新啟動應用程式。 如果應用程式正在執行時，他們可以切換設定，平台將會暫停您的應用程式，以便您可以儲存狀態，然後再強制終止應用程式，才能套用新的設定。 在 2018 年 4 月更新之後，在權限預設為啟用。 在 2018 年 10 月更新之後，預設為關閉。<br /><br />如果您將 app 送出至宣告此功能的 Microsoft Store，則須提供其他描述，說明您的 app 為什麼需要此功能，以及它打算如何使用此功能。<br>這個功能適合[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346)命名空間中的 Api。 請參閱 「**範例**」 區段，如需如何啟用這項功能，您的應用程式中的範例本文結尾處。 | 不適用 |
 | 文件 | DocumentsLibrary <br><br>注意：您必須將檔案類型關聯新增到您的應用程式資訊清單，宣告您的 app 可以在這個位置中存取的特定檔案類型。 <br><br>如果您的 app 符合下列條件，則可使用此功能：<br>- 使用有效的 OneDrive URL 或資源識別碼，協助對特定的 OneDrive 內容進行跨平台離線存取<br>-開啟的檔案到使用者的 OneDrive 時自動儲存離線 | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
 | 音樂     | MusicLibrary <br>另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
 | 圖片  | PicturesLibrary<br> 另請參閱[音樂、圖片及影片媒體櫃中的檔案和資料夾](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  

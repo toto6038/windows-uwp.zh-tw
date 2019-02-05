@@ -11,12 +11,12 @@ dev-contact: Austin Hodges
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5dc12e9b85b7274c9e1deb7d629917cbeaa981c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 77e39b9c7440fab491b3d7ef85baa757d299fff8
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942365"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058539"
 ---
 # <a name="gaze-interactions-and-eye-tracking-in-uwp-apps"></a>UWP 應用程式中的注視互動與眼球追蹤
 
@@ -36,7 +36,7 @@ ms.locfileid: "8942365"
 此外，注視輸入提供同樣吸引人的機會用於電腦遊戲（包括目標擷取和追蹤）和傳統生產力應用程式、kiosk，以及其他互動式案例，其中傳統輸入裝置（鍵盤、滑鼠、觸控) 就無法使用，或讓使用者空出雙手執行其他工作（例如提著購物袋）可能會很實用/有幫助。
 
 > [!NOTE]
-> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 組建應用程式的一組 [UWP Api]([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview))，可與眼求追蹤硬體互動，用於 **Windows 10 2018 年 4 月更新 (版本 1803、組建 17134)** 和更新版。
+> 在 **Windows 10 Fall Creators Update** 以及 [眼球控制](https://support.microsoft.com/en-us/help/4043921/windows-10-get-started-eye-control) 中介紹了眼球追蹤硬體的支援，內建功能可讓您使用眼球控制螢幕上的指標，使用螢幕小鍵盤輸入，以及使用文字轉換語音與人通訊。 一組的 UWP Api ([Windows.Devices.Input.Preview](https://docs.microsoft.com/uwp/api/windows.devices.input.preview)) 來建置可以與眼球追蹤硬體互動的應用程式是使用**Windows 10 2018 年更新 (版本 1803、 組建 17134)** 和更新版本。
 
 ## <a name="privacy"></a>隱私權
 

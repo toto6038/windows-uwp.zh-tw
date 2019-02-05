@@ -6,12 +6,12 @@ ms.date: 11/28/2017
 ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 定位功能
 ms.localizationpriority: medium
-ms.openlocfilehash: fae533e0ce42e14e3c53f5083b746a9aae221adf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: b3582aa8ed406a25eb704f2f86f8ed272bea2c63
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941355"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050218"
 ---
 # <a name="get-the-users-location"></a>取得使用者的位置
 
@@ -20,9 +20,9 @@ ms.locfileid: "8941355"
 
 尋找使用者的位置並回應位置變更。 存取使用者的位置是由 \[設定\] app 中的隱私權設定所管理。 本主題也示範如何檢查您的應用程式是否具備存取使用者位置的權限。
 
-**提示**：若要深入了解如何在您的 app 中存取使用者的位置，請從 GitHub 的 [Windows-universal-samples 存放庫](http://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
+**提示**：若要深入了解如何在您的 app 中存取使用者的位置，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979)下載下列範例。
 
--   [通用 Windows 平台 (UWP) 地圖範例](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
 
 ## <a name="enable-the-location-capability"></a>啟用位置功能
 
@@ -44,7 +44,7 @@ ms.locfileid: "8941355"
 
 ### <a name="step-1-request-access-to-the-users-location"></a>步驟 1：要求使用者位置的存取權
 
-除非您的應用程式具有粗略定位 」 功能 （請參閱附註），您必須要求存取使用者的位置，再嘗試使用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法存取位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
+除非您的應用程式具有粗略定位 」 功能 （請參閱附註），您必須要求存取使用者的位置，再嘗試使用[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152)方法，來存取位置。 您必須從 UI 執行緒呼叫 **RequestAccessAsync** 方法，而且您的 app 必須在前景中。 在使用者將權限授與您的 app 之後，您的 app 才能存取使用者的位置資訊。
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -56,7 +56,7 @@ var accessStatus = await Geolocator.RequestAccessAsync();
 
 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) 方法會提示使用者提供可存取其位置的權限。 只會提示使用者一次 (每一 app)。 在使用者第一次授與或拒絕權限之後，這個方法就不會再顯示權限提示。 為了協助使用者在出現過提示之後變更位置權限，建議您提供一個位置設定連結，如本主題稍後所示範。
 
->注意： 粗略定位 」 功能可讓您的應用程式取得經過刻意模糊處理 （不精確） 的位置，而不會收到使用者的明確權限 （全系統的位置仍必須切換為**上**，不過）。 若要了解如何利用您的應用程式中的粗略位置，請參閱[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)方法[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)類別中。
+>注意： 粗略定位 」 功能可讓您的應用程式取得經過刻意模糊處理 （不精確） 位置，而不會收到使用者的明確權限 （全系統的位置仍必須切換為**上**，不過）。 若要了解如何利用您的應用程式中的粗略位置，請參閱[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Geolocation.Geolocator.AllowFallbackToConsentlessPositions)方法[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.aspx)類別中。
 
 ### <a name="step-2-get-the-users-location-and-register-for-changes-in-location-permissions"></a>步驟 2：取得使用者的位置並登錄位置權限的變更
 
@@ -267,6 +267,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 ## <a name="related-topics"></a>相關主題
 
-* [UWP 地理位置範例](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP 地理位置範例](https://go.microsoft.com/fwlink/p/?linkid=533278)
 * [地理柵欄的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn631756)
 * [定位感知 app 的設計指導方針](https://msdn.microsoft.com/library/windows/apps/hh465148)

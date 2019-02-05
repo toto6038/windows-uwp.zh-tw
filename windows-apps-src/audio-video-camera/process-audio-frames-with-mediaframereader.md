@@ -6,12 +6,12 @@ ms.date: 04/18/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: e7082c3e572493656e8b109da35861ec820d4ec9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: c78e16a50bdca09f474d5016fdc86b6d27702d5b
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050831"
+ms.locfileid: "9058768"
 ---
 # <a name="process-audio-frames-with-mediaframereader"></a>使用 MediaFrameReader 處理音訊框架
 
@@ -49,7 +49,7 @@ ms.locfileid: "9050831"
 
 透過呼叫 [**MediaCapture.CreateFrameReaderAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_)、傳遞您在上一個步驟中選取的 **MediaFrameSource** 物件，取得 **MediaFrameReader** 的新執行個體。 根據預設，音訊框架會在緩衝模式中取得，如此比較不可能捨棄框架，但是如果您處理音訊框架的速度不夠快因而填滿系統分配的記憶體緩衝區，這種情形仍然會發生。
 
-註冊 [**MediaFrameReader.FrameArrived**](*https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件的處理常式，只要有可用的新音訊資料框架時就會引發該事件。 呼叫 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 來開始擷取音訊框架。 如果畫面讀取程式無法開始，呼叫傳回的狀態值會具有 [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
+註冊 [**MediaFrameReader.FrameArrived**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) 事件的處理常式，只要有可用的新音訊資料框架時就會引發該事件。 呼叫 [**StartAsync**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader.startasync) 來開始擷取音訊框架。 如果畫面讀取程式無法開始，呼叫傳回的狀態值會具有 [**Success**](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus) 以外的值。
 
 [!code-cs[CreateAudioFrameReader](./code/Frames_Win10/Frames_Win10/MainPage.xaml.cs#SnippetCreateAudioFrameReader)]
 

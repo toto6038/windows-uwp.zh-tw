@@ -6,18 +6,18 @@ ms.date: 11/02/2017
 ms.topic: article
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71
 ms.localizationpriority: medium
-ms.openlocfilehash: 7aff0812da6b7c3d8e55bc31ed196211f54252e3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3070bd4464432d944cea85ad970aa71cd727d63b
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942652"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050228"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-14393"></a>適用於開發人員的 Windows 10 (組建 14393) 的新功能
 
-Windows 10 組建 14939 (也稱為年度更新版或 1607 版本) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows10 上[安裝工具和 SDK](http://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 14939 (也稱為年度更新版或 1607 版本) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
-這是開發人員會感興趣的新功能和改良功能清單。 如需新增到 Windows SDK 之新命名空間的原始清單，請參閱 [Windows 10 組建 14393 API 變更](windows-10-build-14393-api-diff.md)。 如需此更新之重點功能的詳細資訊，請參閱 [Windows10 中有哪些酷功能](http://go.microsoft.com/fwlink/?LinkId=823181)。
+這是開發人員會感興趣的新功能和改良功能清單。 如需新增到 Windows SDK 之新命名空間的原始清單，請參閱 [Windows 10 組建 14393 API 變更](windows-10-build-14393-api-diff.md)。 如需此更新之重點功能的詳細資訊，請參閱 [Windows10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。
 
 ## <a name="windows-10-build-14393---july-2016"></a>Windows 10 組建 14393 - 2016 年 7 月
 
@@ -25,15 +25,15 @@ Windows 10 組建 14939 (也稱為年度更新版或 1607 版本) 搭配 Visual 
  :---- | :----
 XAML 元素的便捷鍵 | 您可以使用新的 [**AccessKey**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.accesskey.aspx) 屬性及 [**AccessKeyManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.accesskeymanager.aspx) 來改善 App 中的鍵盤協助工具。
 動畫 GIF 支援 | XAML [**Image**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) 元素現已支援動畫 GIF。 您可以在 [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.aspx) 上使用下列新成員來控制播放：[**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.autoplay.aspx)、[**IsAnimatedBitmap**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.isanimatedbitmap.aspx)、[**IsPlaying**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.isplaying.aspx)、[**Play**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.play.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.stop.aspx)。
-App 擴充性 | 為您的 UWP app 撰寫[擴充功能](http://aka.ms/appextensibility)。 讓您的 UWP app 裝載其他 UWP app 所提供的內容。  探索、列舉並存取來自那些 App 的唯讀內容。
+App 擴充性 | 為您的 UWP app 撰寫[擴充功能](https://aka.ms/appextensibility)。 讓您的 UWP app 裝載其他 UWP app 所提供的內容。  探索、列舉並存取來自那些 App 的唯讀內容。
 評定測試 | 「[進行測驗](https://technet.microsoft.com/edu/windows/take-tests-in-windows-10?f=255&MSPPError=-2147217396)」是一個針對高度利害攸關測驗轉譯鎖定線上評定的瀏覽器架構 App。 使用[進行測驗 API](../apps-for-education/take-a-test-api.md) 來防止學生在測驗期間使用其他電腦或網際網路資源。
 背景智慧型傳送服務 (BITS) | 現已可以在 PowerShell 遠端工作階段中使用 [BITS](https://msdn.microsoft.com/library/windows/desktop/bb968799.aspx) COM API 和 PowerShell Cmdlet (若可用的話)。 這對於管理沒有本機登入功能的 WindowsServer 2016 Technical Preview 版本特別有用。 BITS 工作是透過在工作階段使用者帳戶內容中執行的 PowerShell 遠端工作階段啟動，並只會在至少有一個和該使用者帳戶關聯的作用中本機登入工作階段或 PowerShell 遠端工作階段時，才會呈現進度。 請參閱[管理 PowerShell 遠端工作階段](https://msdn.microsoft.com/library/windows/desktop/ee663885.aspx#manage_ps_remote_sessions)，以取得如何管理長時間執行傳輸工作階段的詳細資料。<br/><br/>在支援 [BITS Helper 權杖](https://msdn.microsoft.com/library/windows/desktop/dd904467.aspx)的舊版 Windows 中，工作擁有者必須擁有系統管理員權限才能設定 Helper 權杖。 在這個版本中，BITS 工作擁有者現已可以在不身為系統管理員的情況下設定 Helper 權杖，前提是該 Helper 權杖不能具有系統管理員功能。 這將能透過讓背景下載或更新工具在具有較低權限的 NetworkService 帳戶 (而非具有系統管理員權限的帳戶) 下執行，來降低背景下載或更新工具的弱點數量。
-改善的色彩字型支援 | Direct2D 現已支援轉譯更廣泛的色彩字型格式類型，讓開發人員可以在透過 Direct2D 運作的 App 中使用更多類型的字型。 這包括下列項目的支援： <br/>&bull; 'sbix' OpenType 表格，可在字型中啟用色彩點陣圖內容。<br/>&bull;'SVG' OpenType 表格，可在字型中啟用 SVG 內容。<br/>&bull;'CBDT' OpenType 表格，可在字型中啟用色彩點陣圖內容。 <br/><br/>當啟用 **D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** 旗標時，Direct2D 便會自動支援這些色彩字型格式。  如需相關資訊，請參閱下列主題： <br>&bull;[**ID2D1DeviceContext4**](http://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](http://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](http://go.microsoft.com/fwlink/?LinkId=822795)     
+改善的色彩字型支援 | Direct2D 現已支援轉譯更廣泛的色彩字型格式類型，讓開發人員可以在透過 Direct2D 運作的 App 中使用更多類型的字型。 這包括下列項目的支援： <br/>&bull; 'sbix' OpenType 表格，可在字型中啟用色彩點陣圖內容。<br/>&bull;'SVG' OpenType 表格，可在字型中啟用 SVG 內容。<br/>&bull;'CBDT' OpenType 表格，可在字型中啟用色彩點陣圖內容。 <br/><br/>當啟用 **D2D1_DRAW_TEXT_OPTIONS_ENABLE_COLOR_FONT** 旗標時，Direct2D 便會自動支援這些色彩字型格式。  如需相關資訊，請參閱下列主題： <br>&bull;[**ID2D1DeviceContext4**](https://go.microsoft.com/fwlink/?LinkId=822793)<br>&bull;[**D2D1_DRAW_TEXT_OPTIONS**](https://go.microsoft.com/fwlink/?LinkId=822794)<br>&bull;[**ID2D1SvgGlyphStyle**](https://go.microsoft.com/fwlink/?LinkId=822795)     
 CommandBar 動態溢位 | [**Commandbar**](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/app-bars) 中的主要命令現已會在沒有足夠空間可顯示所有命令時，自動移動到溢位功能表。
 組合互動 API| 新的 [**Windows.UI.Composition.Interactions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.interactions.aspx) 命名空間可讓您存取輸入以驅動動畫和效果。  這個視覺層中的新 API 系列可協助讓您的 App 變得更加具有回應性及流暢性，就算您的 UI 執行緒正處於遲緩且忙碌的狀態也一樣。  
 Windows.UI.Composition | [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.aspx) 命名空間已新增針對許多功能的支援，包括： <br/><br/>&bull; 陰影 - 可讓您為 App 提供真實的深度體驗 <br/>&bull; 場景光源 - 可讓您透過在控制項和 UI 上照射光源來為它們提供更多透視，並為應用程式提供不同的效果<br/>&bull; 模糊效果 - 讓您將正確的資訊維持在焦點內，並使其餘內容變得模糊。 您可以用動畫來表現 UI 的模糊效果，以取得更生動的感受。  <br/>&bull; 隱含動畫 - 隱含動畫可以協助您在視覺效果的屬性變更時，以動畫來表現該視覺效果。 您可以使用隱含動畫來執行配置動畫，也就是當 App 的配置變更時，您可以用動畫來將該配置移到新的位置。 <br/>&bull; CompositionBackdropBrush - CompositionBackdropBrush 是新的筆刷類型，可以用來將目前的 RenderTarget 選取為某個效果的輸入。<br/>&bull; LayerVisual - 可讓您將效果套用到一系列視覺效果上。 例如，對 UI 的一部分進行灰階處理，以表示該部分的 UI 已停用<br/>&bull; CompositionMashBrush - 可讓您指定不透明度遮罩<br/>&bull; 裁剪轉換 - 可套用轉換以裁剪矩形<br/>&bull; 表面筆刷轉換 - 使轉換可以被套用到 CompositionSurfaceBrush<br/>&bull; CompositionNineGridBrush - 可讓您在影像上指定九宮格調整大小內凹，或建立矩形的單色框線。<br/>&bull; 運算式新增項目 - 運算式擁有針對新函式、運算式運算子及關鍵字的支援。
 連接動畫 | [**ConnectedAnimationService**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.connectedanimationservice.aspx) 讓您在使用者於場景或頁面間移動時執行動畫。 請參閱[連接動畫](https://channel9.msdn.com/Events/Build/2016/P485)影片以取得詳細資訊。
-連線的 App | 探索已連線到雲端或是位於附近的裝置，並建置能夠在它們之間順暢轉換的經驗。 請參閱[連線的 App 和裝置](http://aka.ms/Bttm1d)以取得詳細資料。
+連線的 App | 探索已連線到雲端或是位於附近的裝置，並建置能夠在它們之間順暢轉換的經驗。 請參閱[連線的 App 和裝置](https://aka.ms/Bttm1d)以取得詳細資料。
 傳統型應用程式轉換器 | 傳統型應用程式轉換器是一個可讓您將現有針對 .NET 4.6.1 或 Win32 撰寫的傳統型應用程式移至通用 Windows 平台 (UWP) 的工具。
 開發無障礙 App | 使用 [App 協助工具指導方針](https://developer.microsoft.com/windows/accessible-apps)來針對提升使用性和客戶滿意度設計包容性軟體。 從無障礙技術產品的故事獲得靈感。 在新的開發人員中樞上，尋找能讓所有人存取 App 的相關資訊。
 Direct3D | 許多新的主題已經新增到 Direct 3D 文件。 如需關於這些更新的詳細資訊，請參閱 [Direct3D 12 新版本頁面](https://msdn.microsoft.com/library/windows/desktop/mt748631(v=vs.85).aspx)中的 **Windows10 版本 1607**。
@@ -56,7 +56,7 @@ StreamSocket | 已將新的 **GetEndpointPairsAsync** 方法新增到 [**StreamS
 XAML ComboBox 中的文字搜尋 | 當使用者在下拉式方塊中輸入時，符合使用者字串的候選項目將會被帶入檢視。
 UI 自動化 | UI 自動化提供者現已可以透過呼叫 [**UiaRaiseChangesEvent**](https://msdn.microsoft.com/library/windows/desktop/mt733044(v=vs.85).aspx) 函式來通知系統有關文件變更的資訊。
 Xbox One 上的 UWP | 這個更新包含 Xbox One 上通用 Windows 平台 (UWP) 的第一個完整版本。 它包含了新功能、現有功能的更新，以及錯誤修正。 請參閱 [Xbox One 上的 UWP](https://msdn.microsoft.com/windows/uwp/xbox-apps/index) 主題以取得詳細資訊。
-網站至 App 連結 | 將您的 App 與網站建立關聯。 當使用者開啟您網站的連結時，將會改為開啟您的 App。 請參閱[透過 App URI 處理常式支援網站至 App 連結](http://aka.ms/Hxfg4m)以取得詳細資料。
+網站至 App 連結 | 將您的 App 與網站建立關聯。 當使用者開啟您網站的連結時，將會改為開啟您的 App。 請參閱[透過 App URI 處理常式支援網站至 App 連結](https://aka.ms/Hxfg4m)以取得詳細資料。
 WebSocket | 已針對 [**MessageWebSockets**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.messagewebsocket.aspx) 和 [**StreamWebSockets**](https://msdn.microsoft.com/library/windows/apps/windows.networking.sockets.streamwebsocket.aspx) 新增支援以檢視伺服器憑證、檢視由伺服器在 SSL 交涉期間所傳送的中繼憑證、執行自訂伺服器憑證驗證，以及指定要忽略哪些特定的伺服器憑證錯誤。
 Windows 資訊保護 (WIP) API | [**WIP**](https://msdn.microsoft.com/windows/uwp/enterprise/wip-hub) 是桌上型電腦、膝上型電腦、平板電腦與手機上的一組行動裝置管理 (MDM) 功能。 WIP 能讓企業針對其資料在企業管理裝置上的處理方式取得更大的控制。 <br/><br/>您可以使用 WIP API 來建立能尊重資料原則，並同時使員工個人資料不受那些原則所影響的 App。 原則系統管理員將會信任並允許您的 App 使用他們組織的資料。 而員工則會很高興得知，就算他們從組織的行動裝置管理 (MDM) 取消註冊，或是完全離該組織，他們的個人資料也能在裝置上保持不變。
 Windows IoT 核心版 | Windows IoT 核心版現已完全支援 Raspberry Pi 3 及遠端顯示體驗，讓使用者可以從遠端檢視並控制在 IoT 核心版裝置上執行的 UWP 應用程式。

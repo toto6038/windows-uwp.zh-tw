@@ -12,12 +12,12 @@ dev-contact: llongley
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 0760805128f8f11b4598a5c8b0d19d8e9f20d04d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 90c86e071b0e1d2a07d7755ba23cb6418ca0022a
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050951"
+ms.locfileid: "9058569"
 ---
 # <a name="command-bar-flyout"></a>命令列飛出視窗
 
@@ -165,7 +165,7 @@ CommandBarFlyout 控制項有 2 個您可用來新增命令與內容的屬性：
 
 ### <a name="other-content"></a>其他內容
 
-您可以 AppBarElementContainer 中包裝它們，將其他控制項新增到命令列飛出視窗。 這可讓您新增控制項，例如[DropDownButton]()或[SplitButton]()，或新增像是[StackPanel]()來建立更複雜的 UI 容器。
+您可以 AppBarElementContainer 中包裝它們，將其他控制項新增到命令列飛出視窗。 這可讓您新增控制項，例如[DropDownButton](buttons.md)或[SplitButton](buttons.md)，或新增像是[StackPanel](buttons.md)來建立更複雜的 UI 容器。
 
 若要新增到主要或次要命令的集合命令列飛出視窗，元素必須實作[ICommandBarElement](/uwp/api/windows.ui.xaml.controls.icommandbarelement)介面。 AppBarElementContainer 是實作這個介面，讓您可以將元素新增到命令列，即使它不會實作介面本身的包裝函式。
 
@@ -174,7 +174,7 @@ CommandBarFlyout 控制項有 2 個您可用來新增命令與內容的屬性：
 > [!TIP]
 > 根據預設，應用程式畫布的設計元素看起來可能不正確的命令列中。 當您新增使用 AppBarElementContainer 為項目時，有一些您應該讓項目符合其他的命令列元素採取的步驟：
 >
-> - 覆寫預設筆刷使用[輕量型樣式設定](/design/controls-and-patterns/xaml-styles#lightweight-styling)，讓元素的背景及符合應用程式列按鈕的框線。
+> - 覆寫預設筆刷使用[輕量型樣式設定](/windows/uwp/design/controls-and-patterns/xaml-styles#lightweight-styling)，讓元素的背景及符合應用程式列按鈕的框線。
 > - 調整大小和位置的項目。
 > - 包裝 Viewbox 寬度與高度 16px 的圖示。
 

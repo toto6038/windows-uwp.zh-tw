@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ccff9d892fbedc62cf1b54e374a0071877805731
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920999"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9050431"
 ---
 # <a name="pair-devices"></a>配對裝置
 
@@ -68,7 +68,7 @@ ms.locfileid: "8920999"
 ## <a name="sample"></a>範例
 
 
-若要下載示範如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的範例，可按一下[這裡](http://go.microsoft.com/fwlink/?LinkID=620536)。
+若要下載示範如何使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 的範例，可按一下[這裡](https://go.microsoft.com/fwlink/?LinkID=620536)。
 
  
 

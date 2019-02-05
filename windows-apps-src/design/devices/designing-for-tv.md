@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b09e90ea71872421a0caf1edcc1a03ce25fef42
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f6868975f793bf504dac167bf4d57d2574ddc0e9
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930659"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9058639"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -832,7 +832,7 @@ UWP 具有可將視覺焦點保留在 [VisibleBounds](https://msdn.microsoft.com
 > [!NOTE]
 > 這個程式碼片段是特別針對 `ListView`；如果是 `GridView` 樣式，請將 [ControlTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 和 [Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) 的 [TargetType](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) 屬性都設定為 `GridView`。
 
-更多更精細地控制如何項目會被帶入檢視中，如果您的應用程式的目標是版本 1803年或更新版本，您可以使用[UIElement.BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放在[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) ， **ListView**的/**GridView**攔截它之前沒有內部**ScrollViewer** ，如下列程式碼片段所示：
+更多更精細地控制如何項目會被帶入檢視中，如果您的應用程式的目標是版本 1803年或更新版本，您可以使用[UIElement.BringIntoViewRequested 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested)。 您可以將它放[ItemsPanel](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel) **ListView**的/**GridView**攔截它之前沒有內部**ScrollViewer** ，如下列程式碼片段所示：
 
 ```xaml
 <GridView x:Name="gridView">
@@ -933,9 +933,9 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 ![樞紐底線](images/designing-for-tv/pivot-underline.png)
 
-您可以將 [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)。
+您可以將 [Pivot.IsHeaderItemsCarouselEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabled.aspx) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](../controls-and-patterns/pivot.md)。
 
-### <a name="navigation-pane-a-namenavigation-pane"></a>瀏覽窗格 <a name="navigation-pane">
+### <a name="navigation-pane-a-namenavigation-pane-"></a>瀏覽窗格 <a name="navigation-pane" />
 
 瀏覽窗格 (也稱為 *「漢堡式功能表」*) 是 UWP app 中常用的瀏覽控制項。 它一般會是一個含有清單樣式功能表的窗格，功能表中有數個可供選擇的選項，可將使用者帶到不同的頁面。 這個窗格通常一開始會摺疊起來以節省空間，使用者按一下按鈕即可將它開啟。
 

@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: ac6dd17f31dab1898aa394f901613d268c159b06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 8740829ab95b804afba564110f38116f2c90b416
+ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926566"
+ms.lasthandoff: 02/05/2019
+ms.locfileid: "9049795"
 ---
 # <a name="set-conditions-for-running-a-background-task"></a>設定執行背景工作的條件
 
@@ -27,7 +27,7 @@ ms.locfileid: "8926566"
 
 了解如何設定條件以控制背景工作的執行時間。
 
-有時，背景工作還需要背景工作成功符合特定條件。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的條件。 在引發觸發程序之後，將會檢查條件。 背景工作將會接著會排入佇列，但是它不會執行所有必要的條件必須等到。
+有時候，背景工作需要背景工作成功符合特定條件。 登錄背景工作時，您可以指定一或多個由 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 指定的條件。 在引發觸發程序之後，將會檢查條件。 背景工作將會接著會排入佇列，但是它不會執行所有必要的條件必須等到。
 
 將條件放在背景工作會以節省延長電池壽命和 CPU 可以避免不必要地執行。 例如，如果背景工作在計時器上執行，並且需要網際網路連線，則在登錄工作之前，請先將 **InternetAvailable** 條件新增到 [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)。 這樣可以藉由讓工作只有在計時器時間已經過 *「並且」* 網際網路可用時才執行，協助防止工作不必要地使用系統資源與電池電力。
 
@@ -105,7 +105,7 @@ BackgroundTaskRegistration ^ task = taskBuilder->Register();
 若要新增多個條件，您的應用程式必須多次呼叫 [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) 方法。 這些呼叫必須在工作登錄生效之前發生。
 
 > [!NOTE]
-> 採取小心，不要將衝突的條件新增到背景工作。
+> 請注意不要將衝突的條件新增到背景工作。
 
 下列程式碼片段顯示多個條件，建立並登錄背景工作的內容中。
 
@@ -178,7 +178,7 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ## <a name="remarks"></a>備註
 
 > [!NOTE]
-> 選擇您的背景工作的條件，讓它僅能執行時，它需要而且不會執行它不應時。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
+> 選擇您的背景工作的條件，讓它僅能執行時，它需要而且當它不應該不會執行。 如需不同背景工作條件的說明，請參閱 [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)。
 
 ## <a name="related-topics"></a>相關主題
 
@@ -194,4 +194,4 @@ BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
