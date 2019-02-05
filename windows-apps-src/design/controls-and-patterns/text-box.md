@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: a0c36430c6dd993c86ae1833631e55e1a8bdca4c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7075df3d5c3de0dd7d756432400dfe934651c5b4
+ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050318"
+ms.locfileid: "9058759"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -146,7 +146,7 @@ ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
 
 ### <a name="format-the-text-display"></a>格式化文字顯示方式
 
-使用 [TextAlignment]() 屬性，以對齊文字方塊中的文字。 若要在頁面配置中對齊文字方塊，請使用 [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 屬性。
+使用 [TextAlignment](/uwp/api/windows.ui.xaml.controls.textbox.textalignment) 屬性，以對齊文字方塊中的文字。 若要在頁面配置中對齊文字方塊，請使用 [HorizontalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) 和 [VerticalAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) 屬性。
 
 雖然文字方塊僅支援未格式化的文字，不過您可自訂文字在文字方塊中的顯示方式，以符合您的品牌風格。 您可設定標準[控制項](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx)屬性 (例如 [FontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontfamily.aspx)、[FontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontsize.aspx)、[FontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.fontstyle.aspx)、[Background](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx)、[Foreground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) 和 [CharacterSpacing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.characterspacing.aspx))，以變更文字的外觀。 這些屬性僅會影響文字方塊在本機顯示文字的方式，因此舉例來說，若您將文字複製並貼至文字控制項，即不會套用任何格式化設定。
 
