@@ -5,12 +5,12 @@ ms.date: 06/13/2018
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 74753c2c91912969342d2989ed76900e8386f292
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 5154593065ce40c5ac67a4873d58b2aac913d1f8
+ms.sourcegitcommit: f01e7abae23b91bbaa007055942e93587c0ec137
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050931"
+ms.locfileid: "9059010"
 ---
 # <a name="supported-point-of-service-peripherals"></a>支援的服務點週邊設備
 
@@ -61,13 +61,15 @@ ms.locfileid: "9050931"
 | 通訊端行動裝置 | SocketScan S740                | 2D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
 | 通訊端行動裝置 | SocketScan S800                | 1D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
 | 通訊端行動裝置 | SocketScan S850                | 2D         | 藍牙    | 手持     | 序列連接埠設定檔 (SPP) |
+| Zebra         | DS2208²                        | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
 | Zebra         | DS2278                         | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
-| Zebra         | DS8108²                        | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
+| Zebra         | DS8108³                        | 2D         | USB          | 手持     | HID 的 POS 掃描器           |
 |
 
 
 支援透過 Honeywell 2D 條碼 ¹ Upgradable <br/>
-² 最小值韌體需要 016 (2018.01.18)。 可升級使用 Zebra [123Scan](https://www.zebra.com/123Scan)。 
+² 最小值韌體需要 009 (2018.07.09)。 可升級使用 Zebra [123Scan](http://www.zebra.com/123Scan)。<br/>
+³ 最小值韌體需要 016 (2018.01.18)。 可升級使用 Zebra [123Scan](http://www.zebra.com/123Scan)。 
 
 
 <hr>
