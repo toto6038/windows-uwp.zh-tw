@@ -6,12 +6,12 @@ ms.date: 07/13/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 920ff8e295959ad6ea66cdb3b673217ff19b89e2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 212ef252e7d123ebf457a6584f77addb04fdfb2c
+ms.sourcegitcommit: a5f5bd724e65ce4a62d28dfd9080afb127886d6e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943149"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059989"
 ---
 # <a name="storyboarded-animations"></a>腳本動畫
 
@@ -265,7 +265,8 @@ Windows 執行階段動畫系統有三種腳本動畫適用的特定類型：
 做為應用程式開發人員，您也可以選擇套用一律停用相依式動畫的全應用程式設定，即使 **EnableDependentAnimation** 為 **true** 也可以。 請參閱 [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)。
 
 > [!TIP]
-> 如果您使用 Visual Studio 撰寫控制項的視覺狀態，設計工具就會在您嘗試將相依式動畫套用到視覺狀態屬性時產生警告。
+> 如果您使用動畫窗格 Blend for Visual Studio 2017 中，在您嘗試將相依式動畫套用到視覺狀態屬性時，在設計工具中會顯示警告。 在建置輸出或錯誤清單中將不會顯示警告。 如果您以手動方式編輯 XAML，設計工具不會顯示警告。 在執行階段偵錯時，[輸出] 窗格偵錯輸出會顯示警告，不是獨立式動畫，並會略過。
+
 
 ## <a name="starting-and-controlling-an-animation"></a>啟動和控制動畫
 
