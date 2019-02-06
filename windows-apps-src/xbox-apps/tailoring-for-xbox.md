@@ -5,12 +5,12 @@ ms.date: 10/12/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 400d80018201c8ae048cb4a5d326fa560b9cdd5c
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.openlocfilehash: e273b1b3bb84929005cfbe4a205397fa298ea1c8
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981392"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059729"
 ---
 # <a name="xbox-best-practices"></a>Xbox 最佳做法
 
@@ -22,11 +22,11 @@ ms.locfileid: "8981392"
 
 ### <a name="do-turn-off-mouse-mode"></a>*請務必：* 關閉滑鼠模式
 
-Xbox 使用者喜愛他們的控制器。 若要最佳化控制器輸入，請[停用滑鼠模式](how-to-disable-mouse-mode.md)並啟用方向導覽 (也稱為 [X-Y 焦點](../design/devices/designing-for-tv.md#xy-focus-navigation-and-interaction))。 注意焦點陷阱和無法存取的 UI。
+Xbox 使用者喜愛他們的控制器。 若要最佳化控制器[停用滑鼠模式](how-to-disable-mouse-mode.md)輸入，並啟用方向導覽 （也稱為[XY 焦點瀏覽和互動](../design/input/gamepad-and-remote-interactions.md#xy-focus-navigation-and-interaction)）。 注意焦點陷阱和無法存取的 UI。
 
 ### <a name="do-draw-a-focus-rectangle-that-is-appropriate-for-a-10-foot-experience"></a>*請務必：* 繪製一個適合 10 英呎體驗的焦點矩形
 
-大多數 Xbox 使用者會坐在客廳電視的另一端，因此請留意標準的焦點矩形很難在 10 英呎的距離外看清楚。 若要確保具有輸入焦點的 UI 元素可以一直清楚地顯示給使用者，請遵循[焦點視覺](../design/devices/designing-for-tv.md#focus-visual)指導方針。 在 XAML 中，您會在您的 App 於 Xbox 上執行時免費獲得這項行為，但是 HTML App 將需要使用自訂 CSS 樣式。
+大多數 Xbox 使用者會坐在客廳電視的另一端，因此請留意標準的焦點矩形很難在 10 英呎的距離外看清楚。 若要確保具有輸入焦點的 UI 元素可以一直清楚地顯示給使用者，請遵循[焦點視覺](../design/input/gamepad-and-remote-interactions.md#focus-visual)指導方針。 在 XAML 中，您會在您的 App 於 Xbox 上執行時免費獲得這項行為，但是 HTML App 將需要使用自訂 CSS 樣式。
 
 ### <a name="do-integrate-with-the-systemmediatransportcontrols-class"></a>*請務必：* 整合 SystemMediaTransportControls 類別
 

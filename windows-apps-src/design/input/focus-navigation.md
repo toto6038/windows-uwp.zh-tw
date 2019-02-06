@@ -11,12 +11,12 @@ design-contact: kimsea
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7dd7ca5ed7694ba5f114d913580e7e3a233537ae
-ms.sourcegitcommit: 8e0fa6e2cdd5d7456a4c8a10fd9f2501b346294f
+ms.openlocfilehash: a699ef00b3f377656940e66e6d35bfcba1cc5762
+ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "9041046"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9059699"
 ---
 # <a name="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools"></a>適用於鍵盤、遊戲台、遠端控制與協助工具的焦點瀏覽
 
@@ -425,7 +425,7 @@ ms.locfileid: "9041046"
 
 在本節中，我們涵蓋如何指定慣用的瀏覽策略和透過一組支援所有焦點式、非指標輸入類型的瀏覽策略屬性微調您應用程式內的焦點瀏覽。
 
-如需更多建置 Xbox/TV 應用程式和體驗的一般資訊，請參閱[鍵盤互動](keyboard-interactions.md)和[為 Xbox 和 TV 設計](../devices/designing-for-tv.md#xy-focus-navigation-and-interaction)。
+如需更多一般建置 Xbox/TV 應用程式和體驗的詳細資訊，請參閱[鍵盤互動](keyboard-interactions.md)、[針對 Xbox 和電視進行設計](../devices/designing-for-tv.md)和[遊戲台與遙控器的互動](gamepad-and-remote-interactions.md)。
 
 ### <a name="navigation-strategies"></a>瀏覽策略
 
