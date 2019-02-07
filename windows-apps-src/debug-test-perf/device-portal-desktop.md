@@ -2,20 +2,18 @@
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Windows 桌面的裝置入口網站
 description: 了解 Windows 裝置入口網站如何在 Windows 桌面上開啟診斷與自動化功能。
-ms.date: 03/15/2018
+ms.date: 2/6/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 1be8dfd11e68dc8e6382f98e08e6c23f2a4d6be6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 3dcf35a1bd43930e616edc6d1e7180c9cea31560
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938828"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060042"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
-
-
 
 Windows 裝置入口網站可讓您檢視診斷資訊，並透過 HTTP 從瀏覽器視窗與桌面互動。 您可以使用裝置入口網站來執行下列動作：
 - 請參閱和操作執行中處理程序清單
@@ -77,6 +75,7 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 - 臨時
 
 ## <a name="more-device-portal-options"></a>更多裝置入口網站選項
+
 ### <a name="registry-based-configuration-for-device-portal"></a>裝置入口網站的登錄為主設定
 
 若您想要選取裝置入口網站的連接埠號碼 (例如 80 和 443)，則可設定下列登錄機碼︰
@@ -105,6 +104,30 @@ Windows 桌面上的裝置入口網站提供標準頁面集。 如需這些項�
 - `-Debug <various options for authentication, port selection, and tracing level>`
     - 執行具有特定組態並且會顯示偵錯訊息的單機版裝置入口網站。 這對於建置[封裝外掛程式](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin)來說最實用。 
     - 如需如何以 System 身分執行此操作以完整測試封裝外掛程式的詳細資料，請參閱 [MSDN Magazine 文章](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx)。
+
+## <a name="common-errors-and-issues"></a>常見的錯誤以及問題
+
+以下是一些設定 Device Portal 時，您可能會遇到的常見錯誤。
+
+### <a name="windowsupdatesearch-returns-invalid-number-of-updates-0x800f0950-cbseinvalidwindowsupdatecount"></a>WindowsUpdateSearch 傳回不正確的更新數目 (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+
+嘗試安裝開發人員套件上的 Windows 10 發行前組建時，您可能會發生這個錯誤。 這些功能隨選 (FoD) 套件會裝載於 Windows Update，並下載發行前組建會要求您選擇到正式發行前小眾。 如果您的安裝不選擇加入的正確的組建和更新步調組合正式發行前小眾，將無法下載承載。 仔細檢查下列項目：
+
+1. 瀏覽至 [**設定 > 更新 & 安全性 > Windows 測試人員計畫**，並確認**Windows 測試人員帳戶**\] 區段都有您正確的帳戶資訊。 如果您沒有看到該區段中，選取 [ **Windows 測試人員帳戶連結**，新增您的電子郵件帳戶，並確認它 （您可能需要選取**Windows 測試人員帳戶連結**至第二次**Windows 測試人員帳戶**標題下方顯示實際連結新增的帳戶）。
+ 
+2. 下方**何種內容您想要收到？**，請確定已選取**的 Windows 開發**。
+ 
+3. 下方**您想要取得新組建哪些步調？**，請確定已選取 [ **Windows 測試人員-快**。
+ 
+4. 您現在應該安裝 Fod。 如果您已經確認您是在 Windows 測試人員快速，並且仍然無法安裝 Fod，請提供意見反應並附加**C:\Windows\Logs\CBS**底下的記錄檔。
+
+### <a name="sc-startservice-openservice-failed-1060-the-specified-service-does-not-exist-as-an-installed-service"></a>[SC]StartService: OpenService 失敗 1060年： 指定的服務並不是已安裝的服務
+
+如果不會安裝開發人員套件，您可能會發生這個錯誤。 不需要開發人員套件中，沒有任何 web 管理服務。 再次嘗試安裝開發人員套件。
+
+### <a name="cbs-cannot-start-download-because-the-system-is-on-metered-network-cbsemeterednetwork"></a>CBS 無法啟動下載，因為系統會在計量付費網路 (CBS_E_METERED_NETWORK)
+
+如果您是在計量付費的網際網路連線，您可能會發生這個錯誤。 您將無法下載開發人員套件上的計量付費連線。
 
 ## <a name="see-also"></a>請參閱
 

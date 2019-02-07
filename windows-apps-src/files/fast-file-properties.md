@@ -1,23 +1,23 @@
 ---
 title: 快速存取 UWP 中的檔案屬性
 description: 有效收集程式庫的檔案和其屬性清單以便用於 UWP app。
-ms.date: 03/22/2018
+ms.date: 02/06/2019
 ms.topic: article
 keywords: windows 10, uwp, 檔案, 屬性
 ms.localizationpriority: medium
-ms.openlocfilehash: 772abd3696850be202593c582e6338a04de38537
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5ae884ca5424f50a7a835bc55602b5aa7c54096d
+ms.sourcegitcommit: b79cc7e0eac414ac2275517a7f56d1f9a817d112
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926533"
+ms.lasthandoff: 02/06/2019
+ms.locfileid: "9060052"
 ---
 # <a name="fast-access-to-file-properties-in-uwp"></a>快速存取 UWP 中的檔案屬性 
 
 了解如何快速收集程式庫的檔案和其屬性清單，以便在應用程式中使用這些屬性。  
 
 必要條件 
-- **通用 Windows 平台 (UWP) 應用程式的非同步程式設計**    您可以了解如何在 C# 或 Visual Basic 撰寫非同步的 app，請參閱[呼叫非同步 Api 以 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
+- **通用 Windows 平台 (UWP) 應用程式的非同步程式設計**    您可以了解如何在 C# 或 Visual Basic 撰寫非同步的 app，請參閱 [[呼叫非同步 Api 以 C# 或 Visual Basic](https://docs.microsoft.com/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。 
 - **程式庫的存取權限**這些範例中的程式碼需要**picturesLibrary**功能，但您的檔案位置可能需要其他功能或不需要功能完全。 若要深入了解，請參閱[檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)。 
 - **簡易檔案列舉**這個範例使用[QueryOptions](https://docs.microsoft.com/uwp/api/Windows.Storage.Search.QueryOptions)來設定幾個進階的列舉屬性。 若要深入了解取得小型目錄的簡易檔案清單，請參閱[列舉和查詢檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)。 
 
@@ -118,6 +118,5 @@ while (images.Count != 0 || index < 10000) 
 [QueryOptions API 參考](https://docs.microsoft.com/uwp/api/windows.storage.search.queryoptions)  
 [列舉和查詢檔案和資料夾](https://docs.microsoft.com/windows/uwp/files/quickstart-listing-files-and-folders)  
 [檔案存取權限](https://docs.microsoft.com/windows/uwp/files/file-access-permissions)  
-[快速屬性存取逐步解說](https://blogs.msdn.microsoft.com/adamdwilson/2017/12/20/fast-file-enumeration-with-partially-initialized-storagefiles/)
  
  
