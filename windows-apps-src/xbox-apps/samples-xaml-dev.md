@@ -1,15 +1,17 @@
 ---
+title: 適用於開發人員的 XAML 範例
+description: 適用於開發人員的 XAML 範例
 ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
-ms.openlocfilehash: a82ce4449df8d3fe6057bfc5c67653bd03cec3de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 495cd9cffb17666ad3308a1ac6fa6cc20772d9ea
+ms.sourcegitcommit: e83f30486d899401debc782de891c388ba5fc03b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937606"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "9062450"
 ---
-#<a name="xaml-samples-for-developers"></a>適用於開發人員的 XAML 範例
+# <a name="xaml-samples-for-developers"></a>適用於開發人員的 XAML 範例
 
 本主題列出適用於 Xbox One App 開發人員的 XAML 範例。
 
