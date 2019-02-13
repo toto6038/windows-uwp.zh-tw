@@ -1,16 +1,16 @@
 ---
-title: 建立和使用應用程式延伸模組
+title: 建立和裝載應用程式延伸模組
 description: 撰寫和裝載通用 Windows 平台 (UWP) 應用程式延伸模組可讓您透過使用者可從 Microsoft Store 安裝的套件來擴充應用程式。
 keywords: 應用程式延伸模組, 應用程式服務, 背景
 ms.date: 10/05/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 99ba3ee5f62ed9455e95d9e760abdba6009e5027
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6a7bb6f719f95766c07c1e5f92b50148cf0f2cce
+ms.sourcegitcommit: b589795bedbff993867ddce16ed1f1a4a4b39e8c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928863"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9070339"
 ---
 # <a name="create-and-host-an-app-extension"></a>建立和裝載應用程式延伸模組
 
