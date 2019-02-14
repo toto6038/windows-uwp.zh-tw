@@ -11,23 +11,20 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 7075df3d5c3de0dd7d756432400dfe934651c5b4
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 212b5843a302c8210cd01dd0ab4017eda016098a
+ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058759"
+ms.lasthandoff: 02/13/2019
+ms.locfileid: "9075121"
 ---
 # <a name="text-box"></a>文字方塊
-
- 
 
 TextBox 控制項可讓使用者在應用程式中輸入文字。 其通常用來擷取單行文字，但亦可設為擷取多行文字。 文字在畫面上會以簡單、統一的純文字格式呈現。
 
 TextBox 具有眾多可精簡文字輸入的實用功能。 其提供熟悉的內建操作功能表，支援複製與貼上文字。 「全部清除」按鈕可讓使用者快速刪除所有已輸入的文字。 其亦具備預設啟用的內建拼字檢查功能。
 
 > **重要 API**：[TextBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx)、[Text 屬性](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx)
-
 
 ## <a name="is-this-the-right-control"></a>這是正確的控制項嗎？
 
@@ -86,6 +83,18 @@ rootGrid.Children.Add(textBox);
 
 常見的做法是使用文字方塊支援在表單上輸入資料，並使用 [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.text.aspx) 屬性從文字方塊取得完整的文字字串。 您通常會使用諸如按一下提交按鈕等事件存取 Text 屬性，不過若您需要在文字變更時執行某些工作，則可處理 [TextChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanged.aspx) 或 [TextChanging](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textchanging.aspx) 事件。
 
+這個範例示範如何取得並設定的文字方塊中目前的內容。
+
+```xaml
+<TextBox name="SampleTextBox" Text="Sample Text"/>
+```
+
+```csharp
+string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = "Sample text retrieved";
+```
+
 您可以新增 [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.header.aspx) (或標籤) 與 [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.placeholdertext.aspx) (或浮水印) 至文字方塊，以告知使用者其用途。 若要自訂標頭的外觀，您可以設定 [HeaderTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.headertemplate.aspx) 屬性而非 Header。 *如需設計資訊，請參閱標籤指導方針*。
 
 您可藉由設定 [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.maxlength.aspx) 屬性，限制使用者可以輸入的字元數目。 不過，MaxLength 不會限制已貼上文字的長度。 若對於應用程式而言具重要性，請使用 [Paste](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.paste.aspx) 事件以修改貼上的文字。
@@ -97,6 +106,7 @@ rootGrid.Children.Add(textBox);
 僅有包含文字且具焦點的可編輯單行文字方塊，才會顯示全部清除按鈕。
 
 以下任一情況皆不會顯示全部清除按鈕：
+
 - **IsReadOnly** 為 **true**
 - **AcceptsReturn** 為 **true**
 - **TextWrap** 具有非 **NoWrap** 的值
@@ -111,10 +121,10 @@ rootGrid.Children.Add(textBox);
 使用者可選取和複製文字。
 IsEnabled
 
-
 ### <a name="enable-multi-line-input"></a>啟用多行輸入
 
 您可使用兩種屬性來控制文字方塊是否採用多行方式顯示文字。 您通常會同時設定這兩個屬性，以產生多行文字方塊。
+
 - 若要讓文字方塊允許並顯示新行或傳回字元，請將 [AcceptsReturn](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.acceptsreturn.aspx) 屬性設為 **true**。
 - 若要啟用文字換行，請將 [TextWrapping](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.textwrapping.aspx) 屬性設為 **Wrap**。 這會導致文字在達到文字方塊邊緣時換行，不受行分隔字元的影響。
 
@@ -244,46 +254,45 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 
 ## <a name="recommendations"></a>建議
 
--   如果文字方塊的目的不清楚，請使用標籤或預留位置文字。 無論文字輸入方塊是否包含值，都應該要顯示標籤。 預留位置文字會顯示在文字輸入方塊內，只要輸入值就會消失。
--   為文字方塊指定一個適合所要輸入的值範圍的寬度。 每個語言的單字長度都不相同，所以如果您希望您的應用程式能夠全球化，請考慮到當地語系化。
--   文字輸入方塊通常是單行 (`TextWrap = "NoWrap"`)。 當使用者需要輸入或編輯長字串時，請將文字輸入方塊設定為多行 (`TextWrap = "Wrap"`)。
--   文字輸入方塊通常使用於可編輯的文字。 但是您也可讓文字輸入方塊成為唯讀，如此一來，使用者可以閱讀、選取和複製它的內容，但是不能進行編輯。
--   如果您需要讓檢視看起來不那麼擁擠，請考慮將一組文字輸入方塊設定為只在選取控制的核取方塊時才顯示。 您也可以將文字輸入方塊的啟用狀態繫結至核取方塊之類的控制項。
--   請考慮當文字輸入方塊包含值且使用者點選它時，文字輸入方塊會執行什麼行為。 適當的預設行為是編輯值而不是取代它；插入點放置在單字之間，而不選取任何單字。 如果對於特定文字輸入方塊最常用的方式是取代，您可以在控制項接收焦點時選取欄位中的所有文字，而輸入文字會取代選取的文字。
+- 如果文字方塊的目的不清楚，請使用標籤或預留位置文字。 無論文字輸入方塊是否包含值，都應該要顯示標籤。 預留位置文字會顯示在文字輸入方塊內，只要輸入值就會消失。
+- 為文字方塊指定一個適合所要輸入的值範圍的寬度。 每個語言的單字長度都不相同，所以如果您希望您的應用程式能夠全球化，請考慮到當地語系化。
+- 文字輸入方塊通常是單行 (`TextWrap = "NoWrap"`)。 當使用者需要輸入或編輯長字串時，請將文字輸入方塊設定為多行 (`TextWrap = "Wrap"`)。
+- 文字輸入方塊通常使用於可編輯的文字。 但是您也可讓文字輸入方塊成為唯讀，如此一來，使用者可以閱讀、選取和複製它的內容，但是不能進行編輯。
+- 如果您需要讓檢視看起來不那麼擁擠，請考慮將一組文字輸入方塊設定為只在選取控制的核取方塊時才顯示。 您也可以將文字輸入方塊的啟用狀態繫結至核取方塊之類的控制項。
+- 請考慮當文字輸入方塊包含值且使用者點選它時，文字輸入方塊會執行什麼行為。 適當的預設行為是編輯值而不是取代它；插入點放置在單字之間，而不選取任何單字。 如果對於特定文字輸入方塊最常用的方式是取代，您可以在控制項接收焦點時選取欄位中的所有文字，而輸入文字會取代選取的文字。
 
-**單行輸入方塊**
+### <a name="single-line-input-boxes"></a>單行輸入方塊
 
--   使用數個單行文字方塊來擷取許多小段的文字資訊。 如果文字方塊本質上是相關的，則將它們群組在一起。
+- 使用數個單行文字方塊來擷取許多小段的文字資訊。 如果文字方塊本質上是相關的，則將它們群組在一起。
 
--   讓單行文字方塊的寬度稍微大於預估的最長輸入內容。 如果這樣做會讓控制項變得太寬，請將其分成兩個控制項。 例如，您可以將單一地址輸入分割成「地址行 1」和「地址行 2」。
--   設定可以輸入的字元長度上限。 如果支援的資料來源不允許輸入長字串，請限制輸入長度，並且使用驗證快顯視窗讓使用者得知已達限制。
--   使用單行文字輸入控制項收集使用者提供的少量文字。
+- 讓單行文字方塊的寬度稍微大於預估的最長輸入內容。 如果這樣做會讓控制項變得太寬，請將其分成兩個控制項。 例如，您可以將單一地址輸入分割成「地址行 1」和「地址行 2」。
+- 設定可以輸入的字元長度上限。 如果支援的資料來源不允許輸入長字串，請限制輸入長度，並且使用驗證快顯視窗讓使用者得知已達限制。
+- 使用單行文字輸入控制項收集使用者提供的少量文字。
 
     下列範例顯示的單行文字方塊會擷取安全性問題的回答。 這個回答預期是簡短的回答，因此適合使用單行文字方塊。
 
     ![基本資料輸入](images/guidelines_and_checklist_for_singleline_text_input_type_text.png)
 
--   使用一組簡短、固定大小的單行文字輸入控制項，以特定格式輸入資料。
+- 使用一組簡短、固定大小的單行文字輸入控制項，以特定格式輸入資料。
 
     ![格式化資料輸入](images/textinput_example_productkey.png)
 
--   使用不受限制的單行文字輸入控制項輸入或編輯字串，並與命令按鈕結合，幫助使用者選取有效的值。
+- 使用不受限制的單行文字輸入控制項輸入或編輯字串，並與命令按鈕結合，幫助使用者選取有效的值。
 
     ![協助資料輸入](images/textinput_example_assisted.png)
 
+### <a name="multi-line-text-input-controls"></a>多行文字輸入控制項
 
-**多行文字輸入控制項**
-
--   建立 RTF 方塊時，提供設定樣式按鈕並實作其動作。
--   使用與您的應用程式樣式一致的字型。
--   文字控制項的高度必須能夠容納一般輸入。
--   擷取橫跨多行但有字元或字數上限的文字時，請使用純文字方塊並且提供即時計數器，讓使用者得知達到上限之前還剩下多少字元數或字數。 您需要自行建立計數器；將它放在文字方塊下方，並且隨著使用者輸入的每個字元或文字動態更新。
+- 建立 RTF 方塊時，提供設定樣式按鈕並實作其動作。
+- 使用與您的應用程式樣式一致的字型。
+- 文字控制項的高度必須能夠容納一般輸入。
+- 擷取橫跨多行但有字元或字數上限的文字時，請使用純文字方塊並且提供即時計數器，讓使用者得知達到上限之前還剩下多少字元數或字數。 您需要自行建立計數器；將它放在文字方塊下方，並且隨著使用者輸入的每個字元或文字動態更新。
 
     ![橫跨多行的文字](images/guidelines_and_checklist_for_multiline_text_input_text_limits.png)
 
--   不要讓文字輸入控制項的高度隨著使用者輸入增加。
--   使用者只需要單行時，不要使用多行文字方塊。
--   使用純文字控制項就足夠時，不要使用 RTF 控制項。
+- 不要讓文字輸入控制項的高度隨著使用者輸入增加。
+- 使用者只需要單行時，不要使用多行文字方塊。
+- 使用純文字控制項就足夠時，不要使用 RTF 控制項。
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
