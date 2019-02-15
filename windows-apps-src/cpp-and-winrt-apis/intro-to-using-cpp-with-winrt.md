@@ -5,12 +5,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, introduction, 標準, 投影, 撰寫, 事件, 簡介
 ms.localizationpriority: medium
-ms.openlocfilehash: 5281049aa9ddec58a97283a2ca6ba5d229a49c4e
-ms.sourcegitcommit: 038fe813c73804285d5e74d97864ac1a2fb531f3
+ms.openlocfilehash: 883463f291864016ebc32f2d510936452c931366
+ms.sourcegitcommit: fde2d41ef4b5658785723359a8c4b856beae8f95
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042602"
+ms.lasthandoff: 02/15/2019
+ms.locfileid: "9079216"
 ---
 # <a name="introduction-to-cwinrt"></a>C++/WinRT 的簡介
 &nbsp;
@@ -111,6 +111,8 @@ VSIX 擴充功能的最新版本，它不是有效值專案有`<CppWinRTEnabled>
 如前面所述，C + + /winrt 專案現在需要有在其中安裝 NuGet 套件。
 
 因為`<CppWinRTEnabled>`項目現已過時，您可以選擇性地編輯您`.vcxproj`，並刪除項目。 它不是絕對必要，但它是一個選項。
+
+此外，如果您`.vcxproj`包含`<RequiredBundles>$(RequiredBundles);Microsoft.Windows.CppWinRT</RequiredBundles>`，則您可以將它移除，以便您可以建置而不需要的 C + + /winrt VSIX 来安裝的擴充功能。
 
 ## <a name="custom-types-in-the-cwinrt-projection"></a>C++/WinRT 投影中的自訂類型
 在您 C + + /winrt 程式設計時，您可以使用標準 c + + 語言功能和[標準 c + + 資料類型與 C + + WinRT](std-cpp-data-types.md)&mdash;包括部分 c + + 標準程式庫資料類型。 但也您會注意到投影中的某些自訂資料類型，且您可以選擇使用它們。 例如，我們會使用[開始使用 C++/WinRT](get-started.md) 中快速程式碼範例的 [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)。
