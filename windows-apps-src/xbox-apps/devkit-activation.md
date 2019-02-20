@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: ade80769-17ae-46e9-9c2f-bf08ae5a51ee
 ms.localizationpriority: medium
-ms.openlocfilehash: 59da5dd5866fe79f4420e1e895af74f976526f27
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 3664ecae152b7178709bffc373a877e58a86461a
+ms.sourcegitcommit: eaee5a45d5eace64c69e67691e5330b466cc74c2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046258"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083256"
 ---
 # <a name="xbox-one-developer-mode-activation"></a>啟用 Xbox One 開發人員模式
 
@@ -38,19 +38,21 @@ Xbox One 有兩種模式，*零售*模式 (**1**) 和*開發人員*模式 (**2**
 
     ![啟用步驟 5](images/activation-step-5.png)  
     
-5.  移至[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
+5.  [註冊合作夥伴中心中的應用程式開發人員帳戶](https://developer.microsoft.com/store/register)。  這也是邁向發行您遊戲的第一個步驟。
 
-6.  使用您的帳戶認證登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。
+6.  使用您有效且目前的合作夥伴中心的應用程式開發人員帳戶登入[合作夥伴中心](https://partner.microsoft.com/dashboard)。  如果您沒有看到多個選項，在左側瀏覽窗格中，或看不到在**概觀**區段中，下列步驟，啟用的連結_無法運作_，**建立新的應用程式**選項請確定您完全註冊您的應用程式開發人員帳戶，從上一個步驟。
 
-7.  輸入在「啟用開發人員模式」App 中顯示的啟用代碼。 您的帳戶具備有限的啟用次數。 啟用開發人員模式之後，合作夥伴中心會指出您已經使用其中一個與您帳戶相關聯的啟用。
+7.  移至[partner.microsoft.com/xboxconfig/devices](https://partner.microsoft.com/xboxconfig/devices)。
+
+8.  輸入在「啟用開發人員模式」App 中顯示的啟用代碼。 您的帳戶具備有限的啟用次數。 啟用開發人員模式之後，合作夥伴中心會指出您已經使用其中一個與您帳戶相關聯的啟用。
 
     ![啟用步驟 8](images/activation-step-8-rs2.png)    
     
-8.  按一下 **\[同意並啟用\]**。 這會導致頁面重新整理，您將會看見您的裝置填入表格當中。 您可在[Xbox One 開發人員模式啟用計畫](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 開發人員模式啟用計畫合約。
+9.  按一下 **\[同意並啟用\]**。 這會導致頁面重新整理，您將會看見您的裝置填入表格當中。 您可在[Xbox One 開發人員模式啟用計畫](https://go.microsoft.com/fwlink/p/?LinkId=760399)中找到 Xbox One 開發人員模式啟用計畫合約。
 
-9.  在您輸入啟用代碼之後，您的主機將會顯示啟用程序的進度畫面。  
+10. 在您輸入啟用代碼之後，您的主機將會顯示啟用程序的進度畫面。  
     
-10. 啟用完成之後，請開啟「啟用開發人員模式」App 並按一下 **\[切換並重新啟動\]** 以移至開發人員模式。 請注意，這可能會花費比平常還要久的時間。
+11. 啟用完成之後，請開啟「啟用開發人員模式」App 並按一下 **\[切換並重新啟動\]** 以移至開發人員模式。 請注意，這可能會花費比平常還要久的時間。
 
     ![啟用步驟 12](images/activation-step-12.png)   
 
