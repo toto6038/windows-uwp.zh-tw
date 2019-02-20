@@ -2,36 +2,36 @@
 title: 延長顯示啟動顯示畫面
 description: 您可以為 app 建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，但是您可以自訂這個畫面。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.date: 11/08/2018
+ms.date: 2/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 142ee642806ebba41d6ddb4d49fe55217e7a0e2e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3566d272a903aa0a387ad05767d49f1f14834cb
+ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918674"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9082871"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延長顯示啟動顯示畫面
 
 **重要 API**
 
--   [**SplashScreen 類別**](https://msdn.microsoft.com/library/windows/apps/br224763)
--   [**Window.SizeChanged 事件**](https://msdn.microsoft.com/library/windows/apps/br209055)
--   [**Application.OnLaunched 方法**](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [SplashScreen 類別](https://msdn.microsoft.com/library/windows/apps/br224763)
+-   [Window.SizeChanged 事件](https://msdn.microsoft.com/library/windows/apps/br209055)
+-   [Application.OnLaunched 方法](https://msdn.microsoft.com/library/windows/apps/br242335)
 
 您可以為應用程式建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，但是您可以自訂這個畫面。 不論您是想要顯示即時載入資訊，或只是想給 app 額外的時間來準備好初始 UI，都可以利用延長式啟動顯示畫面來定義啟動體驗。
 
 > [!NOTE]
-> 「 延長式啟動顯示畫面 」 這個主題中的是指在螢幕停留一段時間的啟動顯示畫面。 這不是指衍生自 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別的子類別。
+> 「 延長式啟動顯示畫面 」 這個主題中的是指在螢幕上停留一段時間的啟動顯示畫面。 這不是指衍生自 [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) 類別的子類別。
 
 請遵循下列建議，以確定您的延長式啟動顯示畫面準確模仿預設啟動顯示畫面：
 
--   您的延長式啟動顯示畫面頁面應該使用 620 x 300 像素影像，此影像會與您應用程式資訊清單中針對啟動顯示畫面指定的影像一致 (您應用程式的啟動顯示畫面影像)。 在 Microsoft Visual Studio2015，啟動顯示畫面設定儲存在您的應用程式資訊清單 （Package.appxmanifest 檔案） 中的 [**視覺資產**] 索引標籤的**啟動顯示畫面**一節。
+-   您的延長式啟動顯示畫面頁面應該使用 620 x 300 像素影像，此影像會與您應用程式資訊清單中針對啟動顯示畫面指定的影像一致 (您應用程式的啟動顯示畫面影像)。 在 Microsoft Visual Studio2015，啟動顯示畫面設定會儲存在您的應用程式資訊清單 （Package.appxmanifest 檔案） 中的 [**視覺資產**] 索引標籤的**啟動顯示畫面**一節。
 -   您的延長式啟動顯示畫面所使用的背景色彩，應該與您應用程式資訊清單中針對啟動顯示畫面指定的背景色彩一致 (您應用程式的啟動顯示畫面背景)。
--   您的程式碼應該使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別，將應用程式的啟動顯示畫面影像，放置在與預設啟動顯示畫面相同的螢幕座標上。
--   您的程式碼應該藉由使用 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別，將項目重新放置在延長式啟動顯示畫面上，以回應視窗調整大小事件 (例如當螢幕旋轉或應用程式被移到螢幕上另一個應用程式旁邊時)。
+-   您的程式碼應該使用 [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) 類別，將應用程式的啟動顯示畫面影像，放置在與預設啟動顯示畫面相同的螢幕座標上。
+-   您的程式碼應該藉由使用 [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) 類別，將項目重新放置在延長式啟動顯示畫面上，以回應視窗調整大小事件 (例如當螢幕旋轉或應用程式被移到螢幕上另一個應用程式旁邊時)。
 
 使用下列步驟建立延長式啟動顯示畫面，有效模擬預設啟動顯示畫面。
 
@@ -53,12 +53,12 @@ ms.locfileid: "8918674"
 
 在您的 ExtendedSplash.xaml 檔案中：
 
--   變更預設 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 元素的 [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) 屬性，使其符合您在應用程式資訊清單中針對應用程式啟動顯示畫面設定的背景色彩 (在 Package.appxmanifest 檔案的 **\[視覺資產\]** 區段)。 預設的啟動顯示畫面色彩是淺灰色 (十六進位值為 \#464646)。 請注意，這個 **Grid** 元素是當您建立新 **\[空白頁面\]** 時預設提供的元素。 您不需要使用 **Grid**；它只是用來建置延長式啟動顯示畫面的一個便利基礎。
--   將 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 元素新增到 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)。 您將使用這個 **Canvas** 來放置您的延長式啟動顯示畫面影像。
--   將 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 元素新增到 [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)。 在您的延長式啟動顯示畫面使用 600 x 320 像素影像，亦即與您為預設啟動顯示畫面選擇的影像相同。
--   (選用) 新增進度控制項以向使用者顯示您的應用程式正在載入。 本主題新增了 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 來代替確定或不確定的 [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529)。
+-   變更預設 Grid 元素的 [[Background](https://msdn.microsoft.com/library/windows/apps/br242704)](https://msdn.microsoft.com/library/windows/apps/br209396) 屬性，使其符合您在應用程式資訊清單中針對應用程式啟動顯示畫面設定的背景色彩 (在 Package.appxmanifest 檔案的 **\[視覺資產\]** 區段)。 預設的啟動顯示畫面色彩是淺灰色 (十六進位值為 \#464646)。 請注意，這個 **Grid** 元素是當您建立新 **\[空白頁面\]** 時預設提供的元素。 您不需要使用 **Grid**；它只是用來建置延長式啟動顯示畫面的一個便利基礎。
+-   將 [Canvas](https://msdn.microsoft.com/library/windows/apps/br209267) 元素新增到 [Grid](https://msdn.microsoft.com/library/windows/apps/br242704)。 您將使用這個 **Canvas** 來放置您的延長式啟動顯示畫面影像。
+-   將 [Image](https://msdn.microsoft.com/library/windows/apps/br242752) 元素新增到 [Canvas](https://msdn.microsoft.com/library/windows/apps/br209267)。 在您的延長式啟動顯示畫面使用 600 x 320 像素影像，亦即與您為預設啟動顯示畫面選擇的影像相同。
+-   (選用) 新增進度控制項以向使用者顯示您的應用程式正在載入。 本主題新增了 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) 來代替確定或不確定的 [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529)。
 
-下列範例示範[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)與這些新增項目和變更。
+下列範例示範[Grid](https://msdn.microsoft.com/library/windows/apps/br242704)與這些新增項目和變更。
 
 ```xaml
     <Grid Background="#464646">
@@ -70,7 +70,7 @@ ms.locfileid: "8918674"
 ```
 
 > [!NOTE]
-> 此範例會設定為 20 像素寬度的[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 。 您可以將其寬度設定為適合您應用程式的值，不過，如果寬度小於 20 像素，控制項將無法顯示。
+> 此範例會設定為 20 像素寬度的[ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) 。 您可以將其寬度設定為適合您應用程式的值，不過，如果寬度小於 20 像素，控制項將無法顯示。
 
 ## <a name="essential-code-for-an-extended-splash-screen-class"></a>延長式啟動顯示畫面類別的基本程式碼
 
@@ -81,10 +81,11 @@ ms.locfileid: "8918674"
 
 1.  **新增必要的命名空間**
 
-    您需要將下列命名空間新增到 ExtendedSplash.xaml.cs，以存取 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 類別、[**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) 事件。
+    您將需要下列命名空間新增到**ExtendedSplash.xaml.cs** ，以存取[SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)類別、 [Rect](https://docs.microsoft.com/uwp/api/windows.foundation.rect)結構和[Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055)事件。
 
     ```cs
     using Windows.ApplicationModel.Activation;
+    using Windows.Foundation;
     using Windows.UI.Core;
     ```
 
@@ -104,7 +105,7 @@ ms.locfileid: "8918674"
     }
     ```
 
-    這些類別變數是透過數個方法來使用。 `splashImageRect` 變數會儲存系統顯示應用程式的啟動顯示畫面影像的座標。 `splash` 變數會儲存 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) 物件，而 `dismissed` 變數會追蹤系統顯示的啟動顯示畫面是否已關閉。
+    這些類別變數是透過數個方法來使用。 `splashImageRect` 變數會儲存系統顯示應用程式的啟動顯示畫面影像的座標。 `splash` 變數會儲存 [SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763) 物件，而 `dismissed` 變數會追蹤系統顯示的啟動顯示畫面是否已關閉。
 
 3.  **定義可正確放置影像的類別建構函式**
 
@@ -138,7 +139,7 @@ ms.locfileid: "8918674"
     }
     ```
 
-    請確定在類別建構函式中登錄您的 [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) 處理常式 (範例中的 `ExtendedSplash_OnResize`)，以便讓應用程式在延長式啟動顯示畫面中正確放置影像。
+    請確定在類別建構函式中登錄您的 [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) 處理常式 (範例中的 `ExtendedSplash_OnResize`)，以便讓應用程式在延長式啟動顯示畫面中正確放置影像。
 
 4.  **定義類別方法，以便在您的延長式啟動顯示畫面中放置影像**
 
@@ -156,7 +157,7 @@ ms.locfileid: "8918674"
 
 5.  **(選用) 定義類別方法以將進度控制項放置在您的延長式啟動顯示畫面**
 
-    如果您選擇將 [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) 新增到延長式啟動顯示畫面，請將它放置在啟動顯示畫面影像的相對位置。 請將下列程式碼新增到 ExtendedSplash.xaml.cs，以將 **ProgressRing** 置中放在影像下方 32 像素的位置。
+    如果您選擇將 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/br227538) 新增到延長式啟動顯示畫面，請將它放置在啟動顯示畫面影像的相對位置。 請將下列程式碼新增到 ExtendedSplash.xaml.cs，以將 **ProgressRing** 置中放在影像下方 32 像素的位置。
 
     ```cs
     void PositionRing()
@@ -168,7 +169,7 @@ ms.locfileid: "8918674"
 
 6.  **在類別內部，定義 Dismissed 事件的處理常式**
 
-    在 ExtendedSplash.xaml.cs 中將 `dismissed` 類別變數設定為 true，以在 [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) 事件發生時予以回應。 如果您的應用程式有安裝程式作業，請將它們新增到這個事件處理常式。
+    在 ExtendedSplash.xaml.cs 中將 `dismissed` 類別變數設定為 true，以在 [SplashScreen.Dismissed](https://msdn.microsoft.com/library/windows/apps/br224764) 事件發生時予以回應。 如果您的應用程式有安裝程式作業，請將它們新增到這個事件處理常式。
 
     ```cs
     // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
@@ -194,7 +195,7 @@ ms.locfileid: "8918674"
 
 7.  **在類別內部，定義 Window.SizeChanged 事件的處理常式**
 
-    請準備您的延長式啟動顯示畫面，讓它在使用者調整視窗大小時重新放置元素。 這個程式碼會藉由擷取新座標並重新放置影像，在 [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) 事件發生時予以回應。 如果您已將進度控制項新增到延長式啟動顯示畫面，也請將它重新放置在這個事件處理常式內。
+    請準備您的延長式啟動顯示畫面，讓它在使用者調整視窗大小時重新放置元素。 這個程式碼會藉由擷取新座標並重新放置影像，在 [Window.SizeChanged](https://msdn.microsoft.com/library/windows/apps/br209055) 事件發生時予以回應。 如果您已將進度控制項新增到延長式啟動顯示畫面，也請將它重新放置在這個事件處理常式內。
 
     ```cs
     void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
@@ -213,13 +214,13 @@ ms.locfileid: "8918674"
     ```
 
     > [!NOTE]
-    > 您嘗試取得影像位置之前，請確定類別變數 (`splash`) 包含有效的[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763)物件，如範例所示。
+    > 您嘗試取得影像位置之前，請確定類別變數 (`splash`) 包含有效的[SplashScreen](https://msdn.microsoft.com/library/windows/apps/br224763)物件，如範例所示。
 
      
 
 8.  **(選擇性) 新增類別方法以還原已儲存的工作階段狀態**
 
-    您在步驟 4：[修改啟動啟用處理常式](#modify-the-launch-activation-handler)中新增到 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 方法的程式碼，會導致您的應用程式在啟動時顯示延長式啟動顯示畫面。 若要將延長式啟動顯示畫面類別中的應用程式啟動的相關的所有方法都合併，您可以考慮加入到您的 ExtendedSplash.xaml.cs 檔案來還原 app 狀態的方法。
+    您在步驟 4：修改啟動啟用處理常式中新增到 [[OnLaunched](#modify-the-launch-activation-handler)](https://msdn.microsoft.com/library/windows/apps/br242335) 方法的程式碼，會導致您的應用程式在啟動時顯示延長式啟動顯示畫面。 若要將延長式啟動顯示畫面類別中的應用程式啟動相關的所有方法都合併，您可以考慮將方法新增到您的 ExtendedSplash.xaml.cs 檔案來還原 app 狀態。
 
     ```cs
     void RestoreState(bool loadState)
@@ -231,14 +232,14 @@ ms.locfileid: "8918674"
     }
     ```
 
-    當您修改 App.xaml.cs 中的啟動啟用處理常式時，如果 app 之前的 [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 為 **Terminated**，則也需要將 `loadstate` 設定為 true。 如果是這種情況，`RestoreState` 方法會將 app 還原到它之前的狀態。 如需 app 啟動、暫停及終止的概觀，請參閱 [App 週期](app-lifecycle.md)。
+    當您修改 App.xaml.cs 中的啟動啟用處理常式時，如果 app 之前的 [ApplicationExecutionState](https://msdn.microsoft.com/library/windows/apps/br224694) 為 **Terminated**，則也需要將 `loadstate` 設定為 true。 如果是這種情況，`RestoreState` 方法會將 app 還原到它之前的狀態。 如需 app 啟動、暫停及終止的概觀，請參閱 [App 週期](app-lifecycle.md)。
 
 ## <a name="modify-the-launch-activation-handler"></a>修改啟動啟用處理常式
 
 
-啟動應用程式時，系統會將啟動顯示畫面資訊傳遞給應用程式的啟動啟用事件處理常式。 您可以使用這項資訊，將影像正確放置在延長式啟動顯示畫面頁面上。 您可以從傳遞給 app [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 處理常式的啟用事件引數中取得這項啟動顯示畫面資訊 (請參閱下列程式碼中的 `args` 變數)。
+啟動應用程式時，系統會將啟動顯示畫面資訊傳遞給應用程式的啟動啟用事件處理常式。 您可以使用這項資訊，將影像正確放置在延長式啟動顯示畫面頁面上。 您可以從傳遞給 app [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) 處理常式的啟用事件引數中取得這項啟動顯示畫面資訊 (請參閱下列程式碼中的 `args` 變數)。
 
-如果您尚未覆寫 app 的 [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) 處理常式，請參閱 [App 週期](app-lifecycle.md)，以了解如何處理啟用事件。
+如果您尚未覆寫 app 的 [OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335) 處理常式，請參閱 [App 週期](app-lifecycle.md)，以了解如何處理啟用事件。
 
 在 App.xaml.cs 中，新增下列程式碼來建立和顯示延長式啟動顯示畫面。
 
@@ -258,9 +259,9 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="complete-code"></a>完整程式碼
 
-下列程式碼會從先前的步驟中所示的程式碼片段與稍微不同。
+下列程式碼會在先前步驟中所示的程式碼片段與稍微不同。
 -   ExtendedSplash.xaml 包含一個 `DismissSplash` 按鈕。 按一下這個按鈕時，事件處理常式 `DismissSplashButton_Click` 會呼叫 `DismissExtendedSplash` 方法。 在您的應用程式中，請在應用程式完成資源載入或 UI 初始化時呼叫 `DismissExtendedSplash`。
--   這個 app 也使用一個 UWP app 專案範本，而該範本使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 瀏覽。 因此，在 App.xaml.cs 中，啟動啟用處理常式 ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) 定義了 `rootFrame`，並使用它來設定應用程式視窗的內容。
+-   這個 app 也使用一個 UWP app 專案範本，而該範本使用 [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) 瀏覽。 因此，在 App.xaml.cs 中，啟動啟用處理常式 ([OnLaunched](https://msdn.microsoft.com/library/windows/apps/br242335)) 定義了 `rootFrame`，並使用它來設定應用程式視窗的內容。
 
 ### <a name="extendedsplashxaml"></a>ExtendedSplash.xaml
 
@@ -420,7 +421,7 @@ namespace SplashScreenExample
 
 這個專案是使用 Visual Studio 中的 UWP 應用程式的**空白應用程式 (XAML)** 專案範本來建立。 `OnNavigationFailed` 與 `OnSuspending` 事件處理常式都是自動產生的，而且不需變更就可以實作延長式啟動顯示畫面。 這個主題只會修改 `OnLaunched`。
 
-如果您沒有將專案範本用於您的 app，請參閱步驟 4：[修改啟動啟用處理常式](#modify-the-launch-activation-handler)，當中有一個沒有使用 [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 瀏覽的已修改 `OnLaunched` 範例。
+如果您沒有將專案範本用於您的 app，請參閱步驟 4：[修改啟動啟用處理常式](#modify-the-launch-activation-handler)，當中有一個沒有使用 [Frame](https://msdn.microsoft.com/library/windows/apps/br242682) 瀏覽的已修改 `OnLaunched` 範例。
 
 ```cs
 using System;
@@ -544,10 +545,10 @@ namespace SplashScreenExample
 
 **參考**
 
-* [**Windows.ApplicationModel.Activation 命名空間**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Windows.ApplicationModel.Activation.SplashScreen 類別**](https://msdn.microsoft.com/library/windows/apps/br224763)
-* [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation 屬性**](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [**Windows.ApplicationModel.Core.CoreApplicationView.Activated 事件**](https://msdn.microsoft.com/library/windows/apps/br225018)
+* [Windows.ApplicationModel.Activation 命名空間](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [Windows.ApplicationModel.Activation.SplashScreen 類別](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [Windows.ApplicationModel.Activation.SplashScreen.ImageLocation 屬性](https://msdn.microsoft.com/library/windows/apps/br224765)
+* [Windows.ApplicationModel.Core.CoreApplicationView.Activated 事件](https://msdn.microsoft.com/library/windows/apps/br225018)
 
  
 

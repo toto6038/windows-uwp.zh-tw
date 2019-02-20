@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 5d5f7af2-41a9-4749-ad16-4503c64bb80c
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d36c368672675f503359735de8717df1be8b57
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: dbd2c6c9f5e3cf2200f9b260687f05718178868a
+ms.sourcegitcommit: 4dd9f76bd7f0ebdb42d78eab472d33a979dce60d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050651"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9082881"
 ---
 # <a name="create-a-uwp-game-in-monogame-2d"></a>使用 MonoGame 2D 建立 UWP 遊戲
 
@@ -67,6 +67,7 @@ MonoGame 是一個輕量型遊戲開發架構。 本教學課程將教導 MonoGa
 **protected override void UnloadContent()** 此方法用來卸除非內容管理員內容。 我們完全不會使用此方法。
 
 **受保護的 override void Update (GameTime gameTime)** 針對每個遊戲迴圈循環一次呼叫這個方法。 我們在這裡更新遊戲中所使用之任何物件或變數的狀態。 這包含像是物件的位置、速度或色彩。 這也是處理使用者輸入。 簡言之，除了在螢幕上繪製物件，這個方法處理遊戲邏輯的所有部分。
+
 **protected override void Draw(GameTime gameTime)** 這是在螢幕上繪製物件的地方，使用 Update 方法所提供的位置。
 
 ## <a name="draw-a-sprite"></a>繪製 Sprite
@@ -254,14 +255,14 @@ public void Draw (SpriteBatch spriteBatch)
 **Draw** 方法在 Game1.cs 的 **Draw** 方法中呼叫，用來繪製遊戲視窗中的 Sprite。
 
 ## <a name="user-input-and-animation"></a>使用者輸入與動畫
-我們現在已建置 SpriteClass，我們會使用它來建立兩個新遊戲物件，第一個是玩家可透過使用方向鍵和空格鍵控制的虛擬人偶。 第二個是玩家必須避免的物件
+我們現在已建置 SpriteClass，我們會使用它來建立兩個新遊戲物件，第一個是玩家可透過使用方向鍵和空格鍵控制的虛擬人偶。 第二個是玩家必須避免的物件。
 
 ### <a name="1-get-the-textures"></a>1. 取得紋理
 針對玩家的虛擬人偶，我們會使用 Microsoft 自己的忍者貓 (暴龍是其坐騎)。 [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/ninja-cat-dino.png)。
 
 現在，對於玩家需要避免的障礙， 忍者貓與肉食恐龍這兩個最討厭什麼？ 吃蔬菜！ [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/broccoli.png)。
 
-Just as before with the green rectangle, add these images to **Content.mgcb** via the **MonoGame Pipeline**, naming them “ninja-cat-dino.png” and “broccoli.png” respectively.
+如同之前的綠色矩形，透過**MonoGame Pipeline** 新增這些影像至 **Content.mgcb**，將它們分別命名為 “ninja-cat-dino.png” 和 “broccoli.png”。
 
 ### <a name="2-add-class-variables"></a>2. 新增類別變數
 將下列程式碼新增到 **Game1.cs** 中的類別變數清單：
@@ -282,13 +283,13 @@ float score;
 Random random;
 ```
 
-**dino** and **broccoli** are our SpriteClass variables. **dino** will hold the player avatar, while **broccoli** holds the broccoli obstacle.
+**dino** 和 **broccoli** 是我們的 SpriteClass 變數。 **dino** 會保留玩家虛擬人偶，而 **broccoli** 保留花椰菜障礙。
 
 **spaceDown** 追蹤空格鍵是否正在按住，而非按下並放開。
 
 **gameStarted** 告訴我們使用者是否第一次開始遊戲。
 
-**broccoliSpeedMultiplier** determines how fast the broccoli obstacle moves across the screen.
+**broccoliSpeedMultiplier** 決定花椰菜障礙在螢幕上移動的速度。
 
 **gravitySpeed** 決定玩家虛擬人偶在跳躍後加速向下的速度。
 
@@ -565,7 +566,7 @@ if (!gameStarted)
 
 首先，我們建立兩個 String，對於我們希望繪製的每一行文字各一個。 接下來，使用 **SpriteFont.MeasureString(String)** 方法，我們衡量在列印時每一行的寬度與高度。 這會以 **Vector2** 物件形式提供大小，其中 **X** 屬性包含寬度，而 **Y** 屬性包含高度。
 
-最後，我們繪製每一行。 若要將文字水平置中，我們將其位置向量的 **X** 值等於 **screenWidth / 2 - textSize.X / 2**
+最後，我們繪製每一行。 若要將文字水平置中，我們將其位置向量的**X**值等於**screenWidth / 2-textSize.X / 2**。
 
 **挑戰：** 如何變更上述程序，使文字水平垂直置中？
 
@@ -576,7 +577,12 @@ if (!gameStarted)
 ## <a name="collision-detection"></a>碰撞偵測
 我們有追著您四處跑的花椰菜，也有每次新花椰菜冒出時便會向上計數的分數，但實際上卻沒有輸掉遊戲的方法。 我們需要知道恐龍和花椰菜 Sprite 是否相碰撞，而且當這樣做，宣告遊戲結束。
 
-### <a name="1-rectangular-collision"></a>1. 矩形碰撞
+### <a name="1-get-the-textures"></a>1. 取得紋理
+我們需要最後一個影像是另一個用於 「 遊戲移轉 」。 [按一下這裡以下載影像](https://github.com/Microsoft/Windows-appsample-get-started-mg2d/blob/master/MonoGame2D/Content/game-over.png)。
+
+如同之前的綠色矩形，忍者貓和花椰菜影像，將新增此映像至**Content.mgcb**透過**MonoGame Pipeline**，命名為 「 遊戲 over.png 」。
+
+### <a name="2-rectangular-collision"></a>2.矩形碰撞
 當遊戲中偵測到碰撞，物件通常會簡化以減少相關複雜的數學運算。 為了偵測玩家虛擬人偶和花椰菜障礙之間碰撞，我們會將兩者視為矩形。
 
 開啟 **SpriteClass.cs** 並新增類別變數：
@@ -602,7 +608,7 @@ public bool RectangleCollision(SpriteClass otherSprite)
 
 這個方法會偵測兩個矩形物件是否已碰撞。 演算法運作方式是，測試查看是否有任何矩形的側邊之間的間距。 如果有任何間距，表示沒有碰撞，如果無間距存在，表示必定有碰撞。
 
-### <a name="2-load-new-textures"></a>2. 載入新紋理
+### <a name="3-load-new-textures"></a>3.載入新紋理
 
 然後開啟 **Game1.cs** 並新增兩個新類別變數，一個用來儲存遊戲結束 Sprite 紋理，一個布林值用來追蹤遊戲狀態：
 
@@ -623,7 +629,7 @@ gameOver = false;
 gameOverTexture = Content.Load<Texture2D>("game-over");
 ```
 
-### <a name="3-implement-game-over-logic"></a>3. 實作「遊戲結束」邏輯
+### <a name="4-implement-game-over-logic"></a>4.實作 「 遊戲結束 」 邏輯
 新增此程式碼至 **Update** 方法，在 **KeyboardHandler** 方法呼叫之後：
 
 ```CSharp
@@ -647,7 +653,7 @@ if (dino.RectangleCollision(broccoli)) gameOver = true;
 
 這會呼叫我們在 **SpriteClass** 建立的 **RectangleCollision**方法，並在傳回 true 時將遊戲標示為結束。
 
-### <a name="4-add-user-input-for-resetting-the-game"></a>4. 新增使用者輸入以重設遊戲
+### <a name="5-add-user-input-for-resetting-the-game"></a>5.新增重設遊戲的使用者輸入
 新增此程式碼至**KeyboardHandler**的方法，以允許使用者重設遊戲，如果他們按下 Enter:
 
 ```CSharp
@@ -658,7 +664,7 @@ if (gameOver && state.IsKeyDown(Keys.Enter))
 }
 ```
 
-### <a name="5-draw-game-over-splash-and-text"></a>5. 繪製遊戲結束啟動顯示畫面和文字
+### <a name="6-draw-game-over-splash-and-text"></a>6.繪製遊戲結束啟動顯示畫面和文字
 最後，繪圖，新增此程式碼至 Draw 方法，就在 **spriteBatch.Draw** 的第一個方法呼叫之後（這應該是繪製草地紋理的呼叫）。
 
 ```CSharp
