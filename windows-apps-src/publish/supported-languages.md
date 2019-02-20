@@ -2,16 +2,16 @@
 Description: You can submit apps to the Microsoft Store in over 100 languages.
 title: 支援的語言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
-ms.date: 10/25/2018
+ms.date: 02/20/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: d2e883fca2b5ca350322fc44c1de51a02aaa4d85
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
+ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938018"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083706"
 ---
 # <a name="supported-languages"></a>支援的語言
 
@@ -25,7 +25,7 @@ ms.locfileid: "8938018"
 
 這些是在 Microsoft Store 支援的語言。 您的應用程式必須支援至少一種語言。 
 
-在市集中不支援此處未包含的語言代碼。 我們建議您不要包含; 以下列出以外的語言代碼為目標的套件這類套件將不會散佈給客戶，並可能會造成認證延遲或失敗。
+在市集中不支援此處未包含的語言代碼。 我們建議您不要包含為目標; 以下列出以外的語言代碼的套件這類套件將不會對客戶，散發，也可能會造成認證延遲或失敗。
 
 | 語言名稱         | 支援的語言代碼                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +43,7 @@ ms.locfileid: "8938018"
 | 保加利亞文             | bg、bg-bg                                                                                                                                                                                             |
 | 卡達隆尼亞文               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | 卻洛奇文              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 中文 (簡體)  | zh, zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
+| 中文 (簡體)  | Zh-hans，zh-hant cn、 zh-hant-hans cn、 zh-hant sg，zh-hant-hans-sg                                                                                                                                                     |
 | 中文 (繁體) | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | 克羅埃西亞文              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | 捷克文                 | cs、cs-cz                                                                                                                                                                                             |
