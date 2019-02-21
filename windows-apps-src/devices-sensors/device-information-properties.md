@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ca733ef88eb8b575b8974f71f9395800d5de3875
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f2810221aca0399d037fc56f7f3ac783a2c0df12
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935170"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086666"
 ---
 # <a name="device-information-properties"></a>裝置資訊屬性
 
@@ -34,7 +34,7 @@ ms.locfileid: "8935170"
 當您正在要求屬性時，並不會受限於具有使用者易記名稱的通用屬性。 您可以指定基本的 GUID 和屬性識別碼 (PID) 來要求任何可用的屬性，甚至是個別裝置或驅動程式所提供的自訂屬性。 指定自訂屬性的格式是 "`{GUID} PID`"。 例如: 「`{744e3bed-3684-4e16-9f8a-07953a8bf2ab} 7`」。 
 
 > [!Note]
-> 您可以找到 Guid 屬性的清單中的裝置驅動程式的裝置屬性金鑰標頭檔案。
+> 您可以在裝置驅動程式的裝置屬性金鑰標頭檔中找到 Guid 屬性的清單。
 
 某些屬性在所有 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 物件中是通用的，但大部分都是特定類型獨有的。 下列區段會列出一些按個別 **DeviceInformationKind** 排序的通用屬性。 如需不同類型如何彼此關聯的詳細資訊，請參閱 **DeviceInformationKind**。
 
@@ -42,7 +42,7 @@ ms.locfileid: "8935170"
 
 **DeviceInterface** 是預設值，並且是 app 案例中最常使用的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind) 物件。 除非裝置 API 指出不同的特定 **DeviceInformationKind**，否則這是您應該使用的物件類型。
 
-| 名稱                                  | 類型    | 說明                                                                                                                                                                                                                                                                                                                                                                                               |
+| 名稱                                  | 類型    | 描述                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.ContainerId**        | GUID    | **DeviceInformationKind.DeviceContainer** 的身分識別，其中包含涵蓋這個 **DeviceInterface** 的 **Device**。 您可以將此值連同 **DeviceInformationKind.DeviceContainer** 傳遞至 [**CreateFromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createfromidasync)，以尋找適當的容器。                                                                                    |
 | **System.Devices.InterfaceClassGuid** | GUID    | 此介面代表的介面類別 GUID。                                                                                                                                                                                                                                                                                                                                                       |
@@ -75,7 +75,7 @@ ms.locfileid: "8935170"
 
 ## <a name="devicecontainer-properties"></a>DeviceContainer 屬性
 
-| 名稱                              | 類型       | 說明                                                                                                                                                        |
+| 名稱                              | 類型       | 描述                                                                                                                                                        |
 |-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **System.Devices.Category**       | String\[\] | 裝置所屬類別的說明清單。 這份清單會以單數類別的形式提供。 例如，「顯示器」、「電話」或「音訊裝置」。  |
 | **System.Devices.CategoryIds**    | String\[\] | 包含此裝置所屬類別的清單。 例如，**Audio.Headphone**、**Display.Monitor** 或 **Input.Gaming**。                                  |
@@ -95,7 +95,7 @@ ms.locfileid: "8935170"
 
 ## <a name="deviceinterfaceclass-properties"></a>DeviceInterfaceClass 屬性
 
-| 名稱                       | 類型   | 說明                            |
+| 名稱                       | 類型   | 描述                            |
 |----------------------------|--------|----------------------------------------|
 | **System.ItemNameDisplay** | 字串 | 此裝置的最佳顯示名稱。 |
 
@@ -153,7 +153,7 @@ ms.locfileid: "8935170"
 | **System.Devices.AepService.ParentAepIsPaired** | 布林值 | 表示父項 **AssociationEndpoint** 物件是否已與系統配對。                           |
 | **System.Devices.AepService.ProtocolId**        | GUID    | 用來探索此裝置的通訊協定身分識別。                                                           |
 | **System.Devices.AepService.ServiceClassId**    | GUID    | 此裝置所代表的服務身分識別。                                                             |
-| **System.Devices.AeoService.ServiceId**         | 字串  | 此服務的身分識別。 這也會是 [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 的值。 |
+| **System.Devices.AepService.ServiceId**         | 字串  | 此服務的身分識別。 這也會是 [**DeviceInformation.Id**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.id) 的值。 |
 | **System.ItemNameDisplay**                      | 字串  | 服務的最佳顯示名稱。                                                                           |
 
  

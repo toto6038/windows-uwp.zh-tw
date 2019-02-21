@@ -6,12 +6,12 @@ ms.date: 1/8/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 92cfb1318f176e7d8adb8052c119a006389f49e5
-ms.sourcegitcommit: 158467c576c5924e1822d397bd449fc8251bf92f
+ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
+ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "8996073"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9086656"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 
@@ -95,7 +95,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 網站的應用程式 | ms-settings:appsforwebsites |
 | 預設應用程式 | ms-settings:defaultapps |
 | 管理選用功能 | ms-settings:optionalfeatures |
-| 離線地圖 | ms-settings:maps<br/>ms-設定： 地圖-maps-downloadmaps （下載地圖） |
+| 離線地圖 | ms-settings:maps<br/>ms-地圖設定值:-maps-downloadmaps （下載地圖） |
 | 啟動應用程式 | ms-settings:startupapps |
 | 視訊播放 | ms-settings:videoplayback |
 
@@ -103,13 +103,13 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| 權限與歷程記錄 | ms-settings:cortana-permissions |
+| 權限 & 歷程記錄 | ms-settings:cortana-permissions |
 | 更多詳細資料 | ms-settings:cortana-moredetails |
 | 我的裝置上的 Cortana | ms-settings:cortana-notifications |
 | 向 Cortana 講話 | ms-settings:cortana-language<br/>ms-cortana 設定：<br/>ms-設定： cortana-talktocortana |
 
 > [!NOTE] 
-> 在桌面上此設定 \] 區段時將會呼叫搜尋電腦設定為其中沒有目前可用的 Cortana，或已停用 Cortana 的區域。 在此情況下不會列 (跨我的裝置，Cortana) 和 Cortana 與交談，Cortana 特定頁面。 
+> 在桌面上此設定 \] 區段時將會呼叫搜尋電腦設定為其中沒有目前可用的 Cortana，或已停用 Cortana 的區域。 在此情況下不會列 (不同的我的裝置上 Cortana) 和 Cortana 與交談，Cortana 特定頁面。 
 
 ## <a name="devices"></a>裝置
 
@@ -136,7 +136,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 音效 | ms-settings:easeofaccess-audio |
 | 隱藏式輔助字幕 | ms-settings:easeofaccess-closedcaptioning |
 | 色彩篩選器 | ms-設定： easeofaccess-colorfilter |
-| 游標和指標的大小 | ms-設定： easeofaccess-cursorandpointersize |
+| 游標 & 指標大小 | ms-設定： easeofaccess-cursorandpointersize |
 | 顯示器 | ms-settings:easeofaccess-display |
 | 眼球控制 | ms-settings:easeofaccess-eyecontrol |
 | 字型 | ms-settings:fonts |
@@ -199,7 +199,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 |-------------|-----|
 | 背景 | ms-settings:personalization-background |
 | 選擇要顯示在 \[開始\] 上的資料夾 | ms-settings:personalization-start-places |
-| 色彩 | ms-settings:personalization-colors<br/>ms-設定： 色彩 |
+| 色彩 | ms-settings:personalization-colors<br/>ms-色彩設定： |
 | 瀏覽 | ms-個人化設定: \]-眼 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 鎖定畫面 | ms-settings:lockscreen |
 | 瀏覽列 | ms-個人化設定: \]-瀏覽列 (**Windows 10 版本 1809年和更新版本中的已過時**) |
@@ -212,16 +212,16 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| 您的手機 | ms-settings:mobile-devices<br/>ms-行動裝置版設定:-裝置-addphone<br/>ms-行動裝置版設定:-裝置-addphone-直接 （開啟**您的電話**應用程式） |
+| 您的手機 | ms-settings:mobile-devices<br/>ms-行動裝置版設定:-裝置-addphone<br/>ms-行動裝置版設定:-裝置-addphone-直接 （開啟**您的手機**應用程式） |
 
 ## <a name="privacy"></a>隱私權
 
 |設定頁面| URI |
 |-------------|-----|
-| 配件專屬應用程式 | ms-隱私權設定:-accessoryapps (**Windows 10 版本 1809年和更新版本中的已過時**) |
+| 配件專屬應用程式 | ms-隱私權設定值:-accessoryapps (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 帳戶資訊 | ms-settings:privacy-accountinfo |
 | 活動歷程記錄 | ms-settings:privacy-activityhistory |
-| 廣告識別碼 | ms-隱私權設定:-廣告識別碼 (**Windows 10 版本 1809年和更新版本中的已過時**) |
+| 廣告識別碼 | ms-隱私權設定值:-advertisingid (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 應用程式診斷 | ms-settings:privacy-appdiagnostics |
 | 自動檔案下載 | ms-settings:privacy-automaticfiledownloads |
 | 背景應用程式 | ms-settings:privacy-backgroundapps |
@@ -242,7 +242,7 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 通知 | ms-settings:privacy-notifications |
 | 其他裝置 | ms-settings:privacy-customdevices |
 | 圖片 | ms-settings:privacy-pictures |
-| 通話 | ms-隱私權設定:-phonecall (**Windows 10 版本 1809年和更新版本中的已過時**) |
+| 通話 | ms-隱私權設定值:-phonecall (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 無線通訊 | ms-settings:privacy-radios |
 | 語音、筆跡與輸入 |ms-settings:privacy-speechtyping |
 | 工作 | ms-settings:privacy-tasks |
@@ -286,9 +286,9 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 | 工作列 | ms-settings:taskbar |
 | 通知與動作 | ms-settings:notifications |
 | 遠端桌面 | ms-settings:remotedesktop |
-| 電話 | ms-設定： 手機 (**Windows 10 版本 1809年和更新版本中的已過時**) |
+| 電話 | ms-設定： 電話 (**Windows 10 版本 1809年和更新版本中的已過時**) |
 | 電源與睡眠 | ms-settings:powersleep |
-| 音效 | ms-settings:sounds |
+| 音效 | ms-音效設定： |
 | 儲存空間 | ms-settings:storagesense |
 | 儲存空間感知器 | ms-settings:storagepolicies |
 
@@ -325,6 +325,6 @@ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:
 
 |設定頁面| URI |
 |-------------|-----|
-| 正在佈建 | ms-settings:workplace-provisioning (僅適用於企業已部署佈建套件時) |
+| 佈建 | ms-settings:workplace-provisioning (僅適用於企業已部署佈建套件時) |
 | 正在佈建 | ms-settings:provisioning (僅適用於行動裝置上及企業已部署佈建套件時) |
 | Windows Anywhere | ms-settings:windowsanywhere (裝置必須具有 Windows Anywhere 功能) |
