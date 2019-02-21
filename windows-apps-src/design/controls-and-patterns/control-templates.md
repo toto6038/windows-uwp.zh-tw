@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ad66d8797234d01673518256d6f5376ce93245f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 539f67079547db28a02ef34fc4b9af2e15d107d3
+ms.sourcegitcommit: 4e80ee8d577c3475b6d247317a24411a48b02c29
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928699"
+ms.lasthandoff: 02/20/2019
+ms.locfileid: "9083889"
 ---
 # <a name="control-templates"></a>控制項範本
 
@@ -200,7 +200,7 @@ ms.locfileid: "8928699"
 
 針對 XAML 範本中的某些屬性，您可能已經注意到使用 [{ThemeResource} 標記延伸](../../xaml-platform/themeresource-markup-extension.md)的資源參考。 這是一種技術，可讓單一控制項範本根據目前使用中的佈景主題來使用不同值的資源。 這對筆刷和色彩而言特別重要，因為佈景主題的主要目的就是讓使用者選擇套用到整體系統的深、淺或高對比佈景主題。 使用 XAML 資源系統的應用程式可以使用適用於該佈景主題的資源集，所以應用程式 UI 中的佈景主題選擇可以反映使用者的全系統佈景主題選擇。
 
- # # 取得的範例程式碼
+## <a name="get-the-sample-code"></a>取得範例程式碼
 
 * [XAML 控制項庫範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 * [自訂文字編輯控制項範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomEditControl)
