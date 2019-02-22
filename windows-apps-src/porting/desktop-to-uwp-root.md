@@ -8,12 +8,12 @@ keywords: Windows 10, uwp
 ms.assetid: 74373c24-f948-43bb-aa85-01e2e8e87162
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 5442dacb5c01bc6e22460e9d772ad73ba06b54e2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 70a9b6046e3b7be9ac84678ac21c0c9f89a4a7b2
+ms.sourcegitcommit: 1a4bbfb8495e2f414deac5ee050ab679a78b1717
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049935"
+ms.lasthandoff: 02/21/2019
+ms.locfileid: "9089750"
 ---
 # <a name="package-desktop-applications-desktop-bridge"></a>封裝傳統型應用程式 （傳統型橋接器）
 
@@ -127,13 +127,13 @@ Auto Packager 使用安裝/擷取和執行階段分析來建立應用程式的�
 
 #### <a name="firegiant"></a>FireGiant
 
-[FireGiant Appx 擴充功能](https://www.firegiant.com/products/wix-expansion-pack/appx)可讓您從相同的 WiX 原始碼同時建立 Windows 應用程式套件和 MSI 套件。 每次組建時，您可以目標為 Windows 10 與 Windows 應用程式套件和舊版 Windows 與 MSI。
+[FireGiant MSIX 擴充功能](https://www.firegiant.com/products/wix-expansion-pack/msix)可讓您從相同的 WiX 原始碼同時建立 Windows 應用程式套件和 MSI 套件。 每次組建時，您可以目標為 Windows 10 與 Windows 應用程式套件和舊版 Windows 與 MSI。
 
 <img width="20%" src="images/desktop-to-uwp/FG3rdPartyLogo.png">
 
-FireGiant Appx 擴充功能使用靜態分析及 WiX 專案的智慧型模擬，建立不需磁碟空間和容器或虛擬機器之執行階段額外負荷的 Windows 應用程式套件。
+FireGiant MSIX 擴充功能使用靜態分析及 WiX 專案的智慧型模擬，建立 Windows 應用程式套件，不需要容器或虛擬機器的磁碟空間和執行階段額外負荷。
 
-由於 FireGiant Appx 擴充功能不會透過執行來轉換您的安裝程式，因此您可以維持 WiX 安裝程式，而不需要將其重複轉換成 Windows 應用程式套件。 在不同版本 Windows 上的所有使用者都能取得最新改進，您不必擔心 MSI 和 Windows 應用程式套件無法同步。
+由於 FireGiant MSIX 擴充功能不會透過執行來轉換您的安裝程式，因此您可以維持 WiX 安裝程式，而不需要將其重複轉換成 Windows 應用程式套件。 在不同版本 Windows 上的所有使用者都能取得最新改進，您不必擔心 MSI 和 Windows 應用程式套件無法同步。
 
 請查看此[影片](https://www.youtube.com/watch?v=AFBpdBiAYQE)，並查看如何使用幾行程式碼中 FireGiant CEO Rob Mensching 就建立熱門開放原始碼 7-zip 壓縮工具的 Appx （Windows 應用程式套件） 版本，接著如何改進 Windows 應用程式和 MSI 套件在相同 WiX 原始碼中的變更。
 
