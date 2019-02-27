@@ -6,12 +6,12 @@ ms.date: 10/10/2017
 ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
-ms.openlocfilehash: 82dd3d20aa39ea471618e7707d066c67a6547f9f
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 1ac80888019044beabc44335290bc6ad59cf377c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058749"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117658"
 ---
 # <a name="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers"></a>針對語言、縮放比例、高對比及其他限定詞量身打造您的資源
 
@@ -130,7 +130,7 @@ ms.locfileid: "9058749"
 
 ## <a name="custom"></a>Custom
 
-您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 應用程式啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
+您的應用程式可以設定 `custom` 限定詞的值，然後載入最符合該值的資源。 例如，您可能會想要根據應用程式的授權載入資源。 應用程式啟動時，會呼叫 [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue) 來檢查其授權並使用此授權做為 `custom` 限定詞的值，如程式碼範例中所示。
 
 ```csharp
 public void SetLicenseLevel(BrandID brand)
@@ -263,7 +263,7 @@ Windows 會根據 DPI (每英吋點數) 以及裝置的檢視距離，自動選�
 ## <a name="important-apis"></a>重要 API
 
 * [ResourceContext.QualifierValues](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.QualifierValues)
-* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext#Windows_ApplicationModel_Resources_Core_ResourceContext_SetGlobalQualifierValue_System_String_System_String_Windows_ApplicationModel_Resources_Core_ResourceQualifierPersistence_)
+* [SetGlobalQualifierValue](/uwp/api/windows.applicationmodel.resources.core.resourcecontext.setglobalqualifiervalue)
 
 ## <a name="related-topics"></a>相關主題
 

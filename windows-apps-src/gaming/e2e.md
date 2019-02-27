@@ -6,12 +6,12 @@ ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 遊戲開發
 ms.localizationpriority: medium
-ms.openlocfilehash: c0113f039ccd2d2df0c155b77295afef194018ce
-ms.sourcegitcommit: f7b8112a99097c7c8a76b028aef436d1a5c68cdb
+ms.openlocfilehash: 38fc73eb602c1307fdd345d02c621791feb89dc2
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "9099458"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117738"
 ---
 # <a name="windows-10-game-development-guide"></a>Windows10 遊戲開發指南
 
@@ -1070,7 +1070,7 @@ Windows10 導入了「通用 Windows 平台」(UWP)，此平台提供一個跨�
     </colgroup>
     <tr>
         <td>UWP 設計基本知識與指導方針</td>
-        <td><a href="https://dev.windows.com/design">設計 UWP app</a></td>
+        <td><a href="https://developer.microsoft.com/en-us/windows/apps/design">設計 UWP app</a></td>
     </tr>
     <tr>
         <td>針對 app 週期狀態進行設計</td>

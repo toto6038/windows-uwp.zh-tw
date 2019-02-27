@@ -6,12 +6,12 @@ ms.date: 02/6/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: c499c14d98f63836d80134aac70b2c80902f049b
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 4fe1f2a51199dd12cd1d285c17c5d48c9a25b969
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116130"
+ms.locfileid: "9117798"
 ---
 # <a name="device-portal-for-windows-desktop"></a>Windows 桌面的裝置入口網站
 
@@ -39,7 +39,7 @@ Windows 裝置入口網站可讓您檢視診斷資訊，並透過 HTTP 從瀏覽
 
 ![設定 app 的裝置入口網站區段](images/device-portal/device-portal-desk-settings.png) 
 
-一旦啟用裝置入口網站，您會在區段的底端看見 Web 連結。 記下附加至所列 URL 結尾的連接埠號碼：啟用裝置入口網站時會隨機產生此號碼，但其應與桌面重新開機時保持一致。 若您想要手動設定永久連接埠號碼，請參閱[設定連接埠號碼](device-portal-desktop.md#setting-port-numbers)。
+一旦啟用裝置入口網站，您會在區段的底端看見 Web 連結。 記下附加至所列 URL 結尾的連接埠號碼：啟用裝置入口網站時會隨機產生此號碼，但其應與桌面重新開機時保持一致。 
 
 這些連結提供兩種連線至裝置入口網站的方式：透過區域網路 (包括 VPN) 或透過本機主機。
 

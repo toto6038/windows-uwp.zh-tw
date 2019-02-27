@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: f73665e60513e4f8465be3dbe69f792af285a8e1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 108e9bf21b0552ac7f88721bf4b1ee72ca2a5e2c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8934643"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117748"
 ---
 # <a name="rendering-framework-ii-game-rendering"></a>轉譯架構 II：遊戲轉譯
 
@@ -42,7 +42,7 @@ ms.locfileid: "8934643"
     * 使用採用不同頻率的多個常數緩衝區，以減少每個畫面必須傳送到 GPU 的資料量。 此範例會根據必須更新的頻率，將常數分成不同的緩衝區。 這是 Direct3D 程式設計的最佳做法。 
     * 在這個遊戲範例中，已定義 4 個常數緩衝區。
         1. __m\_constantBufferNeverChanges__ 包含光線參數。 將其在 __FinalizeCreateGameDeviceResources__ 方法中設定一次，之後不再改變。
-        2. __m\_constantBufferChangeOnResize__ 包含投影矩陣。 投影矩陣取決於視窗的大小和外觀比例。 其設定在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method) 中，然後在資源載入到 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法中之後進行更新。 如果以 3D 功能轉譯，也會每個畫面變更兩次。
+        2. __m\_constantBufferChangeOnResize__ 包含投影矩陣。 投影矩陣取決於視窗的大小和外觀比例。 其設定在 [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method) 中，然後在資源載入到 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法中之後進行更新。 如果以 3D 功能轉譯，也會每個畫面變更兩次。
         3. __m\_constantBufferChangesEveryFrame__ 包含檢視矩陣。 這個矩陣取決於相機位置和觀看方向 (與投影垂直)，而且以 __Render__ 方法在每個畫面變更一次。 這稍早已在__轉譯架構 I：轉譯簡介__ (在 [__GameRenderer::Render__方法](tutorial--assembling-the-rendering-pipeline.md#gamerendererrender-method) 下) 中討論過了。
         4. __m\_constantBufferChangesEveryPrim__ 包含模型矩陣和每個基本類型的內容屬性。 模型矩陣會將頂點從區域座標轉換成全局座標。 這些常數為每個基本類型專用，而且會針對每次繪圖呼叫進行更新。 這稍早已在 __轉譯架構 I：轉譯簡介__ (在 [Primitive rendering](tutorial--assembling-the-rendering-pipeline.md#primitive-rendering) 下) 中討論過了。
 * 在此類別中還會定義保存基本類型紋理的著色器資源物件。
@@ -158,7 +158,7 @@ GameRenderer::GameRenderer(const std::shared_ptr<DX::DeviceResources>& deviceRes
 在遊戲範例中 (以及在 Visual Studio 的 __DirectX 11 應用程式 (通用 Windows)__ 範本)，建立和載入遊戲資源是使用這兩種從__GameRenderer__ 建構函式呼叫之方法來進行實作：
 
 * [__CreateDeviceDependentResources__](#createdevicedependentresources-method)
-* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresources-method)
+* [__CreateWindowSizeDependentResources__](#createwindowsizedependentresource-method)
 
 ## <a name="createdevicedependentresources-method"></a>CreateDeviceDependentResources 方法
 
@@ -590,7 +590,7 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 
 針對此遊戲範例，有多種方法呼叫和 [__FinalizeCreateGameDeviceResources__](#finalizecreategamedeviceresources-method) 方法相同。 如需程式碼逐步解說，請移至前一節。
 
-遊戲 HUD 和重疊視窗大小轉譯調整涵蓋在[新增使用者介面](#tutorial--adding-a-user-interface)下。
+遊戲 HUD 和重疊視窗大小轉譯調整涵蓋在[新增使用者介面](tutorial--adding-a-user-interface.md)下。
 
 ```cpp
 // Initializes view parameters when the window size changes.

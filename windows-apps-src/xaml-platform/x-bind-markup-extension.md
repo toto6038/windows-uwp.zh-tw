@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d8e065b76a79a6733d1fa066cd924d07a8fc7c9
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 625c48e2f0fc57a4e9fd3a98acc505e01e2eb42c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045364"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117828"
 ---
 # <a name="xbind-markup-extension"></a>{x:Bind} 標記延伸
 
@@ -52,7 +52,7 @@ ms.locfileid: "9045364"
 | _bindingProperties_ |
 | _propName_=_value_\[, _propName_=_value_\]* | 使用名稱/值對語法指定的一或多個繫結屬性。 |
 | _propName_ | 要在繫結物件上設定之屬性的字串名稱。 例如，"Converter"。 |
-| _value_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-you-can-set)一節。 |
+| _value_ | 設定屬性使用的值。 引數的語法取決於目前設定的屬性。 以下為 _propName_=_value_ 用法的範例，其中的 value 本身是標記延伸：`Converter={StaticResource myConverterClass}`。 如需詳細資訊，請參閱以下的[您可以使用 {x:Bind} 設定的屬性](#properties-that-you-can-set-with-xbind)一節。 |
 
 ## <a name="examples"></a>範例
 

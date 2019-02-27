@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: ec5f12c60e9fd244805209720e3e6d29260d5100
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 869ab9994f10070797fb4b803b1189127d84eadf
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049685"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117708"
 ---
 #  <a name="porting-windowsphone-silverlight-xaml-and-ui-to-uwp"></a>移植 WindowsPhone Silverlight XAML 與 UI 到 UWP
 
@@ -209,7 +209,7 @@ WindowsPhone Silverlight 應用程式使用**Microsoft.Phone.Controls**命名空
 
 ##  <a name="design-language-in-windows10"></a>在 windows 10 中的設計語言
 
-有一些在設計語言中 WindowsPhone Silverlight 應用程式和 windows 10 應用程式之間的差異。 如需所有詳細資訊，請參閱[設計](https://dev.windows.com/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
+有一些在設計語言中 WindowsPhone Silverlight 應用程式和 windows 10 應用程式之間的差異。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/en-us/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
 ## <a name="localization-and-globalization"></a>當地語系化和全球化
 
@@ -319,7 +319,7 @@ URI 對應和片段瀏覽是 URI 瀏覽技術，因此不適用於並非以 URI 
 
 Windows 10 應用程式的系統 TextBlock 樣式
 
-在 WindowsPhone Silverlight app 中，預設字型系列為 Segoe WP。 在 windows 10 app 中，預設字型系列為 Segoe UI。 因此，您應用程式中的字型標準可能會看起來不一樣。 如果您想要重現 WindowsPhone Silverlight 文字的外觀，您可以設定您自己的標準使用[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671)和[**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362)等屬性。 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](https://dev.windows.com/design)。
+在 WindowsPhone Silverlight app 中，預設字型系列為 Segoe WP。 在 windows 10 app 中，預設字型系列為 Segoe UI。 因此，您應用程式中的字型標準可能會看起來不一樣。 如果您想要重現 WindowsPhone Silverlight 文字的外觀，您可以設定您自己的標準使用[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671)和[**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362)等屬性。 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](https://developer.microsoft.com/en-us/windows/apps/design)。
 
 ## <a name="theme-changes"></a>佈景主題變更
 

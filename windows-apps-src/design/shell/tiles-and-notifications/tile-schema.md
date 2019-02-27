@@ -8,12 +8,12 @@ ms.date: 07/28/2017
 ms.topic: article
 keywords: windows 10, uwp, 磚, 磚通知, 磚內容, 結構描述, 磚裝載
 ms.localizationpriority: medium
-ms.openlocfilehash: 02ac975ae3893b1d3d591133862d0ff3733cca6b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: f12f1c2b6ac158b6f8e837fd3d6a64f96939ed99
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8925136"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117728"
 ---
 # <a name="tile-content-schema"></a>磚內容結構描述
 
@@ -67,7 +67,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **Content** | [ITileBindingContent](#itilebindingcontent) | false | 要在磚上顯示的視覺內容。 其中一個 [TileBindingContentAdaptive](#tilebindingcontentadaptive)，[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople) 或 [TileBindingContentPhotos](#TileBindingContentPhotos)。 |
-| **Branding** | [TileBranding](#tilebranding) | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
+| **Branding** | TileBranding | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
 | **DisplayName** | 字串 | false | 選擇性字串，覆寫此磚大小的磚顯示名稱。 |
 | **Arguments** | 字串 | false | 年度更新版的新功能：應用程式定義的資料，當使用者透過動態磚啟動您的應用程式，會透過 LaunchActivatedEventArgs 上的 TileActivatedInfo 屬性傳回至您的應用程式。 這可讓您知道當使用者點選動態磚時，看到哪個磚通知。 在沒有年度更新版的裝置上，這會被忽略。 |
 | **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
@@ -92,7 +92,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
-| **Children** | IList<[ITileBindingContentAdaptiveChild](#ITileBindingContentAdaptiveChild)> | false | 內嵌視覺元素。 可以新增 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage) 和 [AdaptiveGroup](#adaptivegroup) 物件。 這些子系會以垂直 StackPanel 方式顯示。 |
+| **Children** | IList<ITileBindingContentAdaptiveChild> | false | 內嵌視覺元素。 可以新增 [AdaptiveText](#adaptivetext)、[AdaptiveImage](#adaptiveimage) 和 [AdaptiveGroup](#adaptivegroup) 物件。 這些子系會以垂直 StackPanel 方式顯示。 |
 | **BackgroundImage** | [TileBackgroundImage](#tilebackgroundimage) | false | 選用背景影像，會顯示在所有磚內容後面，跨頁顯示。 |
 | **PeekImage** | [TilePeekImage](#tilepeekimage) | false | 選用預覽影像，可從磚的上方動畫顯示進來。 |
 | **TextStacking** | [TileTextStacking](#tiletextstacking) | false | 控制整體子系內容的文字堆疊 (垂直對齊)。 |
@@ -109,7 +109,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 | **HintMaxLines** | int? | false | 允許文字元素顯示的最大行數。 |
 | **HintMinLines** | int? | false | 文字元素必須顯示的最小行數。 |
 | **HintAlign** | [AdaptiveTextAlign](#adaptivetextalign) | false | 文字的水平對齊。 |
-| **Language** | 字串 | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
+| **Language** | string | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
 
 
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
@@ -154,7 +154,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | 控制影像所需的裁剪。 |
 | **HintRemoveMargin** | bool? | false | 群組/子群組內的影像周圍預設會有 8px 邊界。 您可將此屬性設定為 true 以移除此邊界。 |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | 影像的水平對齊。 |
@@ -227,7 +227,7 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
 | **HintOverlay** | int? | false | 背景影像上的全黑重疊。 此值控制全黑重疊的透明度，0 代表不重疊，100 代表全黑。 預設為 20。 |
 | **HintCrop** | [TileBackgroundImageCrop](#tilebackgroundimagecrop) | false | 1511 中的新功能：指定想要裁剪影像的方式。 在 1511 之前的版本中，這將會被忽略，背景影像不使用任何裁剪來顯示。 |
 | **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
@@ -249,7 +249,7 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
 | **HintOverlay** | int? | false | 1511 中的新功能：預覽影像上的黑色重疊。 此值控制全黑重疊的透明度，0 代表不重疊，100 代表全黑。 預設為 20。 在舊版中，將會忽略此值，並以 0 重疊顯示預覽影像。 |
 | **HintCrop** | [TilePeekImageCrop](#tilepeekimagecrop) | false | 1511 中的新功能：指定想要裁剪影像的方式。 在 1511 之前的版本中，這將會被忽略，預覽影像不使用任何裁剪來顯示。 |
 | **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
@@ -315,8 +315,8 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
-| **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
+| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
+| **AlternateText** | string | false | 描述影像的替代文字，用於協助工具用途。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至磚通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
@@ -326,7 +326,7 @@ TextStacking 指定內容的垂直對齊方式。
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
 | **Text** | 字串 | false | 要顯示的文字。 |
-| **Language** | 字串 | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
+| **Language** | string | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
 
 
 ## <a name="related-topics"></a>相關主題

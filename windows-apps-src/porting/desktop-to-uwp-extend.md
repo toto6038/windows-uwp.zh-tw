@@ -6,12 +6,12 @@ ms.date: 06/08/2018
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: 76e4b60e1cd25a205d6a304f12a0b04f5db693b5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d1fac6d735d4f6915dea1af531dffa666607fe3
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941095"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117808"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
@@ -20,7 +20,7 @@ ms.locfileid: "8941095"
 在許多情況下，您可以直接從傳統型應用程式呼叫 Windows 執行階段 Api，因此之前檢閱本指南中，請參閱[增強 Windows 10](desktop-to-uwp-enhance.md)。
 
 >[!NOTE]
->本指南假設您已經為您傳統型應用程式建立 Windows 應用程式套件。 如果您還沒有這樣做，請參閱[封裝傳統型應用程式](desktop-to-uwp-root.md)。
+>本指南假設您已經為您的傳統型應用程式建立 Windows 應用程式套件。 如果您還沒有這麼做，請參閱[封裝傳統型應用程式](desktop-to-uwp-root.md)。
 
 當您準備好時，我們就可以開始進行操作。
 
@@ -38,7 +38,7 @@ ms.locfileid: "8941095"
 
 如果您的解決方案不包含封裝專案，請參閱[您使用 Visual Studio 的傳統型應用程式套件](desktop-to-uwp-packaging-dot-net.md)。
 
-### <a name="configure-the-desktop-application"></a>傳統型應用程式設定
+### <a name="configure-the-desktop-application"></a>將傳統型應用程式設定
 
 請確定您的傳統型應用程式的檔案，您需要呼叫 Windows 執行階段 Api 的參考。
 
@@ -93,7 +93,7 @@ ms.locfileid: "8941095"
 ![調適型設計](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->這個範例會顯示在 XAML UI 藉由將 UWP 專案新增至方案。 這是傳統型應用程式中顯示 XAML Ui 穩定的支援的方法。 這個方法的替代方法是以 UWP XAML 控制項直接新增至您的傳統型應用程式使用 XAML 島。 目前提供做為開發人員預覽 XAML 群島。 雖然我們鼓勵您嘗試它們在您自己的原型程式碼現在，我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 若要深入了解 XAML 群島，請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>這個範例會顯示在 XAML UI 藉由 UWP 專案新增至方案。 這是傳統型應用程式中顯示 XAML Ui 穩定的支援的方法。 這個方法的替代方法是以 UWP XAML 控制項直接新增至您的傳統型應用程式使用 XAML 島。 目前提供做為開發人員預覽 XAML 群島。 我們鼓勵您它們自己的原型程式碼中立即試用，雖然我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 若要深入了解 XAML 群島，請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>設計模式
 
@@ -103,7 +103,7 @@ ms.locfileid: "8941095"
 
 :two: [建立 XAML UI](#xaml-UI)
 
-:three: [新增通訊協定延伸模組至 UWP 專案](#protocol)
+:three: [新增通訊協定延伸模組至 UWP 專案](#add-a-protocol-extension)
 
 :four: [從您的傳統型應用程式啟動 UWP app](#start)
 
@@ -151,7 +151,7 @@ ms.locfileid: "8941095"
 
 ### <a name="add-a-protocol-extension"></a>新增通訊協定延伸模組
 
-在 [**方案總管**] 中，開啟封裝專案的**package.appxmanifest**檔案在您的方案，並新增此延伸模組。
+在 [**方案總管**] 中，開啟封裝專案的**package.appxmanifest**檔案中您的方案，並新增此延伸模組。
 
 ```xml
 <Extensions>
@@ -219,7 +219,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-在程式碼後置 XAML 頁面中，覆寫``OnNavigatedTo``方法，使用參數傳遞到頁面。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
+在程式碼後置 XAML 頁面中，覆寫``OnNavigatedTo``方法使用參數傳遞到頁面。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -268,7 +268,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ： 四：[新增完全信任的處理程序擴充功能](#full-trust)
 
-： 五：[修改傳統型應用程式，以取得共用的檔案](#modify-desktop)
+： 五：[修改的傳統型應用程式，以取得共用的檔案](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -276,7 +276,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>新增分享目標擴充功能
 
-在 [**方案總管]** 中，在您的方案中開啟封裝專案的**package.appxmanifest**檔案，並新增分享目標擴充功能。
+在 [**方案總管]** 中，開啟解決方案中的封裝專案的**package.appxmanifest**檔案，並新增分享目標擴充功能。
 
 ```xml
 <Extensions>
@@ -329,7 +329,7 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 }
 ```
 
-在這個程式碼中，我們將儲存已被使用者分享到應用程式本機存放裝置資料夾的影像。 稍後，我們將會修改到提取映像的傳統型應用程式從該相同的資料夾。 傳統型應用程式可以這麼做，因為它包含做為 UWP 應用程式在相同套件中。
+在這個程式碼，我們將儲存影像的由使用者共用至應用程式的本機存放裝置資料夾。 稍後，我們將會修改到提取映像的傳統型應用程式從該相同的資料夾。 傳統型應用程式可以要這樣做，因為它包含做為 UWP 應用程式在相同套件中。
 
 <a id="desktop-extensions" />
 
@@ -337,13 +337,13 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 
 將**適用於 UWP 的 Windows 桌面延伸**延伸模組新增到 UWP app 專案。
 
-![桌面延伸模組](images/desktop-to-uwp/desktop-extensions.png)
+![傳統型擴充功能](images/desktop-to-uwp/desktop-extensions.png)
 
 <a id="full-trust" />
 
 ### <a name="add-the-full-trust-process-extension"></a>新增完全信任的處理程序擴充功能
 
-在 [**方案總管]** 中，開啟封裝專案的**package.appxmanifest**檔案，在您的方案，並再新增完全信任程序延伸模組旁邊您稍早新增此檔案分享目標擴充功能。
+在 [**方案總管**] 中，在您的方案，開啟封裝專案的**package.appxmanifest**檔案，然後新增完全信任的處理程序延伸模組，旁邊您稍早新增此檔案分享目標擴充功能。
 
 ```xml
 <Extensions>
@@ -353,19 +353,19 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 </Extensions>  
 ```
 
-此延伸模組可讓 UWP 應用程式啟動到您想要共用檔案的傳統型應用程式。 在範例中，我們會參考的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式的可執行檔。
+此延伸模組可讓 UWP 應用程式啟動傳統型應用程式，您想要共用檔案。 在範例中，我們會參考的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式的可執行檔。
 
 <a id="modify-desktop" />
 
 ### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改傳統型應用程式，以取得共用的檔案
 
-修改您傳統型應用程式來尋找並處理共用的檔案。 在此範例中，UWP 應用程式會儲存在本機應用程式資料資料夾中的共用的檔案。 因此，我們會修改[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式以提取相片從該資料夾。
+修改您的傳統型應用程式來尋找並處理共用的檔案。 在此範例中，UWP app 會儲存在本機應用程式資料資料夾中的共用的檔案。 因此，我們會修改[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式以提取相片從該資料夾。
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-使用者開啟的傳統型應用程式已經的執行個體，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並將路徑中傳遞至檔案的位置。 如此一來任何開啟的執行個體的傳統型應用程式將會顯示共用的相片。
+執行個體的傳統型應用程式已開啟使用者，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並將路徑傳遞至檔案位置。 如此一來任何開啟的執行個體的傳統型應用程式將會顯示共用的相片。
 
 ```csharp
 ...

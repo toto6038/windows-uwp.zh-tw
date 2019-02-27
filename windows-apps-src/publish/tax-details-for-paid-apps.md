@@ -6,12 +6,12 @@ ms.date: 01/31/2019
 ms.topic: article
 keywords: windows 10, uwp, 稅, 應用程式稅金, 稅金要求, 商務擴展, 稅率
 ms.localizationpriority: medium
-ms.openlocfilehash: cf57fa923297b8e4a57d7c5ca4668868bfae7038
-ms.sourcegitcommit: b9ee49402db7a8999cade1c5cf7f7b6ac4d783db
+ms.openlocfilehash: e5ada027b835e852d1db728ef124a798540abdf7
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042488"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117758"
 ---
 # <a name="tax-details-for-windows-appgame-developers-and-azure-marketplace-publishers"></a>適用於 Windows 應用程式/遊戲開發人員和 Azure Marketplace 發行者的稅務詳細資料
 
@@ -223,7 +223,7 @@ ms.locfileid: "9042488"
 | 斯洛維尼亞                         | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 22% 稅金後的 70% | Microsoft          |
 | 索羅門群島                  | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 索馬利亞                          | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
-| 南非                     | 所選價格是最終銷售價格且包含所有相關稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countriesregions) | 所選價格的 70%                 | 開發人員          |
+| 南非                     | 所選價格是最終銷售價格且包含所有相關稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countriesregions-for-windows-appgame-developers) | 所選價格的 70%                 | 開發人員          |
 | 西班牙                            | 所選價格是最終銷售價格且包含所有相關稅金。 支付前已從價格中扣除稅金。              | 所選價格減去 21% 稅金後的 70% | Microsoft          |
 | 斯里蘭卡                        | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 蘇利南                         | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
@@ -257,7 +257,7 @@ ms.locfileid: "9042488"
 | 萬那杜                          | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 梵蒂岡                     | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 委內瑞拉                        | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
-| 越南                          | 所選價格是最終銷售價格且包含所有相關稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countriesregions) | 所選價格的 70%                 | 開發人員          |
+| 越南                          | 所選價格是最終銷售價格且包含所有相關稅金。 [閱讀更多有關這個國家/地區的稅務考量。](#mixed-remittance-countriesregions-for-windows-appgame-developers) | 所選價格的 70%                 | 開發人員          |
 | 瓦利斯及福杜納                | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 葉門                            | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |
 | 尚比亞                           | 所選價格是最終銷售價格且包含所有相關稅金。                                                                   | 所選價格的 70%                 | 開發人員          |

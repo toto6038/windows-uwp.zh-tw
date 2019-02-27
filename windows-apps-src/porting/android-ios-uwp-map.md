@@ -7,12 +7,12 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 082736c8-2ac3-41b3-b246-e705edc23f34
 ms.localizationpriority: medium
-ms.openlocfilehash: 008dce5ffc3824d49830bc368a3eaa9d55b7d229
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 2d4739442414b02358f3afea8967b0fc404ff7f9
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8948020"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117818"
 ---
 # <a name="windows-apps-concept-mapping-for-android-and-ios-developers"></a>適用於 Android 與 iOS 開發人員的 Windows 應用程式概念對應
 
@@ -43,7 +43,7 @@ ms.locfileid: "8948020"
 <td align="left"><strong>設計語言。</strong><br><br>一組擬定平台上 app 外觀和行為的慣例。</td>
 <td align="left"><strong>Android Material Design (Android 材料設計)</strong> 指導方針提供 Android 設計人員與開發人員需要遵循的視覺化語言。</td>
 <td align="left"><strong>Human Interface Guidelines (人性化介面指導方針)</strong> 為 iOS 設計人員與開發人員提供建議。</td>
-<td align="left"><a href="https://dev.windows.com/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上具有出色外觀的 App。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
+<td align="left"><a href="https://developer.microsoft.com/en-us/windows/apps/design"><strong>UWP Windows 應用程式設計</strong></a>示範如何建立在所有 Windows 10 裝置上具有出色外觀的 App。 您可以找到使用者介面 (UI) 設計基礎知識、回應式設計技術，以及詳細指導方針的完整清單。<br/></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>使用者介面標記語言。</strong> <br><br>轉譯和描述 UI 及其元件的標記語言。 每個平台都為視覺與標記編輯提供編輯器。<br/></td>
@@ -298,7 +298,7 @@ ms.locfileid: "8948020"
 <tbody>
 <tr class="odd" style="background-color: #f2f2f2">
 <td align="left"><strong>App 週期。</strong> <br><br>處理 app 啟動、暫停、繼續和關閉的事件，讓您可以儲存/還原應用程式狀態並執行其他工作。</td>
-<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼</strong>，例如<strong>onResume</strong>在您的<strong>活動類別</strong>中實作。</td>
+<td align="left">每個活動都有自己的<strong>活動週期</strong>，且具有<strong>已繼續</strong>之類的狀態。 <strong>週期回呼</strong>，例如<strong>onResume</strong>您<strong>activity 類別</strong>中實作。</td>
 <td align="left"><strong>應用程式週期</strong>具有<strong>已暫停</strong>之類的狀態。 <strong>applicationDidEnterBackground:</strong> 之類的方法是在<strong>應用程式委派物件</strong>中實作，可在狀態變更時執行程式碼。</td>
 <td align="left">您的 app 具有 NotRunning、Activated、Running、Suspending、Suspended 及 Resuming 的 <strong>app 執行狀態</strong>。<br/><br/>您可以在 app 中實作 OnLaunched、OnActivated、Suspending 或 Resuming 等 <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.aspx">Application 類別</a></strong>方法，以在狀態變更時執行程式碼。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt243287.aspx">App 週期</a></td>
 </tr>

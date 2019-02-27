@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 4de36ba8c87c764ff1280e2c886d1ff8692b3246
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7b8bb652c3d8b978d631da2e529662a455310458
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9046032"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117848"
 ---
 # <a name="porting-windows-runtime-8x-xaml-and-ui-to-uwp"></a>將 Windows Runtime 8.x XAML 與 UI 移植到 UWP
 
@@ -86,7 +86,7 @@ ms.locfileid: "9046032"
 
 ## <a name="controls-and-control-styles-and-templates"></a>控制項，以及控制項樣式和範本
 
-Windows 10 上執行的通用 8.1 應用程式會保留的 8.1 外觀和行為與控制項相關。 但是，當您移植到 windows 10 應用程式該應用程式時，有一些差異，在外觀和行為的注意。 因此，變更大部分周圍[的設計語言](#design-language-in-windows-10)、 簡化，以及可用性的改進，架構和設計的控制項是針對 windows 10 應用程式，基本上是不變。
+Windows 10 上執行的通用 8.1 應用程式會保留的 8.1 外觀和行為與控制項相關。 但是，當您移植到 windows 10 應用程式該應用程式時，有一些差異，在外觀和行為的注意。 因此，變更大部分周圍設計語言、 簡化及可用性的改進功能，架構和設計的控制項是針對 windows 10 應用程式，基本上是不變。
 
 **注意：**  PointerOver 視覺狀態是相關的自訂樣式/範本中 windows 10 應用程式和 Windows 執行階段 8.x 應用程式，但不是在 Windows Phone 市集應用程式。 基於這個原因 （並因為適用於 windows 10 應用程式支援的系統資源索引鍵），我們建議您重新使用自訂樣式/範本從您的 Windows 執行階段 8.x 應用程式時您正在移植您的應用程式到 windows 10。
 如果您想要確定您的自訂樣式/範本使用最新的一組視覺狀態，並從預設樣式/範本，所做的效能改進中獲益則編輯新 windows 10 預設範本的複本，並重新套用您自訂項目。 效能改進的其中一個範例是，已移除先前括住 **ContentPresenter** 的任何 **Border** 或面板，而且子元素現在會呈現框線。
@@ -122,7 +122,7 @@ Windows 10 上執行的通用 8.1 應用程式會保留的 8.1 外觀和行為�
 
 ##  <a name="design-language-in-windows10"></a>在 windows 10 中的設計語言
 
-有一些細微但卻是很重要差異的設計語言通用 8.1 應用程式和 windows 10 應用程式之間。 如需所有詳細資訊，請參閱[設計](https://dev.windows.com/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
+有一些細微但卻是很重要差異的設計語言通用 8.1 應用程式和 windows 10 應用程式之間。 如需所有詳細資訊，請參閱[設計](https://developer.microsoft.com/en-us/windows/apps/design)。 儘管設計語言會變更，但我們的設計原則仍會保持一致：留意細節，但為了簡單起見，儘量將重點放在內容不是組件區塊、將視覺元素降至最低，並保留數位網域的驗證；使用視覺層次，特別是使用印刷格式；設計格線；以及使用流暢的動畫讓您的體驗變得更生動。
 
 ## <a name="effective-pixels-viewing-distance-and-scale-factors"></a>有效的像素、檢視距離及縮放比例
 
@@ -247,7 +247,7 @@ Windows 10 上執行的通用 8.1 應用程式會保留的 8.1 外觀和行為�
 
 在其他情況下，不再支援資源索引鍵。 Visual Studio 中的 XAML 標記編輯器會醒目提示無法解析的資源索引鍵參考。 例如，XAML 標記編輯器會在樣式索引鍵 `ListViewItemTextBlockStyle` 的參考加上紅色波浪底線。 如果未修正該參考，當您嘗試將應用程式部署到模擬器或裝置上時，它將會立即終止。 因此，請務必注意 XAML 標記的正確性。 您會發現 Visual Studio 是攔截這類問題的絕佳工具。
 
-對於仍然支援的索引鍵，設計語言的變更表示某些樣式設定的屬性已經變更。 例如，`TitleTextBlockStyle`設定**FontSize** 14.667px 在 Windows 執行階段 8.x 應用程式和 Windows Phone 市集應用程式中的 18.14px。 但是，同一個樣式設定**FontSize**至更大的 24px 在 windows 10 應用程式。 檢閱您的設計和配置，並在適當的位置使用適當的樣式。 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](https://dev.windows.com/design)。
+對於仍然支援的索引鍵，設計語言的變更表示某些樣式設定的屬性已經變更。 例如，`TitleTextBlockStyle`設定**FontSize** 14.667px 在 Windows 執行階段 8.x 應用程式和 Windows Phone 市集應用程式中的 18.14px。 但是，同一個樣式設定**FontSize**至更大的 24px 在 windows 10 應用程式。 檢閱您的設計和配置，並在適當的位置使用適當的樣式。 如需詳細資訊，請參閱[字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)和[設計 UWP app](https://developer.microsoft.com/en-us/windows/apps/design)。
 
 以下是不再支援的完整索引鍵清單：
 

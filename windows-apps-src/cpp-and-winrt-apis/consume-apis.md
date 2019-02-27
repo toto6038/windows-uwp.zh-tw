@@ -5,12 +5,12 @@ ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
-ms.openlocfilehash: 531bd349fca825a8bb80630192698b647db3129a
-ms.sourcegitcommit: 2d2483819957619b6de21b678caf887f3b1342af
+ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "9042320"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117688"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
@@ -40,7 +40,7 @@ int main()
 > [!TIP]
 > 每當您要使用從 Windows 命名空間投影到 C++/WinRT，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 的指示詞是選擇性的，但很便利。
 
-上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)**](/uwp/api/windows.foundation.uri#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
+上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
 事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影的值成員的呼叫確實委派，透過智慧型指標，以支援物件;這是在發生狀態變更。
 

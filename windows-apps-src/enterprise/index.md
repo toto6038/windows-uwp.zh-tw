@@ -4,32 +4,12 @@ description: 此藍圖概述的重要企業功能適用於 windows 10 和通用 
 title: 企業版
 ms.date: 08/30/2018
 ms.topic: article
-keywords: Windows 10, UWP
+keywords: 'Windows 10, UWP'
 ms.localizationpriority: medium
-ms.openlocfilehash: a2d5db17be1367deea66ff2762d0350931e1861e
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058579"
 ---
 # <a name="enterprise"></a>企業版
 
-這篇文章提供 Windows 10 應用程式提供由通用 Windows 平台 (UWP) 中的重要企業功能的概觀。
-
-## <a name="whats-new-and-recent-for-enterprise-applications"></a>什麼是新的和新的企業應用程式
-
-> [!div class="checklist"]
-> * [Windows Template Studio](#template-studio)
-> * [若要建立桌面樣式 Ui 控制項](#desktop-style-UI)
-> * [控制項，以支援企業案例](#enterprise)
-> * [Windows UI 文件庫](#UI-library)
-> * [傳統型應用程式中的 UWP 控制項](#xaml-islands)
-> * [.NET Standard 2.0](#standard)
-> * [SQL Server 連線](#sql-server)
-> * [MSIX 部署](#MSIX)
-
-影片示範一些這些功能的詳細資料，請參閱[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)。
+這篇文章提供 Windows 10 應用程式提供由通用 Windows 平台 (UWP) 中的重要企業功能的概觀。 影片示範一些這些功能的詳細資料，請參閱[迅速建構的 LOB 應用程式與 UWP 和 Visual Studio](https://channel9.msdn.com/Events/Build/2018/BRK3502)。
 
 <a id="template-studio" />
 

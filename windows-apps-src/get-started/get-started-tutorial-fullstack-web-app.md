@@ -5,12 +5,12 @@ keywords: hosted web app, HWA, REST API, single-page app, SPA, 託管的 Web 應
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.openlocfilehash: 4c76f0da8c3ac1d50ccd2d328dd321df9aa9bd3e
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114574"
+ms.locfileid: "9117718"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -40,7 +40,7 @@ ms.locfileid: "9114574"
 
 我們將第一次建置簡單的記憶遊戲 API 以啟動我們的記憶遊戲 Web 應用程式。 我們將使用 [Swagger](https://swagger.io/) 來定義我們 API，並產生 Scaffolding 程式碼和 Web UI 以進行手動測試。
 
-如果您想要略過此部分並直接移至[部分 II︰建置單頁 Web 應用程式](#part-ii-build-a-single-page-web-appl)，以下是[部分 I 已完成的程式碼](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)。請依照 *README* 指示安裝程式碼並在本機執行，或查看 *5. 在 Azure 上裝載 API 服務，並啟用 CORS* 從 Azure 執行它。
+如果您想要略過此部分並直接移至[部分 II︰建置單頁 Web 應用程式](#part-ii-build-a-single-page-web-application)，以下是[部分 I 已完成的程式碼](https://github.com/Microsoft/Windows-tutorials-web/tree/master/Single-Page-App-with-REST-API/backend)。請依照 *README* 指示安裝程式碼並在本機執行，或查看 *5. 在 Azure 上裝載 API 服務，並啟用 CORS* 從 Azure 執行它。
 
 ### <a name="game-overview"></a>遊戲概觀
 

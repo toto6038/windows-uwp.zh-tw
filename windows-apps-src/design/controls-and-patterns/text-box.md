@@ -11,12 +11,12 @@ pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 212b5843a302c8210cd01dd0ab4017eda016098a
-ms.sourcegitcommit: 9af94470480ef67438f6fd189edab47395fb77e6
+ms.openlocfilehash: 7e3faf82ab9786f6ba079e44d79b6ed49394b881
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9075121"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117788"
 ---
 # <a name="text-box"></a>文字方塊
 
@@ -110,6 +110,19 @@ SampleTextBox.Text = "Sample text retrieved";
 - **IsReadOnly** 為 **true**
 - **AcceptsReturn** 為 **true**
 - **TextWrap** 具有非 **NoWrap** 的值
+
+這個範例示範如何取得並設定的文字方塊中目前的內容。
+
+```xaml
+<TextBox name="SampleTextBox" Text="Sample Text"/>
+```
+
+```csharp
+string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = "Sample text retrieved";
+```
+
 
 ### <a name="make-a-text-box-read-only"></a>將文字方塊設為唯讀
 

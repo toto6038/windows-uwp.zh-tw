@@ -6,12 +6,12 @@ ms.date: 10/24/2017
 ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 轉譯
 ms.localizationpriority: medium
-ms.openlocfilehash: 6724aedf898706dd4c5bf728616c918d64b2fb32
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 4c16f1fbb55374b1d04c9fc9f5f7eae72ad19b00
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931293"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117778"
 ---
 # <a name="rendering-framework-i-intro-to-rendering"></a>轉譯架構 I：轉譯簡介
 
@@ -71,10 +71,10 @@ void App::Initialize(
 
 ## <a name="display-the-graphics-by-rendering-the-frame"></a>轉譯畫面來顯示圖形
 
-啟動遊戲時，遊戲場景需要轉譯。 轉譯的指示在 [__GameMain::Run__](#gameamainrun-method)方法中開始，如下所示。
+啟動遊戲時，遊戲場景需要轉譯。 轉譯的指示在 [__GameMain::Run__](#gamemainrun-method)方法中開始，如下所示。
 
 簡單流程為：
-1. __Update__
+1. __更新__
 2. __Render__
 3. __目前__
 
@@ -130,7 +130,7 @@ void GameMain::Run()
 
 呼叫__GameMain::Run__中的[__GameRenderer::Render__](#gamerendererrender-method)方法實作轉譯。
 
-如果啟用了[立體著色運算](#stereo-rendering)，會有兩個轉譯階段：一個用於右眼，一個用於左眼。 在每個轉譯階段中，我們將轉譯目標與 [深度樣板檢視](#depth-stencil-view) 繫結至裝置。 我們稍後也會說明深度樣板檢視。
+如果啟用了[立體著色運算](#stereo-rendering)，會有兩個轉譯階段：一個用於右眼，一個用於左眼。 在每個轉譯階段中，我們將轉譯目標與 深度樣板檢視 繫結至裝置。 我們稍後也會說明深度樣板檢視。
 
 > [!Note]
 > 可以使用其他方法，例如使用端點執行個體或幾何著色器的一階段，來達成立體著色運算。 兩個轉譯階段方法是個較慢但較方便的方式，達成立體著色運算。
@@ -146,7 +146,7 @@ void GameMain::Run()
 
 設定 Direct3D 內容以使用輸入頂點配置。 輸入配置物件描述如何將頂點緩衝區資料傳送到[轉譯管線](#rendering-pipeline)。 
 
-接下來，我們設定 Direct3D 內容，以使用之前所定義的[常數緩衝區](#constant-buffers)，由[頂點著色器](#vertex-shaders-and-pixel-shaders)管線階段和[像素著色器](#vertex-shaders-and-pixel-shaders)使用。 
+接下來，我們設定 Direct3D 內容，以使用之前所定義的常數緩衝區，由[頂點著色器](#vertex-shaders-and-pixel-shaders)管線階段和[像素著色器](#vertex-shaders-and-pixel-shaders)使用。 
 
 > [!Note]
 > 請參閱[轉譯架構 II：遊戲轉譯](tutorial-game-rendering.md)獲得有關常數緩衝區定義的詳細資訊。
@@ -338,11 +338,11 @@ void GameRenderer::Render()
 * __m\_constantBufferChangesEveryPrim__包含每個物件的參數。  它包括世界轉換矩陣的物件以及資料屬性，例如色彩和光線計算的反射指數
 * 設定 Direct3D 內容以使用網格物件資料的輸入頂點配置，將其串流到[轉譯管線](#rendering-pipeline)的輸入組合 (IA) 階段
 * 設定 Direct3D 內容以使用 IA 階段的[索引緩衝](#index-buffer)。 提供基本類型資訊：類型、資料訂單。
-* 送出繪製呼叫，繪製已編製索引的非執行個體基本類型。 The __GameObject::Render__ 方法使用指定基本類型的特定資料來更新基本類型 [常數緩衝區](#constant-buffer-or-shader-constant-buffer)。 這會讓內容的 __DrawIndexed__ 呼叫，繪製每個基本類型的幾何。 具體來說，這個 Draw 呼叫會將命令和資料排到圖形處理單元 GPU 的佇列，由常數緩衝區資料進行參數化處理。 每個繪圖呼叫會在每個頂點上執行[頂點著色器](#vertex-shaders-and-pixel-shaders) 一次，然後[像素著色器](#vertex-shaders-and-pixel-shaders) 會在基本類型中每個三角形的每個像素中執行一次。 紋理是像素著色器用來進行轉譯之狀態的一部分。
+* 送出繪製呼叫，繪製已編製索引的非執行個體基本類型。 The __GameObject::Render__ 方法使用指定基本類型的特定資料來更新基本類型 [常數緩衝區](#constant-buffer-or-shader-constant-buffer)。 這會讓內容的 __DrawIndexed__ 呼叫，繪製每個基本類型的幾何。 具體來說，這個 Draw 呼叫會將命令和資料排到圖形處理單元 GPU 的佇列，由常數緩衝區資料進行參數化處理。 每個繪圖呼叫會在每個頂點上執行頂點著色器 一次，然後[像素著色器](#vertex-shaders-and-pixel-shaders) 會在基本類型中每個三角形的每個像素中執行一次。 紋理是像素著色器用來進行轉譯之狀態的一部分。
 
 多個常數緩衝區的原因：
     * 遊戲使用多個常數緩衝區，但是只要在每個基本類型更新這些緩衝區一次。 如先前所述，常數緩衝區就像是為每個基本類型執行的著色器輸入。 有些資料是靜態的 (__m\_constantBufferNeverChanges__)；有些資料在架構上是常數 (__m\_constantBufferChangesEveryFrame__)，像是相機的位置；有些資料是專用於基本類型，像色彩和紋理 (__m\_constantBufferChangesEveryPrim__)。
-    * 遊戲[轉譯器](#renderer)將這些輸入分成不同的常數緩衝區，以最佳化 CPU 與 GPU 使用的記憶體頻寬。 這種方式也有助於將 GPU 需要追蹤的資料數量減到最少。 GPU 有很大的命令佇列，而每次遊戲呼叫 __Draw__ 時，該命令連同與其關聯的資料一起進入佇列。 當遊戲更新基本類型常數緩衝區並發出下一個 __Draw__ 命令時，圖形驅動程式會將下一個命令及關聯的資料新增到佇列。 如果遊戲繪製 100 個基本類型，則佇列中可能會有 100 個常數緩衝區資料的複本。 若要將傳送到 GPU 的遊戲資料數量減到最少，遊戲會使用不同的基本類型常數緩衝區，其中僅包含每個基本類型的更新。
+    * 遊戲轉譯器將這些輸入分成不同的常數緩衝區，以最佳化 CPU 與 GPU 使用的記憶體頻寬。 這種方式也有助於將 GPU 需要追蹤的資料數量減到最少。 GPU 有很大的命令佇列，而每次遊戲呼叫 __Draw__ 時，該命令連同與其關聯的資料一起進入佇列。 當遊戲更新基本類型常數緩衝區並發出下一個 __Draw__ 命令時，圖形驅動程式會將下一個命令及關聯的資料新增到佇列。 如果遊戲繪製 100 個基本類型，則佇列中可能會有 100 個常數緩衝區資料的複本。 若要將傳送到 GPU 的遊戲資料數量減到最少，遊戲會使用不同的基本類型常數緩衝區，其中僅包含每個基本類型的更新。
 
 #### <a name="gameobjectrender-method"></a>GameObject::Render 方法
 
@@ -616,7 +616,7 @@ __DX::DeviceResources__類別在__DeviceResources.cpp__/__.h__檔案中且控制
 
 ### <a name="dxgi"></a>DXGI
 
-Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統，封裝部分 Direct3D 10 所需低層級工作的 WindowsVista 中引進 10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX Graphics Infrastructure (DXGI)： 最佳做法- 多執行緒](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
+Microsoft DirectX Graphics Infrastructure (DXGI) 是新的子系統 WindowsVista 封裝部分 Direct3D 10 所需低層級工作中引進，10.1、 11 和 11.1。 在多執行緒應用程式中使用 DXGI以確保不會發生死結，要特別注意。 如需詳細資訊，請參閱[DirectX Graphics Infrastructure (DXGI)： 最佳做法- 多執行緒](https://msdn.microsoft.com/library/windows/desktop/ee417025.aspx#multithreading_and_dxgi)
 
 ### <a name="feature-level"></a>功能層級
 

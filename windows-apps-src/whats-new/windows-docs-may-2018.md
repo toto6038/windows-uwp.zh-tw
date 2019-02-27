@@ -2,15 +2,15 @@
 title: 在 2018 年中 Windows 文件的最新動向-開發 UWP app
 description: 新功能、 影片及開發人員指引已新增至 2018 年的 Windows 10 開發人員文件和 Microsoft Build 會議。
 keywords: 新動向，更新，功能，開發人員指引，Windows 10 年，組建
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: be67c83a986602318adf995bae35c09e5a7a4997
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 69df2bbe8bc91fcf4a2631c0f257fc44851c24f2
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048665"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116220"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-may-2018"></a>在 2018 年在 Windows 開發人員文件的最新動向
 
@@ -99,7 +99,7 @@ Project Rome 團隊有徹底檢查，其 iOS 和 Android 的 Sdk，新增新的�
 
 ## <a name="developer-guidance"></a>開發人員指引
 
-### <a name="get-started"></a>開始使用
+### <a name="get-started"></a>開始
 
 我們已經 revitalized 我們取得啟動具有新的學習追蹤的內容。 這些新主題旨在提供新的 Windows 10 開發人員使用他們可能會想要完成一些常見的工作資訊。 它們不教學課程和未提供手持的逐步解說中，但是改為指出所在現有的文件，以及如何使用它。 請查看改頭換面[開始撰寫程式碼](../get-started/create-uwp-apps.md)的頁面上，或瀏覽每個個別的學習曲目：
 

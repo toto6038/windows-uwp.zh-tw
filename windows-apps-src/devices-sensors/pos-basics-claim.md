@@ -1,16 +1,16 @@
 ---
 title: PointOfService 裝置宣告和啟用模型
-description: 深入了解 PointOfService 宣告並啟用模型
+description: 深入了解 PointOfService 宣告，並啟用模型
 ms.date: 06/19/2018
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos, 服務點
 ms.localizationpriority: medium
-ms.openlocfilehash: 7169848084b587793ba1537ea3d6ad78d31892d5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 0e7d60c0b612a8067ac4c225dff9da5da428f1a1
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8924944"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117648"
 ---
 # <a name="point-of-service-device-claim-and-enable-model"></a>服務點裝置宣告和啟用模型
 
@@ -19,7 +19,7 @@ ms.locfileid: "8924944"
 在您成功建立 PointOfService 裝置物件之後，您必須先使用適合裝置類型的宣告方法來宣告它，您才能使用裝置來進行輸入或輸出。  宣告授與應用程式專屬存取許多裝置的功能，以確保某個應用程式不會干擾其他應用程式使用裝置。  一次只有一個應用程式可以宣告 PointOfService 裝置專屬使用。 
 
 > [!Note]
-> 宣告動作建立獨佔到裝置，鎖定，但不會未將它放諸操作的狀態。  如需詳細資訊，請參閱[啟用裝置以用於 I/O 作業](#Enable-device-for-I/O-operations)。
+> 宣告動作建立專屬的鎖定到裝置，但不會未將它放諸操作的狀態。  如需詳細資訊，請參閱[啟用裝置以用於 I/O 作業](#enable-device-for-io-operations)。
 
 ### <a name="apis-used-to-claim--release"></a>Api，可用來宣告 / 發行
 
@@ -34,7 +34,7 @@ ms.locfileid: "8924944"
 
 ## <a name="enable-device-for-io-operations"></a>啟用裝置以用於 I/O 作業
 
-宣告動作只是建立在裝置專屬的權限，但不會未將它放諸操作的狀態。  為了接收事件，或執行任何輸出作業，您必須啟用使用**EnableAsync**的裝置。  相反地，您可以呼叫**DisableAsync**停止從裝置或執行輸出聆聽的事件。  您也可以使用**IsEnabled**來判斷您的裝置狀態。
+宣告動作只需建立專屬的權限，裝置，但不會未將它放諸操作的狀態。  為了接收事件，或執行任何輸出作業，您必須啟用使用**EnableAsync**的裝置。  相反地，您可以呼叫**DisableAsync**停止從裝置或執行輸出聆聽的事件。  您也可以使用**IsEnabled**來判斷您的裝置的狀態。
 
 ### <a name="apis-used-enable--disable"></a>使用 Api 啟用/停用
 
@@ -47,7 +47,7 @@ ms.locfileid: "8924944"
 |ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
-¹ 行顯示不需要明確啟用裝置以用於 I/O 作業。  啟用自動執行的可執行 I/O PointOfService LineDisplay Api。
+¹ 行顯示不需要明確啟用裝置以供 I/O 作業。  啟用自動執行的可執行 I/O PointOfService LineDisplay Api。
 
 ## <a name="code-sample-claim-and-enable"></a>程式碼範例： 宣告和啟用
 
@@ -107,7 +107,7 @@ ms.locfileid: "8924944"
     }
 ```
 
-然後註冊與您已宣告的裝置相關聯的事件處理常式
+然後產生關聯時您已宣告的裝置，註冊事件處理常式
 
 ```Csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);

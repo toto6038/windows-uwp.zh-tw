@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: dbba9dbdf6bc3df02657cc03b9264e74664318b4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 9efa6cae8994c12ce742aac0a6301346d6eae0d1
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045161"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117678"
 ---
 #  <a name="porting-windowsphone-silverlight-to-uwp-for-form-factor-and-ux"></a>尺寸與 UX 的移植 WindowsPhone Silverlight 到 UWP
 
@@ -64,7 +64,7 @@ WindowsPhone Silverlight 介面是觸控專屬介面。 因此，所移植之應
 
 ## <a name="more-info-and-design-guidelines"></a>更多資訊及設計指導方針
 
--   [設計 UWP App](https://dev.windows.com/design)
+-   [設計 UWP App](https://developer.microsoft.com/en-us/windows/apps/design)
 -   [字型的指導方針](https://msdn.microsoft.com/library/windows/apps/hh700394)
 -   [針對不同的尺寸規格做規劃](https://msdn.microsoft.com/library/windows/apps/dn958435)
 

@@ -11,12 +11,12 @@ ms.date: 05/19/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 770896f467ff3a2c24fff65fdf16f1e13c83b688
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e65ad1f4dcb5a83eb7336fc8e1eb794b107dcf01
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933546"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117608"
 ---
 # <a name="xaml-theme-resources"></a>XAML 佈景主題資源
 
@@ -430,7 +430,7 @@ themeresources.xaml 檔案會定義數個資源，其定義您可以套用到 UI
 
 ## <a name="troubleshooting-theme-resources"></a>疑難排解佈景主題資源
 
-如果您未遵循[使用佈景主題資源的指導方針](#guidelines-for-using-theme-resources)，可能會看到與您的應用程式中佈景主題相關的非預期行為。
+如果您未遵循[使用佈景主題資源的指導方針](#guidelines-for-custom-theme-resources)，可能會看到與您的應用程式中佈景主題相關的非預期行為。
 
 例如，當您開啟亮色調佈景主題的飛出視窗時，暗色調佈景主題應用程式的部分也會變更，就像它們是處於亮色調佈景主題中。 或者，如果您瀏覽到亮色調佈景主題頁面，然後瀏覽回來，則原始的暗色調佈景主題頁面 (或它的某些部分) 現在看起來就像是在亮色調佈景主題中。
 

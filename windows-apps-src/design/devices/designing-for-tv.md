@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.openlocfilehash: 431b8912e43647bc2678aaab7efc9ec68b866d10
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116490"
+ms.locfileid: "9117578"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -122,7 +122,7 @@ Xbox One 以 1080p (1920 x 1080 像素) 呈現您的 app。 因此，從電腦�
 
 #### <a name="number-of-clicks"></a>點選次數
 
-使用者從電視螢幕一邊瀏覽到另一邊時，以不超過 **「點選六次」** 的原則來簡化您的 UI。 同樣地，這裡適用 **「簡單」** 的原則。 如需更多詳細資料，請參閱[最少點選次數的路徑](#path-of-least-clicks)。
+使用者從電視螢幕一邊瀏覽到另一邊時，以不超過 **「點選六次」** 的原則來簡化您的 UI。 同樣地，這裡適用 **「簡單」** 的原則。 
 
 ![跨 6 個圖示](images/designing-for-tv/six-clicks.png)
 
@@ -462,7 +462,7 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 巢狀的 UI 會公開容器 UI 元素內部包含的巢狀可動作項目，其中巢狀項目與容器項目都可以各自獨立取得焦點。
 
-對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 一個常見的解決方案是將巢狀的 UI 元素放入 `ContextFlyout` (請參閱 [CommandBar 和 ContextFlyout](#commandbar-and-contextflyout))。
+對於某些輸入類型，巢狀的 UI 能夠良好運作，但對於依賴 XY 導覽的遊戲台與遙控器，則不一定能夠良好運作。 請務必遵循本主題中的指導方針，以確保您的 UI 能夠針對 10 英呎環境最佳化，讓使用者能夠輕鬆地存取所有可互動的元素。 一個常見的解決方案是將巢狀的 UI 元素放入`ContextFlyout`。
 
 如需巢狀 UI 的詳細資訊，請參閱[清單項目中的巢狀 UI](../controls-and-patterns/nested-ui.md)。
 
@@ -558,7 +558,7 @@ bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily 
                     "Windows.Xbox");
 ```
 
-接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 如需相關範例，請參閱 [UWP 色彩範例](#uwp-color-sample)。
+接著，您可以在這項檢查之後，在程式碼區塊中適當調整 UI。 
 
 ## <a name="summary"></a>摘要
 
