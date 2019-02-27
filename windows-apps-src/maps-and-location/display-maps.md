@@ -2,16 +2,16 @@
 title: 顯示 2D、3D 和 Streetside 檢視的地圖
 description: 您可以在稱為地圖*座次卡*的淺色可關閉視窗中顯示地圖，亦可在全功能地圖控制項中顯示地圖。
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.date: 03/14/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: Windows 10、uwp、地圖、位置、地圖控制項、地圖檢視
 ms.localizationpriority: medium
-ms.openlocfilehash: 03c864a6e8bc6191f63a2b6fd55d8eb23ad965e4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 41d44f75c80e10123c21fc310bff46371ede0fca
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046987"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116380"
 ---
 # <a name="display-maps-with-2d-3d-and-streetside-views"></a>用 2D、3D 和 Streetside 檢視顯示地圖
 

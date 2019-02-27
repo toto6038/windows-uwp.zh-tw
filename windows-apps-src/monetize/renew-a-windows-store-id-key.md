@@ -2,16 +2,16 @@
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: 請使用這個方法來更新 Microsoft Store 金鑰。
 title: 更新 Microsoft Store 識別碼金鑰
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, Microsoft Store purchase API, Microsoft Store ID key, renew, Microsoft Store 集合 API, Microsoft Store 購買 API, Microsoft Store 識別碼金鑰, 更新
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f1c6248b2d87a68b77cad6f1bdc7cce0fae587e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: fd4d7ce26e12f7ff939ced8d456390b97d0c8a0d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939089"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116034"
 ---
 # <a name="renew-a-microsoft-store-id-key"></a>更新 Microsoft Store 識別碼金鑰
 
@@ -40,11 +40,11 @@ ms.locfileid: "8939089"
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭         | 類型   | 說明                                                                                           |
+| 標頭         | 類型   | 描述                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Host           | 字串 | 其值必須設定為 **collections.mp.microsoft.com** 或 **purchase.mp.microsoft.com**。           |
+| Host           | string | 其值必須設定為 **collections.mp.microsoft.com** 或 **purchase.mp.microsoft.com**。           |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
-| Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
+| Content-Type   | string | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
 
 ### <a name="request-body"></a>要求主體

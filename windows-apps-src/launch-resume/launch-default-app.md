@@ -6,12 +6,12 @@ ms.date: 06/26/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 143aa8310cdfe9dd5f0be29bf07f03c23293a647
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 6c5c8b99ec3646d1eebbb922557f97c9e9304ed4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919033"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116460"
 ---
 # <a name="launch-the-default-app-for-a-uri"></a>啟動 URI 的預設應用程式
 
@@ -46,7 +46,7 @@ URI 配置可讓您按一下超連結來開啟 App。 就像您可以使用 **ma
 <br>
 例如，下列 URI 會開啟預設瀏覽器，並顯示 Bing 網站。
 
-`http://bing.com`
+`https://bing.com`
 
 您也可以啟動自訂 URI 配置。 如果未安裝任何可處理該 URI 的應用程式，您可以建議使用者安裝某個應用程式。 如需詳細資訊，請參閱[如果沒有可處理 URI 的應用程式，則推薦一個應用程式](#recommend-an-app-if-one-is-not-available-to-handle-the-uri)。
 
@@ -119,7 +119,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 呼叫 [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) 的來源 app 可要求在 URI 啟動後停留在畫面上。 根據預設，Windows 會嘗試將所有可用空間平均分享給來源 app 與用來處理 URI 的目標 app。 來源 app 可以使用 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 屬性，告知作業系統要讓 app 視窗佔用較多或較少可用空間。 您也可以使用 **DesiredRemainingView**，指示來源 app 在 URI 啟動後不需要停留在畫面上，且可由目標 app 完全取代。 這個屬性只會指定發出呼叫的 app 的慣用視窗大小。 它不會指定其他可能也同時在螢幕上之 app 的行為。
 
-**注意：** Windows 會考量多種不同因素，在判斷來源應用程式的最終視窗大小，例如，來源 app 的喜好設定，在畫面、 螢幕方向，以及等等的應用程式數目。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 App 的特定視窗行為。
+**注意：** Windows 會考量多種不同因素，在判斷來源應用程式的最終視窗大小，例如來源 app 的喜好設定、 應用程式在畫面、 螢幕方向，以及等等的數目。 設定 [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) 並無法保證來源 App 的特定視窗行為。
 
 ```cs
 // Set the desired remaining view.
@@ -244,4 +244,4 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 | URI 配置 | 結果 |
 |------------|---------|
-| msnweather://forecast?la= \[latitude\] & lo = \ [longitude\] | 啟動根據位置的地理座標預測頁面中的天氣應用程式。<br>`latitude` 指的是位置的緯度。<br> `longitude` 指的是位置的經度。<br> |
+| msnweather://forecast?la= \[latitude\]&lo=\[longitude\] | 根據位置的地理座標預測頁面中的天氣應用程式會啟動。<br>`latitude` 指的是位置的緯度。<br> `longitude` 指的是位置的經度。<br> |

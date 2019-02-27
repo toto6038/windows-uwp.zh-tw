@@ -2,16 +2,16 @@
 title: 延長顯示啟動顯示畫面
 description: 您可以為 app 建立延長式啟動顯示畫面，讓啟動顯示畫面的顯示時間變長。 這個延長的畫面是模仿您應用程式啟動時所顯示的啟動顯示畫面，但是您可以自訂這個畫面。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
-ms.date: 2/19/2019
+ms.date: 02/19/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 44b455088a210dd6211cf25111e4c04ba2e4e0db
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.openlocfilehash: bed81def33eedb79619b49ff698a3f45f31bdb62
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114494"
+ms.locfileid: "9116330"
 ---
 # <a name="display-a-splash-screen-for-more-time"></a>延長顯示啟動顯示畫面
 

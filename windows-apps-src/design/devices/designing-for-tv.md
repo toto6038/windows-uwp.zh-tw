@@ -13,12 +13,12 @@ design-contact: jeffarn
 dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: 04a5285c39e46019275b3dd6fb3843d932b53901
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
+ms.openlocfilehash: 788f47c1b29766cae1f437992aee8414580f3935
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059742"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116490"
 ---
 # <a name="designing-for-xbox-and-tv"></a>針對 Xbox 和電視進行設計
 
@@ -434,7 +434,7 @@ UWP 提供一個很方便的方式可以公開使用者從其系統設定選取�
 
 ![樞紐底線](images/designing-for-tv/pivot-underline.png)
 
-您可以將 [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](../controls-and-patterns/tabs-pivot.md)。
+您可以將 [Pivot.IsHeaderItemsCarouselEnabled](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.pivot.isheaderitemscarouselenabledproperty) 屬性設定為 `true`，如此就能讓樞紐一律保持在相同位置上，而不會讓選取的樞紐標頭總是移到第一個位置。 對於大螢幕顯示器 (例如電視)，這會是更好的體驗，因為標頭換行可能會讓使用者分心。 如果不能在螢幕上同時顯示所有的樞紐標頭，即會提供捲軸，讓客戶能夠看見其他標頭。不過，您應該確定它們全都會顯示於螢幕上以提供最佳體驗。 如需詳細資訊，請參閱[索引標籤和樞紐](/windows/uwp/design/controls-and-patterns/pivot)。
 
 ### <a name="navigation-pane-a-namenavigation-pane-"></a>瀏覽窗格 <a name="navigation-pane" />
 

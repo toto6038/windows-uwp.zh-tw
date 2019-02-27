@@ -4,7 +4,7 @@ title: 如何使用 ParallaxView 控制項新增應用程式的深度和動態�
 ms.assetid: ''
 label: Parallax View
 template: detail.hbs
-ms.date: 08/9/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: abarlow
@@ -12,12 +12,12 @@ design-contact: conrwi
 dev-contact: stpete
 doc-status: Published
 ms.localizationpriority: medium
-ms.openlocfilehash: dbe5522451ed5f8b942e72563ba04d8d51017ab8
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 719a150c6750116a368d59fff9600fcf65bf8f61
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036840"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115805"
 ---
 # <a name="parallax"></a>視差
 

@@ -1,16 +1,10 @@
 ---
 description: 了解如何設計在各種裝置與螢幕尺寸上都很容易瀏覽且看起來很棒的 UWP 應用程式並撰寫應用程式程式碼。
 title: 設計基本知識
-keywords: uwp app layout, universal windows platform, app design, interface, uwp app 配置, 通用 Windows 平台,應用程式設計, 介面
-ms.date: 3/7/2018
+keywords: 'uwp app layout, universal windows platform, app design, interface, uwp app 配置, 通用 Windows 平台,應用程式設計, 介面'
+ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 5196503a4a50d1565d00b9ac0e48e6c2d0b6e426
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946466"
 ---
 # <a name="design-basics-for-uwp-apps"></a>UWP app 設計基本知識
 

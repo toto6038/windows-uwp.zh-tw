@@ -5,17 +5,17 @@ ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 7/16/2018
+ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 4eb31ed1f802b8827c124958438ceb6c5902aee1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: bba6d42e6ce494c0655c6b6c60db91c1e2e006e8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944684"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116240"
 ---
 # <a name="navigation-design-basics-for-uwp-apps"></a>UWP app 的瀏覽設計基本知識
 
@@ -117,7 +117,7 @@ ms.locfileid: "8944684"
 
         - 頁面可以用任何順序瀏覽。
         - 頁面之間有清楚的區別，且沒有明顯的父系/子系關係。
-        - 在群組中有少於 8 的頁面。 <br>
+        - 群組中頁面小於 8 個。 <br>
         (有多個頁面時，使用者可能會難以了解頁面的獨特性，或難以了解他們目前在群組中的位置。 如果您認為這對您的應用程式不構成問題，那請將頁面以對等方式排列。 否則，請考慮使用階層結構將頁面分成兩組，或分成多個較小的群組。)
 
     :::column-end:::

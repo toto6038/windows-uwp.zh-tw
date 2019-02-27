@@ -1,16 +1,16 @@
 ---
 title: 裝置入口網站 Xbox 資訊 API 參考
 description: 了解如何存取 Xbox 裝置資訊。
-ms.date: 11/7/2017
+ms.date: 11/072017
 ms.topic: article
 keywords: windows 10、 uwp、 xbox 裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: d7901890e1cc8fab24742e8785562d13d2fe182a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 85c2c139aa8064e1f0769064b95eeb531086b8c1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918402"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115978"
 ---
 # <a name="xbox-info-api-reference"></a>Xbox 資訊 API 參考   
 您可以存取 Xbox One 裝置的資訊，請使用此 API。
@@ -40,8 +40,8 @@ GET | /ext/xbox/info
 **回應**   
 JSON 物件，包含下列欄位：
 
-* OsVersion-（字串） 的 os 版本。
-* OsEdition-（字串） 版本的作業系統，例如 「 3 月 2017 」 或 「 3 月 2017 QFE 1 」。
+* OsVersion-（字串） 的 OS 版本。
+* OsEdition-（字串） 版本的作業系統，例如 「 3 月 2017 」 或 「 3 月 2017 QFE 月 1 日 」。
 * ConsoleId-（字串） 主機的識別碼。
 * DeviceId-（字串） 主機的 Xbox Live 裝置 id。
 * SerialNumber-（字串） 主機的序號。

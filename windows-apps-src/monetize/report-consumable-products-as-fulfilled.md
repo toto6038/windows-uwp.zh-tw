@@ -2,16 +2,16 @@
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: 請在 Microsoft Store 集合 API 中使用這個方法，來回報某個消費性產品對於特定客戶而言為已完成。 在使用者能再次購買某個消費性產品之前，您的應用程式或服務必須回報該消費性產品對於該使用者而言為已完成。
 title: 將消費性產品回報為已完成
-ms.date: 03/16/2018
+ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable, Microsoft Store 集合, 執行, 消費性產品
 ms.localizationpriority: medium
-ms.openlocfilehash: e3271dd26a4e7eaa23d63efa3b75cf321480528d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: cea8937af3df0ad1e80434d649f431d188521667
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8935659"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116024"
 ---
 # <a name="report-consumable-products-as-fulfilled"></a>將消費性產品回報為已完成
 
@@ -44,12 +44,12 @@ ms.locfileid: "8935659"
 
 ### <a name="request-header"></a>要求的標頭
 
-| 標頭         | 類型   | 描述                                                                                           |
+| 標頭         | 類型   | 說明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | 授權  | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。                           |
-| Host           | 字串 | 其值必須設定為 **collections.mp.microsoft.com**。                                            |
+| Host           | string | 其值必須設定為 **collections.mp.microsoft.com**。                                            |
 | Content-Length | 數字 | 要求主體的長度。                                                                       |
-| Content-Type   | 字串 | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
+| Content-Type   | string | 指定要求及回應類型。 目前唯一支援的值為 **application/json**。 |
 
 
 ### <a name="request-body"></a>要求主體
@@ -59,7 +59,7 @@ ms.locfileid: "8935659"
 | beneficiary   | UserIdentity | 取用此項目時所針對的使用者。 如需詳細資訊，請參閱下表。        | 是      |
 | itemId        | 字串       | [查詢產品](query-for-products.md)時所傳回的 *itemId* 值。 請搭配 *trackingId* 來使用這個參數      | 否       |
 | trackingId    | guid         | 開發人員所提供的唯一追蹤識別碼。 請搭配 *itemId* 來使用這個參數。         | 否       |
-| productId     | 字串       | [查詢產品](query-for-products.md)時所傳回的 *productId* 值。 請搭配 *transactionId* 來使用這個參數   | 否       |
+| productId     | string       | [查詢產品](query-for-products.md)時所傳回的 *productId* 值。 請搭配 *transactionId* 來使用這個參數   | 否       |
 | transactionId | guid         | 從下列其中一個來源取得的交易識別碼值。 請搭配 *productId* 來使用這個參數。<ul><li>[PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) 類別的 [TransactionID](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.purchaseresults.transactionid) 屬性。</li><li>由 [RequestProductPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestproductpurchaseasync)、[RequestAppPurchaseAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.requestapppurchaseasync) 或 [GetAppReceiptAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.store.currentapp.getappreceiptasync) 所傳回的 app 或產品收據。</li><li>[查詢產品](query-for-products.md)時所傳回的 *transactionId* 參數。</li></ul>   | 否       |
 
 
@@ -67,8 +67,8 @@ UserIdentity 物件包含下列參數。
 
 | 參數            | 類型   | 描述       | 必要 |
 |----------------------|--------|-------------------|----------|
-| identityType         | 字串 | 指定字串值 **b2b**。    | 是      |
-| identityValue        | 字串 | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要回報消費性產品已完成之使用者的身分。      | 是      |
+| identityType         | string | 指定字串值 **b2b**。    | 是      |
+| identityValue        | string | [Microsoft Store 識別碼金鑰](view-and-grant-products-from-a-service.md#step-4)，代表您要回報消費性產品已完成之使用者的身分。      | 是      |
 | localTicketReference | 字串 | 所傳回回應的要求識別碼。 建議您使用相同值做為在 Microsoft Store 識別碼索引鍵中[宣告](view-and-grant-products-from-a-service.md#claims-in-a-microsoft-store-id-key)的 *userId*。 | 是      |
 
 

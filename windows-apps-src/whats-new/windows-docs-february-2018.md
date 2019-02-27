@@ -2,15 +2,15 @@
 title: 2018 年 2 月 Windows 文件的最新動向 - 開發 UWP app
 description: 新功能、影片及開發人員指引已加入 2018 年 2 月的 Windows 10 開發人員文件中
 keywords: 最新動向, 更新, 功能, 開發人員指引, Windows 10, 2 月
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 22ff57fb32d9c65c675ca63ae0c644b146226795
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 421fb7c973c1aaa4e9e1924548d7f11439fd5350
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044219"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115835"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-february-2018"></a>2018 年 2 月 Windows 開發人員文件的最新動向
 

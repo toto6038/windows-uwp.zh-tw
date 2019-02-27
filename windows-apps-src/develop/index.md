@@ -1,17 +1,11 @@
 ---
-description: 了解如何開發 UWP 應用程式。
+description: 了解如何在開發 UWP 應用程式。
 title: 開發 UWP app
 layout: LandingPage
-keywords: uwp 應用程式開發執行緒 async 平台概觀入口網站開發開發人員
-ms.date: 3/29/2018
+keywords: uwp app 開發執行緒 async 平台概觀入口網站開發開發人員
+ms.date: 03/29/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 615a5a0762cfa55d7b8be7ce392e02ee1802ded2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926374"
 ---
 <div> 
 <h1>開發 UWP app</h1>
@@ -26,7 +20,7 @@ ms.locfileid: "8926374"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="http://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt=" "/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -45,7 +39,7 @@ ms.locfileid: "8926374"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="http://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/teams-fast-track.svg" alt=" " />
                         </div>
                     </div>                
                     <div class="cardText">
@@ -69,7 +63,7 @@ ms.locfileid: "8926374"
                 <div class="card">
                     <div class="cardText">
                         <h3>Windows UWP 命名空間</h3>
-                        <p>類別、 結構、 介面、 方法、 屬性以及 Windows 執行階段，命名空間來編排所組成的事件。</p>
+                        <p>類別、 結構、 介面、 方法、 屬性和 Windows 執行階段，命名空間來編排所組成的事件。</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +97,7 @@ ms.locfileid: "8926374"
                         <h3>應用程式類型</h3>
                         <p style="display: block;"><a  href="/windows/uwp/apps-for-education/">教育應用程式</a></p>
                         <p style="display: block;"><a  href="/windows/uwp/enterprise/">企業應用程式</a></p>
-                        <p style="display: block;"><a  href="/windows/uwp/gaming/">遊戲和 DirectX app</a></p>
+                        <p style="display: block;"><a  href="/windows/uwp/gaming/">遊戲和 DirectX 應用程式</a></p>
                         <p style="display: block;"><a  href="/microsoft-edge/progressive-web-apps">漸進式 Web 應用程式</a></p>
                     </div>
                 </div>
@@ -264,7 +258,7 @@ ms.locfileid: "8926374"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                 
-                            <img src="http://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt=" "/>
+                            <img src="https://docs.microsoft.com/media/illustrations/sql-database-develop.svg" alt=" "/>
                         </div>
                     </div>
                     <div class="cardText">
@@ -283,7 +277,7 @@ ms.locfileid: "8926374"
                 <div class="card">
                     <div class="cardImageOuter">
                         <div class="cardImage" style="background-color: #f2f2f2">                
-                            <img src="http://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt=" " />
+                            <img src="https://docs.microsoft.com/media/illustrations/sql-get-started-download.svg" alt=" " />
                         </div>
                     </div>                
                     <div class="cardText">

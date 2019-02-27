@@ -2,16 +2,10 @@
 description: 了解 Fluent Design 以及如何將其納入您的應用程式。
 title: 適用於 Windows 的 fluent Design 系統
 keywords: uwp app 配置、通用 Windows 平台、應用程式設計、Fluent Design 系統
-ms.date: 3/7/2018
+ms.date: 03/07/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: cc0af4cba5d4d14c862724cd199c9e6ab221a24d
-ms.sourcegitcommit: 888a4679fa45637b1cc35f62843727ce44322e57
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "9059719"
 ---
 # <a name="the-fluent-design-system-for-windows-app-creators"></a>Fluent 設計系統的 Windows 應用程式 creators
 

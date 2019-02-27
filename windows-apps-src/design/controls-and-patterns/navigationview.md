@@ -11,12 +11,12 @@ dev-contact: ''
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: b61c36143749ddb358cea1d4cf59f43ecb8c6338
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.openlocfilehash: 4ba3a45701d82ad0b43591469bf390190ec18db0
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037090"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116450"
 ---
 # <a name="navigation-view"></a>瀏覽檢視
 
@@ -143,7 +143,7 @@ _左側瀏覽版面配置_
 NavigationView 窗格可以包含：
 
 - [NavigationViewItem](/uwp/api/windows.ui.xaml.controls.navigationviewitem)物件。 用於瀏覽至特定頁面瀏覽項目。
-- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)物件。 適用於將瀏覽項目分組分隔符號。 設定為 0，以轉譯的空間為分隔符號的[Opacity](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator.opacity)屬性。
+- [NavigationViewItemSeparator](/uwp/api/windows.ui.xaml.controls.navigationviewitemseparator)物件。 適用於將瀏覽項目分組分隔符號。 設定為 0，以轉譯的空間為分隔符號的[Opacity](/uwp/api/windows.ui.xaml.uielement.opacity)屬性。
 - [NavigationViewItemHeader](/uwp/api/windows.ui.xaml.controls.navigationviewitemheader)物件。 標頭的項目群組加上標籤。
 - 選用的[AutoSuggestBox](auto-suggest-box.md)控制項，允許進行應用程式層級搜尋。 指派給[NavigationView.AutoSuggestBox](/uwp/api/windows.ui.xaml.controls.navigationview.autosuggestbox)屬性的控制項。
 - [應用程式設定](../app-settings/app-settings-and-data.md)的選擇性進入點。 若要隱藏設定項目， [IsSettingsVisible](/uwp/api/windows.ui.xaml.controls.navigationview.IsSettingsVisible)屬性設**為 false**。

@@ -2,19 +2,19 @@
 description: 顯色焦點是一種光源效果會動畫顯示可設定焦點元素的框線，當使用者將遊戲台或鍵盤焦點移至它們。
 title: 顯色焦點
 template: detail.hbs
-ms.date: 03/1/2018
+ms.date: 03/01/2018
 ms.topic: article
 keywords: Windows 10, UWP
 pm-contact: chphilip
 design-contact: ''
 dev-contact: stevenki
 ms.localizationpriority: medium
-ms.openlocfilehash: 15c0ff77d511e531bcb8b20b21f3c52a8c753b7a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 7bcceb8d44b6d92cab05a9c077531b3fe1b05c79
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049113"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115965"
 ---
 # <a name="reveal-focus"></a>顯色焦點
 

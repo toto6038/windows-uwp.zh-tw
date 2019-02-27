@@ -2,15 +2,15 @@
 title: 在 2019 年 1 月 Windows 文件中新動向-開發 UWP app
 description: 新功能、 影片及開發人員指引已新增 2019 年 1 月的 Windows 10 開發人員文件
 keywords: 新動向，更新，功能，開發人員指引，Windows 10 年 1 月
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: cc5323ba12fa72fb5350e62f74206ea72fe96497
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: beb80c28866b8f8207f203b70cb504dcd034098d
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046128"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116250"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-january-2019"></a>在 2019 年 1 月中 Windows 開發人員文件的最新動向
 

@@ -2,16 +2,16 @@
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: HoloLens 的 Device Portal
 description: 了解 HoloLens 的 Windows Device Portal 如何讓您從遠端設定並管理 HoloLens 裝置。
-ms.date: 1/3/2019
+ms.date: 01/3/2019
 ms.topic: article
 keywords: windows 10，uwp，裝置入口網站
 ms.localizationpriority: medium
-ms.openlocfilehash: 6d02f9eac43687974ed76ef25e53f654783956a9
-ms.sourcegitcommit: 62bc4936ca8ddf1fea03d43a4ede5d14a5755165
+ms.openlocfilehash: 2561f18e2ac054c8b378b0c7c0a9689bebcc4140
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "8991614"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116087"
 ---
 # <a name="device-portal-for-hololens"></a>HoloLens 的裝置入口網站
 
@@ -34,7 +34,7 @@ ms.locfileid: "8991614"
 #### <a name="connect-over-wi-fi"></a>透過 Wi-Fi 連線 
 
 1. 將您的 HoloLens 連線到 Wi-Fi。
-2. 查詢裝置的 IP 位址。 尋找下的裝置上的 IP 位址**設定 > 網路和網際網路 > Wi ‑ Fi > 硬體內容**。 您也可以詢問：「嗨 Cortana，我的 IP 位址是什麼？」
+2. 查詢裝置的 IP 位址。 **設定 > 網路 & 網際網路 > Wi ‑ Fi > 硬體內容**下的裝置上找到的 IP 位址。 您也可以詢問：「嗨 Cortana，我的 IP 位址是什麼？」
 
 3. 從您電腦上的網頁瀏覽器，移至 `https://<YOUR_HOLOLENS_IP_ADDRESS>`
     - 瀏覽器將會顯示下列訊息：「此網站的安全性憑證有問題」。 這是因為核發給 Device Portal 的憑證是測試憑證。 您可以暫時略過這個憑證錯誤並繼續。
@@ -46,7 +46,7 @@ ms.locfileid: "8991614"
 3. 從您電腦上的網頁瀏覽器，移至 `http://127.0.0.1:10080`。
 
 > [!IMPORTANT]
-> 如果您的電腦是找不到裝置，請嘗試使用實際的網路 IP 位址的 HoloLens 裝置，而不是`http://127.0.0.1:10080`。
+> 如果您的電腦是找不到裝置，請嘗試使用實際的網路的 IP 位址 HoloLens 裝置，而不是`http://127.0.0.1:10080`。
 
 #### <a name="connect-to-an-emulator"></a>連線到模擬器 
 

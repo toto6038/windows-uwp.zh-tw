@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, uwp
 ms.localizationpriority: medium
-ms.openlocfilehash: d983de8f9f58e5c9fe6b048b98ea00ebef7197c0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923408"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116340"
 ---
 # <a name="adaptive-streaming"></a>彈性資料流
 
@@ -95,7 +95,7 @@ ms.locfileid: "8923408"
 [!code-cs[AMSDownloadCompleted](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadCompleted)]
 
 ## <a name="gather-adaptive-streaming-telemetry-data-with-adaptivemediasourcediagnostics"></a>使用 AdaptiveMediaSourceDiagnostics 收集彈性資料流遙測資料
-**AdaptiveMediaSource** 公開 [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource?branch=master.Diagnostics) 屬性，以傳回 [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics)物件。 使用這個物件註冊 [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) 事件。 這個事件適用於遙測收集，不應該用來修改執行階段的應用程式行為。 有許多不同的原因會引發這個診斷事件。 檢查傳入事件的 [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) 物件的 [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) 屬性，以判斷引發事件的原因。 可能的原因包含存取所要求資源的錯誤以及剖析資料流資訊清單檔案的錯誤。 如需可觸發診斷事件的情況清單，請參閱 [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype)。 與其他彈性資料流事件的引數一樣，**AdaptiveMediaSourceDiagnosticAvailableEventArgs** 提供 **RequestId** 屬性來關聯不同事件之間的要求資訊。
+**AdaptiveMediaSource** 公開 [**Diagnostics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) 屬性，以傳回 [**AdaptiveMediaSourceDiagnostics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics)物件。 使用這個物件註冊 [**DiagnosticAvailable**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) 事件。 這個事件適用於遙測收集，不應該用來修改執行階段的應用程式行為。 有許多不同的原因會引發這個診斷事件。 檢查傳入事件的 [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) 物件的 [**DiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) 屬性，以判斷引發事件的原因。 可能的原因包含存取所要求資源的錯誤以及剖析資料流資訊清單檔案的錯誤。 如需可觸發診斷事件的情況清單，請參閱 [**AdaptiveMediaSourceDiagnosticType**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype)。 與其他彈性資料流事件的引數一樣，**AdaptiveMediaSourceDiagnosticAvailableEventArgs** 提供 **RequestId** 屬性來關聯不同事件之間的要求資訊。
 
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 

@@ -1,16 +1,16 @@
 ---
 title: 使用通用 Windows 平台建立應用程式
 description: 它是比您以為的建立適用於 windows 10 的通用 Windows 平台 (UWP) 應用程式更容易。
-ms.date: 5/7/2018
+ms.date: 05/07/2018
 ms.topic: article
 keywords: windows 10, uwp, 開始使用
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f4e38d590fc2e905221c71c1fbc6b137f5fdea0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 9f45bf66854fbf51fc6f5b42418e0faa107eb2f6
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919214"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116300"
 ---
 # <a name="start-coding"></a>開始程式設計
 

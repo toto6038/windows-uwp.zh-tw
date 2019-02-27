@@ -1,17 +1,17 @@
 ---
 title: 啟動螢幕剪取
 description: 本主題描述 ms-people screenclip 和 ms screensketch URI 配置。 您的應用程式可以使用這些 URI 配置啟動剪取 & 草圖應用程式或開啟新剪取。
-ms.date: 8/1/2017
+ms.date: 08/09/2017
 ms.topic: article
 keywords: windows 10、 uwp、 uri、 剪取、 草圖
 ms.localizationpriority: medium
 ms.custom: RS5
-ms.openlocfilehash: 2bddea1dd2b5f21a145bde789f1ad760bb5e556a
-ms.sourcegitcommit: b126940932935ebd2965ea68078798fb6e876b23
+ms.openlocfilehash: 06e988387f574b74d511b14a2ebca24b0a149158
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "9065985"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116170"
 ---
 # <a name="launch-screen-snipping"></a>啟動螢幕剪取
 

@@ -5,12 +5,12 @@ ms.date: 07/16/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5182981483069d42339ad71a5347dc9c6c36ed58
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.openlocfilehash: 733ce75942a05482ade88c1510e788f1cbd515d4
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058739"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115945"
 ---
 # <a name="using-lights-in-windows-ui"></a>使用 Windows UI 中的光源
 
@@ -22,7 +22,7 @@ Windows.UI.Composition Api 可讓您建立即時動畫及效果。 組合光源�
 組合光源可讓您建立有趣藉由允許的 UI:
 
 - 光線的獨立於其他物件來啟用身歷其境的案例，例如音樂播放場景場景中的轉換。
-- 配對的物件使用消失，使其在一起移動的能力獨立的場景，若要啟用 Fluent[顯色](/design/style/reveal)醒目提示等案例的其餘部分。
+- 配對的物件使用消失，使其在一起移動的能力獨立的場景，若要啟用 Fluent[顯色](/windows/uwp/design/style/reveal)醒目提示等案例的其餘部分。
 - 光線和整個場景轉換為群組來建立材質和深度。
 
 組合光源支援三個主要的概念： **Light**、**目標**及**SceneLightingEffect**。
@@ -74,7 +74,7 @@ _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock
 **環境光線** | 將非環境光線新增到您的場景，將會關閉所有現有的光線。  非環境光線不目標的項目將會顯示成黑色。  若要照亮周圍的視覺效果不目標光線的自然的方式，使用環境光線搭配其他燈。
 **燈光數目** | 您可以使用任何組合中的任何兩個組合非周遭環境光線以目標為您的 UI。 周遭環境光線不會受到限制;特別，點和遠距離的光源。
 **存留期** | CompositionLight 可能會遇到存留期條件 (範例： 記憶體回收行程可能會回收光線物件，才能使用)。  我們建議您藉由新增光線為成員來協助管理存留期的應用程式保持您燈光的參考。
-**轉換** | 指示燈必須放在使用中您的視覺結構的效果，例如[透視轉換](/design/layout/3-d-perspective-effects)到適當繪製 UI 上的節點。
+**轉換** | 指示燈必須放在使用中您的視覺結構的效果，例如[透視轉換](/windows/uwp/design/layout/3-d-perspective-effects)到適當繪製 UI 上的節點。
 **目標和座標空間** | CoordinateSpace 是光線屬性必須設定中，所有的視覺空間。 CompositionLight.Targets 必須是在 CoordinateSpace 樹狀目錄中。
 
 ## <a name="lighting-properties"></a>光源屬性

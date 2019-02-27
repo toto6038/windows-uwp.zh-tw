@@ -2,16 +2,16 @@
 title: 啟動 Windows 設定 app
 description: 了解如何從您的應用程式啟動 Windows 設定應用程式。 本主題描述 ms-settings URI 配置。 使用此 URI 配置，可將 Windows 設定應用程式啟動到特定的設定頁面。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
-ms.date: 1/8/2019
+ms.date: 01/08/2019
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 5a1f9d853e41642ca5f8027d42b49fcbc3122a66
-ms.sourcegitcommit: 6ba110be80bc343a1aecaf4361edcdb70278c0a3
+ms.openlocfilehash: 87074e9871fae6be32e2862fc547097898baede8
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "9086656"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9116470"
 ---
 # <a name="launch-the-windows-settings-app"></a>啟動 Windows 設定應用程式
 

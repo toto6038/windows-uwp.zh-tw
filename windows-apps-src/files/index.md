@@ -4,14 +4,8 @@ title: 檔案、資料夾和媒體櫃
 description: 了解如何讀取和寫入應用程式設定、檔案和資料夾選擇器，以及特殊的沙箱式位置，例如影片/音樂媒體櫃。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: 'Windows 10, uwp'
 ms.localizationpriority: medium
-ms.openlocfilehash: 517302b7db1e7b65ca7a181a8c766ce1e71737ac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
-ms.translationtype: MT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044542"
 ---
  # <a name="files-folders-and-libraries"></a>檔案、資料夾和媒體櫃
 
@@ -22,6 +16,7 @@ ms.locfileid: "9044542"
 |-------|--------------|
 | [列舉和查詢檔案和資料夾](quickstart-listing-files-and-folders.md) | 存取位於資料夾、媒體櫃、裝置或網路位置中的檔案和資料夾。 您也可以建構檔案和資料夾查詢來查詢位置中的檔案和資料夾。 |
 | [建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md) | 使用 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件讀取和寫入檔案。 |
+| [寫入檔案的最佳做法](best-practices-for-writing-to-files.md) | 了解使用各種不同的檔案，撰寫[FileIO](https://docs.microsoft.com/uwp/api/windows.storage.fileio)和[PathIO](https://docs.microsoft.com/uwp/api/windows.storage.pathio)類別的方法的最佳做法。 |
 | [取得檔案屬性](quickstart-getting-file-properties.md) | 取得由 [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) 物件所表示檔案的屬性 (最上層、基本及延伸)。 |
 | [使用選擇器開啟檔案和資料夾](quickstart-using-file-and-folder-pickers.md) | 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) 存取資料夾。 |
 | [使用選擇器儲存檔案](quickstart-save-a-file-with-a-picker.md) | 使用 [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) 讓使用者指定讓您的 app 儲存檔案的名稱和位置。 |
