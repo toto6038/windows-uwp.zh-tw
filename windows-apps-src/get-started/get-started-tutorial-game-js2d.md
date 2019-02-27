@@ -6,12 +6,12 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.assetid: 01af8254-b073-445e-af4c-e474528f8aa3
 ms.localizationpriority: medium
-ms.openlocfilehash: 3527cae294f2268b2457b9fe9a6593cf1b539ee8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4d10dbf52f0ed01d46f9e5cba83cd14d48bfc88d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050145"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114554"
 ---
 # <a name="create-a-uwp-game-in-javascript"></a>使用 JavaScript 建立 UWP 遊戲
 
@@ -88,7 +88,7 @@ EaselJS 為我們提供新的物件，稱為*舞台*。 舞台連結到畫布，
 
 ### <a name="2-loading-the-bitmaps"></a>2. 載入點陣圖
 
-EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立簡單形狀（例如藍色矩形用於天空），或點陣圖（例如我們將要新增的雲朵）、文字物件和 Sprite。 Sprite 使用 (SpriteSheet) [http://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 包含多個影像的單一點陣圖。 例如我們使用這個 SpriteSheet 儲存恐龍動畫的不同畫面：
+EaselJS 為我們提供許多不同類型的圖形物件。 我們可以建立簡單形狀（例如藍色矩形用於天空），或點陣圖（例如我們將要新增的雲朵）、文字物件和 Sprite。 Sprite 使用 (SpriteSheet) [https://createjs.com/docs/easeljs/classes/SpriteSheet.html]: 包含多個影像的單一點陣圖。 例如我們使用這個 SpriteSheet 儲存恐龍動畫的不同畫面：
 
 ![Walking Dino Sprite 工作表](images/JS2D_4.png)
 

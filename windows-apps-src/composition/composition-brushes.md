@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a7f080a3de18ec0acc8fe68d8f0282d92f46125
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: eb0d48cee4fe6698ec371c882c913affa5af7729
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050991"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114564"
 ---
 # <a name="composition-brushes"></a>組合筆刷
 從 UWP 應用程式顯示在螢幕上的所有項目是可見的因為它已由筆刷繪製。 筆刷可讓您與內容涵蓋範圍可從簡單、 純色色彩影像或繪圖到複雜的效果鏈來繪製使用者介面 (UI) 物件。 本主題介紹使用 CompositionBrush 繪製的概念。
@@ -191,7 +191,7 @@ CompositionSurfaceBrush _videoBrush;
 _mediaPlayer = new MediaPlayer();
 
 // Get a source from a URI. This could also be from a file via a picker or a stream
-var source = MediaSource.CreateFromUri(new Uri("http://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
+var source = MediaSource.CreateFromUri(new Uri("https://go.microsoft.com/fwlink/?LinkID=809007&clcid=0x409"));
 var item = new MediaPlaybackItem(source);
 _mediaPlayer.Source = item;
 _mediaPlayer.IsLoopingEnabled = true;

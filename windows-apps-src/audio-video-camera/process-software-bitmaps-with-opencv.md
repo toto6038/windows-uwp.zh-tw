@@ -6,12 +6,12 @@ ms.date: 03/19/2018
 ms.topic: article
 keywords: windows 10, uwp, opencv, softwarebitmap
 ms.localizationpriority: medium
-ms.openlocfilehash: ccc3f22d0485faa0df01828f1a6f807d2a1ce555
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 9ce41a495297870f512f0694e4f2b63eedebbc37
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046897"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114594"
 ---
 # <a name="process-bitmaps-with-opencv"></a>使用 OpenCV 處理點陣圖
 
@@ -20,7 +20,7 @@ ms.locfileid: "9046897"
 本文中的範例將逐步引導您建立可從 UWP app 使用的原生程式碼 Windows 執行階段元件，包括使用 C# 建立的應用程式。 此協助程式元件將會公開單一方法 **Blur**，此方法會使用 OpenCV 的模糊影像處理功能。 此元件會實作私用方法以取得指向基礎影像資料緩衝區的指標，可供 OpenCV 程式庫直接使用，讓您更容易延伸協助程式元件來實作其他 OpenCV 處理功能。 
 
 * 如需使用 **SoftwareBitmap** 的指示，請參閱[建立、編輯和儲存點陣圖影像](imaging.md)。 
-* 若要了解如何使用 OpenCV 程式庫，請移至 [http://opencv.org](https://opencv.org)。
+* 若要了解如何使用 OpenCV 程式庫，請移至 [https://opencv.org](https://opencv.org)。
 * 若要了解如何使用本文所顯示的 OpenCV 協助程式元件來搭配 **[MediaFrameReader](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframereader)**，實作取自相機之畫面的即時影像處理，請參閱[使用 OpenCV 搭配 MediaFrameReader](use-opencv-with-mediaframereader.md)。
 * 如需實作一些不同效果的完整程式碼範例，請參閱 Windows 通用範例 GitHub 存放庫中的[相機畫面 + OpenCV 範例](https://go.microsoft.com/fwlink/?linkid=854003) (英文)。
 

@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 - cppwinrt
 - cpp
-ms.openlocfilehash: 2c8bb1e352fe4924b45fd56963de324528269a12
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 1feffac4d9b616c2fadff0080c3282e4200f3be7
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044472"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114434"
 ---
 # <a name="handle-a-cancelled-background-task"></a>處理已取消的背景工作
 
@@ -85,7 +85,7 @@ private:
 
 在您在步驟 1 中建立的**OnCanceled**方法，將旗標變數**\_CancelRequested** **，則為 true**。
 
-完整的[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法將**\_CancelRequested**設**為 true** ，並將潛在的實用偵錯輸出。
+完整的[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509) **OnCanceled**方法將**\_CancelRequested**設**為 true** ，並將潛在的實用偵錯輸出。
 
 ```csharp
 private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)

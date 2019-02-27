@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 位置, 地圖, 地理位置
 ms.localizationpriority: medium
-ms.openlocfilehash: d7004f579bb8bb60b1f9585e49319e278770700a
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 723b1b12a6bbfb572c9aaacf66c97541bf70f72d
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048155"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114524"
 ---
 # <a name="guidelines-for-location-aware-apps"></a>定位感知應用程式的指導方針
 
@@ -155,7 +155,7 @@ ms.locfileid: "9048155"
 
 使用者的地理位置是個人識別資訊 (PII)。 下列網站提供保護使用者隱私權的指導。
 
--   [Microsoft 隱私權]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
+-   [Microsoft 隱私權]( https://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 

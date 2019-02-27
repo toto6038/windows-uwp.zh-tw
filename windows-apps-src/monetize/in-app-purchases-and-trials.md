@@ -6,12 +6,12 @@ ms.date: 05/09/2018
 ms.topic: article
 keywords: Windows 10, UWP, 在應用程式內購買, IAP, 附加元件, 試用版, 消費性, 耐久性, 訂閱
 ms.localizationpriority: medium
-ms.openlocfilehash: 9891205d4fdc8110cb727fb5caabbff6c5f4f948
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: 5a8bad5207c5907beb91e5664b4bc7e140ab036b
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945990"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114674"
 ---
 # <a name="in-app-purchases-and-trials"></a>在應用程式內購買和試用版
 
@@ -19,7 +19,7 @@ Windows SDK 提供您可用來實作下列功能以從您的「通用 Windows �
 
 * **應用程式內購買**&nbsp;&nbsp;無論您的應用程式是否免費，您都可以直接從應用程式內銷售內容或新的應用程式功能 (例如將遊戲的下一個關卡解除鎖定)。
 
-* **試用版功能**&nbsp;&nbsp;如果您[設定您的應用程式為免費試用在合作夥伴中心](../publish/set-app-pricing-and-availability.md#free-trial)，您可以吸引客戶購買完整版的應用程式由排除或限制某些功能，在試用期間。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
+* **試用版功能**&nbsp;&nbsp;如果您[設定為在合作夥伴中心的免費試用您的應用程式](../publish/set-app-pricing-and-availability.md#free-trial)，您可以吸引客戶購買完整版的應用程式由排除或限制某些功能，在試用期間。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
 
 本文提供 UWP 應用程式中應用程式內購買和試用版的運作方式概觀。
 
@@ -126,7 +126,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 使用 **Windows.Services.Store** 命名空間在您的應用程式中為客戶提供應用程式內購買：
 
-1. 如果您的應用程式提供附加元件的客戶可購買，[建立您的應用程式在合作夥伴中心中的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
+1. 如果您的應用程式提供附加元件的客戶可購買，[建立您的應用程式，在合作夥伴中心的附加元件提交](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)。
 
 2. 請在您的應用程式中撰寫程式碼以[擷取您應用程式或您應用程式所提供之附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)，然後[判斷授權是否有效](get-license-info-for-apps-and-add-ons.md) (亦即，使用者是否具有可使用應用程式或附加元件的授權)。 如果授權無效，請顯示一個 UI 來以應用程式內購買形式為使用者提供要銷售的應用程式或附加元件。
 
@@ -158,15 +158,15 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 如果您的應用程式使用 **Windows.Services.Store** 命名空間中的 API 來實作 App 內購買或試用版功能，您必須將應用程式發行至 Microsoft Store，並將應用程式下載至您的開發裝置以便使用它的授權來進行測試。 請依照此程序，測試您的程式碼：
 
-1. 如果您的應用程式尚未發行且可在市集中，請確定您的應用程式符合最低的[Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求，[提交您的應用程式](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)在合作夥伴中心，並請確定您的應用程式通過認證程序。 測試時您可以[將應用程式設定為不可在市集中搜尋](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 請注意，[套件正式](../publish/package-flights.md)的適當設定。 不正確地設定的套件正式可能會無法下載。
+1. 如果您的應用程式尚未發行且可在市集中，請確定您的應用程式符合最低的[Windows 應用程式認證套件](https://developer.microsoft.com/windows/develop/app-certification-kit)需求，在合作夥伴中心的 [[送出您的應用程式](https://msdn.microsoft.com/windows/uwp/publish/app-submissions)，並確定您的應用程式通過認證程序。 測試時您可以[將應用程式設定為不可在市集中搜尋](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)。 請注意，[套件正式](../publish/package-flights.md)的適當設定。 不正確地設定的套件正式可能會無法下載。
 
 2. 接著，確定您已完成下列操作：
 
     * 在您的應用程式中撰寫使用 **Windows.Services.Store** 命名空間中的 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 及其他相關類型來實作 [應用程式內購買](#implement-iap)或[試用功能](#implement-trial)的程式碼。
-    * 如果您的應用程式提供客戶可購買，[建立附加元件提交您的應用程式在合作夥伴中心中](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)的附加元件。
+    * 如果您的應用程式提供客戶可購買，[建立附加元件提交您的應用程式，在合作夥伴中心](https://msdn.microsoft.com/windows/uwp/publish/add-on-submissions)的附加元件。
     * 如果您想要排除或限制某些功能，在您的應用程式，[設定您的應用程式為免費試用在合作夥伴中心中](../publish/set-app-pricing-and-availability.md#free-trial)的試用版。
 
-3. 在您的專案於 Visual Studio 中開啟的情況下，按一下 [專案]**** 功能表、指向 [市集]****，然後按一下 [將應用程式與市集建立關聯]****。 完成精靈中的指示，將應用程式專案與應用程式中您想要用來測試的合作夥伴中心帳戶產生關聯。
+3. 在您的專案於 Visual Studio 中開啟的情況下，按一下 [專案]**** 功能表、指向 [市集]****，然後按一下 [將應用程式與市集建立關聯]****。 完成精靈中的指示，將應用程式專案與應用程式中您想要用來測試您的合作夥伴中心帳戶產生關聯。
     > [!NOTE]
     > 如果您不會將專案與市集中的應用程式建立關聯，[StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 方法就會將其傳回值的 **ExtendedError** 屬性設定為錯誤碼值 0x803F6107。 這個值表示市集沒有任何關於該應用程式的知識。
 4. 如果您尚未執行此動作，從市集中安裝您在上一個步驟指定的應用程式、執行一次應用程式，然後關閉此應用程式。 這可確保應用程式的有效授權已安裝於您的開發裝置上。
@@ -175,7 +175,7 @@ UWP 應用程式可以提供下列類型的附加元件。
     > [!NOTE]
     > 在您完成這些步驟之後，您可以繼續更新您的應用程式的程式碼，然後在您的開發電腦上偵錯更新的專案，而不用提交新的應用程式套件到市集。 您只需要下載您的應用程式的市集版到您的開發電腦，即可取得將用於測試的本機授權。 您只需要在完成測試後提交新的應用程式套件到市集，並讓您的客戶能夠使用您的應用程式中的應用程式內購買或試用相關功能。
 
-如果您的應用程式使用 **Windows.ApplicationModel.Store** 命名空間，您可在應用程式中使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別，以便在提交 App 至市集之前的測試期間模擬授權資訊。 如需詳細資訊，請參閱 [開始使用 CurrentApp 和 CurrentAppSimulator 類別] (in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)。  
+如果您的應用程式使用 **Windows.ApplicationModel.Store** 命名空間，您可在應用程式中使用 [CurrentAppSimulator](https://msdn.microsoft.com/library/windows/apps/hh779766) 類別，以便在提交 App 至市集之前的測試期間模擬授權資訊。 如需詳細資訊，請參閱[開始使用 CurrentApp 和 CurrentAppSimulator 類別](in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md#get-started-with-the-currentapp-and-currentappsimulator-classes)。  
 
 > [!NOTE]
 > **Windows.Services.Store** 命名空間不提供您可在測試期間用來模擬授權資訊的類別。 如果您使用 **Windows.Services.Store** 命名空間來實作在應用程式中購買項目或試用版，您必須將應用程式發行至市集，並將應用程式下載至您的開發裝置以便使用它的授權來進行測試，如上所述。
@@ -225,7 +225,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ### <a name="products-skus-and-availabilities"></a>產品、SKU 和可用性
 
-「市集」中的每個產品都至少有一個 *SKU*，而每個 SKU 都至少會有一個「可用性」**。 在合作夥伴中心，大部分的開發人員而言是非常抽象這些概念和大部分的開發人員將永遠不會定義 Sku 或可用性為他們的應用程式或附加元件。 不過，由於 **Windows.Services.Store** 命名空間中適用於市集產品的物件模型包含了 SKU 和可用性，因此對這些概念有基本了解在某些情況下是很有幫助的。
+「市集」中的每個產品都至少有一個 *SKU*，而每個 SKU 都至少會有一個「可用性」**。 在合作夥伴中心，大部分的開發人員而言是非常抽象這些概念和大部分的開發人員永遠不會定義 Sku 或可用性為他們的應用程式或附加元件。 不過，由於 **Windows.Services.Store** 命名空間中適用於市集產品的物件模型包含了 SKU 和可用性，因此對這些概念有基本了解在某些情況下是很有幫助的。
 
 | 物件 |  描述  |
 |---------|-------------------|
@@ -241,8 +241,8 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 「市集」中任何產品的「市集識別碼」都是 12 個字元的英數字串，例如 ```9NBLGGH4R315```。 有幾種不同方式可在市集中取得產品的市集識別碼：
 
-* 應用程式，您可以在合作夥伴中心[的應用程式身分識別頁面](../publish/view-app-identity-details.md)上取得 「 市集識別碼 」。
-* 附加元件，您可以新增-概觀] 頁面上在合作夥伴中心取得 「 市集識別碼 」。
+* 用於應用程式，您可以在合作夥伴中心[的應用程式身分識別頁面](../publish/view-app-identity-details.md)上取得 「 市集識別碼 」。
+* 附加元件，您可以取得附加的概觀頁面，在合作夥伴中心上的 「 市集識別碼 」。
 * 對於任何產品，您也可以使用代表產品之 [StoreProduct](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeproduct.aspx) 物件的 [StoreId](https://docs.microsoft.com/uwp/api/windows.services.store.storeproduct.storeid) 屬性，以程式設計方式取得市集識別碼。
 
 對於具有 SKU 和可用性的產品，SKU 和可用性也有自己的市集識別碼，但是格式不同。
@@ -256,7 +256,7 @@ UWP 應用程式可以提供下列類型的附加元件。
 
 ## <a name="how-to-use-product-ids-for-add-ons-in-your-code"></a>如何在程式碼中使用附加元件的產品識別碼
 
-如果您想要將附加元件提供給您的客戶，您的應用程式的內容中，您必須[輸入的唯一產品識別碼](../publish/set-your-add-on-product-id.md#product-id)為您的附加元件時在合作夥伴中心 [[建立您的附加元件提交](../publish/add-on-submissions.md)。 您可以在程式碼中使用此產品識別碼來參考附加元件，不過您可使用產品識別碼的具體情況取決於您在應用程式中用於在應用程式內購買的命名空間。
+如果您想要讓您的客戶，您的應用程式的內容中使用附加元件，您必須[輸入的唯一產品識別碼與](../publish/set-your-add-on-product-id.md#product-id)您的附加元件時在合作夥伴中心 [[建立您的附加元件提交](../publish/add-on-submissions.md)。 您可以在程式碼中使用此產品識別碼來參考附加元件，不過您可使用產品識別碼的具體情況取決於您在應用程式中用於在應用程式內購買的命名空間。
 
 > [!NOTE]
 > 您在合作夥伴中心輸入附加元件的產品識別碼是不同於新增的[市集識別碼](#store-ids)。 合作夥伴中心會產生 「 市集識別碼 」。

@@ -5,12 +5,12 @@ keywords: user activity, user activities, timeline, cortana pick up where you le
 ms.date: 04/27/2018
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: 2e1c2a3da3711bbc5335a9c44a4b280e3934adac
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 2756231b067176da66c6dbcedf7a1452d5d109f4
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046198"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114544"
 ---
 # <a name="continue-user-activity-even-across-devices"></a>繼續使用者活動，甚至是在各個裝置之間
 
@@ -34,7 +34,7 @@ ms.locfileid: "9046198"
 
 1. [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) 用於以特定的內容繼續應用程式。 一般而言，此連結所採用的格式為配置的通訊協定處理常式 (例如「my-app://page2?action=edit」) 或 AppUriHandler (例如 http://constoso.com/page2?action=edit)。
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) 會公開一個類別，讓使用者能夠依照標題、描述或調適型卡片元素目測識別活動。
-3. 最後，[Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) 是您可以儲存活動中繼資料的位置，可用於群組與擷取特定內容下的活動。 通常，會採用 [http://schema.org](https://schema.org) 資料的格式。
+3. 最後，[Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) 是您可以儲存活動中繼資料的位置，可用於群組與擷取特定內容下的活動。 通常，會採用 [https://schema.org](https://schema.org) 資料的格式。
 
 若要將 **UserActivity** 新增至應用程式：
 

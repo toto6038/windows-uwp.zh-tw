@@ -5,12 +5,12 @@ keywords: hosted web app, HWA, REST API, single-page app, SPA, 託管的 Web 應
 ms.date: 05/10/2017
 ms.topic: article
 ms.localizationpriority: medium
-ms.openlocfilehash: fa606da245c3506c8b4125edeb1edfc47f6aab0d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: f60eb37d7bff1187e282f5af2207c6df92f4ec24
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049545"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114574"
 ---
 # <a name="create-a-single-page-web-app-with-rest-api-backend"></a>使用 REST API 後端建立單頁 Web 應用程式
 
@@ -209,7 +209,7 @@ Server.listen(port, function () {  // Starts server with our modfied port settin
 ]
 ```
 
-現在按下 F5 並將您的瀏覽器開啟至 [http://localhost:8000](https://localhost:8000)。 頁面應會為我們的記憶遊戲 API 開啟至 Swagger UI，而您可以從該處為每個方法展開詳細資料和輸入欄位。 您甚至可以嘗試呼叫 API，雖然其回應將只包含模擬的資料 (由 [Swagmock](https://www.npmjs.com/package/swagmock) 模組提供)。 是時候加入我們的遊戲邏輯，讓這些 API 成真。
+現在按下 F5 並將您的瀏覽器開啟至 [https://localhost:8000](https://localhost:8000)。 頁面應會為我們的記憶遊戲 API 開啟至 Swagger UI，而您可以從該處為每個方法展開詳細資料和輸入欄位。 您甚至可以嘗試呼叫 API，雖然其回應將只包含模擬的資料 (由 [Swagmock](https://www.npmjs.com/package/swagmock) 模組提供)。 是時候加入我們的遊戲邏輯，讓這些 API 成真。
 
 ### <a name="3-set-up-your-route-handlers"></a>3. 設定您的路由處理常式
 
@@ -235,7 +235,7 @@ Swagger 檔案 (config\swagger.json) 會指示我們的伺服器如何處理各�
 
 為清楚明瞭，我們將我們的遊戲板儲存在我們的 Node 伺服器上的全域變數 (`global.board`) 中。 但實際上，您會使用雲端儲存空間 (像是 Google [Cloud Datastore](https://cloud.google.com/datastore/) 或 Azure [DocumentDB](https://azure.microsoft.com/en-us/services/documentdb/))，讓此加入同時支援多個遊樂和玩家的可用記憶遊戲 API 服務。
 
-請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [http://localhost:8000](https://localhost:8000)) 來測試遊戲 API。
+請確定您已儲存 VS Code 中的所有變更，再次啟動您的伺服器 (VS Code 中的 F5 或殼層的 `npm start`，然後瀏覽至 [https://localhost:8000](https://localhost:8000)) 來測試遊戲 API。
 
 每次您按下 **\[試試看！\]**  按鈕 (**/game**、**/guess** 或 **/new** 作業之一)，檢查以下產生的**回應本文**和**回應碼**以確認一切是否如預期般運作。
 
@@ -333,7 +333,7 @@ Azure 文件將逐步引導您完成：
     npm start
     ```
 
-5. 移至 [http://localhost:3000/](https://localhost:3000/) 檢視您的應用程式。
+5. 移至 [https://localhost:3000/](https://localhost:3000/) 檢視您的應用程式。
 
     ![http://localhost:3000/ 的螢幕擷取畫面](./images/express.png)
 
@@ -620,7 +620,7 @@ Bootstrap 的方格系統允許方格系統摺疊到一個垂直欄，就像您�
 
 1. 在您的記憶目錄中開啟命令提示字元，並輸入下列命令︰ `npm start`
 
-2. 在您的瀏覽器中，移至 [http://localhost:3000/](https://localhost:3000/) 並玩遊戲！
+2. 在您的瀏覽器中，移至 [https://localhost:3000/](https://localhost:3000/) 並玩遊戲！
 
 3. 如果您遇到任何錯誤，您可以在鍵盤上按下 F5 鍵並輸入 `Node.js`，使用 Visual Studio Code 的 Node.js 偵錯工具。 如需在 Visual Studio Code 中偵錯的詳細資訊，請參閱此[文章](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations)。 
 

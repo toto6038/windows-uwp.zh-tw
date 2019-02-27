@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d987eac76c13b8ceb34a8779903a8067ed6a607
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 4b30cd39a4440a1ade1ea0dda5a35d3f7c15f963
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048695"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114514"
 ---
 # <a name="declare-background-tasks-in-the-application-manifest"></a>在應用程式資訊清單中宣告背景工作
 
@@ -107,7 +107,7 @@ ms.locfileid: "9048695"
 
 針對每一個由應用程式註冊的其他背景工作類別，重複步驟 2。
 
-下列範例是取自[背景工作範例]( http://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
+下列範例是取自[背景工作範例]( https://go.microsoft.com/fwlink/p/?linkid=227509)的完整 Application 元素。 這將示範兩種背景工作類別的使用，總共有 3 種觸發程序類型。 複製此範例的 Extensions 區段，並視需要進行修改，以在應用程式資訊清單中宣告背景工作。
 
 ```xml
 <Applications>

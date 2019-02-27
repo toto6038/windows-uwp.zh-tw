@@ -6,12 +6,12 @@ ms.date: 08/01/2018
 ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 集合 API, Microsoft Store 購買 API, 檢視產品, 授與產品
 ms.localizationpriority: medium
-ms.openlocfilehash: a749550c1dc644c4a9fb3f91530503adf192246e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: 0bf85a73cb35044b4be2282c9a13c1e65b836a92
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050258"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114504"
 ---
 # <a name="manage-product-entitlements-from-a-service"></a>管理服務的產品權利
 
@@ -253,5 +253,5 @@ Microsoft Store 識別碼金鑰就是 JSON Web 權杖 (JWT)，代表您想要存
 * [變更使用者訂閱的帳單狀態](change-the-billing-state-of-a-subscription-for-a-user.md)
 * [更新 Microsoft Store 識別碼金鑰](renew-a-windows-store-id-key.md)
 * [整合應用程式與 Azure Active Directory](https://go.microsoft.com/fwlink/?LinkId=722502)
-* [了解 Azure Active Directory 應用程式資訊清單]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [了解 Azure Active Directory 應用程式資訊清單]( https://go.microsoft.com/fwlink/?LinkId=722500)
 * [支援的權杖和宣告類型](https://go.microsoft.com/fwlink/?LinkId=722501)

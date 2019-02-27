@@ -6,12 +6,12 @@ ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10，uwp，應用程式認證
 ms.localizationpriority: medium
-ms.openlocfilehash: e3c8729a6d2ac828f3d7b257681d64f4c7834587
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.openlocfilehash: b480e96621e143e283a2556bdbef394aaf7dbc07
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048868"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114464"
 ---
 # <a name="windows-app-certification-kit"></a>Windows 應用程式認證套件
 
@@ -24,13 +24,13 @@ ms.locfileid: "9048868"
 測試通用 Windows app 的先決條件：
 
 -   您必須安裝和執行 windows 10。
--   您必須安裝[Windows 應用程式認證套件 10 版]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，其中包含適用於 windows 10 中 Windows 軟體開發套件 (SDK)。
+-   您必須安裝[Windows 應用程式認證套件 10 版]( https://go.microsoft.com/fwlink/p/?LinkID=309666)，其中包含適用於 windows 10 中 Windows 軟體開發套件 (SDK)。
 -   您必須[啟用您的裝置以進行開發](https://docs.microsoft.com/windows/uwp/get-started/enable-your-device-for-development)。
 -   您必須將要測試的 Windows 應用程式部署至電腦。
 
 **關於就地升級的附註**
 
-安裝更新版本的 [Windows 應用程式認證套件]( http://go.microsoft.com/fwlink/p/?LinkID=309666)，將會取代電腦上安裝的任何舊版套件。
+安裝更新版本的 [Windows 應用程式認證套件]( https://go.microsoft.com/fwlink/p/?LinkID=309666)，將會取代電腦上安裝的任何舊版套件。
 
 ## <a name="validate-your-windows-app-using-the-windows-app-certification-kit-interactively"></a>以互動方式使用 Windows 應用程式認證套件來驗證 Windows 應用程式
 

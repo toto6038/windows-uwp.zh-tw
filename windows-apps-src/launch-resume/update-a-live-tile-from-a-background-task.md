@@ -1,18 +1,18 @@
 ---
 title: 從背景工作更新動態磚
-description: 使用背景工作來更新含有最新內容的應用程式動態磚。
+description: 使用背景工作來更新含有最新內容的 app 動態磚。
 Search.SourceType: Video
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ms.date: 01/11/2018
 ms.topic: article
 keywords: windows 10，uwp，背景工作
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d5d9e1b93c9f769a748a6a44d0ed77f5bd3a9da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.openlocfilehash: e3c087bac5e166a22098482e5ffe213e3bdce9d6
+ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919561"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9114454"
 ---
 # <a name="update-a-live-tile-from-a-background-task"></a>從背景工作更新動態磚
 
@@ -161,7 +161,7 @@ namespace BackgroundTasks
 
 建立 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 以登錄您的工作。
 
-> **注意：** 從 Windows8.1 開始，背景工作登錄參數都在驗證註冊的時間。 如果有任一個登錄參數無效，就會傳回錯誤。 您的應用程式必須能夠處理背景工作登錄失敗的狀況，例如使用條件式陳述式來檢查登錄是否有錯誤，接著使用不同的參數值來重試已失敗的登錄。
+> **注意：** 從 windows 8.1 開始，背景工作登錄參數都在驗證註冊的時間。 如果有任一個登錄參數無效，就會傳回錯誤。 您的應用程式必須能夠處理背景工作登錄失敗的狀況，例如使用條件式陳述式來檢查登錄是否有錯誤，接著使用不同的參數值來重試已失敗的登錄。
  
 
 在應用程式的主頁面中，新增 **RegisterBackgroundTask** 方法，然後在 **OnNavigatedTo** 事件處理常式中進行呼叫。
@@ -185,7 +185,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Syndication;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/p/?LinkID=234238
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?LinkID=234238
 
 namespace ContosoApp
 {
