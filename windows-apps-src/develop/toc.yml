@@ -245,6 +245,8 @@ items:
       href: ../files/quickstart-listing-files-and-folders.md
     - name: 建立、寫入和讀取檔案
       href: ../files/quickstart-reading-and-writing-files.md
+    - name: 寫入檔案的最佳做法
+      href: ../files/best-practices-for-writing-to-files.md
     - name: 取得檔案屬性
       href: ../files/quickstart-getting-file-properties.md
     - name: 使用選擇器開啟檔案和資料夾
@@ -1513,9 +1515,9 @@ items:
       href: ../threading-async/use-a-timer-to-submit-a-work-item.md
     - name: 在多執行緒環境中使用 Windows 執行階段物件
       href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-ms.openlocfilehash: 30584a90fbfaf39ed66cf90fd27575ff055ef69e
-ms.sourcegitcommit: a774dac901ad6ad3a85520ef75ee9a1029aa9792
+ms.openlocfilehash: e9c39734eb066058d549ed8c36ad73b2c2c6a5e1
+ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "9070378"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9115935"

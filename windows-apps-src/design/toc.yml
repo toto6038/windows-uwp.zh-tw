@@ -67,6 +67,8 @@ items:
     href: controls-and-patterns/index.md
   - name: 控制項與事件簡介
     href: controls-and-patterns/controls-and-events-intro.md
+  - name: 命令功能的簡介
+    href: controls-and-patterns/commanding.md
   - name: 依功能排序的控制項索引
     href: controls-and-patterns/controls-by-function.md
   - name: 基本輸入
@@ -562,9 +564,9 @@ items:
       href: in-app-help/external-help.md
 - name: 設計工具組
   href: downloads/index.md
-ms.openlocfilehash: af1472f7650982783ac08da2c73ebb5046401f3c
-ms.sourcegitcommit: 59f874b6667c3f639d8b0c7eeca886e71bf95614
-ms.translationtype: HT
+ms.openlocfilehash: b6430ee5f121d672282513fa524a50e7788f404c
+ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "9004564"
+ms.lasthandoff: 02/27/2019
+ms.locfileid: "9117447"
