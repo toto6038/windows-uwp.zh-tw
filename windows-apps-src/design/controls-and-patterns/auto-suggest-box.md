@@ -1,5 +1,5 @@
 ---
-Description: A text entry box that provides suggestions as the user types.
+Description: 使用者輸入時提供建議的文字輸入方塊。
 title: 自動建議方塊的指導方針
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
@@ -13,17 +13,17 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 86b0063175b5e040cd7d92357bfa4b8abac4e13c
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037170"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592403"
 ---
 # <a name="auto-suggest-box"></a>自動建議方塊
 
 使用 AutoSuggestBox 提供讓使用者在輸入時可從中選取建議的清單。
 
-> **重要 API**：[AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)、[TextChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)、[SuggestionChose 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)、[QuerySubmitted 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
+> **重要的 Api**:[AutoSuggestBox 類別](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)， [TextChanged 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)， [SuggestionChose 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)， [QuerySubmitted 事件](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
 
 ![自動建議方塊](images/controls/auto-suggest-box-open.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "9037170"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/AutoSuggestBox">開啟應用程式並查看 AutoSuggestBox 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -153,7 +153,7 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 ![自動建議控制項的進入點範例](images/controls_autosuggest_entrypoint.png)
 
-## <a name="dos-and-donts"></a>可行與禁止注意事項
+## <a name="dos-and-donts"></a>可行與禁止事項
 
 -   當使用自動建議方塊執行搜尋，且輸入的文字沒有搜尋結果時，會顯示單行「沒有結果」訊息作為結果，讓使用者知道他們的搜尋要求已經執行：
 
@@ -186,4 +186,4 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [搜尋](search.md)
 - [TextBox 類別](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [Windows.UI.Xaml.Controls PasswordBox 類別](https://msdn.microsoft.com/library/windows/apps/br227519)
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length.aspx)
+- [String.Length 屬性](https://msdn.microsoft.com/library/system.string.length.aspx)

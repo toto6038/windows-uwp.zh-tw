@@ -7,15 +7,15 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 09ddb212cd84b9754c35adccdf6e60ad96a4f94f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050801"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662763"
 ---
 # <a name="open-files-and-folders-with-a-picker"></a>使用選擇器開啟檔案和資料夾
 
-**重要 API**
+**重要的 Api**
 
 -   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
 -   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
@@ -24,12 +24,12 @@ ms.locfileid: "9050801"
 讓使用者與選擇器互動以存取檔案和資料夾。 您可以使用 [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) 和 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) 類別來存取檔案，使用 [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) 來存取資料夾。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)(英文)。
+> 如需完整範例，請參閱 <<c0> [ 檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
+-   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
     您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
@@ -103,9 +103,9 @@ else
     ```
     在與您的使用者和 app 相關的檔案選擇器物件上設定屬性。
 
-    這個範例會藉由設定下列三個屬性，在使用者可以挑選的便利位置建立一個豐富的視覺化圖片：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 及 [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
+    這個範例會建立豐富、 視覺化的顯示圖片，在方便的位置，使用者可以從挑選設定三個屬性：[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)， [ **SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)，以及[ **FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850)。
 
-    -   將 [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) 設定成 [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **Thumbnail** 列舉值會建立一個豐富的視覺顯示，這樣做會在檔案選擇器中使用圖片縮圖來表示檔案。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
+    -   設定[ **ViewMode** ](https://msdn.microsoft.com/library/windows/apps/br207855)來[ **PickerViewMode** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) **縮圖**列舉值建立豐富、表示在檔案選擇器中的檔案中使用圖片縮圖的視覺顯示。 執行這個動作來挑選如圖片或影片的視覺檔案。 否則，請使用 [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list)。 具有**附加圖片或影片**和**附加文件**功能的假設電子郵件 app 會針對功能適當設定 **ViewMode**，再顯示檔案選擇器。
 
     -   使用 [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207854) 將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207890) 設定為 [圖片]，讓使用者一開始就在可以找到圖片的位置。 將 **SuggestedStartLocation** 設定為所挑選檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
 
@@ -113,7 +113,7 @@ else
 
 2.  **顯示 FileOpenPicker**
 
-    - **開啟單一檔案**
+    - **若要挑選單一檔案**
 
         ```cs
         Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -128,7 +128,7 @@ else
         }
         ```
 
-    - **開啟多個檔案**  
+    - **若要選取多個檔案**  
 
         ```cs
         var files = await picker.PickMultipleFilesAsync();

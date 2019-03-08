@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use custom timestamps on your toast notifications.
+Description: 了解如何使用自訂的時間戳記的快顯通知。
 title: 快顯通知上的自訂時間戳記
 label: Custom timestamps on toasts
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, 快顯通知, 自訂時間戳記, 時間戳記, 通知, 控制中心
 ms.localizationpriority: medium
 ms.openlocfilehash: c18c32e1dcee5486ff6545a1db0ec8f0cd67bfae
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944487"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625813"
 ---
 # <a name="custom-timestamps-on-toasts"></a>快顯通知上的自訂時間戳記
 
@@ -23,7 +23,7 @@ ms.locfileid: "8944487"
 您可選擇以您自己的自訂日期和時間來覆寫時間戳記，讓時間戳記代表訊息/資訊/內容的實際建立時間，而不是傳送通知的時間。 這也可確保您的通知以正確的順序出現在控制中心 (依照時間排序)。 我們建議大部分應用程式指定自訂時間戳記。
 
 > [!IMPORTANT]
-> **需要 Desktop Creators Update 和 Notifications 程式庫 1.4.0**：您必須執行組建 15063 或更新版本，才能看見自訂時間戳記。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容上指派時間戳記。
+> **需要 Creators Update 和通知程式庫的 1.4.0**:您必須執行組建 15063 或更新版本，才能看到自訂的時間戳記。 您必須使用版本 1.4.0 或更高版本的 [UWP Community Toolkit Notifications NuGet 程式庫](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)，以便在快顯通知內容上指派時間戳記。
 
 若要使用自訂時間戳記，只需在 **ToastContent** 上指派 **DisplayTimestamp** 屬性。
 
@@ -68,4 +68,4 @@ ToastContent toastContent = new ToastContent()
 ## <a name="related-topics"></a>相關主題
 
 - [傳送本機快顯通知](send-local-toast.md)
-- [快顯通知內容文件](adaptive-interactive-toasts.md)
+- [快顯通知內容的文件](adaptive-interactive-toasts.md)

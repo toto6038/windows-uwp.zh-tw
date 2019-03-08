@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 36cd006b4608d82999281ebd407fd32e168ae38b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933258"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650463"
 ---
 # <a name="adaptive-streaming-with-playready"></a>搭配使用彈性資料流與 PlayReady
 
 
-本文章說明如何將包含 Microsoft PlayReady 內容保護的彈性資料流多媒體內容新增到通用 Windows 平台 (UWP) app。 
+本文章說明如何將包含 Microsoft PlayReady 內容保護的多媒體內容彈性資料流新增到通用 Windows 平台 (UWP) app。 
 
 本功能目前支援播放 DASH (Dynamic Streaming over HTTP) 內容。
 
@@ -26,7 +26,7 @@ PlayReady 不支援 HLS (Apple 的 HTTP 即時資料流)。
 
 這篇文章僅處理 PlayReady 特定的彈性資料流層面。 如需實作彈性資料流的一般資訊，請參閱[彈性資料流](adaptive-streaming.md)。
 
-本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的[彈性資料流範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 案例 4 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後選取 **\[下載 ZIP\]** 按鈕。
+本文使用的程式碼來自 Microsoft 在 GitHub 上的 **Windows-universal-samples** 存放庫中的[彈性資料流範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)。 案例 4 會示範搭配 PlayReady 使用彈性資料流。 您可以將存放庫以 ZIP 檔案格式下載，方法是瀏覽到存放庫的根目錄，然後選取 [下載 ZIP] 按鈕。
 
 您將需要下列 **using** 陳述式：
 
@@ -295,7 +295,7 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 您可以在任何處理啟動彈性資料流的事件中呼叫這個函式；例如，在按鈕點擊事件中。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 - [PlayReady DRM](playready-client-sdk.md)
 
 

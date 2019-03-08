@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: 127d600b840c21eb78c3f6b98a100b7639ea25bc
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929141"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660223"
 ---
-# <a name="directx-getting-started"></a>DirectX：入門
+# <a name="directx-getting-started"></a>DirectX:開始使用
 
 本節的資訊可協助您開始使用 DirectX 開發 UWP 遊戲。 
 
@@ -40,11 +40,11 @@ ms.locfileid: "8929141"
 <td align="left"><p>直接與應用程式物件進行存取和互通。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">遊戲的專案範本與工具</a></p></td>
+<td align="left"><p><a href="prepare-your-dev-environment-for-windows-store-directx-game-development.md">用於遊戲專案範本和工具</a></p></td>
 <td align="left"><p>為 UWP DirectX 遊戲開發準備開發環境。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">啟動和繼續 App</a></p></td>
+<td align="left"><p><a href="launching-and-resuming-apps-directx-and-cpp.md">啟動與繼續應用程式</a></p></td>
 <td align="left"><p>啟動、暫停和繼續 UWP DirectX 遊戲。</p></td>
 </tr>
 </tbody>

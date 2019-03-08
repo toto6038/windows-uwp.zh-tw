@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d2a8953d202cc22729f99a096b5fb62cf1131d9
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936237"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603283"
 ---
 # <a name="viewports-and-clipping"></a>檢視區和裁剪
 
 
-「檢視區」** 是 3D 場景的投影目標二維 (2D) 矩形。 在 Direct3D 中，矩形在 Direct3D 表面中以座標的形式存在，系統會使用矩形作為轉譯目標。 投影轉換將頂點轉換至用於檢視區的座標系統。 檢視區也用於指定轉譯目標表面 (場景轉譯目標) 上深度值的範圍 (通常是 0.0 到 1.0)。
+「檢視區」是 3D 場景的投影目標二維 (2D) 矩形。 在 Direct3D 中，矩形在 Direct3D 表面中以座標的形式存在，系統會使用矩形作為轉譯目標。 投影轉換將頂點轉換至用於檢視區的座標系統。 檢視區也用於指定轉譯目標表面 (場景轉譯目標) 上深度值的範圍 (通常是 0.0 到 1.0)。
 
 ## <a name="span-idtheviewingfrustumspanspan-idtheviewingfrustumspanspan-idtheviewingfrustumspanthe-viewing-frustum"></a><span id="The_Viewing_Frustum"></span><span id="the_viewing_frustum"></span><span id="THE_VIEWING_FRUSTUM"></span>檢視範圍
 
@@ -34,7 +34,7 @@ ms.locfileid: "8936237"
 
 在這個圖，變數 D 是從相機到空間原點 (此空間定義在幾何管線最後一部分 - 檢視轉換) 之間的距離。 圍繞這個空間，您排列檢視範圍的限制。 有關如何使用這個 D 變數建立投影矩陣，請參閱[投影轉換](projection-transform.md)
 
-## <a name="span-idviewportrectanglespanspan-idviewportrectanglespanspan-idviewportrectanglespanviewport-rectangle"></a><span id="Viewport_Rectangle"></span><span id="viewport_rectangle"></span><span id="VIEWPORT_RECTANGLE"></span>檢視區矩形
+## <a name="span-idviewportrectanglespanspan-idviewportrectanglespanspan-idviewportrectanglespanviewport-rectangle"></a><span id="Viewport_Rectangle"></span><span id="viewport_rectangle"></span><span id="VIEWPORT_RECTANGLE"></span>檢視區的矩形
 
 
 檢視區結構包含 4 個成員 (X、Y、寬度、高度)，定義轉譯目標表面 (場景轉譯目標) 的區域。 這些值對應目的地矩形或檢視區矩形，如下圖顯示。
@@ -45,7 +45,7 @@ ms.locfileid: "8936237"
 
 Direct3D 假設檢視區裁剪體積的範圍是從 -1.0 到 1.0 (在 X 中) 以及從 1.0 到 -1.0 (在 Y 中)。這些是應用程式過去最常使用的設定。 裁剪之前，您可以使用[投影轉換](projection-transform.md)調整檢視區的長寬比例。
 
-**注意：**  MinZ 和 MaxZ 表示場景轉譯到此的深度範圍並不會用於裁剪。 大部分的應用程式將這些值設為 0.0 和 1.0，以讓系統轉譯到深度緩衝區中深度值的整個範圍。 有時候，您可以使用其他深度範圍達成特殊效果。 例如，若要在遊戲中轉譯平視顯示器，您可以將這兩個值設定為 0.0，強迫在場景的前景中轉譯物件，或者您可以將這兩個值設定為 1.0，轉譯永遠應該會在背景中的物件。
+**附註**   MinZ MaxZ 表示場景轉譯深度範圍並不會使用剪輯。 大部分的應用程式將這些值設為 0.0 和 1.0，以讓系統轉譯到深度緩衝區中深度值的整個範圍。 有時候，您可以使用其他深度範圍達成特殊效果。 例如，若要在遊戲中轉譯平視顯示器，您可以將這兩個值設定為 0.0，強迫在場景的前景中轉譯物件，或者您可以將這兩個值設定為 1.0，轉譯永遠應該會在背景中的物件。
 
  
 
@@ -55,18 +55,18 @@ Direct3D 使用檢視區位置和維度來縮放頂點，讓轉譯的場景放�
 
 ![套用到每個頂點之矩陣的方程式](images/vpscale.png)
 
-這個矩陣依據檢視區維度和您想要的深度範圍縮放頂點，並將它們轉移到轉譯目標表面上的適當位置。 矩陣也翻轉 y 座標，隨著 y 向下漸增，以反映左上角的螢幕原點。 套用此矩陣之後，頂點仍然是同質 - 也就是它們仍是 \[x,y,z,w\] 頂點 - 而且在傳送到轉譯器之前，必須轉換成非同質座標。
+這個矩陣依據檢視區維度和您想要的深度範圍縮放頂點，並將它們轉移到轉譯目標表面上的適當位置。 矩陣也翻轉 y 座標，隨著 y 向下漸增，以反映左上角的螢幕原點。 這個矩陣會套用，頂點會仍同質-也就是說，它們仍然以形式存在之後\[x、 y、 z、 w\]頂點-而且它們必須轉換成非 homogeneous coordinate 再傳送至轉譯器。
 
-**注意：** 應用程式通常將 MinZ 和 MaxZ 為 0.0 和 1.0，分別，以便讓系統轉譯到整個深度範圍。 不過，您可以使用其他值達到特定效果。 例如，您可以將這兩個值設為 0.0，強制所有物件到前景，或都設為 1.0 將所有物件轉譯到背景。
+**附註**  應用程式通常設 MinZ 和 MaxZ 介於 0.0 到 1.0，分別以會造成系統呈現的整個深度範圍。 不過，您可以使用其他值達到特定效果。 例如，您可以將這兩個值設為 0.0，強制所有物件到前景，或都設為 1.0 將所有物件轉譯到背景。
 
  
 
-## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>清除檢視區
+## <a name="span-idclearingaviewportspanspan-idclearingaviewportspanspan-idclearingaviewportspanclearing-a-viewport"></a><span id="Clearing_a_Viewport"></span><span id="clearing_a_viewport"></span><span id="CLEARING_A_VIEWPORT"></span>清除 在檢視區
 
 
 清除檢視區會重設轉譯目標表面上檢視區矩形的內容。 它也會清除深度和樣板緩衝區表面中的矩形。
 
-## <a name="span-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanset-up-the-viewport-for-clipping"></a><span id="Set_Up_the_Viewport_for_Clipping"></span><span id="set_up_the_viewport_for_clipping"></span><span id="SET_UP_THE_VIEWPORT_FOR_CLIPPING"></span>設定裁剪的檢視區
+## <a name="span-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanspan-idsetuptheviewportforclippingspanset-up-the-viewport-for-clipping"></a><span id="Set_Up_the_Viewport_for_Clipping"></span><span id="set_up_the_viewport_for_clipping"></span><span id="SET_UP_THE_VIEWPORT_FOR_CLIPPING"></span>設定剪輯的檢視區
 
 
 投影矩陣的結果決定投影空間中的裁剪體積為：
@@ -82,7 +82,7 @@ Direct3D 使用檢視區位置和維度來縮放頂點，讓轉譯的場景放�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

@@ -4,41 +4,41 @@ title: 建立 NFC 智慧卡應用程式
 description: Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬應用程式，但該模型需要安全的付款應用程式才能與行動網路運算子 (MNO) 緊密結合。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: bc39c3aa59ca9624cc4664136b6294c07ed56083
-ms.sourcegitcommit: 7d0e6662de336a3d0e82ae9d1b61b1b0edb5aeeb
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "8981422"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644583"
 ---
 # <a name="create-an-nfc-smart-card-app"></a>建立 NFC 智慧卡應用程式
 
 
-**重要**本主題僅適用於 windows 10 行動裝置版。
+**重要**  本主題僅適用於 Windows 10 行動裝置。
 
-Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬應用程式，但該模型需要安全的付款應用程式才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 windows 10 行動裝置版中，我們已導入了新的卡片模擬技術，稱為主機卡模擬 (HCE)。 HCE 技術可讓您的應用程式直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE 應用程式，以便您的客戶可以存取他們的手機而不是實體卡片透過您的服務而不需要使用 mno 共同作業。
+Windows Phone 8.1 使用以 SIM 卡為基礎的安全元素來支援 NFC 卡模擬應用程式，但該模型需要安全的付款應用程式才能與行動網路運算子 (MNO) 緊密結合。 這會限制其他未結合 MNO 的商家或開發人員所提供的各種可能付款解決方案， 在 Windows 10 行動裝置，我們引進了新的卡片模擬技術，稱為，主機卡模擬 (HCE)。 HCE 技術可讓您的應用程式直接與 NFC 卡讀卡機進行通訊。 本主題說明主機卡模擬 (HCE) 在 Windows 10 行動裝置版裝置上的運作方式，以及如何開發 HCE 應用程式，使您的客戶可以不含 Mno> 與共同作業透過他們的電話號碼，而不是實體卡片中存取您的服務。
 
 ## <a name="what-you-need-to-develop-an-hce-app"></a>開發 HCE 應用程式所需的項目
 
 
-若要開發 HCE 為基礎的卡片模擬應用程式適用於 windows 10 行動裝置，您將需要取得您的開發環境設定。 您可以開始設定藉由安裝 Microsoft Visual Studio2015，包括 Windows 開發人員工具，以及具備 NFC 模擬支援在 windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](https://msdn.microsoft.com/library/windows/apps/Dn726766)
+若要開發 Windows 10 行動裝置版 HCE 式卡模擬應用程式，您必須取得您的開發環境設定。 您可以取得設定藉由安裝 Microsoft Visual Studio 2015 中，其中包括 Windows 開發人員工具和 NFC 模擬支援將 Windows 10 行動裝置版模擬器。 如需開始設定的詳細資訊，請參閱[開始設定](https://msdn.microsoft.com/library/windows/apps/Dn726766)
 
-或者，如果您想要測試使用實際的 windows 10 行動裝置版裝置，而不是隨附的 windows 10 行動裝置版模擬器，您也需要下列項目。
+（選擇性） 如果您想要測試與實際的 Windows 10 行動裝置版裝置，而不是包含 Windows 10 行動裝置版模擬器，您也將需要下列項目。
 
--   具備 NFC HCE 支援的 windows 10 行動裝置版裝置。 Lumia 730、830、640 和 640 XL 目前提供硬體來支援 NFC HCE 應用程式。
+-   使用 NFC HCE 支援 Windows 10 行動裝置版裝置。 Lumia 730、830、640 和 640 XL 目前提供硬體來支援 NFC HCE 應用程式。
 -   支援 ISO/IEC 14443-4 和 ISO/IEC 7816-4 通訊協定的讀卡機終端機
 
-Windows 10 行動裝置版會實作 HCE 服務來提供下列功能。
+Windows 10 行動裝置會實作 HCE 服務，可提供下列功能。
 
 -   應用程式可以登錄它們想要模擬之卡片的小程式識別碼 (AID)。
 -   根據外部讀卡機卡片選取和使用者喜好設定，對於某一個已登錄的應用程式進行應用程式通訊協定資料單位 (APDU) 命令和回應組的衝突解決和路由。
 -   處理應用程式的事件和通知做為使用者動作的結果。
 
-Windows 10 支援模擬智慧卡為基礎的 ISO-DEP (ISO-IEC 14443-4) 以及使用中 ISO-IEC 7816-4 規格所定義的 Apdu 進行通訊。 Windows 10 支援 ISO/IEC 14443-4 類型 A 技術的 HCE 應用程式。 根據預設，會將類型 B、類型 F 及非 ISO-DEP (例如 MIFARE) 技術路由傳送到 SIM 卡。
+Windows 10 支援的 ISO DEP 為基礎的智慧卡的模擬 (ISO-IEC 14443-4) 和使用 Apdu 中所定義 ISO-IEC 7816 4 規格進行通訊。 Windows 10 支援 ISO/IEC 14443 4 類型的技術 HCE 應用程式。 根據預設，會將類型 B、類型 F 及非 ISO-DEP (例如 MIFARE) 技術路由傳送到 SIM 卡。
 
-只有 windows 10 行動裝置版裝置會啟用卡片模擬功能。 Sim 卡為基礎和以 HCE 為基礎的卡片模擬並不適用於其他版本的 windows 10。
+只有 Windows 10 行動裝置啟用卡模擬功能。 Sim 卡和 HCE 為主的卡片模擬並不適用於其他版本的 Windows 10。
 
 下圖顯示以 HCE 和 SIM 為基礎的卡片模擬支援架構。
 
@@ -46,9 +46,9 @@ Windows 10 支援模擬智慧卡為基礎的 ISO-DEP (ISO-IEC 14443-4) 以及使
 
 ## <a name="app-selection-and-aid-routing"></a>應用程式選取和 AID 路由
 
-若要開發 HCE 應用程式，您必須了解如何 windows 10 行動裝置版裝置 Aid 路由傳送到特定的應用程式因為使用者可以安裝多個不同的 HCE 應用程式。 每個應用程式都可登錄多個以 HCE 和 SIM 卡為基礎的卡片。 是 sim 卡為基礎的舊版 Windows Phone 8.1 應用程式將會繼續，只要使用者 NFC 設定功能表中選擇 [SIM 卡] 選項做為預設付款卡，在 windows 10 行動裝置版上運作。 此選項為首次開啟裝置時的預設設定。
+若要開發 HCE 應用程式，您必須了解因為使用者可以安裝多個不同的 HCE 應用程式，Windows 10 行動裝置如何將輔助路由至特定的應用程式。 每個應用程式都可登錄多個以 HCE 和 SIM 卡為基礎的卡片。 在 Windows 10 行動裝置上運作，只要使用者在 NFC 設定 功能表中選擇 「 SIM 卡片 」 選項，為其預設的支付卡仍是 sim 卡為基礎的舊版 Windows Phone 8.1 應用程式。 此選項為首次開啟裝置時的預設設定。
 
-當使用者將其 windows 10 行動裝置版裝置輕觸終端機時，資料會自動路由傳送到裝置上安裝的適當應用程式。 這個路由是以小程式識別碼 (AID) 為根據，這類識別碼是 5-16 位元組的識別碼 。 輕觸期間，外部終端機將傳輸 SELECT 命令 APDU 來指定 AID，它就像所有後續要路由傳送的 APDU 命令一樣。 後續的 SELECT 命令將再次變更路由。 根據應用程式登錄的 AID 和使用者設定，會將 APDU 流量路由傳送到特定的應用程式，這將會傳送回應 APDU。 請注意，終端機可能想要在同一個輕觸期間，與數種不同的應用程式進行通訊。 因此，您必須確定應用程式的背景工作會在停用時儘快結束，以便為另一個應用程式的背景工作產生更多空間來回應 APDU。 我們將在本主題稍後討論背景工作。
+當使用者點選他們的 Windows 10 行動裝置版裝置的終端機時，則資料會自動路由傳送至裝置上安裝適當的應用程式中。 這個路由是以小程式識別碼 (AID) 為根據，這類識別碼是 5-16 位元組的識別碼 。 輕觸期間，外部終端機將傳輸 SELECT 命令 APDU 來指定 AID，它就像所有後續要路由傳送的 APDU 命令一樣。 後續的 SELECT 命令將再次變更路由。 根據應用程式登錄的 AID 和使用者設定，會將 APDU 流量路由傳送到特定的應用程式，這將會傳送回應 APDU。 請注意，終端機可能想要在同一個輕觸期間，與數種不同的應用程式進行通訊。 因此，您必須確定應用程式的背景工作會在停用時儘快結束，以便為另一個應用程式的背景工作產生更多空間來回應 APDU。 我們將在本主題稍後討論背景工作。
 
 HCE 應用程式必須利用它們可處理的特殊 AID 來登錄自己，讓它們能夠接收 AID的 APDU。 應用程式會使用 AID 群組來宣告 AID。 AID 群組在概念上相當於個別的實體卡。 例如，某一張信用卡是使用一個 AID 群組來宣告，而第二張來自其他銀行的信用卡則是利用不同的第二個 AUD 群組來宣告，儘管這兩張信用卡具備同一個 AID 也一樣。
 
@@ -70,9 +70,9 @@ HCE 應用程式必須利用它們可處理的特殊 AID 來登錄自己，讓�
 
 您的應用程式可以使用與付款 AID 群組的相同方式，來建立、登錄並啟用非付款 AID 群組。 主要差異在於非付款 AID 群組已將模擬類別設定為 [其他] 而不是 [付款]。 向系統登錄 AID 群組之後，您需要啟用 AID 群組來接收 NFC 流量。 當您嘗試啟用非付款 AID 群組來接收流量時，除非與其他應用程式已經登錄於系統中的其中一個 AID 發生衝突，否則系統不會提示使用者進行確認。 如果發生衝突，若使用者選擇啟用最新登錄的 AID 群組，系統將提示使用者關於哪一張卡片及其相關聯應用程式即將停用的相關資訊。
 
-**和以 SIM 卡為基礎的 NFC 應用程式共存**
+**SIM 與共存架構 NFC 應用程式**
 
-在 windows 10 行動裝置版中，系統會設定 NFC 控制器路由表，用來在控制器層級進行路由決策。 此表格包含下列項目的路由資訊。
+在 Windows 10 行動裝置，系統會設定 NFC 控制器路由表，用來在控制器層級進行路由決策。 此表格包含下列項目的路由資訊。
 
 -   個別的 AID 路由。
 -   以通訊協定為基礎的路由 (ISO-DEP)。
@@ -80,9 +80,9 @@ HCE 應用程式必須利用它們可處理的特殊 AID 來登錄自己，讓�
 
 當外部讀卡機傳送「SELECT AID」命令時，NFC 控制器會先檢查路由表中的 AID 路由來尋找相符項目。 如果沒有相符項目，將使用以通訊協定為基礎的路由做為 ISO-DEP (14443-4-A) 流量的預設路由。 對於任何其他非 ISO-DEP 流量，將使用以技術基礎的路由。
 
-Windows 10 行動裝置版提供功能表選項，[SIM 卡] 在 [NFC 設定] 頁面中以繼續使用舊版 Windows Phone 8.1 sim 卡為基礎的應用程式，這不會向系統登錄它們的 Aid。 如果使用者選取 [SIM 卡] 做為預設付款卡，則 ISO-DEP 路由會設定為 UICC，針對下拉式功能表中的所有其他選取項目，ISO-DEP 路由會指向到主機。
+Windows 10 行動裝置提供的功能表選項"SIM 卡"NFC 設定 頁面中繼續使用舊版 Windows Phone 8.1 sim 卡為基礎的應用程式，請勿向系統註冊其輔助工具。 如果使用者選取 [SIM 卡] 做為預設付款卡，則 ISO-DEP 路由會設定為 UICC，針對下拉式功能表中的所有其他選取項目，ISO-DEP 路由會指向到主機。
 
-ISO-DEP 路由設為 [SIM 卡] 的裝置會針對已啟用 SE SIM 卡時裝置開機第一次使用 windows 10 行動裝置版。 當使用者安裝已啟用 HCE 的應用程式，且該應用程式會啟用任何 HCE AID 群組登錄時，ISO-DEP 路由將會指向主機。 以 SIM卡為基礎的新應用程式需針對要在控制器路由表中填入的特定 AID 路由，在 SIM 卡中依序登錄 AID。
+ISO DEP 路由設定為"SIM 卡 」 的裝置，有 SE SIM 卡時啟用 Windows 10 行動裝置版與第一次開機裝置。 當使用者安裝已啟用 HCE 的應用程式，且該應用程式會啟用任何 HCE AID 群組登錄時，ISO-DEP 路由將會指向主機。 以 SIM卡為基礎的新應用程式需針對要在控制器路由表中填入的特定 AID 路由，在 SIM 卡中依序登錄 AID。
 
 ## <a name="creating-an-hce-based-app"></a>建立以 HCE 為基礎的應用程式
 
@@ -263,7 +263,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 
 您可以查詢應用程式已向作業系統登錄的 AID 群組，並使用 [**GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) 方法來檢查它們的啟用原則。
 
-當您將付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時，唯有在您的應用程式不是預設付款應用程式的情況下，使用者才會收到提示。 如果發生 AID 衝突，使用者將會在您將非付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時收到提示。
+當您將付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時，唯有在您的 app 不是預設付款 app 的情況下，使用者才會收到提示。 如果發生 AID 衝突，使用者將會在您將非付款卡的啟用原則從 **Disabled** 變更為 **Enabled** 時收到提示。
 
 ```csharp
 var registrations = await SmartCardEmulator.GetAppletIdGroupRegistrationsAsync();
@@ -273,7 +273,7 @@ registration.RequestActivationPolicyChangeAsync (AppletIdGroupActivationPolicy.E
     }
 ```
 
-**啟用原則變更時的事件通知**
+**啟用原則變更時，會產生事件通知。**
 
 在您的背景工作中，您可以登錄以在其中一個 AID 登錄的啟用原則在應用程式外部發生變更時接收到相關事件。 例如，使用者可能透過 NFC 設定功能表來變更預設付款應用程式，從您的某一張卡片變更為其他應用程式裝載的另一張卡片。 如果您的應用程式需要了解這個對於內部設定的變更 (例如更新動態磚)，您可以接收關於此變更的事件通知，並在應用程式中據以採取動作。
 
@@ -287,7 +287,7 @@ bgTask = taskBuilder.Register();
 
 ## <a name="foreground-override-behavior"></a>前景覆寫行為
 
-您可以在您的應用程式仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 變更為 **ForegroundOverride**，而使用者將不會收到提示。 當使用者在您的應用程式仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的應用程式。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的應用程式離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景應用程式中變更付款或非付款卡的 **ActivationPolicy**，如下所示。 請注意，[**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法只能從前景應用程式呼叫，無法從背景工作呼叫。
+您可以在您的 app 仍在前景中執行時，將任一個 AID 群組登錄的 [**ActivationPolicy**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 變更為 **ForegroundOverride**，而使用者將不會收到提示。 當使用者在您的應用程式仍於前景中執行時，使用他們的裝置輕觸終端機時，即使該使用者未選取您的任何一張付款卡做為預設付款卡，仍會將流量路由傳送到您的應用程式。 當您將卡片的啟用原則變更為 **ForegroundOverride** 時，這個變更只會短暫存在，直到您的 app 離開前景為止，而且它將不會變更使用者目前設定的預設付款卡。 您可以從前景 app 中變更付款或非付款卡的 **ActivationPolicy**，如下所示。 請注意，[**RequestActivationPolicyChangeAsync**](https://docs.microsoft.com/en-us/uwp/api/windows.devices.smartcards.smartcardappletidgroupregistration) 方法只能從前景應用程式呼叫，無法從背景工作呼叫。
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
@@ -312,7 +312,7 @@ reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundO
 
 您的應用程式應該檢查裝置是否具備 NFC 硬體、支援卡片模擬功能，以及支援主機卡模擬，然後再將這類功能提供給使用者。
 
-NFC 智慧卡模擬功能只能啟用 windows 10 行動裝置版，因此，嘗試使用智慧卡模擬器 Api 在 windows 10 的任何其他版本上，將會導致錯誤。 您可以在下列程式碼片段中查看智慧卡 API 支援。
+NFC 智慧卡模擬功能，才會啟用 Windows 10 行動裝置，因此嘗試使用智慧卡模擬器 Api 中任何其他版本的 Windows 10 上，將會造成錯誤。 您可以在下列程式碼片段中查看智慧卡 API 支援。
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
@@ -324,7 +324,7 @@ Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartC
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-只有在目前啟動的裝置上 (例如，Lumia 730、830、640 及 640 XL) 才支援以 HCE 和 AID 為基礎的 UICC 路由。 任何新 NFC 能夠執行 windows 10 行動裝置和應該支援 HCE。 您的應用程式可以檢查是否有 HCE 支援，如下所示。
+只有在目前啟動的裝置上 (例如，Lumia 730、830、640 及 640 XL) 才支援以 HCE 和 AID 為基礎的 UICC 路由。 任何新 NFC 能夠執行 Windows 10 行動裝置和之後應該支援 HCE。 您的應用程式可以檢查是否有 HCE 支援，如下所示。
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
@@ -332,7 +332,7 @@ Smartcardemulator.IsHostCardEmulationSupported();
 
 ## <a name="lock-screen-and-screen-off-behavior"></a>鎖定畫面和螢幕關閉行為
 
-Windows 10 行動裝置版具有裝置層級的卡片模擬設定，可設定的行動電信業者或裝置的製造商。 除非 MO 或 OEM 覆寫這些值，否則預設會停用 [輕觸支付] 切換，並將 [裝置層級的啟用原則] 設定為 [自動]。
+Windows 10 行動裝置都有裝置層級卡模擬設定，可以設定行動電話業者或裝置製造商。 除非 MO 或 OEM 覆寫這些值，否則預設會停用 [輕觸支付] 切換，並將 [裝置層級的啟用原則] 設定為 [自動]。
 
 您的應用程式可以在裝置層級上查詢 [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) 的值，並根據應用程式在每個狀態中所需的行為，針對每個案例採取動作。
 
@@ -382,4 +382,4 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-<b>重要</b>在 Windows Phone 8.1 的舊版二進位 SMS 攔截支援已移除並取代為新的範圍更廣 SMS 支援在 windows 10 行動裝置版，但任何依賴該的舊版 Windows Phone 8.1 app 必須更新，以使用新的 windows 10 行動裝置版 SMSApi。
+<b>重要</b>  已移除的舊版二進位 SMS 截距，支援 Windows Phone 8.1，並取代為新的更廣泛 SMS 支援，在 Windows 10 行動裝置，但信賴憑證者上，任何舊版的 Windows Phone 8.1 應用程式必須更新以使用新Windows 10 行動裝置的 SMS Api。

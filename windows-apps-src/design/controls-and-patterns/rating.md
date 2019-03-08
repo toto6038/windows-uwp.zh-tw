@@ -4,24 +4,24 @@ title: 評分控制項
 template: detail.hbs
 ms.date: 10/25/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: abarlow
 design-contact: kimsea
 dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c5736e917d77415eeb6df53b3fd92f7ab584884
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9036900"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644923"
 ---
 # <a name="rating-control"></a>評分控制項
 
 評分控制項可讓使用者檢視並設定反映其對內容與服務滿意度的評分。 使用者可以使用觸控、手寫筆、滑鼠、遊戲台或鍵盤，與評分控制項互動。 下列指導方針示範如何使用評分控制項的功能來提供彈性和自訂。
 
-> **重要 API**：[RatingControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> **重要的 Api**:[RatingControl 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
 
 ![評分控制項範例](images/rating_rs2_doc_ratings_intro.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "9036900"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/RatingControl">開啟應用程式並查看 RatingControl 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -97,4 +97,4 @@ private void RatingChanged(RatingControl sender, object args)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery)：以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。

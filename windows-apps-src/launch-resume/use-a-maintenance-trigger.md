@@ -11,15 +11,15 @@ dev_langs:
 - cppwinrt
 - cpp
 ms.openlocfilehash: 53107ca6add4193737ab0d00497bbe6324bee44f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047007"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661853"
 ---
 # <a name="use-a-maintenance-trigger"></a>使用維護觸發程序
 
-**重要 API**
+**重要的 Api**
 
 - [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)
 - [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
@@ -36,9 +36,9 @@ ms.locfileid: "9047007"
 建立新的 [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) 物件。 第二個參數 *OneShot* 會指定維護工作將只執行一次，還是要繼續定期執行。 如果 *OneShot* 設定成 True，第一個參數 (*FreshnessTime*) 會指定排定背景工作之前要等待的時間 (以分鐘為單位)。 如果 *OneShot* 設定成 False，則 *FreshnessTime* 會指定背景工作的執行頻率。
 
 > [!NOTE]
-> 如果*FreshnessTime*設定為少於 15 分鐘，嘗試登錄背景工作時，會擲回例外狀況。
+> 如果*FreshnessTime*設定為小於 15 分鐘內，嘗試註冊背景工作時，會擲回例外狀況。
 
-這個範例程式碼會建立每小時一次執行的觸發程序。
+此程式碼範例會建立一次每小時執行的觸發程序。
 
 ```csharp
 uint waitIntervalMinutes = 60;
@@ -108,25 +108,25 @@ BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName,
 > 針對桌上型電腦以外的所有裝置系列，如果裝置的記憶體變成不足，背景工作可能就會終止。 如果沒有顯示記憶體不足的例外狀況，或是應用程式沒有處理該狀況，背景工作將會在沒有警告也沒有引發 OnCanceled 事件的情況下終止。 這有助於確保前景應用程式的使用者體驗。 您的背景工作應該要設計成能夠處理這種情況。
 
 > [!NOTE]
-> 通用 Windows 平台應用程式必須呼叫[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) ，才能登錄任何背景觸發程序類型。
+> 通用 Windows 平台應用程式必須呼叫[ **RequestAccessAsync** ](https://msdn.microsoft.com/library/windows/apps/hh700485)之前註冊的任何背景觸發程序類型。
 
 為了確保您的通用 Windows 應用程式在您對應用程式發行更新之後繼續正常執行，您必須呼叫 [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)，然後在應用程式於更新後啟動時呼叫 [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485)。 如需詳細資訊，請參閱[背景工作的指導方針](guidelines-for-background-tasks.md)。
 
 > [!NOTE]
-> 背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
+> 背景工作登錄參數都是在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 
 ## <a name="related-topics"></a>相關主題
 
 * [建立及註冊同處理序序背景工作](create-and-register-an-inproc-background-task.md)。
-* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
+* [宣告應用程式資訊清單中的背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [登錄背景工作](register-a-background-task.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
+* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+* [註冊背景工作](register-a-background-task.md)
+* [回應系統事件與背景工作](respond-to-system-events-with-background-tasks.md)
+* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [更新即時磚的背景工作](update-a-live-tile-from-a-background-task.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)

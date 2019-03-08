@@ -1,5 +1,5 @@
 ---
-Description: Discover the different options desktop Win32 apps have for sending toast notifications
+Description: 探索不同的選項傳送快顯通知的桌面的 Win32 應用程式
 title: 傳統型應用程式的快顯通知
 label: Toast notifications from desktop apps
 template: detail.hbs
@@ -8,13 +8,13 @@ ms.topic: article
 keywords: windows 10, uwp, win32, desktop, toast notifications, desktop bridge, options for sending toasts, com server, com activator, com, fake com, no com, without com, send toast, 桌面, 快顯通知, 傳統型橋接器, 傳送快顯通知的選項, com 伺服器, com 啟動器, 假 com, 無 com, 沒有 com, 傳送快顯通知
 ms.localizationpriority: medium
 ms.openlocfilehash: bab89962bdc7986f7653e39c7e5967a493421f05
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933879"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636083"
 ---
-# <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知:
+# <a name="toast-notifications-from-desktop-apps"></a>傳統型應用程式的快顯通知
 
 傳統型應用程式 (傳統型橋接器和傳統的 Win32) 可以像通用 Windows 平台 (UWP) App 一樣傳送互動式快顯通知。 不過，傳統型應用程式有幾個不同選項，因為不同的啟用配置。
 
@@ -30,8 +30,8 @@ ms.locfileid: "8933879"
 
 | 選項 | 視覺效果 | 動作 | 輸入 | 在處理程序中啟用 |
 | -- | -- | -- | -- | -- |
-| [COM 啟動器](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
-| [No COM / Stub CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
+| [COM 啟動程式](#preferred-option---com-activator) | ✔️ | ✔️ | ✔️ | ✔️ |
+| [沒有 COM / 虛設常式的 CLSID](#alternative-option---no-com--stub-clsid) | ✔️ | ✔️ | ❌ | ❌ |
 
 
 ## <a name="preferred-option---com-activator"></a>偏好的選項 - COM 啟動器
@@ -81,6 +81,6 @@ ms.locfileid: "8933879"
 
 ## <a name="resources"></a>資源
 
-* [從傳統型 C# 應用程式傳送本機快顯通知](send-local-toast-desktop.md)
-* [從傳統型 C++ WRL 應用程式傳送本機快顯通知](send-local-toast-desktop-cpp-wrl.md)
-* [快顯通知內容文件](adaptive-interactive-toasts.md)
+* [從桌面傳送本機的快顯通知C#應用程式](send-local-toast-desktop.md)
+* [從桌面 c + + WRL 應用程式傳送本機的快顯通知](send-local-toast-desktop-cpp-wrl.md)
+* [快顯通知內容的文件](adaptive-interactive-toasts.md)

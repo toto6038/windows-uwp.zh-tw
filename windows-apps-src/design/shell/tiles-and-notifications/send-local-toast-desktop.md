@@ -1,19 +1,19 @@
 ---
-Description: Learn how Win32 C# apps can send local toast notifications and handle the user clicking the toast.
+Description: 了解如何 Win32C#應用程式可以傳送本機的快顯通知，並處理使用者按一下快顯通知。
 title: 從傳統型 C# 應用程式傳送本機快顯通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local toast notification from desktop C# apps
 template: detail.hbs
 ms.date: 01/23/2018
 ms.topic: article
-keywords: windows 10，uwp，win32，傳統型，快顯通知，傳送快顯通知，傳送本機快顯通知，傳統型橋接器，C#、 c 銳利，快顯通知，wpf
+keywords: windows 10、 uwp、 win32、 桌面、 快顯通知，傳送快顯通知傳送本機快顯通知，桌面橋接器， C#、 c 尖銳，快顯通知，wpf
 ms.localizationpriority: medium
 ms.openlocfilehash: 907ba19812c9a34a7a91f42fefac4c190bfd394b
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058699"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648873"
 ---
 # <a name="send-a-local-toast-notification-from-desktop-c-apps"></a>從傳統型 C# 應用程式傳送本機快顯通知
 
@@ -49,7 +49,7 @@ ms.locfileid: "9058699"
 ![重新載入專案](images/win32-reload-project.png)
 
 
-## <a name="step-2-reference-the-apis"></a>步驟 2：參考 API
+## <a name="step-2-reference-the-apis"></a>步驟 2：Api 參考
 
 開啟 \[參考管理員\] (在專案上按一下滑鼠右鍵，選取 **\[新增 -> 參考\]**)，然後選取 **\[Windows -> 核心\]** 並加入下列參考：
 
@@ -59,14 +59,14 @@ ms.locfileid: "9058699"
 ![參考管理員](images/win32-add-windows-reference.png)
 
 
-## <a name="step-3-copy-compat-library-code"></a>步驟 3：複製 Compat 程式庫程式碼
+## <a name="step-3-copy-compat-library-code"></a>步驟 3：複製 相容性程式庫程式碼
 
 [從 GitHub 複製 DesktopNotificationManagerCompat.cs 檔案](https://raw.githubusercontent.com/WindowsNotifications/desktop-toasts/master/CS/DesktopToastsApp/DesktopNotificationManagerCompat.cs)到您的專案。 Compat 程式庫消除了桌面通知的許多複雜性。 下列指令需要 Compat 程式庫。
 
 
-## <a name="step-4-implement-the-activator"></a>步驟 4：實作啟動者
+## <a name="step-4-implement-the-activator"></a>步驟 4：實作啟動程式
 
-您必須實作快顯通知啟用的處理常式，以便當使用者按下快顯通知，您的應用程式可以執行某個動作。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
+因此，當使用者按一下您的快顯通知，您的應用程式可以執行的項目，您必須實作快顯通知啟動的處理常式。 您的快顯通知若要保留在控制中心 (因為可能在您的應用程式關閉幾天時，使用者才按下快顯通知)，此為必要步驟。 這個類別可以放在專案的任何位置。
 
 延伸 **NotificationActivator** 類別然後新增下列三個屬性，並使用眾多線上 GUID 產生器的其中一個，為您的應用程式建立唯一 GUID CLSID。 此 CLSID (類別識別碼) 是控制中心得知 COM 啟用哪個類別的方式。
 
@@ -85,7 +85,7 @@ public class MyNotificationActivator : NotificationActivator
 ```
 
 
-## <a name="step-5-register-with-notification-platform"></a>步驟 5：向通知平台註冊
+## <a name="step-5-register-with-notification-platform"></a>步驟 5：使用通知平台註冊
 
 接著，您必須向通知平台註冊。 根據您使用的是傳統型橋接器或傳統型 Win32，步驟會有所不同。 如果兩者都支援，您必須完成兩個步驟 (但不需要分支程式碼，我們的程式庫會為您處理！)。
 
@@ -141,7 +141,7 @@ public class MyNotificationActivator : NotificationActivator
 
 選擇可識別您的 Win32 應用程式的唯一 AUMID。 這通常是 [CompanyName].[AppName] 的形式，但您應確保這在所有應用程式中都是唯一的 (可以在結尾處加上幾個數字)。
 
-#### <a name="step-51-wix-installer"></a>步驟 5.1：WiX 安裝程式
+#### <a name="step-51-wix-installer"></a>步驟 5.1:WiX 安裝程式
 
 如果您為安裝程式使用 WiX，請編輯 **Product.wxs** 檔案以新增兩個捷徑內容到您的 [開始] 功能表捷徑，如下所示。 請務必將步驟 #4 的 GUID 以`{}` 括住，如下所示。
 
@@ -163,7 +163,7 @@ public class MyNotificationActivator : NotificationActivator
 > 為了確實使用通知，在正常偵錯前，您必須透過安裝程式安裝一次您的應用程式，以便顯示包含您的 AUMID 與 CLSID 的 [開始] 畫面捷徑。 [開始] 畫面捷徑出現後，您可以使用 Visual Studio 的 F5 來偵錯。
 
 
-#### <a name="step-52-register-aumid-and-com-server"></a>步驟 5.2：註冊 AUMID 和 COM 伺服器
+#### <a name="step-52-register-aumid-and-com-server"></a>步驟 5.2:註冊 AUMID 和 COM 伺服器
 
 接著，無論安裝程式為何，在您應用程式的啟動程式碼中 (在呼叫任何通知 API 之前)，呼叫 **RegisterAumidAndComServer** 方法，指定步驟 #4 中的通知啟動者類別和上面使用的 AUMID。
 
@@ -177,7 +177,7 @@ DesktopNotificationManagerCompat.RegisterAumidAndComServer<MyNotificationActivat
 這個方法可讓您呼叫 Compat API 來傳送和管理通知，而不需要持續提供 AUMID。 它會插入 COM 伺服器的 LocalServer32 登錄機碼。
 
 
-## <a name="step-6-register-com-activator"></a>步驟 6： 註冊 COM 啟動者
+## <a name="step-6-register-com-activator"></a>步驟 6：註冊 COM 啟動程式
 
 對於傳統型橋接器和傳統型 Win32 應用程式，都必須註冊通知啟動者類型，以便處理快顯通知啟用。
 
@@ -371,7 +371,7 @@ protected override async void OnStartup(StartupEventArgs e)
 對於傳統型應用程式，前景與背景啟用的處理方式相同 - 都會呼叫 COM 啟動者。 接著將由您應用程式的程式碼決定是否顯示視窗，或僅執行一些工作然後就結束。 因此，在快顯通知內容中指定 **Background** 的 **ActivationType** 並不會變更行為。
 
 
-## <a name="step-9-remove-and-manage-notifications"></a>步驟 9：移除和管理通知
+## <a name="step-9-remove-and-manage-notifications"></a>步驟 9：移除及管理通知
 
 移除和管理通知與 UWP app 相同。 不過，我們建議您使用我們的 Compat 程式庫來取得 **DesktopNotificationHistoryCompat**，使用傳統型 Win32 時就無需擔心提供 AUMID。
 
@@ -399,12 +399,12 @@ DesktopNotificationManagerCompat.History.Clear();
 
 ## <a name="known-issues"></a>已知問題
 
-**已修正：按一下快顯通知之後應用程式不會成為焦點**：在組建 15063 與更早版本中，當我們啟用 COM 伺服器時前景權限無法傳輸至您的應用程式。 因此，當您嘗試將它移動到前景時，您的應用程式只會閃爍。 此問題沒有解決方法。 我們在組建 16299 與更高版本中已修正這個問題。
+**已修正：按一下快顯通知後，應用程式不成為焦點**:在組建 15063 及更早版本中，前景權限未傳輸您的應用程式時，我們已啟用的 COM 伺服器。 因此，當您嘗試將它移動到前景時，您的應用程式只會閃爍。 此問題沒有解決方法。 我們在組建 16299 與更高版本中已修正這個問題。
 
 
 ## <a name="resources"></a>資源
 
-* [GitHub 上的完整程式碼](https://github.com/WindowsNotifications/desktop-toasts)
-* [傳統型應用程式的快顯通知:](toast-desktop-apps.md)
-* [快顯通知內容文件](adaptive-interactive-toasts.md)
+* [在 GitHub 上的完整程式碼範例](https://github.com/WindowsNotifications/desktop-toasts)
+* [從桌面應用程式的快顯通知](toast-desktop-apps.md)
+* [快顯通知內容的文件](adaptive-interactive-toasts.md)
 

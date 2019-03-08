@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d1907be029254d99be9e6158c93c179baea1fb0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947930"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641083"
 ---
 # <a name="introduction-to-rasterization-rules"></a>點陣化規則簡介
 
@@ -59,7 +59,7 @@ Direct3D 針對填充幾何使用左上角填充慣例。 這是針對 GDI 和 O
 
 非平滑化行轉譯規則確實和是[GDI 行](https://msdn.microsoft.com/library/windows/desktop/dd145027)一樣。
 
-## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>點精靈規則
+## <a name="span-idpointspriterulesspanspan-idpointspriterulesspanspan-idpointspriterulesspanpoint-sprite-rules"></a><span id="Point_Sprite_Rules"></span><span id="point_sprite_rules"></span><span id="POINT_SPRITE_RULES"></span>點 Sprite 規則
 
 
 點精靈和修補程式的基本類型，就好像基本類型第一次鑲嵌至三角形，而結果三角形點陣被點陣化。

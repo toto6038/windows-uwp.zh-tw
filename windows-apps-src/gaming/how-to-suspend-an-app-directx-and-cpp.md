@@ -1,17 +1,17 @@
 ---
 title: 如何暫停 app (DirectX 和 C++)
-description: 這個主題示範如何在系統暫停通用 Windows 平台 (UWP) DirectX 應用程式時，儲存重要的系統狀態與應用程式資料。
+description: 這個主題示範如何在系統暫停通用 Windows 平台 (UWP) DirectX app 時，儲存重要的系統狀態與 app 資料。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 暫停, DirectX
 ms.localizationpriority: medium
 ms.openlocfilehash: 0b588d6bf6e7cbf43651d94a7fd46e9a767c6f09
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945710"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656033"
 ---
 # <a name="how-to-suspend-an-app-directx-and-c"></a>如何暫停 app (DirectX 和 C++)
 
@@ -97,7 +97,7 @@ void App::Run()
 ## <a name="call-trim"></a>呼叫 Trim()
 
 
-從 Windows8.1 開始，所有 DirectX UWP 應用程式必須都呼叫[**idxgidevice3:: Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346)時暫停。 這個呼叫會通知圖形驅動程式釋放為應用程式配置的所有暫存緩衝區，當應用程式處於暫停狀態時，這樣做可減少為回收記憶體資源而導致應用程式被終止的機會。 這是 Windows8.1 的認證需求。
+從 Windows 8.1，所有的 DirectX UWP 應用程式必須呼叫[ **IDXGIDevice3::Trim** ](https://msdn.microsoft.com/library/windows/desktop/dn280346)時暫停。 這個呼叫會通知圖形驅動程式釋放為應用程式配置的所有暫存緩衝區，當應用程式處於暫停狀態時，這樣做可減少為回收記憶體資源而導致應用程式被終止的機會。 這是 Windows 8.1 的憑證需求。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -145,8 +145,8 @@ void DX::DeviceResources::Trim()
 
 ## <a name="related-topics"></a>相關主題
 
-* [如何繼續 app (DirectX 和 C++)](how-to-resume-an-app-directx-and-cpp.md)
-* [如何啟用 app (DirectX 和 C++)](how-to-activate-an-app-directx-and-cpp.md)
+* [如何繼續應用程式 （DirectX 和 c + +）](how-to-resume-an-app-directx-and-cpp.md)
+* [如何啟用應用程式 （DirectX 和 c + +）](how-to-activate-an-app-directx-and-cpp.md)
 
  
 

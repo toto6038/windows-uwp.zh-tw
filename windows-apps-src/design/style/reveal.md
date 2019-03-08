@@ -1,6 +1,6 @@
 ---
 description: 顯色是一種光源效果，有助於讓應用程式的互動元素更具深度感並吸引注意力。
-title: 顯色醒目提示
+title: 顯示反白顯示
 template: detail.hbs
 ms.date: 08/09/2017
 ms.topic: article
@@ -11,22 +11,22 @@ dev-contact: jevansa
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: aeba4dbd734ea4b521033726968e90c232c154cb
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116400"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57628663"
 ---
-# <a name="reveal-highlight"></a>顯色醒目提示
+# <a name="reveal-highlight"></a>顯示反白顯示
 
 ![主角圖像](images/header-reveal-highlight.svg)
 
-顯色醒目提示是一種光源效果，互動式元素，例如命令列，反白顯示，當使用者移動指標靠近它們。 
+顯示反白顯示是互動式的項目，例如命令列，反白顯示，當使用者將滑鼠指標靠近其光源效果。 
 
-> **重要的 API**：[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)、[RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)、[RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)、[RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)、[VisualState 類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
+> **重要的 Api**:[RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)， [RevealBackgroundBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbackgroundbrush)， [RevealBorderBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealborderbrush)， [RevealBrushHelper 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrushhelper)， [VisualState類別](https://docs.microsoft.com/en-us/uwp/api/Windows.UI.Xaml.VisualState)
 
 ## <a name="how-it-works"></a>運作方式
-顯色醒目提示引起互動式元素藉由顯示某元素的容器，當在游標位於附近，這個圖例所示：
+顯示反白顯示呼叫注意給互動項目所顯示的項目容器，當指標位於附近下, 圖所示：
 
 ![顯色視覺效果](images/Nav_Reveal_Animation.gif)
 
@@ -41,7 +41,7 @@ ms.locfileid: "9116400"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下此處以<a href="xamlcontrolsgallery:/item/Reveal">開啟應用程式並查看顯色效果運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -54,7 +54,7 @@ ms.locfileid: "9116400"
 
 ## <a name="how-to-use-it"></a>如何使用
 
-顯色會自動在一些控制項上運作。 至於其他控制項，您可以藉由指派特殊樣式給控制項，啟用顯色，如本文的[其他控制項上啟用顯色](#enabling-reveal-on-other-controls)和[自訂控制項上啟用顯色](#enabling-reveal-on-custom-controls)各節中所述。
+顯色會自動在一些控制項上運作。 對於其他控制項，您可以啟用顯示指派特殊的樣式至控制項，如中所述[啟用顯示其他控制項](#enabling-reveal-on-other-controls)並[啟用自訂控制項上顯示](#enabling-reveal-on-custom-controls)這個區段發行項。
 
 ## <a name="controls-that-automatically-use-reveal"></a>自動使用顯色的控制項
 
@@ -65,7 +65,7 @@ ms.locfileid: "9116400"
 - [**MediaTransportControl**](../controls-and-patterns/media-playback.md)
 - [**CommandBar**](../controls-and-patterns/app-bars.md)
 
-這些插圖說明顯色醒目提示上顯示數個不同的控制項：
+這些圖例顯示數個不同的控制項顯示反白顯示：
 
 ![顯色範例](images/RevealExamples_Collage.png)
 
@@ -76,9 +76,9 @@ ms.locfileid: "9116400"
 
 這些控制項預設沒有顯色，因為它們是較小的控制項，且通常是您應用程式主要焦點的協助程式控制項；但每個應用程式都不相同，如果在您的應用程式中最常使用這些控制項，我們已提供一些樣式加以協助：
 
-| 控制項名稱   | 資源名稱 |
+| 控制項名稱   | Resource Name |
 |----------|:-------------:|
-| Button |  ButtonRevealStyle |
+| 按鈕 |  ButtonRevealStyle |
 | ToggleButton | ToggleButtonRevealStyle |
 | RepeatButton | RepeatButtonRevealStyle |
 | AppBarButton | AppBarButtonRevealStyle |
@@ -113,7 +113,7 @@ ms.locfileid: "9116400"
 
 ## <a name="enabling-reveal-on-custom-controls"></a>在自訂控制項上啟用顯色
 
-您可以將顯色新增至自訂控制項。 進行之前，會有幫助更了解顯色效果運作方式。 顯色由兩個不同的效果所組成︰**\[顯色框線\]** 和 **\[顯色暫留\]**。
+您可以將顯色新增至自訂控制項。 這麼做之前，最好稍微了解的顯示效果的運作方式。 顯示組成兩個不同的效果：**顯示框線**並**顯示暫留**。
 
 - **\[框線\]** 會在指標靠近時顯示互動式元素的框線。 這個效果會告訴您這些附近的物件可以採取類似於目前焦點所在物件的動作。
 - **\[暫留\]** 會在暫留或焦點所在項目周圍套用柔和的光暈形狀，並在按一下時播放按下動畫。 
@@ -130,8 +130,8 @@ ms.locfileid: "9116400"
 
 
 這些效果是由兩個筆刷定義： 
-* 邊框顯色**RevealBorderBrush**所定義
-* 暫留顯色是由**RevealBackgroundBrush**定義
+* 框線顯示由定義**RevealBorderBrush**
+* 暫留時顯示由定義**RevealBackgroundBrush**
 
 ```xaml
 <RevealBorderBrush x:Key="MyRevealBorderBrush" TargetTheme="Light" Color="{ThemeResource SystemAccentColor}" FallbackColor="{ThemeResource SystemAccentColor}"/>
@@ -255,14 +255,14 @@ ms.locfileid: "9116400"
 
 ### <a name="fine-tuning-the-reveal-effect-on-a-custom-control"></a>微調自訂控制項上的顯色效果 
 
-當您在自訂或重新樣板化控制項或自訂命令介面上啟用顯色時，下列提示可以協助您將效果最佳化：
+當您啟用顯示的自訂或 re 樣板化控制項或自訂的命令介面上時，這些提示可協助您最佳化效果：
  
-* 在高度或寬度大小不一致的相鄰項目 (特別是在清單中)：移除框線接近行為，僅保留暫留時所顯示的框線。
-* 經常切換進出停用狀態的命令項目：將框線趨近筆刷放置在元素的背板及框線以突顯其狀態。
-* 靠近到會彼此接觸的相鄰命令元素：在兩個元素之間加入 1px 的邊界。 
+* 在相鄰的項目大小的不一致的高度或寬度 （特別是在清單中）：移除框線方法行為，並保留已顯示只有暫留時的框線。
+* 命令的項目，經常移入和登出停用狀態的：地方上的項目 backplates，以及其框線的框線方法筆刷來強調其狀態。
+* 針對相鄰命令項目非常接近其碰觸到：加入 1px 邊界之間的兩個元素。 
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
-### <a name="do"></a>請執行：
+### <a name="do"></a>執行動作：
 - 要在使用者可以執行許多動作的元素 (命令列、瀏覽功能表) 上使用顯色
 - 要在預設沒有視覺分隔線的互動式元素群組 (清單、功能區) 中使用顯色
 - 要在互動式元素密集度高的區域 (命令功能案例) 中使用顯色
@@ -287,8 +287,8 @@ ms.locfileid: "9116400"
 ## <a name="related-articles"></a>相關文章
 
 - [RevealBrush 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.revealbrush)
-- [壓克力](acrylic.md)
-- [組合效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
-- [適用於 UWP 的 Fluent Design](../fluent-design-system/index.md)
-- [系統中的科學：Fluent Design 和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
-- [系統中的科學：Fluent Design 和光源](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)
+- [Acrylic](acrylic.md)
+- [撰寫效果](https://msdn.microsoft.com/windows/uwp/graphics/composition-effects)
+- [適用於 UWP 的 Fluent 設計](../fluent-design-system/index.md)
+- [在系統中的科學：Fluent 設計和深度](https://medium.com/microsoft-design/science-in-the-system-fluent-design-and-depth-fb6d0f23a53f)
+- [在系統中的科學：Fluent Design and 光線](https://medium.com/microsoft-design/the-science-in-the-system-fluent-design-and-light-94a17e0b3a4f)

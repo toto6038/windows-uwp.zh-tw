@@ -1,5 +1,5 @@
 ---
-Description: This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.
+Description: 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。
 title: 多語應用程式工具組常見問題集與疑難排解
 template: detail.hbs
 ms.date: 11/13/2017
@@ -7,13 +7,13 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: 2e27256fbf19ed31a7b087e94dea9e5514db516f
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050591"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648263"
 ---
-# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多語應用程式工具組 4.0 常見問題集與疑難排解
+# <a name="multilingual-app-toolkit-40-faq--troubleshooting"></a>多語應用程式工具組 4.0 常見問題與疑難排解
 
 本主題提供與多語應用程式工具組 (MAT) 4.0 相關的常見問題解答。
 
@@ -142,7 +142,7 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="what-if-my-translator-doesnt-have-windows-10-andor-visual-studio-andor-the-multilingual-app-toolkit-installed"></a>如果我的翻譯人員沒有安裝 Windows 10，和/或 Visual Studio 和/或多語應用程式工具組的話怎麼辦？
 
-當您在匯出字串資源對話方塊中選取 **\[輸出: 郵件收件者\]** 時，電子郵件會包含一個可讓對方下載並安裝多語應用程式工具組 (MAT) 4.0 的連結。 即使沒有 Windows 10 和 Visual Studio，您的翻譯人員仍然可以安裝 MAT 4.0 獨立多語編輯器工具。
+當您選取**輸出：郵件收件者**在匯出的字串資源 對話方塊中，此電子郵件包含下載和安裝多語系應用程式工具組 (MAT) 4.0 的連結。 即使沒有 Windows 10 和 Visual Studio，您的翻譯人員仍然可以安裝 MAT 4.0 獨立多語編輯器工具。
 
 如需詳細資料，請參閱[使用多語應用程式工具組 4.0](use-mat.md)。
 
@@ -177,6 +177,6 @@ msbuild /t:rebuild <project-name>
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用多語應用程式工具組 4.0](use-mat.md)
-* [Microsoft Translator ](https://go.microsoft.com/fwlink/p/?LinkId=258220)
+* [使用多國語言的應用程式工具組 4.0](use-mat.md)
+* [Microsoft Translator](https://go.microsoft.com/fwlink/p/?LinkId=258220)
 * [MakePri.exe 命令列選項](../../app-resources/makepri-exe-command-options.md)

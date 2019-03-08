@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 01a4bfc2ec4c1d442058dbb6009065541f93cc7f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921751"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57652493"
 ---
 # <a name="build-a-device-selector"></a>建置裝置選取器
 
 
 
-**重要 API**
+**重要的 Api**
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
@@ -34,9 +34,9 @@ ms.locfileid: "8921751"
 
 使用 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 時，您經常會將裝置選取器與您感興趣的裝置類型組合在一起。 裝置類型的可用清單是由 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 列舉所定義。 這個規格組合可協助您限制可供您感興趣之裝置使用的裝置。 如果未指定 **DeviceInformationKind**，或您使用的方法不提供 **DeviceInformationKind** 參數，則預設類型是 **DeviceInterface**。
 
-[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 會使用標準 AQS 語法，但未支援所有的運算子。 如需可在建構篩選字串時使用的屬性清單，請參閱[裝置資訊屬性](device-information-properties.md)。
+[  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 會使用標準 AQS 語法，但未支援所有的運算子。 如需可在建構篩選字串時使用的屬性清單，請參閱[裝置資訊屬性](device-information-properties.md)。
 
-**注意：** 使用定義的自訂屬性`{GUID} PID`建構 AQS 篩選字串時，無法使用的格式。 這是因為屬性類型是衍生自已知的屬性名稱。
+**請小心**  都使用定義的自訂屬性`{GUID} PID`建構您 AQS 篩選字串時，就無法使用的格式。 這是因為屬性類型是衍生自已知的屬性名稱。
 
  
 
@@ -50,19 +50,19 @@ ms.locfileid: "8921751"
 | **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
 | **COP\_LESSTHANOREQUAL**       | UInt16、UInt32                                                              |
 | **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
-| **COP\_VALUE\_CONTAINS**       | 字串、字串陣列、布林值陣列、GUID 陣列、UInt16 陣列、UInt32 陣列 |
-| **COP\_VALUE\_NOTCONTAINS**    | 字串、字串陣列、布林值陣列、GUID 陣列、UInt16 陣列、UInt32 陣列 |
+| **COP\_值\_CONTAINS**       | 字串、字串陣列、布林值陣列、GUID 陣列、UInt16 陣列、UInt32 陣列 |
+| **COP\_值\_NOTCONTAINS**    | 字串、字串陣列、布林值陣列、GUID 陣列、UInt16 陣列、UInt32 陣列 |
 | **COP\_VALUE\_STARTSWITH**     | 字串                                                                      |
-| **COP\_VALUE\_ENDSWITH**       | 字串                                                                      |
+| **COP\_值\_ENDSWITH**       | 字串                                                                      |
 | **COP\_DOSWILDCARDS**          | 不支援                                                               |
 | **COP\_WORD\_EQUAL**           | 不支援                                                               |
 | **COP\_WORD\_STARTSWITH**      | 不支援                                                               |
-| **COP\_APPLICATION\_SPECIFIC** | 不支援                                                               |
+| **COP\_應用程式\_特定** | 不支援                                                               |
 
 
-> **提示：** 您可以指定**NULL** **COP\_NOTEQUAL**或**COP\_EQUAL**。 這會轉譯為沒有值或值不存在的屬性。 在 AQS 中，您可以使用空的括號 \[\] 來指定 **NULL**。
+> **祕訣**  您可以指定**NULL** for **COP\_等於**或**COP\_NOTEQUAL**。 這會轉譯為沒有值或值不存在的屬性。 在 AQS，您可以指定**NULL**使用空括號\[ \]。
 
-> **重要**使用**COP\_VALUE\_CONTAINS**和**COP\_VALUE\_NOTCONTAINS**運算子時，他們有不同的行為字串和字串陣列。 如果是字串，系統會執行不區分大小寫的搜尋，以確認裝置是否包含做為子字串的指定字串。 如果是字串陣列，系統不會搜尋子字串。 在字串陣列中，系統會搜尋陣列以確認它是否包含整個指定字串。 您無法搜尋字串陣列來確認陣列中的元素是否包含子字串。
+> **重要**  使用時**COP\_值\_CONTAINS**並**COP\_值\_NOTCONTAINS**運算子它們的行為不同字串與字串陣列。 如果是字串，系統會執行不區分大小寫的搜尋，以確認裝置是否包含做為子字串的指定字串。 如果是字串陣列，系統不會搜尋子字串。 在字串陣列中，系統會搜尋陣列以確認它是否包含整個指定字串。 您無法搜尋字串陣列來確認陣列中的元素是否包含子字串。
 
 如果您無法建立單一 AQS 篩選字串以適當包含您的結果範圍，則可在收到結果之後進行篩選。 不過，如果您選擇這樣做，建議您在將初始 AQS 篩選字串提供給 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API 時，盡可能限制該字串所產生的結果。 這將有助於改善應用程式的效能。
 
@@ -70,38 +70,38 @@ ms.locfileid: "8921751"
 
 下列範例說明如何使用 AQS 語法來限制您要列舉的裝置。 所有的這些篩選字串都會與 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 配對，以建立完整篩選器。 如果未指定類型，請記住預設的類型是 **DeviceInterface**。
 
-當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含音訊擷取介面類別且目前已啟用的所有物件。 **=** 會轉譯為 **COP\_EQUALS**。
+當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含音訊擷取介面類別且目前已啟用的所有物件。 **=** 會轉譯成**COP\_等於**。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含至少一個 GenCdRom 硬體識別碼的所有物件。 **~~** 會轉譯為 **COP\_VALUE\_CONTAINS**。
+當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含至少一個 GenCdRom 硬體識別碼的所有物件。 **~~** 會轉譯成**COP\_值\_CONTAINS**。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-當這個篩選器與 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉型號名稱包含子字串 Microsoft 的所有物件。 **~~** 會轉譯為 **COP\_VALUE\_CONTAINS**。
+當這個篩選器與 **DeviceContainer** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉型號名稱包含子字串 Microsoft 的所有物件。 **~~** 會轉譯成**COP\_值\_CONTAINS**。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉名稱以子字串 Microsoft 開頭的所有物件。 **~&lt;** 會轉譯為 **COP\_STARTSWITH**。
+當這個篩選器與 **DeviceInterface** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉名稱以子字串 Microsoft 開頭的所有物件。 **~&lt;** 會轉譯成**COP\_STARTSWITH**。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含 **System.Devices.IpAddress** 屬性集的所有物件。 **&lt;&gt;\[\]** 會轉譯為結合了 **NULL** 值的 **COP\_NOTEQUALS**。
+當這個篩選器與 **Device** 的 [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉包含 **System.Devices.IpAddress** 屬性集的所有物件。 **&lt;&gt;\[\]** 會轉譯成**COP\_NOTEQUALS**結合**NULL**值。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-當這個篩選器與 **Device** 的[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉不包含 **System.Devices.IpAddress** 屬性集的所有物件。 **=\[\]** 會轉譯為結合了 **NULL** 值的 **COP\_EQUALS**。
+當這個篩選器與 **Device** 的[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 搭配時，它會列舉不包含 **System.Devices.IpAddress** 屬性集的所有物件。 **=\[\]** 會轉譯成**COP\_EQUALS**結合**NULL**值。
 
 ``` syntax
 System.Devices.IpAddress:=[]

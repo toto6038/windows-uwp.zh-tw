@@ -7,16 +7,16 @@ keywords: Windows 10, UWP
 ms.assetid: ff10bbc0-03a7-492c-b5fe-c5b9ce8ca32e
 ms.localizationpriority: medium
 ms.openlocfilehash: b1c8271c8066304dce355cf50afd4509173eed3e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046787"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653263"
 ---
 # <a name="bluetooth-le-advertisements"></a>藍牙 LE 廣告
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Devices.Bluetooth.Advertisement**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.aspx)
 
@@ -43,7 +43,7 @@ ms.locfileid: "9046787"
 
 藍牙 LE 廣告可讓您的裝置持續發出特定承載的指標 (稱為「廣告」)。 附近任何支援藍牙 LE 功能的裝置，如果有設定為接聽此特定廣告，就都能看見此廣告。
 
-> **注意**： 基於使用者隱私權，您的廣告的壽命繫結到該應用程式。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
+> **注意**：使用者隱私權，撰寫公告的存留時間會繫結至的應用程式。 您可以建立 BluetoothLEAdvertisementPublisher 並且針對在背景的廣告於背景作業中呼叫 Start。 如需背景作業的詳細資訊，請參閱[啟動、繼續和背景工作](https://msdn.microsoft.com/windows/uwp/launch-resume/index)。
 
 ### <a name="basic-publishing"></a>基本發佈
 

@@ -1,5 +1,5 @@
 ---
-Description: Use a label to indicate to the user what they should enter into an adjacent control. You can also label a group of related controls, or display instructional text near a group of related controls.
+Description: 使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
 title: 標籤
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
 label: Labels
@@ -12,11 +12,11 @@ design-contact: ksulliv
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 4345daf5b879fed7ba9805e4a448c473299031d7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926027"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654143"
 ---
 # <a name="labels"></a>標籤
 
@@ -24,13 +24,13 @@ ms.locfileid: "8926027"
 
 標籤是控制項或一組相關控制項的名稱或標題。
 
-> **重要 API**：Header 屬性、[TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/br209652)
+> **重要的 Api**:標頭屬性[TextBlock 類別](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 在 XAML 中，許多控制項都具備可用來顯示標籤的內建 Header 屬性。 對於沒有 Header 屬性的控制項，或是要對一組控制項加上標籤，則可改用 [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652)。
 
 ![說明標準標籤控制項的螢幕擷取畫面](images/label-standard.png)
 
-## <a name="recommendations"></a>建議事項
+## <a name="recommendations"></a>建議
 
 
 -   使用標籤向使用者表示應該在緊鄰的控制項中輸入的內容。 您也可以為一組相關的控制項加上標籤，或是在一組相關的控制項附近顯示說明文字。
@@ -39,7 +39,7 @@ ms.locfileid: "8926027"
 
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
-* [XAML UI 基本知識範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
+* [XAML UI 基本概念的範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/XamlUIBasics)
 
 ## <a name="related-topics"></a>相關主題
 * [文字控制項](text-controls.md)

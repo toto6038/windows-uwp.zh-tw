@@ -1,28 +1,28 @@
 ---
-Description: A color picker lets a user browse through and select colors.
+Description: 色彩選擇器可讓使用者瀏覽和選取選取色彩。
 title: 色彩選擇器
 label: Color Picker
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: llongley
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 215a15e3a8e1b0264987adcf6228ec52a696f50c
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047097"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654473"
 ---
 # <a name="color-picker"></a>色彩選擇器
 
 色彩選擇器可用來瀏覽和選取色彩。 其預設可讓使用者瀏覽色彩頻譜上的顏色，或在 [紅綠藍 (RGB)]、[色調飽值 (HSV)] 或 [十六進位] 文字方塊中指定色彩。
 
-> **重要 API**：[ColorPicker 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)、[Color 屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)、[ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
+> **重要的 Api**:[ColorPicker 類別](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker)，[色彩屬性](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.Color)， [ColorChanged 事件](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.colorpicker.ColorChanged)
 
 ![預設色彩選擇器](images/color-picker-default.png)
 
@@ -42,7 +42,7 @@ ms.locfileid: "9047097"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ColorPicker">開啟應用程式並查看 ColorPicker 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -213,7 +213,7 @@ private void cancelColor_Click(object sender, RoutedEventArgs e)
 
 ## <a name="related-articles"></a>相關文章
 
-- [UWP 應用程式中的畫筆和手寫筆互動](../input/pen-and-stylus-interactions.md)
+- [畫筆和手寫筆在 UWP 應用程式的互動](../input/pen-and-stylus-interactions.md)
 - [筆跡](inking-controls.md)
 
 <!--

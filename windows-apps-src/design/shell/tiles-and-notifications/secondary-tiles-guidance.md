@@ -1,5 +1,5 @@
 ---
-Description: Learn about when and where you should use secondary tiles in your UWP app.
+Description: 了解在您 UWP 應用程式中使用次要磚的時機和位置。
 title: 次要磚
 label: Secondary tiles
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, secondary tiles, guidance, guidelines, best practices, 次要磚. 指導方針, 最佳做法
 ms.localizationpriority: medium
 ms.openlocfilehash: de3bfa94de1152b3945d42169143a5ae36328c75
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943314"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57625343"
 ---
 # <a name="secondary-tile-guidance"></a>次要磚指導方針
 
@@ -23,7 +23,7 @@ ms.locfileid: "8943314"
 > 只有使用者才能將次要磚釘選至 \[開始\] 功能表；應用程式無法以程式設計的方式釘選次要磚。 使用者也可控制磚的移除，並可將次要磚從 \[開始\] 功能表或在父項應用程式中移除。
 
 
-## <a name="recommendations"></a>建議事項
+## <a name="recommendations"></a>建議
 
 當啟用您應用程式中的次要磚時，請考慮以下建議事項：
 
@@ -32,7 +32,7 @@ ms.locfileid: "8943314"
 * 如果焦點中的內容已釘選，請以 \[從開始畫面取消釘選\] 按鈕取代應用程式列上的 \[釘選到開始畫面\] 按鈕。 \[從開始畫面取消釘選\] 按鈕應移除現有的次要磚。
 * 當在焦點中的內容不可釘選時，不會顯示 \[釘選到開始畫面\] 按鈕 (或顯示停用的 \[釘選到開始畫面\] 按鈕)。
 * 為您的 \[釘選到開始畫面\] 與 \[從開始畫面取消釘選\] 按鈕使用系統提供的字符 (請參閱 Windows.UI.Xaml.Controls.Symbol 或 WinJS.UI.AppBarIcon 中的釘選與取消釘選成員)。
-* 使用標準按鈕文字：「釘選到開始畫面」與「從開始畫面取消釘選」。 當您使用系統提供的釘選與取消釘選字符時，您必須覆寫預設文字。
+* 使用標準按鈕文字：釘選到開始 」 和 「 從開始取消釘選 」。 當您使用系統提供的釘選與取消釘選字符時，您必須覆寫預設文字。
 * 不要使用次要磚作為虛擬命令按鈕以與父項應用程式互動，例如 \[略過至下一個追蹤\] 磚。
 
 
@@ -48,7 +48,7 @@ ms.locfileid: "8943314"
 ## <a name="related"></a>相關
 
 * [次要磚概觀](secondary-tiles.md)
-* [釘選次要磚](secondary-tiles-pinning.md)
-* [磚資產](app-assets.md)
-* [磚內容文件](create-adaptive-tiles.md)
-* [傳送本機磚通知](sending-a-local-tile-notification.md)
+* [次要磚釘選](secondary-tiles-pinning.md)
+* [圖格資產](app-assets.md)
+* [圖格內容的文件](create-adaptive-tiles.md)
+* [通知區域的圖格](sending-a-local-tile-notification.md)

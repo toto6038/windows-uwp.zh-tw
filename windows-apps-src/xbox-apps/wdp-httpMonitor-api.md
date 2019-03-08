@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 8b8828b060e0401e7938517e497bae20e1234baf
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927484"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645673"
 ---
 # <a name="http-monitor-api-reference"></a>HTTP 監視 API 參考   
 您可以使用此 API 存取焦點應用程式的即時 HTTP 流量，如果 Xbox 主機上已啟用 HTTP 監視 (開發人員首頁中核取方塊)。
@@ -32,7 +32,7 @@ GET | /ext/httpmonitor/sessions
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 無
 
@@ -68,7 +68,7 @@ Websocket | /ext/httpmonitor/sessions
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 無
 
@@ -99,6 +99,6 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox

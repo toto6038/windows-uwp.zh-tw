@@ -1,26 +1,26 @@
 ---
-Description: Extend your desktop application with Windows UIs and components
+Description: 使用 Windows UI 和元件擴充您的傳統型應用程式
 Search.Product: eADQiWindows 10XVcnh
 title: 使用 Windows UI 和元件擴充您的傳統型應用程式
 ms.date: 06/08/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2d1fac6d735d4f6915dea1af531dffa666607fe3
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117808"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641703"
 ---
 # <a name="extend-your-desktop-application-with-modern-uwp-components"></a>使用現代化 UWP 元件擴充您的傳統型應用程式
 
 有些 Windows 10 體驗 (例如：具有觸控功能的 UI 頁面) 必須在現代化應用程式容器中執行。 如果您想要新增這些體驗，請使用 UWP 專案和 Windows 執行階段元件擴充您的傳統型應用程式。
 
-在許多情況下，您可以直接從傳統型應用程式呼叫 Windows 執行階段 Api，因此之前檢閱本指南中，請參閱[增強 Windows 10](desktop-to-uwp-enhance.md)。
+在許多情況下，您可以直接從您的桌面應用程式呼叫 Windows 執行階段 Api，因此之前閱讀本指南中，請參閱[加強適用於 Windows 10](desktop-to-uwp-enhance.md)。
 
 >[!NOTE]
->本指南假設您已經為您的傳統型應用程式建立 Windows 應用程式套件。 如果您還沒有這麼做，請參閱[封裝傳統型應用程式](desktop-to-uwp-root.md)。
+>本指南假設您已建立 Windows 應用程式套件的桌面應用程式。 如果您還沒有您尚未這樣做，請參閱[桌面應用程式封裝](desktop-to-uwp-root.md)。
 
 當您準備好時，我們就可以開始進行操作。
 
@@ -36,13 +36,13 @@ ms.locfileid: "9117808"
 
 ![延伸起始專案](images/desktop-to-uwp/extend-start-project.png)
 
-如果您的解決方案不包含封裝專案，請參閱[您使用 Visual Studio 的傳統型應用程式套件](desktop-to-uwp-packaging-dot-net.md)。
+如果您的方案不包含封裝的專案，請參閱[桌面應用程式封裝使用 Visual Studio](desktop-to-uwp-packaging-dot-net.md)。
 
-### <a name="configure-the-desktop-application"></a>將傳統型應用程式設定
+### <a name="configure-the-desktop-application"></a>設定桌面應用程式
 
-請確定您的傳統型應用程式的檔案，您需要呼叫 Windows 執行階段 Api 的參考。
+請確定您的桌面應用程式具有檔案，您必須呼叫 Windows 執行階段 Api 的參考。
 
-若要這樣做，請參閱主題[增強適用於 Windows 10 傳統型應用程式](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)的 [[首先，設定您的專案](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)] 區段。
+若要這樣做，請參閱[首先，設定您的專案](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)主題中的一節[增強您的桌面應用程式適用於 Windows 10](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-enhance#first-set-up-your-project)。
 
 ### <a name="add-a-uwp-project"></a>新增 UWP 專案
 
@@ -74,9 +74,9 @@ ms.locfileid: "9117808"
 
 ![執行階段參考](images/desktop-to-uwp/runtime-component-reference.png)
 
-### <a name="build-your-solution"></a>建置您的方案
+### <a name="build-your-solution"></a>建置您的解決方案
 
-建置您的解決方案，以確保未出現任何錯誤。 如果您收到錯誤，請開啟**Configuration Manager** ，並確保您的專案目標相同的平台。
+建置您的解決方案，以確保沒有任何錯誤出現。 如果您收到錯誤，請開啟**Configuration Manager** ，並確保您的專案目標相同的平台。
 
 ![組態管理員](images/desktop-to-uwp/config-manager.png)
 
@@ -93,21 +93,21 @@ ms.locfileid: "9117808"
 ![調適型設計](images/desktop-to-uwp/extend-xaml-ui.png)
 
 >[!NOTE]
->這個範例會顯示在 XAML UI 藉由 UWP 專案新增至方案。 這是傳統型應用程式中顯示 XAML Ui 穩定的支援的方法。 這個方法的替代方法是以 UWP XAML 控制項直接新增至您的傳統型應用程式使用 XAML 島。 目前提供做為開發人員預覽 XAML 群島。 我們鼓勵您它們自己的原型程式碼中立即試用，雖然我們不建議您使用它們在實際執行程式碼中這一次。 這些 Api 和控制項將會繼續成熟和穩定在未來的 Windows 版本。 若要深入了解 XAML 群島，請參閱[傳統型應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
+>這個範例會示範 XAML UI，藉由新增至方案的 UWP 專案。 這是為桌面應用程式中顯示 XAML 的 Ui 支援穩定的方式。 這種方法的替代方案是將 UWP XAML 控制項直接加入您的桌面應用程式使用 XAML 島。 XAML 島是開發人員預覽目前可用的。 雖然我們鼓勵您試用看看在自己的原型程式碼現在，我們不建議，您使用它們在實際程式碼這一次。 這些 Api 和控制項將會繼續成熟並穩定未來 Windows 版本。 若要深入了解 XAML 群島，請參閱[桌面應用程式中的 UWP 控制項](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-host-controls)
 
 ### <a name="the-design-pattern"></a>設計模式
 
 若要顯示 XAML 型 UI，請執行下列動作：
 
-:one: [設定您的解決方案](#solution-setup)
+： 一個：[設定您的方案](#solution-setup)
 
-:two: [建立 XAML UI](#xaml-UI)
+： 兩個：[建立 XAML 的 UI](#xaml-UI)
 
-:three: [新增通訊協定延伸模組至 UWP 專案](#add-a-protocol-extension)
+： 三個：[UWP 專案中加入通訊協定延伸模組](#add-a-protocol-extension)
 
-:four: [從您的傳統型應用程式啟動 UWP app](#start)
+： 四個：[從傳統型應用程式啟動的 UWP 應用程式](#start)
 
-:five: [在 UWP 專案中，顯示您要的頁面](#parse)
+： 五個：[在 UWP 專案中，顯示頁面的](#parse)
 
 <a id="solution-setup" />
 
@@ -151,7 +151,7 @@ ms.locfileid: "9117808"
 
 ### <a name="add-a-protocol-extension"></a>新增通訊協定延伸模組
 
-在 [**方案總管**] 中，開啟封裝專案的**package.appxmanifest**檔案中您的方案，並新增此延伸模組。
+在**方案總管**，開啟**package.appxmanifest**封裝專案方案中的檔案並加入此延伸模組。
 
 ```xml
 <Extensions>
@@ -219,7 +219,7 @@ protected override void OnActivated(Windows.ApplicationModel.Activation.IActivat
 }
 ```
 
-在程式碼後置 XAML 頁面中，覆寫``OnNavigatedTo``方法使用參數傳遞到頁面。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
+在您的 XAML 頁面背後的程式碼，覆寫``OnNavigatedTo``方法來使用的參數傳遞至頁面。 在這種情形下，我們會使用傳遞到此頁面的緯度和經度，以在地圖中顯示位置。
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -250,25 +250,25 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 您可以讓您的傳統型應用程式成為分享目標，讓使用者可以輕鬆地共用資料，例如來自支援共用的其他應用程式的圖片。
 
-例如，使用者可以選擇您的應用程式，來從 Microsoft Edge、 [相片] app 分享圖片。 以下是具有該功能的 WPF 範例應用程式。
+例如，使用者可以選擇您的應用程式共用來自 Microsoft Edge，相片應用程式的圖片。 以下是具有這項功能的 WPF 範例應用程式。
 
 ![分享目標](images/desktop-to-uwp/share-target.png).
 
-請參閱完整的範例[以下](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
+請參閱完整的範例[這裡](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/ShareTarget)
 
 ### <a name="the-design-pattern"></a>設計模式
 
 若要讓您的應用程式成為分享目標，請進行下列項目：
 
-:one: [新增分享目標擴充功能](#share-extension)
+： 一個：[新增共用目標擴充功能](#share-extension)
 
-: two：[覆寫 OnShareTargetActivated 事件處理常式](#override)
+： 兩個：[覆寫 OnShareTargetActivated 事件處理常式](#override)
 
-: three：[新增桌面延伸到 UWP 專案](#desktop-extensions)
+： 三個：[將桌面延伸模組新增至 UWP 專案](#desktop-extensions)
 
-： 四：[新增完全信任的處理程序擴充功能](#full-trust)
+： 四個：[新增的完全信任處理延伸模組](#full-trust)
 
-： 五：[修改的傳統型應用程式，以取得共用的檔案](#modify-desktop)
+： 五個：[修改桌面應用程式，以取得共用的檔案](#modify-desktop)
 
 <a id="share-extension" />
 
@@ -276,7 +276,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ### <a name="add-a-share-target-extension"></a>新增分享目標擴充功能
 
-在 [**方案總管]** 中，開啟解決方案中的封裝專案的**package.appxmanifest**檔案，並新增分享目標擴充功能。
+在 [**方案總管] 中**，開啟**package.appxmanifest**的封裝檔案在方案中專案，並新增共用目標擴充功能。
 
 ```xml
 <Extensions>
@@ -296,13 +296,13 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 提供由 UWP 專案產生的可執行檔名稱，以及進入點類別的名稱。 此標記會假設您的 UWP 應用程式的可執行檔的名稱是`ShareTarget.exe`。
 
-您也需要指定您的應用程式可以分享哪些檔案類型。 在此範例中，我們正在進行的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式成為分享目標的點陣圖影像，因此我們指定`Bitmap`做為支援的檔案類型。
+您也需要指定您的應用程式可以分享哪些檔案類型。 在此範例中，我們正在進行[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)點陣圖為共用目標映像，讓我們指定的桌面應用程式`Bitmap`支援的檔案類型。
 
 <a id="override" />
 
 ### <a name="override-the-onsharetargetactivated-event-handler"></a>覆寫 OnShareTargetActivated 事件處理常式
 
-覆寫您的 UWP 專案的**應用程式**類別中的**OnShareTargetActivated**事件處理常式。
+覆寫**OnShareTargetActivated**中的事件處理常式**應用程式**UWP 專案的類別。
 
 當使用者選擇您的應用程式來共用檔案時，就會呼叫這個事件處理常式。
 
@@ -329,21 +329,21 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 }
 ```
 
-在這個程式碼，我們將儲存影像的由使用者共用至應用程式的本機存放裝置資料夾。 稍後，我們將會修改到提取映像的傳統型應用程式從該相同的資料夾。 傳統型應用程式可以要這樣做，因為它包含做為 UWP 應用程式在相同套件中。
+在此程式碼中，我們會儲存到應用程式的本機儲存體資料夾共用使用者映像。 稍後，我們將修改的桌面應用程式提取映像從同一個資料夾。 桌面應用程式可以這麼做，因為它包含在相同的封裝為 UWP 應用程式。
 
 <a id="desktop-extensions" />
 
-### <a name="add-desktop-extensions-to-the-uwp-project"></a>將桌面延伸新增到 UWP 專案
+### <a name="add-desktop-extensions-to-the-uwp-project"></a>將桌面延伸模組新增至 UWP 專案
 
-將**適用於 UWP 的 Windows 桌面延伸**延伸模組新增到 UWP app 專案。
+新增**適用於 UWP 的 Windows 桌面延伸模組**UWP 應用程式專案的延伸模組。
 
-![傳統型擴充功能](images/desktop-to-uwp/desktop-extensions.png)
+![桌面延伸模組](images/desktop-to-uwp/desktop-extensions.png)
 
 <a id="full-trust" />
 
-### <a name="add-the-full-trust-process-extension"></a>新增完全信任的處理程序擴充功能
+### <a name="add-the-full-trust-process-extension"></a>新增的完全信任處理延伸模組
 
-在 [**方案總管**] 中，在您的方案，開啟封裝專案的**package.appxmanifest**檔案，然後新增完全信任的處理程序延伸模組，旁邊您稍早新增此檔案分享目標擴充功能。
+中**方案總管**，開啟**package.appxmanifest**封裝專案方案中的檔案，然後新增 完全信任處理序延伸模組，旁邊，您會新增這在共用目標擴充功能先前的檔案。
 
 ```xml
 <Extensions>
@@ -353,19 +353,19 @@ private async void shareWithDesktopApplication(ShareOperation shareOperation)
 </Extensions>  
 ```
 
-此延伸模組可讓 UWP 應用程式啟動傳統型應用程式，您想要共用檔案。 在範例中，我們會參考的[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式的可執行檔。
+此延伸模組可讓 UWP 應用程式開始，您想要共用檔案的桌面應用程式。 在範例中，我們指的可執行檔[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)桌面應用程式。
 
 <a id="modify-desktop" />
 
-### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改傳統型應用程式，以取得共用的檔案
+### <a name="modify-the-desktop-application-to-get-the-shared-file"></a>修改桌面應用程式，以取得共用的檔案
 
-修改您的傳統型應用程式來尋找並處理共用的檔案。 在此範例中，UWP app 會儲存在本機應用程式資料資料夾中的共用的檔案。 因此，我們會修改[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)傳統型應用程式以提取相片從該資料夾。
+修改您的桌面應用程式，來尋找和處理共用的檔案。 在此範例中，UWP 應用程式會儲存在本機的應用程式資料資料夾中的共用的檔案。 因此，我們會修改[WPF PhotoStoreDemo](https://github.com/Microsoft/WPF-Samples/tree/master/Sample%20Applications/PhotoStoreDemo)提取相片桌面應用程式從該資料夾。
 
 ```csharp
 Photos.Path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 ```
 
-執行個體的傳統型應用程式已開啟使用者，我們也可能會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並將路徑傳遞至檔案位置。 如此一來任何開啟的執行個體的傳統型應用程式將會顯示共用的相片。
+執行個體的桌面應用程式已開啟使用者，我們可能也會處理[FileSystemWatcher](https://docs.microsoft.com/dotnet/api/system.io.filesystemwatcher?view=netframework-4.7.2)事件，並傳入至檔案位置路徑。 如此一來任何開啟的執行個體的桌面應用程式會顯示共享的照片。
 
 ```csharp
 ...
@@ -401,17 +401,17 @@ private void Watcher_Created(object sender, FileSystemEventArgs e)
 
 工作提供 http 要求並測量傳回要求回應所需的時間。 您的工作可能更有趣，但此範例非常適合學習背景工作的入門技巧。
 
-請參閱完整的範例[如下](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)。
+請參閱完整的範例[此處](https://github.com/Microsoft/Windows-Packaging-Samples/tree/master/BGTask)。
 
 ### <a name="the-design-pattern"></a>設計模式
 
 若要建立背景服務，請執行下列動作：
 
-:one: [實作背景工作](#implement-task)
+： 一個：[實作背景工作](#implement-task)
 
-:two: [設定背景工作](#configure-background-task)
+： 兩個：[設定背景工作](#configure-background-task)
 
-:three: [註冊背景工作](#register-background-task)
+： 三個：[註冊背景工作](#register-background-task)
 
 <a id="implement-task" />
 
@@ -458,7 +458,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 ### <a name="configure-the-background-task"></a>設定背景工作
 
-在資訊清單設計工具中，開啟解決方案中的封裝專案的**package.appxmanifest**檔案。
+在 資訊清單設計工具中，開啟**package.appxmanifest**封裝專案方案中的檔案。
 
 在**\[宣告\]** 索引標籤，新增**\[背景工作\]** 宣告。
 
@@ -474,7 +474,7 @@ public sealed class SiteVerifier : IBackgroundTask
 
 <a id="register-background-task" />
 
-### <a name="register-the-background-task"></a>註冊背景工作
+### <a name="register-the-background-task"></a>登錄背景工作
 
 在註冊背景工作的傳統型應用程式專案中加入程式碼。
 
@@ -502,10 +502,10 @@ public void RegisterBackgroundTask(String triggerName)
 
 ## <a name="support-and-feedback"></a>支援與意見反應
 
-**尋找您的問題解答**
+**尋找問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或功能建議**
+**提供意見反應或提出功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

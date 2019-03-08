@@ -1,6 +1,6 @@
 ---
-Description: Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.
-title: 調整配置和字型及支援 RTL
+Description: 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。
+title: 調整配置和字型並支援 RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: windows 10, uwp, 可當地語系化性, 當地語系化, rtl, ltr
 ms.localizationpriority: medium
 ms.openlocfilehash: e428dd068337ecd79992e8e27cd193bed112d9c2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930459"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645303"
 ---
-# <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型及支援 RTL
+# <a name="adjust-layout-and-fonts-and-support-rtl"></a>調整配置和字型並支援 RTL
 設計您的應用程式以支援多種語言的配置和字型，包括 RTL (從右至左 ) 文字方向。 流程方向是文字書寫和顯示，以及使用者的眼睛掃過頁面上 UI 元素的方向。
 
 ## <a name="layout-guidelines"></a>配置指導方針
@@ -53,7 +53,7 @@ ms.locfileid: "8930459"
 在您的頁面的根配置面板 (或框架) 或頁面本身上設定 **FlowDirection**。 這會致使其中包含的所有控制項繼承該屬性。
 
 > [!IMPORTANT]
-> 不過，**FlowDirection** *不是*根據 Windows 設定中選取的顯示語言自動設定；其也不會動態變更以回應使用者切換顯示語言。 如果使用者將 Windows 設定從英文切換為阿拉伯文，例如，則 **FlowDirection** 屬性將*不會*自動從左至右變更為從右至左。 身為 App 開發人員，您要針對目前所顯示的語言適當地設定 **FlowDirection**。
+> 不過，**FlowDirection***不是*根據 Windows 設定中選取的顯示語言自動設定；其也不會動態變更以回應使用者切換顯示語言。 如果使用者將 Windows 設定從英文切換為阿拉伯文，例如，則 **FlowDirection** 屬性將*不會*自動從左至右變更為從右至左。 身為 App 開發人員，您要針對目前所顯示的語言適當地設定 **FlowDirection**。
 
 程式設計的技術是使用慣用的使用者顯示語言的 `LayoutDirection` 屬性，來設定 [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) 屬性 (請參見下列程式碼範例)。 Windows 中包含的大部分控制項均已使用 **FlowDirection**。 如果您要實作自訂控制項，則應使用 **FlowDirection**，以針對 RTL 及 LTR 語言配置進行適當的變更。
 
@@ -124,6 +124,6 @@ else
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [當地語系化 UI 及應用程式套件資訊清單中的字串](../../app-resources/localize-strings-ui-manifest.md)
-* [針對語言、縮放比例及其他限定詞量身打造您的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
-* [了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)
+* [UI 和應用程式封裝資訊清單中的當地語系化字串](../../app-resources/localize-strings-ui-manifest.md)
+* [量身打造您的語言、 規模和其他辨識符號的資源](../../app-resources/tailor-resources-lang-scale-contrast.md)
+* [了解使用者設定檔的語言和應用程式資訊清單的語言](manage-language-and-region.md)

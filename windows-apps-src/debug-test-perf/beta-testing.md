@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 2eca388b37cc95803b7ecb94bc0b0b5b990f5de3
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921368"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654103"
 ---
 # <a name="beta-testing"></a>搶鮮版 (Beta) 測試
 
@@ -32,7 +32,7 @@ ms.locfileid: "8921368"
 -   在各種裝置上測試您的應用程式。
 -   識別效能問題，以及您可能找不到的其他錯誤。
 -   獲得真實世界的使用資訊，以改善使用者體驗。
--   收到意見反應，而不會影響在 Microsoft Store 中的公開評分。
+-   接收意見反應，而不會影響 Microsoft Store 中的公用評等。
 
 ## <a name="when-to-beta-test"></a>Beta 測試的時機
 
@@ -40,7 +40,7 @@ ms.locfileid: "8921368"
 
 ## <a name="next-steps"></a>後續步驟
 
-在[合作夥伴中心](https://partner.microsoft.com/dashboard)，您可以限制將 app 發佈為僅限測試者，無論哪一個作業系統您 app 的目標。 不需要使用不同的名稱和套件身分識別建立不同版本的 App；您可以進行測試，然後在您準備要讓每個人都可使用 App 時建立新的提交。 (當然，如果您想要，可以建立個別的 App 僅供測試。 如果您這麼做，請務必使其名稱與您想做為最終公用 App 的名稱不同。)
+在 [合作夥伴中心](https://partner.microsoft.com/dashboard)，您可以限制發佈您的應用程式只有您的測試人員，不論哪一個作業系統到應用程式目標。 不需要使用不同的名稱和套件身分識別建立不同版本的 App；您可以進行測試，然後在您準備要讓每個人都可使用 App 時建立新的提交。 (當然，如果您想要，可以建立個別的 App 僅供測試。 如果您這麼做，請務必使其名稱與您想做為最終公用 App 的名稱不同。)
 
 請參閱[搶鮮版 (Beta) 測試和特定對象的發佈](../publish/beta-testing-and-targeted-distribution.md)，以了解如何將 App 提交至市集進行搶鮮版 (Beta) 測試。
 

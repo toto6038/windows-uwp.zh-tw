@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5847553bed563b724bb142f7abe62403fa8ec097
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922329"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645183"
 ---
 # <a name="porting-windows-runtime-8x-to-uwp-for-io-device-and-app-model"></a>將 Windows Runtime 8.x 移植到適用於 I/O、裝置和 app 模型的 UWP
 
@@ -32,16 +32,16 @@ ms.locfileid: "8922329"
 ## <a name="background-audio"></a>背景音訊
 
 
-[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352)屬性， **ForegroundOnlyMedia**和**BackgroundCapableMedia**已過時的 windows 10 應用程式。 請改用 Windows Phone 市集應用程式模型。 如需詳細資訊，請參閱 [背景音效](https://msdn.microsoft.com/library/windows/apps/mt282140)。
+針對[ **MediaElement.AudioCategory** ](https://msdn.microsoft.com/library/windows/apps/br227352)屬性， **ForegroundOnlyMedia**並**BackgroundCapableMedia**中被取代Windows 10 應用程式。 請改用 Windows Phone 市集應用程式模型。 如需詳細資訊，請參閱 [背景音效](https://msdn.microsoft.com/library/windows/apps/mt282140)。
 
 ## <a name="detecting-the-platform-your-app-is-running-on"></a>偵測執行您 app 的平台
 
 
-思考 app 目標的變更與 windows 10 的方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
+應用程式為目標的變更，與 Windows 10 的思考方式。 新的概念性模型是針對通用 Windows 平台 (UWP) 設計應用程式，然後在所有 Windows 裝置上執行。 接下來可以決定要啟用的特定裝置系列專屬功能。 如有需要，app 也有選項可供限制其特別針對一或多個裝置系列進行設計。 如需有哪些裝置系列以及如何決定要針對哪個裝置系列進行設計的詳細資訊，請參閱 [UWP app 指南](https://msdn.microsoft.com/library/windows/apps/dn894631)。
 
 如果在您的通用 8.1 應用程式中有程式碼可偵測出其執行所在的作業系統，您可能必須根據邏輯原因來加以變更。 如果應用程式會不停傳送值卻不加以處理，您可能想要繼續收集作業系統資訊。
 
-**注意：** 建議您不要使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](w8x-to-uwp-porting-to-a-uwp-project.md))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
+**附註**  建議，您使用作業系統或裝置系列來偵測功能是否存在。 若要判斷特定作業系統或裝置系列功能是否存在，識別目前的作業系統或裝置系列通常不是最佳的方式。 不要偵測作業系統或裝置系列 (與版本號碼)，而是要測試功能本身是否存在 (請參閱[條件式編譯與調適型程式碼](w8x-to-uwp-porting-to-a-uwp-project.md))。 如果您必須要求特定的作業系統或裝置系列，請務必將其當做最低的支援版本，而不是專門針對那一個版本來設計測試。
 
  
 
@@ -66,10 +66,10 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 另請參閱[條件式編譯與調適型程式碼](w8x-to-uwp-porting-to-a-uwp-project.md)。
 
-## <a name="location"></a>位置
+## <a name="location"></a>Location
 
 
-當宣告定位功能在其應用程式套件資訊清單中的應用程式執行於 windows 10 時，系統會提示使用者同意。 應用程式是否是 Windows Phone 市集應用程式或 windows 10 應用程式是如此。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
+當宣告位置功能，在其應用程式封裝資訊清單上執行的 Windows 10 中的應用程式時，系統會提示使用者進行同意。 應用程式的 Windows Phone 市集應用程式或 Windows 10 應用程式是否為 true。 如果您的應用程式顯示其自有的自訂同意提示，或如果它提供切換開關，則建議您移除這些，使系統只會提示使用者一次。
 
  
 

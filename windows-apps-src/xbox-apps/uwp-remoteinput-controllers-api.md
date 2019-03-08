@@ -3,14 +3,14 @@ title: 裝置入口網站控制器 API 參考
 description: 了解如何取得附加實體控制器數目，並以程式設計方式將它們關閉。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 8b5061f9193d78d4ff23f5fa707b0bea67a10f98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929833"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657003"
 ---
 # <a name="controller-api-reference"></a>控制器 API 參考   
 您可以使用此 REST API 取得附加實體控制器數目，並以程式設計方式將它們關閉。
@@ -33,7 +33,7 @@ GET | /ext/remoteinput/controllers
 
 - 無
 
-**要求主體**   
+**要求本文**   
 
 - 無
 
@@ -69,7 +69,7 @@ DELETE | /ext/remoteinput/controllers
 
 - 無
 
-**要求主體**   
+**要求本文**   
 
 - 無
 
@@ -88,6 +88,6 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox

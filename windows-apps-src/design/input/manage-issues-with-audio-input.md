@@ -1,26 +1,26 @@
 ---
-Description: Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.
+Description: 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 title: 管理音訊輸入的問題
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
 label: Manage audio input issues
 template: detail.hbs
-keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction, 語音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動
+keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction, 語音, 聲音, 語音辨識, 自然語言, 聽寫, 輸入, 使用者互動
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 5d2c80fd30d158f0890ed70311cdf83dce2058e5
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046621"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644903"
 ---
 # <a name="manage-issues-with-audio-input"></a>管理音訊輸入的問題
 
 
 了解如何管理因為音訊輸入品質而造成的語音辨識準確度問題。
 
-> **重要 API**：[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)、[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)、[**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+> **重要的 Api**:[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)， [ **RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)， [ **SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
 
 ## <a name="assess-audio-input-quality"></a>評定音訊輸入品質
@@ -108,7 +108,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 * [語音互動](speech-interactions.md)
 
 **範例**
-* [語音辨識和語音合成範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [語音辨識和語音合成器範例](https://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

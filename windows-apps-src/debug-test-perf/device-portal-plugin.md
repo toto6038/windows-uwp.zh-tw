@@ -4,14 +4,14 @@ title: 撰寫 Device Portal 的自訂外掛程式
 description: 了解如何撰寫 UWP app 以使用 Windows Device Portal 來裝載網頁，以及提供診斷資訊。
 ms.date: 03/24/2017
 ms.topic: article
-keywords: windows 10，uwp，裝置入口網站
+keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: d9e11445d77434320c8842608bf8183a078c0660
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919324"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644463"
 ---
 # <a name="write-a-custom-plugin-for-device-portal"></a>撰寫 Device Portal 的自訂外掛程式
 
@@ -108,7 +108,7 @@ public void Run(IBackgroundTaskInstance taskInstance) {
 }
 ```
 
-有兩個必須由應用程式以完成要求處理迴圈處理的事件：**已關閉**，每當適用於 Device Portal 服務關閉時，並[**RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，呈現連入 HTTP 要求，並提供主要Device Portal 提供者的功能。 
+有兩個必須由應用程式，以完成要求處理迴圈處理的事件：**關閉**，每當裝置入口網站服務關閉，並[ **RequestReceived**](https://docs.microsoft.com/en-us/uwp/api/windows.system.diagnostics.deviceportal.deviceportalconnectionrequestreceivedeventargs)，連入 HTTP 要求，並提供裝置入口網站的主要功能的介面提供者。 
 
 ## <a name="handle-the-requestreceived-event"></a>處理 RequestReceived 事件
 針對在外掛程式的指定「處理常式路徑」上提出的每個要求，將會引發**RequestReceived**事件一次。 Device Portal 提供者的要求處理迴圈與 NodeJS Express 中的要求處理迴圈類似︰要求和回應物件會與事件一起提供，而且處理常式透過填入回應物件來回應。 在 Device Portal 提供者中，**RequestReceived**事件和其處理常式使用[**Windows.Web.Http.HttpRequestMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httprequestmessage)和[**HttpResponseMessage**](https://docs.microsoft.com/en-us/uwp/api/windows.web.http.httpresponsemessage)物件。   
@@ -188,7 +188,7 @@ Device Portal 提供者所提供的靜態內容，是在與核心 Device Portal 
 2.  在 [偵錯] 索引標籤下方，於 [起始動作] 區段中選取 [不啟動，但在我的程式碼啟動時進行偵錯]。  
 ![讓外掛程式進入偵錯模式](images/device-portal/plugin-debug-mode.png)
 3.  在 RequestReceived 處理常式函式中設定中斷點。
-![requestreceived 處理常式中的中斷點](images/device-portal/plugin-requestreceived-breakpoint.png)
+![在 requestreceived 處理常式的中斷點](images/device-portal/plugin-requestreceived-breakpoint.png)
 > [!NOTE] 
 > 請確定組建架構完全符合目標的架構。 如果您使用的是 64 位元電腦，就必須使用 AMD64 組建來部署。 
 4.  按下 F5 鍵部署應用程式
@@ -197,6 +197,6 @@ Device Portal 提供者所提供的靜態內容，是在與核心 Device Portal 
 
 ## <a name="related-topics"></a>相關主題
 * [Windows Device Portal 概觀](device-portal.md)
-* [建立和取用應用程式服務](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
+* [建立和使用 app service](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service)
 
 

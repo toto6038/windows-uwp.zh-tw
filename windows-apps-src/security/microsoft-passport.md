@@ -4,18 +4,18 @@ description: 本文章說明隨附在 Windows 10 作業系統中的新 Windows H
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: aacce5710f8ed0066e5efdfb5e0344473f718f9b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049445"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651543"
 ---
 # <a name="windows-hello"></a>Windows Hello
 
-本文章說明新 Windows Hello 技術，隨附於 Windows 10 作業系統，然後討論開發人員可以如何實作這項技術來保護自己的通用 Windows 平台 (UWP) app 和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
+這篇文章描述的新 Windows Hello 技術，隨附於 Windows 10 作業系統，並討論如何開發人員可以在其中實作這項技術能夠保護其通用 Windows 平台 (UWP) 應用程式和後端服務。 文章強調該技術的幾個特定功能，以協助您減少因使用傳統認證所帶來的威脅；它還提供指南來引導您設計及部署該技術，來做為您 Windows 10 首度發行的一部分。
 
 請注意，本文著重在應用程式開發上。 如需 Windows Hello 的結構與實作的詳細資訊，請參閱 [TechNet 上的 Windows Hello 指南](https://technet.microsoft.com/library/mt589441.aspx)。
 
@@ -29,11 +29,11 @@ ms.locfileid: "9049445"
 
 ### <a name="11-problems-with-traditional-credentials"></a>1.1 傳統認證的問題
 
-自從 1960 年代中期，Fernando Corbató 和他在麻省理工學院的團隊積極引進密碼之後，使用者和系統管理員就必須處理使用密碼來進行使用者驗證和授權的工作。 隨著時間過去，先進的密碼儲存及使用方式已經有所進步 (例如安全雜湊、Salt)，但我們仍面臨了兩個問題。 要複製密碼很容易，要竊取密碼也很容易。 此外，實作錯誤可能會使它們變得不安全，且使用者會很難在便利性與安全性之間取得平衡。
+自從 1960 年代中期，當 Fernando Corbató 和他在麻省理工學院的團隊積極支援引進密碼之後，使用者和系統管理員就必須處理密碼的使用方式以進行使用者驗證和授權。 隨著時間過去，先進的密碼儲存及使用方式已經有所進步 (例如安全雜湊、Salt)，但我們仍面臨了兩個問題。 要複製密碼很容易，要竊取密碼也很容易。 此外，實作錯誤可能會使它們變得不安全，且使用者會很難在便利性與安全性之間取得平衡。
 
 #### <a name="111-credential-theft"></a>1.1.1 認證竊取
 
-使用密碼最大的風險很簡單，就是攻擊者能輕鬆地竊取密碼。 每個輸入、處理或儲存密碼的位置都很容易受到攻擊。 舉例來說，攻擊者可以從驗證伺服器竊取一組密碼或雜湊，方法有竊聽傳送至應用程式伺服器的網路傳輸、在應用程式或裝置中置入惡意程式碼、記錄使用者在裝置上的按鍵動作，或是觀察使用者輸入了哪些字元。 這些都還只是最常見的攻擊方法而已。
+密碼的最大風險很簡單：攻擊者可以輕鬆地盜用它們。 每個輸入、處理或儲存密碼的位置都很容易受到攻擊。 舉例來說，攻擊者可以從驗證伺服器竊取一組密碼或雜湊，方法有竊聽傳送至應用程式伺服器的網路傳輸、在應用程式或裝置中置入惡意程式碼、記錄使用者在裝置上的按鍵動作，或是觀察使用者輸入了哪些字元。 這些都還只是最常見的攻擊方法而已。
 
 此外，另一個相關的風險就認證重新執行，也就是攻擊者藉由竊聽不安全的網路來取得有效的認證，然後稍後重新執行該認證來模仿有效的使用者。 大部分的驗證通訊協定 (包括 Kerberos 和 OAuth) 都會在認證交換過程中納入時間戳記來提供保護，以防止重新執行的攻擊，但這種方法只保護由驗證系統發出的權杖，而非使用者一開始為取得票證所提供的密碼。
 
@@ -43,16 +43,16 @@ ms.locfileid: "9049445"
 
 ### <a name="12-solving-credential-problems"></a>1.2 解決認證問題
 
-要解決密碼造成的問題，需要一些技巧。 強化密碼使用原則並無法解決問題，因為使用者可能就只是重複使用、共用，或寫下密碼。 雖然驗證安全性相關的使用者教育是非常重要的，但僅僅只是教育，並無法消除這個問題。
+解決密碼造成的問題需要一些技巧。 強化密碼使用原則並無法解決問題，因為使用者可能就只是重複使用、共用，或寫下密碼。 雖然驗證安全性相關的使用者教育是非常重要的，但僅僅只是教育，並無法消除這個問題。
 
 Windows Hello 以增強式雙因素驗證 (2FA) 取代密碼，方法是驗證現有的認證，以及建立以生物識別或 PIN 式使用者手勢所保護的裝置特定認證。 
 
 
 ## <a name="2-what-is-windows-hello"></a>2 什麼是 Windows Hello？
 
-Windows Hello 是 Microsoft 提供給 Windows10 內建的新生物特徵辨識登入系統的名稱。 因為此功能是直接內建於作業系統，所以 Windows Hello 讓使用者能夠使用臉部或指紋辨識來解除鎖定使用者的裝置。 當使用者提供了自己的唯一生物特徵辨識識別碼來存取裝置特定的認證時即會進行驗證，這表示除非竊取裝置的攻擊者具備 PIN，否則該攻擊者無法登入裝置。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。 使用 Windows Hello 解除鎖定裝置之後，授權的使用者就能取得自己的所有 Windows 體驗、App、資料、網站及服務的存取權。
+Windows Hello 是 Microsoft 提供給 Windows 10 內建的新生物特徵辨識登入系統的名稱。 由於 Windows Hello 是直接內建在作業系統中，因此能夠讓使用者利用臉部或指紋辨識來解除使用者裝置的鎖定。 當使用者提供了自己的唯一生物特徵辨識識別碼來存取裝置特定的認證時即會進行驗證，這表示除非竊取裝置的攻擊者具備 PIN，否則該攻擊者無法登入裝置。 Windows 安全的認證存放區會保護裝置上的生物特徵辨識資料。 使用 Windows Hello 解除鎖定裝置之後，授權的使用者就能取得自己的所有 Windows 體驗、App、資料、網站及服務的存取權。
 
-Windows Hello 的驗證器被稱為 Hello。 Hello 對於單一裝置與特定使用者的組合來說是唯一的， 它不會在裝置之間漫遊、不會與伺服器或呼叫中的應用程式分享，也無法輕易從裝置中取出。 如果有多位使用者共用一個裝置，每位使用者都需要設定自己的帳戶， 而每個帳戶都會取得該裝置專有的唯一 Hello。 您可以把 Hello 想像成可用來解除鎖定 (或釋放) 已儲存認證的權杖。 Hello 本身不會對應用程式或服務驗證您的身分，但它釋放認證可以這麼做。 換句話說，Hello 不是使用者認證，但它是驗證程序可使用的第二因素。
+Windows Hello 驗證稱為 Hello。 Hello 對於單一裝置與特定使用者的組合來說是唯一的， 它不會在裝置之間漫遊、不會與伺服器或呼叫中的應用程式分享，也無法輕易從裝置中取出。 如果有多位使用者共用一個裝置，每位使用者都需要設定自己的帳戶， 而每個帳戶都會取得該裝置專有的唯一 Hello。 您可以把 Hello 想像成可用來解除鎖定 (或釋放) 已儲存認證的權杖。 Hello 本身不會對應用程式或服務驗證您的身分，但它釋放認證可以這麼做。 換句話說，Hello 不是使用者認證，但它是驗證程序可使用的第二因素。
 
 ### <a name="21-windows-hello-authentication"></a>2.1 Windows Hello 驗證
 
@@ -68,9 +68,9 @@ Windows Hello 可為裝置提供健全的方式來辨識個別使用者，這也
 
 #### <a name="221-how-keys-are-protected"></a>2.2.1 保護金鑰的方式
 
-在任何時間產生金鑰內容時，都必須提供保護來防止攻擊。 而保護金鑰最好的方式，就是透過專用的硬體。 人類在使用硬體安全性模組 (HSM) 來產生、儲存及處理適用於安全性關鍵應用程式的金鑰方面，有很長的歷史。 智慧卡是一種特殊類型的 HSM，它們都是符合信賴運算群組 TPM 標準規範的裝置。 如果可行，Windows Hello 實作會充分利用內建的 TPM 硬體來產生、儲存及處理金鑰。 不過，Windows Hello 和 Windows Hello 工作不需要將 TPM 上線。
+在任何時間產生金鑰內容時，都必須提供保護來防止攻擊。 執行此動作最可靠的方式是透過專用硬體。 人類在使用硬體安全性模組 (HSM) 來產生、儲存及處理適用於安全性關鍵應用程式的金鑰方面，有很長的歷史。 智慧卡是一種特殊類型的 HSM，它們都是符合信賴運算群組 TPM 標準規範的裝置。 如果可行，Windows Hello 實作會充分利用內建的 TPM 硬體來產生、儲存及處理金鑰。 不過，Windows Hello 和 Windows Hello for Work 不需要將 TPM 上架。
 
-但 Microsoft 會在任何合適的時機建議您使用 TPM 硬體。 TPM 會提供保護來對抗各種已知及潛在的攻擊，包括 PIN 暴力密碼破解攻擊。 TPM 在帳戶鎖定之後，也會提供額外的保護。 當 TPM 鎖定金鑰內容時，使用者必須重設 PIN。 重設 PIN 表示將移除所有使用舊的金鑰內容加密的金鑰與憑證。
+但 Microsoft 會在任何合適的時機建議您使用 TPM 硬體。 TPM 會提供保護來抵禦各種已知和可能的攻擊，包括 PIN 暴力密碼破解攻擊。 TPM 在帳戶鎖定之後，也會提供額外的保護。 當 TPM 鎖定金鑰內容時，使用者必須重設 PIN。 重設 PIN 表示將移除所有使用舊的金鑰內容加密的金鑰與憑證。
 
 #### <a name="222-authentication"></a>2.2.2 驗證
 
@@ -124,7 +124,7 @@ var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-[**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
+[  **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) 是建立公開金鑰和私密金鑰的部分。 如果裝置有正確的 TPM 晶片，API 會要求 TPM 晶片建立私密和公開金鑰金鑰並儲存結果；如果使用沒有 TPM 晶片，作業系統會在程式碼中建立金鑰組。 沒有方法能讓應用程式直接存取建立的私密金鑰。 建立金鑰組的過程也會產生證明資訊。 (如需證明的詳細資訊，請參閱下一節。)
 
 當金鑰組和證明資訊在裝置上建立之後，公開金鑰、選用的證明資訊，以及唯一識別碼 (例如電子郵件地址) 必須傳送至後端註冊服務，並儲存在後端。
 
@@ -208,8 +208,8 @@ static async void RegisterUser(string AccountId)
 - AIK 憑證是有效的時限。
 - 鏈結中所有簽發的 CA 憑證都是有效的時限而且未被撤銷。
 - 證明聲明的格式正確。
-- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
-- [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
+- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 上的簽章使用 AIK 公開金鑰。
+- [  **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob 中的公開金鑰，符合用戶端連同證明聲明一起傳送的公開 RSA 金鑰。
 
 根據以上這些條件，您的應用程式可能會把不同的授權層級指派給使用者。 舉例來說，如果這些檢查項目中有一個檢查失敗，應用程式可能不會讓使用者註冊，或是可能會限制使用者能執行的功能。
 
@@ -275,9 +275,9 @@ API 會要求作業系統利用私密金鑰來簽署查問。 然後系統會要
 
 ![Windows Hello 挑戰回應](images/passport-challenge-response.png)
 
-接下來，伺服器必須驗證簽章。 當您要求公開金鑰並將它傳送至伺服器以供未來驗證時，它是 ASN.1 編碼的 publicKeyInfo blob 中。 如果您查看[Windows Hello 程式碼範例 GitHub 上的](https://go.microsoft.com/fwlink/?LinkID=717812)時，您會看到有來包裝 Crypt32 函式將 ASN.1 編碼的 blob 較常使用的 CNG blob 來協助程式類別。 該 Blob 包含公開金鑰演算法，也就是 RSA 和 RSA 公開金鑰。
+接下來，伺服器必須驗證簽章。 當您要求的公開金鑰，並將它傳送至伺服器，以用於未來的驗證時，則為 (ASN.1） 編碼 publicKeyInfo blob。 如果您看一下[Windows Hello 的程式碼範例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)，您會看到有協助程式類別來包裝轉譯 (ASN.1） 編碼為 CNG blob，通常用於 blob 的 Crypt32 函式。 該 Blob 包含公開金鑰演算法，也就是 RSA 和 RSA 公開金鑰。
 
-在範例中，我們將 ASN.1 編碼的 blob 轉換成的 CNG blob 的原因是，這樣可能會與 CNG 使用 （/windows/桌面/SecCNG/cng-入口網站） 與 BCrypt API。 如果您查詢 CNG blob 時，它會將您指向相關[BCRYPT_KEY_BLOB 結構](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 這個 API 表面可以用於驗證及 Windows 應用程式中的加密。 ASN.1 是記載於文件的標準進行通訊，可以序列化資料結構，它通常用於公開金鑰密碼編譯和使用憑證。 這就是為什麼公開金鑰的資訊傳回以這種方式。 公開金鑰是 RSA 金鑰;而這就是 Windows Hello 會使用它登資料時的演算法。
+在範例中，我們將編碼的 ASN.1 blob 轉換成 CNG blob 的原因是，讓它可以搭配 CNG （/windows/desktop/SecCNG/cng-入口網站） 和 BCrypt API。 如果您看 CNG 的 blob，它會指向您的相關[BCRYPT_KEY_BLOB 結構](/windows/desktop/api/bcrypt/ns-bcrypt-_bcrypt_key_blob)。 此 API 介面可用來驗證與加密 Windows 應用程式中的使用。 ASN.1 是一種文件的標準通訊可序列化的資料結構，它通常用在公開金鑰加密，並使用憑證。 這就是為什麼以這種方式傳回的公開金鑰資訊。 公開金鑰是 RSA 金鑰;而這是 Windows Hello 時，會使用它簽署資料的演算法。
 
 當您擁有 CNG Blob 之後，就必須根據該使用者的公開金鑰，來驗證已簽署的查問。 由於每個人都使用自己的系統或後端技術，因此沒有任何常用來實作該邏輯的方法。 我們使用 SHA256 做為雜湊演算法，並針對 SignaturePadding 使用 Pkcs1，因此當您驗證來自用戶端的已簽署回應時，請確定那就是您所使用的項目。 同樣地，請參考範例以尋找在 .NET 4.6 中於您的伺服器上執行的方式，但通常來說會類似：
 
@@ -408,8 +408,8 @@ Windows 10 引進較高的安全性層級，實行方法也很簡單。 Windows 
 ### <a name="61-articles-and-sample-code"></a>6.1 文章與範例程式碼
 
 - [Windows Hello 概觀](https://windows.microsoft.com/windows-10/getstarted-what-is-hello)
-- [適用於 Windows Hello 的實作詳細資料](https://msdn.microsoft.com/library/mt589441)
-- [GitHub 上的 Windows Hello 程式碼樣本](https://go.microsoft.com/fwlink/?LinkID=717812)
+- [Windows hello 的實作詳細資料](https://msdn.microsoft.com/library/mt589441)
+- [Windows Hello 的程式碼範例在 GitHub 上](https://go.microsoft.com/fwlink/?LinkID=717812)
 
 ### <a name="62-terminology"></a>6.2 詞彙
 

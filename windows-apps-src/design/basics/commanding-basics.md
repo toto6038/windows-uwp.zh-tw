@@ -1,6 +1,6 @@
 ---
-Description: In a Universal Windows Platform (UWP) app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.
-title: 通用 Windows 平台 (UWP) app 的命令設計基本知識
+Description: 在通用 Windows 平台 (UWP) app 中，命令元素是讓使用者執行動作，例如傳送電子郵件、刪除項目，或提交表單的互動式 UI 元素。
+title: Universal Windows Platform (UWP) app 的命令設計基本知識
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
@@ -12,21 +12,21 @@ keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: ac2bd55d1cea25359c3c609148c7098532d76c46
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117588"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654053"
 ---
 # <a name="command-design-basics-for-uwp-apps"></a>UWP 應用程式的命令設計基本知識
 
-在通用 Windows 平台 (UWP) app 中，*命令元素*是讓使用者執行動作，例如傳送電子郵件、 刪除項目，或提交表單的互動式 UI 元素。 *命令介面*都被組成通用命令元素、 裝載它們的命令表面、 它們支援的互動，以及它們所提供的體驗。
+在通用 Windows 平台 (UWP) 應用程式中，*命令項目*是互動式的 UI 項目可讓使用者執行動作傳送電子郵件、 刪除項目，或送出表單。 *命令介面*是組成的常見命令項目、 將其裝載的命令介面、 其所支援的互動和它們所提供的體驗。
 
 ## <a name="provide-the-best-command-experience"></a>提供最佳的命令體驗
 
-最重要的命令介面是您正嘗試讓使用者完成。 當您計劃您的應用程式的功能，請考慮要完成這些工作與您想要啟用的使用者體驗的必要步驟。 一旦您已完成的這些體驗的初始草稿，您可以進行決策的工具和互動來實作它們。
+命令介面的最重要的一點是您想讓使用者完成。 當您在規劃您的應用程式的功能，請考慮完成這些工作與您想要啟用的使用者體驗所需的步驟。 當您完成之後的初始的草稿，這些體驗時，您就可以進行決策來實作它們的工具和互動。
 
-以下是一些常用的命令體驗：
+以下是一些常見的命令體驗：
 
 - 傳送或提交資訊
 - 選取設定和選擇
@@ -34,7 +34,7 @@ ms.locfileid: "9117588"
 - 開啟、儲存和刪除檔案
 - 編輯或建立內容
 
-為您的命令體驗的設計與廣告素材。 選擇裝置的輸入您的應用程式支援，以及每個裝置的應用程式會如何回應。 藉由支援廣泛的功能和喜好設定您讓您的 app 做為可用，移植，且盡可能無障礙 （如需詳細資訊，請參閱[適用於通用 Windows 平台 (UWP) app 的命令設計](../controls-and-patterns/commanding.md)）。
+要與您的命令經驗的設計有創意。 選擇哪個輸入裝置，您的應用程式支援，以及您的應用程式如何回應每個裝置。 透過支援最廣泛的功能和喜好設定就可以將您的應用程式，可使用狀態，可攜性，並盡可能可存取 (請參閱[命令執行通用 Windows 平台 (UWP) 應用程式的設計](../controls-and-patterns/commanding.md)如需詳細資訊)。
 
 
 
@@ -42,9 +42,9 @@ ms.locfileid: "9117588"
 When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
 -->
 
-## <a name="choose-the-right-command-elements"></a>選擇正確的命令元素
+## <a name="choose-the-right-command-elements"></a>選擇正確的命令項目
 
-使用正確的元素中的命令介面，可以讓 app 是直覺方便使用與難以、 令人混淆的應用程式之間的差異。 通用 Windows 平台 (UWP) 提供一組完整的命令元素。 以下是一些最常見的 UWP 命令元素的清單。
+在命令介面中使用正確的項目，可以讓直覺、 簡單易用的應用程式和困難且令人困惑的應用程式之間的差異。 通用 Windows 平台 (UWP) 提供一組完整的命令元素。 以下是一些最常見的 UWP 命令元素的清單。
 
 :::row:::
     :::column:::
@@ -98,13 +98,13 @@ When designing a command interface, the most important decision is choosing what
 
 如需完整清單，請參閱[控制項與 UI 元素](../controls-and-patterns/index.md)
 
-## <a name="place-commands-on-the-right-surface"></a>在正確介面上放置命令
+## <a name="place-commands-on-the-right-surface"></a>在正確的表面放置命令
 
-在您的應用程式，包括 app 畫布或特殊命令容器，例如命令列、 命令列飛出視窗、 功能表列或對話方塊中，您可以在數個表面放置命令元素。
+在您的應用程式，包括應用程式畫布或特殊命令的容器，例如命令列、 命令列飛出視窗、 功能表列或對話方塊中，您可以在幾個介面的放置命令項目。
 
-一律嘗試讓使用者直接操作內容，而非透過命令，該內容，例如拖放功能，以重新排列清單項目，而不是向上和向下命令按鈕上的動作。 
+永遠嘗試讓使用者直接操作內容而不是透過命令的內容，例如將拖放以重新排列清單項目，而不是向上和向下 命令按鈕。 
 
-不過，這可能無法使用某些輸入裝置，或當容納特定使用者的能力和喜好設定。 在這些情況下，提供多個命令能供性儘可能，並在您的應用程式中的命令介面上放置下列命令元素。
+不過，這可能無法使用特定的輸入裝置，或當配合特定的使用者能力和喜好設定。 在這些情況下，盡可能的情況下，提供多個命令的提供，並將這些命令項目放在您的應用程式中的命令介面上。
 
 以下是一些常用的命令介面的清單。
 
@@ -144,10 +144,10 @@ When designing a command interface, the most important decision is choosing what
 
 ## <a name="provide-command-feedback"></a>提供命令的意見反應 
 
-命令的意見反應會傳達給使用者的互動或命令已偵測到、 如何解譯及處理，命令已和是否命令已成功與否。 這可協助使用者了解他們完成，以及它們可以後續動作。 意見反應最好能自然整合在 UI 中，除非絕對必要，否則不讓使用者被打斷，或是執行其他動作。
+命令的意見反應與使用者，偵測到的互動或命令、 如何命令已解譯和處理，以及是否命令成功與否。 這可協助使用者了解他們所做什麼，以及他們可以接著做。 意見反應最好能自然整合在 UI 中，除非絕對必要，否則不讓使用者被打斷，或是執行其他動作。
 
 > [!NOTE]
-> 提供意見反應，只在必要時，只有當無法使用此功能其他地方。 簡潔、 整齊除非您要新增的值，讓您的應用程式 UI。
+> 只在必要時，且只有在還未出現在其他地方，請提供意見反應。 簡潔且整齊除非您要新增的值，保留您的應用程式 UI。
 
 以下是在 App 中提供意見反應的一些方式。
 
@@ -168,7 +168,7 @@ When designing a command interface, the most important decision is choosing what
     :::column span="2":::
         <b>Flyouts</b>
 
-       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">飛出視窗</a>是輕量型內容相關快顯視窗的可關閉只要點選或按一下飛出視窗以外的地方。
+       <a href="../controls-and-patterns/dialogs-and-flyouts/index.md">延伸顯示</a>是輕量級內容的快顯可以藉由點選或按一下飛出視窗外的任何一處關閉。
 :::row-end:::
 
 :::row:::
@@ -187,7 +187,7 @@ When designing a command interface, the most important decision is choosing what
 
 ### <a name="when-to-confirm-or-undo-actions"></a>確認或復原動作的時機
 
-無論是設計多良好應用程式的 UI 時，所有使用者都執行的動作而想細心。 您的應用程式可協助在這些情況下，透過要求確認的動作，或提供復原最近動作的方式。
+不論如何妥善設計您的應用程式 UI 是，所有使用者都執行他們想要它們所沒有的動作。 您的應用程式可以在需要確認的動作，或是提供的方式來復原最近的動作，在這些情況下幫助。
 
 :::row:::
     :::column:::
@@ -210,7 +210,7 @@ When designing a command interface, the most important decision is choosing what
         -   Renaming a file
 :::row-end:::
 
-##  <a name="optimize-for-specific-input-types"></a>為特定的輸入類型最佳化
+##  <a name="optimize-for-specific-input-types"></a>最佳化特定的輸入類型
 
 如需最佳化特定輸入類型或裝置之使用者體驗的詳細資訊，請參閱[互動基本資訊](../input/index.md)。
 

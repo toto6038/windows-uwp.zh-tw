@@ -1,5 +1,5 @@
 ---
-Description: The following article describes all of the properties and elements within tile content.
+Description: 下列文章說明磚內容中的所有屬性和元素。
 title: 磚內容結構描述
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 磚, 磚通知, 磚內容, 結構描述, 磚裝載
 ms.localizationpriority: medium
 ms.openlocfilehash: f12f1c2b6ac158b6f8e837fd3d6a64f96939ed99
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117728"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642983"
 ---
 # <a name="tile-content-schema"></a>磚內容結構描述
 
@@ -50,15 +50,15 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 | **TileMedium** | [TileBinding](#tilebinding) | false | 提供選擇性中型繫結，以指定中型磚大小的內容。 |
 | **TileWide** | [TileBinding](#tilebinding) | false | 提供選擇性寬型繫結，以指定寬型磚大小的內容。 |
 | **TileLarge** | [TileBinding](#tilebinding) | false | 提供選擇性大型繫結，以指定大型磚大小的內容。 |
-| **Branding** | [TileBranding](#tilebranding) | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
+| **商標** | [TileBranding](#tilebranding) | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
 | **DisplayName** | 字串 | false | 選擇性字串，顯示此通知時會覆寫磚的顯示名稱。 |
-| **Arguments** | 字串 | false | 年度更新版的新功能：應用程式定義的資料，當使用者透過動態磚啟動您的應用程式，會透過 LaunchActivatedEventArgs 上的 TileActivatedInfo 屬性傳回至您的應用程式。 這可讓您知道當使用者點選動態磚時，看到哪個磚通知。 在沒有年度更新版的裝置上，這會被忽略。 |
+| **引數** | 字串 | false | 年度更新版： 的新功能應用程式定義的資料時，傳遞給您的應用程式透過 TileActivatedInfo 屬性上 LaunchActivatedEventArgs 使用者啟動您的應用程式，從動態磚。 這可讓您知道當使用者點選動態磚時，看到哪個磚通知。 在沒有年度更新版的裝置上，這會被忽略。 |
 | **LockDetailedStatus1** | 字串 | false | 若您指定此項，也必須提供 TileWide 繫結。 如果使用者選取磚做為詳細狀態應用程式，這會是顯示在鎖定畫面上的第一行文字。 |
 | **LockDetailedStatus2** | 字串 | false | 若您指定此項，也必須提供 TileWide 繫結。 如果使用者選取磚做為詳細狀態應用程式，這會是顯示在鎖定畫面上的第二行文字。 |
 | **LockDetailedStatus3** | 字串 | false | 若您指定此項，也必須提供 TileWide 繫結。 如果使用者選取磚做為詳細狀態應用程式，這會是顯示在鎖定畫面上的第三行文字。 |
 | **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
-| **Language**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
+| **語言**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
 
 
 ## <a name="tilebinding"></a>TileBinding
@@ -67,12 +67,12 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 | 屬性 | 類型 | 必要 | 描述 |
 |---|---|---|---|
 | **Content** | [ITileBindingContent](#itilebindingcontent) | false | 要在磚上顯示的視覺內容。 其中一個 [TileBindingContentAdaptive](#tilebindingcontentadaptive)，[TileBindingContentIconic](#TileBindingContentIconic)、[TileBindingContentContact](#TileBindingContentContact)、[TileBindingContentPeople](#TileBindingContentPeople) 或 [TileBindingContentPhotos](#TileBindingContentPhotos)。 |
-| **Branding** | TileBranding | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
+| **商標** | TileBranding | false | 磚應用來顯示應用程式品牌的表單。 根據預設，繼承自預設磚的品牌。 |
 | **DisplayName** | 字串 | false | 選擇性字串，覆寫此磚大小的磚顯示名稱。 |
-| **Arguments** | 字串 | false | 年度更新版的新功能：應用程式定義的資料，當使用者透過動態磚啟動您的應用程式，會透過 LaunchActivatedEventArgs 上的 TileActivatedInfo 屬性傳回至您的應用程式。 這可讓您知道當使用者點選動態磚時，看到哪個磚通知。 在沒有年度更新版的裝置上，這會被忽略。 |
+| **引數** | 字串 | false | 年度更新版： 的新功能應用程式定義的資料時，傳遞給您的應用程式透過 TileActivatedInfo 屬性上 LaunchActivatedEventArgs 使用者啟動您的應用程式，從動態磚。 這可讓您知道當使用者點選動態磚時，看到哪個磚通知。 在沒有年度更新版的裝置上，這會被忽略。 |
 | **BaseUri** | Uri | false | 與影像來源屬性中的相對 URL 結合的預設基底 URL。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至快顯通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
-| **Language**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
+| **語言**| 字串 | false | 使用當地語系化資源時的視覺效果承載目標地區設定，指定為 BCP-47 語言標記，例如 "en-US" 或 "fr-FR"。 繫結或文字中指定的任何地區設定都會覆寫此地區設定。 如果未提供，則改用系統地區設定。 |
 
 
 ## <a name="itilebindingcontent"></a>ITileBindingContent
@@ -103,13 +103,13 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Text** | 字串 | false | 要顯示的文字。 |
+| **文字** | 字串 | false | 要顯示的文字。 |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | 此樣式會控制文字的字型大小、粗細和不透明度。 |
 | **HintWrap** | bool? | false | 將此設定為 true 可啟用文字換行。 預設為 false。 |
 | **HintMaxLines** | int? | false | 允許文字元素顯示的最大行數。 |
 | **HintMinLines** | int? | false | 文字元素必須顯示的最小行數。 |
 | **HintAlign** | [AdaptiveTextAlign](#adaptivetextalign) | false | 文字的水平對齊。 |
-| **Language** | string | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
+| **語言** | 字串 | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
 
 
 ### <a name="adaptivetextstyle"></a>AdaptiveTextStyle
@@ -117,22 +117,22 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 預設值。 樣式取決於轉譯器。 |
-| **Caption** | 小於段落字型大小。 |
+| **預設值** | 預設值。 樣式取決於轉譯器。 |
+| **標題** | 小於段落字型大小。 |
 | **CaptionSubtle** | 和 Caption 一樣，只是有輕微不透明度。 |
 | **Body** | 段落字型大小。 |
 | **BodySubtle** | 和 Body 一樣，只是有輕微不透明度。 |
-| **Base** | 段落字型大小、粗體粗細。 基本上是 Body 的粗體版本。 |
+| **基底** | 段落字型大小、粗體粗細。 基本上是 Body 的粗體版本。 |
 | **BaseSubtle** | 和 Base 一樣，只是有輕微不透明度。 |
 | **Subtitle** | H4 字型大小。 |
 | **SubtitleSubtle** | 和 Subtitle 一樣，只是有輕微不透明度。 |
-| **Title** | H3 字型大小。 |
+| **標題** | H3 字型大小。 |
 | **TitleSubtle** | 和 Title 一樣，只是有輕微不透明度。 |
 | **TitleNumeral** | 和 Title 一樣，只是上/下邊框間距已移除。 |
 | **Subheader** | H2 字型大小。 |
 | **SubheaderSubtle** | 和 Subheader 一樣，只是有輕微不透明度。 |
 | **SubheaderNumeral** | 和 Subheader 一樣，只是上/下邊框間距已移除。 |
-| **Header** | H1 字型大小。 |
+| **標頭** | H1 字型大小。 |
 | **HeaderSubtle** | 和 Header 一樣，只是有輕微不透明度。 |
 | **HeaderNumeral** | 和 Header 一樣，只是上/下邊框間距已移除。 |
 
@@ -142,7 +142,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 預設值。 對齊方式自動由轉譯器決定。 |
+| **預設值** | 預設值。 對齊方式自動由轉譯器決定。 |
 | **Auto** | 對齊方式取決於目前的語言及文化特性。 |
 | **Left** | 將文字水平對齊左側。 |
 | **Center** | 將文字水平對齊中央。 |
@@ -154,7 +154,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
+| **來源** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http。 從 Fall Creators Update 開始，一般連線的網頁影像可以高達 3 MB，而計量付費連線可以高達 1 MB。 在尚未執行 Fall Creators Update 的裝置上，網頁影像不得超過 200 KB。 |
 | **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | 控制影像所需的裁剪。 |
 | **HintRemoveMargin** | bool? | false | 群組/子群組內的影像周圍預設會有 8px 邊界。 您可將此屬性設定為 true 以移除此邊界。 |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | 影像的水平對齊。 |
@@ -167,8 +167,8 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 預設值。 裁剪行為取決於轉譯器。 |
-| **None** | 不裁剪影像。 |
+| **預設值** | 預設值。 裁剪行為取決於轉譯器。 |
+| **無** | 不裁剪影像。 |
 | **Circle** | 將影像裁剪成圓形形狀。 |
 
 
@@ -177,7 +177,7 @@ TileContent 是描述磚通知內容 (包括視覺效果) 的最上層物件。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 預設值。 對齊行為取決於轉譯器。 |
+| **預設值** | 預設值。 對齊行為取決於轉譯器。 |
 | **Stretch** | 影像自動縮放到填滿可用寬度 (和可能會有的可用高度，視放置影像的位置而定)。 |
 | **Left** | 將影像對齊左側，並以其原生解析度來顯示影像。 |
 | **Center** | 將影像對齊中央，並以其原生解析度來顯示影像。 |
@@ -216,10 +216,10 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
+| **預設值** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
 | **Top** | 垂直對齊最上方。 |
 | **Center** | 垂直對齊中央。 |
-| **Bottom** | 垂直對齊底部。 |
+| **底部** | 垂直對齊底部。 |
 
 
 ## <a name="tilebackgroundimage"></a>TileBackgroundImage
@@ -227,9 +227,9 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
+| **來源** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
 | **HintOverlay** | int? | false | 背景影像上的全黑重疊。 此值控制全黑重疊的透明度，0 代表不重疊，100 代表全黑。 預設為 20。 |
-| **HintCrop** | [TileBackgroundImageCrop](#tilebackgroundimagecrop) | false | 1511 中的新功能：指定想要裁剪影像的方式。 在 1511 之前的版本中，這將會被忽略，背景影像不使用任何裁剪來顯示。 |
+| **HintCrop** | [TileBackgroundImageCrop](#tilebackgroundimagecrop) | false | 1511： 的新功能指定想要裁剪影像的方式。 在 1511 之前的版本中，這將會被忽略，背景影像不使用任何裁剪來顯示。 |
 | **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至磚通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
@@ -239,8 +239,8 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 裁剪時會使用轉譯器的預設行為。 |
-| **None** | 不裁剪影像，顯示為正方形。 |
+| **預設值** | 裁剪時會使用轉譯器的預設行為。 |
+| **無** | 不裁剪影像，顯示為正方形。 |
 | **Circle** | 將影像裁剪成圓形。 |
 
 
@@ -249,9 +249,9 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
-| **HintOverlay** | int? | false | 1511 中的新功能：預覽影像上的黑色重疊。 此值控制全黑重疊的透明度，0 代表不重疊，100 代表全黑。 預設為 20。 在舊版中，將會忽略此值，並以 0 重疊顯示預覽影像。 |
-| **HintCrop** | [TilePeekImageCrop](#tilepeekimagecrop) | false | 1511 中的新功能：指定想要裁剪影像的方式。 在 1511 之前的版本中，這將會被忽略，預覽影像不使用任何裁剪來顯示。 |
+| **來源** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
+| **HintOverlay** | int? | false | 1511： 的新功能查看映像上的黑色覆疊。 此值控制全黑重疊的透明度，0 代表不重疊，100 代表全黑。 預設為 20。 在舊版中，將會忽略此值，並以 0 重疊顯示預覽影像。 |
+| **HintCrop** | [TilePeekImageCrop](#tilepeekimagecrop) | false | 1511： 的新功能指定想要裁剪影像的方式。 在 1511 之前的版本中，這將會被忽略，預覽影像不使用任何裁剪來顯示。 |
 | **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至磚通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
@@ -261,8 +261,8 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 裁剪時會使用轉譯器的預設行為。 |
-| **None** | 不裁剪影像，顯示為正方形。 |
+| **預設值** | 裁剪時會使用轉譯器的預設行為。 |
+| **無** | 不裁剪影像，顯示為正方形。 |
 | **Circle** | 將影像裁剪成圓形。 |
 
 
@@ -271,10 +271,10 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 值 | 意義 |
 |---|---|
-| **Default** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
+| **預設值** | 預設值。 轉譯器自動選取預設垂直對齊方式。 |
 | **Top** | 垂直對齊最上方。 |
 | **Center** | 垂直對齊中央。 |
-| **Bottom** | 垂直對齊底部。 |
+| **底部** | 垂直對齊底部。 |
 
 
 ## <a name="tilebindingcontenticonic"></a>TileBindingContentIconic
@@ -282,7 +282,7 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Icon** | [TileBasicImage](#tilebasicimage) | true | 至少支援桌面和行動裝置版、小型和中型磚，提供正方形的長寬比例影像、解析度 200x200、PNG 格式、具有透明度，只使用白色。 如需詳細資訊，請參閱：[特殊磚範本](../tiles-and-notifications/special-tile-templates-catalog.md)。 |
+| **圖示** | [TileBasicImage](#tilebasicimage) | true | 至少支援桌面和行動裝置版、小型和中型磚，提供正方形的長寬比例影像、解析度 200x200、PNG 格式、具有透明度，只使用白色。 如需詳細資訊，請參閱：[特殊的磚範本](../tiles-and-notifications/special-tile-templates-catalog.md)。 |
 
 
 ## <a name="tilebindingcontentcontact"></a>TileBindingContentContact
@@ -290,16 +290,16 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Image** | [TileBasicImage](#tilebasicimage) | true | 要顯示的影像。 |
-| **Text** | [TileBasicText](#tilebasictext) | false | 要顯示的文字行。 不會顯示在小型磚上。 |
+| **影像** | [TileBasicImage](#tilebasicimage) | true | 要顯示的影像。 |
+| **文字** | [TileBasicText](#tilebasictext) | false | 要顯示的文字行。 不會顯示在小型磚上。 |
 
 
 ## <a name="tilebindingcontentpeople"></a>TileBindingContentPeople
-1511 中的新功能：支援中型、寬型以及大型 (桌面和行動裝置版)。 之前此功能僅限行動裝置版並僅限中型及寬型。
+1511： 的新功能支援的媒體，，和大型 （Desktop 和行動裝置）。 之前此功能僅限行動裝置版並僅限中型及寬型。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Images** | IList<[TileBasicImage](#tilebasicimage)> | true | 影像會以圓圈滾動。 |
+| **映像** | IList<[TileBasicImage](#tilebasicimage)> | true | 影像會以圓圈滾動。 |
 
 
 ## <a name="tilebindingcontentphotos"></a>TileBindingContentPhotos
@@ -307,7 +307,7 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Images** | IList<[TileBasicImage](#tilebasicimage)> | true | 可提供高達 12 個影像 (行動裝置版只會顯示最多 9 個)，將用於投影片放映。 新增超過 12 個會擲回例外狀況。 |
+| **映像** | IList<[TileBasicImage](#tilebasicimage)> | true | 可提供高達 12 個影像 (行動裝置版只會顯示最多 9 個)，將用於投影片放映。 新增超過 12 個會擲回例外狀況。 |
 
 
 ### <a name="tilebasicimage"></a>TileBasicImage
@@ -315,8 +315,8 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Source** | string | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
-| **AlternateText** | string | false | 描述影像的替代文字，用於協助工具用途。 |
+| **來源** | 字串 | true | 影像的 URL。 支援 ms-appx、ms-appdata 和 http(s)。 Http 影像的大小必須是 200 KB 或更少。 |
+| **AlternateText** | 字串 | false | 描述影像的替代文字，用於協助工具用途。 |
 | **AddImageQuery** | bool? | false | 設定為 "true" 可讓 Windows 將查詢字串附加至磚通知中提供的影像 URL。 如果您的伺服器裝載影像，並且可以處理查詢字串 (方式為根據查詢字串擷取影像變體，或忽略查詢字串並傳回未使用查詢字串所指定的影像)，請使用此屬性。 此查詢字串指定比例、對比設定和語言。例如，通知中指定的 "www.website.com/images/hello.png" 值會變成 "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
@@ -325,11 +325,11 @@ TextStacking 指定內容的垂直對齊方式。
 
 | 屬性 | 類型 | 必要 |描述 |
 |---|---|---|---|
-| **Text** | 字串 | false | 要顯示的文字。 |
-| **Language** | string | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
+| **文字** | 字串 | false | 要顯示的文字。 |
+| **語言** | 字串 | false | 指定為 BCP-47 語言標記的 XML 承載目標地區設定，例如 "en-US" or "fr-FR"。 此處指定的地區設定會覆寫任何其他位置 (例如繫結或視覺效果) 指定的地區設定。 如果此值為常值字串，則此屬性預設為使用者的 UI 語言。 如果此值為字串參考，則此屬性預設為 Windows 執行階段在解析字串時所選擇的地區設定。 |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [快速入門︰傳送本機磚通知](../tiles-and-notifications/sending-a-local-tile-notification.md)
-* [GitHub 上的 Notifications 程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)
+* [快速入門：通知區域的圖格](../tiles-and-notifications/sending-a-local-tile-notification.md)
+* [在 GitHub 上的通知程式庫](https://github.com/Microsoft/UWPCommunityToolkit/tree/dev/Notifications)

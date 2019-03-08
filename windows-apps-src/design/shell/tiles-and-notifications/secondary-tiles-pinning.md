@@ -1,6 +1,6 @@
 ---
-Description: Learn how to pin a secondary tile to Start from your UWP app.
-title: 釘選到 [開始] 的次要磚
+Description: 了解如何將次要磚釘選到開始從您的 UWP 應用程式。
+title: 次要磚釘選到開始
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 05/25/2017
@@ -8,13 +8,13 @@ ms.topic: article
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, 次要磚, 釘選, 快速入門, 程式碼範例, 範例
 ms.localizationpriority: medium
 ms.openlocfilehash: 4bebee86c824242cf031503617d4a880ebbb74df
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939664"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653153"
 ---
-# <a name="pin-secondary-tiles-to-start"></a>釘選到 [開始] 的次要磚
+# <a name="pin-secondary-tiles-to-start"></a>次要磚釘選到開始
 
 
 本主題會引導您完成為 UWP 應用程式建立次要磚並釘選到 \[開始\] 功能表的步驟。
@@ -37,10 +37,10 @@ using Windows.UI.StartScreen;
 
 次要磚包含一些主要元件...
 
-* **TileId**：唯一識別碼，可讓您能在其他次要磚之間識別出該磚。
-* **DisplayName**：您要在磚上顯示的名稱。
-* **Arguments**：當使用者按一下您的磚時，您要傳回到應用程式的引數。
-* **Square150x150Logo**：所需的標誌，顯示在中型磚上 (如果未提供小型標誌，可調整成小型磚)。
+* **TileId**:唯一的識別項，可讓您識別您其他的次要磚之間的圖格。
+* **DisplayName**:您想要在磚上顯示名稱。
+* **引數**:引數時所要傳遞給您的應用程式在使用者按一下您的磚。
+* **Square150x150Logo**:需要的標誌顯示在中型大小磚 （和調整至小磚，如果沒有提供的小標誌）。
 
 您**必須**為所有上述的屬性提供初始化的值，否則會發生例外狀況。
 
@@ -67,7 +67,7 @@ SecondaryTile tile = new SecondaryTile(
 ```
 
 
-## <a name="optional-add-support-for-larger-tile-sizes"></a>選用：新增大型磚的支援
+## <a name="optional-add-support-for-larger-tile-sizes"></a>選擇性：新增支援較大的圖格大小
 
 如果您會在次要磚上顯示豐富的磚通知，您可能會想要允許使用者將其磚調寬或調大，讓他們可以看到更多的內容。
 
@@ -88,7 +88,7 @@ tile.VisualElements.Square44x44Logo = new Uri("ms-appx:///Assets/CityTiles/Squar
 ```
 
 
-## <a name="optional-enable-showing-the-display-name"></a>選用：允許顯示顯示名稱
+## <a name="optional-enable-showing-the-display-name"></a>選擇性：啟用顯示的顯示名稱
 
 顯示名稱預設為「不」顯示。 若要在中/寬/大型磚上顯示顯示名稱，請新增下列程式碼。
 
@@ -100,7 +100,7 @@ tile.VisualElements.ShowNameOnSquare310x310Logo = true;
 ```
 
 
-## <a name="optional-3d-secondary-tiles"></a>選用：3D 次要磚
+## <a name="optional-3d-secondary-tiles"></a>選擇性：3D 的次要磚
 加入 3D 資產，可以美化 Windows Mixed Reality 的次要磚。 在混合實境環境中使用您的應用程式時，使用者可以直接在其 Windows Mixed Reality 首頁放置 3D 磚，而不是放在 [開始] 功能表中。 例如，您可以建立直接連結至 360 度相片檢視器應用程式的 360 度全景相片，或讓使用者從家具型錄放置椅子的 3D 模型，在選取時會開啟關於該物件的定價與色彩選項等詳細資料。 若要開始，請參考[混合實境開發人員文件](https://developer.microsoft.com/windows/mixed-reality/implementing_3d_deep_links_for_your_app_in_the_windows_mixed_reality_home)。
 
 
@@ -180,7 +180,7 @@ var tiles = await SecondaryTile.FindAllAsync();
 ## <a name="related"></a>相關
 
 * [次要磚概觀](secondary-tiles.md)
-* [次要磚指導方針](secondary-tiles-guidance.md)
-* [磚資產](app-assets.md)
-* [磚內容文件](create-adaptive-tiles.md)
-* [傳送本機磚通知](sending-a-local-tile-notification.md)
+* [次要磚的指引](secondary-tiles-guidance.md)
+* [圖格資產](app-assets.md)
+* [圖格內容的文件](create-adaptive-tiles.md)
+* [通知區域的圖格](sending-a-local-tile-notification.md)

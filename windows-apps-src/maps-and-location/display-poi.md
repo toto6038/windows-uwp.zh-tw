@@ -1,5 +1,5 @@
 ---
-title: 在地圖上顯示感興趣的地點 (POI)
+title: 在地圖上顯示興趣點 (POI)
 description: 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ms.date: 08/11/2017
@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, 地圖, 位置, 圖釘
 ms.localizationpriority: medium
 ms.openlocfilehash: bfb307093889c5a40a452d2d406f02224ab5eab1
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050641"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659273"
 ---
 # <a name="display-points-of-interest-on-a-map"></a>在地圖上顯示感興趣的地點
 
 藉由使用圖釘、影像、圖形及 XAML UI 元素，即可在地圖上新增興趣點 (POI)。 POI 是地圖上代表感興趣項目的特定點。 例如，公司、城市或朋友的位置。
 
-若要深入了解如何在應用程式中顯示 POI，請從 GitHub 的 [Windows-universal-samples 存放庫](https://go.microsoft.com/fwlink/p/?LinkId=619979) 下載下列範例：[通用 Windows 平台 (UWP) 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
+若要深入了解您的應用程式上顯示 POI，下載下列的範例，從[Windows 通用範例儲存機制](https://go.microsoft.com/fwlink/p/?LinkId=619979)GitHub 上：[通用 Windows 平台 (UWP) 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)。
 
 藉由將 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)、 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard)、[**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) 和 [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) 物件新增到 [**MapElementsLayer**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapelementslayer) 物件的 **MapElements** 集合，即可在地圖上顯示圖釘、影像及圖形。 然後，將該層物件新增到地圖控制項的 **層** 集錦中。
 
@@ -84,7 +84,7 @@ public void AddSpaceNeedleIcon()
 
 使用 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 類別時，請將下列事項納入考量：
 
--   [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 屬性最大支援 2048x2048 像素的影像大小。
+-   [  **Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) 屬性最大支援 2048x2048 像素的影像大小。
 -   根據預設，不保證會顯示地圖圖示的影像。 當它遮蔽地圖上的其他元素或標籤時，可能會被隱藏。 若要將它保持在可見狀態，請將地圖圖示的 [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) 屬性設定為 [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314)。
 -   並不保證會顯示 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637088) 的選擇性 [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637077)。 如果您看不到文字，請降低 [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637068) 的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637004) 屬性值來縮小。
 -   當您在地圖上顯示指向某特定位置的 [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 影像 (例如圖釘或箭頭) 時，請考慮將 [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) 屬性的值設定為影像上概略的指標位置。 如果您讓 **NormalizedAnchorPoint** 的值保留其預設值 (0, 0)，該值代表影像的左上角，變更地圖的 [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) 可能會讓影像指向不同的位置。
@@ -163,14 +163,14 @@ public void AddLandmarkPhoto()
 }
 ```
 
-此程式碼有三個部分值得進一步研究：影像、參考相機，以及 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 屬性。
+沒有此程式碼必須檢查稍微深入討論的三個部分：映像、 參考相機，而[ **NormalizedAnchorPoint** ](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint)屬性。
 
-### <a name="image"></a>影像
+### <a name="image"></a>Image
 
-此範例顯示專案的 **\[資產\]** 資料夾中儲存的自訂影像。 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 屬性預期的值類型為 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813)。 這種類型會要求針對 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 命名空間**使用** using 陳述式。
+此範例顯示專案的 **\[資產\]** 資料夾中儲存的自訂影像。 [  **MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Image**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Image) 屬性預期的值類型為 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813)。 這種類型會要求針對 [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 命名空間**使用** using 陳述式。
 
 >[!NOTE]
->如果您在多個地圖圖示都使用相同的影像，請在頁面或應用程式層級宣告 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 以獲得最佳效能。
+>如果您在多個地圖圖示都使用相同的影像，請在頁面或 App 層級宣告 [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 以獲得最佳效能。
 
 ### <a name="reference-camera"></a>參考相機
 
@@ -182,7 +182,7 @@ public void AddLandmarkPhoto()
 
 ### <a name="normalizedanchorpoint"></a>NormalizedAnchorPoint
 
-[**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 是錨定至 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性的影像點。 0.5,1 點是影像的底部中央。 因為我們已將 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性設定為地圖控制項的中央，所以影像的底部中央將錨定至地圖控制項的中央。 如果您希望影像直接位於某個點上，請將 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 設定為 0.5,0.5。  
+[  **NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 是錨定至 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性的影像點。 0.5,1 點是影像的底部中央。 因為我們已將 [**MapBillboard**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard) 的 [**Location**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.Location) 屬性設定為地圖控制項的中央，所以影像的底部中央將錨定至地圖控制項的中央。 如果您希望影像直接位於某個點上，請將 [**NormalizedAnchorPoint**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.maps.mapbillboard.NormalizedAnchorPoint) 設定為 0.5,0.5。  
 
 ## <a name="add-a-shape"></a>加上圖形
 
@@ -474,10 +474,10 @@ public myMapPage()
 ## <a name="related-topics"></a>相關主題
 
 * [Bing 地圖服務開發人員中心](https://www.bingmapsportal.com/)
-* [UWP 地圖範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地圖的設計指導方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 影片：跨手機、平板電腦和電腦運用 Windows app 中的地圖與位置功能](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP 車流量 app 範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP 的對應範例](https://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [對應的設計方針](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 影片：利用跨電話、 平板電腦和 PC 在 Windows 應用程式中的地圖與位置](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP 流量的應用程式範例](https://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)

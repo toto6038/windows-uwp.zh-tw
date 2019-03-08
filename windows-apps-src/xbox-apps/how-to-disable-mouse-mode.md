@@ -3,15 +3,15 @@ title: 如何停用滑鼠模式
 description: 停用預設滑鼠模式的指示。
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: e57ee4e6-7807-4943-a933-c2b4dc80fc01
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e4b8868f416494daf978d65d4a4ccde02d6ccf5
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931571"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656623"
 ---
 # <a name="how-to-disable-mouse-mode"></a>如何停用滑鼠模式
 滑鼠模式針對所有應用程式預設皆為開啟，這代表所有未選擇不使用的應用程式都將會看到滑鼠指標 (類似於主機上 Edge 瀏覽器的指標)。 我們強烈建議您關閉此功能，並針對方向控制器瀏覽進行最佳化。   
@@ -46,7 +46,7 @@ public App() {
 ## <a name="cdirectx"></a>C++/DirectX   
 如果您正在撰寫 C++/DirectX app，則不須執行任何動作。 滑鼠模式僅適用於 HTML 和 XAML 應用程式。
 
-## <a name="see-also"></a>另請參閱
-- [Xbox 的最佳做法](tailoring-for-xbox.md)
-- [Xbox One 上的 UWP](index.md)
+## <a name="see-also"></a>請參閱
+- [Xbox 的最佳作法](tailoring-for-xbox.md)
+- [在 Xbox One UWP](index.md)
 

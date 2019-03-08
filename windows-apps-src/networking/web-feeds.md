@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 5b5312614c7060118fdb4678aa80ae51d6734486
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921323"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660303"
 ---
 # <a name="rssatom-feeds"></a>RSS/Atom 摘要
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
 -   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
@@ -30,7 +30,7 @@ ms.locfileid: "8921323"
 
 ## <a name="which-feed-format-standards-are-supported"></a>支援哪些摘要格式標準？
 
-通用 Windows 平台 (UWP) 支援從 0.91 到 RSS 2.0 的 RSS 格式標準以及從 0.3 到 1.0 的 Atom 標準的摘要抓取。 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的類別可定義能夠代表 RSS 以及 Atom 元素的摘要和摘要項目。
+通用 Windows 平台 (UWP) 支援從 0.91 到 RSS 2.0 的 RSS 格式標準以及從 0.3 到 1.0 的 Atom 標準的摘要抓取。 [  **Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間中的類別可定義能夠代表 RSS 以及 Atom 元素的摘要和摘要項目。
 
 此外，Atom 1.0 和 RSS 2.0 格式皆允許它們的摘要文件包含官方規格未定義的元素或屬性。 經過一段時間後，這些自訂元素與屬性已經變成一種方法，用以定義由其他 Web 服務資料格式 (如 GData 與 OData) 所取用的網域特定資訊。 為了支援此新增功能，[**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) 類別代表一般 XML 元素。 使用 **SyndicationNode** 搭配 [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) 命名空間中的類別，可允許應用程式存取屬性、延伸以及任何可能包含的內容。
 
@@ -44,7 +44,7 @@ ms.locfileid: "8921323"
 
 網路隔離會影響 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 和 [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) 命名空間中任何想存取網路的類別元素。 Windows 會主動強制網路隔離。 如果未啟用適當的網路功能，則在 **Windows.Web.Syndication** 或 **Windows.Web.AtomPub** 命名空間中呼叫類別元素會因為網路隔離而導致網路存取失敗。
 
-建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 網路功能通常會使用 Microsoft Visual Studio2015，開發應用程式時新增。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
+建立應用程式時，會在應用程式資訊清單中設定應用程式的網路功能。 網路功能通常會加入開發應用程式時，使用 Microsoft Visual Studio 2015。 也可以使用文字編輯器在應用程式資訊清單檔案中手動設定網路功能。
 
 如需網路隔離和網路功能的詳細資訊，請參閱[網路功能基本知識](networking-basics.md)主題中的＜功能＞一節。
 
@@ -52,11 +52,11 @@ ms.locfileid: "8921323"
 
 本節說明如何在以 C# 或 Javascript 撰寫的 UWP 應用程式中使用 [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) 命名空間的類別來抓取和顯示網頁摘要。
 
-**先決條件**
+**必要條件**
 
-若要確保 UWP 應用程式的網路可正常運作，您必須在專案 **Package.appxmanifest** 檔案中設定所需的所有網路功能。 如果應用程式需要以用戶端的形式連線到網際網路上的遠端服務，則需要 **internetClient** 功能。 如需詳細資訊，請參閱[網路功能基本知識](networking-basics.md)主題中的＜功能＞一節。
+若要確保 UWP 應用程式的網路可正常運作，您必須在專案 **Package.appxmanifest** 檔案中設定所需的所有網路功能。 如果 app 需要以用戶端的形式連線到網際網路上的遠端服務，則需要 **internetClient** 功能。 如需詳細資訊，請參閱[網路功能基本知識](networking-basics.md)主題中的＜功能＞一節。
 
-**從網頁摘要抓取同步發佈內容**
+**擷取 web 摘要的新聞訂閱的內容**
 
 現在我們要檢閱一些示範如何抓取摘要的程式碼，然後顯示摘要所包含的每一個個別項目。 設定和傳送要求之前，我們會先定義一些要在作業期間使用的變數，然後初始化 [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456) 的執行個體，這可定義要用來抓取和顯示摘要的方法和屬性。
 

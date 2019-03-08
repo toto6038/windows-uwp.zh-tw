@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a186e0a8e7293b139f756b69966cd8d4b49c92
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048295"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598213"
 ---
 # <a name="aep-service-class-ids"></a>AEP 服務類別識別碼
 
 
 
-**重要 API**
+**重要的 Api**
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
@@ -97,7 +97,7 @@ UPnP 服務會使用下列通訊協定識別碼：{0e261de4-12f0-46e6-91ba-42860
 | WFA WLAN 設定             | **23d5f7db-747f-5099-8f21-3ddfd0c3c688**  |
 | 功能加強的印表機                   | **fb9074da-3d9f-5384-922e-9978ae51ef0c**  |
 | 印表機基本                      | **5d2a7252-d45c-5158-87a4-05212da327e1**  |
-| 媒體接收器登錄器           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
+| 媒體接收器登錄           | **0b4a2add-d725-5198-b2ba-852b8bf8d183**  |
 | 內容目錄                  | **89e701dd-0597-5279-a31c-235991d0db1c**  |
 | 撥號                               | **085dfa4a-3948-53c7-a0d7-16d8ec26b29b**  |
 

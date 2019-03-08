@@ -4,14 +4,14 @@ description: 本文將說明如何將指紋生物識別技術新增到您的通�
 ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 973091926ddff312b20002f7b535d34a3b7d2bc4
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919596"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650333"
 ---
 # <a name="fingerprint-biometrics"></a>指紋生物識別技術
 

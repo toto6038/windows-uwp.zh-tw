@@ -6,21 +6,21 @@ ms.date: 12/14/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: a79edb39cc4bfa5794d79d68f4fb8d5b0e976105
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050631"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645313"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-december-2017"></a>2017 年 12 月 Windows 開發人員文件的最新動向
 
 Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供開發人員使用之新功能的資訊。 發行 Fall Creators Update 後已有下列功能概觀、開發人員指引和範例可以使用，包含提供給 Windows 開發人員的全新及更新資訊。
 
-在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
-### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed Reality：愛好者指南 (英文)
+### <a name="windows-mixed-reality-enthusiasts-guide"></a>Windows Mixed 的 Reality:人十分熱心的指南
 
 以深入混合實境世界的高科技愛好者為目標對象，[愛好者指南](https://docs.microsoft.com/en-us/windows/mixed-reality/enthusiast-guide/)回答大家對於 Windows Mixed Reality Windows 最常問的問題。 
 
@@ -46,7 +46,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 Microsoft Collaborate 入口網站提供工具和服務，透過啟用工程系統工作項目 (錯誤、功能要求等) 的共用以及內容發佈 (組建、文件、規格) 來簡化 Microsoft 生態系統內的工程共同作業。 [進一步瞭解](https://docs.microsoft.com/en-us/collaborate)。
 
-![合作夥伴中心中的 Microsoft Collaborate](images/microsoft_collaborate_screenshot.PNG)
+![在合作夥伴中心的 Microsoft 共同作業](images/microsoft_collaborate_screenshot.PNG)
 
 ### <a name="package-desktop-applications-with-uwp-projects"></a>將傳統型應用程式與 UWP 專案封裝在一起
 
@@ -58,13 +58,13 @@ Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**
 
 ### <a name="subscription-add-ons-are-now-available-to-developers-in-the-windows-dev-center-insider-program"></a>訂閱附加元件現已在 Windows 開發人員中心測試人員計畫開放給測試人員取得
 
-已加入開發人員中心測試人員計畫的所有開發人員，現在都可以使用訂閱附加元件，在其應用程式中運用自動週期性計費期間來銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
+已加入開發人員中心 Insider 計劃的所有人員現在可以都使用訂用帳戶的附加元件銷售數位產品 （例如應用程式功能或數位內容） 其應用程式應用程式中的使用自動化週期性的計費週期。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。
 
 ## <a name="developer-guidance"></a>開發人員指引
 
 ### <a name="color"></a>色彩
 
-我們已加入一些新指導方針，說明如何在您的應用程式中使用色彩來提供最佳的使用者體驗。 這包括 API 使用案例，以及 UI 設計與存取性的一般指導方針。 我們也已更新 Xbox 上可用的使用者輔色清單。 [請至此處查看更新的色彩文章。](../design/style/color.md)
+我們已加入一些新指導方針，說明如何在您的應用程式中使用色彩來提供最佳的使用者體驗。 這包括 API 使用案例，以及 UI 設計與存取性的一般指導方針。 我們也已更新 Xbox 上可用的使用者輔色清單。 [查看已更新色彩以下的文章。](../design/style/color.md)
 
 ![通用 windows 調色盤](../design/basics/images/colors.png)
 
@@ -83,7 +83,7 @@ Visual Studio 2017 版本 15.5 已經更新 **Windows 應用程式封裝專案**
 通用 Windows 平台 (UWP) 設計指導方針可以協助您設計和建立美觀、優雅的應用程式。 [我們的新簡介](../design/basics/design-and-ui-intro.md)提供每個 UWP app 中包含的通用設計功能概觀，以及如何利用文章來建立可在各種裝置上精美縮放的使用者介面 (UI)。
 
 
-### <a name="request-ratings-and-reviews"></a>請求評分與評論
+### <a name="request-ratings-and-reviews"></a>要求評分與評論
 
 我們已新增新文章，說明如何[為您的應用程式請求評分與評論](../monetize/request-ratings-and-reviews.md)。 您可以在應用程式內容中顯示評分與評論對話方塊，您也可以在 Store 中開啟應用程式的評分與評論頁面。
 

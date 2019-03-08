@@ -1,19 +1,19 @@
 ---
-title: 啟動遠端裝置上的 App
+title: 啟動遠端裝置上的應用程式
 description: 了解如何使用專案 Rome 啟動遠端裝置上的應用程式。
 ms.date: 02/12/2018
 ms.topic: article
-keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
+keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.assetid: 54f6a33d-a3b5-4169-8664-653dbab09175
 ms.localizationpriority: medium
 ms.openlocfilehash: 26a67816195105572d9f690599b9a880ece90c98
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930779"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658413"
 ---
-# <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
+# <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的應用程式
 
 本文說明如何以啟動遠端裝置上的 Windows 應用程式。
 
@@ -25,7 +25,7 @@ ms.locfileid: "8930779"
 
 ### <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-為了讓您的應用程式能夠啟動遠端裝置上的應用程式，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\]**** 索引標籤上選取 \[遠端系統\]**** 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
+為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\] 索引標籤上選取 \[遠端系統\] 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
 
 ``` xml
 <Capabilities>
@@ -35,7 +35,7 @@ ms.locfileid: "8930779"
 
 ### <a name="enable-cross-device-sharing"></a>啟用跨裝置共用
 
-此外，用戶端裝置必須設為允許跨裝置共用。 此設定預設為啟用，可從 \[設定：系統\]******** > \[共用體驗\]**** > \[跨裝置共用\]**** 存取。 
+此外，用戶端裝置必須設為允許跨裝置共用。 這項設定，存取位於**設定**:**系統** > **共用體驗** > **跨裝置共用**，預設會啟用。 
 
 ![共用體驗設定頁面](images/shared-experiences-settings.png)
 
@@ -58,9 +58,9 @@ ms.locfileid: "8930779"
 
 [!code-cs[Main](./code/RemoteLaunchScenario/MainPage.xaml.cs#SnippetMembers)]
 
-在您的應用程式啟動程式碼中新增對 `BuildDeviceList()` 的呼叫後，再嘗試啟動遠端應用程式。
+在您的 app 啟動程式碼中新增對 `BuildDeviceList()` 的呼叫後，再嘗試啟動遠端 app。
 
-## <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的 App
+## <a name="launch-an-app-on-a-remote-device"></a>啟動遠端裝置上的應用程式
 
 將您想要連線的裝置傳送至 [**RemoteLauncher.LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/windows.system.remotelauncher.launchuriasync.aspx) API，從遠端啟動 app。 這個方法有三個多載。 簡單來說，這個範例會示範如何指定 URI，以啟用遠端裝置上的 app。 在這個範例中，URI 會在遠端電腦上開啟地圖 app，以 3D 方式檢視太空針塔。
 
@@ -74,7 +74,7 @@ ms.locfileid: "8930779"
 
 ## <a name="related-topics"></a>相關主題
 
-[遠端系統 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
-[已連線的 App 與裝置 (專案 Rome) 概觀](connected-apps-and-devices.md)  
+[遠端系統的 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)  
+[已連線的應用程式和裝置 (Project Rome) 概觀](connected-apps-and-devices.md)  
 [探索遠端裝置](discover-remote-devices.md)  
-[遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)示範如何探索遠端系統、啟動遠端系統上的 app，以及使用 app 服務在兩個系統上執行的 app 之間傳送訊息。
+[遠端系統範例](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/RemoteSystems)示範如何探索遠端系統、啟動遠端系統上的 app，以及使用應用程式服務在兩個系統上執行的應用程式之間傳送訊息。

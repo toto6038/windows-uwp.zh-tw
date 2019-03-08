@@ -1,5 +1,5 @@
 ---
-Description: Test your app for Windows 10 in S mode.
+Description: 在 S 模式中，適用於 Windows 10 測試您的應用程式。
 Search.Product: eADQiWindows 10XVcnh
 title: 針對 Windows 10 S 測試您的 Windows 應用程式
 ms.date: 05/11/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10 S, uwp
 ms.localizationpriority: medium
 ms.openlocfilehash: cf442da9344f37525bf3c17e4a62a319b9c04044
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048455"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655943"
 ---
 # <a name="test-your-windows-app-for-windows-10-in-s-mode"></a>針對 Windows 10 S 模式測試您的 Windows 應用程式
 
@@ -46,7 +46,7 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 ### <a name="audit-mode-policy"></a>稽核模式原則
 在此模式下，即使不受 Windows 10 S 支援，您的應用程式還是會執行工作。Windows 會記錄下任何會被封鎖並進入程式碼完整性事件記錄檔的可執行檔。
 
-您可以透過開啟 **\[事件檢視器\]**，並瀏覽至此位置：\[應用程式及服務記錄檔\] -> \[Microsoft]] -> \[Windows\] -> \[CodeIntegrity\] -> \[操作\]，尋找那些記錄檔。
+您可以找到這些記錄檔 %installationdirectory**事件檢視器**，然後瀏覽至這個位置：應用程式及服務記錄檔]-> [Microsoft]-> [Windows]-> [CodeIntegrity]-> [作業。
 
 ![code-integrity-event-logs](images/desktop-to-uwp/code-integrity-logs.png)
 
@@ -55,7 +55,7 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 #### <a name="optional-find-specific-failure-points-in-the-call-stack"></a>(選擇性) 在呼叫堆疊中尋找特定失敗點
 若要在發生封鎖問題的呼叫堆疊中尋找特定失敗點，請新增此登錄機碼，然後[設定核心模式偵錯環境](https://docs.microsoft.com/windows-hardware/drivers/debugger/getting-started-with-windbg--kernel-mode-#span-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanspan-idsetupakernel-modedebuggingspanset-up-a-kernel-mode-debugging)。
 
-|機碼|名稱|類型|值|
+|索引鍵|名稱|類型|值|
 |--|---|--|--|
 |HKEY_LOCAL_MACHINE\SYSTEM\CurentControlSet\Control\CI| DebugFlags |REG_DWORD | 1 |
 
@@ -76,7 +76,7 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 
 若您想要將這些項原則套用至您的本機電腦，建議您最好先從稽核模式原則開始。 透過使用這項原則，您可以檢閱程式碼完整性事件記錄檔，以確保強制執行原則不會封鎖任何重要的項目。
 
-當您準備好要套用原則之後，尋找您選擇之原則的 .P7B 檔案，將它重新命名為 **SIPolicy.P7B**，然後將該檔案儲存到您系統上的這個位置：**C:\Windows\System32\CodeIntegrity\\**。
+當您準備好要套用原則時，發現。原則，您選擇，而 P7B 檔案重新命名為**SIPolicy.P7B**，然後將該檔案儲存到您的系統上的這個位置：**C:\Windows\System32\CodeIntegrity\\**。
 
 然後，請重新啟動您的系統。
 
@@ -85,18 +85,18 @@ Device Guard 程式碼完整性原則會強制應用程式必須符合該原則�
 
 ## <a name="next-steps"></a>後續步驟
 
-**尋找您的問題解答**
+**尋找問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或功能建議**
+**提供意見反應或提出功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**檢視應用程式諮詢小組公布的詳細部落格文章**
+**檢閱詳細的部落格文章，我們的應用程式，請參閱團隊所公佈**
 
 請參閱[使用傳統型橋接器在 Windows 10 S 上移植並測試您的傳統桌面應用程式](https://blogs.msdn.microsoft.com/appconsult/2017/06/15/porting-and-testing-your-classic-desktop-applications-on-windows-10-s-with-the-desktop-bridge/) (英文)。
 
-**深入了解可讓您輕鬆測試 Windows S 模式的工具**
+**深入了解工具，可讓您更輕鬆地測試在 S 模式中的 Windows**
 
 請參閱[解除封裝、修改、重新封裝、簽署 APPX](https://blogs.msdn.microsoft.com/appconsult/2017/08/07/unpack-modify-repack-sign-appx/) (英文)。

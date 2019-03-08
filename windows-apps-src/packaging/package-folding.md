@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 9241ffeb6b232c5b5be3098b114f6c7bf00bcf0d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947750"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57659863"
 ---
 # <a name="developing-with-asset-packages-and-package-folding"></a>使用資產套件與套件摺疊進行開發 
 
@@ -25,14 +25,14 @@ ms.locfileid: "8947750"
 
 若要了解套件摺疊如何不會影響您的開發程序，讓我們首先回來了解當您將應用程式分成多個套件（使用資產套件或資源套件）時的行為。 
 
-從高階角度來看，分割部分應用程式檔案為其他套件（不是架構套件），您將無法從程式碼執行的相對位置存取直接這些檔案。 這是因為這些套件的安裝目錄不同於架構套件的安裝位置。 例如，如果您正在製作遊戲，您的遊戲翻譯為法文及德文，而且建置適用於 x86 與 x64 電腦，則您應該會有這些遊戲的應用程式套件組合中的應用程式套件檔案：
+從高階角度來看，分割部分應用程式檔案為其他套件（不是架構套件），您將無法從程式碼執行的相對位置存取直接這些檔案。 這是因為這些套件的安裝目錄不同於架構套件的安裝位置。 比方說，如果您將會讓遊戲，而且您的遊戲已當地語系化成法文及德文和您建置適用於 x86 和 x64 電腦，那麼您應該在應用程式套件組合，遊戲的這些應用程式套件檔案：
 
 -   MyGame_1.0_x86.appx
 -   MyGame_1.0_x64.appx
 -   MyGame_1.0_language-fr.appx
 -   MyGame_1.0_language-de.appx
 
-當您的遊戲安裝到使用者的電腦時，每個應用程式套件檔案將會有它自己的**WindowsApps**目錄中的資料夾。 因此執行 64 位元 Windows 的法文使用者，您的遊戲看起來像這樣：
+當您的遊戲安裝到使用者的電腦上時，每個應用程式套件檔案都會在它自己的資料夾**WindowsApps**目錄。 因此執行 64 位元 Windows 的法文使用者，您的遊戲看起來像這樣：
 
 ```example
 C:\Program Files\WindowsApps\
@@ -43,9 +43,9 @@ C:\Program Files\WindowsApps\
 `-- …(other apps)
 ```
 
-請注意，不適用於使用者的檔案將不會在應用程式套件安裝 （x86 與德文套件）。 
+請注意應用程式套件，並不適用於使用者的檔案不會安裝 （x86 和德文的套件）。 
 
-針對這位使用者，遊戲主要可執行檔將會在**MyGame_1.0_x64**資料夾，並將會在該處執行，以及通常它只有此資料夾內檔案的存取權。 為了存取**MyGame_1.0_language-fr**資料夾中的檔案，您必須使用 MRT API 或 PackageManager API。 MRT Api 可以從已安裝的語言，自動選取最適合的檔案，您可以深入了解在[Windows.ApplicationModel.Resources.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core)MRT Api。 或者，您可以使用[PackageManager 類別](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager)找到法文語言套件的安裝位置。 您絕不應該假設應用程式套件的安裝位置，因為這會變更而且因使用者有所不同。 
+針對這位使用者，遊戲主要可執行檔將會在**MyGame_1.0_x64**資料夾，並將會在該處執行，以及通常它只有此資料夾內檔案的存取權。 為了存取**MyGame_1.0_language-fr**資料夾中的檔案，您必須使用 MRT API 或 PackageManager API。 MRT Api 可以自動選取最適當的檔案從安裝的語言，您可以深入了解 MRT Api，請參閱[Windows.ApplicationModel.Resources.Core](https://docs.microsoft.com/uwp/api/windows.applicationmodel.resources.core)。 或者，您可以使用[PackageManager 類別](https://docs.microsoft.com/uwp/api/Windows.Management.Deployment.PackageManager)找到法文語言套件的安裝位置。 您絕不應該假設應用程式套件的安裝位置，因為這會變更而且因使用者有所不同。 
 
 ## <a name="asset-package-folding"></a>資產套件摺疊
 

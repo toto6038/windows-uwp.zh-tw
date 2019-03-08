@@ -1,17 +1,17 @@
 ---
 title: 如何啟用應用程式 (DirectX 和 C++)
-description: 這個主題示範如何定義通用 Windows 平台 (UWP) DirectX 應用程式的啟用經驗。
+description: 這個主題示範如何定義通用 Windows 平台 (UWP) DirectX app 的啟用經驗。
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, 遊戲, DirectX, 啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: 51c2435c8edeac2431198b7b5f3d9b1a307b5b78
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920190"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648843"
 ---
 # <a name="how-to-activate-an-app-directx-and-c"></a>如何啟用應用程式 (DirectX 和 C++)
 
@@ -85,8 +85,8 @@ void App::Run()
 ## <a name="related-topics"></a>相關主題
 
 
-* [如何暫停 app (DirectX 和 C++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [如何繼續 app (DirectX 和 C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [如何暫停應用程式 （DirectX 和 c + +）](how-to-suspend-an-app-directx-and-cpp.md)
+* [如何繼續應用程式 （DirectX 和 c + +）](how-to-resume-an-app-directx-and-cpp.md)
 
  
 

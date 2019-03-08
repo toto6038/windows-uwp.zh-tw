@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10 s, 永遠連線, 相容性疑難排解員, ARM 上的 windows
 ms.localizationpriority: medium
 ms.openlocfilehash: 763b00a5790274d81b6daa2838ef926936e458db
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946366"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647613"
 ---
 # <a name="program-compatibility-troubleshooter-on-arm"></a>ARM 上的程式相容性疑難排解員
 模擬支援 x86 應用程式，是為 ARM64 上的 Windows 10 建立的新功能。 有時候模擬執行的最佳化不會造成最佳體驗。 您可以使用程式相容性疑難排解員，為您的 x86 應用程式切換模擬設定，減少預設最佳化並可能增加相容性。
@@ -32,7 +32,7 @@ ms.locfileid: "8946366"
 
 您可以在可執行檔上按一下滑鼠右鍵，然後選取**\[內容\]**，切換模擬設定。
 
-在 ARM 上，名為**\[ARM 上的 Windows 10\]** 的區段將會出現在**\[相容性\]** 索引標籤。按一下**\[變更模擬設定\]** 以啟動第二個視窗，如此處所示。
+在 ARM 中上, 一個區段標題為**ARM 上的 Windows 10**會位於**相容性**] 索引標籤。按一下 [**變更模擬設定**啟動第二個視窗，如此處所示。
 
 ![變更模擬設定螢幕擷取畫面](images/arm/Capture.png)
 

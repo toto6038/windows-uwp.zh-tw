@@ -8,11 +8,11 @@ design-contact: karenmui
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 49d891888e26b6ce4c9f94e92605eaf7d619b6f3
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116150"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57654253"
 ---
 # <a name="color"></a>色彩
 
@@ -82,7 +82,7 @@ UWP app 可以使用淺色或深色應用程式佈景主題。 佈景主題會�
 
 如果您未要求適用於您應用程式的佈景主題，請務必在深色和淺色佈景主題中測試您的應用程式，以確保您的應用程式在任何情況下都清晰可見。
 
-**注意**：在 Visual Studio 中，預設 RequestedTheme 是淺色，因此您必須變更 RequestedTheme 以測試兩者。
+**注意**：在 Visual Studio 中，預設值 RequestedTheme 為光線，因此您必須變更以同時測試 RequestedTheme。
 
 ## <a name="theme-brushes"></a>佈景主題筆刷
 
@@ -186,8 +186,7 @@ Windows 殼層中的輔色演算法會產生輔色的淺色和深色色調。
 - `SystemAccentColorDark2`
 - `SystemAccentColorDark3`
 
-<!-- check this is true -->
-您也可以使用 [**UISettings.GetColorValue**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_) 方法和 [**UIColorType**](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType) 列舉，以程式設計方式存取輔色調色盤。
+<!-- check this is true --> 您也可以存取的強調色彩調色盤，以程式設計方式用[ **UISettings.GetColorValue** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UISettings#Windows_UI_ViewManagement_UISettings_GetColorValue_Windows_UI_ViewManagement_UIColorType_)方法並[ **UIColorType** ](https://docs.microsoft.com/uwp/api/Windows.UI.ViewManagement.UIColorType)列舉。
 
 您可以使用輔色調色盤，在您的應用程式中進行色彩佈景主題設定。 以下是如何在按鈕上使用輔色調色盤的範例。
 
@@ -253,34 +252,34 @@ Color LightBlue = Color.FromArgb(255,54,192,255);
 
 如需如何使用筆刷的詳細資訊，請參閱 [XAML 筆刷](brushes.md)。
 
-## <a name="scoping-system-colors"></a>設定範圍系統色彩
+## <a name="scoping-system-colors"></a>範圍的系統色彩
 
-除了在您的應用程式中定義您自己的色彩，您可以也將到所需的地區我們 systematized 的色彩在您的應用程式的整個範圍使用**ColorSchemeResources**標記。 此 API 可讓您不僅要以色彩標示和佈景主題大型的控制項群組，一次是藉由設定一些屬性，但也可讓您許多其他系統優點，您通常不會取得以手動定義您自己自訂的色彩：
+除了在應用程式中定義您自己的色彩，您可以也我們 systematized 的色彩，想要的區域以整個應用程式設定的範圍使用**ColorSchemeResources**標記。 此 API 可讓您不僅要以顏色標示和佈景主題的大型群組的一次是藉由設定一些屬性，但也提供您許多其他系統有益於您的控制項通常不會收到與手動定義您自己自訂的色彩：
 
-- 使用**ColorSchemeResources**設定任何色彩不會作用高對比佈景主題
-  * 這表示您的應用程式都可以存取更多人不需要任何額外的設計或開發人員成本
-- 可以輕鬆地色彩為淺色、 深色或普遍跨兩個佈景主題上設定設定的一個屬性 API
-- 色彩**ColorSchemeResources**上設定將會重疊顯示下所有相似的控制項也會使用該系統色彩
-  * 這樣可確保您會有一致的色彩故事整個應用程式同時維持您的品牌的外觀
-- 效果所有的視覺狀態、 動畫和不透明度變化，而不需要重新套用範本
+- 使用設定的任何色彩**ColorSchemeResources**不會影響高對比
+  * 這表示您的應用程式將可存取更多的人，而不需要任何額外的設計或開發成本
+- 可以輕鬆地設定色彩為淺、 暗色或普遍在這兩個佈景主題藉由在 API 上設定一個屬性
+- 在 色彩集**ColorSchemeResources**會串聯到所有類似的控制項，也會使用該系統色彩
+  * 這確保您會有一致的色彩劇本跨您的應用程式維持您的品牌的外觀
+- 影響所有的視覺狀態、 動畫和不透明度變化，而不需要重新範本
 
 ### <a name="how-to-use-colorschemeresources"></a>如何使用 ColorSchemeResources
 
-ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定範圍的位置。 ColorSchemeResources 必須採取一種[X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，可以是三個選項的其中一個：
+ColorSchemeResources 是 API，告知哪些資源正在進行的系統範圍的位置。 必須採取 ColorSchemeResources [X:key](https://docs.microsoft.com/windows/uwp/xaml-platform/x-key-attribute)，這可以是三個選項的其中一個：
 - 預設值
-  * 會顯示在[淺色](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)和[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)佈景主題中的色彩變更
-- 光源
-  * 將會在[淺色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)中僅顯示您的色彩變更 
-- 暗色調
-  * 將會在[深色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)中僅顯示您的色彩變更
+  * 會顯示您的色彩變更，在這兩[Light](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme)並[深色](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)佈景主題
+- 亮
+  * 會顯示您的色彩變更只有在[淺色佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#light-theme) 
+- 暗
+  * 會顯示您的色彩變更只有在[暗色調佈景主題](https://docs.microsoft.com/windows/uwp/design/style/color#dark-theme)
 
-設定該 X:key 可確保您的色彩適當地變更系統或應用程式佈景主題中，您應該要在任一種佈景主題中的不同自訂外觀。
+設定該 x： 機碼可確保您的色彩適當地變更為 「 系統或應用程式的佈景主題，如果您想在其中一個主題中的不同自訂外觀。
 
-### <a name="how-to-apply-scoped-colors"></a>如何套用限定範圍的色彩
+### <a name="how-to-apply-scoped-colors"></a>如何套用已設定領域的色彩
 
-設定範圍透過**ColorSchemeResources** API 在 XAML 中的資源，可讓您充分任何系統色彩或筆刷，在我們的[佈景主題資源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)庫，並重新定義它們的頁面或容器的範圍內。
+設定透過資源的範圍**ColorSchemeResources** XAML 中的 API 可讓您採取任何系統色彩或中的筆刷我們[佈景主題資源](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/xaml-theme-resources)程式庫和重新定義這些範圍內的頁面或容器。
 
-例如，如果您定義兩個系統色彩- **SystemBaseLowColor**和**SystemBaseMediumLowColor**內 grid，並再放在頁面上的兩個按鈕： 在該格線內的第一個和一個外部：
+比方說，如果您定義兩種系統色彩- **SystemBaseLowColor**和**SystemBaseMediumLowColor**在方格中，並在頁面上放置兩個按鈕： 一個在該方格中和一個外部：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -295,12 +294,12 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 <Buton Content="Button_B"/>
 ```
 
-您會取得**Button_A**用套用新的色彩，並**Button_B**不會受到看起來就像我們的系統預設按鈕一樣：
+您會收到**Button_A**套用新的色彩，和**Button_B**仍將是像我們的系統預設按鈕的外觀：
 
-![限定範圍的系統色彩] 按鈕](images/color/scopedcolors_cyan_button.png)
+![在按鈕上的已設定領域的系統色彩](images/color/scopedcolors_cyan_button.png)
 
-不過，因為我們所有的系統色彩串聯到其他控制項，設定**SystemBaseLowColor**和**SystemBaseMediumLowColor**會影響不僅僅是按鈕。 在此情況下，會控制像**ToggleButton**、**選項按鈕**和**滑桿**會也會受到這些系統色彩會變更，應該這些控制項放上方 exampl 格線的範圍。
-如果您想要的範圍設定系統色彩變更*至單一控制項只有*您可以藉由在該控制項的資源中定義**ColorSchemeResources**來執行此動作：
+不過，由於我們所有的系統色彩重疊到其他控制項，設定**SystemBaseLowColor**並**SystemBaseMediumLowColor**會影響不只是按鈕。 控制項，在此情況下，例如**ToggleButton**， **RadioButton**並**滑桿**也會受到影響這些系統色彩的變更，應該這些控制項放在上面 exampl方格的範圍。
+如果您想要設定的系統色彩變更的範圍*單一控制項僅*則可以藉由定義**ColorSchemeResources**該控制項的資源內：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -314,11 +313,11 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 </Grid>
 <Button Content="Button_B"/>
 ```
-您基本上有完全相同的動作之前，但現在任何其他控制項新增至方格會被選取，色彩會變更。 這是因為這些系統色彩的僅**Button_A**範圍。
+您基本上需要完全一樣，但現在加入方格中的任何其他控制項卻無法收取色彩變更。 這是因為這些系統色彩的範圍限於**Button_A**只。
 
-### <a name="nesting-scoped-resources"></a>巢狀結構已限定範圍，資源
+### <a name="nesting-scoped-resources"></a>巢狀範圍資源
 
-巢狀系統色彩也是可能的時候，並會藉由在您的應用程式的版面配置的標記內的巢狀項目資源中放置**ColorSchemeResources**這樣做：
+巢狀系統色彩也是可行的並會完成藉由將放**ColorSchemeResources**在您的應用程式版面配置的標記內的巢狀項目的資源：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -341,17 +340,17 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 </Grid>
 ```
 
-在此範例中， **Button_A**繼承**Grid_A**的資源中定義的色彩和**巢狀按鈕**繼承自**Grid_B**的資源的色彩。 透過擴充方式，這表示任何其他控制項放在**Grid_B**會檢查或檢查或套用**Grid_A**的資源之前先，套用**Grid_B**的資源，最後套用我們的預設色彩，如果不顯示任何資訊定義在頁面或應用程式層級。
+在此範例中， **Button_A**中會定義繼承的色彩**Grid_A**的資源，並**巢狀按鈕**繼承色彩**Grid_B**的資源。 延伸模組，這表示任何其他控制項置於**Grid_B**就會檢查或套用**Grid_B**的資源前，之前檢查或套用**Grid_A**的資源和最後套用我們的預設色彩，如果沒有任何頁面或應用程式層級定義。
 
-這適用於任何數目的巢狀項目，將其資源有色彩定義。
+這適用於任何數目的巢狀項目，其資源有色彩定義。
 
-### <a name="scoping-with-a-resourcedictionary"></a>設定範圍的 ResourceDictionary
+### <a name="scoping-with-a-resourcedictionary"></a>使用 ResourceDictionary 範圍
 
-您並不受限於容器或頁面的資源，並也可以合併在任何範圍的方式，您通常會合併字典 ResourceDictionary 中定義這些系統色彩。
+您不一定要將容器或頁面的資源，並可以合併在任何範圍的方式，您通常會合併字典的 ResourceDictionary 中也可以定義這些系統色彩。
 
 #### <a name="mycustomthemexaml"></a>MyCustomTheme.xaml
 
-首先，您會建立 ResourceDictionary。 然後放置內 ThemeDictionaries **ColorPaletteResources**並覆寫所需的系統的色彩：
+首先，您會建立 ResourceDictionary。 然後將放置**ColorPaletteResources** ThemeDictionaries 中，並覆寫所需的系統色彩：
 
 ```xaml
 <ResourceDictionary
@@ -376,7 +375,7 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 
 #### <a name="mainpagexaml"></a>MainPage.xaml
 
-在頁面中包含您的版面配置，只需合併您想要的範圍內該字典中：
+在包含您的版面配置頁面上，只要合併該字典中，在您想要的範圍：
 
 ```xaml
 <Grid x:Name="Grid_A">
@@ -392,11 +391,11 @@ ColorSchemeResources 是 API，以告知正在進行哪些資源系統已限定�
 </Grid>
 ```
 
-現在，您可以是所有的資源、 佈景主題設定，以及自訂色彩放在單一**MyCustomTheme**資源字典中並已限定範圍，而不必擔心您的版面配置標記中的額外雜亂所需的位置。
+現在，在單一放置所有資源、 佈景主題和自訂色彩**MyCustomTheme**資源字典和範圍視而不必擔心配置標記中的額外雜亂。
 
-### <a name="other-ways-to-define-color-resources"></a>其他方式定義的色彩資源
+### <a name="other-ways-to-define-color-resources"></a>其他方式來定義色彩資源
 
-ColorSchemeResources 也允許放入系統色彩和包裝函式，而非列中，直接內定義：
+ColorSchemeResources 也可讓系統要放置的色彩和的包裝函式，而不在列中，直接在其中定義：
 
 ``` xaml
 <ColorSchemeResources x:Key="Dark">

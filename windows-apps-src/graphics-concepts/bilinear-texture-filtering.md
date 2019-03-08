@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 437650883b4782ca02c0daf24cc8ebed01d954f6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932927"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651253"
 ---
 # <a name="bilinear-texture-filtering"></a>雙線性紋理篩選
 
 
-「線性篩選」** 會計算最接近取樣點的 4 項材質之加權平均值。 此篩選的方式比最近點篩選更準確和常見。 因為這種方式在現代化圖形硬體內實作，所以很有效率。
+「線性篩選」會計算最接近取樣點的 4 項材質之加權平均值。 此篩選的方式比最近點篩選更準確和常見。 因為這種方式在現代化圖形硬體內實作，所以很有效率。
 
 
 ## <a name="span-idexamplespanspan-idexamplespanspan-idexamplespanexample"></a><span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>範例
@@ -27,7 +27,7 @@ ms.locfileid: "8932927"
 
 ![4 x 4 色彩純色區塊的紋理圖例](images/bilinear-fig7a.png)
 
-紋理的呈現方式通常將它們視為是由色彩純色區塊所組成，但如果您將紋理視為和光柵顯示相同的話，就更為正確︰每個材質都被定義在方格資料格的正中央，如下圖所示。
+如同所組成的色彩的實心區塊，但其實更正確的材質將相同的方式，您應該將點陣顯示，通常被表示紋理：每個材質會在確切中央的方格資料格定義的如下圖所示。
 
 ![材質定義於方格資料格正中央的 4 x 4 紋理圖例](images/bilinear-fig7b.png)
 

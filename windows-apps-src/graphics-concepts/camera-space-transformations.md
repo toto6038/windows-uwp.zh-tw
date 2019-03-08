@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1b35fb71e51044ee6be6ed90001e3b5614c8cb45
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945970"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655733"
 ---
 # <a name="camera-space-transformations"></a>相機空間轉換
 
@@ -41,15 +41,15 @@ L<sub>dir</sub> = -norm(L<sub>dir</sub> \* wvMatrix)
 
 點光線及焦點光線位置的計算方式則如下所示︰
 
-L<sub>dir</sub> = norm(V \* Lₚ)，其中參數在下表中定義。
+L<sub>dir</sub> = 範數 (V \* Lₚ)，其中將參數定義下表中。
 
 | 參數       | 預設值 | 類型                                          | 描述                                               |
 |-----------------|---------------|-----------------------------------------------|-----------------------------------------------------------|
-| L<sub>dir</sub> | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 從物件頂點到光線的方向向量          |
-| V               | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 相機空間的頂點位置                           |
+| L<sub>dir</sub> | 無           | 3D 向量 ( x、y 和 z 浮點值) | 從物件頂點到光線的方向向量          |
+| V               | 無           | 3D 向量 ( x、y 和 z 浮點值) | 相機空間的頂點位置                           |
 | wvMatrix        | 身份識別      | 浮點數值的 4 x 4 矩陣           | 複合矩陣包含全球及檢視轉換 |
-| N               | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 頂點標準                                             |
-| Lₚ              | N/A           | 3D 向量 ( x、y 和 z 浮點值) | 相機空間的光線位置                            |
+| N               | 無           | 3D 向量 ( x、y 和 z 浮點值) | 頂點垂直                                             |
+| Lₚ              | 無           | 3D 向量 ( x、y 和 z 浮點值) | 相機空間的光線位置                            |
 | vMatrix         | 身份識別      | 浮點數值的 4 x 4 矩陣           | 矩陣包含檢視轉換                      |
 
  
@@ -57,7 +57,7 @@ L<sub>dir</sub> = norm(V \* Lₚ)，其中參數在下表中定義。
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光源的數學計算](mathematics-of-lighting.md)
+[光源的數學運算](mathematics-of-lighting.md)
 
  
 

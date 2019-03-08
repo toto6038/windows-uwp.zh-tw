@@ -4,14 +4,14 @@ description: 本文說明如何使用標準金鑰衍生函式來衍生金鑰，�
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 2b74eccd5f6138e5a9d670aa3a0a93239813cf4d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8918611"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658353"
 ---
 # <a name="cryptographic-keys"></a>密碼編譯金鑰
 
@@ -69,7 +69,7 @@ ms.locfileid: "8918611"
 
 您通常需要從共用密碼來衍生其他金鑰。 您可以使用 [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) 類別，以及 [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) 類別中下列專用方法的其中一種來衍生金鑰。
 
-| 物件                                                                            | 說明                                                                                                                                |
+| 物件                                                                            | 描述                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | 建立用於密碼型金鑰衍生函數 2 (PBKDF2) 的 KeyDerivationParameters 物件。                                 |
 | [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | 建立用於計數器模式、雜湊訊息驗證碼 (HMAC) 金鑰衍生函數的 KeyDerivationParameters 物件。 |

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1d35813a6242abd555e87329c25a413285d1d948
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945118"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660983"
 ---
 # <a name="stencil-formats-not-supported-with-streaming-resources"></a>串流資源不支援的樣板格式
 
 
 串流資源不支援包含樣板的格式。
 
-包含樣板的格式包括 DXGI\_FORMAT\_D24\_UNORM\_S8\_UINT（和 R24G8 家族中的相關的格式）以及 DXGI\_FORMAT\_D32\_FLOAT\_S8X24\_UINT（和 R32G8X24 家族中的相關格式）。
+包含樣板的格式包括 DXGI\_格式\_D24\_UNORM\_S8\_UINT （和相關 R24G8 系列中的格式） 和 DXGI\_格式\_D32\_浮動\_S8X24\_UINT （和相關 R32G8X24 系列中的格式）。
 
 某些實作將深度和樣板儲存在不同的配置中，其他則將它們儲存在一起。 兩個配置的磚管理會有不同，而且單一 API 無法抽象或合理化差異。 我們建議未來硬體支援獨立深度和樣板表面，每個獨立並排顯示。
 
@@ -28,7 +28,7 @@ ms.locfileid: "8945118"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[串流資源跨處理序和裝置共用](streaming-resource-cross-process-and-device-sharing.md)
+[資料流資源的跨處理序及裝置共用](streaming-resource-cross-process-and-device-sharing.md)
 
  
 

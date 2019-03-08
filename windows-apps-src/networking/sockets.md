@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4cdad8f3405420e0548974c734ad23bfd44f2c6b
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9046754"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648823"
 ---
 # <a name="sockets"></a>通訊端
 通訊端是低階資料傳輸技術，許多網路通訊協定在其上實作。 UWP 為用戶端-伺服器或對等應用程式提供 TCP 與 UDP 通訊端類別，不需要指定連線是長期或已建立的連線。
@@ -505,7 +505,7 @@ private:
 > [!NOTE]
 > 如果您使用 C++/WinRT 協同程式，並且傳送參數值，那麼此議題不適用。 如需參數傳遞推薦的詳細資訊，請參閱[並行和使用 C++/WinRT 的非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)。
 
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) 會維持作用，只要其輸入/輸出串流上有作用中的讀取/寫入 (例如，可以存取[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)事件處理常式中的[**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket))。 當您呼叫 [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (或 `ReadAsync/WriteAsync/StoreAsync`)，它會有該通訊端的參考 (透過通訊端的輸入串流)，直到 **LoadAsync** 的 **Completed** 處理常式完成執行為止。
+[  **StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) 會維持作用，只要其輸入/輸出串流上有作用中的讀取/寫入 (例如，可以存取[**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived)事件處理常式中的[**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket))。 當您呼叫 [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (或 `ReadAsync/WriteAsync/StoreAsync`)，它會有該通訊端的參考 (透過通訊端的輸入串流)，直到 **LoadAsync** 的 **Completed** 處理常式完成執行為止。
 
 平行模式程式庫 (PPL) 預設不會內嵌排程工作接續。 亦即，新增接續工作 (使用`task::then()`) 並不保證接續工作會當做完成處理常式內嵌執行。
 
@@ -1202,7 +1202,7 @@ private async void BatchedSendsCSharpOnly(Windows.Networking.Sockets.StreamSocke
 }
 ```
 
-下一個範例適用於任何 UWP 語言，不只適用於 C#。 它依賴[**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)和[**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream)中一起批次傳送的行為。 技術上該輸出資料流，在 windows 10，這保證只在輸出資料流上的所有作業都完成之後傳回呼叫[**FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync) 。
+下一個範例適用於任何 UWP 語言，不只適用於 C#。 它依賴[**StreamSocket.OutputStream**](/uwp/api/windows.networking.sockets.streamsocket.OutputStream)和[**DatagramSocket.OutputStream**](/uwp/api/windows.networking.sockets.datagramsocket.OutputStream)中一起批次傳送的行為。 此技術會呼叫[ **FlushAsync** ](/uwp/api/windows.storage.streams.ioutputstream.FlushAsync)即自 Windows 10 中，保證會傳回輸出資料流上的所有作業都完成之後，才該輸出資料流。
 
 ```csharp
 // An implementation of batched sends suitable for any UWP language.
@@ -1274,16 +1274,16 @@ private:
 
 在您的程式碼中使用批次傳送時有一些重要的限制。
 
--   在非同步寫入完成之前，您無法對正在寫入的 **IBuffer** 執行個體修改內容。
+-   在同步寫入完成之前，您無法對正在寫入的 **IBuffer** 執行個體修改內容。
 -   **FlushAsync** 模式只適用於 **StreamSocket.OutputStream** 和 **DatagramSocket.OutputStream**。
--   **FlushAsync**模式只適用於 windows 10 和後續版本。
+-   **FlushAsync**模式僅適用於在 Windows 10 和開始。
 -   在其他情況下，請改用 [**Task.WaitAll**](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitall?view=netcore-2.0#System_Threading_Tasks_Task_WaitAll_System_Threading_Tasks_Task___)，而不要使用 **FlushAsync** 模式。
 
 ## <a name="port-sharing-for-datagramsocket"></a>DatagramSocket 的連接埠共用
 您可以設定[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)與繫結至相同地址/連接埠的其他 Win32 或 UWP 多點傳送通訊端並存。 在繫結或連接通訊端之前將[**DatagramSocketControl.MulticastOnly**](/uwp/api/Windows.Networking.Sockets.DatagramSocketControl.MulticastOnly)設定為`true`，執行此動作。 您可以從**DatagramSocket**物件本身存取**DatagramSocketControl**執行個體 (透過其[**DatagramSocket.Control**](/uwp/api/windows.networking.sockets.datagramsocket.Control)屬性)。
 
 ## <a name="providing-a-client-certificate-with-the-streamsocket-class"></a>提供具有 StreamSocket 類別的用戶端憑證
-[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 支援使用 SSL/TLS 來驗證與用戶端 app 交談的伺服器。 在某些情況下，用戶端 app 必須使用 SSL/TLS 的用戶端憑證向伺服器驗證本身。 您可以在繫結或連接通訊端（SSL/TLS 交握開始前必須先設定通訊端）之前，使用[**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)屬性提供用戶端憑證。 您可以從**StreamSocket**物件本身存取**StreamSocketControl**執行個體 (透過其[**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control)屬性)。 如果伺服器要求用戶端憑證，Windows 會使用提供的用戶端憑證來回應。
+[**StreamSocket** ](/uwp/api/Windows.Networking.Sockets.StreamSocket)支援使用 SSL/TLS 來驗證用戶端應用程式進行通訊的伺服器。 在某些情況下，用戶端 app 必須使用 SSL/TLS 的用戶端憑證向伺服器驗證本身。 您可以在繫結或連接通訊端（SSL/TLS 交握開始前必須先設定通訊端）之前，使用[**StreamSocketControl.ClientCertificate**](/uwp/api/windows.networking.sockets.streamsocketcontrol.ClientCertificate)屬性提供用戶端憑證。 您可以從**StreamSocket**物件本身存取**StreamSocketControl**執行個體 (透過其[**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.Control)屬性)。 如果伺服器要求用戶端憑證，Windows 會使用提供的用戶端憑證來回應。
 
 使用採用[**SocketProtectionLevel**](/uwp/api/windows.networking.sockets.socketprotectionlevel)的[**StreamSocket.ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync)覆寫，如這個最少程式碼範例所示。
 
@@ -1342,7 +1342,7 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 ```
 
 ## <a name="handling-exceptions"></a>處理例外狀況
-[**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 作業上發生的錯誤會傳回為 **HRESULT** 值。 您可以將該**HRESULT**值傳送至[**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus)方法，以將它轉換為[**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)列舉值。
+[  **DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket)、[**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) 或 [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) 作業上發生的錯誤會傳回為 **HRESULT** 值。 您可以將該**HRESULT**值傳送至[**SocketError.GetStatus**](/uwp/api/windows.networking.sockets.socketerror.getstatus)方法，以將它轉換為[**SocketErrorStatus**](/uwp/api/Windows.Networking.Sockets.SocketErrorStatus)列舉值。
 
 大多數 **SocketErrorStatus** 列舉值對應於原生 Windows 通訊端作業傳回的錯誤。 您的應用程式可以切換開啟 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改應用程式行為。
 
@@ -1378,10 +1378,10 @@ Concurrency::create_task(Windows::Security::Cryptography::Certificates::Certific
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## <a name="related-topics"></a>相關主題
-* [App 間通訊](/windows/uwp/app-to-app/index)
-* [透過 C++/WinRT 的並行和非同步作業](/windows/uwp/cpp-and-winrt-apis/concurrency)
+* [應用程式間通訊](/windows/uwp/app-to-app/index)
+* [並行和非同步作業以 C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency)
 * [如何設定網路功能](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)
-* [Windows Sockets 2 (Winsock)](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+* [Windows Sockets (Winsock) 2](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
 ## <a name="samples"></a>範例
 * [StreamSocket 範例](https://go.microsoft.com/fwlink/p/?LinkId=620609)

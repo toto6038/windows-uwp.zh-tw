@@ -5,11 +5,11 @@ ms.localizationpriority: medium
 ms.topic: article
 ms.date: 02/08/2017
 ms.openlocfilehash: 882e84c5126e4f67e246dd479008133c979c06b1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939956"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57595953"
 ---
 # <a name="remote-input-api-reference"></a>遠端輸入 API 參考   
 您可以透過此 API 即時從遠端傳送控制器、鍵盤和滑鼠輸入。
@@ -110,6 +110,6 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox

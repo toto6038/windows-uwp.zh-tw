@@ -1,26 +1,26 @@
 ---
 ms.assetid: 8C1E9E36-13AF-4386-9D0F-F9CB320F02F5
-description: 在 Microsoft Store 提交 API 中使用這個方法，來建立套件正式，針對已登錄到您的合作夥伴中心帳戶的 app。
+description: 在 Microsoft Store 提交 API 中使用這個方法，來建立封裝航班已向您的合作夥伴中心帳戶的應用程式。
 title: 建立套件正式發行前小眾測試版
 ms.date: 04/16/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 建立正式發行前小眾測試版
 ms.localizationpriority: medium
 ms.openlocfilehash: af5ffe0dd72f0c3aae21a2dc522b469358626bab
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8926394"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57603453"
 ---
 # <a name="create-a-package-flight"></a>建立套件正式發行前小眾測試版
 
-在 Microsoft Store 提交 API 中使用這個方法，來建立套件正式，針對已登錄到您的合作夥伴中心帳戶的 app。
+在 Microsoft Store 提交 API 中使用這個方法，來建立封裝航班已向您的合作夥伴中心帳戶的應用程式。
 
 > [!NOTE]
 > 這個方法會建立一個套件正式發行前小眾測試版但不含任何提交。 若要為套件正式發行前小眾測試版建立提交，請參閱[管理套件正式發行前小眾測試版提交](manage-flight-submissions.md)中的方法。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用這個方法，您必須先進行下列動作：
 
@@ -29,7 +29,7 @@ ms.locfileid: "8926394"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -40,14 +40,14 @@ ms.locfileid: "8926394"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| applicationId | 字串 | 必要。 您想要建立套件正式發行前小眾測試版之 App 的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視 App 身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
+| applicationId | 字串 | 必要。 您想要建立套件正式發行前小眾測試版之 App 的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。  |
 
 
 ### <a name="request-body"></a>要求本文
@@ -63,7 +63,7 @@ ms.locfileid: "8926394"
 
 ### <a name="request-example"></a>要求範例
 
-下列範例示範如何為 Store 識別碼為 9WZDNCRD911W 的 App 建立新的套件正式發行前小眾測試版。
+下列範例示範如何為市集識別碼為 9WZDNCRD911W 的 App 建立新的套件正式發行前小眾測試版。
 
 ```syntax
 POST https://manage.devcenter.microsoft.com/v1.0/my/applications/9NBLGGH4R315/flights HTTP/1.1
@@ -81,7 +81,7 @@ Content-Type: application/json
 
 ## <a name="response"></a>回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
+下列範例示範成功呼叫此方法時的 JSON 回應主體。 如需回應本文中各個值的詳細資訊，請參閱下列各節。
 
 ```json
 {
@@ -94,7 +94,7 @@ Content-Type: application/json
 }
 ```
 
-### <a name="response-body"></a>回應本文
+### <a name="response-body"></a>回應主體
 
 | 值      | 類型   | 描述                                                                                                                                                                                                                                                                         |
 |------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -111,11 +111,11 @@ Content-Type: application/json
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 400  | 要求無效。 |
-| 409  | 無法建立套件正式，因為其目前的狀態，或 app 使用[Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。 |   
+| 409  | 無法建立封裝飛行，因為其目前的狀態，或應用程式使用的合作夥伴中心功能[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。 |   
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [取得套件正式發行前小眾測試版](get-a-flight.md)
-* [刪除套件正式發行前小眾測試版](delete-a-flight.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [取得封裝的航班](get-a-flight.md)
+* [刪除套件班機](delete-a-flight.md)

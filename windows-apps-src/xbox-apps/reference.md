@@ -7,17 +7,17 @@ keywords: Windows 10, UWP
 ms.assetid: 5ae8e953-0465-487b-81dd-54a85c904daf
 ms.localizationpriority: medium
 ms.openlocfilehash: d8fdcf01d7d1f72624d73acf2d10ce28dfb75e04
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945830"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656993"
 ---
 # <a name="xbox-device-portal-rest-api"></a>Xbox 裝置入口網站 REST API
 
 本節內容涵蓋 Xbox 裝置入口網站 REST API 的參考主題，用於從遠端設定及管理您的主控台。
 
-| URI        | 說明 |
+| URI        | 描述 |
 |------------|-------------|
 |[/api/app/packagemanager/register](wdp-loose-folder-register-api.md)| 登錄包含在鬆散資料夾中的 App。 |
 |[/api/app/packagemanager/upload](wdp-folder-upload.md)| 將整個資料夾上傳到主機。 |
@@ -35,7 +35,7 @@ ms.locfileid: "8945830"
 |[/ext/xbox/info](wdp-xboxinfo-api.md)| 提供有關 Xbox One 裝置的相關資訊。 |
 |[/ext/xboxlive/sandbox](wdp-sandbox-api.md)| 管理您的 Xbox Live 沙箱。 |
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
-- [Xbox One 上的 UWP](index.md)
-- [Windows 裝置入口網站](../debug-test-perf/device-portal.md)
+- [在 Xbox One UWP](index.md)
+- [Windows Device Portal](../debug-test-perf/device-portal.md)

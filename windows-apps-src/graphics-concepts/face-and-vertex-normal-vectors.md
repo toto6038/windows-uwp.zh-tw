@@ -1,25 +1,25 @@
 ---
-title: 面和頂點法向量
-description: 每個網格中的平面都有一個垂直單位一般向量。 向量的方向是由定義頂點的順序，和座標系統是否為右手系或左手系而決定的。
+title: 面和頂點一般向量
+description: 每個網格中的平面都有一個垂直單位法向量。 向量的方向是由定義頂點的順序，和座標系統是否為右手系或左手系而決定的。
 ms.assetid: 02333579-9749-4612-B121-23F97898A3E0
 keywords:
-- 面和頂點法向量
+- 面和頂點一般向量
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 2347efc5d68abd53442f52ecabdc060393ee561b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929889"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57636553"
 ---
-# <a name="face-and-vertex-normal-vectors"></a>面和頂點法向量
+# <a name="face-and-vertex-normal-vectors"></a>面和頂點一般向量
 
 
-每個網格中的平面都有一個垂直單位一般向量。 向量的方向是由定義頂點的順序，和座標系統是否為右手系或左手系而決定的。
+每個網格中的平面都有一個垂直單位法向量。 向量的方向是由定義頂點的順序，和座標系統是否為右手系或左手系而決定的。
 
-## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>正面的垂直單位法向量
+## <a name="span-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanspan-idperpendicularunitnormalvectorforafrontfacespanperpendicular-unit-normal-vector-for-a-front-face"></a><span id="Perpendicular_unit_normal_vector_for_a_front_face"></span><span id="perpendicular_unit_normal_vector_for_a_front_face"></span><span id="PERPENDICULAR_UNIT_NORMAL_VECTOR_FOR_A_FRONT_FACE"></span>垂直單位的正面的法向量
 
 
 每個網格中的平面都有一個垂直單位法向量。 向量的方向是由定義頂點的順序，和座標系統是否為右手系或左手系而決定的。 面標準點偏離面的正面。 在 Direct3D 中，只會看見正面。 正面上的頂點是依順時針方向定義。
@@ -28,12 +28,12 @@ ms.locfileid: "8929889"
 
 ![正面的法向量](images/nrmlvect.png)
 
-## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>消除背面
+## <a name="span-idcullingbackfacesspanspan-idcullingbackfacesspanspan-idcullingbackfacesspanculling-back-faces"></a><span id="Culling_back_faces"></span><span id="culling_back_faces"></span><span id="CULLING_BACK_FACES"></span>上一步剔除面臨
 
 
 只要不是正面，都稱為背面。 Direct3D 不一定會呈現背面；一般會說背面被消除。 背面消除是指，消除背面不轉譯。 如果您想要的話，可以變更消除模式以轉譯背面。 如需詳細資訊，請參閱[消除狀態](https://msdn.microsoft.com/library/windows/desktop/bb204882)。
 
-## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>頂點單位法向量
+## <a name="span-idvertexunitnormalsspanspan-idvertexunitnormalsspanspan-idvertexunitnormalsspanvertex-unit-normals"></a><span id="Vertex_unit_normals"></span><span id="vertex_unit_normals"></span><span id="VERTEX_UNIT_NORMALS"></span>頂點單元法線
 
 
 Direct3D 使用頂點單位法向量呈現 Gouraud Shading、光源及紋理效果。
@@ -44,7 +44,7 @@ Direct3D 使用頂點單位法向量呈現 Gouraud Shading、光源及紋理效�
 
 對多邊形套用 Gouraud Shading 時，Direct3D 會使用頂點法向量計算光源與表面之間的角度。 它會計算頂點的色彩和濃度值，並針對所有基本類型表面上的每一個點插入它們。 Direct3D 會使用角度計算光線強度值。 角度越大，照射在表面上的光線就越弱。
 
-## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>平面
+## <a name="span-idflatsurfacesspanspan-idflatsurfacesspanspan-idflatsurfacesspanflat-surfaces"></a><span id="Flat_surfaces"></span><span id="flat_surfaces"></span><span id="FLAT_SURFACES"></span>一般的介面
 
 
 如果您建立了平面物件，設定頂點法向量以垂直指向表面。
@@ -53,7 +53,7 @@ Direct3D 使用頂點單位法向量呈現 Gouraud Shading、光源及紋理效�
 
 ![透過頂點法向量由兩個三角形組成的平面](images/flatvert.png)
 
-## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>非平面物件上的平滑著色
+## <a name="span-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspanspan-idsmoothshadingonanon-flatobjectspansmooth-shading-on-a-non-flat-object"></a><span id="Smooth_shading_on_a_non-flat_object"></span><span id="smooth_shading_on_a_non-flat_object"></span><span id="SMOOTH_SHADING_ON_A_NON-FLAT_OBJECT"></span>在非一般物件上的 smooth 網底
 
 
 您的物件比較可能是由三角形連環所構成，而非平面物件，而且三角形並非共面。 有一種簡單的方式可在連環中所有三角形上達到平滑著色，那就是先計算與頂點相關聯的每個多邊形面的表面法向量。 表面法向量可設定為與每個表面法向量等角。 不過，這個方法對於複雜的基本類型可能不夠有效率。
@@ -70,7 +70,7 @@ Direct3D 使用頂點單位法向量呈現 Gouraud Shading、光源及紋理效�
 
 ![兩個表面 (s1 和 s2)，其中有一個頂點法向量朝向一個面](images/gvert2.png)
 
-## <a name="span-idsharpedgesspanspan-idsharpedgesspanspan-idsharpedgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>銳利邊緣
+## <a name="span-idsharpedgesspanspan-idsharpedgesspanspan-idsharpedgesspansharp-edges"></a><span id="Sharp_edges"></span><span id="sharp_edges"></span><span id="SHARP_EDGES"></span>清晰的邊緣
 
 
 您可以使用 Gouraud Shading 在 3D 場景中顯示一些物件的銳利邊緣。 若要這樣做，在需要銳利邊緣的面的任何交集處重複頂點法向量。
@@ -88,7 +88,7 @@ Direct3D 使用頂點單位法向量呈現 Gouraud Shading、光源及紋理效�
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

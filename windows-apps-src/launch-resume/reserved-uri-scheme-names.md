@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 81bd9f699e899f895d55b2b2132681824ed40b7b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921856"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650623"
 ---
 # <a name="reserved-file-and-uri-scheme-names"></a>保留檔案和 URI 配置名稱
 
 
-您可以使用 URI 關聯，在另一個 app 啟動特定 URI 配置時自動啟動您的 app。 但是有些 URI 關聯是您無法使用的，因為它們是保留的關聯。 如果您的 app 登錄為保留的關聯，該登錄將會被忽略。 此主題列出並不適用於您的 app 的保留檔案和 URI 配置名稱。
+您可以使用 URI 關聯，在另一個 app 啟動特定 URI 配置時自動啟動您的 app。 但是有些 URI 關聯是您無法使用的，因為它們是保留的關聯。 如果您的 app 登錄為保留的關聯，該登錄將會被忽略。 此主題列出您的應用程式無法使用的保留檔案和 URI 配置名稱。
 
 ## <a name="reserved-file-types"></a>保留的檔案類型
 

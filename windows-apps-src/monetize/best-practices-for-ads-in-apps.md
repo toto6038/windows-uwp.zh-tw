@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 廣告, 廣告, 逐步解說
 ms.localizationpriority: medium
 ms.openlocfilehash: 3084c72d32967d691054b452f5f5f2e903bedd5b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931916"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657593"
 ---
 # <a name="best-practices-for-ads-in-apps"></a>應用程式內廣告的最佳做法
 
@@ -19,11 +19,11 @@ ms.locfileid: "8931916"
 
 ## <a name="in-this-section"></a>本節內容
 
-|  主題    | 說明 |               
+|  主題    | 描述 |               
 |----------|-------|
 | [UI 和使用者體驗指導方針](ui-and-user-experience-guidelines.md) | 提供的指引可讓您在應用程式中提供絕佳的橫幅及插播式廣告使用者體驗。 |
-| [最佳化您的廣告單元的可見性](optimize-ad-unit-viewability.md) | 提供最佳化您的廣告單元的可檢視廣告曝光的指導方針。 |
-| [處理廣告錯誤](error-handling-with-advertising-libraries.md)     |  了解如何處理您應用程式中橫幅廣告、插播式廣告以及原生廣告的相關錯誤。          |
+| [最佳化您的 ad 單元 viewability](optimize-ad-unit-viewability.md) | 提供最佳化您的廣告單元的可檢視廣告曝光的指導方針。 |
+| [處理 ad 錯誤](error-handling-with-advertising-libraries.md)     |  了解如何處理您應用程式中橫幅廣告、插播式廣告以及原生廣告的相關錯誤。          |
 
 
 

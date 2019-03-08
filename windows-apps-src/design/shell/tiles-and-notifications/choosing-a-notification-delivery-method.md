@@ -1,5 +1,5 @@
 ---
-Description: This article covers the four notification options&\#8212;local, scheduled, periodic, and push&\#8212;that deliver tile and badge updates and toast notification content.
+Description: 本文章涵蓋四個通知選項 &\#8212; 本機、 排程，週期，並推送 （& s)\#8212; 中提供磚與徽章的更新和快顯通知的內容。
 title: 選擇通知傳遞方法
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
 label: Choose a notification delivery method
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 503f7baad0d91f4e7c29010145ecb162f98bc81c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8939704"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606283"
 ---
 # <a name="choose-a-notification-delivery-method"></a>選擇通知傳遞方法
 
@@ -27,9 +27,9 @@ ms.locfileid: "8939704"
 
 App 可以使用四種機制來傳遞通知：
 
--   **本機**
+-   **Local**
 -   **排程**
--   **定期**
+-   **Periodic**
 -   **推播**
 
 下表摘要說明通知傳遞類型。
@@ -45,7 +45,7 @@ App 可以使用四種機制來傳遞通知：
 <tr class="header">
 <th align="left">傳遞方法</th>
 <th align="left">搭配使用項目</th>
-<th align="left">說明</th>
+<th align="left">描述</th>
 <th align="left">範例</th>
 </tr>
 </thead>
@@ -103,16 +103,16 @@ App 可以使用四種機制來傳遞通知：
 
 當 API 呼叫是本機呼叫時，通知可以參考網頁影像。 如果網路影像無法下載、已損毀或不符合影像規格，磚與快顯通知的應對方式是不同的：
 
--   磚：不會顯示更新
--   快顯通知：會顯示通知，但是捨棄影像
+-   圖格：更新不會顯示
+-   快顯通知：會顯示通知，但您的映像會卸除
 
 根據預設，本機快顯通知會在三天後到期，而本機磚通知永遠不會過期。 我們建議針對您的通知使用合理且明確的到期時間 (快顯通知的最大值為三天) 來覆寫這些預設值。 
 
 如需詳細資訊，請參閱這些主題：
 
--   [傳送本機磚通知](sending-a-local-tile-notification.md)
--   [傳送本機快顯通知](send-local-toast.md)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通知區域的圖格](sending-a-local-tile-notification.md)
+-   [傳送本機的快顯通知](send-local-toast.md)
+-   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="scheduled-notifications"></a>排程通知
 
@@ -125,7 +125,7 @@ App 可以使用四種機制來傳遞通知：
 
 如需詳細資訊，請參閱這些主題：
 
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="periodic-notifications"></a>定期通知
 
@@ -139,7 +139,7 @@ App 可以使用四種機制來傳遞通知：
 如需詳細資訊，請參閱這些主題：
 
 -   [定期通知概觀](periodic-notification-overview.md)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## <a name="push-notifications"></a>推播通知
 
@@ -154,19 +154,19 @@ App 可以使用四種機制來傳遞通知：
 
 -   [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
 -   [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
--   [通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [通用 Windows 平台 (UWP) 通知的程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 
 ## <a name="related-topics"></a>相關主題
 
 
-* [傳送本機磚通知](sending-a-local-tile-notification.md)
-* [傳送本機快顯通知](send-local-toast.md)
+* [通知區域的圖格](sending-a-local-tile-notification.md)
+* [傳送本機的快顯通知](send-local-toast.md)
 * [推播通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh761462)
 * [快顯通知的指導方針](https://msdn.microsoft.com/library/windows/apps/hh465391)
 * [定期通知概觀](periodic-notification-overview.md)
 * [Windows 推播通知服務 (WNS) 概觀](windows-push-notification-services--wns--overview.md)
-* [GitHub 上的通用 Windows 平台 (UWP) 通知程式碼範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [通用 Windows 平台 (UWP) 通知的程式碼在 GitHub 上的範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

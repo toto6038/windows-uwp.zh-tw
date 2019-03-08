@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 751cda36fc58d0e6add9204327a74ec947c9fc53
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930589"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660913"
 ---
 # <a name="xfieldmodifier-attribute"></a>x:FieldModifier 屬性
 
@@ -30,11 +30,11 @@ ms.locfileid: "8930589"
 
 ## <a name="remarks"></a>備註
 
-**x:FieldModifier** 屬性的值會依程式設計語言而有所不同。 有效值為 **private**、**public**、**protected**、**internal** 或 **friend**。 C#、 Microsoft Visual Basic 或 VisualC + + 元件延伸 (C + + /CX)，您可以提供字串值"public"Public";在剖析器不會強制執行對這個屬性值的案例。
+**x:FieldModifier** 屬性的值會依程式設計語言而有所不同。 有效值為 **private**、**public**、**protected**、**internal** 或 **friend**。 針對C#，Microsoft Visual Basic 或 Visual c + + 元件擴充功能 (C + + /CX)，您可以提供字串值 「 公用 」 或 「 公用 」;剖析器不會強制執行對這個屬性值的案例。
 
 **Private** 存取是預設值。
 
 **x:FieldModifier** 只與具有 [x:Name 屬性](x-name-attribute.md)的元素相關，因為該名稱會在欄位是公用時用來參考該欄位。
 
-**注意：** **X:classmodifier**或**X:subclass**，Windows 執行階段 XAML 不支援。
+**附註**  不支援 Windows 執行階段 XAML **X:classmodifier**或是**X:subclass**。
 

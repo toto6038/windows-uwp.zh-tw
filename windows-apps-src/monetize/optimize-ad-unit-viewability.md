@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, ads, advertising, guidelines, viewability, 廣告, 指導方針, 可見性
 ms.localizationpriority: medium
 ms.openlocfilehash: 87e21f4e98c58f79f397c369891212eccb196c18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919347"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662263"
 ---
 # <a name="optimize-the-viewability-of-your-ad-units"></a>最佳化您的廣告單元的可見性
 
@@ -18,17 +18,17 @@ ms.locfileid: "8919347"
 
 為與 IAB 可見性指導方針一致，橫幅的廣告曝光若符合下列條件會被視為可檢視：
 
-* 像素需求：廣告中大於或等於 50% 的像素是在 App 的可檢視空間。
-* 時間需求：符合像素需求的時間大於或等於一個連續一秒、張貼廣告轉譯。
+* 像素需求：大於或等於公告中 50%的像素為單位所在的應用程式可檢視的空間。
+* 時間需求：像素滿足此需求是時間大於或等於一的持續秒，post ad 轉譯。
 
 影片廣告曝光若符合下列條件會計算為可檢視：
 
-* 像素需求：廣告中大於或等於 50% 的像素是在 App 的可檢視部分。
-* 時間需求：符合像素需求的影片，且播放兩個連續秒的張貼廣告轉譯。
+* 像素需求：大於或等於公告中 50%的像素所在應用程式可檢視的一部分。
+* 時間需求：影片符合的像素的需求，且播放 post ad 所呈現的兩個連續秒。
 
 可見性使用下列公式計算：
 
-**可見性 = [已檢視的廣告曝光] * 100 / [總廣告曝光]**
+**Viewability = [Viewed 印象] * 100 / [總計廣告曝光數]**
 
 ## <a name="guidelines-to-improve-ad-unit-viewability"></a>改善廣告單元可見性的指導方針
 

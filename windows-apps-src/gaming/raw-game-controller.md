@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 輸入,原始遊戲控制器
 ms.localizationpriority: medium
 ms.openlocfilehash: 7b5f4d49ad49cf9f9065fe17788456e9dd2a4a4e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946794"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644623"
 ---
 # <a name="raw-game-controller"></a>原始遊戲控制器
 
@@ -145,7 +145,7 @@ rawGameController->GetCurrentReading(
 
 如果您有想支援的特定控制器，您可以取得[RawGameController.HardwareProductId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareProductId)和[RawGameController.HardwareVendorId](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller.HardwareVendorId)，並檢查是否符合該控制器。 對於每個具有相同**HardwareProductId**和**HardwareVendorId**的控制器而言，各陣列中各輸入的位置都是相同的，所以您不用擔心在相同類型的不同控制器之間可能存在不一致的邏輯。
 
-除了原始遊戲控制器狀態之外，每次讀取都會傳回精確指出狀態擷取時間的時間戳記。 時間戳記適用於與先前讀取的計時或遊戲模擬的計時建立關聯。
+除了原始遊戲控制器狀態之外，每次讀取都會傳回精確指出狀態擷取時間的時間戳記。 此時間戳記適用於關聯到先前讀取的計時或遊戲模擬的計時。
 
 ### <a name="reading-the-buttons-and-switches"></a>讀取按鈕及切換裝置
 
@@ -168,7 +168,7 @@ for (uint32_t i = 0; i < buttonCount; i++)
 }
 ```
 
-您有時必須要判斷按鈕何時從按下轉換為放開或從放開轉換為按下、是否按下或放開多個按鈕，或是否以特定方式排列一組按鈕 (部分為按下，部分則否)。 如需如何偵測這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
+您有時必須要判斷按鈕何時從按下轉換為放開或從放開轉換為按下、是否按下或放開多個按鈕，或是否以特定方式排列一組按鈕 (部分為按下，部分則否)。 如需如何偵測所有這些條件的相關資訊，請參閱[偵測按鈕轉換](input-practices-for-games.md#detecting-button-transitions)和[偵測複雜按鈕排列](input-practices-for-games.md#detecting-complex-button-arrangements)。
 
 切換值會以[GameControllerSwitchPosition](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerswitchposition)的陣列提供。 因為此屬性是位元欄位，所以使用位元遮罩來隔離切換裝置的方向。
 
@@ -205,7 +205,7 @@ float leftTrigger = currentAxisReading[4];
 float rightTrigger = currentAxisReading[5];
 ```
 
-讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.5；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.5 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」__，這是指接近理想中心位置的可忽略值範圍。
+讀取搖桿值時，如果搖桿靜止在中心位置，您會注意到搖桿值不會確實地產生中性讀數 0.5；相反地，每次移動搖桿並回到中心位置時，它們都會產生接近 0.5 的不同值。 若要減少這些變化，您可以實作小型「靜止區域」，這是指接近理想中心位置的可忽略值範圍。
 
 實作靜止區域的一種方法是判定搖桿與中心的距離，若讀數比您選擇的距離值更接近中心則予以忽略。 只要使用畢式定理，就可以約略計算出距離；因為搖桿讀數基本上是極性 (非平面) 值，所以距離不是確切值。 所產生的會是一個放射狀靜止區域。
 
@@ -233,8 +233,8 @@ The [RawGameControllerUWP sample (GitHub)](TODO: Link) demonstrates how to use r
 
 ## <a name="see-also"></a>請參閱
 
-* [遊戲的輸入](input-for-games.md)
-* [遊戲的輸入練習](input-practices-for-games.md)
+* [輸入適用於遊戲](input-for-games.md)
+* [輸入適用於遊戲的作法](input-practices-for-games.md)
 * [Windows.Gaming.Input 命名空間](https://docs.microsoft.com/uwp/api/windows.gaming.input)
 * [Windows.Gaming.Input.RawGameController 類別](https://docs.microsoft.com/uwp/api/windows.gaming.input.rawgamecontroller)
 * [Windows.Gaming.Input.IGameController 介面](https://docs.microsoft.com/uwp/api/windows.gaming.input.igamecontroller)

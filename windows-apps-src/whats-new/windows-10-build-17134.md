@@ -1,32 +1,32 @@
 ---
-title: Windows 10 中適合開發人員的新功能、工具與特色
+title: Windows 10 中適合開發人員的新功能、工具與特色
 description: Windows 10 組建 17134 與新的開發人員工具提供由通用 Windows 平台所提供的工具、功能及體驗。
 keywords: 新功能, 最新動向, 更新, 多項更新, 功能, 新, Windows 10, 最新, 開發人員, 17134
 ms.date: 04/10/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 7d880b2167e718b1ff66aa349c32329e6c19e5b5
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116480"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592983"
 ---
 # <a name="whats-new-in-windows-10-for-developers-build-17134"></a>適用於開發人員的 Windows 10 (組建 17134) 的新功能
 
-Windows 10 組建 17134 (也稱為 4 月更新或版本 1803) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+Windows 10 組建 17134 (也稱為 4 月更新或版本 1803) 搭配 Visual Studio 2017 與更新的 SDK，提供工具、功能以及體驗來造就不凡的通用 Windows 平台應用程式。 在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/create-uwp-apps.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
-這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17134 API 變更](windows-10-build-17134-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
+這是此版本中 Windows 開發人員會感興趣的新功能和改良功能以及指導方針的集合。 如需新增到 Windows SDK 之新命名空間的完整清單，請參閱 [Windows 10 組建 17134 API 變更](windows-10-build-17134-api-diff.md)。 如需 Windows 10 重點功能的詳細資訊，請參閱 [Windows 10 中有哪些酷功能](https://go.microsoft.com/fwlink/?LinkId=823181)。 此外，請參閱 [Windows 開發人員平台功能](https://developer.microsoft.com/windows/platform/features)以取得過去與未來加入 Windows 平台功能的高階概觀。
 
 ## <a name="design--ui"></a>設計與 UI
 
-功能 | 說明
+功能 | 描述
  :------ | :------
 調適型和互動式快顯通知 | 使用調適型和互動式通知增強您的 App 開始使用我們[更新的快顯通知相關指引](../design/shell/tiles-and-notifications/adaptive-interactive-toasts.md)，並探索有關影像大小限制、進度列以及新增輸入選項的新資訊。<br><br>[ExpirationTime](https://docs.microsoft.com/uwp/api/windows.ui.notifications.scheduledtoastnotification.expirationtime#Windows_UI_Notifications_ScheduledToastNotification_ExpirationTime) 現可在排程的快顯通知上支援。
 內容連結 | 新的[內容連結](../design/controls-and-patterns/content-links.md)控制項提供可在文字控制項中嵌入豐富資料的方法，讓使用者不離開應用程式的內容也能尋找和使用有關個人或位置的詳細資訊。
 設計範例 | [設計工具組與範例](../design/downloads/index.md)頁面已新增 BuildCast 範例。 BuildCast 是端對端範例，用來展示 Fluent Design 系統，以及通用 Windows 平台的其他功能。
 內嵌手寫 | [文字控制項](../design/controls-and-patterns/text-controls.md)已新增手寫筆輸入功能，可讓使用者使用 Windows Ink 直接寫入文字方塊。 當使用者書寫時，文字會轉換為保持自然書寫風格的書寫體文字。
-Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluent Design 頁面： </br> * [Fluent Design 概觀](../design/fluent-design-system/index.md)已更新，以便與最新 Fluent 功能保持一致。 </br> * [顯色醒目提示](../design/style/reveal.md)已提供有關佈景主題及自訂控制項的新指引。 </br> * [瀏覽歷程記錄與向後瀏覽](../design/basics/navigation-history-and-backwards-navigation.md)已修訂，並提供詳細範例、裝置最佳化指引以及自訂行為指引。
+Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluent Design 頁面： </br> * [Fluent Design 概觀](../design/fluent-design-system/index.md)已更新，以便與最新 Fluent 功能保持一致。 </br> * [顯示反白顯示](../design/style/reveal.md)具有佈景主題和自訂控制項的新指引。 </br> * [瀏覽歷程記錄及向後巡覽](../design/basics/navigation-history-and-backwards-navigation.md)已經過改造，與裝置最佳化的指引和指導方針的自訂行為的詳細範例。
 焦點瀏覽 | 新的[焦點瀏覽](../design/input/focus-navigation.md)主題描述如何為倚賴非指向輸入類型 (像是鍵盤、遊戲台或遙控器) 的使用者最佳化 UWP 應用程式。 此外，[程式設計焦點瀏覽](../design/input/focus-navigation-programmatic.md)描述可用來強化這些體驗的 API。
 鍵盤快速鍵 | 有關[鍵盤快速鍵](../design/input/keyboard-accelerators.md)的指導方針已更新，納入了新的可用性資訊。 新增工具提示到您的鍵盤快速鍵，以及新增標籤置您的控制項，可改善探索能力，或以新的 API 覆寫預設的鍵盤快速鍵行為。
 頁面配置 | 我們已使用有關流暢版面配置及視覺狀態的新資訊來更新 [XAML 頁面配置](../design/layout/layouts-with-xaml.md)文件。 這些功能允許進一步控制 App 中元素位置的回應方式，並配合可用視覺空間進行調整。
@@ -34,9 +34,9 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 瀏覽檢視 | [瀏覽檢視](../design/controls-and-patterns/navigationview.md)控制項在 App 中提供最上層瀏覽的可摺疊瀏覽功能表。 此控制項實作瀏覽窗格 (或漢堡式功能表) 模式，並自動配合窗格的顯示模式調整為不同視窗大小。
 顯色焦點 | 新的[顯色焦點](../design/style/reveal-focus.md)效果提供體驗 (例如 Xbox One 和電視螢幕) 的光源效果。 這會在使用者將遊戲台或鍵盤焦點移近可設定焦點元素 (例如按鈕) 時，以動畫方式呈現這些元素的框線。
 音效 | XAML 現在使用 **SpatialAudioMode** 屬性支援 3D 音訊。 如需其設定方式的詳細資訊，請參閱[音效](../design/style/sound.md)。
-磚 | [可追蹤式磚通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)現可在 JavaScript 為主的 UWP app 中支援。<br><br>次要磚和徽章通知是[從傳統型橋接器應用程式現在支援](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
+磚 | [可追蹤式磚通知](../design/shell/tiles-and-notifications/chaseable-tile-notifications.md)現可在 JavaScript 為主的 UWP app 中支援。<br><br>次要磚與徽章通知[現在支援從傳統型橋接器應用程式](../design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md#send-tile-notifications)。
 樹狀目錄檢視 | [TreeView](../design/controls-and-patterns/tree-view.md) 控制項啟用提供包含巢狀項目的展開及摺疊節點的階層式清單。 此控制項可以用來說明 UI 中的資料夾結構或巢狀關聯性。
-撰寫方式 | 我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在 App 中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
+撰寫樣式 | 我們已針對有關語音與音調的文章提升品質並擴充內容，並將其轉換成[撰寫方式指引](../design/style/writing-style.md)。 這項新資訊提供關於在 App 中建立有效文字的原則，並建議撰寫控制項 (例如錯誤訊息或對話方塊) 的最佳做法。
 
 ## <a name="gaming"></a>遊戲
 功能 | 描述
@@ -48,7 +48,7 @@ Fluent Design 更新 | 我們使用新的資訊及指引，更新了許多 Fluen
 
 功能 | 描述
  :------ | :------
-調整卡 | [調整卡](https://docs.microsoft.com/adaptive-cards/)是開放式卡片交換格式，可讓開發人員透過通用且一致的方式交換 UI 內容。 這些卡片將其內容描述為 JSON 物件，這些物件可進行轉譯以自動配合主應用程式的外觀及風格做調整。
+調適型卡片 | [調整卡](https://docs.microsoft.com/adaptive-cards/)是開放式卡片交換格式，可讓開發人員透過通用且一致的方式交換 UI 內容。 這些卡片將其內容描述為 JSON 物件，這些物件可進行轉譯以自動配合主應用程式的外觀及風格做調整。
 應用程式資源群組 | [AppResourceGroupInfo](https://docs.microsoft.com/uwp/api/windows.system.appresourcegroupinfo) 類別有新的方法可以用來起始應用程式暫停、使用中 (已繼續) 及終止狀態的轉換。
 廣泛的檔案系統存取 | **broadFileSystemAccess** 功能在沒有檔案選擇器樣式提示的情況下，將目前正在執行應用程式的使用者同樣的檔案系統存取權授與應用程式。 如需詳細資訊，請參閱[檔案存取權限](../files/file-access-permissions.md)以及 [App 功能宣告](../packaging/app-capability-declarations.md) 中的 **broadFileSystemAccess** 項目。
 C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-apis/) 是 Windows 執行階段 (WinRT) API 的全新完全標準現代 C++17 語言投影。 它僅在標頭檔案中實作，以及設計用來提供您現代化 Windows API 的第一級存取。 使用 C++/WinRT，您可以撰寫及取用使用任何符合標準 C++17 編譯器的 WinRT API。 針對您的 C++ 應用程式 — 從 Win32 到 UWP — 使用 C++/WinRT 讓您的程式碼保持標準、現代化且清楚明瞭，同時讓應用程式保持輕量且快速。
@@ -62,23 +62,23 @@ C++/WinRT | [C++/WinRT](https://docs.microsoft.com/windows/uwp/cpp-and-winrt-api
 地圖服務 | [MapRouteDrivingOptions](https://docs.microsoft.com/uwp/api/windows.services.maps.maproutedrivingoptions) 類別包含名為 **DepartureTime** 的新屬性，可以用來透過指定之日期與時間的一般交通狀態計算路線。
 多執行個體 UWP app | UWP app 可以選擇支援多個執行個體。 如果多執行個體 UWP app 的其中一個執行個體正在執行，而且後續啟用要求成功時，平台將不會啟用現有的執行個體。 反而會建立執行於不同處理序中的新執行個體。 如需詳細資訊，請參閱[建立多執行個體通用 Windows app](../launch-resume/multi-instance-uwp.md)
 套件資源索引 API 和自訂組建系統 | 您可以使用[套件資源索引 (PRI) API](https://docs.microsoft.com/windows/uwp/app-resources/pri-apis-custom-build-systems)，開發適用於您的 UWP app 資源的自訂組建系統。 建置系統可以依據 UWP app 所需的任何複雜層級，建立 PRI 檔案並對這些檔案進行版本控制和傾印。 如果您的自訂建置系統目前使用 MakePri.exe 命令列工具，建議您改為呼叫 PRI API，因為它們提供更高的效能與控制。
-PlayReady | Microsoft PlayReady 是一組保護數位內容免遭未經授權使用的技術。 PlayReady 可在各種裝置和 App 上執行，以及跨所有作業系統執行。 [了解如何將 PlayReady 納入您的 App 中。](https://docs.microsoft.com/playready/)
+PlayReady | Microsoft PlayReady 是一組保護數位內容免遭未經授權使用的技術。 PlayReady 可在各種裝置和 App 上執行，以及跨所有作業系統執行。 [了解如何在您的應用程式中納入 PlayReady。](https://docs.microsoft.com/playready/)
 私人對象 | 如果您只想將您的應用程式 Store 清單顯示給您指定的特定人員，請使用新的 **\[私人對象\]** 選項。 除了您指定群組中的人員，其他人都無法找到或使用此應用程式。 這個選項適用於 Beta 測試，因為您可以將應用程式散發給測試人員，而其他任何人都無法取得應用程式，甚至也無法查看其 Store 清單。 如需詳細資訊，請參閱[選擇可見度選項](../publish/choose-visibility-options.md)。
-漸進式 Web 應用程式 | Microsoft Edge 和 UWP Web app 現在支援[漸進式 Web 應用程式 (PWA)](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)! </br> * 使用[標準 Web 技術](https://developer.mozilla.org/Apps/Progressive)和[功能偵測](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)，可以增強 Web 應用程式以提供原生應用程式體驗，包括推播通知、離線支援和 OS 整合，同時在瀏覽器和尚不支援 PWA 技術的平台上仍提供絕佳的基準 Web 應用程式體驗。 </br> * [新增資訊清單檔案](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)到您的 app 可讓它安裝到整個 UWP 裝置系列 (包括安全的 [Windows 10 S 模式裝置](https://www.microsoft.com/windows/windows-10-s))，並且從 [Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store) 散發。 </br> PWA 是*託管的 Web 應用程式*的自然進化版，但擁有離線案例的標準支援，全都拜*服務程式*、*快取*和*推播 API* 之賜。
+漸進式 Web 應用程式 | Microsoft Edge 和 UWP Web app 現在支援[漸進式 Web 應用程式 (PWA)](https://docs.microsoft.com/microsoft-edge/progressive-web-apps)! </br> * 使用[標準 Web 技術](https://developer.mozilla.org/Apps/Progressive)和[功能偵測](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/windows-features)，可以增強 Web 應用程式以提供原生應用程式體驗，包括推播通知、離線支援和 OS 整合，同時在瀏覽器和尚不支援 PWA 技術的平台上仍提供絕佳的基準 Web 應用程式體驗。 </br> * [加入資訊清單檔案](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/get-started)至您的應用程式可讓它安裝在整個 UWP 裝置系列 (包括安全[Windows 10 S 模式的裝置](https://www.microsoft.com/windows/windows-10-s)) 並從分散式[Microsoft Store](https://docs.microsoft.com/microsoft-edge/progressive-web-apps/microsoft-store)。 </br> PWA 是*託管的 Web 應用程式*的自然進化版，但擁有離線案例的標準支援，全都拜*服務程式*、*快取*和*推播 API* 之賜。
 螢幕擷取 | [Windows.Graphics.Capture 命名空間](https://docs.microsoft.com/uwp/api/windows.graphics.capture)提供 API，從顯示畫面或應用程式視窗取得畫面格來建立要建置共同作業及互動體驗的視訊串流或快照。 如需詳細資訊，請參閱 [螢幕擷取](../audio-video-camera/screen-capture.md)。
 系統觸發程序 | [CustomSystemEventTrigger](https://docs.microsoft.com/uwp/api/windows.applicationmodel.background.customsystemeventtrigger) 可讓您在作業系統未提供您需要的系統觸發程序時定義系統觸發程序。 例如，當硬體驅動程式和 UWP app 都屬於協力廠商，而且硬體驅動程式必須引發其 App 處理的自訂事件時。 例如，需要通知使用者關於何時插入音訊插孔時的音訊卡。
 使用者活動 | 新的 [UserActivity 文件](../launch-resume/useractivities.md) 說明如何協助使用者繼續使用您的應用程式執行作業，甚至是在多個裝置之間作業。</br>**UserActivitySessionHistoryItem** 類別有擷取最近使用者活動的新方法。 如需詳細資訊，請參閱 [GetRecentUserActivitiesAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitychannel.getrecentuseractivitiesasync) 及其多載。
 Windows Mixed Reality API | 為了支援逐漸茁壯的 Windows Mixed Reality 平台，新的 API 已新增至 [Windows.Graphic.Holographic](https://docs.microsoft.com/uwp/api/Windows.Graphics.Holographic) 和 [Windows.UI.Input.Spatial](https://docs.microsoft.com/uwp/api/Windows.UI.Input.Spatial) 命名空間。
-Windows Mixed Reality 文件 | Windows Mixed Reality 開發人員指導方針[現在 docs.microsoft.com 上裝載。](https://docs.microsoft.com/windows/mixed-reality/) 就像在這些 UWP 文件中，您可以現在檔案 GitHub 問題的意見反應或送出您自己的貢獻，透過提取要求。
+Windows Mixed Reality 文件 | Windows Mixed Reality 開發人員指導方針是[現在位於 docs.microsoft.com。](https://docs.microsoft.com/windows/mixed-reality/) 就像中這些 UWP 文件中，您可以現在檔案有 GitHub 問題的意見反應或提交透過提取要求投稿。
 
 ## <a name="publish--monetize-windows-apps"></a>發佈 Windows 應用程式以及從中獲利
 
 功能 | 描述
  :------ | :------
 從 Microsoft Store 下載與安裝套件更新 | 我們已更新[從 Microsoft Store 下載與安裝套件更新](../packaging/self-install-package-updates.md)並提供新的指引和範例，說明如何下載和安裝套件更新，而不需對使用者顯示通知 UI、解除安裝選用套件，以及取得 app 的下載和安裝佇列中有關套件的資訊。
-輸入以特定市場當地貨幣表示的自由格式價格 | 當您覆寫 App 的特定市場基本價格時，不再受到只能選擇其中一個標準價格區間的限制。您現在可以選擇輸入以特定市場當地貨幣表示的自由格式價格。 如需詳細資訊，請參閱[設定與排程應用程價格](../publish/set-and-schedule-app-pricing.md)。 **所有 Windows 開發人員都能使用這項功能，不需要更新 SDK。**
+輸入以特定市場當地貨幣表示的自由格式價格 | 當您覆寫 App 的特定市場基本價格時，不再受到只能選擇其中一個標準價格區間的限制。您現在可以選擇輸入以特定市場當地貨幣表示的自由格式價格。 如需詳細資訊，請參閱[設定與排程應用程價格](../publish/set-and-schedule-app-pricing.md)。 **這項功能可供所有的 Windows 開發人員，而且不需要更新的 SDK。**
 存放區內容 | [StoreContext](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext) 類別經過更新，提供一組精選的新方法。 這些方法會管理應用程式套件更新及附加元件的下載與安裝。
-訂閱附加元件現在可提供給所有開發人員 | 建立和發佈訂閱附加元件，透過自動化固定計費週期在您的 App 和遊戲中銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。 **所有 Windows 開發人員都能使用這項功能，不需要更新 SDK。**
+訂閱附加元件現在可提供給所有開發人員 | 建立和發佈訂閱附加元件，透過自動化固定計費週期在您的 App 和遊戲中銷售數位產品 (例如應用程式功能或數位內容)。 如需詳細資訊，請參閱[啟用應用程式的訂閱附加元件](../monetize/enable-subscription-add-ons-for-your-app.md)。 **這項功能可供所有的 Windows 開發人員，而且不需要更新的 SDK。**
 
 ## <a name="videos"></a>影片
 

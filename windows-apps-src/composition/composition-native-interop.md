@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: cab06db098312531a488731fb50bae99d8f2c8f6
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058829"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645063"
 ---
 # <a name="composition-native-interoperation-with-directx-and-direct2d"></a>組合 DirectX 與 Direct2D 的原生交互操作
 
@@ -39,11 +39,11 @@ Windows.UI.Composition API 提供可將內容直接移到撰寫器中的 [**ICom
 
 ## <a name="usage-example"></a>用法範例
 
-下列程式碼範例說明互通的案例。 此範例將類型從 Windows 執行階段為基礎的表面區域的結合 Windows 組合一起從互通性的標頭，並會呈現文字使用 COM 為基礎的 DirectWrite 和 Direct2D Api 的程式碼類型。 這個範例會使用[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)和[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060)進行順暢這些技術之間相互溝通。 此範例會使用 DirectWrite 來配置文字，並接著它使用 Direct2D 來轉譯它。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓**BeginDraw**傳回**ID2D1DeviceContext**介面指標，也就是相當比建立 Direct2D 內容來包裝傳回的 ID3D11Texture2D 介面，在每次繪圖操作，應用程式更有效率。
+下列程式碼範例說明如何交互操作的案例。 此範例結合類型從 Windows 執行階段為基礎的介面區的 Windows 組合，以及從 interop 的標頭，並呈現文字使用以 COM 為基礎的 DirectWrite 和 Direct2D Api 的程式碼的類型。 此範例會使用[ **BeginDraw** ](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)並[ **EndDraw** ](https://msdn.microsoft.com/library/windows/apps/mt620060)讓這些技術之間交互運作順暢。 範例使用 DirectWrite 來配置文字，並接著使用 Direct2D 來呈現它。 組合圖形裝置會在初始化階段直接接受 Direct2D 裝置。 這可讓**BeginDraw**返回**ID2D1DeviceContext**介面指標，這是相當大更有效率，比建立包裝傳回的 Direct2D 內容的應用程式在每個繪圖作業的 ID3D11Texture2D 介面。
 
-有兩個下列程式碼範例所示。 首先， [C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) （也就是完成） 的範例，然後 C + + /CX 程式碼範例 （可省略 DirectWrite 和 Direct2D 的部分範例）。
+有兩個以下的程式碼範例。 首先， [C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)範例 （此為完成），然後 C + + /CX 程式碼範例 （省略 DirectWrite 和 Direct2D 的部分範例）。
 
-若要使用 C + + /winrt 程式碼範例所示，請先建立新**核心應用程式 (C + + WinRT)** 在 Visual Studio 中的專案 (如需相關需求，請參閱[Visual Studio 支援 C + + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 建立專案，時選取做為目標版本**Windows 10 版本 1803 (10.0;組建 17134）**。 這是針對此程式碼已建置和測試的版本。 的內容取代成您`App.cpp`來源的程式碼檔案，使用下列程式碼清單，然後建置並執行。 應用程式呈現字串 「 Hello，World ！" 透明背景的黑色文字。
+若要使用 C + + WinRT 程式碼範例所示，先建立新**Core 應用程式 (C + + /cli WinRT)** Visual Studio 專案中的 (如需求，請參閱[Visual Studio 支援 C + WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package))。 在建立專案時，選取您的目標版本為**Windows 10 版本 1803 (10.0;組建 17134）**。 這是針對此程式碼是建置和測試的版本。 內容取代您`App.cpp`原始程式碼檔使用的程式碼清單，然後建置並執行。 應用程式會呈現字串"Hello World ！" 以透明背景的黑色文字。
 
 ```cppwinrt
 // App.cpp

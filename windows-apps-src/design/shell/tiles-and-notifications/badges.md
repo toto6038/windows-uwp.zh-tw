@@ -1,6 +1,6 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
-title: UWP app 的徽章通知
+Description: 了解如何使用磚、徽章、快顯通知以及通知提供您應用程式的進入點，並將使用者維持在最新狀態。
+title: UWP 應用程式的徽章通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
@@ -9,13 +9,13 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b41069f1ca964f978ba0cff73f5c34a9db133a10
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920283"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649083"
 ---
-# <a name="badge-notifications-for-uwp-apps"></a>UWP app 的徽章通知
+# <a name="badge-notifications-for-uwp-apps"></a>UWP 應用程式的徽章通知
 
  
 
@@ -34,8 +34,8 @@ ms.locfileid: "8920283"
 
 <table>
     <tr>
-        <th>值 (Value)</th>
-        <th>徽章</th>
+        <th>值</th>
+        <th>Badge</th>
         <th>XML</th>
     </tr>
     <tr>
@@ -60,7 +60,7 @@ ms.locfileid: "8920283"
     <th>XML</th>
 </tr>
 <tr>
-    <td>無 (none)</td>
+    <td>無</td>
     <td>(沒有顯示徽章。)</td>
     <td>`<badge value="none"/>`</td>
 </tr>
@@ -128,7 +128,7 @@ ms.locfileid: "8920283"
 
 ## <a name="create-a-badge"></a>建立徽章
 
-這些範例說明如何建立徽章更新。
+這些範例會示範如何建立、 徽章更新。
 
 ### <a name="create-a-numeric-badge"></a>建立數字徽章
 
@@ -201,5 +201,5 @@ private void clearBadge()
 ## <a name="related-articles"></a>相關文章
 
 * [調適型和互動式快顯通知](adaptive-interactive-toasts.md)
-* [建立磚](creating-tiles.md)
-* [建立彈性磚](create-adaptive-tiles.md)
+* [建立圖格](creating-tiles.md)
+* [建立自動調整圖格](create-adaptive-tiles.md)

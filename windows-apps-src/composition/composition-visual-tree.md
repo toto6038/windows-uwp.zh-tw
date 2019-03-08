@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b1c0b78ca45d98428f38518b337b5889f595c49
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943376"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57602433"
 ---
 # <a name="composition-visual"></a>組合視覺效果
 
@@ -21,9 +21,9 @@ ms.locfileid: "8943376"
 
 有三個構成視覺化樹狀結構的視覺效果類型，外加一個含有多個影響視覺效果內容之子類別的基底筆刷類別：
 
-- [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件，大多數的屬性都在這裡，並且會被其他視覺物件繼承。
-- [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並且會新增建立子系的能力。
-- [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自 [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810)，並且會新增與筆刷建立關聯的能力，以便讓「視覺效果」能夠轉譯像素 (包括影像、效果或純色)。
+- [**Visual** ](https://msdn.microsoft.com/library/windows/apps/Dn706858) – 基底物件時，大多數的屬性是在這裡，和其他視覺物件所繼承。
+- [**ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810) – 衍生自[**視覺**](https://msdn.microsoft.com/library/windows/apps/Dn706858)，並將能夠建立子系。
+- [**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433) – 衍生自[ **ContainerVisual** ](https://msdn.microsoft.com/library/windows/apps/Dn706810)並將功能加入至關聯的筆刷，讓視覺效果可以轉譯的像素為單位，包括影像、 效果或完整色彩。
 
 您可以使用 [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) 和其子類別 (包括[**CompositionColorBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionColorBrush)、[**CompositionSurfaceBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) 和 [**CompositionEffectBrush**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.CompositionEffectBrush))，將內容和效果套用至 SpriteVisuals。 若要深入了解筆刷，請參閱 [**CompositionBrush 概觀**](https://docs.microsoft.com/windows/uwp/composition/composition-brushes) (英文)。
 
@@ -59,11 +59,11 @@ var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-雖然這只是幾行的程式碼，但卻展示了一個強大的概念，亦即：[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) 物件是效果系統的核心。 **SpriteVisual** 可在色彩、影像及效果建立上，提供絕佳的彈性和相互作用。 **SpriteVisual** 是單一的視覺效果類型，可以使用筆刷 (在此案例中為單色) 填滿 2D 矩形。
+雖然這是只需幾行程式碼時，它會示範一個功能強大的概念：[**SpriteVisual** ](https://msdn.microsoft.com/library/windows/apps/Mt589433)物件會影響系統的核心。 **SpriteVisual** 可在色彩、影像及效果建立上，提供絕佳的彈性和相互作用。 **SpriteVisual** 是單一的視覺效果類型，可以使用筆刷 (在此案例中為單色) 填滿 2D 矩形。
 
 ## <a name="clipping-a-visual"></a>裁剪視覺效果
 
-[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 也可以用來建立對 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的裁剪。 以下範例來自使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 來修剪視覺效果之每一面的樣本：
+[  **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) 也可以用來建立對 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) 的裁剪。 以下範例來自使用 [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 來修剪視覺效果之每一面的樣本：
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -76,7 +76,7 @@ _currentVisual.Clip = clip;
 
 與 API 中的其他物件相同，[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) 的屬性也可以套用動畫效果。
 
-## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋轉裁剪
+## <a name="span-idrotatingaclipspanspan-idrotatingaclipspanspan-idrotatingaclipspanrotating-a-clip"></a><span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>旋轉美工圖案
 
 您可以使用旋轉來轉換 [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858)。 請注意，[**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) 同時支援弧度與角度。 預設使用的是弧度，但是也可以輕鬆指定成角度，如下列程式碼片段所示：
 

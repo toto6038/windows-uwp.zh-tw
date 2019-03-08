@@ -1,20 +1,20 @@
 ---
 description: 本主題示範如何使用 C++/WinRT API，無論 Windows、第三方元件廠商或您自己是否實作它們。
-title: '使用 C++/WinRT 使用 API '
+title: 使用 C++/WinRT 來使用 API
 ms.date: 05/08/2018
 ms.topic: article
 keywords: Windows 10、uwp、標準、c++、cpp、winrt、投影的、投影、實作、執行階段類別、啟用
 ms.localizationpriority: medium
 ms.openlocfilehash: 488516f94a53eb26b4a9e2f49927b8399c62bff5
-ms.sourcegitcommit: ff131135248c85a8a2542fc55437099d549cfaa5
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9117688"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645143"
 ---
 # <a name="consume-apis-with-cwinrt"></a>使用 C++/WinRT 來使用 API
 
-本主題示範如何取用[C + + /winrt](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api，無論他們 Windows 的一部分，是否實作由第三方元件廠商或您自己來實作。
+本主題說明如何使用[C + + /cli WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) Api，不論它們是屬於 Windows，藉由將協力廠商元件的廠商，或自行實作。
 
 ## <a name="if-the-api-is-in-a-windows-namespace"></a>如果 API 在 Windows 命名空間中
 這是您使用 Windows 執行階段 API 最常見的案例。 適用於中繼資料中定義的 Windows 命名空間裡每一類型，C++/WinRT 定義 C++ 適用的對等項目 (稱為 *投影類型*)。 投影類型有相同的完整名稱做為 Windows 類型，但它放在使用 C++ syntax 的 C++ **winrt** 命名空間。 例如，將 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 投影到 C++/WinRT 做為 **winrt::Windows::Foundation::Uri**。
@@ -38,11 +38,11 @@ int main()
 包含的標頭 `winrt/Windows.Foundation.h` 屬於 SDK 的一部分，可在資料夾 `%WindowsSdkDir%Include<WindowsTargetPlatformVersion>\cppwinrt\winrt\` 中找到。 資料夾中的標頭包含投影到 C++/WinRT 的 Windows 命名空間類型。 在此範例中，`winrt/Windows.Foundation.h` 包含 **winrt::Windows::Foundation::Uri**，其適用於執行階段類別 [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) 的投影類型。
 
 > [!TIP]
-> 每當您要使用從 Windows 命名空間投影到 C++/WinRT，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 的指示詞是選擇性的，但很便利。
+> 每當您要使用從 Windows 命名空間投影到 C++/WinRT，請包含對應到該命名空間的 C++/WinRT 標頭。 `using namespace` 指示詞是選擇性的，但很便利。
 
 上述的程式碼範例中，初始化 C++/WinRT 後，我們透過其公開記載於文件的建構函式之一 (在此範例中，[**Uri(String)**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_)) 堆疊配置 **winrt::Windows::Foundation::Uri** 的值投影類型。 針對這點，最常見的使用案例就是您通常需要執行的。 一旦您取得 C++/WinRT 投影類型值，您可以將其視為如同實際 Windows 執行階段類型的執行個體，因為其有相同的成員。
 
-事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下所示，您投影的值成員的呼叫確實委派，透過智慧型指標，以支援物件;這是在發生狀態變更。
+事實上，該投影的值是 proxy；它基本上只是支援物件的智慧型指標。 投影值的建構函式呼叫 [**RoActivateInstance**](https://msdn.microsoft.com/library/br224646) 來建立支援 Windows 執行階段類別的執行個體 (此案例中為，**Windows.Foundation.Uri**)，並在新投影值中儲存該物件的預設介面。 如下圖所示，預估的值的成員呼叫實際委派，透過智慧型指標，以支援的物件;這是狀態變更發生的位置。
 
 ![投影 Windows::Foundation::Uri 類型](images/uri.png)
 
@@ -121,16 +121,16 @@ private:
 };
 ```
 
-所有投影類型的預設建構函式*除了* `nullptr_t` 建構函式，皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 它預期在後續次數會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
+所有投影類型的預設建構函式*除了*`nullptr_t` 建構函式，皆導致建立支援 Windows 執行階段物件。 `nullptr_t` 建構函式基本上是沒有選項。 它預期在後續次數會初始化投影物件。 因此，不管執行階段類別是否有預設建構函式，您都可以使用這項技術有效地延遲初始化。
 
-這項考量會影響其中您正在叫用的預設建構函式，例如向量和地圖中的其他位置。 此程式碼範例，請考慮。
+這項考量會影響其他位置叫用預設建構函式，例如在向量和對應的位置。 請考慮這個程式碼範例。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
 lookup[2] = value;
 ```
 
-指派會建立新的**TextBlock**，並接著立即覆寫它與`value`。 以下是解決問題的方式。
+建立新的指派**TextBlock**，然後立即覆寫它與`value`。 以下是補救方法。
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -141,7 +141,7 @@ lookup.insert_or_assign(2, value);
 不論您是自己撰寫元件，或由廠商提供，本節皆適用。
 
 > [!NOTE]
-> 如需資訊有關安裝和使用 C + + /winrt Visual Studio 擴充功能 (VSIX) （可提供專案範本的支援） 看到[Visual Studio 支援 C + + WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
+> 如資訊需安裝和使用 C + + /cli WinRT Visual Studio 擴充功能 (VSIX) （這也提供專案範本支援） 請參閱[Visual Studio 支援 C + /cli WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)。
 
 您的應用程式專案中，參考 Windows 執行階段元件的 Windows 執行階段中繼資料 (`.winmd`) 檔案，並建置。 在建置期間，`cppwinrt.exe` 工具產生完整描述的標準 C++ 程式庫&mdash;或 *投影*&mdash;適用於元件的 API 介面。 換言之，產生的程式庫包含適用於元件的投影類型。
 
@@ -190,7 +190,7 @@ MainPage::MainPage()
 如需更多詳細資料、程式碼以及在使用專案中實做使用執行階段類別的逐步解說，請參閱 [XAML 控制項。繫結至 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)。
 
 ## <a name="instantiating-and-returning-projected-types-and-interfaces"></a>初始化並傳回投影類型與介面
-以下是在您使用專案中的投影類型和介面可能會有的外觀範例。 請記住投影的類型 （例如在此範例中），是工具產生，並不是您可以撰寫您自己的項目。
+以下是在您使用專案中的投影類型和介面可能會有的外觀範例。 請記住投影的型別 （例如一個在此範例中），是由工具產生，而不是您會撰寫您自己的項目。
 
 ```cppwinrt
 struct MyRuntimeClass : MyProject::IMyRuntimeClass, impl::require<MyRuntimeClass,
@@ -258,13 +258,13 @@ BankAccountWRC::BankAccount account = factory.ActivateInstance<BankAccountWRC::B
 ## <a name="important-apis"></a>重要 API
 * [QueryInterface 介面](https://msdn.microsoft.com/library/windows/desktop/ms682521)
 * [RoActivateInstance 函式](https://msdn.microsoft.com/library/br224646)
-* [Windows::Foundation::Uri 類別](/uwp/api/windows.foundation.uri)
-* [winrt::get_activation_factory 函式範本](/uwp/cpp-ref-for-winrt/get-activation-factory)
-* [winrt::make 函式範本](/uwp/cpp-ref-for-winrt/make)
-* [winrt::Windows::Foundation::IUnknown 結構](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
+* [Windows::Foundation::Uri class](/uwp/api/windows.foundation.uri)
+* [winrt::get_activation_factory 函式樣板](/uwp/cpp-ref-for-winrt/get-activation-factory)
+* [winrt::make 函式樣板](/uwp/cpp-ref-for-winrt/make)
+* [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## <a name="related-topics"></a>相關主題
-* [在 C++/WinRT 中撰寫事件 ](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
-* [C++/WinRT 與 ABI 之間的互通性](interop-winrt-abi.md)
-* [C++/WinRT 的簡介](intro-to-using-cpp-with-winrt.md)
-* [XAML 控制項；繫結一個 C++/WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)
+* [撰寫事件在 C + + /cli WinRT](author-events.md#create-a-core-app-bankaccountcoreapp-to-test-the-windows-runtime-component)
+* [Interop 之間 C + + /cli WinRT 和 ABI](interop-winrt-abi.md)
+* [簡介使用 C + + /cli WinRT](intro-to-using-cpp-with-winrt.md)
+* [XAML 控制項，繫結至 C + + /cli WinRT 屬性](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage)

@@ -7,17 +7,17 @@ ms.topic: article
 keywords: Windows 10, UWP, 執行緒, 執行緒集區
 ms.localizationpriority: medium
 ms.openlocfilehash: 423f0efa9118f581d6e768a815dd2550801aa87e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048615"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658013"
 ---
 # <a name="submit-a-work-item-to-the-thread-pool"></a>將工作項目提交至執行緒集區
 
-\[ 針對 Windows 10 上的 UWP app 更新。 如需 Windows 8.x 文章，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ 更新 Windows 10 上的 UWP 應用程式。 Windows 8.x 文件，請參閱[封存](https://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-<b>重要 API</b>
+<b>重要的 Api</b>
 
 -   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
@@ -31,7 +31,7 @@ ms.locfileid: "9048615"
 提供三個版本的 [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)，讓您可以選擇性地指定工作項目的優先順序，並控制是否與其他工作項目同時執行。
 
 >[!NOTE]
->使用[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI 執行緒及顯示進度從工作項目。
+>使用[ **CoreDispatcher.RunAsync** ](https://msdn.microsoft.com/library/windows/apps/Hh750317)存取 UI 執行緒，並顯示工作項目中的進度。
 
 下列範例會建立一個工作項目，並且提供 Lambda 來執行工作：
 
@@ -350,11 +350,11 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 ## <a name="summary-and-next-steps"></a>摘要與後續步驟
 
-您可以進一步了解從中[建立 ThreadPool 工作項目範例](https://go.microsoft.com/fwlink/p/?LinkID=328569)撰寫的適用於 windows 8.1，此快速入門下載程式碼並重複使用在 win\_unap windows 10 應用程式中的原始碼。
+您可以進一步了解從本快速入門中下載的程式碼[建立執行緒集區工作項目範例](https://go.microsoft.com/fwlink/p/?LinkID=328569)撰寫的 Windows 8.1 和重複使用原始碼，在 win\_unap Windows 10 應用程式。
 
 ## <a name="related-topics"></a>相關主題
 
-* [將工作項目提交至執行緒集區](submit-a-work-item-to-the-thread-pool.md)
+* [送出至執行緒集區的工作項目](submit-a-work-item-to-the-thread-pool.md)
 * [使用執行緒集區的最佳做法](best-practices-for-using-the-thread-pool.md)
-* [使用計時器提交工作項目](use-a-timer-to-submit-a-work-item.md)
+* [若要提交的工作項目使用計時器](use-a-timer-to-submit-a-work-item.md)
  

@@ -1,5 +1,5 @@
 ---
-Description: MakePri.exe is a command line tool that you can use to create and dump PRI files. It is integrated as part of MSBuild within Microsoft Visual Studio, but it could be useful to you for creating packages manually or with a custom build system.
+Description: MakePri.exe 是一個命令列工具，您可以用來建立和傾印 PRI 檔案。 其做為 MSBuild 的一部分整合到 Microsoft Visual Studio 中，但用於手動建立套件或自訂組建系統也很有用。
 title: 使用 MakePri.exe 來手動編譯資源
 template: detail.hbs
 ms.date: 10/23/2017
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: 1f4feff88507ae5f84bccf044aa9ab6711d6b8bb
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8919859"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645763"
 ---
-# <a name="compile-resources-manually-with-makepriexe"></a>手動以 MakePri.exe 編譯資源
+# <a name="compile-resources-manually-with-makepriexe"></a>使用 MakePri.exe 來手動編譯資源
 
 MakePri.exe 是一個命令列工具，您可以用來建立和傾印 PRI 檔案。 其做為 MSBuild 的一部分整合到 Microsoft Visual Studio 中，但用於手動建立套件或自訂組建系統也很有用。
 
 > [!NOTE]
-> 當您檢查**適用於 UWP 受管理的應用程式的 Windows SDK**選項，在安裝 Windows 軟體開發套件，MakePri.exe 會安裝。 它安裝至路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及名為其他架構的套件的資料夾中）。 例如，`C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
+> 檢查時，已安裝 MakePri.exe **UWP 管理的應用程式的 Windows SDK**安裝 Windows 軟體開發套件時的選項。 它會安裝到路徑`%WindowsSdkDir%bin\<WindowsTargetPlatformVersion>\x64\makepri.exe`（以及其他架構資料夾）。 例如， `C:\Program Files (x86)\Windows Kits\10\bin\10.0.17713.0\x64\makepri.exe`。
 
 PRI 檔案的大小上限是 64 KB。
 
@@ -26,8 +26,8 @@ PRI 檔案的大小上限是 64 KB。
 |主題|描述|
 |-|-|
 | [MakePri.exe 命令列選項](makepri-exe-command-options.md) | MakePri.exe 有一組命令 `createconfig`，`dump`，`new`、`resourcepack` 和 `versioned`。 本主題詳述命令列選項的使用。 |
-| [MakePri.exe 設定檔](makepri-exe-configuration.md) | 本主題說明 MakePri.exe XML 設定檔的結構描述。 |
-| [MakePri.exe 格式特定的索引子](makepri-exe-format-specific-indexers.md) | 本主題說明 MakePri.exe 用來產生資源索引的格式特定索引子。 |
+| [MakePri.exe 組態檔](makepri-exe-configuration.md) | 本主題說明 MakePri.exe XML 設定檔的結構描述。 |
+| [MakePri.exe 格式特定索引子](makepri-exe-format-specific-indexers.md) | 本主題說明 MakePri.exe 用來產生資源索引的格式特定索引子。 |
 
 ## <a name="makepriexe-command-line-options"></a>MakePri.exe 命令列選項
 
@@ -67,6 +67,6 @@ No default or neutral resource given for '<resource identifier>'. The applicatio
 
 ## <a name="related-topics"></a>相關主題
 * [MakePri.exe 命令列選項](makepri-exe-command-options.md)
-* [MakePri.exe 設定](makepri-exe-configuration.md)
-* [MakePri.exe 格式特定的索引子](makepri-exe-format-specific-indexers.md)
-* [針對語言、縮放比例及其他限定詞量身打造您的資源](tailor-resources-lang-scale-contrast.md)
+* [MakePri.exe 組態](makepri-exe-configuration.md)
+* [MakePri.exe 格式特定索引子](makepri-exe-format-specific-indexers.md)
+* [量身打造您的語言、 規模和其他辨識符號的資源](tailor-resources-lang-scale-contrast.md)

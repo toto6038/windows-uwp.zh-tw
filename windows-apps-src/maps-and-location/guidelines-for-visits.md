@@ -1,5 +1,5 @@
 ---
-Description: Learn how to use the powerful Visits Tracking feature for more practical location tracking.
+Description: 了解如何使用強大的「行止動線追蹤」(Visits Tracking) 功能，進行更切合實際的位置追蹤。
 title: 關於使用行止動線追蹤功能的指導方針
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 05/18/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 地圖, 位置, geovisit, geovisits
 ms.localizationpriority: medium
 ms.openlocfilehash: db351660722cd13a4e8f14bebb651d60f33d1671
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927537"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640773"
 ---
 # <a name="guidelines-for-using-visits-tracking"></a>關於使用行止動線追蹤功能的指導方針
 
@@ -269,6 +269,6 @@ private async void RegisterBackgroundTask(object sender, RoutedEventArgs e) {
 您的應用程式現在應該可以註冊行止動線處理背景工作，而且每當裝置記錄一次行止動線相關狀態變更時，都必須啟動這項工作。 您必須在背景工作類別中填入邏輯，以判斷如何處理此狀態變更資訊。
 
 ## <a name="related-topics"></a>相關主題
-* [建立和註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
+* [建立並註冊跨處理序背景工作](https://docs.microsoft.com/windows/uwp/launch-resume/create-and-register-a-background-task)
 * [取得使用者的位置](get-location.md)
 * [Windows.Devices.Geolocation 命名空間](https://docs.microsoft.com/uwp/api/windows.devices.geolocation)

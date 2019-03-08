@@ -4,14 +4,14 @@ description: 這個範例程式碼說明如何在通用 Windows 平台 (UWP) 應
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c4e694dca3c84c7e94e513d8bb10a3f405bbc86
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938755"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658263"
 ---
 # <a name="encode-and-decode-data"></a>編碼及解碼資料
 

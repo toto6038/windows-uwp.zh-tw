@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 服務點, pos
 ms.localizationpriority: medium
 ms.openlocfilehash: 518529fecff9f25a83a03847b1623bf9f09a8145
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9115998"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57661153"
 ---
 # <a name="getting-started-with-point-of-service"></a>開始使用服務點
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 ```
 
 ### <a name="retaining-the-device"></a>保留裝置
-透過網路或藍牙連線使用服務點裝置時，您可能希望與網路上的其他應用程式共用該裝置  (如需詳細資訊，請參閱[共用裝置](#sharing-a-device-between-apps))。有時候，您可能想要佔住裝置長時間使用。 此範例示範如何在其他應用程式要求釋放已宣告的條碼掃描器之後保留該裝置。
+透過網路或藍牙連線使用服務點裝置時，您可能希望與網路上的其他應用程式共用該裝置  (如需詳細資訊的詳細資訊，請參閱[共用裝置](#sharing-a-device-between-apps)。)在其他情況下，您可能想要保留長時間使用的裝置。 此範例示範如何在其他應用程式要求釋放已宣告的條碼掃描器之後保留該裝置。
 
 ```Csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
@@ -209,8 +209,8 @@ if (claimedBarcodeScanner != null)
 
 ## <a name="see-also"></a>請參閱
 + [條碼掃描器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)
-+ [收銀機範例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
-+ [行顯示範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
++ [現金隱藏式選單的範例]( https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CashDrawer)
++ [列顯示範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LineDisplay)
 + [磁條讀取器範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MagneticStripeReader)
-+ [POS 印表機範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
++ [POSPrinter 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/PosPrinter)
 

@@ -1,28 +1,28 @@
 ---
-title: 登錄背景工作
+title: 註冊背景工作
 description: 了解如何建立可重複用來安全登錄大多數背景工作的函式。
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp，背景工作
+keywords: windows 10 uwp，背景工作
 ms.localizationpriority: medium
 ms.openlocfilehash: e586e85e15202e0186afe481ec18b32c2f480712
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048715"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660783"
 ---
-# <a name="register-a-background-task"></a>登錄背景工作
+# <a name="register-a-background-task"></a>註冊背景工作
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**BackgroundTaskRegistration 類別**](https://msdn.microsoft.com/library/windows/apps/br224786)
 -   [**BackgroundTaskBuilder 類別**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**SystemCondition 類別**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-了解如何建立可重複用來安全註冊大多數背景工作的函式。
+了解如何建立可重複用來安全登錄大多數背景工作的函式。
 
 本主題同時適用於同處理序背景工作與跨處理序背景工作。 本主題假設您已經有一個需要註冊的背景工作。 (請參閱[建立及註冊在跨處理序中執行的背景工作](create-and-register-a-background-task.md)或[建立及註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)了解如何撰寫背景工作的資訊)。
 
@@ -39,8 +39,8 @@ ms.locfileid: "9048715"
 這個方法會採用背景工作的工作進入點、工作名稱、預先建構的背景工作觸發程序，以及 (選用) [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)。 這個方法會傳回 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) 物件。
 
 > [!Important]
-> `taskEntryPoint` - 針對在跨處理序中執行的背景工作，這必須以下列形式來建構：命名空間、'.' 及包含您背景類別的類別名稱。 此字串區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1" 類別，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgroundTask1"。
-> 如果您的背景工作與您的應用程式在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
+> `taskEntryPoint` -針對背景工作執行的處理程序之外，這必須建構為命名空間名稱 '。 '，以及包含您的背景類別之類別的名稱。 此字串區分大小寫。  例如，如果您有 "MyBackgroundTasks" 命名空間和包含您背景類別程式碼的 "BackgroundTask1" 類別，則 `taskEntryPoint` 的字串會是 "MyBackgroundTasks.BackgroundTask1"。
+> 如果您的背景工作與您的 App 在相同處理序中執行 (亦即同處理序背景工作)，就不應該設定 `taskEntryPoint`。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -74,7 +74,7 @@ ms.locfileid: "9048715"
 
 您可以查詢 [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) 屬性並逐一查看結果，以檢查現有登錄。 檢查每個執行個體的名稱 - 如果它符合您要登錄的工作名稱，則中斷迴圈並設定旗標變數，讓您的程式碼能夠在下一個步驟中選擇不同路徑。
 
-> **注意：** 使用您的應用程式專用的背景工作名稱。 確認每個背景工作都有唯一的名稱。
+> **附註**  使用您的應用程式獨有的背景工作名稱。 確認每個背景工作都有唯一的名稱。
 
 下列程式碼會使用我們在上一個步驟中建立的 [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) 來登錄背景工作：
 
@@ -147,7 +147,7 @@ ms.locfileid: "9048715"
 
 然後使用新的 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) 物件登錄工作。 這段程式碼應該會檢查條件參數是否為 Null；如果不是，則將條件新增到登錄物件。 傳回由 [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224786) 方法傳回的 [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224772)。
 
-> **注意：** 背景工作登錄參數都在登錄時驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的 App 能夠妥善處理背景工作註冊失敗的狀況；反之，如果 App 需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
+> **附註**  背景工作註冊參數會在註冊期間驗證。 如果有任一個登錄參數無效，就會傳回錯誤。 請確認您的應用程式能夠妥善處理背景工作註冊失敗的狀況；反之，如果應用程式需依賴有效的驗證物件，則在嘗試註冊工作之後，可能會當機。
 > **注意**：如果您要登錄與您 App 在相同處理程序中執行的背景工作，請針對 `taskEntryPoint` 參數傳送 `String.Empty` 或 `null`。
 
 下列範例會傳回現有工作，或新增可登錄背景工作的程式碼 (如果有選擇性的系統條件，則也包括在內)：
@@ -375,16 +375,16 @@ ms.locfileid: "9048715"
 
 ## <a name="related-topics"></a>相關主題
 
-* [建立及註冊跨處理序的背景工作](create-and-register-a-background-task.md)
-* [建立及註冊同處理序的背景工作](create-and-register-an-inproc-background-task.md)
-* [在應用程式資訊清單中宣告背景工作](declare-background-tasks-in-the-application-manifest.md)
+* [建立並註冊跨處理序背景工作](create-and-register-a-background-task.md)
+* [建立並註冊同處理序背景工作](create-and-register-an-inproc-background-task.md)
+* [宣告應用程式資訊清單中的背景工作](declare-background-tasks-in-the-application-manifest.md)
 * [處理已取消的背景工作](handle-a-cancelled-background-task.md)
-* [監視背景工作進度和完成](monitor-background-task-progress-and-completion.md)
-* [使用背景工作回應系統事件](respond-to-system-events-with-background-tasks.md)
-* [設定執行背景工作的條件](set-conditions-for-running-a-background-task.md)
-* [從背景工作更新動態磚](update-a-live-tile-from-a-background-task.md)
+* [監視背景工作的進度和完成](monitor-background-task-progress-and-completion.md)
+* [回應系統事件與背景工作](respond-to-system-events-with-background-tasks.md)
+* [設定用於執行背景工作的條件](set-conditions-for-running-a-background-task.md)
+* [更新即時磚的背景工作](update-a-live-tile-from-a-background-task.md)
 * [使用維護觸發程序](use-a-maintenance-trigger.md)
 * [在計時器上執行背景工作](run-a-background-task-on-a-timer-.md)
 * [背景工作的指導方針](guidelines-for-background-tasks.md)
 * [偵錯背景工作](debug-a-background-task.md)
-* [如何在 UWP 應用程式觸發暫停、繼續和背景事件 (偵錯時)](https://go.microsoft.com/fwlink/p/?linkid=254345)
+* [如何觸發暫止、 繼續及背景事件 UWP 應用程式中的 （當偵錯）](https://go.microsoft.com/fwlink/p/?linkid=254345)

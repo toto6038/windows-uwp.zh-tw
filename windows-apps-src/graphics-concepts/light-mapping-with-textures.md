@@ -1,20 +1,20 @@
 ---
-title: 光線與紋理對應
+title: 光源與紋理對應
 description: 光線對應為紋理或紋理群組，其包含 3D 場景中的照明相關資訊。
 ms.assetid: 5C7518D2-AC92-4A97-B7AF-4469D213D7BD
 keywords:
-- 光線與紋理對應
+- 光源與紋理對應
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 6b5d245247d33f3c04839620615f2778ef7dfb59
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944674"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660023"
 ---
-# <a name="light-mapping-with-textures"></a>光線與紋理對應
+# <a name="light-mapping-with-textures"></a>光源與紋理對應
 
 
 光線對應為紋理或紋理群組，其包含 3D 場景中的照明相關資訊。 光線對應將光線和陰影對應到基本類型。 物件多重紋理混合，讓您的應用程式以比陰影技術更逼真外觀呈現場景。
@@ -47,11 +47,11 @@ ms.locfileid: "8944674"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="monochrome-light-maps.md">單色光源對應</a></p></td>
+<td align="left"><p><a href="monochrome-light-maps.md">單色的淺對應</a></p></td>
 <td align="left"><p>當較舊的 3D 加速板不支援使用目的地像素 alpha 值的紋理混合時，單色光線對應可讓較舊的介面卡執行物件多重紋理混合。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="color-light-maps.md">色彩光源對應</a></p></td>
+<td align="left"><p><a href="color-light-maps.md">色彩的光線對應</a></p></td>
 <td align="left"><p>彩色光線對應使用光線對應中的 RGB 資料，作為光線資訊。 應用程式若使用彩色光線對應，通常會以更逼真的方式轉譯 3D 場景。</p></td>
 </tr>
 <tr class="odd">
@@ -59,8 +59,8 @@ ms.locfileid: "8944674"
 <td align="left"><p>透過光源照明時，使用高度反射材質的光亮物件收到反射強光。 有時您可以透過套用反射光線對應至基本類型來取得更準確的強光，而不是使用由照明模組製造的反射強光。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="diffuse-light-maps.md">擴散光源對應</a></p></td>
-<td align="left"><p>霧面表面有擴散光線反映。 擴散光線的亮度，取決於與光源的距離，以及表面法向和光源方向向量之間的角度。 紋理光線對應可模擬複雜擴散照明。</p></td>
+<td align="left"><p><a href="diffuse-light-maps.md">擴散淺的對應</a></p></td>
+<td align="left"><p>霧面表面有擴散光線反映。 擴散光線的亮度，取決於與光源的距離，以及表面法向和光源方向向量之間的角度。 紋理光線對應可模擬複雜擴散光源。</p></td>
 </tr>
 </tbody>
 </table>

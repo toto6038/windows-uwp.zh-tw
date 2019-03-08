@@ -1,5 +1,5 @@
 ---
-Description: The Microsoft Store reaches customers in over 200 countries and regions around the world.
+Description: Microsoft Store 可觸及全球 200 多個國家與地區的客戶。
 title: 定義市場選取項目
 ms.assetid: FBE7507B-DBF3-4FCB-8377-DB01660E75F8
 ms.date: 10/31/2018
@@ -7,18 +7,18 @@ ms.topic: article
 keywords: windows 10, uwp, 市場, 國家, 地區
 ms.localizationpriority: medium
 ms.openlocfilehash: 980dc41303a2689c0f86415beb6ba9adb44fe39c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936719"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646243"
 ---
 # <a name="define-market-selection"></a>定義市場選取項目
 
 
 Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以選擇提供應用程式的市場，且利用此選項依據市場或市場群組自訂許多[價格與可用性](set-app-pricing-and-availability.md)功能。
 
-為了讓您的應用程式適用於客戶世界各地的資訊，請參閱[全球化指導方針](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)，並[讓您的應用程式可當地語系化](../design/globalizing/prepare-your-app-for-localization.md)。
+以協助世界各地，讓您的應用程式適用於客戶的資訊，請參閱[全球化的指導方針](../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md)並[讓您的應用程式的可當地語系化](../design/globalizing/prepare-your-app-for-localization.md)。
 
 > [!NOTE]
 > 雖然本主題是關於應用程式，但是附加元件提交的市場選擇使用相同的程序。
@@ -34,19 +34,19 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 請注意，您在這裡選取的項目只會套用至新的取得項目；如果某人已在特定市場中擁有您的應用程式，而您之後移除該市場，該市場中已擁有應用程式的人仍可繼續使用，但是無法取得您提交的更新，而且該市場中沒有新客戶可取得您的應用程式。
 
 > [!IMPORTANT]
-> 它是任何當地法律要求，您必須負責，即使這裡或合作夥伴中心並未列出這些要求。
+> 您必須負責以符合任何本機的法律需求，即使這些需求未列在這裡或在合作夥伴中心。
 
 請記住，即使您選取全部的市場，當地法律限制或其他因素都可能造成某些 App 無法在部分國家/地區中列出。 此外，某些市場可能會有與年齡分級相關的特定需求。 如果您的 app 不符合這些需求，我們將無法在該市場中提供您的 app。 如需詳細資訊，請參閱[年齡分級](age-ratings.md)。
 
 > [!NOTE]
-> 如先前發佈的 app，包括 Windows8 或 Windows8.1 為目標的套件，某些個別市場會被視為一個單獨的 「 世界其他地方 」 市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8x)。
+> 針對先前已發行應用程式包含 Windows 8 或 Windows 8.1 為目標的封裝，某些個別的市場會被視為一個單一的 「 World Rest 」 市場。 如需詳細資訊，請參閱[針對 Windows 8.x 的「世界其他地方」市場](#rest-of-world-markets-for-windows-8x)。
 
 您也會看到一個核取方塊，讓您指定是否要在市集未來可能新增的市場中提供您的應用程式。 若您讓此方塊保持核取狀態，而我們之後新增市場，則在這些市場中會針對您的應用程式使用您的提交項目的基本價格和一般可用性日期。 如果您不希望這種情況發生，可以取消核取此方塊，如此我們就不會將您的應用程式列在未來任何市場中 (不過您之後可以隨時自行新增)。
  
 
-## <a name="microsoft-store-consumer-markets"></a>Microsoft 市集消費者市場
+## <a name="microsoft-store-consumer-markets"></a>Microsoft Store 取用者市場
 
-您可以選擇在下列一或多個市集中列出您的應用程式 (或附加元件)。 標示星號的市場支援 Xbox One; 上的 Microsoft Store您會看到**Xbox** **市場選取項目**快顯視窗中其名稱旁。
+您可以選擇在下列一或多個市集中列出您的 App (或附加元件)。 將以星號市場上 Xbox One; 支援 Microsoft Store您會看到**Xbox**中的其名稱旁**市場選取**快顯視窗。
 
 
 <table>
@@ -331,7 +331,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>法屬聖馬丁</td>
     <td>聖匹島</td>
     <td>聖文森及格瑞那丁</td>
-    <td>薩摩亞</td>
+    <td>薩摩亞獨立國</td>
   </tr>
   <tr>
     <td>聖馬利諾</td>
@@ -389,7 +389,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
   </tr>
   <tr>
     <td>美國外島</td>
-    <td>美屬維爾京群島</td>
+    <td>美國美屬維爾京群島</td>
     <td>烏干達</td>
     <td>烏克蘭</td>
   </tr>
@@ -476,9 +476,9 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 
 ## <a name="rest-of-world-markets-for-windows-8x"></a>針對 Windows 8.x 的「世界其他地方」市場
 
-如果您先前發佈的應用程式會包含套件目標為 Windows 8.x，請務必注意數個市場會被視為單一 「 世界其他地方 」 市場的客戶在 Windows 上使用 microsoft Store 8.x，即使它們會顯示為個別市場在合作夥伴中心。
+如果您先前已發行的應用程式包含以 Windows 為目標的套件 8.x，務必要注意的市場的數字會被視為單一 「 外國人 」 市場，讓客戶在 Windows 上使用存放區 8.x，即使它們會顯示為個別的市場在合作夥伴中心。
 
-如果您保留預設市場選取項目，提交您的應用程式時，您不需要擔心這個，和您的應用程式將其提供給所有可能的市場。 不過，如果您想要排除特定市場，請記住，排除甚至上述其中一個 「 世界其他地方 」 市場中*任何*的 「 世界其他地方 」 市場上 Windows8 或 Windows8.1 的客戶就不會提供您的應用程式。
+提交您的應用程式時，您可以保留預設市集選項，如果您不需要擔心這個問題，和您的應用程式可供所有可能的市場。 不過，如果您想要排除特定的市場，請記住，排除即使是您的應用程式無法在這些 「 World Rest 」 市場表示其中一個*任何*"Rest 的 world"市場的 Windows 8 或 Windows 8.1 上的客戶。
 
 所謂 Windows 8.x「世界其他地方」的市場包括：
 
@@ -679,7 +679,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>法屬聖馬丁</td>
     <td>聖匹島</td>
     <td>聖文森及格瑞那丁</td>
-    <td>薩摩亞</td>
+    <td>薩摩亞獨立國</td>
   </tr>
   <tr>
     <td>聖馬利諾</td>
@@ -715,7 +715,7 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
     <td>吐瓦魯</td>
     <td>烏干達</td>
     <td>美國外島</td>
-    <td>美屬維爾京群島</td>
+    <td>美國美屬維爾京群島</td>
   </tr>
   <tr>
     <td>烏茲別克</td>
@@ -738,4 +738,4 @@ Microsoft Store 可觸及全球 200 多個國家與地區的客戶。 您可以�
 </table>
 
 > [!NOTE]
-> 如需您可以註冊開發人員帳戶的國家和地區清單，請參閱[帳戶類型、位置和費用](account-types-locations-and-fees.md)。
+> 如需國家和地區，您可以註冊開發人員帳戶的清單，請參閱 <<c0> [ 帳戶類型、 位置和費用](account-types-locations-and-fees.md)。

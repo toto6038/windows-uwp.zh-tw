@@ -1,21 +1,21 @@
 ---
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
 title: 組合效果
-description: 效果 API 可讓開發人員自訂其 UI 的轉譯方式。
+description: 效果 API 可讓開發人員自訂其 UI 的呈現方式。
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: ebf54e062ef2388562cc970a2f124f0ce1f978c7
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045311"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653823"
 ---
 # <a name="composition-effects"></a>組合效果
 
-[**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
+[  **Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) API 能夠套用即時效果至影像以及有可動畫效果屬性的 UI。 在本概觀中，我們會逐步說明允許套用效果至視覺化組合的可用功能。
 
 為支援[通用 Windows 平台 (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) 一致性以供開發人員在其應用程式中描述效果， 組合效果會利用 Win2D 的 IGraphicsEffect 介面 透過 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間來使用效果描述。
 
@@ -27,24 +27,24 @@ ms.locfileid: "9045311"
 
 ## <a name="effect-features"></a>效果功能
 
-- [效果程式庫](./composition-effects.md#effect-library)
-- [鏈結效果](./composition-effects.md#chaining-effects)
+- [影響程式庫](./composition-effects.md#effect-library)
+- [鏈結的效果](./composition-effects.md#chaining-effects)
 - [動畫支援](./composition-effects.md#animation-support)
-- [常數與動畫效果屬性](./composition-effects.md#constant-vs-animated-effect-properties)
-- [使用獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+- [常數的 vs。動畫的效果屬性](./composition-effects.md#constant-vs-animated-effect-properties)
+- [獨立屬性的多個效果執行個體](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
 ### <a name="effect-library"></a>效果程式庫
 
 目前組合支援下列效果：
 
-| 效果               | 說明                                                                                                                                                                                                                |
+| 效果               | 描述                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2D 仿射轉換  | 套用 2D 仿射轉換矩陣至影像。 我們使用這種效果讓我們的效果[範例](https://go.microsoft.com/fwlink/?LinkId=785341)中的 Alpha 遮罩產生動畫效果。       |
 | 算術複合 | 使用彈性的方程式結合兩個影像。 我們使用算術複合在我們的[範例](https://go.microsoft.com/fwlink/?LinkId=785341)中建立淡入與淡出效果。 |
 | 混合效果         | 建立結合兩個影像的混合效果。 組合提供了 Win2D 中支援之 26 種[混合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.htm)的 21 種。        |
 | 色彩來源         | 產生包含單色的影像。                                                                                                                                                                               |
 | 複合            | 結合兩個影像。 組合提供了 Win2D 中支援之所有 13 種[複合模式](https://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.htm)。                                              |
-| 對比             | 增加或減少影像的對比。                                                                                                                                                                           |
+| 這個             | 增加或減少影像的對比。                                                                                                                                                                           |
 | 曝光             | 增加或減少影像的曝光。                                                                                                                                                                           |
 | 灰階            | 將影像轉換為灰色。                                                                                                                                                                                   |
 | 色差補正移轉       | 藉由套用各頻道色差補正移轉功能改變影像的色彩。                                                                                                                                           |
@@ -54,7 +54,7 @@ ms.locfileid: "9045311"
 | 懷舊                | 將影像轉換成懷舊色調。                                                                                                                                                                                          |
 | 色溫和色調 | 調整影像的色溫和/或色調。                                                                                                                                                                           |
 
-如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 組合中不支援的效果會標示為 \[NoComposition\]。
+如需詳細資訊，請參閱 Win2D 的 [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.htm) 命名空間。 不支援在組合中的效果會標示\[NoComposition\]。
 
 ### <a name="chaining-effects"></a>鏈結效果
 
@@ -135,10 +135,10 @@ catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimati
 
 - [安裝 Visual Studio](./composition-effects.md#installing-visual-studio)
 - [建立新的專案](./composition-effects.md#creating-a-new-project)
-- [安裝 Win2D](./composition-effects.md#installing-win2d)
-- [設定您的組合基本知識](./composition-effects.md#setting-your-composition-basics)
+- [安裝來參照 Win2D](./composition-effects.md#installing-win2d)
+- [設定您撰寫的基本概念](./composition-effects.md#setting-your-composition-basics)
 - [建立 CompositionSurface 筆刷](./composition-effects.md#creating-a-compositionsurface-brush)
-- [建立、編譯以及套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
+- [建立、 編譯和套用效果](./composition-effects.md#creating-compiling-and-applying-effects)
 
 ### <a name="installing-visual-studio"></a>安裝 Visual Studio
 
@@ -235,14 +235,14 @@ LoadImage(surfaceBrush);
 
 ![去除飽和度的影像](images/composition-cat-desaturated.png)
 
-## <a name="more-information"></a>其他資訊
+## <a name="more-information"></a>更多資訊
 
-- [Microsoft – 組合 GitHub](https://github.com/Microsoft/composition)
+- [Microsoft-組合 GitHub](https://github.com/Microsoft/composition)
 - [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
-- [Twitter 上的 Windows 組合小組](https://twitter.com/wincomposition)
-- [組合概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [視覺化樹狀結構基本知識](composition-visual-tree.md)
-- [組合筆刷](composition-brushes.md)
+- [在 Twitter 上的 Windows 撰寫小組](https://twitter.com/wincomposition)
+- [撰寫概觀](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+- [視覺化樹狀結構的基本概念](composition-visual-tree.md)
+- [組合的筆刷](composition-brushes.md)
 - [XamlCompositionBrushBase](https://docs.microsoft.com/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
 - [動畫概觀](composition-animation.md)
-- [組合原生 DirectX 和 Direct2D 與 BeginDraw 和 EndDraw 的交互操作](composition-native-interop.md)
+- [撰寫原生 DirectX 和 Direct2D 的互通性與 BeginDraw EndDraw](composition-native-interop.md)

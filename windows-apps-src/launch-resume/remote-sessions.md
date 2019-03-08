@@ -4,14 +4,14 @@ description: 將裝置加入遠端工作階段，以建立跨多部裝置的共�
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
 ms.date: 06/28/2017
 ms.topic: article
-keywords: windows 10，uwp，連接裝置、 遠端系統、 rome 的 project rome
+keywords: windows 10 uwp，連線裝置、 遠端系統、 羅馬、 project rome
 ms.localizationpriority: medium
 ms.openlocfilehash: 3dd23603df1f1c3fac151da2aea2f8435b3ee423
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932624"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633413"
 ---
 # <a name="connect-devices-through-remote-sessions"></a>透過遠端工作階段連接裝置
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932624"
 
 ### <a name="add-the-remotesystem-capability"></a>新增 remoteSystem 功能
 
-為了讓您的應用程式能夠啟動遠端裝置上的應用程式，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\]**** 索引標籤上選取 \[遠端系統\]**** 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
+為了讓您的 app 能夠啟動遠端裝置上的 app，您必須將 `remoteSystem` 功能新增至應用程式套件資訊清單。 您可以使用套件資訊清單設計工具，在 \[功能\] 索引標籤上選取 \[遠端系統\] 來新增此功能，或手動將下列程式碼行新增至專案的 _Package.appxmanifest_ 檔案。
 
 ``` xml
 <Capabilities>
@@ -321,5 +321,5 @@ public async void SendMessageToListAsync(RemoteSystemSessionMessageChannel messa
 ```
 
 ## <a name="related-topics"></a>相關主題
-* [已連線的應用程式與裝置 (Project Rome)](connected-apps-and-devices.md)
-* [遠端系統 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)
+* [已連線的應用程式和裝置 (Project Rome)](connected-apps-and-devices.md)
+* [遠端系統的 API 參考](https://msdn.microsoft.com/library/windows/apps/Windows.System.RemoteSystems)

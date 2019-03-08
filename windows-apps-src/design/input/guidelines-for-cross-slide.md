@@ -1,24 +1,24 @@
 ---
-Description: Use cross-slide to support selection with the swipe gesture and drag (move) interactions with the slide gesture.
+Description: 使用交叉滑動以支援透過撥動手勢進行選取，以及透過滑動手勢進行拖曳 (移動) 互動。
 title: 交叉滑動的指導方針
 ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
 ms.date: 10/25/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: b2d402bca61fc271b6d1e2e972cca280693f9ce3
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045191"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658123"
 ---
 # <a name="guidelines-for-cross-slide"></a>交叉滑動的指導方針
 
 
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
 -   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
@@ -26,14 +26,14 @@ ms.locfileid: "9045191"
 
 使用交叉滑動以支援透過撥動手勢進行選取，以及透過滑動手勢進行拖曳 (移動) 互動。
 
-## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>可行與禁止事項
+## <a name="span-iddosanddontsspanspan-iddosanddontsspanspan-iddosanddontsspandos-and-donts"></a><span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>事項和避免事項
 
 
 -   針對朝單一方向捲動的清單或集合使用交叉滑動。
 -   當點選互動用於其他用途時，項目選取請使用交叉滑動。
 -   不要使用交叉滑動將項目新增到佇列。
 
-## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他用法指導方針
+## <a name="span-idadditionalusageguidancespanspan-idadditionalusageguidancespanspan-idadditionalusageguidancespanadditional-usage-guidance"></a><span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>其他使用指引
 
 
 選取和拖曳只適用於單一方向移動瀏覽 (垂直或水平) 的內容區域。 為了讓任一種互動可以作用，必須鎖定單一移動瀏覽方向，而且必須以與移動瀏覽方向垂直的方向操作手勢。
@@ -56,7 +56,7 @@ ms.locfileid: "9045191"
 
 針對朝單一方向捲動的清單或集合使用交叉滑動。 如需詳細資訊，請參閱[新增 ListView 控制項](https://msdn.microsoft.com/library/windows/apps/hh465382)。
 
-**注意：** 在內容區域可以朝兩個路線指引，例如網頁瀏覽器或電子閱讀程式，其中的情況下應該使用-長按計時的互動來叫用操作功能表，例如影像和超連結的物件。
+**附註**  在其中的內容區域可以間移動瀏覽兩個方向，例如網頁瀏覽器或電子讀取器的情況下按下保留計時的互動應該用來叫用操作功能表，例如影像和超連結的物件。
 
  
 
@@ -97,7 +97,7 @@ ms.locfileid: "9045191"
 
 在將選取做為唯一主要動作的應用程式中使用單一點選。 顯示交叉滑動自顯動畫是為了讓使用者判別這項功能與用於啟動和瀏覽的標準點選互動不同。
 
-**選取項目籃**
+**選取籃**
 
 選取項目籃可以清楚且動態地顯示已經從應用程式的主要清單或集合選取的項目。 這個功能適合用來追蹤選取的項目，而且在以下情況時，應用程式應該加以利用：
 
@@ -123,29 +123,29 @@ ms.locfileid: "9045191"
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**拖曳**
+**Drag**
 
 使用拖曳，將一或多個物件從一個位置移到另一個位置。
 
 如果需要移動的物件超過一個，請讓使用者選取多個項目，然後同時拖曳所有項目。
 
-## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相關文章
+## <a name="span-idrelatedtopicsspanrelated-articles"></a><span id="related_topics"></span>相關的文章
 
 
 **範例**
-* [基本輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [低延遲輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [基本的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [低延遲的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [使用者互動模式範例](https://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [焦點視覺效果範例](https://go.microsoft.com/fwlink/p/?LinkID=619895)
 **封存範例**
-* [輸入：XAML 使用者輸入事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
-* [輸入：裝置功能範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
-* [輸入：觸控點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XAML 捲動、移動瀏覽和縮放範例](https://go.microsoft.com/fwlink/p/?linkid=251717)
-* [輸入：簡化的筆跡範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
-* [輸入：Windows 8 手勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [輸入：操作和手勢 (C++) 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
-* [DirectX 觸控輸入範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [輸入：XAML 使用者輸入的事件範例](https://go.microsoft.com/fwlink/p/?linkid=226855)
+* [輸入：裝置功能的範例](https://go.microsoft.com/fwlink/p/?linkid=231530)
+* [輸入：觸控的點擊測試範例](https://go.microsoft.com/fwlink/p/?linkid=231590)
+* [捲動、 移動和縮放範例的 XAML](https://go.microsoft.com/fwlink/p/?linkid=251717)
+* [輸入：簡化的手寫範例](https://go.microsoft.com/fwlink/p/?linkid=246570)
+* [輸入：Windows 8 筆勢範例](https://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [輸入：操作和手勢 （c + +） 範例](https://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX 觸控的輸入的範例](https://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  

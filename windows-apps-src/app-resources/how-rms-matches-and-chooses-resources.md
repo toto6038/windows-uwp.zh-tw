@@ -1,5 +1,5 @@
 ---
-Description: When a resource is requested, there may be several candidates that match the current resource context to some degree. The Resource Management System will analyze all of the candidates and determine the best candidate to return. This topic describes that process in detail and gives examples.
+Description: 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 本主題將詳細說明該程序，並且提供範例。
 title: 資源管理系統如何比對和選擇資源
 template: detail.hbs
 ms.date: 10/23/2017
@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 資源, 影像, 資產, MRT, 限定詞
 ms.localizationpriority: medium
 ms.openlocfilehash: de34411d9c7d226857214472e691dd6b41f10a18
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8943458"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57593883"
 ---
 # <a name="how-the-resource-management-system-matches-and-chooses-resources"></a>資源管理系統如何比對和選擇資源
 當要求資源時，也許有幾個某程度符合目前資源內容的候選項目。 資源管理系統將會分析所有的候選項目，並判斷要傳回的最佳候選項目。 做法是為所有的候選項目排名時將所有限定詞列入考慮。
@@ -20,7 +20,7 @@ ms.locfileid: "8943458"
 
 如需有關如何執行語言標記比對的詳細資訊，請參閱[資源管理系統如何比對語言標記](how-rms-matches-lang-tags.md)。
 
-對於某些限定詞，例如縮放和對比，一定有些最小程度的相符。 例如，符合 「 縮放 100 」 的內容相符 「 縮放 400 」 某些小程度，雖然但卻不以及符合的候選項目 「 縮放比例-200 」 或 （完全相符的） 「 縮放 400 」 的候選項目。
+對於某些限定詞，例如縮放和對比，一定有些最小程度的相符。 比方說，儘管不限定為"比例 100"符合"擴展-400"的內容有些小的程度的候選項目，以及合格用於"200 擴展"或 （適用於完美的相符項目）"擴展-400"的候選項目。
 
 不過，對於其他限定詞，諸如語言或家鄉地區可能會有非相符項的比較 (以及相符的程度)。 例如，符合語言為「en-US」的候選項目與「EN-GB」的內容部分相符，但是符合「fr」的候選項目則完全不相符。 同樣地，符合家鄉地區為「155」(西歐) 的候選項目多少與家鄉地區設定為「FR」的使用者內容相符，但是符合「US」的候選項目則完全不相符。
 
@@ -135,4 +135,4 @@ de/images/contrast-standard/logo.jpg
 * [NamedResource.ResolveAll](/uwp/api/windows.applicationmodel.resources.core.namedresource.resolveall?branch=live)
 
 ## <a name="related-topics"></a>相關主題
-* [使用 MakePri.exe 來手動編譯資源](compile-resources-manually-with-makepri.md)
+* [編譯以手動方式使用 MakePri.exe 的資源](compile-resources-manually-with-makepri.md)

@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載
 ms.localizationpriority: medium
 ms.openlocfilehash: f74a7bbfdfd5abe6a32c0ca3d81000e6f2d4758d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116140"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660143"
 ---
 # <a name="troubleshoot-installation-issues-with-the-app-installer-file"></a>疑難排解應用程式安裝程式檔案的安裝問題
 
@@ -63,8 +63,8 @@ ms.locfileid: "9116140"
 
 從 HTTP 端點安裝時，請務必確認所有檔案都是正確的 MIME 類型、可供存取。 確認這些檔案最簡單的方法是追蹤 Visual Studio 所產生 HTML 網頁中的連結。 您必須檢查這些檔案︰
 
-- `.appinstaller` 檔案，類型為 `application/xml`
-- `.appx` 和`.appxbundle`檔案，類型為 `application/vns.ms-appx`
+- `.appinstaller` 檔案，做為可用 `application/xml`
+- `.appx` 和`.appxbundle`檔案，做為可用 `application/vns.ms-appx`
 
 ## <a name="isolate-app-installer-app-issues"></a>找出應用程式安裝程式應用程式問題
 
@@ -72,13 +72,13 @@ ms.locfileid: "9116140"
 
 ### <a name="verify-app-package-file-installation"></a>確認應用程式套件檔案安裝
 
-- 下載應用程式套件檔案到本機資料夾，並嘗試使用[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令來安裝它。
+- 應用程式套件檔案下載至本機資料夾，然後再試使用來安裝它[Add-appxpackage](https://docs.microsoft.com/powershell/module/appx/add-appxpackage?view=win10-ps) PowerShell 命令。
 
 - 下載`.appinstaller`檔案到本機資料夾，然後使用`Add-AppxPackage -Appinstaller` PowerShell 命令嘗試安裝它。
 
 ## <a name="related-logs"></a>相關記錄檔
 
-應用程式部署基礎結構於 Windows 事件檢視器中提供用於偵錯的記錄檔。 可在這裡找到這些記錄檔： `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
+應用程式部署基礎結構於 Windows 事件檢視器中提供用於偵錯的記錄檔。 這些記錄檔位於以下所示： `Application and Services Logs->Microsoft->Windows->AppxDeployment-Server`
 
 
 

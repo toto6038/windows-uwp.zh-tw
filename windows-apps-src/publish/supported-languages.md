@@ -1,5 +1,5 @@
 ---
-Description: You can submit apps to the Microsoft Store in over 100 languages.
+Description: 您可以提交 100 個以上的語言版本的 Microsoft Store 應用程式。
 title: 支援的語言
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ms.date: 02/20/2019
@@ -7,25 +7,25 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 02a68cd325823bf671f7e0a99c64a899b17caddd
-ms.sourcegitcommit: a32f656253acc1e8b150919e73c886a59e65756a
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083706"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57657753"
 ---
 # <a name="supported-languages"></a>支援的語言
 
 
-您可以將 app 提交到 Microsoft Store 超過 100 種語言。
+您可以提交 100 個以上的語言版本的 Microsoft Store 應用程式。
 
-若要深入了解在您的應用程式中設定語言，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)，並[了解使用者設定檔語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，可以協助您撰寫支援多種語言的 app。
+若要深入了解您的應用程式中設定的語言，請參閱[全球化和當地語系化](../design/globalizing/globalizing-portal.md)並[了解使用者設定檔的語言和應用程式資訊清單語言](../design/globalizing/manage-language-and-region.md)。 我們也有一個[多語應用程式工具組](https://docs.microsoft.com/windows/uwp/design/globalizing/use-mat)，可以協助您撰寫支援多種語言的 app。
 
 ## <a name="supported-languages"></a>支援的語言
 
 
-這些是在 Microsoft Store 支援的語言。 您的應用程式必須支援至少一種語言。 
+這些是 Microsoft Store 支援的語言。 您的應用程式必須支援至少其中一種語言。 
 
-在市集中不支援此處未包含的語言代碼。 我們建議您不要包含為目標; 以下列出以外的語言代碼的套件這類套件將不會對客戶，散發，也可能會造成認證延遲或失敗。
+存放區不支援此處未包含的語言代碼。 我們建議您未包含目標所列下 」 以外的語言代碼的套件這類套件將不會散發給客戶，並可能會導致延遲或失敗的憑證。
 
 | 語言名稱         | 支援的語言代碼                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,14 +36,14 @@ ms.locfileid: "9083706"
 | 亞美尼亞文              | hy、hy-am                                                                                                                                                                                             |
 | 阿薩姆文              | as、as-in                                                                                                                                                                                             |
 | 亞塞拜然文           | az、az-arab、az-arab-az、az-cyrl、az-cyrl-az、az-latn、az-latn-az                                                                                                                                     |
-| 巴斯克文 (巴斯克)       | eu、eu-es                                                                                                                                                                                             |
+| 巴斯克文 (巴斯克文)       | eu、eu-es                                                                                                                                                                                             |
 | 白俄羅斯文            | be、be-by                                                                                                                                                                                             |
 | 孟加拉文                | bn、bn-bd、bn-in                                                                                                                                                                                      |
 | 波士尼亞文               | bs、bs-cyrl、bs-cyrl-ba、bs-latn、bs-latn-ba                                                                                                                                                          |
 | 保加利亞文             | bg、bg-bg                                                                                                                                                                                             |
 | 卡達隆尼亞文               | ca、ca-es、ca-es-valencia                                                                                                                                                                             |
 | 卻洛奇文              | chr-cher、chr-cher-us、chr-latn                                                                                                                                                                       |
-| 中文 (簡體)  | Zh-hans，zh-hant cn、 zh-hant-hans cn、 zh-hant sg，zh-hant-hans-sg                                                                                                                                                     |
+| 中文 (簡體)  | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
 | 中文 (繁體) | zh-Hant、zh-hk、zh-mo、zh-tw、zh-hant-hk、zh-hant-mo、zh-hant-tw                                                                                                                                      |
 | 克羅埃西亞文              | hr、hr-hr、hr-ba                                                                                                                                                                                      |
 | 捷克文                 | cs、cs-cz                                                                                                                                                                                             |
@@ -62,7 +62,7 @@ ms.locfileid: "9083706"
 | 古吉拉特文              | gu、gu-in                                                                                                                                                                                             |
 | 豪沙文                 | ha、ha-latn、ha-latn-ng                                                                                                                                                                               |
 | 希伯來文                | he、he-il                                                                                                                                                                                             |
-|  印度文                 | hi、hi-in                                                                                                                                                                                             |
+| 印度文                 | hi、hi-in                                                                                                                                                                                             |
 | 匈牙利文             | hu、hu-hu                                                                                                                                                                                             |
 | 冰島文             | is、is-is                                                                                                                                                                                             |
 | 伊布文                  | ig-latn、ig-ng                                                                                                                                                                                        |

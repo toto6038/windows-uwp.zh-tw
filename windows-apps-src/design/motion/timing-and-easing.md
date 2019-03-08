@@ -1,22 +1,22 @@
 ---
-Description: Learn how Fluent motion uses timing and easing functions.
+Description: 了解如何 Fluent 動作使用的預存時間和 easing 函式。
 title: 計時和加/減速 - UWP app 中的動畫
 label: Timing and easing
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 5b9a0719e4967f9d527d2b2565818a0dea1be0a6
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8945489"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645263"
 ---
 # <a name="timing-and-easing"></a>計時和加/減速
 
@@ -204,5 +204,5 @@ CubicBezierEasingFunction standard =
 
 ## <a name="related-articles"></a>相關文章
 
-- [動作概觀](index.md)
-- [方向性和重力](directionality-and-gravity.md)
+- [影片概觀](index.md)
+- [方向和重力](directionality-and-gravity.md)

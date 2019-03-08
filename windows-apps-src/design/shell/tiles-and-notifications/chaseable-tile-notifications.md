@@ -1,5 +1,5 @@
 ---
-Description: Use chaseable tile notifications to find out what your app displayed on its Live Tile when the user clicked it.
+Description: 使用可追蹤式磚通知來了解當使用者按下動態磚，您的應用程式會顯示什麼內容。
 title: 可追蹤式磚通知
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Chaseable tile notifications
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 可追蹤式磚, 動態磚, 可追蹤式磚通知
 ms.localizationpriority: medium
 ms.openlocfilehash: 90a43ad803ca4cfe4a7403117c268344d1192d74
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937998"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57592643"
 ---
 # <a name="chaseable-tile-notifications"></a>可追蹤式磚通知
 
@@ -21,10 +21,10 @@ ms.locfileid: "8937998"
 例如，新聞應用程式可使用此功能來判斷當使用者啟動它時，其動態磚會顯示什麼新聞故事，藉以確保以醒目的方式顯示某些新聞，讓使用者可以找到它。 
 
 > [!IMPORTANT]
-> **需要年度更新版**：若要搭配 C#、C++ 或 VB 型 UWP app 使用可追蹤式磚通知，您的目標必須是 SDK 14393 並執行組建 14393 或更新版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
+> **需要年度更新版**:若要使用與 chaseable 磚通知C#，c + + 或 VB 為基礎的 UWP 應用程式，您必須為目標 SDK 14393，並執行組建 14393 或更高版本。 對於 JavaScript 型 UWP app，您的目標必須是 SDK 17134 並執行組建 17134 或更新版本。 
 
 
-> **重要 API**：[LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)、[TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
+> **重要的 Api**:[LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.TileActivatedInfo)， [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)
 
 
 ## <a name="how-it-works"></a>運作方式
@@ -40,7 +40,7 @@ ms.locfileid: "8937998"
 
 ## <a name="what-to-do-with-a-chaseable-tile-notifications"></a>如何使用可追蹤式磚通知
 
-最重要的是要注意在大部分案例中，**您不應直接瀏覽到當使用者按下時磚上的特定通知**。 動態磚可做為應用程式的進入點。 使用者在兩種情形下會按動態磚：(1) 他們想以正常方式啟動您的應用程式，或 (2) 他們想查看剛剛出現在動態磚上的特定通知的相關資訊。 由於使用者無法明確表明他們想要哪種操作，理想的經驗是**正常啟動您的應用程式，並確認可以輕鬆找到使用者看到的通知**。
+最重要的是要注意在大部分案例中，**您不應直接瀏覽到當使用者按下時磚上的特定通知**。 動態磚可做為應用程式的進入點。 當使用者按一下即時磚時，則可以是兩個案例：（1） 他們想要啟動您的應用程式，一般來說，或者 （2） 他們想要查看已在 [Live] 圖格的特定通知的詳細資訊。 由於使用者無法明確表明他們想要哪種操作，理想的經驗是**正常啟動您的應用程式，並確認可以輕鬆找到使用者看到的通知**。
 
 例如，按一下「MSN 新聞」應用程式的動態磚會正常啟動應用程式：它會顯示首頁，或使用者先前閱讀的文章。 不過，在首頁中，應用程式可確保能輕鬆找到動態磚上的故事。 如此一來就能同時支援這兩種情形：您只是想要啟動/繼續應用程式，以及您想檢視特定故事。
 
@@ -111,7 +111,7 @@ LaunchActivatedEventArgs 物件具有可啟用可追蹤式通知的屬性：[Til
 
 [TileActivatedInfo 物件](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)包含名為 [RecentlyShownNotifications](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo.RecentlyShownNotifications) 的屬性，其中包含過去 15 分鐘內顯示在磚上的通知清單。 清單中的第一個項目表示磚上的目前通知，後續項目代表目前通知之前使用者看到的先前通知。 如果您的磚已清除，這份清單會是空的。
 
-每個 ShownTileNotificationhas Argumentsproperty。 Argumentsproperty 將會以從您的磚通知裝載 argumentsstring 初始化或為 null，如果您的承載未包含 argumentsstring。
+每個 ShownTileNotification 具有引數屬性。 將您的磚通知裝載，則為 null 的引數字串初始化引數 屬性，如果您承載不包含引數字串。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -178,5 +178,5 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ## <a name="related-articles"></a>相關文章
 
-- [LaunchActivatedEventArgs.TileActivatedInfo 屬性](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
+- [LaunchActivatedEventArgs.TileActivatedInfo property](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs#Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_TileActivatedInfo_)
 - [TileActivatedInfo 類別](https://docs.microsoft.com/uwp/api/windows.applicationmodel.activation.tileactivatedinfo)

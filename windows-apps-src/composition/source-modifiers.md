@@ -6,13 +6,13 @@ ms.topic: article
 keywords: windows 10, uwp, 動畫
 ms.localizationpriority: medium
 ms.openlocfilehash: 834f631cd5c4b8696e75f83f194b95f809b1cf8a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932594"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649863"
 ---
-# <a name="pull-to-refresh-with-source-modifiers"></a>使用來源修飾詞拖動以重新整理
+# <a name="pull-to-refresh-with-source-modifiers"></a>使用來源修飾詞執行拖動以重新整理
 
 在本文中，我們將深入探討如何使用 InteractionTracker 的 SourceModifier 功能，並示範使用它來建立自訂的拖動以重新整理控制項。
 
@@ -20,9 +20,9 @@ ms.locfileid: "8932594"
 
 我們此處假設您已熟悉這些文章中討論的概念：
 
-- [輸入導向動畫](input-driven-animations.md)
-- [使用 InteractionTracker 自訂操作體驗](interaction-tracker-manipulations.md)
-- [關聯式動畫](relation-animations.md)
+- [輸入驅動動畫](input-driven-animations.md)
+- [InteractionTracker 自訂操作經驗](interaction-tracker-manipulations.md)
+- [關聯型動畫](relation-animations.md)
 
 ## <a name="what-is-a-sourcemodifier-and-why-are-they-useful"></a>SourceModifier 是什麼？為什麼很實用？
 
@@ -67,7 +67,7 @@ ScrollViewer.VerticalScrollMode="Enabled" ScrollViewer.IsScrollInertiaEnabled="F
 </StackPanel>
 ```
 
-因為 ListView (`ThumbnailList`) 是已捲動的 XAML 控制項，當其到達最上方項目且不能再捲動時，您需讓捲動鏈結至其父系 (`ContentPanel`)。 (ContentPanel 是套用來源修飾詞的地方)。為了做到這一點，您需要在 ListView 標記中將 ScrollViewer.IsVerticalScrollChainingEnabled 設定為 **true**。 您也需要將 VisualInteractionSource 上的鏈結模式設定為 **Always**。
+因為 ListView (`ThumbnailList`) 是已捲動的 XAML 控制項，當其到達最上方項目且不能再捲動時，您需讓捲動鏈結至其父系 (`ContentPanel`)。 （ContentPanel 是，您將在其中套用來源修飾詞）。此選項必須設為 ScrollViewer.IsVerticalScrollChainingEnabled **，則為 true** ListView 標記中。 您也需要將 VisualInteractionSource 上的鏈結模式設定為 **Always**。
 
 您需要設定 PointerPressedEvent 處理常式搭配將 _handledEventsToo_ 參數設為 **true**。 若沒有此選項，PointerPressedEvent 將不會鏈結至 ContentPanel，ListView 控制項會將將這些事件標示為已處理，且不會傳送視覺鏈結。
 

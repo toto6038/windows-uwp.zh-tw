@@ -6,11 +6,11 @@ ms.topic: article
 keywords: windows 10, 封裝, 套件配置, 資產套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 3e54b74cf3052fdeb5b70cc90f59ab0ea59aef76
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8941925"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57627653"
 ---
 # <a name="package-creation-with-the-packaging-layout"></a>使用封裝配置的套件建立  
 
@@ -51,7 +51,7 @@ ms.locfileid: "8941925"
 讓我們分解此範例，了解它的運作方式。
 
 ### <a name="packagefamily"></a>PackageFamily
-此封裝配置會建立單一的一般應用程式套件組合檔案具有 x64 架構套件和 「 媒體 」 資產套件。 
+此封裝版面配置會建立單一的一般應用程式套件組合檔案與 x64 架構的套件和 「 媒體 」 資產套件。 
 
 **PackageFamily** 元素用來定義應用程式套件組合。 您必須使用**ManifestPath**屬性提供套件組合的**AppxManifest**，**AppxManifest**應與對應於的套件組合架構套件的**AppxManifest**。 **ID**屬性必須同時提供。 套件建立期間這可搭配 MakeAppx.exe，您可以只建立此套件（如果您想要）而且這將會是所產生套件的檔案名稱。 **FlatBundle**屬性用來描述您想要建立何種類型的套件組合，**true**表示一般套件組合 (請閱讀本文了解詳細資訊)，**false**表示傳統套件組合。 **ResourceManager**屬性用來指定此套件組合中的資源套件是否使用 MRT 才能存取檔案。 預設是**true**，但是在 Windows 10（版本 1803），這尚未準備好，所以此屬性必須設為**false**。
 
@@ -143,7 +143,7 @@ ms.locfileid: "8941925"
 
 選用套件有自己不同的套件系列名稱，必須使用**PackageFamily**元素定義，同時將**Optional**屬性指定為**true**。 **RelatedSet**屬性用來指定選用套件是否在相關集合中（預設是 true）– 選用套件是否應該使用主要套件更新。
 
-**PrebuiltPackage**元素用來新增至包含或參考在要建置的應用程式套件組合檔案中的封裝配置中未定義的套件。 在此情況下，另一個 DLC 選用套件包含以下以便主要的應用程式套件組合檔案可以參考它，並讓它成為相關集合的一部分。
+**PrebuiltPackage**元素用來新增封裝版面配置，以包含或參考中建置的應用程式套件組合檔案中未定義的套件。 在此情況下，另一個 DLC 選擇性套件所含這裡，讓主要的應用程式套件組合檔案可以參考它，並讓它是相關集合的一部分。
 
 
 ## <a name="build-app-packages-with-a-packaging-layout-and-makeappxexe"></a>使用封裝配置和 MakeAppx.exe 建置應用程式套件
@@ -159,13 +159,13 @@ MakeAppx.exe build /f PackagingLayout.xml /op OutputPackages\
 MakeAppx.exe build /f PackagingLayout.xml /id "x64" /ip PreviousVersion\ /op OutputPackages\ /iv
 ```
 
-`/id`旗標可以用來從封裝配置選取要建置的套件，對應於配置中的**ID**屬性。 `/ip`用來表示上一版套件此時的位置。 因為應用程式套件組合檔案仍需要來參考舊版的**媒體**套件，則必須提供先前的版本。 `/iv`旗標用來自動增加建置套件版本 (而不在**AppxManifest**中變更版本)。 或者，參數`/pv`與`/bv`可分別用於直接提供套件版本（適用於所有要建立的套件）及套件組合版本（適用於所有要建立的套件組合）。
+`/id`旗標可以用來從封裝配置選取要建置的套件，對應於配置中的**ID**屬性。 `/ip`用來表示上一版套件此時的位置。 必須提供舊的版本，因為應用程式套件組合檔案仍需要參考前的一版**媒體**封裝。 `/iv`旗標用來自動增加建置套件版本 (而不在**AppxManifest**中變更版本)。 或者，參數`/pv`與`/bv`可分別用於直接提供套件版本（適用於所有要建立的套件）及套件組合版本（適用於所有要建立的套件組合）。
 使用此頁面上的進階封裝配置範例，若只要建置**Themes**選用套件組合和它所參考的**Themes.main**應用程式套件，請使用此命令：
 
 ``` example 
 MakeAppx.exe build /f PackagingLayout.xml /id "Themes" /op OutputPackages\ /bc /nbp
 ```
 
-`/bc`旗標用來表示**Themes**套件組合的子系也應該建置 (在這種情形下將建置**Themes.main**)。 `/nbp`旗標用來表示**Themes**套件組合的父系不應該建置。 **Themes**的父系是選用應用程式套件組合，為主要應用程式套件組合：**MyGame**。 通常對於相關集合中的選用套件，主要應用程式套件組合也必須建置，才能安裝選用套件，因為當選用套件在相關集合中時，主要應用程式套件組合中也會參照選用套件 (以確保主要和選用套件之間的版本)。 下圖說明這些套件之間的父子關係：
+`/bc`旗標用來表示**Themes**套件組合的子系也應該建置 (在這種情形下將建置**Themes.main**)。 `/nbp`旗標用來表示**Themes**套件組合的父系不應該建置。 父代**佈景主題**，這就是選擇性的應用程式套件組合中，是主要的應用程式套件組合：**MyGame**。 通常對於相關集合中的選用套件，主要應用程式套件組合也必須建置，才能安裝選用套件，因為當選用套件在相關集合中時，主要應用程式套件組合中也會參照選用套件 (以確保主要和選用套件之間的版本)。 下圖說明這些套件之間的父子關係：
 
 ![封裝配置圖表](images/packaging-layout.png)

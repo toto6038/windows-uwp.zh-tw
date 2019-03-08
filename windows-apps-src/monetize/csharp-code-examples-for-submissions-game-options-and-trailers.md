@@ -6,18 +6,18 @@ ms.topic: article
 keywords: Windows 10, uwp, Microsoft Store 提交 API, 程式碼範例, 遊戲選項, 預告片, 進階清單, C#
 ms.localizationpriority: medium
 ms.openlocfilehash: 277d455fe3387452a4afe91fd74e5c2099f76ce4
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044259"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57594073"
 ---
-# <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\# 範例：提交含遊戲選項與預告片的應用程式
+# <a name="c-sample-app-submission-with-game-options-and-trailers"></a>C\#範例： 遊戲選項與結尾的應用程式提交
 
 本文提供 C# 程式碼範例，示範如何使用 [Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md)來執行這些任務：
 
 * 取得 Azure AD 存取權杖以便用於 Microsoft Store 提交 API。
-* 建立 App 提交
+* 建立應用程式提交
 * 設定 App 提交的 Store 清單資料，包括[遊戲](manage-app-submissions.md#gaming-options-object)和[預告片](manage-app-submissions.md#trailer-object)進階清單選項。
 * 上傳包含 App 提交的套件、清單影像和預告片檔案的 ZIP 檔案。
 * 認可 App 提交。
@@ -33,11 +33,11 @@ ms.locfileid: "9044259"
 
 <span id="create-app-submission" />
 
-## <a name="create-an-app-submission"></a>建立 App 提交
+## <a name="create-an-app-submission"></a>建立應用程式提交
 
 ```CreateAndSubmitSubmissionExample``` 類別定義公用 ```Execute``` 方法，此方法會呼叫其他範例方法，以使用 Microsoft Store 提交 API 來建立並認可包含遊戲選項和預告片的 App 提交。 若要自行調整這個程式碼：
 
-* 將 ```tenantId``` 變數指派給應用程式的租用戶識別碼，並指派 ```clientId``` 和 ```clientSecret``` 變數給應用程式的用戶端識別碼和金鑰。 如需詳細資訊，請參閱[如何將 Azure AD 應用程式，您的合作夥伴中心帳戶產生關聯](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
+* 將 ```tenantId``` 變數指派給應用程式的租用戶識別碼，並指派 ```clientId``` 和 ```clientSecret``` 變數給應用程式的用戶端識別碼和金鑰。 如需詳細資訊，請參閱[如何與您的合作夥伴中心帳戶相關聯的 Azure AD 應用程式](create-and-manage-submissions-using-windows-store-services.md#how-to-associate-an-azure-ad-application-with-your-partner-center-account)
 * 將 ```applicationId``` 變數指派給您要建立提交之應用程式的[ Store 識別碼](in-app-purchases-and-trials.md#store-ids)。
 
 > [!div class="tabbedCodeSnippets"]
@@ -63,4 +63,4 @@ ms.locfileid: "9044259"
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)

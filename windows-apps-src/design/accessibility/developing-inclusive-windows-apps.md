@@ -1,7 +1,7 @@
 ---
-Description: Learn to develop accessible Windows 10 UWP apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+Description: 瞭解如何開發無障礙的 Windows 10 UWP app，包括鍵盤瀏覽、色彩和對比設定以及輔助技術支援。
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: 開發全人 Windows 10 應用程式
+title: 開發通用 Windows 10 app
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
 ms.date: 02/08/2017
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 58e9ab90115566059fb79220b7b8c0b9c5ce677e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047965"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649723"
 ---
 # <a name="developing-inclusive-windows-apps"></a>開發全人 Windows 應用程式  
 
@@ -75,15 +75,15 @@ XAML
 2. 實作鍵盤協助工具。
 3. 用肉眼檢查 UI，確定文字有適當的對比、元素可在高對比佈景主題中正確顯示以及使用正確的色彩。
 4. 執行協助工具，解決報告的問題以及確定螢幕助讀正常運作。 (請參閱＜協助工具測試＞主題)。
-5. 確定應用程式資訊清單的各項設定符合協助工具指導方針。
-6. 在 Microsoft Store 中將您的 App 宣告為提供無障礙功能。 (請參閱 [Store 中的協助工具](accessibility-in-the-store.md)主題)。
+5. 確定應用程式資訊清單的各項設定符合無障礙指導方針。
+6. 在 Microsoft Store 中將您的 App 宣告為提供無障礙功能。 (請參閱[市集中的協助工具](accessibility-in-the-store.md)主題)。
 
 如需詳細資料，請參閱完整的[協助工具檢查清單](accessibility-checklist.md)主題。
 
 ## <a name="related-topics"></a>相關主題  
-* [設計通用軟體](designing-inclusive-software.md)  
-* [通用設計](https://design.microsoft.com/inclusive)
-* [協助工具應避免的做法](practices-to-avoid.md)
-* [針對協助工具的軟體工程設計](https://www.microsoft.com/download/details.aspx?id=19262)
-* [Microsoft 協助工具開發人員中樞](https://msdn.microsoft.com/enable)
+* [設計全人軟體](designing-inclusive-software.md)  
+* [內含的設計](https://design.microsoft.com/inclusive)
+* [若要避免的協助工具作法](practices-to-avoid.md)
+* [工程軟體，協助工具](https://www.microsoft.com/download/details.aspx?id=19262)
+* [Microsoft 協助工具開發人員中心](https://msdn.microsoft.com/enable)
 * [協助工具](accessibility.md)

@@ -7,11 +7,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c44f05b5d67fe094859ea0eacfb57c0012004d14
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047593"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57606793"
 ---
 # <a name="select-contacts"></a>選取連絡人
 
@@ -29,7 +29,7 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 
 ## <a name="set-the-selection-mode-optional"></a>設定選取模式 (選擇性)
 
-根據預設，連絡人選擇器會抓取使用者選取之連絡人的所有可用資料。 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
+根據預設，連絡人選擇器會抓取使用者選取之連絡人的所有可用資料。 [  **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 屬性讓您設定連絡人選擇器只抓取您應用程式需要的資料欄位。 如果您只需要可用連絡人資料的子集，這是使用連絡人選擇器較有效率的方式。
 
 首先，將 [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) 屬性設定成 **Fields**：
 

@@ -8,16 +8,16 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 0336054b99e5aae6739e22afd29ee344aad3d42c
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946551"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662123"
 ---
 # <a name="depth-and-stencil-buffers"></a>深度和樣板緩衝區
 
 
-*深度緩衝區*儲存深度資訊來控制所呈現而不是隱藏的多邊形區域。 *樣板緩衝區*用於遮罩影像中的像素，以製造特效，包括合成、印花、溶解、淡化及撥動、外框及剪影，以及雙面樣板。
+A*深度緩衝*儲存深度資訊來控制所呈現而不是隱藏的多邊形區域。 A*樣板緩衝*用於遮罩影像中的像素，以製造特效，包括合成、印花、溶解、淡化及撥動、外框及剪影，以及雙面樣板。
 
 ## <a name="span-idin-this-sectionspanin-this-section"></a><span id="in-this-section"></span>本節內容
 

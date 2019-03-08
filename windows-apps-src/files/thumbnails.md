@@ -1,24 +1,24 @@
 ---
-Description: How to use thumbnail images to help users preview files in UWP apps.
+Description: 如何使用縮圖影像，以協助使用者預覽 UWP 應用程式中的檔案。
 title: UWP app 中縮圖影像的指導方針
 label: Thumbnail images
 template: detail.hbs
 ms.date: 12/19/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 15984e00b036bf44d6e4a7f60cb6435ea1add291
-ms.sourcegitcommit: 1cf708443d132306e6c99027662de8ec99177de6
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "8980346"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57642003"
 ---
 # <a name="thumbnail-images"></a>縮圖影像
 
 下列指導方針描述如何使用縮圖影像協助使用者預覽檔案，在您的 UWP app 中瀏覽時。 
 
-**重要 API**
+**重要的 Api**
 
 -   [**ThumbnailMode**](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
@@ -66,16 +66,16 @@ ms.locfileid: "8980346"
 <tr>
 <td> 圖片<br /> 影片 </td>
 <td> PicturesView <br />VideosView </td>
-<td> <b>大小</b>：中，最好至少 190 (如果影像大小 190x130) <br />
-<b>外觀比例</b>：統一，寬度外觀比例約 0.7 (大小為 190 時 190x130) <br />
+<td> <b>大小</b>: 媒體，最好是至少 190 （如果映像大小 190 x 130） <br />
+<b>外觀比例</b>: 統一的寬的長寬比的大約.7 (190 x 130 如果大小 190) <br />
 裁剪以供預覽。 <br /> 
 適用於在方格中對齊影像，因為統一的外觀比例。  </td>
 </tr>
 <tr>
 <td> 文件<br />音樂 </td>
 <td> DocumentsView <br />MusicView <br /> ListView</td>
-<td> <b>大小</b>：小，最好至少 40 x 40 像素 <br />
-<b>外觀比例</b>：統一，正方形外觀比例  <br />
+<td> <b>大小</b>: 小型，最好是至少 40 x 40 像素為單位 <br />
+<b>外觀比例</b>:  統一的方形的外觀比例  <br />
 適用於預覽專輯封面，因為正方形外觀比例。 <br /> 
 文件在檔案選擇器視窗中看起來相同 (使用相同圖示)。 </td>
 </tr>
@@ -83,8 +83,8 @@ ms.locfileid: "8980346"
 <tr>
 <td> 任何單一項目 (無論檔案類型為何) </td>
 <td> SingleItem </td>
-<td> <b>大小</b>：小，最好至少 40 x 40 像素 <br />
-<b>外觀比例</b>：統一，正方形外觀比例  <br />
+<td> <b>大小</b>: 小型，最好是至少 40 x 40 像素為單位 <br />
+<b>外觀比例</b>:  統一的方形的外觀比例  <br />
 適用於預覽專輯封面，因為正方形外觀比例。 <br /> 
 文件在檔案選擇器視窗中看起來相同 (使用相同圖示)。 </td>
 </tr>
@@ -100,7 +100,7 @@ ms.locfileid: "8980346"
 <th>使用下列方式擷取時： <ul><li>SingleItem</ul></th>
 <tr>
 <tr>
-<td>圖片</td>
+<td>Picture</td>
 <td>縮圖影像使用檔案的原始外觀比例。 <br />
 <img src="images/thumbnail-pic-picvidmode.png" alt="Picture thumbnail in picture or video mode"/></td>
 <td>縮圖會裁剪成正方形外觀比例。 <br />
@@ -166,5 +166,5 @@ ms.locfileid: "8980346"
 - [ThumbnailMode 列舉](https://docs.microsoft.com/uwp/api/windows.storage.fileproperties.thumbnailmode)
 - [StorageItemThumbnail 類別](https://docs.microsoft.com/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
 - [StorageFile 類別](https://docs.microsoft.com/uwp/api/windows.storage.storagefile)
-- [檔案和資料夾縮圖範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
-- [清單和方格檢視](../design/controls-and-patterns/lists.md)
+- [檔案和資料夾縮圖的範例 (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
+- [清單和資料格檢視](../design/controls-and-patterns/lists.md)

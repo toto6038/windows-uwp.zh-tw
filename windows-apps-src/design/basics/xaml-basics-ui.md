@@ -6,11 +6,11 @@ ms.date: 08/30/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 1bae8455f1062b3ad62aeac3807c6c58ae274a1b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8923105"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57640813"
 ---
 # <a name="tutorial-create-a-user-interface"></a>教學課程：建立使用者介面
 
@@ -32,33 +32,33 @@ ms.locfileid: "8923105"
 
 ## <a name="prerequisites"></a>必要條件
 
-* Visual Studio 2017:[下載 Visual Studio 2017 社群 (免費) ](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
-* Windows 10SDK (10.0.15063.468 或更新版本)：[下載最新的 Windows SDK (免費)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* Visual Studio 2017:[下載 Visual Studio 2017 Community （免費）](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15&campaign=WinDevCenter&ocid=wdgcx-windevcenter-community-download) 
+* Windows 10 SDK (10.0.15063.468 或更新版本):[下載最新的 Windows SDK （免費）](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 
 ## <a name="part-0-get-the-starter-code-from-github"></a>第 0 部分：從 github 取得起始程式碼
 
 針對此教學課程，您將從簡化版的 PhotoLab 範例開始著手。 
 
-1. 移至[https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
+1. 移至[ https://github.com/Microsoft/Windows-appsample-photo-lab ](https://github.com/Microsoft/Windows-appsample-photo-lab)。 這會將您帶到 GitHub 頁面以取得範例。 
 2. 下一步，您將需要複製或下載範例。 按一下 **\[複製或下載\]** 按鈕。 子功能表會出現。
     <figure>
         <img src="images/xaml-basics/clone-repo.png" alt="The Clone or download menu on GitHub">
-        <figcaption>Photolab 範例的 GitHub 頁面上的 <b>複製或下載</b>功能表。</figcaption>
+        <figcaption>Photolab 範例的 GitHub 頁面上的<b>複製或下載</b>功能表。</figcaption>
     </figure>
 
-    **如果您不熟悉 GitHub：**
+    **如果您不熟悉 GitHub:**
     
     a. 按一下**下載 ZIP**，然後在本機儲存此檔案。 這個下載的 .zip 檔案，包含您所需要的所有專案檔案。
     b. 將檔案解壓縮。 使用 [檔案總管] 瀏覽至您下載的 .zip 檔案，滑鼠右鍵按一下它，然後選取**解壓縮全部...**。c. 瀏覽至您範例的本機複製，並前往 `Windows-appsample-photo-lab-master\xaml-basics-starting-points\user-interface` 目錄。    
 
-    **如果您熟悉 GitHub：**
+    **如果您熟悉 GitHub:**
 
     a. 在本機複製存放庫中的主要分支。
     b. 瀏覽至 `Windows-appsample-photo-lab\xaml-basics-starting-points\user-interface` 目錄。
 
 3. 按一下 `Photolab.sln` 開啟專案。
 
-## <a name="part-1-add-a-textblock-using-xaml-designer"></a>步驟 1：使用 XAML 設計工具新增 TextBlock
+## <a name="part-1-add-a-textblock-using-xaml-designer"></a>第 1 部分：加入 TextBlock，使用 XAML 設計工具
 
 Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計工具允許您將控制項拖曳到設計介面上，在您執行應用程式之前，先了解其外觀。 屬性面板可讓您檢視和設定設計工具使用中控制項的所有屬性。 文件大綱會顯示 UI 的 XAML 視覺化樹狀結構的父系-子系結構。 XAML 編輯器可讓您直接輸入和修改 XAML 標記。
 
@@ -68,7 +68,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
 這些工具都會讓您建立 UI 更輕鬆，因此本教學課程會說明所有的工具。 一開始會使用 XAML 設計工具來新增控制項。 
 
-**使用 XAML 設計工具新增控制項：**
+**加入控制項，使用 XAML 設計工具：**
 
 1. 在方案總管中按兩下 **MainPage.xaml** 將它開啟。 這會顯示未加入任何 UI 項目的應用程式主頁面。
 
@@ -98,7 +98,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
     在下一個步驟中，您將會更新這些值。
 
-4. 在 [屬性] 面板中，將 TextBlock 的 [名稱] 值從 **textBlock** 變更為 **TitleTextBlock**  (請確定 TextBlock 仍為使用中物件)。
+4. 在 [屬性] 面板中，將 TextBlock 的 [名稱] 值從 **textBlock** 變更為 **TitleTextBlock** (請確定 TextBlock 仍為使用中物件)。
 
 5. 在 **\[通用\]** 下方，將 [文字] 值變更為 **Collection**。
 
@@ -137,7 +137,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
                Style="{StaticResource TitleTextBlockStyle}"/>
     ```
 
-9. 在 [屬性] 面板中，在搜尋方塊中輸入 **textwrapping**，即可輕鬆找到 **TextWrapping** 屬性。 按一下 **TextWrapping** 屬性的_屬性標記_以開啟其功能表  (_屬性標記_是小方塊符號，位於每個屬性值右邊。 _屬性標記_為黑色，表示屬性已設定為非預設值)。在 **\[屬性\]** 功能表上，選取 **\[重設\]** 以重設 TextWrapping 屬性。
+9. 在 [屬性] 面板中，在搜尋方塊中輸入 **textwrapping**，即可輕鬆找到 **TextWrapping** 屬性。 按一下 **TextWrapping** 屬性的_屬性標記_以開啟其功能表  (_屬性標記_是小方塊符號，位於每個屬性值右邊。 _屬性標記_是黑色表示的屬性設定為 非預設值。)在 **屬性**功能表上，選取**重設**重設 TextWrapping 屬性。
 
     Visual Studio 會新增此屬性，但這已經在您套用的樣式中設定，因此這裡不需要該屬性。
 
@@ -148,7 +148,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 > [!NOTE]
 > 在本教學課程的這一部分，您以拖放方式新增了控制項。 您也可以在 [工具箱] 中按兩下控制項來新增一個控制項。 試試看，了解 Visual Studio 產生的 XAML 有何不同。
 
-## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>第 2 部分：使用 XAML 編輯器新增 GridView 控制項
+## <a name="part-2-add-a-gridview-control-using-the-xaml-editor"></a>第 2 部分：新增使用 XAML 編輯器的 GridView 控制項
 
 在第 1 部分中，您已嘗試使用 Visual Studio 提供的 XAML 設計工具以及一些其他工具。 您在這裡將會使用 XAML 編輯器直接處理 XAML 標記。 當您更加熟悉 XAML 時，可能會發現這是更有效率的工作方式。
 
@@ -156,7 +156,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
 然後再新增 [GridView](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.gridview) 控制項來顯示您的資料。
 
-**使用 XAML 編輯器新增控制項**
+**使用 XAML 編輯器加入控制項**
 
 1. 在 XAML 編輯器中，將根 **Grid** 變更為 **RelativePanel**。
 
@@ -170,7 +170,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     </Grid>
     ```
 
-    **之後**
+    **After**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -182,7 +182,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
     如需有關使用 **RelativePanel** 之配置的詳細資訊，請參閱[版面配置面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)。
 
-2. 在 **TextBlock** 元素下方，新增名為「ImageGridView」的 **GridView 控制項**。 設定 **RelativePanel** _附加屬性_，以將控制項放置在標題文字下方，並讓它伸展橫跨整個螢幕寬度。
+2. 在 **TextBlock** 元素下方，新增名為「ImageGridView」的 **GridView 控制項**。 設定**RelativePanel** _附加屬性_放置控制項的標題文字下方，並使其延伸到整個螢幕的寬度。
 
     **新增此 XAML**
 
@@ -194,7 +194,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
               RelativePanel.Below="TitleTextBlock"/>
     ```
 
-    **在 TextBlock 之後**
+    **之後的 TextBlock**
     ```xaml
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock x:Name="TitleTextBlock"
@@ -228,13 +228,13 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 > [!NOTE]
 > 您可以使用[版面配置面板](https://docs.microsoft.com/windows/uwp/layout/layout-panels#relativepanel)文章中的 **RelativePanel** 來深入了解版面配置。 看看一些不同的版面配置，然後在 **TextBlock** 和 **GridView** 上設定 RelativePanel 附加屬性，實驗一下這些版面配置。
 
-## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>第 3 部分：新增 DataTemplate 以顯示您的資料
+## <a name="part-3-add-a-datatemplate-to-display-your-data"></a>第 3 部分：新增一個 DataTemplate 來顯示資料
 
 現在您將會建立告知 GridView 如何顯示資料的 [DataTemplate](https://docs.microsoft.com/uwp/api/windows.ui.xaml.datatemplate)。 如需資料範本完整說明，請參閱[項目容器與範本](../controls-and-patterns/item-containers-templates.md)。
 
 您暫時只要新增預留位置來協助建立所需的版面配置。 在 [XAML 資料繫結](../../data-binding/xaml-basics-data-binding.md)教學課程中，您將會以 **ImageFileInfo** 類別中的實際資料取代這些預留位置。 如果現在想要了解資料物件的樣貌，可以開啟 ImageFileInfo.cs 檔案來查看。
 
-**將資料範本新增至方格檢視**
+**加入格線檢視中的資料範本**
 
 1. 開啟 MainPage.xaml。
 
@@ -246,7 +246,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     xmlns:telerikInput="using:Telerik.UI.Xaml.Controls.Input"
     ```
 
-    **在最後一個 ' xmlns:' 項目之後**
+    **最後一個之後 ' xmlns:' 項目**
 
     ```xaml
     <Page x:Name="page"
@@ -263,7 +263,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
     如需 XAML 命名空間的詳細資訊，請參閱 [XAML 命名空間與命名空間對應](https://docs.microsoft.com/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)。
 
-3. 在 [文件大綱] 中，以滑鼠右鍵按一下 **\[ImageGridView\]**。 在操作功能表中，選取 **\[編輯其他範本\] > \[編輯產生的項目 (ItemTemplate)\] > \[建立空白...\]**。**\[建立資源\]** 對話方塊隨即開啟。
+3. 在 [文件大綱] 中，以滑鼠右鍵按一下 **\[ImageGridView\]**。 在操作功能表中，選取**編輯其他範本 > 編輯產生的項目 (ItemTemplate) > 建立空白...**.**建立資源** 對話方塊隨即開啟。
 
 4. 在對話方塊中，將 \[名稱 (索引碼)\] 值變更為 **ImageGridView_DefaultItemTemplate**，然後按一下 **\[確定\]**。
 
@@ -301,7 +301,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     <Grid/>
     ```
 
-    **之後**
+    **After**
     ```xaml
     <Grid Height="300"
           Width="300"
@@ -380,13 +380,13 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
 ![應用程式 UI 檢查點 2](images/xaml-basics/layout-1.png)
 
-## <a name="part-4-modify-the-item-container-style"></a>第 4 部分：修改項目容器樣式
+## <a name="part-4-modify-the-item-container-style"></a>第 4 部分：修改的項目容器的樣式
 
 項目的控制項範本包含顯示狀態的視覺效果，例如選取、指標暫留及焦點。 這些視覺效果都是在資料範本的上方或下方進行轉譯。 這裡將修改控制項範本的 **Background** 及 **Margin** 屬性，為 **GridView** 項目提供灰色背景。
 
 **修改項目容器**
 
-1. 在 [文件大綱] 中，以滑鼠右鍵按一下 **\[ImageGridView\]**。 在操作功能表中，選取 **\[編輯其他範本\] > \[編輯產生的項目容器 (ItemContainerStyle)\] > \[編輯複本\]**。**\[建立資源\]** 對話方塊隨即開啟。
+1. 在 [文件大綱] 中，以滑鼠右鍵按一下 **\[ImageGridView\]**。 在 操作功能表中，選取 **編輯其他範本 > 編輯產生的項目容器 (具有 ItemContainerStyle) > 編輯複本...**.**建立資源** 對話方塊隨即開啟。
 
 2. 在對話方塊中，將 \[名稱 (索引碼)\] 值變更為 **ImageGridView_DefaultItemContainerStyle**，然後按一下 **\[確定\]**。
 
@@ -445,7 +445,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
         <Setter Property="Background" Value="{ThemeResource GridViewItemBackground}"/>
     ```
 
-    **之後**
+    **After**
     ```xaml
         <Setter Property="Background" Value="Gray"/>
     ```
@@ -457,7 +457,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
         <Setter Property="Margin" Value="0,0,4,4"/>
     ```
 
-    **之後**
+    **After**
     ```xaml
         <Setter Property="Margin" Value="8"/>
     ```
@@ -469,15 +469,15 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 > [!Note]
 > 如果您想要實驗，請嘗試將 Background 和 Margin 屬性設定為不同值，看看會有什麼效果。
 
-## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>第 5 部分：將一些最後的調整套用至版面配置
+## <a name="part-5-apply-some-final-adjustments-to-the-layout"></a>第 5 部分：套用一些最後的調整版面配置
 
 若要在頁面上置中影像，您必須調整頁面中 Grid 的對齊方式。 或者，您需要調整 **GridView** 中 Images 的對應嗎？ 這會有什麼影響？ 我們來看看。
 
-如需對齊方式的詳細資訊，請參閱[對齊、邊界及邊框間距](../layout/alignment-margin-padding.md) 
+如需對齊方式的詳細資訊，請參閱[對齊、邊界及邊框間距](../layout/alignment-margin-padding.md)
 
 (您可能在此步驟，嘗試將 **GridView** 的 **Background** 設定為您最愛的色彩。 這將讓您更清楚了解版面配置發生的狀況)。
 
-**修改影像的對齊方式**
+**修改映像的對齊方式**
 
 1. 在 **Gridview** 中，將 **HorizontalAlignment** 屬性設定為 **Center**。
 
@@ -492,7 +492,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
                   ItemContainerStyle="{StaticResource ImageGridView_DefaultItemContainerStyle}"/>
     ```
 
-    **之後**
+    **After**
     ```xaml
         <GridView x:Name="ImageGridView"
                   Margin="0,0,0,8"
@@ -510,7 +510,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
 
 3. 移除上一個步驟中的 **HorizontalAlignment** 設定。
 
-4. 在 [文件大綱] 中，以滑鼠右鍵按一下 **\[ImageGridView\]**。 在操作功能表中，選取 **\[編輯其他範本\] > \[編輯項目的配置 (ItemsPanel)\] > \[編輯複本\]**。**\[建立資源\]** 對話方塊隨即開啟。
+4. 在 [文件大綱] 中，以滑鼠右鍵按一下 **\[ImageGridView\]**。 在 操作功能表中，選取 **編輯其他範本 > 編輯版面配置的項目 (ItemsPanel) > 編輯複本...**.**建立資源** 對話方塊隨即開啟。
 
 5. 在對話方塊中，將 \[名稱 (索引碼)\] 值變更為 **ImageGridView_ItemsPanelTemplate**，然後按一下 **\[確定\]**。
 
@@ -533,7 +533,7 @@ Visual Studio 提供幾項工具，讓您建立 XAML UI 更輕鬆。 XAML 設計
     </ItemsPanelTemplate>
     ```
 
-    **之後**
+    **After**
     ```xaml
     <ItemsPanelTemplate x:Key="ImageGridView_ItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal"

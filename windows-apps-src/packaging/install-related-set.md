@@ -3,24 +3,24 @@ title: 使用應用程式安裝程式檔案安裝相關集合
 description: 在本節中，我們將檢閱您允許透過應用程式安裝程式安裝相關集合所需採取的步驟。 我們還會逐步完成建構定義相關集合之 *.appinstaller 檔案的步驟。
 ms.date: 01/04/2018
 ms.topic: article
-keywords: windows 10, uwp, 應用程式安裝程式, AppInstaller, 側載, 相關集合, 選用套件
+keywords: windows 10, uwp, app installer, AppInstaller, sideload, related set, optional packages, 應用程式安裝程式, 側載, 相關集合, 選用套件
 ms.localizationpriority: medium
 ms.openlocfilehash: 946c0ae2251d1f75ea250d43881b29b172b9ad1d
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116160"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57637143"
 ---
 # <a name="install-a-related-set-using-an-app-installer-file"></a>使用應用程式安裝程式檔案安裝相關集合
 
 如果您才剛開始使用 UWP 選用套件或相關集合，下列文章會是不錯的入門資源。 
 
-1.  [使用選用套件擴充您的應用程式](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
-2.  [建置您的第一個選用套件](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
-3.  [從選用套件載入程式碼](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
-4.  [建立相關集合的工具](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
-5.  [選用套件及相關集合的製作](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
+1.  [擴充您的應用程式使用選擇性的套件](https://blogs.msdn.microsoft.com/appinstaller/2017/04/05/uwpoptionalpackages/)
+2.  [建置您的第一個選擇性套件](https://blogs.msdn.microsoft.com/appinstaller/2017/05/09/build-your-first-optional-package/)
+3.  [選擇性的套件從載入的程式碼](https://blogs.msdn.microsoft.com/appinstaller/2017/05/11/loading-code-from-an-optional-package/)
+4.  [若要建立相關的設定工具](https://blogs.msdn.microsoft.com/appinstaller/2017/05/12/tooling-to-create-a-related-set/)
+5.  [選擇性的套件和撰寫相關的設定](https://docs.microsoft.com/windows/uwp/packaging/optional-packages)
 
 現在可以使用 Windows 10 Fall Creators Update，透過應用程式安裝程式相關集合。 這樣就可以將相關集合應用程式套件散發和部署給使用者。 
 
@@ -86,8 +86,8 @@ ms.locfileid: "9116160"
 </AppInstaller>
 ```
 
-### <a name="step-3-add-the-main-package-information"></a>步驟 3：新增主要套件資訊 
-如果主要應用程式套件是.appxbundle 或.msixbundle 檔案，然後使用`<MainBundle>`如下所示。 如果主要應用程式套件是.appx 或.msix 檔案，然後使用`<MainPackage>`的`<MainBundle>`中的程式碼片段。 
+### <a name="step-3-add-the-main-package-information"></a>步驟 3：加入主套件資訊 
+如果主應用程式套件的.appxbundle 或.msixbundle 檔案，然後使用`<MainBundle>`如下所示。 如果主應用程式套件的.appx 或.msix 檔案，然後使用`<MainPackage>`代替`<MainBundle>`在程式碼片段。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,7 +106,7 @@ ms.locfileid: "9116160"
 ```
 `<MainBundle>` 或 `<MainPackage>` 屬性中的資訊必須分別符合應用程式套件組合資訊清單或應用程式套件資訊清單中的 [Package/Identity](https://docs.microsoft.com/uwp/schemas/appxpackage/uapmanifestschema/element-identity) 元素。 
 
-### <a name="step-4-add-the-optional-packages"></a>步驟 4：新增選用套件 
+### <a name="step-4-add-the-optional-packages"></a>步驟 4：新增選擇性套件 
 與主要應用程式套件屬性相似，如果選用套件可以是應用程式套件或應用程式套件組合，則 `<OptionalPackages>` 屬性中的子元素必須分別為 `<Package>` 或 `<Bundle>`。 子元素中的套件資訊必須符合套件組合或套件資訊清單中的身分識別元素。 
 
 ``` xml
@@ -192,8 +192,8 @@ ms.locfileid: "9116160"
 </AppInstaller>
 ```
 
-### <a name="step-6-add-update-setting"></a>步驟 6：新增更新設定 
-應用程式安裝程式檔案也可以指定更新設定，讓相關集合自動在發佈新的應用程式安裝程式檔案時進行更新。 **<UpdateSettings>** 是選用元素。 在**<UpdateSettings>** 內，OnLaunch 選項指定 app 啟動時應該進行更新檢查，而 HoursBetweenUpdateChecks="12 指定每隔 12 小時應該進行一次更新檢查。 如果未指定 HoursBetweenUpdateChecks，用來檢查有更新的預設間隔為 24 小時。
+### <a name="step-6-add-update-setting"></a>步驟 6：新增的更新設定 
+應用程式安裝程式檔案也可以指定更新設定，讓相關集合自動在發佈新的應用程式安裝程式檔案時進行更新。 **<UpdateSettings>** 是選擇性的項目。 在**<UpdateSettings>** 內，OnLaunch 選項指定 app 啟動時應該進行更新檢查，而 HoursBetweenUpdateChecks="12 指定每隔 12 小時應該進行一次更新檢查。 如果未指定 HoursBetweenUpdateChecks，用來檢查有更新的預設間隔為 24 小時。
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
 <AppInstaller

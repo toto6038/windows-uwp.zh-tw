@@ -1,5 +1,5 @@
 ---
-Description: Used to select or deselect action items. Can be used for a single list item or for multiple list items.
+Description: 用於選取或取消選取動作項目。 可用於單一清單項目或多個清單項目。
 title: 核取方塊
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
@@ -13,11 +13,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 0a13c0c3d0e91a3932b4f9a26e564fbf364e5551
-ms.sourcegitcommit: a60ab85e9f2f9690e0141050ec3aa51f18ec61ec
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "9037120"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648893"
 ---
 # <a name="check-boxes"></a>核取方塊
 
@@ -25,7 +25,7 @@ ms.locfileid: "9037120"
 
 核取方塊可用於選取或取消選取動作項目。 它可以用於單一項目或使用者可從中選擇的多個項目清單。 這個控制項有三個選項狀態：未選取、已選取，以及不確定。 當子選項集合同時含有未選取和已選取狀態時，請使用不確定狀態。
 
-> **重要 API**：[CheckBox 類別](https://msdn.microsoft.com/library/windows/apps/br209316)、[Checked 事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)、[IsChecked 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+> **重要的 Api**:[核取方塊類別](https://msdn.microsoft.com/library/windows/apps/br209316)，[核取的事件](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)， [IsChecked 屬性](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
 ![核取方塊狀態範例](images/templates-checkbox-states-default.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "9037120"
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/CheckBox">開啟應用程式並查看 CheckBox 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -67,7 +67,7 @@ ms.locfileid: "9037120"
 
 ## <a name="create-a-checkbox"></a>建立核取方塊
 
-若要指派核取方塊的標籤，請使用 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性。 標籤會顯示在核取方塊旁邊。
+若要對核取方塊指派標籤，請使用 [Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) 屬性。 標籤會顯示在核取方塊旁邊。
 
 這個 XAML 會建立單一核取方塊，以便在可提交表單之前用來同意服務條款。 
 
@@ -294,9 +294,9 @@ private void SetCheckedState()
 
     ![不確定核取方塊](images/checkbox4_spicy.png)
 
-    改用含三個選項的選項按鈕群組：「不辣」、「辣」以及「非常辣」。
+    相反地，使用具有三個選項的選項按鈕群組：不辣味、 辣味，以及額外辣味。
 
-    ![含有三個選項的選項按鈕群組：「不辣」、「辣」以及「非常辣」](images/spicyoptions.png)
+    ![選項按鈕群組，有三種選項：不辣味、 辣味，以及額外辣味](images/spicyoptions.png)
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
@@ -304,6 +304,6 @@ private void SetCheckedState()
 
 ## <a name="related-articles"></a>相關文章
 
-- [CheckBox 類別](https://msdn.microsoft.com/library/windows/apps/br209316) 
+- [核取方塊類別](https://msdn.microsoft.com/library/windows/apps/br209316) 
 - [選項按鈕](radio-button.md)
 - [切換開關](toggles.md)

@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 遊戲, 計劃, 協助工具, 雲端, 創造營收, 封裝, 技術, 概念, 核准
 ms.localizationpriority: medium
 ms.openlocfilehash: 47f613ff814788df947ee39590af0e01b7e3622f
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8946000"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653773"
 ---
 # <a name="planning-for-uwp-games"></a>UWP 遊戲計劃
 
@@ -30,19 +30,19 @@ ms.locfileid: "8946000"
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><a href="game-development-platform-guide.md">遊戲技術</a></p></td>
+<td align="left"><p><a href="game-development-platform-guide.md">遊戲的技術</a></p></td>
 <td align="left"><p>可協助您開發遊戲之技術的清單。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="accessibility-for-games.md">遊戲的協助工具</a></p></td>
+<td align="left"><p><a href="accessibility-for-games.md">適用於遊戲的協助工具</a></p></td>
 <td align="left"><p>了解如何設計無障礙遊戲。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><a href="cloud-for-games.md">遊戲的雲端</a></p></td>
+<td align="left"><p><a href="cloud-for-games.md">雲端遊戲</a></p></td>
 <td align="left"><p>將雲端用於遊戲。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><a href="monetization-for-games.md">遊戲的獲利</a></p></td>
+<td align="left"><p><a href="monetization-for-games.md">適用於遊戲的營收</a></p></td>
 <td align="left"><p>創造遊戲營收的方式。</p></td>
 </tr>
 <tr class="odd">

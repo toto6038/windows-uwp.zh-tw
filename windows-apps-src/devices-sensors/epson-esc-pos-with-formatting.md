@@ -7,16 +7,16 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 3c17fb7de151308e41a2e613d86a9c0413c7517e
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047792"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57649113"
 ---
 # <a name="epson-escpos-with-formatting"></a>用來設定格式的 Epson ESC/POS
 
 
-**重要 API**
+**重要的 Api**
 
 -   [**PointofService 印表機**](https://msdn.microsoft.com/library/windows/apps/Mt426652)
 -   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
@@ -31,7 +31,7 @@ ESC/POS 是 Epson 建立來在範圍廣泛之 POS 印表機系統上使用的命
 
 所有開頭為 ESC 字元 (ASCII 27、HEX 1B) 或 GS (ASCII 29、HEX 1D) 的命令，後面緊接著另一個用來指定命令的字元。 一般文字都會直接傳送到印表機，並以分行符號來分隔。
 
-[**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 會透過 **Print()** 或 **PrintLine()** 方法來提供大部分的功能。 不過，若要取得特定的格式設定或傳送指定的命令，您必須使用 ESC/POS 命令，以字串形式建置並傳送到印表機。
+[  **Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 會透過 **Print()** 或 **PrintLine()** 方法來提供大部分的功能。 不過，若要取得特定的格式設定或傳送指定的命令，您必須使用 ESC/POS 命令，以字串形式建置並傳送到印表機。
 
 ## <a name="example-using-bold-and-double-size-characters"></a>使用粗體和雙倍大小字元的範例
 

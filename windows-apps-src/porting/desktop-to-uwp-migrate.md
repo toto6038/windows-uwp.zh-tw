@@ -1,19 +1,19 @@
 ---
-Description: Share code between a desktop application and a UWP app
+Description: 桌面應用程式和 UWP 應用程式之間共用程式碼
 Search.Product: eADQiWindows 10XVcnh
-title: 傳統型應用程式與 UWP app 之間共用程式碼
+title: 桌面應用程式和 UWP 應用程式之間共用程式碼
 ms.date: 10/03/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 151584f15013c9d4ab7d9566e175b957a7a84149
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9045737"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57644343"
 ---
-# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>傳統型應用程式與 UWP app 之間共用程式碼
+# <a name="share-code-between-a-desktop-application-and-a-uwp-app"></a>桌面應用程式和 UWP 應用程式之間共用程式碼
 
 您可以將您的程式碼移入 .NET Standard 程式庫中，然後建立通用 Windows 平台 (UWP) app，將適用範圍擴及所有 Windows 10 裝置。 沒有工具可將傳統型應用程式轉換為 UWP app 時，您可以重複使用許多現有的程式碼，而這樣還會降低建置應用程式的成本。 本指南會示範做法。
 
@@ -61,9 +61,9 @@ ms.locfileid: "9045737"
 
 您部分的程式碼專屬於特定平台，必須繼續留在傳統型應用程式專案中。
 
-### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：將資料存取程式碼移轉至 .NET Standard 2.0 程式庫
+### <a name="example-migrating-data-access-code-to-a-net-standard-20-library"></a>範例：移轉至.NET Standard 2.0 程式庫的資料存取程式碼
 
-假設我們有非常基本的 Windows Forms 應用程式，顯示 Northwind 範例資料庫的客戶。
+例如，假設我們有非常基本的 Windows Forms 應用程式會顯示從 Northwind 範例資料庫的客戶。
 
 ![Windows Forms 應用程式](images/desktop-to-uwp/win-forms-app.png)
 
@@ -151,7 +151,7 @@ public partial class Customers : Form
 }
 ```
 
-## <a name="reach-all-windows-devices"></a>將目標範圍擴及所有 Windows 裝置
+## <a name="reach-all-windows-devices"></a>將適用範圍擴及所有 Windows 裝置
 
 現在就可以開始將 UWP app 新增至您的方案。
 
@@ -268,10 +268,10 @@ public class MainActivity : ListActivity
 
 ## <a name="next-steps"></a>後續步驟
 
-**尋找您的問題解答**
+**尋找問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或功能建議**
+**提供意見反應或提出功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。

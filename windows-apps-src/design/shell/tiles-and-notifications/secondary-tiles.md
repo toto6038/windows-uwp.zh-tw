@@ -1,5 +1,5 @@
 ---
-Description: Secondary tiles allow users to pin specific content and deep links from your app onto their Start menu, providing easy future access to the content within your app.
+Description: 次要磚可讓使用者將您應用程式中的特定內容與深度連結釘選到其 \[開始\] 功能表，讓使用者未來能夠輕鬆地存取您應用程式中的內容。
 title: 次要磚
 label: Secondary tiles
 template: detail.hbs
@@ -8,11 +8,11 @@ ms.topic: article
 keywords: windows 10, uwp, secondary tiles, 次要磚
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f95699fd6eb0803824c9bcdea46d275ab4383ac
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8940617"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653183"
 ---
 # <a name="secondary-tiles"></a>次要磚
 
@@ -31,9 +31,9 @@ ms.locfileid: "8940617"
 
 | 文章 | 描述 |
 | --- | --- |
-| [次要磚指導方針](secondary-tiles-guidance.md) | 了解您使用次要磚的時機和位置。 |
-| [釘選次要磚](secondary-tiles-pinning.md) | 了解如何釘選次要磚。 |
-| [從傳統型應用程式釘選](secondary-tiles-desktop-pinning.md) | Windows 傳統型應用程式因為傳統型橋接器之故而可以釘選次要磚！ |
+| [次要磚的指引](secondary-tiles-guidance.md) | 了解您使用次要磚的時機和位置。 |
+| [次要磚釘選](secondary-tiles-pinning.md) | 了解如何釘選次要磚。 |
+| [從桌面應用程式釘選](secondary-tiles-desktop-pinning.md) | Windows 傳統型應用程式因為傳統型橋接器之故而可以釘選次要磚！ |
 
 
 ## <a name="secondary-tiles-in-relation-to-primary-tiles"></a>次要磚與主要磚比較
@@ -66,9 +66,9 @@ ms.locfileid: "8940617"
 * 使用者可以隨時刪除其次要磚，無須刪除父項應用程式。
 * 次要磚可以在執行階段建立。 應用程式磚只能在安裝期間建立。
 * 飛出視窗會提示使用者在新增次要磚前先確認。
-* 無法以程式設計的方式透過向使用者要求來為鎖定畫面選取次要磚。 在電腦設定，使用者必須手動新增次要磚透過 \ [個人化] 頁面。
+* 無法以程式設計的方式透過向使用者要求來為鎖定畫面選取次要磚。 在 電腦設定，使用者必須手動將透過個人化頁面的 次要 圖格。
 
-對於傳送通知，會為搭配次要磚使用的磚與徽章更新程式及推播通知通道提供特定的方法。 這些方法與搭配主要磚使用的版本一致。 例如，CreateBadgeUpdaterForApplication 與 CreateBadgeUpdaterForSecondaryTile 比較。
+對於傳送通知，會為搭配次要磚使用的磚與徽章更新程式及推播通知通道提供特定的方法。 這些方法與搭配主要磚使用的版本一致。 比方說，CreateBadgeUpdaterForApplication vs。CreateBadgeUpdaterForSecondaryTile。
 
 
 ## <a name="guidance-on-secondary-tiles"></a>次要磚指導方針

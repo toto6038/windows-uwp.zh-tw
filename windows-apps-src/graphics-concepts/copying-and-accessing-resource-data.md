@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d4364bf9973b69587ae042a809d026b553ee2ea
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8932143"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57662313"
 ---
 # <a name="copying-and-accessing-resource-data"></a>複製和存取資源資料
 
@@ -23,7 +23,7 @@ ms.locfileid: "8932143"
 
 在預設案例下，資源可供 GPU 使用。 有些時候，資源資料必須供 CPU 使用。 若要將資源予以複製，使適當的處理器可在不影響效能的情況下進行存取，您需要具備 API 方法運作方式的基本知識。
 
-## <a name="span-idcopyingspanspan-idcopyingspanspan-idcopyingspancopying-resource-data"></a><span id="Copying"></span><span id="copying"></span><span id="COPYING"></span>複製資源資料
+## <a name="span-idcopyingspanspan-idcopyingspanspan-idcopyingspancopying-resource-data"></a><span id="Copying"></span><span id="copying"></span><span id="COPYING"></span>複製的資源資料
 
 
 Direct3D 執行建立呼叫時，會在記憶體中建立資源。 他們可以在視訊記憶體、系統記憶體，或任何其他類型的記憶體之中建立。 由於 WDDM 驅動程式模型會把此記憶體虛擬化，應用程式不再需要追蹤資源究竟是建立於哪一種記憶體之中。
@@ -42,7 +42,7 @@ Direct3D 執行建立呼叫時，會在記憶體中建立資源。 他們可以�
 
 應用程式若要將資料從使用預設使用方式的資源，複製到另一個使用暫存使用方式的資源 (使 CPU 可以讀取該資料，即 GPU 讀回問題) ，必須小心進行操作。 請參閱下方的[存取資源資料](#accessing)。
 
-## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>存取資源資料
+## <a name="span-idaccessingspanspan-idaccessingspanspan-idaccessingspanaccessing-resource-data"></a><span id="Accessing"></span><span id="accessing"></span><span id="ACCESSING"></span>存取資源的資料
 
 
 存取資源需必須先對應該資源。基本上，「對應」即表示應用程式正在嘗試讓 CPU 對記憶體進行存取。 為使 CPU 能存取基本記憶體而對資源進行對應的程序，可能會導致某些效能瓶頸。基於這個原因，應注意如何及何時執行這項工作。
@@ -85,7 +85,7 @@ Direct3D 中的非同步呼叫 (大部分的方法都是非同步的，尤其是
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">影格</th>
+<th align="left">Frame</th>
 <th align="left">GPU/CPU 狀態</th>
 </tr>
 </thead>

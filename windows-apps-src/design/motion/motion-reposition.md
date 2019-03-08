@@ -1,19 +1,19 @@
 ---
-Description: Use the reposition animation to move an element or elements into a new position.
+Description: 使用重新定位動畫將單一元素或多個元素移入新位置。
 title: UWP app 中的重新定位動畫
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 1e2a96169f44802c62f341029b9bc1c5eb7e31de
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8920468"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647723"
 ---
 # <a name="reposition-animations"></a>重新定位動畫
 
@@ -21,7 +21,7 @@ ms.locfileid: "8920468"
 
 使用重新定位動畫將單一元素或多個元素移入新位置。
 
-> **重要 API**: [**RepositionThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210421)、[**RepositionThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br210429)
+> **重要的 Api**:[**RepositionThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210421)， [ **RepositionThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 ## <a name="dos-and-donts"></a>可行與禁止事項
 
@@ -32,8 +32,8 @@ ms.locfileid: "8920468"
 ## <a name="related-articles"></a>相關文章
 
 * [動畫概觀](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [讓重新定位產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [快速入門：使用動畫庫讓 UI 產生動畫效果](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [以動畫顯示重新置放](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [快速入門：以動畫顯示您使用程式庫動畫的 UI](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
 * [**RepositionThemeAnimation 類別**](https://msdn.microsoft.com/library/windows/apps/br210421)
 * [**RepositionThemeTransition 類別**](https://msdn.microsoft.com/library/windows/apps/br210429)
 

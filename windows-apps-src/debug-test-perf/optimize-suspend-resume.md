@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 06af6241bdd75efdd3ff71e02f74252d60540669
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8947426"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653653"
 ---
 # <a name="optimize-suspendresume"></a>最佳化暫停/繼續
 
@@ -64,7 +64,7 @@ UWP 處理程序生命週期系統可能會因為許多原因而暫停或終止 
 
 從效能的觀點來看，我們建議您使用 [**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) 類別。 **XmlSerializer** 有最低的序列化和還原序列化時間，並可維持最低的磁碟使用量。 **XmlSerializer** 對 .NET Framework 的依賴性較少；這表示相較於其他序列化技術，使用 **XmlSerializer** 時需要載入 app 的模組較少。
 
-[**DataContractSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) 讓序列化自訂類別的工作變得更容易，不過對於效能的影響比 **XmlSerializer** 還大。 如果您需要較佳的效能，請考慮調換使用。 一般而言，您不應該載入一個以上的序列化程式，而且應該優先使用 **XmlSerializer**，除非需要其他序列化程式的功能。
+[**DataContractSerializer** ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx)輕鬆地序列化自訂類別，不過它的較大的效能影響低於**XmlSerializer**。 如果您需要較佳的效能，請考慮調換使用。 一般而言，您不應該載入一個以上的序列化程式，而且應該優先使用 **XmlSerializer**，除非需要其他序列化程式的功能。
 
 ### <a name="reduce-memory-footprint"></a>減少記憶體使用量
 
@@ -85,7 +85,7 @@ UWP 處理程序生命週期系統可能會因為許多原因而暫停或終止 
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 暫停和繼續執行的指導方針](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [應用程式的指導方針暫停和繼續](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  

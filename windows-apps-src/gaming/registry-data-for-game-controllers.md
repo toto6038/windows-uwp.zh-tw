@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, games, input, registry, custom, 遊戲, 輸入, 登錄, 自訂
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d30c19a7fd7641d76e810912d33a96dbbeb3132
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936973"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57633603"
 ---
 # <a name="registry-data-for-game-controllers"></a>遊戲控制器的登錄資料
 
@@ -36,19 +36,19 @@ ms.locfileid: "8936973"
         <th>資訊</th>
     </tr>
     <tr>
-        <td>Disabled</td>
+        <td>已停用</td>
         <td>DWORD</td>
         <td>否</td>
         <td>
-            <p>指出此特定裝置應該會停用。</p>
+            <p>指出應該停用此特定的裝置。</p>
             <ul>
-                <li><b>0</b>：未停用裝置。</li>
-                <li><b>1</b>：裝置已停用。</li>
+                <li><b>0</b>:裝置未停用。</li>
+                <li><b>1</b>:裝置已停用。</li>
             </ul>
         </td>
     </tr>
     <tr>
-        <td>Description</td>
+        <td>描述</td>
         <td>REG_SZ <td>否</td>
         <td>裝置的簡短描述。</td>
     </tr>
@@ -58,9 +58,9 @@ ms.locfileid: "8936973"
 
 以下幾節將詳述裝置根位置下方的子機碼。
 
-### <a name="gamepad"></a>Gamepad
+### <a name="gamepad"></a>遊戲台
 
-下表列出 \[Gamepad\]**** 子機碼下方的必要與選擇性子機碼：
+下表列出 \[Gamepad\] 子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -173,7 +173,7 @@ ms.locfileid: "8936973"
 
 ### <a name="racingwheel"></a>RacingWheel
 
-下表列出 \[RacingWheel\]**** 子機碼下方的必要與選擇性子機碼：
+下表列出 \[RacingWheel\] 子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -303,7 +303,7 @@ ms.locfileid: "8936973"
         <td>否</td>
     </tr>
     <tr>
-        <td>Wheel</td>
+        <td>轉盤</td>
         <td>是</td>
         <td rowspan="5" style="vertical-align: middle;">請參閱<a href="#axis-mapping">軸對應</a></td>
     </tr>
@@ -332,7 +332,7 @@ ms.locfileid: "8936973"
 
 ### <a name="arcadestick"></a>ArcadeStick
 
-下表列出 \[ArcadeStick\]**** 子機碼下方的必要與選擇性子機碼：
+下表列出 \[ArcadeStick\] 子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -393,7 +393,7 @@ ms.locfileid: "8936973"
 
 ### <a name="flightstick"></a>FlightStick
 
-下表列出 \[FlightStick\]**** 子機碼下方的必要與選擇性子機碼：
+下表列出 \[FlightStick\] 子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -416,7 +416,7 @@ ms.locfileid: "8936973"
         <td rowspan="4" style="vertical-align: middle;">請參閱<a href="#axis-mapping">軸對應</a></td>
     </tr>
     <tr>
-        <td>Pitch</td>
+        <td>上下移動</td>
         <td>是</td>
     </tr>
     <tr>
@@ -436,7 +436,7 @@ ms.locfileid: "8936973"
 
 ### <a name="uinavigation"></a>UINavigation
 
-下表列出 \[UINavigation\]**** 子機碼下方的必要與選擇性子機碼：
+下表列出 \[UINavigation\] 子機碼下方的必要與選擇性子機碼：
 
 <table>
     <tr>
@@ -458,7 +458,7 @@ ms.locfileid: "8936973"
         <td>是</td>
     </tr>
     <tr>
-        <td>Cancel</td>
+        <td>取消</td>
         <td>是</td>
     </tr>
     <tr>
@@ -547,11 +547,11 @@ ms.locfileid: "8936973"
 
 ## <a name="keys"></a>機碼
 
-以下幾節說明 \[Gamepad\]****、\[RacingWheel\]****、\[ArcadeStick\]****、\[FlightStick\]**** 及 \[UINavigation\]**** 機碼下方每個子機碼的內容。
+以下幾節說明 \[Gamepad\]、\[RacingWheel\]、\[ArcadeStick\]、\[FlightStick\] 及 \[UINavigation\] 機碼下方每個子機碼的內容。
 
 ### <a name="button-mapping"></a>按鈕對應
 
-下表列出必須對應按鈕的值。 例如，如果按下遊戲控制器上的 \[DPadUp\]****，\[DPadUp\]**** 的對應則應包含 \[ButtonIndex\]**** 值 (\[Source\]**** 為 \[Button\]****)。 如果 \[DPadUp\]**** 必須從切換位置對應，\[DPadUp\]**** 對應則應包含 \[SwitchIndex\]**** 與 \[SwitchPosition\]**** 值 (\[Source\]**** 為 \[Switch\]****)。
+下表列出必須對應按鈕的值。 例如，如果按下遊戲控制器上的 \[DPadUp\]，\[DPadUp\] 的對應則應包含 \[ButtonIndex\] 值 (\[Source\] 為 \[Button\])。 如果 \[DPadUp\] 必須從切換位置對應，\[DPadUp\] 對應則應包含 \[SwitchIndex\] 與 \[SwitchPosition\] 值 (\[Source\] 為 \[Switch\])。
 
 <table>
     <tr>
@@ -576,7 +576,7 @@ ms.locfileid: "8936973"
         <td><b>RawGameController</b> 軸陣列中的索引。</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>負片</td>
         <td>DWORD</td>
         <td>否</td>
         <td>表示在套用 <b>Threshold Percent</b> 與 <b>DebouncePercent</b> 因素前應反轉軸值。</td>
@@ -597,7 +597,7 @@ ms.locfileid: "8936973"
         </td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">切換</td>
+        <td rowspan="3" style="vertical-align: middle;">參數</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -707,13 +707,13 @@ ms.locfileid: "8936973"
         <td><b>RawGameController</b> 軸陣列中的索引。</td>
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>負片</td>
         <td>DWORD</td>
         <td>否</td>
         <td>表示對應的軸值在傳回之前應先反轉。</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">切換</td>
+        <td rowspan="3" style="vertical-align: middle;">參數</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td>是</td>
@@ -802,7 +802,7 @@ ms.locfileid: "8936973"
 
 ### <a name="switch-mapping"></a>切換對應
 
-可從 \[RawGameController\]**** 其按鈕陣列中的一組按鈕或從切換陣列中的索引來對應切換位置。 無法從軸對應切換位置。
+可從 \[RawGameController\] 其按鈕陣列中的一組按鈕或從切換陣列中的索引來對應切換位置。 無法從軸對應切換位置。
 
 <table>
     <tr>
@@ -812,7 +812,7 @@ ms.locfileid: "8936973"
         <th>值資訊</th>
     </tr>
     <tr>
-        <td rowspan="10" style="vertical-align: middle;">Button</td>
+        <td rowspan="10" style="vertical-align: middle;">按鈕</td>
         <td>ButtonCount</td>
         <td>DWORD</td>
         <td>2、4 或 8</td>
@@ -820,7 +820,7 @@ ms.locfileid: "8936973"
     <tr>
         <td>SwitchKind</td>
         <td>REG_SZ</td>
-        <td><b>TwoWay</b>、<b>FourWay</b> 或 <b>EightWay</b>
+        <td><b>TwoWay</b>，<b>通訊組織十字路</b>，或<b>EightWay</b>
     </tr>
     <tr>
         <td>UpButtonIndex</td>
@@ -898,13 +898,13 @@ ms.locfileid: "8936973"
         <td>DWORD</td>
     </tr>
     <tr>
-        <td rowspan="3" style="vertical-align: middle;">切換</td>
+        <td rowspan="3" style="vertical-align: middle;">參數</td>
         <td>SwitchIndex</td>
         <td>DWORD</td>
         <td><b>RawGameController</b> 切換陣列中的索引。
     </tr>
     <tr>
-        <td>Invert</td>
+        <td>負片</td>
         <td>DWORD</td>
         <td>表示切換會以逆時針順序回報其位置，而非以預設的順時針順序回報。</td>
     </tr>
@@ -966,7 +966,7 @@ ms.locfileid: "8936973"
 
 #### <a name="buttonindex-values"></a>*ButtonIndex 值
 
-\*ButtonIndex 值會將索引編入到 \[RawGameController\]**** 的按鈕陣列：
+\*ButtonIndex 值編制**RawGameController**的按鈕陣列：
 
 <table>
     <tr>
@@ -1047,11 +1047,11 @@ ms.locfileid: "8936973"
 
 ## <a name="labels"></a>標籤
 
-標籤應出現在裝置根位置下方 \[Labels\]**** 鍵值之下。 \[Labels\]**** 會有 3 個子機碼：\[Buttons\]****、\[Axes\]**** 及 \[Switches\]****。
+標籤應出現在裝置根位置下方 \[Labels\] 鍵值之下。 **標籤**可以有 3 個子機碼：**按鈕**，**軸**，以及**交換器**。
 
 ### <a name="button-labels"></a>按鈕標籤
 
-\[Buttons\]**** 機碼會將 \[RawGameController\]**** 其按鈕陣列中的每個按鈕位置對應至字串。 系統會在內部將每個字串對應至對應的 [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 列舉值。 例如，如果遊戲台上有十個按鈕，且 **RawGameController** 剖析出按鈕並在按鈕報告中呈現按鈕的順序為：
+\[Buttons\] 機碼會將 \[RawGameController\] 其按鈕陣列中的每個按鈕位置對應至字串。 系統會在內部將每個字串對應至對應的 [GameControllerButtonLabel](https://docs.microsoft.com/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) 列舉值。 例如，如果遊戲台上有十個按鈕，且 **RawGameController** 剖析出按鈕並在按鈕報告中呈現按鈕的順序為：
 
 ```cpp
 Menu,               // Index 0
@@ -1066,7 +1066,7 @@ LeftBumper,         // Index 8
 RightBumper         // Index 9
 ```
 
-標籤應在 \[Buttons\]**** 機碼下方以此順序顯示：
+標籤應在 \[Buttons\] 機碼下方以此順序顯示：
 
 <table>
     <tr>
@@ -1117,11 +1117,11 @@ RightBumper         // Index 9
 
 ### <a name="axis-labels"></a>軸標籤
 
-\[Axes\]**** 機碼會將 \[RawGameController\]**** 其軸陣列中的每個軸位置對應至在 [GameControllerButtonLabel 列舉](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) (英文) 中所列的其中一個標籤，就如同按鈕標籤。 請參閱[按鈕標籤](#button-labels)中的範例。
+\[Axes\] 機碼會將 \[RawGameController\] 其軸陣列中的每個軸位置對應至在 [GameControllerButtonLabel 列舉](https://docs.microsoft.com/en-us/uwp/api/windows.gaming.input.gamecontrollerbuttonlabel) (英文) 中所列的其中一個標籤，就如同按鈕標籤。 請參閱[按鈕標籤](#button-labels)中的範例。
 
 ### <a name="switch-labels"></a>切換標籤
 
-\[Switches\]**** 機碼會將切換位置對應至標籤。 這些值遵循此命令慣例：若要將其索引在 \[RawGameController\]**** 的切換陣列中為 \[x\]** 的切換位置設定標籤，則在 \[Switches\]**** 子機碼下方新增這些值： 
+\[Switches\] 機碼會將切換位置對應至標籤。 這些值遵循此命令慣例：若要將其索引在 \[RawGameController\] 的切換陣列中為 \[x\] 的切換位置設定標籤，則在 \[Switches\] 子機碼下方新增這些值： 
 
 * SwitchxUp 
 * SwitchxUpRight 
@@ -1132,7 +1132,7 @@ RightBumper         // Index 9
 * SwitchxUpLeft
 * SwitchxLeft
 
-下表顯示 4 向切換其切換位置的一組範例標籤，該切換會在 \[RawGameController\]**** 的索引 0 處顯示： 
+下表顯示 4 向切換其切換位置的一組範例標籤，該切換會在 \[RawGameController\] 的索引 0 處顯示： 
 
 <table>
     <tr>
@@ -1230,7 +1230,7 @@ RightBumper         // Index 9
 
 ## <a name="example-registry-file"></a>範例登錄檔案
 
-為了顯示這些對應與值如何全部集結在一起，以下是一般 \[RacingWheel\]**** 的範例登錄檔案：
+為了顯示這些對應與值如何全部集結在一起，以下是一般 \[RacingWheel\] 的範例登錄檔案：
 
 ```
 Windows Registry Editor Version 5.00

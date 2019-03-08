@@ -7,11 +7,11 @@ keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSessi
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium
 ms.openlocfilehash: 8cc67a7593a340ada8f807fc0fb0c1b846c6f05b
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944020"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57641303"
 ---
 # <a name="postpone-app-suspension-with-extended-execution"></a>透過延長執行延後應用程式暫停
 
@@ -21,9 +21,9 @@ ms.locfileid: "8944020"
 
 有許多情況可能讓 App 在使用者瀏覽離開 App 時或將其最小化時繼續執行，而不是將它暫止。 例如，即使使用者瀏覽離開以使用其他 App 時，計算 App 的步驟仍需要繼續執行並追蹤步驟。 
 
-如果 App 必須繼續執行，則作業系統必須讓 App 繼續執行，或者 App 可以要求繼續執行。 例如在背景播放音訊時，您可以依照[背景媒體播放](../audio-video-camera/background-audio.md)的步驟進行，作業系統就可以讓應用程式執行久一點。 否則，您就必須手動要求更多執行時間。 您可取得用來執行背景執行的時間長度可能會有幾分鐘，但是您必須做好準備，才能隨時處理撤銷中的工作階段。 當 App 在偵錯工具下執行時，這些應用程式週期時間限制會停用。 基於這個原因，務必未在偵錯工具下執行，或者使用 Visual Studio 中可用的週期事件時，測試延伸執行及其他工具以延後 App 暫停。 
+如果應用程式必須繼續執行，則作業系統必須讓應用程式繼續執行，或者應用程式可以要求繼續執行。 例如在背景播放音訊時，您可以依照[背景媒體播放](../audio-video-camera/background-audio.md)的步驟進行，作業系統就可以讓應用程式執行久一點。 否則，您就必須手動要求更多執行時間。 您可取得用來執行背景執行的時間長度可能會有幾分鐘，但是您必須做好準備，才能隨時處理撤銷中的工作階段。 當 App 在偵錯工具下執行時，這些應用程式週期時間限制會停用。 基於這個原因，務必未在偵錯工具下執行，或者使用 Visual Studio 中可用的週期事件時，測試延伸執行及其他工具以延後 App 暫停。 
  
-建立 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 來要求更多時間，以便在背景完成作業。 您建立的 **ExtendedExecutionSession** 類型是由您建立它時提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 所決定。 有三個 **ExtendedExecutionReason** 列舉值：**Unspecified、LocationTracking** 和 **SavingData**。 只有一個 **ExtendedExecutionSession** 可隨時要求；已核准的工作階段要求目前正在使用中時嘗試建立另一個工作階段，將會導致例外狀況 0x8007139F 從 **ExtendedExecutionSession** 建構函式擲回，以表示該群組或資源不在正確的狀態以執行所要求的作業。 請勿使用 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) 和 [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx)；這些列舉值需要的功能受限，不適合在 Microsoft Store 應用程式中使用。
+建立 [ExtendedExecutionSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionsession.aspx) 來要求更多時間，以便在背景完成作業。 您建立的 **ExtendedExecutionSession** 類型是由您建立它時提供的 [ExtendedExecutionReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.extendedexecutionreason.aspx) 所決定。 有三個**ExtendedExecutionReason**列舉值：**未指定，LocationTracking**並**SavingData**。 只有一個 **ExtendedExecutionSession** 可隨時要求；已核准的工作階段要求目前正在使用中時嘗試建立另一個工作階段，將會導致例外狀況 0x8007139F 從 **ExtendedExecutionSession** 建構函式擲回，以表示該群組或資源不在正確的狀態以執行所要求的作業。 請勿使用 [ExtendedExecutionForegroundSession](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundsession.aspx) 和 [ExtendedExecutionForegroundReason](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.extendedexecution.foreground.extendedexecutionforegroundreason.aspx)；這些列舉值需要的功能受限，不適合在 Microsoft Store 應用程式中使用。
 
 ## <a name="run-while-minimized"></a>在最小化時執行
 
@@ -81,13 +81,13 @@ switch (result)
         break;
 }
 ```
-[查看程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
+[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L81-L110)  
 
 透過作業系統來呼叫 **RequestExtensionAsync** 檢查，以了解使用者是否已核准應用程式的背景活動，以及系統是否有可用的資源來啟用背景執行。 只有一個工作階段會在任何時候針對 App 核准，導致額外呼叫 **RequestExtensionAsync** 以致工作階段被拒絕。
 
 您可以事先檢查 [BackgroundExecutionManager](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 來判斷 [BackgroundAccessStatus](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundaccessstatus.aspx?f=255&MSPPError=-2147217396)，它是決定您的應用程式是否可在背景執行的使用者設定。 若要深入了解這些使用者設定，請參閱[背景活動和能源意識](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#XWK8mEgWD7JHvC10.97) (英文)。
 
-**ExtendedExecutionReason** 會表示您的應用程式在背景執行的作業。 **Description** 字串是一般人看得懂的字串，說明您的 App 必須執行此作業的原因。 這個字串不會向使用者顯示，但可能會在未來的 Windows 版本中提供。 需要 **Revoked** 事件處理常式，這樣當使用者或系統決定不要繼續在背景執行應用程式時，延伸執行工作階段才可以正常停止。
+**ExtendedExecutionReason** 會表示您的應用程式在背景執行的作業。 **Description** 字串是一般人看得懂的字串，說明您的應用程式必須執行此作業的原因。 這個字串不會向使用者顯示，但可能會在未來的 Windows 版本中提供。 需要 **Revoked** 事件處理常式，這樣當使用者或系統決定不要繼續在背景執行應用程式時，延伸執行工作階段才可以正常停止。
 
 ### <a name="revoked"></a>撤銷
 
@@ -119,7 +119,7 @@ private async void SessionRevoked(object sender, ExtendedExecutionRevokedEventAr
     });
 }
 ```
-[查看程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
+[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L124-L141)
 
 ### <a name="dispose"></a>處置
 
@@ -140,7 +140,7 @@ void ClearExtendedExecution(ExtendedExecutionSession session)
     }
 }
 ```
-[查看程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
+[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario1_UnspecifiedReason.xaml.cs#L49-L63)
 
 應用程式一次只能有一個 **ExtendedExecutionSession** 處於作用中狀態。 許多應用程式使用非同步工作來完成複雜的作業，而這些作業必須存取存放裝置、網路或網路服務等資源。 如果某項作業要求完成多個非同步工作，則必須考量每一項工作的狀態，然後才能處置 **ExtendedExecutionSession** 並允許暫止應用程式。 參照必須算出依然在執行中而且未處置工作階段的數量，直到該值變成零為止。
 
@@ -247,7 +247,7 @@ static class ExtendedExecutionHelper
     }
 }
 ```
-[參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
+[請參閱程式碼範例](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/ExtendedExecution/cs/Scenario4_MultipleTasks.xaml.cs)
 
 ## <a name="ensure-that-your-app-uses-resources-well"></a>確認應用程式正常使用資源
 
@@ -255,13 +255,13 @@ static class ExtendedExecutionHelper
 
 使用 [BackgroundExecutionManager.RequestAccessAsync](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.backgroundexecutionmanager.aspx) 可判斷使用者是否已決定限制您的應用程式的背景活動。 請留意您的電池使用量，並且只在需要完成使用者想要的動作時才在背景執行。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
-[延伸執行範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
+[擴充的執行範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ExtendedExecution)  
 [應用程式生命週期](https://msdn.microsoft.com/windows/uwp/launch-resume/app-lifecycle)  
 [應用程式週期 - 利用背景工作與延伸執行使 App 繼續運作](https://msdn.microsoft.com/en-us/magazine/mt590969.aspx)
 [背景記憶體管理](https://msdn.microsoft.com/windows/uwp/launch-resume/reduce-memory-usage)  
-[背景傳輸](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
-[電池感知和背景活動](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
+[背景傳送](https://msdn.microsoft.com/windows/uwp/networking/background-transfers)  
+[： 電池感知和背景活動](https://blogs.windows.com/buildingapps/2016/08/01/battery-awareness-and-background-activity/#I2bkQ6861TRpbRjr.97)  
 [MemoryManager 類別](https://msdn.microsoft.com/library/windows/apps/windows.system.memorymanager.aspx)  
-[在背景播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  
+[在背景中播放媒體](https://msdn.microsoft.com/windows/uwp/audio-video-camera/background-audio)  

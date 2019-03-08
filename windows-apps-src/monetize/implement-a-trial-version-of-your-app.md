@@ -7,15 +7,15 @@ ms.date: 08/25/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 796266565965a62d3f168b48893d62e1cdd7df44
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921191"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646163"
 ---
 # <a name="implement-a-trial-version-of-your-app"></a>實作應用程式的試用版
 
-如果您在[設定為免費試用在合作夥伴中心的您應用程式](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶能夠免費使用您的應用程式，在試用期間，您可以吸引客戶升級成完整版的應用程式排除或限制某些功能，在試用期間。 開始撰寫程式碼之前，請先決定哪些功能應受到限制，然後確定只有在客戶購買完整授權後，App 才會允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的 App 之前的試用期間顯示。
+如果您[將您的應用程式設定為在合作夥伴中心的免費試用](../publish/set-app-pricing-and-availability.md#free-trial)，讓客戶可以免費使用您的應用程式，在試用期間，您可以誘使您升級為完整版的應用程式排除或限制某些功能的客戶試用期間。 開始撰寫程式碼之前應先決定要受到限制的功能，然後確定應用程式只有在購買完整授權後，才允許這些功能運作。 您也可以啟用橫幅或浮水印之類的功能，這些功能僅在客戶購買您的應用程式之前的試用期間顯示。
 
 本文顯示如何使用 [Windows.Services.Store](https://msdn.microsoft.com/library/windows/apps/windows.services.store.aspx) 命名空間中 [StoreContext](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storecontext.aspx) 類別的成員，以判斷使用者是否有您應用程式的試用授權，而且如果授權狀態在應用程式執行期間變更，則會收到通知。 
 
@@ -32,22 +32,22 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 
 對於大部分非遊戲類型的應用程式，設定到期日是一種很好的做法，因為使用者可以對完整的應用程式有比較深入的了解。 這裡提供幾個常見的到期日案例以及您如何處理的選項。
 
--   **試用授權在應用程式執行時到期**
+-   **試用版授權到期時執行的應用程式**
 
     如果您的應用程式正在執行時試用到期，應用程式可以：
 
     -   什麼也不做。
     -   對客戶顯示訊息。
-    -   關閉。
+    -   關閉 。
     -   提示客戶購買應用程式。
 
     最佳做法是顯示一個提示購買應用程式的訊息；如果客戶購買應用程式，就啟用所有功能讓他們繼續使用。 如果客戶決定不要購買，就關閉應用程式，或定期提示他們購買應用程式。
 
--   **試用授權在應用程式啟動之前到期**
+-   **試用版授權到期後，才會啟動應用程式**
 
-    如果試用期在使用者啟動應用程式之前就已到期，應用程式將無法啟動。 使用者將會看到一個對話方塊，提供他們從 Microsoft Store 購買應用程式的選項。
+    如果試用期在使用者啟動應用程式之前就已到期，應用程式將無法啟動。 使用者將會看到一個對話方塊，提供他們從市集購買應用程式的選項。
 
--   **客戶在應用程式執行時購買應用程式**
+-   **執行時，客戶購買的應用程式**
 
     如果客戶在您的應用程式執行時購買它，這裡是您應用程式可以採取的動作。
 
@@ -55,13 +55,13 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
     -   感謝他們購買，或是顯示一則訊息。
     -   不顯示訊息直接啟用完整授權的所有功能 (或停用試用版通知)。
 
-務必對客戶說明您的 App 在免費試用期間或到期之後的行為，客戶才不會對 App 的行為感到意外。 如需有關描述 App 的詳細資訊，請參閱[建立 App 描述](https://msdn.microsoft.com/library/windows/apps/mt148529)。
+務必對客戶說明您的 App 在免費試用期間或到期之後的行為，客戶才不會對 App 的行為感到意外。 如需有關描述 app 的詳細資訊，請參閱[建立 app 描述](https://msdn.microsoft.com/library/windows/apps/mt148529)。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 這個範例包含下列先決條件：
 * 適用於目標為 **Windows 10 Anniversary Edition (10.0；組建 14393)** 或更新版本的通用 Windows 平台 (UWP) App 的 Visual Studio 專案。
-* 您已設定為沒有時間限制的[免費試用版](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)的合作夥伴中心中建立應用程式，並在市集中發佈此應用程式。 測試時您也可以選擇將應用程式設定為不可在 Microsoft Store 中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
+* 您已建立應用程式中設定為合作夥伴中心[免費試用](https://msdn.microsoft.com/windows/uwp/publish/set-app-pricing-and-availability)沒有時間限制，此應用程式發行時的存放區中。 測試時您也可以選擇將應用程式設定為不可在市集中搜尋。 如需詳細資訊，請參閱我們的[測試指南](in-app-purchases-and-trials.md#testing)。
 
 這個範例中的程式碼假設：
 * 程式碼會在 [Page](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page.aspx) 的內容中執行，其中包含名為 ```workingProgressRing``` 的 [ProgressRing](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.progressring.aspx) 和名為 ```textBlock``` 的 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx)。 這些物件可個別用來表示發生非同步作業，以及顯示輸出訊息。
@@ -73,20 +73,20 @@ App 目前的授權狀態會儲存為 [StoreAppLicense](https://msdn.microsoft.c
 
 ## <a name="code-example"></a>程式碼範例
 
-當您的 App 進行初始化時，請取得 App 的 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 物件，並處理 [OfflineLicensesChanged](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.offlinelicenseschanged) 事件，以在授權於 App 執行期間變更時收到通知。 例如，如果試用期到期，或是客戶透過 Microsoft Store 購買 App，則 App 的授權會有所變更。 當授權變更時，取得新的授權，並據以啟用或停用您的 App 功能。
+當您的 App 進行初始化時，請取得 App 的 [StoreAppLicense](https://msdn.microsoft.com/library/windows/apps/windows.services.store.storeapplicense.aspx) 物件，並處理 [OfflineLicensesChanged](https://docs.microsoft.com/uwp/api/windows.services.store.storecontext.offlinelicenseschanged) 事件，以在授權於 App 執行期間變更時收到通知。 例如，如果試用期到期，或是客戶透過市集購買 App，則 App 的授權會有所變更。 當授權變更時，取得新的授權，並據以啟用或停用您的 App 功能。
 
-此時，如果使用者購買 App，最好可以對使用者提供授權狀態有所變更的回應。 根據程式碼的撰寫方式，您可能必須要求使用者重新啟動應用程式。 但請盡可能讓轉換流暢、輕鬆。
+此時，如果使用者購買應用程式，最好可以對使用者提供授權狀態有所變更的回應。 根據程式碼的撰寫方式，您可能必須要求使用者重新啟動應用程式。 但請盡可能讓轉換流暢、輕鬆。
 
 > [!div class="tabbedCodeSnippets"]
 [!code-cs[ImplementTrial](./code/InAppPurchasesAndLicenses_RS1/cs/ImplementTrialPage.xaml.cs#ImplementTrial)]
 
-如需完整的範例應用程式，請參閱 [Microsoft Store 範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
+如需完整的範例應用程式，請參閱[市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)。
 
 ## <a name="related-topics"></a>相關主題
 
-* [App 內購買和試用版](in-app-purchases-and-trials.md)
+* [在應用程式內購買和試用版](in-app-purchases-and-trials.md)
 * [取得應用程式和附加元件的產品資訊](get-product-info-for-apps-and-add-ons.md)
-* [取得 App 和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
-* [啟用 App 和附加元件的 App 內購買](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [啟用消費性附加元件購買](enable-consumable-add-on-purchases.md)
-* [市集範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)
+* [取得應用程式和附加元件的授權資訊](get-license-info-for-apps-and-add-ons.md)
+* [啟用應用程式內購買的應用程式和附加元件](enable-in-app-purchases-of-apps-and-add-ons.md)
+* [啟用可取用的附加元件購買的項目](enable-consumable-add-on-purchases.md)
+* [存放區範例](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Store)

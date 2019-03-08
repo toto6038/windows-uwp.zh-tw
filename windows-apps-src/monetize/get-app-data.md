@@ -1,32 +1,32 @@
 ---
 ms.assetid: 8D4AE532-22EF-4743-9555-A828B24B8F16
-description: 在 Microsoft Store 提交 API 中使用這些方法，來擷取資料來為登錄到您的合作夥伴中心帳戶的應用程式。
-title: 取得 App 資料
+description: 在 Microsoft Store 提交 API 中使用這些方法，來擷取資料的已登錄到您的合作夥伴中心帳戶的應用程式。
+title: 取得應用程式資料
 ms.date: 02/28/2018
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 應用程式資料
 ms.localizationpriority: medium
 ms.openlocfilehash: 23e392e2064a2a48089d1efadd1461c146e0d343
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8930014"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57598893"
 ---
-# <a name="get-app-data"></a>取得 App 資料
+# <a name="get-app-data"></a>取得應用程式資料
 
-在 Microsoft Store 提交 API 中使用下列方法，取得您的合作夥伴中心帳戶中現有應用程式的資料。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
+在 Microsoft Store 提交 API 中使用下列方法，以取得您的合作夥伴中心帳戶中的現有應用程式中的資料。 如需 Microsoft Store 提交 API 的簡介，包括使用此 API 的必要條件，請參閱[使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)。
 
-您可以使用這些方法之前，則應用程式必須已經存在於您的合作夥伴中心帳戶中。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
+您可以使用這些方法之前，應用程式必須已存在於您的合作夥伴中心帳戶。 若要為應用程式建立或管理提交，請參閱[管理應用程式提交](manage-app-submissions.md)中的方法。
 
 | 方法 | URI                                                                                             | 描述                                                 |
 |------- |------------------------------------------------------------------------------------------------ |------------------------------------------------------------ |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [取得您所有應用程式的資料](get-all-apps.md)               |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [取得特定應用程式的資料](get-an-app.md)                |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [取得應用程式的附加元件](get-add-ons-for-an-app.md)         |
-| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md) |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications`                                   | [取得您的應用程式中的資料](get-all-apps.md)               |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}`                   | [取得特定的應用程式中的資料](get-an-app.md)                |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listinappproducts` | [取得附加元件的應用程式](get-add-ons-for-an-app.md)         |
+| GET    | `https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/listflights`       | [取得應用程式封裝的航班](get-flights-for-an-app.md) |
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 如果您尚未完成，請先完成 Microsoft Store 提交 API 的所有[必要條件](create-and-manage-submissions-using-windows-store-services.md#prerequisites)，然後再嘗試使用這其中的任何方法。
 
@@ -64,11 +64,11 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 | 值           | 類型    | 描述       |
 |-----------------|---------|---------------------|
-| id            | 字串  | 應用程式的 Store 識別碼。 如需有關 Store 識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
+| id            | 字串  | 應用程式的市集識別碼。 如需有關市集識別碼的詳細資訊，請參閱[檢視應用程式身分識別詳細資料](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)。   |
 | primaryName   | 字串  | 應用程式的主要名稱。      |
 | packageFamilyName | 字串  | 應用程式的套件系列名稱      |
 | packageIdentityName          | 字串  | 應用程式的套件識別資料名稱。                       |
-| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應到合作夥伴中心中的應用程式的[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)頁面顯示的**Package/Identity/Publisher**值。       |
+| publisherName       | 字串  | 與應用程式相關聯的 Windows 發行者識別碼。 這會對應至**套件/身分識別/發行者**值，會出現在[應用程式身分識別](https://msdn.microsoft.com/windows/uwp/publish/view-app-identity-details)在合作夥伴中心內應用程式頁面。       |
 | firstPublishedDate      | 字串  | 第一次發佈應用程式的日期 (格式為 ISO 8601)。   |
 | lastPublishedApplicationSubmission       | 物件 | [提交資源](#submission_object)，其提供應用程式最新發行提交的資訊。    |
 | pendingApplicationSubmission        | 物件  |  [提交資源](#submission_object)，其提供應用程式目前擱置提交的資訊。   |   
@@ -91,7 +91,7 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
 
 | 值           | 類型    | 描述         |
 |-----------------|---------|----------------------|
-| inAppProductId            | 字串  | 附加元件的 Store 識別碼。 此值由 Microsoft Store 所提供。  Store 識別碼範例為 9NBLGGH4TNMP。   |
+| inAppProductId            | 字串  | 附加元件的市集識別碼。 此值由市集所提供。 市集識別碼範例為 9NBLGGH4TNMP。   |
 
 
 <span id="flight-object" />
@@ -156,9 +156,9 @@ Microsoft Store 提交 API 方法，其使用下列 JSON 資料資源取得應�
  
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
-* [使用 Microsoft Store 提交 API 管理 App 提交](manage-app-submissions.md)
-* [取得所有應用程式](get-all-apps.md)
-* [取得 App](get-an-app.md)
-* [取得應用程式的附加元件](get-add-ons-for-an-app.md)
-* [取得應用程式套件正式發行前小眾測試版](get-flights-for-an-app.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
+* [管理使用 Microsoft Store 提交 API 提交的應用程式](manage-app-submissions.md)
+* [取得所有的應用程式](get-all-apps.md)
+* [取得應用程式](get-an-app.md)
+* [取得附加元件的應用程式](get-add-ons-for-an-app.md)
+* [取得應用程式封裝的航班](get-flights-for-an-app.md)

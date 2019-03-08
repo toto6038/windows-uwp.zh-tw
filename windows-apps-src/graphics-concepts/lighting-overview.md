@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e90e460cf5f5bda7d90447440d76cf6898a83747
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8931841"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660203"
 ---
 # <a name="lighting-overview"></a>光源概觀
 
@@ -27,7 +27,7 @@ ms.locfileid: "8931841"
 
 不需要用光線呈現場景，但沒有光線呈現的場景細節是無法顯現的。 呈現無光的場景，充其量會使場景中的物件產生剪影。 對大部分的用途而言，這仍不夠詳細。
 
-## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>直接光線與環境光線
+## <a name="span-iddirectlightvsambientlightspanspan-iddirectlightvsambientlightspandirect-light-vs-ambient-light"></a><span id="direct_light_vs._ambient_light"></span><span id="DIRECT_LIGHT_VS._AMBIENT_LIGHT"></span>直接的光線，與環境光線
 
 
 雖然直接和環境光線會使場景中的物件亮起來，它們彼此之間各不相干，而且使用的是非常不同的效果，所以您最好以完全不同的方式來使用。
@@ -40,7 +40,7 @@ ms.locfileid: "8931841"
 
 紅色、綠色及藍色元件組合成最終環境光線的色彩。 Alpha 元件控制色彩的透明度。 使用硬體加速或 RGB 模擬時，會忽略 alpha 元件。
 
-## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>Direct3D 光線模型與大自然
+## <a name="span-iddirect3dlightmodelvsnaturespanspan-iddirect3dlightmodelvsnaturespandirect3d-light-model-vs-nature"></a><span id="direct3d_light_model_vs._nature"></span><span id="DIRECT3D_LIGHT_MODEL_VS._NATURE"></span>與本質的 Direct3D 淺模型
 
 
 在自然界，當從來源發光時，就算沒有數千或數百萬計的物件，在到達使用者的眼睛前，也會有數百種反映。 每次反映時，有些光會被表面吸收，有些隨機分散，而其餘部分不是移至另一個表面，就是移至使用者的眼睛。 這個程序會繼續，直到光線縮小變沒有，或使用者感受到光線。
@@ -73,7 +73,7 @@ Direct3D 描述結合成最後色彩的四個元件 (紅色、綠色、藍色及
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[光線和材料](lights-and-materials.md)
+[光線和材質](lights-and-materials.md)
 
  
 

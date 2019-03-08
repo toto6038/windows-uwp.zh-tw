@@ -7,27 +7,27 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 6bb5c156dc29f8229db9e4cb215fe462b4be6af6
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9050431"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653383"
 ---
 # <a name="pair-devices"></a>配對裝置
 
 
 
-**重要 API**
+**重要的 Api**
 
 - [**Windows.Devices.Enumeration**](https://docs.microsoft.com/en-us/uwp/api/Windows.Devices.Enumeration)
 
-有些裝置在使用之前需要先進行配對。 [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間支援三種不同方式來配對裝置。
+有些裝置在使用之前需要先進行配對。 [  **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 命名空間支援三種不同方式來配對裝置。
 
 -   自動配對
 -   基本配對
 -   自訂配對
 
-**提示：** 有些裝置不需要配對就可以使用。 此內容將涵蓋於＜自動配對＞一節中。
+**祕訣**  有些裝置不需要配對，才能使用。 此內容將涵蓋於＜自動配對＞一節中。
 
  
 

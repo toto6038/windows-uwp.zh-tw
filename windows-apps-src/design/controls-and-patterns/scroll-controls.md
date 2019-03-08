@@ -1,5 +1,5 @@
 ---
-Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
+Description: 移動瀏覽和捲動可讓使用者到達超出螢幕界限的內容。
 title: 捲動檢視器控制項
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
@@ -13,11 +13,11 @@ dev-contact: regisb
 doc-status: Published
 ms.localizationpriority: medium
 ms.openlocfilehash: 6578ddfd077e121e0eca5a5fcc8c06cdec26aa42
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058609"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656053"
 ---
 # <a name="scroll-viewer-controls"></a>捲動檢視器控制項
 
@@ -25,7 +25,7 @@ ms.locfileid: "9058609"
 
 當您要顯示的 UI 內容多到超過一個區域所能容納的範圍時，請使用捲動檢視器控制項。
 
-> **重要 API**：[ScrollViewer 類別](https://msdn.microsoft.com/library/windows/apps/br209527)、[ScrollBar 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+> **重要的 Api**:[ScrollViewer 類別](https://msdn.microsoft.com/library/windows/apps/br209527)， [ScrollBar 類別](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.scrollbar.aspx)
 
 捲動檢視器控制項可讓內容延伸超出檢視區範圍 (可見區域)。 使用者透過觸控、滑鼠滾輪、鍵盤或遊戲台操縱捲動檢視器介面，或是使用滑鼠或手寫筆游標與捲動檢視器捲軸進行互動，以到達此內容的延伸部分。 下圖顯示幾個捲動檢視器控制項的範例。
 
@@ -60,7 +60,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 <td>
     <p>如果您已安裝 <strong style="font-weight: semi-bold">XAML 控制項庫</strong>應用程式，請按一下這裡<a href="xamlcontrolsgallery:/item/ScrollViewer">開啟應用程式並查看 ScrollViewer 運作情形</a>。</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項庫應用程式 (Microsoft Store)</a></li>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">取得 XAML 控制項陳列庫應用程式 (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">取得原始碼 (GitHub)</a></li>
     </ul>
 </td>
@@ -87,7 +87,7 @@ See complete redlines in [UNI]http://uni/DesignDepot.FrontEnd/#/ProductNav/3378/
 </Page>
 ```
 
-此 XAML 示範如何啟用水平捲動、 影像放在捲動檢視器，並啟用縮放功能。
+此 XAML 示範如何啟用水平捲動、 將映像放在捲動檢視器和啟用縮放功能。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10"
@@ -147,7 +147,7 @@ ScrollViewer 會定義下列 XAML 附加屬性︰
 
 ## <a name="get-the-sample-code"></a>取得範例程式碼
 
-- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery)：以互動式格式查看所有 XAML 控制項。
+- [XAML 控制項庫範例](https://github.com/Microsoft/Xaml-Controls-Gallery) - 以互動式格式查看所有 XAML 控制項。
 
 ## <a name="related-topics"></a>相關主題
 

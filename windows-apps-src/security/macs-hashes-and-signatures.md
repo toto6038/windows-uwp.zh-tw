@@ -4,14 +4,14 @@ description: 本文討論如何在通用 Windows 平台 (UWP) app 中使用訊�
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10，uwp 安全性
+keywords: windows 10 uwp 安全性
 ms.localizationpriority: medium
 ms.openlocfilehash: 6517241826d06b63fd88b45237552acffbdc62da
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8922319"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57651233"
 ---
 # <a name="macs-hashes-and-signatures"></a>MAC、雜湊以及簽章
 
@@ -27,7 +27,7 @@ ms.locfileid: "8922319"
 
 -   Bob 與 Alice 共用祕密金鑰並同意使用 MAC 函數。
 -   Bob 建立訊息，然後將訊息與祕密金鑰輸入 MAC 函數來擷取 MAC 值。
--   Bob 傳送 \[未加密\] 訊息和 MAC 值給網路另一邊的 Alice。
+-   傳送 Bob\[加密\]訊息和 MAC 值給 Alice 透過網路。
 -   Alice 使用祕密金鑰與訊息做為 MAC 函數的輸入。 然後將產生的 MAC 值與 Bob 傳送的 MAC 值相比較。 若結果相同，表示訊息在傳輸時未遭到變更。
 
 請注意，竊聽 Bob 與 Alice 之間交談的第三者 Eve，無法有效操縱該訊息。 Eve 無法存取私密金鑰，因此也無法建立 MAC 值來讓 Alice 以為遭竄改的訊息是合法訊息。
@@ -132,7 +132,7 @@ namespace SampleMacAlgorithmProvider
 
 -   Bob 與 Alice 共用祕密金鑰並同意使用 MAC 函數。
 -   Bob 建立訊息，然後將訊息與祕密金鑰輸入 MAC 函數來擷取 MAC 值。
--   Bob 傳送 \[未加密\] 訊息和 MAC 值給網路另一邊的 Alice。
+-   傳送 Bob\[加密\]訊息和 MAC 值給 Alice 透過網路。
 -   Alice 使用祕密金鑰與訊息做為 MAC 函數的輸入。 然後將產生的 MAC 值與 Bob 傳送的 MAC 值相比較。 若結果相同，表示訊息在傳輸時未遭到變更。
 
 請注意，Alice 傳送的是未加密的郵件。 僅加密了雜湊。 這個程序僅確保原始郵件未經過修改，而且，使用 Alice 的公開金鑰，郵件雜湊會由具有 Alice 私密金鑰存取權的人來簽署，可能就是 Alice 本人。
@@ -141,7 +141,7 @@ namespace SampleMacAlgorithmProvider
 
 數位簽章是等同於私密金鑰訊息驗證碼 (MAC) 的公開金鑰。 相對而言，MAC 使用私密金鑰讓郵件收件者驗證郵件在傳輸期間沒有被修改，而簽章則是使用私密/公開金鑰組。
 
-[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 物件可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法會將新資料加入要雜湊的緩衝區。 [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法會進行資料拼湊並重設物件以供下次使用。 如下列範例所示。
+[  **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 物件可以用來重複雜湊不同的資料，而不用在每次使用時都要重新建立物件。 [  **Append**](https://msdn.microsoft.com/library/windows/apps/br241499) 方法會將新資料加入要雜湊的緩衝區。 [  **GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) 方法會進行資料拼湊並重設物件以供下次使用。 如下列範例所示。
 
 ```cs
 public void SampleReusableHash()

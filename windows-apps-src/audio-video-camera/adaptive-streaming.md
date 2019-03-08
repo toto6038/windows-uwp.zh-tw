@@ -4,19 +4,19 @@ description: 本文說明如何將彈性資料流多媒體內容播放新增到�
 title: 彈性資料流
 ms.date: 02/08/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 66618d79166e06f6ee2696ed3c9f193a310b6ae9
-ms.sourcegitcommit: 079801609165bc7eb69670d771a05bffe236d483
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116340"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57617873"
 ---
 # <a name="adaptive-streaming"></a>彈性資料流
 
 
-本文說明如何將彈性串流多媒體內容播放新增到通用 Windows 平台 (UWP) 應用程式。 本功能支援 HTTP 即時串流 (HLS) 與 HTTP 動態串流 (DASH) 內容播放。 從 Windows 10 版本 1803 開始，**[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支援平滑串流處理。
+本文說明如何將彈性資料流多媒體內容播放新增到通用 Windows 平台 (UWP) app。 本功能支援 HTTP 即時串流 (HLS) 與 HTTP 動態串流 (DASH) 內容播放。 從 Windows 10 版本 1803 開始，**[AdaptiveMediaSource](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** 支援平滑串流處理。
 
 如需支援的 HLS 通訊協定標記的清單，請參閱 [HLS 標記支援](hls-tag-support.md)。 
 
@@ -37,7 +37,7 @@ ms.locfileid: "9116340"
 
 [!code-xml[MediaPlayerElementXAML](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml#SnippetMediaPlayerElementXAML)]
 
-呼叫 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以從 DASH 或 HLS 資訊清單檔案的 URI 建立 **MediaSource**。 接著設定 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) 屬性。 **MediaPlayerElement** 將會自動為內容建立一個新的 **MediaPlayer** 物件。 您可以在 **MediaPlayer** 上呼叫 **Play** 以開始播放內容。
+呼叫 [**MediaSource.CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912) 以從 DASH 或 HLS 資訊清單檔案建立 **MediaSource**。 接著設定 **MediaPlayerElement** 的 [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) 屬性。 **MediaPlayerElement** 將會自動為內容建立一個新的 **MediaPlayer** 物件。 您可以在 **MediaPlayer** 上呼叫 **Play** 以開始播放內容。
 
 [!code-cs[ManifestSource](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
@@ -83,14 +83,14 @@ ms.locfileid: "9116340"
 ## <a name="handle-download-completion-and-failure-events"></a>處理下載完成和失敗事件
 所要求資源的下載失敗時，**AdaptiveMediaSource** 物件會引發 [**DownloadFailed**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.DownloadFailed) 事件。 您可以使用這個事件更新 UI，以回應失敗。 您也可以使用事件來記錄下載作業和失敗的統計資訊。 
 
-傳入事件處理常式的 [**AdaptiveMediaSourceDownloadFailedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs) 物件包含失敗資源下載的中繼資料，例如資源類型、資源 URI，以及資料流內發生失敗的位置。 [**RequestId**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.RequestId) 取得要求的系統產生的唯一識別碼，這個要求可用來關聯多個事件中個人要求的狀態資訊。
+傳入事件處理常式的 [**AdaptiveMediaSourceDownloadFailedEventArgs**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs) 物件包含失敗資源下載的中繼資料，例如資源類型、資源 URI，以及資料流內發生失敗的位置。 [  **RequestId**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.RequestId) 取得要求的系統產生的唯一識別碼，這個要求可用來關聯多個事件中個人要求的狀態資訊。
 
-[**Statistics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.Statistics) 屬性傳回 [**AdaptiveMediaSourceDownloadStatistics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadstatistics) 物件，以提供發生事件時所收到的位元組數目，以及下載作業中各種里程碑的時間。 您可以記錄這項資訊，以找出彈性資料流實作的效能問題。
+[  **Statistics**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.Statistics) 屬性傳回 [**AdaptiveMediaSourceDownloadStatistics**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadstatistics) 物件，以提供發生事件時所收到的位元組數目，以及下載作業中各種里程碑的時間。 您可以記錄這項資訊，以找出彈性資料流實作的效能問題。
 
 [!code-cs[AMSDownloadFailed](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadFailed)]
 
 
-[**DownloadCompleted**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.DownloadCompleted) 事件是在資源下載完成時發生，並將類似的資料提供給 **DownloadFailed** 事件。 同樣地，提供 **RequestId** 來關聯單一要求的事件。 此外，提供 **AdaptiveMediaSourceDownloadStatistics** 物件來啟用下載統計資料的記錄。
+[  **DownloadCompleted**](https://docs.microsoft.com/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.DownloadCompleted) 事件是在資源下載完成時發生，並將類似的資料提供給 **DownloadFailed** 事件。 同樣地，提供 **RequestId** 來關聯單一要求的事件。 此外，提供 **AdaptiveMediaSourceDownloadStatistics** 物件來啟用下載統計資料的記錄。
 
 [!code-cs[AMSDownloadCompleted](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDownloadCompleted)]
 
@@ -100,7 +100,7 @@ ms.locfileid: "9116340"
 [!code-cs[AMSDiagnosticAvailable](./code/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs#SnippetAMSDiagnosticAvailable)]
 
 ## <a name="defer-binding-of-adaptive-streaming-content-for-items-in-a-playback-list-by-using-mediabinder"></a>使用 MediaBinder 延遲繫結播放清單中項目的彈性資料流內容
-[**MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) 類別可讓您延期繫結 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的媒體內容。 從 Windows 10 版本 1703 開始，您可以提供 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 作為繫結的內容。 延遲繫結彈性媒體來源的程序大部分與繫結其他類型的媒體相同，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)中所述。 
+[  **MediaBinder**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder) 類別可讓您延期繫結 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 中的媒體內容。 從 Windows 10 版本 1703 開始，您可以提供 [**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.streaming.adaptive.adaptivemediasource) 作為繫結的內容。 延遲繫結彈性媒體來源的程序大部分與繫結其他類型的媒體相同，如[媒體項目、播放清單與曲目](media-playback-with-mediasource.md)中所述。 
 
 建立 **MediaBinder** 執行個體、設定應用程式所定義的 [**權杖**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Token) 字串以找出要繫結的內容，以及註冊 [**Binding**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.MediaBinder.Binding) 事件。 呼叫 [**MediaSource.CreateFromMediaBinder**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.createfrommediabinder)，以從 **Binder** 建立 **MediaSource**。 然後，從 **MediaSource** 建立 **MediaPlaybackItem**，並將它新增到播放清單。
 
@@ -110,7 +110,7 @@ ms.locfileid: "9116340"
 
 [!code-cs[BinderBindingAMS](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetBinderBindingAMS)]
 
-如果您想要將事件處理常式註冊為繫結的彈性媒體來源，則可以在 **MediaPlaybackList** 之[**CurrentItemChanged**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.CurrentItemChanged)事件的處理常式中執行這項作業。 [**CurrentMediaPlaybackItemChangedEventArgs.NewItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.NewItem)屬性會將目前播放的新**MediaPlaybackItem**包含在清單中。 取得代表新項目的**AdaptiveMediaSource**執行個體，方法是存取**MediaPlaybackItem**的[**Source**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem.Source)屬性，然後存取媒體來源的[**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.AdaptiveMediaSource)屬性。 如果新的播放項目不是**AdaptiveMediaSource**，則這個屬性會是空值，因此您應該先測試是否為空值，再嘗試註冊任何物件事件的處理常式。
+如果您想要將事件處理常式註冊為繫結的彈性媒體來源，則可以在 **MediaPlaybackList** 之[**CurrentItemChanged**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybacklist.CurrentItemChanged)事件的處理常式中執行這項作業。 [  **CurrentMediaPlaybackItemChangedEventArgs.NewItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.NewItem)屬性會將目前播放的新**MediaPlaybackItem**包含在清單中。 取得代表新項目的**AdaptiveMediaSource**執行個體，方法是存取**MediaPlaybackItem**的[**Source**](https://docs.microsoft.com/uwp/api/Windows.Media.Playback.MediaPlaybackItem.Source)屬性，然後存取媒體來源的[**AdaptiveMediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource.AdaptiveMediaSource)屬性。 如果新的播放項目不是**AdaptiveMediaSource**，則這個屬性會是空值，因此您應該先測試是否為空值，再嘗試註冊任何物件事件的處理常式。
 
 [!code-cs[AMSBindingCurrentItemChanged](./code/MediaSource_RS1/cs/MainPage.xaml.cs#SnippetAMSBindingCurrentItemChanged)]
 
@@ -118,8 +118,8 @@ ms.locfileid: "9116340"
 * [媒體播放](media-playback.md)
 * [HLS 標記支援](hls-tag-support.md) 
 * [Dash 設定檔支援](dash-profile-support.md) 
-* [使用 MediaPlayer 播放音訊和視訊](play-audio-and-video-with-mediaplayer.md)
-* [在背景播放媒體](background-audio.md) 
+* [播放音訊和視訊與 MediaPlayer](play-audio-and-video-with-mediaplayer.md)
+* [在背景中播放媒體](background-audio.md) 
 
 
 

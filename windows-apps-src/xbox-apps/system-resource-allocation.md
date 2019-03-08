@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 12e87019-4315-424e-b73c-426d565deef9
 ms.localizationpriority: medium
 ms.openlocfilehash: 0869f5cfc2499a00577f0196cd9f9f84987c0321
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048365"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647323"
 ---
 # <a name="system-resources-for-uwp-apps-and-games-on-xbox-one"></a>適用於 Xbox One 上 UWP 應用程式和遊戲的系統資源
 
@@ -30,7 +30,7 @@ ms.locfileid: "9048365"
 
 * CPU
     * 應用程式：視在系統上執行的應用程式和遊戲數目而定，共用 2-4 個 CPU 核心。
-    * 遊戲：4 個專屬與 2 個共用 CPU 核心。
+    * 遊戲：專有和 2 的 4 共用 CPU 核心。
 
 * GPU
     * 應用程式：視在系統上執行的應用程式和遊戲數目而定，共用 45% 的 GPU。
@@ -38,7 +38,7 @@ ms.locfileid: "9048365"
 
 * DirectX 支援
     * 應用程式：DirectX 11 功能層級 10。
-    * 遊戲：DirectX 12 和 DirectX 11 功能層級 10。
+    * 遊戲：DirectX 12，以及 DirectX 11 功能層級 10。
 
 * 所有應用程式和遊戲必須以 x64 架構為目標，以便開發或提交到 Microsoft Store 供 Xbox 使用。  
 
@@ -53,7 +53,7 @@ ms.locfileid: "9048365"
 <iframe src="https://mva.microsoft.com/en-US/training-courses-embed/developing-xbox-one-applications-16860/Video-What-s-Unique--vk0fOPf9C_2006218965" width="636" height="480" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="see-also"></a>請參閱
-- [Xbox One 上的 UWP](index.md)
-- [開始使用 Xbox Live 創作者計畫](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
-- [DirectX 與 Xbox One 上的 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
+- [在 Xbox One UWP](index.md)
+- [開始使用 Xbox Live 創作者計劃。](../xbox-live/get-started-with-creators/get-started-with-xbox-live-creators.md)
+- [DirectX 和 Xbox One 上的 UWP](https://blogs.msdn.microsoft.com/chuckw/2017/12/15/directx-and-uwp-on-xbox-one/)
 

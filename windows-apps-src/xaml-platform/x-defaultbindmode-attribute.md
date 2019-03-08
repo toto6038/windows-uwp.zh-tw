@@ -3,14 +3,14 @@ description: 在 XAML 標記中，指定 x:Bind 的預設模式。
 title: xDefaultBindMode 屬性
 ms.date: 02/08/2018
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: c8917b09f04206a5466797f48414defeb35baf5e
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8929556"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57647603"
 ---
 # <a name="xdefaultbindmode-attribute"></a>x:DefaultBindMode 屬性
 
@@ -30,4 +30,4 @@ ms.locfileid: "8929556"
 
 ## <a name="related-topics"></a>相關主題
 
-* [x:Bind 標記延伸](x-bind-markup-extension.md)
+* [x： 繫結標記延伸](x-bind-markup-extension.md)

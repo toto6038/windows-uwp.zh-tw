@@ -7,20 +7,20 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, OpenGL, Direct3D, 著色器管線
 ms.localizationpriority: medium
 ms.openlocfilehash: f02b365175909b5038e5eb117f12851be9f14e3a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942134"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653693"
 ---
 # <a name="compare-the-opengl-es-20-shader-pipeline-to-direct3d"></a>OpenGL ES 2.0 著色器管線與 Direct3D 的比較
 
 
 
 
-**重要 API**
+**重要的 Api**
 
--   [輸入組合階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)
+-   [輸入組譯工具階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)
 -   [頂點著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage)
 -   [像素著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage)
 
@@ -33,19 +33,19 @@ ms.locfileid: "8942134"
 
 Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 介面的執行個體管理，並具有下列階段：
 
--   [輸入組合階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)。 輸入組合階段提供資料 (三角形、線與點) 給管線。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "IA" 開頭。
--   [頂點著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage) - 頂點著色器階段處理頂點，通常執行轉換、貼圖與光照等作業。 頂點著色器一律採用單一輸入頂點，並產生單一輸出頂點。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "VS" 開頭。
--   [資料流輸出階段](https://msdn.microsoft.com/library/windows/desktop/bb205121) - 資料流輸出階段會在點陣化的過程中，將基本型別資料從管線串流到記憶體。 資料可串流輸出及/或傳遞進入點陣化。 串流輸出到記憶體的資料可重新循環回管線，做為輸入資料或從 CPU 讀回。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "SO" 開頭。
--   [點陣化階段](https://msdn.microsoft.com/library/windows/desktop/bb205125) - 點陣化會裁剪基本型別、準備像素著色器的基本型別，以及決定如何叫用像素著色器。 您也可告知管線沒有像素著色器 (使用 [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) 將像素著色器階段設為 NULL) 並停用深度與樣板測試 (在 [**D3D11\_DEPTH\_STENCIL\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110) 將 DepthEnable 與 StencilEnable 設為 FALSE)，以停用點陣化。 停用時，不會更新與點陣化相關的管線計數器。
--   [像素著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - 像素著色器階段會接收基本型別的插補資料，並產生每一像素資料，如色彩。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "PS" 開頭。
--   [輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120) - 輸出合併階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。 支援此階段的 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 方法會以 "OM" 開頭。
+-   [輸入組合階段](https://msdn.microsoft.com/library/windows/desktop/bb205116)。 輸入組合階段提供資料 (三角形、線與點) 給管線。 [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)支援此階段的方法前面會加上"IA"。
+-   [頂點著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Vertex_Shader_Stage) - 頂點著色器階段處理頂點，通常執行轉換、貼圖與光照等作業。 頂點著色器一律採用單一輸入頂點，並產生單一輸出頂點。 [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)支援此階段的方法前面會加上"與"。
+-   [資料流輸出階段](https://msdn.microsoft.com/library/windows/desktop/bb205121) - 資料流輸出階段會在點陣化的過程中，將基本型別資料從管線串流到記憶體。 資料可串流輸出及/或傳遞進入點陣化。 串流輸出到記憶體的資料可重新循環回管線，做為輸入資料或從 CPU 讀回。 [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)支援此階段的方法前面會加上 「 等等 」。
+-   [點陣化階段](https://msdn.microsoft.com/library/windows/desktop/bb205125) - 點陣化會裁剪基本型別、準備像素著色器的基本型別，以及決定如何叫用像素著色器。 您可以停用點陣化，告訴管線沒有任何像素著色器 (將像素著色器階段設定為 NULL，且[ **ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472))，和深度和樣板測試 （停用設為 FALSE，在設定 DepthEnable 和 StencilEnable [ **D3D11\_深度\_樣板\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476110))。 停用時，不會更新與點陣化相關的管線計數器。
+-   [像素著色器階段](https://msdn.microsoft.com/library/windows/desktop/bb205146#Pixel_Shader_Stage) - 像素著色器階段會接收基本型別的插補資料，並產生每一像素資料，如色彩。 [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)支援此階段的方法前面會加上"PS"。
+-   [輸出合併階段](https://msdn.microsoft.com/library/windows/desktop/bb205120) - 輸出合併階段將不同類型的輸出資料 (像素著色器值、深度與樣板資訊) 與轉譯目標和深度/樣板緩衝區的內容結合，以產生最終的管線結果。 [**ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)支援此階段的方法前面會加上"OM"。
 
-(還有幾何著色器、輪廓著色器、鑲嵌與網域著色器，但因為在 OpenGL ES 2.0 中沒有類似項目，我們將不會在此討論。) 如需這些階段的方法的完整清單，請參閱 [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 和 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) 參考頁面。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。
+（另外還有適用於幾何著色器、 輪廓著色器、 tesselators 和網域著色器階段，但因為它們會不有任何雷同 OpenGL ES 2.0 中，我們將不會在這裡討論它們）。如需這些階段之方法的完整清單，請參閱[ **ID3D11DeviceContext** ](https://msdn.microsoft.com/library/windows/desktop/ff476385)並[ **ID3D11DeviceContext1** ](https://msdn.microsoft.com/library/windows/desktop/hh404598)參考頁面。 **ID3D11DeviceContext1** 擴充了 Direct3D 11 的 **ID3D11DeviceContext**。
 
 ## <a name="creating-a-shader"></a>建立著色器
 
 
-在 Direct3D 中，不會在編譯和載入著色器資源之前先建立著色器資源；而是在載入 HLSL 時建立資源。 因此，沒有正好與 glCreateShader 類似的函式，這個函式可建立特定類型的初始化著色器資源 (如 GL\_VERTEX\_SHADER or GL\_FRAGMENT\_SHADER)。 著色器是在以特定函式 (如 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) 載入 HLSL 後建立，並使用類型與編譯的 HLSL 做為參數。
+在 Direct3D 中，不會在編譯和載入著色器資源之前先建立著色器資源；而是在載入 HLSL 時建立資源。 因此，沒有直接類似函式可 glCreateShader，會建立特定類型的初始化的著色器資源 (例如 GL\_頂點\_著色器或 GL\_片段\_著色器)。 著色器是在以特定函式 (如 [**ID3D11Device1::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) 與 [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)) 載入 HLSL 後建立，並使用類型與編譯的 HLSL 做為參數。
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                                             |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -56,7 +56,7 @@ Direct3D 11 圖形管線由 [**ID3D11DeviceContext1**](https://msdn.microsoft.co
 ## <a name="compiling-a-shader"></a>編譯著色器
 
 
-Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編譯的著色器物件 (.cso) 檔案，並使用其中一個 Windows 執行階段檔案 API 載入。 (傳統型 app 可在執行階段從文字檔或字串編譯著色器。) CSO 檔案是從您 Microsoft Visual Studio 專案中的任何 .hlsl 檔所建置，且可保留相同的名稱，只要有 .cso 副檔名即可。 出貨時，請確認它們包含在您的套件中！
+Direct3D 著色器必須在通用 Windows 平台 (UWP) app 中預先編譯為編譯的著色器物件 (.cso) 檔案，並使用其中一個 Windows 執行階段檔案 API 載入。 （桌面應用程式可以編譯的著色器，從文字檔或在執行階段的字串）。任何屬於您的 Microsoft Visual Studio 專案，並保留相同的名稱，只有副檔名為.cso 的.hlsl 檔案在建置 CSO 檔案。 出貨時，請確認它們包含在您的套件中！
 
 | OpenGL ES 2.0                          | Direct3D 11                                                                                                                                                                   |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -115,9 +115,9 @@ D3D11CreateDevice(
 ## <a name="setting-the-viewports"></a>設定檢視區
 
 
-在 Direct3D 11 設定檢視區的方法與在 OpenGL ES 2.0 設定檢視區的方法十分類似。 在 Direct3D 11，使用已設定的 [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722) 呼叫 [**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480)。
+在 Direct3D 11 設定檢視區的方法與在 OpenGL ES 2.0 設定檢視區的方法十分類似。 在 Direct3D 11 中，呼叫[ **ID3D11DeviceContext::RSSetViewports** ](https://msdn.microsoft.com/library/windows/desktop/ff476480)有設定[ **CD3D11\_檢視區**](https://msdn.microsoft.com/library/windows/desktop/jj151722)。
 
-Direct3D 11：設定檢視區。
+Direct3D 11:設定在檢視區。
 
 ``` syntax
 CD3D11_VIEWPORT viewport(
@@ -131,7 +131,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0 | Direct3D 11                                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722)、[**ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
+| glViewport    | [**CD3D11\_VIEWPORT**](https://msdn.microsoft.com/library/windows/desktop/jj151722)， [ **ID3D11DeviceContext::RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) |
 
  
 
@@ -157,7 +157,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 |----------------------------------|-----------------------------------------------------------------------------------------------------------|
 | glAttachShader                   | [**ID3D11Device1::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513)                         |
 | glGetShaderiv、glGetShaderSource | [**ID3D11DeviceContext1::PSGetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476468)                       |
-| glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645)。 |
+| glGetUniformfv、glGetUniformiv   | [**ID3D11DeviceContext1::PSGetConstantBuffers1**](https://msdn.microsoft.com/library/windows/desktop/hh404645). |
 
  
 
@@ -168,7 +168,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)、[**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (或 [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385) 上的其他 Draw\* 方法)。 |
+| glDrawElements | [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)， [ **ID3D11DeviceContext1::DrawIndexed** ](https://msdn.microsoft.com/library/windows/desktop/ff476409) (或其他繪製\*方法[ **ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/ff476385))。 |
 | eglSwapBuffers | [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797)                                                                                                                                                                              |
 
  
@@ -181,7 +181,7 @@ m_d3dContext->RSSetViewports(1, &viewport);
 | 著色器語言           | GLSL 功能版本                                                                                                                                                                                                      | Direct3D 著色器模型 |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
 | Direct3D 11 HLSL          | ~4.30。                                                                                                                                                                                                                    | SM 5.0                |
-| 適用於 OpenGL ES 2.0 的 GLSL ES | 1.40。 適用於 OpenGL ES 2.0 的 GLSL ES 較舊實作版本可使用 1.10 到 1.30。 使用 glGetString(GL\_SHADING\_LANGUAGE\_VERSION) 或 glGetString(SHADING\_LANGUAGE\_VERSION) 檢查您的原始程式碼加以判斷。 | ~SM 2.0               |
+| 適用於 OpenGL ES 2.0 的 GLSL ES | 1.40。 適用於 OpenGL ES 2.0 的 GLSL ES 較舊實作版本可使用 1.10 到 1.30。 檢查 glGetString 您原始的程式碼 (GL\_陰影\_語言\_版本) 或 glGetString (網底\_語言\_版本) 來決定。 | ~SM 2.0               |
 
  
 
@@ -190,21 +190,21 @@ m_d3dContext->RSSetViewports(1, &viewport);
 ## <a name="porting-the-opengl-intrinsics-to-hlsl-semantics"></a>將 OpenGL 內建移植到 HLSL 語意
 
 
-Direct3D 11 HLSL 語意是 Uniform 或屬性名稱這類字串，用來識別在應用程式與著色器程式間傳遞的值。 雖然它們可以是任何可能的字串，但最佳做法是使用可指出用法的字串，如 POSITION 或 COLOR。 您可在建構常數緩衝區或緩衝區輸入配置時，指派這些語意。 您也可以在語意後附加 0 到 7 的數字，在類似的值使用不同的登錄。 例如：COLOR0、COLOR1、COLOR2...
+Direct3D 11 HLSL 語意是 Uniform 或屬性名稱這類字串，用來識別在應用程式與著色器程式間傳遞的值。 雖然它們可以是任何可能的字串，但最佳做法是使用可指出用法的字串，如 POSITION 或 COLOR。 您可在建構常數緩衝區或緩衝區輸入配置時，指派這些語意。 您也可以在語意後附加 0 到 7 的數字，在類似的值使用不同的登錄。 例如：COLOR0，COLOR1，色 2...
 
-以 "SV\_" 開頭的語意是由您的著色器程式寫入的系統值語意；您的應用程式本身 (在 CPU 上執行) 無法修改這些語意。 一般來說，這些語意包含的值為圖形管線中來自其他著色器階段的輸入或輸出，或者是完全由 GPU 產生的值。
+語意，前面會加上"SV\_"是系統值語意，會寫入您的著色器程式; 應用程式本身 （而在 CPU 上執行） 無法加以修改。 一般來說，這些語意包含的值為圖形管線中來自其他著色器階段的輸入或輸出，或者是完全由 GPU 產生的值。
 
-此外，使用 SV\_ 語意指定著色器階段的輸入或輸出時，會有不同的行為。 例如，SV\_POSITION (輸出) 包含在頂點著色器階段期間轉換的頂點資料，而 SV\_POSITION (輸入) 包含在點陣化期間插補的像素位置值。
+此外，SV\_語意具有不同行為，使用指定的輸入或輸出從著色器階段時。 比方說，SV\_位置 （輸出） 包含在端點著色器階段和 SV 轉換的頂點資料\_位置 （輸入） 會包含在點陣化期間插入的像素位置值。
 
 以下為共用 OpenGL ES 2.0 著色器內建的一些對應：
 
 | OpenGL 系統值 | 使用這個 HLSL 語意                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| gl\_Position        | POSITION(n)，適用於頂點緩衝區資料。 SV\_POSITION 為像素著色器提供像素位置，且無法由您的 app 寫入。                                        |
-| gl\_Normal          | NORMAL(n)，適用於頂點緩衝區提供的一般資料。                                                                                                                 |
+| gl\_位置        | POSITION(n)，適用於頂點緩衝區資料。 SV\_位置提供給像素著色器的像素的位置，因此無法寫入您的應用程式。                                        |
+| gl\_正常          | NORMAL(n)，適用於頂點緩衝區提供的一般資料。                                                                                                                 |
 | gl\_TexCoord\[n\]   | TEXCOORD(n)，適用於提供給著色器的紋理 UV (在某些 OpenGL 文件中為 ST) 座標資料。                                                                       |
 | gl\_FragColor       | COLOR(n)，適用於提供給著色器的 RGBA 色彩資料。 請注意，此語意的處理方式與座標資料相同；該語意僅協助您識別其為色彩資料。 |
-| gl\_FragData\[n\]   | SV\_Target\[n\]，適用於從像素著色器寫入目標紋理或其他像素緩衝區。                                                                               |
+| gl\_FragData\[n\]   | SV\_目標\[n\]針對至目標材質或其他像素緩衝區寫入像素著色器。                                                                               |
 
  
 
@@ -239,7 +239,7 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-在此案例中，SV\_TARGET 是轉譯目標的位置，當著色器執行完成時，會將像素色彩 (定義為四個浮動值的向量) 寫入此位置。
+在此情況下，SV\_目標是著色器完成執行時，寫入像素色彩 （定義為具有四個浮點值的向量），轉譯目標的位置。
 
 如需在 Direct3D 使用語意的詳細資訊，請閱讀 [HLSL 語意](https://msdn.microsoft.com/library/windows/desktop/bb509647)。
 

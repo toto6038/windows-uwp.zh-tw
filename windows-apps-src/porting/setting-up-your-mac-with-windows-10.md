@@ -1,17 +1,17 @@
 ---
 description: 使用目前的 Mac 電腦開發適用於 Windows 的 app。
-title: 使用 Windows 10 設定 Mac
+title: 設定 Mac 的 Windows 10
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: e4f7b0469ae8c50e6da40fb248678a69a2827931
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9051021"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57663823"
 ---
 # <a name="setting-up-your-mac-with-windows-10"></a>設定 Mac 的 Windows 10
 
@@ -20,17 +20,17 @@ ms.locfileid: "9051021"
 
 ## <a name="run-windows-on-your-mac-and-use-visual-studio"></a>在 Mac 上執行 Windows 和使用 Visual Studio
 
-準備好開始開發通用 Windows 應用程式，但手邊沒有電腦？ 沒關係 — 您可以使用您的 Mac！ 使用像是 Apple Boot Camp、 Oracle VirtualBox、 VMware Fusion 及 Parallels Desktop 常見協力廠商解決方案，您可以在 Apple 電腦上安裝 windows 10 和 Microsoft Visual Studio。
+準備好開始開發通用 Windows 應用程式，但手邊沒有電腦？ 沒關係 — 您可以使用您的 Mac！ Apple Boot Camp、 Oracle VirtualBox、 VMware Fusion 和 Parallels Desktop 等熱門協力廠商解決方案，您可以在您的 Apple 電腦上安裝 Windows 10 和 Microsoft Visual Studio。
 
-**注意：** 您將需要 windows 10 可開機映像的磁碟或 USB 快閃磁碟機。 如果您是 MSDN 訂閱者，可以從 MSDN 訂閱者下載中心下載安裝映像。 如果您不是訂閱者，您可以從[Microsoft Store](https://apps.microsoft.com/windows/app)購買安裝程式。 您也可以從[這個位置](https://go.microsoft.com/fwlink/?LinkId=623906)下載，如果您已經執行 Windows 而且想要升級，這就非常好用。
+**附註**  必須磁片或 USB 快閃磁碟機上的 Windows 10 開機映像。 如果您是 MSDN 訂閱者，可以從 MSDN 訂閱者下載中心下載安裝映像。 如果您不是訂閱者時，安裝程式可以購買[Microsoft Store](https://apps.microsoft.com/windows/app)。 您也可以從[這個位置](https://go.microsoft.com/fwlink/?LinkId=623906)下載，如果您已經執行 Windows 而且想要升級，這就非常好用。
 
-一旦您有執行 Windows，然後可以從[開發人員下載適用於 windows 10](https://developer.microsoft.com/en-us/windows/downloads)安裝最新版本的 Visual Studio，並開始撰寫應用程式 ！
+Windows 執行之後，您可以再安裝最新版的 Visual Studio[開發人員下載適用於 Windows 10](https://developer.microsoft.com/en-us/windows/downloads)並開始撰寫應用程式 ！
 
-**注意：** 如果您打算使用 Visual Studio 裝置模擬器，您**必須**安裝 64 位元 (x64) 版本的 windows 10 專業版或更高。 但是，某些舊版的 Mac 無法執行 64 位元的 Windows。 請透過這個 [Apple 支援頁面](https://go.microsoft.com/fwlink/p/?LinkID=397959)，向 Apple 確認您的硬體是否相容。
+**附註**  如果您打算使用 Visual Studio 裝置模擬器，您**必須**安裝 64 位元 (x64) 版本的 Windows 10 專業版或更高。 但是，某些舊版的 Mac 無法執行 64 位元的 Windows。 請透過這個 [Apple 支援頁面](https://go.microsoft.com/fwlink/p/?LinkID=397959)，向 Apple 確認您的硬體是否相容。
 
 ## <a name="apple-boot-camp"></a>Apple Boot Camp
 
-Boot Camp Assistant app 會在每個新的 Mac 上預先安裝並啟動它將逐步引導您完成安裝 windows 10 的程序。 您需要的只有一份 Windows 複本 (來自上述的來源)，以及至少 30 Gb 的可用磁碟空間。 安裝之後，您可以選擇開機進入 Mac OSX 或 Windows 10。 如需詳細資訊，請參閱 Apple 的 [Boot Camp 指示頁面](https://go.microsoft.com/fwlink/?LinkId=623912)。
+Boot Camp 小幫手應用程式已預先安裝在每個新的 Mac，並啟動將引導您完成安裝 Windows 10 的程序。 您需要的只有一份 Windows 複本 (來自上述的來源)，以及至少 30 Gb 的可用磁碟空間。 安裝之後，您可以選擇開機進入 Mac OSX 或 Windows 10。 如需詳細資訊，請參閱 Apple 的 [Boot Camp 指示頁面](https://go.microsoft.com/fwlink/?LinkId=623912)。
 
 ## <a name="parallels-desktop"></a>Parallels Desktop
 

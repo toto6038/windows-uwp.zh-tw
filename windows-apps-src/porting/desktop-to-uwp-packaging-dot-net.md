@@ -1,31 +1,31 @@
 ---
-Description: This guide explains how to configure your Visual Studio Solution to edit, debug, and package desktop application.
+Description: 本指南說明如何設定 Visual Studio 方案，以編輯、 偵錯和封裝傳統型應用程式。
 Search.Product: eADQiWindows 10XVcnh
-title: 使用 Visual Studio 封裝的傳統型應用程式
+title: 使用 Visual Studio 封裝傳統型應用程式
 ms.date: 08/30/2017
 ms.topic: article
-keywords: Windows 10, uwp
+keywords: Windows 10, UWP
 ms.assetid: 807a99a7-d285-46e7-af6a-7214da908907
 ms.localizationpriority: medium
 ms.openlocfilehash: 04a16b5e824621b0e7f32c8cb012db326f591d48
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9048255"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655963"
 ---
-# <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝的傳統型應用程式
+# <a name="package-a-desktop-application-by-using-visual-studio"></a>使用 Visual Studio 封裝傳統型應用程式
 
-您可以使用 Visual Studio 為您的傳統型應用程式產生套件。 然後，您可以將套件發行至 Microsoft Store 或側載它至一或多個電腦。
+您可以使用 Visual Studio 為您的傳統型應用程式產生套件。 然後，您可以發行至 Microsoft Store 或側載其封裝到一個或多部電腦上的。
 
 最新版的 Visual Studio 提供新版的封裝專案，讓您不必執行以往封裝應用程式過程中需要執行的所有手動步驟。 只需加入封裝專案、參考桌面專案，然後按 F5 對您的應用程式進行偵錯。 不需進行任何手動調整。 這個有效率的全新體驗可以大幅改善舊版 Visual Studio 中所提供的體驗。
 
 >[!IMPORTANT]
->在 Windows 10，版本 1607 開始，引進了能夠建立 （亦稱為傳統型橋接器） 的傳統型應用程式的 Windows 應用程式套件和它只能在專案中目標為 Windows 10 年度更新版 (10.0;組建 14393） 或更新版本在 Visual Studio 中的。
+>Windows 10 版本 1607年中引進了能夠建立您的桌面應用程式 （亦稱為傳統型橋接器） 是 Windows 應用程式套件，它僅適用於 Windows 10 Anniversary Update (10.0; 為目標的專案中組建 14393） 或更新版本，在 Visual Studio 中的。
 
 ## <a name="first-prepare-your-application"></a>首先，準備您的應用程式
 
-開始建立您的應用程式套件之前，先檢閱本指南：[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)。
+在您開始建立您的應用程式封裝前，請檢閱本指南：[準備封裝傳統型應用程式](desktop-to-uwp-prepare.md)。
 
 <a id="new-packaging-project"/>
 
@@ -64,7 +64,7 @@ ms.locfileid: "9048255"
 
 7. 使用[建立應用程式套件](../packaging/packaging-uwp-apps.md)精靈來產生 appxupload 檔案。
 
-   您可以將該檔案上傳直接到市集。
+   您可以直接到存放區上, 傳該檔案。
 
 **影片**
 
@@ -73,26 +73,26 @@ ms.locfileid: "9048255"
 
 ## <a name="next-steps"></a>後續步驟
 
-**尋找您的問題解答**
+**尋找問題的解答**
 
 有任何問題嗎？ 請在 Stack Overflow 上發問。 我們的團隊會監視這些[標記](https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge)。 您也可以[在此處](https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&sort=relevancedesc&searchTerm=%5BDesktop%20Converter%5D)詢問我們。
 
-**提供意見反應或功能建議**
+**提供意見反應或提出功能建議**
 
 請參閱 [UserVoice](https://wpdev.uservoice.com/forums/110705-universal-windows-platform/category/161895-desktop-bridge-centennial)。
 
-**執行、 偵錯或測試您的傳統型應用程式**
+**執行、 偵錯或測試您的桌面應用程式**
 
-請參閱[執行、 偵錯以及測試封裝的傳統型應用程式](desktop-to-uwp-debug.md)
+請參閱[執行、 偵錯和測試封裝的桌面應用程式](desktop-to-uwp-debug.md)
 
-**透過新增 UWP Api 來增強您的傳統型應用程式**
+**加入 UWP Api 來加強您的桌面應用程式**
 
 請參閱[增強您的 Windows 10 傳統型應用程式](desktop-to-uwp-enhance.md)
 
-**透過新增 UWP 專案和 Windows 執行階段元件來擴充您的傳統型應用程式**
+**新增 UWP 專案和 Windows 執行階段元件來擴充您的桌面應用程式**
 
 請參閱[使用現代化 UWP 元件擴充您的傳統型應用程式](desktop-to-uwp-extend.md)。
 
-**散布您的應用程式**
+**散發您的應用程式**
 
-請參閱[散發的已封裝的傳統型應用程式](desktop-to-uwp-distribute.md)
+請參閱[發佈封裝的桌面應用程式](desktop-to-uwp-distribute.md)

@@ -4,32 +4,32 @@ title: 使用自訂 SSL 憑證佈建 Device Portal
 description: TBD
 ms.date: 07/11/2017
 ms.topic: article
-keywords: windows 10，uwp，裝置入口網站
+keywords: windows 10 uwp，裝置入口網站
 ms.localizationpriority: medium
 ms.openlocfilehash: faef15d523f56b6e45f77e0ccdbb2f5846f7a15a
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8921224"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57616693"
 ---
 # <a name="provision-device-portal-with-a-custom-ssl-certificate"></a>使用自訂 SSL 憑證佈建 Device Portal
-在 Windows 10 Creators Update 中，Windows Device Portal 會新增裝置系統管理員使用自訂憑證安裝在 HTTPS 通訊的方式。 
+在 Windows 10 Creators Update 中，Windows Device Portal 新增了一種方法，可讓裝置管理員安裝適用於 HTTPS 通訊的自訂憑證。 
 
-雖然您自己的電腦上，您可以執行此動作，這項功能是大部分被供中都有現有的憑證基礎結構的企業。  
+雖然您可以在自己的電腦上執行此動作，但這項功能最主要適用於現有憑證基礎結構已經準備就緒的企業。  
 
-例如，公司可能會有憑證授權單位 (CA) 用來簽署憑證，透過 HTTPS 提供服務的內部網路網站。 這項功能上面代表基礎結構。 
+例如，公司可能會有憑證授權單位 (CA)，用來為透過 HTTPS 服務的內部網站簽署憑證。 這項功能是建立在該基礎結構之上。 
 
 ## <a name="overview"></a>概觀
-根據預設，Device Portal 會產生自我簽署的根 CA，並接著會使用的登入的每個端點接聽的 SSL 憑證。 這包括`localhost`， `127.0.0.1`，以及`::1`(IPv6 localhost)。
+根據預設，Device Portal 會產生自我簽署的根憑證授權單位 (CA)，然後使用此授權單位簽署其接聽所在的每個端點的 SSL 憑證。 這包括 `localhost`、`127.0.0.1` 和 `::1` (IPv6 localhost)。
 
-也包含是裝置的主機名稱 (例如， `https://LivingRoomPC`) 和指派給裝置的每個連結本機 IP 位址 (最多兩個 [IPv4，IPv6] 每個網路介面卡)。 您可以看到裝置連結本機 IP 位址來看看裝置入口網站中的網路功能工具。 他們將開始`10.`或`192.`的 IPv4，或`fe80:`ipv6。 
+此外，還包括裝置的主機名稱 (例如，`https://LivingRoomPC`)，以及每個指派給裝置的連結-本機 IP 位址 (每個網路介面卡最多兩個 [IPv4, IPv6])。 您可在 Device Portal 的網路工具中尋找，以查看裝置的連結-本機 IP 位址。 這些位址將會以 `10.` 或 `192.` (適用於 IPv4) 或 `fe80:` (適用於 IPv6) 開頭。 
 
-在預設設定中，憑證警告可能會出現在您的瀏覽器中，因為未受信任的根 CA。 具體而言，裝置入口網站所提供的 SSL 憑證是由根瀏覽器或電腦不信任的 CA 簽署。 這可以透過建立新的受信任的根 CA 修正。
+在預設設定中，瀏覽器可能會因為根 CA 未受信任而出現憑證警告。 具體而言，Device Portal 提供的 SSL 憑證是由瀏覽器或電腦不信任的根 CA 所簽署。 您可以建立新的受信任根 CA 來修正此問題。
 
 ## <a name="create-a-root-ca"></a>建立根 CA
 
-這應該只執行您的公司 （或家用版） 不會有憑證基礎結構設定，並，才應該執行一次。 下列 PowerShell 指令碼會建立根 CA 稱為_WdpTestCA.cer_。 此檔案安裝至本機電腦的受信任的根憑證授權單位會導致您的裝置由這個根 CA 簽署的 SSL 憑證信任。 您可以 （且應該） 安裝此.cer 檔案，在您想要連線到 Windows 裝置入口網站每一部電腦上。  
+只有在您的公司 (或家庭) 沒有設定憑證基礎結構時，才要這樣做，而且只能做一次。 下列 PowerShell 指令碼會建立稱為 _WdpTestCA.cer_ 的根 CA。 將此檔案安裝到本機電腦的受信任根憑證授權單位會導致您的裝置信任此根 CA 所簽署的 SSL 憑證簽署。 您可以 (而且也應該) 將這個 .cer 檔案安裝在每一台要連接到 Windows Device Portal 的電腦。  
 
 ```PowerShell
 $CN = "PickAName"
@@ -42,13 +42,13 @@ $rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Sub
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-這建立之後，您可以使用_WdpTestCA.cer_檔案來簽署 SSL 憑證。 
+建立此授權單位之後，您就可以使用 _WdpTestCA.cer_ 檔案來簽署 SSL 憑證。 
 
-## <a name="create-an-ssl-certificate-with-the-root-ca"></a>根 CA 建立 SSL 憑證
+## <a name="create-an-ssl-certificate-with-the-root-ca"></a>使用根 CA 建立 SSL 憑證
 
-SSL 憑證有兩個重要功能： 保護您的連線透過加密，並確認您實際通訊使用的位址列中顯示的瀏覽器 (Bing.com，192.168.1.37，等) 並不是惡意的協力廠商。
+SSL 憑證有兩個重要功能：透過加密保護您的連線安全，以及確認您確實是與瀏覽器列顯示的位址 (Bing.com、192.168.1.37 等) 而非惡意第三方進行通訊。
 
-下列 PowerShell 指令碼會建立的 SSL 憑證`localhost`端點。 裝置入口網站接聽每個端點需要它自己的憑證。您可以取代`$IssuedTo`適用於您裝置的引數中每個不同的端點使用指令碼： 主機名稱、 localhost 和 IP 位址。
+下列 PowerShell 指令碼會建立 `localhost` 端點的 SSL 憑證。 Device Portal 接聽的每個端點都必須有自己的憑證。您可以將指令碼中的 `$IssuedTo` 引數取代為您裝置的各個不同端點：主機名稱、localhost 和 IP 位址。
 
 ```PowerShell
 $IssuedTo = "localhost"
@@ -64,26 +64,26 @@ $cert = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -Subj
 $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (ConvertTo-SecureString -String $Password -Force -AsPlainText)
 ```
 
-如果您有多個裝置，您可以重複使用 localhost.pfx 檔案，但您仍然需要個別建立每個裝置的 IP 位址和主機名稱憑證。
+如果您有多個裝置，則可以重複使用 localhost.pfx 檔案，但您仍然需要分別為每個裝置建立 IP 位址和主機名稱憑證。
 
-產生套件組合的.pfx 檔案時，您將需要載入 Windows Device Portal。 
+當一連串 .pfx 檔案產生後，您需要將這些檔案載入 Windows Device Portal。 
 
-## <a name="provision-device-portal-with-the-certifications"></a>使用 certification(s) 的佈建裝置入口網站
+## <a name="provision-device-portal-with-the-certifications"></a>使用憑證佈建 Device Portal
 
-針對每個.pfx 檔案，您已建立的裝置，您將需要從提升權限的命令提示字元執行下列命令。
+您必須從提升權限的命令提示字元，對您為裝置建立的每個 .pfx 檔案執行下列命令。
 
 ```
 WebManagement.exe -SetCert <Path to .pfx file> <password for pfx> 
 ```
 
-請參閱下方，例如用法：
+請參閱以下內容以取得範例用法：
 ```
 WebManagement.exe -SetCert localhost.pfx PickAPassword
 WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 ```
 
-一旦您已安裝憑證，只需重新啟動服務讓變更生效：
+安裝憑證之後，只需重新啟動服務讓變更生效即可：
 
 ```
 sc stop webmanagement
@@ -91,5 +91,5 @@ sc start webmanagement
 ```
 
 > [!TIP]
-> IP 位址會隨著時間改變。
-許多網路使用 DHCP 來提供出 IP 位址，讓裝置永遠不會取得他們之前已擁有相同的 IP 位址。 如果您已在裝置上建立 IP 位址的憑證和裝置的地址有所變更，Windows 裝置入口網站將會產生新的憑證使用現有的自我簽署的憑證，並將會停止使用您建立的一個。 這會導致憑證警告頁面，以再次出現在您的瀏覽器。 基於這個原因，我們建議您連接到您的裝置透過其 hostname，您可以設定裝置入口網站中。 這些將會保持不變，無論 IP 位址。
+> IP 位址可能會在一段時間後變更。
+許多網路會使用 DHCP 提供 IP 位址，因此裝置不一定取得相同的 IP 位址。 如果您為裝置的 IP 位址建立了憑證，但裝置的位址已變更時，Windows Device Portal 將會使用現有的自我簽署憑證產生新的憑證，並停止使用您所建立的憑證。 這會造成您的瀏覽器再次顯示憑證警告頁面。 因此，建議您透過裝置的主機名稱 (您可在 Device Portal 中設定此名稱) 連接到裝置。 無論 IP 位址為何，這都會保持不變。

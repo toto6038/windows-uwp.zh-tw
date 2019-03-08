@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP, 遊戲, 樣本, directx, 結構
 ms.localizationpriority: medium
 ms.openlocfilehash: 55b933db7f9b26de2caa3877bde445f96c08d561
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9049875"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653723"
 ---
 # <a name="marble-maze-application-structure"></a>Marble Maze 應用程式結構
 
@@ -28,7 +28,7 @@ DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程�
 以下是本文件所討論在建構遊戲程式碼時的一些重點：
 
 -   在初始化階段，設定遊戲所使用的執行階段和程式庫元件，並載入遊戲專用的資源。
--   UWP app 必須在啟動後的 5 秒內開始處理事件。 因此，載入應用程式時，只需載入必要資源。 遊戲應該在背景中載入大量資源，並顯示進度畫面。
+-   UWP 應用程式必須在啟動後的 5 秒內開始處理事件。 因此，載入應用程式時，只需載入必要資源。 遊戲應該在背景中載入大量資源，並顯示進度畫面。
 -   在遊戲迴圈中，回應 Windows 事件、讀取使用者輸入、更新場景物件，以及轉譯場景。
 -   使用事件處理常式來回應視窗事件 (這些處理常式會取代 Windows 傳統型應用程式的視窗訊息)。
 -   使用狀態機器來控制遊戲邏輯的流程和順序。
@@ -38,19 +38,19 @@ DirectX 通用 Windows 平台 (UWP) 應用程式的結構與傳統型應用程�
 
 Marble Maze 中的某些元件只要稍加修改 (甚至不需修改)，就可在任何遊戲中重複使用。 您可以針對自己的遊戲，適度調整這些檔案提供的組織和概念。 下表簡短說明重要的原始程式碼檔。
 
-| 檔案                                      | 描述                                                                                                                                                                          |
+| Files                                      | 描述                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | App.h、App.cpp               | 定義 **App** 和 **DirectXApplicationSource** 類別，封裝應用程式的檢視 (視窗、執行緒及事件)。                                                     |
 | Audio.h、Audio.cpp                         | 定義管理音訊資源的 **Audio** 類別。                                                                                                                          |
 | BasicLoader.h、BasicLoader.cpp             | 定義 **BasicLoader** 類別，提供公用程式方法來協助您載入紋理、網格和著色器。                                                                  |
 | BasicMath.h                                | 定義結構和函式來協助您使用向量和矩陣資料及計算。 這其中有許多函式與 HLSL 著色器類型相容。                     |
-| BasicReaderWriter.h、BasicReaderWriter.cpp | 定義 **BasicReaderWriter** 類別，在 UWP 應用程式中使用 Windows 執行階段來讀取和寫入檔案資料。                                                                    |
+| BasicReaderWriter.h、BasicReaderWriter.cpp | 定義 **BasicReaderWriter** 類別，在 UWP app 中使用 Windows 執行階段來讀取和寫入檔案資料。                                                                    |
 | BasicShapes.h、BasicShapes.cpp             | 定義 **BasicShapes** 類別，提供公用程式方法來建立基本圖形，例如立方體和球體 (Marble Maze 實作不會使用這些檔案)。 |                                                                                  |
 | Camera.h、Camera.cpp                       | 定義 **Camera** 類別，提供相機的位置和方向。                                                                                               |
 | Collision.h、Collision.cpp                 | 管理彈珠與其他物件 (例如迷宮) 之間的碰撞資訊。                                                                                                       |
 | DDSTextureLoader.h、DDSTextureLoader.cpp   | 定義 **CreateDDSTextureFromMemory** 函式，從記憶體緩衝區載入 .dds 格式的紋理。                                                              |
 | DirectXHelper.h             | 定義對許多 DirectX UWP app 有幫助的 DirectX 協助程式函式。                                                                            |
-| LoadScreen.h、LoadScreen.cpp               | 定義 **LoadScreen** 類別，在應用程式初始化期間顯示載入畫面。                                                                                         |
+| LoadScreen.h、LoadScreen.cpp               | 定義 **LoadScreen** 類別，在 app 初始化期間顯示載入畫面。                                                                                         |
 | MarbleMazeMain.h、MarbleMazeMain.cpp               | 定義 **MarbleMazeMain** 類別，管理遊戲專用資源並定義許多遊戲邏輯。                                                                          |
 | MediaStreamer.h、MediaStreamer.cpp         | 定義 **MediaStreamer** 類別，使用媒體基礎來協助遊戲管理音訊資源。                                                                            |
 | PersistentState.h、PersistentState.cpp     | 定義 **PersistentState** 類別，在備份存放區讀取和寫入基本資料型別。                                                                      |
@@ -68,7 +68,7 @@ Marble Maze 中的某些元件只要稍加修改 (甚至不需修改)，就可�
 
 請盡可能使用執行階段格式，而非設計階段格式，以更有效率地載入遊戲資源。
 
-*設計階段*格式是您在設計資源時所使用的格式。 一般而言，3D 設計工具可處理設計階段格式。 有些設計階段格式也是以文字為基礎的，因此可讓您在任何文字編輯器中加以修改。 設計階段格式可能很冗長，所包含的資訊可能超出遊戲所需。 *「執行階段」* 格式是由遊戲讀取的二進位格式。 執行階段格式通常較為精簡，載入時比對應的設計階段格式更有效率。 這就是為什麼大部分遊戲會在執行階段使用執行階段資產。
+「設計階段」格式是您在設計資源時所使用的格式。 一般而言，3D 設計工具可處理設計階段格式。 有些設計階段格式也是以文字為基礎的，因此可讓您在任何文字編輯器中加以修改。 設計階段格式可能很冗長，所包含的資訊可能超出遊戲所需。 「執行階段」格式是由遊戲讀取的二進位格式。 執行階段格式通常較為精簡，載入時比對應的設計階段格式更有效率。 這就是為什麼大部分遊戲會在執行階段使用執行階段資產。
 
 雖然您的遊戲可直接讀取設計階段格式，但使用不同的執行階段格式有許多好處。 由於執行階段格式通常較為精簡，因此所需的磁碟空間較少，而且在網路上傳輸的時間較短。 此外，執行階段格式通常表示為記憶體對應的資料結構。 因此，它們可以更快速地載入記憶體，例如，比 XML 型文字檔更快。 最後，因為個別的執行階段格式通常是以二進位編碼，所以更不易遭到使用者修改。
 
@@ -83,7 +83,7 @@ Marble Maze 遵循一般 UWP 應用程式的生命週期。 如需 UWP 應用程
 
 當 UWP 遊戲初始化時，它通常會初始化執行階段元件，例如 Direct3D、Direct2D，以及它使用的任何輸入、音訊或物理程式庫。 它也會載入遊戲開始之前所需的遊戲專用資源。 這個初始化會在遊戲工作階段期間發生一次。
 
-初始化之後，遊戲通常會執行 *「遊戲迴圈」*。 在這個迴圈中，遊戲通常會執行四個動作：處理 Windows 事件、收集輸入、更新場景物件，以及呈現場景。 當遊戲更新場景時，會將目前的輸入狀態套用到場景物件，並模擬物理事件，例如物件碰撞。 遊戲也可以執行其他活動，例如播放音效或經由網路傳送資料。 當遊戲呈現場景時，它會擷取場景的目前狀態，並將它繪製到顯示裝置。 下列章節將進一步說明這些活動。
+初始化之後，遊戲通常會執行「遊戲迴圈」。 在這個迴圈中，遊戲通常會執行四個動作：處理 Windows 事件、收集輸入、更新場景物件，以及呈現場景。 當遊戲更新場景時，會將目前的輸入狀態套用到場景物件，並模擬物理事件，例如物件碰撞。 遊戲也可以執行其他活動，例如播放音效或經由網路傳送資料。 當遊戲呈現場景時，它會擷取場景的目前狀態，並將它繪製到顯示裝置。 下列章節將進一步說明這些活動。
 
 ##  <a name="adding-to-the-template"></a>新增到範本
 
@@ -123,9 +123,9 @@ Marble Maze 遵循一般 UWP 應用程式的生命週期。 如需 UWP 應用程
     });
 ```
 
-**MarbleMazeMain** 類別會定義 *m\_deferredResourcesReady* 旗標，以表示非同步載入完成。 **MarbleMazeMain::LoadDeferredResources** 方法會在載入遊戲資源後設定這個旗標。 應用程式的更新 (**MarbleMazeMain::Update**) 和呈現 (**MarbleMazeMain::Render**) 階段會檢查這個旗標。 如果設定了這個旗標，遊戲就會繼續正常執行。 如果尚未設定這個旗標，遊戲就會顯示正在載入的畫面。
+**MarbleMazeMain**類別會定義*m\_deferredResourcesReady*旗標，表示非同步載入已完成。 **MarbleMazeMain::LoadDeferredResources** 方法會在載入遊戲資源後設定這個旗標。 應用程式的更新 (**MarbleMazeMain::Update**) 和呈現 (**MarbleMazeMain::Render**) 階段會檢查這個旗標。 如果設定了這個旗標，遊戲就會繼續正常執行。 如果尚未設定這個旗標，遊戲就會顯示正在載入的畫面。
 
-如需 UWP 應用程式的非同步程式設計的詳細資訊，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
+如需 UWP app 的非同步程式設計的詳細資訊，請參閱 [C++ 的非同步程式設計](https://docs.microsoft.com/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps)。
 
 > [!TIP]
 > 如果您使用 Windows 執行階段 C++ 程式庫 (也就是 DLL) 來撰寫遊戲程式碼，請考慮是否閱讀[使用 C++ 建立 UWP app 的非同步作業](https://docs.microsoft.com/cpp/parallel/concrt/creating-asynchronous-operations-in-cpp-for-windows-store-apps)，以了解如何建立可供應用程式和其他程式庫使用的非同步作業。
@@ -178,7 +178,7 @@ void App::Run()
 ## <a name="the-state-machine"></a>狀態機器
 
 
-遊戲通常包含 *「狀態機器」*(也稱為 *「有限狀態機器」* 或 FSM)，可控制遊戲邏輯的流程和順序。 狀態機器包含一定數目的狀態，也能夠在這些狀態之間切換。 狀態機器通常從 *「初始」* 狀態開始、轉換成一或多個 *「中繼」* 狀態，而且可能會以 *「終止」* 狀態結束。
+遊戲通常包含「狀態機器」(也稱為「有限狀態機器」或 FSM)，可控制遊戲邏輯的流程和順序。 狀態機器包含一定數目的狀態，也能夠在這些狀態之間切換。 狀態機器通常從「初始」狀態開始、轉換成一或多個「中繼」狀態，而且可能會以「終止」狀態結束。
 
 遊戲迴圈通常會使用狀態機器，以執行目前遊戲狀態的特定邏輯。 Marble Maze 會定義 **GameState** 列舉，此列舉定義遊戲的每個可能的狀態。
 
@@ -195,7 +195,7 @@ enum class GameState
 };
 ```
 
-例如，**MainMenu** 狀態定義主功能表出現，遊戲沒在進行。 相反地，**InGameActive** 狀態定義遊戲在進行中，不顯示功能表。 **MarbleMazeMain** 類別定義 **m\_gameState** 成員變數來保留進行中的遊戲狀態。
+例如，**MainMenu** 狀態定義主功能表出現，遊戲沒在進行。 相反地，**InGameActive** 狀態定義遊戲在進行中，不顯示功能表。 **MarbleMazeMain**類別會定義**m\_gameState**成員變數以保存作用中的遊戲狀態。
 
 **MarbleMazeMain::Update** 和 **MarbleMazeMain::Render** 方法使用 switch 陳述式執行目前狀態的邏輯。 下列範例示範 switch 陳述式在 **MarbleMazeMain::Update** 方法中可能的樣子 (移除詳細資料以說明結構)。
 
@@ -414,7 +414,7 @@ void MarbleMazeMain::LoadState()
 > [!IMPORTANT]
 > Marble Maze 不會區分冷啟動 (也就是第一次啟動，先前沒有暫停事件) 和從暫停狀態中繼續。 建議所有 UWP 應用程式都採用此設計。
 
-如需有關應用程式資料的詳細資訊，請參閱[儲存及擷取設定和其他應用程式資料](https://msdn.microsoft.com/library/windows/apps/mt299098)。
+如需有關應用程式資料的詳細資訊，請參閱[儲存及擷取設定和其他 App 資料](https://msdn.microsoft.com/library/windows/apps/mt299098)。
 
 ##  <a name="next-steps"></a>後續步驟
 
@@ -423,9 +423,9 @@ void MarbleMazeMain::LoadState()
 
 ## <a name="related-topics"></a>相關主題
 
-* [在 Marble Maze 範例中加入視覺化內容](adding-visual-content-to-the-marble-maze-sample.md)
-* [Marble Maze 範例基礎觀念](marble-maze-sample-fundamentals.md)
-* [使用 C++ 和 DirectX 開發 Marble Maze (UWP 遊戲)](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [將視覺內容加入至滾珠迷宮範例](adding-visual-content-to-the-marble-maze-sample.md)
+* [滾珠迷宮範例基本概念](marble-maze-sample-fundamentals.md)
+* [「 彈珠迷宮 」、 UWP c + + 和 DirectX 遊戲開發](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
  
 

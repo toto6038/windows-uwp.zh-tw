@@ -7,15 +7,15 @@ ms.date: 01/25/2018
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: d8729826c2f372b3d3b5607ce828aaf515e47f3d
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933909"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57643983"
 ---
-# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教學：在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
+# <a name="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-uwp-app"></a>教學課程：在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)
 
-![Surface Dial 與 Surface Studio 的影像](images/radialcontroller/dial-pen-studio-600px.png)  
+![使用介面的 Studio 介面撥號的映像](images/radialcontroller/dial-pen-studio-600px.png)  
 *配備 Surface Studio 和 Surface 手寫筆的 Surface Dial* (可在 [Microsoft 網上商店](https://aka.ms/purchasesurfacedial)購買)。
 
 本教學課程逐步解說如何自訂轉盤裝置 (例如 Surface Dial) 所支援的使用者互動體驗。 我們會使用範例應用程式的程式碼片段，這您可以從 GitHub 下載 (請參閱[範例程式碼](#sample-code))，來展示每個步驟中所討論的各種不同功能和相關 [**RadialController**](https://docs.microsoft.com/uwp/api/windows.ui.input.radialcontroller) API。
@@ -42,11 +42,11 @@ Dial 支援三個基本手勢︰
 
 * 執行 Windows 10 Creators Update 或更新版本的電腦 (或虛擬機器)
 * [Visual Studio 2017 (10.0.15063.0)](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
 * 轉盤裝置 (這次僅限 [Surface Dial](https://aka.ms/purchasesurfacedial))
 * 如果您是使用 Visual Studio 開發通用 Windows 平台 (UWP) app 的新手，請在您開始本教學課程之前參閱這些主題︰  
     * [開始設定](https://docs.microsoft.com/windows/uwp/get-started/get-set-up)
-    * [建立 Hello, world 應用程式 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+    * [建立"Hello，world"應用程式 (XAML)](https://docs.microsoft.com/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## <a name="set-up-your-devices"></a>設定您的裝置
 
@@ -58,13 +58,13 @@ Dial 支援三個基本手勢︰
 6. 返回您的 Windows 裝置並選取 **\[新增藍牙或其他裝置\]**。
 7. 在 **\[新增裝置\]** 對話方塊中，選取 **\[藍牙\]** > **\[Surface Dial\]**。 您的 Surface Dial 現在應該連接，而且新增到 **\[藍牙與其他裝置\]** 設定頁面上 **\[滑鼠、鍵盤和手寫筆\]** 下的裝置清單。
 8. 按住幾秒鐘以顯示內建功能表，測試 Dial。
-9. 如果功能表未顯示 （Dial 應該也會震動） 在螢幕上，移回到藍牙設定，移除裝置，然後再試一次連接裝置。
+9. 如果功能表未顯示在您 （也應該震動撥） 畫面上，移回藍芽設定 中，移除裝置，然後再試一次連接裝置。
 
 > [!NOTE]
 > 轉盤裝置可以透過 **\[轉盤\]** 設定進行設定︰
 > 1. 在 **\[開始\]** 功能表上，選取 **\[設定\]**。
 > 2. 選取 **\[裝置\]** > **\[轉盤\]**。    
-> ![轉盤設定畫面](images/radialcontroller/wheel-settings.png)
+> ![滾輪設定畫面](images/radialcontroller/wheel-settings.png)
 
 現在就可以開始本教學課程。 
 
@@ -79,15 +79,15 @@ Dial 支援三個基本手勢︰
 3. 如果您沒有 GitHub 帳戶，或者您只想要專案的本機複本，請選擇 **\[下載 ZIP\]**(您必須定期返回以下載最新的更新)。
 
 > [!IMPORTANT]
-> 範例中大部分的程式碼已標示註解。當我們逐步執行本主題中的每個步驟時，您會被要求取消註解各個不同區段的程式碼。 在 Visual studio 中，只要反白顯示程式碼行，並按 CTRL-K 然後按 CTRL-U。
+> 範例中大部分的程式碼已標示註解。當我們逐步進行本主題的每個步驟時，您會被要求取消註解各個不同區段的程式碼。 在 Visual studio 中，只要反白顯示程式碼行，並按 CTRL-K 然後按 CTRL-U。
 
 ## <a name="components-that-support-wheel-functionality"></a>支援轉盤功能的元件
 
 這些物件提供 UWP app 大量轉盤裝置體驗。
 
-| 元件 | 說明 |
+| Component | 描述 |
 | --- | --- |
-| [**RadialController** 類別](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)及相關 | 表示轉盤輸入裝置或配件，例如 Surface Dial。 |
+| [**RadialController**類別](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Input.RadialController)和相關 | 表示轉盤輸入裝置或配件，例如 Surface Dial。 |
 | [**IRadialControllerConfigurationInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790709) / [**IRadialControllerInterop**](https://msdn.microsoft.com/library/windows/desktop/mt790711)<br/>我們在此不涵蓋此項功能，如需詳細資訊，請參閱 [Windows 的傳統桌面範例](https://aka.ms/radialcontrollerclassicsample)。 | 使用 UWP app 啟用互通性。 |
 
 ## <a name="step-1-run-the-sample"></a>步驟 1：執行範例
@@ -98,7 +98,7 @@ Dial 支援三個基本手勢︰
 3. 按下 F5 進行編譯、部署和執行。 
 
 > [!NOTE]
-> 或者，您可以選取 **\[偵錯\]** > **\[開始偵錯\]** 功能表項目或選取此處顯示的 **\[本機電腦**執行\] 按鈕︰![Visual Studio 組建專案按鈕](images/radialcontroller/wheel-vsrun.png)
+> 或者，您可以選取**偵錯** > **開始偵錯**功能表項目或選取**本機**執行如下所示的按鈕：![Visual Studio 建置專案的按鈕](images/radialcontroller/wheel-vsrun.png)
 
 應用程式視窗隨即開啟，並在啟動顯示畫面出現幾秒後，您會看到這個初始畫面。
 
@@ -106,7 +106,7 @@ Dial 支援三個基本手勢︰
 
 好了，我們現在有基本 UWP app，而我們會在此教學課程的其餘部分使用它。 我們將在下列步驟中新增我們的 **RadialController** 功能。
 
-## <a name="step-2-basic-radialcontroller-functionality"></a>步驟 2︰基本 RadialController 功能
+## <a name="step-2-basic-radialcontroller-functionality"></a>步驟 2：基本 RadialController 功能
 
 App 執行中且在前景中，按住 \[Surface Dial\] 以顯示 **\[RadialController\]**功能表。
 
@@ -120,12 +120,12 @@ App 執行中且在前景中，按住 \[Surface Dial\] 以顯示 **\[RadialContr
 
 現在，我們將開始一些基本自訂。
 
-## <a name="step-3-add-controls-for-wheel-input"></a>步驟 3︰新增轉盤輸入的控制項
+## <a name="step-3-add-controls-for-wheel-input"></a>步驟 3：新增滾輪輸入的控制項
 
 首先，加入我們的 App 的 UI：
 
 1. 請開啟 MainPage_Basic.xaml 檔案，
-2. 尋找標有此步驟標題的程式碼 (「<!-- 步驟 3︰新增轉盤輸入的控制項 -->」)。
+2. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 3:新增滾輪輸入的控制項-->")。
 3. 取消註解下列行。
 
     ```xaml
@@ -159,12 +159,12 @@ App 執行中且在前景中，按住 \[Surface Dial\] 以顯示 **\[RadialContr
 
 ![基本範例 App UI](images/radialcontroller/wheel-app-step3-basicui.png)
 
-## <a name="step-4-customize-the-basic-radialcontroller-menu"></a>步驟 4︰自訂基本 RadialController 功能表
+## <a name="step-4-customize-the-basic-radialcontroller-menu"></a>步驟 4：自訂基本的 RadialController 功能表
 
 現在我們來新增所需的程式碼，以啟用 **RadialController** 的控制項存取權。
 
 1. 請開啟 MainPage_Basic.xaml.cs 檔案，
-2. 尋找標有此步驟標題的程式碼 (「步驟 4︰基本 RadialController 功能表自訂」)。
+2. 尋找此步驟中的標題以標示的程式碼 ("/ / 步驟 4:基本 RadialController 功能表自訂 」）。
 3. 取消註解下列行：
     - [Windows.UI.Input](https://docs.microsoft.com/uwp/api/windows.ui.input) 和 [Windows.Storage.Streams](https://docs.microsoft.com/uwp/api/windows.storage.streams) 類型參考用於後續步驟的功能︰  
     
@@ -282,12 +282,12 @@ App 執行中且在前景中，按住 \[Surface Dial\] 以顯示 **\[RadialContr
 
 好了，我們來連結這些按鈕。
 
-## <a name="step-5-configure-menu-at-runtime"></a>步驟 5︰在執行階段設定功能表
+## <a name="step-5-configure-menu-at-runtime"></a>步驟 5：在執行階段設定功能表
 
 在此步驟中，我們將 **\[新增/移除項目\]** 和 **\[重設 RadialController 功能表\]** 按鈕連結，以顯示動態自訂功能表的方式。
 
 1. 請開啟 MainPage_Basic.xaml.cs 檔案，
-2. 尋找標有此步驟標題的程式碼 (「步驟 5︰在執行階段設定功能表」)。
+2. 尋找此步驟中的標題以標示的程式碼 ("/ / 步驟 5:設定功能表在執行階段 」）。
 3. 以下列方法取消註解程式碼並再次執行 App，但不選取任何按鈕 (保留下一步使用)。  
 
     ``` csharp
@@ -340,7 +340,7 @@ App 執行中且在前景中，按住 \[Surface Dial\] 以顯示 **\[RadialContr
 
     請注意，功能表回復其原始狀態。
 
-## <a name="step-6-customize-the-device-haptics"></a>步驟 6︰自訂裝置觸覺回饋技術
+## <a name="step-6-customize-the-device-haptics"></a>步驟 6：自訂裝置 haptics
 Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對應目前的互動 (根據按一下或旋轉)。
 
 在此步驟中，我們向您展示您可以如何透過關聯滑桿和切換開關控制項來自訂觸覺回饋技術，並使用它們來動態指定觸覺回饋的行為。 例如，對於要啟用的觸覺回饋技術，切換開關必須設定為開啟，同時滑桿值指定點按回饋的重複頻率。 
@@ -349,7 +349,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 > 使用者可以在 **\[設定\]** >  **\[裝置\]** > **\[轉盤\]** 頁面中停用觸覺回饋技術。
 
 1. 請開啟 App.xaml.cs 檔案，
-2. 尋找標有此步驟標題的程式碼 (「步驟 6︰自訂裝置觸覺回饋技術」)。
+2. 尋找此步驟中的標題以標示的程式碼 (「 步驟 6:自訂裝置 haptics"）。
 3. 為第一行和第三行加註註解（「MainPage_Basic」和「MainPage」)，並取消註解第二個 (「MainPage_Haptics」)。  
 
     ``` csharp
@@ -358,7 +358,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
     rootFrame.Navigate(typeof(MainPage), e.Arguments);
     ```
 4. 請開啟 MainPage_Haptics.xaml 檔案，
-5. 尋找標有此步驟標題的程式碼 (「<!-- 步驟 6︰自訂裝置觸覺回饋技術 -->」)。
+5. 尋找此步驟中的標題以標示的程式碼 ("\<！-步驟 6:自訂 haptics--> 的裝置 」)。
 6. 取消註解下列行。 (此 UI 程式碼只指出目前裝置所支援的觸覺回饋技術功能)。    
 
     ```xaml
@@ -431,7 +431,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
     </StackPanel>
     ```
 7. 請開啟 MainPage_Haptics.xaml.cs 檔案
-8. 尋找標有此步驟標題的程式碼 (「步驟 6：觸覺回饋技術自訂」)。
+8. 尋找此步驟中的標題以標示的程式碼 (「 步驟 6:Haptics 自訂 」）
 9. 取消註解下列行：  
 
     - [Windows.Devices.Haptics](https://docs.microsoft.com/uwp/api/windows.devices.haptics) 類型參考適用於後續步驟中的功能。  
@@ -580,7 +580,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 
 現在，再次執行 App，藉由變更滑桿值和切換開關狀態，嘗試自訂觸覺回饋。
 
-## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>步驟 7︰定義 Surface Studio 和類似裝置的螢幕互動
+## <a name="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices"></a>步驟 7：螢幕上定義的介面 Studio 和類似的裝置互動
 與 Surface Studio 配對後，Surface Dial 可以提供更獨特的使用者體驗。 
 
 除了上述預設的長按功能表體驗之外，Surface Dial 也可以直接放置在 Surface Studio 的螢幕上。 這會產生特殊的「螢幕上」功能表。 
@@ -594,7 +594,7 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 1. 在 Surface Studio 裝置上下載範例 (已安裝 Visual Studio)
 2. 在 Visual Studio 中開啟範例
 3. 開啟 App.xaml.cs 檔案
-4. 尋找標有此步驟標題的程式碼 (「步驟 7︰定義 Surface Studio 和類似裝置的螢幕互動」)
+4. 尋找此步驟中的標題以標示的程式碼 (「 步驟 7:定義螢幕互動介面 Studio 和類似的裝置 」)
 5. 為第一行和第二行加註註解 (「MainPage_Basic」和「MainPage_Haptics」)，並取消註解第三個 (「MainPage」)。  
 
     ``` csharp
@@ -611,4 +611,4 @@ Surface Dial 及其他轉盤裝置，可以提供使用者觸覺回饋技術對�
 
 ## <a name="summary"></a>摘要
 
-恭喜，您已完成*入門教學課程︰在您的 UWP app 中支援 Surface Dial (及其他轉盤裝置)*！ 我們向您展示在您的 UWP app 中支援轉盤裝置所需的基本程式碼，以及如何提供一些 **RadialController** API 所支援更豐富的使用者體驗。
+恭喜，您已完成*開始使用教學課程：在 UWP 應用程式中支援 Surface Dial （和其他滾輪裝置）*！ 我們向您展示在您的 UWP app 中支援轉盤裝置所需的基本程式碼，以及如何提供一些 **RadialController** API 所支援更豐富的使用者體驗。

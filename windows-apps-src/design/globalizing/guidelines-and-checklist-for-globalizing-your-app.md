@@ -1,5 +1,5 @@
 ---
-Description: Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.
+Description: 設計及開發您的應用程式，使其能夠在不同語言和文化設定的系統上正常運作。
 Search.Refinement.TopicID: 180
 title: 全球化指導方針
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
@@ -9,11 +9,11 @@ ms.topic: article
 keywords: windows 10, uwp, 全球化, 可當地語系化性, 當地語系化
 ms.localizationpriority: medium
 ms.openlocfilehash: bdc7e5de3be941f2622c04d515e5e1211247b9a2
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047240"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57648243"
 ---
 # <a name="guidelines-for-globalization"></a>全球化指導方針
 
@@ -36,22 +36,22 @@ ms.locfileid: "9047240"
 
 ## <a name="important-apis"></a>重要 API
  
-* [Globalization](/uwp/api/Windows.Globalization?branch=live)
+* [全球化](/uwp/api/Windows.Globalization?branch=live)
 * [GeographicRegion.CurrenciesInUse](/uwp/api/windows.globalization.geographicregion.CurrenciesInUse)
 * [Language.CurrentInputMethodLanguageTag](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag)
 * [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live)
 
 ## <a name="related-topics"></a>相關主題
 
-* [字串使用建議](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
+* [字串的使用方式建議](/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage)
 * [全球化您的日期/時間/數字格式](use-global-ready-formats.md)
-* [了解使用者設定檔語言和應用程式資訊清單語言](manage-language-and-region.md)
+* [了解使用者設定檔的語言和應用程式資訊清單的語言](manage-language-and-region.md)
 * [BCP-47 語言標記](https://go.microsoft.com/fwlink/p/?linkid=227302)
 * [應用程式資源和資源管理系統](../../app-resources/index.md)
-* [資源管理系統如何比對語言標記](../../app-resources/how-rms-matches-lang-tags.md)
-* [調整配置和字型及支援 RTL](adjust-layout-and-fonts--and-support-rtl.md)
+* [資源管理系統與語言標記的相符](../../app-resources/how-rms-matches-lang-tags.md)
+* [調整配置和字型並支援 RTL](adjust-layout-and-fonts--and-support-rtl.md)
 * [國際字型](loc-international-fonts.md)
-* [讓您的應用程式可當地語系化](prepare-your-app-for-localization.md)
+* [可當地語系化，讓您的應用程式](prepare-your-app-for-localization.md)
 
 ## <a name="samples"></a>範例
 

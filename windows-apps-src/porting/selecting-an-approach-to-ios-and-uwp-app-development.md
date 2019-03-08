@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 9bf23926a1c17615db5ef838d21f9a46a8921c8c
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114664"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655783"
 ---
 # <a name="selecting-an-approach-to-ios-and-uwp-app-development"></a>選取 iOS 和 UWP 應用程式開發的方式
 
@@ -54,7 +54,7 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     如果您的核心商務邏輯是以 C++ 撰寫，而不是 Objective-C 或 Swift，在專案中只要做一點點變更，就可以使用這個程式碼。 然後您可以使用 XAML 來定義您的 UI，就像用於其他 Windows 應用程式一樣，然後必要時再呼叫 C++ 程式碼。
 
--   [使用 ANGLE 在 Windows 上執行 OpenGL ES](https://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [若要在 Windows 上執行 OpenGL ES 使用角度](https://go.microsoft.com/fwlink/p/?linkid=618387)
 
     移植 OpenGL ES 2.0 專案的中間步驟是使用 ANGLE。 ANGLE 可讓您透過將 OpenGL ES API 呼叫轉譯為 DirectX 11 API 呼叫，在 Windows 上執行 OpenGL ES 內容。
 
@@ -64,11 +64,11 @@ Windows 與 iOS 似乎是非常不同的機制，但如果您要撰寫支援兩�
 
     遊戲編寫環境。
 
--   [Construct 2]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2 設計]( https://go.microsoft.com/fwlink/p/?LinkID=320481)
 
     遊戲編寫環境。
 
--   [Titanium Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [鈦 Studio](https://go.microsoft.com/fwlink/p/?LinkID=320482)
 
     跨平台編寫環境。
 

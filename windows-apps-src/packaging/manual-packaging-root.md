@@ -7,11 +7,11 @@ ms.topic: article
 keywords: windows 10, uwp, 封裝
 ms.localizationpriority: medium
 ms.openlocfilehash: 5c429c3c88b0ae23cb518a59cab2e5a3c4f380a2
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8928492"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658193"
 ---
 # <a name="manual-app-packaging"></a>手動封裝 App
 
@@ -26,9 +26,9 @@ ms.locfileid: "8928492"
 
 | 主題 | 描述 |
 |-------|-------------|
-| [使用 MakeAppx.exe 工具建立應用程式套件](create-app-package-with-makeappx-tool.md) | MakeAppx.exe 建立、加密、解密應用程式套件與套件組合，並從應用程式套件與套件組合中擷取檔案。 |
-| [建立套件簽署的憑證](create-certificate-package-signing.md) | 使用 PowerShell 工具，建立和匯出應用程式套件簽署的憑證。 |
-| [使用 SignTool 簽署應用程式套件](sign-app-package-using-signtool.md) | 使用 SignTool，手動簽署具憑證的應用程式套件。 |
+| [MakeAppx.exe 工具建立應用程式套件](create-app-package-with-makeappx-tool.md) | MakeAppx.exe 建立、加密、解密應用程式套件與套件組合，並從應用程式套件與套件組合中擷取檔案。 |
+| [建立封裝簽章的憑證](create-certificate-package-signing.md) | 使用 PowerShell 工具，建立和匯出應用程式套件簽署的憑證。 |
+| [登入使用 SignTool 應用程式套件](sign-app-package-using-signtool.md) | 使用 SignTool，手動簽署具憑證的應用程式套件。 |
 
 ### <a name="advanced-topics"></a>進階主題
 
@@ -40,7 +40,7 @@ ms.locfileid: "8928492"
 
 | 主題 | 描述 |
 |-------|-------------|
-| [資產套件簡介](asset-packages.md) | 資產套件是一種套件，做為應用程式的常見檔案的集中位置 – 有效免除架構套件中的重複檔案。 |
-| [使用資產套件與套件摺疊進行開發](package-folding.md) | 了解如何使用資產套件與套件摺疊有效地組織您的應用程式。 |
-| [一般套件組合應用程式套件](flat-bundles.md) | 說明如何建立一般套件組合，為您的應用程式套件檔案。 |
-| [使用封裝配置的套件建立](packaging-layout.md) | 封裝配置是一份描述應用程式封裝結構的文件。 它會指定應用程式套件組合（主要和選用）、套件組合中的套件，和套件中的檔案。 |
+| [資產封裝的簡介](asset-packages.md) | 資產套件是一種套件，做為應用程式的常見檔案的集中位置 – 有效免除架構套件中的重複檔案。 |
+| [使用資產封裝和封裝摺疊功能進行開發](package-folding.md) | 了解如何使用資產套件與套件摺疊有效地組織您的應用程式。 |
+| [一般的套件組合應用程式套件](flat-bundles.md) | 描述如何建立一般的套件組合，您的應用程式套件檔案。 |
+| [封裝建立的封裝版面配置](packaging-layout.md) | 封裝配置是一份描述應用程式封裝結構的文件。 它會指定應用程式套件組合（主要和選用）、套件組合中的套件，和套件中的檔案。 |

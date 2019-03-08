@@ -8,11 +8,11 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 4dec176206aacb946bfd65341c483d8ba61558ad
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8938735"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57629743"
 ---
 # <a name="hazard-tracking-versus-tile-pool-resources"></a>危險追蹤與磚集區資源
 
@@ -28,7 +28,7 @@ ms.locfileid: "8938735"
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[對應在磚集區中](mappings-are-into-a-tile-pool.md)
+[對應是到並排顯示集區](mappings-are-into-a-tile-pool.md)
 
  
 

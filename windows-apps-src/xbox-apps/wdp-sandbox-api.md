@@ -7,11 +7,11 @@ keywords: Windows 10, UWP
 ms.assetid: 72c7459c-420a-4da9-8afa-191a846185a5
 ms.localizationpriority: medium
 ms.openlocfilehash: d05528ecf4408a7e7483b909b75722037c6528b7
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8937443"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645693"
 ---
 # <a name="xbox-live-sandbox-api-reference"></a>Xbox Live 沙箱 API 參考   
 您可以使用此 REST API 取得並設定您的 Xbox Live 沙箱。
@@ -34,7 +34,7 @@ GET | /ext/xboxlive/sandbox
 
 - 無
 
-**要求主體**
+**要求本文**
 
 - 無
 
@@ -70,7 +70,7 @@ PUT | /ext/xboxlive/sandbox
 
 - 無
 
-**要求主體**   
+**要求本文**   
 要求主體是包含下列欄位的 JSON 物件：   
 Sandbox - (字串) 要設定裝置沙箱的新值。
 
@@ -88,7 +88,7 @@ HTTP 狀態碼      | 描述
 5XX | 錯誤碼
 
 <br />
-**可用裝置系列**
+**可用的裝置系列**
 
 * Windows Xbox
 

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 78278741-09A4-4406-A112-9AF3C73F5C16
-description: 在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的 app 附加元件的相關資訊。
+description: 在 Microsoft Store 提交 API 中使用這個方法，以擷取應用程式已向您的合作夥伴中心帳戶的附加元件的相關資訊。
 title: 取得附加元件
 ms.date: 02/08/2017
 ms.topic: article
 keywords: Windows 10, UWP, Microsoft Store 提交 API, 附加元件, 應用程式內產品, IAP
 ms.localizationpriority: medium
 ms.openlocfilehash: cc02cd5ae94b51b274c0e3ce1245020222e101f1
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8936353"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645913"
 ---
 # <a name="get-an-add-on"></a>取得附加元件
 
-在 Microsoft Store 提交 API 中使用這個方法，擷取已登錄到您的合作夥伴中心帳戶的應用程式的附加元件 （也稱為應用程式內產品或 IAP） 相關資訊。
+在 Microsoft Store 提交 API 中使用這個方法，以擷取應用程式已向您的合作夥伴中心帳戶的附加元件 （也稱為應用程式內產品或 IAP） 的相關資訊。
 
 ## <a name="prerequisites"></a>必要條件
 
@@ -26,7 +26,7 @@ ms.locfileid: "8936353"
 
 ## <a name="request"></a>要求
 
-這個方法的語法如下。 請參閱下列各小節了解標頭和要求主體的使用範例和描述。
+這個方法的語法如下。 請參閱下列各小節了解標頭和要求本文的使用範例和描述。
 
 | 方法 | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
@@ -37,19 +37,19 @@ ms.locfileid: "8936353"
 
 | 標頭        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| 授權 | 字串 | 必要。 Azure AD 存取權杖，形式為 **Bearer** &lt;*token*&gt;。 |
+| Authorization | 字串 | 必要。 在表單中的 Azure AD 存取權杖**持有人** &lt;*語彙基元*&gt;。 |
 
 
 ### <a name="request-parameters"></a>要求參數
 
 | 名稱        | 類型   | 描述                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| id | 字串 | 必要。 要擷取的附加元件的 Store 識別碼。 「 市集識別碼 」 是可在合作夥伴中心。  |
+| id | 字串 | 必要。 要擷取的附加元件的市集識別碼。 存放區識別碼適用於合作夥伴中心。  |
 
 
-### <a name="request-body"></a>要求主體
+### <a name="request-body"></a>要求本文
 
-不提供此方法的要求主體。
+不提供此方法的要求本文。
 
 
 ### <a name="request-example"></a>要求範例
@@ -63,7 +63,7 @@ Authorization: Bearer <your access token>
 
 ## <a name="response"></a>回應
 
-下列範例示範成功呼叫這個方法的 JSON 回應本文。 如需回應本文中各個值的詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。
+下列範例示範成功呼叫此方法時的 JSON 回應主體。 如需回應本文中各個值的詳細資訊，請參閱[附加元件資源](manage-add-ons.md#add-on-object)。
 
 ```json
 {
@@ -97,12 +97,12 @@ Authorization: Bearer <your access token>
 | 錯誤碼 |  描述   |
 |--------|------------------|
 | 404  | 找不到指定的附加元件。 |
-| 409  | 附加元件使用[「 Microsoft Store 提交 API 目前不支援](create-and-manage-submissions-using-windows-store-services.md#not_supported)的合作夥伴中心功能。  |
+| 409  | 附加元件會使用合作夥伴中心功能都十分[目前不支援 Microsoft Store 提交 API](create-and-manage-submissions-using-windows-store-services.md#not_supported)。  |
 
 
 ## <a name="related-topics"></a>相關主題
 
-* [使用 Microsoft Store 服務建立和管理提交](create-and-manage-submissions-using-windows-store-services.md)
+* [建立和管理使用 Microsoft Store 服務的提交內容](create-and-manage-submissions-using-windows-store-services.md)
 * [管理附加元件提交](manage-add-on-submissions.md)
 * [取得所有附加元件](get-all-add-ons.md)
 * [建立附加元件](create-an-add-on.md)

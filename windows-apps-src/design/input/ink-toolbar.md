@@ -1,5 +1,5 @@
 ---
-Description: Add a default InkToolbar to a Universal Windows Platform (UWP) inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.
+Description: 將預設 InkToolbar 新增至通用 Windows 平台 (UWP) 手寫筆跡應用程式、將自訂的畫筆按鈕新增至 InkToolbar，以及將自訂的畫筆按鈕繫結到自訂的畫筆定義。
 title: 將 InkToolbar 新增至通用 Windows 平台 (UWP) 應用程式
 label: Add an InkToolbar to a Universal Windows Platform (UWP) app
 template: detail.hbs
@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: d888f75f-c2a0-4134-81db-907b5e24fcc5
 ms.localizationpriority: medium
 ms.openlocfilehash: 77bb78fe9509936fec5267162deab382bafffb61
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9045291"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57650573"
 ---
 # <a name="add-an-inktoolbar-to-a-universal-windows-platform-uwp-app"></a>將 InkToolbar 新增至通用 Windows 平台 (UWP) 應用程式
 
 
 
-有兩個不同的控制項可協助在通用 Windows 平台 (UWP) 應用程式中使用手寫筆跡：[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 和 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
+有兩個不同的控制項，以便在通用 Windows 平台 (UWP) 應用程式中的手寫筆跡功能：[**InkCanvas** ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)並[ **InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)。
 
-[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控制項提供基本的 Windows 筆跡功能。 使用此控制項將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與粗細的預設設定) 或擦去筆劃。
+[  **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx) 控制項提供基本的 Windows 筆跡功能。 使用此控制項將手寫筆輸入轉譯為筆墨筆劃 (使用色彩與粗細的預設設定) 或擦去筆劃。
 
-> 如需 InkCanvas 實作的詳細資訊，請參閱 [UWP 應用程式中的畫筆和手寫筆互動](pen-and-stylus-interactions.md)。
+> 如需 InkCanvas 實作的詳細資訊，請參閱 [UWP app 中的畫筆和手寫筆互動](pen-and-stylus-interactions.md)。
 
 做為完全透明的重疊，InkCanvas 不會提供任何用於設定筆墨筆劃屬性的內建 UI。 如果您想要變更預設的手寫筆跡體驗、讓使用者設定筆墨筆劃的屬性，以及支援其他自訂的手寫筆跡功能，您有兩個選項︰
 
 - 在程式碼後置中，使用繫結至 InkCanvas 的基礎 [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx) 物件。
 
-  InkPresenter API 支援大量的手寫筆跡體驗自訂項目。 如需更多詳細資料，請參閱 [UWP 應用程式中的畫筆和手寫筆互動](pen-and-stylus-interactions.md)。
+  InkPresenter API 支援大量的手寫筆跡體驗自訂項目。 如需更多詳細資料，請參閱 [UWP app 中的畫筆和手寫筆互動](pen-and-stylus-interactions.md)。
 
 - 將 [**InkToolbar**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx) 繫結至 InkCanvas。 根據預設，InkToolbar 會提供可自訂並可擴充的按鈕集合，以用於啟用與筆墨相關的功能 (例如筆觸大小、筆跡色彩及筆尖形狀)。
 
   我們會在本主題中討論 InkToolbar。
 
-> **重要 API**：[**InkCanvas 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)、[**InkToolbar 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)、[**InkPresenter 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)、[**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)。
+> **重要的 Api**:[**InkCanvas 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inkcanvas.aspx)， [ **InkToolbar 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.inktoolbar.aspx)， [ **InkPresenter 類別**](https://msdn.microsoft.com/library/windows/apps/windows.ui.input.inking.inkpresenter.aspx)， [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 ## <a name="default-inktoolbar"></a>預設 InkToolbar
 
@@ -87,7 +87,7 @@ ms.locfileid: "9045291"
 
 透過其 [VerticalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment)、[HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment) 和 [Orientation](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation) 屬性明確指定工具列的位置和方向。
 
-| Default | Explicit |
+| 預設值 | Explicit |
 | --- | --- |
 | ![預設筆跡工具列位置和方向](./images/ink/location-default-small.png) | ![明確筆跡工具列位置和方向](./images/ink/location-explicit-small.png) |
 | *Windows Ink 工具列預設位置和方向* | *Windows Ink 工具列明確位置和方向* |
@@ -101,16 +101,16 @@ ms.locfileid: "9045291"
     TargetInkCanvas="{x:Bind inkCanvas}" />
 ```
 
-**根據使用者喜好設定或裝置狀態初始化**
+**初始化根據使用者喜好設定] 或 [裝置狀態**
 
 在某些案例中，您可能會想要根據使用者喜好設定或裝置狀態設定筆跡工具列的位置和方向。 下列範例示範如何根據透過 **\[設定\] > \[裝置\] > \[手寫筆與 Windows Ink\] > \[手寫筆\] > \[選擇您用來書寫的手\]** 指定的左手或右手書寫喜好設定，來設定筆跡工具列的位置和方向。
 
-![主控手設定](./images/ink/location-handedness-setting.png)  
-*主控手設定*
+![主控項的手動設定](./images/ink/location-handedness-setting.png)  
+*主控項的手動設定*
 
 您可以透過 Windows.UI.ViewManagement 的 HandPreference 屬性查詢此設定，然後根據傳回的值設定 [HorizontalAlignment](https://docs.microsoft.com/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment)。 在此範例中，我們會為慣用左手的人將工具列設在應用程式的左側，為慣用右手的人將工具列設在右側。
 
-**請從[筆跡工具列位置和方向範例 (基本)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip) 下載此範例。**
+**下載這個範例來自[筆墨工具列位置和方向範例 （基本）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip)**
 
 ```csharp
 public MainPage()
@@ -127,11 +127,11 @@ public MainPage()
 }
 ```
 
-**根據使用者或裝置狀態動態調整**
+**動態調整為使用者或裝置的狀態**
 
 您也可以使用繫結來追蹤根據使用者喜好設定、裝置設定或裝置狀態變更而產生的 UI 更新。 在以下的範例中，我們會展開先前的範例，並示範如何使用繫結、一個 ViewMOdel 物件和 [NotifyPropertyChanged](https://docs.microsoft.com/uwp/api/windows.ui.xaml.data.inotifypropertychanged) 介面根據裝置的方向動態調整筆跡工具列的位置。 
 
-**請從[筆跡工具列位置和方向範例 (動態)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip) 下載此範例。**
+**下載這個範例來自[筆墨工具列位置和方向範例 （動態）](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip)**
 
 1. 首先，讓我們先新增 ViewModel。
     1. 將新資料夾新增到您的專案，然後命名為 **ViewModels**。
@@ -170,7 +170,7 @@ public MainPage()
         }
         ```
 
-    1. 將兩個 bool 屬性新增到 InkToolbarSnippetHostViewModel 類別：**LeftHandedLayout** (與先前的僅 XAML 範例中具備相同功能) 和 **PortraitLayout** (裝置的方向)。
+    1. 將兩個 bool 屬性加入 InkToolbarSnippetHostViewModel 類別：**LeftHandedLayout** （與上述的僅限 XAML 的範例相同的功能） 和**PortraitLayout** （裝置的方向）。
         >[!NOTE] 
         > PortraitLayout 可進行設定，並包含 [PropertyChanged](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) 事件的定義。
 

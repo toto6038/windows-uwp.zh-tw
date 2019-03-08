@@ -1,27 +1,27 @@
 ---
-title: Texture3D 子資源拼接
+title: Texture3D 子資源拼貼
 description: 下表顯示了 Texture3D 子資源的拼接方式。
 ms.assetid: 210D03E4-CF12-47E0-BA2F-C8D059B17D3E
 keywords:
-- Texture3D 子資源拼接
+- Texture3D 子資源拼貼
 ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: c9c232bc60bbbb3cccc16618d82ec23452c58ee8
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8933182"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645953"
 ---
-# <a name="texture3d-subresource-tiling"></a>Texture3D 子資源拼接
+# <a name="texture3d-subresource-tiling"></a>Texture3D 子資源拼貼
 
 
 下表顯示了 [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) 子資源的拼接方式。 此表格中的數值並未計入結尾 mip 包裝。
 
 此表格利用了 [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff471525) 拼接，將 x 及 y 維度各除以 4，並且增加了 16 層的深度。 所有第一個平面的磚 (2D 磚的平面定義了前 16 層深度) 都會在後續平面之前顯示。
 
-**注意：**[**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562)支援串流資源不在初始串流資源實作中，公開，但所需要的磚圖形將此處列出作為未來版本中可能的支援。
+**請注意：** 串流資源中針對   [**Texture3D**](https://msdn.microsoft.com/library/windows/desktop/ff471562) 的支援並未在初始串流資源實作中公開，但所需要磚的形狀仍在此列出，作為未來版本可能的支援使用。
 
  
 
@@ -37,12 +37,12 @@ ms.locfileid: "8933182"
 
  
 
-不受串流資源支援的格式位元計算包括了 96 bpp 格式、視訊格式、DXGI\_FORMAT\_R1\_UNORM、DXGI\_FORMAT\_R8G8\_B8G8\_UNORM，以及 DXGI\_FORMAT\_R8R8\_G8B8\_UNORM。
+不支援使用資料流資源的格式元計數是 96 bpp 格式的視訊格式，DXGI\_格式\_R1\_UNORM、 DXGI\_格式\_R8G8\_B8G8\_UNORM，和 DXGI\_格式\_R8R8\_G8B8\_UNORM。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[如何拼貼串流資源區域](how-a-streaming-resource-s-area-is-tiled.md)
+[資料流資源的區域會並排顯示方式](how-a-streaming-resource-s-area-is-tiled.md)
 
  
 

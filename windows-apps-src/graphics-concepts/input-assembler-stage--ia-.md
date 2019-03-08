@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 8c5e1c294da2b4ef24ff8f62b686890cb8c69c06
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8942940"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57646283"
 ---
 # <a name="input-assembler-ia-stage"></a>輸入組合語言 (IA) 階段
 
 
 輸入組合語言 (IA) 階段提供基本類型和管線相鄰資料，例如三角形、行及點，包括語意識別碼，藉由減少處理尚未處理的基本類型來讓著色更有效率。
 
-## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途和使用
+## <a name="span-idpurpose-and-usesspanspan-idpurpose-and-usesspanspan-idpurpose-and-usesspanpurpose-and-uses"></a><span id="Purpose-and-uses"></span><span id="purpose-and-uses"></span><span id="PURPOSE-AND-USES"></span>用途和用法
 
 
 輸入組合語言 (IA) 階段的目的是從使用者填入緩衝讀取基本類型資料 (點、行及三角形)，然後將資料分配到將由其他管線階段使用的基本類型，並且附加[系統產生的值](https://msdn.microsoft.com/library/windows/desktop/bb509647)來讓著色更有效率。 系統產生的值為也稱為語意的文字字串。 可程式化著色器模型是從使用系統產生的值 (例如基本類型識別碼、執行個體識別碼或頂點識別碼) 的一般著色器核心建構，如此，著色器階段可以減少只處理這些尚未處理的基本類型、執行個體或頂點。
@@ -35,7 +35,7 @@ IA 階段可以將頂組合到數個不同的[基本類型](primitive-topologies
 
 IA 階段從記憶體讀取資料︰使用者填入緩衝區的基本資料 (點、行及/或三角形)。
 
-## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>輸出
+## <a name="span-idoutputspanspan-idoutputspanspan-idoutputspanoutput"></a><span id="Output"></span><span id="output"></span><span id="OUTPUT"></span>Output
 
 
 IA 階段將資料組合到基元，並附加系統產生的值，而如同基元的輸出將被[頂點著色器 (VS) 階段](vertex-shader-stage--vs-.md)使用，再由其他管線階段使用。
@@ -57,7 +57,7 @@ IA 階段將資料組合到基元，並附加系統產生的值，而如同基�
 <tbody>
 <tr class="odd">
 <td align="left"><p><a href="primitive-topologies.md">基本拓撲</a></p></td>
-<td align="left"><p>Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點，例如點清單、行清單和三角形連環。</p></td>
+<td align="left"><p>Direct3D 支援數個基本拓撲，其定義管線如何轉譯及呈現頂點，例如點清單、線清單和三角形連環。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><a href="using-system-generated-values.md">使用系統產生的值</a></p></td>

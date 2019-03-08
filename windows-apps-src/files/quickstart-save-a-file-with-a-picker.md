@@ -1,21 +1,21 @@
 ---
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: 使用選擇器儲存檔案
-description: 使用 FileSavePicker，讓使用者指定想要您的應用程式儲存檔案的名稱和位置。
+description: 使用 FileSavePicker，讓使用者指定想要您的 app 儲存檔案的名稱和位置。
 ms.date: 12/19/2018
 ms.topic: article
 keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c61a34b983b0faaedc509b68fd4225ea0859a7d
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044828"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57660523"
 ---
 # <a name="save-a-file-with-a-picker"></a>使用選擇器儲存檔案
 
-**重要 API**
+**重要的 Api**
 
 -   [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)
 -   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
@@ -23,14 +23,14 @@ ms.locfileid: "9044828"
 使用 [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)，讓使用者指定想要您的 app 儲存檔案的名稱和位置。
 
 > [!NOTE]
-> 如需完整範例，請參閱[檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)(英文)。
+> 如需完整範例，請參閱 <<c0> [ 檔案選擇器範例](https://go.microsoft.com/fwlink/p/?linkid=619994)。
 
  
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 
--   **了解通用 Windows 平台 (UWP) App 的非同步程式設計**
+-   **了解通用 Windows 平台 (UWP) 應用程式的非同步程式設計**
 
     您可以參閱[在 C# 或 Visual Basic 中呼叫非同步 API](https://msdn.microsoft.com/library/windows/apps/mt187337)，以了解如何使用 C# 或 Visual Basic 撰寫非同步的 app。 若要了解如何使用 C++ 撰寫非同步的 App，請參閱 [C++ 的非同步程式設計](https://msdn.microsoft.com/library/windows/apps/mt187334)。
 
@@ -54,21 +54,21 @@ ms.locfileid: "9044828"
     savePicker.SuggestedFileName = "New Document";
     ```
 
-在與使用者和您的 app 相關的檔案選擇器物件上設定屬性。 這個範例會設定三個屬性：[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880)、[**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) 和 [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。
+在與使用者和您的 app 相關的檔案選擇器物件上設定屬性。 此範例會將三個屬性：[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880)， [ **FileTypeChoices** ](https://msdn.microsoft.com/library/windows/apps/br207875)並[ **SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。
      
 - 因為使用者要儲存文件或文字檔，所以範例會使用 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621)，將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) 設定成 app 的本機資料夾。 將 [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) 設定為儲存檔案類型的適當位置，例如，音樂、圖片、影片或文件。 使用者可以從開始位置瀏覽到其他位置。
 
 - 因為我們要確認 app 能夠在儲存檔案之後予以開啟，所以我們使用範例支援的 [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) 來指定檔案類型 (Microsoft Word 文件與文字檔)。 確認 app 可支援您指定的所有檔案類型。 使用者能夠將檔案儲存成您指定的任何檔案類型。 他們也可以選取您指定的其他檔案類型，以變更檔案類型。 預設會選取清單中的第一個檔案類型選項：若要進行控制，請設定 [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) 屬性。
 
     > [!NOTE]
-    > 因為檔案選擇器也會使用目前選取的檔案類型來篩選它顯示的檔案，所以只會為使用者顯示符合所選檔案類型的檔案類型。
+    > 檔案選擇器也會使用目前選取的檔案類型來篩選顯示的檔案，以便只有符合選取的檔案類型的檔案類型才會顯示給使用者。
 
 - 為了儲存使用者輸入，範例會設定 [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878)。 讓您建議的檔案名稱與所儲存的檔案相關。 例如，就 Word 而言，您可以建議現有的檔案名稱 (如果已經有的話)，或是文件第一行 (如果使用者儲存的檔案尚未命名)。
 
 > [!NOTE]
->[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)物件會顯示檔案選擇器使用[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891)檢視模式。
+> [**FileSavePicker** ](https://msdn.microsoft.com/library/windows/apps/br207871)物件會顯示檔案選擇器使用[ **PickerViewMode.List** ](https://msdn.microsoft.com/library/windows/apps/br207891)檢視模式。
 
-2.  **顯示 FileSavePicker 並儲存至挑選的檔案**
+2.  **顯示 FileSavePicker 並儲存至挑選檔案**
 
     藉由呼叫 [**PickSaveFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207876) 來顯示檔案選擇器。 使用者指定檔案名稱、檔案類型、位置並確認要儲存檔案之後，**PickSaveFileAsync** 會傳回一個代表該已儲存檔案的 [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) 物件。 現在您已經有檔案的讀取和寫入權限，所以您可以擷取和處理這個檔案。
 
@@ -104,4 +104,4 @@ ms.locfileid: "9044828"
 這個範例會檢查檔案是否有效，並且將自己的檔案名稱寫入其中。 另請參閱[建立、寫入和讀取檔案](quickstart-reading-and-writing-files.md)。
 
 > [!TIP]
-> 您應該永遠檢查儲存的檔案，以確定它是有效的再執行任何其他處理。 然後，您可以按照您的 app 適用的方式將內容儲存到檔案，並在挑選的檔案無效時提供適當的行為。
+> 您應該一律檢查儲存的檔案，以確定它是有效的然後再執行任何其他處理。 然後，您可以按照您的 app 適用的方式將內容儲存到檔案，並在挑選的檔案無效時提供適當的行為。

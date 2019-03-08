@@ -6,11 +6,11 @@ ms.date: 09/06/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: 9a296cc877279292f73b591a86ede9136b0d9758
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "9044166"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57645193"
 ---
 # <a name="whats-new-in-the-windows-developer-docs-in-september-2017"></a>2017 年 9 月 Windows 開發人員文件的最新動向
 
@@ -18,7 +18,7 @@ Windows 開發人員文件一直持續不斷更新有關 Windows 平台上可供
 
 當然，Fall Creators Update 即將推出，所以請拭目以待，下個月會有更多文件發行！
 
-在 Windows10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows App](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
+在 Windows 10 上[安裝工具和 SDK](https://go.microsoft.com/fwlink/?LinkId=821431) 之後，就表示您已經準備好[建立新的通用 Windows app](../get-started/your-first-app.md)，或是探索[如何在 Windows 上使用現有的 App 程式碼](../porting/index.md)。
 
 ## <a name="features"></a>功能
 
@@ -36,10 +36,10 @@ Xbox Live 創作者計畫現在已上線，可讓您輕鬆地建立並發行能�
 
 以下是新文章的快速概觀：
 
-+ [**建立使用者介面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)示範如何建立基本影像中心介面。
-+ [**建立資料繫結**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)示範如何將資料繫結新增至影像中心，並以實際影像資料填入其中。
-+ [**建立自訂樣式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)示範如何將花俏的自訂樣式新增至相片編輯功能表。
-+ [**建立調適型配置**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)示範如何讓圖庫版面配置變得可彈性調整，以便在所有裝置和螢幕大小上都看起來都很適當。
++ [**建立使用者介面**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-ui)示範如何建立基本的相片圖庫介面。
++ [**建立資料繫結**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-data-binding)示範如何將資料繫結新增至相片圖庫，實際的映像資料填入其中。
++ [**建立自訂的樣式**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-style)示範如何將複雜的自訂樣式加入相片編輯功能表。
++ [**建立彈性的版面配置**](https://docs.microsoft.com/en-us/windows/uwp/get-started/xaml-basics-adaptive-layout)示範如何讓資源庫版面配置的彈性，讓它看起來沒問題，每個裝置和螢幕大小。
 
 ### <a name="get-started-tutorials"></a>入門教學課程
 
