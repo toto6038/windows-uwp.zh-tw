@@ -7,11 +7,11 @@ ms.topic: article
 keywords: Windows 10, uwp, 遊戲, 網路功能, directx
 ms.localizationpriority: medium
 ms.openlocfilehash: e3dc77b48feb0c7ceba9fa3cede82c1a44687d0d
-ms.sourcegitcommit: 175d0fc32db60017705ab58136552aee31407412
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9114624"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656313"
 ---
 # <a name="networking-for-games"></a>遊戲的網路功能
 
@@ -45,10 +45,10 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 
 適用於遊戲的熱門網路 API 包含：
 
--   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)類別提供 TCP 通訊端，可以使用 Microsoft Store 遊戲中。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
--   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供支援 SSL 的 TCP 通訊端。
--   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)類別提供 UDP 通訊端，可以使用 Microsoft Store 遊戲中。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
--   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)類別提供的現代化 HTTP 用戶端 API 使用 Microsoft Store 遊戲中。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
+-   TCP 與通訊端 - 提供可靠的連線。 在不需安全性的遊戲中使用 TCP。 TCP 能輕鬆擴充伺服器，因此常用於使用基礎結構 (主從式架構或網際網路點對點) 模型的遊戲。 Wi-Fi Direct 與藍牙上的臨機 (本機點對點) 遊戲也可使用 TCP。 TCP 常用於遊戲物件動作、角色互動、文字交談與其他作業。 [ **StreamSocket** ](https://msdn.microsoft.com/library/windows/apps/br226882)類別會提供可以用 Microsoft Store 遊戲中的 TCP 通訊端。 **StreamSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
+-   使用 SSL 的 TCP 與通訊端 - 提供能防竊聽的可靠連線。 針對需要安全性的遊戲使用 TCP 連線搭配 SSL。 SSL 的加密與額外負荷會增加延遲並影響效能，請只在需要安全性時使用。 TCP 搭配 SSL 常用於登入、購買與交易資產、遊戲角色建立與管理。 [  **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 類別提供支援 SSL 的 TCP 通訊端。
+-   UDP 與通訊端 - 提供不可靠的網路傳輸，但額外負荷小。 UDP 用於要求低延遲且可容許某些封包遺失的遊戲作業。 它常用於搏鬥遊戲、射擊與追蹤、網路音訊與視訊聊天。 [ **DatagramSocket** ](https://msdn.microsoft.com/library/windows/apps/br241319)類別會提供可以用 Microsoft Store 遊戲中的 UDP 通訊端。 **DatagramSocket** 類別與 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間中的相關類別搭配使用。
+-   HTTP 用戶端 - 提供可靠的 HTTP 伺服器連線。 最常見的網路案例是存取網站以擷取或儲存資訊。 使用網站來儲存使用者資訊與遊戲分數的遊戲就是一個簡單的例子。 為求安全性搭配 SSL 使用時，可使用 HTTP 用戶端來登入、購買、交易資產、遊戲角色建立與管理。 [ **HttpClient** ](https://msdn.microsoft.com/library/windows/apps/dn298639)類別提供現代 HTTP 用戶端 API 使用 Microsoft Store 遊戲中的。 **HttpClient** 類別與 [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 命名空間中的相關類別搭配使用。
 
 ## <a name="handling-network-exceptions-in-your-directx-game"></a>處理您的 DirectX 遊戲中的網路例外狀況
 
@@ -75,7 +75,7 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
 網路 API 支援不同的方法來抓取例外狀況發生原因的更詳細資訊。
 
 -   擷取導致例外狀況的錯誤 **HRESULT** 值的方法。 可能的 **HRESULT** 值的可能性清單過大且未指定。 使用任何網路 API 都可擷取 **HRESULT** 值。
--   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 的通訊端類別可使用協助程式方法。
+-   將 **HRESULT** 值轉換為列舉值的協助程式方法。 可能的列舉值清單已指定，而且相對過小。 [  **Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 的通訊端類別可使用協助程式方法。
 
 ### <a name="exceptions-in-windowsnetworkingsockets"></a>Windows.Networking.Sockets 中的例外狀況
 
@@ -117,11 +117,11 @@ DirectX 遊戲可使用多種不同的網路 API。 因此，挑選正確的 API
     // ... Continue with code to execute with a valid hostname.
 ```
 
-[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間有便利的協助程式方法及列舉，在使用通訊端時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
+[  **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 命名空間有便利的協助程式方法及列舉，在使用通訊端時用來處理錯誤。 這對於在您的應用程式中以不同的方式處理特定網路例外狀況時很有用。
 
-[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
+[  **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 或 [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 作業中若發生錯誤，會導致例外狀況。 例外狀況的原因是以 **HRESULT** 值表示的錯誤值。 使用 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) 方法，將通訊端作業的網路錯誤轉換為 [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列舉值。 大多數 **SocketErrorStatus** 列舉值對應原始 Windows 通訊端作業傳回的錯誤。 app 可以篩選特定 **SocketErrorStatus** 列舉值，依據例外狀況的發生原因來修改 app 行為。
 
-針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。
+針對參數驗證錯誤，app 也可以使用來自例外狀況的 **HRESULT**，深入了解更多關於導致例外狀況的錯誤詳細資訊。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 對於大多數的參數驗證錯誤， **HRESULT**傳回**E\_INVALIDARG**。
 
 新增程式碼以處理嘗試建立串流通訊端連線時發生的例外狀況
 
@@ -269,11 +269,11 @@ using namespace Windows::Networking::Sockets;
     // ... Continue with code to execute with a valid URI.
 ```
 
-[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 命名空間缺少便利的函式。 所以使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
+[  **Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 命名空間缺少便利的函式。 所以使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 的 app 及此命名空間中的其他類別需要使用 **HRESULT** 值。
 
-在使用 C++ 的 app 中，[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表 app 執行期間發生例外狀況時的錯誤。 [**Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [**Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
+在使用 C++ 的 app 中，[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) 代表 app 執行期間發生例外狀況時的錯誤。 [  **Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) 屬性會傳回指派給特定例外狀況的 **HRESULT**。 [  **Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) 屬性會傳回與 **HRESULT** 值關聯的系統提供字串。 可能的 **HRESULT** 值列在 *Winerror.h* 標頭檔中。 app 可以篩選特定 **HRESULT** 值，依據例外狀況的發生原因來修改 app 行為。
 
-針對大多數的參數驗證錯誤，傳回的 **HRESULT** 是 **E\_INVALIDARG**。 針對部分不正確的方法呼叫，傳回的 **HRESULT** 是 **E\_ILLEGAL\_METHOD\_CALL**。
+對於大多數的參數驗證錯誤， **HRESULT**傳回**E\_INVALIDARG**。 有些不合法的方法呼叫，如**HRESULT**傳回**E\_不合法\_方法\_呼叫**。
 
 新增程式碼以處理嘗試使用 [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) 連線至 HTTP 伺服器時發生的例外狀況
 
@@ -370,15 +370,15 @@ using namespace Windows::Web::Http;
 
 **其他資源**
 
-* [使用資料包通訊端進行連線](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
-* [利用資料流通訊端連線到網路資源](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
-* [連線到網路服務](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
-* [連線到 Web 服務](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
-* [網路功能基本知識](https://msdn.microsoft.com/library/windows/apps/mt280233)
+* [使用資料包通訊端連接](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
+* [連接到資料流通訊端的網路資源](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
+* [連接到網路服務](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+* [連接到 web 服務](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+* [網路基本概念](https://msdn.microsoft.com/library/windows/apps/mt280233)
 * [如何設定網路隔離功能](https://msdn.microsoft.com/library/windows/apps/hh770532)
-* [如何啟用回送以及偵錯網路隔離](https://msdn.microsoft.com/library/windows/apps/hh780593)
+* [如何啟用回送和偵錯網路隔離](https://msdn.microsoft.com/library/windows/apps/hh780593)
 
-**參考資料**
+**參考**
 
 * [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)
 * [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)

@@ -8,18 +8,18 @@ ms.date: 02/08/2017
 ms.topic: article
 ms.localizationpriority: medium
 ms.openlocfilehash: f85bf490bd1dd68e2d0ba31335f2fc0f89fe27b0
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8944053"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57655793"
 ---
 # <a name="coordinate-systems"></a>座標系統
 
 
 3D 圖形應用程式通常會使用下列兩個笛卡兒座標系統中的其中一種︰左手系或右手系。 在這兩個座標系統中，正 x 軸指向右側，而正 y 軸指向上方。
 
-## <a name="span-idleftandrighthandedcoordinatesspanspan-idleftandrighthandedcoordinatesspanspan-idleftandrighthandedcoordinatesspanleft-and-right-handed-coordinates"></a><span id="Left_and_right_handed_coordinates"></span><span id="left_and_right_handed_coordinates"></span><span id="LEFT_AND_RIGHT_HANDED_COORDINATES"></span>左手系和右手系座標
+## <a name="span-idleftandrighthandedcoordinatesspanspan-idleftandrighthandedcoordinatesspanspan-idleftandrighthandedcoordinatesspanleft-and-right-handed-coordinates"></a><span id="Left_and_right_handed_coordinates"></span><span id="left_and_right_handed_coordinates"></span><span id="LEFT_AND_RIGHT_HANDED_COORDINATES"></span>左右交付座標
 
 
 您可以藉由將左手或右手指指向正 x 軸方向，並將它們彎曲至正 y 軸的方向，以記得正 z 軸指向的方向。 您拇指所指的方向，不論是指向您或指向您的反方向，即是該座標系統正 z 軸所指的方向。 下圖顯示這兩個座標系統。
@@ -39,18 +39,18 @@ Direct3D 使用左手系座標系統。 雖然左手系和右手系座標是最�
 
 當您結合這些作業時，結果不可相互交換。您以倍數增加矩陣的順序至關重要。
 
-## <a name="span-idportingfromaright-handedcoordinatesystemspanspan-idportingfromaright-handedcoordinatesystemspanspan-idportingfromaright-handedcoordinatesystemspanporting-from-a-right-handed-coordinate-system"></a><span id="Porting_from_a_right-handed_coordinate_system"></span><span id="porting_from_a_right-handed_coordinate_system"></span><span id="PORTING_FROM_A_RIGHT-HANDED_COORDINATE_SYSTEM"></span>從右手座標系統移植
+## <a name="span-idportingfromaright-handedcoordinatesystemspanspan-idportingfromaright-handedcoordinatesystemspanspan-idportingfromaright-handedcoordinatesystemspanporting-from-a-right-handed-coordinate-system"></a><span id="Porting_from_a_right-handed_coordinate_system"></span><span id="porting_from_a_right-handed_coordinate_system"></span><span id="PORTING_FROM_A_RIGHT-HANDED_COORDINATE_SYSTEM"></span>將移植從右手性座標系統
 
 
 如果您移植以右手系座標系統為基礎的應用程式，您必須對傳送至 Direct3D 的資料進行兩項變更︰
 
 -   翻轉三角形頂點的順序，讓系統從前面順時針轉動這些頂點。 意即如果頂點為 v0、v1、v2，請依 v0、v2、v1 的順序傳遞給 Direct3D。
--   使用檢視矩陣將世界空間在 z 方向縮放 -1。 若要完成這項動作，請翻轉 \_31、\_32、\_33 和 \_34 的符號，這些是您用於檢視矩陣的矩陣結構成員。
+-   使用檢視矩陣將世界空間在 z 方向縮放 -1。 若要這樣做，反轉的正負號\_31， \_32 \_33，和\_34 您用於檢視矩陣之矩陣結構的成員。
 
 ## <a name="span-idrelated-topicsspanrelated-topics"></a><span id="related-topics"></span>相關主題
 
 
-[座標系統與幾何](coordinate-systems-and-geometry.md)
+[座標系統和幾何](coordinate-systems-and-geometry.md)
 
  
 

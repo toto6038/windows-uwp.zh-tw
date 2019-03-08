@@ -1,35 +1,35 @@
 ---
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 開始設定
-description: 開始設定比您想像中容易。 請依照下列指示，開始建立適用於 windows 10 的通用 Windows 平台 (UWP) app。
+description: 開始設定比您想像中容易。 請遵循下列指示，並開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
 ms.date: 05/07/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: Windows 10, UWP
 ms.localizationpriority: medium
 ms.openlocfilehash: a92b8d0f921bc747108b802d285b783e7f2bcaa8
-ms.sourcegitcommit: bf600a1fb5f7799961914f638061986d55f6ab12
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9047935"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57658643"
 ---
 # <a name="get-set-up"></a>開始設定
 
 ![準備好使用 Visual Studio](images/VisualStudio2017Hero_ImageXL-LG.png)
 
-開始操作比您想像中容易。 請依照下列指示，開始建立適用於 windows 10 的通用 Windows 平台 (UWP) app。
+開始操作比您想像中容易。 請遵循下列指示，並開始建立適用於 Windows 10 的通用 Windows 平台 (UWP) 應用程式。
 
-## <a name="1-download-or-update-visual-studio"></a>1. 下載或更新 Visual Studio
+## <a name="1-download-or-update-visual-studio"></a>1.下載或更新 Visual Studio
 
-Microsoft Visual Studio2017 可協助您設計、 撰寫程式碼、 測試和偵錯您的應用程式。
+Microsoft Visual Studio 2017 協助您設計、 程式碼、 測試及偵錯您的應用程式。
 
-如果您還沒有 Visual Studio2017，您可以安裝免費 Microsoft Visual Studio Community2017。 此下載包含用來測試應用程式的裝置模擬器：
+如果您還沒有 Visual Studio 2017，您可以安裝免費 Microsoft Visual Studio Community 2017。 此下載包含用來測試應用程式的裝置模擬器：
 
 -   [下載 Windows 10 開發人員工具](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
 您在安裝 Visual Studio 的時候，請確定已選取 \[通用 Windows 應用程式開發工具\] 選項，如下所示：
 
-![適用於 UWP 的 Visual Studio 工具](images/vs-2017-community-setup.png)
+![其他 UWP 的 Visual Studio 工具](images/vs-2017-community-setup.png)
 
 需要 Visual Studio 的協助嗎？ 請參閱[開始使用 Visual Studio](https://www.visualstudio.com/vs/getting-started)。
 
@@ -38,15 +38,15 @@ Microsoft Visual Studio2017 可協助您設計、 撰寫程式碼、 測試和�
    ![如何重複安裝程序](images/win10-cs-install.png)
 
 
-## <a name="2-enable-your-device-for-development"></a>2. 啟用您的裝置以進行開發
+## <a name="2-enable-your-device-for-development"></a>2.啟用您的裝置以用於開發
 
 請務必在真正的 PC 和手機上測試您的 UWP app。 在您可以將應用程式部署到 PC 或 Windows Phone 之前，必須先啟用 PC 或 Windows Phone 以進行開發。
 
 -   如需詳細指示，請參閱[啟用您的裝置以進行開發](enable-your-device-for-development.md)。
 
-## <a name="3-register-as-an-app-developer"></a>3. 註冊成為應用程式開發人員
+## <a name="3-register-as-an-app-developer"></a>3.註冊成為應用程式開發人員
 
-您現在可以開始開發應用程式，但您必須有開發人員帳戶，才可以將應用程式提交至 Microsoft Store。
+您現在可以開始開發應用程式，但您必須有開發人員帳戶，才可以將應用程式提交至市集。
 
 -   若要取得開發人員帳戶，請移至[註冊](sign-up.md)頁面。
 
@@ -54,19 +54,19 @@ Microsoft Visual Studio2017 可協助您設計、 撰寫程式碼、 測試和�
 
 您安裝工具並啟用裝置進行開發之後，請查看有關如何開始建立 Windows 10 應用程式的指導方針。
 
--   [開始程式設計](create-uwp-apps.md)
+-   [開始撰寫程式碼](create-uwp-apps.md)
 
 ## <a name="windows-development-setup-scripts"></a>Windows 開發設定指令碼
 
 如果您想要自訂您的裝置並安裝其他功能或套件，請查看此專案的系統設定指令碼。
 
-- [開發人員設定指令碼](https://github.com/Microsoft/windows-dev-box-setup-scripts)
+- [開發人員安裝指令碼](https://github.com/Microsoft/windows-dev-box-setup-scripts)
 
 ## <a name="want-more-tools-and-downloads"></a>想要更多工具和下載？
 
 如需工具和下載的完整清單，請參閱[下載](https://go.microsoft.com/fwlink/p/?linkid=285935)。
 
-## <a name="see-also"></a>請參閱
+## <a name="see-also"></a>另請參閱
 
 * [適用於 UWP 開發人員的程式碼範例](https://developer.microsoft.com/windows/samples)
 * [什麼是 UWP app？](universal-application-platform-guide.md)

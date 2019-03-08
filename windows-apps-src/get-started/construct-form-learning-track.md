@@ -7,15 +7,15 @@ keywords: 開始使用, uwp, windows 10, 了解曲目, 版面配置, 表單
 ms.localizationpriority: medium
 ms.custom: RS5
 ms.openlocfilehash: 45c4acda953808a85363d1cec7c623dd79cc08f1
-ms.sourcegitcommit: b975c8fc8cf0770dd73d8749733ae5636f2ee296
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "9058529"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57656443"
 ---
 # <a name="create-and-customize-a-form"></a>建立和自訂表單
 
-如果您要建立需要使用者輸入大量資訊的應用程式，您有可能要建立讓他們填寫的表單。本文會顯示您需要知道的資訊以建立實用且健全的表單。
+如果您要建立的應用程式需要使用者輸入大量資訊，有可能會是您會想要建立他們填寫的表單。這篇文章將說明您需要知道，才能建立有用且強固的表單。
 
 這不是教學課程。 如果您需要，請參閱我們的[調適型版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)，將為您提供逐步導覽體驗。
 
@@ -45,9 +45,9 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="what-goes-in-a-form"></a>有什麼項目會在表單中？
 
-您將需要各種 [XAML 控制項](../design/controls-and-patterns/controls-and-events-intro.md) 來填入表單。 您可能對此很熟悉了，但若您需要複習，請隨時閱讀。 尤其是，您會需要控制項，可讓您的使用者輸入文字，或從值的清單中選擇。 這是您可以新增的選項基本清單 – 您不需要讀取所有項目相關，但已足夠讓您了解它們的外觀及運作方式。
+您將需要各種 [XAML 控制項](../design/controls-and-patterns/controls-and-events-intro.md) 來填入表單。 您可能對此很熟悉了，但若您需要複習，請隨時閱讀。 尤其是，您會需要控制項，可讓您的使用者輸入文字，或從值的清單中選擇。 這是基本的清單，您可以新增的選項的 – 您不需要讀取其相關的所有項目只，使您了解它們的外觀和運作方式。
 
-* [TextBox](../design/controls-and-patterns/text-box.md)可讓您的應用程式使用者輸入的文字。
+* [文字方塊](../design/controls-and-patterns/text-box.md)可讓您的應用程式的使用者輸入的文字。
 * [ToggleSwitch](../design/controls-and-patterns/toggles.md) 可讓使用者在兩個選項中選擇。
 * [DatePicker](../design/controls-and-patterns/date-picker.md) 可讓使用者選取一個日期的值。
 * [TimePicker](../design/controls-and-patterns/time-picker.md) 可讓使用者選取一個日期的值。
@@ -133,7 +133,7 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ## <a name="going-further"></a>更進一步
 
-雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 歡迎回到我們已經連結您並做實驗的表單，新增新的 UI 功能，並進一步修改使用者體驗與文件。 如果您想要透過更詳細的版面配置功能的逐步指導方針，請參閱我們的[調適型配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md)
+雖然您在此建立一個表單，但版面配置與控制項的概念仍適用於您可能建立的所有 XAML UI。 放心地回頭檢查文件，我們已連結到您和試驗您有，加入新的 UI 功能，並進一步精簡的使用者體驗的表單。 如果您想透過更詳細的版面配置功能的逐步指引，請參閱我們[調適性的版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md)
 
 表單也不一定要與世隔絕，您可以往前一個步驟，將您的表單嵌入 [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) 或 [樞紐控制項](../design/controls-and-patterns/pivot.md)。 或如果您想要讓表單在程式碼後置上工作，您會需要開始使用我們的 [事件概觀](../xaml-platform/events-and-routed-events-overview.md)。
 
@@ -153,24 +153,24 @@ UWP 沒有明確的表單控制項，您可以將其新增到應用程式並進�
 
 ### <a name="useful-docs"></a>實用的文件
 
-| 主題 | 說明 |
+| 主題 | 描述 |
 |-------|----------------|
 | [協助工具概觀](../design/accessibility/accessibility-overview.md) | 應用程式中協助工具選項的廣泛縮放概觀。 |
 | [協助工具檢查清單](../design/accessibility/accessibility-checklist.md) | 實用的檢查清單以確保您的應用程式符合協助工具標準。 |
 | [事件概觀](../xaml-platform/events-and-routed-events-overview.md) | 新增與組織事件以處理 UI 動作的詳細資訊。 |
 | [表單](../design/controls-and-patterns/forms.md) | 建立表單的整體指導方針。 |
 | [版面配置面板](../design/layout/layout-panels.md) | 提供版面配置面板類型的概觀，以及使用這些類型的位置。 |
-| [主要/詳細資料模式](../design/controls-and-patterns/master-details.md) | 設計模式可在一個或多個表單中實作。 |
-| [Pivot 控制項](../design/controls-and-patterns/pivot.md) | 一個控制項可包含一個或多個表單。 |
+| [主版/詳細資料模式](../design/controls-and-patterns/master-details.md) | 設計模式可在一個或多個表單中實作。 |
+| [樞紐分析控制項](../design/controls-and-patterns/pivot.md) | 一個控制項可包含一個或多個表單。 |
 | [回應式設計](../design/layout/responsive-design.md) | 大型回應式設計原則的概觀。 | 
-| [搭配 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md) | 視覺狀態和其他回應式設計實作的特定資訊。 |
+| [使用 XAML 的回應式版面配置](../design/layout/layouts-with-xaml.md) | 視覺狀態和其他回應式設計實作的特定資訊。 |
 | [回應式設計的螢幕大小](../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) | 哪些螢幕大小應將回應式版面配置的範圍限制在哪個範圍內的指導方針。 |
 
 ## <a name="useful-code-samples"></a>實用的程式碼範例
 
 | 程式碼範例 | 描述 |
 |-----------------|---------------|
-| [調適型版面配置的教學課程](../design/basics/xaml-basics-adaptive-layout.md) | 透過調適型版面配置和回應式設計的逐步引導體驗。 | 
+| [自動調整的版面配置教學課程](../design/basics/xaml-basics-adaptive-layout.md) | 透過調適型版面配置和回應式設計的逐步引導體驗。 | 
 | [客戶訂單資料庫](https://github.com/Microsoft/Windows-appsample-customers-orders-database) | 請參閱多頁面企業範例中的版面配置和表單的實際運作。 |
-| [XAML 控制項庫](https://github.com/Microsoft/Xaml-Controls-Gallery) | 請參閱 XAML 控制項的選取和實作方式。 |
-| [其他程式碼範例](https://developer.microsoft.com//windows/samples) | 在類別下拉式清單中選擇 **控制項、版面配置和文字** 以參閱相關的程式碼範例。 |
+| [XAML 控制項陳列庫](https://github.com/Microsoft/Xaml-Controls-Gallery) | 請參閱 XAML 控制項的選取和實作方式。 |
+| [額外的程式碼範例](https://developer.microsoft.com//windows/samples) | 在類別下拉式清單中選擇 **控制項、版面配置和文字** 以參閱相關的程式碼範例。 |

@@ -4,14 +4,14 @@ title: 自訂列印工作流程
 description: 建立自訂列印工作流程體驗，以符合貴組織的需求。
 ms.date: 08/10/2017
 ms.topic: article
-keywords: windows 10，uwp 列印
+keywords: windows 10、 uwp、 列印
 ms.localizationpriority: medium
 ms.openlocfilehash: 96e308793e60c0367c712fb93a5d25a056397568
-ms.sourcegitcommit: 49d58bc66c1c9f2a4f81473bcb25af79e2b1088d
+ms.sourcegitcommit: b034650b684a767274d5d88746faeea373c8e34f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "8927173"
+ms.lasthandoff: 03/06/2019
+ms.locfileid: "57653233"
 ---
 # <a name="customize-the-print-workflow"></a>自訂列印工作流程
 
@@ -240,9 +240,9 @@ UI 完成 **PrintTaskXpsDataAvailable** 事件中的延遲延之後 (或如果�
 
 ### <a name="set-the-workflow-apps-policy"></a>設定工作流程應用程式的原則
 工作流程應用程式原則由 Powershell 命令在執行工作流程應用程式的裝置上設定。 需修改 Set-Printer、Add-Printer (現有的連接埠) 和 Add-Printer (新的 WSD 連接埠) 命令以允許設定工作流程原則。 
-* `Disabled`：不啟動工作流程應用程式。
-* `Uninitialized`：如果系統中安裝工作流程 DCA，則會啟動工作流程應用程式。 如果未安裝應用程式，列印仍會繼續。 
-* `Enabled`：如果系統中安裝工作流程 DCA，則會啟動工作流程合約。 如果未安裝應用程式，列印會失敗。 
+* `Disabled`:工作流程應用程式將不會啟動。
+* `Uninitialized`:如果工作流程 DCA 安裝在系統中，將會啟用工作流程應用程式。 如果未安裝應用程式，列印仍會繼續。 
+* `Enabled`:如果工作流程 DCA 安裝在系統中，將會啟用工作流程合約。 如果未安裝應用程式，列印會失敗。 
 
 下列命令在指定的印表機上設定必要的工作流程應用程式。
 ```Powershell
